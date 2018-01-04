@@ -56,7 +56,7 @@ ASP.NET Core 请求管道由一系列请求委托组成，依次调用，如图�
 
 [!code-csharp[Main](middleware/sample/Chain/Startup.cs?name=snippet1)]
 
->[!警告]
+>[!WARNING]
 > 不要在响应发送到客户端之后调用`next.Invoke`。 在响应已经启动后更改`HttpResponse`将引发异常。 例如，设置标头、 状态代码等变化将引发异常。 在调用`next`之后写入响应正文:
 > - 可能会导致违反协议。 例如，写入超过规定`content-length`的内容。
 > - 可能会损坏正文格式。 例如，向 CSS 文件中写入一个 HTML 页脚。
