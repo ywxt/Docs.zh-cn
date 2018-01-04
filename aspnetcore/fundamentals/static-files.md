@@ -213,7 +213,7 @@ ASP.NET 静态文件中间件理解近400种已知的文件内容类型。如果
 
      * 在列表中选择**StaticFileModule**
 
-     * 在**Actions**侧栏中点击**删除**
+     * 在**Actions**侧栏中点击**Remove**
 
 >[!WARNING]
 > 如果启用了IIS静态文件处理程序，**并且** ASP.NET Core 模块(ANCM)未正确配置(例如 *web.config* 未被部署)，将提供静态文件。
