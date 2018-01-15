@@ -11,11 +11,11 @@ ms.assetid: 50922cf1-ca58-4006-9236-99b7ff2dd0cf
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/nano-server
-ms.openlocfilehash: 337cc69ef522452c17cdd6ea4a5e71cd122035dc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f30e911703d5c36d076872f91d4b2fafeefb91f5
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="aspnet-core-with-iis-on-nano-server"></a>ASP.NET Core 与 Nano Server 上运行的 IIS
 
@@ -37,7 +37,7 @@ Nano Server 是 Windows Server 2016 中的一个安装选项，它占用内存�
 
 在本教程中，我们将使用第二个选项，即 Windows Server 2016 中的预生成 Nano Server VHD。
 
-在继续阅读本教程之前，需要现有 ASP.NET Core 应用程序的[发布输出](xref:hosting/directory-structure)。 确保生成的应用程序在 64 位进程中运行。
+在继续阅读本教程之前，需要现有 ASP.NET Core 应用程序的[发布输出](xref:host-and-deploy/directory-structure)。 确保生成的应用程序在 64 位进程中运行。
 
 ## <a name="setting-up-the-nano-server-instance"></a>设置 Nano Server 实例
 
@@ -191,7 +191,7 @@ dotnet-install.ps1 -Version 2.0.0
 </configuration>
 ```
 
-在远程会话中运行以下命令，在不同的端口（而不是默认网站）上为已发布的应用创建一个新的站点。 此外，还需要打开该端口来访问 Web。 为简单起见，此脚本使用 `DefaultAppPool`。 关于在应用程序池下运行的更多注意事项，请参阅[应用程序池](xref:publishing/iis#application-pools)。
+在远程会话中运行以下命令，在不同的端口（而不是默认网站）上为已发布的应用创建一个新的站点。 此外，还需要打开该端口来访问 Web。 为简单起见，此脚本使用 `DefaultAppPool`。 关于在应用程序池下运行的更多注意事项，请参阅[应用程序池](xref:host-and-deploy/iis/index#application-pools)。
 
 ```PowerShell
 Import-module IISAdministration
@@ -205,4 +205,4 @@ New-NetFirewallRule -Name "AspNetCore Port 81 IIS" -DisplayName "Allow HTTP on T
 
 ## <a name="running-the-application"></a>运行应用程序
 
-可以在浏览器中转到 `http://192.168.1.10:8000` 访问已发布的 Web 应用。 如果你已按照[日志创建和重定向](xref:hosting/aspnet-core-module#log-creation-and-redirection)中所述设置了日志记录，则可以在 C:\PublishedApps\AspNetCoreSampleForNano\logs 中查看日志。
+可以在浏览器中转到 `http://192.168.1.10:8000` 访问已发布的 Web 应用。 如果你已按照[日志创建和重定向](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection)中所述设置了日志记录，则可以在 C:\PublishedApps\AspNetCoreSampleForNano\logs 中查看日志。
