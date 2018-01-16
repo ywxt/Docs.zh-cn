@@ -11,40 +11,40 @@ ms.assetid: 981852c9-78f9-4590-aaee-9d50a2838dfe
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/index
-ms.openlocfilehash: 9b92a3206e2d6ca921e8580fa367e4bae12725c5
-ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
+ms.openlocfilehash: 182d3b5d567a46bb0f7d7c5864ebbc252782d8a3
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/11/2018
 ---
-# <a name="authentication"></a><span data-ttu-id="4356a-104">身份验证</span><span class="sxs-lookup"><span data-stu-id="4356a-104">Authentication</span></span>
+# <a name="authentication"></a><span data-ttu-id="38d13-104">身份验证</span><span class="sxs-lookup"><span data-stu-id="38d13-104">Authentication</span></span>
 
-* [<span data-ttu-id="4356a-105">社区 OSS 身份验证选项</span><span class="sxs-lookup"><span data-stu-id="4356a-105">Community OSS authentication options</span></span>](community.md)
+* [<span data-ttu-id="38d13-105">社区 OSS 身份验证选项</span><span class="sxs-lookup"><span data-stu-id="38d13-105">Community OSS authentication options</span></span>](community.md)
 
-* [<span data-ttu-id="4356a-106">标识简介</span><span class="sxs-lookup"><span data-stu-id="4356a-106">Introduction to Identity</span></span>](identity.md)
+* [<span data-ttu-id="38d13-106">标识简介</span><span class="sxs-lookup"><span data-stu-id="38d13-106">Introduction to Identity</span></span>](identity.md)
 
-* [<span data-ttu-id="4356a-107">启用使用 Facebook、Google 和其他外部提供程序的身份验证</span><span class="sxs-lookup"><span data-stu-id="4356a-107">Enabling authentication using Facebook, Google and other external providers</span></span>](social/index.md)
+* [<span data-ttu-id="38d13-107">启用使用 Facebook、Google 和其他外部提供程序的身份验证</span><span class="sxs-lookup"><span data-stu-id="38d13-107">Enable authentication using Facebook, Google, and other external providers</span></span>](social/index.md)
 
-* [<span data-ttu-id="4356a-108">在 ASP.NET 标识中启用 QR 代码生成</span><span class="sxs-lookup"><span data-stu-id="4356a-108">Enabling QR Code generation in ASP.NET identity</span></span>](identity-enable-qrcodes.md)
+* [<span data-ttu-id="38d13-108">在标识中启用 QR 代码生成</span><span class="sxs-lookup"><span data-stu-id="38d13-108">Enable QR code generation in Identity</span></span>](identity-enable-qrcodes.md)
 
-* [<span data-ttu-id="4356a-109">配置 Windows 身份验证</span><span class="sxs-lookup"><span data-stu-id="4356a-109">Configure Windows Authentication</span></span>](windowsauth.md)
+* [<span data-ttu-id="38d13-109">配置 Windows 身份验证</span><span class="sxs-lookup"><span data-stu-id="38d13-109">Configure Windows Authentication</span></span>](windowsauth.md)
 
-* [<span data-ttu-id="4356a-110">帐户确认和密码恢复</span><span class="sxs-lookup"><span data-stu-id="4356a-110">Account Confirmation and Password Recovery</span></span>](accconfirm.md)
+* [<span data-ttu-id="38d13-110">帐户确认和密码恢复</span><span class="sxs-lookup"><span data-stu-id="38d13-110">Account confirmation and password recovery</span></span>](accconfirm.md)
 
-* [<span data-ttu-id="4356a-111">使用 SMS 设置双因素身份验证</span><span class="sxs-lookup"><span data-stu-id="4356a-111">Two-factor authentication with SMS</span></span>](2fa.md)
+* [<span data-ttu-id="38d13-111">使用 SMS 设置双因素身份验证</span><span class="sxs-lookup"><span data-stu-id="38d13-111">Two-factor authentication with SMS</span></span>](2fa.md)
 
-* [<span data-ttu-id="4356a-112">在没有 ASP.NET Core 标识的情况下使用 Cookie 身份验证</span><span class="sxs-lookup"><span data-stu-id="4356a-112">Using Cookie Authentication without ASP.NET Core Identity</span></span>](cookie.md)
+* [<span data-ttu-id="38d13-112">在没有标识的情况下使用 cookie 身份验证</span><span class="sxs-lookup"><span data-stu-id="38d13-112">Use cookie authentication without Identity</span></span>](cookie.md)
 
-* [<span data-ttu-id="4356a-113">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="4356a-113">Azure Active Directory</span></span>](azure-active-directory/index.md)
+* [<span data-ttu-id="38d13-113">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="38d13-113">Azure Active Directory</span></span>](azure-active-directory/index.md)
 
-  * <span data-ttu-id="4356a-114">[Integrating Azure AD Into an ASP.NET Core Web App](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)（将 Azure AD 集成到 ASP.NET Core Web 应用中）</span><span class="sxs-lookup"><span data-stu-id="4356a-114">[Integrating Azure AD Into an ASP.NET Core Web App](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)</span></span>
+  * [<span data-ttu-id="38d13-114">将 Azure AD 集成到 ASP.NET Core Web 应用中</span><span class="sxs-lookup"><span data-stu-id="38d13-114">Integrate Azure AD into an ASP.NET Core web app</span></span>](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
 
-  * <span data-ttu-id="4356a-115">[Calling an ASP.NET Core Web API From a WPF Application Using Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)（从使用 Azure AD 的 WPF 应用程序调用 ASP.NET Core Web API）</span><span class="sxs-lookup"><span data-stu-id="4356a-115">[Calling an ASP.NET Core Web API From a WPF Application Using Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)</span></span>
+  * [<span data-ttu-id="38d13-115">使用 Azure AD 从 WPF 应用调用 ASP.NET Core Web API</span><span class="sxs-lookup"><span data-stu-id="38d13-115">Call an ASP.NET Core Web API from a WPF app using Azure AD</span></span>](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 
-  * <span data-ttu-id="4356a-116">[Calling a Web API in an ASP.NET Core Web Application Using Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)（在使用 Azure AD 的 ASP.NET Core Web 应用程序中调用 Web API）</span><span class="sxs-lookup"><span data-stu-id="4356a-116">[Calling a Web API in an ASP.NET Core Web Application Using Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)</span></span>
+  * [<span data-ttu-id="38d13-116">使用 Azure AD 在 ASP.NET Core Web 应用中调用 Web API</span><span class="sxs-lookup"><span data-stu-id="38d13-116">Call a Web API in an ASP.NET Core web app using Azure AD</span></span>](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
 
-* [<span data-ttu-id="4356a-117">使用 IdentityServer4 保护 ASP.NET Core 应用</span><span class="sxs-lookup"><span data-stu-id="4356a-117">Securing ASP.NET Core apps with IdentityServer4</span></span>](http://docs.identityserver.io/en/release/)
+* [<span data-ttu-id="38d13-117">使用 IdentityServer4 保护 ASP.NET Core 应用</span><span class="sxs-lookup"><span data-stu-id="38d13-117">Secure ASP.NET Core apps with IdentityServer4</span></span>](http://docs.identityserver.io/en/release/)
 
-* [<span data-ttu-id="4356a-118">使用 Azure App Service 身份验证保护 ASP.NET Core 应用（简易身份验证）</span><span class="sxs-lookup"><span data-stu-id="4356a-118">Securing ASP.NET Core apps with Azure App Service Authentication (Easy Auth)</span></span>](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview)
+* [<span data-ttu-id="38d13-118">使用 Azure App Service 身份验证保护 ASP.NET Core 应用（简易身份验证）</span><span class="sxs-lookup"><span data-stu-id="38d13-118">Secure ASP.NET Core apps with Azure App Service Authentication (Easy Auth)</span></span>](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview)
 
-* [<span data-ttu-id="4356a-119">基于用个人用户帐户创建的项目的文章</span><span class="sxs-lookup"><span data-stu-id="4356a-119">Articles based on projects created with individual user accounts</span></span>](xref:security/authentication/individual)
+* [<span data-ttu-id="38d13-119">基于用个人用户帐户创建的项目的文章</span><span class="sxs-lookup"><span data-stu-id="38d13-119">Articles based on projects created with individual user accounts</span></span>](xref:security/authentication/individual)
