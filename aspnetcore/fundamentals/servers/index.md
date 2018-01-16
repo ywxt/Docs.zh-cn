@@ -11,11 +11,11 @@ ms.assetid: dba74f39-58cd-4dee-a061-6d15f7346959
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/index
-ms.openlocfilehash: 04dee100dff91f7868175ff4be01156787e13e81
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b149cb316e4266e67d846b8ef8c2c7f2a25ded5c
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>ASP.NET Core 中的 Web 服务器实现
 
@@ -79,11 +79,11 @@ Kestrel 是 Web 服务器，它默认包括在 ASP.NET Core 新项目模板中�
 
 ### <a name="nginx-with-kestrel"></a>Nginx 与 Kestrel
 
-有关如何将在 Linux 上使用 Nginx 作为 Kestrel 的反向代理服务器的信息，请参阅[发布到 Linux 生产环境](../../publishing/linuxproduction.md)。
+有关如何在 Linux 上使用 Nginx 作为 Kestrel 的反向代理服务器的信息，请参阅[在 Linux 上使用 Nginx 进行托管](xref:host-and-deploy/linux-nginx)。
 
 ### <a name="apache-with-kestrel"></a>Apache 与 Kestrel
 
-有关如何将在 Linux 上使用 Apache 作为 Kestrel 的反向代理服务器的信息，请参阅[将 Apache Web 服务器用作反向代理](../../publishing/apache-proxy.md)。
+有关如何在 Linux 上使用 Apache 作为 Kestrel 的反向代理服务器的信息，请参阅[在 Linux 上使用 Apache 进行托管](xref:host-and-deploy/linux-apache)。
 
 ## <a name="httpsys"></a>HTTP.sys
 
@@ -131,16 +131,16 @@ HTTP.sys 在 ASP.NET Core 1.x 中被命名为 WebListener。 如果在 Windows �
 
 - [Kestrel](kestrel.md)
 - [Kestrel 与 IIS](aspnet-core-module.md)
-- [Kestrel 与 Nginx](../../publishing/linuxproduction.md)
-- [Kestrel 与 Apache](../../publishing/apache-proxy.md)
+- [在 Linux 上使用 Nginx 进行托管](xref:host-and-deploy/linux-nginx)
+- [在 Linux 上使用 Apache 进行托管](xref:host-and-deploy/linux-apache)
 - [HTTP.sys](httpsys.md)
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 - [Kestrel](kestrel.md)
 - [Kestrel 与 IIS](aspnet-core-module.md)
-- [Kestrel 与 Nginx](../../publishing/linuxproduction.md)
-- [Kestrel 与 Apache](../../publishing/apache-proxy.md)
+- [在 Linux 上使用 Nginx 进行托管](xref:host-and-deploy/linux-nginx)
+- [在 Linux 上使用 Apache 进行托管](xref:host-and-deploy/linux-apache)
 - [WebListener](weblistener.md)
 
 ---

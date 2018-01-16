@@ -10,11 +10,11 @@ ms.assetid: a8fb7eb7-e0e5-4394-84f3-1f1dbe012345
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/index
-ms.openlocfilehash: 3f4df08d6cf5d183735ae4b4ec4f07ed60a9623a
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: f6a1f32c1edd098b0782fd066d8e32f09952a9b7
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="aspnet-core-security-overview"></a>ASP.NET Core 安全性概述
 
@@ -49,11 +49,11 @@ ASP.NET Core 和 EF 提供维护应用安全、预防安全漏洞的功能。 �
     * [配置 Windows 身份验证](authentication/windowsauth.md)
     *   [帐户确认和密码恢复](authentication/accconfirm.md)
     *   [使用 SMS 设置双因素身份验证](authentication/2fa.md) 
-    *   [在没有 ASP.NET Core 标识的情况下使用 Cookie 身份验证](authentication/cookie.md)
+    *   [在没有标识的情况下使用 cookie 身份验证](authentication/cookie.md)
     *   [Azure Active Directory](authentication/azure-active-directory/index.md)
-        *   [Integrating Azure AD Into an ASP.NET Core Web App](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)（将 Azure AD 集成到 ASP.NET Core Web 应用中）
-        *   [Calling a ASP.NET Core Web API From a WPF Application Using Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)（从使用 Azure AD 的 WPF 应用程序调用 ASP.NET Core Web API）
-        *   [Calling a Web API in an ASP.NET Core Web Application Using Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)（在使用 Azure AD 的 ASP.NET Core Web 应用程序中调用 Web API）
+        *   [将 Azure AD 集成到 ASP.NET Core Web 应用中](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+        *   [使用 Azure AD 从 WPF 应用调用 ASP.NET Core Web API](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
+        *   [使用 Azure AD 在 ASP.NET Core Web 应用中调用 Web API](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
         *   [带有 Azure AD B2C 的 ASP.NET Core Web 应用](https://azure.microsoft.com/resources/samples/active-directory-b2c-dotnetcore-webapp/)
     *   [使用 IdentityServer4 保护 ASP.NET Core 应用](https://identityserver4.readthedocs.io)
 *   [授权](authorization/index.md)
@@ -62,7 +62,7 @@ ASP.NET Core 和 EF 提供维护应用安全、预防安全漏洞的功能。 �
     *   [简单授权](authorization/simple.md)
     *   [基于角色的授权](authorization/roles.md)
     *   [基于声明的授权](authorization/claims.md)
-    *   [基于自定义策略的授权](authorization/policies.md)
+    *   [基于策略的授权](authorization/policies.md)
     *   [要求处理程序中的依赖关系注入](authorization/dependencyinjection.md)
     *   [基于资源的授权](authorization/resourcebased.md)
     *   [基于视图的授权](authorization/views.md)
@@ -97,13 +97,13 @@ ASP.NET Core 和 EF 提供维护应用安全、预防安全漏洞的功能。 �
         *   [密钥存储格式](data-protection/implementation/key-storage-format.md)
         *   [短数据保护提供程序](data-protection/implementation/key-storage-ephemeral.md)
     *   [兼容性](data-protection/compatibility/index.md)
-        *   [在应用程序之间共享 cookie](data-protection/compatibility/cookie-sharing.md)
+        *   [在应用之间共享 cookie](data-protection/compatibility/cookie-sharing.md)
         *   [在 ASP.NET 中替换 <machineKey>](data-protection/compatibility/replacing-machinekey.md)
 *   [通过授权保护的用户数据创建应用](xref:security/authorization/secure-data)
 *   [在开发期间安全存储应用密钥](app-secrets.md)
 *   [Azure Key Vault 配置提供程序](key-vault-configuration.md)
 *   [强制实施 SSL](enforcing-ssl.md)
-*   [反请求伪造](anti-request-forgery.md)
+*   [防请求伪造](anti-request-forgery.md)
 *   [阻止打开重定向攻击](preventing-open-redirects.md)
-*   [阻止跨网站脚本编写](cross-site-scripting.md)
+*   [阻止跨站点脚本编写](cross-site-scripting.md)
 *   [启用跨域请求 (CORS)](cors.md)

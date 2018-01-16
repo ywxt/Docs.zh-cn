@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 6281d6ba254670b111964715410fc0694ae4d149
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: b662e66ab5b4c46d1a8d10eb7c38bf4064b5b927
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>配置 ASP.NET Core 应用
 
@@ -254,7 +254,7 @@ Left: 1979
 
 ---
 
-### <a name="arguments"></a>参数
+### <a name="arguments"></a>自变量
 
 在命令行上传递的参数必须符合下表所示的两种格式之一。
 
@@ -355,7 +355,7 @@ Left: 1984
 
 创建交换映射字典后，它将包含下表所示的数据。
 
-| 键            | 值                 |
+| 键            | “值”                 |
 | -------------- | --------------------- |
 | `-MachineName` | `Profile:MachineName` |
 | `-Left`        | `App:MainWindow:Left` |
@@ -375,7 +375,7 @@ Left: 1988
 
 ## <a name="the-webconfig-file"></a>web.config 文件
 
-在 IIS 或 IIS-Express 中托管应用时，需要 web.config 文件。 web.config 通过在 IIS 中开启 AspNetCoreModule 来启动应用。 web.config 中的设置允许 IIS 中的 AspNetCoreModule 启动应用并配置其他 IIS 设置和模块。 如果使用 Visual Studio 而删除 web.config，则 Visual Studio 将新建该文件。
+在 IIS 或 IIS Express 中托管应用时，需要 web.config 文件。 通过 web.config 中的设置，[ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module) 可以启动应用并配置其他 IIS 设置和模块。 如果 *web.config* 文件不存在，并且项目文件中包含 `<Project Sdk="Microsoft.NET.Sdk.Web">`，则发布项目时会在发布的输出（“发布”文件夹）中创建一个 *web.config* 文件。 有关详细信息，请参阅 [使用 IIS 在 Windows 上托管 ASP.NET Core](xref:host-and-deploy/iis/index#webconfig)。
 
 ## <a name="additional-notes"></a>附加说明
 

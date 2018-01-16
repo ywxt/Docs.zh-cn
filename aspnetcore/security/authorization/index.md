@@ -11,15 +11,17 @@ ms.assetid: 1abd456b-2199-4ba3-9698-3241e0bd4afc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/index
-ms.openlocfilehash: d74254c8f2cc3ee55f6842f9f952d7ab93fe7a03
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 13b4e1db7e3ae73a0cba49d214c5ffdb31601e5c
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="authorization-in-aspnet-core-simple-role-claims-based-and-custom"></a>ASP.NET Core 中的授权：简单、基于角色、基于声明和自定义
 
 * [介绍](introduction.md)
+
+* [Razor 页面授权](xref:security/authorization/razor-pages-authorization)
 
 * [简单授权](simple.md)
 
@@ -27,7 +29,7 @@ ms.lasthandoff: 12/15/2017
 
 * [基于声明的授权](claims.md)
 
-* [基于自定义策略的授权](policies.md)
+* [基于策略的授权](policies.md)
 
 * [要求处理程序中的依赖关系注入](dependencyinjection.md)
 

@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging/index
-ms.openlocfilehash: 737de614625ce560df1c3d7cfd9810f9433c153d
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 3eb167c961b8d089d508ef5622db6ae1cdd99088
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>ASP.NET Core 中的日志记录简介
 
@@ -56,7 +56,7 @@ ASP.NET Core 不提供异步记录器方法，因为日志记录的速度应快�
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_ExpandDefault&highlight=16,17)]
 
-默认项目模板设置日志记录的方式与先前代码所示一致，但要由 `CreateDefaultBuilder` 方法来执行 `ConfigureLogging` 调用。 以下是 Program.cs 中由项目模板创建的代码：
+通过默认项目模板可以使用 [CreateDefaultBuilder](https://docs.microsoft.com/ dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder?view=aspnetcore-2.0#Microsoft_AspNetCore_WebHost_CreateDefaultBuilder_System_String___) 方法登录：
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_TemplateCode&highlight=7)]
 
@@ -302,7 +302,7 @@ System.Exception: Item not found exception.
 | 1      | 调试         | 全部类别                          | 信息       |
 | 2      | 控制台       | Microsoft.AspNetCore.Mvc.Razor.Internal | 警告           |
 | 3      | 控制台       | Microsoft.AspNetCore.Mvc.Razor.Razor    | 调试             |
-| 4      | 控制台       | Microsoft.AspNetCore.Mvc.Razor          | 错误             |
+| 4      | 控制台       | Microsoft.AspNetCore.Mvc.Razor          | Error             |
 | 5      | 控制台       | 全部类别                          | 信息       |
 | 6      | 全部提供程序 | 全部类别                          | 调试             |
 | 7      | 全部提供程序 | 系统                                  | 调试             |
@@ -345,7 +345,7 @@ System.Exception: Item not found exception.
 
 **筛选器函数**
 
-可向筛选器函数写入代码以应用筛选规则。 对于配置或代码未将规则分配到的所有提供程序和类别，都将调用筛选器函数。 函数中的代码有权访问提供程序类型、类别和日志级别，以决定是否记录某条消息。 例如: 
+可向筛选器函数写入代码以应用筛选规则。 对于配置或代码未将规则分配到的所有提供程序和类别，都将调用筛选器函数。 函数中的代码有权访问提供程序类型、类别和日志级别，以决定是否记录某条消息。 例如:
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_FilterFunction&highlight=5-13)]
 

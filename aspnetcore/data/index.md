@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/index
-ms.openlocfilehash: bc19cbf0093e8a7f26af82d19f597cc805e04309
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 325f95cf9ecc295f7a1c646e352b9cd496b6268e
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="working-with-data-in-aspnet-core"></a>在 ASP.NET Core 中使用数据 
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 12/14/2017
 
    * [Razor 页面及 EF 入门](xref:data/ef-rp/intro)
    * [创建、读取、更新和删除操作](xref:data/ef-rp/crud)
-   * [排序、筛选、分页和分组](xref:data/ef-rp/sort-filter-page)
+   * [排序、筛选器、页和组](xref:data/ef-rp/sort-filter-page)
    * [迁移](xref:data/ef-rp/migrations)
    * [创建复杂数据模型](xref:data/ef-rp/complex-data-model)
    * [读取相关数据](xref:data/ef-rp/read-related-data)
@@ -32,7 +32,7 @@ ms.lasthandoff: 12/14/2017
 *   [ASP.NET Core MVC 和 Entity Framework Core 入门（使用 Visual Studio）](ef-mvc/index.md)
     *   [入门](ef-mvc/intro.md)
     *   [创建、读取、更新和删除操作](xref:data/ef-mvc/crud)
-    *   [排序、筛选、分页和分组](xref:data/ef-mvc/sort-filter-page)
+    *   [排序、筛选器、页和组](xref:data/ef-mvc/sort-filter-page)
     *   [迁移](xref:data/ef-mvc/migrations)
     *   [创建复杂数据模型](ef-mvc/complex-data-model.md)
     *   [读取相关数据](ef-mvc/read-related-data.md)
@@ -47,5 +47,5 @@ ms.lasthandoff: 12/14/2017
     *   [使用 Visual Studio 连接服务添加 Azure 存储](https://azure.microsoft.com/documentation/articles/vs-azure-tools-connected-services-storage/)
     *   [开始使用 Azure Blob 存储和 Visual Studio 连接服务](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
     *   [开始使用队列存储和 Visual Studio 连接服务](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-queues/)
-    *   [如何开始使用 Azure 表服务和 Visual Studio 连接服务](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
+    *   [开始使用 Azure 表存储和 Visual Studio 连接服务](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
 

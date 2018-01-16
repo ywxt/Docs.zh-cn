@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/index
-ms.openlocfilehash: 4c653d83569bcd218710ad276e154c6b8f89963c
-ms.sourcegitcommit: 747a7fddf7a4c7ef5f3e2a0912c411ee647ee203
+ms.openlocfilehash: 955634b9c3d207a7b0026de76e37b527607f4775
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="migration-to-aspnet-core-including-aspnet-4x-aspnet-core-2"></a>迁移至 ASP.NET Core，包括 ASP.NET 4.x 和 ASP.NET Core 2
 
