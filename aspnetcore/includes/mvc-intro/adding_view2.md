@@ -18,7 +18,7 @@
 
 ## <a name="change-the-title-and-menu-link-in-the-layout-file"></a>更改布局文件中的标题和菜单链接
 
-更改标题元素的内容。 将布局模板中的定位文本更改为“Movie App”，并且将控制器从 `Home` 更改为 `Movies`，如下所示：
+在标题元素中，将 `MvcMovie` 更改为 `Movie App`。 将布局模板中的定位文本从 `MvcMovie` 更改为 `Mvc Movie`，并将控制器从 `Home` 更改为 `Movies`，如下所示：
 
 注意：ASP.NET Core 2.0 版本略有不同。 它不包含 `@inject ApplicationInsights` 和 `@Html.Raw(JavaScriptSnippet.FullScript)`。
 
@@ -29,9 +29,9 @@
 
 保存更改并点击“关于”链接。 请注意浏览器选项卡上的标题现在显示的是**“关于 - 电影应用”**，而不是**“关于 - Mvc 电影”**: 
 
-![关于标签](../../tutorials/first-mvc-app/adding-view/_static/hell3.png)
+![关于标签](../../tutorials/first-mvc-app/adding-view/_static/about2.png)
 
-点击“联系人”链接，注意它也显示“电影应用”。 我们能够在布局模板中进行一次更改，让网站上的所有页面都反映新的链接文本和新标题。
+点击“联系人”链接，请注意，标题和定位文本还会显示“电影应用”。 我们能够在布局模板中进行一次更改，让网站上的所有页面都反映新的链接文本和新标题。
 
 检查 Views/_ViewStart.cshtml 文件：
 
@@ -105,7 +105,7 @@ Views/_ViewStart.cshtml 文件将 Views/Shared/_Layout.cshtml 文件引入到每
 
 数据取自 URL，并传递给使用 [MVC 模型绑定器](xref:mvc/models/model-binding)的控制器。 控制器将数据打包到 `ViewData` 字典中，并将该对象传递给视图。 然后，视图将数据作为 HTML 呈现给浏览器。
 
-![“关于”视图，显示了 Welcome 标签以及四个“Hello Rick”短语](../../tutorials/first-mvc-app/adding-view/_static/rick.png)
+![“关于”视图，显示了 Welcome 标签以及四个“Hello Rick”短语](../../tutorials/first-mvc-app/adding-view/_static/rick2.png)
 
 在上面的示例中，我们使用 `ViewData` 字典将数据从控制器传递给视图。 稍后在本教程中，我们将使用视图模型将数据从控制器传递给视图。 传递数据的视图模型方法通常比 `ViewData` 字典方法更为优先。 有关详细信息，请参阅 [ViewModel vs ViewData vs ViewBag vs TempData vs Session in MVC](http://www.mytecbits.com/microsoft/dot-net/viewmodel-viewdata-viewbag-tempdata-mvc)（MVC 中 ViewModel、ViewData、ViewBag、TempData 和 Session 之间的比较）。
 

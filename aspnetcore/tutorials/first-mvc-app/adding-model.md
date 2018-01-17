@@ -5,23 +5,20 @@ description: "将模型添加到简单的 ASP.NET Core 应用。"
 keywords: ASP.NET Core
 ms.author: riande
 manager: wpickett
-ms.date: 03/30/2017
+ms.date: 12/8/2017
 ms.topic: get-started-article
-ms.assetid: 8dc28498-00ee-4d66-b903-b593059e9f39
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: a29bab9cf0712936fa9c3f2b4bb3b275a46fe6f6
-ms.sourcegitcommit: e641c5794525f983485621860926d8ab4e7360c8
+ms.openlocfilehash: 03c16e523fe2f91cae5c71357835684d813e3a1f
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 12/14/2017
 ---
 [!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
 
 请注意：ASP.NET Core 2.0 模板包含 Models 文件夹。
-
-在“解决方案资源管理器”中，右键单击 MvcMovie 项目，然后单击“添加” > “新文件夹”。 将文件夹命名为“Models”。
 
 右键单击 Models 文件夹，然后单击“添加” > “类”。 将类命名为“Movie”，并添加以下属性：
 
@@ -37,15 +34,10 @@ ms.lasthandoff: 11/23/2017
 
 ![上述步骤的视图](adding-model/_static/add_controller.png)
 
-在“添加 MVC 依赖项”对话框中，选择“最小依赖项”，然后选择“添加”。
+如果出现“添加 MVC 依赖项”对话框：
 
-![上述步骤的视图](adding-model/_static/add_depend.png)
-
-Visual Studio 将添加所需的依赖项为控制器搭建基架，但不创建控制器本身。 接下来调用“添加”>“控制器”以创建控制器。 
-
-在“解决方案资源管理器”中，右键单击“控制器”文件夹，然后单击“添加”>“控制器”。
-
-![上述步骤的视图](adding-model/_static/add_controller.png)
+* [将 Visual Studio 更新到最新版本](https://www.visualstudio.com/downloads/)。 15.5 之前的 Visual Studio 版本显示此对话框。
+* 如果无法更新，请选择“添加”，然后再次按照添加控制器步骤操作。
 
 在“添加基架”对话框中，点击“包含视图的 MVC 控制器(使用 Entity Framework)”>“添加”。
 
@@ -72,7 +64,7 @@ Visual Studio 将创建：
 
 自动创建数据库上下文和 [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete)（创建、读取、更新和删除）操作方法和视图的过程称为“搭建基架”。 你很快将具有功能完整的 Web 应用程序，可使用此应用程序管理电影数据库。
 
-如果运行应用并单击“Mvc 电影”链接，则将出现以下类似的错误：
+如果运行应用并单击“Mvc 电影”链接，则会出现以下类似的错误：
 
 ```
 An unhandled exception occurred while processing the request.

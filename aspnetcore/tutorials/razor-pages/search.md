@@ -10,13 +10,13 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/razor-pages/search
-ms.openlocfilehash: 2ffb6f13a7303527444085d137d1acac02d7e0ef
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3729f351ba7d1e5f566046a619c17e9e1e6614cb
+ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/09/2018
 ---
-# <a name="adding-search-to-an-aspnet-core-mvc-app"></a>将搜索添加到 ASP.NET Core MVC 应用
+# <a name="adding-search-to-a-razor-pages-app"></a>将搜索添加到 Razor 页面应用
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -29,8 +29,8 @@ ms.lasthandoff: 11/10/2017
 `OnGetAsync` 方法的第一行创建了 [LINQ](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/) 查询用于选择电影：
 
 ```csharp
- var movies = from m in _context.Movie
-              select m;
+var movies = from m in _context.Movie
+             select m;
 ```
 
 此时仅对查询进行了定义，它还不会针对数据库运行。

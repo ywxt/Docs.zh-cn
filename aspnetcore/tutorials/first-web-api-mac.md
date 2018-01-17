@@ -11,11 +11,11 @@ helpviewer_heywords: ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, Serv
 ms.technology: aspnet
 keywords: "ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, 服务, HTTP 服务"
 manager: wpickett
-ms.openlocfilehash: 6bbd5e332e395928d8f79888ecf190f7f59a4bbc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3f84fa55baf6d808185a28db290d9e6d3c46bdac
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>使用 ASP.NET Core MVC 和 Visual Studio for Mac 创建 Web API
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 11/10/2017
 
 在本教程中，将生成用于管理“待办事项”列表的 Web API。 不会生成 UI。
 
-本教程有三个版本：
+本教程提供 3 个版本：
 
 * macOS：使用 Visual Studio for Mac 创建 Web API（本教程）
 * Windows：[使用 Visual Studio for Windows 创建 Web API](xref:tutorials/first-web-api)
@@ -35,7 +35,7 @@ ms.lasthandoff: 11/10/2017
 
 * 请参阅 [Mac 或 Linux 上的 ASP.NET Core MVC 介绍](xref:tutorials/first-mvc-app-xplat/index)，获取使用永久数据库的示例。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 安装以下组件：
 
@@ -79,7 +79,7 @@ ms.lasthandoff: 11/10/2017
 
 模型是表示应用程序中的数据的对象。 在此示例中，唯一的模型是待办事项。
 
-添加名为“Models”的文件夹。 在解决方案资源管理器中，右键单击项目。 选择“添加” > “新建文件夹”。 将文件夹命名为“Models”。
+添加名为“模型”的文件夹。 在解决方案资源管理器中，右键单击项目。 选择“添加” > “新建文件夹”。 将文件夹命名为“Models”。
 
 ![新建文件夹](first-web-api-mac/_static/folder.png)
 
@@ -197,7 +197,7 @@ public IActionResult GetById(string id)
 ## <a name="next-steps"></a>后续步骤
 
 * [路由到控制器操作](xref:mvc/controllers/routing)
-* 有关部署 API 的信息，请参阅[发布和部署](../publishing/index.md)。
+* 有关部署 API 的信息，请参阅[托管和部署](xref:host-and-deploy/index)。
 * [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 * [Postman](https://www.getpostman.com/)
 * [Fiddler](https://www.telerik.com/download/fiddler)

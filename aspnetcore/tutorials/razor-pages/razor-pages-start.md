@@ -2,33 +2,35 @@
 title: "在 ASP.NET Core 中开始使用 Razor 页面"
 author: rick-anderson
 description: "在 ASP.NET Core 中开始使用 Razor 页面"
-keywords: "ASP.NET Core, Razor 页面, Razor, MVC"
+keywords: ASP.NET Core, Razor Pages, Razor, MVC
 ms.author: riande
 manager: wpickett
-ms.date: 08/27/2017
+ms.date: 12/22/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 5c58b5156f62572687755c9c0878db10c3c14eb1
-ms.sourcegitcommit: c07fb5cb5df0a12f9fe6735fcbc90964608fa687
+ms.openlocfilehash: 12685d6a391c127d78399408291c26caa0192ee2
+ms.sourcegitcommit: 44a62f59d4db39d685c4487a0345a486be18d7c7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 12/21/2017
 ---
-# <a name="getting-started-with-razor-pages-in-aspnet-core"></a>在 ASP.NET Core 中开始使用 Razor 页面
+# <a name="get-started-with-razor-pages-in-aspnet-core"></a>在 ASP.NET Core 中开始使用 Razor 页面
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-本教程介绍构建 ASP.NET Core Razor 页面 Web 应用的基础知识。 我们建议在学习本教程前先阅读 [Razor 页面介绍](xref:mvc/razor-pages/index)。 Razor 页面是在 ASP.NET Core 中为 Web 应用程序生成 UI 时建议使用的方法。
+本教程介绍构建 ASP.NET Core Razor Pages Web 应用的基础知识。 Razor 页面是在 ASP.NET Core 中为 Web 应用生成 UI 时建议使用的方法。
 
 本教程提供 3 个版本：
 
 * Windows：本教程
-* MacOS：[借助 Visual Studio for Mac 开始使用 Razor 页面](xref:tutorials/razor-pages-mac/razor-pages-start)
-* macOS、Linux 和 Windows：[利用 Visual Studio Code 在 ASP.NET Core 中开始使用 Razor 页面](xref:tutorials/razor-pages-vsc/razor-pages-start)
+* MacOS：[借助 Visual Studio for Mac 开始使用 Razor Pages](xref:tutorials/razor-pages-mac/razor-pages-start)
+* macOS、Linux 和 Windows：[利用 Visual Studio Code 在 ASP.NET Core 中开始使用 Razor Pages](xref:tutorials/razor-pages-vsc/razor-pages-start)
 
-## <a name="prerequisites"></a>先决条件
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+
+## <a name="prerequisites"></a>系统必备
 
 [!INCLUDE[install 2.0](../../includes/install2.0.md)]
 
@@ -38,7 +40,11 @@ ms.lasthandoff: 11/14/2017
 * 创建新的 ASP.NET Core Web 应用程序。 将项目命名为“RazorPagesMovie”。 将项目命名为“RazorPagesMovie”，以便命名空间在你复制/粘贴代码时相互匹配。
   ![新建 ASP.NET Core Web 应用程序](../../mvc/razor-pages/index/_static/np.png)
 * 在下拉列表中选择“ASP.NET Core 2.0”，然后选择“Web 应用程序”。
-  ![Web 应用程序（Razor 页面）](../../mvc/razor-pages/index/_static/np2.png)
+
+> [!NOTE]
+> 如果要在 .NET Framework 上使用 ASP.NET Core，必须先从对话框最左侧的下拉列表选择“.NET Framework”，然后可选择所需 ASP.NET Core 版本。
+
+  ![Web 应用程序（Razor 页面）](razor-pages-start/_static/np2.png)
 
 Visual Studio 模板创建初学者项目：
 
@@ -48,7 +54,7 @@ Visual Studio 模板创建初学者项目：
 
 ![主页或索引页](razor-pages-start/_static/home.png)
 
-* Visual Studio 启动 [IIS Express](https://docs.microsoft.com/iis/extensions/introduction-to-iis-express/iis-express-overview) 并运行你的应用。 地址栏显示 `localhost:port#`，而不显示 `example.com`。 这是因为 `localhost` 是本地计算机的标准主机名。 Localhost 仅为来自本地计算机的 Web 请求提供服务。 Visual Studio 创建 Web 项目时，为 Web 服务器使用随机端口。 在上图中，端口号为 5000。 运行应用时，会看到不同的端口号。
+* Visual Studio 启动 [IIS Express](https://docs.microsoft.com/iis/extensions/introduction-to-iis-express/iis-express-overview) 并运行你的应用。 地址栏显示 `localhost:port#`，而不显示 `example.com`。 这是因为 `localhost` 是本地计算机的标准主机名。 Localhost 仅为来自本地计算机的 Web 请求提供服务。 Visual Studio 创建 Web 项目时，为 Web 服务器使用随机端口。 在上图中，端口号为 5000。 运行应用时，将看到不同的端口号。
 * 使用“Ctrl+F5”启动应用（非调试模式）后，可执行代码更改、保存文件、刷新浏览器和查看代码更改等操作。 许多开发人员更喜欢使用非调试模式快速启动应用并查看更改。
 
 [!INCLUDE[razor-pages-start](../../includes/RP/razor-pages-start.md)]
