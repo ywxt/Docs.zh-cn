@@ -1,7 +1,7 @@
 ---
-title: "在 ASP.NET Core 中开始使用 Razor 页面"
+title: "在 ASP.NET Core 中开始使用 Razor Pages"
 author: rick-anderson
-description: "在 ASP.NET Core 中开始使用 Razor 页面"
+description: "在 ASP.NET Core 中开始使用 Razor Pages"
 keywords: ASP.NET Core, Razor Pages, Razor, MVC
 ms.author: riande
 manager: wpickett
@@ -10,17 +10,17 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 12685d6a391c127d78399408291c26caa0192ee2
-ms.sourcegitcommit: 44a62f59d4db39d685c4487a0345a486be18d7c7
+ms.openlocfilehash: 4643665d48ca07ff43ce52064291fc106bd5c8ac
+ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="get-started-with-razor-pages-in-aspnet-core"></a>在 ASP.NET Core 中开始使用 Razor 页面
+# <a name="get-started-with-razor-pages-in-aspnet-core"></a>在 ASP.NET Core 中开始使用 Razor Pages
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-本教程介绍构建 ASP.NET Core Razor Pages Web 应用的基础知识。 Razor 页面是在 ASP.NET Core 中为 Web 应用生成 UI 时建议使用的方法。
+本教程介绍构建 ASP.NET Core Razor Pages Web 应用的基础知识。 Razor Pages 是在 ASP.NET Core 中为 Web 应用生成 UI 时建议使用的方法。
 
 本教程提供 3 个版本：
 
@@ -41,10 +41,7 @@ ms.lasthandoff: 12/21/2017
   ![新建 ASP.NET Core Web 应用程序](../../mvc/razor-pages/index/_static/np.png)
 * 在下拉列表中选择“ASP.NET Core 2.0”，然后选择“Web 应用程序”。
 
-> [!NOTE]
-> 如果要在 .NET Framework 上使用 ASP.NET Core，必须先从对话框最左侧的下拉列表选择“.NET Framework”，然后可选择所需 ASP.NET Core 版本。
-
-  ![Web 应用程序（Razor 页面）](razor-pages-start/_static/np2.png)
+  [!INCLUDE[install 2.0](../../includes/dotnetcore-on-dotnetfx-vs.md)]
 
 Visual Studio 模板创建初学者项目：
 
@@ -58,6 +55,9 @@ Visual Studio 模板创建初学者项目：
 * 使用“Ctrl+F5”启动应用（非调试模式）后，可执行代码更改、保存文件、刷新浏览器和查看代码更改等操作。 许多开发人员更喜欢使用非调试模式快速启动应用并查看更改。
 
 [!INCLUDE[razor-pages-start](../../includes/RP/razor-pages-start.md)]
+
+>[!div class="step-by-step"]
+[下一篇：添加模型](xref:tutorials/razor-pages/model)
 
 >[!div class="step-by-step"]
 [下一篇：添加模型](xref:tutorials/razor-pages/model)
