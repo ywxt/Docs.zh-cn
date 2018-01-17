@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/intro
-ms.openlocfilehash: 86f9eceb5b8646e371811fa4611a4509ff652231
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: 2725960aa8a54c803a141b8d1275e65f245f7082
+ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>开始使用 Razor 页和使用 Visual Studio (第 1 个 8) 的实体框架核心
 
@@ -34,7 +34,7 @@ Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework (
 
 ## <a name="troubleshooting"></a>疑难解答
 
-如果你遇到无法解决的问题，通常可以通过比较你的代码查找解决方案[完成阶段](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots)或[已完成的项目](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu-final)。 有关常见错误以及如何解决这些列表，请参阅[最后一个教程系列中的故障排除部分](xref:data/ef-mvc/advanced#common-errors)。 如果没有找到你那里需要你可以将问题发布到为 StackOverflow.com [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core)或[EF 核心](https://stackoverflow.com/questions/tagged/entity-framework-core)。
+如果你遇到无法解决的问题，通常可以通过比较你的代码查找解决方案[完成阶段](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots)或[已完成的项目](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu-final)。 有关常见错误以及如何解决这些列表，请参阅[最后一个教程系列中的故障排除部分](xref:data/ef-mvc/advanced#common-errors)。 如果找不到你那里需要你可以将问题发布到[StackOverflow.com](https://stackoverflow.com/questions/tagged/asp.net-core)为[ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core)或[EF 核心](https://stackoverflow.com/questions/tagged/entity-framework-core)。
 
 > [!TIP]
 > 这一系列教程的基础上早期教程中执行哪些操作。 请考虑在每个成功的教程完成后保存项目的副本。 如果遇到问题时，便可以通过从以前的教程，而不是追溯到开头。 或者，你可以下载[完成阶段](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots)并重新使用已完成的阶段开始。
