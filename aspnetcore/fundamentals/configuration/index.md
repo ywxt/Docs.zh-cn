@@ -5,22 +5,22 @@ description: "使用配置 API 通过多种方法配置 ASP.NET Core 应用。"
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/01/2017
+ms.date: 1/11/2018
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: b662e66ab5b4c46d1a8d10eb7c38bf4064b5b927
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 0f8618898089418f709506aee5eb013f983dc294
+ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>配置 ASP.NET Core 应用
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)、[Mark Michaelis](http://intellitect.com/author/mark-michaelis/)、[Steve Smith](https://ardalis.com/)、[Daniel Roth](https://github.com/danroth27) 和 [Luke Latham](https://github.com/guardrex)
 
-通过配置 API ，可基于名称/值对列表来配置 ASP.NET Core Web 应用。 在运行时从多个源读取配置。 可将这些名称/值对分组到多级层次结构。 
+通过配置 API ，可基于名称/值对列表来配置 ASP.NET Core Web 应用。 在运行时从多个源读取配置。 可将这些名称/值对分组到多级层次结构。
 
 配置提供程序适用于：
 
@@ -50,19 +50,21 @@ ms.lasthandoff: 01/11/2018
 
 配置就是名称/值对的分层列表，其中节点是由冒号分隔。 要检索某个值，请使用相应项的键访问 `Configuration` 索引器：
 
-```csharp
-Console.WriteLine($"option1 = {Configuration["subsection:suboption1"]}");
-```
+[!code-csharp[Main](index/sample/ConfigJson/Program.cs?range=24-24)]
 
 要在 JSON 格式的配置源中使用数组，请在由冒号分隔的字符串中使用数组索引。 以下示例获取上述 `wizards` 数组中第一个项的名称：
 
 ```csharp
-Console.Write($"{Configuration["wizards:0:Name"]}, ");
+Console.Write($"{Configuration["wizards:0:Name"]}");
+// Output: Gandalf
 ```
 
-写入内置 `Configuration` 提供程序的名称/值对不是持久的。 但是，可以创建一个自定义提供程序来保存值。 请参阅[自定义配置提供程序](xref:fundamentals/configuration/index#custom-config-providers)。
+写入内置[配置](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration)提供程序的名称/值对不是持久的。 但是，可以创建一个自定义提供程序来保存值。 请参阅[自定义配置提供程序](xref:fundamentals/configuration/index#custom-config-providers)。
 
 前面的示例使用配置索引器来读取值。 要访问 `Startup` 外部的配置，请使用选项模式。 有关详细信息，请参阅[选项](xref:fundamentals/configuration/options)主题。
+
+
+## <a name="configuration-by-environment"></a>按环境配置
 
 通常而言，配置设置因环境（如开发、测试和生产等）而异。 ASP.NET Core 2.x 应用中的 `CreateDefaultBuilder` 扩展方法（或直接在 ASP.NET Core 1.x 应用中使用 `AddJsonFile` 和 `AddEnvironmentVariables`）添加了用于读取 JSON 文件和系统配置源的配置提供程序：
 
@@ -70,9 +72,20 @@ Console.Write($"{Configuration["wizards:0:Name"]}, ");
 * appsettings.\<EnvironmentName>.json
 * 环境变量
 
-有关参数的说明，请参阅 [AddJsonFile](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions)。 仅 ASP.NET Core 1.1 及更高版本支持 `reloadOnChange`。 
+ASP.NET Core 1.x 应用需要调用 `AddJsonFile` 和 [AddEnvironmentVariables](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables #Microsoft_Extensions_Configuration_EnvironmentVariablesExtensions_AddEnvironmentVariables_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_)。
 
-按指定配置源的顺序读取它们。 在上述代码中，最后才读取环境变量。 在环境中设置的任意配置值将替换先前两个提供程序中设置的配置值。
+有关参数的说明，请参阅 [AddJsonFile](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions)。 仅 ASP.NET Core 1.1 及更高版本支持 `reloadOnChange`。
+
+按指定配置源的顺序读取它们。 在前面的代码中，最后才读取环境变量。 在环境中设置的任意配置值将替换先前两个提供程序中设置的配置值。
+
+请考虑使用以下 appsettings.Staging.json 文件：
+
+[!code-json[Main](index/sample/appsettings.Staging.json)]
+
+环境设置为 `Staging` 时，以下 `Configure` 方法将读取 `MyConfig` 的值：
+
+[!code-csharp[Main](index/sample/StartupConfig.cs?name=snippet&highlight=3,4)]
+
 
 环境通常设置为 `Development`、`Staging` 或 `Production`。 有关详细信息，请参阅[使用多个环境](xref:fundamentals/environments)。
 
@@ -80,8 +93,7 @@ Console.Write($"{Configuration["wizards:0:Name"]}, ");
 
 * 配置数据发生更改时，`IOptionsSnapshot` 可将其重载。 有关详细信息，请参阅 [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot)。
 * 配置密钥不区分大小写。
-* 最后再指定环境变量，以便本地环境可替代已部署配置文件中的设置。
-* 请勿在配置提供程序代码或纯文本配置文件中存储密码或其他敏感数据。 请勿在开发或测试环境中使用生产机密。 相反，请在项目外部指定机密，以避免将其意外提交到存储库。 详细了解如何[使用多个环境](xref:fundamentals/environments)和[在开发期间管理应用机密的安全存储](xref:security/app-secrets)。
+* 请勿在配置提供程序代码或纯文本配置文件中存储密码或其他敏感数据。 请勿在开发或测试环境中使用生产机密。 请在项目外部指定机密，避免将其意外提交到存储库。 详细了解如何[使用多个环境](xref:fundamentals/environments)和[在开发期间管理应用机密的安全存储](xref:security/app-secrets)。
 * 如果系统不支持在环境变量中使用冒号 (`:`)，请将冒号 (`:`) 替换为双下划线 (`__`)。
 
 ## <a name="in-memory-provider-and-binding-to-a-poco-class"></a>内存中提供程序及绑定到 POCO 类
@@ -96,7 +108,7 @@ Console.Write($"{Configuration["wizards:0:Name"]}, ");
 
 以下示例演示 [GetValue&lt;T&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationbinder#Microsoft_Extensions_Configuration_ConfigurationBinder_GetValue_Microsoft_Extensions_Configuration_IConfiguration_System_Type_System_String_System_Object_) 扩展方法：
 
-[!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=27-29)]
+[!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
 
 ConfigurationBinder 的 `GetValue<T>` 方法允许指定默认值（在此示例中为 80）。 `GetValue<T>` 适用于简单方案，并不绑定到整个部分。 `GetValue<T>` 将 `GetSection(key).Value` 中的标量值转换为特定类型。
 
@@ -110,7 +122,7 @@ ConfigurationBinder 的 `GetValue<T>` 方法允许指定默认值（在此示例
 
 [!code-csharp[Main](index/sample/ObjectGraph/Program.cs?highlight=15-16)]
 
-ASP.NET Core 1.1 及更高版本可使用 `Get<T>`，它适用于整个部分。 使用 `Get<T>` 可能比 `Bind` 方便。 以下代码演示了如何通过上述示例使用 `Get<T>`：
+ASP.NET Core 1.1 及更高版本可使用 `Get<T>`，它适用于整个部分。 使用 `Get<T>` 可能比 `Bind` 方便。 以下代码演示了如何通过前述示例使用 `Get<T>`：
 
 ```csharp
 var appConfig = config.GetSection("App").Get<AppSettings>();
@@ -153,7 +165,7 @@ public void CanBindObjectTree()
 
 ## <a name="create-an-entity-framework-custom-provider"></a>创建 Entity Framework 自定义提供程序
 
-本部分将创建一个使用 EF 从数据库读取名称/值对的基本配置提供程序。 
+本部分将创建一个使用 EF 从数据库读取名称/值对的基本配置提供程序。
 
 定义 `ConfigurationValue` 实体，用于在数据库中存储配置值：
 
@@ -167,7 +179,7 @@ public void CanBindObjectTree()
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationSource.cs?highlight=7)]
 
-通过从 [ConfigurationProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationprovider) 继承来创建自定义配置提供程序。  当数据库为空时，配置提供程序将对其进行初始化：
+通过从 [ConfigurationProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationprovider) 继承来创建自定义配置提供程序。 当数据库为空时，配置提供程序将对其进行初始化：
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationProvider.cs?highlight=9,18-31,38-39)]
 
@@ -187,7 +199,7 @@ public void CanBindObjectTree()
 
 [!code-json[Main](index/sample/CustomConfigurationProvider/appsettings.json)]
 
-将显示以下内容：
+显示以下输出：
 
 ```console
 key1=value_from_ef_1
@@ -241,10 +253,15 @@ Left: 1979
 
 `CreateDefaultBuilder` 从 appsettings.json、appsettings.{Environment}.json、[用户机密](xref:security/app-secrets)（在 `Development` 环境中）、环境变量和命令行参数中加载可选配置。 在最后调用 CommandLine 配置提供程序。 最后调用提供程序，则在运行时传递的命令行参数可以替代之前调用的其他配置提供程序设置的配置。
 
-请注意，对于 appsettings 文件而言，`reloadOnChange` 已启用。 如果在应用启动后更改了 appsettings 文件中的匹配配置值，则将重写命令行参数。
+对于满足以下条件的 appsettings 文件：
 
-> [!NOTE]
-> 作为使用 `CreateDefaultBuilder` 方法的替代方法，ASP.NET Core 2.x 支持通过 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 创建主机，并利用 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) 手动生成配置。 有关详细信息，请参阅 ASP.NET Core 1.x 选项卡。
+* 已启用 `reloadOnChange`。
+* 在命令行参数和 appsettings 文件中包含相同的设置。
+* 应用启动后，包含匹配的命令行参数的 appsettings 文件发生更改。
+
+如果上述所有条件均成立，则命令行参数将被覆盖。
+
+ASP.NET Core 2.x 应用可使用 WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)，而不是 `CreateDefaultBuilder。使用 WebHostBuilder 时，请通过 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) 手动设置配置。 有关详细信息，请参阅 ASP.NET Core 1.x 选项卡。
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -256,7 +273,7 @@ Left: 1979
 
 ### <a name="arguments"></a>自变量
 
-在命令行上传递的参数必须符合下表所示的两种格式之一。
+在命令行上传递的参数必须符合下表所示的两种格式之一：
 
 | 参数格式                                                     | 示例        |
 | ------------------------------------------------------------------- | :------------: |
@@ -353,7 +370,7 @@ MachineName: DahliaPC
 Left: 1984
 ```
 
-创建交换映射字典后，它将包含下表所示的数据。
+创建交换映射字典后，它将包含下表所示的数据：
 
 | 键            | “值”                 |
 | -------------- | --------------------- |
@@ -384,6 +401,7 @@ Left: 1988
 * `IConfiguration` 具有两项专用化：
   * `IConfigurationRoot` 用于根节点。 可以触发重载。
   * `IConfigurationSection` 表示配置值的一节。 `GetSection` 和 `GetChildren` 方法返回 `IConfigurationSection`。
+  * 重新加载配置或需要访问每个提供程序时，请使用 [IConfigurationRoot](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration.iconfigurationroot)。 这两种情况都不常见。
 
 ## <a name="additional-resources"></a>其他资源
 
