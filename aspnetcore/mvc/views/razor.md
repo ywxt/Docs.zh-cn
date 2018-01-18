@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/razor
-ms.openlocfilehash: e3c3149254d602db1fcc6d42360690be026189a5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6df769069fce52755a57d8404f88203a652a1ab9
+ms.sourcegitcommit: a3e88639a6bcf8fb4d634036dac93130c464a097
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>ASP.NET 核心的 razor 语法
 
@@ -76,7 +76,7 @@ HTML 特性和内容包含电子邮件地址不处理`@`转换字符的形式的
  * 未关闭的"int"元素。  所有元素都必须为自结束或具有匹配的结束标记。
  *  无法将方法组 GenericMethod 为非委托 object 类型的转换。 是否希望调用的方法？ 
  
-泛型方法调用必须包装在[显式 Razor 表达式](#explicit-razor-expressions)或[Razor 代码块](#razor-code-blocks)。 此限制不适用于*.vbhtml* Razor 文件，因为 Visual Basic 语法将泛型类型参数，而不是括号周围的括号。
+泛型方法调用必须包装在[显式 Razor 表达式](#explicit-razor-expressions)或[Razor 代码块](#razor-code-blocks)。
 
 ## <a name="explicit-razor-expressions"></a>显式 Razor 表达式
 
@@ -127,8 +127,6 @@ HTML 特性和内容包含电子邮件地址不处理`@`转换字符的形式的
 ```cshtml
 <p>@(GenericMethod<int>())</p>
 ```
-
-注意： 此限制不适用于*.vbhtml* Razor 文件。  与*.vbhtml* Razor 文件，Visual Basic 语法将泛型类型参数，而不是括号周围的括号。
 
 ## <a name="expression-encoding"></a>表达式编码
 
@@ -526,7 +524,7 @@ Razor 公开`Model`属性访问的模型传递给视图：
 @functions { // C# Code }
 ```
 
-例如: 
+例如:
 
 [!code-cshtml[Main](razor/sample/Views/Home/Contact6.cshtml)]
 
@@ -569,7 +567,7 @@ Razor 公开`Model`属性访问的模型传递给视图：
 
 ### <a name="c-razor-keywords"></a>C# Razor 关键字
 
-* case
+* 大小写
 * do
 * default
 * for
