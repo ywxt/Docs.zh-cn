@@ -2,20 +2,18 @@
 title: "身份验证"
 author: rick-anderson
 description: "此文档充当各 ASP.NET Core 身份验证主题的目录。"
-keywords: "ASP.NET Core,身份验证"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 981852c9-78f9-4590-aaee-9d50a2838dfe
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/index
-ms.openlocfilehash: 182d3b5d567a46bb0f7d7c5864ebbc252782d8a3
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: e8d9a8b36b4f7b6392d1dde42532caec51b140ee
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="authentication"></a>身份验证
 

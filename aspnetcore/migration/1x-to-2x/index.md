@@ -2,7 +2,6 @@
 title: "从 ASP.NET Core 1.x 迁移到 2.0"
 author: scottaddie
 description: "本文概述了将 ASP.NET Core 1.x 项目迁移到 ASP.NET Core 2.0 的先决条件和最常见步骤。"
-keywords: "ASP.NET Core, 迁移"
 ms.author: scaddie
 manager: wpickett
 ms.date: 10/03/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/1x-to-2x/index
-ms.openlocfilehash: 12734504953f2942458c3bfe1fe146f48d8f24ff
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 7f34e15ca9f31db8c70a940a5f0552d97a1ea4ed
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="migrating-from-aspnet-core-1x-to-aspnet-core-20"></a>从 ASP.NET Core 1.x 迁移到 ASP.NET Core 2.0
 
@@ -26,7 +25,7 @@ ms.lasthandoff: 11/29/2017
 
 <a name="prerequisites"></a>
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 请参阅 [ASP.NET Core 入门](xref:getting-started)。
 
 <a name="tfm"></a>
