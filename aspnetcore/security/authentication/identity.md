@@ -2,20 +2,18 @@
 title: "在 ASP.NET Core 上的标识简介"
 author: rick-anderson
 description: "与 ASP.NET Core 应用使用标识"
-keywords: "ASP.NET 核心，标识，授权安全"
 ms.author: riande
 manager: wpickett
 ms.date: 01/02/2018
 ms.topic: article
-ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: fc8e076af92bd8f9a95e73abb66ce32cae8ab9cf
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: 436a5ecfd126c9660591cd55efc1cc52b9493136
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>在 ASP.NET Core 上的标识简介
 
@@ -146,7 +144,7 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
  
 7.  查看数据库。
 
-    如果你的应用使用 SQL Server 数据库 （默认在 Windows 上以及为 Visual Studio 用户），你可以查看数据库中创建的应用。 你可以使用**SQL Server Management Studio**。 或者，从 Visual Studio 中，选择**视图** > **SQL Server 对象资源管理器**。 连接到**(localdb) \MSSQLLocalDB**。 名称匹配的数据库 **aspnet-<*的你的项目名称*>-<*日期字符串*> * * 显示。
+    如果你的应用使用 SQL Server 数据库 （默认在 Windows 上以及为 Visual Studio 用户），你可以查看数据库中创建的应用。 你可以使用**SQL Server Management Studio**。 或者，从 Visual Studio 中，选择**视图** > **SQL Server 对象资源管理器**。 连接到**(localdb) \MSSQLLocalDB**。 名称匹配的数据库**aspnet-<*的你的项目名称*>-<*日期字符串*>** 显示。
 
     ![在 AspNetUsers 数据库表的上下文菜单](identity/_static/04-db.png)
     

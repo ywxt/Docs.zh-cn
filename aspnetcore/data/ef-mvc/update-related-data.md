@@ -2,20 +2,18 @@
 title: "ASP.NET 核心 MVC 与 EF 核心-更新与相关的数据-7 个 10"
 author: tdykstra
 description: "在本教程中你将更新的更新外键字段和导航属性的相关的数据。"
-keywords: "ASP.NET 核心，实体框架核心，相关数据，联接"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 67bd162b-bfb7-4750-9e7f-705228b5288c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: b59782bccce00f3940da4ec8bcff768aff8fa4ef
-ms.sourcegitcommit: ccf08615ad59bc6f654560de33b93396113a2eb0
+ms.openlocfilehash: 0e4df407a1ca15aa5baa2b7226be1cf91902a583
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>更新相关的数据的 EF 内核，它们有 ASP.NET 核心 MVC 教程 (7 个 10)
 

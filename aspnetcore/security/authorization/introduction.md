@@ -2,20 +2,18 @@
 title: "授权简介"
 author: rick-anderson
 description: "本文档提供授权的基本说明，并说明授权如何与 ASP.NET Core 相关。"
-keywords: "ASP.NET 核心授权"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: a6a556ed-ba59-4107-9358-44cf20e5931b
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/introduction
-ms.openlocfilehash: 192cc494c2378f77207a4b1c17b0b0a73ca642ed
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6f4f1fb4f2776db10a1640049885e31e9a54011a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction"></a>介绍
 

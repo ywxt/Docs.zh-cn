@@ -2,7 +2,6 @@
 title: "与 EF 核心-并发-8 的 8 razor 页"
 author: rick-anderson
 description: "本教程演示如何处理冲突，当多个用户在同一时间更新同一实体。"
-keywords: "ASP.NET 核心，实体框架核心并发"
 ms.author: riande
 manager: wpickett
 ms.date: 11/15/2017
@@ -10,13 +9,13 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: 841c638b2cacaab7970f2b173fee488972957b63
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: a980669d49d332d7ef2ff5a18c73e9b269281287
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/19/2018
 ---
-en-我们 /
+en-us/
 
 # <a name="handling-concurrency-conflicts---ef-core-with-razor-pages-8-of-8"></a>处理并发冲突的 EF 内核，它们有 Razor 页 (8 的第 8)
 

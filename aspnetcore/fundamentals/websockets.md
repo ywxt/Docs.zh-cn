@@ -2,20 +2,18 @@
 title: "WebSockets 支持，在 ASP.NET 核心"
 author: tdykstra
 description: "了解如何开始使用 ASP.NET Core 中的 Websocket。"
-keywords: "ASP.NET 核心 Websocket"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/25/2017
 ms.topic: article
-ms.assetid: 0e0fedcd-a7b4-4479-8ae0-36eab0229d7e
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: fundamentals/websockets
-ms.openlocfilehash: 114d52d831668e5facd1142b5f9e5f68e7456f7e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 46c1f42b925a43df470d7491a1e259ab51ea5f50
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-websockets-in-aspnet-core"></a>在 ASP.NET Core Websocket 简介
 
@@ -26,7 +24,7 @@ ms.lasthandoff: 11/10/2017
 [查看或下载的示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample)([如何下载](xref:tutorials/index#how-to-download-a-sample))。 请参阅[后续步骤](#next-steps)部分以了解更多信息。
 
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 * ASP.NET 核心 1.1 （不会运行 1.0）
 * 任何 ASP.NET Core 运行的操作系统：

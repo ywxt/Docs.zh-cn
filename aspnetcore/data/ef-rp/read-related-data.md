@@ -2,7 +2,6 @@
 title: "与 EF 核心-razor 页读取相关的数据-8 6"
 author: rick-anderson
 description: "在本教程中你已阅读并显示相关的数据-即，实体框架将加载到导航属性的数据。"
-keywords: "ASP.NET 核心，实体框架核心，相关数据，联接"
 ms.author: riande
 manager: wpickett
 ms.date: 11/05/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: ba9b17ecdcb605d39117d03230b1db37e8e4d0dd
-ms.sourcegitcommit: 05e798c9bac7b9e9983599afb227ef393905d023
+ms.openlocfilehash: d0cdb5aaa4b1129c3f2404d069e9781ca16260b7
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="reading-related-data---ef-core-with-razor-pages-6-of-8"></a>读取与相关的数据的 EF 内核，它们有 Razor 页 (6 的 8)
 
@@ -51,7 +50,7 @@ ms.lasthandoff: 12/05/2017
 
  注意： EF 核心与以前已加载到上下文实例的任何其他实体的导航属性将自动修复。 即使一个导航属性的数据已*不*显式包含，可能仍填充属性，如果某些或所有相关实体先前已加载。
 
-* [显式加载](https://docs.microsoft.com/ef/core/querying/related-data#explicit-loading)。 当第一次读取实体时，不检索相关的数据。 必须编写代码，当需要时检索相关的数据。 显式加载与单独的查询会导致发送到的数据库的多个查询。 显式加载，该代码指定要加载的导航属性。 使用`Load`方法执行显式加载。 例如: 
+* [显式加载](https://docs.microsoft.com/ef/core/querying/related-data#explicit-loading)。 当第一次读取实体时，不检索相关的数据。 必须编写代码，当需要时检索相关的数据。 显式加载与单独的查询会导致发送到的数据库的多个查询。 显式加载，该代码指定要加载的导航属性。 使用`Load`方法执行显式加载。 例如:
 
  ![显式加载示例](read-related-data/_static/explicit-loading.png)
 
@@ -68,7 +67,7 @@ ms.lasthandoff: 12/05/2017
 * 获取`Name`属性从`Department`实体。
 * `Department`实体来自于`Course.Department`导航属性。
 
-![课程。部门](read-related-data/_static/dep-crs.png)
+![ourse.Department](read-related-data/_static/dep-crs.png)
 
 <a name="scaffold"></a>
 ### <a name="scaffold-the-course-model"></a>基架过程模型

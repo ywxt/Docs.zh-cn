@@ -6,15 +6,14 @@ ms.author: riande
 manager: wpickett
 ms.date: 10/27/2017
 ms.topic: article
-ms.assetid: f65ad22d-9472-478a-856c-c59c8681fa71
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/razor-pages-authorization
-ms.openlocfilehash: 36acf3c06a462882972c5f389d544d98cadc35f6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 72b558816e687c30d0c60f2fd85227d0d803219b
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="razor-pages-authorization-conventions-in-aspnet-core"></a>在 ASP.NET Core razor 页授权约定
 
@@ -80,5 +79,5 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="see-also"></a>请参阅
 
-* [Razor 页自定义路由和页模型提供程序](xref:mvc/razor-pages/razor-pages-convention-features)
+* [Razor 页面自定义路由和页面模型提供程序](xref:mvc/razor-pages/razor-pages-convention-features)
 * [PageConventionCollection](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageconventioncollection)类

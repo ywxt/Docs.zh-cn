@@ -2,20 +2,18 @@
 title: "有关 ASP.NET 核心响应压缩中间件"
 author: guardrex
 description: "了解如何响应压缩以及如何在 ASP.NET Core 应用中使用响应压缩中间件。"
-keywords: "ASP.NET 核心，性能、 响应压缩、 gzip、 接受编码、 中间件"
 ms.author: riande
 manager: wpickett
 ms.date: 08/20/2017
 ms.topic: article
-ms.assetid: de621887-c5c9-4ac8-9efd-f5cc0457a134
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: 86244179115fe6a7d0f7298495086a96ee9570d9
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 9270287b62f91ddb81d6a347dd583e1cbb32f3c3
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>有关 ASP.NET 核心响应压缩中间件
 
@@ -33,7 +31,7 @@ ms.lasthandoff: 01/11/2018
 * 无法使用以下基于服务器的压缩技术：
   * [IIS 动态压缩模块](https://www.iis.net/overview/reliability/dynamiccachingandcompression)
   * [Apache mod_deflate 模块](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
-  * [NGINX 压缩和解压缩](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
+  * [Nginx 压缩和解压缩](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
 * 直接在上托管：
   * [HTTP.sys 服务器](xref:fundamentals/servers/httpsys)(以前称为[WebListener](xref:fundamentals/servers/weblistener))
   * [Kestrel](xref:fundamentals/servers/kestrel)
@@ -184,7 +182,7 @@ Gzip 压缩提供程序默认为最快的压缩级别 (`CompressionLevel.Fastest
 [!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet1)]
 
 ## <a name="middleware-issue-when-behind-an-nginx-reverse-proxy"></a>后面 Nginx 反向代理时的中间件问题
-当请求代理 nginx，`Accept-Encoding`删除标头。 这可以防止该中间件压缩响应。 有关详细信息，请参阅[NGINX： 压缩和解压缩](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)。 此问题将跟踪[找出传递压缩 nginx (BasicMiddleware #123)](https://github.com/aspnet/BasicMiddleware/issues/123)。
+当请求代理 nginx，`Accept-Encoding`删除标头。 这可以防止该中间件压缩响应。 有关详细信息，请参阅[NGINX： 压缩和解压缩](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)。 此问题将跟踪[找出传递压缩 Nginx (BasicMiddleware #123)](https://github.com/aspnet/BasicMiddleware/issues/123)。
 
 ## <a name="working-with-iis-dynamic-compression"></a>使用 IIS 动态压缩
 如果你有一个 active IIS 动态压缩模块你想要禁用的应用程序的服务器级别配置，可以进行此操作而添加到你*web.config*文件。 有关详细信息，请参阅[禁用 IIS 模块](xref:host-and-deploy/iis/modules#disabling-iis-modules)。

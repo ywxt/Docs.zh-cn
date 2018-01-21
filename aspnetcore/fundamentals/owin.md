@@ -2,21 +2,19 @@
 title: ".NET 的开放 Web 接口 (OWIN)"
 author: ardalis
 description: "发现如何 ASP.NET Core 支持打开的 Web 接口的.NET (OWIN)，这允许 web 应用程序从 web 服务器分离。"
-keywords: "ASP.NET 核心，为使.NET，OWIN 打开 Web 接口"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 70c4e6bc-a773-4039-96ec-6fe557c9369d
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/owin
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e2ee970a1c9cd05ebee76b92c3e2c7c6c6cc6ef8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e819037e2ebd1566c778879516e20de8dc7603ea
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-open-web-interface-for-net-owin"></a>若要打开.NET (OWIN) 的 Web 界面的简介
 
@@ -241,84 +239,84 @@ public class Startup
 
 | 键               | 值 （类型） | 描述 |
 | ----------------- | ------------ | ----------- |
-| owin。RequestScheme | `String` |  |
-| owin。RequestMethod  | `String` | |    
-| owin。RequestPathBase  | `String` | |    
-| owin。RequestPath | `String` | |     
-| owin。RequestQueryString  | `String` | |    
-| owin。RequestProtocol  | `String` | |    
-| owin。RequestHeaders | `IDictionary<string,string[]>`  | |
-| owin。RequestBody | `Stream`  | |
+| owin.RequestScheme | `String` |  |
+| owin.RequestMethod  | `String` | |    
+| owin.RequestPathBase  | `String` | |    
+| owin.RequestPath | `String` | |     
+| owin.RequestQueryString  | `String` | |    
+| owin.RequestProtocol  | `String` | |    
+| owin.RequestHeaders | `IDictionary<string,string[]>`  | |
+| owin.RequestBody | `Stream`  | |
 
 ### <a name="request-data-owin-v110"></a>请求的数据 (OWIN v1.1.0)
 
 | 键               | 值 （类型） | 描述 |
 | ----------------- | ------------ | ----------- |
-| owin。请求 Id | `String` | Optional |
+| owin.RequestId | `String` | Optional |
 
 ### <a name="response-data-owin-v100"></a>响应数据 (OWIN v1.0.0)
 
 | 键               | 值 （类型） | 描述 |
 | ----------------- | ------------ | ----------- |
-| owin。ResponseStatusCode | `int` | Optional |
-| owin。ResponseReasonPhrase | `String` | Optional |
-| owin。ResponseHeaders | `IDictionary<string,string[]>`  | |
-| owin。ResponseBody | `Stream`  | |
+| owin.ResponseStatusCode | `int` | Optional |
+| owin.ResponseReasonPhrase | `String` | Optional |
+| owin.ResponseHeaders | `IDictionary<string,string[]>`  | |
+| owin.ResponseBody | `Stream`  | |
 
 
 ### <a name="other-data-owin-v100"></a>其他数据 (OWIN v1.0.0)
 
 | 键               | 值 （类型） | 描述 |
 | ----------------- | ------------ | ----------- |
-| owin。CallCancelled | `CancellationToken` |  |
-| owin。版本  | `String` | |   
+| owin.CallCancelled | `CancellationToken` |  |
+| owin.Version  | `String` | |   
 
 
 ### <a name="common-keys"></a>常见的键
 
 | 键               | 值 （类型） | 描述 |
 | ----------------- | ------------ | ----------- |
-| ssl。ClientCertificate | `X509Certificate` |  |
-| ssl。LoadClientCertAsync  | `Func<Task>` | |    
-| 服务器。RemoteIpAddress  | `String` | |    
-| 服务器。端口远程端口 | `String` | |     
-| 服务器。LocalIpAddress  | `String` | |    
-| 服务器。LocalPort  | `String` | |    
-| 服务器。IsLocal  | `bool` | |    
-| 服务器。OnSendingHeaders  | `Action<Action<object>,object>` | |
+| ssl.ClientCertificate | `X509Certificate` |  |
+| ssl.LoadClientCertAsync  | `Func<Task>` | |    
+| server.RemoteIpAddress  | `String` | |    
+| server.RemotePort | `String` | |     
+| server.LocalIpAddress  | `String` | |    
+| server.LocalPort  | `String` | |    
+| server.IsLocal  | `bool` | |    
+| server.OnSendingHeaders  | `Action<Action<object>,object>` | |
 
 
 ### <a name="sendfiles-v030"></a>SendFiles v0.3.0
 
 | 键               | 值 （类型） | 描述 |
 | ----------------- | ------------ | ----------- |
-| sendfile。SendAsync | 请参阅[委托签名](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) | 每个请求 |
+| sendfile.SendAsync | 请参阅[委托签名](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) | 每个请求 |
 
 
 ### <a name="opaque-v030"></a>不透明 v0.3.0
 
 | 键               | 值 （类型） | 描述 |
 | ----------------- | ------------ | ----------- |
-| 不透明。版本 | `String` |  |
-| 不透明。升级 | `OpaqueUpgrade` | 请参阅[委托签名](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) |
-| 不透明。流 | `Stream` |  |
-| 不透明。CallCancelled | `CancellationToken` |  |
+| opaque.Version | `String` |  |
+| opaque.Upgrade | `OpaqueUpgrade` | 请参阅[委托签名](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) |
+| opaque.Stream | `Stream` |  |
+| opaque.CallCancelled | `CancellationToken` |  |
 
 
 ### <a name="websocket-v030"></a>WebSocket v0.3.0
 
 | 键               | 值 （类型） | 描述 |
 | ----------------- | ------------ | ----------- |
-| websocket。版本 | `String` |  |
-| websocket。接受 | `WebSocketAccept` | 请参阅[委托签名](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) |
-| websocket。AcceptAlt |  | 非规范 |
-| websocket。子协议 | `String` | 请参阅[RFC6455 4.2.2](https://tools.ietf.org/html/rfc6455#section-4.2.2)步骤 5.5 |
-| websocket。SendAsync | `WebSocketSendAsync` | 请参阅[委托签名](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
-| websocket。ReceiveAsync | `WebSocketReceiveAsync` | 请参阅[委托签名](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
-| websocket。CloseAsync | `WebSocketCloseAsync` | 请参阅[委托签名](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
-| websocket。CallCancelled | `CancellationToken` |  |
-| websocket。ClientCloseStatus | `int` | Optional |
-| websocket。ClientCloseDescription | `String` | Optional |
+| websocket.Version | `String` |  |
+| websocket.Accept | `WebSocketAccept` | 请参阅[委托签名](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) |
+| websocket.AcceptAlt |  | 非规范 |
+| websocket.SubProtocol | `String` | 请参阅[RFC6455 4.2.2](https://tools.ietf.org/html/rfc6455#section-4.2.2)步骤 5.5 |
+| websocket.SendAsync | `WebSocketSendAsync` | 请参阅[委托签名](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
+| websocket.ReceiveAsync | `WebSocketReceiveAsync` | 请参阅[委托签名](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
+| websocket.CloseAsync | `WebSocketCloseAsync` | 请参阅[委托签名](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
+| websocket.CallCancelled | `CancellationToken` |  |
+| websocket.ClientCloseStatus | `int` | Optional |
+| websocket.ClientCloseDescription | `String` | Optional |
 
 
 ## <a name="additional-resources"></a>其他资源

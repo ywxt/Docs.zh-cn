@@ -2,20 +2,18 @@
 title: "缓存 ASP.NET Core MVC 中的标记帮助器"
 author: pkellner
 description: "演示如何使用缓存标记帮助器"
-keywords: "ASP.NET Core, 标记帮助程序"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a012
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 74080d089dc7a72da96f9f18d613cb313cd930db
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: dfd9c3c0c4e50a99e4f8703b01bd9b384930b87a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>缓存 ASP.NET Core MVC 中的标记帮助器
 
@@ -60,7 +58,7 @@ Razor 视图引擎设置的默认`expires-after`到 20 分钟。
 
 - - -
 
-### <a name="expires-on"></a>过期上 
+### <a name="expires-on"></a>expires-on 
 
 | 特性类型    | 示例值     |
 |----------------   |----------------   |
@@ -79,7 +77,7 @@ Razor 视图引擎设置的默认`expires-after`到 20 分钟。
 
 - - -
 
-### <a name="expires-after"></a>过期时间
+### <a name="expires-after"></a>expires-after
 
 | 特性类型    | 示例值     |
 |----------------   |----------------   |
@@ -98,7 +96,7 @@ Razor 视图引擎设置的默认`expires-after`到 20 分钟。
 
 - - -
 
-### <a name="expires-sliding"></a>过期-滑动
+### <a name="expires-sliding"></a>expires-sliding
 
 | 特性类型    | 示例值     |
 |----------------   |----------------   |
@@ -121,8 +119,8 @@ Razor 视图引擎设置的默认`expires-after`到 20 分钟。
 
 | 特性类型    | 示例值                |
 |----------------   |----------------               |
-| 字符串            | "用户代理"                  |
-|                   | "用户代理，内容编码" |
+| String            | "User-Agent"                  |
+|                   | "User-Agent,content-encoding" |
 
 接受的单个标头值或在更改时触发缓存刷新的标头值的以逗号分隔列表。 下面的示例监视标头值`User-Agent`。 该示例将缓存的内容的每个不同`User-Agent`向 web 服务器显示。
 
@@ -136,11 +134,11 @@ Razor 视图引擎设置的默认`expires-after`到 20 分钟。
 
 - - -
 
-### <a name="vary-by-query"></a>不同的查询
+### <a name="vary-by-query"></a>vary-by-query
 
 | 特性类型    | 示例值                |
 |----------------   |----------------               |
-| 字符串            | "使"                |
+| String            | "使"                |
 |                   | "生成，模型" |
 
 接受的单个标头值或以逗号分隔的标头值更改时触发缓存刷新的标头值的列表。 下面的示例查找值`Make`和`Model`。
@@ -155,11 +153,11 @@ Razor 视图引擎设置的默认`expires-after`到 20 分钟。
 
 - - -
 
-### <a name="vary-by-route"></a>不同的路由
+### <a name="vary-by-route"></a>vary-by-route
 
 | 特性类型    | 示例值                |
 |----------------   |----------------               |
-| 字符串            | "使"                |
+| String            | "使"                |
 |                   | "生成，模型" |
 
 接受的单个标头值或路由数据参数值更改时触发缓存刷新的标头值的以逗号分隔列表。 示例:
@@ -182,11 +180,11 @@ Index.cshtml
 
 - - -
 
-### <a name="vary-by-cookie"></a>不同的 cookie
+### <a name="vary-by-cookie"></a>vary-by-cookie
 
 | 特性类型    | 示例值                |
 |----------------   |----------------               |
-| 字符串            | ".AspNetCore.Identity.Application"                |
+| String            | ".AspNetCore.Identity.Application"                |
 |                   | ".AspNetCore.Identity.Application,HairColor" |
 
 接受的单个标头值或在标头值 (s) 更改时触发缓存刷新的标头值的以逗号分隔列表。 下面的示例查找在与 ASP.NET 标识关联的 cookie。 用户进行身份验证时请求 cookie 设置随即将会触发缓存刷新。
@@ -201,7 +199,7 @@ Index.cshtml
 
 - - -
 
-### <a name="vary-by-user"></a>不同的用户
+### <a name="vary-by-user"></a>vary-by-user
 
 | 特性类型    | 示例值                |
 |----------------   |----------------               |
@@ -224,11 +222,11 @@ Index.cshtml
 
 - - -
 
-### <a name="vary-by"></a>变化因素
+### <a name="vary-by"></a>vary-by
 
 | 特性类型    | 示例值                |
 |----------------   |----------------               |
-| 字符串             | “@Model”                 |
+| String             | “@Model”                 |
 
 
 允许获取缓存哪些数据的自定义项。 当更新属性的字符串值发生更改，缓存标记帮助器的内容所引用的对象。 通常模型值字符串串联分配给此属性。  实际上，这意味着对任何的串连值的更新令缓存失效。

@@ -2,20 +2,18 @@
 title: "具有 ASP.NET 核心 mvc 控制器处理请求"
 author: ardalis
 description: 
-keywords: ASP.NET Core
 ms.author: riande
 manager: wpickett
 ms.date: 07/03/2017
 ms.topic: article
-ms.assetid: 9da9eb52-8583-4069-af91-155ba3529d7f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/actions
-ms.openlocfilehash: 5dc6c7dc70027bb79875f389d535119a2543b873
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cef493fc2010d1c82e5c1dfec85864539252b817
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>具有 ASP.NET 核心 mvc 控制器处理请求
 
@@ -68,7 +66,7 @@ ms.lasthandoff: 11/10/2017
 
     此类型返回 HTTP 状态代码。 此类型的几个帮助器方法是`BadRequest`， `NotFound`，和`Ok`。 例如，`return BadRequest();`产生 400 状态代码执行时。 当等方法`BadRequest`， `NotFound`，和`Ok`是重载，它们不再符合条件作为 HTTP 状态代码的响应方，因为内容协商正在进行。
 
-* **重定向**
+* **Redirect**
 
     此类型返回到的重定向操作或目标 (使用`Redirect`， `LocalRedirect`， `RedirectToAction`，或`RedirectToRoute`)。 例如，`return RedirectToAction("Complete", new {id = 123});`将重定向到`Complete`，传递一个匿名的对象。
 

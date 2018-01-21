@@ -2,20 +2,18 @@
 title: "Razor 页路由和应用程序中 ASP.NET Core 的约定功能"
 author: guardrex
 description: "发现如何路由和应用程序模型提供程序约定功能帮助你控制页路由、 发现和处理。"
-keywords: "ASP.NET 核心、 Razor 页、 约定，AddFolderRouteModelConvention、 AddPageRouteModelConvention、 AddPageRoute、 AddFolderApplicationModelConvention、 AddPageApplicationModelConvention，ConfigureFilter，筛选器"
 ms.author: riande
 manager: wpickett
 ms.date: 10/23/2017
 ms.topic: article
-ms.assetid: 6b60514c-81ad-485b-bb22-9b71416dff08
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/razor-pages/razor-pages-convention-features
-ms.openlocfilehash: 81fe5198e25c4275f5cf0a123536a9130be8c1d9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 69475ca9abd4e732dc704ad6a8a2fffe219984f7
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="razor-pages-route-and-app-convention-features-in-aspnet-core"></a>Razor 页路由和应用程序中 ASP.NET Core 的约定功能
 
@@ -298,4 +296,4 @@ MVC[操作筛选器](xref:mvc/controllers/filters#action-filters)将被忽略由
 
 ## <a name="see-also"></a>请参阅
 
-* [Razor 页授权约定](xref:security/authorization/razor-pages-authorization)
+* [Razor 页面授权约定](xref:security/authorization/razor-pages-authorization)

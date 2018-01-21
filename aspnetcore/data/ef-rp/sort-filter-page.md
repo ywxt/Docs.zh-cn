@@ -2,18 +2,17 @@
 title: "Razor 页与 EF 核心的排序、 筛选器、 分页-8 3"
 author: rick-anderson
 description: "在本教程中，你将添加排序、 筛选和分页功能页上使用 ASP.NET Core 和实体框架核心。"
-keywords: "ASP.NET 核心、 实体框架核心、 排序、 筛选器、 分页，分组"
 ms.author: riande
 ms.date: 10/22/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 5e17663b88a622101245228e9372db55e4e874be
-ms.sourcegitcommit: 703593d5fd14076e79be2ba75a5b8da12a60ab15
+ms.openlocfilehash: 08f00e183dd8a8daa883d0b9ff15698b3a39f625
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>排序、 筛选、 分页和分组-带有 Razor 页 (8 的 3) 的 EF 核心
 
@@ -142,7 +141,7 @@ ms.lasthandoff: 12/05/2017
 
 前面的代码使用`<form>`[标记帮助器](xref:mvc/views/tag-helpers/intro)添加搜索文本框和按钮。 默认情况下，`<form>`标记帮助器提交 post 的窗体数据。 使用 POST，参数进行传递 HTTP 消息正文中，不能在 URL。 当使用 HTTP GET 时，窗体数据是在 URL 中传递作为查询字符串。 传递具有查询字符串的数据使用户能够创建 URL 的书签。 [W3C 准则](https://www.w3.org/2001/tag/doc/whenToUseGet.html)建议的操作未导致更新时，应使用 GET。
 
-测试应用程序：
+测试应用：
 
 * 选择**学生**选项卡并输入搜索字符串。
 * 选择**搜索**。

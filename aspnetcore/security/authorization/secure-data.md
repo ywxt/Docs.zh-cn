@@ -1,20 +1,18 @@
 ---
 title: "使用受授权的用户数据创建 ASP.NET Core 应用"
 author: rick-anderson
-keywords: "ASP.NET 核心、 MVC，授权、 角色、 安全性、 管理员"
 ms.author: riande
 manager: wpickett
 ms.date: 05/22/2017
 ms.topic: article
-ms.assetid: abeb2f8e-dfbf-4398-a04c-338a613a65bc
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: security/authorization/secure-data
-ms.openlocfilehash: db95d46dafdd300d4ec13e8cc31a3d995016ab92
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 861ac619c7f5fb19a56c59536e20724d96bbddca
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>使用受授权的用户数据创建 ASP.NET Core 应用
 
@@ -53,12 +51,12 @@ ms.lasthandoff: 12/15/2017
 
 A`ContactIsOwnerAuthorizationHandler`授权处理程序可确保用户只能编辑其数据。 A`ContactManagerAuthorizationHandler`授权处理程序允许管理器批准或拒绝联系人。  A`ContactAdministratorsAuthorizationHandler`授权处理程序允许管理员批准或拒绝联系人，还可以编辑/删除联系人。 
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 这不是开始本教程。 你应熟悉：
 
 * [ASP.NET 核心 MVC](xref:tutorials/first-mvc-app/start-mvc)
-* [实体框架核心](xref:data/ef-mvc/intro)
+* [Entity Framework Core](xref:data/ef-mvc/intro)
 
 ## <a name="the-starter-and-completed-app"></a>初学者和已完成应用程序
 
@@ -252,7 +250,7 @@ dotnet user-secrets set SeedUserPW <PW>
 * 经理可以批准或拒绝联系人数据。 `Details`视图显示**批准**和**拒绝**按钮。 
 * 管理员可以批准/拒绝和编辑/删除任何数据。
 
-| 用户| 选项 |
+| “用户”| 选项 |
 | ------------ | ---------|
 | test@example.com | 可以编辑/删除自己的数据 |
 | manager@contoso.com | 可以批准/拒绝和编辑/删除拥有数据  |
@@ -321,4 +319,4 @@ dotnet user-secrets set SeedUserPW <PW>
 
 * [ASP.NET 核心授权实验室](https://github.com/blowdart/AspNetAuthorizationWorkshop)。 在本教程中引入的安全功能，此实验室将进入更多详细信息。
 * [在 ASP.NET Core 中的授权： 基于声明的和自定义的简单，角色](index.md)
-* [自定义的基于策略的授权](policies.md)
+* [基于自定义策略的授权](policies.md)

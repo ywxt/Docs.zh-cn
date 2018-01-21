@@ -2,20 +2,18 @@
 title: "在 ASP.NET 核心中支持的数据保护计算机范围的策略"
 author: rick-anderson
 description: "了解有关设置默认计算机范围策略对于使用 ASP.NET 核心数据保护的所有应用程序的支持。"
-keywords: ASP.NET Core
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 285ae47d-e0bf-4b03-b0a8-2b1fb18bc3a1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/configuration/machine-wide-policy
-ms.openlocfilehash: 692e120f13882be594afc5fb926b96b82d9609e2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4c3ae3b628ebe17c7926c71f1fad664d719d1706
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="data-protection-machine-wide-policy-support-in-aspnet-core"></a>在 ASP.NET 核心中支持的数据保护计算机范围的策略
 
@@ -36,39 +34,39 @@ Windows 上运行时，数据保护系统具有有限的支持设置默认计算
 
 支持的值如下所示。
 
-| 值              | 类型   | 描述 |
+| “值”              | 类型   | 描述 |
 | ------------------ | :----: | ----------- |
-| EncryptionType     | string | 指定应使用哪些算法来进行数据保护。 值必须为 CNG CBC、 CNG 的 GCM 或托管和中更详细地介绍了。 |
+| EncryptionType     | 字符串 | 指定应使用哪些算法来进行数据保护。 值必须为 CNG CBC、 CNG 的 GCM 或托管和中更详细地介绍了。 |
 | DefaultKeyLifetime | DWORD  | 指定新生成的键的生存期。 此值以天为单位指定，并且必须是 > = 7。 |
-| KeyEscrowSinks     | string | 指定用于密钥证书的类型。 值是以分号分隔的密钥托管接收器，其中在列表中的每个元素都实现的类型的程序集限定名称列表[IKeyEscrowSink](/dotnet/api/microsoft.aspnetcore.dataprotection.keymanagement.ikeyescrowsink)。 |
+| KeyEscrowSinks     | 字符串 | 指定用于密钥证书的类型。 值是以分号分隔的密钥托管接收器，其中在列表中的每个元素都实现的类型的程序集限定名称列表[IKeyEscrowSink](/dotnet/api/microsoft.aspnetcore.dataprotection.keymanagement.ikeyescrowsink)。 |
 
 ## <a name="encryption-types"></a>加密类型
 
 如果 EncryptionType CNG CBC，系统配置为使用 CBC 模式对称的块密码来进行保密性和 HMAC 真实性有通过 Windows CNG 提供服务 (请参阅[指定自定义 Windows CNG 算法](xref:security/data-protection/configuration/overview#specifying-custom-windows-cng-algorithms)为更多详细信息）。 支持以下的其他值，其中每个对应于 CngCbcAuthenticatedEncryptionSettings 类型上的属性。
 
-| 值                       | 类型   | 描述 |
+| “值”                       | 类型   | 描述 |
 | --------------------------- | :----: | ----------- |
-| EncryptionAlgorithm         | string | 理解的 CNG 对称的块密码算法的名称。 此算法在 CBC 模式下打开。 |
-| EncryptionAlgorithmProvider | string | 可以生成 EncryptionAlgorithm 的算法的 CNG 提供程序实现的名称。 |
+| EncryptionAlgorithm         | 字符串 | 理解的 CNG 对称的块密码算法的名称。 此算法在 CBC 模式下打开。 |
+| EncryptionAlgorithmProvider | 字符串 | 可以生成 EncryptionAlgorithm 的算法的 CNG 提供程序实现的名称。 |
 | EncryptionAlgorithmKeySize  | DWORD  | 要派生的对称块加密算法的密钥长度 （以位为单位）。 |
-| HashAlgorithm               | string | 理解的 CNG 哈希算法的名称。 此算法在 HMAC 模式打开。 |
-| HashAlgorithmProvider       | string | 可以生成算法的 HashAlgorithm CNG 提供程序实现的名称。 |
+| HashAlgorithm               | 字符串 | 理解的 CNG 哈希算法的名称。 此算法在 HMAC 模式打开。 |
+| HashAlgorithmProvider       | 字符串 | 可以生成算法的 HashAlgorithm CNG 提供程序实现的名称。 |
 
 如果 EncryptionType CNG GCM，系统配置为使用保密性和身份验证与服务提供的 Windows CNG Galois/计数器模式对称的块密码 (请参阅[指定自定义 Windows CNG 算法](xref:security/data-protection/configuration/overview#specifying-custom-windows-cng-algorithms)有关详细信息）。 支持以下的其他值，其中每个对应于 CngGcmAuthenticatedEncryptionSettings 类型上的属性。
 
-| 值                       | 类型   | 描述 |
+| “值”                       | 类型   | 描述 |
 | --------------------------- | :----: | ----------- |
-| EncryptionAlgorithm         | string | 理解的 CNG 对称的块密码算法的名称。 此算法将在 Galois/计数器模式中打开。 |
-| EncryptionAlgorithmProvider | string | 可以生成 EncryptionAlgorithm 的算法的 CNG 提供程序实现的名称。 |
+| EncryptionAlgorithm         | 字符串 | 理解的 CNG 对称的块密码算法的名称。 此算法将在 Galois/计数器模式中打开。 |
+| EncryptionAlgorithmProvider | 字符串 | 可以生成 EncryptionAlgorithm 的算法的 CNG 提供程序实现的名称。 |
 | EncryptionAlgorithmKeySize  | DWORD  | 要派生的对称块加密算法的密钥长度 （以位为单位）。 |
 
 如果管理 EncryptionType，系统配置为用于托管的 SymmetricAlgorithm 保密性和 KeyedHashAlgorithm 真实性 (请参阅[指定自定义管理算法](xref:security/data-protection/configuration/overview#specifying-custom-managed-algorithms)有关详细信息)。 支持以下的其他值，其中每个对应于 ManagedAuthenticatedEncryptionSettings 类型上的属性。
 
-| 值                      | 类型   | 描述 |
+| “值”                      | 类型   | 描述 |
 | -------------------------- | :----: | ----------- |
-| EncryptionAlgorithmType    | string | 实现 SymmetricAlgorithm 的类型的程序集限定名称。 |
+| EncryptionAlgorithmType    | 字符串 | 实现 SymmetricAlgorithm 的类型的程序集限定名称。 |
 | EncryptionAlgorithmKeySize | DWORD  | 要派生的对称加密算法的密钥长度 （以位为单位）。 |
-| ValidationAlgorithmType    | string | 实现 KeyedHashAlgorithm 的类型的程序集限定名称。 |
+| ValidationAlgorithmType    | 字符串 | 实现 KeyedHashAlgorithm 的类型的程序集限定名称。 |
 
 如果 EncryptionType 具有任何其他值非 null 或空时，数据保护系统启动时引发的异常。
 

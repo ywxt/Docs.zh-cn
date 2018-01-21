@@ -2,20 +2,18 @@
 title: "启用跨源请求 (CORS)"
 author: rick-anderson
 description: "本文档介绍了 CORS，作为一种标准允许或拒绝 ASP.NET Core 应用程序中的跨域请求。"
-keywords: "ASP.NET 核心，CORS，跨源"
 ms.author: riande
 manager: wpickett
 ms.date: 05/17/2017
 ms.topic: article
-ms.assetid: f9d95e88-4d7e-4d0c-a8e1-47de1128d505
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cors
-ms.openlocfilehash: 5398b6ad6531710de2b8000cb368e5fa607ae7ff
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: e6b49b9dde94cc7d035ea91b992a13df8cb8caf2
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>启用跨源请求 (CORS)
 
@@ -164,15 +162,15 @@ CORS 预检请求可能包括一个访问控制的请求标头标头，列出由
 
 默认情况下，浏览器不公开所有向应用程序的响应标头。 (请参阅[http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header)。)默认为可用的响应标头是：
 
-* 缓存控制
+* Cache-Control
 
-* 内容语言
+* Content-Language
 
-* 内容类型
+* Content-Type
 
 * 过期
 
-* 上次修改
+* Last-Modified
 
 * 杂注
 
@@ -268,7 +266,7 @@ Test message
 
   * application/x-www-form-urlencoded
 
-  * multipart/窗体的数据
+  * multipart/form-data
 
   * 文本/无格式
 

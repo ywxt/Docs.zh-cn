@@ -2,21 +2,19 @@
 title: "ASP.NET 核心 MVC 中的格式设置响应数据"
 author: ardalis
 description: "了解如何设置 ASP.NET 核心 mvc 响应数据的格式。"
-keywords: "ASP.NET 核心、 IOutputFormatter、 IActionResult 响应数据"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: c056df45-d013-4826-91a1-4a092bae1ea5
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/formatting
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: abc125a093ff2cd5a38a537ecdfc795ff03e23f7
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 85398928164e75ec27c91870f03ee1c81725e080
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-formatting-response-data-in-aspnet-core-mvc"></a>ASP.NET 核心 MVC 中的格式设置响应数据简介
 
@@ -173,7 +171,7 @@ services.AddMvc(options =>
 
 ## <a name="response-format-url-mappings"></a>响应格式 URL 映射
 
-客户端可以在查询字符串或一部分的路径，或使用特定格式的文件扩展名，如.xml 或.json 中特定格式的 URL，一部分请求如。 应使用该 API 的路由中指定请求路径中的映射。 例如: 
+客户端可以在查询字符串或一部分的路径，或使用特定格式的文件扩展名，如.xml 或.json 中特定格式的 URL，一部分请求如。 应使用该 API 的路由中指定请求路径中的映射。 例如:
 
 ```csharp
 [FormatFilter]

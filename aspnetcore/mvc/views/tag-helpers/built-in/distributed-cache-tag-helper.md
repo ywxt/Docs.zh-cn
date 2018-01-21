@@ -2,20 +2,18 @@
 title: "分布式缓存标记帮助器 |Microsoft 文档"
 author: pkellner
 description: "演示如何使用缓存标记帮助器"
-keywords: "ASP.NET Core, 标记帮助程序"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a022
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper
-ms.openlocfilehash: 462c3775677924fc7b9b715cd6de75fe53ada89e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f5844dade218fdba1169a55fe3ce251a9cc03db2
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="distributed-cache-tag-helper"></a>分布式的缓存标记帮助器
 
@@ -43,7 +41,7 @@ ms.lasthandoff: 11/10/2017
 
 | 特性类型    | 示例值     |
 |----------------   |----------------   |
-| string    | "my-distributed-cache-unique-key-101"     |
+| 字符串    | "my-distributed-cache-unique-key-101"     |
 
 所需`name`属性用作每个实例的分布式缓存标记帮助器存储该缓存的键。  与不同的是基本缓存标记帮助程序为基于 Razor 页名称和位置在 razor 页中的标记帮助程序的每个缓存标记帮助器实例分配一个密钥，分布式缓存标记帮助器仅基于的密钥属性`name`
 

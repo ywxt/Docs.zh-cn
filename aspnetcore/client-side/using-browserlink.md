@@ -2,21 +2,19 @@
 title: "在 ASP.NET 核心中的浏览器链接"
 author: ncarandini
 description: "说明如何浏览器链接是链接使用一个或多个 web 浏览器在开发环境的 Visual Studio 功能。"
-keywords: "ASP.NET 核心，浏览器链接，CSS 同步"
 ms.author: riande
 manager: wpickett
 ms.date: 09/22/2017
 ms.topic: article
-ms.assetid: 11813d4c-3f8a-445a-b23b-e4a57d001abc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-browserlink
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b69d085e8bee4cdac2dff08b46a95a8869e263b7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d5db65c268923e96c45b034639437fc3496ccac1
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="browser-link-in-aspnet-core"></a>在 ASP.NET 核心中的浏览器链接 
 
@@ -106,7 +104,7 @@ if (env.IsDevelopment())
 
 更改索引视图中，并单击浏览器链接刷新按钮后，将更新所有连接的浏览器：
 
-![浏览器更改同步](using-browserlink/_static/browsers-sync-to-changes.png)
+![browsers-sync-to-changes](using-browserlink/_static/browsers-sync-to-changes.png)
 
 浏览器链接也适用于浏览器，从 Visual Studio 外部启动并导航到应用程序 URL。
 
@@ -114,15 +112,15 @@ if (env.IsDevelopment())
 
 从浏览器链接下拉菜单来管理与打开的浏览器的连接打开浏览器链接仪表板：
 
-![仪表-板 browserslink 打开](using-browserlink/_static/open-browserlink-dashboard.png)
+![open-browserslink-dashboard](using-browserlink/_static/open-browserlink-dashboard.png)
 
 如果连接没有浏览器，您可以通过选择启动非调试会话*用浏览器查看*链接：
 
-![浏览器链接仪表板-无连接](using-browserlink/_static/browserlink-dashboard-no-connections.png)
+![browserlink-dashboard-no-connections](using-browserlink/_static/browserlink-dashboard-no-connections.png)
 
 否则，连接的浏览器在显示时带有显示每个浏览器的页面的路径：
 
-![浏览器链接仪表板的两个连接](using-browserlink/_static/browserlink-dashboard-two-connections.png)
+![browserlink-dashboard-two-connections](using-browserlink/_static/browserlink-dashboard-two-connections.png)
 
 如果您愿意，你可以单击要刷新该单个浏览器的列出的浏览器名称。
 

@@ -2,20 +2,18 @@
 title: "Razor 视图编译和预编译"
 author: rick-anderson
 description: "参考文档，以解释如何启用 MVC Razor 视图编译和 ASP.NET Core 应用程序中的预编译。"
-keywords: "ASP.NET 核心，Razor 视图编译、 Razor 预编译、 Razor 预编译"
 ms.author: riande
 manager: wpickett
 ms.date: 12/13/2017
 ms.topic: article
-ms.assetid: ab4705b7-1638-1638-bc97-ea7f292fe92a
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 6839892c104673af0fd0fd074d368f3f42259d76
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 87989455c2fb6b5a922c7fb6133aa3e8cef42c88
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="razor-view-compilation-and-precompilation-in-aspnet-core"></a>Razor 视图编译和 ASP.NET Core 中的预编译
 

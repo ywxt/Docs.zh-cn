@@ -2,7 +2,6 @@
 title: "与 EF 核心-数据模型-5 8 razor 页"
 author: rick-anderson
 description: "在本教程中添加更多实体和关系，并通过指定格式设置、 验证和数据库的映射规则自定义数据模型。"
-keywords: "ASP.NET 核心，实体框架核心数据批注"
 ms.author: riande
 manager: wpickett
 ms.date: 10/25/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: c2761f79fa4836d29541526782969bb0fd47778b
-ms.sourcegitcommit: 6e46abd65973dea796d364a514de9ec2e3e1c1ed
+ms.openlocfilehash: c375fe6ea98c621012eb55589c8b174c2a95b697
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-razor-pages-tutorial-5-of-8"></a>创建复杂的数据模型的 EF 核心 Razor 页教程 (5 的 8)
 
@@ -45,7 +44,7 @@ ms.lasthandoff: 12/02/2017
 
 [!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
-[DataType](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatypeattribute?view=netframework-4.7.1)属性指定比数据库内部类型更具体的数据类型。 在此情况下应显示仅显示日期，不的日期和时间。 [DataType 枚举](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatype?view=netframework-4.7.1)提供对于许多数据类型，例如日期、 时间、 电话号码、 货币、 电子邮件地址，等等。`DataType`属性还可以启用该应用程序自动提供特定类型的功能。 例如: 
+[DataType](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatypeattribute?view=netframework-4.7.1)属性指定比数据库内部类型更具体的数据类型。 在此情况下应显示仅显示日期，不的日期和时间。 [DataType 枚举](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatype?view=netframework-4.7.1)提供对于许多数据类型，例如日期、 时间、 电话号码、 货币、 电子邮件地址，等等。`DataType`属性还可以启用该应用程序自动提供特定类型的功能。 例如:
 
 * `mailto:`为自动创建链接`DataType.EmailAddress`。
 * 为提供的日期选择器`DataType.Date`大多数浏览器中。
@@ -84,7 +83,7 @@ ms.lasthandoff: 12/02/2017
 前面的代码限制为不超过 50 个字符的名称。 `StringLength`属性不会阻止用户从空白区域输入一个名称。 [正则表达式](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1)特性用于将限制应用到的输入。 例如，下面的代码要求的第一个字符是大写且其余的字符是按字母顺序排列：
 
 ```csharp
-[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
+[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
 ```
 
 运行应用程序：

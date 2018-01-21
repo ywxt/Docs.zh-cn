@@ -2,20 +2,18 @@
 title: "URL 重写在 ASP.NET 核心中的中间件"
 author: guardrex
 description: "了解有关 URL 重写并将 URL 重写中间件与 ASP.NET Core 应用程序中的重定向信息。"
-keywords: "ASP.NET 核心 URL 重写，URL 重写，重定向，URL 重定向，中间件，apache_mod URL"
 ms.author: riande
 manager: wpickett
 ms.date: 08/17/2017
 ms.topic: article
-ms.assetid: e6130638-c410-4161-9921-b658ce988bd1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: e07634a6d7ad97bf8735029b5c28d6935b71eb52
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 769696931498605bd3cf3459279939afb86a4ee8
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>URL 重写在 ASP.NET 核心中的中间件
 
@@ -266,7 +264,7 @@ A`StreamReader`用于读取从规则*IISUrlRewrite.xml*规则文件。
 * CustomResponse 操作
 * 自定义服务器变量
 * 通配符
-* 操作： CustomResponse
+* Action:CustomResponse
 * LogRewrittenUrl
 
 ---
@@ -274,7 +272,7 @@ A`StreamReader`用于读取从规则*IISUrlRewrite.xml*规则文件。
 #### <a name="supported-server-variables"></a>支持的服务器变量
 该中间件支持以下 IIS URL 重写模块服务器变量：
 * CONTENT_LENGTH
-* P E
+* CONTENT_TYPE
 * HTTP_ACCEPT
 * HTTP_CONNECTION
 * HTTP_COOKIE
@@ -299,7 +297,7 @@ A`StreamReader`用于读取从规则*IISUrlRewrite.xml*规则文件。
 ### <a name="method-based-rule"></a>基于方法的规则
 使用`Add(Action<RewriteContext> applyRule)`实现您自己的规则逻辑的方法中。 `RewriteContext`公开`HttpContext`在你的方法中使用。 `context.Result`确定其他管道处理。
 
-| 上下文。结果                       | 操作                                                          |
+| context.Result                       | 操作                                                          |
 | ------------------------------------ | --------------------------------------------------------------- |
 | `RuleResult.ContinueRules`（默认值） | 继续应用规则                                         |
 | `RuleResult.EndResponse`             | 停止应用规则和发送响应                       |

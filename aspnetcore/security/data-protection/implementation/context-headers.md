@@ -2,20 +2,18 @@
 title: "上下文标头"
 author: rick-anderson
 description: "本文档概述了 ASP.NET 核心数据保护上下文标头的实现详细信息。"
-keywords: "ASP.NET 核心，数据保护、 上下文标头"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: d026a58c-67f4-411e-a410-c35f29c2c517
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/context-headers
-ms.openlocfilehash: eb8e4c9ad67d3046648aea1b45f4a675b41b3ec0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b5ed2e48a55e23d73bccd01a731b35ea68f8944e
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="context-headers"></a>上下文标头
 
@@ -55,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 
 相反，我们使用 NIST SP800 108 KDF 中计数器模式 (请参阅[NIST SP800-108](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-108.pdf)，sec。 5.1) 具有零长度键、 标签和上下文和作为基础 PRF HMACSHA512。 我们派生 |K_E |+ |K_H |字节的输出，然后将分解结果为 K_E 和 K_H 本身。 数学上，这表示，如下所示。
 
-(K_E | |K_H) = SP800_108_CTR (prf = HMACSHA512，键 =""，标签 =""，上下文 ="")
+( K_E || K_H ) = SP800_108_CTR(prf = HMACSHA512, key = "", label = "", context = "")
 
 ### <a name="example-aes-192-cbc--hmacsha256"></a>示例： AES 192 CBC + HMACSHA256
 
@@ -72,11 +70,11 @@ B7 92 3D BF 59 90 00 A9
 
 接下来，计算 Enc_CBC (K_E、 IV，"") 对于给定 IV 的 AES-192-CBC = 0 * 和 K_E 按上面所述。
 
-结果: = F474B1872B3B53E4721DE19C0841DB6F
+result := F474B1872B3B53E4721DE19C0841DB6F
 
 接下来，计算 MAC (K_H，"") 为 HMACSHA256 给定 K_H 按上面所述。
 
-结果: = D4791184B996092EE1202F36E8608FA8FBD98ABDFF5402F264B1D7211536220C
+result := D4791184B996092EE1202F36E8608FA8FBD98ABDFF5402F264B1D7211536220C
 
 这将产生下面的完整上下文标头：
 
@@ -123,7 +121,7 @@ D1 F7 5A 34 EB 28 3E D7 D4 67 B4 64
 
 接下来，计算 MAC (K_H，"") 为 HMACSHA1 给定 K_H 按上面所述。
 
-结果: = 76EB189B35CF03461DDF877CD9F4B1B4D63A7555
+result := 76EB189B35CF03461DDF877CD9F4B1B4D63A7555
 
 此示例的完整上下文标头，这是经过身份验证的指纹将产生如下所示的加密算法对 （3DES 192 CBC 加密 + HMACSHA1 验证）：
 
@@ -167,17 +165,17 @@ D1 F7 5A 34 EB 28 3E D7 D4 67 B4 64
 
 K_E 派生使用相同的机制，如下所示 CBC 加密 + HMAC 身份验证方案。 但是，由于在此处 play 中没有任何 K_H，我们实质上具有 |K_H |= 0，且该算法会折叠到下面的表单。
 
-K_E = SP800_108_CTR (prf = HMACSHA512，键 =""，标签 =""，上下文 ="")
+K_E = SP800_108_CTR(prf = HMACSHA512, key = "", label = "", context = "")
 
 ### <a name="example-aes-256-gcm"></a>示例： AES 256 GCM
 
 首先，让 K_E = SP800_108_CTR (prf = HMACSHA512，键 =""，标签 =""，上下文 ="")，其中 |K_E |= 256 位。
 
-K_E: = 22BC6F1B171C08C4AE2F27444AF8FC8B3087A90006CAEA91FDCFB47C1B8733B8
+K_E := 22BC6F1B171C08C4AE2F27444AF8FC8B3087A90006CAEA91FDCFB47C1B8733B8
 
 接下来，计算 Enc_GCM 的身份验证标记 (K_E，nonce，"") 适用于给定 nonce 的 AES-256-GCM = 096 和 K_E 按上面所述。
 
-结果: = E7DCCE66DF855A323A6BB7BD7A59BE45
+result := E7DCCE66DF855A323A6BB7BD7A59BE45
 
 这将产生下面的完整上下文标头：
 

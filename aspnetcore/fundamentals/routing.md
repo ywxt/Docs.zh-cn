@@ -2,20 +2,18 @@
 title: "ASP.NET 核心中的路由"
 author: ardalis
 description: "发现如何 ASP.NET Core 路由功能是负责将传入的请求映射到路由处理程序。"
-keywords: ASP.NET Core
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: bbbcf9e4-3c4c-4f50-b91e-175fe9cae4e2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: 58388f674ed5d353c1c7208a67fb338e49fdb592
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ffa3178dc4e3aac3ba51c29b7efa3f71eb56bcfe
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET 核心中的路由
 
@@ -233,9 +231,9 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 | URI | 响应  |
 | ------- | -------- |
 | /package/create/3  | Hello! 将路由值: [操作，创建]，[id，3] |
-| / 包/跟踪/3  | Hello! 将路由值: [操作，跟踪]，[id，-3] |
-| / 包/跟踪/3 / | Hello! 将路由值: [操作，跟踪]，[id，-3]  |
-| /package/跟踪 / | \<贯穿到任何匹配项 > |
+| /package/track/-3  | Hello! 将路由值: [操作，跟踪]，[id，-3] |
+| /package/track/-3/ | Hello! 将路由值: [操作，跟踪]，[id，-3]  |
+| /package/track/ | \<贯穿到任何匹配项 > |
 | 获取 /hello/Joe | 您好，Joe ！ |
 | POST /hello/Joe | \<贯穿，仅匹配 HTTP GET > |
 | 获取 /hello/Joe/Smith | \<贯穿到任何匹配项 > |
@@ -278,11 +276,11 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 | 路由模板 | 示例匹配 URL | 说明 |
 | -------- | -------- | ------- |
 | hello  | /hello  | 仅与单个路径相匹配`/hello` |
-| {页主页 =} | / | 匹配和设置`Page`到`Home` |
-| {页主页 =}  | / 联系人  | 匹配和设置`Page`到`Contact` |
-| {controller} / {action} / {id}？ | / 产品/列表 | 映射到`Products`控制器和`List`操作 |
-| {controller} / {action} / {id}？ | / 产品/详细信息/123  |  映射到`Products`控制器和`Details`操作。  `id`设置为 123 |
-| {控制器主页 =} / {操作 = 索引} / {id}？ | /  |  映射到`Home`控制器和`Index`方法;`id`将被忽略。 |
+| {Page=Home} | / | 匹配和设置`Page`到`Home` |
+| {Page=Home}  | / 联系人  | 匹配和设置`Page`到`Contact` |
+| {controller} / {action} / {id}？ | /Products/List | 映射到`Products`控制器和`List`操作 |
+| {controller} / {action} / {id}？ | /Products/Details/123  |  映射到`Products`控制器和`Details`操作。  `id`设置为 123 |
+| {controller=Home}/{action=Index}/{id?} | /  |  映射到`Home`控制器和`Index`方法;`id`将被忽略。 |
 
 使用模板通常是路由的最简单方法。 此外可以在路由模板外指定约束和默认值。
 
@@ -327,7 +325,7 @@ ASP.NET 核心框架就会将`RegexOptions.IgnoreCase | RegexOptions.Compiled | 
 
 正则表达式使用分隔符和类似于所使用的路由和 C# 语言的令牌。 正则表达式令牌必须进行转义。 例如，若要使用的正则表达式`^\d{3}-\d{2}-\d{4}$`中路由，它需要用`\`以的键入的字符`\\`C# 源文件中进行转义`\`字符串转义字符 (除非使用[逐字字符串文本](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/string)。 `{` ， `}` ，[和] 字符是需要将它们路由参数分隔符字符进行转义加倍进行转义。  下表显示了正则表达式和转义的版本。
 
-| Expression               | 说明 |
+| 表达式               | 说明 |
 | ----------------- | ------------ | 
 | `^\d{3}-\d{2}-\d{4}$` | 正则表达式 |
 | `^\\d{{3}}-\\d{{2}}-\\d{{4}}$` | 转义  |
@@ -336,14 +334,14 @@ ASP.NET 核心框架就会将`RegexOptions.IgnoreCase | RegexOptions.Compiled | 
 
 在路由中使用的正则表达式通常开头`^`字符 （匹配字符串的起始位置） 和以结尾`$`字符 （匹配结束的字符串的位置）。 `^`和`$`字符，请确保正则表达式匹配的整个路由参数值。 而无需`^`和`$`字符的正则表达式将匹配在字符串中，这通常不是你所希望的任何子字符串。 下表显示了一些示例，并说明为何它们匹配，否则失败以匹配。
 
-| Expression               | 字符串 | 匹配 | 注释 |
+| 表达式               | String | 匹配 | 注释 |
 | ----------------- | ------------ |  ------------ |  ------------ | 
 | `[a-z]{2}` | hello | 是 | 匹配的子字符串 |
 | `[a-z]{2}` | 123abc456 | 是 | 匹配的子字符串 |
 | `[a-z]{2}` | mz | 是 | 匹配表达式 |
 | `[a-z]{2}` | MZ | 是 | 不区分大小写 |
-| `^[a-z]{2}$` |  hello | no | 请参阅`^`和`$`上面 |
-| `^[a-z]{2}$` |  123abc456 | no | 请参阅`^`和`$`上面 |
+| `^[a-z]{2}$` |  hello | 否 | 请参阅`^`和`$`上面 |
+| `^[a-z]{2}$` |  123abc456 | 否 | 请参阅`^`和`$`上面 |
 
 请参阅[.NET Framework 正则表达式](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference)有关正则表达式语法的详细信息。
 
@@ -365,12 +363,12 @@ ASP.NET 核心框架就会将`RegexOptions.IgnoreCase | RegexOptions.Compiled | 
 
 | 环境值 | 显式值 | 结果 |
 | -------------   | -------------- | ------ |
-| 控制器 ="主页" | 操作 ="关于" | `/Home/About` |
-| 控制器 ="主页" | 控制器 ="Order"，操作 ="关于" | `/Order/About` |
-| 控制器 ="主页"，颜色 ="Red" | 操作 ="关于" | `/Home/About` |
-| 控制器 ="主页" | 操作 ="关于"，颜色 ="Red" | `/Home/About?color=Red`
+| controller="Home" | action="About" | `/Home/About` |
+| controller="Home" | controller="Order",action="About" | `/Order/About` |
+| controller="Home",color="Red" | action="About" | `/Home/About` |
+| controller="Home" | action="About",color="Red" | `/Home/About?color=Red`
 
-如果路由不对应于参数的默认值而显式提供此值，它必须匹配的默认值。 例如: 
+如果路由不对应于参数的默认值而显式提供此值，它必须匹配的默认值。 例如:
 
 ```csharp
 routes.MapRoute("blog_route", "blog/{*slug}",

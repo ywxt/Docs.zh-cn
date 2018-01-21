@@ -2,20 +2,18 @@
 title: "阻止在 ASP.NET Core 应用中的打开重定向攻击 |Microsoft 文档"
 author: ardalis
 description: "演示如何阻止对 ASP.NET Core 应用打开重定向攻击"
-keywords: "ASP.NET 核心，安全，打开重定向攻击"
 ms.author: riande
 manager: wpickett
 ms.date: 07/07/2017
 ms.topic: article
-ms.assetid: 4604e563-e91a-4ecd-b7ed-00b3f1eee2b5
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/preventing-open-redirects
-ms.openlocfilehash: 4083845a77eb19d9ba9beb389a92ceb5c14edbde
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e57ae429e9af54ade74485361ba591cb75c16752
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="preventing-open-redirect-attacks-in-an-aspnet-core-app"></a>阻止在 ASP.NET Core 应用中的打开重定向攻击
 

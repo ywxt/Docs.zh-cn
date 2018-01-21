@@ -2,7 +2,6 @@
 title: "与 EF 核心-CRUD-2 的 8 razor 页"
 author: rick-anderson
 description: "演示如何创建、 读取、 更新和删除与 EF 核心"
-keywords: "ASP.NET 核心、 实体框架核心、 CRUD，创建、 读取、 更新、 删除"
 ms.author: riande
 manager: wpickett
 ms.date: 10/15/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/crud
-ms.openlocfilehash: 246e6307989f2660d84288ceac6793c422875f93
-ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
+ms.openlocfilehash: c26ba75f6a401d50a6b46bd7ee40500c5736f20f
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>创建、 读取、 更新和删除的 EF 内核，它们有 Razor 页 (2 的 8)
 

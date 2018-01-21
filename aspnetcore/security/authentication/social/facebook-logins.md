@@ -2,20 +2,18 @@
 title: "在 ASP.NET Core Facebook 外部登录安装程序"
 author: rick-anderson
 description: "本教程演示的集成到现有的 ASP.NET Core 应用程序的 Facebook 帐户用户身份验证。"
-keywords: "ASP.NET 核心，Facebook 登录名，身份验证"
 ms.author: riande
 manager: wpickett
 ms.date: 08/01/2017
 ms.topic: article
-ms.assetid: 8c65179b-688c-4af1-8f5e-1862920cda95
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 058670b4f699288e1acbe76bae08dcebf69346b8
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 2d36aa78f82b4a52a7c6a152bee2c4ca9923409f
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configuring-facebook-authentication"></a>配置 Facebook 身份验证
 

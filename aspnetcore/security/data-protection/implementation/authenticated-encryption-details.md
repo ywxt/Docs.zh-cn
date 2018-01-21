@@ -2,20 +2,18 @@
 title: "经过身份验证的加密详细信息"
 author: rick-anderson
 description: "本文档概述了 ASP.NET 核心数据保护的实现详细信息进行加密身份验证。"
-keywords: "ASP.NET 核心，数据保护，身份验证的加密"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 826e6d5d-9620-44e6-ad93-3b1d9969b70b
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/authenticated-encryption-details
-ms.openlocfilehash: dc96412f6578e612a39e86ce00e1dc5a20cf84e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 23d45c38b28c84b1c1c9b92a0ec299f0bed1d4e4
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="authenticated-encryption-details"></a>经过身份验证的加密详细信息
 

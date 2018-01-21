@@ -2,7 +2,6 @@
 title: "在 ASP.NET Core Google 外部登录安装程序"
 author: rick-anderson
 description: "本教程演示的集成到现有的 ASP.NET Core 应用程序的 Google 帐户用户身份验证。"
-keywords: "ASP.NET 核心、 Google、 登录、 身份验证"
 ms.author: riande
 manager: wpickett
 ms.date: 08/02/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/google-logins
-ms.openlocfilehash: af316d832de7356d539eaaab5be6485639030c7a
-ms.sourcegitcommit: 8ab9d0065fad23400757e4e08033787e42c97d41
+ms.openlocfilehash: 30d224061bce3a727fc31d19c194e96559e28310
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configuring-google-authentication-in-aspnet-core"></a>在 ASP.NET 核心中配置 Google 身份验证
 
@@ -49,7 +48,7 @@ ms.lasthandoff: 11/17/2017
 ![API 管理器 Google + API 页](index/_static/GoogleConsoleGoCredentials.png)
 
 * 选择：
-   * **Google + API**
+   * **Google+ API**
    * **Web 服务器 (例如 node.js，Tomcat)**，和
    * **用户数据**:
 

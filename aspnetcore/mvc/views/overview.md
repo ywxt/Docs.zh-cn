@@ -2,7 +2,6 @@
 title: "在 ASP.NET Core MVC 视图"
 author: ardalis
 description: "了解视图如何处理应用程序的数据表示和 ASP.NET 核心 MVC 中的用户交互。"
-keywords: "ASP.NET 核心查看，MVC、 razor、 视图模型、 viewdata、 viewbag"
 ms.author: riande
 manager: wpickett
 ms.date: 12/12/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: 2562d4e5fb85159e6ccb47990f54448ddc188077
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: c0a1f475941f3389e9aa1f5bb7819bef491b2cae
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="views-in-aspnet-core-mvc"></a>在 ASP.NET Core MVC 视图
 
@@ -93,8 +92,8 @@ ASP.NET 核心 mvc 视图是*.cshtml*文件使用[C# 编程语言](/dotnet/cshar
 
 它并不重要如果隐式返回`ViewResult`与`return View();`或显式传递到的视图名称`View`方法替换`return View("<ViewName>");`。 在这两种情况下，查看发现搜索匹配的视图文件顺序如下：
 
-   1. *视图 /\[ControllerName]\[ViewName].cshtml*
-   1. *视图/共享/\[ViewName].cshtml*
+   1. *Views/\[ControllerName]\[ViewName].cshtml*
+   1. *Views/Shared/\[ViewName].cshtml*
 
 视图文件路径可以提供而不是视图名称。 如果使用从应用程序根目录开始的绝对路径 (根据需要第一页为"/"或"~ /")，则*.cshtml*必须指定扩展：
 

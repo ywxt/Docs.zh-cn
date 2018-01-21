@@ -2,7 +2,6 @@
 title: "有关 ASP.NET 核心的 razor 语法参考"
 author: rick-anderson
 description: "了解如何将基于服务器的代码嵌入到网页的 Razor 标记语法。"
-keywords: "ASP.NET 核心，Razor，Razor 指令"
 ms.author: riande
 manager: wpickett
 ms.date: 10/18/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/razor
-ms.openlocfilehash: 6df769069fce52755a57d8404f88203a652a1ab9
-ms.sourcegitcommit: a3e88639a6bcf8fb4d634036dac93130c464a097
+ms.openlocfilehash: d932e28246998c60e2b3f9c77a2521fe55991e85
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>ASP.NET 核心的 razor 语法
 
@@ -24,7 +23,7 @@ Razor 是用于将基于服务器的代码嵌入到网页的标记的语法。 R
 
 ## <a name="rendering-html"></a>呈现 HTML
 
-默认 Razor 语言为 HTML。 呈现 HTML Razor 标记是呈现 HTML 中，某一 HTML 文件没有什么不同。  HTML 标记中的*.cshtml* Razor 文件呈现服务器保持不变。
+默认 Razor 语言为 HTML。 呈现 HTML Razor 标记是呈现 HTML 中，某一 HTML 文件没有什么不同。 HTML 标记中的*.cshtml* Razor 文件呈现服务器保持不变。
 
 ## <a name="razor-syntax"></a>Razor 语法
 
@@ -73,8 +72,8 @@ HTML 特性和内容包含电子邮件地址不处理`@`转换字符的形式的
 
 前面的代码生成编译器错误类似于以下项之一：
 
- * 未关闭的"int"元素。  所有元素都必须为自结束或具有匹配的结束标记。
- *  无法将方法组 GenericMethod 为非委托 object 类型的转换。 是否希望调用的方法？ 
+ * 未关闭的"int"元素。 所有元素都必须为自结束或具有匹配的结束标记。
+ * 无法将方法组 GenericMethod 为非委托 object 类型的转换。 是否希望调用的方法？ 
  
 泛型方法调用必须包装在[显式 Razor 表达式](#explicit-razor-expressions)或[Razor 代码块](#razor-code-blocks)。
 
@@ -119,10 +118,10 @@ HTML 特性和内容包含电子邮件地址不处理`@`转换字符的形式的
 
 前面的代码生成编译器错误类似于以下项之一：
 
- * 未关闭的"int"元素。  所有元素都必须为自结束或具有匹配的结束标记。
- *  无法将方法组 GenericMethod 为非委托 object 类型的转换。 是否希望调用的方法？ 
+ * 未关闭的"int"元素。 所有元素都必须为自结束或具有匹配的结束标记。
+ * 无法将方法组 GenericMethod 为非委托 object 类型的转换。 是否希望调用的方法？ 
  
- 以下标记显示正确的方式写入此代码。  作为显式表达式编写的代码：
+ 以下标记显示正确的方式写入此代码。 作为显式表达式编写的代码：
 
 ```cshtml
 <p>@(GenericMethod<int>())</p>
@@ -232,7 +231,7 @@ Razor 代码块开头`@`，并且通过包括`{}`。 与不同的是表达式，
 
 而无需`@:`在代码中，生成 Razor 运行时错误。
 
-警告： 额外`@`Razor 文件中的字符会导致编译器错误语句在块中更高版本。 这些编译器错误可能很难了解因为实际错误发生之前所报告的错误。  组合到单个代码块的多个隐式/显式表达式后，此错误很常见。
+警告： 额外`@`Razor 文件中的字符会导致编译器错误语句在块中更高版本。 这些编译器错误可能很难了解因为实际错误发生之前所报告的错误。 组合到单个代码块的多个隐式/显式表达式后，此错误很常见。
 
 ## <a name="control-structures"></a>控件结构
 
@@ -285,7 +284,7 @@ else
 
 ### <a name="looping-for-foreach-while-and-do-while"></a>循环@for， @foreach， @while，和@do时
 
-模板化 HTML 可以呈现包含循环的控制语句。  若要呈现的人员列表：
+模板化 HTML 可以呈现包含循环的控制语句。 若要呈现的人员列表：
 
 ```cshtml
 @{
@@ -496,7 +495,7 @@ Razor 公开`Model`属性访问的模型传递给视图：
 <div>Custom text: Gardyloo! - A Scottish warning yelled from a window before dumping a slop bucket on the street below.</div>
 ```
 
- `@model`和`@inherits`可以在同一个视图中使用。  `@inherits`可以采用*_ViewImports.cshtml*视图导入的文件：
+ `@model`和`@inherits`可以在同一个视图中使用。 `@inherits`可以采用*_ViewImports.cshtml*视图导入的文件：
 
 [!code-cshtml[Main](razor/sample/Views/_ViewImportsModel.cshtml)]
 

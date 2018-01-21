@@ -2,20 +2,18 @@
 title: "ASP.NET 核心 MVC 与实体框架核心-10 的教程 1"
 author: tdykstra
 description: 
-keywords: "ASP.NET 核心，实体框架核心，教程"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: b67c3d4a-f2bf-4132-a48b-4b0d599d7981
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 2b21c7fb35c65d9374723faac5b812289023a0f6
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: df13726689c430ab19786e104ea7404051107aa9
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>ASP.NET 核心 MVC 和使用 Visual Studio (第 1 个 10) 的实体框架核心入门
 
@@ -29,13 +27,13 @@ Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework (
 
 [下载或查看已完成的应用程序。](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
-EF 核心 2.0 是 EF 的最新版本，但还没有的 EF 的所有功能 6.x。 有关如何 EF 之间进行选择 6.x 和 EF 核心，请参阅[EF 核心 vs。EF6.x](https://docs.microsoft.com/ef/efcore-and-ef6/)。 如果你选择 EF 6.x 时，请参阅[本系列教程的上一个版本](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)。
+EF 核心 2.0 是 EF 的最新版本，但还没有的 EF 的所有功能 6.x。 有关如何 EF 之间进行选择 6.x 和 EF 核心，请参阅[EF 核心 vs。EF6.x](https://docs.microsoft.com/ef/efcore-and-ef6/). 如果你选择 EF 6.x 时，请参阅[本系列教程的上一个版本](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)。
 
 > [!NOTE]
 > * 本教程的 ASP.NET 核心 1.1 版本，请参阅[以 PDF 格式在本教程中的 VS 2017 Update 2 版本](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf)。
 > * 有关本教程的 Visual Studio 2015 版本，请参阅 [PDF 格式的 ASP.NET Core 文档的 VS 2015 版本](https://github.com/aspnet/Docs/blob/master/aspnetcore/common/_static/aspnet-core-project-json.pdf)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 [!INCLUDE[install 2.0](../../includes/install2.0.md)]
 
@@ -44,7 +42,7 @@ EF 核心 2.0 是 EF 的最新版本，但还没有的 EF 的所有功能 6.x。
 如果你遇到无法解决的问题，通常可以通过比较你的代码查找解决方案[已完成的项目](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)。 有关常见错误以及如何解决这些列表，请参阅[最后一个教程系列中的故障排除部分](advanced.md#common-errors)。 如果没有找到你那里需要你可以将问题发布到为 StackOverflow.com [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core)或[EF 核心](https://stackoverflow.com/questions/tagged/entity-framework-core)。
 
 > [!TIP] 
-> 这是一系列 10 教程，其中每个基于前面教程中完成。  请考虑在每个成功的教程完成后保存项目的副本。  以后如果遇到问题，你可以开始通过从以前的教程，而不是追溯到整个序列的开头。
+> 这是一系列 10 教程，其中每个基于前面教程中完成。 请考虑在每个成功的教程完成后保存项目的副本。 以后如果遇到问题，你可以开始通过从以前的教程，而不是追溯到整个序列的开头。
 
 ## <a name="the-contoso-university-web-application"></a>Contoso 大学 web 应用程序
 
@@ -136,7 +134,7 @@ EF 核心 2.0 是 EF 的最新版本，但还没有的 EF 的所有功能 6.x。
 
 `Enrollments`属性是导航属性。 导航属性将分别包含与此实体相关的其他实体。 在这种情况下，`Enrollments`属性`Student entity`将保留所有`Enrollment`与该订阅相关的实体`Student`实体。 换而言之，如果在数据库中给定的学生行有两个相关注册行 （包含该学生的主键值其 StudentID 外键列中的行），`Student`实体的`Enrollments`导航属性将包含那些两个`Enrollment`实体。
 
-如果导航属性可以具有多个实体 （如多对多或一对多关系），其类型必须是的列表中的条目可以是添加、 删除和更新，如`ICollection<T>`。  你可以指定`ICollection<T>`或类型，如`List<T>`或`HashSet<T>`。 如果指定`ICollection<T>`，EF 创建`HashSet<T>`默认情况下的集合。
+如果导航属性可以具有多个实体 （如多对多或一对多关系），其类型必须是的列表中的条目可以是添加、 删除和更新，如`ICollection<T>`。 你可以指定`ICollection<T>`或类型，如`List<T>`或`HashSet<T>`。 如果指定`ICollection<T>`，EF 创建`HashSet<T>`默认情况下的集合。
 
 ### <a name="the-enrollment-entity"></a>注册实体
 
@@ -210,7 +208,7 @@ ASP.NET 核心实现[依赖关系注入](../../fundamentals/dependency-injection
 
 ## <a name="add-code-to-initialize-the-database-with-test-data"></a>添加代码以初始化测试数据的数据库
 
-实体框架将为你创建空数据库。  在本部分中，你编写以便填充测试数据创建数据库后调用的方法。
+实体框架将为你创建空数据库。 在本部分中，你编写以便填充测试数据创建数据库后调用的方法。
 
 此处将使用`EnsureCreated`方法来自动创建数据库。 在[后面的教程](migrations.md)你将了解如何通过使用 Code First 迁移以更改而不是删除并重新创建数据库的数据库架构处理模型更改。
 
@@ -218,7 +216,7 @@ ASP.NET 核心实现[依赖关系注入](../../fundamentals/dependency-injection
 
 [!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
 
-代码检查是否有任何学生在数据库中，并且如果没有，它假定数据库是新，并且需要使用测试数据进行种子设定。  它将测试数据加载到数组而不是`List<T>`集合来优化性能。
+代码检查是否有任何学生在数据库中，并且如果没有，它假定数据库是新，并且需要使用测试数据进行种子设定。 它将测试数据加载到数组而不是`List<T>`集合来优化性能。
 
 在*Program.cs*，修改`Main`方法来执行以下操作，在应用程序启动：
 
@@ -244,10 +242,10 @@ CRUD 操作方法和视图的自动创建被称为基架。 基架与不同从�
 
 * 右键单击**控制器**文件夹中的**解决方案资源管理器**和选择**添加 > 新建基架项**。
 
-如果**添加 MVC 依赖项**此时将显示对话框：
+如果出现“添加 MVC 依赖项”对话框：
 
-* [更新到最新版本的 Visual Studio](https://www.visualstudio.com/downloads/)。 15.5 之前的 visual Studio 版本中显示此对话框。
-* 如果你不能更新，则选择**添加**，然后再次按照添加控制器步骤。
+* [将 Visual Studio 更新到最新版本](https://www.visualstudio.com/downloads/)。 15.5 之前的 Visual Studio 版本显示此对话框。
+* 如果无法更新，请选择“添加”，然后再次按照添加控制器步骤操作。
 
 * 在**添加基架**对话框中：
 
@@ -353,7 +351,7 @@ Web 服务器具有有限的数量的线程可用，并且在高负载情况下�
 
 请注意当你编写异步代码的使用实体框架的一些事项：
 
-* 以异步方式执行导致查询或命令发送到数据库的语句。 这包括，例如， `ToListAsync`， `SingleOrDefaultAsync`，和`SaveChangesAsync`。  它不包括，例如，只需更改的语句`IQueryable`，如`var students = context.Students.Where(s => s.LastName == "Davolio")`。
+* 以异步方式执行导致查询或命令发送到数据库的语句。 这包括，例如， `ToListAsync`， `SingleOrDefaultAsync`，和`SaveChangesAsync`。 它不包括，例如，只需更改的语句`IQueryable`，如`var students = context.Students.Where(s => s.LastName == "Davolio")`。
 
 * EF 上下文不是线程安全： 请勿尝试执行并行的多个操作。 当调用的任何异步 EF 方法时，始终使用`await`关键字。
 
@@ -366,4 +364,4 @@ Web 服务器具有有限的数量的线程可用，并且在高负载情况下�
 你现在已创建的简单应用程序使用的实体框架核心和 SQL Server Express LocalDB 来存储和显示数据。 在以下教程中，你将学习如何执行基本的 CRUD （创建、 读取、 更新、 删除） 操作。
 
 >[!div class="step-by-step"]
-[下一篇](crud.md)  
+[下一篇](crud.md)

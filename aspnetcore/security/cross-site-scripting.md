@@ -2,20 +2,18 @@
 title: "防止跨站点脚本"
 author: rick-anderson
 description: "本文档介绍跨站点脚本 (XSS) 和寻址 ASP.NET Core 应用程序中的此漏洞的技术。"
-keywords: "ASP.NET 核心，XSS，漏洞"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 95790927-2bfe-445e-b1fd-429c2c7030ce
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cross-site-scripting
-ms.openlocfilehash: fdb26a8338b98135cfc3f6bce9d87285e9a7eb12
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af73a86aa6bcde084ecbe1a3fb5711c7da55871c
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="preventing-cross-site-scripting"></a>防止跨站点脚本
 
@@ -62,7 +60,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="javascript-encoding-using-razor"></a>使用 Razor Javascript 编码
 
-可能有些时候你想要插入处理在视图中的 JavaScript 值。 有两种方法可以实现此目的。 插入简单值的最安全方法是将值放在一个标记的数据属性并检索你在 JavaScript。 例如: 
+可能有些时候你想要插入处理在视图中的 JavaScript 值。 有两种方法可以实现此目的。 插入简单值的最安全方法是将值放在一个标记的数据属性并检索你在 JavaScript。 例如:
 
 ```none
 @{
@@ -171,7 +169,7 @@ public class HomeController : Controller
 
 ## <a name="encoding-url-parameters"></a>编码的 URL 参数
 
-如果你想要构建 URL 查询字符串以不受信任的输入作为值使用`UrlEncoder`值进行编码。 例如，
+如果你想要构建 URL 查询字符串以不受信任的输入作为值使用`UrlEncoder`值进行编码。 例如，应用于对象的
 
 ```csharp
 var example = "\"Quoted Value with spaces and &\"";

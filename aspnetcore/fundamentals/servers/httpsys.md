@@ -2,20 +2,18 @@
 title: "在 ASP.NET Core HTTP.sys web 服务器实现"
 author: rick-anderson
 description: "引入了 HTTP.sys，ASP.NET 核心 Windows 上的 web 服务器。 基于 Http.Sys 内核模式驱动程序，HTTP.sys 是可以用于直接连接到 Internet，不含 IIS 的 Kestrel 的替代方法。"
-keywords: "ASP.NET Core,HttpSys,HTTP.sys,HttpListener,url 前缀 SSL"
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
 ms.topic: article
-ms.assetid: 0a7286e4-6428-424e-b5c4-5c98815cf61c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 8d46862af44379d8592efdf214a80214dce2d69d
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 60301e1e3eb96f51e86ef9f8be61f5fd8a4c009c
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>在 ASP.NET Core HTTP.sys web 服务器实现
 

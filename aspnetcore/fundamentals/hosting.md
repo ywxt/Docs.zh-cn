@@ -2,7 +2,6 @@
 title: "在 ASP.NET Core 中承载"
 author: guardrex
 description: "了解有关 ASP.NET 核心，负责应用程序启动和生存期管理中的 web 主机信息。"
-keywords: "ASP.NET 核心 web 主机，IWebHost、 WebHostBuilder、 IHostingEnvironment、 IApplicationLifetime"
 ms.author: riande
 manager: wpickett
 ms.date: 09/21/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/hosting
-ms.openlocfilehash: 8adc58d67f103e8d1fc8fe197cf392752bdaf660
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 7f6712073002b73ca4ddd7586718c81e62cacbc2
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="hosting-in-aspnet-core"></a>在 ASP.NET Core 中承载
 
@@ -35,8 +34,8 @@ ASP.NET Core 应用配置和启动*主机*。 主机负责应用程序启动和�
 * 配置[Kestrel](servers/kestrel.md)为 web 服务器。 有关 Kestrel 默认选项，请参阅[Kestrel 选项部分中 ASP.NET Core Kestrel web 服务器实现](xref:fundamentals/servers/kestrel#kestrel-options)。
 * 将内容的根设置为返回的路径[Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory)。
 * 从加载可选配置：
-  * *appsettings.json*。
-  * *appsettings。{环境}.json*。
+  * *appsettings.json*.
+  * *appsettings.{Environment}.json*.
   * [用户的机密信息](xref:security/app-secrets)运行的应用`Development`环境。
   * 环境变量。
   * 命令行参数。
@@ -587,7 +586,7 @@ using (var host = WebHost.Start("http://localhost:8080", app => app.Response.Wri
 
 生成与相同的结果**开始 （RequestDelegate 应用程序）**，除应用程序响应上`http://localhost:8080`。
 
-**启动 (操作<IRouteBuilder>routeBuilder)**
+**Start(Action<IRouteBuilder> routeBuilder)**
 
 使用的实例`IRouteBuilder`([Microsoft.AspNetCore.Routing](https://www.nuget.org/packages/Microsoft.AspNetCore.Routing/)) 用于路由的中间件：
 
@@ -644,7 +643,7 @@ using (var host = WebHost.Start("http://localhost:8080", router => router
 
 生成与相同的结果**启动 (操作<IRouteBuilder>routeBuilder)**，除应用程序响应在`http://localhost:8080`。
 
-**StartWith (操作<IApplicationBuilder>应用)**
+**StartWith(Action<IApplicationBuilder> app)**
 
 提供一个委托，以配置`IApplicationBuilder`:
 

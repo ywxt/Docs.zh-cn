@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 350c2e4e92c8a53d22dd2500330281b4003a05e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5283da2786d41c0ae06607185dd416aeb7d2b62a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>为 ASP.NET MVC 应用程序 (10 的第 4) 创建更复杂的数据模型
 ====================
@@ -81,7 +81,7 @@ ms.lasthandoff: 11/10/2017
 
 [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)属性不会阻止的用户的空白区域输入一个名称。 你可以使用[正则表达式](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx)要将限制应用到的输入属性。 例如，下面的代码要求的第一个字符是大写且其余的字符是按字母顺序排列：
 
-`[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]`
+`[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]`
 
 [MaxLength](https://msdn.microsoft.com/en-us/library/System.ComponentModel.DataAnnotations.MaxLengthAttribute.aspx)属性提供与类似的功能[StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)属性但不提供客户端验证。
 
@@ -295,17 +295,17 @@ ms.lasthandoff: 11/10/2017
 
 下图显示这些关系中的实体关系图的外观。 (此关系图生成使用[实体框架 Power 工具](https://visualstudiogallery.msdn.microsoft.com/72a60b14-1581-4b9b-89f2-846072eff19d); 创建关系图不属于本教程，只需使用此处为说明。)
 
-![学生 many_relationship Course_many](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image11.png)
+![Student-Course_many-to-many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image11.png)
 
 每个关系行已在一台端和星号 1 (\*) 在另一个，，该值指示一个对多关系。
 
 如果`Enrollment`表没有包括年级信息，它只需包含两个外键`CourseID`和`StudentID`。 在这种情况下，它将对应的多对多联接表*而无需负载*(或*纯联接表*) 在数据库中，并且您不需要在所有为它创建一个模型类。 `Instructor`和`Course`实体具有这种多对多关系，并且如你所见，它们之间没有任何实体类：
 
-![教师 many_relationship Course_many](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image12.png)
+![Instructor-Course_many-to-many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image12.png)
 
 联接表需要在数据库中，但是，以下数据库关系图中所示：
 
-![教师 many_relationship_tables Course_many](https://asp.net/media/2577802/Windows-Live-Writer_Creating-a.NET-MVC-Application-4-of-10h1_B662_Instructor-Course_many-to-many_relationship_tables_03e042cf-db89-4b4c-985a-e458351ada76.png)
+![Instructor-Course_many-to-many_relationship_tables](https://asp.net/media/2577802/Windows-Live-Writer_Creating-a.NET-MVC-Application-4-of-10h1_B662_Instructor-Course_many-to-many_relationship_tables_03e042cf-db89-4b4c-985a-e458351ada76.png)
 
 实体框架会自动创建`CourseInstructor`表和你读取和更新到通过读取和更新的间接`Instructor.Courses`和`Course.Instructors`导航属性。
 

@@ -2,29 +2,27 @@
 title: "在 ASP.NET 核心中的创作标记帮助程序"
 author: rick-anderson
 description: "了解如何创作 ASP.NET Core 中的标记帮助程序。"
-keywords: "ASP.NET 核心，标记帮助程序"
 ms.author: riande
 manager: wpickett
-ms.date: 06/14/2017
+ms.date: 01/19/2018
 ms.topic: article
-ms.assetid: 4f16d978-5695-4abf-a785-fdaabf3bbcb9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cbe46ee1d3cd9f7a30a87d364074f1302f9af7ab
-ms.sourcegitcommit: 5834afb87e4262b9b88e60e3fe6c735e61a1e08d
+ms.openlocfilehash: 9aaf40377e07e53fd0b7ebb177bcbb2df52b7553
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="authoring-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>在 ASP.NET 核心，使用示例演练中的创作标记帮助程序
+# <a name="author-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>在 ASP.NET 核，使用示例演练的作者标记帮助程序
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
-## <a name="getting-started-with-tag-helpers"></a>开始使用标记帮助程序
+## <a name="get-started-with-tag-helpers"></a>要开始使用标记帮助程序
 
 本教程介绍编程标记帮助程序。 [标记帮助器简介](intro.md)介绍标记帮助程序提供的优势。
 
@@ -46,7 +44,7 @@ ms.lasthandoff: 12/20/2017
 
 ```html
 <a href="mailto:Support@contoso.com">Support@contoso.com</a>
-   ```
+```
 
 即的定位点标记，使此电子邮件链接。 你可能想要执行此操作，如果你在编写博客引擎并且需要使用它来发送电子邮件发送的市场营销、 支持和其他联系人，所有内容都在同一个域。
 
@@ -188,7 +186,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
 [HtmlTargetElement("MyBold")]
    ```
 
-## <a name="passing-a-model-to-a-tag-helper"></a>将模型传递到标记帮助器
+## <a name="pass-a-model-to-a-tag-helper"></a>将模型传递到标记帮助器
 
 1.  添加*模型*文件夹。
 
@@ -285,7 +283,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
 >
 >[Nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof)运算符将保护该代码应它曾重构 (我们可能想要将名称更改为`RedCondition`)。
 
-### <a name="avoiding-tag-helper-conflicts"></a>避免标记帮助器冲突
+### <a name="avoid-tag-helper-conflicts"></a>避免标记帮助器冲突
 
 在本部分中，你编写的成对的自动链接标记帮助程序。 第一个将包含到 HTML 定位点标记包含相同的 URL （这将会产生一个链接到的 URL） 从 HTTP URL 的标记。 第二个将执行相同操作的 URL 开头 WWW。
 
@@ -329,7 +327,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
     
     上面的代码可以保证 HTTP 标记帮助程序运行之前 WWW 标记帮助器。 更改`Order`到`MaxValue`并验证是否为 WWW 标记生成的标记不正确。
 
-## <a name="inspecting-and-retrieving-child-content"></a>检查和检索子内容
+## <a name="inspect-and-retrieve-child-content"></a>检查和检索子内容
 
 标记帮助程序提供多个属性以检索内容。
 

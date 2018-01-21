@@ -2,20 +2,18 @@
 title: "子项派生和经过身份验证的加密"
 author: rick-anderson
 description: "本文档说明 ASP.NET 核心数据保护的实现详细信息子项派生和身份验证加密。"
-keywords: "ASP.NET 核心，数据保护、 子项派生，身份验证的加密"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 34bb58a3-5a9a-41e5-b090-08f75b4bbefa
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/subkeyderivation
-ms.openlocfilehash: 3eb27b8a6d04074662bf619a09fd867252624209
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3927678b7b67b0e521a961e363200bdfe0bdaeb3
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="subkey-derivation-and-authenticated-encryption"></a>子项派生和经过身份验证的加密
 
@@ -40,7 +38,7 @@ ms.lasthandoff: 11/10/2017
 
 由于 AAD 是为所有三个组件的元组唯一的我们可以使用它从密钥主机派生新密钥，而不是使用密钥主机本身中所有的我们的加密操作。 每次调用`IAuthenticatedEncryptor.Encrypt`，发生以下密钥派生过程：
 
-（K_E，K_H） = SP800_108_CTR_HMACSHA512 (K_M，AAD，contextHeader | | keyModifier)
+( K_E, K_H ) = SP800_108_CTR_HMACSHA512(K_M, AAD, contextHeader || keyModifier)
 
 在这里，我们正在呼叫 NIST SP800 108 KDF 中计数器模式 (请参阅[NIST SP800-108](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-108.pdf)，sec。 5.1) 使用以下参数：
 

@@ -2,20 +2,18 @@
 title: "ASP.NET 核心 MVC 与 EF 核心-数据模型的 10 5"
 author: tdykstra
 description: "在本教程中添加更多实体和关系，并通过指定格式设置、 验证和数据库的映射规则自定义数据模型。"
-keywords: "ASP.NET 核心，实体框架核心数据批注"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 0dd63913-a041-48b6-96a4-3aeaedbdf5d0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: cacb23441e5f5ab06c6be27f3068276f21ff4ed9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5b5645936504333573950b5bd17f5a037ffd984f
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>创建复杂的数据模型的 EF 内核，它们有 ASP.NET 核心 MVC 教程 (5 的 10)
 
@@ -76,7 +74,7 @@ Contoso 大学示例 web 应用程序演示如何创建使用实体框架核心�
 `StringLength`属性不会阻止的用户的空白区域输入一个名称。 你可以使用`RegularExpression`要将限制应用到的输入属性。 例如，下面的代码要求的第一个字符是大写且其余的字符是按字母顺序排列：
 
 ```csharp
-[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
+[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
 ```
 
 `MaxLength`属性提供的功能类似于`StringLength`属性但不提供客户端验证。

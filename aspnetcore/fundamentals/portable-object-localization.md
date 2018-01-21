@@ -2,7 +2,6 @@
 title: "配置可移植对象本地化"
 author: sebastienros
 description: "本文介绍可移植的对象文件，并概述了有关使用 ASP.NET Core 应用程序的 Orchard 核心框架中的步骤。"
-keywords: "ASP.NET 核心、 本地化、 区域性、 语言、 可移植的对象"
 ms.author: scaddie
 manager: wpickett
 ms.date: 09/26/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/portable-object-localization
-ms.openlocfilehash: 4fa73ae08b10217de657681a27f6097fc3443737
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dfdd86b4706a1fb8e313c24ba830ec996fe09225
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configure-portable-object-localization-with-orchard-core"></a>使用 Orchard 核心配置可移植对象本地化
 

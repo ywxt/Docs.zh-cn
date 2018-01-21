@@ -2,20 +2,18 @@
 title: "ASP.NET 核心 mvc 模型验证"
 author: rachelappel
 description: "了解有关 ASP.NET 核心 mvc 模型验证。"
-keywords: "ASP.NET 核心，MVC，验证"
 ms.author: riande
 manager: wpickett
 ms.date: 12/18/2016
 ms.topic: article
-ms.assetid: 3a8676dd-7ed8-4a05-bca2-44e288ab99ee
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/validation
-ms.openlocfilehash: 7f641c247cb672934e76fa13bc7b7beb3990dd82
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: 91db17e103723ac411a2ad4f3f9549860f250cce
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>ASP.NET 核心 mvc 模型验证简介
 
@@ -173,7 +171,7 @@ $.get({
 
 ### <a name="add-validation-to-dynamic-controls"></a>将验证添加到动态控件
 
-你还可以更新窗体上的验证规则，当单个控件，如`<input/>`s 和`<select/>`s，动态生成。 不能将传递到这些元素选择器`parse()`方法直接因为周围的窗体已分析并不会更新。  相反，你首先删除现有的验证数据，然后重新分析整个窗体，如下所示：
+你还可以更新窗体上的验证规则，当单个控件，如`<input/>`s 和`<select/>`s，动态生成。 不能将传递到这些元素选择器`parse()`方法直接因为周围的窗体已分析并不会更新。 相反，你首先删除现有的验证数据，然后重新分析整个窗体，如下所示：
 
 ```js
 $.get({
@@ -233,11 +231,11 @@ $.get({
 
 现在当用户输入的电子邮件，在视图中的 JavaScript 进行远程调用以查看该电子邮件已并且，如果是这样，显示的错误消息。 否则，用户可以像往常一样提交窗体。
 
-`AdditionalFields`属性`[Remote]`属性可用于验证对服务器上的数据的字段的组合。  例如，如果`User`上面提供的模型有两个调用的其他属性`FirstName`和`LastName`，你可能想要验证是否没有现有的用户已有的名称配对。  下面的代码中所示，你可以定义新属性：
+`AdditionalFields`属性`[Remote]`属性可用于验证对服务器上的数据的字段的组合。 例如，如果`User`上面提供的模型有两个调用的其他属性`FirstName`和`LastName`，你可能想要验证是否没有现有的用户已有的名称配对。 下面的代码中所示，你可以定义新属性：
 
 [!code-csharp[Main](validation/sample/User.cs?range=10-13)]
 
-`AdditionalFields`无法显式设置为字符串`"FirstName"`和`"LastName"`，但使用[ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof)如下运算符简化了更高版本重构。  要执行验证的操作方法然后必须接受两个自变量，其中一个的值的`FirstName`，另一个的值用于`LastName`。
+`AdditionalFields`无法显式设置为字符串`"FirstName"`和`"LastName"`，但使用[ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof)如下运算符简化了更高版本重构。 要执行验证的操作方法然后必须接受两个自变量，其中一个的值的`FirstName`，另一个的值用于`LastName`。
 
 
 [!code-csharp[Main](validation/sample/UsersController.cs?range=30-39)]
@@ -248,11 +246,11 @@ $.get({
 * 如果已对，将显示一条错误消息。 
 * 如果不采取，用户可以提交窗体。
 
-如果你需要验证具有两个或多个其他字段`[Remote]`属性，您为他们提供以逗号分隔的列表。  例如，若要添加`MiddleName`属性设置为模型中，设`[Remote]`特性，如以下代码所示：
+如果你需要验证具有两个或多个其他字段`[Remote]`属性，您为他们提供以逗号分隔的列表。 例如，若要添加`MiddleName`属性设置为模型中，设`[Remote]`特性，如以下代码所示：
 
 ```cs
 [Remote(action: "VerifyName", controller: "Users", AdditionalFields = nameof(FirstName) + "," + nameof(LastName))]
 public string MiddleName { get; set; }
 ```
 
-`AdditionalFields`类似于将所有属性变量，必须是常量表达式。  因此，你必须使用[内插字符串](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interpolated-strings)或调用[ `string.Join()` ](https://msdn.microsoft.com/en-us/library/system.string.join(v=vs.110).aspx)初始化`AdditionalFields`。 你将添加到每个其他字段`[Remote]`属性，必须将另一个自变量添加到相应的控制器操作方法。
+`AdditionalFields`类似于将所有属性变量，必须是常量表达式。 因此，你必须使用[内插字符串](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interpolated-strings)或调用[ `string.Join()` ](https://msdn.microsoft.com/en-us/library/system.string.join(v=vs.110).aspx)初始化`AdditionalFields`。 你将添加到每个其他字段`[Remote]`属性，必须将另一个自变量添加到相应的控制器操作方法。

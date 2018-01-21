@@ -2,7 +2,6 @@
 title: "使用 ASP.NET Core 中的多个环境"
 author: rick-anderson
 description: "了解如何 ASP.NET Core 提供支持用于跨多个环境中控制应用行为。"
-keywords: "ASP.NET 核心，环境设置，ASPNETCORE_ENVIRONMENT"
 ms.author: riande
 manager: wpickett
 ms.date: 12/25/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/environments
-ms.openlocfilehash: 784d176145c3e4e44ddc0ea06b6702f70cd4b08c
-ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
+ms.openlocfilehash: 83d1593d46761b1c00aa431cfdcde59cb3b28b65
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="working-with-multiple-environments"></a>使用多个环境
 
@@ -157,7 +156,7 @@ export ASPNETCORE_ENVIRONMENT=Development
 ### <a name="linux"></a>Linux
 对于 Linux 发行版本，使用`export`基于会话的变量设置在命令行命令和*bash_profile*机级别的环境设置的文件。
 
-### <a name="configuration-by-environment"></a>配置环境
+### <a name="configuration-by-environment"></a>按环境配置
 
 请参阅[由环境配置](xref:fundamentals/configuration/index#configuration-by-environment)有关详细信息。
 

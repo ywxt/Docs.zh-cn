@@ -2,7 +2,6 @@
 title: "帐户确认和 ASP.NET Core 中的密码恢复"
 author: rick-anderson
 description: "演示如何生成具有电子邮件确认及密码重置的 ASP.NET Core 应用。"
-keywords: "ASP.NET 核心，密码重置，电子邮件确认，安全"
 ms.author: riande
 manager: wpickett
 ms.date: 12/1/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 955064122d2335016c7eb3dd7451b14106a3b83f
-ms.sourcegitcommit: 6e46abd65973dea796d364a514de9ec2e3e1c1ed
+ms.openlocfilehash: b004a8e7680b203416552e5a7a2809799e657759
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>帐户确认和 ASP.NET Core 中的密码恢复
 
@@ -123,7 +122,7 @@ config.SignIn.RequireConfirmedEmail = true;
 
 [!code-csharp[Main](accconfirm/sample/WebApp1/Services/AuthMessageSenderOptions.cs?name=snippet1)]
 
-设置`SendGridUser`和`SendGridKey`与[机密管理器工具](../app-secrets.md)。 例如: 
+设置`SendGridUser`和`SendGridKey`与[机密管理器工具](../app-secrets.md)。 例如:
 
 ```none
 C:\WebAppl\src\WebApp1>dotnet user-secrets set SendGridUser RickAndMSFT

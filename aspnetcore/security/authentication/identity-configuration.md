@@ -2,7 +2,6 @@
 title: "配置 ASP.NET 核心标识"
 author: AdrienTorris
 description: "了解 ASP.NET 核心标识默认值，并配置要使用自定义值的各种标识属性。"
-keywords: "ASP.NET 核心，标识、 身份验证安全性"
 ms.author: scaddie
 manager: wpickett
 ms.date: 01/11/2018
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: ac204cb89aac1f90adc64c4f0bec4e946cb8c4d9
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: d3a13d1cef3417522460b44c52c1361c3e9d1162
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configure-identity"></a>配置标识
 
@@ -103,13 +102,13 @@ ASP.NET 核心 2.0 增加`RequiredUniqueChars`属性。 否则，选项是从 AS
 
 | 属性                | 描述                       | 默认 |
 | ----------------------- | --------------------------------- | ------- |
-| `Cookie.Name`  | Cookie 的名称。  | .AspNetCore.Cookies。  |
+| `Cookie.Name`  | Cookie 的名称。  | .AspNetCore.Cookies.  |
 | `Cookie.HttpOnly`  | 为 true 时，cookie 不能从客户端脚本访问。  |  true |
 | `ExpireTimeSpan`  | 控制在 cookie 中存储身份验证票证的时间就会保持有效从它创建的点。  | 14 天  |
 | `LoginPath`  | 未授权用户时，他们将被重定向到登录到此路径。 | / 帐户/登录名  |
-| `LogoutPath`  | 当用户已注销时，则将被重定向到此路径。  | / 帐户/注销  |
+| `LogoutPath`  | 当用户已注销时，则将被重定向到此路径。  | /Account/Logout  |
 | `AccessDeniedPath`  | 当用户失败时授权检查时，则将被重定向到此路径。  |   |
-| `SlidingExpiration`  | 为 true 时，将使用新的过期时间，当前 cookie 时通过到期窗口的多个中间颁发一个新的 cookie。  | / 帐户/AccessDenied |
+| `SlidingExpiration`  | 为 true 时，将使用新的过期时间，当前 cookie 时通过到期窗口的多个中间颁发一个新的 cookie。  | /Account/AccessDenied |
 | `ReturnUrlParameter`  | 确定其 401 未授权的状态代码更改为 302 重定向到登录名路径时，该中间件会追加查询字符串参数的名称。  |  true |
 | `AuthenticationScheme`  | 这是仅适用于 ASP.NET Core 1.x。 特定的身份验证方案逻辑名称。 |  |
 | `AutomaticAuthenticate`  | 此标志才适用于 ASP.NET Core 1.x。 为 true 时，cookie 身份验证应在每个请求上运行并尝试验证并重新构造它创建的任何序列化的主体。  |  |

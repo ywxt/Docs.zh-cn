@@ -2,21 +2,19 @@
 title: "在 ASP.NET 核心中的窗体中的标记帮助程序"
 author: rick-anderson
 description: "描述的内置标记帮助程序用于窗体。"
-keywords: "ASP.NET 核心，标记帮助器，TagHelper，HTML 窗体中，窗体"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: 25595059-4fac-4785-8152-f88590e3169b
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/working-with-forms
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: da36985206521798d3bfe71f6372dc5cc4fca09a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9fbe2c5cb495aabee0e1f0bdb3871641efa03599
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>在 ASP.NET Core 中的窗体中使用标记帮助器简介
 
@@ -111,12 +109,12 @@ Type expected
 
 |.NET 类型|输入的类型|
 |---|---|
-|Bool|类型 ="复选框"|
-|字符串|类型 ="text"|
-|DateTime|类型 ="datetime"|
-|Byte|类型 ="number"|
-|Int|类型 ="number"|
-|Single、Double|类型 ="number"|
+|Bool|type=”checkbox”|
+|String|type=”text”|
+|DateTime|type=”datetime”|
+|Byte|type=”number”|
+|Int|type=”number”|
+|Single、Double|type=”number”|
 
 
 下表显示某些常见[数据注释](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter)输入的标记帮助器将映射到特定的输入类型 （列出不是每个验证属性） 的属性：
@@ -124,13 +122,13 @@ Type expected
 
 |特性|输入的类型|
 |---|---|
-|[EmailAddress]|类型 ="email"|
-|[Url]|类型 ="url"|
-|[HiddenInput]|类型 ="隐藏"|
-|[Phone]|类型 ="电话"|
-|[DataType(DataType.Password)]| 类型 ="密码"|
-|[DataType(DataType.Date)]| 类型 ="日期"|
-|[DataType(DataType.Time)]| 类型 ="时间"|
+|[EmailAddress]|type=”email”|
+|[Url]|type=”url”|
+|[HiddenInput]|type=”hidden”|
+|[Phone]|type=”tel”|
+|[DataType(DataType.Password)]| type=”password”|
+|[DataType(DataType.Date)]| type=”date”|
+|[DataType(DataType.Time)]| type=”time”|
 
 
 示例:
@@ -362,7 +360,7 @@ public IActionResult Edit(int id, int colorIndex)
 
 `Validation Summary Tag Helper`用于显示的验证消息的摘要。 `asp-validation-summary`属性值可以是任何以下：
 
-|asp 验证摘要|显示的验证消息|
+|asp-validation-summary|显示的验证消息|
 |--- |--- |
 |ValidationSummary.All|属性和模型级别|
 |ValidationSummary.ModelOnly|模型|
@@ -403,7 +401,7 @@ public IActionResult Edit(int id, int colorIndex)
 
 * 具有备用的 HTML 帮助器`Html.DropDownListFor`和`Html.ListBoxFor`
 
-`Select Tag Helper` `asp-for`指定的模型属性名称[选择](https://www.w3.org/wiki/HTML/Elements/select)元素和`asp-items`指定[选项](https://www.w3.org/wiki/HTML/Elements/option)元素。  例如: 
+`Select Tag Helper` `asp-for`指定的模型属性名称[选择](https://www.w3.org/wiki/HTML/Elements/select)元素和`asp-items`指定[选项](https://www.w3.org/wiki/HTML/Elements/option)元素。  例如:
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Home/Index.cshtml?range=4)]
 

@@ -2,20 +2,18 @@
 title: "依赖关系注入到视图"
 author: ardalis
 description: 
-keywords: ASP.NET Core
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 80fb9e43-e4db-4af2-b2a8-e1364a712f69
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/dependency-injection
-ms.openlocfilehash: 4586f50bc663b7269914dfff28b61342e3991a48
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cade61b1ebdb2b845b07117384475638c0227f7f
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="dependency-injection-into-views"></a>依赖关系注入到视图
 
@@ -84,6 +82,6 @@ ASP.NET 核心支持[依赖关系注入](xref:fundamentals/dependency-injection)
 
 如果你想要扩展现有的服务，可以在继承自或包装的现有实现替换为你自己时只需使用此方法。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * 人 Simon Timms 博客：[使查找数据进入你的视图](http://blog.simontimms.com/2015/06/09/getting-lookup-data-into-you-view/)

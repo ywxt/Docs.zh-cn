@@ -2,20 +2,18 @@
 title: "使用者 Api 概述"
 author: rick-anderson
 description: "本文档提供各种使用者 Api ASP.NET 核心数据保护库中可用的简要概述。"
-keywords: "ASP.NET 核心，数据保护，使用者 Api"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: f69beb9d-a519-43a8-857c-f6b01886a903
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/overview
-ms.openlocfilehash: c80ed22776b0dbbaccb686f8c2ea534e6f5d9a74
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5ec11dce3ba485a84b6ce5f7ddaf16430162659c
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="consumer-apis-overview"></a>使用者 Api 概述
 

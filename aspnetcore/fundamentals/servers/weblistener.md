@@ -2,20 +2,18 @@
 title: "在 ASP.NET Core WebListener web 服务器实现"
 author: rick-anderson
 description: "引入了 WebListener，ASP.NET 核心 Windows 上的 web 服务器。 基于 Http.Sys 内核模式驱动程序，WebListener 是可以用于直接连接到 Internet，不含 IIS 的 Kestrel 的替代方法。"
-keywords: "ASP.NET 核心、 WebListener、 HttpListener、 url 前缀，SSL"
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
 ms.topic: article
-ms.assetid: 0a7286e4-6428-424e-b5c4-5c98815cf61c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: f1abb3558546cd907c78b44d9353d9c9f1f5aff1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f1bdbc723e4602c2e53723aff91ec5d254f4bd93
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>在 ASP.NET Core WebListener web 服务器实现
 

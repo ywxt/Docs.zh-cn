@@ -2,7 +2,6 @@
 title: "在 ASP.NET 核心中使用 Gulp"
 author: rick-anderson
 description: "了解如何在 ASP.NET 核心中使用 Gulp。"
-keywords: "ASP.NET 核心 Gulp"
 ms.author: riande
 manager: wpickett
 ms.date: 02/28/2017
@@ -11,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-gulp
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 68f6838889cfb830f2c5a1976b3140ae5d94ac25
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 11f7254a2f3d3d132f2f6af6d5ddab23f896cf63
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-using-gulp-in-aspnet-core"></a>在 ASP.NET 核心中使用 Gulp 简介 
 
@@ -64,9 +63,9 @@ paths.concatCssDest = paths.webroot + "css/site.min.css";
 |---|---|
 |gulp|Gulp 流式处理生成系统中。 有关详细信息，请参阅[gulp](https://www.npmjs.com/package/gulp)。|
 |rimraf|节点删除模块。 有关详细信息，请参阅[rimraf](https://www.npmjs.com/package/rimraf)。|
-|gulp concat|一个连接基于操作系统的换行字符的文件的模块。 有关详细信息，请参阅[gulp concat](https://www.npmjs.com/package/gulp-concat)。|
-|gulp cssmin|Minifies CSS 文件模块。 有关详细信息，请参阅[gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)。|
-|gulp uglify|Minifies 模块*.js*文件。 有关详细信息，请参阅[gulp uglify](https://www.npmjs.com/package/gulp-uglify)。|
+|gulp-concat|一个连接基于操作系统的换行字符的文件的模块。 有关详细信息，请参阅[gulp concat](https://www.npmjs.com/package/gulp-concat)。|
+|gulp-cssmin|Minifies CSS 文件模块。 有关详细信息，请参阅[gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)。|
+|gulp-uglify|Minifies 模块*.js*文件。 有关详细信息，请参阅[gulp uglify](https://www.npmjs.com/package/gulp-uglify)。|
 
 必备项的模块将导入后，可以指定任务。 此处有六项任务注册，表示通过以下代码：
 
@@ -102,8 +101,8 @@ gulp.task("min", ["min:js", "min:css"]);
 
 |任务名称|描述|
 |--- |--- |
-|干净： js|使用 rimraf 节点删除模块删除 site.js 文件的缩减的版本的任务。|
-|干净： css|使用 rimraf 节点删除模块删除 site.css 文件的缩减的版本的任务。|
+|clean:js|使用 rimraf 节点删除模块删除 site.js 文件的缩减的版本的任务。|
+|clean:css|使用 rimraf 节点删除模块删除 site.css 文件的缩减的版本的任务。|
 |清理|一个任务，它调用`clean:js`任务后, 跟`clean:css`任务。|
 |min:js|Minifies 和串联的 js 文件夹中的所有.js 文件的任务。 。 排除 min.js 文件。|
 |min:css|Minifies 和串联的 css 文件夹中的所有.css 文件的任务。 。 排除 min.css 文件。|
@@ -249,7 +248,7 @@ gulp.task("min", ["min:js", "min:css"]);
     gulp.task("series", ["series:first", "series:second"], function () {});
     ```
  
-    你现在具有三个任务： `series:first`， `series:second`，和`series`。 `series:second`任务包括指定任务要运行和完成之前的数组的第二个参数`series:second`任务将运行。  根据上面，唯一的代码中的指定`series:first`任务必须完成之前`series:second`任务将运行。
+    你现在具有三个任务： `series:first`， `series:second`，和`series`。 `series:second`任务包括指定任务要运行和完成之前的数组的第二个参数`series:second`任务将运行。 根据上面，唯一的代码中的指定`series:first`任务必须完成之前`series:second`任务将运行。
 
 2.  保存*gulpfile.js*。
 
@@ -328,7 +327,7 @@ Intellisense 的详细信息，请参阅[JavaScript IntelliSense](https://docs.m
 
 ## <a name="task-and-module-details"></a>任务和模块的详细信息
 
-Gulp 任务已注册到的函数名称。  如果其他任务都必须运行在当前任务之前，你可以指定依赖关系。 其他函数，您可以运行和监视 Gulp 任务，以及将源设置 (*src*) 和目标 (*dest*) 正在修改的文件。 以下是主 Gulp API 函数：
+Gulp 任务已注册到的函数名称。 如果其他任务都必须运行在当前任务之前，你可以指定依赖关系。 其他函数，您可以运行和监视 Gulp 任务，以及将源设置 (*src*) 和目标 (*dest*) 正在修改的文件。 以下是主 Gulp API 函数：
 
 |Gulp 函数|语法|描述|
 |---   |--- |--- |

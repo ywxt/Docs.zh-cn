@@ -2,20 +2,18 @@
 title: "Microsoft 帐户外部登录设置"
 author: rick-anderson
 description: "本教程演示的集成到现有的 ASP.NET Core 应用程序的 Microsoft 帐户用户身份验证。"
-keywords: "ASP.NET 核心，Microsoft 帐户、 登录、 身份验证"
 ms.author: riande
 manager: wpickett
 ms.date: 08/24/2017
 ms.topic: article
-ms.assetid: 66DB4B94-C78C-4005-BA03-3D982B87C268
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: 77c16e3ae93c9bfe1f569d0a5888c5b765d04241
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6e4586eb681bd230413ace67ca9eddc3fe3e9e60
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configuring-microsoft-account-authentication"></a>配置 Microsoft 帐户身份验证
 

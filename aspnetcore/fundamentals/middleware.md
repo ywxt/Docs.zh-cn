@@ -2,20 +2,18 @@
 title: "ASP.NET 核心中间件"
 author: rick-anderson
 description: "了解有关 ASP.NET 核心中间件和请求管道。"
-keywords: "ASP.NET 核心，中间件，管道、 委托"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2017
 ms.topic: article
-ms.assetid: db9a86ab-46c2-40e0-baed-86e38c16af1f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: ad8d207b1e6de396f16d098fb07ddc89bea2c520
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af16046c97964e8e1c16a4f5989fcfa794741c4d
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>ASP.NET 核心中间件基础知识
 
@@ -153,9 +151,9 @@ public void Configure(IApplicationBuilder app)
 | 请求 | 响应 |
 | --- | --- |
 | localhost:1234 | 从非映射委托 hello。  |
-| localhost:1234 / map1 | 测试 1 映射 |
-| localhost:1234 / map2 | 测试 2 映射 |
-| localhost:1234 / map3 | 从非映射委托 hello。  |
+| localhost:1234/map1 | 测试 1 映射 |
+| localhost:1234/map2 | 测试 2 映射 |
+| localhost:1234/map3 | 从非映射委托 hello。  |
 
 当`Map`是使用，从删除匹配的路径段`HttpRequest.Path`和追加到`HttpRequest.PathBase`为每个请求。
 
@@ -168,7 +166,7 @@ public void Configure(IApplicationBuilder app)
 | 请求 | 响应 |
 | --- | --- |
 | localhost:1234 | 从非映射委托 hello。  |
-| localhost:1234 /？ 分支 = master | 使用分支 = master|
+| localhost:1234/?branch=master | 使用分支 = master|
 
 `Map`支持嵌套，例如：
 
@@ -236,7 +234,7 @@ ASP.NET 核心附带以下的中间件组件：
 
 ### <a name="per-request-dependencies"></a>每个请求的依赖关系
 
-中间件构造在应用启动时，不根据请求，因为*范围*生存期服务使用的中间件构造函数不能与其他依赖关系注入类型共享在每个请求过程。 如果必须共享*范围*服务中间件和其他类型之间，添加到这些服务`Invoke`方法的签名。 `Invoke`方法可以接受由依赖关系注入填充的附加参数。 例如: 
+中间件构造在应用启动时，不根据请求，因为*范围*生存期服务使用的中间件构造函数不能与其他依赖关系注入类型共享在每个请求过程。 如果必须共享*范围*服务中间件和其他类型之间，添加到这些服务`Invoke`方法的签名。 `Invoke`方法可以接受由依赖关系注入填充的附加参数。 例如:
 
 ```c#
 public class MyMiddleware

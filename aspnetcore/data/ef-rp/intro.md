@@ -2,7 +2,6 @@
 title: "包含实体框架核心技术-8 的教程 1 razor 页面"
 author: rick-anderson
 description: "演示如何创建使用实体框架核心的 Razor 页面应用程序"
-keywords: "ASP.NET 核心，实体框架核心，教程"
 ms.author: riande
 manager: wpickett
 ms.date: 11/15/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/intro
-ms.openlocfilehash: 2725960aa8a54c803a141b8d1275e65f245f7082
-ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
+ms.openlocfilehash: bea3b12ebe476c4b59abe117393b0ec8bb7f0306
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>开始使用 Razor 页和使用 Visual Studio (第 1 个 8) 的实体框架核心
 

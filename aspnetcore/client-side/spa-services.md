@@ -2,21 +2,19 @@
 title: "用于创建单页面应用程序使用 JavaScriptServices"
 author: scottaddie
 description: "了解有关使用 JavaScriptServices 创建由 ASP.NET Core 单页面应用程序 (SPA) 的好处。"
-keywords: "ASP.NET 核心，角度、 SPA、 JavaScriptServices、 SpaServices"
 ms.author: scaddie
 manager: wpickett
 ms.date: 08/02/2017
 ms.topic: article
-ms.assetid: 4b30576b-2718-4c39-9253-a59966747893
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/spa-services
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8d47910beef9195295c8da6ac81b83b3ffe20124
-ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
+ms.openlocfilehash: 6d84659c8c65bebb46551eb38bd52e405ff56016
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>用于创建具有 ASP.NET Core 的单页面应用程序使用 JavaScriptServices
 
@@ -85,7 +83,7 @@ SpaServices 提供有用的基础结构，如所示：
 
 ASP.NET 核心[标记帮助程序](xref:mvc/views/tag-helpers/intro)由 SpaServices 简化通过调用服务器上的 JavaScript 函数的服务器端预呈现的实现。
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 安装以下组件：
 * [aspnet 预呈现](https://www.npmjs.com/package/aspnet-prerendering)npm 包：
@@ -142,7 +140,7 @@ ASP.NET 核心[标记帮助程序](xref:mvc/views/tag-helpers/intro)由 SpaServi
 
 [!code-json[Main](../client-side/spa-services/sample/SpaServicesSampleApp/package.json?range=5)]
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 安装以下组件：
 * [aspnet webpack](https://www.npmjs.com/package/aspnet-webpack) npm 包：
@@ -169,7 +167,7 @@ Webpack 开发人员中间件注册到中的以下代码通过 HTTP 请求管道
 
 思考的 Webpack 的[热模块更换](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html)(HMR) 功能作为演变而来的[Webpack 开发人员中间件](#webpack-dev-middleware)。 HMR 引入了完全相同的好处，但它进一步，从而简化了开发工作流自动编译所做的更改后更新页面内容。 不要混淆这与刷新浏览器中，这会干扰的当前内存中状态和 SPA 的调试会话。 没有 Webpack 开发人员中间件服务与浏览器中，这意味着更改推送到浏览器之间的实时链接。
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 安装以下组件：
 * [webpack 热 middleware](https://www.npmjs.com/package/webpack-hot-middleware) npm 包：
@@ -206,7 +204,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 
 请考虑在该方案中的无扩展名路由`/some/page`使用。 假定该请求不模式匹配的服务器端路由，但其模式匹配的客户端路由。 现在请考虑对的传入请求`/images/user-512.png`，它通常需要查找服务器上的图像文件。 如果该请求的资源路径不匹配任何服务器端路由或静态文件，它不太客户端应用程序将处理它，你通常想要返回 HTTP 状态代码为 404。
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 安装以下组件：
 * 客户端路由 npm 包。 使用角作为示例：

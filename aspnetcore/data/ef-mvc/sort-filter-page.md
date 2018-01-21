@@ -2,19 +2,17 @@
 title: "ASP.NET 核心 MVC 与 EF 核心的排序、 筛选器、 分页-10 3"
 author: tdykstra
 description: "在本教程中，你将添加排序、 筛选和分页功能页上使用 ASP.NET Core 和实体框架核心。"
-keywords: "ASP.NET 核心、 实体框架核心、 排序、 筛选器、 分页，分组"
 ms.author: tdykstra
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: e6c1ff3c-5673-43bf-9c2d-077f6ada1f29
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 59fff4dbf4736f0776aac4072f3f4e2d40119842
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6da2073b18f6fff9738808c84441e59240caefe3
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>排序、 筛选、 分页和分组-ASP.NET 核心 MVC 教程 (3 的 10) 的 EF 核心
 

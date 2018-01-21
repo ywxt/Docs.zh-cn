@@ -2,21 +2,19 @@
 title: "ASP.NET 核心模块"
 author: tdykstra
 description: "引入了 ASP.NET 核心模块 (ANCM) 使 Kestrel web 服务器可以使用 IIS 或 IIS Express 作为反向代理服务器的 IIS 模块。"
-keywords: "ASP.NET 核心，IIS，IIS Express,ASP.NET 核心模块 UseIISIntegration"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 08/03/2017
 ms.topic: article
-ms.assetid: 4661af33-34c5-4d71-93a0-8c7632f43580
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/aspnet-core-module
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5eef9405c0c3d219755d7cffa5d45c3df45ddb5c
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 153c40f0e825ff5826e916c7ea877a25d81954f1
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-aspnet-core-module"></a>ASP.NET 核心模块简介
 

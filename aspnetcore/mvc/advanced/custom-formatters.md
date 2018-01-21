@@ -2,20 +2,18 @@
 title: "ASP.NET 核心 MVC web Api 中的自定义格式化程序"
 author: tdykstra
 description: "了解如何创建和自定义格式化程序用于 ASP.NET Core 中的 web Api。"
-keywords: "ASP.NET 核心 web api，自定义格式化程序"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 02/08/2017
 ms.topic: article
-ms.assetid: 1fb6fdc2-e199-4469-9012-b909d1913422
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/custom-formatters
-ms.openlocfilehash: 5e665abe10fd7444c3fd5f20cfeca3ef0a5f79d3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3a6474fdae29b170978226de74d523b20a16cd0c
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="custom-formatters-in-aspnet-core-mvc-web-apis"></a>ASP.NET 核心 MVC web Api 中的自定义格式化程序
 
@@ -84,7 +82,7 @@ ASP.NET 核心 MVC 通过使用 JSON、 XML 或纯文本格式，web Api 中具�
 例如，假设你的操作方法签名返回`Person`类型，但它可能返回`Student`或`Instructor`派生自的类型`Person`。 如果你想将格式化程序来仅处理`Student`对象，请检查的一种[对象](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.formatters.outputformattercanwritecontext#Microsoft_AspNetCore_Mvc_Formatters_OutputFormatterCanWriteContext_Object)到提供的上下文对象中`CanWriteResult`方法。 请注意，不需要使用`CanWriteResult`操作方法返回时`IActionResult`; 在这种情况下，`CanWriteType`方法接收的运行时类型。
 
 <a id="read-write"></a>
-### <a name="override-readrequestbodyasyncwriteresponsebodyasync"></a>重写 ReadRequestBodyAsync/WriteResponseBodyAsync 
+### <a name="override-readrequestbodyasyncwriteresponsebodyasync"></a>Override ReadRequestBodyAsync/WriteResponseBodyAsync 
 
 执行反序列化或进行序列化的实际工作`ReadRequestBodyAsync`或`WriteResponseBodyAsync`。  突出显示的行，在下面的示例演示如何获取服务从依赖关系注入容器 （不能从构造函数参数获取它们）。
 

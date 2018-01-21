@@ -2,20 +2,18 @@
 title: "具有特定的方案-授权 ASP.NET 核心"
 author: rick-anderson
 description: "此文章介绍了如何使用多个身份验证方法时限制为特定方案的标识。"
-keywords: "ASP.NET 核心，标识、 身份验证方案"
 ms.author: riande
 manager: wpickett
 ms.date: 10/12/2017
 ms.topic: article
-ms.assetid: d3d6ca1b-b4b5-4bf7-898e-dcd90ec1bf8c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/limitingidentitybyscheme
-ms.openlocfilehash: 8c9d068b88263d0c06b11a6b87416fb02885c475
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 099dba1a4235ef62ea298748645b99e2d6d12d44
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="authorize-with-a-specific-scheme"></a>具有特定方案授权
 
@@ -23,7 +21,7 @@ ms.lasthandoff: 11/10/2017
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-当在身份验证过程中配置身份验证服务，名为身份验证方案。 例如: 
+当在身份验证过程中配置身份验证服务，名为身份验证方案。 例如:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -48,7 +46,7 @@ public void ConfigureServices(IServiceCollection services)
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-身份验证方案进行命名时在身份验证过程配置身份验证中间件。 例如: 
+身份验证方案进行命名时在身份验证过程配置身份验证中间件。 例如:
 
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -82,7 +80,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 
 ## <a name="selecting-the-scheme-with-the-authorize-attribute"></a>选择带有 Authorize 属性的方案
 
-在授权，终端应用指示要使用的处理程序。 选择与应用程序将授权通过传递到身份验证方案的以逗号分隔列表的处理程序`[Authorize]`。 `[Authorize]`属性指定的身份验证方案或方案，可使用无论配置默认值。 例如: 
+在授权，终端应用指示要使用的处理程序。 选择与应用程序将授权通过传递到身份验证方案的以逗号分隔列表的处理程序`[Authorize]`。 `[Authorize]`属性指定的身份验证方案或方案，可使用无论配置默认值。 例如:
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 

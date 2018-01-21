@@ -2,20 +2,18 @@
 title: "ASP.NET 核心 MVC 与 EF 核心-继承-9 的 10"
 author: tdykstra
 description: "本教程将演示如何在数据模型中，ASP.NET Core 应用程序中使用实体框架核心实现继承。"
-keywords: "ASP.NET 核心，实体框架核心继承"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 41dc0db7-6f17-453e-aba6-633430609c74
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 10bde121dac3bdbbf0e55f2d146d91dea0f0210f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 756f1bbba73bd760f780d18c01597642dd1f7216
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>继承的 EF 内核，它们有 ASP.NET 核心 MVC 教程 (9 的 10)
 
