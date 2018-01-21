@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 
 在创建新的 ASP.NET MVC 应用程序时，应用程序已配置为使用 ASP.NET 路由。 ASP.NET 路由是在两个位置的安装程序。
 
-首先，ASP.NET 路由，就被启用应用程序的 Web 配置文件 （Web.config 文件） 中。 有配置文件与路由相关的四个部分： system.web.httpModules 部分、 system.web.httpHandlers 部分、 system.webserver.modules 部分中和 system.webserver.handlers 部分。 请注意不要删除这些部分，因为如果这些部分没有路由将不再起作用。
+首先，ASP.NET 路由，就被启用应用程序的 Web 配置文件 （Web.config 文件） 中。 有配置文件与路由相关的四个部分： system.web.httpModules 节、 system.web.httpHandlers 节、 system.webserver.modules 节和 system.webserver.handlers 节。 请注意不要删除这些节，因为如果这些节没有路由将不再起作用。
 
 第二步，并更重要的是，应用程序的 Global.asax 文件中创建路由表。 Global.asax 文件是一个特殊文件，其中包含为 ASP.NET 应用程序生命周期事件的事件处理程序。 在应用程序启动事件创建的路由表。
 
