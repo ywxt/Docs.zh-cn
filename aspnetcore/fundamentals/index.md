@@ -2,21 +2,19 @@
 title: "ASP.NET Core 基础知识"
 author: rick-anderson
 description: "了解生成 ASP.NET Core 应用程序的基础概念。"
-keywords: "ASP.NET Core, 基础知识, 概述"
 ms.author: riande
 manager: wpickett
 ms.date: 09/30/2017
 ms.topic: get-started-article
-ms.assetid: a19b7836-63e4-44e8-8250-50d426dd1070
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/index
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 83bed4676be3ca752442da3fe560f1f2a4d728a1
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 0d977c13eb5f4cbe8bac261733bdc747e6c19b2a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 基础知识
 
@@ -163,7 +161,7 @@ ASP.NET Core 应用可配置和启动一个*主机*，负责应用启动和生�
 
 ## <a name="servers"></a>服务器
 
-ASP.NET Core 托管模型不直接侦听请求。 托管模型依赖 HTTP 服务器实现将请求转发到应用。 转发的请求被打包为一组可通过接口进行访问的功能对象。 ASP.NET Core 包含托管的跨平台 Web 服务器，名为 [Kestrel](xref:fundamentals/servers/kestrel)。 Kestrel 通常在生产 Web 服务器（如 [IIS](https://www.iis.net/) 或 [nginx](http://nginx.org)）后台运行。 Kestrel 可作为边缘服务器运行。
+ASP.NET Core 托管模型不直接侦听请求。 托管模型依赖 HTTP 服务器实现将请求转发到应用。 转发的请求被打包为一组可通过接口进行访问的功能对象。 ASP.NET Core 包含托管的跨平台 Web 服务器，名为 [Kestrel](xref:fundamentals/servers/kestrel)。 Kestrel 通常在生产 Web 服务器（如 [IIS](https://www.iis.net/) 或 [Nginx](http://nginx.org)）后台运行。 Kestrel 可作为边缘服务器运行。
 
 有关详细信息，请参阅[服务器](xref:fundamentals/servers/index)和下列主题：
 

@@ -130,6 +130,7 @@
 ## [测试控制器](xref:mvc/controllers/testing)
 ## [远程调试](/visualstudio/debugger/remote-debugging-azure)
 ## [快照调试](/azure/application-insights/app-insights-snapshot-debugger)
+## [Visual Studio 中的快照调试](/visualstudio/debugger/debug-live-azure-applications)
 
 # [数据访问和存储](data/index.md)
 ## [通过 Visual Studio 开始使用 Razor 页面和 Entity Framework Core](xref:data/ef-rp/intro)

@@ -1,19 +1,7 @@
 ---
-title: "ASP.NET Core 中的 Razor 页面介绍"
-author: Rick-Anderson
-description: "本文档提供有关使用 ASP.NET Core 中的 Razor 页面轻松开发聚焦于页的方案概述。"
-ms.author: riande
-manager: wpickett
-ms.date: 09/12/2017
-ms.topic: get-started-article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: mvc/razor-pages/index
-ms.openlocfilehash: 2c9f4291d458032e6aea961707e74e1e1da90b0a
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+标题：ASP.NET Core 中的 Razor 页面介绍 作者：Rick-Anderson 说明：有关 Razor 页面的 ASP.NET Core 教程。 包含 MVC Core、ASP.NET Core 2.x、web 开发介绍和 Visual Studio 2017。
+本文档提供有关使用 ASP.NET Core 中的 Razor 页面轻松开发聚焦于页的方案概述。
+ms.author: riande manager: wpickett ms.date: 09/12/2017 ms.topic: get-started-article ms.technology: aspnet ms.prod: asp.net-core uid: mvc/razor-pages/index
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor 页面介绍
 
