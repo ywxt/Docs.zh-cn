@@ -2,7 +2,6 @@
 title: "将搜索添加到 ASP.NET Core Razor 页面"
 author: rick-anderson
 description: "演示如何将搜索添加到 ASP.NET Core Razor 页面"
-keywords: "ASP.NET Core, 搜索, Razor 页面"
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/razor-pages/search
-ms.openlocfilehash: 3729f351ba7d1e5f566046a619c17e9e1e6614cb
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: 2859d52e42d4430808e01739474df0598c07c805
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="adding-search-to-a-razor-pages-app"></a>将搜索添加到 Razor 页面应用
 

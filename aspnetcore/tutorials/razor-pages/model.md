@@ -2,7 +2,6 @@
 title: "在 ASP.NET Core 中向 Razor 页面应用添加模型"
 author: rick-anderson
 description: "在 ASP.NET Core 中向 Razor 页面应用添加模型"
-keywords: "ASP.NET Core, Razor 页面, Razor, MVC"
 ms.author: riande
 manager: wpickett
 ms.date: 07/27/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 38f27a1d5ca80cec4b7bc43c3d5473fc829f1b05
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 84e5ec27904b564fa6ee29843ceae0bb70754ea7
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="adding-a-model-to-a-razor-pages-app"></a>向 Razor 页面应用添加模型
 
@@ -40,9 +39,9 @@ ms.lasthandoff: 11/10/2017
 
 使用 Startup.cs 文件中的[依存关系注入](xref:fundamentals/dependency-injection)容器注册数据库上下文。
 
-[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=3-6)]
+[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=3-5,7-9)]
 
-生成项目以确定没有任何错误。
+生成项目以验证有没有任何错误存在。
 
 <a name="pmc"></a>
 ## <a name="add-scaffold-tooling-and-perform-initial-migration"></a>添加基架工具并执行初始迁移
@@ -60,7 +59,7 @@ ms.lasthandoff: 11/10/2017
 在 PMC 中，输入以下命令：
 
 ```powershell
-Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design -Version 2.0.0
+Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
 Add-Migration Initial
 Update-Database
 ```

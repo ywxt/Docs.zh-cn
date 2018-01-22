@@ -2,7 +2,6 @@
 title: "使用 Visual Studio for Mac 向 Razor 页面应用添加模型"
 author: rick-anderson
 description: "使用 Visual Studio for Mac 在 ASP.NET Core 中向 Razor 页面应用添加模型"
-keywords: "ASP.NET Core, Razor 页面, Razor, MVC, 模型"
 ms.author: riande
 manager: wpickett
 ms.date: 08/27/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages-mac/model
-ms.openlocfilehash: 648ecd3a782fa489b727982ce5f7a2087539bf38
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7b1b2d54e9c68b0a6f2b1355726d0d1cb484f69e
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="adding-a-model-to-a-razor-pages-app-in-aspnet-core-with-visual-studio-for-mac"></a>使用 Visual Studio for Mac 在 ASP.NET Core 中向 Razor 页面应用添加模型
 
@@ -37,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 
 右键单击红色波浪线，例如，行 `services.AddDbContext<MovieContext>(options =>` 中的 `MovieContext`。 选择“快速修复”>“使用RazorPagesMovie.Models;”。 Visual Studio 添加 using 语句。
 
-生成项目以确定没有任何错误。
+生成项目以验证有没有任何错误存在。
 
 ![创建页面](model/red.png)
 

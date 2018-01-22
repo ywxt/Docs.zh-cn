@@ -2,21 +2,19 @@
 title: "将模型添加到 ASP.NET Core MVC 应用"
 author: rick-anderson
 description: "将模型添加到简单的 ASP.NET Core 应用。"
-keywords: "ASP.NET Core,MVC,搭建基架,基架"
 ms.author: riande
 manager: wpickett
 ms.devlang: csharp
 ms.date: 09/22/2017
 ms.topic: get-started-article
-ms.assetid: 8dc28498-eeee-1638-b903-b593059e9f39
 ms.technology: aspnet
 ms.prod: .net-core
 uid: tutorials/first-mvc-app-mac/adding-model
-ms.openlocfilehash: ff0b262bdf2685bd1bc410c30c12aa2d16f6dcda
-ms.sourcegitcommit: 7d092cd99057bad9246c472a8a0a8cbc7ab9fa9b
+ms.openlocfilehash: 3a7db5e435fe72150feb1e0ec905b6f6adc16f2c
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 01/19/2018
 ---
 [!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
 
@@ -31,7 +29,7 @@ ms.lasthandoff: 11/13/2017
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
-数据库需要 `ID` 字段作为主键。
+数据库需要 `ID` 字段以获取主键。
 
 生成项目以验证有没有任何错误存在。 现在 MVC 应用中已具有模型。
 
@@ -83,7 +81,7 @@ dotnet aspnet-codegenerator controller -name MoviesController -m Movie -dc MvcMo
 * 电影控制器 (Controllers/MoviesController.cs)
 * “创建”、“删除”、“详细信息”、“编辑”和“索引”页面的 Razor 视图文件 (Views/Movies/\*.cshtml)
 
-自动创建 [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete)（创建、读取、更新和删除）操作方法和视图的过程称为“搭建基架”。 你很快就会拥有一个功能完备的 Web 应用程序，并且你可以使用它管理电影数据库。
+自动创建 [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete)（创建、读取、更新和删除）操作方法和视图的过程称为“搭建基架”。 你很快将具有功能完整的 Web 应用程序，可使用此应用程序管理电影数据库。
 
 ### <a name="add-the-files-to-visual-studio"></a>将文件添加到 Visual Studio
 

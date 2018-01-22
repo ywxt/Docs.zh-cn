@@ -6,16 +6,14 @@ ms.author: riande
 ms.date: 09/18/2017
 ms.topic: get-started-article
 ms.technology: aspnet
-keywords: "ASP.NET Core, WebAPI, Web API, REST, Mac, Linux, HTTP, 服务, HTTP 服务, VS Code"
 ms.prod: asp.net-core
 manager: wpickett
-ms.assetid: 8dc28498-eeee-4666-b903-b593059e9f39
 uid: tutorials/first-mvc-app-xplat/adding-model
-ms.openlocfilehash: 70aa344ca4ceafacf53907c925fd595e47104d7e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4c09225c925c326da7e815b39f176325a04fc17b
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 [!INCLUDE[adding-model1](../../includes/mvc-intro/adding-model1.md)]
 
@@ -24,7 +22,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
-数据库需要 `ID` 字段作为主键。 
+数据库需要 `ID` 字段以获取主键。 
 
 生成应用以确认没有任何错误，最后将 Model 添加到你的 MVC 应用。
 
