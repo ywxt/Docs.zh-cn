@@ -4,16 +4,16 @@ author: rick-anderson
 description: "了解有关 ASP.NET 核心中间件和请求管道。"
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2017
+ms.date: 01/22/2018
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: af16046c97964e8e1c16a4f5989fcfa794741c4d
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: ef130e736e2f32fa134156d979ce5bfbedcae828
+ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>ASP.NET 核心中间件基础知识
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 01/19/2018
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
-## <a name="what-is-middleware"></a>什么是中间件
+## <a name="what-is-middleware"></a>什么是中间件？
 
 中间件是汇集到以处理请求和响应的一个应用程序管道的软件。 每个组件：
 
@@ -191,18 +191,22 @@ app.Map("/level1/level2", HandleMultiSeg);
 
 ## <a name="built-in-middleware"></a>内置的中间件
 
-ASP.NET 核心附带以下的中间件组件：
+ASP.NET 核心附带以下的中间件组件，以及应添加的顺序的说明：
 
-| 中间件 | 描述 |
-| ----- | ------- |
-| [身份验证](xref:security/authentication/identity) | 提供的身份验证支持。 |
-| [CORS](xref:security/cors) | 配置跨域资源共享。 |
-| [响应缓存](xref:performance/caching/middleware) | 提供对缓存响应支持。 |
-| [响应压缩](xref:performance/response-compression) | 提供用于压缩响应的支持。 |
-| [路由](xref:fundamentals/routing) | 定义和约束请求路由。 |
-| [会话](xref:fundamentals/app-state) | 提供用于管理用户会话的支持。 |
-| [静态文件](xref:fundamentals/static-files) | 为静态文件和目录浏览提供服务提供支持。 |
-| [URL 重写中间件](xref:fundamentals/url-rewriting) | 用于重写 Url，并将请求重定向的支持。 |
+| 中间件 | 描述 | 订单 |
+| ---------- | ----------- | ----- |
+| [身份验证](xref:security/authentication/identity) | 提供的身份验证支持。 | 之前`HttpContext.User`需要。 OAuth 回调的终端。 |
+| [CORS](xref:security/cors) | 配置跨域资源共享。 | 之前使用 CORS 的组件。 |
+| [诊断](xref:fundamentals/error-handling) | 配置诊断。 | 之前生成错误的组件。 |
+| [ForwardedHeaders/HttpOverrides](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions) | 将转发到当前请求的代理标头。 | 使用更新的字段的组件之前 (示例： 方案、 主机、 clientip 启动、 方法)。 |
+| [响应缓存](xref:performance/caching/middleware) | 提供对缓存响应支持。 | 之前需要缓存的组件。 |
+| [响应压缩](xref:performance/response-compression) | 提供用于压缩响应的支持。 | 之前需要压缩的组件。 |
+| [RequestLocalization](xref:fundamentals/localization) | 提供本地化支持。 | 之前本地化敏感组件。 |
+| [路由](xref:fundamentals/routing) | 定义和约束请求路由。 | 用于匹配路由终端。 |
+| [会话](xref:fundamentals/app-state) | 提供用于管理用户会话的支持。 | 之前需要会话的组件。 |
+| [静态文件](xref:fundamentals/static-files) | 为静态文件和目录浏览提供服务提供支持。 | 如果请求与匹配的文件的终端。 |
+| [URL 重写](xref:fundamentals/url-rewriting) | 用于重写 Url，并将请求重定向的支持。 | 之前使用 URL 的组件。 |
+| [WebSockets](xref:fundamentals/websockets) | 启用 Websocket 协议。 | 之前接受 WebSocket 请求所需的组件。 |
 
 <a name="middleware-writing-middleware"></a>
 
