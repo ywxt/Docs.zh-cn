@@ -9,14 +9,14 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/compatibility/index
-ms.openlocfilehash: 62312af3a62d0daa679e9babd767cc665d6e7470
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: f798bea4e02583eb161bf0381d0e50f4ba6bf83d
+ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="compatibility-in-aspnet-core"></a>ASP.NET Core 中的兼容性
 
-* [在应用程序之间共享 cookie](cookie-sharing.md)
+* [在应用之间共享 Cookie](xref:security/data-protection/compatibility/cookie-sharing)
 
-* [在 ASP.NET 中替换 \<machineKey>](replacing-machinekey.md)
+* [在 ASP.NET 中替换 \<machineKey>](xref:security/data-protection/compatibility/replacing-machinekey)

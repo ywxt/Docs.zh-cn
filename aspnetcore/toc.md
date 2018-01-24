@@ -205,6 +205,7 @@
 ### [在没有标识的情况下使用 cookie 身份验证](xref:security/authentication/cookie)
 ### [Azure Active Directory](xref:security/authentication/azure-active-directory/index)
 #### [将 Azure AD 集成到 ASP.NET Core Web 应用中](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+#### [将 Azure AD B2C 集成到面向客户的 ASP.NET Core Web 应用中](xref:security/authentication/azure-ad-b2c)
 #### [从使用 Azure AD 的 WPF 应用调用 ASP.NET Core Web API](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 #### [使用 Azure AD 在 ASP.NET Core Web 应用中调用 Web API](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
 ### [使用 IdentityServer4 保护 ASP.NET Core 应用](https://identityserver4.readthedocs.io/)

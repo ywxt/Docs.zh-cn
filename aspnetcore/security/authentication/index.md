@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/index
-ms.openlocfilehash: e8d9a8b36b4f7b6392d1dde42532caec51b140ee
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 017aa939ce4c469c08d1cc3a63002ae24c66c096
+ms.sourcegitcommit: 459cb3289741a3f46325e605a617dc926ee0563d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="authentication"></a>身份验证
 
@@ -36,6 +36,8 @@ ms.lasthandoff: 01/19/2018
 * [Azure Active Directory](azure-active-directory/index.md)
 
   * [将 Azure AD 集成到 ASP.NET Core Web 应用中](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+
+  * [将 Azure AD B2C 集成到面向客户的 ASP.NET Core Web 应用中](azure-ad-b2c.md)
 
   * [使用 Azure AD 从 WPF 应用调用 ASP.NET Core Web API](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 
