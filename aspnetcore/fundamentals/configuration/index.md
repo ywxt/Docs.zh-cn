@@ -5,16 +5,16 @@ description: "使用配置 API 通过多种方法配置 ASP.NET Core 应用。"
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 1/11/2018
+ms.date: 01/11/2018
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 0f8618898089418f709506aee5eb013f983dc294
-ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
+ms.openlocfilehash: c4f57d1e02ad5f4e235039999af9df9d236756a7
+ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>配置 ASP.NET Core 应用
 
@@ -50,7 +50,7 @@ ms.lasthandoff: 01/17/2018
 
 配置就是名称/值对的分层列表，其中节点是由冒号分隔。 要检索某个值，请使用相应项的键访问 `Configuration` 索引器：
 
-[!code-csharp[Main](index/sample/ConfigJson/Program.cs?range=24-24)]
+[!code-csharp[Main](index/sample/ConfigJson/Program.cs?range=21-22)]
 
 要在 JSON 格式的配置源中使用数组，请在由冒号分隔的字符串中使用数组索引。 以下示例获取上述 `wizards` 数组中第一个项的名称：
 
@@ -59,7 +59,7 @@ Console.Write($"{Configuration["wizards:0:Name"]}");
 // Output: Gandalf
 ```
 
-写入内置[配置](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration)提供程序的名称/值对不是持久的。 但是，可以创建一个自定义提供程序来保存值。 请参阅[自定义配置提供程序](xref:fundamentals/configuration/index#custom-config-providers)。
+写入内置[配置](/dotnet/api/microsoft.extensions.configuration)提供程序的名称/值对不是持久的。 但是，可以创建一个自定义提供程序来保存值。 请参阅[自定义配置提供程序](xref:fundamentals/configuration/index#custom-config-providers)。
 
 前面的示例使用配置索引器来读取值。 要访问 `Startup` 外部的配置，请使用选项模式。 有关详细信息，请参阅[选项](xref:fundamentals/configuration/options)主题。
 
@@ -72,7 +72,7 @@ Console.Write($"{Configuration["wizards:0:Name"]}");
 * appsettings.\<EnvironmentName>.json
 * 环境变量
 
-ASP.NET Core 1.x 应用需要调用 `AddJsonFile` 和 [AddEnvironmentVariables](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables #Microsoft_Extensions_Configuration_EnvironmentVariablesExtensions_AddEnvironmentVariables_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_)。
+ASP.NET Core 1.x 应用需要调用 `AddJsonFile` 和 [AddEnvironmentVariables](/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables#Microsoft_Extensions_Configuration_EnvironmentVariablesExtensions_AddEnvironmentVariables_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_)。
 
 有关参数的说明，请参阅 [AddJsonFile](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions)。 仅 ASP.NET Core 1.1 及更高版本支持 `reloadOnChange`。
 
@@ -106,7 +106,7 @@ ASP.NET Core 1.x 应用需要调用 `AddJsonFile` 和 [AddEnvironmentVariables](
 
 ### <a name="getvalue"></a>GetValue
 
-以下示例演示 [GetValue&lt;T&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationbinder#Microsoft_Extensions_Configuration_ConfigurationBinder_GetValue_Microsoft_Extensions_Configuration_IConfiguration_System_Type_System_String_System_Object_) 扩展方法：
+以下示例演示 [GetValue&lt;T&gt;](/dotnet/api/microsoft.extensions.configuration.configurationbinder.get?view=aspnetcore-2.0#Microsoft_Extensions_Configuration_ConfigurationBinder_Get__1_Microsoft_Extensions_Configuration_IConfiguration_) 扩展方法：
 
 [!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
 
@@ -175,11 +175,11 @@ public void CanBindObjectTree()
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/ConfigurationContext.cs?name=snippet1)]
 
-创建实现 [IConfigurationSource](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.iconfigurationsource) 的类：
+创建实现 [IConfigurationSource](/dotnet/api/Microsoft.Extensions.Configuration.IConfigurationSource) 的类：
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationSource.cs?highlight=7)]
 
-通过从 [ConfigurationProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationprovider) 继承来创建自定义配置提供程序。 当数据库为空时，配置提供程序将对其进行初始化：
+通过从 [ConfigurationProvider](/dotnet/api/Microsoft.Extensions.Configuration.ConfigurationProvider) 继承来创建自定义配置提供程序。 当数据库为空时，配置提供程序将对其进行初始化：
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationProvider.cs?highlight=9,18-31,38-39)]
 
@@ -401,7 +401,7 @@ Left: 1988
 * `IConfiguration` 具有两项专用化：
   * `IConfigurationRoot` 用于根节点。 可以触发重载。
   * `IConfigurationSection` 表示配置值的一节。 `GetSection` 和 `GetChildren` 方法返回 `IConfigurationSection`。
-  * 重新加载配置或需要访问每个提供程序时，请使用 [IConfigurationRoot](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration.iconfigurationroot)。 这两种情况都不常见。
+  * 重新加载配置或需要访问每个提供程序时，请使用 [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot)。 这两种情况都不常见。
 
 ## <a name="additional-resources"></a>其他资源
 
