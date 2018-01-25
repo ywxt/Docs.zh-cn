@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 13211ee4543e17a4bfb2f83495f4041880f37df2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4d6102dd81589e41894d8ecd95bf9ddd761a65bd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unit-testing-aspnet-web-api-2"></a>单元测试 ASP.NET Web API 2
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 > - Web API 2
 
 
-## <a name="in-this-topic"></a>主题内容
+## <a name="in-this-topic"></a>在本主题中
 
 本主题包含以下各节：
 
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 - [运行测试](#runtests)
 
 <a id="prereqs"></a>
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 Visual Studio 2017 Community、 Professional 或 Enterprise edition
 
@@ -118,7 +118,7 @@ Visual Studio 2017 Community、 Professional 或 Enterprise edition
 
 [!code-csharp[Main](unit-testing-with-aspnet-web-api/samples/sample2.cs)]
 
-GetProduct 方法返回的实例**IHttpActionResult**接口。 IHttpActionResult 是一个 Web API 2 中的新功能，它简化了单元测试开发。 实现 IHttpActionResult 接口的类位于[System.Web.Http.Results](https://msdn.microsoft.com/en-us/library/system.web.http.results.aspx)命名空间。 这些类表示通过操作请求可能作出响应并它们对应于 HTTP 状态代码。
+GetProduct 方法返回的实例**IHttpActionResult**接口。 IHttpActionResult 是一个 Web API 2 中的新功能，它简化了单元测试开发。 实现 IHttpActionResult 接口的类位于[System.Web.Http.Results](https://msdn.microsoft.com/library/system.web.http.results.aspx)命名空间。 这些类表示通过操作请求可能作出响应并它们对应于 HTTP 状态代码。
 
 生成解决方案。
 

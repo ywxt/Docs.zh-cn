@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: d3a13d1cef3417522460b44c52c1361c3e9d1162
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9e79e670173952f1e791a0cefba61c41e1ad4437
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="configure-identity"></a>配置标识
 
@@ -103,7 +103,7 @@ ASP.NET 核心 2.0 增加`RequiredUniqueChars`属性。 否则，选项是从 AS
 | 属性                | 描述                       | 默认 |
 | ----------------------- | --------------------------------- | ------- |
 | `Cookie.Name`  | Cookie 的名称。  | .AspNetCore.Cookies.  |
-| `Cookie.HttpOnly`  | 为 true 时，cookie 不能从客户端脚本访问。  |  true |
+| `Cookie.HttpOnly`  | 为 true 时，cookie 将无法从客户端脚本访问。  |  true |
 | `ExpireTimeSpan`  | 控制在 cookie 中存储身份验证票证的时间就会保持有效从它创建的点。  | 14 天  |
 | `LoginPath`  | 未授权用户时，他们将被重定向到登录到此路径。 | / 帐户/登录名  |
 | `LogoutPath`  | 当用户已注销时，则将被重定向到此路径。  | /Account/Logout  |

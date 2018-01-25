@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f5ebdf168610b715dc918ff6addf88d3c2a67097
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2269458cbc41fd3a483aaade0f07288ee805bdd1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-vb"></a>处理 ASP.NET 页 (VB) 中的 BLL 和 DAL 级别异常
 ====================
@@ -101,9 +101,9 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-2-gracefully-handling-dal-level-exceptions"></a>步骤 2： 正常处理 DAL 级别异常
 
-尽管我们可编辑的 GridView 非常有效用户时输入用于编辑的产品的名称、 价格和库存量的合法值，输入非法值将引发异常。 例如，省略`ProductName`值使[NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp)以来引发`ProductName`中的属性`ProdcutsRow`类具有其`AllowDBNull`属性设置为`false`; 如果数据库已关闭，`SqlException`尝试连接到数据库时，将由 TableAdapter 引发。 不执行任何操作，这些异常向上冒泡从数据访问层到业务逻辑层，再到 ASP.NET 页中，依次向 ASP.NET 运行时。
+尽管我们可编辑的 GridView 非常有效用户时输入用于编辑的产品的名称、 价格和库存量的合法值，输入非法值将引发异常。 例如，省略`ProductName`值使[NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp)以来引发`ProductName`中的属性`ProdcutsRow`类具有其`AllowDBNull`属性设置为`false`; 如果数据库已关闭，`SqlException`尝试连接到数据库时，将由 TableAdapter 引发。 不执行任何操作，这些异常向上冒泡从数据访问层到业务逻辑层，再到 ASP.NET 页中，依次向 ASP.NET 运行时。
 
-具体取决于如何配置 web 应用程序以及是否正在访问应用程序与`localhost`，未经处理的异常会导致一个泛型的服务器错误页、 详细的错误报表或用户友好的网页。 请参阅[Web 应用程序错误处理在 ASP.NET 中](http://www.15seconds.com/issue/030102.htm)和[customErrors 元素](https://msdn.microsoft.com/en-US/library/h0hfz6fc(VS.80).aspx)有关 ASP.NET 运行时如何响应未捕获的异常的详细信息。
+具体取决于如何配置 web 应用程序以及是否正在访问应用程序与`localhost`，未经处理的异常会导致一个泛型的服务器错误页、 详细的错误报表或用户友好的网页。 请参阅[Web 应用程序错误处理在 ASP.NET 中](http://www.15seconds.com/issue/030102.htm)和[customErrors 元素](https://msdn.microsoft.com/library/h0hfz6fc(VS.80).aspx)有关 ASP.NET 运行时如何响应未捕获的异常的详细信息。
 
 图 6 显示了尝试将产品更新而无需指定时遇到的屏幕`ProductName`值。 这是默认值时在随后显示详细的错误报告`localhost`。
 
@@ -153,7 +153,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-vb[Main](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb/samples/sample4.vb)]
 
-此事件处理程序的第二个输入的参数是类型的对象[GridViewUpdatedEventArgs](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridviewupdatedeventargs.aspx)，它具有用于处理的异常感兴趣的三个属性：
+此事件处理程序的第二个输入的参数是类型的对象[GridViewUpdatedEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewupdatedeventargs.aspx)，它具有用于处理的异常感兴趣的三个属性：
 
 - `Exception`对引发的异常; 的引用如果已不引发任何异常，此属性将具有的值`null`
 - `ExceptionHandled`一个布尔值，该值指示是否在处理了该异常`RowUpdated`事件处理程序; 如果`false`（默认值），例外情况是重新引发，percolating 到 ASP.NET 运行时

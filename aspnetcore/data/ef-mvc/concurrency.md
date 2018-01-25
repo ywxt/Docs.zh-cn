@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: 69ffafc7f92cda75c001fe1098275766063113fb
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: eee84fe0fbec6ed772342d09931986994903906a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="handling-concurrency-conflicts---ef-core-with-aspnet-core-mvc-tutorial-8-of-10"></a>处理并发冲突的 EF 内核，它们有 ASP.NET 核心 MVC 教程 (10 的第 8)
 
@@ -63,7 +63,7 @@ Jane 单击**保存**第一个，看到她更改时浏览器返回到索引页�
 
 * 你可以让 John 的更改覆盖 Jane 的更改。
 
-     下一次有人浏览英语部门时，他们将看到 2013 年 9 月 1 日和还原的 $350,000.00 值。 这称为*客户端优先*或*在 Wins 中最后一个*方案。 （从客户端的所有值都优先于什么是在数据存储。）中所述的简介本部分中，如果您不执行任何并发处理的编码，这将自动发生。
+     下一次有人浏览英语部门，他们将看到 2013 年 9 月 1 日和还原的 $350,000.00 值。 这称为*客户端优先*或*在 Wins 中最后一个*方案。 （从客户端的所有值都优先于什么是在数据存储。）中所述的简介本部分中，如果您不执行任何并发处理的编码，这将自动发生。
 
 * 你可以防止 John 的更改正在更新数据库中。
 

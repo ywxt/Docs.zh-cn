@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments
 msc.type: authoredcontent
-ms.openlocfilehash: f4d898b6e09b5b9df44b62f9cb4b9d367f288efb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 27fade9fc5cae917579d4963da7bca12f6a5cda1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-membership-databases-to-enterprise-environments"></a>将成员资格数据库部署到企业环境
 ====================
@@ -44,8 +44,8 @@ ms.lasthandoff: 11/10/2017
 
 当你选择如何来设置企业服务器环境中的成员资格数据库，请使用以下准则：
 
-- 只要有可能，则不要部署成员资格数据库。 相反，在目标数据库服务器上手动创建成员资格数据库。 如果你尚未自定义成员资格数据库架构，你可以只需创建一个新就地在目标中使用[ASP.NET SQL 服务器注册工具 (aspnet\_regsql.exe)](https://msdn.microsoft.com/en-us/library/ms229862(v=vs.100).aspx)。
-- 如果你别无选择，但若要部署的成员资格数据库 （&） #x 2014; 例如，如果你已大量修改的数据库架构 （&） #x 2014; 你应执行的成员资格数据库，若要排除用户帐户数据，仅限架构的部署和然后运行一个后期部署脚本来添加任何所需的配置数据。 您可以在这些方法中找到全面的指南[如何： 部署 ASP.NET 成员资格数据库而不包括用户帐户](https://msdn.microsoft.com/en-us/library/ff361972(v=vs.100).aspx)。
+- 只要有可能，则不要部署成员资格数据库。 相反，在目标数据库服务器上手动创建成员资格数据库。 如果你尚未自定义成员资格数据库架构，你可以只需创建一个新就地在目标中使用[ASP.NET SQL 服务器注册工具 (aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx)。
+- 如果你别无选择，但若要部署的成员资格数据库 （&） #x 2014; 例如，如果你已大量修改的数据库架构 （&） #x 2014; 你应执行的成员资格数据库，若要排除用户帐户数据，仅限架构的部署和然后运行一个后期部署脚本来添加任何所需的配置数据。 您可以在这些方法中找到全面的指南[如何： 部署 ASP.NET 成员资格数据库而不包括用户帐户](https://msdn.microsoft.com/library/ff361972(v=vs.100).aspx)。
 
 务必记住*成员资格数据库的架构是，可能需要相当静态*。 即使你已自定义成员资格数据库，它不太，你将需要更新的定期 （&） #x 2014年上的架构; 它不要更改 web 应用程序或数据库项目中的代码的频率相同。 在这种情况下，则不需要任何自动进行的或单步执行部署过程中包括成员资格数据库。
 
@@ -57,8 +57,8 @@ ms.lasthandoff: 11/10/2017
 
 你可以使用以下高级步骤更新成员资格数据库架构：
 
-1. 使用 VSDBCMD**导入**操作来生成你的源成员资格数据库的.dbschema 文件。 中介绍了此过程[如何： 在命令提示符下导入架构](https://msdn.microsoft.com/en-us/library/dd172135.aspx)。
-2. 使用 VSDBCMD**部署**操作将.dbschema 文件部署到你的目标成员资格数据库。 中介绍了此过程[VSDBCMD 的命令行参考。EXE （部署和架构导入）](https://msdn.microsoft.com/en-us/library/dd193283.aspx)。
+1. 使用 VSDBCMD**导入**操作来生成你的源成员资格数据库的.dbschema 文件。 中介绍了此过程[如何： 在命令提示符下导入架构](https://msdn.microsoft.com/library/dd172135.aspx)。
+2. 使用 VSDBCMD**部署**操作将.dbschema 文件部署到你的目标成员资格数据库。 中介绍了此过程[VSDBCMD 的命令行参考。EXE （部署和架构导入）](https://msdn.microsoft.com/library/dd193283.aspx)。
 
 ## <a name="conclusion"></a>结束语
 
@@ -66,7 +66,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="further-reading"></a>其他阅读材料
 
-有关更多指导和如何使用 VSDBCMD 的示例，请参阅[VSDBCMD 的命令行参考。EXE （部署和架构导入）](https://msdn.microsoft.com/en-us/library/dd193283.aspx)和[如何： 在命令提示符下导入架构](https://msdn.microsoft.com/en-us/library/dd172135.aspx)。 有关详细信息使用 aspnet\_regsql.exe 创建成员资格数据库，请参阅[ASP.NET SQL 服务器注册工具 (aspnet\_regsql.exe)](https://msdn.microsoft.com/en-us/library/ms229862(v=vs.100).aspx)。 有关部署成员资格数据库的更多常规指南，请参阅[如何： 部署 ASP.NET 成员资格数据库而不包括用户帐户](https://msdn.microsoft.com/en-us/library/ff361972(v=vs.100).aspx)。
+有关更多指导和如何使用 VSDBCMD 的示例，请参阅[VSDBCMD 的命令行参考。EXE （部署和架构导入）](https://msdn.microsoft.com/library/dd193283.aspx)和[如何： 在命令提示符下导入架构](https://msdn.microsoft.com/library/dd172135.aspx)。 有关详细信息使用 aspnet\_regsql.exe 创建成员资格数据库，请参阅[ASP.NET SQL 服务器注册工具 (aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx)。 有关部署成员资格数据库的更多常规指南，请参阅[如何： 部署 ASP.NET 成员资格数据库而不包括用户帐户](https://msdn.microsoft.com/library/ff361972(v=vs.100).aspx)。
 
 >[!div class="step-by-step"]
 [上一页](deploying-database-role-memberships-to-test-environments.md)

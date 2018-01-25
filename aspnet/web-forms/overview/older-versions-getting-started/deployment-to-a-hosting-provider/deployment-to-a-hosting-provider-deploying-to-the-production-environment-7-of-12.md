@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: ad44968975b7929f5b0f70334deabc7238797402
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4aa6766c2c7765f499f5c5380962a5fe443e8c9d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-the-production-environment---7-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 将部署到生产环境-7 / 12
 ====================
@@ -246,7 +246,7 @@ Cytanium 欢迎电子邮件包含有关如何更改.NET Framework 的版本的�
 
 `User-agent`一行通知文件中的规则应用于所有搜索引擎 web 爬网程序 （机器人） 的搜索引擎和`Disallow`行指定应在站点上的没有页已爬网。
 
-您可能希望搜索引擎以目录生产站点，因此你需要从生产部署中排除此文件。 若要做到这一点，请参阅**可以我排除特定文件或文件夹从部署？**中[ASP.NET Web 应用程序项目部署常见问题](https://msdn.microsoft.com/en-us/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment)。 请确保仅为生产发布配置文件时，才指定排除。
+您可能希望搜索引擎以目录生产站点，因此你需要从生产部署中排除此文件。 若要做到这一点，请参阅**可以我排除特定文件或文件夹从部署？**中[ASP.NET Web 应用程序项目部署常见问题](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment)。 请确保仅为生产发布配置文件时，才指定排除。
 
 创建第二个托管帐户是一种方法使用的测试环境不是必需的但可能值得额外的费用。 在以下教程中，你将继续使用 IIS 作为你的测试环境。
 

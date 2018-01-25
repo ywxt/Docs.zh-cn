@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: 086084b63cceca1c2d4e0bd4e5b654aaad6637a9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 468f6d5dabb645b1c005680dc5a1ffc4debd63b6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 基础知识
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/10/2017
 > > 此动手实验假定开发人员上可以体验可用于 Web 开发技术，如 HTML 和 JavaScript。
 > 
 > 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843)。
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)。
 
 
 <a id="The_Music_Store_application"></a>
@@ -76,7 +76,7 @@ MVC 模式可帮助你创建单独的应用程序 （输入的逻辑、 业务�
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 你必须具有要完成本实验的以下项：
 
@@ -130,12 +130,12 @@ MVC 模式可帮助你创建单独的应用程序 （输入的逻辑、 业务�
 2. 在“文件”菜单上，单击“新建项目”。
 3. 在**新项目**对话框框中，选择**ASP.NET MVC 4 Web 应用程序**项目类型，位于**Visual C#，** **Web**模板列表。
 4. 更改**名称**到*MvcMusicStore*。
-5. 设置在新解决方案的位置**开始**文件夹在本练习的源文件夹中，例如**[YOUR HOL 路径] \Source\Ex01-CreatingMusicStoreProject\Begin**。 单击“确定”。
+5. 设置在新解决方案的位置**开始**文件夹在本练习的源文件夹中，例如**[YOUR HOL 路径] \Source\Ex01-CreatingMusicStoreProject\Begin**。 单击 **“确定”**。
 
     ![创建新项目对话框](aspnet-mvc-4-fundamentals/_static/image2.png "创建新项目对话框")
 
     *创建新项目对话框*
-6. 在**新建 ASP.NET MVC 4 项目**对话框框中，选择**基本**模板并确保**视图引擎**所选**Razor**。 单击“确定”。
+6. 在**新建 ASP.NET MVC 4 项目**对话框框中，选择**基本**模板并确保**视图引擎**所选**Razor**。 单击 **“确定”**。
 
     ![新的 ASP.NET MVC 4 项目对话框](aspnet-mvc-4-fundamentals/_static/image3.png "新建 ASP.NET MVC 4 项目对话框")
 
@@ -319,7 +319,7 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
     > [!NOTE]
     > 你使用**HttpUtility.HtmlEncode**到实用程序方法会阻止用户将 Javascript 注入到视图中，使用的链接  **/存储/浏览？流派 =&lt;脚本&gt;window.location=[http://hackersite.com](http://hackersite.com)&lt;/&gt;**。
     > 
-    > 有关更多说明，请访问[此 msdn 文章](https://msdn.microsoft.com/en-us/library/a2a4yykt(v=VS.80).aspx)。
+    > 有关更多说明，请访问[此 msdn 文章](https://msdn.microsoft.com/library/a2a4yykt(v=VS.80).aspx)。
 
 <a id="Ex3Task2"></a>
 
@@ -964,7 +964,7 @@ A **StoreBrowseViewModel**将用于在此任务中显示匹配所选的风格唱
         *解决方案中包含 SimpleMembership*
 
         > [!NOTE]
-        > 查找更多有关[OAuthWebSecurity](https://msdn.microsoft.com/en-us/library/jj158393(v=vs.111).aspx) MSDN 中。
+        > 查找更多有关[OAuthWebSecurity](https://msdn.microsoft.com/library/jj158393(v=vs.111).aspx) MSDN 中。
 
 > [!NOTE]
 > 此外，你可以部署此应用程序对 Windows Azure 网站以下[附录 b： 发布 ASP.NET MVC 4 应用程序使用 Web Deploy](#AppendixB)。

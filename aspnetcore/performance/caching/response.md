@@ -8,11 +8,11 @@ ms.date: 09/20/2017
 ms.topic: article
 ms.prod: asp.net-core
 uid: performance/caching/response
-ms.openlocfilehash: 104cfb2eab706a2ec6278b4d1c461f70b0af5df1
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: d7726443dbcc34c21fd6cf0f56c4412863617b9f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>响应缓存在 ASP.NET 核心
 
@@ -34,17 +34,17 @@ ms.lasthandoff: 11/29/2017
 | --------------------------------------------------------------- | ------ |
 | [公用](https://tools.ietf.org/html/rfc7234#section-5.2.2.5)   | 缓存可能会存储响应。 |
 | [专用](https://tools.ietf.org/html/rfc7234#section-5.2.2.6)  | 不能通过共享缓存中存储响应。 专用缓存可以存储并重复使用响应。 |
-| [最长时间](https://tools.ietf.org/html/rfc7234#section-5.2.1.1)  | 客户端将不会接受其保留时间大于指定的秒数的响应。 示例： `max-age=60` （60 秒）， `max-age=2592000` （1 个月） |
-| [无缓存](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **在请求上**： 缓存不得使用存储的响应来满足该请求。 注意： 对于客户端，为源服务器将重新生成响应，并且该中间件更新其缓存中存储的响应。<br><br>**响应**： 响应必须不能用于在不验证源服务器上的后续请求。 |
-| [无存储](https://tools.ietf.org/html/rfc7234#section-5.2.1.5) | **在请求上**： 缓存必须不会将请求的存储。<br><br>**响应**： 缓存不得存储任何响应的一部分。 |
+| [max-age](https://tools.ietf.org/html/rfc7234#section-5.2.1.1)  | 客户端将不会接受其保留时间大于指定的秒数的响应。 示例： `max-age=60` （60 秒）， `max-age=2592000` （1 个月） |
+| [no-cache](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **在请求上**： 缓存不得使用存储的响应来满足该请求。 注意： 对于客户端，为源服务器将重新生成响应，并且该中间件更新其缓存中存储的响应。<br><br>**响应**： 响应必须不能用于在不验证源服务器上的后续请求。 |
+| [no-store](https://tools.ietf.org/html/rfc7234#section-5.2.1.5) | **在请求上**： 缓存必须不会将请求的存储。<br><br>**响应**： 缓存不得存储任何响应的一部分。 |
 
 起缓存作用其他缓存标头下表所示。
 
 | Header                                                     | 函数 |
 | ---------------------------------------------------------- | -------- |
 | [保留时间](https://tools.ietf.org/html/rfc7234#section-5.1)     | 以秒为单位由于生成或者在源服务器已成功验证响应的时间量的估计值。 |
-| [过期](https://tools.ietf.org/html/rfc7234#section-5.3) | 日期/时间后响应被视为是陈旧。 |
-| [杂注](https://tools.ietf.org/html/rfc7234#section-5.4)  | 存在向后兼容性与 HTTP/1.0 缓存设置`no-cache`行为。 如果`Cache-Control`标头是否存在、`Pragma`标头将被忽略。 |
+| [Expires](https://tools.ietf.org/html/rfc7234#section-5.3) | 日期/时间后响应被视为是陈旧。 |
+| [Pragma](https://tools.ietf.org/html/rfc7234#section-5.4)  | 存在向后兼容性与 HTTP/1.0 缓存设置`no-cache`行为。 如果`Cache-Control`标头是否存在、`Pragma`标头将被忽略。 |
 | [改变](https://tools.ietf.org/html/rfc7231#section-7.1.4)  | 指定缓存的响应必须不发送除非所有的`Vary`中缓存的响应的原始请求和新的请求标头字段所匹配。 |
 
 ## <a name="http-based-caching-respects-request-cache-control-directives"></a>基于 HTTP 的缓存方面请求的缓存控制指令
@@ -65,7 +65,7 @@ ms.lasthandoff: 11/29/2017
 
 ### <a name="distributed-cache"></a>分布式的缓存
 
-使用分布式的缓存时云或服务器场中承载应用程序数据存储在内存中。 处理请求的服务器之间共享缓存。 客户端可以提交由组中的任何服务器处理的请求，并且可用于客户端的缓存的数据。 ASP.NET Core 提供 SQL Server 和分布式的 Redis 缓存。
+使用分布式的缓存时云或服务器场中承载应用程序数据存储在内存中。 处理请求的服务器之间共享缓存。 客户端可以提交请求已由组中的任何服务器处理并为客户端缓存数据，则可用。 ASP.NET Core 提供 SQL Server 和分布式的 Redis 缓存。
 
 有关详细信息，请参阅[使用分布式缓存](xref:performance/caching/distributed)。
 
@@ -96,7 +96,7 @@ ms.lasthandoff: 11/29/2017
 | `http://example.com?key1=value1` | 返回从中间件 |
 | `http://example.com?key1=value2` | 从服务器返回     |
 
-第一个请求是由服务器返回，并在中间件中缓冲。 由于查询字符串与上一个请求，中间件会返回第二个请求。 第三个请求都不处于中间件缓存中，因为查询字符串值不匹配的上一个请求。 
+第一个请求是由服务器返回，并在中间件中缓冲。 由于查询字符串与上一个请求，中间件会返回第二个请求。 因为查询字符串值不匹配的上一个请求，第三个请求未处于中间件缓存。 
 
 `ResponseCacheAttribute`用于配置和创建 (通过`IFilterFactory`) `ResponseCacheFilter`。 `ResponseCacheFilter`执行的工作的更新的相应 HTTP 标头和响应功能。 筛选器：
 
@@ -123,7 +123,7 @@ ms.lasthandoff: 11/29/2017
 
 如果`NoStore`是`false`和`Location`是`None`，`Cache-Control`和`Pragma`设置为`no-cache`。
 
-通常情况下设置`NoStore`到`true`错误页上。 例如: 
+通常情况下设置`NoStore`到`true`错误页上。 例如:
 
 [!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet1&highlight=1)]
 
@@ -176,10 +176,10 @@ Cache-Control: public,max-age=60
 ## <a name="additional-resources"></a>其他资源
 
 * [在缓存中 HTTP 规范中](https://tools.ietf.org/html/rfc7234#section-3)
-* [缓存控制](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
+* [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
 * [内存中缓存](xref:performance/caching/memory)
 * [使用分布式缓存](xref:performance/caching/distributed)
-* [检测更改令牌更改](xref:fundamentals/primitives/change-tokens)
+* [使用更改令牌检测更改](xref:fundamentals/primitives/change-tokens)
 * [响应缓存中间件](xref:performance/caching/middleware)
-* [缓存标记帮助器](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [分布式的缓存标记帮助器](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [分布式缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

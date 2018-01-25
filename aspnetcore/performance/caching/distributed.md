@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/caching/distributed
-ms.openlocfilehash: a00937e8c47e73fa8e29af883f44f6e1f4d4b1b4
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: a0af4887143f6ed37a1af982ec21a2ad5eae9515
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="working-with-a-distributed-cache-in-aspnet-core"></a>使用 ASP.NET Core 中分布式缓存
 
@@ -139,8 +139,8 @@ C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(loc
 * [Redis 在 Azure 上的缓存](https://azure.microsoft.com/documentation/services/redis-cache/)
 * [在 Azure 上的 SQL 数据库](https://azure.microsoft.com/documentation/services/sql-database/)
 * [内存中缓存](xref:performance/caching/memory)
-* [检测更改令牌更改](xref:fundamentals/primitives/change-tokens)
+* [使用更改令牌检测更改](xref:fundamentals/primitives/change-tokens)
 * [响应缓存](xref:performance/caching/response)
 * [响应缓存中间件](xref:performance/caching/middleware)
-* [缓存标记帮助器](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [分布式的缓存标记帮助器](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [分布式缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

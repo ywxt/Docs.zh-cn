@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e1e9950619dc9d0c8aa2911eb05911cf008989e3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4652e5820e621a7b2ad3b03bb5a1d2cb4968fadd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="querying-data-with-the-sqldatasource-control-c"></a>查询数据与 SqlDataSource 控件 (C#)
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 
 虽然所有教程到目前为止已使用体系结构来处理数据，还有可能访问、 插入、 更新和删除数据库数据直接从 ASP.NET 页中，跳过体系结构。 直接在 web 页中，这样会将特定数据库查询和业务逻辑。 对于充分大型或复杂的应用程序，设计、 实施和使用分层体系结构至关重要的成功、 updatability，与应用程序的可维护性。 开发可靠的体系结构，但是，可能没有必要时创建极其简单、 一次性应用程序。
 
-ASP.NET 2.0 提供了五个内置的数据源控件[SqlDataSource](https://msdn.microsoft.com/en-us/library/dz12d98w%28vs.80%29.aspx)， [AccessDataSource](https://msdn.microsoft.com/en-us/library/8e5545e1.aspx)， [ObjectDataSource](https://msdn.microsoft.com/en-us/library/9a4kyhcx.aspx)， [XmlDataSource](https://msdn.microsoft.com/en-us/library/e8d8587a%28en-US,VS.80%29.aspx)，和[SiteMapDataSource](https://msdn.microsoft.com/en-us/library/5ex9t96x%28en-US,VS.80%29.aspx)。 SqlDataSource 可用来访问和修改直接来自关系数据库中，包括 Microsoft SQL Server、 Microsoft Access、 Oracle、 MySQL 和其他数据。 在本教程的下一步的三个，我们将查看如何使用 SqlDataSource 控件，探索如何查询和筛选器数据库数据，以及如何使用到 SqlDataSource 插入、 更新和删除数据。
+ASP.NET 2.0 提供了五个内置的数据源控件[SqlDataSource](https://msdn.microsoft.com/library/dz12d98w%28vs.80%29.aspx)， [AccessDataSource](https://msdn.microsoft.com/library/8e5545e1.aspx)， [ObjectDataSource](https://msdn.microsoft.com/library/9a4kyhcx.aspx)， [XmlDataSource](https://msdn.microsoft.com/library/e8d8587a%28en-US,VS.80%29.aspx)，和[SiteMapDataSource](https://msdn.microsoft.com/library/5ex9t96x%28en-US,VS.80%29.aspx)。 SqlDataSource 可用来访问和修改直接来自关系数据库中，包括 Microsoft SQL Server、 Microsoft Access、 Oracle、 MySQL 和其他数据。 在本教程的下一步的三个，我们将查看如何使用 SqlDataSource 控件，探索如何查询和筛选器数据库数据，以及如何使用到 SqlDataSource 插入、 更新和删除数据。
 
 
 ![ASP.NET 2.0 包含五个内置的数据源控件](querying-data-with-the-sqldatasource-control-cs/_static/image1.gif)
@@ -144,12 +144,12 @@ AccessDataSource 和 SqlDataSource 控件之间的唯一区别是指定的数据
 
 若要完成向导，请单击完成。
 
-如与 ObjectDataSource，SqlDataSource 的向导只是将值分配给控件的属性，即[ `ConnectionString` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.connectionstring.aspx)和[ `SelectCommand` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.selectcommand.aspx)属性。 完成向导后，你 SqlDataSource 控件 s 声明性标记应类似于以下：
+如与 ObjectDataSource，SqlDataSource 的向导只是将值分配给控件的属性，即[ `ConnectionString` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.connectionstring.aspx)和[ `SelectCommand` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.selectcommand.aspx)属性。 完成向导后，你 SqlDataSource 控件 s 声明性标记应类似于以下：
 
 
 [!code-aspx[Main](querying-data-with-the-sqldatasource-control-cs/samples/sample2.aspx)]
 
-`ConnectionString`属性提供有关如何连接到数据库的信息。 此属性可以将分配一个完整的硬编码的连接字符串值，或可以指向中的连接字符串`Web.config`。 若要引用 Web.config 中的连接字符串值，使用语法`<%$ expressionPrefix:expressionValue %>`。 通常情况下， *expressionPrefix*是 ConnectionStrings 和*expressionValue*是中的连接字符串的名称`Web.config` [ `<connectionStrings>`部分](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx)。 但是，可以使用语法来引用`<appSettings>`元素或从资源文件的内容。 请参阅[ASP.NET 表达式概述](https://msdn.microsoft.com/en-us/library/d5bd1tad.aspx)有关此语法的详细信息。
+`ConnectionString`属性提供有关如何连接到数据库的信息。 此属性可以将分配一个完整的硬编码的连接字符串值，或可以指向中的连接字符串`Web.config`。 若要引用 Web.config 中的连接字符串值，使用语法`<%$ expressionPrefix:expressionValue %>`。 通常情况下， *expressionPrefix*是 ConnectionStrings 和*expressionValue*是中的连接字符串的名称`Web.config` [ `<connectionStrings>`部分](https://msdn.microsoft.com/library/bf7sd233.aspx)。 但是，可以使用语法来引用`<appSettings>`元素或从资源文件的内容。 请参阅[ASP.NET 表达式概述](https://msdn.microsoft.com/library/d5bd1tad.aspx)有关此语法的详细信息。
 
 `SelectCommand`属性指定的临时 SQL 语句或存储的过程以执行以返回数据。
 
@@ -190,7 +190,7 @@ GridView 访问页时调用其数据源控件的`Select()`方法。 如果我们
 
 排序和分页合作，因为 SqlDataSource 到松散类型化数据集检索数据库数据。 从数据集，可以查明的查询所返回的一个重要方面实现分页的记录总数。 此外，可以通过 DataView 进行排序的数据集的结果。 GridView 请求分页或排序数据时，SqlDataSource 自动将使用这些功能。
 
-SqlDataSource 可以将配置为通过更改返回而不是数据集 DataReader 其[`DataSourceMode`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx)从`DataSet`（默认值） 到`DataReader`。 可能的情况下首选使用 DataReader，当将 SqlDataSource 的结果传递给需要 DataReader 的现有代码。 此外，由于 DataReaders 相当简单的对象，而不是数据集，它们提供更好的性能。 如果进行此更改，但是，数据 Web 控件可以既不进行排序，也页由于 SqlDataSource 无法确定由查询，返回多少条记录，也不 DataReader 提供任何方法的返回的数据进行排序。
+SqlDataSource 可以将配置为通过更改返回而不是数据集 DataReader 其[`DataSourceMode`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx)从`DataSet`（默认值） 到`DataReader`。 可能的情况下首选使用 DataReader，当将 SqlDataSource 的结果传递给需要 DataReader 的现有代码。 此外，由于 DataReaders 相当简单的对象，而不是数据集，它们提供更好的性能。 如果进行此更改，但是，数据 Web 控件可以既不进行排序，也页由于 SqlDataSource 无法确定由查询，返回多少条记录，也不 DataReader 提供任何方法的返回的数据进行排序。
 
 ## <a name="step-4-using-a-custom-sql-statement-or-stored-procedure"></a>步骤 4： 使用自定义 SQL 语句或存储过程
 
@@ -249,9 +249,9 @@ SqlDataSource 可以将配置为通过更改返回而不是数据集 DataReader 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
 - [访问关系数据库数据](http://aspnet.4guysfromrolla.com/articles/022206-1.aspx)
-- [SqlDataSource 控件概述](https://msdn.microsoft.com/en-us/library/dz12d98w.aspx)
+- [SqlDataSource 控件概述](https://msdn.microsoft.com/library/dz12d98w.aspx)
 - [SqlDataSource 控件的 ASP.NET 快速入门教程：](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/data/sqldatasource.aspx)
-- [Web.config`<connectionStrings>`元素](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx)
+- [Web.config`<connectionStrings>`元素](https://msdn.microsoft.com/library/bf7sd233.aspx)
 - [数据库连接字符串引用](http://www.connectionstrings.com/)
 
 ## <a name="about-the-author"></a>关于作者

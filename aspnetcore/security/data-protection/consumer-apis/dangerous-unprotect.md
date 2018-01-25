@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/dangerous-unprotect
-ms.openlocfilehash: f2425de3f790cd8dab17940ec52a2a7e170cc630
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 08a8ad9b3b3cc2de48751d4149bf39c58954fd90
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="unprotecting-payloads-whose-keys-have-been-revoked"></a>正在取消保护已吊销其密钥的有效负载
 
@@ -44,6 +44,6 @@ DangerousUnprotect(byte[] protectedData, bool ignoreRevocationErrors,
 * `wasRevoked`： 将设置为 true 时用来保护此负载的密钥已被吊销。
 
 >[!WARNING]
-> 传递时应格外谨慎`ignoreRevocationErrors: true`到`DangerousUnprotect`方法。 如果调用此方法后的`wasRevoked`值是为 true，则用来保护此负载的密钥已被吊销，并且负载的真实性应被视为可疑。 在这种情况下，仅继续工作时未受保护的负载，如果你有一定程度上单独保证它是可信，例如它的来自安全的数据库，而不是由不受信任的 web 客户端发送。
+> 传递时应格外谨慎`ignoreRevocationErrors: true`到`DangerousUnprotect`方法。 如果调用此方法后的`wasRevoked`值是为 true，则用来保护此负载的密钥已被吊销，并且负载的真实性应被视为可疑。 在这种情况下，才继续操作操作系统上不受保护的负载，如果你具有一些单独的保障，它是可信的例如所来自的安全数据库，而不是由不受信任的 web 客户端发送。
 
 [!code-csharp[Main](dangerous-unprotect/samples/dangerous-unprotect.cs)]

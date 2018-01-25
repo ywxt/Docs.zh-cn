@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 78a54fb1b0e4c0ebd5445cca175103471925a065
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 323ee44f43f6d4081bd9ba50791755696bc9128f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 8 部分
 ====================
@@ -125,11 +125,11 @@ ms.lasthandoff: 11/10/2017
 
 - [实体框架常见问题](http://www.ef-faq.org/introduction.html)
 - [实体框架团队博客](https://blogs.msdn.com/b/adonet/)
-- [MSDN 库中的实体框架](https://msdn.microsoft.com/en-us/library/bb399572.aspx)
-- [在 MSDN 数据开发人员中心的实体框架](https://msdn.microsoft.com/en-us/data/ef.aspx)
-- [MSDN 库中的 EntityDataSource Web 服务器控件概述](https://msdn.microsoft.com/en-us/library/cc488502.aspx)
-- [EntityDataSource 控件 MSDN 库中的 API 参考](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.entitydatasource.aspx)
-- [MSDN 上的实体框架论坛](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/)
+- [MSDN 库中的实体框架](https://msdn.microsoft.com/library/bb399572.aspx)
+- [在 MSDN 数据开发人员中心的实体框架](https://msdn.microsoft.com/data/ef.aspx)
+- [MSDN 库中的 EntityDataSource Web 服务器控件概述](https://msdn.microsoft.com/library/cc488502.aspx)
+- [EntityDataSource 控件 MSDN 库中的 API 参考](https://msdn.microsoft.com/library/system.web.ui.webcontrols.entitydatasource.aspx)
+- [MSDN 上的实体框架论坛](https://social.msdn.microsoft.com/forums/adodotnetentityframework/)
 - [Julie Lerman 博客](http://thedatafarm.com/blog/)
 
 >[!div class="step-by-step"]

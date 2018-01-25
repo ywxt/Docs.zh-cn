@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
-ms.openlocfilehash: 7e0ddc15fac9af40a0a20a99979a80517eb1b6a2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 182276f9f91b99beb1ce0fc40dcda1f19376669a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>了解 ASP.NET AJAX 身份验证和配置文件应用程序服务
 ====================
@@ -43,7 +43,7 @@ Microsoft ASP.NET 配置文件和身份验证服务由 ASP.NET 窗体身份验�
 
 配置文件服务允许自动集成和根据成员资格，身份验证服务所提供的用户数据的存储。 Web.config 文件中，指定存储的数据和各种的分析服务提供程序处理的数据管理。 与身份验证服务，AJAX 配置文件服务适用于标准 ASP.NET 配置文件服务，以便不应由于包括 AJAX 支持中断当前特有的功能的 ASP.NET 配置文件服务的页。
 
-并入应用程序的 ASP.NET 身份验证和分析服务本身是本白皮书的范围之外。 有关主题的详细信息，请参阅 MSDN 库引用文章在使用成员资格管理用户[https://msdn.microsoft.com/en-us/library/tw292whz.aspx](https://msdn.microsoft.com/en-us/library/tw292whz.aspx)。 ASP.NET 还包括一个实用工具来自动将使用 SQL Server，这是默认身份验证服务提供程序的 ASP.NET 成员身份的成员资格设置。 有关详细信息，请参阅文章 ASP.NET SQL 服务器注册工具 (Aspnet\_regsql.exe) 在[https://msdn.microsoft.com/en-us/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/en-us/library/ms229862(vs.80).aspx).
+并入应用程序的 ASP.NET 身份验证和分析服务本身是本白皮书的范围之外。 有关主题的详细信息，请参阅 MSDN 库引用文章在使用成员资格管理用户[https://msdn.microsoft.com/library/tw292whz.aspx](https://msdn.microsoft.com/library/tw292whz.aspx)。 ASP.NET 还包括一个实用工具来自动将使用 SQL Server，这是默认身份验证服务提供程序的 ASP.NET 成员身份的成员资格设置。 有关详细信息，请参阅文章 ASP.NET SQL 服务器注册工具 (Aspnet\_regsql.exe) 在[https://msdn.microsoft.com/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/library/ms229862(vs.80).aspx).
 
 ## <a name="using-the-aspnet-ajax-authentication-service"></a>*使用 ASP.NET AJAX 身份验证服务*
 
@@ -65,14 +65,14 @@ Login （） 方法开始的请求进行身份验证用户的凭据。 此方法
 
 | **参数名称** | **含义** |
 | --- | --- |
-| userName | 必需。 要进行身份验证的用户名。 |
+| userName | 必须的。 要进行身份验证的用户名。 |
 | 密码 | 可选 （默认值为 null）。 用户的密码。 |
 | isPersistent | 可选 （默认值为 false）。 是否在会话之间应保持用户的身份验证 cookie。 如果为 false，则关闭浏览器或会话过期时用户将可以注销。 |
 | redirectUrl | 可选 （默认值为 null）。要为身份验证成功后的将浏览器重定向的 URL。 如果此参数为 null 或空字符串，则会不发生任何重定向。 |
 | customInfo | 可选 （默认值为 null）。 此参数是当前未使用，保留待将来使用。 |
 | loginCompletedCallback | 可选 （默认值为 null）。要在该登录名已成功完成时调用的函数。 如果指定，此参数将取代 defaultLoginCompleted 属性。 |
 | failedCallback | 可选 （默认值为 null）。要在登录失败时调用的函数。 如果指定，此参数将取代 defaultFailedCallback 属性。 |
-| 上下文 | 可选 （默认值为 null）。 应传递给回调函数的自定义用户上下文数据。 |
+| userContext | 可选 （默认值为 null）。 应传递给回调函数的自定义用户上下文数据。 |
 
 *返回值：*
 
@@ -93,7 +93,7 @@ Logout （） 方法将移除凭据 cookie，并注销当前用户从 web 应用
 | redirectUrl | 可选 （默认值为 null）。要为身份验证成功后的将浏览器重定向的 URL。 如果此参数为 null 或空字符串，则会不发生任何重定向。 |
 | logoutCompletedCallback | 可选 （默认值为 null）。用于注销已成功完成时调用的函数。 如果指定，此参数将取代 defaultLogoutCompleted 属性。 |
 | failedCallback | 可选 （默认值为 null）。要在登录失败时调用的函数。 如果指定，此参数将取代 defaultFailedCallback 属性。 |
-| 上下文 | 可选 （默认值为 null）。 应传递给回调函数的自定义用户上下文数据。 |
+| userContext | 可选 （默认值为 null）。 应传递给回调函数的自定义用户上下文数据。 |
 
 *返回值：*
 
@@ -116,7 +116,7 @@ Logout （） 方法将移除凭据 cookie，并注销当前用户从 web 应用
 | **参数名称** | **含义** |
 | --- | --- |
 | 错误 | 指定的错误的信息。 |
-| 上下文 | 指定提供了登录或注销函数调用时的用户上下文信息。 |
+| userContext | 指定提供了登录或注销函数调用时的用户上下文信息。 |
 | 方法名称 | 调用方法的名称。 |
 
 *defaultLoginCompletedCallback 属性 （get、 组）：*
@@ -132,7 +132,7 @@ Logout （） 方法将移除凭据 cookie，并注销当前用户从 web 应用
 | **参数名称** | **含义** |
 | --- | --- |
 | validCredentials | 指定用户是否提供有效凭据。 `true`如果用户成功登录;否则为`false`。 |
-| 上下文 | 指定提供调用 login 函数时的用户上下文信息。 |
+| userContext | 指定提供调用 login 函数时的用户上下文信息。 |
 | 方法名称 | 调用方法的名称。 |
 
 *defaultLogoutCompletedCallback 属性 （get、 组）：*
@@ -148,7 +148,7 @@ Logout （） 方法将移除凭据 cookie，并注销当前用户从 web 应用
 | **参数名称** | **含义** |
 | --- | --- |
 | result | 此参数将始终为`null`; 它保留供将来使用。 |
-| 上下文 | 指定提供调用 login 函数时的用户上下文信息。 |
+| userContext | 指定提供调用 login 函数时的用户上下文信息。 |
 | 方法名称 | 调用方法的名称。 |
 
 *isLoggedIn 属性 (get):*
@@ -214,7 +214,7 @@ AJAX 分析服务配置后，它可立即在页面; 例如：但是，它将需�
 | propertyNames | 可选 （默认值为 null）。 要从服务器中加载的属性。 |
 | loadCompletedCallback | 可选 （默认值为 null）。 要在加载已完成时调用的函数。 |
 | failedCallback | 可选 （默认值为 null）。 要在出错时调用的函数。 |
-| 上下文 | 可选 （默认值为 null）。 要传递给回调函数的上下文信息。 |
+| userContext | 可选 （默认值为 null）。 要传递给回调函数的上下文信息。 |
 
 加载函数没有返回值。 如果已成功完成的调用，它将调用`loadCompletedCallback`参数或`defaultLoadCompletedCallback`属性。 如果调用失败，或在超时时间已`failedCallback`参数或`defaultFailedCallback`将会调用此属性。
 
@@ -231,7 +231,7 @@ Save （） 方法将指定的属性列表 （或所有属性） 保存到用户
 | propertyNames | 可选 （默认值为 null）。 要保存到服务器的属性。 |
 | saveCompletedCallback | 可选 （默认值为 null）。 要在保存时调用的函数已完成。 |
 | failedCallback | 可选 （默认值为 null）。 要在出错时调用的函数。 |
-| 上下文 | 可选 （默认值为 null）。 要传递给回调函数的上下文信息。 |
+| userContext | 可选 （默认值为 null）。 要传递给回调函数的上下文信息。 |
 
 保存函数没有返回值。 如果调用成功完成，它将调用`saveCompletedCallback`参数或`defaultSaveCompletedCallback`属性。 如果调用失败，或在超时时间已`failedCallback`或`defaultFailedCallback`将会调用此属性。
 
@@ -249,8 +249,8 @@ Save （） 方法将指定的属性列表 （或所有属性） 保存到用户
 
 | **参数名称** | **含义** |
 | --- | --- |
-| 错误 | 指定的错误的信息。 |
-| 上下文 | 指定时提供的用户上下文信息负载或者保存函数进行了调用。 |
+| Error | 指定的错误的信息。 |
+| userContext | 指定时提供的用户上下文信息负载或者保存函数进行了调用。 |
 | 方法名称 | 调用方法的名称。 |
 
 *defaultSaveCompleted 属性 （get、 组）：*
@@ -266,7 +266,7 @@ Save （） 方法将指定的属性列表 （或所有属性） 保存到用户
 | **参数名称** | **含义** |
 | --- | --- |
 | numPropsSaved | 指定已保存的属性的数目。 |
-| 上下文 | 指定时提供的用户上下文信息负载或者保存函数进行了调用。 |
+| userContext | 指定时提供的用户上下文信息负载或者保存函数进行了调用。 |
 | 方法名称 | 调用方法的名称。 |
 
 *defaultLoadCompleted 属性 （get、 组）：*
@@ -282,7 +282,7 @@ Save （） 方法将指定的属性列表 （或所有属性） 保存到用户
 | **参数名称** | **含义** |
 | --- | --- |
 | numPropsLoaded | 指定加载的属性数目。 |
-| 上下文 | 指定时提供的用户上下文信息负载或者保存函数进行了调用。 |
+| userContext | 指定时提供的用户上下文信息负载或者保存函数进行了调用。 |
 | 方法名称 | 调用方法的名称。 |
 
 *路径属性 （get、 组）：*
@@ -341,7 +341,7 @@ ASP.NET 服务-专门分析、 成员身份和身份验证服务-轻松地向 Ja
 
 此外，通过使用等效方法签名中创建简化的 web 服务实现，开发人员可以创建自定义脚本提供程序这些内部函数的 ASP.NET 服务。 有关这些方法的支持简化了丰富的客户端应用程序，同时开发人员提供了各种各样的灵活性来满足特定需求的开发。
 
-## <a name="bio"></a>*简介*
+## <a name="bio"></a>*Bio*
 
 Scott 类别自 1997 年以来处理与 Microsoft Web 技术，并且是 myKB.com 总裁 ([www.myKB.com](http://www.myKB.com)) 其中他专注于编写 ASP.NET 基于侧重于知识库软件解决方案的应用程序。 可以通过在电子邮件联系 Scott [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com)或在其博客地址[ScottCate.com](http://ScottCate.com)
 

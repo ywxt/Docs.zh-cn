@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 3de952224e23eed29f90ed0e8c662e4ee3f531ce
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8b1bdae048afc78399ccc7b0eac7125d9b983c13
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-aspnet-mvc-4"></a>什么是 ASP.NET MVC 4 中的新增功能
 ====================
 通过[Web 营地团队](https://twitter.com/webcamps)
 
-[下载 Web 营地培训工具包](http://www.microsoft.com/en-us/download/29843)
+[下载 Web 营地培训工具包](http://www.microsoft.com/download/29843)
 
 > ASP.NET MVC 4 是一个框架，用于构建可缩放的、 基于标准的 web 应用程序使用成熟设计模式以及 ASP.NET 和.NET framework 的能力。 此新，第四个版本的 framework 侧重于使移动 web 应用程序开发更容易。
 > 
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 在此动手实验中，你将使用 ASP.NET MVC 4 中启动&quot;Internet 应用程序&quot;项目模板创建照片库应用程序。 你将逐渐增强使用 jQuery Mobile 和 ASP.NET MVC 4 的新功能以使其与不同的移动设备和桌面 web 浏览器兼容的应用。 您还将了解代码生成和如何 ASP.NET MVC 4 使你更轻松地编写异步操作方法通过支持任务的新代码食谱&lt;ActionResult&gt;返回类型。
 > 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843)。
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)。
 
 
 <a id="Objectives"></a>
@@ -50,13 +50,13 @@ ms.lasthandoff: 11/10/2017
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 你必须具有要完成本实验的以下项：
 
 - [Microsoft Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web)或更高 (读取[附录 B](#AppendixB)有关如何安装它的说明)。
 - [ASP.NET MVC 4](../../../mvc4.md) （Microsoft Visual Studio 2012 安装中包括）
-- Windows Phone 仿真程序 (包括在[Windows Phone 7.1.1 SDK](https://www.microsoft.com/en-us/download/details.aspx?id=29233))
+- Windows Phone 仿真程序 (包括在[Windows Phone 7.1.1 SDK](https://www.microsoft.com/download/details.aspx?id=29233))
 - 可选- [WebMatrix 2](https://www.microsoft.com/web/webmatrix/)与**Electric Plum iPhone 模拟器**（仅适用于用来与 iPhone 模拟器中浏览 web 应用程序的练习 3) 的扩展
 
 <a id="Setup"></a>
@@ -345,7 +345,7 @@ ASP.NET MVC 4 便于移动的网站和平板电脑浏览器的开发。 此模�
 
 
     [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample5.cs)]
-4. 打开**HomeController.cs**文件从**控制器**文件夹。
+4. 从“控制器”文件夹打开 HomeController.cs 文件。
 5. 添加下面的 using 语句。
 
     (代码段- *ASP.NET MVC 4 实验-Ex02-HomeController Using*)
@@ -622,7 +622,7 @@ jQuery Mobile 默认情况下主题包括 5 样本是否指定字母 (a、 b、 
 
 Microsoft.NET Framework 4.5 引入了以 C# 和 Visual Basic 中的.NET 编程异步提供新的基础的新语言功能。 此新 foundation 能使异步编程，类似于-也大约像简单-同步编程。 你现可通过使用 ASP.NET MVC 4 中编写的异步操作方法**AsyncController**类。 可以使用的长时间运行的异步操作方法，非 CPU 绑定的请求。 这样可避免阻止 Web 服务器在处理请求时执行工作。 AsyncController 类通常用于长时间运行的 Web 服务调用。
 
-本练习中说明 ASP.NET MVC 4 中的异步操作的基础的知识。 如果你希望更深入的了解，你可以查看以下文章： [ [https://msdn.microsoft.com/en-us/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/en-us/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/en-us/library/ee728598%28v=vs.100%29.aspx)
+本练习中说明 ASP.NET MVC 4 中的异步操作的基础的知识。 如果你希望更深入的了解，你可以查看以下文章： [ [https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)
 
 <a id="Task_1_-_Implementing_an_Asynchronous_Controller"></a>
 #### <a name="task-1---implementing-an-asynchronous-controller"></a>任务 1-实现异步控制器

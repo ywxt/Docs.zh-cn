@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: 12c34b7a9521835533998c5609870bc712a6d48c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 702d7773374f331b25489060b18f752186d7acea
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="application-parts-in-aspnet-core"></a>在 ASP.NET 核心中的应用程序部分
 
@@ -40,9 +40,9 @@ services.AddMvc()
 
 默认情况下 MVC 将搜索依赖关系树并查找控制器 （即使其他程序集）。 若要加载 （例如，来自不引用在编译时的插件） 的任意程序集，可以使用应用程序部分。
 
-你可以使用应用程序部分*避免*查找特定的程序集或位置中的控制器。 你可以控制哪些部分 （或程序集） 可以应用可通过修改`ApplicationParts`集合`ApplicationPartManager`。 中的项的顺序`ApplicationParts`集合并不重要。 务必要完全配置`ApplicationPartManager`然后使用它来配置容器中的服务。 例如，你应完全配置`ApplicationPartManager`之前调用`AddControllersAsServices`。 未能这样做，请将意味着，应用程序部分中的控制器之后添加方法调用不会受到影响 （将不获取注册作为服务） 这可能导致不正确 bevavior 的你的应用程序。
+你可以使用应用程序部分*避免*查找特定的程序集或位置中的控制器。 你可以控制哪些部分 （或程序集） 可以应用可通过修改`ApplicationParts`集合`ApplicationPartManager`。 中的项的顺序`ApplicationParts`集合并不重要。 务必要完全配置`ApplicationPartManager`然后使用它来配置容器中的服务。 例如，你应完全配置`ApplicationPartManager`之前调用`AddControllersAsServices`。 未能这样做，请将意味着，应用程序部分中的控制器之后添加方法调用不会受到影响 （不获取注册为服务） 这可能导致不正确 bevavior 的你的应用程序。
 
-如果你有该程序集包含不想要使用控制器，则将其从删除`ApplicationPartManager`:
+如果你有该程序集包含不想使用的控制器，则将其从删除`ApplicationPartManager`:
 
 ```csharp
 services.AddMvc()

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 9320c8a2aadb3b3c5bd6cd90b59d8a72db384c0c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4b5507021af47d96c29809c9830d0558f5501f87
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>使用 ASP.NET MVC-第 1 部分中使用 HTML5 和 jQuery UI Datepicker 弹出日历
 ====================
@@ -51,7 +51,7 @@ ms.lasthandoff: 11/10/2017
 
 下面是你将要掌握的内容：
 
-- 如何使用中的属性[DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx)命名空间以显示时会被控制数据的格式和处于编辑模式。
+- 如何使用中的属性[DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)命名空间以显示时会被控制数据的格式和处于编辑模式。
 - 如何创建模板 （编辑和显示模板） 来控制数据的格式。
 - 如何添加[jQuery UI datepicker](http://jqueryui.com/demos/datepicker/)作为输入日期字段的方法。
 
@@ -67,7 +67,7 @@ ms.lasthandoff: 11/10/2017
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image3.png)
 
-日期和价格的格式是使用的结果[DisplayFormat](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx)上的属性的属性`Movie`类。
+日期和价格的格式是使用的结果[DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx)上的属性的属性`Movie`类。
 
 打开*Movie.cs*文件，并注释掉`DisplayFormat`属性`ReleaseDate`和`Price`属性。 生成`Movie`类类似如下所示：
 
@@ -79,11 +79,11 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="using-the-dataannotations-datatype-attribute-to-specify-the-data-type"></a>使用 DataAnnotations 数据类型属性以指定数据类型
 
-将注释掉`DisplayFormat`属性，则为`ReleaseDate`具有属性[DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx)属性，使用`Date`枚举。 替换`DisplayFormat`属性，则为`Price`具有属性[DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx)再次，属性这一次使用`Currency`枚举。 这是完整的代码如下所示：
+将注释掉`DisplayFormat`属性，则为`ReleaseDate`具有属性[DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)属性，使用`Date`枚举。 替换`DisplayFormat`属性，则为`Price`具有属性[DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)再次，属性这一次使用`Currency`枚举。 这是完整的代码如下所示：
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/samples/sample2.cs)]
 
-运行该应用程序。 现在发布日期和价格属性的格式设置正确 （即使用相应的日期和货币格式）。 [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx)属性提供类型元数据的内置的 ASP.NET MVC 模板，以便以正确的格式呈现字段。 使用`DataType`属性优于使用`DisplayFormat`最初是在代码中，因为属性`DataType`特性使模型更简洁且更灵活的目的如国际化。
+运行该应用程序。 现在发布日期和价格属性的格式设置正确 （即使用相应的日期和货币格式）。 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)属性提供类型元数据的内置的 ASP.NET MVC 模板，以便以正确的格式呈现字段。 使用`DataType`属性优于使用`DisplayFormat`最初是在代码中，因为属性`DataType`特性使模型更简洁且更灵活的目的如国际化。
 
 在下一部分中，你将看到如何使自定义模板，以显示日期字段。
 

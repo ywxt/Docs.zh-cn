@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions
 msc.type: authoredcontent
-ms.openlocfilehash: cd24a85a05e427f83d28cae876431d04cc295f17
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0ab99dd443040b90ffefd2f5b9261a63b91e9463
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="routing-conventions-in-aspnet-web-api-2-odata"></a>ASP.NET Web API 2 中的路由约定 Odata
 ====================
@@ -67,7 +67,7 @@ ms.lasthandoff: 11/10/2017
 | --- | --- | --- | --- |
 | 获取 /entityset | / 产品 | GetEntitySet 或 Get | GetProducts |
 | 获取 /entityset(key) | /Products(1) | GetEntityType 或 Get | GetProduct |
-| 获取 /entityset （密钥）/强制转换 | / 产品 (1) /Models.Book | GetEntityType 或 Get | GetBook |
+| 获取 /entityset （密钥）/强制转换 | /Products(1)/Models.Book | GetEntityType 或 Get | GetBook |
 
 有关详细信息，请参阅[创建只读 OData 终结点](odata-v3/creating-an-odata-endpoint.md)。
 
@@ -77,18 +77,18 @@ ms.lasthandoff: 11/10/2017
 | --- | --- | --- | --- |
 | 文章 /entityset | / 产品 | PostEntityType 或 Post | PostProduct |
 | PUT /entityset(key) | /Products(1) | PutEntityType 或 Put | PutProduct |
-| PUT /entityset （密钥）/强制转换 | / 产品 (1) /Models.Book | PutEntityType 或 Put | PutBook |
+| PUT /entityset （密钥）/强制转换 | /Products(1)/Models.Book | PutEntityType 或 Put | PutBook |
 | 修补程序 /entityset(key) | /Products(1) | PatchEntityType 或修补程序 | PatchProduct |
-| 修补程序 /entityset （密钥）/强制转换 | / 产品 (1) /Models.Book | PatchEntityType 或修补程序 | PatchBook |
-| 删除 /entityset(key) | /Products(1) | DeleteEntityType 或删除 | DeleteProduct |
-| 删除 /entityset （密钥）/强制转换 | / 产品 (1) /Models.Book | DeleteEntityType 或删除 | DeleteBook |
+| 修补程序 /entityset （密钥）/强制转换 | /Products(1)/Models.Book | PatchEntityType 或修补程序 | PatchBook |
+| DELETE /entityset(key) | /Products(1) | DeleteEntityType 或删除 | DeleteProduct |
+| DELETE /entityset(key)/cast | /Products(1)/Models.Book | DeleteEntityType 或删除 | DeleteBook |
 
 **查询的导航属性**
 
 | 请求 | 示例 URI | 操作名称 | 示例操作 |
 | --- | --- | --- | --- |
-| GET /entityset （密钥） / 导航 | / 产品 （1）/供应商 | GetNavigationFromEntityType 或 GetNavigation | GetSupplierFromProduct |
-| 获取 /entityset （密钥）/转换/导航 | / 产品 (1) /Models.Book/Author | GetNavigationFromEntityType 或 GetNavigation | GetAuthorFromBook |
+| GET /entityset （密钥） / 导航 | /Products(1)/Supplier | GetNavigationFromEntityType or GetNavigation | GetSupplierFromProduct |
+| 获取 /entityset （密钥）/转换/导航 | /Products(1)/Models.Book/Author | GetNavigationFromEntityType or GetNavigation | GetAuthorFromBook |
 
 有关详细信息，请参阅[使用实体关系](odata-v3/working-with-entity-relations.md)。
 
@@ -96,10 +96,10 @@ ms.lasthandoff: 11/10/2017
 
 | 请求 | 示例 URI | 操作名称 |
 | --- | --- | --- |
-| POST /entityset （密钥） / $links/导航 | / 产品 （1） / $ 链接/供应商 | CreateLink |
-| PUT 的 /entityset （密钥） / $links/导航 | / 产品 （1） / $ 链接/供应商 | CreateLink |
-| 删除 /entityset （密钥） / $links/导航 | / 产品 （1） / $ 链接/供应商 | DeleteLink |
-| 删除 /entityset(key)/$links/navigation(relatedKey) | /Products/(1)/$links/Suppliers(1) | DeleteLink |
+| POST /entityset(key)/$links/navigation | /Products(1)/$links/Supplier | CreateLink |
+| PUT 的 /entityset （密钥） / $links/导航 | /Products(1)/$links/Supplier | CreateLink |
+| DELETE /entityset(key)/$links/navigation | /Products(1)/$links/Supplier | DeleteLink |
+| DELETE /entityset(key)/$links/navigation(relatedKey) | /Products/(1)/$links/Suppliers(1) | DeleteLink |
 
 有关详细信息，请参阅[使用实体关系](odata-v3/working-with-entity-relations.md)。
 
@@ -109,15 +109,15 @@ ms.lasthandoff: 11/10/2017
 
 | 请求 | 示例 URI | 操作名称 | 示例操作 |
 | --- | --- | --- | --- |
-| GET /entityset （密钥） / 属性 | / 产品 （1）/名称 | GetPropertyFromEntityType 或 GetProperty | GetNameFromProduct |
-| 获取 /entityset （密钥）/转换/属性 | / 产品 (1) /Models.Book/Author | GetPropertyFromEntityType 或 GetProperty | GetTitleFromBook |
+| GET /entityset （密钥） / 属性 | /Products(1)/Name | GetPropertyFromEntityType 或 GetProperty | GetNameFromProduct |
+| 获取 /entityset （密钥）/转换/属性 | /Products(1)/Models.Book/Author | GetPropertyFromEntityType 或 GetProperty | GetTitleFromBook |
 
 **操作**
 
 | 请求 | 示例 URI | 操作名称 | 示例操作 |
 | --- | --- | --- | --- |
-| POST /entityset （密钥） / 操作 | / 产品 （1）/速率 | ActionNameOnEntityType 或 ActionName | RateOnProduct |
-| 后 /entityset （密钥）/转换/操作 | / 产品 (1) /Models.Book/CheckOut | ActionNameOnEntityType 或 ActionName | CheckOutOnBook |
+| POST /entityset(key)/action | /Products(1)/Rate | ActionNameOnEntityType 或 ActionName | RateOnProduct |
+| POST /entityset(key)/cast/action | /Products(1)/Models.Book/CheckOut | ActionNameOnEntityType 或 ActionName | CheckOutOnBook |
 
 有关详细信息，请参阅[OData 操作](odata-v3/odata-actions.md)。
 
@@ -147,7 +147,7 @@ ms.lasthandoff: 11/10/2017
 
 对于这两种方法，如果约定不适用于该请求，该方法应返回 null。
 
-**ODataPath**参数表示的已分析的 OData 资源路径。 它包含的列表 **[ODataPathSegment](https://msdn.microsoft.com/en-us/library/system.web.http.odata.routing.odatapathsegment.aspx)** 实例，每个段的资源路径的一个。 **ODataPathSegment**是一个抽象类; 每个段类型由派生自的类**ODataPathSegment**。
+**ODataPath**参数表示的已分析的 OData 资源路径。 它包含的列表 **[ODataPathSegment](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatapathsegment.aspx)** 实例，每个段的资源路径的一个。 **ODataPathSegment**是一个抽象类; 每个段类型由派生自的类**ODataPathSegment**。
 
 **ODataPath.TemplatePath**属性是一个字符串，表示串联所有的路径段。 例如，如果的 URI 是`/Products(1)/Supplier`，路径模板是&quot;~/entityset/key/navigation&quot;。 请注意，段不直接对应 URI 段。 例如，实体键 (1) 表示为其自身**ODataPathSegment**。
 
@@ -170,7 +170,7 @@ ms.lasthandoff: 11/10/2017
 1. 我派生自**EntitySetRoutingConvention**，这是因为**SelectController**在该类的方法适合于此新的路由约定。 这意味着我不需要重新实现**SelectController**。
 2. 约定适用仅对 GET 请求中，并且仅当路径模板时&quot;~/entityset/key/navigation/key&quot;。
 3. 操作名称是&quot;获取 {EntityType}&quot;，其中*{EntityType}*是导航集合的类型。 例如， &quot;GetSupplier&quot;。 您可以使用任何您喜欢的命名约定和 #8212;只需确保你与匹配的控制器操作。
-4. 将名为的两个参数的操作*密钥*和*relatedKey*。 (有关某些预定义的参数名称的列表，请参阅[ODataRouteConstants](https://msdn.microsoft.com/en-us/library/system.web.http.odata.routing.odatarouteconstants.aspx)。)
+4. 将名为的两个参数的操作*密钥*和*relatedKey*。 (有关某些预定义的参数名称的列表，请参阅[ODataRouteConstants](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatarouteconstants.aspx)。)
 
 下一步向路由约定的列表添加新的约定。 发生这种情况在配置期间，如下面的代码中所示：
 

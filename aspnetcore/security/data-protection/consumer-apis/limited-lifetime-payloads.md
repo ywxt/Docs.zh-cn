@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/limited-lifetime-payloads
-ms.openlocfilehash: 144097cd1551c1d0aece5df20ce01e14146a41d1
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 7909f21057f22e78c03b41464a19a18ce0908216
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="limiting-the-lifetime-of-protected-payloads"></a>限制受保护的负载的生存期
 
@@ -54,7 +54,7 @@ ms.lasthandoff: 01/19/2018
 `Unprotect`方法返回原始的未受保护的数据。 如果尚未超过负载，绝对过期则返回为可选输出参数以及原始的未受保护数据。 如果负载已过期，则取消保护方法的所有重载将都引发 CryptographicException。
 
 >[!WARNING]
-> 不建议使用这些 Api 来保护需要长期或无限期暂留的负载。 "，我可以承受为要在一个月后永久性不可恢复的受保护负载？" 可用作一个很好的经验法则;如果问题的回答是没有然后开发人员应考虑备用 Api。
+> 它具有不建议使用这些 Api 来保护需要长期或无限期暂留的负载。 "，我可以承受为要在一个月后永久性不可恢复的受保护负载？" 可用作一个很好的经验法则;如果问题的回答是没有然后开发人员应考虑备用 Api。
 
 使用下面的示例[非 DI 代码路径](../configuration/non-di-scenarios.md)用于实例化数据保护系统的。 若要运行此示例，请确保先添加对 Microsoft.AspNetCore.DataProtection.Extensions 包的引用。
 

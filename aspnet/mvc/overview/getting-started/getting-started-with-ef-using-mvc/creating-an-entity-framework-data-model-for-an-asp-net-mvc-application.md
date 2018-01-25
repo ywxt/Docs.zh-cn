@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 84ca4bbaebe401d14233131bcaa027debf7ea0f9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 46f53279e2e6daa4266c06feb4ba544e14b68a03
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-6-code-first-using-mvc-5"></a>首先通过 MVC 5 使用 Entity Framework 6 Code First
 ====================
@@ -29,7 +29,7 @@ ms.lasthandoff: 11/10/2017
 > > 提供了本系列教程的较新版本：[开始使用 ASP.NET Core 和使用 Visual Studio 2015 的实体框架核心](https://docs.asp.net/en/latest/data/ef-mvc/intro.html)。
 > 
 > 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 本教程使用 Code First 的工作流。 有关如何选择 Code First、 数据库第一个和第一个模型之间的信息，请参阅[实体框架开发工作流](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf)。
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 本教程使用 Code First 的工作流。 有关如何选择 Code First、 数据库第一个和第一个模型之间的信息，请参阅[实体框架开发工作流](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf)。
 > 
 > 示例应用程序是一个用于 fictional Contoso 大学网站。 它包括诸如学生许可、 过程创建和教师分配等功能。 本系列教程说明如何生成 Contoso 大学示例应用程序。 你可以[下载已完成的应用程序](https://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)。
 > 
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > ## <a name="questions-and-comments"></a>问题和意见
 > 
-> 请留下反馈上如何喜欢本教程的方式，我们可以提高在页面底部的注释中。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)、[实体框架和 LINQ to Entities 论坛](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
+> 请留下反馈上如何喜欢本教程的方式，我们可以提高在页面底部的注释中。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)、[实体框架和 LINQ to Entities 论坛](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
 > 
 > 如果你遇到无法解决的问题，你通常可以通过比较已完成的项目，你可以下载你的代码会发现问题的解决方案。 一些常见的错误和如何解决它们，请参阅[常见错误，以及解决方案或解决办法它们。](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
 
@@ -70,7 +70,7 @@ ms.lasthandoff: 11/10/2017
 
 此站点的用户界面样式而保留接近什么由运行内置的任何模板，以便在本教程主要关注如何使用实体框架。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 请参阅**软件版本**页顶部。 实体框架 6 不是先决条件，因为本教程的一部分安装 EF NuGet 包。
 
@@ -169,7 +169,7 @@ ms.lasthandoff: 11/10/2017
 
 `EnrollmentID`属性将是主键; 此实体使用*classname* `ID`模式而不是`ID`本身作为你在中看到`Student`实体。 通常，你将选择一个模式，并使用它在你的数据模型。 在这里，变体说明了你可以使用任一模式。 在更高版本的教程中，你将看到如何使用`ID`而无需`classname`轻松地在数据模型中实现继承。
 
-`Grade`属性是[枚举](https://msdn.microsoft.com/en-us/data/hh859576.aspx)。 后问号`Grade`类型声明指示`Grade`属性是[可以为 null](https://msdn.microsoft.com/en-us/library/2cf62fcy.aspx)。 为 null 的等级是不同于零年级-null 意味着一个等级而言未知的或未尚未分配。
+`Grade`属性是[枚举](https://msdn.microsoft.com/data/hh859576.aspx)。 后问号`Grade`类型声明指示`Grade`属性是[可以为 null](https://msdn.microsoft.com/library/2cf62fcy.aspx)。 为 null 的等级是不同于零年级-null 意味着一个等级而言未知的或未尚未分配。
 
 `StudentID`属性是一个外键，且相应的导航属性为`Student`。 `Enrollment`实体是与一个相关联`Student`实体，因此该属性只包含单个`Student`实体 (与不同`Student.Enrollments`导航属性前面所看到的后者可以容纳多个`Enrollment`实体)。
 
@@ -187,11 +187,11 @@ ms.lasthandoff: 11/10/2017
 
 `Enrollments`属性是导航属性。 A`Course`可以与任意数量的相关实体`Enrollment`实体。
 
-我们举例更多有关[DatabaseGenerated](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx)本系列后面的教程中的属性。 基本上，此属性允许您输入的过程，而不是让生成它的数据库的主键。
+我们举例更多有关[DatabaseGenerated](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx)本系列后面的教程中的属性。 基本上，此属性允许您输入的过程，而不是让生成它的数据库的主键。
 
 ## <a name="create-the-database-context"></a>创建的数据库上下文
 
-协调为给定的数据模型的实体框架功能的主类是*数据库上下文*类。 通过派生自创建此类[System.Data.Entity.DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=VS.103).aspx)类。 在代码中你指定数据模型中包含哪些实体。 你还可以自定义某些实体框架行为。 在此项目中类命名为`SchoolContext`。
+协调为给定的数据模型的实体框架功能的主类是*数据库上下文*类。 通过派生自创建此类[System.Data.Entity.DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx)类。 在代码中你指定数据模型中包含哪些实体。 你还可以自定义某些实体框架行为。 在此项目中类命名为`SchoolContext`。
 
 ContosoUniversity 项目中创建文件夹，右键单击中的项目**解决方案资源管理器**单击**添加**，然后单击**新文件夹**。 将新文件夹命名*DAL* （适用于数据访问层）。 在该文件夹中创建名为的新类文件*SchoolContext.cs*，并将模板代码替换为以下代码：
 
@@ -199,7 +199,7 @@ ContosoUniversity 项目中创建文件夹，右键单击中的项目**解决方
 
 ### <a name="specifying-entity-sets"></a>指定的实体集
 
-此代码将创建[DbSet](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset(v=VS.103).aspx)每个实体集的属性。 在实体框架术语中，*实体集*通常对应于一个数据库表，和*实体*对应于表中的行。
+此代码将创建[DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=VS.103).aspx)每个实体集的属性。 在实体框架术语中，*实体集*通常对应于一个数据库表，和*实体*对应于表中的行。
 
 > [!NOTE] 
 > 
@@ -212,13 +212,13 @@ ContosoUniversity 项目中创建文件夹，右键单击中的项目**解决方
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample7.cs?highlight=1)]
 
-您还无法传入的连接字符串本身而不是一个存储在 Web.config 文件的名称。 有关将数据库指定要使用的选项的详细信息，请参阅[实体框架的连接和模型](https://msdn.microsoft.com/en-us/data/jj592674)。
+您还无法传入的连接字符串本身而不是一个存储在 Web.config 文件的名称。 有关将数据库指定要使用的选项的详细信息，请参阅[实体框架的连接和模型](https://msdn.microsoft.com/data/jj592674)。
 
 如果不显式指定连接字符串或其中一个的名称，实体框架将假定该连接字符串名称是否与类名称相同。 在此示例中的默认连接字符串名称将为`SchoolContext`，与你在指定的显式相同。
 
 ### <a name="specifying-singular-table-names"></a>指定采用单数形式的表名称
 
-`modelBuilder.Conventions.Remove`中的语句[OnModelCreating](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx)的方法阻止从正在变为复数形式的表名称。 如果你未执行此操作，数据库中生成的表将被命名为`Students`， `Courses`，和`Enrollments`。 相反，则表名将为`Student`， `Course`，和`Enrollment`。 开发者对表名称是否应为复数意见不一。 本教程使用单数形式，但重要的一点是，可以选择你的首选，通过包括或忽略这行代码的任何一个窗体。
+`modelBuilder.Conventions.Remove`中的语句[OnModelCreating](https://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx)的方法阻止从正在变为复数形式的表名称。 如果你未执行此操作，数据库中生成的表将被命名为`Students`， `Courses`，和`Enrollments`。 相反，则表名将为`Student`， `Course`，和`Enrollment`。 开发者对表名称是否应为复数意见不一。 本教程使用单数形式，但重要的一点是，可以选择你的首选，通过包括或忽略这行代码的任何一个窗体。
 
 ## <a name="set-up-ef-to-initialize-the-database-with-test-data"></a>设置 EF 初始化测试数据的数据库
 
@@ -241,7 +241,7 @@ ContosoUniversity 项目中创建文件夹，右键单击中的项目**解决方
 
 [!code-xml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample9.xml?highlight=2-6)]
 
-`context type`指定完全限定的上下文类名称和在中，它是程序集和`databaseinitializer type`指定初始值设定项类和在程序集的完全限定的名称。 (如果你不想使用初始值设定项的 EF，您可以对设置属性`context`元素： `disableDatabaseInitialization="true"`。)有关详细信息，请参阅[实体框架的配置文件设置](https://msdn.microsoft.com/en-us/data/jj556606)。
+`context type`指定完全限定的上下文类名称和在中，它是程序集和`databaseinitializer type`指定初始值设定项类和在程序集的完全限定的名称。 (如果你不想使用初始值设定项的 EF，您可以对设置属性`context`元素： `disableDatabaseInitialization="true"`。)有关详细信息，请参阅[实体框架的配置文件设置](https://msdn.microsoft.com/data/jj556606)。
 
 作为设置初始值设定项的替代方法*Web.config*文件是代码以执行此操作通过添加`Database.SetInitializer`语句`Application_Start`中的方法*Global.asax.cs*文件。 有关详细信息，请参阅[了解数据库初始值设定项中 Entity Framework Code First](http://www.codeguru.com/csharp/article.php/c19999/Understanding-Database-Initializers-in-Entity-Framework-Code-First.htm)。
 
@@ -264,9 +264,9 @@ ContosoUniversity 项目中创建文件夹，右键单击中的项目**解决方
 
 [!code-xml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample10.xml?highlight=1-3)]
 
-你已添加的连接字符串指定实体框架将使用名为的 LocalDB 数据库*ContosoUniversity1.mdf*。 （数据库尚不存在;EF 将创建它。）如果你想要在中创建的数据库你*应用\_数据*文件夹中，你可以添加`AttachDBFilename=|DataDirectory|\ContosoUniversity1.mdf`到连接字符串。 有关连接字符串的详细信息，请参阅[ASP.NET Web 应用程序的 SQL Server 连接字符串](https://msdn.microsoft.com/en-us/library/jj653752.aspx)。
+你已添加的连接字符串指定实体框架将使用名为的 LocalDB 数据库*ContosoUniversity1.mdf*。 （数据库尚不存在;EF 将创建它。）如果你想要在中创建的数据库你*应用\_数据*文件夹中，你可以添加`AttachDBFilename=|DataDirectory|\ContosoUniversity1.mdf`到连接字符串。 有关连接字符串的详细信息，请参阅[ASP.NET Web 应用程序的 SQL Server 连接字符串](https://msdn.microsoft.com/library/jj653752.aspx)。
 
-你实际上不必中有一个连接字符串*Web.config*文件。 如果你不提供的连接字符串，实体框架将使用的默认的基于上下文类。 有关详细信息，请参阅[到新数据库 Code First](https://msdn.microsoft.com/en-us/data/jj193542)。
+你实际上不必中有一个连接字符串*Web.config*文件。 如果你不提供的连接字符串，实体框架将使用的默认的基于上下文类。 有关详细信息，请参阅[到新数据库 Code First](https://msdn.microsoft.com/data/jj193542)。
 
 ## <a name="creating-a-student-controller-and-views"></a>正在创建学生控制器和视图
 
@@ -334,7 +334,7 @@ ContosoUniversity 项目中创建文件夹，右键单击中的项目**解决方
 - 命名的实体属性`ID`或*classname* `ID`被识别为主键属性。
 - 如果它名为属性将被解释为外键属性*&lt;的导航属性名称&gt;&lt;主键属性名称&gt;* (例如，`StudentID`为`Student`以来的导航属性`Student`实体的主键是`ID`)。 外键属性还可以进行命名相同只需&lt;主键属性名称&gt;(例如，`EnrollmentID`由于`Enrollment`实体的主键是`EnrollmentID`)。
 
-你已了解可以约定中重写。 例如，指定表名称不应变为复数形式，并稍后你将看到如何显式标记为外键属性的属性。 你将了解有关约定和如何重写在[创建多个复杂的数据模型](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)更高版本中这一系列教程。 有关约定的详细信息，请参阅[代码第一个约定](https://msdn.microsoft.com/en-us/data/jj679962)。
+你已了解可以约定中重写。 例如，指定表名称不应变为复数形式，并稍后你将看到如何显式标记为外键属性的属性。 你将了解有关约定和如何重写在[创建多个复杂的数据模型](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)更高版本中这一系列教程。 有关约定的详细信息，请参阅[代码第一个约定](https://msdn.microsoft.com/data/jj679962)。
 
 ## <a name="summary"></a>摘要
 

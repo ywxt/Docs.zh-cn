@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 7697763b97e36304d686c77e8cedd060d630c530
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aeea122636f5235364e6a40cb6e041b1fe221317
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-7"></a>如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 7 部分
 ====================
@@ -135,7 +135,7 @@ ms.lasthandoff: 11/10/2017
 
 页现在使用`GetCourses`存储过程来检索所有课程的列表。 运行页后，可以验证它像以前一样工作。
 
-(与这些实体，具体取决于相关的数据，通过存储过程检索的实体的导航属性可能不自动填充`ObjectContext`默认设置。 有关详细信息，请参阅[加载相关对象](https://msdn.microsoft.com/en-us/library/bb896272.aspx)MSDN 库中。)
+(与这些实体，具体取决于相关的数据，通过存储过程检索的实体的导航属性可能不自动填充`ObjectContext`默认设置。 有关详细信息，请参阅[加载相关对象](https://msdn.microsoft.com/library/bb896272.aspx)MSDN 库中。)
 
 在下一步的教程中，你将了解如何使用动态数据功能来更简便地程序和测试数据格式设置和验证规则。 指定每个网页规则，如数据格式字符串和字段是必填，而不可以在数据模型元数据中指定此类规则并自动在每一页上将它们应用于。
 

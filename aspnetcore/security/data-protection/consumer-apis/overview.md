@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/overview
-ms.openlocfilehash: 5ec11dce3ba485a84b6ce5f7ddaf16430162659c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 2545226314ebf57d7a0d644d8edfb5354dcc6e5e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="consumer-apis-overview"></a>使用者 Api 概述
 
@@ -25,13 +25,13 @@ ms.lasthandoff: 01/19/2018
 
 ## <a name="idataprotector"></a>IDataProtector
 
-保护程序接口将返回通过调用`CreateProtector`，且此接口使用者可以用于执行保护和取消保护操作。
+保护程序接口将返回通过调用`CreateProtector`，和它的使用者可以用于执行此接口保护或取消保护操作。
 
-若要保护的数据片段，将数据传递给`Protect`方法。 基本接口定义的方法的将 byte []-> byte []，但还存在 （提供作为扩展方法） 将字符串转换的重载-> 字符串。 提供两种方法的安全性是相同的;开发人员应选择任何重载是最方便对其用例。 而不考虑的重载选择，则返回保护方法现在受保护 （enciphered 和防考验） 和应用程序可以将其发送到不受信任的客户端。
+若要保护的数据片段，将数据传递给`Protect`方法。 基本接口定义的将 byte []-> byte [] 的方法，但没有还将字符串转换的重载 （提供作为扩展方法）-> 字符串。 提供两种方法的安全性是相同的;开发人员应选择任何重载是最方便对其用例。 而不考虑的重载选择，则返回保护方法现在受保护 （enciphered 和防考验） 和应用程序可以将其发送到不受信任的客户端。
 
 若要取消对以前受保护的数据片段的保护，将传递到受保护的数据`Unprotect`方法。 (有 byte []-基于和基于字符串的重载，为开发人员方便起见。)如果受保护的负载由以前调用生成`Protect`此同一`IDataProtector`、`Unprotect`方法将返回原始的未受保护的负载。 如果已被篡改或已由不同的受保护的负载`IDataProtector`、`Unprotect`方法会引发 CryptographicException。
 
-与不同的相同的概念`IDataProtector`ties 回目的的概念。 如果两个`IDataProtector`实例生成从同一根`IDataProtectionProvider`但通过不同的用途的调用中的字符串`IDataProtectionProvider.CreateProtector`，则它们将被视为[不同的保护程序](purpose-strings.md)，和一个将无法取消保护由其他生成的负载。
+与不同的相同的概念`IDataProtector`ties 回目的的概念。 如果两个`IDataProtector`实例生成从同一根`IDataProtectionProvider`但通过不同的用途的调用中的字符串`IDataProtectionProvider.CreateProtector`，则它们正在被视为[不同的保护程序](purpose-strings.md)，和一个将无法取消保护由其他生成的负载。
 
 ## <a name="consuming-these-interfaces"></a>使用这些接口
 
@@ -55,4 +55,4 @@ ms.lasthandoff: 01/19/2018
 [!code-csharp[Main](./overview/samples/getdataprotector.cs?highlight=15)]
 
 >[!TIP]
-> 实例`IDataProtectionProvider`和`IDataProtector`是线程安全的多个调用方。 它是预期，后一个组件获取的引用`IDataProtector`通过调用`CreateProtector`，它将使用该引用，以便多个调用`Protect`和`Unprotect`。 调用`Unprotect`将引发 CryptographicException，如果无法验证或中译解出来的受保护的负载。 某些组件可能想要忽略错误期间取消保护操作;组件它读取身份验证 cookie 可能处理此错误和请求则将视为根本具有任何 cookie，而不使迫切地请求失败。 需要此行为的组件应专门捕获 CryptographicException，而不是忽略所有异常。
+> 实例`IDataProtectionProvider`和`IDataProtector`是线程安全的多个调用方。 它具有一个组件获取的引用后应，`IDataProtector`通过调用`CreateProtector`，它将使用该引用，以便多个调用`Protect`和`Unprotect`。 调用`Unprotect`将引发 CryptographicException，如果无法验证或中译解出来的受保护的负载。 某些组件可能想要忽略错误期间取消保护操作;组件它读取身份验证 cookie 可能处理此错误和请求则将视为根本具有任何 cookie，而不使迫切地请求失败。 需要此行为的组件应专门捕获 CryptographicException，而不是忽略所有异常。

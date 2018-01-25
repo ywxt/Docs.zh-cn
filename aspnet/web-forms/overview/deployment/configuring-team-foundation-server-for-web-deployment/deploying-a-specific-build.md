@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build
 msc.type: authoredcontent
-ms.openlocfilehash: afac083c96c1396ad60275fcb55a0ec9c4c0bd44
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: be1000f0cbc2f509f5014789c2bc47ce2b12fb2f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-a-specific-build"></a>将特定的生成部署
 ====================
@@ -113,7 +113,7 @@ ms.lasthandoff: 11/10/2017
 
     ![](deploying-a-specific-build/_static/image7.png)
 2. 在**队列生成**对话框中，在**参数**选项卡上，展开**高级**部分。
-3. 在**MSBuild 参数**行中，替换的值**OutputRoot**属性替换为你生成的文件夹的位置。 例如: 
+3. 在**MSBuild 参数**行中，替换的值**OutputRoot**属性替换为你生成的文件夹的位置。 例如:
 
     [!code-console[Main](deploying-a-specific-build/samples/sample5.cmd)]
 
@@ -131,7 +131,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="further-reading"></a>其他阅读材料
 
-创建生成定义的详细信息，请参阅[创建基本生成定义](https://msdn.microsoft.com/en-us/library/ms181716.aspx)和[定义生成过程](https://msdn.microsoft.com/en-us/library/ms181715.aspx)。 队列生成的更多指南，请参阅[对生成进行排队](https://msdn.microsoft.com/en-us/library/ms181722.aspx)。
+创建生成定义的详细信息，请参阅[创建基本生成定义](https://msdn.microsoft.com/library/ms181716.aspx)和[定义生成过程](https://msdn.microsoft.com/library/ms181715.aspx)。 队列生成的更多指南，请参阅[对生成进行排队](https://msdn.microsoft.com/library/ms181722.aspx)。
 
 >[!div class="step-by-step"]
 [上一页](creating-a-build-definition-that-supports-deployment.md)

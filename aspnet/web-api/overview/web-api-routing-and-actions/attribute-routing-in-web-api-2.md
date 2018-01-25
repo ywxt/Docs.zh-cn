@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 67ab1536b4a72abf8c0d3ed5aa0c48bc79a8fb5f
-ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
+ms.openlocfilehash: 173add73a150d3e13ae243d6548463da912dadee
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的属性路由
 ====================
@@ -261,7 +261,7 @@ Web API 还将选择基于请求 （GET、 POST 等） 的 HTTP 方法的操作�
     3. 不受限制的路由参数。
     4. 具有约束的通配符参数段。
     5. 通配符参数不受限制的段。
-3. 对于一次，路由排序使用的不区分大小写的序号字符串比较 ([OrdinalIgnoreCase](https://msdn.microsoft.com/en-us/library/system.stringcomparer.ordinalignorecase.aspx)) 的路由模板。
+3. 对于一次，路由排序使用的不区分大小写的序号字符串比较 ([OrdinalIgnoreCase](https://msdn.microsoft.com/library/system.stringcomparer.ordinalignorecase.aspx)) 的路由模板。
 
 这是一个示例。 假设定义以下控制器：
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/json-and-xml-serialization
 msc.type: authoredcontent
-ms.openlocfilehash: 7aafe4823d3a6090fae4a63f1a66fb2670ecb025
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b1fcaf70cc38d73da0a454764520197b97f34b26
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="json-and-xml-serialization-in-aspnet-web-api"></a>JSON 和 ASP.NET Web API 中的 XML 序列化
 ====================
@@ -81,7 +81,7 @@ JSON 格式由**JsonMediaTypeFormatter**类。 默认情况下， **JsonMediaTyp
 <a id="json_dates"></a>
 ### <a name="dates"></a>日期
 
-默认情况下，Json.NET 日期中写入[ISO 8601](http://www.w3.org/TR/NOTE-datetime)格式。 UTC （协调世界时） 中的日期是编写使用"Z"后缀的。 本地时间的日期包括时区偏移量。 例如: 
+默认情况下，Json.NET 日期中写入[ISO 8601](http://www.w3.org/TR/NOTE-datetime)格式。 UTC （协调世界时） 中的日期是编写使用"Z"后缀的。 本地时间的日期包括时区偏移量。 例如:
 
 [!code-console[Main](json-and-xml-serialization/samples/sample4.cmd)]
 
@@ -89,7 +89,7 @@ JSON 格式由**JsonMediaTypeFormatter**类。 默认情况下， **JsonMediaTyp
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample5.cs)]
 
-如果你希望使用[Microsoft JSON 日期格式](https://msdn.microsoft.com/en-us/library/bb299886.aspx#intro_to_json_sidebarb)(`"\/Date(ticks)\/"`) 而不是 ISO 8601 设置**DateFormatHandling**上序列化程序设置的属性：
+如果你希望使用[Microsoft JSON 日期格式](https://msdn.microsoft.com/library/bb299886.aspx#intro_to_json_sidebarb)(`"\/Date(ticks)\/"`) 而不是 ISO 8601 设置**DateFormatHandling**上序列化程序设置的属性：
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample6.cs)]
 
@@ -110,7 +110,7 @@ JSON 格式由**JsonMediaTypeFormatter**类。 默认情况下， **JsonMediaTyp
 <a id="json_anon"></a>
 ### <a name="anonymous-and-weakly-typed-objects"></a>匿名和弱类型化对象
 
-操作方法可以返回匿名对象，其序列化为 JSON。 例如: 
+操作方法可以返回匿名对象，其序列化为 JSON。 例如:
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample9.cs)]
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-server
 msc.type: authoredcontent
-ms.openlocfilehash: e594dd1ea4ae027cf0b82574fc5a3eb061b1f2e1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 96155b1c648e5f6092b3ba67a560197f86a593b9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-signalr-hubs-api-guide---server-signalr-1x"></a>ASP.NET SignalR 中心 API 指南-服务器 (SignalR 1.x)
 ====================
@@ -77,13 +77,13 @@ ms.lasthandoff: 11/10/2017
 - [SignalR 中心 API 指南-JavaScript 客户端](index.md)
 - [SignalR 中心 API 指南-.NET 客户端](index.md)
 
-API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET 4，请参阅[API 主题的.NET 4 版本](https://msdn.microsoft.com/en-us/library/jj891075(v=vs.100).aspx)。
+API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET 4，请参阅[API 主题的.NET 4 版本](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx)。
 
 <a id="route"></a>
 
 ## <a name="how-to-register-the-signalr-route-and-configure-signalr-options"></a>如何注册 SignalR 路由和配置 SignalR 选项
 
-若要定义的路由的客户端将用于连接到你的中心，调用[MapHubs](https://msdn.microsoft.com/en-us/library/system.web.routing.signalrrouteextensions.maphubs(v=vs.111).aspx)应用程序启动时的方法。 `MapHubs`是[扩展方法](https://msdn.microsoft.com/en-us/library/vstudio/bb383977.aspx)为`System.Web.Routing.RouteCollection`类。 下面的示例演示如何定义中的 SignalR 中心路由*Global.asax*文件。
+若要定义的路由的客户端将用于连接到你的中心，调用[MapHubs](https://msdn.microsoft.com/library/system.web.routing.signalrrouteextensions.maphubs(v=vs.111).aspx)应用程序启动时的方法。 `MapHubs`是[扩展方法](https://msdn.microsoft.com/library/vstudio/bb383977.aspx)为`System.Web.Routing.RouteCollection`类。 下面的示例演示如何定义中的 SignalR 中心路由*Global.asax*文件。
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample1.cs)]
 
@@ -139,7 +139,7 @@ API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET
 
 ## <a name="how-to-create-and-use-hub-classes"></a>如何创建和使用 Hub 类
 
-若要创建一个中心，创建派生自的类[Microsoft.Aspnet.Signalr.Hub](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx)。 下面的示例演示一个简单的中心类聊天应用程序。
+若要创建一个中心，创建派生自的类[Microsoft.Aspnet.Signalr.Hub](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx)。 下面的示例演示一个简单的中心类聊天应用程序。
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample8.cs)]
 
@@ -161,7 +161,7 @@ API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET
 
 默认情况下，JavaScript 客户端到中心通过使用类名称的混合使用大小写版本引用。 SignalR 自动使此更改，以便 JavaScript 代码可以符合 JavaScript 约定。 前面的示例将称为`contosoChatHub`在 JavaScript 代码。
 
-**服务器**
+**Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample9.cs?highlight=1)]
 
@@ -171,7 +171,7 @@ API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET
 
 如果你想要指定客户端使用，添加另一个名称`HubName`属性。 当你使用`HubName`属性，没有任何名称更改为 JavaScript 客户端上的 camel 大小写。
 
-**服务器**
+**Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample11.cs?highlight=1)]
 
@@ -216,7 +216,7 @@ API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET
 
 默认情况下，JavaScript 客户端到中心方法通过使用的方法名称的混合使用大小写版本引用。 SignalR 自动使此更改，以便 JavaScript 代码可以符合 JavaScript 约定。
 
-**服务器**
+**Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample15.cs?highlight=1)]
 
@@ -226,7 +226,7 @@ API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET
 
 如果你想要指定客户端使用，添加另一个名称`HubMethodName`属性。
 
-**服务器**
+**Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample17.cs?highlight=1)]
 
@@ -238,7 +238,7 @@ API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET
 
 ### <a name="when-to-execute-asynchronously"></a>当以异步方式执行
 
-如果该方法将是长时间运行或已进行的工作将涉及等待，如数据库查找或 web 服务调用，请使中心方法异步通过返回[任务](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.aspx)(代替了`void`返回) 或[任务&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/dd321424.aspx)对象 (代替了`T`返回类型)。 当您返回`Task`从 SignalR 方法的对象会等待`Task`若要完成，然后发送解包的结果返回到客户端，以便在客户端中的方法调用的代码没有差异。
+如果该方法将是长时间运行或已进行的工作将涉及等待，如数据库查找或 web 服务调用，请使中心方法异步通过返回[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)(代替了`void`返回) 或[任务&lt;T&gt; ](https://msdn.microsoft.com/library/dd321424.aspx)对象 (代替了`T`返回类型)。 当您返回`Task`从 SignalR 方法的对象会等待`Task`若要完成，然后发送解包的结果返回到客户端，以便在客户端中的方法调用的代码没有差异。
 
 使得的中心方法异步可避免阻止使用 WebSocket 传输时的连接。 当传输为 WebSocket Hub 方法以同步方式执行，直到中心方法完成之后将阻止从同一个客户端集线器上的方法的后续调用。
 
@@ -270,7 +270,7 @@ API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET
 
 若要从服务器中调用客户端方法，使用`Clients`中心类方法中的属性。 下面的示例演示调用的服务器代码`addNewMessageToPage`所有连接的客户端和 JavaScript 客户端中定义的方法的客户端代码。
 
-**服务器**
+**Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample22.cs?highlight=5)]
 
@@ -298,7 +298,7 @@ API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET
 
 ### <a name="selecting-which-clients-will-receive-the-rpc"></a>选择哪些客户端将接收 RPC
 
-客户端属性返回[HubConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx)提供若干选项用于指定哪些客户端将接收 RPC 的对象：
+客户端属性返回[HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx)提供若干选项用于指定哪些客户端将接收 RPC 的对象：
 
 - 所有连接的客户端。
 
@@ -357,7 +357,7 @@ API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET
 
 ### <a name="how-to-use-a-string-variable-as-the-method-name"></a>如何使用作为方法名称的字符串变量
 
-如果你想要通过使用作为强制转换的方法名称的字符串变量调用客户端方法`Clients.All`(或`Clients.Others`，`Clients.Caller`等) 到`IClientProxy`，然后调用[Invoke （方法名称、 参数...）](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx).
+如果你想要通过使用作为强制转换的方法名称的字符串变量调用客户端方法`Clients.All`(或`Clients.Others`，`Clients.Caller`等) 到`IClientProxy`，然后调用[Invoke （方法名称、 参数...）](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx).
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample37.cs)]
 
@@ -367,9 +367,9 @@ API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET
 
 SignalR 中的组提供一种方法将消息广播到连接的客户端的指定子集。 组可以具有任意数量的客户端，并且客户端可以是任意数量的组的成员。
 
-若要管理组成员身份，使用[添加](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx)和[删除](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx)提供方法`Groups`中心类的属性。 下面的示例演示`Groups.Add`和`Groups.Remove`方法在由客户端代码调用的中心方法中使用跟调用它们的 JavaScript 客户端代码。
+若要管理组成员身份，使用[添加](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx)和[删除](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx)提供方法`Groups`中心类的属性。 下面的示例演示`Groups.Add`和`Groups.Remove`方法在由客户端代码调用的中心方法中使用跟调用它们的 JavaScript 客户端代码。
 
-**服务器**
+**Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample38.cs?highlight=5,10)]
 
@@ -452,7 +452,7 @@ SignalR 跟踪的连接，不是用户，因此，如果你希望某个用户是
 
 ## <a name="how-to-get-information-about-the-client-from-the-context-property"></a>如何从上下文属性中获取有关客户端的信息
 
-若要获取有关客户端的信息，请使用`Context`中心类的属性。 `Context`属性返回[HubCallerContext](https://msdn.microsoft.com/en-us/library/jj890883(v=vs.111).aspx)对象提供了访问权的以下信息：
+若要获取有关客户端的信息，请使用`Context`中心类的属性。 `Context`属性返回[HubCallerContext](https://msdn.microsoft.com/library/jj890883(v=vs.111).aspx)对象提供了访问权的以下信息：
 
 - 调用的客户端连接 ID。
 
@@ -526,7 +526,7 @@ SignalR 跟踪的连接，不是用户，因此，如果你希望某个用户是
 若要处理在中心类方法中发生的错误，请使用一个或两个以下方法：
 
 - 在 try-catch 块中包装你的方法代码和日志的异常对象。 出于调试目的可以将异常发送到客户端，但出于安全原因详细的信息发送给在生产环境中的客户端不建议。
-- 创建处理的中心管道模块[OnIncomingError](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx)方法。 下面的示例演示的管道模块，记录错误，跟模块注入中心管道的 Global.asax 中的代码。
+- 创建处理的中心管道模块[OnIncomingError](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx)方法。 下面的示例演示的管道模块，记录错误，跟模块注入中心管道的 Global.asax 中的代码。
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample55.cs)]
 
@@ -607,4 +607,4 @@ SignalR 可将你自己的代码注入到中心管道。 下面的示例演示�
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample68.cs?highlight=3)]
 
-有许多不同的方法可以重写。 完整列表，请参阅[HubPipelineModule 方法](https://msdn.microsoft.com/en-us/library/jj918633(v=vs.111).aspx)。
+有许多不同的方法可以重写。 完整列表，请参阅[HubPipelineModule 方法](https://msdn.microsoft.com/library/jj918633(v=vs.111).aspx)。

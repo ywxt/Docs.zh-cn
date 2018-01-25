@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 6ee3e244c4ed29384d11c7acc1440692d3f9b23e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6ae398f94c0ac3872601bdc8fd935f6d285793db
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>ASP.NET 4.5 Web 窗体和 Visual Studio 2013 入门
 ====================
@@ -71,7 +71,7 @@ ms.lasthandoff: 11/10/2017
 - Web 应用程序项目 （而不是网站项目）
 - Web Forms — Web 窗体
 - 主控页配置
-- bootstrap
+- Bootstrap
 - 实体框架代码优先，LocalDB
 - 请求验证
 - 强类型数据控件模型绑定，数据注释，并且值提供程序
@@ -146,11 +146,11 @@ PayPal 将确认你的帐户、 顺序和付款信息。
 
 ![Wingtip Toys-订单审核](introduction-and-overview/_static/image7.png)
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 在开始之前，请确保你已在计算机上安装以下软件：
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs)或[Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web)。 自动安装.NET Framework。
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs)或[Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/downloads#express-web)。 自动安装.NET Framework。
 
 本系列教程使用 Microsoft Visual Studio Express 2013 for Web。 可以使用 Microsoft Visual Studio Express 2013 for Web，或者 Microsoft Visual Studio 2013 来完成本教程系列。
 
@@ -163,7 +163,7 @@ PayPal 将确认你的帐户、 顺序和付款信息。
 
 > [!NOTE] 
 > 
-> 本演练假定你所选*Web 开发*设置的集合，首次启动 Visual Studio。 有关详细信息，请参阅[如何： 选择 Web 开发环境设置](https://msdn.microsoft.com/en-us/library/ff521558.aspx)。
+> 本演练假定你所选*Web 开发*设置的集合，首次启动 Visual Studio。 有关详细信息，请参阅[如何： 选择 Web 开发环境设置](https://msdn.microsoft.com/library/ff521558.aspx)。
 
 
 ## <a name="download-the-sample-application"></a>下载示例应用程序
@@ -179,7 +179,7 @@ PayPal 将确认你的帐户、 顺序和付款信息。
 
 下载*.zip*文件。 若要查看已完成本教程系列创建的项目中，找到并选择*C#*文件夹中的*.zip*文件。 保存*C#* folderto 使用以使用 Visual Studio 2013 项目的文件夹。 默认情况下，Visual Studio 2013 项目文件夹如下所示：
 
-**C:\Users\*****&lt;用户名&gt;* * * \Documents\Visual Studio 2013\Projects**
+**C:\Users\*****&lt;username&gt;*****\Documents\Visual Studio 2013\Projects**
 
 重命名***C#***文件夹***WingtipToys***。
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/areas
-ms.openlocfilehash: 666be2da6b38ffb538ae3888ea879a4104c8fd12
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 87bf2eaad1c13d21412051be769992411f685e2e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="areas"></a>区域
 
@@ -99,7 +99,7 @@ services.Configure<RazorViewEngineOptions>(options =>
    });
    ```
 
-需要注意的一点是，结构*视图*文件夹是唯一一个被认为是重要此处和文件夹的其余部分的内容类似*控制器*和*模型*未**不**重要。 例如，不需要具有*控制器*和*模型*在所有的文件夹。 这样做的原因的内容*控制器*和*模型*只是代码将获取编译成.dll 文件作为内容位置*视图*之前，请求不是已进行查看。
+需要注意的一点是，结构*视图*文件夹是唯一一个被认为是重要此处和文件夹的其余部分的内容类似*控制器*和*模型*未**不**重要。 例如，不需要具有*控制器*和*模型*在所有的文件夹。 这样做的原因的内容*控制器*和*模型*只是代码将获取编译成.dll 文件作为内容位置*视图*直到到的请求才会进行已进行查看。
 
 一旦您已经定义文件夹层次结构，你需要告诉 MVC 每个控制器关联的区域。 执行此操作的修饰控制器名称与`[Area]`属性。
 
@@ -153,7 +153,7 @@ services.Configure<RazorViewEngineOptions>(options =>
 
   TagHelper 语法：`<a asp-action="Index">Go to Product's Home Page</a>`
 
-  请注意，我们不需要提供的区域和控制器，值此处因为它们都已在当前请求的上下文中不可用。 这些类型的值被称为`ambient`值。
+  请注意，我们不需要提供的区域和控制器，值此处它们已在当前请求上下文中可用。 这些类型的值被称为`ambient`值。
 
 * 从区域中的操作生成链接基于到另一项操作的不同控制器上的控制器
 

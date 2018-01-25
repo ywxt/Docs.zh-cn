@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/assigning-roles-to-users-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 752882b16fe80cc99c9f333bcc2067e677e6670b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 15d2b427e6fccfc82eab535200ba6878ab41b72e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="assigning-roles-to-users-c"></a>将角色分配给用户 (C#)
 ====================
@@ -81,13 +81,13 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](assigning-roles-to-users-cs/samples/sample5.cs)]
 
-`BindUsersToUserList`方法检索的所有用户帐户通过系统中[`Membership.GetAllUsers`方法](https://msdn.microsoft.com/en-us/library/dy8swhya.aspx)。 这将返回[`MembershipUserCollection`对象](https://msdn.microsoft.com/en-us/library/system.web.security.membershipusercollection.aspx)，这是一套[`MembershipUser`实例](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.aspx)。 然后，此集合将绑定到`UserList`DropDownList。 `MembershipUser`实例的集合包含的各种属性，如该构成`UserName`， `Email`， `CreationDate`，和`IsOnline`。 若要指示要显示的值的 DropDownList`UserName`属性，确保`UserList`DropDownList 的`DataTextField`和`DataValueField`属性已设置为"UserName"。
+`BindUsersToUserList`方法检索的所有用户帐户通过系统中[`Membership.GetAllUsers`方法](https://msdn.microsoft.com/library/dy8swhya.aspx)。 这将返回[`MembershipUserCollection`对象](https://msdn.microsoft.com/library/system.web.security.membershipusercollection.aspx)，这是一套[`MembershipUser`实例](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx)。 然后，此集合将绑定到`UserList`DropDownList。 `MembershipUser`实例的集合包含的各种属性，如该构成`UserName`， `Email`， `CreationDate`，和`IsOnline`。 若要指示要显示的值的 DropDownList`UserName`属性，确保`UserList`DropDownList 的`DataTextField`和`DataValueField`属性已设置为"UserName"。
 
 > [!NOTE]
 > `Membership.GetAllUsers`方法有两个重载： 一个可接受任何输入的参数并返回的所有用户，，另一个中的页索引和页大小的整数值采用并返回仅指定用户的子集。 当存在大量的用户帐户的可分页用户界面元素在显示时，第二个重载可以使用到更有效地通过用户的页中，因为它返回的用户帐户，而不是所有这些只是精确的子集。
 
 
-`BindRolesToList`方法通过调用会启动`Roles`类的[`GetAllRoles`方法](https://msdn.microsoft.com/en-us/library/system.web.security.roles.getallroles.aspx)，这将返回一个字符串数组，包含系统中的角色。 此字符串数组，然后绑定到转发器。
+`BindRolesToList`方法通过调用会启动`Roles`类的[`GetAllRoles`方法](https://msdn.microsoft.com/library/system.web.security.roles.getallroles.aspx)，这将返回一个字符串数组，包含系统中的角色。 此字符串数组，然后绑定到转发器。
 
 最后，我们需要在首次加载页时调用这两种方法。 将以下代码添加到 `Page_Load` 事件处理程序中：
 
@@ -107,10 +107,10 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](assigning-roles-to-users-cs/samples/sample7.cs)]
 
-通过确定所选的用户是谁启动上面的代码。 然后，它使用角色类的[`GetRolesForUser(userName)`方法](https://msdn.microsoft.com/en-us/library/system.web.security.roles.getrolesforuser.aspx)以返回指定的用户组作为字符串数组的角色。 接下来，枚举转发器的项和每个项的`RoleCheckBox`复选框以编程方式引用。 仅当它对应于该角色包含在选中的复选框`selectedUsersRoles`字符串数组。
+通过确定所选的用户是谁启动上面的代码。 然后，它使用角色类的[`GetRolesForUser(userName)`方法](https://msdn.microsoft.com/library/system.web.security.roles.getrolesforuser.aspx)以返回指定的用户组作为字符串数组的角色。 接下来，枚举转发器的项和每个项的`RoleCheckBox`复选框以编程方式引用。 仅当它对应于该角色包含在选中的复选框`selectedUsersRoles`字符串数组。
 
 > [!NOTE]
-> `selectedUserRoles.Contains<string>(...)`如果你使用的 ASP.NET 2.0 版中，将不会编译语法。 `Contains<string>`方法是的一部分[LINQ 库](http://en.wikipedia.org/wiki/Language_Integrated_Query)，这是新为 ASP.NET 3.5。 如果你仍在使用 ASP.NET 2.0 版中，使用[`Array.IndexOf<string>`方法](https://msdn.microsoft.com/en-us/library/eha9t187.aspx)相反。
+> `selectedUserRoles.Contains<string>(...)`如果你使用的 ASP.NET 2.0 版中，将不会编译语法。 `Contains<string>`方法是的一部分[LINQ 库](http://en.wikipedia.org/wiki/Language_Integrated_Query)，这是新为 ASP.NET 3.5。 如果你仍在使用 ASP.NET 2.0 版中，使用[`Array.IndexOf<string>`方法](https://msdn.microsoft.com/library/eha9t187.aspx)相反。
 
 
 `CheckRolesForSelectedUser`方法需要在两个情况下调用： 首次加载页时，只要`UserList`DropDownList 的所选的索引已更改。 因此，调用此方法从`Page_Load`事件处理程序 (对的调用后`BindUsersToUserList`和`BindRolesToList`)。 此外，为 DropDownList 创建事件处理程序`SelectedIndexChanged`事件并从那里调用此方法。
@@ -129,7 +129,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-aspx[Main](assigning-roles-to-users-cs/samples/sample10.aspx)]
 
-我们最后一项任务是要完成`RoleCheckBox_CheckChanged`事件处理程序。 我们需要通过引用引发事件，因为此复选框实例告诉我们什么角色已选中或通过取消选中该复选框控件来启动其`Text`和`Checked`属性。 使用所选用户的用户名以及此信息，我们将添加或从通过角色中删除用户`Roles`类的[ `AddUserToRole` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.addusertorole.aspx)或[`RemoveUserFromRole`方法](https://msdn.microsoft.com/en-us/library/system.web.security.roles.removeuserfromrole.aspx)。
+我们最后一项任务是要完成`RoleCheckBox_CheckChanged`事件处理程序。 我们需要通过引用引发事件，因为此复选框实例告诉我们什么角色已选中或通过取消选中该复选框控件来启动其`Text`和`Checked`属性。 使用所选用户的用户名以及此信息，我们将添加或从通过角色中删除用户`Roles`类的[ `AddUserToRole` ](https://msdn.microsoft.com/library/system.web.security.roles.addusertorole.aspx)或[`RemoveUserFromRole`方法](https://msdn.microsoft.com/library/system.web.security.roles.removeuserfromrole.aspx)。
 
 [!code-csharp[Main](assigning-roles-to-users-cs/samples/sample11.cs)]
 
@@ -181,7 +181,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](assigning-roles-to-users-cs/samples/sample14.cs)]
 
-此方法会启动通过获取从所选的角色`RoleList`DropDownList。 然后，它使用[`Roles.GetUsersInRole(roleName)`方法](https://msdn.microsoft.com/en-us/library/system.web.security.roles.getusersinrole.aspx)检索属于该角色的用户的用户名的字符串数组。 然后，此数组绑定到`RolesUserList`GridView。
+此方法会启动通过获取从所选的角色`RoleList`DropDownList。 然后，它使用[`Roles.GetUsersInRole(roleName)`方法](https://msdn.microsoft.com/library/system.web.security.roles.getusersinrole.aspx)检索属于该角色的用户的用户名的字符串数组。 然后，此数组绑定到`RolesUserList`GridView。
 
 需要在两个的情况下调用此方法： 最初加载页面时以及在所选的角色`RoleList`DropDownList 更改。 因此，更新`Page_Load`事件处理程序，以便在调用后调用此方法`CheckRolesForSelectedUser`。 接下来，创建的事件处理程序`RoleList`的`SelectedIndexChanged`事件，并从那里，太调用此方法。
 
@@ -242,7 +242,7 @@ ms.lasthandoff: 11/10/2017
 中的代码的大部分`Click`事件处理程序执行各种验证检查。 它可确保在距访客提供中的用户名`UserNameToAddToRole`文本框中，用户是否存在在系统中，以及它们已不属于所选角色。 如果下列任一检查失败，相应的消息将显示在`ActionStatus`并退出事件处理程序。 如果通过了所有检查，将用户添加到通过角色`Roles.AddUserToRole`方法。 之后，文本框中的`Text`属性已清除了、 刷新 GridView，则与`ActionStatus`标签显示一条消息，该值指示指定的用户已成功添加到所选角色。
 
 > [!NOTE]
-> 若要确保不已属于所选角色指定的用户，我们使用[`Roles.IsUserInRole(userName, roleName)`方法](https://msdn.microsoft.com/en-us/library/system.web.security.roles.isuserinrole.aspx)，这将返回一个布尔值，该值指示是否*用户名*属于*roleName*。 我们将使用此方法在再次<a id="_msoanchor_2"> </a>[下一教程](role-based-authorization-cs.md)我们在查看基于角色的授权时。
+> 若要确保不已属于所选角色指定的用户，我们使用[`Roles.IsUserInRole(userName, roleName)`方法](https://msdn.microsoft.com/library/system.web.security.roles.isuserinrole.aspx)，这将返回一个布尔值，该值指示是否*用户名*属于*roleName*。 我们将使用此方法在再次<a id="_msoanchor_2"> </a>[下一教程](role-based-authorization-cs.md)我们在查看基于角色的授权时。
 
 
 访问通过浏览器页面并选择从主管角色`RoleList`DropDownList。 请尝试输入无效的用户名 – 你应看到一条消息说明用户不存在系统中。
@@ -356,7 +356,7 @@ ms.lasthandoff: 11/10/2017
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [ASP.NET 网站管理工具概述](https://msdn.microsoft.com/en-us/library/ms228053.aspx)
+- [ASP.NET 网站管理工具概述](https://msdn.microsoft.com/library/ms228053.aspx)
 - [正在检查 ASP。NET 的成员资格、 角色和配置文件](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [滚动你自己的网站管理工具](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
 

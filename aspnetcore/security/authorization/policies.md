@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/policies
-ms.openlocfilehash: 1067e97dd6e71021929aa3690b0c3f5bfc6c9724
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: c249985a6266483d47f447ac4a232546ed2b2708
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="custom-policy-based-authorization"></a>自定义的基于策略的授权
 
@@ -69,7 +69,7 @@ ms.lasthandoff: 01/19/2018
 
 * 处理程序通过调用中表示成功`context.Succeed(IAuthorizationRequirement requirement)`，将要求传递成功验证。
 
-* 处理程序不需要来处理故障通常情况下，如其他处理程序相同的要求可能会成功。
+* 处理程序不需要一般情况下，处理失败，因为其他处理程序相同的要求可能会成功。
 
 * 若要确保失败，即使其他要求处理程序成功，调用`context.Fail`。
 

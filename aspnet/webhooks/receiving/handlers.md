@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: a55b0d20-9c90-4bd3-a471-20da6f569f0c
 ms.technology: 
 ms.prod: .net-framework
-ms.openlocfilehash: 3aaef756ee00d7e44aa757062e1ef297312ecf22
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 12acae0883c12698a8f9c2150623ba792303e7ef
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-webhooks-handlers"></a>ASP.NET Webhook 处理程序
 
@@ -62,7 +62,7 @@ public class MyWebHookHandler : WebHookHandler
 
 如果在几秒内不生成响应，大多数 WebHook 发件人将重新发送 WebHook。 这意味着您的处理程序必须完成的处理顺序不以使它能够再次调用该时间范围内。
 
-如果处理花费的时间长，或单独更好地处理则[WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs)可以用于例如提交到队列，WebHook 请求[Azure 存储队列](https://msdn.microsoft.com/en-us/library/azure/dd179353.aspx)。
+如果处理花费的时间长，或单独更好地处理则[WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs)可以用于例如提交到队列，WebHook 请求[Azure 存储队列](https://msdn.microsoft.com/library/azure/dd179353.aspx)。
 
 概述[WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs)此处提供实现：
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: d0b76c06495c51df3ed0f61cd318507a05240392
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5296bc1ca3fd0b24123bd79a550a7e2cffc34a44
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 部署 SQL Server Compact 数据库-2 12
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 
 - [SQL Server Compact](https://www.microsoft.com/sqlserver/en/us/editions/compact.aspx) （数据库引擎）。
 - [ASP.NET Universal Providers](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx) （启用 ASP.NET 成员资格系统以使用 SQL Server Compact）
-- [实体框架 5.0](https://msdn.microsoft.com/en-us/library/gg696172(d=lightweight,v=vs.103).aspx)（代码进行迁移的第一个）。
+- [实体框架 5.0](https://msdn.microsoft.com/library/gg696172(d=lightweight,v=vs.103).aspx)（代码进行迁移的第一个）。
 
 数据库结构和一些 （并非所有） 的应用程序的两个中的数据还必须部署数据库。 通常情况下，在开发应用程序时，你不想将部署到实时站点数据库到输入测试数据。 但是，你还可以输入一些生产数据，您想要部署。 在本教程中将配置 Contoso 大学项目，以便在部署时，所需的软件和正确的数据将包括在内。
 
@@ -47,7 +47,7 @@ ms.lasthandoff: 11/10/2017
 
 示例应用程序使用 SQL Server Compact 4.0。 此数据库引擎是网站; 的相对较新选项早期版本的 SQL Server Compact 不完成 web 宿主环境中的工作。 SQL Server Compact 提供与使用 SQL Server Express 进行开发和部署到完整的 SQL Server 的更常见的方案相比的几个好处。 具体取决于您选择托管提供商的情况下，SQL Server Compact 可能更便宜，若要部署，因为某些提供商根据额外以支持完整的 SQL Server 数据库。 因为可以将数据库引擎自身部署为 web 应用程序的一部分，没有 SQL Server Compact 额外收费。
 
-但是，你还应注意其限制。 SQL Server Compact 不支持存储的过程、 触发器、 视图或复制。 (SQL Server compact 不支持的 SQL Server 功能的完整列表，请参阅[差异之间 SQL Server Compact 和 SQL Server](https://msdn.microsoft.com/en-us/library/bb896140.aspx)。)此外，一些可用于处理架构和 SQL Server Express 和 SQL Server 数据库中的数据的工具不起作用 SQL Server Compact。 例如，你不能使用 SQL Server Management Studio 或 SQL Server Data Tools 在 Visual Studio 中使用 SQL Server Compact 数据库。 必须用于使用 SQL Server Compact 数据库的其他选项：
+但是，你还应注意其限制。 SQL Server Compact 不支持存储的过程、 触发器、 视图或复制。 (SQL Server compact 不支持的 SQL Server 功能的完整列表，请参阅[差异之间 SQL Server Compact 和 SQL Server](https://msdn.microsoft.com/library/bb896140.aspx)。)此外，一些可用于处理架构和 SQL Server Express 和 SQL Server 数据库中的数据的工具不起作用 SQL Server Compact。 例如，你不能使用 SQL Server Management Studio 或 SQL Server Data Tools 在 Visual Studio 中使用 SQL Server Compact 数据库。 必须用于使用 SQL Server Compact 数据库的其他选项：
 
 - 在 Visual Studio 中，为 SQL Server Compact 提供有限的数据库操作功能，可以使用服务器资源管理器。
 - 你可以使用的数据库操作功能[WebMatrix](https://www.microsoft.com/web/webmatrix/)，它具有比服务器资源管理器功能更多。
@@ -119,7 +119,7 @@ NuGet 包安装通常将负责部署与应用程序的此软件所需的所有�
 
 在顶部**程序包管理器控制台**窗口选择 ContosoUniversity.DAL 作为默认项目，然后在`PM>`提示符处输入"启用迁移"。
 
-![启用 migrations_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image7.png)
+![enable-migrations_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image7.png)
 
 此命令创建*Configuration.cs*在新的文件*迁移*ContosoUniversity.DAL 项目文件夹中的。
 
@@ -159,13 +159,13 @@ NuGet 包安装通常将负责部署与应用程序的此软件所需的所有�
 
 在**程序包管理器控制台**窗口中，输入命令"Initial"以创建初始迁移并将其命名为"初始"。
 
-![添加 migration_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image11.png)
+![add-migration_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image11.png)
 
 Code First 迁移创建中的另一个类文件*迁移*文件夹，并且此类包含创建数据库架构的代码。
 
 在**程序包管理器控制台**，输入命令"更新数据库"创建数据库并运行**种子**方法。
 
-![更新 database_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
+![update-database_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
 
 (如果你收到的错误消息指示表已存在，无法创建，则可能是因为你运行应用程序删除了数据库后，在你执行之前`update-database`。 In that case，删除*School.sdf*再次文件，然后重试`update-database`命令。)
 
@@ -190,7 +190,7 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和窗体身份验证
 当你首次部署站点时，很普遍排除大部分或全部为测试创建的用户帐户。 在这种情况下，你将部署一个管理员帐户和任何用户帐户。 而不是手动删除测试帐户，你将创建具有仅在生产环境中需要一个管理员用户帐户的新成员资格数据库。
 
 > [!NOTE]
-> 成员资格数据库将存储帐户密码的哈希值。 若要部署到另一台计算机中的帐户，你必须确保与源计算机上，哈希例程不生成目标服务器上的不同哈希。 它们将生成相同的哈希时使用 ASP.NET Universal Providers，只要你不要更改默认的算法。 默认的算法是 HMACSHA256 和中指定**验证**属性 **[machineKey](https://msdn.microsoft.com/en-us/library/w8h3skw9.aspx)**  Web.config 文件中的元素。
+> 成员资格数据库将存储帐户密码的哈希值。 若要部署到另一台计算机中的帐户，你必须确保与源计算机上，哈希例程不生成目标服务器上的不同哈希。 它们将生成相同的哈希时使用 ASP.NET Universal Providers，只要你不要更改默认的算法。 默认的算法是 HMACSHA256 和中指定**验证**属性 **[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)**  Web.config 文件中的元素。
 
 
 成员资格数据库不会保留通过 Code First 迁移，并且没有设定种子测试帐户的数据库 （如没有的 School 数据库） 没有自动初始值设定项。 因此，要保持可用的测试数据将使测试数据库的副本之前创建一个新。
@@ -243,7 +243,7 @@ SQL Server Compact 数据库引擎和这两个数据库现已准备好可部署�
 
 ## <a name="more-information"></a>详细信息
 
-有关 NuGet 的详细信息，请参阅[使用 NuGet 管理项目库](https://msdn.microsoft.com/en-us/magazine/hh547106.aspx)和[NuGet 文档](http://docs.nuget.org/docs/start-here/overview)。 如果你不想使用 NuGet，你将需要了解如何分析以确定它能做什么安装时的 NuGet 包。 (例如，它可能配置*Web.config*转换，PowerShell 将脚本配置为运行在生成时，等等。)若要了解有关 NuGet 的工作原理的详细信息，请参阅尤其[创建和发布包](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package)和[配置文件和源代码转换](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations)。
+有关 NuGet 的详细信息，请参阅[使用 NuGet 管理项目库](https://msdn.microsoft.com/magazine/hh547106.aspx)和[NuGet 文档](http://docs.nuget.org/docs/start-here/overview)。 如果你不想使用 NuGet，你将需要了解如何分析以确定它能做什么安装时的 NuGet 包。 (例如，它可能配置*Web.config*转换，PowerShell 将脚本配置为运行在生成时，等等。)若要了解有关 NuGet 的工作原理的详细信息，请参阅尤其[创建和发布包](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package)和[配置文件和源代码转换](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations)。
 
 >[!div class="step-by-step"]
 [上一页](deployment-to-a-hosting-provider-introduction-1-of-12.md)

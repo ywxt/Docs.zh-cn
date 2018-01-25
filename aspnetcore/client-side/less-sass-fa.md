@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/less-sass-fa
-ms.openlocfilehash: c3a53d6118a72c00d61d9139b05325fd1cbd53da
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 764b11bbd301c0116488265d32f7d46dfc5bce27
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>简介事半功倍的样式应用程序、 Sass，和在 ASP.NET 核心中出色的字体
 
@@ -97,7 +97,7 @@ body {
 .bgDark2    {color:@darker2}
 ```
 
-`@base`和其他@-prefixed项是变量。 每个表示一种颜色。 除`@base`，它们设置使用颜色函数： 加亮、 变暗，和旋转。 淡化和加深执行几乎你将预期;数值调节钮调整颜色色调的大量度 （围绕颜色盘中）。 较少处理器是足够智能，可忽略不使用的变量，因此若要展示了这些变量的工作原理，我们需要某个位置使用它们。 类`.baseColor`，等将演示每个生成的 CSS 文件中的变量的计算的值。
+`@base`和其他@-prefixed项是变量。 每个表示一种颜色。 除`@base`，设置它们并使用颜色函数： 加亮、 变暗，和旋转。 淡化和加深执行几乎你将预期;数值调节钮调整颜色色调的大量度 （围绕颜色盘中）。 较少处理器是足够智能，可忽略不使用的变量，因此若要展示了这些变量的工作原理，我们需要某个位置使用它们。 类`.baseColor`，等将演示每个生成的 CSS 文件中的变量的计算的值。
 
 ### <a name="getting-started"></a>入门
 
@@ -246,7 +246,7 @@ nav {
 }
 ```
 
-请注意，在此情况下，所有的从属元素`nav`包含在其作用域内。 不再父元素的任何重复 (`nav`， `li`， `a`)，并且 （尽管其中一部分是将值放在第二个示例的同一行上的结果） 的总的行计数已以及删除。 它可以是非常有帮助，组织，若要查看的所有规则的给定的用户界面元素在显式限定范围内，在这种情况下设置从文件的其余部分由大括号。
+请注意，在此情况下，所有的从属元素`nav`包含在其作用域内。 不再父元素的任何重复 (`nav`， `li`， `a`)，并且总的行计数也已删除 （尽管某些就是将值放在第二个示例的同一行上的结果）。 它可以是非常有帮助，组织，若要查看的所有规则的给定的用户界面元素在显式限定范围内，在这种情况下设置从文件的其余部分由大括号。
 
 `&`语法是较少的选择器功能，与 （&) 表示当前的选择器父级。 这样，在 {...} 块中，`&`表示`a`标记，因此`&:link`等效于`a:link`。
 

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
-ms.openlocfilehash: 6e84dcc16345e33fcd3a3f83c4b35bc993c03ca6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e6c0c45bed098a8a1160ff11e4f77244bf55ffd3
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="single-page-application-knockoutjs-template"></a>单页面应用程序： KnockoutJS 模板
 ====================
@@ -41,7 +41,7 @@ AJAX 已是老生常谈，但目前有更加轻松地生成和维护一个大型
 
 要求：
 
-- Visual Studio 2012 或 Visual Studio Express 2012 for Web
+- Visual Studio 2012 or Visual Studio Express 2012 for Web
 - ASP.NET Web Tools 2012.2 更新。 你可以在安装更新[此处](https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=ASPDOTNETandWebTools2012_2)。
 
 启动 Visual Studio 并选择**新项目**从开始页。 或从**文件**菜单上，选择**新建**然后**项目**。
@@ -117,7 +117,7 @@ Entity Framework (EF) 是 O/RM 层。 它面向对象的世界上的 ASP.NET 和
 
 ## <a name="entity-framework"></a>Entity Framework
 
-SPA 模板使用 EF Code First。 在 Code First 开发中，你定义模型首先在代码中，而 EF 然后使用模型来创建数据库。 此外可以使用现有的数据库使用 EF ([Database First](https://msdn.microsoft.com/en-us/data/jj206878.aspx))。
+SPA 模板使用 EF Code First。 在 Code First 开发中，你定义模型首先在代码中，而 EF 然后使用模型来创建数据库。 此外可以使用现有的数据库使用 EF ([Database First](https://msdn.microsoft.com/data/jj206878.aspx))。
 
 `TodoItemContext`在 Models 文件夹中的类派生自**DbContext**。 此类提供"粘附"模型和 EF 之间。 `TodoItemContext`保存`ToDoItem`集合和一个`TodoList`集合。 若要查询数据库时，你只需编写针对这些集合的 LINQ 查询。 例如，下面是如何选择所有用户"Alice"待办事项列表：
 
@@ -148,7 +148,7 @@ SPA 模板使用 EF Code First。 在 Code First 开发中，你定义模型首�
 | GET/api/todo/*id* | `GetTodoList` | 获取按 ID 待办事项列表 |
 | PUT/api/todo/*id* | `PutTodoList` | 更新一个待办事项列表。 |
 | POST /api/todo | `PostTodoList` | 创建一个新的待办事项列表。 |
-| 删除/api/todo/*id* | `DeleteTodoList` | 删除 TODO 列表。 |
+| DELETE /api/todo/*id* | `DeleteTodoList` | 删除 TODO 列表。 |
 
 请注意，对于某些操作的 Uri 包含的 ID 值的占位符。 例如，若要删除到-列表 id 为 42，URI 是`/api/todo/42`。
 
@@ -229,7 +229,7 @@ Knockout 提供大量的不同绑定类型。 下面是一些在 SPA 模板中�
 
 防伪令牌，因为恶意页无法读取用户的令牌，由于同源策略工作。 （同源策略将阻止访问彼此的内容的两个不同站点上托管的文档）。
 
-ASP.NET MVC 防伪令牌，通过提供内置支持[AntiForgery](https://msdn.microsoft.com/en-us/library/system.web.helpers.antiforgery.aspx)类和[[ValidateAntiForgeryToken]](https://msdn.microsoft.com/en-us/library/system.web.mvc.validateantiforgerytokenattribute.aspx)属性。 目前，此功能的非内置 Web API。 但是，SPA 模板包含自定义实现 Web api。 此代码中定义`ValidateHttpAntiForgeryTokenAttribute`类，该类位于该解决方案的筛选器文件夹中。 若要了解有关 Web API 中的反 CSRF 的详细信息，请参阅[防止跨站点请求伪造 (CSRF) 攻击](../../../web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks.md)。
+ASP.NET MVC 防伪令牌，通过提供内置支持[AntiForgery](https://msdn.microsoft.com/library/system.web.helpers.antiforgery.aspx)类和[[ValidateAntiForgeryToken]](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute.aspx)属性。 目前，此功能的非内置 Web API。 但是，SPA 模板包含自定义实现 Web api。 此代码中定义`ValidateHttpAntiForgeryTokenAttribute`类，该类位于该解决方案的筛选器文件夹中。 若要了解有关 Web API 中的反 CSRF 的详细信息，请参阅[防止跨站点请求伪造 (CSRF) 攻击](../../../web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks.md)。
 
 ## <a name="conclusion"></a>结束语
 

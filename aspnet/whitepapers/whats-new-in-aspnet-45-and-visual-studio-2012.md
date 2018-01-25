@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
-ms.openlocfilehash: 93fdc7ca241198dc1d7c4c1f6be0a61b15790039
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4487eb7436c0b6241505f41621a7f31b89c38b28
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>在 ASP.NET 4.5 和 Visual Studio 2012 中的新增功能
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
     - [对未经过验证的请求的支持](#_Toc318097381)
     - [AntiXSS 库](#_Toc318097382)
     - [Websocket 协议的支持](#_Toc318097383)
-    - [绑定和缩减](#_Toc318097384)
+    - [捆绑和缩小](#_Toc318097384)
     - [用于 Web 托管的性能改进](#_Toc_perf)
 
         - [关键性能因素](#_Toc_perf_1)
@@ -47,7 +47,7 @@ ms.lasthandoff: 11/10/2017
         - [预提取的 web 应用程序](#_Toc_perf_6)
 - [ASP.NET Web 窗体](#_Toc318097385)
 
-    - [强类型化的数据控件](#_Toc318097386)
+    - [强类型化数据控件](#_Toc318097386)
     - [模型绑定](#_Toc318097387)
 
         - [选择数据](#_Toc318097388)
@@ -57,7 +57,7 @@ ms.lasthandoff: 11/10/2017
     - [非介入式验证](#_Toc318097392)
     - [HTML5 更新](#_Toc318097393)
 - [ASP.NET MVC 4](#_Toc318097394)
-- [ASP.NET 网页 2](#_Toc318097395)
+- [ASP.NET Web Pages 2](#_Toc318097395)
 - [Visual Studio 2012 候选发布版本](#_Toc318097396)
 
     - [Visual Studio 2010 和 Visual Studio 2012 候选发布版本 （项目兼容性） 之间共享的项目](#project-compatibility)
@@ -74,7 +74,7 @@ ms.lasthandoff: 11/10/2017
         - [事件处理程序生成](#_Toc318097404)
         - [智能缩进](#_Toc318097405)
         - [自动减少语句结束](#_Toc318097406)
-    - [JavaScript 编辑器](#_Toc318097407)
+    - [JavaScript Editor](#_Toc318097407)
 
         - [代码大纲显示](#_Toc318097408)
         - [大括号匹配](#_Toc318097409)
@@ -99,7 +99,7 @@ ms.lasthandoff: 11/10/2017
         - [发布配置文件](#_Toc318097426)
         - [ASP.NET 预编译和合并](#_Toc318097427)
 - [IIS Express](#_Toc318097428)
-- [免责声明](#_Toc318097429)
+- [Disclaimer](#_Toc318097429)
 
 <a id="_Toc318097372"></a>
 ## <a name="aspnet-core-runtime-and-framework"></a>ASP.NET 核心运行时和 Framework
@@ -266,8 +266,8 @@ ASP.NET 和客户端已成功完成的 Websocket 握手后，ASP.NET 将调用�
 
 当文件会捆绑时，它们是首先按字母顺序排序 (中所显示的方式**解决方案资源管理器**)。 然后，它们进行组织，以便已知库和首先加载其自定义扩展 （如 jQuery、 MooTools 和 Dojo）。 例如，脚本文件夹如上所示的绑定的最终顺序将：
 
-1. jquery 1.6.2.js
-2. jquery ui.js
+1. jquery-1.6.2.js
+2. jquery-ui.js
 3. jquery.tools.js
 4. a.js
 
@@ -330,7 +330,7 @@ CSS 文件也按字母顺序排序，然后重新组织以便 reset.css 和 norm
 
 **要求**:.NET Framework 4.5
 
-对于冷站点启动时，不仅能执行程序集具有要读取从磁盘，但的站点必须是 JIT 编译。 对于复杂的站点，这可以添加明显的延迟。 .NET Framework 4.5 中的新通用技术可减少这些延迟 JIT 编译分散可用处理器内核。 它尽可能多执行此操作并尽早使用期间收集的信息之前启动的站点。 由实现此功能[System.Runtime.ProfileOptimization.StartProfile](https://msdn.microsoft.com/en-us/library/system.runtime.profileoptimization.startprofile(VS.110).aspx)方法。
+对于冷站点启动时，不仅能执行程序集具有要读取从磁盘，但的站点必须是 JIT 编译。 对于复杂的站点，这可以添加明显的延迟。 .NET Framework 4.5 中的新通用技术可减少这些延迟 JIT 编译分散可用处理器内核。 它尽可能多执行此操作并尽早使用期间收集的信息之前启动的站点。 由实现此功能[System.Runtime.ProfileOptimization.StartProfile](https://msdn.microsoft.com/library/system.runtime.profileoptimization.startprofile(VS.110).aspx)方法。
 
 JIT 编译的使用多个内核处于启用状态默认情况下，在 ASP.NET 中，因此不需要执行任何操作来利用此功能。 如果你想要禁用此功能，请在 Web.config 文件中进行以下设置：
 

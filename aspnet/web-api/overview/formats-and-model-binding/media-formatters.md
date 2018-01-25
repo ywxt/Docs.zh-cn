@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/media-formatters
 msc.type: authoredcontent
-ms.openlocfilehash: 7d85b995cd577d0ff90fe96bce508c7fbdc6ebbb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9103574597df126a22e21a2f51815f608e46f47f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="media-formatters-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的媒体格式化程序
 ====================
@@ -26,9 +26,9 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="internet-media-types"></a>Internet 媒体类型
 
-媒体类型，也称为 MIME 类型，标识一段数据的格式。 在 HTTP，媒体类型描述消息正文的格式。 媒体类型由两个字符串、 类型和子类型组成。 例如: 
+媒体类型，也称为 MIME 类型，标识一段数据的格式。 在 HTTP，媒体类型描述消息正文的格式。 媒体类型由两个字符串、 类型和子类型组成。 例如:
 
-- 文本/html
+- text/html
 - 图像/png
 - application/json
 
@@ -38,7 +38,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-console[Main](media-formatters/samples/sample1.cmd)]
 
-当客户端发送请求消息时，它可以包括 Accept 标头。 Accept 标头指示的服务器的媒体类型的客户端想要从服务器。 例如: 
+当客户端发送请求消息时，它可以包括 Accept 标头。 Accept 标头指示的服务器的媒体类型的客户端想要从服务器。 例如:
 
 [!code-console[Main](media-formatters/samples/sample2.cmd)]
 
@@ -48,8 +48,8 @@ ms.lasthandoff: 11/10/2017
 
 若要创建媒体格式化程序，派生自这些类之一：
 
-- [MediaTypeFormatter](https://msdn.microsoft.com/en-us/library/system.net.http.formatting.mediatypeformatter.aspx)。 此类使用的异步读取和写入方法。
-- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/en-us/library/system.net.http.formatting.bufferedmediatypeformatter.aspx)。 此类派生自**MediaTypeFormatter**但使用 sychronous 读/写方法。
+- [MediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.mediatypeformatter.aspx). 此类使用的异步读取和写入方法。
+- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.bufferedmediatypeformatter.aspx). 此类派生自**MediaTypeFormatter**但使用 sychronous 读/写方法。
 
 派生自**BufferedMediaTypeFormatter**是更简单，因为没有异步代码，但它还意味着在 I/O 期间可以阻止调用线程。
 
@@ -91,10 +91,10 @@ ms.lasthandoff: 11/10/2017
 
 （可选） 媒体格式化程序可以支持多个的字符编码，例如 utf-8 或 ISO 8859-1。
 
-在构造函数中，添加一个或多个[System.Text.Encoding](https://msdn.microsoft.com/en-us/library/system.text.encoding.aspx)类型**SupportedEncodings**集合。 将编码第一个默认值。
+在构造函数中，添加一个或多个[System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx)类型**SupportedEncodings**集合。 将编码第一个默认值。
 
 [!code-csharp[Main](media-formatters/samples/sample10.cs?highlight=6-7)]
 
-在**WriteToStream**和**ReadFromStream**方法，调用[MediaTypeFormatter.SelectCharacterEncoding](https://msdn.microsoft.com/en-us/library/hh969054.aspx)选择首选的字符编码。 此方法与匹配的请求标头针对支持编码的列表。 使用返回**编码**时，你可以读取或写入从流：
+在**WriteToStream**和**ReadFromStream**方法，调用[MediaTypeFormatter.SelectCharacterEncoding](https://msdn.microsoft.com/library/hh969054.aspx)选择首选的字符编码。 此方法与匹配的请求标头针对支持编码的列表。 使用返回**编码**时，你可以读取或写入从流：
 
 [!code-csharp[Main](media-formatters/samples/sample11.cs?highlight=3,5)]

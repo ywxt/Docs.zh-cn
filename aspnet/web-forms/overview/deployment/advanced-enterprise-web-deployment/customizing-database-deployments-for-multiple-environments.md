@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 449c448d1be237f3f95a437bb2c0415bd8ed0d99
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f3ca344c2466d9d538f55cd8ff0a5bf5b7bac808
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="customizing-database-deployments-for-multiple-environments"></a>多个环境的的自定义数据库部署
 ====================
@@ -69,7 +69,7 @@ ms.lasthandoff: 11/10/2017
 
 此表显示不同的目标环境的典型的部署设置。 但是，你的设置可能不同，具体取决于你的确切需求。
 
-|  | 开发人员/测试 | 过渡/集成 | 生产 |
+|  | Developer/Test | 过渡/集成 | 生产 |
 | --- | --- | --- | --- |
 | **部署比较排序规则** | 源 | 目标 | 目标 |
 | **部署数据库属性** | True | 仅在第一次 | 仅在第一次 |
@@ -82,7 +82,7 @@ ms.lasthandoff: 11/10/2017
   
 
 > [!NOTE]
-> 数据库部署属性和环境注意事项的详细信息，请参阅[数据库项目设置概述](https://msdn.microsoft.com/en-us/library/aa833291(v=VS.100).aspx)，[如何： 部署详细信息的配置属性](https://msdn.microsoft.com/en-us/library/dd172125.aspx)， [生成并将数据库部署到独立的开发环境中](https://msdn.microsoft.com/en-us/library/dd193409.aspx)，和[生成并将数据库部署到过渡或生产环境](https://msdn.microsoft.com/en-us/library/dd193413.aspx)。
+> 数据库部署属性和环境注意事项的详细信息，请参阅[数据库项目设置概述](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx)，[如何： 部署详细信息的配置属性](https://msdn.microsoft.com/library/dd172125.aspx)， [生成并将数据库部署到独立的开发环境中](https://msdn.microsoft.com/library/dd193409.aspx)，和[生成并将数据库部署到过渡或生产环境](https://msdn.microsoft.com/library/dd193413.aspx)。
 
 
 若要支持部署到多个目标数据库项目，应创建每个目标环境的部署配置的文件。
@@ -94,7 +94,7 @@ ms.lasthandoff: 11/10/2017
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image1.png)
 3. 在**新部署配置文件**对话框框中，为文件提供有意义的名称 (例如， **TestEnvironment.sqldeployment**)，然后单击**保存**。
-4. 上*[文件名]***.sqldeployment**页上，设置部署属性以匹配你的目标环境的要求，然后保存该文件。
+4. 上*[文件名] * * *.sqldeployment** 页上，设置部署属性以匹配你的目标环境的要求，然后保存该文件。
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image2.png)
 5. 注意，新的文件会添加到您的数据库项目中的属性文件夹。
@@ -141,10 +141,10 @@ ms.lasthandoff: 11/10/2017
 
 MSDN 上的这些文章提供有关数据库部署的更多常规指导：
 
-- [数据库项目设置的概述](https://msdn.microsoft.com/en-us/library/aa833291(v=VS.100).aspx)
-- [如何： 配置的部署详细信息属性](https://msdn.microsoft.com/en-us/library/dd172125.aspx)
-- [生成并部署到独立的开发环境中的数据库](https://msdn.microsoft.com/en-us/library/dd193409.aspx)
-- [生成并将数据库部署到过渡或生产环境](https://msdn.microsoft.com/en-us/library/dd193413.aspx)
+- [数据库项目设置的概述](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx)
+- [如何： 配置的部署详细信息属性](https://msdn.microsoft.com/library/dd172125.aspx)
+- [生成并部署到独立的开发环境中的数据库](https://msdn.microsoft.com/library/dd193409.aspx)
+- [生成并将数据库部署到过渡或生产环境](https://msdn.microsoft.com/library/dd193413.aspx)
 
 >[!div class="step-by-step"]
 [上一页](performing-a-what-if-deployment.md)

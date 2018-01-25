@@ -11,16 +11,16 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: b54798a43f6a448c2e2aad0613ee60805a61f303
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 4162b1c26e9d278c811f691c4277d4de25adb204
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="use-the-angular-project-template-release-candidate"></a>使用角速度项目模板 （候选发布版）
 
 > [!NOTE]
-> 本文档不是有关发布的角度项目模板。 **此文档是有关的角度模板候选发布版本。** 我们希望在早期 2018年提供已发布的版本。
+> 本文档不是指已发布的角度项目模板。 **此文档是有关的角度模板候选发布版本。** 我们希望在早期 2018年提供已发布的版本。
 
 更新的角度项目模板提供了 ASP.NET Core 应用使用角速度 5 和角速度 CLI 可以实现的丰富的客户端用户界面 (UI) 的方便的起始点。
 
@@ -137,7 +137,7 @@ npm install --save <package_name>
 
 [!code-csharp[](sample/AngularServerSideRendering/Startup.cs?name=snippet_Call_UseSpa&highlight=5-12)]
 
-在开发模式下，此代码将尝试通过运行脚本创建 SSR 捆绑`build:ssr`中, 定义*ClientApp\package.json*。 这将生成名为的角度应用`ssr`，其中尚未定义。 
+在开发模式下，此代码将尝试通过运行脚本创建 SSR 捆绑`build:ssr`中, 定义*ClientApp\package.json*。 这将生成名为的角度应用`ssr`，这并不尚未定义。 
 
 在结束`apps`数组中*ClientApp/.angular-cli.json*，定义具有名称的额外应用`ssr`。 使用以下选项：
 
@@ -176,7 +176,7 @@ npm install --save <package_name>
 ```csharp
 options.SupplyData = (context, data) =>
 {
-    // Creates a new value called isHttpsRequest that is passed to TypeScript code
+    // Creates a new value called isHttpsRequest that's passed to TypeScript code
     data["isHttpsRequest"] = context.Request.IsHttps;
 };
 ```

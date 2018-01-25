@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme
 msc.type: content
-ms.openlocfilehash: 90f24550d2bb50147bab6be545be63c1838f312a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b8402aa3db1b2566878c4d56212facbbb2925eec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="webmatrix-readme"></a>WebMatrix 自述文件
 ====================
@@ -76,7 +76,7 @@ ms.lasthandoff: 11/10/2017
 
 > .NET Framework 版本 4 是必需的 WebMatrix。 在某些情况下，WebMatrix 1.0 安装程序将让你尝试在不受支持的配置集的一部分的平台上安装。 具体而言，不带 SP1 更新的 Windows Vista 将你可以开始安装 WebMatrix 中，但该.NET Framework 4 组件将失败并阻止你安装。
 > 
-> **解决方法**  
+> **Workaround**  
 > 安装上受支持的平台，其中包括：
 > 
 > - Windows 7
@@ -89,7 +89,7 @@ ms.lasthandoff: 11/10/2017
 
 #### <a name="issue-cannot-install-webmatrix-10-if-microsoft-visual-studio-2008-is-installed-without-microsoft-visual-studio-2008-sp1"></a>问题： 无法安装 WebMatrix 1.0，如果没有 Microsoft Visual Studio 2008 SP1 的情况下已安装 Microsoft Visual Studio 2008
 
-> **解决方法**  
+> **Workaround**  
 > 安装[Microsoft Visual Studio 2008 SP1](https://www.microsoft.com/downloads/details.aspx?FamilyId=FBEE1648-7106-44A7-9649-6D9F6D58056E&amp;displaylang=en)从 Microsoft 下载中心获取。
 
 
@@ -100,7 +100,7 @@ ms.lasthandoff: 11/10/2017
 > - *System.Data.SqlServerCe.dll* （ADO.NET 提供程序）
 > - *System.Data.SqlServerCe.Entity.dll* （ADO.NET 实体框架）
 > 
-> **解决方法**  
+> **Workaround**  
 > 卸载 SQL Server Compact 4.0。 下载并安装.NET Framework 3.5 SP1 的完整版本，从以下位置：  
 >   
 > [Microsoft.NET Framework 3.5 Service pack 1 （完全包）](https://go.microsoft.com/fwlink/?LinkId=194828)  
@@ -112,7 +112,7 @@ ms.lasthandoff: 11/10/2017
 
 > 卸载 SQL Server Compact 使用命令行选项不在此版本中无效。
 > 
-> **解决方法**  
+> **Workaround**  
 > 使用*程序和功能*Windows 控制面板卸载 Microsoft SQL Server Compact 4.0 中。
 
 
@@ -157,7 +157,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 这可能会造成问题，如果你想要使用的成员身份的自定义用户表，但传递到的错误的表名称`WebSecurity.InitializeDatabaseConnection`方法。 因为该方法不会默认情况下引发错误如果您指定的表不存在，而且它改为创建一个新表，则应用程序可以似乎无法正常工作。 但是，依赖于自定义用户表 （和在其中的字段） 的应用程序代码可能最终失败，意外错误。
 > 
-> **解决方法**  
+> **Workaround**  
 > 请确保名称传递中`InitializeDatabaseConnection`方法匹配项的用户配置文件表中成员资格数据库中，或确保`autoCreateTables`参数设置为 false。
 
 
@@ -218,7 +218,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > [!code-xml[Main](overview/samples/sample2.xml)]
 > 
-> 有关配置代理服务器的详细信息，请参阅[&lt;代理&gt;元素 （网络设置）](https://msdn.microsoft.com/en-us/library/sa91de1e.aspx) MSDN 网站上。
+> 有关配置代理服务器的详细信息，请参阅[&lt;代理&gt;元素 （网络设置）](https://msdn.microsoft.com/library/sa91de1e.aspx) MSDN 网站上。
 
 
 #### <a name="issue-uninstalling-the-net-framework-version-4-disables-aspnet-web-pages-with-razor-syntax"></a>问题： 卸载.NET Framework 版本 4 禁用带有 Razor 语法的 ASP.NET Web Pages
@@ -241,7 +241,7 @@ ms.lasthandoff: 11/10/2017
 >   
 > 由于 URL 重写未启用默认情况下为 IIS 7 或 IIS 7.5，因此会出现此问题。 很可能的方案是，你看不见问题时测试使用本地 IIS Express，但在将你的网站部署到托管的网站时，会遇到它。
 > 
-> **解决方法**
+> **Workaround**
 > 
 > - 如果你可以控制在服务器计算机，在服务器计算机上安装的更新中所述[有可用启用某些 IIS 7.0 或 IIS 7.5 的处理程序，来处理请求其 Url 不要以句点结尾的更新](https://support.microsoft.com/kb/980368)。
 > - 如果您没有对服务器计算机的控制 （例如，您要部署到托管网站），将以下代码添加到网站的*web.config*文件： 
@@ -257,10 +257,10 @@ ms.lasthandoff: 11/10/2017
 > 
 > 1. 将复制到的数据库引擎程序集*Bin*文件夹 （和子文件夹） 的目标计算机上的应用程序：  
 > 
->     - 复制*C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
->         **到** *\Bin*
->     - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\* * * 到***\Bin\x86*
->     - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **到***\Bin\amd64*
+>     - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
+>         **to** *\Bin*
+>     - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\* * * 到 * * * \Bin\x86*
+>     - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **到 * * * \Bin\amd64*
 > 2. 在网站的根文件夹中创建或打开*web.config*文件。 (在 WebMatrix 1.0 中，此文件类型是如果你单击可用**所有**中**选择文件类型**对话框。)
 > 3. 添加以下元素的子级`<configuration>`元素 (而不是在`<system.web>`元素):
 > 
@@ -271,7 +271,7 @@ ms.lasthandoff: 11/10/2017
 
 > 如果你使用的 Visual Basic (创建*.vbhtml*文件)，则`Database`和`WebGrid`如果应用程序设置为使用中等信任帮助器将无法工作。
 > 
-> **解决方法**  
+> **Workaround**  
 > 如果你使用 Visual Studio 2010，你可以通过安装 Service Pack 1 发行版来解决此问题。 可用的 SP1 版本的最终版本之前，你可以下载从 SP1 Beta 版本[Microsoft Visual Studio 2010 Service Pack 1 Beta](https://www.microsoft.com/downloads/en/details.aspx?FamilyID=11ea69cb-cf12-4842-a3d7-b32a1e5642e2&amp;displaylang=en) Microsoft Download Center 上的页。   
 >   
 > 如果这不可行，或如果不使用 Visual Studio 2010，则可以暂时设置用于完全信任的应用程序。
@@ -301,7 +301,7 @@ ms.lasthandoff: 11/10/2017
 
 #### <a name="issue-changes-in-the-username-or-password-of-a-database-connection-string-in-a-webconfig-file-are-not-reflected-in-the-databases-workspace"></a>问题： 用户名或密码的 web.config 文件中的数据库连接字符串中的更改不会反映在数据库工作区
 
-> **解决方法**  
+> **Workaround**  
 > 
 > 1. 在*web.config*文件中，更改连接字符串中的数据库名称 （例如，将"1"添加到它）。
 > 2. 保存*web.config*文件。
@@ -315,7 +315,7 @@ ms.lasthandoff: 11/10/2017
 
 > 如果使用提升的权限运行 WebMatrix (即你开始使用 WebMatrix**以管理员身份运行**Windows 中的选项)，不能使用 Windows 资源管理器删除创建的 WebMatrix 的文件夹。
 > 
-> **解决方法**  
+> **Workaround**  
 > 运行 Windows 资源管理器使用提升的权限。 请执行这些步骤：  
 > 
 > 1. 在 Windows 中，单击**启动**。
@@ -330,7 +330,7 @@ ms.lasthandoff: 11/10/2017
 > - 在 Windows Vista 或 Windows 7，使用不具备管理员权限的帐户登录和用户帐户控制 (UAC) 处于禁用状态。
 > - 您正在使用 Microsoft Windows XP 或 Microsoft Windows Server 2003。
 > 
-> **解决方法**  
+> **Workaround**  
 > 在 WebMatrix 1.0 中的大多数任务不需要管理权限。 对于那些确实，你可以执行该操作作为管理员，或请按照下列步骤：
 > 
 > - 在 Windows Vista 或 Windows 7 上，启用 UAC。
@@ -341,7 +341,7 @@ ms.lasthandoff: 11/10/2017
 
 > **站点从 Web 库**如果未安装 Web 平台安装程序 3.0 选项被禁用。
 > 
-> **解决方法**  
+> **Workaround**  
 > 安装[Microsoft Web 平台安装程序 3.0](https://go.microsoft.com/fwlink/?LinkID=194638)。
 
 
@@ -349,7 +349,7 @@ ms.lasthandoff: 11/10/2017
 
 > 在浏览器的列表中不显示 Google Chrome**运行**上**主页**选项卡。
 > 
-> **解决方法**  
+> **Workaround**  
 > 某些版本的 Google Chrome 并不能注册正确与 Windows 中的默认程序功能。 一种解决方法，启动 Google Chrome 中，单击*自定义和控制 Google Chrome*菜单上，单击*选项*，然后单击*请 Google Chrome 我默认浏览器*。
 
 
@@ -357,7 +357,7 @@ ms.lasthandoff: 11/10/2017
 
 > **外键**对话框中不允许你从主键表中输入的主键名称。
 > 
-> **解决方法**  
+> **Workaround**  
 > 这是有意。 不需要输入主键表的主键的名称。
 
 
@@ -400,7 +400,7 @@ ms.lasthandoff: 11/10/2017
 
 IIS Express 具有其自己的自述文件，它是可通过以下 URL:
 
-[https://go.microsoft.com/fwlink/?LinkID=207675&amp;clcid = 0x409](https://go.microsoft.com/fwlink/?LinkID=207675&amp;clcid=0x409)
+[https://go.microsoft.com/fwlink/?LinkID=207675&amp;clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=207675&amp;clcid=0x409)
 
 <a id="Known_Issues_SQLServerCompact"></a>
 
@@ -416,7 +416,7 @@ SQL Server Compact 具有其自己的自述文件，它是可通过以下 URL:
 
 #### <a name="issue-installing-an-application-can-take-a-long-time-if-the-users-my-documents-folder-is-redirected-to-a-network-share"></a>问题： 安装应用程序可能需要长时间如果用户的 My Documents 文件夹重定向到网络共享
 
-> **解决方法**  
+> **Workaround**  
 > 无。 应用程序可能需要一段时间才能安装，但将正确安装。
 
 
@@ -426,7 +426,7 @@ SQL Server Compact 具有其自己的自述文件，它是可通过以下 URL:
 
 > WebMatrix 不完全支持为 SQL Server Compact 的支持的二进制文件部署到正在运行.NET Framework 版本 3.5 使用中等信任配置的服务器。
 > 
-> **解决方法**  
+> **Workaround**  
 > 首选的解决方法是在服务器上安装.NET Framework 4。 或者，请执行以下操作：
 > 
 > 1. 添加到下列元素`SecurityClasses`主题中*Web\_MediumTrust.config*文件：
@@ -444,7 +444,7 @@ SQL Server Compact 具有其自己的自述文件，它是可通过以下 URL:
 
 > 在某些情况下，发布的应用程序将导致"服务不可用"错误。
 > 
-> **解决方法**  
+> **Workaround**  
 > 在 WebMatrix 中，添加一个反斜杠 (\)到中的服务器名称的末尾**发布设置**窗口，然后将发布再次将应用程序。
 
 
@@ -452,7 +452,7 @@ SQL Server Compact 具有其自己的自述文件，它是可通过以下 URL:
 
 > 发布 Moodle 应用程序后，应用程序无法正常工作。
 > 
-> **解决方法**  
+> **Workaround**  
 > 在 WebMatrix 中，将斜杠 （/） 添加到末尾**站点名称**字段**发布设置**窗口，然后将发布再次将应用程序。
 
 
@@ -460,7 +460,7 @@ SQL Server Compact 具有其自己的自述文件，它是可通过以下 URL:
 
 > 发布 nopCommerce 失败并报告数据库错误，如"插入 nop\_日志表失败。"
 > 
-> **解决方法**  
+> **Workaround**  
 > 
 > 1. 在 WebMatrix 中，单击**运行**以启动 nopCommerce 本地。
 > 2. 登录到管理页。
@@ -472,13 +472,13 @@ SQL Server Compact 具有其自己的自述文件，它是可通过以下 URL:
 
 #### <a name="issue-silverstripe-cms-displays-a-http-500-php-fcgi-error-when-you-download-a-published-site"></a>问题： 当你下载的已发布的站点 Silverstripe CMS 显示"HTTP 500 PHP FCGI 错误"
 
-> **解决方法**  
+> **Workaround**  
 > 单击后**下载发布站点**，跳过`silverstripe-cache/manifest_main`中**发布预览**。 此文件用于缓存目的，并且是特定于每台计算机。
 
 
 #### <a name="issue-subtext-displays-server-error-in--application-when-you-download-a-published-site"></a>问题： 从属文本显示"服务器错误 '/' 应用程序中"时下载已发布的站点
 
-> **解决方法**  
+> **Workaround**  
 > 打开站点的*web.config*文件并将替换 SQL Server 管理员凭据 （"sa"凭据） 的用户 ID 和数据库连接字符串中的密码。
 > 
 > 或者，遵循这些步骤，才能让你登录时所用的用户帐户`db_owner`权限：
@@ -493,7 +493,7 @@ SQL Server Compact 具有其自己的自述文件，它是可通过以下 URL:
 
 > 在**发布设置**对话框中，如果目标 URL 不以开头`http://`或`https://`，在部署之后，站点可能不工作。
 > 
-> **解决方法**  
+> **Workaround**  
 > 请确保在发布站点时中的目标 URL 之前**发布设置**对话框开头`http://`或`https://`。
 
 
@@ -501,7 +501,7 @@ SQL Server Compact 具有其自己的自述文件，它是可通过以下 URL:
 
 > 多种原因可能会导致错误。 你可以看到此错误的原因之一是如果数据库脚本包含单引号字符 （'） 和目标 MySQL 数据库的默认字符集不为 utf-8。
 > 
-> **解决方法**  
+> **Workaround**  
 > 设置的默认字符集远程 MySQL 数据库为 utf-8。
 
 
@@ -509,7 +509,7 @@ SQL Server Compact 具有其自己的自述文件，它是可通过以下 URL:
 
 > 如果发布或下载 DotNetNuke 站点时，你可能需要清除缓存以获取要在站点上显示的新链接。
 > 
-> **解决方法**
+> **Workaround**
 > 
 > 1. "主机"以登录。
 > 2. 转到的主机菜单并选择**主机设置**。
@@ -520,7 +520,7 @@ SQL Server Compact 具有其自己的自述文件，它是可通过以下 URL:
 
 #### <a name="issue-some-links-in-atomsite-are-broken-after-you-download-a-published-site"></a>问题： 一些链接 AtomSite 中的可能会中断后你下载的已发布的站点
 
-> **解决方法**  
+> **Workaround**  
 > 在*service.config*文件， *users.config*文件，以及所有*.xml*文件，将 URL 字符串 (例如， `http://myhost.com/atomsite`) 替换为本地 (例如， `http://localhost:1239`).
 
 
@@ -528,7 +528,7 @@ SQL Server Compact 具有其自己的自述文件，它是可通过以下 URL:
 
 > 默认情况下，WebMatrix utf-8 字符集安装 MySQL。 如果你将 MySQL 安装在你自己和设置的字符不是 utf-8 （例如，它是 Latin1），数据库的发布过程可能会失败。
 > 
-> **解决方法**
+> **Workaround**
 > 
 > 1. 更改为 utf-8 的 MySQL 的字符集。 (有关详细信息，请参阅[服务器字符集和排序规则](http://dev.mysql.com/doc/refman/5.0/en/charset-server.html)MySQL 网站上。)
 > 2. 重新安装应用程序。
@@ -539,7 +539,7 @@ SQL Server Compact 具有其自己的自述文件，它是可通过以下 URL:
 
 > 某些应用程序 (例如，Kentico CMS) 要求你在浏览器中启动它们以执行安装后安装程序，如创建数据库。 如果你发布此类应用程序，而不完成基于浏览器的安装程序，尝试从远程服务器下载相同的站点将失败。
 > 
-> **解决方法**  
+> **Workaround**  
 > 在将站点发布之前完成基于浏览器的设置。
 
 
@@ -549,7 +549,7 @@ SQL Server Compact 具有其自己的自述文件，它是可通过以下 URL:
 > 
 > [!code-console[Main](overview/samples/sample9.cmd)]
 > 
-> **解决方法**  
+> **Workaround**  
 > 如果可行，重新发布该网站 （或将其发布） 的数据库使用非管理员凭据。
 
 
@@ -563,4 +563,4 @@ SQL Server Compact 具有其自己的自述文件，它是可通过以下 URL:
 - [ASP.NET 2.0](https://asp.net/webmatrix)
 - [Microsoft.com/web](https://www.microsoft.com/web)
 
-© 2011 Microsoft Corporation。 保留所有权利。 [使用条款](https://msdn.microsoft.com/en-us/cc300389.aspx)。
+© 2011 Microsoft Corporation. 保留所有权利。 [使用条款](https://msdn.microsoft.cos/cc300389.aspx)。

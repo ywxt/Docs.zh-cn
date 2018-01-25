@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 96d3b8b82f78d8f6da85012aac8a1411cf297e26
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 22123a9c61e6830f3f9f66a45182e1e923950341
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>使用 SignalR 的动手实验： 实时 Web 应用程序
 ====================
@@ -49,7 +49,7 @@ ms.lasthandoff: 11/10/2017
 - 横向扩展 SignalR 应用程序使用**SQL Server**。
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 完成本动手实验需要以下：
 
@@ -263,7 +263,7 @@ SignalR 支持**服务器推送**或**广播**功能; 它将自动处理的连�
 - **SQL Server**。 SQL Server 底板将消息写入 SQL 表。 底板为有效的消息传递使用 Service Broker。 但是，它还适用如果未启用 Service Broker。
 - **Redis**。 Redis 是一个内存中键 / 值存储。 Redis 支持发布/订阅 ("pub/sub") 模式，用于将消息发送。
 
-通过消息总线发送每条消息。 消息总线实现[IMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx)接口，从而提供发布/订阅抽象。 通过替换默认的工作的底板**IMessageBus**含总线为该底板设计的。
+通过消息总线发送每条消息。 消息总线实现[IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx)接口，从而提供发布/订阅抽象。 通过替换默认的工作的底板**IMessageBus**含总线为该底板设计的。
 
 每个服务器实例连接到通过总线底板。 发送一条消息，它将转到面板，并底板将其发送到每个服务器。 当服务器从底板收到一条消息时，它将在其本地缓存中存储消息。 服务器然后将从其本地缓存消息传送到客户端。
 

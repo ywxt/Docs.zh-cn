@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/performance-and-traffic/15-caching-to-improve-the-performance-of-your-website
 msc.type: authoredcontent
-ms.openlocfilehash: c747fef33a6d1db19f09fd0303c47d689b956687
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 742409219bd3b05f8ddf2c0d5034919fc9bf1d26
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching-data-in-an-aspnet-web-pages-razor-site-for-better-performance"></a>缓存 ASP.NET Web 页 (Razor) 站点中的数据以便更好的性能
 ====================
@@ -72,10 +72,10 @@ ASP.NET 包括`WebCache`帮助程序可以轻松地向网站添加缓存并将�
     此代码演示在缓存数据时应始终使用的模式。 您将得到缓存之前，始终首先检查是否`WebCache.Get`方法已返回 null。 请记住的缓存项可能已到期或可能被删除，由于某种其他原因，因此永远不会保证任何给定的项目是在缓存中。
 3. 运行*WebCache.cshtml*在浏览器。 (请确保页中选择**文件**工作区之前运行它。)第一次请求页上，时间数据不在缓存中，并且代码具有要添加到缓存的时间值。
 
-    ![缓存 1](15-caching-to-improve-the-performance-of-your-website/_static/image1.jpg)
+    ![cache-1](15-caching-to-improve-the-performance-of-your-website/_static/image1.jpg)
 4. 刷新*WebCache.cshtml*浏览器中。 这一次，时间数据是在缓存中。 请注意自上次查看页面以来未更改的时间。
 
-    ![缓存-2](15-caching-to-improve-the-performance-of-your-website/_static/image2.jpg)
+    ![cache-2](15-caching-to-improve-the-performance-of-your-website/_static/image2.jpg)
 5. 等待在清空缓存一分钟，然后刷新页面。 页再次指示在缓存中，时间数据找不到和更新的时间被添加到缓存。
 
 <a id="Additional_Resources"></a>
@@ -83,4 +83,4 @@ ASP.NET 包括`WebCache`帮助程序可以轻松地向网站添加缓存并将�
 
 
 - [在图表中显示数据](https://go.microsoft.com/fwlink/?LinkId=202895)
-- [WebCache API 参考](https://msdn.microsoft.com/en-us/library/system.web.helpers.webcache(v=vs.99).aspx)(MSDN)
+- [WebCache API 参考](https://msdn.microsoft.com/library/system.web.helpers.webcache(v=vs.99).aspx)(MSDN)

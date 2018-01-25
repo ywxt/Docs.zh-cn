@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 82b4521279dcd9b9dc5a8e81b3a0d87ab26d46ac
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f323fe37da739d957a609dc7ca4e71a3c3ab475e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>从控制器访问您的模型的数据
 ====================
@@ -92,9 +92,9 @@ ASP.NET MVC 还提供了将强传递的功能类型化数据或查看模板的�
 
 [!code-cshtml[Main](accessing-your-models-data-from-a-controller/samples/sample4.cshtml)]
 
-此 `@model` 指令使你能够使用强类型的 `Model` 对象访问控制器传递给视图的电影。 例如，在*Details.cshtml*模板，在代码传递到每个电影字段`DisplayNameFor`和[DisplayFor](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.displayextensions.displayfor(VS.98).aspx)通过强类型化的 HTML 帮助器`Model`对象。 创建和编辑方法和视图模板还传递电影模型对象。
+此 `@model` 指令使你能够使用强类型的 `Model` 对象访问控制器传递给视图的电影。 例如，在*Details.cshtml*模板，在代码传递到每个电影字段`DisplayNameFor`和[DisplayFor](https://msdn.microsoft.com/library/system.web.mvc.html.displayextensions.displayfor(VS.98).aspx)通过强类型化的 HTML 帮助器`Model`对象。 创建和编辑方法和视图模板还传递电影模型对象。
 
-检查*Index.cshtml*视图模板和`Index`中的方法*MoviesController.cs*文件。 请注意该代码如何创建[ `List` ](https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx)对象时它调用`View`中的帮助器方法`Index`操作方法。 在代码然后传递此`Movies`从控制器到视图的列表：
+检查*Index.cshtml*视图模板和`Index`中的方法*MoviesController.cs*文件。 请注意该代码如何创建[ `List` ](https://msdn.microsoft.com/library/6sh2ey19.aspx)对象时它调用`View`中的帮助器方法`Index`操作方法。 在代码然后传递此`Movies`从控制器到视图的列表：
 
 [!code-csharp[Main](accessing-your-models-data-from-a-controller/samples/sample5.cs?highlight=3)]
 

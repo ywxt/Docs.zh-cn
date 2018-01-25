@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/crud
-ms.openlocfilehash: c26ba75f6a401d50a6b46bd7ee40500c5736f20f
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d9b34c141401fbeaafe439fae1a7a75f2fe7b4ae
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>创建、 读取、 更新和删除的 EF 内核，它们有 Razor 页 (2 的 8)
 
@@ -132,7 +132,7 @@ ms.lasthandoff: 01/19/2018
 <a id="overpost"></a>
 ### <a name="overposting"></a>过多发布
 
-使用`TryUpdateModel`更新具有发送的值字段先是最佳安全方案，因为它阻止 overposting。 例如，假设学生实体包含`Secret`此 web 页面不应更新或添加的属性：
+使用`TryUpdateModel`更新具有发送的值字段先是最佳安全方案，因为它阻止 overposting。 例如，假设学生实体包含`Secret`属性，此 web 页面不应更新或添加：
 
 [!code-csharp[Main](intro/samples/cu/Models/StudentZsecret.cs?name=snippet_Intro&highlight=7)]
 
@@ -185,7 +185,7 @@ ms.lasthandoff: 01/19/2018
 
 实体可能处于以下状态之一：
 
-* `Added`: 实体的 DB 中尚不存在。 `SaveChanges`方法发出 INSERT 语句。
+* `Added`: 实体尚不存在的 DB 中。 `SaveChanges`方法发出 INSERT 语句。
 
 * `Unchanged`： 不需要此实体一起保存任何更改。 从数据库中读取时，实体具有此状态。
 

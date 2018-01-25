@@ -8,11 +8,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: security/authorization/secure-data
-ms.openlocfilehash: 861ac619c7f5fb19a56c59536e20724d96bbddca
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 7404b8ec20ed6a00554c8a7ade9a282362b9a186
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>使用受授权的用户数据创建 ASP.NET Core 应用
 
@@ -221,11 +221,11 @@ dotnet user-secrets set SeedUserPW <PW>
 
 添加`@using ContactManager.Authorization;`
 
-更新`Edit`和`Delete`链接以便它们只呈现为具有权限的用户进行编辑和删除联系人。
+更新`Edit`和`Delete`链接以便它们在仅呈现为具有权限的用户进行编辑和删除联系人。
 
 [!code-html[Main](secure-data/samples/final/Views/Contacts/Index.cshtml?range=63-84)]
 
-警告： 隐藏从没有权限来编辑或删除数据的用户的链接不会保护应用程序。 隐藏链接使该应用更详细的用户友好通过显示唯一有效的链接。 用户可以 hack 生成的 Url 来调用编辑和删除在它们自己的数据的操作。  控制器必须重复执行访问检查才能保证安全。
+警告： 隐藏从无权编辑或删除数据的用户的链接不安全应用程序。 隐藏链接使该应用更详细的用户友好通过显示唯一有效的链接。 用户可以 hack 生成的 Url 来调用编辑和删除在它们自己的数据的操作。  控制器必须重复执行访问检查才能保证安全。
 
 ### <a name="update-the-details-view"></a>更新的详细信息视图
 
@@ -304,7 +304,7 @@ dotnet user-secrets set SeedUserPW <PW>
 
 [!code-csharp[Main](secure-data/samples/starter/Startup.cs?name=Configure&highlight=28-)]
 
-测试应用程序设定种子的数据库。 不运行 seed 方法，如果联系人 DB 中有任何行。
+测试应用程序设定种子的数据库。 如果联系人 DB 中有任何行，不能运行 seed 方法。
 
 ### <a name="create-a-class-used-in-the-tutorial"></a>创建本教程中使用的类
 

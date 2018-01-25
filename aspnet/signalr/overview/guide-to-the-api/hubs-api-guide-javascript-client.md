@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: 65e369a393a8c5d2d1bba11b5c71347df8f9c69d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 794ab576d3c6600911f331bab7c335476e45a0c9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>ASP.NET SignalR 中心 API 指南-JavaScript 客户端
 ====================
@@ -142,7 +142,7 @@ JavaScript 客户端需要对 jQuery 和 SignalR 的核心 JavaScript 文件的�
 
 [!code-aspx[Main](hubs-api-guide-javascript-client/samples/sample7.aspx)]
 
-作为一般规则，用于指定用于 CSS 或 JavaScript 文件"/ signalr/中心"URL 中使用相同的方法。 如果不使用波形符指定 URL，在某些情况下你的应用程序将正常工作时使用 IIS Express 的 Visual Studio 中的测试，但当你将部署到完整 IIS 时将失败，404 错误。 有关详细信息，请参阅**解析对资源的引用根级别**中[用于 ASP.NET Web 项目的 Visual Studio 中的 Web 服务器](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx)MSDN 网站上的。
+作为一般规则，用于指定用于 CSS 或 JavaScript 文件"/ signalr/中心"URL 中使用相同的方法。 如果不使用波形符指定 URL，在某些情况下你的应用程序将正常工作时使用 IIS Express 的 Visual Studio 中的测试，但当你将部署到完整 IIS 时将失败，404 错误。 有关详细信息，请参阅**解析对资源的引用根级别**中[用于 ASP.NET Web 项目的 Visual Studio 中的 Web 服务器](https://msdn.microsoft.com/library/58wxa9w5.aspx)MSDN 网站上的。
 
 当你在调试模式下，Visual Studio 2013 中运行 web 项目和作为浏览器使用 Internet Explorer，如果你可以看到中的代理文件**解决方案资源管理器**下**脚本文档**中, 所示下图。
 

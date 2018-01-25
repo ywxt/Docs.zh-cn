@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/working-with-forms
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9fbe2c5cb495aabee0e1f0bdb3871641efa03599
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9fd51755e1dc9a1dfb9ab5cc4558f7da9475ce32
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>在 ASP.NET Core 中的窗体中使用标记帮助器简介
 
@@ -86,7 +86,7 @@ MVC 运行时生成`action`属性从窗体标记帮助器属性的值`asp-contro
 
 * 设置 HTML`type`属性值根据模型类型和[数据注释](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter)特性应用于模型属性
 
-* 将不会覆盖 HTML`type`时指定了一个属性值
+* 不会覆盖 HTML`type`时指定了一个属性值
 
 * 生成[HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5)验证属性从[数据注释](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter)特性应用于模型属性
 
@@ -159,7 +159,7 @@ Type expected
 
 ### <a name="html-helper-alternatives-to-input-tag-helper"></a>输入标记帮助器的 HTML 帮助器的替代方法
 
-`Html.TextBox``Html.TextBoxFor`，`Html.Editor`和`Html.EditorFor`有重叠的功能与输入标记帮助器。 输入标记帮助程序将自动设置`type`属性;`Html.TextBox`和`Html.TextBoxFor`将不会。 `Html.Editor`和`Html.EditorFor`处理集合、 复杂的对象和模板; 输入标记帮助器却没有。 输入标记帮助器，`Html.EditorFor`和`Html.TextBoxFor`强类型 （它们使用 lambda 表达式）;`Html.TextBox`和`Html.Editor`不 （它们使用表达式名称）。
+`Html.TextBox``Html.TextBoxFor`，`Html.Editor`和`Html.EditorFor`有重叠的功能与输入标记帮助器。 输入标记帮助程序将自动设置`type`属性;`Html.TextBox`和`Html.TextBoxFor`不会。 `Html.Editor`和`Html.EditorFor`处理集合、 复杂的对象和模板; 输入标记帮助器不会。 输入标记帮助器，`Html.EditorFor`和`Html.TextBoxFor`强类型 （它们使用 lambda 表达式）;`Html.TextBox`和`Html.Editor`不 （它们使用表达式名称）。
 
 ### <a name="htmlattributes"></a>HtmlAttributes
 
@@ -436,7 +436,7 @@ HTTP POST`Index`方法会显示所选内容：
 ```
 
 > [!NOTE]
-> 我们不建议使用`ViewBag`或`ViewData`与选择标记帮助器。 视图模型是在提供 MVC 元数据更加可靠和通常更不容易出错。
+> 我们不推荐使用`ViewBag`或`ViewData`与选择标记帮助器。 视图模型是在提供 MVC 元数据更加可靠和通常更不容易出错。
 
 `asp-for`属性值是一种特殊情况，不要求`Model`前缀，其他标记帮助器属性那样 (如`asp-items`)
 
@@ -549,7 +549,7 @@ HTML [ \<optgroup >](https://www.w3.org/wiki/HTML/Elements/optgroup)视图模型
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Shared/EditorTemplates/CountryViewModel.cshtml)]
 
-添加 HTML [\<选项 >](https://www.w3.org/wiki/HTML/Elements/option)元素并不局限于*没有选定内容*用例。 例如，以下视图和操作方法将生成 HTML 类似于上面的代码：
+添加 HTML [\<选项 >](https://www.w3.org/wiki/HTML/Elements/option)元素已不再局限于*没有选定内容*用例。 例如，以下视图和操作方法将生成 HTML 类似于上面的代码：
 
 [!code-csharp[Main](working-with-forms/sample/final/Controllers/HomeController.cs?range=114-119)]
 

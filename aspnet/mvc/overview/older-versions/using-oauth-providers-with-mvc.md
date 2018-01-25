@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-oauth-providers-with-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 965d2e740cc76838b1b4e1c618a2a6d784672fcc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0d053cecbf9a59f258470ee370852e3f112908c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-oauth-providers-with-mvc-4"></a>OAuth 提供程序使用 MVC 4
 ====================
@@ -38,7 +38,7 @@ ms.lasthandoff: 11/10/2017
 
 虽然本教程中的示例重点关注将 Facebook 用作身份验证提供程序，你可以修改代码以使用任何提供程序。 实现任何提供程序的步骤都非常类似于将在本教程中看到的步骤。 只会注意到大的差异进行对提供程序的 API 的直接调用时设置。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 - [Microsoft Visual Studio 2012](https://www.microsoft.com/visualstudio/eng/downloads#vs)或[Microsoft Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/eng/downloads#d-2012-express)
 
@@ -148,7 +148,7 @@ Facebook 站点将自动创建你请求的测试帐户数。
 
 如前面的部分中，你注意到，你不需要检索要工作的内置帐户注册任何其他信息。 但是，最外部提供程序将传递有关用户的其他信息。 以下部分说明如何保留该信息并将其保存到数据库。 具体而言，你将保留用户的完整名称，用户的个人的 web 页的 URI 的值和一个值，该值指示是否 Facebook 已验证帐户。
 
-你将使用[Code First 迁移](https://msdn.microsoft.com/en-us/data/jj591621)添加用于存储的其他用户信息的表。 要添加到现有数据库，表，因此你将首先需要创建当前数据库的快照。 通过创建当前数据库的快照，稍后可以创建包含新的表的迁移。 若要创建当前数据库的快照：
+你将使用[Code First 迁移](https://msdn.microsoft.com/data/jj591621)添加用于存储的其他用户信息的表。 要添加到现有数据库，表，因此你将首先需要创建当前数据库的快照。 通过创建当前数据库的快照，稍后可以创建包含新的表的迁移。 若要创建当前数据库的快照：
 
 1. 打开**程序包管理器控制台**
 2. 运行命令**启用迁移**

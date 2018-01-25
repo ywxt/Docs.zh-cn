@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: fb20c98283bfd46e62d56252bbec4f4b4b08b1c3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a20693f3e83053dd99499d486412b66777189f1d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>检查编辑方法和编辑视图
 ====================
@@ -36,9 +36,9 @@ ms.lasthandoff: 11/10/2017
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample1.cshtml)]
 
-![次 Html.ActionLink](examining-the-edit-methods-and-edit-view/_static/image2.png)
+![Html.ActionLink](examining-the-edit-methods-and-edit-view/_static/image2.png)
 
-`Html`对象是使用上的属性公开一个帮助程序[System.Web.Mvc.WebViewPage](https://msdn.microsoft.com/en-us/library/gg402107(VS.98).aspx)基类。 `ActionLink`的帮助器方法，可以轻松地动态生成 HTML 的超链接，链接到控制器上的操作方法。 第一个参数`ActionLink`方法是要呈现的链接文本 (例如， `<a>Edit Me</a>`)。 第二个参数是要调用的操作方法的名称。 最后一个参数是[匿名对象](https://weblogs.asp.net/scottgu/archive/2007/05/15/new-orcas-language-feature-anonymous-types.aspx)，用来生成路由数据 （在本例中为 4 的 ID）。
+`Html`对象是使用上的属性公开一个帮助程序[System.Web.Mvc.WebViewPage](https://msdn.microsoft.com/library/gg402107(VS.98).aspx)基类。 `ActionLink`的帮助器方法，可以轻松地动态生成 HTML 的超链接，链接到控制器上的操作方法。 第一个参数`ActionLink`方法是要呈现的链接文本 (例如， `<a>Edit Me</a>`)。 第二个参数是要调用的操作方法的名称。 最后一个参数是[匿名对象](https://weblogs.asp.net/scottgu/archive/2007/05/15/new-orcas-language-feature-anonymous-types.aspx)，用来生成路由数据 （在本例中为 4 的 ID）。
 
 前面的图像中所示的生成的链接是`http://localhost:xxxxx/Movies/Edit/4`。 默认路由 (在中建立*应用\_Start\RouteConfig.cs*) 采用的 URL 模式`{controller}/{action}/{id}`。 因此，ASP.NET 将转换`http://localhost:xxxxx/Movies/Edit/4`放置到请求`Edit`操作方法`Movies`与参数的控制器`ID`等于 4。 检查下面的代码从*应用\_Start\RouteConfig.cs*文件。
 
@@ -54,13 +54,13 @@ ms.lasthandoff: 11/10/2017
 
 请注意第二个 `Edit` 操作方法的前面是 `HttpPost` 特性。 此属性指定的重载的`Edit`可以仅针对的 POST 请求调用方法。 你可以应用`HttpGet`属性设置为第一个编辑方法，但这它们是不必要，因为它是默认值。 (我们在指隐式分配的操作方法`HttpGet`属性为`HttpGet`方法。)
 
-`HttpGet` `Edit`方法采用电影 ID 参数，以查找使用实体框架电影`Find`方法，并将所选的电影返回到编辑视图。 ID 参数指定[默认值](https://msdn.microsoft.com/en-us/library/dd264739.aspx)为零的`Edit`方法调用不带参数。 如果找不到一部电影， [HttpNotFound](https://msdn.microsoft.com/en-us/library/gg453938(VS.98).aspx)返回。 当基架系统创建“编辑”视图时，它会检查 `Movie` 类并创建代码为类的每个属性呈现 `<label>` 和 `<input>` 元素。 下面的示例显示生成的编辑视图：
+`HttpGet` `Edit`方法采用电影 ID 参数，以查找使用实体框架电影`Find`方法，并将所选的电影返回到编辑视图。 ID 参数指定[默认值](https://msdn.microsoft.com/library/dd264739.aspx)为零的`Edit`方法调用不带参数。 如果找不到一部电影， [HttpNotFound](https://msdn.microsoft.com/library/gg453938(VS.98).aspx)返回。 当基架系统创建“编辑”视图时，它会检查 `Movie` 类并创建代码为类的每个属性呈现 `<label>` 和 `<input>` 元素。 下面的示例显示生成的编辑视图：
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample4.cshtml)]
 
 请注意如何查看模板`@model MvcMovie.Models.Movie`语句文件的顶部 — 这指定视图需要查看模板类型的模型`Movie`。
 
-基架的代码使用了若干个*帮助器方法*来简化的 HTML 标记。 [ `Html.LabelFor` ](https://msdn.microsoft.com/en-us/library/gg401864(VS.98).aspx)帮助器显示的字段的名称 (&quot;标题&quot;， &quot;ReleaseDate&quot;，&quot;流派&quot;，或&quot;价格&quot;). [ `Html.EditorFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx)帮助器上呈现 HTML`<input>`元素。 [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx)帮助器显示与该属性相关联的任何验证消息。
+基架的代码使用了若干个*帮助器方法*来简化的 HTML 标记。 [ `Html.LabelFor` ](https://msdn.microsoft.com/library/gg401864(VS.98).aspx)帮助器显示的字段的名称 (&quot;标题&quot;， &quot;ReleaseDate&quot;，&quot;流派&quot;，或&quot;价格&quot;). [ `Html.EditorFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx)帮助器上呈现 HTML`<input>`元素。 [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx)帮助器显示与该属性相关联的任何验证消息。
 
 运行应用程序并导航到*/Movies* URL。 点击“编辑”链接。 在浏览器中查看页面的源。 下面显示了窗体元素的 HTML。
 
@@ -74,7 +74,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample6.cs)]
 
-[ASP.NET MVC 模型联编程序](https://msdn.microsoft.com/en-us/magazine/hh781022.aspx)采用已发布的窗体值，并创建`Movie`作为传递对象`movie`参数。 `ModelState.IsValid` 方法验证表单中提交的数据是否可以用于修改（编辑或更新）`Movie` 对象。 如果数据有效，影片数据保存到`Movies`集合`db(MovieDBContext`实例)。 新的影片数据保存到数据库上，通过调用`SaveChanges`方法`MovieDBContext`。 正在保存的数据之后, 该代码将用户重定向到`Index`操作方法`MoviesController`类，其中显示的电影收藏，包括刚才所做的更改。
+[ASP.NET MVC 模型联编程序](https://msdn.microsoft.com/magazine/hh781022.aspx)采用已发布的窗体值，并创建`Movie`作为传递对象`movie`参数。 `ModelState.IsValid` 方法验证表单中提交的数据是否可以用于修改（编辑或更新）`Movie` 对象。 如果数据有效，影片数据保存到`Movies`集合`db(MovieDBContext`实例)。 新的影片数据保存到数据库上，通过调用`SaveChanges`方法`MovieDBContext`。 正在保存的数据之后, 该代码将用户重定向到`Index`操作方法`MoviesController`类，其中显示的电影收藏，包括刚才所做的更改。
 
 如果发送的值不是有效的系统会将它们重新显示在窗体中。 `Html.ValidationMessageFor`中的帮助器*Edit.cshtml*视图模板负责显示相应的错误消息。
 
@@ -102,7 +102,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample9.cs)]
 
-第一行`SearchIndex`方法中创建以下[LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx)查询，以便选择电影：
+第一行`SearchIndex`方法中创建以下[LINQ](https://msdn.microsoft.com/library/bb397926.aspx)查询，以便选择电影：
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample10.cs)]
 
@@ -112,7 +112,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample11.cs)]
 
-上面的 `s => s.Title` 代码是 [Lambda 表达式](https://msdn.microsoft.com/en-us/library/bb397687.aspx)。 Lambda 在基于方法的使用[LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx)如查询中用作标准查询运算符方法的自变量[其中](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.where.aspx)在上面的代码中使用的方法。 在定义后或通过调用方法，如对其进行修改时，将不会执行 LINQ 查询`Where`或`OrderBy`。 相反，延迟查询执行，这意味着表达式的计算延迟，直到它已实现的值实际上循环访问或[ `ToList` ](https://msdn.microsoft.com/en-us/library/bb342261.aspx)调用方法。 在`SearchIndex`示例 SearchIndex 视图中执行查询。 有关延迟执行查询的详细信息，请参阅[Query Execution](https://msdn.microsoft.com/en-us/library/bb738633.aspx)（查询执行）。
+上面的 `s => s.Title` 代码是 [Lambda 表达式](https://msdn.microsoft.com/library/bb397687.aspx)。 Lambda 在基于方法的使用[LINQ](https://msdn.microsoft.com/library/bb397926.aspx)如查询中用作标准查询运算符方法的自变量[其中](https://msdn.microsoft.com/library/system.linq.enumerable.where.aspx)在上面的代码中使用的方法。 在定义后或通过调用方法，如对其进行修改时，将不会执行 LINQ 查询`Where`或`OrderBy`。 相反，延迟查询执行，这意味着表达式的计算延迟，直到它已实现的值实际上循环访问或[ `ToList` ](https://msdn.microsoft.com/library/bb342261.aspx)调用方法。 在`SearchIndex`示例 SearchIndex 视图中执行查询。 有关延迟执行查询的详细信息，请参阅[Query Execution](https://msdn.microsoft.com/library/bb738633.aspx)（查询执行）。
 
 现在你可以实现`SearchIndex`将向用户显示该窗体的视图。 右键单击内部`SearchIndex`方法，然后单击**添加视图**。 在**添加视图**对话框框中，指定你要将传递`Movie`到其模型类的视图模板的对象。 在**基架模板**列表中，选择**列表**，然后单击**添加**。
 

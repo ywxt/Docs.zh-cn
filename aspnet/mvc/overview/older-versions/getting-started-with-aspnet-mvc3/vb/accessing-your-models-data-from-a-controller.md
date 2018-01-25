@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: d0c6976519f4f4bae10fabf4cbf85401de4f58e7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f1a1db907aa1d0a62af9b363fabfc74ac11acc68
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="accessing-your-models-data-from-a-controller-vb"></a>从控制器 (VB) 访问您的模型的数据
 ====================
@@ -89,7 +89,7 @@ ASP.NET MVC 3 基架机制自动创建 CRUD （创建、 读取、 更新和删�
 
 ASP.NET MVC 还提供了将强传递的功能类型化数据或查看模板的对象。 此强类型方法允许更好地进行编译时检查的代码和在 Visual Web Developer 编辑器中的更丰富智能感知。 我们将使用此方法`MoviesController`类和*Index.vbhtml*查看模板。
 
-请注意该代码如何创建[ `List` ](https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx)对象时它调用`View`中的帮助器方法`Index`操作方法。 在代码然后传递此`Movies`从控制器到视图的列表：
+请注意该代码如何创建[ `List` ](https://msdn.microsoft.com/library/6sh2ey19.aspx)对象时它调用`View`中的帮助器方法`Index`操作方法。 在代码然后传递此`Movies`从控制器到视图的列表：
 
 [!code-vb[Main](accessing-your-models-data-from-a-controller/samples/sample3.vb)]
 

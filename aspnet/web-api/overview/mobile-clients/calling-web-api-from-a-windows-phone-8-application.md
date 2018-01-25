@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1637af40613f1384bd4adec707a5b1a8a07c704b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6e5a936decb27fd2e3b8cdcea44db8db822c98eb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>从 Windows Phone 8 应用程序 (C#) 调用 Web API
 ====================
@@ -33,11 +33,11 @@ ms.lasthandoff: 11/10/2017
 - 在[本教程的第一部分](#STEP1)，将创建 ASP.NET Web API 支持的应用程序的所有创建、 读取、 更新和删除 (CRUD) 操作来管理书籍目录。 此应用程序将使用[示例 XML 文件 (books.xml)](https://msdn.microsoft.com/library/windows/desktop/ms762271.aspx)从 MSDN。
 - 在[倒数第二次本教程的组成部分](#STEP2)，将创建一个从 Web API 应用程序中检索数据的互动的 Windows Phone 8 应用程序。
 
-#### <a name="prerequisites"></a>先决条件
+#### <a name="prerequisites"></a>系统必备
 
 - 与安装的 Windows Phone 8 SDK 的 visual Studio 2013
 - Windows 8 或更高版本上安装 HYPER-V 的 64 位系统
-- 有关其他要求的列表，请参阅*系统要求*节[Windows Phone SDK 8.0](https://www.microsoft.com/en-us/download/details.aspx?id=35471)下载页。
+- 有关其他要求的列表，请参阅*系统要求*节[Windows Phone SDK 8.0](https://www.microsoft.com/download/details.aspx?id=35471)下载页。
 
 > [!NOTE]
 > 如果你要测试 Web API 与您的本地系统上的 Windows Phone 8 项目之间的连接，你将需要按照中的说明*[连接到位于本地的 Web API 应用程序的 Windows Phone 8 模拟器计算机](https://go.microsoft.com/fwlink/?LinkId=324014)*文章以设置你的测试环境。

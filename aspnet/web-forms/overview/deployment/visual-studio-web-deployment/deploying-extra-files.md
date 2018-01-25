@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
 msc.type: authoredcontent
-ms.openlocfilehash: a34607b25f6cf502f5fbf2fe51bf1937f470159e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 46e18ba81c3db8bb04c5cb997bcc1607e4e38bae
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>使用 Visual Studio 的 ASP.NET Web 部署： 部署额外文件
 ====================
@@ -83,17 +83,17 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="more-information"></a>详细信息
 
-如果你知道如何使用 MSBuild 文件，你可以通过在编写代码来自动处理许多其他部署任务*.pubxml*文件 （针对特定配置文件的任务） 或项目*。 wpp.targets*文件 （的任务适用于所有配置文件）。 有关详细信息*.pubxml*和*。 wpp.targets*文件，请参阅[如何： 编辑发布配置文件 (.pubxml) 文件中的部署设置与。 wpp.targets 在 Visual Studio Web 的文件项目](https://msdn.microsoft.com/en-us/library/ff398069)。 有关 MSBuild 的代码的基本介绍，请参阅**剖析项目文件**中[企业部署系列： 了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)。 若要了解如何使用 MSBuild 文件为你自己的方案执行任务，请参阅本书：[内 Microsoft 生成引擎： 使用 MSBuild 和 Team Foundation Build](http://msbuildbook.com) Sayed Ibraham Hashimi 和 William Bartholomew。
+如果你知道如何使用 MSBuild 文件，你可以通过在编写代码来自动处理许多其他部署任务*.pubxml*文件 （针对特定配置文件的任务） 或项目*。 wpp.targets*文件 （的任务适用于所有配置文件）。 有关详细信息*.pubxml*和*。 wpp.targets*文件，请参阅[如何： 编辑发布配置文件 (.pubxml) 文件中的部署设置与。 wpp.targets 在 Visual Studio Web 的文件项目](https://msdn.microsoft.com/library/ff398069)。 有关 MSBuild 的代码的基本介绍，请参阅**剖析项目文件**中[企业部署系列： 了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)。 若要了解如何使用 MSBuild 文件为你自己的方案执行任务，请参阅本书：[内 Microsoft 生成引擎： 使用 MSBuild 和 Team Foundation Build](http://msbuildbook.com) Sayed Ibraham Hashimi 和 William Bartholomew。
 
 ## <a name="acknowledgements"></a>致谢
 
 我要特别感谢以下人员执行了巨大的内容的本系列教程的贡献：
 
-- [Alberto Poblacion、 MVP &amp; MCT、 西班牙](https://mvp.microsoft.com/en-us/mvp/Alberto%20Poblacion%20Bolano-36772)
+- [Alberto Poblacion、 MVP &amp; MCT、 西班牙](https://mvp.microsoft.com/mvp/Alberto%20Poblacion%20Bolano-36772)
 - Jarod Ferguson，数据平台开发 MVP，美国
 - 恶劣 Mittal，Microsoft
 - [Jon Galloway](https://weblogs.asp.net/jgalloway) (twitter: [ @jongalloway ](http://twitter.com/jongalloway))
-- [Kristina Olson Microsoft](https://blogs.iis.net/krolson/default.aspx)
+- [Kristina Olson, Microsoft](https://blogs.iis.net/krolson/default.aspx)
 - [Mike Pope Microsoft](http://www.mikepope.com/blog/DisplayBlog.aspx)
 - Mohit Srivastava Microsoft
 - [Raffaele Rialdi，意大利](http://www.iamraf.net/)

@@ -10,17 +10,17 @@ ms.topic: article
 ms.assetid: 467da78b-3c35-4c51-8b08-77a32379e4a8
 ms.technology: 
 ms.prod: .net-framework
-ms.openlocfilehash: 566ee353f6a947e3ef0efdfd0af3a81dff2147c7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 524cdf0246eda9ef213414923cd23a92a01f211e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-webhooks-debugging"></a>调试 ASP.NET Webhook  
 
 ## <a name="debugging-in-azure"></a>在 Azure 中调试
 
-若要在 Azure 中运行时调试 Web 应用程序，请参阅本教程[对 Azure App Service 中使用 Visual Studio 中的 web 应用进行故障排除](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#webserverlogs)。
+若要在 Azure 中运行时调试 Web 应用程序，请参阅本教程[对 Azure App Service 中使用 Visual Studio 中的 web 应用进行故障排除](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#webserverlogs)。
 
 ## <a name="debugging-with-source-and-symbols"></a>使用的源和符号进行调试
 

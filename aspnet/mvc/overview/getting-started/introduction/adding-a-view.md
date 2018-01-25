@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: dotnet-mvc
 ms.prod: .net-framework
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: d273eb5e99da6c6b7678e03b1a8973041113744c
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: 86887f0dafa31ff3eb6597284c469c4b3053b6b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-view"></a>添加视图
 ====================
@@ -29,7 +29,7 @@ ms.lasthandoff: 01/09/2018
 
 [!code-csharp[Main](adding-a-view/samples/sample1.cs?highlight=1,3)]
 
-`Index`上面方法使用视图模板来生成对浏览器的 HTML 响应。 控制器方法 (也称为[操作方法](http://rachelappel.com/asp.net-mvc-actionresults-explained))，如`Index`上面，方法通常返回[ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx) (或从派生的类[ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx))，不基元类型喜欢字符串。
+`Index`上面方法使用视图模板来生成对浏览器的 HTML 响应。 控制器方法 (也称为[操作方法](http://rachelappel.com/asp.net-mvc-actionresults-explained))，如`Index`上面，方法通常返回[ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx) (或从派生的类[ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx))，不基元类型喜欢字符串。
 
 右键单击*Views\HelloWorld*文件夹，然后单击**添加**，然后单击**布局 (Razor) 使用的 MVC 5 视图页**。
   
@@ -73,7 +73,7 @@ ms.lasthandoff: 01/09/2018
 
 布局模板，可以在一个位置中指定你的站点的 HTML 容器布局，然后将它应用跨站点中的多个页面。 查找 `@RenderBody()` 行。 `RenderBody` 是显示创建的所有特定于视图的页面的占位符，已包装在布局页面中&quot;&quot;。 例如，如果你选择**有关**链接， *Views\Home\About.cshtml*内呈现视图`RenderBody`方法。
 
-更改标题元素的内容。 更改[ActionLink](https://msdn.microsoft.com/en-us/library/dd504972(v=vs.108).aspx)中布局模板从&quot;应用程序名称&quot;到&quot;MVC 影片&quot;和从控制器`Home`到`Movies`。 完成布局文件如下所示：
+更改标题元素的内容。 更改[ActionLink](https://msdn.microsoft.com/library/dd504972(v=vs.108).aspx)中布局模板从&quot;应用程序名称&quot;到&quot;MVC 影片&quot;和从控制器`Home`到`Movies`。 完成布局文件如下所示：
 
 [!code-cshtml[Main](adding-a-view/samples/sample3.cshtml?highlight=6,20)]
 

@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: c375fe6ea98c621012eb55589c8b174c2a95b697
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 2446f4734e9bb1ab6829001f6e7888c4c14ee1b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-razor-pages-tutorial-5-of-8"></a>创建复杂的数据模型的 EF 核心 Razor 页教程 (5 的 8)
 
@@ -49,9 +49,9 @@ ms.lasthandoff: 01/19/2018
 * `mailto:`为自动创建链接`DataType.EmailAddress`。
 * 为提供的日期选择器`DataType.Date`大多数浏览器中。
 
-`DataType`属性发出 HTML 5 `data-` HTML 5 浏览器使用的 (读作的数据 dash) 属性。 `DataType`属性是否提供验证。
+`DataType`属性发出 HTML 5 `data-` HTML 5 浏览器使用的 (读作的数据 dash) 属性。 `DataType`属性不提供验证。
 
-`DataType.Date` 不指定显示日期的格式。 默认情况下，日期字段显示根据基于服务器的默认格式[CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support)。
+`DataType.Date`未指定的日期的显示格式。 默认情况下，日期字段显示根据基于服务器的默认格式[CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support)。
 
 `DisplayFormat` 特性用于显式指定日期格式：
 
@@ -159,7 +159,7 @@ Please review the migration for accuracy.
 
 ### <a name="the-required-attribute"></a>必需的特性
 
-`Required`特性使名称属性必填的字段。 `Required`属性不需要不可为 null 的类型，如值类型 (`DateTime`， `int`，`double`等。)。 不能为 null 的类型是自动被视为必填字段。
+`Required`特性使名称属性必填的字段。 `Required`属性不所需的不可为 null 的类型，如值类型 (`DateTime`， `int`，`double`等。)。 不能为 null 的类型是自动被视为必填字段。
 
 `Required`属性无法替换中的最小长度参数`StringLength`属性：
 
@@ -284,7 +284,7 @@ public Instructor Instructor { get; set; }
 
 该模型具有相关实体的导航属性时，EF 核心不会为数据模型需要 FK 属性。
 
-EF 核心会在需要时，会自动将 FKs 创建数据库中。 EF 核心创建[隐藏属性](https://docs.microsoft.com/ef/core/modeling/shadow-properties)的自动创建 FKs。 更简单、 更高效，FK 采用数据模型可以进行更新。 例如，考虑一个模型其中 FK 属性`DepartmentID`是*不*包含。 当过程实体被提取编辑：
+EF 核心在任何位置在需要自动将 FKs 创建数据库中。 EF 核心创建[隐藏属性](https://docs.microsoft.com/ef/core/modeling/shadow-properties)的自动创建 FKs。 更简单、 更高效，FK 采用数据模型可以进行更新。 例如，考虑一个模型其中 FK 属性`DepartmentID`是*不*包含。 当过程实体被提取编辑：
 
 * `Department`实体是未显式加载的情况下为 null。
 * 若要更新过程实体，`Department`必须先提取实体。
@@ -376,7 +376,7 @@ public ICollection<Course> Courses { get; set; }
 例如，如果`Department.InstructorID`属性未定义为可以为 null:
 
 * EF 核心配置一个级联删除规则，以删除部门时删除教师。
-* 删除教师删除部门时并不是预期的行为。
+* 删除部门时删除教师不的预期的行为。
 
 如果业务规则需要`InstructorID`属性为不可为 null，请使用以下 fluent API 语句：
 
@@ -431,7 +431,7 @@ public Student Student { get; set; }
 
 `Instructor`和`Course`实体具有使用纯联接表的多对多关系。
 
-注意： EF 6.x 支持隐式联接表的多对多关系，但 EF 核心却没有。 有关详细信息，请参阅[多对多关系在 EF 核心 2.0](https://blog.oneunicorn.com/2017/09/25/many-to-many-relationships-in-ef-core-2-0-part-1-the-basics/)。
+注意： EF 6.x 支持隐式联接表的多对多关系，但 EF 核心不会。 有关详细信息，请参阅[多对多关系在 EF 核心 2.0](https://blog.oneunicorn.com/2017/09/25/many-to-many-relationships-in-ef-core-2-0-part-1-the-basics/)。
 
 ## <a name="the-courseassignment-entity"></a>CourseAssignment 实体
 
@@ -638,7 +638,7 @@ dotnet ef database update
 生产应用，则应该：
 
 * 包括代码或脚本添加`Department`行以及相关`Course`对新的行`Department`行。
-* 不会使用"Temp"部门或的默认值为`Course.DepartmentID `。
+* 使用"Temp"部门或的默认值为`Course.DepartmentID`。
 
 下一步教程介绍如何相关的数据。
 

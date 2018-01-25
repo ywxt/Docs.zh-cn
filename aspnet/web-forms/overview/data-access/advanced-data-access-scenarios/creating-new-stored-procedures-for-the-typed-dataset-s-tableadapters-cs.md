@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4e8b4e6a12c010b227ee9a236130cbfd26d75657
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 715f7e3fae89e773b686faa7c49522c587693eec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>创建新存储过程的类型化数据集的 Tableadapter (C#)
 ====================
@@ -47,7 +47,7 @@ ms.lasthandoff: 11/10/2017
 > 存储的过程通常称为 sprocs 或 SPs。
 
 
-使用创建的存储的过程[ `CREATE PROCEDURE` ](https://msdn.microsoft.com/en-us/library/aa258259(SQL.80).aspx) T-SQL 的语句。 例如，以下 T-SQL 脚本创建名为的存储的过程`GetProductsByCategoryID`中一个名为的单个参数采用`@CategoryID`并返回`ProductID`， `ProductName`， `UnitPrice`，和`Discontinued`中这些列的字段`Products`具有匹配的表`CategoryID`值：
+使用创建的存储的过程[ `CREATE PROCEDURE` ](https://msdn.microsoft.com/library/aa258259(SQL.80).aspx) T-SQL 的语句。 例如，以下 T-SQL 脚本创建名为的存储的过程`GetProductsByCategoryID`中一个名为的单个参数采用`@CategoryID`并返回`ProductID`， `ProductName`， `UnitPrice`，和`Discontinued`中这些列的字段`Products`具有匹配的表`CategoryID`值：
 
 
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/samples/sample1.sql)]
@@ -384,7 +384,7 @@ ObjectDataSource 向导运行完毕后，Visual Studio 将 BoundFields 和添加
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [创建和维护存储的过程](https://msdn.microsoft.com/en-us/library/aa214299(SQL.80).aspx)
+- [创建和维护存储的过程](https://msdn.microsoft.com/library/aa214299(SQL.80).aspx)
 - [从存储过程中检索标量数据](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)
 - [SQL Server 存储过程的基础知识](http://www.awprofessional.com/articles/article.asp?p=25288&amp;rl=1)
 - [存储过程： 概述](http://www.sqlteam.com/item.asp?ItemID=563)

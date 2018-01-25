@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: af4967f642ba4615f3392c0c404d2ec62edaaae8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 48a7d7fdb670aebb72450fc4eb12a364ef595c53
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-dependency-injection"></a>ASP.NET MVC 4 依赖关系注入
 ====================
@@ -25,7 +25,7 @@ ms.lasthandoff: 11/10/2017
 > [!NOTE]
 > 此动手实验假定你具有的基础知识**ASP.NET MVC**和**ASP.NET MVC 4 筛选**。 如果您未使用过**ASP.NET MVC 4 筛选**之前，我们建议你转到**ASP.NET MVC 自定义操作筛选器**动手实验。
 > 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843)。
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)。
 
 
 在**对象面向编程**范例，对象协同工作的协作模型其中有 contributors （参与者） 和使用者。 当然，此通信模型生成对象和组件，变得难以管理复杂性增加时之间的依赖关系。
@@ -76,7 +76,7 @@ ms.lasthandoff: 11/10/2017
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 你必须具有要完成本实验的以下项：
 
@@ -474,7 +474,7 @@ ms.lasthandoff: 11/10/2017
 
     ![音乐商店](aspnet-mvc-4-dependency-injection/_static/image11.png "音乐商店")
 
-    *音乐商店*
+    *Music 商店*
 3. 浏览到**/Trace.axd**以查看应用程序跟踪页，，然后单击**查看详细信息**。
 
     ![应用程序跟踪日志](aspnet-mvc-4-dependency-injection/_static/image12.png "应用程序跟踪日志")

@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bower
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 57a6941155c60e2769636fd4abc98531266c206c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 7e3e936c81126b7ed01332565f997910a2886993
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>管理 ASP.NET Core 中的 Bower 的客户端包
 
@@ -45,7 +45,7 @@ ms.lasthandoff: 01/19/2018
 
 ### <a name="manual-installation-in-bowerjson"></a>手动安装在 bower.json
 
-打开*bower.json*文件并添加到的依赖项的"字体出色"。 IntelliSense 会显示可用的包。 某个包被选中，将显示可用的版本。 下面的映像版本旧，以及将与你看到的内容不匹配。
+打开*bower.json*文件并添加到的依赖项的"字体出色"。 IntelliSense 会显示可用的包。 某个包被选中，将显示可用的版本。 下面的映像不较旧，并不会匹配你看到的内容。
 
 ![Bower 包资源管理器的智能感知](bower/_static/add-package.png)
 

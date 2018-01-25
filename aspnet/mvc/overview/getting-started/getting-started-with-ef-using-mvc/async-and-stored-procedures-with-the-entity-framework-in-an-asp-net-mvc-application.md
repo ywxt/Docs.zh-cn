@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5b4904037838441942ea266ce71d735642d0a717
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7412b32ac29179dfa319544781d4c7165c58196b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="async-and-stored-procedures-with-the-entity-framework-in-an-aspnet-mvc-application"></a>异步和与实体框架中的 ASP.NET MVC 应用程序的存储的过程
 ====================
@@ -128,11 +128,11 @@ Web 服务器具有有限的数量的线程可用，并且在高负载情况下�
 
     ![部门插入 SP](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 
-代码首先创建默认存储过程名称。 如果使用现有数据库，你可能需要自定义为了使用已在数据库中定义的存储的过程的存储的过程名称。 有关如何执行该操作的信息，请参阅[实体框架代码第一个插入/更新/删除存储过程](https://msdn.microsoft.com/en-us/data/dn468673)。
+代码首先创建默认存储过程名称。 如果使用现有数据库，你可能需要自定义为了使用已在数据库中定义的存储的过程的存储的过程名称。 有关如何执行该操作的信息，请参阅[实体框架代码第一个插入/更新/删除存储过程](https://msdn.microsoft.com/data/dn468673)。
 
 如果你想要自定义内容生成存储的过程执行，则可以编辑迁移的基架的代码`Up`创建存储的过程的方法。 通过这种方式所做的更改将反映每当迁移运行，并且将应用到你的生产数据库中，当迁移后部署在生产中自动运行。
 
-如果你想要更改现有存储的过程中的上一个迁移创建，你可以使用 Add-migration 命令生成的空白的迁移，然后手动编写调用的代码[AlterStoredProcedure](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.dbmigration.alterstoredprocedure.aspx)方法.
+如果你想要更改现有存储的过程中的上一个迁移创建，你可以使用 Add-migration 命令生成的空白的迁移，然后手动编写调用的代码[AlterStoredProcedure](https://msdn.microsoft.com/library/system.data.entity.migrations.dbmigration.alterstoredprocedure.aspx)方法.
 
 ## <a name="deploy-to-azure"></a>将部署到 Azure
 

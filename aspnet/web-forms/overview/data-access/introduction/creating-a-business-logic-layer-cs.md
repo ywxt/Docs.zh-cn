@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d117456521442972f1bfcfc15a4e8e7253e07e53
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7518ddd11a05a9e3d5df85e3cf6ceffa09a25060
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-business-logic-layer-c"></a>创建业务逻辑层 (C#)
 ====================
@@ -56,7 +56,7 @@ ms.lasthandoff: 11/10/2017
 接下来，让我们将方法添加到每个类以只包装在第一个教程 Tableadapter 为定义的方法。 现在，这些方法将只是直接调入 DAL;我们会返回更高版本，以添加任何必要的业务逻辑。
 
 > [!NOTE]
-> 如果你使用的 Visual Studio Standard Edition 或更高版本 (即你*不*使用 Visual Web Developer)，你可以根据需要设计您以可视方式使用的类[类设计器](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/dv_vstechart/html/clssdsgnr.asp)。 请参阅[类设计器博客](https://blogs.msdn.com/classdesigner/default.aspx)有关 Visual Studio 中的此新功能的详细信息。
+> 如果你使用的 Visual Studio Standard Edition 或更高版本 (即你*不*使用 Visual Web Developer)，你可以根据需要设计您以可视方式使用的类[类设计器](https://msdn.microsoft.com/library/default.asp?url=/library/dv_vstechart/html/clssdsgnr.asp)。 请参阅[类设计器博客](https://blogs.msdn.com/classdesigner/default.aspx)有关 Visual Studio 中的此新功能的详细信息。
 
 
 有关`ProductsBLL`我们需要添加总计的七种方法的类：
@@ -76,7 +76,7 @@ ProductsBLL.cs
 
 只需返回数据的方法的`GetProducts`， `GetProductByProductID`， `GetProductsByCategoryID`，和`GetProductBySuppliersID`它们只需调用到 DAL 是非常简单。 尽管在某些情况下可能需要实现的业务规则在此级别 （例如基于当前登录的用户或用户所属的角色的授权规则），我们将只是将这些方法作为-是。 有关这些方法，然后，BLL 仅仅是作为服务通过该表示层访问基础数据从数据访问层的代理。
 
-`AddProduct`和`UpdateProduct`方法同时作为参数采用各种产品字段的值和添加新的产品或更新现有，分别。 由于许多`Product`表的列可以接受`NULL`值 (`CategoryID`， `SupplierID`，和`UnitPrice`，仅举几例)，这些输入参数`AddProduct`和`UpdateProduct`映射到此类列使用[可以为 null 类型](https://msdn.microsoft.com/en-us/library/1t3y8s4s(v=vs.80).aspx)。 可以为 null 的类型不熟悉.NET 2.0 和提供一种技术，该值指示是否为值类型应，相反，应由`null`。 在 C# 中可以值类型为 null 的类型进行标记添加`?`后类型 (如`int? x;`)。 请参阅[可以为 Null 类型](https://msdn.microsoft.com/en-us/library/1t3y8s4s.aspx)主题中[C# 编程指南](https://msdn.microsoft.com/en-us/library/67ef8sbd%28VS.80%29.aspx)有关详细信息。
+`AddProduct`和`UpdateProduct`方法同时作为参数采用各种产品字段的值和添加新的产品或更新现有，分别。 由于许多`Product`表的列可以接受`NULL`值 (`CategoryID`， `SupplierID`，和`UnitPrice`，仅举几例)，这些输入参数`AddProduct`和`UpdateProduct`映射到此类列使用[可以为 null 类型](https://msdn.microsoft.com/library/1t3y8s4s(v=vs.80).aspx)。 可以为 null 的类型不熟悉.NET 2.0 和提供一种技术，该值指示是否为值类型应，相反，应由`null`。 在 C# 中可以值类型为 null 的类型进行标记添加`?`后类型 (如`int? x;`)。 请参阅[可以为 Null 类型](https://msdn.microsoft.com/library/1t3y8s4s.aspx)主题中[C# 编程指南](https://msdn.microsoft.com/library/67ef8sbd%28VS.80%29.aspx)有关详细信息。
 
 所有三个方法返回布尔值，该值指示行是否已插入、 更新或删除，因为该操作不可能会导致受影响的行。 例如，如果页开发人员调用`DeleteProduct`传入`ProductID`不存在产品，`DELETE`语句向数据库发出会有任何影响，因此`DeleteProduct`方法将返回`false`。
 
@@ -86,7 +86,7 @@ ProductsBLL.cs
 
 在`UpdateProduct`我们首先在要更新使用的产品中加载`GetProductByProductID(productID)`。 虽然这可能看上去到数据库的不必要行程，此额外经历一次将证明值得在将来浏览开放式并发的教程。 乐观并发是一种技术，若要确保两个工作的用户可以同时对同一数据不会意外地覆盖彼此的所做更改。 抓取整个记录还可以更轻松地在仅修改的数据行的列的子集 BLL 中创建更新方法。 当我们探讨`SuppliersBLL`我们将看到此类示例的类。
 
-最后，请注意，`ProductsBLL`类具有[DataObject 属性](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataobjectattribute.aspx)应用于它 (`[System.ComponentModel.DataObject]`之前的文件的顶部附近的类语句的语法) 并且方法具有[DataObjectMethodAttribute 属性](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataobjectmethodattribute.aspx)。 `DataObject`属性标记为适用于绑定到的对象类[ObjectDataSource 控件](https://msdn.microsoft.com/en-us/library/9a4kyhcx.aspx)，而`DataObjectMethodAttribute`指示方法的用途。 正如我们将看到在将来的教程，ASP.NET 2.0 ObjectDataSource 轻松地从类中以声明方式访问数据。 若要帮助筛选可能的类，将绑定到对象数据源的向导中的列表，通过默认标记为这些类`DataObjects`都显示在向导的下拉列表。 `ProductsBLL`类使用将同样效果而无需这些属性，但将其添加可更轻松地使用对象数据源的向导中。
+最后，请注意，`ProductsBLL`类具有[DataObject 属性](https://msdn.microsoft.com/library/system.componentmodel.dataobjectattribute.aspx)应用于它 (`[System.ComponentModel.DataObject]`之前的文件的顶部附近的类语句的语法) 并且方法具有[DataObjectMethodAttribute 属性](https://msdn.microsoft.com/library/system.componentmodel.dataobjectmethodattribute.aspx)。 `DataObject`属性标记为适用于绑定到的对象类[ObjectDataSource 控件](https://msdn.microsoft.com/library/9a4kyhcx.aspx)，而`DataObjectMethodAttribute`指示方法的用途。 正如我们将看到在将来的教程，ASP.NET 2.0 ObjectDataSource 轻松地从类中以声明方式访问数据。 若要帮助筛选可能的类，将绑定到对象数据源的向导中的列表，通过默认标记为这些类`DataObjects`都显示在向导的下拉列表。 `ProductsBLL`类使用将同样效果而无需这些属性，但将其添加可更轻松地使用对象数据源的向导中。
 
 ## <a name="adding-the-other-classes"></a>添加其他类
 
@@ -144,7 +144,7 @@ ProductsBLL.cs
 - `ProductID`， `ProductName`，和`Discontinued`字段是必需的但所有其他字段为可选
 - `UnitPrice`， `UnitsInStock`， `UnitsOnOrder`，和`ReorderLevel`字段必须为大于或等于零
 
-这些规则可以和应表示在数据库级别。 上的字符数限制`ProductName`和`QuantityPerUnit`中列的数据类型，将捕获字段`Products`表 (`nvarchar(40)`和`nvarchar(20)`分别)。 如果数据库表列允许字段必选和可选所用`NULL`s。 四个[check 约束](https://msdn.microsoft.com/en-us/library/ms188258.aspx)存在，确保的唯一值大于或等于零可以建立到`UnitPrice`， `UnitsInStock`， `UnitsOnOrder`，或`ReorderLevel`列。
+这些规则可以和应表示在数据库级别。 上的字符数限制`ProductName`和`QuantityPerUnit`中列的数据类型，将捕获字段`Products`表 (`nvarchar(40)`和`nvarchar(20)`分别)。 如果数据库表列允许字段必选和可选所用`NULL`s。 四个[check 约束](https://msdn.microsoft.com/library/ms188258.aspx)存在，确保的唯一值大于或等于零可以建立到`UnitPrice`， `UnitsInStock`， `UnitsOnOrder`，或`ReorderLevel`列。
 
 除了强制实施这些规则应用于数据库它们应也会强制执行的数据集级别。 事实上，字段长度和一个值是必需还是可选已捕获的 Datacolumn 的每个 DataTable 的组。 若要查看现有字段级别验证自动提供，请转到数据集设计器，从一个数据表选择一个字段，然后转到属性窗口。 如图 4 所示，`QuantityPerUnit`中的 DataColumn `ProductsDataTable` 20 个字符的最大长度和允许`NULL`值。 如果我们尝试设置`ProductsDataRow`的`QuantityPerUnit`属性超过 20 个字符的字符串值`ArgumentException`将引发。
 
@@ -154,7 +154,7 @@ ProductsBLL.cs
 **图 4**: DataColumn 提供基本级别字段验证 ([单击以查看实际尺寸的图像](creating-a-business-logic-layer-cs/_static/image8.png))
 
 
-遗憾的是，我们不能指定边界检查，如`UnitPrice`值必须大于或等于零，通过属性窗口。 为了提供此类型的字段级别验证我们需要创建 DataTable 的事件处理程序[ColumnChanging](https://msdn.microsoft.com/en-us/library/system.data.datatable.columnchanging%28VS.80%29.aspx)事件。 中所述[前面教程](creating-a-data-access-layer-cs.md)，可以通过使用分部类扩展由类型化数据集创建的数据集、 数据表和 DataRow 对象。 使用这种方法，我们可以创建`ColumnChanging`事件处理程序`ProductsDataTable`类。 首先创建中的类`App_Code`文件夹名为`ProductsDataTable.ColumnChanging.cs`。
+遗憾的是，我们不能指定边界检查，如`UnitPrice`值必须大于或等于零，通过属性窗口。 为了提供此类型的字段级别验证我们需要创建 DataTable 的事件处理程序[ColumnChanging](https://msdn.microsoft.com/library/system.data.datatable.columnchanging%28VS.80%29.aspx)事件。 中所述[前面教程](creating-a-data-access-layer-cs.md)，可以通过使用分部类扩展由类型化数据集创建的数据集、 数据表和 DataRow 对象。 使用这种方法，我们可以创建`ColumnChanging`事件处理程序`ProductsDataTable`类。 首先创建中的类`App_Code`文件夹名为`ProductsDataTable.ColumnChanging.cs`。
 
 
 [![将新类添加到 App_Code 文件夹](creating-a-business-logic-layer-cs/_static/image10.png)](creating-a-business-logic-layer-cs/_static/image9.png)
@@ -188,7 +188,7 @@ BLL 类应包含检查，以确保遵守应用程序的业务规则。 这些检
 
 ## <a name="responding-to-validation-errors-in-the-presentation-tier"></a>响应表示层中的验证错误
 
-从表示层调用 BLL 时我们可以决定是否尝试处理可能会引发或让他们向上冒泡到 ASP.NET 的任何异常 (它将引发`HttpApplication`的`Error`事件)。 若要以编程方式使用 BLL 时处理异常，我们可以使用[try … catch](https://msdn.microsoft.com/en-us/library/0yd65esw.aspx)块，如以下示例所示：
+从表示层调用 BLL 时我们可以决定是否尝试处理可能会引发或让他们向上冒泡到 ASP.NET 的任何异常 (它将引发`HttpApplication`的`Error`事件)。 若要以编程方式使用 BLL 时处理异常，我们可以使用[try … catch](https://msdn.microsoft.com/library/0yd65esw.aspx)块，如以下示例所示：
 
 
 [!code-csharp[Main](creating-a-business-logic-layer-cs/samples/sample7.cs)]

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: f455c3656c9120f4d7e6fccdba8f705e0a1c7d35
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9093fb90a52b297f173c5cddb6f332d2d1a25135
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-5-of-10"></a>读取与相关的数据与实体框架中的 ASP.NET MVC 应用程序 (5 的 10)
 ====================
@@ -68,7 +68,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-延迟加载可以屏蔽导致性能问题的代码。 例如，未指定 eager 或显式加载但处理大量的实体并在每次迭代中使用多个导航属性的代码可能非常低效，（由于到数据库的许多往返过程）。 执行在开发使用在本地 SQL server 中良好运行的应用程序可能具有性能问题时由于的延迟时间增加和延迟加载移到 Azure SQL 数据库。 分析的实际的测试加载的数据库的查询将帮助你确定延迟加载是否适用。 有关详细信息请参阅[Demystifying 实体框架策略： 加载相关数据](https://msdn.microsoft.com/en-us/magazine/hh205756.aspx)和[使用实体框架与 SQL Azure 到减少网络延迟](https://msdn.microsoft.com/en-us/magazine/gg309181.aspx)。
+延迟加载可以屏蔽导致性能问题的代码。 例如，未指定 eager 或显式加载但处理大量的实体并在每次迭代中使用多个导航属性的代码可能非常低效，（由于到数据库的许多往返过程）。 执行在开发使用在本地 SQL server 中良好运行的应用程序可能具有性能问题时由于的延迟时间增加和延迟加载移到 Azure SQL 数据库。 分析的实际的测试加载的数据库的查询将帮助你确定延迟加载是否适用。 有关详细信息请参阅[Demystifying 实体框架策略： 加载相关数据](https://msdn.microsoft.com/magazine/hh205756.aspx)和[使用实体框架与 SQL Azure 到减少网络延迟](https://msdn.microsoft.com/magazine/gg309181.aspx)。
 
 ## <a name="create-a-courses-index-page-that-displays-department-name"></a>创建该显示部门名称的课程索引页
 
@@ -155,7 +155,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 路由数据是在路由表中指定的 URL 段中找到模型联编程序的数据。 例如，默认路由指定`controller`， `action`，和`id`段：
 > 
-> 路由。MapRoute (  
+> routes.MapRoute(  
 >  名称:"默认情况下，"  
 >  url:"{controller} / {action} / {id}"，  
 >  默认值： new {控制器 ="主页"，操作 ="Index"，id = UrlParameter.Optional}  
@@ -194,7 +194,7 @@ ms.lasthandoff: 11/10/2017
 
 `Where`方法将返回一个集合，但条件在此情况下传递到方法导致只有一个`Instructor`所返回的实体。 `Single`方法将集合转换为单个`Instructor`实体，使你可以访问该实体的`Courses`属性。
 
-你使用[单个](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.single.aspx)时你知道该集合的集合上的方法将有只有一项。 `Single`方法引发异常时传递给它的集合是否为空或没有多个项。 替代方法是[SingleOrDefault](https://msdn.microsoft.com/en-us/library/bb342451.aspx)，它返回默认值 (`null`在这种情况下) 如果该集合为空。 但是，在这种情况下，仍会生成异常 (从尝试查找`Courses`属性`null`引用)，和异常消息将不太清楚地指示问题的原因。 当调用`Single`方法，你还可以通过`Where`条件而不是调用`Where`方法单独：
+你使用[单个](https://msdn.microsoft.com/library/system.linq.enumerable.single.aspx)时你知道该集合的集合上的方法将有只有一项。 `Single`方法引发异常时传递给它的集合是否为空或没有多个项。 替代方法是[SingleOrDefault](https://msdn.microsoft.com/library/bb342451.aspx)，它返回默认值 (`null`在这种情况下) 如果该集合为空。 但是，在这种情况下，仍会生成异常 (从尝试查找`Courses`属性`null`引用)，和异常消息将不太清楚地指示问题的原因。 当调用`Single`方法，你还可以通过`Where`条件而不是调用`Where`方法单独：
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample15.cs)]
 

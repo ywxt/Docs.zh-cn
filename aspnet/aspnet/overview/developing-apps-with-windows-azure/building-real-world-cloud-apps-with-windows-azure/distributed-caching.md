@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 msc.type: authoredcontent
-ms.openlocfilehash: 923a8257376e98e6cae10d905f1cb18f7fdb28e7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 24ede9cb9289c84140f6e2573f9d526f19cac64b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>分布式缓存 （构建真实世界云应用程序与 Azure）
 ====================
@@ -79,12 +79,12 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="azure-caching-services"></a>Azure 缓存服务
 
-Azure 提供以下缓存服务： [Azure Redis 缓存](https://msdn.microsoft.com/en-us/library/dn690523.aspx)和[Azure 托管缓存](https://msdn.microsoft.com/en-us/library/dn386094.aspx)。 Azure Redis 缓存基于流行[开放源代码 Redis 缓存](http://redis.io/)和大多数的第一个选择缓存方案。
+Azure 提供以下缓存服务： [Azure Redis 缓存](https://msdn.microsoft.com/library/dn690523.aspx)和[Azure 托管缓存](https://msdn.microsoft.com/library/dn386094.aspx)。 Azure Redis 缓存基于流行[开放源代码 Redis 缓存](http://redis.io/)和大多数的第一个选择缓存方案。
 
 <a id="sessionstate"></a>
 ## <a name="aspnet-session-state-using-a-cache-provider"></a>ASP.NET 会话状态使用缓存提供程序
 
-中所述[web 开发最佳做法章](web-development-best-practices.md)，最佳做法是避免使用会话状态。 如果你的应用程序需要会话状态下, 一步的最佳做法是避免默认内存中提供程序，因为不支持横向扩展 （web 服务器的多个实例）。 ASP.NET SQL Server 会话状态提供程序启用多个 web 服务器以使用会话状态, 运行的站点，但它会导致相比于内存中提供程序的高延迟成本。 如果你需要使用会话状态的最佳解决方案是使用缓存提供程序，如[用于 Azure Cache 的会话状态提供程序](https://msdn.microsoft.com/en-us/library/windowsazure/gg185668.aspx)。
+中所述[web 开发最佳做法章](web-development-best-practices.md)，最佳做法是避免使用会话状态。 如果你的应用程序需要会话状态下, 一步的最佳做法是避免默认内存中提供程序，因为不支持横向扩展 （web 服务器的多个实例）。 ASP.NET SQL Server 会话状态提供程序启用多个 web 服务器以使用会话状态, 运行的站点，但它会导致相比于内存中提供程序的高延迟成本。 如果你需要使用会话状态的最佳解决方案是使用缓存提供程序，如[用于 Azure Cache 的会话状态提供程序](https://msdn.microsoft.com/library/windowsazure/gg185668.aspx)。
 
 ## <a name="summary"></a>摘要
 
@@ -96,11 +96,11 @@ Azure 提供以下缓存服务： [Azure Redis 缓存](https://msdn.microsoft.co
 
 文档
 
-- [Azure 缓存](https://msdn.microsoft.com/en-us/library/gg278356.aspx)。 在 Azure 中的缓存上的正式 MSDN 文档。
-- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/en-us/library/dn568099.aspx)。 请参阅缓存指南和缓存端模式。
-- [防故障： 弹性云体系结构指南](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx)。 通过 Marc Mercuri、 Ulrich Homann 和 Andrew Townhill 白皮书。 有关缓存，请参阅部分。
-- [在 Azure 云服务上的大规模服务的设计的最佳实践](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx)。 W。 Mark Simms 和 Michael Thomassy 白皮书。 在分布式缓存，请参阅部分。
-- [分布式缓存可伸缩性的路径](https://msdn.microsoft.com/en-us/magazine/dd942840.aspx)。 较旧的 （2009 年） MSDN 杂志文章，但通常情况下; 分布式缓存的明确书面的介绍进入比防故障和最佳做法白皮书的缓存部分的更深入。
+- [Azure 缓存](https://msdn.microsoft.com/library/gg278356.aspx)。 在 Azure 中的缓存上的正式 MSDN 文档。
+- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/library/dn568099.aspx)。 请参阅缓存指南和缓存端模式。
+- [防故障： 弹性云体系结构指南](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)。 通过 Marc Mercuri、 Ulrich Homann 和 Andrew Townhill 白皮书。 有关缓存，请参阅部分。
+- [在 Azure 云服务上的大规模服务的设计的最佳实践](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 W. Mark Simms 和 Michael Thomassy 白皮书。 在分布式缓存，请参阅部分。
+- [分布式缓存可伸缩性的路径](https://msdn.microsoft.com/magazine/dd942840.aspx)。 较旧的 （2009 年） MSDN 杂志文章，但通常情况下; 分布式缓存的明确书面的介绍进入比防故障和最佳做法白皮书的缓存部分的更深入。
 
 视频
 

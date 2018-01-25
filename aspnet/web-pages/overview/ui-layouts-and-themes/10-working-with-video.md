@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/10-working-with-video
 msc.type: authoredcontent
-ms.openlocfilehash: 0e1849fb780908b55520d8108e2227d046759987
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a14659997d86d1b5cf5381e21e997c1a03a3f57c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET 网站页 (Razor) 中显示视频
 ====================
@@ -38,7 +38,7 @@ ms.lasthandoff: 11/10/2017
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
 > 
 > 
-> - ASP.NET 网页 (Razor) 2
+> - ASP.NET Web Pages (Razor) 2
 > - WebMatrix 2
 >   
 > 
@@ -118,7 +118,7 @@ ms.lasthandoff: 11/10/2017
     [!code-cshtml[Main](10-working-with-video/samples/sample2.cshtml)]
 4. 在浏览器中运行页面。 (请确保页中选择**文件**工作区之前运行它。)将显示的页和自动播放视频。 
 
-    ![[image]] (10-working-with-video/_static/image1.jpg "ch08_video 1.jpg")
+    ![[image]](10-working-with-video/_static/image1.jpg "ch08_video-1.jpg")
 
 你可以设置`quality`参数到闪存视频`low`， `autolow`， `autohigh`， `medium`， `high`，和`best`:
 
@@ -148,7 +148,7 @@ Flash player 支持的视频模式设置命名`windowMode`。 你可以将此设
     [!code-cshtml[Main](10-working-with-video/samples/sample5.cshtml)]
 4. 在浏览器中运行页面。 视频加载，并会自动播放。 
 
-    ![[image]] (10-working-with-video/_static/image2.jpg "ch08_video 2.jpg")
+    ![[image]](10-working-with-video/_static/image2.jpg "ch08_video-2.jpg")
 
 你可以设置`playCount`为整数类型的值，该值指示多少次，以自动播放视频：
 
@@ -178,14 +178,14 @@ Flash player 支持的视频模式设置命名`windowMode`。 你可以将此设
     [!code-cshtml[Main](10-working-with-video/samples/sample10.cshtml)]
 4. 在浏览器中运行页面。 
 
-    ![[image]] (10-working-with-video/_static/image3.jpg "ch08_video 3.jpg")
+    ![[image]](10-working-with-video/_static/image3.jpg "ch08_video-3.jpg")
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他资源
 
 
-[Silverlight 概述](https://msdn.microsoft.com/en-us/library/bb404700(VS.95).aspx)
+[Silverlight 概述](https://msdn.microsoft.com/library/bb404700(VS.95).aspx)
 
 [Flash 对象和嵌入标记特性](http://kb2.adobe.com/cps/127/tn_12701.html)
 
-[Windows Media Player 11 SDK PARAM 标记](https://msdn.microsoft.com/en-us/library/aa392321(VS.85).aspx)
+[Windows Media Player 11 SDK PARAM 标记](https://msdn.microsoft.com/library/aa392321(VS.85).aspx)

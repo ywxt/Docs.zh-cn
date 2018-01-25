@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/self-host-a-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: b308ee9ec209ba8bbb021827655c83443dd149e6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 564f859e73a88ac9c5f27e9b8f7409ec126642f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="self-host-aspnet-web-api-1-c"></a>自承载 ASP.NET Web API 1 (C#)
 ====================
@@ -43,7 +43,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="set-the-target-framework-visual-studio-2010"></a>设置目标框架 (Visual Studio 2010)
 
-如果你使用的 Visual Studio 2010，更改目标框架为.NET Framework 4.0。 (默认情况下，项目模板面向[.Net Framework 客户端配置文件](https://msdn.microsoft.com/en-us/library/cc656912.aspx#features_not_included_in_the_net_framework_client_profile)。)
+如果你使用的 Visual Studio 2010，更改目标框架为.NET Framework 4.0。 (默认情况下，项目模板面向[.Net Framework 客户端配置文件](https://msdn.microsoft.com/library/cc656912.aspx#features_not_included_in_the_net_framework_client_profile)。)
 
 在解决方案资源管理器，右键单击该项目并选择**属性**。 在**目标框架**下拉列表中，将目标框架更改为.NET Framework 4.0。 当系统提示以应用更改，单击**是**。
 
@@ -101,8 +101,8 @@ NuGet 包管理器是将 Web API 程序集添加到非 ASP.NET 项目的最简�
 | URI | 描述 |
 | --- | --- |
 | / api/产品 | 获取所有产品的列表。 |
-| /api/产品/*id* | 获取产品的 id。 |
-| /api/产品 /？ 类别 =*类别* | 按类别获取产品的列表。 |
+| /api/products/*id* | 获取产品的 id。 |
+| /api/products/?category=*category* | 按类别获取产品的列表。 |
 
 ## <a name="host-the-web-api"></a>承载 Web API
 
@@ -156,7 +156,7 @@ NuGet 包管理器是将 Web API 程序集添加到非 ASP.NET 项目的最简�
 - 选择**添加引用**。
 - 在**引用管理器**对话框下**解决方案**，选择**项目**。
 - 选择 SelfHost 项目。
-- 单击“确定”。
+- 单击 **“确定”**。
 
 ![](self-host-a-web-api/_static/image6.png)
 
@@ -182,7 +182,7 @@ NuGet 包管理器是将 Web API 程序集添加到非 ASP.NET 项目的最简�
 
 有关使用 HttpClient，包括如何进行非阻止调用，请参阅[调用 Web API 从.NET 客户端](../advanced/calling-a-web-api-from-a-net-client.md)。
 
-在调用这些方法之前, 设置 BaseAddress 属性对所 HttpClient 实例"`http://localhost:8080`"。 例如: 
+在调用这些方法之前, 设置 BaseAddress 属性对所 HttpClient 实例"`http://localhost:8080`"。 例如:
 
 [!code-csharp[Main](self-host-a-web-api/samples/sample10.cs)]
 

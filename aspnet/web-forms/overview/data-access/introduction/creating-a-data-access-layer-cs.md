@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c610f84cfb82f38f9c67b757aa341c7a1497369c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 927b2490b5c539a79bb9939b88942499b23cc464
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-data-access-layer-c"></a>创建数据访问层 (C#)
 ====================
@@ -79,17 +79,17 @@ ms.lasthandoff: 11/10/2017
 
 - **GetCategories()，**这将返回有关所有类别信息
 - **GetProducts()**，这将返回有关所有产品信息
-- **GetProductsByCategoryID (*categoryID*) * *，这样就会返回属于指定类别的所有产品
-- **GetProductByProductID (*productID*) * *，这样就会返回有关特定产品的信息
+- **GetProductsByCategoryID (*categoryID*)**，这样就会返回属于指定类别的所有产品
+- **GetProductByProductID (*productID*)**，这样就会返回有关特定产品的信息
 
 这些方法，调用时，将连接到数据库、 发出相应的查询，并返回结果。 我们返回这些结果的方式非常重要。 这些方法可能只需返回的数据集或 DataReader 填充数据库查询，但理想情况下这些结果应返回使用*强类型对象*。 强类型的对象是一个在编译时，严格定义其架构而相反，松散类型化的对象，是一个直到运行时才知道其架构。
 
-例如，DataReader 和 （默认） 数据集是松散类型化对象，因为它们的架构定义的用于填充其数据库查询返回的列。 若要从松散类型化的 DataTable 我们需要使用类似的语法访问特定的列：   ***DataTable*。行 [*索引*] ["*columnName*"]**。DataTable 的松散类型在此示例中表现出事实，我们需要访问使用字符串或序号索引的列名称。强类型的数据表，另一方面，将具有每个列实现为属性，从而导致如下所示的代码：   ***DataTable*。行 [*索引*]。*columnName** *。
+例如，DataReader 和 （默认） 数据集是松散类型化对象，因为它们的架构定义的用于填充其数据库查询返回的列。 若要从松散类型化的 DataTable 我们需要使用类似的语法访问特定的列: ***DataTable*。行 [*索引*] ["*columnName *"]**。 DataTable 的松散类型在此示例中表现出事实，我们需要访问使用字符串或序号索引的列名称。 强类型的数据表，另一方面，将具有每个列实现为属性，从而导致如下所示的代码： ***DataTable*。行 [*索引*]。*columnName***。
 
 若要返回强类型对象，开发人员可以创建自己的自定义业务对象或使用类型化数据集。 其属性通常反映基础数据库表的业务对象的列的类表示，开发人员实现业务对象。 类型化数据集是由基于数据库架构和其成员都是根据此架构强类型的 Visual Studio 为你生成一个类。 类型化数据集本身扩展 ADO.NET 数据集、 数据表和 DataRow 类的类组成。 除了强类型的数据表，类型化数据集现在还包括 Tableadapter，是使用的填充数据集的数据表和传播回数据库数据表中的修改的方法的类。
 
 > [!NOTE]
-> 有关的优点和缺点的自定义业务对象与使用类型化数据集的详细信息，请参阅[设计数据层组件和层间传递数据](https://msdn.microsoft.com/en-us/library/ms978496.aspx)。
+> 有关的优点和缺点的自定义业务对象与使用类型化数据集的详细信息，请参阅[设计数据层组件和层间传递数据](https://msdn.microsoft.com/library/ms978496.aspx)。
 
 
 我们将使用这些教程的体系结构相符的强类型化数据集。 图 3 说明了使用类型化数据集的应用程序的不同层之间的工作流。
@@ -114,7 +114,7 @@ ms.lasthandoff: 11/10/2017
 
 类型化数据集用作强类型集合的数据;它由构成的强类型 DataTable 实例，其中每个反过来组成强类型 DataRow 实例。 我们将为每个我们需要使用在本教程系列中的基础数据库表创建强类型的 DataTable。 让我们开始创建用于数据表**产品**表。
 
-请记住，强类型数据表未包括上如何访问其基础数据库表中的数据的任何信息。 为了检索要填充 DataTable 的数据，我们使用一个 TableAdapter 类，该类用作我们的数据访问层。 有关我们**产品**数据表，TableAdapter 将包含方法**GetProducts()**，  **GetProductByCategoryID (*categoryID*) * *，依次类推我们将从表示层中调用。 DataTable 的角色是充当用于在各层之间传递数据的强类型对象。
+请记住，强类型数据表未包括上如何访问其基础数据库表中的数据的任何信息。 为了检索要填充 DataTable 的数据，我们使用一个 TableAdapter 类，该类用作我们的数据访问层。 有关我们**产品**数据表，TableAdapter 将包含方法**GetProducts()**， **GetProductByCategoryID (*categoryID*)**，依次类推我们将从表示层中调用。 DataTable 的角色是充当用于在各层之间传递数据的强类型对象。
 
 TableAdapter 配置向导首先提示你选择要使用的数据库。 下拉列表显示在服务器资源管理器中这些数据库。 如果您不未向服务器资源管理器添加 Northwind 数据库，可以在此时若要这样做单击新建连接按钮。
 
@@ -217,7 +217,7 @@ AllProducts.aspx.cs
 
 此时我们**ProductsTableAdapter**类具有一个方法，但**GetProducts()**，它返回数据库中的所有产品。 在能够使用的所有产品是肯定有用，可以在我们将需要检索有关特定产品或属于特定类别的所有产品的信息的时间。 若要将此类功能添加到我们的数据访问层我们可以向 TableAdapter 添加参数化的方法。
 
-让我们添加 **GetProductsByCategoryID (*categoryID*) * * 方法。 要将新方法添加到 DAL，返回到数据集设计器中，右键单击**ProductsTableAdapter**部分，然后选择添加查询。
+让我们添加**GetProductsByCategoryID (*categoryID*)**方法。 要将新方法添加到 DAL，返回到数据集设计器中，右键单击**ProductsTableAdapter**部分，然后选择添加查询。
 
 
 ![右键单击 TableAdapter，然后选择添加查询](creating-a-data-access-layer-cs/_static/image38.png)
@@ -233,7 +233,7 @@ AllProducts.aspx.cs
 **图 15**： 选择创建**选择**语句其返回行 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image41.png))
 
 
-下一步是定义用于访问数据的 SQL 查询。 由于我们想要返回属于特定类别的产品，我将使用相同**选择**语句从**GetProducts()**，但将添加以下**其中**子句：**其中 CategoryID = @CategoryID** 。  **@CategoryID** 参数到 TableAdapter 向导指示我们正在创建的方法，将需要输入的参数的相应类型 （也就是说，可以为 null 的整数）。
+下一步是定义用于访问数据的 SQL 查询。 由于我们想要返回属于特定类别的产品，我将使用相同**选择**语句从**GetProducts()**，但将添加以下**其中**子句：**其中 CategoryID = @CategoryID** 。 **@CategoryID** 参数到 TableAdapter 向导指示我们正在创建的方法，将需要输入的参数的相应类型 （也就是说，可以为 null 的整数）。
 
 
 [![输入查询以仅返回在指定类别中的产品](creating-a-data-access-layer-cs/_static/image43.png)](creating-a-data-access-layer-cs/_static/image42.png)
@@ -241,7 +241,7 @@ AllProducts.aspx.cs
 **图 16**： 输入以仅返回产品指定类别中的查询 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image44.png))
 
 
-最后一步中我们可以选择数据访问模式，来使用，以及自定义所生成的方法的名称。 填充模式中，让我们将名称更改为**FillByCategoryID**并返回数据表返回模式 ( **获取*X** * 方法)，让我们使用**GetProductsByCategoryID**。
+最后一步中我们可以选择数据访问模式，来使用，以及自定义所生成的方法的名称。 填充模式中，让我们将名称更改为**FillByCategoryID**并返回数据表返回模式 (**获取 * X*** 方法)，让我们使用**GetProductsByCategoryID**.
 
 
 [![选择的 TableAdapter 方法的名称](creating-a-data-access-layer-cs/_static/image46.png)](creating-a-data-access-layer-cs/_static/image45.png)
@@ -257,7 +257,7 @@ AllProducts.aspx.cs
 **图 18**: 产品可以现在查询按类别
 
 
-花些时间添加 **GetProductByProductID (*productID*) * * 使用相同的技术的方法。
+花些时间添加**GetProductByProductID (*productID*)**方法使用相同的技术。
 
 这些参数化的查询可以直接从数据集设计器进行测试。 右键单击 TableAdapter 中的方法，然后选择预览数据。 接下来，输入要使用的参数并单击预览的值。
 
@@ -267,7 +267,7 @@ AllProducts.aspx.cs
 **图 19**： 显示那些产品属于饮料类别 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image51.png))
 
 
-与 **GetProductsByCategoryID (*categoryID*) * * 我们 DAL 中的方法，我们现在可以创建仅显示那些产品指定类别中的 ASP.NET 页。 下面的示例显示的所有产品中饮料类别中，其具有**CategoryID**为 1。
+与**GetProductsByCategoryID (*categoryID*)**方法中我们 DAL，我们现在可以创建仅显示那些产品指定类别中的 ASP.NET 页。 下面的示例显示的所有产品中饮料类别中，其具有**CategoryID**为 1。
 
 Beverages.asp
 
@@ -293,7 +293,7 @@ Beverages.aspx.cs
 **图 21**： 每个插入、 更新和删除请求发送到数据库立即 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image57.png))
 
 
-其他模式，我将引用以作为批处理更新模式，是更新整个数据集、 数据表或在一个方法调用中返回数据行的集合。 此模式与开发人员删除、 插入和修改数据表中的 Datarow，然后将这些数据行或 DataTable 传递给的更新方法。 此方法然后枚举传入 Datarow，确定是否它们已被修改、 添加或删除 (通过 DataRow 的[RowState 属性](https://msdn.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx)值)，因此会发出每个记录的相应数据库请求。
+其他模式，我将引用以作为批处理更新模式，是更新整个数据集、 数据表或在一个方法调用中返回数据行的集合。 此模式与开发人员删除、 插入和修改数据表中的 Datarow，然后将这些数据行或 DataTable 传递给的更新方法。 此方法然后枚举传入 Datarow，确定是否它们已被修改、 添加或删除 (通过 DataRow 的[RowState 属性](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx)值)，因此会发出每个记录的相应数据库请求。
 
 
 [![调用更新方法时，所有更改将与数据库都同步](creating-a-data-access-layer-cs/_static/image59.png)](creating-a-data-access-layer-cs/_static/image58.png)
@@ -339,7 +339,7 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 **图 25**： 创建一个要向其中添加新建行方法**产品**表 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image69.png))
 
 
-在下一个屏幕**InsertCommand**的**CommandText**显示。 通过添加增强此查询**选择作用域\_IDENTITY()**在查询结束时，这将返回插入到的最后一个标识值**标识**同一范围内的列。 (请参阅[技术文档](https://msdn.microsoft.com/en-us/library/ms190315.aspx)有关详细信息**作用域\_IDENTITY()**以及为何可能愿意[使用范围\_IDENTITY() 替代的 @@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).)请确保你最终**插入**用分号的语句才能添加**选择**语句。
+在下一个屏幕**InsertCommand**的**CommandText**显示。 通过添加增强此查询**选择作用域\_IDENTITY()**在查询结束时，这将返回插入到的最后一个标识值**标识**同一范围内的列。 (请参阅[技术文档](https://msdn.microsoft.com/library/ms190315.aspx)有关详细信息**作用域\_IDENTITY()**以及为何可能愿意[使用范围\_IDENTITY() 替代的 @@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).)请确保你最终**插入**用分号的语句才能添加**选择**语句。
 
 
 [![增加查询返回 scope_identity （） 值](creating-a-data-access-layer-cs/_static/image71.png)](creating-a-data-access-layer-cs/_static/image70.png)
@@ -391,7 +391,7 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 **图 30**:**产品**DataTable 具有两个新列
 
 
-花一些时间来更新**选择**中的子句 **GetProductsByCategoryID (*categoryID*) * * 以及方法。
+花一些时间来更新**选择**中的子句**GetProductsByCategoryID (*categoryID*)**以及方法。
 
 如果你更新**GetProducts()** **选择**使用**加入**语法数据集设计器将无法自动生成用于插入、 更新和删除方法使用数据库直接模式的数据库数据。 相反，你将需要手动创建它们更像与我们**InsertProduct**本教程中前面的方法。 此外，手动将需要提供**InsertCommand**， **UpdateCommand**，和**DeleteCommand**属性值，则如果你想要使用批更新模式。
 
@@ -399,7 +399,7 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 
 直到现在，我们只介绍了使用单个 TableAdapter 的单个数据库表。 但是，Northwind 数据库包含我们将需要使用我们的 web 应用程序中的多个相关的表。 类型化数据集可以包含多个相关数据表。 因此，若要完成我们 DAL，我们需要将数据表添加我们将在这些教程中使用的其他表。 若要将新的 TableAdapter 添加到类型化数据集，打开数据集设计器，在设计器中，右键单击并选择添加 / TableAdapter。 这将创建新的 DataTable 和 TableAdapter，并引导你完成本教程中前面部分中，我们探讨向导。
 
-需要几分钟才能创建以下 Tableadapter 和使用下面的查询的方法。 请注意，中的查询**ProductsTableAdapter**包括子查询中获取每个产品类别和供应商名称。 此外，如果你已已之后，你已添加**ProductsTableAdapter**类的**GetProducts()**和 **GetProductsByCategoryID (*categoryID*) * * 方法。
+需要几分钟才能创建以下 Tableadapter 和使用下面的查询的方法。 请注意，中的查询**ProductsTableAdapter**包括子查询中获取每个产品类别和供应商名称。 此外，如果你已已之后，你已添加**ProductsTableAdapter**类的**GetProducts()**和**GetProductsByCategoryID (*categoryID*)**方法。
 
 - **ProductsTableAdapter**
 
@@ -520,11 +520,11 @@ SuppliersAndProducts.aspx.cs
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
 - [生成使用强类型化的 Tableadapter 和 VS 2005 和 ASP.NET 2.0 中的数据表 DAL](https://weblogs.asp.net/scottgu/435498)
-- [设计数据层组件和层间传递数据](https://msdn.microsoft.com/en-us/library/ms978496.aspx)
+- [设计数据层组件和层间传递数据](https://msdn.microsoft.com/library/ms978496.aspx)
 - [生成与 Visual Studio 2005 数据集设计器的数据访问层](http://www.theserverside.net/articles/showarticle.tss?id=DataSetDesigner)
 - [加密 ASP.NET 2.0 中的配置信息的应用程序](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)
-- [TableAdapter 概述](https://msdn.microsoft.com/en-us/library/bz9tthwx.aspx)
-- [使用类型化数据集](https://msdn.microsoft.com/en-us/library/esbykkzb.aspx)
+- [TableAdapter 概述](https://msdn.microsoft.com/library/bz9tthwx.aspx)
+- [使用类型化数据集](https://msdn.microsoft.com/library/esbykkzb.aspx)
 - [使用 Visual Studio 2005 和 ASP.NET 2.0 中的强类型数据访问](http://aspnet.4guysfromrolla.com/articles/020806-1.aspx)
 - [如何扩展 TableAdapter 方法](https://blogs.msdn.com/vbteam/archive/2005/05/04/ExtendingTableAdapters.aspx)
 - [从存储过程中检索标量数据](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)

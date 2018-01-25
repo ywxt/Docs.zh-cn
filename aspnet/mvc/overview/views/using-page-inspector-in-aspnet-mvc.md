@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 6aa9f16f166ecf5529ae33a17951eb5ea425e7af
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5b443963a089f96a9dab11b7db4a25451075d6be
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-page-inspector-in-aspnet-mvc"></a>在 ASP.NET MVC 中使用 Page Inspector
 ====================
@@ -44,9 +44,9 @@ ms.lasthandoff: 11/10/2017
 
 <a id="_prerequisites"></a><a id="_1_prerequisites"></a>
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
-- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11/en-us)或[Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web)。
+- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11)或[Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/11/downloads#express-web)。
 
 > [!NOTE]
 > 若要获取 Page Inspector 的最新版本，请使用[Web 平台安装程序](https://go.microsoft.com/fwlink/?LinkId=255386)要安装 Windows Azure SDK for.NET 2.0。
@@ -62,7 +62,7 @@ Page Inspector 绑定了 Microsoft Web 开发人员工具。 最新版本是 1.3
 
 ![新的 ASP.NET MVC 应用程序](using-page-inspector-in-aspnet-mvc/_static/image2.png)
 
-单击“确定”。
+单击 **“确定”**。
 
 在**新建 ASP.NET MVC 4 项目**对话框中，选择**Internet 应用程序**。 保留**Razor**作为默认视图引擎。
 
@@ -84,9 +84,9 @@ Page Inspector 绑定了 Microsoft Web 开发人员工具。 最新版本是 1.3
 
 ![在 Page Inspector 中查看 Index.cshtml](using-page-inspector-in-aspnet-mvc/_static/image8.png)
 
-默认情况下，Page Inspector 是作为窗口停靠在 Visual Studio 环境的左侧。 如果你愿意，你可以在其他位置，停靠或取消停靠该窗口。 请参阅[如何： 排列和停靠窗口](https://msdn.microsoft.com/en-us/library/z4y0hsax.aspx)。
+默认情况下，Page Inspector 是作为窗口停靠在 Visual Studio 环境的左侧。 如果你愿意，你可以在其他位置，停靠或取消停靠该窗口。 请参阅[如何： 排列和停靠窗口](https://msdn.microsoft.com/library/z4y0hsax.aspx)。
 
-页面检查器窗口的顶部窗格会在浏览器窗口显示当前页。 底部窗格中显示的页在 HTML 标记中，以及某些选项卡，用于检查页的不同方面。 在底部窗格中，类似于[F12 开发人员工具](https://msdn.microsoft.com/en-us/ie/aa740478)在 Internet Explorer 中。
+页面检查器窗口的顶部窗格会在浏览器窗口显示当前页。 底部窗格中显示的页在 HTML 标记中，以及某些选项卡，用于检查页的不同方面。 在底部窗格中，类似于[F12 开发人员工具](https://msdn.microsoft.com/ie/aa740478)在 Internet Explorer 中。
 
 ![在 Page Inspector 的 ASP.NET MVC 应用程序](using-page-inspector-in-aspnet-mvc/_static/image10.png)
 
@@ -243,7 +243,7 @@ Page Inspector 将立即检测到更改*Site.css*文件并更新栏中显示警�
 > SPA 模板需要[ASP.NET 和 Web Tools 2012.2](https://go.microsoft.com/fwlink/?LinkId=282650)更新。
 
 
-在 Visual Studio 中，选择**文件** &gt; **新项目**。 在左侧，展开**Visual C#**，选择**Web**，然后选择**ASP.NET MVC4 Web 应用程序**。 单击“确定”。
+在 Visual Studio 中，选择**文件** &gt; **新项目**。 在左侧，展开**Visual C#**，选择**Web**，然后选择**ASP.NET MVC4 Web 应用程序**。 单击 **“确定”**。
 
 在**新建 ASP.NET MVC 4 项目**对话框中，选择**单页面应用程序**。
 
@@ -269,7 +269,7 @@ Page Inspector 将立即检测到更改*Site.css*文件并更新栏中显示警�
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image50.png)
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [使用 Visual Studio 的 ASP.NET MVC 4 简介](../older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4.md)（ASP.net 网站）
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 60301e1e3eb96f51e86ef9f8be61f5fd8a4c009c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 6fc356d8ecc1b699269286f244000b493e48a2c5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>在 ASP.NET Core HTTP.sys web 服务器实现
 
@@ -140,7 +140,7 @@ HTTP.sys 使用[HTTP 服务器 API UrlPrefix 字符串格式](https://msdn.micro
 
 ## <a name="preregister-url-prefixes-and-configure-ssl"></a>预先注册 URL 前缀和配置 SSL
 
-IIS 和 HTTP.sys 依赖于基础 Http.Sys 内核模式驱动程序以侦听请求，并执行初始处理。 在 IIS 中，管理 UI 也提供相对简单的方式，来配置所有内容。 但是，你需要自行配置 Http.Sys。 执行操作，它是内置工具*netsh.exe*。 
+IIS 和 HTTP.sys 依赖于基础 Http.Sys 内核模式驱动程序以侦听请求，并执行初始处理。 在 IIS 中，管理 UI 也提供相对简单的方式，来配置所有内容。 但是，你需要自行配置 Http.Sys。 用于执行该操作的内置工具的*netsh.exe*。 
 
 与*netsh.exe*可以保留 URL 前缀，还可以将 SSL 证书分配。 该工具需要管理权限。
 

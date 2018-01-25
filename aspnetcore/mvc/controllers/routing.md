@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/routing
-ms.openlocfilehash: 7559fa270a012082d04161c1cccd1dc8151d0c1c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 497ce47fa567f163cb7b1eb891408f0100d15b8a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="routing-to-controller-actions"></a>路由到控制器操作
 
@@ -65,7 +65,7 @@ routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
 
 默认和可选的路由参数不需要必须包含在匹配项的 URL 路径中。 请参阅[路由模板参考](../../fundamentals/routing.md#route-template-reference)有关路由模板语法的详细说明。
 
-`"{controller=Home}/{action=Index}/{id?}"`可以与匹配的 URL 路径`/`并将生成路由值`{ controller = Home, action = Index }`。 值`controller`和`action`进行的默认值，使用`id`不会生成一个值，因为 URL 路径中没有相应的段。 MVC 将使用这些路由值选择`HomeController`和`Index`操作：
+`"{controller=Home}/{action=Index}/{id?}"`可以与匹配的 URL 路径`/`并将生成路由值`{ controller = Home, action = Index }`。 值`controller`和`action`进行的默认值，使用`id`不会生成一个值，这是因为 URL 路径中没有相应的段。 MVC 将使用这些路由值选择`HomeController`和`Index`操作：
 
 ```csharp
 public class HomeController : Controller
@@ -114,7 +114,7 @@ routes.DefaultHandler = new MvcRouteHandler(...);
 app.UseRouter(routes.Build());
 ```
 
-`UseMvc`未直接定义任何路由，它将占位符添加到的路由集合`attribute`路由。 重载`UseMvc(Action<IRouteBuilder>)`可通过添加你自己的路由，同时支持的属性路由。  `UseMvc`和所有其变体将添加的属性路由的占位符-始终无论你如何配置可用的属性路由是`UseMvc`。 `UseMvcWithDefaultRoute`定义一个默认路由，并支持的属性路由。 [的属性路由](#attribute-routing-ref-label)部分包括更多详细信息的属性路由。
+`UseMvc`不直接定义任何路由，它将占位符添加到的路由集合`attribute`路由。 重载`UseMvc(Action<IRouteBuilder>)`可通过添加你自己的路由，同时支持的属性路由。  `UseMvc`和所有其变体将添加的属性路由的占位符-始终无论你如何配置可用的属性路由是`UseMvc`。 `UseMvcWithDefaultRoute`定义一个默认路由，并支持的属性路由。 [的属性路由](#attribute-routing-ref-label)部分包括更多详细信息的属性路由。
 
 <a name="routing-conventional-ref-label"></a>
 
@@ -134,13 +134,13 @@ routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
 
 * 第三个段适用于一个可选`id`用于将映射到模型实体
 
-使用此`default`路由、 URL path`/Products/List`映射到`ProductsController.List`操作，和`/Blog/Article/17`映射到`BlogController.Article`。 此映射基于控制器和操作名称**仅**和不基于命名空间、 源文件位置或方法参数。
+使用此`default`路由、 URL path`/Products/List`映射到`ProductsController.List`操作，和`/Blog/Article/17`映射到`BlogController.Article`。 此映射基于控制器和操作名称**仅**并且不基于命名空间、 源文件位置或方法参数。
 
 > [!TIP]
 > 使用传统路由与默认路由，可快速生成应用程序，而无需附带你定义每个操作的新 URL 模式。 包含 CRUD 样式操作的应用程序，在你的控制器之间的 url 具有一致性可以帮助简化你的代码，使你的 UI 更可预测。
 
 > [!WARNING]
-> `id`由路由模板，这意味着你的操作可以执行而作为 URL 的一部分提供的 ID 没有定义为可选。 通常将发生如果`id`URL 中省略是将设置为`0`模型绑定，以及因此导致的任何实体将位于数据库匹配`id == 0`。 属性路由可以为你提供细化的控制，以使某些操作而不是针对其他所需的 ID。 按照约定，文档将包括可选参数喜欢`id`它们是大可能出现的正确用法。
+> `id`由路由模板，这意味着你的操作可以执行而作为 URL 的一部分提供的 ID 没有定义为可选。 通常将发生如果`id`URL 中省略是将设置为`0`模型绑定，以及因此导致的任何实体将位于数据库匹配`id == 0`。 属性路由可以为你提供细化的控制，以使某些操作而不是针对其他所需的 ID。 按照约定，文档将包括可选参数喜欢`id`它们何时可能会出现在正确用法。
 
 ## <a name="multiple-routes"></a>多个路由
 
@@ -157,14 +157,14 @@ app.UseMvc(routes =>
 
 `blog`路由此处*专用的常规路由*，这意味着它使用与传统的路由系统，但专用于特定的操作。 由于`controller`和`action`不在路由模板中显示为参数，它们只能有默认值，并且因此此路由将始终映射到操作`BlogController.Article`。
 
-路由集合中的路由进行排序，并将它们添加的顺序处理。 因此，在此示例中，`blog`路由将尝试之前`default`路由。
+路由集合中的路由进行排序，并将其添加顺序处理。 因此，在此示例中，`blog`路由将尝试之前`default`路由。
 
 > [!NOTE]
 > *专用传统路由*通常使用类似的全方位路由参数`{*article}`捕获的 URL 路径的剩余部分。 这可以使路由太贪婪这意味着它匹配你想要匹配的其他路由的 Url。 将贪婪路由放更高版本中的路由表，为了解决此问题。
 
 ### <a name="fallback"></a>回退
 
-作为请求处理过程中，MVC 将验证路由值可以用于在你的应用程序中查找控制器和操作。 如果路由值不匹配操作然后路由不被视为匹配项，并将尝试下一个路由。 这称为*回退*，并且它具有旨在简化其中传统路由重叠的情况。
+作为请求处理过程中，MVC 将验证路由值可以用于在你的应用程序中查找控制器和操作。 如果路由值不匹配操作然后路由不会被视为匹配项，并将尝试下一个路由。 这称为*回退*，并且它具有旨在简化其中传统路由重叠的情况。
 
 ### <a name="disambiguating-actions"></a>消除歧义操作
 
@@ -184,7 +184,7 @@ public class ProductsController : Controller
 
 `HttpPostAttribute` ( `[HttpPost]` ) 实现的`IActionConstraint`，将只允许的操作的 HTTP 谓词时选择`POST`。 是否存在`IActionConstraint`使`Edit(int, Product)`好匹配比`Edit(int)`，因此`Edit(int, Product)`将首先尝试。
 
-你只需编写自定义`IActionConstraint`中专业的方案，但它实现的重要了解这样的属性的角色`HttpPostAttribute`-类似特性定义用于其他 HTTP 谓词。 传统的路由中很常见的操作时要使用相同的操作名称是它们属于`show form -> submit form`工作流。 此模式的便利性将变得更加明显复查[了解 IActionConstraint](#understanding-iactionconstraint)部分。
+你只需编写自定义`IActionConstraint`中专业的方案，但它实现的重要了解这样的属性的角色`HttpPostAttribute`-类似特性定义用于其他 HTTP 谓词。 传统的路由中很常见的操作时要使用相同的操作名称它们都属于`show form -> submit form`工作流。 此模式的便利性将变得更加明显复查[了解 IActionConstraint](#understanding-iactionconstraint)部分。
 
 如果多个路由都不匹配，并且 MVC 找不到最佳路由，它会引发`AmbiguousActionException`。
 
@@ -206,7 +206,7 @@ app.UseMvc(routes =>
 
 路由名称给予路由，以便命名的路由可以用于 URL 生成，此逻辑名称。 这极大地简化了 URL 创建，当路由的顺序可能使复杂的 URL 生成。 路由名称必须是唯一的应用程序范围。
 
-路由名称将不会影响对 URL 匹配或处理的请求;它们仅用于 URL 生成。 [路由](xref:fundamentals/routing)的更多详细信息包括特定于 MVC 的帮助器中的 URL 生成的 URL 生成。
+路由名称将不会影响对 URL 匹配或处理的请求;它们是仅用于 URL 生成。 [路由](xref:fundamentals/routing)的更多详细信息包括特定于 MVC 的帮助器中的 URL 生成的 URL 生成。
 
 <a name="attribute-routing-ref-label"></a>
 
@@ -340,9 +340,9 @@ public class ProductsApiController : Controller
 }
 ```
 
-在此示例中的 URL 路径`/products`可以匹配`ProductsApi.ListProducts`，和的 URL 路径`/products/5`可以匹配`ProductsApi.GetProduct(int)`。 这两种操作只匹配 HTTP`GET`因为使用了修饰`HttpGetAttribute`。
+在此示例中的 URL 路径`/products`可以匹配`ProductsApi.ListProducts`，和的 URL 路径`/products/5`可以匹配`ProductsApi.GetProduct(int)`。 这两种操作只匹配 HTTP`GET`因为它们用修饰`HttpGetAttribute`。
 
-将路由应用于开头的操作的模板`/`执行不获取结合应用到控制器的路由模板。 此示例匹配一组的 URL 路径类似于*默认路由*。
+将路由应用于开头的操作的模板`/`不获取结合应用到控制器的路由模板。 此示例匹配一组的 URL 路径类似于*默认路由*。
 
 ```csharp
 [Route("Home")]
@@ -350,7 +350,7 @@ public class HomeController : Controller
 {
     [Route("")]      // Combines to define the route template "Home"
     [Route("Index")] // Combines to define the route template "Home/Index"
-    [Route("/")]     // Does not combine, defines the route template ""
+    [Route("/")]     // Doesn't combine, defines the route template ""
     public IActionResult Index()
     {
         ViewData["Message"] = "Home index";
@@ -569,7 +569,7 @@ MVC 生成查找表的所有属性路由操作，并将匹配`controller`和`act
 
 ### <a name="generating-urls-by-route"></a>生成 Url 的路由
 
-上面的代码演示了通过在控制器和操作名称的传入生成 URL。 `IUrlHelper`此外提供了`Url.RouteUrl`系列的方法。 这些方法是类似于`Url.Action`，但不是将复制的当前值`action`和`controller`为路由的值。 最常见用法是指定要使用特定的路由来生成 URL，通常的路由名称*而无需*指定控制器或操作名称。
+上面的代码演示了通过在控制器和操作名称的传入生成 URL。 `IUrlHelper`此外提供了`Url.RouteUrl`系列的方法。 这些方法是类似于`Url.Action`，但他们不复制的当前值`action`和`controller`为路由的值。 最常见用法是指定要使用特定的路由来生成 URL，通常的路由名称*而无需*指定控制器或操作名称。
 
 [!code-csharp[Main](routing/sample/main/Controllers/UrlGenerationControllerRouting.cs?name=snippet_1)]
 
@@ -640,7 +640,7 @@ app.UseMvc(routes =>
 `MapAreaRoute`创建使用的默认值和约束的路由`area`使用提供的区域的名称，在这种情况下`Blog`。 默认值可确保路由始终生成`{ area = Blog, ... }`，约束要求值`{ area = Blog, ... }`URL 生成的。
 
 > [!TIP]
-> 传统的路由与顺序相关。 一般情况下，具有区域路由应放在路由表的前面部分中因为它们是更具体相比没有区域的路由。
+> 传统的路由与顺序相关。 一般情况下，具有区域路由应会放在路由表的前面部分中它们比没有区域的路由更具体。
 
 使用上面的示例中，路由值将匹配的以下操作：
 
@@ -657,7 +657,7 @@ app.UseMvc(routes =>
 > [!NOTE]
 > 出于完整性考虑此处显示的每个控制器的命名空间-否则控制器必须命名冲突并生成编译器错误。 类命名空间具有对 MVC 的路由没有影响。
 
-前两个控制器是区域的成员，仅匹配时提供其各自领域名`area`路由值。 第三个控制器不是任何区域中和可以唯一匹配项的任何值时的成员`area`提供的路由。
+前两个控制器是区域的成员，仅匹配时提供其各自领域名`area`路由值。 第三个控制器不是任何区域中，并且可以唯一匹配的任何值时的成员`area`提供的路由。
 
 > [!NOTE]
 > 根据匹配*没有值*，缺少`area`值均相同就像的值`area`了 null 或空字符串。
@@ -689,7 +689,7 @@ public class ProductsController : Controller
 
 假定默认传统路由的 URL 路径`/Products/Edit`会产生值`{ controller = Products, action = Edit }`，将匹配的**同时**此处显示的操作。 在`IActionConstraint`术语我们会说，这两种操作都视为候选项-因为它们都匹配的路由数据。
 
-当`HttpGetAttribute`执行，它将说*edit （)*是的匹配项*获取*并且不是任何其他 HTTP 谓词的匹配项。 `Edit(...)`操作没有任何约束定义，并因此将匹配的任何 HTTP 谓词。 因此假设`POST`-仅`Edit(...)`匹配。 但对于`GET`这两种操作仍可以与匹配-但是，操作与`IActionConstraint`始终被认为是*更好*比操作而无需。 因此因为`Edit()`具有`[HttpGet]`它被视为更具体，并且如果这两种操作可以匹配将选择。
+当`HttpGetAttribute`执行，它将说*edit （)*是的匹配项*获取*，无任何其他 HTTP 谓词的匹配项。 `Edit(...)`操作没有任何约束定义，并因此将匹配的任何 HTTP 谓词。 因此假设`POST`-仅`Edit(...)`匹配。 但对于`GET`这两种操作仍可以与匹配-但是，操作与`IActionConstraint`始终被认为是*更好*比操作而无需。 因此因为`Edit()`具有`[HttpGet]`它被视为更具体，并且如果这两种操作可以匹配将选择。
 
 从概念上讲，`IActionConstraint`是一种形式*重载*，但而不重载具有相同名称的方法，它重载之间的相同 URL 匹配的操作。 属性路由还使用`IActionConstraint`并且可能会导致在操作的不同控制器从这两个正在考虑的候选项。
 
@@ -697,7 +697,7 @@ public class ProductsController : Controller
 
 ### <a name="implementing-iactionconstraint"></a>实现 IActionConstraint
 
-若要实现的最简单方法`IActionConstraint`是创建派生自的类`System.Attribute`并将其置于你的操作和控制器。 MVC 将自动发现任何`IActionConstraint`，应用作为属性。 你可用于应用程序模型应用约束，并且这可能是最灵活的方法，因为它允许您如何应用的好处。
+若要实现的最简单方法`IActionConstraint`是创建派生自的类`System.Attribute`并将其置于你的操作和控制器。 MVC 将自动发现任何`IActionConstraint`，应用作为属性。 你可用于应用程序模型应用约束，并且这可能是最灵活的方法，因为它允许您应用方式的好处。
 
 在下面的示例约束选择相应的措施*国家/地区代码*从路线数据。 [GitHub 上完整示例](https://github.com/aspnet/Entropy/blob/dev/samples/Mvc.ActionConstraintSample.Web/CountrySpecificAttribute.cs)。
 

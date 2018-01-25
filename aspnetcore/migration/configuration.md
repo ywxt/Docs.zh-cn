@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/configuration
-ms.openlocfilehash: 90d9f730d31c2c70aec3d47610b9031a7d8e621b
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 51665059d1d803cbe57bc9a884a0e91eac9e7cb4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrating-configuration"></a>迁移配置
 
@@ -33,7 +33,7 @@ ASP.NET 核心不再使用*Global.asax*和*web.config* ASP.NET 的早期版本�
 
 [!code-csharp[Main](configuration/samples/WebApp1/src/WebApp1/Startup.cs?range=11-21)]
 
-请注意，此时， *Startup.cs*文件将不进行编译，因为我们仍需要将以下内容添加`using`语句：
+请注意，此时， *Startup.cs*文件将无法编译，因为我们仍需要将以下内容添加`using`语句：
 
 ```csharp
 using Microsoft.Extensions.Configuration;

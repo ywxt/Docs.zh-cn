@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: 5b5645936504333573950b5bd17f5a037ffd984f
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d844e2a69e4bbfdf3942f2666ead0047bdf83b7a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>创建复杂的数据模型的 EF 内核，它们有 ASP.NET 核心 MVC 教程 (5 的 10)
 
@@ -39,9 +39,9 @@ Contoso 大学示例 web 应用程序演示如何创建使用实体框架核心�
 
 [!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
-`DataType` 特性用于指定比数据库内部类型更具体的数据类型。 在这种情况下，我们只想跟踪的日期，不的日期和时间。 `DataType`枚举提供了许多数据类型，例如日期、 时间、 电话号码、 货币、 电子邮件地址，和的详细信息。 应用程序还可通过 `DataType` 特性自动提供类型特定的功能。 例如，可以为 `DataType.EmailAddress` 创建 `mailto:` 链接，并且可以在支持 HTML5 的浏览器中为 `DataType.Date` 提供日期选择器。 `DataType`属性发出 HTML 5 `data-` HTML 5 浏览器可以理解的 (读作的数据 dash) 属性。 `DataType`属性不提供任何验证。
+`DataType`属性用于指定比数据库内部类型更具体的数据类型。 在这种情况下，我们只想跟踪的日期，不的日期和时间。 `DataType`枚举提供了许多数据类型，例如日期、 时间、 电话号码、 货币、 电子邮件地址，和的详细信息。 应用程序还可通过 `DataType` 特性自动提供类型特定的功能。 例如，可以为 `DataType.EmailAddress` 创建 `mailto:` 链接，并且可以在支持 HTML5 的浏览器中为 `DataType.Date` 提供日期选择器。 `DataType`属性发出 HTML 5 `data-` HTML 5 浏览器可以理解的 (读作的数据 dash) 属性。 `DataType`属性未提供任何验证。
 
-`DataType.Date` 不指定显示日期的格式。 默认情况下，根据基于服务器的 CultureInfo 的默认格式显示数据字段。
+`DataType.Date`未指定的日期的显示格式。 默认情况下，根据基于服务器的 CultureInfo 的默认格式显示数据字段。
 
 `DisplayFormat` 特性用于显式指定日期格式：
 
@@ -103,7 +103,7 @@ dotnet ef database update
 
 特性还可用于控制如何类和属性映射到数据库。 假设你已使用名称`FirstMidName`的第一个名称字段，因为该字段还可能包含中间名。 但你想要将名为的数据库列`FirstName`，因为将编写针对数据库的即席查询的用户习惯于该名称。 若要使此映射，你可以使用`Column`属性。
 
-`Column`属性指定当创建数据库时，列`Student`映射到表`FirstMidName`属性将被命名为`FirstName`。 换而言之，你的代码引用到`Student.FirstMidName`，数据将来自或在中更新`FirstName`列`Student`表。 如果未指定列名称，系统会提供与属性名相同的名称。
+`Column`属性指定当创建数据库时，列`Student`映射到表`FirstMidName`属性将被命名为`FirstName`。 换而言之，你的代码引用到`Student.FirstMidName`，数据将来自或在中更新`FirstName`列`Student`表。 如果未指定列名称，所提供的属性名称与同名。
 
 在*Student.cs*文件中，添加`using`语句`System.ComponentModel.DataAnnotations.Schema`并添加到的列名称属性`FirstMidName`属性，如以下突出显示的代码中所示：
 
@@ -125,7 +125,7 @@ dotnet ef database update
 
 ![在 SSOX 中后迁移的学生表](complex-data-model/_static/ssox-after-migration.png)
 
-应用前两个迁移之前，名称列中的 nvarchar (max) 类型。 它们现在是 nvarchar(50) 和列名称已从 FirstMidName 更改为名字。
+应用前两个迁移之前，名称列中的 nvarchar (max) 类型。 它们现在 nvarchar(50) 和列名称已从更改 FirstMidName 为 FirstName。
 
 > [!Note]
 > 如果您尝试编译完成下列部分中创建的所有实体类之前，你可能会收到编译器错误。
@@ -140,7 +140,7 @@ dotnet ef database update
 
 ### <a name="the-required-attribute"></a>必需的特性
 
-`Required`特性使名称属性必填的字段。 `Required`属性不需要不可为 null 的类型，如值类型 (DateTime、 int、 double、 float 等。)。 不能为 null 的类型是自动被视为必填字段。
+`Required`特性使名称属性必填的字段。 `Required`属性不所需的不可为 null 的类型，如值类型 (DateTime、 int、 double、 float 等。)。 不能为 null 的类型是自动被视为必填字段。
 
 无法删除`Required`属性并将其替换的最小长度参数`StringLength`属性：
 
@@ -231,7 +231,7 @@ Instructor 实体具有为 null`OfficeAssignment`导航属性 （因为教师可
 
 课程实体具有外键属性`DepartmentID`它指向相关的部门实体和它具有`Department`导航属性。
 
-实体框架不要求你将外键属性添加到你的数据模型，当你具有相关实体的导航属性时。  EF 自动在数据库中创建外键，在需要的位置和创建[隐藏属性](https://docs.microsoft.com/ef/core/modeling/shadow-properties)它们。 但是，数据模型中具有外键可以使更新更简单、 更高效。 例如，当你提取要编辑的课程实体，部门实体为 null 时，如果你不加载它，当你更新课程实体中，你将需要来首次读取部门实体。 当外键属性`DepartmentID`包含在数据模型中，你无需更新之前提取部门实体。
+实体框架不要求你将外键属性添加到你的数据模型，当你具有相关实体的导航属性时。  EF 自动只要在需要在数据库中创建外键，并创建[隐藏属性](https://docs.microsoft.com/ef/core/modeling/shadow-properties)它们。 但是，数据模型中具有外键可以使更新更简单、 更高效。 例如，当你提取要编辑的课程实体，部门实体为 null 时，如果你不加载它，当你更新课程实体中，你将需要来首次读取部门实体。 当外键属性`DepartmentID`包含在数据模型中，你无需更新之前提取部门实体。
 
 ### <a name="the-databasegenerated-attribute"></a>DatabaseGenerated 属性
 
@@ -308,7 +308,7 @@ public ICollection<Course> Courses { get; set; }
 ```
 
 > [!NOTE]
-> 按照约定，实体框架使级联删除对于不可为 null 的外键以及多对多关系。 这可能导致循环的级联删除规则，当你尝试添加迁移时，将导致异常。 例如，如果你未定义 Department.InstructorID 属性为可为 null，EF 会配置一个级联删除规则，以删除部门，这不是你希望能够发生时删除教师。 如果您的业务规则需要`InstructorID`属性不可为 null，你必须使用以下 fluent API 语句若要禁用的关系上的级联删除：
+> 按照约定，实体框架使级联删除对于不可为 null 的外键以及多对多关系。 这可能导致循环的级联删除规则，当你尝试添加迁移时，将导致异常。 例如，如果你未定义 Department.InstructorID 属性为可为 null，EF 会配置一个级联删除规则，以删除部门，这并不是你想要发生时删除教师。 如果您的业务规则需要`InstructorID`属性不可为 null，你必须使用以下 fluent API 语句若要禁用的关系上的级联删除：
 > ```csharp
 > modelBuilder.Entity<Department>()
 >    .HasOne(d => d.Administrator)

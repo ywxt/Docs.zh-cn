@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 7d89416626433bf737b63eda4b17e65b089ae142
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: aab96b5313a8632950e51f5586612c1d0d3d176e
+ms.sourcegitcommit: 83b5a4715fd25e4eb6f7c8427c0ef03850a7fa07
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="options-pattern-in-aspnet-core"></a>在 ASP.NET Core 选项模式
 
 作者：[Luke Latham](https://github.com/guardrex)
 
-选项模式使用选项类代表一组相关的设置。 当配置设置按功能隔离到单独的选项类别时，应用程序遵循两个重要软件工程原则：
+选项模式使用选项类来表示相关设置的组。 当配置设置按功能隔离到单独的选项类别时，应用程序遵循两个重要软件工程原则：
 
 * [接口分隔原则 (ISP)](http://deviq.com/interface-segregation-principle/)： 依赖于配置设置的功能 （类） 仅取决于它们使用的配置设置。
 * [关注点分离](http://deviq.com/separation-of-concerns/)： 应用程序的不同部分的设置不依赖或耦合到另一个。
@@ -258,6 +258,12 @@ services.PostConfigureAll<MyOptions>("named_options_1", myOptions =>
 [IOptionsFactory&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1) (ASP.NET Core 2.0 或更高版本) 负责，创建新选项实例。 它具有单个[创建](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1.create)方法。 默认实现将所有已注册`IConfigureOptions`和`IPostConfigureOptions`并运行所有配置第一次后, 跟后配置。 它区分`IConfigureNamedOptions`和`IConfigureOptions`且仅调用适当的接口。
 
 [IOptionsMonitorCache&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1) (ASP.NET Core 2.0 或更高版本) 由`IOptionsMonitor`缓存`TOptions`实例。 `IOptionsMonitorCache`失效监视器中的选项实例，以便重新计算值 ([TryRemove](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.tryremove))。 值可以手动引入以及[TryAdd](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.tryadd)。 [清除](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.clear)时应该按需重新创建所有的命名的实例使用方法。
+
+## <a name="accessing-options-during-startup"></a>在启动期间访问选项
+
+`IOptions`可在`Configure`，因为服务已内置之前`Configure`方法执行。 如果服务提供程序生成`ConfigureServices`若要访问选项，它不包含任何选项生成服务提供程序后，系统提供的配置。 因此，由于服务注册的顺序可能存在不一致的选项状态。
+
+由于选项通常加载从配置中，可以在启动中使用配置`Configure`和`ConfigureServices`。 使用在启动过程中的配置的示例，请参阅[应用程序启动](xref:fundamentals/startup)主题。
 
 ## <a name="see-also"></a>请参阅
 

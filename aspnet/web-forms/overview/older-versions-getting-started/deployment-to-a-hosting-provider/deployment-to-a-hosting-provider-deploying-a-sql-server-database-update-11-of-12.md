@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 898259885da8a089db296bd0f400ee8863877d08
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aeec69c7373a111d30e8f32a374a9f02fb4c080a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-sql-server-database-update---11-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 部署 SQL Server 数据库更新-11 12
 ====================
@@ -153,7 +153,7 @@ Code First 迁移更新数据库相同的方式在测试环境中做过它。 �
 
 ## <a name="more-information"></a>详细信息
 
-这将完成这一系列的 ASP.NET web 应用程序部署到第三方托管提供商的教程。 有关任何这些教程中所涵盖的主题的详细信息，请参阅[ASP.NET 部署内容映射](https://msdn.microsoft.com/en-us/library/bb386521(v=vs.110).aspx)MSDN 网站上。
+这将完成这一系列的 ASP.NET web 应用程序部署到第三方托管提供商的教程。 有关任何这些教程中所涵盖的主题的详细信息，请参阅[ASP.NET 部署内容映射](https://msdn.microsoft.com/library/bb386521(v=vs.110).aspx)MSDN 网站上。
 
 ## <a name="acknowledgements"></a>致谢
 
@@ -162,7 +162,7 @@ Code First 迁移更新数据库相同的方式在测试环境中做过它。 �
 - [Alberto Poblacion、 MVP &amp; MCT、 西班牙](https://mvp.support.microsoft.com/profile/Alberto)
 - Jarod Ferguson，数据平台开发 MVP，美国
 - 恶劣 Mittal，Microsoft
-- [Kristina Olson Microsoft](https://blogs.iis.net/krolson/default.aspx)
+- [Kristina Olson, Microsoft](https://blogs.iis.net/krolson/default.aspx)
 - [Mike Pope Microsoft](http://www.mikepope.com/blog/DisplayBlog.aspx)
 - Mohit Srivastava Microsoft
 - [Raffaele Rialdi，意大利](http://www.iamraf.net/)

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5283da2786d41c0ae06607185dd416aeb7d2b62a
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: accb5ddab8df67dfa29038541dc0cd72eaac173c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>为 ASP.NET MVC 应用程序 (10 的第 4) 创建更复杂的数据模型
 ====================
@@ -49,9 +49,9 @@ ms.lasthandoff: 01/19/2018
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample1.cs?highlight=3,13-14)]
 
-[DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性用于指定比数据库内部类型更具体的数据类型。 在这种情况下，我们只想跟踪的日期，不的日期和时间。 [DataType 枚举](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx)提供多种数据类型，如*日期、 时间、 PhoneNumber、 货币、 电子邮件地址*和的详细信息。 应用程序还可通过 `DataType` 特性自动提供类型特定的功能。 例如，`mailto:`链接可以为创建[DataType.EmailAddress](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx)，和日期选择器可提供用于[DataType.Date](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx)中支持的浏览器[HTML5](http://html5.org/). [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性发出 HTML 5[数据-](http://ejohn.org/blog/html-5-data-attributes/) (发音为*数据 dash*) HTML 5 浏览器可以理解的属性。 [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性不提供任何验证。
+[DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性用于指定比数据库内部类型更具体的数据类型。 在这种情况下，我们只想跟踪的日期，不的日期和时间。 [DataType 枚举](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)提供多种数据类型，如*日期、 时间、 PhoneNumber、 货币、 电子邮件地址*和的详细信息。 应用程序还可通过 `DataType` 特性自动提供类型特定的功能。 例如，`mailto:`链接可以为创建[DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)，和日期选择器可提供用于[DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)中支持的浏览器[HTML5](http://html5.org/). [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性发出 HTML 5[数据-](http://ejohn.org/blog/html-5-data-attributes/) (发音为*数据 dash*) HTML 5 浏览器可以理解的属性。 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性不提供任何验证。
 
-`DataType.Date` 不指定显示日期的格式。 默认情况下，数据字段显示根据基于服务器的默认格式[CultureInfo](https://msdn.microsoft.com/en-us/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx)。
+`DataType.Date` 不指定显示日期的格式。 默认情况下，数据字段显示根据基于服务器的默认格式[CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx)。
 
 `DisplayFormat` 特性用于显式指定日期格式：
 
@@ -61,11 +61,11 @@ ms.lasthandoff: 01/19/2018
 
 `ApplyFormatInEditMode`设置指定，指定的格式设置也应该将应用时的值显示在文本框中以进行编辑。 (你可能不想的某些字段 — 例如，货币值，你可能不希望在文本框中的货币符号以进行编辑。)
 
-你可以使用[DisplayFormat](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx)属性通过本身，但它通常是使用一个好办法[数据类型](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx)还属性。 `DataType`属性传达*语义*的数据作为，而不是如何呈现在屏幕上，然后提供就不会使用了以下好处`DisplayFormat`:
+你可以使用[DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx)属性通过本身，但它通常是使用一个好办法[数据类型](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)还属性。 `DataType`属性传达*语义*的数据作为，而不是如何呈现在屏幕上，然后提供就不会使用了以下好处`DisplayFormat`:
 
 - 浏览器可以启用 HTML5 功能 （例如以显示一个日历控件、 区域设置相对应的货币符号、 电子邮件链接，等等）。
-- 默认情况下，浏览器将呈现数据使用基于的正确格式你[区域设置](https://msdn.microsoft.com/en-us/library/vstudio/wyzd2bce.aspx)。
-- [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性可以启用 MVC 能够选择要呈现的数据的右侧字段模板 ( [DisplayFormat](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx)本身如果由使用字符串模板)。 有关详细信息，请参阅 Brad Wilson [ASP.NET MVC 2 模板](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html)。 （尽管为 MVC 2 编写的这篇文章仍适用于 ASP.NET MVC 的当前版本。）
+- 默认情况下，浏览器将呈现数据使用基于的正确格式你[区域设置](https://msdn.microsoft.com/library/vstudio/wyzd2bce.aspx)。
+- [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性可以启用 MVC 能够选择要呈现的数据的右侧字段模板 ( [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx)本身如果由使用字符串模板)。 有关详细信息，请参阅 Brad Wilson [ASP.NET MVC 2 模板](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html)。 （尽管为 MVC 2 编写的这篇文章仍适用于 ASP.NET MVC 的当前版本。）
 
 如果你使用`DataType`属性与日期字段中，你必须指定`DisplayFormat`还以确保字段正确呈现在 Chrome 浏览器中的属性。 有关详细信息，请参阅[此 StackOverflow 线程](http://stackoverflow.com/questions/12633471/mvc4-datatype-date-editorfor-wont-display-date-value-in-chrome-fine-in-ie)。
 
@@ -75,21 +75,21 @@ ms.lasthandoff: 01/19/2018
 
 ### <a name="the-stringlengthattribute"></a>StringLengthAttribute
 
-你还可以指定数据验证规则和使用属性的消息。 假设你想要确保，用户不超过 50 个字符输入名称。 若要添加此限制，添加[StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)特性以`LastName`和`FirstMidName`属性，如下面的示例中所示：
+你还可以指定数据验证规则和使用属性的消息。 假设你想要确保，用户不超过 50 个字符输入名称。 若要添加此限制，添加[StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)特性以`LastName`和`FirstMidName`属性，如下面的示例中所示：
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample3.cs?highlight=10,12)]
 
-[StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)属性不会阻止的用户的空白区域输入一个名称。 你可以使用[正则表达式](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx)要将限制应用到的输入属性。 例如，下面的代码要求的第一个字符是大写且其余的字符是按字母顺序排列：
+[StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)属性不会阻止的用户的空白区域输入一个名称。 你可以使用[正则表达式](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx)要将限制应用到的输入属性。 例如，下面的代码要求的第一个字符是大写且其余的字符是按字母顺序排列：
 
 `[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]`
 
-[MaxLength](https://msdn.microsoft.com/en-us/library/System.ComponentModel.DataAnnotations.MaxLengthAttribute.aspx)属性提供与类似的功能[StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)属性但不提供客户端验证。
+[MaxLength](https://msdn.microsoft.com/library/System.ComponentModel.DataAnnotations.MaxLengthAttribute.aspx)属性提供与类似的功能[StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)属性但不提供客户端验证。
 
 运行应用程序，然后单击**学生**选项卡。你收到以下错误：
 
 *数据库创建后，备份 SchoolContext 上下文的模型已更改。请考虑使用 Code First 迁移更新数据库 ([https://go.microsoft.com/fwlink/?LinkId=238269](https://go.microsoft.com/fwlink/?LinkId=238269))。*
 
-数据库模型已更改需要在数据库架构中，更改的方式，实体框架检测到。 你将使用迁移来更新架构，而不丢失任何通过使用 UI 添加到数据库的数据。 如果更改数据由`Seed`方法，将会更改回其原始状态由于[AddOrUpdate](https://msdn.microsoft.com/en-us/library/hh846520(v=vs.103).aspx)方法使用在`Seed`方法。 ([AddOrUpdate](https://msdn.microsoft.com/en-us/library/hh846520(v=vs.103).aspx)等效于"upsert"操作从数据库术语。)
+数据库模型已更改需要在数据库架构中，更改的方式，实体框架检测到。 你将使用迁移来更新架构，而不丢失任何通过使用 UI 添加到数据库的数据。 如果更改数据由`Seed`方法，将会更改回其原始状态由于[AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx)方法使用在`Seed`方法。 ([AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx)等效于"upsert"操作从数据库术语。)
 
 在包管理器控制台 (PMC) 中，输入以下命令：
 
@@ -107,11 +107,11 @@ ms.lasthandoff: 01/19/2018
 
 `Column`属性指定当创建数据库时，列`Student`映射到表`FirstMidName`属性将被命名为`FirstName`。 换而言之，你的代码引用到`Student.FirstMidName`，数据将来自或在中更新`FirstName`列`Student`表。 如果未指定列名称，系统会提供与属性名相同的名称。
 
-添加 using 语句[System.ComponentModel.DataAnnotations.Schema](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.aspx)和列名称属性与`FirstMidName`属性，如以下突出显示的代码中所示：
+添加 using 语句[System.ComponentModel.DataAnnotations.Schema](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.aspx)和列名称属性与`FirstMidName`属性，如以下突出显示的代码中所示：
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample5.cs?highlight=4,14)]
 
-添加[列属性](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.columnattribute.aspx)更改备份 SchoolContext，使它不会与数据库相匹配的模型。 在创建另一个迁移 PMC 中输入以下命令：
+添加[列属性](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.columnattribute.aspx)更改备份 SchoolContext，使它不会与数据库相匹配的模型。 在创建另一个迁移 PMC 中输入以下命令：
 
 [!code-console[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample6.cmd)]
 
@@ -123,7 +123,7 @@ ms.lasthandoff: 01/19/2018
 
 ![](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image5.png)
 
-你还可以进行数据库映射更改使用[Fluent API](https://msdn.microsoft.com/en-us/data/jj591617)，如你将看到在此教程的后面。
+你还可以进行数据库映射更改使用[Fluent API](https://msdn.microsoft.com/data/jj591617)，如你将看到在此教程的后面。
 
 > [!NOTE]
 > 如果您尝试编译之前创建的所有这些实体类完毕后，你可能会收到编译器错误。
@@ -145,7 +145,7 @@ ms.lasthandoff: 01/19/2018
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample8.cs)]
 
-[StringLength 属性](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)数据库中设置的最大长度，并提供客户端和服务器端 ASP.NET MVC 的验证。 你还可以通过以下方式指定最小字符串长度中此特性，但最小值对数据库架构没有任何影响。 [必需的特性](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx)不需要值类型，如 DateTime、 int、 双精度型、 和 float。 值类型不能被分配 null 值，因此它们都是本质上是必需。 无法删除[必需的特性](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx)并将其替换的最小长度参数`StringLength`属性：
+[StringLength 属性](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)数据库中设置的最大长度，并提供客户端和服务器端 ASP.NET MVC 的验证。 你还可以通过以下方式指定最小字符串长度中此特性，但最小值对数据库架构没有任何影响。 [必需的特性](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx)不需要值类型，如 DateTime、 int、 双精度型、 和 float。 值类型不能被分配 null 值，因此它们都是本质上是必需。 无法删除[必需的特性](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx)并将其替换的最小长度参数`StringLength`属性：
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample9.cs?highlight=2)]
 
@@ -161,7 +161,7 @@ ms.lasthandoff: 01/19/2018
 
 ### <a name="the-courses-and-officeassignment-navigation-properties"></a>课程和 OfficeAssignment 导航属性
 
-`Courses`和`OfficeAssignment`属性是导航属性。 如前所述，它们通常定义为[虚拟](https://msdn.microsoft.com/en-us/library/9fkccyh4(v=vs.110).aspx)，以便它们可以利用称为实体框架功能[延迟加载](https://msdn.microsoft.com/en-us/magazine/hh205756.aspx)。 此外，如果导航属性可以具有多个实体，则其类型必须实现[ICollection&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/92t2ye13.aspx)接口。 (例如[IList&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/5y536ey6.aspx)但不是限定[IEnumerable&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/9eekhta0.aspx)因为`IEnumerable<T>`未实现[添加](https://msdn.microsoft.com/en-us/library/63ywd54z.aspx).
+`Courses`和`OfficeAssignment`属性是导航属性。 如前所述，它们通常定义为[虚拟](https://msdn.microsoft.com/library/9fkccyh4(v=vs.110).aspx)，以便它们可以利用称为实体框架功能[延迟加载](https://msdn.microsoft.com/magazine/hh205756.aspx)。 此外，如果导航属性可以具有多个实体，则其类型必须实现[ICollection&lt;T&gt; ](https://msdn.microsoft.com/library/92t2ye13.aspx)接口。 (例如[IList&lt;T&gt; ](https://msdn.microsoft.com/library/5y536ey6.aspx)但不是限定[IEnumerable&lt;T&gt; ](https://msdn.microsoft.com/library/9eekhta0.aspx)因为`IEnumerable<T>`未实现[添加](https://msdn.microsoft.com/library/63ywd54z.aspx).
 
 一个教师可以教授任意数量的课程，因此`Courses`指一套`Course`实体。 我们业务规则状态教师只能有一个 office 最多，因此`OfficeAssignment`定义为单个`OfficeAssignment`实体 (这可能会`null`如果不分配任何 office)。
 
@@ -187,7 +187,7 @@ ms.lasthandoff: 01/19/2018
 
 ### <a name="the-foreignkey-attribute"></a>ForeignKey 属性
 
-没有两个实体之间的一对一关系或一对零或一一个关系时 (此类之间`OfficeAssignment`和`Instructor`)，EF 无法制定关系的一端是主体，取决于哪一个顶点。 一对一关系具有引用导航属性在转换为其他类的每个类。 [ForeignKey 属性](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx)可以应用到依赖的类，以建立关系。 如果省略[ForeignKey 属性](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx)，当你尝试创建迁移时出现以下错误：
+没有两个实体之间的一对一关系或一对零或一一个关系时 (此类之间`OfficeAssignment`和`Instructor`)，EF 无法制定关系的一端是主体，取决于哪一个顶点。 一对一关系具有引用导航属性在转换为其他类的每个类。 [ForeignKey 属性](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx)可以应用到依赖的类，以建立关系。 如果省略[ForeignKey 属性](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx)，当你尝试创建迁移时出现以下错误：
 
 无法确定类型 ContosoUniversity.Models.OfficeAssignment 和 ContosoUniversity.Models.Instructor 之间的关联的主体端。 必须使用关系 fluent API 或数据注释显式配置此关联的主体端。
 
@@ -211,7 +211,7 @@ ms.lasthandoff: 01/19/2018
 
 ### <a name="the-databasegenerated-attribute"></a>DatabaseGenerated 属性
 
-[DatabaseGenerated 属性](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute.aspx)与[无](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.110).aspx)参数`CourseID`属性指定主键值是由用户而不是由数据库生成。
+[DatabaseGenerated 属性](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute.aspx)与[无](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.110).aspx)参数`CourseID`属性指定主键值是由用户而不是由数据库生成。
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample16.cs)]
 
@@ -241,11 +241,11 @@ ms.lasthandoff: 01/19/2018
 
 ### <a name="the-column-attribute"></a>列属性
 
-前面使用[列属性](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.columnattribute.aspx)若要更改列名称映射。 中的代码`Department`实体，`Column`属性用于更改 SQL 数据类型映射，以便将将列定义使用的 SQL Server [money](https://msdn.microsoft.com/en-us/library/ms179882.aspx)数据库中的类型：
+前面使用[列属性](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.columnattribute.aspx)若要更改列名称映射。 中的代码`Department`实体，`Column`属性用于更改 SQL 数据类型映射，以便将将列定义使用的 SQL Server [money](https://msdn.microsoft.com/library/ms179882.aspx)数据库中的类型：
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample21.cs)]
 
-列映射通常不是必需的因为实体框架通常选择基于你定义的属性的 CLR 类型的相应 SQL Server 数据类型。 CLR`decimal`类型映射到 SQL Server`decimal`类型。 但在这种情况下你知道列将包含货币金额和[money](https://msdn.microsoft.com/en-us/library/ms179882.aspx)数据类型是更适合。
+列映射通常不是必需的因为实体框架通常选择基于你定义的属性的 CLR 类型的相应 SQL Server 数据类型。 CLR`decimal`类型映射到 SQL Server`decimal`类型。 但在这种情况下你知道列将包含货币金额和[money](https://msdn.microsoft.com/library/ms179882.aspx)数据类型是更适合。
 
 ### <a name="foreign-key-and-navigation-properties"></a>外键和导航属性
 
@@ -319,7 +319,7 @@ ms.lasthandoff: 01/19/2018
 
 ## <a name="customize-the-data-model-by-adding-code-to-the-database-context"></a>通过将代码添加到数据库上下文中自定义数据模型
 
-接下来你将添加到新的实体`SchoolContext`类和自定义的映射使用某些[fluent API](https://msdn.microsoft.com/en-us/data/jj591617)调用。 （API 是"fluent"因为它通常用于通过连接一系列方法调用一起成一条语句。）
+接下来你将添加到新的实体`SchoolContext`类和自定义的映射使用某些[fluent API](https://msdn.microsoft.com/data/jj591617)调用。 （API 是"fluent"因为它通常用于通过连接一系列方法调用一起成一条语句。）
 
 在本教程中将仅为不能具有属性的数据库映射中使用 fluent API。 但是，你可以使用 fluent API 指定的格式、 验证和映射规则，你可以通过使用特性执行大多数。 某些属性，如`MinimumLength`不能使用 fluent API 应用。 如前所述，`MinimumLength`不会更改架构，它仅适用于客户端和服务器端验证规则
 
@@ -329,7 +329,7 @@ ms.lasthandoff: 01/19/2018
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample29.cs)]
 
-中的新语句[OnModelCreating](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx)方法配置多对多联接表：
+中的新语句[OnModelCreating](https://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx)方法配置多对多联接表：
 
 - 之间的多对多关系`Instructor`和`Course`实体，该代码指定联接表的表和列名称。 代码首先可以配置多对多关系为你不使用此代码，但如果你不调用它，你将获取默认名称类似于`InstructorInstructorID`为`InstructorID`列。
 

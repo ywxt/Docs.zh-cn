@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui
 msc.type: authoredcontent
-ms.openlocfilehash: 0cc51fbe84124a62f0c1254faab796cbcdc7efd6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: de661616ff3ca83052ae74d3ae6810d014aff764
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a>将新类别添加到使用 jQuery UI DropDownList
 ====================
@@ -90,7 +90,7 @@ HTML`Select`标记非常适合于显示一系列的固定的类别数据，但�
 
 [!code-cshtml[Main](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/samples/sample7.cshtml)]
 
-[Html.BeginForm](https://msdn.microsoft.com/en-us/library/dd492714.aspx)中使用的帮助器重载*Views\Genre\\_CreateGenre.cshtml*文件具有一个包含要提交表单的 URL 的操作属性生成 HTML。 可以通过在浏览器中显示创建唱片集页并在浏览器中选择显示源来查看这种情况。 以下标记显示生成包含窗体标记的 HTML。
+[Html.BeginForm](https://msdn.microsoft.com/library/dd492714.aspx)中使用的帮助器重载*Views\Genre\\_CreateGenre.cshtml*文件具有一个包含要提交表单的 URL 的操作属性生成 HTML。 可以通过在浏览器中显示创建唱片集页并在浏览器中选择显示源来查看这种情况。 以下标记显示生成包含窗体标记的 HTML。
 
 [!code-html[Main](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/samples/sample8.html)]
 

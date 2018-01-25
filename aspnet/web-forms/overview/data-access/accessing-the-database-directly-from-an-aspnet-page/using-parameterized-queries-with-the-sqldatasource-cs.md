@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7b32a664975254dcc1d015f2400df30d05346948
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b66c68b8306b905a800465ab0ed720ae6f9d16b9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-parameterized-queries-with-the-sqldatasource-c"></a>参数化的查询使用 SqlDataSource (C#)
 ====================
@@ -209,7 +209,7 @@ SqlDataSource 控件 s 配置数据源向导提供了用于定义要执行若要
 **图 11**： 使用 Hard-Coded 值为 1 以返回饮料类别中的产品 ([单击以查看实际尺寸的图像](using-parameterized-queries-with-the-sqldatasource-cs/_static/image22.png))
 
 
-如以下声明性标记所示，当使用存储的过程，SqlDataSource s`SelectCommand`属性设置为存储过程的名称和[`SelectCommandType`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.selectcommandtype.aspx)设置为`StoredProcedure`，以指示`SelectCommand`是存储的过程而不是临时 SQL 语句的名称。
+如以下声明性标记所示，当使用存储的过程，SqlDataSource s`SelectCommand`属性设置为存储过程的名称和[`SelectCommandType`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.selectcommandtype.aspx)设置为`StoredProcedure`，以指示`SelectCommand`是存储的过程而不是临时 SQL 语句的名称。
 
 
 [!code-aspx[Main](using-parameterized-queries-with-the-sqldatasource-cs/samples/sample9.aspx)]
@@ -237,9 +237,9 @@ SqlDataSource 控件 s 配置数据源向导提供了用于定义要执行若要
 
 `ORDER BY NEWID()`返回按随机顺序进行排序的记录 (请参阅[使用`NEWID()`随机排序记录](http://www.sqlteam.com/item.asp?ItemID=8747))。 `SELECT TOP 1`返回从结果集中的第一条记录。 总之，此查询返回`CategoryID`和`CategoryName`列从单一的随机选择的类别的值。
 
-若要显示的类别 s`CategoryName`值、 向页面添加标签 Web 控件，请将其`ID`属性`CategoryNameLabel`，并将清空其`Text`属性。 若要以编程方式从 SqlDataSource 控件中检索数据，我们需要调用其`Select()`方法。 [ `Select()`方法](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.select.aspx)需要一个输入的参数的类型[ `DataSourceSelectArguments` ](https://msdn.microsoft.com/en-us/library/system.web.ui.datasourceselectarguments.aspx)，它指定应如何在返回前消息数据。 这可以包括排序和筛选的数据的说明，使用 Web 控件进行排序，或从 SqlDataSource 控件数据进行分页的数据。 对于我们的示例，不过，我们不需要数据在返回前修改，因此将将传递中`DataSourceSelectArguments.Empty`对象。
+若要显示的类别 s`CategoryName`值、 向页面添加标签 Web 控件，请将其`ID`属性`CategoryNameLabel`，并将清空其`Text`属性。 若要以编程方式从 SqlDataSource 控件中检索数据，我们需要调用其`Select()`方法。 [ `Select()`方法](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.select.aspx)需要一个输入的参数的类型[ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx)，它指定应如何在返回前消息数据。 这可以包括排序和筛选的数据的说明，使用 Web 控件进行排序，或从 SqlDataSource 控件数据进行分页的数据。 对于我们的示例，不过，我们不需要数据在返回前修改，因此将将传递中`DataSourceSelectArguments.Empty`对象。
 
-`Select()`方法返回实现的对象`IEnumerable`。 依赖于 SqlDataSource 控件 s 的值，则返回的精确类型[`DataSourceMode`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx)。 以前一教程中所述，可以将此属性设置为值`DataSet`或`DataReader`。 如果设置为`DataSet`、`Select()`方法返回[DataView](https://msdn.microsoft.com/en-us/library/01s96x0z.aspx)对象; 如果设置为`DataReader`，它将返回实现的对象[ `IDataReader` ](https://msdn.microsoft.com/en-us/library/system.data.idatareader.aspx)。 由于`RandomCategoryDataSource`SqlDataSource 具有其`DataSourceMode`属性设置为`DataSet`（默认值），我们将使用 DataView 对象。
+`Select()`方法返回实现的对象`IEnumerable`。 依赖于 SqlDataSource 控件 s 的值，则返回的精确类型[`DataSourceMode`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx)。 以前一教程中所述，可以将此属性设置为值`DataSet`或`DataReader`。 如果设置为`DataSet`、`Select()`方法返回[DataView](https://msdn.microsoft.com/library/01s96x0z.aspx)对象; 如果设置为`DataReader`，它将返回实现的对象[ `IDataReader` ](https://msdn.microsoft.com/library/system.data.idatareader.aspx)。 由于`RandomCategoryDataSource`SqlDataSource 具有其`DataSourceMode`属性设置为`DataSet`（默认值），我们将使用 DataView 对象。
 
 下面的代码演示如何检索从记录`RandomCategoryDataSource`作为 DataView SqlDataSource 以及如何读取`CategoryName`从第一个 DataView 行的列值：
 

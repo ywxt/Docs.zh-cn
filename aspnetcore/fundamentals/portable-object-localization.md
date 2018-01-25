@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/portable-object-localization
-ms.openlocfilehash: dfdd86b4706a1fb8e313c24ba830ec996fe09225
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: ad68c8a7df5a8ea0f7ef42137c29cd3b37657052
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="configure-portable-object-localization-with-orchard-core"></a>使用 Orchard 核心配置可移植对象本地化
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 01/19/2018
 
 本文将指导完成使用 ASP.NET Core 应用程序中的可移植对象 (PO) 文件的步骤[Orchard 核心](https://github.com/OrchardCMS/OrchardCore)framework。
 
-**注意：** Orchard 核心不是 Microsoft 的产品。 因此，Microsoft 不提供支持此功能。
+**注意：** Orchard 核心不的 Microsoft 产品。 因此，Microsoft 不提供支持此功能。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/POLocalization)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 

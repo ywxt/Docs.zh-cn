@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/partial
-ms.openlocfilehash: e5c8aac855a1f4ec4c6f08087dbe77f6820cc506
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 5919c273de2a298c3e407f118ac478e6a6031332
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="partial-views"></a>分部视图
 
@@ -37,7 +37,7 @@ ASP.NET 核心 MVC 支持分部视图，当您想要不同的视图之间共享�
 
 ## <a name="declaring-partial-views"></a>声明分部视图
 
-分部视图创建与其他视图类似： 创建*.cshtml*文件内*视图*文件夹。 分部视图和常规视图之间没有语义差异-它们只是以不同的方式呈现。 你可以直接从控制器的返回的视图`ViewResult`，和可以为分部视图使用相同的视图。 如何呈现的视图和分部视图之间的主要区别是分部视图不要运行*_ViewStart.cshtml* (时视图-详细了解*_ViewStart.cshtml*中[布局](layout.md)).
+分部视图创建与其他视图类似： 创建*.cshtml*文件内*视图*文件夹。 分部视图和常规视图之间没有语义差异-它们只需以不同的方式呈现。 你可以直接从控制器的返回的视图`ViewResult`，和可以为分部视图使用相同的视图。 如何呈现的视图和分部视图之间的主要区别是分部视图不运行*_ViewStart.cshtml* (时视图-详细了解*_ViewStart.cshtml*中[布局](layout.md)).
 
 ## <a name="referencing-a-partial-view"></a>引用了分部视图
 

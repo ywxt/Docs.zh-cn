@@ -9,17 +9,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 6a5feb9039c5b0e9823e5f22f4d55a70830dd3e6
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: f0953ad5d9f1bfa92ecc5169d9a211ce6b8cda8f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET 核心标识的自定义的存储提供程序
 
 通过[Steve Smith](https://ardalis.com/)
 
-ASP.NET 核心标识是一种可扩展系统，可用于创建自定义存储提供程序并将其连接到你的应用。 本主题介绍如何创建 ASP.NET 核心标识的自定义的存储提供程序。 它介绍如何创建你自己的存储提供程序的重要概念，但不是的分步演练。
+ASP.NET 核心标识是一种可扩展系统，可用于创建自定义存储提供程序并将其连接到你的应用。 本主题介绍如何创建 ASP.NET 核心标识的自定义的存储提供程序。 它介绍如何创建你自己的存储提供程序的重要概念，但不的分步演练。
 
 [查看或从 GitHub 下载示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample)。
 
@@ -62,7 +62,7 @@ ASP.NET 核心标识包含类称为管理器和存储区。 *管理器*是高级
 
 ### <a name="users"></a>用户
 
-注册用户的网站的用户。 [IdentityUser](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuser)可能扩展类型，或将其用作自定义类型的示例。 不需要从特定的类型来实现自定义标识的存储解决方案继承。
+注册用户的网站的用户。 [IdentityUser](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuser)可能扩展类型，或将其用作自定义类型的示例。 你不必继承来实现自定义标识的存储解决方案的特定类型。
 
 ### <a name="user-claims"></a>用户声明
 

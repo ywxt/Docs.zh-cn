@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/localization
-ms.openlocfilehash: 1c93a53ea23ec13ca3d6fc138024ba38ec4883ee
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 5f1579b5682b2f0b3f8227f0cf6b4c0361eb1e67
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>全球化和 ASP.NET Core 的本地化
 
@@ -41,7 +41,7 @@ ASP.NET 核心中引入`IStringLocalizer`和`IStringLocalizer<T>`已设计为可
 
 在上面的代码，`IStringLocalizer<T>`实现来自[依赖关系注入](dependency-injection.md)。 如果找不到"有关标题"的本地化的值，则索引器返回，即"有关标题"的字符串。 可以在应用程序保留默认语言字符串并将它们包装在本地化人员，以便您可以集中精力开发应用。 使用默认语言开发你的应用程序，并准备好进行本地化步骤无需首先创建默认资源文件。 或者，你可以使用传统方法，并提供键以检索的默认语言字符串。 许多开发人员的新工作流不具有一种默认语言*.resx*文件和包装的字符串文本可以减少本地化应用程序的开销。 其他开发人员将首选的传统工作流，因为它可以使更轻松地使用较长的字符串文本和更加轻松地更新本地化的字符串。
 
-使用`IHtmlLocalizer<T>`包含 HTML 资源的实现。 `IHtmlLocalizer`HTML 编码格式资源字符串中的自变量，但不会不 HTML 编码的资源字符串本身。 在此示例中突出显示下面的值`name`参数是 HTML 编码。
+使用`IHtmlLocalizer<T>`包含 HTML 资源的实现。 `IHtmlLocalizer`HTML 编码格式资源字符串中的自变量，但不 HTML 编码的资源字符串本身。 在此示例中突出显示下面的值`name`参数是 HTML 编码。
 
 [!code-csharp[Main](../fundamentals/localization/sample/Localization/Controllers/BookController.cs?highlight=3,5,20&start=1&end=24)]
 
@@ -152,7 +152,7 @@ ASP.NET 核心，可指定两个区域性值，`SupportedCultures`和`SupportedU
 
 ## <a name="resource-file-naming"></a>资源文件命名
 
-资源在命名的程序集名称减其类的完整类型名称。 例如，其主要的程序集的项目中的法语资源`LocalizationWebsite.Web.dll`类`LocalizationWebsite.Web.Startup`将被命名为*Startup.fr.resx*。 类资源`LocalizationWebsite.Web.Controllers.HomeController`将被命名为*Controllers.HomeController.fr.resx*。 如果您的目标的类的命名空间不与程序集名称相同你将需要的完整类型名称。 例如，在此示例中项目的类型的资源`ExtraNamespace.Tools`将被命名为*ExtraNamespace.Tools.fr.resx*。
+资源在命名的程序集名称减其类的完整类型名称。 例如，其主要的程序集的项目中的法语资源`LocalizationWebsite.Web.dll`类`LocalizationWebsite.Web.Startup`将被命名为*Startup.fr.resx*。 类资源`LocalizationWebsite.Web.Controllers.HomeController`将被命名为*Controllers.HomeController.fr.resx*。 如果您的目标的类的命名空间不与程序集名称相同你将需要完整类型名称。 例如，在此示例中项目的类型的资源`ExtraNamespace.Tools`将被命名为*ExtraNamespace.Tools.fr.resx*。
 
 在示例项目中，`ConfigureServices`方法设置`ResourcesPath`对"资源"，因此主控制器的法语资源文件的项目相对路径是*Resources/Controllers.HomeController.fr.resx*。 或者，可以使用文件夹来组织资源文件。 对于主控制器，该路径将为*Resources/Controllers/HomeController.fr.resx*。 如果不使用`ResourcesPath`选项， *.resx*文件会在项目的基目录中。 资源文件`HomeController`将被命名为*Controllers.HomeController.fr.resx*。 使用圆点或路径的命名约定的选择取决于你想要组织资源文件。
 
@@ -176,7 +176,7 @@ ASP.NET 核心，可指定两个区域性值，`SupportedCultures`和`SupportedU
 
 ### <a name="generate-resource-files-with-visual-studio"></a>生成使用 Visual Studio 的资源文件
 
-如果你在而无需在文件名中区域性情况下将在 Visual Studio 中创建资源文件 (例如， *Welcome.resx*)，Visual Studio 将创建一个 C# 类的属性为每个字符串。 这通常是你不想使用 ASP.NET Core;通常不需要默认*.resx*资源文件 (一个*.resx*文件而无需区域性名称)。 我们建议你创建*.resx*使用区域性名称的文件 (例如*Welcome.fr.resx*)。 当你创建*.resx*使用区域性名称，Visual Studio 的文件将不会生成的类文件。 我们预计许多开发人员将**不**创建默认语言资源文件。
+如果你在而无需在文件名中区域性情况下将在 Visual Studio 中创建资源文件 (例如， *Welcome.resx*)，Visual Studio 将创建一个 C# 类的属性为每个字符串。 这通常是你不想使用 ASP.NET Core;通常不需要默认*.resx*资源文件 (一个*.resx*文件而无需区域性名称)。 我们建议你创建*.resx*使用区域性名称的文件 (例如*Welcome.fr.resx*)。 当你创建*.resx*使用区域性名称，Visual Studio 的文件不会生成的类文件。 我们预计许多开发人员将**不**创建默认语言资源文件。
 
 ### <a name="add-other-cultures"></a>添加其他区域性
 

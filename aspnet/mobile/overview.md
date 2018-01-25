@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /mobile
 msc.type: content
-ms.openlocfilehash: 57d865ee7c6d1afa21f4e9cd6da64f0bb430a5d2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: de05ede5b7b41f0c44c867b51faf2310ac9fc514
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="mobile-apps--sites-with-aspnet"></a>移动应用 （&) 与 ASP.NET 站点
 ====================
@@ -38,17 +38,17 @@ ms.lasthandoff: 11/10/2017
 本端到端教程演示如何创建的 ASP.NET Web API 应用程序为一个 Windows Phone 8 应用程序提供数据。
 
 
-### <a name="get-started-with-azure-mobile-serviceshttpsazuremicrosoftcomen-usdocumentationarticlesmobile-services-dotnet-backend-windows-store-dotnet-get-startedwtmcidzumoaspnet"></a>[要开始使用 Azure 移动服务](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started?WT.mc_id=zumo_aspnet)
+### <a name="get-started-with-azure-mobile-serviceshttpsazuremicrosoftcomdocumentationarticlesmobile-services-dotnet-backend-windows-store-dotnet-get-startedwtmcidzumoaspnet"></a>[要开始使用 Azure 移动服务](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started?WT.mc_id=zumo_aspnet)
 
 开始使用 Azure 移动服务的 ASP.NET Web API。 本教程演示如何从 Azure 管理门户中创建移动服务应用程序。
 
 
-### <a name="authentication-in-azure-mobile-serviceshttpsazuremicrosoftcomen-usdocumentationarticlesmobile-services-dotnet-backend-windows-store-dotnet-get-started-userswtmcidzumoaspnet"></a>[Azure 移动服务中身份验证](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/?WT.mc_id=zumo_aspnet)
+### <a name="authentication-in-azure-mobile-serviceshttpsazuremicrosoftcomdocumentationarticlesmobile-services-dotnet-backend-windows-store-dotnet-get-started-userswtmcidzumoaspnet"></a>[Azure 移动服务中身份验证](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/?WT.mc_id=zumo_aspnet)
 
 本教程演示如何在 Azure 移动服务中从您的应用程序的用户进行身份验证。
 
 
-### <a name="using-push-notifications-in-azure-mobile-serviceshttpsazuremicrosoftcomen-usdocumentationarticlesmobile-services-dotnet-backend-windows-store-dotnet-get-started-pushwtmcidzumoaspnet"></a>[使用 Azure 移动服务中的推送通知](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/?WT.mc_id=zumo_aspnet)
+### <a name="using-push-notifications-in-azure-mobile-serviceshttpsazuremicrosoftcomdocumentationarticlesmobile-services-dotnet-backend-windows-store-dotnet-get-started-pushwtmcidzumoaspnet"></a>[使用 Azure 移动服务中的推送通知](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/?WT.mc_id=zumo_aspnet)
 
 使用 Azure 移动服务将推送通知发送到移动设备。
 

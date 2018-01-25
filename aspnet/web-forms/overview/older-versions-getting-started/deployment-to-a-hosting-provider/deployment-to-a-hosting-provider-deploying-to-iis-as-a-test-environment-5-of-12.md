@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: a5538744dfaff76f28c5f17d8f5d782ef3f6c118
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a7995844ee6ed19efa130c4f6c019214d6652ea7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-iis-as-a-test-environment---5-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 作为测试环境-5 12，将部署到 IIS
 ====================
@@ -83,7 +83,7 @@ ms.lasthandoff: 11/10/2017
 
 如果你看到只有两个应用程序池，并且这两个设置为.NET Framework 2.0，你必须安装在 IIS 中的 ASP.NET 4:
 
-- 通过右键单击打开命令提示符窗口**命令提示符**中 Windows**启动**菜单并选择**以管理员身份运行**。 然后运行[aspnet\_regiis.exe](https://msdn.microsoft.com/en-us/library/k6h9cz8h.aspx)在 IIS 中，使用以下命令安装 ASP.NET 4。 （在 64 位系统中，替换与"Framework64"的"Framework"。）
+- 通过右键单击打开命令提示符窗口**命令提示符**中 Windows**启动**菜单并选择**以管理员身份运行**。 然后运行[aspnet\_regiis.exe](https://msdn.microsoft.com/library/k6h9cz8h.aspx)在 IIS 中，使用以下命令安装 ASP.NET 4。 （在 64 位系统中，替换与"Framework64"的"Framework"。）
 
     [!code-console[Main](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/samples/sample2.cmd)]
 
@@ -111,7 +111,7 @@ ms.lasthandoff: 11/10/2017
 - 创建*部署包*和使用 IIS 管理器 UI 安装它。 部署包所包含的*.zip*包含的所有文件和在 IIS 中安装站点所需的元数据的文件。
 - 创建部署包并将其使用命令行安装。
 
-你已完成在前面的教程，若要将 Visual Studio 设置来自动执行部署任务适用于所有这三种方法的过程。 这些教程中，你将使用第一种方法。 有关使用部署包的信息，请参阅[ASP.NET 部署内容映射](https://msdn.microsoft.com/en-us/library/bb386521.aspx)。
+你已完成在前面的教程，若要将 Visual Studio 设置来自动执行部署任务适用于所有这三种方法的过程。 这些教程中，你将使用第一种方法。 有关使用部署包的信息，请参阅[ASP.NET 部署内容映射](https://msdn.microsoft.com/library/bb386521.aspx)。
 
 在发布前，请确保在管理员模式下运行 Visual Studio。 (在 Windows 7**启动**菜单中，右键单击要使用的 Visual Studio 版本的图标，然后选择**以管理员身份运行**。)管理员模式下是发布仅当你准备向 IIS 发布在本地计算机上所必需的。
 
@@ -244,7 +244,7 @@ ms.lasthandoff: 11/10/2017
 
 - [IIS Express 概述](https://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview)IIS.net 网站上。
 - [引入了 IIS Express](https://weblogs.asp.net/scottgu/archive/2010/06/28/introducing-iis-express.aspx) Scott Guthrie 的博客上。
-- [如何： 为 Visual Studio 中的 Web 项目指定 Web 服务器](https://msdn.microsoft.com/en-us/library/ms178108.aspx)。
+- [如何： 为 Visual Studio 中的 Web 项目指定 Web 服务器](https://msdn.microsoft.com/library/ms178108.aspx)。
 - [核心差异之间 IIS 和 ASP.NET Development Server](../deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs.md) ASP.NET 站点上。
 - [在 30 秒内测试你的 ASP.NET MVC 或 Web 窗体应用程序在 IIS 7 上](https://blogs.msdn.com/b/rickandy/archive/2011/04/22/test-you-asp-net-mvc-or-webforms-application-on-iis-7-in-30-seconds.aspx)Rick Anderson 博客上。 此条目提供使用 Visual Studio 开发服务器 (用于 Cassini) 来测试为何不不如在 IIS Express 中，测试可靠和在 IIS Express 测试为何不不如在 IIS 中测试可靠的示例。
 

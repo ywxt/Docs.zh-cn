@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 92a7e945a6f82e78b848bae8f4f362e16a567b1f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e2fcaa615415b6f61e96e12dc77866d00110a33e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-a-custom-error-page-c"></a>显示自定义错误页 (C#)
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 
 在理想的环境中都将有任何运行时错误。 程序员应编写代码与 n 元 bug，并使用可靠的用户输入验证和外部资源，如数据库服务器和电子邮件服务器将永远不会转入脱机状态。 当然，实际上错误是不可避免的。 .NET Framework 中的类发出错误信号通过引发异常。 例如，调用 SqlConnection 对象的 Open 方法建立与连接字符串指定数据库的连接。 但是，如果数据库已关闭，或连接字符串中的凭据无效然后在 Open 方法将引发`SqlException`。 可以通过使用来处理异常`try/catch/finally`块。 如果中的代码`try`块引发了异常，控制将传递给相应的 catch 块开发人员可以尝试从错误中恢复。 如果没有匹配的 catch 块，或如果 try 块中不是引发异常的代码，该异常 percolates search 的调用堆栈中向上`try/catch/finally`块。
 
-如果异常冒泡一直到 ASP.NET 运行时不处理， [ `HttpApplication`类](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.aspx)的[`Error`事件](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.error.aspx)引发和配置*错误页*显示。 默认情况下，ASP.NET 才会显示一个错误页面，人们亲切地称为[黄色死亡屏幕](http://en.wikipedia.org/wiki/Yellow_Screen_of_Death#Yellow)(YSOD)。 有两个版本的 YSOD： 一个显示异常详细信息，堆栈跟踪，以及其他信息有助于开发人员调试应用程序 (请参阅**图 1**); 另只是声明时运行时错误 （请参阅**图 2**)。
+如果异常冒泡一直到 ASP.NET 运行时不处理， [ `HttpApplication`类](https://msdn.microsoft.com/library/system.web.httpapplication.aspx)的[`Error`事件](https://msdn.microsoft.com/library/system.web.httpapplication.error.aspx)引发和配置*错误页*显示。 默认情况下，ASP.NET 才会显示一个错误页面，人们亲切地称为[黄色死亡屏幕](http://en.wikipedia.org/wiki/Yellow_Screen_of_Death#Yellow)(YSOD)。 有两个版本的 YSOD： 一个显示异常详细信息，堆栈跟踪，以及其他信息有助于开发人员调试应用程序 (请参阅**图 1**); 另只是声明时运行时错误 （请参阅**图 2**)。
 
 异常详细信息 YSOD 是非常有用对于开发人员调试应用程序，但向最终用户显示 YSOD 是黏性而且很不专业。 相反，最终用户应会转到维护站点的外观和感觉的更加友好的用户的文本说明这种情况的错误页。 好消息是创建这样的自定义错误页会相当简单。 本教程开头 ASP 一看。NET 的不同错误页。 然后，它演示如何配置 web 应用程序，以向用户显示在遇到错误时的自定义错误页。
 
@@ -87,7 +87,7 @@ ms.lasthandoff: 11/10/2017
 - 中的配置信息`<customErrors>`部分中，和
 - 是否用户本地或远程访问网站。
 
-[ `<customErrors>`部分](https://msdn.microsoft.com/en-us/library/h0hfz6fc.aspx)中`Web.config`有影响显示哪些错误页的两个属性：`defaultRedirect`和`mode`。 `defaultRedirect` 属性是可选项。 如果提供，它指定自定义错误页的 URL，并指示应而不是运行时错误 YSOD 显示自定义错误页。 `mode`属性是必需的接受三个值之一： `On`， `Off`，或`RemoteOnly`。 这些值具有以下行为：
+[ `<customErrors>`部分](https://msdn.microsoft.com/library/h0hfz6fc.aspx)中`Web.config`有影响显示哪些错误页的两个属性：`defaultRedirect`和`mode`。 `defaultRedirect` 属性是可选项。 如果提供，它指定自定义错误页的 URL，并指示应而不是运行时错误 YSOD 显示自定义错误页。 `mode`属性是必需的接受三个值之一： `On`， `Off`，或`RemoteOnly`。 这些值具有以下行为：
 
 - `On`-指明自定义错误页或运行时错误 YSOD 显示所有访问者，而不考虑它们是否本地或远程。
 - `Off`-指定异常详细信息 YSOD 对所有访问者，而不考虑它们是否本地或远程显示。
@@ -168,9 +168,9 @@ ASP.NET 应用程序中未经处理的异常时，向用户显示三个错误页
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
 - [错误页，一次](http://www.smashingmagazine.com/2009/01/29/404-error-pages-one-more-time/)
-- [异常的设计准则](https://msdn.microsoft.com/en-us/library/ms229014.aspx)
+- [异常的设计准则](https://msdn.microsoft.com/library/ms229014.aspx)
 - [用户友好的错误页](http://aspnet.4guysfromrolla.com/articles/090606-1.aspx)
-- [处理和引发异常](https://msdn.microsoft.com/en-us/library/5b2yeyab.aspx)
+- [处理和引发异常](https://msdn.microsoft.com/library/5b2yeyab.aspx)
 - [正确在 ASP.NET 中使用自定义错误页](http://professionalaspnet.com/archive/2007/09/30/Properly-Using-Custom-Error-Pages-in-ASP.NET.aspx)
 
 >[!div class="step-by-step"]

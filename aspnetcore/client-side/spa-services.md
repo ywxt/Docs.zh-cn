@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/spa-services
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6d84659c8c65bebb46551eb38bd52e405ff56016
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 514efcdd78957f999e46c521d0266f092f742538
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>用于创建具有 ASP.NET Core 的单页面应用程序使用 JavaScriptServices
 
@@ -46,7 +46,7 @@ JavaScriptServices 包含三个不同的 NuGet 包：
 
 ## <a name="what-is-spaservices"></a>什么是 SpaServices？
 
-用于将 ASP.NET Core 定位为开发人员的首选服务器端平台，用于构建 Spa，SpaServices 而创建。 SpaServices 不需要开发 Spa 与 ASP.NET 核心，并且它不会将您限制在一个特定的客户端框架。
+用于将 ASP.NET Core 定位为开发人员的首选服务器端平台，用于构建 Spa，SpaServices 而创建。 SpaServices 不需要开发与 ASP.NET 核心的 Spa，它不会将您限制在一个特定的客户端框架。
 
 SpaServices 提供有用的基础结构，如所示：
 * [服务器端预呈现](#server-prerendering)
@@ -200,7 +200,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 
 ## <a name="routing-helpers"></a>路由的帮助器
 
-在大多数基于 ASP.NET Core 的 Spa，您需要客户端路由除了服务器端路由。 SPA 和 MVC 路由系统可以独立处理不受干扰。 不存在，但是，是否会造成问题的一个边缘情况： 标识 404 HTTP 响应。
+在大多数基于 ASP.NET Core 的 Spa，您需要客户端路由除了服务器端路由。 SPA 和 MVC 路由系统可以独立处理不受干扰。 没有，但是，一个边缘案例是否会造成面临的挑战： 标识 404 HTTP 响应。
 
 请考虑在该方案中的无扩展名路由`/some/page`使用。 假定该请求不模式匹配的服务器端路由，但其模式匹配的客户端路由。 现在请考虑对的传入请求`/images/user-512.png`，它通常需要查找服务器上的图像文件。 如果该请求的资源路径不匹配任何服务器端路由或静态文件，它不太客户端应用程序将处理它，你通常想要返回 HTTP 状态代码为 404。
 

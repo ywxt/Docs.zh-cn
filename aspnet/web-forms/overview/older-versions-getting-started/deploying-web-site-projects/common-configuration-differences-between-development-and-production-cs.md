@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 25299d1f047542ac4f2d61f9d5fe55813517f76b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 725812c64667488b9a06c065c7100d0536c2e3e2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="common-configuration-differences-between-development-and-production-c"></a>开发和生产环境 (C#) 之间的常见配置差异
 ====================
@@ -38,7 +38,7 @@ ms.lasthandoff: 11/10/2017
 
 `Web.config`文件包括多种类型的 ASP.NET 应用程序的配置信息。 此配置信息的一些无论是相同的环境。 例如，身份验证设置与 URL 授权规则拼中`Web.config`文件的`<authentication>`和`<authorization>`元素通常是相同的而不考虑环境。 但其他配置信息-如有关外部资源的信息通常取决于环境。
 
-数据库连接字符串是基于环境的不同的配置信息的一个极好示例。 当 web 应用程序与数据库服务器通信它必须首先建立连接，并通过做到这一点[连接字符串](http://www.connectionstrings.com/Articles/Show/what-is-a-connection-string)。 尽管可以直接在 web 页或连接到数据库的代码中的数据库连接字符串进行硬编码，最好是将其放`Web.config`的[`<connectionStrings>`元素](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx)以便连接字符串信息是在单一的集中式的位置。 通常不同的数据库使用在开发过程中不是在生产; 中使用因此，连接字符串信息必须是唯一的每个环境。
+数据库连接字符串是基于环境的不同的配置信息的一个极好示例。 当 web 应用程序与数据库服务器通信它必须首先建立连接，并通过做到这一点[连接字符串](http://www.connectionstrings.com/Articles/Show/what-is-a-connection-string)。 尽管可以直接在 web 页或连接到数据库的代码中的数据库连接字符串进行硬编码，最好是将其放`Web.config`的[`<connectionStrings>`元素](https://msdn.microsoft.com/library/bf7sd233.aspx)以便连接字符串信息是在单一的集中式的位置。 通常不同的数据库使用在开发过程中不是在生产; 中使用因此，连接字符串信息必须是唯一的每个环境。
 
 > [!NOTE]
 > 将来的教程浏览部署数据驱动的应用程序，此时我们将深入了解如何在配置文件中存储数据库连接字符串的详细信息。
@@ -48,7 +48,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="configuration-settings-that-impact-performance"></a>会对性能影响的配置设置
 
-当 ASP.NET 页访问对于第一次 （或后已更改第一次），必须将其声明性标记转换为一个类，并且必须编译此类。 如果 web 应用程序使用自动编译页面的代码隐藏类将需要进行编译，太。 你可以配置多种类型的通过编译选项`Web.config`文件的[`<compilation>`元素](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx)。
+当 ASP.NET 页访问对于第一次 （或后已更改第一次），必须将其声明性标记转换为一个类，并且必须编译此类。 如果 web 应用程序使用自动编译页面的代码隐藏类将需要进行编译，太。 你可以配置多种类型的通过编译选项`Web.config`文件的[`<compilation>`元素](https://msdn.microsoft.com/library/s10awwz0.aspx)。
 
 调试属性是中最重要的特性之一`<compilation>`元素。 如果`debug`属性设置为"true"则在编译的程序集将调试符号，调试 Visual Studio 中的应用程序时需要用到它。 但调试符号增加程序集的大小和运行代码时有更多的内存要求。 此外，当`debug`属性设置为"true"返回任何内容`WebResource.axd`不缓存，这意味着，每次用户访问页它们将需要重新下载返回的静态内容`WebResource.axd`。
 
@@ -68,7 +68,7 @@ ASP.NET 应用程序中发生未经处理的异常时它将冒泡到运行的位
 - 将显示一条异常详细信息消息，其中包括只需引发的异常的信息。
 - 显示自定义错误页，这是一个 ASP.NET 页，你创建显示所需的任何消息。
 
-在遇到未经处理的异常时也会发生什么情况取决于`Web.config`文件的[`<customErrors>`部分](https://msdn.microsoft.com/en-us/library/h0hfz6fc.aspx)。
+在遇到未经处理的异常时也会发生什么情况取决于`Web.config`文件的[`<customErrors>`部分](https://msdn.microsoft.com/library/h0hfz6fc.aspx)。
 
 在开发和测试应用程序时，它有助于查看浏览器中的任何异常的详细信息。 但是，在生产中的应用程序中显示异常详细信息是潜在的安全风险。 此外，它会 unflattering，会使你查找不专业的网站。 理想情况下，发生未经处理的异常时在开发环境中的 web 应用程序将显示异常的详细信息时相同的应用程序在生产环境中将显示自定义错误页。
 
@@ -76,7 +76,7 @@ ASP.NET 应用程序中发生未经处理的异常时它将冒泡到运行的位
 > 默认值`<customErrors>`部分设置显示异常详细信息消息仅在页正在访问通过 localhost，且否则显示泛型的运行时错误页时。 这并不理想，但它确保须知的默认行为不显示非本地访问者的异常详细信息。 将来的教程检查`<customErrors>`部分中更多详细信息，并演示如何通过自定义错误页，显示在生产中发生错误时。
 
 
-跟踪在开发过程中很有用的另一个 ASP.NET 功能。 跟踪，如果启用，记录有关每个传入请求的信息，可提供特殊的网页， `Trace.axd`，查看最近的请求详细信息。 你可以启用和配置跟踪通过[`<trace>`元素](https://msdn.microsoft.com/en-us/library/6915t83k.aspx)中`Web.config`。
+跟踪在开发过程中很有用的另一个 ASP.NET 功能。 跟踪，如果启用，记录有关每个传入请求的信息，可提供特殊的网页， `Trace.axd`，查看最近的请求详细信息。 你可以启用和配置跟踪通过[`<trace>`元素](https://msdn.microsoft.com/library/6915t83k.aspx)中`Web.config`。
 
 如果你启用跟踪，请确保它会禁用在生产环境中。 因为跟踪信息包括 cookie、 会话数据和其他潜在的敏感信息，务必禁用在生产环境中的跟踪。 好消息是，默认情况下，禁用跟踪和`Trace.axd`文件才可通过 localhost 访问。 如果您更改这些默认设置在开发过程中确保，它们关闭回在生产环境中。
 
@@ -110,7 +110,7 @@ ASP.NET 应用程序中发生未经处理的异常时它将冒泡到运行的位
 
 若要部署 web 应用程序生成 Web 部署项目，然后将文件从项目的输出文件夹复制到生产环境。
 
-若要了解有关使用 Web 部署项目的详细信息请查看[Web 部署项目本文](https://msdn.microsoft.com/en-us/magazine/cc163448.aspx)从 2007 年 4 月问题的[MSDN 杂志](https://msdn.microsoft.com/en-us/magazine/default.aspx)，或查阅处的其他阅读材料一节中的链接本教程末尾。
+若要了解有关使用 Web 部署项目的详细信息请查看[Web 部署项目本文](https://msdn.microsoft.com/magazine/cc163448.aspx)从 2007 年 4 月问题的[MSDN 杂志](https://msdn.microsoft.com/magazine/default.aspx)，或查阅处的其他阅读材料一节中的链接本教程末尾。
 
 > [!NOTE]
 > 不能与 Visual Web Developer 中使用 Web 部署项目，因为 Web 部署项目实现为 Visual Studio 外接程序和 Visual Studio Express 版本 （包括 Visual Web Developer） 不支持外接程序。
@@ -134,7 +134,7 @@ ASP.NET 应用程序中发生未经处理的异常时它将冒泡到运行的位
 - [部署数据库时的密钥配置设置](http://aspnet.4guysfromrolla.com/articles/121008-1.aspx)
 - [Visual Studio 2008 Web 部署项目下载](https://www.microsoft.com/downloads/details.aspx?FamilyId=0AA30AE8-C73B-4BDD-BB1B-FE697256C459&amp;displaylang=en) | [Visual Studio 2005 Web 部署项目下载](https://download.microsoft.com/download/9/4/9/9496adc4-574e-4043-bb70-bc841e27f13c/WebDeploymentSetup.msi)
 - [VS 2008 Web 部署项目](https://weblogs.asp.net/scottgu/archive/2005/11/06/429723.aspx) | [VS 2008 Web 部署项目支持发布](https://weblogs.asp.net/scottgu/archive/2008/01/28/vs-2008-web-deployment-project-support-released.aspx)
-- [Web 部署项目](https://msdn.microsoft.com/en-us/magazine/cc163448.aspx)
+- [Web 部署项目](https://msdn.microsoft.com/magazine/cc163448.aspx)
 
 >[!div class="step-by-step"]
 [上一页](deploying-your-site-using-visual-studio-cs.md)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1f84558bcc59068f2c6cab390c303ebd97953aaa
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aa4afbf2200e1167c9f66aeaddb4273e710394b4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="programmatically-setting-the-objectdatasources-parameter-values-vb"></a>以编程方式设置对象数据源的参数值 (VB)
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 
 可能有些时候，但是，当参数值来源某些不已计由内置数据源之一`Parameter`对象。 如果我们网站支持的用户帐户我们可能想要将基于当前登录的访问者的用户 id。 该参数设置 或者，我们可能需要先将它传递发送到对象数据源的基础对象的方法自定义的参数值。
 
-每当 ObjectDataSource`Select`调用方法 ObjectDataSource 首先引发其[选择事件](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.selecting%28VS.80%29.aspx)。 然后调用对象数据源的基础对象的方法。 一旦完成 ObjectDataSource[所选事件](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.selected%28VS.80%29.aspx)激发 （图 1 展示了这一序列的事件）。 传递给对象数据源的基础对象的方法的参数值可设置或自定义的事件处理程序中`Selecting`事件。
+每当 ObjectDataSource`Select`调用方法 ObjectDataSource 首先引发其[选择事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting%28VS.80%29.aspx)。 然后调用对象数据源的基础对象的方法。 一旦完成 ObjectDataSource[所选事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selected%28VS.80%29.aspx)激发 （图 1 展示了这一序列的事件）。 传递给对象数据源的基础对象的方法的参数值可设置或自定义的事件处理程序中`Selecting`事件。
 
 
 [![调用 ObjectDataSource 选中和选择事件激发之前和之后及其基础对象的方法](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image2.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image1.png)
@@ -55,7 +55,7 @@ ms.lasthandoff: 11/10/2017
 **图 2**： 添加到一个新查询`EmployeesTableAdapter`([单击以查看实际尺寸的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image6.png))
 
 
-选择添加返回行的 SQL 语句。 在访问指定`SELECT`语句屏幕默认`SELECT`语句`EmployeesTableAdapter`已将加载。 在中只需添加`WHERE`子句： `WHERE DATEPART(m, HireDate) = @Month`。 [DATEPART](https://msdn.microsoft.com/en-us/library/ms174420.aspx)是 T-SQL 的函数，返回的特定日期部分`datetime`类型; 在这种情况下，我们将使用`DATEPART`返回的月份`HireDate`列。
+选择添加返回行的 SQL 语句。 在访问指定`SELECT`语句屏幕默认`SELECT`语句`EmployeesTableAdapter`已将加载。 在中只需添加`WHERE`子句： `WHERE DATEPART(m, HireDate) = @Month`。 [DATEPART](https://msdn.microsoft.com/library/ms174420.aspx)是 T-SQL 的函数，返回的特定日期部分`datetime`类型; 在这种情况下，我们将使用`DATEPART`返回的月份`HireDate`列。
 
 
 [![返回仅的那些行其中 hiredate 列是否小于或等于@HiredBeforeDate参数](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image8.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image7.png)

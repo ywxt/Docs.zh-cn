@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/caching/memory
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 23312e73b4530b24b8479e2d379f16315b672ca4
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: 12d3982ce1abf74a575dae5362b037bd4ecc3d0f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="in-memory-caching-in-aspnet-core"></a>ASP.NET 核心中的内存中缓存
 
@@ -94,13 +94,13 @@ Web 场中的非粘性会话需要[分布式缓存](distributed.md)以避免缓�
   - 多个请求可以查找缓存的键值空因为尚未完成的回调。 
   - 这可能导致重新填充缓存的项的多个线程。
 
-- 当一个缓存条目用于创建另一个时，子复制父项的过期的令牌和基于时间的过期时间设置。 子级不是通过手动删除过期的或更新的父项。
+- 当一个缓存条目用于创建另一个时，子复制父项的过期的令牌和基于时间的过期时间设置。 子不过期通过手动删除或更新的父项。
 
 ## <a name="additional-resources"></a>其他资源
 
 * [使用分布式缓存](xref:performance/caching/distributed)
-* [检测更改令牌更改](xref:fundamentals/primitives/change-tokens)
+* [使用更改令牌检测更改](xref:fundamentals/primitives/change-tokens)
 * [响应缓存](xref:performance/caching/response)
 * [响应缓存中间件](xref:performance/caching/middleware)
-* [缓存标记帮助器](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [分布式的缓存标记帮助器](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [分布式缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

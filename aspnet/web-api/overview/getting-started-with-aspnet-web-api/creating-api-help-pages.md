@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 18d04492529e96b6c0e14f1d7a30378b4832f4c8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 37fd26ebaea192cb540c443eff8a07343ab8c15b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-help-pages-for-aspnet-web-api"></a>创建用于 ASP.NET Web API 的帮助页
 ====================
@@ -76,7 +76,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="adding-api-documentation"></a>添加 API 文档
 
-默认情况下，帮助页具有文档的占位符字符串。 你可以使用[XML 文档注释](https://msdn.microsoft.com/en-us/library/b2s063f7.aspx)创建文档。 若要启用此功能，打开文件应用程序区域/HelpPage\_Start/HelpPageConfig.cs 并取消注释以下行：
+默认情况下，帮助页具有文档的占位符字符串。 你可以使用[XML 文档注释](https://msdn.microsoft.com/library/b2s063f7.aspx)创建文档。 若要启用此功能，打开文件应用程序区域/HelpPage\_Start/HelpPageConfig.cs 并取消注释以下行：
 
 [!code-csharp[Main](creating-api-help-pages/samples/sample3.cs)]
 
@@ -88,7 +88,7 @@ ms.lasthandoff: 11/10/2017
 
 ![](creating-api-help-pages/_static/image7.png)
 
-接下来，打开的代码`ValuesController`/Controllers/ValuesControler.cs 中定义的 API 控制器。 将文档注释添加到控制器方法。 例如: 
+接下来，打开的代码`ValuesController`/Controllers/ValuesControler.cs 中定义的 API 控制器。 将文档注释添加到控制器方法。 例如:
 
 [!code-csharp[Main](creating-api-help-pages/samples/sample4.cs)]
 

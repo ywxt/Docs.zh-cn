@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bc009272df3626402ee4c52578f9b364f70a4e78
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dbd2f6c8f1e21529da8a0fbffab212a29f615cc1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-customized-sorting-user-interface-c"></a>创建自定义排序用户界面 (C#)
 ====================
@@ -187,7 +187,7 @@ ms.lasthandoff: 11/10/2017
 
 
 > [!NOTE]
-> 如果你有与产品`NULL`数据库值`CategoryID`， `SupplierID`，或`UnitPrice`字段，这些值将显示为 GridView 中的空字符串默认情况下，这意味着为与这些产品的分隔符行的文本`NULL`值将如下类别: (即，在该处 s 类别后的没有名称： 喜欢个类别： Beverages)。 如果你想此处显示的一个值你可以设置 BoundFields [ `NullDisplayText`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx)文本到您要显示或分配时，可以在 Render 方法中添加条件语句`currentValue`为分隔符行的`Text`属性。
+> 如果你有与产品`NULL`数据库值`CategoryID`， `SupplierID`，或`UnitPrice`字段，这些值将显示为 GridView 中的空字符串默认情况下，这意味着为与这些产品的分隔符行的文本`NULL`值将如下类别: (即，在该处 s 类别后的没有名称： 喜欢个类别： Beverages)。 如果你想此处显示的一个值你可以设置 BoundFields [ `NullDisplayText`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx)文本到您要显示或分配时，可以在 Render 方法中添加条件语句`currentValue`为分隔符行的`Text`属性。
 
 
 ## <a name="summary"></a>摘要

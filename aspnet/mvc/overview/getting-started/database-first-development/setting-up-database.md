@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/setting-up-database
 msc.type: authoredcontent
-ms.openlocfilehash: 9ecde847841eb727a0440f0483c69d1df6757815
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cb979333131cc6ac87fd640bf7c96931054a1814
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-6-database-first-using-mvc-5"></a>借助实体框架 6 数据库优先使用 MVC 5 入门
 ====================
@@ -37,11 +37,11 @@ ms.lasthandoff: 11/10/2017
 
 Code First 开发的介绍性示例，请参阅[Getting Started with ASP.NET MVC 5](../introduction/getting-started.md)。 有关更高级的示例，请参阅[为 ASP.NET MVC 4 应用程序创建实体框架数据模型](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 
-有关选择使用实体框架方法的指南，请参阅[实体框架开发方法](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf)。
+有关选择使用实体框架方法的指南，请参阅[实体框架开发方法](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
-Visual Studio 2013 或 Visual Studio Express 2013 for Web
+Visual Studio 2013 or Visual Studio Express 2013 for Web
 
 ## <a name="set-up-the-database"></a>将数据库设置
 
@@ -49,7 +49,7 @@ Visual Studio 2013 或 Visual Studio Express 2013 for Web
 
 本教程被开发使用 LocalDB Visual Studio 2013 或 Visual Studio Express 2013 for Web。 你可以使用现有的数据库服务器，而不是 LocalDB，但具体取决于版本的 Visual Studio 和你的数据库的类型，所有 Visual Studio 中的数据工具可能不支持。 如果工具不可用于你的数据库，你可能需要执行一些管理套件中的特定于数据库的步骤为你的数据库。
 
-如果你的 Visual Studio 版本中存在数据库工具问题，请确保已安装数据库工具的最新版本。 有关更新或安装数据库工具的信息，请参阅[Microsoft SQL Server Data Tools](https://msdn.microsoft.com/en-us/data/hh297027)。
+如果你的 Visual Studio 版本中存在数据库工具问题，请确保已安装数据库工具的最新版本。 有关更新或安装数据库工具的信息，请参阅[Microsoft SQL Server Data Tools](https://msdn.microsoft.com/data/hh297027)。
 
 启动 Visual Studio 并创建**SQL Server 数据库项目**。 将项目**ContosoUniversityData**。
 

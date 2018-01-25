@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/claims
-ms.openlocfilehash: dd8f42684f9e58b9329602aa9b70d2c0ab950892
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 870bdf79abc2c94745ab5da6997a37ed0e4ea4e2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="claims-based-authorization"></a>基于声明的授权
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 01/19/2018
 
 声明基于的授权检查声明性-开发人员将它们嵌入在其代码中，针对控制器或者控制器中的某个操作指定当前用户必须拥有，并选择性地声明的值必须保留访问的声明请求的资源。 要求是基于策略的声明，开发人员必须生成并注册表达声明要求的策略。
 
-最简单的类型声明的声明存在策略如下所示，并且不检查值。
+最简单类型的声明策略如下所示的声明存在，并且不会检查值。
 
 首先，你需要生成和注册策略。 这是作为授权服务配置的一部分，这通常需要一部分花在`ConfigureServices()`中你*Startup.cs*文件。
 

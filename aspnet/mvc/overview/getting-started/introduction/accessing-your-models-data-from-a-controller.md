@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: b60913cef4b62745cf167e6074834bf7d0c228d1
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 91bfa5fe3c5bd3029b7d7c12c8831e1653fb1d2b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>从控制器访问您的模型的数据
 ====================
@@ -87,7 +87,7 @@ Visual Studio 自动创建[CRUD](http://en.wikipedia.org/wiki/Create,_read,_upda
 
 之前在本教程中，您了解了如何控制器传递数据或对象视图模板使用到`ViewBag`对象。 `ViewBag`是一个动态对象，提供了简便的后期绑定方法，将信息传递给视图。
 
-MVC 还提供了将传递的功能*强*类型化的对象添加到视图模板。 使用此强类型化的方法，更好编译时检查的代码和更丰富[IntelliSense](https://msdn.microsoft.com/en-us/library/hcw1s69b(v=vs.120).aspx)在 Visual Studio 编辑器中。 Visual Studio 中的基架机制使用这种方法 (即传递*强*类型化的模型) 使用`MoviesController`类和视图模板创建的方法和视图时。
+MVC 还提供了将传递的功能*强*类型化的对象添加到视图模板。 使用此强类型化的方法，更好编译时检查的代码和更丰富[IntelliSense](https://msdn.microsoft.com/library/hcw1s69b(v=vs.120).aspx)在 Visual Studio 编辑器中。 Visual Studio 中的基架机制使用这种方法 (即传递*强*类型化的模型) 使用`MoviesController`类和视图模板创建的方法和视图时。
 
 在*Controllers\MoviesController.cs*文件检查生成`Details`方法。 `Details`方法如下所示。
 
@@ -109,9 +109,9 @@ MVC 还提供了将传递的功能*强*类型化的对象添加到视图模板�
 
 [!code-cshtml[Main](accessing-your-models-data-from-a-controller/samples/sample6.cshtml)]
 
-此 `@model` 指令使你能够使用强类型的 `Model` 对象访问控制器传递给视图的电影。 例如，在*Details.cshtml*模板，在代码传递到每个电影字段`DisplayNameFor`和[DisplayFor](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.displayextensions.displayfor(VS.98).aspx)通过强类型化的 HTML 帮助器`Model`对象。 `Create`和`Edit`方法和查看模板还将传递电影模型对象。
+此 `@model` 指令使你能够使用强类型的 `Model` 对象访问控制器传递给视图的电影。 例如，在*Details.cshtml*模板，在代码传递到每个电影字段`DisplayNameFor`和[DisplayFor](https://msdn.microsoft.com/library/system.web.mvc.html.displayextensions.displayfor(VS.98).aspx)通过强类型化的 HTML 帮助器`Model`对象。 `Create`和`Edit`方法和查看模板还将传递电影模型对象。
 
-检查*Index.cshtml*视图模板和`Index`中的方法*MoviesController.cs*文件。 请注意该代码如何创建[ `List` ](https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx)对象时它调用`View`中的帮助器方法`Index`操作方法。 在代码然后传递此`Movies`列表中按从`Index`到视图的操作方法：
+检查*Index.cshtml*视图模板和`Index`中的方法*MoviesController.cs*文件。 请注意该代码如何创建[ `List` ](https://msdn.microsoft.com/library/6sh2ey19.aspx)对象时它调用`View`中的帮助器方法`Index`操作方法。 在代码然后传递此`Movies`列表中按从`Index`到视图的操作方法：
 
 [!code-csharp[Main](accessing-your-models-data-from-a-controller/samples/sample7.cs?highlight=3)]
 

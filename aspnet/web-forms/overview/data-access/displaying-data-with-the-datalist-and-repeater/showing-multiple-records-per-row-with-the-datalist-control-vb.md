@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d6a9c6aef42d1f165567d1a1802bffa853a320e1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 416178533f022f2a262799e6f042d6009bb9d999
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-vb"></a>显示每个行与 DataList 控件 (VB) 的多个记录
 ====================
@@ -67,7 +67,7 @@ DataList 示例我们已在过去的两个教程中看到已作为某个单列 H
 
 ## <a name="step-2-changing-the-datalist-s-layout-direction"></a>步骤 2： 更改 DataList 的布局方向
 
-默认行为时 DataList 为垂直在单个列中，多行表中，其项进行布局更改此行为可以轻松地通过 DataList s [ `RepeatDirection`属性](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.datalist.repeatdirection.aspx)。 `RepeatDirection`属性可以接受两个可能值之一：`Horizontal`或`Vertical`（默认值）。
+默认行为时 DataList 为垂直在单个列中，多行表中，其项进行布局更改此行为可以轻松地通过 DataList s [ `RepeatDirection`属性](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatdirection.aspx)。 `RepeatDirection`属性可以接受两个可能值之一：`Horizontal`或`Vertical`（默认值）。
 
 通过更改`RepeatDirection`属性从`Vertical`到`Horizontal`，DataList 呈现其记录在单个行中，创建每个数据源项的一个列。 为了说明这种效果，设计器中 DataList 上单击，然后，从属性窗口中更改`RepeatDirection`属性从`Vertical`到`Horiztonal`。 立即在这样做，设计器调整 DataList 的布局，创建多列的单行更行接口 （请参见图 3）。
 
@@ -87,7 +87,7 @@ DataList 示例我们已在过去的两个教程中看到已作为某个单列 H
 
 ## <a name="step-3-displaying-data-in-a-multi-column-multi-row-table"></a>步骤 3： 在多列中，多行表中显示数据
 
-若要创建多列中，多行 DataList，我们需要设置[`RepeatColumns`属性](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.datalist.repeatcolumns.aspx)到要显示的列数。 默认情况下，`RepeatColumns`属性设置为 0，这将导致 DataList 要在单个行或列中显示的所有项 (根据的值`RepeatDirection`属性)。
+若要创建多列中，多行 DataList，我们需要设置[`RepeatColumns`属性](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatcolumns.aspx)到要显示的列数。 默认情况下，`RepeatColumns`属性设置为 0，这将导致 DataList 要在单个行或列中显示的所有项 (根据的值`RepeatDirection`属性)。
 
 对于我们的示例，让我们来显示每个表行的三种产品。 因此，设置`RepeatColumns`为 3 的属性。 此更改后，需要一段时间来在浏览器中查看结果。 如图 5 所示，现在是三个列中，多行表中列出的产品。
 

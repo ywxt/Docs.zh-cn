@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/aspnet-web-pages-razor-faq
 msc.type: authoredcontent
-ms.openlocfilehash: 7f6dc3b56a33bcbe3e1e4086681ca1ba76d7d153
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 60cc4ca364923cb131d5e91cd7b6307b1e68644b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-pages-razor-faq"></a>ASP.NET 网页 (Razor) 常见问题
 ====================
@@ -99,7 +99,7 @@ ASP.NET 网页尤其旨在简化已经知道 HTML 中以将服务器处理添加
 <a id="Can_I_use_ASP.NET_Web_Forms_controls_on_a_Web_Pages_page"></a>
 ## <a name="can-i-use-aspnet-web-forms-controls-on-a-web-pages-page"></a>可以使用网页页面上的 ASP.NET Web 窗体控件？
 
-不是。 Web 窗体控件，例如[复选框](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.checkbox)控件，[验证控件](https://msdn.microsoft.com/en-us/library/bwd43d0x)，和[GridView](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview)控制仅在 Web 窗体页中的工作 (*.aspx*文件)。 这些控件需要 Web 窗体页框架。
+不是。 Web 窗体控件，例如[复选框](https://msdn.microsoft.com/library/system.web.ui.webcontrols.checkbox)控件，[验证控件](https://msdn.microsoft.com/library/bwd43d0x)，和[GridView](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview)控制仅在 Web 窗体页中的工作 (*.aspx*文件)。 这些控件需要 Web 窗体页框架。
 
 <a id="Can_I_deploy_an_ASP.NET_Web_Pages_site_without_using_WebMatrix"></a>
 ## <a name="can-i-deploy-an-aspnet-web-pages-site-without-using-webmatrix"></a>可以将 ASP.NET Web Pages 站点部署而无需使用 WebMatrix
@@ -135,6 +135,6 @@ ASP.NET 网页尤其旨在简化已经知道 HTML 中以将服务器处理添加
 ## <a name="additional-resources"></a>其他资源
 
 
-[ASP.NET 网页 (Razor) 故障排除指南](https://go.microsoft.com/fwlink/?LinkId=253001)
+[ASP.NET 网页 (Razor) 疑难解答指南](https://go.microsoft.com/fwlink/?LinkId=253001)
 
 [WebMatrix 和 ASP.NET Web Pages 论坛](https://forums.asp.net/1224.aspx/1?WebMatrix)ASP.NET 网站上

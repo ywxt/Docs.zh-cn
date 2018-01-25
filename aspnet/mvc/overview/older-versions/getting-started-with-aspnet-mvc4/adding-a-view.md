@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 4309290294b28d4c177e0193719bcff4b3f2a8cf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 60374ddc6754f7e312ad08b420268308a9935bb4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-view"></a>添加视图
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](adding-a-view/samples/sample1.cs)]
 
-`Index`上面方法使用视图模板来生成对浏览器的 HTML 响应。 控制器方法 (也称为[操作方法](http://rachelappel.com/asp.net-mvc-actionresults-explained))，如`Index`上面，方法通常返回[ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx) (或从派生的类[ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx))，不基元类型喜欢字符串。
+`Index`上面方法使用视图模板来生成对浏览器的 HTML 响应。 控制器方法 (也称为[操作方法](http://rachelappel.com/asp.net-mvc-actionresults-explained))，如`Index`上面，方法通常返回[ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx) (或从派生的类[ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx))，不基元类型喜欢字符串。
 
 在项目中，添加可与一个视图模板`Index`方法。 若要执行此操作，右键单击内`Index`方法，并单击**添加视图**。
 

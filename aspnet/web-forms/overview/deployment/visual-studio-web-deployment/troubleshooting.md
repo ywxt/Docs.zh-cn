@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: 2d416432aad9d5654aefd8c63b84b6ae18967515
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a7a66e7e67539e4b075da6fc054a7b53984b6ce1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>使用 Visual Studio 的 ASP.NET Web 部署： 故障排除
 ====================
@@ -31,8 +31,8 @@ ms.lasthandoff: 11/10/2017
 
 所示的方案适用于 Azure 和第三方托管提供商。 有关解决在 Azure App Service 中的 web 应用的详细信息，请参阅以下资源：
 
-- [对 Azure App Service 中使用 Visual Studio 中的 web 应用进行故障排除](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
-- [在 Azure App Service 中监视 Web Apps](https://azure.microsoft.com/en-us/documentation/articles/web-sites-monitor//)
+- [对 Azure App Service 中使用 Visual Studio 中的 web 应用进行故障排除](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+- [在 Azure App Service 中监视 Web Apps](https://azure.microsoft.com/documentation/articles/web-sites-monitor//)
 - [宣布的 Windows Azure SDK 2.0 for.NET 的发布](http://https://weblogs.asp.net/scottgu/announcing-the-release-of-windows-azure-sdk-2-0-for-net)（ScottGu 的博客，演示如何获取 Visual Studio 中的诊断日志）
 
 ## <a name="server-error-in--application---current-custom-error-settings-prevent-details-of-the-error-from-being-viewed-remotely"></a>服务器错误 '/' 应用程序-中当前的自定义错误设置防止错误的详细信息其他人远程查看
@@ -180,7 +180,7 @@ System.Data.SqlClient.SqlException： 无法打开数据库"DatabaseName"该登�
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
-名称*.mdf*文件不能匹配任何已曾经存在你计算机的 SQL Server Express 数据库的名称，即使你删除*.mdf*先前存在的数据库文件。 更改的名称*.mdf*从未为数据库名称和更改使用的名称的文件*Web.config*文件以使用新名称。 作为替代方法，你可以使用[SQL Server Management Studio Express](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&amp;id=7593)删除先前存在的 SQL Server Express 数据库。
+名称*.mdf*文件不能匹配任何已曾经存在你计算机的 SQL Server Express 数据库的名称，即使你删除*.mdf*先前存在的数据库文件。 更改的名称*.mdf*从未为数据库名称和更改使用的名称的文件*Web.config*文件以使用新名称。 作为替代方法，你可以使用[SQL Server Management Studio Express](https://www.microsoft.com/download/details.aspx?displaylang=en&amp;id=7593)删除先前存在的 SQL Server Express 数据库。
 
 ## <a name="model-compatibility-cannot-be-checked"></a>模型兼容性无法检查
 
@@ -192,7 +192,7 @@ System.Data.SqlClient.SqlException： 无法打开数据库"DatabaseName"该登�
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
-如果你在计算机上，数据库可能已存在与某些表之前，已曾经使用 Web.config 文件中放置的数据库名称。 选择尚未使用在之前的计算机和更改的新名称*Web.config*文件以点以使用此新的数据库名称。 作为替代方法，你可以使用[SQL Server Express 实用工具](https://www.microsoft.com/en-us/download/details.aspx?DisplayLang=en&amp;id=3990)或[SQL Server Management Studio Express](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&amp;id=7593)删除现有数据库。
+如果你在计算机上，数据库可能已存在与某些表之前，已曾经使用 Web.config 文件中放置的数据库名称。 选择尚未使用在之前的计算机和更改的新名称*Web.config*文件以点以使用此新的数据库名称。 作为替代方法，你可以使用[SQL Server Express 实用工具](https://www.microsoft.com/download/details.aspx?DisplayLang=en&amp;id=3990)或[SQL Server Management Studio Express](https://www.microsoft.com/download/details.aspx?displaylang=en&amp;id=7593)删除现有数据库。
 
 ## <a name="sql-error-when-a-script-attempts-to-create-users-or-roles"></a>SQL 错误时的脚本尝试创建用户或角色
 
@@ -210,7 +210,7 @@ System.Data.SqlClient.SqlException： 无法打开数据库"DatabaseName"该登�
 
 [!code-console[Main](troubleshooting/samples/sample9.cmd)]
 
-有关如何编辑项目文件中的 PreSource 元素的信息，请参阅[如何： 编辑项目文件中的部署设置](https://msdn.microsoft.com/en-us/library/ff398069(v=vs.100).aspx)。 如果用户或开发数据库中的角色需要将位于目标数据库中，请与你托管提供商联系以获取帮助。
+有关如何编辑项目文件中的 PreSource 元素的信息，请参阅[如何： 编辑项目文件中的部署设置](https://msdn.microsoft.com/library/ff398069(v=vs.100).aspx)。 如果用户或开发数据库中的角色需要将位于目标数据库中，请与你托管提供商联系以获取帮助。
 
 ## <a name="sql-server-timeout-error-when-running-custom-scripts-during-deployment"></a>SQL Server 超时错误时在部署过程中运行自定义脚本
 
@@ -220,7 +220,7 @@ System.Data.SqlClient.SqlException： 无法打开数据库"DatabaseName"该登�
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
-运行具有不同的事务模式的多个脚本可能导致超时错误。 默认情况下自动生成的脚本运行在事务中，但自定义脚本不这样做。 如果你选择**抽取数据和/或从现有数据库的架构**选项**打包/发布 SQL**选项卡上，如果你添加自定义 SQL 脚本，必须更改某些脚本上的事务设置，以便所有脚本都使用相同的事务设置。 有关详细信息，请参阅[如何： 部署数据库与 Web 应用程序项目](https://msdn.microsoft.com/en-us/library/dd465343.aspx)。
+运行具有不同的事务模式的多个脚本可能导致超时错误。 默认情况下自动生成的脚本运行在事务中，但自定义脚本不这样做。 如果你选择**抽取数据和/或从现有数据库的架构**选项**打包/发布 SQL**选项卡上，如果你添加自定义 SQL 脚本，必须更改某些脚本上的事务设置，以便所有脚本都使用相同的事务设置。 有关详细信息，请参阅[如何： 部署数据库与 Web 应用程序项目](https://msdn.microsoft.com/library/dd465343.aspx)。
 
 如果你已配置事务设置，以便所有都相同，但仍遇到此错误，可能的解决方法是单独运行这些脚本。 在**数据库脚本**网格中的**打包/发布**SQL 选项卡上，将其清除**包括**会导致超时错误，该脚本的复选框然后发布项目。 然后转回**数据库脚本**网格中，选择该脚本**包括**复选框，然后清除**包括**其他脚本对应的复选框。 然后再次发布该项目。 发布时，此次运行时仅选择自定义的脚本。
 
@@ -280,7 +280,7 @@ ASP.NET 4 未安装在 IIS 中。 如果您要部署到的服务器是开发计�
 
 部署应用程序，如 SQL Server Compact 后者将其数据库存储在应用程序中的文件使用 Entity Framework Code First 迁移和 DBMS\_数据文件夹。 必须配置为在第一个部署之后创建数据库的 Code First 迁移。 当你运行应用程序可以一条错误消息如下例所示：
 
-路径不是有效的。 检查数据库的目录。 [路径 = c:\inetpub\wwwroot\App\_Data\DatabaseName.sdf]
+路径不是有效的。 检查数据库的目录。 [Path = c:\inetpub\wwwroot\App\_Data\DatabaseName.sdf ]
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
@@ -309,7 +309,7 @@ Web 部署任务失败。 （无法完成对远程代理 URL https://serverurl.c
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
-默认情况下，Visual Studio 集对站点的根文件夹的读取权限和写应用程序权限\_数据文件夹。 如果您知道站点文件夹上的默认权限是否正确，并且不需要设置，则禁用此行为通过添加 **&lt;IncludeSetACLProviderOn 目标&gt;False&lt;/IncludeSetACLProviderOnDestination&gt;** 到发布配置文件 （以影响一个配置文件） 或 （要影响的所有配置文件） 的 wpp.targets 文件。 有关如何编辑这些文件的信息，请参阅[如何： 编辑配置文件 (.pubxml) 文件中的部署设置](https://msdn.microsoft.com/en-us/library/ff398069.aspx)。
+默认情况下，Visual Studio 集对站点的根文件夹的读取权限和写应用程序权限\_数据文件夹。 如果您知道站点文件夹上的默认权限是否正确，并且不需要设置，则禁用此行为通过添加 **&lt;IncludeSetACLProviderOn 目标&gt;False&lt;/IncludeSetACLProviderOnDestination&gt;** 到发布配置文件 （以影响一个配置文件） 或 （要影响的所有配置文件） 的 wpp.targets 文件。 有关如何编辑这些文件的信息，请参阅[如何： 编辑配置文件 (.pubxml) 文件中的部署设置](https://msdn.microsoft.com/library/ff398069.aspx)。
 
 ## <a name="access-denied-errors-when-the-application-tries-to-write-to-an-application-folder"></a>当应用程序尝试写入到应用程序文件夹时，访问被拒绝错误
 
@@ -319,7 +319,7 @@ Web 部署任务失败。 （无法完成对远程代理 URL https://serverurl.c
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
-默认情况下，Visual Studio 集对站点的根文件夹的读取权限和写应用程序权限\_数据文件夹。 如果你的应用程序需要的子文件夹的写访问权限，你可以将该文件夹的权限设置为中设置文件夹权限和部署到生产环境教程在本系列中所示。 如果你的应用程序需要的站点的根文件夹的写访问权限，则必须防止它在根文件夹上设置只读访问权限，通过添加 **&lt;IncludeSetACLProviderOn 目标&gt;False&lt;/IncludeSetACLProviderOnDestination&gt;** 到发布配置文件 （以影响一个配置文件） 或 （要影响的所有配置文件） 的 wpp.targets 文件。 有关如何编辑这些文件的信息，请参阅[如何： 编辑配置文件 (.pubxml) 文件中的部署设置](https://msdn.microsoft.com/en-us/library/ff398069.aspx)。
+默认情况下，Visual Studio 集对站点的根文件夹的读取权限和写应用程序权限\_数据文件夹。 如果你的应用程序需要的子文件夹的写访问权限，你可以将该文件夹的权限设置为中设置文件夹权限和部署到生产环境教程在本系列中所示。 如果你的应用程序需要的站点的根文件夹的写访问权限，则必须防止它在根文件夹上设置只读访问权限，通过添加 **&lt;IncludeSetACLProviderOn 目标&gt;False&lt;/IncludeSetACLProviderOnDestination&gt;** 到发布配置文件 （以影响一个配置文件） 或 （要影响的所有配置文件） 的 wpp.targets 文件。 有关如何编辑这些文件的信息，请参阅[如何： 编辑配置文件 (.pubxml) 文件中的部署设置](https://msdn.microsoft.com/library/ff398069.aspx)。
 
 <a id="aspnet45error"></a>
 
@@ -333,7 +333,7 @@ TargetFramework 属性中&lt;编译&gt;仅对目标版本 4.0 和更高版本的
 
 错误页的源错误框突出从 Web.config 的以下行显示为错误的原因：
 
-&lt;编译 targetFramework ="4.5"/&gt;
+&lt;compilation targetFramework="4.5" /&gt;
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
@@ -341,7 +341,7 @@ TargetFramework 属性中&lt;编译&gt;仅对目标版本 4.0 和更高版本的
 
 如果将 ASP.NET 4 或更早版本的 web 项目部署到相同的目标中，选择**删除目标位置的其他文件**上的复选框**设置**选项卡**发布 Web**向导。 如果你未选中**删除目标位置的其他文件**，你将继续获取配置错误页。
 
-项目**属性**windows 包含目标框架下拉列表，但你不能解决此问题通过只需更改，从**.NET Framework 4.5**到**.NET Framework 4**. 如果你将目标框架更改为更早版本的 framework 版本时，项目将仍具有对的更高版本的 framework 版本的程序集的引用，而不会运行。 你必须手动更改这些引用，或创建新的项目面向.NET Framework 4 或更早版本。 有关详细信息，请参阅[.NET Framework 面向网站](https://msdn.microsoft.com/en-us/library/bb398791(v=vs.100).aspx)。
+项目**属性**windows 包含目标框架下拉列表，但你不能解决此问题通过只需更改，从**.NET Framework 4.5**到**.NET Framework 4**. 如果你将目标框架更改为更早版本的 framework 版本时，项目将仍具有对的更高版本的 framework 版本的程序集的引用，而不会运行。 你必须手动更改这些引用，或创建新的项目面向.NET Framework 4 或更早版本。 有关详细信息，请参阅[.NET Framework 面向网站](https://msdn.microsoft.com/library/bb398791(v=vs.100).aspx)。
 
 ## <a name="medium-trust-errors"></a>中级信任错误
 

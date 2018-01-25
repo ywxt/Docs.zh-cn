@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-search
 msc.type: authoredcontent
-ms.openlocfilehash: 10457d154f5fda875f7d1054d48daeeba3a50b7c
-ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
+ms.openlocfilehash: 116f681e14af0a09a4eb1502ef9f057c5db2f97d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="search"></a>搜索
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 01/12/2018
 
 [!code-csharp[Main](adding-search/samples/sample1.cs?highlight=1,6-9)]
 
-第一行`Index`方法中创建以下[LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx)查询，以便选择电影：
+第一行`Index`方法中创建以下[LINQ](https://msdn.microsoft.com/library/bb397926.aspx)查询，以便选择电影：
 
 [!code-csharp[Main](adding-search/samples/sample2.cs)]
 
@@ -44,10 +44,10 @@ ms.lasthandoff: 01/12/2018
 
 [!code-csharp[Main](adding-search/samples/sample3.cs)]
 
-上面的 `s => s.Title` 代码是 [Lambda 表达式](https://msdn.microsoft.com/en-us/library/bb397687.aspx)。 Lambda 在基于方法的使用[LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx)如查询中用作标准查询运算符方法的自变量[其中](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.where.aspx)在上面的代码中使用的方法。 在定义后或通过调用方法，如对其进行修改时，将不会执行 LINQ 查询`Where`或`OrderBy`。 相反，延迟查询执行，这意味着表达式的计算延迟，直到它已实现的值实际上循环访问或[ `ToList` ](https://msdn.microsoft.com/en-us/library/bb342261.aspx)调用方法。 在`Search`示例中，在执行查询*Index.cshtml*视图。 有关延迟执行查询的详细信息，请参阅[Query Execution](https://msdn.microsoft.com/en-us/library/bb738633.aspx)（查询执行）。
+上面的 `s => s.Title` 代码是 [Lambda 表达式](https://msdn.microsoft.com/library/bb397687.aspx)。 Lambda 在基于方法的使用[LINQ](https://msdn.microsoft.com/library/bb397926.aspx)如查询中用作标准查询运算符方法的自变量[其中](https://msdn.microsoft.com/library/system.linq.enumerable.where.aspx)在上面的代码中使用的方法。 在定义后或通过调用方法，如对其进行修改时，将不会执行 LINQ 查询`Where`或`OrderBy`。 相反，延迟查询执行，这意味着表达式的计算延迟，直到它已实现的值实际上循环访问或[ `ToList` ](https://msdn.microsoft.com/library/bb342261.aspx)调用方法。 在`Search`示例中，在执行查询*Index.cshtml*视图。 有关延迟执行查询的详细信息，请参阅[Query Execution](https://msdn.microsoft.com/library/bb738633.aspx)（查询执行）。
 
 > [!NOTE]
-> [Contains](https://msdn.microsoft.com/en-us/library/bb155125.aspx)方法运行在数据库中，不是 c# 代码上面。 在数据库中， [Contains](https://msdn.microsoft.com/en-us/library/bb155125.aspx)映射到[SQL LIKE](https://msdn.microsoft.com/en-us/library/ms179859.aspx)，这是区分大小写。
+> [Contains](https://msdn.microsoft.com/library/bb155125.aspx)方法运行在数据库中，不是 c# 代码上面。 在数据库中， [Contains](https://msdn.microsoft.com/library/bb155125.aspx)映射到[SQL LIKE](https://msdn.microsoft.com/library/ms179859.aspx)，这是区分大小写。
 
 现在你可以更新`Index`将向用户显示该窗体的视图。
 
@@ -123,7 +123,7 @@ Visual Studio 2013 具有良好的改善时显示和编辑视图文件。 使用
 
 [!code-csharp[Main](adding-search/samples/sample12.cs)]
 
-该代码使用`AddRange`方法的泛型`List`集合，以便添加到列表的所有非重复的风格。 (而无需`Distinct`修饰符，将添加重复的风格 — 例如，将在我们的示例中两次添加喜剧)。 代码然后将存储的列表中的风格`ViewBag.MovieGenre`对象。 存储类别数据 （此类电影风格的） 作为[此时](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlist(v=vs.108).aspx)对象在`ViewBag`，则访问一个下拉列表框中的类别数据是典型的 MVC 应用程序的方法。
+该代码使用`AddRange`方法的泛型`List`集合，以便添加到列表的所有非重复的风格。 (而无需`Distinct`修饰符，将添加重复的风格 — 例如，将在我们的示例中两次添加喜剧)。 代码然后将存储的列表中的风格`ViewBag.MovieGenre`对象。 存储类别数据 （此类电影风格的） 作为[此时](https://msdn.microsoft.cus/library/system.web.mvc.selectlist(v=vs.108).aspx)对象在`ViewBag`，则访问一个下拉列表框中的类别数据是典型的 MVC 应用程序的方法。
 
 下面的代码演示如何检查`movieGenre`参数。 如果不为空，则进一步对代码约束电影查询，以限制到指定的流派所选的影片。
 

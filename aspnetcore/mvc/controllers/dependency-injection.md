@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 21cffcd285879fdca81cb7d92d0f079d4bf7756c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 946d695c572379c3ebc2eda1569f186f25ab9bfc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="dependency-injection-into-controllers"></a>依赖关系注入到控制器
 
@@ -87,7 +87,7 @@ Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstr
 
 ## <a name="accessing-settings-from-a-controller"></a>从控制器的访问设置
 
-访问应用程序或配置设置从控制器中的是通用模式。 此访问都应该使用中所述的选项模式[配置](xref:fundamentals/configuration/index)。 你通常应该不会请求设置直接从你使用依赖关系注入的控制器。 更好的方法是请求`IOptions<T>`实例，其中`T`是你需要配置类。
+访问应用程序或配置设置从控制器中的是通用模式。 此访问都应该使用中所述的选项模式[配置](xref:fundamentals/configuration/index)。 通常不应直接从你的控制器使用依赖关系注入请求设置。 更好的方法是请求`IOptions<T>`实例，其中`T`是你需要配置类。
 
 若要使用的选项模式，你需要创建一个类，表示的选项，例如这个：
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 6f93d6033b68773507d624125936f0a69777e2b7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 83fe815af9030aee10a5204718b00c79925e9126
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>使用 Entity Framework 4.0 和 ObjectDataSource 控件，第 1 部分： 入门
 ====================
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > ## <a name="database-first"></a>第一个数据库
 > 
-> 有三种方法可以使用的实体框架中的数据： *Database First*， *Model First*，和*Code First*。 此教程适用于第一个数据库。 有关如何为你的方案选择最佳这些工作流和指南之间的差异信息，请参阅[实体框架开发工作流](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf)。
+> 有三种方法可以使用的实体框架中的数据： *Database First*， *Model First*，和*Code First*。 此教程适用于第一个数据库。 有关如何为你的方案选择最佳这些工作流和指南之间的差异信息，请参阅[实体框架开发工作流](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf)。
 > 
 > ## <a name="web-forms"></a>Web Forms — Web 窗体
 > 
@@ -41,13 +41,13 @@ ms.lasthandoff: 11/10/2017
 > | **本教程中所示** | **也适用于** |
 > | --- | --- |
 > | Windows 7 | Windows 8 |
-> | Visual Studio 2010 | Web 的 visual Studio 2010 Express。 本教程不经过测试与更高版本的 Visual Studio。 有许多菜单中选择、 对话框框中，和模板中的差异。 |
+> | Visual Studio 2010 | Visual Studio 2010 Express for Web. 本教程不经过测试与更高版本的 Visual Studio。 有许多菜单中选择、 对话框框中，和模板中的差异。 |
 > | .NET 4 | .NET 4.5 是与.NET 4 中，向后的兼容，但本教程未经过测试.NET 4.5。 |
 > | 实体框架 4 | 本教程不经过测试与实体框架的更高版本。 从实体框架 5 开始，默认情况下使用 EF `DbContext API` ，引入了 EF 4.1。 EntityDataSource 控件的设计用于`ObjectContext`API。 有关如何使用 EntityDataSource 控件`DbContext`API，请参阅[这篇博客文章](https://blogs.msdn.com/b/webdev/archive/2012/09/13/how-to-use-the-entitydatasource-control-with-entity-framework-code-first.aspx)。 |
 > 
 > ## <a name="questions"></a>问题
 > 
-> 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)、[实体框架和 LINQ to Entities 论坛](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
+> 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)、[实体框架和 LINQ to Entities 论坛](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
 
 
 `EntityDataSource`控制，你可以非常快速地创建应用程序，但它通常需要你需要占用大量的业务逻辑和中的数据访问逻辑你*.aspx*页。 如果希望你的应用程序，以增大复杂性和需要持续不断的维护，您可以为了创建预先购买更多的开发时间*n 层*或*分层*应用程序结构这就是更易于维护。 若要实现此体系结构，请从业务逻辑层 (BLL) 和数据访问层 (DAL) 分隔的表示层。 若要实现此结构的一种方法是使用`ObjectDataSource`而不是控制`EntityDataSource`控件。 当你使用`ObjectDataSource`控件，实现您自己的数据访问代码，然后调用在*.aspx*页使用具有多个相同的控件功能的其他数据源控件。 这样就可以使用 Web 窗体控件进行数据访问的好处与合并的 n 层方法的优点。
@@ -60,7 +60,7 @@ ms.lasthandoff: 11/10/2017
 
 除了基本的 CRUD 操作，创建要用于类`ObjectDataSource`控件可能需要执行业务逻辑时`ObjectDataSource`读取或更新数据。 例如，在更新部门时，你可能需要验证没有其他部门具有相同的管理员，因为人不能是多个部门的管理员。
 
-在某些`ObjectDataSource`文档，如[ObjectDataSource 类概述](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.aspx)，该控件调用的类称为*业务对象*，包括业务逻辑和数据访问逻辑. 在本教程中，你将创建单独的类为业务逻辑和数据访问逻辑。 封装数据访问逻辑的类称为*存储库*。 业务逻辑类包括业务逻辑方法和数据访问方法，但数据访问方法都会调用要执行数据访问任务的存储库。
+在某些`ObjectDataSource`文档，如[ObjectDataSource 类概述](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.aspx)，该控件调用的类称为*业务对象*，包括业务逻辑和数据访问逻辑. 在本教程中，你将创建单独的类为业务逻辑和数据访问逻辑。 封装数据访问逻辑的类称为*存储库*。 业务逻辑类包括业务逻辑方法和数据访问方法，但数据访问方法都会调用要执行数据访问任务的存储库。
 
 你还将创建 BLL 和 DAL，它方便了自动的单元之间的抽象层的 BLL 测试。 此抽象层实现通过创建一个接口并使用该接口，当实例化的业务逻辑类中的存储库中。 这使你的业务逻辑类提供对任何实现存储库接口的对象的引用。 对于正常操作，你可以提供存储库对象，可与实体框架。 用于测试，你可以提供适用于一种方法，可以轻松地进行处理，如类变量定义为集合中存储的数据的存储库对象。
 

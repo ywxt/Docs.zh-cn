@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 7c03453e64cfc065d9f424702cc5af373e9bf536
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9c0edb301de85d15b9a3527382b72211f6f3d3ec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 的 ASP.NET Web 应用程序： 简介-1 12
 ====================
@@ -63,7 +63,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="deploying-web-site-projects"></a>部署网站项目
 
-Contoso 大学是一个 Visual Studio web 应用程序项目。 大部分的部署方法和在本教程中演示的工具不适用于[网站项目](https://msdn.microsoft.com/en-us/library/dd547590.aspx)。 有关如何部署网站项目的信息，请参阅[ASP.NET 部署内容映射](https://msdn.microsoft.com/en-us/library/bb386521.aspx#deployment_for_web_site_projects)。
+Contoso 大学是一个 Visual Studio web 应用程序项目。 大部分的部署方法和在本教程中演示的工具不适用于[网站项目](https://msdn.microsoft.com/library/dd547590.aspx)。 有关如何部署网站项目的信息，请参阅[ASP.NET 部署内容映射](https://msdn.microsoft.com/library/bb386521.aspx#deployment_for_web_site_projects)。
 
 ## <a name="deploying-aspnet-mvc-projects"></a>部署 ASP.NET MVC 项目
 
@@ -81,13 +81,13 @@ Contoso 大学是一个 Visual Studio web 应用程序项目。 大部分的部�
 
 对教程的注释都欢迎，并更新本教程时将保持尽一切可能要考虑的帐户更正或改进教程注释中提供的建议。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 在开始之前，请确保你具有 Windows 7 或更高版本，并且在你的计算机上安装以下产品之一：
 
 - [Visual Studio 2010 SP1](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)
 - [Visual Web Developer Express 2010 SP1](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VWD2010SP1Pack)
-- [Visual Studio 2012 RC 或 Visual Studio Express 2012 RC for Web](https://go.microsoft.com/fwlink/?LinkId=240162)
+- [Visual Studio 2012 RC or Visual Studio Express 2012 RC for Web](https://go.microsoft.com/fwlink/?LinkId=240162)
 
 如果你有 Visual Studio 2010 SP1 或 Visual Web Developer Express 2010 SP1，也安装以下产品：
 

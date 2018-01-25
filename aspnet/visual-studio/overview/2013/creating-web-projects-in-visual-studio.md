@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 96960ef56b1206374458dbbba4befffaa83c1624
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aacae7a9ccf483b21d3c6796c0411d558fa3c75b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>在 Visual Studio 2013 中创建 ASP.NET Web 项目
 ====================
@@ -31,18 +31,18 @@ ms.lasthandoff: 11/10/2017
 > - 使用[Bootstrap](#bootstrap)提供响应式设计和主题功能。
 > - 用于仅为 MVC，如提供的 Web 窗体的新功能[自动测试项目创建](#testproj)和[Intranet 站点模板](#winauth)。
 > 
-> 有关如何为 Azure 云服务或 Azure 移动服务中创建 web 项目的信息，请参阅[Azure 云服务和 ASP.NET 入门](https://azure.microsoft.com/en-us/documentation/articles/cloud-services-dotnet-get-started/)和[使用 Azure 移动服务.NET 创建排行榜应用程序后端](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)。
+> 有关如何为 Azure 云服务或 Azure 移动服务中创建 web 项目的信息，请参阅[Azure 云服务和 ASP.NET 入门](https://azure.microsoft.com/documentation/articles/cloud-services-dotnet-get-started/)和[使用 Azure 移动服务.NET 创建排行榜应用程序后端](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)。
 
 
 <a id="prerequisites"></a>
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 本文适用于[Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566)与[Update 3](https://go.microsoft.com/fwlink/?linkid=397827&amp;clcid=0x409)安装。
 
 <a id="wap"></a>
 ## <a name="web-application-projects-versus-web-site-projects"></a>与网站项目的 web 应用程序项目
 
-ASP.NET 为你提供了两种类型的 web 项目之间进行选择： *web 应用程序项目*和*网站项目*。 我们建议对于新开发，web 应用程序项目，并且本文仅适用于 web 应用程序项目。 有关详细信息，请参阅[Web 应用程序项目与 Visual Studio 中的网站项目](https://msdn.microsoft.com/en-us/library/dd547590(v=vs.120).aspx)MSDN 网站上的。
+ASP.NET 为你提供了两种类型的 web 项目之间进行选择： *web 应用程序项目*和*网站项目*。 我们建议对于新开发，web 应用程序项目，并且本文仅适用于 web 应用程序项目。 有关详细信息，请参阅[Web 应用程序项目与 Visual Studio 中的网站项目](https://msdn.microsoft.com/library/dd547590(v=vs.120).aspx)MSDN 网站上的。
 
 <a id="overview"></a>
 ## <a name="overview-of-web-application-project-creation"></a>Web 应用程序项目创建的概述
@@ -54,8 +54,8 @@ ASP.NET 为你提供了两种类型的 web 项目之间进行选择： *web 应�
 
     ![“新建项目”对话框](creating-web-projects-in-visual-studio/_static/image1.png)
 
-    你可以选择**云**在左窗格中创建[Azure 云服务](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-create-deploy)， [Azure 移动服务](https://msdn.microsoft.com/en-us/library/windows/apps/dn629482.aspx)，或[Azure web 作业](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-webjobs)。 本主题并未涵盖这些模板。
-3. 在右窗格中，单击**向项目添加 Application Insights**复选框，如果你希望运行状况和使用情况监视你的应用程序。 有关详细信息，请参阅[监视 web 应用程序性能的](https://azure.microsoft.com/en-us/documentation/articles/app-insights-web-monitor-performance/)。
+    你可以选择**云**在左窗格中创建[Azure 云服务](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-create-deploy)， [Azure 移动服务](https://msdn.microsoft.com/library/windows/apps/dn629482.aspx)，或[Azure web 作业](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-webjobs)。 本主题并未涵盖这些模板。
+3. 在右窗格中，单击**向项目添加 Application Insights**复选框，如果你希望运行状况和使用情况监视你的应用程序。 有关详细信息，请参阅[监视 web 应用程序性能的](https://azure.microsoft.com/documentation/articles/app-insights-web-monitor-performance/)。
 4. 指定项目**名称**，**位置**，和其他选项，，然后单击**确定**。
 
     **新建 ASP.NET 项目**此时将显示对话框。
@@ -86,7 +86,7 @@ Visual Studio 包含使其易于使用的 Azure 服务以托管 web 应用程序
 - 在调试模式下远程运行应用程序在云中运行时。
 - Viiew 和管理 SQL 数据库之类的其他 Azure 服务。
 
-你可以[创建 Azure 帐户](https://www.windowsazure.com/en-us/pricing/free-trial/)免费，包括基本的服务，如 web apps，并且如果你是 MSDN 订阅者可以[激活权益](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/)，为你提供其他 azure 的月度信用额度服务。 
+你可以[创建 Azure 帐户](https://www.windowsazure.com/pricing/free-trial/)免费，包括基本的服务，如 web apps，并且如果你是 MSDN 订阅者可以[激活权益](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/)，为你提供其他 azure 的月度信用额度服务。 
 
 默认情况下**新建 ASP.NET 项目**对话框中，可以创建 web 应用程序或新的 web 项目的虚拟机。 如果你不想要创建新的 web 应用程序或虚拟机，清除**在云中托管**复选框。
 
@@ -96,7 +96,7 @@ Visual Studio 包含使其易于使用的 Azure 服务以托管 web 应用程序
 
 ![配置 Azure 应用程序设置](creating-web-projects-in-visual-studio/_static/image9.png)
 
-有关如何使用此过程来创建 Azure 资源的详细信息，请参阅[Azure 和 ASP.NET 入门](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet)和[使用 Visual Studio 创建用于网站的虚拟机](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell/)。
+有关如何使用此过程来创建 Azure 资源的详细信息，请参阅[Azure 和 ASP.NET 入门](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet)和[使用 Visual Studio 创建用于网站的虚拟机](https://azure.microsoft.com/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell/)。
 
 此文章的剩余部分提供有关可用的模板和其选项的详细信息。 文章还介绍了 Bootstrap、 布局和主题 framework 了模板中使用。
 
@@ -112,7 +112,7 @@ Visual Studio 2013 为对面向.NET 4.5 或更高版本的.NET framework 的项�
 - [MVC 模板](#mvc)
 - [Web API 模板](#webapi)
 - [单页面应用程序模板](#spa)
-- [Azure 移动服务模板](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)
+- [Azure 移动服务模板](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)
 - [Visual Studio 2012 模板](#vs2012)
 
 你还可以安装 Visual Studio 扩展，提供[Facebook 模板](#facebook)。
@@ -198,7 +198,7 @@ SPA 模板的唯一身份验证选项是[单个用户帐户](#indauth)。
 
 - [ASP.NET 单页面应用程序](../../../single-page-application/index.md)。
 - [VS2013 rc 了解 SPA 模板中的安全功能](https://blogs.msdn.com/b/webdev/archive/2013/09/20/understanding-security-features-in-spa-template.aspx)
-- [单页面应用程序： 生成现代的响应式 Web 应用程序的 ASP.NET](https://msdn.microsoft.com/en-us/magazine/dn463786.aspx)
+- [单页面应用程序： 生成现代的响应式 Web 应用程序的 ASP.NET](https://msdn.microsoft.com/magazine/dn463786.aspx)
 
 <a id="facebook"></a>
 ### <a name="facebook-template"></a>Facebook 模板
@@ -360,7 +360,7 @@ Visual Studio 2013 提供 Web 窗体、 MVC 和 Web API 模板的多个身份验
 
 ![单个组织身份验证](creating-web-projects-in-visual-studio/_static/image24.png)
 
-如果你想要启用的用户帐户的一个 Azure AD 中定义的身份验证，请选择此选项[租户](https://technet.microsoft.com/en-us/library/jj573650.aspx)。 例如，该网站为 contoso.com，而且它将可供 contoso.onmicrosoft.com 租户中的 Contoso 公司员工。 你将无法配置 Azure AD，以允许用户从其他租户可以访问应用程序。
+如果你想要启用的用户帐户的一个 Azure AD 中定义的身份验证，请选择此选项[租户](https://technet.microsoft.com/library/jj573650.aspx)。 例如，该网站为 contoso.com，而且它将可供 contoso.onmicrosoft.com 租户中的 Contoso 公司员工。 你将无法配置 Azure AD，以允许用户从其他租户可以访问应用程序。
 
 #### <a name="domain"></a>Domain
 
@@ -368,7 +368,7 @@ Visual Studio 2013 提供 Web 窗体、 MVC 和 Web API 模板的多个身份验
 
 #### <a name="access-level"></a>访问级别
 
-如果应用程序需要查询或通过使用 Graph API 更新目录信息，请选择**上单一登录、 读取目录数据**或**上单一登录，读取和写入目录数据**。 否则，请选择**上单一登录**。 有关详细信息，请参阅[应用程序访问级别](https://msdn.microsoft.com/en-us/library/windowsazure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_AccessLevels)和[使用 Graph API 查询 Azure AD](https://msdn.microsoft.com/en-US/library/windowsazure/dn151791.aspx)。
+如果应用程序需要查询或通过使用 Graph API 更新目录信息，请选择**上单一登录、 读取目录数据**或**上单一登录，读取和写入目录数据**。 否则，请选择**上单一登录**。 有关详细信息，请参阅[应用程序访问级别](https://msdn.microsoft.com/library/windowsazure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_AccessLevels)和[使用 Graph API 查询 Azure AD](https://msdn.microsoft.com/library/windowsazure/dn151791.aspx)。
 
 #### <a name="application-id-uri"></a>应用程序 ID URI
 
@@ -386,8 +386,8 @@ Visual Studio 2013 提供 Web 窗体、 MVC 和 Web API 模板的多个身份验
 
 - [Azure 身份验证](../2012/windows-azure-authentication.md)
 - [将登录名添加到 Web 应用程序使用 Azure AD](https://msdn.microsoft.com/library/windowsazure/dn151790.aspx)
-- [开发使用 Azure Active Directory 的 ASP.NET 应用程序](../../../identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)
-- [保护与 Azure AD 的 ASP.NET Web API 和 Microsoft OWIN 组件](https://msdn.microsoft.com/en-us/magazine/dn463788.aspx)
+- [借助 Azure Active Directory 开发 ASP.NET 应用](../../../identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)
+- [保护与 Azure AD 的 ASP.NET Web API 和 Microsoft OWIN 组件](https://msdn.microsoft.com/magazine/dn463788.aspx)
 
 这些教程具有尚未更新 Visual Studio 2013;哪些教程指示你手动执行的一些是在 Visual Studio 2013 中自动运行。
 
@@ -396,14 +396,14 @@ Visual Studio 2013 提供 Web 窗体、 MVC 和 Web API 模板的多个身份验
 
 ![多个组织身份验证](creating-web-projects-in-visual-studio/_static/image25.png)
 
-如果你想要启用的用户帐户在多个 Azure AD 中定义的身份验证，请选择此选项[租户](https://technet.microsoft.com/en-us/library/jj573650.aspx)。 例如，该网站为 contoso.com，而且它将可供员工的 Contoso 公司都在 contoso.onmicrosoft.com 租户中和 Fabrikam 公司的 fabrikam.onmicrosoft.com 租户中。
+如果你想要启用的用户帐户在多个 Azure AD 中定义的身份验证，请选择此选项[租户](https://technet.microsoft.com/library/jj573650.aspx)。 例如，该网站为 contoso.com，而且它将可供员工的 Contoso 公司都在 contoso.onmicrosoft.com 租户中和 Fabrikam 公司的 fabrikam.onmicrosoft.com 租户中。
 
 你输入的设置和应用程序设置步骤是类似于[单个组织身份验证](#orgauthsingle)。
 
 有关如何创建使用的应用程序信息**云-多组织**身份验证，请参阅以下资源：
 
 - [轻松与 Azure Active Directory，ASP.NET 的 Web 应用程序集成&amp;Visual Studio](https://blogs.msdn.com/b/active_directory_team_blog/archive/2013/06/26/improved-windows-azure-active-directory-integration-with-asp-net-amp-visual-studio.aspx) Active Directory 团队博客上。
-- [开发多租户 Web 应用程序与 Azure AD](https://msdn.microsoft.com/en-us/library/windowsazure/dn151789.aspx)教程。 本教程尚未尚未更新 Visual Studio 2013;什么本教程将引导你手动执行的一些是在 Visual Studio 2013 中自动运行。
+- [开发多租户 Web 应用程序与 Azure AD](https://msdn.microsoft.com/library/windowsazure/dn151789.aspx)教程。 本教程尚未尚未更新 Visual Studio 2013;什么本教程将引导你手动执行的一些是在 Visual Studio 2013 中自动运行。
 - [你必须注册订阅与你自己的多个组织 ASP.NET 应用，你可以登录之前](http://www.cloudidentity.com/blog/2013/10/26/you-have-to-sign-up-with-your-own-multiple-organizations-asp-net-app-before-you-can-sign-in/)。 在创建项目，使用多组织身份验证时，会遇到说明了如何解决常见的问题人员的 Vittorio Bertocci 的博客。
 
 <a id="orgauthonprem"></a>

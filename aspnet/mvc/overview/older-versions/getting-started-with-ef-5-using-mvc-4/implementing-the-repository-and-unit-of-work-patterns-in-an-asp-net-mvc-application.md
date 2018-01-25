@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: c920dc8defe18b6f27d122c2cd1a6c6ffdaad608
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 02b1de31b9513247facc92bc6b72247865d176f9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>在 ASP.NET MVC 应用程序 (9 的 10) 中实现的存储库和单元的工作模式
 ====================
@@ -45,15 +45,15 @@ ms.lasthandoff: 11/10/2017
 
 ![Repository_pattern_diagram](https://asp.net/media/2578149/Windows-Live-Writer_8c4963ba1fa3_CE3B_Repository_pattern_diagram_1df790d3-bdf2-4c11-9098-946ddd9cd884.png)
 
-在本系列教程中，不会创建单元测试。 MVC 应用程序使用的存储库模式 TDD 的介绍，请参阅[演练： 使用 ASP.NET MVC 使用 TDD](https://msdn.microsoft.com/en-us/library/ff847525.aspx)。 有关存储库模式的详细信息，请参阅以下资源：
+在本系列教程中，不会创建单元测试。 MVC 应用程序使用的存储库模式 TDD 的介绍，请参阅[演练： 使用 ASP.NET MVC 使用 TDD](https://msdn.microsoft.com/library/ff847525.aspx)。 有关存储库模式的详细信息，请参阅以下资源：
 
-- [存储库模式](https://msdn.microsoft.com/en-us/library/ff649690.aspx)MSDN 上。
+- [存储库模式](https://msdn.microsoft.com/library/ff649690.aspx)MSDN 上。
 - [使用实体框架 4.0 中使用存储库和单元的工作模式](https://blogs.msdn.com/b/adonet/archive/2009/06/16/using-repository-and-unit-of-work-patterns-with-entity-framework-4-0.aspx)实体框架团队博客上。
 - [敏捷的实体框架 4 存储库](http://thedatafarm.com/blog/data-access/agile-entity-framework-4-repository-part-1-model-and-poco-classes/)系列 Julie Lerman 博客上的文章。
 - [生成快速 HTML5/jQuery 应用程序的帐户](https://weblogs.asp.net/dwahlin/archive/2011/08/15/building-the-account-at-a-glance-html5-jquery-application.aspx)Dan Wahlin 博客上。
 
 > [!NOTE]
-> 有多种方法来实现的存储库和单元的工作模式。 你可以使用存储库类，具有或不工作类的一个单元。 你可以实现所有实体类型，或另一个用于每种类型的单个存储库。 如果你实现一个用于每种类型，你可以使用单独的类、 泛型基类和派生的类中，或一个抽象基类和派生的类。 你可以在你的存储库中包含业务逻辑或限制对数据访问逻辑。 你也可以生成一个抽象层入数据库上下文类通过[IDbSet](https://msdn.microsoft.com/en-us/library/gg679233(v=vs.103).aspx)存在接口而不是[DbSet](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset(v=vs.103).aspx)实体集的类型。 实现在本教程中所示的抽象层的方法是你需要考虑，不建议所有方案和环境的一个选项。
+> 有多种方法来实现的存储库和单元的工作模式。 你可以使用存储库类，具有或不工作类的一个单元。 你可以实现所有实体类型，或另一个用于每种类型的单个存储库。 如果你实现一个用于每种类型，你可以使用单独的类、 泛型基类和派生的类中，或一个抽象基类和派生的类。 你可以在你的存储库中包含业务逻辑或限制对数据访问逻辑。 你也可以生成一个抽象层入数据库上下文类通过[IDbSet](https://msdn.microsoft.com/library/gg679233(v=vs.103).aspx)存在接口而不是[DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=vs.103).aspx)实体集的类型。 实现在本教程中所示的抽象层的方法是你需要考虑，不建议所有方案和环境的一个选项。
 
 
 ## <a name="creating-the-student-repository-class"></a>创建学生存储库类
@@ -74,7 +74,7 @@ ms.lasthandoff: 11/10/2017
 
 无法实例化新的上下文中存储库，但如果你使用一个控制器中的多个存储库，每个将最终会与单独的上下文。 稍后你将使用中的多个存储库`Course`控制器，你将看到一套工作类可以确保所有存储库使用相同的上下文。
 
-存储库实现[IDisposable](https://msdn.microsoft.com/en-us/library/system.idisposable.aspx)并释放数据库上下文，你在前面看到控制器上，以及其 CRUD 方法前面所看到的相同方式进行调用的数据库上下文。
+存储库实现[IDisposable](https://msdn.microsoft.com/library/system.idisposable.aspx)并释放数据库上下文，你在前面看到控制器上，以及其 CRUD 方法前面所看到的相同方式进行调用的数据库上下文。
 
 ## <a name="change-the-student-controller-to-use-the-repository"></a>更改为使用存储库的学生控制器
 
@@ -245,7 +245,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="summary"></a>摘要
 
-你现在已实现的存储库和单元的工作模式。 你为泛型存储库中的方法参数中使用 lambda 表达式。 有关如何使用与这些表达式的详细信息`IQueryable`对象，请参阅[IQueryable(T) 接口 (System.Linq)](https://msdn.microsoft.com/en-us/library/bb351562.aspx) MSDN 库中。 在下一个教程中，你将了解如何处理某些高级方案中。
+你现在已实现的存储库和单元的工作模式。 你为泛型存储库中的方法参数中使用 lambda 表达式。 有关如何使用与这些表达式的详细信息`IQueryable`对象，请参阅[IQueryable(T) 接口 (System.Linq)](https://msdn.microsoft.com/library/bb351562.aspx) MSDN 库中。 在下一个教程中，你将了解如何处理某些高级方案中。
 
 在找不到其他实体框架资源的链接[ASP.NET 数据访问内容映射](../../../../whitepapers/aspnet-data-access-content-map.md)。
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/overview
-ms.openlocfilehash: ad8a1dfae89a7ecd5573c16ba70d7d12216b4c57
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3c3279e7d25704f5e70bbd83cf9feebda8319203
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>ASP.NET Core MVC 概述
 
@@ -50,7 +50,7 @@ ASP.NET 核心 MVC 是一个丰富的框架，用于生成 web 应用和 Api 使
 控制器在处理用户交互，使用的模型，并最终选择要呈现的视图的组件。 在 MVC 应用程序，该视图仅显示信息;控制器处理，并响应用户输入和交互。 在 MVC 模式中，该控制器已是初始入口点，并且负责选择要使用哪个模型类型和要呈现的视图 (因此它控制的其名称中的应用程序如何响应的给定的请求)。
 
 > [!NOTE]
-> 控制器应不过于复杂，过多的职责。 若要阻止控制器逻辑变得过于复杂，使用[单个责任原则](http://deviq.com/single-responsibility-principle/)控制器出来放入域模型中的推送的业务逻辑。
+> 控制器不应过于复杂，过多的职责。 若要阻止控制器逻辑变得过于复杂，使用[单个责任原则](http://deviq.com/single-responsibility-principle/)控制器出来放入域模型中的推送的业务逻辑。
 
 >[!TIP]
 > 如果你发现你的控制器操作频繁地执行操作相同种类的操作，则可以按照[切勿重复原则](http://deviq.com/don-t-repeat-yourself/)通过移动到这些常见操作[筛选器](#filters)。

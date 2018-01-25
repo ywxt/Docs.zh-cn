@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f2da69ba1b7511e8659ab7212785e8148b438a4b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ab392f2a7d9b6cf97da920f899aea23379209f96
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-vb"></a>配置的数据访问层连接和命令级别设置 (VB)
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="working-with-data-using-adonet"></a>使用使用 ADO.NET 的数据
 
-Microsoft.NET Framework 包含大量的专门用于处理数据的类。 这些类，在中找到[`System.Data`命名空间](https://msdn.microsoft.com/en-us/library/system.data.aspx)，统称为*ADO.NET*类。 某些 ADO.NET 涵盖的类绑定到特定*数据提供程序*。 可以将数据提供程序视为一个信道，使信息 ADO.NET 类和基础数据存储区之间流动。 有等 OleDb 和 ODBC，以及提供程序专门设计用于特定的数据库系统通用的提供程序。 例如，可以将连接到使用 OleDb 访问接口的 Microsoft SQL Server 数据库时，SqlClient 提供程序是高效得多如设计和优化专门为 SQL Server。
+Microsoft.NET Framework 包含大量的专门用于处理数据的类。 这些类，在中找到[`System.Data`命名空间](https://msdn.microsoft.com/library/system.data.aspx)，统称为*ADO.NET*类。 某些 ADO.NET 涵盖的类绑定到特定*数据提供程序*。 可以将数据提供程序视为一个信道，使信息 ADO.NET 类和基础数据存储区之间流动。 有等 OleDb 和 ODBC，以及提供程序专门设计用于特定的数据库系统通用的提供程序。 例如，可以将连接到使用 OleDb 访问接口的 Microsoft SQL Server 数据库时，SqlClient 提供程序是高效得多如设计和优化专门为 SQL Server。
 
 当以编程方式访问数据时，通常使用以下模式：
 
@@ -45,7 +45,7 @@ Microsoft.NET Framework 包含大量的专门用于处理数据的类。 这些�
 2. 发出命令。
 3. 有关`SELECT`查询，适用于生成的记录。
 
-有单独的 ADO.NET 类，用于执行每个步骤。 若要连接到使用 SqlClient 提供程序的数据库，例如，使用[`SqlConnection`类](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlconnection(VS.80).aspx)。 颁发`INSERT`， `UPDATE`， `DELETE`，或`SELECT`到数据库，使用命令[`SqlCommand`类](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.aspx)。
+有单独的 ADO.NET 类，用于执行每个步骤。 若要连接到使用 SqlClient 提供程序的数据库，例如，使用[`SqlConnection`类](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(VS.80).aspx)。 颁发`INSERT`， `UPDATE`， `DELETE`，或`SELECT`到数据库，使用命令[`SqlCommand`类](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.aspx)。
 
 除[在事务中包装数据库修改](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb.md)教程中，我们没有编写任何低级别的 ADO.NET 代码自行因为 Tableadapter 自动生成的代码包括到所需的功能连接到数据库、 发出命令、 检索数据，和该数据填充到数据表。 但是，可能有当我们需要自定义这些低级别的设置的时间。 通过以下几个步骤中，我们将查看如何发挥供内部使用 Tableadapter 的 ADO.NET 对象。
 
@@ -121,7 +121,7 @@ TableAdapter 的`Connection`属性和其他与连接相关的代码如下所示�
 
 ## <a name="step-3-examining-the-command-related-properties"></a>第 3 步： 检查与命令相关的属性
 
-TableAdapter 包含，默认情况下，具有自动生成的主查询`INSERT`， `UPDATE`，和`DELETE`语句。 此主查询 s `INSERT`， `UPDATE`，和`DELETE`语句在 TableAdapter 的代码中实现 ADO.NET 数据适配器对象通过`Adapter`属性。 与类似其`Connection`属性，`Adapter`属性的数据类型由使用的数据提供程序。 因为这些教程使用 SqlClient 提供程序，`Adapter`属性属于类型[ `SqlDataAdapter` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqldataadapter(VS.80).aspx)。
+TableAdapter 包含，默认情况下，具有自动生成的主查询`INSERT`， `UPDATE`，和`DELETE`语句。 此主查询 s `INSERT`， `UPDATE`，和`DELETE`语句在 TableAdapter 的代码中实现 ADO.NET 数据适配器对象通过`Adapter`属性。 与类似其`Connection`属性，`Adapter`属性的数据类型由使用的数据提供程序。 因为这些教程使用 SqlClient 提供程序，`Adapter`属性属于类型[ `SqlDataAdapter` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqldataadapter(VS.80).aspx)。
 
 TableAdapter s`Adapter`属性具有三个属性的类型`SqlCommand`，它使用到问题`INSERT`， `UPDATE`，和`DELETE`语句：
 
@@ -129,7 +129,7 @@ TableAdapter s`Adapter`属性具有三个属性的类型`SqlCommand`，它使用
 - `UpdateCommand`
 - `DeleteCommand`
 
-A`SqlCommand`对象负责将特定查询发送到数据库，并具有属性，例如： [ `CommandText` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.commandtext.aspx)，其中包含的临时 SQL 语句或存储的过程以执行; 和[ `Parameters`](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.parameters.aspx)，这是一套`SqlParameter`对象。 正如我们所看到的进来[创建数据访问层](../introduction/creating-a-data-access-layer-vb.md)教程中，这些命令可以通过属性窗口自定义对象。
+A`SqlCommand`对象负责将特定查询发送到数据库，并具有属性，例如： [ `CommandText` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtext.aspx)，其中包含的临时 SQL 语句或存储的过程以执行; 和[ `Parameters`](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.parameters.aspx)，这是一套`SqlParameter`对象。 正如我们所看到的进来[创建数据访问层](../introduction/creating-a-data-access-layer-vb.md)教程中，这些命令可以通过属性窗口自定义对象。
 
 除了其主查询 TableAdapter 可以包含可变数量的方法，调用时，调度到数据库指定的命令。 主查询的命令对象和所有其他方法的命令对象存储在 TableAdapter 的`CommandCollection`属性。
 
@@ -146,7 +146,7 @@ A`SqlCommand`对象负责将特定查询发送到数据库，并具有属性，�
 
 由于 TableAdapter 只有单个`Connection`属性，公开连接级别设置的代码将非常简单。 因为 TableAdapter 可以有多个命令对象的修改命令级别设置时，情况就更复杂一点`InsertCommand`， `UpdateCommand`，和`DeleteCommand`，变量命令中的对象数以及`CommandCollection`属性。 在更新命令级别设置，这些设置将需要传播到所有的命令对象。
 
-例如，假设中包括了时间特别长执行 TableAdapter 的某些查询。 当使用 TableAdapter 执行这些查询之一，我们可能需要增加命令对象 s [ `CommandTimeout`属性](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.commandtimeout.aspx)。 此属性指定的要等待的时间要执行的命令的秒数，默认值为 30。
+例如，假设中包括了时间特别长执行 TableAdapter 的某些查询。 当使用 TableAdapter 执行这些查询之一，我们可能需要增加命令对象 s [ `CommandTimeout`属性](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtimeout.aspx)。 此属性指定的要等待的时间要执行的命令的秒数，默认值为 30。
 
 若要允许`CommandTimeout`属性要按其调整 BLL，添加以下`Public`方法`ProductsDataTable`使用分部类文件在步骤 2 中创建 (`ProductsTableAdapter.ConnectionAndCommandSettings.vb`):
 

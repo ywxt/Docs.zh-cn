@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 008b9cd081152e6a378d0fa2e08497a6771fd9b5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 23e317c6e0b6daf2d7937b73738e5cb6fa32cde2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="scenario-configuring-a-test-environment-for-web-deployment"></a>方案： 配置 Web 部署的测试环境
 ====================
@@ -49,7 +49,7 @@ ms.lasthandoff: 11/10/2017
 - 配置测试 web 服务器以支持使用 Web 部署的处理程序的部署。
 
 > [!NOTE]
-> 你也可以使用[按需部署的 Web](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx) （"临时代理"）。 这是类似于在要求和约束方面的远程代理方法。
+> 你也可以使用[按需部署的 Web](https://technet.microsoft.com/library/ee517345(WS.10).aspx) （"临时代理"）。 这是类似于在要求和约束方面的远程代理方法。
 
 
 在这种情况下，开发人员在目标服务器上，具有管理员权限，并且测试环境不是受严格的安全约束，因此合理的选择是要配置测试 web 服务器以支持使用远程代理的部署。 这是不太复杂，要求不太初始配置与 Web 部署处理程序方法。 你还需要配置你的数据库服务器来支持远程访问和部署。

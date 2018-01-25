@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b6e71470ae2888ac4332f896c34f666618a425e7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 20a092ee2886932664705c22c3aa88d8a2f7f0ef
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-data-with-the-datalist-and-repeater-controls-vb"></a>使用 DataList 和转发器控件 (VB) 中显示数据
 ====================
@@ -163,7 +163,7 @@ GridView，如 DataList 提供了多个与样式有关的属性，如`Font`， `
 
 - `HeaderTemplate`如果提供，将标题行添加到输出，并用于呈现此行
 - `AlternatingItemTemplate`用于呈现交替项
-- `SelectedItemTemplate`用于呈现所选的项;所选的项目属于其索引对应于 DataList s 项[`SelectedIndex`属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
+- `SelectedItemTemplate`用于呈现所选的项;所选的项目属于其索引对应于 DataList s 项[`SelectedIndex`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
 - `EditItemTemplate`用于呈现所编辑的项
 - `SeparatorTemplate`如果提供，将添加每个项之间的分隔符和用于呈现此分隔符
 - `FooterTemplate`-如果提供，将的页脚行添加到输出，并用于呈现此行
@@ -222,7 +222,7 @@ GridView，如 DataList 提供了多个与样式有关的属性，如`Font`， `
 - 在`SectionLevelTutorialListing.ascx`，中继器用于显示当前站点映射节的子部分的项目符号列表
 
 > [!NOTE]
-> ASP.NET 2.0 引入了新[如何](https://msdn.microsoft.com/en-us/library/ms228101.aspx)，这可以绑定到数据源控件为了显示简单的项目符号列表。 如何控制与我们不需要指定任何列表相关 HTML 中;相反，我们只用于表示要显示为每个列表项的文本的数据字段。
+> ASP.NET 2.0 引入了新[如何](https://msdn.microsoft.com/library/ms228101.aspx)，这可以绑定到数据源控件为了显示简单的项目符号列表。 如何控制与我们不需要指定任何列表相关 HTML 中;相反，我们只用于表示要显示为每个列表项的文本的数据字段。
 
 
 作为 catch 的转发器服务，Web 控件的所有数据。 如果不是生成所需的标记的现有控件，可以使用转发器控件。 为了说明使用转发器，让 s 具有如上所示产品信息 DataList 在步骤 2 中创建的类别的列表。 具体而言，让 s 具有类别显示在单行 HTML`<table>`每个类别都显示为表中的列。

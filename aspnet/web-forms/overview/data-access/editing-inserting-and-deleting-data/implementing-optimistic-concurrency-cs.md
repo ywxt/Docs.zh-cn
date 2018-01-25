@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 50d02e8da7b7ab489e662b42d8f08ad3a99e66eb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a19e6c320838849e10d2aa397a23a0ee906bac22
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-optimistic-concurrency-c"></a>实现开放式并发 (C#)
 ====================
@@ -257,7 +257,7 @@ DAL 和 BLL 完成，那么保持是创建 ASP.NET 页，可以利用内置于�
 > 值`OldValuesParameterFormatString`属性必须映射到 BLL 中的预期的原始值的输入的参数名称。 因为我们已命名为这些参数`original_productName`， `original_supplierID`，依次类推中，你可以将`OldValuesParameterFormatString`属性值作为`original_{0}`。 如果，但是，这些 BLL 方法的输入的参数具有类似名称`old_productName`， `old_supplierID`，依次类推中，你将需要更新`OldValuesParameterFormatString`属性`old_{0}`。
 
 
-还有一个不需要顺序 ObjectDataSource 正确将原始值传递给 BLL 方法进行的最后一个属性设置。 ObjectDataSource 具有[ConflictDetection 属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.conflictdetection.aspx)，可分配给[两个值之一](https://msdn.microsoft.com/en-US/library/system.web.ui.conflictoptions.aspx):
+还有一个不需要顺序 ObjectDataSource 正确将原始值传递给 BLL 方法进行的最后一个属性设置。 ObjectDataSource 具有[ConflictDetection 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.conflictdetection.aspx)，可分配给[两个值之一](https://msdn.microsoft.com/library/system.web.ui.conflictoptions.aspx):
 
 - `OverwriteChanges`默认值;不向这些 BLL 方法的原始输入参数中发送的原始值
 - `CompareAllValues`-未将原始值发送到 BLL 方法; 这些方法如果使用乐观并发，请选择此选项
@@ -342,7 +342,7 @@ DAL 和 BLL 完成，那么保持是创建 ASP.NET 页，可以利用内置于�
 
 为了验证并发冲突正在检测到 （而不是导致盲目地覆盖的数据），我们需要打开此页的两个浏览器窗口。 在浏览器这两种情况下，单击编辑按钮牛奶。 然后，在只需浏览器之一，将名称更改为"牛奶 Tea"，然后单击更新。 更新应成功并返回到其预编辑状态，使用"牛奶 Tea"作为新的产品名称的 GridView。
 
-在其他浏览器窗口实例中，但是，产品名称文本框中仍将显示"牛奶"。 在此第二个浏览器窗口中，更新`UnitPrice`到`25.00`。 而不乐观并发支持，单击第二个浏览器实例中的更新会更改产品名称返回到"牛奶"，从而覆盖第一个浏览器实例所做的更改。 采用乐观并发，但是，单击第二个浏览器实例中的更新按钮都会导致[DBConcurrencyException](https://msdn.microsoft.com/en-us/library/system.data.dbconcurrencyexception.aspx)。
+在其他浏览器窗口实例中，但是，产品名称文本框中仍将显示"牛奶"。 在此第二个浏览器窗口中，更新`UnitPrice`到`25.00`。 而不乐观并发支持，单击第二个浏览器实例中的更新会更改产品名称返回到"牛奶"，从而覆盖第一个浏览器实例所做的更改。 采用乐观并发，但是，单击第二个浏览器实例中的更新按钮都会导致[DBConcurrencyException](https://msdn.microsoft.com/library/system.data.dbconcurrencyexception.aspx)。
 
 
 [![检测到并发冲突时，引发 DBConcurrencyException](implementing-optimistic-concurrency-cs/_static/image48.png)](implementing-optimistic-concurrency-cs/_static/image47.png)

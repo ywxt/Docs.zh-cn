@@ -12,28 +12,28 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 msc.type: authoredcontent
-ms.openlocfilehash: 425f8edff41588db363055d166995d5f563c5a23
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1ef0468d5f5c17480b23ac88983f30fe6f4979c0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="developing-aspnet-apps-with-azure-active-directory"></a>开发使用 Azure Active Directory 的 ASP.NET 应用程序
 ====================
 通过[Rick Anderson](https://github.com/Rick-Anderson)
 
-> Microsoft ASP.NET tools 为 Azure Active Directory 可以很容易地为上托管的 web 应用程序启用身份验证[Azure](https://www.windowsazure.com/en-us/home/features/web-sites/)。 可以使用 Azure 身份验证从组织、 从本地 Active Directory 同步的公司帐户或用户在你自己的自定义 Azure Active Directory 域中创建的 Office 365 用户进行身份验证。 启用 Windows Azure 身份验证配置你的应用程序使用单个的用户进行身份验证[Azure Active Directory](https://docs.microsoft.com/azure/active-directory/)租户。
+> Microsoft ASP.NET tools 为 Azure Active Directory 可以很容易地为上托管的 web 应用程序启用身份验证[Azure](https://www.windowsazure.com/home/features/web-sites/)。 可以使用 Azure 身份验证从组织、 从本地 Active Directory 同步的公司帐户或用户在你自己的自定义 Azure Active Directory 域中创建的 Office 365 用户进行身份验证。 启用 Windows Azure 身份验证配置你的应用程序使用单个的用户进行身份验证[Azure Active Directory](https://docs.microsoft.com/azure/active-directory/)租户。
 > 
 >  本教程编写由 Rick Anderson[@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
 
 
-本教程将演示如何创建的 ASP.NET 应用程序配置为使用登录[Azure Active Directory](https://msdn.microsoft.com/en-us/library/azure/mt168838.aspx) (Azure AD)。 你还将了解如何调用 Graph API，以获取有关当前登录的用户的信息以及如何部署应用程序到 Azure。
+本教程将演示如何创建的 ASP.NET 应用程序配置为使用登录[Azure Active Directory](https://msdn.microsoft.com/library/azure/mt168838.aspx) (Azure AD)。 你还将了解如何调用 Graph API，以获取有关当前登录的用户的信息以及如何部署应用程序到 Azure。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 1. [Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/eng/2013-downloads#d-2013-express)或[Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)。
-2. [Visual Studio 2013 Update 4](https://www.microsoft.com/en-us/download/details.aspx?id=44921) -3 或更高版本的更新是必需的。
-3. 一个 Azure 帐户。 [单击此处](https://azure.microsoft.com/en-us/pricing/free-trial/)免费试用版，如果你还没有帐户。
+2. [Visual Studio 2013 Update 4](https://www.microsoft.com/download/details.aspx?id=44921) -3 或更高版本的更新是必需的。
+3. 一个 Azure 帐户。 [单击此处](https://azure.microsoft.com/pricing/free-trial/)免费试用版，如果你还没有帐户。
 
 ## <a name="add-a-global-administrator-to-your-active-directory"></a>将全局管理员添加到你的 Active Directory
 
@@ -58,7 +58,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="create-an-aspnet-application"></a>创建 ASP.NET 应用程序
 
-以下步骤使用[Visual Studio Express 2013 for Web](https://www.microsoft.com/en-us/download/details.aspx?id=40747)，并且需要[Visual Studio 2013 Update 3](https://www.microsoft.com/en-us/download/details.aspx?id=43721)。
+以下步骤使用[Visual Studio Express 2013 for Web](https://www.microsoft.com/download/details.aspx?id=40747)，并且需要[Visual Studio 2013 Update 3](https://www.microsoft.com/download/details.aspx?id=43721)。
 
 1. 在 Visual Studio 中，单击**文件**然后**新项目**。 上**新项目**对话框中，选择 Visual C# Web 项目从左侧菜单，然后单击**确定**。 你可能还想取消选中**向项目添加 Application Insights**如果你不希望你的应用程序的功能。
 2. 在**新建 ASP.NET 项目**对话框中，选择**MVC**，然后单击**更改身份验证**。   
@@ -74,17 +74,17 @@ ms.lasthandoff: 11/10/2017
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image8.png)  
 
     > [!NOTE]
-    > 你可以选择配置通过单击将在 Azure AD 中注册应用程序 ID URI**更多选项**。 应用程序 ID URI 是应用程序，这是在 Azure AD 中注册并且应用程序用于与 Azure AD 通信时自身标识的唯一标识符。 有关应用程序 ID URI 和已注册应用程序的其他属性的详细信息，请参阅[本主题](https://msdn.microsoft.com/en-us/library/azure/dn499820.aspx#BKMK_Registering)。 通过单击应用程序 ID URI 字段的下方的复选框，你还可以选择在使用相同的应用程序 ID URI 的 Azure AD 中覆盖现有注册。
+    > 你可以选择配置通过单击将在 Azure AD 中注册应用程序 ID URI**更多选项**。 应用程序 ID URI 是应用程序，这是在 Azure AD 中注册并且应用程序用于与 Azure AD 通信时自身标识的唯一标识符。 有关应用程序 ID URI 和已注册应用程序的其他属性的详细信息，请参阅[本主题](https://msdn.microsoft.com/library/azure/dn499820.aspx#BKMK_Registering)。 通过单击应用程序 ID URI 字段的下方的复选框，你还可以选择在使用相同的应用程序 ID URI 的 Azure AD 中覆盖现有注册。
 4. 单击后**确定**，将显示一个登录对话框，并且将需要使用全局管理员帐户 （不与你的订阅关联的 Microsoft 帐户） 登录。 如果你之前创建新的管理员帐户，你将需要更改密码并再次使用新密码，然后登录。   
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image9.png)
-5. 你已成功通过身份验证后，**新建 ASP.NET 项目**对话框将显示你的身份验证选择 (**组织**) 和新的应用程序将在其中的目录注册 (*aricka0yahoo.onmicrosoft.com*图所示)。 此信息，下面选择标记为复选框**在云中托管**。 如果选择此复选框，则项目将设置为 Azure web 应用和将启用用于轻松发布更高版本。 单击“确定”。   
+5. 你已成功通过身份验证后，**新建 ASP.NET 项目**对话框将显示你的身份验证选择 (**组织**) 和新的应用程序将在其中的目录注册 (*aricka0yahoo.onmicrosoft.com*图所示)。 此信息，下面选择标记为复选框**在云中托管**。 如果选择此复选框，则项目将设置为 Azure web 应用和将启用用于轻松发布更高版本。 单击 **“确定”**。   
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image10.png)
 6. **配置 Azure 网站**对话框将出现，并使用自动生成站点名称和区域。 另请注意你当前登录对话框中的帐户。 你想要确保此帐户是一个你的 Azure 订阅连接到，通常的 Microsoft 帐户。
 
     > [!NOTE]
-    > 此项目需要一个数据库。 你需要选择一个现有的数据库，或创建一个新。 数据库是必需的因为该项目已使用本地数据库文件存储少量的身份验证配置数据。 在部署到 Azure 网站应用程序时，此数据库未附带部署，因此你需要选择一个可访问位于云中。 单击“确定”。
+    > 此项目需要一个数据库。 你需要选择一个现有的数据库，或创建一个新。 数据库是必需的因为该项目已使用本地数据库文件存储少量的身份验证配置数据。 在部署到 Azure 网站应用程序时，此数据库未附带部署，因此你需要选择一个可访问位于云中。 单击 **“确定”**。
 
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image11.png)
 7. 将创建该项目，并且你的身份验证选项和 web 应用程序选项将自动配置与项目。 此过程完成后，通过按以本地方式运行该项目**^ F5**。 你将需要使用你的组织帐户进行登录。 为前面创建的帐户提供的用户名和密码，单击**登录**。   
@@ -102,7 +102,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="basics-of-the-graph-api"></a>Graph API 基础知识
 
-[Graph API](https://msdn.microsoft.com/en-us/library/azure/hh974476.aspx)是用于在你的 Azure AD 目录中执行 CRUD 和其他操作在对象上的编程接口。 如果你选择用于身份验证的组织帐户选项，在 Visual Studio 2013 中创建新项目时，已将配置应用程序以调用 Graph API。 本部分简要说明 Graph API 的工作原理。
+[Graph API](https://msdn.microsoft.com/library/azure/hh974476.aspx)是用于在你的 Azure AD 目录中执行 CRUD 和其他操作在对象上的编程接口。 如果你选择用于身份验证的组织帐户选项，在 Visual Studio 2013 中创建新项目时，已将配置应用程序以调用 Graph API。 本部分简要说明 Graph API 的工作原理。
 
 1. 在你运行的应用程序，单击顶部的登录用户名称页面右上角。 这将转到用户配置文件页上，这是在主页控制器上的操作。 你会注意到表中包含你前面创建的管理员帐户有关的用户信息。 此信息存储在你的目录，并调用图形 API 来加载页面时检索此信息。   
   
@@ -151,6 +151,6 @@ ms.lasthandoff: 11/10/2017
 ## <a name="more-information"></a>详细信息
 
 - [深入探讨： 在 Azure 网站和组织使用 Azure AD 的身份验证](http://rickrainey.com/2014/08/19/deep-dive-azure-websites-and-organizational-authentication-using-azure-ad/)
-- [Azure AD Graph API 概述](https://msdn.microsoft.com/en-us/library/azure/hh974476.aspx)
-- [Azure AD 中的身份验证方案](https://msdn.microsoft.com/en-us/library/azure/dn499820.aspx)
+- [Azure AD Graph API 概述](https://msdn.microsoft.com/library/azure/hh974476.aspx)
+- [Azure AD 中的身份验证方案](https://msdn.microsoft.com/library/azure/dn499820.aspx)
 - [GitHub 上的 azure AD 代码示例](https://github.com/AzureADSamples)

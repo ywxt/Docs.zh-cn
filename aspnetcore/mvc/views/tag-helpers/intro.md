@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/intro
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 003a22d4b0d9400f3e9effe0892d2d7e03704cde
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3c198ccc3e3e2c11f3e2b9379bc63bd6428dbf69
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>在 ASP.NET 核心中的标记帮助器简介 
 
@@ -112,7 +112,7 @@ ms.lasthandoff: 01/19/2018
 ```cshtml
 @tagHelperPrefix th:
 ```
-在下面的代码图中，标记帮助器前缀设置为`th:`，因此只有这些元素使用前缀`th:`支持标记帮助程序 （已启用标记帮助器的元素具有不同的字体）。 `<label>`和`<input>`元素具有标记帮助器前缀和标记帮助器支持，而是`<span>`元素不一样。
+在下面的代码图中，标记帮助器前缀设置为`th:`，因此只有这些元素使用前缀`th:`支持标记帮助程序 （已启用标记帮助器的元素具有不同的字体）。 `<label>`和`<input>`元素具有标记帮助器前缀和标记帮助器支持，而是`<span>`元素不会。
 
 ![图像](intro/_static/thp.png)
 
@@ -192,7 +192,7 @@ IntelliSense 可帮助您编写的整个行。 `LabelTagHelper`也默认为设�
 <label class="caption" for="FirstName">First Name</label>
 ```
 
-如果你将内容添加到未使用 camel 大小写形式句子大小写形式内容`<label>`。 例如:
+如果你将内容添加到混合使用大小写的句子大小写形式的内容不会继续使用`<label>`。 例如:
 
 ![图像](intro/_static/1stName.png)
 
@@ -222,7 +222,7 @@ Visual Studio 编辑器会显示包含一个灰色背景的 C# 代码。 例如�
 
 [!code-csharp[Main](intro/sample/Register.cshtml?range=12-18)]
 
-每个"asp-"属性具有值为"电子邮件"，但是"Email"不是字符串。 在此上下文中，"Email"为 C# 模型表达式属性`RegisterViewModel`。
+每个"asp-"属性的值为"电子邮件"，但是"Email"不是字符串。 在此上下文中，"Email"为 C# 模型表达式属性`RegisterViewModel`。
 
 Visual Studio 编辑器可帮助您编写**所有**的寄存器窗体，而 Visual Studio 中的 HTML 帮助器方法的代码的大部分提供没有帮助的标记帮助程序方法中的标记。 [标记帮助器的 IntelliSense 支持](#intellisense-support-for-tag-helpers)进入使用在 Visual Studio 编辑器中的标记帮助器的详细信息。
 

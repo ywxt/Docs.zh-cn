@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
 msc.type: authoredcontent
-ms.openlocfilehash: 61e357198ffa4e93d35b7fa4619270da630547c6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 23195949121cd13ca4b1809b8db91a7320d1fdd2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-remote-agent"></a>配置 Web 服务器的 Web 部署发布 （远程代理）
 ====================
@@ -65,7 +65,7 @@ ms.lasthandoff: 11/10/2017
 - 服务器具有静态 IP 地址。
 
 > [!NOTE]
-> 有关将计算机加入到域的详细信息，请参阅[将计算机加入到域并登录](https://technet.microsoft.com/en-us/library/cc725618(v=WS.10).aspx)。 有关配置静态 IP 地址的详细信息，请参阅[配置静态 IP 地址](https://technet.microsoft.com/en-us/library/cc754203(v=ws.10).aspx)。 远程代理服务的 IIS 6 及以上版本支持和不需要你以加入到域。 但是，在本教程中的步骤已开发且在 IIS 7.5 上测试和其他版本的过程可能会有所不同。
+> 有关将计算机加入到域的详细信息，请参阅[将计算机加入到域并登录](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)。 有关配置静态 IP 地址的详细信息，请参阅[配置静态 IP 地址](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)。 远程代理服务的 IIS 6 及以上版本支持和不需要你以加入到域。 但是，在本教程中的步骤已开发且在 IIS 7.5 上测试和其他版本的过程可能会有所不同。
 
 
 ## <a name="install-products-and-components"></a>安装产品和组件
@@ -108,7 +108,7 @@ ms.lasthandoff: 11/10/2017
 11. 查看许可条款，然后如果同意条款，单击**我接受**。
 12. 安装完成后，单击**完成**，然后关闭**Web Platform Installer 3.0**窗口。
 
-如果你安装.NET Framework 4.0 安装 IIS 之前，你将需要运行[ASP.NET IIS 注册工具](https://msdn.microsoft.com/en-us/library/k6h9cz8h(v=VS.100).aspx)(aspnet\_regiis.exe) 以向 IIS 注册 ASP.NET 的最新版本。 如果不这样做，你将找到 IIS 将 （如 HTML 文件） 中提供静态内容而无需任何问题，但它将返回**HTTP 错误 404.0-未找到**当你尝试浏览到 ASP.NET 内容。 可以使用此过程以确保注册 ASP.NET 4.0。
+如果你安装.NET Framework 4.0 安装 IIS 之前，你将需要运行[ASP.NET IIS 注册工具](https://msdn.microsoft.com/library/k6h9cz8h(v=VS.100).aspx)(aspnet\_regiis.exe) 以向 IIS 注册 ASP.NET 的最新版本。 如果不这样做，你将找到 IIS 将 （如 HTML 文件） 中提供静态内容而无需任何问题，但它将返回**HTTP 错误 404.0-未找到**当你尝试浏览到 ASP.NET 内容。 可以使用此过程以确保注册 ASP.NET 4.0。
 
 **若要向 IIS 注册 ASP.NET 4.0**
 
@@ -154,7 +154,7 @@ ms.lasthandoff: 11/10/2017
     ![](configuring-a-web-server-for-web-deploy-publishing-remote-agent/_static/image4.png)
 
     > [!NOTE]
-    > 在生产环境中，你可能需要托管你的网站在端口 80 上并配置主机标头，以及匹配的 DNS 记录。 在 IIS 7 中配置主机标头的详细信息，请参阅[网站 (IIS 7) 配置主机头](https://technet.microsoft.com/en-us/library/cc753195(WS.10).aspx)。 Windows Server 2008 R2 中的 DNS 服务器角色的详细信息，请参阅[DNS 服务器概述](https://technet.microsoft.com/en-gb/library/cc770392.aspx)和[DNS 服务器](https://technet.microsoft.com/en-us/windowsserver/dd448607)。
+    > 在生产环境中，你可能需要托管你的网站在端口 80 上并配置主机标头，以及匹配的 DNS 记录。 在 IIS 7 中配置主机标头的详细信息，请参阅[网站 (IIS 7) 配置主机头](https://technet.microsoft.com/library/cc753195(WS.10).aspx)。 Windows Server 2008 R2 中的 DNS 服务器角色的详细信息，请参阅[DNS 服务器概述](https://technet.microsoft.com/en-gb/library/cc770392.aspx)和[DNS 服务器](https://technet.microsoft.com/windowsserver/dd448607)。
 9. 在**操作**窗格中，在**编辑站点**，单击**绑定**。
 10. 在**站点绑定**对话框中，单击**添加**。
 
@@ -198,8 +198,8 @@ ms.lasthandoff: 11/10/2017
 
     ![](configuring-a-web-server-for-web-deploy-publishing-remote-agent/_static/image8.png)
 5. 在**选择用户或组**对话框中，键入**IIS\_IUSRS**，单击**检查名称**，然后单击**确定**。
-6. 在**权限***[文件夹名称]*对话框中，请注意，在分配新组**读取&amp;执行**，**列表文件夹内容**，和**读取**默认情况下的权限。 保留此保持不变，然后单击**确定**。
-7. 单击**确定**关闭*[文件夹名称]***属性**对话框。
+6. 在 **权限 * * * [文件夹名称]*对话框中，请注意，在分配新组**读取&amp;执行**，**列出文件夹内容**，和**读取**默认情况下的权限。 保留此保持不变，然后单击**确定**。
+7. 单击**确定**关闭*[文件夹名称] * * * 属性** 对话框。
 
 作为最后一项任务之前尝试将任何 web 包部署到你的服务器，你应确保 Web 部署代理服务正在运行。 在部署包从远程计算机时，Web 部署代理服务负责提取和安装包的内容。 服务安装 Web 部署工具时，默认情况下启动，且在 Network Service 标识下运行。
 
@@ -217,7 +217,7 @@ ms.lasthandoff: 11/10/2017
 
 默认情况下，远程代理服务侦听 TCP 端口 80，在此 URL:
 
-http:// [*服务器名称*] / MSDEPLOYAGENTSERVICE
+http://[*server name*]/MSDEPLOYAGENTSERVICE
 
 在大多数情况下，不需要为远程代理服务配置任何其他防火墙规则，因为 web 服务器通常侦听端口 80 上的 HTTP 请求。 如果自定义你的安装在非标准端口上侦听时，你将需要根据需要配置防火墙例外。
 

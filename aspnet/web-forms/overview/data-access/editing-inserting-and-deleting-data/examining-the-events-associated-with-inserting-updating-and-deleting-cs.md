@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 30f6ecef1a03153619df1b3ba4e709f3742c6927
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 93da23d58d1ba73c5b97f42631d036dd364de24d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-events-associated-with-inserting-updating-and-deleting-c"></a>检查与插入、 更新和删除 (C#) 关联的事件
 ====================
@@ -162,12 +162,12 @@ ms.lasthandoff: 11/10/2017
 
 但是，在文本框中的货币符号与更新产品，如 $19.00 引发`FormatException`。 当尝试将用户提供的值分配给对象数据源的 GridView`UpdateParameters`集合无法转换`UnitPrice`到字符串"$19.00"`decimal`为参数要求 （请参阅图 11）。 若要纠正此我们可以为 GridView 创建事件处理程序`RowUpdating`事件，并将其分析用户提供`UnitPrice`作为货币格式`decimal`。
 
-GridView`RowUpdating`接受作为其第二个参数类型的对象的事件[GridViewUpdateEventArgs](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridviewupdateeventargs(VS.80).aspx)，其中包括`NewValues`作为包含的用户提供的值可供其属性之一的字典分配给 ObjectDataSource`UpdateParameters`集合。 我们可以覆盖现有`UnitPrice`中的值`NewValues`十进制值集合分析用以下行中的代码使用货币格式`RowUpdating`事件处理程序：
+GridView`RowUpdating`接受作为其第二个参数类型的对象的事件[GridViewUpdateEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewupdateeventargs(VS.80).aspx)，其中包括`NewValues`作为包含的用户提供的值可供其属性之一的字典分配给 ObjectDataSource`UpdateParameters`集合。 我们可以覆盖现有`UnitPrice`中的值`NewValues`十进制值集合分析用以下行中的代码使用货币格式`RowUpdating`事件处理程序：
 
 
 [!code-csharp[Main](examining-the-events-associated-with-inserting-updating-and-deleting-cs/samples/sample4.cs)]
 
-如果用户已提供`UnitPrice`值 （如"$19.00") 与计算出的十进制值会覆盖了此值[Decimal.Parse](https://msdn.microsoft.com/en-us/library/system.decimal.parse(VS.80).aspx)，分析作为一种货币值。 这将正确分析小数点发生任何货币符号、 逗号、 小数点、 和等等，并使用[NumberStyles 枚举](https://msdn.microsoft.com/en-US/library/system.globalization.numberstyles(VS.80).aspx)中[System.Globalization](https://msdn.microsoft.com/en-US/library/abeh092z(VS.80).aspx)命名空间。
+如果用户已提供`UnitPrice`值 （如"$19.00") 与计算出的十进制值会覆盖了此值[Decimal.Parse](https://msdn.microsoft.com/library/system.decimal.parse(VS.80).aspx)，分析作为一种货币值。 这将正确分析小数点发生任何货币符号、 逗号、 小数点、 和等等，并使用[NumberStyles 枚举](https://msdn.microsoft.com/library/system.globalization.numberstyles(VS.80).aspx)中[System.Globalization](https://msdn.microsoft.com/library/abeh092z(VS.80).aspx)命名空间。
 
 图 11 显示这两个问题引起的中的用户提供的货币符号`UnitPrice`，以及如何 GridView`RowUpdating`事件处理程序可以利用为了正确分析这类输入。
 
@@ -216,10 +216,10 @@ GridView`RowUpdating`接受作为其第二个参数类型的对象的事件[Grid
 
 到目前为止，我们已了解如何使用 GridView`RowUpdating`事件以编程方式更改分配给对象数据源的参数值`UpdateParameters`集合以及如何取消更新处理完全。 这些概念会延续到说明和 FormView 控件和也适用于插入和删除。
 
-也可以在对象数据源级别事件处理程序通过执行这些任务其`Inserting`， `Updating`，和`Deleting`事件。 这些事件激发之前调用的基础对象的关联的方法，并提供上一次机会机会来修改输入的参数集合，或者取消迫切地操作。 这三个事件的事件处理程序传递的类型对象[ObjectDataSourceMethodEventArgs](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs(VS.80).aspx)具有两个相关属性：
+也可以在对象数据源级别事件处理程序通过执行这些任务其`Inserting`， `Updating`，和`Deleting`事件。 这些事件激发之前调用的基础对象的关联的方法，并提供上一次机会机会来修改输入的参数集合，或者取消迫切地操作。 这三个事件的事件处理程序传递的类型对象[ObjectDataSourceMethodEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs(VS.80).aspx)具有两个相关属性：
 
-- [取消](https://msdn.microsoft.com/en-US/library/system.componentmodel.canceleventargs.cancel(VS.80).aspx)，后者，如果设置为`true`，取消正在执行的操作
-- [输入参数](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs.inputparameters(VS.80).aspx)，这是集合的`InsertParameters`， `UpdateParameters`，或`DeleteParameters`，具体取决于事件处理程序是否为`Inserting`， `Updating`，或`Deleting`事件
+- [取消](https://msdn.microsoft.com/library/system.componentmodel.canceleventargs.cancel(VS.80).aspx)，后者，如果设置为`true`，取消正在执行的操作
+- [输入参数](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs.inputparameters(VS.80).aspx)，这是集合的`InsertParameters`， `UpdateParameters`，或`DeleteParameters`，具体取决于事件处理程序是否为`Inserting`， `Updating`，或`Deleting`事件
 
 为了说明使用对象数据源级别的参数值，让我们在我们的页面，用户可添加新的产品中包含说明如何。 此说明如何将用于提供用于将新产品快速添加到数据库的接口。 若要在添加新的产品，让我们允许用户只需输入的值时保持一致的用户界面`ProductName`和`UnitPrice`字段。 默认情况下，在说明的插入接口中不提供这些值将设置为`NULL`数据库值。 但是，我们可以使用对象数据源的`Inserting`以插入不同的默认值，正如我们很快将看到的事件。
 

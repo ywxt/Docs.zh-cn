@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: d5574ee353ff41205e9029e4aa5d139a5aa0e959
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cdd13f96ddf08ff86b01ef9de17ea82cf038ab28
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="scenario-configuring-a-production-environment-for-web-deployment"></a>方案： 配置 Web 部署的生产环境
 ====================
@@ -35,7 +35,7 @@ ms.lasthandoff: 11/10/2017
 - 更改应用程序部署不太频繁地比测试或过渡部署。
 
 > [!NOTE]
-> 扩展跨多个服务器的数据库部署不在本教程的范围。 有关此区域的详细信息，请参阅[SQL Server 联机丛书](https://technet.microsoft.com/en-us/library/ms130214.aspx)。
+> 扩展跨多个服务器的数据库部署不在本教程的范围。 有关此区域的详细信息，请参阅[SQL Server 联机丛书](https://technet.microsoft.com/library/ms130214.aspx)。
 
 
 例如，在我们[教程的情况下](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)，Team Build 服务器包括让用户生成联系人管理器解决方案并将其部署到过渡环境中单个步骤的生成定义。 应用程序准备好可部署到生产环境中，由于安全要求和网络基础结构，施加的约束时生产环境管理员必须手动复制到生产 web 服务器上的 web 包并导入它通过 Internet 信息服务 (IIS) 管理器。

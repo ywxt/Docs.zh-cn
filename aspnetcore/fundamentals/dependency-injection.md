@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/dependency-injection
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1da3d557c48921747634b08cedb518184fb5f963
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 7a5a0991694b2c7caa79dbc09f6471d614f67dac
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-dependency-injection-in-aspnet-core"></a>在 ASP.NET 核心中的依赖关系注入简介
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 01/19/2018
 
 通过[Steve Smith](https://ardalis.com/)和[Scott Addie](https://scottaddie.com)
 
-ASP.NET 核心旨在从一开始向上支持，并利用依赖关系注入。 ASP.NET 核心应用程序可以通过让用户启动类中的方法中注入利用内置 framework 服务和应用程序服务可以配置为也注入。 由 ASP.NET Core 提供的默认服务容器提供最小功能集，不用于替换其他容器。
+ASP.NET 核心旨在从一开始向上支持，并利用依赖关系注入。 ASP.NET 核心应用程序可以通过让用户启动类中的方法中注入利用内置 framework 服务和应用程序服务可以配置为也注入。 由 ASP.NET Core 提供的默认服务容器提供最小功能集，并不旨在替换其他容器。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
@@ -30,7 +30,7 @@ ASP.NET 核心旨在从一开始向上支持，并利用依赖关系注入。 AS
 
 依赖关系注入 (DI) 是一种技术有助于实现对象及其协作者或依赖项之间的松散耦合。 而不是直接实例化协作者，或使用的静态引用，到以某种方式类提供了一个类执行其操作所需的对象。 大多数情况下，类将声明通过其构造函数，从而使它们可以按照其依赖项[显式依赖关系原则](http://deviq.com/explicit-dependencies-principle/)。 此方法被称为"构造函数注入"。
 
-类旨在与 DI 一起记住，当它们更松散耦合因为它们没有直接的硬编码的依赖关系上其协作者。 这需要遵循[依赖反向原则](http://deviq.com/dependency-inversion-principle/)，其中指出*"高级别模块不应依赖于低级别模块; 同时应依赖于抽象"。* 引用特定的实现，而不是类请求抽象 (通常`interfaces`) 其提供给其构造类时。 提取到接口的依赖关系并提供实现这些接口作为参数也是一种[策略设计模式](http://deviq.com/strategy-design-pattern/)。
+当类旨在与 DI 一起记住时，它们是更松散耦合因为它们没有直接的硬编码的依赖项在其协作者。 这需要遵循[依赖反向原则](http://deviq.com/dependency-inversion-principle/)，其中指出*"高级别模块不应依赖于低级别模块; 同时应依赖于抽象"。* 引用特定的实现，而不是类请求抽象 (通常`interfaces`) 其提供给其构造类时。 提取到接口的依赖关系并提供实现这些接口作为参数也是一种[策略设计模式](http://deviq.com/strategy-design-pattern/)。
 
 当系统设计为使用 DI 时，具有多个请求通过其构造函数 （或属性），其依赖关系的类很有用具有专用于创建这些类具有其关联的依赖关系的类。 这些类统称为*容器*，或更具体地说，[控制反向 (IoC)](http://deviq.com/inversion-of-control/)容器或依赖关系注入 (DI) 容器。 容器是实质上是一个工厂，它负责提供从它请求的类型的实例。 如果给定的类型已声明它具有依赖关系，并配置容器提供依赖关系类型，它将创建创建请求的实例的过程的依赖关系。 这种方式，可以向无需任何硬编码对象构造的类提供复杂的依赖项关系图。 除了创建它们的依赖项对象，通常管理容器应用程序中的对象生存期。
 
@@ -112,7 +112,7 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 
 `AddTransient`方法用于将抽象类型映射到为需要它的每个对象单独实例化的具体服务。 这称为服务的*生存期*，和其他生存期选项如下所述。 请务必选择相应的生存期内，每个你注册的服务。 应提供给请求，则每个类的服务的新实例？ 应使用整个的给定的 web 请求的一个实例？ 或者，应单个实例使用的应用程序生存期内？
 
-在本文示例中，没有显示字符名称，调用的简单控制器`CharactersController`。 其`Index`方法会显示的字符的已存储在应用程序中，当前列表并初始化具有少量的字符的集合，如果不存在。 请注意，尽管此应用程序使用实体框架核心和`ApplicationDbContext`为其暂留，，不明显控制器中的类。 在接口，后面的特定数据访问机制抽象化已相反， `ICharacterRepository`，它遵循[存储库模式](http://deviq.com/repository-pattern/)。 实例`ICharacterRepository`，请求通过构造函数和分配给私有字段，然后将其用于将根据需要访问的字符。
+在本文示例中，没有显示字符名称，调用的简单控制器`CharactersController`。 其`Index`方法会显示的字符的已存储在应用程序中，当前列表并初始化具有少量的字符的集合，如果不存在。 请注意，尽管此应用程序使用实体框架核心和`ApplicationDbContext`为其暂留的任何类，非常明显控制器中。 在接口，后面的特定数据访问机制抽象化已相反， `ICharacterRepository`，它遵循[存储库模式](http://deviq.com/repository-pattern/)。 实例`ICharacterRepository`，请求通过构造函数和分配给私有字段，然后将其用于将根据需要访问的字符。
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Controllers/CharactersController.cs?highlight=3,5,6,7,8,14,21-27&range=8-36)]
 
@@ -120,7 +120,7 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/ICharacterRepository.cs?highlight=8,9)]
 
-此接口的具体类型，反过来实现`CharacterRepository`，即在运行时使用。
+此接口的具体类型，反过来实现`CharacterRepository`，在运行时使用。
 
 > [!NOTE]
 > 与使用的方式 DI`CharacterRepository`类是你可以按照你的应用程序服务，而不仅仅是在"存储库"或数据访问类中的所有常规模型。
@@ -149,7 +149,7 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 
 **Transient**
 
-用户请求每次都创建暂时性生存期服务。 此生存期适合轻量、 无状态服务。
+他们正在请求每次都创建暂时性生存期服务。 此生存期适合轻量、 无状态服务。
 
 **作用域**
 
@@ -157,7 +157,7 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 
 **Singleton**
 
-单一实例生存期服务创建第一次会请求 (时，或者当`ConfigureServices`如果指定实例存在，则运行)，然后每个后续请求将使用同一个实例。 如果你的应用程序需要单一实例行为，而不是实现单独设计模式和自行管理的类中的对象的生存期建议允许服务容器以管理服务的生存期。
+单一实例生存期服务创建第一次他们正在请求 (时，或者当`ConfigureServices`如果指定实例存在，则运行)，然后每个后续请求将使用同一个实例。 如果你的应用程序需要单一实例行为，而不是实现单独设计模式和自行管理的类中的对象的生存期建议允许服务容器以管理服务的生存期。
 
 可以使用多种方式容器注册服务。 我们已经看到了如何通过指定要使用的具体类型使用给定类型注册服务实现。 此外，可以指定工厂，然后将用于按需创建实例。 第三种方法是类型的直接指定要使用的实例，在其中用例容器将永远不会尝试创建实例 （也不会释放的实例）。
 
@@ -237,7 +237,7 @@ public void ConfigureServices(IServiceCollection services)
     services.AddSingleton<Service2>();
     services.AddSingleton<ISomeService>(sp => new SomeServiceImplementation());
 
-    // container did not create instance so it will NOT dispose it
+    // container didn't create instance so it will NOT dispose it
     services.AddSingleton<Service3>(new Service3());
     services.AddSingleton(new Service3());
 }
@@ -310,7 +310,7 @@ public class DefaultModule : Module
 > [!NOTE]
 > 建议的所有组，如可能会遇到的情况下忽略一个必需。 我们发现异常很少见-框架本身中的主要非常特殊用例。
 
-请记住，依赖关系注入是*备用*到静态/全局对象访问模式。 你将不能实现 DI 的优点，如果混合使用静态对象访问权限。
+请记住，依赖关系注入是*备用*到静态/全局对象访问模式。 你将无法实现 DI 的优点，如果混合使用静态对象访问权限。
 
 ## <a name="additional-resources"></a>其他资源
 

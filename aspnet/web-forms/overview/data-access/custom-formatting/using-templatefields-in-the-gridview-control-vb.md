@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 014fb9fe5fb9fc1a7fe56441bd70e65cfe05862d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 337765988cc6ec92384bec09a72fd00505d9a039
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-templatefields-in-the-gridview-control-vb"></a>在 GridView 控件 (VB) 中使用 TemplateFields
 ====================
@@ -158,7 +158,7 @@ GridView 组成的字段，指示哪些属性从一组`DataSource`要包括在�
 
 ## <a name="step-3-using-the-calendar-control-to-display-thehireddatefield"></a>步骤 3： 使用日历控件显示`HiredDate`字段
 
-在 GridView 中以文本显示数据字段值非常简单，使用 BoundField。 对于某些方案中，但是，数据是最表示而不只包含文本中使用特定的 Web 控件。 此类显示的数据的自定义是，可以使用 TemplateFields。 例如，而不是以文本形式显示该雇员雇佣日期，我们无法显示日历 (使用[日历控件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.calendar(VS.80).aspx)) 其雇用日期突出显示。
+在 GridView 中以文本显示数据字段值非常简单，使用 BoundField。 对于某些方案中，但是，数据是最表示而不只包含文本中使用特定的 Web 控件。 此类显示的数据的自定义是，可以使用 TemplateFields。 例如，而不是以文本形式显示该雇员雇佣日期，我们无法显示日历 (使用[日历控件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar(VS.80).aspx)) 其雇用日期突出显示。
 
 若要完成此操作，首先要将转换`HiredDate`转换为 TemplateField BoundField。 只需转到 GridView 的智能标记，并单击编辑列链接，提出字段对话框。 选择`HiredDate`BoundField，然后单击"转换此字段转换为 TemplateField。"
 
@@ -178,7 +178,7 @@ GridView 组成的字段，指示哪些属性从一组`DataSource`要包括在�
 **图 12**： 添加到一个日历控件`HireDate`TemplateField 的`ItemTemplate`([单击以查看实际尺寸的图像](using-templatefields-in-the-gridview-control-vb/_static/image36.png))
 
 
-此时 GridView 中的每一行将包含中的日历控件其`HiredDate`TemplateField。 但是，该员工的实际`HiredDate`不在日历控件，从而导致每个默认为显示的当前月份和日期的日历控件中任何位置设置值。 若要解决此问题，我们需要分配每个员工的`HiredDate`到日历控件的[SelectedDate](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.calendar.selecteddate(VS.80).aspx)和[VisibleDate](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.calendar.visibledate(VS.80).aspx)属性。
+此时 GridView 中的每一行将包含中的日历控件其`HiredDate`TemplateField。 但是，该员工的实际`HiredDate`不在日历控件，从而导致每个默认为显示的当前月份和日期的日历控件中任何位置设置值。 若要解决此问题，我们需要分配每个员工的`HiredDate`到日历控件的[SelectedDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selecteddate(VS.80).aspx)和[VisibleDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.visibledate(VS.80).aspx)属性。
 
 从日历控件的智能标记上，选择编辑数据绑定。 接下来，将同时绑定`SelectedDate`和`VisibleDate`属性设置为`HiredDate`数据字段。
 

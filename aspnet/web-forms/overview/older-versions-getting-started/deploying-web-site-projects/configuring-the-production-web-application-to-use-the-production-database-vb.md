@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5b193fa3256e5886481c7b36d88aa09c1fa7017c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 60ef1f93efea777e9309ad8c664a2c6645f1ce80
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>配置用于生产数据库 (VB) 的生产 Web 应用程序
 ====================
@@ -37,7 +37,7 @@ Web 应用程序使用中的信息*连接字符串*以与数据库建立连接�
 
 ## <a name="examining-the-connection-string-information"></a>检查连接字符串信息
 
-所用的图书评论 web 应用程序的连接字符串存储在应用程序的配置文件， `Web.config`。 `Web.config`包含一个特殊的节，用于存储连接字符串，命名恰当[ &lt;connectionStrings&gt;](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx)。 `Web.config`文件图书评论网站具有一个名为此节中定义的连接字符串`ReviewsConnectionString`:
+所用的图书评论 web 应用程序的连接字符串存储在应用程序的配置文件， `Web.config`。 `Web.config`包含一个特殊的节，用于存储连接字符串，命名恰当[ &lt;connectionStrings&gt;](https://msdn.microsoft.com/library/bf7sd233.aspx)。 `Web.config`文件图书评论网站具有一个名为此节中定义的连接字符串`ReviewsConnectionString`:
 
 [!code-xml[Main](configuring-the-production-web-application-to-use-the-production-database-vb/samples/sample1.xml)]
 
@@ -46,7 +46,7 @@ Web 应用程序使用中的信息*连接字符串*以与数据库建立连接�
 - `Data Source`-指定的数据库服务器和数据库服务器实例名称的位置 （如果有）。 值， `.\SQLEXPRESS`，是一个示例： 有数据库服务器和实例名称。 期指定数据库服务器位于同一台计算机作为该应用程序;实例名称是`SQLEXPRESS`。
 - `AttachDbFilename`-指定数据库文件的位置。 值包含占位符`|DataDirectory|`，即解析为应用程序 s 的完整路径`App_Data`在运行时的文件夹。
 - `Integrated Security`-一个布尔值，该值指示是否在连接到数据库 (false) 或当前的 Windows 帐户凭据 (true) 时使用指定的用户名/密码。
-- `User Instance`-特定于 SQL Server Express 版本，该值指示是否允许本地计算机上的非管理用户附加并连接到 SQL Server Express Edition 数据库的配置选项。 请参阅[SQL Server Express 用户实例](https://msdn.microsoft.com/en-us/library/ms254504.aspx)有关对此设置的详细信息。
+- `User Instance`-特定于 SQL Server Express 版本，该值指示是否允许本地计算机上的非管理用户附加并连接到 SQL Server Express Edition 数据库的配置选项。 请参阅[SQL Server Express 用户实例](https://msdn.microsoft.com/library/ms254504.aspx)有关对此设置的详细信息。
   
 
 允许的连接字符串选项取决于你连接到的数据库和[ADO.NET](http://ADO.NET)所使用的数据库提供程序。 例如，用于连接到 Microsoft SQL Server 数据库不同于用来连接到 Oracle 数据库连接字符串。 同样，连接到 Microsoft SQL Server 数据库使用 SqlClient 提供程序使用不同的连接字符串比时使用的 OLE DB 访问接口。
@@ -71,7 +71,7 @@ Web 应用程序使用中的信息*连接字符串*以与数据库建立连接�
 
 现在，生产环境数据库应列在服务器资源管理器。 从服务器资源管理器中选择数据库并转到属性窗口。 您将找到名为使用数据库 s 的连接字符串的连接字符串的属性。 假定你在生产和 SqlClient 提供程序上使用 Microsoft SQL Server 数据库连接字符串应类似于以下：
 
-**数据源 =*serverName*;初始目录 =*databaseName*;持久性安全信息 = True;用户 ID =*用户名*;密码 =*密码***
+**数据源 =*serverName*;初始目录 =*databaseName*;持久性安全信息 = True;用户 ID =*用户名*;密码 = * 密码***
 
 其中*serverName*， *databaseName*，*用户名*，和*密码*与数据库服务器名称，数据库的值名称和用户名和密码由你的 web 主机公司提供给你。
 
@@ -147,10 +147,10 @@ Web 应用程序使用中的信息*连接字符串*以与数据库建立连接�
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [连接字符串和配置文件](https://msdn.microsoft.com/en-us/library/ms254494.aspx)
+- [连接字符串和配置文件](https://msdn.microsoft.com/library/ms254494.aspx)
 - [数据库配置字符串信息 @ ConnectionStrings.com](http://www.connectionstrings.com/)
 - [移出 Web.config 文件的设置](http://www.asp101.com/tips/index.asp?id=154)
-- [技术文档&lt;connectionStrings&gt;元素](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx)
+- [技术文档&lt;connectionStrings&gt;元素](https://msdn.microsoft.com/library/bf7sd233.aspx)
 
 >[!div class="step-by-step"]
 [上一页](deploying-a-database-vb.md)

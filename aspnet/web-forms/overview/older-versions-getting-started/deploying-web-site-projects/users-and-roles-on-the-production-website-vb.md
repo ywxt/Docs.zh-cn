@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ced68b633eb34d1ea75671ac4ffe7f512e911a0d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f3bfaa0e14e3e04a7faae1a78b566d7c2067785a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="users-and-roles-on-the-production-website-vb"></a>用户和生产网站 (VB) 上的角色
 ====================
@@ -37,7 +37,7 @@ ASP。NET 的应用程序服务不限于特定的实现。 相反，指示要使
 
 ## <a name="using-the-aspnet-web-site-administration-tool"></a>使用 ASP.NET 网站管理工具
 
-ASP.NET 包括[网站管理工具](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx)(WSAT)，可轻松创建和管理用户帐户和角色以及指定基于用户和角色的授权规则。 若要使用 WSAT，单击 ASP.NET 配置图标，在解决方案资源管理器，或转到网站或项目菜单上，然后选择 ASP.NET 配置选项。 这两种方法来启动 web 浏览器并指向在这样的地址 WSAT:`http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
+ASP.NET 包括[网站管理工具](https://msdn.microsoft.com/library/yy40ytx0.aspx)(WSAT)，可轻松创建和管理用户帐户和角色以及指定基于用户和角色的授权规则。 若要使用 WSAT，单击 ASP.NET 配置图标，在解决方案资源管理器，或转到网站或项目菜单上，然后选择 ASP.NET 配置选项。 这两种方法来启动 web 浏览器并指向在这样的地址 WSAT:`http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
 
 WSAT 分为三个部分：
 
@@ -116,7 +116,7 @@ ASP.NET 网站管理工具 (WSAT) 可相继使用成员资格和角色应用程�
 
 - [正在检查 ASP。NET 的成员资格、 角色和配置文件](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [滚动你自己的网站管理工具](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
-- [网站管理工具概述](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx)
+- [网站管理工具概述](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 - [网站安全教程](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
 >[!div class="step-by-step"]

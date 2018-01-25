@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: dd1ae266740ea4728c0624b1833a98ac262e0e5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 12a4ba8ad30df43e7192500ad4514dfa9679f899
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-parameters-for-web-package-deployment"></a>为 Web 包部署中配置参数
 ====================
@@ -88,7 +88,7 @@ WPP 还使它生成的部署包中的这些属性进行参数化。 当你安装
 
 如果你手动安装的部署包，IIS 管理器将提示你自动参数化的属性旁边的服务终结点地址。 当你通过运行安装了部署包*。 deploy.cmd*文件，你可以编辑*SetParameters.xml*文件服务终结点地址以及为值提供的值自动参数化的属性。
 
-有关如何创建的完整详细信息*parameters.xml*文件，请参阅[如何： 安装到配置部署设置包时使用参数](https://msdn.microsoft.com/en-us/library/ff398068.aspx)。 名为的过程**要用于 Web.config 文件设置的部署参数**提供分步说明。
+有关如何创建的完整详细信息*parameters.xml*文件，请参阅[如何： 安装到配置部署设置包时使用参数](https://msdn.microsoft.com/library/ff398068.aspx)。 名为的过程**要用于 Web.config 文件设置的部署参数**提供分步说明。
 
 ## <a name="modifying-the-setparametersxml-file"></a>修改 SetParameters.xml 文件
 
@@ -144,7 +144,7 @@ WPP 还使它生成的部署包中的这些属性进行参数化。 当你安装
 
 ## <a name="further-reading"></a>其他阅读材料
 
-有关如何创建 web 包的信息，请参阅[生成和打包 Web 应用程序项目](building-and-packaging-web-application-projects.md)。 有关如何实际部署 web 包的指南，请参阅[部署 Web 包](deploying-web-packages.md)。 有关如何创建的分步演练*parameters.xml*文件，请参阅[如何： 安装到配置部署设置包时使用参数](https://msdn.microsoft.com/en-us/library/ff398068.aspx)。
+有关如何创建 web 包的信息，请参阅[生成和打包 Web 应用程序项目](building-and-packaging-web-application-projects.md)。 有关如何实际部署 web 包的指南，请参阅[部署 Web 包](deploying-web-packages.md)。 有关如何创建的分步演练*parameters.xml*文件，请参阅[如何： 安装到配置部署设置包时使用参数](https://msdn.microsoft.com/library/ff398068.aspx)。
 
 有关 Web 部署中的参数化的更多常规信息，请参阅[Web 操作中的部署参数化](https://go.microsoft.com/?linkid=9805119)（博客文章）。
 

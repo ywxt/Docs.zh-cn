@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: a802e4fed81fadca195c8aa83c37c7100ac5cbec
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6f3e6a0cfb8c08cd971e88986d0f059dd8237aab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET 网站页 (Razor) 中显示地图
 ====================
@@ -38,7 +38,7 @@ ms.lasthandoff: 11/10/2017
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
 > 
 > 
-> - ASP.NET 网页 (Razor) 2
+> - ASP.NET Web Pages (Razor) 2
 > - WebMatrix 2
 >   
 > 
@@ -70,7 +70,7 @@ ms.lasthandoff: 11/10/2017
     你可以指定你想要使用的键**评估/测试**。 如果你要使用 WebMatrix 和 IIS Express 自己计算机上测试映射函数，请转到**站点**工作区并记下你的站点的 URL (例如， `http://localhost:50408`，尽管端口号可能不同)。 你可以使用此*localhost*作为注册时的站点的地址。
 2. 你的帐户注册后，请转到必应地图帐户中心，然后单击**创建或视图键**:
 
-    ![映射-2](displaying-maps-in-an-aspnet-web-pages-site/_static/image1.png)
+    ![mapping-2](displaying-maps-in-an-aspnet-web-pages-site/_static/image1.png)
 3. 记录必应创建的密钥。
 
 ## <a name="creating-a-map-based-on-an-address-using-google"></a>创建基于 （使用 Google） 的地址映射
@@ -91,7 +91,7 @@ ms.lasthandoff: 11/10/2017
     - 调用`@Maps.GetGoogleHtml`页的正文中。 若要将地址映射，你必须传递地址字符串。 对于其他映射引擎方法的工作原理类似的方式 (`@Maps.GetYahooHtml`， `@Maps.GetMapQuestHtml`)。
 - 运行页面，并输入一个地址。 该页面显示地图中，基于 Google 地图，显示你指定的位置。
 
-    ![映射 1](displaying-maps-in-an-aspnet-web-pages-site/_static/image2.png)
+    ![mapping-1](displaying-maps-in-an-aspnet-web-pages-site/_static/image2.png)
 
 ## <a name="creating-a-map-based-on-latitude-and-longitude-coordinates-using-bing"></a>创建基于纬度和经度地图坐标 （使用必应）
 
@@ -108,10 +108,10 @@ ms.lasthandoff: 11/10/2017
 
     将显示的页，使用你指定的坐标。
 
-    ![映射-3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
+    ![mapping-3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他资源
 
 
-[Microsoft.Maps API 参考](https://msdn.microsoft.com/en-us/library/gg427611.aspx)
+[Microsoft.Maps API 参考](https://msdn.microsoft.com/library/gg427611.aspx)

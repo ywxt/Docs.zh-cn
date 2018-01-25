@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 348940748e3c33ace03d1b8f41615e9814cf6b40
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 205d5ddcd0c3240c87ec5705a6676215eb67942d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>使用实体框架中的 ASP.NET MVC 应用程序更新相关的数据
 ====================
@@ -127,7 +127,7 @@ ms.lasthandoff: 11/10/2017
 
 - 方法名称更改为`EditPost`因为签名现在为相同`HttpGet`方法 (`ActionName`属性指定 /Edit/ URL 仍使用)。
 - 获取当前`Instructor`中使用的预先加载的数据库实体`OfficeAssignment`导航属性。 这是你未与相同`HttpGet``Edit`方法。
-- 更新检索`Instructor`模型联编程序中的值的实体。 [TryUpdateModel](https://msdn.microsoft.com/en-us/library/dd470908(v=vs.108).aspx)使用重载使你能够*白名单*你想要包括的属性。 这可以防止过度发布中所述[第二个教程](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)。
+- 更新检索`Instructor`模型联编程序中的值的实体。 [TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.108).aspx)使用重载使你能够*白名单*你想要包括的属性。 这可以防止过度发布中所述[第二个教程](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)。
 
     [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample12.cs)]
 - 如果 office 位置为空，设置`Instructor.OfficeAssignment`为 null 的属性，以便中的相关的行`OfficeAssignment`表将被删除。
@@ -163,7 +163,7 @@ ms.lasthandoff: 11/10/2017
 
 该代码将添加为预先加载`Courses`导航属性并调用新`PopulateAssignedCourseData`方法以提供有关复选框的数组使用信息`AssignedCourseData`查看模型类。
 
-中的代码`PopulateAssignedCourseData`方法读取通过所有`Course`才能加载课程使用视图的列表的实体模型类。 对于每个课程中，代码检查过程中是否存在于教师`Courses`导航属性。 若要检查是否将某一课程分配给教师时，请创建高效的查找，分配给教师的课程已放入[HashSet](https://msdn.microsoft.com/en-us/library/bb359438.aspx)集合。 `Assigned`属性设置为`true`教师分配课程。 该视图将使用此属性来确定哪些复选框必须显示为选择。 最后，该列表传递给中的视图`ViewBag`属性。
+中的代码`PopulateAssignedCourseData`方法读取通过所有`Course`才能加载课程使用视图的列表的实体模型类。 对于每个课程中，代码检查过程中是否存在于教师`Courses`导航属性。 若要检查是否将某一课程分配给教师时，请创建高效的查找，分配给教师的课程已放入[HashSet](https://msdn.microsoft.com/library/bb359438.aspx)集合。 `Assigned`属性设置为`true`教师分配课程。 该视图将使用此属性来确定哪些复选框必须显示为选择。 最后，该列表传递给中的视图`ViewBag`属性。
 
 接下来，添加在用户单击时执行的代码与**保存**。 替换`EditPost`方法替换为以下代码，调用更新的新方法`Courses`导航属性`Instructor`实体。 突出显示所做的更改。
 
@@ -171,7 +171,7 @@ ms.lasthandoff: 11/10/2017
 
 方法签名现在是不同于`HttpGet``Edit`方法，以便从更改方法名称`EditPost`回`Edit`。
 
-由于该视图不包含一套`Course`实体，不能自动更新模型联编程序`Courses`导航属性。 而不是使用模型联编程序更新`Courses`导航属性，则将执行该操作在新`UpdateInstructorCourses`方法。 因此你需要以排除`Courses`模型绑定中的属性。 这不需要对调用代码的任何更改[TryUpdateModel](https://msdn.microsoft.com/en-us/library/dd470908(v=vs.98).aspx)因为您正在使用*白名单*重载和`Courses`不在包括列表中。
+由于该视图不包含一套`Course`实体，不能自动更新模型联编程序`Courses`导航属性。 而不是使用模型联编程序更新`Courses`导航属性，则将执行该操作在新`UpdateInstructorCourses`方法。 因此你需要以排除`Courses`模型绑定中的属性。 这不需要对调用代码的任何更改[TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.98).aspx)因为您正在使用*白名单*重载和`Courses`不在包括列表中。
 
 如果没有复选框已选中中的代码`UpdateInstructorCourses`初始化`Courses`对空集合的导航属性：
 
@@ -266,7 +266,7 @@ HttpPost 创建方法将添加到模板代码检查有验证错误，向数据�
 <a id="transactions"></a>
 ## <a name="handling-transactions"></a>处理事务
 
-中所述[基本 CRUD 功能教程](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)，默认情况下实体框架隐式实现事务。 有关方案，你需要更多的控制-例如，如果你想要包括在实体框架外部事务-中执行的操作，请参阅[使用事务](https://msdn.microsoft.com/en-US/data/dn456843)MSDN 上。
+中所述[基本 CRUD 功能教程](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)，默认情况下实体框架隐式实现事务。 有关方案，你需要更多的控制-例如，如果你想要包括在实体框架外部事务-中执行的操作，请参阅[使用事务](https://msdn.microsoft.com/data/dn456843)MSDN 上。
 
 ## <a name="summary"></a>摘要
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: d58a745896b29317c1d1049e3bf1a5ec2e628820
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 148a1aa33f6f713ae471ab14c7180f6c08a8679a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>MVC Web 应用程序 (10/10) 的高级的实体框架方案
 ====================
@@ -55,7 +55,7 @@ ms.lasthandoff: 11/10/2017
 
 - 使用`DbSet.SqlQuery`返回实体类型的查询的方法。 返回的对象必须是期望的类型的`DbSet`对象，并且它们是否自动跟踪数据库上下文中的除非关闭跟踪。 (参见下一节`AsNoTracking`方法。)
 - 使用`Database.SqlQuery`方法用于返回不是实体类型的查询。 返回的数据不跟踪数据库上下文中，即使你使用此方法来检索实体类型。
-- 使用[Database.ExecuteSqlCommand](https://msdn.microsoft.com/en-us/library/gg679456(v=vs.103).aspx)非查询命令。
+- 使用[Database.ExecuteSqlCommand](https://msdn.microsoft.com/library/gg679456(v=vs.103).aspx)非查询命令。
 
 使用实体框架的优点之一是它可避免将你过于仔细存储数据的特定方法的代码。 此，它会生成 SQL 查询和命令，其中还使你无需自行编写。 但没有特殊情况下当你需要运行特定的 SQL 查询，你已手动创建的并且这些方法使你可以处理此类异常。
 
@@ -255,17 +255,17 @@ A`SelectList`为下拉列表包含所有部门集合传递到视图。 参数传
 - `DbContext.Entry`
 - `DbChangeTracker.Entries`
 
-如果您跟踪的大量实体，并且你调用这些方法之一多次在循环中，你可能会显著的性能改进，通过暂时关闭自动更改检测使用[AutoDetectChangesEnabled](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.dbcontextconfiguration.autodetectchangesenabled(VS.103).aspx)属性。 有关详细信息，请参阅[自动检测更改](https://blogs.msdn.com/b/adonet/archive/2011/02/06/using-dbcontext-in-ef-feature-ctp5-part-12-automatically-detecting-changes.aspx)。
+如果您跟踪的大量实体，并且你调用这些方法之一多次在循环中，你可能会显著的性能改进，通过暂时关闭自动更改检测使用[AutoDetectChangesEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.autodetectchangesenabled(VS.103).aspx)属性。 有关详细信息，请参阅[自动检测更改](https://blogs.msdn.com/b/adonet/archive/2011/02/06/using-dbcontext-in-ef-feature-ctp5-part-12-automatically-detecting-changes.aspx)。
 
 ## <a name="disabling-validation-when-saving-changes"></a>禁用验证，在保存时更改
 
-当调用`SaveChanges`方法，默认情况下，实体框架中的所有更改的实体的所有属性的数据之前验证更新的数据库。 如果你已更新的大量实体，并且你已验证数据，这一工作是不必要和无法使保存的过程所做的更改通过暂时关闭验证花费更少时间。 你可以执行，使用[ValidateOnSaveEnabled](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled(VS.103).aspx)属性。 有关详细信息，请参阅[验证](https://blogs.msdn.com/b/adonet/archive/2010/12/15/ef-feature-ctp5-validation.aspx)。
+当调用`SaveChanges`方法，默认情况下，实体框架中的所有更改的实体的所有属性的数据之前验证更新的数据库。 如果你已更新的大量实体，并且你已验证数据，这一工作是不必要和无法使保存的过程所做的更改通过暂时关闭验证花费更少时间。 你可以执行，使用[ValidateOnSaveEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled(VS.103).aspx)属性。 有关详细信息，请参阅[验证](https://blogs.msdn.com/b/adonet/archive/2010/12/15/ef-feature-ctp5-validation.aspx)。
 
 ## <a name="summary"></a>摘要
 
 这将完成这一系列的 ASP.NET MVC 应用程序中使用实体框架的教程。 在找不到其他实体框架资源的链接[ASP.NET 数据访问内容映射](../../../../whitepapers/aspnet-data-access-content-map.md)。
 
-有关如何部署 web 应用程序，你已生成后的详细信息，请参阅[ASP.NET 部署内容映射](https://msdn.microsoft.com/en-us/library/bb386521.aspx)MSDN 库中。
+有关如何部署 web 应用程序，你已生成后的详细信息，请参阅[ASP.NET 部署内容映射](https://msdn.microsoft.com/library/bb386521.aspx)MSDN 库中。
 
 有关与相关的 MVC，例如身份验证和授权，其他主题信息请参阅[MVC 的推荐资源](../../getting-started/recommended-resources-for-mvc.md)。
 

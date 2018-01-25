@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/anti-request-forgery
-ms.openlocfilehash: d7df8f91e88290509c8751a4b69804b60138846e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3831bf737186d10eb1b298f5ec2da1fd33ebedd9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="preventing-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>阻止在 ASP.NET 核心中的跨网站请求伪造 (XSRF/CSRF) 攻击
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="what-attack-does-anti-forgery-prevent"></a>防伪阻止哪些攻击？
 
-跨站点请求伪造 (也称为 XSRF 或 CSRF，发音*，请参阅冲浪*) 是针对恶意网站凭此可以影响客户端浏览器和信任的网站之间的交互的 web 托管的应用程序的攻击该浏览器。 因为 web 浏览器将自动与每个请求某些类型的身份验证令牌发送到网站，这些攻击都可能。 这种形式的攻击也称为是*一键式攻击*或*会话乘坐*，因为用户攻击利用的先前进行身份验证会话。
+跨站点请求伪造 (也称为 XSRF 或 CSRF，发音*，请参阅冲浪*) 是针对恶意网站凭此可以影响客户端浏览器和信任的网站之间的交互的 web 托管的应用程序的攻击该浏览器。 因为 web 浏览器将自动与每个请求某些类型的身份验证令牌发送到网站，这些攻击都可能。 这种形式的攻击也称为的*一键式攻击*或*会话乘坐*，因为用户攻击利用的先前进行身份验证会话。
 
 CSRF 攻击的示例：
 
@@ -51,13 +51,13 @@ CSRF 攻击的示例：
 * 将窗体提交作为 AJAX 请求中发送。 
 * 使用 CSS 的隐藏的表单。 
 
-使用 SSL 时，不会阻止 CSRF 攻击，恶意的站点系统可以将发送`https://`请求。 
+使用 SSL，则不会阻止 CSRF 攻击，恶意的站点系统可以将发送`https://`请求。 
 
 一些攻击目标响应的网站终结点`GET`请求，该用例的图像标记可以用于执行 （这种形式的攻击常见论坛在站点是允许映像但阻止 JavaScript） 的操作。 更改状态的应用程序`GET`请求是容易受到恶意攻击的攻击。
 
 因为浏览器向目标网站发送所有相关 cookie，CSRF 攻击是可能对网站进行身份验证，使用 cookie 的。 但是，CSRF 攻击并不局限于利用 cookie。 例如，基本和摘要式身份验证也是易受攻击的。 用户登录时基本或摘要式身份验证后，浏览器会话结束之前会自动发送凭据。
 
-注意： 在此上下文中，*会话*指的是在此期间用户进行身份验证的客户端会话。 它是与服务器端会话不相关或[会话中间件](xref:fundamentals/app-state)。
+注意： 在此上下文中，*会话*指的是在此期间用户进行身份验证的客户端会话。 它是与服务器端会话无关或[会话中间件](xref:fundamentals/app-state)。
 
 用户可以防止通过 CSRF 漏洞：
 * 在完成使用它们时，日志记录从网站中移出。
@@ -171,7 +171,7 @@ public async Task<IActionResult> RemoveLogin(RemoveLoginViewModel account)
 
 ### <a name="autovalidateantiforgerytoken"></a>AutoValidateAntiforgeryToken
 
-ASP.NET Core 应用通常不会生成 antiforgery 令牌安全 HTTP 方法 （GET、 HEAD、 选项和跟踪）。 而不是广泛应用``ValidateAntiForgeryToken``属性，然后重写它与``IgnoreAntiforgeryToken``属性，可以使用``AutoValidateAntiforgeryToken``属性。 此属性适用类似``ValidateAntiForgeryToken``特性，只不过它不需要使用以下的 HTTP 方法发出的请求令牌：
+ASP.NET Core 应用通常不生成 antiforgery 令牌安全 HTTP 方法 （GET、 HEAD、 选项和跟踪）。 而不是广泛应用``ValidateAntiForgeryToken``属性，然后重写它与``IgnoreAntiforgeryToken``属性，可以使用``AutoValidateAntiforgeryToken``属性。 此属性适用类似``ValidateAntiForgeryToken``特性，只不过它不需要使用以下的 HTTP 方法发出的请求令牌：
 
 * GET
 * HEAD
@@ -345,7 +345,7 @@ CSRF 攻击依赖于发送与每个请求都会到该域的域关联的 cookie �
 
 ### <a name="cookie-based-authentication"></a>基于 cookie 的身份验证
 
-一旦用户已经身份验证使用其用户名和密码，这些令牌被颁发一个令牌，可用来将它们标识和验证它们进行了身份验证。 随着工作的附带的每个请求客户端的 cookie 的令牌存储。 生成和验证此 cookie 可通过 cookie 身份验证中间件。 ASP.NET Core 提供 cookie[中间件](../fundamentals/middleware.md)其用户主体序列化为的加密 cookie，然后，在后续请求中，将验证该 cookie，重新创建主体，并将它分配给`User`属性`HttpContext`.
+一旦用户已经使用其用户名和密码身份验证，它们被颁发一个令牌，可用来将它们标识和验证它们进行了身份验证。 随着工作的附带的每个请求客户端的 cookie 的令牌存储。 生成和验证此 cookie 可通过 cookie 身份验证中间件。 ASP.NET Core 提供 cookie[中间件](../fundamentals/middleware.md)其用户主体序列化为的加密 cookie，然后，在后续请求中，将验证该 cookie，重新创建主体，并将它分配给`User`属性`HttpContext`.
 
 当使用 cookie 时，身份验证 cookie 只是一个容器的窗体身份验证票证。 票证作为随每个请求的窗体身份验证 cookie 的值传递和 forms 身份验证，在服务器上，用于标识已经过身份验证的用户。
 
@@ -353,7 +353,7 @@ CSRF 攻击依赖于发送与每个请求都会到该域的域关联的 cookie �
 
 ### <a name="user-tokens"></a>用户令牌
 
-基于令牌的身份验证不存储在服务器上的会话。 相反，当用户登录时它们颁发一个令牌 （不 antiforgery 令牌）。 此令牌包含验证令牌所需的所有数据。 它还包含用户信息，请在窗体的[声明](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model)。 当用户想要访问要求进行身份验证的服务器资源时，令牌将发送至的其他授权标头中的持有者 {令牌} 形式的服务器。 这使得应用程序无状态，因为在每个后续请求令牌中传递请求服务器端验证。 此令牌不是*加密*; 而是*编码*。 服务器端都可以解码令牌来访问令牌中的原始信息。 若要在后续请求中发送令牌，则可以或者将其存储在浏览器的本地存储中或在一个 cookie。 你无需担心 XSRF 漏洞，如果你的令牌存储在本地存储中，但当的令牌存储在一个 cookie，它会成为问题。
+基于令牌的身份验证不存储在服务器上的会话。 相反，当用户登录时它们被颁发一个令牌 （不 antiforgery 令牌）。 此令牌包含要求该令牌进行验证的所有数据。 它还包含用户信息，请在窗体的[声明](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model)。 当用户想要访问要求进行身份验证的服务器资源时，令牌将发送至的其他授权标头中的持有者 {令牌} 形式的服务器。 这使得应用程序无状态，因为在每个后续请求令牌中传递请求服务器端验证。 此令牌不*加密*; 而是*编码*。 服务器端都可以解码令牌来访问令牌中的原始信息。 若要在后续请求中发送令牌，则可以或者将其存储在浏览器的本地存储中或在一个 cookie。 你无需担心 XSRF 漏洞，如果你的令牌存储在本地存储中，但当的令牌存储在一个 cookie，它会成为问题。
 
 ### <a name="multiple-applications-are-hosted-in-one-domain"></a>在一个域中托管多个应用程序
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: db57b8fe44f41d65d27964f45e0884138629f92b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d6bc92f3cbe6b61332e33e8a507b4516bf5c15a5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication"></a>使用 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用程序
 ====================
@@ -43,7 +43,7 @@ ms.lasthandoff: 11/10/2017
 
 1. 创建一个新的 ASP.NET Web 项目，然后选择 MVC 模板中。 Web 窗体还支持 ASP.NET 标识，因此无法执行类似的步骤，在 web 窗体应用程序中。  
     ![](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/_static/image1.png)
-2. 保留默认的身份验证作为**单个用户帐户**。 如果你想要托管该应用程序在 Azure 中的，保留选中复选框。 稍后在本教程中我们将部署到 Azure。 你可以[免费建立一个 Azure 帐户](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A261C142F)。
+2. 保留默认的身份验证作为**单个用户帐户**。 如果你想要托管该应用程序在 Azure 中的，保留选中复选框。 稍后在本教程中我们将部署到 Azure。 你可以[免费建立一个 Azure 帐户](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F)。
 3. 设置[项目以使用 SSL](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)。
 
 <a id="SMS"></a>
@@ -68,7 +68,7 @@ ms.lasthandoff: 11/10/2017
  地址:  
     `https://webservice.aspsms.com/aspsmsx2.asmx?WSDL`  
   
- 命名空间：  
+ 命名空间:  
     `ASPSMSX2`
 3. **了解 SMS 提供程序用户凭据**  
   
@@ -106,7 +106,7 @@ ms.lasthandoff: 11/10/2017
 7. 更新*Views\Manage\Index.cshtml* Razor 视图: (注意： 不只需删除现有代码中的注释，使用下面的代码。)  
 
     [!code-cshtml[Main](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/samples/sample3.cshtml?highlight=29-66)]
-8. 验证`EnableTwoFactorAuthentication`和`DisableTwoFactorAuthentication`中的操作方法`ManageController`具有[[ValidateAntiForgeryToken]](https://msdn.microsoft.com/en-us/library/system.web.mvc.validateantiforgerytokenattribute(v=vs.118).aspx)属性：  
+8. 验证`EnableTwoFactorAuthentication`和`DisableTwoFactorAuthentication`中的操作方法`ManageController`具有[[ValidateAntiForgeryToken]](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute(v=vs.118).aspx)属性：  
 
     [!code-csharp[Main](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/samples/sample4.cs?highlight=3,16)]
 9. 运行应用程序和你之前注册的帐户登录。

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/file-providers
-ms.openlocfilehash: db207f19b7ddc24dea36009138840be6efebdb84
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 10f3276d3e71e8a29b452d4c62865cbb82298513
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="file-providers-in-aspnet-core"></a>ASP.NET 核心中的文件提供程序
 
@@ -88,7 +88,7 @@ var embeddedProvider = new EmbeddedFileProvider(Assembly.GetEntryAssembly());
 ![列出嵌入的文件的文件提供程序示例应用程序](file-providers/_static/embedded-directory-listing.png)
 
 > [!NOTE]
-> 嵌入的资源不会公开目录。 相反，（通过其命名空间） 的资源路径嵌入在其文件名使用`.`分隔符。
+> 嵌入的资源不公开目录。 相反，（通过其命名空间） 的资源路径嵌入在其文件名使用`.`分隔符。
 
 > [!TIP]
 > `EmbeddedFileProvider`构造函数接受一个可选`baseNamespace`参数。 指定此将作用域调用`GetDirectoryContents`对这些资源在提供的命名空间。

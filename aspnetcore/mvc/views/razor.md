@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/razor
-ms.openlocfilehash: d932e28246998c60e2b3f9c77a2521fe55991e85
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: abdbb8112533d42f81180abad52f5ee86e3b280f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>ASP.NET 核心的 razor 语法
 
@@ -72,8 +72,8 @@ HTML 特性和内容包含电子邮件地址不处理`@`转换字符的形式的
 
 前面的代码生成编译器错误类似于以下项之一：
 
- * 未关闭的"int"元素。 所有元素都必须为自结束或具有匹配的结束标记。
- * 无法将方法组 GenericMethod 为非委托 object 类型的转换。 是否希望调用的方法？ 
+ * "Int"元素未关闭。 所有元素都必须为自结束或具有匹配的结束标记。
+ *  无法将方法组 GenericMethod 为非委托 object 类型的转换。 是否希望调用的方法？ 
  
 泛型方法调用必须包装在[显式 Razor 表达式](#explicit-razor-expressions)或[Razor 代码块](#razor-code-blocks)。
 
@@ -118,8 +118,8 @@ HTML 特性和内容包含电子邮件地址不处理`@`转换字符的形式的
 
 前面的代码生成编译器错误类似于以下项之一：
 
- * 未关闭的"int"元素。 所有元素都必须为自结束或具有匹配的结束标记。
- * 无法将方法组 GenericMethod 为非委托 object 类型的转换。 是否希望调用的方法？ 
+ * "Int"元素未关闭。 所有元素都必须为自结束或具有匹配的结束标记。
+ *  无法将方法组 GenericMethod 为非委托 object 类型的转换。 是否希望调用的方法？ 
  
  以下标记显示正确的方式写入此代码。 作为显式表达式编写的代码：
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/extensibility/core-crypto
-ms.openlocfilehash: b82c30fe40c4badc74645dafa9f0d13f6ffae031
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 8a3f4cf267998ddc7f393401059ca9d83ef2d8e7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="core-cryptography-extensibility"></a>核心加密可扩展性
 
@@ -128,7 +128,7 @@ IAuthenticatedEncryptor 和 IAuthenticatedEncryptorDescriptor 的主要区别是
 >[!TIP]
 > 没有用于将此属性设置的帮助器 API。 调用 XElement.MarkAsRequiresEncryption() 位于命名空间 Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel 扩展方法。
 
-也可以是其中的序列化的描述符不包含敏感信息的情况。 再次考虑存储在 HSM 中的加密密钥的大小写。 在序列化本身由于 HSM 并不会以明文形式材料时可描述符无法写出密钥材料。 相反，描述符可以编写出密钥包装的密钥 （如果 HSM 允许以这种方式导出） 或密钥的 HSM 自己唯一标识符版本。
+也可以是其中的序列化的描述符不包含敏感信息的情况。 再次考虑存储在 HSM 中的加密密钥的大小写。 在序列化本身由于 HSM 就不会暴露纯文本形式材料时可描述符无法写出密钥材料。 相反，描述符可以编写出密钥包装的密钥 （如果 HSM 允许以这种方式导出） 或密钥的 HSM 自己唯一标识符版本。
 
 <a name="data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptordeserializer"></a>
 
@@ -157,7 +157,7 @@ ImportFromXml 方法采用返回 XElement [IAuthenticatedEncryptorDescriptor.Exp
 
 * CreateNewDescriptor() : IAuthenticatedEncryptorDescriptor
 
-将 AlgorithmConfiguration 视为顶级工厂。 配置用作模板。 它所包装算法信息 （例如，此配置生成使用 AES 128 GCM 主密钥描述符），但它不能与特定键相关联。
+将 AlgorithmConfiguration 视为顶级工厂。 配置用作模板。 它所包装算法信息 （例如，此配置生成使用 AES 128 GCM 主密钥描述符），但它尚不与特定键关联。
 
 当调用 CreateNewDescriptor、 仅用于此调用中，创建新的密钥材料，并且生成新 IAuthenticatedEncryptorDescriptor 其包装此密钥材料以及所需使用材料算法信息。 无法在软件中创建 （和保存在内存中） 的密钥材料，它无法创建并保存在 HSM 中，依次类推。 关键点是 CreateNewDescriptor 任何两个调用应永远不会创建等效 IAuthenticatedEncryptorDescriptor 实例。
 
@@ -169,7 +169,7 @@ AlgorithmConfiguration 类型用作密钥创建例程的入口点如[自动密�
 
 * CreateNewDescriptor() : IAuthenticatedEncryptorDescriptor
 
-将 IAuthenticatedEncryptorConfiguration 视为顶级工厂。 配置用作模板。 它所包装算法信息 （例如，此配置生成使用 AES 128 GCM 主密钥描述符），但它不能与特定键相关联。
+将 IAuthenticatedEncryptorConfiguration 视为顶级工厂。 配置用作模板。 它所包装算法信息 （例如，此配置生成使用 AES 128 GCM 主密钥描述符），但它尚不与特定键关联。
 
 当调用 CreateNewDescriptor、 仅用于此调用中，创建新的密钥材料，并且生成新 IAuthenticatedEncryptorDescriptor 其包装此密钥材料以及所需使用材料算法信息。 无法在软件中创建 （和保存在内存中） 的密钥材料，它无法创建并保存在 HSM 中，依次类推。 关键点是 CreateNewDescriptor 任何两个调用应永远不会创建等效 IAuthenticatedEncryptorDescriptor 实例。
 

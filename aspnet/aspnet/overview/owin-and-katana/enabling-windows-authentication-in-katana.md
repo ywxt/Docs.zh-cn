@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/enabling-windows-authentication-in-katana
 msc.type: authoredcontent
-ms.openlocfilehash: cc23a053fb1ba60ea84eca59e99f0e375fefc4cd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8a26d356f7abafba021199761f9a49dcb81765c5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="enabling-windows-authentication-in-katana"></a>启用 Windows 身份验证中 Katana
 ====================
@@ -33,8 +33,8 @@ Katana 是 Microsoft 的实现[OWIN](http://owin.org/)，用于.NET 的打开 We
 
 Katana 目前提供两个服务器，这两种支持 Windows 集成身份验证：
 
-- **Microsoft.Owin.Host.SystemWeb**。 与 ASP.NET 管道中使用 IIS。
-- **Microsoft.Owin.Host.HttpListener**。 使用[System.Net.HttpListener](https://msdn.microsoft.com/en-us/library/system.net.httplistener.aspx)。 此服务器当前是默认选项，当自承载 Katana。
+- **Microsoft.Owin.Host.SystemWeb**. 与 ASP.NET 管道中使用 IIS。
+- **Microsoft.Owin.Host.HttpListener**. 使用[System.Net.HttpListener](https://msdn.microsoft.com/library/system.net.httplistener.aspx)。 此服务器当前是默认选项，当自承载 Katana。
 
 > [!NOTE]
 > Katana 当前不提供 OWIN 中间件对于 Windows 身份验证，因为此功能已在服务器中可用。
@@ -98,8 +98,8 @@ Katana 目前提供两个服务器，这两种支持 Windows 集成身份验证�
 
 ## <a name="related-topics"></a>相关主题
 
-[项目 Katana 事件的概述](an-overview-of-project-katana.md)
+[项目 Katana 概述](an-overview-of-project-katana.md)
 
-[System.Net.HttpListener](https://msdn.microsoft.com/en-us/library/system.net.httplistener.aspx)
+[System.Net.HttpListener](https://msdn.microsoft.com/library/system.net.httplistener.aspx)
 
 [了解 OWIN MVC 5 中的窗体身份验证](https://blogs.msdn.com/b/webdev/archive/2013/07/03/understanding-owin-forms-authentication-in-mvc-5.aspx)

@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
-ms.openlocfilehash: d3ef613f625d862314eb0bb60f083f60bb2317e5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9b229de60e09b94189f62a6bb6fa61a9973d637b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching"></a>缓存
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 了解缓存很重要的性能良好的 ASP.NET 应用程序。 ASP.NET 1.x 提供缓存; 的三个不同的选项输出缓存、 片段缓存和缓存 API。
 
@@ -77,7 +77,7 @@ SQL Server 7 和 2000年将基于轮询的模型用于 SQL 缓存依赖项。 �
 
 | **命令行开关** | **目的** |
 | --- | --- |
-| -S*服务器* | 指定服务器名称。 |
+| -S *server* | 指定服务器名称。 |
 | -ed | 指定数据库，应启用 SQL 缓存依赖项。 |
 | -d*数据库\_名称* | 指定应为 SQL 缓存依赖项启用的数据库名称。 |
 | -E | 指定该 aspnet\_regsql 连接到数据库时应使用 Windows 身份验证。 |
@@ -102,7 +102,7 @@ SQL Server 7 和 2000年将基于轮询的模型用于 SQL 缓存依赖项。 �
 | AspNet\_SqlCacheUpdateChangeIdStoredProcedure | 通过将递增已更改的表 changeId 更新通知表。 ASP.NET 使用此值以确定数据是否已更改。 如下所示，通过启用表时创建的触发器执行此存储的过程。 |
 
 
-- SQL Server 触发器调用***表\_名称*\_AspNet\_SqlCacheNotification\_触发器**为该表创建。 此触发器将执行 AspNet\_SqlCacheUpdateChangeIdStoredProcedure 对表执行插入、 更新或删除时。
+- SQL Server 触发器调用 ***表\_名称 *\_AspNet\_SqlCacheNotification\_触发器**为该表创建。 此触发器将执行 AspNet\_SqlCacheUpdateChangeIdStoredProcedure 对表执行插入、 更新或删除时。
 - SQL Server 角色称为**aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess**添加到数据库。
 
 **Aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess** SQL Server 角色具有 EXEC 权限到 AspNet\_SqlCachePollingStoredProcedure。 为了使轮询模型正常工作，必须将进程帐户添加到 aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess 角色。 Aspnet\_regsql.exe 工具将执行此操作为你。
@@ -144,7 +144,7 @@ SQL Server 7 和 2000年将基于轮询的模型用于 SQL 缓存依赖项。 �
 
 [!code-csharp[Main](caching/samples/sample11.cs)]
 
-详细信息： [https://msdn.microsoft.com/en-us/library/t9x04ed2.aspx](https://msdn.microsoft.com/en-us/library/t9x04ed2.aspx)
+详细信息： [https://msdn.microsoft.com/library/t9x04ed2.aspx](https://msdn.microsoft.com/library/t9x04ed2.aspx)
 
 ## <a name="query-based-sql-cache-dependencies-sql-server-2005-only"></a>基于查询的 SQL 缓存依赖项 (仅 SQL Server 2005)
 
@@ -188,7 +188,7 @@ ASP.NET Substitution 控件指定缓存的页面，它是在可动态创建而�
 
 ### <a name="substitution-api"></a>替换 API
 
-若要以编程方式创建动态内容缓存的页面，你可以调用[WriteSubstitution](https://msdn.microsoft.com/en-us/library/system.web.httpresponse.writesubstitution.aspx)在网页代码中，将其作为参数传递的方法名称的方法。 处理动态内容的创建方法采用单个[HttpContext](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.aspx)参数并返回一个字符串。 返回的字符串是在给定的位置将替换的内容。 调用 WriteSubstitution 方法而不是以声明方式使用 Substitution 控件的一个优点是，你可以调用任意对象，而不是调用的页或 UserControl 对象的静态方法的方法。
+若要以编程方式创建动态内容缓存的页面，你可以调用[WriteSubstitution](https://msdn.microsoft.com/library/system.web.httpresponse.writesubstitution.aspx)在网页代码中，将其作为参数传递的方法名称的方法。 处理动态内容的创建方法采用单个[HttpContext](https://msdn.microsoft.com/library/system.web.httpcontext.aspx)参数并返回一个字符串。 返回的字符串是在给定的位置将替换的内容。 调用 WriteSubstitution 方法而不是以声明方式使用 Substitution 控件的一个优点是，你可以调用任意对象，而不是调用的页或 UserControl 对象的静态方法的方法。
 
 WriteSubstitution 方法调用时，客户端可缓存性更改为服务器可缓存性，以便不将客户端上缓存的页。 这可确保以后对页的请求调用该方法再次以生成动态内容。
 
@@ -198,15 +198,15 @@ WriteSubstitution 方法调用时，客户端可缓存性更改为服务器可�
 
 ## <a name="controlcachepolicy-class"></a>ControlCachePolicy 类
 
-ControlCachePolicy 类允许片段缓存使用用户控件的编程控件。 ASP.NET 嵌入内的用户控件[BasePartialCachingControl](https://msdn.microsoft.com/en-us/library/system.web.ui.basepartialcachingcontrol.aspx)实例。 BasePartialCachingControl 类表示启用了输出缓存的用户控件。
+ControlCachePolicy 类允许片段缓存使用用户控件的编程控件。 ASP.NET 嵌入内的用户控件[BasePartialCachingControl](https://msdn.microsoft.com/library/system.web.ui.basepartialcachingcontrol.aspx)实例。 BasePartialCachingControl 类表示启用了输出缓存的用户控件。
 
-访问时[BasePartialCachingControl.CachePolicy](https://msdn.microsoft.com/en-us/library/system.web.ui.basepartialcachingcontrol.cachepolicy.aspx)属性[PartialCachingControl](https://msdn.microsoft.com/en-us/library/system.web.ui.partialcachingcontrol.aspx)控件，你始终将收到一个有效的 ControlCachePolicy 对象。 但是，如果你访问[UserControl.CachePolicy](https://msdn.microsoft.com/en-us/library/system.web.ui.usercontrol.cachepolicy.aspx)属性[UserControl](https://msdn.microsoft.com/en-us/library/system.web.ui.usercontrol.aspx)控件，你可以收到有效的 ControlCachePolicy 对象，仅当已包装的用户控件BasePartialCachingControl 控件。 如果不换行，该属性返回的 ControlCachePolicy 对象将引发异常，当你尝试对其进行操作，因为它不具有关联的 BasePartialCachingControl。 若要确定 UserControl 实例是否支持缓存不会生成异常，请检查[SupportsCaching](https://msdn.microsoft.com/en-us/library/system.web.ui.controlcachepolicy.supportscaching.aspx)属性。
+访问时[BasePartialCachingControl.CachePolicy](https://msdn.microsoft.com/library/system.web.ui.basepartialcachingcontrol.cachepolicy.aspx)属性[PartialCachingControl](https://msdn.microsoft.com/library/system.web.ui.partialcachingcontrol.aspx)控件，你始终将收到一个有效的 ControlCachePolicy 对象。 但是，如果你访问[UserControl.CachePolicy](https://msdn.microsoft.com/library/system.web.ui.usercontrol.cachepolicy.aspx)属性[UserControl](https://msdn.microsoft.com/library/system.web.ui.usercontrol.aspx)控件，你可以收到有效的 ControlCachePolicy 对象，仅当已包装的用户控件BasePartialCachingControl 控件。 如果不换行，该属性返回的 ControlCachePolicy 对象将引发异常，当你尝试对其进行操作，因为它不具有关联的 BasePartialCachingControl。 若要确定 UserControl 实例是否支持缓存不会生成异常，请检查[SupportsCaching](https://msdn.microsoft.com/library/system.web.ui.controlcachepolicy.supportscaching.aspx)属性。
 
 使用 ControlCachePolicy 类是你可以启用输出缓存的几种方式之一。 以下列表描述可用于启用输出缓存的方法：
 
-- 使用[@ OutputCache](https://msdn.microsoft.com/en-us/library/hdxfb6cy.aspx)指令来启用输出缓存中声明性方案。
-- 使用[PartialCachingAttribute](https://msdn.microsoft.com/en-us/library/system.web.ui.partialcachingattribute.aspx)属性，以便启用缓存的代码隐藏文件中的用户控件。
-- ControlCachePolicy 类用于在其中使用 BasePartialCachingControl 实例已启用缓存的使用上述方法之一并使用动态加载的编程方案中指定要缓存设置[System.Web.UI.TemplateControl.LoadControl](https://msdn.microsoft.com/en-us/library/system.web.ui.templatecontrol.loadcontrol.aspx)方法。
+- 使用[@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx)指令来启用输出缓存中声明性方案。
+- 使用[PartialCachingAttribute](https://msdn.microsoft.com/library/system.web.ui.partialcachingattribute.aspx)属性，以便启用缓存的代码隐藏文件中的用户控件。
+- ControlCachePolicy 类用于在其中使用 BasePartialCachingControl 实例已启用缓存的使用上述方法之一并使用动态加载的编程方案中指定要缓存设置[System.Web.UI.TemplateControl.LoadControl](https://msdn.microsoft.com/library/system.web.ui.templatecontrol.loadcontrol.aspx)方法。
 
 ControlCachePolicy 实例可以成功操作仅之间控件生命周期的 Init 和 PreRender 阶段。 如果 PreRender 阶段完成之后修改 ControlCachePolicy 对象，ASP.NET 将引发异常，因为任何之后时呈现控件所做的更改实际上不会影响缓存设置 （在呈现器阶段期间缓存控件）。 最后，用户控件实例 （并因此其 ControlCachePolicy 对象） 才可用于以编程方式操作实际呈现时。
 
@@ -214,9 +214,9 @@ ControlCachePolicy 实例可以成功操作仅之间控件生命周期的 Init �
 
 有几个 ASP.NET 2.0 中的缓存配置更改。 &lt;缓存&gt;元素是 ASP.NET 2.0 中的新增功能，允许你在配置文件中进行缓存的配置更改。 以下属性将可用。
 
-| **元素** | **描述** |
+| **元素** | **说明** |
 | --- | --- |
-| **缓存** | 可选元素。 定义全局应用程序缓存设置。 |
+| **cache** | 可选元素。 定义全局应用程序缓存设置。 |
 | **outputCache** | 可选元素。 指定应用程序级输出缓存设置。 |
 | **outputCacheSettings** | 可选元素。 指定可应用于应用程序中的页的输出缓存设置。 |
 | **sqlCacheDependency** | 可选元素。 为 ASP.NET 应用程序配置 SQL 缓存依赖项。 |
@@ -225,7 +225,7 @@ ControlCachePolicy 实例可以成功操作仅之间控件生命周期的 Init �
 
 以下属性位于&lt;缓存&gt;元素：
 
-| **特性** | **描述** |
+| **特性** | **说明** |
 | --- | --- |
 | **disableMemoryCollection** | 可选**布尔**属性。 获取或设置一个值，该值指示是否禁用缓存内存集合时发生计算机处于内存压力下。 |
 | **disableExpiration** | 可选**布尔**属性。 获取或设置一个值，该值指示是否禁用缓存过期时间。 禁用时，缓存的项不会过期和后台清理的过期的缓存项不会发生。 |
@@ -237,10 +237,10 @@ ControlCachePolicy 实例可以成功操作仅之间控件生命周期的 Init �
 
 以下属性将可用的&lt;outputCache&gt;元素。
 
-| **特性** | **描述** |
+| **特性** | **说明** |
 | --- | --- |
 | **enableOutputCache** | 可选**布尔**属性。 启用/禁用页面输出缓存。 如果禁用，不会缓存页而不考虑以编程方式或声明性设置。 默认值是**true**。 |
-| **enableFragmentCache** | 可选**布尔**属性。 启用/禁用应用程序片段缓存。 如果禁用，不会缓存页而不考虑[@ OutputCache](https://msdn.microsoft.com/en-us/library/hdxfb6cy.aspx)指令或缓存使用的配置文件。 包括一个缓存控制标头，该值，上游代理服务器，以及浏览器客户端不应尝试缓存页面输出。 默认值是**false**。 |
+| **enableFragmentCache** | 可选**布尔**属性。 启用/禁用应用程序片段缓存。 如果禁用，不会缓存页而不考虑[@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx)指令或缓存使用的配置文件。 包括一个缓存控制标头，该值，上游代理服务器，以及浏览器客户端不应尝试缓存页面输出。 默认值是**false**。 |
 | **sendCacheControlHeader** | 可选**布尔**属性。 获取或设置一个值，该值指示是否**缓存的控件： 私有**标头默认情况下发送该输出缓存模块。 默认值是**false**。 |
 | **omitVaryStar** | 可选**布尔**属性。 启用/禁用发送 Http"**Vary: \*** "在响应中的标头。 如果使用默认设置为 false，"**Vary: \*** "标头发送为输出缓存页。 当发送 Vary 标头时，它允许不同版本要缓存基于 Vary 标头中指定的内容。 例如， *Vary： 用户-代理*将存储的基于用户代理发出请求的页面的不同版本。 默认值是**false**。 |
 
@@ -252,9 +252,9 @@ ControlCachePolicy 实例可以成功操作仅之间控件生命周期的 Init �
 
 以下属性将可用的&lt;sqlCacheDependency&gt;元素。
 
-| **特性** | **描述** |
+| **特性** | **说明** |
 | --- | --- |
-| **启用** | 所需**布尔**属性。 指示轮询更改。 |
+| **enabled** | 所需**布尔**属性。 指示轮询更改。 |
 | **pollTime** | 可选**Int32**属性。 设置与其 SqlCacheDependency 轮询更改的数据库表的频率。 此值对应于连续两次轮询之间的毫秒数。 它不能设置为小于 500 毫秒。 默认值为 1 分钟。 |
 
 ### <a name="more-information"></a>详细信息

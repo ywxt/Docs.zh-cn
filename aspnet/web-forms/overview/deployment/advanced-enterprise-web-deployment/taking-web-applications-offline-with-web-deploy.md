@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy
 msc.type: authoredcontent
-ms.openlocfilehash: a0c59245eedbf53f367949e12dd83e2611f44fc4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1c262ec7b834107524a18c6552b171f731452c91
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="taking-web-applications-offline-with-web-deploy"></a>拍摄 Web 应用程序脱机与 Web 部署
 ====================
@@ -74,7 +74,7 @@ ms.lasthandoff: 11/10/2017
 > 下一步过程假设你正在使用自定义 MSBuild 项目文件来控制你的部署过程中所述[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)。 如果你正在部署直接从 Visual Studio，你将需要使用不同的方法。 Sayed Ibrahim Hashimi 介绍中的一个此类方法[如何采用您 Web 应用程序脱机期间发布](http://sedodream.com/2012/01/08/HowToTakeYourWebAppOfflineDuringPublishing.aspx)。
 
 
-若要部署*应用\_脱机*文件到目标的 IIS 网站，你需要调用 MSDeploy.exe 使用[Web 部署**contentPath**提供程序](https://technet.microsoft.com/en-us/library/dd569034(WS.10).aspx)。 **ContentPath**提供程序支持的物理目录路径和 IIS 网站或应用程序路径，使其同步 Visual Studio 项目文件夹和 IIS web 应用程序之间的文件的最佳选择。 若要部署该文件，MSDeploy 命令应类似如下：
+若要部署*应用\_脱机*文件到目标的 IIS 网站，你需要调用 MSDeploy.exe 使用[Web 部署**contentPath**提供程序](https://technet.microsoft.com/library/dd569034(WS.10).aspx)。 **ContentPath**提供程序支持的物理目录路径和 IIS 网站或应用程序路径，使其同步 Visual Studio 项目文件夹和 IIS web 应用程序之间的文件的最佳选择。 若要部署该文件，MSDeploy 命令应类似如下：
 
 
 [!code-console[Main](taking-web-applications-offline-with-web-deploy/samples/sample1.cmd)]
@@ -95,7 +95,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample3.xml)]
 3. **SourceRoot**属性中其他位置定义*Publish.proj*文件。 它指示源内容相对于当前路径 （&） #x 2014年; 换句话说，位置相对的根文件夹的位置*Publish.proj*文件。
-4. **ContentPath**提供程序将不会接受相对文件路径，因此你需要获取到你的源代码文件的绝对路径，然后将其部署。 你可以使用[ConvertToAbsolutePath](https://msdn.microsoft.com/en-us/library/bb882668.aspx)任务以执行此操作。
+4. **ContentPath**提供程序将不会接受相对文件路径，因此你需要获取到你的源代码文件的绝对路径，然后将其部署。 你可以使用[ConvertToAbsolutePath](https://msdn.microsoft.com/library/bb882668.aspx)任务以执行此操作。
 5. 添加新**目标**元素名为**GetAppOfflineAbsolutePath**。 在此目标使用**ConvertToAbsolutePath**任务来获取到的绝对路径*应用\_脱机模板*项目文件夹中的文件。
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample4.xml)]
@@ -148,7 +148,7 @@ Web 发布管道 (WPP) 使用名为的项列表**FilesForPackagingFromProject**�
 1. 在 Visual Studio 2010 中打开你的解决方案。
 2. 在**解决方案资源管理器**窗口中，右键单击你的 web 应用程序项目节点 (例如， **ContactManager.Mvc**)，指向**添加**，然后单击**新项**。
 3. 在**添加新项**对话框中，选择**XML 文件**模板。
-4. 在**名称**框中，键入*[项目名称]***。 wpp.targets** (例如， **ContactManager.Mvc.wpp.targets**)，然后单击**添加**。
+4. 在**名称**框中，键入*[项目名称] * * *.wpp.targets** (例如， **ContactManager.Mvc.wpp.targets**)，然后单击**添加**.
 
     ![](taking-web-applications-offline-with-web-deploy/_static/image4.png)
 

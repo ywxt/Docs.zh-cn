@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: d5d89a6a82c91b915d61ddc3c350ea0935511c07
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c5ec43ac78be4a9452ebaa6495a6883506ac162f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-error-handling"></a>ASP.NET 错误处理
 ====================
@@ -313,7 +313,7 @@ ELMAH 现已准备好存储出现任何未处理的错误。
 
 ## <a name="tutorial-series-conclusion"></a>系列教程结束
 
-*感谢以下沿。我希望此组的教程帮助你更熟悉 ASP.NET Web 窗体。如果你需要有关在 ASP.NET 4.5 和 Visual Studio 2013 中可用的 Web 窗体功能的详细信息，请参阅* [ *ASP.NET 和 Web Tools for Visual Studio 2013 发行说明*](../../../../visual-studio/overview/2013/release-notes.md) *.此外，一定要看一看本教程中所述*  ***后续步骤 * * * 部分和 defintely 试用* [*免费 Azure 试用版*](https://azure.microsoft.com/pricing/free-trial/)*.*
+*感谢以下沿。我希望此组的教程帮助你更熟悉 ASP.NET Web 窗体。如果你需要有关在 ASP.NET 4.5 和 Visual Studio 2013 中可用的 Web 窗体功能的详细信息，请参阅* [ *ASP.NET 和 Web Tools for Visual Studio 2013 发行说明*](../../../../visual-studio/overview/2013/release-notes.md) *.此外，一定要看一看本教程中所述* ***后续步骤 * * * 部分和 defintely 试用* [*免费 Azure 试用版*](https://azure.microsoft.com/pricing/free-trial/)*.*
 
 ![谢谢-艾力克](aspnet-error-handling/_static/image10.png)  
 
@@ -335,10 +335,10 @@ ELMAH 现已准备好存储出现任何未处理的错误。
 
 我要特别感谢以下人员执行了巨大的内容的本系列教程的贡献：
 
-- [Alberto Poblacion、 MVP &amp; MCT、 西班牙](https://mvp.microsoft.com/en-us/mvp/Alberto%20Poblacion%20Bolano-36772)
+- [Alberto Poblacion、 MVP &amp; MCT、 西班牙](https://mvp.microsoft.com/mvp/Alberto%20Poblacion%20Bolano-36772)
 - [Alex Thissen，荷兰](http://blog.alexthissen.nl/)(twitter: [ @alexthissen ](http://twitter.com/alexthissen))
 - [Andre Tournier，USA](http://andret503.wordpress.com/)
-- Apurva Joshi Microsoft
+- Apurva Joshi, Microsoft
 - [Bojan Vrhovnik，斯洛文尼亚](http://twitter.com/bvrhovnik)
 - [Bruno Sonnino，巴西](http://msmvps.com/blogs/bsonnino)(twitter: [ @bsonnino ](http://twitter.com/bsonnino))
 - [Carlos dos Santos 巴西](http://www.carloscds.net/)
@@ -349,8 +349,8 @@ ELMAH 现已准备好存储出现任何未处理的错误。
 - [Mitchel 卖方、 美国](http://www.mitchelsellers.com/)(twitter: [ @MitchelSellers ](http://twitter.com/MitchelSellers))
 - [Paul Cociuba Microsoft](http://linqto.me/Links/pcociuba)
 - [圣保罗 Morgado，葡萄牙](http://paulomorgado.net/)
-- [Pranav Rastogi Microsoft](https://blogs.msdn.com/b/pranav_rastogi)
-- [Tim Ammann Microsoft](https://blogs.iis.net/timamm/default.aspx)
+- [Pranav Rastogi, Microsoft](https://blogs.msdn.com/b/pranav_rastogi)
+- [Tim Ammann, Microsoft](https://blogs.iis.net/timamm/default.aspx)
 - [Tom Dykstra Microsoft](https://blogs.msdn.com/aspnetue)
 
 ## <a name="community-contributions"></a>社区贡献

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8db63cb42fb04343150d2175a9d6fad1d5287a9b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7b9acc02a1280446b9826c3f8f0022b4726139c7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="storing-additional-user-information-vb"></a>存储的其他用户信息 (VB)
 ====================
@@ -29,7 +29,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="introduction"></a>介绍
 
-ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 成员资格 API 包括用于验证凭据、 检索有关当前登录用户的信息、 创建新的用户帐户，和删除用户帐户，以及其他方法。 成员资格 framework 中的每个用户帐户包含正在验证凭据和执行基本的用户帐户相关的任务所需的属性。 这通过方法和属性出现[`MembershipUser`类](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.aspx)，该模型的成员资格 framework 中的用户帐户。 此类的属性，例如[ `UserName` ](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.username.aspx)， [ `Email` ](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.email.aspx)，和[ `IsLockedOut` ](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.islockedout.aspx)，和等方法[ `GetPassword` ](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.getpassword.aspx)和[ `UnlockUser` ](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.unlockuser.aspx)。
+ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 成员资格 API 包括用于验证凭据、 检索有关当前登录用户的信息、 创建新的用户帐户，和删除用户帐户，以及其他方法。 成员资格 framework 中的每个用户帐户包含正在验证凭据和执行基本的用户帐户相关的任务所需的属性。 这通过方法和属性出现[`MembershipUser`类](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx)，该模型的成员资格 framework 中的用户帐户。 此类的属性，例如[ `UserName` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.username.aspx)， [ `Email` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.email.aspx)，和[ `IsLockedOut` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.islockedout.aspx)，和等方法[ `GetPassword` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.getpassword.aspx)和[ `UnlockUser` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.unlockuser.aspx)。
 
 通常，应用程序需要存储在成员资格 framework 中不包括的其他用户信息。 例如，一家网上零售商可能需要让每个用户存储其传送和帐单邮寄地址、 付款信息、 传送首选项和联系人的电话号码。 此外，在系统中的每个订单都与特定的用户帐户关联。
 
@@ -71,7 +71,7 @@ ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 
 
 在添加后`UserId`列中，保存对表进行单击工具栏中的保存图标。 命名新表`GuestbookComments`。
 
-我们有一个与处理的最后一个问题`GuestbookComments`表： 我们需要创建[外键约束](https://msdn.microsoft.com/en-us/library/ms175464.aspx)之间`GuestbookComments.UserId`列和`aspnet_Users.UserId`列。 若要实现此目的，请单击以启动外键关系对话框中的工具栏中的关系图标。 （或者，你可以启动此对话框中通过转到表设计器菜单并选择关系。）
+我们有一个与处理的最后一个问题`GuestbookComments`表： 我们需要创建[外键约束](https://msdn.microsoft.com/library/ms175464.aspx)之间`GuestbookComments.UserId`列和`aspnet_Users.UserId`列。 若要实现此目的，请单击以启动外键关系对话框中的工具栏中的关系图标。 （或者，你可以启动此对话框中通过转到表设计器菜单并选择关系。）
 
 单击外键关系对话框的左下角中的添加按钮。 这将添加一个新的外键约束，但我们仍需在关系中定义参与的表。
 
@@ -231,7 +231,7 @@ ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 
 **图 14**： 指定 SqlDataSource`UpdateCommand`和`UpdateParameters`([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image42.png))
 
 
-由于添加我们进行到 SqlDataSource 控件中，控件现在可以支持编辑说明。 从说明的智能标记，请检查"启用编辑"复选框。 这将添加到控件的 CommandField`Fields`具有集合其`ShowEditButton`属性设置为 True。 说明如何显示只读模式和更新中和取消按钮时显示在编辑模式时，这会呈现一个编辑按钮。 而不是需要用户单击编辑，不过，我们可以说明如何呈现"始终可编辑"状态中通过设置说明如何控制[`DefaultMode`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.defaultmode.aspx)到`Edit`。
+由于添加我们进行到 SqlDataSource 控件中，控件现在可以支持编辑说明。 从说明的智能标记，请检查"启用编辑"复选框。 这将添加到控件的 CommandField`Fields`具有集合其`ShowEditButton`属性设置为 True。 说明如何显示只读模式和更新中和取消按钮时显示在编辑模式时，这会呈现一个编辑按钮。 而不是需要用户单击编辑，不过，我们可以说明如何呈现"始终可编辑"状态中通过设置说明如何控制[`DefaultMode`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.defaultmode.aspx)到`Edit`。
 
 进行这些更改后，说明如何控制的声明性标记应类似于以下：
 
@@ -380,7 +380,7 @@ ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 
 
 当然，由于我们设计的决策很重要的成员资格系统中每个用户帐户具有匹配记录中`UserProfiles`表。 我们想要为相应的记录添加到`UserProfiles`每当通过 CreateUserWizard 创建一个新的成员资格用户帐户。
 
-中所述[*创建用户帐户*](creating-user-accounts-vb.md)教程中，通过创建新的成员资格用户帐户后引发其[`CreatedUser`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.createduser.aspx). 我们可以创建此事件的事件处理，对于刚创建的用户，获取用户 Id，然后插入到记录`UserProfiles`表使用的默认值`HomeTown`， `HomepageUrl`，和`Signature`列。 更重要的是，就可以通过自定义通过的接口，以包括其他文本框中提示用户输入这些值。
+中所述[*创建用户帐户*](creating-user-accounts-vb.md)教程中，通过创建新的成员资格用户帐户后引发其[`CreatedUser`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.createduser.aspx). 我们可以创建此事件的事件处理，对于刚创建的用户，获取用户 Id，然后插入到记录`UserProfiles`表使用的默认值`HomeTown`， `HomepageUrl`，和`Signature`列。 更重要的是，就可以通过自定义通过的接口，以包括其他文本框中提示用户输入这些值。
 
 让我们首先看一下如何向其中添加新行`UserProfiles`表中`CreatedUser`事件处理程序替换默认值。 接下来，我们将了解如何自定义通过用户界面，若要包含其他窗体字段以收集新用户的主镇、 主页上和签名。
 
@@ -390,7 +390,7 @@ ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 
 
 打开`EnhancedCreateUserWizard.aspx`页在 Visual Studio 中，将从工具箱拖到页中通过。 设置通过`ID`属性`NewUserWizard`。 如我们所述[*创建用户帐户*](creating-user-accounts-vb.md)教程，CreateUserWizard 的默认用户界面将提示所需的信息的访问者。 一旦已提供此信息，该控件内部创建新的用户帐户在成员资格 framework 中，所有操作我们无需编写一行代码。
 
-通过其工作流期间引发事件的数。 通过访问者提供了请求的信息并提交该表单后，最初激发其[`CreatingUser`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.creatinguser.aspx)。 如果在创建过程中，问题[`CreateUserError`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.createusererror.aspx)激发; 但是，如果已成功创建用户，则[`CreatedUser`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.createduser.aspx)引发。 在[*创建用户帐户*](creating-user-accounts-vb.md)我们创建的事件处理程序的教程`CreatingUser`事件，以确保提供的用户名不会包含任何前导或尾随空格，并指示用户名没有密码中任意位置出现。
+通过其工作流期间引发事件的数。 通过访问者提供了请求的信息并提交该表单后，最初激发其[`CreatingUser`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.creatinguser.aspx)。 如果在创建过程中，问题[`CreateUserError`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.createusererror.aspx)激发; 但是，如果已成功创建用户，则[`CreatedUser`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.createduser.aspx)引发。 在[*创建用户帐户*](creating-user-accounts-vb.md)我们创建的事件处理程序的教程`CreatingUser`事件，以确保提供的用户名不会包含任何前导或尾随空格，并指示用户名没有密码中任意位置出现。
 
 为了添加中的行`UserProfiles`表对于刚创建的用户，我们需要创建的事件处理程序`CreatedUser`事件。 按时间`CreatedUser`激发事件，使我们能够检索帐户的用户 Id 值的成员资格 framework 已创建的用户帐户。
 
@@ -398,9 +398,9 @@ ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 
 
 [!code-vb[Main](storing-additional-user-information-vb/samples/sample11.vb)]
 
-上面的代码朋友通过检索刚添加用户帐户的用户 Id。 这通过使用实现`Membership.GetUser(username)`方法以返回有关特定用户，然后使用信息`ProviderUserKey`要检索其用户 Id 属性。 用户在通过输入的用户名是可通过其[`UserName`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.username.aspx)。
+上面的代码朋友通过检索刚添加用户帐户的用户 Id。 这通过使用实现`Membership.GetUser(username)`方法以返回有关特定用户，然后使用信息`ProviderUserKey`要检索其用户 Id 属性。 用户在通过输入的用户名是可通过其[`UserName`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.username.aspx)。
 
-接下来，连接字符串检索从`Web.config`和`INSERT`未指定语句。 实例化必要的 ADO.NET 对象和执行此命令。 该代码将分配[ `DBNull` ](https://msdn.microsoft.com/en-us/library/system.dbnull.aspx)到实例`@HomeTown`， `@HomepageUrl`，和`@Signature`参数，插入数据库的效果`NULL`值`HomeTown`， `HomepageUrl`，和`Signature`字段。
+接下来，连接字符串检索从`Web.config`和`INSERT`未指定语句。 实例化必要的 ADO.NET 对象和执行此命令。 该代码将分配[ `DBNull` ](https://msdn.microsoft.com/library/system.dbnull.aspx)到实例`@HomeTown`， `@HomepageUrl`，和`@Signature`参数，插入数据库的效果`NULL`值`HomeTown`， `HomepageUrl`，和`Signature`字段。
 
 请访问`EnhancedCreateUserWizard.aspx`页上通过浏览器并创建一个新的用户帐户。 之后这样做，返回到 Visual Studio，并检查内容`aspnet_Users`和`UserProfiles`表 （例如，我们进来图 12 所做的那样）。 你应看到中的新用户帐户`aspnet_Users`和相应`UserProfiles`行 (使用`NULL`值`HomeTown`， `HomepageUrl`，和`Signature`)。
 
@@ -412,7 +412,7 @@ ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 
 
 在距访客已提供其新的帐户信息并单击"创建用户"按钮、 创建用户帐户并添加一行后`UserProfiles`表。 CreateUserWizard 然后显示其`CompleteWizardStep`，它会显示一条成功消息和继续按钮。 单击继续按钮会导致回发，但不执行任何操作，而使用户始终显示`EnhancedCreateUserWizard.aspx`页。
 
-我们可以指定要将用户发送到通过通过单击继续按钮时的 URL [ `ContinueDestinationPageUrl`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.continuedestinationpageurl.aspx)。 设置`ContinueDestinationPageUrl`属性设置为"~ / Membership/AdditionalUserInfo.aspx"。 这将使新用户添加到`AdditionalUserInfo.aspx`，其中他们可以查看和更新其设置。
+我们可以指定要将用户发送到通过通过单击继续按钮时的 URL [ `ContinueDestinationPageUrl`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.continuedestinationpageurl.aspx)。 设置`ContinueDestinationPageUrl`属性设置为"~ / Membership/AdditionalUserInfo.aspx"。 这将使新用户添加到`AdditionalUserInfo.aspx`，其中他们可以查看和更新其设置。
 
 ### <a name="customizing-the-createuserwizards-interface-to-prompt-for-the-new-users-home-town-homepage-and-signature"></a>自定义提示输入新用户的主页镇、 主页上，以及签名 CreateUserWizard 的接口
 
@@ -473,7 +473,7 @@ ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 
 请注意新`<asp:WizardStep>`元素。 我们需要添加要收集新用户的主镇、 主页上，以及签名此处的用户界面。 声明性语法中或通过设计器，你可以输入此内容。 若要使用设计器，请从智能标记上以查看设计器中的步骤中的下拉列表中选择"你设置"步骤。
 
 > [!NOTE]
-> 选择通过智能标记的下拉列表的步骤更新通过[`ActiveStepIndex`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.activestepindex.aspx)，它指定起始步骤的索引。 因此，如果使用此下拉列表来编辑设计器中的"你设置"步骤，请务必将其设置回"登录向上 for 新帐户"，以便当用户首次访问此步骤将显示`EnhancedCreateUserWizard.aspx`页。
+> 选择通过智能标记的下拉列表的步骤更新通过[`ActiveStepIndex`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.activestepindex.aspx)，它指定起始步骤的索引。 因此，如果使用此下拉列表来编辑设计器中的"你设置"步骤，请务必将其设置回"登录向上 for 新帐户"，以便当用户首次访问此步骤将显示`EnhancedCreateUserWizard.aspx`页。
 
 
 创建用户界面内包含名为的三个文本框控件的"你设置"步骤`HomeTown`， `HomepageUrl`，和`Signature`。 构造此接口之后, CreateUserWizard 的声明性标记应如下所示类似：
@@ -482,7 +482,7 @@ ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 
 
 请继续并访问此页面，通过浏览器并创建新的用户帐户，指定主镇、 主页上和签名值。 完成后`CreateUserWizardStep`在成员资格框架中创建用户帐户和`CreatedUser`事件处理程序将运行，这将添加到一个新行`UserProfiles`，但与数据库`NULL`值`HomeTown`， `HomepageUrl`，和`Signature`. 永远不会使用为家乡、 主页上，以及签名输入的值。 最终结果是与新的用户帐户`UserProfiles`记录其`HomeTown`， `HomepageUrl`，和`Signature`字段尚未指定。
 
-我们需要在采用用户输入的家庭镇、 honepage 和签名值并更新相应的"你设置"步骤之后执行代码`UserProfiles`记录。 每次向导中的步骤之间移动用户控制，向导的[`ActiveStepChanged`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.wizard.activestepchanged.aspx)激发。 我们可以创建事件处理程序为此事件以及更新`UserProfiles`表时"你设置"步骤已完成。
+我们需要在采用用户输入的家庭镇、 honepage 和签名值并更新相应的"你设置"步骤之后执行代码`UserProfiles`记录。 每次向导中的步骤之间移动用户控制，向导的[`ActiveStepChanged`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.wizard.activestepchanged.aspx)激发。 我们可以创建事件处理程序为此事件以及更新`UserProfiles`表时"你设置"步骤已完成。
 
 添加事件处理程序 CreateUserWizard`ActiveStepChanged`事件并添加以下代码：
 

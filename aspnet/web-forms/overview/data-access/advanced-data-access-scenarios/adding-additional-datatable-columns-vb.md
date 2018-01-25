@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2668a685389938979fc4b0a1e1701a90cef5dc1c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d357ca7bfe364090ff2c8504b2116e0d99d004bc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-additional-datatable-columns-vb"></a>添加其他数据表列 (VB)
 ====================
@@ -90,12 +90,12 @@ ms.lasthandoff: 11/10/2017
 
 [!code-sql[Main](adding-additional-datatable-columns-vb/samples/sample1.sql)]
 
-上面的查询使用 SQL Server 2005 s 新[`NTILE`函数](https://msdn.microsoft.com/en-us/library/ms175126.aspx)若要将结果划分为四个组组由`UnitPrice`按降序排序的值。
+上面的查询使用 SQL Server 2005 s 新[`NTILE`函数](https://msdn.microsoft.com/library/ms175126.aspx)若要将结果划分为四个组组由`UnitPrice`按降序排序的值。
 
 遗憾的是，查询生成器不知道如何分析`OVER`关键字和分析上述查询时，将显示错误。 因此，上面的查询在向导中的文本框中直接输入而无需使用查询生成器。
 
 > [!NOTE]
-> 有关详细信息 NTILE 和 SQL Server 2005 s 其他排名函数，请参阅[Microsoft SQL Server 2005 返回排名结果](http://www.4guysfromrolla.com/webtech/010406-1.shtml)和[排名函数部分](https://msdn.microsoft.com/en-us/library/ms189798.aspx)从[SQLServer 2005 联机丛书](https://msdn.microsoft.com/en-us/library/ms189798.aspx)。
+> 有关详细信息 NTILE 和 SQL Server 2005 s 其他排名函数，请参阅[Microsoft SQL Server 2005 返回排名结果](http://www.4guysfromrolla.com/webtech/010406-1.shtml)和[排名函数部分](https://msdn.microsoft.com/library/ms189798.aspx)从[SQLServer 2005 联机丛书](https://msdn.microsoft.com/library/ms189798.aspx)。
 
 
 在输入后`SELECT`查询并单击下一步，则向导会询问我们提供它将创建的存储过程的名称。 命名新的存储的过程`Products_SelectWithPriceQuartile`单击下一步。

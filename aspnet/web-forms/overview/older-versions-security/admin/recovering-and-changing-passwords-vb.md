@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f7f6e7e4bc3a8cc7e70911bc22a28d385f762af0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b78469858483a9501a0f73d1c894e29ae0a99122
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="recovering-and-changing-passwords-vb"></a>恢复并更改密码 (VB)
 ====================
@@ -83,7 +83,7 @@ ASP.NET 包括两个 Web 控件，以帮助进行恢复，以及更改密码。 
 
 测试此页之前，没有配置以往往到的最后一项： 我们需要指定中的邮件传递设置`Web.config`。 用于发送电子邮件，说明依赖这些设置。
 
-通过指定邮件传递配置[`<system.net>`元素](https://msdn.microsoft.com/en-us/library/6484zdc1.aspx)的[`<mailSettings>`元素](https://msdn.microsoft.com/en-us/library/w355a94k.aspx)。 使用[`<smtp>`元素](https://msdn.microsoft.com/en-us/library/ms164240.aspx)以指示传递方法和默认发件人地址。 以下标记将配置为使用名为网络 SMTP 服务器的电子邮件设置`smtp.example.com`端口 25 并带有用户名/密码凭据的用户名和密码。
+通过指定邮件传递配置[`<system.net>`元素](https://msdn.microsoft.com/library/6484zdc1.aspx)的[`<mailSettings>`元素](https://msdn.microsoft.com/library/w355a94k.aspx)。 使用[`<smtp>`元素](https://msdn.microsoft.com/library/ms164240.aspx)以指示传递方法和默认发件人地址。 以下标记将配置为使用名为网络 SMTP 服务器的电子邮件设置`smtp.example.com`端口 25 并带有用户名/密码凭据的用户名和密码。
 
 > [!NOTE]
 > `<system.net>`是根的子元素`<configuration>`元素和节点的同级`<system.web>`。 因此，不要将放`<system.net>`中的元素`<system.web>`元素; 相反，将其放在相同的级别。
@@ -93,7 +93,7 @@ ASP.NET 包括两个 Web 控件，以帮助进行恢复，以及更改密码。 
 
 除了在网络上使用的 SMTP 服务器，或者可以指定要存放要发送的电子邮件消息的其中一个拾取目录。
 
-一旦你已配置 SMTP 设置，请访问`RecoverPassword.aspx`通过浏览器的页。 首先请尝试输入的用户名的用户存储中不存在。 如图 2 所示，取回控件将显示一条消息指出无法访问的用户信息。 可以通过控件的自定义消息的文本[`UserNameFailureText`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.passwordrecovery.usernamefailuretext.aspx)。
+一旦你已配置 SMTP 设置，请访问`RecoverPassword.aspx`通过浏览器的页。 首先请尝试输入的用户名的用户存储中不存在。 如图 2 所示，取回控件将显示一条消息指出无法访问的用户信息。 可以通过控件的自定义消息的文本[`UserNameFailureText`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.usernamefailuretext.aspx)。
 
 
 [![如果输入无效的用户名，显示错误消息](recovering-and-changing-passwords-vb/_static/image5.png)](recovering-and-changing-passwords-vb/_static/image4.png)
@@ -101,7 +101,7 @@ ASP.NET 包括两个 Web 控件，以帮助进行恢复，以及更改密码。 
 **图 2**： 如果输入无效的用户名，将显示错误消息 ([单击以查看实际尺寸的图像](recovering-and-changing-passwords-vb/_static/image6.png))
 
 
-现在输入一个用户名。 在系统中通过电子邮件地址，您可以访问，并且其安全回答你的帐户用户名知道的使用。 输入用户名并单击提交后, 取回控件显示其问题视图。 为使用用户名视图中，如果输入不正确回答取回控件显示错误消息 （请参见图 3）。 使用[`QuestionFailureText`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.passwordrecovery.questionfailuretext.aspx)自定义此错误消息。
+现在输入一个用户名。 在系统中通过电子邮件地址，您可以访问，并且其安全回答你的帐户用户名知道的使用。 输入用户名并单击提交后, 取回控件显示其问题视图。 为使用用户名视图中，如果输入不正确回答取回控件显示错误消息 （请参见图 3）。 使用[`QuestionFailureText`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.questionfailuretext.aspx)自定义此错误消息。
 
 
 [![如果用户输入无效的安全提示问题答案，将显示一条错误消息](recovering-and-changing-passwords-vb/_static/image8.png)](recovering-and-changing-passwords-vb/_static/image7.png)
@@ -127,15 +127,15 @@ ASP.NET 包括两个 Web 控件，以帮助进行恢复，以及更改密码。 
 
 密码：*密码*
 
-此消息都可以通过取回控件的事件处理程序以编程方式自定义[`SendingMail`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.passwordrecovery.sendingmail.aspx)，或以声明方式通过[`MailDefinition`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.passwordrecovery.maildefinition.aspx)。 让我们了解这两种选项。
+此消息都可以通过取回控件的事件处理程序以编程方式自定义[`SendingMail`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.sendingmail.aspx)，或以声明方式通过[`MailDefinition`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.maildefinition.aspx)。 让我们了解这两种选项。
 
-`SendingMail`电子邮件发送，并且都可以以编程方式调整电子邮件我们最后一次机会之前，正确激发事件。 当引发此事件时，事件处理程序传递的类型对象[ `MailMessageEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.mailmessageeventargs.aspx)、 其`Message`属性包含到即将发送的电子邮件的引用。
+`SendingMail`电子邮件发送，并且都可以以编程方式调整电子邮件我们最后一次机会之前，正确激发事件。 当引发此事件时，事件处理程序传递的类型对象[ `MailMessageEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.mailmessageeventargs.aspx)、 其`Message`属性包含到即将发送的电子邮件的引用。
 
 创建的事件处理程序`SendingMail`事件并添加以下代码，以编程方式添加`webmaster@example.com`到抄送列表。
 
 [!code-vb[Main](recovering-and-changing-passwords-vb/samples/sample2.vb)]
 
-此外可以通过声明性方式配置电子邮件。 取回的`MailDefinition`属性是类型的对象[ `MailDefinition` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.maildefinition.aspx)。 `MailDefinition`类提供的电子邮件相关的属性，包括主机`From`， `CC`， `Priority`， `Subject`， `IsBodyHtml`， `BodyFileName`，和其他人。 对于初学者，设置[`Subject`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.maildefinition.subject.aspx)为更具描述性比使用默认情况下 （密码），如重置密码...
+此外可以通过声明性方式配置电子邮件。 取回的`MailDefinition`属性是类型的对象[ `MailDefinition` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.aspx)。 `MailDefinition`类提供的电子邮件相关的属性，包括主机`From`， `CC`， `Priority`， `Subject`， `IsBodyHtml`， `BodyFileName`，和其他人。 对于初学者，设置[`Subject`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.subject.aspx)为更具描述性比使用默认情况下 （密码），如重置密码...
 
 若要自定义电子邮件消息我们需要创建单独的电子邮件模板文件的正文包含正文的内容。 首先创建一个新文件夹中名为的网站`EmailTemplates`。 接下来，将新的文本文件添加到名为此文件夹`PasswordRecovery.txt`并添加以下内容：
 
@@ -143,7 +143,7 @@ ASP.NET 包括两个 Web 控件，以帮助进行恢复，以及更改密码。 
 
 请注意，使用占位符`<%UserName%>`和`<%Password%>`。 取回控件自动替换这些两个占位符用户的用户名和电子邮件在发送之前的恢复的密码。
 
-最后，点`MailDefinition`的[`BodyFileName`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.maildefinition.bodyfilename.aspx)到我们刚创建的电子邮件模板 (`~/EmailTemplates/PasswordRecovery.txt`)。
+最后，点`MailDefinition`的[`BodyFileName`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.bodyfilename.aspx)到我们刚创建的电子邮件模板 (`~/EmailTemplates/PasswordRecovery.txt`)。
 
 进行这些更改重新查看后`RecoverPassword.aspx`页上，然后输入用户名和安全答案。 你收到应如下所示图 5 中的一个电子邮件。 请注意， `webmaster@example.com` CC 将和是否已更新的主题和正文。
 
@@ -153,7 +153,7 @@ ASP.NET 包括两个 Web 控件，以帮助进行恢复，以及更改密码。 
 **图 5**: 使用者、 正文和抄送已更新列表 ([单击以查看实际尺寸的图像](recovering-and-changing-passwords-vb/_static/image15.png))
 
 
-若要发送的 HTML 格式的电子邮件设置[ `IsBodyHtml` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.maildefinition.isbodyhtml.aspx) True （默认值为 False） 和更新电子邮件模板，以包括 HTML。
+若要发送的 HTML 格式的电子邮件设置[ `IsBodyHtml` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.isbodyhtml.aspx) True （默认值为 False） 和更新电子邮件模板，以包括 HTML。
 
 `MailDefinition`属性不是唯一的取回类。 我们将会看到在步骤 2 中，还提供了 ChangePassword 控件`MailDefinition`属性。 此外，通过包括这样的属性，你可以配置自动向新用户发送欢迎电子邮件消息。
 
@@ -163,10 +163,10 @@ ASP.NET 包括两个 Web 控件，以帮助进行恢复，以及更改密码。 
 
 ### <a name="programmatically-resetting-a-users-password"></a>以编程方式重置用户的密码
 
-当重置用户的密码取回控制调用`MembershipUser`对象的[`ResetPassword`方法](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.resetpassword.aspx)。 此方法有两个重载：
+当重置用户的密码取回控制调用`MembershipUser`对象的[`ResetPassword`方法](https://msdn.microsoft.com/library/system.web.security.membershipuser.resetpassword.aspx)。 此方法有两个重载：
 
-- **[`ResetPassword`](https://msdn.microsoft.com/en-us/library/d94bdzz2.aspx)**-重置用户的密码。 如果使用此重载`RequiresQuestionAndAnswer`为 False。
-- **[`ResetPassword(securityAnswer)`](https://msdn.microsoft.com/en-us/library/d90zte4w.aspx)**-重置用户的密码才提供*securityAnswer*正确无误。 如果使用此重载`RequiresQuestionAndAnswer`为 True。
+- **[`ResetPassword`](https://msdn.microsoft.com/library/d94bdzz2.aspx)**-重置用户的密码。 如果使用此重载`RequiresQuestionAndAnswer`为 False。
+- **[`ResetPassword(securityAnswer)`](https://msdn.microsoft.com/library/d90zte4w.aspx)**-重置用户的密码才提供*securityAnswer*正确无误。 如果使用此重载`RequiresQuestionAndAnswer`为 True。
 
 这两个重载均返回的新的随机生成的密码。
 
@@ -179,7 +179,7 @@ ASP.NET 包括两个 Web 控件，以帮助进行恢复，以及更改密码。 
 
 ### <a name="a-word-on-how-the-random-passwords-are-generated"></a>生成的单词如何随机的密码
 
-在图 4 和 5 中的电子邮件消息中所示的随机生成密码创建的成员资格类[`GeneratePassword`方法](https://msdn.microsoft.com/en-us/library/system.web.security.membership.generatepassword.aspx)。 此方法接受两个整数输入的参数-*长度*和*numberOfNonAlphanumericCharacters* -并至少返回一个字符串*长度*长时间与在字符至少*numberOfNonAlphanumericCharacters*非字母数字字符数。 在此方法从成员资格类或登录名相关的 Web 控件中调用的取决于这两个参数的值的成员身份配置`MinRequiredPasswordLength`和`MinRequiredNonalphanumericCharacters`属性，我们将设置为 7 和 1，分别。
+在图 4 和 5 中的电子邮件消息中所示的随机生成密码创建的成员资格类[`GeneratePassword`方法](https://msdn.microsoft.com/library/system.web.security.membership.generatepassword.aspx)。 此方法接受两个整数输入的参数-*长度*和*numberOfNonAlphanumericCharacters* -并至少返回一个字符串*长度*长时间与在字符至少*numberOfNonAlphanumericCharacters*非字母数字字符数。 在此方法从成员资格类或登录名相关的 Web 控件中调用的取决于这两个参数的值的成员身份配置`MinRequiredPasswordLength`和`MinRequiredNonalphanumericCharacters`属性，我们将设置为 7 和 1，分别。
 
 `GeneratePassword`方法使用的加密型强随机数生成器来确保中选择哪些随机字符没有偏差。 此外，`GeneratePassword`是`Public`，这意味着，你可以使用它直接从 ASP.NET 应用程序如果需要生成随机字符串或密码。
 
@@ -194,7 +194,7 @@ ASP.NET 包括两个 Web 控件，以帮助进行恢复，以及更改密码。 
 使用 ChangePassword 控件创建一个接口，使用户能够更改其密码。 得多取回控件，如的 ChangePassword 控件包含两个视图： 更改密码和成功。 更改密码视图提示用户输入其旧密码和新密码。 在提供正确的旧密码和满足最小长度和非字母数字字符要求的新密码，ChangePassword 控件更新用户的密码，并显示成功视图。
 
 > [!NOTE]
-> ChangePassword 控件通过调用修改用户的密码`MembershipUser`对象的[`ChangePassword`方法](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.changepassword.aspx)。 ChangePassword 方法接受两个`String`输入参数- *oldPassword*和*newPassword*-和更新用户的帐户与*newPassword*，假定提供*oldPassword*正确无误。
+> ChangePassword 控件通过调用修改用户的密码`MembershipUser`对象的[`ChangePassword`方法](https://msdn.microsoft.com/library/system.web.security.membershipuser.changepassword.aspx)。 ChangePassword 方法接受两个`String`输入参数- *oldPassword*和*newPassword*-和更新用户的帐户与*newPassword*，假定提供*oldPassword*正确无误。
 
 
 打开`ChangePassword.aspx`页上，并将 ChangePassword 控件添加到页上，其命名为`ChangePwd`。 此时，设计视图应显示更改密码查看 （请参阅图 6）。 如与取回控件中，你可以在视图之间切换通过控件的智能标记。 此外，这些视图的外观是通过各种的样式属性或通过将它们转换为模板，可自定义的。
@@ -207,7 +207,7 @@ ASP.NET 包括两个 Web 控件，以帮助进行恢复，以及更改密码。 
 
 ChangePassword 控件可以更新当前登录的用户的密码*或*另一个，指定用户的密码。 如图 6 所示，默认更改密码视图呈现只需三个文本框控件： 一个用于旧密码，两个用于新密码。 此默认接口用于更新当前登录的用户的密码。
 
-若要使用 ChangePassword 控件更新其他用户的密码，设置控件的[`DisplayUserName`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.changepassword.displayusername.aspx)为 True。 这样将第四个文本框中添加到页上，若要更改其密码提示输入用户的用户名。
+若要使用 ChangePassword 控件更新其他用户的密码，设置控件的[`DisplayUserName`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.changepassword.displayusername.aspx)为 True。 这样将第四个文本框中添加到页上，若要更改其密码提示输入用户的用户名。
 
 设置`DisplayUserName`到很有用，如果你想要让已注销用户更改其密码而无需登录，则为 True。 个人，我认为没有任何问题在允许她可以更改其密码前需登录用户。 因此，请让`DisplayUserName`设置为 False （其默认值）。 在决策时，但是，我们实质上禁止访问此页的匿名用户。 更新以便拒绝匿名用户访问的站点的 URL 授权规则`ChangePassword.aspx`。 如果您需要刷新你的 URL 授权规则语法上的内存，回头参考<a id="_msoanchor_4"> </a> [*基于用户的授权*](../membership/user-based-authorization-vb.md)教程。
 

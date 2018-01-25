@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e1edeaa392abea96a0f5085539cd8ab7810d59e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 42a8fb48b8c8cfb653ac4d64f6efe011f92b966b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="building-an-interface-to-select-one-user-account-from-many-c"></a>生成一个接口，以便从很多的 (C#) 中选择一个用户帐户
 ====================
@@ -134,13 +134,13 @@ ASP.NET 页`Administration`文件夹旨在仅供管理用户。 我们将管理�
 > 用户名可能会启动任何字符，包括数字和标点。 若要查看这些帐户，管理员将需要使用所有 LinkButton 选项。 或者，你可以添加 LinkButton 返回以数字开头的所有用户帐户。 我将此作为练习为读取器。
 
 
-单击任意筛选 LinkButtons 导致回发并引发转发器的`ItemCommand`事件，但不没有在网格中的任何更改因为我们尚未为编写任何代码来筛选结果。 `Membership`类包括[`FindUsersByName`方法](https://technet.microsoft.com/en-us/library/system.web.security.membership.findusersbyname.aspx)返回其用户名与指定的搜索模式匹配的那些用户帐户。 我们可以使用此方法来检索其用户名以指定的字母开头的用户帐户`CommandName`的被单击筛选 LinkButton。
+单击任意筛选 LinkButtons 导致回发并引发转发器的`ItemCommand`事件，但不没有在网格中的任何更改因为我们尚未为编写任何代码来筛选结果。 `Membership`类包括[`FindUsersByName`方法](https://technet.microsoft.com/library/system.web.security.membership.findusersbyname.aspx)返回其用户名与指定的搜索模式匹配的那些用户帐户。 我们可以使用此方法来检索其用户名以指定的字母开头的用户帐户`CommandName`的被单击筛选 LinkButton。
 
 通过更新开始`ManageUser.aspx`页的代码隐藏类以使其包括一个名为属性`UsernameToMatch`。 此属性在回发期间保持用户名筛选器字符串：
 
 [!code-csharp[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample8.cs)]
 
-`UsernameToMatch`属性将分配到其值存储`ViewState`使用集合键用户名。 当读取此属性的值时，它会检查以确定一个值是否存在于`ViewState`集合; 如果不正确，则返回默认值为空字符串。 `UsernameToMatch`属性表现出一种常见模式，即保留一个值，以查看状态，以便在回发期间会保留对该属性的任何更改。 此模式的详细信息，请阅读[了解 ASP.NET 视图状态](https://msdn.microsoft.com/en-us/library/ms972976.aspx)。
+`UsernameToMatch`属性将分配到其值存储`ViewState`使用集合键用户名。 当读取此属性的值时，它会检查以确定一个值是否存在于`ViewState`集合; 如果不正确，则返回默认值为空字符串。 `UsernameToMatch`属性表现出一种常见模式，即保留一个值，以查看状态，以便在回发期间会保留对该属性的任何更改。 此模式的详细信息，请阅读[了解 ASP.NET 视图状态](https://msdn.microsoft.com/library/ms972976.aspx)。
 
 接下来，更新`BindUserAccounts`方法的调用，因此`Membership.GetAllUsers`，它调用`Membership.FindUsersByName`，并传递的值中`UsernameToMatch`属性追加 SQL 通配符字符，%。
 
@@ -177,7 +177,7 @@ GridView 控件提供两种类型的分页：
 
 若要实现自定义分页我们首先需要某种机制，用于检索 GridView 显示的记录的精确的子集。 好消息是`Membership`类的`FindUsersByName`方法的重载，使我们可以指定的页索引和页面大小，并且返回仅记录该范围内的这些用户帐户。
 
-具体而言，此重载具有以下签名： [ `FindUsersByName(usernameToMatch, pageIndex, pageSize, totalRecords)` ](https://msdn.microsoft.com/en-us/library/fa5st8b2.aspx)。
+具体而言，此重载具有以下签名： [ `FindUsersByName(usernameToMatch, pageIndex, pageSize, totalRecords)` ](https://msdn.microsoft.com/library/fa5st8b2.aspx)。
 
 *PageIndex*参数指定要返回; 用户帐户的页*pageSize*指示每页显示的记录数量。 *TotalRecords*参数是`out`在用户存储区返回的总用户帐户数的参数。
 

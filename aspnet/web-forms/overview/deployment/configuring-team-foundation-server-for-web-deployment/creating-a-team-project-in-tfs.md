@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
-ms.openlocfilehash: 4cb0d72330086ecb8cd9e6fb70ce0a57698dda5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ef8cddb7733c1f8cacd24c5cf341a42741d25a95
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-team-project-in-tfs"></a>在 TFS 中创建团队项目
 ====================
@@ -110,13 +110,13 @@ ms.lasthandoff: 11/10/2017
     > [!NOTE]
     > 你可能会收到**HTTP 404 未找到**由于 double 的 HTTP 编码 bug 的错误。 如果发生这种情况，将替换此 URL:   
     > [*站点集合 URL*] /\_layouts/permsetup.aspx  
-    > 例如:   
+    > 例如:  
     > http://tfs/sites/Fabrikam%20Web%20Projects/\_layouts/permsetup.aspx
 8. 上**为此站点设置用户组**页上，添加将创建到团队项目的用户**所有者**分组，并依次**确定**。
 
     ![](creating-a-team-project-in-tfs/_static/image10.png)
 
-允许用户创建团队项目集合中的新团队项目的详细信息，请参阅[为团队项目集合设置管理员权限](https://msdn.microsoft.com/en-us/library/dd547204.aspx)。
+允许用户创建团队项目集合中的新团队项目的详细信息，请参阅[为团队项目集合设置管理员权限](https://msdn.microsoft.com/library/dd547204.aspx)。
 
 ## <a name="create-a-new-team-project-and-add-users"></a>创建新的团队项目并添加用户
 
@@ -162,9 +162,9 @@ ms.lasthandoff: 11/10/2017
 11. 上**选择过程模板**页上，选择你想要使用以管理开发过程中，然后单击的过程模板**下一步**。
 
     > [!NOTE]
-    > 有关 TFS 过程模板的更多信息，请参阅[过程模板和工具](https://msdn.microsoft.com/en-us/vstudio/aa718795)。
+    > 有关 TFS 过程模板的更多信息，请参阅[过程模板和工具](https://msdn.microsoft.com/vstudio/aa718795)。
 12. 上**团队站点设置**页上，保留默认设置保持不变，，然后单击**下一步**。
-13. 此设置创建，或标识，与 TFS 团队项目相关联的 SharePoint 团队站点。 你的开发团队可以使用此站点来管理文档、 参与讨论、 创建 wiki 页面和执行代码的不相关的各种其他任务。 有关详细信息，请参阅[交互之间 SharePoint 产品和 Team Foundation Server](https://msdn.microsoft.com/en-us/library/ms253177.aspx)。
+13. 此设置创建，或标识，与 TFS 团队项目相关联的 SharePoint 团队站点。 你的开发团队可以使用此站点来管理文档、 参与讨论、 创建 wiki 页面和执行代码的不相关的各种其他任务。 有关详细信息，请参阅[交互之间 SharePoint 产品和 Team Foundation Server](https://msdn.microsoft.com/library/ms253177.aspx)。
 14. 上**指定源代码管理设置**页上，保留默认设置保持不变，，然后单击**下一步**。
 15. 此设置标识，或在 TFS 文件夹层次结构将充当你的内容的根文件夹中创建的位置。
 16. 上**确认团队项目设置**页上，单击**完成**。
@@ -200,7 +200,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="further-reading"></a>其他阅读材料
 
-有关在 TFS 中创建团队项目的更广泛指南，请参阅[创建团队项目](https://msdn.microsoft.com/en-us/library/ms181477(v=VS.100).aspx)。 允许用户创建团队项目集合中的新团队项目的详细信息，请参阅[为团队项目集合设置管理员权限](https://msdn.microsoft.com/en-us/library/dd547204.aspx)。 将用户添加到团队项目的详细信息，请参阅[向团队项目添加用户](https://msdn.microsoft.com/en-us/library/bb558971.aspx)。
+有关在 TFS 中创建团队项目的更广泛指南，请参阅[创建团队项目](https://msdn.microsoft.com/library/ms181477(v=VS.100).aspx)。 允许用户创建团队项目集合中的新团队项目的详细信息，请参阅[为团队项目集合设置管理员权限](https://msdn.microsoft.com/library/dd547204.aspx)。 将用户添加到团队项目的详细信息，请参阅[向团队项目添加用户](https://msdn.microsoft.com/library/bb558971.aspx)。
 
 >[!div class="step-by-step"]
 [上一页](configuring-team-foundation-server-for-web-deployment.md)

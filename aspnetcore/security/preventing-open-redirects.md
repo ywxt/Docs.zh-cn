@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/preventing-open-redirects
-ms.openlocfilehash: e57ae429e9af54ade74485361ba591cb75c16752
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 6ecf2440ac7073bdad098f6fe48f6c788ba7795a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="preventing-open-redirect-attacks-in-an-aspnet-core-app"></a>阻止在 ASP.NET Core 应用中的打开重定向攻击
 
@@ -23,7 +23,7 @@ Web 应用程序将重定向到通过如查询字符串或窗体数据请求指�
 
 ## <a name="what-is-an-open-redirect-attack"></a>打开重定向攻击是什么？
 
-Web 应用程序频繁地将用户重定向到登录页访问要求进行身份验证的资源时。 重定向 typlically 包括`returnUrl`查询字符串参数，以便用户可以在用户成功登录后返回最初请求的 url。 用户进行身份验证后，系统会将它们重定向到他们最初具有请求的 URL。
+Web 应用程序频繁地将用户重定向到登录页访问要求进行身份验证的资源时。 重定向 typlically 包括`returnUrl`查询字符串参数，以便用户可以在用户成功登录后返回最初请求的 url。 用户进行身份验证后，它们在重定向到他们最初具有请求的 URL。
 
 因为请求的查询字符串中指定的目标 URL，则恶意用户可能篡改查询字符串。 篡改过的查询字符串可能导致要将用户重定向到外部、 恶意站点的站点。 这种技术称为打开重定向 （或重定向） 攻击。
 

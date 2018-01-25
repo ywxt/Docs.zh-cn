@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-build-process
 msc.type: authoredcontent
-ms.openlocfilehash: 551e31a7a2d0a4e6259f74977c2f8e21cb694e42
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3efcefc40dc135ff42f55911036f8b38b5aa13b1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-the-build-process"></a>了解生成过程
 ====================
@@ -77,7 +77,7 @@ ms.lasthandoff: 11/10/2017
 
 
 > [!NOTE]
-> **/Fl**切换 (短，无法用于**/fileLogger**) 将生成输出记录到名为的文件*msbuild.log*当前目录中。 有关详细信息，请参阅[MSBuild 命令行参考](https://msdn.microsoft.com/en-us/library/ms164311.aspx)。
+> **/Fl**切换 (短，无法用于**/fileLogger**) 将生成输出记录到名为的文件*msbuild.log*当前目录中。 有关详细信息，请参阅[MSBuild 命令行参考](https://msdn.microsoft.com/library/ms164311.aspx)。
 
 
 此时，MSBuild 开始运行，加载*Publish.proj*文件，并开始处理其中的说明进行操作。 第一个指令告知导入项目的 MSBuild 文件**TargetEnvPropsFile**参数指定。
@@ -178,7 +178,7 @@ MSBuild 的生成名为的项列表来处理此指令**ProjectsToBuild**。 在�
 **DbPublishPackages**项将包含单个值的路径*ContactManager.Database.deploymanifest*文件。
 
 > [!NOTE]
-> 在生成数据库项目，和它将使用 MSBuild 项目文件相同的架构时，会生成一个.deploymanifest 文件。 它包含所有必需部署数据库，包括数据库架构 (.dbschema) 的位置和任何预先部署脚本和后期部署脚本的详细信息的信息。 有关详细信息，请参阅[概述的数据库生成和部署](https://msdn.microsoft.com/en-us/library/aa833165.aspx)。
+> 在生成数据库项目，和它将使用 MSBuild 项目文件相同的架构时，会生成一个.deploymanifest 文件。 它包含所有必需部署数据库，包括数据库架构 (.dbschema) 的位置和任何预先部署脚本和后期部署脚本的详细信息的信息。 有关详细信息，请参阅[概述的数据库生成和部署](https://msdn.microsoft.com/library/aa833165.aspx)。
 
 
 你将了解有关如何创建和使用在部署包和数据库部署清单的详细信息[生成和打包 Web 应用程序项目](building-and-packaging-web-application-projects.md)和[部署数据库项目](deploying-database-projects.md)。
@@ -193,13 +193,13 @@ MSBuild 的生成名为的项列表来处理此指令**ProjectsToBuild**。 在�
 [!code-xml[Main](understanding-the-build-process/samples/sample10.xml)]
 
 
-这是一个示例的*目标批处理*。 在 MSBuild 项目文件中，批处理是一种技术来循环访问集合。 值**输出**属性， **"%(DbPublishPackages.Identity)"**，是指**标识**元数据属性**DbPublishPackages**项列表。 这一表示法，**输出 = %***(ItemList.ItemMetadataName)*，将被转换为：
+这是一个示例的*目标批处理*。 在 MSBuild 项目文件中，批处理是一种技术来循环访问集合。 值**输出**属性， **"%(DbPublishPackages.Identity)"**，是指**标识**元数据属性**DbPublishPackages**项列表。 这一表示法，**Outputs=%***(ItemList.ItemMetadataName)*，将被转换为：
 
 - 拆分中的项**DbPublishPackages**为包含相同的项目的多个批**标识**元数据值。
 - 执行一次每批的目标。
 
 > [!NOTE]
-> **标识**是之一[内置的元数据值](https://msdn.microsoft.com/en-us/library/ms164313.aspx)，分配给在创建的每个项。 它引用的值**包括**属性中**项**元素和 #x 2014年; 换而言之的路径和文件名的项。
+> **标识**是之一[内置的元数据值](https://msdn.microsoft.com/library/ms164313.aspx)，分配给在创建的每个项。 它引用的值**包括**属性中**项**元素和 #x 2014年; 换而言之的路径和文件名的项。
 
 
 在这种情况下，应该永远不会有多个项具有相同的路径和文件名，因为我们实质上正在使用的一个批次大小。 对于每个数据库包，目标被执行一次。
@@ -210,7 +210,7 @@ MSBuild 的生成名为的项列表来处理此指令**ProjectsToBuild**。 在�
 [!code-xml[Main](understanding-the-build-process/samples/sample11.xml)]
 
 
-在这种情况下， **%(DbPublishPackages.DatabaseConnectionString)**， **%(DbPublishPackages.TargetDatabase)**，和**%(DbPublishPackages.FullPath)**所有引用元数据值的**DbPublishPackages**项集合。  **\_Cmd**属性由**Exec**任务，调用该命令。
+在这种情况下， **%(DbPublishPackages.DatabaseConnectionString)**， **%(DbPublishPackages.TargetDatabase)**，和**%(DbPublishPackages.FullPath)**所有引用元数据值的**DbPublishPackages**项集合。 **\_Cmd**属性由**Exec**任务，调用该命令。
 
 
 [!code-xml[Main](understanding-the-build-process/samples/sample12.xml)]
@@ -219,7 +219,7 @@ MSBuild 的生成名为的项列表来处理此指令**ProjectsToBuild**。 在�
 由于这一表示法， **Exec**任务将创建基于的独特组合的批次**DatabaseConnectionString**， **TargetDatabase**，和**FullPath**元数据值，并且任务将执行一次每个批处理。 这是一个示例的*任务批处理*。 但是，因为目标级别批处理已划分为单个项的批次，我们项集合**Exec**任务将运行一次，并且每个迭代的目标的一次。 换而言之，此任务时，将调用一次为解决方案中每个数据库包 VSDBCMD 实用程序。
 
 > [!NOTE]
-> 目标和任务批处理的详细信息，请参阅 MSBuild[批处理](https://msdn.microsoft.com/en-us/library/ms171473.aspx)，[目标批处理中的项元数据](https://msdn.microsoft.com/en-US/library/ms228229.aspx)，和[任务批处理中的项元数据](https://msdn.microsoft.com/en-us/library/ms171474.aspx)。
+> 目标和任务批处理的详细信息，请参阅 MSBuild[批处理](https://msdn.microsoft.com/library/ms171473.aspx)，[目标批处理中的项元数据](https://msdn.microsoft.com/library/ms228229.aspx)，和[任务批处理中的项元数据](https://msdn.microsoft.com/library/ms171474.aspx)。
 
 
 ### <a name="the-publishwebpackages-target"></a>PublishWebPackages 目标

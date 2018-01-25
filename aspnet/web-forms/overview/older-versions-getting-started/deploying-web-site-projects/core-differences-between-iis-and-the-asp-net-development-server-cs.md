@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8d4d1a5795f5edabc51b578ecc45676490711c1a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 79f06707cadf027baa03652dc722cab31f494b09
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="core-differences-between-iis-and-the-aspnet-development-server-c"></a>核心 IIS 和 ASP.NET Development Server (C#) 之间的差异
 ====================
@@ -47,7 +47,7 @@ ASP.NET Development Server 将传入请求与当前登录用户的安全上下�
 [!code-csharp[Main](core-differences-between-iis-and-the-asp-net-development-server-cs/samples/sample1.cs)]
 
 > [!NOTE]
-> [ `File.WriteAllText`方法](https://msdn.microsoft.com/en-us/library/system.io.file.writealltext.aspx)创建一个新文件，如果它不存在，然后向其中写入指定的内容。 如果该文件已存在，则会覆盖现有内容。
+> [ `File.WriteAllText`方法](https://msdn.microsoft.com/library/system.io.file.writealltext.aspx)创建一个新文件，如果它不存在，然后向其中写入指定的内容。 如果该文件已存在，则会覆盖现有内容。
 
 
 接下来，请访问*教授自己 ASP.NET 3.5 24 小时内*簿审阅页面上，在使用 ASP.NET 开发服务器开发环境中的。 假设你登录到你的计算机使用的帐户具有足够的权限来创建和修改的文本文件中 web 应用程序的根目录下的书籍评审出现之前，相同，但该页是每次访问日期和时间以及用户的 IP 地址存储在`LastTYASP35Access.txt`文件。 你的浏览器指向此文件;你应看到类似于图 1 中所示的消息。
@@ -58,7 +58,7 @@ ASP.NET Development Server 将传入请求与当前登录用户的安全上下�
 **图 1**： 文本文件包含的最后一个日期和时间簿评审的访问 ([单击以查看实际尺寸的图像](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image3.png))
 
 
-部署到生产 web 应用程序，然后访问托管*教授自己 ASP.NET 3.5 24 小时内*册审阅页面。 此时可以看到册查看页面为普通或图 2 所示的错误消息。 某些 web 主机提供程序允许匿名的 ASP.NET 计算机帐户，将在其中用例页上工作正常的写入权限。 如果你的 web 主机提供商但是，禁止匿名帐户的写入访问权限则[`UnauthorizedAccessException`异常](https://msdn.microsoft.com/en-us/library/system.unauthorizedaccessexception.aspx)时引发`TYASP35.aspx`页尝试将写入当前日期和时间`LastTYASP35Access.txt`文件。
+部署到生产 web 应用程序，然后访问托管*教授自己 ASP.NET 3.5 24 小时内*册审阅页面。 此时可以看到册查看页面为普通或图 2 所示的错误消息。 某些 web 主机提供程序允许匿名的 ASP.NET 计算机帐户，将在其中用例页上工作正常的写入权限。 如果你的 web 主机提供商但是，禁止匿名帐户的写入访问权限则[`UnauthorizedAccessException`异常](https://msdn.microsoft.com/library/system.unauthorizedaccessexception.aspx)时引发`TYASP35.aspx`页尝试将写入当前日期和时间`LastTYASP35Access.txt`文件。
 
 
 [![IIS 使用的默认计算机帐户没有权限来写入到文件系统](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image5.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image4.png)
@@ -123,7 +123,7 @@ ASP.NET 运行时执行若干步骤来生成请求的内容，包括 （标识�
 此标记指示 IIS 7 以使用基于 ASP.NET 的身份验证和授权模块。 重新部署你的应用程序，然后重新访问 PDF 文件。 当 IIS 处理请求这次它，ASP.NET 运行时的身份验证和授权逻辑能够检查请求。 因为只有经过身份验证的用户有权查看中的内容`PrivateDocs`文件夹，匿名访问者将自动重定向到登录页 （回头参考图 3 中）。
 
 > [!NOTE]
-> 如果你的 web 宿主提供程序仍在使用 IIS 6，则无法使用集成的管道功能。 一种解决办法是将私有文档放入禁止 HTTP 访问的文件夹 (如`App_Data`)，然后创建页后，可以提供这些文档。 此页可能会调用`GetPDF.aspx`，并传递 PDF 通过查询字符串参数的名称。 `GetPDF.aspx`页将首先验证用户有权查看该文件并且，如果是这样，将使用[ `Response.WriteFile(filePath)` ](https://msdn.microsoft.com/en-us/library/system.web.httpresponse.writefile.aspx)方法以返回到请求的客户端发送请求的 PDF 文件的内容。 如果你不希望启用集成的管道，这种技术也将适用于 IIS 7。
+> 如果你的 web 宿主提供程序仍在使用 IIS 6，则无法使用集成的管道功能。 一种解决办法是将私有文档放入禁止 HTTP 访问的文件夹 (如`App_Data`)，然后创建页后，可以提供这些文档。 此页可能会调用`GetPDF.aspx`，并传递 PDF 通过查询字符串参数的名称。 `GetPDF.aspx`页将首先验证用户有权查看该文件并且，如果是这样，将使用[ `Response.WriteFile(filePath)` ](https://msdn.microsoft.com/library/system.web.httpresponse.writefile.aspx)方法以返回到请求的客户端发送请求的 PDF 文件的内容。 如果你不希望启用集成的管道，这种技术也将适用于 IIS 7。
 
 
 ## <a name="summary"></a>摘要
@@ -138,7 +138,7 @@ ASP.NET 运行时执行若干步骤来生成请求的内容，包括 （标识�
 
 - [与 IIS 7.0 的 ASP.NET 集成](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
 - [对所有类型的内容在 IIS 7 上使用 ASP.NET 论坛身份验证](https://blogs.iis.net/bills/archive/2007/05/19/using-asp-net-forms-authentication-with-all-types-of-content-with-iis7-video.aspx)（视频）
-- [Visual Web Developer 中的 web 服务器](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx)
+- [Visual Web Developer 中的 web 服务器](https://msdn.microsoft.com/library/58wxa9w5.aspx)
 
 >[!div class="step-by-step"]
 [上一页](common-configuration-differences-between-development-and-production-cs.md)

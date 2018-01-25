@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: dfb0158ec05c890ecf80571d95b22d8c791ba7fc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9baddd1836323385239206a3cf49e5938bbaff58
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>监视和遥测 （使用 Azure 构建真实世界云应用）
 ====================
@@ -41,7 +41,7 @@ ms.lasthandoff: 11/10/2017
 - [AppDynamics](http://www.appdynamics.com/)
 - [Dynatrace](https://datamarket.azure.com/application/b4011de2-1212-4375-9211-e882766121ff)
 
-截至 2015 年 3 月， [Microsoft Application Insights for Visual Studio Online](https://azure.microsoft.com/en-us/documentation/articles/app-insights-get-started/)尚未发布，但在来试用预览版中可用。[Microsoft System Center](http://www.petri.co.il/microsoft-system-center-introduction.htm#)还包括监视功能。
+截至 2015 年 3 月， [Microsoft Application Insights for Visual Studio Online](https://azure.microsoft.com/documentation/articles/app-insights-get-started/)尚未发布，但在来试用预览版中可用。[Microsoft System Center](http://www.petri.co.il/microsoft-system-center-introduction.htm#)还包括监视功能。
 
 我们将快速演练设置 New Relic，以显示使用的遥测系统能够多么容易。
 
@@ -156,13 +156,13 @@ New Relic 仅仅是一个示例的遥测系统;你可以获得所有这些以及
 
 我们建议执行操作时创建生产应用程序是创建一个简单*ILogger*接口并在其中坚持一些方法。 这便于更改日志记录实现更高版本，而不必转通过所有的代码来完成此操作。 我们无法使用`System.Diagnostics.Trace`类整个修复它应用，但改为我们将使用它的日志记录类中实现实际上*ILogger*，并使我们*ILogger*方法调用在整个应用程序。
 
-这样一来，如果你想要使你的日志记录更丰富，你可以替换[ `System.Diagnostics.Trace` ](https://docs.microsoft.com/azure/app-service-web/web-sites-dotnet-troubleshoot-visual-studio#apptracelogs)要与任何日志记录机制。 例如，你的应用程序随着你可能决定你想要使用更全面的日志记录包如[NLog](http://nlog-project.org/)或[企业库日志记录应用程序块](https://msdn.microsoft.com/en-us/library/dn440731(v=pandp.60).aspx)。 ([Log4Net](http://logging.apache.org/log4net/)是另一个常用的日志记录框架，但它不执行异步日志记录。)
+这样一来，如果你想要使你的日志记录更丰富，你可以替换[ `System.Diagnostics.Trace` ](https://docs.microsoft.com/azure/app-service-web/web-sites-dotnet-troubleshoot-visual-studio#apptracelogs)要与任何日志记录机制。 例如，你的应用程序随着你可能决定你想要使用更全面的日志记录包如[NLog](http://nlog-project.org/)或[企业库日志记录应用程序块](https://msdn.microsoft.com/library/dn440731(v=pandp.60).aspx)。 ([Log4Net](http://logging.apache.org/log4net/)是另一个常用的日志记录框架，但它不执行异步日志记录。)
 
 使用 NLog 等框架的一个可能的原因是为了便于将分割成独立的大容量和高值数据存储日志记录输出。 它可帮助你高效地存储大量不需要快速对执行查询，同时保持快速 ACT 数据访问的信息数据。
 
 ### <a name="semantic-logging"></a>语义的日志记录
 
-执行操作可以生成更多有用的诊断信息的日志记录的相对较新方法，请参阅[企业库语义日志记录应用程序块 （碎片）](http://convective.wordpress.com/2013/08/12/semantic-logging-application-block-slab/)。 碎片使用[Windows 事件跟踪](https://msdn.microsoft.com/en-us/library/windows/desktop/bb968803.aspx)(ETW) 和[EventSource](https://msdn.microsoft.com/en-us/library/system.diagnostics.tracing.eventsource.aspx)支持在.NET 4.5，可以创建详细的结构化和可查询日志中。 定义为每个类型的日志，可用于自定义你编写的信息的事件的不同方法。 例如，若要记录可能调用了 SQL 数据库错误`LogSQLDatabaseError`方法。 对于该类型的异常，你知道信息的关键部分是错误号，因此你可以将方法签名中包括错误编号参数，并作为单独的域在你编写的日志记录中记录的错误号。 因为该号码是在单独的字段中你可以更轻松可靠地获取报表根据 SQL 错误号，不是你可以使用如果已只需串联成一个消息字符串的错误号。
+执行操作可以生成更多有用的诊断信息的日志记录的相对较新方法，请参阅[企业库语义日志记录应用程序块 （碎片）](http://convective.wordpress.com/2013/08/12/semantic-logging-application-block-slab/)。 碎片使用[Windows 事件跟踪](https://msdn.microsoft.com/library/windows/desktop/bb968803.aspx)(ETW) 和[EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx)支持在.NET 4.5，可以创建详细的结构化和可查询日志中。 定义为每个类型的日志，可用于自定义你编写的信息的事件的不同方法。 例如，若要记录可能调用了 SQL 数据库错误`LogSQLDatabaseError`方法。 对于该类型的异常，你知道信息的关键部分是错误号，因此你可以将方法签名中包括错误编号参数，并作为单独的域在你编写的日志记录中记录的错误号。 因为该号码是在单独的字段中你可以更轻松可靠地获取报表根据 SQL 错误号，不是你可以使用如果已只需串联成一个消息字符串的错误号。
 
 ## <a name="logging-in-the-fix-it-app"></a>记录在解决应用程序
 
@@ -244,13 +244,13 @@ Azure 支持以下类型的[云服务中的日志记录](https://docs.microsoft.
 
 启用日志记录在 Azure 中后，你可以看到在 Visual Studio 输出窗口中的日志，因为它们创建。
 
-![流式处理日志菜单](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-viewlogsmenu.png)
+![流式处理日志菜单](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-viewlogsmenu.png)
 
-![流式处理日志菜单](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-nologsyet.png)
+![流式处理日志菜单](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-nologsyet.png)
 
 此外可将日志写入你的存储帐户，并且视图与任意这些工具，可以访问 Azure 存储表服务，例如**服务器资源管理器**Visual Studio 中或[Azure 存储资源管理器](https://azure.microsoft.com/features/storage-explorer/)。
 
-![服务器资源管理器中的日志](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-storagelogs.png)
+![服务器资源管理器中的日志](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-storagelogs.png)
 
 ## <a name="summary"></a>摘要
 
@@ -264,10 +264,10 @@ Azure 支持以下类型的[云服务中的日志记录](https://docs.microsoft.
 
 主要与遥测的文档：
 
-- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/en-us/library/dn568099.aspx)。 请参阅检测和遥测指南、 服务计数指南、 运行状况终结点监视模式和运行时重新配置模式。
+- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/library/dn568099.aspx)。 请参阅检测和遥测指南、 服务计数指南、 运行状况终结点监视模式和运行时重新配置模式。
 - [在云中挤压尾： 启用 New Relic 性能监视的 Azure 网站上](http://www.hanselman.com/blog/PennyPinchingInTheCloudEnablingNewRelicPerformanceMonitoringOnWindowsAzureWebsites.aspx)。
-- [在 Azure 云服务上的大规模服务的设计的最佳实践](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx)。 Mark Simms 和 Michael Thomassy 白皮书。 请参阅遥测和诊断部分。
-- [使用 Application Insights 的下一代开发](https://msdn.microsoft.com/en-us/magazine/dn683794.aspx)。 MSDN 杂志文章。
+- [在 Azure 云服务上的大规模服务的设计的最佳实践](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 Mark Simms 和 Michael Thomassy 白皮书。 请参阅遥测和诊断部分。
+- [使用 Application Insights 的下一代开发](https://msdn.microsoft.com/magazine/dn683794.aspx)。 MSDN 杂志文章。
 
 有关日志记录主要文档：
 

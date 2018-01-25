@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
 msc.type: authoredcontent
-ms.openlocfilehash: 465c9cf6f452c268e7e23509e7a29547df5d3e83
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 995d9a088e3095f36a01d2adb19ec08e6a6d1b3e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>密码和其他敏感数据部署到 ASP.NET 和 Azure App Service 的最佳做法
 ====================
@@ -54,7 +54,7 @@ ms.lasthandoff: 11/10/2017
 ASP.NET 运行时将包含中的标记的外部文件的内容合并&lt;appSettings&gt;元素。 如果找不到指定的文件，运行时将忽略的文件属性。
 
 > [!WARNING]
-> 安全-不要添加你*机密.config*文件添加到项目，或将其签入源代码管理。 默认情况下，Visual Studio 会将设置`Build Action`到`Content`，这意味着文件部署。 有关详细信息请参阅[为什么不我的项目文件夹中的文件的所有部署呢？](https://msdn.microsoft.com/en-us/library/ee942158(v=vs.110).aspx#can_i_exclude_specific_files_or_folders_from_deployment) 尽管可以使用任何扩展*机密.config*文件，则最好使其保持*.config*，如配置文件不由 IIS 提供。 此外请注意， *AppSettingsSecrets.config*文件是从两个目录级别向上*web.config*文件，因此它完全不足解决方案目录。 将外解决方案目录，该文件移&quot;git 添加\*&quot;不会将其添加到你的存储库。
+> 安全-不要添加你*机密.config*文件添加到项目，或将其签入源代码管理。 默认情况下，Visual Studio 会将设置`Build Action`到`Content`，这意味着文件部署。 有关详细信息请参阅[为什么不我的项目文件夹中的文件的所有部署呢？](https://msdn.microsoft.com/library/ee942158(v=vs.110).aspx#can_i_exclude_specific_files_or_folders_from_deployment) 尽管可以使用任何扩展*机密.config*文件，则最好使其保持*.config*，如配置文件不由 IIS 提供。 此外请注意， *AppSettingsSecrets.config*文件是从两个目录级别向上*web.config*文件，因此它完全不足解决方案目录。 将外解决方案目录，该文件移&quot;git 添加\*&quot;不会将其添加到你的存储库。
 
 
 <a id="con"></a>
@@ -96,7 +96,7 @@ Visual Studio 将创建使用的新 ASP.NET 项目[LocalDB](https://blogs.msdn.c
 
 **应用设置**和**连接字符串**值重写中的相同设置*web.config*文件。 在本示例中，我们未不将这些设置部署到 Azure，但如果这些注册表项中*web.config*文件，在门户上显示的设置将优先。
 
-最佳做法是按照[DevOps 工作流](../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything.md)并用[Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/install-configure-powershell/) (或另一个框架[Chef](http://www.opscode.com/chef/)或[Puppet](http://puppetlabs.com/puppet/what-is-puppet)) 到自动执行在 Azure 中设置这些值。 以下 PowerShell 脚本使用[Export-clixml](http://www.powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk)导出到磁盘的加密的机密：
+最佳做法是按照[DevOps 工作流](../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything.md)并用[Azure PowerShell](https://azure.microsoft.com/documentation/articles/install-configure-powershell/) (或另一个框架[Chef](http://www.opscode.com/chef/)或[Puppet](http://puppetlabs.com/puppet/what-is-puppet)) 到自动执行在 Azure 中设置这些值。 以下 PowerShell 脚本使用[Export-clixml](http://www.powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk)导出到磁盘的加密的机密：
 
 [!code-powershell[Main](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure/samples/sample6.ps1)]
 
@@ -105,7 +105,7 @@ Visual Studio 将创建使用的新 ASP.NET 项目[LocalDB](https://blogs.msdn.c
 [!code-powershell[Main](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure/samples/sample7.ps1)]
 
 > [!WARNING]
-> 安全-不包含密码或其他机密信息在 PowerShell 脚本中，执行这样的破坏使用 PowerShell 脚本部署敏感数据的用途。 [Get-credential](https://technet.microsoft.com/en-us/library/hh849815.aspx) cmdlet 提供了获取密码的安全机制。 使用 UI 提示可能会阻止泄露密码。
+> 安全-不包含密码或其他机密信息在 PowerShell 脚本中，执行这样的破坏使用 PowerShell 脚本部署敏感数据的用途。 [Get-credential](https://technet.microsoft.com/library/hh849815.aspx) cmdlet 提供了获取密码的安全机制。 使用 UI 提示可能会阻止泄露密码。
 
 
 ### <a name="deploying-db-connection-strings"></a>部署数据库连接字符串
@@ -119,7 +119,7 @@ DB 连接字符串被处理方法类似于应用程序设置。 如果部署 web
 
 ## <a name="notes-for-on-premises-servers"></a>说明在本地服务器
 
-如果将部署到本地 web 服务器，你可以帮助通过安全机密[加密配置文件的配置节](https://msdn.microsoft.com/en-us/library/ff647398.aspx)。 作为替代方法，你可以使用相同的方法为 Azure 网站建议： 将开发设置保留在配置文件，并为生产设置中使用环境变量值。 在这种情况下，但是，你需要编写实现的功能自动在 Azure 网站中的应用程序代码： 从环境变量中检索设置并使用这些值来代替配置文件设置，或者使用配置文件设置时找不到环境变量。
+如果将部署到本地 web 服务器，你可以帮助通过安全机密[加密配置文件的配置节](https://msdn.microsoft.com/library/ff647398.aspx)。 作为替代方法，你可以使用相同的方法为 Azure 网站建议： 将开发设置保留在配置文件，并为生产设置中使用环境变量值。 在这种情况下，但是，你需要编写实现的功能自动在 Azure 网站中的应用程序代码： 从环境变量中检索设置并使用这些值来代替配置文件设置，或者使用配置文件设置时找不到环境变量。
 
 <a id="addRes"></a>
 ## <a name="additional-resources"></a>其他资源

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/creating-a-connection-string
 msc.type: authoredcontent
-ms.openlocfilehash: 41f1f30d86406580ab9fc7278a94d9c291913f9a
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 25d1c1c9954baaca9ef91eff3dd3c853930a5893
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-connection-string-and-working-with-sql-server-localdb"></a>创建连接字符串和使用 SQL Server LocalDB
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/19/2017
 
 在 Visual Studio 2017，默认情况下，使用 Visual Studio 安装 LocalDB。
 
-默认情况下，实体框架将查找名为与对象上下文类相同的连接字符串 (`MovieDBContext`为此项目)。 有关详细信息请参阅[ASP.NET Web 应用程序的 SQL Server 连接字符串](https://msdn.microsoft.com/en-us/library/jj653752.aspx)。
+默认情况下，实体框架将查找名为与对象上下文类相同的连接字符串 (`MovieDBContext`为此项目)。 有关详细信息请参阅[ASP.NET Web 应用程序的 SQL Server 连接字符串](https://msdn.microsoft.com/library/jj653752.aspx)。
 
 打开应用程序根目录*Web.config*文件如下所示。 (不*Web.config*文件中*视图*文件夹。)
 
@@ -56,11 +56,11 @@ ms.lasthandoff: 11/19/2017
 
 两个连接字符串是非常相似。 第一个连接字符串命名为`DefaultConnection`和用于成员资格数据库以控制可以访问应用程序。 你已添加的连接字符串指定一个名为的 LocalDB 数据库*Movie.mdf*位于*应用\_数据*文件夹。 我们不会在本教程中，有关详细信息成员身份、 身份验证和安全中使用成员资格数据库，请参阅我的教程[使用身份验证和 SQL 数据库中创建的 ASP.NET MVC 应用并部署到 Azure App Service](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)。
 
-连接字符串的名称必须与匹配的名称[DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.103).aspx)类。
+连接字符串的名称必须与匹配的名称[DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)类。
 
 [!code-csharp[Main](creating-a-connection-string/samples/sample3.cs?highlight=15)]
 
-你实际上不需要添加`MovieDBContext`连接字符串。 如果未指定连接字符串，实体框架将带有完全限定名称的用户目录中创建 LocalDB 数据库[DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.103).aspx)类 (在这种情况下`MvcMovie.Models.MovieDBContext`)。 你可以将数据库命名您喜欢的任何，只要它具有*。MDF*后缀。 例如，我们无法将数据库命名*MyFilms.mdf*。
+你实际上不需要添加`MovieDBContext`连接字符串。 如果未指定连接字符串，实体框架将带有完全限定名称的用户目录中创建 LocalDB 数据库[DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)类 (在这种情况下`MvcMovie.Models.MovieDBContext`)。 你可以将数据库命名您喜欢的任何，只要它具有*。MDF*后缀。 例如，我们无法将数据库命名*MyFilms.mdf*。
 
 接下来，你将生成一个新`MoviesController`类，该类可以用于显示影片数据，并允许用户创建新的影片列表。
 

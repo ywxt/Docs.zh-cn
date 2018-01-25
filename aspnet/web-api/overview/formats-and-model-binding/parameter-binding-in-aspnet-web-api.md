@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: ad052570fb2f168da657cd1263d8342a59d4cab0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5aa532137436922519c86246ebfa834910ac0d86
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="parameter-binding-in-aspnet-web-api"></a>ASP.NET Web API 中的绑定的参数
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 11/10/2017
 
 默认情况下，Web API 使用以下规则来将参数绑定：
 
-- 如果参数为"简单"的类型，Web API 将尝试从 URI 中获取的值。 简单类型包括.NET[基元类型](https://msdn.microsoft.com/en-us/library/system.type.isprimitive.aspx)(**int**， **bool**， **double**，依此类推)，加上**TimeSpan**， **DateTime**， **Guid**，**十进制**，和**字符串**，*加上*任何类型具有可以从字符串转换的类型转换器。 （有关详细信息的类型转换器更高版本。）
+- 如果参数为"简单"的类型，Web API 将尝试从 URI 中获取的值。 简单类型包括.NET[基元类型](https://msdn.microsoft.com/library/system.type.isprimitive.aspx)(**int**， **bool**， **double**，依此类推)，加上**TimeSpan**， **DateTime**， **Guid**，**十进制**，和**字符串**，*加上*任何类型具有可以从字符串转换的类型转换器。 （有关详细信息的类型转换器更高版本。）
 - 为复杂类型，Web API 尝试从消息正文中读取值时，使用[媒体类型格式化程序](media-formatters.md)。
 
 例如，以下是典型的 Web API 控制器方法：
@@ -45,7 +45,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample2.cs)]
 
-客户端可以将纬度和经度值放在查询字符串和 Web API 将使用它们来构造`GeoPoint`。 例如: 
+客户端可以将纬度和经度值放在查询字符串和 Web API 将使用它们来构造`GeoPoint`。 例如:
 
 `http://localhost/api/values/?Latitude=47.678558&Longitude=-122.130989`
 
@@ -121,7 +121,7 @@ Web API 中的默认值提供程序从路由数据和查询字符串中获取值
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample11.cs)]
 
-最后，你可以添加到模型联编程序提供程序**HttpConfiguration**。 模型联编程序提供程序是只需创建模型联编程序的工厂类。 你可以通过从派生创建提供程序[ModelBinderProvider](https://msdn.microsoft.com/en-us/library/system.web.http.modelbinding.modelbinderprovider.aspx)类。 但是，如果模型联编程序处理的单一类型，很容易地使用内置**SimpleModelBinderProvider**，为此用途设计的。 下面的代码演示如何执行此操作。
+最后，你可以添加到模型联编程序提供程序**HttpConfiguration**。 模型联编程序提供程序是只需创建模型联编程序的工厂类。 你可以通过从派生创建提供程序[ModelBinderProvider](https://msdn.microsoft.com/library/system.web.http.modelbinding.modelbinderprovider.aspx)类。 但是，如果模型联编程序处理的单一类型，很容易地使用内置**SimpleModelBinderProvider**，为此用途设计的。 下面的代码演示如何执行此操作。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample12.cs)]
 

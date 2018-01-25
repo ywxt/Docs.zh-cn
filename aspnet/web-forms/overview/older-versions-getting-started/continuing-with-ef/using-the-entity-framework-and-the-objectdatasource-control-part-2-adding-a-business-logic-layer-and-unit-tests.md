@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
 title: "使用 Entity Framework 4.0 和 ObjectDataSource 控件，第 2 部分： 添加业务逻辑层和单元测试 |Microsoft 文档"
 author: tdykstra
-description: "本教程系列上的 Contoso 大学 web 应用程序创建的 Getting Started with 实体 Framework 4.0 教程系列生成。 我..."
+description: "本教程系列上的 Contoso 大学 web 应用程序创建的 Getting Started with 实体 Framework 4.0 教程系列生成。 I..."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
 msc.type: authoredcontent
-ms.openlocfilehash: 0440f807c7baa7b92e5f05590eca9cc237b5aef9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: df37acd8901b457f7887afe767d42d53e45e4815
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests"></a>使用 Entity Framework 4.0 和 ObjectDataSource 控件，第 2 部分： 添加业务逻辑层和单元测试
 ====================
@@ -74,7 +74,7 @@ ms.lasthandoff: 11/10/2017
 调用存储库类和两个构造函数的 CRUD 方法，使其可以与你选择任何后端数据存储区中使用业务逻辑类。 业务逻辑类不必注意它所调用类如何保持数据。 (此情况通常称作*持久性无感知*。)因为你可以连接到使用的内容作为一种简单的存储库实现的业务逻辑类来帮助进行单元测试，内存中作为`List`来存储数据的集合。
 
 > [!NOTE]
-> 从技术上讲，实体对象不仍不持久性未知，因为它们正在从实体框架的继承的类实例化`EntityObject`类。 对于完整持久性无感知，你可以使用*纯旧 CLR 对象*，或*POCOs*，来从继承的对象代替`EntityObject`类。 使用 POCOs 不在本教程的范围。 有关详细信息，请参阅[可测试性和 Entity Framework 4.0](https://msdn.microsoft.com/en-us/library/ff714955.aspx) MSDN 网站上。)
+> 从技术上讲，实体对象不仍不持久性未知，因为它们正在从实体框架的继承的类实例化`EntityObject`类。 对于完整持久性无感知，你可以使用*纯旧 CLR 对象*，或*POCOs*，来从继承的对象代替`EntityObject`类。 使用 POCOs 不在本教程的范围。 有关详细信息，请参阅[可测试性和 Entity Framework 4.0](https://msdn.microsoft.com/library/ff714955.aspx) MSDN 网站上。)
 
 
 现在你可以连接`ObjectDataSource`业务逻辑的控件类而不是到存储库并验证一切就绪像以前一样。
@@ -221,7 +221,7 @@ Contoso 大学，任何单个教师只能是单个部门的管理员，你需要
 
 你现在可以测试*DepartmentsAdd.aspx.cs*页以验证它还能正确地处理尝试使多个部门的管理员的人。
 
-这将完成实现使用的存储库模式简介`ObjectDataSource`与实体框架的控件。 有关存储库模式和可测试性的详细信息，请参阅 MSDN 白皮书[可测试性和 Entity Framework 4.0](https://msdn.microsoft.com/en-us/library/ff714955.aspx)。
+这将完成实现使用的存储库模式简介`ObjectDataSource`与实体框架的控件。 有关存储库模式和可测试性的详细信息，请参阅 MSDN 白皮书[可测试性和 Entity Framework 4.0](https://msdn.microsoft.com/library/ff714955.aspx)。
 
 在以下教程中，你将看到如何添加排序和筛选到应用程序的功能。
 

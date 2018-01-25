@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: cf1cb7b07ffe8750724e58e4fb66854c9a033a54
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aa8bb895ed6eaa0ef4c5752f475ea7c911544ef2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>自动执行所有内容 （构建真实世界云应用与 Azure）
 ====================
@@ -45,7 +45,7 @@ ms.lasthandoff: 11/10/2017
 
 在[简介此电子书](introduction.md)，你看到的基于 web 的控制台中，Azure 管理门户。 管理门户，你可以监视和管理所有已部署在 Azure 的资源。 它是创建和删除服务，如 web apps 和 Vm、 配置这些服务、 监视服务操作和等等的简单办法。 它是一个强大的工具，但使用它是一个手动过程。 如果你要开发生产应用程序的任何大小，尤其是在团队环境中，我们建议你通过门户 UI 以便了解和探索 Azure，然后自动将重复执行你的进程。
 
-也可以通过调用 REST 管理 API 几乎所有可以在管理门户或从 Visual Studio 手动操作。 你可以编写脚本，使用[Windows PowerShell](https://msdn.microsoft.com/en-us/library/windowsazure/jj156055.aspx)，或者可以使用一种开放源代码框架，如[Chef](http://www.opscode.com/chef/)或[Puppet](http://puppetlabs.com/puppet/what-is-puppet)。 你还可以在 Mac 或 Linux 的环境中使用 Bash 命令行工具。 Azure 具有对所有这些不同的环境，脚本编写 Api，它具有[.NET 管理 API](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx)以防你想要编写代码而不是脚本。
+也可以通过调用 REST 管理 API 几乎所有可以在管理门户或从 Visual Studio 手动操作。 你可以编写脚本，使用[Windows PowerShell](https://msdn.microsoft.com/library/windowsazure/jj156055.aspx)，或者可以使用一种开放源代码框架，如[Chef](http://www.opscode.com/chef/)或[Puppet](http://puppetlabs.com/puppet/what-is-puppet)。 你还可以在 Mac 或 Linux 的环境中使用 Bash 命令行工具。 Azure 具有对所有这些不同的环境，脚本编写 Api，它具有[.NET 管理 API](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx)以防你想要编写代码而不是脚本。
 
 为 Fix It 应用我们已创建了自动执行过程的创建测试环境并将项目部署到该环境中，一些 Windows PowerShell 脚本和我们将回顾一下这些脚本的内容。
 
@@ -90,7 +90,7 @@ ms.lasthandoff: 11/10/2017
 
 ![appSettings 和 connectionStrings](automate-everything/_static/image6.png)
 
-*自动化*文件夹现在还包含 *&lt;websitename&gt;.pubxml*文件。 此文件存储 MSBuild 将用于将应用部署到刚创建的 Azure 环境的设置。 例如: 
+*自动化*文件夹现在还包含 *&lt;websitename&gt;.pubxml*文件。 此文件存储 MSBuild 将用于将应用部署到刚创建的 Azure 环境的设置。 例如:
 
 [!code-xml[Main](automate-everything/samples/sample1.xml)]
 

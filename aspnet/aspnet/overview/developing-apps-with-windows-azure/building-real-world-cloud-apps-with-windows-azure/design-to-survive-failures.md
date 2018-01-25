@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
-ms.openlocfilehash: a0ee790da07c99cdb1279a6bca637a4ce8076e84
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 62a16e9a99cd1298b0db5f8099092212f9f6850b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>设计得以失败 （使用 Azure 构建真实世界云应用）
 ====================
@@ -117,14 +117,14 @@ Azure 目标是使处理所有这些类型的故障容易得多，并且你将�
 
 文档：
 
-- [防故障： 弹性云体系结构指南](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx)。 通过 Marc Mercuri、 Ulrich Homann 和 Andrew Townhill 白皮书。 网页上的防故障视频系列的版本。
-- [在 Azure 云服务上的大规模服务的设计的最佳实践](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx)。 Mark Simms 和 Michael Thomassy 白皮书。
-- [Azure 业务连续性技术指南](https://msdn.microsoft.com/en-us/library/windowsazure/hh873027.aspx)。 Patrick Wickline 和 Jason Roth 白皮书。
-- [灾难恢复和高可用性 Azure 应用程序](https://msdn.microsoft.com/en-us/library/windowsazure/dn251004.aspx)。 由 Michael McKeown、 Hanu Kommalapati 和 Jason Roth 白皮书。
-- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/en-us/library/dn568099.aspx)。 请参阅多数据中心部署指南，断路器模式。
+- [防故障： 弹性云体系结构指南](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)。 通过 Marc Mercuri、 Ulrich Homann 和 Andrew Townhill 白皮书。 网页上的防故障视频系列的版本。
+- [在 Azure 云服务上的大规模服务的设计的最佳实践](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 Mark Simms 和 Michael Thomassy 白皮书。
+- [Azure 业务连续性技术指南](https://msdn.microsoft.com/library/windowsazure/hh873027.aspx)。 Patrick Wickline 和 Jason Roth 白皮书。
+- [灾难恢复和高可用性 Azure 应用程序](https://msdn.microsoft.com/library/windowsazure/dn251004.aspx)。 由 Michael McKeown、 Hanu Kommalapati 和 Jason Roth 白皮书。
+- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/library/dn568099.aspx)。 请参阅多数据中心部署指南，断路器模式。
 - [Azure 支持的服务级别协议](https://azure.microsoft.com/support/legal/sla/)。
-- [Azure SQL Database 中的业务连续性](https://msdn.microsoft.com/en-us/library/windowsazure/hh852669.aspx)。 有关 SQL 数据库高可用性和灾难恢复功能的文档。
-- [高可用性和灾难恢复的 Azure 虚拟机中 SQL Server](https://msdn.microsoft.com/en-us/library/windowsazure/jj870962.aspx)。
+- [Azure SQL Database 中的业务连续性](https://msdn.microsoft.com/library/windowsazure/hh852669.aspx)。 有关 SQL 数据库高可用性和灾难恢复功能的文档。
+- [高可用性和灾难恢复的 Azure 虚拟机中 SQL Server](https://msdn.microsoft.com/library/windowsazure/jj870962.aspx)。
 
 视频：
 

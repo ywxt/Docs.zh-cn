@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 5a852ec2301e63bde9a5ce99db80224dad7fb258
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ae2fddc81f6f4da866ec0719a0e74516bdd2a4d1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体
 ====================
@@ -28,7 +28,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > ## <a name="database-first"></a>第一个数据库
 > 
-> 有三种方法可以使用的实体框架中的数据： *Database First*， *Model First*，和*Code First*。 此教程适用于第一个数据库。 有关如何为你的方案选择最佳这些工作流和指南之间的差异信息，请参阅[实体框架开发工作流](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf)。
+> 有三种方法可以使用的实体框架中的数据： *Database First*， *Model First*，和*Code First*。 此教程适用于第一个数据库。 有关如何为你的方案选择最佳这些工作流和指南之间的差异信息，请参阅[实体框架开发工作流](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf)。
 > 
 > ## <a name="web-forms"></a>Web Forms — Web 窗体
 > 
@@ -39,13 +39,13 @@ ms.lasthandoff: 11/10/2017
 > | **本教程中所示** | **也适用于** |
 > | --- | --- |
 > | Windows 7 | Windows 8 |
-> | Visual Studio 2010 | Web 的 visual Studio 2010 Express。 本教程不经过测试与更高版本的 Visual Studio。 有许多菜单中选择、 对话框框中，和模板中的差异。 |
+> | Visual Studio 2010 | Visual Studio 2010 Express for Web. 本教程不经过测试与更高版本的 Visual Studio。 有许多菜单中选择、 对话框框中，和模板中的差异。 |
 > | .NET 4 | .NET 4.5 是与.NET 4 中，向后的兼容，但本教程未经过测试.NET 4.5。 |
 > | 实体框架 4 | 本教程不经过测试与实体框架的更高版本。 从实体框架 5 开始，默认情况下使用 EF `DbContext API` ，引入了 EF 4.1。 EntityDataSource 控件的设计用于`ObjectContext`API。 有关如何使用 EntityDataSource 控件`DbContext`API，请参阅[这篇博客文章](https://blogs.msdn.com/b/webdev/archive/2012/09/13/how-to-use-the-entitydatasource-control-with-entity-framework-code-first.aspx)。 |
 > 
 > ## <a name="questions"></a>问题
 > 
-> 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)、[实体框架和 LINQ to Entities 论坛](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
+> 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)、[实体框架和 LINQ to Entities 论坛](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
 
 
 ## <a name="overview"></a>概述
@@ -96,7 +96,7 @@ ms.lasthandoff: 11/10/2017
 
 对于本教程中使用数据库第一个方法下, 一步是将数据库添加到站点。 最简单方法是首先下载用本教程的项目。 然后右键单击*应用\_数据*文件夹，选择**添加现有项**，然后选择*School.mdf*已下载项目中的数据库文件。
 
-一种替代方法是遵循的说明[创建 School 示例数据库](https://msdn.microsoft.com/en-us/library/bb399731.aspx)。 是否下载数据库或创建它时，将复制*School.mdf*到你的应用程序的以下文件夹中的文件*应用\_数据*文件夹：
+一种替代方法是遵循的说明[创建 School 示例数据库](https://msdn.microsoft.com/library/bb399731.aspx)。 是否下载数据库或创建它时，将复制*School.mdf*到你的应用程序的以下文件夹中的文件*应用\_数据*文件夹：
 
 `%PROGRAMFILES%\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA`
 

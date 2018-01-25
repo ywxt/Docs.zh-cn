@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
 msc.type: authoredcontent
-ms.openlocfilehash: a6a90a03674cfe7565da0ed56148186ee9525707
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d46e2697d10ca27f8e08533350a6e7f2354b4a43
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-content-to-source-control"></a>将内容添加到源代码管理
 ====================
@@ -90,7 +90,7 @@ ms.lasthandoff: 11/10/2017
 1. 你开发人员在工作站上，到团队项目的映射的文件夹结构中的相应位置中移动你的项目和解决方案。
 
     > [!NOTE]
-    > 许多组织都有项目和解决方案应该如何组织在源代码管理中的首选的方法。 有关如何构建文件夹的指南，请参阅[How To： 结构你源控件文件夹，Team Foundation Server 中](https://msdn.microsoft.com/en-us/library/bb668992.aspx)。
+    > 许多组织都有项目和解决方案应该如何组织在源代码管理中的首选的方法。 有关如何构建文件夹的指南，请参阅[How To： 结构你源控件文件夹，Team Foundation Server 中](https://msdn.microsoft.com/library/bb668992.aspx)。
 2. 在 Visual Studio 2010 中打开解决方案。
 3. 在**解决方案资源管理器**窗口中，右键单击该解决方案，然后单击**将解决方案添加到源代码管理**。
 
@@ -149,13 +149,13 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="conclusion"></a>结束语
 
-本主题介绍如何连接到团队项目，将映射的文件夹结构，并将内容添加到源代码管理。 有关如何使用源代码管理下的项的详细信息，请参阅[使用版本控制](https://msdn.microsoft.com/en-us/library/ms181368.aspx)。
+本主题介绍如何连接到团队项目，将映射的文件夹结构，并将内容添加到源代码管理。 有关如何使用源代码管理下的项的详细信息，请参阅[使用版本控制](https://msdn.microsoft.com/library/ms181368.aspx)。
 
 下一主题[用于 Web 部署配置 TFS 生成服务器](configuring-a-tfs-build-server-for-web-deployment.md)，介绍如何准备 TFS Team Build 连接的服务器，以生成和部署你的解决方案。
 
 ## <a name="further-reading"></a>其他阅读材料
 
-有关在 TFS 中的源控件使用的更全面信息，请参阅[使用版本控制](https://msdn.microsoft.com/en-us/library/ms181368.aspx)。
+有关在 TFS 中的源控件使用的更全面信息，请参阅[使用版本控制](https://msdn.microsoft.com/library/ms181368.aspx)。
 
 >[!div class="step-by-step"]
 [上一页](creating-a-team-project-in-tfs.md)

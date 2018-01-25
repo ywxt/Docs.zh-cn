@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/filters
-ms.openlocfilehash: db5d6a98d5e6702842e8b036c378ed96aef61b70
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 32bfddde48f5e5de9c06cb159493eb9ba6ede8be
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="filters"></a>筛选器
 
@@ -70,7 +70,7 @@ ms.lasthandoff: 01/19/2018
 
 ### <a name="ifilterfactory"></a>IFilterFactory
 
-`IFilterFactory` 可实现 `IFilter`。 因此，`IFilterFactory`实例可以用作`IFilter`筛选器管道中的任意位置的实例。 当框架准备调用筛选器时，它尝试将它转换到`IFilterFactory`。 如果该强制转换成功，`CreateInstance`调用方法来创建`IFilter`将调用的实例。 这提供了非常灵活的设计，因为无需在应用程序启动时显式设置精确的筛选器管道。
+`IFilterFactory` 可实现 `IFilter`。 因此，`IFilterFactory`实例可以用作`IFilter`筛选器管道中的任意位置的实例。 当框架准备调用筛选器时，它尝试将它转换到`IFilterFactory`。 如果该强制转换成功，`CreateInstance`调用方法来创建`IFilter`将调用的实例。 这提供了非常灵活的设计，因为精确的筛选器管道不需要在应用程序启动时显式设置。
 
 你可以实现`IFilterFactory`上创建筛选器的另一种方法为您自己属性的实现：
 
@@ -177,7 +177,7 @@ Framework 包括内置基于属性的筛选器可以子类化和自定义。 例
 
 按类型或实例，可以添加筛选器。 如果你添加的实例，该实例将用于每个请求。 如果你添加一种类型，它会将类型激活，这意味着将为每个请求创建的实例，并且任何构造函数依赖关系将用来填充[依赖关系注入](../../fundamentals/dependency-injection.md)(DI)。 添加按类型筛选器相当于`filters.Add(new TypeFilterAttribute(typeof(MyFilter)))`。
 
-作为属性实现并直接添加到控制器类或操作方法筛选器不能由提供的构造函数依赖关系[依赖关系注入](../../fundamentals/dependency-injection.md)(DI)。 这是因为属性必须提供在其中应用其构造函数参数。 这是属性的工作原理的限制。
+作为属性实现并直接添加到控制器类或操作方法筛选器不能由提供的构造函数依赖关系[依赖关系注入](../../fundamentals/dependency-injection.md)(DI)。 这是因为属性都必须将其构造函数参数提供应用位置。 这是属性的工作原理的限制。
 
 如果你的筛选器从 DI 访问所需的依赖项，有几种受支持的方法。 你可以将筛选器应用到类或操作的方法，使用以下项之一：
 
@@ -207,7 +207,7 @@ System.InvalidOperationException: No service for type
 
 ### <a name="typefilterattribute"></a>TypeFilterAttribute
 
-`TypeFilterAttribute`非常类似于`ServiceFilterAttribute`(还会实现`IFilterFactory`)，但其类型不能解决直接从 DI 容器。 相反，它通过实例化类型使用`Microsoft.Extensions.DependencyInjection.ObjectFactory`。
+`TypeFilterAttribute`非常类似于`ServiceFilterAttribute`(还会实现`IFilterFactory`)，但其类型直接从 DI 容器进行解析。 相反，它通过实例化类型使用`Microsoft.Extensions.DependencyInjection.ObjectFactory`。
 
 因为这一区别，使用引用的类型`TypeFilterAttribute`无需首先注册与该容器 （但仍将由容器满足其依赖项）。 此外，`TypeFilterAttribute`可以选择接受所涉及的类型的构造函数自变量。 下面的示例演示如何将自变量传递给类型使用`TypeFilterAttribute`:
 
@@ -223,7 +223,7 @@ System.InvalidOperationException: No service for type
 
 *授权筛选器*控制对操作方法的访问，并且要在筛选器管道内执行的第一个筛选器。 它们只具有方法，与不同的是支持之前和之后方法的大多数筛选器之前。 仅应编写自定义授权筛选器如果你正在编写你自己的授权框架。 首选配置授权策略，或通过编写自定义筛选器编写一个自定义授权策略。 内置筛选器实现都只需负责调用授权系统。
 
-请注意，你不应引发异常中授权筛选器，因为执行任何操作将处理的异常 （异常筛选器不会处理这些）。 请改为发出质询，或者查找另一种方法。
+请注意，你不应引发授权筛选器内的异常，因为执行任何操作将处理的异常 （异常筛选器不会处理这些）。 请改为发出质询，或者查找另一种方法。
 
 详细了解[授权](../../security/authorization/index.md)。
 
@@ -252,7 +252,7 @@ System.InvalidOperationException: No service for type
 * `Canceled`-将为 true，如果操作执行已短路另一个筛选器。
 * `Exception`-将为非 null，如果该操作或后续操作筛选器引发了异常。 设置此属性为 null，有效地 handles 异常，和`Result`就像它已从返回的操作方法通常将执行。
 
-有关`IAsyncActionFilter`，调用`ActionExecutionDelegate`执行后续操作的任何筛选器和操作方法，从而返回`ActionExecutedContext`。 短路、 分配`ActionExecutingContext.Result`到某些结果实例并且不调用`ActionExecutionDelegate`。
+有关`IAsyncActionFilter`，调用`ActionExecutionDelegate`执行后续操作的任何筛选器和操作方法，从而返回`ActionExecutedContext`。 短路、 分配`ActionExecutingContext.Result`到某些结果实例并不调用`ActionExecutionDelegate`。
 
 该框架提供一个抽象`ActionFilterAttribute`可以子类化。 
 
@@ -277,7 +277,7 @@ System.InvalidOperationException: No service for type
 若要处理的异常，设置`ExceptionContext.ExceptionHandled`属性为 true，或者编写响应。 这将停止异常的传播。 请注意异常筛选器无法打开到"成功"异常。 操作筛选器可以执行该操作。
 
 > [!NOTE]
-> 在 ASP.NET 1.1 版中，响应将不发送如果你设置`ExceptionHandled`为 true**和**编写响应。 在这种情况下，ASP.NET Core 1.0 未发送响应，和 ASP.NET Core 1.1.2 将返回到 1.0 的行为。 有关详细信息，请参阅[发出 #5594](https://github.com/aspnet/Mvc/issues/5594) GitHub 存储库中。 
+> ASP.NET 1.1 中，如果你设置未发送响应`ExceptionHandled`为 true**和**编写响应。 在这种情况下，ASP.NET Core 1.0 未发送响应，和 ASP.NET Core 1.1.2 将返回到 1.0 的行为。 有关详细信息，请参阅[发出 #5594](https://github.com/aspnet/Mvc/issues/5594) GitHub 存储库中。 
 
 异常筛选器非常适用于捕获 MVC 操作内出现的异常，但它们不是灵活性不如错误处理中间件。 首选中间件一般情况下，并使用筛选器仅需要在其中执行错误处理*以不同方式*基于的 MVC 操作已被选。 例如，你的应用程序可能具有两个 API 终结点和视图/HTML 的操作方法。 基于视图的操作可能返回为 HTML 错误页时，API 终结点无法返回为 JSON 的错误信息。
 
@@ -301,7 +301,7 @@ System.InvalidOperationException: No service for type
 
 `ResultExecutedContext.Exception`将设置为非 null 值的操作结果或后续结果筛选器的任务引发异常。 设置`Exception`到 null 有效地处理的异常和可防止在管道中更高版本中被重新引发由 MVC 异常。 当处理结果筛选器中的出现异常时，你可能不能将任何数据写入到响应。 如果通过其执行的过程引发的操作结果和标头已刷新到客户端，则没有可靠的机制，可用于发送为失败代码。
 
-有关`IAsyncResultFilter`调用`await next()`上`ResultExecutionDelegate`执行其余的结果的任何筛选器和操作结果。 短路、 设置`ResultExecutingContext.Cancel`到 true 并且不调用`ResultExectionDelegate`。
+有关`IAsyncResultFilter`调用`await next()`上`ResultExecutionDelegate`执行其余的结果的任何筛选器和操作结果。 短路、 设置`ResultExecutingContext.Cancel`为 true，请勿调用`ResultExectionDelegate`。
 
 该框架提供一个抽象`ResultFilterAttribute`可以子类化。 [AddHeaderAttribute](#add-header-attribute)类前面所示是结果筛选器特性的一个示例。
 

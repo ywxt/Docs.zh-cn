@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
 msc.type: authoredcontent
-ms.openlocfilehash: ebace10dc8a861ab38bd5c834c2225e3373f13fe
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 809609155b06c4632bd4f450082d84c432c7a46f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-the-data-access-layer"></a>创建数据访问层
 ====================
@@ -43,7 +43,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="creating-the-data-models"></a>创建数据模型
 
-[实体框架](https://msdn.microsoft.com/en-us/data/aa937723)是一种对象关系映射 (ORM) 框架。 它允许你为对象，消除大部分数据访问代码，你通常需要编写处理关系数据。 使用实体框架，你可以发出使用查询[LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx)，然后检索和处理数据作为强类型化的对象。 LINQ 提供了用于查询和更新数据的模式。 使用实体框架可以专注于创建你的应用程序的其余部分，而不是将重点放在数据访问基础知识。 稍后在本教程系列中，我们将演示如何使用数据来填充导航和产品的查询。
+[实体框架](https://msdn.microsoft.com/data/aa937723)是一种对象关系映射 (ORM) 框架。 它允许你为对象，消除大部分数据访问代码，你通常需要编写处理关系数据。 使用实体框架，你可以发出使用查询[LINQ](https://msdn.microsoft.com/library/bb397926.aspx)，然后检索和处理数据作为强类型化的对象。 LINQ 提供了用于查询和更新数据的模式。 使用实体框架可以专注于创建你的应用程序的其余部分，而不是将重点放在数据访问基础知识。 稍后在本教程系列中，我们将演示如何使用数据来填充导航和产品的查询。
 
 实体框架支持调用的开发范例*Code First*。 代码首先让你定义数据模型使用类。 类是一个构造，用于使您能够创建自己的自定义类型的其他类型、 方法和事件变量组合在一起。 你可以将类映射到现有数据库，或使用它们来生成数据库。 在本教程中，你将通过编写数据模型类来创建数据模型。 然后，你将让这些新类从动态创建数据库的实体框架。
 
@@ -181,11 +181,11 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="additional-resources"></a>其他资源
 
-[实体框架概述](https://msdn.microsoft.com/en-us/library/bb399567.aspx)   
-[ADO.NET 实体框架初学者指南](https://msdn.microsoft.com/en-us/data/ee712907)   
+[实体框架概述](https://msdn.microsoft.com/library/bb399567.aspx)   
+[ADO.NET 实体框架初学者指南](https://msdn.microsoft.com/data/ee712907)   
 [代码使用实体框架的第一个开发](http://www.msteched.com/2010/Europe/DEV212)（视频）   
-[代码第一个关系 Fluent API](https://msdn.microsoft.com/en-us/data/hh134698)   
-[Code First 数据批注](https://msdn.microsoft.com/en-us/data/gg193958)  
+[代码第一个关系 Fluent API](https://msdn.microsoft.com/data/hh134698)   
+[Code First 数据批注](https://msdn.microsoft.com/data/gg193958)  
 [用于实体框架的工作效率改进](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0)
 
 >[!div class="step-by-step"]

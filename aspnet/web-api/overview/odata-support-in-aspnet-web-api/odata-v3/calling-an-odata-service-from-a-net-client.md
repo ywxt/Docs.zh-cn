@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: f6266045ebf55fb7ae691bfb55e9c90cd4edcc96
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 497102cfa98680f2156a56ff9e36d84b7c820020
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="calling-an-odata-service-from-a-net-client-c"></a>从.NET 客户端 (C#) 调用 OData 服务
 ====================
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 
 > - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads) （适用于 Visual Studio 2012）
-> - [WCF Data Services 客户端库](https://msdn.microsoft.com/en-us/library/cc668772.aspx)
+> - [WCF Data Services 客户端库](https://msdn.microsoft.com/library/cc668772.aspx)
 > - Web API 2。 （使用 Web API 2 OData 服务的示例进行构建，但客户端应用程序不依赖于 Web API）。
 
 
@@ -118,7 +118,7 @@ ms.lasthandoff: 11/10/2017
 
 OData 定义[查询选项](../supporting-odata-query-options.md)可以用于筛选器、 排序、 页数据和等。 在服务代理中，可以通过使用各种 LINQ 表达式来应用这些选项。
 
-在此部分中，我将显示简短示例。 有关详细信息，请参阅主题[LINQ 注意事项 （WCF 数据服务）](https://msdn.microsoft.com/en-us/library/ee622463.aspx) MSDN 上。
+在此部分中，我将显示简短示例。 有关详细信息，请参阅主题[LINQ 注意事项 （WCF 数据服务）](https://msdn.microsoft.com/library/ee622463.aspx) MSDN 上。
 
 ### <a name="filtering-filter"></a>筛选 ($filter)
 
@@ -226,7 +226,7 @@ Select 子句可以包括相关的实体。 在这种情况下，不要调用**�
 
 [!code-csharp[Main](calling-an-odata-service-from-a-net-client/samples/sample24.cs)]
 
-有关详细信息，请参阅[调用服务操作和操作](https://msdn.microsoft.com/en-us/library/hh230677.aspx)。
+有关详细信息，请参阅[调用服务操作和操作](https://msdn.microsoft.com/library/hh230677.aspx)。
 
 一种方法是扩展**容器**类以提供将调用该操作的强类型化的方法：
 

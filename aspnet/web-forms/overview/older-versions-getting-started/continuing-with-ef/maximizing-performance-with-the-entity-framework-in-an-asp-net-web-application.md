@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 title: "最大程度地使用实体框架 4.0 ASP.NET 4 Web 应用程序中的性能 |Microsoft 文档"
 author: tdykstra
-description: "本教程系列上的 Contoso 大学 web 应用程序创建的 Getting Started with 实体 Framework 4.0 教程系列生成。 我..."
+description: "本教程系列上的 Contoso 大学 web 应用程序创建的 Getting Started with 实体 Framework 4.0 教程系列生成。 I..."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 9e257f5061f6bdf14ad0776ff6385fb526d6dcb1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 40a53a110115e5f6342d2a97d21b64470450fd3c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>最大程度地使用实体框架 4.0 ASP.NET 4 Web 应用程序中的性能
 ====================
@@ -251,17 +251,17 @@ Visual Studio 将生成的代码文件创建视图，这名为*SchoolModel.Views
 
 有关预生成视图的详细信息，请参阅以下资源：
 
-- [如何： 预生成视图提高查询性能](https://msdn.microsoft.com/en-us/library/bb896240.aspx)MSDN 网站上。 说明如何使用`EdmGen.exe`视图预生成的命令行工具。
+- [如何： 预生成视图提高查询性能](https://msdn.microsoft.com/library/bb896240.aspx)MSDN 网站上。 说明如何使用`EdmGen.exe`视图预生成的命令行工具。
 - [隔离与预编译/前 generated 视图实体 Framework 4 中的性能](https://blogs.msdn.com/b/appfabriccat/archive/2010/08/06/isolating-performance-with-precompiled-pre-generated-views-in-the-entity-framework-4.aspx)Windows Server AppFabric 客户咨询团队博客上。
 
 这将完成简介提高的 ASP.NET web 应用程序使用实体框架中的性能。 有关更多信息，请参见以下资源：
 
-- [性能注意事项 （实体框架）](https://msdn.microsoft.com/en-us/library/cc853327.aspx) MSDN 网站上。
+- [性能注意事项 （实体框架）](https://msdn.microsoft.com/library/cc853327.aspx) MSDN 网站上。
 - [实体框架团队博客上与性能相关的文章](https://blogs.msdn.com/b/adonet/archive/tags/performance/)。
 - [EF 合并选项和已编译的查询](https://blogs.msdn.com/b/dsimmons/archive/2010/01/12/ef-merge-options-and-compiled-queries.aspx)。 说明的已编译的查询和合并的意外的行为的博客文章选项如`NoTracking`。 如果你打算使用已编译的查询或操作应用程序中的合并选项设置，这首先阅读。
 - [数据和建模客户咨询团队博客中的实体框架相关文章](https://blogs.msdn.com/b/dmcat/archive/tags/entity+framework/)。 包括有关已编译的查询和使用 Visual Studio 2010 探查器来发现性能问题的文章。
-- [使用提升的非常复杂的查询性能的建议的实体框架论坛线程](https://social.msdn.microsoft.com/Forums/en-US/adodotnetentityframework/thread/ffe8b2ab-c5b5-4331-8988-33a872d0b5f6)。
-- [ASP.NET 状态管理建议](https://msdn.microsoft.com/en-us/library/z1hkazw7.aspx)。
+- [使用提升的非常复杂的查询性能的建议的实体框架论坛线程](https://social.msdn.microsoft.com/Forums/adodotnetentityframework/thread/ffe8b2ab-c5b5-4331-8988-33a872d0b5f6)。
+- [ASP.NET 状态管理建议](https://msdn.microsoft.com/library/z1hkazw7.aspx)。
 - [使用实体框架和 ObjectDataSource： 自定义分页](http://geekswithblogs.net/Frez/articles/using-the-entity-framework-and-the-objectdatasource-custom-paging.aspx)。 这些教程中创建的 ContosoUniversity 应用程序说明如何实现中的分页生成的博客文章*Departments.aspx*页。
 
 下一教程查看一些对 Entity Framework 版本 4 中新增的重要增强功能。

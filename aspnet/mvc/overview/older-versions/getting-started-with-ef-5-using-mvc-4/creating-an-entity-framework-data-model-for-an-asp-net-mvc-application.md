@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: c25ebf472df5dcbc664257cdf8678bfac535d846
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 223dd48bb996de527f20291e4701e7d1b60a539d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>为 ASP.NET MVC 应用程序 (第 1 个 10) 创建的实体框架数据模型
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > ## <a name="code-first"></a>Code First
 > 
-> 有三种方法可以使用的实体框架中的数据： *Database First*， *Model First*，和*Code First*。 此教程适用于第一个代码。 有关如何为你的方案选择最佳这些工作流和指南之间的差异信息，请参阅[实体框架开发工作流](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf)。
+> 有三种方法可以使用的实体框架中的数据： *Database First*， *Model First*，和*Code First*。 此教程适用于第一个代码。 有关如何为你的方案选择最佳这些工作流和指南之间的差异信息，请参阅[实体框架开发工作流](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf)。
 > 
 > ## <a name="mvc"></a>MVC
 > 
@@ -44,14 +44,14 @@ ms.lasthandoff: 11/10/2017
 > | **本教程中所示** | **也适用于** |
 > | --- | --- |
 > | Windows 8 | Windows 7 |
-> | Visual Studio 2012 | Visual Studio 的 2012 Express for Web。 这会自动安装 Windows Azure sdk，如果你还没有 VS 2012 或 VS 2012 Express for Web。 应运行 visual Studio 2013，但本教程未进行测试，并且某些菜单选项和对话框都有所不同。 [VS 2013 版本的 Windows Azure SDK](https://go.microsoft.com/fwlink/p/?linkid=323510)是 Windows Azure 部署所必需的。 |
+> | Visual Studio 2012 | Visual Studio 2012 Express for Web. 这会自动安装 Windows Azure sdk，如果你还没有 VS 2012 或 VS 2012 Express for Web。 应运行 visual Studio 2013，但本教程未进行测试，并且某些菜单选项和对话框都有所不同。 [VS 2013 版本的 Windows Azure SDK](https://go.microsoft.com/fwlink/p/?linkid=323510)是 Windows Azure 部署所必需的。 |
 > | .NET 4.5 | 大多数所示的功能将适用于.NET 4 中，但某些不会。 例如，EF 中的枚举支持需要.NET 4.5。 |
 > | 实体框架 5 |  |
 > | [Windows Azure SDK 2.1](https://go.microsoft.com/fwlink/p/?linkid=323511) | 如果你跳过 Windows Azure 部署步骤，则不需要 SDK。 当发布新版本的 SDK 后时，该链接将安装较新版本。 在这种情况下，你可能需要调整某些新 UI 和功能的说明进行操作。 |
 > 
 > ## <a name="questions"></a>问题
 > 
-> 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)、[实体框架和 LINQ to Entities 论坛](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
+> 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)、[实体框架和 LINQ to Entities 论坛](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
 > 
 > ## <a name="acknowledgments"></a>确认
 > 
@@ -74,7 +74,7 @@ ms.lasthandoff: 11/10/2017
 
 此站点的用户界面样式而保留接近什么由运行内置的任何模板，以便在本教程主要关注如何使用实体框架。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 说明和屏幕快照，在本教程假定你使用的[Visual Studio 2012](https://www.microsoft.com/visualstudio/eng/downloads)或[Visual Studio 2012 Express for Web](https://go.microsoft.com/fwlink/?LinkID=275131)、 使用最新的更新和 Azure SDK for.NET 截至 7 月，安装2013。 你可以获得所有这些都可以通过以下链接：
 
@@ -84,7 +84,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="create-an-mvc-web-application"></a>创建 MVC Web 应用程序
 
-打开 Visual Studio 并创建一个新 C# 项目名为"ContosoUniversity"使用**ASP.NET MVC 4 Web 应用程序**模板。 请确保针对**.NET Framework 4.5** (你将使用[`enum`属性](https://msdn.microsoft.com/en-us/data/hh859576.aspx)，并且需要.NET 4.5)。
+打开 Visual Studio 并创建一个新 C# 项目名为"ContosoUniversity"使用**ASP.NET MVC 4 Web 应用程序**模板。 请确保针对**.NET Framework 4.5** (你将使用[`enum`属性](https://msdn.microsoft.com/data/hh859576.aspx)，并且需要.NET 4.5)。
 
 ![New_project_dialog_box](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image3.png)
 
@@ -92,7 +92,7 @@ ms.lasthandoff: 11/10/2017
 
 保留**Razor**查看引擎选择，并使**创建单元测试项目**清除复选框。
 
-单击“确定”。
+单击 **“确定”**。
 
 ![Project_template_options](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image4.png)
 
@@ -159,7 +159,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample5.cs)]
 
-年级属性是[枚举](https://msdn.microsoft.com/en-us/data/hh859576.aspx)。 后问号`Grade`类型声明指示`Grade`属性是[可以为 null](https://msdn.microsoft.com/en-us/library/2cf62fcy.aspx)。 为 null 的等级是不同于零年级-null 意味着一个等级而言未知的或未尚未分配。
+年级属性是[枚举](https://msdn.microsoft.com/data/hh859576.aspx)。 后问号`Grade`类型声明指示`Grade`属性是[可以为 null](https://msdn.microsoft.com/library/2cf62fcy.aspx)。 为 null 的等级是不同于零年级-null 意味着一个等级而言未知的或未尚未分配。
 
 `StudentID`属性是一个外键，且相应的导航属性为`Student`。 `Enrollment`实体是与一个相关联`Student`实体，因此该属性只包含单个`Student`实体 (与不同`Student.Enrollments`导航属性前面所看到的后者可以容纳多个`Enrollment`实体)。
 
@@ -175,19 +175,19 @@ ms.lasthandoff: 11/10/2017
 
 `Enrollments`属性是导航属性。 A`Course`可以与任意数量的相关实体`Enrollment`实体。
 
-我们举例更多有关 [[DatabaseGenerated](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx)([DatabaseGeneratedOption](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.95).aspx)。无）] 特性在下一步的教程。 基本上，此属性允许您输入的过程，而不是让生成它的数据库的主键。
+我们举例更多有关 [[DatabaseGenerated](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx)([DatabaseGeneratedOption](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.95).aspx)。无）] 特性在下一步的教程。 基本上，此属性允许您输入的过程，而不是让生成它的数据库的主键。
 
 ## <a name="create-the-database-context"></a>创建的数据库上下文
 
-协调为给定的数据模型的实体框架功能的主类是*数据库上下文*类。 通过派生自创建此类[System.Data.Entity.DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=VS.103).aspx)类。 在代码中你指定数据模型中包含哪些实体。 你还可以自定义某些实体框架行为。 在此项目中类命名为`SchoolContext`。
+协调为给定的数据模型的实体框架功能的主类是*数据库上下文*类。 通过派生自创建此类[System.Data.Entity.DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx)类。 在代码中你指定数据模型中包含哪些实体。 你还可以自定义某些实体框架行为。 在此项目中类命名为`SchoolContext`。
 
 创建名为的文件夹*DAL* （适用于数据访问层）。 在该文件夹中创建名为的新类文件*SchoolContext.cs*，并将现有代码替换为以下代码：
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample7.cs)]
 
-此代码将创建[DbSet](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset(v=VS.103).aspx)每个实体集的属性。 在实体框架术语中，*实体集*通常对应于一个数据库表，和*实体*对应于表中的行。
+此代码将创建[DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=VS.103).aspx)每个实体集的属性。 在实体框架术语中，*实体集*通常对应于一个数据库表，和*实体*对应于表中的行。
 
-`modelBuilder.Conventions.Remove`中的语句[OnModelCreating](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx)的方法阻止从正在变为复数形式的表名称。 如果你未执行此操作，生成的表将被命名为`Students`， `Courses`，和`Enrollments`。 相反，则表名将为`Student`， `Course`，和`Enrollment`。 开发者对表名称是否应为复数意见不一。 本教程使用单数形式，但重要的一点是，可以选择你的首选，通过包括或忽略这行代码的任何一个窗体。
+`modelBuilder.Conventions.Remove`中的语句[OnModelCreating](https://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx)的方法阻止从正在变为复数形式的表名称。 如果你未执行此操作，生成的表将被命名为`Students`， `Courses`，和`Enrollments`。 相反，则表名将为`Student`， `Course`，和`Enrollment`。 开发者对表名称是否应为复数意见不一。 本教程使用单数形式，但重要的一点是，可以选择你的首选，通过包括或忽略这行代码的任何一个窗体。
 
 ## <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
@@ -201,15 +201,15 @@ ms.lasthandoff: 11/10/2017
 
 [!code-xml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample8.xml)]
 
-默认情况下，实体框架将查找名为相同的连接字符串`DbContext`类 (`SchoolContext`为此项目)。 你已添加的连接字符串指定一个名为的 LocalDB 数据库*ContosoUniversity.mdf*位于*应用\_数据*文件夹。 有关详细信息，请参阅[ASP.NET Web 应用程序的 SQL Server 连接字符串](https://msdn.microsoft.com/en-us/library/jj653752.aspx)。
+默认情况下，实体框架将查找名为相同的连接字符串`DbContext`类 (`SchoolContext`为此项目)。 你已添加的连接字符串指定一个名为的 LocalDB 数据库*ContosoUniversity.mdf*位于*应用\_数据*文件夹。 有关详细信息，请参阅[ASP.NET Web 应用程序的 SQL Server 连接字符串](https://msdn.microsoft.com/library/jj653752.aspx)。
 
-实际上不需要指定连接字符串。 如果你不提供的连接字符串，实体框架将为你创建一个;但是，数据库可能未采用*应用\_数据*应用程序文件夹。 有关将在其中创建数据库的信息，请参阅[到新数据库 Code First](https://msdn.microsoft.com/en-us/data/jj193542)。
+实际上不需要指定连接字符串。 如果你不提供的连接字符串，实体框架将为你创建一个;但是，数据库可能未采用*应用\_数据*应用程序文件夹。 有关将在其中创建数据库的信息，请参阅[到新数据库 Code First](https://msdn.microsoft.com/data/jj193542)。
 
 `connectionStrings`集合还具有一个名为的连接字符串`DefaultConnection`用于成员资格数据库。 将不在本教程中使用了成员资格数据库。 两个连接字符串之间的唯一区别是数据库名称和名称属性值。
 
 ## <a name="set-up-and-execute-a-code-first-migration"></a>设置和执行代码的第一次迁移
 
-当你首次开始开发应用程序时，你的数据模型更改通常情况下，和每次获取与数据库不同步的模型更改。 你可以配置实体框架可以自动除去并重新创建数据库每次更改数据模型。 这不是尽早中开发的问题，因为测试数据很轻松地重新创建，但部署到生产环境后通常需要更新数据库架构，而不删除数据库。 使用迁移功能，Code First 更新而无需删除并重新创建它的数据库。 在新项目的开发周期的初期你可能想要使用[DropCreateDatabaseIfModelChanges](https://msdn.microsoft.com/en-us/library/gg679604(v=vs.103).aspx)要删除、 重新创建重新植入到数据库每次将模型更改。 一个你准备好部署应用程序，你可以将其转换为的迁移方法。 对于本教程中，你将仅使用迁移。 有关详细信息，请参阅[Code First 迁移](https://msdn.microsoft.com/en-us/data/jj591621)和[迁移段视频系列](https://blogs.msdn.com/b/adonet/archive/2014/03/12/migrations-screencast-series.aspx)。
+当你首次开始开发应用程序时，你的数据模型更改通常情况下，和每次获取与数据库不同步的模型更改。 你可以配置实体框架可以自动除去并重新创建数据库每次更改数据模型。 这不是尽早中开发的问题，因为测试数据很轻松地重新创建，但部署到生产环境后通常需要更新数据库架构，而不删除数据库。 使用迁移功能，Code First 更新而无需删除并重新创建它的数据库。 在新项目的开发周期的初期你可能想要使用[DropCreateDatabaseIfModelChanges](https://msdn.microsoft.com/library/gg679604(v=vs.103).aspx)要删除、 重新创建重新植入到数据库每次将模型更改。 一个你准备好部署应用程序，你可以将其转换为的迁移方法。 对于本教程中，你将仅使用迁移。 有关详细信息，请参阅[Code First 迁移](https://msdn.microsoft.com/data/jj591621)和[迁移段视频系列](https://blogs.msdn.com/b/adonet/archive/2014/03/12/migrations-screencast-series.aspx)。
 
 ### <a name="enable-code-first-migrations"></a>启用 Code First 迁移
 
@@ -234,9 +234,9 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="set-up-the-seed-method"></a>设置 Seed 方法
 
-[种子](https://msdn.microsoft.com/en-us/library/hh829453(v=vs.103).aspx)方法运行 Code First 迁移创建数据库时和每次它更新到最新的迁移的数据库。 Seed 方法的目的是为了使您能够将数据插入到你的表之前应用程序将首次访问数据库。
+[种子](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx)方法运行 Code First 迁移创建数据库时和每次它更新到最新的迁移的数据库。 Seed 方法的目的是为了使您能够将数据插入到你的表之前应用程序将首次访问数据库。
 
-在早期版本的 Code First，迁移已发布之前，这是常见的`Seed`方法来插入测试数据，因为与在开发过程中的每个模型更改，数据库没有完全删除和重新创建从零开始。 使用 Code First 迁移，数据保留在数据库更改后的测试，因此包括中的测试数据[种子](https://msdn.microsoft.com/en-us/library/hh829453(v=vs.103).aspx)方法通常不是必需。 事实上，你不希望`Seed`方法插入测试数据，如果你将使用迁移来将数据库部署到生产环境，因为`Seed`方法将在生产中运行。 在这种情况下你想`Seed`方法以将你想要在生产中插入的数据插入到数据库。 例如，你可能想要包括在实际部门名称的数据库`Department`表应用程序在生产环境中可用时。
+在早期版本的 Code First，迁移已发布之前，这是常见的`Seed`方法来插入测试数据，因为与在开发过程中的每个模型更改，数据库没有完全删除和重新创建从零开始。 使用 Code First 迁移，数据保留在数据库更改后的测试，因此包括中的测试数据[种子](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx)方法通常不是必需。 事实上，你不希望`Seed`方法插入测试数据，如果你将使用迁移来将数据库部署到生产环境，因为`Seed`方法将在生产中运行。 在这种情况下你想`Seed`方法以将你想要在生产中插入的数据插入到数据库。 例如，你可能想要包括在实际部门名称的数据库`Department`表应用程序在生产环境中可用时。
 
 对于本教程，你将在使用迁移部署，但你`Seed`方法将是否仍要插入测试数据，以更加轻松地查看应用程序功能而无需手动插入大量数据的工作原理。
 
@@ -244,11 +244,11 @@ ms.lasthandoff: 11/10/2017
 
     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample11.cs)]
 
-    [种子](https://msdn.microsoft.com/en-us/library/hh829453(v=vs.103).aspx)方法采用数据库上下文对象作为输入参数，并方法中的代码使用该对象将新实体添加到数据库。 对于每个实体类型的代码将创建新的实体的集合，将它们添加到相应[DbSet](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset(v=vs.103).aspx)属性，然后将保存到数据库的更改。 无需调用[SaveChanges](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx)后的实体的每个组的方法，按上文所述，但执行该操作可帮助你找到问题的源，如果代码写入数据库时发生异常。
+    [种子](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx)方法采用数据库上下文对象作为输入参数，并方法中的代码使用该对象将新实体添加到数据库。 对于每个实体类型的代码将创建新的实体的集合，将它们添加到相应[DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=vs.103).aspx)属性，然后将保存到数据库的更改。 无需调用[SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx)后的实体的每个组的方法，按上文所述，但执行该操作可帮助你找到问题的源，如果代码写入数据库时发生异常。
 
-    一些插入数据的语句使用[AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)方法来执行"upsert"操作。 因为`Seed`方法运行与每个迁移时，不能只是插入数据，因为你尝试添加的行已将存在后创建数据库的初始迁移。 "Upsert"操作可以防止如果你尝试插入的行已存在，但它会发生的错误***重写***对测试应用程序时可能已做的数据的任何更改。 使用某些表中的测试数据您可能不希望这种情况： 在某些情况下在测试期间更改数据时所需更改后数据库更新保留。 在这种情况下要执行条件的插入操作： 仅当它尚不存在插入行。 Seed 方法使用这两种方法。
+    一些插入数据的语句使用[AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)方法来执行"upsert"操作。 因为`Seed`方法运行与每个迁移时，不能只是插入数据，因为你尝试添加的行已将存在后创建数据库的初始迁移。 "Upsert"操作可以防止如果你尝试插入的行已存在，但它会发生的错误***重写***对测试应用程序时可能已做的数据的任何更改。 使用某些表中的测试数据您可能不希望这种情况： 在某些情况下在测试期间更改数据时所需更改后数据库更新保留。 在这种情况下要执行条件的插入操作： 仅当它尚不存在插入行。 Seed 方法使用这两种方法。
 
-    第一个参数传递给[AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)方法指定要用于检查行是否已存在的属性。 你要提供，测试学生数据`LastName`属性可以用于此目的，因为每个列表中的最后一个名称是唯一的：
+    第一个参数传递给[AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)方法指定要用于检查行是否已存在的属性。 你要提供，测试学生数据`LastName`属性可以用于此目的，因为每个列表中的最后一个名称是唯一的：
 
     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample12.cs)]
 
@@ -258,7 +258,7 @@ ms.lasthandoff: 11/10/2017
 
     有关详细信息`AddOrUpdate`方法，请参阅[负责使用 EF 4.3 AddOrUpdate 方法](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)Julie Lerman 博客上。
 
-    添加的代码`Enrollment`实体不使用`AddOrUpdate`方法。 它会检查实体是否已存在，以及插入该实体，如果它不存在。 此方法将保留在迁移运行时，注册年级所做的更改。 此代码循环访问的每个成员`Enrollment`[列表](https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx)和如果数据库中未找到注册，它将注册添加到数据库。 第一次更新数据库，数据库将为空，，因此它会将添加每个注册。
+    添加的代码`Enrollment`实体不使用`AddOrUpdate`方法。 它会检查实体是否已存在，以及插入该实体，如果它不存在。 此方法将保留在迁移运行时，注册年级所做的更改。 此代码循环访问的每个成员`Enrollment`[列表](https://msdn.microsoft.com/library/6sh2ey19.aspx)和如果数据库中未找到注册，它将注册添加到数据库。 第一次更新数据库，数据库将为空，，因此它会将添加每个注册。
 
     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample13.cs)]
 
@@ -343,7 +343,7 @@ ms.lasthandoff: 11/10/2017
 - 实体属性名称用于列名称。
 - 命名的实体属性`ID`或*classname* `ID`被识别为主键属性。
 
-你已了解可以约定中重写 （例如，你指定不应表名变为复数形式），你将了解有关约定以及如何重写在[创建多个复杂的数据模型](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)教程稍后在此系列。 有关详细信息，请参阅[代码第一个约定](https://msdn.microsoft.com/en-us/data/jj679962)。
+你已了解可以约定中重写 （例如，你指定不应表名变为复数形式），你将了解有关约定以及如何重写在[创建多个复杂的数据模型](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)教程稍后在此系列。 有关详细信息，请参阅[代码第一个约定](https://msdn.microsoft.com/data/jj679962)。
 
 ## <a name="summary"></a>摘要
 

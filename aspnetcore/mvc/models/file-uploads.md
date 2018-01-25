@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/file-uploads
-ms.openlocfilehash: 3c5abe84a5c7cc399e0586e680a414fab7a26c1d
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: bc1cfe0d6ee88a0af49cdff9ce77ad42f57b95f7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="file-uploads-in-aspnet-core"></a>在 ASP.NET 核心中的文件上载
 
@@ -134,7 +134,7 @@ public async Task<IActionResult> Register(RegisterViewModel model)
 如果大小或文件上载频率导致应用程序的资源问题，请考虑流式处理文件上载，而不是在其整个中进行缓冲，如上所示的模型绑定方法一样。 在使用`IFormFile`和模型绑定正在更简单的解决方案，流式处理需要大量的步骤，若要正确实现。
 
 > [!NOTE]
-> 任何超过 64 KB 的单个缓冲的文件将从移动 RAM 到磁盘上的临时文件服务器上。 使用文件上载的资源 （磁盘，RAM） 依赖于的数量和大小的并发文件上载。 流式处理不是如此之多关于性能，它是有关伸缩。 如果你尝试在缓冲区过多上载，你的站点时将崩溃时内存或磁盘空间不足。
+> 任何超过 64 KB 的单个缓冲的文件将从移动 RAM 到磁盘上的临时文件服务器上。 使用文件上载的资源 （磁盘，RAM） 依赖于的数量和大小的并发文件上载。 流式处理不如此之多关于性能，它是有关伸缩。 如果你尝试在缓冲区过多上载，你的站点时将崩溃时内存或磁盘空间不足。
 
 下面的示例演示如何使用 JavaScript/角流式处理到的控制器操作。 使用自定义的筛选器属性，而不是在请求正文中的 HTTP 标头中传递，将生成文件的 antiforgery 令牌。 由于操作方法直接处理上载的数据，模型绑定被禁用的另一个筛选器。 在操作内，使用读取窗体的内容`MultipartReader`，读取每个单独`MultipartSection`、 处理文件，或根据需要存储内容。 已读取所有部分，该操作执行其自己的模型绑定。
 
@@ -199,4 +199,4 @@ The request filtering module is configured to deny a request that exceeds the re
 
 ### <a name="null-reference-exception-with-iformfile"></a>与 IFormFile null 引用异常
 
-如果你的控制器是接受上载的文件使用`IFormFile`但您查找的值始终为 null，请确认你的 HTML 窗体指定`enctype`值`multipart/form-data`。 如果不设置此属性`<form>`元素，不会出现文件上载和任何绑定`IFormFile`自变量将为 null。
+如果你的控制器是接受上载的文件使用`IFormFile`但您查找的值始终为 null，请确认你的 HTML 窗体指定`enctype`值`multipart/form-data`。 如果未设置此属性`<form>`元素，就不会发生文件上载和任何绑定`IFormFile`自变量将为 null。

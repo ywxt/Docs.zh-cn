@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/what-is-new-in-aspnet-mvc
 msc.type: content
-ms.openlocfilehash: e7f92dd7a09d1986ad775203effcbce76fb0e6f4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 29692b380f0ad1673459681042610876d152a76f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-aspnet-mvc-2"></a>什么是 ASP.NET MVC 2 中的新增功能
 ====================
@@ -42,7 +42,7 @@ ms.lasthandoff: 11/10/2017
 [Html.ValidationSummary 帮助器方法可以显示模型级别错误](#_TOC3_14)   
 [在 Visual Studio 生成的代码是特定的 T4 模板到.NET framework 目标版本](#_TOC3_15)[API 改进](#_TOC4)  
 [重大更改](#_TOC5)  
-[免责声明](#_TOC6)  
+[Disclaimer](#_TOC6)  
 
 ## <a id="_TOC1"></a>简介
 
@@ -88,7 +88,7 @@ ASP.NET MVC 2 的默认项目模板包括对 RegisterAllAreas 方法的调用中
 
 ### <a id="_TOC3_3"></a>对异步控制器的支持
 
-ASP.NET MVC 2 现在允许控制器以进行异步处理请求。 这可以允许频繁调用阻止操作 （例如网络请求） 以改为调用非阻塞对应的服务器，从而导致性能提升。 有关详细信息，请参阅[在 ASP.NET MVC 中使用异步控制器](https://msdn.microsoft.com/en-us/library/ee728598(v=VS.100).aspx)MSDN 上的主题。
+ASP.NET MVC 2 现在允许控制器以进行异步处理请求。 这可以允许频繁调用阻止操作 （例如网络请求） 以改为调用非阻塞对应的服务器，从而导致性能提升。 有关详细信息，请参阅[在 ASP.NET MVC 中使用异步控制器](https://msdn.microsoft.com/library/ee728598(v=VS.100).aspx)MSDN 上的主题。
 
 ### <a id="_TOC3_4"></a>DefaultValueAttribute 操作方法参数中的支持
 
@@ -104,7 +104,7 @@ System.ComponentModel.DefaultValueAttribute 类允许为操作方法的自变量
 
 - / 文章/视图/123
 - / 文章/视图/123？ 页 = 1 （有效地与相同以前的请求）
-- / 文章/视图/123？ 页 = 2
+- /Article/View/123?page=2
 
 DefaultValueAttribute 属性中，从前面的列表的第一个 URL 就将无法工作，因为页自变量是不可为 null 的值类型未提供其值。
 
@@ -142,7 +142,7 @@ ModelMetadataProvider 类提供了获取的视图中的模型的元数据的抽�
 
 ViewDataDictionary 该类会公开一个包含由 ModelMetadataProvider 类从模型中提取的元数据的 ModelMetadata 对象。 这样的模板化帮助器来使用此元数据和相应地调整其输出。
 
-有关详细信息，请参阅的文档[ModelMetadata](https://msdn.microsoft.com/en-us/library/system.web.mvc.modelmetadataprovider(VS.100).aspx)和[ModelMetadataProvider](https://msdn.microsoft.com/en-us/library/system.web.mvc.modelmetadataprovider(VS.100).aspx)类。
+有关详细信息，请参阅的文档[ModelMetadata](https://msdn.microsoft.com/library/system.web.mvc.modelmetadataprovider(VS.100).aspx)和[ModelMetadataProvider](https://msdn.microsoft.com/library/system.web.mvc.modelmetadataprovider(VS.100).aspx)类。
 
 ### <a id="_TOC3_7"></a>对 DataAnnotations 特性的支持
 
@@ -152,7 +152,7 @@ ASP.NET MVC 2 支持使用 RangeAttribute、 RequiredAttribute、 StringLengthAt
 
 ### <a id="_TOC3_8"></a>模型验证程序提供程序
 
-模型验证提供程序类表示模型中提供验证逻辑的抽象。 ASP.NET MVC 包括默认提供程序基于 System.ComponentModel.DataAnnotations 命名空间中包含的验证属性。 你还可以创建自己的验证提供程序到模型中定义自定义验证规则和自定义映射的验证规则。 有关详细信息，请参阅的文档[ModelValidatorProvider](https://msdn.microsoft.com/en-us/library/system.web.mvc.ModelValidatorProvider(VS.100).aspx)类。
+模型验证提供程序类表示模型中提供验证逻辑的抽象。 ASP.NET MVC 包括默认提供程序基于 System.ComponentModel.DataAnnotations 命名空间中包含的验证属性。 你还可以创建自己的验证提供程序到模型中定义自定义验证规则和自定义映射的验证规则。 有关详细信息，请参阅的文档[ModelValidatorProvider](https://msdn.microsoft.com/library/system.web.mvc.ModelValidatorProvider(VS.100).aspx)类。
 
 ### <a id="_TOC3_9"></a>客户端验证
 
@@ -289,7 +289,7 @@ MVC 视图引擎的呈现行为发生变化，由于 Html.Substitute 帮助器�
 如果你使用的区域功能，请确保不使用 {区} 作为路由 URL 的一部分。
 
 
-## <a id="_TOC6"></a>免责声明
+## <a id="_TOC6"></a>  Disclaimer
 
 这是一份初稿，并可能在本文所述软件最终商业发布之前进行大幅更改。
 
@@ -303,7 +303,7 @@ MVC 视图引擎的呈现行为发生变化，由于 Html.Substitute 帮助器�
 
 除非另有声明，否则此处描述的示例公司、组织、产品、域名、电子邮件地址、徽标、人物、地点和事件都是虚构的，无意与任何真实的公司、组织、产品、域名、电子邮件地址、徽标、人物、地点或事件相关联，也不应进行这方面的推断。
 
-© 2010 Microsoft Corporation。 保留所有权利。
+© 2010 Microsoft Corporation. 保留所有权利。
 
 Microsoft 和 Windows 是 Microsoft Corporation 在美国和/或其他国家/地区的注册商标或商标。
 

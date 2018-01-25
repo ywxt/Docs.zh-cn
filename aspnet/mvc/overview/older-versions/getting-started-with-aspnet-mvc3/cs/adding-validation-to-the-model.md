@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: a1d6a6468a39f31c3af8779abbbced093288773c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6bce4a5d889f548cb1faec15842310703d7077b8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-validation-to-the-model-c"></a>将验证添加到模型 (C#)
 ====================
@@ -51,13 +51,13 @@ ASP.NET MVC 的核心设计原则之一是模拟 （"不重复自己"）。 ASP.
 
 将通过添加到某些验证逻辑开始`Movie`类。
 
-打开 Movie.cs 文件。 添加`using`语句引用的文件的顶部[ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx)命名空间：
+打开 Movie.cs 文件。 添加`using`语句引用的文件的顶部[ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)命名空间：
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample1.cs)]
 
 命名空间是.NET Framework 的一部分。 它提供了可以以声明方式应用于任何类或属性的验证属性内置组。
 
-现在更新`Movie`类以利用内置[ `Required` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx)， [ `StringLength` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)，和[ `Range` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.rangeattribute.aspx)验证特性. 使用以下代码作为示例，了解将特性应用的位置。
+现在更新`Movie`类以利用内置[ `Required` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx)， [ `StringLength` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)，和[ `Range` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx)验证特性. 使用以下代码作为示例，了解将特性应用的位置。
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample2.cs)]
 
@@ -105,11 +105,11 @@ ASP.NET MVC 的核心设计原则之一是模拟 （"不重复自己"）。 ASP.
 
 ## <a name="adding-formatting-to-the-movie-model"></a>添加到影片模型格式设置
 
-打开 Movie.cs 文件。 [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx)命名空间提供内置集以及验证特性的格式设置属性。 将应用[ `DisplayFormat` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx)属性和[ `DataType` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx)枚举值到发布日期和价格字段。 下面的代码演示`ReleaseDate`和`Price`使用相应的属性[ `DisplayFormat` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx)属性。
+打开 Movie.cs 文件。 [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)命名空间提供内置集以及验证特性的格式设置属性。 将应用[ `DisplayFormat` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx)属性和[ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)枚举值到发布日期和价格字段。 下面的代码演示`ReleaseDate`和`Price`使用相应的属性[ `DisplayFormat` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx)属性。
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample7.cs)]
 
-或者，你可以显式设置[ `DataFormatString` ](https://msdn.microsoft.com/en-us/library/system.string.format.aspx)值。 下面的代码演示具有日期格式字符串的发行日期属性 (也就是说，"d")。 将使用此参数来指定你不想为时间作为发布日期的一部分。
+或者，你可以显式设置[ `DataFormatString` ](https://msdn.microsoft.com/library/system.string.format.aspx)值。 下面的代码演示具有日期格式字符串的发行日期属性 (也就是说，"d")。 将使用此参数来指定你不想为时间作为发布日期的一部分。
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample8.cs)]
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cors
-ms.openlocfilehash: e6b49b9dde94cc7d035ea91b992a13df8cb8caf2
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9f53ce11f1659aa3416fe4fbb94183c64ab0dab5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>启用跨源请求 (CORS)
 
@@ -78,7 +78,7 @@ Lambda 采用`CorsPolicyBuilder`对象。 你将找到一份[配置选项](#cors
 
 ## <a name="enabling-cors-in-mvc"></a>在 MVC 启用 CORS
 
-MVC 或者可用于应用每个操作，每个控制器，或全局范围内的所有控制器的特定 CORS。 使用 MVC 若要启用 CORS 时使用相同的 CORS 服务，但不是 CORS 中间件。
+MVC 或者可用于应用每个操作，每个控制器，或全局范围内的所有控制器的特定 CORS。 使用 MVC 若要启用 CORS 时使用相同的 CORS 服务，但 CORS 中间件不。
 
 ### <a name="per-action"></a>每个操作
 
@@ -160,7 +160,7 @@ CORS 预检请求可能包括一个访问控制的请求标头标头，列出由
 
 ### <a name="set-the-exposed-response-headers"></a>设置公开的响应标头
 
-默认情况下，浏览器不公开所有向应用程序的响应标头。 (请参阅[http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header)。)默认为可用的响应标头是：
+默认情况下，浏览器不会公开所有向应用程序的响应标头。 (请参阅[http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header)。)默认为可用的响应标头是：
 
 * Cache-Control
 
@@ -180,7 +180,7 @@ CORS 规范调用这些*简单响应标头*。 若要使应用程序的其他标
 
 ### <a name="credentials-in-cross-origin-requests"></a>在跨域请求中的凭据
 
-凭据需要 CORS 请求中的特殊处理。 默认情况下，浏览器不发送任何凭据与跨域请求。 凭据包括 cookie 和 HTTP 身份验证方案。 若要发送的跨域请求的凭据，客户端必须设置为 true 的 XMLHttpRequest.withCredentials。
+凭据需要 CORS 请求中的特殊处理。 默认情况下，浏览器不会发送与跨域请求的任何凭据。 凭据包括 cookie 和 HTTP 身份验证方案。 若要发送的跨域请求的凭据，客户端必须设置为 true 的 XMLHttpRequest.withCredentials。
 
 直接使用 XMLHttpRequest:
 
@@ -207,7 +207,7 @@ $.ajax({
 
 现在 HTTP 响应将包括一个访问控制的允许的凭据标头，它指示浏览器服务器允许跨域请求凭据。
 
-如果浏览器发送凭据，但响应不包含有效的访问控制的允许的凭证标头，浏览器并不会对应用程序的响应，并且 AJAX 请求失败。
+如果浏览器发送凭据，但响应不包含有效的访问控制的允许的凭证标头，浏览器不会公开的响应应用程序，并且 AJAX 请求失败。
 
 因为这意味着在另一个域网站可以不在用户不知情的情况下向用户的代表应用程序发送登录的用户的凭据，则要非常谨慎允许跨域凭据。 CORS 规范还状态到该设置来源"*"（所有来源） 无效的访问控制的允许的凭证标头是否存在。
 
@@ -252,7 +252,7 @@ Content-Length: 12
 Test message
 ```
 
-如果响应不包含访问控制的允许的域标头，AJAX 请求失败。 具体而言，浏览器不允许该请求。 即使服务器将返回成功的响应，浏览器不进行响应可供客户端应用程序。
+如果响应不包含访问控制的允许的域标头，AJAX 请求失败。 具体而言，浏览器不允许该请求。 即使服务器将返回成功的响应，浏览器不会响应可供客户端应用程序。
 
 ### <a name="preflight-requests"></a>预检请求
 
@@ -260,7 +260,7 @@ Test message
 
 * 请求方法是 GET、 HEAD 或 POST、 和
 
-* 应用程序不会设置以外，接受语言内容 Accept-language、 任何请求标头内容类型或最后一个事件 ID 和
+* 应用程序不设置任何请求标头以外，接受语言内容 Accept-language、 内容类型或最后一个事件 ID 和
 
 * 内容类型标头 (如果设置) 是以下之一：
 
@@ -270,7 +270,7 @@ Test message
 
   * 文本/无格式
 
-有关请求标头规则适用于应用程序通过 XMLHttpRequest 对象上调用 setRequestHeader 将设置的标头。 （CORS 规范调用这些"作者请求标头"。）此规则不适用于浏览器可以设置，如用户代理、 主机或内容-长度标头。
+有关请求标头规则适用于应用程序通过 XMLHttpRequest 对象上调用 setRequestHeader 将设置的标头。 （CORS 规范调用这些"作者请求标头"。）该规则不适用于浏览器可以设置，如用户代理、 主机或内容-长度标头。
 
 下面是预检请求的示例：
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 99d6b98bb7efa2f63e0c19b8623fd42ed92bdbaf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e7552abb30aa26d3aaceb3312c00661c6d4d6cf8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-vb"></a>插入、 更新和删除数据 (VB) 的概述
 ====================
@@ -140,7 +140,7 @@ ms.lasthandoff: 11/10/2017
 
 ObjectDataSource 包含一个参数为每个输入参数的关联方法，就像一份`SelectParameter`s 时的存在时配置 ObjectDataSource 调用要求输入的参数的选择方法 (如`GetProductsByCategoryID(categoryID)`). 正如我们将很快，看到这些值`DeleteParameters`， `UpdateParameters`，和`InsertParameters`自动和设置的 GridView，说明如何，FormView 之前调用 ObjectDataSource `Insert()`， `Update()`，或`Delete()`方法。 这些值在为在将来的教程，我们将讨论还可以根据需要以编程方式设置。
 
-使用向导将配置为对象数据源的一个副作用是 Visual Studio 将设置[OldValuesParameterFormatString 属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.oldvaluesparameterformatstring(VS.80).aspx)到`original_{0}`。 此属性的值可用于包括正在编辑的数据的原始值，并在两种方案中非常有用：
+使用向导将配置为对象数据源的一个副作用是 Visual Studio 将设置[OldValuesParameterFormatString 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.oldvaluesparameterformatstring(VS.80).aspx)到`original_{0}`。 此属性的值可用于包括正在编辑的数据的原始值，并在两种方案中非常有用：
 
 - 如果在编辑记录时，用户就能够更改的主键值。 在这种情况下，新的主键值和原始的主键值必须提供，以便原始主键值的记录可以找到并将相应地更新其值。
 - 当使用开放式并发。 乐观并发是一种技术，以确保两个同时进行的用户不会覆盖彼此的所做更改，并且是将来的教程主题。
@@ -168,8 +168,8 @@ ObjectDataSource 包含一个参数为每个输入参数的关联方法，就像
 
 绑定到通过其智能标记 ObjectDataSource 的 GridView 有两个好处：
 
-- 自动为每个对象数据源返回的字段创建 BoundFields 和 CheckBoxFields。 此外，BoundField 和 CheckBoxField 的属性是根据设置的基础字段元数据。 例如， `ProductID`， `CategoryName`，和`SupplierName`字段都标记为只读中`ProductsDataTable`，因此不应是可更新在编辑时。 若要容纳此，则这些 BoundFields [ReadOnly 属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.boundfield.readonly(VS.80).aspx)设置为`True`。
-- [将字段名](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.datakeynames(VS.80).aspx)分配给基础对象的主键字段。 这是必不可少的时使用 GridView 进行编辑或删除数据，此属性指示的字段 （或集的字段），它唯一标识每个记录。 有关详细信息`DataKeyNames`属性，回头参考[母版/详细介绍使用详细信息 DetailView 可选择的主 GridView](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md)教程。
+- 自动为每个对象数据源返回的字段创建 BoundFields 和 CheckBoxFields。 此外，BoundField 和 CheckBoxField 的属性是根据设置的基础字段元数据。 例如， `ProductID`， `CategoryName`，和`SupplierName`字段都标记为只读中`ProductsDataTable`，因此不应是可更新在编辑时。 若要容纳此，则这些 BoundFields [ReadOnly 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.readonly(VS.80).aspx)设置为`True`。
+- [将字段名](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.datakeynames(VS.80).aspx)分配给基础对象的主键字段。 这是必不可少的时使用 GridView 进行编辑或删除数据，此属性指示的字段 （或集的字段），它唯一标识每个记录。 有关详细信息`DataKeyNames`属性，回头参考[母版/详细介绍使用详细信息 DetailView 可选择的主 GridView](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md)教程。
 
 虽然 GridView 可以绑定到通过属性窗口或声明性语法，ObjectDataSource，执行此操作需要你手动添加相应的 BoundField 和`DataKeyNames`标记。
 
@@ -327,7 +327,7 @@ CommandField 包含大量`ShowXButton`指示哪些系列按钮显示 CommandFiel
 
 单击删除按钮启动与 GridView 相同的事件序列： 的回发，则跟填充其 ObjectDataSource 说明`DeleteParameters`基于`DataKeyNames`值; 并已完成，但调用其 ObjectDataSource`Delete()`方法，实际上从数据库中删除产品。 说明如何在编辑还在以与 GridView 相同的方式工作。
 
-用于插入，最终用户会看到其中新建按钮，单击时，呈现在"插入模式。 说明 "插入模式"与新建按钮替换为 Insert 和取消按钮和仅这些 BoundFields 其`InsertVisible`属性设置为`True`（默认值） 显示。 如标识为自动递增字段，这些数据字段`ProductID`，具有其[InsertVisible 属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datacontrolfield.insertvisible(VS.80).aspx)设置为`False`时将说明如何绑定到数据源通过智能标记。
+用于插入，最终用户会看到其中新建按钮，单击时，呈现在"插入模式。 说明 "插入模式"与新建按钮替换为 Insert 和取消按钮和仅这些 BoundFields 其`InsertVisible`属性设置为`True`（默认值） 显示。 如标识为自动递增字段，这些数据字段`ProductID`，具有其[InsertVisible 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datacontrolfield.insertvisible(VS.80).aspx)设置为`False`时将说明如何绑定到数据源通过智能标记。
 
 Visual Studio 时将数据源绑定到说明如何通过智能标记，将设置`InsertVisible`属性`False`仅用于自动递增字段。 只读字段，如`CategoryName`和`SupplierName`，除非将在"插入模式"用户界面中显示其`InsertVisible`属性显式设置为`False`。 花些时间设置这两个字段的`InsertVisible`属性设置为`False`，通过说明的声明性语法，或者通过编辑字段中的智能标记链接。 图 19 显示设置`InsertVisible`属性设置为`False`编辑字段上单击链接。
 
@@ -354,7 +354,7 @@ Visual Studio 时将数据源绑定到说明如何通过智能标记，将设置
 
 
 > [!NOTE]
-> 说明如何的[CurrentMode 属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.currentmode(VS.80).aspx)表示正在显示的界面，可以是以下值之一： `Edit`， `Insert`，或`ReadOnly`。 [DefaultMode 属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.defaultmode(VS.80).aspx)指示的模式说明如何在编辑后返回到或插入已完成并且对显示说明的永久处于编辑模式或插入模式很有用。
+> 说明如何的[CurrentMode 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.currentmode(VS.80).aspx)表示正在显示的界面，可以是以下值之一： `Edit`， `Insert`，或`ReadOnly`。 [DefaultMode 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.defaultmode(VS.80).aspx)指示的模式说明如何在编辑后返回到或插入已完成并且对显示说明的永久处于编辑模式或插入模式很有用。
 
 
 该点并单击插入和编辑功能的说明会受到与 GridView 相同的限制： 用户必须输入现有`CategoryID`和`SupplierID`通过文本框中的值; 接口缺少任何验证逻辑; 它的所有不允许的产品字段`NULL`值或不具有默认值在数据库级别指定的值必须包括在插入的接口，依次类推。

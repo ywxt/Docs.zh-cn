@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 86ec6454313f5a6e78c0f64433ef4e5a4f8461ee
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6e09951be5483ed098b8cab6517335f9962a5d95
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="master-pages-and-aspnet-ajax-c"></a>主控页和 ASP.NET AJAX (C#)
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 
 过去的几年里，越来越多的开发人员构建了一种[AJAX](http://en.wikipedia.org/wiki/Ajax_(programming))-已启用 web 应用程序。 启用了 AJAX 的网站使用大量的相关的 web 技术提供更快地响应的用户体验。 创建启用了 AJAX 的 ASP.NET 应用程序是向 Microsoft 的功能极为轻松谢谢[ASP.NET AJAX 框架](../../../../ajax/index.md)。 ASP.NET AJAX 内置到 ASP.NET 3.5 和 Visual Studio 2008;它也会作为单独的下载 ASP.NET 2.0 应用程序提供。
 
-在生成时启用了 AJAX 的网页添加与 ASP.NET AJAX 框架，则必须添加一个精确[ScriptManager 控件](https://msdn.microsoft.com/en-us/library/bb398863.aspx)到使用框架的每个页。 顾名思义，ScriptManager 管理启用了 AJAX 的网页中使用的客户端脚本。 至少，ScriptManager 发出 HTML，指示浏览器下载该构成 ASP.NET AJAX 客户端库的 JavaScript 文件。 此外可以用于注册自定义 JavaScript 文件、 脚本启用 web 服务和自定义应用程序服务功能。
+在生成时启用了 AJAX 的网页添加与 ASP.NET AJAX 框架，则必须添加一个精确[ScriptManager 控件](https://msdn.microsoft.com/library/bb398863.aspx)到使用框架的每个页。 顾名思义，ScriptManager 管理启用了 AJAX 的网页中使用的客户端脚本。 至少，ScriptManager 发出 HTML，指示浏览器下载该构成 ASP.NET AJAX 客户端库的 JavaScript 文件。 此外可以用于注册自定义 JavaScript 文件、 脚本启用 web 服务和自定义应用程序服务功能。
 
 如果你的站点使用主页面 （如应），则不一定需要 ScriptManager 控件添加到每个内容单页;相反，你可以将 ScriptManager 控件添加到母版页。 本教程演示如何将 ScriptManager 控件添加到母版页。 它还讨论如何使用 ScriptManagerProxy 控制在特定的内容页中注册自定义脚本和脚本服务。
 
@@ -117,7 +117,7 @@ ScriptManager 控件便会发出该构成 ASP.NET AJAX 客户端库会指示浏�
 
 [!code-sql[Main](master-pages-and-asp-net-ajax-cs/samples/sample3.sql)]
 
-`TOP 1`中的关键字`SELECT`子句将返回仅由查询返回的第一条记录。 [ `NEWID()`函数](https://msdn.microsoft.com/en-us/library/ms190348.aspx)生成一个新[全局唯一标识符值 (GUID)](http://en.wikipedia.org/wiki/Globally_Unique_Identifier)并可以使用`ORDER BY`子句按随机顺序返回表的记录。
+`TOP 1`中的关键字`SELECT`子句将返回仅由查询返回的第一条记录。 [ `NEWID()`函数](https://msdn.microsoft.com/library/ms190348.aspx)生成一个新[全局唯一标识符值 (GUID)](http://en.wikipedia.org/wiki/Globally_Unique_Identifier)并可以使用`ORDER BY`子句按随机顺序返回表的记录。
 
 
 [![配置 SqlDataSource 以返回单个、 随机选择记录](master-pages-and-asp-net-ajax-cs/_static/image11.png)](master-pages-and-asp-net-ajax-cs/_static/image10.png)

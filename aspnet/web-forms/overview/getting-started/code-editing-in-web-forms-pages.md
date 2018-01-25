@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/code-editing-in-web-forms-pages
 msc.type: authoredcontent
-ms.openlocfilehash: dfcddb4373fbf17ca29c5ab94c6ab3387ed6b526
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8714f673cb0434189ca23d2dda14035d8652a051
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a>在 Visual Studio 2013 中的代码编辑 ASP.NET Web 窗体
 ====================
@@ -33,12 +33,12 @@ ms.lasthandoff: 11/10/2017
 - 重命名的变量和对象。
 - 插入代码段。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 
 若要完成本演练，你将需要：
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs)或[Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web)。 自动安装.NET Framework。 
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs)或[Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/downloads#express-web)。 自动安装.NET Framework。 
 
     > [!NOTE] 
     > 
@@ -132,8 +132,8 @@ Visual Studio 中的代码编辑器可帮助你避免错误，因为你编写代
 ### <a name="to-extract-a-method-in-a-c-page"></a>若要提取的 C# 页中的方法
 
 1. 切换到**设计**视图。
-2. 在**工具箱**，从**标准**选项卡上，拖动[按钮](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.button.aspx)拖到页面上的控件。
-3. 双击**按钮**控件创建的处理程序其[单击](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.button.click.aspx)事件，然后添加以下突出显示的代码：
+2. 在**工具箱**，从**标准**选项卡上，拖动[按钮](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)拖到页面上的控件。
+3. 双击**按钮**控件创建的处理程序其[单击](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx)事件，然后添加以下突出显示的代码：
 
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample2.cs?highlight=3-16)]
 
@@ -185,13 +185,13 @@ Visual Studio 中的代码编辑器可帮助你避免错误，因为你编写代
 
 由于有很多 Web 窗体开发人员经常需要执行的编码任务，该代码编辑器还提供代码段或预编写的代码块的库。 你可以将这些代码段插入你的页面。
 
-使用 Visual Studio 中的每种语言有中插入代码段的方式的细微差异。 有关插入代码段的信息，请参阅[Visual Basic IntelliSense 代码段](https://msdn.microsoft.com/en-us/library/18yz4be4.aspx)。 有关插入代码段 Visual C# 中的信息，请参阅[Visual C# 代码片段](https://msdn.microsoft.com/en-us/library/z41h7fat.aspx)。
+使用 Visual Studio 中的每种语言有中插入代码段的方式的细微差异。 有关插入代码段的信息，请参阅[Visual Basic IntelliSense 代码段](https://msdn.microsoft.com/library/18yz4be4.aspx)。 有关插入代码段 Visual C# 中的信息，请参阅[Visual C# 代码片段](https://msdn.microsoft.com/library/z41h7fat.aspx)。
 
 ## <a name="next-steps"></a>后续步骤
 
 本演练为更正你的代码中的错误、 代码重构、 重命名变量，和将代码段插入到你的代码演示了 Visual Studio 2010 代码编辑器的基本功能。 在编辑器中的其他功能可以使快速而简单的应用程序开发。 例如，你可能希望：
 
-- 了解有关 IntelliSense，如修改 IntelliSense 选项，管理代码段，以及搜索联机代码段的功能的详细信息。 有关详细信息，请参阅[使用 IntelliSense](https://msdn.microsoft.com/en-us/library/hcw1s69b.aspx)。
-- 了解如何创建你自己的代码段。 有关详细信息，请参阅[创建和使用 IntelliSense 代码段](https://msdn.microsoft.com/en-us/library/ms165392.aspx)
-- 了解有关 IntelliSense 代码段，如自定义代码段和故障排除的 Visual Basic 特定功能的详细信息。 有关详细信息，请参阅[Visual Basic IntelliSense 代码段](https://msdn.microsoft.com/en-us/library/18yz4be4.aspx)
-- 了解有关 C# 的特定功能的 IntelliSense，例如重构和代码片段。 有关详细信息，请参阅[Visual C# IntelliSense](https://msdn.microsoft.com/en-us/library/43f44291.aspx)。
+- 了解有关 IntelliSense，如修改 IntelliSense 选项，管理代码段，以及搜索联机代码段的功能的详细信息。 有关详细信息，请参阅[使用 IntelliSense](https://msdn.microsoft.com/library/hcw1s69b.aspx)。
+- 了解如何创建你自己的代码段。 有关详细信息，请参阅[创建和使用 IntelliSense 代码段](https://msdn.microsoft.com/library/ms165392.aspx)
+- 了解有关 IntelliSense 代码段，如自定义代码段和故障排除的 Visual Basic 特定功能的详细信息。 有关详细信息，请参阅[Visual Basic IntelliSense 代码段](https://msdn.microsoft.com/library/18yz4be4.aspx)
+- 了解有关 C# 的特定功能的 IntelliSense，例如重构和代码片段。 有关详细信息，请参阅[Visual C# IntelliSense](https://msdn.microsoft.com/library/43f44291.aspx)。

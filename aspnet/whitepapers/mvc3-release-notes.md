@@ -1,6 +1,6 @@
 ---
 uid: whitepapers/mvc3-release-notes
-title: "ASP.NET MVC 3 |Microsoft 文档"
+title: ASP.NET MVC 3 | Microsoft Docs
 author: rick-anderson
 description: 
 ms.author: aspnetcontent
@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: a86fae5698c54a71cb598f508aa91e7d96d1b409
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c1fa5d31f68b44bfdfda61c870a6825eeba18647
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -91,7 +91,7 @@ ms.lasthandoff: 11/10/2017
     - [Bug 修复](#0.1__Toc274034228)
     - [重大更改](#0.1__Toc274034229)
     - [已知问题](#0.1__Toc274034230)
-- [免责声明](#0.1__Toc274034231)
+- [Disclaimer](#0.1__Toc274034231)
 
 <a id="overview"></a>
 ## <a name="overview"></a>概述
@@ -165,7 +165,7 @@ ASP.NET MVC 3 可以在同一台计算机，这将使您能够灵活地选择何
     - /Views/Web.config
     - /packages.config
     - /scripts/\*.js
-    - /内容/主题/\*。\*
+    - /Content/themes/\*.\*
 3. 复制*包*空的 ASP.NET MVC 3 项目解决方案到你的解决方案，它是解决方案的.sln 文件所在的目录中的根的根目录中的文件夹。
 4. 如果你的 ASP.NET MVC 2 项目包含的任何区域，/Views/Web.config 将文件复制到*视图*的每个区域的文件夹。
 5. 在这两个 ASP.NET MVC 2 项目中的 Web.config 文件，全局搜索和替换的 ASP.NET MVC 版本。 找到如下信息： 
@@ -179,7 +179,7 @@ ASP.NET MVC 3 可以在同一台计算机，这将使您能够灵活地选择何
 7. 添加对 System.Web.WebPages.dll 和 System.Web.Helpers.dll 的引用。 这些程序集位于以下文件夹： 
 
     - %ProgramFiles%\Microsoft ASP.NET\ASP.NET MVC 3\Assemblies
-    - %ProgramFiles%\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\Assemblies
+    - %ProgramFiles%\ Microsoft ASP.NET\ASP.NET Web Pages\v1.0\Assemblies
 8. 在解决方案资源管理器，右键单击项目名称并选择卸载项目。 再次右键单击项目名称，然后选择编辑*ProjectName*.csproj。
 9. 找到*ProjectTypeGuids*元素，并替换 {F85E285D-A4E0-4152-9332-AB1D724D3325} 为 {E53F8FEA-EAE0-44A6-8774-FFD645390401}。
 10. 保存所做的更改，右键单击该项目，然后选择重新加载项目。
@@ -251,7 +251,7 @@ ASP.NET MVC 3 可以在同一台计算机，这将使您能够灵活地选择何
 
 项目模板列表中包括新的 Intranet 应用程序模板。 此模板包含用于生成 web 应用程序而不窗体身份验证使用 Windows 身份验证设置。 由于 intranet 应用程序需要某些不能在项目模板中封装的 IIS 设置，该模板将包含说明如何使工作在 IIS 中的项目模板的自述文件。 文档新的 Intranet 应用程序模板是在以下 URL MSDN 网站上提供：
 
-[https://msdn.microsoft.com/en-us/library/gg703322 (VS.98).aspx](https://msdn.microsoft.com/en-us/library/gg703322(VS.98).aspx)
+[https://msdn.microsoft.com/library/gg703322(VS.98).aspx](https://msdn.microsoft.com/library/gg703322(VS.98).aspx)
 
 #### <a name="project-templates-are-now-html5-enabled"></a>项目模板现在是启用的 HTML5
 
@@ -465,7 +465,7 @@ ASP.NET MVC 3 的项目模板现在包括最新版本的 jQuery、 jQuery 验证
 - 在以前版本的 ASP.NET MVC，每个请求除外在少数情况下创建的操作筛选器。 此行为永远不会有保证的行为，但只是实现详细信息，且筛选器的协定为设法无状态。 在 ASP.NET MVC 3 中，筛选器会更加主动地缓存。 因此，实例状态中存储任何自定义操作筛选器可能会被破坏。
 - 异常筛选器的执行顺序已更改为具有相同的异常筛选器*顺序*值。 ASP.NET MVC 2 及更早版本，异常筛选器在包含相同的控制器上*顺序*值上的操作方法已在上的操作方法的异常筛选器之前执行。 这通常会出现此情况，当异常筛选器应用而无需指定*顺序*值。 在 ASP.NET MVC 3 中，此具有已反转顺序，以便最具体的异常处理程序，则首先执行。 如下所示早期版本中，如果*顺序*显式指定属性，以指定顺序运行筛选器。
 - 名为的新属性*FileExtensions*已添加到*VirtualPathProviderViewEngine*基类。 时 ASP.NET 查找视图按路径 （而不是按名称），都只能指定此新属性的列表中包含的文件扩展名的视图。 这是一项重大更改应用程序中的，其中自定义生成提供程序注册以启用 Web 窗体视图的自定义文件扩展，且该提供程序通过使用完整路径，而不是名称来引用这些视图。 解决方法是修改的值*FileExtensions*属性以包含自定义的文件扩展名。
-- 直接实现的自定义控制器工厂实现*IControllerFactory*接口必须提供的新实现*GetControllerSessionBehavior* *已添加到此版本中的接口的方法*。 一般情况下，建议你不直接实现此接口和相反派生您的类从*DefaultControllerFactory*。
+- 直接实现的自定义控制器工厂实现*IControllerFactory*接口必须提供的新实现*GetControllerSessionBehavior * * 已添加到的方法在此版本中的接口*。 一般情况下，建议你不直接实现此接口和相反派生您的类从*DefaultControllerFactory*。
 
 <a id="_Toc2_KI"></a>
 ## <a name="known-issues"></a>已知问题
@@ -519,7 +519,7 @@ Internet 应用程序。 包含演示如何使用 ASP.NET MVC 使用成员资格
 <a id="_Toc276711788"></a>
 ### <a name="sessionless-controllers"></a>无会话控制器
 
-新*ControllerSessionStateAttribute*将授予你更好地控制会话状态行为的控制器通过指定[System.Web.SessionState.SessionStateBehavior](https://msdn.microsoft.com/en-us/library/system.web.sessionstate.sessionstatebehavior.aspx)枚举值。
+新*ControllerSessionStateAttribute*将授予你更好地控制会话状态行为的控制器通过指定[System.Web.SessionState.SessionStateBehavior](https://msdn.microsoft.com/library/system.web.sessionstate.sessionstatebehavior.aspx)枚举值。
 
 下面的示例演示如何关闭到控制器的所有请求的会话状态。
 
@@ -669,7 +669,7 @@ Internet 应用程序。 包含演示如何使用 ASP.NET MVC 中的成员资格
 
 新的 ASP.NET Web Pages 技术包括一组可用于将常用的功能添加到视图和控制器的帮助器方法。 ASP.NET MVC 3 支持使用控制器和视图中的这些帮助器方法 （如果适用）。 这些方法包含在 System.Web.Helpers 程序集。 下表列出了 ASP.NET Web Pages 帮助器方法。
 
-| **帮助器** | **描述** |
+| **Helper** | **说明** |
 | --- | --- |
 | Chart | 呈现的视图中的图表。 包含如 Chart.ToWebImage、 Chart.Save 和 Chart.Write 的方法。 |
 | 加密 | 使用哈希算法来创建正确 salted 和哈希处理密码。 |
@@ -743,7 +743,7 @@ ASP.NET MVC 包括 Ajax 帮助器方法，如下所示：
 
 这些方法用于 JavaScript 调用在服务器上，而不是使用完整的回发的操作方法。 此功能已进行更新，以利用 jQuery 非介入式的方式。 而不是干扰的方式发出内联客户端脚本，这些帮助器方法分开行为标记发出 HTML5 属性使用*数据 ajax*前缀。 然后将行为应用于标记通过引用适当的 JavaScript 文件。 请确保引用以下 JavaScript 文件：
 
-- jquery 1.4.1.js
+- jquery-1.4.1.js
 - jquery.unobtrusive.ajax.js
 
 此功能默认情况下，在 ASP.NET MVC 3 新项目模板中，Web.config 文件中启用，但默认情况下的现有项目处于禁用状态。 有关详细信息，请参阅[添加用于客户端验证和非介入式 JavaScript 的应用程序范围内标志](#0.1_AddedApplicationWideFlagsForClientValida)本文档后面部分。
@@ -760,8 +760,8 @@ ASP.NET MVC 包括 Ajax 帮助器方法，如下所示：
 
 此外请确保以下 JavaScript 文件引用。
 
-- jquery 1.4.1.js
-- jquery.validate.js 中定义
+- jquery-1.4.1.js
+- jquery.validate.js
 - jquery.validate.unobtrusive.js
 
 此功能在 Web.config 文件中的 ASP.NET MVC 3 新项目模板，默认情况下启用，但默认情况下的现有项目处于禁用状态。 有关详细信息，请参阅[用于客户端验证和非介入式 JavaScript 的新应用程序范围内标志](#0.1_AddedApplicationWideFlagsForClientValida)本文档后面部分。
@@ -862,8 +862,8 @@ Razor 视图没有 IntelliSense 支持也不语法突出显示。 我们已预�
 
 [!code-xml[Main](mvc3-release-notes/samples/sample43.xml)]
 
-## <a id="0.1__Toc274034231"></a>免责声明
+## <a id="0.1__Toc274034231"></a>  Disclaimer
 
-© 2011 Microsoft Corporation。 保留所有权利。 本文档提供"作为-是。" 信息和包括 URL 和其他 Internet 网站引用，本文档中表达的观点可能更改恕不另行通知。 您自行承担其使用风险。
+© 2011 Microsoft Corporation. 保留所有权利。 本文档提供"作为-是。" 信息和包括 URL 和其他 Internet 网站引用，本文档中表达的观点可能更改恕不另行通知。 您自行承担其使用风险。
 
 本文档未向您提供任何 Microsoft 产品中任何知识产权的任何合法权利。 您可为了内部参考目的复制和使用本文档。

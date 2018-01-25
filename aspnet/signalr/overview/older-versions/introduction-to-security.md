@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: 04487614b219f8f6f8f0524c3b5f1aa42480c4d3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ebc83098b73902fa3f7a90a38dafc43b413e75fe
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-signalr-security-signalr-1x"></a>SignalR 安全性简介 (SignalR 1.x)
 ====================
@@ -54,7 +54,7 @@ ms.lasthandoff: 11/10/2017
 
 SignalR 旨在集成到应用程序的现有身份验证结构。 它不提供任何功能用户进行身份验证。 相反，你进行身份验证用户通常会在你的应用程序，以及然后 SignalR 代码中使用的身份验证结果。 例如，你可能对 ASP.NET 窗体身份验证，你的用户进行身份验证，然后在你的中心，会强制哪些用户或角色有权调用的方法。 在你的中心，你还可以传递身份验证信息，如用户名或用户是否属于某个角色，与客户端。
 
-SignalR 提供[Authorize](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx)特性来指定哪些用户有权访问的中心或方法。 将 Authorize 属性应用到一个中心或中心中的特定方法。 如果没有 Authorize 特性中，中心上的所有公共方法可供连接到集线器的客户端。 有关中心的详细信息，请参阅[身份验证和授权 SignalR 集线器的](../security/hub-authorization.md)。
+SignalR 提供[Authorize](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx)特性来指定哪些用户有权访问的中心或方法。 将 Authorize 属性应用到一个中心或中心中的特定方法。 如果没有 Authorize 特性中，中心上的所有公共方法可供连接到集线器的客户端。 有关中心的详细信息，请参阅[身份验证和授权 SignalR 集线器的](../security/hub-authorization.md)。
 
 `Authorize`属性仅用于中心。 若要强制实施授权规则，当使用`PersistentConnection`必须重写`AuthorizeRequest`方法。 永久连接有关的详细信息，请参阅[身份验证和授权的 SignalR 永久性连接](../security/persistent-connection-authorization.md)。
 

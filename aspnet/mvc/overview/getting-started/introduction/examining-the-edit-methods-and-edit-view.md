@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 84aadccc18e7fa0fb56c7a78e144a1bf1038aac5
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: d7e1ba503b8aa815cebf431d2f5ffc9436b3575b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>检查编辑方法和编辑视图
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/19/2017
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample2.cs?highlight=3)]
 
-我们将在下一教程中介绍 [DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx)。 [Display](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayattribute.aspx) 特性指定要显示的字段名称的内容（本例中应为“Release Date”，而不是“ReleaseDate”）。 [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性指定的数据类型，在这种情况下它是一个日期，因此不显示在字段中存储的时间信息。 [DisplayFormat](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx)属性用于呈现日期格式不正确的 Chrome 浏览器中的 bug。
+我们将在下一教程中介绍 [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)。 [Display](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayattribute.aspx) 特性指定要显示的字段名称的内容（本例中应为“Release Date”，而不是“ReleaseDate”）。 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性指定的数据类型，在这种情况下它是一个日期，因此不显示在字段中存储的时间信息。 [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx)属性用于呈现日期格式不正确的 Chrome 浏览器中的 bug。
 
 运行应用程序，并浏览到`Movies`控制器。 将鼠标指针停留在**编辑**链接以查看链接到的 URL。
 
@@ -42,11 +42,11 @@ ms.lasthandoff: 11/19/2017
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample3.cshtml)]
 
-![次 Html.ActionLink](examining-the-edit-methods-and-edit-view/_static/image2.png)
+![Html.ActionLink](examining-the-edit-methods-and-edit-view/_static/image2.png)
 
-`Html`对象是使用上的属性公开一个帮助程序[System.Web.Mvc.WebViewPage](https://msdn.microsoft.com/en-us/library/gg402107(VS.98).aspx)基类。 `ActionLink`的帮助器方法，可以轻松地动态生成 HTML 的超链接，链接到控制器上的操作方法。 第一个参数`ActionLink`方法是要呈现的链接文本 (例如， `<a>Edit Me</a>`)。 第二个参数是要调用的操作方法的名称 (在这种情况下，`Edit`操作)。 最后一个参数是[匿名对象](https://weblogs.asp.net/scottgu/archive/2007/05/15/new-orcas-language-feature-anonymous-types.aspx)，用来生成路由数据 （在本例中为 4 的 ID）。
+`Html`对象是使用上的属性公开一个帮助程序[System.Web.Mvc.WebViewPage](https://msdn.microsoft.com/library/gg402107(VS.98).aspx)基类。 `ActionLink`的帮助器方法，可以轻松地动态生成 HTML 的超链接，链接到控制器上的操作方法。 第一个参数`ActionLink`方法是要呈现的链接文本 (例如， `<a>Edit Me</a>`)。 第二个参数是要调用的操作方法的名称 (在这种情况下，`Edit`操作)。 最后一个参数是[匿名对象](https://weblogs.asp.net/scottgu/archive/2007/05/15/new-orcas-language-feature-anonymous-types.aspx)，用来生成路由数据 （在本例中为 4 的 ID）。
 
-前面的图像中所示的生成的链接是`http://localhost:1234/Movies/Edit/4`。 默认路由 (在中建立*应用\_Start\RouteConfig.cs*) 采用的 URL 模式`{controller}/{action}/{id}`。 因此，ASP.NET 将转换`http://localhost:1234/Movies/Edit/4`放置到请求`Edit`操作方法`Movies`与参数的控制器`ID`等于 4。 检查下面的代码从*应用\_Start\RouteConfig.cs*文件。 [MapRoute](../../older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs.md)方法用于将 HTTP 请求路由到正确的控制器和操作方法并提供可选的 ID 参数。 [MapRoute](../../older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs.md)方法也可由[HtmlHelpers](https://msdn.microsoft.com/en-us/library/system.web.mvc.htmlhelper(v=vs.108).aspx)如`ActionLink`生成给定控制器、 操作方法和任何路由数据的 Url。
+前面的图像中所示的生成的链接是`http://localhost:1234/Movies/Edit/4`。 默认路由 (在中建立*应用\_Start\RouteConfig.cs*) 采用的 URL 模式`{controller}/{action}/{id}`。 因此，ASP.NET 将转换`http://localhost:1234/Movies/Edit/4`放置到请求`Edit`操作方法`Movies`与参数的控制器`ID`等于 4。 检查下面的代码从*应用\_Start\RouteConfig.cs*文件。 [MapRoute](../../older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs.md)方法用于将 HTTP 请求路由到正确的控制器和操作方法并提供可选的 ID 参数。 [MapRoute](../../older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs.md)方法也可由[HtmlHelpers](https://msdn.microsoft.com/library/system.web.mvc.htmlhelper(v=vs.108).aspx)如`ActionLink`生成给定控制器、 操作方法和任何路由数据的 Url。
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample4.cs?highlight=7)]
 
@@ -58,19 +58,19 @@ ms.lasthandoff: 11/19/2017
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample5.cs?highlight=19-21)]
 
-请注意第二个 `Edit` 操作方法的前面是 `HttpPost` 特性。 此属性指定的重载`Edit`可以仅针对的 POST 请求调用方法。 你可以应用`HttpGet`属性设置为第一个编辑方法，但这它们是不必要，因为它是默认值。 (我们在指隐式分配的操作方法`HttpGet`属性为`HttpGet`方法。)[绑定](https://msdn.microsoft.com/en-us/library/system.web.mvc.bindattribute(v=vs.108).aspx)属性是可防止黑客过度发布与你的模型的数据的另一个重要的安全机制。 仅应在你想要更改的绑定属性中包含属性。 你可以阅读有关 overposting 和中的绑定属性我[过多发布安全说明](https://go.microsoft.com/fwlink/?LinkId=317598)。 在本教程中使用简单模型中，我们将绑定模型中的所有数据。 [ValidateAntiForgeryToken](https://msdn.microsoft.com/en-us/library/system.web.mvc.validateantiforgerytokenattribute(v=vs.108).aspx)属性可用于阻止的请求伪造，并使用成对`@Html.AntiForgeryToken()`编辑视图文件中 (*Views\Movies\Edit.cshtml*)，部分如下所示：
+请注意第二个 `Edit` 操作方法的前面是 `HttpPost` 特性。 此属性指定的重载`Edit`可以仅针对的 POST 请求调用方法。 你可以应用`HttpGet`属性设置为第一个编辑方法，但这它们是不必要，因为它是默认值。 (我们在指隐式分配的操作方法`HttpGet`属性为`HttpGet`方法。)[绑定](https://msdn.microsoft.com/library/system.web.mvc.bindattribute(v=vs.108).aspx)属性是可防止黑客过度发布与你的模型的数据的另一个重要的安全机制。 仅应在你想要更改的绑定属性中包含属性。 你可以阅读有关 overposting 和中的绑定属性我[过多发布安全说明](https://go.microsoft.com/fwlink/?LinkId=317598)。 在本教程中使用简单模型中，我们将绑定模型中的所有数据。 [ValidateAntiForgeryToken](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute(v=vs.108).aspx)属性可用于阻止的请求伪造，并使用成对`@Html.AntiForgeryToken()`编辑视图文件中 (*Views\Movies\Edit.cshtml*)，部分如下所示：
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample6.cshtml?highlight=9)]
 
 `@Html.AntiForgeryToken()`将生成在都必须匹配隐藏的表单防伪令牌`Edit`方法`Movies`控制器。 你可以阅读更多有关跨站点请求伪造 （也称为 XSRF 或 CSRF） 在我的教程[mvc XSRF/CSRF 预防](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)。
 
-`HttpGet` `Edit`方法采用电影 ID 参数，以查找使用实体框架电影`Find`方法，并将所选的电影返回到编辑视图。 如果找不到一部电影， [HttpNotFound](https://msdn.microsoft.com/en-us/library/gg453938(VS.98).aspx)返回。 当基架系统创建“编辑”视图时，它会检查 `Movie` 类并创建代码为类的每个属性呈现 `<label>` 和 `<input>` 元素。 下面的示例显示由 visual studio 基架系统生成的编辑视图：
+`HttpGet` `Edit`方法采用电影 ID 参数，以查找使用实体框架电影`Find`方法，并将所选的电影返回到编辑视图。 如果找不到一部电影， [HttpNotFound](https://msdn.microsoft.com/library/gg453938(VS.98).aspx)返回。 当基架系统创建“编辑”视图时，它会检查 `Movie` 类并创建代码为类的每个属性呈现 `<label>` 和 `<input>` 元素。 下面的示例显示由 visual studio 基架系统生成的编辑视图：
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample7.cshtml)]
 
 请注意如何查看模板`@model MvcMovie.Models.Movie`语句文件的顶部 — 这指定视图需要查看模板类型的模型`Movie`。
 
-基架的代码使用了若干个*帮助器方法*来简化的 HTML 标记。 [ `Html.LabelFor` ](https://msdn.microsoft.com/en-us/library/gg401864(VS.98).aspx)帮助器显示的字段的名称 (&quot;标题&quot;， &quot;ReleaseDate&quot;，&quot;流派&quot;，或&quot;价格&quot;). [ `Html.EditorFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx)帮助器上呈现 HTML`<input>`元素。 [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx)帮助器显示与该属性相关联的任何验证消息。
+基架的代码使用了若干个*帮助器方法*来简化的 HTML 标记。 [ `Html.LabelFor` ](https://msdn.microsoft.com/library/gg401864(VS.98).aspx)帮助器显示的字段的名称 (&quot;标题&quot;， &quot;ReleaseDate&quot;，&quot;流派&quot;，或&quot;价格&quot;). [ `Html.EditorFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx)帮助器上呈现 HTML`<input>`元素。 [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx)帮助器显示与该属性相关联的任何验证消息。
 
 运行应用程序并导航到*/Movies* URL。 点击“编辑”链接。 在浏览器中查看页面的源。 下面显示了窗体元素的 HTML。
 
@@ -84,9 +84,9 @@ ms.lasthandoff: 11/19/2017
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample9.cs)]
 
-[ValidateAntiForgeryToken](https://msdn.microsoft.com/en-us/library/system.web.mvc.validateantiforgerytokenattribute(v=vs.108).aspx)属性验证[XSRF](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)生成令牌`@Html.AntiForgeryToken()`调用在视图中。
+[ValidateAntiForgeryToken](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute(v=vs.108).aspx)属性验证[XSRF](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)生成令牌`@Html.AntiForgeryToken()`调用在视图中。
 
-[ASP.NET MVC 模型联编程序](https://msdn.microsoft.com/en-us/library/dd410405.aspx)采用已发布的窗体值，并创建`Movie`作为传递对象`movie`参数。 `ModelState.IsValid` 方法验证表单中提交的数据是否可以用于修改（编辑或更新）`Movie` 对象。 如果数据有效，影片数据保存到`Movies`集合`db(MovieDBContext`实例)。 新的影片数据保存到数据库上，通过调用`SaveChanges`方法`MovieDBContext`。 保存数据后，代码将用户重定向到 `MoviesController` 类的 `Index` 操作方法，此方法显示电影集合，包括刚才所做的更改。
+[ASP.NET MVC 模型联编程序](https://msdn.microsoft.com/library/dd410405.aspx)采用已发布的窗体值，并创建`Movie`作为传递对象`movie`参数。 `ModelState.IsValid` 方法验证表单中提交的数据是否可以用于修改（编辑或更新）`Movie` 对象。 如果数据有效，影片数据保存到`Movies`集合`db(MovieDBContext`实例)。 新的影片数据保存到数据库上，通过调用`SaveChanges`方法`MovieDBContext`。 保存数据后，代码将用户重定向到 `MoviesController` 类的 `Index` 操作方法，此方法显示电影集合，包括刚才所做的更改。
 
 只要客户端验证确定字段的值均无效，将显示一条错误消息。 如果禁用 JavaScript 时，你无需客户端验证，但服务器将检测已发布的值均无效，和窗体值将重新显示错误消息。 在教程后面部分中，我们将查看更多详细信息中的验证。
 
@@ -106,8 +106,8 @@ ms.lasthandoff: 11/19/2017
 1. 从**工具**菜单上，单击**NuGetLibrary 程序包管理器**，然后单击**管理解决方案的 NuGet 包**。  
   
     ![](examining-the-edit-methods-and-edit-view/_static/image5.png)
-2. 在左窗格中，选择**浏览*。** * （参阅下图）。
-3. 在输入框中，输入*Globalize**。  
+2. 在左窗格中，选择 **浏览*。 * * * （参阅下图）。
+3. 在输入框中，输入 * Globalize * *。  
   
     ![](examining-the-edit-methods-and-edit-view/_static/image6.png)选择`jQuery.Validation.Globalize`，选择`MvcMovie`单击**安装**。 *Scripts\jquery.globalize\globalize.js*文件将添加到你的项目。 *Scripts\jquery.globalize\cultures\*文件夹将包含多个区域性 JavaScript 文件。 请注意，它可能需要 5 分钟，安装此包。
 

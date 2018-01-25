@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
-ms.openlocfilehash: 97e4a2a1794dbdccf80f0b44c1246c743fa23019
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 68056759b2e80230e5fd2c0f9b2d2a89b549cf37
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introducing-aspnet-web-pages---html-form-basics"></a>引入 ASP.NET Web 页的 HTML 窗体基础知识
 ====================
@@ -167,7 +167,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > `var someValue = Request["name"];`
 > 
-> `Request`对象实际公开多个子集。 例如: 
+> `Request`对象实际公开多个子集。 例如:
 > 
 > - `Request.Form`为你提供从内提交元素值`<form>`如果请求的元素`POST`请求。
 > - `Request.QueryString`为你提供的值只是中的 URL 查询字符串。 (如 URL 中`http://mysite/myapp/page?searchGenre=action&page=2`、`?searchGenre=action&page=2`部分 URL 为查询字符串。)
@@ -220,7 +220,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > **重要 ！** 使用占位符 (如`@0`) 若要将值传递给 SQL 命令*极其重要*的安全性。 你看到它在这里，带有占位符变量数据的方式是你应该构建 SQL 命令的唯一方法。
 > 
-> 永远不会通过将放在一起 （串联） 的文字文本和从用户获取的值来构造 SQL 语句。 连接到 SQL 语句的用户输入打开网站*SQL 注入式攻击*其中恶意用户提交到你的页 hack 你的数据库的值。 (你可以阅读更多的文章中[SQL 注入](https://msdn.microsoft.com/en-us/library/ms161953.aspx)MSDN 网站。)
+> 永远不会通过将放在一起 （串联） 的文字文本和从用户获取的值来构造 SQL 语句。 连接到 SQL 语句的用户输入打开网站*SQL 注入式攻击*其中恶意用户提交到你的页 hack 你的数据库的值。 (你可以阅读更多的文章中[SQL 注入](https://msdn.microsoft.com/library/ms161953.aspx)MSDN 网站。)
 
 
 ## <a name="updating-the-movies-page-with-search-code"></a>使用搜索代码更新电影页

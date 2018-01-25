@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 06370e31d27aeab50e56e0b0b860aca7c3ad683b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5b84b797bf0c9670ac65a5384b6d95d5df3827eb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching-data-at-application-startup-vb"></a>缓存数据在应用程序启动 (VB)
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 另一个风格的主动加载和我们将在本教程中，浏览的类型将数据加载到缓存在应用程序启动。 此方法非常适合缓存静态数据，如数据库查找表中的记录。
 
 > [!NOTE]
-> 有关了解主动式和反应式加载以及专业人员、 利弊和实现建议的列表之间的差异的更深入信息，请参阅[管理缓存的内容](https://msdn.microsoft.com/en-us/library/ms978503.aspx)部分[缓存.NET Framework 应用程序的体系结构指南](https://msdn.microsoft.com/en-us/library/ms978498.aspx)。
+> 有关了解主动式和反应式加载以及专业人员、 利弊和实现建议的列表之间的差异的更深入信息，请参阅[管理缓存的内容](https://msdn.microsoft.com/library/ms978503.aspx)部分[缓存.NET Framework 应用程序的体系结构指南](https://msdn.microsoft.com/library/ms978498.aspx)。
 
 
 ## <a name="step-1-determining-what-data-to-cache-at-application-startup"></a>步骤 1： 确定哪些数据缓存在应用程序启动
@@ -68,7 +68,7 @@ ms.lasthandoff: 11/10/2017
 
 我们可以调用之前*SomeMethod*或使用*SomeProperty*，我们必须先创建类使用的实例`New`关键字。 *SomeMethod*和*SomeProperty*与特定实例相关联。 这些成员的生存期取决于其关联的对象的生存期。 *静态成员*，另一方面，是变量、 属性和方法之间共享*所有*类的实例，因此，具有与类一样长的生存期。 静态成员表示由关键字`Shared`。
 
-除了静态成员，可以使用应用程序状态缓存数据。 每个 ASP.NET 应用程序保持一个名称/值集合内所有用户和应用程序页共享该 s。 可以使用访问此集合[`HttpContext`类](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.aspx)s [ `Application`属性](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.application.aspx)，并且从 ASP.NET 页的代码隐藏类使用，如下所示：
+除了静态成员，可以使用应用程序状态缓存数据。 每个 ASP.NET 应用程序保持一个名称/值集合内所有用户和应用程序页共享该 s。 可以使用访问此集合[`HttpContext`类](https://msdn.microsoft.com/library/system.web.httpcontext.aspx)s [ `Application`属性](https://msdn.microsoft.com/library/system.web.httpcontext.application.aspx)，并且从 ASP.NET 页的代码隐藏类使用，如下所示：
 
 
 [!code-vb[Main](caching-data-at-application-startup-vb/samples/sample2.vb)]
@@ -135,7 +135,7 @@ Northwind 数据库表我们已实施方法与日期不包括任何传统的查�
 - **`Session_Start`**在创建新的会话时执行
 - **`Session_End`**运行时会话已过期或已放弃
 
-`Application_Start` S 应用程序生命周期内仅一次调用事件处理程序。 在应用程序启动第一次 ASP.NET 资源从应用程序请求，继续运行，直到重新启动应用程序时，这可以通过修改内容的情况可能发生`/Bin`文件夹中，修改`Global.asax`，修改在内容`App_Code`文件夹，或修改`Web.config`文件，在其他原因。 请参阅[ASP.NET 应用程序生命周期概述](https://msdn.microsoft.com/en-us/library/ms178473.aspx)有关应用程序生命周期的更多详细讨论。
+`Application_Start` S 应用程序生命周期内仅一次调用事件处理程序。 在应用程序启动第一次 ASP.NET 资源从应用程序请求，继续运行，直到重新启动应用程序时，这可以通过修改内容的情况可能发生`/Bin`文件夹中，修改`Global.asax`，修改在内容`App_Code`文件夹，或修改`Web.config`文件，在其他原因。 请参阅[ASP.NET 应用程序生命周期概述](https://msdn.microsoft.com/library/ms178473.aspx)有关应用程序生命周期的更多详细讨论。
 
 在本系列教程我们只需将代码添加到`Application_Start`方法，因此随意删除其他。 在`Application_Start`，只需调用`StaticCache`类的`LoadStaticCache()`方法，它将加载并缓存供应商信息：
 

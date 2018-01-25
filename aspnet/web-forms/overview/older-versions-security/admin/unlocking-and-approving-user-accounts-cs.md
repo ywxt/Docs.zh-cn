@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 65d32309cbd8bed6decbba4c5027d8e10a558ae8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f22a745f42dae66cd64dc38df28c59b910c17070
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unlocking-and-approving-user-accounts-c"></a>解锁和批准用户帐户 (C#)
 ====================
@@ -57,7 +57,7 @@ ms.lasthandoff: 11/10/2017
 **图 1**: HyperLinkField 将为每个用户帐户添加的"管理"链接 ([单击以查看实际尺寸的图像](unlocking-and-approving-user-accounts-cs/_static/image3.png))
 
 
-我们将创建用户界面并代码`UserInformation.aspx`页中时刻，但首先让我们谈一有关如何以编程方式更改用户的锁定并批准状态。 [ `MembershipUser`类](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.aspx)具有[ `IsLockedOut` ](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.islockedout.aspx)和[`IsApproved`属性](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.isapproved.aspx)。 `IsLockedOut`属性是只读的。 没有任何机制来以编程方式锁定用户;若要解除用户，使用`MembershipUser`类的[`UnlockUser`方法](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.unlockuser.aspx)。 `IsApproved`属性是可读写。 若要将任何更改保存到此属性，我们需要调用`Membership`类的[`UpdateUser`方法](https://msdn.microsoft.com/en-us/library/system.web.security.membership.updateuser.aspx)，并传入已修改`MembershipUser`对象。
+我们将创建用户界面并代码`UserInformation.aspx`页中时刻，但首先让我们谈一有关如何以编程方式更改用户的锁定并批准状态。 [ `MembershipUser`类](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx)具有[ `IsLockedOut` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.islockedout.aspx)和[`IsApproved`属性](https://msdn.microsoft.com/library/system.web.security.membershipuser.isapproved.aspx)。 `IsLockedOut`属性是只读的。 没有任何机制来以编程方式锁定用户;若要解除用户，使用`MembershipUser`类的[`UnlockUser`方法](https://msdn.microsoft.com/library/system.web.security.membershipuser.unlockuser.aspx)。 `IsApproved`属性是可读写。 若要将任何更改保存到此属性，我们需要调用`Membership`类的[`UpdateUser`方法](https://msdn.microsoft.com/library/system.web.security.membership.updateuser.aspx)，并传入已修改`MembershipUser`对象。
 
 因为`IsApproved`属性为读 / 写，复选框控件可能是最佳的用户界面元素，用于配置此属性。 但是，一个复选框将不能用于`IsLockedOut`属性因为管理员不能锁定用户，她可能只能解除用户。 用于的合适的用户界面`IsLockedOut`属性是一个按钮，单击时，取消锁定的用户帐户。 如果用户被锁定，则只应启用此按钮。
 
@@ -88,7 +88,7 @@ ms.lasthandoff: 11/10/2017
 
 `MembershipUser`对象的`UserName`值随后显示在`UserNameLabel`和`IsApproved`复选框已选中根据`IsApproved`属性值。
 
-`MembershipUser`对象的[`LastLockoutDate`属性](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.lastlockoutdate.aspx)返回`DateTime`值，该值指示用户上次锁定。如果用户永远不会被锁定，则返回的值将取决于成员资格提供程序。 当创建新帐户时，`SqlMembershipProvider`设置`aspnet_Membership`表的`LastLockoutDate`字段`1754-01-01 12:00:00 AM`。 上面的代码显示在一个空字符串`LastLockoutDateLabel`如果`LastLockoutDate`属性出现年度之前 2000年; 否则为的日期部分`LastLockoutDate`标签中显示属性。 `UnlockUserButton'` S`Enabled`属性设置为用户的锁定状态，这意味着如果用户锁定才会启用此按钮。
+`MembershipUser`对象的[`LastLockoutDate`属性](https://msdn.microsoft.com/library/system.web.security.membershipuser.lastlockoutdate.aspx)返回`DateTime`值，该值指示用户上次锁定。如果用户永远不会被锁定，则返回的值将取决于成员资格提供程序。 当创建新帐户时，`SqlMembershipProvider`设置`aspnet_Membership`表的`LastLockoutDate`字段`1754-01-01 12:00:00 AM`。 上面的代码显示在一个空字符串`LastLockoutDateLabel`如果`LastLockoutDate`属性出现年度之前 2000年; 否则为的日期部分`LastLockoutDate`标签中显示属性。 `UnlockUserButton'` S`Enabled`属性设置为用户的锁定状态，这意味着如果用户锁定才会启用此按钮。
 
 花一些时间来测试`UserInformation.aspx`通过浏览器的页。 你将当然，需要开始`ManageUsers.aspx`并选择要管理用户帐户。 在到达时`UserInformation.aspx`，请注意，`IsApproved`仅已选中复选框，如果用户批准。 如果用户曾已被锁定，将显示出日期锁定其上一次。 仅当用户当前被锁定时，才启用解锁用户按钮。选中或取消选中`IsApproved`复选框或单击解锁用户按钮会导致回发，但不修改都会对用户帐户，因为我们尚未为创建这些事件的事件处理程序。
 
@@ -146,7 +146,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="sending-a-verification-email-to-new-users"></a>将验证电子邮件发送到新用户
 
-若要从通过发送一封电子邮件，配置其`MailDefinition`属性正确。 中所述<a id="Tutorial13"> </a>[以前一教程](recovering-and-changing-passwords-cs.md)，ChangePassword 和取回控件包括[`MailDefinition`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.maildefinition.aspx)相同方式与的方式通过的。
+若要从通过发送一封电子邮件，配置其`MailDefinition`属性正确。 中所述<a id="Tutorial13"> </a>[以前一教程](recovering-and-changing-passwords-cs.md)，ChangePassword 和取回控件包括[`MailDefinition`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.maildefinition.aspx)相同方式与的方式通过的。
 
 > [!NOTE]
 > 若要使用`MailDefinition`需要指定邮件传递的属性中的选项`Web.config`。 有关详细信息，请参阅[在 ASP.NET 中发送电子邮件](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)。
@@ -160,7 +160,7 @@ ms.lasthandoff: 11/10/2017
 
 请注意，`CreateUserWizard.txt`电子邮件模板包括`<%VerificationUrl%>`占位符。 这就是 URL`Verification.aspx`将放置页。 CreateUserWizard 自动替换`<%UserName%>`和`<%Password%>`占位符替换为新帐户的用户名和密码，但没有任何内置`<%VerificationUrl%>`占位符。 我们需要手动将其替换为相应的验证 URL。
 
-若要实现此目的，创建事件处理程序为 CreateUserWizard [ `SendingMail`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.sendingmail.aspx)并添加以下代码：
+若要实现此目的，创建事件处理程序为 CreateUserWizard [ `SendingMail`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.sendingmail.aspx)并添加以下代码：
 
 [!code-csharp[Main](unlocking-and-approving-user-accounts-cs/samples/sample4.cs)]
 

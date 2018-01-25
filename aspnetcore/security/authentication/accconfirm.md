@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/accconfirm
-ms.openlocfilehash: b004a8e7680b203416552e5a7a2809799e657759
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: bc9febc41d0637be9f83a02799d360489f257849
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>帐户确认和 ASP.NET Core 中的密码恢复
 
@@ -110,7 +110,7 @@ dotnet new mvc --auth Individual
 ```csharp
 config.SignIn.RequireConfirmedEmail = true;
 ```
-前面的行可防止已注册的用户正在登录，直到其电子邮件进行确认。 但是，该行不会阻止新用户登录后它们注册。 用户注册后，该默认代码将记录在用户。 一旦他们注销时，他们将不能再次登录直到它们注册。 更高版本在教程中我们将更改代码，因此新注册的用户是**不**登录。
+前面的行可防止已注册的用户正在登录，直到其电子邮件进行确认。 但是，该行不会阻止从正在登录之后用户注册, 的新用户。 用户注册后，该默认代码将记录在用户。 一旦他们注销时，他们将不能再次登录直到它们注册。 更高版本在教程中我们将更改代码，因此新注册的用户是**不**登录。
 
 ### <a name="configure-email-provider"></a>配置电子邮件提供商
 
@@ -277,7 +277,7 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 
 ## <a name="prevent-login-at-registration"></a>防止在注册的登录名
 
-通过当前的模板，用户完成注册表单中，将它们记录在 （通过身份验证）。 你通常想要在中记录日志之前，请确认其电子邮件。 在下面的部分中，我们将修改的代码需要新的用户具有的确认电子邮件，然后将它们记录在。 更新`[HttpPost] Login`中的操作*AccountController.cs*包含以下突出显示更改的文件。
+通过当前的模板，用户完成注册表单中，他们在登录 （身份验证）。 你通常想要在中记录日志之前，请确认其电子邮件。 在下面的部分中，我们将修改的代码需要新的用户具有确认电子邮件，然后在用户登录。 更新`[HttpPost] Login`中的操作*AccountController.cs*包含以下突出显示更改的文件。
 
 [!code-csharp[Main](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=11-21&name=snippet_Login)]
 
@@ -302,4 +302,4 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 
 ![管理外部登录名视图列出 Facebook](accconfirm/_static/fb.png)
 
-已经合并两个帐户。 你将能够使用任一帐户登录。 你可能希望用户身份验证服务中的其社交日志已关闭，或已对其社交帐户失去访问更有可能的情况下添加本地帐户。
+已经合并两个帐户。 你将能够使用任一帐户登录。 你可能希望用户身份验证服务中的其社交日志已关闭，或更有可能已丢失到其社交帐户访问的情况下添加本地帐户。

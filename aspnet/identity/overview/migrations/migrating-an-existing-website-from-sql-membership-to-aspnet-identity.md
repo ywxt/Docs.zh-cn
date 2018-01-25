@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: b88cd54040c02c977a83e20d7af7fda4fff969c1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3638c6779a0fcedaaa49623126b28ecf09a4954f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>从 SQL 成员资格的现有网站迁移到 ASP.NET 标识
 ====================
@@ -51,7 +51,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="migrating-to-visual-studio-2013"></a>迁移到 Visual Studio 2013
 
-1. 安装 Visual Studio Express 2013 for Web 或 Visual Studio 2013 沿[最新的更新](https://www.microsoft.com/en-us/download/details.aspx?id=44921)。
+1. 安装 Visual Studio Express 2013 for Web 或 Visual Studio 2013 沿[最新的更新](https://www.microsoft.com/download/details.aspx?id=44921)。
 2. 在你安装的 Visual Studio 版本中打开上述项目。 如果在计算机上未安装 SQL Server Express，当你打开项目，因为该连接字符串使用 SQL Express 时被显示一条提示。 你可以选择要安装 SQL Express 或作为变通解决更改 LocalDb 的连接字符串。 此文章我们会将其更改为 LocalDb。
 3. 打开 web.config 并更改中的连接字符串。到 (LocalDb) v11.0 SQLExpess。 删除用户实例 = true 从连接字符串。
 
@@ -86,28 +86,28 @@ ms.lasthandoff: 11/10/2017
 
 对于 ASP.NET 标识类的现有用户与数据现成工作，我们需要将数据库架构迁移到 ASP.NET 标识所需的一个。 我们可以通过添加新表并将现有的信息复制到这些表来执行此操作。 默认情况下 ASP.NET 标识使用 EntityFramework 将标识模型类映射到数据库来存储/检索信息。 这些模型类实现核心标识接口定义用户和角色对象。 表和数据库中的列基于这些模型类。 下面定义是标识 v2.1.0 和它们的属性中的 EntityFramework 模型类
 
-| **IdentityUser** | **类型** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
+| **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
-| Id | string | Id | RoleId | ProviderKey | Id |
-| 用户名 | string | 名称 | 用户 Id | 用户 Id | ClaimType |
-| PasswordHash | string |  |  | LoginProvider | ClaimValue |
-| SecurityStamp | string |  |  |  | 用户\_Id |
-| 电子邮件 | string |  |  |  |  |
+| Id | 字符串 | Id | RoleId | ProviderKey | Id |
+| 用户名 | 字符串 | name | UserId | UserId | ClaimType |
+| PasswordHash | 字符串 |  |  | LoginProvider | ClaimValue |
+| SecurityStamp | 字符串 |  |  |  | 用户\_Id |
+| 电子邮件 | 字符串 |  |  |  |  |
 | EmailConfirmed | bool |  |  |  |  |
-| 电话号码 | string |  |  |  |  |
+| PhoneNumber | 字符串 |  |  |  |  |
 | PhoneNumberConfirmed | bool |  |  |  |  |
 | LockoutEnabled | bool |  |  |  |  |
 | LockoutEndDate | DateTime |  |  |  |  |
 | AccessFailedCount | int |  |  |  |  |
 
-我们需要为每个这些模型的表具有与属性相对应的列。 在中定义类和表之间的映射`OnModelCreating`方法`IdentityDBContext`。 这称为配置的 fluent API 方法和可以找到更多信息[此处](https://msdn.microsoft.com/en-us/data/jj591617.aspx)。 类的配置是如下所示
+我们需要为每个这些模型的表具有与属性相对应的列。 在中定义类和表之间的映射`OnModelCreating`方法`IdentityDBContext`。 这称为配置的 fluent API 方法和可以找到更多信息[此处](https://msdn.microsoft.com/data/jj591617.aspx)。 类的配置是如下所示
 
 | **类** | **Table** | **主键** | **外键** |
 | --- | --- | --- | --- |
 | IdentityUser | AspnetUsers | Id |  |
 | IdentityRole | AspnetRoles | Id |  |
 | IdentityUserRole | AspnetUserRole | UserId + RoleId | 用户\_Id-&gt;AspnetUsers RoleId-&gt;AspnetRoles |
-| IdentityUserLogin | AspnetUserLogins | ProviderKey + UserId + LoginProvider | 用户 Id-&gt;AspnetUsers |
+| IdentityUserLogin | AspnetUserLogins | ProviderKey + UserId + LoginProvider | UserId-&gt;AspnetUsers |
 | IdentityUserClaim | AspnetUserClaims | Id | 用户\_Id-&gt;AspnetUsers |
 
 使用此信息中，我们可以创建 SQL 语句以创建新表。 我们可以单独写入每个语句，或生成根据需要使用 EntityFramework PowerShell 命令，然后，我们可以编辑整个脚本。 为此，请在 VS 打开**程序包管理器控制台**从**视图**或**工具**菜单
@@ -122,7 +122,7 @@ SQL 成员资格用户信息具有其他以及标识用户模型类即电子邮�
 
 [!code-sql[Main](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/samples/sample1.sql)]
 
-接下来，我们需要将现有信息从 SQL 成员资格数据库复制到新添加的表，标识。 这可以通过 SQL 通过将数据直接从一个表复制到另一个。 若要将数据添加到表中的行，我们使用`INSERT INTO [Table]`构造。 将从另一个表，我们可以使用复制`INSERT INTO`语句连同`SELECT`语句。 若要获取我们需要查询的所有用户信息*aspnet\_用户*和*aspnet\_成员资格*表和复制数据的*AspNetUsers*表。 我们使用`INSERT INTO`和`SELECT`连同`JOIN`和`LEFT OUTER JOIN`语句。 有关查询和表之间复制数据的详细信息，请参阅[这](https://technet.microsoft.com/en-us/library/ms190750%28v=sql.105%29.aspx)链接。 此外 AspnetUserLogins 和 AspnetUserClaims 表是空开头因为没有在默认情况下映射到此 SQL 成员资格信息。 复制的唯一信息是用户和角色。 对于前面的步骤中创建的项目，为要将信息复制到用户表的 SQL 查询
+接下来，我们需要将现有信息从 SQL 成员资格数据库复制到新添加的表，标识。 这可以通过 SQL 通过将数据直接从一个表复制到另一个。 若要将数据添加到表中的行，我们使用`INSERT INTO [Table]`构造。 将从另一个表，我们可以使用复制`INSERT INTO`语句连同`SELECT`语句。 若要获取我们需要查询的所有用户信息*aspnet\_用户*和*aspnet\_成员资格*表和复制数据的*AspNetUsers*表。 我们使用`INSERT INTO`和`SELECT`连同`JOIN`和`LEFT OUTER JOIN`语句。 有关查询和表之间复制数据的详细信息，请参阅[这](https://technet.microsoft.com/library/ms190750%28v=sql.105%29.aspx)链接。 此外 AspnetUserLogins 和 AspnetUserClaims 表是空开头因为没有在默认情况下映射到此 SQL 成员资格信息。 复制的唯一信息是用户和角色。 对于前面的步骤中创建的项目，为要将信息复制到用户表的 SQL 查询
 
 [!code-sql[Main](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/samples/sample2.sql)]
 

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: f5783287a26174ddf65bb0eae34c347831d02c47
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3ab67b93a32106c0b79f9e8d739d47835391edb5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-aspnet-identity-to-an-empty-or-existing-web-forms-project"></a>添加 ASP.NET 标识设置为一个空的或现有的 Web 窗体项目
 ====================
@@ -102,7 +102,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="configuring-the-application-for-owin-authentication"></a>OWIN 身份验证的应用程序配置
 
-此时我们仅添加了支持用于创建用户。 现在，我们将演示，我们可以如何添加身份验证登录用户。 ASP.NET 标识用于表单身份验证使用 Microsoft OWIN 身份验证中间件。 OWIN Cookie 身份验证是 cookie 和声明可由任何框架上托管的基于身份验证机制[OWIN](https://msdn.microsoft.com/en-us/magazine/dn451439.aspx)或 IIS。 与此模型中，可以跨多个框架，包括 ASP.NET MVC 和 Web 窗体使用相同的身份验证包。 有关详细信息项目 Katana 以及如何运行主机不可知，请参阅中的中间件[Getting Started with Katana 项目](https://msdn.microsoft.com/en-us/magazine/dn451439.aspx)。
+此时我们仅添加了支持用于创建用户。 现在，我们将演示，我们可以如何添加身份验证登录用户。 ASP.NET 标识用于表单身份验证使用 Microsoft OWIN 身份验证中间件。 OWIN Cookie 身份验证是 cookie 和声明可由任何框架上托管的基于身份验证机制[OWIN](https://msdn.microsoft.com/magazine/dn451439.aspx)或 IIS。 与此模型中，可以跨多个框架，包括 ASP.NET MVC 和 Web 窗体使用相同的身份验证包。 有关详细信息项目 Katana 以及如何运行主机不可知，请参阅中的中间件[Getting Started with Katana 项目](https://msdn.microsoft.com/magazine/dn451439.aspx)。
 
 ## <a name="installing-authentication-packages-to-your-application"></a>将身份验证程序包安装到你的应用程序
 
@@ -135,8 +135,8 @@ ms.lasthandoff: 11/10/2017
 
     > [!NOTE] 
     > 
-    > - ASP.NET 标识和 OWIN Cookie 身份验证是基于声明的系统事件，因为框架需要应用程序开发人员生成[ClaimsIdentity](https://msdn.microsoft.com/en-us/library/microsoft.identitymodel.claims.claimsidentity.aspx)用户。 ClaimsIdentity 具有的用户属于哪些角色如用户的所有声明的信息。 在此阶段，你还可以添加用户的多个的声明。
-    > - 你可以在登录用户通过使用从 OWIN 和调用 AuthenticationManager`SignIn`并传入 ClaimsIdentity 如上所示。 此代码将在用户登录，并生成一个 cookie 以及。 此调用是类似于[FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.setauthcookie.aspx)由[FormsAuthentication](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx)模块。
+    > - ASP.NET 标识和 OWIN Cookie 身份验证是基于声明的系统事件，因为框架需要应用程序开发人员生成[ClaimsIdentity](https://msdn.microsoft.com/library/microsoft.identitymodel.claims.claimsidentity.aspx)用户。 ClaimsIdentity 具有的用户属于哪些角色如用户的所有声明的信息。 在此阶段，你还可以添加用户的多个的声明。
+    > - 你可以在登录用户通过使用从 OWIN 和调用 AuthenticationManager`SignIn`并传入 ClaimsIdentity 如上所示。 此代码将在用户登录，并生成一个 cookie 以及。 此调用是类似于[FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx)由[FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)模块。
 2. 在**解决方案资源管理器**，右键单击项目单击**添加**，，然后**Web 窗体**。 将 web 窗体**登录**。  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image12.png)
@@ -150,16 +150,16 @@ ms.lasthandoff: 11/10/2017
     > [!NOTE] 
     > 
     > - `Page_Load`现在检查当前用户的状态并可采取措施基于其`Context.User.Identity.IsAuthenticated`状态。  
-    >     **在用户名中显示已登录**： 的 Microsoft ASP.NET Identity Framework 已添加的扩展方法上, [System.Security.Principal.IIdentity](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.aspx) ，使你能获取`UserName`和`UserId`为在已登录的用户。 这些扩展方法定义中`Microsoft.AspNet.Identity.Core`程序集。 这些扩展方法是为替换[HttpContext.User.Identity.Name](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.user.aspx) 。
+    >     **在用户名中显示已登录**： 的 Microsoft ASP.NET Identity Framework 已添加的扩展方法上, [System.Security.Principal.IIdentity](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx) ，使你能获取`UserName`和`UserId`为在已登录的用户。 这些扩展方法定义中`Microsoft.AspNet.Identity.Core`程序集。 这些扩展方法是为替换[HttpContext.User.Identity.Name](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx) 。
     > - 登录方法：   
     >     `This`方法取代了以前`CreateUser_Click`在此示例和现在登录已成功创建用户之后用户的方法。   
     >  Microsoft OWIN Framework 已添加的扩展方法上, `System.Web.HttpContext` ，你能够获取对引用`IOwinContext`。 这些扩展方法定义中`Microsoft.Owin.Host.SystemWeb`程序集。 `OwinContext`类会公开`IAuthenticationManager`表示可对当前请求的身份验证中间件功能的属性。  
     >  可以通过使用来在用户登录`AuthenticationManager`从 OWIN 和调用`SignIn`和传入`ClaimsIdentity`如上所示。   
     >  因为 ASP.NET 标识和 OWIN Cookie 身份验证是基于声明的系统，框架需要应用程序生成`ClaimsIdentity`用户。   
     >  `ClaimsIdentity`具有的用户，如用户所属的角色的所有声明的信息。 你还可以在此阶段添加用户的多个的声明  
-    >  此代码将在用户登录，并生成一个 cookie 以及。 此调用是类似于[FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.setauthcookie.aspx)由[FormsAuthentication](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx)模块。
+    >  此代码将在用户登录，并生成一个 cookie 以及。 此调用是类似于[FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx)由[FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)模块。
     > - `SignOut`方法：   
-    >  获取对`AuthenticationManager`从 OWIN 和调用`SignOut`。 这是类似于[FormsAuthentication.SignOut](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.signout.aspx)方法，由[FormsAuthentication](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx)模块。
+    >  获取对`AuthenticationManager`从 OWIN 和调用`SignOut`。 这是类似于[FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx)方法，由[FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)模块。
 5. 按**Ctrl + F5**生成并运行 web 应用程序。 输入新的用户名和密码，然后单击**注册**。  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image13.png)  

@@ -12,17 +12,17 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/error-handling/web-api-global-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: d2bdf04b4da2a099f3a2af100b16682c68f946f2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c593c56ba3d0ee8ebf6dc425408d2c3b91c83f93
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="global-error-handling-in-aspnet-web-api-2"></a>全局错误处理 ASP.NET Web API 2 中
 ====================
 通过[David Matson](https://github.com/davidmatson)， [Rick Anderson](https://github.com/Rick-Anderson)
 
-现在以记录或者全局处理错误的 Web API 中是简单的方法。 可以通过处理某些未经处理的异常[异常筛选器](exception-handling.md)，但有异常筛选器无法处理的事例的数量。 例如: 
+现在以记录或者全局处理错误的 Web API 中是简单的方法。 可以通过处理某些未经处理的异常[异常筛选器](exception-handling.md)，但有异常筛选器无法处理的事例的数量。 例如:
 
 1. 从控制器构造函数引发的异常。
 2. 从消息处理程序引发的异常。
@@ -46,7 +46,7 @@ ms.lasthandoff: 11/10/2017
 1. 我们支持注册多个异常记录器但仅在单个异常处理程序。
 2. 异常记录器始终会调用，即使我们即将中止连接。 当我们仍能够选择要发送的响应消息时仅获取调用异常处理程序。
 
-这两个服务提供对包含异常已检测到的点中的相关信息的异常上下文访问特别[HttpRequestMessage](https://msdn.microsoft.com/en-us/library/system.net.http.httprequestmessage(v=vs.110).aspx)、 [HttpRequestContext](https://msdn.microsoft.com/en-us/library/system.web.http.controllers.httprequestcontext(v=vs.118).aspx)，则引发异常和异常源 （下面详细信息）。
+这两个服务提供对包含异常已检测到的点中的相关信息的异常上下文访问特别[HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage(v=vs.110).aspx)、 [HttpRequestContext](https://msdn.microsoft.com/library/system.web.http.controllers.httprequestcontext(v=vs.118).aspx)，则引发异常和异常源 （下面详细信息）。
 
 ### <a name="design-principles"></a>设计原则
 
@@ -97,7 +97,7 @@ Catch 块字符串的列表也会提供通过静态只读属性。 （核心 cat
 
 [!code-csharp[Main](web-api-global-error-handling/samples/sample5.cs)]
 
-异常处理程序指示它已通过设置处理异常`Result`操作结果的属性 (例如， [ExceptionResult](https://msdn.microsoft.com/en-us/library/system.web.http.results.exceptionresult(v=vs.118).aspx)， [InternalServerErrorResult](https://msdn.microsoft.com/en-us/library/system.web.http.results.internalservererrorresult(v=vs.118).aspx)， [StatusCodeResult](https://msdn.microsoft.com/en-us/library/system.web.http.results.statuscoderesult(v=vs.118).aspx)，或自定义结果)。 如果`Result`属性为 null，会处理异常，并且将重新引发原始异常。
+异常处理程序指示它已通过设置处理异常`Result`操作结果的属性 (例如， [ExceptionResult](https://msdn.microsoft.com/library/system.web.http.results.exceptionresult(v=vs.118).aspx)， [InternalServerErrorResult](https://msdn.microsoft.com/library/system.web.http.results.internalservererrorresult(v=vs.118).aspx)， [StatusCodeResult](https://msdn.microsoft.com/library/system.web.http.results.statuscoderesult(v=vs.118).aspx)，或自定义结果)。 如果`Result`属性为 null，会处理异常，并且将重新引发原始异常。
 
 对于调用堆栈顶部的异常，我们花费了额外的步骤以确保响应适合 API 调用方。 如果在异常传播到主机时，调用方将看到死亡的黄色屏幕或某些其他主机提供响应这通常是 HTML 和通常不适当的 API 错误响应。 在这些情况下，则结果将启动该出非 null，且仅当自定义异常处理程序显式将其设置回`null`（未处理的） 将该异常会传播到主机。 设置`Result`到`null`在这种情况下会很有用的两种方案：
 

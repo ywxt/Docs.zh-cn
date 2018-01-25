@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d4b83d99fcf1247d08ce83364cc00e738b6a16c8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 63b1266e03041c4261e71fd25e988c63932b503e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authenticating-users-with-windows-authentication-vb"></a>使用 Windows 身份验证 (VB) 的用户进行身份验证
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 了解如何在 MVC 应用程序的上下文中使用 Windows 身份验证。 你了解如何启用应用程序的 web 配置文件中的 Windows 身份验证以及如何使用 IIS 中配置身份验证。 最后，你将了解如何使用 [Authorize] 属性来限制对特定 Windows 用户或组的控制器操作的访问。
 
@@ -51,7 +51,7 @@ ASP.NET 开发 Web 服务器还支持 NTLM 身份验证。 你可以通过右键
 
 > [!NOTE] 
 > 
-> 有关这些不同类型的身份验证的详细概述，请参阅[https://msdn.microsoft.com/en-us/library/aa292114(VS.71).aspx](https://msdn.microsoft.com/en-us/library/aa292114(VS.71).aspx).
+> 有关这些不同类型的身份验证的详细概述，请参阅[https://msdn.microsoft.com/library/aa292114(VS.71).aspx](https://msdn.microsoft.com/library/aa292114(VS.71).aspx).
 
 
 Internet Information Services 管理器可用于启用特定类型的身份验证。 请注意，所有类型的身份验证都不可用对于每个操作系统。 此外，如果您正在使用 Windows Vista IIS 7.0，你将需要启用 Windows 身份验证的不同类型，它们显示在 Internet Information Services 管理器中之前。 打开**控制面板、 程序、 程序和功能，打开或关闭 Windows 功能**，然后展开 Internet 信息服务节点 （请参见图 2）。

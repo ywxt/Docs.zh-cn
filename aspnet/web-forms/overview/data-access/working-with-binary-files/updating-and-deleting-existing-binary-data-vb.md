@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e14b19f99e9f41c5a296d73ba689095a686794db
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8baf187d484424aeaee57f8c57ac391a0ae9e946
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-and-deleting-existing-binary-data-vb"></a>更新和删除现有的二进制数据 (VB)
 ====================
@@ -150,7 +150,7 @@ ObjectDataSource 现在将包括的值其`DeleteMethod`属性以及`DeleteParame
 
 存储到数据库外部的二进制数据的缺点之一是，必须采取额外步骤来清理这些文件，删除关联的数据库记录时。 GridView 和 ObjectDataSource 提供激发之前和之后已执行 delete 命令的事件。 我们实际上需要创建前和操作后事件的事件处理程序。 之前`Categories`删除记录，我们需要确定其 PDF 文件的路径，但我们不想删除 PDF 类别中删除某些异常并且不删除类别之前。
 
-GridView s [ `RowDeleting`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx)激发已调用 ObjectDataSource s delete 命令之前，而其[`RowDeleted`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowdeleted.aspx)之后激发。 创建事件处理程序使用下面的代码这两个事件：
+GridView s [ `RowDeleting`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx)激发已调用 ObjectDataSource s delete 命令之前，而其[`RowDeleted`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleted.aspx)之后激发。 创建事件处理程序使用下面的代码这两个事件：
 
 
 [!code-vb[Main](updating-and-deleting-existing-binary-data-vb/samples/sample5.vb)]

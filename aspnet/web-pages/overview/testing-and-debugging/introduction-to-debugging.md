@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: 2bc1f096540d17095ef760eed67b458fcd4e1372
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b6b5a886efe515b434948dade1ae840ddaecd42
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>调试 ASP.NET Web 简介页 (Razor) 站点
 ====================
@@ -71,7 +71,7 @@ ms.lasthandoff: 11/10/2017
     - HTTP 运行时信息。 本部分提供有关的详细信息的 Microsoft.NET Framework 下运行的 web 页、 路径、 有关缓存中，依次类推的详细信息的版本。 (正如你在中学到[ASP.NET Web 编程使用 Razor 语法的简介](https://go.microsoft.com/fwlink/?LinkId=202890)、 使用 Razor 语法基于 Microsoft 的 ASP.NET web 服务器技术，它本身基于广泛的软件的 ASP.NET Web Pages开发库中调用.NET Framework。）
     - 环境变量。 本部分提供的 web 服务器上的所有本地环境变量及其值的列表。
 
-    所有服务器和请求信息的完整说明不在本文的范围，但你可以看到，`ServerInfo`帮助程序返回了大量的诊断信息。 有关值的详细信息，`ServerInfo`返回时，请参阅[识别环境变量](https://technet.microsoft.com/en-us/library/dd560744(WS.10).aspx)Microsoft TechNet 网站上和[IIS 服务器变量](https://msdn.microsoft.com/en-us/library/ms524602(VS.90).aspx)MSDN 网站上。
+    所有服务器和请求信息的完整说明不在本文的范围，但你可以看到，`ServerInfo`帮助程序返回了大量的诊断信息。 有关值的详细信息，`ServerInfo`返回时，请参阅[识别环境变量](https://technet.microsoft.com/library/dd560744(WS.10).aspx)Microsoft TechNet 网站上和[IIS 服务器变量](https://msdn.microsoft.com/library/ms524602(VS.90).aspx)MSDN 网站上。
 
 ## <a name="embedding-output-expressions-to-display-page-values"></a>嵌入输出表达式，以显示页值
 
@@ -139,5 +139,5 @@ ms.lasthandoff: 11/10/2017
 ## <a name="additional-resources"></a>其他资源
 
 - [使用 Visual Studio 编程 ASP.NET Web 页 (Razor)](https://go.microsoft.com/fwlink/?LinkId=205854)
-- [IIS 服务器变量](https://msdn.microsoft.com/en-us/library/ms524602(VS.90).aspx)(MSDN)
-- [识别环境变量](https://technet.microsoft.com/en-us/library/dd560744(WS.10).aspx)(TechNet)
+- [IIS 服务器变量](https://msdn.microsoft.com/library/ms524602(VS.90).aspx)(MSDN)
+- [识别环境变量](https://technet.microsoft.com/library/dd560744(WS.10).aspx)(TechNet)

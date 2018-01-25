@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 41a9fd6b752252d563a0f15a420262cbb31c19ff
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9059e358311cc80b6a64aa3ee1168f4ffcd4e94c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="nested-master-pages-vb"></a>嵌套的母版页 (VB)
 ====================
@@ -352,7 +352,7 @@ ms.lasthandoff: 11/10/2017
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [嵌套的 ASP.NET 母版页](https://msdn.microsoft.com/en-us/library/x2b3ktt7.aspx)
+- [嵌套的 ASP.NET 母版页](https://msdn.microsoft.com/library/x2b3ktt7.aspx)
 - [嵌套的母版页和 VS 2005 设计时的提示](https://weblogs.asp.net/scottgu/archive/2005/11/11/430382.aspx)
 - [VS 2008 嵌套主控页支持](https://weblogs.asp.net/scottgu/archive/2007/07/09/vs-2008-nested-master-page-support.aspx)
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: e6ee3f9c055a15b13c27f94675006b9a7e804f1b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 118233338112a71216b909b1dabed2333bfa235e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-inheritance-with-the-entity-framework-6-in-an-aspnet-mvc-5-application-11-of-12"></a>在 ASP.NET MVC 5 应用程序 (11 12 的) 实现与 Entity Framework 6 的继承
 ====================
@@ -43,13 +43,13 @@ ms.lasthandoff: 11/10/2017
 
 有几种方法无法在数据库中表示此继承结构。 您可以对`Person`包括有关学生和教师单个表中的信息的表。 某些列可能仅适用于教师 (`HireDate`)，某些仅向学生 (`EnrollmentDate`)、 某些对这两个 (`LastName`， `FirstName`)。 通常，您将需要*鉴别器*指示哪种类型的每一行的列表示。 例如，鉴别器列可能有"教师"教师和"学生"学生版。
 
-![每个 hierarchy_example 表](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
+![Table-per-hierarchy_example](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 
 从单个数据库表生成的实体继承结构的此模式称为*表每个层次结构*(TPH) 继承。
 
 一种替代方法是使看上去更像继承结构数据库。 例如，您可以对只有名称字段`Person`表，并具有单独`Instructor`和`Student`具有日期字段的表。
 
-![每个 type_inheritance 表](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
+![Table-per-type_inheritance](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
 
 此模式的数据库表，针对每个实体类称为进行*每种类型的表*(TPT) 继承。
 
@@ -57,7 +57,7 @@ ms.lasthandoff: 11/10/2017
 
 TPC 和 TPH 继承模式通常提供更好的性能在实体框架中比 TPT 继承模式，因为 TPT 模式可能在复杂的联接查询中。
 
-本教程演示如何实现 TPH 继承。 TPH 是实体框架中中的默认继承模式，因此你所要做的就是创建`Person`类中，更改`Instructor`和`Student`类派生自`Person`，添加到新的类`DbContext`，并创建迁移。 (有关如何实现其他继承模式的信息，请参阅[映射的每种类型一个表 (TPT) 继承](https://msdn.microsoft.com/en-us/data/jj591617#2.5)和[映射表每个具体类 (TPC) 继承](https://msdn.microsoft.com/en-us/data/jj591617#2.6)MSDN 中实体框架文档。）
+本教程演示如何实现 TPH 继承。 TPH 是实体框架中中的默认继承模式，因此你所要做的就是创建`Person`类中，更改`Instructor`和`Student`类派生自`Person`，添加到新的类`DbContext`，并创建迁移。 (有关如何实现其他继承模式的信息，请参阅[映射的每种类型一个表 (TPT) 继承](https://msdn.microsoft.com/data/jj591617#2.5)和[映射表每个具体类 (TPC) 继承](https://msdn.microsoft.com/data/jj591617#2.6)MSDN 中实体框架文档。）
 
 ## <a name="create-the-person-class"></a>创建 Person 类
 
@@ -125,7 +125,7 @@ TPC 和 TPH 继承模式通常提供更好的性能在实体框架中比 TPT 继
 > 与新数据库，没有数据迁移，和`update-database`命令是更可能完成且未发生错误。 有关如何删除数据库的说明，请参阅[如何从 Visual Studio 2012 中删除数据库](http://romiller.com/2013/05/17/how-to-drop-a-database-from-visual-studio-2012/)。 如果你接受这种方法，以继续本教程，请跳过部署步骤，在本教程末尾，或将部署到新站点和数据库。 如果将更新部署到您已部署到已在同一站点时，EF 会那里相同的错误时它自动运行迁移。 如果你想要迁移错误的排查，最佳资源是实体框架论坛或 StackOverflow.com 之一。
 
 
-## <a name="testing"></a>测试
+## <a name="testing"></a>正在测试
 
 运行站点并尝试各种页面。 一切相同像以前一样。
 
@@ -159,7 +159,7 @@ Person 表中，右键单击，然后单击**显示表数据**才能看到鉴别
 
 ## <a name="summary"></a>摘要
 
-你已实现的每个层次结构一个表继承`Person`， `Student`，和`Instructor`类。 有关此设置和其他的继承结构的详细信息，请参阅[TPT 继承模式](https://msdn.microsoft.com/en-us/data/jj618293)和[TPH 继承模式](https://msdn.microsoft.com/en-us/data/jj618292)MSDN 上。 在下一步的教程中，你将看到如何处理各种相对较高级的实体框架方案。
+你已实现的每个层次结构一个表继承`Person`， `Student`，和`Instructor`类。 有关此设置和其他的继承结构的详细信息，请参阅[TPT 继承模式](https://msdn.microsoft.com/data/jj618293)和[TPH 继承模式](https://msdn.microsoft.com/data/jj618292)MSDN 上。 在下一步的教程中，你将看到如何处理各种相对较高级的实体框架方案。
 
 在找不到其他实体框架资源的链接[ASP.NET 数据访问的推荐资源](../../../../whitepapers/aspnet-data-access-content-map.md)。
 

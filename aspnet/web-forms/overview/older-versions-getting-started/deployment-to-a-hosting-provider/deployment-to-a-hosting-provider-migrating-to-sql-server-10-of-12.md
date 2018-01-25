@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 31d83a11488212ab0ff83494d5e896ffcbeaa8a4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b97834e3e287645151bf927996fde63d93ae8356
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 迁移到 SQL Server-10 12
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 
 一旦你已决定要升级到 SQL Server，你可能想要在你的开发和测试环境中使用 SQL Server 或 SQL Server Express。 除了工具支持在和中数据库引擎功能的差异，还有一些提供程序实现中 SQL Server Compact 和其他版本的 SQL Server 之间的差异。 这些差异可能导致相同的代码，以生成不同的结果。 因此，如果你决定要保留 SQL Server Compact 与开发数据库，应彻底测试你的站点中 SQL Server 或 SQL Server Express 之前每个部署到生产环境的测试环境中。
 
-不同于 SQL Server Compact，SQL Server Express 是实质上是相同的数据库引擎，并使用相同的.NET 提供程序作为完整的 SQL Server。 当你测试与 SQL Server Express 时，则可以确信获得相同的结果将与 SQL Server。 您可以使用 SQL Server Express 可以使用的 SQL Server 使用相同的数据库工具的大多数 (值得注意的例外正在[SQL Server 事件探查器](https://msdn.microsoft.com/en-us/library/ms181091.aspx))，并且它支持的 SQL Server 存储的过程、 视图、 触发器等其他功能和复制。 （你通常需要在生产网站，但是使用完整的 SQL Server。 SQL Server Express 可以运行在共享宿主环境中，但它不是为此，并且许多宿主提供程序不支持它。）
+不同于 SQL Server Compact，SQL Server Express 是实质上是相同的数据库引擎，并使用相同的.NET 提供程序作为完整的 SQL Server。 当你测试与 SQL Server Express 时，则可以确信获得相同的结果将与 SQL Server。 您可以使用 SQL Server Express 可以使用的 SQL Server 使用相同的数据库工具的大多数 (值得注意的例外正在[SQL Server 事件探查器](https://msdn.microsoft.com/library/ms181091.aspx))，并且它支持的 SQL Server 存储的过程、 视图、 触发器等其他功能和复制。 （你通常需要在生产网站，但是使用完整的 SQL Server。 SQL Server Express 可以运行在共享宿主环境中，但它不是为此，并且许多宿主提供程序不支持它。）
 
 如果你正在使用 Visual Studio 2012，你通常选择 SQL Server Express LocalDB 适用于你开发环境，因为它是默认情况下，使用 Visual Studio 安装的内容。 但是，LocalDB 不工作不在 IIS 中，因此你必须使用 SQL Server 或 SQL Server Express 为你的测试环境。
 
@@ -57,9 +57,9 @@ Contoso 大学应用程序具有两个 SQL Server Compact 数据库： 成员资
 
 默认情况下，使用 Visual Studio 2010，会自动安装 SQL Server Express，但默认情况下它不与安装 Visual Studio 2012。 若要安装 SQL Server 2012 Express，请单击以下链接
 
-- [SQL Server Express 2012](https://www.microsoft.com/en-us/download/details.aspx?id=29062)
+- [SQL Server Express 2012](https://www.microsoft.com/download/details.aspx?id=29062)
 
-选择*ENU / x64 / SQLEXPR\_x64\_ENU.exe*或*ENU/x86/SQLEXPR\_x86\_ENU.exe*，并在安装向导中接受默认值设置。 有关安装选项的详细信息，请参阅[从安装向导 （安装程序） 中安装 SQL Server 2012](https://msdn.microsoft.com/en-us/library/ms143219.aspx)。
+选择*ENU / x64 / SQLEXPR\_x64\_ENU.exe*或*ENU/x86/SQLEXPR\_x86\_ENU.exe*，并在安装向导中接受默认值设置。 有关安装选项的详细信息，请参阅[从安装向导 （安装程序） 中安装 SQL Server 2012](https://msdn.microsoft.com/library/ms143219.aspx)。
 
 ## <a name="creating-sql-server-express-databases-for-the-test-environment"></a>为测试环境中创建 SQL Server Express 数据库
 

@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: 0e4df407a1ca15aa5baa2b7226be1cf91902a583
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3cdd36ae03824645e09f97cae85cc55956679390
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>更新相关的数据的 EF 内核，它们有 ASP.NET 核心 MVC 教程 (7 个 10)
 
@@ -49,7 +49,7 @@ Contoso 大学示例 web 应用程序演示如何创建使用实体框架核心�
 
 `PopulateDepartmentsDropDownList`方法获取按名称排序的所有部门的列表，创建`SelectList`集合有关的下拉列表，并将集合传递到该视图`ViewBag`。 该方法接受可选`selectedDepartment`允许指定呈现下拉列表时将选定的项的调用代码的参数。 该视图会将"DepartmentID"的名称传递到`<select>`标记帮助器和帮助程序就会知道要查找的`ViewBag`对象`SelectList`名为"DepartmentID"。
 
-HttpGet`Create`方法调用`PopulateDepartmentsDropDownList`而无需设置选定的项，因为新课程部门不尚未建立的方法：
+HttpGet`Create`方法调用`PopulateDepartmentsDropDownList`而无需设置选定的项，因为新课程部门不在尚未建立的方法：
 
 [!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?highlight=3&name=snippet_CreateGet)]
 
@@ -129,7 +129,7 @@ HttpGet`Edit`方法设置选定的项，基于部门已分配给过程中正在�
 
 -  将检索到的 Instructor 实体更新模型联编程序中的值。 `TryUpdateModel`重载使你到白名单你想要包括的属性。 这可以防止过度发布中所述[第二个教程](crud.md)。
 
-    <!-- Snippets do not play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
+    <!-- Snippets don't play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
 
     ```csharp
     if (await TryUpdateModelAsync<Instructor>(
@@ -140,7 +140,7 @@ HttpGet`Edit`方法设置选定的项，基于部门已分配给过程中正在�
     
 -   如果 office 位置为空，设置 Instructor.OfficeAssignment 属性为 null，以便将删除 OfficeAssignment 表中的相关的行。
 
-    <!-- Snippets do not play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
+    <!-- Snippets don't play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
 
     ```csharp
     if (String.IsNullOrWhiteSpace(instructorToUpdate.OfficeAssignment?.Location))
@@ -221,7 +221,7 @@ HttpGet`Edit`方法设置选定的项，基于部门已分配给过程中正在�
 
 [!code-html[Main](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
 
-此代码将创建一个 HTML 表，包含三列。 处于每个列组成课程编号及标题的标题后跟一个复选框。 所有对应的复选框具有相同的名称 ("selectedCourses")，通知它们将被视为一组模型联编程序。 每个复选框的值属性设置为的值`CourseID`。 当发页面时，模型联编程序会将数组传递给组成的控制器`CourseID`仅复选框进行选择的值。
+此代码将创建一个 HTML 表，包含三列。 处于每个列组成课程编号及标题的标题后跟一个复选框。 所有具有相同的名称 ("selectedCourses")，通知模型联编程序它们被视为一组复选框。 每个复选框的值属性设置为的值`CourseID`。 当发页面时，模型联编程序会将数组传递给组成的控制器`CourseID`仅复选框进行选择的值。
 
 当最初呈现复选框时，为分配给教师的课程的那些具有检查属性，后者选择它们 （它们检查的显示）。
 

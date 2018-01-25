@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: f054d574026ab6444cc59a126ef9dcdc323f7bff
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 32cdd8d524d783d7ccc3ab076de636ce4a868132
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 语法 (C#) 的 ASP.NET Web 编程简介
 ====================
@@ -58,7 +58,7 @@ ms.lasthandoff: 11/10/2017
 
 这是这些语句在页的浏览器中运行时的外观：
 
-![Razor Img1](introducing-razor-syntax-c/_static/image1.jpg)
+![Razor-Img1](introducing-razor-syntax-c/_static/image1.jpg)
 
 > [!TIP] 
 > 
@@ -79,7 +79,7 @@ A*代码块*包括一个或多个代码语句并括在大括号。
 
 在浏览器中所显示的结果：
 
-![Razor Img2](introducing-razor-syntax-c/_static/image2.jpg)
+![Razor-Img2](introducing-razor-syntax-c/_static/image2.jpg)
 
 ### <a name="3-inside-a-block-you-end-each-code-statement-with-a-semicolon"></a>3.在块中，你最终用分号每个代码语句
 
@@ -95,7 +95,7 @@ A*代码块*包括一个或多个代码语句并括在大括号。
 
 在浏览器中所显示的结果：
 
-![Razor Img3](introducing-razor-syntax-c/_static/image3.jpg)
+![Razor-Img3](introducing-razor-syntax-c/_static/image3.jpg)
 
 <a id="ID_StringLiterals"></a>
 ### <a name="5-you-enclose-literal-string-values-in-double-quotation-marks"></a>5.将文本字符串值括在双引号内
@@ -114,7 +114,7 @@ A*字符串*是作为文本处理的字符的序列。 若要指定一个字符�
 
 下面是在页中使用的两个这些示例的结果：
 
-![Razor Img4](introducing-razor-syntax-c/_static/image4.jpg)
+![Razor-Img4](introducing-razor-syntax-c/_static/image4.jpg)
 
 > [!NOTE]
 > 请注意，`@`标记在 C# 中逐字字符串文本和标记 ASP.NET 页中的代码使用字符。
@@ -142,7 +142,7 @@ A*字符串*是作为文本处理的字符的序列。 若要指定一个字符�
 
 在浏览器中所显示的结果：
 
-![Razor Img5](introducing-razor-syntax-c/_static/image5.jpg)
+![Razor-Img5](introducing-razor-syntax-c/_static/image5.jpg)
 
 ### <a name="8-you-can-write-code-that-makes-decisions"></a>8.你可以编写做出决策的代码
 
@@ -154,7 +154,7 @@ A*字符串*是作为文本处理的字符的序列。 若要指定一个字符�
 
 在浏览器中所显示的结果 (单击后**提交**):
 
-![Razor Img6](introducing-razor-syntax-c/_static/image6.jpg)
+![Razor-Img6](introducing-razor-syntax-c/_static/image6.jpg)
 
 > [!TIP] 
 > 
@@ -187,7 +187,7 @@ A*字符串*是作为文本处理的字符的序列。 若要指定一个字符�
     - `<form>`标记包含`method="post"`属性。 此步骤指定当用户单击**添加**，页面将发送到服务器使用 HTTP POST 方法。 当提交页时，`if(IsPost)`测试的计算结果为 true，而条件性代码运行时，显示的添加数字结果。
 3. 保存页并在浏览器中运行它。 (请确保页中选择**文件**工作区之前运行它。)输入两个整数，然后单击**添加**按钮。 
 
-    ![Razor Img7](introducing-razor-syntax-c/_static/image7.jpg)
+    ![Razor-Img7](introducing-razor-syntax-c/_static/image7.jpg)
 
 ## <a name="basic-programming-concepts"></a>基本编程概念
 
@@ -209,7 +209,7 @@ Razor 语法取决于从调用 ASP.NET，又基于 Microsoft.NET Framework 的 M
 
 Razor 语法使您能够 ASP.NET，但使用可以更轻松地了解当你方面的专家，如果您是初学者，可将你提高工作效率的简化的语法的所有功能。 即使此语法是易于使用，它与 ASP.NET 和.NET Framework 的系列关系意味着，在您的网站变得越来越复杂，你会有更大的框架可供你的 power。
 
-![Razor Img8](introducing-razor-syntax-c/_static/image8.jpg)
+![Razor-Img8](introducing-razor-syntax-c/_static/image8.jpg)
 
 > [!TIP] 
 > 
@@ -325,7 +325,7 @@ HTML 注释开头`<!--`字符和以结尾`-->`。 可以使用 HTML 注释来包
 
 如果合并前面的示例在页中，你将看到此浏览器中显示：
 
-![Razor Img9](introducing-razor-syntax-c/_static/image9.jpg)
+![Razor-Img9](introducing-razor-syntax-c/_static/image9.jpg)
 
 ### <a name="converting-and-testing-data-types"></a>转换和测试数据类型
 
@@ -343,7 +343,7 @@ HTML 注释开头`<!--`字符和以结尾`-->`。 可以使用 HTML 注释来包
 
 下表列出了一些常见的转换和测试方法的变量。
 
-| **方法** | **描述** | **示例** |
+| **方法** | **说明** | **示例** |
 | --- | --- | --- |
 | `AsInt(), IsInt()` | 将转换为整数表示整数数量 （如"593") 的字符串。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)] |
 | `AsBool(), IsBool()` | 将转换字符串如下所示&quot;true&quot;或&quot;false&quot;到类型为 Boolean 类型。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)] |
@@ -356,7 +356,7 @@ HTML 注释开头`<!--`字符和以结尾`-->`。 可以使用 HTML 注释来包
 
 运算符是命令的关键字或哪种类型的表达式中执行将告诉 ASP.NET 的字符。 C# 语言 （和基于它的 Razor 语法） 支持很多运算符，但你只需以识别一些吧。 下表总结了最常用的运算符。
 
-| **Operator** | **描述** | **示例** |
+| **Operator** | **说明** | **示例** |
 | --- | --- | --- |
 | `+` `-` `*` `/` | 在数值表达式中使用的数学运算符。 | [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)] |
 | `=` | 赋值。 将一条语句右侧的值分配给左侧的对象。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)] |
@@ -451,7 +451,7 @@ ASP.NET 服务器代码允许你执行基于条件的任务，编写特定次数
 
 在浏览器中显示的最后两个条件块的结果：
 
-![Razor Img10](introducing-razor-syntax-c/_static/image10.jpg)
+![Razor-Img10](introducing-razor-syntax-c/_static/image10.jpg)
 
 ### <a name="looping-code"></a>循环的代码
 
@@ -467,7 +467,7 @@ ASP.NET 服务器代码允许你执行基于条件的任务，编写特定次数
 
 在括号内是循环的将每个迭代中运行的代码。 标记将创建一个新段落 (`<p>`元素) 每个时间，并将行添加到输出中，显示的值`i`（计数器）。 运行此页时，该示例将创建 11 行显示输出，与每个行，该值指示项数中的文本。
 
-![Razor Img11](introducing-razor-syntax-c/_static/image11.jpg)
+![Razor-Img11](introducing-razor-syntax-c/_static/image11.jpg)
 
 如果你正在使用集合或数组，则通常会使用`foreach`循环。 集合是一组类似对象和`foreach`循环的允许您执行的任务集合中的每个项。 这种类型的循环是方便对于集合，因为与不同`for`循环中，你无需递增计数器或设置一个限制。 相反，`foreach`循环代码只需继续访问该集合之前完成。
 
@@ -477,7 +477,7 @@ ASP.NET 服务器代码允许你执行基于条件的任务，编写特定次数
 
 `foreach`关键字后跟圆括号其中声明表示单个项集合中的变量 (在示例中， `var item`) 后, 跟`in`关键字后, 跟你想要循环访问的集合。 正文中`foreach`循环中，你可以访问使用你之前声明的变量的当前项。
 
-![Razor Img12](introducing-razor-syntax-c/_static/image12.jpg)
+![Razor-Img12](introducing-razor-syntax-c/_static/image12.jpg)
 
 若要创建更通用的循环，使用`while`语句：
 
@@ -523,7 +523,7 @@ A*集合*是一组相同的类型，例如的集合对象`Customer`数据库中�
 
 在浏览器中显示的字符串数组代码的输出：
 
-![Razor Img13](introducing-razor-syntax-c/_static/image13.jpg)
+![Razor-Img13](introducing-razor-syntax-c/_static/image13.jpg)
 
 字典是键/值对的集合，其中提供的密钥 （或名称） 来设置或检索相应的值：
 
@@ -568,14 +568,14 @@ Razor 语法为你提供了用于将参数传递给方法的两个选项：*位�
 
 ### <a name="try-catch-statements"></a>Try Catch 语句
 
-通常将在代码中可能会失败的原因，在你的控制范围具有语句。 例如: 
+通常将在代码中可能会失败的原因，在你的控制范围具有语句。 例如:
 
 - 如果你的代码尝试创建或访问文件，可能会出现各种类型的错误。 所需的文件可能不存在，则可能锁定，代码可能不具有权限，依次类推。
 - 同样，如果你的代码尝试更新数据库中的记录，可以有权限问题、 与数据库的连接可能会丢弃，要保存的数据可能无效，依次类推。
 
 编程术语中，这些情况下调用*异常*。 如果你的代码遇到的异常，它会生成 （引发） 一条错误消息的在最好的情况，令人讨厌的用户：
 
-![Razor Img14](introducing-razor-syntax-c/_static/image14.jpg)
+![Razor-Img14](introducing-razor-syntax-c/_static/image14.jpg)
 
 在情况下，你的代码可能会遇到的异常，并且为了避免这种类型的错误消息，你可以使用`try/catch`语句。 在`try`语句，你将运行要检查的代码。 在一个或多个`catch`语句，则你可以查看为特定可能发生的错误 （特定类型的异常）。 可以包括任意多个`catch`语句作为你需要查找以及预期的错误。
 
@@ -600,6 +600,6 @@ Razor 语法为你提供了用于将参数传递给方法的两个选项：*位�
 **参考文档**
 
 
-[ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ee532866.aspx)
+[ASP.NET 2.0](https://msdn.microsoft.com/library/ee532866.aspx)
 
-[C# 语言](https://msdn.microsoft.com/en-us/library/kx37x362.aspx)
+[C# 语言](https://msdn.microsoft.com/library/kx37x362.aspx)

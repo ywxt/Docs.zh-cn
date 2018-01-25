@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception
 msc.type: authoredcontent
-ms.openlocfilehash: 1c24ccd220bf6df09a958d07b13077f004da0a03
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e3347657fb5c7bf8c7bb4e51a2e810a1edde826a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a>ASP.NET Web 窗体连接复原和命令截获
 ====================
@@ -35,11 +35,11 @@ ms.lasthandoff: 11/10/2017
 - 如何提供连接复原能力。
 - 如何实现命令截获。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 在开始之前，请确保你已在计算机上安装以下软件：
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs)或[Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web)。 自动安装.NET Framework。
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs)或[Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/downloads#express-web)。 自动安装.NET Framework。
 - Wingtip Toys 示例项目，以便你可以实现在本教程中 Wingtip Toys 项目中所述的功能。 以下链接提供下载详细信息：
 
     - [Getting Started with ASP.NET 4.5.1 Web 窗体的 Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&amp;clcid=0x409) (C#)
@@ -81,7 +81,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample3.cs?highlight=14-15,17-22)]
 
-通过添加`RetryLimitExceededException`异常，你可以提供更好地日志记录或向他们可以选择要再次尝试该过程的用户显示一条错误消息。 通过捕获`RetryLimitExceededException`异常，可能是暂时性的唯一错误将已尝试并失败几次。 返回的实际异常将包装在`RetryLimitExceededException`异常。 此外，你还将添加的一般 catch 块。 有关详细信息`RetryLimitExceededException`异常，请参阅[实体框架连接复原 / 重试逻辑](https://msdn.microsoft.com/en-us/data/dn456835)。
+通过添加`RetryLimitExceededException`异常，你可以提供更好地日志记录或向他们可以选择要再次尝试该过程的用户显示一条错误消息。 通过捕获`RetryLimitExceededException`异常，可能是暂时性的唯一错误将已尝试并失败几次。 返回的实际异常将包装在`RetryLimitExceededException`异常。 此外，你还将添加的一般 catch 块。 有关详细信息`RetryLimitExceededException`异常，请参阅[实体框架连接复原 / 重试逻辑](https://msdn.microsoft.com/data/dn456835)。
 
 ## <a name="command-interception"></a>命令截获
 

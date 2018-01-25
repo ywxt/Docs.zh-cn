@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
 msc.type: authoredcontent
-ms.openlocfilehash: 6cb77e8ef301c2eeef7df3e391e14f4e2c0364e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 489769533a26c99404c6a5186d66f560385dcffd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unstructured-blob-storage-building-real-world-cloud-apps-with-azure"></a>非结构化的 Blob 存储 （使用 Azure 构建真实世界云应用）
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 
 Azure 存储 Blob 服务使您能够在云中存储文件。 Blob 服务具有大量通过将文件存储在本地网络文件系统的优点：
 
-- 它是高度可伸缩的。 单个存储帐户可以存储[数百个亿字节](https://msdn.microsoft.com/en-us/library/windowsazure/dn249410.aspx)，并且可有多个存储帐户。 最大的 Azure 客户的一些存储数百个 petabytes。 Microsoft SkyDrive 使用 blob 存储。
+- 它是高度可伸缩的。 单个存储帐户可以存储[数百个亿字节](https://msdn.microsoft.com/library/windowsazure/dn249410.aspx)，并且可有多个存储帐户。 最大的 Azure 客户的一些存储数百个 petabytes。 Microsoft SkyDrive 使用 blob 存储。
 - 它是持久事务。 Blob 服务中存储每个文件自动备份。
 - 它提供了高可用性。 [SLA for Storage](https://go.microsoft.com/fwlink/p/?linkid=159705&amp;clcid=0x409)承诺 99.9%或 99.99%的正常运行时间，根据所选的地域冗余选项。
 - 它是 Azure 中，这意味着你只需存储和检索文件，仅为你使用的存储的实际数量付费的平台即服务 (PaaS) 功能和 Azure 会自动负责设置和管理的所有 Vm 和所需的磁盘驱动器服务。
@@ -146,7 +146,7 @@ Azure 不会跨地缘政治边界复制数据： 如果你的主位置是在美�
 - [Azure BLOB 存储空间简介](https://www.simple-talk.com/cloud/cloud-data/an-introduction-to-windows-azure-blob-storage-/)。 Mike 木材的博客。
 - [如何在.NET 中使用 Azure Blob 存储服务](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs)。 MicrosoftAzure.com 网站上的正式文档。 简要介绍到 blob 存储跟代码示例演示如何连接到 blob 存储创建容器、 上载和下载 blob，等等。
 - [防故障： 构建可扩展、 有弹性的云服务](https://channel9.msdn.com/Series/FailSafe)。 通过 Ulrich Homann、 Marc Mercuri 和 Mark Simms 九一部分视频系列。 高级概念和体系结构原理以非常可访问且有趣方式，提供与 Microsoft 客户咨询团队 (CAT) 体验与实际客户从绘制的情景。 有关 Azure 存储服务和 blob 的讨论，请参阅段 5 开始 35:13。
-- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/en-us/library/dn568099.aspx)。 请参阅 Valet 密钥模式。
+- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/library/dn568099.aspx)。 请参阅 Valet 密钥模式。
 
 >[!div class="step-by-step"]
 [上一页](data-partitioning-strategies.md)

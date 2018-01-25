@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 62be7c9636fb74c40bec812e9ac76b360995da50
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cea805c86f0764c7443ccc5c9f89248860a6a842
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="performing-a-what-if-deployment"></a>执行"假设"部署
 ====================
@@ -52,7 +52,7 @@ Web 部署包括可以使用"假设"执行中的部署的功能 （或试用版�
 如果你所使用"假设"部署的结果感到满意，你可以删除**– whatif**标志来运行实时部署。
 
 > [!NOTE]
-> MSDeploy.exe 命令行选项的详细信息，请参阅[Web 部署操作设置](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx)。
+> MSDeploy.exe 命令行选项的详细信息，请参阅[Web 部署操作设置](https://technet.microsoft.com/library/dd569089(WS.10).aspx)。
 
 
 如果你使用*。 deploy.cmd*文件，你可以通过包括运行"假设"部署**/t**标志 （试用模式） 标志而不是**/y**中的标志 （"是，"或更新模式）你的命令。 例如，若要评估如果通过运行部署 ContactManager.Mvc.zip 包会发生什么情况*。 deploy.cmd*文件，你的命令应类似如下：
@@ -68,7 +68,7 @@ Web 部署包括可以使用"假设"执行中的部署的功能 （或试用版�
 
 
 > [!NOTE]
-> 有关详细信息的命令行选项*。 deploy.cmd*文件，请参阅[如何： 安装部署包 Using deploy.cmd 文件](https://msdn.microsoft.com/en-us/library/ff356104.aspx)。 如果你运行*。 deploy.cmd*文件无需指定任何标志，命令提示符将显示可用标志的列表。
+> 有关详细信息的命令行选项*。 deploy.cmd*文件，请参阅[如何： 安装部署包 Using deploy.cmd 文件](https://msdn.microsoft.com/library/ff356104.aspx)。 如果你运行*。 deploy.cmd*文件无需指定任何标志，命令提示符将显示可用标志的列表。
 
 
 ## <a name="performing-a-what-if-deployment-for-databases"></a>执行"假设"部署数据库
@@ -142,7 +142,7 @@ VSDBCMD 是一个差异数据库部署工具，并且这种情况下部署脚本
 
 ## <a name="further-reading"></a>其他阅读材料
 
-有关 Web 部署命令行语法的详细信息，请参阅[Web 部署操作设置](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx)。 有关当你使用的命令行选项的指导*。 deploy.cmd*文件，请参阅[如何： 安装部署包 Using deploy.cmd 文件](https://msdn.microsoft.com/en-us/library/ff356104.aspx)。 有关 VSDBCMD 命令行语法的指南，请参阅[VSDBCMD 的命令行参考。EXE （部署和架构导入）](https://msdn.microsoft.com/en-us/library/dd193283.aspx)。
+有关 Web 部署命令行语法的详细信息，请参阅[Web 部署操作设置](https://technet.microsoft.com/library/dd569089(WS.10).aspx)。 有关当你使用的命令行选项的指导*。 deploy.cmd*文件，请参阅[如何： 安装部署包 Using deploy.cmd 文件](https://msdn.microsoft.com/library/ff356104.aspx)。 有关 VSDBCMD 命令行语法的指南，请参阅[VSDBCMD 的命令行参考。EXE （部署和架构导入）](https://msdn.microsoft.com/library/dd193283.aspx)。
 
 >[!div class="step-by-step"]
 [上一页](advanced-enterprise-web-deployment.md)

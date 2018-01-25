@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 23e38416dc294a1a07cb320cf5ab328fa036d1e8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 560f949f79be8ba4936e4a6f8ee8ee32ef15acbf
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-web-forms-in-aspnet-45"></a>什么是在 ASP.NET 4.5 Web 窗体中的新增功能
 ====================
@@ -59,7 +59,7 @@ ms.lasthandoff: 11/10/2017
 - 实现异步处理在 Web 窗体中的页
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 你必须具有要完成本实验的以下项：
 
@@ -207,7 +207,7 @@ ASP.NET Web 窗体的新版本引入了一些侧重于处理数据时可以改�
 <a id="Task_3_-_Value_Providers_in_Model_Binding"></a>
 #### <a name="task-3---value-providers-in-model-binding"></a>任务 3-在模型绑定中的值提供程序
 
-模型绑定不仅可用于指定自定义方法以处理直接在数据绑定控件中，数据还允许你将从页中的数据映射到从这些方法的参数。 方法参数中，你可以使用值提供程序属性以指定的值的数据源。 例如: 
+模型绑定不仅可用于指定自定义方法以处理直接在数据绑定控件中，数据还允许你将从页中的数据映射到从这些方法的参数。 方法参数中，你可以使用值提供程序属性以指定的值的数据源。 例如:
 
 - 在页面上的控件
 - 查询字符串值
@@ -562,7 +562,7 @@ ASP.NET 4.5 引入了 Web 窗体的数据批注验证。 而不是让每个输�
     (代码段- *Web 窗体实验室-Ex03-UpdateProductImage 调用*)
 
     [!code-csharp[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample34.cs)]
-7. 运行应用程序并重试上载产品的映像。 例如，可以使用下面的图像 URL，从 Office 剪贴画： [ [http://officeimg.vo.msecnd.net/en-us/images/MB900437099.jpg](http://officeimg.vo.msecnd.net/en-us/images/MB900437099.jpg)](http://officeimg.vo.msecnd.net/en-us/images/MB900437099.jpg)
+7. 运行应用程序并重试上载产品的映像。 例如，可以使用下面的图像 URL，从 Office 剪贴画： [ [http://officeimg.vo.msecnd.net/images/MB900437099.jpg](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)
 
     ![设置产品的映像](whats-new-in-web-forms-in-aspnet-45/_static/image23.png "设置产品的映像")
 

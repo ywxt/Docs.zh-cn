@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-recommended-resources
 msc.type: authoredcontent
-ms.openlocfilehash: 8050d37cfea91701e1cae0413feb41ca9a68baff
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cb6e378d6b1de7d43bbc4272b64f9029f4e92924
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-identity-recommended-resources"></a>ASP.NET 标识的推荐资源
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 > 如果你知道出色的博客文章， [stackoverflow](http://stackoverflow.com)线程或都非常有用的任何其他链接[向我们发送一封电子邮件](mailto:aspnetue@microsoft.com?subject=Identity recommended resources)与链接或只是将保留在此页底部的消息。
 
 
-- [Getting Started with ASP.NET 标识](#gettingstarted)
+- [ASP.NET 标识入门](#gettingstarted)
 - [新的特色必须读取文章](#feat)
 - [中间 ASP.NET 标识](#adv)
 - [视频](#video)
@@ -44,7 +44,7 @@ ms.lasthandoff: 11/10/2017
 - [将包含成员资格、 OAuth 和 SQL 数据库的安全 ASP.NET MVC 应用程序部署到 Azure](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)。 本教程将添加 Azure 部署，如何保护使用角色，对应用程序如何使用成员资格 API 来添加用户和角色，以及其他安全功能。
 - [ASP.NET 标识简介](introduction-to-aspnet-identity.md)
 - [创建具有登录、 电子邮件确认及密码重置安全的 ASP.NET MVC 5 web 应用程序](../../../mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)
-- [使用 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用程序](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
+- [具有 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
 
 <a id="feat"></a>
 ## <a name="new-featured-must-read-articles"></a>新的特色必须读取文章
@@ -59,11 +59,11 @@ ms.lasthandoff: 11/10/2017
 ## <a name="intermediate-aspnet-identity"></a>中间 ASP.NET 标识
 
 - [帐户确认和密码恢复 ASP.NET 标识](../features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
-- [具有 ASP.NET 标识使用 SMS 和电子邮件的双因素身份验证](../features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
-- [从 SQL 成员资格的现有网站迁移到 ASP.NET 标识](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
-- [添加 ASP.NET 标识设置为一个空的或现有的 Web 窗体项目](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
-- MSDN 杂志[外部身份验证与 ASP.NET 标识](https://msdn.microsoft.com/en-us/magazine/dn745860.aspx)通过 Dino Esposito
-- MSDN 杂志[首先查看一下 ASP.NET 标识](https://msdn.microsoft.com/en-us/magazine/dn605872.aspx)通过 Dino Esposito
+- [使用 SMS 和 ASP.NET 标识的双因素身份验证](../features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
+- [将现有网站从 SQL 成员身份迁移到 ASP.NET 标识](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
+- [向空的或现有的 Web 窗体项目添加 ASP.NET 标识](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
+- MSDN 杂志[外部身份验证与 ASP.NET 标识](https://msdn.microsoft.com/magazine/dn745860.aspx)通过 Dino Esposito
+- MSDN 杂志[首先查看一下 ASP.NET 标识](https://msdn.microsoft.com/magazine/dn605872.aspx)通过 Dino Esposito
 - [ASP.NET 标识 – 用户锁定](http://tech.trailmax.info/2014/06/asp-net-identity-user-lockout/)
 
 <a id="samp"></a>

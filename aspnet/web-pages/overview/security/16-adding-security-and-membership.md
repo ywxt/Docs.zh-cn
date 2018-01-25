@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: f0cee96005416bd9ef8befaf34890f415cf5ff3c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af2eeb128cff554e7ae3d903e2117861087344e9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>将安全和成员身份添加到 ASP.NET 网站页 (Razor)
 ====================
@@ -42,7 +42,7 @@ ms.lasthandoff: 11/10/2017
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
 > 
 > 
-> - ASP.NET 网页 (Razor) 2
+> - ASP.NET Web Pages (Razor) 2
 > - WebMatrix 3
 > - ASP.NET Web 帮助程序库
 
@@ -100,7 +100,7 @@ ms.lasthandoff: 11/10/2017
 7. 保存并关闭 *\_AppStart.cshtml*。
 8. 运行*Default.cshtml*在浏览器中的页。
 
-    ![安全-成员身份-2](16-adding-security-and-membership/_static/image1.png)
+    ![security-membership-2](16-adding-security-and-membership/_static/image1.png)
 
     > [!NOTE]
     > 如果你看到错误，告知你属性必须为实例`ExtendedMembershipProvider`，不可能将站点配置为使用 ASP.NET Web Pages 成员资格系统 (SimpleMembership)。 如果宿主提供程序的服务器配置不同于你的本地服务器，有时会出现此问题。 若要解决此问题，请将下面的元素添加到站点的*Web.config*文件：
@@ -111,20 +111,20 @@ ms.lasthandoff: 11/10/2017
 9. 在页面右上角，单击**注册**链接。 *Register.cshtml*显示页。
 10. 输入用户名和密码，然后单击**注册**。
 
-    ![安全-成员身份-3](16-adding-security-and-membership/_static/image2.png)
+    ![security-membership-3](16-adding-security-and-membership/_static/image2.png)
 
     当创建对网站从**入门站点**模板、 一个名为数据库*StarterSite.sdf*在站点中创建*应用\_数据*文件夹。 在注册期间，你的用户信息添加到数据库。 如果设置 SMTP 值时，一条消息是发送到电子邮件地址中，使用使你可以完成注册。
 
-    ![安全-成员身份-4](16-adding-security-and-membership/_static/image3.png)
+    ![security-membership-4](16-adding-security-and-membership/_static/image3.png)
 11. 转到你的电子邮件程序，查找的消息，这将到站点中具有你确认代码链接和超链接。
 12. 单击超链接以激活你的帐户。 确认超链接打开注册确认页。
 
-    ![安全-成员身份-5](16-adding-security-and-membership/_static/image4.png)
+    ![security-membership-5](16-adding-security-and-membership/_static/image4.png)
 - 单击**登录**链接，然后使用你注册的帐户，然后登录。
 
     你登录后**登录**和**注册**链接替换为**注销**链接。 您的登录名显示为链接。 （链接使你能够转到一个页面，你可以在其中更改你的密码。）
 
-    ![安全成员身份 6](16-adding-security-and-membership/_static/image5.png)
+    ![security-membership-6](16-adding-security-and-membership/_static/image5.png)
 
     > [!NOTE]
     > 默认情况下，ASP.NET 网页将凭据发送到服务器以明文形式 （作为用户可读文本）。 生产站点应使用安全 HTTP (也称为 https://*安全套接字层*或 SSL) 与的服务器交换的敏感信息进行加密。 你可以所需的电子邮件发送的消息使用 SSL 通过设置`WebMail.EnableSsl=true`如同前面的示例。 有关 SSL 的详细信息，请参阅[保护 Web 通信： 证书、 SSL 和 https://](https://go.microsoft.com/fwlink/?LinkId=208660)。
@@ -170,7 +170,7 @@ ms.lasthandoff: 11/10/2017
 若要保护对多个页的访问，可以执行此操作：
 
 - 添加到每个页面的安全检查。
-- 创建 *\_PageStart.cshtml*页中的文件夹，其中保留受保护的页，并添加的安全检查。  *\_PageStart.cshtml*页用作一种类型的全局文件夹中的所有页的页。 此技术中的详细说明了[自定义站点范围的行为的 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access)。
+- 创建 *\_PageStart.cshtml*页中的文件夹，其中保留受保护的页，并添加的安全检查。 *\_PageStart.cshtml*页用作一种类型的全局文件夹中的所有页的页。 此技术中的详细说明了[自定义站点范围的行为的 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access)。
 
 ## <a name="creating-security-for-groups-of-users-roles"></a>创建安全组的用户 （角色）
 
@@ -181,17 +181,17 @@ ASP.NET 成员资格系统设置以支持角色。 但是，与成员身份注�
 1. 在 WebMatrix 中，单击**数据库**工作区中选择器。
 2. 在左窗格中，打开*StarterSite.sdf*节点，打开**表**节点，然后再双击*网页\_角色*表。
 
-    ![安全-成员身份-7](16-adding-security-and-membership/_static/image6.png)
+    ![security-membership-7](16-adding-security-and-membership/_static/image6.png)
 3. 添加名为的角色&quot;管理员&quot;。 *RoleId*自动填写字段。 (它是主键，已设置为标识字段中中, 所述[使用 ASP.NET Web Pages 站点中的数据库的简介](https://go.microsoft.com/fwlink/?LinkId=202893)。)
 4. 请记下的值是什么*RoleId*字段。 （如果这是你定义的第一个角色，它将是 1）。
 
-    ![安全-成员身份-8](16-adding-security-and-membership/_static/image7.png)
+    ![security-membership-8](16-adding-security-and-membership/_static/image7.png)
 5. 关闭*网页\_角色*表。
 6. 打开*UserProfile*表。
 7. 记下*UserId*的一个或多个表，然后关闭表中的用户的值。
 8. 打开*网页\_UserInRoles*表，然后输入*UserID*和*RoleID*到表的值。 例如，若要将用户 2 到&quot;管理员&quot;角色，则输入这些值：
 
-    ![安全-成员身份-9](16-adding-security-and-membership/_static/image8.png)
+    ![security-membership-9](16-adding-security-and-membership/_static/image8.png)
 9. 关闭*网页\_UsersInRoles*表。
 
     现在，你已定义的角色，你可以配置该角色中的用户可以访问的页面。
@@ -230,7 +230,7 @@ ASP.NET 成员资格系统设置以支持角色。 但是，与成员身份注�
 1. 运行*Default.cshtml*在浏览器。 如果你登录到站点，请单击**注销**链接。
 2. 单击**注册**链接以及测试使用 CAPTCHA 测试的注册。
 
-    ![安全-成员身份-10](16-adding-security-and-membership/_static/image9.png)
+    ![security-membership-10](16-adding-security-and-membership/_static/image9.png)
 
 有关详细信息`ReCaptcha`帮助器，请参阅[到防止自动程序 （机器人） 从使用你的 ASP.NET Web 站点使用 CATPCHA](https://go.microsoft.com/fwlink/?LinkId=251967)。
 
@@ -254,20 +254,20 @@ ASP.NET 成员资格系统设置以支持角色。 但是，与成员身份注�
 
 基本过程篇博客文章中所述[最基本的方法来实现 ASP.NET Razor 安全](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2240)。 完成大部分工作的以下方法和属性使用`WebSecurity`帮助器：
 
-- [WebSecurty.UserExists](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.userexists(v=vs.99).aspx)， [WebSecurity.CreateUserAndAccount](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.createuserandaccount(v=vs.99).aspx)。 这些方法使你可以确定是否有人已注册并对它们进行注册。
-- [WebSecurty.IsAuthenticated](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.isauthenticated(v=vs.99).aspx)。 此属性允许您确定当前用户是否已登录。 这可用于将用户重定向到登录页，如果它们未已登录。
-- [WebSecurity.Login](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.login(v=vs.99).aspx)， [WebSecurity.Logout](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.logout(v=vs.99).aspx)。 这些方法将用户登录，或缩小。
-- [WebSecurity.CurrentUserName](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.currentusername(v=vs.99).aspx)。 此属性可用于显示当前用户的登录名 （如果用户已登录）。
-- [WebSecurity.ConfirmAccount](https://msdn.microsoft.com/en-us/library/gg569286(v=vs.99).aspx)。 此方法是设置注册的电子邮件确认的情况下很有用。 (详细信息所述的博客文章[确认功能用于 ASP.NET Web Pages 安全](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267)。)
+- [WebSecurty.UserExists](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.userexists(v=vs.99).aspx)， [WebSecurity.CreateUserAndAccount](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.createuserandaccount(v=vs.99).aspx)。 这些方法使你可以确定是否有人已注册并对它们进行注册。
+- [WebSecurty.IsAuthenticated](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.isauthenticated(v=vs.99).aspx). 此属性允许您确定当前用户是否已登录。 这可用于将用户重定向到登录页，如果它们未已登录。
+- [WebSecurity.Login](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.login(v=vs.99).aspx)， [WebSecurity.Logout](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.logout(v=vs.99).aspx)。 这些方法将用户登录，或缩小。
+- [WebSecurity.CurrentUserName](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.currentusername(v=vs.99).aspx). 此属性可用于显示当前用户的登录名 （如果用户已登录）。
+- [WebSecurity.ConfirmAccount](https://msdn.microsoft.com/library/gg569286(v=vs.99).aspx). 此方法是设置注册的电子邮件确认的情况下很有用。 (详细信息所述的博客文章[确认功能用于 ASP.NET Web Pages 安全](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267)。)
 
-若要管理角色，可以使用[角色](https://msdn.microsoft.com/en-us/library/gg538398(v=vs.99).aspx)和[成员资格](https://msdn.microsoft.com/en-us/library/gg569035(v=vs.99).aspx)类，如博客文章中所述。
+若要管理角色，可以使用[角色](https://msdn.microsoft.com/library/gg538398(v=vs.99).aspx)和[成员资格](https://msdn.microsoft.com/library/gg569035(v=vs.99).aspx)类，如博客文章中所述。
 
 ## <a name="additional-resources"></a>其他资源
 
-- [自定义站点范围的行为](https://go.microsoft.com/fwlink/?LinkId=202906)
+- [自定义站点范围内的行为](https://go.microsoft.com/fwlink/?LinkId=202906)
 - [保护 Web 通信： 证书、 SSL 和 https://](https://go.microsoft.com/fwlink/?LinkId=208660)
 - [最基本的方法来实现 ASP.NET Razor 安全](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2240)和[确认功能用于 ASP.NET Web Pages 安全](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267)。 这些是描述如何实现 ASP.NET 成员资格功能而无需使用的博客文章**入门站点**模板。
-- [启用从 ASP.NET Web 页站点中的外部网站的登录名](https://go.microsoft.com/fwlink/?LinkId=251969)
-- [WebSecurity 类 API 参考](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity(v=vs.99))(MSDN)
-- [SimpleRoleProvider 类 API 参考](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.simpleroleprovider(v=vs.99))(MSDN)
-- [SimpleMembershipProvider 类 API 参考](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.simplemembershipprovider(v=vs.99))(MSDN)
+- [在 ASP.NET 网站中启用从外部站点进行登录](https://go.microsoft.com/fwlink/?LinkId=251969)
+- [WebSecurity 类 API 参考](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity(v=vs.99))(MSDN)
+- [SimpleRoleProvider 类 API 参考](https://msdn.microsoft.com/library/webmatrix.webdata.simpleroleprovider(v=vs.99))(MSDN)
+- [SimpleMembershipProvider 类 API 参考](https://msdn.microsoft.com/library/webmatrix.webdata.simplemembershipprovider(v=vs.99))(MSDN)

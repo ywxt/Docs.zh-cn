@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/testing-and-debugging/unit-testing-signalr-applications
 msc.type: authoredcontent
-ms.openlocfilehash: e55efd644dd4b6fb57061ffb89a5c041136c7b5e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d767e1a9d27670387133e5a48a8f92f5bdd39d9e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unit-testing-signalr-applications"></a>单元测试 SignalR 应用程序
 ====================
@@ -41,7 +41,7 @@ ms.lasthandoff: 11/10/2017
 <a id="unit"></a>
 ## <a name="unit-testing-signalr-applications"></a>单元测试 SignalR 应用程序
 
-可以使用 SignalR 2 中的单元测试功能 SignalR 应用程序中创建单元测试。 SignalR 2 包括[IHubCallerConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx)接口，可以用于创建用于模拟你的中心方法用于测试的模拟的对象。
+可以使用 SignalR 2 中的单元测试功能 SignalR 应用程序中创建单元测试。 SignalR 2 包括[IHubCallerConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx)接口，可以用于创建用于模拟你的中心方法用于测试的模拟的对象。
 
 在本部分中，你将添加在中创建的应用程序的单元测试[入门教程](../getting-started/tutorial-getting-started-with-signalr.md)使用[XUnit.net](https://github.com/xunit/xunit)和[Moq](https://github.com/Moq/moq4)。
 
@@ -67,7 +67,7 @@ XUnit.net 将可用于控制测试;Moq 将用于创建[模拟](http://en.wikiped
 4. 将项目添加到单元测试的解决方案。 右键单击你的解决方案中**解决方案资源管理器**和选择**添加**，**新项目...**.下**C#**节点中，选择**Windows**节点。 选择**类库**。 将新项目**TestLibrary**单击**确定**。
 
     ![创建测试库](unit-testing-signalr-applications/_static/image2.png)
-5. 到 SignalRChat 项目测试库项目中添加的引用。 右键单击**TestLibrary**项目，然后选择**添加**，**引用...**.选择**项目**节点下的**解决方案**节点，并选中**SignalRChat**。 单击“确定”。
+5. 到 SignalRChat 项目测试库项目中添加的引用。 右键单击**TestLibrary**项目，然后选择**添加**，**引用...**.选择**项目**节点下的**解决方案**节点，并选中**SignalRChat**。 单击 **“确定”**。
 
     ![添加项目引用](unit-testing-signalr-applications/_static/image3.png)
 6. 添加 SignalR、 Moq 和 XUnit 程序包**TestLibrary**项目。 在**程序包管理器控制台**，将其设置**默认项目**下拉列表中到**TestLibrary**。 在控制台窗口中运行以下命令：
@@ -82,7 +82,7 @@ XUnit.net 将可用于控制测试;Moq 将用于创建[模拟](http://en.wikiped
 
     [!code-csharp[Main](unit-testing-signalr-applications/samples/sample1.cs)]
 
-    在上面的代码中，使用创建测试客户端`Mock`对象[Moq](https://github.com/Moq/moq4)的类型库[IHubCallerConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) (在 SignalR 2.1 中，将分配`dynamic`类型参数。）`IHubCallerConnectionContext`接口是代理对象与其调用客户端上的方法。 `broadcastMessage`函数然后定义模拟客户端，以便它可以由调用`ChatHub`类。 则测试引擎会调用`Send`方法`ChatHub`类，该类又会调用模拟`broadcastMessage`函数。
+    在上面的代码中，使用创建测试客户端`Mock`对象[Moq](https://github.com/Moq/moq4)的类型库[IHubCallerConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) (在 SignalR 2.1 中，将分配`dynamic`类型参数。）`IHubCallerConnectionContext`接口是代理对象与其调用客户端上的方法。 `broadcastMessage`函数然后定义模拟客户端，以便它可以由调用`ChatHub`类。 则测试引擎会调用`Send`方法`ChatHub`类，该类又会调用模拟`broadcastMessage`函数。
 9. 生成解决方案，按**F6**。
 10. 运行单元测试。 在 Visual Studio 中，选择**测试**， **Windows**，**测试资源管理器**。 在测试资源管理器窗口中，右键单击**HubsAreMockableViaDynamic**和选择**运行选定的测试**。
 
@@ -101,7 +101,7 @@ XUnit.net 将可用于控制测试;Moq 将用于创建[模拟](http://en.wikiped
 
     [!code-csharp[Main](unit-testing-signalr-applications/samples/sample2.cs)]
 
-    在上面的代码中，定义的签名创建接口`broadcastMessage`测试引擎将为其创建模拟的客户端的方法。 然后使用创建模拟的客户端`Mock`类型的对象[IHubCallerConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) (在 SignalR 2.1 中，将分配`dynamic`为类型参数。)`IHubCallerConnectionContext`接口是代理对象与其调用客户端上的方法。
+    在上面的代码中，定义的签名创建接口`broadcastMessage`测试引擎将为其创建模拟的客户端的方法。 然后使用创建模拟的客户端`Mock`类型的对象[IHubCallerConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) (在 SignalR 2.1 中，将分配`dynamic`为类型参数。)`IHubCallerConnectionContext`接口是代理对象与其调用客户端上的方法。
 
     测试然后创建的实例`ChatHub`，然后创建的模型版本`broadcastMessage`方法，反过来调用通过调用`Send`集线器上的方法。
 3. 生成解决方案，按**F6**。

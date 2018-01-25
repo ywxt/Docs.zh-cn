@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 7923876c792544ac4d559eb8de29475d8a4b37e0
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 74609b515936ec7da8bfc133c27cb69f51311924
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="anchor-tag-helper"></a>定位点标记帮助器
 
@@ -44,7 +44,7 @@ ms.lasthandoff: 01/19/2018
 <a href="/Speaker">All Speakers</a>
 ```
 
-如果`asp-controller`指定和`asp-action`不是默认`asp-action`将当前正在执行的视图的默认控制器方法。 即，在上面的示例中，如果`asp-action`留出，和从生成此定位点标记帮助器*HomeController*的`Index`视图 (**/主页**)，将生成的标记：
+如果`asp-controller`指定和`asp-action`不，默认值`asp-action`将当前正在执行的视图的默认控制器方法。 即，在上面的示例中，如果`asp-action`留出，和从生成此定位点标记帮助器*HomeController*的`Index`视图 (**/主页**)，将生成的标记：
 
 ```html
 <a href="/Home">All Speakers</a>
@@ -99,7 +99,7 @@ https://localhost:44399/Speakers/Index/2?page=%2FSpeaker
 
 ### <a name="asp-route-value"></a>asp-route-{value}
 
-`asp-route-`是一个通配符路由前缀。 任何 put 后尾随 dash 将解释为潜在的路由参数值。 如果未找到默认路由，则此路由前缀将追加到为请求参数和值生成的 href。 否则它将在路由模板中进行替换。
+`asp-route-`是一个通配符路由前缀。 任何 put 后尾随 dash 将解释为潜在的路由参数值。 如果找不到默认路由，则此路由前缀将追加到为请求参数和值生成的 href。 否则它将在路由模板中进行替换。
 
 假设您有一个控制器方法定义，如下所示：
 
@@ -142,7 +142,7 @@ app.UseMvc(routes =>
 <a href='/Speaker/Detail/12'>SpeakerId: 12</a>
 ```
 
-如果路由前缀不找到路由模板的一部分，这是替换为以下这种情况**cshtml**文件：
+如果路由前缀未找到路由模板的一部分，这是替换为以下这种情况**cshtml**文件：
 
 ```cshtml
 @model SpeakerData
@@ -152,7 +152,7 @@ app.UseMvc(routes =>
 <body></html>
 ```
 
-生成的 HTML 将然后是，如下所示，因为**speakerid**匹配的路由中未找到：
+生成的 HTML 将然后是，如下所示，因为**speakerid**匹配的路由中找不到：
 
 ```html
 <a href='/Speaker/Detail?speakerid=12'>SpeakerId: 12</a>
@@ -164,7 +164,7 @@ app.UseMvc(routes =>
 
 `asp-route`使您能够创建链接直接到命名路由的 URL。 使用路由特性，路由可以命名为中所示`SpeakerController`和中使用其`Evaluations`方法。
 
-`Name = "speakerevals"`告知定位点标记帮助器以生成直接指向该控制器方法使用的 URL 的路由`/Speaker/Evaluations`。 如果`asp-controller`或`asp-action`指定除了`asp-route`，生成的路由可能不是你的预期。 `asp-route`不应与属性任一使用`asp-controller`或`asp-action`以避免路由冲突。
+`Name = "speakerevals"`告知定位点标记帮助器以生成直接指向该控制器方法使用的 URL 的路由`/Speaker/Evaluations`。 如果`asp-controller`或`asp-action`指定除了`asp-route`，生成的路由可能不是你的预期。 `asp-route`不应使用的属性使用`asp-controller`或`asp-action`以避免路由冲突。
 
 ### <a name="asp-all-route-data"></a>asp-all-route-data
 

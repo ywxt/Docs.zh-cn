@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: a03c8c42622a768d706acf5ac1f23b37a830d426
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c52a02291e18b1dd8a9d95b33fe466d17aae835f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-signalr-hubs-api-guide---net-client-c"></a>ASP.NET SignalR 中心 API 指南-.NET 客户端 (C#)
 ====================
@@ -85,7 +85,7 @@ ms.lasthandoff: 11/10/2017
 - [SignalR 中心 API 指南-服务器](hubs-api-guide-server.md)
 - [SignalR 中心 API 指南-JavaScript 客户端](hubs-api-guide-javascript-client.md)
 
-API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET 4，请参阅[API 主题的.NET 4 版本](https://msdn.microsoft.com/en-us/library/jj891075(v=vs.100).aspx)。
+API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET 4，请参阅[API 主题的.NET 4 版本](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx)。
 
 <a id="clientsetup"></a>
 
@@ -119,7 +119,7 @@ API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET
 
 ### <a name="cross-domain-connections-from-silverlight-clients"></a>来自 Silverlight 客户端的跨域连接
 
-有关如何启用从 Silverlight 客户端的跨域连接的信息，请参阅[服务跨域边界提供](https://msdn.microsoft.com/en-us/library/cc197955(v=vs.95).aspx)。
+有关如何启用从 Silverlight 客户端的跨域连接的信息，请参阅[服务跨域边界提供](https://msdn.microsoft.com/library/cc197955(v=vs.95).aspx)。
 
 <a id="configureconnection"></a>
 
@@ -141,7 +141,7 @@ API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET
 
 [!code-csharp[Main](hubs-api-guide-net-client/samples/sample4.cs?highlight=4)]
 
-有关详细信息，请参阅[ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/en-us/library/system.net.servicepointmanager.defaultconnectionlimit.aspx)。
+有关详细信息，请参阅[ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit.aspx)。
 
 <a id="querystring"></a>
 
@@ -163,12 +163,12 @@ API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET
 
 [!code-csharp[Main](hubs-api-guide-net-client/samples/sample7.cs?highlight=4)]
 
-[Microsoft.AspNet.SignalR.Client.Transports](https://msdn.microsoft.com/en-us/library/jj918090(v=vs.111).aspx)命名空间包括可用于指定的传输的以下类。
+[Microsoft.AspNet.SignalR.Client.Transports](https://msdn.microsoft.com/library/jj918090(v=vs.111).aspx)命名空间包括可用于指定的传输的以下类。
 
-- [LongPollingTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.longpollingtransport(v=vs.111).aspx)
-- [ServerSentEventsTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.serversenteventstransport(v=vs.111).aspx)
-- [WebSocketTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.websockettransport(v=vs.111).aspx) （可用仅当服务器和客户端使用.NET 4.5。）
-- [AutoTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.autotransport(v=vs.111).aspx) （会自动选择支持的客户端和服务器的最佳传输。 这是默认传输。 通过此到`Start`方法具有相同的效果不传递任何内容。)
+- [LongPollingTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.longpollingtransport(v=vs.111).aspx)
+- [ServerSentEventsTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.serversenteventstransport(v=vs.111).aspx)
+- [WebSocketTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.websockettransport(v=vs.111).aspx) （可用仅当服务器和客户端使用.NET 4.5。）
+- [AutoTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.autotransport(v=vs.111).aspx) （会自动选择支持的客户端和服务器的最佳传输。 这是默认传输。 通过此到`Start`方法具有相同的效果不传递任何内容。)
 
 此列表中不包括 ForeverFrame 传输，因为它仅由浏览器使用。
 
@@ -336,7 +336,7 @@ SignalR 提供以下连接可以处理的生存期事件：
 - `ConnectionSlow`： 当客户端检测到慢速或经常删除连接时引发。
 - `Reconnecting`： 基础传输开始重新连接时引发。
 - `Reconnected`： 基础传输已重新连接时引发。
-- `StateChanged`： 在连接状态更改时引发。 提供的旧状态和新的状态。 有关连接状态的值请参阅[ConnectionState 枚举](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.connectionstate(v=vs.111).aspx)。
+- `StateChanged`： 在连接状态更改时引发。 提供的旧状态和新的状态。 有关连接状态的值请参阅[ConnectionState 枚举](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.connectionstate(v=vs.111).aspx)。
 - `Closed`： 连接已断开连接时引发。
 
 例如，如果你想要显示的错误的不严重，但会导致间歇性连接问题的警告消息，如缓慢或频繁删除的连接，处理`ConnectionSlow`事件。

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: b4cf39c59ed257b0014dbdbecef3eb7bc48f410d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7f64cc83e36c80b0ffd53edfc629557c0847b200
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="dependency-injection-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的依赖关系注入
 ====================
@@ -91,7 +91,7 @@ IoC 容器是一个软件组件，负责管理依赖关系。 你向容器中，
 > "IoC"代表"反向的控件"，它是常规的模式其中一个框架，调入应用程序代码。 IoC 容器构造对象，其中"反转"常用控制流。
 
 
-对于本教程中，我们将使用[Unity](https://msdn.microsoft.com/en-us/library/ff647202.aspx)从 Microsoft 模式&amp;做法。 (其他常用库包括[城堡 Windsor](http://www.castleproject.org/)， [Spring.Net](http://www.springframework.net/)， [Autofac](https://code.google.com/p/autofac/)， [Ninject](http://www.ninject.org/)，和[StructureMap](http://docs.structuremap.net/).)NuGet 包管理器可用于安装 Unity。 从**工具**菜单在 Visual Studio 中，选择**库程序包管理器**，然后选择**程序包管理器控制台**。 在 Package Manager Console 窗口中，键入以下命令：
+对于本教程中，我们将使用[Unity](https://msdn.microsoft.com/library/ff647202.aspx)从 Microsoft 模式&amp;做法。 (其他常用库包括[城堡 Windsor](http://www.castleproject.org/)， [Spring.Net](http://www.springframework.net/)， [Autofac](https://code.google.com/p/autofac/)， [Ninject](http://www.ninject.org/)，和[StructureMap](http://docs.structuremap.net/).)NuGet 包管理器可用于安装 Unity。 从**工具**菜单在 Visual Studio 中，选择**库程序包管理器**，然后选择**程序包管理器控制台**。 在 Package Manager Console 窗口中，键入以下命令：
 
 [!code-console[Main](dependency-injection/samples/sample7.cmd)]
 

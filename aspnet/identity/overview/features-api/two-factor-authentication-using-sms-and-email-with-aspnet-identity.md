@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: ecb1fc693063995a3a05a7af5db64554c9f595e2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0f9ff7cf74048a008b150da1e843ff15333269ab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="two-factor-authentication-using-sms-and-email-with-aspnet-identity"></a>具有 ASP.NET 标识使用 SMS 和电子邮件的双因素身份验证
 ====================
@@ -85,7 +85,7 @@ ms.lasthandoff: 11/10/2017
  地址:  
     `https://webservice.aspsms.com/aspsmsx2.asmx?WSDL`  
   
- 命名空间：  
+ 命名空间:  
     `ASPSMSX2`
 3. **了解 SMS 提供程序用户凭据**  
   
@@ -168,7 +168,7 @@ ms.lasthandoff: 11/10/2017
 
 `isPersistent`参数设置是否跨多个请求身份验证会话保持不变。
 
-当你更改你的安全配置文件时，请生成并存储在新的安全戳`SecurityStamp`字段*AspNetUsers*表。 请注意，`SecurityStamp`字段是不同的安全 cookie。 安全 cookie 不存储在`AspNetUsers`表 （或在标识数据库中的其他任何位置）。 使用自签名安全 cookie 令牌[DPAPI](https://msdn.microsoft.com/en-us/library/system.security.cryptography.protecteddata.aspx)并使用创建`UserId, SecurityStamp`和过期时间信息。
+当你更改你的安全配置文件时，请生成并存储在新的安全戳`SecurityStamp`字段*AspNetUsers*表。 请注意，`SecurityStamp`字段是不同的安全 cookie。 安全 cookie 不存储在`AspNetUsers`表 （或在标识数据库中的其他任何位置）。 使用自签名安全 cookie 令牌[DPAPI](https://msdn.microsoft.com/library/system.security.cryptography.protecteddata.aspx)并使用创建`UserId, SecurityStamp`和过期时间信息。
 
 Cookie 中间件检查每个请求上的 cookie。 `SecurityStampValidator`中的方法`Startup`类的命中率数据库和我们会定期检查安全戳指定与`validateInterval`。 除非您更改安全配置文件，这仅发生 （在我们的示例） 每隔 30 分钟。 30 分钟时间间隔内已选择最大程度减少对数据库的访问。
 
@@ -264,7 +264,7 @@ Cookie 中间件检查每个请求上的 cookie。 `SecurityStampValidator`中�
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample17.cs?highlight=10-11,17-18)]
 
-下面的代码演示`SendCode`操作方法。 A [SelectListItem](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlistitem.aspx)使用为用户启用的所有 2FA 方法创建。 [SelectListItem](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlistitem.aspx)传递给[DropDownListFor](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.dropdownlist.aspx)帮助器，这样用户就可以选择 2FA 方法 （通常电子邮件和短信）。
+下面的代码演示`SendCode`操作方法。 A [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx)使用为用户启用的所有 2FA 方法创建。 [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx)传递给[DropDownListFor](https://msdn.microsoft.com/library/system.web.ui.webcontrols.dropdownlist.aspx)帮助器，这样用户就可以选择 2FA 方法 （通常电子邮件和短信）。
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample18.cs)]
 

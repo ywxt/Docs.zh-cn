@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: dadc1641e427b025d71ef567a626fa7c37c9fc08
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4f2a31f406bb1ed98e3620e216b4ad14fe59b32f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-and-responding-to-buttons-to-a-gridview-c"></a>添加和响应的按钮添加到 GridView (C#)
 ====================
@@ -194,7 +194,7 @@ ms.lasthandoff: 11/10/2017
 **图 15**： 将停止所有产品按钮 Web 控件都添加到 FormView `ItemTemplate` ([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image41.png))
 
 
-当通过页上，回发时，才会用户访问和 FormView 单击该按钮[`ItemCommand`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.formview.itemcommand.aspx)激发。 若要执行自定义代码以响应单击此按钮，我们可以创建的事件处理程序此事件。 理解，不过，这`ItemCommand`事件时将触发*任何*FormView 内单击按钮、 LinkButton 或 ImageButton Web 控件。 这意味着，当用户从一页移到另一种 FormView，`ItemCommand`事件激发; 当用户单击新建，编辑，或删除支持插入、 更新或删除 FormView 中的内容相同。
+当通过页上，回发时，才会用户访问和 FormView 单击该按钮[`ItemCommand`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formview.itemcommand.aspx)激发。 若要执行自定义代码以响应单击此按钮，我们可以创建的事件处理程序此事件。 理解，不过，这`ItemCommand`事件时将触发*任何*FormView 内单击按钮、 LinkButton 或 ImageButton Web 控件。 这意味着，当用户从一页移到另一种 FormView，`ItemCommand`事件激发; 当用户单击新建，编辑，或删除支持插入、 更新或删除 FormView 中的内容相同。
 
 由于`ItemCommand`激发而不考虑哪些按钮后，事件处理程序我们需要一种方法，以确定被单击了停止所有的产品按钮，或者如果它已某些其他按钮。 若要实现此目的，我们可以设置按钮 Web 控件的`CommandName`为某个标识值的属性。 单击按钮时，这`CommandName`值传递给`ItemCommand`事件处理程序，使我们能够确定是否停止所有的产品按钮所单击的按钮。 设置停止所有产品按钮的`CommandName`DiscontinueProducts 属性。
 
@@ -208,7 +208,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](adding-and-responding-to-buttons-to-a-gridview-cs/samples/sample7.cs)]
 
-请注意， `SupplierID` FormView 中当前选定的供应商可以使用访问 FormView [ `SelectedValue`属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.formview.selectedvalue.aspx)。 `SelectedValue`属性返回的第一个数据键显示在 FormView 该记录的值。 FormView [ `DataKeyNames`属性](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.formview.datakeynames.aspx)，指示的数据字段的数据从其键值值来自，已自动设置为`SupplierID`由 Visual Studio 时将对象数据源绑定到 FormView返回在步骤 2 中。
+请注意， `SupplierID` FormView 中当前选定的供应商可以使用访问 FormView [ `SelectedValue`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formview.selectedvalue.aspx)。 `SelectedValue`属性返回的第一个数据键显示在 FormView 该记录的值。 FormView [ `DataKeyNames`属性](https://msdn.microsoft.com/system.web.ui.webcontrols.formview.datakeynames.aspx)，指示的数据字段的数据从其键值值来自，已自动设置为`SupplierID`由 Visual Studio 时将对象数据源绑定到 FormView返回在步骤 2 中。
 
 与`ItemCommand`事件处理程序创建，花些时间测试的页。 浏览到 Cooperativa de Quesos 的 Cabras 供应商 （它是第五个供应商为我 FormView 中的）。 此供应商可提供两种产品，Queso Cabrales 和 Queso Manchego La Pastora，二者都是*不*停止使用。
 
@@ -244,7 +244,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-7-adding-the-increase-and-decrease-buttons-to-the-gridview"></a>步骤 7： 将增加和减少按钮添加到 GridView
 
-GridView （和说明如何） 都组成的字段的集合。 除了 BoundFields、 CheckBoxFields 和 TemplateFields，ASP.NET 还包括 ButtonField，来顾名思义，呈现为带有按钮、 LinkButton 或 ImageButton 每一行的列。 类似于 FormView，单击*任何*GridView 分页按钮、 编辑或删除按钮、 排序按钮等中的按钮导致回发，并引发 GridView [ `RowCommand`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowcommand.aspx)。
+GridView （和说明如何） 都组成的字段的集合。 除了 BoundFields、 CheckBoxFields 和 TemplateFields，ASP.NET 还包括 ButtonField，来顾名思义，呈现为带有按钮、 LinkButton 或 ImageButton 每一行的列。 类似于 FormView，单击*任何*GridView 分页按钮、 编辑或删除按钮、 排序按钮等中的按钮导致回发，并引发 GridView [ `RowCommand`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowcommand.aspx)。
 
 ButtonField 具有`CommandName`属性，将指定的值分配给每个其按钮`CommandName`属性。 FormView，与类似`CommandName`值由`RowCommand`事件处理程序来确定被单击的按钮。
 
@@ -256,7 +256,7 @@ ButtonField 具有`CommandName`属性，将指定的值分配给每个其按钮`
 **图 18**： 将两个 ButtonFields 添加到 GridView
 
 
-移动两个 ButtonFields，以便它们显示为前两个 GridView 字段。 接下来，设置`Text`这些以价格 + 10%的两个 ButtonFields 和价格-10 的属性 %和`CommandName`为 IncreasePrice 和 DecreasePrice，属性分别。 默认情况下，ButtonField 呈现 LinkButtons 按钮其列。 可进行更改，但是，通过 ButtonField [ `ButtonType`属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.buttonfieldbase.buttontype.aspx)。 让我们来看呈现为常规下压按钮; 这些两个 ButtonFields因此，设置`ButtonType`属性`Button`。 图 19 显示的字段对话框中进行这些更改; 之后以下的是 GridView 的声明性标记。
+移动两个 ButtonFields，以便它们显示为前两个 GridView 字段。 接下来，设置`Text`这些以价格 + 10%的两个 ButtonFields 和价格-10 的属性 %和`CommandName`为 IncreasePrice 和 DecreasePrice，属性分别。 默认情况下，ButtonField 呈现 LinkButtons 按钮其列。 可进行更改，但是，通过 ButtonField [ `ButtonType`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.buttonfieldbase.buttontype.aspx)。 让我们来看呈现为常规下压按钮; 这些两个 ButtonFields因此，设置`ButtonType`属性`Button`。 图 19 显示的字段对话框中进行这些更改; 之后以下的是 GridView 的声明性标记。
 
 
 ![配置 ButtonFields 文本、 CommandName 和 ButtonType 属性](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image49.png)

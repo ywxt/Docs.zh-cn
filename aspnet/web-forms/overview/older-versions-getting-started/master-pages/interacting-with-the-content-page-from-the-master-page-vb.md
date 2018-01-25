@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0a2720c8dbd1b0fb12d4000ac5e309e203128604
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a25f739e5d5717d275554909e1584bb7e7fed302
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="interacting-with-the-content-page-from-the-master-page-vb"></a>与来自母版页 (VB) 的内容页进行交互
 ====================
@@ -158,7 +158,7 @@ ms.lasthandoff: 11/10/2017
 传递给事件处理程序的第二个参数可能包括有关事件的其他信息。 虽然基`EventArgs`类不能通过任何信息、.NET Framework 包括了多个扩展的类`EventArgs`和包含其他属性。 例如，`CommandEventArgs`实例传递到响应的事件处理程序`Command`事件，并包括两个条信息性属性：`CommandArgument`和`CommandName`。
 
 > [!NOTE]
-> 有关创建的详细信息，引发，和处理事件，请参阅[事件和委托](https://msdn.microsoft.com/en-us/library/17sde2xt.aspx)和[中简单英语的事件委托](http://www.codeproject.com/KB/cs/eventdelegates.aspx)。
+> 有关创建的详细信息，引发，和处理事件，请参阅[事件和委托](https://msdn.microsoft.com/library/17sde2xt.aspx)和[中简单英语的事件委托](http://www.codeproject.com/KB/cs/eventdelegates.aspx)。
 
 
 若要定义一个事件，请使用以下语法：
@@ -251,7 +251,7 @@ ms.lasthandoff: 11/10/2017
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
 - [访问和更新在 ASP.NET 中的数据](http://aspnet.4guysfromrolla.com/articles/011106-1.aspx)
-- [事件和委托](https://msdn.microsoft.com/en-us/library/17sde2xt.aspx)
+- [事件和委托](https://msdn.microsoft.com/library/17sde2xt.aspx)
 - [内容与母版页之间传递信息](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
 - [在 ASP.NET 教程中使用数据](../../data-access/index.md)
 

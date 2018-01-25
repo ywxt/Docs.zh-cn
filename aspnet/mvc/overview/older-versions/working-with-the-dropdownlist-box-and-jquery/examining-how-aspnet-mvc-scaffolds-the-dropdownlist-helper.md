@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
-ms.openlocfilehash: b5210f9a29f82fbadd0e6dd2d81bd85e7f23ae7e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 737773ab424b3ec3b6139b8c238a60ca23de2e69
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>检查如何 ASP.NET MVC scaffolds DropDownList 帮助器
 ====================
@@ -60,7 +60,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="the-html-select-tag"></a>HTML 选择标记
 
-HTML`<select>`元素 (由 HTML [DropDownList](https://msdn.microsoft.com/en-us/library/dd492948.aspx)帮助程序) 用于显示值 （如风格的列表） 的完整列表。 对于编辑窗体中，当已知的当前值时，选择列表可以显示的当前值。 我们已了解此以前当我们设置为所选的值**喜剧**。 选择列表非常适合于显示类别或外键数据。 `<select>`流派外键的元素显示名称的列表可能流派，但时保存该窗体流派属性将更新为流派外键值，而不是显示的流派名称。 在下图中，选择流派是**Disco**艺术家且**Donna 夏天**。
+HTML`<select>`元素 (由 HTML [DropDownList](https://msdn.microsoft.com/library/dd492948.aspx)帮助程序) 用于显示值 （如风格的列表） 的完整列表。 对于编辑窗体中，当已知的当前值时，选择列表可以显示的当前值。 我们已了解此以前当我们设置为所选的值**喜剧**。 选择列表非常适合于显示类别或外键数据。 `<select>`流派外键的元素显示名称的列表可能流派，但时保存该窗体流派属性将更新为流派外键值，而不是显示的流派名称。 在下图中，选择流派是**Disco**艺术家且**Donna 夏天**。
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image4.png)
 
@@ -70,11 +70,11 @@ HTML`<select>`元素 (由 HTML [DropDownList](https://msdn.microsoft.com/en-us/l
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample5.cs)]
 
-`Create`方法添加两个[此时](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlist.aspx)对象添加到`ViewBag`，另一个用于包含流派信息，另一个用于包含艺术家信息。 [此时](https://msdn.microsoft.com/en-us/library/dd505286.aspx)上面使用的构造函数重载采用三个自变量：
+`Create`方法添加两个[此时](https://msdn.microsoft.com/library/system.web.mvc.selectlist.aspx)对象添加到`ViewBag`，另一个用于包含流派信息，另一个用于包含艺术家信息。 [此时](https://msdn.microsoft.com/library/dd505286.aspx)上面使用的构造函数重载采用三个自变量：
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample6.cs)]
 
-1. *项*: [IEnumerable](https://msdn.microsoft.com/en-us/library/system.collections.ienumerable.aspx)包含列表中的项。 在上面的示例中，返回的风格列表`db.Genres`。
+1. *项*: [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx)包含列表中的项。 在上面的示例中，返回的风格列表`db.Genres`。
 2. *dataValueField*： 中的属性的名称**IEnumerable**包含密钥的值的列表。 在上例中，`GenreId`和`ArtistId`。
 3. *dataTextField*： 中的属性的名称**IEnumerable**列表，其中包含要显示的信息。 在专业人员和风格表`name`使用字段。
 
@@ -84,7 +84,7 @@ HTML`<select>`元素 (由 HTML [DropDownList](https://msdn.microsoft.com/en-us/l
 
 第一行显示创建视图所`Album`模型。 在`Create`上面所示方法，不传递任何模型，因此视图获取**null** `Album`模型。 此时我们将创建新唱片集，因此我们没有任何`Album`为它的数据。
 
-[Html.DropDownList](https://msdn.microsoft.com/en-us/library/dd492948.aspx)上面所示的重载采用要绑定到模型的字段的名称。 它还使用此名称来查找**ViewBag**对象，其中包含[此时](https://msdn.microsoft.com/en-us/library/dd505286.aspx)对象。 使用此重载，将要求你将为名称**ViewBag 此时**对象`GenreId`。 第二个参数 (`String.Empty`) 是要在未不选定任何项时显示的文本。 这正是我们想要创建新唱片集时。 如果你删除第二个参数，并使用下面的代码：
+[Html.DropDownList](https://msdn.microsoft.com/library/dd492948.aspx)上面所示的重载采用要绑定到模型的字段的名称。 它还使用此名称来查找**ViewBag**对象，其中包含[此时](https://msdn.microsoft.com/library/dd505286.aspx)对象。 使用此重载，将要求你将为名称**ViewBag 此时**对象`GenreId`。 第二个参数 (`String.Empty`) 是要在未不选定任何项时显示的文本。 这正是我们想要创建新唱片集时。 如果你删除第二个参数，并使用下面的代码：
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample8.cshtml)]
 

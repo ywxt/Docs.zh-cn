@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/declarative-parameters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3a4685741e0acab7a944e2822a5c43c5cf3e9cf1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4bbe32ae65f71196fc1f939671b9d1a24bee8c34
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="declarative-parameters-c"></a>声明性参数 (C#)
 ====================
@@ -111,7 +111,7 @@ Web 控件的数据时访问此页，将调用 ObjectDataSource`Select`方法，
 **图 8**： 将参数值设置为`CountryName`控件值 ([单击以查看实际尺寸的图像](declarative-parameters-cs/_static/image24.png))
 
 
-ObjectDataSource 的声明性标记会稍有不同我们的第一个示例，使用[ControlParameter](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.controlparameter.aspx)而不是标准`Parameter`对象。 A`ControlParameter`具有附加属性以指定`ID`的 Web 控件与要将用于该参数的属性值 (`PropertyName`)。 配置数据源向导的时间足够智能，可确定，对于文本框中，我们将可能希望使用`Text`参数值的属性。 如果你想要使用不同的属性值从 Web 控件的但是，你可以更改`PropertyName`此处或通过单击向导中的"显示高级属性"链接的值。
+ObjectDataSource 的声明性标记会稍有不同我们的第一个示例，使用[ControlParameter](https://msdn.microsoft.com/library/system.web.ui.webcontrols.controlparameter.aspx)而不是标准`Parameter`对象。 A`ControlParameter`具有附加属性以指定`ID`的 Web 控件与要将用于该参数的属性值 (`PropertyName`)。 配置数据源向导的时间足够智能，可确定，对于文本框中，我们将可能希望使用`Text`参数值的属性。 如果你想要使用不同的属性值从 Web 控件的但是，你可以更改`PropertyName`此处或通过单击向导中的"显示高级属性"链接的值。
 
 [!code-aspx[Main](declarative-parameters-cs/samples/sample2.aspx)]
 

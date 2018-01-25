@@ -8,11 +8,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 6da2073b18f6fff9738808c84441e59240caefe3
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 60ac1844e7747002d72aa892a47490cb7a416359
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>排序、 筛选、 分页和分组-ASP.NET 核心 MVC 教程 (3 的 10) 的 EF 核心
 
@@ -92,7 +92,7 @@ Contoso 大学示例 web 应用程序演示如何创建使用实体框架核心�
 
 [!code-html[](intro/samples/cu/Views/Students/Index3.cshtml?range=9-23&highlight=5-13)]
 
-此代码使用`<form>`[标记帮助器](xref:mvc/views/tag-helpers/intro)添加搜索文本框和按钮。 默认情况下，`<form>`标记帮助器提交 post，这意味着，参数作为进行传递 HTTP 消息正文中，不能在 URL 查询字符串的窗体数据。 指定 HTTP GET 时，窗体数据是在 URL 中作为查询字符串传递，这使得用户能够创建 URL 的书签。 操作未导致更新时，将收到 W3C 准则，则建议你应使用。
+此代码使用`<form>`[标记帮助器](xref:mvc/views/tag-helpers/intro)添加搜索文本框和按钮。 默认情况下，`<form>`标记帮助器提交 post，这意味着，参数作为进行传递 HTTP 消息正文中，不能在 URL 查询字符串的窗体数据。 指定 HTTP GET 时，窗体数据是在 URL 中作为查询字符串传递，这使得用户能够创建 URL 的书签。 操作不会导致更新时，将收到 W3C 准则，则建议你应使用。
 
 运行应用程序中，选择**学生**选项卡上，输入搜索字符串，然后单击搜索以验证筛选是否正常工作。
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 8d11bf47f8c43040ef30d7132f0bb756748dbacd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d54c0e133bc2f6f2021821dc16cdf86cc23a5667
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application"></a>排序、 筛选和分页与实体框架中的 ASP.NET MVC 应用程序
 ====================
@@ -60,7 +60,7 @@ ms.lasthandoff: 11/10/2017
 | 升序的日期 | ascending | descending |
 | 日期降序 | ascending | ascending |
 
-该方法使用[LINQ to Entities](https://msdn.microsoft.com/en-us/library/bb386964.aspx)指定要作为排序依据的列。 该代码创建[IQueryable](https://msdn.microsoft.com/en-us/library/bb351562.aspx)变量之前`switch`语句，将修改在`switch`语句，并调用`ToList`方法之后`switch`语句。 当你创建和修改`IQueryable`变量，没有查询发送到数据库。 您将转换之前，不执行查询`IQueryable`到通过调用方法，如集合对象`ToList`。 因此，此代码将导致直到不执行单个查询`return View`语句。
+该方法使用[LINQ to Entities](https://msdn.microsoft.com/library/bb386964.aspx)指定要作为排序依据的列。 该代码创建[IQueryable](https://msdn.microsoft.com/library/bb351562.aspx)变量之前`switch`语句，将修改在`switch`语句，并调用`ToList`方法之后`switch`语句。 当你创建和修改`IQueryable`变量，没有查询发送到数据库。 您将转换之前，不执行查询`IQueryable`到通过调用方法，如集合对象`ToList`。 因此，此代码将导致直到不执行单个查询`return View`语句。
 
 作为编写为每个排序顺序不同 LINQ 语句的替代方法，你可以动态创建 LINQ 语句。 有关动态 LINQ 的信息，请参阅[动态 LINQ](https://go.microsoft.com/fwlink/?LinkID=323957)。
 
@@ -90,7 +90,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs?highlight=1,7-11)]
 
-你已添加`searchString`参数`Index`方法。 从将添加到索引视图的文本框中接收到搜索字符串值。 你亦已添加到 LINQ 语句`where`选择仅学生的名字或姓氏包含搜索字符串的子句。 添加语句[其中](https://msdn.microsoft.com/en-us/library/bb535040.aspx)子句执行只有在要搜索的值。
+你已添加`searchString`参数`Index`方法。 从将添加到索引视图的文本框中接收到搜索字符串值。 你亦已添加到 LINQ 语句`where`选择仅学生的名字或姓氏包含搜索字符串的子句。 添加语句[其中](https://msdn.microsoft.com/library/bb535040.aspx)子句执行只有在要搜索的值。
 
 > [!NOTE]
 > 在许多情况下你可以调用相同的方法，在实体框架实体集或作为扩展方法对内存中集合。 结果通常都是相同，但在某些情况下可能会不同。
@@ -128,7 +128,7 @@ NuGet **PagedList.Mvc**包会自动安装**PagedList**作为依赖项包。 **Pa
 
 `Install-Package PagedList.Mvc`
 
-![安装 PagedList.Mvc](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
+![Install PagedList.Mvc](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 
 生成项目。 
 
@@ -160,7 +160,7 @@ A`ViewBag`属性提供了与当前的排序顺序中，视图，因为这必须�
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cs)]
 
-`ToPagedList`方法采用页号。 两个问号表示[null 合并运算符](https://msdn.microsoft.com/en-us/library/ms173224.aspx)。 Null 合并运算符定义可以为 null 的类型; 默认值表达式`(page ?? 1)`意味着返回的值`page`如果它具有一个值，或返回 1，如果`page`为 null。
+`ToPagedList`方法采用页号。 两个问号表示[null 合并运算符](https://msdn.microsoft.com/library/ms173224.aspx)。 Null 合并运算符定义可以为 null 的类型; 默认值表达式`(page ?? 1)`意味着返回的值`page`如果它具有一个值，或返回 1，如果`page`为 null。
 
 ### <a name="add-paging-links-to-the-student-index-view"></a>将分页链接添加到学生索引视图
 
@@ -172,11 +172,11 @@ A`ViewBag`属性提供了与当前的排序顺序中，视图，因为这必须�
 
 `using`语句`PagedList.Mvc`分页按钮访问的 MVC 帮助程序。
 
-该代码使用的重载[BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) ，它指定允许[FormMethod.Get](https://msdn.microsoft.com/en-us/library/system.web.mvc.formmethod(v=vs.100).aspx/css)。
+该代码使用的重载[BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) ，它指定允许[FormMethod.Get](https://msdn.microsoft.com/library/system.web.mvc.formmethod(v=vs.100).aspx/css)。
 
 [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample13.cshtml?highlight=1)]
 
-默认值[BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx)提交表单 post，这意味着，参数将在 HTTP 消息正文中，不能在 URL 作为查询字符串传递的数据。 指定 HTTP GET 时，窗体数据是在 URL 中作为查询字符串传递，这使得用户能够创建 URL 的书签。 [使用 HTTP GET 的 W3C 准则](http://www.w3.org/2001/tag/doc/whenToUseGet.html)建议的操作未导致更新时，你应使用 GET。
+默认值[BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx)提交表单 post，这意味着，参数将在 HTTP 消息正文中，不能在 URL 作为查询字符串传递的数据。 指定 HTTP GET 时，窗体数据是在 URL 中作为查询字符串传递，这使得用户能够创建 URL 的书签。 [使用 HTTP GET 的 W3C 准则](http://www.w3.org/2001/tag/doc/whenToUseGet.html)建议的操作未导致更新时，你应使用 GET。
 
 因此，当你单击一个新页你可以看到当前的搜索字符串，将使用当前的搜索字符串初始化文本框。
 

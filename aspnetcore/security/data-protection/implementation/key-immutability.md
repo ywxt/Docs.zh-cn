@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-immutability
-ms.openlocfilehash: 8e46e634266fa5f082c47f3be306009eb54bcbcc
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 425b8ba9769c2b5ac635693b045e52c110f25205
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="key-immutability-and-changing-settings"></a>密钥不可变性和更改设置
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 01/19/2018
 
 此行为的一个后果是，一旦给后备存储编写了一个键，不可变。 其创建、 激活和到期日期可以永远不会更改，但它可以通过使用吊销`IKeyManager`。 此外，其基础的算法信息、 主密钥材料和加密 rest 属性也是不可变。
 
-如果开发人员更改会影响密钥保持任何设置，这些更改将不会影响到只有在下次时都会生成一个密钥，是指在通过显式调用`IKeyManager.CreateNewKey`或通过数据保护系统的自己[自动密钥生成](key-management.md#data-protection-implementation-key-management)行为。 影响密钥持久性的设置如下所示：
+如果开发人员更改会影响密钥保持任何设置，这些更改不会生效只有在下次时都会生成一个密钥，是指在通过显式调用`IKeyManager.CreateNewKey`或通过数据保护系统的自己[自动密钥生成](key-management.md#data-protection-implementation-key-management)行为。 影响密钥持久性的设置如下所示：
 
 * [默认密钥生存时间](key-management.md#data-protection-implementation-key-management)
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: e3d8ad6e00b7fcb95f1c9bbe556021269c1a0624
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5689031015279484cc616090a767a8c25eefa3c1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>创建安全的 ASP.NET MVC 5 web 应用程序日志中，使用电子邮件确认及密码重置 (C#)
 ====================
@@ -38,9 +38,9 @@ ms.lasthandoff: 11/10/2017
 
 1. 创建一个新的 ASP.NET Web 项目，然后选择 MVC 模板中。 Web 窗体还支持 ASP.NET 标识，因此无法执行类似的步骤，在 web 窗体应用程序中。  
     ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image1.png)
-2. 保留默认的身份验证作为**单个用户帐户**。 如果你想要托管该应用程序在 Azure 中的，保留选中复选框。 稍后在本教程中我们将部署到 Azure。 你可以[免费建立一个 Azure 帐户](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A261C142F)。
+2. 保留默认的身份验证作为**单个用户帐户**。 如果你想要托管该应用程序在 Azure 中的，保留选中复选框。 稍后在本教程中我们将部署到 Azure。 你可以[免费建立一个 Azure 帐户](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F)。
 3. 设置[项目以使用 SSL](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)。
-4. 运行应用程序，请单击**注册**链接并注册用户。 此时，电子邮件的唯一验证是使用[[EmailAddress]](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx)属性。
+4. 运行应用程序，请单击**注册**链接并注册用户。 此时，电子邮件的唯一验证是使用[[EmailAddress]](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx)属性。
 5. 在服务器资源管理器，导航到**数据 Connections\DefaultConnection\Tables\AspNetUsers**，右键单击并选择**打开表定义**。
 
     下图显示`AspNetUsers`架构：
@@ -108,7 +108,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-cshtml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample8.cshtml)]
 
-添加[Authorize 属性](https://msdn.microsoft.com/en-us/library/system.web.mvc.authorizeattribute(v=vs.118).aspx)到`Contact`主控制器的操作方法。 你可以使用单击**联系人**链接以验证匿名用户无权访问和经过身份验证的用户具有访问权限。
+添加[Authorize 属性](https://msdn.microsoft.com/library/system.web.mvc.authorizeattribute(v=vs.118).aspx)到`Contact`主控制器的操作方法。 你可以使用单击**联系人**链接以验证匿名用户无权访问和经过身份验证的用户具有访问权限。
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample9.cs?highlight=1)]
 
@@ -129,7 +129,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample12.cs?highlight=17-20)]
 
-删除注释字符从`ForgotPassword` [ActionLink](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.linkextensions.actionlink(v=vs.118).aspx)中*Views\Account\Login.cshtml* razor 视图文件：
+删除注释字符从`ForgotPassword` [ActionLink](https://msdn.microsoft.com/library/system.web.mvc.html.linkextensions.actionlink(v=vs.118).aspx)中*Views\Account\Login.cshtml* razor 视图文件：
 
 [!code-cshtml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample13.cshtml?highlight=47-50)]
 

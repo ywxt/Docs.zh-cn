@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
 msc.type: authoredcontent
-ms.openlocfilehash: 10da2b5013ae1348b69ea4f456d81bb4c4b73df6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f6861c702c1ccb19e5a4eee484a622079e205f86
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>使用 Visual Studio 的 ASP.NET Web 部署： 部署某一代码更新
 ====================
@@ -79,7 +79,7 @@ ms.lasthandoff: 11/10/2017
 
 你通常会还执行回归测试 （即，测试站点后，若要确保新的更改不中断任何现有功能的其余部分）。 但对于本教程将跳过该步骤并继续将更新部署到过渡和生产。
 
-当重新部署时，Web 部署自动确定哪些文件已更改，以及仅副本更改为服务器的文件。 默认情况下，Web 部署使用上次更改日期上文件来确定哪些功能已更改。 在不更改文件内容时，某些源代码管理系统将更改文件甚至的日期。 在这种情况下，你可能想要配置 Web Deploy 以使用文件校验和以确定哪些文件已更改。 有关详细信息，请参阅[为什么执行所有我的文件获取重新部署未更改其虽然？](https://msdn.microsoft.com/en-us/library/ee942158.aspx#use_checksum) ASP.NET 部署常见问题中。
+当重新部署时，Web 部署自动确定哪些文件已更改，以及仅副本更改为服务器的文件。 默认情况下，Web 部署使用上次更改日期上文件来确定哪些功能已更改。 在不更改文件内容时，某些源代码管理系统将更改文件甚至的日期。 在这种情况下，你可能想要配置 Web Deploy 以使用文件校验和以确定哪些文件已更改。 有关详细信息，请参阅[为什么执行所有我的文件获取重新部署未更改其虽然？](https://msdn.microsoft.com/library/ee942158.aspx#use_checksum) ASP.NET 部署常见问题中。
 
 ## <a name="take-the-application-offline-during-deployment"></a>使应用程序脱机在部署过程
 
@@ -188,7 +188,7 @@ Visual Studio 2012 还为你提供了部署单独的文件的功能。 选中的
 
     窗口将打开以显示在目标环境中的本地文件和它的版本之间的差异。
 
-    ![请从差异-内容 Site.css](deploying-a-code-update/_static/image13.png)
+    ![Diff-Content/Site.css](deploying-a-code-update/_static/image13.png)
 4. 在**解决方案资源管理器**，右键单击**Site.css**再次单击**发布 Site.css**。
 
     **Web 发布活动**窗口显示已发布文件。

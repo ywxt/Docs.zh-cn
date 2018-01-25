@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 3bec32b9b21325cde461541d7a313f401a0cfce7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8be851f5a2b1cca39f5f8f284ff1c002c486d7e8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-getting-started-with-signalr-2"></a>教程： 开始使用 SignalR 2
 ====================
@@ -92,7 +92,7 @@ SignalR 简化了生成实时应用程序的过程。 它包括 ASP.NET server �
 
 先决条件：
 
-- Visual Studio 2013。 如果未安装 Visual Studio，请参阅[ASP.NET 下载](https://www.asp.net/downloads)若要获取免费 Visual Studio 2013 Express 开发工具。
+- Visual Studio 2013. 如果未安装 Visual Studio，请参阅[ASP.NET 下载](https://www.asp.net/downloads)若要获取免费 Visual Studio 2013 Express 开发工具。
 
 以下步骤使用 Visual Studio 2013 创建 ASP.NET 空 Web 应用程序并添加 SignalR 库：
 
@@ -207,7 +207,7 @@ HTML 页中的代码示例演示如何使用 SignalR jQuery 库与 SignalR hub �
 
 你已了解 SignalR 是一个框架，用于构建实时 web 应用程序。 你还了解了多个 SignalR 开发任务： 如何将 SignalR 添加到 ASP.NET 应用程序、 如何创建一个中心类，以及如何发送和从中心接收消息。
 
-有关如何部署到 Azure 的示例 SignalR 应用程序的演练，请参阅[将 signalr 与在 Azure App Service Web Apps 配合](../deployment/using-signalr-with-azure-web-sites.md)。 有关如何将 Visual Studio web 项目部署到 Windows Azure 网站的详细信息，请参阅[在 Azure App Service 中创建 ASP.NET web 应用](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/)。
+有关如何部署到 Azure 的示例 SignalR 应用程序的演练，请参阅[将 signalr 与在 Azure App Service Web Apps 配合](../deployment/using-signalr-with-azure-web-sites.md)。 有关如何将 Visual Studio web 项目部署到 Windows Azure 网站的详细信息，请参阅[在 Azure App Service 中创建 ASP.NET web 应用](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)。
 
 若要了解更多高级的 SignalR 最新开发进展概念，请访问以下站点 SignalR 源代码和资源：
 

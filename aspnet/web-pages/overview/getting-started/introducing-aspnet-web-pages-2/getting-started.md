@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 615ddc31d0d857e5bf9a7f372b7efcf67d185905
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a6789ee75b4ca6e9443681cc7ec0bd3ab94cedcd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introducing-aspnet-web-pages---getting-started"></a>引入了 ASP.NET Web 页-入门
 ====================
@@ -52,7 +52,7 @@ ms.lasthandoff: 11/10/2017
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
 > 
 > 
-> - ASP.NET 网页 (Razor) 2
+> - ASP.NET Web Pages (Razor) 2
 > - WebMatrix 3
 
 
@@ -124,8 +124,8 @@ WebMatrix 是集成的网页编辑器、 一个数据库实用程序、 用于�
 
 你需要将此解决方案部署到 Azure 的 Azure 帐户。 如果你还没有帐户，可以使用以下选项：
 
-- [免费建立一个 Azure 帐户](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604)-获取信用额度来试用付费版 Azure 服务，你可以使用和甚至在用完后，最多可以保留帐户和使用免费的 Azure 服务。
-- [激活 MSDN 订户权益](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604)-MSDN 订阅为你的信用额度可以用于付费版 Azure 服务的每个月。
+- [免费建立一个 Azure 帐户](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604)-获取信用额度来试用付费版 Azure 服务，你可以使用和甚至在用完后，最多可以保留帐户和使用免费的 Azure 服务。
+- [激活 MSDN 订户权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604)-MSDN 订阅为你的信用额度可以用于付费版 Azure 服务的每个月。
 
 ## <a name="installing-everything"></a>安装的所有内容
 
@@ -155,7 +155,7 @@ Web 平台安装程序中出现，请准备好安装 WebMatrix。 单击“安�
 
 完成后，安装过程可以自动启动 WebMatrix。 如果它不存在，在 Windows 中，从**启动**菜单，启动**Microsoft WebMatrix**。
 
-首次启动 WebMatrix，你可以在有机会使用你的 Microsoft 帐户登录到 Microsoft Azure。 登录，你将收到 10 个免费的 web 应用的整个 Azure。 这些免费的 web 应用程序提供一种简便方式测试你的应用。 如果你还没有 Azure 帐户，但你有 MSDN 订阅，你可以[激活 MSDN 订阅权益](https://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604)。 否则，可以在几分钟内创建一个免费试用帐户。 有关详细信息，请参阅[Azure 免费试用版](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)。
+首次启动 WebMatrix，你可以在有机会使用你的 Microsoft 帐户登录到 Microsoft Azure。 登录，你将收到 10 个免费的 web 应用的整个 Azure。 这些免费的 web 应用程序提供一种简便方式测试你的应用。 如果你还没有 Azure 帐户，但你有 MSDN 订阅，你可以[激活 MSDN 订阅权益](https://www.windowsazure.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604)。 否则，可以在几分钟内创建一个免费试用帐户。 有关详细信息，请参阅[Azure 免费试用版](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)。
 
 无需立即登录以继续本教程。 如果你执行不登录现在，你仍将进行更高版本登录的选项。 最后一个[主题](publishing.md)系列在本教程介绍如何将你的网站部署到 Azure; 因此，你将需要登录以完成该主题。
 
@@ -207,7 +207,7 @@ WebMatrix 显示的文件类型的列表。 选择**CSHTML**，然后在**名称
 
 ![创建一个新的 CSHTML 页命名 HelloWorld.cshtml](getting-started/_static/image15.png)
 
-单击“确定”。
+单击 **“确定”**。
 
 WebMatrix 创建页面，并在编辑器中打开它。
 

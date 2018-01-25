@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-3
 msc.type: authoredcontent
-ms.openlocfilehash: df75a69644033cc76fee86b5a9692ab65beb4d01
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1ca627397f0f100d13388f9afc27ff481886e098
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="use-code-first-migrations-to-seed-the-database"></a>使用 Code First 迁移植入到数据库
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 11/10/2017
 
 [下载已完成的项目](https://github.com/MikeWasson/BookService)
 
-在本部分中，你将使用[Code First 迁移](https://msdn.microsoft.com/en-us/data/jj591621)EF 植入使用测试数据到数据库中。
+在本部分中，你将使用[Code First 迁移](https://msdn.microsoft.com/data/jj591621)EF 植入使用测试数据到数据库中。
 
 从**工具**菜单上，选择**库程序包管理器**，然后选择**程序包管理器控制台**。 在 Package Manager Console 窗口中，输入以下命令：
 
@@ -46,7 +46,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-console[Main](part-3/samples/sample4.cmd)]
 
-第一个命令生成代码来创建数据库，并第二个命令执行该代码。 数据库在本地创建，使用[LocalDB](https://msdn.microsoft.com/en-us/library/hh510202.aspx)。
+第一个命令生成代码来创建数据库，并第二个命令执行该代码。 数据库在本地创建，使用[LocalDB](https://msdn.microsoft.com/library/hh510202.aspx)。
 
 ![](part-3/_static/image2.png)
 
@@ -70,7 +70,7 @@ API 使数据库上的 CRUD 操作。 下面汇总了 API。
 | GET api/作者 / {id} | 获取由 ID 作者 |
 | POST/api/作者 | 创建新的作者。 |
 | PUT /api/作者 / {id} | 更新现有作者。 |
-| 删除 /api/作者 / {id} | 删除作者。 |
+| DELETE /api/authors/{id} | 删除作者。 |
 
 | 图书 |  |
 | --- | -- |

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/http-modules
-ms.openlocfilehash: 44b2b38c284e678344432d4473162404b4bb75a5
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a38ddc64583de05b4088cd31d48fbd7ee949d4e5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>迁移的 HTTP 处理程序和 ASP.NET Core 中间件的模块 
 
@@ -51,7 +51,7 @@ ms.lasthandoff: 01/19/2018
 
    1. [应用程序生命周期](https://msdn.microsoft.com/library/ms227673.aspx)，这是由 ASP.NET 激发的系列事件： [BeginRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.beginrequest)， [AuthenticateRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.authenticaterequest)等。每个模块可以创建一个或多个事件处理程序。
 
-   2. 对于相同的事件中，在中配置的顺序*Web.config*。
+   2. 对于相同的事件，它们在配置中的顺序*Web.config*。
 
 除模块，还可以添加到生命周期事件的处理程序你*Global.asax.cs*文件。 在已配置的模块中的处理程序后运行这些处理程序。
 
@@ -109,7 +109,7 @@ ms.lasthandoff: 01/19/2018
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyTerminatingModule.cs?highlight=9,10,11,12,13&name=snippet_Terminate)]
 
-中间件的方式处理这通过不调用`Invoke`在管道中的下一步中间件。 请注意这并不完全终止请求，因为响应使成为管道上返回到其方法时，仍可以调用以前的中间件。
+中间件的方式处理这通过不调用`Invoke`在管道中的下一步中间件。 请注意这不完全终止请求，因为响应使成为管道上返回到其方法时，仍可以调用以前的中间件。
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyTerminatingMiddleware.cs?highlight=7,8&name=snippet_Terminate)]
 
@@ -209,7 +209,7 @@ HTTP 处理程序如下所示：
 
   [UseMiddleware](#http-modules-usemiddleware)将添加到中间件的扩展方法`IApplicationBuilder`负责的依赖关系注入。
 
-  这并不局限于`IOptions`对象。 这种方式，可插入中间件需要的任何其他对象。
+  这已不再局限于`IOptions`对象。 这种方式，可插入中间件需要的任何其他对象。
 
 ## <a name="loading-middleware-options-through-direct-injection"></a>加载通过直接注入的中间件选项
 

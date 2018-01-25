@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
-ms.openlocfilehash: 1f19d54a5f2679f790575d520b28472d4ff3233f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: caa79725ede320c4bd3e87ac246966c57175eb8e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>使用 Visual Studio 的 ASP.NET Web 部署： 为数据库部署做好准备
 ====================
@@ -52,7 +52,7 @@ LocalDB 是一种特殊的执行模式的 SQL Server Express，可用于处理�
 为数据库访问 Contoso 大学应用程序需要必须部署与应用程序中，因为它不包括.NET Framework 中的以下软件：
 
 - [ASP.NET Universal Providers](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx) （启用 ASP.NET 成员资格系统以使用 Azure SQL 数据库）
-- [Entity Framework](https://msdn.microsoft.com/en-us/library/gg696172.aspx)
+- [Entity Framework](https://msdn.microsoft.com/library/gg696172.aspx)
 
 由于此软件包含在 NuGet 包，以便所需的程序集使用项目部署已设置该项目。 （链接将指向这些包，它可能比你在本教程中下载的初学者项目中安装的内容更新的当前版本而定。）
 
@@ -171,12 +171,12 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和窗体身份验证
 你将对测试环境和生产用户对过渡和生产部署开发用户。 为此，你将在本教程，一个用于开发，一个用于生产，创建两个 SQL 脚本和更高版本的教程中，你将配置发布过程来运行它们。
 
 > [!NOTE]
-> 成员资格数据库将存储帐户密码的哈希值。 若要部署到另一台计算机中的帐户，你必须确保与源计算机上，哈希例程不生成目标服务器上的不同哈希。 它们将生成相同的哈希时使用 ASP.NET Universal Providers，只要你不要更改默认的算法。 默认的算法是 HMACSHA256 和中指定**验证**属性 **[machineKey](https://msdn.microsoft.com/en-us/library/system.web.configuration.machinekeysection.aspx)**  Web.config 文件中的元素。
+> 成员资格数据库将存储帐户密码的哈希值。 若要部署到另一台计算机中的帐户，你必须确保与源计算机上，哈希例程不生成目标服务器上的不同哈希。 它们将生成相同的哈希时使用 ASP.NET Universal Providers，只要你不要更改默认的算法。 默认的算法是 HMACSHA256 和中指定**验证**属性 **[machineKey](https://msdn.microsoft.com/library/system.web.configuration.machinekeysection.aspx)**  Web.config 文件中的元素。
 
 
 通过使用 SQL Server Management Studio (SSMS)，或使用第三方工具，你可以手动创建数据部署脚本。 本教程的此其余部分将显示如何执行此操作在 SSMS 中，但如果你不想要安装和使用 SSMS 则可以从项目的已完成版本获取脚本并跳到在其中你存储它们在解决方案文件夹中的部分。
 
-若要安装 SSMS，将其从安装[下载中心： Microsoft SQL Server 2012 Express](https://www.microsoft.com/en-us/download/details.aspx?id=29062)通过单击[ENU\x64\SQLManagementStudio\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLManagementStudio_x64_ENU.exe)或[ENU\x86\SQLManagementStudio\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLManagementStudio_x86_ENU.exe)。 如果选择了错误对于你的系统，它将无法安装，并且您可以尝试另一个。
+若要安装 SSMS，将其从安装[下载中心： Microsoft SQL Server 2012 Express](https://www.microsoft.com/download/details.aspx?id=29062)通过单击[ENU\x64\SQLManagementStudio\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLManagementStudio_x64_ENU.exe)或[ENU\x86\SQLManagementStudio\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLManagementStudio_x86_ENU.exe)。 如果选择了错误对于你的系统，它将无法安装，并且您可以尝试另一个。
 
 （请注意这是一个 600 兆字节下载。 它可能需要较长的时间到安装，并且将会要求你的计算机重启。)
 
@@ -201,7 +201,7 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和窗体身份验证
 7. 更改**编写 USE DATABASE 脚本**到**False**。 使用语句对于 Azure SQL 数据库无效，且不需要在测试环境中部署到 SQL Server Express。
 
     ![SSMS 数据仅限脚本，没有 USE 语句](preparing-databases/_static/image13.png)
-8. 单击“确定”。
+8. 单击 **“确定”**。
 9. 在**生成和发布脚本**对话框中，**文件名**框指定将在其中创建脚本。 将路径更改为解决方案文件夹 （ContosoUniversity.sln 文件的文件夹） 和文件名与*aspnet 数据 dev.sql*。
 10. 单击**下一步**转到**摘要**选项卡上，并依次**下一步**再次以创建脚本。
 
@@ -218,7 +218,7 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和窗体身份验证
 - 在**附加数据库**对话框中，单击**添加**然后导航到*aspnet ContosoUniversity Prod.mdf*文件中*应用\_数据*文件夹。
 
     ![SSMS.mdf 文件添加附加](preparing-databases/_static/image16.png)
-- 单击“确定”。
+- 单击 **“确定”**。
 - 请按照你之前用来创建用于生产文件的脚本的相同过程。 命名该脚本文件*aspnet 数据 prod.sql*。
 
 ## <a name="summary"></a>摘要
@@ -231,7 +231,7 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和窗体身份验证
 
 ## <a name="more-information"></a>详细信息
 
-有关 NuGet 的详细信息，请参阅[使用 NuGet 管理项目库](https://msdn.microsoft.com/en-us/magazine/hh547106.aspx)和[NuGet 文档](http://docs.nuget.org/docs/start-here/overview)。 如果你不想使用 NuGet，你将需要了解如何分析以确定它能做什么安装时的 NuGet 包。 (例如，它可能配置*Web.config*转换，PowerShell 将脚本配置为运行在生成时，等等。)若要了解有关 NuGet 的工作原理的详细信息，请参阅[创建和发布包](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package)和[配置文件和源代码转换](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations)。
+有关 NuGet 的详细信息，请参阅[使用 NuGet 管理项目库](https://msdn.microsoft.com/magazine/hh547106.aspx)和[NuGet 文档](http://docs.nuget.org/docs/start-here/overview)。 如果你不想使用 NuGet，你将需要了解如何分析以确定它能做什么安装时的 NuGet 包。 (例如，它可能配置*Web.config*转换，PowerShell 将脚本配置为运行在生成时，等等。)若要了解有关 NuGet 的工作原理的详细信息，请参阅[创建和发布包](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package)和[配置文件和源代码转换](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations)。
 
 >[!div class="step-by-step"]
 [上一页](introduction.md)

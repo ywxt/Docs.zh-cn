@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-and-action-selection
 msc.type: authoredcontent
-ms.openlocfilehash: 02c2a01ef8ec2b5a49f2c303ee61f02702a3ba54
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 997582263bd48590b74434ee0ffc6be928fa1e08
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="routing-and-action-selection-in-aspnet-web-api"></a>路由和 ASP.NET Web API 中的操作选择
 ====================
@@ -61,7 +61,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="defaults"></a>默认值
 
-如果你提供默认值，路由将与缺少这些段的 URI 匹配。 例如: 
+如果你提供默认值，路由将与缺少这些段的 URI 匹配。 例如:
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample4.cs)]
 
@@ -73,7 +73,7 @@ URI"`http://localhost/api/products`"与此路由匹配。 "{类别}"段分配默
 
 在此路由匹配的阶段，特殊"{controller}"和"{action}"占位符就像其他占位符一样对待。 它们只存储在字典中，其他值。
 
-默认值可以具有的特殊值**RouteParameter.Optional**。 如果占位符获取分配此值的值不会添加到路由字典。 例如: 
+默认值可以具有的特殊值**RouteParameter.Optional**。 如果占位符获取分配此值的值不会添加到路由字典。 例如:
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample5.cs)]
 
@@ -88,14 +88,14 @@ URI"`http://localhost/api/products`"与此路由匹配。 "{类别}"段分配默
 - 类别:"toys"
 - id:"123"
 
-默认值还可以在路由模板中包含一个值，不会出现任何位置。 如果路由与匹配，则会将该值存储在字典中。 例如: 
+默认值还可以在路由模板中包含一个值，不会出现任何位置。 如果路由与匹配，则会将该值存储在字典中。 例如:
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample6.cs)]
 
 如果该 URI 路径是"根/api/8"，字典将包含两个值：
 
 - 控制器:"客户"
-- id:"8"
+- id: "8"
 
 ## <a name="selecting-a-controller"></a>选择一个控制器
 
@@ -121,7 +121,7 @@ URI"`http://localhost/api/products`"与此路由匹配。 "{类别}"段分配默
 
 之前查看选择算法，我们需要了解有关控制器操作的一些事项。
 
-**在控制器上的方法被认为"操作"？** 当选择某个操作，框架仅查看公共实例方法在控制器上。 此外，它不包括["特殊 name"](https://msdn.microsoft.com/en-us/library/system.reflection.methodbase.isspecialname)方法 （构造函数、 事件、 运算符重载等） 和从继承方法**ApiController**类。
+**在控制器上的方法被认为"操作"？** 当选择某个操作，框架仅查看公共实例方法在控制器上。 此外，它不包括["特殊 name"](https://msdn.microsoft.com/library/system.reflection.methodbase.isspecialname)方法 （构造函数、 事件、 运算符重载等） 和从继承方法**ApiController**类。
 
 **HTTP 方法。** 框架仅选择匹配的请求，按以下方式确定的 HTTP 方法的操作：
 
@@ -134,7 +134,7 @@ URI"`http://localhost/api/products`"与此路由匹配。 "{类别}"段分配默
 - 从 URI 中获取简单类型。
 - 从请求正文中获取复杂类型。
 
-简单类型包括的所有[.NET Framework 基元类型](https://msdn.microsoft.com/en-us/library/system.type.isprimitive)，加上**DateTime**，**十进制**， **Guid**，**字符串**，和**TimeSpan**。 对于每个操作，最多一个参数可以读取请求正文。
+简单类型包括的所有[.NET Framework 基元类型](https://msdn.microsoft.com/library/system.type.isprimitive)，加上**DateTime**，**十进制**， **Guid**，**字符串**，和**TimeSpan**。 对于每个操作，最多一个参数可以读取请求正文。
 
 > [!NOTE]
 > 它是可以重写默认绑定规则。 请参阅[WebAPI 参数绑定实质上的](https://blogs.msdn.com/b/jmstall/archive/2012/05/11/webapi-parameter-binding-under-the-hood.aspx)。
@@ -192,7 +192,7 @@ HTTP 请求：
 URI 匹配名为"DefaultApi"的路由。 路由字典包含以下各项：
 
 - 控制器:"products"
-- id:"1"
+- id: "1"
 
 路由字典不包含查询字符串参数、"版本"和"详细信息"，但这些仍会被视为期间操作选择。
 

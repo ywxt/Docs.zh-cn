@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f35c8a10018ce796e2d905d6ee839ff09bb380a1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7392ae5d9bc4c3aab45a9373099a0ee18e873a4f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>在 ASP.NET Web API 2 中进行跟踪
 ====================
@@ -58,7 +58,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](tracing-in-aspnet-web-api/samples/sample2.cs?highlight=6)]
 
-此代码将添加[SystemDiagnosticsTraceWriter](https://msdn.microsoft.com/en-us/library/system.web.http.tracing.systemdiagnosticstracewriter.aspx)到 Web API 管道的类。 **SystemDiagnosticsTraceWriter**类写入到跟踪[System.Diagnostics.Trace](https://msdn.microsoft.com/en-us/library/system.diagnostics.trace)。
+此代码将添加[SystemDiagnosticsTraceWriter](https://msdn.microsoft.com/library/system.web.http.tracing.systemdiagnosticstracewriter.aspx)到 Web API 管道的类。 **SystemDiagnosticsTraceWriter**类写入到跟踪[System.Diagnostics.Trace](https://msdn.microsoft.com/library/system.diagnostics.trace)。
 
 若要查看跟踪，请在调试器中运行应用程序。 在浏览器中，导航到`/api/values`。
 
@@ -68,7 +68,7 @@ ms.lasthandoff: 11/10/2017
 
 [![](tracing-in-aspnet-web-api/_static/image7.png)](tracing-in-aspnet-web-api/_static/image6.png)
 
-因为**SystemDiagnosticsTraceWriter**写入到跟踪**System.Diagnostics.Trace**，你可以注册其他跟踪侦听器; 例如，若要编写跟踪到日志文件。 有关跟踪编写器的详细信息，请参阅[跟踪侦听器](https://msdn.microsoft.com/en-us/library/4y5y10s7.aspx)MSDN 上的主题。
+因为**SystemDiagnosticsTraceWriter**写入到跟踪**System.Diagnostics.Trace**，你可以注册其他跟踪侦听器; 例如，若要编写跟踪到日志文件。 有关跟踪编写器的详细信息，请参阅[跟踪侦听器](https://msdn.microsoft.com/library/4y5y10s7.aspx)MSDN 上的主题。
 
 ### <a name="configuring-systemdiagnosticstracewriter"></a>配置 SystemDiagnosticsTraceWriter
 
@@ -89,7 +89,7 @@ ms.lasthandoff: 11/10/2017
 
 若要获取的跟踪编写器，请调用**HttpConfiguration.Services.GetTraceWriter**。 此方法是从控制器，可通过访问**ApiController.Configuration**属性。
 
-若要编写跟踪，可以调用**ITraceWriter.Trace**方法直接，但[ITraceWriterExtensions](https://msdn.microsoft.com/en-us/library/system.web.http.tracing.itracewriterextensions.aspx)类定义是更友好某些扩展方法。 例如，**信息**上面所示方法使用跟踪级别创建跟踪**信息**。
+若要编写跟踪，可以调用**ITraceWriter.Trace**方法直接，但[ITraceWriterExtensions](https://msdn.microsoft.com/library/system.web.http.tracing.itracewriterextensions.aspx)类定义是更友好某些扩展方法。 例如，**信息**上面所示方法使用跟踪级别创建跟踪**信息**。
 
 ## <a name="web-api-tracing-infrastructure"></a>Web API 跟踪基础结构
 

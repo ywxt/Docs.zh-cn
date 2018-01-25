@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 226ef83f289b8fbe9a68f0d0741c7eca0d96ba94
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0224bcd2badc423ba5146feacccc44b8f33a608
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 和 Visual Studio 2010 Web 开发概述
 ====================
@@ -199,7 +199,7 @@ ASP.NET 4 引入了用于扩展应用程序 Url 的大小的新选项。 ASP.NET
 
 [!code-xml[Main](overview/samples/sample10.xml)]
 
-若要允许长于或短的路径 （不包括协议、 服务器名称和查询字符串的 URL 的部分），修改 *[maxUrlLength](https://msdn.microsoft.com/en-us/library/system.web.configuration.httpruntimesection.maxurllength.aspx)* 属性。 若要允许长于或短的查询字符串，可修改的值 *[maxQueryStringLength](https://msdn.microsoft.com/en-us/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)* 属性。
+若要允许长于或短的路径 （不包括协议、 服务器名称和查询字符串的 URL 的部分），修改 *[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)* 属性。 若要允许长于或短的查询字符串，可修改的值 *[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)* 属性。
 
 ASP.NET 4 还可配置的 URL 字符检查使用的字符。 当 ASP.NET 的 url 的路径部分中找到无效的字符时，它将拒绝该请求，并发出 HTTP 400 错误。 在以前版本的 ASP.NET，URL 字符检查是限于一组固定的字符。 在 ASP.NET 4 中，你可以自定义的一套使用新的有效字符*requestPathInvalidChars*属性*httpRuntime*配置元素，如下面的示例中所示：
 
@@ -561,7 +561,7 @@ ASP.NET 4 添加了对使用 Web 窗体使用的路由的内置支持。 路由�
 - 下面的新的表达式生成器，在中定义*System.Web.Compilation.RouteUrlExpressionBuilder*和*System.Web.Compilation.RouteValueExpressionBuilder*:
 - *RouteUrl*，该属性提供一种简单的方法来创建到 ASP.NET 服务器控件中的路由 URL 相对应的 URL。
 - *RouteValue*，该属性提供一种简单的方法，以提取信息*RouteContext*对象。
-- *RouteParameter*类，它可以更轻松地将中包含的数据传递*RouteContext*对数据源控件的查询的对象 (类似于[ *FormParameter*](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.formparameter.aspx)).
+- *RouteParameter*类，它可以更轻松地将中包含的数据传递*RouteContext*对数据源控件的查询的对象 (类似于[ *FormParameter*](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formparameter.aspx)).
 
 #### <a name="routing-for-web-forms-pages"></a>Web 窗体页的路由
 
@@ -625,7 +625,7 @@ ASP.NET 自动工作出正确的路由 （即，它生成正确的 URL） 基于
 
 #### <a name="using-route-data-for-data-source-control-parameters"></a>使用适用于数据源控件参数路线数据
 
-*RouteParameter*类可作为数据源控件中的查询的参数值指定路由数据。 它[工作方式非常类似于](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.formparameter.aspx)类，如下面的示例中所示：
+*RouteParameter*类可作为数据源控件中的查询的参数值指定路由数据。 它[工作方式非常类似于](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formparameter.aspx)类，如下面的示例中所示：
 
 [!code-aspx[Main](overview/samples/sample46.aspx)]
 
@@ -1146,7 +1146,7 @@ ASP.NET MVC 引入了作为外接程序框架到 ASP.NET 3.5 SP1 在 2009 年 3 
 - 能够轻松地将更改为中的字段生成的标记*GridView*和*说明*使用是动态的数据项目的一部分的字段模板的控件。
 
 > [!NOTE]
-> 请注意有关详细信息，请参阅[动态数据文档](https://msdn.microsoft.com/en-us/library/cc488545.aspx)MSDN 库中。
+> 请注意有关详细信息，请参阅[动态数据文档](https://msdn.microsoft.com/library/cc488545.aspx)MSDN 库中。
 
 
 为 ASP.NET 4 中，动态数据得到增强，为开发人员快速生成数据驱动的网站提供更强大。
@@ -1325,7 +1325,7 @@ Visual Studio 2010 使用 MSDeploy 工具来创建你的应用程序，即所谓
 
 可以复制到任何服务器，然后通过使用 IIS 管理器手动安装 Web 包。 或者，用于自动部署，包可以安装通过使用命令行命令或通过使用部署 Api。
 
-Visual Studio 2010 提供内置的 MSBuild 任务和用于创建 Web 包的目标。 有关详细信息，请参阅[ASP.NET Web 应用程序项目部署概述](https://msdn.microsoft.com/en-us/library/dd394698%28VS.100%29.aspx)MSDN 网站上和[为什么应创建 Web 包的 10 + 20 原因](http://vishaljoshi.blogspot.com/2009/07/10-20-reasons-why-you-should-create-web.html)Vishal Joshi 博客上。
+Visual Studio 2010 提供内置的 MSBuild 任务和用于创建 Web 包的目标。 有关详细信息，请参阅[ASP.NET Web 应用程序项目部署概述](https://msdn.microsoft.com/library/dd394698%28VS.100%29.aspx)MSDN 网站上和[为什么应创建 Web 包的 10 + 20 原因](http://vishaljoshi.blogspot.com/2009/07/10-20-reasons-why-you-should-create-web.html)Vishal Joshi 博客上。
 
 <a id="0.2__Toc224729057"></a><a id="0.2__Toc253429294"></a><a id="0.2__Toc243304665"></a>
 
@@ -1337,7 +1337,7 @@ Visual Studio 2010 提供内置的 MSBuild 任务和用于创建 Web 包的目�
 
 [!code-xml[Main](overview/samples/sample102.xml)]
 
-有关详细信息，请参阅[Web 应用程序项目部署的 Web.config 转换语法](https://msdn.microsoft.com/en-us/library/dd465326%28VS.100%29.aspx)MSDN 上<a id="0.2_a"></a>网站和[Web 部署： Web.Config 转换](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html)Vishal Joshi 博客上。
+有关详细信息，请参阅[Web 应用程序项目部署的 Web.config 转换语法](https://msdn.microsoft.com/library/dd465326%28VS.100%29.aspx)MSDN 上<a id="0.2_a"></a>网站和[Web 部署： Web.Config 转换](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html)Vishal Joshi 博客上。
 
 <a id="0.2__Toc224729058"></a><a id="0.2__Toc253429295"></a><a id="0.2__Toc243304666"></a>
 
@@ -1345,7 +1345,7 @@ Visual Studio 2010 提供内置的 MSBuild 任务和用于创建 Web 包的目�
 
 Visual Studio 2010 部署包可以包含 SQL Server 数据库上的依赖关系。 作为包定义的一部分，为源数据库提供的连接字符串。 当你创建的 Web 包时，Visual Studio 2010 创建 SQL 脚本的数据库架构和 （可选） 的数据，然后将它们添加到包。 你还可以提供自定义 SQL 脚本，并指定它们应运行在服务器的序列。 在部署时，你可以提供适合于目标服务器中; 的连接字符串部署过程然后使用此连接字符串来运行脚本，创建数据库架构并添加数据。
 
-此外，通过使用一键式发布，您可以配置部署，以便应用程序发布到远程共享宿主站点时，直接发布你的数据库。 有关详细信息，请参阅[如何： 部署数据库与 Web 应用程序项目](https://msdn.microsoft.com/en-us/library/dd465343%28VS.100%29.aspx)MSDN 网站上和[使用 VS 2010 数据库部署](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html)Vishal Joshi 博客上。
+此外，通过使用一键式发布，您可以配置部署，以便应用程序发布到远程共享宿主站点时，直接发布你的数据库。 有关详细信息，请参阅[如何： 部署数据库与 Web 应用程序项目](https://msdn.microsoft.com/library/dd465343%28VS.100%29.aspx)MSDN 网站上和[使用 VS 2010 数据库部署](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html)Vishal Joshi 博客上。
 
 <a id="0.2__Toc224729059"></a><a id="0.2__Toc253429296"></a><a id="0.2__Toc243304667"></a>
 
@@ -1353,7 +1353,7 @@ Visual Studio 2010 部署包可以包含 SQL Server 数据库上的依赖关系�
 
 Visual Studio 2010 还允许你使用 IIS 的远程管理服务发布到远程服务器的 Web 应用程序。 你可以为你的托管帐户或测试服务器或过渡服务器创建的发布配置文件。 每个配置文件可以安全地保存相应的凭据。 你可以随后部署到任何目标服务器通过使用 Web 一键式一次单击发布工具栏。 使用 Visual Studio 2010，你还可以通过使用 MSBuild 命令行发布。 这允许您配置您的团队生成环境，要包括在持续集成模型中的发布。
 
-有关详细信息，请参阅[如何： 部署 Web 应用程序项目使用一键式发布和 Web 部署](https://msdn.microsoft.com/en-us/library/dd465337%28VS.100%29.aspx)MSDN 网站上和[Web 1 单击发布使用 VS 2010](http://vishaljoshi.blogspot.com/2009/05/web-1-click-publish-with-vs-2010.html) Vishal Joshi 博客上。 若要在 Visual Studio 2010 中查看有关 Web 应用程序部署的视频演示文稿，请参阅[的 Web 开发人员预览版的 VS 2010](http://vishaljoshi.blogspot.com/2008/12/vs-2010-for-web-developer-previews.html) Vishal Joshi 博客上。
+有关详细信息，请参阅[如何： 部署 Web 应用程序项目使用一键式发布和 Web 部署](https://msdn.microsoft.com/library/dd465337%28VS.100%29.aspx)MSDN 网站上和[Web 1 单击发布使用 VS 2010](http://vishaljoshi.blogspot.com/2009/05/web-1-click-publish-with-vs-2010.html) Vishal Joshi 博客上。 若要在 Visual Studio 2010 中查看有关 Web 应用程序部署的视频演示文稿，请参阅[的 Web 开发人员预览版的 VS 2010](http://vishaljoshi.blogspot.com/2008/12/vs-2010-for-web-developer-previews.html) Vishal Joshi 博客上。
 
 <a id="0.2__Toc224729060"></a><a id="0.2__Toc253429297"></a><a id="0.2__Toc243304668"></a>
 
@@ -1361,9 +1361,9 @@ Visual Studio 2010 还允许你使用 IIS 的远程管理服务发布到远程�
 
 以下网站提供有关 ASP.NET 4 和 Visual Studio 2010 的其他信息。
 
-- [ASP.NET 4](https://msdn.microsoft.com/en-us/library/ee532866%28VS.100%29.aspx) -MSDN 网站上的 ASP.NET 4 的官方文档。
+- [ASP.NET 4](https://msdn.microsoft.com/library/ee532866%28VS.100%29.aspx) -MSDN 网站上的 ASP.NET 4 的官方文档。
 - [https://www.asp.net/](https://www.asp.net/) -ASP.NET 团队自己的网站。
-- [https://www.asp.net/dynamicdata/](https://msdn.microsoft.com/en-us/library/cc488545.aspx)和[ASP.NET 动态数据内容映射](https://msdn.microsoft.com/en-us/library/cc488545%28VS.100%29.aspx)-联机资源 ASP.NET 团队站点上和中的 ASP.NET 动态数据有关的正式文档。
+- [https://www.asp.net/dynamicdata/](https://msdn.microsoft.com/library/cc488545.aspx)和[ASP.NET 动态数据内容映射](https://msdn.microsoft.com/library/cc488545%28VS.100%29.aspx)-联机资源 ASP.NET 团队站点上和中的 ASP.NET 动态数据有关的正式文档。
 - [https://www.asp.net/ajax/](../../ajax/index.md) -ASP.NET Ajax 开发主 Web 资源。
 - [https://blogs.msdn.com/webdevtools/](https://blogs.msdn.com/webdevtools/) -Visual Web 开发人员团队博客，Visual Studio 2010 中包括有关功能的信息。
 - [ASP.NET WebStack](https://github.com/aspnet/AspNetWebStack) -ASP.NET 的预览版本的主 Web 资源。

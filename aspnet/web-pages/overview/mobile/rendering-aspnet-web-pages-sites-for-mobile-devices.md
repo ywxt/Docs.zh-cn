@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/mobile/rendering-aspnet-web-pages-sites-for-mobile-devices
 msc.type: authoredcontent
-ms.openlocfilehash: 08b714eb2ffaefc7c7e2e5c9a7428106b231e5b7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 899bbdef82d689be81cd77ea6805e0484fb614aa
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a>移动设备的的呈现 ASP.NET Web 页 (Razor) 站点
 ====================
@@ -50,17 +50,17 @@ ASP.NET Web 页中，可以在移动或其他设备上创建自定义呈现内�
 2. 创建名为的文件*Page1.Mobile.cshtml*并将现有内容替换为以下标记。 请注意该页面的移动版本省略更好地呈现较小屏幕上的导航部分。
 
     [!code-html[Main](rendering-aspnet-web-pages-sites-for-mobile-devices/samples/sample2.html)]
-3. 运行桌面浏览器并浏览到*Page1.cshtml*。 ![mobilesites 1](rendering-aspnet-web-pages-sites-for-mobile-devices/_static/image1.png)
+3. 运行桌面浏览器并浏览到*Page1.cshtml*。 ![mobilesites-1](rendering-aspnet-web-pages-sites-for-mobile-devices/_static/image1.png)
 4. 运行移动浏览器 （或移动设备仿真程序） 并浏览到*Page1.cshtml*。 (请注意，不包括*.mobile。* 作为 URL 的一部分。）即使该请求是*Page1.cshtml*，ASP.NET 呈现*Page1.Mobile.cshtml*。
 
-    ![mobilesites 2](rendering-aspnet-web-pages-sites-for-mobile-devices/_static/image2.png)
+    ![mobilesites-2](rendering-aspnet-web-pages-sites-for-mobile-devices/_static/image2.png)
 
 > [!NOTE]
-> 若要测试移动页，可以使用在台式计算机运行的移动设备模拟器。 此工具允许你测试 web 页面，因为它们将显示在移动设备上 （即，通常通过小得多显示区域）。 模拟器的一个示例是[用户代理切换器外接程序](http://addons.mozilla.org/en-us/firefox/addon/user-agent-switcher/)对 Mozilla Firefox，它可让你模拟从桌面版本的 Firefox 的各种移动浏览器。
+> 若要测试移动页，可以使用在台式计算机运行的移动设备模拟器。 此工具允许你测试 web 页面，因为它们将显示在移动设备上 （即，通常通过小得多显示区域）。 模拟器的一个示例是[用户代理切换器外接程序](http://addons.mozilla.org/firefox/addon/user-agent-switcher/)对 Mozilla Firefox，它可让你模拟从桌面版本的 Firefox 的各种移动浏览器。
 
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他资源
 
 
-[Windows Phone 仿真程序](https://msdn.microsoft.com/en-us/library/ff402563(v=VS.92).aspx)
+[Windows Phone 仿真程序](https://msdn.microsoft.com/library/ff402563(v=VS.92).aspx)

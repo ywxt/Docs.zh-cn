@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-startup-class-detection
 msc.type: authoredcontent
-ms.openlocfilehash: a6ac34307b7558ad13684448f339ca74ade9e997
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 618f8fa23630dcf9821a54415766dc015694e535
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="owin-startup-class-detection"></a>OWIN 启动类检测
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 11/10/2017
 
 > 本教程演示如何配置加载哪些 OWIN startup 类。 有关 OWIN 的详细信息，请参阅[项目概述 Katana](an-overview-of-project-katana.md)。 本教程编写由 Rick Anderson ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )，Praburaj Thiagarajan 和 Howard Dierking ( [ @howard \_dierking](https://twitter.com/howard_dierking) )。
 > 
-> ## <a name="prerequisites"></a>先决条件
+> ## <a name="prerequisites"></a>系统必备
 > 
 > [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
 
@@ -79,7 +79,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-csharp[Main](owin-startup-class-detection/samples/sample8.cs?highlight=5,7,15-28,31-34)]
   
- `app.Use` Lambda 表达式用于注册指定的中间件组件向 OWIN 管道。 在这种情况下，我们要设置的传入请求的响应传入的请求之前的日志记录。 `next`参数为的委托 ( [Func](https://msdn.microsoft.com/en-us/library/bb534960(v=vs.100).aspx) &lt; [任务](https://msdn.microsoft.com/en-us/library/dd321424(v=vs.100).aspx) &gt; ) 到管道中的下一个组件。 `app.Run` Lambda 表达式挂钩到传入的请求管线，并提供响应机制。
+ `app.Use` Lambda 表达式用于注册指定的中间件组件向 OWIN 管道。 在这种情况下，我们要设置的传入请求的响应传入的请求之前的日志记录。 `next`参数为的委托 ( [Func](https://msdn.microsoft.com/library/bb534960(v=vs.100).aspx) &lt; [任务](https://msdn.microsoft.com/library/dd321424(v=vs.100).aspx) &gt; ) 到管道中的下一个组件。 `app.Run` Lambda 表达式挂钩到传入的请求管线，并提供响应机制。
      > [!NOTE]
      > 在上面的代码情况下，我们已注释掉`OwinStartup`属性，我们要依赖于正在运行名为的类的约定`Startup`。-按***F5***运行该应用程序。 命中刷新几次。  
   

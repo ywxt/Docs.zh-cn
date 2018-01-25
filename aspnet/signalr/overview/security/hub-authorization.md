@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/security/hub-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: f1538c933ff9e8e680d70ce1e63d24b189be47e5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cb0f06a3ca2b39a4a952c33cea70136c7c5af7a8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authentication-and-authorization-for-signalr-hubs"></a>身份验证和授权 SignalR 集线器的
 ====================
@@ -55,13 +55,13 @@ ms.lasthandoff: 11/10/2017
     - [使用 Forms 身份验证的 cookie](#cookie)
     - [Windows 身份验证](#windows)
     - [连接标头](#header)
-    - [证书](#certificate)
+    - [Certificate](#certificate)
 
 <a id="authorizeattribute"></a>
 
 ## <a name="authorize-attribute"></a>授权属性
 
-SignalR 提供[Authorize](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx)特性来指定哪些用户或角色有权访问的中心或方法。 此属性位于`Microsoft.AspNet.SignalR`命名空间。 你将应用`Authorize`属性为中心或中心中的特定方法。 当你将`Authorize`特性应用到中心类，指定的授权要求适用于所有中心中的方法。 本主题提供您可以将应用的授权要求的不同类型的示例。 而无需`Authorize`特性，连接客户端可以访问集线器上的任何公共方法。
+SignalR 提供[Authorize](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx)特性来指定哪些用户或角色有权访问的中心或方法。 此属性位于`Microsoft.AspNet.SignalR`命名空间。 你将应用`Authorize`属性为中心或中心中的特定方法。 当你将`Authorize`特性应用到中心类，指定的授权要求适用于所有中心中的方法。 本主题提供您可以将应用的授权要求的不同类型的示例。 而无需`Authorize`特性，连接客户端可以访问集线器上的任何公共方法。
 
 如果已定义 web 应用程序中名为"Admin"的角色，则可以指定该角色中的唯一用户可以访问替换为以下代码的集线器。
 
@@ -82,7 +82,7 @@ SignalR 提供[Authorize](https://msdn.microsoft.com/en-us/library/microsoft.asp
 
 ## <a name="require-authentication-for-all-hubs"></a>要求对所有中心身份验证
 
-你可以要求身份验证的所有中心和中心方法在你的应用程序通过调用[RequireAuthentication](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubpipelineextensions.requireauthentication(v=vs.111).aspx)应用程序启动时的方法。 如果你有多个中心并想要为所有这些强制实施身份验证要求，可使用此方法。 使用此方法，不能指定角色、 用户或传出的授权的要求。 你仅可以指定对中心方法的访问仅限于经过身份验证的用户。 但是，你仍可以应用 Authorize 属性为中心或方法，以指定其他要求。 在属性中指定的任何要求添加到身份验证的基本要求。
+你可以要求身份验证的所有中心和中心方法在你的应用程序通过调用[RequireAuthentication](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubpipelineextensions.requireauthentication(v=vs.111).aspx)应用程序启动时的方法。 如果你有多个中心并想要为所有这些强制实施身份验证要求，可使用此方法。 使用此方法，不能指定角色、 用户或传出的授权的要求。 你仅可以指定对中心方法的访问仅限于经过身份验证的用户。 但是，你仍可以应用 Authorize 属性为中心或方法，以指定其他要求。 在属性中指定的任何要求添加到身份验证的基本要求。
 
 下面的示例演示的启动文件，后者限制给已经过身份验证的用户所有的中心方法。
 
@@ -94,7 +94,7 @@ SignalR 提供[Authorize](https://msdn.microsoft.com/en-us/library/microsoft.asp
 
 ## <a name="customized-authorization"></a>自定义的授权
 
-如果你需要自定义如何确定授权，你可以创建一个派生自的类`AuthorizeAttribute`，并重写[UserAuthorized](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.authorizeattribute.userauthorized(v=vs.111).aspx)方法。 对于每个请求，SignalR 调用此方法来确定用户是否有权完成请求。 在重写方法中，为你的授权方案提供必要的逻辑。 下面的示例演示如何强制实施通过基于声明的标识的授权。
+如果你需要自定义如何确定授权，你可以创建一个派生自的类`AuthorizeAttribute`，并重写[UserAuthorized](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute.userauthorized(v=vs.111).aspx)方法。 对于每个请求，SignalR 调用此方法来确定用户是否有权完成请求。 在重写方法中，为你的授权方案提供必要的逻辑。 下面的示例演示如何强制实施通过基于声明的标识的授权。
 
 [!code-csharp[Main](hub-authorization/samples/sample4.cs)]
 
@@ -122,7 +122,7 @@ SignalR 提供[Authorize](https://msdn.microsoft.com/en-us/library/microsoft.asp
 
 ### <a name="cookie"></a>Cookie
 
-当.NET 客户端与使用 ASP.NET 窗体身份验证的集线器交互时，你将需要手动对连接设置身份验证 cookie。 添加到 cookie`CookieContainer`属性[HubConnection](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.hubs.hubconnection(v=vs.111).aspx)对象。 下面的示例演示在网页上检索身份验证 cookie 并将该 cookie 添加到连接的控制台应用。
+当.NET 客户端与使用 ASP.NET 窗体身份验证的集线器交互时，你将需要手动对连接设置身份验证 cookie。 添加到 cookie`CookieContainer`属性[HubConnection](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.hubs.hubconnection(v=vs.111).aspx)对象。 下面的示例演示在网页上检索身份验证 cookie 并将该 cookie 添加到连接的控制台应用。
 
 [!code-csharp[Main](hub-authorization/samples/sample7.cs)]
 
@@ -134,7 +134,7 @@ SignalR 提供[Authorize](https://msdn.microsoft.com/en-us/library/microsoft.asp
 
 ### <a name="windows-authentication"></a>Windows 身份验证
 
-当使用 Windows 身份验证，您可以通过传递当前用户的凭据[在](https://msdn.microsoft.com/en-us/library/system.net.credentialcache.defaultcredentials.aspx)属性。 在的值设置为连接的凭据。
+当使用 Windows 身份验证，您可以通过传递当前用户的凭据[在](https://msdn.microsoft.com/library/system.net.credentialcache.defaultcredentials.aspx)属性。 在的值设置为连接的凭据。
 
 [!code-csharp[Main](hub-authorization/samples/sample9.cs?highlight=6)]
 
@@ -152,6 +152,6 @@ SignalR 提供[Authorize](https://msdn.microsoft.com/en-us/library/microsoft.asp
 
 ### <a name="certificate"></a>证书
 
-你可以传递一个客户端证书来验证用户。 创建连接时添加证书。 下面的示例演示如何将客户端证书添加到连接;它不显示完整的控制台应用程序。 它使用[X509Certificate](https://msdn.microsoft.com/en-us/library/system.security.cryptography.x509certificates.x509certificate.aspx)提供多种不同的方式来创建证书的类。
+你可以传递一个客户端证书来验证用户。 创建连接时添加证书。 下面的示例演示如何将客户端证书添加到连接;它不显示完整的控制台应用程序。 它使用[X509Certificate](https://msdn.microsoft.com/library/system.security.cryptography.x509certificates.x509certificate.aspx)提供多种不同的方式来创建证书的类。
 
 [!code-csharp[Main](hub-authorization/samples/sample11.cs?highlight=6)]

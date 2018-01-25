@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8d6e6e7dd3ee11876b5237fc69f3b5b2818a88de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d386a3b6328675fe21f989f8fd36bfc91fc08b32
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="an-overview-of-forms-authentication-c"></a>窗体身份验证 (C#) 的概述
 ====================
@@ -39,12 +39,12 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="understanding-the-forms-authentication-workflow"></a>了解窗体身份验证工作流
 
-ASP.NET 运行时处理一个 ASP.NET 资源，如 ASP.NET 页或 ASP.NET Web 服务的请求时请求在其生命周期期间引发事件的数。 没有在请求的请求未经过身份验证并获得授权，在未处理的异常等的情况下引发的事件时引发的非常开始且非常结束时引发的事件。 若要查看事件的完整列表，请参阅[HttpApplication 对象的事件](https://msdn.microsoft.com/en-us/library/system.web.httpapplication_events.aspx)。
+ASP.NET 运行时处理一个 ASP.NET 资源，如 ASP.NET 页或 ASP.NET Web 服务的请求时请求在其生命周期期间引发事件的数。 没有在请求的请求未经过身份验证并获得授权，在未处理的异常等的情况下引发的事件时引发的非常开始且非常结束时引发的事件。 若要查看事件的完整列表，请参阅[HttpApplication 对象的事件](https://msdn.microsoft.com/library/system.web.httpapplication_events.aspx)。
 
 *HTTP 模块*是在响应特定事件在请求生命周期中执行其代码的托管的类。 ASP.NET 附带许多执行所需的任务在后台的 HTTP 模块。 与我们讨论尤其相关的两个内置的 HTTP 模块为：
 
-- **[`FormsAuthenticationModule`](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx)**– 对用户进行身份验证通过检查窗体身份验证票证，它通常包括在用户的 cookie 集合。 如果存在未窗体身份验证票证，则用户是匿名的。
-- **[`UrlAuthorizationModule`](https://msdn.microsoft.com/en-us/library/system.web.security.urlauthorizationmodule.aspx)**– 确定当前用户是否有权访问所请求的 URL。 此模块通过参考应用程序的配置文件中指定的授权规则确定该颁发机构。 ASP.NET 还包括[ `FileAuthorizationModule` ](https://msdn.microsoft.com/en-us/library/system.web.security.fileauthorizationmodule.aspx) ，它确定机构通过参考请求的文件 Acl。
+- **[`FormsAuthenticationModule`](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)**– 对用户进行身份验证通过检查窗体身份验证票证，它通常包括在用户的 cookie 集合。 如果存在未窗体身份验证票证，则用户是匿名的。
+- **[`UrlAuthorizationModule`](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)**– 确定当前用户是否有权访问所请求的 URL。 此模块通过参考应用程序的配置文件中指定的授权规则确定该颁发机构。 ASP.NET 还包括[ `FileAuthorizationModule` ](https://msdn.microsoft.com/library/system.web.security.fileauthorizationmodule.aspx) ，它确定机构通过参考请求的文件 Acl。
 
 `FormsAuthenticationModule`尝试进行身份验证之前用户`UrlAuthorizationModule`(和`FileAuthorizationModule`) 执行。 如果发出请求的用户无权访问请求的资源，授权模块终止请求，并返回[HTTP 401 未授权](http://www.checkupdown.com/status/E401.html)状态。 在 Windows 身份验证方案，HTTP 401 状态将返回到浏览器。 此状态代码会导致浏览器以提示用户输入其凭据通过模式对话框。 使用窗体身份验证，但是，HTTP 401 未授权状态是永远不会发送到浏览器由于 FormsAuthenticationModule 检测到此状态并会修改它以将用户重定向到登录页相反 (通过[HTTP 302 重定向](http://www.checkupdown.com/status/E302.html)状态)。
 
@@ -76,7 +76,7 @@ IIS 7，但是，可以集成的 IIS 和 ASP.NET 的管道。 使用其他一些
 
 ## <a name="step-1-creating-an-aspnet-website-for-this-tutorial-series"></a>步骤 1： 为本系列教程中创建 ASP.NET 网站
 
-若要访问尽可能多的用户，我们将生成本系列中的 ASP.NET 网站将创建与 Microsoft 的免费版本的 Visual Studio 2008 起， [Visual Web Developer 2008](https://www.microsoft.com/express/vwd/)。 我们将实现`SqlMembershipProvider`中的用户存储[Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/en-us/sql/Aa336346.aspx)数据库。 如果你使用 Visual Studio 2005 或其他版本的 Visual Studio 2008 或 SQL Server，别担心-步骤将几乎相同，并且将指出方面的任何非细微差异。
+若要访问尽可能多的用户，我们将生成本系列中的 ASP.NET 网站将创建与 Microsoft 的免费版本的 Visual Studio 2008 起， [Visual Web Developer 2008](https://www.microsoft.com/express/vwd/)。 我们将实现`SqlMembershipProvider`中的用户存储[Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/sql/Aa336346.aspx)数据库。 如果你使用 Visual Studio 2005 或其他版本的 Visual Studio 2008 或 SQL Server，别担心-步骤将几乎相同，并且将指出方面的任何非细微差异。
 
 > [!NOTE]
 > 每个教程中使用的演示 web 应用程序作为下载提供。 此可下载应用程序是使用针对.NET Framework 3.5 版的 Visual Web Developer 2008 创建的。 由于此应用针对.NET 3.5 中，其 Web.config 文件包括其他的 3.5 特定配置元素。 较长的篇幅简短，如果你尚未在您的计算机然后可下载的 web 应用程序上安装.NET 3.5 不会需要首先从 Web.config 删除 3.5 特定于标记。
@@ -85,7 +85,7 @@ IIS 7，但是，可以集成的 IIS 和 ASP.NET 的管道。 使用其他一些
 我们可以配置窗体身份验证之前，我们首先需要 ASP.NET 网站。 首先，创建新的文件系统基于 ASP.NET 网站。 若要完成此操作，启动 Visual Web Developer 然后转到文件菜单并选择新的网站，显示新建网站对话框。 选择 ASP.NET 网站模板，将位置下拉列表设置为文件系统、 选择一个文件夹，以将 web 站点，并将语言设置为 C#。 这将使用 Default.aspx ASP.NET 页中，应用程序创建新的 web 站点\_数据文件夹和 Web.config 文件。
 
 > [!NOTE]
-> Visual Studio 支持两种项目管理模式： 网站项目和 Web 应用程序项目。 网站项目缺少项目文件中，而 Web 应用程序项目模拟在 Visual Studio.NET 2002年/2003 中的项目体系结构 – 它们包括项目文件并将项目的源代码编译到单个程序集，置于 /bin 文件夹。 Visual Studio 2005 最初仅支持的 Web 站点项目、 Web 应用程序项目模型已重新引入 Service Pack 1; 尽管Visual Studio 2008 提供这两种项目模型。 Visual Web Developer 2005 和 2008年版，但是，仅支持网站项目。 我将使用网站项目模型。 如果在使用非 Express edition 并且想要使用[Web 应用程序项目模型](https://msdn.microsoft.com/en-us/library/aa730880%28vs.80%29.aspx)相反，随意这样做，但请注意，可能会出现某些差异之间在你的屏幕和必须与执行的步骤上看到的内容屏幕快照所示，这些教程中提供的说明操作。
+> Visual Studio 支持两种项目管理模式： 网站项目和 Web 应用程序项目。 网站项目缺少项目文件中，而 Web 应用程序项目模拟在 Visual Studio.NET 2002年/2003 中的项目体系结构 – 它们包括项目文件并将项目的源代码编译到单个程序集，置于 /bin 文件夹。 Visual Studio 2005 最初仅支持的 Web 站点项目、 Web 应用程序项目模型已重新引入 Service Pack 1; 尽管Visual Studio 2008 提供这两种项目模型。 Visual Web Developer 2005 和 2008年版，但是，仅支持网站项目。 我将使用网站项目模型。 如果在使用非 Express edition 并且想要使用[Web 应用程序项目模型](https://msdn.microsoft.com/library/aa730880%28vs.80%29.aspx)相反，随意这样做，但请注意，可能会出现某些差异之间在你的屏幕和必须与执行的步骤上看到的内容屏幕快照所示，这些教程中提供的说明操作。
 
 
 [![创建新的文件系统基于 Web 站点](an-overview-of-forms-authentication-cs/_static/image3.png)](an-overview-of-forms-authentication-cs/_static/image2.png)
@@ -95,7 +95,7 @@ IIS 7，但是，可以集成的 IIS 和 ASP.NET 的管道。 使用其他一些
 
 ### <a name="adding-a-master-page"></a>添加母版页
 
-接下来，将一个新的主页面添加到名为 Site.master 的根目录中的站点。 [主页](https://msdn.microsoft.com/en-us/library/wtxbf3hh.aspx)启用页开发人员可以定义可应用于 ASP.NET 页的整个站点模板。 为母版页的主要优势是站点的整体外观可以定义在一个位置，从而使它轻松更新或调整站点的布局。
+接下来，将一个新的主页面添加到名为 Site.master 的根目录中的站点。 [主页](https://msdn.microsoft.com/library/wtxbf3hh.aspx)启用页开发人员可以定义可应用于 ASP.NET 页的整个站点模板。 为母版页的主要优势是站点的整体外观可以定义在一个位置，从而使它轻松更新或调整站点的布局。
 
 
 [![将主页面添加名为 Site.master 到网站](an-overview-of-forms-authentication-cs/_static/image6.png)](an-overview-of-forms-authentication-cs/_static/image5.png)
@@ -149,7 +149,7 @@ IIS 7，但是，可以集成的 IIS 和 ASP.NET 的管道。 使用其他一些
 
 ## <a name="step-2-enabling-forms-authentication"></a>步骤 2： 启用窗体身份验证
 
-创建的 ASP.NET 网站，使用我们的下一个任务是启用表单身份验证。 通过指定应用程序的身份验证配置[`<authentication>`元素](https://msdn.microsoft.com/en-us/library/532aee0e.aspx)在 Web.config 中。`<authentication>`元素包含单个属性名为指定应用程序使用的身份验证模型的模式。 此属性可以具有以下四个值之一：
+创建的 ASP.NET 网站，使用我们的下一个任务是启用表单身份验证。 通过指定应用程序的身份验证配置[`<authentication>`元素](https://msdn.microsoft.com/library/532aee0e.aspx)在 Web.config 中。`<authentication>`元素包含单个属性名为指定应用程序使用的身份验证模型的模式。 此属性可以具有以下四个值之一：
 
 - **Windows** – 中所述前面的教程中，当应用程序使用 Windows 身份验证它是 web 服务器负责进行身份验证在距访客，，这通常通过基本、 摘要式或集成 Windows身份验证。
 - **窗体**– 用户进行身份验证通过在网页上的窗体。
@@ -220,7 +220,7 @@ IIS 7，但是，可以集成的 IIS 和 ASP.NET 的管道。 使用其他一些
 
 在 ASP.NET 2.0 中之前, 开发人员负责实施自己两个用户存储区，并编写代码以验证针对存储提供的凭据。 大多数开发人员将实现用户存储在数据库中，创建表包含如用户名、 密码、 电子邮件、 LastLoginDate 和等的列的命名用户。 然后，此表中，将包含每个用户帐户的一条记录。 验证的用户提供的凭据将涉及查询数据库中的匹配的用户名，然后确保数据库中的密码对应于提供的密码。
 
-使用 ASP.NET 2.0，开发人员应使用成员资格提供程序之一来管理用户存储区。 在本系列教程中我们将使用 SqlMembershipProvider，为用户存储使用 SQL Server 数据库。 使用 SqlMembershipProvider 时，我们需要实现特定的数据库架构，包括表、 视图和提供程序所需的存储的过程。 我们将研究如何实现此架构中的***在 SQL Server 中创建成员身份架构***教程。 与就地成员身份提供程序中，验证用户的凭据非常简单，只调用[成员资格类](https://msdn.microsoft.com/en-us/library/system.web.security.membership.aspx)的[ValidateUser (*用户名*，*密码*)方法](https://msdn.microsoft.com/en-us/library/system.web.security.membership.validateuser.aspx)，这将返回一个布尔值，该值指示是否的有效性*用户名*和*密码*组合。 如看到我们未实现 SqlMembershipProvider 的用户存储区，我们无法在此时使用成员资格类 ValidateUser 方法。
+使用 ASP.NET 2.0，开发人员应使用成员资格提供程序之一来管理用户存储区。 在本系列教程中我们将使用 SqlMembershipProvider，为用户存储使用 SQL Server 数据库。 使用 SqlMembershipProvider 时，我们需要实现特定的数据库架构，包括表、 视图和提供程序所需的存储的过程。 我们将研究如何实现此架构中的***在 SQL Server 中创建成员身份架构***教程。 与就地成员身份提供程序中，验证用户的凭据非常简单，只调用[成员资格类](https://msdn.microsoft.com/library/system.web.security.membership.aspx)的[ValidateUser (*用户名*，*密码*)方法](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)，这将返回一个布尔值，该值指示是否的有效性*用户名*和*密码*组合。 如看到我们未实现 SqlMembershipProvider 的用户存储区，我们无法在此时使用成员资格类 ValidateUser 方法。
 
 而不是花时间来生成我们自己自定义用户数据库表 （它将是已过时，我们实现 SqlMembershipProvider 后），让我们改为硬编码在该登录名的有效凭据页本身。 在 LoginButton 的单击事件处理程序，添加以下代码：
 
@@ -230,23 +230,23 @@ IIS 7，但是，可以集成的 IIS 和 ASP.NET 的管道。 使用其他一些
 
 当用户输入有效的凭据时，我所述，它们然后重定向到"相应页"。 尽管是合适的页面，什么？ 回想一下，当用户访问它们未被授权查看的页面，FormsAuthenticationModule 自动将他们重定向到登录页。 在此情况下，它包括通过 ReturnUrl 参数查询字符串中的请求的 URL。 也就是说，如果用户试图访问 ProtectedPage.aspx，并且它们无权这样做，FormsAuthenticationModule 将重定向到：
 
-Login.aspx？ReturnUrl=ProtectedPage.aspx
+Login.aspx?ReturnUrl=ProtectedPage.aspx
 
 在成功登录，用户应重定向回 ProtectedPage.aspx。 或者，用户可能在其自己 volition 访问登录页。 在这种情况下，在用户登录后它们应将发送到根文件夹的 Default.aspx 页上。
 
 ### <a name="logging-in-the-user"></a>在用户的日志记录
 
-假定提供的凭据有效，我们需要创建窗体身份验证票证，从而用户访问该站点中的日志记录。 [FormsAuthentication 类](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.aspx)中[System.Web.Security 命名空间](https://msdn.microsoft.com/en-us/library/system.web.security.aspx)提供身份验证系统的日志记录并注销通过窗体的用户的各种的方法。 尽管 FormsAuthentication 类中有几种方法，我们感兴趣此时的三个：
+假定提供的凭据有效，我们需要创建窗体身份验证票证，从而用户访问该站点中的日志记录。 [FormsAuthentication 类](https://msdn.microsoft.com/library/system.web.security.formsauthentication.aspx)中[System.Web.Security 命名空间](https://msdn.microsoft.com/library/system.web.security.aspx)提供身份验证系统的日志记录并注销通过窗体的用户的各种的方法。 尽管 FormsAuthentication 类中有几种方法，我们感兴趣此时的三个：
 
-- [GetAuthCookie (*用户名*， *persistCookie*)](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.getauthcookie.aspx) – 创建提供的名称的窗体身份验证票证*用户名*。 接下来，此方法创建并返回一个包含身份验证票证的内容的 HttpCookie 对象。 如果*persistCookie*为 true，创建持久性 cookie。
-- [SetAuthCookie (*用户名*， *persistCookie*)](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.setauthcookie.aspx) – 调用 GetAuthCookie (*用户名*， *persistCookie*)若要生成的窗体身份验证 cookie 的方法。 然后，此方法将添加到 （假设基于 cookie 的窗体身份验证正在使用; 否则为此方法调用处理无 cookie 票证逻辑的内部类） 的 Cookie 集合由 GetAuthCookie 返回的 cookie。
-- [RedirectFromLoginPage (*用户名*， *persistCookie*)](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) – 此方法调用 SetAuthCookie (*用户名*， *persistCookie*)，然后将用户重定向到合适的页面。
+- [GetAuthCookie (*用户名*， *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.getauthcookie.aspx) – 创建提供的名称的窗体身份验证票证*用户名*。 接下来，此方法创建并返回一个包含身份验证票证的内容的 HttpCookie 对象。 如果*persistCookie*为 true，创建持久性 cookie。
+- [SetAuthCookie (*用户名*， *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) – 调用 GetAuthCookie (*用户名*， *persistCookie*)若要生成的窗体身份验证 cookie 的方法。 然后，此方法将添加到 （假设基于 cookie 的窗体身份验证正在使用; 否则为此方法调用处理无 cookie 票证逻辑的内部类） 的 Cookie 集合由 GetAuthCookie 返回的 cookie。
+- [RedirectFromLoginPage (*用户名*， *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) – 此方法调用 SetAuthCookie (*用户名*， *persistCookie*)，然后将用户重定向到合适的页面。
 
 当你需要修改，然后写出到 Cookie 集合的 cookie 再身份验证票证时，GetAuthCookie 会很方便。 如果你想要创建窗体身份验证票证，并将其添加到 Cookie 集合中，但不是希望将用户重定向到相应的页面，SetAuthCookie 非常有用。 可能是你想要保留它们的登录页上或将其发送给某些备用页。
 
 由于我们想要在用户登录并将它们重定向到相应的页面，让我们使用 RedirectFromLoginPage。 更新 LoginButton 的单击事件处理程序，将两个注释的 TODO 行替换为以下代码行：
 
-FormsAuthentication.RedirectFromLoginPage （UserName.Text，RememberMe.Checked）;
+FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked);
 
 创建窗体身份验证票证时我们用于用户名文本框的 Text 属性的窗体身份验证票证*用户名*参数，并为记住我复选框的选中的状态*persistCookie*参数。
 
@@ -282,7 +282,7 @@ FormsAuthentication.RedirectFromLoginPage （UserName.Text，RememberMe.Checked�
 
 您已经可能猜到目前为止，本指南旨在向经过身份验证的访问者和仅对匿名访问者 AnonymousMessagePanel 显示仅 AuthenticatedMessagePanel。 若要实现此目的，我们需要设置这些面板的可见属性，具体取决于是否用户登录或未。
 
-[Request.IsAuthenticated 属性](https://msdn.microsoft.com/en-us/library/system.web.httprequest.isauthenticated.aspx)返回一个布尔值，该值指示是否已验证请求。 下列代码输入到页面\_加载事件处理程序代码：
+[Request.IsAuthenticated 属性](https://msdn.microsoft.com/library/system.web.httprequest.isauthenticated.aspx)返回一个布尔值，该值指示是否已验证请求。 下列代码输入到页面\_加载事件处理程序代码：
 
 [!code-csharp[Main](an-overview-of-forms-authentication-cs/samples/sample7.cs)]
 
@@ -299,20 +299,20 @@ FormsAuthentication.RedirectFromLoginPage （UserName.Text，RememberMe.Checked�
 **图 12**： 将显示"欢迎回来 ！"进行身份验证的用户 消息
 
 
-我们可以确定通过当前登录的用户的身份[HttpContext 对象](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.aspx)的[用户属性](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.user.aspx)。 HttpContext 对象表示有关当前请求，并且内的其他一些常见的 ASP.NET 对象，如响应、 请求和会话中的主页。 用户属性表示的当前 HTTP 请求和实现的安全上下文[IPrincipal 接口](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.aspx)。
+我们可以确定通过当前登录的用户的身份[HttpContext 对象](https://msdn.microsoft.com/library/system.web.httpcontext.aspx)的[用户属性](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx)。 HttpContext 对象表示有关当前请求，并且内的其他一些常见的 ASP.NET 对象，如响应、 请求和会话中的主页。 用户属性表示的当前 HTTP 请求和实现的安全上下文[IPrincipal 接口](https://msdn.microsoft.com/library/system.security.principal.iprincipal.aspx)。
 
 用户属性由 FormsAuthenticationModule 设置。 具体而言，FormsAuthenticationModule 查找传入请求中的窗体身份验证票证，它将创建一个新的 GenericPrincipal 对象并将其分配给用户属性。
 
 主体对象 （如 GenericPrincipal) 提供对用户的标识和它们所属的角色的信息。 IPrincipal 接口定义两个成员：
 
-- [IsInRole (*roleName*)](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.isinrole.aspx) – 返回一个布尔值，该值指示是否主体属于指定角色的方法。
-- [标识](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.identity.aspx)– 返回实现的对象的属性[IIdentity 接口](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.aspx)。 IIdentity 接口定义三个属性： [AuthenticationType](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.authenticationtype.aspx)， [IsAuthenticated](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.isauthenticated.aspx)，和[名称](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.name.aspx)。
+- [IsInRole (*roleName*)](https://msdn.microsoft.com/library/system.security.principal.iprincipal.isinrole.aspx) – 返回一个布尔值，该值指示是否主体属于指定角色的方法。
+- [标识](https://msdn.microsoft.com/library/system.security.principal.iprincipal.identity.aspx)– 返回实现的对象的属性[IIdentity 接口](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx)。 IIdentity 接口定义三个属性： [AuthenticationType](https://msdn.microsoft.com/library/system.security.principal.iidentity.authenticationtype.aspx)， [IsAuthenticated](https://msdn.microsoft.com/library/system.security.principal.iidentity.isauthenticated.aspx)，和[名称](https://msdn.microsoft.com/library/system.security.principal.iidentity.name.aspx)。
 
 我们可以确定当前使用下面的代码的访问者的名称：
 
-字符串 currentUsersName = User.Identity.Name;
+string currentUsersName = User.Identity.Name;
 
-当使用窗体身份验证， [FormsIdentity 对象](https://msdn.microsoft.com/en-us/library/system.web.security.formsidentity.aspx)创建 GenericPrincipal 的标识属性。 FormsIdentity 类始终返回字符串"窗体"作为其 AuthenticationType 属性和其 IsAuthenticated 属性为 true。 Name 属性返回在创建窗体身份验证票证时指定的用户名。 这三个属性，除了 FormsIdentity 包含对通过基础的身份验证票证的访问其[票证属性](https://msdn.microsoft.com/en-us/library/system.web.security.formsidentity.ticket.aspx)。 票证属性返回类型的对象[FormsAuthenticationTicket](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationticket.aspx)，它具有属性，例如过期、 IsPersistent、 IssueDate、 名称和等等。
+当使用窗体身份验证， [FormsIdentity 对象](https://msdn.microsoft.com/library/system.web.security.formsidentity.aspx)创建 GenericPrincipal 的标识属性。 FormsIdentity 类始终返回字符串"窗体"作为其 AuthenticationType 属性和其 IsAuthenticated 属性为 true。 Name 属性返回在创建窗体身份验证票证时指定的用户名。 这三个属性，除了 FormsIdentity 包含对通过基础的身份验证票证的访问其[票证属性](https://msdn.microsoft.com/library/system.web.security.formsidentity.ticket.aspx)。 票证属性返回类型的对象[FormsAuthenticationTicket](https://msdn.microsoft.com/library/system.web.security.formsauthenticationticket.aspx)，它具有属性，例如过期、 IsPersistent、 IssueDate、 名称和等等。
 
 重要的一点要清楚的一点此处在于*用户名*FormsAuthentication.GetAuthCookie 中指定的参数 (*用户名*， *persistCookie*)，FormsAuthentication.SetAuthCookie (*用户名*， *persistCookie*)，和 FormsAuthentication.RedirectFromLoginPage (*用户名*， *persistCookie*) 方法是通过 User.Identity.Name 返回的相同值。 此外，这些方法创建的身份验证票证已提供着强制 User.Identity 转换为 FormsIdentity 对象，然后访问票证属性：
 
@@ -320,7 +320,7 @@ FormsAuthentication.RedirectFromLoginPage （UserName.Text，RememberMe.Checked�
 
 让我们提供 Default.aspx 中的更加个性化的消息。 更新页面\_加载事件处理程序，以便 WelcomeBackMessage 标签的文本属性分配字符串"欢迎回来，*用户名*！"
 
-WelcomeBackMessage.Text ="欢迎使用后，"+ User.Identity.Name +"！";
+WelcomeBackMessage.Text = "Welcome back, " + User.Identity.Name + "!";
 
 图 13 显示此修改的影响 （时作为用户 Scott，日志记录）。
 
@@ -334,7 +334,7 @@ WelcomeBackMessage.Text ="欢迎使用后，"+ User.Identity.Name +"！";
 
 向经过身份验证和匿名用户显示不同的内容是常见的要求;因此显示当前登录用户的名称。 因此，ASP.NET 包括提供相同的功能显示在图 13 中，但无需编写一行代码的两个 Web 控件。
 
-[LoginView 控件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginview.aspx)是一个基于模板的 Web 控件，可以轻松地向经过身份验证和匿名用户显示不同的数据。 LoginView 包括两个预定义的模板：
+[LoginView 控件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginview.aspx)是一个基于模板的 Web 控件，可以轻松地向经过身份验证和匿名用户显示不同的数据。 LoginView 包括两个预定义的模板：
 
 - 对匿名的访问者仅显示 AnonymousTemplate – 添加到此模板中的任何标记。
 - LoggedInTemplate – 仅向经过身份验证的用户，会显示此模板的标记。
@@ -365,7 +365,7 @@ LoginView 和其他登录名相关的控件都位于工具箱的登录选项卡�
 
 LoginView 的模板可以定义从设计器或声明性的标记。 从 Visual Studio 设计器中，展开 LoginView 的智能标记，其中列出了在下拉列表中配置的模板。 在文本中的类型"Hello，stranger"到 AnonymousTemplate;接下来，添加超链接控件并设置其文本和 NavigateUrl 属性设置为"Log In"和"~ / Login.aspx"分别。
 
-后配置 AnonymousTemplate，切换到 LoggedInTemplate 并输入文本，"欢迎使用后，"。 然后将从工具箱的 LoginName 控件拖入 LoggedInTemplate，将其放在"欢迎回来，"文本后立即中。 [LoginName 控件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginname.aspx)，作为其名称表示，显示当前登录用户的名称。 LoginName 控件内部，只需将输出 User.Identity.Name 属性
+后配置 AnonymousTemplate，切换到 LoggedInTemplate 并输入文本，"欢迎使用后，"。 然后将从工具箱的 LoginName 控件拖入 LoggedInTemplate，将其放在"欢迎回来，"文本后立即中。 [LoginName 控件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginname.aspx)，作为其名称表示，显示当前登录用户的名称。 LoginName 控件内部，只需将输出 User.Identity.Name 属性
 
 进行这些添 LoginView 的模板后, 标记应类似于以下：
 
@@ -403,9 +403,9 @@ LoginView 的模板可以定义从设计器或声明性的标记。 从 Visual S
 
 ## <a name="step-5-logging-out"></a>步骤 5： 注销
 
-在步骤 3 中我们讨论过生成登录页，以使用户登录到站点，但我们尚无若要了解如何注销用户。日志记录中的用户的方法，除了 FormsAuthentication 类还提供[SignOut 方法](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.signout.aspx)。 注销方法只需销毁窗体身份验证票证，从而日志记录将用户从该站点。
+在步骤 3 中我们讨论过生成登录页，以使用户登录到站点，但我们尚无若要了解如何注销用户。日志记录中的用户的方法，除了 FormsAuthentication 类还提供[SignOut 方法](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx)。 注销方法只需销毁窗体身份验证票证，从而日志记录将用户从该站点。
 
-该 ASP.NET 产品注销链接此类的常见功能包括一个专门设计用于注销用户控件。[LoginStatus 控件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginstatus.aspx)显示"登录"LinkButton 或"注销"LinkButton，具体取决于用户的身份验证状态。 向经过身份验证的用户显示"注销"LinkButton 而不为匿名用户呈现"登录"LinkButton。 可以通过 LoginStatus 的配置的文本的"登录名"和"注销"LinkButtons LoginText 和 LogoutText 属性。
+该 ASP.NET 产品注销链接此类的常见功能包括一个专门设计用于注销用户控件。[LoginStatus 控件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginstatus.aspx)显示"登录"LinkButton 或"注销"LinkButton，具体取决于用户的身份验证状态。 向经过身份验证的用户显示"注销"LinkButton 而不为匿名用户呈现"登录"LinkButton。 可以通过 LoginStatus 的配置的文本的"登录名"和"注销"LinkButtons LoginText 和 LogoutText 属性。
 
 单击"登录"LinkButton 导致回发，从其重定向颁发给登录页。 单击"注销"LinkButton 导致 LoginStatus 控件调用 FormsAuthentication.SignOff 方法，然后将用户重定向到页。 登录页上关闭用户已重定向至取决于 LogoutAction 属性，可以分配给三个以下值之一：
 
@@ -456,14 +456,14 @@ LoginView 的模板可以定义从设计器或声明性的标记。 从 Visual S
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
 - [Iis 6 和 IIS7 安全之间的更改](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/Changes-between-IIS6-and-IIS7-Security)
-- [登录 ASP.NET 控件](https://msdn.microsoft.com/en-us/library/d51ttbhx.aspx)
+- [登录 ASP.NET 控件](https://msdn.microsoft.com/library/d51ttbhx.aspx)
 - [专业 ASP.NET 2.0 安全、 成员资格和角色管理](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html)(ISBN: 978-0-7645-9698-8)
-- [`<authentication>`元素](https://msdn.microsoft.com/en-us/library/532aee0e.aspx)
-- [`<forms>`元素`<authentication>`](https://msdn.microsoft.com/en-us/library/1d3t3c61.aspx)
+- [`<authentication>`元素](https://msdn.microsoft.com/library/532aee0e.aspx)
+- [`<forms>`元素`<authentication>`](https://msdn.microsoft.com/library/1d3t3c61.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>在本教程中包含的主题的视频培训
 
-- [在 ASP.NET 中使用基本窗体身份验证](../../../videos/authentication/using-basic-forms-authentication-in-aspnet.md)
+- [在 ASP.NET 中使用基本 Forms 身份验证](../../../videos/authentication/using-basic-forms-authentication-in-aspnet.md)
 
 ## <a name="about-the-author"></a>关于作者
 

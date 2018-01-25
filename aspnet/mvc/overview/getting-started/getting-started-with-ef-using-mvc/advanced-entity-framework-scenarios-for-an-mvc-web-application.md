@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 3d6cc52f7fa3089f30f1a6bbd76593f1eca95009
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 85276377671b96e65406639c8584d9ebf8d77ff7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="advanced-entity-framework-6-scenarios-for-an-mvc-5-web-application-12-of-12"></a>MVC 5 Web 应用程序 (12 的 12) 的高级的实体框架 6 方案
 ====================
@@ -58,9 +58,9 @@ ms.lasthandoff: 11/10/2017
 
 实体框架代码的第一个 API 包括使您能够 SQL 命令将直接传递到数据库的方法。 有下列选项：
 
-- 使用[DbSet.SqlQuery](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset.sqlquery.aspx)返回实体类型的查询的方法。 返回的对象必须是期望的类型的`DbSet`对象，并且它们是否自动跟踪数据库上下文中的除非关闭跟踪。 (参见下一节[AsNoTracking](https://msdn.microsoft.com/en-us/library/system.data.entity.dbextensions.asnotracking.aspx)方法。)
-- 使用[Database.SqlQuery](https://msdn.microsoft.com/en-us/library/system.data.entity.database.sqlquery.aspx)方法用于返回不是实体类型的查询。 返回的数据不跟踪数据库上下文中，即使你使用此方法来检索实体类型。
-- 使用[Database.ExecuteSqlCommand](https://msdn.microsoft.com/en-us/library/gg679456.aspx)非查询命令。
+- 使用[DbSet.SqlQuery](https://msdn.microsoft.com/library/system.data.entity.dbset.sqlquery.aspx)返回实体类型的查询的方法。 返回的对象必须是期望的类型的`DbSet`对象，并且它们是否自动跟踪数据库上下文中的除非关闭跟踪。 (参见下一节[AsNoTracking](https://msdn.microsoft.com/library/system.data.entity.dbextensions.asnotracking.aspx)方法。)
+- 使用[Database.SqlQuery](https://msdn.microsoft.com/library/system.data.entity.database.sqlquery.aspx)方法用于返回不是实体类型的查询。 返回的数据不跟踪数据库上下文中，即使你使用此方法来检索实体类型。
+- 使用[Database.ExecuteSqlCommand](https://msdn.microsoft.com/library/gg679456.aspx)非查询命令。
 
 使用实体框架的优点之一是它可避免将你过于仔细存储数据的特定方法的代码。 此，它会生成 SQL 查询和命令，其中还使你无需自行编写。 但没有特殊情况下当你需要运行特定的 SQL 查询，你已手动创建的并且这些方法使你可以处理此类异常。
 
@@ -68,7 +68,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="calling-a-query-that-returns-entities"></a>调用一个查询返回实体
 
-[DbSet&lt;TEntity&gt; ](https://msdn.microsoft.com/en-us/library/gg696460.aspx)类提供了可用于执行该查询将返回类型的实体的方法`TEntity`。 若要查看你原理将更改中的代码`Details`方法`Department`控制器。
+[DbSet&lt;TEntity&gt; ](https://msdn.microsoft.com/library/gg696460.aspx)类提供了可用于执行该查询将返回类型的实体的方法`TEntity`。 若要查看你原理将更改中的代码`Details`方法`Department`控制器。
 
 在*DepartmentController.cs*中`Details`方法，替换`db.Departments.FindAsync`方法调用与`db.Departments.SqlQuery`方法调用，如以下突出显示的代码中所示：
 
@@ -84,7 +84,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample2.cs)]
 
-假设你想要编写代码，以便检索直接在 SQL 中而不使用 LINQ 此数据。 若要执行需要运行该查询将返回实体对象以外，这意味着你需要使用[Database.SqlQuery](https://msdn.microsoft.com/en-us/library/system.data.entity.database.sqlquery(v=VS.103).aspx)方法。
+假设你想要编写代码，以便检索直接在 SQL 中而不使用 LINQ 此数据。 若要执行需要运行该查询将返回实体对象以外，这意味着你需要使用[Database.SqlQuery](https://msdn.microsoft.com/library/system.data.entity.database.sqlquery(v=VS.103).aspx)方法。
 
 在*HomeController.cs*，替换中的 LINQ 语句`About`方法与 SQL 语句，如以下突出显示的代码中所示：
 
@@ -130,19 +130,19 @@ ms.lasthandoff: 11/10/2017
 
 ![Courses_Index_page_showing_revised_credits](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image9.png)
 
-有关原始的 SQL 查询的详细信息，请参阅[原始的 SQL 查询](https://msdn.microsoft.com/en-us/data/jj592907)MSDN 上。
+有关原始的 SQL 查询的详细信息，请参阅[原始的 SQL 查询](https://msdn.microsoft.com/data/jj592907)MSDN 上。
 
 <a id="notracking"></a>
 ## <a name="no-tracking-queries"></a>否跟踪查询
 
 当数据库上下文检索表行，并创建表示它们的实体对象时，默认情况下它将跟踪的内存中的实体是否同步，与数据库中。 内存中的数据充当缓存，并更新实体时使用。 此缓存通常是不必要的 web 应用中由于上下文实例是否通常生存期较短 （新功能之一是创建和释放为每个请求） 和上下文读取再次使用该实体通常释放实体。
 
-你可以通过使用禁用的实体对象在内存中的跟踪[AsNoTracking](https://msdn.microsoft.com/en-us/library/gg679352(v=vs.103).aspx)方法。 在其中你可能想要执行此操作的典型方案包括：
+你可以通过使用禁用的实体对象在内存中的跟踪[AsNoTracking](https://msdn.microsoft.com/library/gg679352(v=vs.103).aspx)方法。 在其中你可能想要执行此操作的典型方案包括：
 
 - 查询检索此类大型卷数据的关闭跟踪可能会显著提高性能。
 - 你想要将实体附加以便其进行更新，但前面为不同的用途检索相同的实体。 因为该实体已跟踪数据库上下文时，不能将附加你想要更改的实体。 处理这种情况的一种方法是使用`AsNoTracking`与前面的查询的选项。
 
-有关示例，演示如何使用[AsNoTracking](https://msdn.microsoft.com/en-us/library/gg679352(v=vs.103).aspx)方法，请参阅[本教程的早期版本](../../older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application.md)。 本教程的此版本不修改时间标志实体上设置模型联编程序创建在编辑方法中，因此它不需要`AsNoTracking`。
+有关示例，演示如何使用[AsNoTracking](https://msdn.microsoft.com/library/gg679352(v=vs.103).aspx)方法，请参阅[本教程的早期版本](../../older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application.md)。 本教程的此版本不修改时间标志实体上设置模型联编程序创建在编辑方法中，因此它不需要`AsNoTracking`。
 
 <a id="sql"></a>
 ## <a name="examining-sql-sent-to-the-database"></a>检查 SQL 发送到数据库
@@ -204,8 +204,8 @@ A`SelectList`为下拉列表包含所有部门集合传递到视图。 参数传
 有关如何实现的存储库和单元的工作模式的详细信息，请参阅[本系列教程的实体框架 5 版本](../../older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)。 有关如何在 Entity Framework 6 中实现 TDD 的信息，请参阅以下资源：
 
 - [如何从 EF6 更轻松地通过 Mocking Dbset 时](http://thedatafarm.com/data-access/how-ef6-enables-mocking-dbsets-more-easily/)
-- [使用模拟框架进行测试](https://msdn.microsoft.com/en-us/data/dn314429)
-- [使用你自己的测试替身测试](https://msdn.microsoft.com/en-us/data/dn314431)
+- [使用模拟框架进行测试](https://msdn.microsoft.com/data/dn314429)
+- [使用你自己的测试替身测试](https://msdn.microsoft.com/data/dn314431)
 
 <a id="proxies"></a>
 ## <a name="proxy-classes"></a>代理类
@@ -220,11 +220,11 @@ A`SelectList`为下拉列表包含所有部门集合传递到视图。 参数传
 
 大多数情况下不需要要注意的此使用代理服务器，但有例外情况：
 
-- 在某些情况下你可能想要阻止实体框架创建代理实例。 例如，在正在序列化实体时你通常想 POCO 类，不使用代理类。 若要避免序列化问题的一种方法是序列化而不是实体对象的数据传输对象 (Dto) 中所示[使用实体框架使用 Web API](../../../../web-api/overview/data/using-web-api-with-entity-framework/part-1.md)教程。 另一种方法是[禁用代理创建](https://msdn.microsoft.com/en-US/data/jj592886.aspx)。
-- 当实例化实体类使用`new`运算符，你不会获得代理实例。 这意味着不遇到功能，如延迟加载和自动更改跟踪。 这通常是好了;你通常不需要延迟加载，因为你要创建新的实体不在数据库中，且通常无需更改跟踪如果您显式标记为实体`Added`。 但是，如果你需要延迟加载，并且你需要更改跟踪，你可以创建新实体实例与代理使用[创建](https://msdn.microsoft.com/en-us/library/gg679504.aspx)方法`DbSet`类。
-- 你可能想要获得的代理类型的实际实体类型。 你可以使用[GetObjectType](https://msdn.microsoft.com/en-us/library/system.data.objects.objectcontext.getobjecttype.aspx)方法`ObjectContext`类，以获取代理类型实例的实际实体类型。
+- 在某些情况下你可能想要阻止实体框架创建代理实例。 例如，在正在序列化实体时你通常想 POCO 类，不使用代理类。 若要避免序列化问题的一种方法是序列化而不是实体对象的数据传输对象 (Dto) 中所示[使用实体框架使用 Web API](../../../../web-api/overview/data/using-web-api-with-entity-framework/part-1.md)教程。 另一种方法是[禁用代理创建](https://msdn.microsoft.com/data/jj592886.aspx)。
+- 当实例化实体类使用`new`运算符，你不会获得代理实例。 这意味着不遇到功能，如延迟加载和自动更改跟踪。 这通常是好了;你通常不需要延迟加载，因为你要创建新的实体不在数据库中，且通常无需更改跟踪如果您显式标记为实体`Added`。 但是，如果你需要延迟加载，并且你需要更改跟踪，你可以创建新实体实例与代理使用[创建](https://msdn.microsoft.com/library/gg679504.aspx)方法`DbSet`类。
+- 你可能想要获得的代理类型的实际实体类型。 你可以使用[GetObjectType](https://msdn.microsoft.com/library/system.data.objects.objectcontext.getobjecttype.aspx)方法`ObjectContext`类，以获取代理类型实例的实际实体类型。
 
-有关详细信息，请参阅[使用代理](https://msdn.microsoft.com/en-us/data/JJ592886.aspx)MSDN 上。
+有关详细信息，请参阅[使用代理](https://msdn.microsoft.com/data/JJ592886.aspx)MSDN 上。
 
 <a id="changedetection"></a>
 ## <a name="automatic-change-detection"></a>自动更改检测
@@ -241,12 +241,12 @@ A`SelectList`为下拉列表包含所有部门集合传递到视图。 参数传
 - `DbContext.Entry`
 - `DbChangeTracker.Entries`
 
-如果您跟踪的大量实体，并且你调用这些方法之一多次在循环中，你可能会显著的性能改进，通过暂时关闭自动更改检测使用[AutoDetectChangesEnabled](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.dbcontextconfiguration.autodetectchangesenabled.aspx)属性。 有关详细信息，请参阅[自动检测更改](https://msdn.microsoft.com/en-us/data/jj556205)MSDN 上。
+如果您跟踪的大量实体，并且你调用这些方法之一多次在循环中，你可能会显著的性能改进，通过暂时关闭自动更改检测使用[AutoDetectChangesEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.autodetectchangesenabled.aspx)属性。 有关详细信息，请参阅[自动检测更改](https://msdn.microsoft.com/data/jj556205)MSDN 上。
 
 <a id="validation"></a>
 ## <a name="automatic-validation"></a>自动验证
 
-当调用`SaveChanges`方法，默认情况下，实体框架中的所有更改的实体的所有属性的数据之前验证更新的数据库。 如果你已更新的大量实体，并且你已验证数据，这一工作是不必要和无法使保存的过程所做的更改通过暂时关闭验证花费更少时间。 你可以执行，使用[ValidateOnSaveEnabled](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled.aspx)属性。 有关详细信息，请参阅[验证](https://msdn.microsoft.com/en-us/data/gg193959)MSDN 上。
+当调用`SaveChanges`方法，默认情况下，实体框架中的所有更改的实体的所有属性的数据之前验证更新的数据库。 如果你已更新的大量实体，并且你已验证数据，这一工作是不必要和无法使保存的过程所做的更改通过暂时关闭验证花费更少时间。 你可以执行，使用[ValidateOnSaveEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled.aspx)属性。 有关详细信息，请参阅[验证](https://msdn.microsoft.com/data/gg193959)MSDN 上。
 
 <a id="tools"></a>
 ## <a name="entity-framework-power-tools"></a>实体框架 Power 工具
@@ -267,7 +267,7 @@ Entity Framework 6 的源代码位于[GitHub](https://github.com/aspnet/EntityFr
 <a id="summary"></a>
 ## <a name="summary"></a>摘要
 
-这将完成这一系列的 ASP.NET MVC 应用程序中使用实体框架的教程。 有关如何使用实体框架处理数据的详细信息，请参阅[EF MSDN 上的文档页](https://msdn.microsoft.com/en-us/data/ee712907)和[ASP.NET 数据访问的推荐资源](../../../../whitepapers/aspnet-data-access-content-map.md)。
+这将完成这一系列的 ASP.NET MVC 应用程序中使用实体框架的教程。 有关如何使用实体框架处理数据的详细信息，请参阅[EF MSDN 上的文档页](https://msdn.microsoft.com/data/ee712907)和[ASP.NET 数据访问的推荐资源](../../../../whitepapers/aspnet-data-access-content-map.md)。
 
 有关如何部署 web 应用程序，你已生成后的详细信息，请参阅[ASP.NET Web 部署的推荐资源](../../../../whitepapers/aspnet-web-deployment-content-map.md)MSDN 库中。
 

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 647514ae5a92b9d729179327fb97bd8005b0a4b2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8c0fdfdf60ff3bde34b6869adf3f8693b4d9615d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="host-owin-in-an-azure-worker-role"></a>在 Azure 辅助角色的 OWIN 主机
 ====================
@@ -26,13 +26,13 @@ ms.lasthandoff: 11/10/2017
 > 
 > [打开针对.NET 的 Web 界面](http://owin.org/)(OWIN) 定义.NET web 服务器和 web 应用程序之间的抽象。 OWIN 将脱耦在服务器上，这使 OWIN 适合于你自己的过程，在 IIS 外部的 web 应用程序的自承载的 web 应用程序 – 例如，在 Azure 辅助角色。
 > 
-> 在本教程中，你将学习如何自承载的 OWIN 应用程序在 Microsoft Azure 辅助角色。 若要了解有关辅助角色的详细信息，请参阅[Azure 执行模型](https://azure.microsoft.com/en-us/documentation/articles/fundamentals-application-models/#CloudServices)。
+> 在本教程中，你将学习如何自承载的 OWIN 应用程序在 Microsoft Azure 辅助角色。 若要了解有关辅助角色的详细信息，请参阅[Azure 执行模型](https://azure.microsoft.com/documentation/articles/fundamentals-application-models/#CloudServices)。
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
 > 
 > 
 > - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
-> - [Azure SDK for.NET 2.3](https://azure.microsoft.com/en-us/downloads/)
+> - [Azure SDK for .NET 2.3](https://azure.microsoft.com/downloads/)
 > - [Microsoft.Owin.Selfhost 2.1.0](http://www.nuget.org/packages/Microsoft.Owin.SelfHost/2.1.0)
 
 
@@ -44,7 +44,7 @@ ms.lasthandoff: 11/10/2017
 
 [![](host-owin-in-an-azure-worker-role/_static/image2.png)](host-owin-in-an-azure-worker-role/_static/image1.png)
 
-在**新建 Windows Azure 云服务**对话框中，双击**辅助角色**。 保留默认名称 ("WorkerRole1")。 此步骤将辅助角色添加到解决方案。 单击“确定”。
+在**新建 Windows Azure 云服务**对话框中，双击**辅助角色**。 保留默认名称 ("WorkerRole1")。 此步骤将辅助角色添加到解决方案。 单击 **“确定”**。
 
 [![](host-owin-in-an-azure-worker-role/_static/image4.png)](host-owin-in-an-azure-worker-role/_static/image3.png)
 
@@ -125,7 +125,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="deploy-to-azure"></a>将部署到 Azure
 
-对于此步骤，你必须具有 Azure 帐户。 如果你还没有一个，可以在几分钟内创建一个免费试用帐户。 有关详细信息，请参阅[Microsoft Azure 免费试用版](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A261C142F)。
+对于此步骤，你必须具有 Azure 帐户。 如果你还没有一个，可以在几分钟内创建一个免费试用帐户。 有关详细信息，请参阅[Microsoft Azure 免费试用版](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F)。
 
 在解决方案资源管理器，右键单击 AzureApp 项目。 选择“发布”。
 
@@ -151,5 +151,5 @@ Azure 活动日志窗口显示部署的进度。 部署应用程序时，浏览�
 
 ## <a name="additional-resources"></a>其他资源
 
-- [项目 Katana 事件的概述](an-overview-of-project-katana.md)
+- [项目 Katana 概述](an-overview-of-project-katana.md)
 - [在 GitHub 上的 Katana 项目](https://github.com/aspnet/AspNetKatana/)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations
 msc.type: authoredcontent
-ms.openlocfilehash: a88d8f35c770b362b74f787fee2c60a7577bccb2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a526275d76618c325a6b00f33cc550f28ab0cc00
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-webconfig-file-transformations"></a>使用 Visual Studio 的 ASP.NET Web 部署： Web.config 文件转换
 ====================
@@ -35,7 +35,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="webconfig-transformations-versus-web-deploy-parameters"></a>与 Web 部署参数的 Web.config 转换
 
-有两种方法来自动执行更改的过程*Web.config*文件设置： [Web.config 转换](https://msdn.microsoft.com/en-us/library/dd465326.aspx)和[Web 部署参数](https://msdn.microsoft.com/en-us/library/ff398068.aspx)。 A *Web.config*转换文件包含指定如何更改的 XML 标记*Web.config*文件部署时。 你可以指定不同的更改特定生成配置和特定发布配置文件。 默认值生成配置调试和发布，而且你可以创建自定义生成配置。 发布配置文件通常对应于目标环境中。 (有关详细信息发布中的配置文件，您将学习[作为测试环境部署到 IIS](deploying-to-iis.md)教程。)
+有两种方法来自动执行更改的过程*Web.config*文件设置： [Web.config 转换](https://msdn.microsoft.com/library/dd465326.aspx)和[Web 部署参数](https://msdn.microsoft.com/library/ff398068.aspx)。 A *Web.config*转换文件包含指定如何更改的 XML 标记*Web.config*文件部署时。 你可以指定不同的更改特定生成配置和特定发布配置文件。 默认值生成配置调试和发布，而且你可以创建自定义生成配置。 发布配置文件通常对应于目标环境中。 (有关详细信息发布中的配置文件，您将学习[作为测试环境部署到 IIS](deploying-to-iis.md)教程。)
 
 可以使用 web 部署参数来指定许多不同类型的设置必须在部署，包括在中找到的设置过程中配置*Web.config*文件。 用于指定当*Web.config*文件更改时，Web 部署参数是更复杂的设置，但不是知道要部署之前设置的值时，它们会很有用。 例如，在企业环境中，你可能会造成*部署包*并将其提供给的人员在 IT 部门要将安装在生产环境，并该用户有能够输入连接字符串或不希望这样做的密码知道。
 

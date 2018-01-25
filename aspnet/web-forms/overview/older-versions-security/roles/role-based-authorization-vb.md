@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/role-based-authorization-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 973e5705fc36b13e5e6ec861dd2ca6adfc0f50fe
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 331282dfa3c05dd4bd6fef19dcfe7e5c0adad84d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="role-based-authorization-vb"></a>基于角色的授权 (VB)
 ====================
@@ -39,11 +39,11 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="understanding-how-roles-are-associated-with-a-users-security-context"></a>了解如何角色关联的用户的安全上下文
 
-当请求进入 ASP.NET 管道它时关联的安全上下文，包括标识请求者的信息。 当使用窗体身份验证，身份验证票证用作一个标识令牌。 如我们所述<a id="_msoanchor_2"> </a> [*概述窗体身份验证的*](../introduction/an-overview-of-forms-authentication-vb.md)和<a id="_msoanchor_3"> </a> [*窗体身份验证配置和高级主题*](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)教程，`FormsAuthenticationModule`负责确定请求者，它的作用期间的身份[`AuthenticateRequest`事件](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authenticaterequest.aspx).
+当请求进入 ASP.NET 管道它时关联的安全上下文，包括标识请求者的信息。 当使用窗体身份验证，身份验证票证用作一个标识令牌。 如我们所述<a id="_msoanchor_2"> </a> [*概述窗体身份验证的*](../introduction/an-overview-of-forms-authentication-vb.md)和<a id="_msoanchor_3"> </a> [*窗体身份验证配置和高级主题*](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)教程，`FormsAuthenticationModule`负责确定请求者，它的作用期间的身份[`AuthenticateRequest`事件](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx).
 
 如果找到有效、 未过期的身份验证票证，则`FormsAuthenticationModule`进行解码，以确定请求者的身份。 它创建一个新`GenericPrincipal`对象并将分配到`HttpContext.User`对象。 用途的主体，如`GenericPrincipal`，是确定已经过身份验证的用户的名称和什么她所属的角色。 此目的较为明显，因为所有的主体对象具有`Identity`属性和`IsInRole(roleName)`方法。 `FormsAuthenticationModule`，但是，不感兴趣录制角色信息和`GenericPrincipal`它创建的对象并不指定任何角色。
 
-如果启用了角色 framework， [ `RoleManagerModule` ](https://msdn.microsoft.com/en-us/library/system.web.security.rolemanagermodule.aspx) HTTP 模块中的步骤后`FormsAuthenticationModule`和标识期间的经过身份验证的用户的角色[`PostAuthenticateRequest`事件](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.postauthenticaterequest.aspx)，后者之后，将引发`AuthenticateRequest`事件。 如果该请求是否来自经过身份验证的用户，`RoleManagerModule`覆盖`GenericPrincipal`创建对象`FormsAuthenticationModule`，并替换与[`RolePrincipal`对象](https://msdn.microsoft.com/en-us/library/system.web.security.roleprincipal.aspx)。 `RolePrincipal`类使用角色 API 来确定哪些用户所属的角色。
+如果启用了角色 framework， [ `RoleManagerModule` ](https://msdn.microsoft.com/library/system.web.security.rolemanagermodule.aspx) HTTP 模块中的步骤后`FormsAuthenticationModule`和标识期间的经过身份验证的用户的角色[`PostAuthenticateRequest`事件](https://msdn.microsoft.com/library/system.web.httpapplication.postauthenticaterequest.aspx)，后者之后，将引发`AuthenticateRequest`事件。 如果该请求是否来自经过身份验证的用户，`RoleManagerModule`覆盖`GenericPrincipal`创建对象`FormsAuthenticationModule`，并替换与[`RolePrincipal`对象](https://msdn.microsoft.com/library/system.web.security.roleprincipal.aspx)。 `RolePrincipal`类使用角色 API 来确定哪些用户所属的角色。
 
 图 1 描绘了 ASP.NET 管道工作流时使用窗体身份验证和角色 framework。 `FormsAuthenticationModule`首先执行，标识用户通过其身份验证票证，并创建一个新`GenericPrincipal`对象。 接下来，`RoleManagerModule`中的步骤，并覆盖`GenericPrincipal`对象`RolePrincipal`对象。
 
@@ -59,7 +59,7 @@ ms.lasthandoff: 11/10/2017
 
 `RolePrincipal`对象的`IsInRole(roleName)`方法调用`Roles`。`GetRolesForUser` 若要获取用户的角色，以便确定用户是否属于*roleName*。 使用时`SqlRoleProvider`，这会导致查询到角色存储数据库。 使用基于角色的 URL 授权规则时`RolePrincipal`的`IsInRole`将对每个受基于角色的 URL 授权规则页请求调用方法。 而不需要查找数据库中对每个请求的角色信息`Roles`framework 包括缓存的 cookie 中的用户的角色的选项。
 
-如果角色 framework 配置为缓存在 cookie 中，用户的角色`RoleManagerModule`在 ASP.NET 管道期间创建 cookie [ `EndRequest`事件](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.endrequest.aspx)。 在中的后续请求中使用此 cookie `PostAuthenticateRequest`，即当`RolePrincipal`创建对象。 如果 cookie 有效，并且未过期，并将数据在 cookie 中的分析用于填充用户的角色，从而保存`RolePrincipal`无需调用`Roles`类以确定用户的角色。 图 2 描绘了此工作流。
+如果角色 framework 配置为缓存在 cookie 中，用户的角色`RoleManagerModule`在 ASP.NET 管道期间创建 cookie [ `EndRequest`事件](https://msdn.microsoft.com/library/system.web.httpapplication.endrequest.aspx)。 在中的后续请求中使用此 cookie `PostAuthenticateRequest`，即当`RolePrincipal`创建对象。 如果 cookie 有效，并且未过期，并将数据在 cookie 中的分析用于填充用户的角色，从而保存`RolePrincipal`无需调用`Roles`类以确定用户的角色。 图 2 描绘了此工作流。
 
 
 [![用户的角色信息可以存储在一个 Cookie 以提高性能](role-based-authorization-vb/_static/image5.png)](role-based-authorization-vb/_static/image4.png)
@@ -67,13 +67,13 @@ ms.lasthandoff: 11/10/2017
 **图 2**： 的用户角色可以存储信息提高性能的 Cookie 中 ([单击以查看实际尺寸的图像](role-based-authorization-vb/_static/image6.png))
 
 
-默认情况下，角色缓存 cookie 机制处于禁用状态。 可以通过启用`<roleManager>`; 中的配置标记`Web.config`。 我们讨论了使用[`<roleManager>`元素](https://msdn.microsoft.com/en-us/library/ms164660.aspx)指定中的角色提供程序<a id="_msoanchor_4"> </a> [*创建和管理角色*](creating-and-managing-roles-vb.md)教程中，因此，你应该已在你的应用程序中此元素`Web.config`文件。 角色缓存 cookie 设置中指定的属性`<roleManager>`; 表 1 中的元素，并汇总。
+默认情况下，角色缓存 cookie 机制处于禁用状态。 可以通过启用`<roleManager>`; 中的配置标记`Web.config`。 我们讨论了使用[`<roleManager>`元素](https://msdn.microsoft.com/library/ms164660.aspx)指定中的角色提供程序<a id="_msoanchor_4"> </a> [*创建和管理角色*](creating-and-managing-roles-vb.md)教程中，因此，你应该已在你的应用程序中此元素`Web.config`文件。 角色缓存 cookie 设置中指定的属性`<roleManager>`; 表 1 中的元素，并汇总。
 
 > [!NOTE]
 > 表 1 中列出的配置设置指定生成的角色缓存 cookie 的属性。 在 cookie、 它们的工作原理和它们的各种属性的详细信息，请阅读[此 Cookie 教程](http://www.quirksmode.org/js/cookies.html)。
 
 
-| **Property** | **描述** |
+| **Property** | **说明** |
 | --- | --- |
 | `cacheRolesInCookie` | 一个布尔值，该值指示是否使用 cookie 缓存。 默认为 `false`。 |
 | `cookieName` | 角色缓存 cookie 的名称。 默认值是"。ASPXROLES"。 |
@@ -97,12 +97,12 @@ ms.lasthandoff: 11/10/2017
 这就是所有到它 ！ 自此以后，角色 framework 将缓存在 cookie 中的用户的角色。 如果用户的浏览器不支持 cookie，或者如果其 cookie 被删除或丢失，由于某种原因，它是没有了不起 –`RolePrincipal`对象时将只使用`Roles`任何 cookie （或一个无效或已过期） 是可用的情况下的类。
 
 > [!NOTE]
-> Microsoft 的模式&amp;实践组不鼓励使用持久性角色缓存 cookie。 如果黑客可以以某种方式获得访问权限的有效用户 cookie，因为拥有的角色缓存 cookie 不足以证明角色成员身份，他可以模拟该用户。 如果在用户的浏览器上保存 cookie，也会增大此类情况发生的可能性。 有关此安全建议，以及其他安全问题的详细信息，请参阅[适用于 ASP.NET 2.0 的安全问题列表](https://msdn.microsoft.com/en-us/library/ms998375.aspx)。
+> Microsoft 的模式&amp;实践组不鼓励使用持久性角色缓存 cookie。 如果黑客可以以某种方式获得访问权限的有效用户 cookie，因为拥有的角色缓存 cookie 不足以证明角色成员身份，他可以模拟该用户。 如果在用户的浏览器上保存 cookie，也会增大此类情况发生的可能性。 有关此安全建议，以及其他安全问题的详细信息，请参阅[适用于 ASP.NET 2.0 的安全问题列表](https://msdn.microsoft.com/library/ms998375.aspx)。
 
 
 ## <a name="step-1-defining-role-based-url-authorization-rules"></a>步骤 1： 定义基于角色的 URL 授权规则
 
-中所述<a id="_msoanchor_6"> </a> [*基于用户的授权*](../membership/user-based-authorization-vb.md)教程中，URL 授权提供一种限制对一组页面上的用户的用户或角色的角色的访问的方法基数。 URL 授权规则中将逐一`Web.config`使用[`<authorization>`元素](https://msdn.microsoft.com/en-us/library/8d82143t.aspx)与`<allow>`和`<deny>`子元素。 除了前面的教程中所述的与用户相关的授权规则每个`<allow>`和`<deny>`子元素还可以包括：
+中所述<a id="_msoanchor_6"> </a> [*基于用户的授权*](../membership/user-based-authorization-vb.md)教程中，URL 授权提供一种限制对一组页面上的用户的用户或角色的角色的访问的方法基数。 URL 授权规则中将逐一`Web.config`使用[`<authorization>`元素](https://msdn.microsoft.com/library/8d82143t.aspx)与`<allow>`和`<deny>`子元素。 除了前面的教程中所述的与用户相关的授权规则每个`<allow>`和`<deny>`子元素还可以包括：
 
 - 特定角色
 - 角色的以逗号分隔列表
@@ -202,7 +202,7 @@ ms.lasthandoff: 11/10/2017
 
 
 > [!NOTE]
-> `UserGrid` GridView 列出所有非分页接口中的用户。 此简单网格接口不适合方案有多个几十个或多个用户。 一个选项是配置 GridView 来启用分页。 `Membership.GetAllUsers`方法有两个重载： 另一个用于不接受任何输入的参数和返回的所有用户，另一个中的页索引和页大小的整数值采用并都返回仅指定用户的子集。 第二个重载可以使用到更有效地通过用户的页面，因为它返回的用户帐户所精确子集而非*所有*其中。 如果你具有数以千计的用户帐户，你可能想要考虑基于筛选器的接口，一个只显示其用户名选字符开头，例如这些用户。 [ `Membership.FindUsersByName`方法](https://msdn.microsoft.com/en-us/library/system.web.security.membership.findusersbyname.aspx)是用于构建基于筛选器的用户界面的理想选择。 我们将了解在将来的教程中生成此类接口。
+> `UserGrid` GridView 列出所有非分页接口中的用户。 此简单网格接口不适合方案有多个几十个或多个用户。 一个选项是配置 GridView 来启用分页。 `Membership.GetAllUsers`方法有两个重载： 另一个用于不接受任何输入的参数和返回的所有用户，另一个中的页索引和页大小的整数值采用并都返回仅指定用户的子集。 第二个重载可以使用到更有效地通过用户的页面，因为它返回的用户帐户所精确子集而非*所有*其中。 如果你具有数以千计的用户帐户，你可能想要考虑基于筛选器的接口，一个只显示其用户名选字符开头，例如这些用户。 [ `Membership.FindUsersByName`方法](https://msdn.microsoft.com/library/system.web.security.membership.findusersbyname.aspx)是用于构建基于筛选器的用户界面的理想选择。 我们将了解在将来的教程中生成此类接口。
 
 
 GridView 控件提供内置的编辑和删除支持时该控件绑定到正确配置的数据源控件，如 SqlDataSource 或对象数据源。 `UserGrid` GridView，但是，具有其数据以编程方式绑定; 因此，我们必须编写代码来执行这两个任务。 具体而言，我们将需要创建的事件处理程序 GridView `RowEditing`， `RowCancelingEdit`， `RowUpdating`，和`RowDeleting`在访问者单击 GridView 时触发的事件编辑，取消，更新，或删除按钮。
@@ -213,13 +213,13 @@ GridView 控件提供内置的编辑和删除支持时该控件绑定到正确�
 
 `RowEditing`和`RowCancelingEdit`事件处理程序只需设置 GridView`EditIndex`属性，然后重新绑定的列表的用户帐户添加到网格。 有趣的内容发生在`RowUpdating`事件处理程序。 此事件处理程序启动通过确保验证数据是否有效，且然后捕捉`UserName`值中的已编辑的用户帐户`DataKeys`集合。 `Email`和`Comment`中两个 TemplateFields 的文本框中`EditItemTemplate`s 然后以编程方式引用。 其`Text`属性包含编辑电子邮件地址和注释。
 
-若要更新通过成员资格 API 的用户帐户，我们需要先获取用户的信息，我们执行此操作通过调用`Membership.GetUser(userName)`。 返回`MembershipUser`对象的`Email`和`Comment`编辑接口从在两个文本框中输入的值与然后更新属性。 最后，通过调用保存这些修改[ `Membership.UpdateUser` ](https://msdn.microsoft.com/en-us/library/system.web.security.membership.updateuser.aspx)。 `RowUpdating`事件处理程序完成通过还原其预编辑接口 GridView。
+若要更新通过成员资格 API 的用户帐户，我们需要先获取用户的信息，我们执行此操作通过调用`Membership.GetUser(userName)`。 返回`MembershipUser`对象的`Email`和`Comment`编辑接口从在两个文本框中输入的值与然后更新属性。 最后，通过调用保存这些修改[ `Membership.UpdateUser` ](https://msdn.microsoft.com/library/system.web.security.membership.updateuser.aspx)。 `RowUpdating`事件处理程序完成通过还原其预编辑接口 GridView。
 
 接下来，创建`RowDeleting`RowDeleting 事件处理程序，然后添加以下代码：
 
 [!code-vb[Main](role-based-authorization-vb/samples/sample8.vb)]
 
-上面的事件处理程序启动通过抓取`UserName`GridView 的中值`DataKeys`集合; 此`UserName`值然后传递到成员资格类[`DeleteUser`方法](https://msdn.microsoft.com/en-us/library/system.web.security.membership.deleteuser.aspx)。 `DeleteUser`方法系统，包括相关的成员身份数据 （如哪些角色此用户所属的） 中删除用户帐户。 删除用户，网格的后`EditIndex`（以防另一个行处于编辑模式时，用户单击删除） 设置为-1 和`BindUserGrid`调用方法。
+上面的事件处理程序启动通过抓取`UserName`GridView 的中值`DataKeys`集合; 此`UserName`值然后传递到成员资格类[`DeleteUser`方法](https://msdn.microsoft.com/library/system.web.security.membership.deleteuser.aspx)。 `DeleteUser`方法系统，包括相关的成员身份数据 （如哪些角色此用户所属的） 中删除用户帐户。 删除用户，网格的后`EditIndex`（以防另一个行处于编辑模式时，用户单击删除） 设置为-1 和`BindUserGrid`调用方法。
 
 > [!NOTE]
 > 删除按钮不需要任何种类的用户才能删除用户帐户的确认。 我建议你添加某种形式的用户确认，以减小被意外删除的帐户的可能性。 确认某项操作的最简单方法之一是通过客户端确认对话框。 有关此技术的详细信息，请参阅[删除时添加客户端确认](https://asp.net/learn/data-access/tutorial-42-vb.aspx)。
@@ -305,7 +305,7 @@ GridView 控件提供内置的编辑和删除支持时该控件绑定到正确�
 如果我们处理的数据行不处于编辑模式下，引用的编辑和删除 LinkButtons 及其`Visible`属性根据返回的布尔值设置`User`对象的`IsInRole(roleName)`方法。 `User`对象引用由主体`RoleManagerModule`; 因此，`IsInRole(roleName)`方法使用角色 API 来确定是否当前的访问者属于*roleName*。
 
 > [!NOTE]
-> 我们本来也可以使用角色类直接替换调用`User.IsInRole(roleName)`通过调用[`Roles.IsUserInRole(roleName)`方法](https://msdn.microsoft.com/en-us/library/system.web.security.roles.isuserinrole.aspx)。 我决定要使用的主体对象`IsInRole(roleName)`在此示例中的方法因为它是比直接使用角色 API 更加有效。 本教程中前面我们配置了要缓存的 cookie 中的用户的角色的角色管理器。 此缓存的 cookie 数据仅当利用该主体的`IsInRole(roleName)`调用方法; 对角色 API 的直接调用总会涉及到角色存储到的行程。 即使角色不会缓存在 cookie 中，调用的主体对象`IsInRole(roleName)`方法是通常更高效，因为为它缓存结果的第一次请求过程的调用时。 角色 API，另一方面，不执行任何缓存。 因为`RowCreated`中 GridView，每行一次激发事件使用`User.IsInRole(roleName)`而涉及到角色存储只在一个行程`Roles.IsUserInRole(roleName)`需要*N*行程，其中*N*是网格中显示的用户帐户数。
+> 我们本来也可以使用角色类直接替换调用`User.IsInRole(roleName)`通过调用[`Roles.IsUserInRole(roleName)`方法](https://msdn.microsoft.com/library/system.web.security.roles.isuserinrole.aspx)。 我决定要使用的主体对象`IsInRole(roleName)`在此示例中的方法因为它是比直接使用角色 API 更加有效。 本教程中前面我们配置了要缓存的 cookie 中的用户的角色的角色管理器。 此缓存的 cookie 数据仅当利用该主体的`IsInRole(roleName)`调用方法; 对角色 API 的直接调用总会涉及到角色存储到的行程。 即使角色不会缓存在 cookie 中，调用的主体对象`IsInRole(roleName)`方法是通常更高效，因为为它缓存结果的第一次请求过程的调用时。 角色 API，另一方面，不执行任何缓存。 因为`RowCreated`中 GridView，每行一次激发事件使用`User.IsInRole(roleName)`而涉及到角色存储只在一个行程`Roles.IsUserInRole(roleName)`需要*N*行程，其中*N*是网格中显示的用户帐户数。
 
 
 编辑按钮的`Visible`属性设置为`True`如果用户访问此页中的管理员或主管角色; 否则它设置为`False`。 删除按钮的`Visible`属性设置为`True`仅当用户处于管理员角色。
@@ -341,7 +341,7 @@ GridView 控件提供内置的编辑和删除支持时该控件绑定到正确�
 
 在步骤 2 中，我们仅限于编辑为主管和管理员角色的功能和删除只向管理员功能。 这被通过隐藏未经授权的用户，通过编程技术的相关联的用户界面元素。 此类度量值不能保证未经授权的用户将不能执行特权的操作。 可能有更高版本添加的用户界面元素或我们忘了要隐藏的未经授权的用户。 或黑客可能会发现某些其他方法可以实现 ASP.NET 页后，可以执行所需的方法。
 
-确保未经授权的用户不能访问的功能的特定部分的简单办法是修饰该类或方法替换[`PrincipalPermission`属性](https://msdn.microsoft.com/en-us/library/system.security.permissions.principalpermissionattribute.aspx)。 当.NET 运行时使用的类，或者执行其方法之一时，它会检查以确保当前安全上下文具有权限。 `PrincipalPermission`属性提供一种机制，通过该我们可以定义这些规则。
+确保未经授权的用户不能访问的功能的特定部分的简单办法是修饰该类或方法替换[`PrincipalPermission`属性](https://msdn.microsoft.com/library/system.security.permissions.principalpermissionattribute.aspx)。 当.NET 运行时使用的类，或者执行其方法之一时，它会检查以确保当前安全上下文具有权限。 `PrincipalPermission`属性提供一种机制，通过该我们可以定义这些规则。
 
 我们看使用`PrincipalPermission`属性返回<a id="_msoanchor_9"> </a> [*基于用户的授权*](../membership/user-based-authorization-vb.md)教程。 具体而言，我们已了解如何修饰 GridView`SelectedIndexChanged`和`RowDeleting`事件处理程序，以便它们无法由执行已经过身份验证的用户和 Tito，分别。 `PrincipalPermission`属性同样适用的角色。
 
@@ -382,8 +382,8 @@ GridView 控件提供内置的编辑和删除支持时该控件绑定到正确�
 
 - [将授权规则添加到业务和使用的数据层`PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
 - [检查 ASP.NET 2.0 的成员资格、 角色和配置文件： 使用角色](http://aspnet.4guysfromrolla.com/articles/121405-1.aspx)
-- [ASP.NET 2.0 的安全问题列表](https://msdn.microsoft.com/en-us/library/ms998375.aspx)
-- [技术文档`<roleManager>`元素](https://msdn.microsoft.com/en-us/library/ms164660.aspx)
+- [ASP.NET 2.0 的安全问题列表](https://msdn.microsoft.com/library/ms998375.aspx)
+- [技术文档`<roleManager>`元素](https://msdn.microsoft.com/library/ms164660.aspx)
 
 ### <a name="about-the-author"></a>关于作者
 

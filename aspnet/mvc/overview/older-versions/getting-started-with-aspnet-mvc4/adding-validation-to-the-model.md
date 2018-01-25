@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 73332d168e2f22621cb234a6591f3ce0eeed802f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 93b4df5fcbde8d87866d00dffda8a241d0dd596b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-validation-to-the-model"></a>添加到模型的验证
 ====================
@@ -40,13 +40,13 @@ ASP.NET MVC 的核心设计原则之一是模拟 (&quot;不重复自己&quot;)�
 
 将通过添加到某些验证逻辑开始`Movie`类。
 
-打开 Movie.cs 文件。 添加`using`语句引用的文件的顶部[ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx)命名空间：
+打开 Movie.cs 文件。 添加`using`语句引用的文件的顶部[ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)命名空间：
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample1.cs)]
 
 请注意命名空间不包含`System.Web`。 DataAnnotations 提供可以以声明方式应用于任何类或属性的验证属性一内置组。
 
-现在更新`Movie`类以利用内置[ `Required` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx)， [ `StringLength` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)，和[ `Range` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.rangeattribute.aspx)验证特性. 使用以下代码作为示例，了解将特性应用的位置。
+现在更新`Movie`类以利用内置[ `Required` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx)， [ `StringLength` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)，和[ `Range` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx)验证特性. 使用以下代码作为示例，了解将特性应用的位置。
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample2.cs?highlight=4,10,13,17)]
 
@@ -99,7 +99,7 @@ ASP.NET MVC 的核心设计原则之一是模拟 (&quot;不重复自己&quot;)�
 5. 删除文本。
 6. 选项卡上。
 
-上面的顺序将触发所需的验证，而无需提交按钮。 只需点击提交按钮，而无需输入的任何字段将触发客户端验证。 存在客户端验证错误时，不会将表单数据发送到服务器。 你可以通过将中断点放在 HTTP Post 方法或使用测试此[fiddler 工具](http://fiddler2.com/fiddler2/)或 IE 9 [F12 开发人员工具](https://msdn.microsoft.com/en-us/ie/aa740478)。
+上面的顺序将触发所需的验证，而无需提交按钮。 只需点击提交按钮，而无需输入的任何字段将触发客户端验证。 存在客户端验证错误时，不会将表单数据发送到服务器。 你可以通过将中断点放在 HTTP Post 方法或使用测试此[fiddler 工具](http://fiddler2.com/fiddler2/)或 IE 9 [F12 开发人员工具](https://msdn.microsoft.com/ie/aa740478)。
 
 ![](adding-validation-to-the-model/_static/image2.png)
 
@@ -137,17 +137,17 @@ ASP.NET MVC 的核心设计原则之一是模拟 (&quot;不重复自己&quot;)�
 
 ## <a name="adding-formatting-to-the-movie-model"></a>添加到影片模型格式设置
 
-打开 Movie.cs 文件并检查 `Movie` 类。 [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx)命名空间提供内置集以及验证特性的格式设置属性。 我们已应用[ `DataType` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx)枚举值到发布日期和价格字段。 下面的代码演示`ReleaseDate`和`Price`使用相应的属性[ `DisplayFormat` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx)属性。
+打开 Movie.cs 文件并检查 `Movie` 类。 [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)命名空间提供内置集以及验证特性的格式设置属性。 我们已应用[ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)枚举值到发布日期和价格字段。 下面的代码演示`ReleaseDate`和`Price`使用相应的属性[ `DisplayFormat` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx)属性。
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample9.cs)]
 
-[ `DataType` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx)属性不是验证特性，使用它们告诉视图引擎如何呈现 HTML。 在上例中，`DataType.Date`属性无时间显示仅限于，日期形式显示电影日期。 例如，以下[ `DataType` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx)属性不验证的数据的格式：
+[ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)属性不是验证特性，使用它们告诉视图引擎如何呈现 HTML。 在上例中，`DataType.Date`属性无时间显示仅限于，日期形式显示电影日期。 例如，以下[ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)属性不验证的数据的格式：
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample10.cs)]
 
-上面列出的属性仅提供视图引擎对数据进行格式化的提示 (如提供属性和&lt;&gt; url 的和&lt;href =&quot;mailto:EmailAddress.com&quot; &gt;电子邮件。 你可以使用[正则表达式](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx)要验证的数据格式属性。
+上面列出的属性仅提供视图引擎对数据进行格式化的提示 (如提供属性和&lt;&gt; url 的和&lt;href =&quot;mailto:EmailAddress.com&quot; &gt;电子邮件。 你可以使用[正则表达式](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx)要验证的数据格式属性。
 
-一种方法来使用`DataType`属性，你可以显式设置[ `DataFormatString` ](https://msdn.microsoft.com/en-us/library/system.string.format.aspx)值。 下面的代码演示具有日期格式字符串的发行日期属性 (即&quot;d&quot;)。 将使用此参数来指定你不想为时间作为发布日期的一部分。
+一种方法来使用`DataType`属性，你可以显式设置[ `DataFormatString` ](https://msdn.microsoft.com/library/system.string.format.aspx)值。 下面的代码演示具有日期格式字符串的发行日期属性 (即&quot;d&quot;)。 将使用此参数来指定你不想为时间作为发布日期的一部分。
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample11.cs)]
 

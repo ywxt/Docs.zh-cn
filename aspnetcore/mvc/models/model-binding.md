@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 ms.assetid: 0be164aa-1d72-4192-bd6b-192c9c301164
 uid: mvc/models/model-binding
-ms.openlocfilehash: 8fc6ff66d05164c1040f8cc77886357a633a0472
-ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
+ms.openlocfilehash: 26c4c016548cc3e465991c5ebf16893d4022145d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="model-binding"></a>模型绑定
 
@@ -70,7 +70,7 @@ The link works but generates an error when building with DocFX
 
 * 值类型： 类型的不可为 null 的值类型`T`设置为`default(T)`。 例如，模型绑定将参数设置`int id`为 0。 请考虑使用模型验证或可以为 null 的类型，而不是依赖于默认值。
 
-如果绑定将失败，MVC 将不会引发错误。 它接受用户输入每个操作应检查`ModelState.IsValid`属性。
+如果绑定将失败，MVC 不会引发错误。 它接受用户输入每个操作应检查`ModelState.IsValid`属性。
 
 注意： 控制器的每个条目`ModelState`属性是`ModelStateEntry`包含`Errors`属性。 它很少需要自行查询此集合。 请改用 `ModelState.IsValid`。
 

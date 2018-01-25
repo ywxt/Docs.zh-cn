@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/migrations
-ms.openlocfilehash: 9a0fb52a1d1a62bce3f11c7e0394c00b9d544ab3
-ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
+ms.openlocfilehash: 7b0a3f73efd1d30b903b3258bea2082792eb6e8c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrations---ef-core-with-razor-pages-tutorial-4-of-8"></a>迁移的 EF 核心 Razor 页教程 (8 的第 4)
 
@@ -54,7 +54,7 @@ https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/S
 
 [!code-json[Main](intro/samples/cu/appsettings2.json?range=1-4)]
 
-更改连接字符串中的数据库名称，则会导致创建新数据库的初始迁移。 创建新数据库，因为具有该名称不存在。 更改连接字符串不是必需的迁移入门知识。
+更改连接字符串中的数据库名称，则会导致创建新数据库的初始迁移。 创建新数据库，因为具有该名称尚不存在。 更改连接字符串不是必需的迁移入门知识。
 
 更改数据库名称的替代方法删除数据库。 使用**SQL Server 对象资源管理器**(SSOX) 或`database drop`CLI 命令：
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: 6e4586eb681bd230413ace67ca9eddc3fe3e9e60
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 330398dc945fc61e5fc94d55bf651e62e0963072
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="configuring-microsoft-account-authentication"></a>配置 Microsoft 帐户身份验证
 
@@ -106,7 +106,7 @@ app.UseMicrosoftAccountAuthentication(new MicrosoftAccountOptions()
 
 ---
 
-尽管在 Microsoft 开发人员门户上使用的术语名称这些令牌`ApplicationId`和`Password`，它们会作为公开`ClientId`和`ClientSecret`到配置 API。
+尽管在 Microsoft 开发人员门户上使用的术语名称这些令牌`ApplicationId`和`Password`，它们作为公开`ClientId`和`ClientSecret`到配置 API。
 
 请参阅[MicrosoftAccountOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.microsoftaccountoptions)支持 Microsoft 帐户身份验证的配置选项的详细信息的 API 参考。 这可以用于请求有关用户的不同信息。
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 5d4c7d7d02ced5a99db5b59f9e2e1adf6588208a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a573b47d27767dc78d557cd2b6c73714eb9e94f4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="part-2-creating-the-domain-models"></a>第 2 部分： 创建域模型
 ====================
@@ -32,9 +32,9 @@ ms.lasthandoff: 11/10/2017
 - 模型优先： 开头 visual 模型和实体框架生成的数据库和代码。
 - 代码优先： 与代码中，启动，实体框架生成数据库。
 
-我们使用代码为先的方法，因此我们首先我们域对象定义为 POCOs （纯旧式 CLR 对象）。 使用代码优先方法时，域对象不需要任何额外的代码，以支持数据库层，如事务或持久性。 (具体而言，它们不需要从继承[EntityObject](https://msdn.microsoft.com/en-us/library/system.data.objects.dataclasses.entityobject.aspx)类。)你仍然可以使用数据注释控制实体框架如何创建数据库架构。
+我们使用代码为先的方法，因此我们首先我们域对象定义为 POCOs （纯旧式 CLR 对象）。 使用代码优先方法时，域对象不需要任何额外的代码，以支持数据库层，如事务或持久性。 (具体而言，它们不需要从继承[EntityObject](https://msdn.microsoft.com/library/system.data.objects.dataclasses.entityobject.aspx)类。)你仍然可以使用数据注释控制实体框架如何创建数据库架构。
 
-因为 POCOs 不执行任何额外的属性，用于描述[的数据库状态](https://msdn.microsoft.com/en-us/library/system.data.entitystate.aspx)，它们可以轻松地序列化为 JSON 或 XML。 但是，，并不意味着你始终应公开实体框架模型直接向客户端，正如我们看到在教程的后面。
+因为 POCOs 不执行任何额外的属性，用于描述[的数据库状态](https://msdn.microsoft.com/library/system.data.entitystate.aspx)，它们可以轻松地序列化为 JSON 或 XML。 但是，，并不意味着你始终应公开实体框架模型直接向客户端，正如我们看到在教程的后面。
 
 我们将创建以下 POCOs:
 

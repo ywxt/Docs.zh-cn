@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 50de8473d1fd77de4b221f0c96fc7f184621d4b6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d8c4931a1d26af49ee61c896897fa6ddf12fccea
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-troubleshooting-12-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 疑难解答 (12 的 12)
 ====================
@@ -164,7 +164,7 @@ ASP.NET 4 未安装在 IIS 中。 如果您要部署到的服务器是开发计�
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
-名称*.mdf*文件不能匹配任何已曾经存在你计算机的 SQL Server Express 数据库的名称，即使你删除*.mdf*先前存在的数据库文件。 更改的名称*.mdf*从未为数据库名称和更改使用的名称的文件*Web.config*文件以使用新名称。 作为替代方法，你可以使用[SQL Server Management Studio Express](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&amp;id=7593)删除先前存在的 SQL Server Express 数据库。
+名称*.mdf*文件不能匹配任何已曾经存在你计算机的 SQL Server Express 数据库的名称，即使你删除*.mdf*先前存在的数据库文件。 更改的名称*.mdf*从未为数据库名称和更改使用的名称的文件*Web.config*文件以使用新名称。 作为替代方法，你可以使用[SQL Server Management Studio Express](https://www.microsoft.com/download/details.aspx?displaylang=en&amp;id=7593)删除先前存在的 SQL Server Express 数据库。
 
 ## <a name="model-compatibility-cannot-be-checked"></a>模型兼容性无法检查
 
@@ -176,7 +176,7 @@ ASP.NET 4 未安装在 IIS 中。 如果您要部署到的服务器是开发计�
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
-如果你在计算机上，数据库可能已存在与某些表之前，已曾经使用 Web.config 文件中放置的数据库名称。 选择尚未使用在之前的计算机和更改的新名称*Web.config*文件以点以使用此新的数据库名称。 作为替代方法，你可以使用[SQL Server Express 实用工具](https://www.microsoft.com/en-us/download/details.aspx?DisplayLang=en&amp;id=3990)或[SQL Server Management Studio Express](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&amp;id=7593)删除现有数据库。
+如果你在计算机上，数据库可能已存在与某些表之前，已曾经使用 Web.config 文件中放置的数据库名称。 选择尚未使用在之前的计算机和更改的新名称*Web.config*文件以点以使用此新的数据库名称。 作为替代方法，你可以使用[SQL Server Express 实用工具](https://www.microsoft.com/download/details.aspx?DisplayLang=en&amp;id=3990)或[SQL Server Management Studio Express](https://www.microsoft.com/download/details.aspx?displaylang=en&amp;id=7593)删除现有数据库。
 
 ## <a name="sql-error-when-a-script-attempts-to-create-users-or-roles"></a>SQL 错误时的脚本尝试创建用户或角色
 
@@ -194,7 +194,7 @@ ASP.NET 4 未安装在 IIS 中。 如果您要部署到的服务器是开发计�
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample17.cmd)]
 
-有关如何编辑`PreSource`元素在项目文件中，请参阅[如何： 编辑项目文件中的部署设置](https://msdn.microsoft.com/en-us/library/ff398069(v=vs.100).aspx)。 如果用户或开发数据库中的角色需要将位于目标数据库中，请与你托管提供商联系以获取帮助。
+有关如何编辑`PreSource`元素在项目文件中，请参阅[如何： 编辑项目文件中的部署设置](https://msdn.microsoft.com/library/ff398069(v=vs.100).aspx)。 如果用户或开发数据库中的角色需要将位于目标数据库中，请与你托管提供商联系以获取帮助。
 
 ## <a name="sql-server-timeout-error-when-running-custom-scripts-during-deployment"></a>SQL Server 超时错误时在部署过程中运行自定义脚本
 
@@ -204,7 +204,7 @@ ASP.NET 4 未安装在 IIS 中。 如果您要部署到的服务器是开发计�
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
-运行具有不同的事务模式的多个脚本可能导致超时错误。 默认情况下自动生成的脚本运行在事务中，但自定义脚本不这样做。 如果你选择**抽取数据和/或从现有数据库的架构**选项**打包/发布 SQL**选项卡上，如果你添加自定义 SQL 脚本，必须更改某些脚本上的事务设置，以便所有脚本都使用相同的事务设置。 有关详细信息，请参阅[如何： 部署数据库与 Web 应用程序项目](https://msdn.microsoft.com/en-us/library/dd465343.aspx)。
+运行具有不同的事务模式的多个脚本可能导致超时错误。 默认情况下自动生成的脚本运行在事务中，但自定义脚本不这样做。 如果你选择**抽取数据和/或从现有数据库的架构**选项**打包/发布 SQL**选项卡上，如果你添加自定义 SQL 脚本，必须更改某些脚本上的事务设置，以便所有脚本都使用相同的事务设置。 有关详细信息，请参阅[如何： 部署数据库与 Web 应用程序项目](https://msdn.microsoft.com/library/dd465343.aspx)。
 
 如果你已配置事务设置，以便所有都相同，但仍遇到此错误，可能的解决方法是单独运行这些脚本。 在**数据库脚本**网格中的**打包/发布**SQL 选项卡上，将其清除**包括**会导致超时错误，该脚本的复选框然后发布项目。 然后转回**数据库脚本**网格中，选择该脚本**包括**复选框，然后清除**包括**其他脚本对应的复选框。 然后再次发布该项目。 发布时，此次运行时仅选择自定义的脚本。
 
@@ -290,7 +290,7 @@ ASP.NET 4 未安装在 IIS 中。 如果您要部署到的服务器是开发计�
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
-默认情况下，Visual Studio 集对站点的根文件夹的读取权限和写应用程序权限\_数据文件夹。 如果您知道站点文件夹上的默认权限是否正确，并且不需要设置，则禁用此行为通过添加 **&lt;IncludeSetACLProviderOn 目标&gt;False&lt;/IncludeSetACLProviderOnDestination&gt;** 到发布配置文件 （以影响一个配置文件） 或 （要影响的所有配置文件） 的 wpp.targets 文件。 有关如何编辑这些文件的信息，请参阅[如何： 编辑配置文件 (.pubxml) 文件中的部署设置](https://msdn.microsoft.com/en-us/library/ff398069.aspx)。 
+默认情况下，Visual Studio 集对站点的根文件夹的读取权限和写应用程序权限\_数据文件夹。 如果您知道站点文件夹上的默认权限是否正确，并且不需要设置，则禁用此行为通过添加 **&lt;IncludeSetACLProviderOn 目标&gt;False&lt;/IncludeSetACLProviderOnDestination&gt;** 到发布配置文件 （以影响一个配置文件） 或 （要影响的所有配置文件） 的 wpp.targets 文件。 有关如何编辑这些文件的信息，请参阅[如何： 编辑配置文件 (.pubxml) 文件中的部署设置](https://msdn.microsoft.com/library/ff398069.aspx)。 
 
 ## <a name="access-denied-errors-when-the-application-tries-to-write-to-an-application-folder"></a>当应用程序尝试写入到应用程序文件夹时，访问被拒绝错误
 
@@ -300,7 +300,7 @@ ASP.NET 4 未安装在 IIS 中。 如果您要部署到的服务器是开发计�
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
-默认情况下，Visual Studio 集对站点的根文件夹的读取权限和写应用程序权限\_数据文件夹。 如果你的应用程序需要的子文件夹的写访问权限，则可以设置为该文件夹的权限中所示[设置文件夹权限](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)和[将部署到生产环境](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md)教程。 如果你的应用程序需要的站点的根文件夹的写访问权限，则必须防止它在根文件夹上设置只读访问权限，通过添加 **&lt;IncludeSetACLProviderOn 目标&gt;False&lt;/IncludeSetACLProviderOnDestination&gt;** 到发布配置文件 （以影响一个配置文件） 或 （要影响的所有配置文件） 的 wpp.targets 文件。 有关如何编辑这些文件的信息，请参阅[如何： 编辑配置文件 (.pubxml) 文件中的部署设置](https://msdn.microsoft.com/en-us/library/ff398069.aspx)。 <a id="aspnet45error"></a>
+默认情况下，Visual Studio 集对站点的根文件夹的读取权限和写应用程序权限\_数据文件夹。 如果你的应用程序需要的子文件夹的写访问权限，则可以设置为该文件夹的权限中所示[设置文件夹权限](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)和[将部署到生产环境](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md)教程。 如果你的应用程序需要的站点的根文件夹的写访问权限，则必须防止它在根文件夹上设置只读访问权限，通过添加 **&lt;IncludeSetACLProviderOn 目标&gt;False&lt;/IncludeSetACLProviderOnDestination&gt;** 到发布配置文件 （以影响一个配置文件） 或 （要影响的所有配置文件） 的 wpp.targets 文件。 有关如何编辑这些文件的信息，请参阅[如何： 编辑配置文件 (.pubxml) 文件中的部署设置](https://msdn.microsoft.com/library/ff398069.aspx)。 <a id="aspnet45error"></a>
 
 ## <a name="configuration-error---targetframework-attribute-references-a-version-that-is-later-than-the-installed-version-of-the-net-framework"></a>配置错误的 targetFramework 特性引用晚于安装的.NET Framework 版本的版本
 
@@ -318,7 +318,7 @@ ASP.NET 4 未安装在 IIS 中。 如果您要部署到的服务器是开发计�
 
 服务器不支持 ASP.NET 4.5。 联系托管提供商来确定何时及是否可添加对 ASP.NET 4.5。 如果升级服务器不是一个选项，则必须部署面向 4 或更早版本的 ASP.NET web 项目相反。如果将 ASP.NET 4 或更早版本的 web 项目部署到相同的目标中，选择**删除目标位置的其他文件**上的复选框**设置**选项卡**发布 Web**向导。 如果你未选中**删除目标位置的其他文件**，你将继续获取配置错误页。
 
-项目**属性**windows 包含目标框架下拉列表，但你不能解决此问题通过只需更改，从**.NET Framework 4.5**到**.NET Framework 4**. 如果你将目标框架更改为更早版本的 framework 版本时，项目将仍具有对的更高版本的 framework 版本的程序集的引用，而不会运行。 你必须手动更改这些引用，或创建新的项目面向.NET Framework 4 或更早版本。 有关详细信息，请参阅[.NET Framework 面向网站](https://msdn.microsoft.com/en-us/library/bb398791(v=vs.100).aspx)。
+项目**属性**windows 包含目标框架下拉列表，但你不能解决此问题通过只需更改，从**.NET Framework 4.5**到**.NET Framework 4**. 如果你将目标框架更改为更早版本的 framework 版本时，项目将仍具有对的更高版本的 framework 版本的程序集的引用，而不会运行。 你必须手动更改这些引用，或创建新的项目面向.NET Framework 4 或更早版本。 有关详细信息，请参阅[.NET Framework 面向网站](https://msdn.microsoft.com/library/bb398791(v=vs.100).aspx)。
 
 >[!div class="step-by-step"]
 [上一篇](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)

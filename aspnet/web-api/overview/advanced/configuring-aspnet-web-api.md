@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 1c007c4c327b7cde6ff52c6b0022acdff3c9b137
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f9b471fe2afdce278869a2e4d9b693a78030324b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-aspnet-web-api-2"></a>配置 ASP.NET Web API 2
 ====================
@@ -33,15 +33,15 @@ ms.lasthandoff: 11/10/2017
 <a id="settings"></a>
 ## <a name="configuration-settings"></a>配置设置
 
-在中定义的配置设置，web API [HttpConfiguration](https://msdn.microsoft.com/en-us/library/system.web.http.httpconfiguration.aspx)类。
+在中定义的配置设置，web API [HttpConfiguration](https://msdn.microsoft.com/library/system.web.http.httpconfiguration.aspx)类。
 
 | 成员 | 描述 |
 | --- | --- |
 | **DependencyResolver** | 使控制器的依赖关系注入。 请参阅[使用 Web API 依赖项解析程序](dependency-injection.md)。 |
 | **筛选器** | 操作筛选器。 |
 | **格式化程序** | [媒体类型格式化程序](../formats-and-model-binding/media-formatters.md)。 |
-| **IncludeErrorDetailPolicy** | 指定服务器是否应在 HTTP 响应消息中包含错误详细信息，例如异常消息和堆栈跟踪。 请参阅[IncludeErrorDetailPolicy](https://msdn.microsoft.com/en-us/library/system.web.http.includeerrordetailpolicy(v=vs.108))。 |
-| **初始值设定项** | 执行最终的初始化函数**HttpConfiguration**。 |
+| **IncludeErrorDetailPolicy** | 指定服务器是否应在 HTTP 响应消息中包含错误详细信息，例如异常消息和堆栈跟踪。 请参阅[IncludeErrorDetailPolicy](https://msdn.microsoft.com/library/system.web.http.includeerrordetailpolicy(v=vs.108))。 |
+| **Initializer** | 执行最终的初始化函数**HttpConfiguration**。 |
 | **MessageHandlers** | [HTTP 消息处理程序](http-message-handlers.md)。 |
 | **ParameterBindingRules** | 用于在控制器操作绑定参数的规则的集合。 |
 | **属性** | 一个泛型属性包。 |
@@ -49,14 +49,14 @@ ms.lasthandoff: 11/10/2017
 | **服务** | 服务集合。 请参阅[服务](#services)。 |
 
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 [Visual Studio 2017](https://www.visualstudio.com/vs/) Community、 Professional 或 Enterprise Edition。
 
 <a id="webhost"></a>
 ## <a name="configuring-web-api-with-aspnet-hosting"></a>使用 ASP.NET 宿主配置 Web API
 
-在 ASP.NET 应用程序，通过调用来配置 Web API [GlobalConfiguration.Configure](https://msdn.microsoft.com/en-us/library/system.web.http.globalconfiguration.configure.aspx)中**应用程序\_启动**方法。 **配置**方法采用单个参数的类型的委托**HttpConfiguration**。 执行所有委托内你配置。
+在 ASP.NET 应用程序，通过调用来配置 Web API [GlobalConfiguration.Configure](https://msdn.microsoft.com/library/system.web.http.globalconfiguration.configure.aspx)中**应用程序\_启动**方法。 **配置**方法采用单个参数的类型的委托**HttpConfiguration**。 执行所有委托内你配置。
 
 下面是使用匿名委托的示例：
 

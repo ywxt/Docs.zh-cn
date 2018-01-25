@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
-ms.openlocfilehash: 8842f57df84d841df77b34e9645dbf4909f82d85
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e5968f8d19191c3f44e9bd58f8e22a39d8d8faff
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="owin-oauth-20-authorization-server"></a>OWIN OAuth 2.0 授权服务器
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > | **本教程中所示** | **也适用于** |
 > | --- | --- |
-> | Windows 8.1 | Windows 8、 Windows 7 |
+> | Windows 8.1 | Windows 8, Windows 7 |
 > | [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads) | [Visual Studio 2013 Express for 桌面](https://www.microsoft.com/visualstudio/eng/2013-downloads#d-2013-express)。 应运行最新的更新 visual Studio 2012，但本教程未进行测试，并且某些菜单选项和对话框都有所不同。 |
 > | .NET 4.5 |  |
 > 
@@ -54,15 +54,15 @@ ms.lasthandoff: 11/10/2017
 - 创建 OAuth 2.0 客户端。
 
 <a id="prerequisites"></a>
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/downloads#d-2013-editions)或免费[Visual Studio Express 2013](https://www.microsoft.com/visualstudio/eng/downloads#d-2013-express)，如下所示**软件版本**页顶部。
-- 带 OWIN 的熟悉程度。 请参阅[Getting Started with Katana 项目](https://msdn.microsoft.com/en-us/magazine/dn451439.aspx)和[OWIN 和 Katana 中的新增](index.md)。
+- 带 OWIN 的熟悉程度。 请参阅[Getting Started with Katana 项目](https://msdn.microsoft.com/magazine/dn451439.aspx)和[OWIN 和 Katana 中的新增](index.md)。
 - 熟悉[OAuth](http://tools.ietf.org/html/rfc6749)术语，包括[角色](http://tools.ietf.org/html/rfc6749#section-1.1)，[协议流](http://tools.ietf.org/html/rfc6749#section-1.2)，和[授权](http://tools.ietf.org/html/rfc6749#section-1.3)。 [OAuth 2.0 简介](http://tools.ietf.org/html/rfc6749#section-1)提供良好的介绍。
 
 ## <a name="create-an-authorization-server"></a>创建授权服务器
 
-在本教程中，我们将大致草拟如何使用[OWIN](https://msdn.microsoft.com/en-us/magazine/dn451439.aspx)和 ASP.NET MVC 创建服务器的授权。 我们希望很快提供可供下载的已完成的示例中，因为本教程不包括每个步骤。 首先，创建名为的空 web 应用*AuthorizationServer*并安装以下程序包：
+在本教程中，我们将大致草拟如何使用[OWIN](https://msdn.microsoft.com/magazine/dn451439.aspx)和 ASP.NET MVC 创建服务器的授权。 我们希望很快提供可供下载的已完成的示例中，因为本教程不包括每个步骤。 首先，创建名为的空 web 应用*AuthorizationServer*并安装以下程序包：
 
 - Microsoft.AspNet.Mvc
 - Microsoft.Owin.Host.SystemWeb
@@ -112,7 +112,7 @@ OAuth 不介意位置和方式如何管理用户帐户信息。 它具有[ASP.NE
 
 查看 IETF 的 OAuth 2[授权代码授予](http://tools.ietf.org/html/rfc6749#section-4.1)现在部分。 
 
-**提供程序**（在下表中） 是[OAuthAuthorizationServerOptions](https://msdn.microsoft.com/en-us/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions(v=vs.111).aspx)。提供程序，它的类型是`OAuthAuthorizationServerProvider`，其中包含所有 OAuth 服务器事件。 
+**提供程序**（在下表中） 是[OAuthAuthorizationServerOptions](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions(v=vs.111).aspx)。提供程序，它的类型是`OAuthAuthorizationServerProvider`，其中包含所有 OAuth 服务器事件。 
 
 | 流步骤，可从授权代码授予部分 | 示例下载执行这些步骤： |
 | --- | --- |
@@ -123,7 +123,7 @@ OAuth 不介意位置和方式如何管理用户帐户信息。 它具有[ASP.NE
 |  |  |
 | （C） 假定资源所有者授予访问权限，授权服务器将用户代理重定向回客户端使用重定向 URI 提供早期 （在请求中或在客户端注册）。 ... |  |
 |  |  |
-| （D） 客户端通过包含上一步中收到的授权代码来从授权服务器的令牌终结点请求访问令牌。 在发出请求时，使用授权服务器进行身份验证客户端。 客户端包括重定向 URI 用于获取验证的授权代码。 | Provider.MatchEndpoint Provider.ValidateClientAuthentication AuthorizationCodeProvider.ReceiveAsync Provider.ValidateTokenRequest Provider.GrantAuthorizationCode Provider.TokenEndpoint AccessTokenProvider.CreateAsyncRefreshTokenProvider.CreateAsync |
+| （D） 客户端通过包含上一步中收到的授权代码来从授权服务器的令牌终结点请求访问令牌。 在发出请求时，使用授权服务器进行身份验证客户端。 客户端包括重定向 URI 用于获取验证的授权代码。 | Provider.MatchEndpoint Provider.ValidateClientAuthentication AuthorizationCodeProvider.ReceiveAsync Provider.ValidateTokenRequest Provider.GrantAuthorizationCode Provider.TokenEndpoint AccessTokenProvider.CreateAsync RefreshTokenProvider.CreateAsync |
 
 实现示例`AuthorizationCodeProvider.CreateAsync`和`ReceiveAsync`控制创建和验证的授权代码如下所示。
 
@@ -211,7 +211,7 @@ OAuth 不介意位置和方式如何管理用户帐户信息。 它具有[ASP.NE
 | 流步骤，可从客户端凭据授予部分 | 示例下载执行这些步骤： |
 | --- | --- |
 |  |  |
-| （G） 客户端通过使用授权服务器进行身份验证，并将提供刷新令牌请求新的访问令牌。 客户端身份验证要求基于客户端类型而授权服务器策略。 | Provider.MatchEndpoint Provider.ValidateClientAuthentication RefreshTokenProvider.ReceiveAsync Provider.ValidateTokenRequest Provider.GrantRefreshToken Provider.TokenEndpoint AccessTokenProvider.CreateAsyncRefreshTokenProvider.CreateAsync |
+| （G） 客户端通过使用授权服务器进行身份验证，并将提供刷新令牌请求新的访问令牌。 客户端身份验证要求基于客户端类型而授权服务器策略。 | Provider.MatchEndpoint Provider.ValidateClientAuthentication RefreshTokenProvider.ReceiveAsync Provider.ValidateTokenRequest Provider.GrantRefreshToken Provider.TokenEndpoint AccessTokenProvider.CreateAsync RefreshTokenProvider.CreateAsync |
 |  |  |
 | （H） 授权服务器对客户端进行身份验证和验证刷新令牌，以及如果有效，将发出一个新的访问令牌 （和 （可选） 新的刷新令牌）。 |  |
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: db24fbf4a3486a1349ac47e55cfa495fdf1a166c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cd2bfa07262155b68ac4605fc7e9748d276d3193
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-web-packages"></a>部署 Web 包
 ====================
@@ -66,17 +66,17 @@ ms.lasthandoff: 11/10/2017
 | **/T** | 调用与 MSDeploy.exe **– whatif**标志，它表示一种试运行。 而不是将包部署，它将创建一份如果未部署包，会发生什么情况。 |
 | **/Y** | 调用而无需 MSDeploy.exe **– whatif**标志。 这将包部署到本地计算机或指定的目标服务器。 |
 | **/M** | 指定的目标服务器名称或服务 URL。 你可以在此处提供的值的详细信息，请参阅**终结点注意事项**本主题中的部分。 如果省略**/M**标志，包将部署到本地计算机。 |
-| **/ A** | 指定应使用 MSDeploy.exe 执行部署的身份验证类型。 可能的值为**NTLM**和**基本**。 如果省略**/A**标志，身份验证类型将默认为**NTLM**部署到 Web 部署远程代理服务和**基本**以部署到 Web 部署处理程序。 |
+| **/A** | 指定应使用 MSDeploy.exe 执行部署的身份验证类型。 可能的值为**NTLM**和**基本**。 如果省略**/A**标志，身份验证类型将默认为**NTLM**部署到 Web 部署远程代理服务和**基本**以部署到 Web 部署处理程序。 |
 | **/U** | 指定的用户名。 这仅适用于你使用基本身份验证。 |
-| **/ P** | 指定密码。 这仅适用于你使用基本身份验证。 |
+| **/P** | 指定密码。 这仅适用于你使用基本身份验证。 |
 | **/L** | 指示包应将部署到 IIS Express 的本地实例。 |
-| **/G** | 指定使用部署包[tempAgent 提供程序设置](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx)。 如果省略**/G**标志，则该值默认为**false**。 |
+| **/G** | 指定使用部署包[tempAgent 提供程序设置](https://technet.microsoft.com/library/ee517345(WS.10).aspx)。 如果省略**/G**标志，则该值默认为**false**。 |
 
 > [!NOTE]
 > 每次生成过程创建一个 web 包，它还创建名为的文件*[项目名称].deploy readme.txt*说明这些部署选项。
 
 
-除了这些标志，还可以为其他指定 Web 部署操作设置*。 deploy.cmd*参数。 你指定的任何其他设置直接传递到基础 MSDeploy.exe 命令。 有关这些设置的详细信息，请参阅[Web 部署操作设置](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx)。
+除了这些标志，还可以为其他指定 Web 部署操作设置*。 deploy.cmd*参数。 你指定的任何其他设置直接传递到基础 MSDeploy.exe 命令。 有关这些设置的详细信息，请参阅[Web 部署操作设置](https://technet.microsoft.com/library/dd569089(WS.10).aspx)。
 
 假设你想要将 ContactManager.Mvc web 应用程序项目部署到测试环境中，通过运行*。 deploy.cmd*文件。 你的测试环境配置为使用 Web 部署远程代理服务中所述[配置用于 Web 部署发布 （远程代理） 的 Web 服务器](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent.md)。 若要部署 web 应用程序，你需要完成后续步骤。
 
@@ -101,11 +101,11 @@ ms.lasthandoff: 11/10/2017
 [!code-console[Main](deploying-web-packages/samples/sample3.cmd)]
 
 
-有关详细信息使用*。 deploy.cmd*文件来部署 web 包信息，请参阅[如何： 安装部署包 Using deploy.cmd 文件](https://msdn.microsoft.com/en-us/library/ff356104.aspx)。
+有关详细信息使用*。 deploy.cmd*文件来部署 web 包信息，请参阅[如何： 安装部署包 Using deploy.cmd 文件](https://msdn.microsoft.com/library/ff356104.aspx)。
 
 ## <a name="using-msdeployexe"></a>使用 MSDeploy.exe
 
-尽管使用*。 deploy.cmd*文件通常可简化部署过程，有一些情况下直接使用 MSDeploy.exe 更可取的方法时。 例如: 
+尽管使用*。 deploy.cmd*文件通常可简化部署过程，有一些情况下直接使用 MSDeploy.exe 更可取的方法时。 例如:
 
 - 如果你想要将部署到 Web 部署处理程序中作为非管理员用户，则无法使用*。 deploy.cmd*文件。 这是因为 Web Deploy 2.0 中的 bug 下所述**终结点注意事项**。
 - 如果你想要手动切换不同*SetParameters.xml*不同位置中的文件，你可能希望直接使用 MSDeploy.exe。
@@ -115,21 +115,21 @@ ms.lasthandoff: 11/10/2017
 
 - A **– 源**参数可指示你的数据来源于何处。
 - A **– dest**参数可指示在何处你的数据到。
-- A **– 谓词**参数可指示[操作](https://technet.microsoft.com/en-us/library/dd568989(WS.10).aspx)你想要执行。
+- A **– 谓词**参数可指示[操作](https://technet.microsoft.com/library/dd568989(WS.10).aspx)你想要执行。
 
-MSDeploy.exe 依赖于[Web Deploy 提供程序](https://technet.microsoft.com/en-us/library/dd569040(WS.10).aspx)处理源和目标数据。 Web 部署包括大量的表示范围内的应用程序和数据源，它就能使用 （&） #x 2014年的提供程序; 例如，有提供程序的 SQL Server 数据库、 IIS web 服务器、 证书、 全局程序集缓存 (GAC) 程序集，各种不同的配置文件和很多其他类型的数据。 这两个**– 源**参数和**– dest**参数必须指定一个提供程序，在窗体中**– 源**: [*providerName*] = [*位置*]。 当你要部署到 IIS 网站的 web 包时，您应使用这些值：
+MSDeploy.exe 依赖于[Web Deploy 提供程序](https://technet.microsoft.com/library/dd569040(WS.10).aspx)处理源和目标数据。 Web 部署包括大量的表示范围内的应用程序和数据源，它就能使用 （&） #x 2014年的提供程序; 例如，有提供程序的 SQL Server 数据库、 IIS web 服务器、 证书、 全局程序集缓存 (GAC) 程序集，各种不同的配置文件和很多其他类型的数据。 这两个**– 源**参数和**– dest**参数必须指定一个提供程序，在窗体中**– 源**: [*providerName*] = [*位置*]。 当你要部署到 IIS 网站的 web 包时，您应使用这些值：
 
-- **– 源**提供程序始终[包](https://technet.microsoft.com/en-us/library/dd569019(WS.10).aspx)。 例如: 
+- **– 源**提供程序始终[包](https://technet.microsoft.com/library/dd569019(WS.10).aspx)。 例如:
 
     [!code-console[Main](deploying-web-packages/samples/sample4.cmd)]
-- **– Dest**提供程序始终[自动](https://technet.microsoft.com/en-us/library/dd569016(WS.10).aspx)。例如: 
+- **– Dest**提供程序始终[自动](https://technet.microsoft.com/library/dd569016(WS.10).aspx)。例如:
 
     [!code-console[Main](deploying-web-packages/samples/sample5.cmd)]
 - **– 谓词**始终**同步**。
 
     [!code-console[Main](deploying-web-packages/samples/sample6.cmd)]
 
-此外，你将需要指定各种其他[特定于提供程序的设置](https://technet.microsoft.com/en-us/library/dd569001(WS.10).aspx)和常规[操作设置](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx)。 例如，假设你想要部署到过渡环境 ContactManager.Mvc web 应用程序。 部署面向 Web 部署处理程序，并且必须使用基本身份验证。 若要部署 web 应用程序，你需要完成后续步骤。
+此外，你将需要指定各种其他[特定于提供程序的设置](https://technet.microsoft.com/library/dd569001(WS.10).aspx)和常规[操作设置](https://technet.microsoft.com/library/dd569089(WS.10).aspx)。 例如，假设你想要部署到过渡环境 ContactManager.Mvc web 应用程序。 部署面向 Web 部署处理程序，并且必须使用基本身份验证。 若要部署 web 应用程序，你需要完成后续步骤。
 
 **部署 web 应用程序使用 MSDeploy.exe**
 
@@ -145,7 +145,7 @@ MSDeploy.exe 依赖于[Web Deploy 提供程序](https://technet.microsoft.com/en
 - **– 源**参数指定**包**提供程序，并指示 web 包的位置。
 - **– Dest**参数指定**自动**提供程序。 **ComputerName**设置目标服务器上提供的 Web 部署处理程序的服务 URL。 **Authtype**设置指示你想要使用基本身份验证，并且这种情况下，你需要提供**用户名**和**密码**。 最后， **includeAcls ="False"**设置指示你不想要将文件的访问控制列表 (Acl) 复制到目标服务器源 web 应用程序中。
 - **– 谓词： 同步**参数指示你想要复制的目标服务器上的源内容。
-- **– DisableLink**参数指示你不想要复制应用程序池、 虚拟目录配置或在目标服务器上的安全套接字层 (SSL) 证书。 有关详细信息，请参阅[Web 部署链接扩展](https://technet.microsoft.com/en-us/library/dd569028(WS.10).aspx)。
+- **– DisableLink**参数指示你不想要复制应用程序池、 虚拟目录配置或在目标服务器上的安全套接字层 (SSL) 证书。 有关详细信息，请参阅[Web 部署链接扩展](https://technet.microsoft.com/library/dd569028(WS.10).aspx)。
 - **– SetParamFile**参数提供的位置*SetParameters.xml*文件。
 - **– AllowUntrusted**开关表示 Web 部署应接受不受信任的证书颁发机构颁发的 SSL 证书。 如果你正在将它们部署到 Web 的部署处理程序，并且你已使用自签名的证书来保护服务 URL，你需要包含此开关。
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/introduction
-ms.openlocfilehash: b98027ee0e7c63bac23054d7623f28294388dede
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: b02ef9121e50ab9d9f24032d32f1e65fe73049c0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-data-protection"></a>数据保护简介
 
@@ -31,7 +31,7 @@ ASP.NET 核心数据保护堆栈旨在用作的长期替代<machineKey>在 ASP.N
 
 最后，由于现代应用程序已被组件化，我们已了解是各个组件将想要利用此系统而不考虑其他组件在系统中。 例如，如果持有者令牌组件使用此堆栈，它应运行，而不从一种反 CSRF 机制，也可能使用相同的堆栈的干扰。 因此最后一项要求： 隔离。
 
-我们可以提供进一步的约束为了缩小我们的要求的范围。 我们假定加密系统内运行的所有服务都都同样受信任而，数据不需要使用外部下我们直接控制服务或生成。 此外，我们需要操作是尽可能快，因为 web 服务的每个请求可能会经过加密系统一个或多个时间。 这样，可以对称加密适合我们的方案，而且我们可以如需要的时间之前折扣非对称加密。
+我们可以提供进一步的约束为了缩小我们的要求的范围。 我们假定加密系统内运行的所有服务都都同样受信任而数据不需要使用外部下我们直接控制服务或生成。 此外，我们需要操作是尽可能快，因为 web 服务的每个请求可能会经过加密系统一个或多个时间。 这样，可以对称加密适合我们的方案，而且我们可以如具有所需的时间之前折扣非对称加密。
 
 ## <a name="design-philosophy"></a>设计理念
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 425335d72643da39faee6e457d552c9faa6a1f5f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d031cd760fb578d29626933eed39fe987ef796d7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-basic-crud-functionality-with-the-entity-framework-in-aspnet-mvc-application-2-of-10"></a>在 ASP.NET MVC 应用程序 (2 个 10) 中实现与实体框架的基本 CRUD 功能
 ====================
@@ -71,7 +71,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="updating-the-create-page"></a>更新创建页
 
-1. 在*Controllers\StudentController.cs*，替换`HttpPost``Create`操作方法替换为以下代码以添加`try-catch`块和[绑定属性](https://msdn.microsoft.com/en-us/library/system.web.mvc.bindattribute(v=vs.108).aspx)到基架方法： 
+1. 在*Controllers\StudentController.cs*，替换`HttpPost``Create`操作方法替换为以下代码以添加`try-catch`块和[绑定属性](https://msdn.microsoft.com/library/system.web.mvc.bindattribute(v=vs.108).aspx)到基架方法： 
 
     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample4.cs?highlight=4,7-8,14-20)]
 
@@ -86,7 +86,7 @@ ms.lasthandoff: 11/10/2017
     > 
     > [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample5.cs?highlight=7)]
     > 
-    > Even if you don't have a `Secret` field on the web page, a hacker could use a tool such as [fiddler](http://fiddler2.com/home), or write some JavaScript, to post a `Secret` form value. Without the [Bind](https://msdn.microsoft.com/en-us/library/system.web.mvc.bindattribute(v=vs.108).aspx) attribute limiting the fields that the model binder uses when it creates a `Student` instance*,* the model binder would pick up that `Secret` form value and use it to update the `Student` entity instance. Then whatever value the hacker specified for the `Secret` form field would be updated in your database. The following image shows the fiddler tool adding the `Secret` field (with the value "OverPost") to the posted form values.
+    > Even if you don't have a `Secret` field on the web page, a hacker could use a tool such as [fiddler](http://fiddler2.com/home), or write some JavaScript, to post a `Secret` form value. Without the [Bind](https://msdn.microsoft.com/library/system.web.mvc.bindattribute(v=vs.108).aspx) attribute limiting the fields that the model binder uses when it creates a `Student` instance*,* the model binder would pick up that `Secret` form value and use it to update the `Student` entity instance. Then whatever value the hacker specified for the `Secret` form field would be updated in your database. The following image shows the fiddler tool adding the `Secret` field (with the value "OverPost") to the posted form values.
     > 
     > ![](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image6.png)  
     > 
@@ -96,7 +96,7 @@ ms.lasthandoff: 11/10/2017
     > 
     > Another alternative approach, and one preferred by many, is to use only view models with model binding. The view model contains only the properties you want to bind. Once the MVC model binder has finished, you copy the view model properties to the entity instance.
 
-    Other than the `Bind` attribute, the `try-catch` block is the only change you've made to the scaffolded code. If an exception that derives from [DataException](https://msdn.microsoft.com/en-us/library/system.data.dataexception.aspx) is caught while the changes are being saved, a generic error message is displayed. [DataException](https://msdn.microsoft.com/en-us/library/system.data.dataexception.aspx) exceptions are sometimes caused by something external to the application rather than a programming error, so the user is advised to try again. Although not implemented in this sample, a production quality application would log the exception (and non-null inner exceptions ) with a logging mechanism such as [ELMAH](https://code.google.com/p/elmah/).
+    Other than the `Bind` attribute, the `try-catch` block is the only change you've made to the scaffolded code. If an exception that derives from [DataException](https://msdn.microsoft.com/library/system.data.dataexception.aspx) is caught while the changes are being saved, a generic error message is displayed. [DataException](https://msdn.microsoft.com/library/system.data.dataexception.aspx) exceptions are sometimes caused by something external to the application rather than a programming error, so the user is advised to try again. Although not implemented in this sample, a production quality application would log the exception (and non-null inner exceptions ) with a logging mechanism such as [ELMAH](https://code.google.com/p/elmah/).
 
     The code in *Views\Student\Create.cshtml* is similar to what you saw in *Details.cshtml*, except that `EditorFor` and `ValidationMessageFor` helpers are used for each field instead of `DisplayFor`. The following example shows the relevant code:
 
@@ -125,17 +125,17 @@ ms.lasthandoff: 11/10/2017
 
 在*Controllers\StudentController.cs*、 `HttpGet` `Edit`方法 (而不是`HttpPost`属性) 使用`Find`方法来检索所选`Student`作为你看到的实体，在`Details`方法。 你不需要更改此方法。
 
-但是，替换`HttpPost``Edit`操作方法替换为以下代码以添加`try-catch`块和[绑定属性](https://msdn.microsoft.com/en-us/library/system.web.mvc.bindattribute(v=vs.108).aspx):
+但是，替换`HttpPost``Edit`操作方法替换为以下代码以添加`try-catch`块和[绑定属性](https://msdn.microsoft.com/library/system.web.mvc.bindattribute(v=vs.108).aspx):
 
 [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample8.cs)]
 
-此代码将类似于你在中看到`HttpPost``Create`方法。 但是，而不是添加到实体集模型联编程序所创建的实体，此代码，该值指示它已被更改的实体上设置的标志。 当[SaveChanges](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx)调用方法时，[已修改](https://msdn.microsoft.com/en-us/library/system.data.entitystate.aspx)标志会导致实体框架创建 SQL 语句，以更新数据库行。 将更新的数据库行所有列，包括用户没有更改，并且会忽略并发冲突。 （你将了解如何在本系列后面的教程中处理并发）。
+此代码将类似于你在中看到`HttpPost``Create`方法。 但是，而不是添加到实体集模型联编程序所创建的实体，此代码，该值指示它已被更改的实体上设置的标志。 当[SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx)调用方法时，[已修改](https://msdn.microsoft.com/library/system.data.entitystate.aspx)标志会导致实体框架创建 SQL 语句，以更新数据库行。 将更新的数据库行所有列，包括用户没有更改，并且会忽略并发冲突。 （你将了解如何在本系列后面的教程中处理并发）。
 
 ### <a name="entity-states-and-the-attach-and-savechanges-methods"></a>实体状态的附加和 SaveChanges 方法
 
-是否在内存中的实体是在数据库中，其对应行与同步，此信息确定在调用时，会发生什么情况，将跟踪的数据库上下文`SaveChanges`方法。 例如，当传递到新实体[添加](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset.add(v=vs.103).aspx)方法，该实体的状态设置为方法`Added`。 然后调用[SaveChanges](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx)方法，数据库上下文发出 SQL`INSERT`命令。
+是否在内存中的实体是在数据库中，其对应行与同步，此信息确定在调用时，会发生什么情况，将跟踪的数据库上下文`SaveChanges`方法。 例如，当传递到新实体[添加](https://msdn.microsoft.com/library/system.data.entity.dbset.add(v=vs.103).aspx)方法，该实体的状态设置为方法`Added`。 然后调用[SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx)方法，数据库上下文发出 SQL`INSERT`命令。
 
-实体可能之一[以下状态](https://msdn.microsoft.com/en-us/library/system.data.entitystate.aspx):
+实体可能之一[以下状态](https://msdn.microsoft.com/library/system.data.entitystate.aspx):
 
 - `Added`。 实体在数据库中尚不存在。 `SaveChanges`方法必须发出`INSERT`语句。
 - `Unchanged`。 无需使用通过此实体完成`SaveChanges`方法。 当从数据库读取实体时，该实体开始时具有此状态。
@@ -145,9 +145,9 @@ ms.lasthandoff: 11/10/2017
 
 在桌面应用中，通常会自动设置状态更改。 在桌面类型的应用程序，你可以阅读实体并对它的一些属性值进行更改。 这将导致其实体状态自动更改为`Modified`。 然后调用`SaveChanges`，实体框架生成 SQL`UPDATE`更新仅你更改的实际属性的语句。
 
-Web 应用断开连接的特性不允许对此连续序列。 [DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=VS.103).aspx)读取实体已释放之后呈现一个页面。 当`HttpPost``Edit`操作方法调用、 新的请求进行并且您具有的新实例[DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=VS.103).aspx)，因此你必须手动将实体状态设置为`Modified.`然后当调用`SaveChanges`，实体框架更新数据库行中，所有的列，因为上下文具有无法知道您更改了哪些属性。
+Web 应用断开连接的特性不允许对此连续序列。 [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx)读取实体已释放之后呈现一个页面。 当`HttpPost``Edit`操作方法调用、 新的请求进行并且您具有的新实例[DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx)，因此你必须手动将实体状态设置为`Modified.`然后当调用`SaveChanges`，实体框架更新数据库行中，所有的列，因为上下文具有无法知道您更改了哪些属性。
 
-如果你想 SQL`Update`语句才能更新字段的用户实际更改，以便它们可用时，可以以某种方式 （如隐藏字段） 保存的原始值`HttpPost``Edit`调用方法。 然后你可以创建`Student`实体使用原始值，调用`Attach`实体，该原始版本的方法的新值更新实体的值，然后调用`SaveChanges.`详细信息，请参阅[实体状态和 SaveChanges](https://msdn.microsoft.com/en-us/data/jj592676)和[本地数据](https://msdn.microsoft.com/en-us/data/jj592872)MSDN 数据开发人员中心中。
+如果你想 SQL`Update`语句才能更新字段的用户实际更改，以便它们可用时，可以以某种方式 （如隐藏字段） 保存的原始值`HttpPost``Edit`调用方法。 然后你可以创建`Student`实体使用原始值，调用`Attach`实体，该原始版本的方法的新值更新实体的值，然后调用`SaveChanges.`详细信息，请参阅[实体状态和 SaveChanges](https://msdn.microsoft.com/data/jj592676)和[本地数据](https://msdn.microsoft.com/data/jj592872)MSDN 数据开发人员中心中。
 
 中的代码*Views\Student\Edit.cshtml*类似于你在中看到*Create.cshtml*，并需进行任何更改。
 
@@ -171,12 +171,12 @@ Web 应用断开连接的特性不允许对此连续序列。 [DbContext](https:
 
     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample9.cs)]
 
-    此代码接受[可选](https://msdn.microsoft.com/en-us/library/dd264739.aspx)布尔参数可指示是否它在无法保存更改之后调用。 此参数是`false`时`HttpGet``Delete`不上一次失败的情况下调用方法。 当调用`HttpPost``Delete`方法中对数据库更新错误响应，该参数是`true`和一条错误消息传递给视图。
+    此代码接受[可选](https://msdn.microsoft.com/library/dd264739.aspx)布尔参数可指示是否它在无法保存更改之后调用。 此参数是`false`时`HttpGet``Delete`不上一次失败的情况下调用方法。 当调用`HttpPost``Delete`方法中对数据库更新错误响应，该参数是`true`和一条错误消息传递给视图。
 - 替换`HttpPost``Delete`操作方法 (名为`DeleteConfirmed`) 替换为以下代码，该执行实际的删除操作并捕获任何数据库更新错误。
 
     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample10.cs)]
 
-    此代码检索所选的实体，然后调用[删除](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset.remove(v=vs.103).aspx)方法将实体的状态设置为`Deleted`。 当`SaveChanges`调用时，SQL`DELETE`生成命令。 您还已更改的操作方法名称`DeleteConfirmed`到`Delete`。 名为的基架的代码`HttpPost``Delete`方法`DeleteConfirmed`以便`HttpPost`方法一个唯一的签名。 （CLR 需要具有不同的方法参数的重载的方法。）签名是唯一的现在可以坚持使用 MVC 约定，使用相同的名称用于`HttpPost`和`HttpGet`删除方法。
+    此代码检索所选的实体，然后调用[删除](https://msdn.microsoft.com/library/system.data.entity.dbset.remove(v=vs.103).aspx)方法将实体的状态设置为`Deleted`。 当`SaveChanges`调用时，SQL`DELETE`生成命令。 您还已更改的操作方法名称`DeleteConfirmed`到`Delete`。 名为的基架的代码`HttpPost``Delete`方法`DeleteConfirmed`以便`HttpPost`方法一个唯一的签名。 （CLR 需要具有不同的方法参数的重载的方法。）签名是唯一的现在可以坚持使用 MVC 约定，使用相同的名称用于`HttpPost`和`HttpGet`删除方法。
 
     如果提高大容量应用程序中的性能是优先级，则无法避免不必要的 SQL 查询，以检索行，通过将调用的代码行`Find`和`Remove`方法替换为以下代码黄色中所示突出显示：
 
@@ -196,7 +196,7 @@ Web 应用断开连接的特性不允许对此连续序列。 [DbContext](https:
 
 ## <a name="ensuring-that-database-connections-are-not-left-open"></a>确保数据库连接不保持打开状态
 
-若要确保能正确关闭数据库连接，并且它们具有向上已释放的资源，你应该会看到与其上下文实例已释放。 就是为什么基架的代码提供[释放](https://msdn.microsoft.com/en-us/library/system.idisposable.dispose(v=vs.110).aspx)方法末尾`StudentController`类*StudentController.cs*，下面的示例中所示：
+若要确保能正确关闭数据库连接，并且它们具有向上已释放的资源，你应该会看到与其上下文实例已释放。 就是为什么基架的代码提供[释放](https://msdn.microsoft.com/library/system.idisposable.dispose(v=vs.110).aspx)方法末尾`StudentController`类*StudentController.cs*，下面的示例中所示：
 
 [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample13.cs)]
 
@@ -204,7 +204,7 @@ Web 应用断开连接的特性不允许对此连续序列。 [DbContext](https:
 
 ## <a name="summary"></a>摘要
 
-你现在具有一组完整的执行有关的简单 CRUD 操作的页`Student`实体。 MVC 帮助器用于生成数据字段的 UI 元素。 MVC 帮助器有关的详细信息，请参阅[呈现窗体使用 HTML 帮助器](https://msdn.microsoft.com/en-us/library/dd410596(v=VS.98).aspx)（该页是 MVC 3 且不仍适用于 MVC 4）。
+你现在具有一组完整的执行有关的简单 CRUD 操作的页`Student`实体。 MVC 帮助器用于生成数据字段的 UI 元素。 MVC 帮助器有关的详细信息，请参阅[呈现窗体使用 HTML 帮助器](https://msdn.microsoft.com/library/dd410596(v=VS.98).aspx)（该页是 MVC 3 且不仍适用于 MVC 4）。
 
 在下一教程将通过添加排序和分页扩展索引页的功能。
 

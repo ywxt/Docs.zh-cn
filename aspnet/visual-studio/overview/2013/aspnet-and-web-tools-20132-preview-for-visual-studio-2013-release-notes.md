@@ -12,15 +12,15 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: d3a8183fecaf830b2ee1211acd56da86454b4437
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0e7ad52662f7ceaa1f087d007d0b14b610f90bee
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-and-web-tools-20132--for-visual-studio-2013-release-notes"></a>ASP.NET 和 Web Tools 2013.2 for Visual Studio 2013 发行说明
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 ## <a name="installation-notes"></a>安装说明
 
@@ -78,7 +78,7 @@ ASP.NET 和 Web Tools for Visual Studio 2013.2 需要 Visual Studio 2013。
 
 按 Ctrl+F5 运行应用程序。 按照说明信任 IIS Express 生成的自签名的证书。
 
-![SSL 警告](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image3.png)
+![SSL Warning](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image3.png)
 
 读取**安全警告**对话框，然后单击**是**如果你想要安装表示本地主机的证书。
 
@@ -232,10 +232,10 @@ NuGet 2.8.1 RTM 将在 2014 年 4 月发布。 以下是从发行说明中，突
 <a id="ef"></a>
 ### <a name="entity-framework-61"></a>实体框架 6.1
 
-实体框架已更新为版本 6.1 运行时和工具。 Entity Framework (EF) 6.1 到 Entity Framework 6 的一项次要更新，并包含大量的 bug 修复和新功能。 有关详细信息 EF6.1，包括指向文档的新功能，请参阅[实体框架版本历史记录](https://msdn.microsoft.com/en-US/data/jj574253)。 此版本中的新功能包括：
+实体框架已更新为版本 6.1 运行时和工具。 Entity Framework (EF) 6.1 到 Entity Framework 6 的一项次要更新，并包含大量的 bug 修复和新功能。 有关详细信息 EF6.1，包括指向文档的新功能，请参阅[实体框架版本历史记录](https://msdn.microsoft.com/data/jj574253)。 此版本中的新功能包括：
 
 - **工具合并**提供一致的方法来创建新的 EF 模型。 此功能扩展 ADO.NET 实体数据模型向导，以支持创建 Code First 模型，包括从现有数据库反向工程。 这些功能都在 EF Power Tools Beta 质量以前不可用。
-- **处理的事务提交失败**提供新[System.Data.Entity.Infrastructure.CommitFailureHandler](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.commitfailurehandler(v=vs.113).aspx)这样使用新引入的功能截获事务操作。 **CommitFailureHandler**允许从连接故障自动恢复，同时提交事务。
+- **处理的事务提交失败**提供新[System.Data.Entity.Infrastructure.CommitFailureHandler](https://msdn.microsoft.com/library/system.data.entity.infrastructure.commitfailurehandler(v=vs.113).aspx)这样使用新引入的功能截获事务操作。 **CommitFailureHandler**允许从连接故障自动恢复，同时提交事务。
 - **IndexAttribute**允许要置于 Code First 模型的属性 （或属性） 的某个属性指定的索引。 代码首先将然后创建相应的索引在数据库中。
 - **公共映射 API**提供对 EF 对如何属性和类型映射到列和表在数据库中的信息的访问。 在以前的版本此 API 是内部。
 - **能够配置通过 App/Web.config 文件的拦截器**（允许拦截器添加无需重新编译应用程序）。

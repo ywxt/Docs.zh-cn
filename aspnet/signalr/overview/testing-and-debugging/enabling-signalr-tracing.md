@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/testing-and-debugging/enabling-signalr-tracing
 msc.type: authoredcontent
-ms.openlocfilehash: 2f01ab5d66e44cd82634f1b3df1ca6c78b7fd9d5
-ms.sourcegitcommit: c07fb5cb5df0a12f9fe6735fcbc90964608fa687
+ms.openlocfilehash: ac979acf162084a195bb769f842e77ad2498c7f3
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="enabling-signalr-tracing"></a>启用 SignalR 跟踪
 ====================
@@ -61,7 +61,7 @@ ms.lasthandoff: 11/14/2017
 <a id="server"></a>
 ## <a name="enabling-tracing-on-the-server"></a>在服务器上启用跟踪
 
-启用应用程序的配置文件 （App.config 或 Web.config，具体取决于项目的类型。） 中的服务器的跟踪你指定要记录的事件的类别。 在配置文件中，你还指定是否事件记录到文本文件、 Windows 事件日志中或使用的实现一个自定义日志[TraceListener](https://msdn.microsoft.com/en-us/library/system.diagnostics.tracelistener(v=vs.110).aspx)。
+启用应用程序的配置文件 （App.config 或 Web.config，具体取决于项目的类型。） 中的服务器的跟踪你指定要记录的事件的类别。 在配置文件中，你还指定是否事件记录到文本文件、 Windows 事件日志中或使用的实现一个自定义日志[TraceListener](https://msdn.microsoft.com/library/system.diagnostics.tracelistener(v=vs.110).aspx)。
 
 服务器事件类别包括以下类型的消息：
 
@@ -87,7 +87,7 @@ ms.lasthandoff: 11/14/2017
 
 [!code-html[Main](enabling-signalr-tracing/samples/sample1.html)]
 
-在上面的代码，`SignalRSwitch`条目指定[TraceLevel](https://msdn.microsoft.com/en-us/library/system.diagnostics.tracelevel(v=vs.110).aspx)用于发送到指定的日志的事件。 在这种情况下，设置为`Verbose`这意味着所有的调试和跟踪消息记录。
+在上面的代码，`SignalRSwitch`条目指定[TraceLevel](https://msdn.microsoft.com/library/system.diagnostics.tracelevel(v=vs.110).aspx)用于发送到指定的日志的事件。 在这种情况下，设置为`Verbose`这意味着所有的调试和跟踪消息记录。
 
 下面的输出显示的条目`transports.log.txt`使用上面的配置文件的应用程序的文件。 显示一个新连接、 已删除的连接和传输检测信号事件。
 
@@ -112,9 +112,9 @@ ms.lasthandoff: 11/14/2017
 <a id="net_client"></a>
 ## <a name="enabling-tracing-in-the-net-client-windows-desktop-apps"></a>在.NET 客户端 （仅限 Windows 桌面应用） 中启用跟踪
 
-.NET 客户端控制台中，一个文本文件，或使用的实现自定义日志可以记录事件[TextWriter](https://msdn.microsoft.com/en-us/library/system.io.textwriter.aspx)。
+.NET 客户端控制台中，一个文本文件，或使用的实现自定义日志可以记录事件[TextWriter](https://msdn.microsoft.com/library/system.io.textwriter.aspx)。
 
-若要启用日志记录在.NET 客户端中，设置连接的`TraceLevel`属性[TraceLevels](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.tracelevels(v=vs.118).aspx)值，与`TraceWriter`到有效的属性[TextWriter](https://msdn.microsoft.com/en-us/library/system.io.textwriter.aspx)实例。
+若要启用日志记录在.NET 客户端中，设置连接的`TraceLevel`属性[TraceLevels](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.tracelevels(v=vs.118).aspx)值，与`TraceWriter`到有效的属性[TextWriter](https://msdn.microsoft.com/library/system.io.textwriter.aspx)实例。
 
 <a id="desktop_console"></a>
 ### <a name="logging-desktop-client-events-to-the-console"></a>桌面客户端事件记录到控制台
@@ -137,23 +137,23 @@ ms.lasthandoff: 11/14/2017
 <a id="phone"></a>
 ## <a name="enabling-tracing-in-windows-phone-8-clients"></a>在 Windows Phone 8 客户端中启用跟踪
 
-对于 Windows Phone 应用程序的 SignalR 应用程序使用相同的.NET 客户端作为桌面应用，但[Console.Out](https://msdn.microsoft.com/en-us/library/system.console.out(v=vs.110).aspx)和写入的文件[StreamWriter](https://msdn.microsoft.com/en-us/library/system.io.streamwriter(v=vs.110).aspx)不可用。 相反，你需要创建的自定义实现[TextWriter](https://msdn.microsoft.com/en-us/library/system.io.textwriter(v=vs.110).aspx)跟踪。 
+对于 Windows Phone 应用程序的 SignalR 应用程序使用相同的.NET 客户端作为桌面应用，但[Console.Out](https://msdn.microsoft.com/library/system.console.out(v=vs.110).aspx)和写入的文件[StreamWriter](https://msdn.microsoft.com/library/system.io.streamwriter(v=vs.110).aspx)不可用。 相反，你需要创建的自定义实现[TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx)跟踪。 
 
 <a id="phone_ui"></a>
 ### <a name="logging-windows-phone-client-events-to-the-ui"></a>Windows Phone 客户端事件记录到 UI
 
-[SignalR 基本代码](https://github.com/SignalR/SignalR/archive/master.zip)包括将跟踪输出写入一个 Windows Phone 示例[TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)使用自定义[TextWriter](https://msdn.microsoft.com/en-us/library/system.io.textwriter(v=vs.110).aspx)实现调用`TextBlockWriter`。 此类可在**samples/Microsoft.AspNet.SignalR.Client.WP8.Samples**项目。 创建的实例时`TextBlockWriter`，在当前传递[SynchronizationContext](https://msdn.microsoft.com/en-us/library/system.threading.synchronizationcontext(v=vs.110).aspx)，和一个[StackPanel](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx)其中它将创建[TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)要用于跟踪输出：
+[SignalR 基本代码](https://github.com/SignalR/SignalR/archive/master.zip)包括将跟踪输出写入一个 Windows Phone 示例[TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)使用自定义[TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx)实现调用`TextBlockWriter`。 此类可在**samples/Microsoft.AspNet.SignalR.Client.WP8.Samples**项目。 创建的实例时`TextBlockWriter`，在当前传递[SynchronizationContext](https://msdn.microsoft.com/library/system.threading.synchronizationcontext(v=vs.110).aspx)，和一个[StackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx)其中它将创建[TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)要用于跟踪输出：
 
 [!code-csharp[Main](enabling-signalr-tracing/samples/sample7.cs)]
 
-然后将将跟踪输出写入到新[TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)中创建[StackPanel](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx)中传递：
+然后将将跟踪输出写入到新[TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)中创建[StackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx)中传递：
 
 ![](enabling-signalr-tracing/_static/image2.png)
 
 <a id="phone_debug"></a>
 ### <a name="logging-windows-phone-client-events-to-the-debug-console"></a>Windows Phone 客户端事件记录到调试控制台
 
-若要将输出发送到调试控制台而不是 UI 中，创建的实现[TextWriter](https://msdn.microsoft.com/en-us/library/system.io.textwriter(v=vs.110).aspx) ，写入调试窗口中，并将其分配给连接的[TraceWriter](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.connection.tracewriter(v=vs.118).aspx)属性：
+若要将输出发送到调试控制台而不是 UI 中，创建的实现[TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx) ，写入调试窗口中，并将其分配给连接的[TraceWriter](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.connection.tracewriter(v=vs.118).aspx)属性：
 
 [!code-csharp[Main](enabling-signalr-tracing/samples/sample8.cs)]
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d7082808d4aeb21767524c1e687dd688324d4d46
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 41e1f8673b42571a9dcbdae668a30426fe90f42f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="logging-error-details-with-elmah-vb"></a>使用 ELMAH (VB) 日志记录错误详细信息
 ====================
@@ -254,7 +254,7 @@ ELMAH 提供有关 ASP.NET web 应用程序中的日志记录错误的简单但�
 - [ELMAH 项目页](https://code.google.com/p/elmah/)（源的代码、 示例、 wiki）
 - [插入 ELMAH 到 Web 应用程序到捕获未经处理的异常](http://screencastaday.com/ScreenCasts/43_Plugging_Elmah_into_Web_Application_to_Catch_Unhandled_Exceptions.aspx)（视频）
 - [安全错误日志页](https://code.google.com/p/elmah/wiki/SecuringErrorLogPages)
-- [使用 HTTP 模块和处理程序创建可插入 ASP.NET 组件](https://msdn.microsoft.com/en-us/library/aa479332.aspx)
+- [使用 HTTP 模块和处理程序创建可插入 ASP.NET 组件](https://msdn.microsoft.com/library/aa479332.aspx)
 - [网站安全教程](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
 >[!div class="step-by-step"]

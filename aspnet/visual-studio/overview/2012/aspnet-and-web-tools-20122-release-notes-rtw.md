@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw
 msc.type: content
-ms.openlocfilehash: b9abad56a5a5b9219f92cc5b96efee7250a97c55
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ab1642f1a3de298919aa9c6c1ddbd6bbb0cb99b5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-and-web-tools-20122-release-notes"></a>ASP.NET 和 Web Tools 2012.2 发行说明
 ====================
@@ -152,7 +152,7 @@ ASP.NET Web API OData 当前支持以下功能：
 
 #### <a name="aspnet-web-api-tracing"></a>ASP.NET Web API 跟踪
 
-ASP.NET Web API 跟踪与.NET 跟踪集成，从你的 web Api 的跟踪数据。 默认情况下，Web API 项目模板中现在启用它。 跟踪数据的你的 web Api 发送到输出窗口和通过 IntelliTrace。 ASP.NET Web API Tracing 使您能够了解你的 Web API 时通过与集成在 Windows Azure 上托管的跟踪信息[Windows Azure 诊断](https://msdn.microsoft.com/en-us/library/windowsazure/hh411529.aspx)。 此外可以安装并启用在使用 ASP.NET Web API 跟踪 NuGet 包的任何应用程序中的 ASP.NET Web API Tracing ([http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing](http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing))。
+ASP.NET Web API 跟踪与.NET 跟踪集成，从你的 web Api 的跟踪数据。 默认情况下，Web API 项目模板中现在启用它。 跟踪数据的你的 web Api 发送到输出窗口和通过 IntelliTrace。 ASP.NET Web API Tracing 使您能够了解你的 Web API 时通过与集成在 Windows Azure 上托管的跟踪信息[Windows Azure 诊断](https://msdn.microsoft.com/library/windowsazure/hh411529.aspx)。 此外可以安装并启用在使用 ASP.NET Web API 跟踪 NuGet 包的任何应用程序中的 ASP.NET Web API Tracing ([http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing](http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing))。
 
 有关配置和使用 ASP.NET Web API Tracing 的详细信息请参阅[https://go.microsoft.com/fwlink/?LinkID=269874](https://go.microsoft.com/fwlink/?LinkID=269874)。
 
@@ -283,7 +283,7 @@ Facebook 应用程序模板允许用户轻松地创建一个 Web API 控制器�
 
 函数 todoList.prototype.addTodo 中，添加以下 blacked 的文本：  
  **self.isSelected(true);**  
- self.newTodoTitle (&quot;&quot;);
+ self.newTodoTitle(&quot;&quot;);
 
 Index.cshtml 文件中，添加以下 blacked 的文本：  
  &lt;窗体数据绑定 =&quot;提交： addTodo&quot;&gt;  

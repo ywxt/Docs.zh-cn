@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6e5bc0d9ac26801f48560cf07d4a0ab3854d5f74
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 604aa63919a881e828b6a3620360c3d1133c5830
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="formatting-the-datalist-and-repeater-based-upon-data-c"></a>格式设置的 DataList 和转发器取决于数据 (C#)
 ====================
@@ -40,25 +40,25 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="using-theitemdataboundevent-handler"></a>使用`ItemDataBound`事件处理程序
 
-当数据绑定到 DataList，从数据源控件或通过以编程方式将数据分配给控件 s`DataSource`属性和调用其`DataBind()`方法，DataList 的`DataBinding`事件触发时，枚举，数据源并且每个数据记录绑定到 DataList。 为数据源中的每个记录，DataList 创建[ `DataListItem` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalistitem.aspx)对象，该对象，然后绑定到当前记录。 在此过程中，DataList 引发两个事件：
+当数据绑定到 DataList，从数据源控件或通过以编程方式将数据分配给控件 s`DataSource`属性和调用其`DataBind()`方法，DataList 的`DataBinding`事件触发时，枚举，数据源并且每个数据记录绑定到 DataList。 为数据源中的每个记录，DataList 创建[ `DataListItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistitem.aspx)对象，该对象，然后绑定到当前记录。 在此过程中，DataList 引发两个事件：
 
 - **`ItemCreated`**之后，将引发`DataListItem`已创建
 - **`ItemDataBound`**当前记录已绑定到之后激发`DataListItem`
 
 以下步骤概述 DataList 控件的数据绑定过程。
 
-1. DataList s [ `DataBinding`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.control.databinding.aspx)激发
+1. DataList s [ `DataBinding`事件](https://msdn.microsoft.com/library/system.web.ui.control.databinding.aspx)激发
 2. 将数据绑定到 DataList  
   
  为数据源中的每个记录 
 
     1. 创建`DataListItem`对象
-    2. 激发[`ItemCreated`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.itemcreated.aspx)
+    2. 激发[`ItemCreated`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.itemcreated.aspx)
     3. 将绑定到记录`DataListItem`
-    4. 激发[`ItemDataBound`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.itemdatabound.aspx)
+    4. 激发[`ItemDataBound`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.itemdatabound.aspx)
     5. 添加`DataListItem`到`Items`集合
 
-将数据绑定到转发器控件，当执行过程通过完全相同的步骤序列。 唯一的区别是而不是`DataListItem`正在创建的实例，中继器使用[ `RepeaterItem` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeateritem(VS.80).aspx)s。
+将数据绑定到转发器控件，当执行过程通过完全相同的步骤序列。 唯一的区别是而不是`DataListItem`正在创建的实例，中继器使用[ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem(VS.80).aspx)s。
 
 > [!NOTE]
 > 敏锐读取器可能已注意到之间的经过 DataList 和转发器绑定到数据而不是当 GridView 绑定到数据时的步骤顺序略异常。 在数据绑定过程的结尾结束时，引发 GridView`DataBound`事件; 但是，无论是 DataList 还是转发器控件具有此类事件。 这是因为在复制前和后级别事件处理程序模式已成为公共之前 DataList 和转发器控件已回到中 ASP.NET 1.x 的时间范围内，创建。
@@ -93,7 +93,7 @@ DataList 控件设置格式的更改可以使用实现整个项`DataListItem`s �
 
 [!code-csharp[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample1.cs)]
 
-尽管的概念和语义后面 DataList s`ItemDataBound`事件处理程序都与使用的 GridView s 相同`RowDataBound`中的事件处理程序*自定义格式设置基于时数据*教程中，语法不同稍有。 当`ItemDataBound`事件激发`DataListItem`只绑定到数据传递到相应事件处理程序通过`e.Item`(而不是`e.Row`，如同处理 GridView 的`RowDataBound`事件处理程序)。 DataList s`ItemDataBound`个事件处理程序都会激发*每个*添加到 DataList，包括标题行、 页脚行和分隔符行的行。 但是，产品信息仅绑定到的数据行中。 因此，当使用`ItemDataBound`事件来检查的数据绑定到 DataList，我们需要首先确保我们重新使用的数据项。 这可以通过检查来实现`DataListItem`s [ `ItemType`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalistitem.itemtype.aspx)，它可以具有之一[以下八个值](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.listitemtype.aspx):
+尽管的概念和语义后面 DataList s`ItemDataBound`事件处理程序都与使用的 GridView s 相同`RowDataBound`中的事件处理程序*自定义格式设置基于时数据*教程中，语法不同稍有。 当`ItemDataBound`事件激发`DataListItem`只绑定到数据传递到相应事件处理程序通过`e.Item`(而不是`e.Row`，如同处理 GridView 的`RowDataBound`事件处理程序)。 DataList s`ItemDataBound`个事件处理程序都会激发*每个*添加到 DataList，包括标题行、 页脚行和分隔符行的行。 但是，产品信息仅绑定到的数据行中。 因此，当使用`ItemDataBound`事件来检查的数据绑定到 DataList，我们需要首先确保我们重新使用的数据项。 这可以通过检查来实现`DataListItem`s [ `ItemType`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistitem.itemtype.aspx)，它可以具有之一[以下八个值](https://msdn.microsoft.com/library/system.web.ui.webcontrols.listitemtype.aspx):
 
 - `AlternatingItem`
 - `EditItem`
@@ -104,7 +104,7 @@ DataList 控件设置格式的更改可以使用实现整个项`DataListItem`s �
 - `SelectedItem`
 - `Separator`
 
-同时`Item`和`AlternatingItem``DataListItem`的构成 DataList 的数据项。 假设我们重新使用`Item`或`AlternatingItem`，我们访问实际`ProductsRow`已绑定到当前的实例`DataListItem`。 `DataListItem` S [ `DataItem`属性](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.datalistitem.dataitem.aspx)包含对引用`DataRowView`对象，其`Row`属性提供对实际的引用`ProductsRow`对象。
+同时`Item`和`AlternatingItem``DataListItem`的构成 DataList 的数据项。 假设我们重新使用`Item`或`AlternatingItem`，我们访问实际`ProductsRow`已绑定到当前的实例`DataListItem`。 `DataListItem` S [ `DataItem`属性](https://msdn.microsoft.com/system.web.ui.webcontrols.datalistitem.dataitem.aspx)包含对引用`DataRowView`对象，其`Row`属性提供对实际的引用`ProductsRow`对象。
 
 接下来，我们检查`ProductsRow`实例的`UnitPrice`属性。 由于产品表 s`UnitPrice`字段允许`NULL`值，然后再尝试访问`UnitPrice`属性我们应首先检查以查看它是否具有`NULL`值使用`IsUnitPriceNull()`方法。 如果`UnitPrice`值不是`NULL`，我们然后，检查以查看是否它小于 $20.00 s。 如果它确实下为 $20.00，我们则需要应用自定义格式设置。
 

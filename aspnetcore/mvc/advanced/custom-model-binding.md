@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: d8b94f53954c5ab63ccf3aab4eb7a7a7dbea487b
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 85d5ca18944e774d1f2577459c6c45acde01e4d9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="custom-model-binding"></a>自定义模型绑定
 
@@ -104,7 +104,7 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 
 [!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo1&highlight=2)]
 
-在此示例中，因为自变量的名称不是默认`authorId`，指定参数使用`ModelBinder`属性。 请注意，控制器和操作方法简化相比查找中的操作方法的实体。 用于提取使用实体框架核心的作者的逻辑将移动到模型联编程序。 当必须将绑定到作者模型中，并可以帮助你要遵循的几种方法时，这可能是相当大的简化[干原则](http://deviq.com/don-t-repeat-yourself/)。
+在此示例中，因为自变量的名称不是默认值`authorId`，指定参数使用`ModelBinder`属性。 请注意，控制器和操作方法简化相比查找中的操作方法的实体。 用于提取使用实体框架核心的作者的逻辑将移动到模型联编程序。 当必须将绑定到作者模型中，并可以帮助你要遵循的几种方法时，这可能是相当大的简化[干原则](http://deviq.com/don-t-repeat-yourself/)。
 
 你可以将应用`ModelBinder`属性设为各个模型属性 (如视图模型上) 或到操作方法参数以指定的某些模型联编程序或只是该类型或操作的模型名称。
 
@@ -133,6 +133,6 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 ## <a name="recommendations-and-best-practices"></a>建议和最佳做法
 
 自定义模型联编程序：
-- 不应尝试设置状态代码或返回结果 （例如，404 未找到）。 如果模型绑定失败，[操作筛选器](xref:mvc/controllers/filters)或中的操作方法本身逻辑应处理的错误。
+- 不应尝试设置状态代码，或者返回结果 （例如，404 未找到）。 如果模型绑定失败，[操作筛选器](xref:mvc/controllers/filters)或中的操作方法本身逻辑应处理的错误。
 - 是用于消除重复代码，并从操作方法的跨领域问题最有用。
-- 通常不应将字符串转换为自定义类型， [ `TypeConverter` ](https://docs.microsoft.com//dotnet/api/system.componentmodel.typeconverter)通常是更好的选择。
+- 通常不应该用于将字符串转换为自定义类型， [ `TypeConverter` ](https://docs.microsoft.com//dotnet/api/system.componentmodel.typeconverter)通常是更好的选择。

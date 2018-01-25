@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: cd800062e87c07a0ef1d8d3d32c910aaf3e683cc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 98a7ce4991d58181177cf56976888e9fd1526987
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>教程： 使用 SignalR 2 广播的服务器
 ====================
@@ -86,7 +86,7 @@ ms.lasthandoff: 11/10/2017
 
 <a id="prerequisites"></a>
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 在开始之前，请确保已在计算机上安装的 Visual Studio 2013。 如果你没有 Visual Studio，请参阅[ASP.NET 下载](https://www.asp.net/downloads)以获取免费 Visual Studio 2013 Express。
 
@@ -133,7 +133,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample2.cs)]
 
-    [中心](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx)类用于定义客户端可以调用在服务器的方法。 要定义一种方法： `GetAllStocks()`。 当客户端最初连接到服务器时，它将调用此方法以获取所有其当前价格 stocks 的列表。 该方法可以同步执行，并返回`IEnumerable<Stock>`因为它从内存返回数据。 如果该方法必须获取数据，通过执行某项，需要等待，如数据库查找或 web 服务调用，则会指定`Task<IEnumerable<Stock>>`作为要启用异步处理的返回值。 有关详细信息，请参阅[ASP.NET SignalR 中心 API 指南-服务器-时以异步方式执行](../guide-to-the-api/hubs-api-guide-server.md#asyncmethods)。
+    [中心](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx)类用于定义客户端可以调用在服务器的方法。 要定义一种方法： `GetAllStocks()`。 当客户端最初连接到服务器时，它将调用此方法以获取所有其当前价格 stocks 的列表。 该方法可以同步执行，并返回`IEnumerable<Stock>`因为它从内存返回数据。 如果该方法必须获取数据，通过执行某项，需要等待，如数据库查找或 web 服务调用，则会指定`Task<IEnumerable<Stock>>`作为要启用异步处理的返回值。 有关详细信息，请参阅[ASP.NET SignalR 中心 API 指南-服务器-时以异步方式执行](../guide-to-the-api/hubs-api-guide-server.md#asyncmethods)。
 
     HubName 属性指定将如何在客户端上的 JavaScript 代码中引用的中心。 如果不使用此属性在客户端上的默认名称是类名，在这种情况下将是 stockTickerHub 混合使用大小写版本。
 
@@ -146,7 +146,7 @@ ms.lasthandoff: 11/10/2017
 
     ### <a name="storing-the-singleton-instance-in-a-static-field"></a>将单一实例存储在静态字段
 
-    此代码初始化静态\_支持具有的类，并且此实例的实例属性的实例字段是唯一的类可以创建的实例，因为构造函数标记为私有。 [延迟初始化](https://msdn.microsoft.com/en-us/library/dd997286.aspx)用于\_实例字段，不适用于性能原因，但若要确保创建的实例是 threadsafe。
+    此代码初始化静态\_支持具有的类，并且此实例的实例属性的实例字段是唯一的类可以创建的实例，因为构造函数标记为私有。 [延迟初始化](https://msdn.microsoft.com/library/dd997286.aspx)用于\_实例字段，不适用于性能原因，但若要确保创建的实例是 threadsafe。
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample4.cs)]
 
@@ -160,7 +160,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample6.cs)]
 
-    Stocks 集合指[ConcurrentDictionary](https://msdn.microsoft.com/en-us/library/dd287191.aspx)对线程安全的类型。 作为替代方法，您可以使用[字典](https://msdn.microsoft.com/en-us/library/xfhwa508.aspx)对象，并显式锁定字典时对其进行更改。
+    Stocks 集合指[ConcurrentDictionary](https://msdn.microsoft.com/library/dd287191.aspx)对线程安全的类型。 作为替代方法，您可以使用[字典](https://msdn.microsoft.com/library/xfhwa508.aspx)对象，并显式锁定字典时对其进行更改。
 
     对于此示例应用程序，它是确定在内存中存储应用程序数据并释放 StockTicker 实例时丢失数据。 在实际应用中，您将使用如数据库后端数据存储区。
 
@@ -172,7 +172,7 @@ ms.lasthandoff: 11/10/2017
 
     UpdateStockPrices 称为由计时器，传入参数中的 null。 更新价格，锁上执行前\_updateStockPricesLock 对象。 如果另一个线程已更新价格，，然后它调用 TryUpdateStockPrice 列表中每个股票代码将检查。 TryUpdateStockPrice 方法来决定是否进行更改的股票价格和数量，将其更改。 如果更改股票价格，BroadcastStockPrice 称为广播到所有连接的客户端的股票价格更改。
 
-    \_UpdatingStockPrices 标志标记为[易失性](https://msdn.microsoft.com/en-us/library/x13ttww7.aspx)以确保对其的访问是 threadsafe。
+    \_UpdatingStockPrices 标志标记为[易失性](https://msdn.microsoft.com/library/x13ttww7.aspx)以确保对其的访问是 threadsafe。
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample8.cs)]
 
@@ -192,7 +192,7 @@ ms.lasthandoff: 11/10/2017
 
     正在调用在 BroadcastStockPrice updateStockPrice 方法尚不存在;当你编写在客户端运行的代码，你将从更高版本添加它。 因为 Clients.All 是动态的这意味着将在运行时计算该表达式可以引用 updateStockPrice 此处。 当此方法调用执行时，SignalR 将将发送方法名称和参数值到客户端，并在客户端有一个名为 updateStockPrice 方法，将调用该方法和参数值将传递给它。
 
-    Clients.All 意味着将发送到所有客户端。 SignalR 可其他选项来指定哪些客户端或客户端将发送到的组。 有关详细信息，请参阅[HubConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx)。
+    Clients.All 意味着将发送到所有客户端。 SignalR 可其他选项来指定哪些客户端或客户端将发送到的组。 有关详细信息，请参阅[HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx)。
 
 ### <a name="register-the-signalr-route"></a>注册 SignalR 路由
 
@@ -412,4 +412,4 @@ UpdateStockPrice 函数现在处理网格和行情自动收录器显示，并使
 - [SignalR Github 和示例](https://github.com/SignalR/SignalR)
 - [SignalR Wiki](https://github.com/SignalR/SignalR/wiki)
 
-有关如何部署到 Azure 的 SignalR 应用程序的演练，请参阅[将 signalr 与在 Azure App Service Web Apps 配合](../deployment/using-signalr-with-azure-web-sites.md)。 有关如何将 Visual Studio web 项目部署到 Windows Azure 网站的详细信息，请参阅[在 Azure App Service 中创建 ASP.NET web 应用](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/)。
+有关如何部署到 Azure 的 SignalR 应用程序的演练，请参阅[将 signalr 与在 Azure App Service Web Apps 配合](../deployment/using-signalr-with-azure-web-sites.md)。 有关如何将 Visual Studio web 项目部署到 Windows Azure 网站的详细信息，请参阅[在 Azure App Service 中创建 ASP.NET web 应用](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)。

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: f244e6bd1cd8abd23b64d07ccafcef5c4db1029b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e3ce68b949199db35c18a09771d99d38562b74e9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a>源代码管理 （使用 Azure 构建真实世界云应用）
 ====================
@@ -137,9 +137,9 @@ Azure 允许你提供的备用**appSettings**和连接字符串的部分*Web.con
 
 [Git](http://git-scm.com/)是 DVCS 变得非常流行。 当你使用 Git 进行源代码管理时，你将拥有其历史记录的所有存储库的完整副本，在本地计算机。 很多人喜欢，因为可以很方便可以继续工作时未连接到网络-你可以继续执行提交并回滚，创建和切换分支，和等等。 即使你要连接到网络，它是更方便和快捷以创建分支并切换分支的所有内容时本地。 此外可以执行本地提交和回滚不会影响在其他开发人员。 并且，你可以通过批处理提交之前将它们发送到服务器。
 
-[Microsoft Visual Studio Online](https://www.visualstudio.com/)(VSO) 以前称为 Team Foundation Service 提供这两个 Git 和[Team Foundation 版本控制](https://msdn.microsoft.com/en-us/library/ms181237(v=vs.120).aspx)(TFVC; 集中式源代码管理)。 此处在 Microsoft Azure 的组中某些团队使用集中式的源代码管理，某些使用分布式，而某些连接使用混合 （对于某些项目集中式和分布式对其他项目）。 VSO 服务是免费的最多 5 个用户。 你可以注册免费计划[此处](https://go.microsoft.com/fwlink/?LinkId=307137)。
+[Microsoft Visual Studio Online](https://www.visualstudio.com/)(VSO) 以前称为 Team Foundation Service 提供这两个 Git 和[Team Foundation 版本控制](https://msdn.microsoft.com/library/ms181237(v=vs.120).aspx)(TFVC; 集中式源代码管理)。 此处在 Microsoft Azure 的组中某些团队使用集中式的源代码管理，某些使用分布式，而某些连接使用混合 （对于某些项目集中式和分布式对其他项目）。 VSO 服务是免费的最多 5 个用户。 你可以注册免费计划[此处](https://go.microsoft.com/fwlink/?LinkId=307137)。
 
-Visual Studio 2013 包含的内置第一类[Git 支持](https://msdn.microsoft.com/en-us/library/hh850437.aspx); 下面是快速的工作原理的演示。
+Visual Studio 2013 包含的内置第一类[Git 支持](https://msdn.microsoft.com/library/hh850437.aspx); 下面是快速的工作原理的演示。
 
 在 Visual Studio 2013 中打开项目，右键单击该解决方案中的**解决方案资源管理器**，然后选择**将解决方案添加到源代码管理**。
 
@@ -187,7 +187,7 @@ Visual Studio 自动转移所有提交的项目文件，并将它们在列出**�
 
 此方式可以快速创建分支和分支之间来回翻转的一个简单的示例。 此功能允许使用的分支结构高度 agile 工作流和自动化脚本中显示[使一切自动化](automate-everything.md)章。 例如，你可以在 Development 分支中工作，创建从 master 中移出热修复补丁程序分支，切换到新分支，使所做的更改那里和提交更改，然后切换回开发分支并继续正在执行的操作。
 
-你已了解了您的工作方式与 Visual Studio 中的本地 Git 存储库。 在团队环境中你通常还将更改推送到的公共储存库。 Visual Studio 工具还使你以指向远程 Git 存储库。 你可以使用 GitHub.com 出于这个目的，或者可以使用[Visual Studio Online 中的 Git](https://msdn.microsoft.com/en-us/library/hh850437.aspx)与所有其他 Visual Studio Online 功能，例如工作项和 bug 跟踪集成在一起。
+你已了解了您的工作方式与 Visual Studio 中的本地 Git 存储库。 在团队环境中你通常还将更改推送到的公共储存库。 Visual Studio 工具还使你以指向远程 Git 存储库。 你可以使用 GitHub.com 出于这个目的，或者可以使用[Visual Studio Online 中的 Git](https://msdn.microsoft.com/library/hh850437.aspx)与所有其他 Visual Studio Online 功能，例如工作项和 bug 跟踪集成在一起。
 
 这不是你可以实现敏捷的分支策略，这是当然的唯一方法。 你可以启用使用集中式的源代码控制存储库的相同 agile 工作流。
 
@@ -202,14 +202,14 @@ Visual Studio 自动转移所有提交的项目文件，并将它们在列出**�
 
 有关 （集中式的版本控制） TFVC 和 Git （分布式的版本控制） 的详细信息，请参阅以下资源：
 
-- [应使用哪个版本控制系统： TFVC 或 Git？](https://msdn.microsoft.com/en-us/library/vstudio/ms181368.aspx#tfvc_or_git_summary) MSDN 文档，包括汇总 TFVC 和 Git 之间的差异的表。
+- [应使用哪个版本控制系统： TFVC 或 Git？](https://msdn.microsoft.com/library/vstudio/ms181368.aspx#tfvc_or_git_summary) MSDN 文档，包括汇总 TFVC 和 Git 之间的差异的表。
 - [嗯，我喜欢 Team Foundation Server 和我喜欢 Git，但这是更好？](https://blogs.msdn.com/b/visualstudiouk/archive/2013/08/05/well-i-like-team-foundation-server-and-i-like-git-but-which-is-better.aspx) Git 和 TFVC 的比较。
 
 有关分支策略的详细信息，请参阅以下资源：
 
-- [生成使用 Team Foundation Server 2012 的发行管道](https://msdn.microsoft.com/en-us/library/dn449957.aspx)。 Microsoft 模式和实践文档。 请参阅有关的分支策略讨论的第 6 章。 自身功能通过功能分支切换和如果使用的功能的分支，律师有帮助保持它们短生存期 （小时数或最多天）。
+- [生成使用 Team Foundation Server 2012 的发行管道](https://msdn.microsoft.com/library/dn449957.aspx)。 Microsoft 模式和实践文档。 请参阅有关的分支策略讨论的第 6 章。 自身功能通过功能分支切换和如果使用的功能的分支，律师有帮助保持它们短生存期 （小时数或最多天）。
 - [版本控制指南](https://aka.ms/vsarsolutions)。 由 ALM Rangers 指南分支策略。 在下载选项卡上，请参阅分支 Strategies.pdf。
-- [使用功能切换软件开发](https://msdn.microsoft.com/en-us/magazine/dn683796.aspx)。 MSDN 杂志文章。
+- [使用功能切换软件开发](https://msdn.microsoft.com/magazine/dn683796.aspx)。 MSDN 杂志文章。
 - [功能切换](http://martinfowler.com/bliki/FeatureToggle.html)。 功能简介切换/功能 Martin Fowler 博客上的标志。
 - [功能在切换 vs 功能分支](http://geekswithblogs.net/Optikal/archive/2013/02/10/152069.aspx)。 有关功能开关，通过 Dylan Smith 的另一个博客文章。
 

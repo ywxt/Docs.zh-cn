@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 69ba9e47071956385e96a28372454a3ae93ccc89
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b089a0b25aa5a520f3e20af8ec5212072ad7c7bf
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-optimistic-concurrency-with-the-sqldatasource-c"></a>使用 SqlDataSource (C#) 的实现开放式并发
 ====================
@@ -116,8 +116,8 @@ Web 应用程序允许多个并发用户编辑或删除相同的数据，存在�
 
 除了补充`WHERE`子句`UpdateCommand`和`DeleteCommand`属性 （和相应的参数集合中添加其他参数），选择使用乐观并发选项调整其他两个属性：
 
-- 更改[`ConflictDetection`属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx)从`OverwriteChanges`（默认值） 到`CompareAllValues`
-- 更改[`OldValuesParameterFormatString`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.oldvaluesparameterformatstring.aspx)介于 {0} （默认值） 和原始\_{0}。
+- 更改[`ConflictDetection`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx)从`OverwriteChanges`（默认值） 到`CompareAllValues`
+- 更改[`OldValuesParameterFormatString`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.oldvaluesparameterformatstring.aspx)介于 {0} （默认值） 和原始\_{0}。
 
 Web 控件的数据时调用 SqlDataSource s`Update()`或`Delete()`方法，它将传递的原始值。 如果 SqlDataSource s`ConflictDetection`属性设置为`CompareAllValues`，这些原始值添加到该命令。 `OldValuesParameterFormatString`属性提供了用于这些原始值参数的命名模式。 配置数据源向导使用原始\_{0} 并将其命名中的每个原始参数`UpdateCommand`和`DeleteCommand`属性和`UpdateParameters`和`DeleteParameters`集合相应地。
 

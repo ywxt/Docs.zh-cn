@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1f4912bb3113a8f9cdae4211e055a7e317ab2aff
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7a74d01f306abeeac5ac28c942f03001e0fe00f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>读取与相关的数据与实体框架中的 ASP.NET MVC 应用程序
 ====================
@@ -45,7 +45,7 @@ ms.lasthandoff: 11/10/2017
 - *预先加载*。 实体中读取时，会随之检索相关的数据。 这通常会导致检索所有具有所需的数据的单一联接查询。 使用指定预先加载`Include`方法。
 
     ![Eager_loading_example](https://asp.net/media/2577856/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Eager_loading_example_33f907ff-f0b0-4057-8e75-05a8cacac807.png)
-- *显式加载*。 这是类似于延迟加载的只不过显式检索代码; 中的相关的数据它不会发生自动访问导航属性时。 你相关手动加载数据通过有关实体，以及调用中获取的对象状态管理器项[Collection.Load](https://msdn.microsoft.com/en-us/library/gg696220(v=vs.103).aspx)集合的方法或[Reference.Load](https://msdn.microsoft.com/en-us/library/gg679166(v=vs.103).aspx)包含属性的方法单个实体。 (在下面的示例中，如果你想要加载管理员导航属性，则将替换`Collection(x => x.Courses)`与`Reference(x => x.Administrator)`。)通常，你将使用显式加载，仅当你已启用延迟加载关闭时。
+- *显式加载*。 这是类似于延迟加载的只不过显式检索代码; 中的相关的数据它不会发生自动访问导航属性时。 你相关手动加载数据通过有关实体，以及调用中获取的对象状态管理器项[Collection.Load](https://msdn.microsoft.com/library/gg696220(v=vs.103).aspx)集合的方法或[Reference.Load](https://msdn.microsoft.com/library/gg679166(v=vs.103).aspx)包含属性的方法单个实体。 (在下面的示例中，如果你想要加载管理员导航属性，则将替换`Collection(x => x.Courses)`与`Reference(x => x.Administrator)`。)通常，你将使用显式加载，仅当你已启用延迟加载关闭时。
 
     ![Explicit_loading_example](https://asp.net/media/2577862/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Explicit_loading_example_79d8c368-6d82-426f-be9a-2b443644ab15.png)
 
@@ -57,7 +57,7 @@ ms.lasthandoff: 11/10/2017
 
 另一方面，在某些情况下延迟加载会更加高效。 预先加载可能会导致非常复杂的联接为其生成 SQL Server 无法有效地处理它。 或如果你需要访问仅针对实体集的子集的实体的导航属性要处理，延迟加载可能更好地执行，因为预先加载将检索比你需要更多的数据。 如果性能非常重要，则最好测试以便做出最佳选择这两种方式的性能。
 
-延迟加载可以屏蔽导致性能问题的代码。 例如，未指定 eager 或显式加载但处理大量的实体并在每次迭代中使用多个导航属性的代码可能非常低效，（由于到数据库的许多往返过程）。 执行在开发使用在本地 SQL server 中良好运行的应用程序可能具有性能问题时由于的延迟时间增加和延迟加载移到 Azure SQL 数据库。 分析的实际的测试加载的数据库的查询将帮助你确定延迟加载是否适用。 有关详细信息请参阅[Demystifying 实体框架策略： 加载相关数据](https://msdn.microsoft.com/en-us/magazine/hh205756.aspx)和[使用实体框架与 SQL Azure 到减少网络延迟](https://msdn.microsoft.com/en-us/magazine/gg309181.aspx)。
+延迟加载可以屏蔽导致性能问题的代码。 例如，未指定 eager 或显式加载但处理大量的实体并在每次迭代中使用多个导航属性的代码可能非常低效，（由于到数据库的许多往返过程）。 执行在开发使用在本地 SQL server 中良好运行的应用程序可能具有性能问题时由于的延迟时间增加和延迟加载移到 Azure SQL 数据库。 分析的实际的测试加载的数据库的查询将帮助你确定延迟加载是否适用。 有关详细信息请参阅[Demystifying 实体框架策略： 加载相关数据](https://msdn.microsoft.com/magazine/hh205756.aspx)和[使用实体框架与 SQL Azure 到减少网络延迟](https://msdn.microsoft.com/magazine/gg309181.aspx)。
 
 ### <a name="disable-lazy-loading-before-serialization"></a>禁用序列化之前的延迟加载
 
@@ -67,9 +67,9 @@ ms.lasthandoff: 11/10/2017
 
 若要避免序列化问题的一种方法是序列化而不是实体对象的数据传输对象 (Dto) 中所示[使用实体框架使用 Web API](../../../../web-api/overview/data/using-web-api-with-entity-framework/part-5.md)教程。
 
-如果不使用 Dto，你可以禁用延迟加载，并避免由代理问题[禁用代理创建](https://msdn.microsoft.com/en-US/data/jj592886.aspx)。
+如果不使用 Dto，你可以禁用延迟加载，并避免由代理问题[禁用代理创建](https://msdn.microsoft.com/data/jj592886.aspx)。
 
-以下是一些其他[如何禁用延迟加载](https://msdn.microsoft.com/en-US/data/jj574232):
+以下是一些其他[如何禁用延迟加载](https://msdn.microsoft.com/data/jj574232):
 
 - 对于特定的导航属性，省略`virtual`关键字声明的属性时。
 - 对于所有导航属性，设置`LazyLoadingEnabled`到`false`，将以下代码放入上下文类的构造函数： 
@@ -164,7 +164,7 @@ ms.lasthandoff: 11/10/2017
 
 `Where`方法将返回一个集合，但条件在此情况下传递到方法导致只有一个`Instructor`所返回的实体。 `Single`方法将集合转换为单个`Instructor`实体，使你可以访问该实体的`Courses`属性。
 
-你使用[单个](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.single.aspx)时你知道该集合的集合上的方法将有只有一项。 `Single`方法引发异常时传递给它的集合是否为空或没有多个项。 替代方法是[SingleOrDefault](https://msdn.microsoft.com/en-us/library/bb342451.aspx)，它返回默认值 (`null`在这种情况下) 如果该集合为空。 但是，在这种情况下，仍会生成异常 (从尝试查找`Courses`属性`null`引用)，和异常消息将不太清楚地指示问题的原因。 当调用`Single`方法，你还可以通过`Where`条件而不是调用`Where`方法单独：
+你使用[单个](https://msdn.microsoft.com/library/system.linq.enumerable.single.aspx)时你知道该集合的集合上的方法将有只有一项。 `Single`方法引发异常时传递给它的集合是否为空或没有多个项。 替代方法是[SingleOrDefault](https://msdn.microsoft.com/library/bb342451.aspx)，它返回默认值 (`null`在这种情况下) 如果该集合为空。 但是，在这种情况下，仍会生成异常 (从尝试查找`Courses`属性`null`引用)，和异常消息将不太清楚地指示问题的原因。 当调用`Single`方法，你还可以通过`Where`条件而不是调用`Where`方法单独：
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample12.cs)]
 

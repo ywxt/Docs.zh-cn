@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 15d3d2c70346abad5addab5c29d4af9f238b39da
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c0c32c3dd24be5edfea3e17695753973f3fad30a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-your-site-using-visual-studio-c"></a>部署你的网站使用 Visual Studio (C#)
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 
 
 > [!NOTE]
-> 由 Visual Studio 提供其他与部署相关的工具包括[Web 安装程序项目](https://msdn.microsoft.com/en-us/library/wx3b589t.aspx)和[Web 部署项目](https://www.microsoft.com/downloads/details.aspx?FamilyId=0AA30AE8-C73B-4BDD-BB1B-FE697256C459&amp;displaylang=en)外接程序。 Web 安装程序项目包网站的内容和配置信息导出成单一的 MSI 文件。 此选项将在 intranet 内部署的网站或公司的销售的预打包的 web 应用程序在其自己的 web 服务器上安装客户最为有用。 Web 部署项目外接程序是 Visual Studio 外接程序，它方便了之间的指定配置差异生成用于开发环境和生产环境。 本教程系列; 不讨论 web 安装程序项目Web 部署项目中总结了[*常见配置差异之间开发和生产*](common-configuration-differences-between-development-and-production-cs.md)教程。
+> 由 Visual Studio 提供其他与部署相关的工具包括[Web 安装程序项目](https://msdn.microsoft.com/library/wx3b589t.aspx)和[Web 部署项目](https://www.microsoft.com/downloads/details.aspx?FamilyId=0AA30AE8-C73B-4BDD-BB1B-FE697256C459&amp;displaylang=en)外接程序。 Web 安装程序项目包网站的内容和配置信息导出成单一的 MSI 文件。 此选项将在 intranet 内部署的网站或公司的销售的预打包的 web 应用程序在其自己的 web 服务器上安装客户最为有用。 Web 部署项目外接程序是 Visual Studio 外接程序，它方便了之间的指定配置差异生成用于开发环境和生产环境。 本教程系列; 不讨论 web 安装程序项目Web 部署项目中总结了[*常见配置差异之间开发和生产*](common-configuration-differences-between-development-and-production-cs.md)教程。
 
 
 ## <a name="deploying-your-site-using-the-copy-web-site-tool"></a>部署站点上使用复制网站工具
@@ -149,11 +149,11 @@ Visual Studio 的复制网站工具是在功能上类似于独立的 FTP 客户�
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [复制使用复制网站工具创建网站](https://msdn.microsoft.com/en-us/library/1cc82atw.aspx)
+- [复制使用复制网站工具创建网站](https://msdn.microsoft.com/library/1cc82atw.aspx)
 - [I： 如何部署使用复制网站工具网站](../../../videos/how-do-i/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool.md)（视频）
-- [如何： 发布 Web 应用程序项目](https://msdn.microsoft.com/en-us/library/aa983453.aspx)
-- [如何： 发布网站](https://msdn.microsoft.com/en-us/library/20yh9f1b.aspx)
-- [安装程序和 Visual Studio 中的部署项目](https://msdn.microsoft.com/en-us/library/wx3b589t.aspx)
+- [如何： 发布 Web 应用程序项目](https://msdn.microsoft.com/library/aa983453.aspx)
+- [如何： 发布网站](https://msdn.microsoft.com/library/20yh9f1b.aspx)
+- [安装程序和 Visual Studio 中的部署项目](https://msdn.microsoft.com/library/wx3b589t.aspx)
 
 >[!div class="step-by-step"]
 [上一页](deploying-your-site-using-an-ftp-client-cs.md)

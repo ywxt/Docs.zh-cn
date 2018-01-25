@@ -11,16 +11,16 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react
-ms.openlocfilehash: aa70a35ad938fff6911367ee9d12aac9d575be7e
-ms.sourcegitcommit: efc9e5b5fffa0e13957131a0da52cc1532a87651
-ms.translationtype: HT
+ms.openlocfilehash: 5978094083a098a771f5dca103434ea8fcce7777
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="use-the-react-project-template-release-candidate"></a>使用响应项目模板 （候选发布版）
 
 > [!NOTE]
-> 本文档不是有关发布的响应项目模板。 **此文档是有关响应模板的候选发布版本。** 我们希望在早期 2018年提供已发布的版本。
+> 本文档不是指已发布的响应项目模板。 **此文档是有关响应模板的候选发布版本。** 我们希望在早期 2018年提供已发布的版本。
 
 已更新的响应项目模板提供了方便起点 ASP.NET Core 应用使用响应和[创建响应应用](https://github.com/facebookincubator/create-react-app)(CRA) 约定，可以实现的丰富的客户端用户界面 (UI)。
 

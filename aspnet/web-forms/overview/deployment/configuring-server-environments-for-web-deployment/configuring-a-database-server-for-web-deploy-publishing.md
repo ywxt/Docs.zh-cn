@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
 msc.type: authoredcontent
-ms.openlocfilehash: b225d9911246b3e2be1679b73a9f31d9f8577ba5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 98fd728f48f6fb64a61686bc58824b9fb3a28b13
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-database-server-for-web-deploy-publishing"></a>Web 部署发布更改为配置数据库服务器
 ====================
@@ -48,7 +48,7 @@ ms.lasthandoff: 11/10/2017
 SQL Server 实例仅需要包括**数据库引擎服务**角色，它自动包含在任何 SQL Server 安装。 但是，为了便于配置和维护，我们建议你包括**管理工具-基本**和**管理工具 – 完整**服务器角色。
 
 > [!NOTE]
-> 有关将计算机加入到域的详细信息，请参阅[将计算机加入到域并登录](https://technet.microsoft.com/en-us/library/cc725618(v=WS.10).aspx)。 有关配置静态 IP 地址的详细信息，请参阅[配置静态 IP 地址](https://technet.microsoft.com/en-us/library/cc754203(v=ws.10).aspx)。 有关安装 SQL Server 的详细信息，请参阅[安装 SQL Server 2008 R2](https://technet.microsoft.com/en-us/library/bb500395.aspx)。
+> 有关将计算机加入到域的详细信息，请参阅[将计算机加入到域并登录](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)。 有关配置静态 IP 地址的详细信息，请参阅[配置静态 IP 地址](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)。 有关安装 SQL Server 的详细信息，请参阅[安装 SQL Server 2008 R2](https://technet.microsoft.com/library/bb500395.aspx)。
 
 
 ## <a name="enable-remote-access-to-sql-server"></a>启用对 SQL Server 的远程访问
@@ -66,7 +66,7 @@ SQL Server 使用 TCP/IP 与远程计算机通信。 如果你的数据库服务
 2. 在树视图窗格中，展开**SQL Server 网络配置**，然后单击**MSSQLSERVER 的协议**。
 
     > [!NOTE]
-    > 如果已安装多个 SQL Server 实例，你将看到**协议***[实例名称]*每个实例的项。 你需要配置网络设置基于实例的实例。
+    > 如果已安装多个 SQL Server 实例，你将看到 **协议 * * * [实例名称]*每个实例的项。 你需要配置网络设置基于实例的实例。
 3. 在细节窗格中，右键单击**TCP/IP**行，然后依次**启用**。
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image1.png)
@@ -102,7 +102,7 @@ SQL Server 使用 TCP/IP 与远程计算机通信。 如果你的数据库服务
   
 
 > [!NOTE]
-> 从技术上讲，客户端计算机将使用 1024年和 5000 之间随机分配的 TCP 端口进行通信使用 SQL Server，并且你可以相应地限制防火墙规则。 SQL Server 端口和防火墙的详细信息，请参阅[to SQL 通过防火墙进行通信所需的 TCP/IP 端口号](https://go.microsoft.com/?linkid=9805125)和[如何： 配置服务器以侦听特定 TCP 端口 （SQL Server 配置管理器）](https://msdn.microsoft.com/en-us/library/ms177440.aspx)。
+> 从技术上讲，客户端计算机将使用 1024年和 5000 之间随机分配的 TCP 端口进行通信使用 SQL Server，并且你可以相应地限制防火墙规则。 SQL Server 端口和防火墙的详细信息，请参阅[to SQL 通过防火墙进行通信所需的 TCP/IP 端口号](https://go.microsoft.com/?linkid=9805125)和[如何： 配置服务器以侦听特定 TCP 端口 （SQL Server 配置管理器）](https://msdn.microsoft.com/library/ms177440.aspx)。
 
 
 在大多数 Windows Server 环境中，你可能需要在数据库服务器上配置 Windows 防火墙。 默认情况下，Windows 防火墙允许所有出站流量，除非规则专门禁止它。 若要启用你的 web 服务器来访问你的数据库，你需要配置 SQL Server 实例使用的端口号允许 TCP 流量的入站的规则。 如果你正在使用的 SQL Server 的默认实例，可以使用下一个过程来配置此规则。
@@ -126,11 +126,11 @@ SQL Server 使用 TCP/IP 与远程计算机通信。 如果你的数据库服务
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image9.png)
 8. 上**名称**页上，为规则提供适当描述性名称 (例如， **SQL Server 默认实例 – 网络访问**)，然后单击**完成**。
 
-有关详细信息对于 SQL Server，配置 Windows 防火墙，尤其是当你需要通过非标准或动态端口与 SQL Server 进行通信，请参阅[如何： 为数据库引擎访问配置 Windows 防火墙](https://technet.microsoft.com/en-us/library/ms175043.aspx)。
+有关详细信息对于 SQL Server，配置 Windows 防火墙，尤其是当你需要通过非标准或动态端口与 SQL Server 进行通信，请参阅[如何： 为数据库引擎访问配置 Windows 防火墙](https://technet.microsoft.com/library/ms175043.aspx)。
 
 ## <a name="configure-logins-and-database-permissions"></a>配置登录名和数据库权限
 
-在部署 web 应用程序到 Internet 信息服务 (IIS) 时，应用程序使用的应用程序池标识运行。 在域环境中，应用程序池标识使用在其上运行来访问网络资源的服务器的计算机帐户。 计算机帐户采用以下形式*[域名]***\***[计算机名称] ***$**& #x 2014年; 例如， **FABRIKAM\TESTWEB1$**。 若要允许跨网络访问的数据库将 web 应用程序，你需要：
+在部署 web 应用程序到 Internet 信息服务 (IIS) 时，应用程序使用的应用程序池标识运行。 在域环境中，应用程序池标识使用在其上运行来访问网络资源的服务器的计算机帐户。 计算机帐户采用格式 * [域名]***\** * [计算机名称]***$ * * 和 #x 2014; 例如， **FABRIKAM\TESTWEB1$**。 若要允许跨网络访问的数据库将 web 应用程序，你需要：
 
 - 将 web 服务器计算机帐户的登录名添加到 SQL Server 实例。
 - 计算机帐户登录名映射到任何所需的数据库角色 (通常**db\_datareader**和**db\_datawriter**)。
@@ -158,7 +158,7 @@ SQL Server 登录名是一个服务器级对象，而不只是数据库级别对
 4. 在**登录名-新建**对话框中，在**登录名**框中，键入你的 web 服务器计算机帐户的名称 (例如， **FABRIKAM\TESTWEB1$**)。
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image11.png)
-5. 单击“确定”。
+5. 单击 **“确定”**。
 
 此时，你的数据库服务器是可供 Web 部署发布。 但是，你将部署任何解决方案将不起作用之前机帐户登录名映射到所需的数据库角色。 将登录名映射到数据库角色需要大量更认为，作为你不能映射角色直到检查完已部署数据库。 若要将计算机帐户登录名映射到所需的数据库角色中，您可以：
 
@@ -178,12 +178,12 @@ SQL Server 登录名是一个服务器级对象，而不只是数据库级别对
 5. 在**数据库角色成员身份：** *[数据库名称]*列表中，选择所需的权限。 在联系人管理器示例解决方案中，您必须选择**db\_datareader**和**db\_datawriter**角色。
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image13.png)
-6. 单击“确定”。
+6. 单击 **“确定”**。
 
 时手动将数据库角色映射通常绰绰有余测试环境，它是自动进行的或一键式部署到过渡环境或生产环境不需要的。 你可以找到有关自动执行这种使用中的后期部署脚本的任务的详细信息[到测试环境中部署数据库角色成员](../advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md)。
 
 > [!NOTE]
-> 服务器项目和数据库项目的详细信息，请参阅[Visual Studio 2010 SQL Server 数据库项目](https://msdn.microsoft.com/en-us/library/ff678491.aspx)。
+> 服务器项目和数据库项目的详细信息，请参阅[Visual Studio 2010 SQL Server 数据库项目](https://msdn.microsoft.com/library/ff678491.aspx)。
 
 
 ## <a name="configure-permissions-for-the-deployment-account"></a>配置部署帐户的权限
@@ -215,7 +215,7 @@ SQL Server 登录名是一个服务器级对象，而不只是数据库级别对
 5. 在**数据库角色成员身份：** *[数据库名称]*列表中，选择**db\_所有者**角色。
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image15.png)
-6. 单击“确定”。
+6. 单击 **“确定”**。
 
 ## <a name="conclusion"></a>结束语
 

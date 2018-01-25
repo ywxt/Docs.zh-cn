@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: df13726689c430ab19786e104ea7404051107aa9
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: c30556368ba24fb38cf3347dd49f171b5246514c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>ASP.NET 核心 MVC 和使用 Visual Studio (第 1 个 10) 的实体框架核心入门
 
@@ -178,7 +178,7 @@ EF 核心 2.0 是 EF 的最新版本，但还没有的 EF 的所有功能 6.x。
 
 此代码将创建`DbSet`每个实体集的属性。 在实体框架术语中，实体集通常与数据库表相对应，实体与表中的行相对应。
 
-可以省略`DbSet<Enrollment>`和`DbSet<Course>`语句和其效果相同。 实体框架会将其包含隐式因为`Student`实体引用`Enrollment`实体和`Enrollment`实体引用`Course`实体。
+你可能已省略`DbSet<Enrollment>`和`DbSet<Course>`语句和其效果相同。 实体框架会将其包含隐式因为`Student`实体引用`Enrollment`实体和`Enrollment`实体引用`Course`实体。
 
 EF 创建数据库后，创建具有名称相同的表`DbSet`属性名称。 集合的属性名称通常是有关是否表名称应变为复数形式或不反对复数形式 （学生而不是学生），但开发人员。 对于这些教程将通过在 DbContext 中指定单数表名称来覆盖默认行为。 若要做到这一点，请在最后一个 DbSet 属性之后添加以下突出显示的代码。
 
@@ -204,7 +204,7 @@ ASP.NET 核心实现[依赖关系注入](../../fundamentals/dependency-injection
 
 ### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-连接字符串指定 SQL Server LocalDB 数据库。 LocalDB 是 SQL Server Express 数据库引擎的轻量级版本，用于应用程序开发，不生产环境中使用。 LocalDB 按需启动并在用户模式下运行，因此没有复杂的配置。 默认情况下，创建 LocalDB *.mdf*数据库中的文件`C:/Users/<user>`目录。
+连接字符串指定 SQL Server LocalDB 数据库。 LocalDB 是 SQL Server Express 数据库引擎的轻量级版本，用于应用程序开发，不生产环境中使用。 LocalDB 按需启动和运行在用户模式下，因此没有复杂配置。 默认情况下，创建 LocalDB *.mdf*数据库中的文件`C:/Users/<user>`目录。
 
 ## <a name="add-code-to-initialize-the-database-with-test-data"></a>添加代码以初始化测试数据的数据库
 

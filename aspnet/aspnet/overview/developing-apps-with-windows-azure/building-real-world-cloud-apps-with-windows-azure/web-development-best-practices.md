@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 msc.type: authoredcontent
-ms.openlocfilehash: a40a3779ddc416e141dd27b665f43830a43590b1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: de536a0ca39cb752c0962f0c4ae36eb00b586bff
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>Web 开发最佳做法 （使用 Azure 构建真实世界云应用）
 ====================
@@ -142,20 +142,20 @@ Entity Framework 6 中会导致查询或命令以发送到数据库的所有方�
 
 无状态 web 服务器：
 
-- [Microsoft 模式和实践-自动缩放指南](https://msdn.microsoft.com/en-us/library/dn589774.aspx)。
+- [Microsoft 模式和实践-自动缩放指南](https://msdn.microsoft.com/library/dn589774.aspx)。
 - [禁用 ARR 实例 Windows Azure 网站中的相关性](https://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)。 通过 Erez Benari 的博客文章介绍了会话相关性在 Windows Azure 网站。
 
 CDN:
 
 - [防故障： 构建可扩展、 有弹性的云服务](https://channel9.msdn.com/Series/FailSafe)。 通过 Ulrich Homann、 Marc Mercuri 和 Mark Simms 九一部分视频系列。 请参阅中段 3 从 1:34:00 开始的 CDN 讨论。
-- [Microsoft 模式和实践静态内容托管模式](https://msdn.microsoft.com/en-us/library/dn589776.aspx)
+- [Microsoft 模式和实践静态内容托管模式](https://msdn.microsoft.com/library/dn589776.aspx)
 - [CDN 评审](http://www.cdnreviews.com/)。 许多 Cdn 的概述。
 
 异步编程：
 
 - [在 ASP.NET MVC 4 中使用异步方法](../../../../mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4.md)。 由 Rick Anderson 的教程。
-- [异步编程使用 Async 和 Await （C# 和 Visual Basic）](https://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx)。 介绍用于异步编程的基本原理、 ASP.NET 4.5 中的工作方式以及如何编写代码来实现 MSDN 白皮书。
-- [实体框架异步查询和保存](https://msdn.microsoft.com/en-us/data/jj819165)
+- [异步编程使用 Async 和 Await （C# 和 Visual Basic）](https://msdn.microsoft.com/library/vstudio/hh191443.aspx)。 介绍用于异步编程的基本原理、 ASP.NET 4.5 中的工作方式以及如何编写代码来实现 MSDN 白皮书。
+- [实体框架异步查询和保存](https://msdn.microsoft.com/data/jj819165)
 - [如何生成 ASP.NET Web 应用程序使用 Async](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B337#fbid=tgkT4SR_DK7)。 通过 Rowan Miller 的视频演示。 包括图形演示还可以帮助大大提高 web 服务器的吞吐量在高负载情况下如何异步编程。
 - [防故障： 构建可扩展、 有弹性的云服务](https://channel9.msdn.com/Series/FailSafe)。 通过 Ulrich Homann、 Marc Mercuri 和 Mark Simms 九一部分视频系列。 供大家讨论有关影响的可伸缩性的异步编程，请参阅段 4 和段 8。
 - [使用 ASP.NET 4.5 以及重要隐患的异步方法的幻](http://www.hanselman.com/blog/TheMagicOfUsingAsynchronousMethodsInASPNET45PlusAnImportantGotcha.aspx)。 主要有关在 ASP.NET Web 窗体应用程序中使用异步 Scott Hanselman 的博客文章。

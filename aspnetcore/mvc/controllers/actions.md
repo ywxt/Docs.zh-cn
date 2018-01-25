@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/actions
-ms.openlocfilehash: cef493fc2010d1c82e5c1dfec85864539252b817
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 99dcf1bd4f0dc4fcb6169f48bd398c9e40c21a35
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>具有 ASP.NET 核心 mvc 控制器处理请求
 
@@ -42,7 +42,7 @@ ms.lasthandoff: 01/19/2018
 
 控制器采用模型的处理 （如果有） 的结果，并返回适当的视图和其关联的视图数据或 API 调用的结果。 了解更多信息，请访问[ASP.NET 核心 MVC 的概述](xref:mvc/overview)和[ASP.NET 核心 MVC 和 Visual Studio 入门](xref:tutorials/first-mvc-app/start-mvc)。
 
-在控制器*UI 级别*抽象。 其职责是以确保请求数据有效并选择应返回哪些视图 （或 API 的结果）。 在分解应用中，它不直接包含数据访问或业务逻辑。 相反，控制器委托给处理这些职责的服务。
+在控制器*UI 级别*抽象。 其职责是以确保请求数据有效并选择应返回哪些视图 （或 API 的结果）。 在分解应用中，它不直接包括数据访问或业务逻辑。 相反，控制器委托给处理这些职责的服务。
 
 ## <a name="defining-actions"></a>定义操作
 

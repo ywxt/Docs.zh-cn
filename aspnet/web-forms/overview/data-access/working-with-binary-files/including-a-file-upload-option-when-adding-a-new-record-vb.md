@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4f49c201c71ca8f98d7e15b29f1df9a6bcd1b12e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: eb462a0e8ce88037855ea12d00c1afc0419fa04e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>添加新记录 (VB) 时包括文件上载选项
 ====================
@@ -176,7 +176,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-6-saving-the-uploaded-brochure-to-the-web-server-s-file-system"></a>步骤 6： 将上载的小册子保存到 Web 服务器的文件系统
 
-当用户输入的值的新类别，然后单击插入按钮时，产生的回发和插入工作流展开。 首先，说明如何 s [ `ItemInserting`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.iteminserting.aspx)激发。 接下来，ObjectDataSource s`Insert()`调用方法时，这将导致新记录添加到`Categories`表。 在此之后，说明如何 s [ `ItemInserted`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.iteminserted.aspx)激发。
+当用户输入的值的新类别，然后单击插入按钮时，产生的回发和插入工作流展开。 首先，说明如何 s [ `ItemInserting`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.iteminserting.aspx)激发。 接下来，ObjectDataSource s`Insert()`调用方法时，这将导致新记录添加到`Categories`表。 在此之后，说明如何 s [ `ItemInserted`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.iteminserted.aspx)激发。
 
 之前 ObjectDataSource 的`Insert()`调用方法，我们必须首先确保用户已上载的相应文件类型，然后将小册子 PDF 保存到 web 服务器的文件系统。 创建的事件处理程序说明如何的`ItemInserting`事件并添加以下代码：
 
@@ -191,7 +191,7 @@ ms.lasthandoff: 11/10/2017
 
 中所述[上载文件](uploading-files-vb.md)教程，因此该一个用户的上载不会覆盖另一个 s 保存文件到文件系统时必须小心。 对于本教程中我们将尝试使用相同的名称作为上载的文件。 如果已存在的文件中`~/Brochures`directory 与该文件同名，但是，我们将在附加号结束直到找到一个唯一的名称。 例如，如果在用户上载一个名为的小册子文件`Meats.pdf`，但已存在名为的文件`Meats.pdf`中`~/Brochures`文件夹中，我们将保存的文件名称更改为`Meats-1.pdf`。 如果存在，我们将尝试`Meats-2.pdf`，依此类推，直到找到唯一的文件名。
 
-下面的代码使用[`File.Exists(path)`方法](https://msdn.microsoft.com/en-us/library/system.io.file.exists.aspx)以确定文件是否已存在具有指定的文件名称。 如果是这样，它将继续尝试小册子中的新文件名称，直到找到不会发生冲突。
+下面的代码使用[`File.Exists(path)`方法](https://msdn.microsoft.com/library/system.io.file.exists.aspx)以确定文件是否已存在具有指定的文件名称。 如果是这样，它将继续尝试小册子中的新文件名称，直到找到不会发生冲突。
 
 
 [!code-vb[Main](including-a-file-upload-option-when-adding-a-new-record-vb/samples/sample7.vb)]

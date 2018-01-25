@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 137ac45166be03ae3c4864f41666d2acd1a37dc2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2a4b5ed8a712b061b4afdf5a3adc9378dd72b37f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a>身份验证和 ASP.NET Web API 中的授权
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 
 Web API 假定该身份验证发生在主机。 对于 web 承载的该主机是 IIS，使用 HTTP 模块进行身份验证。 你可以配置你的项目中使用任何内置于 IIS 或 ASP.NET 中，身份验证模块或编写自己的 HTTP 模块来执行自定义身份验证。
 
-当主机对用户进行身份验证时，它将创建*主体*，即[IPrincipal](https://msdn.microsoft.com/en-us/library/System.Security.Principal.IPrincipal.aspx)表示运行代码的安全上下文的对象。 主机将主体附加到当前线程，通过设置**Thread.CurrentPrincipal**。 主体包含一个关联**标识**对象，其中包含有关用户的信息。 如果用户进行身份验证， **Identity.IsAuthenticated**属性返回**true**。 对于匿名请求， **IsAuthenticated**返回**false**。 有关主体的详细信息，请参阅[基于角色的安全性](https://msdn.microsoft.com/en-us/library/shz8h065.aspx)。
+当主机对用户进行身份验证时，它将创建*主体*，即[IPrincipal](https://msdn.microsoft.com/library/System.Security.Principal.IPrincipal.aspx)表示运行代码的安全上下文的对象。 主机将主体附加到当前线程，通过设置**Thread.CurrentPrincipal**。 主体包含一个关联**标识**对象，其中包含有关用户的信息。 如果用户进行身份验证， **Identity.IsAuthenticated**属性返回**true**。 对于匿名请求， **IsAuthenticated**返回**false**。 有关主体的详细信息，请参阅[基于角色的安全性](https://msdn.microsoft.com/library/shz8h065.aspx)。
 
 ### <a name="http-message-handlers-for-authentication"></a>HTTP 消息处理程序进行身份验证
 
@@ -58,7 +58,7 @@ Web API 假定该身份验证发生在主机。 对于 web 承载的该主机是
 如果你的应用程序执行的任何自定义身份验证逻辑，则必须在两个位置上设置主体：
 
 - **Thread.CurrentPrincipal**。 此属性是在.NET 中设置线程的主体的标准方式。
-- **HttpContext.Current.User**。 此属性是特定于 ASP.NET。
+- **HttpContext.Current.User**. 此属性是特定于 ASP.NET。
 
 下面的代码演示如何设置主体：
 
@@ -78,7 +78,7 @@ Web API 假定该身份验证发生在主机。 对于 web 承载的该主机是
 <a id="auth3"></a>
 ### <a name="using-the-authorize-attribute"></a>使用 [授权] 属性
 
-Web API 提供了内置授权筛选器， [AuthorizeAttribute](https://msdn.microsoft.com/en-us/library/system.web.http.authorizeattribute.aspx)。 此筛选器检查用户进行身份验证。 否则，它将返回 HTTP 状态代码 401 （未经授权），而无需调用该操作。
+Web API 提供了内置授权筛选器， [AuthorizeAttribute](https://msdn.microsoft.com/library/system.web.http.authorizeattribute.aspx)。 此筛选器检查用户进行身份验证。 否则，它将返回 HTTP 状态代码 401 （未经授权），而无需调用该操作。
 
 你可以应用筛选器全局范围内，在控制器级别，或 inidivual 操作级别。
 
@@ -112,7 +112,7 @@ Web API 提供了内置授权筛选器， [AuthorizeAttribute](https://msdn.micr
 
 - **AuthorizeAttribute**。 可扩展此类以执行基于当前用户和用户的角色的授权逻辑。
 - **AuthorizationFilterAttribute**。 可扩展此类以执行在当前用户或角色不一定基于同步的授权逻辑。
-- **IAuthorizationFilter**。 实现此接口可执行异步授权逻辑;例如，如果你的授权逻辑执行异步 I/O 或网络调用。 (如果你的授权逻辑是 CPU 绑定的它会更易于派生自**AuthorizationFilterAttribute**，因为不需要编写的异步方法。)
+- **IAuthorizationFilter**. 实现此接口可执行异步授权逻辑;例如，如果你的授权逻辑执行异步 I/O 或网络调用。 (如果你的授权逻辑是 CPU 绑定的它会更易于派生自**AuthorizationFilterAttribute**，因为不需要编写的异步方法。)
 
 下图显示的类层次结构**AuthorizeAttribute**类。
 

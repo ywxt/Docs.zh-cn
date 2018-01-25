@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3e66f581d0ea07831ea6356a9c13d26ed6a19b81
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 69586ade54a40aabb55dd507731a6c2820774c04
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="uploading-files-vb"></a>上载文件 (VB)
 ====================
@@ -99,7 +99,7 @@ ms.lasthandoff: 11/10/2017
 直接在数据库中存储二进制数据的主要优点是二进制数据和数据库记录之间的紧密耦合。 这极大地简化了数据库管理任务，如备份或将数据库移到不同的站点或服务器。 此外，自动删除一条记录中删除相应的二进制数据。 也有更多的数据库中存储二进制数据的细微优势。 请参阅[存储二进制文件直接在数据库使用 ASP.NET 2.0](http://aspnet.4guysfromrolla.com/articles/120606-1.aspx)有关的更深入讨论。
 
 > [!NOTE]
-> 在 Microsoft SQL Server 2000 和早期版本中，`varbinary`数据类型具有最大限制为 8000 个字节。 若要存储最多为 2 GB 的二进制数据[`image`数据类型](https://msdn.microsoft.com/en-us/library/ms187993.aspx)需要改为使用。 通过添加`MAX`在 SQL Server 2005，但是，`image`已弃用数据类型。 它 s 仍支持向后兼容性，但 Microsoft 已宣布`image`数据类型将删除 SQL Server 的未来版本中。
+> 在 Microsoft SQL Server 2000 和早期版本中，`varbinary`数据类型具有最大限制为 8000 个字节。 若要存储最多为 2 GB 的二进制数据[`image`数据类型](https://msdn.microsoft.com/library/ms187993.aspx)需要改为使用。 通过添加`MAX`在 SQL Server 2005，但是，`image`已弃用数据类型。 它 s 仍支持向后兼容性，但 Microsoft 已宣布`image`数据类型将删除 SQL Server 的未来版本中。
 
 
 如果你正在使用的较旧的数据模型可能会看到`image`数据类型。 Northwind 数据库 s`Categories`表具有`Picture`可以用于存储为类别图像文件的二进制数据的列。 由于 Northwind 数据库具有其根在 Microsoft Access 和早期版本的 SQL Server 中，此列的类型是`image`。
@@ -210,7 +210,7 @@ ms.lasthandoff: 11/10/2017
 
 当收集二进制数据，通常由最终用户提供此数据。 若要捕获此信息，用户需要能将上载到 web 服务器从其计算机的文件。 上载的数据则需要与数据模型中，这可能意味着将文件保存到 web 服务器的文件系统和将路径添加到在数据库中，文件或直接在数据库中编写的二进制内容集成。 在此步骤中我们将查看如何允许用户从他们的计算机文件上载到服务器。 在下一教程中我们将着重将上载的文件与数据模型相集成。
 
-ASP.NET 2.0 的新增功能[FileUpload Web 控件](https://msdn.microsoft.com/en-us/library/ms227677(VS.80).aspx)提供用于将文件从其计算机发送到 web 服务器的用户的机制。 FileUpload 控件呈现为`<input>`元素其`type`属性设置为文件，浏览器显示为带有浏览按钮的文本框。 单击浏览按钮将显示一个对话框，用户可以从中选择一个文件。 窗体回发，所选的文件的内容发送以及回发。 在服务器端上载的文件的信息是通过 FileUpload 控件的属性可访问。
+ASP.NET 2.0 的新增功能[FileUpload Web 控件](https://msdn.microsoft.com/library/ms227677(VS.80).aspx)提供用于将文件从其计算机发送到 web 服务器的用户的机制。 FileUpload 控件呈现为`<input>`元素其`type`属性设置为文件，浏览器显示为带有浏览按钮的文本框。 单击浏览按钮将显示一个对话框，用户可以从中选择一个文件。 窗体回发，所选的文件的内容发送以及回发。 在服务器端上载的文件的信息是通过 FileUpload 控件的属性可访问。
 
 若要演示上载文件，打开`FileUpload.aspx`页面`BinaryData`文件夹中，从工具箱中拖动到设计器中，拖动 FileUpload 控件并设置控制 s`ID`属性`UploadTest`。 接下来，添加按钮 Web 控件设置其`ID`和`Text`属性设置为`UploadButton`并分别上载所选文件。 最后，将在按钮下方的标签 Web 控件放清除其`Text`属性并设置其`ID`属性`UploadDetails`。
 
@@ -233,13 +233,13 @@ ASP.NET 2.0 的新增功能[FileUpload Web 控件](https://msdn.microsoft.com/en
 
 [!code-vb[Main](uploading-files-vb/samples/sample5.vb)]
 
-FileUpload 控件提供了各种用于使用已上载的数据的属性。 例如， [ `HasFile`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.fileupload.hasfile.aspx)指示是否由用户上载一个文件时[`FileBytes`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.fileupload.filebytes.aspx)的字节数组形式提供对上载的二进制数据的访问。 `Click`事件处理程序首先确保已上载文件。 如果已上载文件，该标签将显示已上载的文件，以字节为单位，其大小和其内容类型的名称。
+FileUpload 控件提供了各种用于使用已上载的数据的属性。 例如， [ `HasFile`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.fileupload.hasfile.aspx)指示是否由用户上载一个文件时[`FileBytes`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.fileupload.filebytes.aspx)的字节数组形式提供对上载的二进制数据的访问。 `Click`事件处理程序首先确保已上载文件。 如果已上载文件，该标签将显示已上载的文件，以字节为单位，其大小和其内容类型的名称。
 
 > [!NOTE]
 > 若要确保用户将可以检查的文件上载`HasFile`属性并显示一条警告，如果它 s `False`，或者也可以使用[RequiredFieldValidator 控件](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/validation/default.aspx)改为。
 
 
-FileUpload s`SaveAs(filePath)`将上载的文件保存到指定*filePath*。 *filePath*必须*物理路径*(`C:\Websites\Brochures\SomeFile.pdf`) 而不是*虚拟**路径*(`/Brochures/SomeFile.pdf`)。 [ `Server.MapPath(virtPath)`方法](https://msdn.microsoft.com/en-us/library/system.web.httpserverutility.mappath.aspx)采用虚拟路径并返回其相应的物理路径。 在这里的虚拟路径是`~/Brochures/fileName`，其中*fileName*是上载的文件的名称。 请参阅[使用 Server.MapPath](http://www.4guysfromrolla.com/webtech/121799-1.shtml)有关在虚拟和物理路径和使用的详细信息`Server.MapPath`。
+FileUpload s`SaveAs(filePath)`将上载的文件保存到指定*filePath*。 *filePath*必须*物理路径*(`C:\Websites\Brochures\SomeFile.pdf`) 而不是*虚拟**路径*(`/Brochures/SomeFile.pdf`)。 [ `Server.MapPath(virtPath)`方法](https://msdn.microsoft.com/library/system.web.httpserverutility.mappath.aspx)采用虚拟路径并返回其相应的物理路径。 在这里的虚拟路径是`~/Brochures/fileName`，其中*fileName*是上载的文件的名称。 请参阅[使用 Server.MapPath](http://www.4guysfromrolla.com/webtech/121799-1.shtml)有关在虚拟和物理路径和使用的详细信息`Server.MapPath`。
 
 完成后`Click`事件处理程序，需要一段时间来测试浏览器中的页。 单击浏览按钮并选择从硬盘文件，然后单击上载选择文件按钮。 回发将将所选文件的内容发送到 web 服务器，然后会显示有关该文件保存到之前的信息`~/Brochures`文件夹。 后上载文件时，返回到 Visual Studio，然后单击解决方案资源管理器中的刷新按钮。 你会看到刚刚上载 ~/Brochures 文件夹中的文件 ！
 
@@ -264,7 +264,7 @@ FileUpload s`SaveAs(filePath)`将上载的文件保存到指定*filePath*。 *fi
 
 ## <a name="challenges-involved-with-very-large-amounts-of-binary-data"></a>涉及的二进制数据量非常大的难题
 
-这些教程也假设捕获的二进制数据是适度的大小。 使用量非常大的二进制数据文件，则几兆字节或更大引入了新的挑战，这些教程的范围之外。 例如，默认情况下 ASP.NET 将拒绝上载超过 4 MB，尽管这可以通过配置[`<httpRuntime>`元素](https://msdn.microsoft.com/en-us/library/e1f13641.aspx)中`Web.config`。 IIS 有太一定其自身的文件上载大小限制。 请参阅[IIS 上载文件大小](http://vandamme.typepad.com/development/2005/09/iis_upload_file.html)有关详细信息。 此外，所需上载大型文件的时间可能会超出默认值 110 秒 ASP.NET 将等待的请求。 也有会出现在处理大型文件时的内存和性能问题。
+这些教程也假设捕获的二进制数据是适度的大小。 使用量非常大的二进制数据文件，则几兆字节或更大引入了新的挑战，这些教程的范围之外。 例如，默认情况下 ASP.NET 将拒绝上载超过 4 MB，尽管这可以通过配置[`<httpRuntime>`元素](https://msdn.microsoft.com/library/e1f13641.aspx)中`Web.config`。 IIS 有太一定其自身的文件上载大小限制。 请参阅[IIS 上载文件大小](http://vandamme.typepad.com/development/2005/09/iis_upload_file.html)有关详细信息。 此外，所需上载大型文件的时间可能会超出默认值 110 秒 ASP.NET 将等待的请求。 也有会出现在处理大型文件时的内存和性能问题。
 
 FileUpload 控件是不切实际的大型文件上载。 因为文件的内容正在发布到服务器，最终用户必须耐心等待而无需任何确认其上载的进展情况。 当处理较小的文件，可以上载几秒钟后，但问题可能会导致在处理较大，可能需要一分钟才能上载的文件时，这不是如此之多问题。 还有很多第三方文件上载控件更好地适用于处理较大的上载和许多这些供应商提供进度指示器和 ActiveX 上载管理器提供更加完美的用户体验。
 
@@ -280,7 +280,7 @@ FileUpload 控件是不切实际的大型文件上载。 因为文件的内容�
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [使用大值数据类型](https://msdn.microsoft.com/en-us/library/ms178158.aspx)
+- [使用大值数据类型](https://msdn.microsoft.com/library/ms178158.aspx)
 - [FileUpload 控件快速入门](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/standard/fileupload.aspx)
 - [ASP.NET 2.0 FileUpload 服务器控件](http://www.wrox.com/WileyCDA/Section/id-292158.html)
 - [文件的弊端上载](http://www.aspnetresources.com/articles/dark_side_of_file_uploads.aspx)

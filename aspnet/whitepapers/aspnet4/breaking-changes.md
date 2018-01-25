@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: a0f25ed3c996b73e362177b196539c6f2b143739
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 98647830125670ee2ed43538d65fb3ce6ac40d0d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-4-breaking-changes"></a>ASP.NET 4 的重大更改
 ====================
@@ -49,7 +49,7 @@ ms.lasthandoff: 11/10/2017
 [Passport System.Web.Security 类型是已过时](#0.1__Toc256770158 "_Toc256770158")  
 [未能呈现 ASP.NET 4 中的图像 MenuItem.PopOutImageUrl 属性](#0.1__Toc256770159 "_Toc256770159")  
 [Menu.StaticPopOutImageUrl 和 Menu.DynamicPopOutImageUrl 无法呈现图像时路径包含反斜杠](#0.1__Toc256770160 "_Toc256770160")  
-[免责声明](#0.1__Toc256770161 "_Toc256770161")
+[Disclaimer](#0.1__Toc256770161 "_Toc256770161")
 
 <a id="0.1__ControlRenderingCompatibilityVersio"></a><a id="0.1__Toc245724853"></a><a id="0.1__Toc255587630"></a><a id="0.1__Toc256770141"></a>
 
@@ -385,7 +385,7 @@ ASP.NET 2.0 中，并通过扩展在 3.5 中，已添加的 ASP.NET 功能使用
 - 更新了动态编译的程序集由 ASP.NET 生成提供程序，以显式标记为透明的程序集。
 - 现在，所有 ASP.NET 程序集已都标记仅在 Web 宿主环境中接受为 APTCA 特性的方式。 部分受信任的非 Web 宿主环境如 ClickOnce 不能调入 ASP.NET 程序集。
 
-有关新的 ASP.NET 4 代码访问安全模型的详细信息，请参阅[ASP.NET 应用程序中使用代码访问安全性](https://msdn.microsoft.com/en-us/library/dd984947%28VS.100%29.aspx)MSDN 网站上。
+有关新的 ASP.NET 4 代码访问安全模型的详细信息，请参阅[ASP.NET 应用程序中使用代码访问安全性](https://msdn.microsoft.com/library/dd984947%28VS.100%29.aspx)MSDN 网站上。
 
 <a id="0.1__Toc256770156"></a><a id="0.1__Toc245724863"></a><a id="0.1__Toc252995496"></a><a id="0.1__Toc255587645"></a><a id="0.1__Toc245724864"></a>
 
@@ -503,7 +503,7 @@ ASP.NET 2.0 中内置的 Passport 支持已过时，不支持几年由于 Passpo
 
 除非另有声明，否则此处描述的示例公司、组织、产品、域名、电子邮件地址、徽标、人物、地点和事件都是虚构的，无意与任何真实的公司、组织、产品、域名、电子邮件地址、徽标、人物、地点或事件相关联，也不应进行这方面的推断。
 
-© 2010 Microsoft Corporation。 保留所有权利。
+© 2010 Microsoft Corporation. 保留所有权利。
 
 Microsoft 和 Windows 是 Microsoft Corporation 在美国和/或其他国家/地区的注册商标或商标。
 

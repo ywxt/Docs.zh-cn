@@ -12,28 +12,28 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/windows-azure-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 1cb38d66bd0373159e54abf822fba9c5829774ac
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4deb3536699f1ef3025f8858ee71a76a1c2def18
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="windows-azure-authentication"></a>Windows Azure 身份验证
 ====================
 通过[Rick Anderson](https://github.com/Rick-Anderson)
 
-> Microsoft ASP.NET 工具为 Windows Azure Active Directory 可以很容易地为上托管的 web 应用程序启用身份验证[Windows Azure 网站](https://www.windowsazure.com/en-us/home/features/web-sites/)。 可以使用 Windows Azure 身份验证从组织、 从本地 Active Directory 同步的公司帐户或用户在你自己的自定义 Windows Azure Active Directory 域中创建的 Office 365 用户进行身份验证。 启用 Windows Azure 身份验证配置你的应用程序使用单个的用户进行身份验证[Windows Azure Active Directory](https://docs.microsoft.com/azure/active-directory/)租户。
+> Microsoft ASP.NET 工具为 Windows Azure Active Directory 可以很容易地为上托管的 web 应用程序启用身份验证[Windows Azure 网站](https://www.windowsazure.com/home/features/web-sites/)。 可以使用 Windows Azure 身份验证从组织、 从本地 Active Directory 同步的公司帐户或用户在你自己的自定义 Windows Azure Active Directory 域中创建的 Office 365 用户进行身份验证。 启用 Windows Azure 身份验证配置你的应用程序使用单个的用户进行身份验证[Windows Azure Active Directory](https://docs.microsoft.com/azure/active-directory/)租户。
 > 
-> 对于云服务中的 web 角色不支持 ASP.NET Windows Azure 身份验证工具，但我们计划在将来的版本中这样做。 [Windows Identity Foundation](https://msdn.microsoft.com/en-us/library/hh291066(v=VS.110).aspx) (WIF) 支持在 Windows Azure web 角色。
+> 对于云服务中的 web 角色不支持 ASP.NET Windows Azure 身份验证工具，但我们计划在将来的版本中这样做。 [Windows Identity Foundation](https://msdn.microsoft.com/library/hh291066(v=VS.110).aspx) (WIF) 支持在 Windows Azure web 角色。
 > 
-> 有关如何设置您的本地 Active Directory 和 Windows Azure Active Directory 租户之间的同步的详细信息请参阅[使用 AD FS 2.0 实现和管理单一登录](https://technet.microsoft.com/en-us/library/jj205462.aspx)。
+> 有关如何设置您的本地 Active Directory 和 Windows Azure Active Directory 租户之间的同步的详细信息请参阅[使用 AD FS 2.0 实现和管理单一登录](https://technet.microsoft.com/library/jj205462.aspx)。
 > 
 > Windows Azure Active Directory 是目前只有[免费预览版 service](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)。
 
 
 ## <a name="requirements"></a>要求：
 
-- Visual Studio 2012 或[Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/en-us/products/express)
+- Visual Studio 2012 or [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express)
 - [Web 工具扩展 Visual Studio 2012](https://go.microsoft.com/fwlink/?LinkID=282228&amp;clcid=0x409)或[Web 工具扩展 for Visual Studio Express 2012](https://go.microsoft.com/fwlink/?LinkID=282231&amp;clcid=0x409)
 - [Microsoft ASP.NET Tools for Windows Azure Active Directory – Visual Studio 2012](https://go.microsoft.com/fwlink/?LinkID=282306)或[Microsoft ASP.NET Tools for Windows Azure Active Directory – Visual Studio Express 2012 for Web](https://go.microsoft.com/fwlink/?LinkId=282652)
 
@@ -157,15 +157,15 @@ Windows Azure 身份验证当前不提供必需的角色声明，以便可以执
 
 ## <a name="acs20012-the-request-is-not-a-valid-ws-federation-protocol-message-opop"></a>ACS20012： 请求不是有效的 WS 联合身份验证协议消息 < o:p >< / o:p >
 
-如果你已登录到 Azure 服务之一的某些其他 Microsoft ID，也可能发生。 使用专用浏览器窗口，例如在 IE 中的 InPrivate 或 Incognito Chrome 中的，或清除所有 cookie。 < o:p >< / o:p >
+如果你已登录到 Azure 服务之一的某些其他 Microsoft ID，也可能发生。 使用专用浏览器窗口，例如在 IE 中的 InPrivate 或 Incognito Chrome 中的，或清除所有 cookie。 <o:p></o:p>
 
 ## <a name="additional-resources"></a>其他资源
 
 - [Microsoft ASP.NET Tools for Windows Azure Active Directory – Visual Studio 2012](https://blogs.msdn.com/b/vbertocci/archive/2013/02/18/microsoft-asp-net-tools-for-windows-azure-active-directory-visual-studio-2012.aspx) – Vittorio Bertocci
 - [Windows Azure 功能： 标识](https://docs.microsoft.com/azure/active-directory/)
-- [TechNet: Windows Azure Active Directory](https://technet.microsoft.com/en-us/library/hh967619.aspx)
+- [TechNet: Windows Azure Active Directory](https://technet.microsoft.com/library/hh967619.aspx)
 - [Windows Azure Active Directory： 为你的组织中开发应用程序](https://activedirectory.windowsazure.com/Develop/Single-Tenant.aspx)
 - [Windows Azure Active Directory： 为多个组织中开发应用程序](https://activedirectory.windowsazure.com/Develop/Multi-Tenant.aspx)
 - [如何实现与 Windows Azure Active Directory 的单一登录](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect)
 - [单一登录与 Windows Azure Active Directory： 深入了解如何](https://blogs.msdn.com/b/vbertocci/archive/2012/07/05/single-sign-on-with-windows-azure-active-directory-a-deep-dive.aspx)– Vittorio Bertocci
-- [使用 AD FS 2.0 实现和管理单一登录](https://technet.microsoft.com/en-us/library/jj205462.aspx)
+- [使用 AD FS 2.0 实现和管理单一登录](https://technet.microsoft.com/library/jj205462.aspx)

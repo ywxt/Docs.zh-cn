@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: b6f3821a8022daa26f5efcc009ab3e6283a76a19
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ed39295ed1bcaa924336a1faf52049e291abeadb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset-c"></a>创建安全的 ASP.NET Web 窗体应用程序通过用户注册，电子邮件确认及密码重置 (C#)
 ====================
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
  然后，单击**确定**创建新项目。  
     ![新建 ASP.NET 项目对话框](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset/_static/image1.png)
 3. 为项目启用安全套接字层 (SSL)。 请按照步骤中提供**为项目启用 SSL**部分[入门 Web 窗体教程系列](../getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal.md#SSLWebForms)。
-4. 运行应用程序，请单击**注册**链接并注册新的用户。 在这种情况下，基于电子邮件的唯一验证[[EmailAddress]](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx)属性来确保格式正确的电子邮件地址。 将修改代码以添加电子邮件确认。 关闭浏览器窗口。
+4. 运行应用程序，请单击**注册**链接并注册新的用户。 在这种情况下，基于电子邮件的唯一验证[[EmailAddress]](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx)属性来确保格式正确的电子邮件地址。 将修改代码以添加电子邮件确认。 关闭浏览器窗口。
 5. 在**服务器资源管理器**的 Visual Studio (**视图** - &gt; **服务器资源管理器**)，导航到**数据 Connections\DefaultConnection\Tables\AspNetUsers**，右键单击并选择**打开表定义**。 
 
     下图显示`AspNetUsers`表架构：
@@ -78,7 +78,7 @@ ms.lasthandoff: 11/10/2017
 
 1. 在 Visual Studio 中，打开**程序包管理器控制台**(**工具** - &gt; **NuGet 包管理器** - &gt;**程序包管理器控制台**)，并输入以下命令：  
     `Install-Package SendGrid`
-2. 转到[Azure SendGrid 注册页](https://azure.microsoft.com/en-us/gallery/store/sendgrid/sendgrid-azure/)和注册获取免费的 SendGrid 帐户。 你可以还注册一个免费的 SendGrid 帐户直接基于[SendGrid 的站点](http://www.sendgrid.com)。
+2. 转到[Azure SendGrid 注册页](https://azure.microsoft.com/gallery/store/sendgrid/sendgrid-azure/)和注册获取免费的 SendGrid 帐户。 你可以还注册一个免费的 SendGrid 帐户直接基于[SendGrid 的站点](http://www.sendgrid.com)。
 3. 从**解决方案资源管理器**打开*IdentityConfig.cs*文件中*应用\_启动*文件夹并添加以下代码以的黄色突出显示`EmailService`用于配置类**SendGrid**:
 
     [!code-csharp[Main](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset/samples/sample1.cs?highlight=3,5,8-37)]
@@ -186,5 +186,5 @@ ms.lasthandoff: 11/10/2017
 - [指向 ASP.NET Identity 的推荐资源](../../../identity/overview/getting-started/aspnet-identity-recommended-resources.md)
 - [帐户确认和密码恢复 ASP.NET 标识](../../../identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
 - [ASP.NET Web 窗体教程系列-添加 OAuth 2.0 提供程序](../getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal.md#OAuthWebForms)
-- [将包含成员资格、 OAuth 和 SQL 数据库的安全的 ASP.NET Web 窗体应用程序部署到 Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)
+- [将包含成员资格、 OAuth 和 SQL 数据库的安全的 ASP.NET Web 窗体应用程序部署到 Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)
 - [ASP.NET Web 窗体的系列教程的项目启用 SSL](../getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal.md#SSLWebForms)

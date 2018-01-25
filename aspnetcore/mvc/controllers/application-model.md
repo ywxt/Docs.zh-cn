@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/application-model
-ms.openlocfilehash: c69dd1cfae713036ce0ee95f70acc162b1e82cb0
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a0913edaab723656c9be484332e02c551a5c88e1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="working-with-the-application-model"></a>使用应用程序模型
 
@@ -35,7 +35,7 @@ ASP.NET 核心 MVC 应用程序模型具有以下结构：
 每个级别的模型有权访问一组公共`Properties`集合和较低的级别可以访问并覆盖由层次结构中更高级别的设置的属性值。 属性将保存到`ActionDescriptor.Properties`何时创建操作。 然后时处理请求时，任何属性添加或修改的约定可通过访问`ActionContext.ActionDescriptor.Properties`。 使用属性是基于每个操作配置你的筛选器、 模型联编程序等的好办法。
 
 > [!NOTE]
-> `ActionDescriptor.Properties`完成后应用程序启动后，集合不是线程安全 （对于写入）。 约定是以安全地将数据添加到此集合的最佳方式。
+> `ActionDescriptor.Properties`集合不是线程安全 （对于写入），完成应用程序启动后。 约定是以安全地将数据添加到此集合的最佳方式。
 
 ### <a name="iapplicationmodelprovider"></a>IApplicationModelProvider
 
@@ -53,7 +53,7 @@ ASP.NET 核心 MVC 加载应用程序模型时使用的提供程序模式，通�
 * [`CorsApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.cors.internal.corsapplicationmodelprovider)
 
 > [!NOTE]
-> 使用相同的值的两个提供程序中的顺序`Order`称为未定义，，因此应不能依靠它。
+> 使用相同的值的两个提供程序中的顺序`Order`称为未定义，，因此不应依靠它。
 
 > [!NOTE]
 > `IApplicationModelProvider`是一个高级的概念工作 framework 作者为扩展。 一般情况下，应用应使用约定，并且框架应使用提供程序。 主要不同之处是提供程序始终约定之前运行。

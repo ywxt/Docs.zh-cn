@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/aspnet-core-module
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 153c40f0e825ff5826e916c7ea877a25d81954f1
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9dc2183ebbdf8b74106fe57a1dd191a57ba5d1bc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-aspnet-core-module"></a>ASP.NET 核心模块简介
 
@@ -38,7 +38,7 @@ ANCM 是一个本机的 IIS 模块，挂钩到 IIS 管道和将流量重定向�
 
 ![ASP.NET 核心模块](aspnet-core-module/_static/ancm.png)
 
-请求来自 Web 和命中的内核模式 Http.Sys 驱动程序，将其路由到主端口 (80) 或 SSL 端口 (443) 上的 IIS。 ANCM 将请求转发到 ASP.NET 核心应用程序上不是端口 80/443 对应用程序配置的 HTTP 端口。
+请求来自 Web 和命中的内核模式 Http.Sys 驱动程序，将其路由到主端口 (80) 或 SSL 端口 (443) 上的 IIS。 ANCM 将请求转发到 ASP.NET 核心应用程序上为应用程序，这并不是端口配置的 HTTP 端口 80/443。
 
 Kestrel 侦听来自 ANCM 的流量。  ANCM 指定通过在启动时，环境变量的端口和[UseIISIntegration](#call-useiisintegration)方法将服务器配置为侦听`http://localhost:{port}`。 有一些其他检查，以拒绝不是从 ANCM 的请求。 （ANCM 不支持 HTTPS 转发，因此即使 IIS 通过 HTTPS 接收到请求通过 HTTP 转发。）
 

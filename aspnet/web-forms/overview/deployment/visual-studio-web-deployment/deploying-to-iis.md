@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
-ms.openlocfilehash: 97910940f9de26ca71b111b945581d2de6650b02
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 01f72e0240e84944f8ffece9a2dbc5802be4646b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>使用 Visual Studio 的 ASP.NET Web 部署： 将部署到测试
 ====================
@@ -40,7 +40,7 @@ ms.lasthandoff: 11/10/2017
 
 选项 2 是最可靠的方法，若要测试，并且如果你这样做，你不一定不要选项 1。 但是，如果您要部署到第三方宿主提供程序选项 2 可能不可行，或可能占用大量资源，因此此教程系列将演示这两种方法。 选项 2 指南提供在[将部署到生产环境](deploying-to-production.md)教程。
 
-有关使用 Visual Studio 中的 web 服务器的详细信息，请参阅[用于 ASP.NET Web 项目的 Visual Studio 中的 Web 服务器](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx)。
+有关使用 Visual Studio 中的 web 服务器的详细信息，请参阅[用于 ASP.NET Web 项目的 Visual Studio 中的 Web 服务器](https://msdn.microsoft.com/library/58wxa9w5.aspx)。
 
 提示： 如果你收到如下错误消息，或当你完成本教程的内容不起作用，请务必检查[故障排除页](troubleshooting.md)。
 
@@ -73,7 +73,7 @@ ms.lasthandoff: 11/10/2017
     [![Inetmgr_showing_4.0_app_pools](deploying-to-iis/_static/image3.png)](deploying-to-iis/_static/image2.png)
 4. 如果你看到只有两个应用程序池，并且这两个设置为.NET Framework 2.0，你必须安装在 IIS 中的 ASP.NET 4。
 
-    有关 Windows 8，请参阅部分安装适用于确保该 ASP.NET 4.5 的或请参阅在前面说明[此知识库文章](https://support.microsoft.com/kb/2736284)。 对于 Windows 7 中打开命令提示符窗口，通过右键单击**命令提示符**中 Windows**启动**菜单并选择**以管理员身份运行**。 然后运行[aspnet\_regiis.exe](https://msdn.microsoft.com/en-us/library/k6h9cz8h.aspx)在 IIS 中，使用以下命令安装 ASP.NET 4。 （在 32 位系统中，替换"Framework64"与"Framework"。）
+    有关 Windows 8，请参阅部分安装适用于确保该 ASP.NET 4.5 的或请参阅在前面说明[此知识库文章](https://support.microsoft.com/kb/2736284)。 对于 Windows 7 中打开命令提示符窗口，通过右键单击**命令提示符**中 Windows**启动**菜单并选择**以管理员身份运行**。 然后运行[aspnet\_regiis.exe](https://msdn.microsoft.com/library/k6h9cz8h.aspx)在 IIS 中，使用以下命令安装 ASP.NET 4。 （在 32 位系统中，替换"Framework64"与"Framework"。）
 
     [!code-console[Main](deploying-to-iis/samples/sample1.cmd)]
 
@@ -94,9 +94,9 @@ IIS 现在已准备好为你发布到其中，web 应用程序，但是可以执
 
 LocalDB 不是用于处理在 IIS 中，因此对于你的测试环境需要已安装 SQL Server Express。 如果你使用 Visual Studio 2010 SQL Server Express 已安装默认情况下。 如果你正在使用 Visual Studio 2012，你必须安装它。
 
-若要安装 SQL Server Express，将其从安装[下载中心： Microsoft SQL Server 2012 Express](https://www.microsoft.com/en-us/download/details.aspx?id=29062)通过单击[ENU\x64\SQLEXPR\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLEXPR_x64_ENU.exe)或[ENU\x86\SQLEXPR\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLEXPR_x86_ENU.exe)。 如果选择了错误对于你的系统，它将无法安装，并且您可以尝试另一个。
+若要安装 SQL Server Express，将其从安装[下载中心： Microsoft SQL Server 2012 Express](https://www.microsoft.com/download/details.aspx?id=29062)通过单击[ENU\x64\SQLEXPR\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLEXPR_x64_ENU.exe)或[ENU\x86\SQLEXPR\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLEXPR_x86_ENU.exe)。 如果选择了错误对于你的系统，它将无法安装，并且您可以尝试另一个。
 
-在 SQL Server 安装中心的第一页，单击**新的 SQL Server 独立安装或向现有安装添加功能**，并按照说明操作，接受默认选项。 在安装向导中，接受默认设置。 有关安装选项的详细信息，请参阅[从安装向导 （安装程序） 中安装 SQL Server 2012](https://msdn.microsoft.com/en-us/library/ms143219.aspx)。
+在 SQL Server 安装中心的第一页，单击**新的 SQL Server 独立安装或向现有安装添加功能**，并按照说明操作，接受默认选项。 在安装向导中，接受默认设置。 有关安装选项的详细信息，请参阅[从安装向导 （安装程序） 中安装 SQL Server 2012](https://msdn.microsoft.com/library/ms143219.aspx)。
 
 ## <a name="create-sql-server-express-databases-for-the-test-environment"></a>创建 SQL Server Express 数据库的测试环境
 
@@ -233,7 +233,7 @@ Contoso 大学应用程序具有两个数据库： 成员资格数据库和应�
 
 当 Visual Studio 检测到实体框架`DbContext`类，它创建中的条目**数据库**部分**执行 Code First 迁移**复选框，而不是**更新数据库**复选框。 对于本教程将使用该复选框以指定 Code First 迁移部署。
 
-在某些情况下，你可能使用`DbContext`数据库，但你想要使用 dbDacFx 提供程序而不是迁移部署数据库。 在这种情况下，请参阅[如何部署没有迁移的 Code First 数据库？](https://msdn.microsoft.com/en-us/library/ee942158.aspx#deploy_code_first_without_migrations) MSDN 上的 ASP.NET Web 部署常见问题中。
+在某些情况下，你可能使用`DbContext`数据库，但你想要使用 dbDacFx 提供程序而不是迁移部署数据库。 在这种情况下，请参阅[如何部署没有迁移的 Code First 数据库？](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) MSDN 上的 ASP.NET Web 部署常见问题中。
 
 以下步骤适用于**SchoolContext**数据库中**数据库**的对话框中的部分。
 
@@ -332,7 +332,7 @@ Contoso 大学应用程序具有两个数据库： 成员资格数据库和应�
 
 - [IIS Express 概述](https://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview)IIS.net 网站上。
 - [引入了 IIS Express](https://weblogs.asp.net/scottgu/archive/2010/06/28/introducing-iis-express.aspx) Scott Guthrie 的博客上。
-- [Web 服务器在 Visual Studio 中的，对于 ASP.NET Web 项目](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx)。
+- [Web 服务器在 Visual Studio 中的，对于 ASP.NET Web 项目](https://msdn.microsoft.com/library/58wxa9w5.aspx)。
 - [核心差异之间 IIS 和 ASP.NET Development Server](../../older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs.md) ASP.NET 站点上。
 
 在中等信任中运行你的应用程序时，可能出现哪些问题有关的信息，请参阅[在中等信任环境中承载 ASP.NET 应用程序](http://www.4guysfromrolla.com/articles/100307-1.aspx)上从 Rolla 站点 4 专家。

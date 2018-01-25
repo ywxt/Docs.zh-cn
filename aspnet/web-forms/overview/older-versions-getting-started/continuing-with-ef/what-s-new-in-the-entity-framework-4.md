@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4
 title: "什么是实体框架 4.0 中的新增功能 |Microsoft 文档"
 author: tdykstra
-description: "本教程系列上的 Contoso 大学 web 应用程序创建的 Getting Started with 实体 Framework 4.0 教程系列生成。 我..."
+description: "本教程系列上的 Contoso 大学 web 应用程序创建的 Getting Started with 实体 Framework 4.0 教程系列生成。 I..."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4
 msc.type: authoredcontent
-ms.openlocfilehash: 4c89ca004ad4c9d731868e868cf6723aa4ed625d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c114627388217e892c84d6b76366d0fa96b0b70c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-the-entity-framework-40"></a>什么是实体框架 4.0 中的新增功能
 ====================
@@ -90,7 +90,7 @@ ms.lasthandoff: 11/10/2017
 
 (如果你想要在将信用额度数设置回其原始值， *UpdateCredits.aspx.cs*更改`Credits * {0}`到`Credits / {0}`，然后重新运行页上，输入 10 作为除数。)
 
-有关执行查询，以在代码中定义的详细信息，请参阅[如何： 直接执行命令针对数据源](https://msdn.microsoft.com/en-us/library/ee358769.aspx)。
+有关执行查询，以在代码中定义的详细信息，请参阅[如何： 直接执行命令针对数据源](https://msdn.microsoft.com/library/ee358769.aspx)。
 
 ## <a name="model-first-development"></a>模型优先开发
 
@@ -178,7 +178,7 @@ A *.sql*将创建与数据定义语言 (DDL) 命令的文件，但尚未运行�
 
 (注意： 此页包含在可下载的项目中，但若要使它起作用，您必须创建数据库在本地 SQL Server Express 实例; 数据库中不包含作为*.mdf*文件中*应用\_数据*文件夹。)
 
-有关使用实体框架的第一个模型的功能的详细信息，请参阅[实体 Framework 4 中的模型的第一个](https://msdn.microsoft.com/en-us/data/ff830362.aspx)。
+有关使用实体框架的第一个模型的功能的详细信息，请参阅[实体 Framework 4 中的模型的第一个](https://msdn.microsoft.com/data/ff830362.aspx)。
 
 ## <a name="poco-support"></a>POCO 支持
 
@@ -188,7 +188,7 @@ A *.sql*将创建与数据定义语言 (DDL) 命令的文件，但尚未运行�
 
 有关在实体框架中使用 POCOs 的详细信息，请参阅以下资源：
 
-- [使用 POCO 实体](https://msdn.microsoft.com/en-us/library/dd456853.aspx)。 这是概述 POCOs，其中包含指向具有更多详细信息的其他文档的 MSDN 文档。
+- [使用 POCO 实体](https://msdn.microsoft.com/library/dd456853.aspx)。 这是概述 POCOs，其中包含指向具有更多详细信息的其他文档的 MSDN 文档。
 - [演练： POCO 实体框架的模板](https://blogs.msdn.com/b/adonet/archive/2010/01/25/walkthrough-poco-template-for-the-entity-framework.aspx)这是实体框架开发团队，以链接到有关 POCOs 其他博客文章的博客文章。
 
 ## <a name="code-first-development"></a>代码优先开发
@@ -209,7 +209,7 @@ POCO 支持 Entity Framework 4 中的仍然需要你创建数据模型，并链�
 
 这将完成将新实体框架和此继续实体框架教程系列中的概述。 有关实体框架 4 所未涵盖的新功能的详细信息，请参阅以下资源：
 
-- [什么是 ADO.NET 中的新增功能](https://msdn.microsoft.com/en-us/library/ex6y04yf.aspx)MSDN 主题中的实体框架版本 4 的新功能。
+- [什么是 ADO.NET 中的新增功能](https://msdn.microsoft.com/library/ex6y04yf.aspx)MSDN 主题中的实体框架版本 4 的新功能。
 - [宣布推出新版实体框架 4](https://blogs.msdn.com/b/efdesign/archive/2010/04/12/announcing-the-release-of-entity-framework-4.aspx)版本 4 中的新增功能有关实体框架开发团队的博客文章。
 
 >[!div class="step-by-step"]

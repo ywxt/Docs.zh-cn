@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: dec2602e47fbcb838643a506a7e3feebda9d9c81
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4468ee8031afccca847db67bd4b5b263f0a2c5ac
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-performance"></a>SignalR 性能
 ====================
@@ -87,7 +87,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="tuning-your-signalr-server-for-performance"></a>优化性能你 SignalR 服务器
 
-以下配置设置可以用于调整为更好的性能 SignalR 应用程序服务器。 有关如何提高性能 ASP.NET 应用程序中的常规信息，请参阅[因而提高了 ASP.NET 性能](https://msdn.microsoft.com/en-us/library/ff647787.aspx)。
+以下配置设置可以用于调整为更好的性能 SignalR 应用程序服务器。 有关如何提高性能 ASP.NET 应用程序中的常规信息，请参阅[因而提高了 ASP.NET 性能](https://msdn.microsoft.com/library/ff647787.aspx)。
 
 **SignalR 配置设置**
 
@@ -104,7 +104,7 @@ ms.lasthandoff: 11/10/2017
     [!code-console[Main](signalr-performance/samples/sample4.cmd)]
 - **ApplicationPool QueueLength**： 这是最大 Http.sys 排队应用程序池的请求数。 如果队列已满，新请求将收到 503"服务不可用"响应。 默认值为 1000。
 
-    缩短的工作进程中承载你的应用程序的应用程序池的队列长度将节省内存资源。 有关详细信息，请参阅[管理、 优化和配置应用程序池](https://technet.microsoft.com/en-us/library/cc745955.aspx)。
+    缩短的工作进程中承载你的应用程序的应用程序池的队列长度将节省内存资源。 有关详细信息，请参阅[管理、 优化和配置应用程序池](https://technet.microsoft.com/library/cc745955.aspx)。
 
 **ASP.NET 配置设置**
 
@@ -215,7 +215,7 @@ ms.lasthandoff: 11/10/2017
 
 以下度量值度量流量和向外扩展提供程序生成的错误。 A**流**在此上下文中程序是一个扩展单元向外扩展提供程序使用; 这是如果使用的 SQL Server 表，如果使用 Service Bus，主题和订阅如果使用 Redis。 每个流可确保有序的读取和写入操作;单个流是一个潜在的缩放瓶颈，因此可以增加流的数量，以帮助减少该瓶颈。 如果使用多个流，则 SignalR 将自动分布这些流的方式，以确保从任何给定的连接发送的消息是按顺序的 （分片） 消息。
 
-[MaxQueueLength](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx)设置由 SignalR 维护的向外缩放发送队列长度的控件。 将其设置为一个值大于 0 将将所有消息都放入发送队列发送一次一个地到配置的消息传递基架。 如果队列的大小超过所配置的长度，将发送的后续调用失败，立即并[InvalidOperationException](https://msdn.microsoft.com/en-us/library/system.invalidoperationexception(v=vs.118).aspx)直到中队列的消息数小于设置试。 默认情况下，因为实现背板通常具有其自己的队列或流控制就地，队列处于禁用状态。 对于 SQL Server 连接池有效地限制进展情况在任何时候的发送的数目。
+[MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx)设置由 SignalR 维护的向外缩放发送队列长度的控件。 将其设置为一个值大于 0 将将所有消息都放入发送队列发送一次一个地到配置的消息传递基架。 如果队列的大小超过所配置的长度，将发送的后续调用失败，立即并[InvalidOperationException](https://msdn.microsoft.com/library/system.invalidoperationexception(v=vs.118).aspx)直到中队列的消息数小于设置试。 默认情况下，因为实现背板通常具有其自己的队列或流控制就地，队列处于禁用状态。 对于 SQL Server 连接池有效地限制进展情况在任何时候的发送的数目。
 
 默认情况下，只有一个流适用于 SQL Server 和 Redis，五个流用于服务总线和队列处于禁用状态，但可以通过在 SQL Server 和 Service Bus 上的配置更改这些设置：
 
@@ -234,7 +234,7 @@ A**缓冲功能**流是指已进入错误的状态; 出错状态流时，发送�
 - **向外缩放流式处理打开**
 - **向外缩放流缓冲**
 - **向外缩放错误总数**
-- **每秒的向外扩展错误**
+- **Scaleout Errors/Sec**
 - **向外缩放发送队列长度**
 
 这些计数器测量的新增功能的详细信息，请参阅[采用 Azure Service Bus 的 SignalR 扩展](scaleout-with-windows-azure-service-bus.md)。
@@ -245,13 +245,13 @@ A**缓冲功能**流是指已进入错误的状态; 出错状态流时，发送�
 
 以下性能计数器也可能是用于监视应用程序的性能。
 
-**内存**
+**Memory**
 
 - .NET CLR 内存\\所有堆 （对于 w3wp) 中的 # 字节
 
 **ASP.NET 2.0**
 
-- Asp.net\requests Current
+- ASP.NET\Requests Current
 - ASP.NET\Queued
 - ASP.NET\Rejected
 
@@ -280,6 +280,6 @@ A**缓冲功能**流是指已进入错误的状态; 出错状态流时，发送�
 
 ASP.NET 性能监视和优化的详细信息，请参阅以下主题：
 
-- [ASP.NET 性能概述](https://msdn.microsoft.com/en-us/library/cc668225(v=vs.100).aspx)
+- [ASP.NET 性能概述](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
 - [在 IIS 7.5、 IIS 7.0 中和 IIS 6.0 上的 ASP.NET 线程使用情况](https://blogs.msdn.com/b/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)
-- [&lt;applicationPool&gt;元素 （Web 设置）](https://msdn.microsoft.com/en-us/library/dd560842.aspx)
+- [&lt;applicationPool&gt;元素 （Web 设置）](https://msdn.microsoft.com/library/dd560842.aspx)

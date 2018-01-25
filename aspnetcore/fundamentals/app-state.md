@@ -10,17 +10,17 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/app-state
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 13b4d759ae574cdf9899ca148f0ffd3d9df6f9ae
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: e00960370fbe87ac0f81f8455526221fa992decd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>简介中 ASP.NET Core 的会话和应用程序状态
 
 通过[Rick Anderson](https://twitter.com/RickAndMSFT)， [Steve Smith](https://ardalis.com/)，和[Diana LaRose](https://github.com/DianaLaRose)
 
-HTTP 是无状态的协议。 Web 服务器将每个 HTTP 请求作为独立的请求，并不会保留用户从以前的请求的值。 本文讨论保留应用程序和请求之间的会话状态的不同方式。 
+HTTP 是无状态的协议。 Web 服务器作为独立的请求将每个 HTTP 请求，并不会保留用户从以前的请求的值。 本文讨论保留应用程序和请求之间的会话状态的不同方式。 
 
 ## <a name="session-state"></a>会话状态
 
@@ -28,17 +28,17 @@ HTTP 是无状态的协议。 Web 服务器将每个 HTTP 请求作为独立的�
 
 ASP.NET 核心通过提供包含会话 ID，它使用每个请求向服务器发送的 cookie 的客户端维护会话状态。 服务器使用的会话 ID 来获取会话数据。 因为会话 cookie 是特定于浏览器，你不能在浏览器中共享会话。 仅当浏览器会话结束时，将删除会话 cookie。 如果收到过期的会话 cookie，创建使用相同的会话 cookie 的新会话。 
 
-服务器将保留上次请求后的有限时间的会话。 你可以将会话超时设置，或使用 20 分钟的默认值。 会话状态非常适合用于存储用户数据的特定于特定会话，但并不需要永久保留。 数据从存储中删除后备或者当您调用`Session.Clear`或会话数据存储中存储的到期时。 关闭浏览器时，或删除会话 cookie 时，服务器不知道。
+服务器将保留上次请求后的有限时间的会话。 你可以将会话超时设置，或使用 20 分钟的默认值。 会话状态非常适合用于存储用户数据的特定于特定会话，但并不需要永久保留。 数据从存储中删除后备或者当您调用`Session.Clear`或会话数据存储中存储的到期时。 关闭浏览器时，或删除会话 cookie 时，不知道服务器。
 
 > [!WARNING]
-> 不要在会话中存储敏感数据。 客户端可能会不关闭浏览器并清除会话 cookie （和某些浏览器保持会话 cookie 存在跨 windows）。 另外，会话可能不是限制为单个用户;下一步的用户可能会继续与同一会话中。
+> 不要将敏感数据存储在会话中。 客户端可能会不关闭浏览器并清除会话 cookie （和某些浏览器保持会话 cookie 存在跨 windows）。 另外，会话可能不是限制为单个用户;下一步的用户可能会继续与同一会话中。
 
 内存中的会话提供程序将会话数据存储在本地服务器上。 如果你计划在服务器场上运行你的 web 应用，你必须使用粘性会话将特定服务器的每个会话进行连接。 Windows Azure 网站平台默认为粘性会话应用程序请求路由 （ARR）。 但是，粘性会话可以影响可伸缩性，并使 web 应用程序更新变得复杂。 更好的选择是使用 Redis 或 SQL Server 分布式缓存，这不需要粘性会话。 有关详细信息，请参阅[使用分布式缓存](xref:performance/caching/distributed)。 有关服务提供商设置的详细信息，请参阅[配置会话](#configuring-session)本文后续部分中。
 
 <a name="temp"></a>
 ## <a name="tempdata"></a>TempData
 
-ASP.NET 核心 MVC 公开[TempData](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData)属性[控制器](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0)。 此属性可存储数据，直至数据被读取。 `Keep` 和 `Peek` 方法可用于检查数据，而不执行删除。 `TempData`当超过单个请求所需要的数据，则很适合用于重定向。 `TempData`是提供程序实现 TempData，例如，使用 cookie 或会话状态。
+ASP.NET 核心 MVC 公开[TempData](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData)属性[控制器](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0)。 此属性存储数据，直到读取它。 `Keep` 和 `Peek` 方法可用于检查数据，而不执行删除。 `TempData`当超过单个请求所需要的数据，则很适合用于重定向。 `TempData`是提供程序实现 TempData，例如，使用 cookie 或会话状态。
 
 <a name="tempdata-providers"></a>
 ### <a name="tempdata-providers"></a>TempData 提供程序
@@ -47,7 +47,7 @@ ASP.NET 核心 MVC 公开[TempData](https://docs.microsoft.com/dotnet/api/micros
 
 ASP.NET 核心 2.0 及更高版本，基于 cookie 的 TempData 提供程序使用默认情况下在 cookie 中存储 TempData。
 
-使用编码的 cookie 数据[Base64UrlTextEncoder](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder?view=aspnetcore-2.0)。 因为 cookie 被加密，并分块，一个 cookie 大小在 1.x 不适用于 ASP.NET Core 中找到的限制。 因为压缩加密的数据会导致安全问题如未压缩的 cookie 数据[犯罪](https://wikipedia.org/wiki/CRIME_(security_exploit))和[违反](https://wikipedia.org/wiki/BREACH_(security_exploit))攻击。 基于 cookie 的 TempData 提供程序的详细信息，请参阅[CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs)。
+使用编码的 cookie 数据[Base64UrlTextEncoder](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder?view=aspnetcore-2.0)。 因为 cookie 被加密，并分块，一个 cookie 大小在 1.x 不适用于 ASP.NET Core 中找到的限制。 因为压缩加密的数据会导致安全问题如未压缩的 cookie 数据[犯罪](https://wikipedia.org/wiki/CRIME_(security_exploit))和[违反](https://wikipedia.org/wiki/BREACH_(security_exploit))攻击。 基于 cookie 的 TempData 提供程序的详细信息，请参阅[CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs)。
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -101,13 +101,13 @@ ASP.NET 核心 2.0 及更高版本，基于 cookie 的 TempData 提供程序使�
 
 Cookie 提供了如何在 web 应用程序中存储特定于用户的数据。 因为与每个请求一起发送 cookie，则其大小应保持在最低限度。 理想情况下，仅标识符应存储在 cookie 中，与存储在服务器上的实际数据。 大多数浏览器将限制为 4096 个字节的 cookie。 此外，仅有限的数量的 cookie 可为每个域。  
 
-Cookie 是易被篡改，因为它们必须在服务器上验证。 尽管在客户端的 cookie 持续性是受影响用户干预，到期，但它们通常是客户端上的数据暂留的最持久形式。
+Cookie 是易被篡改，因为它们必须在服务器上验证。 尽管在客户端的 cookie 持续性是受影响用户干预，到期，但它们通常的客户端上的数据持久性最持久形式。
 
 通常使用 cookie 以进行个性化设置，其中的已知用户自定义内容。 因为用户仅标识并且未经过身份验证在大多数情况下，你通常可以通过将用户名称、 帐户名称或唯一的用户 ID （例如 GUID) 存储在 cookie 中保护 cookie。 然后可以使用 cookie 来访问站点的用户个性化设置基础结构。
 
 ## <a name="httpcontextitems"></a>HttpContext.Items
 
-`Items`集合是存储的数据的正确位置仅需要同时处理一个特定的请求。 每个请求之后，集合的内容将被放弃。 `Items`集合最用作一种方法的组件或中间件进行通信时它们在请求过程的时间内运行的不同时间点，并且具有无法直接将参数传递。 有关详细信息，请参阅[使用 HttpContext.Items](#working-with-httpcontextitems)，本文稍后的。
+`Items`集合是一个理想的位置来存储具有所需的数据仅处理一个特定的请求时。 每个请求之后，集合的内容将被放弃。 `Items`集合最用作一种方法的组件或中间件进行通信时它们在请求过程的时间内运行的不同时间点，并且具有无法直接将参数传递。 有关详细信息，请参阅[使用 HttpContext.Items](#working-with-httpcontextitems)，本文稍后的。
 
 ## <a name="cache"></a>缓存
 
@@ -136,7 +136,7 @@ Cookie 是易被篡改，因为它们必须在服务器上验证。 尽管在客
 
 ---
 
-你可以引用会话中的从`HttpContext`后安装和配置它。
+你可以引用会话中的从`HttpContext`后已安装和配置它。
 
 如果你尝试访问`Session`之前`UseSession`已调用，该异常`InvalidOperationException: Session has not been configured for this application or request`引发。
 
@@ -144,13 +144,13 @@ Cookie 是易被篡改，因为它们必须在服务器上验证。 尽管在客
 
 ### <a name="loading-session-asynchronously"></a>以异步方式加载会话 
 
-ASP.NET 核心中的默认会话提供程序，则从基础加载会话记录[IDistributedCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.distributed.idistributedcache)以异步方式存储才[ISession.LoadAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.isession#Microsoft_AspNetCore_Http_ISession_LoadAsync)之前显式调用方法 `TryGetValue`， `Set`，或`Remove`方法。 如果`LoadAsync`则不会先调用，基础会话记录是否同步加载，这可能影响应用程序能够扩展。
+ASP.NET 核心中的默认会话提供程序，则从基础加载会话记录[IDistributedCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.distributed.idistributedcache)以异步方式存储才[ISession.LoadAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.isession#Microsoft_AspNetCore_Http_ISession_LoadAsync)之前显式调用方法 `TryGetValue`， `Set`，或`Remove`方法。 如果`LoadAsync`不首先调用，基础会话记录是否同步加载，这可能影响应用程序能够扩展。
 
-若要让应用程序强制实施此模式，包装[DistributedSessionStore](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsessionstore)和[DistributedSession](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsession)实施服务，如果引发异常的版本和`LoadAsync`方法不是之前调用`TryGetValue`， `Set`，或`Remove`。 在服务容器中注册的已包装的版本。
+若要让应用程序强制实施此模式，包装[DistributedSessionStore](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsessionstore)和[DistributedSession](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsession)实施服务，如果引发异常的版本和`LoadAsync`方法不之前调用`TryGetValue`， `Set`，或`Remove`。 在服务容器中注册的已包装的版本。
 
 ### <a name="implementation-details"></a>实现详细信息
 
-会话使用 cookie 跟踪和标识来自单个浏览器的请求。 默认情况下，此 cookie 名为"。AspNet.Session"，并使用的路径"/"。 Cookie 默认未指定域，因为它不将提供给客户端脚本的页上 (因为`CookieHttpOnly`默认为`true`)。
+会话使用 cookie 跟踪和标识来自单个浏览器的请求。 默认情况下，此 cookie 名为"。AspNet.Session"，并使用的路径"/"。 Cookie 默认不指定域，因为它不将提供给客户端脚本的页上 (因为`CookieHttpOnly`默认为`true`)。
 
 若要重写会话默认值，使用`SessionOptions`:
 

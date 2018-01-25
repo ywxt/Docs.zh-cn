@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/scaleout-with-windows-azure-service-bus
 msc.type: authoredcontent
-ms.openlocfilehash: 857fc8baa61549e2fabbb8da012b1fa23950237d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7cb68d578fee8d6ee036f8fb096ba45e0c8ef3d6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-scaleout-with-azure-service-bus"></a>使用 Azure 服务总线的 SignalR 扩展
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/10/2017
 - [Windows Azure SDK](https://go.microsoft.com/fwlink/?linkid=254364&amp;clcid=0x409)。
 - Visual Studio 2012 或 2013年。
 
-服务总线底板也是与兼容[Service Bus for Windows Server](https://msdn.microsoft.com/en-us/library/windowsazure/dn282144.aspx)，版本 1.1。 但是，它不是与 Service Bus for Windows Server 的 1.0 版兼容的。
+服务总线底板也是与兼容[Service Bus for Windows Server](https://msdn.microsoft.com/library/windowsazure/dn282144.aspx)，版本 1.1。 但是，它不是与 Service Bus for Windows Server 的 1.0 版兼容的。
 
 ## <a name="pricing"></a>定价
 
@@ -52,7 +52,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-csharp[Main](scaleout-with-windows-azure-service-bus/samples/sample1.cs)]
 
-此代码使用的默认值配置底板[TopicCount](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.servicebusscaleoutconfiguration.topiccount(v=vs.118).aspx)和[MaxQueueLength](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx)。 有关更改这些值的信息，请参阅[SignalR 性能： 向外缩放度量值](signalr-performance.md#scaleout_metrics)。
+此代码使用的默认值配置底板[TopicCount](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.servicebusscaleoutconfiguration.topiccount(v=vs.118).aspx)和[MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx)。 有关更改这些值的信息，请参阅[SignalR 性能： 向外缩放度量值](signalr-performance.md#scaleout_metrics)。
 
 对于每个应用程序，为"YourAppName"选取一个不同的值。 不要跨多个应用程序中使用相同的值。
 

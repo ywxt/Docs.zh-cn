@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 7427b4f7c6b7a00fe795053aac0f612471a163cd
-ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
+ms.openlocfilehash: 7339f6658ede16e79d19762bd6636917fe4de85f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-new-field"></a>添加新字段
 ====================
@@ -42,7 +42,7 @@ ms.lasthandoff: 01/12/2018
 
 在**程序包管理器控制台**窗口`PM>`提示输入
 
-Enable-migrations-ContextTypeName MvcMovie.Models.MovieDBContext
+Enable-Migrations -ContextTypeName MvcMovie.Models.MovieDBContext
 
 ![](adding-a-new-field/_static/image3.png)
 
@@ -66,13 +66,13 @@ Visual Studio 将打开*Configuration.cs*文件。 替换`Seed`中的方法*Conf
 > 
 > 代码优先迁移调用`Seed`每个迁移后的方法 (即，调用**更新数据库**在 Package Manager Console)，和此方法更新行，具有已插入，或将其插入如果它们尚不存在。
 > 
-> [AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)下面的代码中的方法执行的"upsert"操作：
+> [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)下面的代码中的方法执行的"upsert"操作：
 > 
 > [!code-csharp[Main](adding-a-new-field/samples/sample3.cs)]
 > 
-> 因为[种子](https://msdn.microsoft.com/en-us/library/hh829453(v=vs.103).aspx)方法运行与每个迁移时，不能只是插入数据，因为你尝试添加的行已将存在后创建数据库的初始迁移。 "[Upsert](http://en.wikipedia.org/wiki/Upsert)"操作可以防止如果你尝试插入行已存在，会发生的错误，但它将重写任何测试应用程序时可能已做的数据更改。 使用某些表中的测试数据您可能不希望这种情况： 在某些情况下在测试期间更改数据时所需更改后数据库更新保留。 在这种情况下要执行条件的插入操作： 仅当它尚不存在插入行。   
+> 因为[种子](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx)方法运行与每个迁移时，不能只是插入数据，因为你尝试添加的行已将存在后创建数据库的初始迁移。 "[Upsert](http://en.wikipedia.org/wiki/Upsert)"操作可以防止如果你尝试插入行已存在，会发生的错误，但它将重写任何测试应用程序时可能已做的数据更改。 使用某些表中的测试数据您可能不希望这种情况： 在某些情况下在测试期间更改数据时所需更改后数据库更新保留。 在这种情况下要执行条件的插入操作： 仅当它尚不存在插入行。   
 >   
-> 第一个参数传递给[AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)方法指定要用于检查行是否已存在的属性。 为你提供的，测试影片数据`Title`属性可以用于此目的，由于每个列表中的标题都是唯一：
+> 第一个参数传递给[AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)方法指定要用于检查行是否已存在的属性。 为你提供的，测试影片数据`Title`属性可以用于此目的，由于每个列表中的标题都是唯一：
 > 
 > [!code-csharp[Main](adding-a-new-field/samples/sample4.cs)]
 > 
@@ -80,7 +80,7 @@ Visual Studio 将打开*Configuration.cs*文件。 替换`Seed`中的方法*Conf
 >   
 >  *序列包含多个元素*  
 >   
-> 有关详细信息[AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)方法，请参阅[负责使用 EF 4.3 AddOrUpdate 方法](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)...
+> 有关详细信息[AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)方法，请参阅[负责使用 EF 4.3 AddOrUpdate 方法](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)...
 
 
 **按 CTRL-SHIFT-B 生成项目。**（如果不在此时生成以下步骤即会成功。）

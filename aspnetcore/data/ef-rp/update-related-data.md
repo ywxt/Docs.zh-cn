@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: 817bfd48dce94e7dbad96cb6f822494e3adfae1d
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 236589d0202a7f30f1e1a9d69902000fd9a2dd71
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="updating-related-data---ef-core-razor-pages-7-of-8"></a>更新相关的数据的 EF 核心 Razor 页 (7 个 8)
 
@@ -69,7 +69,7 @@ ms.lasthandoff: 01/19/2018
 * 更改从标题**DepartmentID**到**部门**。
 * 替换`"ViewBag.DepartmentID"`与`DepartmentNameSL`（从基类）。
 * 将添加"选择部门"选项。 此更改而不是第一个部门呈现"选择部门"。
-* 如果未选择部门，请添加一条验证消息。
+* 未选择部门时，将添加一条验证消息。
 
 使用 Razor 页[选择标记帮助器](xref:mvc/views/working-with-forms#the-select-tag-helper):
 
@@ -91,11 +91,11 @@ ms.lasthandoff: 01/19/2018
 
 前面的标记进行以下更改：
 
-* 显示过程 id。 通常在实体的主密钥 (PK) 不会显示。 Pk 将向用户通常毫无意义。 在这种情况下，在 PK 是过程数。
+* 显示过程 id。 通常不显示实体的主密钥 (PK)。 Pk 将向用户通常毫无意义。 在这种情况下，在 PK 是过程数。
 * 更改从标题**DepartmentID**到**部门**。
 * 替换`"ViewBag.DepartmentID"`与`DepartmentNameSL`（从基类）。
 * 将添加"选择部门"选项。 此更改而不是第一个部门呈现"选择部门"。
-* 如果未选择部门，请添加一条验证消息。
+* 未选择部门时，将添加一条验证消息。
 
 页包含隐藏的字段 (`<input type="hidden">`) 过程数。 添加`<label>`标记帮助器与`asp-for="Course.CourseID"`不消除隐藏字段的需要。 `<input type="hidden">`需要的课程编号，以包括在已发布数据中，当用户单击**保存**。
 
@@ -103,7 +103,7 @@ ms.lasthandoff: 01/19/2018
 
 ## <a name="add-asnotracking-to-the-details-and-delete-page-models"></a>将 AsNoTracking 添加到详细信息和删除页模型
 
-[AsNoTracking](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.asnotracking?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_AsNoTracking__1_System_Linq_IQueryable___0__)跟踪不需要时可以提高性能。 添加`AsNoTracking`到删除和详细信息页模型。 下面的代码演示更新的删除页模型：
+[AsNoTracking](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.asnotracking?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_AsNoTracking__1_System_Linq_IQueryable___0__)跟踪并不是必需时可以提高性能。 添加`AsNoTracking`到删除和详细信息页模型。 下面的代码演示更新的删除页模型：
 
 [!code-csharp[Main](intro/samples/cu/Pages/Courses/Delete.cshtml.cs?name=snippet&highlight=21,23,40,41)]
 

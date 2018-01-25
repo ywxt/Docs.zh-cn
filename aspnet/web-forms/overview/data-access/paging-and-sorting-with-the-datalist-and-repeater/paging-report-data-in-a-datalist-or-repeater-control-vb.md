@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5cb469252dc36ced98357dd984d36668af1c430b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 66f1065c41352f355dd5f1be43443165df909b93
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="paging-report-data-in-a-datalist-or-repeater-control-vb"></a>DataList 或转发器控件 (VB) 中的分页报表数据
 ====================
@@ -80,7 +80,7 @@ ms.lasthandoff: 11/10/2017
 
 *自定义分页*通过抓取仅记录在请求的页面上显示的精确子集解决了默认分页的性能问题。 在实现自定义分页时，我们必须编写 SQL 查询将有效地返回只是正确的记录集。 我们已了解如何创建一个查询使用 SQL Server 2005 s 新[`ROW_NUMBER()`关键字](http://www.4guysfromrolla.com/webtech/010406-1.shtml)进来[高效地分页通过大型金额的数据](../paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb.md)教程。
 
-若要在 DataList 或转发器控件中实现默认分页，我们可以使用[`PagedDataSource`类](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.aspx)作为周围的包装器`ProductsDataTable`其内容正在通过寻呼发送。 `PagedDataSource`类具有`DataSource`可以分配给任何可枚举对象的属性和[ `PageSize` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.pagesize.aspx)和[ `CurrentPageIndex` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.currentpageindex.aspx)属性用来指示多少条记录到每页的显示和当前的页索引。 已设置这些属性之后,`PagedDataSource`可以用作 Web 控件的任何数据的数据源。 `PagedDataSource`，当枚举时，将只返回其内部的记录的相应子集`DataSource`基于`PageSize`和`CurrentPageIndex`属性。 图 4 展示了的功能`PagedDataSource`类。
+若要在 DataList 或转发器控件中实现默认分页，我们可以使用[`PagedDataSource`类](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.aspx)作为周围的包装器`ProductsDataTable`其内容正在通过寻呼发送。 `PagedDataSource`类具有`DataSource`可以分配给任何可枚举对象的属性和[ `PageSize` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.pagesize.aspx)和[ `CurrentPageIndex` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.currentpageindex.aspx)属性用来指示多少条记录到每页的显示和当前的页索引。 已设置这些属性之后,`PagedDataSource`可以用作 Web 控件的任何数据的数据源。 `PagedDataSource`，当枚举时，将只返回其内部的记录的相应子集`DataSource`基于`PageSize`和`CurrentPageIndex`属性。 图 4 展示了的功能`PagedDataSource`类。
 
 
 ![PagedDataSource 包装具有可分页接口的可枚举对象](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image6.png)
@@ -204,7 +204,7 @@ DataList 和转发器中，为我们负责决定在分页接口和实现它。 �
 
 ## <a name="determining-the-total-number-of-records-being-paged-through"></a>确定正在通过寻呼发送到的记录总数
 
-`PagedDataSource`对象从 ObjectDataSource s 返回`Select()`方法已在其中*所有*条产品记录，即使它们的一个子集显示在 DataList。 `PagedDataSource` S [ `Count`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.count.aspx)只返回数的项将显示在 DataList; [ `DataSourceCount`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.datasourcecount.aspx)返回中的项的总数`PagedDataSource`. 因此，我们需要分配 ASP.NET 页 s`TotalRowCount`属性值的`PagedDataSource`s`DataSourceCount`属性。
+`PagedDataSource`对象从 ObjectDataSource s 返回`Select()`方法已在其中*所有*条产品记录，即使它们的一个子集显示在 DataList。 `PagedDataSource` S [ `Count`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.count.aspx)只返回数的项将显示在 DataList; [ `DataSourceCount`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.datasourcecount.aspx)返回中的项的总数`PagedDataSource`. 因此，我们需要分配 ASP.NET 页 s`TotalRowCount`属性值的`PagedDataSource`s`DataSourceCount`属性。
 
 若要实现此目的，创建的事件处理程序 ObjectDataSource 的`Selected`事件。 在`Selected`我们有权访问 ObjectDataSource s 的返回值的事件处理程序`Select()`方法在此情况下， `PagedDataSource`。
 
@@ -224,7 +224,7 @@ DataList 和转发器中，为我们负责决定在分页接口和实现它。 �
 
 ## <a name="disabling-paging-interface-controls"></a>禁用分页界面控件
 
-目前，所有四个按钮而不考虑查看的页的启用。 但是，我们想要禁用的第一个和上一步按钮时显示的最后一页时显示的数据，以及下一步和最后一个按钮的第一页。 `PagedDataSource`返回 ObjectDataSource 的对象`Select()`方法具有属性[ `IsFirstPage` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.isfirstpage.aspx)和[ `IsLastPage` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.islastpage.aspx) ，我们可以检查以确定是否我们正在查看数据的第一个或最后一页。
+目前，所有四个按钮而不考虑查看的页的启用。 但是，我们想要禁用的第一个和上一步按钮时显示的最后一页时显示的数据，以及下一步和最后一个按钮的第一页。 `PagedDataSource`返回 ObjectDataSource 的对象`Select()`方法具有属性[ `IsFirstPage` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.isfirstpage.aspx)和[ `IsLastPage` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.islastpage.aspx) ，我们可以检查以确定是否我们正在查看数据的第一个或最后一页。
 
 将以下代码添加到 ObjectDataSource 的`Selected`事件处理程序：
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7fb212638765589b998c4eca8265dfeb2910082f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5f908eb6c6b2d18c6c41870a38bb618737949b0a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-website-that-uses-application-services-vb"></a>配置网站，以使用应用程序服务 (VB)
 ====================
@@ -35,7 +35,7 @@ ASP.NET 版本 2.0 引入了一系列*应用程序服务*，这是.NET Framework
 - **角色**-API 对用户进行分类分组的。
 - **配置文件**-的 API，用于存储自定义的、 特定于用户的内容。
 - **站点地图**-的用于定义在层次结构，然后可以通过导航控件，如菜单和痕迹导航，显示的窗体中的站点 s 逻辑结构的 API。
-- **个性化**-的 API，用于维护自定义项首选项，最常用于[ *web 部件*](https://msdn.microsoft.com/en-us/library/e0s9t4ck.aspx)。
+- **个性化**-的 API，用于维护自定义项首选项，最常用于[ *web 部件*](https://msdn.microsoft.com/library/e0s9t4ck.aspx)。
 - **运行状况监视**-的 API，用于监视性能、 安全、 错误和运行的 web 应用程序其他系统运行状况度量值。
   
 
@@ -71,7 +71,7 @@ ASP.NET 版本 2.0 引入了一系列*应用程序服务*，这是.NET Framework
 
 可能实现，且通常理想，若要创建应用程序服务网站 s 应用程序特定数据的存储位置位于同一数据库中的数据库对象。 .NET Framework 附带有一个名为工具`aspnet_regsql.exe`用于指定数据库上安装的数据库对象。 我已继续进入并使用此工具将添加到这些对象`Reviews.mdf`数据库中`App_Data`文件夹 （开发数据库）。 我们将了解如何在本教程后面使用此工具，当我们将这些对象添加到生产数据库。
 
-如果应用程序服务到数据库的数据库对象而不添加`ASPNETDB`将需要自定义`SqlMembershipProvider`和`SqlRoleProvider`提供程序类配置，以便他们使用相应的数据库。 若要自定义成员资格提供程序将添加[ *&lt;成员资格&gt;元素*](https://msdn.microsoft.com/en-us/library/1b9hw62f.aspx)内`<system.web>`主题中`Web.config`; 使用[ *&lt;roleManager&gt;元素*](https://msdn.microsoft.com/en-us/library/ms164660.aspx)配置角色提供程序。 下面的代码段取自簿评审应用程序的`Web.config`和显示的成员资格和角色 Api 的配置设置。 请注意同时注册新的提供程序-`ReviewMembership`和`ReviewRole`-使用`SqlMembershipProvider`和`SqlRoleProvider`提供程序，分别。
+如果应用程序服务到数据库的数据库对象而不添加`ASPNETDB`将需要自定义`SqlMembershipProvider`和`SqlRoleProvider`提供程序类配置，以便他们使用相应的数据库。 若要自定义成员资格提供程序将添加[ *&lt;成员资格&gt;元素*](https://msdn.microsoft.com/library/1b9hw62f.aspx)内`<system.web>`主题中`Web.config`; 使用[ *&lt;roleManager&gt;元素*](https://msdn.microsoft.com/library/ms164660.aspx)配置角色提供程序。 下面的代码段取自簿评审应用程序的`Web.config`和显示的成员资格和角色 Api 的配置设置。 请注意同时注册新的提供程序-`ReviewMembership`和`ReviewRole`-使用`SqlMembershipProvider`和`SqlRoleProvider`提供程序，分别。
 
 [!code-xml[Main](configuring-a-website-that-uses-application-services-vb/samples/sample1.xml)]
 
@@ -94,7 +94,7 @@ ASP.NET，可以轻松地授予或拒绝对特定文件或文件夹由用户或�
 
 部署使用应用程序服务，如果你想要复制到生产环境开发环境中创建的用户帐户的网站时，可能会出现另一个难题。 根据成员资格和角色的配置，有可能，即使你已成功复制到生产数据库开发环境中创建的用户帐户，这些用户将无法登录到 web 应用程序在生产环境中。 我们将看一下此问题的原因，并讨论如何防止发生。
 
-ASP.NET 附带 nice [*网站管理工具 (WSAT)* ](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx) ，可以从 Visual Studio 启动，并允许用户帐户、 角色和授权规则，以通过基于 web 的管理接口。 遗憾的是，WSAT 仅适用于本地网站，这意味着不能用来远程管理用户帐户、 角色和 web 应用程序在生产环境中的授权规则。 我们将查看不同的方式来实现从您的生产网站 WSAT 类似的行为。
+ASP.NET 附带 nice [*网站管理工具 (WSAT)* ](https://msdn.microsoft.com/library/yy40ytx0.aspx) ，可以从 Visual Studio 启动，并允许用户帐户、 角色和授权规则，以通过基于 web 的管理接口。 遗憾的是，WSAT 仅适用于本地网站，这意味着不能用来远程管理用户帐户、 角色和 web 应用程序在生产环境中的授权规则。 我们将查看不同的方式来实现从您的生产网站 WSAT 类似的行为。
 
 ### <a name="adding-the-database-objects-using-aspnetregsqlexe"></a>添加的数据库对象使用 aspnet\_regsql.exe
 
@@ -192,13 +192,13 @@ ASP.NET 网站管理工具 (WSAT)，可以轻松创建和管理用户帐户、 �
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [*ASP.NET SQL 服务器注册工具 (aspnet_regsql.exe)*](https://msdn.microsoft.com/en-us/library/ms229862.aspx)
-- [*为 SQL Server 中创建应用程序服务数据库*](https://msdn.microsoft.com/en-us/library/x28wfk74.aspx)
+- [*ASP.NET SQL 服务器注册工具 (aspnet_regsql.exe)*](https://msdn.microsoft.com/library/ms229862.aspx)
+- [*为 SQL Server 中创建应用程序服务数据库*](https://msdn.microsoft.com/library/x28wfk74.aspx)
 - [*在 SQL Server 中创建成员身份架构*](../../older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb.md)
 - [*检查 ASP.NET s 成员资格、 角色和配置文件*](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [*滚动你自己的网站管理工具*](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
 - [*网站安全教程*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
-- [*网站管理工具概述*](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx)
+- [*网站管理工具概述*](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 
 >[!div class="step-by-step"]
 [上一页](configuring-the-production-web-application-to-use-the-production-database-vb.md)

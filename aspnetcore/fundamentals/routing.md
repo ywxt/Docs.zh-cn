@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: ffa3178dc4e3aac3ba51c29b7efa3f71eb56bcfe
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 8f6f4fac89afe14d83d629128fc3e4632ae95510
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET 核心中的路由
 
@@ -98,9 +98,9 @@ routes.MapRoute(
     template: "{controller=Home}/{action=Index}/{id?}");
 ```
 
-此模板将匹配类似 URL 路径`/Products/Details/17`和提取路由值`{ controller = Products, action = Details, id = 17 }`。 路由值确定通过将 URL 路径拆分为段，以及与每个段进行匹配*路由参数*路由模板中的名称。 路由参数的名称。 它们由括在大括号中的参数名称定义`{ }`。
+此模板将匹配类似 URL 路径`/Products/Details/17`和提取路由值`{ controller = Products, action = Details, id = 17 }`。 路由值确定通过将 URL 路径拆分为段，以及与每个段进行匹配*路由参数*路由模板中的名称。 路由参数的名称。 它们由括在大括号中的参数名称`{ }`。
 
-上述模板还无法与匹配的 URL 路径`/`，会产生值`{ controller = Home, action = Index }`。 这是因为`{controller}`和`{action}`路由参数具有默认值和`id`路由参数是可选的。 等于`=`符号后路由参数名称定义参数的默认值后跟一个值。 问号`?`路由参数名称定义为可选参数之后。 将路由使用的默认值的参数*始终*当路由与匹配-可选参数将不会生成一个路由值，如果没有相应的 URL 路径段时产生路由值。
+上述模板还无法与匹配的 URL 路径`/`，会产生值`{ controller = Home, action = Index }`。 这是因为`{controller}`和`{action}`路由参数具有默认值和`id`路由参数是可选的。 等于`=`符号后路由参数名称定义参数的默认值后跟一个值。 问号`?`路由参数名称定义为可选参数之后。 将路由使用的默认值的参数*始终*当路由与匹配-可选参数不会生成一个路由值，如果没有相应的 URL 路径段时产生路由值。
 
 请参阅[路由模板引用](#route-template-reference)的路由模板功能和语法的详尽描述。
 
@@ -255,7 +255,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 
 ## <a name="route-template-reference"></a>路由模板参考
 
-在大括号内的令牌 (`{ }`) 定义*路由参数*后者将绑定当找到匹配项路由。 你可以定义多个路由参数路由段中，但它们必须按某一文字值分隔。 例如`{controller=Home}{action=Index}`将不是有效的路由，因为没有文本值之间`{controller}`和`{action}`。 这些路由参数必须具有一个名称，并且可以指定其他属性。
+在大括号内的令牌 (`{ }`) 定义*路由参数*后者将绑定当找到匹配项路由。 你可以定义多个路由参数路由段中，但它们必须按某一文字值分隔。 例如`{controller=Home}{action=Index}`不是有效的路由，因为没有文本值之间`{controller}`和`{action}`。 这些路由参数必须具有一个名称，并且可以指定其他属性。
 
 路由参数以外的文字文本 (例如， `{id}`) 和路径分隔符`/`必须匹配在 URL 中的文本。 文本匹配是不区分大小写并且基于的已解码的表示形式的 Url 路径。 若要匹配的文本的路由参数分隔符`{`或`}`，通过重复字符对其进行转义 (`{{`或`}}`)。
 

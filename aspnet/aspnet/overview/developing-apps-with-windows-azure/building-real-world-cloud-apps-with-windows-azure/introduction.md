@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 5054f932d05fb612a6e18a81274719d7e249b77b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4de0b52e0b4ae7ce00e7b07bce2decfc5068964a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="building-real-world-cloud-apps-with-azure"></a>使用 Azure 构建真实世界云应用
 ====================
@@ -103,7 +103,7 @@ ms.lasthandoff: 11/10/2017
     - 启用高可用性，并通过松散耦合 web 和辅助层来提高可伸缩性。
     - 演示： 修复它应用中的 Azure 存储队列。
 - [云应用程序模式和指南的更多](more-patterns-and-guidance.md)。
-- [附录： 修复它示例应用程序](the-fix-it-sample-application.md)
+- [附录：“Fix It”示例应用程序](the-fix-it-sample-application.md)
 
     - 已知问题
     - 最佳做法
@@ -155,7 +155,7 @@ ms.lasthandoff: 11/10/2017
 
 所有这些自动发生。 你需要做是创建网站和应用程序部署到它，使用 Windows PowerShell、 Visual Studio 中或 Azure 管理门户。
 
-快速而简单分步教程演示如何在 Visual Studio 中创建 web 应用程序并将其部署到 Azure 网站，请参阅[Azure 和 ASP.NET 入门](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/)。
+快速而简单分步教程演示如何在 Visual Studio 中创建 web 应用程序并将其部署到 Azure 网站，请参阅[Azure 和 ASP.NET 入门](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)。
 
 <a id="summary"></a>
 ## <a name="summary"></a>摘要
@@ -168,13 +168,13 @@ ms.lasthandoff: 11/10/2017
 
 文档：
 
-- [Web 应用在 Azure App Service 中的](https://azure.microsoft.com/en-us/services/app-service/web/)。 有关 Azure Web Apps 文档的门户页。
-- [Web Apps、 云服务和 Vm： 何时使用何？](https://azure.microsoft.com/en-us/documentation/articles/choose-web-site-cloud-service-vm/) 仅可以在 Azure 中运行 web 应用程序的三种方式之一 WAWS 这一章中所示。 本文介绍的三种方式的区别，并提供有关如何选择哪一个最适合你的方案的指南。 如网站、 云服务是 Azure PaaS 功能。 Vm 是 IaaS 功能。 PaaS 和 IaaS 的说明，请参阅[数据选项](data-storage-options.md#paasiaas)章。
+- [Web 应用在 Azure App Service 中的](https://azure.microsoft.com/services/app-service/web/)。 有关 Azure Web Apps 文档的门户页。
+- [Web Apps、 云服务和 Vm： 何时使用何？](https://azure.microsoft.com/documentation/articles/choose-web-site-cloud-service-vm/) 仅可以在 Azure 中运行 web 应用程序的三种方式之一 WAWS 这一章中所示。 本文介绍的三种方式的区别，并提供有关如何选择哪一个最适合你的方案的指南。 如网站、 云服务是 Azure PaaS 功能。 Vm 是 IaaS 功能。 PaaS 和 IaaS 的说明，请参阅[数据选项](data-storage-options.md#paasiaas)章。
 
 视频：
 
-- [Scott Guthrie 开始步骤 0-什么是 Azure 云操作系统？](https://azure.microsoft.com/en-us/documentation/videos/what-is-the-cloud-os-scottgu/)
-- [网站体系结构-使用 Stefan Schackow](https://azure.microsoft.com/en-us/documentation/videos/why-azure-web-sites-plus-architecture/)。
+- [Scott Guthrie 开始步骤 0-什么是 Azure 云操作系统？](https://azure.microsoft.com/documentation/videos/what-is-the-cloud-os-scottgu/)
+- [网站体系结构-使用 Stefan Schackow](https://azure.microsoft.com/documentation/videos/why-azure-web-sites-plus-architecture/)。
 - [Azure 网站与 Nir Mashkowski 的内部结构](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski)。
 
 >[!div class="step-by-step"]

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8168f2d8431a1f051167dcd2f5123fafa942fa23
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c57722965b510ac4f5cf0c06c7c01c8cea26384f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="forms-authentication-configuration-and-advanced-topics-c"></a>窗体身份验证配置和高级的主题 (C#)
 ====================
@@ -35,29 +35,29 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-1-examining-the-ltformsgt-configuration-settings"></a>第 1 步： 检查&lt;窗体&gt;配置设置
 
-ASP.NET 中的窗体身份验证系统提供的多种可以基于应用程序的应用程序自定义的配置设置。 这包括设置，例如： 窗体身份验证的生存期票证;哪种保护应用于票证;在哪些条件 cookieless 身份验证使用票证;到登录页中; 路径和其他信息。 若要修改的默认值，将添加[&lt;窗体&gt;元素](https://msdn.microsoft.com/en-us/library/1d3t3c61.aspx)的子级[&lt;身份验证&gt;元素](https://msdn.microsoft.com/en-us/library/532aee0e.aspx)，指定这些属性你想要自定义为 XML 属性的值如下所示：
+ASP.NET 中的窗体身份验证系统提供的多种可以基于应用程序的应用程序自定义的配置设置。 这包括设置，例如： 窗体身份验证的生存期票证;哪种保护应用于票证;在哪些条件 cookieless 身份验证使用票证;到登录页中; 路径和其他信息。 若要修改的默认值，将添加[&lt;窗体&gt;元素](https://msdn.microsoft.com/library/1d3t3c61.aspx)的子级[&lt;身份验证&gt;元素](https://msdn.microsoft.com/library/532aee0e.aspx)，指定这些属性你想要自定义为 XML 属性的值如下所示：
 
 [!code-xml[Main](forms-authentication-configuration-and-advanced-topics-cs/samples/sample1.xml)]
 
 表 1 总结了可以通过自定义的属性&lt;窗体&gt;元素。 Web.config 是一个 XML 文件，因为左侧列中的属性名称是区分大小写。
 
-| **特性** | **描述** |
+| **特性** | **说明** |
 | --- | --- |
 | 无 cookie | 此属性指定在什么条件下的身份验证票证存储在与被嵌入在 URL 中的 cookie。 允许的值为： UseCookies;UseUri;自动检测;和 UseDeviceProfile （默认值）。 步骤 2 检查此设置在更多详细信息。 |
 | defaultUrl | 指示用户将重定向到在登录后从登录页如果没有 RedirectUrl 值在查询字符串中指定的 URL。 默认值为 default.aspx。 |
 | 域 | 当使用基于 cookie 的身份验证票证，则此设置指定 cookie 的域值。 默认值为空字符串，这会导致浏览器使用从该情况下，它已签发 （如 www.yourdomain.com) 的域。 在这种情况下，cookie 将**不**时进行请求定向到子域，例如 admin.yourdomain.com 发送。如果你想要传递给需要自定义将其设置为进行域属性的所有子域的 cookie。 |
 | enableCrossAppRedirects | 一个布尔值，该值指示是否已经过身份验证的用户要记住过的同一服务器上其他 web 应用程序中定向到 Url 时。 默认值为 false。 |
-| 登录 Url | 登录页的 URL。 默认值为 login.aspx。 |
+| loginUrl | 登录页的 URL。 默认值为 login.aspx。 |
 | name | 当使用基于 cookie 的身份验证票证的 cookie 的名称。 默认值为。ASPXAUTH。 |
 | path | 当使用基于 cookie 的身份验证票证，则此设置指定 cookie 的路径属性。 Path 属性使开发人员可以限制到特定的目录层次结构的 cookie 的作用域。 默认值是，/，它通知浏览器将身份验证票证 cookie 发送到对域进行任何请求。 |
 | 保护 | 指示哪些技术用于保护窗体身份验证票证。 允许的值包括： 所有 （默认）;加密;None;和验证。 在步骤 3 中详细讨论了这些设置。 |
 | requireSSL | 一个布尔值，该值指示是否需要 SSL 连接来传输身份验证 cookie。 默认值为 False。 |
-| SlidingExpiration | 一个布尔值，该值指示用户是否每次重置身份验证 cookie 超时在单个会话期间访问该站点。 默认值为 true。 在指定的更详细地讨论身份验证票证超时策略的票证超时值部分。 |
+| slidingExpiration | 一个布尔值，该值指示用户是否每次重置身份验证 cookie 超时在单个会话期间访问该站点。 默认值为 true。 在指定的更详细地讨论身份验证票证超时策略的票证超时值部分。 |
 | 超时 | 指定时间，以分钟为单位，身份验证票证 cookie 过期。 默认值为 30。 在指定的更详细地讨论身份验证票证超时策略的票证超时值部分。 |
 
 **表 1**: 摘要&lt;窗体&gt;元素的属性
 
-在 ASP.NET 2.0 和到超过默认窗体身份验证值将是硬编码在.NET Framework 中的 FormsAuthenticationConfiguration 类。 必须在 Web.config 文件中的应用程序的应用程序基于应用任何修改。 这不同于 ASP.NET 1.x，其中默认窗体身份验证值在 machine.config 文件中存储 （并因此无法通过编辑 machine.config 修改）。 有关 ASP.NET 的主题的段 1.x，因此有必要提及大量的窗体身份验证系统设置在 ASP.NET 2.0 中具有不同的默认值和比在 ASP.NET 中的扩展 1.x。 如果要从 ASP.NET 1.x 环境迁移你的应用程序，务必要注意的这些差异。 请查阅[&lt;窗体&gt;元素技术文档](https://msdn.microsoft.com/en-us/library/1d3t3c61.aspx)有关的差异的列表。
+在 ASP.NET 2.0 和到超过默认窗体身份验证值将是硬编码在.NET Framework 中的 FormsAuthenticationConfiguration 类。 必须在 Web.config 文件中的应用程序的应用程序基于应用任何修改。 这不同于 ASP.NET 1.x，其中默认窗体身份验证值在 machine.config 文件中存储 （并因此无法通过编辑 machine.config 修改）。 有关 ASP.NET 的主题的段 1.x，因此有必要提及大量的窗体身份验证系统设置在 ASP.NET 2.0 中具有不同的默认值和比在 ASP.NET 中的扩展 1.x。 如果要从 ASP.NET 1.x 环境迁移你的应用程序，务必要注意的这些差异。 请查阅[&lt;窗体&gt;元素技术文档](https://msdn.microsoft.com/library/1d3t3c61.aspx)有关的差异的列表。
 
 > [!NOTE]
 > 多个窗体身份验证设置，例如超时、 域和路径，指定生成的窗体身份验证票证 cookie 的详细信息。 在 cookie、 它们的工作原理和它们的各种属性的详细信息，请阅读[此 Cookie 教程](http://www.quirksmode.org/js/cookies.html)。
@@ -137,7 +137,7 @@ ASP.NET 中的窗体身份验证系统提供的多种可以基于应用程序的
 自动检测和 UseDeviceProfile 设置依赖于*设备配置文件*中有助于确定是否使用基于 cookie 的或无 cookie 身份验证票证。 ASP.NET 维护的各种设备和其功能，如它们是否支持 cookie，它们支持的 JavaScript 和等等的哪个版本的数据库。 每次设备请求 web 页从 web 服务器发送沿*用户代理*标识的设备类型的 HTTP 标头。 ASP.NET 自动指定在其数据库中的相应配置文件与匹配提供的用户代理字符串。
 
 > [!NOTE]
-> 设备功能的此数据库存储在多个 XML 文件符合[浏览器定义文件架构](https://msdn.microsoft.com/en-us/library/ms228122.aspx)。 默认设备配置文件位于 %windir%\microsoft.net\framework\v2.0.50727\config\browsers。 此外可以向应用程序的应用程序添加自定义文件\_浏览器文件夹。 有关详细信息，请参阅[How To： 检测浏览器类型中的 ASP.NET Web Pages](https://msdn.microsoft.com/en-us/library/3yekbd5b.aspx)。
+> 设备功能的此数据库存储在多个 XML 文件符合[浏览器定义文件架构](https://msdn.microsoft.com/library/ms228122.aspx)。 默认设备配置文件位于 %windir%\microsoft.net\framework\v2.0.50727\config\browsers。 此外可以向应用程序的应用程序添加自定义文件\_浏览器文件夹。 有关详细信息，请参阅[How To： 检测浏览器类型中的 ASP.NET Web Pages](https://msdn.microsoft.com/library/3yekbd5b.aspx)。
 
 
 由于此默认设置为 UseDeviceProfile，通过其配置文件报告它不支持 cookie 的设备访问该站点时，将会用无 cookie 窗体身份验证票证。
@@ -199,9 +199,9 @@ Microsoft 强烈建议使用的所有设置。
 
 ### <a name="setting-the-validation-and-decryption-keys"></a>设置验证和解密密钥
 
-加密和哈希算法的窗体身份验证系统中用于加密和验证身份验证票证是通过可自定义[ &lt;machineKey&gt;元素](https://msdn.microsoft.com/en-us/library/w8h3skw9.aspx)在 Web.config 中。表 2 概述了&lt;machineKey&gt;元素的特性和其可能的值。
+加密和哈希算法的窗体身份验证系统中用于加密和验证身份验证票证是通过可自定义[ &lt;machineKey&gt;元素](https://msdn.microsoft.com/library/w8h3skw9.aspx)在 Web.config 中。表 2 概述了&lt;machineKey&gt;元素的特性和其可能的值。
 
-| **特性** | **描述** |
+| **特性** | **说明** |
 | --- | --- |
 | 解密 | 指示用于加密的算法。 此属性可以具有以下四个值之一:-自动-默认设置;确定基于 decryptionKey 属性的长度的算法。 -AES-使用[高级加密标准 (AES)](http://en.wikipedia.org/wiki/Advanced_Encryption_Standard)算法。 DES-使用[数据加密标准 (DES)](http://en.wikipedia.org/wiki/Data_Encryption_Standard)此算法属于计算弱，不应使用。 -3DES-使用[三重 DES](http://en.wikipedia.org/wiki/Triple_DES)算法，可通过应用三次的 DES 算法配合工作。 |
 | decryptionKey | 加密算法使用的密钥。 此值必须是相应的长度 （基于解密中的值）、 自动生成或附加，其中任何一个值的十六进制字符串 IsolateApps。 添加 IsolateApps 指示 ASP.NET 为每个应用程序使用的唯一值。 默认值为 AutoGenerate，IsolateApps。 |
@@ -223,7 +223,7 @@ Microsoft 强烈建议使用的所有设置。
 
 [!code-xml[Main](forms-authentication-configuration-and-advanced-topics-cs/samples/sample5.xml)]
 
-有关详细信息，请查看[How To： 在 ASP.NET 2.0 中配置 MachineKey](https://msdn.microsoft.com/en-us/library/ms998288.aspx)。
+有关详细信息，请查看[How To： 在 ASP.NET 2.0 中配置 MachineKey](https://msdn.microsoft.com/library/ms998288.aspx)。
 
 > [!NOTE]
 > 从已执行的 decryptionKey 和 validationKey 值[Steve Gibson](http://www.grc.com/stevegibson.htm)的[完美密码网页](https://www.grc.com/passwords.htm)，这将在每个页访问生成 64 随机的十六进制字符。 若要减少到生产应用程序进行如何使用这些密钥的可能性，不过，建议您的上述密钥将替换为从完美密码页的随机生成的。
@@ -233,7 +233,7 @@ Microsoft 强烈建议使用的所有设置。
 
 许多 web 应用程序显示有关的信息，或基于当前登录用户的页面的显示。 例如，web 页可能会显示用户的名称和她最后一次登录中每一页的左上角的日期。 窗体身份验证票证存储当前登录的用户的用户名，但当不需要任何其他信息，请页必须转到要查找不会存储在身份验证票证的信息的用户存储区-通常为数据库的。
 
-很少的代码下，我们可以存储在窗体身份验证票证的其他用户信息。 此类数据可以通过表示[FormsAuthenticationTicket 类](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationticket.aspx)的[UserData 属性](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationticket.userdata.aspx)。 这是信息的一个有用地方安置的少量有关的用户的通常所需。 中 UserData 属性过程中加入的身份验证票证 cookie，并像其他票证字段、 是加密和验证指定的值基于窗体身份验证系统的配置。 默认情况下，UserData 是空字符串。
+很少的代码下，我们可以存储在窗体身份验证票证的其他用户信息。 此类数据可以通过表示[FormsAuthenticationTicket 类](https://msdn.microsoft.com/library/system.web.security.formsauthenticationticket.aspx)的[UserData 属性](https://msdn.microsoft.com/library/system.web.security.formsauthenticationticket.userdata.aspx)。 这是信息的一个有用地方安置的少量有关的用户的通常所需。 中 UserData 属性过程中加入的身份验证票证 cookie，并像其他票证字段、 是加密和验证指定的值基于窗体身份验证系统的配置。 默认情况下，UserData 是空字符串。
 
 为身份验证票证中存储用户数据，我们需要在登录页上获取特定于用户的信息并将它存储在票证编写的代码。 由于 UserData 是字符串类型的属性，必须正确将在其中存储的数据序列化为字符串。 例如，假设我们用户存储区包含每个用户的出生日期和其雇主的名称，并且我们要将这些两个属性值存储在身份验证票证。 我们无法序列化这些值为一个字符串串联的出生的字符串以竖线 (|) 的用户的日期跟雇主名称。 出生日期上 1974 年 8 月 15，用户，适用于 Northwind Traders，我们将 UserData 属性将字符串分配： 1974年-08-15 |Northwind Traders。
 
@@ -263,21 +263,21 @@ Microsoft 强烈建议使用的所有设置。
 
 在上面的代码中复制这些步骤。 首先，我们将最终存储 UserData 属性中的字符串是通过合并的公司名称和标题，分隔两个值的竖线 (|) 形成的。
 
-字符串 userDataString = string。Concat (companyName [i]"|"，titleAtCompany[i]);
+string userDataString = string.Concat(companyName[i], "|", titleAtCompany[i]);
 
 接下来，调用方法时，这将创建身份验证票证，FormsAuthentication.GetAuthCookie 加密和验证根据配置设置中，并将其放在 HttpCookie 对象。
 
-HttpCookie authCookie = FormsAuthentication.GetAuthCookie （UserName.Text，RememberMe.Checked）;
+HttpCookie authCookie = FormsAuthentication.GetAuthCookie(UserName.Text, RememberMe.Checked);
 
-若要使用嵌入 cookie FormAuthenticationTicket，我们需要先调用 FormAuthentication 类[解密方法](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.decrypt.aspx)，并传递在 cookie 值中。
+若要使用嵌入 cookie FormAuthenticationTicket，我们需要先调用 FormAuthentication 类[解密方法](https://msdn.microsoft.com/library/system.web.security.formsauthentication.decrypt.aspx)，并传递在 cookie 值中。
 
-FormsAuthenticationTicket 票证 = FormsAuthentication.Decrypt(authCookie.Value);
+FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
 
 然后，我们创建*新*FormsAuthenticationTicket 实例基于现有 FormsAuthenticationTicket 的值。 但是，此新票证包括特定于用户的信息 (userDataString)。
 
-FormsAuthenticationTicket newTicket = 新 FormsAuthenticationTicket （票证。版本中，票证。名称，票证。IssueDate，票证。过期，票证。IsPersistent，userDataString);
+FormsAuthenticationTicket newTicket = new FormsAuthenticationTicket(ticket.Version, ticket.Name, ticket.IssueDate, ticket.Expiration, ticket.IsPersistent, userDataString);
 
-我们然后加密 （和验证） 通过调用新的 FormsAuthenticationTicket 实例[加密方法](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.encrypt.aspx)，并将其置于 authCookie 返回此加密 （和验证） 的数据。
+我们然后加密 （和验证） 通过调用新的 FormsAuthenticationTicket 实例[加密方法](https://msdn.microsoft.com/library/system.web.security.formsauthentication.encrypt.aspx)，并将其置于 authCookie 返回此加密 （和验证） 的数据。
 
 authCookie.Value = FormsAuthentication.Encrypt(newTicket);
 
@@ -322,7 +322,7 @@ authCookie.Value = FormsAuthentication.Encrypt(newTicket);
 GenericPrincipal 类满足大多数不使用角色的窗体基于身份验证方案的需求。 这种情况下，默认角色处理不足或者当你需要与用户相关联的自定义的 IIdentity 对象，可以在身份验证工作流过程中创建自定义的 IPrincipal 对象并将其分配给 HttpContext.User 属性。
 
 > [!NOTE]
-> 正如我们将在将来看到教程中，当 ASP。已启用 NET 的角色框架创建类型的自定义主体对象[RolePrincipal](https://msdn.microsoft.com/en-us/library/system.web.security.roleprincipal.aspx)并覆盖窗体身份验证创建 GenericPrincipal 对象。 若要定制该主体的 IsInRole 方法，以便与角色框架 API 做到这一点。
+> 正如我们将在将来看到教程中，当 ASP。已启用 NET 的角色框架创建类型的自定义主体对象[RolePrincipal](https://msdn.microsoft.com/library/system.web.security.roleprincipal.aspx)并覆盖窗体身份验证创建 GenericPrincipal 对象。 若要定制该主体的 IsInRole 方法，以便与角色框架 API 做到这一点。
 
 
 由于我们具有不关心自己的角色尚未，我们将具有此时创建自定义主体的唯一原因是关联到主体的自定义 IIdentity 对象。 在步骤 4 中我们讨论在将其他用户信息存储在身份验证票证 UserData 属性，具体而言，用户的公司名称和其标题。 但是，UserData 信息只是将可通过身份验证票证访问，然后仅为序列化字符串，这意味着每当我们想要查看用户信息存储在票证我们需要分析 UserData 属性。
@@ -334,7 +334,7 @@ GenericPrincipal 类满足大多数不使用角色的窗体基于身份验证方
 对于本教程，让我们将创建在应用程序中的自定义的主体和标识对象\_代码文件夹。 首先，通过添加应用\_代码到你的项目的文件夹-右键单击解决方案资源管理器中的项目名称，选择添加 ASP.NET 文件夹选项中，并选择应用\_代码。 应用程序\_代码文件夹是一个包含类文件特定于网站的特殊 ASP.NET 文件夹。
 
 > [!NOTE]
-> 应用程序\_管理通过网站项目模型项目时，应仅使用代码文件夹。 如果你使用[Web 应用程序项目模型](https://msdn.microsoft.com/en-us/asp.net/Aa336618.aspx)，创建标准文件夹并将类添加到该。 例如，你无法添加新的文件夹名为类，并将你的代码置于其中。
+> 应用程序\_管理通过网站项目模型项目时，应仅使用代码文件夹。 如果你使用[Web 应用程序项目模型](https://msdn.microsoft.com/asp.net/Aa336618.aspx)，创建标准文件夹并将类添加到该。 例如，你无法添加新的文件夹名为类，并将你的代码置于其中。
 
 
 接下来，将两个新类文件添加到应用程序\_代码文件夹，一个命名的 CustomIdentity.cs，另一个名为 CustomPrincipal.cs。
@@ -359,9 +359,9 @@ CustomIdentity 类负责实现定义的 AuthenticationType、 IsAuthenticated �
 
 我们现在有扩展要包括 CompanyName 和标题属性的默认 IIdentity 规范的类，以及使用自定义标识的自定义主体类。 我们已准备好单步执行 ASP.NET 管道和将我们自定义主体对象分配到传入请求的安全上下文。
 
-ASP.NET 管道获取传入请求，并处理它通过多个步骤。 在每个步骤中，将引发特定事件，并使开发人员能够利用 ASP.NET 管道并修改在其生命周期中的某些点请求。 FormsAuthenticationModule，例如，等待 ASP.NET 引发[AuthenticateRequest 事件](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authenticaterequest.aspx)，此时它将检查身份验证票证的传入请求。 如果找到的验证票证，则是创建 GenericPrincipal 对象并将其分配给 HttpContext.User 属性。
+ASP.NET 管道获取传入请求，并处理它通过多个步骤。 在每个步骤中，将引发特定事件，并使开发人员能够利用 ASP.NET 管道并修改在其生命周期中的某些点请求。 FormsAuthenticationModule，例如，等待 ASP.NET 引发[AuthenticateRequest 事件](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx)，此时它将检查身份验证票证的传入请求。 如果找到的验证票证，则是创建 GenericPrincipal 对象并将其分配给 HttpContext.User 属性。
 
-AuthenticateRequest 事件之后，ASP.NET 管道引发[PostAuthenticateRequest 事件](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.postauthenticaterequest.aspx)，后者是，我们可以将由的实例与 FormsAuthenticationModule 创建 GenericPrincipal 对象我们CustomPrincipal 对象。 图 7 显示了此工作流。
+AuthenticateRequest 事件之后，ASP.NET 管道引发[PostAuthenticateRequest 事件](https://msdn.microsoft.com/library/system.web.httpapplication.postauthenticaterequest.aspx)，后者是，我们可以将由的实例与 FormsAuthenticationModule 创建 GenericPrincipal 对象我们CustomPrincipal 对象。 图 7 显示了此工作流。
 
 
 [![GenericPrincipal 替换为在 PostAuthenticationRequest 事件 CustomPrincipal](forms-authentication-configuration-and-advanced-topics-cs/_static/image20.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image19.png)
@@ -377,13 +377,13 @@ AuthenticateRequest 事件之后，ASP.NET 管道引发[PostAuthenticateRequest 
 **图 08**： 将 Global.asax 文件添加到您的网站 ([单击以查看实际尺寸的图像](forms-authentication-configuration-and-advanced-topics-cs/_static/image24.png))
 
 
-默认 Global.asax 模板包括事件处理程序的数目的 ASP.NET 管道事件，包括开始时，结束和[错误事件](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.error.aspx)，等等。 随意删除这些事件处理程序，因为我们不需要这些服务为此应用程序。 我们感兴趣的事件是 PostAuthenticateRequest。 更新你的 Global.asax 文件，使其标记看起来类似于以下：
+默认 Global.asax 模板包括事件处理程序的数目的 ASP.NET 管道事件，包括开始时，结束和[错误事件](https://msdn.microsoft.com/library/system.web.httpapplication.error.aspx)，等等。 随意删除这些事件处理程序，因为我们不需要这些服务为此应用程序。 我们感兴趣的事件是 PostAuthenticateRequest。 更新你的 Global.asax 文件，使其标记看起来类似于以下：
 
 [!code-aspx[Main](forms-authentication-configuration-and-advanced-topics-cs/samples/sample11.aspx)]
 
 应用程序\_OnPostAuthenticateRequest 方法执行 ASP.NET 运行时引发 PostAuthenticateRequest 事件，这种情况发生在每个传入的页请求上的一次每次。 事件处理程序首先检查用户进行身份验证，并且通过窗体身份验证进行身份验证。 如果是这样，新的 CustomIdentity 对象创建，并在其构造函数中传递的当前请求的身份验证票证。 接下来，CustomPrincipal 对象创建并在其构造函数中传递刚创建 CustomIdentity 对象。 最后，将当前请求的安全上下文被分配给新创建的 CustomPrincipal 对象。
 
-请注意-将 CustomPrincipal 对象与请求的安全上下文关联的最后一步将主体分配到两个属性： HttpContext.User 和 Thread.CurrentPrincipal。 由于安全上下文会在 ASP.NET 中处理的方法，这些两个分配是必需的。 .NET Framework 将与每个正在运行的线程; 相关联的安全上下文此信息是可用作通过 IPrincipal 对象[线程对象](https://msdn.microsoft.com/en-us/library/system.threading.thread.aspx)的[CurrentPrincipal 属性](https://msdn.microsoft.com/en-us/library/system.threading.thread.currentcontext.aspx)。 什么是令人费解是 ASP.NET 有其自己的安全上下文信息 (HttpContext.User)。
+请注意-将 CustomPrincipal 对象与请求的安全上下文关联的最后一步将主体分配到两个属性： HttpContext.User 和 Thread.CurrentPrincipal。 由于安全上下文会在 ASP.NET 中处理的方法，这些两个分配是必需的。 .NET Framework 将与每个正在运行的线程; 相关联的安全上下文此信息是可用作通过 IPrincipal 对象[线程对象](https://msdn.microsoft.com/library/system.threading.thread.aspx)的[CurrentPrincipal 属性](https://msdn.microsoft.com/library/system.threading.thread.currentcontext.aspx)。 什么是令人费解是 ASP.NET 有其自己的安全上下文信息 (HttpContext.User)。
 
 在确定的安全上下文; 在某些情况下，检查 Thread.CurrentPrincipal 属性在其他情况下，将使用 HttpContext.User。 例如，.NET 中的安全功能，允许开发人员以声明方式状态决定哪些用户或角色可以实例化类或调用特定方法时 (请参阅[添加到业务和数据层使用的授权规则PrincipalPermissionAttributes](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx))。 实际上，这些声明性方法确定通过 Thread.CurrentPrincipal 属性的安全上下文。
 
@@ -412,13 +412,13 @@ ASP.NET 运行时自动同步为我们的这些属性值。 但是，此同步�
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
 - [将窗体身份验证](http://aspnet.4guysfromrolla.com/articles/072005-1.aspx)
-- [在 ASP.NET 2.0 中所述： 窗体身份验证](https://msdn.microsoft.com/en-us/library/aa480476.aspx)
-- [如何： 保护 ASP.NET 2.0 中的窗体身份验证](https://msdn.microsoft.com/en-us/library/ms998310.aspx)
+- [在 ASP.NET 2.0 中所述： 窗体身份验证](https://msdn.microsoft.com/library/aa480476.aspx)
+- [如何： 保护 ASP.NET 2.0 中的窗体身份验证](https://msdn.microsoft.com/library/ms998310.aspx)
 - [专业 ASP.NET 2.0 安全、 成员资格和角色管理](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html)(ISBN: 978-0-7645-9698-8)
-- [保护登录控件](https://msdn.microsoft.com/en-us/library/ms178346.aspx)
-- [&lt;身份验证&gt;元素](https://msdn.microsoft.com/en-us/library/532aee0e.aspx)
-- [&lt;窗体&gt;元素&lt;身份验证&gt;](https://msdn.microsoft.com/en-us/library/1d3t3c61.aspx)
-- [&lt;MachineKey&gt;元素](https://msdn.microsoft.com/en-us/library/w8h3skw9.aspx)
+- [保护登录控件](https://msdn.microsoft.com/library/ms178346.aspx)
+- [&lt;身份验证&gt;元素](https://msdn.microsoft.com/library/532aee0e.aspx)
+- [&lt;窗体&gt;元素&lt;身份验证&gt;](https://msdn.microsoft.com/library/1d3t3c61.aspx)
+- [&lt;MachineKey&gt;元素](https://msdn.microsoft.com/library/w8h3skw9.aspx)
 - [了解的窗体身份验证票证和 Cookie](https://support.microsoft.com/kb/910443)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>在本教程中包含的主题的视频培训
@@ -426,8 +426,8 @@ ASP.NET 运行时自动同步为我们的这些属性值。 但是，此同步�
 - [如何更改窗体身份验证属性](../../../videos/authentication/how-to-change-the-forms-authentication-properties.md)
 - [如何在 ASP.NET 应用程序的设置和使用 Cookie 无身份验证](../../../videos/authentication/how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application.md)
 - [ASP 窗体登录重定位](../../../videos/authentication/asp-forms-login-relocation.md)
-- [窗体登录自定义配置](../../../videos/authentication/forms-login-custom-key-configuration.md)
-- [将自定义数据添加到身份验证方法](../../../videos/authentication/add-custom-data-to-the-authentication-method.md)
+- [窗体登录自定义密钥配置](../../../videos/authentication/forms-login-custom-key-configuration.md)
+- [向身份验证方法添加自定义数据](../../../videos/authentication/add-custom-data-to-the-authentication-method.md)
 - [使用自定义主体对象](../../../videos/authentication/use-custom-principal-objects.md)
 
 ### <a name="about-the-author"></a>关于作者

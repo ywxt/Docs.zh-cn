@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-windows-azure-service-bus
 msc.type: authoredcontent
-ms.openlocfilehash: 0dd245b597ebd4b58b60a53276d7808b6e2377e7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b48a7b04701b69f68a492c0f7e08da4a37a92a48
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-scaleout-with-azure-service-bus-signalr-1x"></a>使用 Azure 服务总线的 SignalR 扩展 (SignalR 1.x)
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/10/2017
 - [Windows Azure SDK](https://go.microsoft.com/fwlink/?linkid=254364&amp;clcid=0x409)。
 - Visual Studio 2012。
 
-服务总线底板也是与兼容[Service Bus for Windows Server](https://msdn.microsoft.com/en-us/library/windowsazure/dn282144.aspx)，版本 1.1。 但是，它不是与 Service Bus for Windows Server 的 1.0 版兼容的。
+服务总线底板也是与兼容[Service Bus for Windows Server](https://msdn.microsoft.com/library/windowsazure/dn282144.aspx)，版本 1.1。 但是，它不是与 Service Bus for Windows Server 的 1.0 版兼容的。
 
 ## <a name="pricing"></a>定价
 
@@ -82,7 +82,7 @@ ms.lasthandoff: 11/10/2017
 
 ![](scaleout-with-windows-azure-service-bus/_static/image5.png)
 
-在**新建 ASP.NET MVC 4 项目**向导中，选择**Internet 应用程序**。 单击“确定”。 项目向导将创建两个项目：
+在**新建 ASP.NET MVC 4 项目**向导中，选择**Internet 应用程序**。 单击 **“确定”**。 项目向导将创建两个项目：
 
 - ChatService： 此项目是 Windows Azure 应用程序。 它定义 Azure 角色和其他配置选项。
 - SignalRChat： 此项目是你的 ASP.NET MVC 4 项目。

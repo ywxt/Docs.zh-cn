@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/database-driven-site-maps/building-a-custom-database-driven-site-map-provider-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f09d8d24cea43e80e66b0d8ce50911fcb978c85e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cc0de856cb1ae2cf8e1f18a29ae29a3b226c12ab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="building-a-custom-database-driven-site-map-provider-c"></a>生成自定义数据库驱动站点地图提供商提供 (C#)
 ====================
@@ -29,7 +29,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="introduction"></a>介绍
 
-ASP.NET 2.0 的站点地图功能使得页开发人员可以如定义在某些持久介质，web 应用程序的站点地图 XML 文件中。 定义后，可以通过以编程方式访问站点地图数据[`SiteMap`类](https://msdn.microsoft.com/en-us/library/system.web.sitemap.aspx)中[`System.Web`命名空间](https://msdn.microsoft.com/en-us/library/system.web.aspx)或通过各种导航 Web 控件，如SiteMapPath、 菜单和树视图控件。 站点映射系统使用[提供程序模型](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx)，以便可以创建另一个站点映射序列化实现，并将其插入到 web 应用程序。 ASP.NET 2.0 所附带的默认 site 映射提供程序仍然存在站点地图结构中的 XML 文件。 返回[母版页和网站的导航](../introduction/master-pages-and-site-navigation-cs.md)我们创建名为的文件的教程`Web.sitemap`，包含此结构中，并且具有与每个新的教程部分已将更新其 XML。
+ASP.NET 2.0 的站点地图功能使得页开发人员可以如定义在某些持久介质，web 应用程序的站点地图 XML 文件中。 定义后，可以通过以编程方式访问站点地图数据[`SiteMap`类](https://msdn.microsoft.com/library/system.web.sitemap.aspx)中[`System.Web`命名空间](https://msdn.microsoft.com/library/system.web.aspx)或通过各种导航 Web 控件，如SiteMapPath、 菜单和树视图控件。 站点映射系统使用[提供程序模型](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx)，以便可以创建另一个站点映射序列化实现，并将其插入到 web 应用程序。 ASP.NET 2.0 所附带的默认 site 映射提供程序仍然存在站点地图结构中的 XML 文件。 返回[母版页和网站的导航](../introduction/master-pages-and-site-navigation-cs.md)我们创建名为的文件的教程`Web.sitemap`，包含此结构中，并且具有与每个新的教程部分已将更新其 XML。
 
 默认值基于 XML 的站点地图提供商提供如果非常有效站点地图的结构是相当静态，如的这些教程。 在许多情况下，但是，更多动态站点图需要。 请考虑站点地图中图 1 中，其中每个类别和产品显示为网站的结构中的各节所示。 与此站点图，访问对应于根节点的网页可能还会列出所有类别，而访问特定类别 s web 页面将列出该类别的产品和查看某一特定产品 s web 页将显示该产品 s 详细信息。
 
@@ -194,7 +194,7 @@ ASP.NET 2.0 的站点地图功能使得页开发人员可以如定义在某些�
 
 ## <a name="step-5-understanding-the-inner-workings-of-a-site-map-provider"></a>步骤 5： 了解站点地图提供商提供的内部工作情况
 
-站点图在 web 服务器的内存中表示为一套`SiteMapNode`形成一个层次结构的实例。 必须有一个根，所有非根节点必须具有恰好一个父节点，且所有节点可能都包含任意数目的子级。 每个`SiteMapNode`对象表示网站的结构中的节; 这些部分通常具有相应的网页。 因此， [ `SiteMapNode`类](https://msdn.microsoft.com/en-us/library/system.web.sitemapnode.aspx)具有属性，例如`Title`， `Url`，和`Description`，它提供的信息的节信息`SiteMapNode`表示。 此外，还有`Key`属性，用于唯一标识每个`SiteMapNode`在层次结构，以及用于建立此层次结构的属性`ChildNodes`， `ParentNode`， `NextSibling`， `PreviousSibling`，依次类推。
+站点图在 web 服务器的内存中表示为一套`SiteMapNode`形成一个层次结构的实例。 必须有一个根，所有非根节点必须具有恰好一个父节点，且所有节点可能都包含任意数目的子级。 每个`SiteMapNode`对象表示网站的结构中的节; 这些部分通常具有相应的网页。 因此， [ `SiteMapNode`类](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx)具有属性，例如`Title`， `Url`，和`Description`，它提供的信息的节信息`SiteMapNode`表示。 此外，还有`Key`属性，用于唯一标识每个`SiteMapNode`在层次结构，以及用于建立此层次结构的属性`ChildNodes`， `ParentNode`， `NextSibling`， `PreviousSibling`，依次类推。
 
 图 15 显示常规站点地图结构来自图 1 中，但具有更细致地在草绘的实现详细信息。
 
@@ -204,13 +204,13 @@ ASP.NET 2.0 的站点地图功能使得页开发人员可以如定义在某些�
 **图 15**： 每个`SiteMapNode`都有一些属性例如`Title`， `Url`， `Key`，依次类推 ([单击以查看实际尺寸的图像](building-a-custom-database-driven-site-map-provider-cs/_static/image17.gif))
 
 
-站点图是可通过访问[`SiteMap`类](https://msdn.microsoft.com/en-us/library/system.web.sitemap.aspx)中[`System.Web`命名空间](https://msdn.microsoft.com/en-us/library/system.web.aspx)。 此类 s`RootNode`属性返回站点映射的根`SiteMapNode`实例;`CurrentNode`返回`SiteMapNode`其`Url`属性与匹配的当前请求的页面的 URL。 ASP.NET 2.0 的导航 Web 控件内部使用此类。
+站点图是可通过访问[`SiteMap`类](https://msdn.microsoft.com/library/system.web.sitemap.aspx)中[`System.Web`命名空间](https://msdn.microsoft.com/library/system.web.aspx)。 此类 s`RootNode`属性返回站点映射的根`SiteMapNode`实例;`CurrentNode`返回`SiteMapNode`其`Url`属性与匹配的当前请求的页面的 URL。 ASP.NET 2.0 的导航 Web 控件内部使用此类。
 
-当`SiteMap`类的属性可以访问，它必须从某些持久介质站点地图结构化为内存。 但是，站点映射序列化逻辑不是硬编码到`SiteMap`类。 相反，在运行时`SiteMap`类可确定哪些站点映射*提供程序*用于序列化。 默认情况下， [ `XmlSiteMapProvider`类](https://msdn.microsoft.com/en-us/library/system.web.xmlsitemapprovider.aspx)使用时，从格式正确的 XML 文件读取站点地图的结构。 但是，使用少量的工作我们可以创建自己的自定义网站地图提供商提供。
+当`SiteMap`类的属性可以访问，它必须从某些持久介质站点地图结构化为内存。 但是，站点映射序列化逻辑不是硬编码到`SiteMap`类。 相反，在运行时`SiteMap`类可确定哪些站点映射*提供程序*用于序列化。 默认情况下， [ `XmlSiteMapProvider`类](https://msdn.microsoft.com/library/system.web.xmlsitemapprovider.aspx)使用时，从格式正确的 XML 文件读取站点地图的结构。 但是，使用少量的工作我们可以创建自己的自定义网站地图提供商提供。
 
-所有站点映射提供程序必须都派生自[`SiteMapProvider`类](https://msdn.microsoft.com/en-us/library/system.web.sitemapprovider.aspx)，其中包括基本的方法和所需的站点的属性将映射提供程序，但省略的许多实现细节。 第二个类的[ `StaticSiteMapProvider` ](https://msdn.microsoft.com/en-us/library/system.web.staticsitemapprovider.aspx)，扩展`SiteMapProvider`类并包含所需的功能的更可靠的实现。 在内部，`StaticSiteMapProvider`存储`SiteMapNode`实例的站点中的映射`Hashtable`并提供等方法`AddNode(child, parent)`，`RemoveNode(siteMapNode),`和`Clear()`添加和删除`SiteMapNode`到内部 s `Hashtable`。 `XmlSiteMapProvider` 派生自 `StaticSiteMapProvider`。
+所有站点映射提供程序必须都派生自[`SiteMapProvider`类](https://msdn.microsoft.com/library/system.web.sitemapprovider.aspx)，其中包括基本的方法和所需的站点的属性将映射提供程序，但省略的许多实现细节。 第二个类的[ `StaticSiteMapProvider` ](https://msdn.microsoft.com/library/system.web.staticsitemapprovider.aspx)，扩展`SiteMapProvider`类并包含所需的功能的更可靠的实现。 在内部，`StaticSiteMapProvider`存储`SiteMapNode`实例的站点中的映射`Hashtable`并提供等方法`AddNode(child, parent)`，`RemoveNode(siteMapNode),`和`Clear()`添加和删除`SiteMapNode`到内部 s `Hashtable`。 `XmlSiteMapProvider` 派生自 `StaticSiteMapProvider`。
 
-当创建自定义网站地图提供商提供扩展`StaticSiteMapProvider`，有两个抽象方法必须重写： [ `BuildSiteMap` ](https://msdn.microsoft.com/en-us/library/system.web.staticsitemapprovider.buildsitemap.aspx)和[ `GetRootNodeCore` ](https://msdn.microsoft.com/en-us/library/system.web.sitemapprovider.getrootnodecore.aspx)。 `BuildSiteMap`正如其名，负责从持久性存储区加载站点地图结构和构造在内存中。 `GetRootNodeCore`在站点地图中返回的根节点。
+当创建自定义网站地图提供商提供扩展`StaticSiteMapProvider`，有两个抽象方法必须重写： [ `BuildSiteMap` ](https://msdn.microsoft.com/library/system.web.staticsitemapprovider.buildsitemap.aspx)和[ `GetRootNodeCore` ](https://msdn.microsoft.com/library/system.web.sitemapprovider.getrootnodecore.aspx)。 `BuildSiteMap`正如其名，负责从持久性存储区加载站点地图结构和构造在内存中。 `GetRootNodeCore`在站点地图中返回的根节点。
 
 之前 web 应用程序可以使用它必须在应用程序的配置注册站点地图提供商提供。 默认情况下，`XmlSiteMapProvider`类使用名称进行注册`AspNetXmlSiteMapProvider`。 若要注册其他站点地图提供程序，添加以下标记到`Web.config`:
 
@@ -224,7 +224,7 @@ ASP.NET 2.0 的站点地图功能使得页开发人员可以如定义在某些�
 出于性能和可伸缩性原因，它 s 重要我们缓存内存中站点映射结构，并返回此缓存结构，而不是无需重新创建它每次`BuildSiteMap`调用方法。 `BuildSiteMap`可能被调用多次，每个页请求，每个用户，具体取决于在页和站点地图结构的深度导航控件中使用。 在任何情况下，如果我们不会缓存在站点地图结构`BuildSiteMap`然后每次调用它时我们将需要重新检索的体系结构 （这将产生在查询中对数据库） 中的产品和类别信息。 如前面的缓存教程中所述，缓存的数据可能会失效。 为了应对这种情况，我们可以使用时间-或 SQL 缓存依赖项基于满。
 
 > [!NOTE]
-> 站点地图提供商提供 （可选） 可能会重写[`Initialize`方法](https://msdn.microsoft.com/en-us/library/system.web.sitemapprovider.initialize.aspx)。 `Initialize`站点地图提供商提供第一次实例化并传递任何自定义特性分配给中的提供程序时调用`Web.config`中`<add>`类似的元素： `<add name="name" type="type" customAttribute="value" />`。 如果你想要允许页开发人员无需修改提供程序的代码中指定各种站点映射提供程序相关设置，它非常有用。 例如，如果我们已读取的分类和产品数据的体系结构，我们 d 通过相对于数据库中直接可能想要让页开发人员指定的数据库连接字符串通过`Web.config`而不是使用硬编码提供程序的代码中的值。 我们生成了第 6 步中的自定义站点映射提供程序不会覆盖这`Initialize`方法。 有关的使用示例`Initialize`方法，请参阅[Jeff Prosise](http://www.wintellect.com/Weblogs/CategoryView,category,Jeff%20Prosise.aspx) s [SQL Server 中存储站点地图](https://msdn.microsoft.com/msdnmag/issues/05/06/WickedCode/)文章。
+> 站点地图提供商提供 （可选） 可能会重写[`Initialize`方法](https://msdn.microsoft.com/library/system.web.sitemapprovider.initialize.aspx)。 `Initialize`站点地图提供商提供第一次实例化并传递任何自定义特性分配给中的提供程序时调用`Web.config`中`<add>`类似的元素： `<add name="name" type="type" customAttribute="value" />`。 如果你想要允许页开发人员无需修改提供程序的代码中指定各种站点映射提供程序相关设置，它非常有用。 例如，如果我们已读取的分类和产品数据的体系结构，我们 d 通过相对于数据库中直接可能想要让页开发人员指定的数据库连接字符串通过`Web.config`而不是使用硬编码提供程序的代码中的值。 我们生成了第 6 步中的自定义站点映射提供程序不会覆盖这`Initialize`方法。 有关的使用示例`Initialize`方法，请参阅[Jeff Prosise](http://www.wintellect.com/Weblogs/CategoryView,category,Jeff%20Prosise.aspx) s [SQL Server 中存储站点地图](https://msdn.microsoft.com/msdnmag/issues/05/06/WickedCode/)文章。
 
 
 ## <a name="step-6-creating-the-custom-site-map-provider"></a>步骤 6： 创建自定义站点映射提供程序
@@ -234,13 +234,13 @@ ASP.NET 2.0 的站点地图功能使得页开发人员可以如定义在某些�
 
 [!code-csharp[Main](building-a-custom-database-driven-site-map-provider-cs/samples/sample6.cs)]
 
-允许 s 开头浏览此类 s`BuildSiteMap`方法，开头[`lock`语句](https://msdn.microsoft.com/en-us/library/c5kehkcz.aspx)。 `lock`语句只允许一个线程一次输入，从而序列化到其代码的访问并阻止两个并发线程在另一个 s toe 上单步执行。
+允许 s 开头浏览此类 s`BuildSiteMap`方法，开头[`lock`语句](https://msdn.microsoft.com/library/c5kehkcz.aspx)。 `lock`语句只允许一个线程一次输入，从而序列化到其代码的访问并阻止两个并发线程在另一个 s toe 上单步执行。
 
 类级别`SiteMapNode`变量`root`用于缓存站点地图结构。 站点图构造为第一次，或后已修改基础数据，第一次时`root`将`null`和将构造站点地图结构。 站点映射的根节点分配给`root`的构造过程过程，以便下一次此方法称为，`root`将不会`null`。 因此，只要`root`不`null`站点地图结构将无需重新创建它返回到调用方。
 
 如果根是`null`，站点地图结构创建中的产品和类别信息。 站点图生成通过创建`SiteMapNode`实例，然后组成通过对的调用层次结构`StaticSiteMapProvider`类的`AddNode`方法。 `AddNode`执行内部簿记，存储各种`SiteMapNode`实例`Hashtable`。 我们开始构造层次结构之前，我们首先调用`Clear`方法，从内部元素将清除`Hashtable`。 接下来，`ProductsBLL`类 s`GetProducts`方法以及产生`ProductsDataTable`存储在本地变量。
 
-通过创建根节点并将其分配给站点映射的构造开始`root`。 重载[ `SiteMapNode` s 构造函数](https://msdn.microsoft.com/en-us/library/system.web.sitemapnode.sitemapnode.aspx)使用此处并在这整个`BuildSiteMap`传递以下信息：
+通过创建根节点并将其分配给站点映射的构造开始`root`。 重载[ `SiteMapNode` s 构造函数](https://msdn.microsoft.com/library/system.web.sitemapnode.sitemapnode.aspx)使用此处并在这整个`BuildSiteMap`传递以下信息：
 
 - 对站点地图提供商提供的引用 (`this`)。
 - `SiteMapNode` S `Key`。 这所必需的值必须是唯一的每个`SiteMapNode`。
@@ -253,7 +253,7 @@ ASP.NET 2.0 的站点地图功能使得页开发人员可以如定义在某些�
 > 有一个数据库这些产品`NULL`值，则为其`CategoryID`按类别分组`SiteMapNode`其`Title`属性设置为 None，并且其`Url`属性设置为一个空字符串。 我决定设置`Url`为空字符串自`ProductBLL`类 s`GetProductsByCategory(categoryID)`方法当前缺少的功能，以返回与这些产品`NULL``CategoryID`值。 此外，我要演示导航控件的呈现方式`SiteMapNode`缺少的值其`Url`属性。 我建议你扩展本教程，以便无`SiteMapNode`s`Url`属性指向`ProductsByCategory.aspx`，尚未仅显示与产品`NULL``CategoryID`值。
 
 
-构造站点图后, 的任意对象添加到数据缓存中上使用 SQL 缓存依赖项`Categories`和`Products`表通过`AggregateCacheDependency`对象。 我们探讨了在前面的教程中，使用 SQL 缓存依赖项*使用 SQL 缓存依赖项*。 自定义网站地图提供商提供，但是，使用的数据缓存的重载`Insert`方法，我们已有待浏览。 此重载接受作为其最后一个输入参数从缓存中删除对象时调用的委托。 具体而言，我们传递在新[`CacheItemRemovedCallback`委托](https://msdn.microsoft.com/en-us/library/system.web.caching.cacheitemremovedcallback.aspx)指向`OnSiteMapChanged`方法定义在靠`NorthwindSiteMapProvider`类。
+构造站点图后, 的任意对象添加到数据缓存中上使用 SQL 缓存依赖项`Categories`和`Products`表通过`AggregateCacheDependency`对象。 我们探讨了在前面的教程中，使用 SQL 缓存依赖项*使用 SQL 缓存依赖项*。 自定义网站地图提供商提供，但是，使用的数据缓存的重载`Insert`方法，我们已有待浏览。 此重载接受作为其最后一个输入参数从缓存中删除对象时调用的委托。 具体而言，我们传递在新[`CacheItemRemovedCallback`委托](https://msdn.microsoft.com/library/system.web.caching.cacheitemremovedcallback.aspx)指向`OnSiteMapChanged`方法定义在靠`NorthwindSiteMapProvider`类。
 
 > [!NOTE]
 > 站点图的内存中表示缓存通过类级变量`root`。 由于没有只有一个实例的自定义站点映射提供程序类，并且自该实例在 web 应用程序中，所有线程间共享，此类变量用作缓存。 `BuildSiteMap`方法还使用数据缓存中，但仅作为一种方法，以便在基础数据库中的数据时接收通知`Categories`或`Products`表的更改。 请注意，将放入数据缓存的值只是当前日期和时间。 实际站点地图数据*不*将放入数据缓存。
@@ -298,7 +298,7 @@ ASP.NET 2.0 的站点地图功能使得页开发人员可以如定义在某些�
 **图 17**： 痕迹导航使用默认站点映射提供程序 ([单击以查看实际尺寸的图像](building-a-custom-database-driven-site-map-provider-cs/_static/image23.gif))
 
 
-如果希望使用我们在步骤 6 中创建自定义网站地图提供商提供 SiteMapPath 图 16 中添加，请设置其[`SiteMapProvider`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sitemappath.sitemapprovider.aspx)到 Northwind，名称我们分配给`NorthwindSiteMapProvider`中`Web.config`。 遗憾的是，设计器仍将使用默认网站的映射提供程序，但如果进行此属性更改后访问通过浏览器页面，你将看到痕迹导航现在使用自定义网站地图提供商提供。
+如果希望使用我们在步骤 6 中创建自定义网站地图提供商提供 SiteMapPath 图 16 中添加，请设置其[`SiteMapProvider`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sitemappath.sitemapprovider.aspx)到 Northwind，名称我们分配给`NorthwindSiteMapProvider`中`Web.config`。 遗憾的是，设计器仍将使用默认网站的映射提供程序，但如果进行此属性更改后访问通过浏览器页面，你将看到痕迹导航现在使用自定义网站地图提供商提供。
 
 
 [![痕迹导航现在使用自定义站点映射提供程序 NorthwindSiteMapProvider](building-a-custom-database-driven-site-map-provider-cs/_static/image25.gif)](building-a-custom-database-driven-site-map-provider-cs/_static/image24.gif)
@@ -327,7 +327,7 @@ ASP.NET 2.0 的站点地图功能使得页开发人员可以如定义在某些�
 
 [!code-csharp[Main](building-a-custom-database-driven-site-map-provider-cs/samples/sample8.cs)]
 
-由于`AspNetXmlSiteMapProvider`是默认提供有关我们的应用程序，上面的代码将返回中定义的根节点`Web.sitemap`。 若要引用而不是默认站点地图提供商提供，使用`SiteMap`类 s [ `Providers`属性](https://msdn.microsoft.com/en-us/library/system.web.sitemap.providers.aspx)如下所示：
+由于`AspNetXmlSiteMapProvider`是默认提供有关我们的应用程序，上面的代码将返回中定义的根节点`Web.sitemap`。 若要引用而不是默认站点地图提供商提供，使用`SiteMap`类 s [ `Providers`属性](https://msdn.microsoft.com/library/system.web.sitemap.providers.aspx)如下所示：
 
 
 [!code-csharp[Main](building-a-custom-database-driven-site-map-provider-cs/samples/sample9.cs)]
@@ -357,7 +357,7 @@ ASP.NET 2.0 的站点映射功能包括`SiteMap`类，大量的内置导航 Web 
 
 - [在 SQL Server 中存储站点地图](https://msdn.microsoft.com/msdnmag/issues/05/06/WickedCode/)和[SQL 站点地图提供商提供以前已等待](https://msdn.microsoft.com/msdnmag/issues/06/02/wickedcode/default.aspx)
 - [ASP.NET 2.0 查看 s 提供程序模型](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx)
-- [提供程序工具包](https://msdn.microsoft.com/en-us/asp.net/aa336558.aspx)
+- [提供程序工具包](https://msdn.microsoft.com/asp.net/aa336558.aspx)
 - [检查 ASP.NET 2.0 的站点导航功能](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)
 
 ## <a name="about-the-author"></a>关于作者

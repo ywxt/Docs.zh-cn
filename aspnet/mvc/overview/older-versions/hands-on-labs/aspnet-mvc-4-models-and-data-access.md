@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: bf4bb5c6f9ad8339c3597b0d6666c7077ac476e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 076fa87eff140a3e7ff6855e4876abac40419c57
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 模型和数据访问
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 此实验室将引导你完成的增强功能和前面所述通过将细微的更改应用于源文件夹中提供的示例 Web 应用程序的新功能。
 > 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843)。
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)。
 
 
 在**ASP.NET MVC 基础知识**动手实验中，你已经传递了硬编码数据从控制器到查看模板。 但是，若要生成实际的 Web 应用程序，你可能想要使用实际的数据库。
@@ -59,7 +59,7 @@ ms.lasthandoff: 11/10/2017
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 你必须具有要完成本实验的以下项：
 
@@ -235,7 +235,7 @@ ms.lasthandoff: 11/10/2017
     > [!NOTE]
     > 正在使用的.NET 调用一项功能**LINQ** （语言集成查询） 来编写针对这些集合-将执行对数据库的代码并返回强类型查询表达式对象，您可以进行编程针对。
     > 
-    > 有关 LINQ 的详细信息，请访问[msdn 站点](https://msdn.microsoft.com/en-us/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx)。
+    > 有关 LINQ 的详细信息，请访问[msdn 站点](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx)。
 3. 更新**索引**操作方法来检索所有风格。
 
     (代码段-*模型和数据访问-Ex1 存储索引*)
@@ -351,7 +351,7 @@ ms.lasthandoff: 11/10/2017
     > [!NOTE]
     > 若要使用 Code First 的约定，此类流派必须具有主键属性，将自动检测到。
     > 
-    > 你可以阅读更多有关代码中这第一个约定[msdn 文章](https://msdn.microsoft.com/en-us/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx)。
+    > 你可以阅读更多有关代码中这第一个约定[msdn 文章](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx)。
 2. 现在，打开 POCO 模型类**唱片集**从**模型**项目文件夹和包含外键，创建具有名称的属性**GenreId**和**ArtistId**。 此类已具有**GenreId**为主键。
 
     (代码段-*模型和数据访问-Ex2 代码第一个唱片集*)
@@ -385,7 +385,7 @@ ms.lasthandoff: 11/10/2017
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
 
     > [!NOTE]
-    > 使用实体框架**DbContext**和**DBSet**你将能够查询 POCO 类风格。 通过扩展**OnModelCreating**中指定的方法，**代码**如何风格将映射到数据库表。 你可以在此 msdn 文章中找到有关 DBContext 和 DBSet 的详细信息：[链接](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.103).aspx)
+    > 使用实体框架**DbContext**和**DBSet**你将能够查询 POCO 类风格。 通过扩展**OnModelCreating**中指定的方法，**代码**如何风格将映射到数据库表。 你可以在此 msdn 文章中找到有关 DBContext 和 DBSet 的详细信息：[链接](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
 
 <a id="Ex2Task4"></a>
 
@@ -416,7 +416,7 @@ ms.lasthandoff: 11/10/2017
     > [!NOTE]
     > 正在使用的.NET 调用一项功能**LINQ** （语言集成查询） 来编写针对这些集合-将执行对数据库的代码并返回强类型查询表达式对象，您可以进行编程针对。
     > 
-    > 有关 LINQ 的详细信息，请访问[msdn 站点](https://msdn.microsoft.com/en-us/library/bb397926(v=vs.110).aspx)。
+    > 有关 LINQ 的详细信息，请访问[msdn 站点](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx)。
 3. 更新**索引**操作方法来检索所有风格。
 
     (代码段-*模型和数据访问-Ex2 存储索引*)
@@ -457,7 +457,7 @@ ms.lasthandoff: 11/10/2017
 在此练习中，您将了解如何使用参数，在数据库中查询以及如何使用查询结果调整，功能可减少号码数据库以更有效的方式访问中检索数据。
 
 > [!NOTE]
-> 有关查询结果调整的进一步信息，请访问以下[msdn 文章](https://msdn.microsoft.com/en-us/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx)。
+> 有关查询结果调整的进一步信息，请访问以下[msdn 文章](https://msdn.microsoft.com/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx)。
 
 
 <a id="Ex3Task1"></a>

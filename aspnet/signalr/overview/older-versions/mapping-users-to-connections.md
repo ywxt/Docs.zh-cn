@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/mapping-users-to-connections
 msc.type: authoredcontent
-ms.openlocfilehash: 561c5739c4e8465efeb4b5d1eaf8a196dab8673f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 896bf4142ce090e39ed5697ff053cd56728318ed
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="mapping-signalr-users-to-connections-in-signalr-1x"></a>将 SignalR 用户映射至在 SignalR 连接 1.x
 ====================
@@ -98,7 +98,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="azure-table-storage"></a>Azure 表存储
 
-下面的 Azure 表存储示例是类似于数据库的示例。 它不包括所有需要若要开始使用 Azure 表存储服务的信息。 有关信息，请参阅[如何通过.NET 使用表存储](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-tables/)。
+下面的 Azure 表存储示例是类似于数据库的示例。 它不包括所有需要若要开始使用 Azure 表存储服务的信息。 有关信息，请参阅[如何通过.NET 使用表存储](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-tables/)。
 
 下面的示例演示用于存储连接信息的表实体。 它按用户名称，将数据分区，并由连接 id 标识每个实体，以便用户可以在任何时间有多个连接。
 

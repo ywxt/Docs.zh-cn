@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9d34fb64984313e5e2844d36a70f3ab08560654e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a9a470efc9e9416cd06fd4268f4e9505393dbed3
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-gridview-column-of-radio-buttons-vb"></a>添加单选按钮 (VB) GridView 列
 ====================
@@ -148,7 +148,7 @@ GridView 控件提供了大量的内置功能。 它包括用于显示文本、 
 
 [!code-aspx[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample3.aspx)]
 
-单选按钮 s [ `GroupName`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.radiobutton.groupname(VS.80).aspx)用于组单选按钮的一系列内容。 具有相同的所有单选按钮控件`GroupName`值被视为分组; 只有一个单选按钮可以一次选择从组。 `GroupName`属性指定的值呈现的单选按钮的`name`属性。 浏览器检查的单选按钮`name`属性以确定单选按钮分组。
+单选按钮 s [ `GroupName`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.radiobutton.groupname(VS.80).aspx)用于组单选按钮的一系列内容。 具有相同的所有单选按钮控件`GroupName`值被视为分组; 只有一个单选按钮可以一次选择从组。 `GroupName`属性指定的值呈现的单选按钮的`name`属性。 浏览器检查的单选按钮`name`属性以确定单选按钮分组。
 
 与 RadioButton Web 控件添加到`ItemTemplate`，访问此页面，通过浏览器，然后单击网格的行中的单选按钮。 请注意如何未分组的单选按钮，因而可能选择的所有行，作为图 11 显示。
 
@@ -184,7 +184,7 @@ GridView 控件提供了大量的内置功能。 它包括用于显示文本、 
 
 在这里，`GetUniqueRadioButton`和`GetRadioButtonValue`将返回相应的代码隐藏类中定义的方法`id`和`value`属性值为每个单选按钮。 此方法非常适用于分配`id`和`value`属性，但会短时无需指定`checked`属性值，因为数据绑定语法仅执行时数据首先绑定到 GridView。 因此，如果 GridView 具有启用视图状态，格式设置方法，将仅时，会激发首次加载页 （或当 GridView 显式重新绑定到数据源），因此该设置的函数`checked`上调用获胜 t 的属性回发。 它 s 而是细微问题和有点超出了本文中，因此，我将按此保留的范围。 我做、 但是，建议你尝试使用上面的方法和一同通过它在其中你将遇到困难的点。 尽管此类练习获胜不能获得您任何仔细的可行版本，它将帮助培养 GridView 和数据绑定生命周期的更深入地了解。
 
-注入自定义其他方法，模板和我们将使用本教程中的方法中的低级标记是添加[文本控件](https://msdn.microsoft.com/en-us/library/sz4949ks(VS.80).aspx)到模板。 然后，在 GridView s`RowCreated`或`RowDataBound`事件处理程序，可以以编程方式访问文本控件并将其`Text`属性设置为标记发出。
+注入自定义其他方法，模板和我们将使用本教程中的方法中的低级标记是添加[文本控件](https://msdn.microsoft.com/library/sz4949ks(VS.80).aspx)到模板。 然后，在 GridView s`RowCreated`或`RowDataBound`事件处理程序，可以以编程方式访问文本控件并将其`Text`属性设置为标记发出。
 
 通过从 TemplateField s 删除单选按钮来启动`ItemTemplate`，替换文本控件。 设置的文本控件，s`ID`到`RadioButtonMarkup`。
 
@@ -205,7 +205,7 @@ GridView 控件提供了大量的内置功能。 它包括用于显示文本、 
 
 添加此事件处理程序代码后，花点时间查看浏览器中测试。 首先，请注意，只有一个单选按钮在网格中的可以一次选择。 但是，当选择一个单选按钮，然后单击一个按钮，产生的回发，并且所有的单选按钮恢复为其初始状态 （即，在回发时，选定的单选按钮不再处于选中状态）。 若要解决此问题，我们需要增加`RowCreated`事件处理程序，以便它检查发送的回发的所选的单选按钮索引添加`checked="checked"`属性设为发出的行索引匹配项的标记。
 
-当发生回发时，浏览器发送回`name`和`value`的选定的单选按钮。 检索此值，可以以编程方式使用`Request.Form("name")`。 [ `Request.Form`属性](https://msdn.microsoft.com/en-us/library/system.web.httprequest.form.aspx)提供[ `NameValueCollection` ](https://msdn.microsoft.com/en-us/library/system.collections.specialized.namevaluecollection.aspx)表示窗体变量。 窗体变量的名称和 web 页中中的窗体字段的值也每当回发时，才会发送回的 web 浏览器。 因为呈现`name`GridView 中的单选按钮的属性`SuppliersGroup`，当浏览器将发送的回发 web 页面`SuppliersGroup=valueOfSelectedRadioButton`返回到 web 服务器 （以及其他窗体字段）。 然后可以从访问此信息`Request.Form`属性使用： `Request.Form("SuppliersGroup")`。
+当发生回发时，浏览器发送回`name`和`value`的选定的单选按钮。 检索此值，可以以编程方式使用`Request.Form("name")`。 [ `Request.Form`属性](https://msdn.microsoft.com/library/system.web.httprequest.form.aspx)提供[ `NameValueCollection` ](https://msdn.microsoft.com/library/system.collections.specialized.namevaluecollection.aspx)表示窗体变量。 窗体变量的名称和 web 页中中的窗体字段的值也每当回发时，才会发送回的 web 浏览器。 因为呈现`name`GridView 中的单选按钮的属性`SuppliersGroup`，当浏览器将发送的回发 web 页面`SuppliersGroup=valueOfSelectedRadioButton`返回到 web 服务器 （以及其他窗体字段）。 然后可以从访问此信息`Request.Form`属性使用： `Request.Form("SuppliersGroup")`。
 
 因为我们将需要以确定选中的单选按钮索引不是仅在`RowCreated`事件处理程序，但在`Click`按钮 Web 控件的事件处理程序，让 s 添加`SuppliersSelectedIndex`属性返回的代码隐藏类`-1`如果选择没有单选按钮和所选的索引，如果一个单选按钮处于选中状态。
 
@@ -222,7 +222,7 @@ GridView 控件提供了大量的内置功能。 它包括用于显示文本、 
 此时我们已添加到允许单个 GridView 行选择和跨回发记住 GridView 的一列分组的单选按钮。 我们后续步骤是以显示所选供应商提供的产品。 在步骤 4 中我们将了解如何将用户重定向到另一页，沿所选发送`SupplierID`。 在步骤 5 中，我们将了解如何在同一页面上 GridView 中显示所选供应商的产品。
 
 > [!NOTE]
-> 而不是使用 TemplateField （此时间较长的步骤 3 的焦点），我们无法创建自定义`DataControlField`呈现合适的用户界面和功能的类。 [ `DataControlField`类](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datacontrolfield.aspx)是 BoundField、 CheckBoxField、 TemplateField 和其他内置的 GridView 和说明字段派生自的基类。 创建自定义`DataControlField`类将表示单选按钮的列无法仅使用声明性语法，添加，并且还会使复制其他网页和其他简单得多的 web 应用程序的功能。
+> 而不是使用 TemplateField （此时间较长的步骤 3 的焦点），我们无法创建自定义`DataControlField`呈现合适的用户界面和功能的类。 [ `DataControlField`类](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datacontrolfield.aspx)是 BoundField、 CheckBoxField、 TemplateField 和其他内置的 GridView 和说明字段派生自的基类。 创建自定义`DataControlField`类将表示单选按钮的列无法仅使用声明性语法，添加，并且还会使复制其他网页和其他简单得多的 web 应用程序的功能。
 
 
 如果你已创建自定义，编译在 ASP.NET 中的控件，但是，你知道，这样做需要数量相当大的先并携带的细微部分和必须进行仔细处理的边缘情况的主机。 因此，我们将放弃实现作为自定义的单选按钮的列`DataControlField`类现在并坚持使用 TemplateField 选项。 也许，我们将有机会浏览创建、 使用和部署自定义`DataControlField`将来的教程中的类 ！
@@ -295,7 +295,7 @@ GridView 控件提供了大量的内置功能。 它包括用于显示文本、 
 
 我们有几个此处在指定参数的值的源的选项。 我们无法使用默认参数对象，并以编程方式将分配的值`SuppliersSelectedIndex`属性参数 s`DefaultValue`中 ObjectDataSource 的属性`Selecting`事件处理程序。 将回指[以编程方式设置对象数据源的参数值](../basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-vb.md)教程，以在以编程方式将值分配到 ObjectDataSource 的参数使用刷新程序。
 
-或者，我们可以使用 ControlParameter，请参阅`Suppliers`GridView s [ `SelectedValue`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedvalue.aspx)（请参阅图 19）。 GridView s`SelectedValue`属性返回`DataKey`值对应于[`SelectedIndex`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedindex.aspx)。 为了使此选项才能工作，我们需要以编程方式设置 GridView s`SelectedIndex`对所选的属性时行`ListProducts`单击按钮。 作为一项额外权益，通过设置`SelectedIndex`，将不执行所选的记录`SelectedRowStyle`中定义`DataWebControls`主题 （黄色背景）。
+或者，我们可以使用 ControlParameter，请参阅`Suppliers`GridView s [ `SelectedValue`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedvalue.aspx)（请参阅图 19）。 GridView s`SelectedValue`属性返回`DataKey`值对应于[`SelectedIndex`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedindex.aspx)。 为了使此选项才能工作，我们需要以编程方式设置 GridView s`SelectedIndex`对所选的属性时行`ListProducts`单击按钮。 作为一项额外权益，通过设置`SelectedIndex`，将不执行所选的记录`SelectedRowStyle`中定义`DataWebControls`主题 （黄色背景）。
 
 
 [![使用 ControlParameter GridView 的 SelectedValue 指定为参数源](adding-a-gridview-column-of-radio-buttons-vb/_static/image19.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image33.png)

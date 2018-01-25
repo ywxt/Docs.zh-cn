@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
 msc.type: authoredcontent
-ms.openlocfilehash: f8d378d3332669ae4606dad8ada06de37e7dfd20
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5780bfde928011f46c3f504aec927f2127f10d0d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuration-and-instrumentation"></a>配置和检测
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 有配置中的重大更改和 ASP.NET 2.0 中的检测。 新的 ASP.NET 配置 API 允许以编程方式进行配置更改。 此外，许多新的配置设置存在允许对新的配置和检测。
 
@@ -76,15 +76,15 @@ GetSection 或 GetSectionGroup 方法用于读取配置信息。 用户或读取
 
 很多配置类和方法都类似于彼此。 下表描述的最常用的配置类和命名空间。
 
-| **配置类或命名空间** | **描述** |
+| **配置类或命名空间** | **说明** |
 | --- | --- |
-| [System.Configuration](https://msdn.microsoft.com/en-us/library/system.configuration.aspx)命名空间 | 包含所有.NET Framework 应用程序的主要配置类。 部分处理程序类用于从方法，如 GetSection 和 GetSectionGroup 获取节的配置数据。 这两种方法是非静态。 |
+| [System.Configuration](https://msdn.microsoft.com/library/system.configuration.aspx) namespace | 包含所有.NET Framework 应用程序的主要配置类。 部分处理程序类用于从方法，如 GetSection 和 GetSectionGroup 获取节的配置数据。 这两种方法是非静态。 |
 | System.Configuration.Configuration 类 | 表示一组对计算机、 应用程序、 Web 目录或其他资源的配置数据。 此类包含有用的方法，如 GetSection 和 GetSectionGroup，用于更新配置设置和获取对节和节组的引用。 此类用作获取设计时配置数据，如 WebConfigurationManager 和 ConfigurationManager 类方法的方法的返回类型。 |
-| System.Web.Configuration 命名空间 | ASP.NET 配置节定义在包含节处理程序类[ASP.NET 配置设置](https://msdn.microsoft.com/en-us/library/b5ysx397.aspx)。 部分处理程序类用于从方法，如 GetSection 和 GetSectionGroup 获取节的配置数据。 |
-| System.Web.Configuration.WebConfigurationManager 类 | 提供用于获取指向运行时和设计时的配置设置的引用的有用方法。 这些方法将该 System.Configuration.Configuration 类用作返回类型。 你可以交替使用此类的静态 GetSection 方法或 System.Configuration.ConfigurationManager 类的非静态 GetSection 方法。 对于 Web 应用程序配置，而不是 System.Configuration.ConfigurationManager 类建议 System.Web.Configuration.WebConfigurationManager 类。 |
-| [System.Configuration.Provider](https://msdn.microsoft.com/en-us/library/system.configuration.provider.aspx)命名空间 | 使您能够自定义和扩展的配置提供程序。 这是配置系统中的所有提供程序类的基类。 |
-| [System.Web.Management](https://msdn.microsoft.com/en-us/library/system.web.management.aspx)命名空间 | 包含类和接口用于管理和监视的 Web 应用程序的运行状况。 严格地说，此命名空间不被视为配置 API 的一部分。 例如，跟踪和事件触发做出是通过此命名空间中的类实现。 |
-| [System.Management.Instrumentation](https://msdn.microsoft.com/en-us/library/system.management.instrumentation.aspx)命名空间 | 提供所需的检测应用程序公开其管理信息和潜在的使用者通过 Windows Management Instrumentation (WMI) 事件的类。 ASP.NET 运行状况监视使用 WMI 来提供事件。 严格地说，此命名空间不被视为配置 API 的一部分。 |
+| System.Web.Configuration namespace | ASP.NET 配置节定义在包含节处理程序类[ASP.NET 配置设置](https://msdn.microsoft.com/library/b5ysx397.aspx)。 部分处理程序类用于从方法，如 GetSection 和 GetSectionGroup 获取节的配置数据。 |
+| System.Web.Configuration.WebConfigurationManager class | 提供用于获取指向运行时和设计时的配置设置的引用的有用方法。 这些方法将该 System.Configuration.Configuration 类用作返回类型。 你可以交替使用此类的静态 GetSection 方法或 System.Configuration.ConfigurationManager 类的非静态 GetSection 方法。 对于 Web 应用程序配置，而不是 System.Configuration.ConfigurationManager 类建议 System.Web.Configuration.WebConfigurationManager 类。 |
+| [System.Configuration.Provider](https://msdn.microsoft.com/library/system.configuration.provider.aspx) namespace | 使您能够自定义和扩展的配置提供程序。 这是配置系统中的所有提供程序类的基类。 |
+| [System.Web.Management](https://msdn.microsoft.com/library/system.web.management.aspx) namespace | 包含类和接口用于管理和监视的 Web 应用程序的运行状况。 严格地说，此命名空间不被视为配置 API 的一部分。 例如，跟踪和事件触发做出是通过此命名空间中的类实现。 |
+| [System.Management.Instrumentation](https://msdn.microsoft.com/library/system.management.instrumentation.aspx)命名空间 | 提供所需的检测应用程序公开其管理信息和潜在的使用者通过 Windows Management Instrumentation (WMI) 事件的类。 ASP.NET 运行状况监视使用 WMI 来提供事件。 严格地说，此命名空间不被视为配置 API 的一部分。 |
 
 ## <a name="reading-from-aspnet-configuration-files"></a>从 ASP.NET 配置文件读取
 
@@ -152,7 +152,7 @@ ASP.NET 2.0 使用事件日志提供程序的的现成记录事件基于应用�
 | --- | --- |
 | **eventMappings** | 包含各种 WebBase 类的映射。 如果你生成自己事件的类，你可以扩展此列表。 生成您自己的事件类使能够你更细的粒度对发送到的信息的提供程序。 例如，你可以配置未经处理的异常时发送自己的自定义事件以电子邮件发送到 SQL Server。 |
 | **规则** | 链接到提供程序 eventMappings。 |
-| **缓冲** | 与 SQL Server 和电子邮件提供程序使用，来确定如何通常刷新到提供程序的事件。 |
+| **buffering** | 与 SQL Server 和电子邮件提供程序使用，来确定如何通常刷新到提供程序的事件。 |
 
 下面是全局的 Web.config 文件中的一个代码示例。
 
@@ -259,11 +259,11 @@ ASP.NET 2.0 允许以编程方式访问通过的所有跟踪消息**TraceContext
 
 多个 ASP.NET 应用程序服务依赖于提供程序来管理存储和从数据源检索数据。 每个提供程序是特定于数据源。 ASP.NET 包括的 SQL Server 提供程序在以下 ASP.NET 功能：
 
-- 成员资格 ( [SqlMembershipProvider](https://msdn.microsoft.com/en-us/library/system.web.security.sqlmembershipprovider.aspx)类)。
-- 角色管理 ( [SqlRoleProvider](https://msdn.microsoft.com/en-us/library/system.web.security.sqlroleprovider.aspx)类)。
-- 配置文件 ( [SqlProfileProvider](https://msdn.microsoft.com/en-us/library/system.web.profile.sqlprofileprovider.aspx)类)。
-- Web 部件个性化设置 ( [SqlPersonalizationProvider](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.webparts.sqlpersonalizationprovider.aspx)类)。
-- Web 事件 ( [SqlWebEventProvider](https://msdn.microsoft.com/en-us/library/system.web.management.sqlwebeventprovider.aspx)类)。
+- 成员资格 ( [SqlMembershipProvider](https://msdn.microsoft.com/library/system.web.security.sqlmembershipprovider.aspx)类)。
+- 角色管理 ( [SqlRoleProvider](https://msdn.microsoft.com/library/system.web.security.sqlroleprovider.aspx)类)。
+- 配置文件 ( [SqlProfileProvider](https://msdn.microsoft.com/library/system.web.profile.sqlprofileprovider.aspx)类)。
+- Web 部件个性化设置 ( [SqlPersonalizationProvider](https://msdn.microsoft.com/library/system.web.ui.webcontrols.webparts.sqlpersonalizationprovider.aspx)类)。
+- Web 事件 ( [SqlWebEventProvider](https://msdn.microsoft.com/library/system.web.management.sqlwebeventprovider.aspx)类)。
 
 在安装 ASP.NET 时，你的服务器的 Machine.config 文件包括指定每个依赖于提供程序的 ASP.NET 功能的 SQL Server 提供程序的配置元素。 这些提供程序配置，默认情况下，若要连接到 SQL Server Express 2005 的本地用户实例。 如果更改使用的提供程序的默认连接字符串，则你可以使用任何在计算机配置中，配置的 ASP.NET 功能之前必须安装 SQL Server 数据库和数据库元素针对使用 Aspnet你选功能\_regsql.exe。 如果你使用 SQL 注册工具指定的数据库不存在 （aspnetdb 将默认数据库如果未指定命令行上），则当前用户必须具有在 SQL Server 以及采用创建架构 e 中创建数据库的权限在数据库中的元素。
 
@@ -291,7 +291,7 @@ ASP.NET 2.0 允许以编程方式访问通过的所有跟踪消息**TraceContext
 
 运行 aspnet 时，还提供以下选项\_regbrowser.exe:
 
-| **选项** | **描述** |
+| **选项** | **说明** |
 | --- | --- |
 | **-?** | 显示 Aspnet\_regbbrowsers.exe 命令窗口中的帮助文本。 |
 | **-i** | 创建运行时浏览器功能程序集并将其安装在全局程序集缓存。 |
@@ -301,7 +301,7 @@ ASP.NET 2.0 允许以编程方式访问通过的所有跟踪消息**TraceContext
 
 ASP.NET 编译工具可以使用两种常规方式： 进行就地编译和部署，其中指定目标输出目录的编译。
 
-### <a name="compiling-an-application-in-placehttpsmsdnmicrosoftcomen-uslibraryms229863aspx"></a>[编译位置中的应用程序](https://msdn.microsoft.com/en-us/library/ms229863.aspx)
+### <a name="compiling-an-application-in-placehttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[编译位置中的应用程序](https://msdn.microsoft.com/library/ms229863.aspx)
 
 ASP.NET 编译工具可以编译位置中的应用程序，即，它模仿的应用程序，从而导致正则编译发出多个请求的行为。 预编译网站的用户不会通过编译上第一次请求的页面而导致的延迟。
 
@@ -317,7 +317,7 @@ ASP.NET 编译工具可以编译位置中的应用程序，即，它模仿的应
 > 编译的应用程序包含嵌套的应用程序不编译嵌套的应用程序。 必须单独编译嵌套的应用程序。
 
 
-### <a name="compiling-an-application-for-deploymenthttpsmsdnmicrosoftcomen-uslibraryms229863aspx"></a>[编译为部署的应用程序](https://msdn.microsoft.com/en-us/library/ms229863.aspx)
+### <a name="compiling-an-application-for-deploymenthttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[编译为部署的应用程序](https://msdn.microsoft.com/library/ms229863.aspx)
 
 通过指定 targetDir 参数编译的应用程序部署 （编译到的目标位置）。 TargetDir 可以对 Web 应用程序的最终位置，也可以进一步部署编译的应用程序。 使用**-u**选项编译的方式，你可以无需重新编译它，编译的应用程序中的某些文件进行更改的应用程序。 Aspnet\_compiler.exe 进行静态和动态文件类型之间的差异，并创建生成的应用程序时以不同方式处理它们。
 
@@ -349,18 +349,18 @@ ASP.NET 编译工具可以编译位置中的应用程序，即，它模仿的应
 | .cs、.vb、.jsl、.cpp （不包括前面列出的文件类型的代码隐藏文件） | 从.ascx、.ashx 或.aspx 文件生成的程序集引用的源代码是编译为程序集并放置在 Bin 目录中。 不源复制文件。 |
 | 自定义的文件类型 | 像动态文件一样，这些文件进行编译。 具体取决于其所基于的文件的类型，编译器可以在输出目录中放置映射文件。 |
 | 在应用程序的文件\_Code 子目录 | 此子目录中的源代码文件进行编译到程序集中，并放入的 Bin 目录中。 |
-| 在应用程序的文件\_GlobalResources 子目录 | 这些文件进行编译到程序集中，并放入的 Bin 目录中。 任何应用程序\_在主输出目录下创建 GlobalResources 子目录。 如果配置文件指定 appliesTo ="All"，.resx 和.resources 文件复制到输出目录。 因此不会复制如果它们由引用[BuildProvider](https://msdn.microsoft.com/en-us/library/system.web.configuration.buildprovider.aspx)。 |
+| 在应用程序的文件\_GlobalResources 子目录 | 这些文件进行编译到程序集中，并放入的 Bin 目录中。 任何应用程序\_在主输出目录下创建 GlobalResources 子目录。 如果配置文件指定 appliesTo ="All"，.resx 和.resources 文件复制到输出目录。 因此不会复制如果它们由引用[BuildProvider](https://msdn.microsoft.com/library/system.web.configuration.buildprovider.aspx)。 |
 | 在应用程序的.resx 和.resource 文件\_LocalResources 子目录 | 这些文件进行编译到程序集中具有唯一名称，并放入的 Bin 目录中。 没有文件.resx 或.resource 文件将复制到输出目录。 |
 | 在应用程序的.skin 文件\_主题子目录 | 主题进行编译到程序集中，并放入的 Bin 目录中。 存根 （stub） 文件进行为.skin 文件创建并放入相应的输出目录中。 （如.css) 的静态文件将复制到输出目录。 |
 | .browser Web.config 静态文件类型的 Bin 目录中已存在的程序集 | 这些文件复制到输出目录。 |
 
-### <a name="fixed-assembly-nameshttpsmsdnmicrosoftcomen-uslibraryms229863aspx"></a>[固定的程序集名称](https://msdn.microsoft.com/en-us/library/ms229863.aspx##)
+### <a name="fixed-assembly-nameshttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[固定的程序集名称](https://msdn.microsoft.com/library/ms229863.aspx##)
 
 某些情况下，如部署 Web 应用程序使用 MSI Windows 安装程序，需要使用一致的文件名称和内容，以及一致的目录结构，以确定程序集或更新的配置设置。 在这些情况下，你可以使用**-fixednames**选项以指定 ASP.NET 编译工具应编译的程序集的每个源文件而不是使用 where 多页被编译到程序集。 这可能会导致大量的程序集，因此如果您担心可伸缩性应小心使用此选项。
 
-### <a name="strong-name-compilationhttpsmsdnmicrosoftcomen-uslibraryms229863aspx"></a>[强名称编译](https://msdn.microsoft.com/en-us/library/ms229863.aspx##)
+### <a name="strong-name-compilationhttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[强名称编译](https://msdn.microsoft.com/library/ms229863.aspx##)
 
-**-Aptca**， **-delaysign**， **-keycontainer**和**-keyfile**选项提供，以便你可以使用 Aspnet\_compiler.exe 创建强命名程序集而无需使用[强名称工具 (Sn.exe)](https://msdn.microsoft.com/en-us/library/k5b5tt23.aspx)单独。 这些选项，分别对应到**AllowPartiallyTrustedCallersAttribute**， **AssemblyDelaySignAttribute**， **AssemblyKeyNameAttribute**，和**AssemblyKeyFileAttribute**。
+**-Aptca**， **-delaysign**， **-keycontainer**和**-keyfile**选项提供，以便你可以使用 Aspnet\_compiler.exe 创建强命名程序集而无需使用[强名称工具 (Sn.exe)](https://msdn.microsoft.com/library/k5b5tt23.aspx)单独。 这些选项，分别对应到**AllowPartiallyTrustedCallersAttribute**， **AssemblyDelaySignAttribute**， **AssemblyKeyNameAttribute**，和**AssemblyKeyFileAttribute**。
 
 讨论这些属性是本课程的范围之外。
 
@@ -447,4 +447,4 @@ ASP.NET 编译工具可以编译位置中的应用程序，即，它模仿的应
 
 ## <a name="more-information"></a>详细信息：
 
-ASP.NET 2.0 的提供程序模型允许你创建自己的提供程序不仅应用程序检测，但对于许多其他用途也例如成员身份、 配置文件，等等。有关编写自定义提供程序以将应用程序事件记录到文本文件的详细信息，请访问[此链接](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnaspp/html/ASPNETProvMod_Prt6.asp)。
+ASP.NET 2.0 的提供程序模型允许你创建自己的提供程序不仅应用程序检测，但对于许多其他用途也例如成员身份、 配置文件，等等。有关编写自定义提供程序以将应用程序事件记录到文本文件的详细信息，请访问[此链接](https://msdn.microsoft.com/library/default.asp?url=/library/dnaspp/html/ASPNETProvMod_Prt6.asp)。

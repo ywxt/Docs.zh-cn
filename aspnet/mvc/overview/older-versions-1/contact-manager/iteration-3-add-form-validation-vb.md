@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ffb502be3037e787d79bbd1e83b93cd0b34dca6a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e9ed182fb58addd8c5dadbe6e3d09c391840ca00
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="iteration-3--add-form-validation-vb"></a>迭代 #3 – 添加窗体验证 (VB)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载代码](iteration-3-add-form-validation-vb/_static/contactmanager_3_vb1.zip)
 
@@ -63,7 +63,7 @@ ms.lasthandoff: 11/10/2017
 
 在此迭代中，若要为简便起见，我们编写验证代码的所有手动。 而不是自己编写验证代码，我们无法充分利用验证框架。 例如，可以使用 Microsoft 企业库验证应用程序块 (VAB) 为你的 ASP.NET MVC 应用程序中实现验证逻辑。 若要了解有关验证应用程序块的详细信息，请参阅：
 
-[*http://msdn.microsoft.com/en-us/library/dd203099.aspx*](https://msdn.microsoft.com/en-us/library/dd203099.aspx)
+[*http://msdn.microsoft.com/library/dd203099.aspx*](https://msdn.microsoft.com/library/dd203099.aspx)
 
 ## <a name="adding-validation-to-the-create-view"></a>将验证添加到创建视图
 
@@ -117,7 +117,7 @@ Edit （） 操作会更新联系人。 Edit （） 操作必须执行的 create
 
 修改的联系人控制器类包含在清单 3。 此类已在 create （） 和 edit （） 操作中调用的新 ValidateContact() 方法。
 
-**列出 3-Controllers\ContactController.vb**
+**Listing 3 - Controllers\ContactController.vb**
 
 [!code-vb[Main](iteration-3-add-form-validation-vb/samples/sample3.vb)]
 

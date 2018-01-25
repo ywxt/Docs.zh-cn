@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: d0cdb5aaa4b1129c3f2404d069e9781ca16260b7
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 532020a8fe4c5a0312cbd89278e61f614b1825f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="reading-related-data---ef-core-with-razor-pages-6-of-8"></a>读取与相关的数据的 EF 内核，它们有 Razor 页 (6 的 8)
 
@@ -93,13 +93,13 @@ dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir P
 
 打开*Pages/Courses/Index.cshtml.cs*并检查`OnGetAsync`方法。 基架引擎指定为预先加载`Department`导航属性。 `Include`方法指定预先加载。
 
-运行应用并选择**课程**链接。 部门列显示`DepartmentID`，这是毫无意义。
+运行应用并选择**课程**链接。 部门列显示`DepartmentID`，这并不很有用。
 
 使用以下代码更新 `OnGetAsync` 方法：
 
 [!code-csharp[Main](intro/samples/cu/Pages/Courses/Index.cshtml.cs?name=snippet_RevisedIndexMethod)]
 
-前面的代码将添加`AsNoTracking`。 `AsNoTracking`因为返回的实体不会跟踪，可以提高性能。 因为它们不会更新在当前上下文中，不会跟踪实体。
+前面的代码将添加`AsNoTracking`。 `AsNoTracking`因为返回的实体不会跟踪，可以提高性能。 因为它们不更新当前上下文中，不会跟踪实体。
 
 更新*Views/Courses/Index.cshtml*替换为以下突出显示的标记：
 

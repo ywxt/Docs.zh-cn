@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2ef1bb0b68a46535e3320834a0374b9a4f66182c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 23dbd63110092b2e91b7f3f9f6b602ef917c5527
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="paging-and-sorting-report-data-vb"></a>分页和排序报表数据 (VB)
 ====================
@@ -101,7 +101,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-3-adding-paging-support"></a>步骤 3： 添加分页支持
 
-列出*所有*在一个屏幕上的产品可能会导致用户浏览数据的信息重载。 为了帮助使结果更易于管理，我们可以中断将数据分成较小的数据页，并允许用户一次单步执行一页数据。 若要完成这只需选中从 GridView s 智能标记启用分页复选框 (这将设置 GridView s [ `AllowPaging`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.allowpaging.aspx)到`true`)。
+列出*所有*在一个屏幕上的产品可能会导致用户浏览数据的信息重载。 为了帮助使结果更易于管理，我们可以中断将数据分成较小的数据页，并允许用户一次单步执行一页数据。 若要完成这只需选中从 GridView s 智能标记启用分页复选框 (这将设置 GridView s [ `AllowPaging`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.allowpaging.aspx)到`true`)。
 
 
 [![选中启用分页复选框可添加分页支持](paging-and-sorting-report-data-vb/_static/image10.png)](paging-and-sorting-report-data-vb/_static/image9.png)
@@ -111,12 +111,12 @@ ms.lasthandoff: 11/10/2017
 
 启用分页限制每页显示的记录数，并且将添加*分页接口*到 GridView。 图 7 所示的默认分页界面是页码，允许用户从一页数据快速导航到另一系列。 此分页接口应看起来很熟悉，正如我们已在过去教程说明如何和 FormView 控件添加分页支持时看到它。
 
-说明和 FormView 控件只显示每页的单个记录。 GridView，但是，向其[`PageSize`属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridview.pagesize.aspx)以确定每页显示的记录数量 （此属性默认值为 10）。
+说明和 FormView 控件只显示每页的单个记录。 GridView，但是，向其[`PageSize`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.pagesize.aspx)以确定每页显示的记录数量 （此属性默认值为 10）。
 
 可以使用以下属性自定义此 GridView、 说明如何和 FormView 的分页接口：
 
 - `PagerStyle`指示的分页接口; 的样式信息可以指定设置，例如`BackColor`， `ForeColor`， `CssClass`， `HorizontalAlign`，依次类推。
-- `PagerSettings`包含可以自定义分页接口中; 的功能的属性 bevy`PageButtonCount`指示数值页码 （默认值为 10） 的分页界面中显示的最大数目; [ `Mode`属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.pagersettings.mode.aspx)指示如何分页界面运行，并可以将设置为： 
+- `PagerSettings`包含可以自定义分页接口中; 的功能的属性 bevy`PageButtonCount`指示数值页码 （默认值为 10） 的分页界面中显示的最大数目; [ `Mode`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pagersettings.mode.aspx)指示如何分页界面运行，并可以将设置为： 
 
     - `NextPrevious`显示允许用户在单步向前或向后一页时间下一步和上一步按钮
     - `NextPreviousFirstLast`下一步和上一步按钮，除了第一个和最后一个按钮，还提供，允许用户以快速移动到第一个或最后一个数据页
@@ -216,7 +216,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-5-adding-bi-directional-sorting-support"></a>步骤 5： 添加双向语言排序支持
 
-添加双向语言排序支持非常简单，只添加分页支持只需选中 GridView s 智能标记的启用排序选项 (这会设置 GridView s [ `AllowSorting`属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridview.allowsorting.aspx)到`true`)。 此呈现每个标头的 GridView 的字段作为 LinkButtons，单击时，导致回发，并返回按所单击的列以升序排序的数据。 再次单击同一标题 LinkButton 重新对数据进行排序以降序顺序。
+添加双向语言排序支持非常简单，只添加分页支持只需选中 GridView s 智能标记的启用排序选项 (这会设置 GridView s [ `AllowSorting`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.allowsorting.aspx)到`true`)。 此呈现每个标头的 GridView 的字段作为 LinkButtons，单击时，导致回发，并返回按所单击的列以升序排序的数据。 再次单击同一标题 LinkButton 重新对数据进行排序以降序顺序。
 
 > [!NOTE]
 > 如果你使用自定义的数据访问层，而不是类型化数据集，你可能没有启用排序选项 GridView s 智能标记中。 仅 GridViews 绑定到数据源以本机方式支持排序具有可用此复选框。 类型化数据集提供现成可用排序支持由于 ADO.NET DataTable 提供`Sort`方法，调用时，对 DataTable s 使用指定的条件的数据行进行排序。
@@ -243,11 +243,11 @@ ms.lasthandoff: 11/10/2017
 
 所有 GridView 都字段 BoundField、 CheckBoxField、 TemplateField，和等等具有`SortExpression`属性，指示应使用对数据进行排序时单击该字段 s 排序标头链接的表达式。 GridView 还有`SortExpression`属性。 GridView 时单击 LinkButton 排序标头，指定该字段 s`SortExpression`值赋给其`SortExpression`属性。 接下来，并将数据从 ObjectDataSource 重新检索根据 GridView s 排序`SortExpression`属性。 下表详细描述调查时最终用户对数据进行 GridView 的步骤顺序：
 
-1. GridView s [Sorting 事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sorting(VS.80).aspx)激发
-2. GridView s [ `SortExpression`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sortexpression.aspx)设置为`SortExpression`的字段 LinkButton 被单击其排序标头
+1. GridView s [Sorting 事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorting(VS.80).aspx)激发
+2. GridView s [ `SortExpression`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sortexpression.aspx)设置为`SortExpression`的字段 LinkButton 被单击其排序标头
 3. ObjectDataSource 重新检索所有 BLL 中的数据，然后对使用 GridView s 的数据进行排序`SortExpression`
 4. GridView 的`PageIndex`属性重置为 0，这意味着，排序用户时返回到 （假设已实现分页支持） 的数据的第一页
-5. GridView s [ `Sorted`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sorted(VS.80).aspx)激发
+5. GridView s [ `Sorted`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorted(VS.80).aspx)激发
 
 像默认分页，请使用默认排序选项重新检索*所有*从 BLL 的记录。 使用不分页的情况下排序时，或者使用使用进行排序时默认分页，那里 s 没有办法避开此性能下降 （缺少缓存的数据库数据）。 但是，正如在将来的教程，我们看到它可以有效地对数据进行排序时使用自定义分页的 s。
 
@@ -274,7 +274,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="programmatically-sorting-the-gridview"></a>以编程方式排序 GridView
 
-你也可以进行排序的 GridView 内容以编程方式使用 GridView s [ `Sort`方法](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sort.aspx)。 只需传入`SortExpression`值作为排序依据以及[ `SortDirection` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sortdirection.aspx) (`Ascending`或`Descending`)，并且 GridView 的数据将会重新排序。
+你也可以进行排序的 GridView 内容以编程方式使用 GridView s [ `Sort`方法](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sort.aspx)。 只需传入`SortExpression`值作为排序依据以及[ `SortDirection` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sortdirection.aspx) (`Ascending`或`Descending`)，并且 GridView 的数据将会重新排序。
 
 假设，原因我们关闭排序`UnitPrice`是的因为我们只需担心我们的客户只需将购买仅价格最低的产品。 但是，我们想要鼓励他们购买的成本最高的产品，因此我们 d 诸如它们才能进行排序的价格，但只能从最高价到最少的产品。
 

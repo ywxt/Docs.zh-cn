@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 18c3825c58e7cfe0a73817a8431593c661c5fa4f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f9b68abeba19561a327bad5ee4be80d79af1a550
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>排序、 筛选和分页与实体框架中的 ASP.NET MVC 应用程序 (3 的 10)
 ====================
@@ -64,7 +64,7 @@ ms.lasthandoff: 11/10/2017
 | 升序的日期 | ascending | descending |
 | 日期降序 | ascending | ascending |
 
-该方法使用[LINQ to Entities](https://msdn.microsoft.com/en-us/library/bb386964.aspx)指定要作为排序依据的列。 该代码创建[IQueryable](https://msdn.microsoft.com/en-us/library/bb351562.aspx)变量之前`switch`语句，将修改在`switch`语句，并调用`ToList`方法之后`switch`语句。 当你创建和修改`IQueryable`变量，没有查询发送到数据库。 您将转换之前，不执行查询`IQueryable`到通过调用方法，如集合对象`ToList`。 因此，此代码将导致直到不执行单个查询`return View`语句。
+该方法使用[LINQ to Entities](https://msdn.microsoft.com/library/bb386964.aspx)指定要作为排序依据的列。 该代码创建[IQueryable](https://msdn.microsoft.com/library/bb351562.aspx)变量之前`switch`语句，将修改在`switch`语句，并调用`ToList`方法之后`switch`语句。 当你创建和修改`IQueryable`变量，没有查询发送到数据库。 您将转换之前，不执行查询`IQueryable`到通过调用方法，如集合对象`ToList`。 因此，此代码将导致直到不执行单个查询`return View`语句。
 
 ### <a name="add-column-heading-hyperlinks-to-the-student-index-view"></a>添加列标题的学生索引视图的超链接
 
@@ -92,7 +92,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs?highlight=1,7-11)]
 
-你已添加`searchString`参数`Index`方法。 你亦已添加到 LINQ 语句`where`clausethat 选择仅学生的名字或姓氏包含搜索字符串。 从将添加到索引视图的文本框中接收到搜索字符串值。添加语句[其中](https://msdn.microsoft.com/en-us/library/bb535040.aspx)子句执行只有在要搜索的值。
+你已添加`searchString`参数`Index`方法。 你亦已添加到 LINQ 语句`where`clausethat 选择仅学生的名字或姓氏包含搜索字符串。 从将添加到索引视图的文本框中接收到搜索字符串值。添加语句[其中](https://msdn.microsoft.com/library/bb535040.aspx)子句执行只有在要搜索的值。
 
 > [!NOTE]
 > 在许多情况下你可以调用相同的方法，在实体框架实体集或作为扩展方法对内存中集合。 结果通常都是相同，但在某些情况下可能会不同。 例如，.NET Framework 实现的`Contains`方法将返回所有行，将一个空字符串传递给它，而 SQL Server Compact 4.0 的实体框架提供程序都返回空字符串零行。 因此该示例中的代码 (将`Where`内的语句`if`语句) 可确保对于所有版本的 SQL Server 获得相同的结果。 此外，.NET Framework 实现的`Contains`方法默认情况下，执行区分大小写的比较，但在实体框架 SQL Server 提供程序默认情况下执行不区分大小写的比较。 因此，调用`ToUpper`来进行测试显式不区分大小写的方法可确保在更改代码更高版本以使用一个存储库，它将返回时，结果不会发生更改`IEnumerable`而不是集合`IQueryable`对象。 (当你调用`Contains`方法`IEnumerable`集合，你将获取.NET Framework 实现; 当上调用它`IQueryable`对象，则会出现的数据库提供程序实现。)
@@ -158,7 +158,7 @@ NuGet **PagedList.Mvc**包会自动安装**PagedList**作为依赖项包。 **Pa
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cs)]
 
-`ToPagedList`方法采用页号。 两个问号表示[null 合并运算符](https://msdn.microsoft.com/en-us/library/ms173224.aspx)。 Null 合并运算符定义可以为 null 的类型; 默认值表达式`(page ?? 1)`意味着返回的值`page`如果它具有一个值，或返回 1，如果`page`为 null。
+`ToPagedList`方法采用页号。 两个问号表示[null 合并运算符](https://msdn.microsoft.com/library/ms173224.aspx)。 Null 合并运算符定义可以为 null 的类型; 默认值表达式`(page ?? 1)`意味着返回的值`page`如果它具有一个值，或返回 1，如果`page`为 null。
 
 ### <a name="add-paging-links-to-the-student-index-view"></a>将分页链接添加到学生索引视图
 
@@ -170,11 +170,11 @@ NuGet **PagedList.Mvc**包会自动安装**PagedList**作为依赖项包。 **Pa
 
 `using`语句`PagedList.Mvc`分页按钮访问的 MVC 帮助程序。
 
-该代码使用的重载[BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) ，它指定允许[FormMethod.Get](https://msdn.microsoft.com/en-us/library/system.web.mvc.formmethod(v=vs.100).aspx/css)。
+该代码使用的重载[BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) ，它指定允许[FormMethod.Get](https://msdn.microsoft.com/library/system.web.mvc.formmethod(v=vs.100).aspx/css)。
 
 [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample13.cshtml?highlight=1)]
 
-默认值[BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx)提交表单 post，这意味着，参数将在 HTTP 消息正文中，不能在 URL 作为查询字符串传递的数据。 指定 HTTP GET 时，窗体数据是在 URL 中作为查询字符串传递，这使得用户能够创建 URL 的书签。 [使用 HTTP GET 的 W3C 准则](http://www.w3.org/2001/tag/doc/whenToUseGet.html)指定当操作未导致更新时应使用 GET。
+默认值[BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx)提交表单 post，这意味着，参数将在 HTTP 消息正文中，不能在 URL 作为查询字符串传递的数据。 指定 HTTP GET 时，窗体数据是在 URL 中作为查询字符串传递，这使得用户能够创建 URL 的书签。 [使用 HTTP GET 的 W3C 准则](http://www.w3.org/2001/tag/doc/whenToUseGet.html)指定当操作未导致更新时应使用 GET。
 
 因此，当你单击一个新页你可以看到当前的搜索字符串，将使用当前的搜索字符串初始化文本框。
 
@@ -291,7 +291,7 @@ Windows Azure SQL 数据库是根据 SQL Server 技术构建的基于云的关�
 7. 单击框底部右侧箭头。 向导将前进到**数据库设置**步骤。
 8. 在**名称**框中，输入*ContosoUniversityDB*。
 9. 在**服务器**框中，选择**新建 SQL 数据库服务器**。 或者，如果你以前创建的服务器，你可以从下拉列表中选择该服务器。
-10. 输入管理员**登录名**和**密码**。 如果你选择**新建 SQL 数据库服务器**不要输入现有名称和密码在此处，你应输入新名称和密码，你现在定义以后访问数据库时使用。 如果你选择你之前创建的服务器，你将为该服务器输入凭据。 对于本教程，你将不会选择***高级***复选框。 ***高级***选项使您可以将数据库设置[排序规则](https://msdn.microsoft.com/en-us/library/aa174903(v=SQL.80).aspx)。
+10. 输入管理员**登录名**和**密码**。 如果你选择**新建 SQL 数据库服务器**不要输入现有名称和密码在此处，你应输入新名称和密码，你现在定义以后访问数据库时使用。 如果你选择你之前创建的服务器，你将为该服务器输入凭据。 对于本教程，你将不会选择***高级***复选框。 ***高级***选项使您可以将数据库设置[排序规则](https://msdn.microsoft.com/library/aa174903(v=SQL.80).aspx)。
 11. 选择相同**区域**与你为网站选择。
 12. 单击右下角的框以指示你已完成的复选标记。   
   
@@ -367,7 +367,7 @@ Windows Azure SQL 数据库是根据 SQL Server 技术构建的基于云的关�
   
     ![Students_index_page_with_paging](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image32.png)
 
-此时你*SchoolContext*已在 Windows Azure SQL 数据库中创建了数据库由于你选择了**执行 Code First 迁移 （在应用启动时运行）**。 *Web.config*已部署的 web 站点中的文件已更改，以便[MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/en-us/library/hh829476(v=vs.103).aspx)初始值设定项将运行你的代码读取或写入数据库中的数据的第一个时间 (所选时发生**学生**选项卡上):
+此时你*SchoolContext*已在 Windows Azure SQL 数据库中创建了数据库由于你选择了**执行 Code First 迁移 （在应用启动时运行）**。 *Web.config*已部署的 web 站点中的文件已更改，以便[MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/library/hh829476(v=vs.103).aspx)初始值设定项将运行你的代码读取或写入数据库中的数据的第一个时间 (所选时发生**学生**选项卡上):
 
 ![](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image33.png)
 
@@ -387,7 +387,7 @@ Windows Azure SQL 数据库是根据 SQL Server 技术构建的基于云的关�
 
 ## <a name="code-first-initializers"></a>代码 First 初始值设定项
 
-在部署部分你已看到[MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/en-us/library/hh829476(v=vs.103).aspx)正在使用的初始值设定项。 代码首先还提供您可以使用，其中包括其他初始值设定项[CreateDatabaseIfNotExists](https://msdn.microsoft.com/en-us/library/gg679221(v=vs.103).aspx) （默认值）、 [DropCreateDatabaseIfModelChanges](https://msdn.microsoft.com/en-us/library/gg679604(v=VS.103).aspx)和[DropCreateDatabaseAlways](https://msdn.microsoft.com/en-us/library/gg679506(v=VS.103).aspx)。 `DropCreateAlways`初始值设定项可用于设置单元测试的条件。 你还可以编写你自己初始值设定项，并且如果不想等待，直到应用程序从读取或写入数据库，你可以显式调用初始值设定项。 初始值设定项的完整说明，请参阅书籍的第 6 章[编程实体框架： Code First](http://shop.oreilly.com/product/0636920022220.do) Julie Lerman 和 Rowan Miller。
+在部署部分你已看到[MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/library/hh829476(v=vs.103).aspx)正在使用的初始值设定项。 代码首先还提供您可以使用，其中包括其他初始值设定项[CreateDatabaseIfNotExists](https://msdn.microsoft.com/library/gg679221(v=vs.103).aspx) （默认值）、 [DropCreateDatabaseIfModelChanges](https://msdn.microsoft.com/library/gg679604(v=VS.103).aspx)和[DropCreateDatabaseAlways](https://msdn.microsoft.com/library/gg679506(v=VS.103).aspx)。 `DropCreateAlways`初始值设定项可用于设置单元测试的条件。 你还可以编写你自己初始值设定项，并且如果不想等待，直到应用程序从读取或写入数据库，你可以显式调用初始值设定项。 初始值设定项的完整说明，请参阅书籍的第 6 章[编程实体框架： Code First](http://shop.oreilly.com/product/0636920022220.do) Julie Lerman 和 Rowan Miller。
 
 ## <a name="summary"></a>摘要
 

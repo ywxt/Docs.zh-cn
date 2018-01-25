@@ -11,11 +11,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: fa1cd068a7466e0b6b6fe7716090c8a7afd2a4d5
-ms.sourcegitcommit: ec9371e2fbfcb8d62e7e7cae69e7752f3f205385
+ms.openlocfilehash: 6ff9fd279a03197f761454bba3f180d7428b1b1f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-aspnet-web-api-2-c"></a>Getting Started with ASP.NET Web API 2 (C#)
 ====================
@@ -47,7 +47,7 @@ ASP.NET Web API 是一个框架，用于生成 web Api 在.NET Framework 之上�
 
 ![](tutorial-your-first-web-api/_static/image2.png)
 
-在**新建 ASP.NET 项目**对话框中，选择**空**模板。 下&quot;将文件夹添加和核心引用&quot;，检查**Web API**。 单击“确定”。
+在**新建 ASP.NET 项目**对话框中，选择**空**模板。 下&quot;将文件夹添加和核心引用&quot;，检查**Web API**。 单击 **“确定”**。
 
 ![](tutorial-your-first-web-api/_static/image3.png)
 
@@ -112,7 +112,7 @@ ASP.NET Web API 是一个框架，用于生成 web Api 在.NET Framework 之上�
 | 控制器方法 | URI |
 | --- | --- |
 | GetAllProducts | / api/产品 |
-| GetProduct | /api/产品/*id* |
+| GetProduct | /api/products/*id* |
 
 有关`GetProduct`方法， *id* URI 中是一个占位符。 例如，若要获取的产品与 ID 为 5，URI 是`api/products/5`。
 
@@ -186,11 +186,11 @@ JQuery [getJSON](http://api.jquery.com/jQuery.getJSON/)函数发送 AJAX 请求�
 
 你需要将此解决方案部署到 Azure 的 Azure 帐户。 如果你还没有帐户，可以使用以下选项：
 
-- [免费建立一个 Azure 帐户](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604)-获取信用额度来试用付费版 Azure 服务，你可以使用和甚至在用完后，最多可以保留帐户和使用免费的 Azure 服务。
-- [激活 MSDN 订户权益](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604)-MSDN 订阅为你的信用额度可以用于付费版 Azure 服务的每个月。
+- [免费建立一个 Azure 帐户](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604)-获取信用额度来试用付费版 Azure 服务，你可以使用和甚至在用完后，最多可以保留帐户和使用免费的 Azure 服务。
+- [激活 MSDN 订户权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604)-MSDN 订阅为你的信用额度可以用于付费版 Azure 服务的每个月。
 
 ## <a name="next-steps"></a>后续步骤
 
 - 有关支持 POST、 PUT 和 DELETE 操作，并将写入数据库的 HTTP 服务的更完整示例，请参阅[Entity Framework 6 Web API 2](../data/using-web-api-with-entity-framework/part-1.md)。
 - 有关创建基于 HTTP 服务的流畅且高度可响应的 web 应用程序的详细信息，请参阅[ASP.NET 单页面应用程序](../../../single-page-application/index.md)。
-- 有关如何将 Visual Studio web 项目部署到 Azure App Service 的信息，请参阅[在 Azure App Service 中创建 ASP.NET web 应用](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/)。
+- 有关如何将 Visual Studio web 项目部署到 Azure App Service 的信息，请参阅[在 Azure App Service 中创建 ASP.NET web 应用](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)。

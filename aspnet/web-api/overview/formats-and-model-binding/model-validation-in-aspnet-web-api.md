@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: dc91ddb64294e686825076d5bcc636766f2f6f01
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 45b519af4073b62c8be1ca8951e44d6cf3cbe075
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="model-validation-in-aspnet-web-api"></a>ASP.NET Web API 中的模型验证
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="data-annotations"></a>数据注释
 
-在 ASP.NET Web API，你可以使用中的属性[System.ComponentModel.DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx)命名空间在您的模型上设置属性的验证规则。 请考虑以下模型：
+在 ASP.NET Web API，你可以使用中的属性[System.ComponentModel.DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)命名空间在您的模型上设置属性的验证规则。 请考虑以下模型：
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample1.cs)]
 
@@ -54,11 +54,11 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample5.cs?highlight=1-2)]
 
-**"过多发布"**： 客户端还可以发送*详细*比你预期的数据。 例如: 
+**"过多发布"**： 客户端还可以发送*详细*比你预期的数据。 例如:
 
 [!code-json[Main](model-validation-in-aspnet-web-api/samples/sample6.json)]
 
-在这里，JSON 包括中不存在的属性 ("Color")`Product`模型。 在这种情况下，JSON 格式化程序只需将忽略此值。 （XML 格式化程序执行相同的操作。）如果你的模型具有你想要为只读的属性，过度发布会导致问题。 例如: 
+在这里，JSON 包括中不存在的属性 ("Color")`Product`模型。 在这种情况下，JSON 格式化程序只需将忽略此值。 （XML 格式化程序执行相同的操作。）如果你的模型具有你想要为只读的属性，过度发布会导致问题。 例如:
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample7.cs)]
 

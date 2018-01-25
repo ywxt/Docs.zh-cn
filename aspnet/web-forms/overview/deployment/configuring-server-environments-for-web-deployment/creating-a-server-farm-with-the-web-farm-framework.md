@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework
 msc.type: authoredcontent
-ms.openlocfilehash: 2458abc863a83364f90fc9d6edaace897c23b4c9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c592ed78a7332834923ce2290af77919fb3c7576
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-server-farm-with-the-web-farm-framework"></a>使用 Web 场框架创建服务器场
 ====================
@@ -65,7 +65,7 @@ WFF 可以跨多个负载平衡的 web 服务器同步 web 平台产品和组件
 - 服务器具有静态 IP 地址。
 
 > [!NOTE]
-> 有关将计算机加入到域的详细信息，请参阅[将计算机加入到域并登录](https://technet.microsoft.com/en-us/library/cc725618(v=WS.10).aspx)。 有关配置静态 IP 地址的详细信息，请参阅[配置静态 IP 地址](https://technet.microsoft.com/en-us/library/cc754203(v=ws.10).aspx)。
+> 有关将计算机加入到域的详细信息，请参阅[将计算机加入到域并登录](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)。 有关配置静态 IP 地址的详细信息，请参阅[配置静态 IP 地址](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)。
 
 
 ## <a name="create-the-wff-controller-server"></a>创建 WFF 控制器服务器
@@ -78,7 +78,7 @@ WFF 可以跨多个负载平衡的 web 服务器同步 web 平台产品和组件
 2. 在顶部**Web Platform Installer 3.0**窗口中，单击**产品**。
 3. 在左侧的窗口中，在导航窗格中，单击**服务器**。
 4. 在**IIS 7 建议配置**行中，单击**添加**。
-5. 在**Web 场框架 2。***x*行中，单击**添加**。
+5. 在 **Web 场框架 2。 * * * x*行中，单击**添加**。
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image2.png)
 6. 单击“安装” 。 请注意，Web 平台安装程序具有 Web 部署工具，以及各种其他依赖项，添加到安装列表。

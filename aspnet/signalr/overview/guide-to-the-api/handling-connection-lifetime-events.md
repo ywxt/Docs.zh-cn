@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/guide-to-the-api/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: 7a0a549f73ea303ec5694bb69d4eac52beb54098
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2fd9cafd8d7706807998793c3c39377fe9604266
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>了解和处理在 SignalR 连接生存期事件
 ====================
@@ -69,7 +69,7 @@ ms.lasthandoff: 11/10/2017
 - [如何断开连接的服务器代码中的客户端](#disconnectclientfromserver)
 - [检测断开连接的原因](#detectingreasonfordisconnection)
 
-API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET 4，请参阅[API 主题的.NET 4 版本](https://msdn.microsoft.com/en-us/library/jj891075(v=vs.100).aspx)。
+API 参考主题的链接将指向 API 的.NET 4.5 版本。 如果你使用.NET 4，请参阅[API 主题的.NET 4 版本](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx)。
 
 <a id="terminology"></a>
 

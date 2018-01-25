@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/master-pages-and-site-navigation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b14bb4279ac5f6a986fc597b97176b61150044c8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7bb8a9bccbd9dfbbf983618ecd32588fd8f69c64
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="master-pages-and-site-navigation-vb"></a>母版页和网站的导航 (VB)
 ====================
@@ -167,11 +167,11 @@ Web.sitemap
 **图 10**： 站点图表示分层导航结构 ([单击以查看实际尺寸的图像](master-pages-and-site-navigation-vb/_static/image26.png))
 
 
-ASP.NET 公开站点图结构通过.NET Framework 的[站点地图类](https://msdn.microsoft.com/en-us/library/system.web.sitemap.aspx)。 此类具有`CurrentNode`属性，它返回有关的信息部分用户当前访问;`RootNode`属性返回的站点图根 （家庭中我们站点图）。 同时`CurrentNode`和`RootNode`属性返回[SiteMapNode](https://msdn.microsoft.com/en-us/library/system.web.sitemapnode.aspx)实例，具有属性如`ParentNode`， `ChildNodes`， `NextSibling`， `PreviousSibling`，依此类推，允许站点图要遍历的层次结构。
+ASP.NET 公开站点图结构通过.NET Framework 的[站点地图类](https://msdn.microsoft.com/library/system.web.sitemap.aspx)。 此类具有`CurrentNode`属性，它返回有关的信息部分用户当前访问;`RootNode`属性返回的站点图根 （家庭中我们站点图）。 同时`CurrentNode`和`RootNode`属性返回[SiteMapNode](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx)实例，具有属性如`ParentNode`， `ChildNodes`， `NextSibling`， `PreviousSibling`，依此类推，允许站点图要遍历的层次结构。
 
 ## <a name="step-3-displaying-a-menu-based-on-the-site-map"></a>步骤 3： 显示基于站点图菜单
 
-访问 ASP.NET 2.0 中的数据可以是以编程方式完成，如在 ASP.NET 中 1.x，或以声明方式，通过新[数据源控件](https://msdn.microsoft.com/en-us/library/ms227679.aspx)。 有多个内置的数据源控件，如 SqlDataSource 控件，用于访问关系数据库数据、 ObjectDataSource 控件，以便从类和其他人访问数据。 你甚至可以创建你自己[自定义数据源控件](https://msdn.microsoft.com/asp.net/reference/data/default.aspx?pull=/library/en-us/dnvs05/html/DataSourceCon1.asp)。
+访问 ASP.NET 2.0 中的数据可以是以编程方式完成，如在 ASP.NET 中 1.x，或以声明方式，通过新[数据源控件](https://msdn.microsoft.com/library/ms227679.aspx)。 有多个内置的数据源控件，如 SqlDataSource 控件，用于访问关系数据库数据、 ObjectDataSource 控件，以便从类和其他人访问数据。 你甚至可以创建你自己[自定义数据源控件](https://msdn.microsoft.com/asp.net/reference/data/default.aspx?pull=/library/dnvs05/html/DataSourceCon1.asp)。
 
 数据源控件充当 ASP.NET 页和基础数据之间的代理。 为了显示一个数据源控件检索到的数据，我们通常将向页面添加另一个 Web 控件，并将其绑定到数据源控件。 若要将 Web 控件绑定到数据源控件，只需设置 Web 控件的`DataSourceID`属性的数据源控件的值`ID`属性。
 
@@ -218,7 +218,7 @@ SiteMapDataSource 控制权将返回站点地图层次结构一个级别一次�
 
 所有 ASP.NET 控件可以根据需要都保留其状态为[查看状态](https://msdn.microsoft.com/msdnmag/issues/03/02/CuttingEdge/)，其序列化为呈现的 HTML 中的隐藏的表单字段。 视图状态用于由控件回发，之间保留其以编程方式更改状态如数据绑定到数据 Web 控件。 视图状态当允许时要记住跨回发的信息，它会增加必须发送到客户端，并可能导致严重的页膨胀如果没有密切监视的标记的大小。 数据 Web 控件尤其 GridView 是标记的特别付出向页面添加多个额外千字节为单位。 尽管这种增加可能可以忽略不计为宽带或 intranet 的用户，则视图状态可以向拨号用户往返行程添加几秒钟时间。
 
-若要查看视图状态，请访问浏览器中的页，然后查看发送的网页的源的影响 （在 Internet Explorer 中，转到视图菜单，然后选择源选项）。 你还可以启用[页跟踪](https://msdn.microsoft.com/en-us/library/sfbfw58f.aspx)若要查看使用的每个页上的控件的视图状态分配。 视图状态信息在名为的隐藏的表单字段中序列化`__VIEWSTATE`为位于`<div>`紧跟在打开之后元素`<form>`标记。 正在使用; Web 窗体时，仅保存视图状态如果你的 ASP.NET 页不包含`<form runat="server">`中不会有其声明性语法`__VIEWSTATE`呈现标记中的隐藏的表单字段。
+若要查看视图状态，请访问浏览器中的页，然后查看发送的网页的源的影响 （在 Internet Explorer 中，转到视图菜单，然后选择源选项）。 你还可以启用[页跟踪](https://msdn.microsoft.com/library/sfbfw58f.aspx)若要查看使用的每个页上的控件的视图状态分配。 视图状态信息在名为的隐藏的表单字段中序列化`__VIEWSTATE`为位于`<div>`紧跟在打开之后元素`<form>`标记。 正在使用; Web 窗体时，仅保存视图状态如果你的 ASP.NET 页不包含`<form runat="server">`中不会有其声明性语法`__VIEWSTATE`呈现标记中的隐藏的表单字段。
 
 `__VIEWSTATE`母版页由生成的窗体字段将大致 1800 字节添加到页面的生成的标记。 此额外膨胀主要是因为重复器控件，如 SiteMapDataSource 控件的内容保存到视图状态。 虽然额外的 1800 字节似乎不太多工作要具有许多字段和记录使用 GridView 时，获取有关，很高兴的视图状态可以轻松地膨胀按 10 或更多的系数。
 
@@ -252,7 +252,7 @@ SiteMapDataSource 控制权将返回站点地图层次结构一个级别一次�
 
 我们的站点中的教程将分解为不同类别基本报告 Filtering、 自定义格式设置，与每个类别以及作为该文件夹中的 ASP.NET 页的相应教程的文件夹，依此类推。 此外，每个文件夹包含`Default.aspx`页。 此默认页上，让我们显示全部教程： 当前的部分。 也就是说，对于`Default.aspx`中`BasicReporting`文件夹我们将具有指向`SimpleDisplay.aspx`， `DeclarativeParams.aspx`，和`ProgrammaticParams.aspx`。 在这里，同样，我们可以使用`SiteMap`中定义的类和数据 Web 控件来显示此信息基于站点图`Web.sitemap`。
 
-让我们显示同样，但这次我们将显示标题和说明的教程使用中继器未经排序的列表。 由于标记和代码来完成此项将需要为每个重复`Default.aspx`页上，我们可以封装在此 UI 逻辑[用户控件](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx)。 调用的网站中创建一个文件夹`UserControls`和将类型 Web 用户控件名为的新项添加到该`SectionLevelTutorialListing.ascx`，并添加以下标记：
+让我们显示同样，但这次我们将显示标题和说明的教程使用中继器未经排序的列表。 由于标记和代码来完成此项将需要为每个重复`Default.aspx`页上，我们可以封装在此 UI 逻辑[用户控件](https://msdn.microsoft.com/library/y6wb1a0e.aspx)。 调用的网站中创建一个文件夹`UserControls`和将类型 Web 用户控件名为的新项添加到该`SectionLevelTutorialListing.ascx`，并添加以下标记：
 
 
 [![将新的 Web 用户控件添加到用户控件文件夹](master-pages-and-site-navigation-vb/_static/image30.png)](master-pages-and-site-navigation-vb/_static/image29.png)
@@ -297,15 +297,15 @@ SectionLevelTutorialListing.ascx.vb
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [ASP.NET Master 页概述](https://msdn.microsoft.com/en-us/library/wtxbf3hh.aspx)
+- [ASP.NET Master 页概述](https://msdn.microsoft.com/library/wtxbf3hh.aspx)
 - [在 ASP.NET 2.0 中的母版页](http://odetocode.com/Articles/419.aspx)
 - [ASP.NET 2.0 设计模板](https://msdn.microsoft.com/asp.net/reference/design/templates/default.aspx)
-- [ASP.NET 站点导航概述](https://msdn.microsoft.com/en-us/library/e468hxky.aspx)
+- [ASP.NET 站点导航概述](https://msdn.microsoft.com/library/e468hxky.aspx)
 - [检查 ASP.NET 2.0 的网站的导航](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)
 - [ASP.NET 2.0 站点导航功能](https://weblogs.asp.net/scottgu/archive/2005/11/20/431019.aspx)
-- [了解 ASP.NET 视图状态](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnaspp/html/viewstate.asp)
-- [如何： 启用 ASP.NET 页跟踪](https://msdn.microsoft.com/en-us/library/94c55d08%28VS.80%29.aspx)
-- [ASP.NET 用户控件](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx)
+- [了解 ASP.NET 视图状态](https://msdn.microsoft.com/library/default.asp?url=/library/dnaspp/html/viewstate.asp)
+- [如何： 启用 ASP.NET 页跟踪](https://msdn.microsoft.com/library/94c55d08%28VS.80%29.aspx)
+- [ASP.NET 用户控件](https://msdn.microsoft.com/library/y6wb1a0e.aspx)
 
 ## <a name="about-the-author"></a>关于作者
 

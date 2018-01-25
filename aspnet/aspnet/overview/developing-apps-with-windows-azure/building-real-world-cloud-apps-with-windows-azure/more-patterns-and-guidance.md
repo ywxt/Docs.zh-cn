@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 2ac18799d214777d098cc85ec6c85fd09f84a782
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a388f2e0ca3e1f0ce24a6def2a2b91711a7bf5a7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>详细模式和指南 （使用 Azure 构建真实世界云应用）
 ====================
@@ -31,18 +31,18 @@ ms.lasthandoff: 11/10/2017
 
 - 迁移到云的现有本地应用程序。 
 
-    - [移动到云的应用程序](https://msdn.microsoft.com/en-us/library/ff728592.aspx)。 Microsoft 模式与实践中的电子书。 也可用作[硬拷贝纸质书](https://www.amazon.com/dp/1621140202)。
+    - [移动到云的应用程序](https://msdn.microsoft.com/library/ff728592.aspx)。 Microsoft 模式与实践中的电子书。 也可用作[硬拷贝纸质书](https://www.amazon.com/dp/1621140202)。
     - [迁移 Microsoft ASP.NET 和 IIS.NET](https://go.microsoft.com/fwlink/?LinkId=400656)。 通过 Robert McMurray 案例研究。
     - [移动第四个&amp;到 Azure 网站的市长](http://www.jeff.wilcox.name/2013/04/4thandmayor-azure-websites/)。 博客文章通过 Jeff Wilcox chronicling 他将 web 应用程序从 Amazon Web Services 移到在 Azure App Service Web Apps 的经验。
-    - [将应用程序移至 Azure： 哪些更改？](https://azure.microsoft.com/en-us/documentation/videos/web-sites-internals-and-the-file-system/) 简短视频通过 Stefan Schackow、 说明在 Azure App Service Web Apps 中的文件系统访问权限。
+    - [将应用程序移至 Azure： 哪些更改？](https://azure.microsoft.com/documentation/videos/web-sites-internals-and-the-file-system/) 简短视频通过 Stefan Schackow、 说明在 Azure App Service Web Apps 中的文件系统访问权限。
     - [Azure 混合云](https://www.amazon.com/dp/B00EOP4UQW)。 硬拷贝书本或通过 Danny Garber、 Jamal Malik 和 Adam Fazio 电子书。
 - 唯一的云应用程序的安全性、 身份验证和授权问题
 
     - [Azure 安全指南](https://azure.microsoft.com/blog/2014/02/10/best-practices-windows-azure-websites-waws/)
-    - [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/en-us/library/dn568099.aspx)。 请参阅守护程序模式，联合标识模式。
+    - [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/library/dn568099.aspx)。 请参阅守护程序模式，联合标识模式。
     - [Azure 网络安全](https://download.microsoft.com/download/4/3/9/43902EC9-410E-4875-8800-0788BE146A3D/Windows%20Azure%20Network%20Security%20Whitepaper%20-%20FINAL.docx)。 通过 Ashin Palekar 白皮书。
 
-另请参阅更多云计算模式和指南在[Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/en-us/library/dn568099.aspx)。
+另请参阅更多云计算模式和指南在[Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/library/dn568099.aspx)。
 
 <a id="resources"></a>
 ## <a name="resources"></a>资源
@@ -51,9 +51,9 @@ ms.lasthandoff: 11/10/2017
 
 文档
 
-- [在 Azure 云服务上的大规模服务的设计的最佳实践](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx)。 Mark Simms 和 Michael Thomassy 白皮书。
-- [防故障： 弹性云体系结构指南](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx)。 通过 Marc Mercuri、 Ulrich Homann 和 Andrew Townhill 白皮书。 网页上的防故障视频系列的版本。
-- [Azure 指南](https://azure.microsoft.com/en-us/develop/net/guidance/)与开发 Azure 应用程序相关的正式文档的门户页。
+- [在 Azure 云服务上的大规模服务的设计的最佳实践](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 Mark Simms 和 Michael Thomassy 白皮书。
+- [防故障： 弹性云体系结构指南](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)。 通过 Marc Mercuri、 Ulrich Homann 和 Andrew Townhill 白皮书。 网页上的防故障视频系列的版本。
+- [Azure 指南](https://azure.microsoft.com/develop/net/guidance/)与开发 Azure 应用程序相关的正式文档的门户页。
 
 视频
 
@@ -75,7 +75,7 @@ ms.lasthandoff: 11/10/2017
 - [Windows Azure 为刚起步的公司编程模式](https://www.amazon.com/dp/1849685606)。 通过 Riccardo Becker。
 - [Microsoft Windows Azure 开发食谱](https://www.amazon.com/dp/1849682224)。 通过 Neil Mackenzie。
 
-最后，当你开始构建真实的应用程序和在 Azure 中运行它们，更快或更高版本可能需要从专家的协助。 你可以询问社区站点中的问题，如[Azure 论坛或 StackOverflow](https://azure.microsoft.com/en-us/support/forums/)，或您可以与 Microsoft 直接为 Azure 支持部门联系。 Microsoft 提供了多个级别的技术支持 Azure： 摘要和比较选项，请参阅[Azure 支持](https://azure.microsoft.com/en-us/support/plans/)。
+最后，当你开始构建真实的应用程序和在 Azure 中运行它们，更快或更高版本可能需要从专家的协助。 你可以询问社区站点中的问题，如[Azure 论坛或 StackOverflow](https://azure.microsoft.com/support/forums/)，或您可以与 Microsoft 直接为 Azure 支持部门联系。 Microsoft 提供了多个级别的技术支持 Azure： 摘要和比较选项，请参阅[Azure 支持](https://azure.microsoft.com/support/plans/)。
 
 <a id="acknowledgments"></a>
 ## <a name="acknowledgments"></a>确认

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cross-site-scripting
-ms.openlocfilehash: af73a86aa6bcde084ecbe1a3fb5711c7da55871c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3aaab9d4fecd3f0d0da6a0df4d83bee090b329ea
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="preventing-cross-site-scripting"></a>防止跨站点脚本
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 01/19/2018
 
 3. 将不受信任的数据放入 HTML 特性之前请确保它是 HTML 编码的属性。 HTML 特性编码为 HTML 编码的超集，并将其他字符编码如"和。
 
-4. 将不受信任的数据放入 JavaScript 之前将数据放在一个 HTML 元素在运行时检索其内容。 如果这不可能，则确保数据被编码 JavaScript。 JavaScript 编码 javascript 采用危险的字符并将其替换为其十六进制，例如&lt;将编码为`\u003C`。
+4. 将不受信任的数据放入 JavaScript 之前将数据放在一个 HTML 元素在运行时检索其内容。 如果这不是可能的则确保数据被编码 JavaScript。 JavaScript 编码 javascript 采用危险的字符并将其替换为其十六进制，例如&lt;将编码为`\u003C`。
 
 5. 将不受信任的数据放入一个 URL 查询字符串之前确保它是编码的 URL。
 
@@ -56,7 +56,7 @@ ms.lasthandoff: 01/19/2018
    ```
 
 >[!WARNING]
-> ASP.NET 核心 MVC 提供`HtmlString`不在输出时自动编码的类。 这应永远不会用于与不受信任的输入结合使用这会将公开 XSS 漏洞。
+> ASP.NET 核心 MVC 提供`HtmlString`在输出时不自动编码的类。 这应永远不会用于与不受信任的输入结合使用这会将公开 XSS 漏洞。
 
 ## <a name="javascript-encoding-using-razor"></a>使用 Razor Javascript 编码
 
@@ -141,11 +141,11 @@ ms.lasthandoff: 01/19/2018
    ```
 
 >[!WARNING]
-> 请勿连接 JavaScript 创建 DOM 元素中不受信任的输入。 应使用`createElement()`并将属性值分配适当如`node.TextContent=`，或使用`element.SetAttribute()` / `element[attribute]=`否则向基于 DOM 的 XSS 公开自己。
+> 不连接不受信任的输入，在 JavaScript 中创建 DOM 元素。 应使用`createElement()`并将属性值分配适当如`node.TextContent=`，或使用`element.SetAttribute()` / `element[attribute]=`否则向基于 DOM 的 XSS 公开自己。
 
 ## <a name="accessing-encoders-in-code"></a>访问代码中的编码器
 
-HTML、 JavaScript 和 URL 编码器可供代码使用两种方式，可以将它们通过注入[依赖关系注入](../fundamentals/dependency-injection.md#fundamentals-dependency-injection)或者你可以使用中包含的默认编码器`System.Text.Encodings.Web`命名空间。 如果你使用的默认编码器，则有你应用于字符范围为安全处理将不会生效-默认编码器使用的可能的安全编码规则。
+HTML、 JavaScript 和 URL 编码器可供代码使用两种方式，可以将它们通过注入[依赖关系注入](../fundamentals/dependency-injection.md#fundamentals-dependency-injection)或者你可以使用中包含的默认编码器`System.Text.Encodings.Web`命名空间。 如果你使用的默认编码器，则你应用到任何要被视为为安全的字符范围不会生效-默认编码器使用的可能的安全编码规则。
 
 若要使用可配置编码器通过你的构造函数应采用的 DI *HtmlEncoder*， *JavaScriptEncoder*和*UrlEncoder*作为适当的参数。 例如，
 
@@ -228,4 +228,4 @@ services.AddSingleton<HtmlEncoder>(
 
 ## <a name="validation-as-an-xss-prevention-technique"></a>验证在 XSS 预防方法
 
-验证可以在限制 XSS 攻击的有用工具。 例如，一个简单的数值字符串只能包含字符 0-9 不会触发 XSS 受到攻击。 验证变得更复杂应想要接受用户输入的中的 HTML HTML 输入内容分析为难以进行，即使不是不可能。 MarkDown 以及其他文本的格式将丰富的输入的更安全选项。 你应永远不会依赖于单独的验证。 始终对不受信任的输入，输出之前进行编码，无论何种验证已执行。
+验证可以在限制 XSS 攻击的有用工具。 例如，一个简单的数值字符串只能包含字符 0-9 将不会触发 XSS 受到攻击。 验证变得更复杂应想要接受用户输入的中的 HTML HTML 输入内容分析为难以进行，即使不是不可能。 MarkDown 以及其他文本的格式将丰富的输入的更安全选项。 你应永远不会依赖于单独的验证。 始终对不受信任的输入，输出之前进行编码，无论何种验证已执行。

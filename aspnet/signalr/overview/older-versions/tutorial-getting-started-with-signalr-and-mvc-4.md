@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: e678c85520613fea2a8d00de60aca04d895d6307
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 632e6098a03eae02f2367c6dc1c293dbdb6b6170
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>教程： 开始使用 SignalR 1.x 和 MVC 4
 ====================
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 先决条件：
 
 - Visual Studio 2010 SP1、 Visual Studio 2012 或 Visual Studio 2012 Express。 如果未安装 Visual Studio，请参阅[ASP.NET 下载](https://www.asp.net/downloads)若要获取免费 Visual Studio 2012 Express 开发工具。
-- 对于 Visual Studio 2010 中，安装[ASP.NET MVC 4](https://www.microsoft.com/en-us/download/details.aspx?id=30683)。
+- 对于 Visual Studio 2010 中，安装[ASP.NET MVC 4](https://www.microsoft.com/download/details.aspx?id=30683)。
 
 本部分演示如何创建 ASP.NET MVC 4 应用程序、 添加 SignalR 库，并创建聊天应用程序。
 

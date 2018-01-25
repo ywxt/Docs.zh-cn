@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 2b76d2e449d491fd8d808343065b22ba267f1152
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 32211465adeb1353908daa1014d188b84389e1a7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a>使用 ASP.NET MVC-第 4 部分中使用 HTML5 和 jQuery UI Datepicker 弹出日历
 ====================
@@ -27,9 +27,9 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="adding-a-template-for-editing-dates"></a>用于编辑日期添加模板
 
-在本部分中，你将创建用于编辑日期的 ASP.NET MVC UI 显示用于编辑标记有的模型属性时将应用的模板**日期**的枚举[DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx)属性。 该模板将呈现仅显示日期;不会显示时间。 在模板中，你将使用[jQuery UI Datepicker](http://jqueryui.com/demos/datepicker/)弹出日历，以提供一种方法编辑日期。
+在本部分中，你将创建用于编辑日期的 ASP.NET MVC UI 显示用于编辑标记有的模型属性时将应用的模板**日期**的枚举[DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)属性。 该模板将呈现仅显示日期;不会显示时间。 在模板中，你将使用[jQuery UI Datepicker](http://jqueryui.com/demos/datepicker/)弹出日历，以提供一种方法编辑日期。
 
-若要开始，打开*Movie.cs*文件并添加[DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx)特性与**日期**枚举`ReleaseDate`属性，如下面的代码中所示：
+若要开始，打开*Movie.cs*文件并添加[DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)特性与**日期**枚举`ReleaseDate`属性，如下面的代码中所示：
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample1.cs)]
 
@@ -53,11 +53,11 @@ ms.lasthandoff: 11/10/2017
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample2.cshtml)]
 
-第一行声明模型要`DateTime`类型。 尽管你不需要声明中编辑的模型类型和显示模板，但它是一种最佳做法，以便你可以获得编译时检查传递给视图的模型。 （另一个好处是您会收到 IntelliSense 对于 Visual Studio 中的视图中的模型。）ASP.NET MVC 如果未声明的模型类型，将其视为[动态](https://msdn.microsoft.com/en-us/library/dd264741.aspx)键入并且没有任何编译时类型检查。 如果你声明模型要`DateTime`类型，它将成为强类型。
+第一行声明模型要`DateTime`类型。 尽管你不需要声明中编辑的模型类型和显示模板，但它是一种最佳做法，以便你可以获得编译时检查传递给视图的模型。 （另一个好处是您会收到 IntelliSense 对于 Visual Studio 中的视图中的模型。）ASP.NET MVC 如果未声明的模型类型，将其视为[动态](https://msdn.microsoft.com/library/dd264741.aspx)键入并且没有任何编译时类型检查。 如果你声明模型要`DateTime`类型，它将成为强类型。
 
 第二行是仅文本显示的 HTML 标记&quot;使用日期模板&quot;之前的日期字段。 你将暂时使用此行以验证正在使用此日期模板。
 
-下一行是[Html.TextBox](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.inputextensions.textbox.aspx)呈现的帮助器`input`字段的文本框。 帮助器的第三个参数使用一个匿名类型设置的文本设置为的类`datefield`和类型设置为`date`。 (因为`class`是保留在 C# 中，你需要使用`@`字符进行转义`class`C# 分析器中的属性。)
+下一行是[Html.TextBox](https://msdn.microsoft.com/library/system.web.mvc.html.inputextensions.textbox.aspx)呈现的帮助器`input`字段的文本框。 帮助器的第三个参数使用一个匿名类型设置的文本设置为的类`datefield`和类型设置为`date`。 (因为`class`是保留在 C# 中，你需要使用`@`字符进行转义`class`C# 分析器中的属性。)
 
 `date`类型是一个 HTML5 输入的类型，使感知 HTML5 浏览器呈现 HTML5 日历控件。 稍后你将添加一些 JavaScript 挂接到 jQuery datepicker`Html.TextBox`元素使用`datefield`类。
 
@@ -129,7 +129,7 @@ NuGet 将这些调试版本和缩减的版本的 jQuery UI 核心和 jQuery UI �
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample7.cshtml)]
 
-[URL 内容帮助器](https://msdn.microsoft.com/en-us/library/system.web.mvc.urlhelper.content.aspx)方法将资源路径转换为绝对路径。 必须使用`@URL.Content`正确引用这些资源，在 IIS 上运行应用程序时。
+[URL 内容帮助器](https://msdn.microsoft.com/library/system.web.mvc.urlhelper.content.aspx)方法将资源路径转换为绝对路径。 必须使用`@URL.Content`正确引用这些资源，在 IIS 上运行应用程序时。
 
 按 Ctrl+F5 运行应用程序。 选择的编辑链接，则将放到插入点**ReleaseDate**字段。 将显示 jQuery UI 弹出日历。
 

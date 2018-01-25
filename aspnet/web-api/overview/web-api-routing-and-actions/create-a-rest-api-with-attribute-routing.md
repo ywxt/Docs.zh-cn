@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 9ecc233e595716a167ad800a0a21a6162b051648
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c1d0b3e1644ef7f9ebb4be74c3fdf3df90cf3537
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>使用 ASP.NET Web API 2 中的路由的属性创建 REST API
 ====================
@@ -47,7 +47,7 @@ Web API 2 支持一种新型的路由，调用*的属性路由*。 有关的属�
 
 但是，对于大多数请求，API 将返回此数据 （标题、 author 和风格） 的子集。 若要获取完整的记录，客户端请求`/api/books/{id}/details`。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 [Visual Studio 2017](https://www.visualstudio.com/vs/) Community、 Professional 或 Enterprise 版本。
 
@@ -141,7 +141,7 @@ Web API 2 支持一种新型的路由，调用*的属性路由*。 有关的属�
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample8.cs)]
 
-接下来，更新`BooksController`类返回`BookDto`实例。 我们将使用[Queryable.Select](https://msdn.microsoft.com/en-us/library/system.linq.queryable.select.aspx)到项目的方法`Book`实例到`BookDto`实例。 以下是控制器类更新的代码。
+接下来，更新`BooksController`类返回`BookDto`实例。 我们将使用[Queryable.Select](https://msdn.microsoft.com/library/system.linq.queryable.select.aspx)到项目的方法`Book`实例到`BookDto`实例。 以下是控制器类更新的代码。
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample9.cs)]
 

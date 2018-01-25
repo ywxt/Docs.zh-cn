@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-grunt
-ms.openlocfilehash: 959a3e61af9834b9364e9fe4bf65a04962e28969
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 527373829754757e52ab84b64e04702d649e9062
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="using-grunt-in-aspnet-core"></a>在 ASP.NET 核心中使用 Grunt 
 
@@ -94,7 +94,7 @@ Grunt 是自动化脚本缩减、 TypeScript 编译、 代码质量"链接形式
 
 1. 在解决方案资源管理器，右键单击该项目并选择**添加 > 新项**从上下文菜单。 选择**NPM 配置文件**项，保留默认名称， *package.json*，然后单击**添加**按钮。
 
-2. 在*package.json*文件内,`devDependencies`对象大括号中，输入"grunt"。 选择`grunt`从智能感知列表并按 Enter 键。 Visual Studio 将 quote grunt 包名称，并添加一个冒号。 从 Intellisense 列表的顶部中的冒号右侧，选择包的最新稳定版本 (按`Ctrl-Space`如果未显示 Intellisense)。
+2. 在*package.json*文件内,`devDependencies`对象大括号中，输入"grunt"。 选择`grunt`从智能感知列表并按 Enter 键。 Visual Studio 将 quote grunt 包名称，并添加一个冒号。 从 Intellisense 列表的顶部中的冒号右侧，选择包的最新稳定版本 (按`Ctrl-Space`如果 Intellisense 不显示)。
 
     ![grun Intellisense](using-grunt/_static/devdependencies-grunt.png)
     

@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9aaf40377e07e53fd0b7ebb177bcbb2df52b7553
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a1f1b2c2e60a1337c15f019185c764d0a9ada1b5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="author-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>在 ASP.NET 核，使用示例演练的作者标记帮助程序
 
@@ -164,7 +164,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
 
 3.  运行应用。 你最喜欢的浏览器可用于检查源和验证标记。
 
-    `[HtmlTargetElement]`上面属性只针对提供的"加粗"的属性名称的 HTML 标记。 `<bold>`元素均未修改的标记帮助程序。
+    `[HtmlTargetElement]`上面属性只针对提供的"加粗"的属性名称的 HTML 标记。 `<bold>`元素未修改的标记帮助程序。
 
 4. 注释掉`[HtmlTargetElement]`属性行和它将默认为目标设定`<bold>`标记，也就是说，HTML 标记的窗体`<bold>`。 请记住，默认命名约定将匹配的类名称**加粗**到 TagHelper`<bold>`标记。
 
@@ -208,13 +208,13 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
     [HtmlTargetElement("WebsiteInformation")]
     ```
     
-    较低的 kebab 用例标记`<website-information />`将不匹配。 如果你想要`[HtmlTargetElement]`属性中，你将使用 kebab 用例，如下所示：
+    较低的 kebab 用例标记`<website-information />`不匹配。 如果你想要`[HtmlTargetElement]`属性中，你将使用 kebab 用例，如下所示：
     
     ```csharp
     [HtmlTargetElement("Website-Information")]
     ```
     
-    * 自结束的元素没有任何内容。 对于此示例中，Razor 标记将使用自结束标记，但将创建的标记帮助程序[部分](http://www.w3.org/TR/html5/sections.html#the-section-element)元素 (它不是自结束，并且你正在编写中的内容`section`元素)。 因此，你需要设置`TagMode`到`StartTagAndEndTag`写入输出。 或者，你可以注释行设置`TagMode`和写入与结束标记的标记。 （示例标记提供更高版本在本教程中）。
+    * 自结束的元素没有任何内容。 对于此示例中，Razor 标记将使用自结束标记，但将创建的标记帮助程序[部分](http://www.w3.org/TR/html5/sections.html#the-section-element)元素 (但并非自结束，并且你正在编写中的内容`section`元素)。 因此，你需要设置`TagMode`到`StartTagAndEndTag`写入输出。 或者，你可以注释行设置`TagMode`和写入与结束标记的标记。 （示例标记提供更高版本在本教程中）。
     
     * `$` （美元符号） 在下面的一行使用[内插字符串](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings):
     
@@ -274,7 +274,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
 
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Controllers/HomeController.cs?range=9-18)]
 
-4.  运行应用程序，并浏览到主页。 在条件中的标记`div`将不会呈现。 将查询的字符串追加`?approved=true`到的 URL (例如， `http://localhost:1235/Home/Index?approved=true`)。 `approved`设置为 true，条件将显示标记。
+4.  运行应用程序，并浏览到主页。 在条件中的标记`div`不会呈现。 将查询的字符串追加`?approved=true`到的 URL (例如， `http://localhost:1235/Home/Index?approved=true`)。 `approved`设置为 true，条件将显示标记。
 
 >[!NOTE]
 >使用[nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof)运算符来指定为目标，而不是指定的字符串，就像处理以粗体显示标记帮助器属性：
@@ -321,7 +321,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
     >
     >上面的代码检查已修改内容，但如果它具有，它获取该内容从输出缓冲区。
 
-6.  运行应用程序并验证两个链接按预期方式工作。 虽然它可能显示我们自动链接器标记帮助程序是正确和完整，但其细微问题。 如果首先运行 WWW 标记帮助器，www 链接不会正确。 请更新代码，通过添加`Order`重载以控制标记运行中的顺序。 `Order`属性确定相对于其他面向同一元素的标记帮助程序的执行顺序。 默认顺序值为 0，第一次执行具有较低的值的实例。
+6.  运行应用程序并验证两个链接按预期方式工作。 虽然它可能显示我们自动链接器标记帮助程序是正确和完整，但其细微问题。 如果首先运行 WWW 标记帮助器，www 链接不正确。 请更新代码，通过添加`Order`重载以控制标记运行中的顺序。 `Order`属性确定相对于其他面向同一元素的标记帮助程序的执行顺序。 默认顺序值为 0，第一次执行具有较低的值的实例。
 
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z2AutoLinkerCopy.cs?highlight=5,6,7,8&range=8-15)]
     
@@ -333,8 +333,8 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
 
 -  结果`GetChildContentAsync`可以追加到`output.Content`。
 -  你可以检查的结果`GetChildContentAsync`与`GetContent`。
--  如果你修改`output.Content`，不会执行或呈现除非调用 TagHelper 正文`GetChildContentAsync`如我们自动链接器示例所示：
+-  如果你修改`output.Content`，不会执行的 TagHelper 主体，或将其呈现除非调用`GetChildContentAsync`如我们自动链接器示例所示：
 
 [!code-csharp[Main](../../views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinkerCopy.cs?highlight=5,6,10&range=8-21)]
 
--  多次调用`GetChildContentAsync`将返回相同的值而不会重新执行`TagHelper`正文除非你传入一个 false 的参数，指示不使用缓存的结果。
+-  多次调用`GetChildContentAsync`返回相同的值并不重新执行`TagHelper`正文除非传入一个 false 的参数，指示不使用缓存的结果。

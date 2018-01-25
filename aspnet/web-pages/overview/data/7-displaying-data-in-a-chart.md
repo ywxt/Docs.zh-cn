@@ -12,15 +12,15 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/7-displaying-data-in-a-chart
 msc.type: authoredcontent
-ms.openlocfilehash: 15daa5fa94094fb50971514a152312fd81a749a1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f252b74bc42d0ea65b8b1150973c4f3c50cc9cf4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>具有 ASP.NET Web 页 (Razor) 的图表中显示数据
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 此文章介绍了如何使用图表使用在 ASP.NET Web 页 (Razor) 网站中显示数据`Chart`帮助器。
 > 
@@ -296,4 +296,4 @@ ms.lasthandoff: 11/10/2017
 
 - [使用在 ASP.NET 网页中的数据库的简介页站点](https://go.microsoft.com/fwlink/?LinkId=202893)
 - [使用缓存在 ASP.NET Web 页站点中以提高性能](https://go.microsoft.com/fwlink/?LinkId=202903)
-- [图表类](https://msdn.microsoft.com/en-us/library/system.web.helpers.chart(v=vs.99))（MSDN 上的 ASP.NET Web Pages API 参考）
+- [图表类](https://msdn.microsoft.com/library/system.web.helpers.chart(v=vs.99))（MSDN 上的 ASP.NET Web Pages API 参考）

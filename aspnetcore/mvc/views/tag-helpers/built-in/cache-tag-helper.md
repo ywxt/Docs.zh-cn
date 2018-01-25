@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: dfd9c3c0c4e50a99e4f8703b01bd9b384930b87a
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 10aa1b493dbd0672cac789f6e48ddf2f14ba35dc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>缓存 ASP.NET Core MVC 中的标记帮助器
 
@@ -277,7 +277,7 @@ Index.cshtml
 </cache>
 ```
 
-`priority`属性不能保证特定级别的缓存保留。 `CacheItemPriority`是只是建议。 此属性设置为`NeverRemove`不保证始终将保留缓存。 请参阅[其他资源](#additional-resources)有关详细信息。
+`priority`属性并不能保证特定级别的缓存保留。 `CacheItemPriority`是只是建议。 此属性设置为`NeverRemove`并不能保证始终将保留缓存。 请参阅[其他资源](#additional-resources)有关详细信息。
 
 缓存标记帮助程序是依赖于[内存缓存服务](xref:performance/caching/memory)。 如果尚未添加，缓存标记帮助器将服务添加。
 

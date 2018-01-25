@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/testing-and-debugging/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: d7a1dcc04baaa5ab27aecf95936d943f5a9b3f0c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2394ee81f4592417a034e47db6eefd3e4b91a9af
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-troubleshooting"></a>SignalR 故障排除
 ====================
@@ -192,7 +192,7 @@ SignalR 服务器不知道，是否客户端是否已死以及它们依赖于从
 
 - **中心代理地址引用的格式不正确：**如果对生成的中心代理地址的引用的格式不正确，则通常会出现此错误。 验证对中心地址的引用可以正确地完成。 请参阅[如何引用动态生成的代理](../guide-to-the-api/hubs-api-guide-javascript-client.md#dynamicproxy)有关详细信息。
 - **将路由添加到应用程序，然后添加中心路由：**如果你的应用程序使用的其他路由，验证是否添加的第一个路由是对调用`MapSignalR`。
-- **适用于无扩展名的 Url 中使用 IIS 7 或不带更新 7.5:**使用 IIS 7 或 7.5 需要更新无扩展名的 url，以便服务器可以提供对中心定义访问`/signalr/hubs`。 找不到更新[此处](https://support.microsoft.com/kb/980368/en-us)。
+- **适用于无扩展名的 Url 中使用 IIS 7 或不带更新 7.5:**使用 IIS 7 或 7.5 需要更新无扩展名的 url，以便服务器可以提供对中心定义访问`/signalr/hubs`。 找不到更新[此处](https://support.microsoft.com/kb/980368)。
 - **IIS 缓存过期或已损坏：**若要验证缓存内容不是过期，可清除缓存的 PowerShell 窗口中输入以下命令：
 
     [!code-powershell[Main](troubleshooting/samples/sample11.ps1)]
@@ -311,7 +311,7 @@ jQuery Mobile`initializePage`函数强制重新执行，每个页中的脚本从
 
 如果你使用的较旧的文档或博客中的代码，你可能会看到此错误。 验证未引用的已更改或已弃用的方法名称 (如`OnConnectedAsync`)。
 
-### <a name="hostcontextextensionswebsocketserverurl-is-null"></a>HostContextExtensions.WebSocketServerUrl 为 null
+### <a name="hostcontextextensionswebsocketserverurl-is-null"></a>HostContextExtensions.WebSocketServerUrl is null
 
 此行为是有意安排的。 此成员已弃用，不应使用。
 

@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/error-handling
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 49507e90cd659be5da08df17e175297adad0fea1
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 019e31fa749a950db48575e1f4e8d4d26d1cde75
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-error-handling-in-aspnet-core"></a>ASP.NET 核心中的错误处理简介
 
@@ -49,7 +49,7 @@ Put`UseDeveloperExceptionPage`之前你想要捕获异常，如的任何中间�
 
 ## <a name="configuring-a-custom-exception-handling-page"></a>配置自定义异常处理页
 
-它是配置异常处理程序页后，可以使用应用程序未在运行时一个好办法`Development`环境。
+它是一个好办法配置了要在应用程序不在运行时使用的异常处理程序网页`Development`环境。
 
 [!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
@@ -65,7 +65,7 @@ public IActionResult Index()
 
 ## <a name="configuring-status-code-pages"></a>配置状态代码页
 
-默认情况下，你的应用程序将不提供的 HTTP 状态代码 500 （内部服务器错误） 或 404 （未找到） 等的丰富的状态代码页。 你可以配置`StatusCodePagesMiddleware`通过将行添加到`Configure`方法：
+默认情况下，你的应用程序不会提供丰富的状态代码页的 HTTP 状态代码 500 （内部服务器错误） 或 404 （未找到） 等。 你可以配置`StatusCodePagesMiddleware`通过将行添加到`Configure`方法：
 
 ```csharp
 app.UseStatusCodePages();

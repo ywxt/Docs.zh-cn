@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/sending-html-form-data-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 3df59aab2a0c43f4a4f5c59530b0655f68d95cc7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 331d0e520a1fd8ec84aecd09a9c9e6d286c5893b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sending-html-form-data-in-aspnet-web-api-file-upload-and-multipart-mime"></a>在 ASP.NET Web API 发送 HTML 窗体数据： 文件上载和多部分 MIME
 ====================
@@ -72,7 +72,7 @@ ms.lasthandoff: 11/10/2017
 - **MultipartFileData.FileName**是在服务器上，保存文件的本地文件名称。
 - **MultipartFileData.Headers**包含部分标头 (*不*请求标头)。 可以使用此访问内容\_处置和内容类型标头。
 
-顾名思义， **ReadAsMultipartAsync**是异步方法。 若要执行工作，该方法完成后，使用[延续任务](https://msdn.microsoft.com/en-us/library/ee372288.aspx)(.NET 4.0) 或**await**关键字 (.NET 4.5)。
+顾名思义， **ReadAsMultipartAsync**是异步方法。 若要执行工作，该方法完成后，使用[延续任务](https://msdn.microsoft.com/library/ee372288.aspx)(.NET 4.0) 或**await**关键字 (.NET 4.5)。
 
 下面是代码的前面的.NET Framework 4.0 版本：
 

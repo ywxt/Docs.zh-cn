@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-client-app
 msc.type: authoredcontent
-ms.openlocfilehash: daa39fbbb4ff17d61f71bf2a642a9c2260b353e4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 51a3c7b9c5b6525d6d82b9a45910f58b71268b7f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-an-odata-v4-client-app-c"></a>创建 OData v4 客户端应用程序 (C#)
 ====================
@@ -50,7 +50,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="generate-the-service-proxy"></a>生成的服务代理
 
-服务代理是一个.NET 类，定义用于访问 OData 服务的方法。 代理将转换为 HTTP 请求的方法调用。 将通过运行创建代理类[T4 模板](https://msdn.microsoft.com/en-us/library/bb126445.aspx)。
+服务代理是一个.NET 类，定义用于访问 OData 服务的方法。 代理将转换为 HTTP 请求的方法调用。 将通过运行创建代理类[T4 模板](https://msdn.microsoft.com/library/bb126445.aspx)。
 
 右键单击该项目。 选择**添加** &gt; **新项**。
 
@@ -64,7 +64,7 @@ ms.lasthandoff: 11/10/2017
 
 [![](create-an-odata-v4-client-app/_static/image9.png)](create-an-odata-v4-client-app/_static/image8.png)
 
-打开文件 ProductClient.odata.config。在`Parameter`元素中，粘贴 ProductService 项目 （上一步） 从 URI 中。 例如: 
+打开文件 ProductClient.odata.config。在`Parameter`元素中，粘贴 ProductService 项目 （上一步） 从 URI 中。 例如:
 
 [!code-xml[Main](create-an-odata-v4-client-app/samples/sample1.xml)]
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: b072134043ceda809bfeca98447a132ed407b323
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 87bb08a4d16965a10112a42c4e9318c32f192c04
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-concurrency-with-the-entity-framework-in-an-aspnet-mvc-application-7-of-10"></a>处理与实体框架中的 ASP.NET MVC 应用程序 (7 个 10) 的并发
 ====================
@@ -67,18 +67,18 @@ John 单击**保存**第一个并查看他的更改时浏览器返回到索引�
 
 ### <a name="detecting-concurrency-conflicts"></a>检测并发冲突
 
-您可以通过处理中解决冲突[OptimisticConcurrencyException](https://msdn.microsoft.com/en-us/library/system.data.optimisticconcurrencyexception.aspx)实体框架引发的异常。 为了知道何时引发这些异常，实体框架必须能够检测到冲突。 因此，你必须从数据库和数据模型正确配置。 有关启用冲突检测某些选项包括：
+您可以通过处理中解决冲突[OptimisticConcurrencyException](https://msdn.microsoft.com/library/system.data.optimisticconcurrencyexception.aspx)实体框架引发的异常。 为了知道何时引发这些异常，实体框架必须能够检测到冲突。 因此，你必须从数据库和数据模型正确配置。 有关启用冲突检测某些选项包括：
 
 - 在数据库表中，包括可以用于确定当行已更改的跟踪列。 然后，你可以配置实体框架可以包括中的列`Where`的 SQL 子句`Update`或`Delete`命令。
 
-    跟踪列的数据类型通常是[rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx)。 [Rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx)值是每次更新行时递增序列号。 在`Update`或`Delete`命令，`Where`子句包括跟踪列 （原始行版本） 的原始值。 如果正在更新的行已由其他用户时中的值更改`rowversion`列是不同于原始值，因此`Update`或`Delete`语句找不到要由于更新的行`Where`子句。 在实体框架查找已通过更新了任何行`Update`或`Delete`命令 （即，在受影响的行数为零） 时，它将，解释为并发冲突。
+    跟踪列的数据类型通常是[rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx)。 [Rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx)值是每次更新行时递增序列号。 在`Update`或`Delete`命令，`Where`子句包括跟踪列 （原始行版本） 的原始值。 如果正在更新的行已由其他用户时中的值更改`rowversion`列是不同于原始值，因此`Update`或`Delete`语句找不到要由于更新的行`Where`子句。 在实体框架查找已通过更新了任何行`Update`或`Delete`命令 （即，在受影响的行数为零） 时，它将，解释为并发冲突。
 - 配置实体框架可以包括在表中的每个列的原始值`Where`子句`Update`和`Delete`命令。
 
     如下所示的第一个选项，如果自第一次读取一行，行中的任何内容已更改`Where`子句不会返回的行，若要更新，该实体框架会将解释为并发冲突。 对于有多列的数据库表，这种方法可能会导致非常大`Where`子句，并可能需要维护大量的状态。 如前文所述，保留大量的状态可能会影响应用程序性能因为它需要服务器资源或必须包含在 web 页本身。 因此此方法通常不建议，并且它不在本教程中使用的方法。
 
-    如果您想要实现这种并发的方法，则必须将你想要通过添加跟踪的并发性实体中的所有非主键属性标记[ConcurrencyCheck](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.concurrencycheckattribute.aspx)属性设为它们。 更改使实体框架能够在 SQL 中包括所有列`WHERE`子句`UPDATE`语句。
+    如果您想要实现这种并发的方法，则必须将你想要通过添加跟踪的并发性实体中的所有非主键属性标记[ConcurrencyCheck](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.concurrencycheckattribute.aspx)属性设为它们。 更改使实体框架能够在 SQL 中包括所有列`WHERE`子句`UPDATE`语句。
 
-本教程的其余部分中将添加[rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx)跟踪属性`Department`实体，创建控制器和视图，并进行测试以验证一切是否正常工作。
+本教程的其余部分中将添加[rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx)跟踪属性`Department`实体，创建控制器和视图，并进行测试以验证一切是否正常工作。
 
 ## <a name="add-an-optimistic-concurrency-property-to-the-department-entity"></a>将开放式并发属性添加到部门实体
 
@@ -86,7 +86,7 @@ John 单击**保存**第一个并查看他的更改时浏览器返回到索引�
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs?highlight=18-19)]
 
-[时间戳](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.timestampattribute.aspx)属性指定此列将包含在`Where`子句`Update`和`Delete`命令发送到数据库。 该属性称为[时间戳](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.timestampattribute.aspx)因为以前版本的 SQL Server 使用 SQL[时间戳](https://msdn.microsoft.com/en-us/library/ms182776(v=SQL.90).aspx)之前 SQL 数据类型[rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx)替换它。 .Net 类型`rowversion`为字节数组。 如果想要使用 fluent API，则可以使用[IsConcurrencyToken](https://msdn.microsoft.com/en-us/library/gg679501(v=VS.103).aspx)方法，以指定跟踪属性，如下面的示例中所示：
+[时间戳](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx)属性指定此列将包含在`Where`子句`Update`和`Delete`命令发送到数据库。 该属性称为[时间戳](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx)因为以前版本的 SQL Server 使用 SQL[时间戳](https://msdn.microsoft.com/library/ms182776(v=SQL.90).aspx)之前 SQL 数据类型[rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx)替换它。 .Net 类型`rowversion`为字节数组。 如果想要使用 fluent API，则可以使用[IsConcurrencyToken](https://msdn.microsoft.com/library/gg679501(v=VS.103).aspx)方法，以指定跟踪属性，如下面的示例中所示：
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
 

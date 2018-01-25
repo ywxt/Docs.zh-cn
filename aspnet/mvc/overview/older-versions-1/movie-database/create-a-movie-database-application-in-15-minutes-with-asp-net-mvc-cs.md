@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8294b5a8824c6a27e958e1ea78b7909a134447d2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a67ca5422d4353b8c23b3fd804246906b8b6d717
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-c"></a>创建电影数据库应用程序在 15 分钟内使用 ASP.NET MVC (C#)
 ====================
@@ -59,11 +59,11 @@ ms.lasthandoff: 11/10/2017
 
 如果你拥有 Visual Studio 2008，然后可以从该网站下载 Visual Studio 2008 90 天试用版：
 
-[https://msdn.microsoft.com/en-us/vs2008/products/cc268305.aspx](https://msdn.microsoft.com/en-us/vs2008/products/cc268305.aspx)
+[https://msdn.microsoft.com/vs2008/products/cc268305.aspx](https://msdn.microsoft.com/vs2008/products/cc268305.aspx)
 
 或者，你可以创建 ASP.NET MVC 应用程序与 Visual Web Developer Express 2008。 如果你决定使用 Visual Web Developer Express，则你必须拥有安装 Service Pack 1。 你可以从此网站中下载 Visual Web Developer 2008 速成版 Service Pack 1:
 
-[https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;-4a83-b309-53b7b77edf78&displaylang = en](https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang=en)
+[https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang=en](https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang=en)
 
 安装 Visual Studio 2008 或 Visual Web Developer 2008 之后，你需要安装 ASP.NET MVC 框架。 你可以从以下网站下载的 ASP.NET MVC framework:
 
@@ -106,7 +106,7 @@ ASP.NET MVC 应用程序具有一组标准的文件夹： 模型、 视图和控
 当使用 Visual Studio 创建新的 MVC 应用程序时，可以示例应用程序。 由于我们想要从头开始，我们需要删除此示例应用程序的内容。 您需要删除以下文件和以下文件夹：
 
 - Controllers\HomeController.cs
-- Views/home
+- Views\Home
 
 ## <a name="creating-the-database"></a>创建数据库
 
@@ -136,8 +136,8 @@ ASP.NET MVC 应用程序具有一组标准的文件夹： 模型、 视图和控
 | **列名称** | **数据类型** | **允许 null 值** |
 | --- | --- | --- |
 | Id | Int | False |
-| 标题 | nvarchar(100) | False |
-| 控制器 | nvarchar(100) | False |
+| 标题 | Nvarchar(100) | False |
+| 控制器 | Nvarchar(100) | False |
 | DateReleased | DateTime | False |
 
 

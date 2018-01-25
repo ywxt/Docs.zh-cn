@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: f0d465b363652c691c203d608f2cb9d139e72fed
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b3640c94a8ae9ede330c0fe6a392acb5843cb65c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>单一登录 （使用 Azure 构建真实世界云应用）
 ====================
@@ -31,12 +31,12 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="introduction-to-azure-ad"></a>Azure AD 简介
 
-[Azure AD](https://docs.microsoft.com/azure/active-directory/)提供[Active Directory](https://msdn.microsoft.com/en-us/library/windows/desktop/aa746492.aspx)在云中。 主要功能包括：
+[Azure AD](https://docs.microsoft.com/azure/active-directory/)提供[Active Directory](https://msdn.microsoft.com/library/windows/desktop/aa746492.aspx)在云中。 主要功能包括：
 
 - 它与本地 Active Directory 集成。
 - 它使与你的应用程序的单一登录。
 - 它支持开放标准，如[SAML](http://en.wikipedia.org/wiki/SAML_2.0)，[的是 Ws-fed](http://en.wikipedia.org/wiki/WS-Federation)，和[OAuth 2.0](http://oauth.net/2/)。
-- 它支持企业[Graph REST API](https://msdn.microsoft.com/en-us/library/hh974476.aspx)。
+- 它支持企业[Graph REST API](https://msdn.microsoft.com/library/hh974476.aspx)。
 
 假设你有使用以使员工能够登录到 Intranet 应用程序的本地 Windows Server Active Directory 环境：
 
@@ -64,7 +64,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="set-up-an-azure-ad-tenant"></a>设置 Azure AD 租户
 
-Azure AD 目录调用 Azure AD[租户](https://technet.microsoft.com/en-us/library/jj573650.aspx)，而且设置租户非常简单。 我们将介绍您如何它为了在 Azure 管理门户中阐释的概念，但这是当然的与其他门户函数类似你还可以执行它通过使用脚本或管理 API。
+Azure AD 目录调用 Azure AD[租户](https://technet.microsoft.com/library/jj573650.aspx)，而且设置租户非常简单。 我们将介绍您如何它为了在 Azure 管理门户中阐释的概念，但这是当然的与其他门户函数类似你还可以执行它通过使用脚本或管理 API。
 
 在管理门户中单击 Active Directory 选项卡。
 
@@ -118,7 +118,7 @@ Azure AD 目录调用 Azure AD[租户](https://technet.microsoft.com/en-us/libra
 
 ![WAAD 同步工具配置向导](single-sign-on/_static/image17.png)
 
-你可以在云中存储密码哈希是单向哈希;实际密码永远不会存储在 Azure AD 中。 如果你决定对在云中存储哈希，你将需要使用[Active Directory 联合身份验证服务](https://technet.microsoft.com/en-us/library/hh831502.aspx)(ADFS)。 也有[其他因素时，应考虑选择是否使用 ADFS](https://technet.microsoft.com/en-us/library/jj573653.aspx)。 ADFS 选项需要几个其他配置步骤。
+你可以在云中存储密码哈希是单向哈希;实际密码永远不会存储在 Azure AD 中。 如果你决定对在云中存储哈希，你将需要使用[Active Directory 联合身份验证服务](https://technet.microsoft.com/library/hh831502.aspx)(ADFS)。 也有[其他因素时，应考虑选择是否使用 ADFS](https://technet.microsoft.com/library/jj573653.aspx)。 ADFS 选项需要几个其他配置步骤。
 
 如果您选择将哈希存储在云中，完毕后，此工具将启动同步目录，单击时**下一步**。
 
@@ -156,7 +156,7 @@ Visual Studio 使极为简便地创建应用程序使用 Azure AD 进行单一�
 
 ![配置身份验证对话框](single-sign-on/_static/image24.png)
 
-也可以提供应用程序读取或读/写目录数据的权限。 如果你这样做，它可以使用[Azure Graph REST API](https://msdn.microsoft.com/en-us/library/windowsazure/hh974476.aspx)若要查找用户的电话号码，了解它们是否在办公室中，当最后一个记录，等等。
+也可以提供应用程序读取或读/写目录数据的权限。 如果你这样做，它可以使用[Azure Graph REST API](https://msdn.microsoft.com/library/windowsazure/hh974476.aspx)若要查找用户的电话号码，了解它们是否在办公室中，当最后一个记录，等等。
 
 这就是你所要做的所有 Visual Studio 会要求提供的凭据为你的 Azure AD 租户的管理员，然后配置你的项目和 Azure AD 租户的新应用程序。
 
@@ -186,7 +186,7 @@ Visual Studio 使极为简便地创建应用程序使用 Azure AD 进行单一�
 - [Azure Active Directory 文档](https://docs.microsoft.com/azure/active-directory/)。 有关 windowsazure.com 站点上的 Azure AD 文档门户页面。 分步教程，请参阅**开发**部分。
 - [Azure 多因素身份验证](https://docs.microsoft.com/azure/multi-factor-authentication/)。 有关在 Azure 中的多因素身份验证的文档的门户页。
 - [组织帐户身份验证选项](../../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#orgauthoptions)。 在 Visual Studio 2013 新项目对话框中的 Azure AD 身份验证选项的说明。
-- [Microsoft 模式和实践-联合标识模式](https://msdn.microsoft.com/en-us/library/dn589790.aspx)。
+- [Microsoft 模式和实践-联合标识模式](https://msdn.microsoft.com/library/dn589790.aspx)。
 - [如何： 安装 Azure Active Directory 同步工具](https://social.technet.microsoft.com/wiki/contents/articles/19098.howto-install-the-windows-azure-active-directory-sync-tool-now-with-pictures.aspx)。
 - [Active Directory 联合身份验证服务 2.0 内容导航图](https://social.technet.microsoft.com/wiki/contents/articles/2735.ad-fs-2-0-content-map.aspx)。 链接到有关 ADFS 2.0 的文档。
 - [Windows Azure AD 应用程序中基于角色的和基于 ACL 的授权](https://code.msdn.microsoft.com/Role-Based-and-ACL-Based-86ad71a1)。 示例应用程序。

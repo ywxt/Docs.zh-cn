@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
 msc.type: authoredcontent
-ms.openlocfilehash: 125d555a9e170ef35dd99e0409a2442d5f9ae34a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ccfbaa26cbf610f847811e6f3c612458277046ed
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>以队列为中心的工作模式 （使用 Azure 构建真实世界云应用）
 ====================
@@ -91,7 +91,7 @@ Web 应用程序通常都容易遭受流量的突现高峰。 尽管你可以使
 - 当用户提交新修复它任务时，则将此任务放置在队列中，而不是写入数据库。
 - 创建处理队列中的消息的后端服务。
 
-对于队列中，我们将使用[Azure 队列存储服务](https://www.windowsazure.com/en-us/develop/net/how-to-guides/queue-service/)。 另一个选项是使用[Azure Service Bus](https://docs.microsoft.com/azure/service-bus/)。
+对于队列中，我们将使用[Azure 队列存储服务](https://www.windowsazure.com/develop/net/how-to-guides/queue-service/)。 另一个选项是使用[Azure Service Bus](https://docs.microsoft.com/azure/service-bus/)。
 
 若要决定要使用的队列服务，请考虑您的应用程序需要发送和接收消息队列中的如何：
 
@@ -106,10 +106,10 @@ Web 应用程序通常都容易遭受流量的突现高峰。 尽管你可以使
 
 若要将修复它任务放置在队列中，web 前端，请执行以下步骤：
 
-1. 创建[CloudQueueClient](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueueclient.aspx)实例。 `CloudQueueClient`实例用于执行对队列服务的请求。
+1. 创建[CloudQueueClient](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueueclient.aspx)实例。 `CloudQueueClient`实例用于执行对队列服务的请求。
 2. 创建队列，如果它尚不存在。
 3. 序列化修复它任务。
-4. 调用[CloudQueue.AddMessageAsync](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueue.addmessageasync.aspx)以将消息放到队列。
+4. 调用[CloudQueue.AddMessageAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.addmessageasync.aspx)以将消息放到队列。
 
 我们将执行此构造函数中的工作和`SendMessageAsync`方法的一个新`FixItQueueManager`类。
 
@@ -117,7 +117,7 @@ Web 应用程序通常都容易遭受流量的突现高峰。 尽管你可以使
 
 此处我们将使用[Json.NET](https://github.com/JamesNK/Newtonsoft.Json)要序列化到 JSON 格式 fixit 库。 你可以使用任何您喜欢的序列化方法。 JSON 采用的优点，用户可读，但比 XML。
 
-生产高质量代码将添加错误处理逻辑，暂停如果数据库变得不可用、 更完全处理恢复、 应用程序启动时创建队列和管理"[有害"消息](https://msdn.microsoft.com/en-us/library/ms789028(v=vs.110).aspx)。 （病毒消息是由于某种原因无法处理的消息。 你不希望病毒消息发送到队列，其中辅助角色将不断尝试处理它们、 失败、 再试一次、 失败，和等。）
+生产高质量代码将添加错误处理逻辑，暂停如果数据库变得不可用、 更完全处理恢复、 应用程序启动时创建队列和管理"[有害"消息](https://msdn.microsoft.com/library/ms789028(v=vs.110).aspx)。 （病毒消息是由于某种原因无法处理的消息。 你不希望病毒消息发送到队列，其中辅助角色将不断尝试处理它们、 失败、 再试一次、 失败，和等。）
 
 在前端 MVC 应用程序，我们需要更新创建新任务的代码。 而不是将任务放入存储库，调用`SendMessageAsync`上面所示方法。
 
@@ -156,7 +156,7 @@ Web 应用程序通常都容易遭受流量的突现高峰。 尽管你可以使
 
 ![](queue-centric-work-pattern/_static/image8.png)
 
-有关详细信息，请参阅[使用 Visual Studio 创建 Azure 项目。](https://msdn.microsoft.com/en-us/library/windowsazure/ee405487.aspx)
+有关详细信息，请参阅[使用 Visual Studio 创建 Azure 项目。](https://msdn.microsoft.com/library/windowsazure/ee405487.aspx)
 
 在辅助角色中，我们轮询消息通过调用`ProcessMessageAsync`方法`FixItQueueManager`我们前面看到的类。
 
@@ -168,7 +168,7 @@ Web 应用程序通常都容易遭受流量的突现高峰。 尽管你可以使
 
 轮询的队列消息会产生少量的事务进行收费，因此，如果没有消息等待处理，辅助角色的`RunAsync`方法等待第二个轮询之前再次通过调用`Task.Delay(1000)`。
 
-在 web 项目中，添加异步代码可以自动提高性能，因为 IIS 管理有限的线程池。 即不是这种情况在辅助角色项目。 若要提高可伸缩性的辅助角色，你可以编写多线程的代码，或使用异步代码来实现[并行编程](https://msdn.microsoft.com/en-us/library/ff963553.aspx)。 此示例未实现的并行编程，但演示如何使代码异步，因此您可以实施并行编程。
+在 web 项目中，添加异步代码可以自动提高性能，因为 IIS 管理有限的线程池。 即不是这种情况在辅助角色项目。 若要提高可伸缩性的辅助角色，你可以编写多线程的代码，或使用异步代码来实现[并行编程](https://msdn.microsoft.com/library/ff963553.aspx)。 此示例未实现的并行编程，但演示如何使代码异步，因此您可以实施并行编程。
 
 ## <a name="summary"></a>摘要
 
@@ -184,11 +184,11 @@ Web 应用程序通常都容易遭受流量的突现高峰。 尽管你可以使
 文档：
 
 - [Microsoft Azure 存储队列第 1 部分： 入门](http://justazure.com/microsoft-azure-storage-queues-part-1-getting-started/)。 通过罗马 Schacherl 的文章。
-- [执行后台任务](https://msdn.microsoft.com/en-us/library/ff803365.aspx)的第 5 章[移动应用程序迁移到云，第三版](https://msdn.microsoft.com/en-us/library/ff728592.aspx)从 Microsoft 模式和实践。 (具体而言，部分["使用 Azure 存储队列"](https://msdn.microsoft.com/en-us/library/ff803365.aspx#sec7)。)
-- [最大程度提高可伸缩性和成本的效率的 Azure 上的基于队列的消息传送解决方案的最佳做法](https://msdn.microsoft.com/en-us/library/windowsazure/hh697709.aspx)。 通过 Valery Mizonov 白皮书。
-- [比较 Azure 队列和 Service Bus 队列](https://msdn.microsoft.com/en-us/magazine/jj159884.aspx)。 MSDN 杂志文章提供了可帮助您选择要使用的队列服务的其他信息。 本文提及 Service Bus 是依赖于 ACS 进行身份验证，这意味着 ACS 不可用时，你的 SB 队列也将不可用。 但是，由于在撰写本文时，SB 已进行更改以使你能够使用[SAS 令牌](https://msdn.microsoft.com/en-us/library/windowsazure/dn170477.aspx)作为 ACS 的替代方法。
-- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/en-us/library/dn568099.aspx)。 请参阅异步消息传送入门、 管道和筛选器模式、 补偿事务模式、 使用者竞争模式、 CQRS 模式。
-- [CQRS 旅程](https://msdn.microsoft.com/en-us/library/jj554200)。 有关 Microsoft 模式与实践中的 CQRS 电子书。
+- [执行后台任务](https://msdn.microsoft.com/library/ff803365.aspx)的第 5 章[移动应用程序迁移到云，第三版](https://msdn.microsoft.com/library/ff728592.aspx)从 Microsoft 模式和实践。 (具体而言，部分["使用 Azure 存储队列"](https://msdn.microsoft.com/library/ff803365.aspx#sec7)。)
+- [最大程度提高可伸缩性和成本的效率的 Azure 上的基于队列的消息传送解决方案的最佳做法](https://msdn.microsoft.com/library/windowsazure/hh697709.aspx)。 通过 Valery Mizonov 白皮书。
+- [比较 Azure 队列和 Service Bus 队列](https://msdn.microsoft.com/magazine/jj159884.aspx)。 MSDN 杂志文章提供了可帮助您选择要使用的队列服务的其他信息。 本文提及 Service Bus 是依赖于 ACS 进行身份验证，这意味着 ACS 不可用时，你的 SB 队列也将不可用。 但是，由于在撰写本文时，SB 已进行更改以使你能够使用[SAS 令牌](https://msdn.microsoft.com/library/windowsazure/dn170477.aspx)作为 ACS 的替代方法。
+- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/library/dn568099.aspx)。 请参阅异步消息传送入门、 管道和筛选器模式、 补偿事务模式、 使用者竞争模式、 CQRS 模式。
+- [CQRS 旅程](https://msdn.microsoft.com/library/jj554200)。 有关 Microsoft 模式与实践中的 CQRS 电子书。
 
 视频：
 

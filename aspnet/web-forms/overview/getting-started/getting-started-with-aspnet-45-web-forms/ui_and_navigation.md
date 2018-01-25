@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
 msc.type: authoredcontent
-ms.openlocfilehash: 98c96749781f577d9544c80f58404353d40848b2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7f1d8a1a473820a7c8da4c8086904cc41c86fd2a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="ui-and-navigation"></a>UI 和导航
 ====================
@@ -215,7 +215,7 @@ Visual Studio 2013 项目模板使用[Bootstrap](http://getbootstrap.com/)，由
 
 > [!NOTE] 
 > 
-> **提示**
+> **Tip**
 > 
 > 通过键入在开发过程中添加代码，可以将某些对象的有效成员找到因为强类型数据控件显示可用的成员，基于智能感知。 键入代码，例如属性、 方法和对象时，IntelliSense 将提供相应上下文的代码选择。
 
@@ -288,8 +288,8 @@ Visual Studio 2013 项目模板使用[Bootstrap](http://getbootstrap.com/)，由
 
 ## <a name="additional-resources"></a>其他资源
 
-[ASP.NET 网页编程简介](https://msdn.microsoft.com/en-us/library/ms178125.aspx)   
-[ASP.NET Web 服务器控件概述](https://msdn.microsoft.com/en-us/library/zsyt68f1.aspx)   
+[ASP.NET 网页编程简介](https://msdn.microsoft.com/library/ms178125.aspx)   
+[ASP.NET Web 服务器控件概述](https://msdn.microsoft.com/library/zsyt68f1.aspx)   
 [CSS 教程](http://www.w3schools.com/css/default.asp)
 
 >[!div class="step-by-step"]

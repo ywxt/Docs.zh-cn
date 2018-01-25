@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-storage-providers
-ms.openlocfilehash: f95322c208d323c052295959e39f945700b7ec57
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d7cbb4786be0acf9679f43466460c3833f1db6fb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="key-storage-providers"></a>密钥存储提供程序
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 01/19/2018
 默认情况下，数据保护系统[使用启发式方法](xref:security/data-protection/configuration/default-settings)以确定应将在其中保留加密的密钥材料。 开发人员可以重写启发式方法，并手动指定的位置。
 
 > [!NOTE]
-> 如果您指定一个显式的密钥保持位置，将取消注册数据保护系统在 rest 机制启发式方法提供的默认密钥加密，以便密钥将不再加密对静止。 建议你此外[指定显式密钥加密机制](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest-providers)对于生产应用程序。
+> 如果您指定一个显式的密钥保持位置，将取消注册数据保护系统在 rest 机制启发式方法提供的默认密钥加密，以便密钥将不再加密对静止。 它具有，建议你此外[指定显式密钥加密机制](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest-providers)对于生产应用程序。
 
 数据保护系统附带了几个内置密钥存储提供程序。
 

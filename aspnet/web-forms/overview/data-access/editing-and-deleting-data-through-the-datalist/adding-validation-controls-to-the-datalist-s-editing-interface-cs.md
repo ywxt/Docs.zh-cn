@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 06f3e59d0e6fd59a83934084422816360e915bd7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b80b25933679d5c5b465af24cf6ff5d3b824b401
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-validation-controls-to-the-datalists-editing-interface-c"></a>将验证控件添加到 DataList 的编辑界面 (C#)
 ====================
@@ -71,11 +71,11 @@ ms.lasthandoff: 11/10/2017
 
 构造数据输入窗体时, 很重要，则用户输入所有必填的字段和所有其提供的输入是合法的格式正确的值。 为了帮助确保用户的输入有效，ASP.NET 提供专门用于验证的单个输入 Web 控件的值的五个内置的验证控件：
 
-- [RequiredFieldValidator](https://msdn.microsoft.com/en-us/library/5hbw267h(VS.80).aspx)可确保已提供的值
-- [CompareValidator](https://msdn.microsoft.com/en-us/library/db330ayw(VS.80).aspx)验证值与另一个 Web 控件值或一个常量值，或确保值的格式是合法的指定的数据类型
-- [RangeValidator](https://msdn.microsoft.com/en-us/library/f70d09xt.aspx)确保值是值的范围之内
-- [RegularExpressionValidator](https://msdn.microsoft.com/en-US/library/eahwtc9e.aspx)验证值与[正则表达式](http://en.wikipedia.org/wiki/Regular_expression)
-- [CustomValidator](https://msdn.microsoft.com/en-us/library/9eee01cx(VS.80).aspx)验证值与自定义、 用户定义的方法
+- [RequiredFieldValidator](https://msdn.microsoft.com/library/5hbw267h(VS.80).aspx)可确保已提供的值
+- [CompareValidator](https://msdn.microsoft.com/library/db330ayw(VS.80).aspx)验证值与另一个 Web 控件值或一个常量值，或确保值的格式是合法的指定的数据类型
+- [RangeValidator](https://msdn.microsoft.com/library/f70d09xt.aspx)确保值是值的范围之内
+- [RegularExpressionValidator](https://msdn.microsoft.com/library/eahwtc9e.aspx)验证值与[正则表达式](http://en.wikipedia.org/wiki/Regular_expression)
+- [CustomValidator](https://msdn.microsoft.com/library/9eee01cx(VS.80).aspx)验证值与自定义、 用户定义的方法
 
 有关详细信息这些五个控件回头参考[将验证控件添加到的编辑和插入接口](../editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md)教程或签出[验证控件部分](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/validation/default.aspx)的[ASP.NET 快速入门教程](https://quickstarts.asp.net)。
 
@@ -93,7 +93,7 @@ ms.lasthandoff: 11/10/2017
 **图 3**： 添加到 RequiredFieldValidator `EditItemTemplate After` `ProductName`文本框中 ([单击以查看实际尺寸的图像](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image9.png))
 
 
-所有验证控件验证单个 ASP.NET Web 控件的输入都工作。 因此，我们需要指示我们刚添加 RequiredFieldValidator 应验证`ProductName`文本框中; 这可通过设置验证控件 s [ `ControlToValidate`属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx)到`ID`的相应的 Web 控件 (`ProductName`，在这种情况)。 接下来，设置[`ErrorMessage`属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx)必须到提供的产品的名称和[`Text`属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx)到\*。 `Text`属性值，如果提供，则如果验证失败，通过该验证控件显示的文本。 `ErrorMessage`属性值，该值是必需的由 ValidationSummary 控件; 如果`Text`省略属性值，`ErrorMessage`上输入无效的验证控件的显示属性值。
+所有验证控件验证单个 ASP.NET Web 控件的输入都工作。 因此，我们需要指示我们刚添加 RequiredFieldValidator 应验证`ProductName`文本框中; 这可通过设置验证控件 s [ `ControlToValidate`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx)到`ID`的相应的 Web 控件 (`ProductName`，在这种情况)。 接下来，设置[`ErrorMessage`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx)必须到提供的产品的名称和[`Text`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx)到\*。 `Text`属性值，如果提供，则如果验证失败，通过该验证控件显示的文本。 `ErrorMessage`属性值，该值是必需的由 ValidationSummary 控件; 如果`Text`省略属性值，`ErrorMessage`上输入无效的验证控件的显示属性值。
 
 在设置后 RequiredFieldValidator 这三个属性，你的屏幕应类似于图 4。
 
@@ -105,7 +105,7 @@ ms.lasthandoff: 11/10/2017
 
 使用添加到 RequiredFieldValidator `EditItemTemplate`，所有保持是添加产品的价格文本框中的必要验证。 由于`UnitPrice`是可选时编辑记录，我们不需要添加 RequiredFieldValidator。 我们执行此操作，但是，需要添加 CompareValidator 以确保`UnitPrice`，如果提供，作为一种货币格式正确，大于或等于 0。
 
-添加到 CompareValidator`EditItemTemplate`并设置其`ControlToValidate`属性`UnitPrice`，将其`ErrorMessage`价格属性必须大于或等于零，并且不能包括货币符号，并将其`Text`属性\*. 若要指示`UnitPrice`值必须是大于或等于 0，设置 CompareValidator s [ `Operator`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.comparevalidator.operator(VS.80).aspx)到`GreaterThanEqual`，将其[`ValueToCompare`属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.comparevalidator.valuetocompare(VS.80).aspx)为 0，并其[`Type`属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basecomparevalidator.type.aspx)到`Currency`。
+添加到 CompareValidator`EditItemTemplate`并设置其`ControlToValidate`属性`UnitPrice`，将其`ErrorMessage`价格属性必须大于或等于零，并且不能包括货币符号，并将其`Text`属性\*. 若要指示`UnitPrice`值必须是大于或等于 0，设置 CompareValidator s [ `Operator`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.operator(VS.80).aspx)到`GreaterThanEqual`，将其[`ValueToCompare`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.valuetocompare(VS.80).aspx)为 0，并其[`Type`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basecomparevalidator.type.aspx)到`Currency`。
 
 添加这些两个验证控件，DataList s 后`EditItemTemplate`s 声明性语法外观应与以下类似：
 
@@ -144,13 +144,13 @@ ms.lasthandoff: 11/10/2017
 
 取消按钮是此类示例。 假设用户输入无效数据，如省略产品的名称，，然后决定她没有 t 想要在所有保存产品并触发取消按钮。 目前，取消按钮将触发验证控件在页上，该报告的产品名称缺失，防止回发。 我们的用户必须键入一些文本到`ProductName`文本框中，只是为了取消退出编辑过程。
 
-幸运的是，按钮、 LinkButton 和 ImageButton 具有[`CausesValidation`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.button.causesvalidation.aspx)可以指示是否单击按钮应启动的验证逻辑 (默认为`True`)。 设置取消按钮 s`CausesValidation`属性`False`。
+幸运的是，按钮、 LinkButton 和 ImageButton 具有[`CausesValidation`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.causesvalidation.aspx)可以指示是否单击按钮应启动的验证逻辑 (默认为`True`)。 设置取消按钮 s`CausesValidation`属性`False`。
 
 ## <a name="ensuring-the-inputs-are-valid-in-the-updatecommand-event-handler"></a>确保输入是限于 UpdateCommand 事件处理程序中的有效
 
 由于发出的验证控件中，客户端脚本如果用户输入无效的输入验证控件取消按钮，LinkButton，由启动任何回发 ImageButton 控件或其`CausesValidation`属性`True`(默认值）。 但是，如果用户访问过时的浏览器或其中一个已禁用其 JavaScript 支持中，将不会执行客户端验证检查。
 
-ASP.NET 验证控件的所有重复回发时将立即对其验证逻辑并报告通过页的输入的总体有效性[`Page.IsValid`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.page.isvalid.aspx)。 但是，页面流未中断或停止任何方式基于的值中`Page.IsValid`。 作为开发人员而言，是，我们有责任确保`Page.IsValid`属性具有的值`True`假定有效的代码继续输入数据之前。
+ASP.NET 验证控件的所有重复回发时将立即对其验证逻辑并报告通过页的输入的总体有效性[`Page.IsValid`属性](https://msdn.microsoft.com/library/system.web.ui.page.isvalid.aspx)。 但是，页面流未中断或停止任何方式基于的值中`Page.IsValid`。 作为开发人员而言，是，我们有责任确保`Page.IsValid`属性具有的值`True`假定有效的代码继续输入数据之前。
 
 如果用户具有禁用的 JavaScript，访问我们的页面、 编辑产品、 进入太价格值占用大量资源，并单击更新按钮，将绕过客户端验证和回发将随之发生。 在回发时，ASP.NET 页 s`UpdateCommand`事件处理程序执行，并在尝试分析太时引发异常的成本较低`Decimal`。 由于我们有异常处理，将处理此类异常正常，但我们可以通过第一个位置通过仅继续执行操作滑动阻止无效的数据`UpdateCommand`事件处理程序如果`Page.IsValid`的值为`True`。
 
@@ -167,9 +167,9 @@ ASP.NET 验证控件的所有重复回发时将立即对其验证逻辑并报告
 
 ## <a name="step-3-summarizing-data-entry-problems"></a>步骤 3： 汇总数据条目问题
 
-除了五个验证控件中，包括 ASP.NET [ValidationSummary 控件](https://msdn.microsoft.com/en-US/library/f9h59855(VS.80).aspx)，其中显示`ErrorMessage`s 检测到无效的数据的那些验证控件。 此摘要数据可以显示为文本在网页上或通过模式，客户端的消息框。 让我们来增强此教程，以包括客户端的消息框汇总任何验证问题。
+除了五个验证控件中，包括 ASP.NET [ValidationSummary 控件](https://msdn.microsoft.com/library/f9h59855(VS.80).aspx)，其中显示`ErrorMessage`s 检测到无效的数据的那些验证控件。 此摘要数据可以显示为文本在网页上或通过模式，客户端的消息框。 让我们来增强此教程，以包括客户端的消息框汇总任何验证问题。
 
-若要完成此操作，请从工具箱中拖动到设计器拖动 ValidationSummary 控件。 位置 ValidationSummary 控件不真正有意义，因为我们重新要将其配置为仅显示摘要作为消息框。 在添加控件后, 设置其[`ShowSummary`属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx)到`False`及其[`ShowMessageBox`属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx)到`True`。 添加此元素后，任何验证错误汇总中一个客户端的 messagebox （请参阅图 6）。
+若要完成此操作，请从工具箱中拖动到设计器拖动 ValidationSummary 控件。 位置 ValidationSummary 控件不真正有意义，因为我们重新要将其配置为仅显示摘要作为消息框。 在添加控件后, 设置其[`ShowSummary`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx)到`False`及其[`ShowMessageBox`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx)到`True`。 添加此元素后，任何验证错误汇总中一个客户端的 messagebox （请参阅图 6）。
 
 
 [![客户端 Messagebox 中总结了验证错误](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image17.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image16.png)

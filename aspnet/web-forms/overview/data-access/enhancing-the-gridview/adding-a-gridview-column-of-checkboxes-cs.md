@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4796d5d9fcf1f924e9baa9bc56424a9d719425c9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6f238b8ea8dfbde67dbad7a52d6b4851d67402a8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-gridview-column-of-checkboxes-c"></a>添加 GridView 列的复选框 (C#)
 ====================
@@ -100,7 +100,7 @@ ms.lasthandoff: 11/10/2017
 
 此时我们具有的复选框，但无法确定哪些复选框已选中在回发时的列。 单击删除所选产品按钮后，不过，我们需要知道哪些复选框已选中状态，以便删除这些产品。
 
-GridView s [ `Rows`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rows.aspx)提供对 GridView 中的数据行的访问。 我们可以循环访问这些行，以编程方式访问复选框控件中，并请查阅其`Checked`属性来确定是否已选中的复选框。
+GridView s [ `Rows`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rows.aspx)提供对 GridView 中的数据行的访问。 我们可以循环访问这些行，以编程方式访问复选框控件中，并请查阅其`Checked`属性来确定是否已选中的复选框。
 
 创建的事件处理程序`DeleteSelectedProducts`按钮 Web 控件的`Click`事件并添加以下代码：
 

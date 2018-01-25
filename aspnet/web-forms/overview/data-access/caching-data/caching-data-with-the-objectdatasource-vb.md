@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-with-the-objectdatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fa0a0f1f80a407f8f68d5fe081b5b144e2945700
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ce0daabf8d68614c530115cc37b4f088f75dba4d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching-data-with-the-objectdatasource-vb"></a>缓存与对象数据源 (VB) 的数据
 ====================
@@ -44,7 +44,7 @@ ASP.NET 2.0 提供了各种各样的缓存选项。 可以通过缓存的整个�
 
 指定的逐出条件，无论缓存中的项可能*清理*满足基于时间的或基于依赖项的条件之前。 如果缓存已达到其容量，则必须先删除现有项，然后才能添加新的。 因此，以编程方式使用缓存数据时它 s 至关重要，你始终假定，则缓存的数据可能不存在。 我们将查看要使用在访问数据时从缓存以编程方式在我们的下一教程中的模式*体系结构中缓存数据*。
 
-缓存提供了一种经济的方法挤压从应用程序的详细性能。 作为[Steven Smith](http://aspadvice.com/blogs/ssmith/)说明了在他的文章[ASP.NET 缓存： 方法和最佳实践](https://msdn.microsoft.com/en-us/library/aa478965.aspx):
+缓存提供了一种经济的方法挤压从应用程序的详细性能。 作为[Steven Smith](http://aspadvice.com/blogs/ssmith/)说明了在他的文章[ASP.NET 缓存： 方法和最佳实践](https://msdn.microsoft.com/library/aa478965.aspx):
 
 缓存可以获得良好足够性能而不需要大量时间和分析的一种好方法。 内存是比较便宜，因此如果你可以获取所需的缓存的输出，而不是一天或每周尝试优化你的代码或数据库的花费 30 秒的性能，请执行缓存的解决方案 （假定为第二个旧-30 数据是确定），然后移。 最后，较差的设计将可能赶上到你，因此当然，你应尝试正确设计应用程序。 但如果你只需获得良好今天的足够性能，缓存可能是一个极好 [方法]，购买时间重构你的应用程序在以后当必须进行这些操作的时间。
 
@@ -175,10 +175,10 @@ ObjectDataSource 发出请求时，数据体系结构每次该标签将显示文
 
 通过只需设置的几个属性，可以将对象数据源配置为自动缓存其 ASP.NET 数据缓存中检索到的数据。 以下列表总结了 ObjectDataSource 的缓存相关的属性：
 
-- [EnableCaching](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.enablecaching.aspx)必须设置为`True`若要启用缓存。 默认值为 `False`。
-- [CacheDuration](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.cacheduration.aspx)的时间，以秒为单位，缓存数据量。 默认值为 0。 ObjectDataSource 仅缓存数据，如果`EnableCaching`是`True`和`CacheDuration`设置为值大于零。
-- [CacheExpirationPolicy](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.cacheexpirationpolicy.aspx)可以将设置为`Absolute`或`Sliding`。 如果`Absolute`，ObjectDataSource 缓存为其检索到的数据`CacheDuration`秒; 如果`Sliding`的数据过期仅后未存取过`CacheDuration`秒。 默认值为 `Absolute`。
-- [CacheKeyDependency](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.cachekeydependency.aspx)使用此属性与现有的缓存依赖项关联的 ObjectDataSource 的缓存项。 ObjectDataSource 的数据条目可以被提前逐出从缓存过期及其关联`CacheKeyDependency`。 此属性通常用于将 SQL 缓存依赖项与 ObjectDataSource 的缓存相关联，主题我们将探讨在将来[使用 SQL 缓存依赖项](using-sql-cache-dependencies-vb.md)教程。
+- [EnableCaching](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.enablecaching.aspx)必须设置为`True`若要启用缓存。 默认值为 `False`。
+- [CacheDuration](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cacheduration.aspx)的时间，以秒为单位，缓存数据量。 默认值为 0。 ObjectDataSource 仅缓存数据，如果`EnableCaching`是`True`和`CacheDuration`设置为值大于零。
+- [CacheExpirationPolicy](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cacheexpirationpolicy.aspx)可以将设置为`Absolute`或`Sliding`。 如果`Absolute`，ObjectDataSource 缓存为其检索到的数据`CacheDuration`秒; 如果`Sliding`的数据过期仅后未存取过`CacheDuration`秒。 默认值为 `Absolute`。
+- [CacheKeyDependency](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cachekeydependency.aspx)使用此属性与现有的缓存依赖项关联的 ObjectDataSource 的缓存项。 ObjectDataSource 的数据条目可以被提前逐出从缓存过期及其关联`CacheKeyDependency`。 此属性通常用于将 SQL 缓存依赖项与 ObjectDataSource 的缓存相关联，主题我们将探讨在将来[使用 SQL 缓存依赖项](using-sql-cache-dependencies-vb.md)教程。
 
 让我们来配置`ProductsDataSource`ObjectDataSource 30 秒内对绝对刻度缓存其数据。 设置 ObjectDataSource s`EnableCaching`属性`True`及其`CacheDuration`为 30 的属性。 保留`CacheExpirationPolicy`属性设置为其默认值， `Absolute`。
 
@@ -206,7 +206,7 @@ ObjectDataSource 发出请求时，数据体系结构每次该标签将显示文
 
 每个 ASP.NET 应用程序实例在所有页和访问者之间共享该 s 自己数据缓存。 这意味着跨所有用户访问页同样共享数据缓存内存储的对象数据源的数据。 若要验证这一点，打开`ObjectDataSource.aspx`在浏览器中的页。 当第一次访问该页面，选择激发事件文本将显示 （假设由以前的测试添加到缓存的数据已，到目前为止，退出）。 打开第二个浏览器实例并复制和粘贴到第二个第一个浏览器实例的 URL。 在第二个浏览器实例中，选择激发的事件文本未显示，因为它使用相同的 s 缓存与第一个的数据。
 
-ObjectDataSource 在其检索到的数据插入到缓存时，使用包含的缓存密钥值：`CacheDuration`和`CacheExpirationPolicy`属性值; 对象数据源，指定正在使用的基础业务对象的类型通过[`TypeName`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.typename.aspx)(`ProductsBLL`，在此示例中); 的值`SelectMethod`属性的名称和值中的参数的`SelectParameters`集合; 以及其的值`StartRowIndex`和`MaximumRows`属性，在实现时使用[自定义分页](../paging-and-sorting/paging-and-sorting-report-data-vb.md)。
+ObjectDataSource 在其检索到的数据插入到缓存时，使用包含的缓存密钥值：`CacheDuration`和`CacheExpirationPolicy`属性值; 对象数据源，指定正在使用的基础业务对象的类型通过[`TypeName`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.typename.aspx)(`ProductsBLL`，在此示例中); 的值`SelectMethod`属性的名称和值中的参数的`SelectParameters`集合; 以及其的值`StartRowIndex`和`MaximumRows`属性，在实现时使用[自定义分页](../paging-and-sorting/paging-and-sorting-report-data-vb.md)。
 
 为这些属性的组合创建的缓存密钥值可确保唯一缓存项，因为这些值发生变化。 例如，在过去教程我们已了解了使用`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`，这将返回为指定类别的所有产品。 一个用户可能要到页并查看饮料具有`CategoryID`为 1。 如果 ObjectDataSource 缓存而不考虑其结果`SelectParameters`值，在另一个用户提供到页以查看调味品时饮料产品已在缓存中时，他们 d 看到缓存的饮料产品而不是调味品。 通过按这些属性进行区分的缓存密钥，其中包括的值`SelectParameters`，ObjectDataSource 维护计算的 beverages 和调味品的单独的缓存项。
 
@@ -230,8 +230,8 @@ ObjectDataSource 自动逐出从缓存时的任何一个其项其`Insert`， `Up
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [ASP.NET 缓存： 方法和最佳实践](https://msdn.microsoft.com/en-us/library/aa478965.aspx)
-- [.NET Framework 应用程序的缓存体系结构指南](https://msdn.microsoft.com/en-us/library/ee817645.aspx)
+- [ASP.NET 缓存： 方法和最佳实践](https://msdn.microsoft.com/library/aa478965.aspx)
+- [.NET Framework 应用程序的缓存体系结构指南](https://msdn.microsoft.com/library/ee817645.aspx)
 - [在 ASP.NET 2.0 中的输出缓存](http://aspnet.4guysfromrolla.com/articles/121306-1.aspx)
 
 ## <a name="about-the-author"></a>关于作者

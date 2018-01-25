@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/mvc2
-ms.openlocfilehash: f9845449659960e82afd4f51d64084b7f55f68d4
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 95bedf9299b4ff65c2f520358136174c4d2c4623
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrating-from-aspnet-to-aspnet-core-20"></a>迁移 ASP.NET ASP.NET 核心 2.0
 
@@ -38,11 +38,11 @@ ASP.NET Core 2.0 项目为开发人员提供了面向 .NET Core、.NET Framework
 </ItemGroup>
 ```
 
-使用此元包时，应用不会部署元包中引用的任何包。 .NET Core 运行时存储中包含这些资产，并且为提高性能已对它们进行预编译。 请参阅 [ASP.NET Core 2.x 的 Microsoft.AspNetCore.All 元包](xref:fundamentals/metapackage)了解详细信息。
+使用此元包时，应用不会部署元包中引用的任何包。 .NET 核心运行时存储包括这些资产，并在预编译以提高性能。 请参阅 [ASP.NET Core 2.x 的 Microsoft.AspNetCore.All 元包](xref:fundamentals/metapackage)了解详细信息。
 
 ## <a name="project-structure-differences"></a>项目结构差异
 ASP.NET Core 中简化了 .csproj 文件格式。 下面是一些显著的更改：
-- 若要将文件作为项目的组成部分，无需显示包含它们。 服务于大型团队时，这可减少出现 XML 合并冲突的风险。
+- 显式包含的文件则无需为其被视为项目的一部分。 服务于大型团队时，这可减少出现 XML 合并冲突的风险。
 - 没有对其他项目的基于 GUID 的引用，这可以提高文件的可读性。
 - 无需在 Visual Studio 中卸载文件即可对它进行编辑：
 
@@ -53,13 +53,13 @@ ASP.NET Core 引入了启动应用的新机制。 ASP.NET 应用程序的入口�
 
 [!code-csharp[Main](samples/globalasax-sample.cs)]
 
-此方法会将应用程序和应用程序要部署到的服务器耦合在一起，并且它们的耦合方式会干扰实现。 为了将它们分离，引入了 [OWIN](http://owin.org/) 来提供一种更为简便的同时使用多个框架的方法。 OWIN 提供了一个管道，可以只添加所需的模块。 托管环境使用 [Startup](xref:fundamentals/startup) 函数配置服务和应用的请求管道。 `Startup` 在应用程序中注册一组中间件。 对于每个请求，应用程序使用现有处理程序集的链接列表的头指针调用各个中间件组件。 每个中间件组件可以向请求处理管道添加一个或多个处理程序。 此过程通过返回对作为列表新头的处理程序的引用来完成。 每个处理程序负责记住并调用列表中的下一个处理程序。 使用 ASP.NET Core 时，应用程序的入口点是 `Startup`，不再具有 Global.asax 的依赖关系。 结合使用 OWIN 和 .NET Framework 时，使用的管道应如下所示：
+此方法会将应用程序和应用程序要部署到的服务器耦合在一起，并且它们的耦合方式会干扰实现。 为了将它们分离，引入了 [OWIN](http://owin.org/) 来提供一种更为简便的同时使用多个框架的方法。 OWIN 提供了一个管道，可以只添加所需的模块。 托管环境使用 [Startup](xref:fundamentals/startup) 函数配置服务和应用的请求管道。 `Startup` 在应用程序中注册一组中间件。 对于每个请求，应用程序使用现有处理程序集的链接列表的头指针调用各个中间件组件。 每个中间件组件可以向请求处理管道添加一个或多个处理程序。 这是通过返回的处理程序是列表的新领导的引用实现。 每个处理程序负责记住并调用列表中的下一个处理程序。 使用 ASP.NET Core 时，应用程序的入口点是 `Startup`，不再具有 Global.asax 的依赖关系。 结合使用 OWIN 和 .NET Framework 时，使用的管道应如下所示：
 
 [!code-csharp[Main](samples/webapi-owin.cs)]
 
 这会配置默认路由，默认为 XmlSerialization 而不是 Json。 根据需要向此管道添加其他中间件（加载服务、配置设置、静态文件等）。
 
-ASP.NET Core 使用相似的方法，但是不依赖 OWIN 处理条目。 相反，它通过 Program.cs `Main` 方法（类似于控制台应用程序）完成该操作，并加载 `Startup`。
+ASP.NET Core 使用相似的方法，但是不依赖 OWIN 处理条目。 相反，这通过*Program.cs* `Main`方法 （类似于控制台应用程序） 和`Startup`加载通过那里。
 
 [!code-csharp[Main](samples/program.cs)]
 
@@ -108,7 +108,7 @@ services.Configure<AppConfiguration>(Configuration.GetSection("AppConfiguration"
 注意：若要获取 ASP.NET Core 配置的更深入的参考信息，请参阅 [ASP.NET Core 中的配置](xref:fundamentals/configuration/index)。
 
 ## <a name="native-dependency-injection"></a>本机依存关系注入
-生成大型可缩放应用程序时，一个重要的目标是将组件和服务松散耦合。 [依存关系注入](xref:fundamentals/dependency-injection)是用于实现此目标的热门技术，并且它是 ASP.NET Core 的本机组件。
+生成大型可缩放应用程序时，一个重要的目标是将组件和服务松散耦合。 [依赖关系注入](xref:fundamentals/dependency-injection)是一种常用技术实现此操作，并且它是 ASP.NET Core 本机组件。
 
 在 ASP.NET 应用程序中，开发人员依赖第三方库实现依存关系注入。 其中的一个库是 Microsoft 模式和做法提供的 [Unity](https://github.com/unitycontainer/unity)。 
 

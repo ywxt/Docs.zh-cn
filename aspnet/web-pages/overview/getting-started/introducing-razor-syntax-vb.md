@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 42beb4ffcff9974230ba0c4a2f243020bcd4f99d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8f5d223a5944d8adb9fe65c89e87829d18d1c7ee
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>使用 Razor 语法 (Visual Basic) 的 ASP.NET Web 编程简介
 ====================
@@ -58,7 +58,7 @@ ms.lasthandoff: 11/10/2017
 
 在浏览器中所显示的结果：
 
-![Razor Img1](introducing-razor-syntax-vb/_static/image1.jpg)
+![Razor-Img1](introducing-razor-syntax-vb/_static/image1.jpg)
 
 > [!TIP] 
 > 
@@ -79,7 +79,7 @@ ms.lasthandoff: 11/10/2017
 
 在浏览器中所显示的结果：
 
-![Razor Img2](introducing-razor-syntax-vb/_static/image2.jpg)
+![Razor-Img2](introducing-razor-syntax-vb/_static/image2.jpg)
 
 ### <a name="3-inside-a-block-you-end-each-code-statement-with-a-line-break"></a>3.在块中，你最终通过行中断每个代码语句
 
@@ -95,7 +95,7 @@ ms.lasthandoff: 11/10/2017
 
 在浏览器中所显示的结果：
 
-![Razor Img3](introducing-razor-syntax-vb/_static/image3.jpg)
+![Razor-Img3](introducing-razor-syntax-vb/_static/image3.jpg)
 
 ### <a name="5-you-enclose-literal-string-values-in-double-quotation-marks"></a>5.将文本字符串值括在双引号内
 
@@ -109,7 +109,7 @@ A*字符串*是作为文本处理的字符的序列。 若要指定一个字符�
 
 在浏览器中所显示的结果：
 
-![Razor Img4](introducing-razor-syntax-vb/_static/image4.jpg)
+![Razor-Img4](introducing-razor-syntax-vb/_static/image4.jpg)
 
 ### <a name="6-visual-basic-code-is-not-case-sensitive"></a>6.Visual Basic 代码不区分大小写
 
@@ -133,7 +133,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，和
 
 在浏览器中所显示的结果：
 
-![Razor Img5](introducing-razor-syntax-vb/_static/image6.jpg)
+![Razor-Img5](introducing-razor-syntax-vb/_static/image6.jpg)
 
 ### <a name="8-you-can-write-code-that-makes-decisions"></a>8.你可以编写做出决策的代码
 
@@ -145,7 +145,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，和
 
 在浏览器中所显示的结果 (单击后**提交**):
 
-![Razor Img6](introducing-razor-syntax-vb/_static/image7.jpg)
+![Razor-Img6](introducing-razor-syntax-vb/_static/image7.jpg)
 
 > [!TIP] 
 > 
@@ -176,7 +176,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，和
     - `<form>`标记包含`method="post"`属性。 此步骤指定当用户单击**添加**，页面将发送到服务器使用 HTTP POST 方法。 当提交页面，则代码`If IsPost`计算结果为 true，条件的代码运行时，显示的添加数字结果。
 3. 保存页并在浏览器中运行它。 (请确保页中选择**文件**工作区之前运行它。)输入两个整数，然后单击**添加**按钮。
 
-    ![Razor Img7](introducing-razor-syntax-vb/_static/image8.jpg)
+    ![Razor-Img7](introducing-razor-syntax-vb/_static/image8.jpg)
 
 ## <a name="visual-basic-language-and-syntax"></a>Visual Basic 语言和语法
 
@@ -257,7 +257,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，和
 
 在浏览器中所显示的结果：
 
-![Razor Img9](introducing-razor-syntax-vb/_static/image9.jpg)
+![Razor-Img9](introducing-razor-syntax-vb/_static/image9.jpg)
 
 ### <a name="converting-and-testing-data-types"></a>转换和测试数据类型
 
@@ -275,7 +275,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，和
 
 下表列出了一些常见的转换和测试方法的变量。
 
-| **方法** | **描述** | **示例** |
+| **方法** | **说明** | **示例** |
 | --- | --- | --- |
 | `AsInt(), IsInt()` | 将表示为整数的字符串转换 (如&quot;593&quot;) 为整数。 | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)] |
 | `AsBool(), IsBool()` | 将转换字符串如下所示&quot;true&quot;或&quot;false&quot;到类型为 Boolean 类型。 | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)] |
@@ -288,7 +288,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，和
 
 运算符是命令的关键字或哪种类型的表达式中执行将告诉 ASP.NET 的字符。 Visual Basic 支持许多运算符，但你只需以识别一些若要开始开发 ASP.NET web 页。 下表总结了最常用的运算符。
 
-| **Operator** | **描述** | **示例** |
+| **Operator** | **说明** | **示例** |
 | --- | --- | --- |
 | `+ - * /` | 在数值表达式中使用的数学运算符。 | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)] |
 | `=` | 分配和相等性。 根据上下文，或者将语句右侧的值分配给左侧，对象，或检查值相等。 | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)] |
@@ -384,7 +384,7 @@ ASP.NET 服务器代码允许你执行基于条件和重复特定次数，即代
 
 在浏览器中显示的最后两个条件块的结果：
 
-![Razor Img10](introducing-razor-syntax-vb/_static/image10.jpg)
+![Razor-Img10](introducing-razor-syntax-vb/_static/image10.jpg)
 
 ### <a name="looping-code"></a>循环的代码
 
@@ -400,7 +400,7 @@ ASP.NET 服务器代码允许你执行基于条件和重复特定次数，即代
 
 之间的代码行`For`和`Next`行包含每个迭代的循环中运行的代码。 标记将创建一个新段落 (`<p>`元素) 每个时间，并将行添加到输出中，显示的值 i （计数器）。 运行此页时，该示例将创建 11 行显示输出，与每个行，该值指示项数中的文本。
 
-![Razor Img11](introducing-razor-syntax-vb/_static/image11.jpg)
+![Razor-Img11](introducing-razor-syntax-vb/_static/image11.jpg)
 
 如果你正在使用集合或数组，则通常会使用`For Each`循环。 集合是一组类似对象和`For Each`循环的允许您执行的任务集合中的每个项。 这种类型的循环是方便对于集合，因为与不同`For`循环中，你无需递增计数器或设置一个限制。 相反，`For Each`循环代码只需继续访问该集合之前完成。
 
@@ -410,7 +410,7 @@ ASP.NET 服务器代码允许你执行基于条件和重复特定次数，即代
 
 `For Each`关键字后跟表示单个项集合中的变量 (在示例中， `myItem`) 后, 跟`In`关键字后, 跟你想要循环访问的集合。 正文中`For Each`循环中，你可以访问使用你之前声明的变量的当前项。
 
-![Razor Img12](introducing-razor-syntax-vb/_static/image12.jpg)
+![Razor-Img12](introducing-razor-syntax-vb/_static/image12.jpg)
 
 若要创建更通用的循环，使用`Do While`语句：
 
@@ -451,7 +451,7 @@ ASP.NET 服务器代码允许你执行基于条件和重复特定次数，即代
 
 在浏览器中显示的字符串数组代码的输出：
 
-![Razor Img13](introducing-razor-syntax-vb/_static/image13.jpg)
+![Razor-Img13](introducing-razor-syntax-vb/_static/image13.jpg)
 
 字典是键/值对的集合，其中提供的密钥 （或名称） 来设置或检索相应的值：
 
@@ -493,14 +493,14 @@ ASP.NET 服务器代码允许你执行基于条件和重复特定次数，即代
 
 ### <a name="try-catch-statements"></a>Try Catch 语句
 
-通常将在代码中可能会失败的原因，在你的控制范围具有语句。 例如: 
+通常将在代码中可能会失败的原因，在你的控制范围具有语句。 例如:
 
 - 如果你的代码尝试打开、 创建、 读取或写入文件时，可能会出现各种类型的错误。 所需的文件可能不存在，则可能锁定，代码可能不具有权限，依次类推。
 - 同样，如果你的代码尝试更新数据库中的记录，可以有权限问题、 与数据库的连接可能会丢弃，要保存的数据可能无效，依次类推。
 
 编程术语中，这些情况下调用*异常*。 如果你的代码遇到的异常，它会生成 （引发） 错误消息，它是，在最好的情况，令人讨厌的用户。
 
-![Razor Img14](introducing-razor-syntax-vb/_static/image14.jpg)
+![Razor-Img14](introducing-razor-syntax-vb/_static/image14.jpg)
 
 在情况下，你的代码可能会遇到的异常，并且为了避免这种类型的错误消息，你可以使用`Try/Catch`语句。 在`Try`语句，你将运行要检查的代码。 在一个或多个`Catch`语句，则你可以查看为特定可能发生的错误 （特定类型的异常）。 可以包括任意多个`Catch`语句作为你需要查找你要预测，将出现的错误。
 
@@ -518,5 +518,5 @@ ASP.NET 服务器代码允许你执行基于条件和重复特定次数，即代
 
 ### <a name="reference-documentation"></a>参考文档
 
-- [ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ee532866.aspx)
-- [Visual Basic 语言](https://msdn.microsoft.com/en-us/library/2x7h1hfk.aspx)
+- [ASP.NET 2.0](https://msdn.microsoft.com/library/ee532866.aspx)
+- [Visual Basic 语言](https://msdn.microsoft.com/library/2x7h1hfk.aspx)

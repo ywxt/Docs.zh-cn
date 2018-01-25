@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bootstrap
-ms.openlocfilehash: aee3304515686fc8e45e8e2aafb79d957219f94a
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 4332dce4c341cb8e5c241a67547048301ae9a8b1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="building-beautiful-responsive-sites-with-bootstrap"></a>生成使用 Bootstrap 美观、 响应迅速站点
 
@@ -214,8 +214,8 @@ Bootstrap 包括从 Glyphicons 图标集 ([http://glyphicons.com](http://glyphic
 
 ## <a name="javascript-support"></a>JavaScript 支持
 
-Bootstrap 的 JavaScript 库包括对包含的组件，使您可以控制其行为以编程方式在你的应用程序的 API 支持。 此外， *bootstrap.js*包括超过 12 个自定义 jQuery 插件，提供其他功能，例如转换，模式对话框，向下滚动 （更新样式基于用户具有滚动文档中的何处） 的检测，因此，它们不滚动出屏幕折叠到窗口的行为、 行李传送带和将附加菜单。 没有足够的空间来涵盖所有 Bootstrap – 若要了解详细信息，请访问内置的 JavaScript 外接程序[http://getbootstrap.com/javascript/](http://getbootstrap.com/javascript/)。
+Bootstrap 的 JavaScript 库包括对包含的组件，使您可以控制其行为以编程方式在你的应用程序的 API 支持。 此外， *bootstrap.js*包括超过 12 个自定义 jQuery 插件，提供其他功能，例如转换，模式对话框，向下滚动 （更新样式基于用户具有滚动文档中的何处） 的检测，因此，它们不会滚动出屏幕折叠到窗口的行为、 行李传送带和将附加菜单。 没有足够的空间来涵盖所有 Bootstrap – 若要了解详细信息，请访问内置的 JavaScript 外接程序[http://getbootstrap.com/javascript/](http://getbootstrap.com/javascript/)。
 
 ## <a name="summary"></a>摘要
 
-Bootstrap 提供一个可用来快速和高效布局和样式各种网站和应用程序的 web 框架。 其基本版式和样式提供通过可以手工编写或商业上购买的自定义主题支持可以容易地操作获得愉快外观和感觉。 它支持的 web 组件已过去的时间将需要昂贵的第三方控件，若要完成，同时支持现代和打开 web 标准的主机。
+Bootstrap 提供一个可用来快速和高效布局和样式各种网站和应用程序的 web 框架。 其基本版式和样式提供通过可以手工编写或商业上购买的自定义主题支持可以容易地操作获得愉快外观和感觉。 它支持的 web 组件在过去会要求昂贵的第三方控件，若要完成，同时支持现代和打开 web 标准的主机。

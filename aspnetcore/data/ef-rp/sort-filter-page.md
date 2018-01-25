@@ -8,11 +8,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 08f00e183dd8a8daa883d0b9ff15698b3a39f625
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 24649374b71da39d638d943617a219d45f064846
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>排序、 筛选、 分页和分组-带有 Razor 页 (8 的 3) 的 EF 核心
 
@@ -71,7 +71,7 @@ ms.lasthandoff: 01/19/2018
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=6-)]
 
- 当`IQueryable`创建或修改，没有查询发送到数据库。 查询未执行直到`IQueryable`对象转换为集合。 `IQueryable`将转换为集合通过调用方法，如`ToListAsync`。 因此，`IQueryable`代码将不会执行以下语句之前的单个查询中的结果：
+ 当`IQueryable`创建或修改，没有查询发送到数据库。 直到执行查询不`IQueryable`对象转换为集合。 `IQueryable`将转换为集合通过调用方法，如`ToListAsync`。 因此，`IQueryable`代码将不会执行以下语句之前的单个查询中的结果：
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnlyRtn)]
 
@@ -139,7 +139,7 @@ ms.lasthandoff: 01/19/2018
 
 [!code-html[](intro/samples/cu/Pages/Students/Index3.cshtml?highlight=14-23&range=1-25)]
 
-前面的代码使用`<form>`[标记帮助器](xref:mvc/views/tag-helpers/intro)添加搜索文本框和按钮。 默认情况下，`<form>`标记帮助器提交 post 的窗体数据。 使用 POST，参数进行传递 HTTP 消息正文中，不能在 URL。 当使用 HTTP GET 时，窗体数据是在 URL 中传递作为查询字符串。 传递具有查询字符串的数据使用户能够创建 URL 的书签。 [W3C 准则](https://www.w3.org/2001/tag/doc/whenToUseGet.html)建议的操作未导致更新时，应使用 GET。
+前面的代码使用`<form>`[标记帮助器](xref:mvc/views/tag-helpers/intro)添加搜索文本框和按钮。 默认情况下，`<form>`标记帮助器提交 post 的窗体数据。 使用 POST，参数进行传递 HTTP 消息正文中，不能在 URL。 当使用 HTTP GET 时，窗体数据是在 URL 中传递作为查询字符串。 传递具有查询字符串的数据使用户能够创建 URL 的书签。 [W3C 准则](https://www.w3.org/2001/tag/doc/whenToUseGet.html)建议操作不会导致更新时，应使用 GET。
 
 测试应用：
 

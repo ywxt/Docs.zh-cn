@@ -11,11 +11,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 41f014e1d23d46ed28c8c1be5ee92f1a6d878ad9
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 8156bd1c7cfc111a6a121a89d845ca284ee1b7af
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>从.NET 客户端 (C#) 调用 Web API
 ====================
@@ -23,16 +23,16 @@ ms.lasthandoff: 12/15/2017
 
 [下载已完成的项目](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample)
 
-本教程演示如何从.NET 应用程序，调用 web API 使用[System.Net.Http.HttpClient。](https://msdn.microsoft.com/en-us/library/system.net.http.httpclient(v=vs.110).aspx)
+本教程演示如何从.NET 应用程序，调用 web API 使用[System.Net.Http.HttpClient。](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)
 
 在本教程中，客户端应用程序是编写使用以下 web API:
 
 | 操作 | HTTP 方法 | 相对 URI |
 | --- | --- | --- |
-| 获取按 ID 的产品 | GET | /api/产品/*id* |
+| 获取按 ID 的产品 | GET | /api/products/*id* |
 | 创建新产品 | 发布 | / api/产品 |
-| 将产品更新 | PUT | /api/产品/*id* |
-| 删除产品 | DELETE | /api/产品/*id* |
+| 将产品更新 | PUT | /api/products/*id* |
+| 删除产品 | DELETE | /api/products/*id* |
 
 若要了解如何实现此 API 与 ASP.NET Web API，请参阅[创建该支持 CRUD 操作的 Web API](xref:web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 )。
@@ -109,7 +109,7 @@ Json.NET 是用于.NET 的受欢迎的高性能 JSON 框架。
 
 **GetAsync**方法可发送 HTTP GET 请求。 当方法完成时，它将返回**HttpResponseMessage**包含 HTTP 响应。 如果在响应中的状态代码是一个成功代码，响应正文将包含的 JSON 表示形式产品。 调用**ReadAsAsync**进行反序列化到 JSON 负载`Product`实例。 **ReadAsAsync**方法是异步的因为响应正文可以是任意大。
 
-**HttpClient**当 HTTP 响应包含错误代码时不引发异常。 相反， **IsSuccessStatusCode**属性是**false**如果状态为错误代码。 如果想要将异常视为的 HTTP 错误代码，调用[HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/en-us/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx)响应对象上。 `EnsureSuccessStatusCode`如果超出了范围 200 状态代码引发异常&ndash;299。 请注意， **HttpClient**可以出于其他原因引发异常&mdash;例如，如果在请求超时时。
+**HttpClient**当 HTTP 响应包含错误代码时不引发异常。 相反， **IsSuccessStatusCode**属性是**false**如果状态为错误代码。 如果想要将异常视为的 HTTP 错误代码，调用[HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx)响应对象上。 `EnsureSuccessStatusCode`如果超出了范围 200 状态代码引发异常&ndash;299。 请注意， **HttpClient**可以出于其他原因引发异常&mdash;例如，如果在请求超时时。
 
 <a id="MediaTypeFormatters"></a>
 ### <a name="media-type-formatters-to-deserialize"></a>媒体类型格式化程序进行反序列化
@@ -167,7 +167,7 @@ resp.Content.ReadAsAsync<IEnumerable<Product>>(formatters);
 
 测试客户端应用程序：
 
-1. [下载](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server)并运行服务器应用程序。 [下载说明](https://docs.microsoft.com/en-us/aspnet/core/tutorials/#how-to-download-a-sample)。 验证服务器应用程序工作。 有关 exaxmple，`http://localhost:64195/api/products`应返回产品的列表。
+1. [下载](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server)并运行服务器应用程序。 [下载说明](https://docs.microsoft.com/aspnet/core/tutorials/#how-to-download-a-sample)。 验证服务器应用程序工作。 有关 exaxmple，`http://localhost:64195/api/products`应返回产品的列表。
 2. 设置 HTTP 请求的基 URI。 将端口号更改为服务器应用程序中使用的端口。
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 

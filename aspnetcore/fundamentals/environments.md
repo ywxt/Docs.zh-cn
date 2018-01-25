@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/environments
-ms.openlocfilehash: 83d1593d46761b1c00aa431cfdcde59cb3b28b65
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 60a1543ce11d08490e6df0eb84f980672ecfe672
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="working-with-multiple-environments"></a>使用多个环境
 
@@ -83,7 +83,7 @@ Visual Studio**调试**选项卡提供了一个 GUI 以编辑*launchSettings.jso
 在重新启动 web 服务器之前，对项目配置文件所做更改可能不会生效。 必须重启 kestrel，然后它将检测到其环境所做的更改。
 
 >[!WARNING]
-> *launchSettings.json*不应该存储机密。 [机密管理器工具](xref:security/app-secrets)可以用于存储以进行本地开发的机密。
+> *launchSettings.json*不应存储机密。 [机密管理器工具](xref:security/app-secrets)可以用于存储以进行本地开发的机密。
 
 ### <a name="production"></a>生产
 

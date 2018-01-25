@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 505cca303b5569b2f676adab767d742cb5cd21a7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: de31a9dffb95b863a4ec38b74fd2c6e03f287a7f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-tfs-build-server-for-web-deployment"></a>配置用于 Web 部署的 TFS 生成服务器
 ====================
@@ -58,13 +58,13 @@ ms.lasthandoff: 11/10/2017
 - 创建*生成控制器*和一个或多个*生成代理*。 每个生成控制器管理一套生成代理。 当您对生成进行排队时，生成控制器会将生成任务分配给可用的生成代理。 在 TFS 中的每个团队项目集合映射到单个生成控制器。
 - 配置你的生成输出将放置文件夹。 这是网络共享。 任何生成输出，与 web 部署包类似，发送到投递文件夹。
 
-[管理 Team Foundation Build](https://msdn.microsoft.com/en-us/library/ms252495.aspx) MSDN 上的第章包含所需执行这些任务的所有资源：
+[管理 Team Foundation Build](https://msdn.microsoft.com/library/ms252495.aspx) MSDN 上的第章包含所需执行这些任务的所有资源：
 
-- 有关 Team Foundation Build 的概念性概述，包括生成服务、 生成控制器和生成代理，请参阅[了解 Team Foundation Build 系统](https://msdn.microsoft.com/en-us/library/dd793166.aspx)。
-- 有关安装和配置生成服务的信息，请参阅[配置生成计算机](https://msdn.microsoft.com/en-us/library/ms181712.aspx)。
-- 有关创建生成控制器的信息，请参阅[创建和使用生成的控制器工作](https://msdn.microsoft.com/en-us/library/ee330987.aspx)。
-- 有关创建生成代理的信息，请参阅[创建和使用生成代理工作](https://msdn.microsoft.com/en-us/library/bb399135.aspx)。
-- 有关创建和配置的放置文件夹的信息，请参阅[设置放置文件夹](https://msdn.microsoft.com/en-us/library/bb778394.aspx)。
+- 有关 Team Foundation Build 的概念性概述，包括生成服务、 生成控制器和生成代理，请参阅[了解 Team Foundation Build 系统](https://msdn.microsoft.com/library/dd793166.aspx)。
+- 有关安装和配置生成服务的信息，请参阅[配置生成计算机](https://msdn.microsoft.com/library/ms181712.aspx)。
+- 有关创建生成控制器的信息，请参阅[创建和使用生成的控制器工作](https://msdn.microsoft.com/library/ee330987.aspx)。
+- 有关创建生成代理的信息，请参阅[创建和使用生成代理工作](https://msdn.microsoft.com/library/bb399135.aspx)。
+- 有关创建和配置的放置文件夹的信息，请参阅[设置放置文件夹](https://msdn.microsoft.com/library/bb778394.aspx)。
 
 ## <a name="install-required-products-and-components"></a>安装必需的产品和组件
 
@@ -114,7 +114,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="further-reading"></a>其他阅读材料
 
-使用团队生成的更多常规指南，请参阅[管理 Team Foundation Build](https://msdn.microsoft.com/en-us/library/ms252495.aspx)。
+使用团队生成的更多常规指南，请参阅[管理 Team Foundation Build](https://msdn.microsoft.com/library/ms252495.aspx)。
 
 >[!div class="step-by-step"]
 [上一页](adding-content-to-source-control.md)

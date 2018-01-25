@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/purpose-strings
-ms.openlocfilehash: b1e95c9d0aa8195aa73fddfb97a4079e67a351bf
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 181d2ae85f38051ea12c7b7ac79198ec05f36bec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="purpose-strings"></a>目的字符串
 
@@ -53,9 +53,9 @@ ms.lasthandoff: 01/19/2018
 
 * 两个用途自变量是等效的当且仅当它们包含相同的字符串 （使用序号比较器） 中的顺序相同。 单一用途参数等效于相应的单个元素目的数组。
 
-* 两个`IDataProtector`对象相等，当且仅当它们创建等效项从`IDataProtectionProvider`对象，并且等效目的形参。
+* 两个`IDataProtector`对象相等，当且仅当它们在创建等效项从`IDataProtectionProvider`对象，并且等效目的形参。
 
 * 为给定`IDataProtector`对象、 调用`Unprotect(protectedData)`将返回原始`unprotectedData`当且仅当`protectedData := Protect(unprotectedData)`有关等效`IDataProtector`对象。
 
 > [!NOTE]
-> 我们不会考虑的如果某些组件有意选择已知与另一个组件发生冲突的目的字符串。 此类组件将考虑恶意内容，实质上是和此系统不应以中，恶意代码已在运行的工作进程内提供的安全保证。
+> 我们不会考虑的如果某些组件有意选择已知与另一个组件发生冲突的目的字符串。 此类组件将考虑恶意内容，实质上是和此系统并不旨在中，恶意代码已在运行的工作进程内提供的安全保证。

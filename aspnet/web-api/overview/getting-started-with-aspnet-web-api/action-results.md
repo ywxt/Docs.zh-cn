@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/action-results
 msc.type: authoredcontent
-ms.openlocfilehash: 68b82661b97434795e1c306b168033dfcde529bc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d0db5c6d45020861d7295ab1db989caee525fff9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="action-results-in-web-api-2"></a>Web API 2 中的操作结果
 ====================
@@ -56,7 +56,7 @@ HTTP 响应：
 
 ## <a name="httpresponsemessage"></a>HttpResponseMessage
 
-如果操作返回[HttpResponseMessage](https://msdn.microsoft.com/en-us/library/system.net.http.httpresponsemessage.aspx)，Web API 将返回的值转换为 HTTP 响应消息中，直接使用的属性**HttpResponseMessage**要填充对象响应。
+如果操作返回[HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx)，Web API 将返回的值转换为 HTTP 响应消息中，直接使用的属性**HttpResponseMessage**要填充对象响应。
 
 此选项提供了大量的响应消息上的控件。 例如，以下的控制器操作设置的缓存控制标头。
 
@@ -98,9 +98,9 @@ Web API 使用 Accept 标头在请求中选择格式化程序。 有关详细信
 
 [!code-console[Main](action-results/samples/sample9.cmd)]
 
-更多时候，你将使用**IHttpActionResult**中定义的实现 **[System.Web.Http.Results](https://msdn.microsoft.com/en-us/library/system.web.http.results.aspx)** 命名空间。 **ApiController**类定义返回这些内置操作结果的帮助器方法。
+更多时候，你将使用**IHttpActionResult**中定义的实现 **[System.Web.Http.Results](https://msdn.microsoft.com/library/system.web.http.results.aspx)** 命名空间。 **ApiController**类定义返回这些内置操作结果的帮助器方法。
 
-在下面的示例中，如果请求不匹配现有产品 ID，控制器调用[ApiController.NotFound](https://msdn.microsoft.com/en-us/library/system.web.http.apicontroller.notfound.aspx)创建 404 （未找到） 响应。 否则，控制器会调用[ApiController.OK](https://msdn.microsoft.com/en-us/library/dn314591.aspx)，这将创建一个 200 (OK) 响应，包含产品。
+在下面的示例中，如果请求不匹配现有产品 ID，控制器调用[ApiController.NotFound](https://msdn.microsoft.com/library/system.web.http.apicontroller.notfound.aspx)创建 404 （未找到） 响应。 否则，控制器会调用[ApiController.OK](https://msdn.microsoft.com/library/dn314591.aspx)，这将创建一个 200 (OK) 响应，包含产品。
 
 [!code-csharp[Main](action-results/samples/sample10.cs)]
 

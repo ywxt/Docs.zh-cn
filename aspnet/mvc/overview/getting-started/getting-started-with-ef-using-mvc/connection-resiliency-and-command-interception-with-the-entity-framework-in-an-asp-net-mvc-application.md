@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: fecdd582918a61f3d01519c75d159f9c601c8223
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1a28284e203904cc943e5e46b369e8a58ea5c820
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a>连接复原和命令截获与实体框架中的 ASP.NET MVC 应用程序
 ====================
@@ -49,30 +49,30 @@ ms.lasthandoff: 11/10/2017
 
 你可以配置这些设置的任何数据库环境中支持的实体框架提供程序中，手动但通常适用于的联机应用程序使用 Windows Azure SQL 数据库的默认值已为你配置和这些都是你将实施 Contoso 大学应用程序的设置。
 
-你所要做，以启用连接复原能力是中派生自程序集创建一个类[DbConfiguration](https://msdn.microsoft.com/en-us/data/jj680699.aspx)类和在该类中设置 SQL 数据库*执行策略*，即 EF 中另一个术语*重试策略*。
+你所要做，以启用连接复原能力是中派生自程序集创建一个类[DbConfiguration](https://msdn.microsoft.com/data/jj680699.aspx)类和在该类中设置 SQL 数据库*执行策略*，即 EF 中另一个术语*重试策略*。
 
 1. 在 DAL 文件夹中，添加一个名为的类文件*SchoolConfiguration.cs*。
 2. 模板代码替换为以下代码：
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-    实体框架将自动运行它派生自的类中找到的代码`DbConfiguration`。 你可以使用`DbConfiguration`类来执行此在中否则所执行的操作的代码中的配置任务*Web.config*文件。 有关详细信息，请参阅[EntityFramework 基于代码的配置](https://msdn.microsoft.com/en-us/data/jj680699)。
+    实体框架将自动运行它派生自的类中找到的代码`DbConfiguration`。 你可以使用`DbConfiguration`类来执行此在中否则所执行的操作的代码中的配置任务*Web.config*文件。 有关详细信息，请参阅[EntityFramework 基于代码的配置](https://msdn.microsoft.com/data/jj680699)。
 3. 在*StudentController.cs*，添加`using`语句`System.Data.Entity.Infrastructure`。
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
-4. 更改所有`catch`阻止该 catch`DataException`异常，以便它们捕获`RetryLimitExceededException`异常相反。 例如: 
+4. 更改所有`catch`阻止该 catch`DataException`异常，以便它们捕获`RetryLimitExceededException`异常相反。 例如:
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample3.cs?highlight=1)]
 
     已使用`DataException`来尝试标识可能是暂时的以便提供友好的"重试"消息的错误。 但现在，你已启用的重试策略，可能是暂时性的唯一错误将已尝试并失败几次和实际返回的异常将包装在`RetryLimitExceededException`异常。
 
-有关详细信息，请参阅[实体框架连接复原 / 重试逻辑](https://msdn.microsoft.com/en-us/data/dn456835)。
+有关详细信息，请参阅[实体框架连接复原 / 重试逻辑](https://msdn.microsoft.com/data/dn456835)。
 
 ## <a name="enable-command-interception"></a>启用命令截获
 
 现在，你已启用的重试策略，如何进行你测试以验证它是否按预期工作？ 不会轻易地强制暂时性错误发生，尤其是当您在本地，运行和它将会特别困难，可以将实际的暂时性错误集成到自动的单元测试。 若要测试连接复原功能，需要一种方法将截获实体框架将发送到 SQL Server 的查询并将替换为通常暂时性异常类型的 SQL Server 响应。
 
-此外可以使用查询截获，以实现云应用程序的最佳做法：[记录延迟和成功或失败对外部服务的所有调用](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log)例如数据库服务。 从 EF6 提供[专用日志记录 API](https://msdn.microsoft.com/en-us/data/dn469464) ，可以使其更轻松地执行日志记录，但在本教程的本部分中，你将了解如何使用实体框架的[截获功能](https://msdn.microsoft.com/en-us/data/dn469464)直接，同时包括这两者日志记录和用于模拟暂时性错误。
+此外可以使用查询截获，以实现云应用程序的最佳做法：[记录延迟和成功或失败对外部服务的所有调用](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log)例如数据库服务。 从 EF6 提供[专用日志记录 API](https://msdn.microsoft.com/data/dn469464) ，可以使其更轻松地执行日志记录，但在本教程的本部分中，你将了解如何使用实体框架的[截获功能](https://msdn.microsoft.com/data/dn469464)直接，同时包括这两者日志记录和用于模拟暂时性错误。
 
 ### <a name="create-a-logging-interface-and-class"></a>创建日志记录接口和类
 

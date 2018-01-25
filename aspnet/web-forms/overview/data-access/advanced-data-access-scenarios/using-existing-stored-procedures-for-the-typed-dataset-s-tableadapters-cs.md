@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 58b76f0ac07051496c6f34be41dcf20154e34674
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1f95a6868ccce8ce0dfa16a92486e705c42e1db4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>使用现有存储过程的类型化数据集的 Tableadapter (C#)
 ====================
@@ -200,7 +200,7 @@ Visual Studio 便于向数据库添加新的存储的过程。 允许 s 将新�
 
 通过定义该模板启动`TRY...CATCH`一直阻止，请熟悉 SQL Server 2005 的构造。 与类似`try...catch`C#，SQL 中的块`TRY...CATCH`执行中的语句块`TRY`块。 如果任何语句将引发错误，控制立即转移到其中`CATCH`块。
 
-如果没有执行 SQL 语句，该构成事务，错误`COMMIT TRANSACTION`语句提交所做的更改并完成该事务。 如果，但是，一条语句会导致出现错误，`ROLLBACK TRANSACTION`中`CATCH`块将数据库返回到其事务开始前的状态。 存储的过程也会引发错误使用[RAISERROR 命令](https://msdn.microsoft.com/en-us/library/ms178592.aspx)，这将导致`SqlException`若要在应用程序中引发。
+如果没有执行 SQL 语句，该构成事务，错误`COMMIT TRANSACTION`语句提交所做的更改并完成该事务。 如果，但是，一条语句会导致出现错误，`ROLLBACK TRANSACTION`中`CATCH`块将数据库返回到其事务开始前的状态。 存储的过程也会引发错误使用[RAISERROR 命令](https://msdn.microsoft.com/library/ms178592.aspx)，这将导致`SqlException`若要在应用程序中引发。
 
 > [!NOTE]
 > 由于`TRY...CATCH`块是新的 SQL Server 2005，如果你使用的较旧版本的 Microsoft SQL Server，则上面的模板将不会起作用。 如果你未使用 SQL Server 2005，请查阅[在 SQL Server 存储过程中管理事务](http://www.4guysfromrolla.com/webtech/080305-1.shtml)会使用其他版本的 SQL Server 的模板。

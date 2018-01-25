@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: c2e7a768c2cf9900731b822ec187093a4b250ead
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e5610753968328e5d0f1dba4cbbfed08480fd773
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-build-definition-that-supports-deployment"></a>创建生成定义支持部署
 ====================
@@ -42,7 +42,7 @@ ms.lasthandoff: 11/10/2017
 - 在生成过程中的各种其他参数。
 
 > [!NOTE]
-> 生成定义的详细信息，请参阅[定义生成过程](https://msdn.microsoft.com/en-us/library/ms181715.aspx)。
+> 生成定义的详细信息，请参阅[定义生成过程](https://msdn.microsoft.com/library/ms181715.aspx)。
 
 
 本主题将演示如何创建使用 CI 使用，请生成定义，以便开发人员签入新的内容时触发生成。 如果生成成功，则生成服务运行将解决方案部署到测试环境的自定义项目文件。
@@ -99,7 +99,7 @@ ms.lasthandoff: 11/10/2017
 11. 浏览到与其控制部署过程，选择的文件，然后单击自定义项目文件的位置**确定**。
 
     ![](creating-a-build-definition-that-supports-deployment/_static/image6.png)
-12. **生成的项**对话框现在应显示两个项。 单击“确定”。
+12. **生成的项**对话框现在应显示两个项。 单击 **“确定”**。
 
     ![](creating-a-build-definition-that-supports-deployment/_static/image7.png)
 13. 上**过程**选项卡上，在**生成过程参数**表中，展开**高级**部分。
@@ -149,7 +149,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="monitor-the-build-process"></a>监视器生成过程
 
-TFS 提供广泛的功能来帮助你监视生成过程。 例如，TFS 可以向你发送一封电子邮件或生成完成后，在任务栏通知区域显示警报。 有关详细信息，请参阅[运行和监视器生成](https://msdn.microsoft.com/en-us/library/ms181721.aspx)。
+TFS 提供广泛的功能来帮助你监视生成过程。 例如，TFS 可以向你发送一封电子邮件或生成完成后，在任务栏通知区域显示警报。 有关详细信息，请参阅[运行和监视器生成](https://msdn.microsoft.com/library/ms181721.aspx)。
 
 ## <a name="conclusion"></a>结束语
 
@@ -159,7 +159,7 @@ TFS 提供广泛的功能来帮助你监视生成过程。 例如，TFS 可以�
 
 ## <a name="further-reading"></a>其他阅读材料
 
-创建生成定义的详细信息，请参阅[创建基本生成定义](https://msdn.microsoft.com/en-us/library/ms181716.aspx)和[定义生成过程](https://msdn.microsoft.com/en-us/library/ms181715.aspx)。 队列生成的更多指南，请参阅[对生成进行排队](https://msdn.microsoft.com/en-us/library/ms181722.aspx)。
+创建生成定义的详细信息，请参阅[创建基本生成定义](https://msdn.microsoft.com/library/ms181716.aspx)和[定义生成过程](https://msdn.microsoft.com/library/ms181715.aspx)。 队列生成的更多指南，请参阅[对生成进行排队](https://msdn.microsoft.com/library/ms181722.aspx)。
 
 >[!div class="step-by-step"]
 [上一页](configuring-a-tfs-build-server-for-web-deployment.md)

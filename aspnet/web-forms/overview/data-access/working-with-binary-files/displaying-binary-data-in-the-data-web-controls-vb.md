@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1b9dadbfb82790a08a25a5c0f759b733cb59eb60
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: df79748bf5734ffcb9eb81ca089aeded0e63bdc5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-binary-data-in-the-data-web-controls-vb"></a>在数据 Web 控件 (VB) 中显示二进制数据
 ====================
@@ -129,7 +129,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-vb[Main](displaying-binary-data-in-the-data-web-controls-vb/samples/sample3.vb)]
 
-此方法可确定如果传入的`Object`值是一个数据库`NULL`，并且如果是这样，则返回一个消息，表明类别缺少小册子。 否则为如果没有`BrochurePath`值，它显示超链接中的 s。 请注意，如果`BrochurePath`值是将其提交 s 传入[`ResolveUrl(url)`方法](https://msdn.microsoft.com/en-us/library/system.web.ui.control.resolveurl.aspx)。 此方法会解析传入的*url*，并替换`~`字符与相应的虚拟路径。 例如，如果应用程序位于`/Tutorial55`，`ResolveUrl("~/Brochures/Meats.pdf")`将返回`/Tutorial55/Brochures/Meat.pdf`。
+此方法可确定如果传入的`Object`值是一个数据库`NULL`，并且如果是这样，则返回一个消息，表明类别缺少小册子。 否则为如果没有`BrochurePath`值，它显示超链接中的 s。 请注意，如果`BrochurePath`值是将其提交 s 传入[`ResolveUrl(url)`方法](https://msdn.microsoft.com/library/system.web.ui.control.resolveurl.aspx)。 此方法会解析传入的*url*，并替换`~`字符与相应的虚拟路径。 例如，如果应用程序位于`/Tutorial55`，`ResolveUrl("~/Brochures/Meats.pdf")`将返回`/Tutorial55/Brochures/Meat.pdf`。
 
 在应用这些更改后，图 10 显示的页。 请注意，数据项类别的`BrochurePath`字段现在显示的文本没有小册子可用。
 
@@ -164,7 +164,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-vb[Main](displaying-binary-data-in-the-data-web-controls-vb/samples/sample6.vb)]
 
-此代码启动通过读取`CategoryID`查询字符串值转换为一个名为变量`categoryID`。 接下来，通过调用检索图片数据`CategoriesBLL`类的`GetCategoryWithBinaryDataByCategoryID(categoryID)`方法。 此数据就会归还客户端通过使用`Response.BinaryWrite(data)`方法，但在此情况称作之前`Picture`必须删除列值的 OLE 标头。 这通过创建实现`Byte`名为数组`strippedImageData`，将存放精确 78 小于在中的字符`Picture`列。 [ `Array.Copy`方法](https://msdn.microsoft.com/en-us/library/z50k9bft.aspx)用于中的数据复制`category.Picture`位置 78 开始转移到`strippedImageData`。
+此代码启动通过读取`CategoryID`查询字符串值转换为一个名为变量`categoryID`。 接下来，通过调用检索图片数据`CategoriesBLL`类的`GetCategoryWithBinaryDataByCategoryID(categoryID)`方法。 此数据就会归还客户端通过使用`Response.BinaryWrite(data)`方法，但在此情况称作之前`Picture`必须删除列值的 OLE 标头。 这通过创建实现`Byte`名为数组`strippedImageData`，将存放精确 78 小于在中的字符`Picture`列。 [ `Array.Copy`方法](https://msdn.microsoft.com/library/z50k9bft.aspx)用于中的数据复制`category.Picture`位置 78 开始转移到`strippedImageData`。
 
 `Response.ContentType`属性指定[MIME 类型](http://en.wikipedia.org/wiki/MIME)以便浏览器知道如何使其返回的内容。 由于`Categories`表的`Picture`列位图图像，使用位图 MIME 类型此处 (图像/bmp)。 如果省略的 MIME 类型，大多数浏览器仍将显示该图像正确因为它们可以推断基于图像文件 s 二进制数据的内容的类型。 但是，它比较明智的做法包括 MIME s 键入在可能的情况。 请参阅[Internet 号码分配机构的网站](http://www.iana.org/)有关的完整列表[MIME 媒体类型](http://www.iana.org/assignments/media-types/)。
 

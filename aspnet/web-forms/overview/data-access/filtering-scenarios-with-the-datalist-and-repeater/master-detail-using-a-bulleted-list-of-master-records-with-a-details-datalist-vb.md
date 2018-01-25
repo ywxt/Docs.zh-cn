@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 99d04c95b42402ae2bc72562a652b6edec5e9313
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 613ad1fb101a168c79310c9dc7bf731be264f889
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb"></a>主/从 Master 记录的项目符号列表使用详细信息 DataList (VB)
 ====================
@@ -210,7 +210,7 @@ DAL 和 BLL 完成后，我们重新准备好将绑定到此数据`Categories`�
 
 现在我们有`Categories`以及数量的产品类别列表中显示每个类别中的转发器。 转发器的每个类别，单击时，会回发时，在该点我们使用 LinkButton 需要显示在所选类别这些产品`CategoryProducts`DataList。
 
-我们面临的挑战之一是： 如何让 DataList 显示只需为所选类别这些产品。 在[母版/详细介绍与详细信息说明如何使用可选择的主 GridView](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md)可以选择的教程，我们已了解如何生成一个 GridView 其行、 与所选行 s 的详细信息显示在同一页面上的说明。 GridView 的 ObjectDataSource 返回有关使用的所有产品的信息`ProductsBLL`s`GetProducts()`方法，同时说明的 ObjectDataSource 检索有关所选的产品使用信息`GetProductsByProductID(productID)`方法。  *`productID`* 参数值以声明方式由 GridView s 的值与关联`SelectedValue`属性。 遗憾的是，中继器没有`SelectedValue`属性和不能用作参数源。
+我们面临的挑战之一是： 如何让 DataList 显示只需为所选类别这些产品。 在[母版/详细介绍与详细信息说明如何使用可选择的主 GridView](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md)可以选择的教程，我们已了解如何生成一个 GridView 其行、 与所选行 s 的详细信息显示在同一页面上的说明。 GridView 的 ObjectDataSource 返回有关使用的所有产品的信息`ProductsBLL`s`GetProducts()`方法，同时说明的 ObjectDataSource 检索有关所选的产品使用信息`GetProductsByProductID(productID)`方法。 *`productID`* 参数值以声明方式由 GridView s 的值与关联`SelectedValue`属性。 遗憾的是，中继器没有`SelectedValue`属性和不能用作参数源。
 
 > [!NOTE]
 > 这是显示在中继器中使用 LinkButton 时这些挑战之一。 我们已使用超链接传入`CategoryID`通过查询字符串相反，我们无法将该查询字符串字段用作源参数的值。
@@ -243,9 +243,9 @@ DAL 和 BLL 完成后，我们重新准备好将绑定到此数据`Categories`�
 
 目前， `CategoryProductsDataSource` ObjectDataSource s  *`categoryID`* 永远不会设置参数，以便查看网页时，将显示安装的产品。 我们需要做什么是将此参数值设置基于`CategoryID`的转发器中的被单击类别。 它引入了两个难题： 首先，如何执行我们确定何时在转发器的 LinkButton`ItemTemplate`已单击; 和第二个，我们可以如何确定`CategoryID`其 LinkButton 被单击相应的类别的？
 
-与按钮和 ImageButton 控件一样 LinkButton 具有`Click`事件和一个[`Command`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.linkbutton.command.aspx)。 `Click`事件旨在已单击 LinkButton 则只需注意。 有时，但是，除了指出已单击 LinkButton 我们还需要将一些额外信息传递给事件处理程序。 如果出现这种情况，LinkButton s [ `CommandName` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.linkbutton.commandname.aspx)和[ `CommandArgument` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.linkbutton.commandargument.aspx)属性可以分配此额外信息。 然后，当单击 LinkButton 后，其`Command`事件将触发 (而不是其`Click`事件) 和事件处理程序传递的值`CommandName`和`CommandArgument`属性。
+与按钮和 ImageButton 控件一样 LinkButton 具有`Click`事件和一个[`Command`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.command.aspx)。 `Click`事件旨在已单击 LinkButton 则只需注意。 有时，但是，除了指出已单击 LinkButton 我们还需要将一些额外信息传递给事件处理程序。 如果出现这种情况，LinkButton s [ `CommandName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandname.aspx)和[ `CommandArgument` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandargument.aspx)属性可以分配此额外信息。 然后，当单击 LinkButton 后，其`Command`事件将触发 (而不是其`Click`事件) 和事件处理程序传递的值`CommandName`和`CommandArgument`属性。
 
-当`Command`中继器中继器 s 中的模板内从引发事件[`ItemCommand`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeater.itemcommand.aspx)触发并传递`CommandName`和`CommandArgument`单击 LinkButton 值 (或按钮或ImageButton)。 因此，若要确定类别中中继器 LinkButton 单击时，我们需要执行以下操作：
+当`Command`中继器中继器 s 中的模板内从引发事件[`ItemCommand`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeater.itemcommand.aspx)触发并传递`CommandName`和`CommandArgument`单击 LinkButton 值 (或按钮或ImageButton)。 因此，若要确定类别中中继器 LinkButton 单击时，我们需要执行以下操作：
 
 1. 设置`CommandName`属性在转发器的 LinkButton`ItemTemplate`为某个值 (我以前使用 ListProducts)。 通过将此值设置`CommandName`值，LinkButton 的`Command`LinkButton 单击时，事件将激发。
 2. 设置 LinkButton s`CommandArgument`属性的当前项的值`CategoryID`。

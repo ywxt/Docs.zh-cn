@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 69f73085198c79c01988aab9e63f3ce9e7647034
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 29671970dc6f53d0e14170cf6376c02634b7b08e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-vb"></a>创建站点范围布局使用母版页 (VB)
 ====================
@@ -60,7 +60,7 @@ ms.lasthandoff: 11/10/2017
 
 有一系列用于创建具有一致的外观和感觉的网页的技术。 Naïve 方法是只需复制并粘贴到所有网页的常见的布局标记，但这种方法具有大量弊端。 对于初学者，每次创建一个新页时，你必须记得复制并粘贴到页的共享的内容。 此类复制和粘贴操作是这个错误意外，您可以将共享标记的一个子集复制到新页。 并为了彻底，这种方法使现有的站点范围外观将替换为一个新实际困难，因为每个站点中的单页必须编辑才能使用新的外观和感觉。
 
-在 ASP.NET 2.0 版中之前, 页上通常放置中的常见标记的开发人员[用户控件](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx)并随后添加到每个页的这些用户控件。 此方法所需页开发人员记住手动将用户控件添加到每个新的页上，而允许的更容易覆盖整个站点修改，因为更新的常见标记时仅用户控件所需修改。 遗憾的是，Visual Studio.NET 2002年和 2003-Visual Studio 版本的用于创建 ASP.NET 1.x 应用程序-在设计视图中的用户控件呈现为灰色的框。 因此，使用此方法的页开发人员未不喜欢所见即所得的设计时环境。
+在 ASP.NET 2.0 版中之前, 页上通常放置中的常见标记的开发人员[用户控件](https://msdn.microsoft.com/library/y6wb1a0e.aspx)并随后添加到每个页的这些用户控件。 此方法所需页开发人员记住手动将用户控件添加到每个新的页上，而允许的更容易覆盖整个站点修改，因为更新的常见标记时仅用户控件所需修改。 遗憾的是，Visual Studio.NET 2002年和 2003-Visual Studio 版本的用于创建 ASP.NET 1.x 应用程序-在设计视图中的用户控件呈现为灰色的框。 因此，使用此方法的页开发人员未不喜欢所见即所得的设计时环境。
 
 使用用户控件的不足之处已解决在 ASP.NET 2.0 版和 Visual Studio 2005 中，通过引入*主页*。 母版页是一种特殊类型的定义这两个站点范围标记的 ASP.NET 页和*区域*其中关联*内容页*定义其自定义标记。 我们将会看到在步骤 1 中，这些区域定义由 ContentPlaceHolder 控件。 ContentPlaceHolder 控件只是表示内容页可以其中插入自定义内容的主页面控件层次结构中的位置。
 
@@ -95,7 +95,7 @@ ms.lasthandoff: 11/10/2017
 我们可以浏览创建和使用母版页和内容页之前，我们首先需要 ASP.NET 网站。 首先，创建新的文件系统基于 ASP.NET 网站。 若要完成此操作，启动 Visual Web Developer 中，然后转到文件菜单并选择新的网站，显示新建网站对话框框中 （请参见图 4）。 选择 ASP.NET 网站模板，将位置下拉列表设置为文件系统、 选择文件夹来放置该网站，并将语言设置为 Visual Basic。 这将创建新的网站与`Default.aspx`ASP.NET 页中，`App_Data`文件夹中，和一个`Web.config`文件。
 
 > [!NOTE]
-> Visual Studio 支持两种项目管理模式： 网站项目和 Web 应用程序项目。 网站项目缺少项目文件中，而 Web 应用程序项目模拟项目体系结构在 Visual Studio.NET 2002年/2003年-它们包括项目文件并将项目的源代码编译到单个程序集，并置于`/bin`文件夹。 Visual Studio 2005 最初仅支持的 Web 站点项目、 Web 应用程序项目模型已重新引入 Service Pack 1; 尽管Visual Studio 2008 提供这两种项目模型。 Visual Web Developer 2005 和 2008年版，但是，仅支持网站项目。 我在本教程系列我演示使用网站项目模型。 如果在使用非 Express edition 并且想要使用[Web 应用程序项目模型](https://msdn.microsoft.com/en-us/library/aa730880(vs.80).aspx)相反，随意这样做，但请注意，可能会出现某些差异之间在你的屏幕和必须与执行的步骤上看到的内容屏幕快照所示，这些教程中提供的说明操作。
+> Visual Studio 支持两种项目管理模式： 网站项目和 Web 应用程序项目。 网站项目缺少项目文件中，而 Web 应用程序项目模拟项目体系结构在 Visual Studio.NET 2002年/2003年-它们包括项目文件并将项目的源代码编译到单个程序集，并置于`/bin`文件夹。 Visual Studio 2005 最初仅支持的 Web 站点项目、 Web 应用程序项目模型已重新引入 Service Pack 1; 尽管Visual Studio 2008 提供这两种项目模型。 Visual Web Developer 2005 和 2008年版，但是，仅支持网站项目。 我在本教程系列我演示使用网站项目模型。 如果在使用非 Express edition 并且想要使用[Web 应用程序项目模型](https://msdn.microsoft.com/library/aa730880(vs.80).aspx)相反，随意这样做，但请注意，可能会出现某些差异之间在你的屏幕和必须与执行的步骤上看到的内容屏幕快照所示，这些教程中提供的说明操作。
 
 
 [![创建新的文件系统基于 Web 站点](creating-a-site-wide-layout-using-master-pages-vb/_static/image9.png)](creating-a-site-wide-layout-using-master-pages-vb/_static/image8.png)
@@ -115,7 +115,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-aspx[Main](creating-a-site-wide-layout-using-master-pages-vb/samples/sample1.aspx)]
 
-声明性的标记中的第一行是[`@Master`指令](https://msdn.microsoft.com/en-us/library/ms228176.aspx)。 `@Master`指令是类似于[`@Page`指令](https://msdn.microsoft.com/en-us/library/ydy4x04a.aspx)在 ASP.NET 页中显示。 它定义的服务器端语言 (VB) 和信息的位置和母版页的代码隐藏类的继承。
+声明性的标记中的第一行是[`@Master`指令](https://msdn.microsoft.com/library/ms228176.aspx)。 `@Master`指令是类似于[`@Page`指令](https://msdn.microsoft.com/library/ydy4x04a.aspx)在 ASP.NET 页中显示。 它定义的服务器端语言 (VB) 和信息的位置和母版页的代码隐藏类的继承。
 
 `DOCTYPE`和页面的声明性标记显示在下方`@Master`指令。 该页面包括四个服务器端控件以及静态 HTML:
 
@@ -163,7 +163,7 @@ ms.lasthandoff: 11/10/2017
 幸运的是，存在 innumerous 提供免费 HTML 设计模板的网站-Google 返回六个 100 万个结果的搜索术语"免费网站模板"。 我最喜欢的之一是[OpenDesigns.org](http://opendesigns.org/)。一旦找到您喜欢的网站模板，将 CSS 文件和图像添加到你的网站项目，并将模板的 HTML 集成到你母版页。
 
 > [!NOTE]
-> Microsoft 还提供了多个[免费 ASP.NET 设计启动工具包模板](https://msdn.microsoft.com/en-us/asp.net/aa336613.aspx)，将集成到 Visual Studio 中的新建网站对话框。
+> Microsoft 还提供了多个[免费 ASP.NET 设计启动工具包模板](https://msdn.microsoft.com/asp.net/aa336613.aspx)，将集成到 Visual Studio 中的新建网站对话框。
 
 
 ## <a name="step-2-creating-associated-content-pages"></a>步骤 2： 创建关联内容页
@@ -272,8 +272,8 @@ ms.lasthandoff: 11/10/2017
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [设计器的 ASP.NET： 上生成 ASP.NET 网站使用 Web 标准释放设计模板和指南](https://msdn.microsoft.com/en-us/asp.net/aa336602.aspx)
-- [ASP.NET Master 页概述](https://msdn.microsoft.com/en-us/library/wtxbf3hh.aspx)
+- [设计器的 ASP.NET： 上生成 ASP.NET 网站使用 Web 标准释放设计模板和指南](https://msdn.microsoft.com/asp.net/aa336602.aspx)
+- [ASP.NET Master 页概述](https://msdn.microsoft.com/library/wtxbf3hh.aspx)
 - [级联样式表 (CSS) 教程](http://www.w3schools.com/css/default.asp)
 - [动态设置页的标题](http://aspnet.4guysfromrolla.com/articles/051006-1.aspx)
 - [在 ASP.NET 母版页](http://www.odetocode.com/articles/419.aspx)

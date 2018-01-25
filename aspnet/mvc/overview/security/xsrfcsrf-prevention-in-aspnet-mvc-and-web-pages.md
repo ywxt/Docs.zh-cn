@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 4ff4ed20d0768a48f8afb2deeb7cdb6b4c60b5bc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6cf30daa7ed966b11405cec715c5bc803b567249
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>在 ASP.NET MVC 和 Web Pages XSRF/CSRF 防护
 ====================
@@ -73,9 +73,9 @@ XSRF 请求验证*会话令牌*HTTP cookie 作为存储和当前包含其有效�
 *字段标记*存储为`<input type="hidden" />`并包含其有效负载中的以下信息：
 
 - 登录的用户的用户名 （如果通过身份验证）。
-- 提供的任何其他数据[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)。
+- 提供的任何其他数据[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)。
 
-ANTI-XSRF 令牌的负载进行加密和签名，以便使用工具来检查令牌时，不能查看的用户名。 如果 web 应用程序目标 ASP.NET 4.0，加密服务提供的[MachineKey.Encode](https://msdn.microsoft.com/en-us/library/system.web.security.machinekey.encode.aspx)例程。 当 web 应用程序针对 ASP.NET 4.5 或更高版本的加密服务提供的[MachineKey.Protect](https://msdn.microsoft.com/en-us/library/system.web.security.machinekey.protect(v=vs.110))例程，可提供更好的性能、 可扩展性和安全性。 请参阅以下博客文章的更多详细信息：
+ANTI-XSRF 令牌的负载进行加密和签名，以便使用工具来检查令牌时，不能查看的用户名。 如果 web 应用程序目标 ASP.NET 4.0，加密服务提供的[MachineKey.Encode](https://msdn.microsoft.com/library/system.web.security.machinekey.encode.aspx)例程。 当 web 应用程序针对 ASP.NET 4.5 或更高版本的加密服务提供的[MachineKey.Protect](https://msdn.microsoft.com/library/system.web.security.machinekey.protect(v=vs.110))例程，可提供更好的性能、 可扩展性和安全性。 请参阅以下博客文章的更多详细信息：
 
 - [在 ASP.NET 4.5 中的加密改进、 pt。1](https://blogs.msdn.com/b/webdev/archive/2012/10/22/cryptographic-improvements-in-asp-net-4-5-pt-1.aspx)
 - [在 ASP.NET 4.5 中的加密改进、 pt。2](https://blogs.msdn.com/b/webdev/archive/2012/10/23/cryptographic-improvements-in-asp-net-4-5-pt-2.aspx)
@@ -83,19 +83,19 @@ ANTI-XSRF 令牌的负载进行加密和签名，以便使用工具来检查令�
 
 ## <a name="generating-the-tokens"></a>生成令牌
 
-若要生成的 ANTI-XSRF 令牌，请调用[ @Html.AntiForgeryToken ](https://msdn.microsoft.com/en-us/library/dd470175.aspx)从的 MVC 视图的方法或@AntiForgery.GetHtml从 Razor 页 （)。 然后，运行时将执行以下步骤：
+若要生成的 ANTI-XSRF 令牌，请调用[ @Html.AntiForgeryToken ](https://msdn.microsoft.com/library/dd470175.aspx)从的 MVC 视图的方法或@AntiForgery.GetHtml从 Razor 页 （)。 然后，运行时将执行以下步骤：
 
 1. 如果当前 HTTP 请求已包含的 ANTI-XSRF 会话令牌 (ANTI-XSRF cookie \_ \_RequestVerificationToken)，从其提取的安全令牌。 如果 HTTP 请求不包含 ANTI-XSRF 会话令牌或安全令牌提取失败，将生成新的随机的 ANTI-XSRF 令牌。
-2. ANTI-XSRF 字段标记为生成使用从上面的步骤 (1) 和标识的当前登录的用户的安全令牌。 (有关确定用户标识的详细信息，请参阅**[具有特殊的支持方案](#_Scenarios_with_special)**下面一节。)此外，如果[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/jj158328(v=vs.111).aspx)是配置，运行时将调用其[GetAdditionalData](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx)方法并将返回的字符串包括在字段标记。 (请参阅**[配置和可扩展性](#_Configuration_and_extensibility)**部分以了解更多信息。)
+2. ANTI-XSRF 字段标记为生成使用从上面的步骤 (1) 和标识的当前登录的用户的安全令牌。 (有关确定用户标识的详细信息，请参阅**[具有特殊的支持方案](#_Scenarios_with_special)**下面一节。)此外，如果[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/jj158328(v=vs.111).aspx)是配置，运行时将调用其[GetAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx)方法并将返回的字符串包括在字段标记。 (请参阅**[配置和可扩展性](#_Configuration_and_extensibility)**部分以了解更多信息。)
 3. 如果在步骤 (1) 中生成新的 ANTI-XSRF 令牌，新的会话令牌将创建包含它，并且将添加到出站 HTTP cookie 集合。 步骤 (2) 中的字段令牌将包装在`<input type="hidden" />`元素，并且此 HTML 标记将是的返回值`Html.AntiForgeryToken()`或`AntiForgery.GetHtml()`。
 
 ## <a name="validating-the-tokens"></a>验证令牌
 
-若要验证传入的 ANTI-XSRF 令牌，开发人员包括[ValidateAntiForgeryToken](https://msdn.microsoft.com/en-us/library/system.web.mvc.validateantiforgerytokenattribute(VS.108).aspx)她 MVC 操作或控制器或她调用特性`@AntiForgery.Validate()`从她 Razor 页。 运行时将执行以下步骤：
+若要验证传入的 ANTI-XSRF 令牌，开发人员包括[ValidateAntiForgeryToken](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute(VS.108).aspx)她 MVC 操作或控制器或她调用特性`@AntiForgery.Validate()`从她 Razor 页。 运行时将执行以下步骤：
 
 1. 读取的传入会话令牌和字段标记，并从每个提取 ANTI-XSRF 令牌。 ANTI-XSRF 令牌必须每个步骤 (2) 生成例程中相同。
 2. 如果当前用户进行身份验证，与字段标记中存储的用户名进行比较她的用户名。 用户名必须与匹配。
-3. 如果[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)配置，则运行时会调用其*ValidateAdditionalData*方法。 该方法必须返回布尔值*true*。
+3. 如果[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)配置，则运行时会调用其*ValidateAdditionalData*方法。 该方法必须返回布尔值*true*。
 
 如果验证成功，则允许请求以继续。 如果验证失败，将引发 framework *HttpAntiForgeryException*。
 
@@ -108,7 +108,7 @@ ANTI-XSRF 令牌的负载进行加密和签名，以便使用工具来检查令�
 - 会话令牌和字段令牌已交换。
 - 会话令牌和字段标记包含不匹配的安全令牌。
 - 字段标记中嵌入用户名与当前登录的用户的用户名不匹配。
--  *[IAntiForgeryAdditionalDataProvider.ValidateAdditionalData](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider.validateadditionaldata(v=vs.111).aspx)* 方法返回*false*。
+- *[IAntiForgeryAdditionalDataProvider.ValidateAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.validateadditionaldata(v=vs.111).aspx)* 方法返回*false*。
 
 ANTI-XSRF 设施可能还执行生成令牌或验证过程的其他检查，这些检查期间出现的故障可能会导致引发异常。 请参阅[WIF / ACS / 基于声明的身份验证](#_WIF_ACS)和**[配置和可扩展性](#_Configuration_and_extensibility)**部分以获取更多信息。
 
@@ -130,12 +130,12 @@ ANTI-XSRF 系统包含额外支持匿名用户，其中"匿名"指用户其中*I
 
 基于声明的身份验证，另一方面，不一定需要标识特定用户。 相反， *ClaimsPrincipal*和*ClaimsIdentity*类型都与一组相关联*声明*实例，其中的单个声明可能是"is 岁 18 +"或"是的管理员"为任何其他值。 由于尚未一定标识该用户，不能使用运行时*ClaimsIdentity.Name*属性作为该特定用户的唯一标识符。 团队已发现实际应用示例其中*ClaimsIdentity.Name*返回*null*、 返回友好 （显示） 名称，或否则将返回一个字符串，并不适合用作唯一标识符为用户。
 
-许多使用基于声明的身份验证的部署使用[Azure Access Control 服务](https://msdn.microsoft.com/en-us/library/windowsazure/gg429786.aspx)(ACS) 尤其。 ACS 允许开发人员配置单个*标识提供程序*（ADFS，Microsoft 帐户提供程序，如 OpenID 提供程序如 yahoo ！ 等），并标识提供程序返回*命名标识符*. 这些名称标识符可能包含个人身份信息 (PII)，如电子邮件地址，或它们无法将匿名处理如专用个人标识符 (PPID)。 无论如何，元组 （名称标识符中的标识提供程序） 足够作为特定用户的适当的跟踪令牌，而她浏览站点，以便在生成时，ASP.NET Web 堆栈运行时可以使用此元组代替用户名和验证 ANTI-XSRF 字段令牌。 标识提供程序和名称标识符的特定 Uri 是：
+许多使用基于声明的身份验证的部署使用[Azure Access Control 服务](https://msdn.microsoft.com/library/windowsazure/gg429786.aspx)(ACS) 尤其。 ACS 允许开发人员配置单个*标识提供程序*（ADFS，Microsoft 帐户提供程序，如 OpenID 提供程序如 yahoo ！ 等），并标识提供程序返回*命名标识符*. 这些名称标识符可能包含个人身份信息 (PII)，如电子邮件地址，或它们无法将匿名处理如专用个人标识符 (PPID)。 无论如何，元组 （名称标识符中的标识提供程序） 足够作为特定用户的适当的跟踪令牌，而她浏览站点，以便在生成时，ASP.NET Web 堆栈运行时可以使用此元组代替用户名和验证 ANTI-XSRF 字段令牌。 标识提供程序和名称标识符的特定 Uri 是：
 
 - `http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider`
 - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier`
 
-(请参阅此[ACS 文档页](https://msdn.microsoft.com/en-us/library/windowsazure/gg185971.aspx)有关详细信息。)
+(请参阅此[ACS 文档页](https://msdn.microsoft.com/library/windowsazure/gg185971.aspx)有关详细信息。)
 
 当生成或验证令牌时，ASP.NET Web 堆栈运行时将在运行时尝试绑定到类型：
 
@@ -163,9 +163,9 @@ ANTI-XSRF 系统包含额外支持匿名用户，其中"匿名"指用户其中*I
 
 开发人员可以配置应用程序中的 ANTI-XSRF 系统\_启动。 以编程方式配置。 静态属性*AntiForgeryConfig*类型如下所述。 使用声明的大多数用户将想要设置 UniqueClaimTypeIdentifier 属性。
 
-| **Property** | **描述** |
+| **Property** | **说明** |
 | --- | --- |
-| **AdditionalDataProvider** | [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) ，令牌生成期间提供的附加数据和令牌验证期间使用额外数据。 默认值是*null*。 有关详细信息，请参阅[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)部分。 |
+| **AdditionalDataProvider** | [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) ，令牌生成期间提供的附加数据和令牌验证期间使用额外数据。 默认值是*null*。 有关详细信息，请参阅[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)部分。 |
 | **CookieName** | 提供用于存储的 ANTI-XSRF 会话令牌的 HTTP cookie 的名称的字符串。 如果未设置此值，名称将自动生成基于应用程序的已部署的虚拟路径。 默认值是*null*。 |
 | **RequireSsl** | 一个布尔值，指示是否需要通过安全 SSL 通道提交的 ANTI-XSRF 令牌。 如果此值为*true*，任何自动生成的 cookie 将具有"安全"标志设置，并且从调用中时不会通过 SSL 提交的请求，则会引发 ANTI-XSRF Api。 默认值为“false”。 |
 | **SuppressIdentityHeuristicChecks** | 一个布尔值，指示是否 ANTI-XSRF 系统应停用它对基于声明的标识的支持。 如果此值为*true*，系统将假定*IIdentity.Name*适合作为唯一的每个用户标识符的使用和不会尝试向特殊用例*IClaimsIdentity*或*ClClaimsIdentity*中所述[WIF / ACS / 基于声明的身份验证](#_WIF_ACS)部分。 默认值为 `false`。 |
@@ -175,7 +175,7 @@ ANTI-XSRF 系统包含额外支持匿名用户，其中"匿名"指用户其中*I
 
 ### <a name="iantiforgeryadditionaldataprovider"></a>IAntiForgeryAdditionalDataProvider
 
- *[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)* 类型允许开发人员通过往返中每个令牌的其他数据扩展的 ANTI-XSRF 系统的行为。 *GetAdditionalData*每次调用方法生成的字段标记，和在生成的标记内嵌入的返回值。 实施者无法通过此方法返回时间戳、 一个 nonce 或她希望的任何其他值。
+*[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)* 类型允许开发人员通过往返中每个令牌的其他数据扩展的 ANTI-XSRF 系统的行为。 *GetAdditionalData*每次调用方法生成的字段标记，和在生成的标记内嵌入的返回值。 实施者无法通过此方法返回时间戳、 一个 nonce 或她希望的任何其他值。
 
 同样， *ValidateAdditionalData*每次调用方法将验证字段标记，并且已在令牌内嵌入的"其他数据"字符串传递给方法。 验证例程无法实现超时 （通过检查当前时间，但创建令牌时存储的时间）、 nonce 检查例程，或任何其他所需的逻辑。
 

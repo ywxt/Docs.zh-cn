@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/advanced/custom-mvc-templates
 msc.type: authoredcontent
-ms.openlocfilehash: a1fe1844e582f402a1eed9ddf10ee249e856b083
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c3ddd4e341511f520927e924b25d890088adb69e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="custom-mvc-template"></a>自定义 MVC 模板
 ====================
@@ -26,14 +26,14 @@ ms.lasthandoff: 11/10/2017
 
 添加自定义模板时棘手的过程依赖于使用注册表来使新模板对 MVC 项目向导可见。 新模板的作者必须将其包装在 MSI，确保将在安装时创建必要的注册表项。 替代项是确保包含可用模板的 ZIP 文件并且没有最终用户手动创建必需的注册表项。
 
-前面提到的方法都不能是理想的因此，我们决定利用提供的现有基础结构的某些[VSIX](https://msdn.microsoft.com/en-us/library/ff363239.aspx)扩展要更加方便会作者，分发和安装自定义从 MVC 4 开始的 MVC 模板Visual Studio 2012。 此方法提供的好处包括：
+前面提到的方法都不能是理想的因此，我们决定利用提供的现有基础结构的某些[VSIX](https://msdn.microsoft.com/library/ff363239.aspx)扩展要更加方便会作者，分发和安装自定义从 MVC 4 开始的 MVC 模板Visual Studio 2012。 此方法提供的好处包括：
 
 - 在 VSIX 扩展可以包含多个模板，它们支持不同的语言 （C# 和 Visual Basic） 和多个视图引擎 （ASPX 和 Razor）。
 - 在 VSIX 扩展可以面向多个 Sku 的 Visual Studio 包括 Express Sku。
 - [Visual Studio 库](https://visualstudiogallery.msdn.microsoft.com/)促进分发给广泛的受众的扩展。
 - 使其更轻松地创作更正和更新到自定义模板，可以升级 VSIX 扩展。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 - 用户需要熟悉创作项目模板，其中包括所需的标记 vstemplate 文件，等等。
 - 用户将需要具有 Visual Studio 专业版和更高的版本。 Express Sku 不支持创建 VSIX 项目。
@@ -63,15 +63,15 @@ ms.lasthandoff: 11/10/2017
 
 **资产**选项卡用于将所有内容文件添加到 VSIX。 因为 MVC 需要自定义元数据将编辑而不是使用 VSIX 清单文件的原始 XML**资产**选项卡添加内容。 首先，通过添加到 VSIX 项目的模板内容。 很重要的文件夹和内容的结构镜像项目的布局。 下面的示例包含从基本的 MVC 项目模板派生的四个项目模板。 请确保构成你的项目模板 （ProjectTemplates 文件夹下的所有内容） 的所有文件将都添加到**内容**o u p 在 VSIX 项目文件和每个项包含**CopyToOutputDirectory**和**IncludeInVsix**设置元数据，如下面的示例中所示。
 
-&lt;内容包括 =&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicWeb.config&quot;&gt;
+&lt;Content Include=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicWeb.config&quot;&gt;
 
-&lt;CopyToOutputDirectory&gt;始终&lt;/CopyToOutputDirectory&gt;
+&lt;CopyToOutputDirectory&gt;Always&lt;/CopyToOutputDirectory&gt;
 
 &lt;IncludeInVSIX&gt;true&lt;/IncludeInVSIX&gt;
 
-&lt;/ 内容&gt;
+&lt;/Content&gt;
 
-否则，IDE 将尝试时生成 VSIX 并可能会看到如下错误编译模板的内容。 通常，在模板中的代码文件包含特殊[模板参数](https://msdn.microsoft.com/en-us/library/eehb4faa(v=vs.110).aspx)时项目模板实例化并因此不能在 IDE 中编译使用 Visual Studio。
+否则，IDE 将尝试时生成 VSIX 并可能会看到如下错误编译模板的内容。 通常，在模板中的代码文件包含特殊[模板参数](https://msdn.microsoft.com/library/eehb4faa(v=vs.110).aspx)时项目模板实例化并因此不能在 IDE 中编译使用 Visual Studio。
 
 ![“解决方案资源管理器”](custom-mvc-templates/_static/image6.jpg)
 
@@ -83,27 +83,27 @@ ms.lasthandoff: 11/10/2017
 
 只需将文件添加到 VSIX 不足以使用 MVC 向导注册模板。 你需要向 MVC 向导提供如模板名称、 描述、 受支持的视图引擎和编程语言的信息。 与相关联的自定义特性中携带有此信息**&lt;资产&gt;**每个元素**vstemplate**文件。
 
-&lt;资产 d:VsixSubPath =&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx&quot;
+&lt;Asset d:VsixSubPath=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx&quot;
 
-类型 =&quot;Microsoft.VisualStudio.Mvc.Template&quot;
+Type=&quot;Microsoft.VisualStudio.Mvc.Template&quot;
 
-d:Source =&quot;文件&quot;
+d:Source=&quot;File&quot;
 
-路径 =&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicMvcWebApplicationProjectTemplate.11.csaspx.vstemplate&quot;
+Path=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicMvcWebApplicationProjectTemplate.11.csaspx.vstemplate&quot;
 
-ProjectType =&quot;MVC&quot;
+ProjectType=&quot;MVC&quot;
 
-语言 =&quot;C#&quot;
+Language=&quot;C#&quot;
 
-ViewEngine =&quot;Aspx&quot;
+ViewEngine=&quot;Aspx&quot;
 
-TemplateId =&quot;MyMvcApplication&quot;
+TemplateId=&quot;MyMvcApplication&quot;
 
 标题 =&quot;自定义基本 Web 应用程序&quot;
 
 说明 =&quot;自定义模板派生自基本 MVC web 应用程序 (Razor)&quot;
 
-版本 =&quot;4.0&quot;/&gt;
+Version=&quot;4.0&quot;/&gt;
 
 下面是必须存在的自定义属性的说明：
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: e14f3bed001592c85bdbba868f51141bc52a9470
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 51344535e7ff42f1bd6641aeaaf043be6423f1b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>使用 Visual Studio 的 ASP.NET Web 部署： 简介
 ====================
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 从部署[源代码管理](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control.md)使用[持续交付](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md)过程未涵盖这些教程演示如何从命令行部署的一个教程除外中。 持续交付有关的信息，请参阅以下资源：
 
 - [持续集成和持续交付 （使用 Windows Azure 构建真实世界云应用）](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md)
-- [部署在 Azure App Service web 应用](https://azure.microsoft.com/en-us/documentation/articles/web-sites-deploy/)
+- [部署在 Azure App Service web 应用](https://azure.microsoft.com/documentation/articles/web-sites-deploy/)
 - [部署在企业方案中的 Web 应用程序](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)（教程面向 Visual Studio 2010，它仍然具有企业环境的有用信息的较旧集。）
 
 ## <a name="using-a-third-party-hosting-provider"></a>使用第三方托管提供商
@@ -114,7 +114,7 @@ Visual Studio 不执行任何与数据库在部署过程。 当部署的应用�
 
 <a id="prerequisites"></a>
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 本教程是专门针对以下产品编写的：
 
@@ -130,7 +130,7 @@ Visual Studio 不执行任何与数据库在部署过程。 当部署的应用�
 
 - [Azure SDK for Visual Studio 2010](https://go.microsoft.com/fwlink/?LinkID=254269)
 - [SQL Server Express LocalDB](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=SQLLocalDBOnly_11_0)
-- [SQL Server Data Tools](https://msdn.microsoft.com/en-us/library/hh500335.aspx)。
+- [SQL Server Data Tools](https://msdn.microsoft.com/library/hh500335.aspx)。
 
 具体取决于 SDK 依赖项数量的上已有您的计算机，安装 Azure SDK 可能耗时较长，时间从几分钟到半小时或更多。 即使你打算将发布到第三方托管提供程序而不是到 Azure，由于该 SDK 包括最新的更新到 Visual Studio web 发布功能，你需要 Azure SDK。
 

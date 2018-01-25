@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/scaleout-in-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 4f1ad959c45281cdd831c37c2e3ca428f3fae9a0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f1d15250682305f6d0512b72bd2e40cb4a8a18e5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-scaleout-in-signalr"></a>简介中 SignalR 的向外缩放
 ====================
@@ -59,17 +59,17 @@ SignalR 目前提供三个背板：
 - **Redis**。 Redis 是一个内存中键 / 值存储。 Redis 支持发布/订阅 ("pub/sub") 模式，用于将消息发送。
 - **SQL Server**。 SQL Server 底板将消息写入 SQL 表。 底板为有效的消息传递使用 Service Broker。 但是，它还适用如果未启用 Service Broker。
 
-如果你部署 Azure 上的应用程序，请考虑使用 Redis 底板使用[Azure Redis 缓存](https://azure.microsoft.com/en-us/services/cache/)。 如果将部署到你自己的服务器场，请考虑 SQL Server 或 Redis 背板。
+如果你部署 Azure 上的应用程序，请考虑使用 Redis 底板使用[Azure Redis 缓存](https://azure.microsoft.com/services/cache/)。 如果将部署到你自己的服务器场，请考虑 SQL Server 或 Redis 背板。
 
 以下主题包含针对每个底板的分步教程：
 
-- [使用 Azure 服务总线的 SignalR 扩展](scaleout-with-windows-azure-service-bus.md)
-- [采用 Redis 的 SignalR 扩展](scaleout-with-redis.md)
-- [与 SQL Server 的 SignalR 扩展](scaleout-with-sql-server.md)
+- [使用 Azure 服务总线的 SignalR 横向扩展](scaleout-with-windows-azure-service-bus.md)
+- [使用 Redis 的 SignalR 横向扩展](scaleout-with-redis.md)
+- [使用 SQL Server 的 SignalR 横向扩展](scaleout-with-sql-server.md)
 
 ## <a name="implementation"></a>实现
 
-在 SignalR 通过消息总线发送每条消息。 消息总线实现[IMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx)接口，从而提供发布/订阅抽象。 通过替换默认的工作的底板**IMessageBus**含总线为该底板设计的。 例如，Redis 消息总线是[RedisMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx)，并使用 Redis [pub/sub](http://redis.io/topics/pubsub)机制来发送和接收消息。
+在 SignalR 通过消息总线发送每条消息。 消息总线实现[IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx)接口，从而提供发布/订阅抽象。 通过替换默认的工作的底板**IMessageBus**含总线为该底板设计的。 例如，Redis 消息总线是[RedisMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx)，并使用 Redis [pub/sub](http://redis.io/topics/pubsub)机制来发送和接收消息。
 
 每个服务器实例连接到通过总线底板。 发送一条消息，它将转到面板，并底板将其发送到每个服务器。 当服务器从底板获取一条消息时，它会在其本地缓存中将该消息。 服务器然后将从其本地缓存消息传送到客户端。
 

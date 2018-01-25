@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e74d368b1f9eec2177a528a6b09c599d6a307b74
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ad09847d828d02019a72e3022d035a8fbe921568
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="debugging-stored-procedures-vb"></a>调试存储的过程 (VB)
 ====================
@@ -39,7 +39,7 @@ Visual Studio 提供了丰富的调试体验。 与几击键或鼠标，只需�
 
 ## <a name="sql-server-debugging-concepts"></a>SQL Server 调试概念
 
-Microsoft SQL Server 2005 旨在提供与集成[公共语言运行时 (CLR)](https://msdn.microsoft.com/en-us/netframework/aa497266.aspx)，这是运行时使用的所有.NET 程序集。 因此，SQL Server 2005 支持托管的数据库对象。 也就是说，你可以创建数据库对象，如存储的过程和用户定义函数 (Udf) 作为 Visual Basic 类中的方法。 这样，这些存储的过程和 Udf 利用.NET Framework 中和从您自己的自定义类的功能。 当然，SQL Server 2005 还提供对支持 T-SQL 的数据库对象。
+Microsoft SQL Server 2005 旨在提供与集成[公共语言运行时 (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx)，这是运行时使用的所有.NET 程序集。 因此，SQL Server 2005 支持托管的数据库对象。 也就是说，你可以创建数据库对象，如存储的过程和用户定义函数 (Udf) 作为 Visual Basic 类中的方法。 这样，这些存储的过程和 Udf 利用.NET Framework 中和从您自己的自定义类的功能。 当然，SQL Server 2005 还提供对支持 T-SQL 的数据库对象。
 
 SQL Server 2005 提供调试支持 T-SQL 和托管的数据库对象。 但是，这些对象，仅通过 Visual Studio 2005 专业版和团队系统版本进行调试。 在本教程中我们将检查调试 T-SQL 的数据库对象。 调试托管的数据库对象考察后续的教程。
 
@@ -53,7 +53,7 @@ Visual Studio 可以调试在本地和远程 SQL Server 实例上的存储的过
 
 如果你使用的本地的 SQL Server 实例，可以从步骤 1 开始，并且要完成本教程到末尾。 如果你使用的远程 SQL Server 实例，但是，你将首先需要确保你在调试时登录到你的开发计算机进行远程实例具有 SQL Server 登录名的 Windows 用户帐户。 Moveover，此数据库登录名和用于从运行的 ASP.NET 应用程序连接到数据库的数据库登录名必须是的成员`sysadmin`角色。 请参阅在远程实例部分上的调试 T-SQL 的数据库对象在本教程针对配置 Visual Studio 和 SQL Server，若要调试的远程实例的详细信息的末尾。
 
-最后，了解，调试支持 T-SQL 的数据库对象不作为调试.NET 应用程序的支持丰富的功能。 例如，断点条件和筛选器不支持，只有一部分调试窗口可用，您无法使用编辑并继续，即时窗口呈现得毫无意义，等等。 请参阅[调试器命令和功能的限制](https://msdn.microsoft.com/en-us/library/ms165035(VS.80).aspx)有关详细信息。
+最后，了解，调试支持 T-SQL 的数据库对象不作为调试.NET 应用程序的支持丰富的功能。 例如，断点条件和筛选器不支持，只有一部分调试窗口可用，您无法使用编辑并继续，即时窗口呈现得毫无意义，等等。 请参阅[调试器命令和功能的限制](https://msdn.microsoft.com/library/ms165035(VS.80).aspx)有关详细信息。
 
 ## <a name="step-1-directly-stepping-into-a-stored-procedure"></a>步骤 1： 直接单步执行存储过程
 
@@ -172,10 +172,10 @@ Visual Studio 的同一台计算机上的 SQL Server 数据库实例时，调试
 
 [!code-console[Main](debugging-stored-procedures-vb/samples/sample2.cmd)]
 
-有关此过程的更多详细说明，请参阅[William。 Vaughn](http://betav.com/BLOG/billva/) s *Hitchhiker s 到 Visual Studio 和 SQL Server，第七个版本的指南*以及[How To： 设置 SQL Server 权限用于调试](https://msdn.microsoft.com/en-us/library/w1bhybwz(VS.80).aspx)。
+有关此过程的更多详细说明，请参阅[William。 Vaughn](http://betav.com/BLOG/billva/) s *Hitchhiker s 到 Visual Studio 和 SQL Server，第七个版本的指南*以及[How To： 设置 SQL Server 权限用于调试](https://msdn.microsoft.com/library/w1bhybwz(VS.80).aspx)。
 
 > [!NOTE]
-> 如果你的开发计算机正在运行 Windows XP Service Pack 2 将需要 Internet 连接防火墙配置为允许远程调试。 [如何为： 启用 SQL Server 2005 调试](https://msdn.microsoft.com/en-us/library/s0fk6z6e(VS.80).aspx)文章说明这涉及到两个步骤: （a） 在 Visual Studio 主机计算机，则必须添加`Devenv.exe`到例外列表并打开 TCP 135 端口; 以及 （b） 上远程的 (SQL) 计算机，则必须打开TCP 135 端口，并添加`sqlservr.exe`到例外列表。 如果你的域策略要求通过 IPSec 进行网络通信，则必须打开 UDP 4500 和 UDP 500 端口。
+> 如果你的开发计算机正在运行 Windows XP Service Pack 2 将需要 Internet 连接防火墙配置为允许远程调试。 [如何为： 启用 SQL Server 2005 调试](https://msdn.microsoft.com/library/s0fk6z6e(VS.80).aspx)文章说明这涉及到两个步骤: （a） 在 Visual Studio 主机计算机，则必须添加`Devenv.exe`到例外列表并打开 TCP 135 端口; 以及 （b） 上远程的 (SQL) 计算机，则必须打开TCP 135 端口，并添加`sqlservr.exe`到例外列表。 如果你的域策略要求通过 IPSec 进行网络通信，则必须打开 UDP 4500 和 UDP 500 端口。
 
 
 ## <a name="summary"></a>摘要

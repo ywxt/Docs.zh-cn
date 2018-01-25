@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/individual-accounts-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 8207df79c1e915b33a0ba095d917a6dc69550173
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e2056e769edf972cba830b31cf37f6418148ca73
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>保护 Web API 与单个帐户和 ASP.NET Web API 2.2 中的本地登录名
 ====================
@@ -204,8 +204,8 @@ HTTP 响应：
 
 - `AccountController`。 提供用于管理用户帐户的 Web API 终结点。 `Register`操作是我们在本教程中使用只有一个。 在类上的其他方法支持密码重置、 社交登录名和其他功能。
 - `ApplicationUser`/Models/IdentityModels.cs 中定义。 此类是成员资格数据库中的用户帐户的 EF 模型。
-- `ApplicationUserManager`定义在 /App\_Start/IdentityConfig.cs 此类派生自[UserManager](https://msdn.microsoft.com/en-us/library/dn613290.aspx)和用户帐户，如创建新用户，验证密码，依此类推，对执行操作和自动保存对数据库的更改。
-- `ApplicationOAuthProvider`。 此对象插入到 OWIN 中间件，并处理由该中间件引发的事件。 它派生自[OAuthAuthorizationServerProvider](https://msdn.microsoft.com/en-us/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx)。
+- `ApplicationUserManager`定义在 /App\_Start/IdentityConfig.cs 此类派生自[UserManager](https://msdn.microsoft.com/library/dn613290.aspx)和用户帐户，如创建新用户，验证密码，依此类推，对执行操作和自动保存对数据库的更改。
+- `ApplicationOAuthProvider`。 此对象插入到 OWIN 中间件，并处理由该中间件引发的事件。 它派生自[OAuthAuthorizationServerProvider](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx)。
 
 ![](individual-accounts-in-web-api/_static/image14.png)
 

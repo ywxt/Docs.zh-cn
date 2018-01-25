@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: 98b21a54ba00a8c82c3be7ba4e39d44041ed42c6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9cfdced21251b482ca527dda9c3a698de77cc8ca
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>配置文件和调试使用 Glimpse 对 ASP.NET MVC 应用程序
 ====================
 通过[Rick Anderson](https://github.com/Rick-Anderson)
 
-> Glimpse 是获得成功和增长的开放源 NuGet 包的系列，提供详细的性能、 调试和诊断信息的 ASP.NET 应用程序。 它是普通安装、 轻量、 超快速，并在每一页的底部显示关键性能指标。 它允许你向下钻取到你的应用时需要先找出在服务器上正在运行的内容。 Glimpse 提供更重要的信息，我们建议你在整个开发周期中，包括你的 Azure 测试环境使用。 虽然[Fiddler](http://www.telerik.com/fiddler)和[F-12 开发工具](https://msdn.microsoft.com/en-us/library/ie/gg589512(v=vs.85).aspx)提供客户端视图，Glimpse 提供从服务器的详细的视图。 本教程将着重介绍如何使用 Glimpse ASP.NET MVC 和 EF 包，但其他许多包都可用。 尽可能将链接到相应[转让文档](http://getglimpse.com/Docs/)其中我要帮助维护。 Glimpse 是一个开源项目，你太可参与源代码和文档。
+> Glimpse 是获得成功和增长的开放源 NuGet 包的系列，提供详细的性能、 调试和诊断信息的 ASP.NET 应用程序。 它是普通安装、 轻量、 超快速，并在每一页的底部显示关键性能指标。 它允许你向下钻取到你的应用时需要先找出在服务器上正在运行的内容。 Glimpse 提供更重要的信息，我们建议你在整个开发周期中，包括你的 Azure 测试环境使用。 虽然[Fiddler](http://www.telerik.com/fiddler)和[F-12 开发工具](https://msdn.microsoft.com/library/ie/gg589512(v=vs.85).aspx)提供客户端视图，Glimpse 提供从服务器的详细的视图。 本教程将着重介绍如何使用 Glimpse ASP.NET MVC 和 EF 包，但其他许多包都可用。 尽可能将链接到相应[转让文档](http://getglimpse.com/Docs/)其中我要帮助维护。 Glimpse 是一个开源项目，你太可参与源代码和文档。
 
 
 - [安装 Glimpse](#ig)
@@ -113,7 +113,7 @@ Glimpse 默认安全策略只允许 Glimpse 数据显示本地主机。 你可�
 
 进行单独此更改后，任何用户都可以在远程站点上看到你 Glimpse 的数据。 考虑将上面的标记添加到发布配置文件，以便它仅部署应用时使用该发布配置文件 (例如，你 Azure 测试 proifle。)若要限制 Glimpse 数据，我们将添加`canViewGlimpseData`角色，并仅允许此角色来查看 Glimpse 数据中的用户。
 
-删除从注释*GlimpseSecurityPolicy.cs*文件并将更改[IsInRole](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.isinrole(v=vs.110).aspx)从调用`Administrator`到`canViewGlimpseData`角色：
+删除从注释*GlimpseSecurityPolicy.cs*文件并将更改[IsInRole](https://msdn.microsoft.com/library/system.security.principal.iprincipal.isinrole(v=vs.110).aspx)从调用`Administrator`到`canViewGlimpseData`角色：
 
 [!code-csharp[Main](profile-and-debug-your-aspnet-mvc-app-with-glimpse/samples/sample4.cs?highlight=6)]
 
@@ -121,10 +121,10 @@ Glimpse 默认安全策略只允许 Glimpse 数据显示本地主机。 你可�
 > 安全-Glimpse 提供的丰富数据无法公开您的应用程序的安全性。 Microsoft 不具有对生产应用程序用于执行 Glimpse 安全审核。
 
 
-有关添加角色的信息，请参阅我[将包含成员资格、 OAuth 和 SQL 数据库的安全 ASP.NET MVC 5 web 应用程序部署到 Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)教程。
+有关添加角色的信息，请参阅我[将包含成员资格、 OAuth 和 SQL 数据库的安全 ASP.NET MVC 5 web 应用程序部署到 Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)教程。
 
 <a id="addRes"></a>
 ## <a name="additional-resources"></a>其他资源
 
-- [将包含成员资格、 OAuth 和 SQL 数据库的安全 ASP.NET MVC 5 应用程序部署到 Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
+- [将包含成员资格、 OAuth 和 SQL 数据库的安全 ASP.NET MVC 5 应用程序部署到 Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
 - [转让配置](http://getglimpse.com/Docs/Configuration)-配置选项卡、 运行时策略、 日志记录和的详细信息的文档页。

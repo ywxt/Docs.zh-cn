@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 msc.type: authoredcontent
-ms.openlocfilehash: 68870caf1608e596962650cf653e5b455b82382a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 29b45c07b5498542abbf22c4c3001b1cee41edc9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>创建 MVC 3 具有 Razor 和非介入式 JavaScript 应用程序
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 用户列表的示例 web 应用程序演示如何创建使用 Razor 视图引擎的 ASP.NET MVC 3 应用程序是多么简单。 示例应用程序演示如何使用新的 Razor 视图引擎，使用 ASP.NET MVC 版本 3 和 Visual Studio 2010 创建虚构的用户列表网站包含功能，如创建、 显示、 编辑和删除用户。
 > 
@@ -49,7 +49,7 @@ ms.lasthandoff: 11/10/2017
 
 - *Controllers\AccountController*
 - *Models\AccountModels*
-- *Views/shared\\_LogOnPartial*
+- *Views\Shared\\_LogOnPartial*
 - *Views\Account* （和此目录中的所有文件）
 
 ![Soln Exp](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image5.png)
@@ -68,7 +68,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample2.cs)]
 
-`UserModel`类表示用户。 每个成员的类进行批注[所需](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx)属性从[DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx)命名空间。 中的特性[DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx)命名空间提供对于 web 应用程序的自动客户端和服务器端验证。
+`UserModel`类表示用户。 每个成员的类进行批注[所需](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx)属性从[DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)命名空间。 中的特性[DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)命名空间提供对于 web 应用程序的自动客户端和服务器端验证。
 
 打开`HomeController`类，并添加`using`指令，以便可以访问`UserModel`和`Users`类：
 
@@ -122,7 +122,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample8.cs)]
 
-右键单击内部`Details`方法，然后选择**添加视图**。 验证**查看数据类**框包含**Mvc3Razor.Models.UserModel***。* 设置**查看内容**到**详细信息**，然后单击**添加**。
+右键单击内部`Details`方法，然后选择**添加视图**。 验证**查看数据类**框包含 **Mvc3Razor.Models.UserModel***。* 设置**查看内容**到**详细信息**，然后单击**添加**。
 
 ![添加详细信息视图](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image11.png)
 
@@ -172,7 +172,7 @@ ms.lasthandoff: 11/10/2017
 
 前两个 jQuery 脚本托管的 Microsoft Ajax 内容交付网络 (CDN)。 通过利用 Microsoft Ajax CDN，就可以显著提高你的应用程序的第一个命中性能。
 
-运行应用程序，然后单击编辑链接。 在浏览器中查看该页面的源。 浏览器源显示在窗体的许多特性`data-val`（用于数据验证）。 当启用客户端验证和非介入式 JavaScript 时，包含与客户端验证规则的输入的字段`data-val="true"`属性触发非介入式客户端验证。 例如，`City`模型中的字段使用修饰[所需](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx)属性，这会导致下面的示例所示的 HTML:
+运行应用程序，然后单击编辑链接。 在浏览器中查看该页面的源。 浏览器源显示在窗体的许多特性`data-val`（用于数据验证）。 当启用客户端验证和非介入式 JavaScript 时，包含与客户端验证规则的输入的字段`data-val="true"`属性触发非介入式客户端验证。 例如，`City`模型中的字段使用修饰[所需](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx)属性，这会导致下面的示例所示的 HTML:
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample15.cshtml)]
 
@@ -180,7 +180,7 @@ ms.lasthandoff: 11/10/2017
 
 ![所需的城市](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image14.png)
 
-同样，对于客户端验证规则中每个参数，将某个属性添加具有窗体`data-val-rulename-paramname=paramvalue`。 例如，`FirstName`属性进行批注[StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)属性并指定 3 的最小长度和最大长度为 8。 名为的数据验证规则`length`具有参数名称`max`和参数值 8。 下面的示例演示为生成的 HTML`FirstName`字段时编辑用户之一：
+同样，对于客户端验证规则中每个参数，将某个属性添加具有窗体`data-val-rulename-paramname=paramvalue`。 例如，`FirstName`属性进行批注[StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)属性并指定 3 的最小长度和最大长度为 8。 名为的数据验证规则`length`具有参数名称`max`和参数值 8。 下面的示例演示为生成的 HTML`FirstName`字段时编辑用户之一：
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample16.cshtml)]
 

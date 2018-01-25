@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
-ms.openlocfilehash: c7d893fb9633aaa8628f2f46a8db7f2c09f81830
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aac359b26c508784793a67260dc2e65c30db687a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>如何： 将移动页面添加到 ASP.NET Web 窗体 / MVC 应用程序
 ====================
@@ -104,7 +104,7 @@ ASP.NET 移动控件为什么已标记为过时的原因是它们的设计面向
 - 输入的法 （鼠标/键盘、 触摸、 键盘、 游戏杆，...）
 - 屏幕大小 （以物理方式和以像素为单位）
 - 支持的介质和数据格式
-- 等等。
+- Etc.
 
 它是更好的做法因为做出决策基于特征与型号，然后您将能够更好地处理的未来设备。
 
@@ -113,12 +113,12 @@ ASP.NET 移动控件为什么已标记为过时的原因是它们的设计面向
 ASP.NET Web 窗体和 MVC 的开发人员可以立即发现正在访问的浏览器的重要特征，通过检查属性*Request.Browser*对象。 有关示例，请参阅
 
 - Request.Browser.IsMobileDevice
-- Request.Browser.MobileDeviceManufacturer Request.Browser.MobileDeviceModel
+- Request.Browser.MobileDeviceManufacturer, Request.Browser.MobileDeviceModel
 - Request.Browser.ScreenPixelsWidth
 - Request.Browser.SupportsXmlHttp
 - ...以及许多其他
 
-在后台，ASP.NET 平台之一匹配传入*用户代理*针对一组浏览器定义 XML 文件中的正则表达式 (UA) HTTP 标头。 默认情况下该平台包括很多常见的移动设备的定义，你可以为其他你想要识别添加自定义浏览器定义文件。 有关更多详细信息，请参阅 MSDN 页面[ASP.NET Web 服务器控件和浏览器功能](https://msdn.microsoft.com/en-us/library/x3k2ssx2.aspx)。
+在后台，ASP.NET 平台之一匹配传入*用户代理*针对一组浏览器定义 XML 文件中的正则表达式 (UA) HTTP 标头。 默认情况下该平台包括很多常见的移动设备的定义，你可以为其他你想要识别添加自定义浏览器定义文件。 有关更多详细信息，请参阅 MSDN 页面[ASP.NET Web 服务器控件和浏览器功能](https://msdn.microsoft.com/library/x3k2ssx2.aspx)。
 
 ### <a name="using-the-wurfl-device-database-via-51degreesmobi-foundation"></a>使用通过 51Degrees.mobi Foundation WURFL 设备数据库
 
@@ -213,9 +213,9 @@ ASP.NET Web 窗体和 MVC 的开发人员可以立即发现正在访问的浏览
 
 由于模型-视图-控制器模式将脱耦 （在控制器） 的应用程序逻辑与表示逻辑 （在视图中），你可以从任何以下方法来处理服务器端代码中的移动支持：
 
-1. ***对于桌面版和移动浏览器，使用相同的控制器和视图，但呈现的视图有不同的 Razor 布局，具体取决于设备类型*。** 如果你要在所有设备上显示相同的数据，但只是想要提供不同的 CSS 样式表或更改为移动的几个顶级 HTML 元素，此选项效果最佳。
+1. ***对于桌面版和移动浏览器，使用相同的控制器和视图，但呈现的视图有不同的 Razor 布局，具体取决于设备类型 *。** 如果你要在所有设备上显示相同的数据，但只是想要提供不同的 CSS 样式表或更改为移动的几个顶级 HTML 元素，此选项效果最佳。
 2. ***对于桌面版和移动浏览器，使用同一个控制器，但呈现根据设备类型的不同视图***。 如果是显示大致相同的数据并提供相同的工作流的最终用户，此选项效果最佳，但想要呈现非常不同的 HTML 标记，以满足当前使用的设备。
-3. ***创建桌面和移动浏览器，每个实现独立控制器和视图的单独区域*。** 如果你显示非常不同的屏幕，包含不同的信息和前导用户通过优化为其设备类型的不同工作流，此选项效果最佳。 这可能意味着一些重复代码，但你也可以通过将出常见逻辑分解到基础层或服务对的最小化。
+3. ***创建桌面和移动浏览器，每个实现独立控制器和视图的单独区域 *。** 如果你显示非常不同的屏幕，包含不同的信息和前导用户通过优化为其设备类型的不同工作流，此选项效果最佳。 这可能意味着一些重复代码，但你也可以通过将出常见逻辑分解到基础层或服务对的最小化。
 
 如果你想要利用**第一个**选项和变化仅 Razor 布局每种设备类型，它是非常简单。 只需修改你\_ViewStart.cshtml 文件，如下所示：
 

@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 7e495ba56958012713836c1dd75ac0c5a8bff942
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 873e4592ba668bbcb22f761c2a547a2a27d7e443
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-aspnet-core-mvc-tutorial-2-of-10"></a>创建、 读取、 更新和删除的 EF 内核，它们有 ASP.NET 核心 MVC 教程 (2 个 10)
 
@@ -46,7 +46,7 @@ Contoso 大学示例 web 应用程序演示如何创建使用实体框架核心�
 
 `Include`和`ThenInclude`方法导致要加载的上下文`Student.Enrollments`导航属性，并在每个注册`Enrollment.Course`导航属性。  你将了解有关这些方法中[读取相关的数据](read-related-data.md)教程。
 
-`AsNoTracking`方法可以提高其中返回的实体将不会更新在当前上下文的生存期中的方案中的性能。 你将了解更多有关`AsNoTracking`在本教程末尾。
+`AsNoTracking`方法可以提高其中返回的实体的当前上下文的生存期内不会更新的方案中的性能。 你将了解更多有关`AsNoTracking`在本教程末尾。
 
 ### <a name="route-data"></a>路线数据
 
@@ -176,7 +176,7 @@ HttpPost 编辑操作方法替换为以下代码。
 
 [!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ReadFirst)]
 
-这些更改实现安全的最佳做法，以防止 overposting。 生成基架`Bind`属性，并添加到的实体集与模型联编程序所创建的实体`Modified`标志。 代码不建议用于许多方案，因为`Bind`属性将清除任何预先存在的数据中未列出的字段中`Include`参数。
+这些更改实现安全的最佳做法，以防止 overposting。 生成基架`Bind`属性，并添加到的实体集与模型联编程序所创建的实体`Modified`标志。 因为，代码不建议对很多方案`Bind`属性将清除任何预先存在的数据中未列出的字段中`Include`参数。
 
 新的代码读取的现有实体和调用`TryUpdateModel`更新中检索到的实体的字段[基于已发布的窗体数据中的用户输入](xref:mvc/models/model-binding#how-model-binding-works)。 实体框架自动更改跟踪设置`Modified`窗体输入，更改字段上的标志。 当`SaveChanges`方法被调用时，实体框架创建 SQL 语句更新数据库行。 并发冲突将被忽略，并更新了用户的表格列更新数据库中。 （后面的教程演示如何处理并发冲突。）
 
@@ -200,7 +200,7 @@ HttpPost 编辑操作方法替换为以下代码。
 
 实体可能处于以下状态之一：
 
-* `Added`。 实体在数据库中尚不存在。 `SaveChanges`方法发出 INSERT 语句。
+* `Added`。 实体还不存在数据库中。 `SaveChanges`方法发出 INSERT 语句。
 
 * `Unchanged`。 无需使用通过此实体完成`SaveChanges`方法。 当从数据库读取实体时，该实体开始时具有此状态。
 

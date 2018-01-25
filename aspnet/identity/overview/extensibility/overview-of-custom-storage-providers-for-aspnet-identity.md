@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 1ea779cb10661512690e3fec16ae73be0f40d15a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f43f0a2dd80e26ecff15e5742e18264ddb5b26aa
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>自定义存储提供程序 ASP.NET 标识概述
 ====================
@@ -73,7 +73,7 @@ ASP.NET 标识包含类称为管理器和存储区。 管理器是高级类用�
 
 | 数据 | 描述 |
 | --- | --- |
-| Users | 注册用户的网站的用户。 包括用户 Id 和用户名称。 如果使用特定于你的站点的凭据登录的用户可能会包括经过哈希处理的密码 （而不是使用凭据从 Facebook 之类的外部站点），和安全戳，以指示是否任何内容已更改的用户凭据。 可能还包含电子邮件地址、 电话号码，是否启用了双重身份验证，登录名，失败的当前数量和帐户已被锁定。 |
+| 用户 | 注册用户的网站的用户。 包括用户 Id 和用户名称。 如果使用特定于你的站点的凭据登录的用户可能会包括经过哈希处理的密码 （而不是使用凭据从 Facebook 之类的外部站点），和安全戳，以指示是否任何内容已更改的用户凭据。 可能还包含电子邮件地址、 电话号码，是否启用了双重身份验证，登录名，失败的当前数量和帐户已被锁定。 |
 | 用户声明 | 一组语句 （或声明） 有关的用户的表示用户的标识。 可以启用的用户的标识不是可以通过角色实现更大的表达式。 |
 | 用户登录名 | 有关外部身份验证提供程序 （如 Facebook) 的信息在用户日志记录时使用。 |
 | 角色 | 你的站点的授权组。 包括 （如"Admin"或"Employee"） 的角色 Id 和角色名称。 |
@@ -109,15 +109,15 @@ ASP.NET 标识包含类称为管理器和存储区。 管理器是高级类用�
 <a id="user"></a>
 ## <a name="customize-the-user-class"></a>自定义用户类
 
-在实现自己的存储提供程序时，你必须创建一个用户类，这等效于[IdentityUser](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework.identityuser(v=vs.108).aspx)类[Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx)命名空间：
+在实现自己的存储提供程序时，你必须创建一个用户类，这等效于[IdentityUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityuser(v=vs.108).aspx)类[Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx)命名空间：
 
 下图显示了你必须创建 IdentityUser 类和要在此类中实现的接口。
 
 ![](overview-of-custom-storage-providers-for-aspnet-identity/_static/image2.png)
 
-[IUser&lt;TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613291(v=vs.108).aspx)接口定义 UserManager 尝试调用时执行请求的操作的属性。 该接口包含两个属性的 Id 和用户名。 [IUser&lt;TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613291(v=vs.108).aspx)接口，可指定的密钥，用户通过泛型类型**TKey**参数。 Id 属性的类型匹配 TKey 参数的值。
+[IUser&lt;TKey&gt; ](https://msdn.microsoft.com/library/dn613291(v=vs.108).aspx)接口定义 UserManager 尝试调用时执行请求的操作的属性。 该接口包含两个属性的 Id 和用户名。 [IUser&lt;TKey&gt; ](https://msdn.microsoft.com/library/dn613291(v=vs.108).aspx)接口，可指定的密钥，用户通过泛型类型**TKey**参数。 Id 属性的类型匹配 TKey 参数的值。
 
-标识框架还提供了[IUser](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.iuser(v=vs.108).aspx)接口 （如果不使用泛型参数） 时，你想要用于键的字符串值。
+标识框架还提供了[IUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.iuser(v=vs.108).aspx)接口 （如果不使用泛型参数） 时，你想要用于键的字符串值。
 
 IdentityUser 类实现 IUser，并包含任何其他属性或构造函数为您的网站上的用户。 下面的示例演示用于密钥使用整数 IdentityUser 类。 Id 字段设置为**int**以匹配的泛型参数的值。 
 
@@ -128,7 +128,7 @@ IdentityUser 类实现 IUser，并包含任何其他属性或构造函数为您�
 <a id="userstore"></a>
 ## <a name="customize-the-user-store"></a>自定义用户存储区
 
-你还创建一个 UserStore 类，提供用户的所有数据操作的方法。 此类是等效于[UserStore&lt;热熔器&gt;](https://msdn.microsoft.com/en-us/library/dn315446(v=vs.108).aspx)类[Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx)命名空间。 在 UserStore 类中，你实现[IUserStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613276(v=vs.108).aspx)和任何可选接口。 你选择的可选接口，以实现基于你希望应用程序中提供的功能。
+你还创建一个 UserStore 类，提供用户的所有数据操作的方法。 此类是等效于[UserStore&lt;热熔器&gt;](https://msdn.microsoft.com/library/dn315446(v=vs.108).aspx)类[Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx)命名空间。 在 UserStore 类中，你实现[IUserStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613276(v=vs.108).aspx)和任何可选接口。 你选择的可选接口，以实现基于你希望应用程序中提供的功能。
 
 下图显示您必须创建 UserStore 类和相关的接口。
 
@@ -153,27 +153,27 @@ Visual Studio 中的默认项目模板包含假定已在用户存储区将许多
 ![](overview-of-custom-storage-providers-for-aspnet-identity/_static/image4.png)
 
 - **IUserStore**  
- [IUserStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613278(v=vs.108).aspx)接口是在用户存储区必须实现的唯一接口。 它定义了用于创建、 更新、 删除和检索用户的方法。
+ [IUserStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613278(v=vs.108).aspx)接口是在用户存储区必须实现的唯一接口。 它定义了用于创建、 更新、 删除和检索用户的方法。
 - **IUserClaimStore**  
- [IUserClaimStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613265(v=vs.108).aspx)接口定义的方法必须在你的用户存储，从而启用用户声明实现。 它包含方法或添加、 删除和检索用户声明。
+ [IUserClaimStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613265(v=vs.108).aspx)接口定义的方法必须在你的用户存储，从而启用用户声明实现。 它包含方法或添加、 删除和检索用户声明。
 - **IUserLoginStore**  
- [IUserLoginStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613272(v=vs.108).aspx)定义的方法必须在你的用户存储区，以启用外部身份验证提供程序实现。 它包含用于添加、 删除和检索用户登录名和用于检索用户的登录信息基于方法的方法。
+ [IUserLoginStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613272(v=vs.108).aspx)定义的方法必须在你的用户存储区，以启用外部身份验证提供程序实现。 它包含用于添加、 删除和检索用户登录名和用于检索用户的登录信息基于方法的方法。
 - **IUserRoleStore**  
- [IUserRoleStore&lt;，热熔器&gt;](https://msdn.microsoft.com/en-us/library/dn613276(v=vs.108).aspx)接口定义的方法必须在你的用户存储，从而将用户映射到角色实现。 它包含要添加、 删除和检索用户的角色和方法来检查是否将用户分配到角色的方法。
+ [IUserRoleStore&lt;，热熔器&gt;](https://msdn.microsoft.com/library/dn613276(v=vs.108).aspx)接口定义的方法必须在你的用户存储，从而将用户映射到角色实现。 它包含要添加、 删除和检索用户的角色和方法来检查是否将用户分配到角色的方法。
 - **IUserPasswordStore**  
- [IUserPasswordStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613273(v=vs.108).aspx)接口定义必须在你的用户存储区，以保留实现的方法进行密码哈希处理。 它包含用于获取和设置工作经过哈希处理的密码，以及用于指示用户是否已设置密码的方法的方法。
+ [IUserPasswordStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613273(v=vs.108).aspx)接口定义必须在你的用户存储区，以保留实现的方法进行密码哈希处理。 它包含用于获取和设置工作经过哈希处理的密码，以及用于指示用户是否已设置密码的方法的方法。
 - **IUserSecurityStampStore**  
- [IUserSecurityStampStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613277(v=vs.108).aspx)接口定义必须在你的用户存储区，用于指示是否已更改用户的帐户信息安全戳实现的方法. 当用户更改密码，或添加或删除登录名，将更新此 stamp。 它包含用于获取和设置安全戳的方法。
+ [IUserSecurityStampStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613277(v=vs.108).aspx)接口定义必须在你的用户存储区，用于指示是否已更改用户的帐户信息安全戳实现的方法. 当用户更改密码，或添加或删除登录名，将更新此 stamp。 它包含用于获取和设置安全戳的方法。
 - **IUserTwoFactorStore**  
- [IUserTwoFactorStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613279(v=vs.108).aspx)接口定义必须实现到实现两个因素身份验证的方法。 它包含用于获取和设置是否为用户启用双重身份验证的方法。
+ [IUserTwoFactorStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613279(v=vs.108).aspx)接口定义必须实现到实现两个因素身份验证的方法。 它包含用于获取和设置是否为用户启用双重身份验证的方法。
 - **IUserPhoneNumberStore**  
- [IUserPhoneNumberStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613275(v=vs.108).aspx)接口定义必须实现以存储用户电话号码的方法。 它包含用于获取和设置的电话号码和是否确认的电话号码的方法。
+ [IUserPhoneNumberStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613275(v=vs.108).aspx)接口定义必须实现以存储用户电话号码的方法。 它包含用于获取和设置的电话号码和是否确认的电话号码的方法。
 - **IUserEmailStore**  
- [IUserEmailStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613143(v=vs.108).aspx)接口定义必须实现以存储用户电子邮件地址的方法。 它包含用于获取和设置的电子邮件地址和是否确认电子邮件的方法。
+ [IUserEmailStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613143(v=vs.108).aspx)接口定义必须实现以存储用户电子邮件地址的方法。 它包含用于获取和设置的电子邮件地址和是否确认电子邮件的方法。
 - **IUserLockoutStore**  
- [IUserLockoutStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613271(v=vs.108).aspx)接口定义为存储帐户的锁定信息而必须实现的方法。 它包含用于获取当前的失败的访问尝试次数、 获取和设置是否可以锁定该帐户，获取和设置在锁住结束日期，递增的数字失败的尝试，和重置失败尝试次数的方法。
+ [IUserLockoutStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613271(v=vs.108).aspx)接口定义为存储帐户的锁定信息而必须实现的方法。 它包含用于获取当前的失败的访问尝试次数、 获取和设置是否可以锁定该帐户，获取和设置在锁住结束日期，递增的数字失败的尝试，和重置失败尝试次数的方法。
 - **IQueryableUserStore**  
- [IQueryableUserStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613267(v=vs.108).aspx)接口定义必须实现以提供可查询的用户存储的成员。 它包含一个属性，保存查询的用户。
+ [IQueryableUserStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613267(v=vs.108).aspx)接口定义必须实现以提供可查询的用户存储的成员。 它包含一个属性，保存查询的用户。
 
  在你的应用程序; 实现所需接口例如，IUserClaimStore、 IUserLoginStore、 IUserRoleStore、 IUserPasswordStore 和 IUserSecurityStampStore 接口如下所示。 
 
@@ -183,22 +183,22 @@ Visual Studio 中的默认项目模板包含假定已在用户存储区将许多
 
 ### <a name="identityuserclaim-identityuserlogin-and-identityuserrole"></a>IdentityUserClaim、 IdentityUserLogin 和 IdentityUserRole
 
-Microsoft.AspNet.Identity.EntityFramework 命名空间包含的实现[IdentityUserClaim](https://msdn.microsoft.com/en-us/library/dn613250(v=vs.108).aspx)， [IdentityUserLogin](https://msdn.microsoft.com/en-us/library/dn613251(v=vs.108).aspx)，和[IdentityUserRole](https://msdn.microsoft.com/en-us/library/dn613252(v=vs.108).aspx)类。 如果你正使用这些功能，你可能想要创建你自己版本的这些类并定义你的应用程序的属性。 但是，有时它会更加高效，若要执行基本操作 （如添加或删除用户的声明） 时不将这些实体加载到内存。 相反后, 端存储类可以执行这些操作直接在数据源上。 例如，UserStore.GetClaimsAsync() 方法可以调用 userClaimTable.FindByUserId(user.Id) 方法来执行查询上直接表并且返回的声明列表。
+Microsoft.AspNet.Identity.EntityFramework 命名空间包含的实现[IdentityUserClaim](https://msdn.microsoft.com/library/dn613250(v=vs.108).aspx)， [IdentityUserLogin](https://msdn.microsoft.com/library/dn613251(v=vs.108).aspx)，和[IdentityUserRole](https://msdn.microsoft.com/library/dn613252(v=vs.108).aspx)类。 如果你正使用这些功能，你可能想要创建你自己版本的这些类并定义你的应用程序的属性。 但是，有时它会更加高效，若要执行基本操作 （如添加或删除用户的声明） 时不将这些实体加载到内存。 相反后, 端存储类可以执行这些操作直接在数据源上。 例如，UserStore.GetClaimsAsync() 方法可以调用 userClaimTable.FindByUserId(user.Id) 方法来执行查询上直接表并且返回的声明列表。
 
 [!code-csharp[Main](overview-of-custom-storage-providers-for-aspnet-identity/samples/sample6.cs)]
 
 <a id="role"></a>
 ## <a name="customize-the-role-class"></a>自定义角色类
 
-在实现自己的存储提供程序时，你必须创建一个角色类，这等效于[IdentityRole](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework.identityrole(v=vs.108).aspx)类[Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx)命名空间：
+在实现自己的存储提供程序时，你必须创建一个角色类，这等效于[IdentityRole](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityrole(v=vs.108).aspx)类[Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx)命名空间：
 
 下图显示了你必须创建 IdentityRole 类和要在此类中实现的接口。
 
 ![](overview-of-custom-storage-providers-for-aspnet-identity/_static/image5.png)
 
-[IRole&lt;TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613268(v=vs.108).aspx)接口定义 RoleManager 尝试调用时执行请求的操作的属性。 该接口包含两个属性的 Id 和名称。 [IRole&lt;TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613268(v=vs.108).aspx)接口，可指定的类型的密钥，通过泛型角色**TKey**参数。 Id 属性的类型匹配 TKey 参数的值。
+[IRole&lt;TKey&gt; ](https://msdn.microsoft.com/library/dn613268(v=vs.108).aspx)接口定义 RoleManager 尝试调用时执行请求的操作的属性。 该接口包含两个属性的 Id 和名称。 [IRole&lt;TKey&gt; ](https://msdn.microsoft.com/library/dn613268(v=vs.108).aspx)接口，可指定的类型的密钥，通过泛型角色**TKey**参数。 Id 属性的类型匹配 TKey 参数的值。
 
-标识框架还提供了[IRole](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.irole(v=vs.108).aspx)接口 （如果不使用泛型参数） 时，你想要用于键的字符串值。
+标识框架还提供了[IRole](https://msdn.microsoft.com/library/microsoft.aspnet.identity.irole(v=vs.108).aspx)接口 （如果不使用泛型参数） 时，你想要用于键的字符串值。
 
 下面的示例演示用于密钥使用整数 IdentityRole 类。 Id 字段设置为 int，以匹配的泛型参数的值。 
 
@@ -209,7 +209,7 @@ Microsoft.AspNet.Identity.EntityFramework 命名空间包含的实现[IdentityUs
 <a id="rolestore"></a>
 ## <a name="customize-the-role-store"></a>自定义角色存储
 
-你还创建一个 RoleStore 类，提供对角色的所有数据操作的方法。 此类是等效于[RoleStore&lt;TRole&gt; ](https://msdn.microsoft.com/en-us/library/dn468181(v=vs.108).aspx) Microsoft.ASP.NET.Identity.EntityFramework 命名空间中的类。 在 RoleStore 类中，你实现[IRoleStore&lt;TRole、 TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613266(v=vs.108).aspx)和 （可选） [IQueryableRoleStore&lt;TRole、 TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613262(v=vs.108).aspx)接口。
+你还创建一个 RoleStore 类，提供对角色的所有数据操作的方法。 此类是等效于[RoleStore&lt;TRole&gt; ](https://msdn.microsoft.com/library/dn468181(v=vs.108).aspx) Microsoft.ASP.NET.Identity.EntityFramework 命名空间中的类。 在 RoleStore 类中，你实现[IRoleStore&lt;TRole、 TKey&gt; ](https://msdn.microsoft.com/library/dn613266(v=vs.108).aspx)和 （可选） [IQueryableRoleStore&lt;TRole、 TKey&gt; ](https://msdn.microsoft.com/library/dn613262(v=vs.108).aspx)接口。
 
 ![](overview-of-custom-storage-providers-for-aspnet-identity/_static/image6.png)
 
@@ -218,7 +218,7 @@ Microsoft.AspNet.Identity.EntityFramework 命名空间包含的实现[IdentityUs
 [!code-csharp[Main](overview-of-custom-storage-providers-for-aspnet-identity/samples/sample8.cs)]
 
 - **IRoleStore&lt;TRole&gt;**  
- [IRoleStore](https://msdn.microsoft.com/en-us/library/dn468195.aspx)接口定义角色存储类中实现的方法。 它包含用于创建、 更新、 删除和检索角色的方法。
+ [IRoleStore](https://msdn.microsoft.com/library/dn468195.aspx)接口定义角色存储类中实现的方法。 它包含用于创建、 更新、 删除和检索角色的方法。
 - **RoleStore&lt;TRole&gt;**  
  若要自定义 RoleStore，请创建实现 IRoleStore 接口的类。 只需实现此类，如果想要使用你的系统上的角色。 采用名为的参数的构造函数*数据库*ExampleDatabase 是仅举例说明了如何在数据访问类传递的类型。 例如，在 MySQL 实现中，此构造函数采用类型 MySQLDatabase 的参数。  
   

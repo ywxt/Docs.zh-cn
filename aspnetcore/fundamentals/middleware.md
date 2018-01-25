@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: ef130e736e2f32fa134156d979ce5bfbedcae828
-ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
+ms.openlocfilehash: 84f386db4ab96a82011ee2fc0b6c20a1a05b5e4b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>ASP.NET 核心中间件基础知识
 
@@ -55,7 +55,7 @@ ASP.NET 核心请求管道由请求委托，调用一次是在另一个，如图
 [!code-csharp[Main](middleware/sample/Chain/Startup.cs?name=snippet1)]
 
 >[!WARNING]
-> 不要调用`next.Invoke`响应发送到客户端后。 更改为`HttpResponse`响应启动后将引发异常。 例如，更改，例如设置标头、 状态代码等，将引发异常。 写入之后调用的响应正文`next`:
+> 请勿调用`next.Invoke`响应发送到客户端后。 更改为`HttpResponse`响应启动后将引发异常。 例如，更改，例如设置标头、 状态代码等，将引发异常。 写入之后调用的响应正文`next`:
 > - 可能会导致违反协议。 例如，编写多个规定`content-length`。
 > - 可能会损坏正文格式。 例如，向 CSS 文件中写入一个 HTML 的页脚。
 >
@@ -63,7 +63,7 @@ ASP.NET 核心请求管道由请求委托，调用一次是在另一个，如图
 
 ## <a name="ordering"></a>订购
 
-中间件组件将被添加中的顺序`Configure`方法定义在请求中，调用的顺序和响应相反的顺序。 此排序对于安全、 性能和功能至关重要。
+中间件组件将被添加中的顺序`Configure`方法定义的顺序调用在请求中，你和响应相反的顺序。 此排序对于安全、 性能和功能至关重要。
 
 Configure 方法 （如下所示） 将添加以下的中间件组件：
 
@@ -116,11 +116,11 @@ public void Configure(IApplicationBuilder app)
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 
-如果请求未由静态文件中间件，它将传递给该标识中间件 (`app.UseAuthentication`)，这将执行身份验证。 标识不会短路未经身份验证的请求。 标识对请求进行身份验证，尽管仅后 MVC 选择特定 Razor 页或控制器和操作时，才会发生授权 （和拒绝）。
+如果请求未由静态文件中间件进行处理，它将传递给该标识中间件 (`app.UseAuthentication`)，这将执行身份验证。 标识不短路未经身份验证的请求。 标识对请求进行身份验证，尽管仅后 MVC 选择特定 Razor 页或控制器和操作时，才会发生授权 （和拒绝）。
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-如果请求未由静态文件中间件，它将传递给该标识中间件 (`app.UseIdentity`)，这将执行身份验证。 标识不会短路未经身份验证的请求。 标识对请求进行身份验证，尽管仅后 MVC 选择特定控制器和操作时，才会发生授权 （和拒绝）。
+如果请求未由静态文件中间件进行处理，它将传递给该标识中间件 (`app.UseIdentity`)，这将执行身份验证。 标识不短路未经身份验证的请求。 标识对请求进行身份验证，尽管仅后 MVC 选择特定控制器和操作时，才会发生授权 （和拒绝）。
 
 -----------
 
@@ -140,7 +140,7 @@ public void Configure(IApplicationBuilder app)
 
 ### <a name="use-run-and-map"></a>使用、 运行和映射
 
-配置 HTTP 管道使用`Use`， `Run`，和`Map`。 `Use`方法则可以绕过管道 (即，如果它未调用`next`请求委托)。 `Run`是一种约定，并且可能会使某些中间件组件`Run[Middleware]`管道结束时运行的方法。
+配置 HTTP 管道使用`Use`， `Run`，和`Map`。 `Use`方法则可以绕过管道 (即，如果它不会调用`next`请求委托)。 `Run`是一种约定，并且可能会使某些中间件组件`Run[Middleware]`管道结束时运行的方法。
 
 `Map*`扩展用作分支管道约定。 [映射](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions)请求管道基于给定的请求路径的匹配项的分支。 如果请求路径开头的给定路径，则执行分支。
 

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
-ms.openlocfilehash: 3eb070167c36db7d8fb2e05af89716ee386b8211
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 88f57244bfbfdf33df3bb265d8aa2c93689b2f24
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>数据存储选项 （使用 Azure 构建真实世界云应用）
 ====================
@@ -41,14 +41,14 @@ ms.lasthandoff: 11/10/2017
 
 下表显示了四种类型的 NoSQL 数据库：
 
-- [键/值数据库](https://msdn.microsoft.com/en-us/library/dn313285.aspx#sec7)存储每个键值的单个序列化的对象。 它们适合存储大量数据，其中你想要针对给定的密钥值获取一个项，你不具有基于项的其他属性的查询。
+- [键/值数据库](https://msdn.microsoft.com/library/dn313285.aspx#sec7)存储每个键值的单个序列化的对象。 它们适合存储大量数据，其中你想要针对给定的密钥值获取一个项，你不具有基于项的其他属性的查询。
 
-    [Azure Blob 存储](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/)是函数类似文件存储在云中，使用对应文件夹和文件名称的密钥值的键/值数据库。 检索由其文件夹和文件名称，而不是在搜索文件内容中的值的文件。
+    [Azure Blob 存储](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/)是函数类似文件存储在云中，使用对应文件夹和文件名称的密钥值的键/值数据库。 检索由其文件夹和文件名称，而不是在搜索文件内容中的值的文件。
 
-    [Azure 表存储](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-tables/)也是一个键/值的数据库。 每个值称为*实体*（类似于一个行，由分区键和行键标识） 和包含多个*属性*(类似于列，但并非所有表中的实体都必须共享相同列）。 对与键不同的列的查询非常低效，应当避免。 例如，你可以使用存储有关单个用户的信息的一个分区来存储用户配置文件数据。 在单独的一个实体的属性或在同一个分区中的不同实体，你可以存储数据，例如用户名、 密码哈希、 出生日期等。 您不想要为所有用户提供的出生日期，给定范围查询，但无法之间配置文件表与另一个表执行联接查询。 表存储是更具伸缩性和成本高于关系数据库中，但它并不启用复杂的查询或联接。
-- [Documentdatabases](https://msdn.microsoft.com/en-us/library/dn313285.aspx#sec8)的值是在其中的键/值数据库*文档*。 "文档"此处未使用在 Word 或 Excel 的文档的意义上，但意味着命名的字段和值，其中的任何可能是子文档的集合。 例如，订单历史记录表中可能具有的订单文档，订单编号、 订单日期和客户字段;和客户字段可能具有名称和地址字段。 数据库将编码格式如 XML、 YAML、 JSON 或 BSON; 中的字段数据也可以使用纯文本。 设置文档键/值数据库之外的数据库的一个功能是能够在非键字段上查询和定义辅助索引，以使查询更高效。 此功能使得文档数据库更适合应用程序需要检索基于条件比文档键的值更复杂的数据。 例如，销售订单历史记录文档数据库中您可以查询如产品 ID、 客户 ID、 客户名称和等的各个字段上。 [MongoDB](http://www.mongodb.org/)是常用文档数据库。
-- [列系列数据库](https://msdn.microsoft.com/en-us/library/dn313285.aspx#sec9)是键/值数据存储，使您能够在结构数据存储到的相关列称为列系列的集合。 例如，人口普查数据库可能有一组人员的姓名的列 （首先，中间上, 一次），一个组以启用此人的地址和一个组有关用户的配置文件信息 (DOB，性别，等等)。 数据库可以然后存储每个列系列单独分区中保留所有人与相同的密钥相关的数据时。 然后，你可以无需通读的所有名称和地址信息以及读取所有配置文件信息。 [Cassandra](http://cassandra.apache.org/)是受欢迎的列系列数据库。
-- [图形数据库](https://msdn.microsoft.com/en-us/library/dn313285.aspx#sec10)将信息存储为对象和关系的集合。 图形数据库的目的是使应用程序有效地执行的查询，它们之间遍历的网络中的对象和关系。 例如，这些对象可能是在人力资源数据库中，员工，你可能想以便于查询如"查找所有雇员的姓名直接或间接工作 Scott。" [Neo4j](http://www.neo4j.org/)是一个常用的关系图的数据库。
+    [Azure 表存储](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-tables/)也是一个键/值的数据库。 每个值称为*实体*（类似于一个行，由分区键和行键标识） 和包含多个*属性*(类似于列，但并非所有表中的实体都必须共享相同列）。 对与键不同的列的查询非常低效，应当避免。 例如，你可以使用存储有关单个用户的信息的一个分区来存储用户配置文件数据。 在单独的一个实体的属性或在同一个分区中的不同实体，你可以存储数据，例如用户名、 密码哈希、 出生日期等。 您不想要为所有用户提供的出生日期，给定范围查询，但无法之间配置文件表与另一个表执行联接查询。 表存储是更具伸缩性和成本高于关系数据库中，但它并不启用复杂的查询或联接。
+- [Documentdatabases](https://msdn.microsoft.com/library/dn313285.aspx#sec8)的值是在其中的键/值数据库*文档*。 "文档"此处未使用在 Word 或 Excel 的文档的意义上，但意味着命名的字段和值，其中的任何可能是子文档的集合。 例如，订单历史记录表中可能具有的订单文档，订单编号、 订单日期和客户字段;和客户字段可能具有名称和地址字段。 数据库将编码格式如 XML、 YAML、 JSON 或 BSON; 中的字段数据也可以使用纯文本。 设置文档键/值数据库之外的数据库的一个功能是能够在非键字段上查询和定义辅助索引，以使查询更高效。 此功能使得文档数据库更适合应用程序需要检索基于条件比文档键的值更复杂的数据。 例如，销售订单历史记录文档数据库中您可以查询如产品 ID、 客户 ID、 客户名称和等的各个字段上。 [MongoDB](http://www.mongodb.org/)是常用文档数据库。
+- [列系列数据库](https://msdn.microsoft.com/library/dn313285.aspx#sec9)是键/值数据存储，使您能够在结构数据存储到的相关列称为列系列的集合。 例如，人口普查数据库可能有一组人员的姓名的列 （首先，中间上, 一次），一个组以启用此人的地址和一个组有关用户的配置文件信息 (DOB，性别，等等)。 数据库可以然后存储每个列系列单独分区中保留所有人与相同的密钥相关的数据时。 然后，你可以无需通读的所有名称和地址信息以及读取所有配置文件信息。 [Cassandra](http://cassandra.apache.org/)是受欢迎的列系列数据库。
+- [图形数据库](https://msdn.microsoft.com/library/dn313285.aspx#sec10)将信息存储为对象和关系的集合。 图形数据库的目的是使应用程序有效地执行的查询，它们之间遍历的网络中的对象和关系。 例如，这些对象可能是在人力资源数据库中，员工，你可能想以便于查询如"查找所有雇员的姓名直接或间接工作 Scott。" [Neo4j](http://www.neo4j.org/)是一个常用的关系图的数据库。
 
 与关系数据库相比，NoSQL 选项提供更大的可伸缩性和用于存储和分析非结构化数据的成本效益。 代价是，它们不提供的丰富 queryability 和可靠的数据的关系数据库的完整性功能。 NoSQL 将适用于涉及大量联接查询不需要的 IIS 日志数据。 NoSQL 不适合非常好银行事务，这需要绝对数据完整性的并且涉及在与其他帐户相关的数据的多个关系。
 
@@ -63,7 +63,7 @@ ms.lasthandoff: 11/10/2017
 - 分解分成几个部分的数据并将它们发送给不同的计算机进行处理。 计算机 A 上计算的人士提供 1950年 1959年日期数，则计算机 B 不 1960年 1969，等等。此组的计算机称为*Hadoop 群集*。
 - 将每个部分结果部分处理完成后到一起。 你现在有一个相对较短的每个出生年份的多少人员列表和计算百分比此总体列表中的任务是易于管理。
 
-在 Azure 上， [HDInsight](https://azure.microsoft.com/en-us/services/hdinsight/)使您能够处理和分析，并获取新的见解，从使用 Hadoop 的强大的大数据。 例如，你可以使用它来分析 web 服务器日志：
+在 Azure 上， [HDInsight](https://azure.microsoft.com/services/hdinsight/)使您能够处理和分析，并获取新的见解，从使用 Hadoop 的强大的大数据。 例如，你可以使用它来分析 web 服务器日志：
 
 - 启用到你的存储帐户的 web 服务器日志记录。 这将设置 Azure 日志写入 Blob 服务为你的应用程序对每个 HTTP 请求。 Blob 服务基本上是云文件存储，以及它与 hdinsight 配合使用可以很好地集成。 
 
@@ -131,7 +131,7 @@ Azure 使 IaaS 数据存储选项为易于使用，但 PaaS 产品具有使它�
 - 无需购买许可证;许可费用都包括在服务费用。
 - 你只为你的使用付费。
 
-在 Azure 中的 PaaS 数据存储选项包括由第三方提供商的产品。 例如，你可以选择[MongoLab 外接程序](https://azure.microsoft.com/en-us/documentation/articles/store-mongolab-web-sites-dotnet-store-data-mongodb/)从要设置 MongoDB 数据库作为一项服务的 Azure 存储区。
+在 Azure 中的 PaaS 数据存储选项包括由第三方提供商的产品。 例如，你可以选择[MongoLab 外接程序](https://azure.microsoft.com/documentation/articles/store-mongolab-web-sites-dotnet-store-data-mongodb/)从要设置 MongoDB 数据库作为一项服务的 Azure 存储区。
 
 ## <a name="choosing-a-data-storage-option"></a>选择一个数据存储选项
 
@@ -155,7 +155,7 @@ Azure 使 IaaS 数据存储选项为易于使用，但 PaaS 产品具有使它�
 
 我们通常的建议是知道中每个类别的问题的答案，然后选择你的数据存储解决方案。
 
-此外，你的工作负荷可能存在某些平台可以比其他更好地支持的特定要求。 例如: 
+此外，你的工作负荷可能存在某些平台可以比其他更好地支持的特定要求。 例如:
 
 - 不应用程序需要审核功能？
 - 你的数据使用寿命要求是什么-你需要存档或清除的自动的功能吗？
@@ -249,8 +249,8 @@ SQL Database 是易于扩展。 为 Fix It 应用，我们在我们的自动化�
 
 | Azure SQL 数据库 (PaaS) | 虚拟机 (IaaS) 中的 SQL Server |
 | --- | --- |
-| **专业人员**-无需创建或管理 Vm、 更新或修补程序 OS 或 SQL;Azure 为你执行该操作。 -内置的高可用性，与数据库级别 SLA。 -低总拥有成本 (TCO)，因为你只需支付使用 （不需要许可证）。 -适用于处理大量的小型数据库 (&lt;= 500 GB)。 -轻松地动态创建新的数据库启用横向扩展。 | ***专业人员***-与本地 SQL Server 的功能兼容。 -可以实现 SQL Server[通过 AlwaysOn 高可用性](https://www.microsoft.com/en-us/sqlserver/solutions-technologies/mission-critical-operations/high-availability.aspx)2 + Vm，并确保 SLA 来 VM 级别中。 -你可以完全控制如何管理 SQL。 -可以重复使用你已拥有，或按某个小时付费的 SQL 许可证。 -适用于处理更少但更大 (1 TB +) 数据库。 |
-| **Cons**的某些功能相比于在本地 SQL Server 的缺口 (缺少[CLR 集成](https://technet.microsoft.com/en-us/library/ms131102.aspx)， [TDE](https://technet.microsoft.com/en-us/library/bb934049.aspx)，[压缩支持](https://technet.microsoft.com/en-us/library/cc280449.aspx)， [SQLServer Reporting Services](https://technet.microsoft.com/en-us/library/ms159106.aspx)等) 的数据库大小限制为 500 GB。 | ***Cons*** -更新/修补程序 （OS 和 SQL） 是您有责任-创建和管理的数据库对于您有责任的限制为大约 8000 （通过 16 个数据驱动器） 的磁盘 IOPS （每秒输入/输出操作）。 |
+| **专业人员**-无需创建或管理 Vm、 更新或修补程序 OS 或 SQL;Azure 为你执行该操作。 -内置的高可用性，与数据库级别 SLA。 -低总拥有成本 (TCO)，因为你只需支付使用 （不需要许可证）。 -适用于处理大量的小型数据库 (&lt;= 500 GB)。 -轻松地动态创建新的数据库启用横向扩展。 | ***专业人员***-与本地 SQL Server 的功能兼容。 -可以实现 SQL Server[通过 AlwaysOn 高可用性](https://www.microsoft.com/sqlserver/solutions-technologies/mission-critical-operations/high-availability.aspx)2 + Vm，并确保 SLA 来 VM 级别中。 -你可以完全控制如何管理 SQL。 -可以重复使用你已拥有，或按某个小时付费的 SQL 许可证。 -适用于处理更少但更大 (1 TB +) 数据库。 |
+| **Cons**的某些功能相比于在本地 SQL Server 的缺口 (缺少[CLR 集成](https://technet.microsoft.com/library/ms131102.aspx)， [TDE](https://technet.microsoft.com/library/bb934049.aspx)，[压缩支持](https://technet.microsoft.com/library/cc280449.aspx)， [SQLServer Reporting Services](https://technet.microsoft.com/library/ms159106.aspx)等) 的数据库大小限制为 500 GB。 | ***Cons*** -更新/修补程序 （OS 和 SQL） 是您有责任-创建和管理的数据库对于您有责任的限制为大约 8000 （通过 16 个数据驱动器） 的磁盘 IOPS （每秒输入/输出操作）。 |
 
 如果你想要在 VM 中使用 SQL Server，你可以使用你自己的 SQL Server 许可证，或可以为一个按小时付费。 例如，在门户中或通过 REST API 可以创建使用 SQL Server 映像的新 VM。
 
@@ -271,35 +271,35 @@ SQL Database 是易于扩展。 为 Fix It 应用，我们在我们的自动化�
 选择的数据库平台：
 
 - [高度可缩放解决方案的数据访问： 使用 SQL、 NoSQL 和 Polyglot 持久性](http://aka.ms/dag-doc)。 电子书 Microsoft 模式与实践中的深度放入不同种类的数据存储可用于云应用程序。
-- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/en-us/library/ff898430.aspx)。 请参阅数据一致性入门、 数据复制和同步指南，索引表模式、 具体化视图模式。
+- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/library/ff898430.aspx)。 请参阅数据一致性入门、 数据复制和同步指南，索引表模式、 具体化视图模式。
 - [基本： Acid 备用](http://queue.acm.org/detail.cfm?id=1394128)。 有关数据一致性和可伸缩性之间权衡的文章。
 - [七个星期中的七个数据库： 现代数据库和 NoSQL 移动的指南](https://www.amazon.com/Seven-Databases-Weeks-Modern-Movement/dp/1934356921)。 由 Eric Redmond 和 Jim。 wilson 制作的书籍。 强烈建议为自己引入数据存储平台目前可用的范围。
 
 SQL Server 和 SQL 数据库之间进行选择：
 
-- [高级 SQL Database 预览版指导](https://msdn.microsoft.com/en-us/library/windowsazure/dn369873.aspx)。 SQL 数据库高级版，以及有关何时选择而不是 SQL 数据库 Web 和企业版本的指导简介。
-- [指导原则和限制 (Azure SQL Database)](https://msdn.microsoft.com/en-us/library/windowsazure/ff394102.aspx)。 链接到有关的 SQL 数据库限制的文档的门户页，其中一个重点介绍该 SQL 数据库的 SQL Server 功能不支持。
-- [Azure 虚拟机中的 SQL Server](https://msdn.microsoft.com/en-us/library/windowsazure/jj823132.aspx)。 有关在 Azure 中运行 SQL Server 的文档链接的门户页面。
-- [Scott Guthrie 介绍 Azure 中的 SQL 数据库](https://azure.microsoft.com/en-us/documentation/videos/sql-in-azure-scottgu/)。 SQL 数据库由 Scott Guthrie 6 分钟视频介绍。
-- [应用程序模式和 Azure 虚拟机中 SQL Server 的开发策略](https://msdn.microsoft.com/en-us/library/windowsazure/dn574746.aspx)。
+- [高级 SQL Database 预览版指导](https://msdn.microsoft.com/library/windowsazure/dn369873.aspx)。 SQL 数据库高级版，以及有关何时选择而不是 SQL 数据库 Web 和企业版本的指导简介。
+- [指导原则和限制 (Azure SQL Database)](https://msdn.microsoft.com/library/windowsazure/ff394102.aspx)。 链接到有关的 SQL 数据库限制的文档的门户页，其中一个重点介绍该 SQL 数据库的 SQL Server 功能不支持。
+- [Azure 虚拟机中的 SQL Server](https://msdn.microsoft.com/library/windowsazure/jj823132.aspx)。 有关在 Azure 中运行 SQL Server 的文档链接的门户页面。
+- [Scott Guthrie 介绍 Azure 中的 SQL 数据库](https://azure.microsoft.com/documentation/videos/sql-in-azure-scottgu/)。 SQL 数据库由 Scott Guthrie 6 分钟视频介绍。
+- [应用程序模式和 Azure 虚拟机中 SQL Server 的开发策略](https://msdn.microsoft.com/library/windowsazure/dn574746.aspx)。
 
 在 ASP.NET Web 应用程序中使用实体框架和 SQL 数据库
 
 - [EF 6 使用 MVC 5 入门](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 包含 9 个部分组成的系列教程将指导你完成生成，该服务的 MVC 应用程序使用 EF，并将数据库部署到 Azure 和 SQL 数据库。
 - [使用 Visual Studio 的 ASP.NET Web 部署](../../../../web-forms/overview/deployment/visual-studio-web-deployment/introduction.md)。 十二个一部分进入详细深入探讨了有关如何将数据库部署通过使用 EF Code First 的教程系列。
-- [将包含成员资格、 OAuth 和 SQL 数据库的安全 ASP.NET MVC 5 应用程序部署到 Azure 网站](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)。 分步教程将指导你完成创建 web 应用程序使用身份验证、 成员资格数据库中存储应用程序表、 修改数据库架构，和将应用程序部署到 Azure。
+- [将包含成员资格、 OAuth 和 SQL 数据库的安全 ASP.NET MVC 5 应用程序部署到 Azure 网站](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)。 分步教程将指导你完成创建 web 应用程序使用身份验证、 成员资格数据库中存储应用程序表、 修改数据库架构，和将应用程序部署到 Azure。
 - [ASP.NET 数据访问内容映射](https://go.microsoft.com/fwlink/p/?LinkId=282414)。 用于使用 EF 和 SQL 数据库的资源的链接。
 
 在 Azure 上使用 MongoDB:
 
 - [MongoLab-在 Azure 上的 MongoDB](http://msopentech.com/opentech-projects/mongolab-mongodb-on-windows-azure/)。 有关在 Azure 上运行 MongoDB 的文档的门户页。
-- [创建 Azure 网站连接到 Azure 中的虚拟机上运行的 MongoDB](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-store-data-mongodb-vm/)。 分步教程演示如何在 ASP.NET web 应用程序中使用 MongoDB 数据库。
+- [创建 Azure 网站连接到 Azure 中的虚拟机上运行的 MongoDB](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-store-data-mongodb-vm/)。 分步教程演示如何在 ASP.NET web 应用程序中使用 MongoDB 数据库。
 
 HDInsight (Hadoop 在 Azure 上):
 
-- [HDInsight](https://azure.microsoft.com/en-us/documentation/services/hdinsight/)。 门户上的 HDInsight 文档[Azure](https://azure.microsoft.com/)网站。
-- [Hadoop 和 HDInsight： 在 Azure 中的大数据](https://msdn.microsoft.com/en-us/magazine/dn385705.aspx)。 MSDN 杂志文章 Bruno Terkaly 和 Ricardo Villalobos，引入 Azure 上的 Hadoop。
-- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/en-us/library/dn568099.aspx)。 请参阅 MapReduce 模式。
+- [HDInsight](https://azure.microsoft.com/documentation/services/hdinsight/)。 门户上的 HDInsight 文档[Azure](https://azure.microsoft.com/)网站。
+- [Hadoop 和 HDInsight： 在 Azure 中的大数据](https://msdn.microsoft.com/magazine/dn385705.aspx)。 MSDN 杂志文章 Bruno Terkaly 和 Ricardo Villalobos，引入 Azure 上的 Hadoop。
+- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/library/dn568099.aspx)。 请参阅 MapReduce 模式。
 
 >[!div class="step-by-step"]
 [上一页](single-sign-on.md)

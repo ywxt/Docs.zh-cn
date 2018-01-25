@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-components
-ms.openlocfilehash: 2d93dcee102009661af708b9a9066e8af0bdbb17
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 65074ca02a1365db278d348d4e024121a6eb4634
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="view-components"></a>查看组件
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 01/19/2018
 
 ## <a name="introducing-view-components"></a>查看组件简介
 
-新到 ASP.NET 核心 MVC 视图组件是类似于分部视图，但它们可以强大得多。 查看组件不使用模型绑定，并仅依赖于在调用到它时提供的数据。 视图组件：
+新到 ASP.NET 核心 MVC 视图组件类似于分部视图，但它们是功能强大得多。 查看组件不使用模型绑定，并仅依赖于在调用到它时提供的数据。 视图组件：
 
 * 呈现一个块，而不是整个响应
 * 包括的相同问题分离和控制器和视图之间找到的可测试性优势
@@ -60,7 +60,7 @@ ms.lasthandoff: 01/19/2018
 
 * 完全支持构造函数[依赖关系注入](../../fundamentals/dependency-injection.md)
 
-* 不在控制器生命周期，这意味着你无法使用采用一部分[筛选器](../controllers/filters.md)视图组件中
+* 在控制器生命周期，这意味着你无法使用不带一部分[筛选器](../controllers/filters.md)视图组件中
 
 ### <a name="view-component-methods"></a>查看组件方法
 
@@ -69,7 +69,7 @@ ms.lasthandoff: 01/19/2018
 * 定义`InvokeAsync`返回的方法`IViewComponentResult`
 * 通常初始化模型并将其传递到视图，通过调用`ViewComponent``View`方法
 * 参数来自调用的方法中，不是 HTTP，没有任何模型绑定
-* 是直接为 HTTP 终结点不可访问，调用它们 （通常在视图中） 在代码中。 视图组件永远不会处理请求
+* 是直接为 HTTP 终结点不可访问，在调用这些 （通常在视图中） 在代码中。 视图组件永远不会处理请求
 * 在签名而不是当前 HTTP 请求中的任何详细上重载
 
 ### <a name="view-search-path"></a>视图搜索路径
@@ -152,7 +152,7 @@ ms.lasthandoff: 01/19/2018
 
 * 视图组件类可包含在**任何**项目中的文件夹。
 * 因为的类名称 PriorityList**ViewComponent**以后缀结尾**ViewComponent**，从视图中引用类组件时，运行时将使用字符串"PriorityList"。 我将介绍的更详细地更高版本。
-* `[ViewComponent]`属性可以更改用来引用视图组件的名称。 例如，我们无法具有命名类`XYZ`和应用`ViewComponent`属性：
+* `[ViewComponent]`属性可以更改用来引用视图组件的名称。 例如，我们无法已命名类`XYZ`和应用`ViewComponent`属性：
 
   ```csharp
   [ViewComponent(Name = "PriorityList")]
@@ -222,7 +222,7 @@ ms.lasthandoff: 01/19/2018
 
    ```
    An unhandled exception occurred while processing the request.
-   InvalidOperationException: The view 'Components/PriorityList/Default' was not found. The following locations were searched:
+   InvalidOperationException: The view 'Components/PriorityList/Default' wasn't found. The following locations were searched:
    /Views/ToDo/Components/PriorityList/Default.cshtml
    /Views/Shared/Components/PriorityList/Default.cshtml
    EnsureSuccessful

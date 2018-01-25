@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 14e245f5fd25079b4ee1dee566ca451f955a8b25
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fc6c297f08790cdcc74867df21e32258017c5a7d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="custom-buttons-in-the-datalist-and-repeater-vb"></a>DataList 和转发器 (VB) 中的自定义按钮
 ====================
@@ -114,17 +114,17 @@ DataList 或转发器中单击按钮时，通常我们需要 （如传递 （在
 
 当单击该按钮，产生的回发和 DataList 或转发器的`ItemCommand`事件激发。 事件处理程序传递按钮 s`CommandName`和`CommandArgument`值。
 
-为转发器 s 创建事件处理程序`ItemCommand`事件并记下第二个参数传递到事件处理程序 (名为`e`)。 此第二个参数属于类型[ `RepeaterCommandEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeatercommandeventargs.aspx)并具有以下四个属性：
+为转发器 s 创建事件处理程序`ItemCommand`事件并记下第二个参数传递到事件处理程序 (名为`e`)。 此第二个参数属于类型[ `RepeaterCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeatercommandeventargs.aspx)并具有以下四个属性：
 
 - `CommandArgument`值被单击的按钮的`CommandArgument`属性
 - `CommandName`按钮的值`CommandName`属性
 - `CommandSource`对被单击的按钮控件的引用
-- `Item`对引用[ `RepeaterItem` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeateritem.aspx)包含被单击的按钮; 绑定到中继器每个记录显示为`RepeaterItem`
+- `Item`对引用[ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem.aspx)包含被单击的按钮; 绑定到中继器每个记录显示为`RepeaterItem`
 
 由于所选类别 s`CategoryID`通过传入`CommandArgument`属性，我们可以获取与所选类别中关联的产品集`ItemCommand`事件处理程序。 然后，这些产品可以绑定到中的如何控件`ItemTemplate`(哪些我们遇到有待添加)。 所有保持，，然后是添加如何，都引用在`ItemCommand`事件处理程序，并将绑定到它的一套所选类别，在步骤 4 中，我们将介绍的产品。
 
 > [!NOTE]
-> DataList s`ItemCommand`事件处理程序传递的类型对象[ `DataListCommandEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalistcommandeventargs.aspx)，它提供与相同的四个属性`RepeaterCommandEventArgs`类。
+> DataList s`ItemCommand`事件处理程序传递的类型对象[ `DataListCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistcommandeventargs.aspx)，它提供与相同的四个属性`RepeaterCommandEventArgs`类。
 
 
 ## <a name="step-4-displaying-the-selected-category-s-products-in-a-bulleted-list"></a>步骤 4： 在项目符号列表中显示所选的类别的产品

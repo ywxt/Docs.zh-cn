@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 4e2a3176aaedccd40ef6b619efa3c4052dd8470b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a549bd62bd78573c368784fd1529a830e009b0d4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-2"></a>如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 2 部分
 ====================
@@ -35,7 +35,7 @@ ms.lasthandoff: 11/10/2017
 
 [![Image18](the-entity-framework-and-aspnet-getting-started-part-2/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image5.png)
 
-请注意，在此应用程序也不会输入的验证向添加页更新数据库，不会像将在生产应用程序所需的那样强健一些错误处理。 保留本教程侧重于实体框架，可以使其获取太长。 有关如何将这些功能添加到你的应用程序的详细信息，请参阅[验证用户输入中的 ASP.NET Web Pages](https://msdn.microsoft.com/en-us/library/7kh55542.aspx)和[ASP.NET 页及应用程序中的错误处理](https://msdn.microsoft.com/en-us/library/w16865z6.aspx)。
+请注意，在此应用程序也不会输入的验证向添加页更新数据库，不会像将在生产应用程序所需的那样强健一些错误处理。 保留本教程侧重于实体框架，可以使其获取太长。 有关如何将这些功能添加到你的应用程序的详细信息，请参阅[验证用户输入中的 ASP.NET Web Pages](https://msdn.microsoft.com/library/7kh55542.aspx)和[ASP.NET 页及应用程序中的错误处理](https://msdn.microsoft.com/library/w16865z6.aspx)。
 
 ## <a name="adding-and-configuring-the-entitydatasource-control"></a>添加和配置 EntityDataSource 控件
 
@@ -157,13 +157,13 @@ ms.lasthandoff: 11/10/2017
 
 - 性能更好。 当`EntityDataSource`控件初始化数据模型使用`ConnectionString`和`DefaultContainerName`属性，它执行附加工作以加载对每个请求的元数据。 这不是必需的如果你指定`ContextTypeName`属性。
 - 延迟加载已开启生成的对象上下文类在默认情况下 (如`SchoolEntities`在本教程中) 在实体 Framework 4.0。 这意味着导航属性加载了与相关数据自动权限时需要它。 在本教程后面详细详细阐述延迟加载。
-- 已应用于对象上下文类的任何自定义 (在这种情况下，`SchoolEntities`类) 将可供使用的控件`EntityDataSource`控件。 自定义对象上下文类是高级的主题未涵盖在本教程系列。 有关详细信息，请参阅[扩展实体框架生成类型](https://msdn.microsoft.com/en-us/library/dd456844.aspx)。
+- 已应用于对象上下文类的任何自定义 (在这种情况下，`SchoolEntities`类) 将可供使用的控件`EntityDataSource`控件。 自定义对象上下文类是高级的主题未涵盖在本教程系列。 有关详细信息，请参阅[扩展实体框架生成类型](https://msdn.microsoft.com/library/dd456844.aspx)。
 
 标记现在将类似于下面的示例 （属性顺序可能不同）：
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-2/samples/sample6.aspx)]
 
-`EnableFlattening`特性引用了一种功能，因为作为实体属性不公开外键列。 已在早期版本的实体框架需要。 当前版本让你可以使用*外键关联*，这意味着外键属性公开为以外的所有多对多关联。 如果你的实体具有外键属性，但未[复杂类型](https://msdn.microsoft.com/en-us/library/bb738472.aspx)，你可以将此属性设置为`False`。 不删除该属性标记，由于默认值为`True`。 有关详细信息，请参阅[平展对象 (EntityDataSource)](https://msdn.microsoft.com/en-us/library/ee404746.aspx)。
+`EnableFlattening`特性引用了一种功能，因为作为实体属性不公开外键列。 已在早期版本的实体框架需要。 当前版本让你可以使用*外键关联*，这意味着外键属性公开为以外的所有多对多关联。 如果你的实体具有外键属性，但未[复杂类型](https://msdn.microsoft.com/library/bb738472.aspx)，你可以将此属性设置为`False`。 不删除该属性标记，由于默认值为`True`。 有关详细信息，请参阅[平展对象 (EntityDataSource)](https://msdn.microsoft.com/library/ee404746.aspx)。
 
 运行页面，你看到的学生和 （你将筛选的只是学生在下一教程中） 的员工列表。 一起显示的名字和姓氏。
 
@@ -231,7 +231,7 @@ ms.lasthandoff: 11/10/2017
 
 [![Image16](the-entity-framework-and-aspnet-getting-started-part-2/_static/image48.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image47.png)
 
-在**选择数据源**步骤中，选择**DepartmentsEntityDataSource**作为数据源中，单击**刷新架构**，然后选择**名称**作为要显示的数据字段和**DepartmentID**作为值数据字段。 单击“确定”。
+在**选择数据源**步骤中，选择**DepartmentsEntityDataSource**作为数据源中，单击**刷新架构**，然后选择**名称**作为要显示的数据字段和**DepartmentID**作为值数据字段。 单击 **“确定”**。
 
 [![Image17](the-entity-framework-and-aspnet-getting-started-part-2/_static/image50.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image49.png)
 

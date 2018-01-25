@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/intro
-ms.openlocfilehash: bea3b12ebe476c4b59abe117393b0ec8bb7f0306
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 6d36c0f0cabaf99195470a212091bd5e35c8eb30
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>开始使用 Razor 页和使用 Visual Studio (第 1 个 8) 的实体框架核心
 
@@ -179,7 +179,7 @@ ASP.NET 核心包括[依赖关系注入](xref:fundamentals/dependency-injection)
 
 ### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-连接字符串指定 SQL Server LocalDB 数据库。 LocalDB 是 SQL Server Express 数据库引擎的轻量级版本，用于应用程序开发，不生产环境中使用。 LocalDB 按需启动并在用户模式下运行，因此没有复杂的配置。 默认情况下，创建 LocalDB *.mdf* DB 文件中`C:/Users/<user>`目录。
+连接字符串指定 SQL Server LocalDB 数据库。 LocalDB 是 SQL Server Express 数据库引擎的轻量级版本，用于应用程序开发，不生产环境中使用。 LocalDB 按需启动和运行在用户模式下，因此没有复杂配置。 默认情况下，创建 LocalDB *.mdf* DB 文件中`C:/Users/<user>`目录。
 
 ## <a name="add-code-to-initialize-the-db-with-test-data"></a>添加代码以初始化使用测试数据的数据库
 
@@ -339,7 +339,7 @@ Web 服务器具有有限的数量的线程可用，并且在高负载情况下�
 
 * 以异步方式执行导致查询或命令发送到数据库的语句。 这包括`ToListAsync`， `SingleOrDefaultAsync`， `FirstOrDefaultAsync`，和`SaveChangesAsync`。 它不包括只需更改的语句`IQueryable`，如`var students = context.Students.Where(s => s.LastName == "Davolio")`。
 
-* EF 核心上下文不线程安全： 请勿尝试执行并行的多个操作。 
+* EF 核心上下文不是线程安全： 请勿尝试执行并行的多个操作。 
 
 * 若要充分利用异步代码的性能优势，请验证库包 （如分页），是否它们调用将查询发送到数据库的 EF 核心方法中使用异步。
 

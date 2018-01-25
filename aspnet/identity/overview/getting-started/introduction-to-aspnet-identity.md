@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: a66e2a80668dbf291b9cc34f205b546b72d92bcc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7c7dcb7903b0d0772acc560161ff39c6869c599a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-aspnet-identity"></a>ASP.NET 标识简介
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="aspnet-membership"></a>ASP.NET 成员资格
 
-[ASP.NET 成员资格](https://msdn.microsoft.com/en-us/library/yh26yfzy(v=VS.100).aspx)旨在解决常见 2005，均涉及到窗体身份验证和用户名、 密码和配置文件数据的 SQL Server 数据库中的站点成员身份要求。 目前没有 web 应用程序的数据存储选项的多更广泛数组，大多数开发人员想要使其站点能够使用社交标识提供者进行身份验证和授权功能。 ASP.NET 成员资格的设计限制难以此转换：
+[ASP.NET 成员资格](https://msdn.microsoft.com/library/yh26yfzy(v=VS.100).aspx)旨在解决常见 2005，均涉及到窗体身份验证和用户名、 密码和配置文件数据的 SQL Server 数据库中的站点成员身份要求。 目前没有 web 应用程序的数据存储选项的多更广泛数组，大多数开发人员想要使其站点能够使用社交标识提供者进行身份验证和授权功能。 ASP.NET 成员资格的设计限制难以此转换：
 
 - 数据库架构旨在用于 SQL Server，您无法更改它。 您可以添加配置文件信息，但其他数据打包到另一个表，这会使难访问通过配置文件提供程序 API 通过任何方式除外。
 - 提供程序系统使你能够更改后备数据存储，但系统围绕假设适用于关系数据库设计的。 你可以编写一个提供程序来存储非关系存储机制，如 Azure 存储表中的成员身份信息但则必须通过编写大量的代码和大量要解决的关系设计`System.NotImplementedException`不的方法的异常适用于 NoSQL 数据库。
@@ -47,7 +47,7 @@ ms.lasthandoff: 11/10/2017
 - 不能使用 OWIN 使用它。
 - 它无法很好地使用现有的 ASP.NET 成员资格提供程序，并且不可扩展。
 
-### <a name="aspnet-universal-providers"></a>ASP.NET Universal Providers
+### <a name="aspnet-universal-providers"></a>ASP.NET 通用提供程序
 
 [ASP.NET Universal Providers](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx)开发以使其能够进行保持 Azure SQL 数据库，但它们也起作用与 SQL Server Compact 在 Microsoft 中的成员身份信息。 基于 Entity Framework Code First，这意味着通用提供程序可用于将数据保持受 EF 任何存储在生成了通用的提供程序。 使用通用提供程序，数据库架构已清理也相当多的很多。
 
@@ -132,7 +132,7 @@ Visual Studio 2013 项目模板中使用 ASP.NET 标识为 ASP.NET MVC、 Web �
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample3.cs?highlight=5-6)]
 
- 在上面的突出显示的代码`SignInAsync`方法生成[ClaimsIdentity](https://msdn.microsoft.com/en-us/library/system.security.claims.claimsidentity.aspx)。 ASP.NET 标识和 OWIN Cookie 身份验证是基于声明的系统事件，因为框架需要生成用户 ClaimsIdentity 应用程序。 ClaimsIdentity 具有的用户，如用户所属的角色的所有声明的信息。 在此阶段，你还可以添加用户的多个的声明。  
+ 在上面的突出显示的代码`SignInAsync`方法生成[ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx)。 ASP.NET 标识和 OWIN Cookie 身份验证是基于声明的系统事件，因为框架需要生成用户 ClaimsIdentity 应用程序。 ClaimsIdentity 具有的用户，如用户所属的角色的所有声明的信息。 在此阶段，你还可以添加用户的多个的声明。  
   
  以下代码中的突出显示`SignInAsync`方法在用户使用签名从 OWIN 和调用 AuthenticationManager`SignIn`和在 ClaimsIdentity 中传递。  
 
@@ -142,7 +142,7 @@ Visual Studio 2013 项目模板中使用 ASP.NET 标识为 ASP.NET MVC、 Web �
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample5.cs?highlight=6)]
 
- 突出显示的代码所示 OWIN`AuthenticationManager.SignOut`方法。 这是类似于[FormsAuthentication.SignOut](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.signout.aspx)方法，由[FormsAuthentication](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx) Web 窗体中的模块。
+ 突出显示的代码所示 OWIN`AuthenticationManager.SignOut`方法。 这是类似于[FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx)方法，由[FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) Web 窗体中的模块。
 
 ## <a name="components-of-aspnet-identity"></a>ASP.NET 标识的组件
 

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 5fa7b6227eb88aa6766ab8776bc8a3cc1111b942
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 548baaaa06980fb793c079b66b6edc34422eb579
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>帐户确认和密码恢复 ASP.NET 标识 (C#)
 ====================
@@ -78,7 +78,7 @@ ms.lasthandoff: 11/10/2017
 
 1. 创建一个新的 ASP.NET Web 项目，然后选择 MVC 模板中。 Web 窗体还支持 ASP.NET 标识，因此无法执行类似的步骤，在 web 窗体应用程序中。
 2. 保留默认的身份验证作为**单个用户帐户**。
-3. 运行应用程序，请单击**注册**链接并注册用户。 此时，电子邮件的唯一验证是使用[[EmailAddress]](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx)属性。
+3. 运行应用程序，请单击**注册**链接并注册用户。 此时，电子邮件的唯一验证是使用[[EmailAddress]](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx)属性。
 4. 在服务器资源管理器，导航到**数据 Connections\DefaultConnection\Tables\AspNetUsers**，右键单击并选择**打开表定义**。
 
     下图显示`AspNetUsers`架构：
@@ -94,7 +94,7 @@ ASP.NET 标识的默认数据存储是实体框架，但你可以配置为使用
 
 [OWIN startup 类](../../../aspnet/overview/owin-and-katana/owin-startup-class-detection.md)( *Startup.cs* ) 时应用程序启动并调用调用`ConfigureAuth`中的方法*应用\_Start\Startup.Auth.cs*，用于配置 OWIN 管道，并初始化 ASP.NET 标识。 检查`ConfigureAuth`方法。 每个`CreatePerOwinContext`调用注册的回调 (保存在`OwinContext`)，将调用一次每个请求来创建指定类型的实例。 你可以构造函数中设置一个断点和`Create`的每种类型的方法 (`ApplicationDbContext, ApplicationUserManager`) 并验证它们在每个请求上调用。 实例`ApplicationDbContext`和`ApplicationUserManager`存储在 OWIN 上下文中，可以在整个应用程序中访问。 ASP.NET 标识挂钩到 OWIN 管道通过 cookie 中间件。 有关详细信息，请参阅[每个请求 UserManager 在 ASP.NET Identity 中的类的生存期管理](https://blogs.msdn.com/b/webdev/archive/2014/02/12/per-request-lifetime-management-for-usermanager-class-in-asp-net-identity.aspx)。
 
-当你更改你的安全配置文件时，请生成并存储在新的安全戳`SecurityStamp`字段*AspNetUsers*表。 请注意，`SecurityStamp`字段是不同的安全 cookie。 安全 cookie 不存储在`AspNetUsers`表 （或在标识数据库中的其他任何位置）。 使用自签名安全 cookie 令牌[DPAPI](https://msdn.microsoft.com/en-us/library/system.security.cryptography.protecteddata.aspx)并使用创建`UserId, SecurityStamp`和过期时间信息。
+当你更改你的安全配置文件时，请生成并存储在新的安全戳`SecurityStamp`字段*AspNetUsers*表。 请注意，`SecurityStamp`字段是不同的安全 cookie。 安全 cookie 不存储在`AspNetUsers`表 （或在标识数据库中的其他任何位置）。 使用自签名安全 cookie 令牌[DPAPI](https://msdn.microsoft.com/library/system.security.cryptography.protecteddata.aspx)并使用创建`UserId, SecurityStamp`和过期时间信息。
 
 Cookie 中间件检查每个请求上的 cookie。 `SecurityStampValidator`中的方法`Startup`类的命中率数据库和我们会定期检查安全戳指定与`validateInterval`。 除非您更改安全配置文件，这仅发生 （在我们的示例） 每隔 30 分钟。 30 分钟时间间隔内已选择最大程度减少对数据库的访问。 请参阅我[双因素身份验证教程](index.md)有关详细信息。
 
@@ -117,7 +117,7 @@ Cookie 中间件检查每个请求上的 cookie。 `SecurityStampValidator`中�
 - 双因素身份验证 (2FA)。 将另一个教程中介绍 2FA 和短信。
 - 挂接电子邮件和 SMS 服务。 （我将介绍 SMS 另一个教程中）。
 
-`ApplicationUserManager`类派生自泛型`UserManager<ApplicationUser>`类。 `ApplicationUser`派生自[IdentityUser](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework.identityuser.aspx)。 `IdentityUser`派生自泛型`IdentityUser`类：
+`ApplicationUserManager`类派生自泛型`UserManager<ApplicationUser>`类。 `ApplicationUser`派生自[IdentityUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityuser.aspx)。 `IdentityUser`派生自泛型`IdentityUser`类：
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample1.cs)]
 
@@ -131,7 +131,7 @@ Cookie 中间件检查每个请求上的 cookie。 `SecurityStampValidator`中�
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample2.cs?highlight=8-9)]
 
-上面的突出显示的代码生成[ClaimsIdentity](https://msdn.microsoft.com/en-us/library/system.security.claims.claimsidentity.aspx)。 ASP.NET 标识和 OWIN Cookie 身份验证都是基于声明的因此，框架需要应用程序以生成`ClaimsIdentity`用户。 `ClaimsIdentity`具有信息有关的用户，如用户名、 的所有声明 age 和用户属于哪些角色。 在此阶段，你还可以添加用户的多个的声明。
+上面的突出显示的代码生成[ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx)。 ASP.NET 标识和 OWIN Cookie 身份验证都是基于声明的因此，框架需要应用程序以生成`ClaimsIdentity`用户。 `ClaimsIdentity`具有信息有关的用户，如用户名、 的所有声明 age 和用户属于哪些角色。 在此阶段，你还可以添加用户的多个的声明。
 
 OWIN`AuthenticationManager.SignIn`方法通过中`ClaimsIdentity`并对用户进行签名：
 
@@ -179,13 +179,13 @@ OWIN`AuthenticationManager.SignIn`方法通过中`ClaimsIdentity`并对用户进
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample6.cs)]
 
-上面的代码中使用模型数据创建新的用户帐户使用的电子邮件和输入的密码。 如果的电子邮件别名是数据存储区，帐户创建失败，并再次显示窗体。 `GenerateEmailConfirmationTokenAsync`方法创建一个安全确认令牌并将其存储在 ASP.NET Identity 数据存储区。 [Url.Action](https://msdn.microsoft.com/en-us/library/dd505232(v=vs.118).aspx)方法创建一个链接，其中包含`UserId`和确认令牌。 然后向用户电子邮件发送此链接，用户可以单击其电子邮件应用以确认其帐户中的链接。
+上面的代码中使用模型数据创建新的用户帐户使用的电子邮件和输入的密码。 如果的电子邮件别名是数据存储区，帐户创建失败，并再次显示窗体。 `GenerateEmailConfirmationTokenAsync`方法创建一个安全确认令牌并将其存储在 ASP.NET Identity 数据存储区。 [Url.Action](https://msdn.microsoft.com/library/dd505232(v=vs.118).aspx)方法创建一个链接，其中包含`UserId`和确认令牌。 然后向用户电子邮件发送此链接，用户可以单击其电子邮件应用以确认其帐户中的链接。
 
 <a id="email"></a>
 
 ## <a name="set-up-email-confirmation"></a>设置电子邮件确认
 
-转到[Azure SendGrid 注册页面](https://azure.microsoft.com/en-us/gallery/store/sendgrid/sendgrid-azure/)并注册免费帐户。 添加类似于以下内容来配置 SendGrid 的代码：
+转到[Azure SendGrid 注册页面](https://azure.microsoft.com/gallery/store/sendgrid/sendgrid-azure/)并注册免费帐户。 添加类似于以下内容来配置 SendGrid 的代码：
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample7.cs?highlight=5)]
 
@@ -193,7 +193,7 @@ OWIN`AuthenticationManager.SignIn`方法通过中`ClaimsIdentity`并对用户进
 > 电子邮件客户端频繁地只接受文本消息 (无 HTML)。 应提供文本和 HTML 中的消息。 在上面的 SendGrid 示例中，这完成与`myMessage.Text`和`myMessage.Html`上面所示的代码。
 
 
-下面的代码演示如何发送电子邮件使用[MailMessage](https://msdn.microsoft.com/en-us/library/system.net.mail.mailmessage.aspx)类 where`message.Body`返回仅的链接。
+下面的代码演示如何发送电子邮件使用[MailMessage](https://msdn.microsoft.com/library/system.net.mail.mailmessage.aspx)类 where`message.Body`返回仅的链接。
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample8.cs)]
 
@@ -238,7 +238,7 @@ OWIN`AuthenticationManager.SignIn`方法通过中`ClaimsIdentity`并对用户进
 
 ## <a name="additional-resources"></a>其他资源
 
-- [自定义存储提供程序 ASP.NET 标识概述](../extensibility/overview-of-custom-storage-providers-for-aspnet-identity.md)
+- [ASP.NET 标识的自定义存储提供程序概述](../extensibility/overview-of-custom-storage-providers-for-aspnet-identity.md)
 - [使用 Facebook、 Twitter、 LinkedIn 和 Google OAuth2 登录的 MVC 5 应用程序](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)还演示如何将配置文件信息添加到用户表。
 - [ASP.NET MVC 和标识 2.0： 了解基础知识](http://typecastexception.com/post/2014/04/20/ASPNET-MVC-and-Identity-20-Understanding-the-Basics.aspx)通过 John 输入。
 - [ASP.NET 标识简介](../getting-started/introduction-to-aspnet-identity.md)

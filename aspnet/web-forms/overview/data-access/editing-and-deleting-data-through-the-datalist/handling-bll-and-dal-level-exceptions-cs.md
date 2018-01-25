@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 659976d40f6109422f222d794b54d837faeb0764
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 284f3bebcd07c9cc70b3a7d645f353f5797889a7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-bll--and-dal-level-exceptions-c"></a>处理 BLL 和 DAL 级别异常 (C#)
 ====================
@@ -101,7 +101,7 @@ ms.lasthandoff: 11/10/2017
 
 当引发异常时，我们将分配到异常的详细信息`ExceptionDetails`标签控件的`Text`属性。 由于其视图状态禁用的可以在后续回发`Text`属性 s 以编程方式更改都将丢失，恢复为默认文本 （空字符串），从而隐藏警告消息。
 
-若要确定在已以有用的消息显示在页面上引发错误时，我们需要添加`Try ... Catch`阻止`UpdateCommand`事件处理程序。 `Try`部分包含代码，它可能会导致异常，而`Catch`块包含面临异常执行的代码。 签出[异常处理基础知识](https://msdn.microsoft.com/en-us/library/2w8f0bss.aspx)主题中的详细信息的.NET Framework 文档上`Try ... Catch`块。
+若要确定在已以有用的消息显示在页面上引发错误时，我们需要添加`Try ... Catch`阻止`UpdateCommand`事件处理程序。 `Try`部分包含代码，它可能会导致异常，而`Catch`块包含面临异常执行的代码。 签出[异常处理基础知识](https://msdn.microsoft.com/library/2w8f0bss.aspx)主题中的详细信息的.NET Framework 文档上`Try ... Catch`块。
 
 
 [!code-csharp[Main](handling-bll-and-dal-level-exceptions-cs/samples/sample5.cs)]
@@ -142,7 +142,7 @@ GridView 和 ObjectDataSource 提供后级别事件处理程序，包括有关�
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [异常的设计准则](https://msdn.microsoft.com/en-us/library/ms298399.aspx)
+- [异常的设计准则](https://msdn.microsoft.com/library/ms298399.aspx)
 - [错误日志记录模块和处理程序 (ELMAH)](http://workspaces.gotdotnet.com/elmah) （记录错误的开放源代码库）
 - [.NET Framework 2.0 的 Enterprise Library](https://www.microsoft.com/downloads/details.aspx?familyid=5A14E870-406B-4F2A-B723-97BA84AE80B5&amp;displaylang=en) （包括异常管理应用程序块）
 

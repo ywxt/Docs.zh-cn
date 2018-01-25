@@ -1,6 +1,6 @@
 ---
 uid: whitepapers/mvc4-beta-release-notes
-title: "ASP.NET MVC 4 |Microsoft 文档"
+title: ASP.NET MVC 4 | Microsoft Docs
 author: rick-anderson
 description: "本文档介绍 Visual Studio 2010 的 ASP.NET MVC 4 Beta 版。"
 ms.author: aspnetcontent
@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-beta-release-notes
 msc.type: content
-ms.openlocfilehash: 4af2df61ab4507b1f100d6bb75777da1168c5a75
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 58ae178a0e6578d8353e1a4e9d67fc1026e99f55
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -185,7 +185,7 @@ ASP.NET MVC 4 现在包括用于与使用 JavaScript 和 Web Api 的重要客户
 
 使用新的显示模式功能，应用程序选择具体取决于正在发出请求的浏览器的视图。 例如，如果桌面浏览器请求主页上，应用程序可能使用 Views\Home\Index.cshtml 模板。 如果移动浏览器请求主页上，该应用程序可能返回 Views\Home\Index.mobile.cshtml 模板。
 
-布局和它们还可以覆盖特定浏览器类型。 例如: 
+布局和它们还可以覆盖特定浏览器类型。 例如:
 
 - 如果你 Views\Shared 文件夹包含\_Layout.cshtml 和\_Layout.mobile.cshtml 模板，默认情况下应用程序将使用\_期间从移动浏览器和请求Layout.mobile.cshtml\_Layout.cshtml 期间其他请求。
 - 如果一个文件夹包含\_MyPartial.cshtml 和\_MyPartial.mobile.cshtml，指令@Html.Partial("\_MyPartial") 将呈现\_MyPartial.mobile.cshtml 期间从移动设备的请求浏览器中，和\_MyPartial.cshtml 期间其他请求。
@@ -245,7 +245,7 @@ jQuery Mobile 是用于构建触控优化 web UI 一个开放源代码库。 如
 
 您现在可以编写异步操作方法的返回类型的对象为单个方法*任务*或*任务&lt;ActionResult&gt;*。
 
-例如，如果你使用 Visual C# 5 (或使用[异步 CTP](https://msdn.microsoft.com/en-us/vstudio/async.aspx))，你可以创建的异步操作方法，如下所示：
+例如，如果你使用 Visual C# 5 (或使用[异步 CTP](https://msdn.microsoft.com/vstudio/async.aspx))，你可以创建的异步操作方法，如下所示：
 
 [!code-csharp[Main](mvc4-beta-release-notes/samples/sample8.cs)]
 

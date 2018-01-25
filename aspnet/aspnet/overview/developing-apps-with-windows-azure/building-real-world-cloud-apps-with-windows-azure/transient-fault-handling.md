@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 3caeeb83e4c074ae0ffc30f035d793a821eb6be2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b743b04789c5e5ebf5ab922cf34a516a16a6d356
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>暂时性故障处理 （构建真实世界云应用与 Azure）
 ====================
@@ -39,11 +39,11 @@ ms.lasthandoff: 11/10/2017
 
 有几种方法可以实现智能重试逻辑。
 
-- Microsoft 模式&amp;实践组具有[暂时性故障处理应用程序块](https://msdn.microsoft.com/en-us/library/dn440719(v=pandp.60).aspx)执行的所有内容为你如果你使用 ADO.NET 来访问 SQL 数据库 （而不是通过实体框架）。 你只需设置重试 – 多少次重试查询策略或命令并等待多长时间之间尝试 – 和自动换行 SQL 中的代码*使用*块。
+- Microsoft 模式&amp;实践组具有[暂时性故障处理应用程序块](https://msdn.microsoft.com/library/dn440719(v=pandp.60).aspx)执行的所有内容为你如果你使用 ADO.NET 来访问 SQL 数据库 （而不是通过实体框架）。 你只需设置重试 – 多少次重试查询策略或命令并等待多长时间之间尝试 – 和自动换行 SQL 中的代码*使用*块。
 
     [!code-csharp[Main](transient-fault-handling/samples/sample1.cs)]
 
-    此外支持 TFH [Azure 角色中缓存](https://msdn.microsoft.com/en-us/library/windowsazure/dn386103.aspx)和[Service Bus](https://azure.microsoft.com/services/service-bus/)。
+    此外支持 TFH [Azure 角色中缓存](https://msdn.microsoft.com/library/windowsazure/dn386103.aspx)和[Service Bus](https://azure.microsoft.com/services/service-bus/)。
 - 当你使用实体框架时通常不使用直接与 SQL 连接，因此不能使用此模式和实践的包，但 Entity Framework 6 权限到框架生成这种重试逻辑。 以类似的方式指定重试策略，和 EF 然后使用该策略，只要它访问数据库。
 
     若要修复它应用中使用此功能，我们需要做只是添加一个类，派生自*DbConfiguration*开启重试逻辑。
@@ -88,11 +88,11 @@ ms.lasthandoff: 11/10/2017
 
 文档
 
-- [在 Azure 云服务上的大规模服务的设计的最佳实践](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx)。 Mark Simms 和 Michael Thomassy 白皮书。 类似于防故障系列但进入更多操作指南的详细信息。 请参阅遥测和诊断部分。
-- [防故障： 弹性云体系结构指南](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx)。 通过 Marc Mercuri、 Ulrich Homann 和 Andrew Townhill 白皮书。 网页上的防故障视频系列的版本。
-- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/en-us/library/dn568099.aspx)。 请参阅重试模式、 计划程序代理监督程序模式。
+- [在 Azure 云服务上的大规模服务的设计的最佳实践](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 Mark Simms 和 Michael Thomassy 白皮书。 类似于防故障系列但进入更多操作指南的详细信息。 请参阅遥测和诊断部分。
+- [防故障： 弹性云体系结构指南](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)。 通过 Marc Mercuri、 Ulrich Homann 和 Andrew Townhill 白皮书。 网页上的防故障视频系列的版本。
+- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/library/dn568099.aspx)。 请参阅重试模式、 计划程序代理监督程序模式。
 - [Azure SQL Database 中的容错能力](https://blogs.msdn.com/b/windowsazure/archive/2012/07/30/fault-tolerance-in-windows-azure-sql-database.aspx)。 Tony Petrossian 的博客文章。
-- [实体框架的连接复原 / 重试逻辑](https://msdn.microsoft.com/en-us/data/dn456835)。 如何使用和自定义暂时性故障处理 Entity Framework 6 的功能。
+- [实体框架的连接复原 / 重试逻辑](https://msdn.microsoft.com/data/dn456835)。 如何使用和自定义暂时性故障处理 Entity Framework 6 的功能。
 - [连接复原和与实体框架中的 ASP.NET MVC 应用程序的命令截获](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application.md)。 第四个在包含 9 个一部分教程系列中，演示如何为 SQL 数据库设置 EF 6 连接复原功能。
 
 视频

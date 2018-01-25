@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 53887e2cf7b9a60596e2aca16fd1717799ab04f4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f054445091edbc27263127fb3b7b851776ec617f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="wrapping-database-modifications-within-a-transaction-vb"></a>在事务 (VB) 中的包装数据库修改
 ====================
@@ -54,13 +54,13 @@ ms.lasthandoff: 11/10/2017
 3. 如果没有在步骤 2，回滚事务中的语句之一时出错。
 4. 如果所有步骤 2 中的语句完成而未出现错误，则提交事务。
 
-SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQL 脚本或创建存储过程，或通过编程意味着要使用 ADO.NET 或中的类[ `System.Transactions`命名空间](https://msdn.microsoft.com/en-us/library/system.transactions.aspx)。 在本教程中我们将仅检查管理使用 ADO.NET 的事务。 在将来的教程我们将了解如何在数据访问层，在这段时间中，我们将探讨用于创建、 回滚，和提交事务的 SQL 语句中使用存储的过程。 在此期间，请查阅[在 SQL Server 存储过程中管理事务](http://www.4guysfromrolla.com/webtech/080305-1.shtml)有关详细信息。
+SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQL 脚本或创建存储过程，或通过编程意味着要使用 ADO.NET 或中的类[ `System.Transactions`命名空间](https://msdn.microsoft.com/library/system.transactions.aspx)。 在本教程中我们将仅检查管理使用 ADO.NET 的事务。 在将来的教程我们将了解如何在数据访问层，在这段时间中，我们将探讨用于创建、 回滚，和提交事务的 SQL 语句中使用存储的过程。 在此期间，请查阅[在 SQL Server 存储过程中管理事务](http://www.4guysfromrolla.com/webtech/080305-1.shtml)有关详细信息。
 
 > [!NOTE]
-> [ `TransactionScope`类](https://msdn.microsoft.com/en-us/library/system.transactions.transactionscope.aspx)中`System.Transactions`命名空间使开发人员能够以编程方式在事务范围内换行一系列语句并包含对，则涉及多个复杂事务支持两个不同的数据库或甚至异类类型的数据存储，如 Microsoft SQL Server 数据库、 Oracle 数据库和 Web 服务等源。 我已确定而不是本教程使用 ADO.NET 事务`TransactionScope`类，因为 ADO.NET 是更具体的数据库事务，并在许多情况下，是小得多占用大量的资源。 此外，在某些情况下`TransactionScope`类使用 Microsoft 分布式事务处理协调器 (MSDTC)。 配置、 实施和性能问题周围 MSDTC 使它而是专用的高级主题和超出范围的这些教程。
+> [ `TransactionScope`类](https://msdn.microsoft.com/library/system.transactions.transactionscope.aspx)中`System.Transactions`命名空间使开发人员能够以编程方式在事务范围内换行一系列语句并包含对，则涉及多个复杂事务支持两个不同的数据库或甚至异类类型的数据存储，如 Microsoft SQL Server 数据库、 Oracle 数据库和 Web 服务等源。 我已确定而不是本教程使用 ADO.NET 事务`TransactionScope`类，因为 ADO.NET 是更具体的数据库事务，并在许多情况下，是小得多占用大量的资源。 此外，在某些情况下`TransactionScope`类使用 Microsoft 分布式事务处理协调器 (MSDTC)。 配置、 实施和性能问题周围 MSDTC 使它而是专用的高级主题和超出范围的这些教程。
 
 
-在使用 SqlClient 提供程序在 ADO.NET 中，通过调用启动事务[`SqlConnection`类](https://msdn.microsoft.com/en-US/library/system.data.sqlclient.sqlconnection.aspx)s [ `BeginTransaction`方法](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlconnection.begintransaction.aspx)，它将返回[ `SqlTransaction`对象](https://msdn.microsoft.com/en-US/library/system.data.sqlclient.sqltransaction.aspx)。 中放入了构成事务的数据修改语句`try...catch`块。 如果错误发生在中的语句`try`一直阻止，请执行传输至`catch`块其中事务可以回滚通过`SqlTransaction`对象 s [ `Rollback`方法](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqltransaction.rollback.aspx)。 如果所有这些语句成功，完成调用`SqlTransaction`对象 s [ `Commit`方法](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqltransaction.commit.aspx)末尾`try`块提交事务。 下面的代码段演示此模式。 请参阅[维护与事务的数据库一致性](http://aspnet.4guysfromrolla.com/articles/072705-1.aspx)有关额外的语法和示例的 ADO.NET 中使用事务。
+在使用 SqlClient 提供程序在 ADO.NET 中，通过调用启动事务[`SqlConnection`类](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection.aspx)s [ `BeginTransaction`方法](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection.begintransaction.aspx)，它将返回[ `SqlTransaction`对象](https://msdn.microsoft.com/library/system.data.sqlclient.sqltransaction.aspx)。 中放入了构成事务的数据修改语句`try...catch`块。 如果错误发生在中的语句`try`一直阻止，请执行传输至`catch`块其中事务可以回滚通过`SqlTransaction`对象 s [ `Rollback`方法](https://msdn.microsoft.com/library/system.data.sqlclient.sqltransaction.rollback.aspx)。 如果所有这些语句成功，完成调用`SqlTransaction`对象 s [ `Commit`方法](https://msdn.microsoft.com/library/system.data.sqlclient.sqltransaction.commit.aspx)末尾`try`块提交事务。 下面的代码段演示此模式。 请参阅[维护与事务的数据库一致性](http://aspnet.4guysfromrolla.com/articles/072705-1.aspx)有关额外的语法和示例的 ADO.NET 中使用事务。
 
 
 [!code-vb[Main](wrapping-database-modifications-within-a-transaction-vb/samples/sample1.vb)]
@@ -125,7 +125,7 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 
 [!code-vb[Main](wrapping-database-modifications-within-a-transaction-vb/samples/sample3.vb)]
 
-`Partial`向中添加的成员是要添加到编译器的类声明中的关键字指示`ProductsTableAdapter`类`NorthwindTableAdapters`命名空间。 请注意`Imports System.Data.SqlClient`语句文件的顶部。 TableAdapter 配置为使用 SqlClient 提供程序，因为内部它使用[ `SqlDataAdapter` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqldataadapter.aspx)要向数据库发出其命令对象。 因此，我们需要使用`SqlTransaction`类以开始事务，然后将其提交或回滚它。 如果你使用的 Microsoft SQL Server 之外的数据存储，你将需要使用相应的提供程序。
+`Partial`向中添加的成员是要添加到编译器的类声明中的关键字指示`ProductsTableAdapter`类`NorthwindTableAdapters`命名空间。 请注意`Imports System.Data.SqlClient`语句文件的顶部。 TableAdapter 配置为使用 SqlClient 提供程序，因为内部它使用[ `SqlDataAdapter` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqldataadapter.aspx)要向数据库发出其命令对象。 因此，我们需要使用`SqlTransaction`类以开始事务，然后将其提交或回滚它。 如果你使用的 Microsoft SQL Server 之外的数据存储，你将需要使用相应的提供程序。
 
 这些方法提供开始回滚时，所需的构建基块，并提交事务。 它们标记`Public`，使其能够从使用`ProductsTableAdapter`、 DAL 中的另一个类或结构，如 BLL 中的另一层。 `BeginTransaction`将打开 TableAdapter s 内部`SqlConnection`（如果需要），开始事务，并将它分配给`Transaction`属性，并将事务附加到内部`SqlDataAdapter`s`SqlCommand`对象。 `CommitTransaction`和`RollbackTransaction`调用`Transaction`对象 s`Commit`和`Rollback`方法，分别之前关闭内部`Connection`对象。
 

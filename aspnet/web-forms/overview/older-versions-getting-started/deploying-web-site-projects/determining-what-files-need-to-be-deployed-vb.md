@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 44349b09fdc0de8ad6bd241a4c158d6a198e5d01
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aad0d4d4f7db5942c51255c34f36be73ed0e1f2d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="determining-what-files-need-to-be-deployed-vb"></a>确定文件需要被部署 (VB)
 ====================
@@ -43,7 +43,7 @@ ASP.NET web pages 划分为标记和源的声明性代码。 声明性标记部�
 
 要为此页上，该页面的代码部分为请求提供服务的 ASP.NET 引擎顺序 (  *`WebPage`*  `.aspx.vb`文件) 必须首先进行编译。 显式或自动，可能会发生此编译。
 
-如果编译显式发生，则整个应用程序的源代码编译到一个或多个程序集 (`.dll`文件) 位于应用程序的`Bin`目录。 如果编译会自动发生，则生成自动生成程序集，则默认情况下，放置在`Temporary ASP.NET Files`文件夹中，可在中找到`%WINDOWS%\Microsoft.NET\Framework\<version>`，但此位置可通过配置[ &lt;编译&gt;元素](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx)中`Web.config`。 与显式编译，你必须采取一些措施来将 ASP.NET 应用程序的代码编译为一个程序集，并在部署之前时会出现此步骤。 与自动编译的编译过程时发生的 web 服务器上首次访问资源。
+如果编译显式发生，则整个应用程序的源代码编译到一个或多个程序集 (`.dll`文件) 位于应用程序的`Bin`目录。 如果编译会自动发生，则生成自动生成程序集，则默认情况下，放置在`Temporary ASP.NET Files`文件夹中，可在中找到`%WINDOWS%\Microsoft.NET\Framework\<version>`，但此位置可通过配置[ &lt;编译&gt;元素](https://msdn.microsoft.com/library/s10awwz0.aspx)中`Web.config`。 与显式编译，你必须采取一些措施来将 ASP.NET 应用程序的代码编译为一个程序集，并在部署之前时会出现此步骤。 与自动编译的编译过程时发生的 web 服务器上首次访问资源。
 
 无论何种编译模型中，你将使用、 所有 ASP.NET 页面的标记部分 (`WebPage.aspx`文件) 需要复制到生产环境。 你需要在程序集将复制与显式编译`Bin`文件夹中，但你不需要向上 ASP.NET 页的代码部分将复制 (`WebPage.aspx.vb`文件)。 与自动编译，你需要为复制代码部分文件，以便将存在并访问页时可以自动编译代码。 每个 ASP.NET web 页的标记部分包括`@Page`属性指示是否已显式编译页面的关联的代码或是否需要会自动编译的指令。 因此，生产环境可以无缝地使用任一编译模型并不需要应用以便指示显式或自动编译所用的任何特殊配置设置。
 
@@ -69,7 +69,7 @@ ASP.NET web pages 划分为标记和源的声明性代码。 声明性标记部�
 - 生成 Visual Studio 中的项目不会创建中的程序集`Bin`目录。 相反，生成网站项目报告任何编译时错误。
 - 自动编译支持。 尽管代码可以是预编译 （显式编译），通过将标记和源代码复制到生产环境中，通常部署的网站项目。
 
-它释放 Visual Studio 2005 Service Pack 1 时，Microsoft 将恢复 Web 应用程序项目模型。 但是，Visual Web Developer 不断仅支持网站项目模型。 好消息是与 Visual Web Developer 2008 Service Pack 1 已丢弃此限制。 现在，你可以在 Visual Studio （和 Visual Web Developer），它使用 Web 应用程序项目模型或网站项目模型来创建 ASP.NET 应用程序。 这两个模型都具有其优点和缺点。 请参阅[简介 Web 应用程序项目： 比较网站项目和 Web 应用程序项目](https://msdn.microsoft.com/en-us/library/aa730880.aspx#wapp_topic5)有关比较两个模型并帮助确定哪些项目模型适合你的情况。
+它释放 Visual Studio 2005 Service Pack 1 时，Microsoft 将恢复 Web 应用程序项目模型。 但是，Visual Web Developer 不断仅支持网站项目模型。 好消息是与 Visual Web Developer 2008 Service Pack 1 已丢弃此限制。 现在，你可以在 Visual Studio （和 Visual Web Developer），它使用 Web 应用程序项目模型或网站项目模型来创建 ASP.NET 应用程序。 这两个模型都具有其优点和缺点。 请参阅[简介 Web 应用程序项目： 比较网站项目和 Web 应用程序项目](https://msdn.microsoft.com/library/aa730880.aspx#wapp_topic5)有关比较两个模型并帮助确定哪些项目模型适合你的情况。
 
 ## <a name="exploring-the-sample-web-application"></a>浏览示例 Web 应用程序
 
@@ -179,15 +179,15 @@ Web 应用程序项目模型使用显式编译，并将项目的代码编译成�
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [ASP.NET 编译概述](https://msdn.microsoft.com/en-us/library/ms178466.aspx)
-- [ASP.NET 用户控件](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx)
+- [ASP.NET 编译概述](https://msdn.microsoft.com/library/ms178466.aspx)
+- [ASP.NET 用户控件](https://msdn.microsoft.com/library/y6wb1a0e.aspx)
 - [正在检查 ASP。NET 的网站的导航](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)
-- [Web 应用程序项目的简介](https://msdn.microsoft.com/en-us/library/aa730880.aspx)
+- [Web 应用程序项目的简介](https://msdn.microsoft.com/library/aa730880.aspx)
 - [Master 页教程](../master-pages/creating-a-site-wide-layout-using-master-pages-cs.md)
 - [页间共享代码](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/pages/code.aspx)
 - [使用适用于 ASP.NET 页的代码隐藏类的自定义的基类](http://aspnet.4guysfromrolla.com/articles/041305-1.aspx)
 - [Visual Studio 2005 的网站项目系统： 它是什么，为什么这样做它？](https://weblogs.asp.net/scottgu/archive/2005/08/21/423201.aspx)
-- [演练： 将网站项目转换为 Visual Studio 中的 Web 应用程序项目](https://msdn.microsoft.com/en-us/library/aa983476.aspx)
+- [演练： 将网站项目转换为 Visual Studio 中的 Web 应用程序项目](https://msdn.microsoft.com/library/aa983476.aspx)
 
 >[!div class="step-by-step"]
 [上一页](asp-net-hosting-options-vb.md)

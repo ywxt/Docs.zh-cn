@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme/beta3
 msc.type: content
-ms.openlocfilehash: 5fad4b659dafe5470aeb84d320ff711b8840d1e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: def2f4b3e54c8de539e10c1b526a1dababeca8fb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix 和 ASP.NET Web 页 (Razor) Beta 3 版本自述文件
 ====================
@@ -73,7 +73,7 @@ ms.lasthandoff: 11/10/2017
 
 > .NET Framework 版本 4 是必需的 WebMatrix Beta。 在某些情况下，WebMatrix Beta 安装程序将让你尝试在不受支持的配置集的一部分的平台上安装。 具体而言，不带 SP1 更新的 Windows Vista 将你可以开始安装 WebMatrix Beta，但该.NET Framework 4 组件将失败并阻止你安装。
 > 
-> **解决方法**  
+> **Workaround**  
 > 安装上受支持的平台，其中包括：
 > 
 > - Windows 7
@@ -86,7 +86,7 @@ ms.lasthandoff: 11/10/2017
 
 #### <a name="issue-cannot-install-webmatrix-beta-3-if-microsoft-visual-studio-2008-is-installed-without-microsoft-visual-studio-2008-sp1"></a>如果没有 Microsoft Visual Studio 2008 SP1 的情况下已安装 Microsoft Visual Studio 2008，问题： 不能安装 WebMatrix Beta 3
 
-> **解决方法**  
+> **Workaround**  
 > 安装[Microsoft Visual Studio 2008 SP1](https://www.microsoft.com/downloads/details.aspx?FamilyId=FBEE1648-7106-44A7-9649-6D9F6D58056E&amp;displaylang=en)从 Microsoft 下载中心获取。
 
 
@@ -97,7 +97,7 @@ ms.lasthandoff: 11/10/2017
 > - *System.Data.SqlServerCe.dll* （ADO.NET 提供程序）
 > - *System.Data.SqlServerCe.Entity.dll* （ADO.NET 实体框架）
 > 
-> **解决方法**  
+> **Workaround**  
 > 卸载 SQL Server Compact 4.0。 下载并安装.NET Framework 3.5 SP1 的完整版本，从以下位置：  
 >   
 > [Microsoft.NET Framework 3.5 Service pack 1 （完全包）](https://go.microsoft.com/fwlink/?LinkId=194828)  
@@ -109,7 +109,7 @@ ms.lasthandoff: 11/10/2017
 
 > 卸载 SQL Server Compact 使用命令行选项不在此版本中无效。
 > 
-> **解决方法**  
+> **Workaround**  
 > 使用*程序和功能*Windows 控制面板卸载 Microsoft SQL Server Compact 4.0 中。
 
 
@@ -162,9 +162,9 @@ ms.lasthandoff: 11/10/2017
 > 请注意，`@{ }`不再使用的初始代码的帮助程序中的字符。 这是因为以下帮助器的内容视为一个代码块，默认情况下。 帮助器呈现标记，开头开始`<a>`标记。 如果帮助器必须呈现的纯文本或不包含结束标记的标记 (例如，`<meta>`标记)，要呈现的内容必须在`<text></text>`标记。
 
 
-#### <a name="change-webpagecontexthttpcontext-removed"></a>"WebPageContext.HttpContext"删除更改：
+#### <a name="change-webpagecontexthttpcontext-removed"></a>Change: "WebPageContext.HttpContext" removed
 
-> `WebPageContext.HttpContext`属性已删除。 请改用 `HttpContext.Current` 。 (`WebPageContext.HttpContext`属性只需包装这。)
+> `WebPageContext.HttpContext`属性已删除。 请改用 `HttpContext.Current`。 (`WebPageContext.HttpContext`属性只需包装这。)
 
 
 #### <a name="change-facebook-helper-moved-to-new-package"></a>移动到新的包的更改:"Facebook"帮助程序
@@ -212,7 +212,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 这可能会造成问题，如果你想要使用的成员身份的自定义用户表，但传递到的错误的表名称`WebSecurity.InitializeDatabaseConnection`方法。 因为该方法不会默认情况下引发错误如果您指定的表不存在，而且它改为创建一个新表，则应用程序可以似乎无法正常工作。 但是，依赖于自定义用户表 （和在其中的字段） 的应用程序代码可能最终失败，意外错误。
 > 
-> **解决方法**  
+> **Workaround**  
 > 请确保名称传递中`InitializeDatabaseConnection`方法匹配项的用户配置文件表中成员资格数据库中，或确保`autoCreateTables`参数设置为 false。
 
 
@@ -227,7 +227,7 @@ ms.lasthandoff: 11/10/2017
 
 > 如果你在 Visual Studio 中的项目中使用自定义程序集，这些程序集中声明的命名空间不自动导入在设计时。 因此，对自定义类型的引用可能无法识别设计时和标记为无法识别中的 Visual Studio （使用"波形曲线"）。 仅在 Visual Studio; 中的设计时出现此问题应用程序本身能够正常运行。
 > 
-> **解决方法**  
+> **Workaround**  
 > 包括`using`语句 (`imports`在 Visual Basic 中) 引用在设计时无法识别的实体。
 
 
@@ -242,7 +242,7 @@ ms.lasthandoff: 11/10/2017
 
 > 你升级到 Beta 3 后，你可能会看到错误的帮助器类 (例如，`Facebook`类) 不能找不到。 在 Beta 2 开始，一直在 Beta 3 中，帮助器均已移至显式必须安装的包。 现有站点将不升级，以便包括这些包;这包括在站点*\My Documents\IISExpress*或*\My Documents\My 网站*文件夹。 具体而言，你将看到此错误，如果使用中的默认站点*我的网站*(WebSite1)，其中包括对引用`Twitter`帮助器。
 > 
-> **解决方法**  
+> **Workaround**  
 > 注释掉对任何帮助器中运行的站点的调用*\_管理员*页上，并安装包或包中包括你想要使用的帮助器。 安装包后，你可以取消引用帮助器行的注释。
 
 
@@ -265,7 +265,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > [!code-xml[Main](beta3/samples/sample5.xml)]
 > 
-> 有关配置代理服务器的详细信息，请参阅[&lt;代理&gt;元素 （网络设置）](https://msdn.microsoft.com/en-us/library/sa91de1e.aspx) MSDN 网站上。
+> 有关配置代理服务器的详细信息，请参阅[&lt;代理&gt;元素 （网络设置）](https://msdn.microsoft.com/library/sa91de1e.aspx) MSDN 网站上。
 
 
 #### <a name="issue-microsoftwebinfrastructuredll-cannot-be-loaded-error"></a>问题:"无法加载 Microsoft.Web.Infrastructure.dll"错误
@@ -274,7 +274,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 如果你加载 Beta 3 版本上的干净计算机，则此问题不会发生。
 > 
-> **解决方法**  
+> **Workaround**  
 > 在 Control Panel 中，卸载 ASP.NET 网页。 然后重新安装 Beta 3 版本。
 
 
@@ -307,7 +307,7 @@ ms.lasthandoff: 11/10/2017
 >   
 > 由于 URL 重写未启用默认情况下为 IIS 7 或 IIS 7.5，因此会出现此问题。 很可能的方案是，你看不见问题时测试使用本地 IIS Express，但在将你的网站部署到托管的网站时，会遇到它。
 > 
-> **解决方法**
+> **Workaround**
 > 
 > - 如果你可以控制在服务器计算机，在服务器计算机上安装的更新中所述[有可用启用某些 IIS 7.0 或 IIS 7.5 的处理程序，来处理请求其 Url 不要以句点结尾的更新](https://support.microsoft.com/kb/980368)。
 > - 如果您没有对服务器计算机的控制 （例如，您要部署到托管网站），将以下代码添加到网站的*Web.config*文件：
@@ -320,7 +320,7 @@ ms.lasthandoff: 11/10/2017
 
 > 如果你在 Web 应用程序项目或 ASP.NET MVC 应用程序中使用 ASP.NET 网页，你可能会看到错误， *WebPageHttpApplication*找不到。
 > 
-> **解决方法**  
+> **Workaround**  
 > 如果收到此错误，将更改应用程序所派生的基类。 在*Global.asax*文件中，更改以下行：
 > 
 > [!code-csharp[Main](beta3/samples/sample8.cs)]
@@ -340,7 +340,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 1. 将复制到的数据库引擎程序集*Bin*文件夹 （和子文件夹） 的目标计算机上的应用程序： 
 > 
->     - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll* **到** *\Bin*
+>     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll* **to** *\Bin*
 >     - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **到** *\Bin\x86*
 >     - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **到** *\Bin\amd64*
 > 2. 在网站的根文件夹中创建或打开*Web.config*文件。 (在 WebMatrix Beta 3 中，此文件类型是如果你单击可用**所有**中**选择文件类型**对话框。)
@@ -354,7 +354,7 @@ ms.lasthandoff: 11/10/2017
 
 > 如果你使用的 Visual Basic (创建*.vbhtml*文件)，则`Database`和`WebGrid`如果应用程序设置为使用中等信任帮助器将无法工作。
 > 
-> **解决方法**  
+> **Workaround**  
 > 暂时将设置用于完全信任的应用程序。
 
 <a id="Known_Issues_SQL_Server_Compact"></a>
@@ -364,7 +364,7 @@ ms.lasthandoff: 11/10/2017
 
 > SQL Server Compact 4.0 无法识别`Encrypt`属性`SqlCeConnection`类。 不应使用此属性来加密数据库文件。 `Encrypt`属性在 SQL Server Compact 3.5 版本中已弃用，并且仅为向后兼容性保留了。 
 > 
-> **解决方法**  
+> **Workaround**  
 > 使用`Encryption Mode`属性`SqlCeConnection`类用于 SQL Server Compact 4.0 数据库文件进行加密。 下面的示例演示如何创建加密的 SQL Server Compact 4.0 数据库使用`Encryption Mode`属性：
 >  
 > [!code-csharp[Main](beta3/samples/sample11.cs)]
@@ -388,7 +388,7 @@ ms.lasthandoff: 11/10/2017
 
 > 本机 Dll 的 SQL Server Compact 4.0 需要 Microsoft Visual c + + 2008年运行时库 （x86、 IA64 和 x64）、 Service Pack 1。
 > 
-> **解决方法**  
+> **Workaround**  
 > 安装.NET Framework 3.5 SP1。 这也将安装 Visual c + + 2008年运行时库 SP1。 你可以从以下位置下载这些库：   
 >   
 > [Microsoft Visual c + + 2008 Service Pack 1 可再发行组件包 ATL 安全更新](https://go.microsoft.com/fwlink/?LinkId=194827)
@@ -403,7 +403,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > [!code-xml[Main](beta3/samples/sample17.xml)]
 > 
-> **解决方法**  
+> **Workaround**  
 > 卸载 SQL Server Compact 4.0 CTP1。 下载并安装.NET Framework 的完整版本，从以下位置：
 > 
 > [Microsoft.NET Framework 3.5 Service pack 1 （完全包）](https://go.microsoft.com/fwlink/?LinkId=194828)  
@@ -418,7 +418,7 @@ ms.lasthandoff: 11/10/2017
 
 #### <a name="issue-installing-an-application-can-take-a-long-time-if-the-users-my-documents-folder-is-redirected-to-a-network-share"></a>问题： 安装应用程序可能需要长时间如果用户的 My Documents 文件夹重定向到网络共享
 
-> **解决方法**  
+> **Workaround**  
 > 无。 应用程序可能需要一段时间才能安装，但将正确安装。
 
 
@@ -430,7 +430,7 @@ ms.lasthandoff: 11/10/2017
 
 > 在**发布设置**对话框中，如果目标 URL 不以开头`http://`或`https://`，在部署之后，站点可能不工作。
 > 
-> **解决方法**  
+> **Workaround**  
 > 请确保在发布站点时中的目标 URL 之前**发布设置**对话框开头`http://`或`https://`。
 
 
@@ -438,7 +438,7 @@ ms.lasthandoff: 11/10/2017
 
 > 多种原因可能会导致错误。 你可以看到此错误的原因之一是如果数据库脚本包含单引号字符 （'） 和目标 MySQL 数据库的默认字符集不为 utf-8。
 > 
-> **解决方法**  
+> **Workaround**  
 > 设置的默认字符集远程 MySQL 数据库为 utf-8。
 
 
@@ -480,7 +480,7 @@ ms.lasthandoff: 11/10/2017
 > - 在 Windows Vista 或 Windows 7，使用不具备管理员权限的帐户登录和用户帐户控制 (UAC) 处于禁用状态。
 > - 您正在使用 Microsoft Windows XP 或 Microsoft Windows Server 2003。
 > 
-> **解决方法**  
+> **Workaround**  
 > WebMatrix Beta 3 中的大多数任务不需要管理权限。 对于那些确实，你可以执行该操作作为管理员，或请按照下列步骤：
 > 
 > - 在 Windows Vista 或 Windows 7 上，启用 UAC。
@@ -491,7 +491,7 @@ ms.lasthandoff: 11/10/2017
 
 > **站点从 Web 库**如果未安装 Web 平台安装程序 3.0 选项被禁用。
 > 
-> **解决方法**  
+> **Workaround**  
 > 安装[Microsoft Web 平台安装程序 3.0](https://go.microsoft.com/fwlink/?LinkID=194638)。
 
 
@@ -499,7 +499,7 @@ ms.lasthandoff: 11/10/2017
 
 > 在 Windows Server 2003，当您启动页或启动 IIS Express，IIS Express 不启动。 对 Web 页会显示错误，指示非管理用户，启动应用程序。
 > 
-> **解决方法**  
+> **Workaround**  
 > 启动 WebMatrix Beta 3 作为管理用户。 有关更多详细信息，请参阅以下知识库文章：  
 >   
 > [由非管理用户启动的应用程序无法侦听到在其应用程序运行在 Windows Vista、 Windows Server 2003 或 Windows XP 的计算机的 HTTP 流量。](https://support.microsoft.com/kb/939786)
@@ -509,7 +509,7 @@ ms.lasthandoff: 11/10/2017
 
 > 在浏览器的列表中不显示 Google Chrome**运行**上**主页**选项卡。
 > 
-> **解决方法**  
+> **Workaround**  
 > 某些版本的 Google Chrome 并不能注册正确与 Windows 中的默认程序功能。 一种解决方法，启动 Google Chrome 中，单击*自定义和控制 Google Chrome*菜单上，单击*选项*，然后单击*请 Google Chrome 我默认浏览器*。
 
 
@@ -517,7 +517,7 @@ ms.lasthandoff: 11/10/2017
 
 > **外键**对话框中不允许你从主键表中输入的主键名称。
 > 
-> **解决方法**  
+> **Workaround**  
 > 这是有意。 不需要输入主键表的主键的名称。
 
 
@@ -525,7 +525,7 @@ ms.lasthandoff: 11/10/2017
 
 > **关系**按钮下**表**选项卡中**数据库**为 SQL Server Compact 数据库禁用工作区。
 > 
-> **解决方法**  
+> **Workaround**  
 > 无。 SQL Server Compact 不支持表之间的关系。
 
 
@@ -533,7 +533,7 @@ ms.lasthandoff: 11/10/2017
 
 > 在 SQL Server Compact 4.0，如果不会如指定的数据类型`SqlDbType`或`DbType`中参数化查询的参数，运行查询时引发异常。
 > 
-> **解决方法**  
+> **Workaround**  
 > 显式设置参数的数据类型，如`SqlDbType`或`DbType`。 这是在 BLOB 数据类型的情况下关键 (`image`和`ntext`)。 使用代码如下所示：
 > 
 > [!code-sql[Main](beta3/samples/sample20.sql)]
@@ -553,4 +553,4 @@ ms.lasthandoff: 11/10/2017
 
 * * *
 
-© 2010 Microsoft Corporation。 保留所有权利。 [使用条款](https://msdn.microsoft.com/en-us/cc300389.aspx)。
+© 2010 Microsoft Corporation. 保留所有权利。 [使用条款](https://msdn.microsoft.cos/cc300389.aspx)。

@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/startup
-ms.openlocfilehash: dd2eb3d3996bc0bf277c8d5e772c8568ef9f147e
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: 81d76c39b7890e2d4ab86252cb0a343e3bb7359a
+ms.sourcegitcommit: 83b5a4715fd25e4eb6f7c8427c0ef03850a7fa07
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="application-startup-in-aspnet-core"></a>在 ASP.NET Core 中的应用程序启动
 
@@ -37,11 +37,14 @@ ASP.NET Core 应用使用`Startup`类，该类名为`Startup`按照约定。 `St
 
 [!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=10)]
 
-`Startup`类构造函数接受由主机定义的依赖项。 一个常见用途[依赖关系注入](xref:fundamentals/dependency-injection)到`Startup`类是将注入[IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment)由环境中配置服务：
+`Startup`类构造函数接受由主机定义的依赖项。 一个常见用途[依赖关系注入](xref:fundamentals/dependency-injection)到`Startup`类是将注入：
+
+* [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment)由环境中配置服务。
+* [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration)在启动过程中配置应用程序。
 
 [!code-csharp[Main](startup/snapshot_sample/Startup2.cs)]
 
-将注入的替代方法`IHostingStartup`是使用基于约定的方法。 应用程序可以定义单独`Startup`用于不同的环境的类 (例如， `StartupDevelopment`)，并且在运行时选择了适当的 startup 类。 其名称后缀与当前的环境匹配的类进行优先级排序。 如果应用程序在开发环境中运行，并且同时包含`Startup`类和一个`StartupDevelopment`类，`StartupDevelopment`使用类。 有关详细信息请参阅[使用多个环境](xref:fundamentals/environments#startup-conventions)。
+将注入的替代方法`IHostingEnvironment`是使用基于约定的方法。 应用程序可以定义单独`Startup`用于不同的环境的类 (例如， `StartupDevelopment`)，并且在运行时选择了适当的 startup 类。 其名称后缀与当前的环境匹配的类进行优先级排序。 如果应用程序在开发环境中运行，并且同时包含`Startup`类和一个`StartupDevelopment`类，`StartupDevelopment`使用类。 有关详细信息，请参阅[使用多个环境](xref:fundamentals/environments#startup-conventions)。
 
 若要详细了解`WebHostBuilder`，请参阅[宿主](xref:fundamentals/hosting)主题。 有关在启动过程中处理错误的信息，请参阅[启动异常处理](xref:fundamentals/error-handling#startup-exception-handling)。
 
@@ -83,7 +86,7 @@ Web 主机提供某些服务可供`Startup`类构造函数。 应用程序添加
 
 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder.configureservices)和[配置](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure)便捷的方法，可以使用而不是指定`Startup`类。 多次调用`ConfigureServices`将追加到另一个。 多次调用`Configure`使用最后一次的方法调用。
 
-[!code-csharp[Main](startup/snapshot_sample/Program.cs?highlight=16,20)]
+[!code-csharp[Main](startup/snapshot_sample/Program.cs?highlight=18,22)]
 
 ## <a name="startup-filters"></a>启动筛选器
 

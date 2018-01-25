@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: c61be6f7a64c000c8d9489f35eea520fd0bb32dd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ce4953a0abf64af28ef4dbc5a62bb2d989343d99
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-getting-started-with-signalr-1x"></a>教程： 开始使用 SignalR 1.x
 ====================
@@ -168,7 +168,7 @@ HTML 页中的代码示例演示如何使用 SignalR jQuery 库与 SignalR hub �
 
 你已了解 SignalR 是一个框架，用于构建实时 web 应用程序。 你还了解了多个 SignalR 开发任务： 如何将 SignalR 添加到 ASP.NET 应用程序、 如何创建一个中心类，以及如何发送和从中心接收消息。
 
-你可以使示例应用程序在本教程或其他 SignalR 应用程序可通过 Internet 将它们部署到托管提供商。 Microsoft 提供了可用的 web 宿主中可用的最多 10 个网站[Windows Azure 试用帐户](https://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604)。 有关如何部署示例 SignalR 应用程序的演练，请参阅[发布 SignalR 入门示例作为 Windows Azure 网站](https://blogs.msdn.com/b/timlee/archive/2013/02/27/deploy-the-signalr-getting-started-sample-as-a-windows-azure-web-site.aspx)。 有关如何将 Visual Studio web 项目部署到 Windows Azure 网站的详细信息，请参阅[部署 ASP.NET 应用程序到 Windows Azure 网站](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet)。 (注意： WebSocket 传输目前不支持为 Windows Azure 网站。 当 WebSocket 传输不可用，SignalR 使用其他可用传输的传输部分中所述[简介 SignalR 主题](index.md)。)
+你可以使示例应用程序在本教程或其他 SignalR 应用程序可通过 Internet 将它们部署到托管提供商。 Microsoft 提供了可用的 web 宿主中可用的最多 10 个网站[Windows Azure 试用帐户](https://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A443DD604)。 有关如何部署示例 SignalR 应用程序的演练，请参阅[发布 SignalR 入门示例作为 Windows Azure 网站](https://blogs.msdn.com/b/timlee/archive/2013/02/27/deploy-the-signalr-getting-started-sample-as-a-windows-azure-web-site.aspx)。 有关如何将 Visual Studio web 项目部署到 Windows Azure 网站的详细信息，请参阅[部署 ASP.NET 应用程序到 Windows Azure 网站](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet)。 (注意： WebSocket 传输目前不支持为 Windows Azure 网站。 当 WebSocket 传输不可用，SignalR 使用其他可用传输的传输部分中所述[简介 SignalR 主题](index.md)。)
 
 若要了解更多高级的 SignalR 最新开发进展概念，请访问以下站点 SignalR 源代码和资源：
 

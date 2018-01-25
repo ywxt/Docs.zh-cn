@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/improving-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: d23110944642686b3e62aef1c324847de57a07c4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e46616d45ad0e4a0ab861e6fb53f33bc567cbdea
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="improving-the-details-and-delete-methods-c"></a>改进的详细信息和删除方法 (C#)
 ====================
@@ -77,11 +77,11 @@ ms.lasthandoff: 11/10/2017
 
 如果你想要部署应用程序，是对第一个测试你的本地 IIS 7 服务器上的应用程序帮助。 你可以使用此[Web 平台安装程序](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=ASPNET;)链接以启用 ASP.NET 应用程序的 IIS 设置。 请参阅下面的部署链接：
 
-- [ASP.NET 部署内容映射](https://msdn.microsoft.com/en-us/library/dd394698.aspx)
+- [ASP.NET 部署内容映射](https://msdn.microsoft.com/library/dd394698.aspx)
 - [启用 IIS 7.x](https://blogs.msdn.com/b/rickandy/archive/2011/03/14/enabling-iis-7-x-on-windows-7-vista-sp1-windows-2008-windows-2008-r2.aspx)
-- [Web 应用程序项目部署](https://msdn.microsoft.com/en-us/library/dd394698.aspx)
+- [Web 应用程序项目部署](https://msdn.microsoft.com/library/dd394698.aspx)
 
-我现在鼓励你转到我们中间级[为 ASP.NET MVC 应用程序创建实体框架数据模型](../../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)和[MVC 音乐商店](../../mvc-music-store/mvc-music-store-part-1.md)教程，以浏览[ASP.NETMSDN 上的文章](https://msdn.microsoft.com/en-us/library/gg416514(VS.98).aspx)，和签出的许多视频和资源在[https://asp.net/mvc](https://asp.net/mvc)若要了解更多有关 ASP.NET MVC ！ [ASP.NET MVC 论坛](https://forums.asp.net/1146.aspx)是询问的问题的好地方。
+我现在鼓励你转到我们中间级[为 ASP.NET MVC 应用程序创建实体框架数据模型](../../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)和[MVC 音乐商店](../../mvc-music-store/mvc-music-store-part-1.md)教程，以浏览[ASP.NETMSDN 上的文章](https://msdn.microsoft.com/library/gg416514(VS.98).aspx)，和签出的许多视频和资源在[https://asp.net/mvc](https://asp.net/mvc)若要了解更多有关 ASP.NET MVC ！ [ASP.NET MVC 论坛](https://forums.asp.net/1146.aspx)是询问的问题的好地方。
 
 请尽情体验吧！
 

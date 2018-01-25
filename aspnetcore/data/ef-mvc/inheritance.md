@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 756f1bbba73bd760f780d18c01597642dd1f7216
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a4ae696bdd114ab9c36d1218f753fa3d515f2300
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>继承的 EF 内核，它们有 ASP.NET 核心 MVC 教程 (9 的 10)
 
@@ -106,7 +106,7 @@ dotnet ef migrations add Inheritance
 
 * 使雇用日期可以为 null，因为学生行不会产生雇佣日期。
 
-* 添加临时的字段，将用于更新指向学生的外键。 当将学生复制到 Person 表他们将获得新的主键值。
+* 添加临时的字段，将用于更新指向学生的外键。 当将学生复制到 Person 表他们将得到新的主键值。
 
 * 将数据从 Person 表到学生表。 这将导致学生以分配新的主键值。
 

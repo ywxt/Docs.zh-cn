@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cc7b90c06b2d99b6c540e9650bb4d8515f5c3702
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: df22a7c4aedb5e5fef183817e9d2b1e4c4a919ee
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="performing-batch-updates-vb"></a>执行批处理更新 (VB)
 ====================
@@ -116,7 +116,7 @@ DataList s`EditItemIndex`属性指示什么`DataListItem`（如果有） 使用�
 
 使用的所有 DataList 的项显示编辑界面和所有更新的按钮添加，所有这些剩下编写代码以执行批处理更新。 具体而言，我们需要循环访问 DataList 的项并调用`SuppliersBLL`类的`UpdateSupplierAddress`为每个方法。
 
-集合`DataListItem`实例可通过 DataList s 访问 DataList 该构成[`Items`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.items.aspx)。 具有对引用`DataListItem`，我们可以获取相应`SupplierID`从`DataKeys`集合并以编程方式引用文本框中 Web 控件中`ItemTemplate`如下面的代码所示：
+集合`DataListItem`实例可通过 DataList s 访问 DataList 该构成[`Items`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.items.aspx)。 具有对引用`DataListItem`，我们可以获取相应`SupplierID`从`DataKeys`集合并以编程方式引用文本框中 Web 控件中`ItemTemplate`如下面的代码所示：
 
 
 [!code-vb[Main](performing-batch-updates-vb/samples/sample4.vb)]
@@ -131,7 +131,7 @@ DataList s`EditItemIndex`属性指示什么`DataListItem`（如果有） 使用�
 
 用于此教程的调用的批处理更新算法`UpdateSupplierAddress`方法*每个*DataList，无论是否已更改其地址信息中的供应商。 虽然此类 blind 更新不 t 通常性能问题，它们将可能导致的多余的记录，如果你重新审核更改为数据库表。 例如，如果你使用触发器来记录所有`UPDATE`到`Suppliers`表与审核表，每次用户单击全部更新按钮将在系统中，而不管用户是否进行任何为每个供应商创建一个新的审核记录更改。
 
-ADO.NET DataTable 和 DataAdapter 类旨在支持批处理更新只修改、 删除和新记录结果中的任何数据库通信的位置。 位于 DataTable 每行都有[`RowState`属性](https://msdn.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx)，该值指示是否已添加到数据表，从它，修改、 删除或保持不变的行。 当最初填充数据表时，所有的行已标记不变。 为已修改更改的任何行的列的值会将行的标记。
+ADO.NET DataTable 和 DataAdapter 类旨在支持批处理更新只修改、 删除和新记录结果中的任何数据库通信的位置。 位于 DataTable 每行都有[`RowState`属性](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx)，该值指示是否已添加到数据表，从它，修改、 删除或保持不变的行。 当最初填充数据表时，所有的行已标记不变。 为已修改更改的任何行的列的值会将行的标记。
 
 在`SuppliersBLL`我们以更新到单一供应商提供记录中的第一个读取指定供应商的地址信息的类`SuppliersDataTable`然后设置`Address`， `City`，和`Country`列的值使用以下代码：
 

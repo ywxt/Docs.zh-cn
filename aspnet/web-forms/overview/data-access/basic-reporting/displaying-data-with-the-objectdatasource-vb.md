@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/displaying-data-with-the-objectdatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d575c8f597bcb5d2a5d2e27e1145d39110daabe1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c9e40ff968f82a9d05fc9441e2399e52a6c55f51
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-data-with-the-objectdatasource-vb"></a>使用对象数据源 (VB) 显示数据
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 
 与我们的应用程序体系结构和网站页面布局完成，我们已准备好开始探索如何完成的各种常见数据和报表相关的任务。 在前面的教程，我们已了解如何以编程方式将数据从 DAL 和 BLL 绑定到数据 ASP.NET 页中的 Web 控件。 分配数据 Web 控件的此语法`DataSource`数据到显示，然后再调用控件的属性`DataBind()`方法已在 ASP.NET 1.x 应用程序，所使用的模式，并且可以继续在 2.0 应用程序中使用。 但是，ASP.NET 2.0 的新数据源控件提供以声明性方式处理数据。 使用这些控件你可以将数据从前面的教程中创建无需编写一行代码 BLL 检索的绑定 ！
 
-ASP.NET 2.0 附带有五个内置的数据源控件[SqlDataSource](https://msdn.microsoft.com/en-us/library/dz12d98w%28vs.80%29.aspx)， [AccessDataSource](https://msdn.microsoft.com/en-us/library/8e5545e1.aspx)， [ObjectDataSource](https://msdn.microsoft.com/en-us/library/9a4kyhcx.aspx)， [XmlDataSource](https://msdn.microsoft.com/en-us/library/e8d8587a%28en-US,VS.80%29.aspx)，和[SiteMapDataSource](https://msdn.microsoft.com/en-us/library/5ex9t96x%28en-US,VS.80%29.aspx)尽管可以创建你自己[自定义数据源控件](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnvs05/html/DataSourceCon1.asp)在需要时。 由于我们已为我们的教程应用程序开发一种体系结构，我们将使用 ObjectDataSource 针对我们 BLL 类。
+ASP.NET 2.0 附带有五个内置的数据源控件[SqlDataSource](https://msdn.microsoft.com/library/dz12d98w%28vs.80%29.aspx)， [AccessDataSource](https://msdn.microsoft.com/library/8e5545e1.aspx)， [ObjectDataSource](https://msdn.microsoft.com/library/9a4kyhcx.aspx)， [XmlDataSource](https://msdn.microsoft.com/library/e8d8587a%28en-US,VS.80%29.aspx)，和[SiteMapDataSource](https://msdn.microsoft.com/library/5ex9t96x%28en-US,VS.80%29.aspx)尽管可以创建你自己[自定义数据源控件](https://msdn.microsoft.com/library/default.asp?url=/library/dnvs05/html/DataSourceCon1.asp)在需要时。 由于我们已为我们的教程应用程序开发一种体系结构，我们将使用 ObjectDataSource 针对我们 BLL 类。
 
 
 ![ASP.NET 2.0 包含五个内置的数据源控件](displaying-data-with-the-objectdatasource-vb/_static/image1.png)
@@ -90,7 +90,7 @@ ObjectDataSource 用作代理使用一些其他对象。 若要配置 ObjectData
 
 [!code-aspx[Main](displaying-data-with-the-objectdatasource-vb/samples/sample1.aspx)]
 
-即使你希望配置数据源向导可能有些时候当你需要手动配置对象数据源，因为此向导只列出开发人员创建的类。 如果你想要将对象数据源绑定到.NET Framework 中的类如[成员资格类](https://msdn.microsoft.com/en-us/library/system.web.security.membership.aspx)、 访问用户帐户信息或[Directory 类](https://msdn.microsoft.com/en-us/library/system.io.directory.aspx)要使用文件系统信息你将需要手动设置对象数据源的属性。
+即使你希望配置数据源向导可能有些时候当你需要手动配置对象数据源，因为此向导只列出开发人员创建的类。 如果你想要将对象数据源绑定到.NET Framework 中的类如[成员资格类](https://msdn.microsoft.com/library/system.web.security.membership.aspx)、 访问用户帐户信息或[Directory 类](https://msdn.microsoft.com/library/system.io.directory.aspx)要使用文件系统信息你将需要手动设置对象数据源的属性。
 
 ## <a name="step-2-adding-a-data-web-control-and-binding-it-to-the-objectdatasource"></a>步骤 2： 添加数据 Web 控件，并将其绑定到 ObjectDataSource
 
@@ -172,7 +172,7 @@ ObjectDataSource 用作代理使用一些其他对象。 若要配置 ObjectData
 
 [!code-xml[Main](displaying-data-with-the-objectdatasource-vb/samples/sample5.xml)]
 
-这就是所有到它 ！ `styleSheetTheme`设置指示主题中指定的属性应*不*重写控件级别指定的属性。 若要指定主题设置应能带来控制设置，使用`theme`属性代替了`styleSheetTheme`; 遗憾的是，在 Visual Studio 设计视图中未出现主题设置。 请参阅[ASP.NET 主题和皮肤概述](https://msdn.microsoft.com/en-us/library/ykzx33wh.aspx)和[服务器端样式使用主题](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx)主题和皮肤; 的详细信息请参阅[How To： 应用 ASP.NET 主题](https://msdn.microsoft.com/en-us/library/0yy5hxdk%28VS.80%29.aspx)有关的详细信息配置页后，可以使用主题。
+这就是所有到它 ！ `styleSheetTheme`设置指示主题中指定的属性应*不*重写控件级别指定的属性。 若要指定主题设置应能带来控制设置，使用`theme`属性代替了`styleSheetTheme`; 遗憾的是，在 Visual Studio 设计视图中未出现主题设置。 请参阅[ASP.NET 主题和皮肤概述](https://msdn.microsoft.com/library/ykzx33wh.aspx)和[服务器端样式使用主题](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx)主题和皮肤; 的详细信息请参阅[How To： 应用 ASP.NET 主题](https://msdn.microsoft.com/library/0yy5hxdk%28VS.80%29.aspx)有关的详细信息配置页后，可以使用主题。
 
 
 [![GridView 显示产品的名称、 类别、 供应商、 价格和停用的信息](displaying-data-with-the-objectdatasource-vb/_static/image31.png)](displaying-data-with-the-objectdatasource-vb/_static/image30.png)
@@ -182,7 +182,7 @@ ObjectDataSource 用作代理使用一些其他对象。 若要配置 ObjectData
 
 ## <a name="displaying-one-record-at-a-time-in-the-detailsview"></a>在说明中一次显示一条记录
 
-GridView 显示个返回的数据源控件绑定到每个记录都占一行。 有的时候，但是，我们可能想要一次显示唯一记录或仅一条记录。 [说明](https://msdn.microsoft.com/en-us/library/s3w1w7t4.aspx)提供此功能，从而呈现为 HTML`<table>`与两个列和每个列或属性绑定到控件的一个行。 可以将说明如何视为与单个记录的旋转 90 度 GridView。
+GridView 显示个返回的数据源控件绑定到每个记录都占一行。 有的时候，但是，我们可能想要一次显示唯一记录或仅一条记录。 [说明](https://msdn.microsoft.com/library/s3w1w7t4.aspx)提供此功能，从而呈现为 HTML`<table>`与两个列和每个列或属性绑定到控件的一个行。 可以将说明如何视为与单个记录的旋转 90 度 GridView。
 
 首先，通过添加说明如何控制*上面*中的 GridView `SimpleDisplay.aspx`。 接下来，将其绑定到 GridView 作为相同 ObjectDataSource 控件。 如与 GridView，BoundField 将添加到对象数据源返回的对象中每个属性说明`Select`方法。 唯一的区别是水平而不是垂直说明的 BoundFields 的布局方式。
 
@@ -219,7 +219,7 @@ GridView，如说明的 BoundFields 可以进行修改，以提供更多自定�
 
 说明如何是非常刚性中从 ObjectDataSource 返回每个记录中的显示方式。 我们可能想更灵活的数据视图。 例如，而不是在单独的一行上显示产品的名称、 类别、 供应商、 价格和停用的信息，我们可能想要显示的产品名称并以定价`<h4>`标题下，显示的类别和供应商信息下面的名称和较小的字体大小的价格。 我们可能不满足要显示的值旁边的属性名称 （产品、 类别和等等）。
 
-[FormView 控件](https://msdn.microsoft.com/en-US/library/fyf1dk77.aspx)提供此级别的自定义项。 FormView 而不是使用字段 （如的 GridView 和说明如何执行操作），使用允许的 Web 控件，静态 HTML 混合的模板和[数据绑定语法](http://www.15seconds.com/issue/040630.htm)。 如果你熟悉中继器控件从 ASP.NET 1.x，你可以将 FormView 视为显示单个记录转发器。
+[FormView 控件](https://msdn.microsoft.com/library/fyf1dk77.aspx)提供此级别的自定义项。 FormView 而不是使用字段 （如的 GridView 和说明如何执行操作），使用允许的 Web 控件，静态 HTML 混合的模板和[数据绑定语法](http://www.15seconds.com/issue/040630.htm)。 如果你熟悉中继器控件从 ASP.NET 1.x，你可以将 FormView 视为显示单个记录转发器。
 
 FormView 将控件添加到`SimpleDisplay.aspx`页的设计图面。 最初 FormView 将显示为灰色块，通知我们，我们需要至少情况下，提供控件的`ItemTemplate`。
 
@@ -256,12 +256,12 @@ FormView 将控件添加到`SimpleDisplay.aspx`页的设计图面。 最初 Form
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [创建你自己的数据源控件](https://msdn.microsoft.com/en-us/library/ms364049.aspx)
-- [ASP.NET 2.0 的 GridView 示例](https://msdn.microsoft.com/en-us/library/aa479339.aspx)
+- [创建你自己的数据源控件](https://msdn.microsoft.com/library/ms364049.aspx)
+- [ASP.NET 2.0 的 GridView 示例](https://msdn.microsoft.com/library/aa479339.aspx)
 - [简化和扩展数据绑定 ASP.NET 2.0 中的语法](http://www.15seconds.com/issue/040630.htm)
 - [在 ASP.NET 2.0 中的主题](http://www.odetocode.com/Articles/423.aspx)
 - [使用主题的服务器端样式](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx)
-- [如何： 以编程方式应用 ASP.NET 主题](https://msdn.microsoft.com/en-us/library/tx35bd89.aspx)
+- [如何： 以编程方式应用 ASP.NET 主题](https://msdn.microsoft.com/library/tx35bd89.aspx)
 
 ## <a name="about-the-author"></a>关于作者
 

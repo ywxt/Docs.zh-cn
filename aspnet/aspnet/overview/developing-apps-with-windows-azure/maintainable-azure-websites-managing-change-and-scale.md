@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 1d6d9265d93fbd32e2d9c22e2ac3db9b5ffd9776
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3d24c633368abc14efcd9fcf200a4d05c5b182c9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>在实验室上处理： 容易维护的 Azure 网站： 管理更改和缩放
 ====================
@@ -56,12 +56,12 @@ ms.lasthandoff: 11/10/2017
 - 创建和配置 Visual Studio 中的负载测试项目
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 完成本动手实验需要以下：
 
 - [Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/)或更高版本
-- [Azure SDK for.NET 2.2](https://www.microsoft.com/windowsazure/sdk/)
+- [Azure SDK for .NET 2.2](https://www.microsoft.com/windowsazure/sdk/)
 - [GIT 版本控制系统](http://git-scm.com/download)
 - Microsoft Azure 订阅 
 
@@ -199,9 +199,9 @@ ms.lasthandoff: 11/10/2017
 
     [!code-powershell[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample5.ps1)]
 
-    ![添加迁移](maintainable-azure-websites-managing-change-and-scale/_static/image8.png "添加迁移")
+    ![Add-Migration](maintainable-azure-websites-managing-change-and-scale/_static/image8.png "Add-Migration")
 
-    *添加迁移*
+    *Add-Migration*
 
     > [!NOTE]
     > 迁移文件组成两种方法，**向上**和**下**。
@@ -251,7 +251,7 @@ ms.lasthandoff: 11/10/2017
 在本练习中，你将部署**专家 Quiz**到你使用 Git 源代码管理的 web 应用的过渡环境的应用程序。 若要执行此操作，将创建 web 应用和设置在管理门户所需的组件，配置**Git**的源存储库和推送应用程序从本地计算机到过渡槽的代码。 你还要更新与生产数据库**Code First 迁移**你在上一练习中创建。 然后，您将在此测试环境以验证其操作中执行应用程序。 一旦您满意后它按预期工作，将提升到生产应用程序。
 
 > [!NOTE]
-> 若要启用暂存的发布，web 应用必须处于**标准模式**。 请注意，是否将 web 应用程序更改为标准模式时将会产生额外费用。 有关定价的详细信息，请参阅[App Service 定价](https://azure.microsoft.com/en-us/pricing/details/app-service/)。
+> 若要启用暂存的发布，web 应用必须处于**标准模式**。 请注意，是否将 web 应用程序更改为标准模式时将会产生额外费用。 有关定价的详细信息，请参阅[App Service 定价](https://azure.microsoft.com/pricing/details/app-service/)。
 
 
 <a id="Ex2Task1"></a>
@@ -542,9 +542,9 @@ ms.lasthandoff: 11/10/2017
 5. 选择任何选项测验。 你将看到没有任何反应。
 6. 在**F12**窗口中，对应 POST HTTP 请求的项显示 HTTP **500**结果。
 
-    ![HTTP 500 错误](maintainable-azure-websites-managing-change-and-scale/_static/image52.png)
+    ![HTTP 500 error](maintainable-azure-websites-managing-change-and-scale/_static/image52.png)
 
-    *HTTP 500 错误*
+    *HTTP 500 error*
 7. 选择**控制台**选项卡。可能的原因的详细信息记录错误。
 
     ![记录的错误](maintainable-azure-websites-managing-change-and-scale/_static/image53.png)
@@ -695,7 +695,7 @@ ms.lasthandoff: 11/10/2017
     [!code-xml[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample17.xml)]
 
     > [!NOTE]
-    > URL 重写是拦截传入 Web 请求，并将请求重定向到不同的资源的过程。 URL 重写规则告知重写引擎请求时需要重定向，并在其中应它们重定向。 重写规则两个字符串组成： 要在请求 URL 中查找的模式 （通常情况下，使用正则表达式），并找到要替换的模式，如果的字符串。 有关详细信息，请参阅[URL 重写在 ASP.NET 中](https://msdn.microsoft.com/en-us/library/ms972974.aspx)。
+    > URL 重写是拦截传入 Web 请求，并将请求重定向到不同的资源的过程。 URL 重写规则告知重写引擎请求时需要重定向，并在其中应它们重定向。 重写规则两个字符串组成： 要在请求 URL 中查找的模式 （通常情况下，使用正则表达式），并找到要替换的模式，如果的字符串。 有关详细信息，请参阅[URL 重写在 ASP.NET 中](https://msdn.microsoft.com/library/ms972974.aspx)。
 3. 按**CTRL + S**以保存所做的更改。
 4. 打开一个新**Git Bash**控制台部署到 Azure App Service 更新的应用程序。
 5. 执行以下命令以将更改推送到 Azure。 更新*[您的应用程序的路径]*占位符替换为的路径**GeekQuiz**解决方案。 系统将提示您输入部署密码。
@@ -910,7 +910,7 @@ ms.lasthandoff: 11/10/2017
     > 
     > - 增加的负载测试的持续时间 (例如到**10 分钟**)
     > - 减少的最大和最小值**目标 CPU**你的 web 应用的自动缩放配置中的范围
-    > - 在与云中运行负载测试**Visual Studio Online**。 详细信息[此处](https://www.visualstudio.com/en-us/get-started/load-test-your-app-vs.aspx)
+    > - 在与云中运行负载测试**Visual Studio Online**。 详细信息[此处](https://www.visualstudio.com/get-started/load-test-your-app-vs.aspx)
 
 * * *
 

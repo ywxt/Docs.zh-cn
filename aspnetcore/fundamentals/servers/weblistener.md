@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: f1bdbc723e4602c2e53723aff91ec5d254f4bd93
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 5073a1663ec99a1b161092d74ab035ee9782becd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>在 ASP.NET Core WebListener web 服务器实现
 
@@ -131,11 +131,11 @@ using (WebListener listener = new WebListener(settings))
 
 ## <a name="preregister-url-prefixes-and-configure-ssl"></a>预先注册 URL 前缀和配置 SSL
 
-IIS 和 WebListener 依赖于基础 Http.Sys 内核模式驱动程序以侦听请求，并执行初始处理。 在 IIS 中，管理 UI 也提供相对简单的方式，来配置所有内容。 但是，如果你使用 WebListener 你需要自行配置 Http.Sys。 执行该操作的内置工具是 netsh.exe。 
+IIS 和 WebListener 依赖于基础 Http.Sys 内核模式驱动程序以侦听请求，并执行初始处理。 在 IIS 中，管理 UI 也提供相对简单的方式，来配置所有内容。 但是，如果你使用 WebListener 你需要自行配置 Http.Sys。 这样做即 netsh.exe 内置工具。 
 
 你需要使用 netsh.exe 的最常见的任务正保留 URL 前缀和指派 SSL 证书。
 
-NetSh.exe 不是使用为新手设计非常方便的工具。 下面的示例演示保留端口 80 和 443 的 URL 前缀所需的最低要求：
+NetSh.exe 不使用为新手设计非常方便的工具。 下面的示例演示保留端口 80 和 443 的 URL 前缀所需的最低要求：
 
 ```console
 netsh http add urlacl url=http://+:80/ user=Users

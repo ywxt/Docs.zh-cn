@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: 213626147424e08d10d6442034ec450174200b09
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f3c56356aaa595e200a16fe0045a8b00dc5823b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-details-and-delete-methods"></a>检查的详细信息和删除方法
 ====================
@@ -66,7 +66,7 @@ MVC 基架引擎，可用于创建此操作添加注释，显示调用方法的 
 
 ## <a name="next-steps"></a>后续步骤
 
-已生成和测试 web 应用程序后下, 一步是将其提供给其他人通过 Internet 使用。 若要做到这一点，你必须将其部署到 web 宿主提供程序。 Microsoft 提供了可用的 web 宿主中的最多 10 个网站[免费 Azure 试用帐户](https://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604)。 我建议你接下来请按照我的教程[将包含成员资格、 OAuth 和 SQL 数据库的安全 ASP.NET MVC 应用程序部署到 Windows Azure 网站](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)。 绝佳教程是 Tom Dykstra 的中间级[为 ASP.NET MVC 应用程序创建实体框架数据模型](../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 [Stackoverflow](http://stackoverflow.com/help)和[ASP.NET MVC 论坛](https://forums.asp.net/1146.aspx)是出色放置询问的问题。 请按照[我](https://twitter.com/RickAndMSFT)以便您可以获取我的最新教程上的更新在 twitter 上。
+已生成和测试 web 应用程序后下, 一步是将其提供给其他人通过 Internet 使用。 若要做到这一点，你必须将其部署到 web 宿主提供程序。 Microsoft 提供了可用的 web 宿主中的最多 10 个网站[免费 Azure 试用帐户](https://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A443DD604)。 我建议你接下来请按照我的教程[将包含成员资格、 OAuth 和 SQL 数据库的安全 ASP.NET MVC 应用程序部署到 Windows Azure 网站](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)。 绝佳教程是 Tom Dykstra 的中间级[为 ASP.NET MVC 应用程序创建实体框架数据模型](../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 [Stackoverflow](http://stackoverflow.com/help)和[ASP.NET MVC 论坛](https://forums.asp.net/1146.aspx)是出色放置询问的问题。 请按照[我](https://twitter.com/RickAndMSFT)以便您可以获取我的最新教程上的更新在 twitter 上。
 
 反馈是受欢迎。
 

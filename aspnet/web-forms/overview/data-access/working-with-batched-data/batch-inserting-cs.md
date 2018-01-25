@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9eb65b99a955770c72b28713d8daa66bcd1d5344
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9dc18e259da24d71464a156a70a85cfc9a1745ce
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="batch-inserting-c"></a>批处理插入 (C#)
 ====================
@@ -96,7 +96,7 @@ ms.lasthandoff: 11/10/2017
 接下来，我们需要创建插入界面进来图 1 所示。 此接口可创建通过各种 HTML 的方法，但我们将使用一个非常简单： 一个四列七行的表。
 
 > [!NOTE]
-> 当输入 HTML 标记时，`<table>`元素，但我更喜欢使用的源视图。 Visual Studio 具有用于添加的工具时`<table>`通过设计器的元素，设计器似乎所有太愿意注入的未经请求`style`向的标记的设置。 一旦我已创建`<table>`标记中，我通常返回到设计器添加 Web 控件并设置其属性。 创建包含预先确定的列和行的表时我更喜欢使用静态 HTML 而不是[表 Web 控件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.table.aspx)因为任何放置表 Web 控件内的 Web 控件仅可以使用`FindControl("controlID")`模式。 我，但是，使用表 Web 控件动态调整大小的表 （其行或列基于某些数据库或用户指定的条件的），因为表 Web 控件可以以编程方式构造。
+> 当输入 HTML 标记时，`<table>`元素，但我更喜欢使用的源视图。 Visual Studio 具有用于添加的工具时`<table>`通过设计器的元素，设计器似乎所有太愿意注入的未经请求`style`向的标记的设置。 一旦我已创建`<table>`标记中，我通常返回到设计器添加 Web 控件并设置其属性。 创建包含预先确定的列和行的表时我更喜欢使用静态 HTML 而不是[表 Web 控件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.table.aspx)因为任何放置表 Web 控件内的 Web 控件仅可以使用`FindControl("controlID")`模式。 我，但是，使用表 Web 控件动态调整大小的表 （其行或列基于某些数据库或用户指定的条件的），因为表 Web 控件可以以编程方式构造。
 
 
 输入中的以下标记`<asp:Panel>`标记`InsertingInterface`面板：

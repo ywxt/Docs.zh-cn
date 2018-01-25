@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 090d0777b9d541003c3115d0da7cd974820c2939
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 191de7546e2ba913fda0c8c8a8bfd3531b53336e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="specifying-the-master-page-programmatically-vb"></a>以编程方式指定母版页 (VB)
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample1.aspx)]
 
-[ `Page`类](https://msdn.microsoft.com/en-us/library/system.web.ui.page.aspx)中`System.Web.UI`命名空间包括[`MasterPageFile`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.page.masterpagefile.aspx)，将路径返回到内容页的母版页; 它是由设置此属性`@Page`指令。 此属性还可以用于以编程方式指定内容页的母版页。 此方法非常有用，如果你想要动态分配母版页基于外部因素，例如访问的页面的用户。
+[ `Page`类](https://msdn.microsoft.com/library/system.web.ui.page.aspx)中`System.Web.UI`命名空间包括[`MasterPageFile`属性](https://msdn.microsoft.com/library/system.web.ui.page.masterpagefile.aspx)，将路径返回到内容页的母版页; 它是由设置此属性`@Page`指令。 此属性还可以用于以编程方式指定内容页的母版页。 此方法非常有用，如果你想要动态分配母版页基于外部因素，例如访问的页面的用户。
 
 在本教程中我们将第二个母版页添加到我们的网站，并动态决定要在运行时使用的主页面。
 
@@ -54,7 +54,7 @@ ms.lasthandoff: 11/10/2017
 
 在此合成 partakes 哪些母版页依赖于的值`Page`对象的`MasterPageFile`属性。 设置`MasterPageFile`属性中`@Page`指令有分配的净效果`Page`的`MasterPageFile`在初始化阶段，即该页面的生命周期的第一个阶段的属性。 或者，我们可以以编程方式设置此属性。 但是，它是命令性图 1 中的合成发生之前，设置此属性。
 
-PreInit 阶段开始时`Page`对象引发其[`PreInit`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.page.preinit.aspx)并调用其[`OnPreInit`方法](https://msdn.microsoft.com/en-us/library/system.web.ui.page.onpreinit.aspx)。 若要以编程方式设置主控页，然后，我们可以创建的事件处理程序`PreInit`事件或替代`OnPreInit`方法。 让我们看一下这两种方法。
+PreInit 阶段开始时`Page`对象引发其[`PreInit`事件](https://msdn.microsoft.com/library/system.web.ui.page.preinit.aspx)并调用其[`OnPreInit`方法](https://msdn.microsoft.com/library/system.web.ui.page.onpreinit.aspx)。 若要以编程方式设置主控页，然后，我们可以创建的事件处理程序`PreInit`事件或替代`OnPreInit`方法。 让我们看一下这两种方法。
 
 首先打开`Default.aspx.vb`，我们站点的主页的代码隐藏类文件。 添加事件处理程序为页的`PreInit`通过键入下面的代码中的事件：
 
@@ -275,8 +275,8 @@ PreInit 阶段开始时`Page`对象引发其[`PreInit`事件](https://msdn.micro
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
 - [ASP.NET 页面生命周期关系图](http://emanish.googlepages.com/Asp.Net2.0Lifecycle.PNG)
-- [ASP.NET 页面生命周期概述](https://msdn.microsoft.com/en-us/library/ms178472.aspx)
-- [ASP.NET 主题和皮肤概述](https://msdn.microsoft.com/en-us/library/ykzx33wh.aspx)
+- [ASP.NET 页面生命周期概述](https://msdn.microsoft.com/library/ms178472.aspx)
+- [ASP.NET 主题和皮肤概述](https://msdn.microsoft.com/library/ykzx33wh.aspx)
 - [母版页： 提示、 技巧和陷阱](http://www.odetocode.com/articles/450.aspx)
 - [在 ASP.NET 中的主题](http://www.odetocode.com/articles/423.aspx)
 

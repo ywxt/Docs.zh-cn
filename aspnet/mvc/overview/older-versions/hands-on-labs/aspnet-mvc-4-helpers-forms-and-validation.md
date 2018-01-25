@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 4dd10430778dc51fef1199315ee02eb2cd4970ba
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 925d659f42496045089ba056e194ac977c37a8de
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>ASP.NET MVC 4 帮助器、 窗体和验证
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 此实验室将引导你完成的增强功能和前面所述通过将细微的更改应用于源文件夹中提供的示例 Web 应用程序的新功能。
 > 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843)。
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)。
 
 
 <a id="Objectives"></a>
@@ -58,7 +58,7 @@ ms.lasthandoff: 11/10/2017
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 你必须具有要完成本实验的以下项：
 
@@ -228,7 +228,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 在此任务中，你将添加一个新方法**Truncate**到**HTML**公开在 ASP.NET MVC 视图内的对象。 若要执行此操作，则将实现**扩展方法**到内置**System.Web.Mvc.HtmlHelper**类提供的 ASP.NET MVC。
 
 > [!NOTE]
-> 若要阅读更多有关**扩展方法**，请访问此 msdn 文章。 [https://msdn.microsoft.com/en-us/library/bb383977.aspx](https://msdn.microsoft.com/en-us/library/bb383977.aspx)。
+> 若要阅读更多有关**扩展方法**，请访问此 msdn 文章。 [https://msdn.microsoft.com/library/bb383977.aspx](https://msdn.microsoft.com/library/bb383977.aspx).
 
 
 1. 打开**开始**解决方案位于**源/Ex2-AddingAnHTMLHelper/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
@@ -745,10 +745,10 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
     > 对于每个客户端验证规则，非介入式 jQuery 添加具有数据的属性-val-*rulename*=&quot;*消息*&quot;。 下面是标记列表该 Unobtrusive jQuery 将插入到要执行客户端验证的 html 输入字段：
     > 
     > - 数据 val
-    > - 数据 val 数
+    > - Data-val-number
     > - 数据 val 范围
     > - 数据 val-范围最小/最大数据 val 范围
-    > - 数据 val 所需
+    > - Data-val-required
     > - 数据 val 长度
     > - 数据 val-长度最大/最小数据 val 长度
     > 

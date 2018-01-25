@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 6362f0506934ca3b3cc86e1a927af75e7bc4e1d3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 103cd68c576463d87d0077cc149f9b89c6e028e8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-custom-action-filters"></a>ASP.NET MVC 4 自定义操作筛选器
 ====================
@@ -44,7 +44,7 @@ ms.lasthandoff: 11/10/2017
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 你必须具有要完成本实验的以下项：
 
@@ -96,7 +96,7 @@ ms.lasthandoff: 11/10/2017
 > - **结果**筛选器，用于包装 ActionResult 对象执行。 此筛选器可以执行结果，例如修改 HTTP 响应的其他的处理。
 > - **异常**筛选器，用于执行如果没有在操作方法中，开始授权筛选器，以与结果执行的某个位置引发未处理的异常。 异常筛选器可以用于任务，例如日志记录或显示错误页。
 > 
-> 有关筛选器提供程序的详细信息，请访问此 MSDN 链接: ([https://msdn.microsoft.com/en-us/library/dd410209.aspx](https://msdn.microsoft.com/en-us/library/dd410209.aspx))。
+> 有关筛选器提供程序的详细信息，请访问此 MSDN 链接: ([https://msdn.microsoft.com/library/dd410209.aspx](https://msdn.microsoft.com/library/dd410209.aspx))。
 
 
 <a id="AboutLoggingFeature"></a>
@@ -164,7 +164,7 @@ ms.lasthandoff: 11/10/2017
     > [!NOTE]
     > **OnActionExecuting**方法就使用**实体框架**添加新的 ActionLog 注册。 它会创建并填充新的实体实例的上下文信息从**filterContext**。
     > 
-    > 你可以阅读更多有关**ControllerContext**类在[msdn](https://msdn.microsoft.com/en-us/library/system.web.mvc.controllercontext.aspx)。
+    > 你可以阅读更多有关**ControllerContext**类在[msdn](https://msdn.microsoft.com/library/system.web.mvc.controllercontext.aspx)。
 
 <a id="Ex1Task2"></a>
 
@@ -231,7 +231,7 @@ ms.lasthandoff: 11/10/2017
 
 此外，每个操作筛选器具有顺序属性用于确定筛选器的作用域中的执行顺序。
 
-有关自定义操作筛选器执行顺序的详细信息，请访问此 MSDN 文章: ([https://msdn.microsoft.com/en-us/library/dd381609(v=vs.98).aspx](https://msdn.microsoft.com/en-us/library/dd381609(v=vs.98).aspx))。
+有关自定义操作筛选器执行顺序的详细信息，请访问此 MSDN 文章: ([https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx](https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx))。
 
 <a id="Ex2Task1"></a>
 

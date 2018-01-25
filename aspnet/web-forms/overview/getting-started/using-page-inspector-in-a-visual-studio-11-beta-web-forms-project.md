@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/using-page-inspector-in-a-visual-studio-11-beta-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: a2ac8334e62e6ab7af7042572cfd5950c687001b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ca8a3c194577766e56d0604323fef567d539316c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-page-inspector-for-visual-studio-2012-in-aspnet-web-forms"></a>使用 Page Inspector 在 ASP.NET Web 窗体中的 Visual Studio 2012
 ====================
@@ -49,9 +49,9 @@ ms.lasthandoff: 11/10/2017
 
 <a id="_prerequisites"></a><a id="_1_prerequisites"></a>
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
-- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11/en-us)或[Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web)。
+- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11)或[Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/11/downloads#express-web)。
 
 > [!NOTE]
 > 若要获取 Page Inspector 的最新版本，请使用[Web 平台安装程序](https://go.microsoft.com/fwlink/?LinkId=255386)要安装 Azure SDK for.NET 2.0。
@@ -67,7 +67,7 @@ Page Inspector 绑定了 Microsoft Web 开发人员工具。 最新版本是 1.3
 
 ![新的 Web 窗体应用程序](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image1.png)
 
-单击“确定”。
+单击 **“确定”**。
 
 应用程序将在中打开**源**视图。
 
@@ -91,7 +91,7 @@ Page Inspector 绑定了 Microsoft Web 开发人员工具。 最新版本是 1.3
 
 ![清除到 Visual Studio 和停靠的 Page Inspector 窗口之间的 ALT + 选项卡的浮动工具 windows 复选框](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image5.png)
 
-页面检查器窗口的顶部窗格会在浏览器窗口显示当前页。 底部窗格中显示的页中的 HTML 标记在左侧，并让你右侧某些选项卡检查页的不同方面。 在底部窗格中，类似于[F12 开发人员工具](https://msdn.microsoft.com/en-us/ie/aa740478)在 Internet Explorer 中。 （但是，与不同的开发人员工具，你可以使用 Page Inspector 在 Visual Studio 中的权限。）
+页面检查器窗口的顶部窗格会在浏览器窗口显示当前页。 底部窗格中显示的页中的 HTML 标记在左侧，并让你右侧某些选项卡检查页的不同方面。 在底部窗格中，类似于[F12 开发人员工具](https://msdn.microsoft.com/ie/aa740478)在 Internet Explorer 中。 （但是，与不同的开发人员工具，你可以使用 Page Inspector 在 Visual Studio 中的权限。）
 
 ![Page Inspector](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image6.png)
 
@@ -289,7 +289,7 @@ Page Inspector 将立即检测到更改*Site.css*文件 （或应用程序中的
 
 <a id="_using_page_inspector_1"></a>请注意你方便地刷新 Page Inspector 浏览器直接从 Visual Studio 环境中。 而不外部浏览器使用 Page Inspector 可让你保持在编辑器中，当你开发 web 应用程序时。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [引入 Page Inspector](https://channel9.msdn.com/posts/visual-studio-vnext-introducing-page-inspector) （频道 9 视频）
 

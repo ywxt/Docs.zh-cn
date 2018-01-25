@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: dc81961094928025e25cf62ce4d51d12bc67b80c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7d4ed67254c2b0fc2aef748cfab1c8f628b25641
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-3"></a>使用 ASP.NET MVC-第 3 部分中使用 HTML5 和 jQuery UI Datepicker 弹出日历
 ====================
@@ -86,14 +86,14 @@ ms.lasthandoff: 11/10/2017
 - 应用`DisplayFormat`属性设为模型中的属性。 例如，下面的代码会导致没有时间的情况下显示的日期：
 
     [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample8.cs)]
-- 应用[DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx)属性中的模型和指定的数据类型的属性。 例如，下面的代码会导致没有时间的情况下显示的日期。
+- 应用[DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)属性中的模型和指定的数据类型的属性。 例如，下面的代码会导致没有时间的情况下显示的日期。
 
     [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample9.cs)]
 
     如果应用程序包含*date.cshtml*中的模板*Views\Shared\DisplayTemplates*文件夹或*Views\Movies\DisplayTemplates*文件夹中，该模板将用于呈现`DateTime`属性。 否则内置 ASP.NET 模板化系统将显示为日期属性。
 - 创建中的显示模板*Views\Shared\DisplayTemplates*文件夹或*Views\Movies\DisplayTemplates*其名称与你想要设置格式的数据类型相匹配的文件夹。 例如，您会看到*Views\Shared\DisplayTemplates\DateTime.cshtml*用于呈现`DateTime`模型，而无需添加到模型的属性，而无需任何标记添加到视图中的属性。
-- 使用[UIHint](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx)模型上要指定要显示的模型属性的模板的属性。
-- 显式添加到的显示模板名称[Html.DisplayFor](https://msdn.microsoft.com/en-us/library/ee407420.aspx)调用在视图中。
+- 使用[UIHint](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx)模型上要指定要显示的模型属性的模板的属性。
+- 显式添加到的显示模板名称[Html.DisplayFor](https://msdn.microsoft.com/library/ee407420.aspx)调用在视图中。
 
 你使用的方法取决于你需要在你的应用程序中执行操作。 并不少见混合使用这些方法以获取恰恰格式设置所需。
 

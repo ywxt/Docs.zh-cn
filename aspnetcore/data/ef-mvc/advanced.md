@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: c5c06e61239c65cb1ff501a57777363a047a8db5
-ms.sourcegitcommit: f8ecf3d8f5b15f1e84ec86de3835b49ebe89fa1e
+ms.openlocfilehash: 4ee12cae0220825c81bd8b178dea3ac777f97bb6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>高级的主题的 EF 内核，它们有 ASP.NET 核心 MVC 教程 (10/10)
 
@@ -27,7 +27,7 @@ Contoso 大学示例 web 应用程序演示如何创建使用实体框架核心�
 
 使用实体框架的优点之一是它可避免将你过于仔细存储数据的特定方法的代码。 此，它会生成 SQL 查询和命令，其中还使你无需自行编写。 但当你需要运行手动创建的特定 SQL 查询时有特殊情况。 对于这些情况下，实体框架代码的第一个 API 包括使您能够 SQL 命令将直接传递到数据库的方法。 在 EF 核心 1.0 中具有以下选项：
 
-* 使用`DbSet.FromSql`返回实体类型的查询的方法。 返回的对象必须是期望的类型的`DbSet`对象，并且它们是否自动跟踪数据库上下文中的除非你[关闭跟踪](crud.md#no-tracking-queries)。
+* 使用`DbSet.FromSql`返回实体类型的查询的方法。 返回的对象必须是期望的类型的`DbSet`对象，并且它们正在自动由上下文跟踪时数据库除非你[关闭跟踪](crud.md#no-tracking-queries)。
 
 * 使用`Database.ExecuteSqlCommand`非查询命令。
 

@@ -12,15 +12,15 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 1e4ee8eb4901305bf6a8c9c5b949dc4ee10290e5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c11e2ef9c33b0cae1f196690533094ce1c342da5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="release-notes-for-aspnet-and-web-tools-20131-for-visual-studio-2012"></a>ASP.NET 和 Web Tools 2013.1 for Visual Studio 2012 的发行说明
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 本文档介绍 ASP.NET 和 Web 工具 2013.1 for Visual Studio 2012 的版本。
 
@@ -66,7 +66,7 @@ ms.lasthandoff: 11/10/2017
 ## <a name="new-features-in-aspnet-and-web-tools-20131-for-visual-studio-2012"></a>ASP.NET 和 Web Tools 2013.1 for Visual Studio 2012 中的新增功能
 
 <a id="bootstrap"></a>
-### <a name="bootstrap"></a>bootstrap
+### <a name="bootstrap"></a>Bootstrap
 
 当你创建的基架 MVC 5 控制器和视图时，使用视图的标记[Bootstrap](http://getbootstrap.com/)。
 
@@ -190,7 +190,7 @@ NuGet 2.7 详细的介绍包含一组丰富的新的特征描述了这些[NuGet 
 
 ![配置错误](aspnet-and-web-tools-20131-for-visual-studio-2012/_static/image2.png)
 
-因为在这些版本的 Windows 上安装时，Visual Studio 2012 不会启用 ASP.NET 4.5 功能，你会看到此错误。 若要启用 ASP.NET 4.5，执行的步骤中所述[打开或关闭 Windows 功能](https://windows.microsoft.com/en-us/windows-8/turn-windows-features-on-off)。
+因为在这些版本的 Windows 上安装时，Visual Studio 2012 不会启用 ASP.NET 4.5 功能，你会看到此错误。 若要启用 ASP.NET 4.5，执行的步骤中所述[打开或关闭 Windows 功能](https://windows.microsoft.com/windows-8/turn-windows-features-on-off)。
 
 ![打开或关闭 Windows 功能](aspnet-and-web-tools-20131-for-visual-studio-2012/_static/image3.png)
 

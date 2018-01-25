@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/scaleout-with-sql-server
 msc.type: authoredcontent
-ms.openlocfilehash: 5bf625a1ef8cc8ceab0014fadfab0c8a23dbc8da
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 18ce212f5cb7849d522248f9c462b5b48e3487ed
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-scaleout-with-sql-server"></a>与 SQL Server 的 SignalR 扩展
 ====================
@@ -44,7 +44,7 @@ ms.lasthandoff: 11/10/2017
 
 ![](scaleout-with-sql-server/_static/image1.png)
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 Microsoft SQL Server 2005 或更高版本。 底板支持桌面和服务器版本的 SQL Server。 它不支持 SQL Server Compact Edition 或 Azure SQL 数据库。 （如果你的应用程序托管在 Azure 上，请考虑服务总线底板相反。）
 
@@ -62,7 +62,7 @@ Microsoft SQL Server 2005 或更高版本。 底板支持桌面和服务器版�
 
     [!code-csharp[Main](scaleout-with-sql-server/samples/sample1.cs)]
 
- 此代码使用的默认值配置底板[TableCount](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.sqlscaleoutconfiguration.tablecount(v=vs.118).aspx)和[MaxQueueLength](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx)。 有关更改这些值的信息，请参阅[SignalR 性能： 向外缩放度量值](signalr-performance.md#scaleout_metrics)。 
+ 此代码使用的默认值配置底板[TableCount](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.sqlscaleoutconfiguration.tablecount(v=vs.118).aspx)和[MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx)。 有关更改这些值的信息，请参阅[SignalR 性能： 向外缩放度量值](signalr-performance.md#scaleout_metrics)。 
 
 ## <a name="configure-the-database"></a>配置数据库
 

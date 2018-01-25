@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 506ecc9fad47cc39a0323e9ed18814c26e28ee47
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1210f9048401ca1b4e29d6dde9bf5dbef987091f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="batch-updating-c"></a>批更新 (C#)
 ====================
@@ -47,7 +47,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="examining-the-steps-for-making-all-gridview-rows-editable"></a>检查建立所有 GridView 行可编辑的步骤
 
-中所述[概述的插入、 更新和删除数据](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md)教程中，GridView 提供对编辑的行数基于其基础数据的内置支持。 在内部，GridView 说明哪些行是通过可编辑其[`EditIndex`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.editindex(VS.80).aspx)。 如 GridView 正在绑定到其数据源，它会检查每个行，若要查看的行索引是否等于的值`EditIndex`。 如果是这样，该行 s 使用其编辑呈现字段的接口。 对于 BoundFields，编辑界面是文本框中其`Text`属性分配指定 BoundField s 的数据字段的值`DataField`属性。 有关 TemplateFields，`EditItemTemplate`代替使用`ItemTemplate`。
+中所述[概述的插入、 更新和删除数据](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md)教程中，GridView 提供对编辑的行数基于其基础数据的内置支持。 在内部，GridView 说明哪些行是通过可编辑其[`EditIndex`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.editindex(VS.80).aspx)。 如 GridView 正在绑定到其数据源，它会检查每个行，若要查看的行索引是否等于的值`EditIndex`。 如果是这样，该行 s 使用其编辑呈现字段的接口。 对于 BoundFields，编辑界面是文本框中其`Text`属性分配指定 BoundField s 的数据字段的值`DataField`属性。 有关 TemplateFields，`EditItemTemplate`代替使用`ItemTemplate`。
 
 回想一下，编辑工作流将启动当用户单击行的编辑按钮。 这将导致回发，设置 GridView 的`EditIndex`到的被单击的行的索引和重新绑定数据到网格的属性。 当单击行 s 取消按钮，在回发时`EditIndex`设置的值为`-1`之前重新绑定数据到网格。 由于 GridView 的行开始从零开始的索引，因此设置`EditIndex`到`-1`在只读模式中显示 GridView 的效果。
 
@@ -240,7 +240,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](batch-updating-cs/samples/sample5.cs)]
 
-此方法会启动通过获取所有产品进来`ProductsDataTable`通过 BLL 的调用`GetProducts`方法。 然后枚举`ProductGrid`GridView s [ `Rows`集合](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rows(VS.80).aspx)。 `Rows`集合包含[`GridViewRow`实例](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridviewrow.aspx)GridView 中显示每个行。 由于我们展示最多十个行，每页、 GridView 的`Rows`集合将有不能超过 10 个项。
+此方法会启动通过获取所有产品进来`ProductsDataTable`通过 BLL 的调用`GetProducts`方法。 然后枚举`ProductGrid`GridView s [ `Rows`集合](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rows(VS.80).aspx)。 `Rows`集合包含[`GridViewRow`实例](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewrow.aspx)GridView 中显示每个行。 由于我们展示最多十个行，每页、 GridView 的`Rows`集合将有不能超过 10 个项。
 
 为每个行`ProductID`从只张开`DataKeys`集合和相应`ProductsRow`从选择`ProductsDataTable`。 以编程方式引用四个 TemplateField 输入的控件和它们的值分配给`ProductsRow`实例 s 属性。 在每个 GridView 后行的值已用于更新`ProductsDataTable`，它 s 传递给 BLL s`UpdateWithTransaction`方法，正如我们看到在前面的教程中，只需调用该向下到 DAL 的`UpdateWithTransaction`方法。
 
@@ -270,7 +270,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](batch-updating-cs/samples/sample7.cs)]
 
-`BatchMethodAlternate`通过创建新的空启动`ProductsDataTable`名为`products`。 然后，它通过 GridView 的步骤`Rows`集合并为每个行获取使用 BLL s 的特定产品信息`GetProductByProductID(productID)`方法。 检索`ProductsRow`实例具有与相同的方式更新其属性`BatchUpdate`，但在更新导入到的行后`products``ProductsDataTable`通过 DataTable s [ `ImportRow(DataRow)`方法](https://msdn.microsoft.com/en-us/library/system.data.datatable.importrow(VS.80).aspx)。
+`BatchMethodAlternate`通过创建新的空启动`ProductsDataTable`名为`products`。 然后，它通过 GridView 的步骤`Rows`集合并为每个行获取使用 BLL s 的特定产品信息`GetProductByProductID(productID)`方法。 检索`ProductsRow`实例具有与相同的方式更新其属性`BatchUpdate`，但在更新导入到的行后`products``ProductsDataTable`通过 DataTable s [ `ImportRow(DataRow)`方法](https://msdn.microsoft.com/library/system.data.datatable.importrow(VS.80).aspx)。
 
 后`foreach`循环完成后，`products`包含一个`ProductsRow`GridView 中的每一行的实例。 由于每个的`ProductsRow`实例已添加到`products`（而不是更新），如果我们盲目地将其传递到`UpdateWithTransaction`方法`ProductsTableAdatper`将尝试将每个记录插入数据库。 相反，我们需要指定，每个这些行已被修改 （未添加）。
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: e83be2446ef1e3ff1275d06d5b743fb5b9444a6a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7192481de46c36f7de71164766e68afdbba74f6d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="bundling-and-minification"></a>绑定和缩减
 ====================
@@ -58,7 +58,7 @@ ms.lasthandoff: 11/10/2017
 | **源语言** | **重命名** |
 | --- | --- |
 | imageTagAndImageID | n |
-| imageContext | T |
+| imageContext | t |
 | imageElement | i |
 
 ## <a name="impact-of-bundling-and-minification"></a>影响的绑定和缩减
@@ -68,15 +68,15 @@ ms.lasthandoff: 11/10/2017
 |  | **使用 B/M** | **而无需 B/M** | **更改** |
 | --- | --- | --- | --- |
 | **文件请求** | 9 | 34 | 256% |
-| **发送的 KB** | 3.26 | 11.92 | 266% |
-| **收到的 KB** | 388.51 | 530 | 36% |
+| **KB Sent** | 3.26 | 11.92 | 266% |
+| **KB Received** | 388.51 | 530 | 36% |
 | **加载时间** | 510 MS | 780 MS | 53% |
 
 发送的字节数必须是与绑定因为浏览器是与它们在请求应用的 HTTP 标头非常详细，大大减少。 接收的字节减少不是最大因为最大的文件 (*Scripts\jquery-ui-1.8.11.min.js*和*Scripts\jquery-1.7.1.min.js*) 已缩减。 注意： 的使用的示例程序计时[Fiddler](http://www.fiddler2.com/fiddler2/)工具来模拟慢速网络。 (从 Fiddler**规则**菜单上，选择**性能**然后**模拟调制解调器速度**。)
 
 ## <a name="debugging-bundled-and-minified-javascript"></a>调试捆绑和缩减的 JavaScript
 
-很容易地调试你在开发环境中的 JavaScript (其中[编译元素](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx)中*Web.config*文件设置为`debug="true"`) 因为 JavaScript 文件中未绑定或缩减。 你还可以调试在其中捆绑和缩减的你 JavaScript 文件的发布版本。 使用 IE F12 开发人员工具，调试使用以下方法缩减捆绑中包含的 JavaScript 函数：
+很容易地调试你在开发环境中的 JavaScript (其中[编译元素](https://msdn.microsoft.com/library/s10awwz0.aspx)中*Web.config*文件设置为`debug="true"`) 因为 JavaScript 文件中未绑定或缩减。 你还可以调试在其中捆绑和缩减的你 JavaScript 文件的发布版本。 使用 IE F12 开发人员工具，调试使用以下方法缩减捆绑中包含的 JavaScript 函数：
 
 1. 选择**脚本**选项卡上，然后选择**开始调试**按钮。
 2. 选择包含你想要使用的资产按钮调试 JavaScript 函数捆绑。  
@@ -85,11 +85,11 @@ ms.lasthandoff: 11/10/2017
 4. 在**搜索脚本**t 输入框中，选择你想要调试的函数的名称。 在下图中， **AddAltToImg**已进入**搜索脚本**t 输入的框。  
     ![](bundling-and-minification/_static/image6.png)
 
-有关使用 F12 开发人员工具进行调试的详细信息，请参阅 MSDN 文章[使用 F12 开发人员工具为调试 JavaScript 错误](https://msdn.microsoft.com/en-us/library/ie/gg699336(v=vs.85).aspx)。
+有关使用 F12 开发人员工具进行调试的详细信息，请参阅 MSDN 文章[使用 F12 开发人员工具为调试 JavaScript 错误](https://msdn.microsoft.com/library/ie/gg699336(v=vs.85).aspx)。
 
 ## <a name="controlling-bundling-and-minification"></a>控制绑定和缩减
 
-启用或禁用通过设置中的调试属性的值绑定和缩减[编译元素](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx)中*Web.config*文件。 在下面的 XML，`debug`设置为 true，绑定和缩减处于禁用状态。
+启用或禁用通过设置中的调试属性的值绑定和缩减[编译元素](https://msdn.microsoft.com/library/s10awwz0.aspx)中*Web.config*文件。 在下面的 XML，`debug`设置为 true，绑定和缩减处于禁用状态。
 
 [!code-xml[Main](bundling-and-minification/samples/sample3.xml?highlight=2)]
 
@@ -98,7 +98,7 @@ ms.lasthandoff: 11/10/2017
 [!code-csharp[Main](bundling-and-minification/samples/sample4.cs?highlight=7)]
 
 > [!NOTE]
-> 除非`EnableOptimizations`是`true`或中的调试属性[编译元素](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx)中*Web.config*文件设置为`false`，不会捆绑在一起或缩减的文件。 此外，将不使用的文件的.min 版本，将选择的完整的调试版本。 `EnableOptimizations`重写中的调试属性[编译元素](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx)中*Web.config*文件
+> 除非`EnableOptimizations`是`true`或中的调试属性[编译元素](https://msdn.microsoft.com/library/s10awwz0.aspx)中*Web.config*文件设置为`false`，不会捆绑在一起或缩减的文件。 此外，将不使用的文件的.min 版本，将选择的完整的调试版本。 `EnableOptimizations`重写中的调试属性[编译元素](https://msdn.microsoft.com/library/s10awwz0.aspx)中*Web.config*文件
 
 
 ## <a name="using-bundling-and-minification-with-aspnet-web-forms-and-web-pages"></a>使用绑定和缩减与 ASP.NET Web 窗体和 Web 页
@@ -137,11 +137,11 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="creating-a-bundle"></a>创建包
 
-[捆绑](https://msdn.microsoft.com/en-us/library/system.web.optimization.bundle(v=VS.110).aspx)类`Include`方法采用数组的字符串，其中每个字符串是资源的虚拟路径。 下面的代码中的 RegisterBundles 方法从*应用\_Start\BundleConfig.cs*文件说明了如何将多个文件添加到了捆绑包：
+[捆绑](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx)类`Include`方法采用数组的字符串，其中每个字符串是资源的虚拟路径。 下面的代码中的 RegisterBundles 方法从*应用\_Start\BundleConfig.cs*文件说明了如何将多个文件添加到了捆绑包：
 
 [!code-csharp[Main](bundling-and-minification/samples/sample8.cs)]
 
-[捆绑](https://msdn.microsoft.com/en-us/library/system.web.optimization.bundle(v=VS.110).aspx)类`IncludeDirectory`方法可用于添加一个目录 （以及所有子目录 （可选）） 中与搜索模式匹配的所有文件。 [捆绑](https://msdn.microsoft.com/en-us/library/system.web.optimization.bundle(v=VS.110).aspx)类`IncludeDirectory`API 如下所示：
+[捆绑](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx)类`IncludeDirectory`方法可用于添加一个目录 （以及所有子目录 （可选）） 中与搜索模式匹配的所有文件。 [捆绑](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx)类`IncludeDirectory`API 如下所示：
 
 [!code-csharp[Main](bundling-and-minification/samples/sample9.cs)]
 
@@ -170,17 +170,17 @@ ms.lasthandoff: 11/10/2017
 
 | **Call** | **添加文件或引发异常** |
 | --- | --- |
-| 包括 ("~/Scripts/Common/\*.js") | *AddAltToImg.js，ToggleDiv.js，ToggleImg.js* |
-| 包括 ("~/Scripts/Common/T\*.js") | 无效模式异常。 通配符字符只能在前缀或后缀上。 |
-| 包括 ("~/Scripts/Common/\*og。\*") | 无效模式异常。 允许只有一个通配符字符。 |
-| "包括 ("~/Scripts/Common/T\*") | *ToggleDiv.js ToggleImg.js* |
-| "包括 ("~/Scripts/Common/\*") | 无效模式异常。 纯通配符段不是有效的。 |
-| IncludeDirectory ("~/Scripts/Common"，"T\*") | *ToggleDiv.js ToggleImg.js* |
-| IncludeDirectory ("~/Scripts/Common"，"T\*"，则返回 true) | *ToggleDiv.js，ToggleImg.js，ToggleLinks.js* |
+| Include("~/Scripts/Common/\*.js") | *AddAltToImg.js, ToggleDiv.js, ToggleImg.js* |
+| Include("~/Scripts/Common/T\*.js") | 无效模式异常。 通配符字符只能在前缀或后缀上。 |
+| Include("~/Scripts/Common/\*og.\*") | 无效模式异常。 允许只有一个通配符字符。 |
+| "Include("~/Scripts/Common/T\*") | *ToggleDiv.js ToggleImg.js* |
+| "Include("~/Scripts/Common/\*") | 无效模式异常。 纯通配符段不是有效的。 |
+| IncludeDirectory("~/Scripts/Common", "T\*") | *ToggleDiv.js ToggleImg.js* |
+| IncludeDirectory("~/Scripts/Common", "T\*",true) | *ToggleDiv.js，ToggleImg.js，ToggleLinks.js* |
 
 捆绑包中显式添加每个文件是通常首选通过通配符加载的下列原因造成的文件：
 
-- 将脚本通配符默认情况下添加到在字母顺序排列，这通常不是你希望中加载它们。 经常需要添加特定 （非字母） 顺序 CSS 和 JavaScript 文件。 你可以通过添加自定义来缓解此风险[IBundleOrderer](https://msdn.microsoft.com/en-us/library/system.web.optimization.ibundleorderer(VS.110).aspx)实现，但显式添加每个文件都不容易出错。 例如，可以添加到将来的文件夹的新资产，这可能会要求你修改你[IBundleOrderer](https://msdn.microsoft.com/en-us/library/system.web.optimization.ibundleorderer(VS.110).aspx)实现。
+- 将脚本通配符默认情况下添加到在字母顺序排列，这通常不是你希望中加载它们。 经常需要添加特定 （非字母） 顺序 CSS 和 JavaScript 文件。 你可以通过添加自定义来缓解此风险[IBundleOrderer](https://msdn.microsoft.com/library/system.web.optimization.ibundleorderer(VS.110).aspx)实现，但显式添加每个文件都不容易出错。 例如，可以添加到将来的文件夹的新资产，这可能会要求你修改你[IBundleOrderer](https://msdn.microsoft.com/library/system.web.optimization.ibundleorderer(VS.110).aspx)实现。
 - 查看特定文件添加到目录中使用通配符加载可以包含在引用此绑定的所有视图。 如果查看特定脚本添加到捆绑包，您可能会在其他引用捆绑包的视图的 JavaScript 错误。
 - 导入其他文件的 CSS 文件会产生两次加载导入文件。 例如，下面的代码与大多数两次加载 jQuery UI 主题 CSS 文件创建包。 
 
@@ -209,10 +209,10 @@ ms.lasthandoff: 11/10/2017
 1. 创建你较少的内容的文件夹。 下面的示例使用*Content\MyLess*文件夹。
 2. 添加[.less](http://www.dotlesscss.org/) NuGet 包**无点**到你的项目。  
     ![NuGet 无点安装](bundling-and-minification/_static/image9.png)
-3. 添加一个类，实现[IBundleTransform](https://msdn.microsoft.com/en-us/library/system.web.optimization.ibundletransform(VS.110).aspx)接口。 用于.less 转换到你的项目中添加以下代码。
+3. 添加一个类，实现[IBundleTransform](https://msdn.microsoft.com/library/system.web.optimization.ibundletransform(VS.110).aspx)接口。 用于.less 转换到你的项目中添加以下代码。
 
     [!code-csharp[Main](bundling-and-minification/samples/sample13.cs)]
-4. 创建具有更少文件的捆绑包`LessTransform`和[CssMinify](https://msdn.microsoft.com/en-us/library/system.web.optimization.cssminify(VS.110).aspx)转换。 以下代码添加到`RegisterBundles`中的方法*应用\_Start\BundleConfig.cs*文件。
+4. 创建具有更少文件的捆绑包`LessTransform`和[CssMinify](https://msdn.microsoft.com/library/system.web.optimization.cssminify(VS.110).aspx)转换。 以下代码添加到`RegisterBundles`中的方法*应用\_Start\BundleConfig.cs*文件。
 
     [!code-csharp[Main](bundling-and-minification/samples/sample14.cs)]
 5. 将以下代码添加到任何视图，即在引用较少捆绑包。

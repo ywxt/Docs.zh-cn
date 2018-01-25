@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
-ms.openlocfilehash: fcdded3a7e80ee797eae445f347735f0f7b3d7ad
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8579c444fd19d1a366349cc09f9f768de23055f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>使用 ASP.NET Web 页 (Razor) 站点中的 HTML 窗体
 ====================
@@ -134,12 +134,12 @@ ASP.NET Web 页提供了更多用于验证用户输入，包括能够自动执�
     `value`属性`<input>`元素已设置为动态读取字段值外的`Request.Form`对象。 第一次请求页时中的值`Request.Form`对象均是空。 这没什么关系，因为这样的形式是空白。
 2. 启动你的浏览器中，填写窗体字段或将其留空，然后单击**提交**。 将显示页面，其中显示已提交的值。
 
-    ![窗体 5](4-working-with-forms/_static/image5.jpg)
+    ![forms-5](4-working-with-forms/_static/image5.jpg)
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他资源
 
-- [从 Web 用户获取输入另外 1001 方法](https://msdn.microsoft.com/en-us/library/ms971057.aspx)
-- [使用窗体和处理用户输入](https://msdn.microsoft.com/en-us/library/ms525182(VS.90).aspx)
-- [验证在 ASP.NET Web 页站点中的用户输入](https://go.microsoft.com/fwlink/?LinkId=253002)
-- [在 HTML 窗体中使用自动完成](https://msdn.microsoft.com/en-us/library/ms533032(VS.85).aspx)
+- [从 Web 用户获取输入另外 1001 方法](https://msdn.microsoft.com/library/ms971057.aspx)
+- [使用窗体和处理用户输入](https://msdn.microsoft.com/library/ms525182(VS.90).aspx)
+- [在 ASP.NET 网站中验证用户输入](https://go.microsoft.com/fwlink/?LinkId=253002)
+- [在 HTML 窗体中使用自动完成](https://msdn.microsoft.com/library/ms533032(VS.85).aspx)

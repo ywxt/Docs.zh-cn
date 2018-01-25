@@ -1,6 +1,6 @@
 ---
 uid: whitepapers/mvc4-release-notes
-title: "ASP.NET MVC 4 |Microsoft 文档"
+title: ASP.NET MVC 4 | Microsoft Docs
 author: rick-anderson
 description: "本文档介绍 ASP.NET MVC 4 发行的版本。"
 ms.author: aspnetcontent
@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-release-notes
 msc.type: content
-ms.openlocfilehash: fb9d2eaa83fe7486279815c21aec204bdfdf122d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 399fbe3fa1e71a9ffa7c5e6dfeca7ccab7294d1b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -39,7 +39,7 @@ ms.lasthandoff: 11/10/2017
     - [数据库迁移](#_Toc303253818)
     - [空项目模板](#_Toc303253819)
     - [将控制器添加到任何项目文件夹](#_Toc303253820)
-    - [绑定和缩减](#_Toc303253821)
+    - [捆绑和缩小](#_Toc303253821)
     - [启用从 Facebook 和其他站点使用 OAuth 和 OpenID 登录名](#_Toc303253822)
 - [将 ASP.NET MVC 3 项目升级到 ASP.NET MVC 4](#_Toc303253806)
 - [从 ASP.NET MVC 4 候选发布版的更改](#_Toc303253817)
@@ -134,7 +134,7 @@ ASP.NET Web API 包括以下功能的支持：
 
 使用新的显示模式功能，应用程序选择具体取决于正在发出请求的浏览器的视图。 例如，如果桌面浏览器请求主页上，应用程序可能使用 Views\Home\Index.cshtml 模板。 如果移动浏览器请求主页上，该应用程序可能返回 Views\Home\Index.mobile.cshtml 模板。
 
-布局和它们还可以覆盖特定浏览器类型。 例如: 
+布局和它们还可以覆盖特定浏览器类型。 例如:
 
 - 如果你 Views\Shared 文件夹包含\_Layout.cshtml 和\_Layout.mobile.cshtml 模板，默认情况下应用程序将使用\_期间从移动浏览器和请求Layout.mobile.cshtml\_Layout.cshtml 期间其他请求。
 - 如果一个文件夹包含\_MyPartial.cshtml 和\_MyPartial.mobile.cshtml，指令@Html.Partial("\_MyPartial") 将呈现\_MyPartial.mobile.cshtml 期间从移动设备的请求浏览器中，和\_MyPartial.cshtml 期间其他请求。
@@ -271,7 +271,7 @@ ASP.NET MVC 4 预发布版的发行说明可以在此处找到：
     [!code-xml[Main](mvc4-release-notes/samples/sample6.xml)]
 - **NuGet 包管理器安装尝试并行安装的 Visual Studio 2010 和 Visual Web Developer 2010 安装 ASP.NET MVC 4 时失败。** 若要运行 Visual Studio 2010 和 Visual Web Developer 2010 与 ASP.NET MVC 4 并行必须已安装这两个版本的 Visual Studio 后安装 ASP.NET MVC 4。
 - **如果已卸载系统必备组件，则无法卸载 ASP.NET MVC 4。** 若要完全卸载 ASP.NET MVC 4you 必须在卸载 Visual Studio 之前卸载 ASP.NET MVC 4。
-- **安装 ASP.NET MVC 4 中断 ASP.NET MVC 3 RTM 应用程序。** 使用 RTM 创建的 ASP.NET MVC 3 应用程序版本 (不能与[ASP.NET MVC 3 Tools 更新](https://www.microsoft.com/en-us/download/details.aspx?id=1491)发行) 若要使用 ASP.NET MVC 4 并行需要以下更改。 无需在编译错误进行这些更新结果生成项目。 
+- **安装 ASP.NET MVC 4 中断 ASP.NET MVC 3 RTM 应用程序。** 使用 RTM 创建的 ASP.NET MVC 3 应用程序版本 (不能与[ASP.NET MVC 3 Tools 更新](https://www.microsoft.com/download/details.aspx?id=1491)发行) 若要使用 ASP.NET MVC 4 并行需要以下更改。 无需在编译错误进行这些更新结果生成项目。 
 
     **所需的更新**
 

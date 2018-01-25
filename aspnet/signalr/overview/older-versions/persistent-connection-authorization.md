@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/persistent-connection-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: 4c036ddf1e20e3a3be7b043d90b594292013f6c2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2e97dfd03c61b110325c41a992b4af490fcd17de
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authentication-and-authorization-for-signalr-persistent-connections-signalr-1x"></a>身份验证和授权的 SignalR 永久性连接 (SignalR 1.x)
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="enforce-authorization"></a>强制授权
 
-若要强制实施授权规则，当使用[PersistentConnection](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.persistentconnection(v=vs.111).aspx)必须重写`AuthorizeRequest`方法。 不能使用`Authorize`具有永久连接属性。 `AuthorizeRequest`方法由每个请求，以验证用户有权执行所请求的操作之前的 SignalR Framework 调用。 `AuthorizeRequest`方法不从客户端调用; 相反，验证用户身份通过应用程序的标准身份验证机制。
+若要强制实施授权规则，当使用[PersistentConnection](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.persistentconnection(v=vs.111).aspx)必须重写`AuthorizeRequest`方法。 不能使用`Authorize`具有永久连接属性。 `AuthorizeRequest`方法由每个请求，以验证用户有权执行所请求的操作之前的 SignalR Framework 调用。 `AuthorizeRequest`方法不从客户端调用; 相反，验证用户身份通过应用程序的标准身份验证机制。
 
 下面的示例演示如何限制请求发送到经过身份验证的用户。
 

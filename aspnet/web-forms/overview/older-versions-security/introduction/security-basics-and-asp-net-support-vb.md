@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1ff76d08b6de20be7263ae134b102883fc8d99a2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 43edf6745627e92d20c26377404e44f07e649a75
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="security-basics-and-aspnet-support-vb"></a>安全性基础知识和 ASP.NET 支持 (VB)
 ====================
@@ -102,7 +102,7 @@ Windows 身份验证工作流使用以下身份验证方法之一：
 **图 2**： 窗体身份验证工作流
 
 
-我们将深入探讨在随后两个教程中，窗体大得多的详细信息中的身份验证[概述窗体身份验证的](an-overview-of-forms-authentication-vb.md)和[窗体身份验证配置和高级主题](forms-authentication-configuration-and-advanced-topics-vb.md)。 ASP 的详细信息。NET 的身份验证选项，请参阅[ASP.NET 身份验证](https://msdn.microsoft.com/en-us/library/eeyk640h.aspx)。
+我们将深入探讨在随后两个教程中，窗体大得多的详细信息中的身份验证[概述窗体身份验证的](an-overview-of-forms-authentication-vb.md)和[窗体身份验证配置和高级主题](forms-authentication-configuration-and-advanced-topics-vb.md)。 ASP 的详细信息。NET 的身份验证选项，请参阅[ASP.NET 身份验证](https://msdn.microsoft.com/library/eeyk640h.aspx)。
 
 ## <a name="limiting-access-to-web-pages-directories-and-page-functionality"></a>限制对 Web 页、 目录和页面功能的访问
 
@@ -113,9 +113,9 @@ ASP.NET 包括两种方法可以确定特定的用户是否有权访问的特定
 
 文件授权和 URL 授权特定目录中定义用于访问特定的 ASP.NET 页或所有 ASP.NET 页面的授权规则。 使用这些技术，我们可以指示 ASP.NET 拒绝对特定用户的特定页的请求或允许访问一组用户并授予其他人拒绝访问。 有关方案，其中的所有用户可以访问的页面，但该页面的功能依赖于用户的新增功能？ 例如，支持用户帐户的多个站点具有显示不同的内容或与匿名用户的经过身份验证用户的数据的页。 匿名用户可能会看到一个链接，用于登录到站点，而身份验证的用户改为将看到一条消息，如、 欢迎回来，*用户名*以及将其注销的链接。另一个示例： 查看拍卖站点处的项时你会看到不同的信息，具体取决于您是 bidder 还是 auctioning 项的一个。
 
-以声明方式或以编程方式，可以实现此类页级调整。 若要显示不同的内容，为匿名身份验证的用户，只需拖比[LoginView 控件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginview.aspx)拖动到页面并输入到其 AnonymousTemplate 和 LoggedInTemplate 模板以及合适的内容。 或者，你可以以编程方式确定是否当前的请求进行身份验证、 用户身份，以及哪些角色它们属于 （如果有）。 此信息可用于然后显示或隐藏在网格或面板页上的列。
+以声明方式或以编程方式，可以实现此类页级调整。 若要显示不同的内容，为匿名身份验证的用户，只需拖比[LoginView 控件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginview.aspx)拖动到页面并输入到其 AnonymousTemplate 和 LoggedInTemplate 模板以及合适的内容。 或者，你可以以编程方式确定是否当前的请求进行身份验证、 用户身份，以及哪些角色它们属于 （如果有）。 此信息可用于然后显示或隐藏在网格或面板页上的列。
 
-这一系列包含三个专注于授权的教程。 ***基于用户的授权***检查如何限制特定用户帐户; 某页或在目录中的页面的访问***角色基于授权***考察级别; 最后，提供在角色的授权规则***显示内容根据当前记录中的用户***教程探讨修改特定页的内容和根据用户访问的页面的功能。 ASP 的详细信息。NET 的授权选项，请参阅[ASP.NET 授权](https://msdn.microsoft.com/en-us/library/wce3kxhd.aspx)。
+这一系列包含三个专注于授权的教程。 ***基于用户的授权***检查如何限制特定用户帐户; 某页或在目录中的页面的访问***角色基于授权***考察级别; 最后，提供在角色的授权规则***显示内容根据当前记录中的用户***教程探讨修改特定页的内容和根据用户访问的页面的功能。 ASP 的详细信息。NET 的授权选项，请参阅[ASP.NET 授权](https://msdn.microsoft.com/library/wce3kxhd.aspx)。
 
 ## <a name="user-accounts-and-roles"></a>用户帐户和角色
 
@@ -123,7 +123,7 @@ ASP。NET 的窗体身份验证提供了基础结构以用户可以登录到站�
 
 在 ASP.NET 2.0 中之前, 开发人员负责创建其自己的用户和角色存储。 它们也是在设计用户界面和写入如登录页和页后，可以创建新的帐户，以及其他与帐户相关的页的基本用户的代码的挂钩。 而无需在 ASP.NET 中，实现的用户帐户必须在其自己的设计决策到达问题，例如，每个开发人员的任何内置用户帐户框架如何存储密码或其他敏感信息？和哪些准则我应施加有关密码长度和强度？
 
-现在，在 ASP.NET 应用程序中实现用户帐户是要简单得多，谢谢到*成员资格 framework*和内置登录 Web 控件。 成员资格框架是中的类少量[System.Web.Security 命名空间](https://msdn.microsoft.com/en-us/library/system.web.security.aspx)执行基本的用户帐户相关的任务提供功能。 成员资格 framework 中的键类是[成员资格类](https://msdn.microsoft.com/en-us/library/system.web.security.membership.aspx)，它具有等方法：
+现在，在 ASP.NET 应用程序中实现用户帐户是要简单得多，谢谢到*成员资格 framework*和内置登录 Web 控件。 成员资格框架是中的类少量[System.Web.Security 命名空间](https://msdn.microsoft.com/library/system.web.security.aspx)执行基本的用户帐户相关的任务提供功能。 成员资格 framework 中的键类是[成员资格类](https://msdn.microsoft.com/library/system.web.security.membership.aspx)，它具有等方法：
 
 - CreateUser
 - DeleteUser
@@ -136,8 +136,8 @@ ASP。NET 的窗体身份验证提供了基础结构以用户可以登录到站�
 
 Microsoft.NET Framework 中附带了两个成员资格提供程序类：
 
-- [ActiveDirectoryMembershipProvider](https://msdn.microsoft.com/en-us/library/system.web.security.activedirectorymembershipprovider.aspx) -实现在 Active Directory 和 Active Directory 应用程序模式 (ADAM) 服务器中的成员资格 API。
-- [SqlMembershipProvider](https://msdn.microsoft.com/en-us/library/system.web.security.sqlmembershipprovider.aspx) -实现 SQL Server 数据库中的成员资格 API。
+- [ActiveDirectoryMembershipProvider](https://msdn.microsoft.com/library/system.web.security.activedirectorymembershipprovider.aspx) -实现在 Active Directory 和 Active Directory 应用程序模式 (ADAM) 服务器中的成员资格 API。
+- [SqlMembershipProvider](https://msdn.microsoft.com/library/system.web.security.sqlmembershipprovider.aspx) -实现 SQL Server 数据库中的成员资格 API。
 
 本系列教程着重 SqlMembershipProvider 上以独占方式。
 
@@ -147,17 +147,17 @@ Microsoft.NET Framework 中附带了两个成员资格提供程序类：
 **图 03**: 提供程序模型使不同的实现要无缝地插入到的 Framework ([单击以查看实际尺寸的图像](security-basics-and-asp-net-support-vb/_static/image5.png))
 
 
-提供程序模型的好处是可以由 Microsoft、 第三方供应商或各个开发人员开发和无缝地插入到成员资格 framework 备用实现。 例如，Microsoft 发布了[的成员资格提供程序的 Microsoft Access 数据库](https://download.microsoft.com/download/5/5/b/55bc291f-4316-4fd7-9269-dbf9edbaada8/sampleaccessproviders.vsi)。 有关成员资格提供程序的详细信息，请参阅[提供程序工具包](https://msdn.microsoft.com/en-us/asp.net/aa336558.aspx)，其中包括成员资格提供程序、 示例自定义提供程序、 100 多个页上提供程序模型中，文档的演练和完整的内置成员资格提供程序 （即 ActiveDirectoryMembershipProvider 和 SqlMembershipProvider） 的源代码。
+提供程序模型的好处是可以由 Microsoft、 第三方供应商或各个开发人员开发和无缝地插入到成员资格 framework 备用实现。 例如，Microsoft 发布了[的成员资格提供程序的 Microsoft Access 数据库](https://download.microsoft.com/download/5/5/b/55bc291f-4316-4fd7-9269-dbf9edbaada8/sampleaccessproviders.vsi)。 有关成员资格提供程序的详细信息，请参阅[提供程序工具包](https://msdn.microsoft.com/asp.net/aa336558.aspx)，其中包括成员资格提供程序、 示例自定义提供程序、 100 多个页上提供程序模型中，文档的演练和完整的内置成员资格提供程序 （即 ActiveDirectoryMembershipProvider 和 SqlMembershipProvider） 的源代码。
 
-ASP.NET 2.0 还引入了角色 framework。 成员资格 framework 中，如角色 framework 是在提供程序模型之上构建的。 通过公开其 API[角色类](https://msdn.microsoft.com/en-us/library/system.web.security.roles.aspx)和.NET Framework 附带三个提供程序类：
+ASP.NET 2.0 还引入了角色 framework。 成员资格 framework 中，如角色 framework 是在提供程序模型之上构建的。 通过公开其 API[角色类](https://msdn.microsoft.com/library/system.web.security.roles.aspx)和.NET Framework 附带三个提供程序类：
 
-- [AuthorizationStoreRoleProvider](https://msdn.microsoft.com/en-us/library/system.web.security.authorizationstoreroleprovider.aspx) -管理角色，如 Active Directory 或 ADAM 授权管理器策略存储区中的信息。
-- [SqlRoleProvider](https://msdn.microsoft.com/en-us/library/system.web.security.sqlroleprovider.aspx) -实现 SQL Server 数据库中的角色。
-- [WindowsTokenRoleProvider](https://msdn.microsoft.com/en-us/library/system.web.security.windowstokenroleprovider.aspx) -将基于访问者的 Windows 组的角色信息相关联。 此方法通常用于 Windows 身份验证。
+- [AuthorizationStoreRoleProvider](https://msdn.microsoft.com/library/system.web.security.authorizationstoreroleprovider.aspx) -管理角色，如 Active Directory 或 ADAM 授权管理器策略存储区中的信息。
+- [SqlRoleProvider](https://msdn.microsoft.com/library/system.web.security.sqlroleprovider.aspx) -实现 SQL Server 数据库中的角色。
+- [WindowsTokenRoleProvider](https://msdn.microsoft.com/library/system.web.security.windowstokenroleprovider.aspx) -将基于访问者的 Windows 组的角色信息相关联。 此方法通常用于 Windows 身份验证。
 
 本系列教程重点介绍专门 SqlRoleProvider。
 
-由于提供程序模型包括单个进面向 API （成员资格和角色类），可以生成围绕该 API 的功能，而无需担心实现详细信息-这些由选定的页面的提供程序开发人员。 此统一的 API 允许 Microsoft 和第三方供应商，以生成与成员资格和角色框架该接口的 Web 控件。 ASP.NET 附带的许多[登录 Web 控制](https://msdn.microsoft.com/en-us/library/ms178329.aspx)用于实现常见的用户帐户的用户界面。 例如，[登录控件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.aspx)提示用户输入其凭据验证，然后将其在记录通过窗体身份验证。 [LoginView 控件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginview.aspx)提供用于显示与经过身份验证的用户的匿名用户的不同标记或基于用户的角色的不同标记的模板。 与[通过](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.aspx)提供分步的用户界面，用于创建新的用户帐户。
+由于提供程序模型包括单个进面向 API （成员资格和角色类），可以生成围绕该 API 的功能，而无需担心实现详细信息-这些由选定的页面的提供程序开发人员。 此统一的 API 允许 Microsoft 和第三方供应商，以生成与成员资格和角色框架该接口的 Web 控件。 ASP.NET 附带的许多[登录 Web 控制](https://msdn.microsoft.com/library/ms178329.aspx)用于实现常见的用户帐户的用户界面。 例如，[登录控件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.aspx)提示用户输入其凭据验证，然后将其在记录通过窗体身份验证。 [LoginView 控件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginview.aspx)提供用于显示与经过身份验证的用户的匿名用户的不同标记或基于用户的角色的不同标记的模板。 与[通过](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.aspx)提供分步的用户界面，用于创建新的用户帐户。
 
 实际上各种登录控件与成员资格和角色框架进行交互。 大多数登录控件可以实现无需编写一行代码。 我们将在将来的教程，包括用于扩展和自定义其功能的技术中查看更详细介绍这些控件。
 
@@ -174,16 +174,16 @@ ASP.NET 2.0 还引入了角色 framework。 成员资格 framework 中，如角�
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
 - [ASP.NET 2.0 成员资格、 角色、 窗体身份验证和安全资源](https://weblogs.asp.net/scottgu/ASP.NET-2.0-Membership_2C00_-Roles_2C00_-Forms-Authentication_2C00_-and-Security-Resources-)
-- [ASP.NET 2.0 的安全指导原则](https://msdn.microsoft.com/en-us/library/ms998258.aspx)
-- [ASP.NET 身份验证](https://msdn.microsoft.com/en-us/library/eeyk640h.aspx)
-- [ASP.NET 授权](https://msdn.microsoft.com/en-us/library/wce3kxhd.aspx)
-- [ASP.NET 登录控件概述](https://msdn.microsoft.com/en-us/library/ms178329.aspx)
+- [ASP.NET 2.0 的安全指导原则](https://msdn.microsoft.com/library/ms998258.aspx)
+- [ASP.NET 身份验证](https://msdn.microsoft.com/library/eeyk640h.aspx)
+- [ASP.NET 授权](https://msdn.microsoft.com/library/wce3kxhd.aspx)
+- [ASP.NET 登录控件概述](https://msdn.microsoft.com/library/ms178329.aspx)
 - [检查 ASP.NET 2.0 的成员资格、 角色和配置文件](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [I： 如何安全我使用成员资格和角色的站点？](https://asp.net/learn/videos/video-45.aspx) （视频）
-- [成员资格简介](https://msdn.microsoft.com/en-us/library/yh26yfzy.aspx)
-- [MSDN 安全开发人员中心](https://msdn.microsoft.com/en-us/security/default.aspx)
+- [成员资格简介](https://msdn.microsoft.com/library/yh26yfzy.aspx)
+- [MSDN 安全开发人员中心](https://msdn.microsoft.com/security/default.aspx)
 - [专业 ASP.NET 2.0 安全、 成员资格和角色管理](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html)(ISBN: 978-0-7645-9698-8)
-- [提供程序工具包](https://msdn.microsoft.com/en-us/asp.net/aa336558.aspx)
+- [提供程序工具包](https://msdn.microsoft.com/asp.net/aa336558.aspx)
 
 ## <a name="about-the-author"></a>关于作者
 

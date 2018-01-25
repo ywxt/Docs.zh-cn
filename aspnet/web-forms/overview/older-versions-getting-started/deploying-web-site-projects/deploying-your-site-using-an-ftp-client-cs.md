@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4e4af20fa1fecd1f363e979023b41203096d64ef
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1edd53b1005449c060ff92fc7ebd02dbe7fa6ac2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-your-site-using-an-ftp-client-c"></a>部署你的网站使用 FTP 客户端 (C#)
 ====================
@@ -144,7 +144,7 @@ Web 应用程序开发和部署不是一次性的过程。 例如，创建簿评
 > 需要使用显式编译是无论何时向项目添加新的 ASP.NET 页或进行任何代码相关的更改，你需要重新生成项目，这将更新中的程序集时需要牢记的一点`Bin`文件夹。 因此，你将需要更新 web 应用程序在生产 （以及其他新的和更新内容） 时将此更新的程序集复制到生产环境。
 
 
-此外了解到的任何更改`Web.config`或中的文件`Bin`目录会停止并重启网站的应用程序池。 如果您的会话状态存储使用`InProc`模式 （默认值），然后将你站点的访问者将丢失其会话状态，只要这些密钥的文件进行修改。 若要避免此缺陷，请考虑将存储会话使用`StateServer`或`SQLServer`模式。 有关本主题的详细信息，请阅读[会话状态模式](https://msdn.microsoft.com/en-us/library/ms178586.aspx)。
+此外了解到的任何更改`Web.config`或中的文件`Bin`目录会停止并重启网站的应用程序池。 如果您的会话状态存储使用`InProc`模式 （默认值），然后将你站点的访问者将丢失其会话状态，只要这些密钥的文件进行修改。 若要避免此缺陷，请考虑将存储会话使用`StateServer`或`SQLServer`模式。 有关本主题的详细信息，请阅读[会话状态模式](https://msdn.microsoft.com/library/ms178586.aspx)。
 
 最后，请记住，重新部署应用程序可以花几秒钟到几分钟时间，具体取决于的数量和复制到生产环境所需要的文件的大小。 在此期间用户访问您的网站可能会遇到错误或异常行为。 你可以"关闭"将整个应用程序通过添加一个名为页`App_Offline.htm`到说明你的用户的应用程序的根目录下的站点维护 （或任何） 已关闭，并且将备份功能很快即可。 当`App_Offline.htm`文件存在，ASP.NET 运行时将所有传入请求重定向到该页面。
 
@@ -159,7 +159,7 @@ Web 应用程序开发和部署不是一次性的过程。 例如，创建簿评
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
 - [应用\_Offline.htm 和解决"IE 友好错误"功能](https://weblogs.asp.net/scottgu/App_5F00_Offline.htm-and-working-around-the-_2200_IE-Friendly-Errors_2200_-feature)
-- [会话状态模式](https://msdn.microsoft.com/en-us/library/ms178586.aspx)
+- [会话状态模式](https://msdn.microsoft.com/library/ms178586.aspx)
 
 >[!div class="step-by-step"]
 [上一页](determining-what-files-need-to-be-deployed-cs.md)

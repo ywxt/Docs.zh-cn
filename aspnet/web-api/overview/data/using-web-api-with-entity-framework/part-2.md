@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-2
 msc.type: authoredcontent
-ms.openlocfilehash: b75eae11fd99b60864256f79d4770a3007487964
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7e09316f0faaf0731e4cdda48040fdaedc0f244a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="add-models-and-controllers"></a>添加模型和控制器
 ====================
@@ -28,7 +28,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="add-model-classes"></a>添加模型类
 
-在本教程中，我们将通过使用"代码优先"方法到 Entity Framework (EF) 创建数据库。 使用 Code First 数据库表中写入对应的 C# 类和 EF 创建数据库。 (有关详细信息，请参阅[实体框架开发方法](https://msdn.microsoft.com/en-us/library/ms178359%28v=vs.110%29.aspx#dbfmfcf)。)
+在本教程中，我们将通过使用"代码优先"方法到 Entity Framework (EF) 创建数据库。 使用 Code First 数据库表中写入对应的 C# 类和 EF 创建数据库。 (有关详细信息，请参阅[实体框架开发方法](https://msdn.microsoft.com/library/ms178359%28v=vs.110%29.aspx#dbfmfcf)。)
 
 我们首先我们域对象定义为 POCOs （纯旧式 CLR 对象）。 我们将创建以下 POCOs:
 

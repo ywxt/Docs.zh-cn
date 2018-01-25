@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/validation
-ms.openlocfilehash: 91db17e103723ac411a2ad4f3f9549860f250cce
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 56928c61ae47d313145afadf3e0fa93a078b681b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>ASP.NET 核心 mvc 模型验证简介
 
@@ -148,14 +148,14 @@ MVC 确定基于.NET 数据类型的属性，可能使用重写的类型属性�
 
 ### <a name="add-validation-to-dynamic-forms"></a>将验证添加到动态窗体
 
-因为第一次加载页面时项目，jQuery 非介入式验证都会将验证逻辑和参数传递到 jQuery 验证中，则动态生成的窗体将不会自动出现验证。 相反，你必须告知 jQuery 非介入式验证要在创建后立即分析动态窗体。 例如，下面的代码演示可能设置通过 AJAX 添加窗体上的客户端验证的方式。
+因为第一次加载页面时项目，jQuery 非介入式验证都会将验证逻辑和参数传递到 jQuery 验证中，动态生成的窗体将不会自动表现出验证。 相反，你必须告知 jQuery 非介入式验证要在创建后立即分析动态窗体。 例如，下面的代码演示可能设置通过 AJAX 添加窗体上的客户端验证的方式。
 
 ```js
 $.get({
     url: "https://url/that/returns/a/form",
     dataType: "html",
     error: function(jqXHR, textStatus, errorThrown) {
-        alert(textStatus + ": Could not add form. " + errorThrown);
+        alert(textStatus + ": Couldn't add form. " + errorThrown);
     },
     success: function(newFormHTML) {
         var container = document.getElementById("form-container");
@@ -178,7 +178,7 @@ $.get({
     url: "https://url/that/returns/a/control",
     dataType: "html",
     error: function(jqXHR, textStatus, errorThrown) {
-        alert(textStatus + ": Could not add form. " + errorThrown);
+        alert(textStatus + ": Couldn't add form. " + errorThrown);
     },
     success: function(newInputHTML) {
         var form = document.getElementById("my-form");
@@ -235,8 +235,7 @@ $.get({
 
 [!code-csharp[Main](validation/sample/User.cs?range=10-13)]
 
-`AdditionalFields`无法显式设置为字符串`"FirstName"`和`"LastName"`，但使用[ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof)如下运算符简化了更高版本重构。 要执行验证的操作方法然后必须接受两个自变量，其中一个的值的`FirstName`，另一个的值用于`LastName`。
-
+`AdditionalFields`无法已显式设置了为字符串`"FirstName"`和`"LastName"`，但使用[ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof)如下运算符简化了更高版本重构。 要执行验证的操作方法然后必须接受两个自变量，其中一个的值的`FirstName`，另一个的值用于`LastName`。
 
 [!code-csharp[Main](validation/sample/UsersController.cs?range=30-39)]
 
@@ -253,4 +252,4 @@ $.get({
 public string MiddleName { get; set; }
 ```
 
-`AdditionalFields`类似于将所有属性变量，必须是常量表达式。 因此，你必须使用[内插字符串](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interpolated-strings)或调用[ `string.Join()` ](https://msdn.microsoft.com/en-us/library/system.string.join(v=vs.110).aspx)初始化`AdditionalFields`。 你将添加到每个其他字段`[Remote]`属性，必须将另一个自变量添加到相应的控制器操作方法。
+`AdditionalFields`类似于将所有属性变量，必须是常量表达式。 因此，你必须使用[内插字符串](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings)或调用[ `string.Join()` ](https://msdn.microsoft.com/library/system.string.join(v=vs.110).aspx)初始化`AdditionalFields`。 你将添加到每个其他字段`[Remote]`属性，必须将另一个自变量添加到相应的控制器操作方法。

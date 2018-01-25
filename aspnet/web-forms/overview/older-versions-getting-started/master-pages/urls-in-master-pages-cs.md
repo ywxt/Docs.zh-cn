@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 243bd8a30a84d3a57d418da7b2b55cfe132bf0e3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8b01f0ac780121c4e0941df6016220a1cb1ed2d1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="urls-in-master-pages-c"></a>母版页 (C#) 中的 Url
 ====================
@@ -108,7 +108,7 @@ ms.lasthandoff: 11/10/2017
 
 而是不是绝对 URL 进行硬编码，ASP.NET 将允许页开发人员使用波形符 (`~`) 以指示 web 应用程序的根目录。 例如，在本教程前面我使用了表示法`~/Admin/Default.aspx`文本中指`Default.aspx`页面`Admin`文件夹。 `~`指示`Admin`文件夹是 web 应用程序的根的子文件夹。
 
-`Control`类的[`ResolveClientUrl`方法](https://msdn.microsoft.com/en-us/library/system.web.ui.control.resolveclienturl.aspx)采用 URL 和到相应控件所驻留的网页的相对 URL 对其进行修改。 例如，调用`ResolveClientUrl("~/Images/PoweredByASPNET.gif")`从`About.aspx`返回`Images/PoweredByASPNET.gif`。 调用从`~/Admin/Default.aspx`，但是，返回`../Images/PoweredByASPNET.gif`。
+`Control`类的[`ResolveClientUrl`方法](https://msdn.microsoft.com/library/system.web.ui.control.resolveclienturl.aspx)采用 URL 和到相应控件所驻留的网页的相对 URL 对其进行修改。 例如，调用`ResolveClientUrl("~/Images/PoweredByASPNET.gif")`从`About.aspx`返回`Images/PoweredByASPNET.gif`。 调用从`~/Admin/Default.aspx`，但是，返回`../Images/PoweredByASPNET.gif`。
 
 > [!NOTE]
 > 因为所有 ASP.NET 服务器控件都派生自`Control`类，所有服务器控件都有权访问`ResolveClientUrl`方法。 即使`Page`类派生自`Control`类，这意味着你可以使用此方法直接从 ASP.NET 页的代码隐藏类。

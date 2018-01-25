@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 5265f9962ca6244b1fe13ca6e37a5217c15b8cdf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b77aa37160f3822f58908866e44497aea3d3bdc8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="choosing-the-right-approach-to-web-deployment"></a>选择 Web 部署到适当的方法
 ====================
@@ -69,7 +69,7 @@ ms.lasthandoff: 11/10/2017
 
 
 > [!NOTE]
-> 有关 Web 部署命令行语法的详细信息和*。 deploy.cmd*文件，请参阅[如何： 安装部署包 Using deploy.cmd 文件](https://msdn.microsoft.com/en-us/library/ff356104.aspx)。
+> 有关 Web 部署命令行语法的详细信息和*。 deploy.cmd*文件，请参阅[如何： 安装部署包 Using deploy.cmd 文件](https://msdn.microsoft.com/library/ff356104.aspx)。
 
 
 远程代理提供了一个简单的方法，将从远程位置的内容部署，这种方法可以很好地配合一键式或自动部署。 但是，运行的部署命令的用户还必须是域管理员或目标服务器上的本地管理员组的成员。 此外，远程代理不支持基本身份验证，所以不能传递命令行上的备用凭据。
@@ -94,7 +94,7 @@ ms.lasthandoff: 11/10/2017
 
 此方法的优点是，你不需要维护的 Web 部署目标服务器上的安装。 此外，你不需要确保源和目标计算机都运行相同版本的 Web 部署。 但是，此方法会受到与远程代理方法时，相同的主体限制即，你必须在目标服务器上的本地管理员才能部署内容，并且支持仅 NTLM 身份验证。 临时代理方法还要求目标环境的大量的初始的配置。
 
-使用临时代理的详细信息，请参阅[如何： 安装部署包 Using deploy.cmd 文件](https://msdn.microsoft.com/en-us/library/ff356104.aspx)和[按需部署的 Web](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx)。
+使用临时代理的详细信息，请参阅[如何： 安装部署包 Using deploy.cmd 文件](https://msdn.microsoft.com/library/ff356104.aspx)和[按需部署的 Web](https://technet.microsoft.com/library/ee517345(WS.10).aspx)。
 
 ## <a name="using-the-web-deploy-handler"></a>使用 Web 部署处理程序
 
@@ -125,7 +125,7 @@ Web 部署处理程序通过远程代理、 和临时代理，其最大优点是
 
 
 > [!NOTE]
-> 有关 Web 部署命令行操作和语法的详细信息，请参阅[Web 部署命令行参考](https://technet.microsoft.com/en-us/library/dd568991(v=ws.10).aspx)。 有关详细信息使用*。 deploy.cmd*文件，请参阅[如何： 安装部署包 Using deploy.cmd 文件](https://msdn.microsoft.com/en-us/library/ff356104.aspx)。
+> 有关 Web 部署命令行操作和语法的详细信息，请参阅[Web 部署命令行参考](https://technet.microsoft.com/library/dd568991(v=ws.10).aspx)。 有关详细信息使用*。 deploy.cmd*文件，请参阅[如何： 安装部署包 Using deploy.cmd 文件](https://msdn.microsoft.com/library/ff356104.aspx)。
 
 
 Web 部署处理程序提供到过渡环境、 托管的环境中，和基于 intranet 的生产环境中，远程访问服务器可用但不是管理员凭据的部署很有用的方法。
@@ -146,9 +146,9 @@ Web 部署处理程序提供到过渡环境、 托管的环境中，和基于 in
 
 ## <a name="further-reading"></a>其他阅读材料
 
-有关 Web 部署命令行操作和语法的详细信息，请参阅[Web 部署命令行参考](https://technet.microsoft.com/en-us/library/dd568991(v=ws.10).aspx)。 有关详细信息使用*。 deploy.cmd*文件，请参阅[如何： 安装部署包 Using deploy.cmd 文件](https://msdn.microsoft.com/en-us/library/ff356104.aspx)。
+有关 Web 部署命令行操作和语法的详细信息，请参阅[Web 部署命令行参考](https://technet.microsoft.com/library/dd568991(v=ws.10).aspx)。 有关详细信息使用*。 deploy.cmd*文件，请参阅[如何： 安装部署包 Using deploy.cmd 文件](https://msdn.microsoft.com/library/ff356104.aspx)。
 
-你可以在其中部署 web 包从远程计算机的不同方法的更多常规指南，请参阅[使用 Web 部署远程](https://technet.microsoft.com/en-us/library/ee461175(WS.10).aspx)。 有关使用 Web 按需部署的详细信息，请参阅[按需部署的 Web](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx)。
+你可以在其中部署 web 包从远程计算机的不同方法的更多常规指南，请参阅[使用 Web 部署远程](https://technet.microsoft.com/library/ee461175(WS.10).aspx)。 有关使用 Web 按需部署的详细信息，请参阅[按需部署的 Web](https://technet.microsoft.com/library/ee517345(WS.10).aspx)。
 
 >[!div class="step-by-step"]
 [上一页](configuring-server-environments-for-web-deployment.md)

@@ -12,15 +12,15 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: 10835c39d3bca752ed3068a23fecaaab56449e41
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7f38a0f2693aeb2a4884b9c03719b583423957a8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>ASP.NET 和 Web Tools for Visual Studio 2013 发行说明
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 本文档介绍 ASP.NET 和 Web Tools for Visual Studio 2013 的版本。
 
@@ -137,8 +137,8 @@ Visual Studio 2013 还附带与这两个 CoffeeScript 和更低的内置的编�
 
 有关更多信息，请参见以下资源：
 
-- [在 Azure App Service 中创建 ASP.NET web 应用](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/)
-- [对 Azure App Service 中使用 Visual Studio 中的 web 应用进行故障排除](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+- [在 Azure App Service 中创建 ASP.NET web 应用](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)
+- [对 Azure App Service 中使用 Visual Studio 中的 web 应用进行故障排除](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 
 <a id="publish"></a>
 ## <a name="web-publish-enhancements"></a>Web 发布增强功能
@@ -170,7 +170,7 @@ Web 窗体项目模板与新的一个 ASP.NET 体验无缝集成。 你可以添
 
 Web 窗体项目模板支持新的 ASP.NET Identity framework。 此外，模板现在支持创建 Web 窗体 intranet 项目。 有关详细信息，请参阅[身份验证方法](creating-web-projects-in-visual-studio.md#auth)中**在 Visual Studio 2013 中创建 ASP.NET Web 项目**。
 
-### <a name="bootstrap"></a>bootstrap
+### <a name="bootstrap"></a>Bootstrap
 
 Web 窗体模板使用[Bootstrap](http://twitter.github.io/bootstrap/)提供作为时尚且高度可响应外观和感觉，你可以轻松自定义。 有关详细信息，请参阅[Visual Studio 2013 web 项目模板中的 Bootstrap](creating-web-projects-in-visual-studio.md#bootstrap)。
 
@@ -185,9 +185,9 @@ Web MVC 项目模板与新的一个 ASP.NET 体验无缝集成。 可以自定�
 
 ### <a name="aspnet-identity"></a>ASP.NET 标识
 
-MVC 项目模板已更新为使用 ASP.NET 标识进行身份验证和标识管理。 处找不到具有 Facebook 和 Google 身份验证和新的成员资格 API 教程，说明如何[创建 ASP.NET MVC 5 应用程序使用 Facebook 和 Google OAuth2 和 OpenID 登录](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)和[使用身份验证创建的 ASP.NET MVC 应用程序和SQL 数据库并将其部署到 Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)。
+MVC 项目模板已更新为使用 ASP.NET 标识进行身份验证和标识管理。 处找不到具有 Facebook 和 Google 身份验证和新的成员资格 API 教程，说明如何[创建 ASP.NET MVC 5 应用程序使用 Facebook 和 Google OAuth2 和 OpenID 登录](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)和[使用身份验证创建的 ASP.NET MVC 应用程序和SQL 数据库并将其部署到 Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)。
 
-### <a name="bootstrap"></a>bootstrap
+### <a name="bootstrap"></a>Bootstrap
 
 MVC 项目模板已更新为使用[Bootstrap](http://getbootstrap.com/)提供作为时尚且高度可响应外观和感觉，你可以轻松自定义。 有关详细信息，请参阅[Visual Studio 2013 web 项目模板中的 Bootstrap](creating-web-projects-in-visual-studio.md#bootstrap)。
 
@@ -531,7 +531,7 @@ Microsoft OWIN 组件 （也称为 Katana 项目） 中引入的更改包括新�
 
 此版本中，添加了新组件以启用自承载方案。 这些组件包括以下 NuGet 包：
 
-- **Microsoft.Owin.Host.HttpListener**。 提供使用 OWIN 服务器**HttpListener**以侦听 HTTP 请求并将它们定向到 OWIN 管道。
+- **Microsoft.Owin.Host.HttpListener**. 提供使用 OWIN 服务器**HttpListener**以侦听 HTTP 请求并将它们定向到 OWIN 管道。
 - **Microsoft.Owin.Hosting**适用于想要自承载于自定义过程中，如控制台应用程序或 Windows 服务的一个 OWIN 管道开发人员提供了一个库。
 - **OwinHost**。 提供独立的可执行文件，用于包装`Microsoft.Owin.Hosting`，可以在自承载 OWIN 管道，而无需编写自定义主机应用程序。
 
@@ -553,13 +553,13 @@ Microsoft OWIN 组件 （也称为 Katana 项目） 中引入的更改包括新�
 
 以下的身份验证组件可用。
 
-- **Microsoft.Owin.Security.ActiveDirectory**。 启用使用本地或基于云的目录服务的身份验证。
+- **Microsoft.Owin.Security.ActiveDirectory**. 启用使用本地或基于云的目录服务的身份验证。
 - **Microsoft.Owin.Security.Cookies**启用身份验证使用 cookie。 此包之前名为`Microsoft.Owin.Security.Forms`。
 - **Microsoft.Owin.Security.Facebook**启用身份验证使用 Facebook 的基于 OAuth 的服务。
 - **Microsoft.Owin.Security.Google**启用身份验证使用 Google 的基于 OpenID 的服务。
 - **Microsoft.Owin.Security.Jwt**启用身份验证使用 JWT 令牌。
 - **Microsoft.Owin.Security.MicrosoftAccount**启用身份验证使用 Microsoft 帐户。
-- **Microsoft.Owin.Security.OAuth**。 提供对持有者令牌进行身份验证的 OAuth 授权服务器以及中间件。
+- **Microsoft.Owin.Security.OAuth**. 提供对持有者令牌进行身份验证的 OAuth 授权服务器以及中间件。
 - **Microsoft.Owin.Security.Twitter**启用身份验证使用 Twitter 的基于 OAuth 的服务。
 
 此版本还包括`Microsoft.Owin.Cors`包，其中包含用于处理跨域 HTTP 请求的中间件。
@@ -666,7 +666,7 @@ ASP.NET 应用挂起是从根本上更改的用户体验和经济的承载大量
     到:
 
     `@Html.TextBoxFor(person => person.Age)`
-4. ASP.NET MVC 5 不再支持部分信任。 将链接到 MVC 或 WebAPI 二进制文件的项目应删除[SecurityTransparent](https://msdn.microsoft.com/en-us/library/system.security.securitytransparentattribute.aspx)属性和[AllowPartiallyTrustedCallers](https://msdn.microsoft.com/en-us/library/system.security.allowpartiallytrustedcallersattribute.aspx)属性。 移除这些特性可避免编译器错误，如下所示。
+4. ASP.NET MVC 5 不再支持部分信任。 将链接到 MVC 或 WebAPI 二进制文件的项目应删除[SecurityTransparent](https://msdn.microsoft.com/library/system.security.securitytransparentattribute.aspx)属性和[AllowPartiallyTrustedCallers](https://msdn.microsoft.com/library/system.security.allowpartiallytrustedcallersattribute.aspx)属性。 移除这些特性可避免编译器错误，如下所示。
 
     `Attempt by security transparent method ‘MyComponent' to access security critical type 'System.Web.Mvc.MvcHtmlString' failed. Assembly 'PagedList.Mvc, Version=4.3.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1' is marked with the AllowPartiallyTrustedCallersAttribute, and uses the level 2 security transparency model. Level 2 transparency causes all methods in AllowPartiallyTrustedCallers assemblies to become security transparent by default, which may be the cause of this exception.`
 

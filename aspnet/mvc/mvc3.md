@@ -1,6 +1,6 @@
 ---
 uid: mvc/mvc3
-title: "ASP.NET MVC 3 |Microsoft 文档"
+title: ASP.NET MVC 3 | Microsoft Docs
 author: rick-anderson
 description: "(包括 2011 年 4 月工具更新)ASP.NET MVC 3 是一个框架，用于构建使用成熟设计模式的可缩放的、 基于标准的 web 应用程序..."
 ms.author: aspnetcontent
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/mvc3
 msc.type: content
-ms.openlocfilehash: 1aa059e92b5637b9ba7ce488da4b44322dab6d8e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c7eee987b28a5d7f8b40fe89a7bf7517ec06646f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -165,7 +165,7 @@ Razor 还包括新的 HTML 帮助器，如下所示：
 有时你想要执行逻辑操作方法运行之前或之后运行的操作方法。 若要支持此功能，ASP.NET MVC 2 提供的操作筛选器。 操作筛选器是提供一种将预操作和后操作行为添加到特定控制器操作方法的声明性方法的自定义属性。 但是，在某些情况下你可能想要指定适用于所有的操作方法的操作前行为或操作后行为。 MVC 3，可以通过将它们添加到指定全局筛选器`GlobalFilters`集合。 有关全局操作筛选器的详细信息，请参阅以下资源：
 
 - [MVC 3 Preview 上的 Scott Guthrie 的博客](https://weblogs.asp.net/scottgu/archive/2010/07/27/introducing-asp-net-mvc-3-preview-1.aspx)
-- [在 ASP.NET MVC 中筛选](https://msdn.microsoft.com/en-us/library/gg416513(VS.98).aspx)
+- [在 ASP.NET MVC 中筛选](https://msdn.microsoft.com/library/gg416513(VS.98).aspx)
 
 ### <a name="new-viewbag-property"></a>新的"ViewBag"属性
 
@@ -175,9 +175,9 @@ MVC 2 控制器支持`ViewData`使您能够将数据传递给使用后期绑定�
 
 以下`ActionResult`新增或增强在 MVC 3 是类型和相应的帮助器方法：
 
-- [HttpNotFoundResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.httpnotfoundresult(v=vs.98).aspx)。 向客户端返回 HTTP 状态代码为 404。
-- [RedirectResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.redirectresult(v=VS.98).aspx)。 返回临时重定向 （HTTP 302 状态代码） 或根据一个布尔型参数的永久重定向 （HTTP 301 状态代码）。 与此更改后，结合[控制器](https://msdn.microsoft.com/en-us/library/system.web.mvc.controller(v=VS.98).aspx)类现在具有执行永久重定向的三个方法： `RedirectPermanent`， `RedirectToRoutePermanent`，和`RedirectToActionPermanent`。 这些方法返回的实例`RedirectResult`与`Permanent`属性设置为`true`。
-- [HttpStatusCodeResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.httpstatuscoderesult(v=VS.98).aspx)。 返回用户指定的 HTTP 状态代码。
+- [HttpNotFoundResult](https://msdn.microsoft.com/library/system.web.mvc.httpnotfoundresult(v=vs.98).aspx)。 向客户端返回 HTTP 状态代码为 404。
+- [RedirectResult](https://msdn.microsoft.com/library/system.web.mvc.redirectresult(v=VS.98).aspx)。 返回临时重定向 （HTTP 302 状态代码） 或根据一个布尔型参数的永久重定向 （HTTP 301 状态代码）。 与此更改后，结合[控制器](https://msdn.microsoft.com/library/system.web.mvc.controller(v=VS.98).aspx)类现在具有执行永久重定向的三个方法： `RedirectPermanent`， `RedirectToRoutePermanent`，和`RedirectToActionPermanent`。 这些方法返回的实例`RedirectResult`与`Permanent`属性设置为`true`。
+- [HttpStatusCodeResult](https://msdn.microsoft.com/library/system.web.mvc.httpstatuscoderesult(v=VS.98).aspx)。 返回用户指定的 HTTP 状态代码。
 
 <a id="BM_JavaScript_and_Ajax_Improvements"></a>
 
@@ -199,7 +199,7 @@ MVC 2 控制器支持`ViewData`使您能够将数据传递给使用后期绑定�
 
 ### <a name="remote-validator"></a>远程验证程序
 
-ASP.NET MVC 3 支持新[RemoteAttribute](https://msdn.microsoft.com/en-us/library/system.web.mvc.remoteattribute(v=VS.98).aspx)使您能够利用 jQuery 验证即插即用中的类所提供的远程验证程序支持。 这使客户端验证库自动调用若要执行仅可完成的验证逻辑服务器定义的自定义方法服务器端。
+ASP.NET MVC 3 支持新[RemoteAttribute](https://msdn.microsoft.com/library/system.web.mvc.remoteattribute(v=VS.98).aspx)使您能够利用 jQuery 验证即插即用中的类所提供的远程验证程序支持。 这使客户端验证库自动调用若要执行仅可完成的验证逻辑服务器定义的自定义方法服务器端。
 
 在下面的示例中，`Remote`属性指定客户端验证将调用名为操作`UserNameAvailable`上`UsersController`若要验证的类`UserName`字段。
 
@@ -209,7 +209,7 @@ ASP.NET MVC 3 支持新[RemoteAttribute](https://msdn.microsoft.com/en-us/librar
 
 [!code-csharp[Main](mvc3/samples/sample2.cs)]
 
-有关如何使用`Remote`属性，请参阅[如何： 在 ASP.NET MVC 实现远程验证](https://msdn.microsoft.com/en-us/library/gg508808(VS.98).aspx)MSDN 库中。
+有关如何使用`Remote`属性，请参阅[如何： 在 ASP.NET MVC 实现远程验证](https://msdn.microsoft.com/library/gg508808(VS.98).aspx)MSDN 库中。
 
 ### <a name="json-binding-support"></a>JSON 绑定支持
 
@@ -231,9 +231,9 @@ ASP.NET MVC 3 支持`DataAnnotations`元数据特性例如`DisplayAttribute`。
 
 ### <a name="validation-interfaces"></a>验证接口
 
-[IValidatableObject](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.ivalidatableobject.aspx)界面使您可以执行模型级别验证，并且它使您能够提供特定于整个模型，或在模型内的两个属性之间的状态的错误消息的验证. MVC 3 现在检索从错误`IValidatableObject`接口时模型绑定，并自动标志或突出显示了影响使用的内置的 HTML 窗体的帮助器的视图中的字段。
+[IValidatableObject](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.ivalidatableobject.aspx)界面使您可以执行模型级别验证，并且它使您能够提供特定于整个模型，或在模型内的两个属性之间的状态的错误消息的验证. MVC 3 现在检索从错误`IValidatableObject`接口时模型绑定，并自动标志或突出显示了影响使用的内置的 HTML 窗体的帮助器的视图中的字段。
 
-[IClientValidatable](https://msdn.microsoft.com/en-us/library/system.web.mvc.iclientvalidatable(v=VS.98).aspx)接口使验证程序是否对客户端验证的支持在运行时发现的 ASP.NET MVC。 此接口已经过设计，因此，它可以与多种验证框架集成。
+[IClientValidatable](https://msdn.microsoft.com/library/system.web.mvc.iclientvalidatable(v=VS.98).aspx)接口使验证程序是否对客户端验证的支持在运行时发现的 ASP.NET MVC。 此接口已经过设计，因此，它可以与多种验证框架集成。
 
 有关验证接口的详细信息，请参阅**模型验证改进**部分[Scott Guthrie 的博客文章 MVC 3 预览](https://weblogs.asp.net/scottgu/archive/2010/07/27/introducing-asp-net-mvc-3-preview-1.aspx)。 （但是，请注意，对"IValidateObject"博客中的引用应"IValidatableObject"。）
 
@@ -278,7 +278,7 @@ ASP.NET MVC 具有支持版本 1 以来，输出缓存的完整的页面响应�
 
 ### <a name="granular-control-over-request-validation"></a>对请求验证进行精细控制
 
-ASP.NET MVC 具有自动有助于保护计算机免受 XSS 和 HTML 注入攻击的内置请求验证。 但是，有时要显式禁用请求验证，例如，如果你想要让用户发布 HTML 内容 （例如，在博客条目或 CMS 内容）。 你现在可以添加[AllowHtml](https://msdn.microsoft.com/en-us/library/system.web.mvc.allowhtmlattribute(v=VS.98).aspx)属性设为模型或查看模型禁用基于每个属性过程模型绑定中的请求验证。 有关请求验证的详细信息，请参阅以下资源：
+ASP.NET MVC 具有自动有助于保护计算机免受 XSS 和 HTML 注入攻击的内置请求验证。 但是，有时要显式禁用请求验证，例如，如果你想要让用户发布 HTML 内容 （例如，在博客条目或 CMS 内容）。 你现在可以添加[AllowHtml](https://msdn.microsoft.com/library/system.web.mvc.allowhtmlattribute(v=VS.98).aspx)属性设为模型或查看模型禁用基于每个属性过程模型绑定中的请求验证。 有关请求验证的详细信息，请参阅以下资源：
 
 - **非介入式 JavaScript 和验证**主题中[Scott Guthrie 的博客文章在 MVC 3 候选发布版](https://weblogs.asp.net/scottgu/archive/2010/11/09/announcing-the-asp-net-mvc-3-release-candidate.aspx)。
 - [MVC 3 发行说明](../whitepapers/mvc3-release-notes.md)
@@ -303,7 +303,7 @@ ASP.NET MVC 3 基架模板执行更好地标识模型上的主键属性并进行
 
 ### <a name="new-additionalmetadataattribute-class"></a>新的"AdditionalMetadataAttribute"类
 
-你可以使用[AdditionalMetadata](https://msdn.microsoft.com/en-us/library/system.web.mvc.additionalmetadataattribute(v=VS.98).aspx)特性来填充`ModelMetadata.AdditionalValues`模型属性的字典。 例如，如果视图模型具有一个属性，应仅向管理员显示，还可以批注该属性，如下面的示例中所示：
+你可以使用[AdditionalMetadata](https://msdn.microsoft.com/library/system.web.mvc.additionalmetadataattribute(v=VS.98).aspx)特性来填充`ModelMetadata.AdditionalValues`模型属性的字典。 例如，如果视图模型具有一个属性，应仅向管理员显示，还可以批注该属性，如下面的示例中所示：
 
 [!code-csharp[Main](mvc3/samples/sample4.cs)]
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/using-data-protection
-ms.openlocfilehash: 54976a7f2ac13fe445eb2eea204f4f781813030f
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: c6a631b6dc4a7855b11031dfcef42b17906754b0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="getting-started-with-the-data-protection-apis"></a>开始使用数据保护 Api
 
@@ -34,6 +34,6 @@ ms.lasthandoff: 01/19/2018
 创建一个保护程序时必须提供一个或多个[目的字符串](consumer-apis/purpose-strings.md)。 目的字符串都提供了使用者之间的隔离。 例如，使用"green"的目的字符串创建一个保护程序将无法取消保护数据的目的为"紫色"提供的保护程序。
 
 >[!TIP]
-> 实例`IDataProtectionProvider`和`IDataProtector`是线程安全的多个调用方。 它是预期，后一个组件获取的引用`IDataProtector`通过调用`CreateProtector`，它将使用该引用，以便多个调用`Protect`和`Unprotect`。
+> 实例`IDataProtectionProvider`和`IDataProtector`是线程安全的多个调用方。 它具有一个组件获取的引用后应，`IDataProtector`通过调用`CreateProtector`，它将使用该引用，以便多个调用`Protect`和`Unprotect`。
 >
 >调用`Unprotect`将引发 CryptographicException，如果无法验证或中译解出来的受保护的负载。 某些组件可能想要忽略错误期间取消保护操作;组件它读取身份验证 cookie 可能处理此错误和请求则将视为根本具有任何 cookie，而不使迫切地请求失败。 需要此行为的组件应专门捕获 CryptographicException，而不是忽略所有异常。

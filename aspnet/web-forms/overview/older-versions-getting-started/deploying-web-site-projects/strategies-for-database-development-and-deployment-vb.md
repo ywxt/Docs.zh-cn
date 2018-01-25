@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8632ed2fe5c1a296747a0206de1c6f5c5bb59dd1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 877056dc74e0b5a64d6e0f11d63ed9f642b0a2cd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="strategies-for-database-development-and-deployment-vb"></a>进行数据库开发和部署 (VB) 的策略
 ====================
@@ -79,7 +79,7 @@ ms.lasthandoff: 11/10/2017
 
 维护 prose 中的更改日志的主要缺点是自动化缺乏。 理想情况下，实现对生产数据库在部署时的数据库更改将简单地单击按钮以执行脚本，而不是无需手动执行一系列说明。 此类自动化是可能通过维护包含用于更改数据模型那些 SQL 命令的更改日志。
 
-SQL 语法包括创建和修改各种数据库对象的语句数。 例如， [ *CREATE TABLE 语句*](https://msdn.microsoft.com/en-us/library/ms174979.aspx)、 执行时，使用指定的列和约束创建的新表。 [ *ALTER TABLE 语句*](https://msdn.microsoft.com/en-us/library/ms190273.aspx)修改现有表中，添加、 移除或修改其列或约束。 此外，还存在语句来创建、 修改和删除索引、 视图、 用户定义函数、 存储的过程、 触发器和其他数据库对象。
+SQL 语法包括创建和修改各种数据库对象的语句数。 例如， [ *CREATE TABLE 语句*](https://msdn.microsoft.com/library/ms174979.aspx)、 执行时，使用指定的列和约束创建的新表。 [ *ALTER TABLE 语句*](https://msdn.microsoft.com/library/ms190273.aspx)修改现有表中，添加、 移除或修改其列或约束。 此外，还存在语句来创建、 修改和删除索引、 视图、 用户定义函数、 存储的过程、 触发器和其他数据库对象。
 
 返回到我们前面的示例，在你添加的新列的已部署的应用程序开发期间映像`Employees`表，删除的列从`Orders`表，并添加新表 (`ProductCategories`)。 此类操作会导致具有以下 SQL 命令的更改日志文件：
 

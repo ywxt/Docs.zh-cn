@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 556b90f5e29f30756a4bd3b16be9608011558c4d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ad578d5d5fb1ef0ac63d3cbde3f307535ea3d98c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-data-access-layer-vb"></a>创建数据访问层 (VB)
 ====================
@@ -89,7 +89,7 @@ ms.lasthandoff: 11/10/2017
 若要返回强类型对象，开发人员可以创建自己的自定义业务对象或使用类型化数据集。 其属性通常反映基础数据库表的业务对象的列的类表示，开发人员实现业务对象。 类型化数据集是由基于数据库架构和其成员都是根据此架构强类型的 Visual Studio 为你生成一个类。 类型化数据集本身扩展 ADO.NET 数据集、 数据表和 DataRow 类的类组成。 除了强类型的数据表，类型化数据集现在还包括 Tableadapter，是使用的填充数据集的数据表和传播回数据库数据表中的修改的方法的类。
 
 > [!NOTE]
-> 有关的优点和缺点的自定义业务对象与使用类型化数据集的详细信息，请参阅[设计数据层组件和层间传递数据](https://msdn.microsoft.com/en-us/library/ms978496.aspx)。
+> 有关的优点和缺点的自定义业务对象与使用类型化数据集的详细信息，请参阅[设计数据层组件和层间传递数据](https://msdn.microsoft.com/library/ms978496.aspx)。
 
 
 我们将使用这些教程的体系结构相符的强类型化数据集。 图 3 说明了使用类型化数据集的应用程序的不同层之间的工作流。
@@ -293,7 +293,7 @@ Beverages.aspx.vb
 **图 21**： 每个插入、 更新和删除请求发送到数据库立即 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-vb/_static/image57.png))
 
 
-其他模式，我将引用以作为批处理更新模式，是更新整个数据集、 数据表或在一个方法调用中返回数据行的集合。 此模式与开发人员删除、 插入和修改数据表中的 Datarow，然后将这些数据行或 DataTable 传递给的更新方法。 此方法然后枚举传入 Datarow，确定是否它们已被修改、 添加或删除 (通过 DataRow 的[RowState 属性](https://msdn.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx)值)，因此会发出每个记录的相应数据库请求。
+其他模式，我将引用以作为批处理更新模式，是更新整个数据集、 数据表或在一个方法调用中返回数据行的集合。 此模式与开发人员删除、 插入和修改数据表中的 Datarow，然后将这些数据行或 DataTable 传递给的更新方法。 此方法然后枚举传入 Datarow，确定是否它们已被修改、 添加或删除 (通过 DataRow 的[RowState 属性](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx)值)，因此会发出每个记录的相应数据库请求。
 
 
 [![调用更新方法时，所有更改将与数据库都同步](creating-a-data-access-layer-vb/_static/image59.png)](creating-a-data-access-layer-vb/_static/image58.png)
@@ -339,7 +339,7 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 **图 25**： 创建一个要向其中添加新建行方法`Products`表 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-vb/_static/image69.png))
 
 
-在下一个屏幕`InsertCommand`的`CommandText`显示。 通过添加增强此查询`SELECT SCOPE_IDENTITY()`在查询结束时，这将返回插入到的最后一个标识值`IDENTITY`同一范围内的列。 (请参阅[技术文档](https://msdn.microsoft.com/en-us/library/ms190315.aspx)有关详细信息`SCOPE_IDENTITY()`以及为何可能愿意[使用范围\_IDENTITY() 替代的 @@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx)。)请确保你最终`INSERT`用分号的语句才能添加`SELECT`语句。
+在下一个屏幕`InsertCommand`的`CommandText`显示。 通过添加增强此查询`SELECT SCOPE_IDENTITY()`在查询结束时，这将返回插入到的最后一个标识值`IDENTITY`同一范围内的列。 (请参阅[技术文档](https://msdn.microsoft.com/library/ms190315.aspx)有关详细信息`SCOPE_IDENTITY()`以及为何可能愿意[使用范围\_IDENTITY() 替代的 @@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx)。)请确保你最终`INSERT`用分号的语句才能添加`SELECT`语句。
 
 
 [![增加查询返回 scope_identity （） 值](creating-a-data-access-layer-vb/_static/image71.png)](creating-a-data-access-layer-vb/_static/image70.png)
@@ -520,11 +520,11 @@ SuppliersAndProducts.aspx.vb
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
 - [生成使用强类型化的 Tableadapter 和 VS 2005 和 ASP.NET 2.0 中的数据表 DAL](https://weblogs.asp.net/scottgu/435498)
-- [设计数据层组件和层间传递数据](https://msdn.microsoft.com/en-us/library/ms978496.aspx)
+- [设计数据层组件和层间传递数据](https://msdn.microsoft.com/library/ms978496.aspx)
 - [生成与 Visual Studio 2005 数据集设计器的数据访问层](http://www.theserverside.net/articles/showarticle.tss?id=DataSetDesigner)
 - [加密 ASP.NET 2.0 中的配置信息的应用程序](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)
-- [TableAdapter 概述](https://msdn.microsoft.com/en-us/library/bz9tthwx.aspx)
-- [使用类型化数据集](https://msdn.microsoft.com/en-us/library/esbykkzb.aspx)
+- [TableAdapter 概述](https://msdn.microsoft.com/library/bz9tthwx.aspx)
+- [使用类型化数据集](https://msdn.microsoft.com/library/esbykkzb.aspx)
 - [使用 Visual Studio 2005 和 ASP.NET 2.0 中的强类型数据访问](http://aspnet.4guysfromrolla.com/articles/020806-1.aspx)
 - [如何扩展 TableAdapter 方法](https://blogs.msdn.com/vbteam/archive/2005/05/04/ExtendingTableAdapters.aspx)
 - [从存储过程中检索标量数据](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)

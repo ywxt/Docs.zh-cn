@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 8f68a85e44389ed17576436a9210c0ca3f414403
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ed78b55d2b0315cf428f137c56ad85b29a95e1c5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-webconfig-file-transformations---3-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： Web.Config 文件转换的 3 12
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="webconfig-transformations-versus-web-deploy-parameters"></a>Web.config 转换与 Web 部署参数
 
-有两种方法来自动执行更改的过程*Web.config*文件设置： [Web.config 转换](https://msdn.microsoft.com/en-us/library/dd465326.aspx)和[Web 部署参数](https://msdn.microsoft.com/en-us/library/ff398068.aspx)。 A *Web.config*转换文件包含指定如何更改的 XML 标记*Web.config*文件部署时。 你可以指定不同的更改特定生成配置和特定发布配置文件。 默认值生成配置调试和发布，而且你可以创建自定义生成配置。 发布配置文件通常对应于目标环境中。 (有关详细信息发布中的配置文件，您将学习[作为测试环境部署到 IIS](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md)教程。)
+有两种方法来自动执行更改的过程*Web.config*文件设置： [Web.config 转换](https://msdn.microsoft.com/library/dd465326.aspx)和[Web 部署参数](https://msdn.microsoft.com/library/ff398068.aspx)。 A *Web.config*转换文件包含指定如何更改的 XML 标记*Web.config*文件部署时。 你可以指定不同的更改特定生成配置和特定发布配置文件。 默认值生成配置调试和发布，而且你可以创建自定义生成配置。 发布配置文件通常对应于目标环境中。 (有关详细信息发布中的配置文件，您将学习[作为测试环境部署到 IIS](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md)教程。)
 
 可以使用 web 部署参数来指定许多不同类型的设置必须在部署，包括在中找到的设置过程中配置*Web.config*文件。 用于指定当*Web.config*文件更改时，Web 部署参数是更复杂的设置，但不是知道要部署之前设置的值时，它们会很有用。 例如，在企业环境中，你可能会造成*部署包*并将其提供给的人员在 IT 部门要将安装在生产环境，并该用户有能够输入连接字符串或不希望这样做的密码知道。
 
@@ -146,7 +146,7 @@ Contoso 大学 web 页读取在中设置一个值`appSettings`中*Web.config*以
 
 ## <a name="more-information"></a>详细信息
 
-有关涵盖的本教程主题的详细信息，请参阅中的 Web.config 转换方案[ASP.NET 部署内容映射](https://msdn.microsoft.com/en-us/library/bb386521.aspx)。
+有关涵盖的本教程主题的详细信息，请参阅中的 Web.config 转换方案[ASP.NET 部署内容映射](https://msdn.microsoft.com/library/bb386521.aspx)。
 
 >[!div class="step-by-step"]
 [上一页](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

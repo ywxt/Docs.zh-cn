@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/deployment/using-signalr-with-azure-web-sites
 msc.type: authoredcontent
-ms.openlocfilehash: 414701159b4e1fa3da9597503b14281a1e9991de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8386441690a3fb479ffb941ebd7c0b2f83870781
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-signalr-with-web-apps-in-azure-app-service"></a>与在 Azure App Service Web Apps 使用 SignalR
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > ## <a name="questions-and-comments"></a>问题和意见
 > 
-> 请留下反馈上如何喜欢本教程的方式，我们可以提高在页面底部的注释中。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)， [StackOverflow.com](http://stackoverflow.com/)，或[Microsoft Azure 论坛](https://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?category=windowsazureplatform).
+> 请留下反馈上如何喜欢本教程的方式，我们可以提高在页面底部的注释中。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)， [StackOverflow.com](http://stackoverflow.com/)，或[Microsoft Azure 论坛](https://social.msdn.microsoft.com/Forums/windowsazure/home?category=windowsazureplatform).
 
 
 ## <a name="table-of-contents"></a>目录
@@ -59,9 +59,9 @@ SignalR 不会添加到应用程序部署到 Azure 与部署到本地服务器�
 
 **系统必备**
 
-- Visual Studio 2013。 如果你没有 Visual Studio，Visual Studio 2013 Express for Web 是在安装中包括的 Azure sdk。
+- Visual Studio 2013. 如果你没有 Visual Studio，Visual Studio 2013 Express for Web 是在安装中包括的 Azure sdk。
 - [Visual Studio 2013 的 azure SDK 2.3](https://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409)或[for Visual Studio 2012 的 Azure SDK 2.3](https://go.microsoft.com/fwlink/p/?linkid=323511)。
-- 若要完成本教程，你将需要 Azure 订阅。 你可以[激活 MSDN 订户权益](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/)，或[注册试用订阅](https://azure.microsoft.com/en-us/pricing/free-trial/)。
+- 若要完成本教程，你将需要 Azure 订阅。 你可以[激活 MSDN 订户权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)，或[注册试用订阅](https://azure.microsoft.com/pricing/free-trial/)。
 
 ### <a name="deploying-a-signalr-web-app-to-azure"></a>将 SignalR web 应用部署到 Azure
 
@@ -115,4 +115,4 @@ Websocket 需要显式启用 web 应用中使用 SignalR 应用程序; 中否则
 <a id="nextsteps"></a>
 ## <a name="next-steps"></a>后续步骤
 
-有关在 Azure App Service Web Apps 的详细信息，请参阅[Web Apps 概述](https://azure.microsoft.com/en-us/documentation/articles/app-service-web-overview/)。
+有关在 Azure App Service Web Apps 的详细信息，请参阅[Web Apps 概述](https://azure.microsoft.com/documentation/articles/app-service-web-overview/)。

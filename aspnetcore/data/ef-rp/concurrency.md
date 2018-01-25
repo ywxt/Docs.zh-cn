@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: a980669d49d332d7ef2ff5a18c73e9b269281287
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: b36fb71cba058a3409b30a1d9469159fcd027375
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 en-us/
 
@@ -63,7 +63,7 @@ John 单击**保存**仍会显示 $350,000.00 预算将编辑页上。 接下来
 
 * 你可以让 John 的更改覆盖 Jane 的更改。
 
- 下一次有人浏览英语部门时，他们将看到 2013 年 9 月 1 日和提取 $350,000.00 值。 这种方法称为*客户端优先*或*在 Wins 中最后一个*方案。 （从客户端的所有值都优先于什么是在数据存储。）如果你不执行任何并发处理的编码，客户端优先自动发生。
+ 下一次有人浏览英语部门，他们将看到 2013 年 9 月 1 日和提取 $350,000.00 值。 这种方法称为*客户端优先*或*在 Wins 中最后一个*方案。 （从客户端的所有值都优先于什么是在数据存储。）如果你不执行任何并发处理的编码，客户端优先自动发生。
 
 * 你可以防止 John 的更改正在更新数据库中。 通常情况下，应用程序将: * 显示一条错误消息。
         * 显示数据的当前状态。
@@ -73,18 +73,18 @@ John 单击**保存**仍会显示 $350,000.00 预算将编辑页上。 接下来
 
 ## <a name="handling-concurrency"></a>处理并发 
 
-当属性配置为[并发标记](https://docs.microsoft.com/en-us/ef/core/modeling/concurrency):
+当属性配置为[并发标记](https://docs.microsoft.com/ef/core/modeling/concurrency):
 
-* EF 核心验证已提取后属性没有已修改过。 就会执行检查时[SaveChanges](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges)或[SaveChangesAsync](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_)调用。
+* EF 核心验证已提取后属性没有已修改过。 就会执行检查时[SaveChanges](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges)或[SaveChangesAsync](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_)调用。
 * 如果它已提取的后, 更改的属性[DbUpdateConcurrencyException](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbupdateconcurrencyexception?view=efcore-2.0)引发。 
 
 数据库和数据模型必须配置为支持引发`DbUpdateConcurrencyException`。
 
 ### <a name="detecting-concurrency-conflicts-on-a-property"></a>检测并发冲突的属性
 
-可以在属性级别检测并发冲突[ConcurrencyCheck](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0)属性。 特性可以应用于模型的多个属性。 有关详细信息，请参阅[数据批注 ConcurrencyCheck](https://docs.microsoft.com/en-us/ef/core/modeling/concurrency#data-annotations)。
+可以在属性级别检测并发冲突[ConcurrencyCheck](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0)属性。 特性可以应用于模型的多个属性。 有关详细信息，请参阅[数据批注 ConcurrencyCheck](https://docs.microsoft.com/ef/core/modeling/concurrency#data-annotations)。
 
-`[ConcurrencyCheck]`属性不在本教程中使用。
+`[ConcurrencyCheck]`属性不本教程中使用。
 
 ### <a name="detecting-concurrency-conflicts-on-a-row"></a>检测并发冲突行上
 
@@ -127,7 +127,7 @@ modelBuilder.Entity<Department>()
 
 [!code-sql[](intro/samples/sql.txt?highlight=4-6)]
 
-[@@ROWCOUNT ](https://docs.microsoft.com/en-us/sql/t-sql/functions/rowcount-transact-sql)返回的最后一个语句所影响的行数。 没有行均已更新，EF 核心引发`DbUpdateConcurrencyException`。
+[@@ROWCOUNT ](https://docs.microsoft.com/sql/t-sql/functions/rowcount-transact-sql)返回的最后一个语句所影响的行数。 没有行均已更新，EF 核心引发`DbUpdateConcurrencyException`。
 
 你可以看到在 Visual Studio 的输出窗口中生成的 T-SQL 的 EF 核心。
 
@@ -175,7 +175,7 @@ dotnet aspnet-codegenerator razorpage -m Department -dc SchoolContext -udl -outD
 
 ### <a name="update-the-departments-index-page"></a>更新部门索引页
 
-创建基架引擎`RowVersion`不应显示为索引页面中，但该字段的列。 在本教程中，最后一个字节的`RowVersion`显示以帮助了解并发。 最后一个字节不保证是唯一的。 实际的应用程序不会显示`RowVersion`或最后一个字节的`RowVersion`。
+创建基架引擎`RowVersion`不应显示为索引页面中，但该字段的列。 在本教程中，最后一个字节的`RowVersion`显示以帮助了解并发。 最后一个字节并不能保证是唯一的。 实际的应用程序不会显示`RowVersion`或最后一个字节的`RowVersion`。
 
 更新索引页：
 
@@ -250,7 +250,7 @@ dotnet aspnet-codegenerator razorpage -m Department -dc SchoolContext -udl -outD
 
 ![部门编辑页错误消息](concurrency/_static/edit-error.png)
 
-此浏览器窗口不打算更改名称字段。 复制并粘贴到名称字段的当前值 （语言）。 选项卡上。客户端验证删除错误消息。
+此浏览器窗口不想要更改名称字段。 复制并粘贴到名称字段的当前值 （语言）。 选项卡上。客户端验证删除错误消息。
 
 ![部门编辑页错误消息](concurrency/_static/cv.png)
 
@@ -305,8 +305,8 @@ dotnet aspnet-codegenerator razorpage -m Department -dc SchoolContext -udl -outD
 
 ### <a name="additional-resources"></a>其他资源
 
-* [在 EF 核心中的并发标记](https://docs.microsoft.com/en-us/ef/core/modeling/concurrency)
-* [在 EF 核心中处理并发](https://docs.microsoft.com/en-us/ef/core/saving/concurrency)
+* [在 EF 核心中的并发标记](https://docs.microsoft.com/ef/core/modeling/concurrency)
+* [在 EF 核心中处理并发](https://docs.microsoft.com/ef/core/saving/concurrency)
 
 >[!div class="step-by-step"]
 [上一篇](xref:data/ef-rp/update-related-data)

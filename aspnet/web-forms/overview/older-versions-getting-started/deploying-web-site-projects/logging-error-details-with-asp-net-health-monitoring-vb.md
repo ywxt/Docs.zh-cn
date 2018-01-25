@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6a1533b80828532b756940d0b08fe4c6dab2d5dd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 95c0b72e3811dc23f8bdea180be5b20800ab3bd8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>日志记录错误的详细信息，ASP.NET 运行状况监视 (VB)
 ====================
@@ -43,13 +43,13 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="exploring-the-health-monitoring-systems-configuration"></a>浏览运行状况监视系统的配置
 
-监视系统的行为的运行状况由其配置信息，它位于[`<healthMonitoring>`元素](https://msdn.microsoft.com/en-us/library/2fwh2ss9.aspx)中`Web.config`。 此外，此配置节定义信息的以下三个重要的部分：
+监视系统的行为的运行状况由其配置信息，它位于[`<healthMonitoring>`元素](https://msdn.microsoft.com/library/2fwh2ss9.aspx)中`Web.config`。 此外，此配置节定义信息的以下三个重要的部分：
 
 1. 监视事件的运行状况，如果引发，则应记录
 2. 日志源，并
 3. 如何将每个运行状况监视在 (1) 中定义的事件映射到的日志源 (2) 中定义。
 
-通过三个子级配置元素指定此信息： [ `<eventMappings>` ](https://msdn.microsoft.com/en-us/library/yc5yk01w.aspx)， [ `<providers>` ](https://msdn.microsoft.com/en-us/library/zaa41kz1.aspx)，和[ `<rules>`](https://msdn.microsoft.com/en-us/library/fe5wyxa0.aspx)分别。
+通过三个子级配置元素指定此信息： [ `<eventMappings>` ](https://msdn.microsoft.com/library/yc5yk01w.aspx)， [ `<providers>` ](https://msdn.microsoft.com/library/zaa41kz1.aspx)，和[ `<rules>`](https://msdn.microsoft.com/library/fe5wyxa0.aspx)分别。
 
 在找不到监视系统配置信息的默认运行状况`Web.config`文件中`%WINDIR%\Microsoft.NET\Framework\version\CONFIG`文件夹。 此默认的配置信息，为简便起见，删除一些标记如下所示：
 
@@ -114,7 +114,7 @@ ms.lasthandoff: 11/10/2017
 2. 注册中的电子邮件日志源提供程序`<providers>`元素，并
 3. 添加到一个条目`<rules>`映射到在步骤 (2) 中添加的日志源提供程序的"所有错误"事件的元素。
 
-监视系统的运行状况包含两个电子邮件日志源提供程序类：`SimpleMailWebEventProvider`和`TemplatedMailWebEventProvider`。 [ `SimpleMailWebEventProvider`类](https://msdn.microsoft.com/en-us/library/system.web.management.simplemailwebeventprovider.aspx)发送纯文本电子邮件消息，其中包含事件详细信息，并提供电子邮件正文的稍加自定义。 与[`TemplatedMailWebEventProvider`类](https://msdn.microsoft.com/en-us/library/system.web.management.templatedmailwebeventprovider.aspx)指定其呈现的标记用作电子邮件正文 ASP.NET 页。 [ `TemplatedMailWebEventProvider`类](https://msdn.microsoft.com/en-us/library/system.web.management.templatedmailwebeventprovider.aspx)为你提供的内容和格式的电子邮件中，多更好地控制，但需要更多的前期工作因为你必须创建 ASP.NET 页生成电子邮件消息的正文。 本教程重点介绍使用`SimpleMailWebEventProvider`类。
+监视系统的运行状况包含两个电子邮件日志源提供程序类：`SimpleMailWebEventProvider`和`TemplatedMailWebEventProvider`。 [ `SimpleMailWebEventProvider`类](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx)发送纯文本电子邮件消息，其中包含事件详细信息，并提供电子邮件正文的稍加自定义。 与[`TemplatedMailWebEventProvider`类](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx)指定其呈现的标记用作电子邮件正文 ASP.NET 页。 [ `TemplatedMailWebEventProvider`类](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx)为你提供的内容和格式的电子邮件中，多更好地控制，但需要更多的前期工作因为你必须创建 ASP.NET 页生成电子邮件消息的正文。 本教程重点介绍使用`SimpleMailWebEventProvider`类。
 
 更新运行状况监视系统的`<providers>`中的元素`Web.config`文件以包含的日志源`SimpleMailWebEventProvider`类：
 
@@ -139,7 +139,7 @@ ms.lasthandoff: 11/10/2017
 
 ASP.NET 运行状况监视系统设计用于允许管理员监视已部署的 web 应用程序的运行状况。 运行状况监视事件引发时展开某些操作，例如当应用程序停止时，当用户成功登录到站点，或发生未处理的异常时引发。 可以将这些事件记录到任意数量的日志源。 本教程介绍了如何将登录到数据库和通过电子邮件的未经处理的异常的详细信息。
 
-本教程侧重于使用运行状况监视日志未经处理的异常，但请记住，运行状况监视旨在度量部署的 ASP.NET 应用程序的总体运行状况，包括丰富的运行状况监视事件和不日志源此处介绍了。 什么是多个，你可以创建你自己运行状况监视事件和日志源的需求出现。 如果你有兴趣了解更多有关运行状况监视，良好的第一步是读取[艾力克 Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)的[运行状况监视常见问题](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)。 接下来，请查阅[How To： 在 ASP.NET 2.0 中使用运行状况监视](https://msdn.microsoft.com/en-us/library/ms998306.aspx)。
+本教程侧重于使用运行状况监视日志未经处理的异常，但请记住，运行状况监视旨在度量部署的 ASP.NET 应用程序的总体运行状况，包括丰富的运行状况监视事件和不日志源此处介绍了。 什么是多个，你可以创建你自己运行状况监视事件和日志源的需求出现。 如果你有兴趣了解更多有关运行状况监视，良好的第一步是读取[艾力克 Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)的[运行状况监视常见问题](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)。 接下来，请查阅[How To： 在 ASP.NET 2.0 中使用运行状况监视](https://msdn.microsoft.com/library/ms998306.aspx)。
 
 尽情享受编程 ！
 
@@ -147,11 +147,11 @@ ASP.NET 运行状况监视系统设计用于允许管理员监视已部署的 we
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [ASP.NET 运行状况监视概述](https://msdn.microsoft.com/en-us/library/bb398933.aspx)
+- [ASP.NET 运行状况监视概述](https://msdn.microsoft.com/library/bb398933.aspx)
 - [配置和自定义监视的 ASP.NET 的系统的运行状况](http://dotnetslackers.com/articles/aspnet/ConfiguringAndCustomizingTheHealthMonitoringSystemOfASPNET.aspx)
 - [常见问题-运行状况监视在 ASP.NET 2.0](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)
-- [如何： 发送电子邮件运行状况监视通知](https://msdn.microsoft.com/en-us/library/ms227553.aspx)
-- [如何： 使用 ASP.NET 中的运行状况监视](https://msdn.microsoft.com/en-us/library/ms998306.aspx)
+- [如何： 发送电子邮件运行状况监视通知](https://msdn.microsoft.com/library/ms227553.aspx)
+- [如何： 使用 ASP.NET 中的运行状况监视](https://msdn.microsoft.com/library/ms998306.aspx)
 - [在 ASP.NET 中监视的运行状况](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
 
 >[!div class="step-by-step"]

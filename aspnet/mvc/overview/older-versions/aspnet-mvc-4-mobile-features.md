@@ -12,28 +12,28 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: e660595d66d81069fa47b77387509e73b1ec834e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d47d8f61dc7af6e1dc5887338be862ea81d7bb17
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 移动功能
 ====================
 通过[Rick Anderson](https://github.com/Rick-Anderson)
 
-> 现在有了具有代码示例在本教程的 MVC 5 版本[部署 ASP.NET MVC 5 移动 Web 应用程序 Azure 网站上](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/)。
+> 现在有了具有代码示例在本教程的 MVC 5 版本[部署 ASP.NET MVC 5 移动 Web 应用程序 Azure 网站上](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/)。
 
 
-本教程将教您如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能的基础知识。 对于本教程中，你可以使用[Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/en-us/products/express)或 Visual Web Developer 2010 Express Service Pack 1 (&quot;Visual Web Developer 或 VWD&quot;)。 如果你已有的你可以使用 Visual Studio 的专业版。
+本教程将教您如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能的基础知识。 对于本教程中，你可以使用[Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express)或 Visual Web Developer 2010 Express Service Pack 1 (&quot;Visual Web Developer 或 VWD&quot;)。 如果你已有的你可以使用 Visual Studio 的专业版。
 
 在开始之前，请确保已安装下面列出的先决条件。
 
-- [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/en-us/products/express) （推荐） 或 Visual Studio Web Developer Express SP1。 Visual Studio 2012 包含 ASP.NET MVC 4。 如果使用的 Visual Web Developer 2010，则必须安装[ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392)。
+- [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express) （推荐） 或 Visual Studio Web Developer Express SP1。 Visual Studio 2012 包含 ASP.NET MVC 4。 如果使用的 Visual Web Developer 2010，则必须安装[ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392)。
 
 你还需要移动浏览器模拟器。 以下任一起作用：
 
-- [Windows 7 Phone 仿真程序](https://msdn.microsoft.com/en-us/library/ff402563(VS.92).aspx)。 （这是本教程中使用大部分屏幕快照中的仿真程序）。
+- [Windows 7 Phone 仿真程序](https://msdn.microsoft.com/library/ff402563(VS.92).aspx)。 （这是本教程中使用大部分屏幕快照中的仿真程序）。
 - 更改用户代理字符串以模拟 iPhone。 请参阅[这](http://www.howtogeek.com/113439/how-to-change-your-browsers-user-agent-without-installing-any-extensions/)博客文章。
 - [Opera Mobile Emulator](http://www.opera.com/developer/tools/mobile/)
 - [Apple Safari](http://www.apple.com/safari/download/)与用户代理设置为 iPhone。 有关如何将 Safari 中的用户代理设置为"iPhone"的说明，请参阅[如何让 Safari 模拟很 IE](http://www.davidalison.com/2008/05/how-to-let-safari-pretend-its-ie.html) David Alison 的博文上。
@@ -45,7 +45,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="what-youll-build"></a>你将生成
 
-本教程中，你将添加移动功能中提供的简单会议列表应用[初学者项目](https://go.microsoft.com/fwlink/?LinkId=228307)。 下面的屏幕截图显示已完成的应用程序的标记页中所示[Windows 7 Phone Emulator](https://msdn.microsoft.com/en-us/library/ff402563(VS.92).aspx)。 请参阅[键盘映射为 Windows Phone 仿真程序](https://msdn.microsoft.com/en-us/library/ff754352(v=vs.92).aspx)来简化键盘输入。
+本教程中，你将添加移动功能中提供的简单会议列表应用[初学者项目](https://go.microsoft.com/fwlink/?LinkId=228307)。 下面的屏幕截图显示已完成的应用程序的标记页中所示[Windows 7 Phone Emulator](https://msdn.microsoft.com/library/ff402563(VS.92).aspx)。 请参阅[键盘映射为 Windows Phone 仿真程序](https://msdn.microsoft.com/library/ff754352(v=vs.92).aspx)来简化键盘输入。
 
 [![p1_Tags_CompletedProj](aspnet-mvc-4-mobile-features/_static/image2.png)](aspnet-mvc-4-mobile-features/_static/image1.png)
 
@@ -215,7 +215,7 @@ JQuery.Mobile.MVC NuGet 程序包将安装以下：
 [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample11.cs?highlight=26)]
 
 > [!NOTE]
-> 如果你使用 Internet Explorer 9 并且看不到`BundleMobileConfig`中黄色突出显示的行上方，单击[兼容性视图按钮](https://windows.microsoft.com/en-US/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![（关闭） 兼容性视图按钮的图片](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "（关闭） 兼容性视图按钮的图片")IE 以使更改从一个轮廓的图标中![（关闭） 兼容性视图按钮的图片](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "（关闭） 兼容性视图按钮的图片")为纯色![（上） 的兼容性视图按钮的图片](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "（上） 的兼容性视图按钮的图片")。 另外还可以查看本教程中 FireFox 或 Chrome。
+> 如果你使用 Internet Explorer 9 并且看不到`BundleMobileConfig`中黄色突出显示的行上方，单击[兼容性视图按钮](https://windows.microsoft.com/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![（关闭） 兼容性视图按钮的图片](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "（关闭） 兼容性视图按钮的图片")IE 以使更改从一个轮廓的图标中![（关闭） 兼容性视图按钮的图片](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "（关闭） 兼容性视图按钮的图片")为纯色![（上） 的兼容性视图按钮的图片](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "（上） 的兼容性视图按钮的图片")。 另外还可以查看本教程中 FireFox 或 Chrome。
 
 
 打开*MvcMobile\Views\Shared\\_Layout.Mobile.cshtml*文件并添加以下标记直接后的`Html.Partial`调用：
@@ -270,7 +270,7 @@ JQuery.Mobile.MVC NuGet 程序包将安装以下：
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample17.cshtml)]
 
-当`RequireConsistentDisplayMode`设置为`true`，移动布局 (*\_Layout.Mobile.cshtml*) 只用于移动视图。 (即，视图文件仅在窗体 ***ViewName**。Mobile.cshtml*。)你可能想要设置`RequireConsistentDisplayMode`到`true`如果你的移动布局不太适合你的非移动视图。 下面显示的屏幕截图如何*发言人*呈现页面时`RequireConsistentDisplayMode`设置为`true`。
+当`RequireConsistentDisplayMode`设置为`true`，移动布局 (*\_Layout.Mobile.cshtml*) 只用于移动视图。 (即，视图文件仅在窗体 ***ViewName**.Mobile.cshtml *。）你可能想要设置`RequireConsistentDisplayMode`到`true`如果你的移动布局不太适合你的非移动视图。 下面显示的屏幕截图如何*发言人*呈现页面时`RequireConsistentDisplayMode`设置为`true`。
 
 [![p3_speakersConsistent](aspnet-mvc-4-mobile-features/_static/image33.png)](aspnet-mvc-4-mobile-features/_static/image32.png)
 
@@ -393,7 +393,7 @@ JQuery.Mobile.MVC NuGet 程序包将安装以下：
 - 移动视图切换器小组件视图不是也可以在桌面视图中显示。
 - 支持特定浏览器，如 iPhone 浏览器的支持。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [jQuery Mobile](http://jquerymobile.com)站点。
 - [jQuery Mobile 概述](http://jquerymobile.com/demos/1.0b3/docs/about/intro.html)

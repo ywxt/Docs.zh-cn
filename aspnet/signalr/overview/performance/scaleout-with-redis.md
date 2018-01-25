@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: 965c32a4e2f2c9c4bd457d0c13ae99c1378c22c9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2ef161f35e69ef4a754d2740199166ee48c3fbab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-scaleout-with-redis"></a>采用 Redis 的 SignalR 扩展
 ====================
@@ -128,7 +128,7 @@ Hyper-v 中，添加新的 VM。 在**连接虚拟硬盘**步骤中，选择**�
 - "password"是 redis.conf 文件中定义的密码。
 - "AppName"为任何字符串。 SignalR 具有此名称创建 Redis 发布/订阅通道。
 
-例如: 
+例如:
 
 [!code-csharp[Main](scaleout-with-redis/samples/sample7.cs)]
 
@@ -150,7 +150,7 @@ Hyper-v 中，添加新的 VM。 在**连接虚拟硬盘**步骤中，选择**�
 
 检查 Web 管理服务正在运行。 如果没有，请启动服务。 （如果你看不到 Web 管理服务中的 Windows 服务的列表，请确保你添加的 IIS 角色时安装管理服务。）
 
-默认情况下，Web 管理服务侦听 TCP 端口 8172。 在 Windows 防火墙中创建一个新的入站的规则以允许端口 8172 上的 TCP 通信。 有关详细信息，请参阅[配置防火墙规则](https://technet.microsoft.com/en-us/library/dd448559(WS.10).aspx)。 （如果你托管在 Azure 上的 Vm，你可以执行此操作直接在 Azure 门户中。 请参阅[如何设置虚拟机的终结点](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-set-up-endpoints/)。)
+默认情况下，Web 管理服务侦听 TCP 端口 8172。 在 Windows 防火墙中创建一个新的入站的规则以允许端口 8172 上的 TCP 通信。 有关详细信息，请参阅[配置防火墙规则](https://technet.microsoft.com/library/dd448559(WS.10).aspx)。 （如果你托管在 Azure 上的 Vm，你可以执行此操作直接在 Azure 门户中。 请参阅[如何设置虚拟机的终结点](https://azure.microsoft.com/documentation/articles/virtual-machines-set-up-endpoints/)。)
 
 现在你已准备好部署到服务器从你的开发计算机的 Visual Studio 项目。 在解决方案资源管理器，右键单击解决方案，然后单击**发布**。
 

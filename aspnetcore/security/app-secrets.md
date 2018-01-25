@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/app-secrets
-ms.openlocfilehash: e2c11b768098b3d92ef702e0daad746963dc3856
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 94356cef7a0333f0faac6420b1b5425920b99deb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>安全存储在 ASP.NET Core 在开发过程中的应用程序机密
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 01/19/2018
 密钥管理器工具存储在项目树之外的开发工作的敏感数据。 密码管理器工具是一个项目工具，可以用于存储机密信息，以便[.NET 核心](https://www.microsoft.com/net/core)在开发过程中的项目。 使用密钥管理器工具中，可以将应用程序机密关联与特定项目，并共享跨多个项目。
 
 >[!WARNING]
-> 密码管理器工具不加密存储的密码，并不被视为受信任存储区。 它是仅限开发目的。 键和值存储在用户配置文件目录中的 JSON 配置文件中。
+> 密码管理器工具不加密存储的机密信息，并不应被视为受信任存储区。 它是仅限开发目的。 键和值存储在用户配置文件目录中的 JSON 配置文件中。
 
 ## <a name="installing-the-secret-manager-tool"></a>安装机密管理器工具
 
@@ -122,7 +122,7 @@ dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\w
 
 值`userSecretsId`来自中指定的值*.csproj*文件。
 
-不应编写代码所依赖的位置或使用密码管理器工具中，保存的数据格式，如这些实现的详细信息可能会更改。 例如，密钥的值是当前*不*今天，加密，但可能有一天。
+你不应编写代码所依赖的位置或使用密码管理器工具中，保存的数据格式，如这些实现的详细信息可能会更改。 例如，密钥的值是当前*不*今天，加密，但可能有一天。
 
 ## <a name="additional-resources"></a>其他资源
 

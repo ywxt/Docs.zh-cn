@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler
 msc.type: authoredcontent
-ms.openlocfilehash: 2127a98a0abf2c94e32b907d945c9b4d36fb2360
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 81848c683fb9ddaa8942f030a520847a3c89fde0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a>配置 Web 服务器的 Web 部署发布 （Web 部署处理程序）
 ====================
@@ -67,7 +67,7 @@ ms.lasthandoff: 11/10/2017
 - 服务器具有静态 IP 地址。
 
 > [!NOTE]
-> 有关将计算机加入到域的详细信息，请参阅[将计算机加入到域并登录](https://technet.microsoft.com/en-us/library/cc725618(v=WS.10).aspx)。 有关配置静态 IP 地址的详细信息，请参阅[配置静态 IP 地址](https://technet.microsoft.com/en-us/library/cc754203(v=ws.10).aspx)。
+> 有关将计算机加入到域的详细信息，请参阅[将计算机加入到域并登录](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)。 有关配置静态 IP 地址的详细信息，请参阅[配置静态 IP 地址](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)。
 
 
 ## <a name="install-products-and-components"></a>安装产品和组件
@@ -114,7 +114,7 @@ ms.lasthandoff: 11/10/2017
 13. 查看许可条款，然后如果同意条款，单击**我接受**。
 14. 安装完成后，单击**完成**，然后关闭**Web Platform Installer 3.0**窗口。
 
-如果你安装.NET Framework 4.0 安装 IIS 之前，你将需要运行[ASP.NET IIS 注册工具](https://msdn.microsoft.com/en-us/library/k6h9cz8h(v=VS.100).aspx)(aspnet\_regiis.exe) 以向 IIS 注册 ASP.NET 的最新版本。 如果不这样做，你将找到 IIS 将 （如 HTML 文件） 中提供静态内容而无需任何问题，但它将返回**HTTP 错误 404.0-未找到**当你尝试浏览到 ASP.NET 内容。 下一步过程可用于确保注册 ASP.NET 4.0。
+如果你安装.NET Framework 4.0 安装 IIS 之前，你将需要运行[ASP.NET IIS 注册工具](https://msdn.microsoft.com/library/k6h9cz8h(v=VS.100).aspx)(aspnet\_regiis.exe) 以向 IIS 注册 ASP.NET 的最新版本。 如果不这样做，你将找到 IIS 将 （如 HTML 文件） 中提供静态内容而无需任何问题，但它将返回**HTTP 错误 404.0-未找到**当你尝试浏览到 ASP.NET 内容。 下一步过程可用于确保注册 ASP.NET 4.0。
 
 **若要向 IIS 注册 ASP.NET 4.0**
 
@@ -210,7 +210,7 @@ ms.lasthandoff: 11/10/2017
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image11.png)
 
     > [!NOTE]
-    > 在生产环境中，你可能需要托管你的网站在端口 80 上并配置主机标头，以及匹配的 DNS 记录。 在 IIS 7 中配置主机标头的详细信息，请参阅[网站 (IIS 7) 配置主机头](https://technet.microsoft.com/en-us/library/cc753195(WS.10).aspx)。 Windows Server 2008 R2 中的 DNS 服务器角色的详细信息，请参阅[DNS 服务器概述](https://technet.microsoft.com/en-gb/library/cc770392.aspx)和[DNS 服务器](https://technet.microsoft.com/en-us/windowsserver/dd448607)。
+    > 在生产环境中，你可能需要托管你的网站在端口 80 上并配置主机标头，以及匹配的 DNS 记录。 在 IIS 7 中配置主机标头的详细信息，请参阅[网站 (IIS 7) 配置主机头](https://technet.microsoft.com/library/cc753195(WS.10).aspx)。 Windows Server 2008 R2 中的 DNS 服务器角色的详细信息，请参阅[DNS 服务器概述](https://technet.microsoft.com/en-gb/library/cc770392.aspx)和[DNS 服务器](https://technet.microsoft.com/windowsserver/dd448607)。
 9. 在**操作**窗格中，在**编辑站点**，单击**绑定**。
 10. 在**站点绑定**对话框中，单击**添加**。
 
@@ -254,8 +254,8 @@ ms.lasthandoff: 11/10/2017
 
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image15.png)
 5. 在**选择用户或组**对话框中，键入**IIS\_IUSRS**，单击**检查名称**，然后单击**确定**。
-6. 在**权限***[文件夹名称]*对话框中，请注意，在分配新组**读取&amp;执行**，**列表文件夹内容**，和**读取**默认情况下的权限。 保留此保持不变，然后单击**确定**。
-7. 单击**确定**关闭*[文件夹名称]***属性**对话框。
+6. 在 **权限 * * * [文件夹名称]*对话框中，请注意，在分配新组**读取&amp;执行**，**列出文件夹内容**，和**读取**默认情况下的权限。 保留此保持不变，然后单击**确定**。
+7. 单击**确定**关闭*[文件夹名称] * * * 属性** 对话框。
 
 作为最后一项任务，你必须授予非管理员用户部署内容将使用其凭据的适当的权限。 此用户需要远程将内容部署到你的网站的权限。
 
@@ -288,7 +288,7 @@ ms.lasthandoff: 11/10/2017
 | 出站 | 8172 | 任意 | TCP |
   
 
-在 Windows 防火墙中配置规则的详细信息，请参阅[配置防火墙规则](https://technet.microsoft.com/en-us/library/dd448559(WS.10).aspx)。 有关第三方防火墙，请参阅产品文档。
+在 Windows 防火墙中配置规则的详细信息，请参阅[配置防火墙规则](https://technet.microsoft.com/library/dd448559(WS.10).aspx)。 有关第三方防火墙，请参阅产品文档。
 
 ## <a name="conclusion"></a>结束语
 

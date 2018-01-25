@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b24297fd6efcb794e7d5a50076ca176689f74845
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9523fe5b241b6ff45927f142eb844a716822336b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="control-id-naming-in-content-pages-vb"></a>在内容页 (VB) 中命名的控件 ID
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 11/10/2017
 若要处理这种情况下，ASP.NET 允许某些控件表示为命名容器。 命名容器将用作新`ID`命名空间。 出现在命名的容器内所有服务器控件都具有其呈现`id`value 前面带`ID`的命名的容器控件。 例如，`GridView`和`GridViewRow`类都是命名的容器。 因此，在与为 GridView TemplateField 中定义的标签控件`ID``ProductName`给定呈现`id`值`GridViewID_GridViewRowID_ProductName`。 因为*GridViewRowID*是对于每个 GridView 一行，生成唯一`id`值是唯一的。
 
 > [!NOTE]
-> [ `INamingContainer`接口](https://msdn.microsoft.com/en-us/library/system.web.ui.inamingcontainer.aspx)用于指示特定的 ASP.NET 服务器控件应该用作的命名容器。 `INamingContainer`接口不拼写出任何服务器控件必须实现的方法; 相反，它可作为一个标记。 在生成的呈现的标记，如果某个控件实现此接口然后 ASP.NET 引擎自动前缀其`ID`值及其子代的呈现`id`属性值。 此过程将在步骤 2 中的更详细地讨论。
+> [ `INamingContainer`接口](https://msdn.microsoft.com/library/system.web.ui.inamingcontainer.aspx)用于指示特定的 ASP.NET 服务器控件应该用作的命名容器。 `INamingContainer`接口不拼写出任何服务器控件必须实现的方法; 相反，它可作为一个标记。 在生成的呈现的标记，如果某个控件实现此接口然后 ASP.NET 引擎自动前缀其`ID`值及其子代的呈现`id`属性值。 此过程将在步骤 2 中的更详细地讨论。
 
 
 命名容器不只更改呈现`id`属性值，但也会影响如何控件可能会以编程方式引用从 ASP.NET 页的代码隐藏类。 `FindControl("controlID")`方法通常用于以编程方式引用 Web 控件。 但是，`FindControl`不入侵通过命名容器。 因此，不能直接使用`Page.FindControl`方法引用一个 GridView 或其他命名容器内的控件。
@@ -121,7 +121,7 @@ Visual Studio 自动为每个母版页的四个 ContentPlaceHolders 创建内容
 
 每个 ASP.NET 服务器控件包含`FindControl("controlID")`搜索名为的控件的控件的后代方法*controlID*。 如果找到这样的控件，则返回;如果不找到任何匹配的控件，则`FindControl`返回`Nothing`。
 
-`FindControl`在其中你需要访问的控件，但不会获得对它的直接引用的方案很有用。 使用 Web 控件，例如 GridView，例如，数据时在 GridView 的字段控件中定义了一次的声明性语法，但是在运行时控件的实例创建的每个 GridView 行。 因此，在运行时生成的控件存在，但我们不提供可从代码隐藏类的直接引用。 因此我们需要使用`FindControl`以编程方式使用特定控件在 GridView 的字段。 (有关详细信息使用`FindControl`若要访问的数据 Web 控件模板中的控件，请参阅[自定义格式设置基于时数据](../../data-access/custom-formatting/custom-formatting-based-upon-data-vb.md)。)这同一情况下发生时动态地将 Web 控件添加到 Web 窗体，则主题所述[创建动态数据条目的用户界面](https://msdn.microsoft.com/en-us/library/aa479330.aspx)。
+`FindControl`在其中你需要访问的控件，但不会获得对它的直接引用的方案很有用。 使用 Web 控件，例如 GridView，例如，数据时在 GridView 的字段控件中定义了一次的声明性语法，但是在运行时控件的实例创建的每个 GridView 行。 因此，在运行时生成的控件存在，但我们不提供可从代码隐藏类的直接引用。 因此我们需要使用`FindControl`以编程方式使用特定控件在 GridView 的字段。 (有关详细信息使用`FindControl`若要访问的数据 Web 控件模板中的控件，请参阅[自定义格式设置基于时数据](../../data-access/custom-formatting/custom-formatting-based-upon-data-vb.md)。)这同一情况下发生时动态地将 Web 控件添加到 Web 窗体，则主题所述[创建动态数据条目的用户界面](https://msdn.microsoft.com/library/aa479330.aspx)。
 
 若要演示如何使用`FindControl`方法搜索控件在内容页中，创建的事件处理程序`SubmitButton`的`Click`事件。 事件处理程序中，添加以下代码，即在以编程方式引用`Age`文本框中和`Results`标签使用`FindControl`方法，然后显示一条消息采用`Results`根据用户的输入。
 
@@ -228,7 +228,7 @@ Visual Studio 自动为每个母版页的四个 ContentPlaceHolders 创建内容
 
 此方法的问题是，如果使用母版页 （或其他命名的容器控件），呈现的 HTML`id`不是同义词，Web 控件在`ID`属性。 第一个倾角可能访问通过浏览器页并查看源代码来确定实际`id`属性。 一旦你了解了呈现`id`值，你可以将其粘贴到调用`getElementById`访问需要客户端脚本通过使用 HTML 元素。 这种方法是不理想，因为该页面的某些更改控制层次结构或更改为`ID`命名控件的属性将 alter 生成`id`属性，就突破 JavaScript 代码。
 
-好消息是`id`呈现的属性值是可在通过 Web 控件的服务器端代码中访问[`ClientID`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.control.clientid.aspx)。 你应使用此属性确定`id`属性在客户端脚本中使用的值。 例如，若要添加到页面的 JavaScript 函数，当调用时，显示的值`Age`模式在消息框中的文本框中添加以下代码到`Page_Load`事件处理程序：
+好消息是`id`呈现的属性值是可在通过 Web 控件的服务器端代码中访问[`ClientID`属性](https://msdn.microsoft.com/library/system.web.ui.control.clientid.aspx)。 你应使用此属性确定`id`属性在客户端脚本中使用的值。 例如，若要添加到页面的 JavaScript 函数，当调用时，显示的值`Age`模式在消息框中的文本框中添加以下代码到`Page_Load`事件处理程序：
 
 
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample15.vb)]
@@ -241,7 +241,7 @@ Visual Studio 自动为每个母版页的四个 ContentPlaceHolders 创建内容
 请注意如何正确`id`属性值， `ctl00_MainContent_Age`，对的调用中将显示`getElementById`。 因为此值在运行时计算的所以它适用无论页面控件层次结构的更高版本更改。
 
 > [!NOTE]
-> 此 JavaScript 示例只是演示如何添加正确引用呈现服务器控件的 HTML 元素的 JavaScript 函数。 若要使用此函数将需要创作其他 JavaScript 加载文档时或在某些特定用户执行任何操作调查时调用该函数。 有关这些详细信息和相关的主题，阅读[使用客户端脚本](https://msdn.microsoft.com/en-us/library/aa479302.aspx)。
+> 此 JavaScript 示例只是演示如何添加正确引用呈现服务器控件的 HTML 元素的 JavaScript 函数。 若要使用此函数将需要创作其他 JavaScript 加载文档时或在某些特定用户执行任何操作调查时调用该函数。 有关这些详细信息和相关的主题，阅读[使用客户端脚本](https://msdn.microsoft.com/library/aa479302.aspx)。
 
 
 ## <a name="summary"></a>摘要
@@ -257,11 +257,11 @@ Visual Studio 自动为每个母版页的四个 ContentPlaceHolders 创建内容
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
 - [ASP.NET 母版页和`FindControl`](http://www.west-wind.com/WebLog/posts/5127.aspx)
-- [创建动态数据条目的用户界面](https://msdn.microsoft.com/en-us/library/aa479330.aspx)
+- [创建动态数据条目的用户界面](https://msdn.microsoft.com/library/aa479330.aspx)
 - [扩展的扩展方法的基类型功能](http://aspnet.4guysfromrolla.com/articles/120507-1.aspx)
-- [如何： 引用 ASP.NET 母版页页内容](https://msdn.microsoft.com/en-us/library/xxwa0ff0.aspx)
+- [如何： 引用 ASP.NET 母版页页内容](https://msdn.microsoft.com/library/xxwa0ff0.aspx)
 - [母版页页： 提示、 技巧和陷阱](http://www.odetocode.com/articles/450.aspx)
-- [使用客户端脚本](https://msdn.microsoft.com/en-us/library/aa479302.aspx)
+- [使用客户端脚本](https://msdn.microsoft.com/library/aa479302.aspx)
 
 ### <a name="about-the-author"></a>关于作者
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/publish-to-azure
 msc.type: authoredcontent
-ms.openlocfilehash: f75b7192b4d97c88fcbcb4ad7fef88c83157c902
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: eadc0f2b08df29f80fe53d03cf88cd3cdcecfb12
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="publish-mvc-database-first-site-to-azure"></a>将 MVC 数据库第一个站点发布到 Azure
 ====================
@@ -31,8 +31,8 @@ ms.lasthandoff: 11/10/2017
 
 你需要一个 Azure 帐户来完成本教程：
 
-- 你可以[免费建立一个 Azure 帐户](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A261C142F)-获取信用额度来试用付费版 Azure 服务，你可以使用和甚至在用完后，最多可以保留帐户和使用免费的 Azure 服务。
-- 你可以[激活 MSDN 订户权益](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)-MSDN 订阅为你的信用额度可以用于付费版 Azure 服务的每个月。
+- 你可以[免费建立一个 Azure 帐户](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F)-获取信用额度来试用付费版 Azure 服务，你可以使用和甚至在用完后，最多可以保留帐户和使用免费的 Azure 服务。
+- 你可以[激活 MSDN 订户权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)-MSDN 订阅为你的信用额度可以用于付费版 Azure 服务的每个月。
 
 若要发布你的 web 应用，请右键单击项目，然后选择**发布**。
 
@@ -134,7 +134,7 @@ ms.lasthandoff: 11/10/2017
 
 单击“确定”。
 
-你将可能想要保存此配置文件，以便您可以将更新在将来发布而无需重新输入的所有连接信息。 选择**创建配置文件**。
+你将可能想要保存此配置文件，以便您可以将更新在将来发布而无需重新输入的所有连接信息。 选择“创建配置文件”。
 
 ![保存配置文件](publish-to-azure/_static/image19.png)
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4632d3939204a954ed4fac88a04b0fea9bb15c83
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cf3058ac095bc2ed728a716e70f962e260eef5a2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-c"></a>主/从使用 DropDownList (C#) 进行筛选
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 
 常用的报表类型是*主/详细信息报表*中，报表从此处开始通过显示的"主"的记录集。 用户可以然后向下钻取一个主机记录，从而查看该主记录的"详细信息。" 主/详细信息报告是用于可视化一个对多关系，如报表的理想选择显示的所有类别，然后允许用户选择一种特定类别，然后显示其关联的产品。 此外，主/详细信息报表可用于显示特别"宽"表 （一种是有大量的列） 中的详细的信息。 例如，主/详细信息报表的"主"级别可能会在数据库中，显示只包括产品名称和单位价格的产品和向下钻取到特定的产品将显示额外的产品字段 (分类、 供应商、 每个单元，数量和等等）。
 
-有多种方法可以与其实现主/详细信息报表。 通过这和接下来三个教程中，我们将查看在不同的主/详细信息报表。 在本教程中，我们将了解如何显示中的主记录[DropDownList 控件](https://msdn.microsoft.com/en-us/library/dtx91y0z.aspx)和 GridView 中的选定的列表项的详细信息。 具体而言，本教程的主/从报表将列出类别和产品信息。
+有多种方法可以与其实现主/详细信息报表。 通过这和接下来三个教程中，我们将查看在不同的主/详细信息报表。 在本教程中，我们将了解如何显示中的主记录[DropDownList 控件](https://msdn.microsoft.com/library/dtx91y0z.aspx)和 GridView 中的选定的列表项的详细信息。 具体而言，本教程的主/从报表将列出类别和产品信息。
 
 ## <a name="step-1-displaying-the-categories-in-a-dropdownlist"></a>步骤 1： 在 DropDownList 中显示的类别
 
@@ -97,7 +97,7 @@ ms.lasthandoff: 11/10/2017
 
 需要一段时间来签出我们的浏览器中的进度。 当第一次访问该页面，这些产品属于所选类别 （如图 9 中所示），则会显示 （饮料），但更改 DropDownList 不更新的数据。 这是因为 GridView 更新必须进行回发。 为了实现此目的进行 （都不需要编写任何代码） 的两个选项：
 
-- **设置的类别的 DropDownList 的**[有些属性](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.listcontrol.autopostback%28VS.80%29.aspx)**为 True。** （你可以完成此操作通过检查 DropDownList 的智能标记中的启用有些选项。）这将触发回发，每当 DropDownList 的选定项更改的用户。 因此，当用户从下拉列表中选择新类别回发将随之发生，并且将使用新选择的类别的产品更新 GridView。 （这是我已在本教程中使用的方法）。
+- **设置的类别的 DropDownList 的**[有些属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.listcontrol.autopostback%28VS.80%29.aspx)**为 True。** （你可以完成此操作通过检查 DropDownList 的智能标记中的启用有些选项。）这将触发回发，每当 DropDownList 的选定项更改的用户。 因此，当用户从下拉列表中选择新类别回发将随之发生，并且将使用新选择的类别的产品更新 GridView。 （这是我已在本教程中使用的方法）。
 - **添加的 DropDownList 旁边的按钮 Web 控件。** 设置其`Text`到刷新的属性或其他类似的。 使用此方法时，用户将需要选择新类别，然后单击按钮。 单击的按钮，将导致回发，并更新 GridView 列出所选类别的这些产品。
 
 图 9 和 10 说明了操作中的主/从报表。

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/testing
-ms.openlocfilehash: 7f34bc7766b41beafb2a1ee09577109bc1402867
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: f27e7ec43cd17e249dd646a7dfbce5df69d59664
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="testing-controller-logic-in-aspnet-core"></a>在 ASP.NET 核心的测试控制器逻辑
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 01/19/2018
 
 [!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=8,15-16,37-39&range=35-75)]
 
-第一个测试确认时`ModelState`无效，相同`ViewResult`同样适用于返回`GET`请求。 请注意，测试不会尝试将一个无效的模型。 这就仍起作用，因为模型绑定不运行 (尽管[集成测试](xref:mvc/controllers/testing#integration-testing)将练习模型绑定)。 在这种情况下，未正在测试模型绑定。 这些单元测试仅测试中的操作方法的代码的用途。
+第一个测试确认时`ModelState`无效，相同`ViewResult`同样适用于返回`GET`请求。 请注意，测试不会尝试将一个无效的模型。 这就仍起作用，因为模型绑定不运行 (尽管[集成测试](xref:mvc/controllers/testing#integration-testing)将练习模型绑定)。 在这种情况下，不是所测试的模型绑定。 这些单元测试仅测试中的操作方法的代码的用途。
 
 第二个测试验证，当`ModelState`有效，新`BrainstormSession`添加 （通过存储库），并且该方法返回`RedirectToActionResult`具有预期的属性。 模拟不调用的调用是正常情况下将其忽略，但调用`Verifiable`末尾的安装程序调用允许它在测试中验证。 这通过调用完成`mockRepo.Verify`，如果预期的方法未调用，这将失败的测试。
 
@@ -121,7 +121,7 @@ ms.lasthandoff: 01/19/2018
 每个集成测试类配置`TestServer`会运行 ASP.NET Core 应用。 默认情况下，`TestServer`承载它在何处运行-这种情况下，测试项目文件夹的文件夹中的 web 应用。 因此，当你尝试测试返回的控制器操作`ViewResult`，你可能会看到此错误：
 
 ```
-The view 'Index' was not found. The following locations were searched:
+The view 'Index' wasn't found. The following locations were searched:
 (list of locations)
 ```
 

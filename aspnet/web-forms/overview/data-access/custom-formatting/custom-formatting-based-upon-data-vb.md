@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4122f55c09f94d41f7caa3f86d1fbd5870417a20
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 43aed94fe5b1095af37abdae2cb4c9e67b7d7f6f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="custom-formatting-based-upon-data-vb"></a>自定义格式设置取决于数据 (VB)
 ====================
@@ -97,7 +97,7 @@ ms.lasthandoff: 11/10/2017
 [!code-vb[Main](custom-formatting-based-upon-data-vb/samples/sample3.vb)]
 
 > [!NOTE]
-> 由于`UnitPrice`可以`NULL`值在数据库中，我们首先检查以确保我们正在不处理与`NULL`前访问值`ProductsRow`的`UnitPrice`属性。 此检查是重要因为如果我们尝试访问`UnitPrice`属性时它具有`NULL`值`ProductsRow`对象将引发[StrongTypingException 异常](https://msdn.microsoft.com/en-us/library/system.data.strongtypingexception.aspx)。
+> 由于`UnitPrice`可以`NULL`值在数据库中，我们首先检查以确保我们正在不处理与`NULL`前访问值`ProductsRow`的`UnitPrice`属性。 此检查是重要因为如果我们尝试访问`UnitPrice`属性时它具有`NULL`值`ProductsRow`对象将引发[StrongTypingException 异常](https://msdn.microsoft.com/library/system.data.strongtypingexception.aspx)。
 
 
 ## <a name="step-3-formatting-the-unitprice-value-in-the-detailsview"></a>步骤 3： 格式设置说明中的单价值
@@ -193,7 +193,7 @@ FormView 不包含任何 BoundFields 并因此缺少`Rows`集合。 相反，For
 [!code-vb[Main](custom-formatting-based-upon-data-vb/samples/sample12.vb)]
 
 > [!NOTE]
-> 格式设置以编程方式访问 Web 控件使用的模板的语法`FindControl("controlID")`，然后设置其样式相关的属性还可使用时[TemplateFields](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.templatefield(VS.80).aspx)中的说明或 GridView控件。 在我们的下一步教程，我们将检查 TemplateFields。
+> 格式设置以编程方式访问 Web 控件使用的模板的语法`FindControl("controlID")`，然后设置其样式相关的属性还可使用时[TemplateFields](https://msdn.microsoft.com/library/system.web.ui.webcontrols.templatefield(VS.80).aspx)中的说明或 GridView控件。 在我们的下一步教程，我们将检查 TemplateFields。
 
 
 图 7 显示 FormView 查看产品时其`UnitsInStock`图 8 中的产品获得它的值小于 10 时，值是大于 10。

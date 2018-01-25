@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: db2b39fab9c0701c8792d48f2ed0a059b9e450ad
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9a933324b48d4117d5d4c806920f1691a7ef7849
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view-vb"></a>检查编辑方法和 (VB) 中的编辑视图
 ====================
@@ -65,7 +65,7 @@ ms.lasthandoff: 11/10/2017
 
 请注意如何查看模板`@ModelType MvcMovie.Models.Movie`语句文件的顶部 — 这指定视图需要查看模板类型的模型`Movie`。
 
-基架的代码使用了若干个*帮助器方法*来简化的 HTML 标记。 [ `Html.LabelFor` ](https://msdn.microsoft.com/en-us/library/gg401864(VS.98).aspx)帮助器显示的字段的名称 (&quot;标题&quot;， &quot;ReleaseDate&quot;，&quot;流派&quot;，或&quot;价格&quot;). [ `Html.EditorFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx)帮助器将显示 HTML`<input>`元素。 [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx)帮助器显示与该属性相关联的任何验证消息。
+基架的代码使用了若干个*帮助器方法*来简化的 HTML 标记。 [ `Html.LabelFor` ](https://msdn.microsoft.com/library/gg401864(VS.98).aspx)帮助器显示的字段的名称 (&quot;标题&quot;， &quot;ReleaseDate&quot;，&quot;流派&quot;，或&quot;价格&quot;). [ `Html.EditorFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx)帮助器将显示 HTML`<input>`元素。 [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx)帮助器显示与该属性相关联的任何验证消息。
 
 运行应用程序并导航到*/Movies* URL。 点击“编辑”链接。 在浏览器中查看页面的源。 在页中的 HTML 类似于下面的示例。 （菜单标记被排除为清楚起见。）
 
@@ -85,7 +85,7 @@ ASP.NET framework 模型联编程序接受已发布的窗体值并创建`Movie`�
 
 [![abcNotValid](examining-the-edit-methods-and-edit-view/_static/image7.png)](examining-the-edit-methods-and-edit-view/_static/image6.png)
 
-> **请注意关于区域设置**如果通常使用的非英语区域设置，请参阅[支持非英语区域设置使用 ASP.NET MVC 3 验证。](https://msdn.microsoft.com/en-us/library/gg674880(VS.98).aspx)
+> **请注意关于区域设置**如果通常使用的非英语区域设置，请参阅[支持非英语区域设置使用 ASP.NET MVC 3 验证。](https://msdn.microsoft.com/library/gg674880(VS.98).aspx)
 
 
 ## <a name="making-the-edit-method-more-robust"></a>进行的编辑方法更可靠
@@ -114,7 +114,7 @@ ASP.NET framework 模型联编程序接受已发布的窗体值并创建`Movie`�
 
 [!code-vb[Main](examining-the-edit-methods-and-edit-view/samples/sample8.vb)]
 
-第一行`SearchIndex`方法中创建以下[LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx)查询，以便选择电影：
+第一行`SearchIndex`方法中创建以下[LINQ](https://msdn.microsoft.com/library/bb397926.aspx)查询，以便选择电影：
 
 [!code-vb[Main](examining-the-edit-methods-and-edit-view/samples/sample9.vb)]
 
@@ -123,10 +123,10 @@ ASP.NET framework 模型联编程序接受已发布的窗体值并创建`Movie`�
 如果`searchString`参数包含一个字符串，将修改电影查询要作为筛选依据的搜索字符串，使用下面的代码的值：
 
 如果不是 String.IsNullOrEmpty(searchString) 然后   
- 电影 = 电影。其中 （函数 s.Title.Contains(searchString))   
+ movies = movies.Where(Function(s) s.Title.Contains(searchString))   
  如果结束
 
-在定义后或通过调用方法，如对其进行修改时，将不会执行 LINQ 查询`Where`或`OrderBy`。 相反，延迟查询执行，这意味着表达式的计算延迟，直到它已实现的值实际上循环访问或[ `ToList` ](https://msdn.microsoft.com/en-us/library/bb342261.aspx)调用方法。 在`SearchIndex`示例 SearchIndex 视图中执行查询。 有关延迟执行查询的详细信息，请参阅[Query Execution](https://msdn.microsoft.com/en-us/library/bb738633.aspx)（查询执行）。
+在定义后或通过调用方法，如对其进行修改时，将不会执行 LINQ 查询`Where`或`OrderBy`。 相反，延迟查询执行，这意味着表达式的计算延迟，直到它已实现的值实际上循环访问或[ `ToList` ](https://msdn.microsoft.com/library/bb342261.aspx)调用方法。 在`SearchIndex`示例 SearchIndex 视图中执行查询。 有关延迟执行查询的详细信息，请参阅[Query Execution](https://msdn.microsoft.com/library/bb738633.aspx)（查询执行）。
 
 现在你可以实现`SearchIndex`将向用户显示该窗体的视图。 右键单击内部`SearchIndex`方法，然后单击**添加视图**。 在**添加视图**对话框框中，指定你要将传递`Movie`到其模型类的视图模板的对象。 在**基架模板**列表中，选择**列表**，然后单击**添加**。
 

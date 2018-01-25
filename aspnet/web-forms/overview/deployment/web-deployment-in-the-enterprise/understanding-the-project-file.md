@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file
 msc.type: authoredcontent
-ms.openlocfilehash: 8d0f9604529db9cf4ee5d333450a551e46e6ba4f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 09c3793e9cdddb7c42cf966f2d079245f441540c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-the-project-file"></a>了解项目文件
 ====================
@@ -38,7 +38,7 @@ ms.lasthandoff: 11/10/2017
 
 当你创建和生成 Visual Studio 中的解决方案时，Visual Studio 将使用 MSBuild 生成解决方案中的每个项目。 每个 Visual Studio 项目包括 MSBuild 项目文件，以反映的类型的项目 （&） #x 2014年文件扩展名; 例如，C# 项目 (.csproj)、 Visual Basic.NET 项目 (.vbproj) 或数据库项目 (.dbproj)。 若要生成项目时，MSBuild 必须处理与项目关联的项目文件。 项目文件是包含所有信息和说明 MSBuild 需要以便生成项目，如要包括平台要求、 版本控制信息、 web 服务器或数据库服务器设置的内容的 XML 文档和必须执行的任务。
 
-MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/en-us/library/5dy88c2e.aspx)，且因此生成过程已完全打开，透明。 此外，你无需安装 Visual Studio，以便使用 MSBuild 引擎和 #x 2014年; MSBuild.exe 可执行文件是.NET Framework 的一部分，你可以从命令提示符中运行它。 作为开发人员，您可以对你自己 MSBuild 项目文件中，使用 MSBuild XML 架构中，以便对设置高级且细化控制如何生成和部署你的项目。 这些自定义项目文件中的 Visual Studio 会自动生成的项目文件的方式完全相同的工作。
+MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/library/5dy88c2e.aspx)，且因此生成过程已完全打开，透明。 此外，你无需安装 Visual Studio，以便使用 MSBuild 引擎和 #x 2014年; MSBuild.exe 可执行文件是.NET Framework 的一部分，你可以从命令提示符中运行它。 作为开发人员，您可以对你自己 MSBuild 项目文件中，使用 MSBuild XML 架构中，以便对设置高级且细化控制如何生成和部署你的项目。 这些自定义项目文件中的 Visual Studio 会自动生成的项目文件的方式完全相同的工作。
 
 > [!NOTE]
 > 此外可以使用 Team Foundation Server (TFS) 中的团队生成服务使用 MSBuild 项目文件。 例如，可以使用持续集成 (CI) 方案中的项目文件以在签入新代码时自动部署到测试环境。 有关详细信息，请参阅[自动 Web 部署配置 Team Foundation Server](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md)。
@@ -62,7 +62,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/en-us/
 好消息是你可以充分利用 WPP 提供创建 web 项目的自定义项目文件时的集成点。 你可以在项目文件中，可用于生成项目，创建 web 部署包，并通过单个项目文件和 MSBuild 的单次调用在远程服务器上安装这些程序包包括部署说明。 你还可以作为生成过程的一部分调用任何其他可执行文件。 例如，你可以运行 VSDBCMD.exe 命令行工具来部署架构文件中的数据库。 在本主题的过程中，你将看到，你可以如何充分利用这些功能，以满足你的企业部署方案的要求。
 
 > [!NOTE]
-> Web 应用程序部署过程的工作原理的详细信息，请参阅[ASP.NET Web 应用程序项目部署概述](https://msdn.microsoft.com/en-us/library/dd394698.aspx)。
+> Web 应用程序部署过程的工作原理的详细信息，请参阅[ASP.NET Web 应用程序项目部署概述](https://msdn.microsoft.com/library/dd394698.aspx)。
 
 
 ## <a name="the-anatomy-of-a-project-file"></a>项目文件的剖析
@@ -79,7 +79,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/en-us/
 
 ### <a name="the-project-element"></a>Project 元素
 
-[项目](https://msdn.microsoft.com/en-us/library/bcxfsh87.aspx)元素是每个项目文件的根元素。 除了标识项目文件中，XML 架构**项目**元素可以包含特性来指定生成过程的入口点。 例如，在[联系人管理器示例解决方案](the-contact-manager-solution.md)、 *Publish.proj*文件指定生成应由调用名为的目标启动**FullPublish**。
+[项目](https://msdn.microsoft.com/library/bcxfsh87.aspx)元素是每个项目文件的根元素。 除了标识项目文件中，XML 架构**项目**元素可以包含特性来指定生成过程的入口点。 例如，在[联系人管理器示例解决方案](the-contact-manager-solution.md)、 *Publish.proj*文件指定生成应由调用名为的目标启动**FullPublish**。
 
 
 [!code-xml[Main](understanding-the-project-file/samples/sample1.xml)]
@@ -87,13 +87,13 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/en-us/
 
 ### <a name="properties-and-conditions"></a>属性和条件
 
-项目文件通常需要提供大量不同的为了成功地生成和部署你的项目的信息片段。 这部分信息可能包括服务器名称、 连接字符串、 凭据、 生成配置、 源和目标文件路径和你想要包括以支持自定义的任何其他信息。 在项目文件中，属性必须定义内[PropertyGroup](https://msdn.microsoft.com/en-us/library/t4w159bs.aspx)元素。 MSBuild 属性包含的键 / 值对。 在**PropertyGroup**元素中，元素名称定义项的属性和元素的内容定义的属性值。 例如，你可以定义属性名为**ServerName**和**ConnectionString**来存储静态服务器名称和连接字符串。
+项目文件通常需要提供大量不同的为了成功地生成和部署你的项目的信息片段。 这部分信息可能包括服务器名称、 连接字符串、 凭据、 生成配置、 源和目标文件路径和你想要包括以支持自定义的任何其他信息。 在项目文件中，属性必须定义内[PropertyGroup](https://msdn.microsoft.com/library/t4w159bs.aspx)元素。 MSBuild 属性包含的键 / 值对。 在**PropertyGroup**元素中，元素名称定义项的属性和元素的内容定义的属性值。 例如，你可以定义属性名为**ServerName**和**ConnectionString**来存储静态服务器名称和连接字符串。
 
 
 [!code-xml[Main](understanding-the-project-file/samples/sample2.xml)]
 
 
-若要检索的属性值，你可以使用格式**$(***PropertyName***)***。*例如，若要检索的值**ServerName**属性，你需要键入：
+若要检索的属性值，你可以使用格式 **$(***PropertyName***) * * *。*例如，若要检索的值**ServerName**属性，你需要键入：
 
 
 [!code-powershell[Main](understanding-the-project-file/samples/sample3.ps1)]
@@ -110,10 +110,10 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/en-us/
 
 
 > [!NOTE]
-> 有关参数和可以使用 MSBuild.exe 的开关的详细信息，请参阅[MSBuild 命令行参考](https://msdn.microsoft.com/en-us/library/ms164311.aspx)。
+> 有关参数和可以使用 MSBuild.exe 的开关的详细信息，请参阅[MSBuild 命令行参考](https://msdn.microsoft.com/library/ms164311.aspx)。
 
 
-可以使用相同的属性语法以获取环境变量和内置的项目属性的值。 很多常用的属性由定义，并且它们通过将相关参数名称包含使用项目文件。 例如，若要检索的当前项目平台 （&） #x 2014; 例如， **x86**或**AnyCpu**& #x 2014; 可以包括**$(Platform)**中的属性引用你的项目文件。 有关详细信息，请参阅[用于生成命令和属性的宏](https://msdn.microsoft.com/en-us/library/c02as0cs.aspx)，[常用 MSBuild 项目属性](https://msdn.microsoft.com/en-us/library/bb629394.aspx)，和[保留属性](https://msdn.microsoft.com/en-us/library/ms164309.aspx)。
+可以使用相同的属性语法以获取环境变量和内置的项目属性的值。 很多常用的属性由定义，并且它们通过将相关参数名称包含使用项目文件。 例如，若要检索的当前项目平台 （&） #x 2014; 例如， **x86**或**AnyCpu**& #x 2014; 可以包括**$(Platform)**中的属性引用你的项目文件。 有关详细信息，请参阅[用于生成命令和属性的宏](https://msdn.microsoft.com/library/c02as0cs.aspx)，[常用 MSBuild 项目属性](https://msdn.microsoft.com/library/bb629394.aspx)，和[保留属性](https://msdn.microsoft.com/library/ms164309.aspx)。
 
 属性通常用于中结合*条件*。 大多数 MSBuild 元素支持**条件**属性，这样就可以指定在其 MSBuild 应该评估元素的条件。 例如，考虑此属性定义：
 
@@ -123,11 +123,11 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/en-us/
 
 当 MSBuild 处理此属性定义时，它首先会检查以查看是否**$(OutputRoot)**属性值为可用。 如果属性值为空 （&） #x 2014; 换而言之，用户未为其提供值的此属性 （&） #x 2014年; 条件计算结果为**true**和属性值设置为**...\Publish\Out**。如果用户已为此属性提供一个值，条件计算结果为**false**和不使用静态属性值。
 
-可以在其中指定条件的不同方法的详细信息，请参阅[MSBuild 条件](https://msdn.microsoft.com/en-us/library/7szfhaft.aspx)。
+可以在其中指定条件的不同方法的详细信息，请参阅[MSBuild 条件](https://msdn.microsoft.com/library/7szfhaft.aspx)。
 
 ### <a name="items-and-item-groups"></a>项目和项组
 
-项目文件的重要的角色之一是定义生成过程的输入。 通常，这些输入是文件和 #x 2014年; 代码文件、 配置文件、 命令文件和你需要处理或将复制为任何其他文件的一部分的生成过程。 在 MSBuild 项目架构中，这些输入由表示[项](https://msdn.microsoft.com/en-us/library/ms164283.aspx)元素。 在项目文件中，项必须定义内[ItemGroup](https://msdn.microsoft.com/en-us/library/646dk05y.aspx)元素。 就像**属性**元素，您可以命名**项**元素你的喜好。 但是，你必须指定**包括**属性用于标识的文件或项表示的通配符。
+项目文件的重要的角色之一是定义生成过程的输入。 通常，这些输入是文件和 #x 2014年; 代码文件、 配置文件、 命令文件和你需要处理或将复制为任何其他文件的一部分的生成过程。 在 MSBuild 项目架构中，这些输入由表示[项](https://msdn.microsoft.com/library/ms164283.aspx)元素。 在项目文件中，项必须定义内[ItemGroup](https://msdn.microsoft.com/library/646dk05y.aspx)元素。 就像**属性**元素，您可以命名**项**元素你的喜好。 但是，你必须指定**包括**属性用于标识的文件或项表示的通配符。
 
 
 [!code-xml[Main](understanding-the-project-file/samples/sample6.xml)]
@@ -141,21 +141,21 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/en-us/
 
 项目文件这种方式，指示 MSBuild 构造的需要处理在相同的方式和 #x 2014; 中的文件列表**引用**列表包括程序集必须到位成功生成、 **编译**列表包括必须进行编译的代码文件和**内容**列表包括必须复制不变的资源。 我们将了解如何生成过程引用和使用本主题中后面的这些项。
 
-此外可以包含项元素[ItemMetadata](https://msdn.microsoft.com/en-us/library/ms164284.aspx)子元素。 这些是用户定义的键 / 值对，并且实质上是表示特定于该项目的属性。 例如，大量的**编译**项目文件中的项元素包括**DependentUpon**子元素。
+此外可以包含项元素[ItemMetadata](https://msdn.microsoft.com/library/ms164284.aspx)子元素。 这些是用户定义的键 / 值对，并且实质上是表示特定于该项目的属性。 例如，大量的**编译**项目文件中的项元素包括**DependentUpon**子元素。
 
 
 [!code-xml[Main](understanding-the-project-file/samples/sample8.xml)]
 
 
 > [!NOTE]
-> 除了用户创建的项目元数据，所有项都分配上创建的各种公共元数据。 有关详细信息，请参阅[常见项元数据](https://msdn.microsoft.com/en-us/library/ms164313.aspx)。
+> 除了用户创建的项目元数据，所有项都分配上创建的各种公共元数据。 有关详细信息，请参阅[常见项元数据](https://msdn.microsoft.com/library/ms164313.aspx)。
 
 
 你可以创建**ItemGroup**根级别中的元素**项目**元素或在特定**目标**元素。 **ItemGroup**元素还支持**条件**特性，这样就可以定制根据条件类似的项目配置或平台生成过程的输入。
 
 ### <a name="targets-and-tasks"></a>目标和任务
 
-在 MSBuild 架构中，[任务](https://msdn.microsoft.com/en-us/library/77f2hx1s.aspx)元素表示程序各个生成指令 （或任务）。 MSBuild 包括许多预定义的任务。 例如: 
+在 MSBuild 架构中，[任务](https://msdn.microsoft.com/library/77f2hx1s.aspx)元素表示程序各个生成指令 （或任务）。 MSBuild 包括许多预定义的任务。 例如:
 
 - **复制**任务将文件复制到新位置。
 - **Csc**任务时，将调用 Visual C# 编译器。
@@ -164,10 +164,10 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/en-us/
 - **消息**任务会将消息写入一个记录器。
 
 > [!NOTE]
-> 有关完整的现成可用的任务的详细信息，请参阅[MSBuild 任务参考](https://msdn.microsoft.com/en-us/library/7z253716.aspx)。 有关详细信息的任务，包括如何创建你自己的自定义任务，请参阅[MSBuild 任务](https://msdn.microsoft.com/en-us/library/ms171466.aspx)。
+> 有关完整的现成可用的任务的详细信息，请参阅[MSBuild 任务参考](https://msdn.microsoft.com/library/7z253716.aspx)。 有关详细信息的任务，包括如何创建你自己的自定义任务，请参阅[MSBuild 任务](https://msdn.microsoft.com/library/ms171466.aspx)。
 
 
-任务必须始终包含在[目标](https://msdn.microsoft.com/en-us/library/t50z2hka.aspx)元素。 A**目标**元素是一组按顺序执行的一个或多个任务和项目文件可以包含多个目标。 当你想要运行任务或一组任务时，请调用包含它们的目标。 例如，假设有记录一条消息的简单项目文件。
+任务必须始终包含在[目标](https://msdn.microsoft.com/library/t50z2hka.aspx)元素。 A**目标**元素是一组按顺序执行的一个或多个任务和项目文件可以包含多个目标。 当你想要运行任务或一组任务时，请调用包含它们的目标。 例如，假设有记录一条消息的简单项目文件。
 
 
 [!code-xml[Main](understanding-the-project-file/samples/sample9.xml)]
@@ -195,7 +195,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/en-us/
 
 通常情况下，当你创建有用的任务和目标，你将需要引用的属性和已在项目文件中其他位置定义的项：
 
-- 若要使用的属性值，键入**$(***PropertyName***)**，其中*PropertyName*是的名称**属性**元素或参数的名称。
+- 若要使用的属性值，键入**$(***PropertyName***)**，其中*PropertyName*是的名称**属性**元素或的名称参数。
 - 若要使用的项，请键入**@(***ItemName***)**，其中*ItemName*是的名称**项**元素。
 
 > [!NOTE]
@@ -211,7 +211,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/en-us/
 在此示例中，你可以观察这些要点：
 
 - 如果**BuildingInTeamBuild**指定参数，并且的值为**true**，将执行任何中此目标的任务。
-- 目标包含的单个实例[MSBuild](https://msdn.microsoft.com/en-us/library/z7f65y0d.aspx)任务。 此任务，可以生成其他 MSBuild 项目。
+- 目标包含的单个实例[MSBuild](https://msdn.microsoft.com/library/z7f65y0d.aspx)任务。 此任务，可以生成其他 MSBuild 项目。
 - **ProjectsToBuild**传递给任务的项。 此项可表示的项目或解决方案文件，所有定义的列表**ProjectsToBuild**项项组中的元素。 在这种情况下， **ProjectsToBuild**项引用的单个解决方案文件。
 
     [!code-xml[Main](understanding-the-project-file/samples/sample14.xml)]
@@ -222,7 +222,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/en-us/
 你还可以看到， **MSBuild**任务时，将调用名为的目标**生成**。 这是一个广泛应用于 Visual Studio 项目文件，并可供你在自定义项目文件，如的几个内置目标**生成**，**清理**，**重新生成**，和**发布**。 你将了解有关使用目标和任务控制生成过程中，以及有关**MSBuild**任务具体而言，本主题中后面。
 
 > [!NOTE]
-> 在目标上的详细信息，请参阅[MSBuild 目标](https://msdn.microsoft.com/en-us/library/ms171462.aspx)。
+> 在目标上的详细信息，请参阅[MSBuild 目标](https://msdn.microsoft.com/library/ms171462.aspx)。
 
 
 ## <a name="splitting-project-files-to-support-multiple-environments"></a>拆分项目文件，以支持多个环境
@@ -234,7 +234,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/en-us/
 - *Publish.proj*，其中包含属性，项目，和所共有的所有环境的目标。
 - *Env Dev.proj*，其中包含特定于开发人员环境的属性。
 
-现在请注意， *Publish.proj*文件包括[导入](https://msdn.microsoft.com/en-us/library/92x05xfs.aspx)元素，紧跟在打开下方的**项目**标记。
+现在请注意， *Publish.proj*文件包括[导入](https://msdn.microsoft.com/library/92x05xfs.aspx)元素，紧跟在打开下方的**项目**标记。
 
 
 [!code-xml[Main](understanding-the-project-file/samples/sample16.xml)]

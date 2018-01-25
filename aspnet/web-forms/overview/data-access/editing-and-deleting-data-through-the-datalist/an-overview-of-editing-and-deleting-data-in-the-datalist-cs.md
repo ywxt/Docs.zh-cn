@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1c7a1c7a9839f2f56658618958c234e0064cb427
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8b3067c5a6bcf81a35f66d43886c9b116a0ef7d8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-c"></a>编辑和删除 DataList (C#) 中的数据的概述
 ====================
@@ -86,11 +86,11 @@ ms.lasthandoff: 11/10/2017
 
 遗憾的是，DataList 不提供任何此内置的功能。 我们有责任以确保用户 s 将值赋给 ObjectDataSource 的参数且其`Update()`调用方法。 为了帮助我们在此任务，DataList 提供的以下属性和事件：
 
-- **[ `DataKeyField`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.basedatalist.datakeyfield.aspx)**当更新或删除时，我们需要能够唯一识别 DataList 中的每一项。 将此属性设置为显示的数据的主键字段。 这样将填充 DataList s [ `DataKeys`集合](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.basedatalist.datakeys.aspx)具有指定`DataKeyField`DataList 的每个项的值。
-- **[ `EditCommand`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.editcommand.aspx)**按钮、 LinkButton 或 ImageButton 时激发其`CommandName`属性设置为单击编辑。
-- **[ `CancelCommand`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.cancelcommand.aspx)**按钮、 LinkButton 或 ImageButton 时激发其`CommandName`属性设置为单击取消。
-- **[ `UpdateCommand`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.updatecommand.aspx)**按钮、 LinkButton 或 ImageButton 时激发其`CommandName`属性设置为在单击更新。
-- **[ `DeleteCommand`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.deletecommand.aspx)**按钮、 LinkButton 或 ImageButton 时激发其`CommandName`属性设置为单击删除。
+- **[ `DataKeyField`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basedatalist.datakeyfield.aspx)**当更新或删除时，我们需要能够唯一识别 DataList 中的每一项。 将此属性设置为显示的数据的主键字段。 这样将填充 DataList s [ `DataKeys`集合](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basedatalist.datakeys.aspx)具有指定`DataKeyField`DataList 的每个项的值。
+- **[ `EditCommand`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.editcommand.aspx)**按钮、 LinkButton 或 ImageButton 时激发其`CommandName`属性设置为单击编辑。
+- **[ `CancelCommand`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.cancelcommand.aspx)**按钮、 LinkButton 或 ImageButton 时激发其`CommandName`属性设置为单击取消。
+- **[ `UpdateCommand`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.updatecommand.aspx)**按钮、 LinkButton 或 ImageButton 时激发其`CommandName`属性设置为在单击更新。
+- **[ `DeleteCommand`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.deletecommand.aspx)**按钮、 LinkButton 或 ImageButton 时激发其`CommandName`属性设置为单击删除。
 
 使用这些属性和事件，有四种方法可以用于更新和删除数据从 DataList:
 
@@ -153,7 +153,7 @@ DataList，如 GridView，不适用于插入新数据;因此，选择插入选�
 >  敏锐读取器可能还记得我们能够在创建可编辑 GridViews、 DetailsViews 和 FormViews 时禁用视图状态。 这是因为 ASP.NET 2.0 Web 控件可以包含*控制状态*，后者在类似于视图状态，但被视为基本的回发保持状态。
 
 
-正在禁用视图中 GridView 状态只是未包含普通的状态信息，但维护 （其中包括用于编辑和删除所需的状态） 的控件状态。 DataList，具有在 ASP.NET 1.x 的时间范围内，已创建不使用控件状态，因此必须具有启用视图状态。 请参阅[控件状态 vs。视图状态](https://msdn.microsoft.com/en-us/library/1whwt1k7.aspx)有关详细信息的控件状态和与视图状态的不同目的。
+正在禁用视图中 GridView 状态只是未包含普通的状态信息，但维护 （其中包括用于编辑和删除所需的状态） 的控件状态。 DataList，具有在 ASP.NET 1.x 的时间范围内，已创建不使用控件状态，因此必须具有启用视图状态。 请参阅[控件状态 vs。视图状态](https://msdn.microsoft.com/library/1whwt1k7.aspx)有关详细信息的控件状态和与视图状态的不同目的。
 
 ## <a name="step-4-adding-an-editing-user-interface"></a>步骤 4： 添加用于编辑的用户界面
 
@@ -225,7 +225,7 @@ DataList，另一方面，呈现其使用模板的项。 只读项呈现使用`I
 
 单击按钮会导致回发，但不*不*使产品列表置于编辑模式。 若要使产品可编辑，我们需要：
 
-1. 设置 DataList s [ `EditItemIndex`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.edititemindex.aspx)的索引`DataListItem`只需单击其编辑按钮。
+1. 设置 DataList s [ `EditItemIndex`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx)的索引`DataListItem`只需单击其编辑按钮。
 2. 重新绑定数据到 DataList。 DataList 时都会重新生成时`DataListItem`其`ItemIndex`对应 DataList s`EditItemIndex`将呈现使用其`EditItemTemplate`。
 
 由于 DataList s`EditCommand`单击编辑按钮时激发事件，创建`EditCommand`事件处理程序替换为以下代码：
@@ -249,7 +249,7 @@ DataList，另一方面，呈现其使用模板的项。 只读项呈现使用`I
 
 若要让 DataList 呈现其所有项中的只读模式，我们需要：
 
-1. 设置 DataList s [ `EditItemIndex`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.edititemindex.aspx)的不存在的索引`DataListItem`索引。 `-1`由于是安全的选择，`DataListItem`索引开始`0`。
+1. 设置 DataList s [ `EditItemIndex`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx)的不存在的索引`DataListItem`索引。 `-1`由于是安全的选择，`DataListItem`索引开始`0`。
 2. 重新绑定数据到 DataList。 由于否`DataListItem` `ItemIndex` es 对应于 DataList 的`EditItemIndex`，整个 DataList 将呈现在只读模式下。
 
 可以使用下面的事件处理程序代码完成这些步骤：
@@ -263,7 +263,7 @@ DataList，另一方面，呈现其使用模板的项。 只读项呈现使用`I
 
 1. 以编程方式访问的用户输入的产品名称和价格，以及编辑的产品的`ProductID`。
 2. 启动更新过程，通过调用适当`UpdateProduct`重载中`ProductsBLL`类。
-3. 设置 DataList s [ `EditItemIndex`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.edititemindex.aspx)的不存在的索引`DataListItem`索引。 `-1`由于是安全的选择，`DataListItem`索引开始`0`。
+3. 设置 DataList s [ `EditItemIndex`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx)的不存在的索引`DataListItem`索引。 `-1`由于是安全的选择，`DataListItem`索引开始`0`。
 4. 重新绑定数据到 DataList。 由于否`DataListItem` `ItemIndex` es 对应于 DataList 的`EditItemIndex`，整个 DataList 将呈现在只读模式下。
 
 步骤 1 和 2 负责保存 s 更改; 的用户步骤 3 和 4 DataList 后返回到其预编辑状态更改已保存，并且在中执行的步骤相同`CancelCommand`事件处理程序。

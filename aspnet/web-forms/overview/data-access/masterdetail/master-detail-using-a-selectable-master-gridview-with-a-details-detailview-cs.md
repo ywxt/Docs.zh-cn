@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: badf9da0e9a26d185e7532b02f53a8acea60ea91
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5f0d380ee411116844f42a542c12050513721eb1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-c"></a>主/从可选择的主 GridView 使用详细信息 DetailView (C#)
 ====================
@@ -39,7 +39,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-1-creating-a-selectable-gridview"></a>步骤 1： 创建一个可选择的 GridView
 
-回想一下，在两页主/详细信息报告每个主记录包含超链接，单击时，用户就会发送到传递已单击的行的详细信息页`SupplierID`中查询字符串值。 这样的超链接已添加到使用 HyperLinkField 每 GridView 一行。 为了使单页主/详细信息报表，我们将需要一个按钮对每个 GridView 行，单击时，显示的详细信息。 GridView 控件可以配置为包括有关导致回发，并将该行标记为 GridView 的每个行的选择按钮[SelectedRow](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedrow.aspx)。
+回想一下，在两页主/详细信息报告每个主记录包含超链接，单击时，用户就会发送到传递已单击的行的详细信息页`SupplierID`中查询字符串值。 这样的超链接已添加到使用 HyperLinkField 每 GridView 一行。 为了使单页主/详细信息报表，我们将需要一个按钮对每个 GridView 行，单击时，显示的详细信息。 GridView 控件可以配置为包括有关导致回发，并将该行标记为 GridView 的每个行的选择按钮[SelectedRow](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedrow.aspx)。
 
 首先，通过添加到的 GridView 控件`DetailsBySelecting.aspx`页面`Filtering`文件夹中，设置其`ID`属性`ProductsGrid`。 接下来，添加名为新 ObjectDataSource `AllProductsDataSource` ，它调用`ProductsBLL`类的`GetProducts()`方法。
 
@@ -85,7 +85,7 @@ Gridview 最终的标记是：
 
 [!code-aspx[Main](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/samples/sample2.aspx)]
 
-单击 GridView 行的选择按钮的回发时，才会和 GridView`SelectedRow`更新属性。 除了`SelectedRow`属性，GridView 提供[SelectedIndex](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedindex%28VS.80%29.aspx)， [SelectedValue](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedvalue%28VS.80%29.aspx)，和[SelectedDataKey](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selecteddatakey%28VS.80%29.aspx)属性。 `SelectedIndex`属性返回所选行的索引，而`SelectedValue`和`SelectedDataKey`属性返回值基于 GridView[将字段名](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.datakeynames%28VS.80%29.aspx)。
+单击 GridView 行的选择按钮的回发时，才会和 GridView`SelectedRow`更新属性。 除了`SelectedRow`属性，GridView 提供[SelectedIndex](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedindex%28VS.80%29.aspx)， [SelectedValue](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedvalue%28VS.80%29.aspx)，和[SelectedDataKey](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selecteddatakey%28VS.80%29.aspx)属性。 `SelectedIndex`属性返回所选行的索引，而`SelectedValue`和`SelectedDataKey`属性返回值基于 GridView[将字段名](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.datakeynames%28VS.80%29.aspx)。
 
 `DataKeyNames`属性用于关联一个或多个数据字段值的每一行，并通常用于属性从基础数据与每个 GridView 行的唯一标识信息。 `SelectedValue`属性返回的第一个值`DataKeyNames`所选行的数据字段作为 where`SelectedDataKey`属性返回的所选的行`DataKey`对象，其中包含所有指定的数据的键字段的值该行。
 

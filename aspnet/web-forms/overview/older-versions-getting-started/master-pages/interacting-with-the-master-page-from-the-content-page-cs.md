@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 054c67ec7d7eec38d46933417930161a0edd5a60
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 977cdea38d240bcae284968de7d780ec59ab6dfd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="interacting-with-the-master-page-from-the-content-page-c"></a>与从内容页 (C#) 母版页交互
 ====================
@@ -192,9 +192,9 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="using-the-loosely-typedpagemasterproperty"></a>使用松散类型`Page.Master`属性
 
-所有的 ASP.NET web pages 必须派生自`Page`类，该类位于`System.Web.UI`命名空间。 `Page`类包括[`Master`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.page.master.aspx)返回到该页面的主控页的引用。 如果页面没有母版页`Master`返回`null`。
+所有的 ASP.NET web pages 必须派生自`Page`类，该类位于`System.Web.UI`命名空间。 `Page`类包括[`Master`属性](https://msdn.microsoft.com/library/system.web.ui.page.master.aspx)返回到该页面的主控页的引用。 如果页面没有母版页`Master`返回`null`。
 
-`Master`属性返回类型的对象[ `MasterPage` ](https://msdn.microsoft.com/en-us/library/system.web.ui.masterpage.aspx) (也位于`System.Web.UI`命名空间) 是从其所有母版页都派生自基类型。 因此，若要使用的公共属性或方法定义中我们网站的母版页我们必须强制转换`MasterPage`从返回的对象`Master`为适当的类型的属性。 因为我们命名为我们的主控页文件`Site.master`，代码隐藏类名为`Site`。 因此，下面的代码的强制转换`Page.Master`指向站点类的实例的属性。
+`Master`属性返回类型的对象[ `MasterPage` ](https://msdn.microsoft.com/library/system.web.ui.masterpage.aspx) (也位于`System.Web.UI`命名空间) 是从其所有母版页都派生自基类型。 因此，若要使用的公共属性或方法定义中我们网站的母版页我们必须强制转换`MasterPage`从返回的对象`Master`为适当的类型的属性。 因为我们命名为我们的主控页文件`Site.master`，代码隐藏类名为`Site`。 因此，下面的代码的强制转换`Page.Master`指向站点类的实例的属性。
 
 
 [!code-csharp[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample8.cs)]
@@ -217,7 +217,7 @@ ms.lasthandoff: 11/10/2017
 
 只要访问 ASP.NET 页就会发生自动代码生成为某些而有趣且有用的可能性铺平。 对于主页面，如果我们将告诉我们内容页正在使用哪些母版页 ASP.NET 引擎就会生成一个强类型`Master`为我们的属性。
 
-使用[`@MasterType`指令](https://msdn.microsoft.com/en-us/library/ms228274.aspx)以通知内容页面的母版页类型 ASP.NET 引擎。 `@MasterType`指令可以接受主控页的类型名称，或者其文件路径。 若要指定`AddProduct.aspx`页上使用`Site.master`作为其主页上，添加以下指令到顶部`AddProduct.aspx`:
+使用[`@MasterType`指令](https://msdn.microsoft.com/library/ms228274.aspx)以通知内容页面的母版页类型 ASP.NET 引擎。 `@MasterType`指令可以接受主控页的类型名称，或者其文件路径。 若要指定`AddProduct.aspx`页上使用`Site.master`作为其主页上，添加以下指令到顶部`AddProduct.aspx`:
 
 
 [!code-aspx[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample9.aspx)]

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f7ab0df2ebfa24b0928117e683325b158e3aad1c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cfd0cdb0afe3bf71686715c0b1891adfbbd5019a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-c"></a>DataList 或转发器控件 (C#) 中对数据进行排序
 ====================
@@ -81,7 +81,7 @@ GridView 控件具有`SortExpression`属性，它存储`SortExpression`的 GridV
 
 ## <a name="step-3-instructing-the-objectdatasource-to-sort-the-data"></a>步骤 3： 指示 ObjectDataSource 对数据进行排序
 
-若要排序的转发器中显示的数据，我们需要告知对数据进行排序所依据的排序表达式的对象数据源。 对象数据源中检索其数据之前，首先激发其[`Selecting`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.selecting.aspx)，这使我们需要指定排序表达式有机会。 `Selecting`事件处理程序传递的类型对象[ `ObjectDataSourceSelectingEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.aspx)，其中有一个名为[ `Arguments` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.arguments.aspx)类型的[ `DataSourceSelectArguments` ](https://msdn.microsoft.com/en-us/library/system.web.ui.datasourceselectarguments.aspx)。 `DataSourceSelectArguments`类旨在将与数据相关的请求的数据使用者从传递给数据源控件，并且包括[`SortExpression`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.datasourceselectarguments.sortexpression.aspx)。
+若要排序的转发器中显示的数据，我们需要告知对数据进行排序所依据的排序表达式的对象数据源。 对象数据源中检索其数据之前，首先激发其[`Selecting`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting.aspx)，这使我们需要指定排序表达式有机会。 `Selecting`事件处理程序传递的类型对象[ `ObjectDataSourceSelectingEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.aspx)，其中有一个名为[ `Arguments` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.arguments.aspx)类型的[ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx)。 `DataSourceSelectArguments`类旨在将与数据相关的请求的数据使用者从传递给数据源控件，并且包括[`SortExpression`属性](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.sortexpression.aspx)。
 
 若要将从 ASP.NET 页的排序信息传递给 ObjectDataSource，创建的事件处理程序`Selecting`事件并使用下面的代码：
 

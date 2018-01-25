@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: b80332487e52930f3a75973f714d2532068ed012
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d588ff6ed03178ac8dc6934162252c1749cc9124
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view-c"></a>检查编辑方法和编辑视图 (C#)
 ====================
@@ -47,7 +47,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample1.cshtml)]
 
-[![次 Html.ActionLink](examining-the-edit-methods-and-edit-view/_static/image4.png)](examining-the-edit-methods-and-edit-view/_static/image3.png)
+[![Html.ActionLink](examining-the-edit-methods-and-edit-view/_static/image4.png)](examining-the-edit-methods-and-edit-view/_static/image3.png)
 
 `Html`对象是使用上的属性公开一个帮助程序`WebViewPage`基类。 `ActionLink`的帮助器方法，可以轻松地动态生成 HTML 的超链接，链接到控制器上的操作方法。 第一个参数`ActionLink`方法是要呈现的链接文本 (例如， `<a>Edit Me</a>`)。 第二个参数是要调用的操作方法的名称。 最后一个参数是[匿名对象](https://weblogs.asp.net/scottgu/archive/2007/05/15/new-orcas-language-feature-anonymous-types.aspx)，用来生成路由数据 （在本例中为 4 的 ID）。
 
@@ -69,7 +69,7 @@ ms.lasthandoff: 11/10/2017
 
 请注意如何查看模板`@model MvcMovie.Models.Movie`语句文件的顶部 — 这指定视图需要查看模板类型的模型`Movie`。
 
-基架的代码使用了若干个*帮助器方法*来简化的 HTML 标记。 [ `Html.LabelFor` ](https://msdn.microsoft.com/en-us/library/gg401864(VS.98).aspx)帮助器显示的字段 （"标题"、"ReleaseDate"、"Genre"或"Price"） 的名称。 [ `Html.EditorFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx)帮助器将显示 HTML`<input>`元素。 [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx)帮助器显示与该属性相关联的任何验证消息。
+基架的代码使用了若干个*帮助器方法*来简化的 HTML 标记。 [ `Html.LabelFor` ](https://msdn.microsoft.com/library/gg401864(VS.98).aspx)帮助器显示的字段 （"标题"、"ReleaseDate"、"Genre"或"Price"） 的名称。 [ `Html.EditorFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx)帮助器将显示 HTML`<input>`元素。 [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx)帮助器显示与该属性相关联的任何验证消息。
 
 运行应用程序并导航到*/Movies* URL。 点击“编辑”链接。 在浏览器中查看页面的源。 在页中的 HTML 类似于下面的示例。 （菜单标记被排除为清楚起见。）
 
@@ -89,7 +89,7 @@ ASP.NET framework 模型联编程序接受已发布的窗体值并创建`Movie`�
 
 [![abcNotValid](examining-the-edit-methods-and-edit-view/_static/image8.png)](examining-the-edit-methods-and-edit-view/_static/image7.png)
 
-> **请注意关于区域设置**如果通常使用的非英语区域设置，请参阅[支持非英语区域设置使用 ASP.NET MVC 3 验证。](https://msdn.microsoft.com/en-us/library/gg674880(VS.98).aspx)
+> **请注意关于区域设置**如果通常使用的非英语区域设置，请参阅[支持非英语区域设置使用 ASP.NET MVC 3 验证。](https://msdn.microsoft.com/library/gg674880(VS.98).aspx)
 
 
 ## <a name="making-the-edit-method-more-robust"></a>进行的编辑方法更可靠
@@ -116,7 +116,7 @@ ASP.NET framework 模型联编程序接受已发布的窗体值并创建`Movie`�
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample7.cs)]
 
-第一行`SearchIndex`方法中创建以下[LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx)查询，以便选择电影：
+第一行`SearchIndex`方法中创建以下[LINQ](https://msdn.microsoft.com/library/bb397926.aspx)查询，以便选择电影：
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample8.cs)]
 
@@ -126,7 +126,7 @@ ASP.NET framework 模型联编程序接受已发布的窗体值并创建`Movie`�
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample9.cs)]
 
-在定义后或通过调用方法，如对其进行修改时，将不会执行 LINQ 查询`Where`或`OrderBy`。 相反，延迟查询执行，这意味着表达式的计算延迟，直到它已实现的值实际上循环访问或[ `ToList` ](https://msdn.microsoft.com/en-us/library/bb342261.aspx)调用方法。 在`SearchIndex`示例 SearchIndex 视图中执行查询。 有关延迟执行查询的详细信息，请参阅[Query Execution](https://msdn.microsoft.com/en-us/library/bb738633.aspx)（查询执行）。
+在定义后或通过调用方法，如对其进行修改时，将不会执行 LINQ 查询`Where`或`OrderBy`。 相反，延迟查询执行，这意味着表达式的计算延迟，直到它已实现的值实际上循环访问或[ `ToList` ](https://msdn.microsoft.com/library/bb342261.aspx)调用方法。 在`SearchIndex`示例 SearchIndex 视图中执行查询。 有关延迟执行查询的详细信息，请参阅[Query Execution](https://msdn.microsoft.com/library/bb738633.aspx)（查询执行）。
 
 现在你可以实现`SearchIndex`将向用户显示该窗体的视图。 右键单击内部`SearchIndex`方法，然后单击**添加视图**。 在**添加视图**对话框框中，指定你要将传递`Movie`到其模型类的视图模板的对象。 在**基架模板**列表中，选择**列表**，然后单击**添加**。
 
