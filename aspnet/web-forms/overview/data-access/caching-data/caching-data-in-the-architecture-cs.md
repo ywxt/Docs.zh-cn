@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 60bdab9dc8317c7f8753891b461da18f02993812
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b068b3020b5c454519950e436115a7efa044fb4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching-data-in-the-architecture-c"></a>缓存的体系结构 (C#) 中的数据
 ====================
@@ -62,7 +62,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample1.cs)]
 
-[ `Cache`类](https://msdn.microsoft.com/en-us/library/system.web.caching.cache.aspx)s [ `Insert`方法](https://msdn.microsoft.com/en-us/library/system.web.caching.cache.insert.aspx)具有大量重载。 `Cache["key"] = value`和`Cache.Insert(key, value)`是同义词并同时添加到缓存中使用指定的密钥，而无需定义到期的一个项。 通常情况下，我们想要时将项添加到缓存中，作为依赖关系和 / 或基于时间的过期时间指定到期时间。 使用的其他`Insert`方法的重载，可提供基于依赖项或时间的过期信息。
+[ `Cache`类](https://msdn.microsoft.com/library/system.web.caching.cache.aspx)s [ `Insert`方法](https://msdn.microsoft.com/library/system.web.caching.cache.insert.aspx)具有大量重载。 `Cache["key"] = value`和`Cache.Insert(key, value)`是同义词并同时添加到缓存中使用指定的密钥，而无需定义到期的一个项。 通常情况下，我们想要时将项添加到缓存中，作为依赖关系和 / 或基于时间的过期时间指定到期时间。 使用的其他`Insert`方法的重载，可提供基于依赖项或时间的过期信息。
 
 S 方法需要先检查所请求的数据是否在缓存中，如果是，缓存层会将其返回从该处中。 如果请求的数据不在缓存中，相应的 BLL 方法需要调用。 其返回值应缓存，则返回的值，如下面的序列图所示。
 
@@ -90,7 +90,7 @@ S 方法需要先检查所请求的数据是否在缓存中，如果是，缓存
 > 数据缓存是线程安全的因此您不需要访问进行同步线程对于简单的读 / 写。 但是，如果需要多个对数据执行操作需要以保证不可分割的缓存中，你负责实现锁或某种其他机制来确保线程安全。 请参阅[同步访问 ASP.NET 缓存](http://www.ddj.com/184406369)有关详细信息。
 
 
-项可以以编程方式从使用数据缓存逐出[`Remove`方法](https://msdn.microsoft.com/en-us/library/system.web.caching.cache.remove.aspx)如下所示：
+项可以以编程方式从使用数据缓存逐出[`Remove`方法](https://msdn.microsoft.com/library/system.web.caching.cache.remove.aspx)如下所示：
 
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample4.cs)]
@@ -115,10 +115,10 @@ S 方法需要先检查所请求的数据是否在缓存中，如果是，缓存
 
 `GetCacheItem(key)`不使用*密钥*值提供，而是调用`GetCacheKey(key)`方法，它返回*密钥*前面带有 ProductsCache-。 `MasterCacheKeyArray`，其中包含的字符串 ProductsCache，也可由`AddCacheItem(key, value)`方法，如我们所见短暂出现。
 
-从 ASP.NET 页的代码隐藏类，则数据可以访问缓存使用`Page`类 s [ `Cache`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.page.cache.aspx)，并允许进行这样的语法`Cache["key"] = value`，在步骤 2 中所述。 从体系结构中的类，则数据可以访问缓存使用`HttpRuntime.Cache`或`HttpContext.Current.Cache`。 [Peter Johnson](https://weblogs.asp.net/pjohnson/default.aspx)的博客文章[HttpRuntime.Cache vs。HttpContext.Current.Cache](https://weblogs.asp.net/pjohnson/httpruntime-cache-vs-httpcontext-current-cache)说明中使用的略微的性能优点`HttpRuntime`而不是`HttpContext.Current`; 因此，`ProductsCL`使用`HttpRuntime`。
+从 ASP.NET 页的代码隐藏类，则数据可以访问缓存使用`Page`类 s [ `Cache`属性](https://msdn.microsoft.com/library/system.web.ui.page.cache.aspx)，并允许进行这样的语法`Cache["key"] = value`，在步骤 2 中所述。 从体系结构中的类，则数据可以访问缓存使用`HttpRuntime.Cache`或`HttpContext.Current.Cache`。 [Peter Johnson](https://weblogs.asp.net/pjohnson/default.aspx)的博客文章[HttpRuntime.Cache vs。HttpContext.Current.Cache](https://weblogs.asp.net/pjohnson/httpruntime-cache-vs-httpcontext-current-cache)说明中使用的略微的性能优点`HttpRuntime`而不是`HttpContext.Current`; 因此，`ProductsCL`使用`HttpRuntime`。
 
 > [!NOTE]
-> 如果使用类库项目实现你的体系结构，则将需要添加对的引用`System.Web`若要使用的程序集[HttpRuntime](https://msdn.microsoft.com/en-us/library/system.web.httpruntime.aspx)和[HttpContext](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.aspx)类。
+> 如果使用类库项目实现你的体系结构，则将需要添加对的引用`System.Web`若要使用的程序集[HttpRuntime](https://msdn.microsoft.com/library/system.web.httpruntime.aspx)和[HttpContext](https://msdn.microsoft.com/library/system.web.httpcontext.aspx)类。
 
 
 如果在缓存中，未找到该项目`ProductsCL`类的方法从 BLL 获取数据并将其添加到缓存使用`AddCacheItem(key, value)`方法。 若要添加*值*到缓存中，我们可以使用下面的代码，使用 60 秒的时间到期：
@@ -126,7 +126,7 @@ S 方法需要先检查所请求的数据是否在缓存中，如果是，缓存
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample7.cs)]
 
-`DateTime.Now.AddSeconds(CacheDuration)`在将来的段中指定的基于时间的到期时间 60 秒[ `System.Web.Caching.Cache.NoSlidingExpiration` ](https://msdn.microsoft.com/en-us/library/system.web.caching.cache.noslidingexpiration(vs.80).aspx)指示没有 s 不会滑动过期。 虽然这`Insert`方法重载具有输入参数的这两个绝对，滑动到期，你可以仅提供两种状态之一。 如果你尝试指定一个绝对时间和时间跨度，`Insert`方法会引发`ArgumentException`异常。
+`DateTime.Now.AddSeconds(CacheDuration)`在将来的段中指定的基于时间的到期时间 60 秒[ `System.Web.Caching.Cache.NoSlidingExpiration` ](https://msdn.microsoft.com/library/system.web.caching.cache.noslidingexpiration(vs.80).aspx)指示没有 s 不会滑动过期。 虽然这`Insert`方法重载具有输入参数的这两个绝对，滑动到期，你可以仅提供两种状态之一。 如果你尝试指定一个绝对时间和时间跨度，`Insert`方法会引发`ArgumentException`异常。
 
 > [!NOTE]
 > 此实现的`AddCacheItem(key, value)`方法当前存在一些不足。 我们解决，克服在步骤 4 中的这些问题。
@@ -150,7 +150,7 @@ S 方法需要先检查所请求的数据是否在缓存中，如果是，缓存
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample9.cs)]
 
-`MasterCacheKeyArray`是一个字符串数组，包含单个值，ProductsCache。 首先，缓存项添加到缓存中并分配的当前日期和时间。 如果缓存项已存在，则它更新内容。 接下来，创建缓存依赖项。 [ `CacheDependency`类](https://msdn.microsoft.com/en-US/library/system.web.caching.cachedependency(VS.80).aspx)s 构造函数具有大量的重载，但在此处中正在使用需要两个`string`数组输入。 第一个指定要用作依赖项的文件集。 由于我们不希望使用任何基于文件的依赖关系，值为 t`null`用于第一个输入参数。 第二个输入的参数指定缓存密钥要用作依赖项的集。 在这里，我们指定我们依赖项， `MasterCacheKeyArray`。 `CacheDependency`然后传递到`Insert`方法。
+`MasterCacheKeyArray`是一个字符串数组，包含单个值，ProductsCache。 首先，缓存项添加到缓存中并分配的当前日期和时间。 如果缓存项已存在，则它更新内容。 接下来，创建缓存依赖项。 [ `CacheDependency`类](https://msdn.microsoft.com/library/system.web.caching.cachedependency(VS.80).aspx)s 构造函数具有大量的重载，但在此处中正在使用需要两个`string`数组输入。 第一个指定要用作依赖项的文件集。 由于我们不希望使用任何基于文件的依赖关系，值为 t`null`用于第一个输入参数。 第二个输入的参数指定缓存密钥要用作依赖项的集。 在这里，我们指定我们依赖项， `MasterCacheKeyArray`。 `CacheDependency`然后传递到`Insert`方法。
 
 在此修改`AddCacheItem(key, value)`、 invaliding 缓存非常简单，只删除的依赖关系。
 
