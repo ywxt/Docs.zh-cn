@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: 470b8a5f4a004c85f603c9c5d0766e5826c96e38
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c98e79bf8e9a1fe0899ed6d952c3e411ca472f7e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>附录： 修复它示例应用程序 （构建真实世界云应用与 Azure）
 ====================
@@ -62,10 +62,10 @@ ms.lasthandoff: 11/10/2017
 
 在修复该应用程序中处理的队列消息的设计目标是简单，以便将阐释最少量的代码使用以队列为中心的工作模式。 此简单的代码并不是适合于实际生产应用程序。
 
-- 将最多一次处理每个队列消息时，代码不能保证。 当你从队列接收消息时，没有超时期限，在此期间消息已对其他队列侦听器不可见。 如果在超时到期之前删除该消息，消息将再次可见。 因此，如果辅助角色实例花费很长时间处理消息，它是理论上可以对同一条消息得到处理两次，从而在数据库中的重复任务。 有关此问题的详细信息，请参阅[使用 Azure 存储队列](https://msdn.microsoft.com/en-us/library/ff803365.aspx#sec7)。
-- 队列轮询逻辑可能是更具成本效益，批处理中的消息检索。 每次调用时[CloudQueue.GetMessageAsync](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessageasync.aspx)，没有事务成本。 相反，您可以调用[CloudQueue.GetMessagesAsync](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessagesasync.aspx) (请注意复数形式的)，后者将在单个事务中获取多个消息。 Azure 存储队列事务成本是非常低，因此对成本的影响并不在大多数情况下大量。
+- 将最多一次处理每个队列消息时，代码不能保证。 当你从队列接收消息时，没有超时期限，在此期间消息已对其他队列侦听器不可见。 如果在超时到期之前删除该消息，消息将再次可见。 因此，如果辅助角色实例花费很长时间处理消息，它是理论上可以对同一条消息得到处理两次，从而在数据库中的重复任务。 有关此问题的详细信息，请参阅[使用 Azure 存储队列](https://msdn.microsoft.com/library/ff803365.aspx#sec7)。
+- 队列轮询逻辑可能是更具成本效益，批处理中的消息检索。 每次调用时[CloudQueue.GetMessageAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessageasync.aspx)，没有事务成本。 相反，您可以调用[CloudQueue.GetMessagesAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessagesasync.aspx) (请注意复数形式的)，后者将在单个事务中获取多个消息。 Azure 存储队列事务成本是非常低，因此对成本的影响并不在大多数情况下大量。
 - 队列消息处理代码中的紧凑循环会导致不有效地利用多核虚拟机的 CPU 关联。 更好地设计将使用任务并行度来并行运行多个异步任务。
-- 队列消息处理具有仅基本异常处理。 例如，代码不会处理[病毒消息](https://msdn.microsoft.com/en-us/library/ms789028.aspx)。 （消息处理会导致异常，你必须记录错误并删除消息，或辅助角色将尝试再次对其进行处理和则循环将继续无限期。）
+- 队列消息处理具有仅基本异常处理。 例如，代码不会处理[病毒消息](https://msdn.microsoft.com/library/ms789028.aspx)。 （消息处理会导致异常，你必须记录错误并删除消息，或辅助角色将尝试再次对其进行处理和则循环将继续无限期。）
 
 ### <a name="sql-queries-are-unbounded"></a>SQL 查询是不受限制
 
@@ -85,7 +85,7 @@ PowerShell automation 示例脚本仅为 Fix It 完全在 Azure App Service Web 
 
 ### <a name="special-handling-for-html-codes-in-user-input"></a>对用户输入中的 HTML 代码的特殊处理
 
-ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输入脚本跨站点脚本攻击尝试在其中的许多方面。 和 MVC`DisplayFor`用来显示任务的帮助器标题和说明会自动进行 HTML 编码的值，它将发送到浏览器。 但在生产应用程序中，可能想要利用其他度量值。 有关详细信息，请参阅[在 ASP.NET 请求验证](https://msdn.microsoft.com/en-us/library/hh882339.aspx)。
+ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输入脚本跨站点脚本攻击尝试在其中的许多方面。 和 MVC`DisplayFor`用来显示任务的帮助器标题和说明会自动进行 HTML 编码的值，它将发送到浏览器。 但在生产应用程序中，可能想要利用其他度量值。 有关详细信息，请参阅[在 ASP.NET 请求验证](https://msdn.microsoft.com/library/hh882339.aspx)。
 
 <a id="bestpractices"></a>
 ## <a name="best-practices"></a>最佳实践
@@ -100,7 +100,7 @@ ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输
 
 请注意，将自动释放 AutoFac`FixItTaskRepository`实例，因此我们无需显式释放它。
 
-另一个选项是删除`DbContext`成员变量从`FixItTaskRepository`，并改为创建一个本地`DbContext`变量在每个存储库方法中，内部`using`语句。 例如: 
+另一个选项是删除`DbContext`成员变量从`FixItTaskRepository`，并改为创建一个本地`DbContext`变量在每个存储库方法中，内部`using`语句。 例如:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample2.cs)]
 
@@ -146,13 +146,13 @@ ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输
 
 ### <a name="mark-private-members-as-readonly-when-they-arent-expected-to-change"></a>将私有成员标记为 readonly，它们不希望更改时
 
-例如，在`DashboardController`类的实例`FixItTaskRepository`创建并不需要更改，因此我们定义其作为[readonly](https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx)。
+例如，在`DashboardController`类的实例`FixItTaskRepository`创建并不需要更改，因此我们定义其作为[readonly](https://msdn.microsoft.com/library/acdd6hb7.aspx)。
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample9.cs?highlight=3)]
 
 ### <a name="use-listany-instead-of-listcount-gt-0"></a>使用列表。Any （)，而不是列表。Count （) &gt; 0
 
-如果你所有你关注列表中的一个或多个项是否适合指定的条件，请使用[任何](https://msdn.microsoft.com/en-us/library/bb534972.aspx)方法，因为它返回就会立即找到拟合条件的项，而`Count`方法始终具有循环通过每个项。 仪表板*Index.cshtml*文件最初具有此代码：
+如果你所有你关注列表中的一个或多个项是否适合指定的条件，请使用[任何](https://msdn.microsoft.com/library/bb534972.aspx)方法，因为它返回就会立即找到拟合条件的项，而`Count`方法始终具有循环通过每个项。 仪表板*Index.cshtml*文件最初具有此代码：
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample10.cshtml)]
 
@@ -166,13 +166,13 @@ ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample12.cshtml)]
 
-此类的视图/操作链接的建议最好使用[Url.Action](https://msdn.microsoft.com/en-us/library/system.web.mvc.urlhelper.action.aspx) HTML 帮助器，例如：
+此类的视图/操作链接的建议最好使用[Url.Action](https://msdn.microsoft.com/library/system.web.mvc.urlhelper.action.aspx) HTML 帮助器，例如：
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample13.cshtml)]
 
 ### <a name="use-taskdelay-instead-of-threadsleep-in-worker-role"></a>在辅助角色中而不是 Thread.Sleep 使用 Task.Delay
 
-新项目模板放入`Thread.Sleep`示例代码辅助角色，而导致进入睡眠状态的线程可能会导致要生成其他不必要的线程的线程池。 你可以避免这种情况使用[Task.Delay](https://msdn.microsoft.com/en-us/library/hh139096.aspx)相反。
+新项目模板放入`Thread.Sleep`示例代码辅助角色，而导致进入睡眠状态的线程可能会导致要生成其他不必要的线程的线程池。 你可以避免这种情况使用[Task.Delay](https://msdn.microsoft.com/library/hh139096.aspx)相反。
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample14.cs?highlight=11)]
 
@@ -184,11 +184,11 @@ ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample15.cs)]
 
-应使用`async void`仅为顶级事件处理程序。 如果定义方法`async void`，调用方无法**await**方法或通过捕获该方法将引发任何异常。 有关详细信息，请参阅[中进行异步编程的最佳做法](https://msdn.microsoft.com/en-us/magazine/jj991977.aspx)。 
+应使用`async void`仅为顶级事件处理程序。 如果定义方法`async void`，调用方无法**await**方法或通过捕获该方法将引发任何异常。 有关详细信息，请参阅[中进行异步编程的最佳做法](https://msdn.microsoft.com/magazine/jj991977.aspx)。 
 
 ### <a name="use-a-cancellation-token-to-break-from-worker-role-loop"></a>使用取消标记以将从辅助角色循环
 
-通常情况下，**运行**辅助角色上的方法包含一个无限循环。 辅助角色停止时， [RoleEntryPoint.OnStop](https://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx)调用方法。 应使用此方法来取消正在进行中的工作**运行**方法并退出正常。 否则，进程可能会终止操作的中间。
+通常情况下，**运行**辅助角色上的方法包含一个无限循环。 辅助角色停止时， [RoleEntryPoint.OnStop](https://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx)调用方法。 应使用此方法来取消正在进行中的工作**运行**方法并退出正常。 否则，进程可能会终止操作的中间。
 
 ### <a name="opt-out-of-automatic-mime-sniffing-procedure"></a>选择退出自动 MIME 探查过程
 
@@ -219,7 +219,7 @@ ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输
 <a id="runbase"></a>
 ### <a name="run-the-base-application"></a>运行基本的应用程序
 
-1. 安装[Visual Studio 2013 或 Visual Studio 2013 Express for Web](https://www.visualstudio.com/en-us/downloads)。
+1. 安装[Visual Studio 2013 或 Visual Studio 2013 Express for Web](https://www.visualstudio.com/downloads)。
 2. 安装[Azure SDK for.NET 的 Visual Studio 2013。](https://go.microsoft.com/fwlink/p/?linkid=323510&amp;clcid=0x409)
 3. 下载.zip 文件[MSDN 代码库](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)。
 4. 在文件资源管理器，右键单击.zip 文件，单击属性，然后在属性窗口中单击解除锁定。
@@ -228,7 +228,7 @@ ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输
 7. 从工具菜单中，单击库包管理器中，然后 Package Manager Console。
 8. 在包管理器控制台 (PMC) 中，单击还原。
 9. 退出 Visual Studio。
-10. 启动[Azure 存储模拟器](https://msdn.microsoft.com/en-us/library/windowsazure/hh403989.aspx)。
+10. 启动[Azure 存储模拟器](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx)。
 11. 重新启动 Visual Studio 中，在上一步中打开你关闭的解决方案文件。
 12. 请确保 FixIt 项目设置为启动项目，然后按 CTRL + F5 运行项目。
 
@@ -240,7 +240,7 @@ ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输
 3. 应用程序中*Web.config*文件中*MyFixIt*项目 （web 项目），将的值更改`appSettings/UseQueues`为"true": 
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample19.cmd?highlight=3)]
-4. 如果[Azure 存储模拟器](https://msdn.microsoft.com/en-us/library/windowsazure/hh403989.aspx)未仍在运行，重新启动它。
+4. 如果[Azure 存储模拟器](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx)未仍在运行，重新启动它。
 5. 同时运行 FixIt web 项目和 MyFixItCloudService 项目。
 
     使用 Visual Studio 2013:
@@ -253,7 +253,7 @@ ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输
     1. 在解决方案资源管理器，右键单击 FixIt 解决方案并选择**属性**。
     2. 选择**多启动项目**...
     3. 在**操作**下 MyFixIt 和 MyFixItCloudService，下拉列表选择**启动**。
-    4. 单击“确定”。
+    4. 单击 **“确定”**。
     5. 按 f5 键以运行这两个项目。
 
     运行 MyFixItCloudService 项目时，Visual Studio 将启动 Azure 计算仿真程序。 根据您的防火墙配置，你可能需要允许通过防火墙的仿真程序。
@@ -326,7 +326,7 @@ ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输
     如果该脚本失败或生成错误，例如"New-azurewebsite:: 调用 Set-azuresubscription 和 Select-azuresubscription 首先，"可能未完成的 Azure PowerShell 的配置。
 
     该脚本完成后，你可以使用 Azure 管理门户以查看已创建的资源中所示[使一切自动化](automate-everything.md)章。
-10. 若要将 FixIt 项目部署到新的 Azure 环境中，使用*AzureWebsite.ps1*脚本。 例如: 
+10. 若要将 FixIt 项目部署到新的 Azure 环境中，使用*AzureWebsite.ps1*脚本。 例如:
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample28.cmd)]
 
@@ -397,7 +397,7 @@ ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample34.xml?highlight=3)]
 
-现在你已准备好部署云服务。 在解决方案资源管理器，右键单击 MyFixItCloudService 项目并选择**发布**。 有关详细信息，请参阅"[部署到 Azure 应用程序](https://www.windowsazure.com/en-us/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)"，即第 2 部分中[本教程](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36)。
+现在你已准备好部署云服务。 在解决方案资源管理器，右键单击 MyFixItCloudService 项目并选择**发布**。 有关详细信息，请参阅"[部署到 Azure 应用程序](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)"，即第 2 部分中[本教程](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36)。
 
 >[!div class="step-by-step"]
 [上一篇](more-patterns-and-guidance.md)

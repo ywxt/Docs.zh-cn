@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/running-windows-powershell-scripts-from-msbuild-project-files
 msc.type: authoredcontent
-ms.openlocfilehash: 5f6ba0655f5dc1d043b905428a3797ed141b0fed
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: afee7b0621df42a8bc70fc6f7c4a8fd0383fa83a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="running-windows-powershell-scripts-from-msbuild-project-files"></a>从 MSBuild 项目文件中运行 Windows PowerShell 脚本
 ====================
@@ -89,7 +89,7 @@ ms.lasthandoff: 11/10/2017
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample3.cmd)]
 
 
-例如: 
+例如:
 
 
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample4.cmd)]
@@ -137,10 +137,10 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="executing-a-windows-powershell-script-on-a-remote-computer"></a>在远程计算机上执行 Windows PowerShell 脚本
 
-Windows PowerShell 是能够在通过远程计算机上运行脚本[Windows 远程管理](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx)(WinRM)。 若要执行此操作，你需要使用[Invoke-command](https://technet.microsoft.com/en-us/library/dd347578.aspx) cmdlet。 这使你无需将脚本复制到远程计算机执行你的脚本对一个或多个远程计算机。 任何结果返回到你从中运行脚本的本地计算机。
+Windows PowerShell 是能够在通过远程计算机上运行脚本[Windows 远程管理](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx)(WinRM)。 若要执行此操作，你需要使用[Invoke-command](https://technet.microsoft.com/library/dd347578.aspx) cmdlet。 这使你无需将脚本复制到远程计算机执行你的脚本对一个或多个远程计算机。 任何结果返回到你从中运行脚本的本地计算机。
 
 > [!NOTE]
-> 在使用之前**Invoke-command** cmdlet 来执行 Windows PowerShell 脚本在远程计算机上，你需要配置 WinRM 侦听器，用于接受远程消息。 你可以通过运行命令执行此**winrm quickconfig**远程计算机上。 有关详细信息，请参阅[安装和配置 Windows 远程管理的](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384372(v=vs.85).aspx)。
+> 在使用之前**Invoke-command** cmdlet 来执行 Windows PowerShell 脚本在远程计算机上，你需要配置 WinRM 侦听器，用于接受远程消息。 你可以通过运行命令执行此**winrm quickconfig**远程计算机上。 有关详细信息，请参阅[安装和配置 Windows 远程管理的](https://msdn.microsoft.com/library/windows/desktop/aa384372(v=vs.85).aspx)。
 
 
 从 Windows PowerShell 窗口中，将使用此语法来运行**LogDeploy.ps1**远程计算机上的脚本：
@@ -179,7 +179,7 @@ Windows PowerShell 是能够在通过远程计算机上运行脚本[Windows 远�
 
 ## <a name="further-reading"></a>其他阅读材料
 
-有关 Windows PowerShell 脚本签名和管理执行策略的指南，请参阅[运行 Windows PowerShell 脚本](https://technet.microsoft.com/en-us/library/ee176949.aspx)。 有关从远程计算机运行 Windows PowerShell 命令的指南，请参阅[运行远程命令](https://technet.microsoft.com/en-us/library/dd819505.aspx)。
+有关 Windows PowerShell 脚本签名和管理执行策略的指南，请参阅[运行 Windows PowerShell 脚本](https://technet.microsoft.com/library/ee176949.aspx)。 有关从远程计算机运行 Windows PowerShell 命令的指南，请参阅[运行远程命令](https://technet.microsoft.com/library/dd819505.aspx)。
 
 使用自定义 MSBuild 项目文件来控制部署过程的详细信息，请参阅[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)和[了解该生成过程](../web-deployment-in-the-enterprise/understanding-the-build-process.md)。
 

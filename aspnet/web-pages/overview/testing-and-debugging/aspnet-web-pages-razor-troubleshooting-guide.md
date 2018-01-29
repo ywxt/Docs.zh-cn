@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: e507d97903583c7233456e9139e1a869f8bf75bd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 72c49ed8b76b5fb5eb15bf01f57980b382607496
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET 网页 (Razor) 故障排除指南
 ====================
@@ -60,7 +60,7 @@ ms.lasthandoff: 11/10/2017
 
 如果 web 服务器上的远程服务器时，你会看到此错误，请与服务器管理员联系。 请确保服务器具有.NET Framework 4 或更高版本安装。 此外请确保应用程序在配置为使用该版本的.net Framework 的应用程序池中运行。
 
-如果你有对服务器的控制，请确保它正在运行的.NET framework 的正确版本。 您还可以尝试通过运行修复安装`aspnet_regiis -iru`命令。 （例如，如果在安装.NET Framework 之后，你安装 IIS，IIS 将不正确配置为运行 ASP.NET 页。）有关详细信息，请参阅[ASP.NET IIS 注册工具 (Aspnet\_regiis.exe)](https://msdn.microsoft.com/en-US/library/k6h9cz8h(v=vs.100).aspx)。
+如果你有对服务器的控制，请确保它正在运行的.NET framework 的正确版本。 您还可以尝试通过运行修复安装`aspnet_regiis -iru`命令。 （例如，如果在安装.NET Framework 之后，你安装 IIS，IIS 将不正确配置为运行 ASP.NET 页。）有关详细信息，请参阅[ASP.NET IIS 注册工具 (Aspnet\_regiis.exe)](https://msdn.microsoft.com/library/k6h9cz8h(v=vs.100).aspx)。
 
 ### <a name="http-error-40314---forbidden"></a>HTTP 错误 403.14-禁止访问
 
@@ -139,7 +139,7 @@ ms.lasthandoff: 11/10/2017
 
 - *无法发送邮件。*
 
-    - 或 -
+    或
 
     *连接尝试失败，因为连接的方未正确响应后一段时间，或建立的连接失败，因为连接的主机未能响应*
 
@@ -158,6 +158,6 @@ ms.lasthandoff: 11/10/2017
 <a id="AdditionalResources"></a>
 ## <a name="additional-resources"></a>其他资源
 
-[ASP.NET 网页 (Razor) 常见问题](https://go.microsoft.com/fwlink/?LinkId=253000)
+[ASP.NET 网页 (Razor) 常见问题解答](https://go.microsoft.com/fwlink/?LinkId=253000)
 
 [WebMatrix 和 ASP.NET Web Pages](https://forums.asp.net/1224.aspx/1?WebMatrix) ASP.NET 网站上的论坛

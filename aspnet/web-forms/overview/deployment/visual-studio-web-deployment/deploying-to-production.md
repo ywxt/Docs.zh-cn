@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 2c49e7f6925b1ca172642747c5052ba97d70d036
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: abd3f3f78dd9a9e6394e2f61aa9bd692810ca875
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>使用 Visual Studio 的 ASP.NET Web 部署： 将部署到生产
 ====================
@@ -150,7 +150,7 @@ ms.lasthandoff: 01/11/2018
     5. 关闭**配置数据库更新**对话框。
 10. 下**SchoolContext**中**数据库**部分中，选择**执行 Code First 迁移 （应用程序启动时运行）**。
 
-    Visual Studio 将显示**执行 Code First 迁移**而不是**更新数据库**为`DbContext`类。 如果你想要使用 dbDacFx 提供程序而不是迁移部署的数据库，你通过使用访问`DbContext`类，请参阅[如何部署没有迁移的 Code First 数据库？](https://msdn.microsoft.com/en-us/library/ee942158.aspx#deploy_code_first_without_migrations) Visual Studio Web 部署常见问题中和 MSDN 上的 ASP.NET。
+    Visual Studio 将显示**执行 Code First 迁移**而不是**更新数据库**为`DbContext`类。 如果你想要使用 dbDacFx 提供程序而不是迁移部署的数据库，你通过使用访问`DbContext`类，请参阅[如何部署没有迁移的 Code First 数据库？](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) Visual Studio Web 部署常见问题中和 MSDN 上的 ASP.NET。
 
     **设置**选项卡现在看起来像下面的示例：
 
@@ -193,7 +193,7 @@ ms.lasthandoff: 01/11/2018
 - 使用是不可能猜到的经过模糊处理的 URL。
 - 创建*robots.txt*文件以确保，搜索引擎将不爬网测试应用程序和报表链接到它在搜索结果中。
 
-第一种方法最有效，但因为它将需要你将部署到 Azure 云服务而不是 Azure App Service 中本教程未涉及。 有关云服务的详细信息和在 Azure 中的 IP 限制，请参阅[选项提供的计算托管 Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me)和[阻止特定 IP 地址访问 Web 角色](https://msdn.microsoft.com/en-us/library/windowsazure/jj154098.aspx)。 如果将部署到第三方托管提供程序，请与联系提供商联系以了解如何实施 IP 限制。
+第一种方法最有效，但因为它将需要你将部署到 Azure 云服务而不是 Azure App Service 中本教程未涉及。 有关云服务的详细信息和在 Azure 中的 IP 限制，请参阅[选项提供的计算托管 Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me)和[阻止特定 IP 地址访问 Web 角色](https://msdn.microsoft.com/library/windowsazure/jj154098.aspx)。 如果将部署到第三方托管提供程序，请与联系提供商联系以了解如何实施 IP 限制。
 
 对于本教程中，将创建*robots.txt*文件。
 
@@ -256,7 +256,7 @@ ms.lasthandoff: 01/11/2018
 
 每个*.pubxml*文件没有*。 pubxml.user*文件。 *。 Pubxml.user*文件包含加密的密码，如果你选择**保存密码**选项，并且默认情况下会从项目中排除。
 
-A *.pubxml*文件包含适用于特定的发布配置文件的设置。 如果你想要配置应用于所有配置文件的设置，则可以创建*。 wpp.targets*文件。 生成过程中导入到这些文件*.csproj*或*.vbproj*项目文件中，因此可以在这些文件中配置大多数设置都可以在项目文件中配置。 有关详细信息*.pubxml*文件和*。 wpp.targets*文件，请参阅[如何： 编辑发布配置文件 (.pubxml) 文件中的部署设置与。 wpp.targets Visual Studio 中的文件Web 项目发布](https://msdn.microsoft.com/en-us/library/ff398069.aspx)。
+A *.pubxml*文件包含适用于特定的发布配置文件的设置。 如果你想要配置应用于所有配置文件的设置，则可以创建*。 wpp.targets*文件。 生成过程中导入到这些文件*.csproj*或*.vbproj*项目文件中，因此可以在这些文件中配置大多数设置都可以在项目文件中配置。 有关详细信息*.pubxml*文件和*。 wpp.targets*文件，请参阅[如何： 编辑发布配置文件 (.pubxml) 文件中的部署设置与。 wpp.targets Visual Studio 中的文件Web 项目发布](https://msdn.microsoft.com/library/ff398069.aspx)。
 
 1. 在**解决方案资源管理器**，展开**属性**展开**PublishProfiles**。
 2. 右键单击*Production.pubxml*单击**打开**。
@@ -271,7 +271,7 @@ A *.pubxml*文件包含适用于特定的发布配置文件的设置。 如果�
 
     [!code-xml[Main](deploying-to-production/samples/sample4.xml?highlight=18-20)]
 
-    有关如何排除文件和文件夹的详细信息，请参阅[可以我排除特定文件或文件夹从部署？](https://msdn.microsoft.com/en-us/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment)中**for Visual Studio 和 ASP.NET 的 Web 部署常见问题**MSDN 上。
+    有关如何排除文件和文件夹的详细信息，请参阅[可以我排除特定文件或文件夹从部署？](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment)中**for Visual Studio 和 ASP.NET 的 Web 部署常见问题**MSDN 上。
 
 ### <a name="deploy-to-production"></a>部署到生产环境
 
@@ -295,7 +295,7 @@ A *.pubxml*文件包含适用于特定的发布配置文件的设置。 如果�
 在下一步的教程中，将更新应用程序代码，并将更改部署到测试、 过渡和生产环境。
 
 > [!NOTE]
-> 在生产环境中使用你的应用程序时你应实现恢复计划。 也就是说，你应将定期备份你的数据库从生产应用到安全存储位置，并您应保留多个代这样的备份。 在更新数据库时，你应在更改之前立即从的备份副本。 然后，如果犯错，进而不发现它之前，部署到生产环境之后，你仍将能够将数据库恢复到它损坏之前的状态。 有关详细信息，请参阅[Azure SQL Database 备份和还原](https://msdn.microsoft.com/en-us/library/windowsazure/jj650016.aspx)。
+> 在生产环境中使用你的应用程序时你应实现恢复计划。 也就是说，你应将定期备份你的数据库从生产应用到安全存储位置，并您应保留多个代这样的备份。 在更新数据库时，你应在更改之前立即从的备份副本。 然后，如果犯错，进而不发现它之前，部署到生产环境之后，你仍将能够将数据库恢复到它损坏之前的状态。 有关详细信息，请参阅[Azure SQL Database 备份和还原](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx)。
 
 
 > [!NOTE]

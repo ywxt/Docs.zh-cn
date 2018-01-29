@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e57886250fa98af95b61103d67481f747f44c390
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e3782e3d4acc2db0e744128dad64fdfae1e8766d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="protecting-connection-strings-and-other-configuration-information-c"></a>保护连接字符串和其他配置信息 (C#)
 ====================
@@ -60,10 +60,10 @@ ASP.NET 2.0 包含一个受保护的配置系统，用于加密和解密配置�
 
 .NET Framework 附带两个受保护的配置提供程序：
 
-- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/en-us/library/system.configuration.rsaprotectedconfigurationprovider.aspx)-使用非对称[RSA 算法](http://en.wikipedia.org/wiki/Rsa)加密和解密。
-- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/en-us/system.configuration.dpapiprotectedconfigurationprovider.aspx)-使用 Windows[数据保护 API (DPAPI)](https://msdn.microsoft.com/en-us/library/ms995355.aspx)加密和解密。
+- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/library/system.configuration.rsaprotectedconfigurationprovider.aspx)-使用非对称[RSA 算法](http://en.wikipedia.org/wiki/Rsa)加密和解密。
+- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/system.configuration.dpapiprotectedconfigurationprovider.aspx)-使用 Windows[数据保护 API (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx)加密和解密。
 
-由于受保护的配置系统实现的提供程序设计模式，它是可以创建自己的受保护的配置提供程序并将其插入你的应用程序。 请参阅[实现保护配置提供程序](https://msdn.microsoft.com/en-us/library/wfc2t3az(VS.80).aspx)有关此过程的详细信息。
+由于受保护的配置系统实现的提供程序设计模式，它是可以创建自己的受保护的配置提供程序并将其插入你的应用程序。 请参阅[实现保护配置提供程序](https://msdn.microsoft.com/library/wfc2t3az(VS.80).aspx)有关此过程的详细信息。
 
 在 RSA 和 DPAPI 提供程序对其加密和解密的例程，使用键和这些密钥可存储在计算机或用户的级别。 计算机级密钥是 web 应用程序在其自己的专用服务器的运行所在的方案的理想选择，或如果有多个应用程序需要共享的服务器上加密的信息。 用户级密钥是在其中同一服务器上的其他应用程序不应能够解密你的应用程序受保护的 s 配置节的共享宿主环境中更加安全的选项。
 
@@ -96,20 +96,20 @@ ASP.NET 2.0 包含一个受保护的配置系统，用于加密和解密配置�
 
 [!code-csharp[Main](protecting-connection-strings-and-other-configuration-information-cs/samples/sample1.cs)]
 
-`DisplayWebConfig`方法使用[`File`类](https://msdn.microsoft.com/en-us/library/system.io.file.aspx)以打开应用程序 s`Web.config`文件， [ `StreamReader`类](https://msdn.microsoft.com/en-us/library/system.io.streamreader.aspx)其内容读入一个字符串和[`Path`类](https://msdn.microsoft.com/en-us/library/system.io.path.aspx)生成到的物理路径`Web.config`文件。 这三个类在中找到[`System.IO`命名空间](https://msdn.microsoft.com/en-us/library/system.io.aspx)。 因此，你将需要添加`using``System.IO`语句的代码隐藏类或，或者，这些类具有的名称的前缀页首`System.IO.`。
+`DisplayWebConfig`方法使用[`File`类](https://msdn.microsoft.com/library/system.io.file.aspx)以打开应用程序 s`Web.config`文件， [ `StreamReader`类](https://msdn.microsoft.com/library/system.io.streamreader.aspx)其内容读入一个字符串和[`Path`类](https://msdn.microsoft.com/library/system.io.path.aspx)生成到的物理路径`Web.config`文件。 这三个类在中找到[`System.IO`命名空间](https://msdn.microsoft.com/library/system.io.aspx)。 因此，你将需要添加`using``System.IO`语句的代码隐藏类或，或者，这些类具有的名称的前缀页首`System.IO.`。
 
 接下来，我们需要添加两个按钮控件的事件处理程序`Click`事件并添加必要的代码来加密和解密`<connectionStrings>`部分使用 DPAPI 提供程序的计算机级密钥。 从设计器中，双击每个要添加的按钮`Click`的代码隐藏文件中的事件处理程序类，然后添加以下代码：
 
 
 [!code-csharp[Main](protecting-connection-strings-and-other-configuration-information-cs/samples/sample2.cs)]
 
-在两个事件处理程序中使用的代码是几乎完全相同。 它们都入手，获取有关当前的应用程序 s 信息`Web.config`文件通过[`WebConfigurationManager`类](https://msdn.microsoft.com/en-us/library/system.web.configuration.webconfigurationmanager.aspx)s [ `OpenWebConfiguration`方法](https://msdn.microsoft.com/en-us/library/system.web.configuration.webconfigurationmanager.openwebconfiguration.aspx)。 此方法返回指定的虚拟路径的 web 配置文件。 接下来，`Web.config`文件 s`<connectionStrings>`部分访问通过[`Configuration`类](https://msdn.microsoft.com/en-us/library/system.configuration.configuration.aspx)s [ `GetSection(sectionName)`方法](https://msdn.microsoft.com/en-us/library/system.configuration.configuration.getsection.aspx)，它将返回[ `ConfigurationSection` ](https://msdn.microsoft.com/en-us/library/system.configuration.configurationsection.aspx)对象。
+在两个事件处理程序中使用的代码是几乎完全相同。 它们都入手，获取有关当前的应用程序 s 信息`Web.config`文件通过[`WebConfigurationManager`类](https://msdn.microsoft.com/library/system.web.configuration.webconfigurationmanager.aspx)s [ `OpenWebConfiguration`方法](https://msdn.microsoft.com/library/system.web.configuration.webconfigurationmanager.openwebconfiguration.aspx)。 此方法返回指定的虚拟路径的 web 配置文件。 接下来，`Web.config`文件 s`<connectionStrings>`部分访问通过[`Configuration`类](https://msdn.microsoft.com/library/system.configuration.configuration.aspx)s [ `GetSection(sectionName)`方法](https://msdn.microsoft.com/library/system.configuration.configuration.getsection.aspx)，它将返回[ `ConfigurationSection` ](https://msdn.microsoft.com/library/system.configuration.configurationsection.aspx)对象。
 
-`ConfigurationSection`对象包括[`SectionInformation`属性](https://msdn.microsoft.com/en-us/library/system.configuration.configurationsection.sectioninformation.aspx)，提供其他信息和有关的配置节的功能。 作为上面所示的代码，我们可以确定是否通过检查加密配置节`SectionInformation`属性的`IsProtected`属性。 此外，加密或解密通过明`SectionInformation`属性 s`ProtectSection(provider)`和`UnprotectSection`方法。
+`ConfigurationSection`对象包括[`SectionInformation`属性](https://msdn.microsoft.com/library/system.configuration.configurationsection.sectioninformation.aspx)，提供其他信息和有关的配置节的功能。 作为上面所示的代码，我们可以确定是否通过检查加密配置节`SectionInformation`属性的`IsProtected`属性。 此外，加密或解密通过明`SectionInformation`属性 s`ProtectSection(provider)`和`UnprotectSection`方法。
 
 `ProtectSection(provider)`方法接受输入作为一个字符串，指定要在加密时使用的受保护的配置提供程序的名称。 在`EncryptConnString`按钮的事件处理程序，我们将传递到 DataProtectionConfigurationProvider`ProtectSection(provider)`方法，以便使用 DPAPI 提供程序。 `UnprotectSection`方法可以确定的提供程序用于加密的配置节，因此不需要任何输入参数。
 
-在调用`ProtectSection(provider)`或`UnprotectSection`方法时，必须调用`Configuration`对象 s [ `Save`方法](https://msdn.microsoft.com/en-us/library/system.configuration.configuration.save.aspx)以保留更改。 已加密或解密的配置信息并保存更改，我们调用后`DisplayWebConfig`加载更新`Web.config`到文本框控件的内容。
+在调用`ProtectSection(provider)`或`UnprotectSection`方法时，必须调用`Configuration`对象 s [ `Save`方法](https://msdn.microsoft.com/library/system.configuration.configuration.save.aspx)以保留更改。 已加密或解密的配置信息并保存更改，我们调用后`DisplayWebConfig`加载更新`Web.config`到文本框控件的内容。
 
 输入上面的代码后, 对其进行测试访问`EncryptingConfigSections.aspx`通过浏览器的页。 你最初应看到列出的内容的页面`Web.config`与`<connectionStrings>`以纯文本形式显示的部分 （请参见图 3）。
 
@@ -155,7 +155,7 @@ ASP.NET 2.0 包含一个受保护的配置系统，用于加密和解密配置�
 
 ## <a name="step-3-encrypting-configuration-sections-usingaspnetregiisexe"></a>步骤 3： 加密使用的配置节`aspnet_regiis.exe`
 
-.NET Framework 包括中的命令行工具的各种`$WINDOWS$\Microsoft.NET\Framework\version\`文件夹。 在[使用 SQL 缓存依赖项](../caching-data/using-sql-cache-dependencies-cs.md)教程中，例如，我们看使用`aspnet_regsql.exe`命令行工具，用于添加 SQL 缓存依赖项所需的基础结构。 此文件夹中的另一个有用的命令行工具是[ASP.NET IIS 注册工具 (`aspnet_regiis.exe`)](https://msdn.microsoft.com/en-us/library/k6h9cz8h(VS.80).aspx)。 顾名思义，ASP.NET IIS 注册工具主要用于向 Microsoft 的专业级 Web 服务器，IIS 注册 ASP.NET 2.0 应用程序。 除了其与 IIS 相关的功能，ASP.NET IIS 注册工具还可用于加密或解密中的指定的配置节`Web.config`。
+.NET Framework 包括中的命令行工具的各种`$WINDOWS$\Microsoft.NET\Framework\version\`文件夹。 在[使用 SQL 缓存依赖项](../caching-data/using-sql-cache-dependencies-cs.md)教程中，例如，我们看使用`aspnet_regsql.exe`命令行工具，用于添加 SQL 缓存依赖项所需的基础结构。 此文件夹中的另一个有用的命令行工具是[ASP.NET IIS 注册工具 (`aspnet_regiis.exe`)](https://msdn.microsoft.com/library/k6h9cz8h(VS.80).aspx)。 顾名思义，ASP.NET IIS 注册工具主要用于向 Microsoft 的专业级 Web 服务器，IIS 注册 ASP.NET 2.0 应用程序。 除了其与 IIS 相关的功能，ASP.NET IIS 注册工具还可用于加密或解密中的指定的配置节`Web.config`。
 
 以下语句显示用来加密配置节的常规语法`aspnet_regiis.exe`命令行工具：
 
@@ -203,7 +203,7 @@ Windows 身份验证通过 SQL 身份验证中都是首选的因为它是更安�
 假设攻击是能够查看你的应用程序 s`Web.config`文件。 如果你使用 SQL 身份验证连接到的数据库，则可以通过 Internet 访问，攻击者可以使用此连接字符串以连接到数据库通过 SQL Management Studio，或从其自己的网站上的 ASP.NET 页。 为了帮助减轻此威胁，加密中的连接字符串信息`Web.config`使用受保护的配置系统。
 
 > [!NOTE]
-> 关于 SQL Server 中提供的身份验证的不同类型的详细信息，请参阅[生成安全 ASP.NET 应用程序： 身份验证、 授权和安全通信](https://msdn.microsoft.com/en-us/library/aa302392.aspx)。 有关其他连接字符串示例演示 Windows 和 SQL 身份验证语法之间的差异，请参阅[ConnectionStrings.com](http://www.connectionstrings.com/)。
+> 关于 SQL Server 中提供的身份验证的不同类型的详细信息，请参阅[生成安全 ASP.NET 应用程序： 身份验证、 授权和安全通信](https://msdn.microsoft.com/library/aa302392.aspx)。 有关其他连接字符串示例演示 Windows 和 SQL 身份验证语法之间的差异，请参阅[ConnectionStrings.com](http://www.connectionstrings.com/)。
 
 
 ## <a name="summary"></a>摘要
@@ -218,13 +218,13 @@ Windows 身份验证通过 SQL 身份验证中都是首选的因为它是更安�
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [生成安全的 ASP.NET 应用程序： 身份验证、 授权和安全通信](https://msdn.microsoft.com/en-us/library/aa302392.aspx)
+- [生成安全的 ASP.NET 应用程序： 身份验证、 授权和安全通信](https://msdn.microsoft.com/library/aa302392.aspx)
 - [加密 ASP.NET 2.0 中的配置信息的应用程序](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)
 - [加密`Web.config`ASP.NET 2.0 中的值](https://weblogs.asp.net/scottgu/archive/2006/01/09/434893.aspx)
-- [如何： 加密 ASP.NET 2.0 中的配置节使用 DPAPI](https://msdn.microsoft.com/en-us/library/ms998280.aspx)
-- [如何： 加密 ASP.NET 2.0 中的配置节，可使用 RSA](https://msdn.microsoft.com/en-us/library/ms998283.aspx)
+- [如何： 加密 ASP.NET 2.0 中的配置节使用 DPAPI](https://msdn.microsoft.com/library/ms998280.aspx)
+- [如何： 加密 ASP.NET 2.0 中的配置节，可使用 RSA](https://msdn.microsoft.com/library/ms998283.aspx)
 - [.NET 2.0 中的配置 API](http://www.odetocode.com/Articles/418.aspx)
-- [Windows 数据保护](https://msdn.microsoft.com/en-us/library/ms995355.aspx)
+- [Windows 数据保护](https://msdn.microsoft.com/library/ms995355.aspx)
 
 ## <a name="about-the-author"></a>关于作者
 
