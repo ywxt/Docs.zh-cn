@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: c4f57d1e02ad5f4e235039999af9df9d236756a7
-ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
+ms.openlocfilehash: ee9bdc66d0bfa6433736fbc55126bdd37ba9d080
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>配置 ASP.NET Core 应用
 
@@ -261,7 +261,7 @@ Left: 1979
 
 如果上述所有条件均成立，则命令行参数将被覆盖。
 
-ASP.NET Core 2.x 应用可使用 WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)，而不是 `CreateDefaultBuilder。使用 WebHostBuilder 时，请通过 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) 手动设置配置。 有关详细信息，请参阅 ASP.NET Core 1.x 选项卡。
+ASP.NET Core 2.x 应用可使用 WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)，而不是 `CreateDefaultBuilder`. When using `WebHostBuilder 时，请通过 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) 手动设置配置。 有关详细信息，请参阅 ASP.NET Core 1.x 选项卡。
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -396,7 +396,7 @@ Left: 1988
 
 ## <a name="additional-notes"></a>附加说明
 
-* 调用 `ConfigureServices` 后才会设置依赖关系注入 (DI)。
+* 调用 `ConfigureServices` 后才会设置依赖项注入 (DI)。
 * 配置系统无法感知 DI。
 * `IConfiguration` 具有两项专用化：
   * `IConfigurationRoot` 用于根节点。 可以触发重载。
