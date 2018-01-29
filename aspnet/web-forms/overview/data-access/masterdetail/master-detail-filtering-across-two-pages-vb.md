@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c34476f89677fb51abc17bd64602c41dfea8f9c7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d8d43475ae2f05d83d51c53d76de4f07db70ca7a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-filtering-across-two-pages-vb"></a>筛选在两个页面 (VB) 之间的主/从
 ====================
@@ -71,7 +71,7 @@ ms.lasthandoff: 11/10/2017
 
 我们需要包含一个链接，标题为查看产品每 GridView 行中，单击时，将用户带到`ProductsForSupplierDetails.aspx`选定行中传递`SupplierID`通过查询字符串的值。 例如，如果用户单击东京 Traders 供应商查看产品链接 (具有`SupplierID`值为 4)，应将它们发送到`ProductsForSupplierDetails.aspx?SupplierID=4`。
 
-若要完成此操作，将添加[HyperLinkField](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.hyperlinkfield.aspx)到 GridView，从而将超链接添加到每个 GridView 行。 通过单击从 GridView 的智能标记的编辑列链接启动。 接下来，从左上方列表中选择 HyperLinkField 并单击添加在 GridView 的字段列表中包括 HyperLinkField。
+若要完成此操作，将添加[HyperLinkField](https://msdn.microsoft.com/library/system.web.ui.webcontrols.hyperlinkfield.aspx)到 GridView，从而将超链接添加到每个 GridView 行。 通过单击从 GridView 的智能标记的编辑列链接启动。 接下来，从左上方列表中选择 HyperLinkField 并单击添加在 GridView 的字段列表中包括 HyperLinkField。
 
 
 [![将 HyperLinkField 添加到 GridView](master-detail-filtering-across-two-pages-vb/_static/image9.png)](master-detail-filtering-across-two-pages-vb/_static/image8.png)
@@ -212,7 +212,7 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值在每个 GridView
 
 尽管主/详细信息报表可以显示 master 和详细信息记录在一页，在很多网站中它们被分隔跨两个 web 页。 在本教程中我们介绍了如何通过将列在"主"网页中 GridView 供应商和"详细信息"页中列出的关联的产品实现主/详细信息报表。 每个供应商中行母板网页包含指向传递的行的详细信息页面的`SupplierID`值。 可以使用 GridView HyperLinkField 轻松地添加此类特定行的链接。
 
-在详细信息页中指定的提供程序检索这些产品已进行调用来完成`ProductsBLL`类的`GetProductsBySupplierID(supplierID)`方法。  *`supplierID`* 作为参数源使用查询字符串以声明方式指定参数值。 我们还了解了如何在使用 FormView 的详细信息页中显示的供应商详细信息。
+在详细信息页中指定的提供程序检索这些产品已进行调用来完成`ProductsBLL`类的`GetProductsBySupplierID(supplierID)`方法。 *`supplierID`* 作为参数源使用查询字符串以声明方式指定参数值。 我们还了解了如何在使用 FormView 的详细信息页中显示的供应商详细信息。
 
 我们[下一教程](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md)是主/详细信息报表上的最后一个。 我们将了解如何在每行都有一个选择按钮 GridView 中显示的产品列表。 单击选择按钮将同一页上的说明控件中显示该产品的详细信息。
 

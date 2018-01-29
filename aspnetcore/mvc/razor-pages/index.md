@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 059dc3a163c646877da40a73bcc9a75eb38fb345
-ms.sourcegitcommit: 459cb3289741a3f46325e605a617dc926ee0563d
+ms.openlocfilehash: a08c1b59c7be3a27fc11e6737a1cb4b4208f2901
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor 页面介绍
 
@@ -318,7 +318,7 @@ Pages/_ViewImports.cshtml 文件设置以下命名空间：
 
 ## <a name="tempdata"></a>TempData
 
-ASP.NET 在[控制器](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller)上公开了 [TempData](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) 属性。 此属性可存储数据，直至数据被读取。 `Keep` 和 `Peek` 方法可用于检查数据，而不执行删除。 多个请求需要数据时，`TempData` 有助于进行重定向。
+ASP.NET 在[控制器](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller)上公开了 [TempData](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) 属性。 此属性存储未读取的数据。 `Keep` 和 `Peek` 方法可用于检查数据，而不执行删除。 多个请求需要数据时，`TempData` 有助于进行重定向。
 
 `[TempData]` 是 ASP.NET Core 2.0 中的新属性，在控制器和页面上受支持。
 
@@ -348,7 +348,7 @@ public string Message { get; set; }
 
 [!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml?highlight=12-13)]
 
-<!-- Review: the FormActionTagHelper applies to all <form /> elements on a Razor page, even when there is no `asp-` attribute   -->
+<!-- Review: the FormActionTagHelper applies to all <form /> elements on a Razor page, even when there's no `asp-` attribute   -->
 
 前面示例中的窗体包含两个提交按钮，每个提交按钮均使用 `FormActionTagHelper` 提交到不同的 URL。 `asp-page-handler` 是 `asp-page` 的配套属性。 `asp-page-handler` 生成提交到页面定义的各个处理程序方法的 URL。 未指定 `asp-page`，因为示例已链接到当前页面。
 
@@ -370,7 +370,7 @@ public string Message { get; set; }
 
 前面的路由将处理程序放在了 URL 路径中，而不是查询字符串中。 `handler` 前面的 `?` 表示路由参数为可选。
 
-可以使用 `@page` 将其他段和参数添加到页面的路由中。 其中的任何内容均会被追加到页面的默认路由中。 不支持使用绝对路径或虚拟路径更改页面的路由（例如 `"~/Some/Other/Path"`）。
+可以使用 `@page` 将其他段和参数添加到页面的路由中。 其中的任何内容均会被追加到页面的默认路由中。 不支持使用绝对路径或虚拟路径更改页面的路由（如 `"~/Some/Other/Path"`）。
 
 ## <a name="configuration-and-settings"></a>配置和设置
 

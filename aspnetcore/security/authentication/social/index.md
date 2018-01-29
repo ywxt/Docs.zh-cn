@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/social/index
-ms.openlocfilehash: 7d03998c82bf13976ec6157acb5c56c28e5c0d52
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d6daad6298267956e7ac1f4b304c5eeaae231ba8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="enabling-authentication-using-facebook-google-and-other-external-providers"></a>启用使用 Facebook、Google 和其他外部提供程序的身份验证
 
@@ -80,7 +80,7 @@ OAuth 2.0 需要使用 SSL 通过 HTTPS 协议进行身份验证。
 
 ## <a name="optionally-set-password"></a>选择性地设置密码
 
-使用外部登录提供程序注册即表明还没有向应用注册密码。 这可让用户无需创建和记住站点密码，但也会使用户依赖外部登录提供程序。 如果外部登录提供程序不可用，则无法登录网站。
+使用外部登录提供程序注册，即表明还没有向应用注册密码。 这可让用户无需创建和记住站点密码，但也会使用户依赖外部登录提供程序。 如果外部登录提供程序不可用，则无法登录网站。
 
 使用外部提供程序在登录过程中设置的电子邮箱创建密码和登录：
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 66ebcebfc3eda3bce416da1adea0fd4d7f39a5e4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8f8f4db63ba8c1f1c1df7c1c5c1f92184bf6841d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="validating-user-credentials-against-the-membership-user-store-c"></a>正在验证用户凭据对成员资格用户存储区 (C#)
 ====================
@@ -39,7 +39,7 @@ ms.lasthandoff: 11/10/2017
 
 对于使用 forms 身份验证的网站，用户登录到网站访问登录页并输入其凭据。 然后，针对用户存储比较这些凭据。 如果它们有效，然后将向用户授予窗体身份验证票证，这是安全令牌，该值指示的标识和访问者的真实性。
 
-若要验证对成员资格 framework 用户，使用`Membership`类的[`ValidateUser`方法](https://msdn.microsoft.com/en-us/library/system.web.security.membership.validateuser.aspx)。 `ValidateUser`方法采用两个输入参数-中 *`username`* 和 *`password`*  -并返回一个布尔值，该值指示凭据是否有效。 与类似`CreateUser`方法，在前面的教程，我们探讨`ValidateUser`方法会委托给配置成员资格提供程序实际的验证。
+若要验证对成员资格 framework 用户，使用`Membership`类的[`ValidateUser`方法](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)。 `ValidateUser`方法采用两个输入参数-中 *`username`* 和 *`password`*  -并返回一个布尔值，该值指示凭据是否有效。 与类似`CreateUser`方法，在前面的教程，我们探讨`ValidateUser`方法会委托给配置成员资格提供程序实际的验证。
 
 `SqlMembershipProvider`验证提供的凭据通过获取指定的用户的密码通过`aspnet_Membership_GetPasswordWithFormat`存储过程。 回想一下，`SqlMembershipProvider`存储使用三种格式之一的用户的密码： 清除，加密，或哈希处理。 `aspnet_Membership_GetPasswordWithFormat`存储的过程返回其原始格式的密码。 加密或经过哈希处理密码，`SqlMembershipProvider`转换 *`password`* 值传递给`ValidateUser`方法划分为它的等效项加密或哈希状态，然后将它与什么返回从进行比较数据库。 如果存储在数据库中的密码与用户输入的格式化的密码匹配，则凭据有效。
 
@@ -84,7 +84,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-2-collecting-credentials-through-the-login-web-control"></a>步骤 2： 收集通过登录 Web 控件的凭据
 
-[登录 Web 控件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.aspx)呈现默认用户界面非常类似于我们创建返回<a id="SKM5"> </a> [*概述窗体身份验证的*](../introduction/an-overview-of-forms-authentication-cs.md)教程。 使用 Login 控件可节省我们无需创建要收集的访问者的凭据的接口的工作。 此外，Login 控件自动签名中用户 （假设已提交的凭据有效），从而保存我们无需编写任何代码。
+[登录 Web 控件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.aspx)呈现默认用户界面非常类似于我们创建返回<a id="SKM5"> </a> [*概述窗体身份验证的*](../introduction/an-overview-of-forms-authentication-cs.md)教程。 使用 Login 控件可节省我们无需创建要收集的访问者的凭据的接口的工作。 此外，Login 控件自动签名中用户 （假设已提交的凭据有效），从而保存我们无需编写任何代码。
 
 让我们更新`Login.aspx`、 替换手动创建的接口和代码与登录控件。 先删除现有的标记和代码中`Login.aspx`。 你可能会删除迫切地，或只需注释掉。注释掉声明性的标记，请在它与`<%--`和`--%>`分隔符。 你可以手动输入这些分隔符，或如图 2 所示，你可以选择要注释掉，然后单击工具栏中的选定的行图标出注释的文本。 同样，你可以使用注释掉的选定的行图标来注释掉的代码隐藏类中的所选代码。
 
@@ -112,7 +112,7 @@ ms.lasthandoff: 11/10/2017
 
 - 登录控件是否的登录页上定义`loginUrl`设置在窗体身份验证配置中; 此设置的默认值是`Login.aspx`
 - 是否存在`ReturnUrl`查询字符串参数
-- 登录控件的值[`DestinationUrl`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.destinationpageurl.aspx)
+- 登录控件的值[`DestinationUrl`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.destinationpageurl.aspx)
 - `defaultUrl`身份验证配置设置在窗体中指定值; 此设置的默认值为`Default.aspx`
 
 图 4 展示了如何登录控件使用这些四个参数来到达其合适的页面决策。
@@ -131,19 +131,19 @@ ms.lasthandoff: 11/10/2017
 
 登录控件的默认属性设置呈现具有 （日志中） 的标题的用户接口，对于用户名和密码输入，记住我的文本框和标签控件下次复选框和一个登录按钮。 这些元素的外观进行所有配置通过登录控件的多个属性。 而且，可以通过设置属性或两个添加附加用户界面元素-例如到页面上以创建新的用户帐户的链接。
 
-让我们花一些时间才能 gussy 向上我们登录控件的外观。 由于`Login.aspx`页已显示登录页顶部的文本，则登录控件的标题都是多余。 因此，清除[`TitleText`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.titletext.aspx)以删除登录控件的标题的值。
+让我们花一些时间才能 gussy 向上我们登录控件的外观。 由于`Login.aspx`页已显示登录页顶部的文本，则登录控件的标题都是多余。 因此，清除[`TitleText`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.titletext.aspx)以删除登录控件的标题的值。
 
-用户名: 和密码： 可以通过自定义的两个文本框中控件左侧标签[ `UserNameLabelText` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.usernamelabeltext.aspx)和[`PasswordLabelText`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.passwordlabeltext.aspx)分别。 让我们更改用户名： 标签以读取用户名:。 标签和文本框中样式均可通过进行[ `LabelStyle` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.labelstyle.aspx)和[`TextBoxStyle`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.textboxstyle.aspx)分别。
+用户名: 和密码： 可以通过自定义的两个文本框中控件左侧标签[ `UserNameLabelText` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.usernamelabeltext.aspx)和[`PasswordLabelText`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.passwordlabeltext.aspx)分别。 让我们更改用户名： 标签以读取用户名:。 标签和文本框中样式均可通过进行[ `LabelStyle` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.labelstyle.aspx)和[`TextBoxStyle`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.textboxstyle.aspx)分别。
 
-记住我可以通过登录控件的设置下一步时间复选框的文本属性[ `RememberMeText property` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.remembermetext.aspx)，并其默认检查状态都可通过配置[ `RememberMeSet property` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.remembermeset.aspx) (默认值为 False)。 请继续并设置`RememberMeSet`将默认选中属性设置为 True，以便记住我下次复选框。
+记住我可以通过登录控件的设置下一步时间复选框的文本属性[ `RememberMeText property` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.remembermetext.aspx)，并其默认检查状态都可通过配置[ `RememberMeSet property` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.remembermeset.aspx) (默认值为 False)。 请继续并设置`RememberMeSet`将默认选中属性设置为 True，以便记住我下次复选框。
 
-登录控制提供有关如何调整其用户界面控件的布局的两个属性。 [ `TextLayout property` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.textlayout.aspx)指示是否用户名: 和密码： 左侧的其对应的文本框中 （默认值），或其上方显示标签。 [ `Orientation property` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.orientation.aspx)指示是否用户名和密码输入且恰好垂直位于 （上面另一个） 或水平。 我要将设置为其默认值，这两个属性，但我建议你尝试将这两个属性设置为其非默认值，若要查看产生的效果。
+登录控制提供有关如何调整其用户界面控件的布局的两个属性。 [ `TextLayout property` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.textlayout.aspx)指示是否用户名: 和密码： 左侧的其对应的文本框中 （默认值），或其上方显示标签。 [ `Orientation property` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.orientation.aspx)指示是否用户名和密码输入且恰好垂直位于 （上面另一个） 或水平。 我要将设置为其默认值，这两个属性，但我建议你尝试将这两个属性设置为其非默认值，若要查看产生的效果。
 
 > [!NOTE]
 > 在下一部分中，配置登录控件的布局中，我们将了解使用模板来定义布局控件的用户界面元素的精确布局。
 
 
-通过设置包装登录控件的属性设置[ `CreateUserText` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.createusertext.aspx)和[`CreateUserUrl`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.createuserurl.aspx)与非尚未注册？ 创建帐户 ！ 和`~/Membership/CreatingUserAccounts.aspx`分别。 这会将超链接添加到我们在中创建的登录控件的接口指针指向页<a id="SKM6"> </a>[前面教程](creating-user-accounts-cs.md)。 登录控件的[ `HelpPageText` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.helppagetext.aspx)和[`HelpPageUrl`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.helppageurl.aspx)和[ `PasswordRecoveryText` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.passwordrecoverytext.aspx)和[`PasswordRecoveryUrl`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.passwordrecoveryurl.aspx)即可在同样的方式呈现的帮助页和密码恢复页的链接。
+通过设置包装登录控件的属性设置[ `CreateUserText` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.createusertext.aspx)和[`CreateUserUrl`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.createuserurl.aspx)与非尚未注册？ 创建帐户 ！ 和`~/Membership/CreatingUserAccounts.aspx`分别。 这会将超链接添加到我们在中创建的登录控件的接口指针指向页<a id="SKM6"> </a>[前面教程](creating-user-accounts-cs.md)。 登录控件的[ `HelpPageText` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.helppagetext.aspx)和[`HelpPageUrl`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.helppageurl.aspx)和[ `PasswordRecoveryText` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.passwordrecoverytext.aspx)和[`PasswordRecoveryUrl`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.passwordrecoveryurl.aspx)即可在同样的方式呈现的帮助页和密码恢复页的链接。
 
 进行这些属性更改后，登录控件的声明性的标记和外观应类似于图 5 所示。
 
@@ -162,7 +162,7 @@ ms.lasthandoff: 11/10/2017
 1. 更新以包括 Web 控件来收集其他凭据的登录控件的接口。
 2. 重写登录控件的内部身份验证逻辑，以便用户仅进行身份验证，其用户名和密码有效，并且也是有效，其附加的凭据。
 
-若要完成第一个任务，我们需要将登录控件转换为模板并添加所需的 Web 控件。 与第二个任务，则可以通过创建控件的事件处理程序取代登录控件的身份验证逻辑[`Authenticate`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.authenticate.aspx)。
+若要完成第一个任务，我们需要将登录控件转换为模板并添加所需的 Web 控件。 与第二个任务，则可以通过创建控件的事件处理程序取代登录控件的身份验证逻辑[`Authenticate`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.authenticate.aspx)。
 
 让我们更新 Login 控件，以便它提示用户输入其用户名、 密码和电子邮件地址，如果提供的电子邮件地址与匹配的文件在其电子邮件地址仅进行身份验证用户。 我们首先需要将登录控件的接口转换为模板。 从登录控件的智能标记上，选择转换为模板选项。
 
@@ -202,11 +202,11 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-3-modifying-the-login-controls-authentication-logic"></a>步骤 3： 修改登录控件的身份验证逻辑
 
-当访问者提供其凭据并单击登录按钮，回发时，才会和登录名来控制其身份验证工作流中的进行处理时。 工作流实例开始通过引发[`LoggingIn`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.loggingin.aspx)。 与此事件关联的任何事件处理程序可能会取消操作中的日志，通过设置`e.Cancel`属性`true`。
+当访问者提供其凭据并单击登录按钮，回发时，才会和登录名来控制其身份验证工作流中的进行处理时。 工作流实例开始通过引发[`LoggingIn`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.loggingin.aspx)。 与此事件关联的任何事件处理程序可能会取消操作中的日志，通过设置`e.Cancel`属性`true`。
 
-如果在操作中的日志不会被取消，工作流执行过程通过引发[`Authenticate`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.authenticate.aspx)。 如果没有一个事件处理程序`Authenticate`事件，然后它负责确定提供的凭据是否有效。 如果不指定任何事件处理程序，则使用登录控件`Membership.ValidateUser`方法来确定所提供的凭据的有效性。
+如果在操作中的日志不会被取消，工作流执行过程通过引发[`Authenticate`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.authenticate.aspx)。 如果没有一个事件处理程序`Authenticate`事件，然后它负责确定提供的凭据是否有效。 如果不指定任何事件处理程序，则使用登录控件`Membership.ValidateUser`方法来确定所提供的凭据的有效性。
 
-如果提供的凭据是否有效，则将创建窗体身份验证票证， [ `LoggedIn`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.loggedin.aspx)引发时，用户被重定向到合适的页面。 如果，但是，凭据被认为是无效，则[`LoginError`事件](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.loginerror.aspx)引发是显示一条消息，告知用户其凭据已无效。 默认情况下，在失败登录控件只需将设置其`FailureText`标签控件文本属性 （您登录尝试未成功失败消息。 请重试）。 但是，如果登录控件的[`FailureAction`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.failureaction.aspx)设置为`RedirectToLoginPage`，然后登录控制问题`Response.Redirect`至登录页追加查询字符串参数`loginfailure=1`（这将导致该登录名控件来显示失败消息）。
+如果提供的凭据是否有效，则将创建窗体身份验证票证， [ `LoggedIn`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.loggedin.aspx)引发时，用户被重定向到合适的页面。 如果，但是，凭据被认为是无效，则[`LoginError`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.loginerror.aspx)引发是显示一条消息，告知用户其凭据已无效。 默认情况下，在失败登录控件只需将设置其`FailureText`标签控件文本属性 （您登录尝试未成功失败消息。 请重试）。 但是，如果登录控件的[`FailureAction`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.failureaction.aspx)设置为`RedirectToLoginPage`，然后登录控制问题`Response.Redirect`至登录页追加查询字符串参数`loginfailure=1`（这将导致该登录名控件来显示失败消息）。
 
 图 9 提供的身份验证工作流的流程图。
 
@@ -226,11 +226,11 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](validating-user-credentials-against-the-membership-user-store-cs/samples/sample3.cs)]
 
-如你所见，`Authenticate`事件处理程序传递的类型对象[ `AuthenticateEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.authenticateeventargs.aspx)作为其第二个输入参数。 `AuthenticateEventArgs`类包含名为的布尔属性`Authenticated`用于指定提供的凭据是否有效。 我们的任务，然后，是编写代码此处以确定提供的凭据是否有效或不是，并将设置`e.Authenticate`属性相应地。
+如你所见，`Authenticate`事件处理程序传递的类型对象[ `AuthenticateEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.authenticateeventargs.aspx)作为其第二个输入参数。 `AuthenticateEventArgs`类包含名为的布尔属性`Authenticated`用于指定提供的凭据是否有效。 我们的任务，然后，是编写代码此处以确定提供的凭据是否有效或不是，并将设置`e.Authenticate`属性相应地。
 
 ### <a name="determining-and-validating-the-supplied-credentials"></a>确定和验证提供的凭据
 
-使用登录控件的[ `UserName` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.username.aspx)和[`Password`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.password.aspx)来确定由用户输入的用户名和密码凭据。 若要确定在任何其他 Web 控件中输入的值 (如`Email`我们在上一步中添加的文本框中)，使用 *`LoginControlID`*  `.FindControl`(" *`controlID`* ") 来获取以编程方式引用为 Web 控件模板中其`ID`属性等于 *`controlID`* 。 例如，若要获取对引用`Email`文本框中，使用以下代码：
+使用登录控件的[ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx)和[`Password`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx)来确定由用户输入的用户名和密码凭据。 若要确定在任何其他 Web 控件中输入的值 (如`Email`我们在上一步中添加的文本框中)，使用 *`LoginControlID`*  `.FindControl`(" *`controlID`* ") 来获取以编程方式引用为 Web 控件模板中其`ID`属性等于 *`controlID`* 。 例如，若要获取对引用`Email`文本框中，使用以下代码：
 
 `TextBox EmailTextBox = myLogin.FindControl("Email") as TextBox;`
 
@@ -239,9 +239,9 @@ ms.lasthandoff: 11/10/2017
 1. 确保提供的用户名和密码有效
 2. 确保输入的电子邮件地址与试图进行登录的用户的文件上的电子邮件地址
 
-若要完成第一项检查我们就可以使用`Membership.ValidateUser`像我们在步骤 1 中看到的方法。 对于第二项检查，我们需要确定用户的电子邮件地址，以便我们可以将其向文本框控件输入的电子邮件地址进行比较。 若要获取有关特定用户的信息，请使用`Membership`类的[`GetUser`方法](https://msdn.microsoft.com/en-us/library/system.web.security.membership.getuser.aspx)。
+若要完成第一项检查我们就可以使用`Membership.ValidateUser`像我们在步骤 1 中看到的方法。 对于第二项检查，我们需要确定用户的电子邮件地址，以便我们可以将其向文本框控件输入的电子邮件地址进行比较。 若要获取有关特定用户的信息，请使用`Membership`类的[`GetUser`方法](https://msdn.microsoft.com/library/system.web.security.membership.getuser.aspx)。
 
-`GetUser`方法具有大量的重载。 如果使用未传入任何参数，它将返回有关当前已登录用户的信息。 若要获取有关特定用户的信息，请调用`GetUser`在其用户名中传递。 两种方式的`GetUser`返回[`MembershipUser`对象](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.aspx)，它具有属性，例如`UserName`， `Email`， `IsApproved`， `IsOnline`，依次类推。
+`GetUser`方法具有大量的重载。 如果使用未传入任何参数，它将返回有关当前已登录用户的信息。 若要获取有关特定用户的信息，请调用`GetUser`在其用户名中传递。 两种方式的`GetUser`返回[`MembershipUser`对象](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx)，它具有属性，例如`UserName`， `Email`， `IsApproved`， `IsOnline`，依次类推。
 
 下面的代码实现这些两个检查。 如果同时通过，然后`e.Authenticate`设置为`true`，否则它将分配`false`。
 
@@ -261,7 +261,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-4-improving-the-login-controls-invalid-credentials-message"></a>步骤 4： 提高登录控件的凭据无效消息
 
-当用户尝试使用无效的凭据登录时，登录名，将显示一条消息说明的登录尝试不成功。 具体而言，该控件将显示由指定的消息其[`FailureText`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.failuretext.aspx)，具有默认值为您的登录尝试未成功。 请重试。
+当用户尝试使用无效的凭据登录时，登录名，将显示一条消息说明的登录尝试不成功。 具体而言，该控件将显示由指定的消息其[`FailureText`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.failuretext.aspx)，具有默认值为您的登录尝试未成功。 请重试。
 
 回想一下，原因有很多原因用户的凭据可能无效：
 
@@ -304,8 +304,8 @@ ms.lasthandoff: 11/10/2017
 
 - [显示自定义消息到锁定和未经批准的用户](http://aspnet.4guysfromrolla.com/articles/050306-1.aspx)
 - [检查 ASP.NET 2.0 的成员资格、 角色和配置文件](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
-- [如何： 创建 ASP.NET 登录页](https://msdn.microsoft.com/en-us/library/ms178331.aspx)
-- [登录控件技术文档](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.aspx)
+- [如何： 创建 ASP.NET 登录页](https://msdn.microsoft.com/library/ms178331.aspx)
+- [登录控件技术文档](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.aspx)
 - [使用登录控件](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/security/login.aspx)
 
 ### <a name="about-the-author"></a>关于作者

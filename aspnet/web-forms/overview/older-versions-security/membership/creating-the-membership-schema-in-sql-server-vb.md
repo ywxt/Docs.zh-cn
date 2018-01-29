@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 181741dc7e0fb7e1073f3783d96f59ac905f5e63
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2dadf091c6ae77fdfaf76f4e1bda92fd3e949678
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-the-membership-schema-in-sql-server-vb"></a>在 SQL Server (VB) 中创建成员身份架构
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 
 在 ASP.NET 2.0 中之前, 开发人员在实现所有这些用户帐户相关的任务的挂钩。 幸运的是 ASP.NET 团队识别这种不足，并引入 ASP.NET 2.0 的成员资格 framework。 成员资格 framework 是一套.NET Framework 中提供了完成核心用户帐户相关任务的编程接口的类。 此框架生成之上[提供程序模型](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx)，它允许开发人员插入标准化 API 的自定义的实现。
 
-中所述<a id="Tutorial1"> </a> [*安全性基础知识和 ASP.NET 支持*](../introduction/security-basics-and-asp-net-support-vb.md)教程中，.NET Framework 附带两个内置的成员资格提供程序： [ `ActiveDirectoryMembershipProvider` ](https://msdn.microsoft.com/en-us/library/system.web.security.activedirectorymembershipprovider.aspx)和[ `SqlMembershipProvider` ](https://msdn.microsoft.com/en-us/library/system.web.security.sqlmembershipprovider.aspx)。 顾名思义，`SqlMembershipProvider`使用 Microsoft SQL Server 数据库作为用户存储区。 若要在应用程序中使用此提供程序，我们需要告诉哪些数据库以使用作为存储的提供程序。 正如您想像，`SqlMembershipProvider`需要具有某些数据库表、 视图和存储的过程对用户存储数据库。 我们需要将此预期的架构添加到所选数据库。
+中所述<a id="Tutorial1"> </a> [*安全性基础知识和 ASP.NET 支持*](../introduction/security-basics-and-asp-net-support-vb.md)教程中，.NET Framework 附带两个内置的成员资格提供程序： [ `ActiveDirectoryMembershipProvider` ](https://msdn.microsoft.com/library/system.web.security.activedirectorymembershipprovider.aspx)和[ `SqlMembershipProvider` ](https://msdn.microsoft.com/library/system.web.security.sqlmembershipprovider.aspx)。 顾名思义，`SqlMembershipProvider`使用 Microsoft SQL Server 数据库作为用户存储区。 若要在应用程序中使用此提供程序，我们需要告诉哪些数据库以使用作为存储的提供程序。 正如您想像，`SqlMembershipProvider`需要具有某些数据库表、 视图和存储的过程对用户存储数据库。 我们需要将此预期的架构添加到所选数据库。
 
 本教程开始通过检查用于向数据库添加必要的架构，若要使用技术`SqlMembershipProvider`。 接下来，我们将检查架构中的键的表，并讨论它们的目的和重要性。 本教程结尾一下如何判断成员资格框架应使用的提供程序的 ASP.NET 应用程序。
 
@@ -55,7 +55,7 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 因为第二个教程不需要数据库时，才具有已我们构建的应用程序。 我们需要一个现在，但是，用户存储区。 让我们创建一个，然后向其中添加所需的架构`SqlMembershipProvider`提供程序 （请参阅步骤 2）。
 
 > [!NOTE]
-> 我们将使用在本教程系列整个[Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/en-us/sql/Aa336346.aspx)数据库来存储我们的应用程序表和`SqlMembershipProvider`架构。 有两个原因做出此决定是： 首先，由于其成本-免费的 Express Edition 是最 readably 访问版本的 SQL Server 2005;其次，SQL Server 2005 Express Edition 数据库可以放置直接在 web 应用程序的`App_Data`文件夹，使其简单来打包数据库和 web 应用程序一起在一个 ZIP 文件并将它重新部署而无需任何特殊的设置说明或配置选项。 如果你想要遵循使用非-Express Edition 版本的 SQL Server，随意。 几乎相同的步骤。 `SqlMembershipProvider`架构将工作的任何版本的 Microsoft SQL Server 2000 和最多。
+> 我们将使用在本教程系列整个[Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/sql/Aa336346.aspx)数据库来存储我们的应用程序表和`SqlMembershipProvider`架构。 有两个原因做出此决定是： 首先，由于其成本-免费的 Express Edition 是最 readably 访问版本的 SQL Server 2005;其次，SQL Server 2005 Express Edition 数据库可以放置直接在 web 应用程序的`App_Data`文件夹，使其简单来打包数据库和 web 应用程序一起在一个 ZIP 文件并将它重新部署而无需任何特殊的设置说明或配置选项。 如果你想要遵循使用非-Express Edition 版本的 SQL Server，随意。 几乎相同的步骤。 `SqlMembershipProvider`架构将工作的任何版本的 Microsoft SQL Server 2000 和最多。
 
 从解决方案资源管理器，右键单击`App_Data`文件夹，然后选择添加新项。 (如果看不到`App_Data`文件夹在项目中，右键单击解决方案资源管理器中的项目，选择添加 ASP.NET 文件夹，并选择`App_Data`。)从添加新项对话框中，选择要添加名为的新 SQL 数据库`SecurityTutorials.mdf`。 在本教程中我们将添加`SqlMembershipProvider`架构到此数据库; 在后续教程中我们将创建其他要捕获应用程序数据的表。
 
@@ -75,7 +75,7 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 
 ## <a name="step-2-adding-thesqlmembershipproviderschema-to-the-database"></a>步骤 2： 添加`SqlMembershipProvider`到数据库的架构
 
-`SqlMembershipProvider`需要一组特定的表、 视图和存储的过程以安装在用户存储数据库中。 可以使用添加这些必备项的数据库对象[`aspnet_regsql.exe`工具](https://msdn.microsoft.com/en-us/library/ms229862.aspx)。 此文件位于`%WINDIR%\Microsoft.Net\Framework\v2.0.50727\`文件夹。
+`SqlMembershipProvider`需要一组特定的表、 视图和存储的过程以安装在用户存储数据库中。 可以使用添加这些必备项的数据库对象[`aspnet_regsql.exe`工具](https://msdn.microsoft.com/library/ms229862.aspx)。 此文件位于`%WINDIR%\Microsoft.Net\Framework\v2.0.50727\`文件夹。
 
 > [!NOTE]
 > `aspnet_regsql.exe`工具提供命令行功能和图形用户界面。 图形界面是多个用户友好，我们在本教程中将检查。 命令行界面非常有用的添加`SqlMembershipProvider`架构需要可来自动执行，例如，生成脚本或自动测试方案。
@@ -199,7 +199,7 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 **图 11**： 用户帐户可能是分区跨多个应用程序 ([单击以查看实际尺寸的图像](creating-the-membership-schema-in-sql-server-vb/_static/image33.png))
 
 
-`aspnet_Applications`表是定义这些分区的内容。 此表中的行表示每个应用程序使用数据库来存储用户帐户信息。 `aspnet_Applications`表具有四个列： `ApplicationId`， `ApplicationName`， `LoweredApplicationName`，和`Description`。`ApplicationId` 类型[ `uniqueidentifier` ](https://msdn.microsoft.com/en-us/library/ms187942.aspx)和表的主键;`ApplicationName`提供每个应用程序的唯一用户友好名称。
+`aspnet_Applications`表是定义这些分区的内容。 此表中的行表示每个应用程序使用数据库来存储用户帐户信息。 `aspnet_Applications`表具有四个列： `ApplicationId`， `ApplicationName`， `LoweredApplicationName`，和`Description`。`ApplicationId` 类型[ `uniqueidentifier` ](https://msdn.microsoft.com/library/ms187942.aspx)和表的主键;`ApplicationName`提供每个应用程序的唯一用户友好名称。
 
 其他成员资格和角色相关的表将链接回`ApplicationId`字段`aspnet_Applications`。 例如，`aspnet_Users`表，其中包含每个用户帐户的记录，具有`ApplicationId`外键字段; 有关 ditto`aspnet_Roles`表。 `ApplicationId`这些表中的字段指定应用程序分区的用户帐户或所属角色。
 
@@ -211,7 +211,7 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 - `UserName`
 - `ApplicationId`
 
-`UserId`是的主键 (和类型的`uniqueidentifier`)。 `UserName`类型`nvarchar(256)`以及的密码，使用户的凭据。 (用户的密码存储在`aspnet_Membership`表。)`ApplicationId`链接到特定的应用程序中的用户帐户`aspnet_Applications`。 没有复合[`UNIQUE`约束](https://msdn.microsoft.com/en-us/library/ms191166.aspx)上`UserName`和`ApplicationId`列。 这可确保在给定的应用程序中每个用户名是唯一的但它允许对同一`UserName`要在不同的应用程序中使用。
+`UserId`是的主键 (和类型的`uniqueidentifier`)。 `UserName`类型`nvarchar(256)`以及的密码，使用户的凭据。 (用户的密码存储在`aspnet_Membership`表。)`ApplicationId`链接到特定的应用程序中的用户帐户`aspnet_Applications`。 没有复合[`UNIQUE`约束](https://msdn.microsoft.com/library/ms191166.aspx)上`UserName`和`ApplicationId`列。 这可确保在给定的应用程序中每个用户名是唯一的但它允许对同一`UserName`要在不同的应用程序中使用。
 
 `aspnet_Membership`表包括其他用户帐户信息，如用户的密码、 电子邮件地址、 最后一个登录名日期和时间，以及等。 中的记录之间不存在一对一的对应关系`aspnet_Users`和`aspnet_Membership`表。 通过将确保此关系`UserId`字段`aspnet_Membership`，它用作表的主键。 如`aspnet_Users`表，`aspnet_Membership`包括`ApplicationId`会绑定到特定应用程序分区此信息的字段。
 
@@ -229,11 +229,11 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 
 表 1 说明什么这三列可能如下所示的各种存储技术存储的密码 MySecret 时 ！ .
 
-| **存储技术&lt;\_o3a\_p /&gt;** | **密码&lt;\_o3a\_p /&gt;** | **PasswordFormat&lt;\_o3a\_p /&gt;** | **PasswordSalt&lt;\_o3a\_p /&gt;** |
+| **存储技术&lt;\_o3a\_p /&gt;** | **Password&lt;\_o3a\_p /&gt;** | **PasswordFormat&lt;\_o3a\_p /&gt;** | **PasswordSalt&lt;\_o3a\_p /&gt;** |
 | --- | --- | --- | --- |
-| 清除 | MySecret ！ | 0 | tTnkPlesqissc2y2SMEygA = = |
-| 哈希处理 | 2oXm6sZHWbTHFgjgkGQsc2Ec9ZM = | 1 | wFgjUfhdUFOCKQiI61vtiQ = = |
-| 加密 | 62RZgDvhxykkqsMchZ0Yly7HS6onhpaoCYaRxV8g0F4CW56OXUU3e7Inza9j9BKp | 2 | LSRzhGS/aa/oqAXGLHJNBw = = |
+| 清除 | MySecret ！ | 0 | tTnkPlesqissc2y2SMEygA== |
+| 哈希处理 | 2oXm6sZHWbTHFgjgkGQsc2Ec9ZM= | 1 | wFgjUfhdUFOCKQiI61vtiQ== |
+| 加密 | 62RZgDvhxykkqsMchZ0Yly7HS6onhpaoCYaRxV8g0F4CW56OXUU3e7Inza9j9BKp | 2 | LSRzhGS/aa/oqAXGLHJNBw== |
 
 **表 1**： 密码相关字段存储密码 MySecret 时的示例值 ！
 
@@ -256,20 +256,20 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 
 所有支持提供程序模型-如的成员资格和角色的框架的框架缺少本身的实现详细信息，并改用该责任委派给提供程序类。 成员资格 framework 中，对于`Membership`类定义了 API，用于管理用户帐户，但不直接与任何用户存储区不进行交互。 相反，`Membership`类的方法移交到配置提供程序的请求，我们将使用`SqlMembershipProvider`。 当我们调用中的方法之一`Membership`类，如何的成员资格框架知道委派对的调用`SqlMembershipProvider`？
 
-`Membership`类具有[`Providers`属性](https://msdn.microsoft.com/en-us/library/system.web.security.membership.providers.aspx)成员资格 framework 包含对所有可供使用的已注册的提供程序类的引用。 每个已注册的提供程序具有关联的名称和类型。 名称提供用户友好的方式来引用中的特定提供程序`Providers`集合，而类型标识提供程序类。 此外，每个已注册的提供程序可能包括配置设置。 成员资格框架的配置设置包括`PasswordFormat`和`requiresUniqueEmail`，此外还有许多其他。 有关使用配置设置的完整列表请参阅表 2 `SqlMembershipProvider`。
+`Membership`类具有[`Providers`属性](https://msdn.microsoft.com/library/system.web.security.membership.providers.aspx)成员资格 framework 包含对所有可供使用的已注册的提供程序类的引用。 每个已注册的提供程序具有关联的名称和类型。 名称提供用户友好的方式来引用中的特定提供程序`Providers`集合，而类型标识提供程序类。 此外，每个已注册的提供程序可能包括配置设置。 成员资格框架的配置设置包括`PasswordFormat`和`requiresUniqueEmail`，此外还有许多其他。 有关使用配置设置的完整列表请参阅表 2 `SqlMembershipProvider`。
 
 `Providers` Web 应用程序的配置设置可以通过指定服务属性的内容。 默认情况下，所有 web 应用程序都具有名为提供程序`AspNetSqlMembershipProvider`类型的`SqlMembershipProvider`。 此默认成员资格提供程序注册中`machine.config`(位于`%WINDIR%\Microsoft.Net\Framework\v2.0.50727\CONFIG`):
 
 [!code-xml[Main](creating-the-membership-schema-in-sql-server-vb/samples/sample1.xml)]
 
-为上面所示，标记[`<membership>`元素](https://msdn.microsoft.com/en-us/library/1b9hw62f.aspx)定义成员资格框架时的配置设置[`<providers>`子元素](https://msdn.microsoft.com/en-us/library/6d4936ht.aspx)指定的已注册提供程序。 提供程序可能添加或删除使用[ `<add>` ](https://msdn.microsoft.com/en-us/library/whae3t94.aspx)或[ `<remove>` ](https://msdn.microsoft.com/en-us/library/aykw9a6d.aspx)元素; 请改用[ `<clear>` ](https://msdn.microsoft.com/en-us/library/t062y6yc.aspx)要删除所有当前元素注册的提供程序。 为上面所示，标记`machine.config`添加提供程序名为`AspNetSqlMembershipProvider`类型的`SqlMembershipProvider`。
+为上面所示，标记[`<membership>`元素](https://msdn.microsoft.com/library/1b9hw62f.aspx)定义成员资格框架时的配置设置[`<providers>`子元素](https://msdn.microsoft.com/library/6d4936ht.aspx)指定的已注册提供程序。 提供程序可能添加或删除使用[ `<add>` ](https://msdn.microsoft.com/library/whae3t94.aspx)或[ `<remove>` ](https://msdn.microsoft.com/library/aykw9a6d.aspx)元素; 请改用[ `<clear>` ](https://msdn.microsoft.com/library/t062y6yc.aspx)要删除所有当前元素注册的提供程序。 为上面所示，标记`machine.config`添加提供程序名为`AspNetSqlMembershipProvider`类型的`SqlMembershipProvider`。
 
 除了`name`和`type`特性，`<add>`元素包含定义各种配置设置的值的属性。 表 2 列出了可用`SqlMembershipProvider`-特定的配置设置，以及每个说明。
 
 > [!NOTE]
 > 在表 2 中记下任何默认值是指中定义的默认值`SqlMembershipProvider`类。 请注意该 not 中的配置设置的所有`AspNetSqlMembershipProvider`对应的默认值`SqlMembershipProvider`类。 例如，如果未指定成员资格提供程序中,`requiresUniqueEmail`将默认值设置为 true。 但是，`AspNetSqlMembershipProvider`通过显式指定的值来重写此默认值`false`。
 
-| **设置&lt;\_o3a\_p /&gt;** | **说明&lt;\_o3a\_p /&gt;** |
+| **设置&lt;\_o3a\_p /&gt;** | **Description&lt;\_o3a\_p /&gt;** |
 | --- | --- |
 | `ApplicationName` | 回想一下，该成员身份框架允许在单个用户存储分区跨多个应用程序。 此设置指示所使用的成员资格提供程序的应用程序分区的名称。 如果此值不显式指定时，其设置为，在运行时，应用程序的虚拟根路径的值。 |
 | `commandTimeout` | 指定的 SQL 命令超时值 （以秒为单位）。 默认值为 30。 |
@@ -321,7 +321,7 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 
 除了注册`SecurityTutorialsSqlMembershipProvider`提供程序，上面的标记定义`SecurityTutorialsSqlMembershipProvider`作为默认提供程序 (通过`defaultProvider`属性中`<membership>`元素)。 回想一下，成员身份 framework 可以有多个已注册的提供程序。 由于`AspNetSqlMembershipProvider`注册中的第一个提供程序为`machine.config`，除非我们指示，否则用作默认的提供程序。
 
-目前，我们的应用程序具有两个已注册的提供程序：`AspNetSqlMembershipProvider`和`SecurityTutorialsSqlMembershipProvider`。 但是，在注册之前`SecurityTutorialsSqlMembershipProvider`通过添加我们无法清除了所有以前的提供程序已注册的提供程序[`<clear />`元素](https://msdn.microsoft.com/en-us/library/t062y6yc.aspx)立即之前我们`<add>`元素。 这将清除`AspNetSqlMembershipProvider`从注册的提供程序列表中，这意味着`SecurityTutorialsSqlMembershipProvider`是唯一的已注册成员资格提供程序。 如果我们使用此方法中，那么我们不需要将标记`SecurityTutorialsSqlMembershipProvider`为默认的提供程序，因为它将是唯一的已注册成员资格提供程序。 有关详细信息使用`<clear />`，请参阅[使用`<clear />`时添加提供程序](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx)。
+目前，我们的应用程序具有两个已注册的提供程序：`AspNetSqlMembershipProvider`和`SecurityTutorialsSqlMembershipProvider`。 但是，在注册之前`SecurityTutorialsSqlMembershipProvider`通过添加我们无法清除了所有以前的提供程序已注册的提供程序[`<clear />`元素](https://msdn.microsoft.com/library/t062y6yc.aspx)立即之前我们`<add>`元素。 这将清除`AspNetSqlMembershipProvider`从注册的提供程序列表中，这意味着`SecurityTutorialsSqlMembershipProvider`是唯一的已注册成员资格提供程序。 如果我们使用此方法中，那么我们不需要将标记`SecurityTutorialsSqlMembershipProvider`为默认的提供程序，因为它将是唯一的已注册成员资格提供程序。 有关详细信息使用`<clear />`，请参阅[使用`<clear />`时添加提供程序](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx)。
 
 请注意，`SecurityTutorialsSqlMembershipProvider`的`connectionStringName`设置引用刚才-添加`SecurityTutorialsConnectionString`连接字符串名称，并且其`applicationName`设置已被设置为 SecurityTutorials 的值。 此外，`requiresUniqueEmail`设置已设置为`true`。 所有其他配置选项中的值相等`AspNetSqlMembershipProvider`。 如果您愿意，则请尝试进行任何配置修改在这里。 例如，你无法通过要求提供两个非字母数字字符，而不是一个，或通过增加为而不是七个八个字符的密码长度增强密码强度。
 
@@ -344,16 +344,16 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 - [ASP.NET 2.0 应用程序服务配置为使用 SQL Server 2000 或 SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)
 - [下载 SQL Server Management Studio Express Edition](https://www.microsoft.com/downloads/details.aspx?FamilyId=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796&amp;displaylang=en)
 - [检查 ASP.NET 2.0 s 成员资格、 角色和配置文件](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
-- [`<add>`成员资格提供程序的元素](https://msdn.microsoft.com/en-us/library/whae3t94.aspx)
-- [`<membership>`元素](https://msdn.microsoft.com/en-us/library/1b9hw62f.aspx)
-- [`<providers>`元素的成员身份](https://msdn.microsoft.com/en-us/library/6d4936ht.aspx)
+- [`<add>`成员资格提供程序的元素](https://msdn.microsoft.com/library/whae3t94.aspx)
+- [`<membership>`元素](https://msdn.microsoft.com/library/1b9hw62f.aspx)
+- [`<providers>`元素的成员身份](https://msdn.microsoft.com/library/6d4936ht.aspx)
 - [使用`<clear />`时添加提供程序](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx)
 - [直接使用`SqlMembershipProvider`](http://aspnet.4guysfromrolla.com/articles/091207-1.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>在本教程中包含的主题的视频培训
 
 - [了解 ASP.NET 成员身份](../../../videos/authentication/understanding-aspnet-memberships.md)
-- [使用成员资格架构配置到工作的 SQL](../../../videos/authentication/configuring-sql-to-work-with-membership-schemas.md)
+- [配置 SQL 以使用成员身份架构](../../../videos/authentication/configuring-sql-to-work-with-membership-schemas.md)
 - [更改默认成员身份架构中的成员身份设置](../../../videos/authentication/changing-membership-settings-in-the-default-membership-schema.md)
 
 ### <a name="about-the-author"></a>关于作者

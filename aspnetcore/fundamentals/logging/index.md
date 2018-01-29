@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging/index
-ms.openlocfilehash: 387d19af9165d4b54ce3cb1a9b04412271da6fb0
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: af8364c584b686fd5c0fe30a89e241d9d08a30c0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>ASP.NET Core 中的日志记录简介
 
@@ -43,7 +43,7 @@ ASP.NET Core 支持适用于各种日志记录提供程序的日志记录 API。
 
 此示例使用 `TodoController` 类创建日志作为类别。 [本文的稍后部分](#log-category)对这些类别进行了介绍。
 
-ASP.NET Core 不提供异步记录器方法，因为日志记录的速度应快到无需使用异步。 如果发现自己的实际情况与上述不同，请考虑更改记录方式。 如果数据存储速度较慢，请先将日志消息写入快速存储，稍后再将其转移至低速存储。 例如，记录到由另一进程读取和保留以减缓存储的消息队列。
+ASP.NET Core 不提供异步记录器方法，因为日志记录的速度应非常快，使用异步的代价是不值得的。 如果发现自己的实际情况与上述不同，请考虑更改记录方式。 如果数据存储速度较慢，请先将日志消息写入快速存储，稍后再将其转移至低速存储。 例如，记录到由另一进程读取和暂留以减缓存储的消息队列。
 
 ## <a name="how-to-add-providers"></a>如何添加提供程序
 
@@ -147,11 +147,11 @@ ASP.NET Core 定义了以下[日志级别](https://docs.microsoft.com/aspnet/cor
 
 * 跟踪 = 0
 
-  表示仅对于开发人员调试问题有价值的信息。 这些消息可能包含敏感应用程序数据，因此请勿在生产环境中启用它们。 默认情况下禁用。 示例：`Credentials: {"User":"someuser", "Password":"P@ssword"}`
+  表示仅对于开发人员调试问题有价值的信息。 这些消息可能包含敏感应用程序数据，因此不得在生产环境中启用它们。 默认情况下禁用。 示例：`Credentials: {"User":"someuser", "Password":"P@ssword"}`
 
 * 调试 = 1
 
-  表示在开发和调试过程中短期有用的信息。 示例：`Entering method Configure with flag set to true.` 除非要进行故障排除，否则由于日志的数量过多，通常不在生产中启用 `Debug` 级别日志。
+  表示在开发和调试过程中短期有用的信息。 示例：`Entering method Configure with flag set to true.`。除非要排查问题，否则通常不会在生产中启用 `Debug` 级别日志，因为日志数量过多。
 
 * 信息 = 2
 
@@ -159,7 +159,7 @@ ASP.NET Core 定义了以下[日志级别](https://docs.microsoft.com/aspnet/cor
 
 * 警告 = 3
 
-  表示应用程序流中的异常或意外事件。 可包括不会中断应用程序运行但仍需调查的错误或其他条件。 `Warning` 日志级别常用于已处理的异常。 示例：`FileNotFoundException for file quotes.txt.`
+  表示应用程序流中的异常或意外事件。 可能包括不会中断应用程序运行但仍需调查的错误或其他条件。 `Warning` 日志级别常用于已处理的异常。 示例：`FileNotFoundException for file quotes.txt.`
 
 * 错误 = 4
 
@@ -325,7 +325,7 @@ System.Exception: Item not found exception.
 
 **提供程序别名**
 
-可在配置中使用类型名称指定提供程序，但每个提供程序都定义了一个更短的别名，它更易于使用。 对于内置提供程序，请使用以下别名：
+虽然可以使用类型名称在配置中指定提供程序，但每个提供程序都定义了更短且更易于使用的别名。 对于内置提供程序，请使用以下别名：
 
 - 控制台
 - 调试
@@ -336,7 +336,7 @@ System.Exception: Item not found exception.
 
 **默认最低级别**
 
-仅当配置或代码中的规则对于给定提供程序或类别均不适用时，最低级别设置才会生效。 下面的示例演示如何设置最低级别：
+仅当配置或代码中的规则对给定提供程序和类别都不适用时，最低级别设置才会生效。 下面的示例演示如何设置最低级别：
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_MinLevel&highlight=3)]
 
@@ -344,7 +344,7 @@ System.Exception: Item not found exception.
 
 **筛选器函数**
 
-可向筛选器函数写入代码以应用筛选规则。 对于配置或代码未将规则分配到的所有提供程序和类别，都将调用筛选器函数。 函数中的代码有权访问提供程序类型、类别和日志级别，以决定是否记录某条消息。 例如:
+可向筛选器函数写入代码以应用筛选规则。 对配置或代码没有向其分配规则的所有提供程序和类别调用筛选器函数。 函数中的代码有权访问提供程序类型、类别和日志级别，以决定是否记录某条消息。 例如:
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_FilterFunction&highlight=5-13)]
 
@@ -356,7 +356,7 @@ System.Exception: Item not found exception.
 
 [!code-csharp[](index/sample/Startup.cs?name=snippet_AddConsoleAndDebugWithFilter&highlight=6-7)]
 
-`AddEventLog` 方法拥有接受 `EventLogSettings` 实例的重载，该实例的 `Filter` 属性中可能包含筛选函数。 TraceSource 提供程序不提供以上任何重载，因为其日志记录级别和其他参数均基于它使用的 `SourceSwitch` 和 `TraceListener`。
+`AddEventLog` 方法拥有接受 `EventLogSettings` 实例的重载，该实例的 `Filter` 属性中可能包含筛选函数。 TraceSource 提供程序不提供以上任何重载，因为其日志记录级别和其他参数都以它使用的 `SourceSwitch` 和 `TraceListener` 为依据。
 
 可以使用 `WithFilter` 扩展方法为所有通过 `ILoggerFactory` 实例注册的提供程序设置筛选规则。 以下示例将（类别以“Microsoft”或“System”开头的）框架日志限制为警告，并在调试级别记录应用日志。
 
@@ -364,15 +364,15 @@ System.Exception: Item not found exception.
 
 要通过筛选来防止写入某个特定类别的所有日志，可将 `LogLevel.None` 指定为该类别的最低日志级别。 `LogLevel.None` 的整数值为 6，它大于 `LogLevel.Critical` (5)。
 
-`WithFilter` 扩展方法由 [Microsoft.Extensions.Logging.Filter](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Filter) NuGet 包提供。 该方法返回一个新的 `ILoggerFactory` 实例，该实例将筛选传递给注册的所有记录器提供程序的日志消息。 这不会影响其他任何 `ILoggerFactory` 实例（包括原始 `ILoggerFactory` 实例）。
+`WithFilter` 扩展方法由 [Microsoft.Extensions.Logging.Filter](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Filter) NuGet 包提供。 该方法返回一个新的 `ILoggerFactory` 实例，该实例将筛选传递给注册的所有记录器提供程序的日志消息。 它不会影响其他任何 `ILoggerFactory` 实例，包括原始 `ILoggerFactory` 实例。
 
 ---
 
 ## <a name="log-scopes"></a>日志作用域
 
-可将逻辑操作集组合到作用域内，以便将相同的数据附加到在该集中创建的每个日志。 例如，可让处理事务时创建的每个日志都包含事务 ID。
+可以将逻辑操作集划入范围，从而将相同的数据附加到在此集中创建的每个日志。 例如，可让处理事务时创建的每个日志都包含事务 ID。
 
-作用域是由 `ILogger.BeginScope<TState>` 方法返回的 `IDisposable` 类型，在释放前将持续存在。 要使用作用域，请在 `using` 块中包装记录器调用，如下所示：
+范围是由 `ILogger.BeginScope<TState>` 方法返回的 `IDisposable` 类型，持续至释放为止。 要使用作用域，请在 `using` 块中包装记录器调用，如下所示：
 
 [!code-csharp[](index/sample//Controllers/TodoController.cs?name=snippet_Scopes&highlight=4-5,13)]
 
@@ -610,7 +610,7 @@ loggerFactory.AddAzureWebAppDiagnostics();
 
 日志文件的默认位置是 D:\\home\\LogFiles\\Application 文件夹，默认文件名为 diagnostics-yyyymmdd.txt。 默认文件大小上限为 10 MB，默认最大保留文件数为 2。 默认 blob 名为 {app-name}{timestamp}/yyyy/mm/dd/hh/{guid}-applicationLog.txt。 有关默认行为的详细信息，请参阅 [AzureAppServicesDiagnosticsSettings](https://github.com/aspnet/Logging/blob/c7d0b1b88668ff4ef8a86ea7d2ebb5ca7f88d3e0/src/Microsoft.Extensions.Logging.AzureAppServices/AzureAppServicesDiagnosticsSettings.cs)。
 
-该提供程序仅当项目在 Azure 环境中运行时有效。 它在本地运行时无效，不会写入本地文件或 blob 的本地开发存储。
+该提供程序仅当项目在 Azure 环境中运行时有效。 它在本地运行时无效。也就是说，不会写入本地文件或 blob 的本地开发存储。
 
 ## <a name="third-party-logging-providers"></a>第三方日志记录提供程序
 

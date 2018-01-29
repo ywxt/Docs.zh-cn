@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 00a5358361fa3f37d13ea74d61c437088b388ece
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9a1b7fbb1e60c9f1bc6a26ccaeb7d14b4c95219d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="efficiently-paging-through-large-amounts-of-data-vb"></a>有效地分页大量的数据 (VB)
 ====================
@@ -63,7 +63,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-2-returning-the-total-number-of-records-being-paged-through"></a>步骤 2： 返回记录正在通过寻呼发送通过的总数
 
-我们将研究如何检索正在显示的页面的记录的精确子集之前，让我们来首先看一下如何返回的记录正在通过寻呼发送通过总数。 为了正确配置的分页用户界面需要这些信息。 使用可以获取的特定 SQL 查询返回的记录总数[`COUNT`聚合函数](https://msdn.microsoft.com/en-US/library/ms175997.aspx)。 例如，若要确定中的记录总数`Products`表，我们可以使用以下查询：
+我们将研究如何检索正在显示的页面的记录的精确子集之前，让我们来首先看一下如何返回的记录正在通过寻呼发送通过总数。 为了正确配置的分页用户界面需要这些信息。 使用可以获取的特定 SQL 查询返回的记录总数[`COUNT`聚合函数](https://msdn.microsoft.com/library/ms175997.aspx)。 例如，若要确定中的记录总数`Products`表，我们可以使用以下查询：
 
 
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample1.sql)]
@@ -120,7 +120,7 @@ DAL s`TotalNumberOfProducts`方法返回为 null 的整数; 但是，我们已�
 有两种常规技术用于有效地将行索引相关联的数据，能够分页浏览，从而支持记录要检索的精确子集：
 
 - **使用 SQL Server 2005 s`ROW_NUMBER()`关键字**到 SQL Server 2005 中，新`ROW_NUMBER()`关键字将排名的某些排序基于每个返回的记录与相关联。 此排名可以用作每个行的行索引。
-- **使用表变量和`SET ROWCOUNT`**  SQL Server s [ `SET ROWCOUNT`语句](https://msdn.microsoft.com/en-us/library/ms188774.aspx)可以用于指定查询应终止; 之前处理的总记录数[表变量](http://www.sqlteam.com/item.asp?ItemID=9454)是本地的 T-SQL 的变量，可以容纳 akin 到表格数据、[临时表](http://www.sqlteam.com/item.asp?ItemID=2029)。 此方法适用于 Microsoft SQL Server 2005 和 SQL Server 2000 (而`ROW_NUMBER()`方法仅适用于 SQL Server 2005)。  
+- **使用表变量和`SET ROWCOUNT`**  SQL Server s [ `SET ROWCOUNT`语句](https://msdn.microsoft.com/library/ms188774.aspx)可以用于指定查询应终止; 之前处理的总记录数[表变量](http://www.sqlteam.com/item.asp?ItemID=9454)是本地的 T-SQL 的变量，可以容纳 akin 到表格数据、[临时表](http://www.sqlteam.com/item.asp?ItemID=2029)。 此方法适用于 Microsoft SQL Server 2005 和 SQL Server 2000 (而`ROW_NUMBER()`方法仅适用于 SQL Server 2005)。  
   
  本指南旨在创建具有的表变量`IDENTITY`列和列的主键的表的数据通过正在通过寻呼发送。 接下来，将其数据通过正在通过寻呼发送表的内容转储到表变量中，从而将连续的行索引相关联 (通过`IDENTITY`列) 为表中每个记录。 已填充的表变量之后,`SELECT`表变量中，语句与基础表联接，可以将执行拉出特定的记录。 `SET ROWCOUNT`语句用于智能地限制需要转储到表变量的记录数。  
   
@@ -275,9 +275,9 @@ DAL s`TotalNumberOfProducts`方法返回为 null 的整数; 但是，我们已�
 
 若要解决此问题，我们需要配置对象数据源以使用自定义分页。 这可以通过以下步骤完成：
 
-1. **设置 ObjectDataSource s`EnablePaging`属性`true`**这将指示必须将传递给 ObjectDataSource`SelectMethod`两个其他参数： 一个用于指定开始的行索引 ([ `StartRowIndexParameterName` ](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.startrowindexparametername.aspx))，，另一个用于指定最大行数 ([`MaximumRowsParameterName`](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.maximumrowsparametername.aspx))。
+1. **设置 ObjectDataSource s`EnablePaging`属性`true`**这将指示必须将传递给 ObjectDataSource`SelectMethod`两个其他参数： 一个用于指定开始的行索引 ([ `StartRowIndexParameterName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.startrowindexparametername.aspx))，，另一个用于指定最大行数 ([`MaximumRowsParameterName`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.maximumrowsparametername.aspx))。
 2. **设置 ObjectDataSource s`StartRowIndexParameterName`和`MaximumRowsParameterName`属性相应地**`StartRowIndexParameterName`和`MaximumRowsParameterName`属性指示传入的输入参数的名称`SelectMethod`用于自定义分页用途. 默认情况下，这些参数名称是`startIndexRow`和`maximumRows`，这是正因如此，在创建时`GetProductsPaged`方法在 BLL，我使用了这些值为输入参数。 如果选择了使用不同的参数名称 BLL s`GetProductsPaged`如方法`startIndex`和`maxRows`，对于你需要的示例设置 ObjectDataSource s`StartRowIndexParameterName`和`MaximumRowsParameterName`属性相应地 （例如为 startIndex`StartRowIndexParameterName`和最大行数为`MaximumRowsParameterName`)。
-3. **设置 ObjectDataSource s [ `SelectCountMethod`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.selectcountmethod(VS.80).aspx)总数量的记录正在分页通过返回的方法的名称 (`TotalNumberOfProducts`)**回想一下，`ProductsBLL`类的`TotalNumberOfProducts`方法返回的记录正在通过寻呼发送通过使用执行 DAL 方法总数`SELECT COUNT(*) FROM Products`查询。 为正确呈现的分页界面情况下，此信息所需的对象数据源。
+3. **设置 ObjectDataSource s [ `SelectCountMethod`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selectcountmethod(VS.80).aspx)总数量的记录正在分页通过返回的方法的名称 (`TotalNumberOfProducts`)**回想一下，`ProductsBLL`类的`TotalNumberOfProducts`方法返回的记录正在通过寻呼发送通过使用执行 DAL 方法总数`SELECT COUNT(*) FROM Products`查询。 为正确呈现的分页界面情况下，此信息所需的对象数据源。
 4. **删除`startRowIndex`和`maximumRows``<asp:Parameter>`从 ObjectDataSource s 声明性标记元素**配置时通过向导 ObjectDataSource，Visual Studio 自动添加两个`<asp:Parameter>`元素`GetProductsPaged`方法 s 输入参数。 通过设置`EnablePaging`到`true`，将自动传递这些参数; 如果他们还出现在声明性语法，ObjectDataSource 将尝试传递*四个*参数`GetProductsPaged`方法和两个参数`TotalNumberOfProducts`方法。 如果你忘记了以删除这些`<asp:Parameter>`元素，在访问通过浏览器，您将收到错误消息的页时： *ObjectDataSource ObjectDataSource1 找不到非泛型方法 TotalNumberOfProducts 具有参数： 值，值*。
 
 进行这些更改后，ObjectDataSource s 声明性语法应如下所示：
@@ -352,7 +352,7 @@ DAL s`TotalNumberOfProducts`方法返回为 null 的整数; 但是，我们已�
 
 遗憾的是，在该处 s 没有一个适合大小所有此处回答。 性能提升取决于许多因素影响，最卓越两个正在数量的记录正在通过寻呼发送通过负载置于 web 服务器和数据库服务器之间的数据库服务器和通信通道。 对于只需少量几十个记录的小型表，性能差异可能可以忽略不计。 不过，对于具有数千到成千上万的行的大型表的性能差异是很严重的。
 
-项目的挖掘， [ASP.NET 2.0 与 SQL Server 2005 中的自定义分页](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx)，包含所运行的用于展示之间这两项分页技术分页通过与数据库表时的性能差异某些性能测试50,000 个记录。 这些测试在我检查这两个执行 SQL Server 级别的查询的时间 (使用[SQL 事件探查器](https://msdn.microsoft.com/en-us/library/ms173757.aspx)) 和 ASP.NET 页使用[ASP.NET 的跟踪功能](https://msdn.microsoft.com/en-US/library/y13fw6we.aspx)。 请记住，这些测试已在具有单个活动用户，我开发框上运行，并因此是科学并不模拟典型的网站的负载模式。 无论如何，结果说明中的默认实例和自定义分页的执行时间的相对差异时使用的数据量非常大。
+项目的挖掘， [ASP.NET 2.0 与 SQL Server 2005 中的自定义分页](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx)，包含所运行的用于展示之间这两项分页技术分页通过与数据库表时的性能差异某些性能测试50,000 个记录。 这些测试在我检查这两个执行 SQL Server 级别的查询的时间 (使用[SQL 事件探查器](https://msdn.microsoft.com/library/ms173757.aspx)) 和 ASP.NET 页使用[ASP.NET 的跟踪功能](https://msdn.microsoft.com/library/y13fw6we.aspx)。 请记住，这些测试已在具有单个活动用户，我开发框上运行，并因此是科学并不模拟典型的网站的负载模式。 无论如何，结果说明中的默认实例和自定义分页的执行时间的相对差异时使用的数据量非常大。
 
 
 |  | **Avg.持续时间 （秒）** | **读取** |

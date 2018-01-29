@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 01cedb4e3abb35670d2908fe8cb4367c3fd58b33
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 18c7448ad79891d04eca1e939a0aeeabe417bde8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -136,7 +136,7 @@ web.config 文件的主要用途是配置 [ASP.NET Core 模块](xref:fundamental
 
 1. 在目标 IIS 系统上，创建一个文件夹，将应用的已发布文件夹和文件包含在其中，如 [目录结构](xref:host-and-deploy/directory-structure)中所述。
 
-2. 在文件夹中创建一个“日志”文件，用于在启用 stdout 日志记录时保存 stdout 日志。 如果部署应用时有效负载中包含了“日志”文件夹，请跳过此步骤。 有关如何让 MSBuild 创建“日志”文件夹的说明，请参阅[目录结构](xref:host-and-deploy/directory-structure)主题。
+2. 在文件夹中创建一个“日志”文件夹，用于在启用 stdout 日志记录时保存 stdout 日志。 如果部署应用时有效负载中包含了“日志”文件夹，请跳过此步骤。 有关如何让 MSBuild 创建“日志”文件夹的说明，请参阅[目录结构](xref:host-and-deploy/directory-structure)主题。
 
 3. 在 IIS 管理器中创建新网站。 提供网站名称，并将物理路径设置为应用的部署文件夹。 提供“绑定”配置并创建网站。
 
@@ -231,7 +231,7 @@ web.config 文件的主要用途是配置 [ASP.NET Core 模块](xref:fundamental
 
 ASP.NET 应用使用的数据保护密钥存储在应用外部的注册表配置单元中。 要持久保存给定应用的密钥，需为应用池创建注册表配置单元。
 
-对于独立的非 Web 场 IIS 安装，可以对用于 ASP.NET Core 应用的每个应用池使用[数据保护 Provision-AutoGenKeys.ps1 PowerShell 脚本](https://github.com/aspnet/DataProtection/blob/dev/Provision-AutoGenKeys.ps1)。 此脚本在 HKLM 注册表中创建一个特殊的注册表项（该注册表仅列在工作进程帐户的 ACL 中）。 通过计算机范围的密钥使用 DPAPI 对密钥静态加密。
+对于独立的非 Web 场 IIS 安装，可以对用于 ASP.NET Core 应用的每个应用池使用[数据保护 Provision-AutoGenKeys.ps1 PowerShell 脚本](https://github.com/aspnet/DataProtection/blob/dev/Provision-AutoGenKeys.ps1)。 此脚本在仅对工作进程帐户实现 ACL 的 HKLM 注册表中创建特殊的注册表项。 通过计算机范围的密钥使用 DPAPI 对密钥静态加密。
 
 在 Web 场方案中，可以将应用配置为使用 UNC 路径存储其数据保护密钥环。 默认情况下，数据保护密钥未加密。 确保这种共享的文件权限仅限于运行应用所用的 Windows 帐户。 此外，可使用 X509 证书保护静态密钥。 建议使用允许用户上传证书的机制：将证书放置在用户信任的证书存储中，并确保在运行用户应用的所有计算机上都可使用这些证书。 有关详细信息，请参阅[配置数据保护](xref:security/data-protection/configuration/overview)。
 

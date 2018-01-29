@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 46521f48d31414ffff2707986d6f869ca2f9bc9a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af302d67b009fc25e38fb33a5e2a623f7200bcd5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-sql-cache-dependencies-vb"></a>使用 SQL 缓存依赖项 (VB)
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 
 当缓存数据库的数据，基于时间的到期通常选择为其易于使用，但通常是不足的解决方案。 理想情况下，数据库数据将保持缓存之前已修改基础数据中的站点数据库。只有在那时将逐出缓存。 这种方法最大化缓存的性能优势，并最大程度减少过时的数据的持续时间。 但是，若要享受这些优势有必须知道基础数据库数据的已修改，且逐出缓存中的相应项目的位置中的某些系统。 在 ASP.NET 2.0 中之前, 页开发人员负责实施此系统。
 
-ASP.NET 2.0 提供[`SqlCacheDependency`类](https://msdn.microsoft.com/en-us/library/system.web.caching.sqlcachedependency.aspx)和确定当发生了更改数据库中，以便相应缓存项的必要基础结构可以被逐出。 有两种技术用于确定何时基础数据发生变化： 通知和轮询。 在讨论后通知和轮询之间的差异，我们将创建基础结构支持轮询，然后研究一下如何使用所需`SqlCacheDependency`类中声明性和以编程方式方案。
+ASP.NET 2.0 提供[`SqlCacheDependency`类](https://msdn.microsoft.com/library/system.web.caching.sqlcachedependency.aspx)和确定当发生了更改数据库中，以便相应缓存项的必要基础结构可以被逐出。 有两种技术用于确定何时基础数据发生变化： 通知和轮询。 在讨论后通知和轮询之间的差异，我们将创建基础结构支持轮询，然后研究一下如何使用所需`SqlCacheDependency`类中声明性和以编程方式方案。
 
 ## <a name="understanding-notification-and-polling"></a>了解通知和轮询
 
@@ -55,7 +55,7 @@ ASP.NET 运行时跟踪当前`changeId`表缓存数据使用时`SqlCacheDependen
 [!code-console[Main](using-sql-cache-dependencies-vb/samples/sample1.cmd)]
 
 > [!NOTE]
-> 若要执行指定的数据库登录名必须是在这些命令[ `db_securityadmin` ](https://msdn.microsoft.com/en-us/library/ms188685.aspx)和[ `db_ddladmin` ](https://msdn.microsoft.com/en-us/library/ms190667.aspx)角色。 若要检查发送到的数据库 T-SQL`aspnet_regsql.exe`命令行程序，请参阅[此博客文章](http://scottonwriting.net/sowblog/posts/10709.aspx)。
+> 若要执行指定的数据库登录名必须是在这些命令[ `db_securityadmin` ](https://msdn.microsoft.com/library/ms188685.aspx)和[ `db_ddladmin` ](https://msdn.microsoft.com/library/ms190667.aspx)角色。 若要检查发送到的数据库 T-SQL`aspnet_regsql.exe`命令行程序，请参阅[此博客文章](http://scottonwriting.net/sowblog/posts/10709.aspx)。
 
 
 例如，若要向 Microsoft SQL Server 数据库添加轮询的基础结构名为`pubs`名为数据库服务器上`ScottsServer`使用 Windows 身份验证，导航到相应的目录并从命令行中，输入：
@@ -77,7 +77,7 @@ ASP.NET 运行时跟踪当前`changeId`表缓存数据使用时`SqlCacheDependen
 
 ## <a name="step-2-referencing-a-microsoft-sql-server-2005-express-edition-database-inappdata"></a>步骤 2： 引用中的 Microsoft SQL Server 2005 Express Edition 数据库`App_Data`
 
-`aspnet_regsql.exe`命令行程序需要的数据库和服务器名称，以便添加必要的轮询基础结构。 什么是 Microsoft SQL Server 2005 Express 数据库中驻留的数据库和服务器名称，但`App_Data`文件夹？ 而不是无需发现的数据库和服务器名称是什么，我已发现的最简单方法是附加到该数据库`localhost\SQLExpress`数据库实例和重命名数据使用[SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/ms174173.aspx)。 如果你有一个在计算机上安装的 SQL Server 2005 的完整版本，然后你很可能已具有在计算机上安装的 SQL Server Management Studio。 如果你只有在 Express 版本，你可以下载免费[Microsoft SQL Server Management Studio Express Edition](https://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796)。
+`aspnet_regsql.exe`命令行程序需要的数据库和服务器名称，以便添加必要的轮询基础结构。 什么是 Microsoft SQL Server 2005 Express 数据库中驻留的数据库和服务器名称，但`App_Data`文件夹？ 而不是无需发现的数据库和服务器名称是什么，我已发现的最简单方法是附加到该数据库`localhost\SQLExpress`数据库实例和重命名数据使用[SQL Server Management Studio](https://msdn.microsoft.com/library/ms174173.aspx)。 如果你有一个在计算机上安装的 SQL Server 2005 的完整版本，然后你很可能已具有在计算机上安装的 SQL Server Management Studio。 如果你只有在 Express 版本，你可以下载免费[Microsoft SQL Server Management Studio Express Edition](https://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796)。
 
 通过关闭 Visual Studio 启动。 接下来，打开 SQL Server Management Studio 并选择连接到`localhost\SQLExpress`服务器使用 Windows 身份验证。
 
@@ -186,7 +186,7 @@ ASP.NET 运行时跟踪当前`changeId`表缓存数据使用时`SqlCacheDependen
 **图 8**: ObjectDataSource s`Selecting`事件将触发每个时间分页 GridView、 编辑或 Sorted ([单击以查看实际尺寸的图像](using-sql-cache-dependencies-vb/_static/image10.png))
 
 
-正如我们看到在[ObjectDataSource 与缓存数据](caching-data-with-the-objectdatasource-vb.md)教程中，设置`EnableCaching`属性`True`ObjectDataSource 由指定的持续时间的缓存其数据将导致其`CacheDuration`属性。 ObjectDataSource 还有[`SqlCacheDependency`属性](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.sqlcachedependency.aspx)，从而将一个或多个 SQL 缓存依赖项添加到缓存的数据使用模式：
+正如我们看到在[ObjectDataSource 与缓存数据](caching-data-with-the-objectdatasource-vb.md)教程中，设置`EnableCaching`属性`True`ObjectDataSource 由指定的持续时间的缓存其数据将导致其`CacheDuration`属性。 ObjectDataSource 还有[`SqlCacheDependency`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.sqlcachedependency.aspx)，从而将一个或多个 SQL 缓存依赖项添加到缓存的数据使用模式：
 
 
 [!code-css[Main](using-sql-cache-dependencies-vb/samples/sample9.css)]
@@ -282,7 +282,7 @@ ASP.NET 运行时跟踪当前`changeId`表缓存数据使用时`SqlCacheDependen
 
 此外，使用 SQL 缓存依赖项时我们可能需要将关联作为依赖关系的多个数据库表。 例如，`ProductsDataTable`缓存在中`ProductsCL`类包含每个产品类别和供应商名称但`AddCacheItem`方法仅使用一个依赖项上`Products`。 在此情况下，如果用户更新的类别或供应商的名称缓存的产品数据将保留在缓存中并已过期。 因此，我们想要依赖于缓存的产品数据不仅`Products`表，但在`Categories`和`Suppliers`以及表。
 
-[ `AggregateCacheDependency`类](https://msdn.microsoft.com/en-us/library/system.web.caching.aggregatecachedependency.aspx)提供了一种将多个依赖项与缓存项相关联。 首先创建`AggregateCacheDependency`实例。 接下来，添加一组的依赖关系使用`AggregateCacheDependency`s`Add`方法。 如果将项插入数据缓存之后，将传递中`AggregateCacheDependency`实例。 当*任何*的`AggregateCacheDependency`实例 s 依赖项更改，将逐出缓存的项。
+[ `AggregateCacheDependency`类](https://msdn.microsoft.com/library/system.web.caching.aggregatecachedependency.aspx)提供了一种将多个依赖项与缓存项相关联。 首先创建`AggregateCacheDependency`实例。 接下来，添加一组的依赖关系使用`AggregateCacheDependency`s`Add`方法。 如果将项插入数据缓存之后，将传递中`AggregateCacheDependency`实例。 当*任何*的`AggregateCacheDependency`实例 s 依赖项更改，将逐出缓存的项。
 
 下面显示的更新的代码`ProductsCL`类的`AddCacheItem`方法。 该方法将创建`MasterCacheKeyArray`缓存依赖项以及`SqlCacheDependency`对象`Products`， `Categories`，和`Suppliers`表。 这些所有合并成一个`AggregateCacheDependency`对象名为`aggregateDependencies`，后者再传递到`Insert`方法。
 
@@ -292,7 +292,7 @@ ASP.NET 运行时跟踪当前`changeId`表缓存数据使用时`SqlCacheDependen
 测试出此新代码。现在将更改为`Products`， `Categories`，或`Suppliers`表导致被逐出缓存的数据。 此外，`ProductsCL`类 s`UpdateProduct`方法，它在编辑通过 GridView 产品时调用，逐出`MasterCacheKeyArray`缓存依赖项，这会导致缓存`ProductsDataTable`逐出和要在下次重新检索的数据请求。
 
 > [!NOTE]
-> SQL 缓存依赖项也可以用于[输出缓存](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/caching/output.aspx)。 此功能的演示，请参阅：[使用与 SQL Server ASP.NET 输出缓存](https://msdn.microsoft.com/en-us/library/e3w8402y(VS.80).aspx)。
+> SQL 缓存依赖项也可以用于[输出缓存](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/caching/output.aspx)。 此功能的演示，请参阅：[使用与 SQL Server ASP.NET 输出缓存](https://msdn.microsoft.com/library/e3w8402y(VS.80).aspx)。
 
 
 ## <a name="summary"></a>摘要
@@ -305,10 +305,10 @@ ASP.NET 运行时跟踪当前`changeId`表缓存数据使用时`SqlCacheDependen
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [在 Microsoft SQL Server 2005 中使用查询通知](https://msdn.microsoft.com/en-us/library/ms175110.aspx)
-- [创建查询通知](https://msdn.microsoft.com/en-us/library/ms188669.aspx)
-- [在缓存中使用的 ASP.NET`SqlCacheDependency`类](https://msdn.microsoft.com/en-us/library/ms178604(VS.80).aspx)
-- [ASP.NET SQL 服务器注册工具 (`aspnet_regsql.exe`)](https://msdn.microsoft.com/en-us/library/ms229862(vs.80).aspx)
+- [在 Microsoft SQL Server 2005 中使用查询通知](https://msdn.microsoft.com/library/ms175110.aspx)
+- [创建查询通知](https://msdn.microsoft.com/library/ms188669.aspx)
+- [在缓存中使用的 ASP.NET`SqlCacheDependency`类](https://msdn.microsoft.com/library/ms178604(VS.80).aspx)
+- [ASP.NET SQL 服务器注册工具 (`aspnet_regsql.exe`)](https://msdn.microsoft.com/library/ms229862(vs.80).aspx)
 - [概述`SqlCacheDependency`](http://www.aspnetresources.com/blog/sql_cache_depedency_overview.aspx)
 
 ## <a name="about-the-author"></a>关于作者

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 653c8303691de28b7619c30e773473ffb37f2a61
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: be3e3d61a6567da3c2cd696c01661146f2da7131
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-c"></a>创建存储过程和用户定义函数用托管代码 (C#)
 ====================
@@ -33,12 +33,12 @@ ms.lasthandoff: 11/10/2017
 
 在其核心而言，SQL 旨在用于处理的数据集。 `SELECT`， `UPDATE`，和`DELETE`语句本质上是应用于相应的表中的所有记录，并仅受其`WHERE`子句。 尚未有许多，旨在用于一次处理一条记录，用于操作标量数据的语言功能。 [`CURSOR`s](http://www.sqlteam.com/item.asp?ItemID=553)允许记录一组要通过一次一个地循环。 字符串操作函数，如`LEFT`， `CHARINDEX`，和`PATINDEX`适用于标量数据。 SQL 还包括控制流语句，如`IF`和`WHILE`。
 
-在 Microsoft SQL Server 2005 中之前, 存储的过程和 Udf 可以仅定义为一个 T-SQL 语句的集合。 SQL Server 2005 中，但是，旨在提供与集成[公共语言运行时 (CLR)](https://msdn.microsoft.com/en-us/netframework/aa497266.aspx)，这是运行时使用的所有.NET 程序集。 因此，存储的过程和 SQL Server 2005 数据库中的 Udf 可以创建使用托管的代码。 也就是说，你可以创建存储的过程或 UDF 作为 C# 类中的方法。 这样，这些存储的过程和 Udf 利用.NET Framework 中和从您自己的自定义类的功能。
+在 Microsoft SQL Server 2005 中之前, 存储的过程和 Udf 可以仅定义为一个 T-SQL 语句的集合。 SQL Server 2005 中，但是，旨在提供与集成[公共语言运行时 (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx)，这是运行时使用的所有.NET 程序集。 因此，存储的过程和 SQL Server 2005 数据库中的 Udf 可以创建使用托管的代码。 也就是说，你可以创建存储的过程或 UDF 作为 C# 类中的方法。 这样，这些存储的过程和 Udf 利用.NET Framework 中和从您自己的自定义类的功能。
 
 在本教程中我们将讨论如何创建托管存储过程和用户定义函数以及如何将其集成到我们的 Northwind 数据库。 让我们来开始 ！
 
 > [!NOTE]
-> 托管的数据库对象提供了对 SQL 的对应的一些好处。 主要优点是语言丰富性和熟悉程度和能够重复使用现有代码和逻辑。 但托管的数据库对象，可能需要使用不涉及多过程逻辑的数据集时效率较低。 有关使用托管的代码而不是 T-SQL 的优势的更全面讨论，请参阅[优点的使用托管代码迁移至创建数据库对象](https://msdn.microsoft.com/en-us/library/k2e1fb36(VS.80).aspx)。
+> 托管的数据库对象提供了对 SQL 的对应的一些好处。 主要优点是语言丰富性和熟悉程度和能够重复使用现有代码和逻辑。 但托管的数据库对象，可能需要使用不涉及多过程逻辑的数据集时效率较低。 有关使用托管的代码而不是 T-SQL 的优势的更全面讨论，请参阅[优点的使用托管代码迁移至创建数据库对象](https://msdn.microsoft.com/library/k2e1fb36(VS.80).aspx)。
 
 
 ## <a name="step-1-moving-the-northwind-database-out-ofappdata"></a>步骤 1： 移动外 Northwind 数据库`App_Data`
@@ -81,7 +81,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-2-creating-a-new-solution-and-sql-server-project-in-visual-studio"></a>步骤 2： 在 Visual Studio 中创建一个新解决方案和 SQL Server 项目
 
-若要在 SQL Server 2005 中创建托管的存储的过程或 Udf 我们将为类中的 C# 代码中编写存储的过程和 UDF 逻辑。 一旦已编写代码，我们将需要将该类编译到程序集 (`.dll`文件) 与 SQL Server 数据库中注册程序集，然后指向中的相应方法的数据库中创建的存储的过程或 UDF 对象程序集。 执行这些步骤可以所有手动。 我们可以在任何文本编辑器创建的代码，从命令行使用 C# 编译器对其进行编译 ([`csc.exe`](https://msdn.microsoft.com/en-us/library/ms379563(vs.80).aspx))，数据库使用为其注册[ `CREATE ASSEMBLY` ](https://msdn.microsoft.com/en-us/library/ms189524.aspx)命令或从管理Studio 中，并添加的存储的过程或通过类似方式的 UDF 对象。 幸运的是，Visual Studio 的专业人员和团队系统版本包含可以自动执行这些任务的 SQL Server 项目类型。 在本教程中，我们将演练使用 SQL Server 项目类型创建托管的存储的过程和 UDF。
+若要在 SQL Server 2005 中创建托管的存储的过程或 Udf 我们将为类中的 C# 代码中编写存储的过程和 UDF 逻辑。 一旦已编写代码，我们将需要将该类编译到程序集 (`.dll`文件) 与 SQL Server 数据库中注册程序集，然后指向中的相应方法的数据库中创建的存储的过程或 UDF 对象程序集。 执行这些步骤可以所有手动。 我们可以在任何文本编辑器创建的代码，从命令行使用 C# 编译器对其进行编译 ([`csc.exe`](https://msdn.microsoft.com/library/ms379563(vs.80).aspx))，数据库使用为其注册[ `CREATE ASSEMBLY` ](https://msdn.microsoft.com/library/ms189524.aspx)命令或从管理Studio 中，并添加的存储的过程或通过类似方式的 UDF 对象。 幸运的是，Visual Studio 的专业人员和团队系统版本包含可以自动执行这些任务的 SQL Server 项目类型。 在本教程中，我们将演练使用 SQL Server 项目类型创建托管的存储的过程和 UDF。
 
 > [!NOTE]
 > 如果你使用 Visual Web Developer 或 Visual Studio Standard edition，你将需要改为使用手动方法。 步骤 13 提供手动执行这些步骤的详细的说明。 我建议你在阅读步骤 13，因为这些步骤包括重要必须应用无论使用哪个版本的 Visual Studio 的 SQL Server 配置说明之前读取到 12 的步骤 2。
@@ -156,7 +156,7 @@ SQL Server 项目将绑定到特定数据库。 因此，在创建新的 SQL Ser
 
 [!code-csharp[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/samples/sample3.cs)]
 
-所有托管的数据库对象都有权访问[`SqlContext`对象](https://msdn.microsoft.com/en-us/library/ms131108.aspx)，它表示调用方的上下文。 `SqlContext`提供对访问[`SqlPipe`对象](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlpipe.aspx)通过其[`Pipe`属性](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlcontext.pipe.aspx)。 这`SqlPipe`对象用于 SQL Server 数据库和调用应用程序之间 ferry 信息。 顾名思义， [ `ExecuteAndSend`方法](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlpipe.executeandsend.aspx)执行传入的`SqlCommand`对象，并将结果返回到客户端应用程序。
+所有托管的数据库对象都有权访问[`SqlContext`对象](https://msdn.microsoft.com/library/ms131108.aspx)，它表示调用方的上下文。 `SqlContext`提供对访问[`SqlPipe`对象](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.aspx)通过其[`Pipe`属性](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlcontext.pipe.aspx)。 这`SqlPipe`对象用于 SQL Server 数据库和调用应用程序之间 ferry 信息。 顾名思义， [ `ExecuteAndSend`方法](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.executeandsend.aspx)执行传入的`SqlCommand`对象，并将结果返回到客户端应用程序。
 
 > [!NOTE]
 > 托管的数据库对象是最适合存储的过程和使用过程逻辑，而不是基于集的逻辑的 Udf。 过程逻辑涉及在每行的行上使用的数据集或使用标量数据。 `GetDiscontinuedProducts`方法我们刚刚创建，但是，涉及没有过程的逻辑。 因此，它将理想情况下作为实现 T-SQL 存储过程。 它被实现为托管的存储的过程，以演示用于创建和部署所必需的步骤托管存储的过程。
@@ -214,7 +214,7 @@ SQL Server 项目将绑定到特定数据库。 因此，在创建新的 SQL Ser
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/samples/sample5.sql)]
 
-如果你重新运行`exec sp_configure`你将看到，则上面的语句更新 clr 启用设置的配置值为 1，但仍将运行的值设置为 0。 对于此配置更改生效我们需要执行[`RECONFIGURE`命令](https://msdn.microsoft.com/en-us/library/ms176069.aspx)，它将设置为当前的配置值的运行的值。 只需输入`RECONFIGURE`在查询窗口中，单击工具栏中的执行图标。 如果你运行`exec sp_configure`现在，您应看到值 1 表示启用 clr 设置的配置，运行值。
+如果你重新运行`exec sp_configure`你将看到，则上面的语句更新 clr 启用设置的配置值为 1，但仍将运行的值设置为 0。 对于此配置更改生效我们需要执行[`RECONFIGURE`命令](https://msdn.microsoft.com/library/ms176069.aspx)，它将设置为当前的配置值的运行的值。 只需输入`RECONFIGURE`在查询窗口中，单击工具栏中的执行图标。 如果你运行`exec sp_configure`现在，您应看到值 1 表示启用 clr 设置的配置，运行值。
 
 启用的 clr 配置完成后，我们已准备好运行的托管`GetDiscontinuedProducts`存储过程。 在查询窗口中，输入，并执行命令`exec` `GetDiscontinuedProducts`。 调用存储的过程会导致中相应的托管的代码`GetDiscontinuedProducts`要执行的方法。 此代码会发出`SELECT`查询以返回已停产并将此数据返回到调用应用程序，它是此实例中的 SQL Server Management Studio 的所有产品。 Management Studio 接收这些结果，并将它们显示在结果窗口。
 
@@ -232,7 +232,7 @@ SQL Server 项目将绑定到特定数据库。 因此，在创建新的 SQL Ser
 
 若要将新的存储的过程添加到项目中，右键单击`ManagedDatabaseConstructs`项目名称，选择要添加新的存储的过程。 为 `GetProductsWithPriceLessThan.cs` 文件命名。 正如我们在步骤 3 中看到的这将创建一个新的 C# 类文件具有一个名为方法`GetProductsWithPriceLessThan`放在`partial`类`StoredProcedures`。
 
-更新`GetProductsWithPriceLessThan`方法的定义以便它可以接受[ `SqlMoney` ](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlmoney.aspx)输入的参数命名为`price`并编写代码来执行并返回查询结果：
+更新`GetProductsWithPriceLessThan`方法的定义以便它可以接受[ `SqlMoney` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.aspx)输入的参数命名为`price`并编写代码来执行并返回查询结果：
 
 
 [!code-csharp[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/samples/sample6.cs)]
@@ -400,19 +400,19 @@ Udf 还可以返回表格数据。 例如，我们可以创建返回属于特定
 **图 25**： 添加新的托管 UDF 到`ManagedDatabaseConstructs`项目 ([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image61.png))
 
 
-用户定义函数模板创建`partial`类名为`UserDefinedFunctions`使用其名称为的类文件的名称相同的方法 (`udf_ComputeInventoryValue_Managed`，在这种情况)。 此方法进行了修饰使用[`SqlFunction`属性](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlfunctionattribute.aspx)，其标记为托管 UDF 的方法。
+用户定义函数模板创建`partial`类名为`UserDefinedFunctions`使用其名称为的类文件的名称相同的方法 (`udf_ComputeInventoryValue_Managed`，在这种情况)。 此方法进行了修饰使用[`SqlFunction`属性](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlfunctionattribute.aspx)，其标记为托管 UDF 的方法。
 
 
 [!code-csharp[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/samples/sample13.cs)]
 
-`udf_ComputeInventoryValue`方法当前返回[`SqlString`对象](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlstring.aspx)并且不接受任何输入参数。 我们需要更新方法定义，使它接受三个输入参数- `UnitPrice`， `UnitsInStock`，和`Discontinued`-并返回`SqlMoney`对象。 计算库存值的逻辑是等同于 T-SQL 的`udf_ComputeInventoryValue`UDF。
+`udf_ComputeInventoryValue`方法当前返回[`SqlString`对象](https://msdn.microsoft.com/library/system.data.sqltypes.sqlstring.aspx)并且不接受任何输入参数。 我们需要更新方法定义，使它接受三个输入参数- `UnitPrice`， `UnitsInStock`，和`Discontinued`-并返回`SqlMoney`对象。 计算库存值的逻辑是等同于 T-SQL 的`udf_ComputeInventoryValue`UDF。
 
 
 [!code-csharp[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/samples/sample14.cs)]
 
-请注意，UDF 方法 s 输入的参数为其相应的 SQL 类型：`SqlMoney`为`UnitPrice`字段， [ `SqlInt16` ](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlint16.aspx)为`UnitsInStock`，和[ `SqlBoolean` ](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlboolean.aspx)有关`Discontinued`。 这些数据类型反映中定义的类型`Products`表：`UnitPrice`列的类型是`money`、`UnitsInStock`类型的列`smallint`，和`Discontinued`类型的列`bit`。
+请注意，UDF 方法 s 输入的参数为其相应的 SQL 类型：`SqlMoney`为`UnitPrice`字段， [ `SqlInt16` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlint16.aspx)为`UnitsInStock`，和[ `SqlBoolean` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlboolean.aspx)有关`Discontinued`。 这些数据类型反映中定义的类型`Products`表：`UnitPrice`列的类型是`money`、`UnitsInStock`类型的列`smallint`，和`Discontinued`类型的列`bit`。
 
-代码首先创建一个`SqlMoney`实例名为`inventoryValue`分配值为 0。 `Products`表允许数据库`NULL`中值`UnitsInPrice`和`UnitsInStock`列。 因此，我们需要先检查以查看是否这些值包含`NULL`s，我们通过执行操作`SqlMoney`对象 s [ `IsNull`属性](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlmoney.isnull.aspx)。 如果这两个`UnitPrice`和`UnitsInStock`包含非`NULL`值，则我们计算`inventoryValue`为这两个产品。 然后，如果`Discontinued`为 true，则我们减半值。
+代码首先创建一个`SqlMoney`实例名为`inventoryValue`分配值为 0。 `Products`表允许数据库`NULL`中值`UnitsInPrice`和`UnitsInStock`列。 因此，我们需要先检查以查看是否这些值包含`NULL`s，我们通过执行操作`SqlMoney`对象 s [ `IsNull`属性](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.isnull.aspx)。 如果这两个`UnitPrice`和`UnitsInStock`包含非`NULL`值，则我们计算`inventoryValue`为这两个产品。 然后，如果`Discontinued`为 true，则我们减半值。
 
 > [!NOTE]
 > `SqlMoney`对象仅允许两个`SqlMoney`实例一起相乘。 它不允许`SqlMoney`实例乘以文本的浮点数。 因此，若要减半`inventoryValue`我们由一个新乘`SqlMoney`具有值 0.5 的实例。
@@ -559,13 +559,13 @@ Visual Studio 的 SQL Server 项目类型便于创建、 编译和部署托管�
 - [优点和缺点的用户定义函数](http://www.samspublishing.com/articles/article.asp?p=31724&amp;rl=1)
 - [在托管代码中创建 SQL Server 2005 对象](https://channel9.msdn.com/Showpost.aspx?postid=142413)
 - [创建在 SQL Server 2005 中使用托管的代码的触发器](http://www.15seconds.com/issue/041006.htm)
-- [如何： 创建和运行 CLR SQL Server 存储过程](https://msdn.microsoft.com/en-us/library/5czye81z(VS.80).aspx)
-- [如何： 创建和运行 CLR SQL Server 用户定义函数](https://msdn.microsoft.com/en-us/library/w2kae45k(VS.80).aspx)
-- [如何： 编辑`Test.sql`脚本运行 SQL 对象](https://msdn.microsoft.com/en-us/library/ms233682(VS.80).aspx)
+- [如何： 创建和运行 CLR SQL Server 存储过程](https://msdn.microsoft.com/library/5czye81z(VS.80).aspx)
+- [如何： 创建和运行 CLR SQL Server 用户定义函数](https://msdn.microsoft.com/library/w2kae45k(VS.80).aspx)
+- [如何： 编辑`Test.sql`脚本运行 SQL 对象](https://msdn.microsoft.com/library/ms233682(VS.80).aspx)
 - [简介用户定义的函数](http://www.sqlteam.com/item.asp?ItemID=1955)
 - [托管的代码和 SQL Server 2005 （视频）](https://channel9.msdn.com/Showpost.aspx?postid=142413)
-- [TRANSACT-SQL 参考](https://msdn.microsoft.com/en-us/library/aa299742(SQL.80).aspx)
-- [演练： 在托管代码中创建存储的过程](https://msdn.microsoft.com/en-us/library/zxsa8hkf(VS.80).aspx)
+- [TRANSACT-SQL 参考](https://msdn.microsoft.com/library/aa299742(SQL.80).aspx)
+- [演练： 在托管代码中创建存储的过程](https://msdn.microsoft.com/library/zxsa8hkf(VS.80).aspx)
 
 ## <a name="about-the-author"></a>关于作者
 

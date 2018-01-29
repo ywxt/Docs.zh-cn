@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: host-and-deploy/index
-ms.openlocfilehash: 6ce77922dd8a0fcb81ea6a72f9179c9c81105dda
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 4681316a2ab90c83f3e62e16f02566092d72f356
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="host-and-deploy-aspnet-core"></a>托管和部署 ASP.NET Core
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 01/19/2018
 
 “发布”文件夹包含应用的“.exe”和“.dll”文件、应用依赖项以及 .NET 运行时（根据需要）。
 
-.NET Core 应用可以作为“独立”应用或“依赖于框架”的应用进行发布。 如果应用是独立应用，则包含 .NET 运行时的“.dll”文件会包括在“发布”文件夹内。 如果应用依赖于框架，则不会将 .NET 运行时文件包含在内，因为应用包含对安装在服务器上的 .NET 版本的引用。 默认部署模型是依赖于框架的模型。 有关详细信息，请参阅 [.NET Core 应用程序部署](/dotnet/articles/core/deploying/index)。
+.NET Core 应用可以作为“独立”应用或“依赖于框架”的应用进行发布。 如果应用是独立应用，则包含 .NET 运行时的“.dll”文件会包括在“发布”文件夹内。 如果应用依赖于框架，.NET 运行时文件就不包含在内，因为应用包含对服务器上安装的 .NET 版本的引用。 默认部署模型是依赖于框架的模型。 有关详细信息，请参阅 [.NET Core 应用程序部署](/dotnet/articles/core/deploying/index)。
 
 除了“.exe”和“.dll”文件以外，ASP.NET Core 应用的“发布”文件夹通常包含配置文件、静态资产和 MVC 视图。 有关详细信息，请参阅[目录结构](xref:host-and-deploy/directory-structure)。
 
