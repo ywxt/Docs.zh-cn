@@ -2,18 +2,18 @@
 title: "与 EF 核心-并发-8 的 8 razor 页"
 author: rick-anderson
 description: "本教程演示如何处理冲突，当多个用户在同一时间更新同一实体。"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: b36fb71cba058a3409b30a1d9469159fcd027375
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1c6cdefa1410839606711d7460a8f4d0f1d6c72b
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 en-us/
 

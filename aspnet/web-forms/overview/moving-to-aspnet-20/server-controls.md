@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/server-controls
 msc.type: authoredcontent
-ms.openlocfilehash: 09f1a2e4de024e5778e69fdd691d9cb0040459f3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 72e9cac7cf9a01791c30783fa56ad7ea205a5a11
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="server-controls"></a>服务器控件
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET 2.0 增强了在许多方面的服务器控件。 在此模块中，我们将介绍一些方式 ASP.NET 2.0 的体系结构更改和 Visual Studio 2005 处理服务器控件。
 
@@ -196,7 +196,7 @@ PostedFile 属性仍可用于访问 HttpPostedFile 对象，但某些 HttpPosted
 
 它是相当容易遇到困扰尝试收集一系列中的信息的使用面板"页"或通过转移页面之间的 ASP.NET 开发人员。 时常，任务是一个很令人沮丧，并使用的时间长。 新的向导控件中一个向导界面，用户熟悉的线性和非线性步骤，从而解决了问题。 向导控件显示输入的窗体中的一系列步骤。 每个步骤都由该控件的 StepType 属性指定的特定类型。 可用的步骤类型如下所示：
 
-| **步骤类型** | **说明** |
+| **步骤类型** | **Explanation** |
 | --- | --- |
 | 自动 | 此向导自动确定根据其位置步骤层次结构中的步骤的类型。 |
 | Start | 第一步，通常用于展示的介绍性语句。 |
@@ -221,7 +221,7 @@ PostedFile 属性仍可用于访问 HttpPostedFile 对象，但某些 HttpPosted
 
 Localize 控件是类似于文本控件。 但是，Localize 在控件有**模式**属性，用于控制标记添加到其中的呈现方式。 模式属性支持以下值：
 
-| **模式** | **说明** |
+| **模式** | **Explanation** |
 | --- | --- |
 | Transform | 标记根据发出请求的浏览器的协议进行转换。 |
 | 传递 | 标记呈现为-是。 |
@@ -255,7 +255,7 @@ GridView 控件是 DataGrid 控件的替代。 此控件将在更高版本的模
 
 FormView 控件用于在可配置界面中显示来自数据源的单个记录。 中更高版本的模块中的更详细地介绍了它。
 
-## <a name="accessdatasource-control"></a>AccessDataSource 控件
+## <a name="accessdatasource-control"></a>AccessDataSource Control
 
 AccessDataSource 控件是用于将数据绑定的 Access 数据库。 中更高版本的模块中的更详细地介绍了它。
 
@@ -295,7 +295,7 @@ LoginView 控件允许基于用户的登录状态的不同模板的显示。 中
 
 说明用于 ASP.NET 应用程序的用户检索忘记的密码。 中更高版本的模块中的更详细地介绍了它。
 
-## <a name="loginstatus"></a>loginStatus
+## <a name="loginstatus"></a>LoginStatus
 
 LoginStatus 控件将显示用户的登录状态。 中更高版本的模块中的更详细地介绍了它。
 

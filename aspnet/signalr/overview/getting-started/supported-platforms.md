@@ -12,13 +12,13 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/supported-platforms
 msc.type: authoredcontent
-ms.openlocfilehash: 7f41017a2a8c058c01fe6f89a2503eb5fa77048e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1379b9fb638f67896d88d7aa4312d95280ef7318
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
-<a name="supported-platforms"></a>受支持的平台
+<a name="supported-platforms"></a>支持的平台
 ====================
 通过[Patrick Fletcher](https://github.com/pfletcher)
 
@@ -41,6 +41,7 @@ SignalR 服务器组件可以承载于以下服务器或客户端操作系统。
 
 - Windows Server 2012
 - Windows Server 2008 r2
+- Windows 10
 - Windows 8
 - Windows 7
 - Microsoft Azure
@@ -113,8 +114,8 @@ SignalR 可在以下浏览器：
 | --- | --- | --- |
 | Web 套接字 | Windows 8 + 和.NET 4.5 + | 不可用 |
 | 不限次数帧 | 不可用 | 不可用 |
-| 服务器发送事件 | .NET 4 + | 5+ |
-| 长轮询 | .NET 4 + | 5+ |
+| 服务器发送事件 | .NET 4+ | 5+ |
+| 长轮询 | .NET 4+ | 5+ |
 
 <a id="android"></a>
 
@@ -124,12 +125,12 @@ SignalR 可在 Windows 应用商店应用程序和 Windows Phone 8 应用程序�
 
 **Windows 应用商店和 Windows Phone 传输要求**
 
-| 传输 | Windows 应用商店 /.NET | Windows 应用商店 / JavaScript | Windows Phone / IE | Windows Phone /.NET |
+| 传输 | Windows 应用商店 /.NET | Windows 应用商店 / JavaScript | Windows Phone/ IE | Windows Phone/ .NET |
 | --- | --- | --- | --- | --- |
-| WebSockets | 不可用 | Win8 + | 8+ | 不可用 |
-| 不限次数帧 | 不可用 | Win8 + | 7.5+ | 不可用 |
-| 服务器发送事件 | Win8 + | 不可用 | 不可用 | 8+ |
-| 长轮询 | Win8 + | Win8 + | 7.5+ | 8+ |
+| WebSockets | 不可用 | Win8+ | 8+ | 不可用 |
+| 不限次数帧 | 不可用 | Win8+ | 7.5+ | 不可用 |
+| 服务器发送事件 | Win8+ | 不可用 | 不可用 | 8+ |
+| 长轮询 | Win8+ | Win8+ | 7.5+ | 8+ |
 
 <a id="updates"></a>
 

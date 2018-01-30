@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/membership
 msc.type: authoredcontent
-ms.openlocfilehash: 7e6bff33e9ec1de03c591de6eee2e632c7b7509d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1a5a495845b60f9aac51c9776311af67f5dc8767
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="membership"></a>成员身份
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET 成员资格生成的窗体身份验证模型成功从 ASP.NET 1.x。 ASP.NET 窗体身份验证可以方便地将一个登录窗体合并到 ASP.NET 应用程序并验证针对数据库或其他数据存储的用户。
 
@@ -38,7 +38,7 @@ ASP.NET 成员资格生成的窗体身份验证模型成功从 ASP.NET 1.x。 AS
 3. 确定你想要使用的成员身份存储的类型。 选项包括： 
 
     - Microsoft SQL Server （版本 7.0 或更高版本）
-    - Active Directory 存储
+    - Active Directory Store
     - 自定义成员资格提供程序
 4. 配置 ASP.NET 表单身份验证的应用程序。 同样，成员身份旨在充分利用 Forms 身份验证，但使用 Forms 身份验证并不是必需。
 5. 定义成员身份的用户帐户和配置角色，如果需要。
@@ -120,7 +120,7 @@ LoginView 控件是一个模板化控件，默认情况下; 提供两个模板An
 
 ## <a name="passwordrecovery-control"></a>取回控件
 
-取回控件允许用户会收到电子邮件使用他或她的当前密码或重置他或她的密码。 明文形式和加密的密码可以恢复并且通过电子邮件发送给用户。 如果密码哈希处理，将无法恢复。 而是用户将需要以执行密码重置。
+取回控件允许用户收到一封电子邮件使用他或她的当前密码或重置他或她的密码。 明文形式和加密的密码可以恢复并且通过电子邮件发送给用户。 如果密码哈希处理，将无法恢复。 而是用户将需要以执行密码重置。
 
 ## <a name="loginstatus-control"></a>LoginStatus 控件
 

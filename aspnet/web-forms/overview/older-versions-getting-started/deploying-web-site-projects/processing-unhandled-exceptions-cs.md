@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 95102e5e6b3e8b78e2757a2bdee39976003011e3
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7be257faa350476bef9f6d372ea4f140fff8d136
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="processing-unhandled-exceptions-c"></a>处理未经处理的异常 (C#)
 ====================
@@ -90,13 +90,13 @@ ASP.NET 应用程序中未经处理的异常时，它将冒泡到 ASP.NET 运行
 
 在生产环境中发生未经处理的异常时务必警告开发团队，以便它们可以评估错误，并确定需要采取的操作。 例如，如果没有中连接到数据库，然后你将需要为双精度的错误检查连接字符串，并且可能是，打开支持票证与您的 web 托管公司。 如果由于编程错误导致出现异常，可能需要其他代码或验证逻辑要添加到在将来防止此类错误。
 
-.NET Framework 中的类[`System.Net.Mail`命名空间](https://msdn.microsoft.com/library/system.net.mail.aspx)方便地发送一封电子邮件。 [ `MailMessage`类](https://msdn.microsoft.com/library/system.net.mail.mailmessage.aspx)表示电子邮件和具有属性，例如`To`， `From`， `Subject`， `Body`，和`Attachments`。 `SmtpClass`用于发送`MailMessage`对象使用指定的 SMTP 服务器; 可以以编程方式或以声明方式在指定的 SMTP 服务器设置[`<system.net>`元素](https://msdn.microsoft.com/library/6484zdc1.aspx)中`Web.config file`。 有关详细信息将电子邮件发送 ASP.NET 应用程序中的消息签出我文章[在 ASP.NET 中发送电子邮件](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)，和[System.Net.Mail 常见问题](http://systemnetmail.com/)。
+.NET Framework 中的类[`System.Net.Mail`命名空间](https://msdn.microsoft.com/library/system.net.mail.aspx)方便地发送一封电子邮件。 [ `MailMessage`类](https://msdn.microsoft.com/library/system.net.mail.mailmessage.aspx)表示电子邮件并具有属性，例如`To`， `From`， `Subject`， `Body`，和`Attachments`。 `SmtpClass`用于发送`MailMessage`对象使用指定的 SMTP 服务器; 可以以编程方式或以声明方式在指定的 SMTP 服务器设置[`<system.net>`元素](https://msdn.microsoft.com/library/6484zdc1.aspx)中`Web.config file`。 有关详细信息发送电子邮件 ASP.NET 应用程序中的消息签出我文章[在 ASP.NET 中发送电子邮件](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)，和[System.Net.Mail 常见问题](http://systemnetmail.com/)。
 
 > [!NOTE]
-> `<system.net>`元素包含使用的 SMTP 服务器设置`SmtpClient`类发送一封电子邮件时。 您的 web 托管公司可能具有可用于从应用程序发送电子邮件的 SMTP 服务器。 有关应在 web 应用程序中使用的 SMTP 服务器设置的信息，请查阅你的 web 主机支持部分。
+> `<system.net>`元素包含使用的 SMTP 服务器设置`SmtpClient`类发送一封电子邮件时。 您的 web 托管公司可能具有可用于从你的应用程序发送电子邮件的 SMTP 服务器。 有关应在 web 应用程序中使用的 SMTP 服务器设置的信息，请查阅你的 web 主机支持部分。
 
 
-以下代码添加到`Application_Error`事件处理程序来发送电子邮件开发人员时发生错误：
+以下代码添加到`Application_Error`事件处理程序来发送一封电子邮件开发人员时发生错误：
 
 [!code-csharp[Main](processing-unhandled-exceptions-cs/samples/sample4.cs)]
 
@@ -107,7 +107,7 @@ ASP.NET 应用程序中未经处理的异常时，它将冒泡到 ASP.NET 运行
 最后一步是将发送`MailMessage`。 这可通过创建一个新`SmtpClient`方法并调用其`Send`方法。
 
 > [!NOTE]
-> Web 应用程序中使用此代码之前你将需要更改中的值`ToAddress`和`FromAddress`常量从support@example.com错误通知电子邮件应发送到和来自到任何电子邮件地址。 你还需要指定 SMTP 服务器设置中的`<system.net>`主题中`Web.config`。 请查阅你的 web 主机提供商，以确定要使用的 SMTP 服务器设置。
+> Web 应用程序中使用此代码之前你将需要更改中的值`ToAddress`和`FromAddress`常量从support@example.com到任何电子邮件地址的错误通知电子邮件应发送到和来自。 你还需要指定 SMTP 服务器设置中的`<system.net>`主题中`Web.config`。 请查阅你的 web 主机提供商，以确定要使用的 SMTP 服务器设置。
 
 
 对于就地此代码时出现错误的任何时候开发人员将发送电子邮件对错误进行概述，包括 YSOD。 我们可以在前面的教程来演示通过访问 Genre.aspx，传递中无效的运行时错误`ID`值通过查询字符串，如`Genre.aspx?ID=foo`。 访问的页`Global.asax`就地文件生成相同的用户体验与在前面的教程-在开发环境中你将继续时在生产环境中你将看到异常详细信息黄色死机，请参阅自定义错误页。 除了此现有的行为，开发人员发送一封电子邮件。

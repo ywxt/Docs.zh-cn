@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: f0224bcd2badc423ba5146feacccc44b8f33a608
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 29d5b2f4c04b899b900427ac202c0a4f57f8076f
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 和 Visual Studio 2010 Web 开发概述
 ====================
@@ -1218,7 +1218,7 @@ ASP.NET 4 中的动态数据支持的主要目标是能够对任何 ASP.NET 应�
 
 <a id="0.2__Toc224729045"></a><a id="0.2__Toc253429282"></a><a id="0.2__Toc243304653"></a>
 
-### <a name="new-field-templates-for-urls-and-e-mail-addresses"></a>新的字段模板的 Url 和电子邮件地址
+### <a name="new-field-templates-for-urls-and-email-addresses"></a>新的字段模板的 Url 和电子邮件地址
 
 ASP.NET 4 引入了两个新的内置字段模板，`EmailAddress.ascx`和`Url.ascx`。 这些模板用于字段标记为*EmailAddress*或*Url*与*DataType*属性。 有关*EmailAddress*对象，该字段显示为超链接，通过创建*mailto:*协议。 当用户单击此链接时，打开用户的电子邮件客户端，并创建主干消息。 对象类型化为*Url*显示为普通的超链接。
 
@@ -1382,7 +1382,7 @@ Visual Studio 2010 还允许你使用 IIS 的远程管理服务发布到远程�
 
 对于本文档中的主题，Microsoft 可能具有专利、专利申请、商标、版权或其他知识产权。 除非 Microsoft 的任何书面许可协议明确提出，否则，本文档的提供并不表示 Microsoft 已将这些专利、商标、版权或其他知识产权的任何许可权限授予您。
 
-除非另有声明，否则此处描述的示例公司、组织、产品、域名、电子邮件地址、徽标、人物、地点和事件都是虚构的，无意与任何真实的公司、组织、产品、域名、电子邮件地址、徽标、人物、地点或事件相关联，也不应进行这方面的推断。
+除非另行说明，示例公司、 组织、 产品、 域名、 电子邮件地址、 徽标、 人物、 地点和事件此处所述虚构，是的无意与任何真实的公司、 组织、 产品、 域名、 电子邮件地址、 徽标、 人员、 位置或事件旨在或妄加推断。
 
 © 2009 Microsoft Corporation。 保留所有权利。
 

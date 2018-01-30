@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: 4e1270f9fb58032d22380117f4ec18b00bd725fc
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5f6ed1ae0309e9bdd3ca4ae229195835f20bc729
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>在 IIS 集成管道中的 OWIN 中间件
 ====================
@@ -78,7 +78,7 @@ Owin 中间件组件 (OMC) 可以配置为在以下 OWIN 管道阶段事件运�
 [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample8.cs)]
 
 1. 默认情况下，在最后一个事件将运行 OMCs (`PreHandlerExecute`)。 这正是我们第一个示例代码显示"PreExecuteRequestHandler"。
-2. 你可以使用`pp.UseStageMarker`中列出的方法来注册 OMC 运行更早版本，在任何阶段 OWIN 管道`PipelineStage`枚举。
+2. 你可以使用`app.UseStageMarker`中列出的方法来注册 OMC 运行更早版本，在任何阶段 OWIN 管道`PipelineStage`枚举。
 3. OWIN 管道和 IIS 管道已经过排序，因此调用`app.UseStageMarker`必须按顺序。 无法将事件处理程序设置为之前使用注册到的最后一个事件的事件`app.UseStageMarker`。 例如，*后*调用：
 
     [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample9.cmd)]

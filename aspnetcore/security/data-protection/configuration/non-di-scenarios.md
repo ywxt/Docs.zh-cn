@@ -2,18 +2,18 @@
 title: "非 DI 感知的情境中 ASP.NET Core 的数据保护"
 author: rick-anderson
 description: "了解如何支持数据保护方案不能或不想使用提供的依赖关系注入服务的位置。"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/configuration/non-di-scenarios
-ms.openlocfilehash: 1c84cfcf44086359a7d6900ca52781dc6f3b1b10
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: eccf914d20e04adbb113f17e262766ed2dd1a554
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="non-di-aware-scenarios-for-data-protection-in-aspnet-core"></a>非 DI 感知的情境中 ASP.NET Core 的数据保护
 

@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/data-source-controls
 msc.type: authoredcontent
-ms.openlocfilehash: f40189796d3e25e9c337768cf04fdbfa293cdc2f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b1ac7fb62767d61c97fe00338bc0f5087f4863b5
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="data-source-controls"></a>数据源控件
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > DataGrid 控件在 ASP.NET 1.x 标记为 Web 应用程序中的数据访问中的重大改进。 但是，它不是因为它可能是用户友好。 它仍然需要相当长的代码可以从中获得多有用的功能。 在所有数据访问工作中中 1.x 模型就是这样。
 
@@ -143,7 +143,7 @@ SqlDataSource 控件允许开发人员为访问存储在支持 ADO.NET 任何关
 
 指定的数据库和表中的 SQL Server 缓存依赖项使用的以分号分隔字符串。 （SQL 缓存依赖项将讨论在更高版本的模块中。）
 
-### <a name="updatecommand"></a>限于 UpdateCommand
+### <a name="updatecommand"></a>UpdateCommand
 
 设置或获取在更新数据库中的数据时使用的 SQL 字符串。 这可以是 SQL 查询或存储的过程名称。
 

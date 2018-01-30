@@ -2,18 +2,18 @@
 title: "ASP.NET 核心 MVC 与 EF 核心-高级-10/10"
 author: tdykstra
 description: "本教程介绍了可需要注意的时要考虑的因素的基础知识的开发使用实体框架核心的 ASP.NET web 应用程序的几个主题。"
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 03/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: b1d1cb8710595acd72bd5a0786bf1b1fed8b1d79
-ms.sourcegitcommit: 09b342b45e7372ba9ebf17f35eee331e5a08fb26
+ms.openlocfilehash: 458f2dc8a67f8c706d043f0d9d7cb7ce962e52ce
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>高级的主题的 EF 内核，它们有 ASP.NET 核心 MVC 教程 (10/10)
 

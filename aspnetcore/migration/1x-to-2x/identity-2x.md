@@ -2,18 +2,18 @@
 title: "迁移的身份验证和标识到 ASP.NET 核心 2.0"
 author: scottaddie
 description: "本文概述了迁移 ASP.NET Core 1.x 身份验证和标识为 ASP.NET 核心 2.0 的最常见步骤。"
-ms.author: scaddie
 manager: wpickett
+ms.author: scaddie
 ms.date: 10/26/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: 72ad31438a344fb5fa2b357c709b923b8077e742
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: dd48b2b027d22b570aa182e748ca91738e935f49
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-authentication-and-identity-to-aspnet-core-20"></a>迁移的身份验证和标识到 ASP.NET 核心 2.0
 
@@ -136,7 +136,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
 
     此代码段不使用标识，因此应通过将传递设置的默认方案`JwtBearerDefaults.AuthenticationScheme`到`AddAuthentication`方法。
 
-### <a name="openid-connect-oidc-authentication"></a>OpenID Connect (OIDC) 身份验证
+### <a name="openid-connect-oidc-authentication"></a>OpenID 连接 (OIDC) 身份验证
 进行中的以下更改*Startup.cs*:
 
 - 替换`UseOpenIdConnectAuthentication`方法调用`Configure`方法替换`UseAuthentication`:
@@ -161,7 +161,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
     });
     ```
 
-### <a name="facebook-authentication"></a>Facebook 身份验证
+### <a name="facebook-authentication"></a>facebook 身份验证
 进行中的以下更改*Startup.cs*:
 - 替换`UseFacebookAuthentication`方法调用`Configure`方法替换`UseAuthentication`:
  
@@ -313,7 +313,7 @@ services.AddAuthentication(IISDefaults.AuthenticationScheme);
 
 <a name="navigation-properties"></a>
 
-## <a name="add-identityuser-poco-navigation-properties"></a>添加 IdentityUser POCO 导航属性
+## <a name="add-identityuser-poco-navigation-properties"></a>添加 POCO IdentityUser 导航属性
 基的 Entity Framework (EF) 核心导航属性`IdentityUser`POCO （普通旧 CLR 对象） 已被删除。 如果你 1.x 的项目使用这些属性，手动将它们添加回 2.0 项目：
 
 ```csharp

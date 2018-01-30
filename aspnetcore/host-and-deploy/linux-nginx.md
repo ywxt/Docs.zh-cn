@@ -1,20 +1,20 @@
 ---
 title: "使用 Nginx 在 Linux 上托管 ASP.NET Core"
-description: "描述如何在 Ubuntu 16.04 转发到 ASP.NET 核心 web 应用程序在 Kestrel 上运行的 HTTP 流量的反向代理设置 Nginx。"
 author: rick-anderson
-ms.author: riande
+description: "描述如何在 Ubuntu 16.04 转发到 ASP.NET 核心 web 应用程序在 Kestrel 上运行的 HTTP 流量的反向代理设置 Nginx。"
 manager: wpickett
+ms.author: riande
 ms.custom: mvc
 ms.date: 08/21/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: 465f1391ef4ff9492d9aed48cb32da0659ceda41
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9939e420fee41b11e709da911d4051a048e789b3
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>使用 Nginx 在 Linux 上托管 ASP.NET Core
 
@@ -51,7 +51,7 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="why-use-a-reverse-proxy-server"></a>为何使用反向代理服务器？
 
-Kestrel 非常适合从 ASP.NET Core 提供动态内容，但是，Web 服务部件的功能不像 IIS、Apache 或 Nginx 等服务器那样强大。 反向代理服务器可以从 HTTP 服务器卸载服务静态内容、缓存请求、压缩请求和 SSL 终端等工作。 反向代理服务器可能驻留在专用计算机上，也可能与 HTTP 服务器一起部署。
+Kestrel 非常适合从 ASP.NET Core 提供动态内容。 但是，web 服务功能不是为 IIS、 Apache 或 Nginx 例如与服务器的功能丰富。 反向代理服务器可以卸载例如提供静态内容、 缓存请求、 压缩请求和从 HTTP 服务器的 SSL 终止的工作。 反向代理服务器可能驻留在专用计算机上，也可能与 HTTP 服务器一起部署。
 
 鉴于此指南的目的，使用 Nginx 的单个实例。 它与 HTTP 服务器一起运行在同一服务器上。 根据要求，不同的安装可能选择。
 

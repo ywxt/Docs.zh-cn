@@ -4,15 +4,15 @@ author: rick-anderson
 description: "在本教程中，你将添加排序、 筛选和分页功能页上使用 ASP.NET Core 和实体框架核心。"
 ms.author: riande
 ms.date: 10/22/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 24649374b71da39d638d943617a219d45f064846
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9c1ee6f8c00f3cd501ea86fbf73f51ae540a010a
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>排序、 筛选、 分页和分组-带有 Razor 页 (8 的 3) 的 EF 核心
 
@@ -107,7 +107,7 @@ ms.lasthandoff: 01/24/2018
 若要添加到学生索引页筛选：
 
 * 一个文本框和提交按钮添加到 Razor 页。 文本框中提供了一个搜索字符串的第一个或最后一个名称。
-* 代码隐藏文件更新为使用第文本框的值。
+* 页模型将更新为使用第文本框的值。
 
 ### <a name="add-filtering-functionality-to-the-index-method"></a>将筛选功能添加到索引方法
 
@@ -245,7 +245,7 @@ http://localhost:5000/Students?SearchString=an
 在此步骤中， *Pages/About.cshtml*更新以显示多少学生已注册的每个注册日期。 更新使用分组，并包括以下步骤：
 
 * 创建使用的数据的视图模型类**有关**页。
-* 修改有关 Razor 页和代码隐藏文件。
+* 修改有关 Razor 页和页模型。
 
 ### <a name="create-the-view-model"></a>创建视图模型
 
@@ -255,7 +255,7 @@ http://localhost:5000/Students?SearchString=an
 
 [!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
 
-### <a name="update-the-about-code-behind-page"></a>更新有关代码隐藏页
+### <a name="update-the-about-page-model"></a>更新关于页模型
 
 更新*Pages/About.cshtml.cs*文件替换为以下代码：
 

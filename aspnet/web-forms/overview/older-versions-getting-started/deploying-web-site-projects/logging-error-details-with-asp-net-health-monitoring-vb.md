@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 95c0b72e3811dc23f8bdea180be5b20800ab3bd8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 83f7504e3aeb02ed222712e7e51f612f7ffd5744
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>日志记录错误的详细信息，ASP.NET 运行状况监视 (VB)
 ====================
@@ -96,7 +96,7 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="displaying-the-error-log-in-a-web-page"></a>在网页中显示错误日志
 
-使用网站的当前配置，监视系统的运行状况到数据库中记录所有未经处理的异常。 但是，运行状况监视不提供任何机制来查看错误日志通过网页。 但是，你可以生成显示此信息从数据库的 ASP.NET 页。 （如我们马上就能看到，你可以选择拥有电子邮件中发送给你的错误详细信息。）
+使用网站的当前配置，监视系统的运行状况到数据库中记录所有未经处理的异常。 但是，运行状况监视不提供任何机制来查看错误日志通过网页。 但是，你可以生成显示此信息从数据库的 ASP.NET 页。 （如我们马上就能看到，你可以选择拥有电子邮件发送给你的错误详细信息。）
 
 如果你创建这样的页，请确保您采取措施来仅允许授权的用户以查看错误详细信息。 如果你的站点已使用用户帐户，则可以使用 URL 授权规则来限制对某些用户或角色页的访问。 有关如何授予或限制对基于在已登录用户的网页的访问的详细信息，请参阅我[网站安全教程](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)。
 
@@ -104,17 +104,17 @@ ms.lasthandoff: 01/24/2018
 > 后续教程探讨了名为 ELMAH 的备用的错误日志记录和通知系统。 ELMAH 包括内置的机制来查看错误日志从这两个网页和为 RSS 源。
 
 
-## <a name="logging-events-to-e-mail"></a>日志事件记录到电子邮件
+## <a name="logging-events-to-email"></a>日志事件记录到电子邮件
 
-监视系统的运行状况包括电子邮件"记录"事件日志源提供程序。 日志源包括记录到电子邮件消息正文中的数据库的相同信息。 你可以使用此日志源以在特定运行状况监视事件发生时通知开发人员。
+监视系统的运行状况包括到电子邮件"记录"事件日志源提供程序。 日志源包括记录到电子邮件消息正文中的数据库的相同信息。 你可以使用此日志源以在特定运行状况监视事件发生时通知开发人员。
 
 让我们更新网站的配置，以便我们收到一封电子邮件每当异常发生图书评论。 若要实现此目的，我们需要执行三个任务：
 
-1. 配置 ASP.NET web 应用程序发送电子邮件。 这通过指定通过发送电子邮件的方式实现`<system.net>`配置元素。 有关详细信息将电子邮件发送到，请参阅 ASP.NET 应用程序中的消息[在 ASP.NET 中发送电子邮件](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)和[System.Net.Mail 常见问题](http://systemnetmail.com/)。
+1. 配置 ASP.NET web 应用程序发送电子邮件。 这通过指定如何通过发送电子邮件消息实现`<system.net>`配置元素。 有关发送电子邮件的详细信息请参阅 ASP.NET 应用程序中的消息[在 ASP.NET 中发送电子邮件](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)和[System.Net.Mail 常见问题](http://systemnetmail.com/)。
 2. 注册中的电子邮件日志源提供程序`<providers>`元素，并
 3. 添加到一个条目`<rules>`映射到在步骤 (2) 中添加的日志源提供程序的"所有错误"事件的元素。
 
-监视系统的运行状况包含两个电子邮件日志源提供程序类：`SimpleMailWebEventProvider`和`TemplatedMailWebEventProvider`。 [ `SimpleMailWebEventProvider`类](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx)发送纯文本电子邮件消息，其中包含事件详细信息，并提供电子邮件正文的稍加自定义。 与[`TemplatedMailWebEventProvider`类](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx)指定其呈现的标记用作电子邮件正文 ASP.NET 页。 [ `TemplatedMailWebEventProvider`类](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx)为你提供的内容和格式的电子邮件中，多更好地控制，但需要更多的前期工作因为你必须创建 ASP.NET 页生成电子邮件消息的正文。 本教程重点介绍使用`SimpleMailWebEventProvider`类。
+监视系统的运行状况包含两个电子邮件日志源提供程序类：`SimpleMailWebEventProvider`和`TemplatedMailWebEventProvider`。 [ `SimpleMailWebEventProvider`类](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx)发送纯文本电子邮件消息，其中包含事件详细信息，并提供电子邮件正文的稍加自定义。 与[`TemplatedMailWebEventProvider`类](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx)指定其呈现的标记用作电子邮件正文 ASP.NET 页。 [ `TemplatedMailWebEventProvider`类](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx)为你提供的内容和格式的电子邮件消息中，多更好地控制，但需要更多的前期工作因为你必须创建 ASP.NET 页生成电子邮件消息的正文。 本教程重点介绍使用`SimpleMailWebEventProvider`类。
 
 更新运行状况监视系统的`<providers>`中的元素`Web.config`文件以包含的日志源`SimpleMailWebEventProvider`类：
 
@@ -126,7 +126,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-vb/samples/sample4.xml)]
 
-`<rules>`部分现在包括两个规则。 第一个名为"所有错误到电子邮件"，将所有未经处理的异常发送到"EmailWebEventProvider"日志源。 此规则的效果将网站上的有关错误的详细信息发送到指定的地址。 "到数据库的所有错误"规则记录的错误详细信息的站点的数据库。 因此，无论何时未经处理的异常发生在站点上其详细信息会同时记录到数据库而发送到指定的电子邮件地址。
+`<rules>`部分现在包括两个规则。 第一个名为"所有错误到的电子邮件"，将所有未经处理的异常发送到"EmailWebEventProvider"日志源。 此规则的效果将网站上的有关错误的详细信息发送到指定的地址。 "到数据库的所有错误"规则记录的错误详细信息的站点的数据库。 因此，无论何时未经处理的异常发生在站点上其详细信息会同时记录到数据库而发送到指定的电子邮件地址。
 
 **图 2**显示由生成的电子邮件`SimpleMailWebEventProvider`类访问时`Genre.aspx?ID=foo`。
 
@@ -137,7 +137,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="summary"></a>摘要
 
-ASP.NET 运行状况监视系统设计用于允许管理员监视已部署的 web 应用程序的运行状况。 运行状况监视事件引发时展开某些操作，例如当应用程序停止时，当用户成功登录到站点，或发生未处理的异常时引发。 可以将这些事件记录到任意数量的日志源。 本教程介绍了如何将登录到数据库和通过电子邮件的未经处理的异常的详细信息。
+ASP.NET 运行状况监视系统设计用于允许管理员监视已部署的 web 应用程序的运行状况。 运行状况监视事件引发时展开某些操作，例如当应用程序停止时，当用户成功登录到站点，或发生未处理的异常时引发。 可以将这些事件记录到任意数量的日志源。 本教程介绍了如何将登录到数据库以及通过电子邮件的未经处理的异常的详细信息。
 
 本教程侧重于使用运行状况监视日志未经处理的异常，但请记住，运行状况监视旨在度量部署的 ASP.NET 应用程序的总体运行状况，包括丰富的运行状况监视事件和不日志源此处介绍了。 什么是多个，你可以创建你自己运行状况监视事件和日志源的需求出现。 如果你有兴趣了解更多有关运行状况监视，良好的第一步是读取[艾力克 Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)的[运行状况监视常见问题](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)。 接下来，请查阅[How To： 在 ASP.NET 2.0 中使用运行状况监视](https://msdn.microsoft.com/library/ms998306.aspx)。
 

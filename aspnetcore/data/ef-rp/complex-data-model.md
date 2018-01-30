@@ -2,18 +2,18 @@
 title: "与 EF 核心-数据模型-5 8 razor 页"
 author: rick-anderson
 description: "在本教程中添加更多实体和关系，并通过指定格式设置、 验证和数据库的映射规则自定义数据模型。"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/25/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 2446f4734e9bb1ab6829001f6e7888c4c14ee1b7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 58bb773ba16314827da84909def05a8ef370479b
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-razor-pages-tutorial-5-of-8"></a>创建复杂的数据模型的 EF 核心 Razor 页教程 (5 的 8)
 

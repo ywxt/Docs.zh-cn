@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/request-validation
 msc.type: content
-ms.openlocfilehash: 61a96b75fdc29bdd1510ed689ee0356ef30e03fc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b24fe2193d2c7a858667505bad9ed0b1d70a328
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="request-validation---preventing-script-attacks"></a>请求验证-阻止脚本攻击
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 
 请求验证的 ASP.NET 1.1 版中，由于一项功能将阻止服务器接受内容包含未编码 HTML。 此功能旨在帮助防止凭此客户端脚本代码或 HTML 可以不知情的情况下提交到服务器、 存储，以及随后呈现给其他用户的一些脚本注入攻击。 我们仍强烈建议你验证所有输入的数据和 HTML 对其在适当的时候进行编码。
 
-例如，你将创建一个网页，请求用户的电子邮件地址，然后将该电子邮件地址存储在数据库中。 如果用户输入&lt;脚本&gt;警报 （"你好从脚本"）&lt;/&gt;而不是有效的电子邮件地址，已提交该数据，此脚本可以执行如果内容未正确编码。 ASP.NET 的请求验证功能可以避免这种情况发生。
+例如，你可以创建请求用户的电子邮件地址，然后将该电子邮件地址在数据库中的存储的网页。 如果用户输入&lt;脚本&gt;警报 （"你好从脚本"）&lt;/&gt;而不是有效的电子邮件地址，已提交该数据，此脚本可以执行如果内容未正确编码。 ASP.NET 的请求验证功能可以避免这种情况发生。
 
 ## <a name="why-this-feature-is-useful"></a>此功能是有用的原因
 
@@ -51,7 +51,7 @@ ASP.NET 请求验证功能主动会阻止通过不允许未编码的 HTML 内容
 
 ![](request-validation/_static/image3.png)
 
-错误消息指出潜在的危险 Request.Form 的检测到值并提供更多详细信息中并完全发生了什么以及如何更改的行为的说明。 例如: 
+错误消息指出潜在的危险 Request.Form 的检测到值并提供更多详细信息中并完全发生了什么以及如何更改的行为的说明。 例如:
 
 请求验证程序检测到潜在危险的客户端的输入的值，并处理的请求已中止。 此值可能指示尝试危及安全的应用程序，如跨站点脚本攻击。 你可以通过设置来禁用请求验证`validateRequest=false`Page 指令中或在配置部分。 但是，强烈建议，你的应用程序显式检查所有的输入内容在这种情况下。
 

@@ -2,18 +2,18 @@
 title: "与 EF 核心-CRUD-2 的 8 razor 页"
 author: rick-anderson
 description: "演示如何创建、 读取、 更新和删除与 EF 核心"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/crud
-ms.openlocfilehash: d9b34c141401fbeaafe439fae1a7a75f2fe7b4ae
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 757aeb713b645cea0fe633b150784184d2d3571e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>创建、 读取、 更新和删除的 EF 内核，它们有 Razor 页 (2 的 8)
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 01/24/2018
 
 在本教程中，基架 CRUD （创建、 读取、 更新、 删除） 查看和自定义代码。
 
-注意： 若要最小化复杂性并保留侧重于 EF 核心这些教程，请 EF 核心使用代码在 Razor 页代码隐藏文件中。 一些开发人员使用一种服务层或存储库模式中的创建 UI （Razor 页） 和数据访问层之间的抽象层。
+注意： 若要最小化复杂性并使这些教程侧重于 EF 核心，EF 核心代码是 Razor 页页在模型中使用。 一些开发人员使用一种服务层或存储库模式中的创建 UI （Razor 页） 和数据访问层之间的抽象层。
 
 在本教程、 创建、 编辑、 删除、 和中详细说明 Razor 页*学生*文件夹进行修改。
 
@@ -147,7 +147,7 @@ ms.lasthandoff: 01/24/2018
 <a name="vm"></a>
 ### <a name="view-model"></a>视图模型
 
-视图模型通常包含应用程序使用的模型中包括的属性的子集。 应用程序模型通常称为域模型。 域模型通常包含在数据库中的对应实体所需的所有属性。 视图模型仅包含属性所需的 UI 层 （例如，创建页）。 除视图模型中，某些应用程序，用于绑定模型或输入的模型 Razor 页代码隐藏类和浏览器之间传递数据。 请考虑以下`Student`视图模型：
+视图模型通常包含应用程序使用的模型中包括的属性的子集。 应用程序模型通常称为域模型。 域模型通常包含在数据库中的对应实体所需的所有属性。 视图模型仅包含属性所需的 UI 层 （例如，创建页）。 除视图模型中，某些应用程序，用于绑定模型或输入的模型 Razor 页页模型类和浏览器之间传递数据。 请考虑以下`Student`视图模型：
 
 [!code-csharp[Main](intro/samples/cu/Models/StudentVM.cs)]
 
@@ -165,7 +165,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="update-the-edit-page"></a>更新编辑页
 
-更新编辑页代码隐藏文件：
+更新的编辑页的页模型：
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Edit.cshtml.cs?name=snippet_OnPostAsync&highlight=20,36)]
 

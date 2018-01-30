@@ -1,19 +1,19 @@
 ---
 title: "阻止在 ASP.NET 核心中的跨网站请求伪造 (XSRF/CSRF) 攻击"
 author: steve-smith
-ms.author: riande
 description: "阻止在 ASP.NET 核心中的跨网站请求伪造 (XSRF/CSRF) 攻击"
 manager: wpickett
+ms.author: riande
 ms.date: 7/14/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/anti-request-forgery
-ms.openlocfilehash: 3831bf737186d10eb1b298f5ec2da1fd33ebedd9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e076e301004c04b5c516d775353a4b6e50a3f36e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="preventing-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>阻止在 ASP.NET 核心中的跨网站请求伪造 (XSRF/CSRF) 攻击
 
@@ -43,7 +43,7 @@ CSRF 攻击的示例：
 请注意，窗体操作发送到易受攻击的站点，不适用于恶意站点。 这是 CSRF 的"跨站点"部分。
 
 4. 用户可单击提交按钮。 浏览器会自动包括请求的域 （在此情况下易受攻击的站点） 与请求的身份验证 cookie。
-5. 请求与用户的身份验证上下文的服务器上运行，并可以执行任何身份验证的用户可以执行的操作。
+5. 请求与用户的身份验证上下文的服务器上运行，并可以执行的已经过身份验证的用户可以执行任何操作。
 
 此示例要求用户通过单击窗体按钮。 无法恶意页：
 
@@ -353,12 +353,11 @@ CSRF 攻击依赖于发送与每个请求都会到该域的域关联的 cookie �
 
 ### <a name="user-tokens"></a>用户令牌
 
-基于令牌的身份验证不存储在服务器上的会话。 相反，当用户登录时它们被颁发一个令牌 （不 antiforgery 令牌）。 此令牌包含要求该令牌进行验证的所有数据。 它还包含用户信息，请在窗体的[声明](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model)。 当用户想要访问要求进行身份验证的服务器资源时，令牌将发送至的其他授权标头中的持有者 {令牌} 形式的服务器。 这使得应用程序无状态，因为在每个后续请求令牌中传递请求服务器端验证。 此令牌不*加密*; 而是*编码*。 服务器端都可以解码令牌来访问令牌中的原始信息。 若要在后续请求中发送令牌，则可以或者将其存储在浏览器的本地存储中或在一个 cookie。 你无需担心 XSRF 漏洞，如果你的令牌存储在本地存储中，但当的令牌存储在一个 cookie，它会成为问题。
+基于令牌的身份验证不存储在服务器上的会话。 当用户登录时，它们被颁发一个令牌 （不 antiforgery 令牌）。 此令牌包含要求该令牌进行验证的数据。 它还包含中的窗体的用户信息[声明](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model)。 当用户想要访问要求进行身份验证的服务器资源时，令牌将发送至的其他授权标头中的持有者 {令牌} 形式的服务器。 这使得应用程序无状态，因为在每个后续请求令牌中传递请求服务器端验证。 此令牌不*加密*; 而是*编码*。 在服务器端，都可以解码令牌来访问令牌中的原始信息。 若要在后续请求中发送令牌，或者将其存储在浏览器的本地存储中或在一个 cookie。 不必担心 XSRF 漏洞，如果的令牌存储在本地存储区，但如果的令牌存储在一个 cookie，则会出现问题。
 
 ### <a name="multiple-applications-are-hosted-in-one-domain"></a>在一个域中托管多个应用程序
 
-即使`example1.cloudapp.net`和`example2.cloudapp.net`是不同的主机下的所有主机之间没有隐式信任关系`*.cloudapp.net`域。 此隐式信任关系允许影响对方的 cookie （控制 AJAX 请求的同源策略不一定适用于 HTTP cookie） 可能不受信任的主机。 ASP.NET 核心运行时，用户名将嵌入到字段令牌中，因此即使恶意的子域是能够覆盖会话令牌将无法生成有效字段标记以该用户提供一些缓解。 但是，在这种环境中承载时的内置的 ANTI-XSRF 例程仍不能抵御会话劫持或登录名 CSRF 攻击。 共享宿主环境为 vunerable 会话劫持、 登录 CSRF，和其他的攻击。
-
+尽管`example1.cloudapp.net`和`example2.cloudapp.net`是不同的主机下的主机之间没有隐式信任关系`*.cloudapp.net`域。 此隐式信任关系允许影响对方的 cookie （控制 AJAX 请求的同源策略不一定适用于 HTTP cookie） 可能不受信任的主机。 ASP.NET 核心运行时，用户名将嵌入到字段标记提供一些缓解。 即使恶意子域能够覆盖会话令牌，它无法生成用户的有效字段令牌。 当承载于此类环境中，内置的 ANTI-XSRF 例程仍不能抵御会话劫持或登录名 CSRF 攻击。 共享宿主环境为 vunerable 会话劫持、 登录 CSRF，和其他的攻击。
 
 ### <a name="additional-resources"></a>其他资源
 

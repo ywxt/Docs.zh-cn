@@ -2,22 +2,25 @@
 title: "响应缓存在 ASP.NET 核心"
 author: rick-anderson
 description: "了解如何使用缓存到较低带宽要求的响应，并增加的 ASP.NET Core 应用的性能。"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/20/2017
-ms.topic: article
 ms.prod: asp.net-core
+ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: d7726443dbcc34c21fd6cf0f56c4412863617b9f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c38f9b9a1bf1c523951e2cf1f3070858fe5daf04
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>响应缓存在 ASP.NET 核心
 
 通过[John Luo](https://github.com/JunTaoLuo)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Steve Smith](https://ardalis.com/)，和[Luke Latham](https://github.com/guardrex)
 
+> [!NOTE]
+> 响应缓存[Razor 页与 ASP.NET 核心 2.0 中不支持](https://github.com/aspnet/Mvc/issues/6437)。 此功能将支持[ASP.NET 核心 2.1 版本](https://github.com/aspnet/Home/wiki/Roadmap)。
+  
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
 响应缓存可减少客户端或代理对 web 服务器的请求数。 响应缓存还可减少量工作的 web 服务器执行程序生成响应。 响应缓存由标头，指定你希望客户端、 代理和缓存响应的中间件如何控制。
@@ -32,8 +35,8 @@ ms.lasthandoff: 01/24/2018
 
 | 指令                                                       | 操作 |
 | --------------------------------------------------------------- | ------ |
-| [公用](https://tools.ietf.org/html/rfc7234#section-5.2.2.5)   | 缓存可能会存储响应。 |
-| [专用](https://tools.ietf.org/html/rfc7234#section-5.2.2.6)  | 不能通过共享缓存中存储响应。 专用缓存可以存储并重复使用响应。 |
+| [public](https://tools.ietf.org/html/rfc7234#section-5.2.2.5)   | 缓存可能会存储响应。 |
+| [private](https://tools.ietf.org/html/rfc7234#section-5.2.2.6)  | 不能通过共享缓存中存储响应。 专用缓存可以存储并重复使用响应。 |
 | [max-age](https://tools.ietf.org/html/rfc7234#section-5.2.1.1)  | 客户端将不会接受其保留时间大于指定的秒数的响应。 示例： `max-age=60` （60 秒）， `max-age=2592000` （1 个月） |
 | [no-cache](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **在请求上**： 缓存不得使用存储的响应来满足该请求。 注意： 对于客户端，为源服务器将重新生成响应，并且该中间件更新其缓存中存储的响应。<br><br>**响应**： 响应必须不能用于在不验证源服务器上的后续请求。 |
 | [no-store](https://tools.ietf.org/html/rfc7234#section-5.2.1.5) | **在请求上**： 缓存必须不会将请求的存储。<br><br>**响应**： 缓存不得存储任何响应的一部分。 |

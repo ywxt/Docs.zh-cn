@@ -2,18 +2,18 @@
 title: "Getting Started with ASP.NET Core 和 Entity Framework 6"
 author: tdykstra
 description: "这篇文章演示如何在 ASP.NET Core 应用程序中使用 Entity Framework 6。"
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 02/24/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: data/entity-framework-6
-ms.openlocfilehash: 7f3c1f28c1e0b3a68db7f6f84c56b18643b56cc8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7407fe8a976978d7d5077d5e5ac6cc264565621d
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="getting-started-with-aspnet-core-and-entity-framework-6"></a>开始使用 ASP.NET Core 和 Entity Framework 6
 
@@ -37,7 +37,7 @@ ASP.NET 核心项目需要引用.NET framework 和 ef6 更高版本。 例如，
 
 [!code-xml[](entity-framework-6/sample/MVCCore/MVCCore.csproj?range=3-9&highlight=2)]
 
-如果你要创建新项目，使用**ASP.NET 核心 Web 应用程序 (.NET Framework)**模板。
+创建新项目时，使用**ASP.NET 核心 Web 应用程序 (.NET Framework)**模板。
 
 ## <a name="handle-connection-strings"></a>处理连接字符串
 

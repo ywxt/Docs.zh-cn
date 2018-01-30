@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 41e1f8673b42571a9dcbdae668a30426fe90f42f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b4bba02449debff17422f6b7008247fdf61856c8
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="logging-error-details-with-elmah-vb"></a>使用 ELMAH (VB) 日志记录错误详细信息
 ====================
@@ -29,7 +29,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="introduction"></a>介绍
 
-[前面教程](logging-error-details-with-asp-net-health-monitoring-vb.md)检查 ASP。NET 的运行状况监视系统，它提供用于记录多种不同的 Web 事件框库外。 许多开发人员使用运行状况监视日志，并发送电子邮件的未经处理的异常的详细信息。 但是，没有与此系统的一些难点。 首先是缺少任何种类的用户界面，用于查看有关记录的事件信息。 如果你想要查看的 10 个的最后一个错误，摘要或查看上周发生了错误的详细信息，则必须通过数据库任一挤出、 通过电子邮件收件箱，扫描或生成显示来自信息的网页`aspnet_WebEvent_Events`表。
+[前面教程](logging-error-details-with-asp-net-health-monitoring-vb.md)检查 ASP。NET 的运行状况监视系统，它提供用于记录多种不同的 Web 事件框库外。 许多开发人员使用运行状况监视日志，并通过电子邮件发送的未经处理的异常的详细信息。 但是，没有与此系统的一些难点。 首先是缺少任何种类的用户界面，用于查看有关记录的事件信息。 如果你想要查看的 10 个的最后一个错误，摘要或查看上周发生了错误的详细信息，则必须通过数据库任一挤出、 浏览你的电子邮件收件箱，或生成显示来自信息的网页`aspnet_WebEvent_Events`表。
 
 另一个难题是围绕运行状况监视的复杂性。 由于运行状况监视可用于记录大量不同的事件，并且有各种选项指示如何以及何时记录事件，正确配置运行状况监视系统可以繁重任务。 最后，有兼容性问题。 由于运行状况监视第一次添加到.NET Framework 2.0 版中，也无法供较旧的 web 应用程序生成使用 ASP.NET 版本 1.x。 此外，`SqlWebEventProvider`类，该类使用在前面的教程到数据库的日志错误详细信息，仅适用于 Microsoft SQL Server 数据库。 你将需要创建自定义日志提供程序类应需要将错误记录到 XML 文件或 Oracle 数据库等一个备用数据存储区。
 
@@ -71,7 +71,7 @@ ELMAH 1.0 BETA 3 (生成 10617)，在本文撰写之际，最新版本包括在�
 - **HTTP 模块**-HTTP 模块是用于定义事件处理程序类`HttpApplication`事件，如`Error`事件。 ELMAH 包括多个 HTTP 模块，三个最 germane 的正在： 
 
     - `ErrorLogModule`-将未经处理的异常记录到日志源。
-    - `ErrorMailModule`-电子邮件中发送的未经处理的异常的详细信息。
+    - `ErrorMailModule`-发送的电子邮件中的未经处理的异常的详细信息。
     - `ErrorFilterModule`-将应用开发人员指定筛选器，以确定记录哪些异常的方式以及是将被忽略。
 - **HTTP 处理程序**-一个 HTTP 处理程序是负责生成特定类型的请求的标记的类。 ELMAH 包括呈现错误详细信息，作为网页、 RSS 源，或以逗号分隔的文件 (CSV) 的 HTTP 处理程序。
 - **错误日志源**-现成 ELMAH 可以记录到内存中，到 Microsoft SQL Server 数据库，到 Microsoft Access 数据库，到 Oracle 数据库，错误到 XML 文件，到 SQLite 数据库，或 Vista DB 数据库。 监视系统的运行状况，如 ELMAH 的体系结构是使用提供程序模型，这意味着你可以创建和无缝集成自己自定义日志的源提供程序，如果需要生成的。
@@ -199,13 +199,13 @@ ELMAH 不会影响发生未经处理的异常; 时，向用户显示的内容它
 
 ELMAH 的`ErrorLogModule`HTTP 模块将会自动记录到指定的日志源的未经处理的异常。 或者，你可以登录而无需通过引发未处理的异常的错误`ErrorSignal`类并将其`Raise`方法。 `Raise`方法传递`Exception`对象并将其记录像该异常被引发了异常，而无需处理已经达到 ASP.NET 运行时。 但是，之处在于，请求将继续正常之后执行`Raise`已调用了方法，而引发，未经处理的异常中断请求的正常执行，并将导致 ASP.NET 运行时显示配置错误页。
 
-`ErrorSignal`类很有用，其中可能会失败，某些操作，但其失败不是灾难性的总体所执行的操作的情况。 例如，网站可能包含一个窗体，获取用户的输入，将其存储在数据库中，然后将用户发送一封电子邮件，告知他们他们处理信息。 如果成功，信息保存到数据库但没有错误时发送电子邮件，则应发生什么情况？ 一个选项将引发异常，并向用户发送到错误页。 但是，这可能会将用户混淆误以为不保存他们输入的信息。 另一种方法将记录该电子邮件相关的错误，但不是能改变以任何方式的用户的体验。 这就是`ErrorSignal`类很有用。
+`ErrorSignal`类很有用，其中可能会失败，某些操作，但其失败不是灾难性的总体所执行的操作的情况。 例如，网站可能包含一个窗体，获取用户的输入，将其存储在数据库中，然后将用户发送一封电子邮件，告知他们他们处理信息。 如果成功，信息保存到数据库但没有错误时发送电子邮件，则应发生什么情况？ 一个选项将引发异常，并向用户发送到错误页。 但是，这可能会将用户混淆误以为不保存他们输入的信息。 另一种方法将记录与电子邮件相关的错误，但不是能改变以任何方式的用户的体验。 这就是`ErrorSignal`类很有用。
 
 [!code-vb[Main](logging-error-details-with-elmah-vb/samples/sample6.vb)]
 
-## <a name="error-notification-via-e-mail"></a>通过电子邮件的错误通知
+## <a name="error-notification-via-email"></a>通过电子邮件的错误通知
 
-到数据库的日志记录错误，以及 ELMAH 还可以配置为电子邮件发送给指定收件人的错误详细信息。 此功能由`ErrorMailModule`HTTP 模块中; 因此，必须注册此 HTTP 模块`Web.config`才能发送错误详细信息，通过电子邮件。
+到数据库的日志记录错误，以及 ELMAH 还可以配置为通过电子邮件发送给指定收件人的错误详细信息。 此功能由`ErrorMailModule`HTTP 模块中; 因此，必须注册此 HTTP 模块`Web.config`才能发送错误详细信息，通过电子邮件。
 
 [!code-xml[Main](logging-error-details-with-elmah-vb/samples/sample7.xml)]
 
@@ -213,9 +213,9 @@ ELMAH 的`ErrorLogModule`HTTP 模块将会自动记录到指定的日志源的�
 
 [!code-xml[Main](logging-error-details-with-elmah-vb/samples/sample8.xml)]
 
-使用就地上述设置，每当出现运行时错误，则 ELMAH 发送电子邮件至support@example.com具有错误详细信息。 ELMAH 的错误电子邮件包含错误详细信息 web 页，即错误消息、 堆栈跟踪和服务器变量中所示的相同信息 (回头参考**图 4**和**5**)。 错误电子邮件还包括作为附件的异常详细信息黄色屏幕的死亡内容 (`YSOD.html`)。
+使用就地上述设置，每当出现运行时错误，则 ELMAH 发送到电子邮件support@example.com具有错误详细信息。 ELMAH 的错误电子邮件包含错误详细信息 web 页，即错误消息、 堆栈跟踪和服务器变量中所示的相同信息 (回头参考**图 4**和**5**)。 错误电子邮件还包括作为附件的异常详细信息黄色屏幕的死亡内容 (`YSOD.html`)。
 
-**图 8**演示通过访问生成的 ELMAH 的错误电子邮件`Genre.aspx?ID=foo`。 虽然**图 8**显示仅错误消息和堆栈跟踪，则服务器变量是包含进一步向下电子邮件的正文中。
+**图 8**显示 ELMAH 的错误电子邮件，请访问生成`Genre.aspx?ID=foo`。 虽然**图 8**显示仅错误消息和堆栈跟踪，则服务器变量是包含进一步向下电子邮件的正文中。
 
 [![](logging-error-details-with-elmah-vb/_static/image21.png)](logging-error-details-with-elmah-vb/_static/image20.png)
 

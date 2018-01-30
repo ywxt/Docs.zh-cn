@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 862f07defafb2d2613fef9f76f13aab0b11c5440
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7792891aed6f0c5e952018dacb36a1d267cb6ae0
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="deploying-your-site-using-an-ftp-client-vb"></a>部署你的网站使用 FTP 客户端 (VB)
 ====================
@@ -48,7 +48,7 @@ ms.lasthandoff: 01/24/2018
 
 通过导航到启动 BookReviewsWAP 项目`BookReviewsWAP`文件夹，然后双击`BookReviewsWAP.sln`文件。 在部署项目之前很重要来生成它以确保对源代码的任何更改都包括在编译的程序集。 若要生成项目转到生成菜单，然后选择生成 BookReviewsWAP 菜单选项。 这将在项目中的源代码编译到单个程序集， `BookReviewsWAP.dll`，这将置于`Bin`文件夹。
 
-现在，我们已准备好部署所需的文件 ！ 启动 FTP 客户端并连接到 web 宿主提供程序上的 web 服务器。 （与 web 托管公司的名义注册时它们将电子邮件发送信息如何连接到 FTP 服务器; 这包括 FTP 服务器，以及用户名和密码的地址。）
+现在，我们已准备好部署所需的文件 ！ 启动 FTP 客户端并连接到 web 宿主提供程序上的 web 服务器。 （与 web 托管公司的名义注册时它们将通过电子邮件发送你如何连接到 FTP 服务器的信息; 这包括 FTP 服务器，以及用户名和密码的地址。）
 
 从你的桌面的以下文件复制到 web 宿主提供程序的根网站文件夹中。 当您使用到 web 服务器的 FTP 的 web 宿主提供程序时很可能在网站根目录。 但是，某些 web 宿主提供程序具有一个名为子`www`或`wwwroot`用作你的网站文件的根文件夹。 最后，当 FTPing 文件时你可能需要在生产环境中的上创建相应的文件夹结构`Bin`文件夹，`Fiction`文件夹，`Images`文件夹中，依次类推。
 

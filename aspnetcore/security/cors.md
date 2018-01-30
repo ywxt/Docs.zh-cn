@@ -2,18 +2,18 @@
 title: "启用跨源请求 (CORS)"
 author: rick-anderson
 description: "本文档介绍了 CORS，作为一种标准允许或拒绝 ASP.NET Core 应用程序中的跨域请求。"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 05/17/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/cors
-ms.openlocfilehash: 9f53ce11f1659aa3416fe4fbb94183c64ab0dab5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1c0d87b61882f69dbf2aeb0a896d9294bd029374
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>启用跨源请求 (CORS)
 
@@ -209,7 +209,7 @@ $.ajax({
 
 如果浏览器发送凭据，但响应不包含有效的访问控制的允许的凭证标头，浏览器不会公开的响应应用程序，并且 AJAX 请求失败。
 
-因为这意味着在另一个域网站可以不在用户不知情的情况下向用户的代表应用程序发送登录的用户的凭据，则要非常谨慎允许跨域凭据。 CORS 规范还状态到该设置来源"*"（所有来源） 无效的访问控制的允许的凭证标头是否存在。
+允许跨域凭据时要小心。 在另一个域网站可以将登录的用户的凭据发送到代表该用户的用户的不知情的情况下上的应用。 CORS 规范还会说明该设置来源为"*"（所有来源） 无效如果`Access-Control-Allow-Credentials`标头是否存在。
 
 ### <a name="set-the-preflight-expiration-time"></a>将预检过期时间设置
 
@@ -221,11 +221,11 @@ $.ajax({
 
 ## <a name="how-cors-works"></a>CORS 的工作原理
 
-本部分介绍在 CORS 请求中，在 HTTP 消息的级别会发生什么情况。 请务必了解 CORS 的工作原理，以便你可以正确，配置你的 CORS 策略以及故障排除如果操作不能按预期工作。
+本部分介绍在 CORS 请求的 HTTP 消息级别中会发生什么情况。 请务必了解 CORS，以便可以正确配置的 CORS 策略工作原理以及 troubleshooted 时出现意外的行为。
 
-CORS 规范引入了几个新的 HTTP 标头启用跨域请求。 如果浏览器支持 CORS，则将自动为跨源请求; 这些标头设置你不必执行任何特殊的 JavaScript 代码中。
+CORS 规范引入了几个新的 HTTP 标头启用跨域请求。 如果浏览器支持 CORS，则将设置为跨源请求自动这些标头。 不需要启用 CORS 自定义 JavaScript 代码。
 
-下面是跨域请求的示例。 "源"标头提供了正在发出请求的站点的域：
+下面是跨域请求的示例。 `Origin`标头提供的域的正在发出请求的站点：
 
 ```
 GET http://myservice.azurewebsites.net/api/test HTTP/1.1

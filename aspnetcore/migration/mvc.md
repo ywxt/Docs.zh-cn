@@ -1,19 +1,19 @@
 ---
 title: "从 ASP.NET MVC 迁移到 ASP.NET 核心 MVC"
 author: ardalis
-description: 
-ms.author: riande
+description: "了解如何开始迁移到 ASP.NET 核心 MVC ASP.NET MVC 项目。"
 manager: wpickett
+ms.author: riande
 ms.date: 03/07/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/mvc
-ms.openlocfilehash: e3220fb32900aac42cf96497964936ad5b375a86
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 447b13eccf523cab81590405740bb194112b0dad
+ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>从 ASP.NET MVC 迁移到 ASP.NET 核心 MVC
 
@@ -94,7 +94,7 @@ ms.lasthandoff: 01/24/2018
 
 ![Web 应用程序在 Microsoft Edge 中打开](mvc/_static/hello-world.png)
 
-请参阅[控制器](../mvc/controllers/index.md)和[视图](../mvc/views/index.md)有关详细信息。
+请参阅[控制器](xref:mvc/controllers/actions)和[视图](xref:mvc/views/overview)有关详细信息。
 
 现在，我们已最小的工作 ASP.NET Core 项目，我们可以开始从 ASP.NET MVC 项目迁移功能。 我们将需要将以下：
 
@@ -156,7 +156,7 @@ ms.lasthandoff: 01/24/2018
 
 * 创建*视图/共享*文件夹。
 
-* *可选：*复制*_ViewImports.cshtml*从*FullAspNetCore* MVC 项目*视图*文件夹导入到 ASP.NET 核心项目*视图*文件夹。 删除中的任何命名空间声明*_ViewImports.cshtml*文件。 *_ViewImports.cshtml*文件对于视图的所有文件提供命名空间，并使[标记帮助程序](../mvc/views/tag-helpers/index.md)。 新的布局文件中使用标记帮助程序。 *_ViewImports.cshtml*文件是用于 ASP.NET 核心新功能。
+* *可选：*复制*_ViewImports.cshtml*从*FullAspNetCore* MVC 项目*视图*文件夹导入到 ASP.NET 核心项目*视图*文件夹。 删除中的任何命名空间声明*_ViewImports.cshtml*文件。 *_ViewImports.cshtml*文件对于视图的所有文件提供命名空间，并使[标记帮助程序](xref:mvc/views/tag-helpers/intro)。 新的布局文件中使用标记帮助程序。 *_ViewImports.cshtml*文件是用于 ASP.NET 核心新功能。
 
 * 复制*_Layout.cshtml*文件从旧的 ASP.NET MVC 项目*视图/共享*文件夹导入到 ASP.NET 核心项目*视图/共享*文件夹。
 
@@ -191,9 +191,9 @@ ms.lasthandoff: 01/24/2018
 
 在浏览器中查看站点。 它应现在正确加载，以就地预期的样式。
 
-* *可选：*可能想要尝试使用新的布局文件。 对于此项目中，你可以复制中的布局文件*FullAspNetCore*项目。 新的布局文件使用[标记帮助程序](../mvc/views/tag-helpers/index.md)并且具有其他的改进功能。
+* *可选：*可能想要尝试使用新的布局文件。 对于此项目中，你可以复制中的布局文件*FullAspNetCore*项目。 新的布局文件使用[标记帮助程序](xref:mvc/views/tag-helpers/intro)并且具有其他的改进功能。
 
-## <a name="configure-bundling--minification"></a>配置绑定和缩减
+## <a name="configure-bundling-and-minification"></a>配置绑定和缩减
 
 有关如何配置绑定和缩减的信息，请参阅[捆绑和缩减](../client-side/bundling-and-minification.md)。
 
@@ -224,6 +224,5 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 
 ## <a name="additional-resources"></a>其他资源
 
-* [客户端开发](../client-side/index.md)
-
-* [标记帮助程序](../mvc/views/tag-helpers/index.md)
+* [客户端开发](xref:client-side/index)
+* [标记帮助程序](xref:mvc/views/tag-helpers/intro)

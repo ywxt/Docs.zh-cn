@@ -1,21 +1,21 @@
 ---
-title: "迁移 ASP.NET ASP.NET 核心 2.0"
+title: "从 ASP.NET 迁移到 ASP.NET Core 2.0"
 author: isaac2004
-description: "本参考文档提供了从现有的 ASP.NET MVC 或 Web API 应用程序迁移到 ASP.NET Core 2.0 的指南。"
-ms.author: scaddie
+description: "接收有关现有 ASP.NET MVC 或 Web API 应用程序迁移到 ASP.NET 核心 2.0 的指导。"
 manager: wpickett
+ms.author: scaddie
 ms.date: 08/27/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/mvc2
-ms.openlocfilehash: 95bedf9299b4ff65c2f520358136174c4d2c4623
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 65717c1605c7f55bfd836110072772fe3dcdeb76
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="migrating-from-aspnet-to-aspnet-core-20"></a>迁移 ASP.NET ASP.NET 核心 2.0
+# <a name="migrating-from-aspnet-to-aspnet-core-20"></a>从 ASP.NET 迁移到 ASP.NET Core 2.0
 
 作者：[Isaac Levin](https://isaaclevin.com)
 
@@ -38,11 +38,11 @@ ASP.NET Core 2.0 项目为开发人员提供了面向 .NET Core、.NET Framework
 </ItemGroup>
 ```
 
-使用此元包时，应用不会部署元包中引用的任何包。 .NET 核心运行时存储包括这些资产，并在预编译以提高性能。 请参阅 [ASP.NET Core 2.x 的 Microsoft.AspNetCore.All 元包](xref:fundamentals/metapackage)了解详细信息。
+使用此元包时，应用不会部署元包中引用的任何包。 .NET Core 运行时存储中包含这些资产，并已预编译，旨在提升性能。 请参阅 [ASP.NET Core 2.x 的 Microsoft.AspNetCore.All 元包](xref:fundamentals/metapackage)了解详细信息。
 
 ## <a name="project-structure-differences"></a>项目结构差异
 ASP.NET Core 中简化了 .csproj 文件格式。 下面是一些显著的更改：
-- 显式包含的文件则无需为其被视为项目的一部分。 服务于大型团队时，这可减少出现 XML 合并冲突的风险。
+- 无需显式添加，即可将文件视作项目的一部分。 服务于大型团队时，这可减少出现 XML 合并冲突的风险。
 - 没有对其他项目的基于 GUID 的引用，这可以提高文件的可读性。
 - 无需在 Visual Studio 中卸载文件即可对它进行编辑：
 
@@ -53,13 +53,13 @@ ASP.NET Core 引入了启动应用的新机制。 ASP.NET 应用程序的入口�
 
 [!code-csharp[Main](samples/globalasax-sample.cs)]
 
-此方法会将应用程序和应用程序要部署到的服务器耦合在一起，并且它们的耦合方式会干扰实现。 为了将它们分离，引入了 [OWIN](http://owin.org/) 来提供一种更为简便的同时使用多个框架的方法。 OWIN 提供了一个管道，可以只添加所需的模块。 托管环境使用 [Startup](xref:fundamentals/startup) 函数配置服务和应用的请求管道。 `Startup` 在应用程序中注册一组中间件。 对于每个请求，应用程序使用现有处理程序集的链接列表的头指针调用各个中间件组件。 每个中间件组件可以向请求处理管道添加一个或多个处理程序。 这是通过返回的处理程序是列表的新领导的引用实现。 每个处理程序负责记住并调用列表中的下一个处理程序。 使用 ASP.NET Core 时，应用程序的入口点是 `Startup`，不再具有 Global.asax 的依赖关系。 结合使用 OWIN 和 .NET Framework 时，使用的管道应如下所示：
+此方法会将应用程序和应用程序要部署到的服务器耦合在一起，并且它们的耦合方式会干扰实现。 为了将它们分离，引入了 [OWIN](http://owin.org/) 来提供一种更为简便的同时使用多个框架的方法。 OWIN 提供了一个管道，可以只添加所需的模块。 托管环境使用 [Startup](xref:fundamentals/startup) 函数配置服务和应用的请求管道。 `Startup` 在应用程序中注册一组中间件。 对于每个请求，应用程序使用现有处理程序集的链接列表的头指针调用各个中间件组件。 每个中间件组件可以向请求处理管道添加一个或多个处理程序。 为此，需要返回对成为列表新头的处理程序的引用。 每个处理程序负责记住并调用列表中的下一个处理程序。 使用 ASP.NET Core 时，应用程序的入口点是 `Startup`，不再具有 Global.asax 的依赖关系。 结合使用 OWIN 和 .NET Framework 时，使用的管道应如下所示：
 
 [!code-csharp[Main](samples/webapi-owin.cs)]
 
 这会配置默认路由，默认为 XmlSerialization 而不是 Json。 根据需要向此管道添加其他中间件（加载服务、配置设置、静态文件等）。
 
-ASP.NET Core 使用相似的方法，但是不依赖 OWIN 处理条目。 相反，这通过*Program.cs* `Main`方法 （类似于控制台应用程序） 和`Startup`加载通过那里。
+ASP.NET Core 使用相似的方法，但是不依赖 OWIN 处理条目。 相反，这是通过 Program.cs `Main` 方法（类似于控制台应用程序）完成，其中加载了 `Startup`。
 
 [!code-csharp[Main](samples/program.cs)]
 
@@ -107,8 +107,8 @@ services.Configure<AppConfiguration>(Configuration.GetSection("AppConfiguration"
 
 注意：若要获取 ASP.NET Core 配置的更深入的参考信息，请参阅 [ASP.NET Core 中的配置](xref:fundamentals/configuration/index)。
 
-## <a name="native-dependency-injection"></a>本机依存关系注入
-生成大型可缩放应用程序时，一个重要的目标是将组件和服务松散耦合。 [依赖关系注入](xref:fundamentals/dependency-injection)是一种常用技术实现此操作，并且它是 ASP.NET Core 本机组件。
+## <a name="native-dependency-injection"></a>本机依赖关系注入
+生成大型可缩放应用程序时，一个重要的目标是将组件和服务松散耦合。 [依赖项注入](xref:fundamentals/dependency-injection)不仅是可实现此目标的常用技术，还是 ASP.NET Core 的本机组件。
 
 在 ASP.NET 应用程序中，开发人员依赖第三方库实现依存关系注入。 其中的一个库是 Microsoft 模式和做法提供的 [Unity](https://github.com/unitycontainer/unity)。 
 
@@ -132,7 +132,7 @@ services.Configure<AppConfiguration>(Configuration.GetSection("AppConfiguration"
 
 注意：若要获取 ASP.NET Core 中的依存关系注入的深入的参考信息，请参阅 [ASP.NET Core 中的依存关系注入](xref:fundamentals/dependency-injection#replacing-the-default-services-container)
 
-## <a name="serving-static-files"></a>提供静态文件
+## <a name="serving-static-files"></a>为静态文件提供服务
 Web 开发的一个重要环节是提供客户端静态资产的功能。 HTML、CSS、Javascript 和图像是最常见的静态文件示例。 这些文件需要保存在应用（或 CDN）的发布位置中，并且需要引用它们，以便请求可以加载这些文件。 在 ASP.NET Core 中，此过程发生了变化。
 
 在 ASP.NET 中，静态文件存储在各种目录中，并在视图中进行引用。
@@ -148,4 +148,5 @@ Web 开发的一个重要环节是提供客户端静态资产的功能。 HTML�
 注意：若要获取在 ASP.NET Core 中提供静态文件的更深入的参考信息，请参阅[关于在 ASP.NET Core 中使用静态文件的说明](xref:fundamentals/static-files)。
 
 ## <a name="additional-resources"></a>其他资源
-* [将库移植到 .NET Core](https://docs.microsoft.com/dotnet/core/porting/libraries)
+
+* [将库移植到 .NET Core](/dotnet/core/porting/libraries)

@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: ac8e7fee7600dabb8f4970b5bf87ad7a57ebf17f
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 6c233d0957ce9974adbc6112e6194c072aab0b41
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="bundling-and-minification"></a>绑定和缩减
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 01/11/2018
 
 绑定和缩减是可以应用的 web 应用中的两个不同的性能优化。 一起使用时，绑定和缩减提高性能通过减少服务器请求数和减少的请求的静态资产的大小。
 
-绑定和缩减主要提高第一个页面请求加载时间。 一旦已请求网页上，浏览器缓存静态资产 （JavaScript、 CSS 和图像）。 因此，绑定和缩减不时提高性能请求的同一页上或页，请求相同的资产在同一站点上。 如果未设置过期标头正确资产，而且如果不使用绑定和缩减，浏览器的新鲜度试探法将标记资产陈旧在几天后。 此外，浏览器需要为每个资产的验证请求。 在这种情况下，绑定和缩减提供在第一个页面请求后的提高性能。
+绑定和缩减主要提高第一个页面请求加载时间。 一旦已请求网页上，浏览器缓存静态资产 （JavaScript、 CSS 和图像）。 因此，绑定和缩减不时提高性能请求的同一页上或页，请求相同的资产在同一站点上。 如果过期在资产上未正确设置标头和如果未使用绑定和缩减，浏览器的新鲜度试探方法将标记资产陈旧在几天后。 此外，浏览器需要为每个资产的验证请求。 在这种情况下，绑定和缩减提供在第一个页面请求后的提高性能。
 
 ### <a name="bundling"></a>绑定
 
@@ -77,7 +77,7 @@ MVC 和 Razor 页项目模板提供了*bundleconfig.json*配置文件用于定�
 
 配置选项包括：
 
-* `outputFileName`： 要输出的捆绑文件名称。 可以包含中的相对路径*bundleconfig.json*文件。 **必填**
+* `outputFileName`： 要输出的捆绑文件名称。 可以包含中的相对路径*bundleconfig.json*文件。 **required**
 * `inputFiles`： 要将捆绑在一起的文件的数组。 这些是配置文件的相对路径。 **可选**，* 空值会在空的输出文件。 [组合](http://www.tldp.org/LDP/abs/html/globbingref.html)支持模式。
 * `minify`： 输出类型缩减选项。 **可选**，*默认值-`minify: { enabled: true }`*
   * 每个输出文件类型有配置选项。

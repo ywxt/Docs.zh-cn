@@ -2,18 +2,18 @@
 title: "开始使用数据保护 Api"
 author: rick-anderson
 description: "本文档说明如何使用 ASP.NET Core 数据保护 Api 用于保护和取消保护应用中的数据。"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/using-data-protection
-ms.openlocfilehash: c6a631b6dc4a7855b11031dfcef42b17906754b0
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e8c4183f5c47d8ffec8edf163eb1e4d6f2757d9d
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="getting-started-with-the-data-protection-apis"></a>开始使用数据保护 Api
 
