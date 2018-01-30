@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: ee9bdc66d0bfa6433736fbc55126bdd37ba9d080
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1afb32fb6c5fffd38b7028741bfd8199e2e23d21
+ms.sourcegitcommit: 09b342b45e7372ba9ebf17f35eee331e5a08fb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/26/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>配置 ASP.NET Core 应用
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)、[Mark Michaelis](http://intellitect.com/author/mark-michaelis/)、[Steve Smith](https://ardalis.com/)、[Daniel Roth](https://github.com/danroth27) 和 [Luke Latham](https://github.com/guardrex)
 
-通过配置 API ，可基于名称/值对列表来配置 ASP.NET Core Web 应用。 在运行时从多个源读取配置。 可将这些名称/值对分组到多级层次结构。
+通过配置 API ，可基于名称/值对列表来配置 ASP.NET Core Web 应用。 在运行时从多个源读取配置。 可将名称/值对分组到多级层次结构。
 
 配置提供程序适用于：
 
@@ -93,7 +93,7 @@ ASP.NET Core 1.x 应用需要调用 `AddJsonFile` 和 [AddEnvironmentVariables](
 
 * 配置数据发生更改时，`IOptionsSnapshot` 可将其重载。 有关详细信息，请参阅 [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot)。
 * 配置密钥不区分大小写。
-* 请勿在配置提供程序代码或纯文本配置文件中存储密码或其他敏感数据。 请勿在开发或测试环境中使用生产机密。 请在项目外部指定机密，避免将其意外提交到存储库。 详细了解如何[使用多个环境](xref:fundamentals/environments)和[在开发期间管理应用机密的安全存储](xref:security/app-secrets)。
+* 请勿在配置提供程序代码或纯文本配置文件中存储密码或其他敏感数据。 不要在开发或测试环境中使用生产机密。 请在项目外部指定机密，避免将其意外提交到源代码存储库。 详细了解如何[使用多个环境](xref:fundamentals/environments)和[在开发期间管理应用机密的安全存储](xref:security/app-secrets)。
 * 如果系统不支持在环境变量中使用冒号 (`:`)，请将冒号 (`:`) 替换为双下划线 (`__`)。
 
 ## <a name="in-memory-provider-and-binding-to-a-poco-class"></a>内存中提供程序及绑定到 POCO 类
@@ -102,7 +102,7 @@ ASP.NET Core 1.x 应用需要调用 `AddJsonFile` 和 [AddEnvironmentVariables](
 
 [!code-csharp[Main](index/sample/InMemory/Program.cs)]
 
-配置值以字符串的形式返回，但绑定使对象的构造成为可能。 绑定允许你检索 POCO 对象或甚至整个对象图。
+配置值以字符串的形式返回，但绑定使对象的构造成为可能。 通过绑定可检索 POCO 对象，甚至可检索整个对象图。
 
 ### <a name="getvalue"></a>GetValue
 
@@ -110,11 +110,11 @@ ASP.NET Core 1.x 应用需要调用 `AddJsonFile` 和 [AddEnvironmentVariables](
 
 [!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
 
-ConfigurationBinder 的 `GetValue<T>` 方法允许指定默认值（在此示例中为 80）。 `GetValue<T>` 适用于简单方案，并不绑定到整个部分。 `GetValue<T>` 将 `GetSection(key).Value` 中的标量值转换为特定类型。
+ConfigurationBinder 的 `GetValue<T>` 方法允许指定默认值（在此示例中为 80）。 `GetValue<T>` 适用于简单方案，并不绑定到整个部分。 `GetValue<T>` 从转换为特定类型的 `GetSection(key).Value` 中获取标量值。
 
 ## <a name="bind-to-an-object-graph"></a>绑定至对象图
 
-可以在类中递归绑定每个对象。 请考虑使用以下 `AppSettings` 类：
+可递归绑定类中的每个对象。 请考虑使用以下 `AppSettings` 类：
 
 [!code-csharp[Main](index/sample/ObjectGraph/AppSettings.cs)]
 
@@ -185,7 +185,7 @@ public void CanBindObjectTree()
 
 运行示例时将显示数据库中突出显示的值（“value_from_ef_1”和“value_from_ef_2”）。
 
-可以添加 `EFConfigSource` 扩展方法，用于添加配置源：
+可使用 `EFConfigSource` 扩展方法添加配置源：
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkExtensions.cs?highlight=12)]
 
@@ -261,7 +261,7 @@ Left: 1979
 
 如果上述所有条件均成立，则命令行参数将被覆盖。
 
-ASP.NET Core 2.x 应用可使用 WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)，而不是 `CreateDefaultBuilder`. When using `WebHostBuilder 时，请通过 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) 手动设置配置。 有关详细信息，请参阅 ASP.NET Core 1.x 选项卡。
+ASP.NET Core 2.x 应用可使用 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)，而不是 `CreateDefaultBuilder`。 使用 `WebHostBuilder` 时，请手动通过 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) 设置配置。 有关详细信息，请参阅 ASP.NET Core 1.x 选项卡。
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -331,7 +331,7 @@ dotnet run -key1 value1 --key2 value2 /key3 value3
 
 ### <a name="switch-mappings"></a>交换映射
 
-在使用 `ConfigurationBuilder` 手动生成配置时，可选择向 `AddCommandLine` 方法提供交换映射字典。 可通过交换映射提供键名替换逻辑。
+使用 `ConfigurationBuilder` 手动生成配置时，可将交换映射字典添加到 `AddCommandLine` 方法。 交换映射支持键名替换逻辑。
 
 当使用交换映射字典时，会检查字典中是否有与命令行参数提供的键匹配的键。 如果在字典中找到命令行键，则传回字典值（替换键）以设置配置。 对任何具有单划线 (`-`) 前缀的命令行键而言，交换映射都是必需的。
 
@@ -340,7 +340,7 @@ dotnet run -key1 value1 --key2 value2 /key3 value3
 * 交换必须以单划线 (`-`) 或双划线 (`--`) 开头。
 * 交换映射字典不得包含重复键。
 
-在下列示例中，`GetSwitchMappings` 方法允许命令行参数使用单划线 (`-`) 键前缀，并避免使用前导子键前缀。
+在以下示例中，`GetSwitchMappings` 方法允许命令行参数使用单划线 (`-`) 键前缀，并避免使用前导子键前缀。
 
 [!code-csharp[Main](index/sample/CommandLine/Program.cs?highlight=10-19,32)]
 
@@ -394,6 +394,10 @@ Left: 1988
 
 在 IIS 或 IIS Express 中托管应用时，需要 web.config 文件。 通过 web.config 中的设置，[ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module) 可以启动应用并配置其他 IIS 设置和模块。 如果 *web.config* 文件不存在，并且项目文件中包含 `<Project Sdk="Microsoft.NET.Sdk.Web">`，则发布项目时会在发布的输出（“发布”文件夹）中创建一个 *web.config* 文件。 有关详细信息，请参阅 [使用 IIS 在 Windows 上托管 ASP.NET Core](xref:host-and-deploy/iis/index#webconfig)。
 
+## <a name="accessing-configuration-during-startup"></a>在启动时访问配置
+
+若要在启动时访问 `ConfigureServices` 或 `Configure` 中的配置，请参阅[应用程序启动](xref:fundamentals/startup)主题中的示例。
+
 ## <a name="additional-notes"></a>附加说明
 
 * 调用 `ConfigureServices` 后才会设置依赖项注入 (DI)。
@@ -401,7 +405,7 @@ Left: 1988
 * `IConfiguration` 具有两项专用化：
   * `IConfigurationRoot` 用于根节点。 可以触发重载。
   * `IConfigurationSection` 表示配置值的一节。 `GetSection` 和 `GetChildren` 方法返回 `IConfigurationSection`。
-  * 重新加载配置或需要访问每个提供程序时，请使用 [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot)。 这两种情况都不常见。
+  * 重新加载配置或要访问每个提供程序时，请使用 [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot)。 这两种情况都不常见。
 
 ## <a name="additional-resources"></a>其他资源
 

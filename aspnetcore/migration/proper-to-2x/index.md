@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/proper-to-2x/index
-ms.openlocfilehash: 2804b5926f1016efcdfd1f9d1b751040d05ce671
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2263f8e9936389cf8cf18ff0c6d1d07018650e14
+ms.sourcegitcommit: 09b342b45e7372ba9ebf17f35eee331e5a08fb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/26/2018
 ---
 # <a name="migrating-from-aspnet-to-aspnet-core-20"></a>从 ASP.NET 迁移到 ASP.NET Core 2.0
 
@@ -53,7 +53,7 @@ ASP.NET Core 引入了启动应用的新机制。 ASP.NET 应用程序的入口�
 
 [!code-csharp[Main](samples/globalasax-sample.cs)]
 
-此方法会将应用程序和应用程序要部署到的服务器耦合在一起，并且它们的耦合方式会干扰实现。 为了将它们分离，引入了 [OWIN](http://owin.org/) 来提供一种更为简便的同时使用多个框架的方法。 OWIN 提供了一个管道，可以只添加所需的模块。 托管环境使用 [Startup](xref:fundamentals/startup) 函数配置服务和应用的请求管道。 `Startup` 在应用程序中注册一组中间件。 对于每个请求，应用程序使用现有处理程序集的链接列表的头指针调用各个中间件组件。 每个中间件组件可以向请求处理管道添加一个或多个处理程序。 为此，需要返回对成为列表新头的处理程序的引用。 每个处理程序负责记住并调用列表中的下一个处理程序。 使用 ASP.NET Core 时，应用程序的入口点是 `Startup`，不再具有 Global.asax 的依赖关系。 结合使用 OWIN 和 .NET Framework 时，使用的管道应如下所示：
+此方法会将应用程序和应用程序要部署到的服务器耦合在一起，并且它们的耦合方式会干扰实现。 为了将它们分离，引入了 [OWIN](http://owin.org/) 来提供一种更为简便的同时使用多个框架的方法。 OWIN 提供了一个管道，可以只添加所需的模块。 托管环境使用 [Startup](xref:fundamentals/startup) 函数配置服务和应用的请求管道。 `Startup` 在应用程序中注册一组中间件。 对于每个请求，应用程序都使用现有处理程序集的链接列表的头指针调用各个中间件组件。 每个中间件组件可以向请求处理管道添加一个或多个处理程序。 为此，需要返回对成为列表新头的处理程序的引用。 每个处理程序负责记住并调用列表中的下一个处理程序。 使用 ASP.NET Core 时，应用程序的入口点是 `Startup`，不再具有 Global.asax 的依赖关系。 结合使用 OWIN 和 .NET Framework 时，使用的管道应如下所示：
 
 [!code-csharp[Main](samples/webapi-owin.cs)]
 
