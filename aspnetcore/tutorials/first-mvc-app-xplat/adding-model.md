@@ -9,11 +9,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 manager: wpickett
 uid: tutorials/first-mvc-app-xplat/adding-model
-ms.openlocfilehash: 4c09225c925c326da7e815b39f176325a04fc17b
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 32677b8232e907e8431e05a3727fe7a2e5717ec4
+ms.sourcegitcommit: 83b5a4715fd25e4eb6f7c8427c0ef03850a7fa07
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/25/2018
 ---
 [!INCLUDE[adding-model1](../../includes/mvc-intro/adding-model1.md)]
 
@@ -57,10 +57,6 @@ ms.lasthandoff: 01/19/2018
 dotnet restore
 dotnet aspnet-codegenerator controller -name MoviesController -m Movie -dc MvcMovieContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries 
 ```
-
-> [!NOTE]
-> 如果在基架命令运行时遇到错误，请参阅[基架存储库中的问题 444](https://github.com/aspnet/scaffolding/issues/444)，以获得解决方案。
-
 基架引擎创建以下组件：
 
 * 电影控制器 (Controllers/MoviesController.cs)
