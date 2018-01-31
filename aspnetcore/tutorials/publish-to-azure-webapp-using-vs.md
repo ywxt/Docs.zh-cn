@@ -9,14 +9,12 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: dd31e3a9583a0c152e97ae7cf6b215389298a20c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d0e64c967ff332365981338809a47faf35d499ab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
-/zh-cn
-
 # <a name="publish-an-aspnet-core-web-app-to-azure-app-service-using-visual-studio"></a>使用 Visual Studio 将 ASP.NET Core Web 应用发布到 Azure App Service
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT) 、[Cesar Blum Silveira](https://github.com/cesarbs) 和 [Rachel Appel](https://twitter.com/rachelappel)
@@ -25,7 +23,7 @@ ms.lasthandoff: 01/19/2018
 
 ## <a name="set-up"></a>设置
 
-* 如果没有，请打开[免费 Azure 帐户](https://aka.ms/K5y5yh)。 
+* 如果没有[免费 Azure 帐户](https://aka.ms/K5y5yh)，请开设一个。 
 
 ## <a name="create-a-web-app"></a>创建 Web 应用
 
@@ -68,7 +66,7 @@ Visual Studio 随即创建解决方案。
 
 * 选择“注册”并注册新用户。 可使用虚构电子邮件地址。 提交时，页面上会显示以下错误：
 
-    “内部服务器错误: 处理请求时，数据库操作失败。SQL 异常: 无法打开数据库。可通过向应用程序数据库上下文应用现有迁移解决此问题。”*
+    “内部服务器错误: 处理请求时，数据库操作失败。SQL 异常: 无法打开数据库。可通过向应用程序数据库上下文应用现有迁移解决此问题。”
 * 选择“应用迁移”，并在页面更新后刷新页面。
 
 ![内部服务器错误: 处理请求时，数据库操作失败。 SQL 异常: 无法打开数据库。 可能可通过向应用程序数据库上下文应用现有迁移解决此问题。](publish-to-azure-webapp-using-vs/_static/mig.png)
@@ -184,6 +182,6 @@ Visual Studio 在 Azure 上创建 Web 应用和 SQL Server。 此步骤可能需
 
 ## <a name="additonal-resources"></a>其他资源
 
-* [Azure 应用服务](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-overview)
-* [Azure 资源组](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#resource-groups)
-* [Azure SQL 数据库](https://docs.microsoft.com/en-us/azure/sql-database/)
+* [Azure 应用服务](https://docs.microsoft.com/azure/app-service/app-service-web-overview)
+* [Azure 资源组](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups)
+* [Azure SQL 数据库](https://docs.microsoft.com/azure/sql-database/)

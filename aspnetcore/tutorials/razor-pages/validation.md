@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 2c7473647f23daf20ce7b204f621fb34f1a528c2
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 43d9ecacc479dac3eff35cc745b30d859c5cfd1d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="adding-validation-to-a-razor-page"></a>向 Razor 页面添加验证
 
@@ -59,7 +59,7 @@ Razor 页面和 Entity Framework 提供的验证支持是 DRY 原则的极佳示
 
 一项重要优势是，无需在“创建”或“编辑”页面中更改代码。 在模型应用 DataAnnotations 后，即已启用验证 UI。 本教程中自动创建的 Razor 页面自动选取了验证规则（使用 `Movie` 模型类的属性上的验证特性）。 使用“编辑”页面测试验证后，即已应用相同验证。
 
-存在客户端验证错误时，不会将表单数据发布到服务器。 请通过下述一个或多个方法验证是否未发布表单数据：
+存在客户端验证错误时，不会将表单数据发布到服务器。 请通过以下一种或多种方法验证是否未发布表单数据：
 
 * 在 `OnPostAsync` 方法中放置一个断点。 提交表单（选择“创建”或“保存”）。 从未命中断点。
 * 使用 [Fiddler 工具](http://www.telerik.com/fiddler)。
@@ -99,7 +99,7 @@ Razor 页面和 Entity Framework 提供的验证支持是 DRY 原则的极佳示
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRatingDA.cs?highlight=2,6&name=snippet2)]
 
-`DataType` 特性仅提供相关提示来帮助视图引擎设置数据格式（并提供特性，例如向 URL 提供 `<a>` 和向电子邮件提供 `<a href="mailto:EmailAddress.com">`）。 使用 `RegularExpression` 特性验证数据的格式。 `DataType` 特性用于指定比数据库内部类型更具体的数据类型。 `DataType` 特性不是验证特性。 示例应用程序中仅显示日期，不显示时间。
+`DataType` 特性仅提供相关提示来帮助视图引擎设置数据格式（并提供特性，例如向 URL 提供 `<a>` 和向电子邮件提供 `<a href="mailto:EmailAddress.com">`）。 使用 `RegularExpression` 特性验证数据的格式。 `DataType` 属性用于指定比数据库内部类型更具体的数据类型。 `DataType` 特性不是验证特性。 示例应用程序中仅显示日期，不显示时间。
 
 `DataType` 枚举提供了多种数据类型，例如日期、时间、电话号码、货币、电子邮件地址等。 应用程序还可通过 `DataType` 特性自动提供类型特定的功能。 例如，可为 `DataType.EmailAddress` 创建 `mailto:` 链接。 可在支持 HTML5 的浏览器中为 `DataType.Date` 提供日期选择器。 `DataType` 特性发出 HTML 5 `data-`（读作 data dash）特性供 HTML 5 浏览器使用。 `DataType` 特性不提供任何验证。
 
@@ -120,7 +120,7 @@ public DateTime ReleaseDate { get; set; }
 * 默认情况下，浏览器将根据区域设置采用正确的格式呈现数据。
 * 借助 `DataType` 特性，ASP.NET Core 框架可选择适当的字段模板来呈现数据。 单独使用时，`DisplayFormat` 特性将使用字符串模板。
 
-请注意：jQuery 验证不适用于 `Range` 特性和 `DateTime`。 例如，以下代码将始终显示客户端验证错误，即便日期在指定的范围内：
+注意：jQuery 验证不适用于 `Range` 属性和 `DateTime`。 例如，以下代码将始终显示客户端验证错误，即便日期在指定的范围内：
 
 ```csharp
 [Range(typeof(DateTime), "1/1/1966", "1/1/2020")]

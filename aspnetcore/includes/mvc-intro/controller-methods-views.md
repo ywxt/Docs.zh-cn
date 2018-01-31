@@ -1,5 +1,5 @@
 
-我们将在下一教程中介绍 [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6)。 [Display](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.metadata.displaymetadata) 特性指定要显示的字段名称的内容（本例中应为“Release Date”，而不是“ReleaseDate”）。 [DataType](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.internal.datatypeattributeadapter) 特性指定数据的类型（日期），使字段中存储的时间信息不会显示。
+我们将在下一教程中介绍 [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6)。 [Display](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.metadata.displaymetadata) 特性指定要显示的字段名称的内容（本例中应为“Release Date”，而不是“ReleaseDate”）。 [DataType](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.internal.datatypeattributeadapter) 属性指定数据的类型（日期），使字段中存储的时间信息不会显示。
 
 浏览到 `Movies` 控制器，并将鼠标指针悬停在“编辑”链接上以查看目标 URL。
 
@@ -88,7 +88,7 @@ ASP.NET Core 将 `http://localhost:1234/Movies/Edit/4` 转换为对 `Movies` 控
 * [全球化和本地化](xref:fundamentals/localization)
 * [标记帮助程序简介](xref:mvc/views/tag-helpers/intro)
 * [创作标记帮助程序](xref:mvc/views/tag-helpers/authoring)
-* [反请求伪造](xref:security/anti-request-forgery)
+* [防请求伪造](xref:security/anti-request-forgery)
 * 防止控制器[过度发布](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application)
 * [ViewModels](http://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/)
 * [表单标记帮助程序](xref:mvc/views/working-with-forms)

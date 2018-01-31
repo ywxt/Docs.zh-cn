@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/details
-ms.openlocfilehash: 1b091cc479accfad5ad570a006d7395ef8d62a08
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 79eb352082da23400403ff8804d724256a2d3f07
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="examining-the-details-and-delete-methods"></a>检查详细信息和删除方法
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 01/19/2018
 
 [!code-csharp[Main](start-mvc/sample/MvcMovie/Startup.cs?highlight=5&name=snippet_1)]
 
-EF 可以使用 `SingleOrDefaultAsync` 方法轻松搜索数据。 该方法中内置的一个重要安全功能是，代码会先验证搜索方法已经找到电影，然后再执行操作。 例如，一个黑客可能通过将链接创建的 URL 从 `http://localhost:xxxx/Movies/Details/1` 更改为类似 `http://localhost:xxxx/Movies/Details/12345` 的值（或者不代表任何实际电影的其他值）将错误引入站点。 如果没有检查是否有空电影，则应用可能引发异常。
+EF 可以使用 `SingleOrDefaultAsync` 方法轻松搜索数据。 该方法中内置的一个重要安全功能是，代码会先验证搜索方法已经找到电影，然后再执行操作。 例如，一个黑客可能通过将链接创建的 URL 从 `http://localhost:xxxx/Movies/Details/1` 更改为类似 `http://localhost:xxxx/Movies/Details/12345` 的值（或者不代表任何实际电影的其他值）将错误引入站点。 如果未检查是否有空电影，则应用可能引发异常。
 
 检查 `Delete` 和 `DeleteConfirmed` 方法。
 

@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: 90aa194eda1c52afb1f299a0b95c7040e32a02fc
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 07f024e2e178828c4488adfd866fc6eec3b251dd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="working-with-sql-server-localdb-and-aspnet-core"></a>使用 SQL Server LocalDB 和 ASP.NET Core
 
@@ -31,7 +31,7 @@ ASP.NET Core [配置](xref:fundamentals/configuration/index)系统会读取 `Con
 
 ## <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-LocalDB 是 SQL Server Express 数据库引擎的轻型版本，专门针对程序开发。 LocalDB 按需启动并在用户模式下运行，因此没有复杂的配置。 默认情况下，LocalDB 数据库在 C:/Users/\<user\> 目录中创建“\*.mdf”文件。
+LocalDB 是轻型版的 SQL Server Express 数据库引擎，以程序开发为目标。 LocalDB 按需启动并在用户模式下运行，因此没有复杂的配置。 默认情况下，LocalDB 数据库在 C:/Users/\<user\> 目录中创建“\*.mdf”文件。
 
 <a name="ssox"></a>
 * 从“视图”菜单中，打开“SQL Server 对象资源管理器”(SSOX)。
