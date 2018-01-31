@@ -2,18 +2,18 @@
 title: "使用 Visual Studio for Mac 向 Razor 页面应用添加模型"
 author: rick-anderson
 description: "使用 Visual Studio for Mac 在 ASP.NET Core 中向 Razor 页面应用添加模型"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 08/27/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: tutorials/razor-pages-vsc/model
-ms.openlocfilehash: 704c13e60db2d80e24626b2dea25b64086dafda4
-ms.sourcegitcommit: 18ff1fdaa3e1ae204ed6a2ba9351ce8cf1371c85
+ms.openlocfilehash: 9600392b47fb8b1dded06faefaff1bf87d67af4e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="adding-a-model-to-a-razor-pages-app-in-aspnet-core-with-visual-studio-code"></a>使用 Visual Studio Code 在 ASP.NET Core 中向 Razor 页面应用添加模型
 
@@ -76,4 +76,4 @@ ms.lasthandoff: 01/29/2018
 
 >[!div class="step-by-step"]
 [上一篇：入门](xref:tutorials/razor-pages-vsc/razor-pages-start)
-[下一篇：已搭建基架的 Razor 页面](xref:tutorials/razor-pages/page)
+[下一篇：已搭建基架的 Razor 页面](xref:tutorials/razor-pages-vsc/page)
