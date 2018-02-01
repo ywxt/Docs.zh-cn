@@ -2,7 +2,7 @@
 uid: web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 title: "ASP.NET 网页 (Razor) 故障排除指南 |Microsoft 文档"
 author: tfitzmac
-description: "本文介绍使用 ASP.NET Web 页 (Razor) 和一些推荐的解决方案时可能遇到的问题。 软件版本 ASP.NET Web 页的链接。..."
+description: "本文介绍使用 ASP.NET Web 页 (Razor) 和一些推荐的解决方案时可能遇到的问题。 软件版本 ASP.NET Web 页的链接..."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: 72c49ed8b76b5fb5eb15bf01f57980b382607496
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2e25e9c7cea937016301e0f11919adb9647ca216
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET 网页 (Razor) 故障排除指南
 ====================
@@ -147,7 +147,7 @@ ms.lasthandoff: 01/24/2018
 - *邮箱不可用。服务器响应为： 5.1.0 &lt; someuser@invaliddomain &gt;发件人拒绝： 无效的发件人域*
 
     此消息可以指示`From`地址不正确或缺少。
-- *指定的字符串不是所要求的电子邮件地址的形式。*
+- *指定的字符串不是所需的电子邮件地址的形式。*
 
     此错误可能指示的值`To`或`From`属性不会识别为电子邮件地址。 (ASP.NET 无法检查电子邮件地址是否有效，只有它的格式正确，如 *name@domain.com* 。)
 
