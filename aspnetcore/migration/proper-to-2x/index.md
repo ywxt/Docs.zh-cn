@@ -1,19 +1,19 @@
 ---
 title: "从 ASP.NET 迁移到 ASP.NET Core 2.0"
 author: isaac2004
-description: "本参考文档提供了从现有的 ASP.NET MVC 或 Web API 应用程序迁移到 ASP.NET Core 2.0 的指南。"
-ms.author: scaddie
+description: "接收将现有 ASP.NET MVC 或 Web API 应用迁移到 ASP.NET Core 2.0 的指南。"
 manager: wpickett
+ms.author: scaddie
 ms.date: 08/27/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/proper-to-2x/index
-ms.openlocfilehash: 2263f8e9936389cf8cf18ff0c6d1d07018650e14
-ms.sourcegitcommit: 09b342b45e7372ba9ebf17f35eee331e5a08fb26
+ms.openlocfilehash: d6050c7946aa45b4c1b878b96baa1b082d0c8f71
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-from-aspnet-to-aspnet-core-20"></a>从 ASP.NET 迁移到 ASP.NET Core 2.0
 
@@ -148,4 +148,5 @@ Web 开发的一个重要环节是提供客户端静态资产的功能。 HTML�
 注意：若要获取在 ASP.NET Core 中提供静态文件的更深入的参考信息，请参阅[关于在 ASP.NET Core 中使用静态文件的说明](xref:fundamentals/static-files)。
 
 ## <a name="additional-resources"></a>其他资源
-* [将库移植到 .NET Core](https://docs.microsoft.com/dotnet/core/porting/libraries)
+
+* [将库移植到 .NET Core](/dotnet/core/porting/libraries)

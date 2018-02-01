@@ -2,18 +2,18 @@
 title: "ASP.NET Core 中的 Razor 页面介绍"
 author: Rick-Anderson
 description: "ASP.NET Core Razor 页面教程。 包含 MVC Core、ASP.NET Core 2.x、web 开发介绍和 Visual Studio 2017。 本文档提供有关使用 ASP.NET Core 中的 Razor 页面轻松开发聚焦于页的方案概述。"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/12/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: a08c1b59c7be3a27fc11e6737a1cb4b4208f2901
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c16959189448337b12dc4902300516b25c200eee
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor 页面介绍
 
@@ -76,7 +76,7 @@ Startup.cs 中已启用 Razor 页面：
 
 [!code-cshtml[main](index/sample/RazorPagesIntro/Pages/Index2.cshtml)]
 
-Pages/Index2.cshtml.cs“代码隐藏”文件：
+Pages/Index2.cshtml.cs 页面模型：
 
 [!code-cs[main](index/sample/RazorPagesIntro/Pages/Index2.cshtml.cs)]
 
@@ -116,7 +116,7 @@ Pages/Create.cshtml 视图文件：
 
 [!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Create.cshtml)]
 
-Pages/Create.cshtml.cs 代码隐藏视图文件：
+Pages/Create.cshtml.cs 页面模型：
 
 [!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_ALL)]
 
@@ -332,7 +332,7 @@ Pages/Customers/Index.cshtml 文件中的以下标记使用 `TempData` 显示 `M
 <h3>Msg: @Model.Message</h3>
 ```
 
-Pages/Customers/Index.cshtml.cs 代码隐藏文件将 `[TempData]` 属性应用到 `Message` 属性。
+Pages/Customers/Index.cshtml.cs 页面模型将 `[TempData]` 属性应用到 `Message` 属性。
 
 ```cs
 [TempData]
@@ -352,7 +352,7 @@ public string Message { get; set; }
 
 前面示例中的窗体包含两个提交按钮，每个提交按钮均使用 `FormActionTagHelper` 提交到不同的 URL。 `asp-page-handler` 是 `asp-page` 的配套属性。 `asp-page-handler` 生成提交到页面定义的各个处理程序方法的 URL。 未指定 `asp-page`，因为示例已链接到当前页面。
 
-代码隐藏文件：
+页面模型：
 
 [!code-cs[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml.cs?highlight=20,32)]
 
