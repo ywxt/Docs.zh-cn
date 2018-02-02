@@ -15,7 +15,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
 ---
-# <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio"></a>ASP.NET Core MVC 和 Entity Framework Core 入门（使用 Visual Studio）
+# <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio"></a>ASP.NET Core MVC 和 Entity Framework Core 入门教程（使用 Visual Studio）
 
 注意：[此处](xref:data/ef-rp/intro)提供了本教程的 Razor 页面版本。 Razor 页面版本更加通俗易懂，并介绍了更多 EF 功能。
 
