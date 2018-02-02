@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: 946ccc80915c5de60976a98cbbb253cb8dfacaca
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7f0e30b3ac7f9cc3a32bd96f45d83ba13505a475
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 基础知识
 
@@ -71,7 +71,7 @@ public class Startup
 }
 ```
 
-`ConfigureServices` 定义应用所使用的[服务](#dependency-injection-services)（如 ASP.NET Core MVC、Entity Framework Core 和标识）。 `Configure` 定义请求管道的[中间件](xref:fundamentals/middleware)。
+`ConfigureServices` 定义应用所使用的[服务](#dependency-injection-services)（如 ASP.NET Core MVC、Entity Framework Core 和标识）。 `Configure` 定义请求管道的[中间件](xref:fundamentals/middleware/index)。
 
 有关详细信息，请参阅[应用程序启动](xref:fundamentals/startup)。
 
@@ -91,7 +91,7 @@ public class Startup
 
 ## <a name="middleware"></a>中间件
 
-在 ASP.NET Core 中，使用[中间件](xref:fundamentals/middleware)来撰写请求管道。 ASP.NET Core 中间件在 `HttpContext` 上执行异步逻辑，然后调用序列中的下一个中间件或直接终止请求。 通过在 `Configure` 方法中调用 `UseXYZ` 扩展方法来添加名为“XYZ”的中间件组件。
+在 ASP.NET Core 中，使用[中间件](xref:fundamentals/middleware/index)来撰写请求管道。 ASP.NET Core 中间件在 `HttpContext` 上执行异步逻辑，然后调用序列中的下一个中间件或直接终止请求。 通过在 `Configure` 方法中调用 `UseXYZ` 扩展方法来添加名为“XYZ”的中间件组件。
 
 ASP.NET Core 包含一组丰富的内置中间件：
 
@@ -103,7 +103,7 @@ ASP.NET Core 包含一组丰富的内置中间件：
 
 可以将任何基于 [OWIN](http://owin.org) 的中间件与 ASP.NET Core 应用结合使用，也可以编写自己的自定义中间件。
 
-有关详细信息，请参阅[中间件](xref:fundamentals/middleware)和 [.NET 的开放 Web 接口 (OWIN)](xref:fundamentals/owin)。
+有关详细信息，请参阅[中间件](xref:fundamentals/middleware/index)和 [.NET 的开放 Web 接口 (OWIN)](xref:fundamentals/owin)。
 
 ## <a name="environments"></a>环境
 
