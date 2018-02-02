@@ -36,13 +36,13 @@
 #### [更新页面](xref:tutorials/razor-pages-mac/da1)
 #### [添加搜索](xref:tutorials/razor-pages-mac/search)
 
-
 ### [使用 VS 代码的 Razor 页面 Web 应用](xref:tutorials/razor-pages-vsc/index)
 #### [Razor 页面入门](xref:tutorials/razor-pages-vsc/razor-pages-start)
 #### [添加模型](xref:tutorials/razor-pages-vsc/model)
 #### [已搭建基架的 Razor 页面](xref:tutorials/razor-pages-vsc/page)
 #### [使用 SQLite](xref:tutorials/razor-pages-vsc/sql)
 #### [更新页面](xref:tutorials/razor-pages-vsc/da1)
+#### [添加搜索](xref:tutorials/razor-pages-vsc/search)
 
 ### [使用 Visual Studio for Mac 的 MVC Web 应用](xref:tutorials/first-mvc-app-mac/index)
 #### [入门](xref:tutorials/first-mvc-app-mac/start-mvc)
@@ -102,7 +102,9 @@
 # [基础知识](fundamentals/index.md)
 ## [应用程序启动](fundamentals/startup.md)
 ## [依赖关系注入（服务）](fundamentals/dependency-injection.md)
-## [中间件](fundamentals/middleware.md)
+## [中间件](xref:fundamentals/middleware/index)
+### [中间件](xref:fundamentals/middleware/index)
+### [基于工厂的中间件](xref:fundamentals/middleware/extensibility)
 ## [使用静态文件](fundamentals/static-files.md)
 ## [路由](fundamentals/routing.md)
 ## [URL 重写中间件](fundamentals/url-rewriting.md)
