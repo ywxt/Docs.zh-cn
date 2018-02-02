@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: 1b5391c113ca0b980eb3c47bcce0717d4a4739ed
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b7c81f2851a932cd12553af4a2655eb9f1f7bc64
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="using-iis-modules-with-aspnet-core"></a>使用 ASP.NET Core 的 IIS 模块
 
@@ -44,8 +44,8 @@ ms.lasthandoff: 01/30/2018
 **HTTP 重定向**<br>`HttpRedirectionModule` | 是 | [URL 重写中间件](xref:fundamentals/url-rewriting)
 **IIS 客户端证书映射身份验证**<br>`IISCertificateMappingAuthenticationModule` | 是 | 
 **IP 和域限制**<br>`IpRestrictionModule` | 是 | 
-**ISAPI 筛选器**<br>`IsapiFilterModule` | 是 | [中间件](xref:fundamentals/middleware)
-**ISAPI**<br>`IsapiModule` | 是 | [中间件](xref:fundamentals/middleware)
+**ISAPI 筛选器**<br>`IsapiFilterModule` | 是 | [中间件](xref:fundamentals/middleware/index)
+**ISAPI**<br>`IsapiModule` | 是 | [中间件](xref:fundamentals/middleware/index)
 **协议支持**<br>`ProtocolSupportModule` | 是 | 
 **请求筛选**<br>`RequestFilteringModule` | 是 | [URL 重写中间件`IRule`](xref:fundamentals/url-rewriting#irule-based-rule)
 **请求监视器**<br>`RequestMonitorModule` | 是 | 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/anti-request-forgery
-ms.openlocfilehash: e076e301004c04b5c516d775353a4b6e50a3f36e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 079c36535b8c9e7229952a2f7bcd53174effa6af
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="preventing-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>阻止在 ASP.NET 核心中的跨网站请求伪造 (XSRF/CSRF) 攻击
 
@@ -345,7 +345,7 @@ CSRF 攻击依赖于发送与每个请求都会到该域的域关联的 cookie �
 
 ### <a name="cookie-based-authentication"></a>基于 cookie 的身份验证
 
-一旦用户已经使用其用户名和密码身份验证，它们被颁发一个令牌，可用来将它们标识和验证它们进行了身份验证。 随着工作的附带的每个请求客户端的 cookie 的令牌存储。 生成和验证此 cookie 可通过 cookie 身份验证中间件。 ASP.NET Core 提供 cookie[中间件](../fundamentals/middleware.md)其用户主体序列化为的加密 cookie，然后，在后续请求中，将验证该 cookie，重新创建主体，并将它分配给`User`属性`HttpContext`.
+一旦用户已经使用其用户名和密码身份验证，它们被颁发一个令牌，可用来将它们标识和验证它们进行了身份验证。 随着工作的附带的每个请求客户端的 cookie 的令牌存储。 生成和验证此 cookie 可通过 cookie 身份验证中间件。 ASP.NET Core 提供 cookie[中间件](xref:fundamentals/middleware/index)其用户主体序列化为的加密 cookie，然后，在后续请求中，将验证该 cookie，重新创建主体，并将它分配给`User`属性`HttpContext`.
 
 当使用 cookie 时，身份验证 cookie 只是一个容器的窗体身份验证票证。 票证作为随每个请求的窗体身份验证 cookie 的值传递和 forms 身份验证，在服务器上，用于标识已经过身份验证的用户。
 

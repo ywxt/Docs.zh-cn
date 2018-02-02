@@ -90,7 +90,3 @@ Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
 [!code-cshtml[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/Movies/IndexFormGenreNoRating.cshtml?highlight=16-18&range=1-26)]
 
 通过按流派或/和电影标题搜索来测试应用。
-
->[!div class="step-by-step"]
-[上一篇：更新页面](xref:tutorials/razor-pages/da1)
-[下一篇：添加新字段](xref:tutorials/razor-pages/new-field)

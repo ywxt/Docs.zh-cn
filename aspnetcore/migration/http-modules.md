@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: f104c9116cfaa4a82ac88e4a83b4b6f172eb2aa1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8aac6c649b22dc8f6cfc916aa78d56efad7821a0
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>迁移的 HTTP 处理程序和 ASP.NET Core 中间件的模块 
 
 通过[Matt Perdeck](https://www.linkedin.com/in/mattperdeck)
 
-这篇文章演示如何迁移现有的 ASP.NET [HTTP 模块和处理程序 system.webserver](https://docs.microsoft.com/iis/configuration/system.webserver/)到 ASP.NET 核心[中间件](../fundamentals/middleware.md)。
+这篇文章演示如何迁移现有的 ASP.NET [HTTP 模块和处理程序 system.webserver](https://docs.microsoft.com/iis/configuration/system.webserver/)到 ASP.NET 核心[中间件](xref:fundamentals/middleware/index)。
 
 ## <a name="modules-and-handlers-revisited"></a>模块和处理程序重新访问
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 01/30/2018
 
    * 中间件配置使用代码而不是在*Web.config*
 
-   * [管道分支](../fundamentals/middleware.md#middleware-run-map-use)允许将请求发送到特定的中间件，基于不仅也上请求标头、 查询字符串等的 URL。
+   * [管道分支](xref:fundamentals/middleware/index#middleware-run-map-use)允许将请求发送到特定的中间件，基于不仅也上请求标头、 查询字符串等的 URL。
 
 **中间件是非常类似于模块：**
 
@@ -81,7 +81,7 @@ ms.lasthandoff: 01/30/2018
 
    * 响应的中间件顺序是对于请求，与反向而模块的顺序是相同的请求和响应
 
-   * 请参阅[使用 IApplicationBuilder 创建中间件管道](../fundamentals/middleware.md#creating-a-middleware-pipeline-with-iapplicationbuilder)
+   * 请参阅[使用 IApplicationBuilder 创建中间件管道](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder)
 
 ![中间件](http-modules/_static/middleware.png)
 
@@ -93,13 +93,13 @@ ms.lasthandoff: 01/30/2018
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyModule.cs?highlight=6,8,24,31)]
 
-中所示[中间件](../fundamentals/middleware.md)页上，ASP.NET Core 中间件是公开的类`Invoke`方法拍摄`HttpContext`并返回`Task`。 新中间件将如下所示：
+中所示[中间件](xref:fundamentals/middleware/index)页上，ASP.NET Core 中间件是公开的类`Invoke`方法拍摄`HttpContext`并返回`Task`。 新中间件将如下所示：
 
 <a name="http-modules-usemiddleware"></a>
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddleware.cs?highlight=9,13,20,24,28,30,32)]
 
-上面的中间件模板摘录自部分[编写中间件](../fundamentals/middleware.md#middleware-writing-middleware)。
+前面的中间件模板摘录自部分[编写中间件](xref:fundamentals/middleware/index#middleware-writing-middleware)。
 
 *MyMiddlewareExtensions*帮助器类，更便于配置中的中间件你`Startup`类。 `UseMyMiddleware`方法将您中间件的类添加到请求管道。 所需的中间件服务获取注入到中间件的构造函数。
 
@@ -121,7 +121,7 @@ HTTP 模块通常会添加到请求管道使用*Web.config*:
 
 [!code-xml[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32-33,36,43,50,101)]
 
-转换这一点[添加新中间件](../fundamentals/middleware.md#creating-a-middleware-pipeline-with-iapplicationbuilder)向请求管道中你`Startup`类：
+转换这一点[添加新中间件](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder)向请求管道中你`Startup`类：
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=16)]
 
@@ -383,4 +383,4 @@ public async Task Invoke(HttpContext httpContext)
 * [HTTP 处理程序和 HTTP 模块概述](/iis/configuration/system.webserver/)
 * [配置](xref:fundamentals/configuration/index)
 * [应用程序启动](xref:fundamentals/startup)
-* [中间件](xref:fundamentals/middleware)
+* [中间件](xref:fundamentals/middleware/index)

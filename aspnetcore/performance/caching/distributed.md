@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: 86fd40863f6eeef3c129335141d704769d36b4c1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 877a3e1f8c3282fdd67a389ddf5b4ff49dea3b42
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="working-with-a-distributed-cache-in-aspnet-core"></a>使用 ASP.NET Core 中分布式缓存
 
@@ -66,7 +66,7 @@ ms.lasthandoff: 01/30/2018
 
    2. 配置的特定实现`IDistributedCache`中你`Startup`类的`ConfigureServices`方法，并将其添加到容器存在。
 
-   3. 从应用程序的[中间件](../../fundamentals/middleware.md)MVC 控制器类，请求的实例或`IDistributedCache`从构造函数。 实例将由提供[依赖关系注入](../../fundamentals/dependency-injection.md)(DI)。
+   3. 从应用程序的[中间件](xref:fundamentals/middleware/index)MVC 控制器类，请求的实例或`IDistributedCache`从构造函数。 实例将由提供[依赖关系注入](../../fundamentals/dependency-injection.md)(DI)。
 
 > [!NOTE]
 > 没有无需使用的单一实例或作用域生存期`IDistributedCache`实例 (至少对于内置实现)。 你还可以创建一个实例，只要你可能需要一个 (而不是使用[依赖关系注入](../../fundamentals/dependency-injection.md))，但这会导致你的代码更难若要测试，并且与冲突[显式依赖关系原则](http://deviq.com/explicit-dependencies-principle/)。

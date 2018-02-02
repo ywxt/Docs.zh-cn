@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/response-compression
-ms.openlocfilehash: b93b3fc6c3fafd3e45a5cd42f43aa06dc730db0f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: eae51e74c7f2b2f038638c765d4e833a1d9b1232
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>有关 ASP.NET 核心响应压缩中间件
 
@@ -196,7 +196,7 @@ Gzip 压缩提供程序默认为最快的压缩级别 (`CompressionLevel.Fastest
 
 ## <a name="additional-resources"></a>其他资源
 * [应用程序启动](xref:fundamentals/startup)
-* [中间件](xref:fundamentals/middleware)
+* [中间件](xref:fundamentals/middleware/index)
 * [Mozilla 开发人员网络： 接受的编码](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Encoding)
 * [RFC 7231 部分 3.1.2.1： 内容 Codings](https://tools.ietf.org/html/rfc7231#section-3.1.2.1)
 * [RFC 7230 部分 4.2.3: Gzip 编码](https://tools.ietf.org/html/rfc7230#section-4.2.3)

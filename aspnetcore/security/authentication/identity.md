@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity
-ms.openlocfilehash: 52b78922da54a2d4e66120552c2ffc9f585f406b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0c05c636a991371b1a1feec88b5393724a6dc629
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>在 ASP.NET Core 上的标识简介
 
@@ -65,7 +65,7 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
     
     这些服务都提供给应用程序通过[依赖关系注入](xref:fundamentals/dependency-injection)。
     
-    通过调用情况下，启用应用程序的标识`UseAuthentication`中`Configure`方法。 `UseAuthentication`添加了身份验证[中间件](xref:fundamentals/middleware)向请求管道。
+    通过调用情况下，启用应用程序的标识`UseAuthentication`中`Configure`方法。 `UseAuthentication`添加了身份验证[中间件](xref:fundamentals/middleware/index)向请求管道。
     
     [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
     
@@ -75,7 +75,7 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
     
     这些服务都提供给应用程序通过[依赖关系注入](xref:fundamentals/dependency-injection)。
     
-    通过调用情况下，启用应用程序的标识`UseIdentity`中`Configure`方法。 `UseIdentity`添加了基于 cookie 的身份验证[中间件](xref:fundamentals/middleware)向请求管道。
+    通过调用情况下，启用应用程序的标识`UseIdentity`中`Configure`方法。 `UseIdentity`添加了基于 cookie 的身份验证[中间件](xref:fundamentals/middleware/index)向请求管道。
         
     [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
     

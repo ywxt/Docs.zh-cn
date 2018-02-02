@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/integration-testing
-ms.openlocfilehash: ebae76da01e1b24466174179a9d4bbe826202cc3
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4a5f14e11de6ed91f67808c3ea8c78a7b1d43b03
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="integration-testing-in-aspnet-core"></a>在 ASP.NET Core 中测试的集成
 
@@ -127,7 +127,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 要考虑的一个选项添加[MVC](xref:mvc/overview)与应用程序创建控制器来处理主要检查。 但是，假定当前不需要任何其他 MVC 的功能，即一个位浪费。
 
-你可以但是，充分利用 ASP.NET Core[中间件](xref:fundamentals/middleware)，这将帮助我们封装检查其自己的类中的逻辑校准并更好地实现[关注点分离](http://deviq.com/separation-of-concerns/)中`Configure`方法。
+你可以但是，充分利用 ASP.NET Core[中间件](xref:fundamentals/middleware/index)，这将帮助我们封装检查其自己的类中的逻辑校准并更好地实现[关注点分离](http://deviq.com/separation-of-concerns/)中`Configure`方法。
 
 你想要允许该中间件用于指定作为参数，因此中间件类需要的路径`RequestDelegate`和`PrimeCheckerOptions`其构造函数中的实例。 如果请求的路径不匹配此中间件是配置需要，你只需调用链中的下一步的中间件并执行任何进一步操作。 中的实现代码的其余部分`Configure`现已在`Invoke`方法。
 
@@ -150,5 +150,5 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 ## <a name="resources"></a>资源
 
 * [单元测试](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
-* [中间件](xref:fundamentals/middleware)
+* [中间件](xref:fundamentals/middleware/index)
 * [测试控制器](xref:mvc/controllers/testing)
