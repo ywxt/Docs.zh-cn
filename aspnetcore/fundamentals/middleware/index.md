@@ -59,7 +59,7 @@ ASP.NET Core 请求管道包含一系列相继调用的请求委托，如下图�
 >
 > [HttpResponse.HasStarted](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.features.httpresponsefeature#Microsoft_AspNetCore_Http_Features_HttpResponseFeature_HasStarted) 是一个有用的提示，指示是否已发送标头和/或已写入正文。
 
-## <a name="ordering"></a>订购
+## <a name="ordering"></a>中间件排序
 
 向 `Configure` 方法添加中间件组件的顺序定义了针对请求调用这些组件的顺序，以及响应的相反顺序。 此排序对于安全性、性能和功能至关重要。
 
@@ -191,7 +191,7 @@ app.Map("/level1/level2", HandleMultiSeg);
 
 ASP.NET Core 附带以下中间件组件，以及用于添加这些组件的顺序的说明：
 
-| 中间件 | 描述 | 订单 |
+| 中间件 | 描述 | 顺序 |
 | ---------- | ----------- | ----- |
 | [身份验证](xref:security/authentication/identity) | 提供身份验证支持。 | 在需要 `HttpContext.User` 之前。 OAuth 回叫的终端。 |
 | [CORS](xref:security/cors) | 配置跨域资源共享。 | 在使用 CORS 的组件之前。 |
