@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: 944886a7d55af8966dc51424d16bec5ff58dbc05
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6333082a2b2b4f6d3f1ce2afc600b4203a0f5dca
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>使用受授权的用户数据创建 ASP.NET Core 应用
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 01/30/2018
 * [授权](xref:security/authorization/index)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
-本教程的 ASP.NET 核心 1.1 版本是[这](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data)文件夹。 ASP.NET 核心示例是在 1.1[示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2)。
+请参阅[此 PDF 文件](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf)ASP.NET 核心 MVC 版本。 本教程的 ASP.NET 核心 1.1 版本是[这](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data)文件夹。 ASP.NET 核心示例是在 1.1[示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2)。
 
 ## <a name="the-starter-and-completed-app"></a>初学者和已完成应用程序
 
@@ -85,7 +85,7 @@ ms.lasthandoff: 01/30/2018
 
 使用 ASP.NET[标识](xref:security/authentication/identity)用户 ID，以确保用户可以编辑其数据，而非其他用户数据。 添加`OwnerID`和`ContactStatus`到`Contact`模型：
 
-[!code-csharp[Main](secure-data/samples/final2/Models/Contact.cs?name=snippet1&highlight=5-6,16-)]
+[!code-csharp[Main](secure-data/samples/final2/Models/Contact.cs?name=snippet1&highlight=5-6,16-999)]
 
 `OwnerID`是从用户的 ID`AspNetUser`表中[标识](xref:security/authentication/identity)数据库。 `Status`字段确定是否可由常规用户查看联系人。
 
@@ -104,7 +104,7 @@ dotnet ef database update
 
 在`ConfigureServices`方法*Startup.cs*文件中，添加[RequireHttpsAttribute](/aspnet/core/api/microsoft.aspnetcore.mvc.requirehttpsattribute)授权筛选器：
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=19-)]
+[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=19-999)]
 
 如果你使用 Visual Studio，则启用 SSL。
 
@@ -116,7 +116,7 @@ dotnet ef database update
 
 设置默认身份验证策略以要求用户进行身份验证。 你可以选择不在与 Razor 页、 控制器或操作方法级别的身份验证`[AllowAnonymous]`属性。 设置默认身份验证策略以要求用户进行身份验证保护新添加的 Razor 页和控制器。 默认情况下所需的身份验证为比依赖于新控制器和 Razor 页，以包含更安全`[Authorize]`属性。 添加到以下`ConfigureServices`方法*Startup.cs*文件：
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=31-)]
+[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=31-999)]
 
 添加[AllowAnonymous](/dotnet/api/microsoft.aspnetcore.authorization.allowanonymousattribute)到索引中，因此匿名用户可以获取有关站点的信息，然后它们注册的有关，和联系人页面。 
 
@@ -177,7 +177,7 @@ dotnet user-secrets set SeedUserPW <PW>
 
 必须为注册服务使用实体框架核心[依赖关系注入](xref:fundamentals/dependency-injection)使用[AddScoped](/aspnet/core/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions)。 `ContactIsOwnerAuthorizationHandler`使用 ASP.NET Core[标识](xref:security/authentication/identity)，这基于实体框架核心。 注册服务集合的处理程序，因此要对其可供`ContactsController`通过[依赖关系注入](xref:fundamentals/dependency-injection)。 将以下代码添加到末尾`ConfigureServices`:
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=ConfigureServices&highlight=41-)]
+[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=ConfigureServices&highlight=41-999)]
 
 `ContactAdministratorsAuthorizationHandler`和`ContactManagerAuthorizationHandler`添加为单一实例。 它们是单一实例，因为它们不使用 EF 和所需的所有信息都，请参阅`Context`参数`HandleRequirementAsync`方法。
 
@@ -246,7 +246,7 @@ dotnet user-secrets set SeedUserPW <PW>
 
 更新**编辑**和**删除**链接*Pages/Contacts/Index.cshtml*以便它们在仅呈现具有适当权限的用户：
 
-[!code-cshtml[Main](secure-data/samples/final2/Pages/Contacts/Index.cshtml?highlight=34-36,64-)]
+[!code-cshtml[Main](secure-data/samples/final2/Pages/Contacts/Index.cshtml?highlight=34-36,64-999)]
 
 > [!WARNING]
 > 隐藏来自没有更改数据的权限的用户的链接不安全应用程序。 隐藏链接进行应用程序更加友好的用户显示唯一有效的链接。 用户可以 hack 生成的 Url 来调用编辑和删除在它们自己的数据的操作。 Razor 页或控制器必须强制执行访问检查，以保护数据。
@@ -255,7 +255,7 @@ dotnet user-secrets set SeedUserPW <PW>
 
 更新的详细信息视图，以便经理可以批准或拒绝联系人：
 
-[!code-cshtml[Main](secure-data/samples/final2/Pages/Contacts/Details.cshtml?range=48-)]
+[!code-cshtml[Main](secure-data/samples/final2/Pages/Contacts/Details.cshtml?range=48-999)]
 
 更新详细信息页模型：
 

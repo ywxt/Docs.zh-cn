@@ -11,21 +11,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/resourcebased
-ms.openlocfilehash: 708f306da740870b106cbeeb96879480f8745439
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 723e371e0d0b4877f96898c68cd59b433fa97dc1
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="resource-based-authorization"></a>基于资源的授权
-
-作者：[Scott Addie](https://twitter.com/Scott_Addie)
 
 授权策略取决于要访问的资源。 请考虑具有 author 属性的文档。 仅作者允许更新文档。 因此，该文档必须检索从数据存储区授权评估才能发生。
 
 在绑定数据之前和的页处理或加载文档的操作执行之前会进行属性评估。 出于这些原因，使用的声明性授权`[Authorize]`属性不能满足要求。 相反，你可以调用自定义授权方法&mdash;称为命令性授权的样式。
 
 使用[示例应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/resourcebased/samples)([如何下载](xref:tutorials/index#how-to-download-a-sample)) 来浏览本主题中所述的功能。
+
+[使用受授权的用户数据创建 ASP.NET Core 应用](xref:security/authorization/secure-data)包含的示例应用程序使用的基于资源的授权。
 
 ## <a name="use-imperative-authorization"></a>使用命令性授权
 
