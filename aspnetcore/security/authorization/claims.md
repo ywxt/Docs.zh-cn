@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/claims
-ms.openlocfilehash: 76b6566df4a427836eb5060f7d80e1039e479884
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 608aaa469c5ca20fab8250025804e28e7808122d
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="claims-based-authorization"></a>基于声明的授权
 
 <a name="security-authorization-claims-based"></a>
 
-创建一个标识时它可能会分配一个或多个由受信任方发出的声明。 声明为名称值对，表示哪些主题为，可以不哪些的主题。 例如，你可能具有驱动程序的许可证，本地驱动的许可证颁发机构签发。 驱动程序的许可证对其具有你的出生日期。 在这种情况下将声明名称`DateOfBirth`，声明值将是你为出生日期，例如`8th June 1970`和颁发者是驱动的许可证颁发机构。 基于声明的授权，简单地说，将检查声明的值，并允许对基于该值资源的访问。 例如，如果你想夜间俱乐部访问授权过程可能是：
+创建一个标识时它可能会分配一个或多个由受信任方发出的声明。 声明是表示哪些使用者名称值对，可以不哪些的主题。 例如，你可能具有驱动程序的许可证，本地驱动的许可证颁发机构签发。 驱动程序的许可证对其具有你的出生日期。 在这种情况下将声明名称`DateOfBirth`，声明值将是你为出生日期，例如`8th June 1970`和颁发者是驱动的许可证颁发机构。 基于声明的授权，简单地说，将检查声明的值，并允许对基于该值资源的访问。 例如，如果你想夜间俱乐部访问授权过程可能是：
 
 门安全负责人将评估你的出生声明，并且它们是否在授予你访问之前信任颁发者 （驱动许可证机构） 的日期的值。
 

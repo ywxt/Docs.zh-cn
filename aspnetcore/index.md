@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: index
-ms.openlocfilehash: d7957bdc6fa982790141bac9b73ad7d3b1dd3d8a
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 42bf005a29a8723233a0d9e5532827f7522f0e75
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
-# <a name="introduction-to-aspnet-core"></a>ASP.NET Core 简介
+# <a name="aspnet-core"></a>ASP.NET Core
 
 作者：[Daniel Roth](https://github.com/danroth27)[Rick Anderson](https://twitter.com/RickAndMSFT) 和 [Shaun Luttin](https://twitter.com/dicshaunary)
 
@@ -65,6 +65,7 @@ ASP.NET Core 与常用客户端框架和库（包括 [Angular](xref:spa/angular)
 
 有关更多信息，请参见以下资源：
 
+* [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)
 * [ASP.NET Core 教程](xref:tutorials/index)
 * [ASP.NET Core 基础知识](xref:fundamentals/index)
 * [每周 ASP.NET Community Standup](https://live.asp.net/) 介绍了团队的工作进度和计划。 它以新博客和第三方软件为重点。

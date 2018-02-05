@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/memory
-ms.openlocfilehash: 4219cae4e3d3f9d15afe6725b21cc8966979d95c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8256240b46873d53bf1a6f6616ea5b520cfadf2e
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="in-memory-caching-in-aspnet-core"></a>ASP.NET 核心中的内存中缓存
 
@@ -42,7 +42,7 @@ Web 场中的非粘性会话需要[分布式缓存](distributed.md)以避免缓�
 
 请求`IMemoryCache`构造函数中的实例：
 
-[!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ctor&highlight=3,5-)] 
+[!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ctor&highlight=3,5-999)] 
 
 `IMemoryCache`需要 NuGet 包"Microsoft.Extensions.Caching.Memory"。
 
