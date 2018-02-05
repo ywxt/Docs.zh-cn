@@ -13,11 +13,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/using-signalr-performance-counters-in-an-azure-web-role
 msc.type: authoredcontent
-ms.openlocfilehash: 0d2717eb318d282e21e9aa8622a205f556e3a4ee
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2f6c6feb030fc17f95e7862c39029569f3d8c5dc
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="using-signalr-performance-counters-in-an-azure-web-role"></a>在 Azure Web 角色中使用 SignalR 性能计数器
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 11/10/2017
 
 SignalR 性能计数器用于监视 Azure Web 角色中的应用程序的性能。 Microsoft Azure 诊断捕获计数器。 在 Azure 上安装 SignalR 性能计数器*signalr.exe*，用于独立或本地的应用的工具相同。 由于 Azure 角色是暂时的你将配置应用程序以安装和注册在启动时的 SignalR 性能计数器。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 * [Visual Studio 2015](https://www.visualstudio.com/vs/visual-studio-express/)
 * [Microsoft Azure SDK for Visual Studio 2015 (VS2015)](https://azure.microsoft.com/downloads/) **注意： 安装该 SDK 后重新启动您的计算机。**
@@ -35,13 +35,13 @@ SignalR 性能计数器用于监视 Azure Web 角色中的应用程序的性能�
 
 1. 打开 Visual Studio 2015。
 
-2. 在 Visual Studio 2015 中，选择**文件&gt;新建&gt;项目**。
+2. 在 Visual Studio 2015 中，选择**文件** > **新建** > **项目**。
 
 3. 在**模板**窗格**新项目**下的窗口**Visual C#**节点中，选择**云**节点，然后选择**Azure 云服务**模板。 命名应用程序**SignalRPerfCounters**和选择**确定**。
 
    ![新的云应用程序](using-signalr-performance-counters-in-an-azure-web-role/_static/image1.png)
     
-4. 在**新 Microsoft Azure 云服务**对话框中，选择**ASP.NET Web 角色**和选择 **&gt;** 按钮将该角色添加到项目。 选择“确定”。
+4. 在**新 Microsoft Azure 云服务**对话框中，选择**ASP.NET Web 角色**和选择 > 按钮以将角色添加到项目。 选择“确定”。
 
    ![添加 ASP.NET Web 角色](using-signalr-performance-counters-in-an-azure-web-role/_static/image2.png)
     
@@ -57,21 +57,21 @@ SignalR 性能计数器用于监视 Azure Web 角色中的应用程序的性能�
 
    [!code-xml[Main](using-signalr-performance-counters-in-an-azure-web-role/samples/sample1.xml)]
     
-8. 打开**程序包管理器控制台**从**工具&gt;NuGet 包管理器**。 输入以下命令以安装 SignalR 和 SignalR 实用工具包的最新版本：
+8. 打开**程序包管理器控制台**从**工具** > **NuGet 包管理器**。 输入以下命令以安装 SignalR 和 SignalR 实用工具包的最新版本：
 
    [!code-powershell[Main](using-signalr-performance-counters-in-an-azure-web-role/samples/sample2.ps1)]
     
-9. 配置应用到角色实例安装 SignalR 性能计数器，在启动或回收时。 在**解决方案资源管理器**，右键单击**WebRole1**项目，然后选择**添加&gt;新文件夹**。 将新文件夹命名*启动*。
+9. 配置应用到角色实例安装 SignalR 性能计数器，在启动或回收时。 在**解决方案资源管理器**，右键单击**WebRole1**项目，然后选择**添加** > **新文件夹**。 将新文件夹命名*启动*。
 
    ![添加启动文件夹](using-signalr-performance-counters-in-an-azure-web-role/_static/image5.png)
     
-10. 复制*signalr.exe*文件 (使用添加**Microsoft.AspNet.SignalR.Utils**包) 从**&lt;项目文件夹&gt;\SignalRPerfCounters\packages\Microsoft.AspNet.SignalR.Utils。&lt;版本&gt;\tools**到*启动*你在上一步中创建的文件夹。
+10. 复制*signalr.exe*文件 (使用添加**Microsoft.AspNet.SignalR.Utils**包) 从\<项目文件夹 > / SignalRPerfCounters/packages/Microsoft.AspNet.SignalR.Utils。\<版本 > / 工具到*启动*你在上一步中创建的文件夹。
 
-11. 在**解决方案资源管理器**，右键单击*启动*文件夹，然后选择**添加&gt;现有项**。 在出现的对话框，选择*signalr.exe*和选择**添加**。
+11. 在**解决方案资源管理器**，右键单击*启动*文件夹，然后选择**添加** > **现有项**。 在出现的对话框，选择*signalr.exe*和选择**添加**。
 
     ![将 signalr.exe 添加到项目](using-signalr-performance-counters-in-an-azure-web-role/_static/image6.png)
     
-12. 右键单击*启动*你创建的文件夹。 选择**添加&gt;新项**。 选择**常规**节点中，选择**文本文件**，并命名为新项*SignalRPerfCounterInstall.cmd*。 此命令文件将安装到 web 角色的 SignalR 性能计数器。
+12. 右键单击*启动*你创建的文件夹。 选择“添加” > “新建项”。 选择**常规**节点中，选择**文本文件**，并命名为新项*SignalRPerfCounterInstall.cmd*。 此命令文件将安装到 web 角色的 SignalR 性能计数器。
 
     ![创建 SignalR 性能计数器安装批处理文件](using-signalr-performance-counters-in-an-azure-web-role/_static/image7.png)
      
@@ -106,7 +106,7 @@ SignalR 性能计数器用于监视 Azure Web 角色中的应用程序的性能�
 
     [!code-cshtml[Main](using-signalr-performance-counters-in-an-azure-web-role/samples/sample6.cshtml)]
     
-21. 中创建一个新文件夹**WebRole1**项目名为*中心*。 右键单击*中心*文件夹中的**解决方案资源管理器**，选择**Web &gt; SignalR**，然后选择**SignalR Hub Class (v2)**. 命名新的中心*MyHub.cs*和选择**添加**。
+21. 中创建一个新文件夹**WebRole1**项目名为*中心*。 右键单击*中心*文件夹中的**解决方案资源管理器**，选择**Web** > **SignalR**，然后选择**SignalR Hub 类 (v2)**。 命名新的中心*MyHub.cs*和选择**添加**。
 
     ![在添加新项对话框的中心文件夹中添加 SignalR Hub 类](using-signalr-performance-counters-in-an-azure-web-role/_static/image13.png)
 
@@ -114,7 +114,7 @@ SignalR 性能计数器用于监视 Azure Web 角色中的应用程序的性能�
 
     [!code-csharp[Main](using-signalr-performance-counters-in-an-azure-web-role/samples/sample7.cs)]
     
-23. *[Crank.exe](signalr-connection-density-testing-with-crank.md)* 是测试随附 SignalR 基本代码的工具连接密度。 由于曲柄要求的持续性连接，你添加到你的站点用于测试时。 添加到新文件夹**WebRole1**项目称为*PersistentConnections*。 右键单击此文件夹并选择**添加&gt;类**。 将新类文件命名*MyPersistentConnections.cs*和选择**添加**。
+23. *[Crank.exe](signalr-connection-density-testing-with-crank.md)* 是测试随附 SignalR 基本代码的工具连接密度。 由于曲柄要求的持续性连接，你添加到你的站点用于测试时。 添加到新文件夹**WebRole1**项目称为*PersistentConnections*。 右键单击此文件夹并选择**添加** > **类**。 将新类文件命名*MyPersistentConnections.cs*和选择**添加**。
 
 24. Visual Studio 将打开*MyPersistentConnections.cs*主窗口中的文件。 将内容替换为以下代码，然后保存并关闭文件：
 
@@ -133,7 +133,7 @@ SignalR 性能计数器用于监视 Azure Web 角色中的应用程序的性能�
 
     [!code-xml[Main](using-signalr-performance-counters-in-an-azure-web-role/samples/sample12.xml?highlight=3,7)]
     
-27. 等待大约一分钟。 在 Visual Studio 中打开云资源管理器工具窗口 (**视图&gt;云资源管理器**) 和展开路径`(Local)\Storage Accounts\(Development)\Tables`。 双击**WADPerformanceCountersTable**。 你应看到 SignalR 计数器中的表数据。 如果看不到表，你可能需要重新输入你的 Azure 存储凭据。 你可能需要选择**刷新**按钮以查看中的表**云资源管理器**或选择**刷新**窗口中的按钮打开表以查看表中的数据。
+27. 等待大约一分钟。 在 Visual Studio 中打开云资源管理器工具窗口 (**视图** > **云资源管理器**) 和展开路径`(Local)/Storage Accounts/(Development)/Tables`。 双击**WADPerformanceCountersTable**。 你应看到 SignalR 计数器中的表数据。 如果看不到表，你可能需要重新输入你的 Azure 存储凭据。 你可能需要选择**刷新**按钮以查看中的表**云资源管理器**或选择**刷新**窗口中的按钮打开表以查看表中的数据。
 
     ![在 Visual Studio 云资源管理器中选择 WAD 性能计数器表](using-signalr-performance-counters-in-an-azure-web-role/_static/image11.png)
 

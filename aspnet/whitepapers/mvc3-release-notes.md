@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: c1fa5d31f68b44bfdfda61c870a6825eeba18647
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 92a6dee24b8942d721e3537a712be141155e61df
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/05/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -232,7 +232,7 @@ ASP.NET MVC 3 可以在同一台计算机，这将使您能够灵活地选择何
 
 有关*数据上下文类*，可在进行这些选择：
 
-- 如果你想要使用 Code First 和没有现有的数据上下文类中，选择*&lt;新建数据上下文...&gt;*". 然后将为你生成的数据上下文类。
+- 如果你想要使用 Code First 和没有现有的数据上下文类中，选择 * * 新的数据上下文 * *。 然后将为你生成的数据上下文类。
 - 如果你想要使用 Code First 和具有现有的数据上下文类，在此处选择。 它将更新以保留您选择的模型类。
 - 如果你使用 Database First 或 Model First，选择你的对象上下文类。
 
@@ -255,7 +255,7 @@ ASP.NET MVC 3 可以在同一台计算机，这将使您能够灵活地选择何
 
 #### <a name="project-templates-are-now-html5-enabled"></a>项目模板现在是启用的 HTML5
 
-新项目对话框中现在包含一个选项以将 HTML5 特定功能添加到项目模板。 选择的选项会导致视图以生成包含新的 HTML5 *&lt;标头&gt;*， *&lt;页脚&gt;*，和 *&lt;导航&gt;*元素。
+新项目对话框中现在包含一个选项以将 HTML5 特定功能添加到项目模板。 选择的选项会导致视图以生成包含新的 HTML5 `<header>`， `<footer>`，和`<navigation>`元素。 元素。
 
 请注意，早期版本的浏览器不支持 HTML5 特定标记。 若要解决此限制，HTML5 项目模板，请包括对 Modernizr 库的引用。 （请参阅下一节。）
 
@@ -293,7 +293,7 @@ ADO.NET 实体框架 4.1 包括代码第一项功能。 代码首先是 ADO.NET 
 
 例如，给定 jQuery 最新发布的频率，jQuery 包含在项目模板的版本在某一时刻将过期。 但是，由于 jQuery 是包含为已安装的 NuGet 包，你将通知在 NuGet 对话框中可用的 jQuery 的较新版本时。
 
-由于 jQuery 文件名中包含的版本号，到最新版本更新 jQuery 还需要更新*&lt;脚本&gt;*引用要使用新的文件名称的 jQuery 文件的标记。 其他包含的脚本库不包括的版本号在脚本名称中，因此它们可以更轻松地更新到了其最新版本。
+由于 jQuery 文件名中包含的版本号，到最新版本更新 jQuery 还需要更新`<script>`引用要使用新的文件名称的 jQuery 文件的标记。 其他包含的脚本库不包括的版本号在脚本名称中，因此它们可以更轻松地更新到了其最新版本。
 
 <a id="tu-KI"></a>
 ## <a name="known-issues"></a>已知问题
@@ -353,7 +353,7 @@ ASP.NET MVC 3 引入 RC2 版本*CachedDataAnnotationsMetadataProvider*类，提�
 - 安装 ReSharper 时，Razor 语法的 IntelliSense 不会无法正常工作。 如果你已安装的 ReSharper 并想要利用 ASP.NET MVC 3 中的 Razor IntelliSense 支持，请参阅文章[Razor Intellisense 和 ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) Hadi Hariri 博客，其中讨论了如何立即使用它们在一起。
 - 使用 ASP.NET MVC 3 的 Beta 版本创建的 CCSHTML 和 VBHTML 视图没有正确设置这些文件的生成操作，使用这些查看结果类型时省略了该项目发布。 这些文件的生成操作值应设置为"内容"。 ASP.NET MVC 3 RTM 修复此问题对新文件，但不更正与预发布版本创建的项目的现有文件的设置。
 - ![](mvc3-release-notes/_static/image3.png)
-- 在安装期间，最终用户许可协议接受对话框中的许可条款的窗口中显示小于预期。 / li&gt;
+- 在安装期间，最终用户许可协议接受对话框中该小于预期大小的窗口中显示许可条款。
 - 编辑 Razor 视图 （.cshtml 文件），请转到控制器菜单项在 Visual Studio 中的将不可用，并且没有任何代码段。
 - 如果您在其中未安装 Visual Studio 的计算机上的 Visual Web Developer Express 为安装 ASP.NET MVC 3，然后更高版本安装 Visual Studio，则必须重新安装 ASP.NET MVC 3。 Visual Studio 和 Visual Web Developer Express 共享的 ASP.NET MVC 3 安装程序升级的组件。 ASP.NET MVC 3 是 for Visual Studio 在没有 Visual Web Developer Express，并且更高版本安装 Visual Web Developer Express 的计算机上安装适用于属于相同问题。
 
@@ -398,7 +398,7 @@ ASP.NET MVC 3 的项目模板现在包括最新版本的 jQuery、 jQuery 验证
 <a id="_Toc2_4"></a>
 ### <a name="added-htmlraw-method"></a>添加的 Html.Raw 方法
 
-默认情况下，Razor 查看所有值进行 HTML 编码的引擎。 例如，下面的代码段将编码的问候语变量中的 HTML，以便显示在页中作为&amp;lt; 强&amp;gt;世界您好！&amp;lt; < / g&amp;gt;。
+默认情况下，Razor 查看所有值进行 HTML 编码的引擎。 例如，下面的代码段将编码的问候语变量中的 HTML，以便显示在页中作为`<strong>Hello World!</strong>`。
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample10.cshtml)]
 
@@ -621,7 +621,7 @@ Namespace.ClassName
 - 安装程序可能需要比以前版本的 ASP.NET MVC，才能完成，因为它会更新组件的 Visual Studio 2010 长得多。
 - 如果选择了"编辑"强类型的基架视图中的添加视图基架只读属性。 同样，"显示"视图中基架只写属性。
 - 在安装期间，最终用户许可协议接受对话框中该小于预期大小的窗口中显示许可条款。
-- 安装[Visual Studio 异步 CTP](https://www.microsoft.com/downloads/en/details.aspx?FamilyID=18712f38-fcd2-4e9f-9028-8373dc5732b2&amp;displaylang=en) Razor 版本中的 ASP.NET MVC 3 工具安装的一部分将导致产生冲突。 请确保不尝试在同一台计算机上安装 Visual Studio 异步 CTP 和 Razor 版本。
+- 安装 Visual Studio 异步 CTP 引起冲突 Razor 版本中的 ASP.NET MVC 3 工具安装的一部分。 请确保不尝试在同一台计算机上安装 Visual Studio 异步 CTP 和 Razor 版本。
 - 编辑 Razor 视图 （.cshtml 文件），请转到控制器菜单项在 Visual Studio 中的将不可用，并且没有任何代码段。
 
 <a id="TOC_ASP_NET_3_Beta"></a>
@@ -852,7 +852,7 @@ Razor 视图没有 IntelliSense 支持也不语法突出显示。 我们已预�
 
 使用时@model语法来指定强类型化的 CSHTML 视图中，无法识别的类型的特定于语言的快捷方式。 例如， @model int 不起作用，但@modelInt32 将起作用。 此 bug 的解决方法是指定的模型类型时使用的实际类型名称。
 
-使用时@model语法来指定强类型化的 CSHTML 视图 (或@ModelType指定强类型化的 VBHTML 视图)，不支持可以为 null 的类型和数组声明。 例如， @model int？ 不支持。 请改用@model可以为 Null&lt;Int32&gt;。 语法@modelstring []，也不支持; 请改用@modelIList&lt;字符串&gt;。
+使用时@model语法来指定强类型化的 CSHTML 视图 (或@ModelType指定强类型化的 VBHTML 视图)，不支持可以为 null 的类型和数组声明。 例如， @model int？ 不支持。 请改用`@model Nullable<Int32>`。 语法@modelstring []，也不支持; 请改用`@model IList<string>`。
 
 在 ASP.NET MVC 2 项目升级到 ASP.NET MVC 3 时，请确保将以下内容添加到 Web.config 文件的 appSettings 节：
 

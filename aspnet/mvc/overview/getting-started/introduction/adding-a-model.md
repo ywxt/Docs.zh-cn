@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 13aab58e86829a8d4accd1d304420dcb34ffa472
-ms.sourcegitcommit: ec9371e2fbfcb8d62e7e7cae69e7752f3f205385
+ms.openlocfilehash: 79f136257119a8600a65e8d7c5f6e99cb9abceae
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 02/05/2018
 ---
 <a name="adding-a-model"></a>添加模型
 ====================
@@ -58,7 +58,7 @@ ms.lasthandoff: 11/23/2017
 
 ![](adding-a-model/_static/image2.png)
 
-注意： 多个未使用`using`语句已删除。 Visual Studio 将显示为灰色的未使用的依赖关系。 你可以通过将鼠标悬停在灰色的依赖关系中删除 unnused 依赖关系，请单击`Show potential fixes`单击**删除未使用的 Using。**
+注意： 多个未使用`using`语句已删除。 Visual Studio 将显示为灰色的未使用的依赖关系。 你可以通过将鼠标悬停在灰色的依赖关系中删除未使用的依赖关系，请单击`Show potential fixes`单击**删除未使用的 Using。**
 
 ![](adding-a-model/_static/image3.png)
 

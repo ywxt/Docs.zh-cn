@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 msc.type: authoredcontent
-ms.openlocfilehash: c9fe97dbd5fe10cbde25b9daf5ddd35b2d7eaab5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2c6ba11799a5a9be3d8c0037fad5d79d8177c0e8
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/05/2018
 ---
 <a name="profiles-themes-and-web-parts"></a>配置文件、 主题和 Web 部件
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 有配置中的重大更改和 ASP.NET 2.0 中的检测。 新的 ASP.NET 配置 API 允许以编程方式进行配置更改。 此外，许多新的配置设置存在允许对新的配置和检测。
 
@@ -96,13 +96,13 @@ ASP.NET 配置文件使用提供程序模型。 默认的提供程序将信息�
 
 ### <a name="providerbase-members"></a>ProviderBase 成员
 
-| **成员** | **描述** |
+| **成员** | **说明** |
 | --- | --- |
 | Initialize 方法 | 作为输入提供程序实例的名称和配置设置的 NameValueCollection 利用。 用于设置选项和提供程序实例，包括特定于实现的值和在计算机配置或 Web.config 文件中指定的选项的属性值。 |
 
 ### <a name="settingsprovider-members"></a>SettingsProvider 成员
 
-| **成员** | **描述** |
+| **成员** | **说明** |
 | --- | --- |
 | 应用程序名称属性 | 每个配置文件存储应用程序名称。 配置文件提供程序使用的应用程序名称来存储单独为每个应用程序的配置文件信息。 这使多个 ASP.NET 应用程序使用相同的数据源不发生冲突，如果在不同的应用程序中创建相同的用户名。 或者，多个 ASP.NET 应用程序可以通过指定相同的应用程序名称共享配置文件数据源。 |
 | GetPropertyValues 方法 | 将作为输入 SettingsContext 和 SettingsPropertyCollection 对象。 **SettingsContext**提供有关用户的信息。 可以使用为主键的信息来检索用户的配置文件属性信息。 使用**SettingsContext**要获取的用户名称以及用户是否是经过身份验证或匿名对象。 **SettingsPropertyCollection**包含 SettingsProperty 对象的集合。 每个**SettingsProperty**对象提供的名称和类型的属性以及其他信息，例如的默认值为该属性并且属性是只读的。 **GetPropertyValues**方法基于 SettingsPropertyValue 对象，并用其填充 SettingsPropertyValueCollection **SettingsProperty**作为输入提供的对象。 每个指定的用户数据源中的值分配给 PropertyValue 属性**SettingsPropertyValue**返回对象和整个集合。 调用该方法还更新为当前日期和时间的指定的用户配置文件的 LastActivityDate 值。 |
@@ -110,7 +110,7 @@ ASP.NET 配置文件使用提供程序模型。 默认的提供程序将信息�
 
 ### <a name="profileprovider-members"></a>ProfileProvider 成员
 
-| **成员** | **描述** |
+| **成员** | **说明** |
 | --- | --- |
 | DeleteProfiles 方法 | 使用作为输入的用户的字符串数组名称和从数据源的指定名称的所有配置文件信息和属性值中删除其中的应用程序名称匹配**ApplicationName**属性值。 如果您的数据源支持事务，建议在事务中包括所有的删除操作，并且您回滚事务，任何删除操作失败时引发异常。 |
 | DeleteProfiles 方法 | 使用作为输入的 ProfileInfo 集合对象，并从数据源的每个配置文件的所有配置文件信息和属性值中删除其中的应用程序名称匹配**ApplicationName**属性值。 如果您的数据源支持事务，建议你在事务中包含所有的删除操作并回滚事务，以及任何删除操作失败时引发异常。 |
@@ -119,7 +119,7 @@ ASP.NET 配置文件使用提供程序模型。 默认的提供程序将信息�
 | GetAllInactiveProfiles 方法 | 接受的输入**ProfileAuthenticationOption**值， **DateTime**对象、 一个整数，指定的页索引、 一个整数，指定页大小，以及对一个整数，它将设置的引用到配置文件的总计数。 返回**ProfileInfoCollection**包含**ProfileInfo**为上一次活动日期小于或等于指定的数据源中的所有配置文件对象**DateTime**和其中的应用程序名称匹配**ApplicationName**属性值。 **ProfileAuthenticationOption**参数指定是否仅匿名配置文件，仅当身份验证配置文件，还是要返回所有配置文件。 返回的结果**GetAllInactiveProfiles**方法受到的页索引和页大小的值。 该页面大小值指定的最大数**ProfileInfo**对象中返回**ProfileInfoCollection**。 页索引值指定的结果返回，其中 1 标识的第一页的页。 总记录数的参数是一个 out 参数 (你可以使用**ByRef**在 Visual Basic 中) 是否设置为配置文件的总数。 例如，如果数据存储包含应用程序的 13 个配置文件和页索引值为 2，5，页面大小**ProfileInfoCollection**返回包含通过第 10 个配置文件的第六个。 此方法返回时，总记录数的值设置为 13 中。 |
 | FindProfilesByUserName 方法 | 接受的输入**ProfileAuthenticationOption**值，包含用户名称、 一个整数，指定的页索引、 一个整数，指定页大小，以及对一个整数，它将设置为的总计数的引用的字符串配置文件。 返回**ProfileInfoCollection**包含**ProfileInfo**对象的数据中的所有配置文件的源的用户名与指定的用户名匹配之处和其中的应用程序名称匹配**ApplicationName**属性值。 **ProfileAuthenticationOption**参数指定是否仅匿名配置文件，仅当身份验证配置文件，还是要返回所有配置文件。 如果您的数据源支持附加搜索功能，如通配符字符，你可以为用户名称提供更广泛搜索功能。 返回的结果**FindProfilesByUserName**方法受到的页索引和页大小的值。 该页面大小值指定的最大数**ProfileInfo**对象中返回**ProfileInfoCollection**。 页索引值指定的结果返回，其中 1 标识的第一页的页。 总记录数的参数是一个 out 参数 (你可以使用**ByRef**在 Visual Basic 中) 是否设置为配置文件的总数。 例如，如果数据存储包含应用程序的 13 个配置文件和页索引值为 2，5，页面大小**ProfileInfoCollection**返回包含通过第 10 个配置文件的第六个。 此方法返回时，总记录数的值设置为 13 中。 |
 | FindInactiveProfilesByUserName 方法 | 接受的输入**ProfileAuthenticationOption**值、 一个包含用户名，字符串**DateTime**对象、 一个整数，指定的页索引、 一个整数，指定页大小和引用一个整数，它将设置为配置文件的总计数。 返回**ProfileInfoCollection**包含**ProfileInfo**对于其中的用户名匹配指定的用户名称，其中是上一次活动日期数据源中的所有配置文件对象小于或等于指定**DateTime**，和其中的应用程序名称匹配**ApplicationName**属性值。 **ProfileAuthenticationOption**参数指定是否仅匿名配置文件，仅当身份验证配置文件，还是要返回所有配置文件。 如果您的数据源支持附加搜索功能，如通配符字符，你可以为用户名称提供更广泛搜索功能。 返回的结果**FindInactiveProfilesByUserName**方法受到的页索引和页大小的值。 该页面大小值指定的最大数**ProfileInfo**对象中返回**ProfileInfoCollection**。 页索引值指定的结果返回，其中 1 标识的第一页的页。 总记录数的参数是一个 out 参数 (你可以使用**ByRef**在 Visual Basic 中) 是否设置为配置文件的总数。 例如，如果数据存储包含应用程序的 13 个配置文件和页索引值为 2，5，页面大小**ProfileInfoCollection**返回包含通过第 10 个配置文件的第六个。 此方法返回时，总记录数的值设置为 13 中。 |
-| GetNumberOfInActiveProfiles 方法 | 接受的输入**ProfileAuthenticationOption**值和**DateTime**对象并返回上一次活动日期其中是小于或等于指定数据源中的所有配置文件计数**DateTime**和其中的应用程序名称匹配**ApplicationName**属性值。 **ProfileAuthenticationOption**参数指定是否仅匿名配置文件，仅当身份验证配置文件，或所有配置文件是要计数。 |
+| GetNumberOfInActiveProfiles method | 接受的输入**ProfileAuthenticationOption**值和**DateTime**对象并返回上一次活动日期其中是小于或等于指定数据源中的所有配置文件计数**DateTime**和其中的应用程序名称匹配**ApplicationName**属性值。 **ProfileAuthenticationOption**参数指定是否仅匿名配置文件，仅当身份验证配置文件，或所有配置文件是要计数。 |
 
 ### <a name="applicationname"></a>ApplicationName
 
@@ -139,14 +139,14 @@ Web 应用程序的最重要方面之一站点内是一致的外观和感觉。 
 
 `C:\WINDOWS\Microsoft.NET\Framework\v2.x.xxxxx\ASP.NETClientFiles\Themes\<Theme_Name>`
 
-特定于特定应用程序的主题存储在应用程序\_主题\&lt;主题\_名称&gt;目录 Web 站点的根目录中。
+特定于特定应用程序的主题存储在`App\_Themes\<Theme\_Name>`目录 Web 站点的根目录中。
 
 > [!NOTE]
 > 外观文件仅应修改会影响外观的服务器控件属性。
 
 全局主题是可以应用于任何应用程序或 Web 服务器上运行的网站的主题。 默认情况下，是在 v2.x.xxxxx 目录内部的 ASP.NETClientfiles\Themes 目录中存储这些主题。 或者，你可以将主题文件移到 aspnet\_客户端/系统\_web / [version] /Themes/ [主题\_名称] 您的网站的根目录中的文件夹。
 
-特定于应用程序的主题可以仅应用于文件驻留在其中应用程序中。 这些文件存储在应用程序\_主题 /&lt;主题\_名称&gt;目录 Web 站点的根目录中。
+特定于应用程序的主题可以仅应用于文件驻留在其中应用程序中。 这些文件存储在`App\_Themes/<theme\_name>`目录 Web 站点的根目录中。
 
 ## <a name="the-components-of-a-theme"></a>主题的组件
 
@@ -258,7 +258,7 @@ Web 应用程序的最重要方面之一站点内是一致的外观和感觉。 
 
 如果你想要能够重写在主题的外观文件中定义的属性属性中指定设计器中，你可以使用**StyleSheetTheme**而不是主题属性的属性。 StyleSheetTheme 属性操作的主题属性相同，只不过它不会覆盖所有的显式属性设置类似的主题属性执行的操作。
 
-若要查看此操作中，从练习 1 中的项目中打开 web.config 文件，并将更改&lt;页&gt;到以下元素：
+若要查看此操作中，从练习 1 中的项目中打开 web.config 文件，并将更改`<pages>`到以下元素：
 
 [!code-xml[Main](profiles-themes-and-web-parts/samples/sample19.xml)]
 
@@ -308,16 +308,16 @@ Web 部件 UI 控件，它们都派生自**一部分**类中，包含在 Web 部
 
 Web 部件控件集很广泛，但某些控制非常重要，因为它们所需的 Web 部件正常工作，或因为它们是最常用于在 Web 部件页上的控件。 在你开始使用 Web 部件，并创建基本的 Web 部件页，最好先熟悉以下表所述的基本 Web 部件控件。
 
-| **Web 部件控件** | **描述** |
+| **Web 部件控件** | **说明** |
 | --- | --- |
-| 人员 | 管理页面上的所有 Web 部件控件。 一个 （且只有一个）**人员**需要每个 Web 部件页进行控制。 |
+| WebPartManager | 管理页面上的所有 Web 部件控件。 一个 （且只有一个）**人员**需要每个 Web 部件页进行控制。 |
 | CatalogZone | 包含 CatalogPart 控件。 使用此区域可创建用户可以从中选择要添加到页上的控件的 Web 部件控件的目录。 |
 | EditorZone | 包含 EditorPart 控件。 使用此区域可使用户能够编辑和个性化设置页面上的 Web 部件控件。 |
 | WebPartZone | 包含并提供整体布局撰写页的主 UI 的 web 部件控件。 每当您创建 Web 部件控件具有网页时，请使用此区域。 页面可以包含一个或多个区域。 |
-| 放置 | 包含连接控件和用于管理连接提供的用户界面。 |
+| ConnectionsZone | 包含连接控件和用于管理连接提供的用户界面。 |
 | Web 部件 (GenericWebPart) | 呈现的主要用户界面;大多数 Web 部件 UI 控件属于此类别。 对于最大的编程控制，您可以创建派生自基类的自定义 Web 部件控件**web 部件**控件。 用作 Web 部件控件，还可以使用现有的服务器控件、 用户控件或自定义控件。 每当在区域中，放置的任何这些控件的**人员**控件自动换行它们与**GenericWebPart**控件在运行时，以便可以将它们用于 Web 部件功能。 |
 | CatalogPart | 包含用户可添加到页面的可用 Web 部件控件的列表。 |
-| 连接 | 创建页面上的两个 Web 部件控件之间的连接。 连接定义了作为 （的数据），提供程序，使用者作为另一个 Web 部件控件。 |
+| WebPartConnection | 创建页面上的两个 Web 部件控件之间的连接。 连接定义了作为 （的数据），提供程序，使用者作为另一个 Web 部件控件。 |
 | EditorPart | 用作专用的编辑器控件的基类。 |
 | EditorPart 控件 （AppearanceEditorPart、 LayoutEditorPart、 BehaviorEditorPart 和 PropertyGridEditorPart） | 允许用户对页面上的 Web 部件 UI 控件的各个方面进行个性化设置 |
 
@@ -338,11 +338,11 @@ Web 部件控件集很广泛，但某些控制非常重要，因为它们所需�
 1. 关闭默认页，并将一个新页面添加到名为 WebPartsDemo.aspx 的站点。
 2. 切换到**设计**视图。
 3. 从**视图**菜单上，请确保**非可视控件**和**详细信息**会选择的选项，以便你可以查看布局标记和不具有用户界面的控件。
-4. 放置一个插入点之前 **&lt;div&gt;** 在设计图面上，然后按 ENTER 以添加新行上标记。 新行字符之前将插入点的位置，请单击**块格式**下拉列表控件的菜单上，并选择**标题 1**选项。 在标题中，添加文本**Web 部件演示页**。
-5. 从**web 部件**选项卡的工具箱拖**人员**拖到页面上，刚刚之后新行字符和之前对它进行定位的控件 **&lt;div&gt;**标记。   
+4. 放置一个插入点之前`<div>`在设计图面上，然后按 ENTER 以添加新行上标记。 新行字符之前将插入点的位置，请单击**块格式**下拉列表控件的菜单上，并选择**标题 1**选项。 在标题中，添加文本**Web 部件演示页**。
+5. 从**web 部件**选项卡的工具箱拖**人员**拖到页面上，刚刚之后新行字符和之前对它进行定位的控件`<div>`标记。   
   
  **人员**控件不呈现任何输出，因此它显示为灰色的框，在设计器图面上。
-6. 在将插入点位置 **&lt;div&gt;** 标记。
+6. 在将插入点位置`<div>`标记。
 7. 在**布局**菜单上，单击**插入表**，并创建具有一个行和三个列的新表。 单击**单元属性**按钮，选择**顶部**从**垂直对齐**下拉列表中，单击**确定**，然后单击**确定**再次以创建的表。
 8. 将 WebPartZone 控件拖到该表左边的列。 右键单击**WebPartZone**控件中，选择**属性**，并设置以下属性：   
   
@@ -358,13 +358,13 @@ Web 部件控件集很广泛，但某些控制非常重要，因为它们所需�
 
 现在，页面包含两个不同的区域，你可以单独控制。 但是，两个区域中包含任何内容，因此是下一步创建内容。 对于本演练，你使用只显示静态内容的 Web 部件控件。
 
-通过指定的 Web 部件区域布局**&lt;方法&gt;**元素。 在区域模板中，你可以添加任何 ASP.NET 控件，它是否自定义 Web 部件控件、 一个用户控件或现有的服务器控件。 请注意，此处使用标签控件中，并向，只需添加静态文本。 当你在常规服务器控件置于**WebPartZone**区域，ASP.NET 将该控件视为 Web 部件控件在运行时，这样在控件上的 Web 部件功能。
+通过指定的 Web 部件区域布局&lt;方法&gt;元素。 在区域模板中，你可以添加任何 ASP.NET 控件，它是否自定义 Web 部件控件、 一个用户控件或现有的服务器控件。 请注意，此处使用标签控件中，并向，只需添加静态文本。 当你在常规服务器控件置于**WebPartZone**区域，ASP.NET 将该控件视为 Web 部件控件在运行时，这样在控件上的 Web 部件功能。
 
 **若要创建主区域的内容**
 
 1. 在**设计**视图中，将**标签**控件从**标准**到该区域的内容区域工具箱选项卡其**ID**属性设置为 MainZone。
-2. 切换到**源**视图。 请注意， **&lt;方法&gt;**已添加元素包装**标签**MainZone 中的控件。
-3. 添加一个名为特性**标题**到 **&lt;asp： 标签&gt;**元素，并将其值设置为内容。 删除文本 ="Label"属性从 **&lt;asp： 标签&gt;**元素。 开始标记和结束标记之间 **&lt;asp： 标签&gt;**元素，如添加一些文本**欢迎访问主页**一对大之间 **&lt;h2&gt;** 元素标记。 你的代码应如下所示。 
+2. 切换到**源**视图。 请注意，&lt;方法&gt;已添加元素包装**标签**MainZone 中的控件。
+3. 添加一个名为特性**标题**到&lt;asp： 标签&gt;元素，并将其值设置为内容。 删除文本 ="Label"属性从&lt;asp： 标签&gt;元素。 开始标记和结束标记之间&lt;asp： 标签&gt;元素，如添加一些文本**欢迎访问主页**一对大之间&lt;h2&gt;元素标记。 你的代码应如下所示。 
 
     [!code-aspx[Main](profiles-themes-and-web-parts/samples/sample21.aspx)]
 4. 保存该文件。
@@ -396,7 +396,7 @@ Web 部件控件集很广泛，但某些控制非常重要，因为它们所需�
 3. 将用户控件你创建的页面，SearchUserControl.ascx，拖动从**解决方案资源管理器**进入该区域其**ID**属性设置为 SidebarZone，并将其放在存在。
 4. 保存 WebPartsDemo.aspx 页。
 5. 切换到**源**视图。
-6. 内部 **&lt;asp: webpartzone&gt;**  SidebarZone，对你的用户控件的引用的正上方的元素添加 **&lt;asp： 标签&gt;**元素，其包含的链接，如下面的示例中所示。 此外，将添加**标题**到用户控件标签中，值为属性**搜索**，如所示。 
+6. 内部&lt;asp: webpartzone&gt; SidebarZone，对你的用户控件的引用的正上方的元素添加&lt;asp： 标签&gt;具有元素包含的链接，如下面的示例中所示。 此外，将添加**标题**到用户控件标签中，值为属性**搜索**，如所示。 
 
     [!code-aspx[Main](profiles-themes-and-web-parts/samples/sample23.aspx)]
 7. 保存并关闭文件。
@@ -417,7 +417,7 @@ Web 部件控件集很广泛，但某些控制非常重要，因为它们所需�
 
 Web 部件提供的用户将其从一个区域中拖动到另一个更改 Web 部件控件的布局的功能。 还允许用户用来移动**web 部件**到另一个区域从控件中的，你可以允许用户编辑控件，包括其外观、 布局和行为的各种特征。 Web 部件控件集提供的基本编辑功能**web 部件**控件。 尽管你不会在本演练中，你还可以创建允许用户编辑的功能的自定义编辑器控件**web 部件**控件。 与更改的位置**web 部件**控件中，编辑控件的属性依赖于 ASP.NET 个性化保存用户所做的更改。
 
-在演练本部分，添加用户若要编辑的任何的基本特征的能力**web 部件**页上的控件。 若要启用这些功能，你将添加另一个自定义用户控件到页上，连同 **&lt;asp: editorzone&gt;** 元素和两个编辑控件。
+在演练本部分，添加用户若要编辑的任何的基本特征的能力**web 部件**页上的控件。 若要启用这些功能，你将添加另一个自定义用户控件到页上，连同&lt;asp: editorzone&gt;元素和两个编辑控件。
 
 ### <a name="to-create-a-user-control-that-enables-changing-page-layout"></a>若要创建用户控件，可以更改页面布局
 
@@ -501,7 +501,7 @@ Web 部件提供的用户将其从一个区域中拖动到另一个更改 Web �
 4. 从**web 部件**部分的工具箱中，将 DeclarativeCatalogPart 控件拖动到的内容区域的**CatalogZone**控件。
 5. 单击中的右上角的箭头**DeclarativeCatalogPart**控件公开其任务菜单中，，然后选择**编辑模板**。
 6. 从**标准**部分的工具箱拖**FileUpload**控件和**日历**控制**WebPartsTemplate**部分**DeclarativeCatalogPart**控件。
-7. 切换到**源**视图。 检查的源代码**&lt;了&gt;**元素。 请注意， **DeclarativeCatalogPart**控件包含 **&lt;webpartstemplate&gt;** 你将能够将添加到你的页面的两个封装的服务器控件的元素从目录中。
+7. 切换到**源**视图。 检查的源代码&lt;了&gt;元素。 请注意， **DeclarativeCatalogPart**控件包含&lt;webpartstemplate&gt;你将能够从目录添加到页面的两个封装的服务器控件的元素。
 8. 添加**标题**到每个你添加到目录中，为每个标题中下面的代码示例使用显示的字符串值的控件的属性。 即使标题不是属性，但你可以正常情况下设置这些这两个服务器控件在设计时，当用户添加到这些控件**WebPartZone**区域从在运行时目录，它们的每个包装与**GenericWebPart**控件。 这可让其充当 Web 部件控件，因此它们将能以显示标题。   
   
  中包含的两个控件的代码**DeclarativeCatalogPart**控件的外观，如下所示。 
