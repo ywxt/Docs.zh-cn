@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: 01a804151ad813dbf47ab4b2415076a4e01bf1d9
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: bcfd20fcea1e683bcbef00a9e67bb28add4f23be
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 教程
 
@@ -52,9 +52,10 @@ ms.lasthandoff: 01/30/2018
 * [为本机移动应用创建后端 Web 服务](../mobile/native-mobile-backend.md)
 
 ## <a name="data-access-and-storage"></a>数据访问和存储
-* [通过 Visual Studio 开始使用 ASP.NET Core 和 Entity Framework Core](../data/ef-mvc/index.md)
-* [ASP.NET Core 和 EF Core - 新数据库](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
-* [ASP.NET Core 和 EF Core - 现有数据库](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)
+* [通过 Visual Studio 开始使用 Razor 页面和 EF Core](xref:data/ef-rp/intro)
+* [通过 Visual Studio 开始使用 ASP.NET Core MVC 和 EF Core](../data/ef-mvc/index.md)
+* [ASP.NET Core MVC 和 EF Core - 新数据库](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
+* [ASP.NET Core MVC 和 EF Core - 现有数据库](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)
 
 ## <a name="authentication-and-authorization"></a>身份验证和授权
 * [启用使用 Facebook、Google 和其他外部提供程序的身份验证](../security/authentication/social/index.md)
