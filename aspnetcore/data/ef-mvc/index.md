@@ -15,7 +15,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/03/2018
 ---
-# <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio"></a>ASP.NET Core MVC 和 Entity Framework Core 入门教程（使用 Visual Studio）
+# <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio"></a>ASP.NET Core MVC 和 Entity Framework Core 入门（使用 Visual Studio）
 
 [!INCLUDE[RP better than MVC](../../includes/RP-EF/rp-over-mvc.md)]
 
