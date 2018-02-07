@@ -23,38 +23,38 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="introducing-view-components"></a>视图组件简介
 
-新到 ASP.NET 核心 MVC 视图组件类似于分部视图，但它们是功能强大得多。 视图组件不使用模型绑定，并仅依赖于在调用到它时提供的数据。 视图组件：
+新的 ASP.NET 核心 MVC 视图组件类似于分部视图，但它们更强大。 视图组件不使用模型绑定，仅依赖于在调用到它时提供的数据。 视图组件：
 
 * 呈现一个块，而不是整个响应
 * 包括的相同问题分离和控制器和视图之间找到的可测试性优势
 * 可以具有参数和业务逻辑
 * 从布局页通常会对其进行调用
 
-视图组件旨在任意位置具有太过复杂，分部视图，如的可重用呈现逻辑：
+视图组件的目标是需要重复呈现但对于局部视图来说过于复杂的地方，比如：
 
 * 动态导航菜单
-* 标记云 （其中查询数据库）
+* 标签云 （查询数据库）
 * 登录面板
 * 购物车
 * 最近发布的文章
 * 典型的博客上的侧栏内容
-* 一个登录名面板，用于将每一页上呈现和显示在任一链接注销或登录，具体取决于日志中的用户状态
+* 登录面板，它会在每个页面显示并显示要注销或登录的链接，具体取决于用户的登录户状态
 
-视图组件由两部分组成： 类 (通常派生自[ViewComponent](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponent)) 并在结果返回 （通常视图）。 与控制器，一样视图组件可以是 POCO，但大多数开发人员将想要的方法和属性可用来利用派生自`ViewComponent`。
+视图组件由两部分组成： 类 (通常派生自[ViewComponent](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponent)) 和它返回的结果 （通常是一个视图）。 像控制器一样，视图组件可以是 POCO，但大多数开发人员都希望使用从`ViewComponent`派生的方法和属性。。
 
 ## <a name="creating-a-view-component"></a>创建视图组件
 
-本部分包含创建视图组件的高级别要求。 本文后面的部分，我们将检查每个步骤中详细信息，并创建视图组件。
+本部分包含创建视图组件的高级别要求。 本文后面的部分，我们将检查每个步骤中详细信息，并创建一个视图组件。
 
 ### <a name="the-view-component-class"></a>视图组件类
 
-可以通过以下任一创建视图组件类：
+可以通过以下任一方式创建视图组件类：
 
 * 派生自*ViewComponent*
 * 修饰具有的类`[ViewComponent]`属性，或从具有的类派生`[ViewComponent]`属性
-* 创建的类名称与后缀的结束位置*ViewComponent*
+* 创建一个类并且名称以*ViewComponent*后缀结尾
 
-与控制器一样，视图组件必须是公共的、 有非嵌套的和非抽象类。 视图组件名称是删除了"ViewComponent"后缀的类名称。 它还可以显式指定使用`ViewComponentAttribute.Name`属性。
+与控制器一样，视图组件必须是公共的、 非嵌套的和非抽象类。 视图组件名称是去掉了"ViewComponent"后缀的类名称。 它还可以显式指定使用`ViewComponentAttribute.Name`属性。
 
 视图组件类：
 
@@ -64,12 +64,12 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="view-component-methods"></a>视图组件方法
 
-视图组件来定义其逻辑中的`InvokeAsync`返回方法`IViewComponentResult`。 参数直接来自视图组件，不是从模型绑定的调用。 视图组件永远不会直接处理的请求。 通常情况下，视图组件初始化模型，并将其传递到视图，通过调用`View`方法。 总之，视图组件方法：
+视图组件在`InvokeAsync`方法中定义它的逻辑并返回`IViewComponentResult`。 参数直接来自视图组件，不是从模型绑定的调用。 视图组件从不会直接处理请求。 通常情况下，视图组件初始化模型，并将其传递到视图，通过调用`View`方法。 总之，视图组件方法：
 
-* 定义`InvokeAsync`返回的方法`IViewComponentResult`
+* 定义一个`InvokeAsync`方法并返回`IViewComponentResult`
 * 通常初始化模型并将其传递到视图，通过调用`ViewComponent``View`方法
 * 参数来自调用的方法中，不是 HTTP，没有任何模型绑定
-* 是直接为 HTTP 终结点不可访问，在调用这些 （通常在视图中） 在代码中。 视图组件永远不会处理请求
+* 是直接为 HTTP 终结点不可访问，在调用这些 （通常在视图中） 在代码中。 视图组件从不会处理请求
 * 在签名而不是当前 HTTP 请求中的任何详细上重载
 
 ### <a name="view-search-path"></a>视图搜索路径
@@ -81,7 +81,7 @@ ms.lasthandoff: 01/24/2018
 
 视图组件的默认视图名称是*默认*，这意味着你视图文件将通常命名为*Default.cshtml*。 创建视图组件结果时或在调用时，可以指定不同的视图名称`View`方法。
 
-我们建议您命名该视图文件*Default.cshtml*并用*视图/共享/组件/\<view_component_name > /\<view_name >*路径。 `PriorityList`此示例中使用的视图组件使用*Views/Shared/Components/PriorityList/Default.cshtml*视图组件视图。
+我们建议您命名该视图文件*Default.cshtml*并用*Views/Shared/Components/\<view_component_name > /\<view_name >*路径。 `PriorityList`此示例中使用的视图组件使用*Views/Shared/Components/PriorityList/Default.cshtml*视图组件视图。
 
 ## <a name="invoking-a-view-component"></a>调用视图组件
 
@@ -128,9 +128,9 @@ ms.lasthandoff: 01/24/2018
 
 在此示例中更高版本，`PriorityList`视图组件将成为`priority-list`。 视图组件的参数作为特性中 kebab 小写进行传递。
 
-### <a name="invoking-a-view-component-directly-from-a-controller"></a>调用视图组件直接从控制器
+### <a name="invoking-a-view-component-directly-from-a-controller"></a>直接从控制器调用视图组件
 
-视图组件通常调用从视图中，但你可以直接从控制器方法中调用它们。 视图组件未定义终结点类似控制器，你可以轻松地实现返回的内容的控制器操作`ViewComponentResult`。
+视图组件通常从视图中调用，但你可以直接从控制器方法中调用它们。 视图组件未定义终结点类似控制器，你可以轻松地实现返回的内容的控制器操作`ViewComponentResult`。
 
 在此示例中，直接从控制器中调用视图组件：
 
@@ -166,9 +166,9 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="create-the-view-component-razor-view"></a>创建视图组件 Razor 视图
 
-* 创建*视图/共享/组件*文件夹。 此文件夹**必须**命名为*组件*。
+* 创建*Views/Shared/Components*文件夹。 此文件夹**必须**命名为*组件*。
 
-* 创建*视图/共享/组件/PriorityList*文件夹。 此文件夹名称必须与视图组件类的名称或减后缀类的名称匹配 (如果我们遵循约定，并且使用*ViewComponent*中的类名称后缀)。 如果你使用`ViewComponent`属性，类名称需要匹配所指定的属性。
+* 创建*Views/Shared/Components/PriorityList*文件夹。 此文件夹名称必须与视图组件类的名称或减后缀类的名称匹配 (如果我们遵循约定，并且使用*ViewComponent*中的类名称后缀)。 如果你使用`ViewComponent`属性，类名称需要匹配所指定的属性。
 
 * 创建*Views/Shared/Components/PriorityList/Default.cshtml* Razor 视图：[!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Shared/Components/PriorityList/Default1.cshtml)]
     
@@ -194,7 +194,7 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="specifying-a-view-name"></a>指定的视图名称
 
-复杂视图组件可能需要指定在某些情况下的非默认视图。 下面的代码演示如何指定"PVC"视图从`InvokeAsync`方法。 更新`InvokeAsync`中的方法`PriorityListViewComponent`类。
+复杂视图组件在某些情况下可能需要指定非默认视图。 下面的代码演示了如何从`InvokeAsync`方法中指定"PVC"视图。 更新`InvokeAsync`中的方法`PriorityListViewComponent`类。
 
 [!code-csharp[Main](../../mvc/views/view-components/sample/ViewCompFinal/ViewComponents/PriorityListViewComponentFinal.cs?highlight=4,5,6,7,8,9&range=28-39)]
 
@@ -236,11 +236,11 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="avoiding-magic-strings"></a>避免神奇的字符串
 
-如果你想编译时间安全性，可以将硬编码视图组件名称替换类名称。 创建不带"ViewComponent"后缀的视图组件：
+如果你想编译时间安全性，可以使用类名替换硬编码视图组件名称。 创建不带"ViewComponent"后缀的视图组件：
 
 [!code-csharp[Main](../../mvc/views/view-components/sample/ViewCompFinal/ViewComponents/PriorityList.cs?highlight=10&range=5-35)]
 
-添加`using`语句与你 Razor 查看文件，并使用`nameof`运算符：
+添加`using`语句与你 Razor 视图文件，并使用`nameof`运算符：
 
 [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexNameof.cshtml?range=1-6,33-)]
 
