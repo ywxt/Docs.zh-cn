@@ -59,7 +59,7 @@ ASP.NET Core 请求管道包含一系列相继调用的请求委托，如下图�
 >
 > [HttpResponse.HasStarted](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.features.httpresponsefeature#Microsoft_AspNetCore_Http_Features_HttpResponseFeature_HasStarted) 是一个有用的提示，指示是否已发送标头和/或已写入正文。
 
-## <a name="ordering"></a>排序
+## <a name="ordering"></a>中间件排序
 
 向 `Configure` 方法添加中间件组件的顺序定义了针对请求调用这些组件的顺序，以及响应的相反顺序。 此排序对于安全性、性能和功能至关重要。
 
