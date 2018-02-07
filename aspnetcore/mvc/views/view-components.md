@@ -1,7 +1,7 @@
 ---
-title: "查看组件"
+title: "视图组件"
 author: rick-anderson
-description: "查看组件旨在任意位置必须可重用呈现逻辑。"
+description: "视图组件旨在任意位置必须可重用呈现逻辑。"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
@@ -15,22 +15,22 @@ ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
 ---
-# <a name="view-components"></a>查看组件
+# <a name="view-components"></a>视图组件
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
-## <a name="introducing-view-components"></a>查看组件简介
+## <a name="introducing-view-components"></a>视图组件简介
 
-新到 ASP.NET 核心 MVC 视图组件类似于分部视图，但它们是功能强大得多。 查看组件不使用模型绑定，并仅依赖于在调用到它时提供的数据。 视图组件：
+新到 ASP.NET 核心 MVC 视图组件类似于分部视图，但它们是功能强大得多。 视图组件不使用模型绑定，并仅依赖于在调用到它时提供的数据。 视图组件：
 
 * 呈现一个块，而不是整个响应
 * 包括的相同问题分离和控制器和视图之间找到的可测试性优势
 * 可以具有参数和业务逻辑
 * 从布局页通常会对其进行调用
 
-查看组件旨在任意位置具有太过复杂，分部视图，如的可重用呈现逻辑：
+视图组件旨在任意位置具有太过复杂，分部视图，如的可重用呈现逻辑：
 
 * 动态导航菜单
 * 标记云 （其中查询数据库）
@@ -54,7 +54,7 @@ ms.lasthandoff: 01/24/2018
 * 修饰具有的类`[ViewComponent]`属性，或从具有的类派生`[ViewComponent]`属性
 * 创建的类名称与后缀的结束位置*ViewComponent*
 
-与控制器，一样查看组件必须是公共的、 有非嵌套的和非抽象类。 视图组件名称是删除了"ViewComponent"后缀的类名称。 它还可以显式指定使用`ViewComponentAttribute.Name`属性。
+与控制器一样，视图组件必须是公共的、 有非嵌套的和非抽象类。 视图组件名称是删除了"ViewComponent"后缀的类名称。 它还可以显式指定使用`ViewComponentAttribute.Name`属性。
 
 视图组件类：
 
@@ -62,9 +62,9 @@ ms.lasthandoff: 01/24/2018
 
 * 在控制器生命周期，这意味着你无法使用不带一部分[筛选器](../controllers/filters.md)视图组件中
 
-### <a name="view-component-methods"></a>查看组件方法
+### <a name="view-component-methods"></a>视图组件方法
 
-视图组件来定义其逻辑中的`InvokeAsync`返回方法`IViewComponentResult`。 参数直接来自视图组件，不是从模型绑定的调用。 视图组件永远不会直接处理的请求。 通常情况下，视图组件初始化模型，并将其传递到视图，通过调用`View`方法。 总之，查看组件方法：
+视图组件来定义其逻辑中的`InvokeAsync`返回方法`IViewComponentResult`。 参数直接来自视图组件，不是从模型绑定的调用。 视图组件永远不会直接处理的请求。 通常情况下，视图组件初始化模型，并将其传递到视图，通过调用`View`方法。 总之，视图组件方法：
 
 * 定义`InvokeAsync`返回的方法`IViewComponentResult`
 * 通常初始化模型并将其传递到视图，通过调用`ViewComponent``View`方法
@@ -79,7 +79,7 @@ ms.lasthandoff: 01/24/2018
    * Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
    * Views/Shared/Components/\<view_component_name>/\<view_name>
 
-查看组件的默认视图名称是*默认*，这意味着你视图文件将通常命名为*Default.cshtml*。 创建视图组件结果时或在调用时，可以指定不同的视图名称`View`方法。
+视图组件的默认视图名称是*默认*，这意味着你视图文件将通常命名为*Default.cshtml*。 创建视图组件结果时或在调用时，可以指定不同的视图名称`View`方法。
 
 我们建议您命名该视图文件*Default.cshtml*并用*视图/共享/组件/\<view_component_name > /\<view_name >*路径。 `PriorityList`此示例中使用的视图组件使用*Views/Shared/Components/PriorityList/Default.cshtml*视图组件视图。
 
@@ -126,11 +126,11 @@ ms.lasthandoff: 01/24/2018
 
 [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexTagHelper.cshtml?range=37-38)]
 
-在此示例中更高版本，`PriorityList`视图组件将成为`priority-list`。 查看组件的参数作为特性中 kebab 小写进行传递。
+在此示例中更高版本，`PriorityList`视图组件将成为`priority-list`。 视图组件的参数作为特性中 kebab 小写进行传递。
 
 ### <a name="invoking-a-view-component-directly-from-a-controller"></a>调用视图组件直接从控制器
 
-查看组件通常调用从视图中，但你可以直接从控制器方法中调用它们。 查看组件未定义终结点类似控制器，你可以轻松地实现返回的内容的控制器操作`ViewComponentResult`。
+视图组件通常调用从视图中，但你可以直接从控制器方法中调用它们。 视图组件未定义终结点类似控制器，你可以轻松地实现返回的内容的控制器操作`ViewComponentResult`。
 
 在此示例中，直接从控制器中调用视图组件：
 
@@ -180,7 +180,7 @@ ms.lasthandoff: 01/24/2018
 
     [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFirst.cshtml?range=34-38)]
 
-标记`@await Component.InvokeAsync`显示调用查看组件的语法。 第一个参数是我们想要调用或调用组件的名称。 后续参数传递给该组件。 `InvokeAsync`可以采用任意数量的自变量。
+标记`@await Component.InvokeAsync`显示调用视图组件的语法。 第一个参数是我们想要调用或调用组件的名称。 后续参数传递给该组件。 `InvokeAsync`可以采用任意数量的自变量。
 
 测试应用程序。 下图显示 ToDo 列表和优先级的项：
 
