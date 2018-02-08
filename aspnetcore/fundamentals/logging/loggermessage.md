@@ -1,78 +1,78 @@
 ---
-title: "通过在 ASP.NET Core LoggerMessage 的高性能日志记录"
+title: "在 ASP.NET Core 中使用 LoggerMessage 的高性能日志记录"
 author: guardrex
-description: "了解如何使用 LoggerMessage 功能来创建可缓存于高性能日志记录方案需要较少的对象分配比记录器扩展方法的委托。"
-ms.author: riande
+description: "了解如何使用 LoggerMessage 功能（对于高性能日志记录方案，该功能比记录器扩展方法需要的对象分配少）创建可缓存的委托。"
 manager: wpickett
+ms.author: riande
 ms.date: 11/03/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/logging/loggermessage
-ms.openlocfilehash: defba75c6c9ea13d24af4cd8515d82d9e7cf9853
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.openlocfilehash: b155826b5047e88a79d9e339d7bca8885a79006d
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a><span data-ttu-id="4d82c-103">通过在 ASP.NET Core LoggerMessage 的高性能日志记录</span><span class="sxs-lookup"><span data-stu-id="4d82c-103">High-performance logging with LoggerMessage in ASP.NET Core</span></span>
+# <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a><span data-ttu-id="8bc87-103">在 ASP.NET Core 中使用 LoggerMessage 的高性能日志记录</span><span class="sxs-lookup"><span data-stu-id="8bc87-103">High-performance logging with LoggerMessage in ASP.NET Core</span></span>
 
-<span data-ttu-id="4d82c-104">作者：[Luke Latham](https://github.com/guardrex)</span><span class="sxs-lookup"><span data-stu-id="4d82c-104">By [Luke Latham](https://github.com/guardrex)</span></span>
+<span data-ttu-id="8bc87-104">作者：[Luke Latham](https://github.com/guardrex)</span><span class="sxs-lookup"><span data-stu-id="8bc87-104">By [Luke Latham](https://github.com/guardrex)</span></span>
 
-<span data-ttu-id="4d82c-105">[LoggerMessage](/dotnet/api/microsoft.extensions.logging.loggermessage)功能创建一个可缓存委托需要较少的对象分配，并减少计算开销比[记录器扩展方法](/dotnet/api/Microsoft.Extensions.Logging.LoggerExtensions)，如`LogInformation`， `LogDebug`，和`LogError`.</span><span class="sxs-lookup"><span data-stu-id="4d82c-105">[LoggerMessage](/dotnet/api/microsoft.extensions.logging.loggermessage) features create cacheable delegates that require fewer object allocations and reduced computational overhead than [logger extension methods](/dotnet/api/Microsoft.Extensions.Logging.LoggerExtensions), such as `LogInformation`, `LogDebug`, and `LogError`.</span></span> <span data-ttu-id="4d82c-106">对于高性能日志记录方案，使用`LoggerMessage`模式。</span><span class="sxs-lookup"><span data-stu-id="4d82c-106">For high-performance logging scenarios, use the `LoggerMessage` pattern.</span></span>
+<span data-ttu-id="8bc87-105">[LoggerMessage](/dotnet/api/microsoft.extensions.logging.loggermessage) 功能创建可缓存的委托，该功能比[记录器扩展方法](/dotnet/api/Microsoft.Extensions.Logging.LoggerExtensions)（例如 `LogInformation`、`LogDebug` 和 `LogError`）需要的对象分配和计算开销少。</span><span class="sxs-lookup"><span data-stu-id="8bc87-105">[LoggerMessage](/dotnet/api/microsoft.extensions.logging.loggermessage) features create cacheable delegates that require fewer object allocations and reduced computational overhead than [logger extension methods](/dotnet/api/Microsoft.Extensions.Logging.LoggerExtensions), such as `LogInformation`, `LogDebug`, and `LogError`.</span></span> <span data-ttu-id="8bc87-106">对于高性能日志记录方案，请使用 `LoggerMessage` 模式。</span><span class="sxs-lookup"><span data-stu-id="8bc87-106">For high-performance logging scenarios, use the `LoggerMessage` pattern.</span></span>
 
-<span data-ttu-id="4d82c-107">`LoggerMessage`提供了相对记录器扩展方法的以下性能优势：</span><span class="sxs-lookup"><span data-stu-id="4d82c-107">`LoggerMessage` provides the following performance advantages over Logger extension methods:</span></span>
+<span data-ttu-id="8bc87-107">与记录器扩展方法相比，`LoggerMessage` 具有以下性能优势：</span><span class="sxs-lookup"><span data-stu-id="8bc87-107">`LoggerMessage` provides the following performance advantages over Logger extension methods:</span></span>
 
-* <span data-ttu-id="4d82c-108">记录器扩展方法要求使用"装箱"（转换） 的值类型，如`int`，到`object`。</span><span class="sxs-lookup"><span data-stu-id="4d82c-108">Logger extension methods require "boxing" (converting) value types, such as `int`, into `object`.</span></span> <span data-ttu-id="4d82c-109">`LoggerMessage`模式通过使用静态来避免装箱`Action`字段和具有强类型参数的扩展方法。</span><span class="sxs-lookup"><span data-stu-id="4d82c-109">The `LoggerMessage` pattern avoids boxing by using static `Action` fields and extension methods with strongly-typed parameters.</span></span>
-* <span data-ttu-id="4d82c-110">记录器扩展方法必须分析每次写入日志消息的消息模板 （命名的格式字符串）。</span><span class="sxs-lookup"><span data-stu-id="4d82c-110">Logger extension methods must parse the message template (named format string) every time a log message is written.</span></span> <span data-ttu-id="4d82c-111">`LoggerMessage`只需一次分析模板时定义该消息。</span><span class="sxs-lookup"><span data-stu-id="4d82c-111">`LoggerMessage` only requires parsing a template once when the message is defined.</span></span>
+* <span data-ttu-id="8bc87-108">记录器扩展方法需要将值类型（例如 `int`）“装箱”（转换）到 `object` 中。</span><span class="sxs-lookup"><span data-stu-id="8bc87-108">Logger extension methods require "boxing" (converting) value types, such as `int`, into `object`.</span></span> <span data-ttu-id="8bc87-109">`LoggerMessage` 模式使用带强类型参数的静态 `Action` 字段和扩展方法来避免装箱。</span><span class="sxs-lookup"><span data-stu-id="8bc87-109">The `LoggerMessage` pattern avoids boxing by using static `Action` fields and extension methods with strongly-typed parameters.</span></span>
+* <span data-ttu-id="8bc87-110">记录器扩展方法每次写入日志消息时必须分析消息模板（命名的格式字符串）。</span><span class="sxs-lookup"><span data-stu-id="8bc87-110">Logger extension methods must parse the message template (named format string) every time a log message is written.</span></span> <span data-ttu-id="8bc87-111">如果已定义消息，那么 `LoggerMessage` 只需分析一次模板即可。</span><span class="sxs-lookup"><span data-stu-id="8bc87-111">`LoggerMessage` only requires parsing a template once when the message is defined.</span></span>
 
-<span data-ttu-id="4d82c-112">[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/loggermessage/sample/)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）</span><span class="sxs-lookup"><span data-stu-id="4d82c-112">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/loggermessage/sample/) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
+<span data-ttu-id="8bc87-112">[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/loggermessage/sample/)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）</span><span class="sxs-lookup"><span data-stu-id="8bc87-112">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/loggermessage/sample/) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
 
-<span data-ttu-id="4d82c-113">示例应用演示`LoggerMessage`功能跟踪系统的基本引号。</span><span class="sxs-lookup"><span data-stu-id="4d82c-113">The sample app demonstrates `LoggerMessage` features with a basic quote tracking system.</span></span> <span data-ttu-id="4d82c-114">应用程序添加和删除使用内存中数据库的引号。</span><span class="sxs-lookup"><span data-stu-id="4d82c-114">The app adds and deletes quotes using an in-memory database.</span></span> <span data-ttu-id="4d82c-115">这些操作出现时，使用生成日志消息`LoggerMessage`模式。</span><span class="sxs-lookup"><span data-stu-id="4d82c-115">As these operations occur, log messages are generated using the `LoggerMessage` pattern.</span></span>
+<span data-ttu-id="8bc87-113">此示例应用通过基本引号跟踪系统演示 `LoggerMessage` 功能。</span><span class="sxs-lookup"><span data-stu-id="8bc87-113">The sample app demonstrates `LoggerMessage` features with a basic quote tracking system.</span></span> <span data-ttu-id="8bc87-114">此应用使用内存中数据库添加和删除引号。</span><span class="sxs-lookup"><span data-stu-id="8bc87-114">The app adds and deletes quotes using an in-memory database.</span></span> <span data-ttu-id="8bc87-115">发生这些操作时，通过 `LoggerMessage` 模式生成日志消息。</span><span class="sxs-lookup"><span data-stu-id="8bc87-115">As these operations occur, log messages are generated using the `LoggerMessage` pattern.</span></span>
 
-## <a name="loggermessagedefine"></a><span data-ttu-id="4d82c-116">LoggerMessage.Define</span><span class="sxs-lookup"><span data-stu-id="4d82c-116">LoggerMessage.Define</span></span>
+## <a name="loggermessagedefine"></a><span data-ttu-id="8bc87-116">LoggerMessage.Define</span><span class="sxs-lookup"><span data-stu-id="8bc87-116">LoggerMessage.Define</span></span>
 
-<span data-ttu-id="4d82c-117">[定义 （LogLevel，EventId，字符串）](/dotnet/api/microsoft.extensions.logging.loggermessage.define)创建`Action`日志记录消息的委托。</span><span class="sxs-lookup"><span data-stu-id="4d82c-117">[Define(LogLevel, EventId, String)](/dotnet/api/microsoft.extensions.logging.loggermessage.define) creates an `Action` delegate for logging a message.</span></span> <span data-ttu-id="4d82c-118">`Define`重载允许将最多六个类型参数传递给命名的格式字符串 （模板）。</span><span class="sxs-lookup"><span data-stu-id="4d82c-118">`Define` overloads permit passing up to six type parameters to a named format string (template).</span></span>
+<span data-ttu-id="8bc87-117">[Define（LogLevel、EventId、字符串）](/dotnet/api/microsoft.extensions.logging.loggermessage.define)创建用于记录消息的 `Action` 委托。</span><span class="sxs-lookup"><span data-stu-id="8bc87-117">[Define(LogLevel, EventId, String)](/dotnet/api/microsoft.extensions.logging.loggermessage.define) creates an `Action` delegate for logging a message.</span></span> <span data-ttu-id="8bc87-118">`Define` 重载允许向命名的格式字符串（模板）传递最多六个类型参数。</span><span class="sxs-lookup"><span data-stu-id="8bc87-118">`Define` overloads permit passing up to six type parameters to a named format string (template).</span></span>
 
-## <a name="loggermessagedefinescope"></a><span data-ttu-id="4d82c-119">LoggerMessage.DefineScope</span><span class="sxs-lookup"><span data-stu-id="4d82c-119">LoggerMessage.DefineScope</span></span>
+## <a name="loggermessagedefinescope"></a><span data-ttu-id="8bc87-119">LoggerMessage.DefineScope</span><span class="sxs-lookup"><span data-stu-id="8bc87-119">LoggerMessage.DefineScope</span></span>
 
-<span data-ttu-id="4d82c-120">[DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope)创建`Func`定义的委托[日志范围](xref:fundamentals/logging/index#log-scopes)。</span><span class="sxs-lookup"><span data-stu-id="4d82c-120">[DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope) creates a `Func` delegate for defining a [log scope](xref:fundamentals/logging/index#log-scopes).</span></span> <span data-ttu-id="4d82c-121">`DefineScope`重载允许将最多三个类型参数传递给命名的格式字符串 （模板）。</span><span class="sxs-lookup"><span data-stu-id="4d82c-121">`DefineScope` overloads permit passing up to three type parameters to a named format string (template).</span></span>
+<span data-ttu-id="8bc87-120">[DefineScope（字符串）](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope)创建一个用于定义[日志作用域](xref:fundamentals/logging/index#log-scopes)的 `Func` 委托。</span><span class="sxs-lookup"><span data-stu-id="8bc87-120">[DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope) creates a `Func` delegate for defining a [log scope](xref:fundamentals/logging/index#log-scopes).</span></span> <span data-ttu-id="8bc87-121">`DefineScope` 重载允许向命名的格式字符串（模板）传递最多三个类型参数。</span><span class="sxs-lookup"><span data-stu-id="8bc87-121">`DefineScope` overloads permit passing up to three type parameters to a named format string (template).</span></span>
 
-## <a name="message-template-named-format-string"></a><span data-ttu-id="4d82c-122">消息模板 （名为格式字符串）</span><span class="sxs-lookup"><span data-stu-id="4d82c-122">Message template (named format string)</span></span>
+## <a name="message-template-named-format-string"></a><span data-ttu-id="8bc87-122">消息模板（命名的格式字符串）</span><span class="sxs-lookup"><span data-stu-id="8bc87-122">Message template (named format string)</span></span>
 
-<span data-ttu-id="4d82c-123">到提供的字符串`Define`和`DefineScope`方法是一个模板，而不相比内, 插的字符串。</span><span class="sxs-lookup"><span data-stu-id="4d82c-123">The string provided to the `Define` and `DefineScope` methods is a template and not an interpolated string.</span></span> <span data-ttu-id="4d82c-124">占位符将填充的类型指定的顺序。</span><span class="sxs-lookup"><span data-stu-id="4d82c-124">Placeholders are filled in the order that the types are specified.</span></span> <span data-ttu-id="4d82c-125">在模板中的占位符名称应为在模板具说明性且更一致。</span><span class="sxs-lookup"><span data-stu-id="4d82c-125">Placeholder names in the template should be descriptive and consistent across templates.</span></span> <span data-ttu-id="4d82c-126">用作结构化的日志数据中的属性名称。</span><span class="sxs-lookup"><span data-stu-id="4d82c-126">They serve as property names within structured log data.</span></span> <span data-ttu-id="4d82c-127">我们建议[Pascal 大小写](/dotnet/standard/design-guidelines/capitalization-conventions)的占位符名称。</span><span class="sxs-lookup"><span data-stu-id="4d82c-127">We recommend [Pascal casing](/dotnet/standard/design-guidelines/capitalization-conventions) for placeholder names.</span></span> <span data-ttu-id="4d82c-128">例如， `{Count}`， `{FirstName}`。</span><span class="sxs-lookup"><span data-stu-id="4d82c-128">For example, `{Count}`, `{FirstName}`.</span></span>
+<span data-ttu-id="8bc87-123">提供给 `Define` 和 `DefineScope` 方法的字符串是一个模板，而不是内插字符串。</span><span class="sxs-lookup"><span data-stu-id="8bc87-123">The string provided to the `Define` and `DefineScope` methods is a template and not an interpolated string.</span></span> <span data-ttu-id="8bc87-124">占位符按照指定类型的顺序填充。</span><span class="sxs-lookup"><span data-stu-id="8bc87-124">Placeholders are filled in the order that the types are specified.</span></span> <span data-ttu-id="8bc87-125">模板中的占位符名称在各个模板中应当具备描述性和一致性。</span><span class="sxs-lookup"><span data-stu-id="8bc87-125">Placeholder names in the template should be descriptive and consistent across templates.</span></span> <span data-ttu-id="8bc87-126">它们在结构化的日志数据中充当属性名称。</span><span class="sxs-lookup"><span data-stu-id="8bc87-126">They serve as property names within structured log data.</span></span> <span data-ttu-id="8bc87-127">对于占位符名称，建议使用[帕斯卡拼写法](/dotnet/standard/design-guidelines/capitalization-conventions)。</span><span class="sxs-lookup"><span data-stu-id="8bc87-127">We recommend [Pascal casing](/dotnet/standard/design-guidelines/capitalization-conventions) for placeholder names.</span></span> <span data-ttu-id="8bc87-128">例如：`{Count}`、`{FirstName}`。</span><span class="sxs-lookup"><span data-stu-id="8bc87-128">For example, `{Count}`, `{FirstName}`.</span></span>
 
-## <a name="implementing-loggermessagedefine"></a><span data-ttu-id="4d82c-129">实现 LoggerMessage.Define</span><span class="sxs-lookup"><span data-stu-id="4d82c-129">Implementing LoggerMessage.Define</span></span>
+## <a name="implementing-loggermessagedefine"></a><span data-ttu-id="8bc87-129">实现 LoggerMessage.Define</span><span class="sxs-lookup"><span data-stu-id="8bc87-129">Implementing LoggerMessage.Define</span></span>
 
-<span data-ttu-id="4d82c-130">每条日志消息是`Action`中创建的某个静态字段保存`LoggerMessage.Define`。</span><span class="sxs-lookup"><span data-stu-id="4d82c-130">Each log message is an `Action` held in a static field created by `LoggerMessage.Define`.</span></span> <span data-ttu-id="4d82c-131">例如，示例应用程序创建一个字段，以描述索引页 GET 请求的日志消息 (*Internal/LoggerExtensions.cs*):</span><span class="sxs-lookup"><span data-stu-id="4d82c-131">For example, the sample app creates a field to describe a log message for a GET request for the Index page (*Internal/LoggerExtensions.cs*):</span></span>
+<span data-ttu-id="8bc87-130">每条日志消息都是一个 `Action`，保存在由 `LoggerMessage.Define` 创建的静态字段中。</span><span class="sxs-lookup"><span data-stu-id="8bc87-130">Each log message is an `Action` held in a static field created by `LoggerMessage.Define`.</span></span> <span data-ttu-id="8bc87-131">例如，示例应用创建一个字段来为索引页 (Internal/LoggerExtensions.cs) 描述 GET 请求的日志消息：</span><span class="sxs-lookup"><span data-stu-id="8bc87-131">For example, the sample app creates a field to describe a log message for a GET request for the Index page (*Internal/LoggerExtensions.cs*):</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet1)]
 
-<span data-ttu-id="4d82c-132">有关`Action`，指定：</span><span class="sxs-lookup"><span data-stu-id="4d82c-132">For the `Action`, specify:</span></span>
+<span data-ttu-id="8bc87-132">对于 `Action`，指定：</span><span class="sxs-lookup"><span data-stu-id="8bc87-132">For the `Action`, specify:</span></span>
 
-* <span data-ttu-id="4d82c-133">日志级别。</span><span class="sxs-lookup"><span data-stu-id="4d82c-133">The log level.</span></span>
-* <span data-ttu-id="4d82c-134">唯一的事件标识符 ([EventId](/dotnet/api/microsoft.extensions.logging.eventid)) 替换为静态的扩展方法的名称。</span><span class="sxs-lookup"><span data-stu-id="4d82c-134">A unique event identifier ([EventId](/dotnet/api/microsoft.extensions.logging.eventid)) with the name of the static extension method.</span></span>
-* <span data-ttu-id="4d82c-135">消息模板 （名为格式字符串）。</span><span class="sxs-lookup"><span data-stu-id="4d82c-135">The message template (named format string).</span></span> 
+* <span data-ttu-id="8bc87-133">日志级别。</span><span class="sxs-lookup"><span data-stu-id="8bc87-133">The log level.</span></span>
+* <span data-ttu-id="8bc87-134">具有静态扩展方法名称的唯一事件标识符 ([EventId](/dotnet/api/microsoft.extensions.logging.eventid))。</span><span class="sxs-lookup"><span data-stu-id="8bc87-134">A unique event identifier ([EventId](/dotnet/api/microsoft.extensions.logging.eventid)) with the name of the static extension method.</span></span>
+* <span data-ttu-id="8bc87-135">消息模板（命名的格式字符串）。</span><span class="sxs-lookup"><span data-stu-id="8bc87-135">The message template (named format string).</span></span> 
 
-<span data-ttu-id="4d82c-136">示例应用程序集的索引页的请求:</span><span class="sxs-lookup"><span data-stu-id="4d82c-136">A request for the Index page of the sample app sets the:</span></span>
+<span data-ttu-id="8bc87-136">对示例应用的索引页的请求设置：</span><span class="sxs-lookup"><span data-stu-id="8bc87-136">A request for the Index page of the sample app sets the:</span></span>
 
-* <span data-ttu-id="4d82c-137">日志级别设置为`Information`。</span><span class="sxs-lookup"><span data-stu-id="4d82c-137">Log level to `Information`.</span></span>
-* <span data-ttu-id="4d82c-138">事件 id`1`同名的`IndexPageRequested`方法。</span><span class="sxs-lookup"><span data-stu-id="4d82c-138">Event id to `1` with the name of the `IndexPageRequested` method.</span></span>
-* <span data-ttu-id="4d82c-139">消息模板 （名为格式字符串） 为字符串。</span><span class="sxs-lookup"><span data-stu-id="4d82c-139">Message template (named format string) to a string.</span></span>
+* <span data-ttu-id="8bc87-137">将日志级别设置为 `Information`。</span><span class="sxs-lookup"><span data-stu-id="8bc87-137">Log level to `Information`.</span></span>
+* <span data-ttu-id="8bc87-138">将事件 ID 设置为具有 `IndexPageRequested` 方法名称的 `1`。</span><span class="sxs-lookup"><span data-stu-id="8bc87-138">Event id to `1` with the name of the `IndexPageRequested` method.</span></span>
+* <span data-ttu-id="8bc87-139">将消息模板（命名的格式字符串）设置为字符串。</span><span class="sxs-lookup"><span data-stu-id="8bc87-139">Message template (named format string) to a string.</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet5)]
 
-<span data-ttu-id="4d82c-140">提供使用事件 id 来丰富日志记录时，结构化日志记录存储区可能使用的事件名称。</span><span class="sxs-lookup"><span data-stu-id="4d82c-140">Structured logging stores may use the event name when it's supplied with the event id to enrich logging.</span></span> <span data-ttu-id="4d82c-141">例如， [Serilog](https://github.com/serilog/serilog-extensions-logging)使用事件名称。</span><span class="sxs-lookup"><span data-stu-id="4d82c-141">For example, [Serilog](https://github.com/serilog/serilog-extensions-logging) uses the event name.</span></span>
+<span data-ttu-id="8bc87-140">结构化日志记录存储可以使用事件名称（当它获得事件 ID 时）来丰富日志记录。</span><span class="sxs-lookup"><span data-stu-id="8bc87-140">Structured logging stores may use the event name when it's supplied with the event id to enrich logging.</span></span> <span data-ttu-id="8bc87-141">例如，[Serilog](https://github.com/serilog/serilog-extensions-logging) 使用该事件名称。</span><span class="sxs-lookup"><span data-stu-id="8bc87-141">For example, [Serilog](https://github.com/serilog/serilog-extensions-logging) uses the event name.</span></span>
 
-<span data-ttu-id="4d82c-142">`Action`通过强类型扩展方法调用。</span><span class="sxs-lookup"><span data-stu-id="4d82c-142">The `Action` is invoked through a strongly-typed extension method.</span></span> <span data-ttu-id="4d82c-143">`IndexPageRequested`方法的示例应用中记录为索引页 GET 请求消息：</span><span class="sxs-lookup"><span data-stu-id="4d82c-143">The `IndexPageRequested` method logs a message for an Index page GET request in the sample app:</span></span>
+<span data-ttu-id="8bc87-142">通过强类型扩展方法调用 `Action`。</span><span class="sxs-lookup"><span data-stu-id="8bc87-142">The `Action` is invoked through a strongly-typed extension method.</span></span> <span data-ttu-id="8bc87-143">`IndexPageRequested` 方法在示例应用中记录索引页 GET 请求的消息：</span><span class="sxs-lookup"><span data-stu-id="8bc87-143">The `IndexPageRequested` method logs a message for an Index page GET request in the sample app:</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet9)]
 
-<span data-ttu-id="4d82c-144">`IndexPageRequested`在中记录器上调用`OnGetAsync`中的方法*Pages/Index.cshtml.cs*:</span><span class="sxs-lookup"><span data-stu-id="4d82c-144">`IndexPageRequested` is called on the logger in the `OnGetAsync` method in *Pages/Index.cshtml.cs*:</span></span>
+<span data-ttu-id="8bc87-144">在 Pages/Index.cshtml.cs 的 `OnGetAsync` 方法中，在记录器上调用 `IndexPageRequested`：</span><span class="sxs-lookup"><span data-stu-id="8bc87-144">`IndexPageRequested` is called on the logger in the `OnGetAsync` method in *Pages/Index.cshtml.cs*:</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=3)]
 
-<span data-ttu-id="4d82c-145">检查应用程序的控制台输出：</span><span class="sxs-lookup"><span data-stu-id="4d82c-145">Inspect the app's console output:</span></span>
+<span data-ttu-id="8bc87-145">检查应用的控制台输出：</span><span class="sxs-lookup"><span data-stu-id="8bc87-145">Inspect the app's console output:</span></span>
 
 ```console
 info: LoggerMessageSample.Pages.IndexModel[1]
@@ -80,23 +80,23 @@ info: LoggerMessageSample.Pages.IndexModel[1]
       GET request for Index page
 ```
 
-<span data-ttu-id="4d82c-146">若要将参数传递给一条日志消息，请创建静态字段时定义最多六个类型。</span><span class="sxs-lookup"><span data-stu-id="4d82c-146">To pass parameters to a log message, define up to six types when creating the static field.</span></span> <span data-ttu-id="4d82c-147">当通过定义添加引号示例应用程序日志，string`string`键入`Action`字段：</span><span class="sxs-lookup"><span data-stu-id="4d82c-147">The sample app logs a string when adding a quote by defining a `string` type for the `Action` field:</span></span>
+<span data-ttu-id="8bc87-146">要将参数传递给日志消息，创建静态字段时最多定义六种类型。</span><span class="sxs-lookup"><span data-stu-id="8bc87-146">To pass parameters to a log message, define up to six types when creating the static field.</span></span> <span data-ttu-id="8bc87-147">通过为 `Action` 字段定义 `string` 类型来添加引号时，示例应用会记录一个字符串：</span><span class="sxs-lookup"><span data-stu-id="8bc87-147">The sample app logs a string when adding a quote by defining a `string` type for the `Action` field:</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet2)]
 
-<span data-ttu-id="4d82c-148">该委托的日志消息模板提供的类型从接收其占位符值。</span><span class="sxs-lookup"><span data-stu-id="4d82c-148">The delegate's log message template receives its placeholder values from the types provided.</span></span> <span data-ttu-id="4d82c-149">示例应用程序定义委托的添加引号参数所在的引号`string`:</span><span class="sxs-lookup"><span data-stu-id="4d82c-149">The sample app defines a delegate for adding a quote where the quote parameter is a `string`:</span></span>
+<span data-ttu-id="8bc87-148">委托的日志消息模板从提供的类型接收其占位符值。</span><span class="sxs-lookup"><span data-stu-id="8bc87-148">The delegate's log message template receives its placeholder values from the types provided.</span></span> <span data-ttu-id="8bc87-149">示例应用定义一个委托，用于在 quote 参数是 `string` 的位置添加引号：</span><span class="sxs-lookup"><span data-stu-id="8bc87-149">The sample app defines a delegate for adding a quote where the quote parameter is a `string`:</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet6)]
 
-<span data-ttu-id="4d82c-150">用于添加引号、 静态的扩展方法`QuoteAdded`、 接收报价自变量值并将其传递给`Action`委托：</span><span class="sxs-lookup"><span data-stu-id="4d82c-150">The static extension method for adding a quote, `QuoteAdded`, receives the quote argument value and passes it to the `Action` delegate:</span></span>
+<span data-ttu-id="8bc87-150">用于添加引号的静态扩展方法 `QuoteAdded` 接收 quote 参数值并将其传递给 `Action` 委托：</span><span class="sxs-lookup"><span data-stu-id="8bc87-150">The static extension method for adding a quote, `QuoteAdded`, receives the quote argument value and passes it to the `Action` delegate:</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet10)]
 
-<span data-ttu-id="4d82c-151">索引页的代码隐藏文件中 (*Pages/Index.cshtml.cs*)，`QuoteAdded`调用来记录消息：</span><span class="sxs-lookup"><span data-stu-id="4d82c-151">In the Index page's code-behind file (*Pages/Index.cshtml.cs*), `QuoteAdded` is called to log the message:</span></span>
+<span data-ttu-id="8bc87-151">在索引页的页面模型 (Pages/Index.cshtml.cs) 中，调用 `QuoteAdded` 来记录消息：</span><span class="sxs-lookup"><span data-stu-id="8bc87-151">In the Index page's page model (*Pages/Index.cshtml.cs*), `QuoteAdded` is called to log the message:</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet3&highlight=6)]
 
-<span data-ttu-id="4d82c-152">检查应用程序的控制台输出：</span><span class="sxs-lookup"><span data-stu-id="4d82c-152">Inspect the app's console output:</span></span>
+<span data-ttu-id="8bc87-152">检查应用的控制台输出：</span><span class="sxs-lookup"><span data-stu-id="8bc87-152">Inspect the app's console output:</span></span>
 
 ```console
 info: LoggerMessageSample.Pages.IndexModel[2]
@@ -104,21 +104,21 @@ info: LoggerMessageSample.Pages.IndexModel[2]
       Quote added (Quote = 'You can avoid reality, but you cannot avoid the consequences of avoiding reality. - Ayn Rand')
 ```
 
-<span data-ttu-id="4d82c-153">本示例应用程序实现`try` &ndash; `catch`引号删除模式。</span><span class="sxs-lookup"><span data-stu-id="4d82c-153">The sample app implements a `try`&ndash;`catch` pattern for quote deletion.</span></span> <span data-ttu-id="4d82c-154">一条信息性消息只记录成功的删除操作。</span><span class="sxs-lookup"><span data-stu-id="4d82c-154">An informational message is logged for a successful delete operation.</span></span> <span data-ttu-id="4d82c-155">引发异常时，将删除操作的记录一条错误消息。</span><span class="sxs-lookup"><span data-stu-id="4d82c-155">An error message is logged for a delete operation when an exception is thrown.</span></span> <span data-ttu-id="4d82c-156">日志消息的不成功，则删除操作包括异常堆栈跟踪 (*Internal/LoggerExtensions.cs*):</span><span class="sxs-lookup"><span data-stu-id="4d82c-156">The log message for the unsuccessful delete operation includes the exception stack trace (*Internal/LoggerExtensions.cs*):</span></span>
+<span data-ttu-id="8bc87-153">本示例应用实现用于删除引号的 `try`&ndash;`catch` 模式。</span><span class="sxs-lookup"><span data-stu-id="8bc87-153">The sample app implements a `try`&ndash;`catch` pattern for quote deletion.</span></span> <span data-ttu-id="8bc87-154">为成功的删除操作记录提示性信息。</span><span class="sxs-lookup"><span data-stu-id="8bc87-154">An informational message is logged for a successful delete operation.</span></span> <span data-ttu-id="8bc87-155">引发异常时，为删除操作记录错误消息。</span><span class="sxs-lookup"><span data-stu-id="8bc87-155">An error message is logged for a delete operation when an exception is thrown.</span></span> <span data-ttu-id="8bc87-156">针对未成功的删除操作，日志消息包括异常堆栈跟踪 (Internal/LoggerExtensions.cs)：</span><span class="sxs-lookup"><span data-stu-id="8bc87-156">The log message for the unsuccessful delete operation includes the exception stack trace (*Internal/LoggerExtensions.cs*):</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet3)]
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet7)]
 
-<span data-ttu-id="4d82c-157">请注意如何将异常传递给该委托`QuoteDeleteFailed`:</span><span class="sxs-lookup"><span data-stu-id="4d82c-157">Note how the exception is passed to the delegate in `QuoteDeleteFailed`:</span></span>
+<span data-ttu-id="8bc87-157">请注意异常如何传递到 `QuoteDeleteFailed` 中的委托：</span><span class="sxs-lookup"><span data-stu-id="8bc87-157">Note how the exception is passed to the delegate in `QuoteDeleteFailed`:</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet11)]
 
-<span data-ttu-id="4d82c-158">索引页代码隐藏文件中，成功引号删除调用`QuoteDeleted`记录器方法。</span><span class="sxs-lookup"><span data-stu-id="4d82c-158">In the Index page code-behind, a successful quote deletion calls the `QuoteDeleted` method on the logger.</span></span> <span data-ttu-id="4d82c-159">当为删除，找不到有引号`ArgumentNullException`引发。</span><span class="sxs-lookup"><span data-stu-id="4d82c-159">When a quote isn't found for deletion, an `ArgumentNullException` is thrown.</span></span> <span data-ttu-id="4d82c-160">通过捕获异常`try` &ndash; `catch`语句，并通过调用记录`QuoteDeleteFailed`方法中记录器`catch`块 (*Pages/Index.cshtml.cs*):</span><span class="sxs-lookup"><span data-stu-id="4d82c-160">The exception is trapped by the `try`&ndash;`catch` statement and logged by calling the `QuoteDeleteFailed` method on the logger in the `catch` block (*Pages/Index.cshtml.cs*):</span></span>
+<span data-ttu-id="8bc87-158">在索引页的页面模型中，成功删除引号时会在记录器上调用 `QuoteDeleted` 方法。</span><span class="sxs-lookup"><span data-stu-id="8bc87-158">In the page model for the Index page, a successful quote deletion calls the `QuoteDeleted` method on the logger.</span></span> <span data-ttu-id="8bc87-159">如果找不到要删除的引号，则会引发 `ArgumentNullException`。</span><span class="sxs-lookup"><span data-stu-id="8bc87-159">When a quote isn't found for deletion, an `ArgumentNullException` is thrown.</span></span> <span data-ttu-id="8bc87-160">通过 `try`&ndash;`catch` 语句捕获异常，并在 `catch` 块 (Pages/Index.cshtml.cs) 中调用记录器上的 `QuoteDeleteFailed` 方法来记录异常：</span><span class="sxs-lookup"><span data-stu-id="8bc87-160">The exception is trapped by the `try`&ndash;`catch` statement and logged by calling the `QuoteDeleteFailed` method on the logger in the `catch` block (*Pages/Index.cshtml.cs*):</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet5&highlight=14,18)]
 
-<span data-ttu-id="4d82c-161">在成功删除引号，检查应用程序的控制台输出：</span><span class="sxs-lookup"><span data-stu-id="4d82c-161">When a quote is successfully deleted, inspect the app's console output:</span></span>
+<span data-ttu-id="8bc87-161">成功删除引号时，检查应用的控制台输出：</span><span class="sxs-lookup"><span data-stu-id="8bc87-161">When a quote is successfully deleted, inspect the app's console output:</span></span>
 
 ```console
 info: LoggerMessageSample.Pages.IndexModel[4]
@@ -126,7 +126,7 @@ info: LoggerMessageSample.Pages.IndexModel[4]
       Quote deleted (Quote = 'You can avoid reality, but you cannot avoid the consequences of avoiding reality. - Ayn Rand' Id = 1)
 ```
 
-<span data-ttu-id="4d82c-162">当引号删除失败时，检查应用程序的控制台输出。</span><span class="sxs-lookup"><span data-stu-id="4d82c-162">When quote deletion fails, inspect the app's console output.</span></span> <span data-ttu-id="4d82c-163">请注意，日志消息中包含的异常：</span><span class="sxs-lookup"><span data-stu-id="4d82c-163">Note that the exception is included in the log message:</span></span>
+<span data-ttu-id="8bc87-162">引号删除失败时，检查应用的控制台输出。</span><span class="sxs-lookup"><span data-stu-id="8bc87-162">When quote deletion fails, inspect the app's console output.</span></span> <span data-ttu-id="8bc87-163">请注意，异常包括在日志消息中：</span><span class="sxs-lookup"><span data-stu-id="8bc87-163">Note that the exception is included in the log message:</span></span>
 
 ```console
 fail: LoggerMessageSample.Pages.IndexModel[5]
@@ -141,37 +141,37 @@ Parameter name: entity
       <PATH>\sample\Pages\Index.cshtml.cs:line 87
 ```
 
-## <a name="implementing-loggermessagedefinescope"></a><span data-ttu-id="4d82c-164">实现 LoggerMessage.DefineScope</span><span class="sxs-lookup"><span data-stu-id="4d82c-164">Implementing LoggerMessage.DefineScope</span></span>
+## <a name="implementing-loggermessagedefinescope"></a><span data-ttu-id="8bc87-164">实现 LoggerMessage.DefineScope</span><span class="sxs-lookup"><span data-stu-id="8bc87-164">Implementing LoggerMessage.DefineScope</span></span>
 
-<span data-ttu-id="4d82c-165">定义[日志范围](xref:fundamentals/logging/index#log-scopes)要应用于使用的日志消息的一系列[DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope)方法。</span><span class="sxs-lookup"><span data-stu-id="4d82c-165">Define a [log scope](xref:fundamentals/logging/index#log-scopes) to apply to a series of log messages using the [DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope) method.</span></span>
+<span data-ttu-id="8bc87-165">使用 [DefineScope（字符串）](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope)方法定义一个[日志作用域](xref:fundamentals/logging/index#log-scopes)，以应用到一系列日志消息中。</span><span class="sxs-lookup"><span data-stu-id="8bc87-165">Define a [log scope](xref:fundamentals/logging/index#log-scopes) to apply to a series of log messages using the [DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope) method.</span></span>
 
-<span data-ttu-id="4d82c-166">示例应用程序具有**全部清除**删除所有数据库中引号的按钮。</span><span class="sxs-lookup"><span data-stu-id="4d82c-166">The sample app has a **Clear All** button for deleting all of the quotes in the database.</span></span> <span data-ttu-id="4d82c-167">删除其中一个会删除引号一次。</span><span class="sxs-lookup"><span data-stu-id="4d82c-167">The quotes are deleted by removing them one at a time.</span></span> <span data-ttu-id="4d82c-168">删除引号，每次`QuoteDeleted`对记录器调用方法。</span><span class="sxs-lookup"><span data-stu-id="4d82c-168">Each time a quote is deleted, the `QuoteDeleted` method is called on the logger.</span></span> <span data-ttu-id="4d82c-169">日志范围添加到这些日志消息。</span><span class="sxs-lookup"><span data-stu-id="4d82c-169">A log scope is added to these log messages.</span></span>
+<span data-ttu-id="8bc87-166">示例应用含有一个“全部清除”按钮，用于删除数据库中的所有引号。</span><span class="sxs-lookup"><span data-stu-id="8bc87-166">The sample app has a **Clear All** button for deleting all of the quotes in the database.</span></span> <span data-ttu-id="8bc87-167">通过一次删除一个引号来将其删除。</span><span class="sxs-lookup"><span data-stu-id="8bc87-167">The quotes are deleted by removing them one at a time.</span></span> <span data-ttu-id="8bc87-168">每当删除一个引号时，都会在记录器上调用 `QuoteDeleted` 方法。</span><span class="sxs-lookup"><span data-stu-id="8bc87-168">Each time a quote is deleted, the `QuoteDeleted` method is called on the logger.</span></span> <span data-ttu-id="8bc87-169">在这些日志消息中会添加一个日志作用域。</span><span class="sxs-lookup"><span data-stu-id="8bc87-169">A log scope is added to these log messages.</span></span>
 
-<span data-ttu-id="4d82c-170">启用`IncludeScopes`控制台记录器选项中：</span><span class="sxs-lookup"><span data-stu-id="4d82c-170">Enable `IncludeScopes` in the console logger options:</span></span>
+<span data-ttu-id="8bc87-170">在控制台记录器选项中启用 `IncludeScopes`：</span><span class="sxs-lookup"><span data-stu-id="8bc87-170">Enable `IncludeScopes` in the console logger options:</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Program.cs?name=snippet1&highlight=22)]
 
-<span data-ttu-id="4d82c-171">设置`IncludeScopes`ASP.NET 核心 2.0 应用程序中需要来启用日志作用域。</span><span class="sxs-lookup"><span data-stu-id="4d82c-171">Setting `IncludeScopes` is required in ASP.NET Core 2.0 apps to enable log scopes.</span></span> <span data-ttu-id="4d82c-172">设置`IncludeScopes`通过*appsettings*配置文件是已计划 ASP.NET 核心 2.1 版本的功能。</span><span class="sxs-lookup"><span data-stu-id="4d82c-172">Setting `IncludeScopes` via *appsettings* configuration files is a feature that's planned for the ASP.NET Core 2.1 release.</span></span>
+<span data-ttu-id="8bc87-171">在 ASP.NET Core 2.0 应用中需要设置 `IncludeScopes` 来启用日志作用域。</span><span class="sxs-lookup"><span data-stu-id="8bc87-171">Setting `IncludeScopes` is required in ASP.NET Core 2.0 apps to enable log scopes.</span></span> <span data-ttu-id="8bc87-172">通过 appsettings 配置文件来设置 `IncludeScopes` 是针对 ASP.NET Core 2.1 版本计划的一项功能。</span><span class="sxs-lookup"><span data-stu-id="8bc87-172">Setting `IncludeScopes` via *appsettings* configuration files is a feature that's planned for the ASP.NET Core 2.1 release.</span></span>
 
-<span data-ttu-id="4d82c-173">示例应用程序清除其他提供程序，并添加筛选器以减少日志记录输出。</span><span class="sxs-lookup"><span data-stu-id="4d82c-173">The sample app clears other providers and adds filters to reduce the logging output.</span></span> <span data-ttu-id="4d82c-174">这使得更轻松地查看演示的示例的日志消息`LoggerMessage`功能。</span><span class="sxs-lookup"><span data-stu-id="4d82c-174">This makes it easier to see the sample's log messages that demonstrate `LoggerMessage` features.</span></span>
+<span data-ttu-id="8bc87-173">示例应用清除其他提供程序并添加筛选器来减少日志记录输出。</span><span class="sxs-lookup"><span data-stu-id="8bc87-173">The sample app clears other providers and adds filters to reduce the logging output.</span></span> <span data-ttu-id="8bc87-174">这样便可更加轻松地查看演示 `LoggerMessage` 功能的示例的日志消息。</span><span class="sxs-lookup"><span data-stu-id="8bc87-174">This makes it easier to see the sample's log messages that demonstrate `LoggerMessage` features.</span></span>
 
-<span data-ttu-id="4d82c-175">若要创建的日志作用域，添加一个字段以保存`Func`委托的范围。</span><span class="sxs-lookup"><span data-stu-id="4d82c-175">To create a log scope, add a field to hold a `Func` delegate for the scope.</span></span> <span data-ttu-id="4d82c-176">示例应用程序创建一个名为字段`_allQuotesDeletedScope`(*Internal/LoggerExtensions.cs*):</span><span class="sxs-lookup"><span data-stu-id="4d82c-176">The sample app creates a field called `_allQuotesDeletedScope` (*Internal/LoggerExtensions.cs*):</span></span>
+<span data-ttu-id="8bc87-175">要创建日志作用域，请添加一个字段来保存该作用域的 `Func` 委托。</span><span class="sxs-lookup"><span data-stu-id="8bc87-175">To create a log scope, add a field to hold a `Func` delegate for the scope.</span></span> <span data-ttu-id="8bc87-176">示例应用创建一个名为 `_allQuotesDeletedScope` (Internal/LoggerExtensions.cs) 的字段：</span><span class="sxs-lookup"><span data-stu-id="8bc87-176">The sample app creates a field called `_allQuotesDeletedScope` (*Internal/LoggerExtensions.cs*):</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet4)]
 
-<span data-ttu-id="4d82c-177">使用`DefineScope`来创建委托。</span><span class="sxs-lookup"><span data-stu-id="4d82c-177">Use `DefineScope` to create the delegate.</span></span> <span data-ttu-id="4d82c-178">最多三种类型可以被指定用于作为模板自变量时调用委托。</span><span class="sxs-lookup"><span data-stu-id="4d82c-178">Up to three types can be specified for use as template arguments when the delegate is invoked.</span></span> <span data-ttu-id="4d82c-179">示例应用使用一个包含已删除引号数的消息模板 (`int`类型):</span><span class="sxs-lookup"><span data-stu-id="4d82c-179">The sample app uses a message template that includes the number of deleted quotes (an `int` type):</span></span>
+<span data-ttu-id="8bc87-177">使用 `DefineScope` 来创建委托。</span><span class="sxs-lookup"><span data-stu-id="8bc87-177">Use `DefineScope` to create the delegate.</span></span> <span data-ttu-id="8bc87-178">调用委托时最多可以指定三种类型作为模板参数使用。</span><span class="sxs-lookup"><span data-stu-id="8bc87-178">Up to three types can be specified for use as template arguments when the delegate is invoked.</span></span> <span data-ttu-id="8bc87-179">示例应用使用包含删除的引号数量的消息模板（`int` 类型）：</span><span class="sxs-lookup"><span data-stu-id="8bc87-179">The sample app uses a message template that includes the number of deleted quotes (an `int` type):</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet8)]
 
-<span data-ttu-id="4d82c-180">提供日志消息的静态扩展方法。</span><span class="sxs-lookup"><span data-stu-id="4d82c-180">Provide a static extension method for the log message.</span></span> <span data-ttu-id="4d82c-181">消息模板中包括任何类型参数对于显示的命名属性。</span><span class="sxs-lookup"><span data-stu-id="4d82c-181">Include any type parameters for named properties that appear in the message template.</span></span> <span data-ttu-id="4d82c-182">示例应用程序采用`count`的引号，若要删除并返回`_allQuotesDeletedScope`:</span><span class="sxs-lookup"><span data-stu-id="4d82c-182">The sample app takes in a `count` of quotes to delete and returns `_allQuotesDeletedScope`:</span></span>
+<span data-ttu-id="8bc87-180">为日志消息提供一种静态扩展方法。</span><span class="sxs-lookup"><span data-stu-id="8bc87-180">Provide a static extension method for the log message.</span></span> <span data-ttu-id="8bc87-181">包含已命名属性的任何类型参数（这些参数出现在消息模板中）。</span><span class="sxs-lookup"><span data-stu-id="8bc87-181">Include any type parameters for named properties that appear in the message template.</span></span> <span data-ttu-id="8bc87-182">示例应用采用引号的 `count`，以删除并返回 `_allQuotesDeletedScope`：</span><span class="sxs-lookup"><span data-stu-id="8bc87-182">The sample app takes in a `count` of quotes to delete and returns `_allQuotesDeletedScope`:</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet12)]
 
-<span data-ttu-id="4d82c-183">调用中的日志记录扩展作用域包装`using`块：</span><span class="sxs-lookup"><span data-stu-id="4d82c-183">The scope wraps the logging extension calls in a `using` block:</span></span>
+<span data-ttu-id="8bc87-183">该作用域将日志记录扩展调用包装在 `using` 块中：</span><span class="sxs-lookup"><span data-stu-id="8bc87-183">The scope wraps the logging extension calls in a `using` block:</span></span>
 
 [!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet4&highlight=5-6,14)]
 
-<span data-ttu-id="4d82c-184">检查应用程序的控制台输出中的日志消息。</span><span class="sxs-lookup"><span data-stu-id="4d82c-184">Inspect the log messages in the app's console output.</span></span> <span data-ttu-id="4d82c-185">下面的结果显示删除包含的日志范围消息使用的三个引号：</span><span class="sxs-lookup"><span data-stu-id="4d82c-185">The following result shows three quotes deleted with the log scope message included:</span></span>
+<span data-ttu-id="8bc87-184">检查应用控制台输出中的日志消息。</span><span class="sxs-lookup"><span data-stu-id="8bc87-184">Inspect the log messages in the app's console output.</span></span> <span data-ttu-id="8bc87-185">以下结果显示删除的三个引号，以及包含的日志作用域消息：</span><span class="sxs-lookup"><span data-stu-id="8bc87-185">The following result shows three quotes deleted with the log scope message included:</span></span>
 
 ```console
 info: LoggerMessageSample.Pages.IndexModel[4]
@@ -185,6 +185,6 @@ info: LoggerMessageSample.Pages.IndexModel[4]
       Quote deleted (Quote = 'Quote 3' Id = 4)
 ```
 
-## <a name="see-also"></a><span data-ttu-id="4d82c-186">请参阅</span><span class="sxs-lookup"><span data-stu-id="4d82c-186">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8bc87-186">请参阅</span><span class="sxs-lookup"><span data-stu-id="8bc87-186">See also</span></span>
 
-* [<span data-ttu-id="4d82c-187">日志记录</span><span class="sxs-lookup"><span data-stu-id="4d82c-187">Logging</span></span>](xref:fundamentals/logging/index)
+* [<span data-ttu-id="8bc87-187">日志记录</span><span class="sxs-lookup"><span data-stu-id="8bc87-187">Logging</span></span>](xref:fundamentals/logging/index)
