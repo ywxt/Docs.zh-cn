@@ -1,72 +1,72 @@
 ---
-title: "使用 ASP.NET Core 中的多个环境"
+title: "在 ASP.NET Core 中使用多个环境"
 author: rick-anderson
-description: "了解如何 ASP.NET Core 提供支持用于跨多个环境中控制应用行为。"
-ms.author: riande
+description: "了解 ASP.NET Core 如何为控制多个环境中的应用行为提供支持。"
 manager: wpickett
+ms.author: riande
 ms.date: 12/25/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/environments
-ms.openlocfilehash: 60a1543ce11d08490e6df0eb84f980672ecfe672
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: b40ee9b1c6feae4942f05d22dab776d3cf6c26a0
+ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="working-with-multiple-environments"></a>使用多个环境
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-ASP.NET Core 提供对使用环境变量在运行时设置应用程序行为的支持。
+ASP.NET Core 提供通过环境变量在运行时针对设置应用程序行为的支持。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/environments/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
 ## <a name="environments"></a>环境
 
-ASP.NET 核心读取环境变量`ASPNETCORE_ENVIRONMENT`在应用程序启动和中的值的存储[IHostingEnvironment.EnvironmentName](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_IHostingEnvironment_EnvironmentName)。 `ASPNETCORE_ENVIRONMENT`可以将设置为任何值，但[三个值](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname?view=aspnetcore-2.0)framework 支持：[开发](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development?view=aspnetcore-2.0)，[过渡](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging?view=aspnetcore-2.0)，和[生产](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production?view=aspnetcore-2.0)。 如果`ASPNETCORE_ENVIRONMENT`未设置，它将默认为`Production`。
+ASP.NET Core 在应用程序启动时读取环境变量 `ASPNETCORE_ENVIRONMENT`，并将该值存储在 [IHostingEnvironment.EnvironmentName](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_IHostingEnvironment_EnvironmentName) 中。 `ASPNETCORE_ENVIRONMENT` 可设置为任意值，但框架支持[三个值](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname?view=aspnetcore-2.0)：[开发](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development?view=aspnetcore-2.0)、[暂存](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging?view=aspnetcore-2.0)和[生产](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production?view=aspnetcore-2.0)。 如果未设置 `ASPNETCORE_ENVIRONMENT`，将默认为 `Production`。
 
 [!code-csharp[Main](environments/sample/WebApp1/Startup.cs?name=snippet)]
 
 前面的代码：
 
-* 调用[UseDeveloperExceptionPage](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_DeveloperExceptionPageExtensions_UseDeveloperExceptionPage_Microsoft_AspNetCore_Builder_IApplicationBuilder_)和[UseBrowserLink](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.browserlinkextensions.usebrowserlink?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_BrowserLinkExtensions_UseBrowserLink_Microsoft_AspNetCore_Builder_IApplicationBuilder_)时`ASPNETCORE_ENVIRONMENT`设置为`Development`。
-* 调用[UseExceptionHandler](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.exceptionhandlerextensions.useexceptionhandler?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_ExceptionHandlerExtensions_UseExceptionHandler_Microsoft_AspNetCore_Builder_IApplicationBuilder_)时的值`ASPNETCORE_ENVIRONMENT`设置以下项之一：
+* 当 `ASPNETCORE_ENVIRONMENT` 设置为 `Development` 时，调用 [UseDeveloperExceptionPage](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_DeveloperExceptionPageExtensions_UseDeveloperExceptionPage_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 和 [UseBrowserLink](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.browserlinkextensions.usebrowserlink?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_BrowserLinkExtensions_UseBrowserLink_Microsoft_AspNetCore_Builder_IApplicationBuilder_)。
+* 当 `ASPNETCORE_ENVIRONMENT` 的值设置为下列之一时，调用 [UseExceptionHandler](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.exceptionhandlerextensions.useexceptionhandler?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_ExceptionHandlerExtensions_UseExceptionHandler_Microsoft_AspNetCore_Builder_IApplicationBuilder_)：
 
     * `Staging`
     * `Production`
     * `Staging_2`
 
-[环境标记帮助器](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper)使用的值`IHostingEnvironment.EnvironmentName`用于包含或排除元素中的标记：
+[环境标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper)使用 `IHostingEnvironment.EnvironmentName` 的值用于包含或排除元素中的标记：
 
 [!code-html[Main](environments/sample/WebApp1/Pages/About.cshtml)]
 
-注意： 在 Windows 和 macOS 上，环境变量和值不区分大小写。 Linux 环境变量和值是**区分大小写**默认情况下。
+注意：在 Windows 和 macOS 上，环境变量和值不区分大小写。 默认情况下，Linux 环境变量和值要区分大小写。
 
 ### <a name="development"></a>开发
 
-开发环境可以启用不应在生产中公开的功能。 例如，ASP.NET Core 模板启用[开发人员异常页](xref:fundamentals/error-handling#the-developer-exception-page)在开发环境中。
+开发环境可以启用不应该在生产中公开的功能。 例如，ASP.NET Core 模板在开发环境中启用了[开发人员异常页](xref:fundamentals/error-handling#the-developer-exception-page)。
 
-可以在设置用于本地计算机开发环境*Properties\launchSettings.json*项目文件。 在中设置环境值*launchSettings.json*重写系统环境中设置值。
+本地计算机开发环境可以在项目的 Properties\launchSettings.json 文件中设置。 在 launchSettings.json 中设置的环境值替代在系统环境中设置的值。
 
-下面的 XML 演示三个配置文件从*launchSettings.json*文件：
+以下 JSON 显示 launchSettings.json 文件中的三个配置文件：
 
-[!code-xml[Main](environments/sample/WebApp1/Properties/launchSettings.json?highlight=10,11,18,26)]
+[!code-json[Main](environments/sample/WebApp1/Properties/launchSettings.json?highlight=10,11,18,26)]
 
-当应用程序启动与`dotnet run`，与第一个配置文件`"commandName": "Project"`将使用。 值`commandName`指定要启动的 web 服务器。 `commandName`可以是之一：
+使用 `dotnet run` 启动应用程序时，将使用具有 `"commandName": "Project"` 的第一个配置文件。 `commandName` 的值指定要启动的 Web 服务器。 `commandName` 可以是以下之一：
 
 * IIS Express
 * IIS
-* 项目 （该操作将启动 Kestrel）
+* 项目（启动 Kestrel 的项目）
 
-当应用程序启动与`dotnet run`:
+当使用 `dotnet run` 启动应用时：
 
-* *launchSettings.json*读取如果可用。 `environmentVariables`中的设置*launchSettings.json*重写环境变量。
-* 将显示该宿主环境。
+* 如果可用，读取 launchSettings.json。 launchSettings.json 中的 `environmentVariables` 设置会替代环境变量。
+* 此时显示承载环境。
 
 
-下面的输出显示应用程序入门`dotnet run`:
+以下输出显示了使用 `dotnet run` 启动的应用：
 ```bash
 PS C:\Webs\WebApp1> dotnet run
 Using launch settings from C:\Webs\WebApp1\Properties\launchSettings.json...
@@ -76,41 +76,41 @@ Now listening on: http://localhost:54340
 Application started. Press Ctrl+C to shut down.
 ```
 
-Visual Studio**调试**选项卡提供了一个 GUI 以编辑*launchSettings.json*文件：
+Visual Studio“调试”选项卡提供 GUI 来编辑 launchSettings.json 文件：
 
 ![项目属性设置环境变量](environments/_static/project-properties-debug.png)
 
-在重新启动 web 服务器之前，对项目配置文件所做更改可能不会生效。 必须重启 kestrel，然后它将检测到其环境所做的更改。
+在 Web 服务器重新启动之前，对项目配置文件所做的更改可能不会生效。 必须重新启动 Kestrel 才能检测到对其环境所做的更改。
 
 >[!WARNING]
-> *launchSettings.json*不应存储机密。 [机密管理器工具](xref:security/app-secrets)可以用于存储以进行本地开发的机密。
+> launchSettings.json 不应存储机密。 [机密管理器工具](xref:security/app-secrets)可用于存储本地开发的机密。
 
 ### <a name="production"></a>生产
 
-生产环境应配置为最大程度提高安全性、 性能和应用程序的可靠性。 将不同于开发生产环境可能具有一些常见设置包括：
+生产环境应配置为最大限度地提高安全性、性能和应用程序可靠性。 生产环境可能具有的某些常见设置可能与开发环境不同，其中包括：
 
 * 缓存。
-* 客户端的资源捆绑在一起，缩减的并且可能从 CDN 提供。
-* 禁用诊断错误页。
-* 启用友好错误页。
-* 生产日志记录和启用监视。 例如， [Application Insights](https://azure.microsoft.com/documentation/articles/app-insights-asp-net-five/)。
+* 客户端资源被捆绑和缩小，并可能从 CDN 提供。
+* 已禁用诊断错误页。
+* 已启用友好错误页。
+* 已启用生产记录和监视。 例如，[Application Insights](/azure/application-insights/app-insights-asp-net-core)。
 
-## <a name="setting-the-environment"></a>将环境设置
+## <a name="setting-the-environment"></a>设置环境
 
-通常它可用于设置用于测试的特定环境。 如果未设置环境，它将默认为`Production`这将禁用大多数调试功能。
+为测试设置特定环境通常很有用。 如果未设置环境，默认值为 `Production`，这会禁用大多数调试功能。
 
-将环境设置的方法取决于操作系统。
+设置环境的方法取决于操作系统。
 
 ### <a name="azure"></a>Azure
 
-对 Azure app service:
+对于 Azure 应用服务：
 
-* 选择**应用程序设置**边栏选项卡。
-* 将键和值中**应用设置**。
+* 选择“应用程序设置”边栏选项卡。
+* 将键和值添加到“应用设置”。
 
 
 ### <a name="windows"></a>Windows
-若要设置`ASPNETCORE_ENVIRONMENT`当前的会话中，如果应用程序将启动使用`dotnet run`，可以使用以下命令
+若要为当前会话设置 `ASPNETCORE_ENVIRONMENT`，如果应用使用 `dotnet run` 启动，则使用以下命令
 
 **命令行**
 ```
@@ -121,55 +121,55 @@ set ASPNETCORE_ENVIRONMENT=Development
 $Env:ASPNETCORE_ENVIRONMENT = "Development"
 ```
 
-这些命令将仅为当前窗口的生效。 当窗口已关闭时，ASPNETCORE_ENVIRONMENT 设置将恢复为默认设置或计算机的值。 为了上 Windows 打开全局设置的值**控制面板** > **系统** > **高级系统设置**和添加或编辑`ASPNETCORE_ENVIRONMENT`值。
+这些命令仅对当前窗口有效。 窗口关闭时，ASPNETCORE_ENVIRONMENT 设置将恢复为默认设置或计算机值。 若要在 Windows 上全局设置该值，请打开“控制面板” > “系统” > “高级系统设置”并添加或编辑 `ASPNETCORE_ENVIRONMENT` 值。
 
-![高级属性的系统](environments/_static/systemsetting_environment.png)
+![系统高级属性](environments/_static/systemsetting_environment.png)
 
-![ASPNET 核心环境变量](environments/_static/windows_aspnetcore_environment.png)
+![ASPNET Core 环境变量](environments/_static/windows_aspnetcore_environment.png)
 
 
 **web.config**
 
-请参阅*设置环境变量*部分[ASP.NET 核心模块配置引用](xref:host-and-deploy/aspnet-core-module#setting-environment-variables)主题。
+请参阅 [ASP.NET Core 模块配置参考](xref:host-and-deploy/aspnet-core-module#setting-environment-variables)主题的“设置环境变量”部分。
 
 **每个 IIS 应用程序池**
 
-若要设置对于在独立的应用程序池 （IIS 10.0 + 支持） 中运行的单个应用程序的环境变量，请参阅*AppCmd.exe 命令*部分[环境变量\<environmentVariables >](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe)主题。
+若要为独立应用程序池中运行的单个应用设置环境变量（IIS 10.0+ 中支持此操作），请参阅[环境变量 \<environmentVariables>](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) 主题中的“AppCmd.exe 命令”部分。
 
 ### <a name="macos"></a>macOS
-设置 macOS 的当前环境，可以进行串联时运行该应用程序;
+设置 macOS 的当前环境可在运行应用程序时完成；
 
 ```bash
 ASPNETCORE_ENVIRONMENT=Development dotnet run
 ```
-也可以使用`export`若要在运行应用程序之前设置它。
+或在运行应用之前使用 `export` 对其进行设置。
 
 ```bash
 export ASPNETCORE_ENVIRONMENT=Development
 ```
-设置计算机级别的环境变量*.bashrc*或*.bash_profile*文件。 使用任何文本编辑器编辑该文件并添加以下语句。
+在 .bashrc 或 .bash_profile 文件中设置计算机级别环境变量。 使用任何文本编辑器编辑文件并添加以下语句。
 
-```
+```bash
 export ASPNETCORE_ENVIRONMENT=Development
 ```
 
 ### <a name="linux"></a>Linux
-对于 Linux 发行版本，使用`export`基于会话的变量设置在命令行命令和*bash_profile*机级别的环境设置的文件。
+对于 Linux 发行版，请在命令行中使用 `export` 命令进行基于会话的变量设置，并使用 bash_profile 文件进行计算机级别环境设置。
 
 ### <a name="configuration-by-environment"></a>按环境配置
 
-请参阅[由环境配置](xref:fundamentals/configuration/index#configuration-by-environment)有关详细信息。
+有关详细信息，请参阅[按环境配置](xref:fundamentals/configuration/index#configuration-by-environment)。
 
 <a name="startup-conventions"></a>
-## <a name="environment-based-startup-class-and-methods"></a>环境基于 Startup 类和方法
+## <a name="environment-based-startup-class-and-methods"></a>基于环境的 Startup 类和方法
 
-当 ASP.NET Core 应用启动后时， [Startup 类](xref:fundamentals/startup)启动应用程序。 如果一个类`Startup{EnvironmentName}`存在，将该调用类`EnvironmentName`:
+当 ASP.NET Core 应用启动时，[Startup 类](xref:fundamentals/startup)启动应用。 如果类 `Startup{EnvironmentName}` 存在，那么将为类 `EnvironmentName` 调用该类：
 
 [!code-csharp[Main](environments/sample/WebApp1/StartupDev.cs?name=snippet&highlight=1)]
 
-注意： 调用[WebHostBuilder.UseStartup<TStartup> ](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_)重写配置节。
+注意：调用 [WebHostBuilder.UseStartup<TStartup>](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_) 替代配置节。
 
-[配置](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_StartupBase_Configure_Microsoft_AspNetCore_Builder_IApplicationBuilder_)和[ConfigureServices](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices?view=aspnetcore-2.0)支持环境特定版本的表单`Configure{EnvironmentName}`和`Configure{EnvironmentName}Services`:
+[Configure](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_StartupBase_Configure_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 和 [ConfigureServices](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices?view=aspnetcore-2.0) 支持窗体 `Configure{EnvironmentName}` 和 `Configure{EnvironmentName}Services` 的环境特定版本：
 
 [!code-csharp[Main](environments/sample/WebApp1/Startup.cs?name=snippet_all&highlight=15,37)]
 

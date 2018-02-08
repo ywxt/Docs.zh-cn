@@ -1,78 +1,78 @@
 ---
-title: "通过在 ASP.NET Core LoggerMessage 的高性能日志记录"
+title: "在 ASP.NET Core 中使用 LoggerMessage 的高性能日志记录"
 author: guardrex
-description: "了解如何使用 LoggerMessage 功能来创建可缓存于高性能日志记录方案需要较少的对象分配比记录器扩展方法的委托。"
-ms.author: riande
+description: "了解如何使用 LoggerMessage 功能（对于高性能日志记录方案，该功能比记录器扩展方法需要的对象分配少）创建可缓存的委托。"
 manager: wpickett
+ms.author: riande
 ms.date: 11/03/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/logging/loggermessage
-ms.openlocfilehash: defba75c6c9ea13d24af4cd8515d82d9e7cf9853
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.openlocfilehash: b155826b5047e88a79d9e339d7bca8885a79006d
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a>通过在 ASP.NET Core LoggerMessage 的高性能日志记录
+# <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a>在 ASP.NET Core 中使用 LoggerMessage 的高性能日志记录
 
 作者：[Luke Latham](https://github.com/guardrex)
 
-[LoggerMessage](/dotnet/api/microsoft.extensions.logging.loggermessage)功能创建一个可缓存委托需要较少的对象分配，并减少计算开销比[记录器扩展方法](/dotnet/api/Microsoft.Extensions.Logging.LoggerExtensions)，如`LogInformation`， `LogDebug`，和`LogError`. 对于高性能日志记录方案，使用`LoggerMessage`模式。
+[LoggerMessage](/dotnet/api/microsoft.extensions.logging.loggermessage) 功能创建可缓存的委托，该功能比[记录器扩展方法](/dotnet/api/Microsoft.Extensions.Logging.LoggerExtensions)（例如 `LogInformation`、`LogDebug` 和 `LogError`）需要的对象分配和计算开销少。 对于高性能日志记录方案，请使用 `LoggerMessage` 模式。
 
-`LoggerMessage`提供了相对记录器扩展方法的以下性能优势：
+与记录器扩展方法相比，`LoggerMessage` 具有以下性能优势：
 
-* 记录器扩展方法要求使用"装箱"（转换） 的值类型，如`int`，到`object`。 `LoggerMessage`模式通过使用静态来避免装箱`Action`字段和具有强类型参数的扩展方法。
-* 记录器扩展方法必须分析每次写入日志消息的消息模板 （命名的格式字符串）。 `LoggerMessage`只需一次分析模板时定义该消息。
+* 记录器扩展方法需要将值类型（例如 `int`）“装箱”（转换）到 `object` 中。 `LoggerMessage` 模式使用带强类型参数的静态 `Action` 字段和扩展方法来避免装箱。
+* 记录器扩展方法每次写入日志消息时必须分析消息模板（命名的格式字符串）。 如果已定义消息，那么 `LoggerMessage` 只需分析一次模板即可。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/loggermessage/sample/)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
-示例应用演示`LoggerMessage`功能跟踪系统的基本引号。 应用程序添加和删除使用内存中数据库的引号。 这些操作出现时，使用生成日志消息`LoggerMessage`模式。
+此示例应用通过基本引号跟踪系统演示 `LoggerMessage` 功能。 此应用使用内存中数据库添加和删除引号。 发生这些操作时，通过 `LoggerMessage` 模式生成日志消息。
 
 ## <a name="loggermessagedefine"></a>LoggerMessage.Define
 
-[定义 （LogLevel，EventId，字符串）](/dotnet/api/microsoft.extensions.logging.loggermessage.define)创建`Action`日志记录消息的委托。 `Define`重载允许将最多六个类型参数传递给命名的格式字符串 （模板）。
+[Define（LogLevel、EventId、字符串）](/dotnet/api/microsoft.extensions.logging.loggermessage.define)创建用于记录消息的 `Action` 委托。 `Define` 重载允许向命名的格式字符串（模板）传递最多六个类型参数。
 
 ## <a name="loggermessagedefinescope"></a>LoggerMessage.DefineScope
 
-[DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope)创建`Func`定义的委托[日志范围](xref:fundamentals/logging/index#log-scopes)。 `DefineScope`重载允许将最多三个类型参数传递给命名的格式字符串 （模板）。
+[DefineScope（字符串）](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope)创建一个用于定义[日志作用域](xref:fundamentals/logging/index#log-scopes)的 `Func` 委托。 `DefineScope` 重载允许向命名的格式字符串（模板）传递最多三个类型参数。
 
-## <a name="message-template-named-format-string"></a>消息模板 （名为格式字符串）
+## <a name="message-template-named-format-string"></a>消息模板（命名的格式字符串）
 
-到提供的字符串`Define`和`DefineScope`方法是一个模板，而不相比内, 插的字符串。 占位符将填充的类型指定的顺序。 在模板中的占位符名称应为在模板具说明性且更一致。 用作结构化的日志数据中的属性名称。 我们建议[Pascal 大小写](/dotnet/standard/design-guidelines/capitalization-conventions)的占位符名称。 例如， `{Count}`， `{FirstName}`。
+提供给 `Define` 和 `DefineScope` 方法的字符串是一个模板，而不是内插字符串。 占位符按照指定类型的顺序填充。 模板中的占位符名称在各个模板中应当具备描述性和一致性。 它们在结构化的日志数据中充当属性名称。 对于占位符名称，建议使用[帕斯卡拼写法](/dotnet/standard/design-guidelines/capitalization-conventions)。 例如：`{Count}`、`{FirstName}`。
 
 ## <a name="implementing-loggermessagedefine"></a>实现 LoggerMessage.Define
 
-每条日志消息是`Action`中创建的某个静态字段保存`LoggerMessage.Define`。 例如，示例应用程序创建一个字段，以描述索引页 GET 请求的日志消息 (*Internal/LoggerExtensions.cs*):
+每条日志消息都是一个 `Action`，保存在由 `LoggerMessage.Define` 创建的静态字段中。 例如，示例应用创建一个字段来为索引页 (Internal/LoggerExtensions.cs) 描述 GET 请求的日志消息：
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet1)]
 
-有关`Action`，指定：
+对于 `Action`，指定：
 
 * 日志级别。
-* 唯一的事件标识符 ([EventId](/dotnet/api/microsoft.extensions.logging.eventid)) 替换为静态的扩展方法的名称。
-* 消息模板 （名为格式字符串）。 
+* 具有静态扩展方法名称的唯一事件标识符 ([EventId](/dotnet/api/microsoft.extensions.logging.eventid))。
+* 消息模板（命名的格式字符串）。 
 
-示例应用程序集的索引页的请求:
+对示例应用的索引页的请求设置：
 
-* 日志级别设置为`Information`。
-* 事件 id`1`同名的`IndexPageRequested`方法。
-* 消息模板 （名为格式字符串） 为字符串。
+* 将日志级别设置为 `Information`。
+* 将事件 ID 设置为具有 `IndexPageRequested` 方法名称的 `1`。
+* 将消息模板（命名的格式字符串）设置为字符串。
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet5)]
 
-提供使用事件 id 来丰富日志记录时，结构化日志记录存储区可能使用的事件名称。 例如， [Serilog](https://github.com/serilog/serilog-extensions-logging)使用事件名称。
+结构化日志记录存储可以使用事件名称（当它获得事件 ID 时）来丰富日志记录。 例如，[Serilog](https://github.com/serilog/serilog-extensions-logging) 使用该事件名称。
 
-`Action`通过强类型扩展方法调用。 `IndexPageRequested`方法的示例应用中记录为索引页 GET 请求消息：
+通过强类型扩展方法调用 `Action`。 `IndexPageRequested` 方法在示例应用中记录索引页 GET 请求的消息：
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet9)]
 
-`IndexPageRequested`在中记录器上调用`OnGetAsync`中的方法*Pages/Index.cshtml.cs*:
+在 Pages/Index.cshtml.cs 的 `OnGetAsync` 方法中，在记录器上调用 `IndexPageRequested`：
 
 [!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=3)]
 
-检查应用程序的控制台输出：
+检查应用的控制台输出：
 
 ```console
 info: LoggerMessageSample.Pages.IndexModel[1]
@@ -80,23 +80,23 @@ info: LoggerMessageSample.Pages.IndexModel[1]
       GET request for Index page
 ```
 
-若要将参数传递给一条日志消息，请创建静态字段时定义最多六个类型。 当通过定义添加引号示例应用程序日志，string`string`键入`Action`字段：
+要将参数传递给日志消息，创建静态字段时最多定义六种类型。 通过为 `Action` 字段定义 `string` 类型来添加引号时，示例应用会记录一个字符串：
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet2)]
 
-该委托的日志消息模板提供的类型从接收其占位符值。 示例应用程序定义委托的添加引号参数所在的引号`string`:
+委托的日志消息模板从提供的类型接收其占位符值。 示例应用定义一个委托，用于在 quote 参数是 `string` 的位置添加引号：
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet6)]
 
-用于添加引号、 静态的扩展方法`QuoteAdded`、 接收报价自变量值并将其传递给`Action`委托：
+用于添加引号的静态扩展方法 `QuoteAdded` 接收 quote 参数值并将其传递给 `Action` 委托：
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet10)]
 
-索引页的代码隐藏文件中 (*Pages/Index.cshtml.cs*)，`QuoteAdded`调用来记录消息：
+在索引页的页面模型 (Pages/Index.cshtml.cs) 中，调用 `QuoteAdded` 来记录消息：
 
 [!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet3&highlight=6)]
 
-检查应用程序的控制台输出：
+检查应用的控制台输出：
 
 ```console
 info: LoggerMessageSample.Pages.IndexModel[2]
@@ -104,21 +104,21 @@ info: LoggerMessageSample.Pages.IndexModel[2]
       Quote added (Quote = 'You can avoid reality, but you cannot avoid the consequences of avoiding reality. - Ayn Rand')
 ```
 
-本示例应用程序实现`try` &ndash; `catch`引号删除模式。 一条信息性消息只记录成功的删除操作。 引发异常时，将删除操作的记录一条错误消息。 日志消息的不成功，则删除操作包括异常堆栈跟踪 (*Internal/LoggerExtensions.cs*):
+本示例应用实现用于删除引号的 `try`&ndash;`catch` 模式。 为成功的删除操作记录提示性信息。 引发异常时，为删除操作记录错误消息。 针对未成功的删除操作，日志消息包括异常堆栈跟踪 (Internal/LoggerExtensions.cs)：
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet3)]
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet7)]
 
-请注意如何将异常传递给该委托`QuoteDeleteFailed`:
+请注意异常如何传递到 `QuoteDeleteFailed` 中的委托：
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet11)]
 
-索引页代码隐藏文件中，成功引号删除调用`QuoteDeleted`记录器方法。 当为删除，找不到有引号`ArgumentNullException`引发。 通过捕获异常`try` &ndash; `catch`语句，并通过调用记录`QuoteDeleteFailed`方法中记录器`catch`块 (*Pages/Index.cshtml.cs*):
+在索引页的页面模型中，成功删除引号时会在记录器上调用 `QuoteDeleted` 方法。 如果找不到要删除的引号，则会引发 `ArgumentNullException`。 通过 `try`&ndash;`catch` 语句捕获异常，并在 `catch` 块 (Pages/Index.cshtml.cs) 中调用记录器上的 `QuoteDeleteFailed` 方法来记录异常：
 
 [!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet5&highlight=14,18)]
 
-在成功删除引号，检查应用程序的控制台输出：
+成功删除引号时，检查应用的控制台输出：
 
 ```console
 info: LoggerMessageSample.Pages.IndexModel[4]
@@ -126,7 +126,7 @@ info: LoggerMessageSample.Pages.IndexModel[4]
       Quote deleted (Quote = 'You can avoid reality, but you cannot avoid the consequences of avoiding reality. - Ayn Rand' Id = 1)
 ```
 
-当引号删除失败时，检查应用程序的控制台输出。 请注意，日志消息中包含的异常：
+引号删除失败时，检查应用的控制台输出。 请注意，异常包括在日志消息中：
 
 ```console
 fail: LoggerMessageSample.Pages.IndexModel[5]
@@ -143,35 +143,35 @@ Parameter name: entity
 
 ## <a name="implementing-loggermessagedefinescope"></a>实现 LoggerMessage.DefineScope
 
-定义[日志范围](xref:fundamentals/logging/index#log-scopes)要应用于使用的日志消息的一系列[DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope)方法。
+使用 [DefineScope（字符串）](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope)方法定义一个[日志作用域](xref:fundamentals/logging/index#log-scopes)，以应用到一系列日志消息中。
 
-示例应用程序具有**全部清除**删除所有数据库中引号的按钮。 删除其中一个会删除引号一次。 删除引号，每次`QuoteDeleted`对记录器调用方法。 日志范围添加到这些日志消息。
+示例应用含有一个“全部清除”按钮，用于删除数据库中的所有引号。 通过一次删除一个引号来将其删除。 每当删除一个引号时，都会在记录器上调用 `QuoteDeleted` 方法。 在这些日志消息中会添加一个日志作用域。
 
-启用`IncludeScopes`控制台记录器选项中：
+在控制台记录器选项中启用 `IncludeScopes`：
 
 [!code-csharp[Main](loggermessage/sample/Program.cs?name=snippet1&highlight=22)]
 
-设置`IncludeScopes`ASP.NET 核心 2.0 应用程序中需要来启用日志作用域。 设置`IncludeScopes`通过*appsettings*配置文件是已计划 ASP.NET 核心 2.1 版本的功能。
+在 ASP.NET Core 2.0 应用中需要设置 `IncludeScopes` 来启用日志作用域。 通过 appsettings 配置文件来设置 `IncludeScopes` 是针对 ASP.NET Core 2.1 版本计划的一项功能。
 
-示例应用程序清除其他提供程序，并添加筛选器以减少日志记录输出。 这使得更轻松地查看演示的示例的日志消息`LoggerMessage`功能。
+示例应用清除其他提供程序并添加筛选器来减少日志记录输出。 这样便可更加轻松地查看演示 `LoggerMessage` 功能的示例的日志消息。
 
-若要创建的日志作用域，添加一个字段以保存`Func`委托的范围。 示例应用程序创建一个名为字段`_allQuotesDeletedScope`(*Internal/LoggerExtensions.cs*):
+要创建日志作用域，请添加一个字段来保存该作用域的 `Func` 委托。 示例应用创建一个名为 `_allQuotesDeletedScope` (Internal/LoggerExtensions.cs) 的字段：
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet4)]
 
-使用`DefineScope`来创建委托。 最多三种类型可以被指定用于作为模板自变量时调用委托。 示例应用使用一个包含已删除引号数的消息模板 (`int`类型):
+使用 `DefineScope` 来创建委托。 调用委托时最多可以指定三种类型作为模板参数使用。 示例应用使用包含删除的引号数量的消息模板（`int` 类型）：
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet8)]
 
-提供日志消息的静态扩展方法。 消息模板中包括任何类型参数对于显示的命名属性。 示例应用程序采用`count`的引号，若要删除并返回`_allQuotesDeletedScope`:
+为日志消息提供一种静态扩展方法。 包含已命名属性的任何类型参数（这些参数出现在消息模板中）。 示例应用采用引号的 `count`，以删除并返回 `_allQuotesDeletedScope`：
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet12)]
 
-调用中的日志记录扩展作用域包装`using`块：
+该作用域将日志记录扩展调用包装在 `using` 块中：
 
 [!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet4&highlight=5-6,14)]
 
-检查应用程序的控制台输出中的日志消息。 下面的结果显示删除包含的日志范围消息使用的三个引号：
+检查应用控制台输出中的日志消息。 以下结果显示删除的三个引号，以及包含的日志作用域消息：
 
 ```console
 info: LoggerMessageSample.Pages.IndexModel[4]

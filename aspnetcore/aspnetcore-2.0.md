@@ -2,18 +2,18 @@
 title: "ASP.NET Core 2.0 中的新增功能"
 author: rick-anderson
 description: "ASP.NET Core 2.0 中的新增功能"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 07/10/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: article
 uid: aspnetcore-2.0
-ms.openlocfilehash: ca02de7954002dcbc125898c9f570438f88db818
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 35d57abd07e83cd5b190572962fbf43aef03a534
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>ASP.NET Core 2.0 中的新增功能
 
@@ -82,7 +82,7 @@ ASP.NET Core 2.0 包面向 NET Standard 2.0。 这些包可以由其他 .NET Sta
 
 ## <a name="kestrel-improvements"></a>Kestrel 改进
 
-Kestrel Web 服务器包含一项新功能，使其更适合作为面向 Internet 的服务器。 我们在 `KestrelServerOptions` 类的新 `Limits` 属性中添加了一些服务器限制配置选项。 现在可为以下内容添加限制：
+Kestrel Web 服务器包含一项新功能，使其更适合作为面向 Internet 的服务器。 在 `KestrelServerOptions` 类的新 `Limits` 属性中添加大量服务器约束配置选项。 为以下内容添加限制：
 
 - 客户端最大连接数
 - 请求正文最大大小
@@ -120,7 +120,7 @@ return File(data, "text/plain", "downloadName.txt", lastModified: DateTime.UtcNo
 
 ## <a name="automatic-use-of-anti-forgery-tokens"></a>自动使用防伪标记
 
-默认情况下，ASP.NET Core 始终在帮助对内容进行 HTML 编码，但是在新版本中，我们还采用了额外的措施来帮助预防跨网站请求伪造 (XSRF) 攻击。 现在在默认情况下，ASP.NET Core 会发出防伪标记，并在窗体 POST 操作和页面上验证它们，且无需其他配置。
+默认情况下，ASP.NET Core 始终在帮助对内容进行 HTML 编码，但是在新版本中，还采用了额外的措施来帮助预防跨网站请求伪造 (XSRF) 攻击。 现在在默认情况下，ASP.NET Core 会发出防伪标记，并在窗体 POST 操作和页面上验证它们，且无需其他配置。
 
 有关详细信息，请参阅[在 ASP.NET Core 中预防跨网站请求伪造 (XSRF/CSRF) 攻击](xref:security/anti-request-forgery)。
 
@@ -158,4 +158,4 @@ Razor 视图引擎已更新为可使用新的 Roslyn 编译器。 其中包含�
 
 有关更改的完整列表，请参阅 [ASP.NET Core 2.0 发行说明](https://github.com/aspnet/Home/releases/tag/2.0.0)。
 
-若要实时了解 ASP.NET Core 开发团队的进度和计划，请收看每周的 [ASP.NET Community Standup](https://live.asp.net/)。
+若要实时了解 ASP.NET Core 开发团队的进度和计划，请收看 [ASP.NET Community Standup](https://live.asp.net/)。

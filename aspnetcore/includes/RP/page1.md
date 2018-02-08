@@ -105,9 +105,9 @@ Razor 可以从 HTML 转换为 C# 或 Razor 特定标记。 当 `@` 符号后跟
 
 保存所做的更改，并通过单击“RpMovie”链接测试应用。 请参阅 GitHub 中的 [_Layout.cshtml](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml) 文件。
 
-### <a name="the-create-code-behind-page"></a>创建代码隐藏页面
+### <a name="the-create-page-model"></a>“创建”页面模型
 
-检查 Pages/Movies/Create.cshtml.cs 代码隐藏文件：
+检查 *Pages/Movies/Create.cshtml.cs* 页面模型：
 
 [!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetALL)]
 

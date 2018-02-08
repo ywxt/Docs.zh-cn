@@ -2,18 +2,18 @@
 title: "将文件上传至 ASP.NET Core 中的 Razor 页面"
 author: guardrex
 description: "了解如何将文件上传至 Razor 页面。"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/12/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: a29043ac5d28ae8efcbbd6919e73e3774ba22699
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 24eaa0dd9293cc932c51d280300308e835a0840e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="uploading-files-to-a-razor-page-in-aspnet-core"></a>将文件上传至 ASP.NET Core 中的 Razor 页面
 
@@ -76,9 +76,9 @@ Update-Database
 
 每个窗体组包含一个验证 \<span>。 如果用户输入未能满足 `FileUpload` 类中设置的属性特性，或者任何 `ProcessFormFile` 方法文件检查失败，则模型验证会失败。 模型验证失败时，会向用户呈现有用的验证消息。 例如，`Title` 属性带有 `[Required]` 和 `[StringLength(60, MinimumLength = 3)]` 注释。 用户若未提供标题，会接收到一条指示需要提供值的消息。 如果用户输入的值少于 3 个字符或多于 60 个字符，则会接收到一条指示值长度不正确的消息。 如果提供不含内容的文件，则会显示一条指示文件为空的消息。
 
-## <a name="add-the-code-behind-file"></a>添加代码隐藏文件
+## <a name="add-the-page-model"></a>添加页面模型
 
-将代码隐藏文件 (Index.cshtml.cs) 添加到“Schedules”文件夹：
+将页面模型 (Index.cshtml.cs) 添加到“Schedules”文件夹中：
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs)]
 
@@ -110,7 +110,7 @@ Update-Database
 
 [!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml)]
 
-代码隐藏文件 (Delete.cshtml.cs) 在请求的路由数据中加载由 `id` 标识的单个计划。 将“Delete.cshtml.cs”文件添加到“Schedules”文件夹：
+页面模型 (Delete.cshtml.cs) 在请求的路由数据中加载由 `id` 标识的单个计划。 将“Delete.cshtml.cs”文件添加到“Schedules”文件夹：
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs)]
 

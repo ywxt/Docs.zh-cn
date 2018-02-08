@@ -1,40 +1,40 @@
 ---
-title: "在 ASP.NET Core HTTP.sys web 服务器实现"
+title: "ASP.NET Core 中的 HTTP.sys Web 服务器实现"
 author: rick-anderson
-description: "引入了 HTTP.sys，ASP.NET 核心 Windows 上的 web 服务器。 基于 Http.Sys 内核模式驱动程序，HTTP.sys 是可以用于直接连接到 Internet，不含 IIS 的 Kestrel 的替代方法。"
-ms.author: riande
+description: "介绍 Windows 上适用于 ASP.NET Core 的 Web 服务器 HTTP.sys。 HTTP.sys 构建于 Http.Sys 内核模式驱动程序之上，是 Kestrel 的一种替代选择，可用来直接连接到 Internet，而无需使用 IIS。"
 manager: wpickett
+ms.author: riande
 ms.date: 08/07/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 6fc356d8ecc1b699269286f244000b493e48a2c5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: f36a86fc67e715165afd0c38992f9767f90cf3b4
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="httpsys-web-server-implementation-in-aspnet-core"></a>在 ASP.NET Core HTTP.sys web 服务器实现
+# <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 HTTP.sys Web 服务器实现
 
-通过[Tom Dykstra](https://github.com/tdykstra)和[Chris 跨](https://github.com/Tratcher)
+作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Chris Ross](https://github.com/Tratcher)
 
 > [!NOTE]
-> 本主题仅适用于 ASP.NET 核心 2.0 和更高版本。 在早期版本的 ASP.NET 核心，HTTP.sys 为[WebListener](xref:fundamentals/servers/weblistener)。
+> 本主题仅适用于 ASP.NET Core 2.0 及更高版本。 在早期版本的 ASP.NET Core 的中，HTTP.sys 被命名为 [WebListener](xref:fundamentals/servers/weblistener)。
 
-HTTP.sys 是[ASP.NET Core 的 web 服务器](index.md)，仅在 Windows 上运行。 构建的[Http.Sys 内核模式驱动程序](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)。 HTTP.sys 是一种替代方法[Kestrel](kestrel.md) ，提供了 Kestel 不一些功能。 **HTTP.sys 不能与使用 IIS 或 IIS Express，因为它是与不兼容[ASP.NET 核心模块](aspnet-core-module.md)。**
+HTTP.sys 是仅在 Windows 上运行的[适用于 ASP.NET Core 的 Web 服务器](index.md)。 它构建于 [Http.Sys 内核模式驱动程序](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)之上。 HTTP.sys 是 [Kestrel](kestrel.md) 的替代选择，提供了一些 Kestel 所没有的功能。 HTTP.sys 不能与 IIS 或 IIS Express 结合使用，因为它与 [ASP.NET Core 模块](aspnet-core-module.md)不兼容。
 
 HTTP.sys 支持以下功能：
 
 - [Windows 身份验证](xref:security/authentication/windowsauth)
 - 端口共享
 - 具有 SNI 的 HTTPS
-- HTTP/2 tls (Windows 10)
+- 基于 TLS 的 HTTP/2 (Windows 10)
 - 直接文件传输
 - 响应缓存
-- Websocket (Windows 8)
+- WebSocket (Windows 8)
 
-支持的 Windows 版本：
+受支持的 Windows 版本：
 
 - Windows 7 和 Windows Server 2008 R2 及更高版本
 
@@ -42,136 +42,136 @@ HTTP.sys 支持以下功能：
 
 ## <a name="when-to-use-httpsys"></a>何时使用 HTTP.sys
 
-HTTP.sys 是用于部署你需要公开直接向 Internet 的服务器，而使用 IIS 的位置。
+对于需要将服务器直接公开到 Internet 而不使用 IIS 的部署，HTTP.sys 非常有用。
 
 ![HTTP.sys 直接与 Internet 进行通信](httpsys/_static/httpsys-to-internet.png)
 
-由于它在 Http.Sys 上构建，HTTP.sys 不需要反向代理服务器，为了针对攻击提供保护。 Http.Sys 是针对许多类型的攻击提供保护，并提供可靠性、 安全性和功能全面的 web 服务器的可伸缩性的成熟技术。 作为 HTTP 侦听器在 Http.Sys 运行 IIS 本身。 
+由于 HTTP.sys 构建于 Http.Sys 之上，因此不需要反向代理服务器来抵御攻击。 Http.Sys 是一项成熟的技术，可以抵御多种攻击，并提供可靠、安全、可伸缩的全功能 Web 服务器。 IIS 本身作为 Http.Sys 之上的 HTTP 侦听器运行。 
 
-HTTP.sys 时需要的功能中 Kestrel，例如 Windows 身份验证不可用，将为内部部署一个不错的选择。
+当你需要 Kestrel 中没有的功能（如 Windows 身份验证）时，HTTP.sys 是内部部署的不错选择。
 
 ![HTTP.sys 直接与你的内部网络进行通信](httpsys/_static/httpsys-to-internal.png)
 
 ## <a name="how-to-use-httpsys"></a>如何使用 HTTP.sys
 
-下面是为主机操作系统和 ASP.NET Core 应用程序的安装程序任务的概述。
+下面是主机操作系统和 ASP.NET Core 应用程序的安装任务概述。
 
 ### <a name="configure-windows-server"></a>配置 Windows Server
 
-* 安装版本的.NET 应用程序要求，如[.NET 核心](https://www.microsoft.com/net/download/core)或[.NET Framework](https://www.microsoft.com/net/download/framework)。
+* 安装应用程序要求的 .NET 版本，例如 [.NET Core](https://www.microsoft.com/net/download/core) 或 [.NET Framework](https://www.microsoft.com/net/download/framework)。
 
-* 预先注册 URL 前缀绑定到 HTTP.sys，以及设置 SSL 证书
+* 预先注册 URL 前缀以绑定到 HTTP.sys，并设置 SSL 证书
 
-   如果你不预先注册 URL 前缀 Windows 中的，你必须使用管理员特权运行你的应用程序。 唯一的例外是如果你将绑定到使用端口号大于 1024; 使用 HTTP (而不是 HTTPS) 的 localhost在这种情况下，无需使用管理员特权。
+   如果在 Windows 中不预先注册 URL 前缀，则必须使用管理员权限运行应用程序。 唯一的例外是，如果你使用端口号大于 1024 的 HTTP（不是 HTTPS）绑定到 localhost；在这种情况下不需要管理员权限。
 
-   有关详细信息，请参阅[如何预先注册前缀和配置 SSL](#preregister-url-prefixes-and-configure-ssl)本文后续部分中。
+   有关详细信息，请参阅本文后续部分的[如何预先注册前缀和配置 SSL](#preregister-url-prefixes-and-configure-ssl)。
 
-* 打开防火墙端口以允许流量抵达 HTTP.sys。
+* 打开防火墙端口以允许流量到达 HTTP.sys。
 
-   你可以使用*netsh.exe*或[PowerShell cmdlet](https://technet.microsoft.com/library/jj554906)。
+   可使用 netsh.exe 或 [PowerShell cmdlet](https://technet.microsoft.com/library/jj554906)。
 
-也有[的 Http.Sys 注册表设置](https://support.microsoft.com/kb/820129)。
+此外，还有 [Http.Sys 注册表设置](https://support.microsoft.com/kb/820129)。
 
-### <a name="configure-your-aspnet-core-application-to-use-httpsys"></a>配置 ASP.NET Core 应用程序，以使用 HTTP.sys
+### <a name="configure-your-aspnet-core-application-to-use-httpsys"></a>配置 ASP.NET Core 应用程序以使用 HTTP.sys
 
-* 如果你使用没有包安装需要[Microsoft.AspNetCore.All](xref:fundamentals/metapackage) metapackage。 [Microsoft.AspNetCore.Server.HttpSys](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.HttpSys/)中 metapackage 包含包。
+* 如果使用 [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) 元包，则不需要安装包。 元包中包括 [Microsoft.AspNetCore.Server.HttpSys](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.HttpSys/) 包。
 
-* 调用`UseHttpSys`上的扩展方法`WebHostBuilder`中你`Main`方法，指定任何[HTTP.sys 选项](https://github.com/aspnet/HttpSysServer/blob/rel/2.0.0/src/Microsoft.AspNetCore.Server.HttpSys/HttpSysOptions.cs)，你的需要如下面的示例中所示：
+* 在 `WebHostBuilder` 上调用 `Main` 方法中的 `UseHttpSys` 扩展方法，指定所需的任何 [HTTP.sys 选项](https://github.com/aspnet/HttpSysServer/blob/rel/2.0.0/src/Microsoft.AspNetCore.Server.HttpSys/HttpSysOptions.cs)，如以下示例所示：
 
   [!code-csharp[](httpsys/sample/Program.cs?name=snippet_Main&highlight=11-19)]
 
 ### <a name="configure-httpsys-options"></a>配置 HTTP.sys 选项
 
-以下是一些 HTTP.sys 设置和你可以配置的限制。
+以下是一些可以配置的 HTTP.sys 设置和限制。
 
-**最大客户端连接**
+**客户端最大连接数**
 
-可以为整个应用程序替换为以下代码中设置最大并发打开 TCP 连接数*Program.cs*:
+可使用 Program.cs 中的以下代码为整个应用程序设置并发打开 TCP 的最大连接数：
 
 [!code-csharp[](httpsys/sample/Program.cs?name=snippet_Options&highlight=5)]
 
-最大连接数为默认情况下的不限 (null)。
+默认情况下，最大连接数不受限制 (NULL)。
 
-**最大请求正文大小**
+**请求正文最大大小**
 
-默认最大请求正文大小为 30,000,000 字节，这是大约 28.6 MB。
+默认的请求正文最大大小为 30,000,000 字节，大约 28.6MB。
 
-重写中的 ASP.NET 核心 MVC 应用限制的建议的方法是使用[RequestSizeLimit](https://github.com/aspnet/Mvc/blob/rel/2.0.0/src/Microsoft.AspNetCore.Mvc.Core/RequestSizeLimitAttribute.cs)操作方法的特性：
+在 ASP.NET Core MVC 应用中替代限制的推荐方法是在操作方法上使用 [RequestSizeLimit](https://github.com/aspnet/Mvc/blob/rel/2.0.0/src/Microsoft.AspNetCore.Mvc.Core/RequestSizeLimitAttribute.cs) 属性：
 
 ```csharp
 [RequestSizeLimit(100000000)]
 public IActionResult MyActionMethod()
 ```
 
-下面是一个示例，演示如何配置整个应用程序，每个请求的约束：
+以下示例演示如何为整个应用程序和每个请求配置约束：
 
 [!code-csharp[](httpsys/sample/Program.cs?name=snippet_Options&highlight=6)]
 
-你可以重写中的特定请求上的设置*Startup.cs*:
+可在 Startup.cs 中替代特定请求的设置：
 
 [!code-csharp[](httpsys/sample/Startup.cs?name=snippet_Configure&highlight=9-10)]
  
-如果你尝试在请求配置限制应用程序已开始读取请求后，将引发异常。 没有`IsReadOnly`属性，告诉你如果`MaxRequestBodySize`属性处于只读状态，这意味着它太迟配置限制。
+如果在应用程序开始读取请求后尝试配置请求限制，则会引发异常。 通过 `IsReadOnly` 属性可知道，如果 `MaxRequestBodySize` 属性处于只读状态，则意味着配置限制已经太迟了。
 
-有关其他 HTTP.sys 选项的信息，请参阅[HttpSysOptions](https://github.com/aspnet/HttpSysServer/blob/rel/2.0.0/src/Microsoft.AspNetCore.Server.HttpSys/HttpSysOptions.cs)。 
+有关其他 HTTP.sys 选项的信息，请参阅 [HttpSysOptions](https://github.com/aspnet/HttpSysServer/blob/rel/2.0.0/src/Microsoft.AspNetCore.Server.HttpSys/HttpSysOptions.cs)。 
 
-### <a name="configure-urls-and-ports-to-listen-on"></a>配置要侦听的 Url 和端口 
+### <a name="configure-urls-and-ports-to-listen-on"></a>配置要侦听的 URL 和端口 
 
-默认情况下 ASP.NET Core 将绑定到`http://localhost:5000`。 若要配置 URL 前缀和端口，可以使用`UseUrls`扩展方法，`urls`命令行参数时，ASPNETCORE_URLS 环境变量，或`UrlPrefixes`属性[HttpSysOptions](https://github.com/aspnet/HttpSysServer/blob/rel/2.0.0/src/Microsoft.AspNetCore.Server.HttpSys/HttpSysOptions.cs)。 下面的代码示例使用`UrlPrefixes`。
+默认情况下，ASP.NET Core 绑定到 `http://localhost:5000`。 要配置 URL 前缀和端口，可使用 `UseUrls` 扩展方法、`urls` 命令行参数、ASPNETCORE_URLS 环境变量或 [HttpSysOptions](https://github.com/aspnet/HttpSysServer/blob/rel/2.0.0/src/Microsoft.AspNetCore.Server.HttpSys/HttpSysOptions.cs) 上的 `UrlPrefixes` 属性。 下面的代码示例使用 `UrlPrefixes`。
 
 [!code-csharp[](httpsys/sample/Program.cs?name=snippet_Main&highlight=17)]
 
-一个优点`UrlPrefixes`是如果你尝试添加的格式不正确的前缀立即收到一条错误消息。 一个优点`UseUrls`(与共享`urls`和 ASPNETCORE_URLS) 是您可以更轻松地切换 Kestrel 和 HTTP.sys 之间。
+`UrlPrefixes` 的优点是，如果尝试添加格式错误的前缀，则会立即收到错误消息。 `UseUrls`（与 `urls` 和 ASPNETCORE_URLS 共享）的优点是，可在 Kestrel 和 HTTP.sys 之间更轻松地切换。
 
-如果你同时使用`UseUrls`(或`urls`或 ASPNETCORE_URLS) 和`UrlPrefixes`中的设置`UrlPrefixes`重写中的`UseUrls`。 有关详细信息，请参阅[托管](xref:fundamentals/hosting)。
+如果同时使用 `UseUrls`（`urls` 或 ASPNETCORE_URLS）和 `UrlPrefixes`，`UrlPrefixes` 中的设置会替代 `UseUrls` 中的设置。 有关详细信息，请参阅[托管](xref:fundamentals/hosting)。
 
-HTTP.sys 使用[HTTP 服务器 API UrlPrefix 字符串格式](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)。
+HTTP.sys 使用 [HTTP 服务器 API UrlPrefix 字符串格式](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)。
 
 > [!NOTE]
-> 请确保指定相同的前缀字符串中`UseUrls`或`UrlPrefixes`，在服务器上预先注册。 
+> 请确保在服务器上预先注册的 `UseUrls` 或 `UrlPrefixes` 中指定相同的前缀字符串。 
 
 ### <a name="dont-use-iis"></a>不使用 IIS
 
-请确保你的应用程序未配置为运行 IIS 或 IIS Express。
+请确保应用程序未配置为运行 IIS 或 IIS Express。
 
-在 Visual Studio 中，默认启动配置文件适用于 IIS Express。 若要运行项目作为控制台应用程序，手动更改所选的配置文件，如下面的屏幕快照中所示。
+在 Visual Studio 中，默认启动配置文件是针对 IIS Express 的。 若要作为控制台应用程序运行该项目，请手动更改所选配置文件，如以下屏幕截图中所示。
 
-![选择控制台应用程序配置文件](httpsys/_static/vs-choose-profile.png)
+![选择控制台应用配置文件](httpsys/_static/vs-choose-profile.png)
 
 ## <a name="preregister-url-prefixes-and-configure-ssl"></a>预先注册 URL 前缀和配置 SSL
 
-IIS 和 HTTP.sys 依赖于基础 Http.Sys 内核模式驱动程序以侦听请求，并执行初始处理。 在 IIS 中，管理 UI 也提供相对简单的方式，来配置所有内容。 但是，你需要自行配置 Http.Sys。 用于执行该操作的内置工具的*netsh.exe*。 
+IIS 和 HTTP.sys 都依赖于基础 Http.Sys 内核模式驱动程序，以便侦听请求和执行初始化处理。 在 IIS 中，管理 UI 提供一种相对简单的方法来配置所有内容。 但是，需要自己配置 Http.Sys。 执行该操作的内置工具是 netsh.exe。 
 
-与*netsh.exe*可以保留 URL 前缀，还可以将 SSL 证书分配。 该工具需要管理权限。
+通过 netsh.exe，可保留 URL 前缀并分配 SSL 证书。 该工具需要管理权限。
 
-下面的示例演示保留端口 80 和 443 的 URL 前缀所需的最低要求：
+以下示例演示保留 80 和 443 端口的 URL 前缀所需的最低要求：
 
 ```console
 netsh http add urlacl url=http://+:80/ user=Users
 netsh http add urlacl url=https://+:443/ user=Users
 ```
 
-下面的示例演示如何将 SSL 证书分配：
+以下示例演示如何分配 SSL 证书：
 
 ```console
 netsh http add sslcert ipport=0.0.0.0:443 certhash=MyCertHash_Here appid={00000000-0000-0000-0000-000000000000}"
 ```
 
-下面是的参考文档*netsh.exe*:
+下面是 netsh.exe 的参考文档：
 
-* [Netsh 命令的超文本传输协议 (HTTP)](https://technet.microsoft.com/library/cc725882.aspx)
-* [UrlPrefix 字符串](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)
+* [Netsh Commands for Hypertext Transfer Protocol (HTTP)](https://technet.microsoft.com/library/cc725882.aspx)（超文本传输协议 (HTTP) 的 Netsh 命令）
+* [UrlPrefix Strings](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)（UrlPrefix 字符串）
 
-以下资源提供了几个方案的详细的说明。 请参阅 HttpListener 的文章也同样适用于 HTTP.sys，因为二者都基于 Http.Sys。
+以下资源提供几个方案的详细说明。 涉及 HttpListener 的文章同样适用于 HTTP.sys，因为两者都基于 Http.Sys。
 
 * [如何：使用 SSL 证书配置端口](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate)
-* [HTTPS 通信-HttpListener 基于托管和客户端证书](http://sunshaking.blogspot.com/2012/11/https-communication-httplistener-based.html)这是一个第三方的博客和是相当旧但仍具有有用的信息。
-* [如何： 演练使用 HttpListener 或 Http 服务器非托管代码 （c + +） 为 SSL 简单服务器](https://blogs.msdn.microsoft.com/jpsanders/2009/09/29/how-to-walkthrough-using-httplistener-or-http-server-unmanaged-code-c-as-an-ssl-simple-server/)这也是有用的信息与较旧的博客。
+* [HTTPS Communication - HttpListener based Hosting and Client Certification](http://sunshaking.blogspot.com/2012/11/https-communication-httplistener-based.html)（HTTPS 通信 - 基于 HttpListener 的托管和客户端证书）这是很久之前的一个第三方博客，但仍有一些有用的信息。
+* [How To: Walkthrough Using HttpListener or Http Server unmanaged code (C++) as an SSL Simple Server](https://blogs.msdn.microsoft.com/jpsanders/2009/09/29/how-to-walkthrough-using-httplistener-or-http-server-unmanaged-code-c-as-an-ssl-simple-server/)（如何：使用 HttpListener 或 HTTP 服务器非托管代码 (C++) 作为 SSL 简单服务器进行演练），这也是很久之前的一个博客，但仍有一些有用的信息。
 
-以下是一些可以比易于使用的第三方工具*netsh.exe*命令行。 这些不提供的或由 Microsoft 认可。 这些工具以管理员身份运行默认情况下，由于*netsh.exe*本身需要管理员特权。
+以下是一些比 netsh.exe 命令行更易使用的第三方工具。 它们不是由 Microsoft 提供或认可的。 默认情况下，这些工具以管理员身份运行，因为 netsh.exe 本身需要管理员权限。
 
-* [http.sys Manager](http://httpsysmanager.codeplex.com/)提供有关列表的 UI 和配置 SSL 证书和选项，前缀保留，和证书信任列表。 
-* [HttpConfig](http://www.stevestechspot.com/ABetterHttpcfg.aspx)允许列表或配置 SSL 证书和 URL 前缀。 UI 是更完善比 http.sys 管理器，并公开一些更多配置选项，但其他方面，它提供类似的功能。 它不能创建新的证书信任列表 (CTL)，但可以分配现有的。
+* [http.sys 管理器](http://httpsysmanager.codeplex.com/)提供用于列出和配置 SSL 证书和选项、前缀保留和证书信任列表的 UI。 
+* [HttpConfig](http://www.stevestechspot.com/ABetterHttpcfg.aspx) 允许用户列出或配置 SSL 证书和 URL 前缀。 UI 比 http.sys 管理器更加完善并且提供更多的配置选项，但在其他方面它提供类似的功能。 它不能创建新的证书信任列表 (CTL)，但可以分配现有证书信任列表。
 
 [!INCLUDE[How to make an SSL cert](../../includes/make-ssl-cert.md)]
 

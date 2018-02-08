@@ -2,18 +2,18 @@
 title: "Nano Server 上的 ASP.NET Core"
 author: shirhatti
 description: "了解如何采用现有的 ASP.NET Core 应用并将其部署到运行 IIS 的 Nano Server 实例。"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/04/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: tutorials/nano-server
-ms.openlocfilehash: d9b55fb42088b447451326b7ee573d9bfa5f5941
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 4fc5f6874f86130da9f66d13778516d984ff8b46
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="aspnet-core-with-iis-on-nano-server"></a>ASP.NET Core 与 Nano Server 上运行的 IIS
 
@@ -31,7 +31,7 @@ Nano Server 是 Windows Server 2016 中的一个安装选项，它占用内存�
 
 2. 下载 Nano Server VHD。
 
-3. 使用 Azure 库中的 Nano Server 映像在 Azure 中创建 VM。 如果没有 Azure 帐户，可以获取 30 天免费试用版。
+3. 使用 Azure 库中的 Nano Server 映像在 Azure 中创建 VM。 提供 Azure 免费试用版。
 
 在本教程中，我们将使用第二个选项，即 Windows Server 2016 中的预生成 Nano Server VHD。
 
