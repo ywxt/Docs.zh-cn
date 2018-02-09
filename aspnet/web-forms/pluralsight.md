@@ -2,7 +2,7 @@
 uid: web-forms/pluralsight
 title: "Web 窗体从 Pluralsight 视频培训 |Microsoft 文档"
 author: rick-anderson
-description: "Web 窗体视频培训 Pluralsight 此 ASP.NET Web 窗体开发过程向您介绍几个关键技术，你需要知道为.NET 开发、..."
+description: "Pluralsight 提供的 Web Forms 培训。此 ASP.NET Web Forms 开发课程向您介绍几个作为一个.NET 开发者所需要知道的关键技术..."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/16/2011
@@ -18,12 +18,12 @@ ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
 ---
-<a name="web-forms-video-training-from-pluralsight"></a>Web 窗体从 Pluralsight 视频培训
+<a name="web-forms-video-training-from-pluralsight"></a>Web Forms 培训视频来自 Pluralsight 
 ====================
 ### <a name="videos"></a>视频
 
 - [ASP.NET 简介](https://pluralsight.com/training/Player?author=dan-wahlin&name=webforms-01&mode=live&clip=0&course=aspdotnet-webforms4-intro)
-- [ASP.NET Web 窗体功能](https://pluralsight.com/training/Player?author=dan-wahlin&name=webforms-02&mode=live&clip=0&course=aspdotnet-webforms4-intro)
+- [ASP.NET Web Forms 的功能](https://pluralsight.com/training/Player?author=dan-wahlin&name=webforms-02&mode=live&clip=0&course=aspdotnet-webforms4-intro)
 - [使用数据](https://pluralsight.com/training/Player?author=dan-wahlin&name=webforms-03&mode=live&clip=0&course=aspdotnet-webforms4-intro)
 - [Entity Framework](https://pluralsight.com/training/Player?author=dan-wahlin&name=webforms-04&mode=live&clip=0&course=aspdotnet-webforms4-intro)
 - [母版页](https://pluralsight.com/training/Player?author=dan-wahlin&name=webforms-05&mode=live&clip=0&course=aspdotnet-webforms4-intro)
@@ -33,13 +33,13 @@ ms.lasthandoff: 11/10/2017
 - [Web 部署](https://pluralsight.com/training/Player?author=fritz-onion&name=webforms-09&mode=live&clip=0&course=aspdotnet-webforms4-intro)
 
 
-"本课程中，通过为 Pluralsight，Dan Wahlin 记录是 ASP.NET Web 窗体的极佳介绍。 他全面覆盖率开头.NET Framework 的简介、 如何安装和使用 Visual Studio 将继续、 演练如何生成应用程序 （包括服务器控件、 数据访问和 Ajax），并完成部署技术。 Dan 的 true ASP.NET 专家和极佳演示器中，因此未遗漏此免费课程 ！"
+"本课是由 Dan Wahlin 为 Pluralsight 录制。这个课程是对 ASP.NET Web Forms 的极佳的入门课程。 他的全面介绍开始于.NET Framework，紧接着介绍了如何安装和使用 Visual Studio，同时介绍了如何生成应用程序（包括服务器控件、 数据访问和 Ajax技术），并完成部署的技术。 Dan是一个真正的 ASP.NET 方面的专家和优秀的讲师，因此千万不要错过这个免费的课程！"
 
 Scott Hanselman、 首席项目经理、 Web 平台和 Azure 工具，Microsoft
 
 
-![pluralsight 徽标 playbutton](pluralsight/_static/image1.png)
+![pluralsight-logo-playbutton](pluralsight/_static/image1.png)
 
 解锁访问到 3000 + 开发，IT 和创造性随时随地可以观看的课程。
 
-**开始 29 美元/密苏里州**[开始免费试用](https://pluralsight.com/microsoft/olt/subscribe/SubscriptionRedirector.aspx?freetrial=true&amp;utm_source=microsoft&amp;utm_medium=sponsored-page&amp;utm_content=webmatrix&amp;utm_campaign=microsoft-sponsored-course)[现在订阅](https://pluralsight.com/microsoft/OLT/subscriptions.aspx?utm_source=microsoft&amp;utm_medium=sponsored-page&amp;utm_content=webmatrix&amp;utm_campaign=microsoft-sponsored-course)
+**低至 29 美元/月**[开始免费试用](https://pluralsight.com/microsoft/olt/subscribe/SubscriptionRedirector.aspx?freetrial=true&amp;utm_source=microsoft&amp;utm_medium=sponsored-page&amp;utm_content=webmatrix&amp;utm_campaign=microsoft-sponsored-course)[现在订阅](https://pluralsight.com/microsoft/OLT/subscriptions.aspx?utm_source=microsoft&amp;utm_medium=sponsored-page&amp;utm_content=webmatrix&amp;utm_campaign=microsoft-sponsored-course)
