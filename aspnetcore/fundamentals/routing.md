@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: 2897eb3a756654c61e38e847f5a8e1f8ca4f0b7c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d35c24347e8e06ed85e2af8addcc1f8cf28dc47a
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core 中的路由
 
@@ -36,7 +36,7 @@ ms.lasthandoff: 01/30/2018
 
 通常情况下，应用具有一个路由集合。 请求到达时，将按顺序处理路由集合。 传入请求通过对路由集合中的每个可用路由调用 `RouteAsync` 方法来查找与请求 URL 匹配的路由。 与此相反，响应可根据路由信息使用路由生成 URL（例如，用于重定向或链接），并因此避免需要硬编码 URL，这有助于可维护性。
 
-路由通过 `RouterMiddleware` 类连接到[中间件](middleware.md)管道。 [ASP.NET MVC](../mvc/overview.md) 向中间件管道添加路由，作为其配置的一部分。 若要了解如何使用路由作为独立组件，请参阅 [using-routing-middleware](#using-routing-middleware)。
+路由通过 `RouterMiddleware` 类连接到[中间件](xref:fundamentals/middleware/index)管道。 [ASP.NET Core MVC](xref:mvc/overview) 向中间件管道添加路由，作为其配置的一部分。 若要了解如何使用路由作为独立组件，请参阅[使用路由中间件](#using-routing-middleware)。
 
 <a name="url-matching-ref"></a>
 

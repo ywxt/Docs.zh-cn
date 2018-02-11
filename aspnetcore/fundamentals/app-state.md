@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/app-state
-ms.openlocfilehash: 7aa200d3612f766ab633ccab807421b9c5393975
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: f4ed38f7395e3f4fe939584c1f3f5b0dba93724c
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>ASP.NET Core 中的会话和应用程序状态简介
 
@@ -84,7 +84,7 @@ ASP.NET Core 2.0 及更高版本中，基于 Cookie 的 TempData 提供程序在
 
 ---
 
-排序对于中间件组件至关重要。 在前面的示例中，在 `UseMvcWithDefaultRoute` 之后调用 `UseSession` 时会发生 `InvalidOperationException` 类型的异常。 有关详细信息，请参阅[中间件排序](xref:fundamentals/middleware#ordering)。
+排序对于中间件组件至关重要。 在前面的示例中，在 `UseMvcWithDefaultRoute` 之后调用 `UseSession` 时会发生 `InvalidOperationException` 类型的异常。 有关详细信息，请参阅[中间件排序](xref:fundamentals/middleware/index#ordering)。
 
 > [!IMPORTANT]
 > 如果面向 .NET Framework 和使用基于会话的提供程序，将 [Microsoft.AspNetCore.Session](https://www.nuget.org/packages/Microsoft.AspNetCore.Session) NuGet 包添加到项目。
@@ -189,7 +189,7 @@ Cookie 通常用于个性化设置，其中的内容是为已知用户定制的�
 
 `HttpContext` 抽象为名为 `Items` 的 `IDictionary<object, object>` 类型字典集合提供支持。 此集合在 HttpRequest 开始时可用并在每个请求的末尾被放弃。 可以通过给键控的项分配值或为特定键请求值来访问它。
 
-在下面示例中，[中间件](middleware.md)添加 `isVerified` 到 `Items` 集合。
+在下面示例中，[中间件](xref:fundamentals/middleware/index)将 `isVerified` 添加到 `Items` 集合。
 
 ```csharp
 app.Use(async (context, next) =>

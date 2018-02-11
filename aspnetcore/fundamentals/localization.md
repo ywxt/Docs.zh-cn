@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/localization
-ms.openlocfilehash: 794abf628beff7e5c78f9ca04309694d46910373
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 766cec5dd00b7b464eef31a3bc1721f522697608
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core 全球化和本地化
 
@@ -198,7 +198,7 @@ Razor 视图中使用 `@inject IViewLocalizer` 的资源文件遵循类似的模
 
 ### <a name="localization-middleware"></a>本地化中间件
 
-在本地化[中间件](middleware.md)中设置有关请求的当前区域性。 在 Program.cs 文件的 `Configure` 方法中启用本地化中间件。 请注意，必须在中间件前面配置本地化中间件，它可能检查请求区域性（例如，`app.UseMvcWithDefaultRoute()`）。
+在本地化[中间件](xref:fundamentals/middleware/index)中设置有关请求的当前区域性。 在 `Configure` 方法中启用本地化中间件。 必须在中间件前面配置本地化中间件，它可能检查请求区域性（例如，`app.UseMvcWithDefaultRoute()`）。
 
 [!code-csharp[Main](localization/sample/Localization/Program.cs?name=snippet2)]
 
