@@ -1,7 +1,7 @@
 ---
-title: "与 EF 核心-数据模型-5 8 razor 页"
+title: "Razor 页面和 EF Core - 数据模型 - 第 5 个教程，共 8 个教程"
 author: rick-anderson
-description: "在本教程中添加更多实体和关系，并通过指定格式设置、 验证和数据库的映射规则自定义数据模型。"
+description: "本教程将添加更多实体和关系，并通过指定格式设置、验证和数据库映射规则来自定义数据模型。"
 manager: wpickett
 ms.author: riande
 ms.date: 10/25/2017
@@ -10,48 +10,48 @@ ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/complex-data-model
 ms.openlocfilehash: 58bb773ba16314827da84909def05a8ef370479b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: MT
+ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 01/31/2018
 ---
-# <a name="creating-a-complex-data-model---ef-core-with-razor-pages-tutorial-5-of-8"></a>创建复杂的数据模型的 EF 核心 Razor 页教程 (5 的 8)
+# <a name="creating-a-complex-data-model---ef-core-with-razor-pages-tutorial-5-of-8"></a>创建复杂数据模型 - EF Core 和 Razor 页面教程（第 5 个，共 8 个）
 
-通过[Tom Dykstra](https://github.com/tdykstra)和[Rick Anderson](https://twitter.com/RickAndMSFT)
+作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
 
-与基本数据模型的三个实体组成合作，前面的教程。 在本教程中：
+前面的教程介绍了由三个实体组成的基本数据模型。 本教程将演示如何：
 
 * 添加更多实体和关系。
-* 通过指定格式设置、 验证和数据库的映射规则自定义数据模型。
+* 通过指定格式设置、验证和数据库映射规则来自定义数据模型。
 
-已完成的数据模型的实体类是在下图中所示：
+已完成数据模型的实体类如下图所示：
 
 ![实体关系图](complex-data-model/_static/diagram.png)
 
-如果你遇到无法解决的问题，请下载[对此阶段已完成应用程序](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part5-complex)。
+如果遇到无法解决的问题，请下载[本阶段的已完成应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part5-complex)。
 
-## <a name="customize-the-data-model-with-attributes"></a>自定义数据模型具有属性
+## <a name="customize-the-data-model-with-attributes"></a>使用特性自定义数据模型
 
-在此部分中，数据模型是使用自定义属性。
+此部分将使用特性自定义数据模型。
 
-### <a name="the-datatype-attribute"></a>数据类型属性
+### <a name="the-datatype-attribute"></a>DataType 特性
 
-学生页当前显示的注册日期的时间。 通常情况下，日期字段显示仅显示日期而非时间。
+学生页面当前显示注册日期。 通常情况下，日期字段仅显示日期，不显示时间。
 
-更新*Models/Student.cs*替换为以下突出显示的代码：
+用以下突出显示的代码更新 *Models/Student.cs*：
 
 [!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
-[DataType](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatypeattribute?view=netframework-4.7.1)属性指定比数据库内部类型更具体的数据类型。 在此情况下应显示仅显示日期，不的日期和时间。 [DataType 枚举](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatype?view=netframework-4.7.1)提供对于许多数据类型，例如日期、 时间、 电话号码、 货币、 电子邮件地址，等等。`DataType`属性还可以启用该应用程序自动提供特定类型的功能。 例如:
+[DataType](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatypeattribute?view=netframework-4.7.1) 特性指定比数据库内部类型更具体的数据类型。 在此情况下，应仅显示日期，而不是日期加时间。 [DataType 枚举](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatype?view=netframework-4.7.1)提供多种数据类型，例如日期、时间、电话号码、货币、电子邮件地址等。应用还可通过 `DataType` 特性自动提供类型特定的功能。 例如：
 
-* `mailto:`为自动创建链接`DataType.EmailAddress`。
-* 为提供的日期选择器`DataType.Date`大多数浏览器中。
+* `mailto:` 链接将依据 `DataType.EmailAddress` 自动创建。
+* 大多数浏览器中都提供面向 `DataType.Date` 的日期选择器。
 
-`DataType`属性发出 HTML 5 `data-` HTML 5 浏览器使用的 (读作的数据 dash) 属性。 `DataType`属性不提供验证。
+`DataType` 特性发出 HTML 5 `data-`（读作 data dash）特性供 HTML 5 浏览器使用。 `DataType` 特性不提供验证。
 
-`DataType.Date`未指定的日期的显示格式。 默认情况下，日期字段显示根据基于服务器的默认格式[CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support)。
+`DataType.Date` 不指定显示日期的格式。 默认情况下，日期字段根据基于服务器的 [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support) 的默认格式进行显示。
 
 `DisplayFormat` 特性用于显式指定日期格式：
 
@@ -59,109 +59,109 @@ ms.lasthandoff: 01/30/2018
 [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
 ```
 
-`ApplyFormatInEditMode`设置指定的格式设置也应该将应用到编辑 UI。 某些字段不应使用`ApplyFormatInEditMode`。 例如，货币符号应通常不会显示在编辑文本框中。
+`ApplyFormatInEditMode` 设置指定还应对编辑 UI 应用该格式设置。 某些字段不应使用 `ApplyFormatInEditMode`。 例如，编辑文本框中通常不应显示货币符号。
 
-`DisplayFormat`属性可由本身。 它通常是使用一个好办法`DataType`特性与`DisplayFormat`属性。 `DataType`属性传达数据而不是如何在屏幕上呈现其的语义。 `DataType`属性提供中均不提供了以下好处`DisplayFormat`:
+`DisplayFormat` 特性可由其本身使用。 搭配使用 `DataType` 特性和 `DisplayFormat` 特性通常是很好的做法。 `DataType` 特性按照数据在屏幕上的呈现方式传达数据的语义。 `DataType` 特性可提供 `DisplayFormat` 中所不具有的以下优点：
 
-* 浏览器可以启用 HTML5 功能。 例如，显示一个日历控件、 区域设置相对应的货币符号、 电子邮件链接，客户端进行输入的验证，等等。
-* 默认情况下，浏览器呈现使用基于的区域设置的正确格式的数据。
+* 浏览器可启用 HTML5 功能。 例如，显示日历控件、区域设置适用的货币符号、电子邮件链接、客户端输入验证等。
+* 默认情况下，浏览器将根据区域设置采用正确的格式呈现数据。
 
-有关详细信息，请参阅[\<输入 > 标记帮助器文档](xref:mvc/views/working-with-forms#the-input-tag-helper)。
+有关详细信息，请参阅 [\<input> 标记帮助器文档](xref:mvc/views/working-with-forms#the-input-tag-helper)。
 
-运行应用。 导航到学生索引页。 不再显示时间。 每个视图中使用`Student`模型显示无时间的日期。
+运行应用。 导航到学生索引页。 将不再显示时间。 使用 `Student` 模型的每个视图将显示日期，不显示时间。
 
-![显示日期而无需时间的学生索引页](complex-data-model/_static/dates-no-times.png)
+![“学生”索引页显示不带时间的日期](complex-data-model/_static/dates-no-times.png)
 
-### <a name="the-stringlength-attribute"></a>StringLength 属性
+### <a name="the-stringlength-attribute"></a>StringLength 特性
 
-具有属性，可以指定数据验证规则和验证错误消息。 [StringLength](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.stringlengthattribute?view=netframework-4.7.1)属性指定数据字段中允许的字符的最小和最大长度。 `StringLength`特性还提供对客户端和服务器端验证。 最小值对数据库架构没有任何影响。
+可使用特性指定数据验证规则和验证错误消息。 [StringLength](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.stringlengthattribute?view=netframework-4.7.1) 特性指定数据字段中允许的字符的最小长度和最大长度。 `StringLength` 特性还提供客户端和服务器端验证。 最小值对数据库架构没有任何影响。
 
-更新`Student`模型替换为以下代码：
+使用以下代码更新 `Student` 模型：
 
 [!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
 
-前面的代码限制为不超过 50 个字符的名称。 `StringLength`属性不会阻止用户从空白区域输入一个名称。 [正则表达式](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1)特性用于将限制应用到的输入。 例如，下面的代码要求的第一个字符是大写且其余的字符是按字母顺序排列：
+上面的代码将名称限制为不超过 50 个字符。 `StringLength` 特性不会阻止用户在名称中输入空格。 [RegularExpression](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1) 特性用于向输入应用限制。 例如，以下代码要求第一个字符为大写，其余字符按字母顺序排列：
 
 ```csharp
 [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
 ```
 
-运行应用程序：
+运行应用：
 
 * 导航到学生页。
-* 选择**新建**，并输入的名称超过 50 个字符。
-* 选择**创建**，客户端验证显示一条错误消息。
+* 选择“新建”并输入不超过 50 个字符的名称。
+* 选择“创建”时，客户端验证会显示一条错误消息。
 
-![学生索引页显示的字符串长度错误](complex-data-model/_static/string-length-errors.png)
+![显示字符串长度错误的“学生索引”页](complex-data-model/_static/string-length-errors.png)
 
-在**SQL Server 对象资源管理器**(SSOX)，通过双击打开学生表设计器**学生**表。
+在“SQL Server 对象资源管理器”(SSOX) 中，双击 Student 表，打开 Student 表设计器。
 
-![在 SSOX 中迁移前的学生表](complex-data-model/_static/ssox-before-migration.png)
+![迁移前 SSOX 中的 Student 表](complex-data-model/_static/ssox-before-migration.png)
 
-上图显示的架构`Student`表。 名称字段具有类型`nvarchar(MAX)`由于尚未在数据库上运行迁移。 在本教程中稍后运行迁移时，名称字段将成为`nvarchar(50)`。
+上图显示 `Student` 表的架构。 名称字段的类型为 `nvarchar(MAX)`，因为数据库上尚未运行迁移。 稍后在本教程中运行迁移时，名称字段将变成 `nvarchar(50)`。
 
-### <a name="the-column-attribute"></a>列属性
+### <a name="the-column-attribute"></a>Column 特性
 
-属性可以控制如何类和属性映射到数据库。 在本部分中，`Column`属性用于将映射的名称`FirstMidName`属性设置为"FirstName"在数据库中。
+特性可以控制类和属性映射到数据库的方式。 在本部分，`Column` 特性用于将 `FirstMidName` 属性的名称映射到数据库中的“FirstName”。
 
-创建数据库后，将在模型上的属性名称用于列名称 (时除外`Column`属性，则使用)。
+创建数据库后，模型上的属性名将用作列名（使用 `Column` 特性时除外）。
 
-`Student`模型使用`FirstMidName`的第一个名称字段，因为该字段还可能包含中间名。
+`Student` 模型使用 `FirstMidName` 作为名字字段，因为该字段也可能包含中间名。
 
-更新*Student.cs*替换为以下突出显示代码文件：
+用以下突出显示的代码更新 *Student.cs* 文件：
 
 [!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
 
-进行上述更改后，`Student.FirstMidName`在应用程序映射到`FirstName`列`Student`表。
+进行上述更改后，应用中的 `Student.FirstMidName` 将映射到 `Student` 表的 `FirstName` 列。
 
-添加`Column`属性将更改模型后备`SchoolContext`。 模型后备`SchoolContext`不再与数据库相匹配。 如果在应用迁移之前运行该应用，则会生成以下异常：
+添加 `Column` 特性后，`SchoolContext` 的支持模型会发生改变。 `SchoolContext` 的支持模型将不再与数据库匹配。 如果在执行迁移前运行应用，则会生成如下异常：
 
 ```SQL
 SqlException: Invalid column name 'FirstName'.
 ```
-更新数据库：
+若要更新数据库：
 
 * 生成项目。
-* 在项目文件夹中打开命令窗口。 输入以下命令以创建新的迁移和更新数据库：
+* 在项目文件夹中打开命令窗口。 输入以下命令以创建新迁移并更新数据库：
 
     ```console
     dotnet ef migrations add ColumnFirstName
     dotnet ef database update
     ```
 
-`dotnet ef migrations add ColumnFirstName`命令将生成以下警告消息：
+`dotnet ef migrations add ColumnFirstName` 命令将生成如下警告消息：
 
 ```text
 An operation was scaffolded that may result in the loss of data.
 Please review the migration for accuracy.
 ```
 
-会生成警告，因为名称字段现在是限制为 50 个字符。 如果在数据库中的名称必须超过 50 个字符，到最后一个字符 51 将会丢失。
+生成警告的原因是名称字段现已限制为 50 个字符。 如果数据库中的名称超过 50 个字符，则第 51 个字符及后面的所有字符都将丢失。
 
-* 测试应用程序。
+* 测试应用。
 
-在 SSOX 中打开学生表：
+在 SSOX 中打开 Student 表：
 
-![在 SSOX 中后迁移的学生表](complex-data-model/_static/ssox-after-migration.png)
+![迁移后 SSOX 中的 Students 表](complex-data-model/_static/ssox-after-migration.png)
 
-类型的迁移已应用之前，已名称列[nvarchar (max)](https://docs.microsoft.com/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql)。 名称列现`nvarchar(50)`。 列名称已更改，不再`FirstMidName`到`FirstName`。
+执行迁移前，名称列的类型为 [nvarchar (MAX)](https://docs.microsoft.com/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql)。 名称列现在的类型为 `nvarchar(50)`。 列名已从 `FirstMidName` 更改为 `FirstName`。
 
 > [!Note]
-> 在以下部分中，某些阶段时生成的应用程序会生成编译器错误。 说明中指定何时生成该应用。
+> 在下一部分中，在某些阶段生成应用会生成编译器错误。 说明用于指定生成应用的时间。
 
-## <a name="student-entity-update"></a>学生实体更新
+## <a name="student-entity-update"></a>Student 实体更新
 
-![学生实体](complex-data-model/_static/student-entity.png)
+![Student 实体](complex-data-model/_static/student-entity.png)
 
-更新*Models/Student.cs*替换为以下代码：
+用以下代码更新 *Models/Student.cs*：
 
 [!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
 
-### <a name="the-required-attribute"></a>必需的特性
+### <a name="the-required-attribute"></a>Required 特性
 
-`Required`特性使名称属性必填的字段。 `Required`属性不所需的不可为 null 的类型，如值类型 (`DateTime`， `int`，`double`等。)。 不能为 null 的类型是自动被视为必填字段。
+`Required` 特性使名称属性成为必填字段。 值类型（`DateTime`、`int`、`double`）等不可为 NULL 的类型不需要 `Required` 特性。 系统会将不可为 NULL 的类型自动视为必填字段。
 
-`Required`属性无法替换中的最小长度参数`StringLength`属性：
+不能用 `StringLength` 特性中的最短长度参数替换 `Required` 特性：
 
 ```csharp
 [Display(Name = "Last Name")]
@@ -169,25 +169,25 @@ Please review the migration for accuracy.
 public string LastName { get; set; }
 ```
 
-### <a name="the-display-attribute"></a>显示属性
+### <a name="the-display-attribute"></a>Display 特性
 
-`Display`属性指定文本框的标题应为"名字"、"姓氏"、"全名"和"注册日期"。 默认标题不包含空格除以词，例如"Lastname。"
+`Display` 特性指定文本框的标题栏应为“FirstName”、“LastName”、“FullName”和“EnrollmentDate”。 标题栏默认不使用空格分隔词语，如“Lastname”。
 
-### <a name="the-fullname-calculated-property"></a>计算的 FullName 属性
+### <a name="the-fullname-calculated-property"></a>FullName 计算属性
 
-`FullName`是返回一个值，通过串联两个其他属性创建一个计算的属性。 `FullName`不能设置，它具有仅一个 get 访问器。 不`FullName`在数据库中创建列。
+`FullName` 是计算属性，可返回通过串联两个其他属性创建的值。 `FullName` 不能设置并且仅具有一个 get 访问器。 数据库中不会创建任何 `FullName` 列。
 
 ## <a name="create-the-instructor-entity"></a>创建 Instructor 实体
 
 ![Instructor 实体](complex-data-model/_static/instructor-entity.png)
 
-创建*Models/Instructor.cs*替换为以下代码：
+用以下代码创建 Models/Instructor.cs：
 
 [!code-csharp[Main](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
 
-请注意的几个属性都在相同`Student`和`Instructor`实体。 在更高版本在本系列中的实现继承教程中，此代码将重构以消除冗余。
+请注意，`Student` 和 `Instructor` 实体中具有几个相同属性。 本系列后面的“实现继承”教程将重构此代码以消除冗余。
 
-多个属性可在一行上。 `HireDate`属性可以进行编写，如下所示：
+一行可包含多个特性。 可按如下方式编写 `HireDate` 特性：
 
 ```csharp
 [DataType(DataType.Date),Display(Name = "Hire Date"),DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -195,9 +195,9 @@ public string LastName { get; set; }
 
 ### <a name="the-courseassignments-and-officeassignment-navigation-properties"></a>CourseAssignments 和 OfficeAssignment 导航属性
 
-`CourseAssignments`和`OfficeAssignment`属性是导航属性。
+`CourseAssignments` 和 `OfficeAssignment` 是导航属性。
 
-一个教师可以教授任意数量的课程，因此`CourseAssignments`定义为集合。
+一名讲师可以教授任意数量的课程，因此 `CourseAssignments` 定义为集合。
 
 ```csharp
 public ICollection<CourseAssignment> CourseAssignments { get; set; }
@@ -205,7 +205,7 @@ public ICollection<CourseAssignment> CourseAssignments { get; set; }
 
 如果导航属性包含多个实体：
 
-* 它必须是列表类型，可以添加、 删除和更新条目。
+* 它必须是可在其中添加、删除和更新实体的列表类型。
 
 导航属性类型包括：
 
@@ -213,11 +213,11 @@ public ICollection<CourseAssignment> CourseAssignments { get; set; }
 *  `List<T>`
 *  `HashSet<T>`
 
-如果`ICollection<T>`EF 核心创建的指定`HashSet<T>`默认情况下的集合。
+如果指定了 `ICollection<T>`，EF Core 会默认创建 `HashSet<T>` 集合。
 
-`CourseAssignment`实体部分所述对多对多关系。
+`CourseAssignment` 实体在“多对多关系”部分进行介绍。
 
-Contoso 大学业务规则，一个教师可以有最多一个 office 的状态。 `OfficeAssignment`属性包含单个`OfficeAssignment`实体。 `OfficeAssignment`如果没有 office 分配，为 null。
+Contoso University 业务规则规定一名讲师最多可获得一间办公室。 `OfficeAssignment` 属性包含一个 `OfficeAssignment` 实体。 如果未分配办公室，则 `OfficeAssignment` 为 NULL。
 
 ```csharp
 public OfficeAssignment OfficeAssignment { get; set; }
@@ -227,73 +227,73 @@ public OfficeAssignment OfficeAssignment { get; set; }
 
 ![OfficeAssignment 实体](complex-data-model/_static/officeassignment-entity.png)
 
-创建*Models/OfficeAssignment.cs*替换为以下代码：
+用以下代码创建 Models/OfficeAssignment.cs：
 
 [!code-csharp[Main](intro/samples/cu/Models/OfficeAssignment.cs)]
 
-### <a name="the-key-attribute"></a>键属性
+### <a name="the-key-attribute"></a>Key 特性
 
-`[Key]`属性用于标识属性作为的主键 (PK) 时的属性名称而非 classnameID 或 id。
+`[Key]` 特性用于在属性名不是 classnameID 或 ID 时将属性标识为主键 (PK)。
 
-没有之间的对零或一一个关系`Instructor`和`OfficeAssignment`实体。 相对于分配给教师仅存在一个办公室分配。 `OfficeAssignment` PK 是还其外键 (FK) 到`Instructor`实体。 无法自动识别 EF 核心`InstructorID`作为的 PK`OfficeAssignment`因为：
+`Instructor` 和 `OfficeAssignment` 实体之间存在一对零或一关系。 仅当与分配到办公室的讲师之间建立关系时才存在办公室分配。 `OfficeAssignment` PK 也是其到 `Instructor` 实体的外键 (FK)。 EF Core 无法自动将 `InstructorID` 识别为 `OfficeAssignment` 的 PK，因为：
 
-* `InstructorID`未遵循 ID 或 classnameID 命名约定。
+* `InstructorID` 不遵循 ID 或 classnameID 命名约定。
 
-因此，`Key`属性用于标识`InstructorID`PK 作为：
+因此，`Key` 特性用于将 `InstructorID` 识别为 PK：
 
 ```csharp
 [Key]
 public int InstructorID { get; set; }
 ```
 
-默认情况下，EF 核心将密钥视为非数据库生成因为列是标识关系。
+默认情况下，EF Core 将键视为非数据库生成，因为该列面向的是识别关系。
 
-### <a name="the-instructor-navigation-property"></a>教师导航属性
+### <a name="the-instructor-navigation-property"></a>Instructor 导航属性
 
-`OfficeAssignment`导航属性进行`Instructor`实体是可以为 null 因为：
+`Instructor` 实体的 `OfficeAssignment` 导航属性可以为 NULL，因为：
 
-* 引用类型 （如类都可以为 null）。
-* 一个教师可能没有一个办公室分配。
+* 引用类型（例如，类可以为 NULL）。
+* 一名讲师可能没有办公室分配。
 
 
-`OfficeAssignment`实体具有非 null`Instructor`导航属性因为：
+`OfficeAssignment` 实体具有不可为 NULL 的 `Instructor` 导航属性，因为：
 
-* `InstructorID`是不可为 null。
-* 一个办公室分配不存在一个教师不存在。
+* `InstructorID` 不可为 NULL。
+* 没有讲师则不可能存在办公室分配。
 
-当`Instructor`实体具有相关`OfficeAssignment`实体，每个实体都有对另一个在其导航属性的引用。
+当 `Instructor` 实体具有相关 `OfficeAssignment` 实体时，每个实体都具有对其导航属性中的另一个实体的引用。
 
-`[Required]`特性可以应用到`Instructor`导航属性：
+`[Required]` 特性可以应用于 `Instructor` 导航属性：
 
 ```csharp
 [Required]
 public Instructor Instructor { get; set; }
 ```
 
-前面的代码指定必须是相关的教师。 前面的代码是不必要因为`InstructorID`外键 （它也是在 PK） 是不可为 null。
+上面的代码指定必须存在相关的讲师。 上面的代码没有必要，因为 `InstructorID` 外键（也是 PK）不可为 NULL。
 
-## <a name="modify-the-course-entity"></a>修改过程实体
+## <a name="modify-the-course-entity"></a>修改 Course 实体
 
-![课程实体](complex-data-model/_static/course-entity.png)
+![Course 实体](complex-data-model/_static/course-entity.png)
 
-更新*Models/Course.cs*替换为以下代码：
+用以下代码更新 *Models/Course.cs*：
 
 [!code-csharp[Main](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
 
-`Course`实体具有外键 (FK) 属性`DepartmentID`。 `DepartmentID`指向相关`Department`实体。 `Course`实体具有`Department`导航属性。
+`Course` 实体具有外键 (FK) 属性 `DepartmentID`。 `DepartmentID` 指向相关的 `Department` 实体。 `Course` 实体具有 `Department` 导航属性。
 
-该模型具有相关实体的导航属性时，EF 核心不会为数据模型需要 FK 属性。
+当数据模型具有相关实体的导航属性时，EF Core 不要求此模型具有 FK 属性。
 
-EF 核心在任何位置在需要自动将 FKs 创建数据库中。 EF 核心创建[隐藏属性](https://docs.microsoft.com/ef/core/modeling/shadow-properties)的自动创建 FKs。 更简单、 更高效，FK 采用数据模型可以进行更新。 例如，考虑一个模型其中 FK 属性`DepartmentID`是*不*包含。 当过程实体被提取编辑：
+EF Core 可在数据库中的任何所需位置自动创建 FK。 EF Core 为自动创建的 FK 创建[阴影属性](https://docs.microsoft.com/ef/core/modeling/shadow-properties)。 数据模型中包含 FK 后可使更新更简单和更高效。 例如，假设某个模型中不包含 FK 属性 `DepartmentID`。 当提取 Course 实体进行编辑时：
 
-* `Department`实体是未显式加载的情况下为 null。
-* 若要更新过程实体，`Department`必须先提取实体。
+* 如果未显式加载 `Department` 实体，则该实体将为 NULL。
+* 若要更新 Course 实体，则必须先提取 `Department` 实体。
 
-当 FK 属性`DepartmentID`包含在数据模型中，没有必要提取`Department`之前更新的实体。
+如果数据模型中包含 FK 属性 `DepartmentID`，则无需在更新前提取 `Department` 实体。
 
-### <a name="the-databasegenerated-attribute"></a>DatabaseGenerated 属性
+### <a name="the-databasegenerated-attribute"></a>DatabaseGenerated 特性
 
-`[DatabaseGenerated(DatabaseGeneratedOption.None)]`属性指定在 PK 是应用程序提供而不是由数据库生成。
+`[DatabaseGenerated(DatabaseGeneratedOption.None)]` 特性指定 PK 由应用程序提供而不是由数据库生成。
 
 ```csharp
 [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -301,84 +301,84 @@ EF 核心在任何位置在需要自动将 FKs 创建数据库中。 EF 核心�
 public int CourseID { get; set; }
 ```
 
-默认情况下，EF 核心假定 PK 值都由数据库。 DB 生成 PK 值通常是最佳的方法。 有关`Course`实体，用户指定 PK. 例如，如数学部门的 1000年系列值，则将英语部门 2000年系列课程数。
+默认情况下，EF Core 假定 PK 值由数据库生成。 由数据库生成 PK 值通常是最佳方法。 `Course` 实体的 PK 由用户指定。 例如，对于课程编号，数学系可以使用 1000 系列的编号，英语系可以使用 2000 系列的编号。
 
-`DatabaseGenerated`属性还可以用于生成默认值。 例如，数据库可以自动生成要记录的创建或更新行的日期的日期字段。 有关详细信息，请参阅[生成属性](https://docs.microsoft.com/ef/core/modeling/generated-properties)。
+`DatabaseGenerated` 特性还可用于生成默认值。 例如，数据库可以自动生成日期字段以记录数据行的创建或更新日期。 有关详细信息，请参阅[生成的属性](https://docs.microsoft.com/ef/core/modeling/generated-properties)。
 
 ### <a name="foreign-key-and-navigation-properties"></a>外键和导航属性
 
-外键 (FK) 属性和中的导航属性`Course`实体反映了以下关系：
+`Course` 实体中的外键 (FK) 属性和导航属性可反映以下关系：
 
-课程都将分配到一个部门，因此没有`DepartmentID`FK 和`Department`导航属性。
+课程将分配到一个系，因此将存在 `DepartmentID` FK 和 `Department` 导航属性。
 
 ```csharp
 public int DepartmentID { get; set; }
 public Department Department { get; set; }
 ```
 
-课程可以有任意数量的学生注册，因此`Enrollments`导航属性是集合：
+参与一门课程的学生数量不定，因此 `Enrollments` 导航属性是一个集合：
 
 ```csharp
 public ICollection<Enrollment> Enrollments { get; set; }
 ```
 
-可能由多个教师讲授课程因此`CourseAssignments`导航属性是集合：
+一门课程可能由多位讲师讲授，因此 `CourseAssignments` 导航属性是一个集合：
 
 ```csharp
 public ICollection<CourseAssignment> CourseAssignments { get; set; }
 ```
 
-`CourseAssignment`解释了[更高版本](#many-to-many-relationships)。
+`CourseAssignment` 在[后文](#many-to-many-relationships)介绍。
 
-## <a name="create-the-department-entity"></a>创建部门实体
+## <a name="create-the-department-entity"></a>创建 Department 实体
 
-![部门实体](complex-data-model/_static/department-entity.png)
+![Department 实体](complex-data-model/_static/department-entity.png)
 
-创建*Models/Department.cs*替换为以下代码：
+用以下代码创建 Models/Department.cs：
 
 [!code-csharp[Main](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
 
-### <a name="the-column-attribute"></a>列属性
+### <a name="the-column-attribute"></a>Column 特性
 
-以前`Column`属性用于更改列名称映射。 中的代码`Department`实体，`Column`属性用于更改 SQL 数据类型映射。 `Budget` DB 中使用 SQL Server money 类型定义列：
+`Column` 特性以前用于更改列名映射。 在 `Department` 实体的代码中，`Column` 特性用于更改 SQL 数据类型映射。 `Budget` 列通过数据库中的 SQL Server 货币类型进行定义：
 
 ```csharp
 [Column(TypeName="money")]
 public decimal Budget { get; set; }
 ```
 
-列映射则通常不需要。 EF 核心通常选择基于属性的 CLR 类型的相应 SQL Server 数据类型。 CLR`decimal`类型映射到 SQL Server`decimal`类型。 `Budget`为货币，是更适合于货币 money 数据类型。
+通常不需要列映射。 EF Core 通常基于属性的 CLR 类型选择相应的 SQL Server 数据类型。 CLR `decimal` 类型会映射到 SQL Server `decimal` 类型。 `Budget` 用于货币，但货币数据类型更适合货币。
 
 ### <a name="foreign-key-and-navigation-properties"></a>外键和导航属性
 
-FK 和导航属性反映了以下关系：
+FK 和导航属性可反映以下关系：
 
-* 部门可能或可能没有管理员。
-* 管理员始终是一个教师。 因此`InstructorID`属性是作为到 FK 包含`Instructor`实体。
+* 一个系可能有也可能没有管理员。
+* 管理员始终由讲师担任。 因此，`InstructorID` 属性作为到 `Instructor` 实体的 FK 包含在其中。
 
-导航属性名为`Administrator`但保留`Instructor`实体：
+导航属性名为 `Administrator`，但其中包含 `Instructor` 实体：
 
 ```csharp
 public int? InstructorID { get; set; }
 public Instructor Administrator { get; set; }
 ```
 
-在前面的代码问号 （？） 指定属性可以为 null。
+上面代码中的问号 (?) 指定属性可以为 NULL。
 
-部门可能会产生许多课程，因此课程导航属性：
+一个系可以有多门课程，因此存在 Course 导航属性：
 
 ```csharp
 public ICollection<Course> Courses { get; set; }
 ```
 
-注意： 按照约定，EF 核心使级联删除对于不可为 null FKs 以及多对多关系。 级联 delete 可能会导致循环的级联删除规则。 循环的级联删除规则原因添加迁移时，此异常。
+注意：按照约定，EF Core 能针对不可为 NULL 的 FK 和多对多关系启用级联删除。 级联删除可能导致形成循环级联删除规则。 循环级联删除规则会在添加迁移时引发异常。
 
-例如，如果`Department.InstructorID`属性未定义为可以为 null:
+例如，如果未将 `Department.InstructorID` 属性定义为可以为 NULL：
 
-* EF 核心配置一个级联删除规则，以删除部门时删除教师。
-* 删除部门时删除教师不的预期的行为。
+* EF Core 会配置将在删除系时删除讲师的级联删除规则。
+* 在删除系时删除讲师并不是预期行为。
 
-如果业务规则需要`InstructorID`属性为不可为 null，请使用以下 fluent API 语句：
+如果业务规则要求 `InstructorID` 属性不可为 NULL，请使用以下 Fluent API 语句：
 
  ```csharp
  modelBuilder.Entity<Department>()
@@ -387,30 +387,30 @@ public ICollection<Course> Courses { get; set; }
     .OnDelete(DeleteBehavior.Restrict)
  ```
 
-前面的代码中禁用部门教师关系上的级联删除。
+上面的代码会针对“系-讲师”关系禁用级联删除。
 
-## <a name="update-the-enrollment-entity"></a>更新注册实体
+## <a name="update-the-enrollment-entity"></a>更新 Enrollment 实体
 
-注册记录适用于一个执行的一名学生课程。
+一份注册记录面向一名学生所注册的一门课程。
 
-![注册实体](complex-data-model/_static/enrollment-entity.png)
+![Enrollment 实体](complex-data-model/_static/enrollment-entity.png)
 
-更新*Models/Enrollment.cs*替换为以下代码：
+用以下代码更新 *Models/Enrollment.cs*：
 
 [!code-csharp[Main](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
 
 ### <a name="foreign-key-and-navigation-properties"></a>外键和导航属性
 
-FK 属性和导航属性反映了以下关系：
+FK 属性和导航属性可反映以下关系：
 
-注册记录为一个过程中，因此`CourseID`FK 属性和`Course`导航属性：
+注册记录面向一门课程，因此存在 `CourseID` FK 属性和 `Course` 导航属性：
 
 ```csharp
 public int CourseID { get; set; }
 public Course Course { get; set; }
 ```
 
-注册记录是一名学生的因此`StudentID`FK 属性和`Student`导航属性：
+一份注册记录面向一门课程，因此存在 `StudentID` FK 属性和 `Student` 导航属性：
 
 ```csharp
 public int StudentID { get; set; }
@@ -419,67 +419,67 @@ public Student Student { get; set; }
 
 ## <a name="many-to-many-relationships"></a>多对多关系
 
-没有之间的多对多关系`Student`和`Course`实体。 `Enrollment`实体充当多对多联接表*具有负载*数据库中。 "使用负载"意味着`Enrollment`表包含更多数据除了 FKs 联接的表 (在此情况下，在 PK 和`Grade`)。
+`Student` 和 `Course` 实体之间存在多对多关系。 `Enrollment` 实体充当数据库中“具有有效负载”的多对多联接表。 “具有有效负载”表示 `Enrollment` 表除了联接表的 FK 外还包含其他数据（本教程中为 PK 和 `Grade`）。
 
-下图显示这些关系中的实体关系图的外观。 (此关系图生成使用 EF Power Tools for EF 6.x。 创建关系图并不在本教程的一部分。）
+下图显示这些关系在实体关系图中的外观。 （此关系图通过适用于 EF 6.x 的 EF Power Tools 生成。 本教程不介绍如何创建此关系图。）
 
-![学生课程多对多关系](complex-data-model/_static/student-course.png)
+![学生-课程之间的多对多关系](complex-data-model/_static/student-course.png)
 
-每个关系行已在其他，，指示一个对多关系一端和星号 （*） 1。
+每条关系线的一端显示 1，另一端显示星号 (*)，这表示一对多关系。
 
-如果`Enrollment`表没有包括年级信息，它只需包含两个 FKs (`CourseID`和`StudentID`)。 没有负载的多对多联接表有时称为纯联接表 (PJT)。
+如果 `Enrollment` 表不包含年级信息，则它只需包含两个 FK（`CourseID` 和 `StudentID`）。 无有效负载的多对多联接表有时称为纯联接表 (PJT)。
 
-`Instructor`和`Course`实体具有使用纯联接表的多对多关系。
+`Instructor` 和 `Course` 实体具有使用纯联接表的多对多关系。
 
-注意： EF 6.x 支持隐式联接表的多对多关系，但 EF 核心不会。 有关详细信息，请参阅[多对多关系在 EF 核心 2.0](https://blog.oneunicorn.com/2017/09/25/many-to-many-relationships-in-ef-core-2-0-part-1-the-basics/)。
+注意：EF 6.x 支持多对多关系的隐式联接表，但 EF Core 不支持。 有关详细信息，请参阅 [EF Core 2.0 中的多对多关系](https://blog.oneunicorn.com/2017/09/25/many-to-many-relationships-in-ef-core-2-0-part-1-the-basics/)。
 
 ## <a name="the-courseassignment-entity"></a>CourseAssignment 实体
 
 ![CourseAssignment 实体](complex-data-model/_static/courseassignment-entity.png)
 
-创建*Models/CourseAssignment.cs*替换为以下代码：
+用以下代码创建 Models/CourseAssignment.cs：
 
 [!code-csharp[Main](intro/samples/cu/Models/CourseAssignment.cs)]
 
-### <a name="instructor-to-courses"></a>教师课程
+### <a name="instructor-to-courses"></a>讲师-课程
 
-![教师课程多对多](complex-data-model/_static/courseassignment.png)
+![讲师-课程 m:M](complex-data-model/_static/courseassignment.png)
 
-教师课程多对多关系：
+讲师-课程的多对多关系：
 
-* 要求必须由一个实体集表示一个联接表。
-* 是纯联接表 （表而无需负载）。
+* 要求必须用实体集表示联接表。
+* 为纯联接表（无有效负载的表）。
 
-很普遍命名联接实体`EntityName1EntityName2`。 例如，使用此模式对教师课程联接表是`CourseInstructor`。 但是，我们建议使用描述的关系的名称。
+常规做法是将联接实体命名为 `EntityName1EntityName2`。 例如，使用此模式的“讲师-课程”联接表是 `CourseInstructor`。 但是，我们建议使用可描述关系的名称。
 
-数据模型按简单启动和增长。 否负载联接 (PJTs) 经常发展以包括负载。 通过启动具有描述性的实体名称，名称不需要联接表发生更改时更改。 理想情况下，联接实体将业务域中具有其自己自然的 （可能是单个单词） 名称。 例如，无法与联接实体调用分级链接丛书和客户。 对于教师课程多对多关系，`CourseAssignment`是优于`CourseInstructor`。
+数据模型开始时很简单，其内容会逐渐增加。 无有效负载联接 (PJT) 通常会发展为包含有效负载。 该名称以描述性实体名称开始，因此不需要随联接表更改而更改。 理想情况下，联接实体在业务域中可能具有自己的自带名称（可能是单个字）。 例如，可以使用名为“比率”的联接实体链接“账目”和“客户”。 对于“讲师-课程”多对多关系，建议使用 `CourseAssignment` 而不是 `CourseInstructor`。
 
-### <a name="composite-key"></a>复合密钥
+### <a name="composite-key"></a>组合键
 
-FKs 不可以为 null。 在两个 FKs `CourseAssignment` (`InstructorID`和`CourseID`) 一起唯一标识的每一行`CourseAssignment`表。 `CourseAssignment`不需要专用的 PK. `InstructorID`和`CourseID`属性用作复合 PK. 若要指定到 EF 核心的复合 Pk 的唯一方法是使用*fluent API*。 下一节演示如何配置复合 PK.
+FK 不能为 NULL。 `CourseAssignment` 中的两个 FK（`InstructorID` 和 `CourseID`）共同唯一标识 `CourseAssignment` 表的每一行。 `CourseAssignment` 不需要专用的 PK。 `InstructorID` 和 `CourseID` 属性充当组合 PK。 使用 Fluent API 是向 EF Core 指定组合 PK 的唯一方法。 下一部分演示如何配置组合 PK。
 
-复合密钥可确保：
+组合键可确保：
 
-* 一个课程允许多个行。
-* 一个教师允许多个行。
-* 不允许为相同的教师和过程的多个行。
+* 允许一门课程对应多行。
+* 允许一名讲师对应多行。
+* 不允许相同的讲师和课程对应多行。
 
-`Enrollment`联接实体定义其自己的主键，因此可能会出现这种重复项。 若要防止此类重复：
+`Enrollment` 联接实体定义其自己的 PK，因此可能会出现此类重复。 若要防止此类重复：
 
-* 上的 FK 字段中，添加一个唯一索引或
-* 配置`Enrollment`带有复合主键类似于`CourseAssignment`。 有关详细信息，请参阅[索引](https://docs.microsoft.com/ef/core/modeling/indexes)。
+* 请在 FK 字段上添加唯一索引，或
+* 配置具有主要组合键（与 `CourseAssignment` 类似）的 `Enrollment`。 有关详细信息，请参阅[索引](https://docs.microsoft.com/ef/core/modeling/indexes)。
 
 ## <a name="update-the-db-context"></a>更新数据库上下文
 
-添加以下突出显示的代码*Data/SchoolContext.cs*:
+将以下突出显示的代码添加到 Data/SchoolContext.cs：
 
 [!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
 
-前面的代码中添加新的实体，并配置`CourseAssignment`实体的复合 PK.
+上面的代码添加新实体并配置 `CourseAssignment` 实体的组合 PK。
 
-## <a name="fluent-api-alternative-to-attributes"></a>属性 fluent API 替代方法
+## <a name="fluent-api-alternative-to-attributes"></a>用 Fluent API 替代特性
 
-`OnModelCreating`方法在前面的代码使用*fluent API*配置 EF 核心行为。 API 称为"fluent"，因为它通常用于通过连接一系列组合在一起成为单个语句的方法调用。 [下面的代码](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration)是 fluent API 的示例：
+上面代码中的 `OnModelCreating` 方法使用 Fluent API 配置 EF Core 行为。 API 称为“Fluent”，因为它通常在将一系列方法调用连接成单个语句后才能使用。 [下面的代码](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration)是 Fluent API 的示例：
 
 ```csharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -490,47 +490,47 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 }
 ```
 
-在本教程中，仅为不能具有属性完成的 DB 映射使用 fluent API。 但是，fluent API 可以指定的格式、 验证和可通过属性的映射规则的大多数。
+在本教程中，Fluent API 仅用于不能通过特性完成的数据库映射。 但是，Fluent API 可以指定可通过特性完成的大多数格式设置、验证和映射规则。
 
-某些属性，如`MinimumLength`不能使用 fluent API 应用。 `MinimumLength`不会更改架构，它仅适用于最小长度验证规则。
+`MinimumLength` 等特性不能通过 Fluent API 应用。 `MinimumLength` 不会更改架构，它仅应用最小长度验证规则。
 
-一些开发人员更愿意使用 fluent API 以独占方式，以便它们能够获得它们的实体类"清理"。 可以混合属性和 fluent API。 有一些可仅可通过 fluent API （在指定组合主键） 的配置。 有一些只能具有属性的配置 (`MinimumLength`)。 使用 fluent API 或属性的建议的做法：
+某些开发者倾向于仅使用 Fluent API 以保持实体类的“纯净”。 特性和 Fluent API 可以相互混合。 某些配置只能通过 Fluent API 完成（指定组合 PK）。 有些配置只能通过特性完成 (`MinimumLength`)。 使用 Fluent API 或特性的建议做法：
 
-* 选择这两种方法之一。
-* 使用一致地尽可能多选的方法。
+* 选择以下两种方法之一。
+* 尽可能以前后一致的方法使用所选的方法。
 
-某些特性在此教程适用于：
+本教程中使用的某些特性可用于：
 
-* 仅验证 (例如， `MinimumLength`)。
-* EF 核心配置 (例如， `HasKey`)。
-* 验证和 EF 核心配置 (例如， `[StringLength(50)]`)。
+* 仅限验证（例如，`MinimumLength`）。
+* 仅限 EF Core 配置（例如，`HasKey`）。
+* 验证和 EF Core 配置（例如，`[StringLength(50)]`）。
 
-有关与 fluent API 的特性的详细信息，请参阅[方法配置](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration)。
+有关特性和 Fluent API 的详细信息，请参阅[配置方法](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration)。
 
-## <a name="entity-diagram-showing-relationships"></a>关系图显示关系的实体
+## <a name="entity-diagram-showing-relationships"></a>显示关系的实体关系图
 
-下图显示关系图用于 EF Power Tools 创建的已完成的 School 模型。
+下图显示 EF Power Tools 针对已完成的学校模型创建的关系图。
 
 ![实体关系图](complex-data-model/_static/diagram.png)
 
-上图中显示：
+上面的关系图显示：
 
-* 一个对多关系的多个行 (1 到\*)。
-* 对零或一一个关系行 (1 对 0..1) 之间`Instructor`和`OfficeAssignment`实体。
-* 零-或--一对多关系行 (0..1 对 *) 之间`Instructor`和`Department`实体。
+* 几条一对多关系线（1 到 \*）。
+* `Instructor` 和 `OfficeAssignment` 实体之间的一对零或一关系线（1 到 0..1）。
+* `Instructor` 和 `Department` 实体之间的零或一到多关系线（0..1 到 *）。
 
-## <a name="seed-the-db-with-test-data"></a>种子使用测试数据的数据库
+## <a name="seed-the-db-with-test-data"></a>使用测试数据为数据库设定种子
 
-更新中的代码*Data/DbInitializer.cs*:
+更新 Data/DbInitializer.cs 中的代码：
 
 [!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
 
-前面的代码中为新实体提供了种子数据。 大多数的此代码创建新的实体对象，并加载示例数据。 示例数据用于测试。 前面的代码将创建以下多对多关系：
+前面的代码为新实体提供种子数据。 大多数此类代码会创建新实体对象并加载示例数据。 示例数据用于测试。 前面的代码将创建以下多对多关系：
 
 * `Enrollments`
 * `CourseAssignment`
 
-注意： [EF 核心 2.1](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap)将支持[数据种子设定](https://github.com/aspnet/EntityFrameworkCore/issues/629)。
+注意：[EF Core 2.1](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap) 将支持[数据种子设定](https://github.com/aspnet/EntityFrameworkCore/issues/629)。
 
 ## <a name="add-a-migration"></a>添加迁移
 
@@ -540,7 +540,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 dotnet ef migrations add ComplexDataModel
 ```
 
-前一个命令显示有关可能造成数据丢失的警告。
+前面的命令显示可能存在数据丢失的相关警告。
 
 ```text
 An operation was scaffolded that may result in the loss of data.
@@ -548,20 +548,20 @@ Please review the migration for accuracy.
 Done. To undo this action, use 'ef migrations remove'
 ```
 
-如果`database update`运行命令，则会生成以下错误：
+如果运行 `database update` 命令，则会生成以下错误：
 
 ```text
 The ALTER TABLE statement conflicted with the FOREIGN KEY constraint "FK_dbo.Course_dbo.Department_DepartmentID". The conflict occurred in
 database "ContosoUniversity", table "dbo.Department", column 'DepartmentID'.
 ```
 
-迁移运行时与现有数据，可能有不能满足与正在退出的数据的 FK 约束。 对于本教程中，创建新数据库，因此没有任何 FK 约束冲突。 请参阅[修复与旧的数据的外键约束](#fk)有关如何解决 FK 冲突在当前数据库上的说明。
+当将现有数据与迁移一起运行时，可能存在不满足现有数据的 FK 约束。 本教程将创建新数据库，这样便不会出现任何 FK 约束冲突。 请参阅[通过旧数据修复外键约束](#fk)，获取有关如何在当前数据库上修复 FK 冲突的说明。
 
 ## <a name="change-the-connection-string-and-update-the-db"></a>更改连接字符串并更新数据库
 
-中已更新的代码`DbInitializer`添加新的实体的种子数据。 若要强制 EF 核心以创建新的空数据库：
+已更新 `DbInitializer` 中的代码将为新实体添加种子数据。 若要强制 EF Core 创建新的空数据库，请执行以下操作：
 
-* 更改中的数据库连接字符串名称*appsettings.json*到 ContosoUniversity3。 新名称必须是未在计算机已使用的名称。
+* 将 appsettings.json 中的数据库连接字符串名称更改为 ContosoUniversity3。 新名称必须是未在计算机上使用过的名称。
 
     ```json
     {
@@ -570,77 +570,77 @@ database "ContosoUniversity", table "dbo.Department", column 'DepartmentID'.
       },
     ```
 
-* 或者，删除数据库使用：
+* 或者使用以下项删除数据库：
 
-    * **SQL Server 对象资源管理器**(SSOX)。
+    * **SQL Server 对象资源管理器** (SSOX)。
     * `database drop` CLI 命令：
 
    ```console
    dotnet ef database drop
    ```
 
-运行`database update`命令窗口中：
+在命令窗口中运行 `database update`：
 
 ```console
 dotnet ef database update
 ```
 
-前一个命令运行所有迁移。
+上面的命令将运行所有迁移。
 
-运行应用。 运行应用程序运行`DbInitializer.Initialize`方法。 `DbInitializer.Initialize`填充新数据库。
+运行应用。 运行应用后将运行 `DbInitializer.Initialize` 方法。 `DbInitializer.Initialize` 将填充新数据库。
 
 在 SSOX 中打开数据库：
 
-* 展开**表**节点。 显示创建的表。
-* 如果 SSOX 以前已打开，请单击**刷新**按钮。
+* 展开“表”节点。 随后将显示出已创建的表。
+* 如果之前已打开过 SSOX，请单击“刷新”按钮。
 
-![在 SSOX 中的表](complex-data-model/_static/ssox-tables.png)
+![SSOX 中的表](complex-data-model/_static/ssox-tables.png)
 
-检查**CourseAssignment**表：
+查看 CourseAssignment 表：
 
-* 右键单击**CourseAssignment**表，然后选择**查看数据**。
-* 验证**CourseAssignment**表包含数据。
+* 右键单击 CourseAssignment 表，然后选择“查看数据”。
+* 验证 CourseAssignment 表包含数据。
 
-![在 SSOX 中 CourseAssignment 数据](complex-data-model/_static/ssox-ci-data.png)
+![SSOX 中的 CourseAssignment 数据](complex-data-model/_static/ssox-ci-data.png)
 
 <a name="fk"></a>
 
-## <a name="fixing-foreign-key-constraints-with-legacy-data"></a>与旧数据修复外键约束
+## <a name="fixing-foreign-key-constraints-with-legacy-data"></a>通过旧数据修复外键约束
 
 本部分是可选的。
 
-迁移运行时与现有数据，可能有不能满足与正在退出的数据的 FK 约束。 使用生产数据，必须采取步骤来将现有数据迁移。 本部分提供修复 FK 约束冲突的一个示例。 不进行不备份这些代码更改。 不进行这些代码更改，如果在完成上一节，并更新数据库。
+当将现有数据与迁移一起运行时，可能存在不满足现有数据的 FK 约束。 使用生产数据时，必须采取步骤来迁移现有数据。 本部分提供修复 FK 约束冲突的示例。 务必在备份后执行这些代码更改。 如果已完成上述部分并更新数据库，则不要执行这些代码更改。
 
-*{Timestamp}_ComplexDataModel.cs*文件包含以下代码：
+{timestamp}_ComplexDataModel.cs 文件包含以下代码：
 
 [!code-csharp[Main](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_DepartmentID)]
 
-前面的代码将添加不可为 null`DepartmentID`到 FK`Course`表。 从以前的教程，DB 包含中的行`Course`，因此无法迁移通过更新该表。
+上面的代码将向 `Course` 表添加不可为 NULL 的 `DepartmentID` FK。 前面教程中的数据库在 `Course` 中包含行，以便迁移时不会更新表。
 
-若要使`ComplexDataModel`使用现有数据迁移工作：
+若要使 `ComplexDataModel` 迁移可与现有数据搭配运行：
 
-* 更改代码以提供新的列 (`DepartmentID`) 默认值。
-* 创建名为"Temp"使其作为默认部门的假部门。
+* 请更改代码以便为新列 (`DepartmentID`) 赋予默认值。
+* 创建名为“临时”的虚拟系来充当默认的系。
 
 ### <a name="fix-the-foreign-key-constraints"></a>修复外键约束
 
-更新`ComplexDataModel`类`Up`方法：
+更新 `ComplexDataModel` 类 `Up` 方法：
 
-* 打开*{timestamp}_ComplexDataModel.cs*文件。
-* 注释掉的添加的代码行`DepartmentID`列`Course`表。
+* 打开 {timestamp}_ComplexDataModel.cs 文件。
+* 对将 `DepartmentID` 列添加到 `Course` 表的代码行添加注释。
 
 [!code-csharp[Main](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_CommentOut&highlight=9-13)]
 
-添加以下突出显示的代码。 新的代码会进入后`.CreateTable( name: "Department"`块：[!code-csharp[Main](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_CreateDefaultValue&highlight=22-32)]
+添加以下突出显示的代码。 新代码在 `.CreateTable( name: "Department"` 块后：[!code-csharp[Main](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_CreateDefaultValue&highlight=22-32)]
 
-与前面的更改，现有`Course`将与"Temp"部门后相关行`ComplexDataModel``Up`方法运行。
+经过上面的更改，`Course` 行将在 `ComplexDataModel` `Up` 方法运行后与“临时”系建立联系。
 
-生产应用，则应该：
+生产应用可能：
 
-* 包括代码或脚本添加`Department`行以及相关`Course`对新的行`Department`行。
-* 使用"Temp"部门或的默认值为`Course.DepartmentID`。
+* 包含用于将 `Department` 行和相关 `Course` 行添加到新 `Department` 行的代码或脚本。
+* 不会使用“临时”系或 `Course.DepartmentID` 的默认值。
 
-下一步教程介绍如何相关的数据。
+下一教程将介绍相关数据。
 
 >[!div class="step-by-step"]
 [上一页](xref:data/ef-rp/migrations)
