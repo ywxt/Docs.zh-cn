@@ -11,11 +11,11 @@ ms.prod: .net-framework
 ms.technology: dotnet-mvc
 ms.devlang: dotnet
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
-ms.openlocfilehash: badc1c9b10ac27c3d876e3331c855a9d5904d27d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7a580c6c6236b375ea54ef4e9978fff6993d885a
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>将 ASP.NET MVC 应用程序迁移到 Windows 容器
 
@@ -73,7 +73,7 @@ ms.lasthandoff: 01/24/2018
 
 在 Dockerfile 中定义 Docker 映像。 Dockerfile 包含有关基本映像、附加组件、要运行的应用程序和其他配置映像的说明。  Dockerfile 是用于创建该映像的 `docker build` 命令的输入。
 
-根据位于 [Docker 中心](https://hub.docker.com/r/microsoft/aspnet/) 的 `microsft/aspnet` 映像生成映像。
+根据位于 [Docker 中心](https://hub.docker.com/r/microsoft/aspnet/) 的 `microsoft/aspnet` 映像生成映像。
 基本映像 `microsoft/aspnet` 为 Windows Server 映像。 它包含 Windows Server Core、 IIS 和 ASP.NET 4.6.2。 在容器中运行此映像时，它会自动启动 IIS 和已安装的网站。
 
 创建映像的 Dockerfile 如下所示：

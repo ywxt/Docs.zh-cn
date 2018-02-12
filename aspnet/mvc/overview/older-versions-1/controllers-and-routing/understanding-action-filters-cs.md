@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1f469894022e39048154ec1915237e448104b4b6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 86d5d429d9900d4c04391804598626705e6c88b4
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/11/2018
 ---
 <a name="understanding-action-filters-c"></a>了解操作筛选器 (C#)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_14_CS.pdf)
 
@@ -82,7 +82,7 @@ ASP.NET MVC framework 支持四种不同类型的筛选器：
 
 按特定顺序执行每种不同类型的筛选器。 如果你想要控制在其中执行的相同类型的筛选器的顺序，则可以设置筛选器的顺序属性。
 
-所有操作筛选器的基类是`System.Web.Mvc.FilterAttribute`类。 如果你想要实现特定类型的筛选器，则你需要创建一个类继承自的基类的筛选器，实现一个或多个`IAuthorizationFilter`， `IActionFilter`， `IResultFilter`，或`ExceptionFilter`接口。
+所有操作筛选器的基类是`System.Web.Mvc.FilterAttribute`类。 如果你想要实现特定类型的筛选器，则你需要创建一个类继承自的基类的筛选器，实现一个或多个`IAuthorizationFilter`， `IActionFilter`， `IResultFilter`，或`IExceptionFilter`接口。
 
 ### <a name="the-base-actionfilterattribute-class"></a>ActionFilterAttribute 基类
 

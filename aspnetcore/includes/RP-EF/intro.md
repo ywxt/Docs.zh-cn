@@ -1,1 +1,1 @@
-Contoso 大学 web 应用程序演示如何创建使用 EF 核心和 Visual Studio 的 Razor 页 web 应用。 有关教程系列的信息，请参阅[第一个教程](xref:data/ef-rp/intro)。
+Contoso University Web 应用演示了如何使用 EF Core 和 Visual Studio 创建 Razor 页面 Web 应用。 若要了解系列教程，请参阅[第一个教程](xref:data/ef-rp/intro)。

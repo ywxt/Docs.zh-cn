@@ -8,11 +8,11 @@ ms.date: 08/09/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: 1318ae855154dd8fc91ff0c19b0ab111d86c71e6
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 1a91a87fb90d4d4651e07f32415e4364c8e2d993
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="azure-key-vault-configuration-provider"></a>Azure 密钥保管库配置提供程序
 
@@ -77,7 +77,7 @@ ms.lasthandoff: 01/30/2018
 `AddAzureKeyVault`此外提供了一个接受的实现重载`IKeyVaultSecretManager`，这样，你可以控制如何密钥保管库密码将转换为配置密钥。 例如，你可以实现接口后，可加载基于你在应用启动时提供的前缀值的密钥值。 这使你，例如，加载基于应用程序的版本的机密。
 
 > [!WARNING]
-> 不要使用前缀在密钥保管库密码放到同一个密钥保管库的多个应用的机密，或将环境机密 (例如，*开发*verus*生产*机密) 入同一保管库。 我们建议，不同的应用程序和开发/生产环境使用单独的密钥保管库来隔离应用程序环境安全的最高级别。
+> 不要使用前缀在密钥保管库密码放到同一个密钥保管库的多个应用的机密，或将环境机密 (例如，*开发*与*生产*机密) 入同一保管库。 我们建议，不同的应用程序和开发/生产环境使用单独的密钥保管库来隔离应用程序环境安全的最高级别。
 
 使用第二个示例应用程序，为密钥保管库中创建一个机密`5000-AppSecret`（密钥保管库密钥名称中不允许句点） 表示你的应用程序的版本为 5.0.0.0 应用程序密钥。 有关另一个版本，5.1.0.0，创建密钥`5100-AppSecret`。 每个应用程序版本将自己机密的值加载到作为其配置`AppSecret`、 关闭版本剥离加载时为它的机密。 示例的实现如下所示：
 

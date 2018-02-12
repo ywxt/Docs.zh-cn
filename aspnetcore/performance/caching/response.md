@@ -8,11 +8,11 @@ ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: c38f9b9a1bf1c523951e2cf1f3070858fe5daf04
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 37592c3b2099c2cb74dc42ad4a7937b32c281f65
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>响应缓存在 ASP.NET 核心
 
@@ -68,7 +68,7 @@ ms.lasthandoff: 01/30/2018
 
 ### <a name="distributed-cache"></a>分布式的缓存
 
-使用分布式的缓存时云或服务器场中承载应用程序数据存储在内存中。 处理请求的服务器之间共享缓存。 客户端可以提交请求已由组中的任何服务器处理并为客户端缓存数据，则可用。 ASP.NET Core 提供 SQL Server 和分布式的 Redis 缓存。
+使用分布式的缓存时云或服务器场中承载应用程序数据存储在内存中。 处理请求的服务器之间共享缓存。 客户端可以提交用于客户端的缓存的数据是否可用的组中的任何服务器处理的请求。 ASP.NET Core 提供 SQL Server 和分布式的 Redis 缓存。
 
 有关详细信息，请参阅[使用分布式缓存](xref:performance/caching/distributed)。
 
@@ -78,7 +78,7 @@ ms.lasthandoff: 01/30/2018
 
 有关详细信息，请参阅[ASP.NET 核心 mvc 缓存标记帮助器](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)。
 
-### <a name="distributed-cache-tag-helper"></a>分布式的缓存标记帮助器
+### <a name="distributed-cache-tag-helper"></a>分布式缓存标记帮助程序
 
 你可以使用分布式缓存标记帮助程序缓存的 MVC 视图或分布式的云或 web 场方案中的 Razor 页面中的内容。 分布式缓存标记帮助器使用 SQL Server 或 Redis 来存储数据。
 
@@ -86,12 +86,14 @@ ms.lasthandoff: 01/30/2018
 
 ## <a name="responsecache-attribute"></a>ResponseCache 属性
 
-`ResponseCacheAttribute`指定在缓存中，响应设置适当的标头的所需的参数。 请参阅[ResponseCacheAttribute](/aspnet/core/api/microsoft.aspnetcore.mvc.responsecacheattribute)有关参数的说明。
+[ResponseCacheAttribute](/dotnet/api/Microsoft.AspNetCore.Mvc.ResponseCacheAttribute)指定在缓存中，响应设置适当的标头的所需的参数。
 
 > [!WARNING]
-> 禁用缓存的内容，其中包含已经过身份验证的客户端的信息。 仅应为不会更改基于用户的标识或是否将用户记录的内容启用缓存。
+> 禁用缓存的内容，其中包含已经过身份验证的客户端的信息。 仅应为不会更改基于用户的标识或用户已登录的内容启用缓存。
 
-`VaryByQueryKeys string[]`（需要 ASP.NET Core 1.1 和更高版本）： 设置时，响应缓存中间件因存储的响应的查询密钥的给定列表的值。 必须启用响应缓存中间件设置`VaryByQueryKeys`属性; 否则，会引发一个运行时异常。 没有为没有相应的 HTTP 标头`VaryByQueryKeys`属性。 此属性是一项 HTTP 功能由响应缓存中间件。 若要提供缓存的响应的中间件，对于查询字符串和查询字符串值必须匹配上一个请求。 例如，考虑的请求和下表中显示结果的序列。
+[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys)存储的响应因给定的查询密钥列表的值。 时的单个值`*`是响应的所有请求查询字符串参数提供该中间件而异。 `VaryByQueryKeys`需要 ASP.NET Core 1.1 或更高版本。
+
+必须启用响应缓存中间件设置`VaryByQueryKeys`属性; 否则，会引发一个运行时异常。 没有为相应的 HTTP 标头`VaryByQueryKeys`属性。 该属性是一项 HTTP 功能由响应缓存中间件。 若要提供缓存的响应的中间件，对于查询字符串和查询字符串值必须匹配上一个请求。 例如，考虑的请求和下表中显示结果的序列。
 
 | 请求                          | 结果                   |
 | -------------------------------- | ------------------------ |
@@ -101,7 +103,7 @@ ms.lasthandoff: 01/30/2018
 
 第一个请求是由服务器返回，并在中间件中缓冲。 由于查询字符串与上一个请求，中间件会返回第二个请求。 因为查询字符串值不匹配的上一个请求，第三个请求未处于中间件缓存。 
 
-`ResponseCacheAttribute`用于配置和创建 (通过`IFilterFactory`) `ResponseCacheFilter`。 `ResponseCacheFilter`执行的工作的更新的相应 HTTP 标头和响应功能。 筛选器：
+`ResponseCacheAttribute`用于配置和创建 (通过`IFilterFactory`) [ResponseCacheFilter](/dotnet/api/microsoft.aspnetcore.mvc.internal.responsecachefilter)。 `ResponseCacheFilter`执行的工作的更新的相应 HTTP 标头和响应功能。 筛选器：
 
 * 删除任何现有标头`Vary`， `Cache-Control`，和`Pragma`。 
 * 写出相应的标头设置的属性上基于`ResponseCacheAttribute`。 
