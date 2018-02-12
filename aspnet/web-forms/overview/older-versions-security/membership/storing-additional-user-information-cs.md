@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 63aa9dce45ce7ac3e33f542f549b2ec620191d50
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 38dfdab395b6b3559d293c5b1488ede2e88bfe91
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="storing-additional-user-information-c"></a>存储的其他用户信息 (C#)
 ====================
@@ -353,7 +353,7 @@ ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 
 
 `LayoutTemplate`定义标记发出的控件，而`ItemTemplate`呈现 SqlDataSource 所返回每个项。 `ItemTemplate`的生成的标记放置在`LayoutTemplate`的`itemPlaceholder`控件。 除了`itemPlaceholder`、`LayoutTemplate`包括 DataPager 控件，这可以限制到显示每页 （默认值） 的只是 10 来宾簿注释的 ListView 并呈现分页接口。
 
-我`ItemTemplate`显示中的每个来宾簿注释的使用者`<h4>`位于以下使用者将正文的元素。 请注意用于显示正文该语法采用返回的数据`Eval("Body")`数据绑定语句，将其转换为字符串，并替换其中的换行符与`<br />`元素。 为了显示换行符，输入提交注释，因为空白将被忽略的 HTML 时需要此转换。 下面将以斜体显示，用户的主镇，其主页、 日期和进行注释，时间和保留注释的人员的用户名的链接后跟正文显示用户的签名。
+我`ItemTemplate`显示中的每个来宾簿注释的使用者`<h4>`位于以下使用者将正文的元素。 请注意用于显示正文的语法采用返回的数据`Eval("Body")`数据绑定语句，将其转换为字符串，并替换其中的换行符与`<br />`元素。 为了显示换行符，输入提交注释，因为空白将被忽略的 HTML 时需要此转换。 下面将以斜体显示，用户的主镇，其主页、 日期和进行注释，时间和保留注释的人员的用户名的链接后跟正文显示用户的签名。
 
 花些时间查看通过浏览器的页。 你应看到添加到此处显示的步骤 5 中来宾簿的注释。
 

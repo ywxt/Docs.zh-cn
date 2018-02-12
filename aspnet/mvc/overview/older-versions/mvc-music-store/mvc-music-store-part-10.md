@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-10
 msc.type: authoredcontent
-ms.openlocfilehash: af08039de2d810948b9ab64974111b0346c7fa0f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2a65e4b793b615c45cdf31166e0a000ae72ee534
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="part-10-final-updates-to-navigation-and-site-design-conclusion"></a>第 10 部分： 导航和站点设计，结束的最终更新
 ====================
@@ -135,7 +135,7 @@ CartSummary 分部视图的过程非常简单-只需购物车中的显示项的�
 
 ## <a name="conclusion"></a>结束语
 
-我们已经看到，该 ASP.NET MVC 便于对来创建复杂的网站和数据库访问，成员身份，AJAX 等。 非常快速。 希望本教程已授予所需若要开始构建您自己的 ASP.NET MVC 应用程序工具 ！
+我们已了解，ASP.NET MVC 便于对来创建复杂的网站和数据库访问，成员身份，AJAX 等。 非常快速。 希望本教程已授予所需若要开始构建您自己的 ASP.NET MVC 应用程序工具 ！
 
 
 >[!div class="step-by-step"]

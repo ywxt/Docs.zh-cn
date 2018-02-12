@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 8541fe47207c0af232ca81ae45da6af201d94799
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8cadb550eaa2dbc4541f945dc8d8d49fa757d4d3
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET 核心标识的自定义的存储提供程序
 
-通过[Steve Smith](https://ardalis.com/)
+作者：[Steve Smith](https://ardalis.com/)
 
 ASP.NET 核心标识是一种可扩展系统，可用于创建自定义存储提供程序并将其连接到你的应用。 本主题介绍如何创建 ASP.NET 核心标识的自定义的存储提供程序。 它介绍如何创建你自己的存储提供程序的重要概念，但不的分步演练。
 
-[查看或从 GitHub 下载示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample)。
+[查看或下载 GitHub 中的示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample)。
 
 ## <a name="introduction"></a>介绍
 
@@ -126,7 +126,7 @@ ASP.NET 核心标识包含类称为管理器和存储区。 *管理器*是高级
 
 ## <a name="customize-the-user-store"></a>自定义用户存储区
 
-创建`UserStore`提供用户的所有数据操作的方法的类。 此类是等效于[UserStore<TUser> ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.userstore-1)类。 在你`UserStore`类中，实现`IUserStore<TUser>`和所需的可选接口。 你选择的可选接口，以实现基于应用程序中提供的功能。
+创建`UserStore`提供用户的所有数据操作的方法的类。 此类是等效于[UserStore<TUser> ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.userstore-1)类。 在你`UserStore`类中，实现`IUserStore<TUser>`和所需的可选接口。 你选择的可选接口，以实现基于你的应用程序中提供的功能。
 
 ### <a name="optional-interfaces"></a>可选接口
 

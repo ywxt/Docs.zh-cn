@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/external-authentication-services
 msc.type: authoredcontent
-ms.openlocfilehash: 5d6e6727f387d047e7b41a6efa0d2dadf467558e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 744396cb0c95d1887f259b1e2e890bd06ef7d049
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="external-authentication-services-with-aspnet-web-api-c"></a>与 ASP.NET Web API 的外部身份验证服务 (C#)
 ====================
@@ -39,7 +39,7 @@ Visual Studio 2013 和 ASP.NET 4.5.1 展开的安全选项[单页面应用程序
     - [如何获取 Microsoft 身份验证的应用程序设置](#OBTAIN)
     - [可选： 禁用本地注册](#DISABLE)
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 若要按照本演练中的示例，你需要具备以下：
 
@@ -263,7 +263,7 @@ Twitter 身份验证要求你创建开发人员帐户，并且它才能正常需
     1. 打开提升的命令提示符窗口中。
     2. 键入以下命令：
 
-        <kbd>记事本 %WinDir%\system32\drivers\etc\hosts</kbd>
+        <kbd>notepad %WinDir%\system32\drivers\etc\hosts</kbd>
     3. 类似于以下条目添加到主机文件中：
 
         <kbd>127.0.0.1 www.wingtiptoys.com</kbd>
@@ -278,10 +278,10 @@ Twitter 身份验证要求你创建开发人员帐户，并且它才能正常需
     1. 打开提升的命令提示符窗口中。
     2. 键入以下命令以更改为 IIS Express 文件夹：
 
-        <kbd>cd /d &quot;%ProgramFiles%\IIS 速成版&quot;</kbd>
+        <kbd>cd /d &quot;%ProgramFiles%\IIS Express&quot;</kbd>
     3. 键入以下命令以将 FQDN 添加到你的应用程序：
 
-        <kbd>appcmd.exe 设置配置-section:system.applicationHost/sites / +&quot;[名称 = WebApplication1'].bindings。 [协议 = http，bindingInformation = *:80:www.wingtiptoys.com']&quot; /commit:apphost</kbd>
+        <kbd>appcmd.exe set config -section:system.applicationHost/sites /+&quot;[name='WebApplication1'].bindings.[protocol='http',bindingInformation='*:80:www.wingtiptoys.com']&quot; /commit:apphost</kbd>
 
  其中**WebApplication1**是你的项目的名称和**bindingInformation**包含你想要用于测试的端口号和 FQDN。
 
@@ -303,7 +303,7 @@ Twitter 身份验证要求你创建开发人员帐户，并且它才能正常需
 <a id="DISABLE"></a>
 ### <a name="optional-disable-local-registration"></a>可选： 禁用本地注册
 
-当前的 ASP.NET 本地注册功能不会阻止自动的程序 （机器人） 创建帐户; 的成员例如，通过使用一种 bot 防护和验证的技术，如[CAPTCHA](../../../web-pages/overview/security/16-adding-security-and-membership.md)。 因此，应删除的登录页上的本地登录窗体和注册链接。 为此，请打开 *\_Login.cshtml*在项目中，页，然后注释掉的行本地登录面板和注册链接。 则结果页应类似下面的代码示例如下：
+当前的 ASP.NET 本地注册功能不会阻止自动的程序 （机器人） 创建帐户; 的成员例如，通过使用一种 bot 防护和验证的技术，如[CAPTCHA](../../../web-pages/overview/security/16-adding-security-and-membership.md)。 因此，应删除的登录页上的本地登录窗体和注册链接。 为此，请打开 *\_Login.cshtml*在项目中，页，然后注释掉的行本地登录面板和注册链接。 则结果页应如下所示下面的代码示例：
 
 [!code-html[Main](external-authentication-services/samples/sample10.html)]
 

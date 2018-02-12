@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/an-overview-of-project-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 8f28116f88f3cf5143d3d5c9821519d62c4e5452
-ms.sourcegitcommit: 6541c8b11001dd617adf5eb04c814cda165070b9
+ms.openlocfilehash: ceb7d3a7d1cb1685c0f1e62698f508c9a73e77c2
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="an-overview-of-project-katana"></a>项目 Katana 事件的概述
 ====================
@@ -29,7 +29,7 @@ ms.lasthandoff: 12/07/2017
 
  无论是否其中一个讨论开发人员 framework 或最终用户产品，务必要了解创建的基础动机产品 – 和在此过程包括了解谁创建产品。 ASP.NET 最初是通过记住的两个客户创建的。   
   
-**第一组客户已经典 ASP 开发人员。** 当时，ASP 将已用于创建网站和应用程序动态、 数据驱动的交错执行标记和服务器端脚本的主要技术之一。 ASP 运行时提供服务器端脚本的一组对象的基础 HTTP 协议和 Web 服务器的核心方面中抽象出来，并提供访问的其他服务此类对会话和应用程序状态的管理缓存，等等。虽然功能强大，经典 ASP 应用程序变得很难管理，因为它们在大小和复杂性方面增长。 这是结构的代码的很大程度上是结构的代码的由于缺乏位于中脚本编写环境结合了重复的代码和标记交错导致。 若要充分利用的经典 ASP 的优势，同时还解决了一些其难题，ASP.NET 利用代码组织语言提供的面向对象的.NET Framework 的同时还保留的服务器端编程模型到哪些经典 ASP 开发人员已达到习惯。
+**第一组客户已经典 ASP 开发人员。** 当时，ASP 将已用于创建网站和应用程序动态、 数据驱动的交错执行标记和服务器端脚本的主要技术之一。 ASP 运行时提供服务器端脚本的一组对象的基础 HTTP 协议和 Web 服务器的核心方面中抽象出来，并提供访问的其他服务此类对会话和应用程序状态的管理缓存，等等。虽然功能强大，经典 ASP 应用程序变得很难管理，因为它们在大小和复杂性方面增长。 这是结构的代码的很大程度上是结构的代码的由于缺乏脚本结合导致的代码和标记交错的重复的环境中。 若要充分利用的经典 ASP 的优势，同时还解决了一些其难题，ASP.NET 利用代码组织语言提供的面向对象的.NET Framework 的同时还保留的服务器端编程模型到哪些经典 ASP 开发人员已达到习惯。
 
 **第二个 ASP.NET 的目标客户组时 Windows 业务应用程序开发人员。** 与经典 ASP 开发人员，他们已习惯于编写 HTML 标记和代码，以生成更多的 HTML 标记，不同 （如之前 VB6 开发人员） WinForms 开发人员已习惯于包含画布和一组丰富的用户设计时体验界面控件。 ASP.NET – 的第一个版本也称为"Web 窗体"提供了类似的设计时体验以及用户界面组件的服务器端事件模型和基础结构功能 （如视图状态） 的一组创建无缝的开发人员体验之间客户端和服务器端编程。 Web 窗体有效地隐藏已熟悉的 WinForms 开发人员有状态的事件模式下的站点的无状态性质。
 

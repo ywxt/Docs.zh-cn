@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 9c0edb301de85d15b9a3527382b72211f6f3d3ec
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a0f38c83bd9231dbd37d3d505c90316af521b336
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 的 ASP.NET Web 应用程序： 简介-1 12
 ====================
@@ -137,7 +137,7 @@ Contoso 大学是一个 Visual Studio web 应用程序项目。 大部分的部�
 - 应用程序使用实体框架 5.0 以访问应用程序数据库中的数据。 包含实体框架 5.0 的程序集必须随应用程序一起部署。
 - 应用程序使用第三方的错误日志记录和报表实用程序。 一个程序集它必须与应用程序部署中提供了此实用程序。
 - 错误日志记录实用程序将错误信息 XML 文件中写入的文件文件夹。 你必须确保 ASP.NET 下运行在已部署的站点中的帐户到此文件夹具有写入权限，并且你需要从部署中排除此文件夹。 （否则为在测试环境中的错误日志数据可能会部署到生产环境和/或生产错误日志文件可能会删除。）
-- 该应用程序中部署包括在必须更改某些设置*Web.config*具体取决于目标环境 （测试或生产） 和其他设置，必须根据生成发生更改的文件配置 （调试或发布）。
+- 该应用程序包括必须更改某些设置在部署*Web.config*具体取决于目标环境 （测试或生产） 和其他设置，必须根据生成发生更改的文件配置 （调试或发布）。
 - Visual Studio 解决方案包括一个类库项目。 应该部署此项目生成的程序集，不是项目本身。
 
 在此序列中的第一个教程中，你已下载示例的 Visual Studio 项目，并查看站点功能会影响你部署应用程序的方式。 在以下教程中，你为部署准备通过以下操作来自动处理的某些设置。 其他您采取措施的手动。

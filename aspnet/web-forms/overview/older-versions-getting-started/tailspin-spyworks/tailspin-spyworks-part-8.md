@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 0dd1717ff1051f18a78fe77402c7603008b9b486
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fce1a20f9d1093b6c60542d8a786ddf54fdc922c
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="part-8-final-pages-exception-handling-and-conclusion"></a>第 8 部分： 最终页、 异常处理和结论
 ====================
@@ -77,7 +77,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a id="_Toc260221683"></a>结论
 
-我们已经看到，该 ASP.NET WebForms 便于对来创建复杂的网站和数据库访问，成员身份，AJAX 等。 非常快速。
+我们已了解，ASP.NET WebForms 便于对来创建复杂的网站和数据库访问，成员身份，AJAX 等。 非常快速。
 
 希望本教程已授予所需若要开始构建应用程序的你自己 ASP.NET WebForms 工具 ！
 

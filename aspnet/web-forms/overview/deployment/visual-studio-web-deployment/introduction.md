@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 51344535e7ff42f1bd6641aeaaf043be6423f1b7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a7c5b348e44a88a56680237b0cac75c999901ec3
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>使用 Visual Studio 的 ASP.NET Web 部署： 简介
 ====================
@@ -195,7 +195,7 @@ Visual Studio 不执行任何与数据库在部署过程。 当部署的应用�
 - 应用程序使用 ASP.NET 成员身份系统，将用户帐户信息存储在 SQL Server 数据库。 应用程序定义的管理员用户有权访问某些受限制的信息。 你需要部署成员资格数据库测试帐户而非使用管理员帐户。
 - 应用程序使用第三方的错误日志记录和报表实用程序。 一个程序集它必须与应用程序部署中提供了此实用程序。
 - 错误日志记录实用程序将错误信息 XML 文件中写入的文件文件夹。 你必须确保 ASP.NET 下运行在已部署的站点中的帐户到此文件夹具有写入权限，并且你需要从部署中排除此文件夹。 （否则为在测试环境中的错误日志数据可能会部署到生产环境和/或生产错误日志文件可能会删除。）
-- 该应用程序中部署包括在必须更改某些设置*Web.config*具体取决于目标环境 （测试、 过渡或生产） 和其他设置，必须根据生成发生更改的文件配置 （调试或发布）。
+- 该应用程序包括必须更改某些设置在部署*Web.config*具体取决于目标环境 （测试、 过渡或生产） 和其他设置，必须根据生成发生更改的文件配置 （调试或发布）。
 - Visual Studio 解决方案包括一个类库项目。 应该部署此项目生成的程序集，不是项目本身。
 
 ## <a name="summary"></a>摘要

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 93b4df5fcbde8d87866d00dffda8a241d0dd596b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6de7d279677c7bbf220b956767a97aaaff8da9a1
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="adding-validation-to-the-model"></a>添加到模型的验证
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 01/24/2018
 > > 本教程的更新的版本可[此处](../../getting-started/introduction/getting-started.md)使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全，请按照要简单得多，并演示更多的功能。
 
 
-在这本部分将添加到的验证逻辑`Movie`模型，且你将确保验证规则会实施任何时候用户试图创建或编辑使用应用程序的影片。
+在本部分中，你将添加到的验证逻辑`Movie`模型，且你将确保验证规则会实施任何时候用户试图创建或编辑使用应用程序的影片。
 
 ## <a name="keeping-things-dry"></a>保持操作干
 
@@ -94,10 +94,10 @@ ASP.NET MVC 的核心设计原则之一是模拟 (&quot;不重复自己&quot;)�
 
 1. 选项卡上的字段中。
 2. 输入一些文本。
-3. 选项卡上。
+3. 退出选项卡。
 4. 按 tab 键返回字段。
 5. 删除文本。
-6. 选项卡上。
+6. 退出选项卡。
 
 上面的顺序将触发所需的验证，而无需提交按钮。 只需点击提交按钮，而无需输入的任何字段将触发客户端验证。 存在客户端验证错误时，不会将表单数据发送到服务器。 你可以通过将中断点放在 HTTP Post 方法或使用测试此[fiddler 工具](http://fiddler2.com/fiddler2/)或 IE 9 [F12 开发人员工具](https://msdn.microsoft.com/ie/aa740478)。
 
@@ -133,7 +133,7 @@ ASP.NET MVC 的核心设计原则之一是模拟 (&quot;不重复自己&quot;)�
 
 有关这种方法非常令人愉快的是，在控制器和创建视图模板都不知道任何有关强制实施的实际的验证规则或显示的特定错误消息。 仅可在 `Movie` 类中指定验证规则和错误字符串。 这些相同的验证规则将自动应用于编辑视图和任何视图的其他模板可能会创建编辑您的模型。
 
-如果你想要以后更改验证逻辑，则可以在一个位置通过做到验证特性添加到模型 (在此示例中，`movie`类)。 无需担心对应用程序的不同部分所强制执行规则的方式不一致 - 所有验证逻辑都将定义在一个位置并用于整个应用程序。 这使代码非常简洁，并且更易于维护和改进。 这意味着，你将准备和完全遵循干原则。
+如果你想要以后更改验证逻辑，则可以在一个位置通过做到验证特性添加到模型 (在此示例中，`movie`类)。 无需担心对应用程序的不同部分所强制执行规则的方式不一致 - 所有验证逻辑都将定义在一个位置并用于整个应用程序。 这使代码非常简洁，并且更易于维护和改进。 这意味着对 DRY 原则的完全遵守。
 
 ## <a name="adding-formatting-to-the-movie-model"></a>添加到影片模型格式设置
 

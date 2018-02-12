@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider
 msc.type: authoredcontent
-ms.openlocfilehash: ac254abcb756d048d159a9b67967a581f35ac871
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 82341724286a53f7883df324a391beeae3a9e2bd
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider-c"></a>ASP.NET 标识： 使用 MySQL 存储使用 EntityFramework MySQL 提供程序 (C#)
 ====================
@@ -83,7 +83,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="update-the-entity-framework-assembly-for-your-project"></a>更新你的项目的实体框架程序集
 
-从 Visual Studio 2013 模板创建 MVC 应用程序包含对引用[EntityFramework 6.0.0](http://www.nuget.org/packages/EntityFramework)包，但必须已更新到对该程序集，因为其版本包含重要性能改进。 若要在你的应用程序中使用这些最新的更新，使用以下步骤。
+从 Visual Studio 2013 模板创建 MVC 应用程序包含对引用[EntityFramework 6.0.0](http://www.nuget.org/packages/EntityFramework)包，但必须已对该程序集，因为其版本的更新，其中包含重要性能改进。 若要在你的应用程序中使用这些最新的更新，使用以下步骤。
 
 1. 在 Visual Studio 2013 中打开 MVC 项目。
 2. 单击**工具**，然后单击**库程序包管理器**，然后单击**程序包管理器控制台**:  
@@ -139,7 +139,7 @@ Entity Framework Code First 使用**MigrationHistory**表来跟踪的模型更�
 
 ### <a name="creating-a-custom-entityframework-initializer-for-applicationdbcontext"></a>创建的自定义 EntityFramework 初始值设定项 ApplicationDbContext
 
-在本教程中显示的 MySQL 提供程序当前不支持实体框架迁移，因此你将需要使用以连接到数据库的模型初始值设定项。 由于本教程在 Azure 上使用的 MySQL 实例，你将需要需要创建自定义的实体框架初始值设定项。
+在本教程中显示的 MySQL 提供程序当前不支持实体框架迁移，因此你将需要使用以连接到数据库的模型初始值设定项。 由于本教程在 Azure 上使用的 MySQL 实例，你将需要创建自定义的实体框架初始值设定项。
 
 > [!NOTE]
 > 如果要连接到在 Azure 或如果你使用的是在本地托管的数据库上的 SQL Server 实例，则不需要此步骤。

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-database-update
 msc.type: authoredcontent
-ms.openlocfilehash: 3fd29a5b26c564d88e4128d1904fab00b57a3b7c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8e875a4282df78ec647579e74c3fbeabd2495fc2
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-database-update"></a>使用 Visual Studio 的 ASP.NET Web 部署： 部署某一数据库更新
 ====================
@@ -90,7 +90,7 @@ ms.lasthandoff: 11/10/2017
 6. 在**Web 单键发布**工具栏上，单击**生产**发布配置文件，并依次**发布 Web**。
 7. 运行**教师**在生产环境以验证更新是否成功部署中的页。
 
-    有关包含数据库更改的实际生产应用程序更新通常还将应用程序脱机在部署过程中使用*应用\_offline.htm*，如你在前面的教程中看到。
+    对于包括数据库更改的实际生产应用程序更新你通过使用通常还需要在部署过程中，脱机应用*应用\_offline.htm*，如你在前面的教程中看到。
 
 ## <a name="deploy-a-database-update-by-using-the-dbdacfx-provider"></a>将数据库更新部署使用 dbDacFx 提供程序
 

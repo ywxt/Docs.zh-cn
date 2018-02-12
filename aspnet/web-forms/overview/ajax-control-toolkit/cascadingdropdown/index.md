@@ -12,22 +12,22 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown
 msc.type: chapter
-ms.openlocfilehash: 8d0708b03deb54d41c64ed383d319b0b70549e1c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 200dc5ce3f27b5123edea2ac63f0a86b8502605d
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="cascadingdropdown"></a>CascadingDropdown
 ====================
-> 本教程演示如何使用要创建相关的下拉列表的 CascadingDropDown 控件列出该更新，当用户进行选择。
+> 本教程演示如何使用 CascadingDropDown 控件来创建相关更新时用户进行选择的下拉列表。
 
 
-- [填充使用 CascadingDropDown (C#) 的列表](filling-a-list-using-cascadingdropdown-cs.md)
-- [CascadingDropDown 使用数据库 (C#)](using-cascadingdropdown-with-a-database-cs.md)
-- [预设置具有 CascadingDropDown (C#) 的列表项](presetting-list-entries-with-cascadingdropdown-cs.md)
-- [自动回发使用 CascadingDropDown (C#)](using-auto-postback-with-cascadingdropdown-cs.md)
-- [填充使用 CascadingDropDown (VB) 的列表](filling-a-list-using-cascadingdropdown-vb.md)
-- [CascadingDropDown 使用数据库 (VB)](using-cascadingdropdown-with-a-database-vb.md)
-- [预设置具有 CascadingDropDown (VB) 的列表项](presetting-list-entries-with-cascadingdropdown-vb.md)
-- [自动回发使用 CascadingDropDown (VB)](using-auto-postback-with-cascadingdropdown-vb.md)
+- [使用 CascadingDropDown 填充列表 (C#)](filling-a-list-using-cascadingdropdown-cs.md)
+- [通过数据库使用 CascadingDropDown (C#)](using-cascadingdropdown-with-a-database-cs.md)
+- [使用 CascadingDropDown 预设置列表条目 (C#)](presetting-list-entries-with-cascadingdropdown-cs.md)
+- [通过 CascadingDropDown 使用自动回发 (C#)](using-auto-postback-with-cascadingdropdown-cs.md)
+- [使用 CascadingDropDown 填充列表 (VB)](filling-a-list-using-cascadingdropdown-vb.md)
+- [通过数据库使用 CascadingDropDown (VB)](using-cascadingdropdown-with-a-database-vb.md)
+- [使用 CascadingDropDown 预设置列表条目 (VB)](presetting-list-entries-with-cascadingdropdown-vb.md)
+- [通过 CascadingDropDown 使用自动回发 (VB)](using-auto-postback-with-cascadingdropdown-vb.md)

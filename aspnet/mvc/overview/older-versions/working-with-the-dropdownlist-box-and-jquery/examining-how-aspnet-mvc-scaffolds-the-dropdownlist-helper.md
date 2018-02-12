@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
-ms.openlocfilehash: 737773ab424b3ec3b6139b8c238a60ca23de2e69
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: abd9b5c09e942b966eb3eaaebe1b315c30b8e0c0
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>检查如何 ASP.NET MVC scaffolds DropDownList 帮助器
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 01/24/2018
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image1.png)
 
-编辑*StoreManager\Index.cshtml*查看和删除`AlbumArtUrl`。 删除`AlbumArtUrl`将使演示文稿更具可读性。 已完成的代码所示。
+编辑*StoreManager\Index.cshtml*查看和删除`AlbumArtUrl`。 删除`AlbumArtUrl`将使演示文稿更具可读性。 完成的代码如下所示。
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample1.cshtml)]
 
@@ -112,7 +112,7 @@ HTML`<select>`元素 (由 HTML [DropDownList](https://msdn.microsoft.com/library
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample10.cs)]
 
-将两个行设置`ViewBag`中每个`Create`和`Edit`方法通过调用`SetGenreArtistViewBag`方法。 已完成的代码所示。
+将两个行设置`ViewBag`中每个`Create`和`Edit`方法通过调用`SetGenreArtistViewBag`方法。 完成的代码如下所示。
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample11.cs)]
 
@@ -168,7 +168,7 @@ HTML`<select>`元素 (由 HTML [DropDownList](https://msdn.microsoft.com/library
 
 生成项目因此`AlbumSelectListViewModel`当我们在下一步中创建视图时才可用。
 
-添加`EditVM`方法`StoreManagerController`。 已完成的代码所示。
+添加`EditVM`方法`StoreManagerController`。 完成的代码如下所示。
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample20.cs)]
 
@@ -202,7 +202,7 @@ HTML`<select>`元素 (由 HTML [DropDownList](https://msdn.microsoft.com/library
 
 显示的所有三种方法是可接受的。 许多开发人员更愿意使用 explictily 传递`SelectList`到`DropDownList`使用`ViewBag`。 此方法的优点添加了为您提供使用找不到更合适的名称的灵活性。 一个需要注意的是不能将命名`ViewBag SelectList`对象模型属性与相同的名称。
 
-一些开发人员更喜欢 ViewModel 方法。 其他请考虑更详细标记和视图模型已生成的 HTML 接近缺点。
+一些开发人员更喜欢 ViewModel 方法。 其他请考虑更详细的标记，并且生成 HTML ViewModel 方法的缺点。
 
 在本部分中我们已了解到使用的三种方法**DropDownList**类别数据。 在下一步的部分中，我们将展示如何添加新类别。
 

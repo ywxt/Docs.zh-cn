@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: 7200899d54585cd09e0a648e3aaaf839db2649e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5efc5ff367d5da5df060eba0028399af898a69fa
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-5"></a>如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 5 部分
 ====================
@@ -77,7 +77,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="working-with-many-to-many-relationships"></a>使用多对多关系
 
-之间的关系`Courses`实体集和`People`实体集是多对多关系。 A`Course`实体具有名为的导航属性`People`可以包含零个、 一个或多个相关`Person`（表示教师分配来教授该过程） 的实体。 和`Person`实体具有名为的导航属性`Courses`可以包含零个、 一个或多个相关`Course`（表示该教师分配讲授的课程） 的实体。 一个教师可能教授多个课程，并可能由多个教师讲授了一个过程。 在本演练的此部分中，你将添加和删除之间的关系`Person`和`Course`通过更新相关的实体的导航属性的实体。
+之间的关系`Courses`实体集和`People`实体集是多对多关系。 A`Course`实体具有名为的导航属性`People`可以包含零个、 一个或多个相关`Person`（表示教师分配来教授该过程） 的实体。 和`Person`实体具有名为的导航属性`Courses`可以包含零个、 一个或多个相关`Course`实体 (表示课程该教师分配来教授)。 一个教师可能教授多个课程，并可能由多个教师讲授了一个过程。 在本演练的此部分中，你将添加和删除之间的关系`Person`和`Course`通过更新相关的实体的导航属性的实体。
 
 创建一个名为的新 web 页*InstructorsCourses.aspx*使用*Site.Master*母版页，并添加以下标记`Content`控件名为`Content2`:
 
@@ -123,7 +123,7 @@ ms.lasthandoff: 11/10/2017
 
 [![Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image9.png)
 
-选择一个教师。 **指派课程**下拉列表显示教师不讲述，课程和**删除某一课程**下拉列表显示教师已分配给的课程。 在**指派课程**部分，选择某一课程，然后单击**分配**。 本课程将移到**删除某一课程**下拉列表。 选择在课程**删除某一课程**部分并单击**删除***。* 本课程将移到**指派课程**下拉列表。
+选择一个教师。 **指派课程**下拉列表显示教师不讲述，课程和**删除某一课程**下拉列表显示教师已分配给的课程。 在**指派课程**部分，选择某一课程，然后单击**分配**。 本课程将移到**删除某一课程**下拉列表。 选择在课程**删除某一课程**部分并单击 **删除 * * *。* 本课程将移到**指派课程**下拉列表。
 
 您现在已经了解一些更多的方法，以便使用相关数据。 在以下教程中，你将了解如何在数据模型中使用继承，以提高你的应用程序的可维护性。
 

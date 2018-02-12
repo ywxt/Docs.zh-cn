@@ -11,11 +11,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 8156bd1c7cfc111a6a121a89d845ca284ee1b7af
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 44e02888b53ee372ab93db5f90acb691f26b7519
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>从.NET 客户端 (C#) 调用 Web API
 ====================
@@ -116,7 +116,7 @@ Json.NET 是用于.NET 的受欢迎的高性能 JSON 框架。
 
 当**ReadAsAsync**调用不带任何参数，它使用一组默认的*媒体格式化程序*来读取的响应正文。 默认格式化程序支持 JSON、 XML 和窗体的 url 编码的数据。
 
-而不是使用默认格式化程序，你可以提供一份到格式化程序**ReadAsAsync**方法。  使用了很有用，如果你有一个自定义的媒体类型格式化程序，格式化程序的列表：
+而不是使用默认格式化程序，你可以提供一份到格式化程序**ReadAsAsync**方法。  使用格式化程序的列表是具有自定义的媒体类型格式化程序的情况下很有用：
 
 ```csharp
 var formatters = new List<MediaTypeFormatter>() {

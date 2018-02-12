@@ -12,15 +12,15 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
 msc.type: authoredcontent
-ms.openlocfilehash: c2d7454534ff0e9e0a80365793800ab7c45d3b6e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fe67b9a11a82b55d5f3e0e5f1b0cee10a58833d2
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="open-types-in-odata-v4-with-aspnet-web-api"></a>在 ASP.NET web API OData v4 中打开类型
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 在 OData v4*打开键入*是 stuctured 类型包含动态属性，除了在类型定义中声明的任何属性。 开放类型允许你添加到数据模型的灵活性。 本教程演示如何在 ASP.NET Web API OData 中使用开放类型。
 > 
@@ -104,7 +104,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="query-an-entity"></a>查询的实体
 
-若要获取的书 ISBN 等于"978-0-7356-7942-9"，请发送，将发送 GET 请求到`~/Books('978-0-7356-7942-9')`。 响应正文应类似于以下。 （缩进以使其更具可读性。）
+若要获取的书 ISBN 等于"978-0-7356-7942-9"，发送 GET 请求到`~/Books('978-0-7356-7942-9')`。 响应正文应类似于以下。 （缩进以使其更具可读性。）
 
 [!code-console[Main](use-open-types-in-odata-v4/samples/sample7.cmd?highlight=8-13,15-23)]
 

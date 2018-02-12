@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: 92a6dee24b8942d721e3537a712be141155e61df
-ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
+ms.openlocfilehash: 058b7c6fe6eeeea4403e7e5fdc05bb44d2ba1300
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -255,7 +255,7 @@ ASP.NET MVC 3 可以在同一台计算机，这将使您能够灵活地选择何
 
 #### <a name="project-templates-are-now-html5-enabled"></a>项目模板现在是启用的 HTML5
 
-新项目对话框中现在包含一个选项以将 HTML5 特定功能添加到项目模板。 选择的选项会导致视图以生成包含新的 HTML5 `<header>`， `<footer>`，和`<navigation>`元素。 元素。
+新项目对话框中现在包含一个选项以将 HTML5 特定功能添加到项目模板。 选择的选项会导致视图以生成包含新的 HTML5 `<header>`， `<footer>`，和`<navigation>`元素。
 
 请注意，早期版本的浏览器不支持 HTML5 特定标记。 若要解决此限制，HTML5 项目模板，请包括对 Modernizr 库的引用。 （请参阅下一节。）
 
@@ -608,7 +608,7 @@ Namespace.ClassName
 ## <a name="breaking-changes"></a>重大更改
 
 - 异常筛选器的执行顺序已更改为具有相同的异常筛选器*顺序*值。 ASP.NET MVC 2 及更早版本，异常筛选器在包含相同的控制器上*顺序*上操作方法已在上的操作方法的异常筛选器之前执行。 这通常会出现此情况，当异常筛选器应用而无需指定*顺序*值。 在 ASP.NET MVC 3 中，此具有已反转顺序，以便最具体的异常处理程序，则首先执行。 如下所示早期版本中，如果*顺序*显式指定属性，以指定顺序运行筛选器。
-- 添加名为的新属性*FileExtensions*到*VirtualPathProviderViewEngine*基类。 查找视图由路径中 （而不是名称），仅具有文件扩展名中包含的视图时才被视为此新的属性指定的列表。 适用于那些注册自定义生成提供程序，以启用 web 窗体视图的自定义文件扩展，这是一项重大更改，并通过使用完整路径，而不是名称引用这些视图。 解决方法是修改的值*FileExtensions*属性以包含自定义的文件扩展名。
+- 添加名为的新属性*FileExtensions*到*VirtualPathProviderViewEngine*基类。 查找视图由路径中 （而不是名称），仅具有文件扩展名中包含的视图时才被视为此新的属性指定的列表。 这是一项重大更改的用户的用户注册自定义生成提供程序以启用 web 窗体视图的自定义文件扩展，并通过使用完整路径，而不是名称引用这些视图。 解决方法是修改的值*FileExtensions*属性以包含自定义的文件扩展名。
 
 <a id="_Toc276711795"></a>
 ## <a name="known-issues"></a>已知问题

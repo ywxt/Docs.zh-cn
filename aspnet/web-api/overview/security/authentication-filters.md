@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/authentication-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 7c704cc351876b49ec143a49b25cc0ca83876e06
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 16e451f52799625983368bc938091eff47019b52
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="authentication-filters-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的身份验证筛选器
 ====================
@@ -160,7 +160,7 @@ ms.lasthandoff: 01/24/2018
 
 "主机级身份验证"在请求到达 Web API 框架之前是由 （如 IIS)，主机的身份验证。
 
-通常情况下，可能要启用你的应用程序的其余部分的主机级身份验证，但禁用它为你的 Web API 控制器。 例如，典型的方案是启用表单身份验证在主机级别，但对 Web API 使用基于令牌的身份验证。
+通常情况下，你可能想要启用你的应用程序的其余部分的主机级身份验证，但禁用它为你的 Web API 控制器。 例如，典型的方案是启用表单身份验证在主机级别，但对 Web API 使用基于令牌的身份验证。
 
 若要禁用 Web API 管道内的主机级身份验证，调用`config.SuppressHostPrincipal()`中你的配置。 这会导致 Web API 删除**IPrincipal**从输入 Web API 管道的任何请求。 实际上，它&quot;取消的进行身份验证&quot;请求。
 

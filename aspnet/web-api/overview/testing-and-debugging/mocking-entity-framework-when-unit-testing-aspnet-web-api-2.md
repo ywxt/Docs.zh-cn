@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 2d8a3df94c91d2fac79006916375764c2b90dc85
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: abfde7edec85812de3560f4edefb110c3e374580
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a>模拟实体框架时单元测试 ASP.NET Web API 2
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 > - Web API 2
 
 
-## <a name="in-this-topic"></a>主题内容
+## <a name="in-this-topic"></a>在本主题中
 
 本主题包含以下各节：
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 11/10/2017
 如果你已经完成中的步骤[使用 ASP.NET Web API 2 进行单元测试](unit-testing-with-aspnet-web-api.md)，你可以跳到部分[添加控制器](#controller)。
 
 <a id="prereqs"></a>
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 Visual Studio 2017 Community、 Professional 或 Enterprise edition
 
@@ -149,7 +149,7 @@ IHttpActionResult 是一个 Web API 2 中的新功能，它简化了单元测试
 
 ![管理包](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/_static/image4.png)
 
-从联机程序包中，查找和安装 EntityFramework 包 （版本 6.0 或更高版本）。 如果显示 EntityFramework 包已安装，你可能已选择 StoreApp 项目而不是 StoreApp.Tests 项目。
+从联机程序包中，查找和安装 EntityFramework 包 （版本 6.0 或更高版本）。 如果显示 EntityFramework 包已安装，您可能选择 StoreApp 项目而不是 StoreApp.Tests 项目。
 
 ![添加实体框架](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/_static/image5.png)
 

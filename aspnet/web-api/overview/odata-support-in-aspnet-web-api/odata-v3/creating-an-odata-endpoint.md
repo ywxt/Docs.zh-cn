@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: cb466124aacf6b13c1ade22ad8b865b83e6351e2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 33fe4d764bf9bf64c852f1269255925b5cc42536
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>创建与 Web API 2 OData v3 终结点
 ====================
@@ -61,7 +61,7 @@ ms.lasthandoff: 11/10/2017
 
 ![](creating-an-odata-endpoint/_static/image1.png)
 
-在**新建 ASP.NET 项目**对话框中，选择**空**模板。 下&quot;将文件夹添加和核心引用...&quot;，检查**Web API**。 单击“确定”。
+在**新建 ASP.NET 项目**对话框中，选择**空**模板。 下&quot;将文件夹添加和核心引用...&quot;，检查**Web API**。 单击 **“确定”**。
 
 ![](creating-an-odata-endpoint/_static/image2.png)
 
