@@ -1,7 +1,7 @@
 ---
-title: "与 EF 核心-迁移-4 的 8 razor 页"
+title: "Razor 页面和 EF Core - 迁移 - 第 4 个教程，共 8 个教程"
 author: rick-anderson
-description: "在本教程中，你启动使用 EF 核心迁移功能来管理的 ASP.NET 核心 MVC 应用程序中的数据模型更改。"
+description: "本教程使用 EF Core 迁移功能管理 ASP.NET Core MVC 应用中的数据模型更改。"
 manager: wpickett
 ms.author: riande
 ms.date: 10/15/2017
@@ -10,74 +10,74 @@ ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/migrations
 ms.openlocfilehash: e89d95702cb94556bc6e5dc73253c51acaa11578
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: MT
+ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 01/31/2018
 ---
-# <a name="migrations---ef-core-with-razor-pages-tutorial-4-of-8"></a><span data-ttu-id="a73bf-103">迁移的 EF 核心 Razor 页教程 (8 的第 4)</span><span class="sxs-lookup"><span data-stu-id="a73bf-103">Migrations - EF Core with Razor Pages tutorial (4 of 8)</span></span>
+# <a name="migrations---ef-core-with-razor-pages-tutorial-4-of-8"></a><span data-ttu-id="d5f40-103">迁移 - EF Core 和 Razor 页面教程（第 4 个教程，共 8 个）</span><span class="sxs-lookup"><span data-stu-id="d5f40-103">Migrations - EF Core with Razor Pages tutorial (4 of 8)</span></span>
 
-<span data-ttu-id="a73bf-104">通过[Tom Dykstra](https://github.com/tdykstra)， [Jon P Smith](https://twitter.com/thereformedprog)，和[Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="a73bf-104">By [Tom Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter.com/thereformedprog), and [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="d5f40-104">作者：[Tom Dykstra](https://github.com/tdykstra)、[Jon P Smith](https://twitter.com/thereformedprog) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="d5f40-104">By [Tom Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter.com/thereformedprog), and [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
 [!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
 
-<span data-ttu-id="a73bf-105">在本教程中，使用 EF 核心迁移功能用于管理数据模型更改。</span><span class="sxs-lookup"><span data-stu-id="a73bf-105">In this tutorial, the EF Core migrations feature for managing data model changes is used.</span></span>
+<span data-ttu-id="d5f40-105">本教程使用 EF Core 迁移功能管理数据模型更改。</span><span class="sxs-lookup"><span data-stu-id="d5f40-105">In this tutorial, the EF Core migrations feature for managing data model changes is used.</span></span>
 
-<span data-ttu-id="a73bf-106">如果你遇到无法解决的问题，请下载[对此阶段已完成应用程序](
-https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part4-migrations)。</span><span class="sxs-lookup"><span data-stu-id="a73bf-106">If you run into problems you can't solve, download the [completed app for this stage](
+<span data-ttu-id="d5f40-106">如果遇到无法解决的问题，请下载[本阶段的已完成应用](
+https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part4-migrations)。</span><span class="sxs-lookup"><span data-stu-id="d5f40-106">If you run into problems you can't solve, download the [completed app for this stage](
 https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part4-migrations).</span></span>
 
-<span data-ttu-id="a73bf-107">当开发新的应用程序时、 数据模型经常更改。</span><span class="sxs-lookup"><span data-stu-id="a73bf-107">When a new app is developed, the data model changes frequently.</span></span> <span data-ttu-id="a73bf-108">每次将模型更改，该模型获取与数据库不同步。</span><span class="sxs-lookup"><span data-stu-id="a73bf-108">Each time the model changes, the model gets out of sync with the database.</span></span> <span data-ttu-id="a73bf-109">通过配置实体框架可以创建数据库，如果它不存在开始本教程。</span><span class="sxs-lookup"><span data-stu-id="a73bf-109">This tutorial started by configuring the Entity Framework to create the database if it doesn't exist.</span></span> <span data-ttu-id="a73bf-110">每个数据模型更改的时间：</span><span class="sxs-lookup"><span data-stu-id="a73bf-110">Each time the data model changes:</span></span>
+<span data-ttu-id="d5f40-107">开发新应用时，数据模型会频繁更改。</span><span class="sxs-lookup"><span data-stu-id="d5f40-107">When a new app is developed, the data model changes frequently.</span></span> <span data-ttu-id="d5f40-108">每当模型发生更改时，都无法与数据库进行同步。</span><span class="sxs-lookup"><span data-stu-id="d5f40-108">Each time the model changes, the model gets out of sync with the database.</span></span> <span data-ttu-id="d5f40-109">本教程首先配置 Entity Framework 以创建数据库（如果不存在）。</span><span class="sxs-lookup"><span data-stu-id="d5f40-109">This tutorial started by configuring the Entity Framework to create the database if it doesn't exist.</span></span> <span data-ttu-id="d5f40-110">每当数据模型发生更改时：</span><span class="sxs-lookup"><span data-stu-id="d5f40-110">Each time the data model changes:</span></span>
 
-* <span data-ttu-id="a73bf-111">数据库已被删除。</span><span class="sxs-lookup"><span data-stu-id="a73bf-111">The DB is dropped.</span></span>
-* <span data-ttu-id="a73bf-112">EF 创建一个与型号匹配的新。</span><span class="sxs-lookup"><span data-stu-id="a73bf-112">EF creates a new one that matches the model.</span></span>
-* <span data-ttu-id="a73bf-113">应用程序设定种子使用测试数据的数据库。</span><span class="sxs-lookup"><span data-stu-id="a73bf-113">The app seeds the DB with test data.</span></span>
+* <span data-ttu-id="d5f40-111">DB 都会被删除。</span><span class="sxs-lookup"><span data-stu-id="d5f40-111">The DB is dropped.</span></span>
+* <span data-ttu-id="d5f40-112">EF 都会创建一个新数据库来匹配该模型。</span><span class="sxs-lookup"><span data-stu-id="d5f40-112">EF creates a new one that matches the model.</span></span>
+* <span data-ttu-id="d5f40-113">应用使用测试数据为 DB 设定种子。</span><span class="sxs-lookup"><span data-stu-id="d5f40-113">The app seeds the DB with test data.</span></span>
 
-<span data-ttu-id="a73bf-114">使数据库保持与数据模型同步到此方法适用也直到应用程序部署到生产环境。</span><span class="sxs-lookup"><span data-stu-id="a73bf-114">This approach to keeping the DB in sync with the data model works well until you deploy the app to production.</span></span> <span data-ttu-id="a73bf-115">当在生产环境中运行应用程序时，它通常将需要维护的数据存储。</span><span class="sxs-lookup"><span data-stu-id="a73bf-115">When the app is running in production, it's usually storing data that needs to be maintained.</span></span> <span data-ttu-id="a73bf-116">应用程序无法启动一个测试数据库每次更改 （如添加新列）。</span><span class="sxs-lookup"><span data-stu-id="a73bf-116">The app can't start with a test DB each time a change is made (such as adding a new column).</span></span> <span data-ttu-id="a73bf-117">EF 核心迁移功能启用 EF 核心以更新数据库架构，而不是创建新的 DB，从而解决了此问题。</span><span class="sxs-lookup"><span data-stu-id="a73bf-117">The EF Core Migrations feature solves this problem by enabling EF Core to update the DB schema instead of creating a new DB.</span></span>
+<span data-ttu-id="d5f40-114">这种使 DB 与数据模型保持同步的方法适用于多种情况，但将应用部署到生产环境的情况除外。</span><span class="sxs-lookup"><span data-stu-id="d5f40-114">This approach to keeping the DB in sync with the data model works well until you deploy the app to production.</span></span> <span data-ttu-id="d5f40-115">当应用在生产环境中运行时，应用通常会存储需要保留的数据。</span><span class="sxs-lookup"><span data-stu-id="d5f40-115">When the app is running in production, it's usually storing data that needs to be maintained.</span></span> <span data-ttu-id="d5f40-116">每当发生更改（例如添加新列）时，应用都无法在具有测试 DB 的环境下启动。</span><span class="sxs-lookup"><span data-stu-id="d5f40-116">The app can't start with a test DB each time a change is made (such as adding a new column).</span></span> <span data-ttu-id="d5f40-117">EF Core 迁移功能可通过使 EF Core 更新 DB 架构而不是创建新 DB 来解决此问题。</span><span class="sxs-lookup"><span data-stu-id="d5f40-117">The EF Core Migrations feature solves this problem by enabling EF Core to update the DB schema instead of creating a new DB.</span></span>
 
-<span data-ttu-id="a73bf-118">而不是删除并重新创建数据库，在数据模型更改时，迁移架构更新，并保留现有数据。</span><span class="sxs-lookup"><span data-stu-id="a73bf-118">Rather than dropping and recreating the DB when the data model changes, migrations updates the schema and retains existing data.</span></span>
+<span data-ttu-id="d5f40-118">数据模型发生更改时，迁移将更新架构并保留现有数据，而无需删除或重新创建 DB。</span><span class="sxs-lookup"><span data-stu-id="d5f40-118">Rather than dropping and recreating the DB when the data model changes, migrations updates the schema and retains existing data.</span></span>
 
-## <a name="entity-framework-core-nuget-packages-for-migrations"></a><span data-ttu-id="a73bf-119">用于进行迁移的 Entity Framework Core NuGet 包</span><span class="sxs-lookup"><span data-stu-id="a73bf-119">Entity Framework Core NuGet packages for migrations</span></span>
+## <a name="entity-framework-core-nuget-packages-for-migrations"></a><span data-ttu-id="d5f40-119">用于进行迁移的 Entity Framework Core NuGet 包</span><span class="sxs-lookup"><span data-stu-id="d5f40-119">Entity Framework Core NuGet packages for migrations</span></span>
 
-<span data-ttu-id="a73bf-120">若要使用迁移，使用**程序包管理器控制台**(PMC) 或命令行界面 (CLI)。</span><span class="sxs-lookup"><span data-stu-id="a73bf-120">To work with migrations, use the **Package Manager Console** (PMC) or the command-line interface (CLI).</span></span> <span data-ttu-id="a73bf-121">这些教程介绍如何使用 CLI 命令。</span><span class="sxs-lookup"><span data-stu-id="a73bf-121">These tutorials show how to use CLI commands.</span></span> <span data-ttu-id="a73bf-122">有关 PMC 信息位于[本教程末尾](#pmc)。</span><span class="sxs-lookup"><span data-stu-id="a73bf-122">Information about the PMC is at [the end of this tutorial](#pmc).</span></span>
+<span data-ttu-id="d5f40-120">要使用迁移，请使用“包管理器控制台”(PMC) 或命令行接口 (CLI)。</span><span class="sxs-lookup"><span data-stu-id="d5f40-120">To work with migrations, use the **Package Manager Console** (PMC) or the command-line interface (CLI).</span></span> <span data-ttu-id="d5f40-121">以下教程演示如何使用 CLI 命令。</span><span class="sxs-lookup"><span data-stu-id="d5f40-121">These tutorials show how to use CLI commands.</span></span> <span data-ttu-id="d5f40-122">有关 PMC 的信息，请转到[本教程末尾](#pmc)。</span><span class="sxs-lookup"><span data-stu-id="d5f40-122">Information about the PMC is at [the end of this tutorial](#pmc).</span></span>
 
-<span data-ttu-id="a73bf-123">中提供了命令行界面 (CLI) 的 EF 核心工具[Microsoft.EntityFrameworkCore.Tools.DotNet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet)。</span><span class="sxs-lookup"><span data-stu-id="a73bf-123">The EF Core tools for the command-line interface (CLI) are provided in [Microsoft.EntityFrameworkCore.Tools.DotNet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet).</span></span> <span data-ttu-id="a73bf-124">若要安装此包，将其添加到`DotNetCliToolReference`中的集合*.csproj*文件，如下所示。</span><span class="sxs-lookup"><span data-stu-id="a73bf-124">To install this package, add it to the `DotNetCliToolReference` collection in the *.csproj* file, as shown.</span></span> <span data-ttu-id="a73bf-125">**注意：**必须编辑安装此程序包*.csproj*文件。</span><span class="sxs-lookup"><span data-stu-id="a73bf-125">**Note:** This package must be installed by editing the *.csproj* file.</span></span> <span data-ttu-id="a73bf-126">`install-package`命令或包管理器 GUI 不能用于安装此包。</span><span class="sxs-lookup"><span data-stu-id="a73bf-126">The`install-package` command or the package manager GUI cannot be used to install this package.</span></span> <span data-ttu-id="a73bf-127">编辑*.csproj*通过右键单击中的项目名称的文件**解决方案资源管理器**并选择**编辑 ContosoUniversity.csproj**。</span><span class="sxs-lookup"><span data-stu-id="a73bf-127">Edit the *.csproj* file by right-clicking the project name in **Solution Explorer** and selecting **Edit ContosoUniversity.csproj**.</span></span>
+<span data-ttu-id="d5f40-123">[Microsoft.EntityFrameworkCore.Tools.DotNet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet) 中提供了适用于命令行接口 (CLI) 的 EF Core 工具。</span><span class="sxs-lookup"><span data-stu-id="d5f40-123">The EF Core tools for the command-line interface (CLI) are provided in [Microsoft.EntityFrameworkCore.Tools.DotNet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet).</span></span> <span data-ttu-id="d5f40-124">若要安装此程序包，请将它添加到 .csproj 文件中的 `DotNetCliToolReference` 集合，如下所示。</span><span class="sxs-lookup"><span data-stu-id="d5f40-124">To install this package, add it to the `DotNetCliToolReference` collection in the *.csproj* file, as shown.</span></span> <span data-ttu-id="d5f40-125">**注意：**必须通过编辑 .csproj 文件来安装此程序包。</span><span class="sxs-lookup"><span data-stu-id="d5f40-125">**Note:** This package must be installed by editing the *.csproj* file.</span></span> <span data-ttu-id="d5f40-126">不能使用 `install-package` 命令或包管理器 GUI 安装此程序包。</span><span class="sxs-lookup"><span data-stu-id="d5f40-126">The`install-package` command or the package manager GUI cannot be used to install this package.</span></span> <span data-ttu-id="d5f40-127">要编辑 .csproj 文件，请右键单击解决方案资源管理器中的项目名称，然后选择“编辑 ContosoUniversity.csproj”。</span><span class="sxs-lookup"><span data-stu-id="d5f40-127">Edit the *.csproj* file by right-clicking the project name in **Solution Explorer** and selecting **Edit ContosoUniversity.csproj**.</span></span>
 
-<span data-ttu-id="a73bf-128">以下标记显示已更新*.csproj*使用 EF 核心 CLI 工具突出显示的文件：</span><span class="sxs-lookup"><span data-stu-id="a73bf-128">The following markup shows the updated *.csproj* file with the EF Core CLI tools highlighted:</span></span>
+<span data-ttu-id="d5f40-128">以下标记显示已更新的 .csproj 文件，其中突出显示了 EF Core CLI 工具：</span><span class="sxs-lookup"><span data-stu-id="d5f40-128">The following markup shows the updated *.csproj* file with the EF Core CLI tools highlighted:</span></span>
 
 [!code-xml[](intro/samples/cu/ContosoUniversity.csproj?highlight=12)]
   
-<span data-ttu-id="a73bf-129">前面的示例中的版本号是当前在撰写本教程时。</span><span class="sxs-lookup"><span data-stu-id="a73bf-129">The version numbers in the preceding example were current when the tutorial was written.</span></span> <span data-ttu-id="a73bf-130">为其他包中找到的 EF 核心 CLI 工具中使用相同版本。</span><span class="sxs-lookup"><span data-stu-id="a73bf-130">Use the same version for the EF Core CLI tools found in the other packages.</span></span>
+<span data-ttu-id="d5f40-129">编写本教程时，前面示例中的版本号是最新的。</span><span class="sxs-lookup"><span data-stu-id="d5f40-129">The version numbers in the preceding example were current when the tutorial was written.</span></span> <span data-ttu-id="d5f40-130">请对在其他程序包中发现的 EF Core CLI 工具使用相同的版本。</span><span class="sxs-lookup"><span data-stu-id="d5f40-130">Use the same version for the EF Core CLI tools found in the other packages.</span></span>
 
-## <a name="change-the-connection-string"></a><span data-ttu-id="a73bf-131">更改连接字符串</span><span class="sxs-lookup"><span data-stu-id="a73bf-131">Change the connection string</span></span>
+## <a name="change-the-connection-string"></a><span data-ttu-id="d5f40-131">更改连接字符串</span><span class="sxs-lookup"><span data-stu-id="d5f40-131">Change the connection string</span></span>
 
-<span data-ttu-id="a73bf-132">在*appsettings.json*文件中，将连接字符串中数据库的名称更改为 ContosoUniversity2。</span><span class="sxs-lookup"><span data-stu-id="a73bf-132">In the *appsettings.json* file, change the name of the DB in the connection string to ContosoUniversity2.</span></span>
+<span data-ttu-id="d5f40-132">在 appsettings.json 文件中，将连接字符串中 DB 名称更改为 ContosoUniversity2。</span><span class="sxs-lookup"><span data-stu-id="d5f40-132">In the *appsettings.json* file, change the name of the DB in the connection string to ContosoUniversity2.</span></span>
 
 [!code-json[Main](intro/samples/cu/appsettings2.json?range=1-4)]
 
-<span data-ttu-id="a73bf-133">更改连接字符串中的数据库名称，则会导致创建新数据库的初始迁移。</span><span class="sxs-lookup"><span data-stu-id="a73bf-133">Changing the DB name in the connection string causes the first migration to create a new DB.</span></span> <span data-ttu-id="a73bf-134">创建新数据库，因为具有该名称尚不存在。</span><span class="sxs-lookup"><span data-stu-id="a73bf-134">A new DB is created because one with that name doesn't exist.</span></span> <span data-ttu-id="a73bf-135">更改连接字符串不是必需的迁移入门知识。</span><span class="sxs-lookup"><span data-stu-id="a73bf-135">Changing the connection string isn't required for getting started with migrations.</span></span>
+<span data-ttu-id="d5f40-133">更改连接字符串中的 DB 名称会导致初始迁移创建新的 DB。</span><span class="sxs-lookup"><span data-stu-id="d5f40-133">Changing the DB name in the connection string causes the first migration to create a new DB.</span></span> <span data-ttu-id="d5f40-134">之所以会创建新的 DB，是因为不存在具有该名称的 DB。</span><span class="sxs-lookup"><span data-stu-id="d5f40-134">A new DB is created because one with that name doesn't exist.</span></span> <span data-ttu-id="d5f40-135">使用迁移无需更改连接字符串。</span><span class="sxs-lookup"><span data-stu-id="d5f40-135">Changing the connection string isn't required for getting started with migrations.</span></span>
 
-<span data-ttu-id="a73bf-136">更改数据库名称的替代方法删除数据库。</span><span class="sxs-lookup"><span data-stu-id="a73bf-136">An alternative to changing the DB name is deleting the DB.</span></span> <span data-ttu-id="a73bf-137">使用**SQL Server 对象资源管理器**(SSOX) 或`database drop`CLI 命令：</span><span class="sxs-lookup"><span data-stu-id="a73bf-137">Use **SQL Server Object Explorer** (SSOX) or the `database drop` CLI command:</span></span>
+<span data-ttu-id="d5f40-136">更改 DB 名称的另一种方法是删除 DB。</span><span class="sxs-lookup"><span data-stu-id="d5f40-136">An alternative to changing the DB name is deleting the DB.</span></span> <span data-ttu-id="d5f40-137">使用 SQL Server 对象资源管理器 (SSOX) 或 `database drop` CLI 命令：</span><span class="sxs-lookup"><span data-stu-id="d5f40-137">Use **SQL Server Object Explorer** (SSOX) or the `database drop` CLI command:</span></span>
 
  ```console
  dotnet ef database drop
  ```
 
-<span data-ttu-id="a73bf-138">以下部分说明如何运行 CLI 命令。</span><span class="sxs-lookup"><span data-stu-id="a73bf-138">The following section explains how to run CLI commands.</span></span>
+<span data-ttu-id="d5f40-138">下面的部分说明如何运行 CLI 命令。</span><span class="sxs-lookup"><span data-stu-id="d5f40-138">The following section explains how to run CLI commands.</span></span>
 
-## <a name="create-an-initial-migration"></a><span data-ttu-id="a73bf-139">创建初始迁移</span><span class="sxs-lookup"><span data-stu-id="a73bf-139">Create an initial migration</span></span>
+## <a name="create-an-initial-migration"></a><span data-ttu-id="d5f40-139">创建初始迁移</span><span class="sxs-lookup"><span data-stu-id="d5f40-139">Create an initial migration</span></span>
 
-<span data-ttu-id="a73bf-140">生成项目。</span><span class="sxs-lookup"><span data-stu-id="a73bf-140">Build the project.</span></span>
+<span data-ttu-id="d5f40-140">生成项目。</span><span class="sxs-lookup"><span data-stu-id="d5f40-140">Build the project.</span></span>
 
-<span data-ttu-id="a73bf-141">打开命令窗口并导航到项目文件夹。</span><span class="sxs-lookup"><span data-stu-id="a73bf-141">Open a command window and navigate to the project folder.</span></span> <span data-ttu-id="a73bf-142">项目文件夹包含*Startup.cs*文件。</span><span class="sxs-lookup"><span data-stu-id="a73bf-142">The project folder contains the *Startup.cs* file.</span></span>
+<span data-ttu-id="d5f40-141">打开命令窗口并导航到项目文件夹。</span><span class="sxs-lookup"><span data-stu-id="d5f40-141">Open a command window and navigate to the project folder.</span></span> <span data-ttu-id="d5f40-142">项目文件夹包含 Startup.cs 文件。</span><span class="sxs-lookup"><span data-stu-id="d5f40-142">The project folder contains the *Startup.cs* file.</span></span>
 
-<span data-ttu-id="a73bf-143">在命令窗口中输入以下命令：</span><span class="sxs-lookup"><span data-stu-id="a73bf-143">Enter the following in the command window:</span></span>
+<span data-ttu-id="d5f40-143">在命令窗口中输入以下内容：</span><span class="sxs-lookup"><span data-stu-id="d5f40-143">Enter the following in the command window:</span></span>
 
 ```console
 dotnet ef migrations add InitialCreate
 ```
 
-<span data-ttu-id="a73bf-144">命令窗口显示类似于以下信息：</span><span class="sxs-lookup"><span data-stu-id="a73bf-144">The command window displays information similar to the following:</span></span>
+<span data-ttu-id="d5f40-144">命令窗口显示类似于以下内容的信息：</span><span class="sxs-lookup"><span data-stu-id="d5f40-144">The command window displays information similar to the following:</span></span>
 
 ```console
 info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
@@ -87,75 +87,75 @@ info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
 Done. To undo this action, use 'ef migrations remove'
 ```
 
-<span data-ttu-id="a73bf-145">如果迁移失败，出现消息"*无法访问文件...ContosoUniversity.dll 由于另一个进程正在使用。*"</span><span class="sxs-lookup"><span data-stu-id="a73bf-145">If the migration fails with the message "*cannot access the file ... ContosoUniversity.dll because it is being used by another process.*"</span></span> <span data-ttu-id="a73bf-146">显示：</span><span class="sxs-lookup"><span data-stu-id="a73bf-146">is displayed:</span></span>
+<span data-ttu-id="d5f40-145">如果迁移失败，并出现消息“无法访问文件...ContosoUniversity.dll，因为它正被另一个进程使用。”</span><span class="sxs-lookup"><span data-stu-id="d5f40-145">If the migration fails with the message "*cannot access the file ... ContosoUniversity.dll because it is being used by another process.*"</span></span> <span data-ttu-id="d5f40-146">：</span><span class="sxs-lookup"><span data-stu-id="d5f40-146">is displayed:</span></span>
 
-* <span data-ttu-id="a73bf-147">停止 IIS Express。</span><span class="sxs-lookup"><span data-stu-id="a73bf-147">Stop IIS Express.</span></span>
+* <span data-ttu-id="d5f40-147">停止 IIS Express。</span><span class="sxs-lookup"><span data-stu-id="d5f40-147">Stop IIS Express.</span></span>
 
-   * <span data-ttu-id="a73bf-148">退出并重新启动 Visual Studio 中，或</span><span class="sxs-lookup"><span data-stu-id="a73bf-148">Exit and restart Visual Studio, or</span></span>
-   * <span data-ttu-id="a73bf-149">在 Windows 系统任务栏中找到的 IIS Express 图标。</span><span class="sxs-lookup"><span data-stu-id="a73bf-149">Find the IIS Express icon in the Windows System Tray.</span></span>
-   * <span data-ttu-id="a73bf-150">右键单击 IIS Express 图标，并依次**ContosoUniversity > 停止站点**。</span><span class="sxs-lookup"><span data-stu-id="a73bf-150">Right-click the IIS Express icon, and then click **ContosoUniversity > Stop Site**.</span></span>
+   * <span data-ttu-id="d5f40-148">退出并重启 Visual Studio，或</span><span class="sxs-lookup"><span data-stu-id="d5f40-148">Exit and restart Visual Studio, or</span></span>
+   * <span data-ttu-id="d5f40-149">在 Windows 系统托盘中找到 IIS Express 图标。</span><span class="sxs-lookup"><span data-stu-id="d5f40-149">Find the IIS Express icon in the Windows System Tray.</span></span>
+   * <span data-ttu-id="d5f40-150">右键单击 IIS Express 图标，然后单击“ContosoUniversity”>“停止站点”。</span><span class="sxs-lookup"><span data-stu-id="d5f40-150">Right-click the IIS Express icon, and then click **ContosoUniversity > Stop Site**.</span></span>
 
-<span data-ttu-id="a73bf-151">如果错误消息"生成失败。"</span><span class="sxs-lookup"><span data-stu-id="a73bf-151">If the error message "Build failed."</span></span> <span data-ttu-id="a73bf-152">将显示，重新运行该命令。</span><span class="sxs-lookup"><span data-stu-id="a73bf-152">is displayed, run the command again.</span></span> <span data-ttu-id="a73bf-153">如果你收到此错误，将在本教程的底部保留注释。</span><span class="sxs-lookup"><span data-stu-id="a73bf-153">If you get this error, leave a note at the bottom of this tutorial.</span></span>
+<span data-ttu-id="d5f40-151">如果出现错误消息“生成失败。”，</span><span class="sxs-lookup"><span data-stu-id="d5f40-151">If the error message "Build failed."</span></span> <span data-ttu-id="d5f40-152">请再次运行该命令。</span><span class="sxs-lookup"><span data-stu-id="d5f40-152">is displayed, run the command again.</span></span> <span data-ttu-id="d5f40-153">如果收到此错误，请在本教程底部留下说明。</span><span class="sxs-lookup"><span data-stu-id="d5f40-153">If you get this error, leave a note at the bottom of this tutorial.</span></span>
 
-### <a name="examine-the-up-and-down-methods"></a><span data-ttu-id="a73bf-154">检查向上和向下方法</span><span class="sxs-lookup"><span data-stu-id="a73bf-154">Examine the Up and Down methods</span></span>
+### <a name="examine-the-up-and-down-methods"></a><span data-ttu-id="d5f40-154">了解 Up 和 Down 方法</span><span class="sxs-lookup"><span data-stu-id="d5f40-154">Examine the Up and Down methods</span></span>
 
-<span data-ttu-id="a73bf-155">EF 核心命令`migrations add`生成代码以创建从 DB。</span><span class="sxs-lookup"><span data-stu-id="a73bf-155">The EF Core command `migrations add` generated code to create the DB from.</span></span> <span data-ttu-id="a73bf-156">此迁移代码位于*迁移\<时间戳 > _InitialCreate.cs*文件。</span><span class="sxs-lookup"><span data-stu-id="a73bf-156">This migrations code is in the *Migrations\<timestamp>_InitialCreate.cs* file.</span></span> <span data-ttu-id="a73bf-157">`Up`方法`InitialCreate`类创建到数据模型的实体集对应的数据库表。</span><span class="sxs-lookup"><span data-stu-id="a73bf-157">The `Up` method of the `InitialCreate` class creates the DB tables that correspond to the data model entity sets.</span></span> <span data-ttu-id="a73bf-158">`Down`方法删除它们，如下面的示例中所示：</span><span class="sxs-lookup"><span data-stu-id="a73bf-158">The `Down` method deletes them, as shown in the following example:</span></span>
+<span data-ttu-id="d5f40-155">EF Core 命令 `migrations add` 已生成用于创建 DB 的代码。</span><span class="sxs-lookup"><span data-stu-id="d5f40-155">The EF Core command `migrations add` generated code to create the DB from.</span></span> <span data-ttu-id="d5f40-156">此迁移代码位于 Migrations\<timestamp>_InitialCreate.cs 文件中。</span><span class="sxs-lookup"><span data-stu-id="d5f40-156">This migrations code is in the *Migrations\<timestamp>_InitialCreate.cs* file.</span></span> <span data-ttu-id="d5f40-157">`InitialCreate` 类的 `Up` 的方法创建与数据模型实体集相对应的 DB 表。</span><span class="sxs-lookup"><span data-stu-id="d5f40-157">The `Up` method of the `InitialCreate` class creates the DB tables that correspond to the data model entity sets.</span></span> <span data-ttu-id="d5f40-158">`Down` 方法删除这些表，如下例所示：</span><span class="sxs-lookup"><span data-stu-id="d5f40-158">The `Down` method deletes them, as shown in the following example:</span></span>
 
 [!code-csharp[Main](intro/samples/cu/Migrations/20171026010210_InitialCreate.cs?range=8-24,77-)]
 
-<span data-ttu-id="a73bf-159">迁移调用`Up`方法以实现迁移的数据模型更改。</span><span class="sxs-lookup"><span data-stu-id="a73bf-159">Migrations calls the `Up` method to implement the data model changes for a migration.</span></span> <span data-ttu-id="a73bf-160">当你输入命令回滚更新，迁移调用`Down`方法。</span><span class="sxs-lookup"><span data-stu-id="a73bf-160">When you enter a command to roll back the update, migrations calls the `Down` method.</span></span>
+<span data-ttu-id="d5f40-159">迁移调用 `Up` 方法为迁移实现数据模型更改。</span><span class="sxs-lookup"><span data-stu-id="d5f40-159">Migrations calls the `Up` method to implement the data model changes for a migration.</span></span> <span data-ttu-id="d5f40-160">输入用于回退更新的命令时，迁移调用 `Down` 方法。</span><span class="sxs-lookup"><span data-stu-id="d5f40-160">When you enter a command to roll back the update, migrations calls the `Down` method.</span></span>
 
-<span data-ttu-id="a73bf-161">前面的代码适用于初始迁移。</span><span class="sxs-lookup"><span data-stu-id="a73bf-161">The preceding code is for the initial migration.</span></span> <span data-ttu-id="a73bf-162">该代码时，将创建`migrations add InitialCreate`命令已运行。</span><span class="sxs-lookup"><span data-stu-id="a73bf-162">That code was created when the `migrations add InitialCreate` command was run.</span></span> <span data-ttu-id="a73bf-163">迁移 name 参数 (如在示例中的"InitialCreate") 用于文件名称。</span><span class="sxs-lookup"><span data-stu-id="a73bf-163">The migration name parameter ("InitialCreate" in the example) is used for the file name.</span></span> <span data-ttu-id="a73bf-164">该迁移的名称可以是任何有效的文件名称。</span><span class="sxs-lookup"><span data-stu-id="a73bf-164">The migration name can be any valid file name.</span></span> <span data-ttu-id="a73bf-165">最好选择的单词或短语，总结了中迁移正在进行的内容。</span><span class="sxs-lookup"><span data-stu-id="a73bf-165">It's best to choose a word or phrase that summarizes what is being done in the migration.</span></span> <span data-ttu-id="a73bf-166">例如，添加了一个部门表的迁移可能会调用"AddDepartmentTable。"</span><span class="sxs-lookup"><span data-stu-id="a73bf-166">For example, a migration that added a department table might be called "AddDepartmentTable."</span></span>
+<span data-ttu-id="d5f40-161">前面的代码适用于初始迁移。</span><span class="sxs-lookup"><span data-stu-id="d5f40-161">The preceding code is for the initial migration.</span></span> <span data-ttu-id="d5f40-162">该代码是运行 `migrations add InitialCreate` 命令时创建的。</span><span class="sxs-lookup"><span data-stu-id="d5f40-162">That code was created when the `migrations add InitialCreate` command was run.</span></span> <span data-ttu-id="d5f40-163">迁移名称参数（本示例中为“InitialCreate”）用于指定文件名。</span><span class="sxs-lookup"><span data-stu-id="d5f40-163">The migration name parameter ("InitialCreate" in the example) is used for the file name.</span></span> <span data-ttu-id="d5f40-164">迁移名称可以是任何有效的文件名。</span><span class="sxs-lookup"><span data-stu-id="d5f40-164">The migration name can be any valid file name.</span></span> <span data-ttu-id="d5f40-165">最好选择能概括迁移中所执行操作的字词或短语。</span><span class="sxs-lookup"><span data-stu-id="d5f40-165">It's best to choose a word or phrase that summarizes what is being done in the migration.</span></span> <span data-ttu-id="d5f40-166">例如，添加了系表的迁移可称为“AddDepartmentTable”。</span><span class="sxs-lookup"><span data-stu-id="d5f40-166">For example, a migration that added a department table might be called "AddDepartmentTable."</span></span>
 
-<span data-ttu-id="a73bf-167">如果创建初始迁移和 DB 退出：</span><span class="sxs-lookup"><span data-stu-id="a73bf-167">If the initial migration is created and the DB exits:</span></span>
+<span data-ttu-id="d5f40-167">如果创建了初始迁移并且 DB 已退出：</span><span class="sxs-lookup"><span data-stu-id="d5f40-167">If the initial migration is created and the DB exits:</span></span>
 
-* <span data-ttu-id="a73bf-168">生成数据库创建代码。</span><span class="sxs-lookup"><span data-stu-id="a73bf-168">The DB creation code is generated.</span></span>
-* <span data-ttu-id="a73bf-169">数据库创建代码不需要运行，因为数据库已与匹配的数据模型。</span><span class="sxs-lookup"><span data-stu-id="a73bf-169">The DB creation code doesn't need to run because the DB already matches the data model.</span></span> <span data-ttu-id="a73bf-170">如果运行的 DB 创建代码，它不执行任何更改，因为数据库已与数据模型相匹配。</span><span class="sxs-lookup"><span data-stu-id="a73bf-170">If the The DB creation code is run, it doesn't make any changes because the DB already matches the data model.</span></span>
+* <span data-ttu-id="d5f40-168">会生成 DB 创建代码。</span><span class="sxs-lookup"><span data-stu-id="d5f40-168">The DB creation code is generated.</span></span>
+* <span data-ttu-id="d5f40-169">DB 创建代码不需要运行，因为 DB 已与数据模型相匹配。</span><span class="sxs-lookup"><span data-stu-id="d5f40-169">The DB creation code doesn't need to run because the DB already matches the data model.</span></span> <span data-ttu-id="d5f40-170">即使 DB 创建代码运行也不会做出任何更改，因为 DB 已与数据模型相匹配。</span><span class="sxs-lookup"><span data-stu-id="d5f40-170">If the The DB creation code is run, it doesn't make any changes because the DB already matches the data model.</span></span>
 
-<span data-ttu-id="a73bf-171">应用程序部署到新的环境中，必须运行数据库创建代码以创建数据库。</span><span class="sxs-lookup"><span data-stu-id="a73bf-171">When the app is deployed to a new environment, the DB creation code must be run to create the DB.</span></span>
+<span data-ttu-id="d5f40-171">如果将应用部署到新环境，则必须运行 DB 创建代码才能创建 DB。</span><span class="sxs-lookup"><span data-stu-id="d5f40-171">When the app is deployed to a new environment, the DB creation code must be run to create the DB.</span></span>
 
-<span data-ttu-id="a73bf-172">以前的连接字符串已更改为使用数据库的新名称。</span><span class="sxs-lookup"><span data-stu-id="a73bf-172">Previously the connection string was changed to use a new name for the DB.</span></span> <span data-ttu-id="a73bf-173">指定的数据库不存在，因此迁移创建数据库。</span><span class="sxs-lookup"><span data-stu-id="a73bf-173">The specified DB doesn't exist, so migrations creates the DB.</span></span>
+<span data-ttu-id="d5f40-172">以前，需要更改连接字符串才能使用 DB 的新名称。</span><span class="sxs-lookup"><span data-stu-id="d5f40-172">Previously the connection string was changed to use a new name for the DB.</span></span> <span data-ttu-id="d5f40-173">指定的 DB 不存在，因此迁移会创建 DB。</span><span class="sxs-lookup"><span data-stu-id="d5f40-173">The specified DB doesn't exist, so migrations creates the DB.</span></span>
 
-### <a name="examine-the-data-model-snapshot"></a><span data-ttu-id="a73bf-174">检查数据模型快照</span><span class="sxs-lookup"><span data-stu-id="a73bf-174">Examine the data model snapshot</span></span>
+### <a name="examine-the-data-model-snapshot"></a><span data-ttu-id="d5f40-174">了解数据模型快照</span><span class="sxs-lookup"><span data-stu-id="d5f40-174">Examine the data model snapshot</span></span>
 
-<span data-ttu-id="a73bf-175">迁移创建*快照*中的当前数据库架构的*Migrations/SchoolContextModelSnapshot.cs*:</span><span class="sxs-lookup"><span data-stu-id="a73bf-175">Migrations creates a *snapshot* of the current DB schema in *Migrations/SchoolContextModelSnapshot.cs*:</span></span>
+<span data-ttu-id="d5f40-175">迁移会在 Migrations/SchoolContextModelSnapshot.cs 中创建当前 DB 架构的快照：</span><span class="sxs-lookup"><span data-stu-id="d5f40-175">Migrations creates a *snapshot* of the current DB schema in *Migrations/SchoolContextModelSnapshot.cs*:</span></span>
 
 [!code-csharp[Main](intro/samples/cu/Migrations/SchoolContextModelSnapshot1.cs?name=snippet_Truncate)]
 
-<span data-ttu-id="a73bf-176">以代码表示为当前的数据库架构，因为 EF 核心没有与创建迁移的数据库进行交互。</span><span class="sxs-lookup"><span data-stu-id="a73bf-176">Because the current DB schema is represented in code, EF Core doesn't have to interact with the DB to create migrations.</span></span> <span data-ttu-id="a73bf-177">当添加迁移时，EF 核心确定通过比较快照文件的数据模型更改的内容。</span><span class="sxs-lookup"><span data-stu-id="a73bf-177">When you add a migration, EF Core determines what changed by comparing the data model to the snapshot file.</span></span> <span data-ttu-id="a73bf-178">仅当有更新数据库时，EF 核心与数据库交互。</span><span class="sxs-lookup"><span data-stu-id="a73bf-178">EF Core interacts with the DB only when it has to update the DB.</span></span>
+<span data-ttu-id="d5f40-176">由于当前 DB 架构以代码表示，因此 EF Core 无需与 DB 交互即可创建迁移。</span><span class="sxs-lookup"><span data-stu-id="d5f40-176">Because the current DB schema is represented in code, EF Core doesn't have to interact with the DB to create migrations.</span></span> <span data-ttu-id="d5f40-177">添加迁移时，EF Core 会通过将数据模型与快照文件进行对比来确定已更改的内容。</span><span class="sxs-lookup"><span data-stu-id="d5f40-177">When you add a migration, EF Core determines what changed by comparing the data model to the snapshot file.</span></span> <span data-ttu-id="d5f40-178">EF Core 仅在必须更新 DB 时才与 DB 进行交互。</span><span class="sxs-lookup"><span data-stu-id="d5f40-178">EF Core interacts with the DB only when it has to update the DB.</span></span>
 
-<span data-ttu-id="a73bf-179">快照文件必须与创建它的迁移同步。</span><span class="sxs-lookup"><span data-stu-id="a73bf-179">The snapshot file must be in sync with the migrations that created it.</span></span> <span data-ttu-id="a73bf-180">无法通过删除名为的文件中删除迁移*\<时间戳 > _\<migrationname >.cs*。</span><span class="sxs-lookup"><span data-stu-id="a73bf-180">A migration can't be removed by deleting the file named *\<timestamp>_\<migrationname>.cs*.</span></span> <span data-ttu-id="a73bf-181">如果删除该文件时，将剩余的迁移将与数据库快照文件不同步。</span><span class="sxs-lookup"><span data-stu-id="a73bf-181">If that file is deleted, the remaining migrations are out of sync with the DB snapshot file.</span></span> <span data-ttu-id="a73bf-182">若要删除上次添加的迁移，使用[dotnet ef 迁移删除](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove)命令。</span><span class="sxs-lookup"><span data-stu-id="a73bf-182">To delete the last migration added, use the [dotnet ef migrations remove](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) command.</span></span>
+<span data-ttu-id="d5f40-179">快照文件必须与创建它的迁移保持同步。</span><span class="sxs-lookup"><span data-stu-id="d5f40-179">The snapshot file must be in sync with the migrations that created it.</span></span> <span data-ttu-id="d5f40-180">删除名为 \<timestamp>_\<migrationname>.cs 的文件时不会删除迁移。</span><span class="sxs-lookup"><span data-stu-id="d5f40-180">A migration can't be removed by deleting the file named *\<timestamp>_\<migrationname>.cs*.</span></span> <span data-ttu-id="d5f40-181">删除该文件后，剩余的迁移不会与 DB 快照文件保持同步。</span><span class="sxs-lookup"><span data-stu-id="d5f40-181">If that file is deleted, the remaining migrations are out of sync with the DB snapshot file.</span></span> <span data-ttu-id="d5f40-182">若要删除上次添加的迁移，请使用 [dotnet ef migrations remove](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) 命令。</span><span class="sxs-lookup"><span data-stu-id="d5f40-182">To delete the last migration added, use the [dotnet ef migrations remove](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) command.</span></span>
 
-## <a name="remove-ensurecreated"></a><span data-ttu-id="a73bf-183">删除 EnsureCreated</span><span class="sxs-lookup"><span data-stu-id="a73bf-183">Remove EnsureCreated</span></span>
+## <a name="remove-ensurecreated"></a><span data-ttu-id="d5f40-183">删除 EnsureCreated</span><span class="sxs-lookup"><span data-stu-id="d5f40-183">Remove EnsureCreated</span></span>
 
-<span data-ttu-id="a73bf-184">对于早期的开发，`EnsureCreated`命令未使用。</span><span class="sxs-lookup"><span data-stu-id="a73bf-184">For early development, the `EnsureCreated` command was used.</span></span> <span data-ttu-id="a73bf-185">在本教程中，使用迁移。</span><span class="sxs-lookup"><span data-stu-id="a73bf-185">In this tutorial, migrations is used.</span></span> <span data-ttu-id="a73bf-186">`EnsureCreated`具有以下限制：</span><span class="sxs-lookup"><span data-stu-id="a73bf-186">`EnsureCreated` has the following limitations:</span></span>
+<span data-ttu-id="d5f40-184">以前的开发通常使用 `EnsureCreated` 命令。</span><span class="sxs-lookup"><span data-stu-id="d5f40-184">For early development, the `EnsureCreated` command was used.</span></span> <span data-ttu-id="d5f40-185">本教程将使用迁移。</span><span class="sxs-lookup"><span data-stu-id="d5f40-185">In this tutorial, migrations is used.</span></span> <span data-ttu-id="d5f40-186">`EnsureCreated` 具有以下限制：</span><span class="sxs-lookup"><span data-stu-id="d5f40-186">`EnsureCreated` has the following limitations:</span></span>
 
-* <span data-ttu-id="a73bf-187">绕过迁移并创建数据库和架构。</span><span class="sxs-lookup"><span data-stu-id="a73bf-187">Bypasses migrations and creates the DB and schema.</span></span>
-* <span data-ttu-id="a73bf-188">不会创建迁移表。</span><span class="sxs-lookup"><span data-stu-id="a73bf-188">Doesn't create a migrations table.</span></span>
-* <span data-ttu-id="a73bf-189">可以*不*迁移与一起使用。</span><span class="sxs-lookup"><span data-stu-id="a73bf-189">Can *not* be used with migrations.</span></span>
-* <span data-ttu-id="a73bf-190">专为测试或快速原型制作，其中数据库是删除并重新创建频繁。</span><span class="sxs-lookup"><span data-stu-id="a73bf-190">Is designed for testing or rapid prototyping where the DB is dropped and re-created frequently.</span></span>
+* <span data-ttu-id="d5f40-187">绕过迁移并创建 DB 和架构。</span><span class="sxs-lookup"><span data-stu-id="d5f40-187">Bypasses migrations and creates the DB and schema.</span></span>
+* <span data-ttu-id="d5f40-188">不会创建迁移表。</span><span class="sxs-lookup"><span data-stu-id="d5f40-188">Doesn't create a migrations table.</span></span>
+* <span data-ttu-id="d5f40-189">不能与迁移一起使用。</span><span class="sxs-lookup"><span data-stu-id="d5f40-189">Can *not* be used with migrations.</span></span>
+* <span data-ttu-id="d5f40-190">专门用于在频繁删除并重新创建 DB 的情况下进行测试或快速制作原型。</span><span class="sxs-lookup"><span data-stu-id="d5f40-190">Is designed for testing or rapid prototyping where the DB is dropped and re-created frequently.</span></span>
 
-<span data-ttu-id="a73bf-191">删除以下行从`DbInitializer`:</span><span class="sxs-lookup"><span data-stu-id="a73bf-191">Remove the following line from `DbInitializer`:</span></span>
+<span data-ttu-id="d5f40-191">删除 `DbInitializer` 中的以下行：</span><span class="sxs-lookup"><span data-stu-id="d5f40-191">Remove the following line from `DbInitializer`:</span></span>
 
 ```csharp
 context.Database.EnsureCreated();
 ```
 
-## <a name="apply-the-migration-to-the-db-in-development"></a><span data-ttu-id="a73bf-192">适用于在开发过程中数据库的迁移</span><span class="sxs-lookup"><span data-stu-id="a73bf-192">Apply the migration to the DB in development</span></span>
+## <a name="apply-the-migration-to-the-db-in-development"></a><span data-ttu-id="d5f40-192">在开发过程中将迁移应用于 DB</span><span class="sxs-lookup"><span data-stu-id="d5f40-192">Apply the migration to the DB in development</span></span>
 
-<span data-ttu-id="a73bf-193">在命令窗口中，输入以下命令以创建数据库和表。</span><span class="sxs-lookup"><span data-stu-id="a73bf-193">In the command window, enter the following to create the DB and tables.</span></span>
+<span data-ttu-id="d5f40-193">在命令窗口中，输入以下内容以创建 DB 和表。</span><span class="sxs-lookup"><span data-stu-id="d5f40-193">In the command window, enter the following to create the DB and tables.</span></span>
 
 ```console
 dotnet ef database update
 ```
 
-<span data-ttu-id="a73bf-194">注意： 如果`update`命令将返回"生成失败"。 错误：</span><span class="sxs-lookup"><span data-stu-id="a73bf-194">Note: If the `update` command returns the error "Build failed.":</span></span>
+<span data-ttu-id="d5f40-194">注意：如果 `update` 命令返回“生成失败。”错误：</span><span class="sxs-lookup"><span data-stu-id="d5f40-194">Note: If the `update` command returns the error "Build failed.":</span></span>
 
-* <span data-ttu-id="a73bf-195">再次运行该命令。</span><span class="sxs-lookup"><span data-stu-id="a73bf-195">Run the command again.</span></span>
-* <span data-ttu-id="a73bf-196">如果再次失败，退出 Visual Studio，然后运行`update`命令。</span><span class="sxs-lookup"><span data-stu-id="a73bf-196">If it fails again, exit Visual Studio and then run the `update` command.</span></span>
-* <span data-ttu-id="a73bf-197">将保留在页面底部的消息。</span><span class="sxs-lookup"><span data-stu-id="a73bf-197">Leave a message at the bottom of the page.</span></span>
+* <span data-ttu-id="d5f40-195">请再次运行该命令。</span><span class="sxs-lookup"><span data-stu-id="d5f40-195">Run the command again.</span></span>
+* <span data-ttu-id="d5f40-196">如果再次失败，请退出 Visual Studio，然后运行 `update` 命令。</span><span class="sxs-lookup"><span data-stu-id="d5f40-196">If it fails again, exit Visual Studio and then run the `update` command.</span></span>
+* <span data-ttu-id="d5f40-197">请在页面底部留言。</span><span class="sxs-lookup"><span data-stu-id="d5f40-197">Leave a message at the bottom of the page.</span></span>
 
-<span data-ttu-id="a73bf-198">该命令的输出是类似于`migrations add`命令输出。</span><span class="sxs-lookup"><span data-stu-id="a73bf-198">The output from the command is similar to the `migrations add` command output.</span></span> <span data-ttu-id="a73bf-199">在上述命令中，显示的 SQL 命令的设置数据库的日志。</span><span class="sxs-lookup"><span data-stu-id="a73bf-199">In the preceding command, logs for the SQL commands that set up the DB are displayed.</span></span> <span data-ttu-id="a73bf-200">在下面的示例输出中，大部分日志被省略：</span><span class="sxs-lookup"><span data-stu-id="a73bf-200">Most of the logs are omitted in the following sample output:</span></span>
+<span data-ttu-id="d5f40-198">该命令的输出与 `migrations add` 命令的输出相似。</span><span class="sxs-lookup"><span data-stu-id="d5f40-198">The output from the command is similar to the `migrations add` command output.</span></span> <span data-ttu-id="d5f40-199">上面的命令中显示了用于设置 DB 的 SQL 命令的日志。</span><span class="sxs-lookup"><span data-stu-id="d5f40-199">In the preceding command, logs for the SQL commands that set up the DB are displayed.</span></span> <span data-ttu-id="d5f40-200">下面的示例输出中省略了大部分日志：</span><span class="sxs-lookup"><span data-stu-id="d5f40-200">Most of the logs are omitted in the following sample output:</span></span>
 
 ```text
 info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
@@ -182,48 +182,48 @@ info: Microsoft.EntityFrameworkCore.Database.Command[200101]
 Done.
 ```
 
-<span data-ttu-id="a73bf-201">若要减少的日志消息中的详细信息级别可以更改中的日志级别*appsettings。Development.json*文件。</span><span class="sxs-lookup"><span data-stu-id="a73bf-201">To reduce the level of detail in log messages, can change the log levels in the *appsettings.Development.json* file.</span></span> <span data-ttu-id="a73bf-202">有关详细信息，请参阅[简介日志记录](xref:fundamentals/logging/index)。</span><span class="sxs-lookup"><span data-stu-id="a73bf-202">For more information, see [Introduction to logging](xref:fundamentals/logging/index).</span></span>
+<span data-ttu-id="d5f40-201">若要降低日志消息的详细级别，请更改 appsettings.Development.json 文件中的日志级别。</span><span class="sxs-lookup"><span data-stu-id="d5f40-201">To reduce the level of detail in log messages, can change the log levels in the *appsettings.Development.json* file.</span></span> <span data-ttu-id="d5f40-202">有关详细信息，请参阅[日志记录介绍](xref:fundamentals/logging/index)。</span><span class="sxs-lookup"><span data-stu-id="d5f40-202">For more information, see [Introduction to logging](xref:fundamentals/logging/index).</span></span>
 
-<span data-ttu-id="a73bf-203">使用**SQL Server 对象资源管理器**检查数据库。</span><span class="sxs-lookup"><span data-stu-id="a73bf-203">Use **SQL Server Object Explorer** to inspect the DB.</span></span> <span data-ttu-id="a73bf-204">请注意添加`__EFMigrationsHistory`表。</span><span class="sxs-lookup"><span data-stu-id="a73bf-204">Notice the addition of an `__EFMigrationsHistory` table.</span></span> <span data-ttu-id="a73bf-205">`__EFMigrationsHistory`表将跟踪的哪些迁移已应用于数据库。</span><span class="sxs-lookup"><span data-stu-id="a73bf-205">The `__EFMigrationsHistory` table keeps track of which migrations have been applied to the DB.</span></span> <span data-ttu-id="a73bf-206">查看中的数据`__EFMigrationsHistory`表，它显示为第一次迁移一个行。</span><span class="sxs-lookup"><span data-stu-id="a73bf-206">View the data in the `__EFMigrationsHistory` table, it shows one row for the first migration.</span></span> <span data-ttu-id="a73bf-207">在 CLI 输出上例中的最后一个日志显示创建此行的 INSERT 语句。</span><span class="sxs-lookup"><span data-stu-id="a73bf-207">The last log in the preceding CLI output example shows the INSERT statement that creates this row.</span></span>
+<span data-ttu-id="d5f40-203">使用 SQL Server 对象资源管理器检查 DB。</span><span class="sxs-lookup"><span data-stu-id="d5f40-203">Use **SQL Server Object Explorer** to inspect the DB.</span></span> <span data-ttu-id="d5f40-204">请注意，增加了 `__EFMigrationsHistory` 表。</span><span class="sxs-lookup"><span data-stu-id="d5f40-204">Notice the addition of an `__EFMigrationsHistory` table.</span></span> <span data-ttu-id="d5f40-205">`__EFMigrationsHistory` 表跟踪已应用到 DB 的迁移。</span><span class="sxs-lookup"><span data-stu-id="d5f40-205">The `__EFMigrationsHistory` table keeps track of which migrations have been applied to the DB.</span></span> <span data-ttu-id="d5f40-206">查看 `__EFMigrationsHistory` 表中的数据，其中显示对应初始迁移的一行数据。</span><span class="sxs-lookup"><span data-stu-id="d5f40-206">View the data in the `__EFMigrationsHistory` table, it shows one row for the first migration.</span></span> <span data-ttu-id="d5f40-207">上面的 CLI 输出示例中最后部分的日志显示了创建此行的 INSERT 语句。</span><span class="sxs-lookup"><span data-stu-id="d5f40-207">The last log in the preceding CLI output example shows the INSERT statement that creates this row.</span></span>
 
-<span data-ttu-id="a73bf-208">运行应用程序并验证一切就绪。</span><span class="sxs-lookup"><span data-stu-id="a73bf-208">Run the app and verify that everything works.</span></span>
+<span data-ttu-id="d5f40-208">运行应用并验证一切正常运行。</span><span class="sxs-lookup"><span data-stu-id="d5f40-208">Run the app and verify that everything works.</span></span>
 
-## <a name="appling-migrations-in-production"></a><span data-ttu-id="a73bf-209">在生产环境中的 appling 迁移</span><span class="sxs-lookup"><span data-stu-id="a73bf-209">Appling migrations in production</span></span>
+## <a name="appling-migrations-in-production"></a><span data-ttu-id="d5f40-209">在生产环境中应用迁移</span><span class="sxs-lookup"><span data-stu-id="d5f40-209">Appling migrations in production</span></span>
 
-<span data-ttu-id="a73bf-210">我们建议生产应用程序应**不**调用[Database.Migrate](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_)在应用程序启动。</span><span class="sxs-lookup"><span data-stu-id="a73bf-210">We recommend production apps should **not** call [Database.Migrate](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_) at application startup.</span></span> <span data-ttu-id="a73bf-211">`Migrate`不应从服务器场中的应用程序调用。</span><span class="sxs-lookup"><span data-stu-id="a73bf-211">`Migrate` shouldn't be called from an app in server farm.</span></span> <span data-ttu-id="a73bf-212">例如，如果应用已部署，向外扩展 （应用程序的多个实例正在运行） 的云。</span><span class="sxs-lookup"><span data-stu-id="a73bf-212">For example, if the app has been cloud deployed with scale-out (multiple instances of the app are running).</span></span>
+<span data-ttu-id="d5f40-210">不建议生产应用在应用程序启动时调用 [Database.Migrate](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_)。</span><span class="sxs-lookup"><span data-stu-id="d5f40-210">We recommend production apps should **not** call [Database.Migrate](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_) at application startup.</span></span> <span data-ttu-id="d5f40-211">不应从服务器场中的应用调用 `Migrate`。</span><span class="sxs-lookup"><span data-stu-id="d5f40-211">`Migrate` shouldn't be called from an app in server farm.</span></span> <span data-ttu-id="d5f40-212">例如，已将应用在云中部署为横向扩展（运行应用的多个示例）的情况。</span><span class="sxs-lookup"><span data-stu-id="d5f40-212">For example, if the app has been cloud deployed with scale-out (multiple instances of the app are running).</span></span>
 
-<span data-ttu-id="a73bf-213">应作为的一部分，部署，且以可控方式完成数据库迁移。</span><span class="sxs-lookup"><span data-stu-id="a73bf-213">Database migration should be done as part of deployment, and in a controlled way.</span></span> <span data-ttu-id="a73bf-214">生产数据库迁移方法包括：</span><span class="sxs-lookup"><span data-stu-id="a73bf-214">Production database migration approaches include:</span></span>
+<span data-ttu-id="d5f40-213">应在部署过程中以受控的方式执行数据库迁移。</span><span class="sxs-lookup"><span data-stu-id="d5f40-213">Database migration should be done as part of deployment, and in a controlled way.</span></span> <span data-ttu-id="d5f40-214">生产数据库迁移方法包括：</span><span class="sxs-lookup"><span data-stu-id="d5f40-214">Production database migration approaches include:</span></span>
 
-* <span data-ttu-id="a73bf-215">使用迁移来创建 SQL 脚本，并在部署中使用的 SQL 脚本。</span><span class="sxs-lookup"><span data-stu-id="a73bf-215">Using migrations to create SQL scripts and using the SQL scripts in deployment.</span></span>
-* <span data-ttu-id="a73bf-216">运行`dotnet ef database update`从受控的环境。</span><span class="sxs-lookup"><span data-stu-id="a73bf-216">Running `dotnet ef database update` from a controlled environment.</span></span>
+* <span data-ttu-id="d5f40-215">使用迁移创建 SQL 脚本，并在部署过程中使用 SQL 脚本。</span><span class="sxs-lookup"><span data-stu-id="d5f40-215">Using migrations to create SQL scripts and using the SQL scripts in deployment.</span></span>
+* <span data-ttu-id="d5f40-216">在受控的环境中运行 `dotnet ef database update`。</span><span class="sxs-lookup"><span data-stu-id="d5f40-216">Running `dotnet ef database update` from a controlled environment.</span></span>
 
-<span data-ttu-id="a73bf-217">EF 核心使用`__MigrationsHistory`表以查看任何迁移需要运行。</span><span class="sxs-lookup"><span data-stu-id="a73bf-217">EF Core uses the `__MigrationsHistory` table to see if any migrations need to run.</span></span> <span data-ttu-id="a73bf-218">如果数据库是最新，则运行无需迁移。</span><span class="sxs-lookup"><span data-stu-id="a73bf-218">If the DB is up to date, no migration is run.</span></span>
+<span data-ttu-id="d5f40-217">EF Core 使用 `__MigrationsHistory` 表查看是否需要运行任何迁移。</span><span class="sxs-lookup"><span data-stu-id="d5f40-217">EF Core uses the `__MigrationsHistory` table to see if any migrations need to run.</span></span> <span data-ttu-id="d5f40-218">如果 DB 已是最新，则无需运行迁移。</span><span class="sxs-lookup"><span data-stu-id="d5f40-218">If the DB is up to date, no migration is run.</span></span>
 
 <a id="pmc"></a>
-## <a name="command-line-interface-cli-vs-package-manager-console-pmc"></a><span data-ttu-id="a73bf-219">命令行界面 (CLI) vs。程序包管理器控制台 (PMC)</span><span class="sxs-lookup"><span data-stu-id="a73bf-219">Command-line interface (CLI) vs. Package Manager Console (PMC)</span></span>
+## <a name="command-line-interface-cli-vs-package-manager-console-pmc"></a><span data-ttu-id="d5f40-219">命令行接口 (CLI) 与包管理器控制台 (PMC)</span><span class="sxs-lookup"><span data-stu-id="d5f40-219">Command-line interface (CLI) vs. Package Manager Console (PMC)</span></span>
 
-<span data-ttu-id="a73bf-220">EF 核心工具，用于管理迁移是从可用：</span><span class="sxs-lookup"><span data-stu-id="a73bf-220">The EF Core tooling for managing migrations is available from:</span></span>
+<span data-ttu-id="d5f40-220">可通过以下项使用可管理迁移的 EF Core 工具：</span><span class="sxs-lookup"><span data-stu-id="d5f40-220">The EF Core tooling for managing migrations is available from:</span></span>
 
-* <span data-ttu-id="a73bf-221">.NET 核心 CLI 命令。</span><span class="sxs-lookup"><span data-stu-id="a73bf-221">.NET Core CLI commands.</span></span>
-* <span data-ttu-id="a73bf-222">在 Visual Studio 的 PowerShell cmdlet**程序包管理器控制台**(PMC) 窗口。</span><span class="sxs-lookup"><span data-stu-id="a73bf-222">The PowerShell cmdlets in the Visual Studio **Package Manager Console** (PMC) window.</span></span>
+* <span data-ttu-id="d5f40-221">.NET Core CLI 命令。</span><span class="sxs-lookup"><span data-stu-id="d5f40-221">.NET Core CLI commands.</span></span>
+* <span data-ttu-id="d5f40-222">Visual Studio 包管理器控制台 (PMC) 窗口中的 PowerShell cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d5f40-222">The PowerShell cmdlets in the Visual Studio **Package Manager Console** (PMC) window.</span></span>
 
-<span data-ttu-id="a73bf-223">本教程演示如何使用 CLI，一些开发人员喜欢使用 PMC。</span><span class="sxs-lookup"><span data-stu-id="a73bf-223">This tutorial shows how to use the CLI, some developers prefer using the PMC.</span></span>
+<span data-ttu-id="d5f40-223">本教程演示如何使用 CLI，但某些开发人员更倾向于使用 PMC。</span><span class="sxs-lookup"><span data-stu-id="d5f40-223">This tutorial shows how to use the CLI, some developers prefer using the PMC.</span></span>
 
-<span data-ttu-id="a73bf-224">PMC 的 EF 核心命令处于[Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools)包。</span><span class="sxs-lookup"><span data-stu-id="a73bf-224">The EF Core commands for the PMC are in the [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools) package.</span></span> <span data-ttu-id="a73bf-225">此包包含在[Microsoft.AspNetCore.All](xref:fundamentals/metapackage) metapackage，因此你不必安装它。</span><span class="sxs-lookup"><span data-stu-id="a73bf-225">This package is included in the [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) metapackage, so you don't have to install it.</span></span>
+<span data-ttu-id="d5f40-224">适用于 PMC 的 EF Core 命令位于 [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools) 程序包中。</span><span class="sxs-lookup"><span data-stu-id="d5f40-224">The EF Core commands for the PMC are in the [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools) package.</span></span> <span data-ttu-id="d5f40-225">此包包含在 [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) 元包中，因此无需另外安装。</span><span class="sxs-lookup"><span data-stu-id="d5f40-225">This package is included in the [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) metapackage, so you don't have to install it.</span></span>
 
-<span data-ttu-id="a73bf-226">**重要说明：**这不的是通过编辑的 cli 安装与相同的包*.csproj*文件。</span><span class="sxs-lookup"><span data-stu-id="a73bf-226">**Important:** This isn't the same package as the one you install for the CLI by editing the *.csproj* file.</span></span> <span data-ttu-id="a73bf-227">此名称以结尾`Tools`，与中结束的 CLI 包名称不同`Tools.DotNet`。</span><span class="sxs-lookup"><span data-stu-id="a73bf-227">The name of this one ends in `Tools`, unlike the CLI package name which ends in `Tools.DotNet`.</span></span>
+<span data-ttu-id="d5f40-226">**重要说明：**此程序包与通过编辑 .csproj 文件为 CLI 安装的程序包不同。</span><span class="sxs-lookup"><span data-stu-id="d5f40-226">**Important:** This isn't the same package as the one you install for the CLI by editing the *.csproj* file.</span></span> <span data-ttu-id="d5f40-227">此程序包的名称以 `Tools` 结尾，而 CLI 程序包的名称以 `Tools.DotNet` 结尾。</span><span class="sxs-lookup"><span data-stu-id="d5f40-227">The name of this one ends in `Tools`, unlike the CLI package name which ends in `Tools.DotNet`.</span></span>
 
-<span data-ttu-id="a73bf-228">有关 CLI 命令的详细信息，请参阅[.NET 核心 CLI](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet)。</span><span class="sxs-lookup"><span data-stu-id="a73bf-228">For more information about the CLI commands, see [.NET Core CLI](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet).</span></span>
+<span data-ttu-id="d5f40-228">有关 CLI 命令的详细信息，请参阅 [.NET Core CLI](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet)。</span><span class="sxs-lookup"><span data-stu-id="d5f40-228">For more information about the CLI commands, see [.NET Core CLI](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet).</span></span>
 
-<span data-ttu-id="a73bf-229">有关 PMC 命令的详细信息，请参阅[Package Manager Console (Visual Studio)](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell)。</span><span class="sxs-lookup"><span data-stu-id="a73bf-229">For more information about the PMC commands, see [Package Manager Console (Visual Studio)](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell).</span></span>
+<span data-ttu-id="d5f40-229">有关 PMC 命令的详细信息，请参阅[包管理器控制台 (Visual Studio)](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell)。</span><span class="sxs-lookup"><span data-stu-id="d5f40-229">For more information about the PMC commands, see [Package Manager Console (Visual Studio)](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell).</span></span>
 
-## <a name="troubleshooting"></a><span data-ttu-id="a73bf-230">疑难解答</span><span class="sxs-lookup"><span data-stu-id="a73bf-230">Troubleshooting</span></span>
+## <a name="troubleshooting"></a><span data-ttu-id="d5f40-230">疑难解答</span><span class="sxs-lookup"><span data-stu-id="d5f40-230">Troubleshooting</span></span>
 
-<span data-ttu-id="a73bf-231">下载[对此阶段已完成应用程序](
-https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part4-migrations)。</span><span class="sxs-lookup"><span data-stu-id="a73bf-231">Download the [completed app for this stage](
+<span data-ttu-id="d5f40-231">请下载[本阶段的已完成应用](
+https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part4-migrations)。</span><span class="sxs-lookup"><span data-stu-id="d5f40-231">Download the [completed app for this stage](
 https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part4-migrations).</span></span>
 
-<span data-ttu-id="a73bf-232">应用程序生成以下异常：</span><span class="sxs-lookup"><span data-stu-id="a73bf-232">The app generates the following exception:</span></span>
+<span data-ttu-id="d5f40-232">应用会生成以下异常：</span><span class="sxs-lookup"><span data-stu-id="d5f40-232">The app generates the following exception:</span></span>
 
 ```text
 `SqlException: Cannot open database "ContosoUniversity" requested by the login.
@@ -231,14 +231,14 @@ The login failed.
 Login failed for user 'user name'.
 ```
 
-<span data-ttu-id="a73bf-233">解决方案： 运行`dotnet ef database update`</span><span class="sxs-lookup"><span data-stu-id="a73bf-233">Solution: Run `dotnet ef database update`</span></span>
+<span data-ttu-id="d5f40-233">解决方案：运行 `dotnet ef database update`</span><span class="sxs-lookup"><span data-stu-id="d5f40-233">Solution: Run `dotnet ef database update`</span></span>
 
-<span data-ttu-id="a73bf-234">如果`update`命令将返回"生成失败"。 错误：</span><span class="sxs-lookup"><span data-stu-id="a73bf-234">If the `update` command returns the error "Build failed.":</span></span>
+<span data-ttu-id="d5f40-234">如果 `update` 命令返回“生成失败。”错误：</span><span class="sxs-lookup"><span data-stu-id="d5f40-234">If the `update` command returns the error "Build failed.":</span></span>
 
-* <span data-ttu-id="a73bf-235">再次运行该命令。</span><span class="sxs-lookup"><span data-stu-id="a73bf-235">Run the command again.</span></span>
-* <span data-ttu-id="a73bf-236">将保留在页面底部的消息。</span><span class="sxs-lookup"><span data-stu-id="a73bf-236">Leave a message at the bottom of the page.</span></span>
+* <span data-ttu-id="d5f40-235">请再次运行该命令。</span><span class="sxs-lookup"><span data-stu-id="d5f40-235">Run the command again.</span></span>
+* <span data-ttu-id="d5f40-236">请在页面底部留言。</span><span class="sxs-lookup"><span data-stu-id="d5f40-236">Leave a message at the bottom of the page.</span></span>
 
 >[!div class="step-by-step"]
-<span data-ttu-id="a73bf-237">[上一页](xref:data/ef-rp/sort-filter-page)
-[下一页](xref:data/ef-rp/complex-data-model)</span><span class="sxs-lookup"><span data-stu-id="a73bf-237">[Previous](xref:data/ef-rp/sort-filter-page)
+<span data-ttu-id="d5f40-237">[上一页](xref:data/ef-rp/sort-filter-page)
+[下一页](xref:data/ef-rp/complex-data-model)</span><span class="sxs-lookup"><span data-stu-id="d5f40-237">[Previous](xref:data/ef-rp/sort-filter-page)
 [Next](xref:data/ef-rp/complex-data-model)</span></span>
