@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: be3e3d61a6567da3c2cd696c01661146f2da7131
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6daa0dec764e2e9248cac97ba7d7b6df0da3208f
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-c"></a>创建存储过程和用户定义函数用托管代码 (C#)
 ====================
@@ -420,7 +420,7 @@ Udf 还可以返回表格数据。 例如，我们可以创建返回属于特定
 
 ## <a name="step-11-deploying-the-managed-udf"></a>步骤 11： 部署托管的 UDF
 
-既然已创建某个托管的 UDF，我们就可以将其部署到 Northwind 数据库。 正如我们看到在步骤 4 中，通过右键单击解决方案资源管理器中的项目名称，并从上下文菜单中选择部署选项部署 SQL Server 项目中的托管的对象。
+既然已创建托管的 UDF，我们就可以将其部署到 Northwind 数据库。 正如我们看到在步骤 4 中，通过右键单击解决方案资源管理器中的项目名称，并从上下文菜单中选择部署选项部署 SQL Server 项目中的托管的对象。
 
 一次您的项目中，返回到 SQL Server Management Studio 部署并刷新标量值函数文件夹。 你现在应看到两个条目：
 

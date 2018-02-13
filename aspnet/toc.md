@@ -1289,7 +1289,7 @@
 ##### [ASP.NET MVC 店面第 16 部分：使用 OpenID 的成员身份重做](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
 ##### [ASP.NET MVC 店面第 17 部分：向 Jeff Atwood 结帐](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
 ##### [ASP.NET MVC 店面第 18 部分：创建体验](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience.md)
-##### [ASP.NET MVC 店面第 19 部分：使用 Windows 工作流处理订单](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
+##### [ASP.NET MVC 店面第 19 部分：使用 Windows 工作流处理订单](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
 ##### [ASP.NET MVC 店面第 19a 部分：Windows 工作流跟踪](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windows-workflow-followup.md)
 ##### [ASP.NET MVC 店面第 20 部分：日志记录](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-20-logging.md)
 ##### [ASP.NET MVC 店面第 21 部分：管理器和个性化](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)
