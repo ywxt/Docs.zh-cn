@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 887ba1a4742821226a7ebecfd238c97627d6c5f7
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 158f11875f22f8f9dba6f7f109123717b9da8d18
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 中间件
 
@@ -232,11 +232,11 @@ ASP.NET Core 附带以下中间件组件，以及用于添加这些组件的顺�
 
 中间件应通过在其构造函数中公开其依赖项来遵循[显式依赖项原则](http://deviq.com/explicit-dependencies-principle/)。 在每个应用程序生存期构造一次中间件。 如果需要与请求中的中间件共享服务，请参阅下面讲述的按请求依赖项。
 
-中间件组件可通过构造函数参数从依赖项注入解析其依赖项。 此外，[`UseMiddleware<T>`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.usemiddlewareextensions#methods_summary) 还可直接接受其他参数。
+中间件组件可通过构造函数参数从依赖关系注入解析其依赖项。 此外，[`UseMiddleware<T>`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.usemiddlewareextensions#methods_summary) 还可直接接受其他参数。
 
 ### <a name="per-request-dependencies"></a>按请求依赖项
 
-由于中间件是在应用启动时构造的，而不是按请求构造的，因此在每个请求过程中，中间件构造函数使用的范围内生存期服务不与其他依赖项注入类型共享。 如果必须在中间件和其他类型之间共享范围内服务，请将这些服务添加到 `Invoke` 方法的签名。 `Invoke` 方法可接受由依赖项注入填充的其他参数。 例如:
+由于中间件是在应用启动时构造的，而不是按请求构造的，因此在每个请求过程中，中间件构造函数使用的范围内生存期服务不与其他依赖关系注入类型共享。 如果必须在中间件和其他类型之间共享范围内服务，请将这些服务添加到 `Invoke` 方法的签名。 `Invoke` 方法可接受由依赖关系注入填充的其他参数。 例如:
 
 ```c#
 public class MyMiddleware
@@ -262,3 +262,4 @@ public class MyMiddleware
 * [应用程序启动](xref:fundamentals/startup)
 * [请求功能](xref:fundamentals/request-features)
 * [基于工厂的中间件激活](xref:fundamentals/middleware/extensibility)
+* [Factory-based middleware activation with a third-party container（第三方容器中基于工厂的中间件激活）](xref:fundamentals/middleware/extensibility-third-party-container)
