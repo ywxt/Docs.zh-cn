@@ -1,7 +1,7 @@
 ---
 title: "使用受授权的用户数据创建 ASP.NET Core 应用"
 author: rick-anderson
-description: "了解如何创建使用受授权的用户数据的 Razor 页应用。 包括 SSL、 身份验证、 安全性、 ASP.NET 核心标识。"
+description: "了解如何创建使用受授权的用户数据的 Razor 页应用。 包括 HTTPS、 身份验证、 安全性、 ASP.NET 核心标识。"
 manager: wpickett
 ms.author: riande
 ms.date: 01/24/2018
@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: 6333082a2b2b4f6d3f1ce2afc600b4203a0f5dca
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: e186adef2e72f852543a92ddce0e82be2a3bcd12
+ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>使用受授权的用户数据创建 ASP.NET Core 应用
 
@@ -87,7 +87,7 @@ ms.lasthandoff: 02/03/2018
 
 [!code-csharp[Main](secure-data/samples/final2/Models/Contact.cs?name=snippet1&highlight=5-6,16-999)]
 
-`OwnerID`是从用户的 ID`AspNetUser`表中[标识](xref:security/authentication/identity)数据库。 `Status`字段确定是否可由常规用户查看联系人。
+`OwnerID` 是从用户的 ID`AspNetUser`表中[标识](xref:security/authentication/identity)数据库。 `Status`字段确定是否可由常规用户查看联系人。
 
 创建一个新迁移并更新数据库：
 
@@ -96,7 +96,7 @@ dotnet ef migrations add userID_Status
 dotnet ef database update
 ```
 
-### <a name="require-ssl-and-authenticated-users"></a>需要 SSL 和身份验证的用户
+### <a name="require-https-and-authenticated-users"></a>需要 HTTPS 和经过身份验证的用户
 
 添加[IHostingEnvironment](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment)到`Startup`:
 
@@ -104,19 +104,26 @@ dotnet ef database update
 
 在`ConfigureServices`方法*Startup.cs*文件中，添加[RequireHttpsAttribute](/aspnet/core/api/microsoft.aspnetcore.mvc.requirehttpsattribute)授权筛选器：
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=19-999)]
+[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=10-999)]
 
-如果你使用 Visual Studio，则启用 SSL。
+如果你使用 Visual Studio，则启用 HTTPS。
 
-若要将 HTTP 请求重定向到 HTTPS，请参阅[URL 重写中间件](xref:fundamentals/url-rewriting)。 如果你使用 Visual Studio Code 或在本地平台上测试，不包括测试证书用于 SSL:
+若要将 HTTP 请求重定向到 HTTPS，请参阅[URL 重写中间件](xref:fundamentals/url-rewriting)。 如果你使用 Visual Studio Code 或不包括为支持 HTTPS 的测试证书的本地平台上测试：
 
   设置`"LocalTest:skipSSL": true`中*appsettings。Developement.json*文件。
 
 ### <a name="require-authenticated-users"></a>要求经过身份验证的用户
 
-设置默认身份验证策略以要求用户进行身份验证。 你可以选择不在与 Razor 页、 控制器或操作方法级别的身份验证`[AllowAnonymous]`属性。 设置默认身份验证策略以要求用户进行身份验证保护新添加的 Razor 页和控制器。 默认情况下所需的身份验证为比依赖于新控制器和 Razor 页，以包含更安全`[Authorize]`属性。 添加到以下`ConfigureServices`方法*Startup.cs*文件：
+设置默认身份验证策略以要求用户进行身份验证。 你可以选择不在与 Razor 页、 控制器或操作方法级别的身份验证`[AllowAnonymous]`属性。 设置默认身份验证策略以要求用户进行身份验证保护新添加的 Razor 页和控制器。 默认情况下所需的身份验证为比依赖于新控制器和 Razor 页，以包含更安全`[Authorize]`属性。 
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=31-999)]
+与所有用户进行身份验证，要求[AuthorizeFolder](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.authorizefolder?view=aspnetcore-2.0#Microsoft_Extensions_DependencyInjection_PageConventionCollectionExtensions_AuthorizeFolder_Microsoft_AspNetCore_Mvc_ApplicationModels_PageConventionCollection_System_String_System_String_)和[AuthorizePage](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.authorizepage?view=aspnetcore-2.0)调用不是必需的。
+
+更新`ConfigureServices`有以下更改：
+
+* 注释掉`AuthorizeFolder`和`AuthorizePage`。
+* 设置默认身份验证策略以要求用户进行身份验证。
+
+[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=23-27,31-999)]
 
 添加[AllowAnonymous](/dotnet/api/microsoft.aspnetcore.authorization.allowanonymousattribute)到索引中，因此匿名用户可以获取有关站点的信息，然后它们注册的有关，和联系人页面。 
 
@@ -155,11 +162,11 @@ dotnet user-secrets set SeedUserPW <PW>
 `ContactIsOwnerAuthorizationHandler`调用[上下文。成功](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.succeed#Microsoft_AspNetCore_Authorization_AuthorizationHandlerContext_Succeed_Microsoft_AspNetCore_Authorization_IAuthorizationRequirement_)当前经过身份验证的用户是否联系人的所有者。 授权处理程序通常：
 
 * 返回`context.Succeed`满足的要求。
-* 返回`Task.CompletedTask`当不满足要求。 `Task.CompletedTask`既不成功或失败&mdash;它允许运行其他授权处理程序。
+* 返回`Task.CompletedTask`当不满足要求。 `Task.CompletedTask` 既不成功或失败&mdash;它允许运行其他授权处理程序。
 
 如果你需要显式失败，返回[上下文。失败](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.fail)。
 
-该应用让联系人所有者到编辑/删除/创建其自己的数据。 `ContactIsOwnerAuthorizationHandler`不需要请检查在要求参数中传递的操作。
+该应用让联系人所有者到编辑/删除/创建其自己的数据。 `ContactIsOwnerAuthorizationHandler` 不需要请检查在要求参数中传递的操作。
 
 ### <a name="create-a-manager-authorization-handler"></a>创建管理器授权处理程序
 
@@ -179,7 +186,7 @@ dotnet user-secrets set SeedUserPW <PW>
 
 [!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=ConfigureServices&highlight=41-999)]
 
-`ContactAdministratorsAuthorizationHandler`和`ContactManagerAuthorizationHandler`添加为单一实例。 它们是单一实例，因为它们不使用 EF 和所需的所有信息都，请参阅`Context`参数`HandleRequirementAsync`方法。
+`ContactAdministratorsAuthorizationHandler` 和`ContactManagerAuthorizationHandler`添加为单一实例。 它们是单一实例，因为它们不使用 EF 和所需的所有信息都，请参阅`Context`参数`HandleRequirementAsync`方法。
 
 ## <a name="support-authorization"></a>支持授权
 
@@ -263,9 +270,9 @@ dotnet user-secrets set SeedUserPW <PW>
 
 ## <a name="test-the-completed-app"></a>测试已完成的应用程序
 
-如果你使用 Visual Studio Code 或在本地平台上测试，不包括测试证书用于 SSL:
+如果你使用 Visual Studio Code 或不包括为支持 HTTPS 的测试证书的本地平台上测试：
 
-* 设置`"LocalTest:skipSSL": true`中*appsettings。Developement.json*文件中跳过 SSL 要求。 跳过仅在开发计算机上的 SSL。
+* 设置`"LocalTest:skipSSL": true`中*appsettings。Developement.json*文件中跳过 HTTPS 要求。 跳过仅在开发计算机上的 HTTPS。
 
 如果应用了联系人：
 
@@ -300,7 +307,7 @@ dotnet user-secrets set SeedUserPW <PW>
   dotnet new razor -o ContactManager -au Individual -uld
   ```
 
-  * `-uld`指定而不是 SQLite LocalDB
+  * `-uld` 指定而不是 SQLite LocalDB
 
 * 添加以下`Contact`模型：
 
