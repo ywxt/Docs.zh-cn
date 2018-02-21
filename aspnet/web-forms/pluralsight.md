@@ -33,12 +33,12 @@ ms.lasthandoff: 11/10/2017
 - [Web 部署](https://pluralsight.com/training/Player?author=fritz-onion&name=webforms-09&mode=live&clip=0&course=aspdotnet-webforms4-intro)
 
 
-“本课程由 Dan Wahlin 为 Pluralsight 录制，是对 ASP.NET Web 窗体的简介。他对相关内容进行了全面介绍，一开始是 .NET Framework 简介，接着介绍如何安装和使用 Visual Studio，同时介绍了如何生成应用程序（包括服务器控件、数据访问和 Ajax），最后讲述部署技术。Dan 是一位真正的 ASP.NET 专家，也是优秀的讲师，因此千万不要错过这个免费的课程！”
+“本课程由 Dan Wahlin 为 Pluralsight 录制，是对 ASP.NET Web 窗体的简介。 他对相关内容进行了全面介绍，一开始是 .NET Framework 简介，接着介绍如何安装和使用 Visual Studio，同时介绍了如何生成应用程序（包括服务器控件、数据访问和 Ajax），最后讲述部署技术。 Dan 是一位真正的 ASP.NET 专家，也是优秀的讲师，因此千万不要错过这个免费的课程！”
 
 Scott Hanselman、 首席项目经理、 Web 平台和 Azure 工具，Microsoft
 
 
-![pluralsight-logo-playbutton](pluralsight/_static/image1.png)
+![pluralsight logo playbutton](pluralsight/_static/image1.png)
 
 解锁访问到 3000 + 开发，IT 和创造性随时随地可以观看的课程。
 
