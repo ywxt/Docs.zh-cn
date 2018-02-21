@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 中针对 ASP.NET Core 的开发时 IIS 支持"
 author: shirhatti
-description: "发现对调试 ASP.NET Core 应用程序的支持（在 Windows Server 上以 IIS 为背景运行时）。"
+description: "发现的用于调试 ASP.NET Core 应用时在 Windows Server 上运行之后 IIS 的支持。"
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/development-time-iis-support
-ms.openlocfilehash: a5f727dd21ac0c6702691df2215c42f4adc0ec27
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a8bdf4c0c0399c62666e6e61e70c0298a42c2c12
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="development-time-iis-support-in-visual-studio-for-aspnet-core"></a>Visual Studio 中针对 ASP.NET Core 的开发时 IIS 支持
 
 作者：[Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
-本文介绍了对调试（在 Windows Server 上以 IIS 为背景运行的）ASP.NET Core 应用程序的 [Visual Studio](https://www.visualstudio.com/vs/) 支持。 本主题将指导完成启用此功能，并设置项目。
+本指南介绍了[Visual Studio](https://www.visualstudio.com/vs/)支持的用于调试在 IIS 后面运行 Windows Server 上的 ASP.NET Core 应用。 本主题将指导完成启用此功能，并设置项目。
 
 ## <a name="prerequisites"></a>系统必备
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 01/30/2018
 
 ## <a name="enable-development-time-iis-support"></a>启用开发时 IIS 支持
 
-安装 IIS 后，启动 Visual Studio 安装程序要修改现有的 Visual Studio 安装。 在安装程序中，选择“开发时 IIS 支持”组件。 该组件在“ASP.NET 和 Web 开发”工作负荷的“摘要”面板中列为可选组件。 此组件将安装 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)，该模块是运行 ASP.NET Core 应用程序所需的本机 IIS 模块。
+启动 Visual Studio 安装程序。 选择**IIS 支持的开发时间**组件。 列出为可选中了该组件**摘要**面板**ASP.NET 和 web 开发**工作负荷。 这将安装[ASP.NET 核心模块](xref:fundamentals/servers/aspnet-core-module)，即运行 ASP.NET Core 应用所需的本机 IIS 模块。
 
 ![修改 Visual Studio 功能：选择“工作负荷”选项卡。 在“Web 和云”部分，选择“ASP.NET 和 Web 开发”面板。 在摘要面板中的可选区域右侧，没有一个复选框的 IIS 支持的开发时间。](development-time-iis-support/_static/development_time_support.png)
 
@@ -73,8 +73,6 @@ ms.lasthandoff: 01/30/2018
 ```
 
 如果未以管理员身份运行 visual Studio 可能会提示重新启动。 如果出现提示，请重启 Visual Studio。
-
-祝贺你！ 此时，该项目已配置了开发时间 IIS 支持。 
 
 ## <a name="additional-resources"></a>其他资源
 

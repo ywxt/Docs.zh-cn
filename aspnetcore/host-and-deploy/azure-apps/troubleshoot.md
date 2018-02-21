@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: 144af8e93bb935d07fd064d5f45b40faea4a2664
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 150603d17f3bed983f9871fe7665748a70177f89
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>解决在 Azure App Service 上的 ASP.NET 核心
 
@@ -37,6 +37,14 @@ ms.lasthandoff: 02/03/2018
 启动该应用程序，但某个错误阻止在完成请求的服务器。
 
 启动过程中或创建响应时，应用程序的代码中出现此错误。 响应可能包含任何内容，或响应可能显示为*500 内部服务器错误*浏览器中。 应用程序事件日志通常表明应用程序正常启动。 从服务器的角度来看，这是正确的。 应用程序未启动，但它无法生成有效的响应。 [Kudu 控制台中运行此应用](#run-the-app-in-the-kudu-console)或[启用 ASP.NET 核心模块 stdout 日志](#aspnet-core-module-stdout-log)以解决该问题。
+
+**连接重置**
+
+如果发送标头后，将发生错误，则服务器尝试发送太晚**500 内部服务器错误**发生错误时。 响应的复杂对象的序列化期间发生错误时经常会出现这种情况。 此类型的错误显示为*连接重置*客户端上的错误。 [应用程序日志记录](xref:fundamentals/logging/index)可以帮助解决这些类型的错误。
+
+## <a name="default-startup-limits"></a>默认启动限制
+
+ASP.NET 核心模块配置了默认值*startupTimeLimit*的 120 秒。 时保留为默认值，应用可能需要最多两分钟，以启动之前模块记录进程失败。 有关模块的配置的信息，请参阅[aspNetCore 元素的特性的](xref:host-and-deploy/aspnet-core-module#attributes-of-the-aspnetcore-element)。
 
 ## <a name="troubleshoot-app-startup-errors"></a>应用程序启动错误疑难解答
 
@@ -65,10 +73,9 @@ ms.lasthandoff: 02/03/2018
 1. 选择**高级工具**中的边栏选项卡**开发工具**区域。 选择**转&rarr;**按钮。 Kudu 控制台打开新浏览器选项卡或窗口中。
 1. 使用的页上，顶部导航栏打开**调试控制台**和选择**CMD**。
 1. 打开的文件夹的路径**站点** > **wwwroot**。
-1. 在控制台中，通过执行应用程序的程序集与运行应用*dotnet.exe*。 在下面的命令中，应用程序的程序集的名称替换`<assembly_name>`:
-   ```console
-   dotnet .\<assembly_name>.dll
-   ```
+1. 在控制台中，通过执行应用程序的程序集运行该应用。
+   * 如果在应用程序处于[framework 相关部署](/dotnet/core/deploying/#framework-dependent-deployments-fdd)，运行具有的应用程序的程序集*dotnet.exe*。 在下面的命令中，应用程序的程序集的名称替换`<assembly_name>`: `dotnet .\<assembly_name>.dll`
+   * 如果在应用程序处于[独立的部署](/dotnet/core/deploying/#self-contained-deployments-scd)中运行应用程序的可执行文件。 在下面的命令中，应用程序的程序集的名称替换`<assembly_name>`: `<assembly_name>.exe`
 1. 控制台应用程序中，显示任何错误，从输出传送到 Kudu 控制台。
 
 ### <a name="aspnet-core-module-stdout-log"></a>ASP.NET 核心模块 stdout 日志
@@ -104,13 +111,16 @@ ASP.NET 核心模块 stdout 日志通常记录找不到应用程序事件日志�
 
 请参阅[ASP.NET 核心常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)。 中的参考主题介绍了大部分常见防止应用程序启动的问题。
 
-## <a name="process-dump-for-a-slow-or-hanging-app"></a>慢速或悬挂应用程序的进程转储
+## <a name="slow-or-hanging-app"></a>慢速或悬挂应用程序
 
 当应用程序响应速度很慢或挂起的请求时，请参阅[在 Azure App Service 中进行故障排除慢速的 web 应用程序性能问题](/azure/app-service/app-service-web-troubleshoot-performance-degradation)用于调试的指导。
 
 ## <a name="remote-debugging"></a>远程调试
 
-请参阅[远程调试的故障排除 Azure App Service 中使用 Visual Studio 中的 web 应用的 web 应用部分](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio#remotedebug)Azure 文档中。
+请参见下面的主题：
+
+* [远程调试的故障排除 Azure App Service 中使用 Visual Studio 中的 web 应用的 web 应用部分](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio#remotedebug)（Azure 文档）
+* [在 Visual Studio 2017 在 Azure 中的 IIS 上的远程调试 ASP.NET Core](/visualstudio/debugger/remote-debugging-azure) （Visual Studio 文档）
 
 ## <a name="application-insights"></a>Application Insights
 
@@ -166,10 +176,10 @@ ASP.NET 核心模块 stdout 日志通常记录找不到应用程序事件日志�
 
 ## <a name="additional-resources"></a>其他资源
 
-* [ASP.NET 核心中的错误处理简介](xref:fundamentals/error-handling)
+* [ASP.NET Core 中的错误处理简介](xref:fundamentals/error-handling)
 * [Azure 应用服务和 IIS 上 ASP.NET Core 的常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)
 * [对 Azure App Service 中使用 Visual Studio 中的 web 应用进行故障排除](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio)
 * [排除"502 错误网关"和"503 服务不可用"Azure web 应用中的 HTTP 的错误](/app-service/app-service-web-troubleshoot-http-502-http-503)
 * [解决在 Azure App Service 的慢速 web 应用程序性能问题](/azure/app-service/app-service-web-troubleshoot-performance-degradation)
 * [在 Azure 中的 Web 应用的应用程序性能常见问题](/azure/app-service/app-service-web-availability-performance-application-issues-faq)
-* [Azure Friday: Azure 应用程序服务诊断和故障排除体验 （12 分钟视频）](https://channel9.msdn.com/Shows/Azure-Friday/Azure-App-Service-Diagnostic-and-Troubleshooting-Experience)
+* [Azure Friday：Azure 应用服务诊断和故障排除体验（12 分钟视频）](https://channel9.msdn.com/Shows/Azure-Friday/Azure-App-Service-Diagnostic-and-Troubleshooting-Experience)

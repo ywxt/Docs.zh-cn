@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: c1a05c3e40e6aab0f2e4a97c0b3bb9eca8a08a41
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 5addaada33364d044d89359196bd1d316590c517
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET 核心模块配置参考
 
@@ -41,7 +41,7 @@ ms.lasthandoff: 01/30/2018
 </configuration>
 ```
 
-*Web.config*下面的示例适用于[独立的部署](https://docs.microsoft.com/dotnet/articles/core/deploying/#self-contained-deployments-scd)到[Azure App Service](https://azure.microsoft.com/services/app-service/)。 有关详细信息，请参阅[使用 IIS 的 Windows 上的主机](xref:host-and-deploy/iis/index)。 请参阅[的子应用程序配置](xref:host-and-deploy/iis/index#configuration-of-sub-applications)的与配置相关的重要说明*web.config*子应用程序中的文件。
+*Web.config*下面的示例适用于[独立的部署](https://docs.microsoft.com/dotnet/articles/core/deploying/#self-contained-deployments-scd)到[Azure App Service](https://azure.microsoft.com/services/app-service/)。 有关详细信息，请参阅[使用 IIS 的 Windows 上的主机](xref:host-and-deploy/iis/index)。 请参阅[的子应用程序配置](xref:host-and-deploy/iis/index#sub-application-configuration)的与配置相关的重要说明*web.config*子应用程序中的文件。
 
 ```xml
 <configuration>
@@ -75,7 +75,7 @@ ms.lasthandoff: 01/30/2018
 
 ASP.NET 核心模块允许你指定中指定的进程的环境变量`processPath`通过一个或多中指定它们的属性`environmentVariable`的子元素`environmentVariables`集合元素下的`aspNetCore`元素。 在本部分中设置的环境变量优先于系统进程的环境变量。
 
-下面的示例设置两个环境变量。 `ASPNETCORE_ENVIRONMENT`将配置应用程序的环境`Development`。 开发人员可能将此值暂时设置*web.config*文件以便强制[开发人员异常页](xref:fundamentals/error-handling)以便在调试应用程序异常时加载。 `CONFIG_DIR`是一种用户定义的环境变量中，开发人员曾将读取在启动时，才能加载应用程序的配置文件组合成路径的值的代码。
+下面的示例设置两个环境变量。 `ASPNETCORE_ENVIRONMENT` 将配置应用程序的环境`Development`。 开发人员可能将此值暂时设置*web.config*文件以便强制[开发人员异常页](xref:fundamentals/error-handling)以便在调试应用程序异常时加载。 `CONFIG_DIR` 是一种用户定义的环境变量中，开发人员曾将读取在启动时，才能加载应用程序的配置文件组合成路径的值的代码。
 
 ```xml
 <aspNetCore processPath="dotnet"
