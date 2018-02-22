@@ -16,7 +16,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>EF  Core 和 ASP.NET  Core  MVC 教程 —— 高级主题 (10 / 10)
-作者：[Tom Dykstra](https://github.com/tdykstra)和[Rick Anderson](https://twitter.com/RickAndMSFT)
+作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC web 应用程序。 有关系列教程的详细信息，请参阅[第一个教程](intro.md)。
 
@@ -30,7 +30,7 @@ Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core �
 
 * 对于非查询命令使用`Database.ExecuteSqlCommand`。
 
-如果你需要运行该返回类型不是实体的查询你可以使用由 EF 提供的 ADO.NET 中使用数据库连接。 数据库上下文不会跟踪返回的数据，即使你使用该方法来检索实体类型。
+如果需要运行该返回类型不是实体的查询，你可以使用由 EF 提供的 ADO.NET 中使用数据库连接。 数据库上下文不会跟踪返回的数据，即使你使用该方法来检索实体类型也是如此。
 
 因为 web 应用程序中肯定要执行 SQL 命令，你必须采取预防措施来防止你的站点受到 SQL 注入式攻击。 其中一种方法是对网页上提交的字符串使用参数化的查询来确保这些字符串不会解释为 SQL 命令。 在本教程中在用户输入查询时，会使用参数化的查询。
 
@@ -48,7 +48,7 @@ Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core �
 
 ## <a name="call-a-query-that-returns-other-types"></a>调用返回其他类型的查询
 
-之前你在关于页面创建了一个学生统计信息网格，显示每个注册日期的学生数量。 可以从学生实体集中获取数据 (`_context.Students`) ，使用 LINQ 将结果投影到`EnrollmentDateGroup`视图模型对象的列表。 假设你想要本身而不使用 LINQ 编写 SQL。 需要运行 SQL 查询中返回实体对象之外的内容。 在 EF Core 1.0 中，执行该操作的另一种方法是编写 ADO.NET 代码，并从 EF 获取数据库连接。
+之前你在“关于”页面创建了一个学生统计信息网格，显示每个注册日期的学生数量。 可以从学生实体集中获取数据 (`_context.Students`) ，使用 LINQ 将结果投影到`EnrollmentDateGroup`视图模型对象的列表。 假设你想要 SQL 本身编写，而不使用 LINQ。 需要运行 SQL 查询中返回实体对象之外的内容。 在 EF Core 1.0 中，执行该操作的另一种方法是编写 ADO.NET 代码，并从 EF 获取数据库连接。
 
 在*HomeController.cs*中，将`About`方法替换为以下代码：
 
@@ -58,17 +58,17 @@ Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core �
 
 [!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings2)]
 
-运行应用并转到关于页面。 显示的数据和之前一样。
+运行应用并转到“关于”页面。 显示的数据和之前一样。
 
 ![有关页面](advanced/_static/about.png)
 
 ## <a name="call-an-update-query"></a>调用更新查询
 
-假设 Contoso 大学管理员想要在数据库中执行全局更改，例如如更改的每个课程的可修读人数。 如果该大学有大量的课程，检索所有实体并单独更改会降低效率要。 在本节中，你将实现一个页面，使用户能够指定一个参数，通过这个参数可以更改所有课程的可修读人数，在这里你会通过执行 SQL UPDATE 语句来进行更改。 页面外观类似于下图：
+假设 Contoso 大学管理员想要在数据库中执行全局更改，例如如更改的每个课程的可修读人数。如果该大学有大量的课程，检索所有实体并单独更改会降低效率。在本节中，你将实现一个页面，使用户能够指定一个参数，通过这个参数可以更改所有课程的可修读人数，在这里你会通过执行 SQL UPDATE 语句来进行更改。 页面外观类似于下图：
 
 ![更新过程信用额度页面](advanced/_static/update-credits.png)
 
-在*CoursesContoller.cs*，添加 HttpGet 和 HttpPost 的 UpdateCourseCredits 方法：
+在*CoursesContoller.cs*，为 HttpGet 和 HttpPost 添加 UpdateCourseCredits 方法
 
 [!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_UpdateGet)]
 
@@ -76,7 +76,7 @@ Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core �
 
 当控制器处理 HttpGet 请求时，`ViewData["RowsAffected"]`中不会返回任何东西，并且在视图中显示一个空文本框和提交按钮，如上图所示。
 
-当单击**Update**按钮时，将调用 HttpPost 方法，且从文本框中输入的值获取乘数。 代码接着执行 SQL 语句更新课程，并向视图的`ViewData`返回受影响的行数中。 当视图获取`RowsAffected`值，它将显示更新的行数。
+当单击**Update**按钮时，将调用 HttpPost 方法，且从文本框中输入的值获取乘数。代码接着执行 SQL 语句更新课程，并向视图的`ViewData`返回受影响的行数。当视图获取`RowsAffected`值，它将显示更新的行数。
 
 在**解决方案资源管理器**，右键单击*视图/课程*文件夹，，然后单击**添加 > 新项**。
 
@@ -86,7 +86,7 @@ Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core �
 
 [!code-html[Main](intro/samples/cu/Views/Courses/UpdateCourseCredits.cshtml)]
 
-通过选择**Courses**选项卡运行`UpdateCourseCredits`方法上，然后在浏览器地址栏中 URL 的末尾添加"/ UpdateCourseCredits"到 (例如： `http://localhost:5813/Courses/UpdateCourseCredits`)。 在文本框中输入数字：
+通过选择**Courses**选项卡运行`UpdateCourseCredits`方法，然后在浏览器地址栏中 URL 的末尾添加"/ UpdateCourseCredits"到 (例如： `http://localhost:5813/Courses/UpdateCourseCredits`)。 在文本框中输入数字：
 
 ![更新过程信用额度页面](advanced/_static/update-credits.png)
 
@@ -94,9 +94,9 @@ Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core �
 
 ![更新过程信用额度页上的受影响的行](advanced/_static/update-credits-rows-affected.png)
 
-单击**Back To List**可以看到列表中课程的可修读人数已经替换修改后的数字。
+单击**Back To List**可以看到课程列表，其中可修读人数已经替换成修改后的数字。
 
-请注意生产代码将确保更新最终得到的时有效的数据。 此处所示的简化代码会使得相乘后可修读人数大于 5 。 (`Credits`属性具有`[Range(0, 5)]`特性。)更新查询将起作用，但无效的数据会导致意外的结果，例如在系统的其他部分中加入可修读人数为 5 或更少可能会导致意外的结果。
+请注意生产代码将确保更新最终得到有效的数据。 此处所示的简化代码会使得相乘后可修读人数大于 5。(`Credits`属性具有`[Range(0, 5)]`特性。)更新查询将起作用，但无效的数据会导致意外的结果，例如在系统的其他部分中加入可修读人数为 5 或更少可能会导致意外的结果。
 
 有关原生 SQL 查询的详细信息，请参阅[原生 SQL 查询](https://docs.microsoft.com/ef/core/querying/raw-sql)。
 
@@ -142,7 +142,7 @@ ORDER BY [t].[ID]
 
 * EF 上下文类本身就有效防止了直接使用数据访问层的特定代码。
 
-* EF 上下文类可以充当数据库更新的工作单位类  
+* EF 上下文类可以为使用 EF 的数据库更新充当工作单位类
 
 * EF 包括用于无需编写存储库代码就实现 TDD 的功能。
 
@@ -160,7 +160,7 @@ ORDER BY [t].[ID]
 
 * ChangeTracker.Entries
 
-如果您正在跟踪大量实体，并且这些方法之一在循环中多次调用，通过使用`ChangeTracker.AutoDetectChangesEnabled`属性暂时关闭自动脏值检测能够显著改进性能，。 例如: 
+如果正在跟踪大量实体，并且这些方法之一在循环中多次调用，通过使用`ChangeTracker.AutoDetectChangesEnabled`属性暂时关闭自动脏值检测，能够显著改进性能。 例如: 
 
 ```csharp
 _context.ChangeTracker.AutoDetectChangesEnabled = false;
@@ -168,7 +168,7 @@ _context.ChangeTracker.AutoDetectChangesEnabled = false;
 
 ## <a name="entity-framework-core-source-code-and-development-plans"></a> Entity Framework Core 源代码与开发计划
 
- Entity Framework Core的源代码位于[https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore)。 仓库中除了有源代码，还可包括每夜生成、 问题跟踪、 功能规范、 设计会议备忘录和[将来的开发路线图](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap)，的详细信息。 你可以报告 bug，并可以提供你自己的源代码来增强 EF 的功能。
+Entity Framework Core 的源代码位于[https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore)。 仓库中除了有源代码，还可包括每夜生成、 问题跟踪、 功能规范、 设计会议备忘录和[将来的开发路线图](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap)的详细信息。 你可以报告 bug，并可以提供你自己的源代码来增强 EF 的功能。
 
 尽管源代码处于开源状态， Entity Framework Core 是由 Microsoft 完全支持的产品。 Microsoft Entity Framework 团队将控制接受哪些贡献和测试所有的代码更改，以确保每个版本的质量。
 
@@ -189,7 +189,7 @@ _context.ChangeTracker.AutoDetectChangesEnabled = false;
 
 有关 EF Core 的详细信息，请参阅[ Entity Framework 的Core文档](https://docs.microsoft.com/ef/core)。也可以参阅[Entity Framework Core 实战](https://www.manning.com/books/entity-framework-core-in-action)这本书。
 
-有关如何部署 web 应用程序的信息，请参阅[发布和部署](../../publishing/index.md)。
+有关如何部署 web 应用程序的信息，请参阅[托管和部署](../../publishing/index.md)。
 
 有关 ASP.NET Core MVC 相关的其他主题 ( 如身份验证与授权 ) 的信息，请参阅[ASP.NET Core文档](https://docs.microsoft.com/aspnet/core/)。
 
@@ -221,11 +221,11 @@ EF CLI 命令不会自动关闭并保存代码文件。 如果在运行`migratio
 
 ### <a name="errors-while-running-database-update"></a>运行数据库更新时出错
 
-在有数据的数据库中进行架构更改时，很有可能发生其他错误。 如果您遇到无法解决的迁移错误，你可以更改连接字符串中的数据库名称，或删除数据库。 若要迁移，创建新的数据库，在数据库尚没有数据时使用更新数据库命令更有望完成且不发生错误。
+在有数据的数据库中进行架构更改时，很有可能发生其他错误。 如果遇到无法解决的迁移错误，你可以更改连接字符串中的数据库名称，或删除数据库。 若要迁移，创建新的数据库，在数据库尚没有数据时使用更新数据库命令更有望完成且不发生错误。
 
 最简单方法是在*appsettings.json*中重命名数据库。 下次运行`database update`时，会创建一个新数据库。
 
-若要在 SSOX 中删除数据库，右键单击数据库，单击**删除**，然后在**删除数据库**对话框框中，选择**关闭现有连接**单击**确定**。
+若要在 SSOX 中删除数据库，右键单击数据库，单击**删除**，然后在**删除数据库**对话框框中，选择**关闭现有连接**，单击**确定**。
 
 若要使用 CLI 删除数据库，可以运行`database drop`CLI 命令：
 
@@ -241,7 +241,7 @@ dotnet ef database drop
 
 解决方案：
 
-请检查连接字符串。 如果你已手动删除数据库文件，更改数据库的构造字符串中数据库的名称然后从头开始使用新的数据库。
+请检查连接字符串。 如果你已手动删除数据库文件，更改数据库的构造字符串中数据库的名称，然后从头开始使用新的数据库。
 
 >[!div class="step-by-step"]
 [上一篇](inheritance.md)
