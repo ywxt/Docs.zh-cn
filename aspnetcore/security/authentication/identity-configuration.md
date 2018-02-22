@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: cf7dcdb80f5edf9e10960cb08957793c36829a69
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0ec223ce06ff116c36182b8de507138e96a277a4
+ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="configure-identity"></a>配置标识
 
@@ -35,7 +35,7 @@ ASP.NET 核心 2.0 增加`RequiredUniqueChars`属性。 否则，选项是从 AS
 
 ---
 
-`IdentityOptions.Password`具有以下属性：
+`IdentityOptions.Password` 具有以下属性：
 
 | 属性                | 描述                       | 默认 |
 | ----------------------- | --------------------------------- | ------- |
@@ -51,7 +51,7 @@ ASP.NET 核心 2.0 增加`RequiredUniqueChars`属性。 否则，选项是从 AS
 
 [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-30,39-42,50-52)]
 
-`IdentityOptions.Lockout`具有以下属性：
+`IdentityOptions.Lockout` 具有以下属性：
 
 | 属性                | 描述                       | 默认 |
 | ----------------------- | --------------------------------- | ------- |
@@ -63,7 +63,7 @@ ASP.NET 核心 2.0 增加`RequiredUniqueChars`属性。 否则，选项是从 AS
 
 [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-30,44-46,50-52)]
 
-`IdentityOptions.SignIn`具有以下属性：
+`IdentityOptions.SignIn` 具有以下属性：
 
 | 属性                | 描述                       | 默认 |
 | ----------------------- | --------------------------------- | ------- |
@@ -74,7 +74,7 @@ ASP.NET 核心 2.0 增加`RequiredUniqueChars`属性。 否则，选项是从 AS
 
 [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-30,48-52)]
 
-`IdentityOptions.User`具有以下属性：
+`IdentityOptions.User` 具有以下属性：
 
 | 属性                | 描述                       | 默认 |
 | ----------------------- | --------------------------------- | ------- |
@@ -98,7 +98,7 @@ ASP.NET 核心 2.0 增加`RequiredUniqueChars`属性。 否则，选项是从 AS
 
 ---
 
-`CookieAuthenticationOptions`具有以下属性：
+`CookieAuthenticationOptions` 具有以下属性：
 
 | 属性                | 描述                       | 默认 |
 | ----------------------- | --------------------------------- | ------- |
@@ -107,8 +107,8 @@ ASP.NET 核心 2.0 增加`RequiredUniqueChars`属性。 否则，选项是从 AS
 | `ExpireTimeSpan`  | 控制在 cookie 中存储身份验证票证的时间就会保持有效从它创建的点。  | 14 天  |
 | `LoginPath`  | 未授权用户时，他们将被重定向到登录到此路径。 | / 帐户/登录名  |
 | `LogoutPath`  | 当用户已注销时，则将被重定向到此路径。  | /Account/Logout  |
-| `AccessDeniedPath`  | 当用户失败时授权检查时，则将被重定向到此路径。  |   |
-| `SlidingExpiration`  | 为 true 时，将使用新的过期时间，当前 cookie 时通过到期窗口的多个中间颁发一个新的 cookie。  | /Account/AccessDenied |
-| `ReturnUrlParameter`  | 确定其 401 未授权的状态代码更改为 302 重定向到登录名路径时，该中间件会追加查询字符串参数的名称。  |  true |
+| `AccessDeniedPath`  | 当用户失败时授权检查时，则将被重定向到此路径。  |  /Account/AccessDenied |
+| `SlidingExpiration`  | 为 true 时，将使用新的过期时间，当前 cookie 时通过到期窗口的多个中间颁发一个新的 cookie。  | true |
+| `ReturnUrlParameter`  | 确定其 401 未授权的状态代码更改为 302 重定向到登录名路径时，该中间件会追加查询字符串参数的名称。  | ReturnUrl |
 | `AuthenticationScheme`  | 这是仅适用于 ASP.NET Core 1.x。 特定的身份验证方案逻辑名称。 |  |
 | `AutomaticAuthenticate`  | 此标志才适用于 ASP.NET Core 1.x。 为 true 时，cookie 身份验证应在每个请求上运行并尝试验证并重新构造它创建的任何序列化的主体。  |  |

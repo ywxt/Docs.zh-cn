@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 5689031015279484cc616090a767a8c25eefa3c1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d55b34135d5bab98ab8de31cc4b12dcc272cbc0a
+ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/20/2018
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>创建安全的 ASP.NET MVC 5 web 应用程序日志中，使用电子邮件确认及密码重置 (C#)
 ====================
@@ -65,7 +65,7 @@ ms.lasthandoff: 01/24/2018
 1. 在程序包管理器控制台中，输入以下以下命令： 
 
     [!code-console[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample1.cmd)]
-2. 转到[Azure SendGrid 注册页面](https://go.microsoft.com/fwlink/?linkid=271033&clcid=0x409)和注册获取免费的 SendGrid 帐户。 添加类似于以下内容来配置 SendGrid 的代码：
+2. 转到[Azure SendGrid 注册页面](https://go.microsoft.com/fwlink/?linkid=271033&clcid=0x409)并注册一个免费的 SendGrid 帐户。 通过添加类似于在以下代码来配置 SendGrid *App_Start/IdentityConfig.cs*:
 
     [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample2.cs?highlight=3,5)]
 
@@ -102,7 +102,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample7.cs?highlight=14-15,23-30)]
 
-通过注释掉`SignInAsync`方法，用户不会进行签名的注册。 `TempData["ViewBagLink"] = callbackUrl;`行可用于[调试应用程序](#dbg)并测试而不发送电子邮件的注册。 `ViewBag.Message`用于显示的确认说明进行操作。 [下载示例](https://code.msdn.microsoft.com/MVC-5-with-2FA-email-8f26d952)包含代码来测试电子邮件确认，无需设置电子邮件，并且也可以使用来调试该应用程序。
+通过注释掉`SignInAsync`方法，用户不会进行签名的注册。 `TempData["ViewBagLink"] = callbackUrl;`行可用于[调试应用程序](#dbg)并测试而不发送电子邮件的注册。 `ViewBag.Message` 用于显示的确认说明进行操作。 [下载示例](https://code.msdn.microsoft.com/MVC-5-with-2FA-email-8f26d952)包含代码来测试电子邮件确认，无需设置电子邮件，并且也可以使用来调试该应用程序。
 
 创建`Views\Shared\Info.cshtml`文件并添加以下 razor 标记：
 
