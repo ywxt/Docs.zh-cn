@@ -77,20 +77,20 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 
 | 服务类型 | 生存期 |
 | ----- | ------- |
-| [Microsoft.AspNetCore.Hosting.IHostingEnvironment](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.ihostingenvironment) | 单一实例 |
-| [Microsoft.Extensions.Logging.ILoggerFactory](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.logging.iloggerfactory) | 单一实例 |
-| [Microsoft.Extensions.Logging.ILogger&lt;T&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.logging.ilogger) | 单一实例 |
+| [Microsoft.AspNetCore.Hosting.IHostingEnvironment](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.ihostingenvironment) | 单例 |
+| [Microsoft.Extensions.Logging.ILoggerFactory](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.logging.iloggerfactory) | 单例 |
+| [Microsoft.Extensions.Logging.ILogger&lt;T&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.logging.ilogger) | 单例 |
 | [Microsoft.AspNetCore.Hosting.Builder.IApplicationBuilderFactory](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.builder.iapplicationbuilderfactory) | 暂时 |
 | [Microsoft.AspNetCore.Http.IHttpContextFactory](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.ihttpcontextfactory) | 暂时 |
-| [Microsoft.Extensions.Options.IOptions&lt;T&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.options.ioptions-1) | 单一实例 |
-| [System.Diagnostics.DiagnosticSource](https://docs.microsoft.com/dotnet/core/api/system.diagnostics.diagnosticsource) | 单一实例 |
-| [System.Diagnostics.DiagnosticListener](https://docs.microsoft.com/dotnet/core/api/system.diagnostics.diagnosticlistener) | 单一实例 |
+| [Microsoft.Extensions.Options.IOptions&lt;T&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.options.ioptions-1) | 单例 |
+| [System.Diagnostics.DiagnosticSource](https://docs.microsoft.com/dotnet/core/api/system.diagnostics.diagnosticsource) | 单例 |
+| [System.Diagnostics.DiagnosticListener](https://docs.microsoft.com/dotnet/core/api/system.diagnostics.diagnosticlistener) | 单例 |
 | [Microsoft.AspNetCore.Hosting.IStartupFilter](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.istartupfilter) | 暂时 |
-| [Microsoft.Extensions.ObjectPool.ObjectPoolProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.objectpool.objectpoolprovider) | 单一实例 |
+| [Microsoft.Extensions.ObjectPool.ObjectPoolProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.objectpool.objectpoolprovider) | 单例 |
 | [Microsoft.Extensions.Options.IConfigureOptions&lt;T&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.options.iconfigureoptions-1) | 暂时 |
-| [Microsoft.AspNetCore.Hosting.Server.IServer](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.server.iserver) | 单一实例 |
-| [Microsoft.AspNetCore.Hosting.IStartup](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.istartup) | 单一实例 |
-| [Microsoft.AspNetCore.Hosting.IApplicationLifetime](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.iapplicationlifetime) | 单一实例 |
+| [Microsoft.AspNetCore.Hosting.Server.IServer](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.server.iserver) | 单例 |
+| [Microsoft.AspNetCore.Hosting.IStartup](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.istartup) | 单例 |
+| [Microsoft.AspNetCore.Hosting.IApplicationLifetime](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.iapplicationlifetime) | 单例 |
 
 下面的示例介绍了如何使用多个扩展方法（如 `AddDbContext`、`AddIdentity` 和 `AddMvc`）将附加服务添加到容器中。
 
@@ -153,29 +153,29 @@ ASP.NET 提供的功能和中间件（如 MVC）遵循使用单个 *AddServiceNa
 
 **作用域（Scoped）**
 
-限定生存期服务每个请求创建一次。
+作用域生存期服务以每个请求一次的方式创建。
 
-**单一实例**
+**单例**
 
-单一实例生存期服务在首次请求时（或者如果在其中指定实例，则为 `ConfigureServices` 运行时）进行创建，然后所有后续请求都将使用相同实例。 如果应用程序要求单一实例行为，建议允许服务容器管理服务的生存期，而不是实现单一实例设计模式和自行管理类中对象的生存期。
+单例生存期服务在第一次被请求时或者 `ConfigureServices` 运行时（如果在其中指定实例）创建，然后每个后续请求使用同一实例。 如果应用程序需要单例行为，建议允许服务容器管理服务的生存期，而不是实现单例设计模式并在类中自行管理对象的生存期。
 
-可通过多种方式向容器注册服务。 我们已经了解了如何通过指定要使用的具体类型向给定的类型注册服务实现。 此外，还可指定工厂，将用来按需创建实例。 第三种方法是直接指定要使用的类型的实例，在这种情况下，容器永远不会尝试创建实例（也不会释放该实例）。
+服务可以使用多种方式注册到容器中。 我们已经看到了如何通过指定要使用的具体类型来注册一个给定类型的服务实现。 此外，可以指定一个工厂，然后将其用于按需创建实例。 第三种方法是直接指定要使用的类型的实例，在这种情况下，容器将永远不会尝试创建实例（也不会释放实例）。
 
-若要演示这些生存期和注册选项之间的差异，请考虑将表示一个或多个任务的简单接口视为带唯一标识符`OperationId` 的操作。 容器将向请求类提供相同或不同的服务实例，具体取决于配置此服务的生存期的方式。 为弄清楚正在请求的是哪个生存期，将每个生存期选项创建一种类型：
+为了演示这些生存期和注册选项之间的差异，请考虑一个简单的接口，将一个或多个任务表示为具有唯一标识符 `OperationId` 的*操作*。 根据此服务的生存期配置方式，容器将向请求的类提供相同或不同的实例。 为了明确正在请求哪个生存期，我们将为每个生命周期选项创建一个类型：
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/IOperation.cs?highlight=5-8)]
 
-我们使用单一类 `Operation`（其构造函数接受 `Guid`），或使用新的 `Guid`（如果未提供任何类）实现这些接口。
+我们使用单个类 `Operation` 来实现这些接口，它在构造函数中接受一个 `Guid`，如果没有提供，则使用一个新的 `Guid`。
 
-接下来，在 `ConfigureServices` 中，将根据其命名生存期向容器添加每种类型：
+接下来，在 `ConfigureServices` 中，根据其命名的生存期，将每个类型添加到容器中：
 
 [!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Startup.cs?range=26-32)]
 
-注意，`IOperationSingletonInstance` 服务使用的是已知 ID 为 `Guid.Empty` 的特定实例，因此当使用此类型时会很清楚（其 GUID 全部为零）。 我们还注册了依赖所有其他 `Operation` 类型的 `OperationService`，因此请求中将很清楚此服务是否为每种操作类型获取与控制器相同的实例或者新实例。 此服务只需将其依赖关系公开为属性，便可在视图中显示。
+请注意，`IOperationSingletonInstance` 服务正在使用一个具有已知 ID `Guid.Empty` 的特定实例，因此可以明确何时在使用此类型（其 Guid 将全部为零）。 我们已注册了依赖于每个其他 `Operation` 类型的 `OperationService`，因此对每个 Operation 类型来说，可以在请求中明确该服务是会获得与控制器相同的实例，还是获得一个新实例。 此服务的全部作用就是将其依赖项作为属性公开，以便它们可以显示在视图中。
 
 [!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Services/OperationService.cs)]
 
-若要演示应用程序的各个请求内和各个请求之间的对象生存期，示例将包括请求每种 `IOperation` 类型的 `OperationsController` 以及 `OperationService`。 然后，`Index` 操作将显示所有控制器及服务的 `OperationId` 值。
+为了演示对应用程序的各个独立请求之内和之间的对象生存期，该示例包含一个`OperationsController`，它请求每种 `IOperation` 类型以及一个 `OperationService`。 `Index` 操作随后显示所有控制器和服务的 `OperationId` 值。
 
 [!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Controllers/OperationsController.cs)]
 
