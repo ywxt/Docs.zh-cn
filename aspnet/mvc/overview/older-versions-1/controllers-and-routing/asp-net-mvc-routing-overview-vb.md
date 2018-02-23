@@ -29,11 +29,11 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="using-the-default-route-table"></a>使用默认路由表
 
-在创建新的 ASP.NET MVC 应用程序时，应用程序已配置为使用 ASP.NET 路由。ASP.NET 路由是在两个位置设置的。
+在创建新的 ASP.NET MVC 应用程序时，应用程序已配置为使用 ASP.NET 路由。 ASP.NET 路由是在两个位置设置的。
 
-首先，应用程序的 Web 配置文件（Web.config 文件）启用了 ASP.NET 路由。配置文件中有四个部分与路由相关：system.web.httpModules 节、system.web.httpHandlers 节、system.webserver.modules 节和 system.webserver.handlers 节。请注意不要删除这些节，因为如果没有这些节，路由将不再起作用。
+首先，应用程序的 Web 配置文件（Web.config 文件）启用了 ASP.NET 路由。 配置文件中有四个部分与路由相关：system.web.httpModules 节、system.web.httpHandlers 节、system.webserver.modules 节和 system.webserver.handlers 节。 请注意不要删除这些节，因为如果没有这些节，路由将不再起作用。
 
-其次，更重要的是，路由表是在应用程序的 Global.asax 文件中创建的。Global.asax 文件是一个特殊文件，其中包含 ASP.NET 应用程序生命周期事件的事件处理程序。路由表在 Application Start 事件中创建。
+其次，更重要的是，路由表是在应用程序的 Global.asax 文件中创建的。 Global.asax 文件是一个特殊文件，其中包含 ASP.NET 应用程序生命周期事件的事件处理程序。 路由表在 Application Start 事件中创建。
 
 列表 1 中的文件包含 ASP.NET MVC 应用程序的默认 Global.asax 文件。
 
@@ -41,9 +41,9 @@ ms.lasthandoff: 11/10/2017
 
 [!code-vb[Main](asp-net-mvc-routing-overview-vb/samples/sample1.vb)]
 
-MVC 应用程序第一次启动时，会调用 Application\_Start() 方法。此方法反过来会调用 RegisterRoutes() 方法。RegisterRoutes() 方法负责创建路由表。
+MVC 应用程序第一次启动时，会调用 Application\_Start() 方法。 此方法反过来会调用 RegisterRoutes() 方法。 RegisterRoutes() 方法负责创建路由表。
 
-默认路由表包含一个路由（名为 Default）。Default 路由将 URL 的第一个段映射到控制器名称、第二个段映射到控制器操作，第三个段映射到名为 **id** 的参数。
+默认路由表包含一个路由（名为 Default）。 Default 路由将 URL 的第一个段映射到控制器名称、第二个段映射到控制器操作，第三个段映射到名为 **id** 的参数。
 
 假设你为 web 浏览器的地址栏中输入以下 URL:
 
@@ -61,7 +61,7 @@ MVC 应用程序第一次启动时，会调用 Application\_Start() 方法。此
 
 HomeController.Index(3)
 
-Default 路由包括所有三个参数的默认值。如果不提供控制器，控制器参数将默认为 **Home**。如果不提供操作，action 参数将默认为 **Index**。最后，如果不提供 id，id 参数将默认为空字符串。
+Default 路由包括所有三个参数的默认值。 如果不提供控制器，控制器参数将默认为 **Home**。 如果不提供操作，action 参数将默认为 **Index**。 最后，如果不提供 id，id 参数将默认为空字符串。
 
 让我们看一下几个示例的默认路由如何映射到控制器操作的 Url。 假设以下 URL 输入到浏览器地址栏：
 

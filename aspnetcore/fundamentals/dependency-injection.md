@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 中的依赖关系注入"
+title: "在 ASP.NET Core 依赖注入"
 author: ardalis
-description: "了解 ASP.NET Core 如何实现依赖关系注入，以及如何使用它。"
+description: "了解 ASP.NET Core 如何实现依赖注入和如何使用它。"
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,50 +10,50 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: acbce5d139da0acc0870a9cf23a779bf27699a61
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 43c937ff9631be3edc1f95b3689650e4574abfbd
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
-# <a name="dependency-injection-in-aspnet-core"></a>ASP.NET Core 中的依赖关系注入
+# <a name="dependency-injection-in-aspnet-core"></a>在 ASP.NET Core 依赖注入
 
 <a name="fundamentals-dependency-injection"></a>
 
 作者：[Steve Smith](https://ardalis.com/) 和 [Scott Addie](https://scottaddie.com)
 
-ASP.NET Core 从头开始进行设计，以支持和利用依赖关系注入。 ASP.NET Core 应用程序可以通过将内置框架服务注入启动类的方法中来利用它，并且还可为注入配置应用程序服务。 ASP.NET Core 提供的默认服务容器可提供一个最小功能集，且并非用来替换其他容器。
+ASP.NET Core 的设计从头至尾以支持和利用依赖注入为目标。 ASP.NET Core 应用程序可以通过将内置框架服务注入 Startup 类的方法中来对其加以利用，应用程序服务也可以进行注入配置。 由 ASP.NET Core 提供的默认服务容器提供了一个最小功能集合，并非用于替换其他容器。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
-## <a name="what-is-dependency-injection"></a>什么是依存关系注入？
+## <a name="what-is-dependency-injection"></a>什么是依赖注入？
 
-依赖关系注入 (DI) 是一种用于实现对象及其协作者或依赖关系之间的松散耦合的技术。 不是直接实例化协作者或使用静态引用，而是以某种方式向类提供其执行操作所需的对象。 大多数情况下，类将通过其构造函数声明其依赖关系，使它们遵循 [Explicit Dependencies Principle](http://deviq.com/explicit-dependencies-principle/)（显示依赖关系原则）。 此方法称为“构造函数注入”。
+依赖注入 (DI) 是一种用于在对象与其协作者或依赖项之间实现松散耦合的技术。 该技术不是直接实例化协作者或使用静态引用，而是以某种方式向类提供该类执行其操作所需的对象。 大多数情况下，类通过其构造函数声明它们的依赖项，从而允许它们遵循[显式依赖关系原则](http://deviq.com/explicit-dependencies-principle/)。 此方法称为"构造函数注入"。
 
-记住，使用 DI 设计类时，它们以更加松散的方式进行耦合，因为它们对协作者没有直接的、硬编码依赖关系。 这遵循 [Dependency Inversion Principle](http://deviq.com/dependency-inversion-principle/)（依赖关系反转原则），其中指出“高级别模块不应依赖低级别模块，它们都应依赖抽象”。 构建类时，类请求向它们提供抽象（通常是 `interfaces`），而不是引用特定实现。 将依赖关系提取到接口并提供这些接口的实现作为参数也是 [Strategy design pattern](http://deviq.com/strategy-design-pattern/)（策略设计模式）的一个示例。
+在遵循 DI 原则来设计类时，由于它们与其协作者没有直接的，硬编码的依赖关系，所以它们之间的耦合更为松散。 这遵循[依赖倒置原则](http://deviq.com/dependency-inversion-principle/)，其中指出*"高级模块不应依赖于低级模块; 同时两者都应依赖于抽象"。* 类请求在该类被构造时提供给它们的抽象（通常是 `interfaces`），而不是引用特定的实现。 将依赖关系提取到接口中并将这些接口的实现作为参数提供也是[策略设计模式](http://deviq.com/strategy-design-pattern/) 的一个例子。
 
-当系统被设计为使用 DI 时，由于许多类通过其构造函数（或属性）请求依赖关系，具有一个专门使用其关联的依赖关系创建这些类的类非常有用。 这些类称为容器，或者更具体地说，称为 [Inversion of Control (IoC)](http://deviq.com/inversion-of-control/)（控制反转 (IoC)）容器或依赖关系注入 (DI) 容器。 容器本质上是一个工厂，负责提供从其中请求的类型的实例。 如果给定的类型已声明它具有依赖关系，并且配置了容器以提供依赖关系类型，它将在创建所请求实例的过程中创建创建赖关系。 通过这种方式，可以向类提供复杂的依赖关系图，而无需任何硬编码对象构造。 除使用其依赖关系创建对象，容器通常还可管理应用程序内的对象生存期。
+当系统被设计为使用 DI 时，许多类通过其构造函数 （或属性）来请求它们的依赖项，所以有一个专门用来创建这些类以及它们相关的依赖项的类是很有帮助的。 这些类统称为*容器*，或更具体地说，[控制反转 (IoC)](http://deviq.com/inversion-of-control/) 容器或依赖注入 (DI) 容器。 容器本质上是一个工厂，它负责提供从中请求的类型的实例。 如果给定的类型已声明它具有依赖项，并且容器已经被配置为提供这些依赖类型，那么它将在创建请求实例时创建依赖项。 通过这种方式，可以为类提供复杂的依赖关系图，而无需任何硬编码对象构造。 除了创建包含依赖项的对象外，容器通常还可以管理应用程序中的对象生命周期。
 
-ASP.NET 核心包括默认支持构造函数注入的简单内置容器（由 `IServiceProvider` 接口表示），并且 ASP.NET Core 通过 DI 使某些服务可用。 ASP.NET 的容器指的是它作为服务进行管理的类型。 在本文其余部分，服务指的是 ASP.NET Core 的 IoC 容器管理的类型。 你可在应用程序的 `Startup` 类的 `ConfigureServices` 方法中配置该内置容器服务。
-
-> [!NOTE]
-> Martin Fowler 写了一篇关于 [Inversion of Control Containers and the Dependency Injection Pattern](https://www.martinfowler.com/articles/injection.html)（控制反转容器和依赖关系注入模式）的文章。 Microsoft 模式和做法也很好地介绍了[依赖关系注入](https://msdn.microsoft.com/library/hh323705.aspx)。
+ASP.NET Core 包含一个简单的内置容器 (表示为 `IServiceProvider` 接口)，默认情况下，该容器支持构造函数注入，ASP.NET 可通过 DI 提供某些服务。 ASP.NET 的容器指其作为 *服务* 管理的类型。 本文其余部分中，*服务* 指的是由 ASP.NET Core 的 IoC 容器管理的类型。 您可以在应用程序的 `Startup` 类中的 `ConfigureServices` 方法中配置内置容器的服务。
 
 > [!NOTE]
-> 本文介绍依赖关系注入，因其适用于所有 ASP.NET 应用程序。 [依赖关系注入和控制器](../mvc/controllers/dependency-injection.md)中介绍了 MVC 控制器内的依赖关系注入。
+> Martin Fowler 写了另一篇全面介绍 [控制反转容器和依赖注入模式](https://www.martinfowler.com/articles/injection.html) 的文章。 Microsoft 模式和实践也对 [依赖关系注入](https://msdn.microsoft.com/library/hh323705.aspx) 进行了很好的描述。
+
+> [!NOTE]
+> 本文介绍了适用于所有 ASP.NET 应用程序的依赖注入。 MVC 控制器中的依赖注入在 [依赖注入和控制器](../mvc/controllers/dependency-injection.md) 中进行介绍。
 
 ### <a name="constructor-injection-behavior"></a>构造函数注入行为
 
-构造函数注入要求相关构造函数是公共的。 否则，你的应用将引发 `InvalidOperationException`：
+构造函数注入要求使用的构造函数为 *公共* 函数。 否则，应用程序会引发 `InvalidOperationException` 异常:
 
-> 找不到适合“YourType”类型的构造函数。 请确保该类型是具体的，并且针对公共构造函数的所有参数注册了服务。
+> 找不到适合类型 YourType 的构造函数。 请确保该类型是具体的，并为公共构造函数的所有参数注册服务。
 
 
-构造函数注入要求只存在一个适用的构造函数。 支持构造函数重载，但只能存在一个重载，其参数全部可以通过依赖关系注入来实现。 如果存在多个重载，应用将引发 `InvalidOperationException`：
+构造函数注入要求只存在一个适用的构造函数。 支持构造函数重载，但其参数可以全部通过依赖注入来实现的重载只能存在一个。 如果存在多个，应用程序将引发 `InvalidOperationException` 异常:
 
-> 类型“YourType”中找到多个接受所有给定参数类型的构造函数。 应该只有一个适用的构造函数。
+> 已在类型 YourType 中找到多个接受所有给定的参数类型的构造函数。 应该只有一个适用的构造函数。
 
-构造函数可以接受依赖关系注入未提供的参数，但它们必须支持默认值。 例如:
+构造函数可以接受依赖注入没有提供的参数，但这些参数必须支持默认值。 例如: 
 
 ```csharp
 // throws InvalidOperationException: Unable to resolve service for type 'System.String'...
@@ -73,7 +73,7 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 
 ## <a name="using-framework-provided-services"></a>使用框架提供的服务
 
-`Startup` 类中的 `ConfigureServices` 方法负责定义应用程序将使用的服务，包括 Entity Framework Core 和 ASP.NET Core MVC 之类的平台功能。 最初，向 `ConfigureServices` 提供的 `IServiceCollection` 定义了以下服务（具体取决于[主机的配置方式](xref:fundamentals/hosting)）：
+`Startup` 类中的 `ConfigureServices` 方法负责定义应用程序将使用的服务，包括 Entity Framework Core 和 ASP.NET Core MVC 这样的平台特性。 最初，提供给 `ConfigureServices` 的 `IServiceCollection` 定义了以下服务（具体取决于[配置主机的方式](xref:fundamentals/hosting)）：
 
 | 服务类型 | 生存期 |
 | ----- | ------- |
@@ -96,62 +96,62 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 
 [!code-csharp[Main](../common/samples/WebApplication1/Startup.cs?highlight=5-6,8-10,12&range=39-56)]
 
-ASP.NET 提供的功能和中间件（如 MVC），遵循使用单个 AddServiceName 扩展方法注册该功能请求的所有服务的约定。
+ASP.NET 提供的功能和中间件（如 MVC）遵循使用单个 *AddServiceName* 扩展方法的约定来注册该功能所需的所有服务.
 
 >[!TIP]
-> 你可以通过其参数列表在 `Startup` 方法内请求某些框架提供的服务，请参阅[应用程序启动](startup.md)了解详细信息。
+> 你可以通过参数列表在 `Startup` 方法中请求某些框架提供的服务-请参阅 [应用程序启动](startup.md) 以获取更多详细信息。
 
 ## <a name="registering-services"></a>注册服务
 
-可以按如下方式注册自己的应用程序服务。 第一种泛型类型表示将从容器请求的类型（通常指接口）。 第二种泛型类型表示将由容器实例化并用来满足此类请求的具体类型。
+可按如下方式注册自己的应用程序服务。 第一个泛型类型表示将从容器请求的类型（通常是一个接口）。 第二个泛型类型表示将由容器实例化并用于满足此类请求的具体类型。
 
 [!code-csharp[Main](../common/samples/WebApplication1/Startup.cs?range=53-54)]
 
 > [!NOTE]
-> 每个 `services.Add<ServiceName>` 扩展方法都将添加（并可能配置）服务。 例如，`services.AddMvc()` 将添加 MVC 需要的服务。 建议你遵循此约定，将扩展方法放置于 `Microsoft.Extensions.DependencyInjection` 命名空间，以封装服务注册组。
+> 每个 `services.Add<ServiceName>` 扩展方法添加（并可能配置）服务。 例如，`services.AddMvc()` 添加 MVC 需要的服务。 建议遵循此约定，将扩展方法放置在 `Microsoft.Extensions.DependencyInjection` 命名空间中，以封装服务注册的组。
 
-`AddTransient` 方法用于将抽象类型映射到针对需要它的每个对象单独实例化的具体服务。 这称为服务的生存期，其他生存期选项如下所述。 针对注册的每项服务，请务必选择相应的生存期。 是否应该向请求新服务实例的每个类提供该实例？ 是否应该在给定的 Web 请求的整个过程使用实例？ 或者，是否应该对应用程序的生存期使用单个实例？
+`AddTransient` 方法用于将抽象类型映射到为每个需要它的对象分别实例化的具体服务。 这称为服务的 *生存期*，其他生存期选项如下所述。 为注册的每个服务选择适当的生存期非常重要。 是否应该向每个请求它的类提供一个新的服务实例？ 是否在整个给定的 Web 请求中使用一个实例？ 或是否应该在应用程序生存期内使用单例？
 
-在本文示例中，有一个显示字符名称的简单控制器，名为 `CharactersController`。 如果不存在，其 `Index` 方法将显示已存储在应用程序中的字符的当前列表，并使用少量字符初始化集合。 注意：尽管此应用程序使用 Entity Framework Core 和 `ApplicationDbContext` 类用于其暂留，但在控制器中均不明显。 相反，已在接口 `ICharacterRepository` 后面将特定数据访问机制抽象化，这遵循[Repository Pattern](http://deviq.com/repository-pattern/)（存储库模式）。 通过构造函数请求 `ICharacterRepository` 的实例，并分配给私有字段，然后根据需要将其用于访问字符。
+在本文示例中，有一个显示字符名称的简单控制器，名为 `CharactersController`。 其 `Index` 方法会显示存储在应用程序中的当前字符列表，如果不存在，则使用少量字符初始化该集合。 请注意，尽管此应用程序为其持久化使用Entity Framework Core和 `ApplicationDbContext`，但在控制器中没有任何明显的表现。 相反，特定的数据访问机制已经被抽象为一个接口，即 `ICharacterRepository`，它遵循 [仓储模式](http://deviq.com/repository-pattern/)。 通过构造函数请求 `ICharacterRepository` 实例，并将其分配给私有字段，然后根据需要使用它访问字符。
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Controllers/CharactersController.cs?highlight=3,5,6,7,8,14,21-27&range=8-36)]
 
-`ICharacterRepository` 定义控制器处理 `Character` 实例所需的两个方法。
+`ICharacterRepository` 定义了控制器使用 `Character` 实例时需要的两种方法。
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/ICharacterRepository.cs?highlight=8,9)]
 
-此接口反过来由运行时所用的具体类型 `CharacterRepository` 实现。
+此接口又由一个具体类型实现，即在运行时使用的 `CharacterRepository`。
 
 > [!NOTE]
-> `CharacterRepository` 类使用 DI 的方式是你可针对所有应用程序服务遵循的常规模型，而不仅仅在“存储库”或数据访问类中。
+> DI 与 `CharacterRepository` 类一起使用的方式是一个通用模型，您可以为所有应用程序服务遵循此模型，而不仅仅在“仓储库”或数据访问类中。
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Models/CharacterRepository.cs?highlight=9,11,12,13,14)]
 
-注意：`CharacterRepository` 的构造函数中请求一个 `ApplicationDbContext`。 以此链接方式使用依赖关系注入很常见，因此每个被请求的依赖关系反过来都会请求其自己的依赖关系。 容器负责解析关系图中的所有依赖关系，并返回完全解析后的服务。
+请注意，`CharacterRepository` 在其构造函数中请求一个 `ApplicationDbContext`。 依赖注入以这种链式方式被使用并不罕见，（每个被请求的依赖进而请求它自己的依赖）。 容器将负责解决图中所有的依赖关系，并返回完全解析后的服务。
 
 > [!NOTE]
-> 创建所请求对象、其需要的所有对象以及它们需要的所有对象，有时称为对象图。 同样，通常将必须解析的一组依赖关系统称为依赖关系树或依赖关系图。
+> 创建请求的对象，和它需要的所有对象，以及这些对象需要的所有对象，这有时被称为 *对象图*。 同样，必须被解析的依赖关系的集合通常被称为*依赖关系树*或*依赖项关系图*。
 
-在这种情况下，必须向 `Startup` 的 `ConfigureServices` 中的服务容器注册 `ICharacterRepository` 和反过来的 `ApplicationDbContext`。 通过调用扩展方法 `AddDbContext<T>` 配置 `ApplicationDbContext`。 下面的代码演示 `CharacterRepository` 类型的注册。
+在这种情况下，`Startup` 和 `ApplicationDbContext` 必须在 `ICharacterRepository` 类的 `ConfigureServices` 中的服务容器中注册。 `ApplicationDbContext` 通过调用扩展方法 `AddDbContext<T>` 进行配置。 下面的代码演示了 `CharacterRepository` 类型的注册。
 
 [!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Startup.cs?highlight=3-5,11&range=16-32)]
 
-必须使用 `Scoped` 生存期将 Entity Framework 上下文添加到服务容器。 如果如上所述使用帮助程序方法，将自动进行处理。 将使用 Entity Framework 的存储库应该使用相同的生存期。
+应使用 `Scoped` 生命周期将实体框架上下文添加到服务容器中。 如果您使用上面所示的帮助方法，则会自动执行此操作。 使用实体框架的仓储库应使用相同的生命周期。
 
 >[!WARNING]
-> 要谨慎的主要危险是从单一实例中解析 `Scoped` 服务。 此类情况下，处理后续请求时，很可能服务状态不正确。
+> 需要注意的主要危险是从单例解析 `Scoped` 服务。 在此类情况下，当处理后续请求时，服务可能会处于不正确的状态。
 
-具有依赖关系的服务应在容器中对它们进行注册。 如果服务构造函数需要一个基元（如 `string`），可使用[配置](xref:fundamentals/configuration/index)和[选项模式](xref:fundamentals/configuration/options)将其注入。
+具有依赖的服务应将其注册到容器中。 如果服务构造函数需要一个基元（如 `string`），可使用[配置](xref:fundamentals/configuration/index)和[选项模式](xref:fundamentals/configuration/options)将其注入。
 
 ## <a name="service-lifetimes-and-registration-options"></a>服务生存期和注册选项
 
-可使用以下生存期配置 ASP.NET 服务：
+可以使用以下生存期配置 ASP.NET 服务：
 
 **暂时**
 
-暂时生存期服务是每次请求时创建的。 此生存期最适合轻型、无状态服务。
+瞬时生存期服务在每次请求时都会创建。 这种生存期适合轻量级、 无状态的服务。
 
-**限定**
+**作用域（Scoped）**
 
 限定生存期服务每个请求创建一次。
 
@@ -181,7 +181,7 @@ ASP.NET 提供的功能和中间件（如 MVC），遵循使用单个 AddService
 
 现在，向此控制器操作提了如下两个单独请求：
 
-![Microsoft Edge 中运行的依赖关系注入示例 Web 应用程序的操作视图对第一个请求显示暂时、限定、单一实例、实例控制器和操作服务操作的操作 ID 值 (GUID)。](dependency-injection/_static/lifetimes_request1.png)
+![Microsoft Edge 中运行的依赖注入示例 Web 应用程序的操作视图对第一个请求显示暂时、限定、单一实例、实例控制器和操作服务操作的操作 ID 值 (GUID)。](dependency-injection/_static/lifetimes_request1.png)
 
 ![操作视图对第二个请求显示操作 ID 值。](dependency-injection/_static/lifetimes_request2.png)
 
@@ -206,9 +206,9 @@ ASP.NET 提供的功能和中间件（如 MVC），遵循使用单个 AddService
 > [!NOTE]
 > 优先请求依赖关系作为构造函数参数，用于访问 `RequestServices` 集合。
 
-## <a name="designing-services-for-dependency-injection"></a>设计适用于依赖关系注入的服务
+## <a name="designing-services-for-dependency-injection"></a>设计适用于依赖注入的服务
 
-应将服务设计为使用依赖关系注入获取其协作者。 这意味着避免使用有状态静态方法调用（将生成代码告知，称为[静态粘贴](http://deviq.com/static-cling/)），以及服务中相关类的直接实例化。 选择是否实例化类型或通过依赖关系注入请求它时，记住短语 [New is Glue](https://ardalis.com/new-is-glue)（新增即是粘附）可能有用。 按照[面向对象的设计的 SOLID 原则](http://deviq.com/solid/)，你的类将自然倾向于小型、构造良好和易测试。
+应将服务设计为使用依赖注入获取其协作者。 这意味着避免使用有状态静态方法调用（将生成代码告知，称为[静态粘贴](http://deviq.com/static-cling/)），以及服务中相关类的直接实例化。 选择是否实例化类型或通过依赖注入请求它时，记住短语 [New is Glue](https://ardalis.com/new-is-glue)（新增即是粘附）可能有用。 按照[面向对象的设计的 SOLID 原则](http://deviq.com/solid/)，你的类将自然倾向于小型、构造良好和易测试。
 
 如果发现类有太多的依赖关系要注入时怎么办？ 这通常表示类尝试执行过多操作，并可能违反 SRP，即[Single Responsibility Principle](http://deviq.com/single-responsibility-principle/)（单一责任原则）。 确认是否可以通过将其部分职责移到新类来重构该类。 请记住，`Controller` 类应该关注 UI 问题，因此业务规则和数据访问实现详细信息应保存在这些[单独问题](http://deviq.com/separation-of-concerns/)相应的类中。
 
@@ -295,7 +295,7 @@ public class DefaultModule : Module
 
 ## <a name="recommendations"></a>建议
 
-使用依赖关系注入时，请记住以下建议：
+使用依赖注入时，请记住以下建议：
 
 * DI 适用于具有复杂依赖关系的对象。 控制器、服务、适配器和存储库是可添加到 DI 的对象的所有示例。
 
@@ -310,13 +310,14 @@ public class DefaultModule : Module
 > [!NOTE]
 > 如所有建议组合一样，你可能会遇到必须忽略一个的情况。 我们发现异常很少见，大多数是框架本身中非常特殊的情况。
 
-记住，依赖关系注入是静态/局部对象访问模式的备用方案。 如果将 DI 与静态对象访问混合，你将无法实现其好处。
+记住，依赖注入是静态/局部对象访问模式的备用方案。 如果将 DI 与静态对象访问混合，你将无法实现其好处。
 
 ## <a name="additional-resources"></a>其他资源
 
 * [应用程序启动](xref:fundamentals/startup)
 * [测试](xref:testing/index)
-* [使用依赖关系注入在 ASP.NET Core 中编写干净代码 (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
+* [基于工厂的中间件激活](xref:fundamentals/middleware/extensibility)
+* [使用依赖注入在 ASP.NET Core 中编写干净代码 (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
 * [Container-Managed Application Design, Prelude: Where does the Container Belong?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)（容器托管的应用程序设计，序言：容器属于何处？）
 * [Explicit Dependencies Principle](http://deviq.com/explicit-dependencies-principle/)（显式依赖关系原则）
-* [Inversion of Control Containers and the Dependency Injection Pattern](https://www.martinfowler.com/articles/injection.html)（控制反转容器和依赖关系注入模式）
+* [Inversion of Control Containers and the Dependency Injection Pattern](https://www.martinfowler.com/articles/injection.html)（控制反转容器和依赖注入模式）
