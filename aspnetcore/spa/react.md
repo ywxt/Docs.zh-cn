@@ -1,26 +1,26 @@
 ---
 title: "使用响应项目模板"
 author: SteveSandersonMS
-description: "了解如何开始使用 ASP.NET 核心单页面应用程序 (SPA) 发布候选项目模板用于响应和创建响应应用程序。"
+description: "了解如何开始使用 ASP.NET 核心单页面应用程序 (SPA) 项目模板用于响应和创建响应应用程序。"
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/06/2017
+ms.date: 02/21/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react
-ms.openlocfilehash: 5978094083a098a771f5dca103434ea8fcce7777
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e093a47159fd8278ff3705bb2c53571a8e27fab8
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/23/2018
 ---
-# <a name="use-the-react-project-template-release-candidate"></a>使用响应项目模板 （候选发布版）
+# <a name="use-the-react-project-template"></a>使用响应项目模板
 
 > [!NOTE]
-> 本文档不是指已发布的响应项目模板。 **此文档是有关响应模板的候选发布版本。** 我们希望在早期 2018年提供已发布的版本。
+> 本文档不有关响应项目模板包括在 ASP.NET 核心 2.0。 它是有关与其则可手动更新较新响应模板。 默认情况下，该模板包含在 ASP.NET 核心 2.1。
 
 已更新的响应项目模板提供了方便起点 ASP.NET Core 应用使用响应和[创建响应应用](https://github.com/facebookincubator/create-react-app)(CRA) 约定，可以实现的丰富的客户端用户界面 (UI)。
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="create-a-new-app"></a>创建新的应用程序
 
-若要开始，请确保你已[安装更新的响应项目模板](xref:spa/index#installation)。 这些说明不适用于.NET 核心中包含的前一响应项目模板 2.0.x SDK。
+如果使用 ASP.NET 核心 2.0，请确保你已[安装更新的响应项目模板](xref:spa/index#installation)。 如果你有 ASP.NET 核心 2.1，则不需要安装它。
 
 从命令提示符下使用命令创建新项目`dotnet new react`空的目录中。 例如，以下命令创建的应用程序中*我新应用*目录并切换到该目录：
 

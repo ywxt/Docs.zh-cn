@@ -1,26 +1,26 @@
 ---
 title: "使用响应与回顾的项目模板"
 author: SteveSandersonMS
-description: "了解如何开始使用 ASP.NET 核心单页面应用程序 (SPA) 发布候选项目模板用于使用 Redux 和创建响应应用程序的响应。"
+description: "了解如何开始使用 ASP.NET 核心单页面应用程序 (SPA) 项目模板用于使用 Redux 和创建响应应用程序的响应。"
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/06/2017
+ms.date: 02/21/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react-with-redux
-ms.openlocfilehash: 71a8702b9f6e9a2b40f150026f1955450e0fa7a3
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f52f4a866b8bb2adeee19548df32f3e7a91761d1
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/23/2018
 ---
-# <a name="use-the-react-with-redux-project-template-release-candidate"></a>使用响应与回顾项目模板 （候选发布版）
+# <a name="use-the-react-with-redux-project-template"></a>使用响应与回顾的项目模板
 
 > [!NOTE]
-> 本文档不是指已发布的响应与回顾项目模板。 **此文档是有关的响应与回顾模板候选发布版本。** 我们希望在早期 2018年提供已发布的版本。
+> 本文档不有关响应与回顾的项目模板包括在 ASP.NET 核心 2.0。 它是有关与其则可手动更新较新的响应与回顾模板。 默认情况下，该模板包含在 ASP.NET 核心 2.1。
 
 已更新的响应与 Redux 项目模板提供了方便的起始点，为使用 ASP.NET Core 应用做出响应，Redux，和[创建响应应用](https://github.com/facebookincubator/create-react-app)(CRA) 约定，可以实现的丰富的客户端用户界面 (UI)。
 

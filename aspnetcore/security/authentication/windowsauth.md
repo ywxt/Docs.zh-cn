@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/windowsauth
-ms.openlocfilehash: aaa14e2f2704a7cfa836c5524642d2138a3ae7c8
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c229537e7f533eea2173dbc51b8d0d0e097d434a
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="configure-windows-authentication-in-an-aspnet-core-app"></a>在 ASP.NET Core 应用程序配置 Windows 身份验证
 
-通过[Steve Smith](https://ardalis.com)和[Scott Addie](https://twitter.com/Scott_Addie)
+作者：[Steve Smith](https://ardalis.com) 和 [Scott Addie](https://twitter.com/Scott_Addie)
 
 Windows 身份验证可以配置用于与 IIS 托管的 ASP.NET Core 应用[HTTP.sys](xref:fundamentals/servers/httpsys)，或[WebListener](xref:fundamentals/servers/weblistener)。
 
@@ -111,6 +111,9 @@ IIS 使用[ASP.NET 核心模块](xref:fundamentals/servers/aspnet-core-module)(A
 当启用了 Windows 身份验证和匿名访问时，使用`[Authorize]`和`[AllowAnonymous]`属性。 `[Authorize]`属性允许你保护的应用程序的部分，真正需要 Windows 身份验证。 `[AllowAnonymous]`特性重写`[Authorize]`属性中允许匿名访问的应用程序的使用情况。 请参阅[简单授权](xref:security/authorization/simple)对于特性用法的详细信息。
 
 在 ASP.NET Core 2.x，`[Authorize]`属性要求中的其他配置*Startup.cs*质询对于 Windows 身份验证的匿名请求。 建议的配置略有根据正在使用的 web 服务器而有所不同。
+
+> [!NOTE]
+> 默认情况下，缺少授权可访问的页面的用户将出现一个空白文档。 [StatusCodePages 中间件](xref:fundamentals/error-handling#configuring-status-code-pages)可以配置为用户提供更好的"拒绝访问"体验。
 
 #### <a name="iis"></a>IIS
 

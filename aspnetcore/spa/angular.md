@@ -1,34 +1,34 @@
 ---
 title: "使用角速度项目模板"
 author: SteveSandersonMS
-description: "了解如何开始使用 ASP.NET 核心单页面应用程序 (SPA) 发布候选项目模板用于角和角速度 CLI。"
+description: "了解如何开始使用 ASP.NET 核心单页面应用程序 (SPA) 项目模板用于角和角速度 CLI。"
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/06/2017
+ms.date: 02/21/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: 4162b1c26e9d278c811f691c4277d4de25adb204
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f81130b67d61ee063b697f19862449c3054d547d
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/23/2018
 ---
-# <a name="use-the-angular-project-template-release-candidate"></a>使用角速度项目模板 （候选发布版）
+# <a name="use-the-angular-project-template"></a>使用角速度项目模板
 
 > [!NOTE]
-> 本文档不是指已发布的角度项目模板。 **此文档是有关的角度模板候选发布版本。** 我们希望在早期 2018年提供已发布的版本。
+> 本文档不有关角度项目模板包括在 ASP.NET 核心 2.0。 它是有关与其则可手动更新较新角度模板。 默认情况下，该模板包含在 ASP.NET 核心 2.1。
 
-更新的角度项目模板提供了 ASP.NET Core 应用使用角速度 5 和角速度 CLI 可以实现的丰富的客户端用户界面 (UI) 的方便的起始点。
+更新的角度项目模板提供了 ASP.NET Core 应用使用角和角速度 CLI 可以实现的丰富的客户端用户界面 (UI) 的方便的起始点。
 
 该模板是等效于创建充当 API 后端的 ASP.NET Core 项目和一个角度 CLI 项目，以充当用户界面。 模板提供承载这两种项目类型中的单个应用程序项目的便利性。 因此，可以生成应用程序项目并将其发布为单个单元。
 
 ## <a name="create-a-new-app"></a>创建新的应用程序
 
-若要开始，请确保你已[安装更新的角度项目模板](xref:spa/index#installation)。 这些说明不适用于.NET 核心中包含的上一个角度项目模板 2.0.x SDK。
+如果使用 ASP.NET 核心 2.0，请确保你已[安装更新的角度项目模板](xref:spa/index#installation)。 如果你有 ASP.NET 核心 2.1，则不需要安装它。
 
 从命令提示符下使用命令创建新项目`dotnet new angular`空的目录中。 例如，以下命令创建的应用程序中*我新应用*目录并切换到该目录：
 
