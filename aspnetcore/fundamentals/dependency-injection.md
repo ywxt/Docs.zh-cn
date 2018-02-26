@@ -53,7 +53,7 @@ ASP.NET Core 包含一个简单的内置容器 (表示为 `IServiceProvider` 接
 
 > 已在类型 YourType 中找到多个接受所有给定的参数类型的构造函数。 应该只有一个适用的构造函数。
 
-构造函数可以接受依赖注入没有提供的参数，但这些参数必须支持默认值。 例如: 
+构造函数可以接受依赖注入没有提供的参数，但这些参数必须支持默认值。 例如:
 
 ```csharp
 // throws InvalidOperationException: Unable to resolve service for type 'System.String'...
@@ -179,44 +179,44 @@ ASP.NET 提供的功能和中间件（如 MVC）遵循使用单个 *AddServiceNa
 
 [!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Controllers/OperationsController.cs)]
 
-现在，向此控制器操作提了如下两个单独请求：
+现在对该控制器操作发起了两个单独的请求：
 
 ![Microsoft Edge 中运行的依赖注入示例 Web 应用程序的操作视图对第一个请求显示暂时、限定、单一实例、实例控制器和操作服务操作的操作 ID 值 (GUID)。](dependency-injection/_static/lifetimes_request1.png)
 
 ![操作视图对第二个请求显示操作 ID 值。](dependency-injection/_static/lifetimes_request2.png)
 
-观察请求内和请求之间哪些 `OperationId` 值不同。
+观察哪个 `OperationId` 值会在一个请求之内和不同请求之间变化。
 
 * 暂时对象始终不同；向每个控制器和每项服务提供一个新的实例。
 
-* 限定对象在请求内是相同的，但在不同的请求中是不同的
+* *作用域* 对象在一个请求中是相同的，但在不同请求中是不同的
 
-* 单一实例对象对每个对象和每个请求都是相同的（无论实例是否在 `ConfigureServices` 中提供）
+* *单例* 对象对每个对象和每个请求都是相同的 (不管 `ConfigureServices` 是否提供了一个实例)
 
 ## <a name="request-services"></a>请求服务
 
-在 `HttpContext` 中的 ASP.NET 请求内可用的服务通过 `RequestServices` 集合进行公开。
+来自 `HttpContext` 的 ASP.NET 请求中可用的服务通过 `RequestServices` 集合公开。
 
 ![HttpContext 请求服务 Intellisense 上下文对话框指出请求服务可获取或设置对请求的服务容器提供访问权限的 IServiceProvider。](dependency-injection/_static/request-services.png)
 
-请求服务表示你作为应用程序的一部分配置的服务和请求。 对象指定依赖关系时，由 `RequestServices`（而不是 `ApplicationServices`）中找到的类型满足这些依赖关系。
+请求服务表示在应用程序中配置和请求的服务。 当对象指定依赖关系时，`RequestServices`（而不是 `ApplicationServices`）中的类型将满足这些要求。
 
-通常情况下，不应直接使用这些属性，而应该先通过类的构造函数请求其所需的类型，并允许框架注入这些依赖关系。 这可生成易于测试（请参阅[测试](../testing/index.md)）并且耦合更加松散的类。
+通常情况下，不应直接使用这些属性，而应该通过类的构造函数来请求所需类的类型，并让框架注入这些依赖关系。 这将生成更易于测试且耦合更松散的类（请参阅[测试](../testing/index.md)）。
 
 > [!NOTE]
-> 优先请求依赖关系作为构造函数参数，用于访问 `RequestServices` 集合。
+> 与访问 `RequestServices` 集合相比，以构造函数参数的形式请求依赖项是更优先的选择。
 
-## <a name="designing-services-for-dependency-injection"></a>设计适用于依赖注入的服务
+## <a name="designing-services-for-dependency-injection"></a>设计能够进行依赖注入的服务
 
-应将服务设计为使用依赖注入获取其协作者。 这意味着避免使用有状态静态方法调用（将生成代码告知，称为[静态粘贴](http://deviq.com/static-cling/)），以及服务中相关类的直接实例化。 选择是否实例化类型或通过依赖注入请求它时，记住短语 [New is Glue](https://ardalis.com/new-is-glue)（新增即是粘附）可能有用。 按照[面向对象的设计的 SOLID 原则](http://deviq.com/solid/)，你的类将自然倾向于小型、构造良好和易测试。
+你应将自己的服务设计为可以使用依赖注入来获取其协作对象。 这意味着避免在服务中使用有状态的静态方法调用（这会导致称为[静态粘贴](http://deviq.com/static-cling/) 的代码异味）和依赖类的直接实例化。 在选择是实例化一个类型还是通过依赖注入来请求它时，记住这个短语可能会有所帮助：[新增即粘附](https://ardalis.com/new-is-glue)。 遵循[面向对象设计的SOLID原则](http://deviq.com/solid/)，你往往会获得小型、良好分解和易于测试的类。
 
-如果发现类有太多的依赖关系要注入时怎么办？ 这通常表示类尝试执行过多操作，并可能违反 SRP，即[Single Responsibility Principle](http://deviq.com/single-responsibility-principle/)（单一责任原则）。 确认是否可以通过将其部分职责移到新类来重构该类。 请记住，`Controller` 类应该关注 UI 问题，因此业务规则和数据访问实现详细信息应保存在这些[单独问题](http://deviq.com/separation-of-concerns/)相应的类中。
+如果发现你的类往往具有太多的依赖项需要注入怎么办？ 这通常表明你的类正试图做太多的事情，而且可能违反了 SRP-[单一责任原则](http://deviq.com/single-responsibility-principle/)。 看看是否可以通过将某些职责移动到一个新类来重构类。 请记住，你的 `Controller` 类应关注用户界面问题，因此业务规则和数据访问实现细节应保留在适用于这些[分离的关注点](http://deviq.com/separation-of-concerns/) 的类中。
 
-具体而言，对于数据访问，可以将 `DbContext` 注入控制器（假设已向 `ConfigureServices` 中的服务容器添加 EF）。 部分开发者宁愿使用数据库的存储库接口，而不是直接注入 `DbContext`。 使用接口将数据访问逻辑封装于一处可以最大程序减少数据更改时需要更改的位置数量。
+具体就数据访问而言，可以将 `DbContext` 注入到你的控制器（假设你已向 `ConfigureServices` 中的服务容器中添加了 EF）。 一些开发人员更愿意使用数据库的存储库接口而不是直接注入 `DbContext`。 使用接口将数据访问逻辑封装在一个地方，可以最大程度减少数据库更改时需要更改的地方的数量。
 
 ### <a name="disposing-of-services"></a>释放服务
 
-容器将为其创建的 `IDisposable` 类型调用 `Dispose`。 但是，如果自行向容器添加实例，容器不会释放。
+容器将为它创建的 `IDisposable` 类型调用 `Dispose`。 但是，如果您自己将一个实例添加到容器，它将不会被释放。
 
 示例:
 
@@ -244,11 +244,11 @@ public void ConfigureServices(IServiceCollection services)
 ```
 
 > [!NOTE]
-> 在 1.0 版中，容器对所有 `IDisposable` 对象调用了 dispose，包括未创建的对象。
+> 在 1.0 版中，容器将对*所有* `IDisposable` 对象调用 dispose，包括那些并非由它创建的对象。
 
 ## <a name="replacing-the-default-services-container"></a>替换默认服务容器
 
-内置服务容器专门服务框架和基于其上生成的大多数应用程序的基本需求。 但是，开发者可将内置容器替换为其首选容器。 `ConfigureServices` 方法通常会返回 `void`，但如果其签名更改为返回 `IServiceProvider`，可配置和返回不同的容器。 具有适用于 .NET 的多个 IOC 容器。 在此示例中，将使用 [Autofac](https://autofac.org/) 包。
+内置的服务容器旨在满足框架和在其上生成的大多数消费者应用程序的基本需求。 但是，开发人员可以使用自己喜欢的容器替换内置容器。 `ConfigureServices` 方法通常返回 `void`，但是，如果更改其签名以返回 `IServiceProvider`，则可以配置和返回不同的容器。 有许多可用于 .NET 的 IOC 容器。 在此示例中，使用 [Autofac](https://autofac.org/) 包。
 
 首先，安装适当的容器包：
 
@@ -275,7 +275,7 @@ public IServiceProvider ConfigureServices(IServiceCollection services)
 > [!NOTE]
 > 使用第三方 DI 容器时，必须更改 `ConfigureServices`，以便其返回 `IServiceProvider`，而不是 `void`。
 
-最后，将 Autofac 在 `DefaultModule` 中配置为正常：
+最后，在 `DefaultModule` 中正常配置 Autofac：
 
 ```csharp
 public class DefaultModule : Module
@@ -287,37 +287,37 @@ public class DefaultModule : Module
 }
 ```
 
-运行时，Autofac 将用来解析类型和注入依赖关系。 [深入了解如何使用 Autofac 和 ASP.NET Core](http://docs.autofac.org/en/latest/integration/aspnetcore.html)。
+在运行时，将使用 Autofac 来解析类型，并注入依赖。 [了解有关使用 Autofac 和 ASP.NET Core的更多信息](http://docs.autofac.org/en/latest/integration/aspnetcore.html)。
 
 ### <a name="thread-safety"></a>线程安全
 
-单一实例服务需要处于线程安全。 如果单一实例服务与暂时服务存在依赖关系，暂时服务可能也需要线程安全，具体取决于使用单一实例的方式。
+单例服务需要是线程安全的。 如果单例服务依赖于一个瞬时服务，那么瞬时服务可能也需要是线程安全的，具体取决于单例使用它的方式。
 
 ## <a name="recommendations"></a>建议
 
 使用依赖注入时，请记住以下建议：
 
-* DI 适用于具有复杂依赖关系的对象。 控制器、服务、适配器和存储库是可添加到 DI 的对象的所有示例。
+* DI 适用于具有复杂的依赖关系的对象。 控制器、 服务、 适配器和仓储都是可能添加到 DI 中的对象示例。
 
-* 避免在 DI 中直接存储和配置数据。 例如，用户的购物车通常不应添加到服务容器中。 配置应该使用[选项模式](xref:fundamentals/configuration/options)。 同样，避免仅存在允许访部分其他对象的“数据持有者”对象。 如果可能，最好通过 DI 请求所需的实际项目。
+* 避免在 DI 中直接存储数据和配置。 例如，用户的购物车通常不应添加到服务容器中。 配置应使用 [选项模型](xref:fundamentals/configuration/options)。 同样，避免"数据持有者"对象，也就是仅仅为实现对某些其他对象的访问而存在的对象。 如果可能的话，最好通过 DI 请求所需的实际项目。
 
 * 避免静态访问服务。
 
-* 应用程序代码中避免服务位置。
+* 避免在应用程序代码中使用服务定位。
 
 * 避免静态访问 `HttpContext`。
 
 > [!NOTE]
-> 如所有建议组合一样，你可能会遇到必须忽略一个的情况。 我们发现异常很少见，大多数是框架本身中非常特殊的情况。
+> 像任何一组建议一样，您可能会遇到需要忽略其中某一条的情况。 我们发现例外情况很罕见 - 大多数是框架本身内部非常特殊的情况。
 
-记住，依赖注入是静态/局部对象访问模式的备用方案。 如果将 DI 与静态对象访问混合，你将无法实现其好处。
+请记住，依赖注入是静态/全局对象访问模式的*替代*方法。 如果将其与静态对象访问混合使用，则无法实现 DI 的优点。
 
 ## <a name="additional-resources"></a>其他资源
 
 * [应用程序启动](xref:fundamentals/startup)
 * [测试](xref:testing/index)
 * [基于工厂的中间件激活](xref:fundamentals/middleware/extensibility)
-* [使用依赖注入在 ASP.NET Core 中编写干净代码 (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
-* [Container-Managed Application Design, Prelude: Where does the Container Belong?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)（容器托管的应用程序设计，序言：容器属于何处？）
+* [在 ASP.NET Core 中使用依赖关系注入编写干净代码 (MSDN) ](https://msdn.microsoft.com/magazine/mt703433.aspx)
+* [容器管理应用程序设计，序：容器属于何处？](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)
 * [Explicit Dependencies Principle](http://deviq.com/explicit-dependencies-principle/)（显式依赖关系原则）
-* [Inversion of Control Containers and the Dependency Injection Pattern](https://www.martinfowler.com/articles/injection.html)（控制反转容器和依赖注入模式）
+* [控制反转容器和依赖关系注入模式](https://www.martinfowler.com/articles/injection.html) (Fowler)
