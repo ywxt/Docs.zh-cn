@@ -93,7 +93,7 @@ Pages/Index2.cshtml.cs 页面模型：
 
 注意：
 
-* 默认情况下，运行时在“页面”文件夹中查找 Razor 页面文件。
+* 默认情况下，运行时在“Pages”文件夹中查找 Razor 页面文件。
 * URL 未包含页面时，`Index` 为默认页面。
 
 ## <a name="writing-a-basic-form"></a>编写基本窗体
