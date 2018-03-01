@@ -15,11 +15,11 @@ ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
 ---
-# <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>ASP.NET Core MVC 和 Entity Framework Core入门 (使用 Visual Studio) (1 / 10)
+# <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>ASP.NET Core MVC 和 Entity Framework Core 入门 (使用 Visual Studio) (1 / 10)
 
-作者：[Tom Dykstra](https://github.com/tdykstra)和[Rick Anderson](https://twitter.com/RickAndMSFT)
+作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[此处](xref:data/ef-rp/intro)提供了本教程的 Razor 页版本。 Razor 页版本更容易体现和覆盖 EF 的功能。 我们建议你学习[本教程的 Razor 页版本](xref:data/ef-rp/intro)。
+[此处](xref:data/ef-rp/intro)提供了本教程的 Razor 页版本。 Razor 页面版本更加通俗易懂，并介绍了更多 EF 功能。 我们建议你学习[本教程的 Razor 页版本](xref:data/ef-rp/intro)。
 
 Contoso 大学示例 web 应用程序演示如何使用 Entity Framework (EF) Core 2.0 和 Visual Studio 2017 创建 ASP.NET Core 2.0 MVC web 应用程序。
 
@@ -33,13 +33,13 @@ EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 �
 > * 本教程的 ASP.NET Core 1.1 版本，请参阅[本教程中 VS 2017 Update 2 版本的 PDF 文档](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf)。
 > * 有关本教程的 Visual Studio 2015 版本，请参阅 [ ASP.NET Core 文档 VS 2015 版本的 PDF 文档](https://github.com/aspnet/Docs/blob/master/aspnetcore/common/_static/aspnet-core-project-json.pdf)。
 
-## <a name="prerequisites"></a>准备
+## <a name="prerequisites"></a>系统必备
 
 [!INCLUDE[install 2.0](../../includes/install2.0.md)]
 
 ## <a name="troubleshooting"></a>疑难解答
 
-如果你遇到无法解决的问题，可以通过比较[已完成的项目](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)查找解决方案。常见错误以及对应的解决方案，请参阅[最新教程中的故障排除](advanced.md#common-errors)。 如果没有找到遇到的问题的解决方案你可以将问题发布到StackOverflow.com 的 [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core)或[EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core)版块。
+如果遇到无法解决的问题，可以通过与[已完成的项目](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)对比代码来查找解决方案。常见错误以及对应的解决方案，请参阅[最新教程中的故障排除](advanced.md#common-errors)。 如果没有找到遇到的问题的解决方案，可以将问题发布到StackOverflow.com 的 [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core)或[EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core)版块。
 
 > [!TIP] 
 > 这是一系列一共有十个教程，其中每个都是在前面教程已完成的基础上继续。请考虑在完成每一个教程后保存项目的副本。之后如果遇到问题，你可以从保存的副本中开始寻找问题，而不是从头开始。
@@ -92,7 +92,7 @@ EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 �
 
 * 添加菜单项**Students**，**Courses**，**Instructors**，和**Department**，并删除**Contact**菜单项。
 
-高亮代码显示了所做的更改。
+突出显示所做的更改。
 
 [!code-cshtml[](intro/samples/cu/Views/Shared/_Layout.cshtml?highlight=6,30,36-39,48)]
 
@@ -164,7 +164,7 @@ EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 �
 
 `Enrollments`属性是导航属性。 一个`Course`实体可以与任意数量的`Enrollment`实体相关。
 
-我们在本系列[后面的教程](complex-data-model.md)中将会有更多有关`DatabaseGenerated`特性的例子。 简单来说，此特性让您能自行指定主键，而不是让数据库自动指定主键。
+我们在本系列[后面的教程](complex-data-model.md)中会有更多有关`DatabaseGenerated`特性的例子。 简单来说，此特性让你能自行指定主键，而不是让数据库自动指定主键。
 
 ## <a name="create-the-database-context"></a>创建数据库上下文
 
@@ -180,7 +180,7 @@ EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 �
 
 在这里可以省略`DbSet<Enrollment>`和`DbSet<Course>`语句，实现的功能没有任何改变。 Entity Framework 会隐式包含这两个实体因为`Student`实体引用了`Enrollment`实体、`Enrollment`实体引用了`Course`实体。
 
-当数据库创建完成后， EF 创建一系列数据表，表名默认和`DbSet`属性名相同。  集合属性的名称一般使用复数形式，但不同的开发人员的命名习惯可能不一样，开发人员根据自己的情况确定是否使用复数形式。在最后一个 DbSet 属性之后添加以下高亮显示的代码在定义 DbSet 属性的代码之后添加下面高亮代码，对 DbContext 指定单数的表明来覆盖默认的表名。
+当数据库创建完成后， EF 创建一系列数据表，表名默认和`DbSet`属性名相同。 集合属性的名称一般使用复数形式，但不同的开发人员的命名习惯可能不一样，开发人员根据自己的情况确定是否使用复数形式。此教程在最后一个 DbSet 属性之后，添加以下高亮显示的代码，在定义 DbSet 属性的代码之后，添加下面高亮代码，对 DbContext 指定单数的表名来覆盖默认的表名。
 
 [!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_TableNames&highlight=16-21)]
 
@@ -188,7 +188,7 @@ EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 �
 
 ASP.NET Core 默认实现[依赖注入](../../fundamentals/dependency-injection.md)。 在应用程序启动过程通过依赖注入注册相关服务 （例如 EF 数据库上下文）。 需要这些服务的组件 （如 MVC 控制器） 可以通过向构造函数添加相关参数来获得对应服务。 在本教程后面你将看到控制器构造函数的代码，就是通过上述方式获得上下文实例。
 
-若要将`SchoolContext`注册为一种服务，打开*Startup.cs*，并将添加高亮代码添加到`ConfigureServices`方法中。
+若要将`SchoolContext`注册为一种服务，打开*Startup.cs*，并将高亮代码添加到`ConfigureServices`方法中。
 
 [!code-csharp[Main](intro/samples/cu/Startup.cs?name=snippet_SchoolContext&highlight=3-4)]
 
@@ -232,23 +232,23 @@ Entity Framework 已经为你创建了一个空数据库。在本部分中，你
 
 在旧版教程中，你可能会在*Startup.cs*中的`Configure`方法看到类似的代码。 我们建议你只在为了设置请求管道时使用`Configure`方法。 将应用程序启动代码放入`Main`方法。
 
-现在首次运行该应用程序，创建数据库并使用测试数据作为种子数据。 每当你更改你的数据模型，你可以删除数据库、 更新你的 Initialize 方法，然后使用上述方式更新新数据库。 在之后的教程中，你将了解如何在数据模型更改时，只需修改数据库而无需删除重建数据库。
+现在首次运行该应用程序，创建数据库并使用测试数据作为种子数据。 每当你更改数据模型时，可以删除数据库、 更新你的 Initialize 方法，然后使用上述方式更新新数据库。 在之后的教程中，你将了解如何在数据模型更改时，只需修改数据库而无需删除重建数据库。
 
 ## <a name="create-a-controller-and-views"></a>创建控制器和视图
 
-接下来，将使用 Visual Studio 中的基架引擎添加一个 MVC 控制器和使用 EF 来查询和保存数据的视图。
+接下来，将使用 Visual Studio 中的基架引擎添加一个 MVC 控制器，以及使用 EF 来查询和保存数据的视图。
 
-CRUD 操作方法和视图的自动创建被称为基架。 基架与代码生成不同，基架的代码是一个起点，您可以修改基架以满足自己需求，而你通常无需修改生成的代码。 当你需要自定义生成代码时，你使用一部分类或需求发生变化时重新生成代码。
+CRUD 操作方法和视图的自动创建被称为基架。 基架与代码生成不同，基架的代码是一个起点，可以修改基架以满足自己需求，而你通常无需修改生成的代码。 当你需要自定义生成代码时，可使用一部分类或需求发生变化时重新生成代码。
 
-* 右键单击**解决方案资源管理器**中的**Controllers**文件夹选择**添加 > 新搭建的基架项目**。
+* 右键单击**解决方案资源管理器**中的**Controllers**文件夹选择**添加 > 新搭建基架的项目**。
 
-如果显示“添加 MVC 依赖项”对话框：
+如果出现“添加 MVC 依赖项”对话框：
  
-* [更新 Visual Studio 至最新版本](https://www.visualstudio.com/downloads/)。 当 Visual Studio 版本小于 15.5 时会显示这个对话框
+* [将 Visual Studio 更新到最新版本](https://www.visualstudio.com/downloads/)。 15.5 之前的 Visual Studio 版本显示此对话框。
 
-* 如果更新失败，选择**添加**， 然后执行添加控制器的步骤。
+* 如果无法更新，请选择“添加”，然后再次按照添加控制器步骤操作。
 
-* 在**添加基架**的对话框中：
+* 在**添加基架**对话框中：
   
   * 选择**视图使用 Entity Framework 的 MVC 控制器**
 
@@ -260,7 +260,7 @@ CRUD 操作方法和视图的自动创建被称为基架。 基架与代码生�
 
   * 在**数据上下文类**选择**SchoolContext**
 
-  * 使用**StudentsController**作为默认名字
+  * 使用**StudentsController**作为默认名称
 
   * 单击**添加**
 
@@ -275,9 +275,9 @@ CRUD 操作方法和视图的自动创建被称为基架。 基架与代码生�
 
 [!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Context&highlight=5,7,9)]
 
-ASP.NET 依赖注入机制将会处理传递一个`SchoolContext`实例到控制器。 在前面的教程中已经通过修改*Startup.cs*文件来配置注入规则。
+ASP.NET 依赖注入机制会传递一个`SchoolContext`实例到控制器。 在前面的教程中已经通过修改*Startup.cs*文件来配置注入规则。
 
-控制器包含`Index`操作方法用于显示数据库中的所有学生。 该方法从学生实体集中获取学生列表，学生实体集则是通过读取数据库上下文实例中的`Students`属性获得：
+控制器包含`Index`操作方法，用于显示数据库中的所有学生。 该方法从学生实体集中获取学生列表，学生实体集则是通过读取数据库上下文实例中的`Students`属性获得：
 
 [!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ScaffoldedIndex&highlight=3)]
 
@@ -287,7 +287,7 @@ ASP.NET 依赖注入机制将会处理传递一个`SchoolContext`实例到控制
 
 [!code-cshtml[](intro/samples/cu/Views/Students/Index1.cshtml)]
 
-按 CTRL + F5 来运行该项目或从菜单选择**调试 > 开始执行（不调试）**。
+按 CTRL + F5 来运行该项目，或从菜单选择**调试 > 开始执行(不调试)**。
 
 单击学生选项卡以查看`DbInitializer.Initialize`插入的测试的数据。 你将看到`Student`选项卡链接在页的顶部或在单击右上角后的导航图标中，具体显示在哪里取决于浏览器窗口宽度。
 
@@ -297,7 +297,7 @@ ASP.NET 依赖注入机制将会处理传递一个`SchoolContext`实例到控制
 
 ## <a name="view-the-database"></a>查看数据库
 
-当你启动了应用程序，`DbInitializer.Initialize`方法调用`EnsureCreated`。 EF 没有检测到相关数据库然后自己创建了一个，接着`Initialize`方法的其余代码向数据库中填充数据。 你可以使用 Visual Studio 中的**SQL Server 对象资源管理器**(SSOX) 查看数据库。
+当你启动了应用程序，`DbInitializer.Initialize`方法调用`EnsureCreated`。 EF 没有检测到相关数据库，因此自己创建了一个，接着`Initialize`方法的其余代码向数据库中填充数据。 你可以使用 Visual Studio 中的**SQL Server 对象资源管理器**(SSOX) 查看数据库。
 
 关闭浏览器。
 
@@ -309,7 +309,7 @@ ASP.NET 依赖注入机制将会处理传递一个`SchoolContext`实例到控制
 
 ![在 SSOX 中的表](intro/_static/ssox-tables.png)
 
-右键单击**Student**表，然后单击**查看数据**若要查看已创建的列和已插入到表的行。
+右键单击**Student**表，然后单击**查看数据**，即可查看已创建的列和已插入到表的行。
 
 ![在 SSOX 中学生表](intro/_static/ssox-student-table.png)
 
@@ -321,7 +321,7 @@ ASP.NET 依赖注入机制将会处理传递一个`SchoolContext`实例到控制
 
 由于 Entity Framwork 有一定的约束条件，你只需要按规则编写很少的代码就能够创建一个完整的数据库，
 
-* `DbSet`类型的属性用作表名。 实体未被`DbSet`属性引用，实体类名称用作表名称。
+* `DbSet`类型的属性用作表名。 如果实体未被`DbSet`属性引用，实体类名称用作表名称。
 
 * 实体属性名称用于列名称。
 
@@ -329,7 +329,7 @@ ASP.NET 依赖注入机制将会处理传递一个`SchoolContext`实例到控制
 
 * 如果属性名为 *<导航属性名> <主键名>*将被解释为外键属性  (例如，`StudentID`对应`Student`导航属性，`Student`实体的主键是`ID`，所以`StudentID`被解释为外键属性).  此外也可以将外键属性命名为 *<主键属性名>*  (例如，`EnrollmentID`，由于`Enrollment`实体的主键是`EnrollmentID`，因此被解释为外键)。
 
-约定行为可以被重写。 例如，在本教程前半部分的显式指定表名称， 在本系列[后面教程](complex-data-model.md)的设置列名称和将任何属性设置为主键或外键。
+约定行为可以重写。 例如，本教程前半部分显式指定表名称， 本系列[后面教程](complex-data-model.md)则设置列名称并将任何属性设置为主键或外键。
 
 ## <a name="asynchronous-code"></a>异步代码
 
@@ -349,11 +349,11 @@ Web 服务器的可用线程是有限的，而在高负载情况下的可能所�
 
 * `await`关键字会使得编译器将方法拆分为两个部分。 第一部分是以异步方式结束已启动的操作。 第二部分是当操作完成时注入调用回调方法的地方。
 
-* `ToListAsync`是由`ToList`方法的的异步扩展版本。
+* `ToListAsync`是`ToList`方法的的异步扩展版本。
 
-你使用 Entity Framework 编写异步代码时的一些注意事项：
+使用 Entity Framework 编写异步代码时的一些注意事项：
 
-* 只有导致查询或发送数据库命令的语句才能以异步方式执行。 包括 `ToListAsync`， `SingleOrDefaultAsync`，和`SaveChangesAsync`。  不包括，操作`IQueryable`的语句，如`var students = context.Students.Where(s => s.LastName == "Davolio")`。
+* 只有导致查询或发送数据库命令的语句才能以异步方式执行。 包括 `ToListAsync`， `SingleOrDefaultAsync`，和`SaveChangesAsync`。 不包括只需更改`IQueryable`的语句，如`var students = context.Students.Where(s => s.LastName == "Davolio")`。
 
 * EF 上下文是线程不安全的： 请勿尝试并行执行多个操作。 当调用异步 EF 方法时，始终使用`await`关键字。
 
