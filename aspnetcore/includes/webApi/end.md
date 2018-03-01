@@ -14,7 +14,7 @@
 
 * 返回 201 响应。 HTTP 201 是在服务器上创建新资源的 HTTP POST 方法的标准响应。
 * 向响应添加位置标头。 位置标头指定新建的待办事项的 URI。 请参阅 [10.2.2 201 已创建](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)。
-* 使用名为 route 的“GetTodo”来创建 URL。 已在 `GetById` 中定义名为 route 的“GetTodo”：
+* 使用名为“GetTodo”的route来创建 URL。已在 `GetById` 中定义名为“GetTodo”的route ：
 
 [!code-csharp[Main](../../tutorials/first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_GetByID&highlight=1-2)]
 
