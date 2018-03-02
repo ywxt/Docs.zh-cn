@@ -98,7 +98,7 @@ Pages/Index2.cshtml.cs 页面模型：
 
 ## <a name="writing-a-basic-form"></a>编写基本窗体
 
-Razor 页面功能旨在简化 Web 浏览器常用的模式。 [模型绑定](xref:mvc/models/model-binding)、[标记帮助程序](xref:mvc/views/tag-helpers/intro)和 HTML 帮助程序均只可用于 Razor 页面类中定义的属性。 请参考为 `Contact` 模型实现基本的“联系我们”窗体的页面：
+Razor 页面功能旨在简化 Web 浏览器常用的模式。 [模型绑定](xref:mvc/models/model-binding)、[标记帮助程序](xref:mvc/views/tag-helpers/intro)和 HTML 帮助程序均只可用于 Razor 页面类中定义的属性。 请参考为 `Contact` 模型实现的基本的“联系我们”窗体页面：
 
 在本文档中的示例中，`DbContext` 在 [Startup.cs](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/razor-pages/index/sample/RazorPagesContacts/Startup.cs#L15-L16) 文件中进行初始化。
 
@@ -120,7 +120,7 @@ Pages/Create.cshtml.cs 页面模型：
 
 [!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_ALL)]
 
-按照惯例，`PageModel` 类称为 `<PageName>Model`并且它与页面位于同一个命名空间中。
+按照惯例，`PageModel` 类命名为 `<PageName>Model`并且它与页面位于同一个命名空间中。
 
 使用 `PageModel` 类，可以将页面的逻辑与其展示分离开来。 它定义了页面处理程序，用于处理发送到页面的请求和用于呈现页面的数据。 借助这种分离，可以通过[依赖关系注入](xref:fundamentals/dependency-injection)管理页面依赖关系，并对页面执行[单元测试](xref:testing/razor-pages-testing)。
 
