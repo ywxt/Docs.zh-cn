@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: 68f590dffe8bb98813f974a5ecb9b270a5419ddf
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: bcc4984efcee9a6ffd0f3b503a38089c78adf5e8
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="key-management-extensibility"></a>密钥管理扩展性
 
@@ -67,7 +67,7 @@ ms.lasthandoff: 01/30/2018
 
 `XmlKeyManager`类型是内置的具体实现`IKeyManager`。 它提供了几个有用的功能，包括密钥证书和加密对静止的密钥。 在此系统的密钥将呈现为 XML 元素 (具体而言， [XElement](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/xelement-class-overview))。
 
-`XmlKeyManager`依赖于在完成其任务的过程中的其他几个组件：
+`XmlKeyManager` 依赖于在完成其任务的过程中的其他几个组件：
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -75,17 +75,17 @@ ms.lasthandoff: 01/30/2018
 
 * `IXmlRepository`其中键将保留在存储中的控件。
 
-* `IXmlEncryptor`[可选]，这允许加密对静止的密钥。
+* `IXmlEncryptor` [可选]，这允许加密对静止的密钥。
 
-* `IKeyEscrowSink`[可选]，其提供密钥托管服务。
+* `IKeyEscrowSink` [可选]，其提供密钥托管服务。
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 * `IXmlRepository`其中键将保留在存储中的控件。
 
-* `IXmlEncryptor`[可选]，这允许加密对静止的密钥。
+* `IXmlEncryptor` [可选]，这允许加密对静止的密钥。
 
-* `IKeyEscrowSink`[可选]，其提供密钥托管服务。
+* `IKeyEscrowSink` [可选]，其提供密钥托管服务。
 
 ---
 
@@ -121,7 +121,7 @@ ms.lasthandoff: 01/30/2018
 
    *密钥检索 / GetAllKeys*
 
-实现中`GetAllKeys`、 XML 文档表示键和从基础读取吊销`IXmlRepository`。 如果这些文档进行加密，系统将自动解密。 `XmlKeyManager`创建适当`IAuthenticatedEncryptorDescriptorDeserializer`实例进行反序列化文档回`IAuthenticatedEncryptorDescriptor`实例，然后将封装在单个`IKey`实例。 此集合`IKey`实例返回给调用方。
+实现中`GetAllKeys`、 XML 文档表示键和从基础读取吊销`IXmlRepository`。 如果这些文档进行加密，系统将自动解密。 `XmlKeyManager` 创建适当`IAuthenticatedEncryptorDescriptorDeserializer`实例进行反序列化文档回`IAuthenticatedEncryptorDescriptor`实例，然后将封装在单个`IKey`实例。 此集合`IKey`实例返回给调用方。
 
 在找不到在特定的 XML 元素上的进一步信息[密钥存储格式文档](../implementation/key-storage-format.md#data-protection-implementation-key-storage-format)。
 
@@ -222,4 +222,4 @@ ms.lasthandoff: 01/30/2018
 > [!NOTE]
 > 若要运行此示例，你必须是在已加入域的 Windows 8 / Windows Server 2012 计算机和域控制器必须是 Windows Server 2012 或更高版本。
 
-[!code-csharp[Main](key-management/samples/key-management-extensibility.cs)]
+[!code-csharp[](key-management/samples/key-management-extensibility.cs)]

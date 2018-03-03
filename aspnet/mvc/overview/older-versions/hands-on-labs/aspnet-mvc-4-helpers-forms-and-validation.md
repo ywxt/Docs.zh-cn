@@ -12,34 +12,32 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 925d659f42496045089ba056e194ac977c37a8de
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 243db3708ac4311d423c4c137f503f072f5553e6
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
-<a name="aspnet-mvc-4-helpers-forms-and-validation"></a>ASP.NET MVC 4 帮助器、 窗体和验证
-====================
+# <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>ASP.NET MVC 4 帮助器、 窗体和验证
+
 通过[Web 营地团队](https://twitter.com/webcamps)
 
-> 在**ASP.NET MVC 4 模型和数据访问**动手实验中，你已被加载和显示来自数据库的数据。 在本动手实验中，你将添加到**音乐商店**应用程序编辑该数据的能力。
-> 
-> 与该目标，首先将创建将支持唱片集的创建、 读取、 更新和删除 (CRUD) 操作的控制器。 将生成利用 ASP.NET MVC 基架功能在 HTML 表中显示唱片集的属性的索引视图模板。 若要增强该视图，你将添加将截断长说明的自定义 HTML 帮助。
-> 
-> 然后，你将添加编辑和创建的视图，以便可以改变专辑在数据库中，如下拉列表的窗体元素的帮助。
-> 
-> 最后，您就可以让用户删除唱片集，也将从通过验证其输入来输入数据错误阻止它们。
-> 
-> > [!NOTE]
-> > 此动手实验假定你具有的基础知识**ASP.NET MVC**。 如果您未使用过**ASP.NET MVC**之前，我们建议你转到**ASP.NET MVC 基础知识**动手实验。
-> 
-> 
-> 此实验室将引导你完成的增强功能和前面所述通过将细微的更改应用于源文件夹中提供的示例 Web 应用程序的新功能。
-> 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)。
+[下载 Web 营地培训工具包](https://aka.ms/webcamps-training-kit)
 
+在**ASP.NET MVC 4 模型和数据访问**动手实验中，你已被加载和显示来自数据库的数据。 在本动手实验中，你将添加到**音乐商店**应用程序编辑该数据的能力。
 
-<a id="Objectives"></a>
+与该目标，首先将创建将支持唱片集的创建、 读取、 更新和删除 (CRUD) 操作的控制器。 将生成利用 ASP.NET MVC 基架功能在 HTML 表中显示唱片集的属性的索引视图模板。 若要增强该视图，你将添加将截断长说明的自定义 HTML 帮助。
+
+然后，你将添加编辑和创建的视图，以便可以改变专辑在数据库中，如下拉列表的窗体元素的帮助。
+
+最后，您就可以让用户删除唱片集，也将从通过验证其输入来输入数据错误阻止它们。
+
+此动手实验假定你具有的基础知识**ASP.NET MVC**。 如果您未使用过**ASP.NET MVC**之前，我们建议你转到**ASP.NET MVC 基础知识**动手实验。
+
+此实验室将引导你完成的增强功能和前面所述通过将细微的更改应用于源文件夹中提供的示例 Web 应用程序的新功能。
+
+> [!NOTE]
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[Microsoft 的 Web/WebCampTrainingKit 版本](https://aka.ms/webcamps-training-kit)。 特定于此实验室项目位于[ASP.NET MVC 4 帮助器、 窗体和验证](https://github.com/Microsoft-Web/HOL-MVC4HelpersFormsAndValidation)。
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>目标
@@ -659,7 +657,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
     ![在编辑页中的已验证的字段](aspnet-mvc-4-helpers-forms-and-validation/_static/image19.png)
 
-    *在编辑页中的已验证的字段*
+    在编辑页中的已验证的字段
 
 <a id="Exercise7"></a>
 

@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bootstrap
-ms.openlocfilehash: dfed5c7a8e103973048295b7607008ecc7e90eeb
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: e2ade6223cdc56a4f0f00ff0b985ceda4ab5484a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="building-beautiful-responsive-sites-with-bootstrap"></a>生成使用 Bootstrap 美观、 响应迅速站点
 
 <a name="bootstrap-index"></a>
 
-通过[Steve Smith](https://ardalis.com/)
+作者：[Steve Smith](https://ardalis.com/)
 
 Bootstrap 目前最常用的 web 框架开发响应式 web 应用程序。 无论您是在前端设计和开发或方面的专家新手，它提供大量的功能和优势，这样可以提高您的网站，用户的体验。 Bootstrap 部署为一组 CSS 和 JavaScript 文件，并旨在从手机有效地帮助你的网站或应用程序缩放，平板电脑和桌面。
 
@@ -31,7 +31,7 @@ Bootstrap 目前最常用的 web 框架开发响应式 web 应用程序。 无�
 
 添加 ASP.NET Core Bootstrap 项目是只需将其添加到*bower.json*作为依赖项：
 
-[!code-json[Main](../common/samples/WebApplication1/bower.json?highlight=5)]
+[!code-json[](../common/samples/WebApplication1/bower.json?highlight=5)]
 
 这是 Bootstrap 添加到 ASP.NET 核心项目的建议的方法。
 
@@ -60,7 +60,7 @@ Install-Package bootstrap
 
 如果您要引用的 Bootstrap 您自己的本地版本，你将需要在将使用它的所有页中引用它们。 在生产中应引用使用 CDN 的 bootstrap。 在默认 ASP.NET 站点模板中， *_Layout.cshtml*文件因此像这样：
 
-[!code-html[Main](../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=9,13,51,59)]
+[!code-html[](../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=9,13,51,59)]
 
 > [!NOTE]
 > 如果你要使用的任何 Bootstrap 的 jQuery 插件，你将需要引用 jQuery。

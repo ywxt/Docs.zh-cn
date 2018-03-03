@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: c01abed767a226eae68725c1c53d922eac2f705e
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: 5aac5cf2b8fd4bc53ba7201645b9bb02a5d1ecae
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET 核心模块配置参考
 
@@ -128,6 +128,12 @@ ASP.NET 核心模块将重定向`stdout`和`stderr`日志磁盘如果`stdoutLogE
 ```
 
 请参阅[web.config 配置](#configuration-with-webconfig)有关的示例`aspNetCore`中的元素*web.config*文件。
+
+## <a name="proxy-configuration-uses-http-protocol-and-a-pairing-token"></a>代理配置使用 HTTP 协议和配对令牌
+
+在 ASP.NET 核心模块和 Kestrel 之间创建的代理服务器使用 HTTP 协议。 使用 HTTP 是一种性能优化，其中模块和 Kestrel 之间的通信发生在上环回地址从网络接口中移出。 没有任何风险的窃听模块和 Kestrel 从服务器中移出的位置之间的通信。
+
+配对令牌用于保证 Kestrel 收到的请求已由 IIS 代理且不来自某些其他源。 创建并设置环境变量到配对的令牌 (`ASPNETCORE_TOKEN`) 由模块。 此外，配对令牌还设置到每个代理请求的标头 (`MSAspNetCoreToken`)。 IIS 中间件检查它所接收的每个请求，以确认配对令牌标头值与环境变量值相匹配。 如果令牌值不匹配，则将记录请求并拒绝该请求。 配对的令牌的环境变量和模块和 Kestrel 之间的通信无法访问从服务器中移出的位置。 如果不知道配对令牌值，攻击者就无法提交绕过 IIS 中间件中的检查的请求。
 
 ## <a name="aspnet-core-module-with-an-iis-shared-configuration"></a>ASP.NET 核心模块与 IIS 共享配置
 

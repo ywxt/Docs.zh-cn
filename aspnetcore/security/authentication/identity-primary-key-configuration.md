@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-primary-key-configuration
-ms.openlocfilehash: 66631e46640e294c934aa563518509b96f5cd158
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ff1c3aff3ea833081a25ea5fc4f2c2b65823f536
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="configure-the-aspnet-core-identity-primary-key-data-type"></a>配置 ASP.NET 核心标识主键数据类型
 
@@ -23,15 +23,15 @@ ASP.NET 核心标识可以配置用于表示为主键的数据类型。 标识�
 
 1. 创建的自定义实现[IdentityUser](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuser-1)类。 它表示要用于创建用户对象的类型。 在下面的示例中，默认值`string`类型将替换`Guid`。
 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationUser.cs?highlight=4&range=7-13)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationUser.cs?highlight=4&range=7-13)]
 
 1. 创建的自定义实现[IdentityRole](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityrole-1)类。 它表示要用于创建角色对象的类型。 在下面的示例中，默认值`string`类型将替换`Guid`。
     
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationRole.cs?highlight=3&range=7-12)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationRole.cs?highlight=3&range=7-12)]
     
 1. 创建一个自定义数据库上下文类。 它继承自用于标识的实体框架数据库上下文类。 `TUser`和`TRole`自变量引用分别在前一步骤中创建的自定义用户和角色类。 `Guid`为主键定义的数据类型。
 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Data/ApplicationDbContext.cs?highlight=3&range=9-26)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Data/ApplicationDbContext.cs?highlight=3&range=9-26)]
     
 1. 在应用程序的启动类添加身份验证服务时，请注册自定义数据库上下文类。
 
@@ -39,13 +39,13 @@ ASP.NET 核心标识可以配置用于表示为主键的数据类型。 标识�
     
     `AddEntityFrameworkStores`方法不接受`TKey`自变量，因为它未在 ASP.NET Core 1.x。 主键的数据类型推断通过分析`DbContext`对象。
     
-    [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=6-8&range=25-37)]
+    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=6-8&range=25-37)]
     
     # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
     
     `AddEntityFrameworkStores`方法接受`TKey`，该值指示主键的数据类型的自变量。
     
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=9-11&range=39-55)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=9-11&range=39-55)]
     
     ---
 
@@ -53,4 +53,4 @@ ASP.NET 核心标识可以配置用于表示为主键的数据类型。 标识�
 
 在完成配置更改，表示为主键的属性将反映新的数据类型。 下面的示例演示如何访问一个 MVC 控制器中的属性。
 
-[!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Controllers/AccountController.cs?name=snippet_GetCurrentUserId&highlight=6)]
+[!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Controllers/AccountController.cs?name=snippet_GetCurrentUserId&highlight=6)]

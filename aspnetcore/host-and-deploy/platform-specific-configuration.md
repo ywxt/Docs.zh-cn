@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/platform-specific-configuration
-ms.openlocfilehash: 2663cd1e05be9e8695966df959082e6e574d0b4a
-ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
+ms.openlocfilehash: c36b8acd6f7fcb4e4d11e43013ccaf5ca6d1b0ab
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="add-app-features-using-a-platform-specific-configuration-in-aspnet-core"></a>添加 ASP.NET 核心中使用特定于平台的配置的应用程序功能
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 02/15/2018
 
 示例应用程序读取[HostingStartupAssembliesKey](/dotnet/api/microsoft.aspnetcore.hosting.webhostdefaults.hostingstartupassemblieskey)到`string`数组并在应用程序的索引页中显示结果：
 
-[!code-csharp[Main](platform-specific-configuration/sample/HostingStartupSample/Pages/Index.cshtml.cs?name=snippet1&highlight=14-16)]
+[!code-csharp[](platform-specific-configuration/sample/HostingStartupSample/Pages/Index.cshtml.cs?name=snippet1&highlight=14-16)]
 
 ## <a name="disable-automatic-loading-of-hosting-startup-assemblies"></a>禁用托管启动程序集的自动的加载
 
@@ -49,19 +49,19 @@ ms.lasthandoff: 02/15/2018
 
 `IHostingStartup`功能部署为基于没有入口点的控制台应用程序集。 程序集引用[Microsoft.AspNetCore.Hosting.Abstractions](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.Abstractions/)包：
 
-[!code-xml[Main](platform-specific-configuration/snapshot_sample/StartupFeature.csproj)]
+[!code-xml[](platform-specific-configuration/snapshot_sample/StartupFeature.csproj)]
 
 A [HostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.hostingstartupattribute)属性将类标识的实现为`IHostingStartup`加载和执行生成时[IWebHost](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost)。 在下面的示例中，命名空间是`StartupFeature`，和类是`StartupFeatureHostingStartup`:
 
-[!code-csharp[Main](platform-specific-configuration/snapshot_sample/StartupFeature.cs?name=snippet1)]
+[!code-csharp[](platform-specific-configuration/snapshot_sample/StartupFeature.cs?name=snippet1)]
 
 类实现`IHostingStartup`。 类的[配置](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup.configure)方法使用[IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder)将功能添加到应用程序：
 
-[!code-csharp[Main](platform-specific-configuration/snapshot_sample/StartupFeature.cs?name=snippet2&highlight=3,5)]
+[!code-csharp[](platform-specific-configuration/snapshot_sample/StartupFeature.cs?name=snippet2&highlight=3,5)]
 
 生成时`IHostingStartup`项目依赖项文件 (*\*。 deps.json*) 设置`runtime`到程序集的位置*bin*文件夹：
 
-[!code-json[Main](platform-specific-configuration/snapshot_sample/StartupFeature1.deps.json?range=2-13&highlight=8)]
+[!code-json[](platform-specific-configuration/snapshot_sample/StartupFeature1.deps.json?range=2-13&highlight=8)]
 
 显示仅属于文件。 在示例中的程序集名称是`StartupFeature`。
 
@@ -69,7 +69,7 @@ A [HostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.hostingstartupattrib
 
 中指定的运行时位置 *\*。 deps.json*文件。 为活动状态的功能，`runtime`元素必须指定该功能的运行时程序集的位置。 前缀`runtime`位置与`lib/netcoreapp2.0/`:
 
-[!code-json[Main](platform-specific-configuration/snapshot_sample/StartupFeature2.deps.json?range=2-13&highlight=8)]
+[!code-json[](platform-specific-configuration/snapshot_sample/StartupFeature2.deps.json?range=2-13&highlight=8)]
 
 在示例应用中，修改 *\*。 deps.json*文件执行的[PowerShell](/powershell/scripting/powershell-scripting)脚本。 PowerShell 脚本自动触发项目文件中生成目标。
 

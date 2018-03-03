@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 2a4b5ed8a712b061b4afdf5a3adc9378dd72b37f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9d7cbb9505afb6461ba4c2087d57e9ea0da38ede
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a>身份验证和 ASP.NET Web API 中的授权
 ====================
@@ -80,7 +80,7 @@ Web API 假定该身份验证发生在主机。 对于 web 承载的该主机是
 
 Web API 提供了内置授权筛选器， [AuthorizeAttribute](https://msdn.microsoft.com/library/system.web.http.authorizeattribute.aspx)。 此筛选器检查用户进行身份验证。 否则，它将返回 HTTP 状态代码 401 （未经授权），而无需调用该操作。
 
-你可以应用筛选器全局范围内，在控制器级别，或 inidivual 操作级别。
+你可以应用筛选器全局范围内，在控制器级别，或各个操作级别。
 
 **全局**： 若要限制访问每个 Web API 控制器，请添加**AuthorizeAttribute**到全局筛选器列表的筛选器：
 

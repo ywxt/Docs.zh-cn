@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/integration-testing
-ms.openlocfilehash: 4a5f14e11de6ed91f67808c3ea8c78a7b1d43b03
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 8c28f1b4f66433eaebd9e474e784ecf3f1ac271b
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="integration-testing-in-aspnet-core"></a>在 ASP.NET Core 中测试的集成
 
-通过[Steve Smith](https://ardalis.com/)
+作者：[Steve Smith](https://ardalis.com/)
 
-集成测试可确保应用程序的组件组合在一起时正常工作。 ASP.NET 核心支持的集成测试使用单元测试框架和内置测试 web 宿主可以用于处理请求而无需网络开销。
+集成测试可确保应用程序的组件组合在一起时正常工作。 ASP.NET Core 使用单元测试框架和可用于处理请求（无网络费用）的内置测试 web 主机支持集成测试。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/testing/integration-testing/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
@@ -47,7 +47,7 @@ ASP.NET 核心包括可以添加到集成测试项目，并用于托管 ASP.NET 
 
 一次`Microsoft.AspNetCore.TestHost`包包括在项目中后，你将能够创建和配置`TestServer`在测试中。 下面的代码演示如何验证对站点的根目录的请求返回"Hello World ！" 并且应成功运行针对默认值由 Visual Studio 创建的 ASP.NET 核心空 Web 模板。
 
-[!code-csharp[Main](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebDefaultRequestShould.cs?name=snippet_WebDefault&highlight=7,16,22)]
+[!code-csharp[](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebDefaultRequestShould.cs?name=snippet_WebDefault&highlight=7,16,22)]
 
 此测试使用排列 Act 断言模式。 在创建的实例的构造函数中完成准备步骤`TestServer`。 一个已配置`WebHostBuilder`将用于创建`TestHost`; 在此示例中，`Configure`方法从待测试 (SUT) 系统`Startup`类传递给`WebHostBuilder`。 此方法将用于配置的请求管道`TestServer`到 SUT 服务器将配置方式相同。
 
@@ -55,7 +55,7 @@ ASP.NET 核心包括可以添加到集成测试项目，并用于托管 ASP.NET 
 
 现在你可以添加了几个其他集成测试，以确认检查功能主要通过 web 应用程序能否正常运行：
 
-[!code-csharp[Main](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebCheckPrimeShould.cs?name=snippet_CheckPrime)]
+[!code-csharp[](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebCheckPrimeShould.cs?name=snippet_CheckPrime)]
 
 请注意，你实际上不尝试使用这些测试进行测试的质数检查程序的正确性但而应假定 web 应用程序执行的操作，你的预期。 你已为你提供中的置信度的单元测试覆盖率`PrimeService`，如你可以在此处看到：
 
@@ -134,13 +134,13 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 > [!NOTE]
 > 因为取决于该中间件`PrimeService`服务，还所请求的构造函数使用此服务实例。 框架将提供此服务通过[依赖关系注入](xref:fundamentals/dependency-injection)，假设它已配置，例如，在`ConfigureServices`。
 
-[!code-csharp[Main](../testing/integration-testing/sample/src/PrimeWeb/Middleware/PrimeCheckerMiddleware.cs?highlight=39-63)]
+[!code-csharp[](../testing/integration-testing/sample/src/PrimeWeb/Middleware/PrimeCheckerMiddleware.cs?highlight=39-63)]
 
 由于其路径与匹配时，此中间件将充当请求委托链中的终结点，因此时不需要调用`_next.Invoke`时此中间件将处理该请求。
 
 使用位置和一些有用的扩展方法中创建以方便将其配置，重构此中间件`Configure`方法如下所示：
 
-[!code-csharp[Main](../testing/integration-testing/sample/src/PrimeWeb/Startup.cs?highlight=9&range=19-33)]
+[!code-csharp[](../testing/integration-testing/sample/src/PrimeWeb/Startup.cs?highlight=9&range=19-33)]
 
 此重构，以下确信，web 应用程序仍然正常工作和前面一样，因为所有通过集成测试。
 

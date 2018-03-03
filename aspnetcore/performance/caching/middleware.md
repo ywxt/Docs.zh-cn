@@ -9,11 +9,11 @@ ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: 29ef3cf3d8bcd6b4ebbf08d831dc146e830fa1ac
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: e9a74d8f6c3945b1bc8c62d0ab21145a7c5717fb
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>响应缓存在 ASP.NET 核心中的中间件
 
@@ -31,11 +31,11 @@ ms.lasthandoff: 02/11/2018
 
 在`ConfigureServices`，将该中间件添加到服务集合。
 
-[!code-csharp[Main](middleware/sample/Startup.cs?name=snippet1&highlight=3)]
+[!code-csharp[](middleware/sample/Startup.cs?name=snippet1&highlight=3)]
 
 配置应用程序以使用与中间件`UseResponseCaching`扩展方法，将该中间件添加到请求处理管道。 示例应用添加[ `Cache-Control` ](https://tools.ietf.org/html/rfc7234#section-5.2)最多 10 秒钟来缓存可缓存响应的响应的标头。 该示例发送[ `Vary` ](https://tools.ietf.org/html/rfc7231#section-7.1.4)标头来配置用于缓存的响应仅当该中间件[ `Accept-Encoding` ](https://tools.ietf.org/html/rfc7231#section-5.3.4)的后续请求的标头与原始请求相匹配。
 
-[!code-csharp[Main](middleware/sample/Startup.cs?name=snippet2&highlight=3,7-12)]
+[!code-csharp[](middleware/sample/Startup.cs?name=snippet2&highlight=3,7-12)]
 
 响应缓存中间件仅缓存导致状态代码为 200 （正常） 的服务器响应。 任何其他响应，包括[错误页](xref:fundamentals/error-handling)，将忽略的中间件。
 
@@ -125,10 +125,10 @@ if (responseCachingFeature != null)
 * 请求方法必须是 GET 或 HEAD。
 * 终端中间件，如[静态文件中间件](xref:fundamentals/static-files)，必须处理响应缓存中间件之前的响应。
 * `Authorization`标头不能存在。
-* `Cache-Control`标头参数必须是有效，并且必须标记为响应`public`和未标记`private`。
+* `Cache-Control` 标头参数必须是有效，并且必须标记为响应`public`和未标记`private`。
 * `Pragma: no-cache`标头不能存在如果`Cache-Control`标头不存在，作为`Cache-Control`标头重写`Pragma`标头时存在。
 * `Set-Cookie`标头不能存在。
-* `Vary`标头参数必须是有效且不等于`*`。
+* `Vary` 标头参数必须是有效且不等于`*`。
 * `Content-Length`标头值 (如果设置) 必须与匹配的响应正文的大小。
 * [IHttpSendFileFeature](/aspnet/core/api/microsoft.aspnetcore.http.features.ihttpsendfilefeature)未使用。
 * 响应不能为指定的陈旧`Expires`标头和`max-age`和`s-maxage`缓存指令。

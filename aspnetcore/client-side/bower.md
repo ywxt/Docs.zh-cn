@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: ee628ee14aa38969cdb4443718c378fd36192596
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 67695843846cfaf1619db11a7bffcc65802e0f69
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>管理 ASP.NET Core 中的 Bower 的客户端包
 
@@ -67,13 +67,13 @@ Bower 使用[语义版本控制](http://semver.org/)来组织依赖关系。 语
 
 打开*views/shared\_Layout.cshtml*文件并将字体出色的 CSS 文件添加到环境[标记帮助器](xref:mvc/views/tag-helpers/intro)为`Development`。 从解决方案资源管理器，将拖*字体 awesome.css*内`<environment names="Development">`元素。
 
-[!code-html[Main](bower/sample/_Layout.cshtml?highlight=4&range=9-13)]
+[!code-html[](bower/sample/_Layout.cshtml?highlight=4&range=9-13)]
 
 在生产应用程序会添加*字体 awesome.min.css*到环境标记帮助器`Staging,Production`。
 
 内容替换*Views\Home\About.cshtml* Razor 文件替换为以下标记：
 
-[!code-html[Main](bower/sample/About.cshtml)]
+[!code-html[](bower/sample/About.cshtml)]
 
 运行应用程序并导航到关于视图，以验证字体出色包正常运行。
 
@@ -96,7 +96,7 @@ Bower 使用[语义版本控制](http://semver.org/)来组织依赖关系。 语
 
 * 打开*bower.json*，并添加 jquery 和引导到`dependencies`部分。 生成*bower.json*文件将如下所示下面的示例。 版本将会发生更改，并且可能不匹配下图所示。
 
-[!code-json[Main](bower/sample/bower.json?highlight=5,6)]
+[!code-json[](bower/sample/bower.json?highlight=5,6)]
 
 * 保存*bower.json*文件。
 
@@ -109,7 +109,7 @@ Bower 使用[语义版本控制](http://semver.org/)来组织依赖关系。 语
 * 添加`Microsoft.AspNetCore.StaticFiles`到项目的 NuGet 包。
 * 启用静态文件提供与[静态文件中间件](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.staticfileextensions)。 添加对的调用[UseStaticFiles](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.staticfileextensions)到`Configure`方法`Startup`。
 
-[!code-csharp[Main](bower/sample/Startup.cs?highlight=9)]
+[!code-csharp[](bower/sample/Startup.cs?highlight=9)]
 
 ### <a name="reference-packages"></a>引用包
 
@@ -119,7 +119,7 @@ Bower 使用[语义版本控制](http://semver.org/)来组织依赖关系。 语
 
  内容替换*Index.html*替换为以下标记：
 
-[!code-html[Main](bower/sample/Index.html)]
+[!code-html[](bower/sample/Index.html)]
 
 * 运行应用程序并导航到`http://localhost:<port>/Index.html`。 或者，使用*Index.html*打开，按`Ctrl+Shift+W`。 验证应用 jumbotron 样式，jQuery 代码响应时单击该按钮，以及启动按钮更改状态。
 

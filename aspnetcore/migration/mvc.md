@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/mvc
-ms.openlocfilehash: 447b13eccf523cab81590405740bb194112b0dad
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: c9c9f63cd635f364d9b2e081dc051a46a44d3e4f
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>从 ASP.NET MVC 迁移到 ASP.NET 核心 MVC
 
@@ -48,17 +48,17 @@ ms.lasthandoff: 01/30/2018
 
 * 安装`Microsoft.AspNetCore.Mvc`和`Microsoft.AspNetCore.StaticFiles`NuGet 包。
 
-  `Microsoft.AspNetCore.Mvc`是 ASP.NET 核心 MVC 框架。 `Microsoft.AspNetCore.StaticFiles`是静态文件处理程序。 是一个模块化，ASP.NET 运行时，你必须显式选择中提供静态文件 (请参阅[使用静态文件](../fundamentals/static-files.md))。
+  `Microsoft.AspNetCore.Mvc` 是 ASP.NET 核心 MVC 框架。 `Microsoft.AspNetCore.StaticFiles` 是静态文件处理程序。 是一个模块化，ASP.NET 运行时，你必须显式选择中提供静态文件 (请参阅[使用静态文件](../fundamentals/static-files.md))。
 
 * 打开*.csproj*文件 (右键单击中的项目**解决方案资源管理器**和选择**编辑 WebApp1.csproj**) 并添加`PrepareForPublish`目标：
 
-  [!code-xml[Main](mvc/sample/WebApp1.csproj?range=21-23)]
+  [!code-xml[](mvc/sample/WebApp1.csproj?range=21-23)]
 
   `PrepareForPublish`目标所需的获取通过 Bower 的客户端库。 我们将讨论的更高版本。
 
 * 打开*Startup.cs*文件并将更改代码以匹配以下内容：
 
-  [!code-csharp[Main](mvc/sample/Startup.cs?highlight=14,27-34)]
+  [!code-csharp[](mvc/sample/Startup.cs?highlight=14,27-34)]
 
   `UseStaticFiles`扩展方法将添加静态文件处理程序。 如前所述，ASP.NET 运行时是一个模块化，和中，你必须显式选择要为静态文件服务。 `UseMvc`扩展方法将添加路由。 有关详细信息，请参阅[应用程序启动](../fundamentals/startup.md)和[路由](../fundamentals/routing.md)。
 
@@ -114,7 +114,7 @@ ms.lasthandoff: 01/30/2018
 
 ## <a name="controllers-and-views"></a>控制器和视图
 
-* 将每个方法复制利用 ASP.NET MVC`HomeController`对新`HomeController`。 请注意，在 ASP.NET MVC 内置模板的控制器操作方法的返回类型[ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult(v=vs.118).aspx); 在 ASP.NET 核心 MVC，操作方法返回`IActionResult`相反。 `ActionResult`实现`IActionResult`，因此无需更改你的操作方法的返回类型。
+* 将每个方法复制利用 ASP.NET MVC`HomeController`对新`HomeController`。 请注意，在 ASP.NET MVC 内置模板的控制器操作方法的返回类型[ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult(v=vs.118).aspx); 在 ASP.NET 核心 MVC，操作方法返回`IActionResult`相反。 `ActionResult` 实现`IActionResult`，因此无需更改你的操作方法的返回类型。
 
 * 复制*About.cshtml*， *Contact.cshtml*，和*Index.cshtml* Razor 视图文件从 ASP.NET MVC 项目添加到 ASP.NET 核心项目。
 
@@ -126,7 +126,7 @@ ms.lasthandoff: 01/30/2018
 
 ![联系人页面](mvc/_static/contact-page.png)
 
-请注意在缺乏样式和菜单项。 我们将在下一部分中修复此问题。
+请注意在缺乏样式和菜单项。 此问题将在下一部分得以解决。
 
 ## <a name="static-content"></a>静态内容
 
@@ -140,7 +140,7 @@ ms.lasthandoff: 01/30/2018
 
 * 添加[Bower](https://bower.io/)名为配置文件*bower.json*与项目根目录 (在项目中，右键单击，然后**添加 > 新项 > Bower 配置文件**)。 添加[Bootstrap](http://getbootstrap.com/)和[jQuery](https://jquery.com/)文件 （请参阅下面突出显示的行）。
 
-  [!code-json[Main](mvc/sample/bower.json?highlight=5-6)]
+  [!code-json[](mvc/sample/bower.json?highlight=5-6)]
 
 在保存文件，Bower 将自动下载到的依赖关系*wwwroot/lib*文件夹。 你可以使用**搜索解决方案资源管理器**框查找资产的路径：
 
@@ -187,7 +187,7 @@ ms.lasthandoff: 01/30/2018
 
 已更新*_Layout.cshtml*文件如下所示：
 
-[!code-html[Main](mvc/sample/Views/Shared/_Layout.cshtml?highlight=7,27,39-40)]
+[!code-html[](mvc/sample/Views/Shared/_Layout.cshtml?highlight=7,27,39-40)]
 
 在浏览器中查看站点。 它应现在正确加载，以就地预期的样式。
 

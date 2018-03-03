@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/configuration
-ms.openlocfilehash: f258e12a95770909bff24fd5dd3611324179596f
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: e1ee582072c88542565c5cb860e157afe137f9f0
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrating-configuration"></a>迁移配置
 
@@ -31,7 +31,7 @@ ASP.NET 核心不再使用*Global.asax*和*web.config* ASP.NET 的早期版本�
 
 有关本文中，我们开始使用中的部分迁移 ASP.NET Core 项目[上一篇文章](mvc.md)。 要设置配置中添加以下构造函数和属性*Startup.cs*文件位于项目根目录中：
 
-[!code-csharp[Main](configuration/samples/WebApp1/src/WebApp1/Startup.cs?range=11-21)]
+[!code-csharp[](configuration/samples/WebApp1/src/WebApp1/Startup.cs?range=11-21)]
 
 请注意，此时， *Startup.cs*文件将无法编译，因为我们仍需要将以下内容添加`using`语句：
 
@@ -47,7 +47,7 @@ using Microsoft.Extensions.Configuration;
 
 我们的 ASP.NET MVC 项目包含中的所需的数据库连接字符串*web.config*中`<connectionStrings>`元素。 在我们 ASP.NET Core 项目中，我们将存储此信息在*appsettings.json*文件。 打开*appsettings.json*，并记下它已包含以下：
 
-[!code-json[Main](../migration/configuration/samples/WebApp1/src/WebApp1/appsettings.json?highlight=4)]
+[!code-json[](../migration/configuration/samples/WebApp1/src/WebApp1/appsettings.json?highlight=4)]
 
 
 在突出显示的行将上面所示，将更改从数据库的名称**_CHANGE_ME**为你的数据库的名称。

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/windowsauth
-ms.openlocfilehash: c229537e7f533eea2173dbc51b8d0d0e097d434a
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: f6efd838d7b6c837c75f36591a49eab812f9d54c
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="configure-windows-authentication-in-an-aspnet-core-app"></a>在 ASP.NET Core 应用程序配置 Windows 身份验证
 
@@ -56,7 +56,7 @@ Visual Studio 项目**属性**页面的**调试**选项卡为 Windows 身份验�
 
 ## <a name="enable-windows-authentication-with-iis"></a>启用与 IIS 的 Windows 身份验证
 
-IIS 使用[ASP.NET 核心模块](xref:fundamentals/servers/aspnet-core-module)(ANCM) 来承载 ASP.NET Core 应用。 ANCM 流 Windows 身份验证到 IIS 默认情况下。 IIS，不是应用程序项目中进行配置的 Windows 身份验证。 以下部分说明如何使用 IIS 管理器来配置 ASP.NET Core 应用以使用 Windows 身份验证。
+IIS 使用[ASP.NET 核心模块](xref:fundamentals/servers/aspnet-core-module)到承载 ASP.NET Core 应用程序。 模块流 Windows 身份验证到 IIS 默认情况下。 在 IIS 中，不应用配置了 Windows 身份验证。 以下部分说明如何使用 IIS 管理器来配置 ASP.NET Core 应用以使用 Windows 身份验证。
 
 ### <a name="create-a-new-iis-site"></a>创建一个新的 IIS 站点
 
@@ -113,7 +113,7 @@ IIS 使用[ASP.NET 核心模块](xref:fundamentals/servers/aspnet-core-module)(A
 在 ASP.NET Core 2.x，`[Authorize]`属性要求中的其他配置*Startup.cs*质询对于 Windows 身份验证的匿名请求。 建议的配置略有根据正在使用的 web 服务器而有所不同。
 
 > [!NOTE]
-> 默认情况下，缺少授权可访问的页面的用户将出现一个空白文档。 [StatusCodePages 中间件](xref:fundamentals/error-handling#configuring-status-code-pages)可以配置为用户提供更好的"拒绝访问"体验。
+> 默认情况下，缺少授权可访问的页面的用户出现了空的 HTTP 403 响应。 [StatusCodePages 中间件](xref:fundamentals/error-handling#configuring-status-code-pages)可以配置为用户提供更好的"拒绝访问"体验。
 
 #### <a name="iis"></a>IIS
 

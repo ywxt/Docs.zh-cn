@@ -12,28 +12,28 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: 468f6d5dabb645b1c005680dc5a1ffc4debd63b6
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f93f51219403cd5aeca2dd3648444a84690c3d25
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
-<a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 基础知识
-====================
+# <a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 基础知识
+
 通过[Web 营地团队](https://twitter.com/webcamps)
 
-> 此动手实验开始算起 MVC （模型视图控制器） 音乐商店的介绍，并说明如何使用 ASP.NET MVC 和 Visual Studio 分步教程应用程序。 在实验室中，你将学习简单起见，尚未电源的结合使用这些技术。 你将通过简单的应用程序启动，并且将生成它，直到有一个完全正常运行的 ASP.NET MVC 4 Web 应用。
-> 
-> 此实验室适用于 ASP.NET MVC 4。
-> 
-> 如果你想要浏览的教程应用程序的 ASP.NET MVC 3 版本，你可以找到它在[MVC 音乐商店](https://github.com/evilDave/MVC-Music-Store)。
-> 
-> > [!NOTE]
-> > 此动手实验假定开发人员上可以体验可用于 Web 开发技术，如 HTML 和 JavaScript。
-> 
-> 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)。
+[下载 Web 营地培训工具包](https://aka.ms/webcamps-training-kit)
 
+此动手实验开始算起 MVC （模型视图控制器） 音乐商店的介绍，并说明如何使用 ASP.NET MVC 和 Visual Studio 分步教程应用程序。 在实验室中，你将学习简单起见，尚未电源的结合使用这些技术。 你将通过简单的应用程序启动，并且将生成它，直到有一个完全正常运行的 ASP.NET MVC 4 Web 应用。
+
+此实验室适用于 ASP.NET MVC 4。
+
+如果你想要浏览的教程应用程序的 ASP.NET MVC 3 版本，你可以找到它在[MVC 音乐商店](https://github.com/evilDave/MVC-Music-Store)。
+
+此动手实验假定开发人员上可以体验可用于 Web 开发技术，如 HTML 和 JavaScript。
+
+> [!NOTE]
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[Microsoft 的 Web/WebCampTrainingKit 版本](https://aka.ms/webcamps-training-kit)。 特定于此实验室项目位于[ASP.NET MVC 4 基础知识](https://github.com/Microsoft-Web/HOL-MVC4Fundamentals)。
 
 <a id="The_Music_Store_application"></a>
 ### <a name="the-music-store-application"></a>音乐商店应用程序
@@ -51,7 +51,7 @@ ms.lasthandoff: 01/24/2018
 
 - **模型**： 模型对象是实现域逻辑的应用程序的部件。 通常情况下，模型对象还检索和存储在数据库模型状态。
 - **视图：**视图是显示应用程序的用户界面 (UI) 的组件。 通常情况下，此 UI 会从模型数据创建。 示例将显示文本框和下拉列表基于唱片集对象的当前状态的唱片集的编辑视图。
-- **控制器：**控制器是处理用户交互，操作模型，并最终选择的视图来呈现的 UI 的组成部分。 在 MVC 应用程序，该视图仅显示信息;控制器处理，并响应用户输入和交互。
+- **控制器：**控制器是处理用户交互，操作模型，并最终选择的视图来呈现的 UI 的组成部分。 在 MVC 应用程序中，视图仅显示信息；控制器处理并响应用户输入和交互。
 
 MVC 模式可帮助你创建单独的应用程序 （输入的逻辑、 业务逻辑和 UI 逻辑），同时提供这些元素间的松散耦合的不同方面的应用程序。 这种隔离可帮助你管理复杂性，在生成应用程序，因为它使你能够专注于一次的实现的一个方面。 此外，MVC 模式可以轻松地应用程序，还鼓励测试驱动开发 (TDD) 将用于创建应用程序进行测试。
 
@@ -173,7 +173,7 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
 
 在不使用 MVC 框架的 ASP.NET 应用程序，用户交互被组织的页面，周围和围绕引发和处理这些页面中的事件。 与此相反，对 ASP.NET MVC 应用程序的用户交互是围绕控制器和其操作方法进行组织。
 
-另一方面，ASP.NET MVC framework 将 Url 映射到称为控制器的类。 控制器处理传入的请求、 处理用户输入和交互、 执行相应的应用程序逻辑和确定将发送回客户端的响应 （显示 HTML，下载的文件，将重定向到一个不同的 URL，等等。）。 对于显示 HTML，了控制器类通常调用要生成请求的 HTML 标记的单独视图组件。 在 MVC 应用程序，该视图仅显示信息;控制器处理，并响应用户输入和交互。
+另一方面，ASP.NET MVC framework 将 Url 映射到称为控制器的类。 控制器处理传入的请求、 处理用户输入和交互、 执行相应的应用程序逻辑和确定将发送回客户端的响应 （显示 HTML，下载的文件，将重定向到一个不同的 URL，等等。）。 对于显示 HTML，了控制器类通常调用要生成请求的 HTML 标记的单独视图组件。 在 MVC 应用程序中，视图仅显示信息；控制器处理并响应用户输入和交互。
 
 在此任务中，你将添加了控制器类将处理到音乐商店站点主页的 Url。
 
@@ -333,7 +333,7 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
 
     ![浏览 StoreBrowseGenre = Disco](aspnet-mvc-4-fundamentals/_static/image10.png "浏览 StoreBrowseGenre = Disco")
 
-    *浏览 /Store/Browse？流派 = Disco*
+    *Browsing /Store/Browse?Genre=Disco*
 3. 关闭浏览器。
 
 <a id="Ex3Task3"></a>
@@ -818,7 +818,7 @@ A **StoreBrowseViewModel**将用于在此任务中显示匹配所选的风格唱
     > [!NOTE]
     > 另一种方法将直接链接的页，代码如下所示：
     > 
-    > &lt;href =&quot;/存储/浏览？ 流派 =@genreName&quot;&gt;@genreName &lt; /a&gt;
+    > &lt;a href=&quot;/Store/Browse?genre=@genreName&quot;&gt;@genreName&lt;/a&gt;
     > 
     > 尽管此方法适用，则它将依赖于硬编码字符串。 如果你更高版本重命名控制器，你将需要手动更改此指令。 更好的替代方法是使用**的 HTML 帮助器**方法。 ASP.NET MVC 包括一个 HTML 帮助器方法，这是可用于此类任务。 **Html.ActionLink()**帮助器方法，可以轻松地生成 HTML  **&lt;&gt;** 链接，并确保 URL 路径正确进行 URL 编码。
     > 
@@ -895,7 +895,7 @@ A **StoreBrowseViewModel**将用于在此任务中显示匹配所选的风格唱
 #### <a name="task-1-exploring-the-aspnet-mvc-4-internet-application-template"></a>任务 1： 浏览 ASP.NET MVC 4 Internet 应用程序模板
 
 1. 如果尚未打开，启动**VS Express for Web**
-2. 选择**文件 |新 |项目**菜单命令。 在**新项目**对话框中，选择**Visual C# |Web**左窗格中的模板树，并选择**ASP.NET MVC 4 Web 应用程序**。 **名称**项目*MusicStore*和更新**解决方案名称**到*开始*，然后选择一个位置 （或保留默认值），然后单击**确定**。
+2. 选择**文件 |新 |项目**菜单命令。 在**新项目**对话框中，选择**Visual C# |Web**左窗格中的模板树，并选择**ASP.NET MVC 4 Web 应用程序**。 **名称**项目*MusicStore*和更新**解决方案名称**到*开始*，然后选择一个位置 （或保留默认值），然后单击**确定**.
 
     ![创建新的 ASP.NET MVC 4 项目](aspnet-mvc-4-fundamentals/_static/image36.png "创建新的 ASP.NET MVC 4 项目")
 

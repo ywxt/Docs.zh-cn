@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity
-ms.openlocfilehash: 0c05c636a991371b1a1feec88b5393724a6dc629
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 8cbf002a9280650a08ae8d49b5b6d23bafb8be18
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>在 ASP.NET Core 上的标识简介
 
@@ -61,23 +61,23 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 
     # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
     
-    [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-39)]
+    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-39)]
     
     这些服务都提供给应用程序通过[依赖关系注入](xref:fundamentals/dependency-injection)。
     
-    通过调用情况下，启用应用程序的标识`UseAuthentication`中`Configure`方法。 `UseAuthentication`添加了身份验证[中间件](xref:fundamentals/middleware/index)向请求管道。
+    通过调用情况下，启用应用程序的标识`UseAuthentication`中`Configure`方法。 `UseAuthentication` 添加了身份验证[中间件](xref:fundamentals/middleware/index)向请求管道。
     
-    [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
+    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
     
     # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
     
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,13-34)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,13-34)]
     
     这些服务都提供给应用程序通过[依赖关系注入](xref:fundamentals/dependency-injection)。
     
-    通过调用情况下，启用应用程序的标识`UseIdentity`中`Configure`方法。 `UseIdentity`添加了基于 cookie 的身份验证[中间件](xref:fundamentals/middleware/index)向请求管道。
+    通过调用情况下，启用应用程序的标识`UseIdentity`中`Configure`方法。 `UseIdentity` 添加了基于 cookie 的身份验证[中间件](xref:fundamentals/middleware/index)向请求管道。
         
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
     
     ---
      
@@ -100,7 +100,7 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
     
     当用户单击**注册**链接，``Register``上调用操作``AccountController``。 ``Register``操作通过调用创建用户`CreateAsync`上`_userManager`对象 (提供给``AccountController``通过依赖关系注入):
  
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
 
     如果已成功创建用户，用户记录通过调用``_signInManager.SignInAsync``。
 
@@ -112,7 +112,7 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 
     ``Login``操作调用``PasswordSignInAsync``上``_signInManager``对象 (提供给``AccountController``通过依赖关系注入)。
 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
  
     基``Controller``类会公开``User``你可以从控制器方法访问的属性。 例如，可以枚举`User.Claims`并做出授权决策。 有关详细信息，请参阅[授权](xref:security/authorization/index)。
  
@@ -120,22 +120,22 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
  
     单击**注销**链接调用`LogOut`操作。
  
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_logout&highlight=7)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_logout&highlight=7)]
  
     前面的代码调用上面`_signInManager.SignOutAsync`方法。 `SignOutAsync`方法清除在 cookie 中存储的用户的声明。
  
 <a name="pw"></a>
 6.  配置。
 
-    标识具有一些可以在应用程序的 startup 类中重写的默认行为。 `IdentityOptions`无需使用的默认行为时配置。 下面的代码设置多个密码强度选项：
+    标识具有一些可以在应用程序的 startup 类中重写的默认行为。 `IdentityOptions` 无需使用的默认行为时配置。 下面的代码设置多个密码强度选项：
 
     # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
     
-    [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-39)]
+    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-39)]
     
     # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
     
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=13-34)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=13-34)]
 
     ---
     
@@ -170,13 +170,13 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 
     # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-    打开命令窗口并导航到项目的根目录包含`.csproj`文件。 运行`dotnet run`命令以运行应用程序：
+    打开命令窗口并导航到项目的根目录包含`.csproj`文件。 运行[dotnet 运行](/dotnet/core/tools/dotnet-run)命令以运行应用程序：
 
     ```cs
     dotnet run 
     ```
 
-    浏览的输出中指定的 URL`dotnet run`命令。 URL 应指向`localhost`与生成的端口号。 导航到**有关**页。 仅经过身份验证的用户可以访问**有关**现在，页，以便 ASP.NET 将你重定向到登录页来登录或注册。
+    浏览的输出中指定的 URL [dotnet 运行](/dotnet/core/tools/dotnet-run)命令。 URL 应指向`localhost`与生成的端口号。 导航到**有关**页。 仅经过身份验证的用户可以访问**有关**现在，页，以便 ASP.NET 将你重定向到登录页来登录或注册。
 
     ---
 
@@ -186,11 +186,11 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 
 这些依赖关系需要 ASP.NET Core 应用程序中使用的标识系统：
 
-* `Microsoft.AspNetCore.Identity.EntityFrameworkCore`-包含要用于实体框架核心标识所需的类型。
+* `Microsoft.AspNetCore.Identity.EntityFrameworkCore` -包含要用于实体框架核心标识所需的类型。
 
-* `Microsoft.EntityFrameworkCore.SqlServer`实体框架的核心是用于类似于 SQL Server 关系数据库的 Microsoft 的推荐使用此数据访问技术。 对于测试，你可以使用`Microsoft.EntityFrameworkCore.InMemory`。
+* `Microsoft.EntityFrameworkCore.SqlServer` 实体框架的核心是用于类似于 SQL Server 关系数据库的 Microsoft 的推荐使用此数据访问技术。 对于测试，你可以使用`Microsoft.EntityFrameworkCore.InMemory`。
 
-* `Microsoft.AspNetCore.Authentication.Cookies`-使应用可以使用基于 cookie 的身份验证的中间。
+* `Microsoft.AspNetCore.Authentication.Cookies` -使应用可以使用基于 cookie 的身份验证的中间。
 
 ## <a name="migrating-to-aspnet-core-identity"></a>迁移到 ASP.NET 核心标识
 
@@ -205,4 +205,4 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 * [迁移身份验证和标识](xref:migration/identity)
 * [帐户确认和密码恢复](xref:security/authentication/accconfirm)
 * [使用 SMS 设置双因素身份验证](xref:security/authentication/2fa)
-* [启用使用 Facebook、Google 和其他外部提供程序的身份验证](xref:security/authentication/social/index)
+* [Facebook、 Google、 和外部提供程序身份验证](xref:security/authentication/social/index)

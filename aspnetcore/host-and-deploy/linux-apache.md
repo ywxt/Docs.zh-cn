@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 61827f456ba01ffa726f3446401156409b29111d
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: b11bc811b6aefce22b60a28afd72c2a2d0b26955
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>使用 Apache 在 Linux 上托管 ASP.NET Core
 
@@ -232,7 +232,7 @@ sudo journalctl -fu kestrel-hellomvc.service --since "2016-10-18" --until "2016-
 
 ### <a name="configure-firewall"></a>配置防火墙
 
-*Firewalld*是动态的守护程序，来管理具有对网络区域支持的防火墙。 端口和数据包筛选仍可通过 iptables 管理。 *Firewalld*默认情况下应安装。 `yum`可以用于安装包或验证已安装。
+*Firewalld*是动态的守护程序，来管理具有对网络区域支持的防火墙。 端口和数据包筛选仍可通过 iptables 管理。 *Firewalld*默认情况下应安装。 `yum` 可以用于安装包或验证已安装。
 
 ```bash
 sudo yum install firewalld -y
@@ -339,7 +339,7 @@ sudo nano /etc/httpd/conf/httpd.conf
 
 #### <a name="mime-type-sniffing"></a>MIME 类型探查
 
-`X-Content-Type-Options`标头会阻止从 Internet Explorer *MIME 探查*(正在判定文件的`Content-Type`从该文件的内容)。 如果服务器设置`Content-Type`标头到`text/html`与`nosniff`选项集，Internet Explorer 呈现作为内容`text/html`不考虑文件的内容。
+`X-Content-Type-Options`标头会阻止从 Internet Explorer *MIME 探查*(确定文件的`Content-Type`从该文件的内容)。 如果服务器设置`Content-Type`标头到`text/html`与`nosniff`选项集，Internet Explorer 呈现作为内容`text/html`不考虑文件的内容。
 
 编辑*httpd.conf*文件：
 

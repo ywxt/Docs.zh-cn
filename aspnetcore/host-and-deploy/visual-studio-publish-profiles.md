@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: 138b60d0e7c2a3d8848d534ffed854feaf0f5661
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d2c4ec317f235c6d042bd130dbf79f6cb5e2d47d
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>Visual Studio 发布 ASP.NET 核心应用程序部署的配置文件
 
@@ -109,7 +109,7 @@ MSBuild 或 Visual Studio 加载项目时，执行下列高级别操作：
 
 ## <a name="basic-command-line-publishing"></a>基本的命令行发布
 
-命令行发布适用于所有支持的.NET 核心平台，而且不需要 Visual Studio。 在下面的示例中，从项目目录（其中包含 .csproj 文件）运行 `dotnet publish` 命令。 如果未在项目文件夹中，显式传入的项目文件路径。 例如:
+命令行发布适用于所有支持的.NET 核心平台，而且不需要 Visual Studio。 在下面的示例中[dotnet 发布](/dotnet/core/tools/dotnet-publish)从项目目录运行命令 (其中包含*.csproj*文件)。 如果未在项目文件夹中，显式传入的项目文件路径。 例如:
 
 ```console
 dotnet publish c:/webs/web1
@@ -134,7 +134,7 @@ dotnet publish
 
 ---
 
-`dotnet publish` 生成类似下面的输出：
+[Dotnet 发布](/dotnet/core/tools/dotnet-publish)命令生成类似于以下输出：
 
 ```console
 C:\Webs\Web1>dotnet publish
@@ -155,7 +155,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 dotnet publish -c Release -o C:/MyWebs/test
 ```
 
-`dotnet publish`命令调用时，将调用的 MSBuild`Publish`目标。 任何参数传递给`dotnet publish`传递到 MSBuild。 `-c` 参数映射到 `Configuration` MSBuild 属性。 `-o` 参数映射到 `OutputPath`。
+[Dotnet 发布](/dotnet/core/tools/dotnet-publish)命令调用时，将调用的 MSBuild`Publish`目标。 任何参数传递给`dotnet publish`传递到 MSBuild。 `-c` 参数映射到 `Configuration` MSBuild 属性。 `-o` 参数映射到 `OutputPath`。
 
 可以使用以下格式之一传递 MSBuild 属性：
 
@@ -196,20 +196,20 @@ dotnet publish -c Release -o C:/MyWebs/test
 
 有关详细信息，请参阅[哪些发布选项适合我？](https://docs.microsoft.com/visualstudio/ide/not-in-toc/web-publish-options)。
 
-使用 Visual Studio 中，创建的发布配置文件时*属性/PublishProfiles/\<发布名称 >.pubxml*创建 MSBuild 文件。 此 .pubxml 文件为 MSBuild 文件，包含发布配置设置。 可以更改此文件为自定义生成和发布过程。 通过发布过程读取此文件。 `<LastUsedBuildConfiguration>`是特殊的因为它的全局属性，且不应是在生成中导入任何文件中。 有关详细信息，请参阅 [MSBuild：如何设置配置属性](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx)。
+使用 Visual Studio 中，创建的发布配置文件时*属性/PublishProfiles/\<发布名称 >.pubxml*创建 MSBuild 文件。 此 .pubxml 文件为 MSBuild 文件，包含发布配置设置。 可以更改此文件为自定义生成和发布过程。 通过发布过程读取此文件。 `<LastUsedBuildConfiguration>` 是特殊的因为它的全局属性，且不应是在生成中导入任何文件中。 有关详细信息，请参阅 [MSBuild：如何设置配置属性](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx)。
 *.Pubxml*文件不应签入源控件，因为它依赖于*.user*文件。 切不可将 .user 文件签入源控件，因为它可能包含敏感信息，且仅对一个用户和一台计算机有效。
 
 敏感信息（如发布密码）在每个用户/计算机级别上加密，并存储在 Properties/PublishProfiles/\<publish name>.pubxml.user 文件中。 由于此文件可能包含敏感信息，因此，不应将其签入源控件。
 
 有关如何发布 web 应用程序在 ASP.NET Core 上的概述，请参阅[主机并将其部署](index.md)。 [承载并将其部署](index.md)是在 https://github.com/aspnet/websdk 开放源项目。
 
-`dotnet publish`可以使用文件夹，MSDeploy，和[KUDU](https://github.com/projectkudu/kudu/wiki)发布配置文件：
+`dotnet publish` 可以使用文件夹，MSDeploy，和[KUDU](https://github.com/projectkudu/kudu/wiki)发布配置文件：
  
-（可跨平台运行） 的文件夹：`dotnet publish WebApplication.csproj /p:PublishProfile=<FolderProfileName>`
+（可跨平台运行） 的文件夹： `dotnet publish WebApplication.csproj /p:PublishProfile=<FolderProfileName>`
 
-MSDeploy （当前此仅适用于 windows 由于 MSDeploy 不跨平台中）：`dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployProfileName> /p:Password=<DeploymentPassword>`
+MSDeploy （当前此仅适用于 windows 由于 MSDeploy 不跨平台中）： `dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployProfileName> /p:Password=<DeploymentPassword>`
 
-MSDeploy 包 （当前此仅适用于 windows 由于 MSDeploy 不跨平台中）：`dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployPackageProfileName>`
+MSDeploy 包 （当前此仅适用于 windows 由于 MSDeploy 不跨平台中）： `dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployPackageProfileName>`
 
 在前一示例中，**不**传递`deployonbuild`到`dotnet publish`。
 
@@ -244,7 +244,7 @@ MSDeploy 包 （当前此仅适用于 windows 由于 MSDeploy 不跨平台中）
 * `dotnet build /p:DeployOnBuild=true /p:PublishProfile=FolderProfile`
 * `msbuild      /p:DeployOnBuild=true /p:PublishProfile=FolderProfile`
 
-在调用时`dotnet build`，它调用`msbuild`来运行生成和发布过程。 调用`dotnet build`或`msbuild`文件夹配置文件中传递时实质上等同。 调用时 MSBuild 直接在 Windows 上，使用 MSBuild 的.NET Framework 版本。 MSDeploy 目前仅限于在 Windows 计算机上进行发布。 在非文件夹配置文件上调用 `dotnet build` 时，会调用 MSBuild，并且 MSBuild 在非文件夹配置文件上使用 MSDeploy。 在非文件夹配置文件上调用 `dotnet build` 时，会调用 MSBuild（使用 MSDeploy）并导致失败（即使在 Windows 平台上运行也是如此）。 若要使用非文件夹配置文件进行发布，请直接调用 MSBuild。
+在调用时[dotnet 生成](/dotnet/core/tools/dotnet-build)，它调用`msbuild`来运行生成和发布过程。 调用`dotnet build`或`msbuild`文件夹配置文件中传递时实质上等同。 调用时 MSBuild 直接在 Windows 上，使用 MSBuild 的.NET Framework 版本。 MSDeploy 目前仅限于在 Windows 计算机上进行发布。 在非文件夹配置文件上调用 `dotnet build` 时，会调用 MSBuild，并且 MSBuild 在非文件夹配置文件上使用 MSDeploy。 在非文件夹配置文件上调用 `dotnet build` 时，会调用 MSBuild（使用 MSDeploy）并导致失败（即使在 Windows 平台上运行也是如此）。 若要使用非文件夹配置文件进行发布，请直接调用 MSBuild。
 
 以下文件夹发布配置文件通过 Visual Studio 创建，并被发布到网络共享：
 
@@ -332,7 +332,7 @@ msbuild "C:\Webs\Web1\Web1.csproj" /p:DeployOnBuild=true
 </ItemGroup>
 ```
 
-`<MsDeploySkipRules>`不会删除*跳过*部署站点中的目标。 `<Content>`从部署站点删除目标的文件和文件夹。 例如，假设已部署的 web 应用程序有以下文件：
+`<MsDeploySkipRules>` 不会删除*跳过*部署站点中的目标。 `<Content>` 从部署站点删除目标的文件和文件夹。 例如，假设已部署的 web 应用程序有以下文件：
 
 * *Views/Home/About1.cshtml*
 * *Views/Home/About2.cshtml*

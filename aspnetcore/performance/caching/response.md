@@ -8,11 +8,11 @@ ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: 37592c3b2099c2cb74dc42ad4a7937b32c281f65
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: c654cfd7c2d291849067bfd3297f940018ccb3d8
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>响应缓存在 ASP.NET 核心
 
@@ -91,7 +91,7 @@ ms.lasthandoff: 02/11/2018
 > [!WARNING]
 > 禁用缓存的内容，其中包含已经过身份验证的客户端的信息。 仅应为不会更改基于用户的标识或用户已登录的内容启用缓存。
 
-[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys)存储的响应因给定的查询密钥列表的值。 时的单个值`*`是响应的所有请求查询字符串参数提供该中间件而异。 `VaryByQueryKeys`需要 ASP.NET Core 1.1 或更高版本。
+[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys)存储的响应因给定的查询密钥列表的值。 时的单个值`*`是响应的所有请求查询字符串参数提供该中间件而异。 `VaryByQueryKeys` 需要 ASP.NET Core 1.1 或更高版本。
 
 必须启用响应缓存中间件设置`VaryByQueryKeys`属性; 否则，会引发一个运行时异常。 没有为相应的 HTTP 标头`VaryByQueryKeys`属性。 该属性是一项 HTTP 功能由响应缓存中间件。 若要提供缓存的响应的中间件，对于查询字符串和查询字符串值必须匹配上一个请求。 例如，考虑的请求和下表中显示结果的序列。
 
@@ -113,7 +113,7 @@ ms.lasthandoff: 02/11/2018
 
 此标头只会写入时`VaryByHeader`属性设置。 设置为`Vary`属性的值。 下面的示例使用`VaryByHeader`属性：
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet_VaryByHeader&highlight=1)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_VaryByHeader&highlight=1)]
 
 你可以查看你的浏览器的网络工具的响应标头。 下图显示了输出上边缘 F12**网络**选项卡上时`About2`刷新操作方法：
 
@@ -121,7 +121,7 @@ ms.lasthandoff: 02/11/2018
 
 ### <a name="nostore-and-locationnone"></a>NoStore 和 Location.None
 
-`NoStore`重写的大多数其他属性。 当此属性设置为`true`、`Cache-Control`标头设置为`no-store`。 如果`Location`设置为`None`:
+`NoStore` 重写的大多数其他属性。 当此属性设置为`true`、`Cache-Control`标头设置为`no-store`。 如果`Location`设置为`None`:
 
 * 将 `Cache-Control` 设置为 `no-store,no-cache`。
 * 将 `Pragma` 设置为 `no-cache`。
@@ -130,7 +130,7 @@ ms.lasthandoff: 02/11/2018
 
 通常情况下设置`NoStore`到`true`错误页上。 例如:
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet1&highlight=1)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet1&highlight=1)]
 
 这将导致以下标头：
 
@@ -148,7 +148,7 @@ Pragma: no-cache
 
 下面生成通过设置一个示例，演示标头`Duration`并保留默认值`Location`值：
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet_duration&highlight=1)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_duration&highlight=1)]
 
 这将产生以下标头：
 
@@ -162,11 +162,11 @@ Cache-Control: public,max-age=60
 
 设置缓存配置文件：
 
-[!code-csharp[Main](response/sample/Startup.cs?name=snippet1)] 
+[!code-csharp[](response/sample/Startup.cs?name=snippet1)] 
 
 引用缓存配置文件：
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet_controller&highlight=1,4)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_controller&highlight=1,4)]
 
 `ResponseCache`特性可应用于操作 （方法） 和控制器 （类）。 方法级别的属性重写在类级别特性中指定的设置。
 

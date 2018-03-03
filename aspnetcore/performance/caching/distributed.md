@@ -1,7 +1,7 @@
 ---
 title: "使用 ASP.NET Core 中分布式缓存"
 author: ardalis
-description: "了解如何使用分布式缓存来提高性能和可伸缩性的 ASP.NET Core 应用，尤其是在托管在云中或服务器场环境中时，才。"
+description: "了解如何使用 ASP.NET Core 分布式缓存以提高应用性能和可伸缩性，尤其是在云或服务器场环境。"
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: 877a3e1f8c3282fdd67a389ddf5b4ff49dea3b42
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 635c61cbb72a6a9eb822307bbc80936ee73bedc8
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="working-with-a-distributed-cache-in-aspnet-core"></a>使用 ASP.NET Core 中分布式缓存
 
-通过[Steve Smith](https://ardalis.com/)
+作者：[Steve Smith](https://ardalis.com/)
 
 分布式的缓存可以提高性能和可伸缩性的 ASP.NET Core 应用，尤其是在托管在云中或服务器场环境中。 此文章介绍了如何使用 ASP.NET 核心内置的分布式的缓存抽象和实现。
 
@@ -73,13 +73,13 @@ ms.lasthandoff: 02/01/2018
 
 下面的示例演示如何使用的实例`IDistributedCache`简单中间件组件中：
 
-[!code-csharp[Main](./distributed/sample/src/DistCacheSample/StartTimeHeader.cs?highlight=15,18,21,27,28,29,30,31)]
+[!code-csharp[](./distributed/sample/src/DistCacheSample/StartTimeHeader.cs?highlight=15,18,21,27,28,29,30,31)]
 
 在上面的代码中，缓存的值是读取，但永远不会写入。 在此示例中，值只能设置当服务器启动，并不会更改。 在多服务器方案中，最新的服务器以开始将覆盖任何以前的值已设置的其他服务器。 `Get`和`Set`方法使用`byte[]`类型。 因此，字符串必须将值转换使用`Encoding.UTF8.GetString`(有关`Get`) 和`Encoding.UTF8.GetBytes`(有关`Set`)。
 
 下面的代码从*Startup.cs*显示设置的值：
 
-[!code-csharp[Main](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=2,4,5,6&range=58-66)]
+[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=2,4,5,6&range=58-66)]
 
 > [!NOTE]
 > 由于`IDistributedCache`中配置`ConfigureServices`方法，它可供`Configure`作为参数的方法。 将其添加作为参数将允许通过 DI 提供配置的实例。
@@ -92,7 +92,7 @@ ms.lasthandoff: 02/01/2018
 
 在示例代码中，`RedisCache`时服务器配置为使用实现`Staging`环境。 因此`ConfigureStagingServices`方法配置`RedisCache`:
 
-[!code-csharp[Main](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=8,9,10,11,12,13&range=27-40)]
+[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=8,9,10,11,12,13&range=27-40)]
 
 > [!NOTE]
 > 若要在本地计算机上安装 Redis，安装 chocolatey 程序包[https://chocolatey.org/packages/redis-64/](https://chocolatey.org/packages/redis-64/)并运行`redis-server`从命令提示符。
@@ -103,7 +103,7 @@ SqlServerCache 实现允许分布式的缓存使用作为其后备存储的 SQL 
 
 若要使用 sql 缓存工具，添加`SqlConfig.Tools`到`<ItemGroup>`元素*.csproj*文件，运行 dotnet 还原。
 
-[!code-xml[Main](./distributed/sample/src/DistCacheSample/DistCacheSample.csproj?range=23-25)]
+[!code-xml[](./distributed/sample/src/DistCacheSample/DistCacheSample.csproj?range=23-25)]
 
 通过运行以下命令来测试 SqlConfig.Tools
 
@@ -125,7 +125,7 @@ C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(loc
 
 所有的缓存实现，如你的应用程序应获取和设置缓存值，使用的实例`IDistributedCache`，而不`SqlServerCache`。 此示例实现`SqlServerCache`中`Production`环境 (以便在配置`ConfigureProductionServices`)。
 
-[!code-csharp[Main](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=7,8,9,10,11,12&range=42-56)]
+[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=7,8,9,10,11,12&range=42-56)]
 
 > [!NOTE]
 > `ConnectionString` (和 （可选）`SchemaName`和`TableName`) 通常应在因为它们可能包含凭据存储在源控件 （如 UserSecrets)，之外。

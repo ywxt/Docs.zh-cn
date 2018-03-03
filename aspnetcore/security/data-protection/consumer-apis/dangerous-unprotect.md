@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/dangerous-unprotect
-ms.openlocfilehash: 584dbb545c15add4401086b9160d4bf30caf41b5
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 37332dda794f898fb866424b38394f5d4441e166
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="unprotecting-payloads-whose-keys-have-been-revoked"></a>正在取消保护已吊销其密钥的有效负载
 
@@ -30,7 +30,7 @@ ASP.NET 核心数据保护 Api 主要不用于机密负载的无限期持久性�
 > [!NOTE]
 > 并非所有`IDataProtector`实例可以强制转换为`IPersistedDataProtector`。 开发人员应使用 C# 作为运算符或类似以避免运行时异常导致通过无效强制转换，并且应在准备好正确地处理失败案例。
 
-`IPersistedDataProtector`公开以下 API 图面：
+`IPersistedDataProtector` 公开以下 API 图面：
 
 ```csharp
 DangerousUnprotect(byte[] protectedData, bool ignoreRevocationErrors,
@@ -46,4 +46,4 @@ DangerousUnprotect(byte[] protectedData, bool ignoreRevocationErrors,
 >[!WARNING]
 > 传递时应格外谨慎`ignoreRevocationErrors: true`到`DangerousUnprotect`方法。 如果调用此方法后的`wasRevoked`值是为 true，则用来保护此负载的密钥已被吊销，并且负载的真实性应被视为可疑。 在这种情况下，才继续操作操作系统上不受保护的负载，如果你具有一些单独的保障，它是可信的例如所来自的安全数据库，而不是由不受信任的 web 客户端发送。
 
-[!code-csharp[Main](dangerous-unprotect/samples/dangerous-unprotect.cs)]
+[!code-csharp[](dangerous-unprotect/samples/dangerous-unprotect.cs)]

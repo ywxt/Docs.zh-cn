@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/limited-lifetime-payloads
-ms.openlocfilehash: 812d0373d24c8578bae83db4876549246f189be3
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d631851b5b933d75c37a308f492840e3442e6f1a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="limiting-the-lifetime-of-protected-payloads"></a>限制受保护的负载的生存期
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 01/30/2018
 
 `ITimeLimitedDataProtector`接口是用于保护和取消保护的限时 / 自即将到期的负载的核心接口。 若要创建的实例`ITimeLimitedDataProtector`，你需要先正则表达式的实例[IDataProtector](overview.md)构造具有特定的用途。 一次`IDataProtector`实例可用时，调用`IDataProtector.ToTimeLimitedDataProtector`扩展方法，能获得重新保护程序内置到期功能。
 
-`ITimeLimitedDataProtector`公开以下 API 图面和扩展方法：
+`ITimeLimitedDataProtector` 公开以下 API 图面和扩展方法：
 
 * CreateProtector （字符串目的）： ITimeLimitedDataProtector-此 API 已类似于现有`IDataProtectionProvider.CreateProtector`在于它可以用于创建[目的链](purpose-strings.md)从根的限时保护程序。
 
@@ -58,4 +58,4 @@ ms.lasthandoff: 01/30/2018
 
 使用下面的示例[非 DI 代码路径](../configuration/non-di-scenarios.md)用于实例化数据保护系统的。 若要运行此示例，请确保先添加对 Microsoft.AspNetCore.DataProtection.Extensions 包的引用。
 
-[!code-csharp[Main](limited-lifetime-payloads/samples/limitedlifetimepayloads.cs)]
+[!code-csharp[](limited-lifetime-payloads/samples/limitedlifetimepayloads.cs)]

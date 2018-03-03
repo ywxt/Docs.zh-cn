@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/razor-pages-testing
-ms.openlocfilehash: 6f9e986c34f41fe96beb492680106f725bc1e2f9
-ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
+ms.openlocfilehash: 3f53924e0b36b7924d82f97a8702aa461d9ebd78
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Razor 页单元和集成测试，在 ASP.NET 核心
 
@@ -100,7 +100,7 @@ using (var db = new AppDbContext(optionsBuilder.Options))
 
 使用此方法的问题是，每个测试就会收到数据库中以前的测试中保留它的任何状态。 在尝试写入不会相互影响的原子单元测试时，这可能会产生问题。 若要强制`AppDbContext`若要对每个测试中使用新的数据库上下文，提供`DbContextOptions`基于新的服务提供程序的实例。 测试应用程序演示如何执行此操作使用其`Utilities`类方法`TestingDbContextOptions`(*tests/RazorPagesTestingSample.Tests/Utilities/Utilities.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/Utilities/Utilities.cs?name=snippet1)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/Utilities/Utilities.cs?name=snippet1)]
 
 使用`DbContextOptions`DAL 单元中测试允许每个测试运行以原子方式与全新的数据库实例：
 
@@ -119,23 +119,23 @@ using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
 
 例如，`DeleteMessageAsync`方法负责删除单个消息由其`Id`(*src/RazorPagesTestingSample/Data/AppDbContext.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/src/RazorPagesTestingSample/Data/AppDbContext.cs?name=snippet4)]
+[!code-csharp[](razor-pages-testing/sample/src/RazorPagesTestingSample/Data/AppDbContext.cs?name=snippet4)]
 
 没有为此方法的两个测试。 一个测试检查数据库中存在消息时，该方法将删除一条消息。 如果不会更改数据库的其他方法测试消息`Id`删除不存在。 `DeleteMessageAsync_MessageIsDeleted_WhenMessageIsFound`方法如下所示：
 
-[!code-csharp[Main](razor-pages-testing/sample_snapshot/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet1)]
+[!code-csharp[](razor-pages-testing/sample_snapshot/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet1)]
 
 首先，该方法执行准备步骤中，执行步骤准备发生。 获取并保存在种子设定消息`seedMessages`。 种子设定的消息会保存到数据库中。 将消息与`Id`的`1`设置为删除。 当`DeleteMessageAsync`执行方法时，预期的消息应具有所有除外与消息`Id`的`1`。 `expectedMessages`变量表示此预期的结果。
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet1)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet1)]
 
 方法是运行：`DeleteMessageAsync`执行方法中传递`recId`的`1`:
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet2)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet2)]
 
 最后，此方法获取`Messages`上下文中，并将其到`expectedMessages`两个相等的断言：
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet3)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet3)]
 
 若要比较的两个`List<Message>`相同：
 
@@ -144,7 +144,7 @@ using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
 
 类似的测试方法，`DeleteMessageAsync_NoMessageIsDeleted_WhenMessageIsNotFound`检查正在尝试删除一条消息，不存在的结果。 在这种情况下，在数据库中预期的消息应等于后的实际消息`DeleteMessageAsync`执行方法。 应没有更改数据库的内容：
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet4)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet4)]
 
 ## <a name="unit-testing-the-page-model-methods"></a>单元测试页模型方法
 
@@ -168,27 +168,27 @@ using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
 
 `OnGetAsync_PopulatesThePageModel_WithAListOfMessages`测试显示如何`GetMessagesAsync`方法模拟的页面模型：
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet1&highlight=3-4)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet1&highlight=3-4)]
 
 当`OnGetAsync`Act 步骤中执行方法时，它调用页模型`GetMessagesAsync`方法。
 
 单元测试 Act 步骤 (*tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet2)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet2)]
 
 `IndexPage` 页模型`OnGetAsync`方法 (*src/RazorPagesTestingSample/Pages/Index.cshtml.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/src/RazorPagesTestingSample/Pages/Index.cshtml.cs?name=snippet1&highlight=3)]
+[!code-csharp[](razor-pages-testing/sample/src/RazorPagesTestingSample/Pages/Index.cshtml.cs?name=snippet1&highlight=3)]
 
 `GetMessagesAsync`中 DAL 方法不返回此方法调用的结果。 该方法的模拟的版本返回的结果。
 
 在`Assert`步骤，实际的消息 (`actualMessages`) 从分配`Messages`页模型的属性。 在将消息分配时也执行类型检查。 通过进行比较的预期和实际的消息其`Text`属性。 测试断言，这两个`List<Message>`实例包含对相同消息。
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet3)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet3)]
 
 此组中的其他测试创建页包括的模型对象`DefaultHttpContext`、 `ModelStateDictionary`、`ActionContext`建立`PageContext`、 `ViewDataDictionary`，和一个`PageContext`。 这些可用于执行测试。 例如，消息应用程序建立`ModelState`错误`AddModelError`检查是否是有效`PageResult`时返回`OnPostAddMessageAsync`执行：
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet4&highlight=11,26,29,32)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet4&highlight=11,26,29,32)]
 
 ## <a name="integration-testing-the-app"></a>测试应用程序的集成
 
@@ -196,7 +196,7 @@ using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
 
 集成测试的示例的示例检查请求的消息应用程序索引页的结果 (*tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet1)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet1)]
 
 没有排列步。 `GetAsync`方法调用`HttpClient`将 GET 请求发送到终结点。 测试断言，结果是 200 OK 状态代码。
 
@@ -214,19 +214,19 @@ using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
 
 `Post_AddMessageHandler_ReturnsRedirectToRoot ` 方法 (*tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet2)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet2)]
 
 `GetRequestContentAsync`实用工具方法管理准备客户端使用 antiforgery cookie 和请求验证令牌。 请注意如何方法接收`IDictionary`允许调用测试方法通过数据用于编码以及请求验证令牌的请求中 (*tests/RazorPagesTestingSample.Tests/Utilities/Utilities.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/Utilities/Utilities.cs?name=snippet2&highlight=1-2,8-9,29)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/Utilities/Utilities.cs?name=snippet2&highlight=1-2,8-9,29)]
 
 集成测试还可以将错误数据传递给应用程序以测试应用程序的响应行为。 消息应用程序限制到 200 个字符的消息长度 (*src/RazorPagesTestingSample/Data/Message.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/src/RazorPagesTestingSample/Data/Message.cs?name=snippet1&highlight=7)]
+[!code-csharp[](razor-pages-testing/sample/src/RazorPagesTestingSample/Data/Message.cs?name=snippet1&highlight=7)]
 
 `Post_AddMessageHandler_ReturnsSuccess_WhenMessageTextTooLong`测试`Message`显式传递中带有 201"X"字符的文本。 这会导致`ModelState`错误。 发布不重定向回索引页面。 它将返回 200 OK 与`null``Location`标头 (*tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet3&highlight=7,16-17)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet3&highlight=7,16-17)]
 
 ## <a name="see-also"></a>请参阅
 

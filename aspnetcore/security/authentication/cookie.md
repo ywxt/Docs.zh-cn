@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/cookie
-ms.openlocfilehash: 1f20a2f7cab123e5a41ee1d232271da9de4c9058
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 2c08c4810a1952cc4890d46593d55f558b6ed8e9
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="using-cookie-authentication-without-aspnet-core-identity"></a>使用 Cookie 而无需 ASP.NET 核心标识的身份验证
 
@@ -33,13 +33,13 @@ ms.lasthandoff: 02/01/2018
 
 在`ConfigureServices`方法，创建具有的身份验证中间件服务`AddAuthentication`和`AddCookie`方法：
 
-[!code-csharp[Main](cookie/sample/Startup.cs?name=snippet1)]
+[!code-csharp[](cookie/sample/Startup.cs?name=snippet1)]
 
-`AuthenticationScheme`传递给`AddAuthentication`设置应用程序的默认身份验证方案。 `AuthenticationScheme`当有多个实例的 cookie 身份验证，并且希望时非常有用[授权与特定方案](xref:security/authorization/limitingidentitybyscheme)。 设置`AuthenticationScheme`到`CookieAuthenticationDefaults.AuthenticationScheme`方案提供的"Cookie"的值。 你可以提供任何字符串值，用于区分方案。
+`AuthenticationScheme` 传递给`AddAuthentication`设置应用程序的默认身份验证方案。 `AuthenticationScheme` 当有多个实例的 cookie 身份验证，并且希望时非常有用[授权与特定方案](xref:security/authorization/limitingidentitybyscheme)。 设置`AuthenticationScheme`到`CookieAuthenticationDefaults.AuthenticationScheme`方案提供的"Cookie"的值。 你可以提供任何字符串值，用于区分方案。
 
 在`Configure`方法，请使用`UseAuthentication`方法来调用设置身份验证中间件`HttpContext.User`属性。 调用`UseAuthentication`方法之前调用`UseMvcWithDefaultRoute`或`UseMvc`:
 
-[!code-csharp[Main](cookie/sample/Startup.cs?name=snippet2)]
+[!code-csharp[](cookie/sample/Startup.cs?name=snippet2)]
 
 **AddCookie 选项**
 
@@ -59,11 +59,11 @@ ms.lasthandoff: 02/01/2018
 | [DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.dataprotectionprovider?view=aspnetcore-2.0) | 集`DataProtectionProvider`用于创建默认值`TicketDataFormat`。 如果`TicketDataFormat`设置属性，`DataProtectionProvider`选项未使用。 如果未提供，则使用应用程序的默认数据保护提供程序。 |
 | [事件](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.events?view=aspnetcore-2.0) | 该处理程序在处理中的某些点提供的应用程序控制的提供程序上调用方法。 如果`Events`不提供的默认实例提供的方法在调用时不执行任何操作。 |
 | [EventsType](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions.eventstype?view=aspnetcore-2.0) | 用作服务类型，以获取`Events`实例而不是属性。 |
-| [ExpireTimeSpan](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.expiretimespan?view=aspnetcore-2.0) | `TimeSpan`后将存储在 cookie 的身份验证票证到期。 `ExpireTimeSpan`将添加到当前时间来创建票证的到期时间。 `ExpiredTimeSpan`值始终将验证由服务器加密 AuthTicket 进入。 它可能还进入[Set-cookie](https://tools.ietf.org/html/rfc6265#section-4.1)标头，但仅当`IsPersistent`设置。 若要设置`IsPersistent`到`true`，配置[AuthenticationProperties](/dotnet/api/microsoft.aspnetcore.authentication.authenticationproperties)传递给`SignInAsync`。 默认值`ExpireTimeSpan`为 14 天。 |
+| [ExpireTimeSpan](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.expiretimespan?view=aspnetcore-2.0) | `TimeSpan`后将存储在 cookie 的身份验证票证到期。 `ExpireTimeSpan` 将添加到当前时间来创建票证的到期时间。 `ExpiredTimeSpan`值始终将验证由服务器加密 AuthTicket 进入。 它可能还进入[Set-cookie](https://tools.ietf.org/html/rfc6265#section-4.1)标头，但仅当`IsPersistent`设置。 若要设置`IsPersistent`到`true`，配置[AuthenticationProperties](/dotnet/api/microsoft.aspnetcore.authentication.authenticationproperties)传递给`SignInAsync`。 默认值`ExpireTimeSpan`为 14 天。 |
 | [LoginPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.loginpath?view=aspnetcore-2.0) | 提供的路径以提供 302 找到 （URL 重定向） 时触发的`HttpContext.ChallengeAsync`。 当前生成 401 的 URL 添加到`LoginPath`作为查询字符串参数由名为`ReturnUrlParameter`。 一次请求`LoginPath`授予新登录标识，`ReturnUrlParameter`值用于将浏览器重定向回导致原始的未授权的状态代码的 URL。 默认值为 `/Account/Login`。 |
 | [LogoutPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.logoutpath?view=aspnetcore-2.0) | 如果`LogoutPath`然后对该路径的请求重定向到处理程序，提供的值基于`ReturnUrlParameter`。 默认值为 `/Account/Logout`。 |
-| [ReturnUrlParameter](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.returnurlparameter?view=aspnetcore-2.0) | 确定追加通过处理程序 302 找到 （URL 重定向） 响应的查询字符串参数的名称。 `ReturnUrlParameter`请求到达时，将使用`LoginPath`或`LogoutPath`以返回到原始的 URL 的浏览器之后执行的登录或注销操作。 默认值为 `ReturnUrl`。 |
-| [SessionStore](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.sessionstore?view=aspnetcore-2.0) | 用来存储标识跨请求可选容器。 使用时，仅一个会话标识符是发送到客户端。 `SessionStore`可以用于缓解的大型标识潜在问题。 |
+| [ReturnUrlParameter](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.returnurlparameter?view=aspnetcore-2.0) | 确定追加通过处理程序 302 找到 （URL 重定向） 响应的查询字符串参数的名称。 `ReturnUrlParameter` 请求到达时，将使用`LoginPath`或`LogoutPath`以返回到原始的 URL 的浏览器之后执行的登录或注销操作。 默认值为 `ReturnUrl`。 |
+| [SessionStore](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.sessionstore?view=aspnetcore-2.0) | 用来存储标识跨请求可选容器。 使用时，仅一个会话标识符是发送到客户端。 `SessionStore` 可以用于缓解的大型标识潜在问题。 |
 | [SlidingExpiration](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.slidingexpiration?view=aspnetcore-2.0) | 应动态发出一个标志，指示如果具有更新的到期时间的新 cookie。 这可能发生在当前的 cookie 过期时间已超过 50%过期任何请求。 向前移动新的到期日期为当前日期加上`ExpireTimespan`。 [绝对 cookie 到期时间](xref:security/authentication/cookie#absolute-cookie-expiration)可以通过使用设置`AuthenticationProperties`类调用时`SignInAsync`。 绝对到期时间可通过限制的身份验证 cookie 是有效的时间量来提高您的应用程序的安全性。 默认值为 `true`。 |
 | [TicketDataFormat](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.ticketdataformat?view=aspnetcore-2.0) | `TicketDataFormat`用于保护和取消保护的标识以及存储在 cookie 值中的其他属性。 如果未提供，`TicketDataFormat`使用创建[DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.dataprotectionprovider?view=aspnetcore-2.0)。 |
 | [验证](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions.validate?view=aspnetcore-2.0) | 检查的选项为有效的方法。 |
@@ -103,7 +103,7 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions()
 
 | 选项 | 描述 |
 | ------ | ----------- |
-| [AuthenticationScheme](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.authenticationscheme?view=aspnetcore-1.1) | 设置身份验证方案。 `AuthenticationScheme`当有多个实例的身份验证，并且希望时非常有用[授权与特定方案](xref:security/authorization/limitingidentitybyscheme)。 设置`AuthenticationScheme`到`CookieAuthenticationDefaults.AuthenticationScheme`方案提供的"Cookie"的值。 你可以提供任何字符串值，用于区分方案。 |
+| [AuthenticationScheme](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.authenticationscheme?view=aspnetcore-1.1) | 设置身份验证方案。 `AuthenticationScheme` 当有多个实例的身份验证，并且希望时非常有用[授权与特定方案](xref:security/authorization/limitingidentitybyscheme)。 设置`AuthenticationScheme`到`CookieAuthenticationDefaults.AuthenticationScheme`方案提供的"Cookie"的值。 你可以提供任何字符串值，用于区分方案。 |
 | [AutomaticAuthenticate](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.automaticauthenticate?view=aspnetcore-1.1) | 设置一个值以指示应在每个请求上运行并且尝试验证并重新构造它创建的任何序列化的主体 cookie 身份验证。 |
 | [AutomaticChallenge](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.automaticchallenge?view=aspnetcore-1.1) | 如果为 true，则身份验证中间件处理自动挑战。 如果为 false，身份验证中间件仅更改响应时显式由`AuthenticationScheme`。 |
 | [ClaimsIssuer](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.claimsissuer?view=aspnetcore-1.1) | 要用于颁发者[颁发者](/dotnet/api/system.security.claims.claim.issuer)创建 cookie 身份验证中间件的任何声明上的属性。 |
@@ -171,7 +171,7 @@ Cookie 策略中间件设置`MinimumSameSitePolicy`可能会影响你的设置�
 
 创建[ClaimsIdentity](/dotnet/api/system.security.claims.claimsidentity)与任何所需[声明](/dotnet/api/system.security.claims.claim)s 并调用[SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signinasync?view=aspnetcore-2.0)若要在用户登录：
 
-[!code-csharp[Main](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet1)]
+[!code-csharp[](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet1)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -185,7 +185,7 @@ await HttpContext.Authentication.SignInAsync(
 
 ---
 
-`SignInAsync`创建一个加密的 cookie，并将其添加到当前响应。 如果没有指定`AuthenticationScheme`，则使用默认方案。
+`SignInAsync` 创建一个加密的 cookie，并将其添加到当前响应。 如果没有指定`AuthenticationScheme`，则使用默认方案。
 
 事实上，使用的加密是 ASP.NET Core[数据保护](xref:security/data-protection/using-data-protection#security-data-protection-getting-started)系统。 如果您正在承载应用程序在多台计算机、 负载平衡应用程序，或使用 web 场，则必须[配置数据保护](xref:security/data-protection/configuration/overview)使用同一密钥链和应用程序标识符。
 
@@ -195,7 +195,7 @@ await HttpContext.Authentication.SignInAsync(
 
 若要注销当前用户，并删除其 cookie，调用[SignOutAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signoutasync?view=aspnetcore-2.0):
 
-[!code-csharp[Main](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet2)]
+[!code-csharp[](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet2)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 

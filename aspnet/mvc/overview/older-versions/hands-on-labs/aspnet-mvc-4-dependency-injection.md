@@ -12,21 +12,22 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 48a7d7fdb670aebb72450fc4eb12a364ef595c53
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c735bbdafe4b8f0423abb6bacd076f173a1be9d8
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
-<a name="aspnet-mvc-4-dependency-injection"></a>ASP.NET MVC 4 依赖关系注入
-====================
+# <a name="aspnet-mvc-4-dependency-injection"></a>ASP.NET MVC 4 依赖关系注入
+
 通过[Web 营地团队](https://twitter.com/webcamps)
 
-> [!NOTE]
-> 此动手实验假定你具有的基础知识**ASP.NET MVC**和**ASP.NET MVC 4 筛选**。 如果您未使用过**ASP.NET MVC 4 筛选**之前，我们建议你转到**ASP.NET MVC 自定义操作筛选器**动手实验。
-> 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)。
+[下载 Web 营地培训工具包](https://aka.ms/webcamps-training-kit)
 
+此动手实验假定你具有的基础知识**ASP.NET MVC**和**ASP.NET MVC 4 筛选**。 如果您未使用过**ASP.NET MVC 4 筛选**之前，我们建议你转到**ASP.NET MVC 自定义操作筛选器**动手实验。
+
+> [!NOTE]
+> 所有的示例代码和代码段都包含在 Web 营地培训工具包，可从在[Microsoft 的 Web/WebCampTrainingKit 版本](https://aka.ms/webcamps-training-kit)。 特定于此实验室项目位于[ASP.NET MVC 4 依赖关系注入](https://github.com/Microsoft-Web/HOL-MVC4DependencyInjection)。
 
 在**对象面向编程**范例，对象协同工作的协作模型其中有 contributors （参与者） 和使用者。 当然，此通信模型生成对象和组件，变得难以管理复杂性增加时之间的依赖关系。
 

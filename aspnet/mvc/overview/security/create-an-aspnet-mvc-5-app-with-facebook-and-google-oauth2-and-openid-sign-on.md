@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: ccf4329e6684d07570bfaabfaa1a570664fb2ca3
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8dc2221ea19a33f1d34ba3aae8c60e365423e140
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>创建 ASP.NET MVC 5 应用程序使用 Facebook、 Twitter、 LinkedIn 和 Google OAuth2 登录 (C#)
 ====================
@@ -114,6 +114,9 @@ ms.lasthandoff: 01/24/2018
 <a id="goog"></a>
 ## <a name="creating-a-google-app-for-oauth-2-and-connecting-the-app-to-the-project"></a>创建 oauth2 的 Google 应用和将应用程序连接到项目
 
+> [!WARNING]
+> 当前的 Google OAuth 说明，请参阅[ASP.NET 核心中的配置 Google 身份验证](/aspnet/core/security/authentication/social/google-logins)。
+
 1. 导航到[Google 开发人员控制台](https://console.developers.google.com/)。
 1. 如果你尚未创建之前的项目，选择**凭据**在左侧选项卡，然后选择**创建**。
 1. 在左侧选项卡中，单击**凭据**。
@@ -158,6 +161,9 @@ ms.lasthandoff: 01/24/2018
 
 <a id="fb"></a>
 ## <a name="creating-the-app-in-facebook-and-connecting-the-app-to-the-project"></a>在 Facebook 中创建应用并将应用程序连接到项目
+
+> [!WARNING]
+> 当前 Facebook OAuth2 身份验证说明，请参阅[配置 Facebook 身份验证](/aspnet/core/security/authentication/social/facebook-logins)
 
 对于 Facebook OAuth2 身份验证，你需要从中进行复制到你的项目的某些设置的应用程序在 Facebook 中创建。
 

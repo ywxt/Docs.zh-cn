@@ -12,23 +12,24 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 076fa87eff140a3e7ff6855e4876abac40419c57
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 353419077422516761df56f730352b19b5db5ff2
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
-<a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 模型和数据访问
-====================
+# <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 模型和数据访问
+
 通过[Web 营地团队](https://twitter.com/webcamps)
 
-> [!NOTE]
-> 此动手实验假定你具有的基础知识**ASP.NET MVC**。 如果您未使用过**ASP.NET MVC**之前，我们建议你转到**ASP.NET MVC 4 基础知识**动手实验。
-> 
-> 此实验室将引导你完成的增强功能和前面所述通过将细微的更改应用于源文件夹中提供的示例 Web 应用程序的新功能。
-> 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)。
+[下载 Web 营地培训工具包](https://aka.ms/webcamps-training-kit)
 
+此动手实验假定你具有的基础知识**ASP.NET MVC**。 如果您未使用过**ASP.NET MVC**之前，我们建议你转到**ASP.NET MVC 4 基础知识**动手实验。
+
+此实验室将引导你完成的增强功能和前面所述通过将细微的更改应用于源文件夹中提供的示例 Web 应用程序的新功能。
+
+> [!NOTE]
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[Microsoft 的 Web/WebCampTrainingKit 版本](https://aka.ms/webcamps-training-kit)。 特定于此实验室项目位于[ASP.NET MVC 4 模型和数据访问](https://github.com/Microsoft-Web/HOL-MVC4ModelsAndDataAccess)。
 
 在**ASP.NET MVC 基础知识**动手实验中，你已经传递了硬编码数据从控制器到查看模板。 但是，若要生成实际的 Web 应用程序，你可能想要使用实际的数据库。
 
@@ -38,7 +39,7 @@ ms.lasthandoff: 01/24/2018
 
 ![数据库第一个 vs。模型优先](aspnet-mvc-4-models-and-data-access/_static/image1.png "Database First vs。模型优先")
 
-*数据库第一个 vs。模型优先*
+*数据库第一个 vs。模型优先
 
 后生成模型，你会使 StoreController 为存储视图的数据库，而不是使用硬编码数据中获取的数据提供适当的调整。 不需要进行任何更改视图模板 StoreController 将返回相同的 Viewmodel 到查看模板，因为虽然此时间的数据将来自数据库。
 
@@ -325,7 +326,7 @@ ms.lasthandoff: 01/24/2018
 
     ![Web.config 文件位置](aspnet-mvc-4-models-and-data-access/_static/image19.png "Web.config 文件位置")
 
-    *Web.config 文件位置*
+    *web.config 文件位置*
 
 
     [!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]
@@ -666,12 +667,12 @@ ms.lasthandoff: 01/24/2018
 
     ![添加客户端 IP 地址](aspnet-mvc-4-models-and-data-access/_static/image41.png)
 
-    *添加客户端 IP 地址*
+    添加客户端 IP 地址
 3. 一次**客户端 IP 地址**添加到允许的 IP 地址列表中，单击**保存**以确认所做的更改。
 
     ![确认做的更改](aspnet-mvc-4-models-and-data-access/_static/image42.png)
 
-    *确认做的更改*
+    确认做的更改
 
 <a id="ApxBTask3"></a>
 
