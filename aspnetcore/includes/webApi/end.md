@@ -14,7 +14,7 @@
 
 * 返回 201 响应。 HTTP 201 是在服务器上创建新资源的 HTTP POST 方法的标准响应。
 * 向响应添加位置标头。 位置标头指定新建的待办事项的 URI。 请参阅 [10.2.2 201 已创建](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)。
-* 使用名为“GetTodo”的route来创建 URL。已在 `GetById` 中定义名为“GetTodo”的route ：
+* 使用名为 route 的“GetTodo”来创建 URL。 已在 `GetById` 中定义名为 route 的“GetTodo”：
 
 [!code-csharp[Main](../../tutorials/first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_GetByID&highlight=1-2)]
 
@@ -23,8 +23,8 @@
 ![Postman 控制台](../../tutorials/first-web-api/_static/pmc.png)
 
 * 将 HTTP 方法设置为 `POST`
-* 选择“正文”单选按钮
-* 选择“原始”单选按钮
+* 选择“Body”单选按钮
+* 选择“raw”单选按钮
 * 将类型设置为 JSON
 * 在键值编辑器中，输入一个待办事项，例如
 
@@ -35,8 +35,8 @@
 }
 ```
 
-* 选择“发送”
-* 选择下窗格中的“标头”选项卡，然后复制“位置”标头：
+* 选择“Send”
+* 选择下窗格中的“Header”选项卡，然后复制“Location”标头：
 
 ![Postman 控制台的“标头”选项卡](../../tutorials/first-web-api/_static/pmget.png)
 

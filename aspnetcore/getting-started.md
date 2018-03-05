@@ -18,7 +18,7 @@ ms.lasthandoff: 01/30/2018
 # <a name="get-started-with-aspnet-core"></a>ASP.NET Core 入门
 
 > [!NOTE]
-> 这些说明适用于 ASP.NET Core 的最新版本。 想要从早期版本开始？ 请参阅[本教程的 1.1 版本](xref:getting-started-1.1)。
+> 这些说明仅适用于 ASP.NET Core 的最新版本。 如果想要从早期版本开始？ 请参阅 [本教程的 1.1 版本](xref:getting-started-1.1)。
 
 1. 安装 [.NET Core](https://www.microsoft.com/net/core/)。
 

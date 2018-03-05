@@ -87,7 +87,7 @@ ms.lasthandoff: 01/30/2018
 
 ### <a name="add-a-controller"></a>添加控制器
 
-在解决方案资源管理器中，右键单击“控制器”文件夹。 选择“添加” > “新建项”。 在“添加新项”对话框中，选择“Web API 控制器类”模板。 将此类命名为 `TodoController`。
+在解决方案资源管理器中，右键单击 *Controllers* 文件夹。 选择 **添加** > **新建项**。 在 **添加新项** 对话框中，选择**Web API 控制器类**模板。 将此类命名为 `TodoController`。
 
 ![“添加新项”对话框，“控制器”显示在搜索框中，并且“Web API 控制器”已选中](first-web-api/_static/new_controller.png)
 
