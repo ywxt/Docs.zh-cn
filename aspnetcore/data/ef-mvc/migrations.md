@@ -15,51 +15,52 @@ ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
 ---
-# <a name="migrations---ef-core-with-aspnet-core-mvc-tutorial-4-of-10"></a>使用 EF Core 和 ASP.NET Core MVC 的迁移功能(4 / 10)
+# <a name="migrations---ef-core-with-aspnet-core-mvc-tutorial-4-of-10"></a>EF Core 和 ASP.NET Core MVC 教程 - 迁移 (4/10)
 
 
 
 作者：[Tom Dykstra](https://github.com/tdykstra)和[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC web 应用程序。 想要获取有关系列教程的信息，请参阅[第一个教程](intro.md)。
+Contoso 大学示例 web 应用程序演示如何创建使用实体框架核心和 Visual Studio 的 ASP.NET 核心 MVC web 应用程序。 有关教程系列的信息，请参阅[序列中的第一个教程](intro.md)。
 
-在本教程中，你会使用 EF Core 的迁移功能来管理数据模型的更改。 在之后的教程中，你将使用多个迁移来应对数据模型的更改。
+在本教程中，你启动使用 EF 核心迁移功能来管理数据模型更改。 在更高版本的教程中，你将添加多个迁移的数据模型更改时。
 
 ## <a name="introduction-to-migrations"></a>迁移简介
-当开发新应用程序的时候，需要频繁的更改数据模型，每次更改数据模型后，应用的数据模型会和数据库的数据模型不同步。通过之前的教程，已经学会了配置 Entity Framework 来创建一个不存在的数据库。之后每次更改数据模型——添加，删除或修改实体类或修改 DbContext 类，你都需要删除原有的数据库，然后使用 EF 的特性来创建一个新的和当前数据模型匹配的数据库，然后填充测试数据
+当你开发新的应用程序时，你的数据模型更改通常情况下，和每次将模型更改，它将获取与数据库不同步。 通过配置实体框架可以创建数据库，如果它不存在启动这些教程。 然后每次更改数据模型-添加、 删除，或更改实体类或更改您的 DbContext 类-可以删除数据库，然后 EF 创建一个新的匹配模型，并设定其种子使用测试数据。
 
-这种保持数据库与数据模型匹配的方法在你将应用部署到生产环境之前简单实用。但一旦应用被部署到生产环境中，数据库通常保存着一些重要的数据，这些数据不能轻易删除，而且作为开发者也不愿意在每次向数据表添加一列新属性的情况下执行删表重建的操作。EF Core 的迁移功能能够很好的解决这个痛点。迁移功能能够使得 EF 更新数据库模式而不是创建一个全新的数据库。
+这种使数据库与数据模型保持同步的方法适用于多种情况，但将应用程序部署到生产环境的情况除外。 当应用程序在生产环境中运行时，它通常会存储要保留的数据，同时你不想在每次更改（如添加新列）时丢失所有数据。 EF Core 迁移功能可通过使 EF 更新数据库 架构而不是创建新数据库来解决此问题。
+
 
 ## <a name="entity-framework-core-nuget-packages-for-migrations"></a>用于实现迁移功能的 Entity Framework Core NuGet 包
 
-若要使用迁移，你可以使用**程序包管理器控制台**(PMC) 或命令行 (CLI)。  本教程介绍如何使用 CLI 命令。 有关 PMC 的信息位于[本教程末尾](#pmc)。
+若要使用迁移，你可以使用**程序包管理器控制台**(PMC) 或命令行界面 (CLI)。  这些教程介绍如何使用 CLI 命令。 有关 PMC 信息位于[本教程末尾](#pmc)。
 
-[Microsoft.EntityFrameworkCore.Tools.DotNet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet) 中提供了适用于命令行接口 (CLI) 的 EF 工具。 若要安装此包，编辑*.csproj*文件中的`DotNetCliToolReference`将其添加到项目中，如下所示。 注意：必须通过编辑 .csproj 文件来安装此包；不能使用 `install-package` 命令或程序包管理器 GUI。 在**解决方案资源管理器**中右键单击项目名称并选择**编辑 ContosoUniversity.csproj**来编辑*.csproj*文件
+[Microsoft.EntityFrameworkCore.Tools.DotNet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet) 中提供了适用于命令行接口 (CLI) 的 EF 工具。 若要安装此包，将其添加到`DotNetCliToolReference`中的集合*.csproj*文件，如下所示。 注意：必须通过编辑 .csproj 文件来安装此包；不能使用 `install-package` 命令或程序包管理器 GUI。 你可以编辑*.csproj*通过右键单击中的项目名称的文件**解决方案资源管理器**并选择**编辑 ContosoUniversity.csproj**。
 
 [!code-xml[](intro/samples/cu/ContosoUniversity.csproj?range=12-15&highlight=2)]
   
-（在此示例中的版本号为撰写本教程时最新的版本号。） 
+（在此示例中的版本号为当前在撰写本教程时。） 
 
 ## <a name="change-the-connection-string"></a>更改连接字符串
 
-在*appsettings.json*文件，将连接字符串中数据库的名称更改为 ContosoUniversity2 或其他尚未使用的名称。
+在*appsettings.json*文件，将连接字符串中数据库的名称更改为 ContosoUniversity2 或尚未在所使用的计算机使用的一些其他名称。
 
 [!code-json[Main](intro/samples/cu/appsettings2.json?range=1-4)]
 
-这项设置会使得项目在第一次迁移时创建一个新的数据库。 虽然实现迁移不需要新建一个新数据库，但之后你会理解这是一个不错的主意。
+此更改将项目设置，以便第一次迁移将创建一个新的数据库。 这不是必需的入门知识迁移，但你将看到更高版本的原因是一个不错的主意。
 
 > [!NOTE]
-> 作为选择，你也可以不改变数据库连接字符串而是删除数据库。 使用**SQL Server 对象资源管理器**(SSOX) 或`database drop`CLI 命令：
+> 作为对不断变化的数据库名称的替代方法，您可以删除数据库。 使用**SQL Server 对象资源管理器**(SSOX) 或`database drop`CLI 命令：
 > ```console
 > dotnet ef database drop
 > ```
-> 接下来会介绍如何执行 CLI 命令。
+> 以下部分说明如何运行 CLI 命令。
 
 ## <a name="create-an-initial-migration"></a>创建初始迁移
 
 保存所做的更改并生成项目。 然后打开命令窗口并导航到项目文件夹。 下面是快速办法做到这一点：
 
-* 在**解决方案资源管理器**，右键单击项目，然后选择**在文件资源管理器中打开**。
+* 在**解决方案资源管理器**，右键单击项目，然后选择**在文件资源管理器中打开**从上下文菜单。
 
   ![在文件资源管理器菜单项中打开](migrations/_static/open-in-file-explorer.png)
 
@@ -84,41 +85,41 @@ Done. To undo this action, use 'ef migrations remove'
 ```
 
 > [!NOTE]
-> 如果你看到一条错误消息*No executable found matching command  dotnet-ef*，请参阅[这篇博客文章](http://thedatafarm.com/data-access/no-executable-found-matching-command-dotnet-ef/)以进行故障排除。
+> 如果你看到一条错误消息*任何可执行文件找到匹配命令 dotnet 的 ef*，请参阅[这篇博客文章](http://thedatafarm.com/data-access/no-executable-found-matching-command-dotnet-ef/)以帮助进行故障排除。
 
-如果你看到一条错误消息"*cannot access the file ... ContosoUniversity.dll because it is being used by another process.*"，在 Windows 系统任务栏中，查找 IIS Express 图标并右键单击它，然后单击**ContosoUniversity > 停止站点**。
+如果你看到一条错误消息"*无法访问文件...ContosoUniversity.dll 由于另一个进程正在使用。*"，在 Windows 系统任务栏中，查找 IIS Express 图标并右键单击它，然后单击**ContosoUniversity > 停止站点**。
 
-## <a name="examine-the-up-and-down-methods"></a>检查 Up 和 Down 方法
+## <a name="examine-the-up-and-down-methods"></a>检查向上和向下方法
 
-当执行`migrations add`命令时，EF 将生成创建数据库的代码。 此代码位于*Migrations*文件夹中，在名为*\<时间戳 > _InitialCreate.cs*的文件内。 `InitialCreate`类中的`Up`方法创建对应数据模型实体集的数据表，而`Down`方法删除对应的表，如下面的示例中所示。
+当执行`migrations add`命令时，EF 生成将从头开始创建数据库的代码。 此代码位于*迁移*文件夹中，在名为的文件*\<时间戳 > _InitialCreate.cs*。 `Up`方法`InitialCreate`类创建对应的数据模型实体集，将数据库表和`Down`方法删除它们，如下面的示例中所示。
 
 [!code-csharp[Main](intro/samples/cu/Migrations/20170215220724_InitialCreate.cs?range=92-118)]
 
-迁移通过调用`Up`方法来实现数据模型的更改。 当你输入命令回滚时，迁移调用`Down`方法。
+迁移调用`Up`方法以实现迁移的数据模型更改。 当你输入命令回滚更新，迁移调用`Down`方法。
 
-当输入`migrations add InitialCreate`命令命令时，此代码被用于初始化迁移。迁移的 name 参数 (如在示例中的"InitialCreate") 仅仅用作文件名称，因而可以取任何名称。 最好选择能够概括迁移内容的单词或短语。 例如，你可能会将之后的迁移吗命名为"AddDepartmentTable"。
+此代码适用于你输入时创建的初始迁移`migrations add InitialCreate`命令。 迁移 name 参数 (如在示例中的"InitialCreate") 使用的文件名称，并可以是任何所需内容。 最好选择的单词或短语，总结了中迁移正在进行的内容。 例如，你可能会将更高版本的迁移"AddDepartmentTable"。
 
-如果创建初始迁移时数据库已存在，依然会生成数据库创建代码但不会被运行，因为数据库已与数据模型相匹配。 当应用部署到另一个环境中，并且数据库不存在时，此代码将被执行并用于创建数据库，因此事先测试该方法是有必要的。 这就是为什么在之前更改了数据库连接字符串（测试从头开始创建数据库）。
+如果数据库已存在时创建初始迁移，则生成的数据库创建代码，但它无需运行，因为数据库已与匹配的数据模型。 时应用部署到另一个环境，其中数据库不存在，请运行此代码将创建数据库时，因此它会先测试一个好办法。 这就是为什么以便迁移可以创建一个从零开始的新更改连接字符串前面-中数据库的名称。
 
 ## <a name="examine-the-data-model-snapshot"></a>检查数据模型快照
 
-迁移还会对当前数据库模式创建*快照*，并保存在*Migrations/SchoolContextModelSnapshot.cs*中。 代码如下所示：
+迁移还会创建*快照*中的当前数据库架构*Migrations/SchoolContextModelSnapshot.cs*。 下面是该代码如下所示：
 
 [!code-csharp[Main](intro/samples/cu/Migrations/SchoolContextModelSnapshot1.cs?name=snippet_Truncate)]
 
-以代码表示当前的数据库模式， EF Core 不需要与数据库交互就能够创建迁移。当添加迁移时，EF 通过比较快照文件的数据模型确定更改的内容。 当数据库需要更新时，EF 才会与数据库交互。 
+以代码表示为当前的数据库架构，因为 EF 核心没有与要创建迁移的数据库进行交互。 当添加迁移时，EF 确定通过比较快照文件的数据模型更改的内容。 仅当有更新数据库时，EF 与数据库交互。 
 
-快照文件会和创建它的迁移保持同步，因此不能只删除名为*\<时间戳 > _\<migrationname >.cs*的文件来删除迁移。 如果你只删除该文件，剩余的迁移将与数据库快照文件不同步。 若要删除你最后添加的迁移，可以使用[dotnet ef migrations remove](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove)命令。
+快照文件必须保持与创建它，因此不能只需通过删除名为的文件中删除迁移的迁移同步*\<时间戳 > _\<migrationname >.cs*。 如果你删除该文件，将剩余的迁移将与数据库快照文件不同步。 若要删除你添加的最后一个迁移，使用[dotnet ef 迁移删除](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove)命令。
 
-## <a name="apply-the-migration-to-the-database"></a>对数据库应用迁移
+## <a name="apply-the-migration-to-the-database"></a>适用于数据库的迁移
 
-在命令窗口中，输入以下命令创建数据库和表。
+在命令窗口中，输入以下命令以在其中创建数据库和表。
 
 ```console
 dotnet ef database update
 ```
 
-该命令的输出和`migrations add`命令的输出类似时，除此之外你还可以看到设置数据库的 SQL 命令的日志。 在下面的示例输出中，大部分日志被省略。 如果你不希望查看如此详细的日志消息，你可以修改*appsettings.Development.json*文件来更改日志级别。 有关详细信息，请参阅[日志记录简介](xref:fundamentals/logging)。
+该命令的输出是类似于`migrations add`命令时，只不过你请参阅日志，以将数据库设置的 SQL 命令。 在下面的示例输出中，大部分日志被省略。 如果你不希望查看此级别的日志消息中的详细信息，你可以更改中的日志级别*appsettings。Development.json*文件。 有关详细信息，请参阅[简介日志记录](xref:fundamentals/logging/index)。
 
 ```text
 info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
@@ -145,28 +146,28 @@ info: Microsoft.EntityFrameworkCore.Database.Command[200101]
 Done.
 ```
 
-使用**SQL Server 对象资源管理器**检查数据库。  你会注意到 __EFMigrationsHistory 表，这张表用于跟踪已应用于数据库的迁移。 查看该表中的数据，你将看到第一次迁移的行。 （前面 CLI 输出的日志示例中演示了创建此行的 INSERT 语句。）
+使用**SQL Server 对象资源管理器**检查数据库，就像在第一个教程。  你会注意到 __EFMigrationsHistory 表，用于跟踪的哪些迁移已应用于数据库的添加。 查看该表中的数据，你将看到第一次迁移一个行。 （前面的 CLI 输出示例中的最后一个日志演示创建此行的 INSERT 语句。）
 
-运行应用程序验证内容和之前相同。
+运行应用程序以验证所有内容仍适用之前相同。
 
 ![学生索引页](migrations/_static/students-index.png)
 
 <a id="pmc"></a>
-## <a name="command-line-interface-cli-vs-package-manager-console-pmc"></a>命令行界面 (CLI) vs. 程序包管理器控制台 (PMC)
+## <a name="command-line-interface-cli-vs-package-manager-console-pmc"></a>命令行界面 (CLI) vs。程序包管理器控制台 (PMC)
 
-管理迁移的 EF 工具可从.NET Core CLI 命令或从 Visual Studio **程序包管理器控制台**(PMC) 窗口中的 PowerShell cmdlet 中运行。 本教程演示如何使用 CLI，也可以根据自己的喜好使用 PMC。
+EF 工具，可从.NET 核心 CLI 命令或从 Visual Studio 中的 PowerShell cmdlet 管理迁移为**程序包管理器控制台**(PMC) 窗口。 本教程演示如何使用 CLI，但如果你愿意，可以使用 PMC。
 
-PMC 命令中的 EF 命令在[Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools)包中。 此包已包含在[Microsoft.AspNetCore.All](xref:fundamentals/metapackage) 的包中，因此你不必安装它。
+PMC 命令的 EF 命令处于[Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools)包。 此包已包含在[Microsoft.AspNetCore.All](xref:fundamentals/metapackage) metapackage，因此你不必安装它。
 
-**重要说明：**这和通过编辑*.csproj*文件为 cli 安装的包不相同。 此包名以`Tools`结尾，与以`Tools.DotNet`结尾的 CLI 包名称不同。
+**重要说明：**这不的是通过编辑的 cli 安装与相同的包*.csproj*文件。 此名称以结尾`Tools`，与中结束的 CLI 包名称不同`Tools.DotNet`。
 
-有关 CLI 命令的详细信息，请参阅[.NET Core CLI](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet)。 
+有关 CLI 命令的详细信息，请参阅[.NET 核心 CLI](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet)。
 
 有关 PMC 命令的详细信息，请参阅[Package Manager Console (Visual Studio)](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell)。
 
 ## <a name="summary"></a>总结
 
-在本教程中，你已了解如何创建并应用迁移。 在下一个的教程中，将会开始通过扩展数据模型来学习更高级的主题。 此过程将创建并应用其他的迁移。
+本教程介绍了如何创建并应用第一个迁移。下一个教程将开始通过扩展数据模型来学习更高级的主题。此过程将创建并应用其他的迁移。
 
 >[!div class="step-by-step"]
 [上一页](sort-filter-page.md)
