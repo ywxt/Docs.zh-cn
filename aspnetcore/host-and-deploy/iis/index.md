@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 620bfefa625f4b39cb2731b4f553caaa4526c71b
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: b1ca9303c620597f7844c401048129044e99d7be
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -45,6 +45,8 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
+ASP.NET Core 模块生成分配给后端进程的动态端口。 `UseIISIntegration` 方法获取该动态端口，并将 Kestrel 配置为侦听 `http://locahost:{dynamicPort}/`。 这将替代其他 URL 配置，如对 `UseUrls` 或 [Kestrel 的侦听 API](xref:fundamentals/servers/kestrel#endpoint-configuration) 的调用。 因此，使用模块时，不需要调用 `UseUrls` 或 Kestrel 的 `Listen` API。 如果调用 `UseUrls` 或 `Listen`，则 Kestrel 会侦听在没有 IIS 的情况下运行应用时指定的端口。
+
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 在应用依赖项中加入对 [Microsoft.AspNetCore.Server.IISIntegration ](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.IISIntegration/)包的依赖项。 通过向 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 添加 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 扩展方法来使用 IIS 集成中间件：
@@ -57,6 +59,10 @@ var host = new WebHostBuilder()
 ```
 
 同时需要 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) 和 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration)。 调用 `UseIISIntegration` 的代码不会影响代码可移植性。 如果应用不在 IIS 后面运行（例如，应用直接在 Kestrel 上运行），则 `UseIISIntegration` 不会运行。
+
+ASP.NET Core 模块生成分配给后端进程的动态端口。 `UseIISIntegration` 方法获取该动态端口，并将 Kestrel 配置为侦听 `http://locahost:{dynamicPort}/`。 这将替代其他 URL 配置，如对 `UseUrls` 的调用。 因此，使用模块时无需调用 `UseUrls`。 如果调用 `UseUrls`，则 Kestrel 会侦听在没有 IIS 的情况下运行应用时指定的端口。
+
+如果在 ASP.NET Core 1.0 应用中调用 `UseUrls`，请在调用 `UseIISIntegration` 前调用它，使模块配置的端口不会被覆盖。 ASP.NET Core 1.1 不需要此调用顺序，因为模块设置会重写 `UseUrls`。
 
 ---
 
@@ -164,6 +170,8 @@ ASP.NET Core 应用在 IIS 与 Kestrel 服务器之间的反向代理中托管�
 1. 在托管系统上安装 [.NET Core Windows Server 托管捆绑包](https://aka.ms/dotnetcore-2-windowshosting)。 捆绑包可安装 .NET Core 运行时、.NET Core 库和 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)。 该模块创建 IIS 与 Kestrel 服务器之间的反向代理。 如果系统没有 Internet 连接，请先获取并安装 [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840)，再安装 .NET Core Windows Server 托管捆绑包。
 
    **重要提示！** 如果在 IIS 之前安装了托管捆绑包，则必须修复捆绑包安装。 在安装 IIS 后再次运行托管捆绑包安装程序。
+   
+   若要防止安装程序在 x64 操作系统上安装 x86 程序包，请通过管理员命令提示符使用开关 `OPT_NO_X86=1` 来运行安装程序。
 
 1. 重启系统，或从命令提示符处依次执行 net stop was /y 和 net start w3svc。 重新启动 IIS 将选取安装程序对系统 PATH 所作的更改。
 

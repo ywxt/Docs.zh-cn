@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 158f11875f22f8f9dba6f7f109123717b9da8d18
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 5d236c79120d79195c1970cc87d164002b56d0f1
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 中间件
 
@@ -44,13 +44,13 @@ ASP.NET Core 请求管道包含一系列相继调用的请求委托，如下图�
 
 尽可能简单的 ASP.NET Core 应用设置了处理所有请求的单个请求委托。 这种情况不包括实际请求管道。 调用单个匿名函数以响应每个 HTTP 请求。
 
-[!code-csharp[Main](index/sample/Middleware/Startup.cs)]
+[!code-csharp[](index/sample/Middleware/Startup.cs)]
 
 第一个 [app.Run](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions) 委托终止了管道。
 
 可使用 [app.Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions) 将多个请求委托链接在一起。 `next` 参数表示管道中的下一个委托。 （请记住，可通过不调用 next 参数使管道短路。）通常可在下一个委托前后执行操作，如以下示例所示：
 
-[!code-csharp[Main](index/sample/Chain/Startup.cs?name=snippet1)]
+[!code-csharp[](index/sample/Chain/Startup.cs?name=snippet1)]
 
 >[!WARNING]
 > 在向客户端发送响应后，请勿调用 `next.Invoke`。 响应启动后，针对 `HttpResponse` 的更改将引发异常。 例如，设置标头、状态代码等更改将引发异常。 调用 `next` 后写入响应正文：
@@ -142,7 +142,7 @@ public void Configure(IApplicationBuilder app)
 
 `Map*` 扩展用作约定来创建管道分支。 [Map](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) 基于给定请求路径的匹配项来创建请求管道分支。 如果请求路径以给定路径开头，则执行分支。
 
-[!code-csharp[Main](index/sample/Chain/StartupMap.cs?name=snippet1)]
+[!code-csharp[](index/sample/Chain/StartupMap.cs?name=snippet1)]
 
 下表使用前面的代码显示来自 `http://localhost:1234` 的请求和响应：
 
@@ -157,7 +157,7 @@ public void Configure(IApplicationBuilder app)
 
 [MapWhen](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapwhenextensions) 基于给定谓词的结果创建请求管道分支。 `Func<HttpContext, bool>` 类型的任何谓词均可用于将请求映射到管道的新分支。 在以下示例中，谓词用于检测查询字符串变量 `branch` 是否存在：
 
-[!code-csharp[Main](index/sample/Chain/StartupMapWhen.cs?name=snippet1)]
+[!code-csharp[](index/sample/Chain/StartupMapWhen.cs?name=snippet1)]
 
 下表使用前面的代码显示来自 `http://localhost:1234` 的请求和响应：
 
@@ -212,7 +212,7 @@ ASP.NET Core 附带以下中间件组件，以及用于添加这些组件的顺�
 
 通常，中间件封装在类中，并且通过扩展方法公开。 请考虑以下中间件，该中间件通过查询字符串设置当前请求的区域性：
 
-[!code-csharp[Main](index/sample/Culture/StartupCulture.cs?name=snippet1)]
+[!code-csharp[](index/sample/Culture/StartupCulture.cs?name=snippet1)]
 
 注意：以上示例代码用于演示创建中间件组件。 有关 ASP.NET Core 的内置本地化支持，请参阅[全球化和本地化](xref:fundamentals/localization)。
 
@@ -220,15 +220,15 @@ ASP.NET Core 附带以下中间件组件，以及用于添加这些组件的顺�
 
 以下代码将中间件委托移动到类：
 
-[!code-csharp[Main](index/sample/Culture/RequestCultureMiddleware.cs)]
+[!code-csharp[](index/sample/Culture/RequestCultureMiddleware.cs)]
 
 以下扩展方法通过 [IApplicationBuilder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.iapplicationbuilder) 公开中间件：
 
-[!code-csharp[Main](index/sample/Culture/RequestCultureMiddlewareExtensions.cs)]
+[!code-csharp[](index/sample/Culture/RequestCultureMiddlewareExtensions.cs)]
 
 以下代码通过 `Configure` 调用中间件：
 
-[!code-csharp[Main](index/sample/Culture/Startup.cs?name=snippet1&highlight=5)]
+[!code-csharp[](index/sample/Culture/Startup.cs?name=snippet1&highlight=5)]
 
 中间件应通过在其构造函数中公开其依赖项来遵循[显式依赖项原则](http://deviq.com/explicit-dependencies-principle/)。 在每个应用程序生存期构造一次中间件。 如果需要与请求中的中间件共享服务，请参阅下面讲述的按请求依赖项。
 
@@ -262,4 +262,4 @@ public class MyMiddleware
 * [应用程序启动](xref:fundamentals/startup)
 * [请求功能](xref:fundamentals/request-features)
 * [基于工厂的中间件激活](xref:fundamentals/middleware/extensibility)
-* [Factory-based middleware activation with a third-party container（第三方容器中基于工厂的中间件激活）](xref:fundamentals/middleware/extensibility-third-party-container)
+* [第三方容器中的中间件激活](xref:fundamentals/middleware/extensibility-third-party-container)

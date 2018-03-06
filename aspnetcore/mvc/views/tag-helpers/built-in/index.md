@@ -9,15 +9,15 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/Index
-ms.openlocfilehash: 09024bf0d6c87fce9eba9b70bebefa11d2ff0a44
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 1d086bc0bc210fe19dda34d13008a49d48801607
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-built-in-tag-helpers"></a>ASP.NET Core 内置标记帮助程序
 
-作者：[Peter Kellner](http://peterkellner.net) 
+作者：[Peter Kellner](http://peterkellner.net)
 
 ASP.NET Core 包括了许多内置标记帮助程序以用于提高生产力。 本部分对内置标记帮助程序进行了概述。
 
@@ -49,6 +49,8 @@ ASP.NET Core 包括了许多内置标记帮助程序以用于提高生产力。 
 [comment]: **[OptionTagHelper](xref:mvc/views/tag-helpers/builtin-th/option-tag-helper)**
 
 [comment]: **[ScriptTagHelper](xref:mvc/views/tag-helpers/builtin-th/script-tag-helper)**
+
+**[部分标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper)**
 
 **[选择标记帮助程序](xref:mvc/views/working-with-forms#the-select-tag-helper)**
 

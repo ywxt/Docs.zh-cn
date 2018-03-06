@@ -1,5 +1,5 @@
 ---
-title: "启用使用 Facebook、Google 和其他外部提供程序的身份验证"
+title: "ASP.NET Core 中的 Facebook、Google 和外部提供程序身份验证"
 author: rick-anderson
 description: "本教程演示如何使用外部身份验证提供程序通过 OAuth 2.0 生成 ASP.NET Core 2.x 应用。"
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/social/index
-ms.openlocfilehash: 475656b03b0d1a3e79e78e6cf3816f091ccd640b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 76433f814d6850a449434c29eb0bd27570ce193a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
-# <a name="enabling-authentication-using-facebook-google-and-other-external-providers"></a>启用使用 Facebook、Google 和其他外部提供程序的身份验证
+# <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core 中的 Facebook、Google 和外部提供程序身份验证
 
 <a name="security-authentication-social-logins"></a>
 
