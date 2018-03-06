@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/index
-ms.openlocfilehash: fbef1545f3cdcbe3887a5dd9ceca0e9b420193f1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b9640e33043d452246f81b7968996bda1f7474ff
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="authentication"></a>身份验证
 
@@ -22,6 +22,8 @@ ms.lasthandoff: 01/30/2018
 * [标识简介](identity.md)
 
 * [启用使用 Facebook、Google 和其他外部提供程序的身份验证](social/index.md)
+
+* [通过 WS 联合身份验证启用身份验证](ws-federation.md)
 
 * [在标识中启用 QR 代码生成](identity-enable-qrcodes.md)
 
@@ -39,7 +41,7 @@ ms.lasthandoff: 01/30/2018
 
   * [将 Azure AD B2C 集成到面向客户的 ASP.NET Core Web 应用中](azure-ad-b2c.md)
 
-  * [将 Azure AD B2C 集成到 ASP.NET Core Web API 中](azure-ad-b2c-webapi.md)
+  * [Integrate Azure AD B2C into an ASP.NET Core web API（将 Azure AD B2C 集成到 ASP.NET Core Web API 中）](azure-ad-b2c-webapi.md)
 
   * [使用 Azure AD 从 WPF 应用调用 ASP.NET Core Web API](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 
