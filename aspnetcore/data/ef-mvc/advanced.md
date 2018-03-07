@@ -16,7 +16,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/31/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>高级主题 - 使用 EF Core 创建 ASP.NET Core MVC 教程（第 10 个教程，共 10 个）
-
+作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC Web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
@@ -151,7 +151,7 @@ ORDER BY [t].[ID]
 
 Entity Framework Core 实现可用于测试的内存中数据库提供程序。 有关详细信息，请参阅[使用 InMemory 进行测试](https://docs.microsoft.com/ef/core/miscellaneous/testing/in-memory)。
 
-## <a name="automatic-change-detection"></a>自动更改检测
+## <a name="automatic-change-detection"></a>自动脏值检测
 
 Entity Framework 通过比较实体的当前值与原始值来确定实体发生的更改，从而确定需将哪些更改发送给数据库。 查询或附加实体时，将存储原始值。 导致自动更改检测的部分方法如下所示：
 

@@ -25,7 +25,7 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 
 > [!NOTE] 
 > 为了在控制器和数据访问层之间创建一个抽象层，常见的做法是实现存储库模式。 为了保持这些教程内容简单并重点介绍如何使用 Entity Framework 本身，它们不使用存储库。 有关存储库和 EF 的信息，请参阅[本系列中的最后一个教程](advanced.md)。
-
+在本教程中，将使用以下网页：
 在本教程中，将使用以下网页：
 
 ![学生详细信息页](crud/_static/student-details.png)
@@ -86,12 +86,8 @@ http://localhost:1230/Instructor/Index?id=1&CourseID=2021
 
 `item.ID` 为 6 时，会生成以下 HTML：
 
-```html
-<a href="/Students/Edit?studentID=6">Edit</a>
-```
-
+### <a name="add-enrollments-to-the-details-view"></a>将注册添加到“详细信息”视图
 有关标记帮助器的详细信息，请参阅 [ASP.NET Core 中的标记帮助器](xref:mvc/views/tag-helpers/intro)。
-
 ### <a name="add-enrollments-to-the-details-view"></a>将注册添加到“详细信息”视图
 
 打开 Views/Students/Details.cshtml。 如以下示例所示，使用 `DisplayNameFor` 和 `DisplayFor` 帮助器显示每个字段：

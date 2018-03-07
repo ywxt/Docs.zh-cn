@@ -131,7 +131,6 @@ dotnet ef database update
 > 如果尚未按以下各节所述创建所有实体类就尝试进行编译，则可能会出现编译器错误。
 
 ## <a name="final-changes-to-the-student-entity"></a>Student 实体的最终更改
-
 ![Student 实体](complex-data-model/_static/student-entity.png)
 
 在 Models/Student.cs 中，将之前添加的代码替换为以下代码。 突出显示所作更改。
@@ -141,6 +140,8 @@ dotnet ef database update
 ### <a name="the-required-attribute"></a>Required 特性
 
 `Required` 特性使名称属性成为必填字段。 值类型（DateTime、int、double、float 等）等不可为 null 的类型不需要 `Required` 特性。 系统会将不可为 null 的类型自动视为必填字段。
+
+可删除 `Required` 特性，并用 `StringLength` 特性的最小长度参数来替换：
 
 可删除 `Required` 特性，并用 `StringLength` 特性的最小长度参数来替换：
 
