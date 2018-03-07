@@ -31,7 +31,7 @@ EF Core 2.0 是 EF 的最新版本，但尚不具有 EF 6.x 的所有功能。 �
 
 > [!NOTE]
 > * 有关本教程的 ASP.NET Core 1.1 版本信息，请参阅 [本教程的 VS 2017 第 2 次更新版本（PDF 格式）](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf)。
-> * 有关本教程的 Visual Studio 2015 版本，请参阅 [PDF 格式的 ASP.NET Core 文档的 VS 2015 版本](https://github.com/aspnet/Docs/blob/master/aspnetcore/common/_static/aspnet-core-project-json.pdf)。
+> * 有关本教程的 Visual Studio 2015 版本，请参阅 [ ASP.NET Core 文档 VS 2015 版本的 PDF 文档](https://github.com/aspnet/Docs/blob/master/aspnetcore/common/_static/aspnet-core-project-json.pdf)。
 
 ## <a name="prerequisites"></a>系统必备
 
@@ -243,15 +243,16 @@ Entity Framework 将创建一个空数据库。 本部分中，创建数据库�
 * 右键单击“解决方案资源管理器”中的 Controllers 文件夹，然后选择“添加”>“新基架项目”。
 
 如果出现“添加 MVC 依赖项”对话框：
-
+ 
 * [将 Visual Studio 更新到最新版本](https://www.visualstudio.com/downloads/)。 15.5 之前的 Visual Studio 版本显示此对话框。
+
 * 如果无法更新，请选择“添加”，然后再次按照添加控制器步骤操作。
 
 * 在“添加基架”对话框中：
-
+  
   * 选中“视图使用 Entity Framework 的 MVC 控制器”。
 
-  * 单击 **“添加”**。
+  * 单击**添加**
 
 * 在“添加控制器”对话框中：
 
@@ -261,7 +262,8 @@ Entity Framework 将创建一个空数据库。 本部分中，创建数据库�
 
   * 接受默认的 StudentsController 作为名称。
 
-  * 单击 **“添加”**。
+  * 单击**添加**
+
 
   ![构架 Student](intro/_static/scaffold-student.png)
 
@@ -356,12 +358,12 @@ Web 服务器可用的线程数量有限，在高负载情况下，所有可用�
 * EF 上下文并非线程安全：请勿尝试并行执行多个操作。 调用任何异步 EF 方法时，都始终使用 `await` 关键字。
 
 * 如果想利用异步代码的性能优势，请确保正在使用的任何库程序包（如用于分页）也使用异步（如果它们调用任何导致查询发送到数据库的 Entity Framework 方法）。
-
+有关在 .NET 异步编程的详细信息，请参阅[异步概述](https://docs.microsoft.com/dotnet/articles/standard/async)。
 有关在 .NET 中进行异步编程的详细信息，请参阅[异步概述](https://docs.microsoft.com/dotnet/articles/standard/async)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 现在已创建了一个使用 Entity Framework Core 和 SQL Server Express LocalDB 来存储和显示数据的简单应用程序。 下一个教程将介绍如何执行基本的 CRUD（创建、读取、更新、删除）操作。
 
 >[!div class="step-by-step"]
-[下一篇](crud.md)
+[下一篇](crud.md)  

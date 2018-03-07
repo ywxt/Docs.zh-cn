@@ -17,19 +17,21 @@ ms.lasthandoff: 01/31/2018
 ---
 # <a name="migrations---ef-core-with-aspnet-core-mvc-tutorial-4-of-10"></a>迁移 - EF Core 和 ASP.NET Core MVC 教程（第 4 个教程，共 10 个）
 
+
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
+作者：[Tom Dykstra](https://github.com/tdykstra)和[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC Web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
 
 本教程使用 EF Core 迁移功能管理数据模型更改。 后续教程将在更改数据模型时添加更多迁移。
 
 ## <a name="introduction-to-migrations"></a>迁移简介
-
 开发新应用程序时，数据模型会频繁更改。每当模型更改时，模型都无法与数据库保持同步。 本系列教程首先配置 Entity Framework 以创建数据库（如果不存在）。 之后，每当更改数据模型（添加、删除或更改实体类或更改 DbContext 类）时，你都可以删除数据库，EF 将创建匹配该模型的新数据库并用测试数据为其设定种子。
 
 这种使数据库与数据模型保持同步的方法适用于多种情况，但将应用程序部署到生产环境的情况除外。 当应用程序在生产环境中运行时，它通常会存储要保留的数据，以便不会在每次更改（如添加新列）时丢失所有数据。 EF Core 迁移功能可通过使 EF 更新数据库 架构而不是创建新数据库来解决此问题。
 
-## <a name="entity-framework-core-nuget-packages-for-migrations"></a>用于进行迁移的 Entity Framework Core NuGet 包
+
+## <a name="entity-framework-core-nuget-packages-for-migrations"></a>用于实现迁移功能的 Entity Framework Core NuGet 包
 
 要使用迁移，可使用“包管理器控制台”(PMC) 或命令行接口 (CLI)。  以下教程演示如何使用 CLI 命令。 有关 PMC 的信息，请转到[本教程末尾](#pmc)。
 
@@ -163,7 +165,7 @@ Done.
 
 有关 PMC 命令的详细信息，请参阅[包管理器控制台 (Visual Studio)](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程已介绍如何创建并应用初始迁移。 下一教程将介绍有关展开数据模型的更高级主题。 同时还将介绍创建并应用其他迁移的方法。
 

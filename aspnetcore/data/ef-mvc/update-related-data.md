@@ -1,4 +1,4 @@
----
+﻿---
 title: "ASP.NET Core MVC 和 EF Core - 更新相关数据 - 第 7 个教程（共 10 个）"
 author: tdykstra
 description: "本教程将通过更新外键字段和导航属性来更新相关数据。"
@@ -140,7 +140,7 @@ HttpGet `Edit` 方法根据正在编辑的课程已分配到的院系 ID 设置�
     
 -   如果办公室位置为空，请将 Instructor.OfficeAssignment 属性设置为 NULL，以便删除 OfficeAssignment 表中的相关行。
 
-    <!-- Snippets don't play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
+    <!-- Snippets do not play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
 
     ```csharp
     if (String.IsNullOrWhiteSpace(instructorToUpdate.OfficeAssignment?.Location))
