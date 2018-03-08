@@ -16,18 +16,18 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/31/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>高级主题 - 使用 EF Core 创建 ASP.NET Core MVC 教程（第 10 个教程，共 10 个）
-作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
+
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC Web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
+Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC Web 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](intro.md)。
 
-之前的教程中已经实现了每个层次结构一个表继承。 本教程介绍了除开发使用 Entity Framework Core 的 ASP.NET Core Web 应用程序的基本知识以外的几个主题，了解这些主题大有益处。
+之前的教程中，已经以每个类一张表的方式实现了继承。 本教程介绍了几个主题，如果使用 Entity Framework Core 开发 ASP.NET Core Web 应用程序时，要使用比基本知识更高阶的知识，这些主题大有益处。
 
 ## <a name="raw-sql-queries"></a>原始 SQL 查询
 
-使用 Entity Framework 的优点之一是，它可以避免将代码与存储数据的特定方法过于紧密地绑定在一起。 它通过生成 SQL 查询和命令来实现这一点，这样也可让你免于亲自编写这些内容。 但需要运行手动创建的特定 SQL 查询时会出现异常情况。 对于这些情况，Entity Framework Code First API 包含了可用于将 SQL 命令直接传递到数据库的方法。 EF Core 1.0 中提供以下选项：
+使用 Entity Framework 的优点之一是，它可以避免将代码与存储数据的特定方法过于紧密地绑定在一起。 它通过生成 SQL 查询和命令来实现这一点，这样也可让你免于亲自编写这些内容。 但需要运行手动创建的特定 SQL 查询时，会有例外。 对于这些情况，Entity Framework Code First API 包含了可用于将 SQL 命令直接传递到数据库的方法。 EF Core 1.0 中提供以下选项：
 
-* 对返回实体类型的查询使用 `DbSet.FromSql` 方法。 返回对象的类型必须是 `DbSet` 对象期望的类型，并且数据库上下文会自动跟踪返回对象，除非[关闭跟踪](crud.md#no-tracking-queries)。
+* 对返回实体类型的查询使用 `DbSet.FromSql` 方法。 返回对象的类型必须是符合 `DbSet` 对象需要的类型，并且数据库上下文会自动跟踪返回对象 [关闭跟踪](crud.md#no-tracking-queries)。
 
 * 对非查询命令使用 `Database.ExecuteSqlCommand`。
 
@@ -151,7 +151,7 @@ ORDER BY [t].[ID]
 
 Entity Framework Core 实现可用于测试的内存中数据库提供程序。 有关详细信息，请参阅[使用 InMemory 进行测试](https://docs.microsoft.com/ef/core/miscellaneous/testing/in-memory)。
 
-## <a name="automatic-change-detection"></a>自动脏值检测
+## <a name="automatic-change-detection"></a>自动更改检测
 
 Entity Framework 通过比较实体的当前值与原始值来确定实体发生的更改，从而确定需将哪些更改发送给数据库。 查询或附加实体时，将存储原始值。 导致自动更改检测的部分方法如下所示：
 
