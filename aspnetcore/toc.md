@@ -213,6 +213,9 @@
 # [移动](xref:mobile/index)
 ## [为本机移动应用创建后端服务](xref:mobile/native-mobile-backend)
 
+# [SignalR](xref:signalr/index)
+## [入门](xref:signalr/get-started-signalr-core)
+
 # [托管和部署](xref:host-and-deploy/index)
 ## [托管 Azure 应用服务](xref:host-and-deploy/azure-apps/index)
 ### [使用 Visual Studio 发布到 Azure](xref:tutorials/publish-to-azure-webapp-using-vs)
