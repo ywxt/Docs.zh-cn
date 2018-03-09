@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 223dd48bb996de527f20291e4701e7d1b60a539d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8c9971ccc70cb4b966abb64086b1b5420fc6c72a
+ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/08/2018
 ---
 <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>为 ASP.NET MVC 应用程序 (第 1 个 10) 创建的实体框架数据模型
 ====================
@@ -29,7 +29,7 @@ ms.lasthandoff: 01/24/2018
 > > A[较新版本的本系列教程](../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)可用，Visual Studio 2013、 Entity Framework 6 和 MVC 5。
 > 
 > 
-> Contoso 大学示例 web 应用程序演示如何创建使用实体框架 5 和 Visual Studio 2012 的 ASP.NET MVC 4 应用程序。 示例应用程序是一个用于 fictional Contoso 大学网站。 它包括诸如学生许可、 过程创建和教师分配等功能。 本系列教程说明如何生成 Contoso 大学示例应用程序。 你可以[下载已完成的应用程序](https://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)。
+> Contoso 大学示例 web 应用程序演示如何创建使用实体框架 5 和 Visual Studio 2012 的 ASP.NET MVC 4 应用程序。 该示例应用程序是一个虚构的 Contoso University 的网站。 其中包括学生录取、课程创建和讲师分配等功能。 本系列教程说明如何生成 Contoso 大学示例应用程序。 你可以[下载已完成的应用程序](https://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)。
 > 
 > ## <a name="code-first"></a>Code First
 > 
@@ -53,7 +53,7 @@ ms.lasthandoff: 01/24/2018
 > 
 > 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)、[实体框架和 LINQ to Entities 论坛](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
 > 
-> ## <a name="acknowledgments"></a>确认
+> ## <a name="acknowledgments"></a>致谢
 > 
 > 请参阅中的序列的最后一个教程[确认和有关 VB 注释](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#acknowledgments)。
 > 
@@ -64,15 +64,15 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="the-contoso-university-web-application"></a>Contoso 大学 Web 应用程序
 
-你将在这些教程中构建的应用程序是简单大学网站。
+将在这些教程中构建的应用程序是一个简单的大学网站。
 
-用户可以查看和更新学生、 课程中和教师信息。 以下是一些你将创建的屏幕。
+用户可以查看和更新学生、课程和讲师信息。 以下是你将创建的几个屏幕。
 
 ![Students_Index_page](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image1.png)
 
 ![](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image2.png)
 
-此站点的用户界面样式而保留接近什么由运行内置的任何模板，以便在本教程主要关注如何使用实体框架。
+该网站的 UI 样式与通过内置模板生成的 UI 样式十分接近，因此本教程主要着重介绍如何使用 Entity Framework。
 
 ## <a name="prerequisites"></a>系统必备
 
@@ -98,13 +98,13 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="set-up-the-site-style"></a>设置站点样式
 
-几个简单的更改将设置站点菜单、 布局和主页。
+设置网站菜单、布局和主页时需作少量简单更改。
 
-打开*views/shared\\_Layout.cshtml*，并将文件的内容替换下面的代码。 突出显示所做的更改。
+打开*views/shared\\_Layout.cshtml*，并将文件的内容替换下面的代码。 突出显示所作更改。
 
 [!code-cshtml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample1.cshtml?highlight=5,15,25-28,43)]
 
-此代码进行以下更改：
+此代码会更改以下内容：
 
 - 使用"Contoso 大学"替换"My ASP.NET MVC Application"和"your logo here"的模板实例。
 - 添加将在本教程后面部分使用的多个操作链接。
@@ -123,13 +123,13 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="create-the-data-model"></a>创建数据模型
 
-接下来你将创建 Contoso 大学应用程序的实体类。 你将从开始以下三个实体：
+接下来将创建 Contoso University 应用程序的实体类。 你将从开始以下三个实体：
 
 ![Class_diagram](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image6.png)
 
-之间的一对多关系`Student`和`Enrollment`实体，并且没有之间的一个对多关系`Course`和`Enrollment`实体。 换而言之，一名学生可以在任意数量的课程中, 注册，并且某一课程可以具有任意数量的学生在其中注册。
+`Student` 和 `Enrollment` 实体之间存在一对多的关系，`Course` 和 `Enrollment` 实体之间存在一对多的关系。 换言之，一名学生可以登记任意数量的课程，一门课程可以包含任意数量的学生。
 
-下列部分中，你将创建每个这些实体的类。
+以下部分将为这几个实体中的每一个实体创建一个类。
 
 > [!NOTE]
 > 如果你尝试编译项目，然后完成创建所有这些实体类，将收到编译器错误。
@@ -143,27 +143,27 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample4.cs)]
 
-`StudentID`属性将成为对应于此类数据库表的主键列。 默认情况下，实体框架将解释一个属性，名为`ID`或*classname* `ID`为主键。
+`StudentID` 属性将成为此类对应的数据库表的主键列。 默认情况下，实体框架将解释一个属性，名为`ID`或*classname* `ID`为主键。
 
-`Enrollments`属性是*导航属性*。 导航属性将分别包含与此实体相关的其他实体。 在这种情况下，`Enrollments`属性`Student`实体将保留所有`Enrollment`与该订阅相关的实体`Student`实体。 换而言之，如果给定`Student`数据库中的行具有两个相关`Enrollment`行 (包含该学生的主键的行值在其`StudentID`外键列)，则该`Student`实体的`Enrollments`导航属性将包含这两个`Enrollment`实体。
+`Enrollments`属性是*导航属性*。 导航属性包含与此实体相关的其他实体。 在这种情况下，`Enrollments`属性`Student`实体将保留所有`Enrollment`与该订阅相关的实体`Student`实体。 换而言之，如果给定`Student`数据库中的行具有两个相关`Enrollment`行 (包含该学生的主键的行值在其`StudentID`外键列)，则该`Student`实体的`Enrollments`导航属性将包含这两个`Enrollment`实体。
 
 导航属性通常定义为`virtual`，以便它们可以充分利用某些实体框架功能，如*延迟加载*。 (将解释延迟加载更高版本，在[读取相关数据](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)更高版本中这一系列教程。
 
-如果导航属性可以具有多个实体 （如多对多或一对多关系），其类型必须是的列表中的条目可以是添加、 删除和更新，如`ICollection`。
+如果导航属性可包含多个实体（如多对多或一对多关系），则其类型必须是可添加、可删除和可更新实体的列表，如 `ICollection`。
 
 ### <a name="the-enrollment-entity"></a>注册实体
 
 ![Enrollment_entity](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image8.png)
 
-在*模型*文件夹中，创建*Enrollment.cs*和替换为以下代码替换现有代码：
+在 Models 文件夹中，创建 Enrollment.cs，并使用以下代码替换现有代码：
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample5.cs)]
 
 年级属性是[枚举](https://msdn.microsoft.com/data/hh859576.aspx)。 后问号`Grade`类型声明指示`Grade`属性是[可以为 null](https://msdn.microsoft.com/library/2cf62fcy.aspx)。 为 null 的等级是不同于零年级-null 意味着一个等级而言未知的或未尚未分配。
 
-`StudentID`属性是一个外键，且相应的导航属性为`Student`。 `Enrollment`实体是与一个相关联`Student`实体，因此该属性只包含单个`Student`实体 (与不同`Student.Enrollments`导航属性前面所看到的后者可以容纳多个`Enrollment`实体)。
+`StudentID` 属性是外键，其对应的导航属性为 `Student`。 `Enrollment` 实体与一个 `Student` 实体相关联，因此属性仅包含单个 `Student` 实体（而不像之前看到的 `Student.Enrollments` 导航属性，可包含多个 `Enrollment` 实体）。
 
-`CourseID`属性是一个外键，且相应的导航属性为`Course`。 `Enrollment`实体是与一个相关联`Course`实体。
+`CourseID` 属性是外键，其对应的导航属性为 `Course`。 `Enrollment` 实体与一个 `Course` 实体相关联。
 
 ### <a name="the-course-entity"></a>课程实体
 
@@ -173,13 +173,13 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample6.cs)]
 
-`Enrollments`属性是导航属性。 A`Course`可以与任意数量的相关实体`Enrollment`实体。
+`Enrollments` 属性是导航属性。 `Course` 实体可与任意数量的 `Enrollment` 实体相关。
 
-我们举例更多有关 [[DatabaseGenerated](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx)([DatabaseGeneratedOption](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.95).aspx)。无）] 特性在下一步的教程。 基本上，此属性允许您输入的过程，而不是让生成它的数据库的主键。
+我们举例更多有关 [[DatabaseGenerated](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx)([DatabaseGeneratedOption](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.95).aspx)。无）] 特性在下一步的教程。 基本上，此特性允许你输入课程的主键，而不是在数据库中生成该主键。
 
-## <a name="create-the-database-context"></a>创建的数据库上下文
+## <a name="create-the-database-context"></a>创建数据库上下文
 
-协调为给定的数据模型的实体框架功能的主类是*数据库上下文*类。 通过派生自创建此类[System.Data.Entity.DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx)类。 在代码中你指定数据模型中包含哪些实体。 你还可以自定义某些实体框架行为。 在此项目中类命名为`SchoolContext`。
+协调为给定的数据模型的实体框架功能的主类是*数据库上下文*类。 通过派生自创建此类[System.Data.Entity.DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx)类。 在代码中指定包含在数据模型中的实体。 还可以自定义特定 Entity Framework 行为。 在此项目中，类命名为 `SchoolContext`。
 
 创建名为的文件夹*DAL* （适用于数据访问层）。 在该文件夹中创建名为的新类文件*SchoolContext.cs*，并将现有代码替换为以下代码：
 
@@ -277,7 +277,7 @@ ms.lasthandoff: 01/24/2018
 
     ![初始迁移的迁移文件夹](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image14.png)
 
-    `Up`方法`InitialCreate`类创建对应的数据模型实体集，将数据库表和`Down`方法将其删除。 迁移调用`Up`方法以实现迁移的数据模型更改。 当你输入命令回滚更新，迁移调用`Down`方法。 下面的代码演示的内容`InitialCreate`文件：
+    `Up`方法`InitialCreate`类创建对应的数据模型实体集，将数据库表和`Down`方法将其删除。 迁移调用 `Up` 方法为迁移实现数据模型更改。 输入用于回退更新的命令时，迁移调用 `Down` 方法。 下面的代码演示的内容`InitialCreate`文件：
 
     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample15.cs)]
 
@@ -340,7 +340,7 @@ ms.lasthandoff: 01/24/2018
 你必须编写实体框架能够为你创建完整的数据库中的代码量很短的因为使用了*约定*，或使实体框架的假设。 其中一些已经指出：
 
 - 实体类名称 pluralized 窗体用作表名称。
-- 实体属性名称用于列名称。
+- 使用实体属性名作为列名。
 - 命名的实体属性`ID`或*classname* `ID`被识别为主键属性。
 
 你已了解可以约定中重写 （例如，你指定不应表名变为复数形式），你将了解有关约定以及如何重写在[创建多个复杂的数据模型](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)教程稍后在此系列。 有关详细信息，请参阅[代码第一个约定](https://msdn.microsoft.com/data/jj679962)。
