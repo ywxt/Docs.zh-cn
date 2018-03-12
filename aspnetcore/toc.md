@@ -210,6 +210,9 @@
 ### [React 项目模板](xref:spa/react)
 ### [带 Redux 的 React 项目模板](xref:spa/react-with-redux)
 
+# [SignalR](xref:signalr/introduction-signalr-core)
+## [介绍](xref:signalr/introduction-signalr-core)
+
 # [移动](xref:mobile/index)
 ## [为本机移动应用创建后端服务](xref:mobile/native-mobile-backend)
 
