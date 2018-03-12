@@ -4,16 +4,16 @@ author: rick-anderson
 description: "提供 ASP.NET Core 简介。"
 manager: wpickett
 ms.author: riande
-ms.date: 12/12/2017
+ms.date: 02/28/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: index
-ms.openlocfilehash: 42bf005a29a8723233a0d9e5532827f7522f0e75
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 112e1e4dc4eed2cf0ee94741a52ce6625e1f42a6
+ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="aspnet-core"></a>ASP.NET Core
 
@@ -43,7 +43,7 @@ ASP.NET Core 具有如下优点：
 * 能够在 Windows、macOS 和 Linux 进行生成和运行。
 * 开放源代码和[以社区为中心](https://live.asp.net/)。
 
-ASP.NET Core 完全作为 [NuGet](https://www.nuget.org/) 包的一部分提供。 这样一来，可以将应用优化为只包含必需 NuGet 包。 实际上，定目标到 .NET Core 的 ASP.NET Core 2.x 应用只需要使用[一个 NuGet 包](xref:fundamentals/metapackage)。 较小的应用图面区域的优势包括：提升安全性、减少维护和提高性能。
+ASP.NET Core 完全作为 [NuGet](https://www.nuget.org/) 包的一部分提供。 借助 NuGet 包，可以将应用优化为只包含必需的依赖项。 实际上，定目标到 .NET Core 的 ASP.NET Core 2.x 应用只需要使用[一个 NuGet 包](xref:fundamentals/metapackage)。 较小的应用图面区域的优势包括：提升安全性、减少维护和提高性能。
 
 ## <a name="build-web-apis-and-web-ui-using-aspnet-core-mvc"></a>使用 ASP.NET Core MVC 生成 Web API 和 Web UI
 
@@ -60,6 +60,20 @@ ASP.NET Core MVC 提供生成 [Web API](xref:tutorials/index#build-web-apis) 和
 ## <a name="client-side-development"></a>客户端开发
 
 ASP.NET Core 与常用客户端框架和库（包括 [Angular](xref:spa/angular)、[React](xref:spa/react) 和 [Bootstrap](xref:client-side/bootstrap)）无缝集成。 有关详细信息，请参阅[客户端开发](xref:client-side/index)。
+
+## <a name="aspnet-core-targeting-net-framework"></a>面向 .NET Framework 的 ASP.NET Core
+
+ASP.NET Core 可以面向 .NET Core 或 .NET Framework。 面向 .NET Framework 的 ASP.NET Core 应用无法跨平台，它们仅在 Windows 上运行。 没有计划删除 ASP.NET Core 中对面向 .NET Framework 的支持。 通常，ASP.NET Core 由 [.NET Standard](/dotnet/standard/net-standard) 库组成。 使用 .NET Standard 2.0 编写的应用可在 NET Standard 2.0 支持的任何位置运行。
+
+面向 .NET Core 有以下几个优势，并且这些优势会随着每次发布增加。 与 .NET Framework 相比，.NET Core 的部分优势包括：
+
+* 跨平台。 在 macOS、Linux 和 Windows 上运行。
+* 提高的性能
+* 并行版本控制
+* 新 API
+* 打开源
+
+我们正努力缩小 .NET Framework 与 .NET Core 的 API 差距。 [Windows 兼容性包](/dotnet/core/porting/windows-compat-pack)使数千个仅 Windows API 可在 .NET Core 中使用。 这些 API 在 .NET Core 1.x 中不可用。
 
 ## <a name="next-steps"></a>后续步骤
 

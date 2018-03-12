@@ -10,15 +10,15 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/docker/visual-studio-tools-for-docker
-ms.openlocfilehash: 590d32342b1724a0cbc937655c35631938eb09b2
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+ms.openlocfilehash: b2a3c369a22d50fcefdb96914f5bf84bfafab7cb
+ms.sourcegitcommit: 6fa546140575b3eb279eabae12d9acad966f70e0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="visual-studio-tools-for-docker-with-aspnet-core"></a>使用 ASP.NET Core 的 Visual Studio Tools for Docker
 
-[Visual Studio 2017](https://www.visualstudio.com/) 支持生成、调试和运行面向的 .NET Framework 或 .NET Core 的 ASP.NET Core 应用。 Windows 和 Linux 容器均受支持。
+[Visual Studio 2017](https://www.visualstudio.com/)支持生成、 调试和运行面向.NET Core 应用的容器化的 ASP.NET Core。 Windows 和 Linux 容器均受支持。
 
 ## <a name="prerequisites"></a>系统必备
 
