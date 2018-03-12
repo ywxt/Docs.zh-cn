@@ -12,17 +12,17 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7be257faa350476bef9f6d372ea4f140fff8d136
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: dda73ca1878396e04b8ff04a255c25bf26ed4eff
+ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/12/2018
 ---
 <a name="processing-unhandled-exceptions-c"></a>处理未经处理的异常 (C#)
 ====================
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载代码](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_12_CS.zip)或[下载 PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial12_ErrorHandling_cs.pdf)
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnet/web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs/samples)（[如何下载](/aspnet/core/tutorials/index#how-to-download-a-sample)）
 
 > 对 web 应用程序在生产中发生运行时错误时务必通知开发人员，并记录错误，以便它可能诊断在稍后的时间。 本教程提供如何 ASP.NET 处理运行时错误，并考察的执行时最多 ASP.NET 运行时未处理的异常气泡的自定义代码的一种方法的概述。
 
@@ -62,7 +62,7 @@ ASP.NET 应用程序中未经处理的异常时，它将冒泡到 ASP.NET 运行
 
 由 Visual Studio 的全局应用程序类模板创建的事件处理程序并不详尽。 您可以为任何添加事件处理程序`HttpApplication`通过命名事件处理程序的事件`Application_EventName`。 例如，可以添加到下面的代码`Global.asax`文件以创建的事件处理程序[`AuthorizeRequest`事件](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx):
 
-[!code-vb[Main](processing-unhandled-exceptions-cs/samples/sample1.vb)]
+[!code-cs[Main](processing-unhandled-exceptions-cs/samples/sample1.cs)]
 
 同样，你可以删除全局应用程序类模板创建的任何事件处理程序，则不需要。 本教程中我们只需要一个事件处理程序`Error`事件; 随意删除从其他事件处理程序`Global.asax`文件。
 
@@ -159,7 +159,7 @@ ASP.NET 运行时在 ASP.NET web 应用程序中发生未经处理的异常时�
 
 - [ASP.NET HTTP 模块和 HTTP 处理程序概述](https://support.microsoft.com/kb/307985)
 - [正常响应未经处理的异常的处理未经处理的异常](http://aspnet.4guysfromrolla.com/articles/091306-1.aspx)
-- [`HttpApplication`类和 ASP.NET 应用程序对象](http://www.eggheadcafe.com/articles/20030211.asp)
+- [`HttpApplication` 类和 ASP.NET 应用程序对象](http://www.eggheadcafe.com/articles/20030211.asp)
 - [HTTP 处理程序和 ASP.NET 中的 HTTP 模块](http://www.15seconds.com/Issue/020417.htm)
 - [在 ASP.NET 中发送电子邮件](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)
 - [了解`Global.asax`文件](http://aspalliance.com/1114_Understanding_the_Globalasax_file.all)
