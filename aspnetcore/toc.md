@@ -29,7 +29,9 @@
 
 ## [生成 Web API](mvc/web-api/index.md)
 ### [在 Mac 上创建 Web API](xref:tutorials/first-web-api-mac)
-### [使用 Swagger 的 ASP.NET Core Web API 帮助页](tutorials/web-api-help-pages-using-swagger.md)
+### [使用 Swagger 的 ASP.NET Core Web API 帮助页](xref:tutorials/web-api-help-pages-using-swagger)
+#### [NSwag 入门](xref:tutorials/get-started-with-nswag)
+#### [Swashbuckle 入门](xref:tutorials/get-started-with-swashbuckle)
 ### [为本机移动应用创建后端服务](mobile/native-mobile-backend.md)
 
 ## [数据访问 - 使用 EF Core](xref:data/index)
@@ -212,12 +214,10 @@
 
 # [SignalR](xref:signalr/introduction-signalr-core)
 ## [介绍](xref:signalr/introduction-signalr-core)
+## [入门](xref:signalr/get-started-signalr-core)
 
 # [移动](xref:mobile/index)
 ## [为本机移动应用创建后端服务](xref:mobile/native-mobile-backend)
-
-# [SignalR](xref:signalr/index)
-## [入门](xref:signalr/get-started-signalr-core)
 
 # [托管和部署](xref:host-and-deploy/index)
 ## [托管 Azure 应用服务](xref:host-and-deploy/azure-apps/index)
