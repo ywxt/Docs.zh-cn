@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: bcfd20fcea1e683bcbef00a9e67bb28add4f23be
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 45b00fbc15740fad60202bb7e5ab14beb9ebe495
+ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 教程
 
@@ -47,8 +47,11 @@ ms.lasthandoff: 02/03/2018
   * [使用 Visual Studio for Windows 创建 Web API](first-web-api.md)
   * [使用 Visual Studio for Mac 创建 Web API](xref:tutorials/first-web-api-mac)
   * [使用 Visual Studio Code 创建 Web API](web-api-vsc.md)
-  
-* [使用 Swagger 的 ASP.NET Core Web API 帮助页](web-api-help-pages-using-swagger.md)
+
+* [使用 Swagger 的 ASP.NET Core Web API 帮助页](xref:tutorials/web-api-help-pages-using-swagger)
+  * [NSwag 入门](xref:tutorials/get-started-with-nswag)
+  * [Swashbuckle 入门](xref:tutorials/get-started-with-swashbuckle)
+
 * [为本机移动应用创建后端 Web 服务](../mobile/native-mobile-backend.md)
 
 ## <a name="data-access-and-storage"></a>数据访问和存储
