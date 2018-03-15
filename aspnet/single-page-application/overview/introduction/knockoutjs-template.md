@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
 ms.openlocfilehash: e6c0c45bed098a8a1160ff11e4f77244bf55ffd3
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="single-page-application-knockoutjs-template"></a>单页面应用程序： KnockoutJS 模板
 ====================
@@ -94,7 +94,7 @@ Entity Framework (EF) 是 O/RM 层。 它面向对象的世界上的 ASP.NET 和
 
 **TodoItem TodoList**
 
-这些是用于 Entity Framework Code First 的数据库模型。 请注意这些模型具有指向对方的属性。 `ToDoList`包含的 Todoitem，并且每个集合`ToDoItem`已返回到其父 ToDoList 的引用。 这些属性被称为导航属性，以及它们所表示的一对多关系待办事项列表和其待办事项。
+这些是用于 Entity Framework Code First 的数据库模型。 请注意这些模型具有指向对方的属性。 `ToDoList` 包含的 Todoitem，并且每个集合`ToDoItem`已返回到其父 ToDoList 的引用。 这些属性被称为导航属性，以及它们所表示的一对多关系待办事项列表和其待办事项。
 
 `ToDoItem`类还使用**[ForeignKey]**特性来指定`ToDoListId`是到的外键`ToDoList`表。 这将告知 EF 将 foreign key 约束添加到数据库。
 
@@ -162,7 +162,7 @@ SPA 模板使用 EF Code First。 在 Code First 开发中，你定义模型首�
 
 ## <a name="mvc-controllers-and-views"></a>MVC 控制器和视图
 
-MVC 控制器也位于该解决方案的 Controllers 文件夹中。 `HomeController`应用程序的主要 HTML 呈现。 Views/Home/Index.cshtml 中定义了主控制器的视图。 主页视图呈现具体取决于是否将用户记录的不同内容：
+MVC 控制器也位于该解决方案的 Controllers 文件夹中。 `HomeController` 应用程序的主要 HTML 呈现。 Views/Home/Index.cshtml 中定义了主控制器的视图。 主页视图呈现具体取决于是否将用户记录的不同内容：
 
 [!code-cshtml[Main](knockoutjs-template/samples/sample4.cshtml)]
 

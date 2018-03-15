@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
 ms.openlocfilehash: 460af471a1b0650f8d782d582ce6cd9a06664d5c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>使用在 ASP.NET 网页中的数据库的简介页 (Razor) 站点
 ====================
@@ -41,7 +41,7 @@ ms.lasthandoff: 11/10/2017
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
 > 
 > 
-> - ASP.NET 网页 (Razor) 2
+> - ASP.NET Web Pages (Razor) 2
 > - WebMatrix 2
 >   
 > 
@@ -54,7 +54,7 @@ ms.lasthandoff: 11/10/2017
 
 如下图数据的典型方法是为包含行和列的表。 在数据库术语中，每个行通常称为记录。 每个列 （有时称为字段） 包含每种数据类型的值： 第一个名称，最后一个名称和等等。
 
-| **ID** | **FirstName** | **LastName** | **地址** | **Email** | **电话** |
+| **ID** | **FirstName** | **LastName** | **Address** | **Email** | **Phone** |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Jim | Abrus | 210 100th St SE Orcas WA 98031 | jim@contoso.com | 555 0100 |
 | 2 | Terry | Adams | 1234 Main St.西雅图市华盛顿州 99011 | terry@cohowinery.com | 555 0101 |
@@ -91,7 +91,7 @@ ms.lasthandoff: 11/10/2017
     顾名思义，**是 Primary Key**告诉数据库，这将是表的主键。 **是标识**告诉数据库自动创建新的每个记录的 ID 号并将其分配下一步的序列号 （从 1 开始）。
 10. 单击下一步的行中。 此时将启动一个新的列定义编辑器。
 11. 对于名称值中，输入&quot;名称&quot;。
-12. 有关**数据类型**，选择&quot;nvarchar&quot;和长度设置为 50。 *Var*属于`nvarchar`告诉数据库此列的数据将为其大小可能有所不同记录之间的字符串。 (  *n* 前缀表示*国家/地区*，，该值指示字段可以包含字符数据，表示任何字母或写入系统 &#8212; 也就是说，此字段保存 Unicode数据。）
+12. 有关**数据类型**，选择&quot;nvarchar&quot;和长度设置为 50。 *Var*属于`nvarchar`告诉数据库此列的数据将为其大小可能有所不同记录之间的字符串。 ( *N*前缀表示*国家/地区*、，该值指示字段可以保存表示任何字母的字符数据或写入系统&#8212;，即，该字段将持有 Unicode 数据。)
 13. 设置**允许 null 值**选项设为**否**。 这会强制此要求*名称*列不会保留空白。
 14. 使用此相同的过程中，创建一个名为列*说明*。 设置**数据类型**"nvarchar"和长度，并设置 50**允许 null 值**为 false。
 15. 创建一个名为列*价格*。 设置**数据类型设置为"货币"**并设置**允许 null 值**为 false。
@@ -110,7 +110,7 @@ ms.lasthandoff: 11/10/2017
 2. 右键单击产品表，然后单击**数据**。
 3. 在编辑窗格中，输入以下记录：
 
-    | **Name** | **描述** | **价格** |
+    | **名称** | **说明** | **价格** |
     | --- | --- | --- |
     | 痕迹 | 由新颖度每日。 | 2.99 |
     | 草莓 Shortcake | 从我们园使用环保 strawberries 进行。 | 9.99 |
@@ -136,7 +136,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-cshtml[Main](5-working-with-data/samples/sample1.cshtml)]
 
-    你可以在第一个代码块中，打开*SmallBakery.sdf*前面创建的文件 （数据库）。 `Database.Open`方法假设*.sdf*文件位于你的网站*应用\_数据*文件夹。 (请注意，不需要指定*.sdf*扩展 &#8212; 实际上，如果这样做，`Open`方法将不起作用。)
+    你可以在第一个代码块中，打开*SmallBakery.sdf*前面创建的文件 （数据库）。 `Database.Open`方法假设*.sdf*文件位于你的网站*应用\_数据*文件夹。 (请注意，不需要指定*.sdf*扩展&#8212;事实上，如果这样做，`Open`方法将不起作用。)
 
     > [!NOTE]
     > *应用\_数据*文件夹是用于存储数据文件的 ASP.NET 中的特殊文件夹。 有关详细信息，请参阅[连接到数据库](#SB_ConnectingToADatabase)本文后续部分中。
@@ -145,7 +145,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-sql[Main](5-working-with-data/samples/sample2.sql)]
 
-    在语句中，`Product`标识要查询表。 `*`字符指定查询应返回表中的所有列。 （你可能还列出列单独，由逗号分隔，如果你想要看到仅某些列。）`Order By`子句指示数据的排序方式 &#8212; 在这种情况下，通过*名称*列。 这意味着对数据进行排序的值按字母顺序基于*名称*每一行的列。
+    在语句中，`Product`标识要查询表。 `*`字符指定查询应返回表中的所有列。 （你可能还列出列单独，由逗号分隔，如果你想要看到仅某些列。）`Order By`子句指示数据的排序方式&#8212;在这种情况下，通过*名称*列。 这意味着对数据进行排序的值按字母顺序基于*名称*每一行的列。
 
     在页的正文中，标记将创建一个 HTML 表以将用于显示数据。 内部`<tbody>`元素，你使用`foreach`循环单独获取由查询返回的每个数据行。 对于每个数据行，创建一个 HTML 表行 (`<tr>`元素)。 然后创建 HTML 表格单元格 (`<td>`元素) 为每个列。 每次执行循环时，请转到下一步的可用行从数据库已处于`row`变量 (你对此进行设置`foreach`语句)。 若要获取行中的单个列，可以使用`row.Name`或`row.Description`或者的列的任何名称是你想。
 4. 在浏览器中运行页面。 (请确保页中选择**文件**工作区之前运行它。)该页显示如下所示的列表：
@@ -258,7 +258,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-html[Main](5-working-with-data/samples/sample12.html)]
 
-    请注意，`href`属性设置为`UpdateProducts/n`，其中 *n* 是产品编号。 当用户单击这些链接之一时，生成的 URL 将如下所示：
+    请注意，`href`属性设置为`UpdateProducts/n`，其中*n*是产品编号。 当用户单击这些链接之一时，生成的 URL 将如下所示：
 
     `http://localhost:18816/UpdateProducts/6`
 
@@ -384,7 +384,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > [!code-cshtml[Main](5-working-with-data/samples/sample28.cshtml)]
 > 
-> 如前所述，`Database.Open`方法使你可以将数据库名称或连接字符串，传递和它将找出使用哪一个。 在部署时，这是非常有用 （发布） 网站。 你可以使用*.sdf*文件中*应用\_数据*文件夹时你开发和测试你的站点。 然后，将你的站点移到生产服务器时，可以使用中的连接字符串*Web.config*具有同名的文件您*.sdf*文件但指向托管提供商的数据库 &#8212;所有而无需更改代码。
+> 如前所述，`Database.Open`方法使你可以将数据库名称或连接字符串，传递和它将找出使用哪一个。 在部署时，这是非常有用 （发布） 网站。 你可以使用*.sdf*文件中*应用\_数据*文件夹时你开发和测试你的站点。 然后，将你的站点移到生产服务器时，可以使用中的连接字符串*Web.config*具有同名的文件您*.sdf*文件，但该点添加到托管提供商的数据库&#8212;所有而无需更改代码。
 > 
 > 最后，如果你想要直接使用连接字符串，则可以调用`Database.OpenConnectionString`方法并传入该实际的连接字符串而不只在中的名称，它*Web.config*文件。 这可能会在其中出于某种原因不具备访问权限的连接字符串的情况下很有用 (或值，例如*.sdf*文件名称) 之前运行页面。 但是，对于大多数情况下，你可以使用`Database.Open`这篇文章中所述。
 
@@ -393,4 +393,4 @@ ms.lasthandoff: 11/10/2017
 
 - [SQL Server Compact](https://www.microsoft.com/sqlserver/2008/en/us/compact.aspx)
 - [连接到 SQL Server 或 MySQL 数据库在 WebMatrix 中](https://go.microsoft.com/fwlink/?LinkId=208661)
-- [验证在 ASP.NET Web 页站点中的用户输入](https://go.microsoft.com/fwlink/?LinkId=253002)
+- [在 ASP.NET 网站中验证用户输入](https://go.microsoft.com/fwlink/?LinkId=253002)

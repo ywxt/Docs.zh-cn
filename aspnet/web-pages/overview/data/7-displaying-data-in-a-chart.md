@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/7-displaying-data-in-a-chart
 msc.type: authoredcontent
 ms.openlocfilehash: f252b74bc42d0ea65b8b1150973c4f3c50cc9cf4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>具有 ASP.NET Web 页 (Razor) 的图表中显示数据
 ====================
@@ -41,7 +41,7 @@ by [Microsoft](https://github.com/microsoft)
 <a id="The_Chart_Helper"></a>
 ## <a name="the-chart-helper"></a>图表帮助器
 
-如果你想要以图形方式显示数据，你可以使用`Chart`帮助器。 `Chart`帮助器可以呈现的图像中不同的图表类型显示数据。 它支持许多选项对于格式设置和标签。 `Chart`帮助器可以呈现 30 多个类型的图表，包括所有类型的图表，您可能需要熟悉从 Microsoft Excel 或其他工具和 #8212; 面积图、 条形图、 柱形图中，行图表和饼图，以及使用的详细信息专用的图表，如股价图。
+如果你想要以图形方式显示数据，你可以使用`Chart`帮助器。 `Chart`帮助器可以呈现的图像中不同的图表类型显示数据。 它支持许多选项对于格式设置和标签。 `Chart`帮助器可以呈现 30 多个类型的图表，包括所有类型的图表，您可能需要从 Microsoft Excel 或其他工具熟悉&#8212;面积图、 条形图、 柱形图、 折线图中和饼图，以及的详细信息专用的图表，如股价图。
 
 | **面积图**![说明： 面积图类型的图片](7-displaying-data-in-a-chart/_static/image1.jpg) | **条形图**![说明： 图片的条形图类型](7-displaying-data-in-a-chart/_static/image2.jpg) |
 | --- | --- |
@@ -122,7 +122,7 @@ by [Microsoft](https://github.com/microsoft)
 
     此代码首先创建`DataSet`对象。 此对象用于管理从 XML 文件中读取和组织根据架构文件中的信息的数据。 (请注意代码的顶部包括语句`using SystemData`。 这为了能够使用所必需`DataSet`对象。 有关详细信息，请参阅[&quot;使用&quot;语句和完全限定的名称](#SB_UsingStatements)这篇文章中更高版本。)
 
-    接下来，该代码创建`DataView`对象基于数据集。 数据视图提供图表可以将绑定到的对象 （&） #8212;也就是说，读取和绘制。 图表将绑定到数据使用`AddSeries`方法，与你此前看到的时图表数组数据，但这次`xValue`和`yValues`参数设置为`DataView`对象。
+    接下来，该代码创建`DataView`对象基于数据集。 数据视图提供图表可以将绑定到对象&#8212;即读取和绘制。 图表将绑定到数据使用`AddSeries`方法，与你此前看到的时图表数组数据，但这次`xValue`和`yValues`参数设置为`DataView`对象。
 
     此示例还演示了如何指定特定的图表类型。 在添加数据时`AddSeries`方法，`chartType`参数也将设置为显示饼图。
 7. 在浏览器中运行页面。 
@@ -136,7 +136,7 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > 带有 Razor 语法的 ASP.NET Web Pages 基于.NET Framework 包括的数千个组件 （类）。 若要使其易于管理，若要使用所有这些类，它们组织成*命名空间*，这是有些类似库。 例如，`System.Web`命名空间包含支持的浏览器/服务器通信的类`System.Xml`命名空间包含用于创建和读取 XML 文件的类和`System.Data`命名空间包含用于处理的类使用数据。
 > 
-> 若要访问.NET Framework 中的任何给定的类，代码需要知道不只是类名称，但也在类所在的命名空间。 例如，若要使用`Chart`帮助器，代码需要找到`System.Web.Helpers.Chart`类，它组合了命名空间 (`System.Web.Helpers`) 与类名称 (`Chart`)。 这称为类的*完全限定*名称 &#8212; 其完整的明确位置内 vastness 的.NET framework。 在代码中，这将显示如下：
+> 若要访问.NET Framework 中的任何给定的类，代码需要知道不只是类名称，但也在类所在的命名空间。 例如，若要使用`Chart`帮助器，代码需要找到`System.Web.Helpers.Chart`类，它组合了命名空间 (`System.Web.Helpers`) 与类名称 (`Chart`)。 这称为类的*完全限定*名称&#8212;其完整的明确位置内 vastness 的.NET framework。 在代码中，这将显示如下：
 > 
 > `var myChart = new System.Web.Helpers.Chart(width: 600, height: 400) // etc.`
 > 
@@ -235,11 +235,11 @@ by [Microsoft](https://github.com/microsoft)
 
     [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample13.cshtml)]
 
-    代码将首先检查是否任何内容传递作为查询字符串中的密钥值。 如果这样，该代码尝试通过调用读取缓存图表`GetFromCache`方法并将其传递该密钥。 如果事实证明，无需进行任何 （可能发生第一次请求图表） 该注册表项下缓存中，该代码将按常规方式创建图表。 完成图表后，代码将其保存到缓存通过调用`SaveToCache`。 该方法要求密钥 （以便图表可以请求更高版本），并且应在缓存中保存图表的时间量。 （你将缓存图表的确切时间都依赖于频率认为它所代表的数据可能会更改。）`SaveToCache`方法还要求`slidingExpiration`参数 &#8212; 如果此值设置为 true，超时计数器将重置每次访问图表。 在这种情况下，这实际上意味着数据透视图报表的缓存条目过期 2 分钟后用户访问图表的最后一个时间。 （相对过期机制的替代方法是绝对过期，这意味着缓存条目将过期恰好 2 分钟之后它放入缓存中，无论何种频率已被访问,。）
+    代码将首先检查是否任何内容传递作为查询字符串中的密钥值。 如果这样，该代码尝试通过调用读取缓存图表`GetFromCache`方法并将其传递该密钥。 如果事实证明，无需进行任何 （可能发生第一次请求图表） 该注册表项下缓存中，该代码将按常规方式创建图表。 完成图表后，代码将其保存到缓存通过调用`SaveToCache`。 该方法要求密钥 （以便图表可以请求更高版本），并且应在缓存中保存图表的时间量。 （你将缓存图表的确切时间都依赖于频率认为它所代表的数据可能会更改。）`SaveToCache`方法还要求`slidingExpiration`参数&#8212;如果此值设置为 true，超时计数器将重置每次访问图表。 在这种情况下，这实际上意味着数据透视图报表的缓存条目过期 2 分钟后用户访问图表的最后一个时间。 （相对过期机制的替代方法是绝对过期，这意味着缓存条目将过期恰好 2 分钟之后它放入缓存中，无论何种频率已被访问,。）
 
     最后，代码使用`WriteFromCache`方法以提取和呈现来自缓存的图表。 请注意，此方法是外部`if`检查缓存中，因为它将从缓存获取图表，该图表已开始时还是必须生成并保存在缓存中的块。
 
-    请注意，在此示例中，`AddTitle`方法包括时间戳。 （它将添加当前的日期和时间和 #8212;`DateTime.Now` &#8212; 标题。)
+    请注意，在此示例中，`AddTitle`方法包括时间戳。 (它将当前日期和时间添加&#8212; `DateTime.Now` &#8212;标题。)
 5. 创建一个名为的新页*ClearCache.cshtml*和其内容替换为以下代码：
 
     [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample14.cshtml)]

@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/the-contact-manager-solution
 msc.type: authoredcontent
 ms.openlocfilehash: b7f691a1ee855788f6a57616aea35d960e4c85c7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="the-contact-manager-solution"></a>联系人管理器解决方案
 ====================
@@ -35,10 +35,10 @@ ms.lasthandoff: 11/10/2017
 
 ![](the-contact-manager-solution/_static/image1.png)
 
-- **ContactManager.Mvc**。 这是表示解决方案的入口点的 ASP.NET MVC 3 web 应用程序项目。 它提供了一些基本的 web 应用程序功能，如向用户提供的功能，可以创建和查看联系人详细信息。 应用程序依赖于 Windows Communication Foundation (WCF) 服务来管理联系人和管理身份验证和授权的 ASP.NET 应用程序服务数据库。
-- **ContactManager.Database**。 这是 Visual Studio 数据库项目。 项目定义存储联系人详细信息的数据库的架构。
-- **ContactManager.Service**。 这是一个 WCF web 服务项目。 WCF 服务公开终结点，使调用方执行创建、 检索、 更新和删除 (CRUD) 操作在**ContactManager**数据库。 该服务依赖于**ContactManager**数据库和**ContactManager.Common.dll**程序集。
-- **ContactManager.Common**。 这是一个类库项目。 WCF 服务依赖于此程序集中定义的类型。
+- **ContactManager.Mvc**. 这是表示解决方案的入口点的 ASP.NET MVC 3 web 应用程序项目。 它提供了一些基本的 web 应用程序功能，如向用户提供的功能，可以创建和查看联系人详细信息。 应用程序依赖于 Windows Communication Foundation (WCF) 服务来管理联系人和管理身份验证和授权的 ASP.NET 应用程序服务数据库。
+- **ContactManager.Database**. 这是 Visual Studio 数据库项目。 项目定义存储联系人详细信息的数据库的架构。
+- **ContactManager.Service**. 这是一个 WCF web 服务项目。 WCF 服务公开终结点，使调用方执行创建、 检索、 更新和删除 (CRUD) 操作在**ContactManager**数据库。 该服务依赖于**ContactManager**数据库和**ContactManager.Common.dll**程序集。
+- **ContactManager.Common**. 这是一个类库项目。 WCF 服务依赖于此程序集中定义的类型。
 
 该解决方案还包括一个名为发布的解决方案文件夹。 这包括各种自定义项目文件和演示如何控制和操作的生成和部署过程的命令文件。 这些是在本教程后面更详细地介绍您的问题。
 

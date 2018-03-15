@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: cb3d013d69e36f97335ea31dd6e4997772ba2d8e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="configuring-permissions-for-team-build-deployment"></a>配置权限的团队的生成部署
 ====================
@@ -38,7 +38,7 @@ ms.lasthandoff: 11/10/2017
 需要 Windows 身份验证，以及你打算自动执行使用 Team Build，任何部署任务将使用的生成服务标识运行。 在这种情况下，你将需要授予你的 web 服务器和数据库服务器上任何所需的权限的生成服务标识。
 
 > [!NOTE]
-> 网络服务帐户使用的计算机帐户向其他计算机进行身份验证。 计算机帐户采用以下形式*[域名]\[计算机名称]***$**& #x 2014年; 例如， **FABRIKAM\TFSBUILD$**。 在这种情况下，如果你的生成服务运行时使用的网络服务标识，则应为你的生成服务器授予对计算机帐户标识任何所需的权限。
+> 网络服务帐户使用的计算机帐户向其他计算机进行身份验证。 计算机帐户采用格式 * [域名]\[计算机名称] ***$**& #x 2014年; 例如， **FABRIKAM\TFSBUILD$**。 在这种情况下，如果你的生成服务运行时使用的网络服务标识，则应为你的生成服务器授予对计算机帐户标识任何所需的权限。
 
 
 ## <a name="configuring-web-server-permissions"></a>配置 Web 服务器权限

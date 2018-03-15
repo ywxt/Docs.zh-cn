@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment
 msc.type: authoredcontent
 ms.openlocfilehash: f27b8376b332ff21185be0fd5c00ced7d40a20bd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="configuring-deployment-properties-for-a-target-environment"></a>配置目标环境的部署属性
 ====================
@@ -73,7 +73,7 @@ ms.lasthandoff: 11/10/2017
 | **MSDeployAuth** Web 部署应使用对远程计算机进行身份验证的方法。 | 此属性应设置为**NTLM**或**基本**。 通常情况下，你将使用**NTLM**如果你正在部署到远程代理服务和**基本**如果你正在将它们部署到 Web 部署处理程序。 如果使用基本身份验证，你还需要指定的用户名和密码，IIS Web 部署工具 （Web 部署） 应模拟以执行部署。 在此示例中，这些值通过提供**MSDeployUsername**和**MSDeployPassword**属性。 如果使用 NTLM 身份验证，可以省略这些属性，或将其留空。 |
 | **MSDeployUsername**如果使用基本身份验证时，Web 部署将使用此帐户在远程计算机上。 | 这应采用以下形式*域*\*用户名 * (例如， **FABRIKAM\matt**)。 如果指定基本身份验证，仅使用此值。 如果使用 NTLM 身份验证，则可以省略该属性。 如果提供一个值，则它将被忽略。 |
 | **MSDeployPassword**如果使用基本身份验证时，Web 部署将使用此密码在远程计算机上。 | 这是中指定的用户帐户的密码**MSDeployUsername**属性。 如果指定基本身份验证，仅使用此值。 如果使用 NTLM 身份验证，则可以省略该属性。 如果提供一个值，则它将被忽略。 |
-| **ContactManagerIisPath**你想要部署联系人管理器 MVC 应用程序的 IIS 路径。 | 这应为的路径，该窗体中出现在 IIS 管理器中，[*IIS 网站名称*] / [*web**应用程序名称*]。 请记住，需要部署应用程序之前存在的 IIS 网站。 例如，如果你已创建名为 DemoSite 的 IIS 网站，则可以作为 DemoSite/ContactManager 指定 MVC 应用程序的 IIS 路径。 |
+| **ContactManagerIisPath**你想要部署联系人管理器 MVC 应用程序的 IIS 路径。 | 这应为的路径，该窗体中出现在 IIS 管理器中，[*IIS 网站名称*] / [*web * * 应用程序名称*]。 请记住，需要部署应用程序之前存在的 IIS 网站。 例如，如果你已创建名为 DemoSite 的 IIS 网站，则可以作为 DemoSite/ContactManager 指定 MVC 应用程序的 IIS 路径。 |
 | **ContactManagerServiceIisPath**你想要部署的联系人管理器 WCF 服务的 IIS 路径。 | 例如，如果你已创建名为 DemoSite 的 IIS 网站，则可以指定 WCF 服务的 IIS 路径**DemoSite/ContactManagerService**。 |
 | **ContactManagerTargetUrl**可以从该处访问 WCF 服务的 URL。 | 这将采用格式 [*IIS 网站根 URL*] / [*服务应用程序名称*] / [*服务终结点*]。 例如，如果你已在端口 85 上创建 IIS 网站，URL 将采用以下形式`http://localhost:85/ContactManagerService/ContactService.svc`。 请记住 MVC 应用程序和 WCF 服务部署到同一台服务器。 因此，永远只有从安装它的计算机访问此 URL。 因此，它是在 URL 中使用 localhost 或 IP 地址，而不是计算机名称或主机标头，更好的做法。 如果你使用的计算机名称或主机标头，[环回检查](https://go.microsoft.com/?linkid=9805131)在 IIS 中的安全功能可能阻止 URL 和返回**HTTP 401.1-未授权**错误。 |
 | **CmDatabaseConnectionString**数据库服务器的连接字符串。 | 连接字符串将确定这两个 VSDBCMD 将用于联系数据库服务器和创建数据库和 web 服务器应用程序池将用于联系数据库服务器和与数据库交互的凭据的凭据。 实质上是此处有两个选择。 可以指定**集成安全性 = true**，在这种情况下使用集成的 Windows 身份验证：**数据源 = TESTDB1; Integrated Security = true**在这种情况下，数据库将使用创建运行可执行文件、 VSDBCMD 的用户和应用程序的凭据将访问使用 web 服务器计算机帐户的标识的数据库。 或者，你可以指定的用户名和密码的 SQL Server 帐户。 同时 VSDBCMD 创建数据库以及要与数据库交互的应用程序池，在这种情况下，使用的 SQL Server 凭据：**数据源 = TESTDB1;用户 Id = ASqlUser;密码 = Pa$ $w0rd**本主题中的演练假定你将使用集成的 Windows 身份验证。 |

@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: 72f60841a1381380c0ea6167077420f960180dc7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="configuring-team-foundation-server-for-web-deployment"></a>用于 Web 部署配置 Team Foundation Server
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/10/2017
 > - 如何创建生成定义，其中包含部署逻辑。
 > - 如何配置用于自动部署的权限。
 > 
-> 这些教程的意大利语翻译，请访问[http://www.lucamorelli.it](http://www.lucamorelli.it)。
+> 这些教程的意大利语翻译，请访问[ http://www.lucamorelli.it ](http://www.lucamorelli.it)。
 
 
 本教程假定你已安装 TFS 2010 并创建团队项目集合作为初始配置过程的一部分。 [For Visual Studio 2010 Team Foundation 安装指南](https://go.microsoft.com/?linkid=9805132)提供全面指导，这些任务。

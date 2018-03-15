@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: 80810415bac473a58f60110fb9d08772e0627bd5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="excluding-files-and-folders-from-deployment"></a>从部署中排除文件和文件夹
 ====================
@@ -95,7 +95,7 @@ ms.lasthandoff: 11/10/2017
 1. 在 Visual Studio 2010 中打开你的解决方案。
 2. 在**解决方案资源管理器**窗口中，右键单击你的 web 应用程序项目节点 (例如， **ContactManager.Mvc**)，指向**添加**，然后单击**新项**。
 3. 在**添加新项**对话框中，选择**XML 文件**模板。
-4. 在**名称**框中，键入*[项目名称]***。 wpp.targets** (例如， **ContactManager.Mvc.wpp.targets**)，然后单击**添加**。
+4. 在**名称**框中，键入*[项目名称] * * *.wpp.targets** (例如， **ContactManager.Mvc.wpp.targets**)，然后单击**添加**.
 
     ![](excluding-files-and-folders-from-deployment/_static/image3.png)
 

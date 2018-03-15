@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
 msc.type: authoredcontent
 ms.openlocfilehash: 6210d01f65bcadf8ae4209e372d5aac68861bd7a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="web-deployment-in-the-enterprise"></a>企业中的 web 部署
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 11/10/2017
 
 > 本教程介绍如何满足大量管理的企业级 web 应用程序到开发、 测试、 过渡和生产环境部署时遇到的难题。 本教程包括参考解决方案，以及混合的概念性和面向任务的内容，以指导你确定各种常见任务和过程。
 > 
-> 这些教程的意大利语翻译，请访问[http://www.lucamorelli.it](http://www.lucamorelli.it)。
+> 这些教程的意大利语翻译，请访问[ http://www.lucamorelli.it ](http://www.lucamorelli.it)。
 
 
 ## <a name="enterprise-deployment-challenges"></a>企业部署难题
@@ -68,8 +68,8 @@ ms.lasthandoff: 11/10/2017
 
 这些主题介绍参考解决方案 （#x 2014年; 联系人管理器解决方案） #x 2014;，并描述如何下载它并将其配置本地计算机上：
 
-- [联系人管理器解决方案](the-contact-manager-solution.md)
-- [设置联系人管理器解决方案](setting-up-the-contact-manager-solution.md)
+- [Contact Manager 解决方案](the-contact-manager-solution.md)
+- [设置 Contact Manager 解决方案](setting-up-the-contact-manager-solution.md)
 
 这些主题介绍 MSBuild 项目文件，描述如何创建和使用自定义项目文件和演练联系人管理器解决方案的部署过程：
 
@@ -79,8 +79,8 @@ ms.lasthandoff: 11/10/2017
 这些主题描述 web 应用程序部署，包括如何生成和打包进程的工作原理、 如何与 Web 发布管道集成生成过程、 如何修改部署参数和如何将 web 包部署到目标环境：
 
 - [生成和打包 Web 应用程序项目](building-and-packaging-web-application-projects.md)
-- [为 Web 包部署中配置参数](configuring-parameters-for-web-package-deployment.md)
-- [部署 Web 包](deploying-web-packages.md)
+- [为 Web 程序包部署配置参数](configuring-parameters-for-web-package-deployment.md)
+- [部署 Web 程序包](deploying-web-packages.md)
 
 - [部署数据库项目](deploying-database-projects.md)介绍不同的技术可用于部署 Visual Studio 数据库项目，以及每种方法的优缺点。 [创建并运行部署命令文件](creating-and-running-a-deployment-command-file.md)描述如何创建一个简单的命令文件，它封装你的部署逻辑，并可以为单步执行过程中部署复杂的解决方案。
 - 最后，[手动安装 Web 包](manually-installing-web-packages.md)到教程结束通过显示你可以将 web 包导入到 IIS。
