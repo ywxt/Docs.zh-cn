@@ -1,7 +1,7 @@
 ---
-title: "与 SMS 的双因素身份验证"
+title: "在 ASP.NET Core SMS 的双因素身份验证"
 author: rick-anderson
-description: "演示如何设置 ASP.NET Core 的双因素身份验证 (2FA)"
+description: "了解如何设置双因素身份验证 (2FA) 与 ASP.NET Core 应用。"
 manager: wpickett
 ms.author: riande
 ms.date: 08/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/2fa
-ms.openlocfilehash: 721c4c20234c7232b509a0cff444538c2cfeb166
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: c328c6f4b674695dd1f2db8145a7ac1b8f12d36d
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="two-factor-authentication-with-sms"></a>与 SMS 的双因素身份验证
+# <a name="two-factor-authentication-with-sms-in-aspnet-core"></a>在 ASP.NET Core SMS 的双因素身份验证
 
 通过[Rick Anderson](https://twitter.com/RickAndMSFT)和[瑞士开发人员](https://github.com/Swiss-Devs)
 
@@ -142,6 +142,13 @@ info: Successfully saved SMSAccountIdentification = 12345 to the secret store.
 
 ## <a name="account-lockout-for-protecting-against-brute-force-attacks"></a>针对暴力破解攻击提供保护的帐户锁定
 
-我们建议使用 2FA 使用帐户锁定。 一旦用户 （通过本地帐户或社交帐户） 登录，存储在 2FA 每次失败的尝试，而如果达到 （默认值为 5） 的最大次数，则锁定用户五分钟时间 (你可以设置与时间锁定`DefaultAccountLockoutTimeSpan`)。 以下配置帐户，以便为 10 的失败尝试之后 10 分钟锁定。
+帐户锁定建议的 2FA 中。 一旦用户通过本地帐户或社交帐户登录，则会存储 2FA 在每次失败的尝试。 如果达到最大未成功的访问，则用户锁定 (默认： 5 分钟锁定 5 失败的访问尝试次数后)。 成功的身份验证将失败的访问尝试计数重置并重置时钟。 最大失败的访问尝试次数，可以用来设置的锁定时间[MaxFailedAccessAttempts](/dotnet/api/microsoft.aspnetcore.identity.lockoutoptions.maxfailedaccessattempts)和[DefaultLockoutTimeSpan](/dotnet/api/microsoft.aspnetcore.identity.lockoutoptions.defaultlockouttimespan)。 以下 10 分钟后访问尝试失败 10 次配置帐户锁定：
 
-[!code-csharp[](2fa/sample/Web2FA/Startup.cs?name=snippet2&highlight=13-17)] 
+[!code-csharp[](2fa/sample/Web2FA/Startup.cs?name=snippet2&highlight=13-17)]
+
+确认[PasswordSignInAsync](/dotnet/api/microsoft.aspnetcore.identity.signinmanager-1.passwordsigninasync)设置`lockoutOnFailure`到`true`:
+
+```csharp
+var result = await _signInManager.PasswordSignInAsync(
+                 Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: true);
+```

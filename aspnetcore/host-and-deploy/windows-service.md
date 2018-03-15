@@ -1,5 +1,5 @@
 ---
-title: "在 Windows 服务中的主机"
+title: "在 Windows 服务中的主机 ASP.NET 核心"
 author: tdykstra
 description: "了解如何托管的 ASP.NET Core 应用 Windows 服务中。"
 manager: wpickett
@@ -10,19 +10,19 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: c14a1f62bce4d06be3b8e6356f45cd5e330a0751
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: f3455e47cfc06a4492dc4e34871b348184c6ecfb
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="host-an-aspnet-core-app-in-a-windows-service"></a>ASP.NET Core 应用托管在 Windows 服务
+# <a name="host-aspnet-core-in-a-windows-service"></a>在 Windows 服务中的主机 ASP.NET 核心
 
-通过[Tom Dykstra](https://github.com/tdykstra)
+作者：[Tom Dykstra](https://github.com/tdykstra)
 
 没有使用 IIS 是在运行承载 ASP.NET Core 应用在 Windows 上的推荐的方式[Windows 服务](/dotnet/framework/windows-services/introduction-to-windows-service-applications)。 当托管为 Windows 服务，应用程序可以自动启动之后启动重新启动和崩溃而无需人工干预。
 
-[查看或下载的示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/sample)([如何下载](xref:tutorials/index#how-to-download-a-sample))。 有关说明如何运行示例应用程序，请参阅示例的*README.md*文件。
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）。 有关说明如何运行示例应用程序，请参阅示例的*README.md*文件。
 
 ## <a name="prerequisites"></a>系统必备
 
@@ -34,7 +34,7 @@ ms.lasthandoff: 02/01/2018
 
 * 如果应用程序接收来自 Internet （而不仅仅是从内部网络） 的请求，它必须使用[HTTP.sys](xref:fundamentals/servers/httpsys) web 服务器 (以前称为[WebListener](xref:fundamentals/servers/weblistener)对于 ASP.NET Core 1.x 应用程序) 而不是[Kestrel](xref:fundamentals/servers/kestrel)。 IIS 被建议用于为反向代理服务器的 Kestrel 边缘部署。 有关详细信息，请参阅[何时结合使用 Kestrel 和反向代理](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)。
 
-## <a name="getting-started"></a>入门
+## <a name="get-started"></a>入门
 
 本部分介绍将现有的 ASP.NET Core 项目设置为在服务中运行所需的最小更改。
 
@@ -117,7 +117,7 @@ ms.lasthandoff: 02/01/2018
 
 [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=Logging&highlight=7)]
 
-## <a name="acknowledgments"></a>确认
+## <a name="acknowledgments"></a>致谢
 
 本文是已发布的源的帮助下编写的：
 

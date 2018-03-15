@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
 ms.openlocfilehash: d7e1ba503b8aa815cebf431d2f5ffc9436b3575b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>检查编辑方法和编辑视图
 ====================
@@ -62,7 +62,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample6.cshtml?highlight=9)]
 
-`@Html.AntiForgeryToken()`将生成在都必须匹配隐藏的表单防伪令牌`Edit`方法`Movies`控制器。 你可以阅读更多有关跨站点请求伪造 （也称为 XSRF 或 CSRF） 在我的教程[mvc XSRF/CSRF 预防](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)。
+`@Html.AntiForgeryToken()` 将生成在都必须匹配隐藏的表单防伪令牌`Edit`方法`Movies`控制器。 你可以阅读更多有关跨站点请求伪造 （也称为 XSRF 或 CSRF） 在我的教程[mvc XSRF/CSRF 预防](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)。
 
 `HttpGet` `Edit`方法采用电影 ID 参数，以查找使用实体框架电影`Find`方法，并将所选的电影返回到编辑视图。 如果找不到一部电影， [HttpNotFound](https://msdn.microsoft.com/library/gg453938(VS.98).aspx)返回。 当基架系统创建“编辑”视图时，它会检查 `Movie` 类并创建代码为类的每个属性呈现 `<label>` 和 `<input>` 元素。 下面的示例显示由 visual studio 基架系统生成的编辑视图：
 
@@ -100,7 +100,7 @@ ms.lasthandoff: 01/24/2018
 
 
 > [!NOTE]
-> 若要为使用逗号的非英语区域设置支持 jQuery 验证 (&quot;，&quot;) 对于小数点，和非美国英语的日期格式中，您必须包含*globalize.js*和您的特定*cultures/globalize.cultures.js*文件 (从[https://github.com/jquery/globalize](https://github.com/jquery/globalize) ) 和 JavaScript 使用`Globalize.parseFloat`。 你可以从 NuGet 获取 jQuery 非英语验证。 （请勿安装 Globalize 如果你使用的英语区域设置。）
+> 若要为使用逗号的非英语区域设置支持 jQuery 验证 (&quot;，&quot;) 对于小数点，和非美国英语的日期格式中，您必须包含*globalize.js*和您的特定*cultures/globalize.cultures.js*文件 (从[ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 和 JavaScript 使用`Globalize.parseFloat`。 你可以从 NuGet 获取 jQuery 非英语验证。 （请勿安装 Globalize 如果你使用的英语区域设置。）
 
 
 1. 从**工具**菜单上，单击**NuGetLibrary 程序包管理器**，然后单击**管理解决方案的 NuGet 包**。  
@@ -109,7 +109,7 @@ ms.lasthandoff: 01/24/2018
 2. 在左窗格中，选择 **浏览*。 * * * （参阅下图）。
 3. 在输入框中，输入 * Globalize * *。  
   
-    ![](examining-the-edit-methods-and-edit-view/_static/image6.png)选择`jQuery.Validation.Globalize`，选择`MvcMovie`单击**安装**。 *Scripts\jquery.globalize\globalize.js*文件将添加到你的项目。 *Scripts\jquery.globalize\cultures\*文件夹将包含多个区域性 JavaScript 文件。 请注意，它可能需要 5 分钟，安装此包。
+    ![](examining-the-edit-methods-and-edit-view/_static/image6.png) 选择`jQuery.Validation.Globalize`，选择`MvcMovie`单击**安装**。 *Scripts\jquery.globalize\globalize.js*文件将添加到你的项目。 *Scripts\jquery.globalize\cultures\*文件夹将包含多个区域性 JavaScript 文件。 请注意，它可能需要 5 分钟，安装此包。
 
  下面的代码演示对 Views\Movies\Edit.cshtml 文件进行修改： 
 
@@ -123,7 +123,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-xml[Main](examining-the-edit-methods-and-edit-view/samples/sample11.xml)]
 
-<a id="gettingstarted"></a><a id="jQueryAjaxJSON"></a>在下一步的教程中，我们将实现搜索功能。
+<a id="gettingstarted"></a><a id="jQueryAjaxJSON"></a> 在下一步的教程中，我们将实现搜索功能。
 
 >[!div class="step-by-step"]
 [上一页](accessing-your-models-data-from-a-controller.md)

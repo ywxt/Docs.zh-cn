@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
 ms.openlocfilehash: 3f732ae6f1b7845bcae88912b4a4fe26574c10de
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="aspnet-error-handling"></a>ASP.NET 错误处理
 ====================
@@ -301,7 +301,7 @@ ELMAH 现已准备好存储出现任何未处理的错误。
 
 1. 按**CTRL + F5**运行 Wingtip Toys 示例应用程序。
 2. 若要写入的 ELMAH 日志未处理的异常，导航到以下 URL （使用端口号） 浏览器中：  
-    `https://localhost:44300/NoPage.aspx`将显示错误页。
+    `https://localhost:44300/NoPage.aspx` 将显示错误页。
 3. 若要显示 ELMAH 日志，请导航到以下 URL （使用端口号） 浏览器中：  
     `https://localhost:44300/elmah.axd`
 

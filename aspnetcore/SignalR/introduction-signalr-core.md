@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/introduction-signalr-core
-ms.openlocfilehash: d4ad9bb1910a3339ac8d0d8ff740417f4e7262b7
-ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
+ms.openlocfilehash: 3fa70c957b246787d4e457c74f90ad797b3af766
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-signalr"></a>SignalR 简介
 
@@ -39,7 +39,7 @@ SignalR 提供了一个 API，用于创建服务器到客户端[远程过程调�
 * 允许同时广播到所有连接的客户端的消息。 例如，聊天室。
 * 允许将消息发送到特定客户端或客户端组。
 * 为在开放源代码[GitHub](https://github.com/aspnet/signalr)。
-* 可以很好地缩放。
+* 可缩放。
 
 客户端和服务器之间的连接是持久性的与 HTTP 连接不同。
 

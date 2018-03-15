@@ -5,16 +5,16 @@ author: spboyer
 manager: wpickett
 ms.author: spboyer
 ms.custom: mvc
-ms.date: 10/19/2016
+ms.date: 03/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: b11bc811b6aefce22b60a28afd72c2a2d0b26955
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 033adddc586b60c9f7453df5434617aa838737f8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>使用 Apache 在 Linux 上托管 ASP.NET Core
 
@@ -112,27 +112,32 @@ Complete!
 ```
 
 > [!NOTE]
-> 在此示例中，输出将反映 httpd.86_64，由于 CentOS 7 版本是 64 位。 若要验证 Apache 的安装位置，请从命令提示符运行 `whereis httpd`。 
+> 在此示例中，输出将反映 httpd.86_64，由于 CentOS 7 版本是 64 位。 若要验证 Apache 的安装位置，请从命令提示符运行 `whereis httpd`。
 
 ### <a name="configure-apache-for-reverse-proxy"></a>配置 Apache 用于反向代理
 
 Apache 的配置文件位于 `/etc/httpd/conf.d/` 目录内。 具有的所有文件*.conf*扩展处理除了中的模块配置文件按字母顺序`/etc/httpd/conf.modules.d/`，其中包含的任何配置所需加载模块文件。
 
-创建名为的应用配置文件`hellomvc.conf`:
+创建一个配置文件，名为*hellomvc.conf*，应用程序：
 
 ```
 <VirtualHost *:80>
     ProxyPreserveHost On
     ProxyPass / http://127.0.0.1:5000/
     ProxyPassReverse / http://127.0.0.1:5000/
-    ErrorLog /var/log/httpd/hellomvc-error.log
-    CustomLog /var/log/httpd/hellomvc-access.log common
+    ServerName www.example.com
+    ServerAlias *.example.com
+    ErrorLog ${APACHE_LOG_DIR}hellomvc-error.log
+    CustomLog ${APACHE_LOG_DIR}hellomvc-access.log common
 </VirtualHost>
 ```
 
-**VirtualHost**节点可以在服务器上的一个或多个文件中出现多次。 **VirtualHost**设置为使用端口 80 的任何 IP 地址上侦听。 接下来的两行在端口 5000 上设置为根目录下到上 127.0.0.1 的服务器的代理请求。 对于双向通信， *ProxyPass*和*ProxyPassReverse*所需。
+`VirtualHost`块可以出现多次，在服务器上的一个或多个文件。 在前面的配置文件中，Apache 接受公共端口 80 上的流量。 域`www.example.com`正在提供服务，与`*.example.com`别名解析为同一网站。 请参阅[基于名称的虚拟主机支持](https://httpd.apache.org/docs/current/vhosts/name-based.html)有关详细信息。 请求是服务器的代理针对端口 5000 上 127.0.0.1 的根目录。 对于双向通信，`ProxyPass`和`ProxyPassReverse`所需。
 
-可以每个配置日志记录**VirtualHost**使用**ErrorLog**和**CustomLog**指令。 **错误日志**是服务器用来记录错误的位置和**CustomLog**设置的文件名和日志文件格式。 在这种情况下，这是记录请求信息的位置。 没有为每个请求的一行。
+> [!WARNING]
+> 如果未能指定合适[ServerName 指令](https://httpd.apache.org/docs/current/mod/core.html#servername)中**VirtualHost**块公开您的应用程序安全漏洞。 子域通配符绑定 (例如， `*.example.com`) 不会带来安全风险，若要控制整个父域 (相对于`*.com`，这是易受攻击)。 请参阅[rfc7230 部分 5.4](https://tools.ietf.org/html/rfc7230#section-5.4)有关详细信息。
+
+可以每个配置日志记录`VirtualHost`使用`ErrorLog`和`CustomLog`指令。 `ErrorLog` 是服务器用来记录错误的位置和`CustomLog`设置的文件名和日志文件格式。 在这种情况下，这是记录请求信息的位置。 没有为每个请求的一行。
 
 将文件保存与测试配置。 如果一切正常，响应应为 `Syntax [OK]`。
 

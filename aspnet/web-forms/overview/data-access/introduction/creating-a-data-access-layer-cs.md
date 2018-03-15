@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 927b2490b5c539a79bb9939b88942499b23cc464
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="creating-a-data-access-layer-c"></a>创建数据访问层 (C#)
 ====================
@@ -233,7 +233,7 @@ AllProducts.aspx.cs
 **图 15**： 选择创建**选择**语句其返回行 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image41.png))
 
 
-下一步是定义用于访问数据的 SQL 查询。 由于我们想要返回属于特定类别的产品，我将使用相同**选择**语句从**GetProducts()**，但将添加以下**其中**子句：**其中 CategoryID = @CategoryID** 。 **@CategoryID** 参数到 TableAdapter 向导指示我们正在创建的方法，将需要输入的参数的相应类型 （也就是说，可以为 null 的整数）。
+下一步是定义用于访问数据的 SQL 查询。 由于我们想要返回属于特定类别的产品，我将使用相同**选择**语句从**GetProducts()**，但将添加以下**其中**子句：**其中 CategoryID = @CategoryID** 。  **@CategoryID** 参数到 TableAdapter 向导指示我们正在创建的方法，将需要输入的参数的相应类型 （也就是说，可以为 null 的整数）。
 
 
 [![输入查询以仅返回在指定类别中的产品](creating-a-data-access-layer-cs/_static/image43.png)](creating-a-data-access-layer-cs/_static/image42.png)
@@ -308,7 +308,7 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 
 [![TableAdapter 具有 InsertCommand、 限于 UpdateCommand 和 DeleteCommand 属性](creating-a-data-access-layer-cs/_static/image62.png)](creating-a-data-access-layer-cs/_static/image61.png)
 
-**图 23**: TableAdapter 具有**InsertCommand**， **UpdateCommand**，和**DeleteCommand**属性 ([单击以查看完全尺寸的图像](creating-a-data-access-layer-cs/_static/image63.png))
+**图 23**: TableAdapter 具有**InsertCommand**， **UpdateCommand**，和**DeleteCommand**属性 ([单击以查看全屏映像](creating-a-data-access-layer-cs/_static/image63.png))
 
 
 若要检查或修改任何这些数据库命令属性，请单击**CommandText**子属性，将显示查询生成器。
@@ -537,7 +537,7 @@ SuppliersAndProducts.aspx.cs
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 

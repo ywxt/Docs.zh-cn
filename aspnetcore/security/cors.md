@@ -1,7 +1,7 @@
 ---
-title: "启用跨源请求 (CORS)"
+title: "启用 ASP.NET Core 中的跨源请求 (CORS)"
 author: rick-anderson
-description: "本文档介绍了 CORS，作为一种标准允许或拒绝 ASP.NET Core 应用程序中的跨域请求。"
+description: "了解如何作为一种标准允许或拒绝 ASP.NET Core 应用程序中的跨域请求的 CORS。"
 manager: wpickett
 ms.author: riande
 ms.date: 05/17/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cors
-ms.openlocfilehash: ee61798fc1bde89ca3712eae9b7c4413e58cf70d
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 64d939033fee14fad37a08c60da608898e20c01b
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="enabling-cross-origin-requests-cors"></a>启用跨源请求 (CORS)
+# <a name="enabling-cross-origin-requests-cors-in-aspnet-core"></a>启用 ASP.NET Core 中的跨源请求 (CORS)
 
 通过[Mike Wasson](https://github.com/mikewasson)， [Shayne 贝叶](https://twitter.com/spboyer)，和[Tom Dykstra](https://github.com/tdykstra)
 
@@ -160,7 +160,7 @@ CORS 预检请求可能包括一个访问控制的请求标头标头，列出由
 
 ### <a name="set-the-exposed-response-headers"></a>设置公开的响应标头
 
-默认情况下，浏览器不会公开所有向应用程序的响应标头。 (请参阅[http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header)。)默认为可用的响应标头是：
+默认情况下，浏览器不会公开所有向应用程序的响应标头。 (See [http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header).)默认为可用的响应标头是：
 
 * Cache-Control
 

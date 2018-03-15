@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
-title: Getting Started with ASP.NET Web API 2 (C#)
+title: "要开始使用 ASP.NET Web API 2 (C#)"
 author: MikeWasson
 description: "HTTP 不再仅仅用于为网页提供服务。 它也是一个功能强大的平台，用于构建公开服务和数据的 Api。 HTTP 是简单、 灵活、 和 ubiq..."
 ms.author: aspnetcontent
@@ -11,13 +11,13 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 6ff9fd279a03197f761454bba3f180d7428b1b1f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d881563cdb6449aada444ef0528061581113a925
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
-<a name="getting-started-with-aspnet-web-api-2-c"></a>Getting Started with ASP.NET Web API 2 (C#)
+<a name="get-started-with-aspnet-web-api-2-c"></a>要开始使用 ASP.NET Web API 2 (C#)
 ====================
 通过[Mike Wasson](https://github.com/MikeWasson)
 
@@ -134,7 +134,7 @@ ASP.NET Web API 是一个框架，用于生成 web Api 在.NET Framework 之上�
 
 [!code-html[Main](tutorial-your-first-web-api/samples/sample3.html)]
 
-有多种方法来获取 jQuery。 在此示例中，我使用[Microsoft Ajax CDN](../../../ajax/cdn/overview.md)。 你也可以下载它从[http://jquery.com/](http://jquery.com/)，和 ASP.NET"Web API"项目模板包括 jQuery 以及。
+有多种方法来获取 jQuery。 在此示例中，我使用[Microsoft Ajax CDN](../../../ajax/cdn/overview.md)。 你也可以下载它从[ http://jquery.com/ ](http://jquery.com/)，和 ASP.NET"Web API"项目模板包括 jQuery 以及。
 
 ### <a name="getting-a-list-of-products"></a>获取产品的列表
 

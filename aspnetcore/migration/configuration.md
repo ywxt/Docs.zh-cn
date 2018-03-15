@@ -1,7 +1,7 @@
 ---
-title: "迁移配置"
+title: "迁移到 ASP.NET 核心配置"
 author: ardalis
-description: 
+description: "了解如何将配置从 ASP.NET MVC 项目迁移到 ASP.NET 核心 MVC 项目。"
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/configuration
-ms.openlocfilehash: e1ee582072c88542565c5cb860e157afe137f9f0
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 6c72b324de49a03a3b2c4e96ba8886d1ed249103
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="migrating-configuration"></a>迁移配置
+# <a name="migrating-configuration-to-aspnet-core"></a>迁移到 ASP.NET 核心配置
 
 作者：[Steve Smith](https://ardalis.com/) 和 [Scott Addie](https://scottaddie.com)
 

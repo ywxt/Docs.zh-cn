@@ -13,14 +13,14 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/create-a-new-aspnet-mvc-project
 msc.type: authoredcontent
 ms.openlocfilehash: 4d30a6803b1478014a2afb814ac317df27394446
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="create-a-new-aspnet-mvc-project"></a>创建新的 ASP.NET MVC 项目
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -63,14 +63,14 @@ ms.lasthandoff: 11/10/2017
 
 默认情况下的 ASP.NET MVC 项目具有六个顶级目录：
 
-| **目录** | **目的** |
+| **Directory** | **目的** |
 | --- | --- |
-| **/ 控制器** | 处理 URL 请求的控制器类的放置位置 |
-| **/ 模型** | 类表示和操作数据的放置位置 |
-| **/ 视图** | 放置负责呈现输出的 UI 模板文件的位置 |
-| **/ 脚本** | JavaScript 库文件和脚本 (.js) 的放置位置 |
-| **/ 内容** | CSS 和图像文件与其他非-动态/非-JavaScript 内容的放置位置 |
-| **/ 应用\_数据** | 存储数据文件在你想要读/写。 |
+| **/Controllers** | 处理 URL 请求的控制器类的放置位置 |
+| **/Models** | 类表示和操作数据的放置位置 |
+| **/Views** | 放置负责呈现输出的 UI 模板文件的位置 |
+| **/Scripts** | JavaScript 库文件和脚本 (.js) 的放置位置 |
+| **/Content** | CSS 和图像文件与其他非-动态/非-JavaScript 内容的放置位置 |
+| **/App\_Data** | 存储数据文件在你想要读/写。 |
 
 ASP.NET MVC 不需要此结构。 事实上，开发人员处理大型应用程序将通常对应用程序分区向上跨多个项目，以使其更易于管理 (例如： 数据模型类通常在一个单独的类库项目中从转 web 应用程序)。 默认项目结构，但是，提供我们可用于保持我们的应用程序主要关注干净的很好的默认目录约定。
 

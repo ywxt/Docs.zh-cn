@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
 ms.openlocfilehash: 353419077422516761df56f730352b19b5db5ff2
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 模型和数据访问
 
@@ -39,7 +39,7 @@ ms.lasthandoff: 03/02/2018
 
 ![数据库第一个 vs。模型优先](aspnet-mvc-4-models-and-data-access/_static/image1.png "Database First vs。模型优先")
 
-*数据库第一个 vs。模型优先
+*数据库第一个 vs。模型优先*
 
 后生成模型，你会使 StoreController 为存储视图的数据库，而不是使用硬编码数据中获取的数据提供适当的调整。 不需要进行任何更改视图模板 StoreController 将返回相同的 Viewmodel 到查看模板，因为虽然此时间的数据将来自数据库。
 
@@ -560,7 +560,7 @@ ms.lasthandoff: 03/02/2018
 
 你可以安装**Microsoft Visual Studio Express 2012 for Web**或另一个&quot;Express&quot;版本使用 **[Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)**. 以下说明将指导你完成安装所需的步骤*Visual studio Express 2012 for Web*使用*Microsoft Web 平台安装程序*。
 
-1. 转到[ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; *Visual Studio Express 2012 for Web 的 Windows Azure SDK*&quot;。
+1. 转到[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; *Visual Studio Express 2012 for Web 的 Windows Azure SDK*&quot;。
 2. 单击**立即安装**。 如果你没有**Web 平台安装程序**将重定向以下载并请先安装它。
 3. 一次**Web 平台安装程序**处于打开状态，单击**安装**以启动安装程序。
 
@@ -667,12 +667,12 @@ ms.lasthandoff: 03/02/2018
 
     ![添加客户端 IP 地址](aspnet-mvc-4-models-and-data-access/_static/image41.png)
 
-    添加客户端 IP 地址
+    *添加客户端 IP 地址*
 3. 一次**客户端 IP 地址**添加到允许的 IP 地址列表中，单击**保存**以确认所做的更改。
 
     ![确认做的更改](aspnet-mvc-4-models-and-data-access/_static/image42.png)
 
-    确认做的更改
+    *确认做的更改*
 
 <a id="ApxBTask3"></a>
 

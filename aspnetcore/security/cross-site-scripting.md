@@ -1,7 +1,7 @@
 ---
-title: "防止跨站点脚本"
+title: "防止跨站点脚本 (XSS) 在 ASP.NET 核心"
 author: rick-anderson
-description: "本文档介绍跨站点脚本 (XSS) 和寻址 ASP.NET Core 应用程序中的此漏洞的技术。"
+description: "了解有关跨站点脚本 (XSS) 和一些解决这一漏洞在 ASP.NET Core 应用程序技术。"
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cross-site-scripting
-ms.openlocfilehash: 679d9689fbc2679d9ba20bf9c6dba5c95d76dbce
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 9e54ee0b1169c01629c3cd91a378509a73c53904
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="preventing-cross-site-scripting"></a>防止跨站点脚本
+# <a name="preventing-cross-site-scripting-xss-in-aspnet-core"></a>防止跨站点脚本 (XSS) 在 ASP.NET 核心
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 01/30/2018
 
 ## <a name="html-encoding-using-razor"></a>使用 Razor 的 HTML 编码
 
-自动使用 MVC Razor 引擎将所有编码输出源自变量，除非您真正努力工作以避免其执行此操作。 它使用编码规则，每当你使用的 HTML 特性* @ *指令。 为 HTML 属性编码为 HTML 编码，这意味着你不必考虑自己是否应使用 HTML 编码或 HTML 特性编码的超集。 你必须确保您仅使用在 HTML 上下文中，不是在尝试将直接插入 JavaScript 不受信任的输入时。 标记帮助程序还会编码标记参数中使用的输入。
+自动使用 MVC Razor 引擎将所有编码输出源自变量，除非您真正努力工作以避免其执行此操作。 它使用编码规则，每当你使用的 HTML 特性 *@* 指令。 为 HTML 属性编码为 HTML 编码，这意味着你不必考虑自己是否应使用 HTML 编码或 HTML 特性编码的超集。 你必须确保您仅使用在 HTML 上下文中，不是在尝试将直接插入 JavaScript 不受信任的输入时。 标记帮助程序还会编码标记参数中使用的输入。
 
 考虑以下 Razor 视图;
 

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: 27a46446e9bf63e96eecc392e6d6863e27b34730
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e6a8404d3fe96a0136d7f874107b2cdf63e8e890
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>解决在 Azure App Service 上的 ASP.NET 核心
 
@@ -184,4 +184,5 @@ ASP.NET 核心模块 stdout 日志通常记录找不到应用程序事件日志�
 * [排除"502 错误网关"和"503 服务不可用"Azure web 应用中的 HTTP 的错误](/app-service/app-service-web-troubleshoot-http-502-http-503)
 * [解决在 Azure App Service 的慢速 web 应用程序性能问题](/azure/app-service/app-service-web-troubleshoot-performance-degradation)
 * [在 Azure 中的 Web 应用的应用程序性能常见问题](/azure/app-service/app-service-web-availability-performance-application-issues-faq)
+* [Azure Web 应用沙盒 （应用程序服务运行时执行限制）](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)
 * [Azure Friday：Azure 应用服务诊断和故障排除体验（12 分钟视频）](https://channel9.msdn.com/Shows/Azure-Friday/Azure-App-Service-Diagnostic-and-Troubleshooting-Experience)

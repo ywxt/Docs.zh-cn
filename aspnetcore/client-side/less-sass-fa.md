@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/less-sass-fa
-ms.openlocfilehash: 7ef82d15de64ef62b952b6c757cb9c35fd40e788
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: e00a0929db9dff6c97c4b22468156f621a1a3820
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>简介事半功倍的样式应用程序、 Sass，和在 ASP.NET 核心中出色的字体
 
-通过[Steve Smith](https://ardalis.com/)
+作者：[Steve Smith](https://ardalis.com/)
 
 Web 应用程序的用户有越来越高的期望时设置的样式和总体体验。 现代 web 应用程序频繁地利用丰富的工具和框架用于定义和管理其外观和感觉以一致的方式。 框架喜欢[Bootstrap](http://getbootstrap.com/)可以地长定义一组通用的样式和网站的布局选项。 但是，大多数重要站点还受益于能够有效地定义和维护样式和级联样式表 (CSS) 文件，以及能够轻松访问帮助使站点的接口更直观的非图像图标。 就是在此处的支持语言和工具[较少](http://lesscss.org/)和[Sass](http://sass-lang.com/)，库等，以及将[字体出色](http://fontawesome.io/)，进入。
 
@@ -97,9 +97,9 @@ body {
 .bgDark2    {color:@darker2}
 ```
 
-`@base`和其他@-prefixed项是变量。 每个表示一种颜色。 除`@base`，设置它们并使用颜色函数： 加亮、 变暗，和旋转。 淡化和加深执行几乎你将预期;数值调节钮调整颜色色调的大量度 （围绕颜色盘中）。 较少处理器是足够智能，可忽略不使用的变量，因此若要展示了这些变量的工作原理，我们需要某个位置使用它们。 类`.baseColor`，等将演示每个生成的 CSS 文件中的变量的计算的值。
+`@base` 和其他@-prefixed项是变量。 每个表示一种颜色。 除`@base`，设置它们并使用颜色函数： 加亮、 变暗，和旋转。 淡化和加深执行几乎你将预期;数值调节钮调整颜色色调的大量度 （围绕颜色盘中）。 较少处理器是足够智能，可忽略不使用的变量，因此若要展示了这些变量的工作原理，我们需要某个位置使用它们。 类`.baseColor`，等将演示每个生成的 CSS 文件中的变量的计算的值。
 
-### <a name="getting-started"></a>入门
+### <a name="get-started"></a>入门
 
 创建**npm 配置文件**(*package.json*) 在你的项目文件夹并编辑它以引用`gulp`和`gulp-less`:
 

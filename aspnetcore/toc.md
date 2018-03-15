@@ -313,7 +313,6 @@
 #### [密钥存储格式](xref:security/data-protection/implementation/key-storage-format)
 #### [短数据保护提供程序](xref:security/data-protection/implementation/key-storage-ephemeral)
 ### [兼容性](xref:security/data-protection/compatibility/index)
-#### [在应用之间共享 Cookie](xref:security/data-protection/compatibility/cookie-sharing)
 #### [在 ASP.NET 中替换 <machineKey>](xref:security/data-protection/compatibility/replacing-machinekey)
 ## [Enforce HTTPS](xref:security/enforcing-ssl)
 ## [在开发期间安全存储应用密钥](xref:security/app-secrets)
@@ -322,6 +321,7 @@
 ## [阻止打开重定向攻击](xref:security/preventing-open-redirects)
 ## [阻止跨站点脚本编写](xref:security/cross-site-scripting)
 ## [启用跨域请求 (CORS)](xref:security/cors)
+## [在应用之间共享 Cookie](xref:security/cookie-sharing)
 
 # [性能](xref:performance/index)
 ## [缓存](xref:performance/caching/index)

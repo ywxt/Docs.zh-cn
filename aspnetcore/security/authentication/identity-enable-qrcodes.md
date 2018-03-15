@@ -1,7 +1,7 @@
 ---
 title: "启用 ASP.NET Core 中的身份验证器应用的 QR 代码生成"
 author: rick-anderson
-description: "启用 ASP.NET Core 中的身份验证器应用的 QR 代码生成"
+description: "了解如何启用使用 ASP.NET Core 双因素身份验证的身份验证器应用的 QR 代码生成。"
 manager: wpickett
 ms.author: riande
 ms.date: 09/24/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: cf941314d54aa4a7bd1724805dc62c763ca71dfb
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: dd326bb32565b743d21e196bcb616a716d7994bf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="enabling-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>启用 ASP.NET Core 中的身份验证器应用的 QR 代码生成
 
@@ -25,7 +25,7 @@ ASP.NET 核心 web 应用程序模板支持身份验证器，但不提供对 QRC
 
 ## <a name="adding-qr-codes-to-the-2fa-configuration-page"></a>将 QR 代码添加到 2FA 配置页
 
-这些说明使用*qrcode.js*从 https://davidshimjs.github.io/qrcodejs/ 存储库。
+这些说明使用*qrcode.js*从https://davidshimjs.github.io/qrcodejs/存储库。
 
 * 下载[qrcode.js javascript 库](https://davidshimjs.github.io/qrcodejs/)到`wwwroot\lib`项目文件夹中的。
 
@@ -84,8 +84,8 @@ QR 代码库可以替换你首选的库。 HTML 包含`qrCode`元素在其中可
 
 QR 代码的格式正确 URL 可用于:
 
-* `AuthenticatorUri`模型的属性。
-* `data-url`中的属性`qrCodeData`元素。 
+* `AuthenticatorUri` 模型的属性。
+* `data-url` 中的属性`qrCodeData`元素。 
 
 ## <a name="totp-client-and-server-time-skew"></a>TOTP 客户端和服务器时间偏差
 

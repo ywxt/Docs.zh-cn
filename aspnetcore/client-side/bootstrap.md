@@ -1,7 +1,7 @@
 ---
-title: "生成使用 Bootstrap 美观、 响应迅速站点"
+title: "生成使用 Bootstrap 和 ASP.NET 核心美观、 响应迅速站点"
 author: ardalis
-description: 
+description: "了解如何开发使用 ASP.NET Core 的响应式 web 应用程序使用 Bootstrap。"
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bootstrap
-ms.openlocfilehash: e2ade6223cdc56a4f0f00ff0b985ceda4ab5484a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: c3dfaa53e9e3277d025d014f65004e4c24a5acc4
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="building-beautiful-responsive-sites-with-bootstrap"></a>生成使用 Bootstrap 美观、 响应迅速站点
+# <a name="building-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>生成使用 Bootstrap 和 ASP.NET 核心美观、 响应迅速站点
 
 <a name="bootstrap-index"></a>
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 03/02/2018
 
 Bootstrap 目前最常用的 web 框架开发响应式 web 应用程序。 无论您是在前端设计和开发或方面的专家新手，它提供大量的功能和优势，这样可以提高您的网站，用户的体验。 Bootstrap 部署为一组 CSS 和 JavaScript 文件，并旨在从手机有效地帮助你的网站或应用程序缩放，平板电脑和桌面。
 
-## <a name="getting-started"></a>入门
+## <a name="get-started"></a>入门
 
 有多种，若要开始使用 Bootstrap。 如果你在 Visual Studio 中开始新的 web 应用程序，则可以为 ASP.NET Core，区分大小的 Bootstrap 会预安装选择默认初学者模板：
 
@@ -190,7 +190,7 @@ Navbars 同样，内置，但较之前更复杂。 启动时出现`<nav>`或`<di
     <link rel="stylesheet" href="~/css/bootstrap.min.css" />
 ```
 
-如果你想要生成你自己的仪表板，你可以从提供的免费示例从这里开始： [http://getbootstrap.com/examples/dashboard/](http://getbootstrap.com/examples/dashboard/)。
+如果你想要生成你自己的仪表板，你可以从提供的免费示例从这里开始： [ http://getbootstrap.com/examples/dashboard/ ](http://getbootstrap.com/examples/dashboard/)。
 
 ## <a name="components"></a>组件数
 
@@ -214,7 +214,7 @@ Bootstrap 包括从 Glyphicons 图标集 ([http://glyphicons.com](http://glyphic
 
 ## <a name="javascript-support"></a>JavaScript 支持
 
-Bootstrap 的 JavaScript 库包括对包含的组件，使您可以控制其行为以编程方式在你的应用程序的 API 支持。 此外， *bootstrap.js*包括超过 12 个自定义 jQuery 插件，提供其他功能，例如转换，模式对话框，向下滚动 （更新样式基于用户具有滚动文档中的何处） 的检测，因此，它们不会滚动出屏幕折叠到窗口的行为、 行李传送带和将附加菜单。 没有足够的空间来涵盖所有 Bootstrap – 若要了解详细信息，请访问内置的 JavaScript 外接程序[http://getbootstrap.com/javascript/](http://getbootstrap.com/javascript/)。
+Bootstrap 的 JavaScript 库包括对包含的组件，使您可以控制其行为以编程方式在你的应用程序的 API 支持。 此外， *bootstrap.js*包括超过 12 个自定义 jQuery 插件，提供其他功能，例如转换，模式对话框，向下滚动 （更新样式基于用户具有滚动文档中的何处） 的检测，因此，它们不会滚动出屏幕折叠到窗口的行为、 行李传送带和将附加菜单。 没有足够的空间来涵盖所有 Bootstrap – 若要了解详细信息，请访问内置的 JavaScript 外接程序[ http://getbootstrap.com/javascript/ ](http://getbootstrap.com/javascript/)。
 
 ## <a name="summary"></a>摘要
 

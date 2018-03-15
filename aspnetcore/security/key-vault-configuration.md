@@ -1,5 +1,5 @@
 ---
-title: "Azure 密钥保管库配置提供程序"
+title: "在 ASP.NET 核心的 azure 密钥保管库配置提供程序"
 author: guardrex
 description: "了解如何使用 Azure 密钥保管库配置提供程序配置应用程序使用在运行时加载的名称-值对。"
 manager: wpickett
@@ -8,13 +8,13 @@ ms.date: 08/09/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: 1a91a87fb90d4d4651e07f32415e4364c8e2d993
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: e1a4be77417f0a74182f1b123bfba429737d4330
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="azure-key-vault-configuration-provider"></a>Azure 密钥保管库配置提供程序
+# <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>在 ASP.NET 核心的 azure 密钥保管库配置提供程序
 
 通过[Luke Latham](https://github.com/guardrex)和[Andrew Stanton 护士](https://github.com/anurse)
 
@@ -74,7 +74,7 @@ ms.lasthandoff: 02/11/2018
 ![通过 Azure 密钥保管库配置提供程序加载浏览器窗口中显示密钥值](key-vault-configuration/_static/sample1.png)
 
 ## <a name="creating-prefixed-key-vault-secrets-and-loading-configuration-values-key-name-prefix-sample"></a>创建带前缀的密钥保管库密码和加载配置值 （密钥的名称的前缀的示例）
-`AddAzureKeyVault`此外提供了一个接受的实现重载`IKeyVaultSecretManager`，这样，你可以控制如何密钥保管库密码将转换为配置密钥。 例如，你可以实现接口后，可加载基于你在应用启动时提供的前缀值的密钥值。 这使你，例如，加载基于应用程序的版本的机密。
+`AddAzureKeyVault` 此外提供了一个接受的实现重载`IKeyVaultSecretManager`，这样，你可以控制如何密钥保管库密码将转换为配置密钥。 例如，你可以实现接口后，可加载基于你在应用启动时提供的前缀值的密钥值。 这使你，例如，加载基于应用程序的版本的机密。
 
 > [!WARNING]
 > 不要使用前缀在密钥保管库密码放到同一个密钥保管库的多个应用的机密，或将环境机密 (例如，*开发*与*生产*机密) 入同一保管库。 我们建议，不同的应用程序和开发/生产环境使用单独的密钥保管库来隔离应用程序环境安全的最高级别。

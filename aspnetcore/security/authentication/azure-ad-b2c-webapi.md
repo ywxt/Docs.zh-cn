@@ -1,5 +1,5 @@
 ---
-title: "云身份验证中的 web Api 与 Azure Active Directory B2C"
+title: "中的 web Api 与 Azure Active Directory B2C 中 ASP.NET 核心云身份验证"
 author: camsoper
 description: "了解如何设置与 ASP.NET 核心 Web API 的 Azure Active Directory B2C 身份验证。 测试已通过身份验证的 web API 与 Postman。"
 ms.author: casoper
@@ -10,13 +10,13 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: d768e2daf2464b282b097e935ef6c5f85e8705f5
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 1213f7eb25fb6525f98d83dff0956a841ae686a7
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c"></a>云身份验证中的 web Api 与 Azure Active Directory B2C
+# <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>中的 web Api 与 Azure Active Directory B2C 中 ASP.NET 核心云身份验证
 
 作者：[Cam Soper](https://twitter.com/camsoper)
 

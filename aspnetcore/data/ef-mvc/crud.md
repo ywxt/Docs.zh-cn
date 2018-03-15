@@ -1,5 +1,5 @@
 ---
-title: "ASP.NET Core MVC 和 EF Core - CRUD - 第 2 个教程（共 10 个）"
+title: "ASP.NET Core MVC 和 EF Core 教程 - 创建、读取、更新和删除 (2/10)"
 author: tdykstra
 description: 
 manager: wpickett
@@ -25,7 +25,7 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 
 > [!NOTE] 
 > 为了在控制器和数据访问层之间创建一个抽象层，常见的做法是实现存储库模式。 为了保持这些教程内容简单并重点介绍如何使用 Entity Framework 本身，它们不使用存储库。 有关存储库和 EF 的信息，请参阅[本系列中的最后一个教程](advanced.md)。
-在本教程中，将使用以下网页：
+
 在本教程中，将使用以下网页：
 
 ![学生详细信息页](crud/_static/student-details.png)
@@ -60,7 +60,7 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 http://localhost:1230/Instructor/Index/1?courseID=2021
 ```
 
-URL 的最后一部分（“?courseID=2021”）是一个查询字符串值。 如果将 ID 值作为查询字符串值传递，则模型绑定器还将把 ID 值传递到 `Details` 方法的 `id` 参数：
+URL 的最后部分 ("?courseID=2021") 是一个查询字符串。 如果将 `id` 作为查询字符串值传递，模型绑定器也会将 ID 值作为参数传递给 `Details` 方法：
 
 ```
 http://localhost:1230/Instructor/Index?id=1&CourseID=2021
@@ -86,11 +86,15 @@ http://localhost:1230/Instructor/Index?id=1&CourseID=2021
 
 `item.ID` 为 6 时，会生成以下 HTML：
 
-### <a name="add-enrollments-to-the-details-view"></a>将注册添加到“详细信息”视图
+```html
+<a href="/Students/Edit?studentID=6">Edit</a>
+```
+
 有关标记帮助器的详细信息，请参阅 [ASP.NET Core 中的标记帮助器](xref:mvc/views/tag-helpers/intro)。
+
 ### <a name="add-enrollments-to-the-details-view"></a>将注册添加到“详细信息”视图
 
-打开 Views/Students/Details.cshtml。 如以下示例所示，使用 `DisplayNameFor` 和 `DisplayFor` 帮助器显示每个字段：
+打开 *Views/Students/Details.cshtml*。 每个字段都使用 `DisplayNameFor` 和 `DisplayFor` 帮助器来显示，如下面的示例中所示：
 
 [!code-html[](intro/samples/cu/Views/Students/Details.cshtml?range=13-18&highlight=2,5)]
 
@@ -108,7 +112,7 @@ http://localhost:1230/Instructor/Index?id=1&CourseID=2021
 
 ## <a name="update-the-create-page"></a>更新“创建”页
 
-在 StudentsController.cs 中，通过添加 try-catch 块并从 `Bind` 特性删除 ID 来修改 HttpPost`Create` 方法。
+在 *StudentsController.cs* 中修改 HttpPost `Create` 方法，在 `Bind` 特性中添加 try catch 块并删除 ID 值。
 
 [!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=4,6-7,14-21)]
 

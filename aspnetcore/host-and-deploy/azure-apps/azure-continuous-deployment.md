@@ -1,5 +1,5 @@
 ---
-title: "使用 Visual Studio 和 Git 持续部署到 Azure"
+title: "使用 Visual Studio 的 Azure 和 ASP.NET Core 使用 Git 进行持续部署"
 author: rick-anderson
 description: "了解如何使用 Visual Studio 创建 ASP.NET Core Web 应用并使用 Git 将它部署到 Azure 应用服务以实现持续部署。"
 manager: wpickett
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: ea4788b5daead9e355e13b963c025dd110eb2bff
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 7302de1ace62dba53b317039aac7f4763314aa19
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="continuous-deployment-to-azure-for-aspnet-core-with-visual-studio-and-git"></a>ASP.NET Core 与 Visual Studio 和 Git 的连续部署到 Azure 的
+# <a name="continuous-deployment-to-azure-with-visual-studio-and-git-with-aspnet-core"></a>使用 Visual Studio 的 Azure 和 ASP.NET Core 使用 Git 进行持续部署
 
 作者：[Erik Reitan](https://github.com/Erikre)
 
@@ -43,7 +43,7 @@ ms.lasthandoff: 03/02/2018
 
 1. 从“文件”菜单中选择“新建” > “项目”。
 
-1. 选择“ASP.NET Core Web 应用程序”项目模板。 它出现在“已安装” > “模板” > “Visual C#” > “.NET Core”下。 将项目命名为 `SampleWebAppDemo`。 选择“创建新 Git 存储库”选项，然后单击“确定”。
+1. 选择“ASP.NET Core Web 应用程序”项目模板。 它出现在“已安装” > “模板” > “Visual C#” > “.NET Core”下。 将项目命名为 `SampleWebAppDemo`。 选择**创建新 Git 存储库**选项，然后单击**确定**。
 
    ![“新建项目”对话框](azure-continuous-deployment/_static/01-new-project.png)
 

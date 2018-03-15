@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: f69f707ba64d13fc372b7bc44718c9dcf8cec6e2
-ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
+ms.openlocfilehash: f1225f06e5218d893e3f49b2ccc67d56365b30e5
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="microsoft-ajax-content-delivery-network"></a>Microsoft Ajax 内容交付网络
 ====================
@@ -74,7 +74,7 @@ Microsoft Ajax CDN 还包括以下库，后者已上载的 Microsoft:
 
 Microsoft 不主张对此 CDN 上承载任何第三方库的所有权。 库的版权所有者要授权给你这些库。 仅由各自的版权所有者授予的任何可能需要下载并使用这种库的权限。 因为这些不是 Microsoft 库，Microsoft 将为此 CDN 上托管的第三方库提供不保证或知识产权权限许可证 （包括任何隐含的专利权）。
 
-如果你想要提交你的 JavaScript 库，而你的库是顶部 JavaScript 库 （如下所列上 http://trends.builtwith.com） 或到这些库的扩展/插件之一 (a) 常用;或 (b) 有助于在 ASP.NET 上使用，则请联系AjaxCDNSubmission@Microsoft.com。
+如果你想要提交你的 JavaScript 库，并且你的库是一顶部 JavaScript 库 (如上列出http://trends.builtwith.com)或扩展/插件这些库的 （a） 常用; 或 （b） 有助于在 ASP.NET 上使用，则请联系AjaxCDNSubmission@Microsoft.com。
 
 <a id="ajaxmicrosoftcom_renamed_to_ajaxaspnetcdncom_18"></a>
 
@@ -83,7 +83,7 @@ Microsoft 不主张对此 CDN 上承载任何第三方库的所有权。 库的�
 CDN 用于使用 microsoft.com 的域名，并且已更改为使用 aspnetcdn.com 域名。 此更改是为了提高性能，因为当浏览器引用 microsoft.com 域它将发送任何 cookie 从该域跨网络与每个请求。 通过重命名为 microsoft.com 之外的域名称性能可以通过增加同样可用于 25%。 请注意 ajax.microsoft.com 将继续工作，但建议 ajax.aspnetcdn.com。
 
 - 旧格式： http://ajax.microsoft.com/ajax/jQuery/jquery-1.8.0.js
-- 新的格式： http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js
+- 新格式： http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js
 
 <a id="Visual_Studio_vsdoc_Support_19"></a>
 
@@ -748,7 +748,7 @@ jQuery 迁移版本 1.2.0
 - http://ajax.aspnetcdn.com/ajax/globalize/0.1.1/cultures/globalize.cultures.js
 
     - 所有区域性
-- http://ajax.aspnetcdn.com/ajax/globalize/0.1.1/cultures/globalize.culture。{区域性 code}.js
+- http://ajax.aspnetcdn.com/ajax/globalize/0.1.1/cultures/globalize.culture.{culture-code}.js
 
     - "{区域性的代码}"替换为所需的区域性代码、 globalize.culture.en GB.js== Microsoft 在 CDN 上的文件例如 = = 这些库上载 Microsoft。
 
@@ -756,7 +756,7 @@ jQuery 迁移版本 1.2.0
 
 ### <a name="respond-releases-on-the-cdn"></a>响应 CDN 上的版本
 
-以下版本的[https://github.com/scottjehl/Respond](https://github.com/scottjehl/Respond "https://github.com/scottjehl/Respond")在 CDN 上托管响应：
+以下版本的[ https://github.com/scottjehl/Respond ] (https://github.com/scottjehl/Respond " https://github.com/scottjehl/Respond ")在 CDN 上托管响应：
 
 #### <a name="respond-version-142"></a>响应版本 1.4.2
 
@@ -792,6 +792,19 @@ jQuery 迁移版本 1.2.0
 ### <a name="bootstrap-releases-on-the-cdn"></a>在 CDN 上的 bootstrap 版本
 
 以下版本的[getbootstrap.com](http://getbootstrap.com "getbootstrap.com") bootstrap 托管在 CDN 上：
+
+#### <a name="bootstrap-version-400"></a>启动 4.0.0 版
+
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/bootstrap.js
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/bootstrap.min.js
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/css/bootstrap.css
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/css/bootstrap.css.map
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/css/bootstrap.min.css
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/fonts/glyphicons-halflings-regular.eot
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/fonts/glyphicons-halflings-regular.svg
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/fonts/glyphicons-halflings-regular.ttf
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/fonts/glyphicons-halflings-regular.woff
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/fonts/glyphicons-halflings-regular.woff2
 
 #### <a name="bootstrap-version-337"></a>Bootstrap 版本 3.3.7
 
@@ -1026,9 +1039,9 @@ jQuery 迁移版本 1.2.0
 
 ### <a name="bootstrap-touchcarousel-releases-on-the-cdn"></a>在 CDN 上的启动 TouchCarousel 版本
 
-以下版本的[https://github.com/ixisio/bootstrap-touch-carousel](https://github.com/ixisio/bootstrap-touch-carousel "https://github.com/ixisio/bootstrap-touch-carousel") Bootstrap TouchCarousel 版本位于 CDN:
+以下版本的[ https://github.com/ixisio/bootstrap-touch-carousel ] (https://github.com/ixisio/bootstrap-touch-carousel " https://github.com/ixisio/bootstrap-touch-carousel ")在 CDN 上托管 Bootstrap TouchCarousel 版本：
 
-#### <a name="bootstrap-touchcarousel-version-080"></a>启动 TouchCarousel 版本 0.8.0
+#### <a name="bootstrap-touchcarousel-version-080"></a>Bootstrap TouchCarousel version 0.8.0
 
 - http://ajax.aspnetcdn.com/ajax/bootstrap-touch-carousel/0.8.0/css/bootstrap-touch-carousel.css
 - http://ajax.aspnetcdn.com/ajax/bootstrap-touch-carousel/0.8.0/js/bootstrap-touch-carousel.js
@@ -1037,7 +1050,7 @@ jQuery 迁移版本 1.2.0
 
 ### <a name="hammerjs-releases-on-the-cdn"></a>在 CDN 上 Hammer.js 版本
 
-以下版本的[http://hammerjs.github.io/](http://hammerjs.github.io/ "http://hammerjs.github.io/")在 CDN 上托管 Hammer.js 版本：
+以下版本的[ http://hammerjs.github.io/ ] (http://hammerjs.github.io/ " http://hammerjs.github.io/ ")在 CDN 上托管 Hammer.js 版本：
 
 #### <a name="hammerjs-version-204"></a>Hammer.js 版本 2.0.4
 

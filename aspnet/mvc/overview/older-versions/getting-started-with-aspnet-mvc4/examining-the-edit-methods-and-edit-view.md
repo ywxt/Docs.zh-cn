@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
 ms.openlocfilehash: 315914056c0a666fdf23cf82a314a999e03114b6
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>检查编辑方法和编辑视图
 ====================
@@ -81,7 +81,7 @@ ms.lasthandoff: 02/12/2018
 ![abcNotValid](examining-the-edit-methods-and-edit-view/_static/image4.png)
 
 > [!NOTE]
-> 若要为使用逗号的非英语区域设置支持 jQuery 验证 (&quot;，&quot;) 必须包含一个小数点， *globalize.js*和您的特定*cultures/globalize.cultures.js*文件 (从[https://github.com/jquery/globalize](https://github.com/jquery/globalize) ) 和 JavaScript 使用`Globalize.parseFloat`。 下面的代码演示要处理的 Views\Movies\Edit.cshtml 文件修改&quot;FR-FR&quot;区域性：
+> 若要为使用逗号的非英语区域设置支持 jQuery 验证 (&quot;，&quot;) 必须包含一个小数点， *globalize.js*和您的特定*cultures/globalize.cultures.js*文件 (从[ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 和 JavaScript 使用`Globalize.parseFloat`。 下面的代码演示要处理的 Views\Movies\Edit.cshtml 文件修改&quot;FR-FR&quot;区域性：
 
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample7.cshtml)]
