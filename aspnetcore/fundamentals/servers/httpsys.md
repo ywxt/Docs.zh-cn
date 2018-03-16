@@ -5,16 +5,16 @@ description: "了解 Windows 上适用于 ASP.NET Core 的 Web 服务器 HTTP.sy
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 02/28/2018
+ms.date: 03/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 730ecf12f718f6bbbdefb7cdc561481b126c995b
-ms.sourcegitcommit: c5ecda3c5b1674b62294cfddcb104e7f0b9ce465
+ms.openlocfilehash: d7ae6c070c7eecfd714086e15f32eff96c0943d9
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 HTTP.sys Web 服务器实现
 
@@ -136,6 +136,9 @@ HTTP.sys 是一项成熟的技术，可以抵御多种攻击，并提供可靠�
    `UrlPrefixes` 中的设置替代 `UseUrls`/`urls`/`ASPNETCORE_URLS` 设置。 因此，`UseUrls`、`urls` 和 `ASPNETCORE_URLS` 环境变量的一个优点是在 Kestrel 和 HTTP.sys 之间切换变得更加容易。 有关 `UseUrls`、`urls` 和 `ASPNETCORE_URLS` 的更多信息，请参阅[托管](xref:fundamentals/hosting)。
 
    HTTP.sys 使用 [HTTP 服务器 API UrlPrefix 字符串格式](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)。
+
+   > [!WARNING]
+   > 不应使用顶级通配符绑定（`http://*:80/` 和 `http://+:80`）。 顶级通配符绑定可能会为应用带来安全漏洞。 此行为同时适用于强通配符和弱通配符。 使用显式主机名而不是通配符。 如果可控制整个父域（区别于易受攻击的 `*.com`），则子域通配符绑定（例如，`*.mysub.com`）不具有此安全风险。 有关详细信息，请参阅 [rfc7230 第 5.4 条](https://tools.ietf.org/html/rfc7230#section-5.4)。
 
 1. 预先注册 URL 前缀以绑定到 HTTP.sys，并设置 x.509 证书。
 
