@@ -1,20 +1,20 @@
 ---
 title: "要开始使用 SignalR 在 ASP.NET Core 上"
 author: rachelappel
-description: "了解生成实时应用程序使用 ASP.NET Core SignalR 的基础知识。"
+description: "在本教程中，你创建使用 SignalR 为 ASP.NET Core 应用。"
 manager: wpickett
 ms.author: rachelap
 ms.custom: mvc
-ms.date: 03/06/2018
+ms.date: 03/16/2018
 ms.prod: aspnet-core
-ms.technology: dotnet-signalr
 ms.topic: tutorial
+ms.technology: aspnet
 uid: signalr/get-started-signalr-core
-ms.openlocfilehash: 79af59fc8c2ada71d764ada95a431e10f4f00f27
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 139da5a2d0dadf51fece94b7c54ccd531e0ae8c2
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="tutorial-get-started-with-signalr-for-aspnet-core"></a>教程： 开始使用 SignalR 为 ASP.NET Core
 
@@ -24,26 +24,39 @@ ms.lasthandoff: 03/15/2018
 
    ![解决方案](get-started-signalr-core/_static/signalr-get-started-finished.png)
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/get-started-signalr-core/sample/)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
-
 本教程演示了下列 SignalR 开发任务：
 
 > [!div class="checklist"]
-> * 创建 ASP.NET 核心 web 应用。
+> * 在 ASP.NET 核心 web 应用上创建 SignalR。
 > * 创建一个 SignalR 集线器，以将内容推送到客户端。
-> * 使用 SignalR JavaScript 库发送消息，并显示从中心的更新。
+> * 修改`Startup`类并将应用配置。
 
-## <a name="prerequisites"></a>系统必备
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/get-started-signalr-core/sample/)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+
+# <a name="prerequisites"></a>系统必备
 
 安装以下软件：
 
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+
 * [.NET 核心 2.1.0 预览 1 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview1)或更高版本
-* [Visual Studio 2017](https://www.visualstudio.com/downloads/) 15.6 或与 ASP.NET 和 web 开发工作负荷更高版本
+* [Visual Studio 2017](https://www.visualstudio.com/downloads/) 15.6 或使用更高版本**ASP.NET 和 web 开发**工作负荷
 * [npm](https://www.npmjs.com/get-npm)
+
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
+
+* [.NET 核心 2.1.0 预览 1 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview1)或更高版本
+* [Visual Studio Code](https://code.visualstudio.com/download) 
+* [用于 Visual Studio 代码的 C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
+* [npm](https://www.npmjs.com/get-npm)
+
+-----
 
 ## <a name="create-an-aspnet-core-project-that-hosts-signalr-client-and-server"></a>创建 ASP.NET Core 项目承载 SignalR 客户端和服务器
 
-1. 使用**文件** > **新项目**菜单选项，然后选择**ASP.NET 核心 Web 应用程序**。 将项目命名为 `SignalRChat`。
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+
+1. 使用**文件** > **新项目**菜单选项，然后选择**ASP.NET 核心 Web 应用程序**。 将项目*SignalRChat*。
 
   ![Visual Studio 中的新建项目对话框](get-started-signalr-core/_static/signalr-new-project-dialog.png)
 
@@ -51,33 +64,67 @@ ms.lasthandoff: 03/15/2018
 
   ![Visual Studio 中的新建项目对话框](get-started-signalr-core/_static/signalr-new-project-choose-type.png)
 
-  承载 SignalR 服务器端代码的库都包括在项目模板中。 安装客户端 JavaScript 使用分别[npm](https://www.npmjs.com/)。
+3. 右键单击中的项目**解决方案资源管理器** > **添加** > **新项** > **npm 配置文件**. 命名该文件*package.json*。
 
-  ```console
-   npm install @aspnet/signalr
-  ```
+4. 在中运行以下命令**程序包管理器控制台**窗口，请从项目根：
 
-3. 复制*signalr.js*从*node_modules\\ @aspnet\signalr\dist\browser* 到*wwwroot\lib*项目文件夹中的。
+    ```console
+      npm install @aspnet/signalr
+    ```
+5. 复制*signalr.js*文件从*node_modules\\ @aspnet\signalr\dist\browser* 到*wwwroot\lib*项目文件夹中的。
+
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
+
+1. 从**集成终端**，运行以下命令：
+ 
+    ```console
+      dotnet new razor -o SignalRChat
+    ```
+
+2. 安装 JavaScript 客户端库使用*npm*。
+
+    ```
+      npm init -y
+      npm install @aspnet/signalr
+    ```
+
+-----
 
 ## <a name="create-the-signalr-hub"></a>创建 SignalR Hub
 
 允许客户端和服务器相互调用方法的高级管道作为服务的类，则集线器。
 
-1. 将类添加到项目中，通过选择**文件** > **新建** > **文件**并选择**Visual C# 类**。 
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+
+1. 将类添加到项目中，通过选择**文件** > **新建** > **文件**并选择**Visual C# 类**。
 
 1. 继承自`Microsoft.AspNetCore.SignalR.Hub`。 `Hub`类包含属性和管理连接和组，以及发送和接收数据的事件。
 
-1. 创建`Send`将消息发送到所有连接的聊天客户端的方法。 请注意它将返回`Task`，这是因为 SignalR 是异步的。 更好地缩放异步代码。
+1. 创建`SendMessage`将消息发送到所有连接的聊天客户端的方法。 请注意它将返回[任务](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task(v=vs.110).aspx)，这是因为 SignalR 是异步的。 更好地缩放异步代码。
 
   [!code-csharp[Startup](get-started-signalr-core/sample/Hubs/ChatHub.cs?range=7-14)]
+
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
+
+1. 打开*SignalRChat*在 Visual Studio 代码中的文件夹。
+
+1. 将类添加到项目中，通过选择**文件** > **新文件**从菜单。
+
+1. 继承自`Microsoft.AspNetCore.SignalR.Hub`。 `Hub`类包含属性和管理连接和组，以及向客户端发送和接收数据的事件。
+
+1. 将 `SendMessage` 方法添加到类。 `SendMessage`方法将消息发送到所有连接的聊天客户端。 请注意它将返回[任务](/dotnet/api/system.threading.tasks.task)，这是因为 SignalR 是异步的。 更好地缩放异步代码。
+
+  [!code-csharp[Startup](get-started-signalr-core/sample/Hubs/ChatHub.cs?range=7-14)]
+
+-----
 
 ## <a name="configure-the-project-to-use-signalr"></a>配置项目以使用 SignalR
 
 必须配置 SignalR 服务器，这样就知道要传递给 SignalR 的请求。
 
-1. 若要配置 SignalR 项目，请修改`ConfigureServices`方法在应用程序的`Startup`类的方法是插入调用`services.AddSignalR`。
+1. 若要配置 SignalR 项目，请修改项目的`Startup.ConfigureServices`方法。
 
-  `services.AddSignalR` 作为的一部分添加 SignalR [ASP.NET Core 中间件](xref:fundamentals/middleware/index)管道。
+  `services.AddSignalR` 作为的一部分添加 SignalR[中间件](xref:fundamentals/middleware/index)管道。
 
 1. 配置路由到你使用的中心`UseSignalR`。
 
@@ -91,16 +138,28 @@ ms.lasthandoff: 03/15/2018
 
   前面的 HTML 显示名称和消息字段和提交按钮。 请注意在底部的脚本引用： 至 SignalR 的引用和*chat.js*。
 
-1. 添加到 JavaScript 文件*wwwroot\js*文件夹名为*chat.js*并向其中添加以下代码：
+1. 添加一个名为的 JavaScript 文件*chat.js*到*wwwroot\js*文件夹。 向新文件添加以下代码：
 
   [!code-javascript[Index](get-started-signalr-core/sample/wwwroot/js/chat.js)]
 
 ## <a name="run-the-app"></a>运行应用
+
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 1. 选择**调试** > **启动而不调试**启动浏览器并加载网站本地。 从地址栏复制 URL。
 
 1. 打开另一个浏览器实例 （任何浏览器），然后在地址栏中粘贴该 URL。
 
 1. 选择任一浏览器，输入名称和消息，然后单击**发送**按钮。 名称和消息会显示在两个页面上立即。
+
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
+
+1. 按“调试”(F5) 生成并运行程序。 运行程序将打开一个浏览器窗口。
+
+1. 打开另一个浏览器窗口并加载在本地网站。
+
+1. 选择任一浏览器，输入名称和消息，然后单击**发送**按钮。 名称和消息会显示在两个页面上立即。
+
+-----
 
   ![解决方案](get-started-signalr-core/_static/signalr-get-started-finished.png)

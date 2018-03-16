@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/less-sass-fa
-ms.openlocfilehash: e00a0929db9dff6c97c4b22468156f621a1a3820
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 979f5639e382560d952df45ba6e0b8af3b132c2d
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>简介事半功倍的样式应用程序、 Sass，和在 ASP.NET 核心中出色的字体
 
@@ -323,7 +323,7 @@ CSS 文件，尤其是对于大型站点 （和尤其是如果正在使用媒体
 
 Sass 类似于较少，是为许多相同功能，但使用略有不同的语法提供支持。 它使用 Ruby，而不是 JavaScript 中，生成，因此不同的安装要求。 原始 Sass 语言未使用大括号或分号，但改为定义使用空白和缩进的作用域。 在 Sass 3 版本中，引入了新的语法， **SCSS** ("Sassy CSS")。 SCSS 是类似于 CSS，可忽略缩进级别和空格，并改为使用分号和大括号。
 
-若要安装 Sass，通常你将首先安装 Ruby （预安装在 Mac 上），，然后运行：
+若要安装 Sass，通常你将首先安装 Ruby （预安装在 macOS 上），，然后运行：
 
 ```console
 gem install sass
@@ -545,6 +545,6 @@ Sass 还包括函数和条件逻辑操作，类似于小于。 事实上，这�
 
 http://fontawesome.io/icons/
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 现代 web 应用程序越来越要求清晰、 直观，编写和更易于使用的各种设备从的响应速度快、 流体设计。 管理实现这些目标所需的 CSS 样式表的复杂性最好的做法是不太使用预处理器类似或 Sass。 此外，如字体出色的工具包快速提供的已知图标添加到文本导航菜单和按钮，提高整体用户体验的应用程序。
