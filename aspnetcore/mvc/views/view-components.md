@@ -1,4 +1,4 @@
-﻿---
+---
 title: "视图组件"
 author: rick-anderson
 description: "视图组件可用于具有可重用呈现逻辑的任何位置。"
@@ -38,9 +38,9 @@ ms.lasthandoff: 01/30/2018
 * 购物车
 * 最近发布的文章
 * 典型博客上的边栏内容
-* 呈现在每页上并显示注销或登录链接的登录窗格，具体取决于用户的登录状态
+* 一个登录面板，呈现在每页上并显示注销或登录链接，具体取决于用户的登录状态
 
-视图组件由两部分组成：类（通常派生自 [ViewComponent](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponent)）及其返回的结果（通常为视图）。 与控制器一样，视图组件也可以是 POCO，但大多数开发者都希望利用派生自 `ViewComponent` 的可用方法和属性。
+视图组件由两部分组成：类（通常派生自 [ViewComponent](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponent)）及其返回的结果（通常为视图）。 与控制器一样，视图组件也可以是 POCO，但大多数开发人员都希望利用派生自 `ViewComponent` 的可用方法和属性。
 
 ## <a name="creating-a-view-component"></a>创建视图组件
 
@@ -64,7 +64,7 @@ ms.lasthandoff: 01/30/2018
 
 ### <a name="view-component-methods"></a>视图组件方法
 
-视图组件以返回 `IViewComponentResult` 的 `InvokeAsync` 方法定义其逻辑。 参数直接来自视图组件的调用，而不是来自模型绑定。 视图组件从不直接处理请求。 通常，视图组件通过调用 `View` 方法来初始化模型并将其传递到视图。 总之，视图组件方法：
+视图组件以返回 `InvokeAsync` 的 `IViewComponentResult` 方法定义其逻辑。 参数直接来自视图组件的调用，而不是来自模型绑定。 视图组件从不直接处理请求。 通常，视图组件通过调用 `View` 方法来初始化模型并将其传递到视图。 总之，视图组件方法：
 
 * 定义返回 `IViewComponentResult` 的 `InvokeAsync` 方法
 * 一般通过调用 `ViewComponent` `View` 方法来初始化模型并将其传递到视图
@@ -166,7 +166,7 @@ ms.lasthandoff: 01/30/2018
 
 ### <a name="create-the-view-component-razor-view"></a>创建视图组件 Razor 视图
 
-* 创建 Views/Shared/Components 文件夹。 文件夹必须命名为“Components”。
+* 创建 Views/Shared/Components 文件夹。 此文件夹 **必须** 命名为 *Components*。
 
 * 创建 Views/Shared/Components/PriorityList 文件夹。 此文件夹名称必须与视图组件类的名称或类名去掉后缀（如果遵照约定并在类名中使用了“ViewComponent”后缀）的名称相匹配。 如果使用了 `ViewComponent` 属性，则类名称需要匹配指定的属性。
 
