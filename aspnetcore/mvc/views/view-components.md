@@ -15,93 +15,93 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
 ---
-# <a name="view-components"></a><span data-ttu-id="db7ca-103">视图组件</span><span class="sxs-lookup"><span data-stu-id="db7ca-103">View components</span></span>
+# <a name="view-components"></a><span data-ttu-id="5df8e-103">视图组件</span><span class="sxs-lookup"><span data-stu-id="5df8e-103">View components</span></span>
 
-<span data-ttu-id="db7ca-104">作者：[Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="db7ca-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="5df8e-104">作者：[Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="5df8e-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="db7ca-105">[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）</span><span class="sxs-lookup"><span data-stu-id="db7ca-105">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
+<span data-ttu-id="5df8e-105">[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）</span><span class="sxs-lookup"><span data-stu-id="5df8e-105">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
 
-## <a name="introducing-view-components"></a><span data-ttu-id="db7ca-106">视图组件简介</span><span class="sxs-lookup"><span data-stu-id="db7ca-106">Introducing view components</span></span>
+## <a name="introducing-view-components"></a><span data-ttu-id="5df8e-106">视图组件简介</span><span class="sxs-lookup"><span data-stu-id="5df8e-106">Introducing view components</span></span>
 
-<span data-ttu-id="db7ca-107">作为 ASP.NET Core MVC 的新功能，视图组件与分部视图类似，但它们的功能更加强大。</span><span class="sxs-lookup"><span data-stu-id="db7ca-107">New to ASP.NET Core MVC, view components are similar to partial views, but they're much more powerful.</span></span> <span data-ttu-id="db7ca-108">视图组件不使用模型绑定，并且仅依赖调用时提供的数据。</span><span class="sxs-lookup"><span data-stu-id="db7ca-108">View components don't use model binding, and only depend on the data provided when calling into it.</span></span> <span data-ttu-id="db7ca-109">视图组件：</span><span class="sxs-lookup"><span data-stu-id="db7ca-109">A view component:</span></span>
+<span data-ttu-id="5df8e-107">作为 ASP.NET Core MVC 的新功能，视图组件与分部视图类似，但它们的功能更加强大。</span><span class="sxs-lookup"><span data-stu-id="5df8e-107">New to ASP.NET Core MVC, view components are similar to partial views, but they're much more powerful.</span></span> <span data-ttu-id="5df8e-108">视图组件不使用模型绑定，并且仅依赖调用时提供的数据。</span><span class="sxs-lookup"><span data-stu-id="5df8e-108">View components don't use model binding, and only depend on the data provided when calling into it.</span></span> <span data-ttu-id="5df8e-109">视图组件：</span><span class="sxs-lookup"><span data-stu-id="5df8e-109">A view component:</span></span>
 
-* <span data-ttu-id="db7ca-110">呈现一个区块而不是整个响应。</span><span class="sxs-lookup"><span data-stu-id="db7ca-110">Renders a chunk rather than a whole response.</span></span>
-* <span data-ttu-id="db7ca-111">包括控制器和视图间发现的相同关注点分离和可测试性优势。</span><span class="sxs-lookup"><span data-stu-id="db7ca-111">Includes the same separation-of-concerns and testability benefits found between a controller and view.</span></span>
-* <span data-ttu-id="db7ca-112">可以有参数和业务逻辑。</span><span class="sxs-lookup"><span data-stu-id="db7ca-112">Can have parameters and business logic.</span></span>
-* <span data-ttu-id="db7ca-113">通常从布局页调用。</span><span class="sxs-lookup"><span data-stu-id="db7ca-113">Is typically invoked from a layout page.</span></span>
+* <span data-ttu-id="5df8e-110">呈现一个区块而不是整个响应。</span><span class="sxs-lookup"><span data-stu-id="5df8e-110">Renders a chunk rather than a whole response.</span></span>
+* <span data-ttu-id="5df8e-111">包括控制器和视图间发现的相同关注点分离和可测试性优势。</span><span class="sxs-lookup"><span data-stu-id="5df8e-111">Includes the same separation-of-concerns and testability benefits found between a controller and view.</span></span>
+* <span data-ttu-id="5df8e-112">可以有参数和业务逻辑。</span><span class="sxs-lookup"><span data-stu-id="5df8e-112">Can have parameters and business logic.</span></span>
+* <span data-ttu-id="5df8e-113">通常从布局页调用。</span><span class="sxs-lookup"><span data-stu-id="5df8e-113">Is typically invoked from a layout page.</span></span>
 
-<span data-ttu-id="db7ca-114">视图组件可用于具有可重用呈现逻辑（对分部视图来说过于复杂）的任何位置，例如：</span><span class="sxs-lookup"><span data-stu-id="db7ca-114">View components are intended anywhere you have reusable rendering logic that's too complex for a partial view, such as:</span></span>
+<span data-ttu-id="5df8e-114">视图组件可用于具有可重用呈现逻辑（对分部视图来说过于复杂）的任何位置，例如：</span><span class="sxs-lookup"><span data-stu-id="5df8e-114">View components are intended anywhere you have reusable rendering logic that's too complex for a partial view, such as:</span></span>
 
-* <span data-ttu-id="db7ca-115">动态导航菜单</span><span class="sxs-lookup"><span data-stu-id="db7ca-115">Dynamic navigation menus</span></span>
-* <span data-ttu-id="db7ca-116">标记云（查询数据库的位置）</span><span class="sxs-lookup"><span data-stu-id="db7ca-116">Tag cloud (where it queries the database)</span></span>
-* <span data-ttu-id="db7ca-117">登录面板</span><span class="sxs-lookup"><span data-stu-id="db7ca-117">Login panel</span></span>
-* <span data-ttu-id="db7ca-118">购物车</span><span class="sxs-lookup"><span data-stu-id="db7ca-118">Shopping cart</span></span>
-* <span data-ttu-id="db7ca-119">最近发布的文章</span><span class="sxs-lookup"><span data-stu-id="db7ca-119">Recently published articles</span></span>
-* <span data-ttu-id="db7ca-120">典型博客上的边栏内容</span><span class="sxs-lookup"><span data-stu-id="db7ca-120">Sidebar content on a typical blog</span></span>
-* <span data-ttu-id="db7ca-121">呈现在每页上并显示注销或登录链接的登录窗格，具体取决于用户的登录状态</span><span class="sxs-lookup"><span data-stu-id="db7ca-121">A login panel that would be rendered on every page and show either the links to log out or log in, depending on the log in state of the user</span></span>
+* <span data-ttu-id="5df8e-115">动态导航菜单</span><span class="sxs-lookup"><span data-stu-id="5df8e-115">Dynamic navigation menus</span></span>
+* <span data-ttu-id="5df8e-116">标记云（查询数据库的位置）</span><span class="sxs-lookup"><span data-stu-id="5df8e-116">Tag cloud (where it queries the database)</span></span>
+* <span data-ttu-id="5df8e-117">登录面板</span><span class="sxs-lookup"><span data-stu-id="5df8e-117">Login panel</span></span>
+* <span data-ttu-id="5df8e-118">购物车</span><span class="sxs-lookup"><span data-stu-id="5df8e-118">Shopping cart</span></span>
+* <span data-ttu-id="5df8e-119">最近发布的文章</span><span class="sxs-lookup"><span data-stu-id="5df8e-119">Recently published articles</span></span>
+* <span data-ttu-id="5df8e-120">典型博客上的边栏内容</span><span class="sxs-lookup"><span data-stu-id="5df8e-120">Sidebar content on a typical blog</span></span>
+* <span data-ttu-id="5df8e-121">一个登录面板，呈现在每页上并显示注销或登录链接，具体取决于用户的登录状态</span><span class="sxs-lookup"><span data-stu-id="5df8e-121">A login panel that would be rendered on every page and show either the links to log out or log in, depending on the log in state of the user</span></span>
 
-<span data-ttu-id="db7ca-122">视图组件由两部分组成：类（通常派生自 [ViewComponent](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponent)）及其返回的结果（通常为视图）。</span><span class="sxs-lookup"><span data-stu-id="db7ca-122">A view component consists of two parts: the class (typically derived from [ViewComponent](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponent)) and the result it returns (typically a view).</span></span> <span data-ttu-id="db7ca-123">与控制器一样，视图组件也可以是 POCO，但大多数开发者都希望利用派生自 `ViewComponent` 的可用方法和属性。</span><span class="sxs-lookup"><span data-stu-id="db7ca-123">Like controllers, a view component can be a POCO, but most developers will want to take advantage of the methods and properties available by deriving from `ViewComponent`.</span></span>
+<span data-ttu-id="5df8e-122">视图组件由两部分组成：类（通常派生自 [ViewComponent](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponent)）及其返回的结果（通常为视图）。</span><span class="sxs-lookup"><span data-stu-id="5df8e-122">A view component consists of two parts: the class (typically derived from [ViewComponent](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponent)) and the result it returns (typically a view).</span></span> <span data-ttu-id="5df8e-123">与控制器一样，视图组件也可以是 POCO，但大多数开发人员都希望利用派生自 `ViewComponent` 的可用方法和属性。</span><span class="sxs-lookup"><span data-stu-id="5df8e-123">Like controllers, a view component can be a POCO, but most developers will want to take advantage of the methods and properties available by deriving from `ViewComponent`.</span></span>
 
-## <a name="creating-a-view-component"></a><span data-ttu-id="db7ca-124">创建视图组件</span><span class="sxs-lookup"><span data-stu-id="db7ca-124">Creating a view component</span></span>
+## <a name="creating-a-view-component"></a><span data-ttu-id="5df8e-124">创建视图组件</span><span class="sxs-lookup"><span data-stu-id="5df8e-124">Creating a view component</span></span>
 
-<span data-ttu-id="db7ca-125">本部分包含创建视图组件的高级别要求。</span><span class="sxs-lookup"><span data-stu-id="db7ca-125">This section contains the high-level requirements to create a view component.</span></span> <span data-ttu-id="db7ca-126">本文后续部分将详细检查每个步骤并创建视图组件。</span><span class="sxs-lookup"><span data-stu-id="db7ca-126">Later in the article, we'll examine each step in detail and create a view component.</span></span>
+<span data-ttu-id="5df8e-125">本部分包含创建视图组件的高级别要求。</span><span class="sxs-lookup"><span data-stu-id="5df8e-125">This section contains the high-level requirements to create a view component.</span></span> <span data-ttu-id="5df8e-126">本文后续部分将详细检查每个步骤并创建视图组件。</span><span class="sxs-lookup"><span data-stu-id="5df8e-126">Later in the article, we'll examine each step in detail and create a view component.</span></span>
 
-### <a name="the-view-component-class"></a><span data-ttu-id="db7ca-127">视图组件类</span><span class="sxs-lookup"><span data-stu-id="db7ca-127">The view component class</span></span>
+### <a name="the-view-component-class"></a><span data-ttu-id="5df8e-127">视图组件类</span><span class="sxs-lookup"><span data-stu-id="5df8e-127">The view component class</span></span>
 
-<span data-ttu-id="db7ca-128">可通过以下任一方法创建视图组件类：</span><span class="sxs-lookup"><span data-stu-id="db7ca-128">A view component class can be created by any of the following:</span></span>
+<span data-ttu-id="5df8e-128">可通过以下任一方法创建视图组件类：</span><span class="sxs-lookup"><span data-stu-id="5df8e-128">A view component class can be created by any of the following:</span></span>
 
-* <span data-ttu-id="db7ca-129">从 ViewComponent 派生</span><span class="sxs-lookup"><span data-stu-id="db7ca-129">Deriving from *ViewComponent*</span></span>
-* <span data-ttu-id="db7ca-130">使用 `[ViewComponent]` 属性修饰类，或者从具有 `[ViewComponent]` 属性的类派生</span><span class="sxs-lookup"><span data-stu-id="db7ca-130">Decorating a class with the `[ViewComponent]` attribute, or deriving from a class with the `[ViewComponent]` attribute</span></span>
-* <span data-ttu-id="db7ca-131">创建名称以 ViewComponent 后缀结尾的类</span><span class="sxs-lookup"><span data-stu-id="db7ca-131">Creating a class where the name ends with the suffix *ViewComponent*</span></span>
+* <span data-ttu-id="5df8e-129">从 ViewComponent 派生</span><span class="sxs-lookup"><span data-stu-id="5df8e-129">Deriving from *ViewComponent*</span></span>
+* <span data-ttu-id="5df8e-130">使用 `[ViewComponent]` 属性修饰类，或者从具有 `[ViewComponent]` 属性的类派生</span><span class="sxs-lookup"><span data-stu-id="5df8e-130">Decorating a class with the `[ViewComponent]` attribute, or deriving from a class with the `[ViewComponent]` attribute</span></span>
+* <span data-ttu-id="5df8e-131">创建名称以 ViewComponent 后缀结尾的类</span><span class="sxs-lookup"><span data-stu-id="5df8e-131">Creating a class where the name ends with the suffix *ViewComponent*</span></span>
 
-<span data-ttu-id="db7ca-132">与控制器一样，视图组件必须是公共、非嵌套和非抽象的类。</span><span class="sxs-lookup"><span data-stu-id="db7ca-132">Like controllers, view components must be public, non-nested, and non-abstract classes.</span></span> <span data-ttu-id="db7ca-133">视图组件名称是删除了“ViewComponent”后缀的类名。</span><span class="sxs-lookup"><span data-stu-id="db7ca-133">The view component name is the class name with the "ViewComponent" suffix removed.</span></span> <span data-ttu-id="db7ca-134">也可以使用 `ViewComponentAttribute.Name` 属性显式指定它。</span><span class="sxs-lookup"><span data-stu-id="db7ca-134">It can also be explicitly specified using the `ViewComponentAttribute.Name` property.</span></span>
+<span data-ttu-id="5df8e-132">与控制器一样，视图组件必须是公共、非嵌套和非抽象的类。</span><span class="sxs-lookup"><span data-stu-id="5df8e-132">Like controllers, view components must be public, non-nested, and non-abstract classes.</span></span> <span data-ttu-id="5df8e-133">视图组件名称是删除了“ViewComponent”后缀的类名。</span><span class="sxs-lookup"><span data-stu-id="5df8e-133">The view component name is the class name with the "ViewComponent" suffix removed.</span></span> <span data-ttu-id="5df8e-134">也可以使用 `ViewComponentAttribute.Name` 属性显式指定它。</span><span class="sxs-lookup"><span data-stu-id="5df8e-134">It can also be explicitly specified using the `ViewComponentAttribute.Name` property.</span></span>
 
-<span data-ttu-id="db7ca-135">视图组件类：</span><span class="sxs-lookup"><span data-stu-id="db7ca-135">A view component class:</span></span>
+<span data-ttu-id="5df8e-135">视图组件类：</span><span class="sxs-lookup"><span data-stu-id="5df8e-135">A view component class:</span></span>
 
-* <span data-ttu-id="db7ca-136">完全支持构造函数[依赖关系注入](../../fundamentals/dependency-injection.md)</span><span class="sxs-lookup"><span data-stu-id="db7ca-136">Fully supports constructor [dependency injection](../../fundamentals/dependency-injection.md)</span></span>
+* <span data-ttu-id="5df8e-136">完全支持构造函数[依赖关系注入](../../fundamentals/dependency-injection.md)</span><span class="sxs-lookup"><span data-stu-id="5df8e-136">Fully supports constructor [dependency injection](../../fundamentals/dependency-injection.md)</span></span>
 
-* <span data-ttu-id="db7ca-137">不参与控制器生命周期，这意味着不能在视图组件中使用[筛选器](../controllers/filters.md)</span><span class="sxs-lookup"><span data-stu-id="db7ca-137">Doesn't take part in the controller lifecycle, which means you can't use [filters](../controllers/filters.md) in a view component</span></span>
+* <span data-ttu-id="5df8e-137">不参与控制器生命周期，这意味着不能在视图组件中使用[筛选器](../controllers/filters.md)</span><span class="sxs-lookup"><span data-stu-id="5df8e-137">Doesn't take part in the controller lifecycle, which means you can't use [filters](../controllers/filters.md) in a view component</span></span>
 
-### <a name="view-component-methods"></a><span data-ttu-id="db7ca-138">视图组件方法</span><span class="sxs-lookup"><span data-stu-id="db7ca-138">View component methods</span></span>
+### <a name="view-component-methods"></a><span data-ttu-id="5df8e-138">视图组件方法</span><span class="sxs-lookup"><span data-stu-id="5df8e-138">View component methods</span></span>
 
-<span data-ttu-id="db7ca-139">视图组件以返回 `IViewComponentResult` 的 `InvokeAsync` 方法定义其逻辑。</span><span class="sxs-lookup"><span data-stu-id="db7ca-139">A view component defines its logic in an `InvokeAsync` method that returns an `IViewComponentResult`.</span></span> <span data-ttu-id="db7ca-140">参数直接来自视图组件的调用，而不是来自模型绑定。</span><span class="sxs-lookup"><span data-stu-id="db7ca-140">Parameters come directly from invocation of the view component, not from model binding.</span></span> <span data-ttu-id="db7ca-141">视图组件从不直接处理请求。</span><span class="sxs-lookup"><span data-stu-id="db7ca-141">A view component never directly handles a request.</span></span> <span data-ttu-id="db7ca-142">通常，视图组件通过调用 `View` 方法来初始化模型并将其传递到视图。</span><span class="sxs-lookup"><span data-stu-id="db7ca-142">Typically, a view component initializes a model and passes it to a view by calling the `View` method.</span></span> <span data-ttu-id="db7ca-143">总之，视图组件方法：</span><span class="sxs-lookup"><span data-stu-id="db7ca-143">In summary, view component methods:</span></span>
+<span data-ttu-id="5df8e-139">视图组件以返回 `InvokeAsync` 的 `IViewComponentResult` 方法定义其逻辑。</span><span class="sxs-lookup"><span data-stu-id="5df8e-139">A view component defines its logic in an `InvokeAsync` method that returns an `IViewComponentResult`.</span></span> <span data-ttu-id="5df8e-140">参数直接来自视图组件的调用，而不是来自模型绑定。</span><span class="sxs-lookup"><span data-stu-id="5df8e-140">Parameters come directly from invocation of the view component, not from model binding.</span></span> <span data-ttu-id="5df8e-141">视图组件从不直接处理请求。</span><span class="sxs-lookup"><span data-stu-id="5df8e-141">A view component never directly handles a request.</span></span> <span data-ttu-id="5df8e-142">通常，视图组件通过调用 `View` 方法来初始化模型并将其传递到视图。</span><span class="sxs-lookup"><span data-stu-id="5df8e-142">Typically, a view component initializes a model and passes it to a view by calling the `View` method.</span></span> <span data-ttu-id="5df8e-143">总之，视图组件方法：</span><span class="sxs-lookup"><span data-stu-id="5df8e-143">In summary, view component methods:</span></span>
 
-* <span data-ttu-id="db7ca-144">定义返回 `IViewComponentResult` 的 `InvokeAsync` 方法</span><span class="sxs-lookup"><span data-stu-id="db7ca-144">Define an `InvokeAsync` method that returns an `IViewComponentResult`</span></span>
-* <span data-ttu-id="db7ca-145">一般通过调用 `ViewComponent` `View` 方法来初始化模型并将其传递到视图</span><span class="sxs-lookup"><span data-stu-id="db7ca-145">Typically initializes a model and passes it to a view by calling the `ViewComponent` `View` method</span></span>
-* <span data-ttu-id="db7ca-146">参数来自调用方法，而不是 HTTP，没有模型绑定</span><span class="sxs-lookup"><span data-stu-id="db7ca-146">Parameters come from the calling method, not HTTP, there's no model binding</span></span>
-* <span data-ttu-id="db7ca-147">不可直接作为 HTTP 终结点访问，它们从代码调用（通常在视图中）。</span><span class="sxs-lookup"><span data-stu-id="db7ca-147">Are not reachable directly as an HTTP endpoint, they're invoked from your code (usually in a view).</span></span> <span data-ttu-id="db7ca-148">视图组件从不处理请求</span><span class="sxs-lookup"><span data-stu-id="db7ca-148">A view component never handles a request</span></span>
-* <span data-ttu-id="db7ca-149">在签名上重载，而不是当前 HTTP 请求的任何详细信息</span><span class="sxs-lookup"><span data-stu-id="db7ca-149">Are overloaded on the signature rather than any details from the current HTTP request</span></span>
+* <span data-ttu-id="5df8e-144">定义返回 `IViewComponentResult` 的 `InvokeAsync` 方法</span><span class="sxs-lookup"><span data-stu-id="5df8e-144">Define an `InvokeAsync` method that returns an `IViewComponentResult`</span></span>
+* <span data-ttu-id="5df8e-145">一般通过调用 `ViewComponent` `View` 方法来初始化模型并将其传递到视图</span><span class="sxs-lookup"><span data-stu-id="5df8e-145">Typically initializes a model and passes it to a view by calling the `ViewComponent` `View` method</span></span>
+* <span data-ttu-id="5df8e-146">参数来自调用方法，而不是 HTTP，没有模型绑定</span><span class="sxs-lookup"><span data-stu-id="5df8e-146">Parameters come from the calling method, not HTTP, there's no model binding</span></span>
+* <span data-ttu-id="5df8e-147">不可直接作为 HTTP 终结点访问，它们从代码调用（通常在视图中）。</span><span class="sxs-lookup"><span data-stu-id="5df8e-147">Are not reachable directly as an HTTP endpoint, they're invoked from your code (usually in a view).</span></span> <span data-ttu-id="5df8e-148">视图组件从不处理请求</span><span class="sxs-lookup"><span data-stu-id="5df8e-148">A view component never handles a request</span></span>
+* <span data-ttu-id="5df8e-149">在签名上重载，而不是当前 HTTP 请求的任何详细信息</span><span class="sxs-lookup"><span data-stu-id="5df8e-149">Are overloaded on the signature rather than any details from the current HTTP request</span></span>
 
-### <a name="view-search-path"></a><span data-ttu-id="db7ca-150">视图搜索路径</span><span class="sxs-lookup"><span data-stu-id="db7ca-150">View search path</span></span>
+### <a name="view-search-path"></a><span data-ttu-id="5df8e-150">视图搜索路径</span><span class="sxs-lookup"><span data-stu-id="5df8e-150">View search path</span></span>
 
-<span data-ttu-id="db7ca-151">运行时在以下路径中搜索视图：</span><span class="sxs-lookup"><span data-stu-id="db7ca-151">The runtime searches for the view in the following paths:</span></span>
+<span data-ttu-id="5df8e-151">运行时在以下路径中搜索视图：</span><span class="sxs-lookup"><span data-stu-id="5df8e-151">The runtime searches for the view in the following paths:</span></span>
 
-   * <span data-ttu-id="db7ca-152">Views/\<controller_name>/Components/\<view_component_name>/\<view_name></span><span class="sxs-lookup"><span data-stu-id="db7ca-152">Views/\<controller_name>/Components/\<view_component_name>/\<view_name></span></span>
-   * <span data-ttu-id="db7ca-153">Views/Shared/Components/\<view_component_name>/\<view_name></span><span class="sxs-lookup"><span data-stu-id="db7ca-153">Views/Shared/Components/\<view_component_name>/\<view_name></span></span>
+   * <span data-ttu-id="5df8e-152">Views/\<controller_name>/Components/\<view_component_name>/\<view_name></span><span class="sxs-lookup"><span data-stu-id="5df8e-152">Views/\<controller_name>/Components/\<view_component_name>/\<view_name></span></span>
+   * <span data-ttu-id="5df8e-153">Views/Shared/Components/\<view_component_name>/\<view_name></span><span class="sxs-lookup"><span data-stu-id="5df8e-153">Views/Shared/Components/\<view_component_name>/\<view_name></span></span>
 
-<span data-ttu-id="db7ca-154">视图组件的默认视图名称为“默认”，这意味着视图文件通常命名为“Default.cshtml”。</span><span class="sxs-lookup"><span data-stu-id="db7ca-154">The default view name for a view component is *Default*, which means your view file will typically be named *Default.cshtml*.</span></span> <span data-ttu-id="db7ca-155">可以在创建视图组件结果或调用 `View` 方法时指定不同的视图名称。</span><span class="sxs-lookup"><span data-stu-id="db7ca-155">You can specify a different view name when creating the view component result or when calling the `View` method.</span></span>
+<span data-ttu-id="5df8e-154">视图组件的默认视图名称为“默认”，这意味着视图文件通常命名为“Default.cshtml”。</span><span class="sxs-lookup"><span data-stu-id="5df8e-154">The default view name for a view component is *Default*, which means your view file will typically be named *Default.cshtml*.</span></span> <span data-ttu-id="5df8e-155">可以在创建视图组件结果或调用 `View` 方法时指定不同的视图名称。</span><span class="sxs-lookup"><span data-stu-id="5df8e-155">You can specify a different view name when creating the view component result or when calling the `View` method.</span></span>
 
-<span data-ttu-id="db7ca-156">建议将视图文件命名为“Default.cshtml”并使用 Views/Shared/Components/\<view_component_name>/\<view_name> 路径。</span><span class="sxs-lookup"><span data-stu-id="db7ca-156">We recommend you name the view file *Default.cshtml* and use the *Views/Shared/Components/\<view_component_name>/\<view_name>* path.</span></span> <span data-ttu-id="db7ca-157">此示例中使用的 `PriorityList` 视图组件对视图组件视图使用 Views/Shared/Components/PriorityList/Default.cshtml。</span><span class="sxs-lookup"><span data-stu-id="db7ca-157">The `PriorityList` view component used in this sample uses *Views/Shared/Components/PriorityList/Default.cshtml* for the view component view.</span></span>
+<span data-ttu-id="5df8e-156">建议将视图文件命名为“Default.cshtml”并使用 Views/Shared/Components/\<view_component_name>/\<view_name> 路径。</span><span class="sxs-lookup"><span data-stu-id="5df8e-156">We recommend you name the view file *Default.cshtml* and use the *Views/Shared/Components/\<view_component_name>/\<view_name>* path.</span></span> <span data-ttu-id="5df8e-157">此示例中使用的 `PriorityList` 视图组件对视图组件视图使用 Views/Shared/Components/PriorityList/Default.cshtml。</span><span class="sxs-lookup"><span data-stu-id="5df8e-157">The `PriorityList` view component used in this sample uses *Views/Shared/Components/PriorityList/Default.cshtml* for the view component view.</span></span>
 
-## <a name="invoking-a-view-component"></a><span data-ttu-id="db7ca-158">调用视图组件</span><span class="sxs-lookup"><span data-stu-id="db7ca-158">Invoking a view component</span></span>
+## <a name="invoking-a-view-component"></a><span data-ttu-id="5df8e-158">调用视图组件</span><span class="sxs-lookup"><span data-stu-id="5df8e-158">Invoking a view component</span></span>
 
-<span data-ttu-id="db7ca-159">要使用视图组件，请在视图中调用以下内容：</span><span class="sxs-lookup"><span data-stu-id="db7ca-159">To use the view component, call the following inside a view:</span></span>
+<span data-ttu-id="5df8e-159">要使用视图组件，请在视图中调用以下内容：</span><span class="sxs-lookup"><span data-stu-id="5df8e-159">To use the view component, call the following inside a view:</span></span>
 
 ```cshtml
 @Component.InvokeAsync("Name of view component", <anonymous type containing parameters>)
 ```
 
-<span data-ttu-id="db7ca-160">参数将传递给 `InvokeAsync` 方法。</span><span class="sxs-lookup"><span data-stu-id="db7ca-160">The parameters will be passed to the `InvokeAsync` method.</span></span> <span data-ttu-id="db7ca-161">本文中开发的 `PriorityList` 视图组件是从 Views/Todo/Index.cshtml 视图文件中调用的。</span><span class="sxs-lookup"><span data-stu-id="db7ca-161">The `PriorityList` view component developed in the article is invoked from the *Views/Todo/Index.cshtml* view file.</span></span> <span data-ttu-id="db7ca-162">在下例中，使用两个参数调用 `InvokeAsync` 方法：</span><span class="sxs-lookup"><span data-stu-id="db7ca-162">In the following, the `InvokeAsync` method is called with two parameters:</span></span>
+<span data-ttu-id="5df8e-160">参数将传递给 `InvokeAsync` 方法。</span><span class="sxs-lookup"><span data-stu-id="5df8e-160">The parameters will be passed to the `InvokeAsync` method.</span></span> <span data-ttu-id="5df8e-161">本文中开发的 `PriorityList` 视图组件是从 Views/Todo/Index.cshtml 视图文件中调用的。</span><span class="sxs-lookup"><span data-stu-id="5df8e-161">The `PriorityList` view component developed in the article is invoked from the *Views/Todo/Index.cshtml* view file.</span></span> <span data-ttu-id="5df8e-162">在下例中，使用两个参数调用 `InvokeAsync` 方法：</span><span class="sxs-lookup"><span data-stu-id="5df8e-162">In the following, the `InvokeAsync` method is called with two parameters:</span></span>
 
 [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
 
-## <a name="invoking-a-view-component-as-a-tag-helper"></a><span data-ttu-id="db7ca-163">调用视图组件作为标记帮助程序</span><span class="sxs-lookup"><span data-stu-id="db7ca-163">Invoking a view component as a Tag Helper</span></span>
+## <a name="invoking-a-view-component-as-a-tag-helper"></a><span data-ttu-id="5df8e-163">调用视图组件作为标记帮助程序</span><span class="sxs-lookup"><span data-stu-id="5df8e-163">Invoking a view component as a Tag Helper</span></span>
 
-<span data-ttu-id="db7ca-164">对于 ASP.NET Core 1.1 及更高版本，可以调用视图组件作为[标记帮助程序](xref:mvc/views/tag-helpers/intro)：</span><span class="sxs-lookup"><span data-stu-id="db7ca-164">For ASP.NET Core 1.1 and higher, you can invoke a view component as a [Tag Helper](xref:mvc/views/tag-helpers/intro):</span></span>
+<span data-ttu-id="5df8e-164">对于 ASP.NET Core 1.1 及更高版本，可以调用视图组件作为[标记帮助程序](xref:mvc/views/tag-helpers/intro)：</span><span class="sxs-lookup"><span data-stu-id="5df8e-164">For ASP.NET Core 1.1 and higher, you can invoke a view component as a [Tag Helper](xref:mvc/views/tag-helpers/intro):</span></span>
 
 [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexTagHelper.cshtml?range=37-38)]
 
-<span data-ttu-id="db7ca-165">标记帮助程序采用 Pascal 大小写格式的类和方法参数将转换为各自相应的[小写短横线格式](https://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101)。</span><span class="sxs-lookup"><span data-stu-id="db7ca-165">Pascal-cased class and method parameters for Tag Helpers are translated into their [lower kebab case](https://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101).</span></span> <span data-ttu-id="db7ca-166">要调用视图组件的标记帮助程序使用 `<vc></vc>` 元素。</span><span class="sxs-lookup"><span data-stu-id="db7ca-166">The Tag Helper to invoke a view component uses the `<vc></vc>` element.</span></span> <span data-ttu-id="db7ca-167">按如下方式指定视图组件：</span><span class="sxs-lookup"><span data-stu-id="db7ca-167">The view component is specified as follows:</span></span>
+<span data-ttu-id="5df8e-165">标记帮助程序采用 Pascal 大小写格式的类和方法参数将转换为各自相应的[小写短横线格式](https://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101)。</span><span class="sxs-lookup"><span data-stu-id="5df8e-165">Pascal-cased class and method parameters for Tag Helpers are translated into their [lower kebab case](https://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101).</span></span> <span data-ttu-id="5df8e-166">要调用视图组件的标记帮助程序使用 `<vc></vc>` 元素。</span><span class="sxs-lookup"><span data-stu-id="5df8e-166">The Tag Helper to invoke a view component uses the `<vc></vc>` element.</span></span> <span data-ttu-id="5df8e-167">按如下方式指定视图组件：</span><span class="sxs-lookup"><span data-stu-id="5df8e-167">The view component is specified as follows:</span></span>
 
 ```cshtml
 <vc:[view-component-name]
@@ -110,115 +110,115 @@ ms.lasthandoff: 01/30/2018
 </vc:[view-component-name]>
 ```
 
-<span data-ttu-id="db7ca-168">注意：为了将视图组件用作标记帮助程序，必须使用 `@addTagHelper` 指令注册包含视图组件的程序集。</span><span class="sxs-lookup"><span data-stu-id="db7ca-168">Note: In order to use a View Component as a Tag Helper, you must register the assembly containing the View Component using the `@addTagHelper` directive.</span></span> <span data-ttu-id="db7ca-169">例如，如果视图组件位于名为“MyWebApp”的程序集中，请将以下指令添加到 `_ViewImports.cshtml` 文件：</span><span class="sxs-lookup"><span data-stu-id="db7ca-169">For example, if your View Component is in an assembly called "MyWebApp", add the following directive to the `_ViewImports.cshtml` file:</span></span>
+<span data-ttu-id="5df8e-168">注意：为了将视图组件用作标记帮助程序，必须使用 `@addTagHelper` 指令注册包含视图组件的程序集。</span><span class="sxs-lookup"><span data-stu-id="5df8e-168">Note: In order to use a View Component as a Tag Helper, you must register the assembly containing the View Component using the `@addTagHelper` directive.</span></span> <span data-ttu-id="5df8e-169">例如，如果视图组件位于名为“MyWebApp”的程序集中，请将以下指令添加到 `_ViewImports.cshtml` 文件：</span><span class="sxs-lookup"><span data-stu-id="5df8e-169">For example, if your View Component is in an assembly called "MyWebApp", add the following directive to the `_ViewImports.cshtml` file:</span></span>
 
 ```cshtml
 @addTagHelper *, MyWebApp
 ```
 
-<span data-ttu-id="db7ca-170">可将视图组件作为标记帮助程序注册到任何引用视图组件的文件。</span><span class="sxs-lookup"><span data-stu-id="db7ca-170">You can register a View Component as a Tag Helper to any file that references the View Component.</span></span> <span data-ttu-id="db7ca-171">要详细了解如何注册标记帮助程序，请参阅[管理标记帮助程序作用域](xref:mvc/views/tag-helpers/intro#managing-tag-helper-scope)。</span><span class="sxs-lookup"><span data-stu-id="db7ca-171">See [Managing Tag Helper Scope](xref:mvc/views/tag-helpers/intro#managing-tag-helper-scope) for more information on how to register Tag Helpers.</span></span>
+<span data-ttu-id="5df8e-170">可将视图组件作为标记帮助程序注册到任何引用视图组件的文件。</span><span class="sxs-lookup"><span data-stu-id="5df8e-170">You can register a View Component as a Tag Helper to any file that references the View Component.</span></span> <span data-ttu-id="5df8e-171">要详细了解如何注册标记帮助程序，请参阅[管理标记帮助程序作用域](xref:mvc/views/tag-helpers/intro#managing-tag-helper-scope)。</span><span class="sxs-lookup"><span data-stu-id="5df8e-171">See [Managing Tag Helper Scope](xref:mvc/views/tag-helpers/intro#managing-tag-helper-scope) for more information on how to register Tag Helpers.</span></span>
 
-<span data-ttu-id="db7ca-172">本教程中使用的 `InvokeAsync` 方法：</span><span class="sxs-lookup"><span data-stu-id="db7ca-172">The `InvokeAsync` method used in this tutorial:</span></span>
+<span data-ttu-id="5df8e-172">本教程中使用的 `InvokeAsync` 方法：</span><span class="sxs-lookup"><span data-stu-id="5df8e-172">The `InvokeAsync` method used in this tutorial:</span></span>
 
 [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
 
-<span data-ttu-id="db7ca-173">在标记帮助程序标记中：</span><span class="sxs-lookup"><span data-stu-id="db7ca-173">In Tag Helper markup:</span></span>
+<span data-ttu-id="5df8e-173">在标记帮助程序标记中：</span><span class="sxs-lookup"><span data-stu-id="5df8e-173">In Tag Helper markup:</span></span>
 
 [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexTagHelper.cshtml?range=37-38)]
 
-<span data-ttu-id="db7ca-174">在以上示例中，`PriorityList` 视图组件变为 `priority-list`。</span><span class="sxs-lookup"><span data-stu-id="db7ca-174">In the sample above, the `PriorityList` view component becomes `priority-list`.</span></span> <span data-ttu-id="db7ca-175">视图组件的参数作为小写短横线格式的属性进行传递。</span><span class="sxs-lookup"><span data-stu-id="db7ca-175">The parameters to the view component are passed as attributes in lower kebab case.</span></span>
+<span data-ttu-id="5df8e-174">在以上示例中，`PriorityList` 视图组件变为 `priority-list`。</span><span class="sxs-lookup"><span data-stu-id="5df8e-174">In the sample above, the `PriorityList` view component becomes `priority-list`.</span></span> <span data-ttu-id="5df8e-175">视图组件的参数作为小写短横线格式的属性进行传递。</span><span class="sxs-lookup"><span data-stu-id="5df8e-175">The parameters to the view component are passed as attributes in lower kebab case.</span></span>
 
-### <a name="invoking-a-view-component-directly-from-a-controller"></a><span data-ttu-id="db7ca-176">从控制器直接调用视图组件</span><span class="sxs-lookup"><span data-stu-id="db7ca-176">Invoking a view component directly from a controller</span></span>
+### <a name="invoking-a-view-component-directly-from-a-controller"></a><span data-ttu-id="5df8e-176">从控制器直接调用视图组件</span><span class="sxs-lookup"><span data-stu-id="5df8e-176">Invoking a view component directly from a controller</span></span>
 
-<span data-ttu-id="db7ca-177">视图组件通常从视图调用，但你可以直接从控制器方法调用它们。</span><span class="sxs-lookup"><span data-stu-id="db7ca-177">View components are typically invoked from a view, but you can invoke them directly from a controller method.</span></span> <span data-ttu-id="db7ca-178">尽管视图组件不定义控制器等终结点，但你可以轻松实现返回 `ViewComponentResult` 内容的控制器操作。</span><span class="sxs-lookup"><span data-stu-id="db7ca-178">While view components don't define endpoints like controllers, you can easily implement a controller action that returns the content of a `ViewComponentResult`.</span></span>
+<span data-ttu-id="5df8e-177">视图组件通常从视图调用，但你可以直接从控制器方法调用它们。</span><span class="sxs-lookup"><span data-stu-id="5df8e-177">View components are typically invoked from a view, but you can invoke them directly from a controller method.</span></span> <span data-ttu-id="5df8e-178">尽管视图组件不定义控制器等终结点，但你可以轻松实现返回 `ViewComponentResult` 内容的控制器操作。</span><span class="sxs-lookup"><span data-stu-id="5df8e-178">While view components don't define endpoints like controllers, you can easily implement a controller action that returns the content of a `ViewComponentResult`.</span></span>
 
-<span data-ttu-id="db7ca-179">在此示例中，视图组件直接从控制器调用：</span><span class="sxs-lookup"><span data-stu-id="db7ca-179">In this example, the view component is called directly from the controller:</span></span>
+<span data-ttu-id="5df8e-179">在此示例中，视图组件直接从控制器调用：</span><span class="sxs-lookup"><span data-stu-id="5df8e-179">In this example, the view component is called directly from the controller:</span></span>
 
 [!code-csharp[Main](view-components/sample/ViewCompFinal/Controllers/ToDoController.cs?name=snippet_IndexVC)]
 
-## <a name="walkthrough-creating-a-simple-view-component"></a><span data-ttu-id="db7ca-180">演练：创建简单的视图组件</span><span class="sxs-lookup"><span data-stu-id="db7ca-180">Walkthrough: Creating a simple view component</span></span>
+## <a name="walkthrough-creating-a-simple-view-component"></a><span data-ttu-id="5df8e-180">演练：创建简单的视图组件</span><span class="sxs-lookup"><span data-stu-id="5df8e-180">Walkthrough: Creating a simple view component</span></span>
 
-<span data-ttu-id="db7ca-181">[下载](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample)、生成和测试起始代码。</span><span class="sxs-lookup"><span data-stu-id="db7ca-181">[Download](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample), build and test the starter code.</span></span> <span data-ttu-id="db7ca-182">它是一个带有 `Todo` 控制器的简单项目，该控制器显示 Todo 项的列表。</span><span class="sxs-lookup"><span data-stu-id="db7ca-182">It's a simple project with a `Todo` controller that displays a list of *Todo* items.</span></span>
+<span data-ttu-id="5df8e-181">[下载](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample)、生成和测试起始代码。</span><span class="sxs-lookup"><span data-stu-id="5df8e-181">[Download](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample), build and test the starter code.</span></span> <span data-ttu-id="5df8e-182">它是一个带有 `Todo` 控制器的简单项目，该控制器显示 Todo 项的列表。</span><span class="sxs-lookup"><span data-stu-id="5df8e-182">It's a simple project with a `Todo` controller that displays a list of *Todo* items.</span></span>
 
 ![ToDo 列表](view-components/_static/2dos.png)
 
-### <a name="add-a-viewcomponent-class"></a><span data-ttu-id="db7ca-184">添加 ViewComponent 类</span><span class="sxs-lookup"><span data-stu-id="db7ca-184">Add a ViewComponent class</span></span>
+### <a name="add-a-viewcomponent-class"></a><span data-ttu-id="5df8e-184">添加 ViewComponent 类</span><span class="sxs-lookup"><span data-stu-id="5df8e-184">Add a ViewComponent class</span></span>
 
-<span data-ttu-id="db7ca-185">创建一个 ViewComponents 文件夹并添加以下 `PriorityListViewComponent` 类：</span><span class="sxs-lookup"><span data-stu-id="db7ca-185">Create a *ViewComponents* folder and add the following `PriorityListViewComponent` class:</span></span>
+<span data-ttu-id="5df8e-185">创建一个 ViewComponents 文件夹并添加以下 `PriorityListViewComponent` 类：</span><span class="sxs-lookup"><span data-stu-id="5df8e-185">Create a *ViewComponents* folder and add the following `PriorityListViewComponent` class:</span></span>
 
 [!code-csharp[Main](view-components/sample/ViewCompFinal/ViewComponents/PriorityListViewComponent1.cs?name=snippet1)]
 
-<span data-ttu-id="db7ca-186">代码说明：</span><span class="sxs-lookup"><span data-stu-id="db7ca-186">Notes on the code:</span></span>
+<span data-ttu-id="5df8e-186">代码说明：</span><span class="sxs-lookup"><span data-stu-id="5df8e-186">Notes on the code:</span></span>
 
-* <span data-ttu-id="db7ca-187">视图组件类可以包含在项目的任意文件夹中。</span><span class="sxs-lookup"><span data-stu-id="db7ca-187">View component classes can be contained in **any** folder in the project.</span></span>
-* <span data-ttu-id="db7ca-188">因为类名 PriorityListViewComponent 以后缀 ViewComponent 结尾，所以运行时将在从视图引用类组件时使用字符串“PriorityList”。</span><span class="sxs-lookup"><span data-stu-id="db7ca-188">Because the class name PriorityList**ViewComponent** ends with the suffix **ViewComponent**, the runtime will use the string "PriorityList" when referencing the class component from a view.</span></span> <span data-ttu-id="db7ca-189">我稍后将进行详细解释。</span><span class="sxs-lookup"><span data-stu-id="db7ca-189">I'll explain that in more detail later.</span></span>
-* <span data-ttu-id="db7ca-190">`[ViewComponent]` 属性可以更改用于引用视图组件的名称。</span><span class="sxs-lookup"><span data-stu-id="db7ca-190">The `[ViewComponent]` attribute can change the name used to reference a view component.</span></span> <span data-ttu-id="db7ca-191">例如，我们可以将类命名为 `XYZ` 并应用 `ViewComponent` 属性：</span><span class="sxs-lookup"><span data-stu-id="db7ca-191">For example, we could've named the class `XYZ` and applied the `ViewComponent` attribute:</span></span>
+* <span data-ttu-id="5df8e-187">视图组件类可以包含在项目的任意文件夹中。</span><span class="sxs-lookup"><span data-stu-id="5df8e-187">View component classes can be contained in **any** folder in the project.</span></span>
+* <span data-ttu-id="5df8e-188">因为类名 PriorityListViewComponent 以后缀 ViewComponent 结尾，所以运行时将在从视图引用类组件时使用字符串“PriorityList”。</span><span class="sxs-lookup"><span data-stu-id="5df8e-188">Because the class name PriorityList**ViewComponent** ends with the suffix **ViewComponent**, the runtime will use the string "PriorityList" when referencing the class component from a view.</span></span> <span data-ttu-id="5df8e-189">我稍后将进行详细解释。</span><span class="sxs-lookup"><span data-stu-id="5df8e-189">I'll explain that in more detail later.</span></span>
+* <span data-ttu-id="5df8e-190">`[ViewComponent]` 属性可以更改用于引用视图组件的名称。</span><span class="sxs-lookup"><span data-stu-id="5df8e-190">The `[ViewComponent]` attribute can change the name used to reference a view component.</span></span> <span data-ttu-id="5df8e-191">例如，我们可以将类命名为 `XYZ` 并应用 `ViewComponent` 属性：</span><span class="sxs-lookup"><span data-stu-id="5df8e-191">For example, we could've named the class `XYZ` and applied the `ViewComponent` attribute:</span></span>
 
   ```csharp
   [ViewComponent(Name = "PriorityList")]
      public class XYZ : ViewComponent
      ```
 
-* <span data-ttu-id="db7ca-192">上面的 `[ViewComponent]` 属性通知视图组件选择器在查找与组件相关联的视图时使用名称 `PriorityList`，以及在从视图引用类组件时使用字符串“PriorityList”。</span><span class="sxs-lookup"><span data-stu-id="db7ca-192">The `[ViewComponent]` attribute above tells the view component selector to use the name `PriorityList` when looking for the views associated with the component, and to use the string "PriorityList" when referencing the class component from a view.</span></span> <span data-ttu-id="db7ca-193">我稍后将进行详细解释。</span><span class="sxs-lookup"><span data-stu-id="db7ca-193">I'll explain that in more detail later.</span></span>
-* <span data-ttu-id="db7ca-194">组件使用[依赖关系注入](../../fundamentals/dependency-injection.md)以使数据上下文可用。</span><span class="sxs-lookup"><span data-stu-id="db7ca-194">The component uses [dependency injection](../../fundamentals/dependency-injection.md) to make the data context available.</span></span>
-* <span data-ttu-id="db7ca-195">`InvokeAsync` 公开可以从视图调用的方法，且可以采用任意数量的参数。</span><span class="sxs-lookup"><span data-stu-id="db7ca-195">`InvokeAsync` exposes a method which can be called from a view, and it can take an arbitrary number of arguments.</span></span>
-* <span data-ttu-id="db7ca-196">`InvokeAsync` 方法返回满足 `isDone` 和 `maxPriority` 参数的 `ToDo` 项集。</span><span class="sxs-lookup"><span data-stu-id="db7ca-196">The `InvokeAsync` method returns the set of `ToDo` items that satisfy the `isDone` and `maxPriority` parameters.</span></span>
+* <span data-ttu-id="5df8e-192">上面的 `[ViewComponent]` 属性通知视图组件选择器在查找与组件相关联的视图时使用名称 `PriorityList`，以及在从视图引用类组件时使用字符串“PriorityList”。</span><span class="sxs-lookup"><span data-stu-id="5df8e-192">The `[ViewComponent]` attribute above tells the view component selector to use the name `PriorityList` when looking for the views associated with the component, and to use the string "PriorityList" when referencing the class component from a view.</span></span> <span data-ttu-id="5df8e-193">我稍后将进行详细解释。</span><span class="sxs-lookup"><span data-stu-id="5df8e-193">I'll explain that in more detail later.</span></span>
+* <span data-ttu-id="5df8e-194">组件使用[依赖关系注入](../../fundamentals/dependency-injection.md)以使数据上下文可用。</span><span class="sxs-lookup"><span data-stu-id="5df8e-194">The component uses [dependency injection](../../fundamentals/dependency-injection.md) to make the data context available.</span></span>
+* <span data-ttu-id="5df8e-195">`InvokeAsync` 公开可以从视图调用的方法，且可以采用任意数量的参数。</span><span class="sxs-lookup"><span data-stu-id="5df8e-195">`InvokeAsync` exposes a method which can be called from a view, and it can take an arbitrary number of arguments.</span></span>
+* <span data-ttu-id="5df8e-196">`InvokeAsync` 方法返回满足 `isDone` 和 `maxPriority` 参数的 `ToDo` 项集。</span><span class="sxs-lookup"><span data-stu-id="5df8e-196">The `InvokeAsync` method returns the set of `ToDo` items that satisfy the `isDone` and `maxPriority` parameters.</span></span>
 
-### <a name="create-the-view-component-razor-view"></a><span data-ttu-id="db7ca-197">创建视图组件 Razor 视图</span><span class="sxs-lookup"><span data-stu-id="db7ca-197">Create the view component Razor view</span></span>
+### <a name="create-the-view-component-razor-view"></a><span data-ttu-id="5df8e-197">创建视图组件 Razor 视图</span><span class="sxs-lookup"><span data-stu-id="5df8e-197">Create the view component Razor view</span></span>
 
-* <span data-ttu-id="db7ca-198">创建 Views/Shared/Components 文件夹。</span><span class="sxs-lookup"><span data-stu-id="db7ca-198">Create the *Views/Shared/Components* folder.</span></span> <span data-ttu-id="db7ca-199">文件夹必须命名为“Components”。</span><span class="sxs-lookup"><span data-stu-id="db7ca-199">This folder **must** be named *Components*.</span></span>
+* <span data-ttu-id="5df8e-198">创建 Views/Shared/Components 文件夹。</span><span class="sxs-lookup"><span data-stu-id="5df8e-198">Create the *Views/Shared/Components* folder.</span></span> <span data-ttu-id="5df8e-199">此文件夹 **必须** 命名为 *Components*。</span><span class="sxs-lookup"><span data-stu-id="5df8e-199">This folder **must** be named *Components*.</span></span>
 
-* <span data-ttu-id="db7ca-200">创建 Views/Shared/Components/PriorityList 文件夹。</span><span class="sxs-lookup"><span data-stu-id="db7ca-200">Create the *Views/Shared/Components/PriorityList* folder.</span></span> <span data-ttu-id="db7ca-201">此文件夹名称必须与视图组件类的名称或类名去掉后缀（如果遵照约定并在类名中使用了“ViewComponent”后缀）的名称相匹配。</span><span class="sxs-lookup"><span data-stu-id="db7ca-201">This folder name must match the name of the view component class, or the name of the class minus the suffix (if we followed convention and used the *ViewComponent* suffix in the class name).</span></span> <span data-ttu-id="db7ca-202">如果使用了 `ViewComponent` 属性，则类名称需要匹配指定的属性。</span><span class="sxs-lookup"><span data-stu-id="db7ca-202">If you used the `ViewComponent` attribute, the class name would need to match the attribute designation.</span></span>
+* <span data-ttu-id="5df8e-200">创建 Views/Shared/Components/PriorityList 文件夹。</span><span class="sxs-lookup"><span data-stu-id="5df8e-200">Create the *Views/Shared/Components/PriorityList* folder.</span></span> <span data-ttu-id="5df8e-201">此文件夹名称必须与视图组件类的名称或类名去掉后缀（如果遵照约定并在类名中使用了“ViewComponent”后缀）的名称相匹配。</span><span class="sxs-lookup"><span data-stu-id="5df8e-201">This folder name must match the name of the view component class, or the name of the class minus the suffix (if we followed convention and used the *ViewComponent* suffix in the class name).</span></span> <span data-ttu-id="5df8e-202">如果使用了 `ViewComponent` 属性，则类名称需要匹配指定的属性。</span><span class="sxs-lookup"><span data-stu-id="5df8e-202">If you used the `ViewComponent` attribute, the class name would need to match the attribute designation.</span></span>
 
-* <span data-ttu-id="db7ca-203">创建 Views/Shared/Components/PriorityList/Default.cshtml Razor 视图：[!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Shared/Components/PriorityList/Default1.cshtml)]</span><span class="sxs-lookup"><span data-stu-id="db7ca-203">Create a *Views/Shared/Components/PriorityList/Default.cshtml* Razor view: [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Shared/Components/PriorityList/Default1.cshtml)]</span></span>
+* <span data-ttu-id="5df8e-203">创建 Views/Shared/Components/PriorityList/Default.cshtml Razor 视图：[!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Shared/Components/PriorityList/Default1.cshtml)]</span><span class="sxs-lookup"><span data-stu-id="5df8e-203">Create a *Views/Shared/Components/PriorityList/Default.cshtml* Razor view: [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Shared/Components/PriorityList/Default1.cshtml)]</span></span>
     
-   <span data-ttu-id="db7ca-204">Razor 视图获取并显示 `TodoItem` 列表。</span><span class="sxs-lookup"><span data-stu-id="db7ca-204">The Razor view takes a list of `TodoItem` and displays them.</span></span> <span data-ttu-id="db7ca-205">如果视图组件 `InvokeAsync` 方法不传递视图名称（如示例中所示），则按照约定使用“默认”作为视图名称。</span><span class="sxs-lookup"><span data-stu-id="db7ca-205">If the view component `InvokeAsync` method doesn't pass the name of the view (as in our sample), *Default* is used for the view name by convention.</span></span> <span data-ttu-id="db7ca-206">在本教程后面部分，我将演示如何传递视图名称。</span><span class="sxs-lookup"><span data-stu-id="db7ca-206">Later in the tutorial, I'll show you how to pass the name of the view.</span></span> <span data-ttu-id="db7ca-207">要替代特定控制器的默认样式，请将视图添加到控制器特定的视图文件夹（例如 Views/Todo/Components/PriorityList/Default.cshtml）。</span><span class="sxs-lookup"><span data-stu-id="db7ca-207">To override the default styling for a specific controller, add a view to the controller-specific view folder (for example *Views/Todo/Components/PriorityList/Default.cshtml)*.</span></span>
+   <span data-ttu-id="5df8e-204">Razor 视图获取并显示 `TodoItem` 列表。</span><span class="sxs-lookup"><span data-stu-id="5df8e-204">The Razor view takes a list of `TodoItem` and displays them.</span></span> <span data-ttu-id="5df8e-205">如果视图组件 `InvokeAsync` 方法不传递视图名称（如示例中所示），则按照约定使用“默认”作为视图名称。</span><span class="sxs-lookup"><span data-stu-id="5df8e-205">If the view component `InvokeAsync` method doesn't pass the name of the view (as in our sample), *Default* is used for the view name by convention.</span></span> <span data-ttu-id="5df8e-206">在本教程后面部分，我将演示如何传递视图名称。</span><span class="sxs-lookup"><span data-stu-id="5df8e-206">Later in the tutorial, I'll show you how to pass the name of the view.</span></span> <span data-ttu-id="5df8e-207">要替代特定控制器的默认样式，请将视图添加到控制器特定的视图文件夹（例如 Views/Todo/Components/PriorityList/Default.cshtml）。</span><span class="sxs-lookup"><span data-stu-id="5df8e-207">To override the default styling for a specific controller, add a view to the controller-specific view folder (for example *Views/Todo/Components/PriorityList/Default.cshtml)*.</span></span>
     
-    <span data-ttu-id="db7ca-208">如果视图组件是控制器特定的，则可将其添加到控制器特定的文件夹 (Views/Todo/Components/PriorityList/Default.cshtml)。</span><span class="sxs-lookup"><span data-stu-id="db7ca-208">If the view component is controller-specific, you can add it to the controller-specific folder (*Views/Todo/Components/PriorityList/Default.cshtml*).</span></span>
+    <span data-ttu-id="5df8e-208">如果视图组件是控制器特定的，则可将其添加到控制器特定的文件夹 (Views/Todo/Components/PriorityList/Default.cshtml)。</span><span class="sxs-lookup"><span data-stu-id="5df8e-208">If the view component is controller-specific, you can add it to the controller-specific folder (*Views/Todo/Components/PriorityList/Default.cshtml*).</span></span>
 
-* <span data-ttu-id="db7ca-209">将包含优先级列表组件调用的 `div` 添加到 Views/Todo/index.cshtml 文件底部：</span><span class="sxs-lookup"><span data-stu-id="db7ca-209">Add a `div` containing a call to the priority list component to the bottom of the *Views/Todo/index.cshtml* file:</span></span>
+* <span data-ttu-id="5df8e-209">将包含优先级列表组件调用的 `div` 添加到 Views/Todo/index.cshtml 文件底部：</span><span class="sxs-lookup"><span data-stu-id="5df8e-209">Add a `div` containing a call to the priority list component to the bottom of the *Views/Todo/index.cshtml* file:</span></span>
 
     [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFirst.cshtml?range=34-38)]
 
-<span data-ttu-id="db7ca-210">标记 `@await Component.InvokeAsync` 显示调用视图组件的语法。</span><span class="sxs-lookup"><span data-stu-id="db7ca-210">The markup `@await Component.InvokeAsync` shows the syntax for calling view components.</span></span> <span data-ttu-id="db7ca-211">第一个参数是要调用的组件的名称。</span><span class="sxs-lookup"><span data-stu-id="db7ca-211">The first argument is the name of the component we want to invoke or call.</span></span> <span data-ttu-id="db7ca-212">后续参数将传递给该组件。</span><span class="sxs-lookup"><span data-stu-id="db7ca-212">Subsequent parameters are passed to the component.</span></span> <span data-ttu-id="db7ca-213">`InvokeAsync` 可以采用任意数量的参数。</span><span class="sxs-lookup"><span data-stu-id="db7ca-213">`InvokeAsync` can take an arbitrary number of arguments.</span></span>
+<span data-ttu-id="5df8e-210">标记 `@await Component.InvokeAsync` 显示调用视图组件的语法。</span><span class="sxs-lookup"><span data-stu-id="5df8e-210">The markup `@await Component.InvokeAsync` shows the syntax for calling view components.</span></span> <span data-ttu-id="5df8e-211">第一个参数是要调用的组件的名称。</span><span class="sxs-lookup"><span data-stu-id="5df8e-211">The first argument is the name of the component we want to invoke or call.</span></span> <span data-ttu-id="5df8e-212">后续参数将传递给该组件。</span><span class="sxs-lookup"><span data-stu-id="5df8e-212">Subsequent parameters are passed to the component.</span></span> <span data-ttu-id="5df8e-213">`InvokeAsync` 可以采用任意数量的参数。</span><span class="sxs-lookup"><span data-stu-id="5df8e-213">`InvokeAsync` can take an arbitrary number of arguments.</span></span>
 
-<span data-ttu-id="db7ca-214">测试应用。</span><span class="sxs-lookup"><span data-stu-id="db7ca-214">Test the app.</span></span> <span data-ttu-id="db7ca-215">下图显示 ToDo 列表和优先级项：</span><span class="sxs-lookup"><span data-stu-id="db7ca-215">The following image shows the ToDo list and the priority items:</span></span>
+<span data-ttu-id="5df8e-214">测试应用。</span><span class="sxs-lookup"><span data-stu-id="5df8e-214">Test the app.</span></span> <span data-ttu-id="5df8e-215">下图显示 ToDo 列表和优先级项：</span><span class="sxs-lookup"><span data-stu-id="5df8e-215">The following image shows the ToDo list and the priority items:</span></span>
 
 ![Todo 列表和优先级项](view-components/_static/pi.png)
 
-<span data-ttu-id="db7ca-217">也可直接从控制器调用视图组件：</span><span class="sxs-lookup"><span data-stu-id="db7ca-217">You can also call the view component directly from the controller:</span></span>
+<span data-ttu-id="5df8e-217">也可直接从控制器调用视图组件：</span><span class="sxs-lookup"><span data-stu-id="5df8e-217">You can also call the view component directly from the controller:</span></span>
 
 [!code-csharp[Main](view-components/sample/ViewCompFinal/Controllers/ToDoController.cs?name=snippet_IndexVC)]
 
 ![IndexVC 操作的优先级项](view-components/_static/indexvc.png)
 
-### <a name="specifying-a-view-name"></a><span data-ttu-id="db7ca-219">指定视图名称</span><span class="sxs-lookup"><span data-stu-id="db7ca-219">Specifying a view name</span></span>
+### <a name="specifying-a-view-name"></a><span data-ttu-id="5df8e-219">指定视图名称</span><span class="sxs-lookup"><span data-stu-id="5df8e-219">Specifying a view name</span></span>
 
-<span data-ttu-id="db7ca-220">在某些情况下，复杂的视图组件可能需要指定非默认视图。</span><span class="sxs-lookup"><span data-stu-id="db7ca-220">A complex view component might need to specify a non-default view under some conditions.</span></span> <span data-ttu-id="db7ca-221">以下代码显示如何从 `InvokeAsync` 方法指定“PVC”视图。</span><span class="sxs-lookup"><span data-stu-id="db7ca-221">The following code shows how to specify the "PVC" view  from the `InvokeAsync` method.</span></span> <span data-ttu-id="db7ca-222">更新 `PriorityListViewComponent` 类中的 `InvokeAsync` 方法。</span><span class="sxs-lookup"><span data-stu-id="db7ca-222">Update the `InvokeAsync` method in the `PriorityListViewComponent` class.</span></span>
+<span data-ttu-id="5df8e-220">在某些情况下，复杂的视图组件可能需要指定非默认视图。</span><span class="sxs-lookup"><span data-stu-id="5df8e-220">A complex view component might need to specify a non-default view under some conditions.</span></span> <span data-ttu-id="5df8e-221">以下代码显示如何从 `InvokeAsync` 方法指定“PVC”视图。</span><span class="sxs-lookup"><span data-stu-id="5df8e-221">The following code shows how to specify the "PVC" view  from the `InvokeAsync` method.</span></span> <span data-ttu-id="5df8e-222">更新 `PriorityListViewComponent` 类中的 `InvokeAsync` 方法。</span><span class="sxs-lookup"><span data-stu-id="5df8e-222">Update the `InvokeAsync` method in the `PriorityListViewComponent` class.</span></span>
 
 [!code-csharp[Main](../../mvc/views/view-components/sample/ViewCompFinal/ViewComponents/PriorityListViewComponentFinal.cs?highlight=4,5,6,7,8,9&range=28-39)]
 
-<span data-ttu-id="db7ca-223">将 Views/Shared/Components/PriorityList/Default.cshtml 文件复制到名为 Views/Shared/Components/PriorityList/PVC.cshtml 的视图。</span><span class="sxs-lookup"><span data-stu-id="db7ca-223">Copy the *Views/Shared/Components/PriorityList/Default.cshtml* file to a view named *Views/Shared/Components/PriorityList/PVC.cshtml*.</span></span> <span data-ttu-id="db7ca-224">添加标题以指示正在使用 PVC 视图。</span><span class="sxs-lookup"><span data-stu-id="db7ca-224">Add a heading to indicate the PVC view is being used.</span></span>
+<span data-ttu-id="5df8e-223">将 Views/Shared/Components/PriorityList/Default.cshtml 文件复制到名为 Views/Shared/Components/PriorityList/PVC.cshtml 的视图。</span><span class="sxs-lookup"><span data-stu-id="5df8e-223">Copy the *Views/Shared/Components/PriorityList/Default.cshtml* file to a view named *Views/Shared/Components/PriorityList/PVC.cshtml*.</span></span> <span data-ttu-id="5df8e-224">添加标题以指示正在使用 PVC 视图。</span><span class="sxs-lookup"><span data-stu-id="5df8e-224">Add a heading to indicate the PVC view is being used.</span></span>
 
 [!code-cshtml[Main](../../mvc/views/view-components/sample/ViewCompFinal/Views/Shared/Components/PriorityList/PVC.cshtml?highlight=3)]
 
-<span data-ttu-id="db7ca-225">更新 Views/TodoList/Index.cshtml：</span><span class="sxs-lookup"><span data-stu-id="db7ca-225">Update *Views/TodoList/Index.cshtml*:</span></span>
+<span data-ttu-id="5df8e-225">更新 Views/TodoList/Index.cshtml：</span><span class="sxs-lookup"><span data-stu-id="5df8e-225">Update *Views/TodoList/Index.cshtml*:</span></span>
 
 <!-- Views/TodoList/Index.cshtml is never imported, so change to test tutorial -->
 
 [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
 
-<span data-ttu-id="db7ca-226">运行应用并验证 PVC 视图。</span><span class="sxs-lookup"><span data-stu-id="db7ca-226">Run the app and verify PVC view.</span></span>
+<span data-ttu-id="5df8e-226">运行应用并验证 PVC 视图。</span><span class="sxs-lookup"><span data-stu-id="5df8e-226">Run the app and verify PVC view.</span></span>
 
 ![优先级视图组件](view-components/_static/pvc.png)
 
-<span data-ttu-id="db7ca-228">如果不呈现 PVC 视图，请验证是否调用优先级为 4 或更高的视图组件。</span><span class="sxs-lookup"><span data-stu-id="db7ca-228">If the PVC view isn't rendered, verify you are calling the view component with a priority of 4 or higher.</span></span>
+<span data-ttu-id="5df8e-228">如果不呈现 PVC 视图，请验证是否调用优先级为 4 或更高的视图组件。</span><span class="sxs-lookup"><span data-stu-id="5df8e-228">If the PVC view isn't rendered, verify you are calling the view component with a priority of 4 or higher.</span></span>
 
-### <a name="examine-the-view-path"></a><span data-ttu-id="db7ca-229">检查视图路径</span><span class="sxs-lookup"><span data-stu-id="db7ca-229">Examine the view path</span></span>
+### <a name="examine-the-view-path"></a><span data-ttu-id="5df8e-229">检查视图路径</span><span class="sxs-lookup"><span data-stu-id="5df8e-229">Examine the view path</span></span>
 
-* <span data-ttu-id="db7ca-230">将优先级参数更改为 3 或更低，从而不返回优先级视图。</span><span class="sxs-lookup"><span data-stu-id="db7ca-230">Change the priority parameter to three or less so the priority view isn't returned.</span></span>
-* <span data-ttu-id="db7ca-231">将 Views/Todo/Components/PriorityList/Default.cshtml 暂时重命名为 1Default.cshtml。</span><span class="sxs-lookup"><span data-stu-id="db7ca-231">Temporarily rename the *Views/Todo/Components/PriorityList/Default.cshtml* to *1Default.cshtml*.</span></span>
-* <span data-ttu-id="db7ca-232">测试应用，你将收到以下错误：</span><span class="sxs-lookup"><span data-stu-id="db7ca-232">Test the app, you'll get the following error:</span></span>
+* <span data-ttu-id="5df8e-230">将优先级参数更改为 3 或更低，从而不返回优先级视图。</span><span class="sxs-lookup"><span data-stu-id="5df8e-230">Change the priority parameter to three or less so the priority view isn't returned.</span></span>
+* <span data-ttu-id="5df8e-231">将 Views/Todo/Components/PriorityList/Default.cshtml 暂时重命名为 1Default.cshtml。</span><span class="sxs-lookup"><span data-stu-id="5df8e-231">Temporarily rename the *Views/Todo/Components/PriorityList/Default.cshtml* to *1Default.cshtml*.</span></span>
+* <span data-ttu-id="5df8e-232">测试应用，你将收到以下错误：</span><span class="sxs-lookup"><span data-stu-id="5df8e-232">Test the app, you'll get the following error:</span></span>
 
    ```
    An unhandled exception occurred while processing the request.
@@ -228,22 +228,22 @@ ms.lasthandoff: 01/30/2018
    EnsureSuccessful
    ```
 
-* <span data-ttu-id="db7ca-233">将 Views/Todo/Components/PriorityList/1Default.cshtml 复制到 Views/Shared/Components/PriorityList/Default.cshtml。</span><span class="sxs-lookup"><span data-stu-id="db7ca-233">Copy *Views/Todo/Components/PriorityList/1Default.cshtml* to *Views/Shared/Components/PriorityList/Default.cshtml*.</span></span>
-* <span data-ttu-id="db7ca-234">将一些标记添加到共享 Todo 视图组件视图以指示视图来自“Shared”文件夹。</span><span class="sxs-lookup"><span data-stu-id="db7ca-234">Add some markup to the *Shared* Todo view component view to indicate the view is from the *Shared* folder.</span></span>
-* <span data-ttu-id="db7ca-235">测试“共享”组件视图。</span><span class="sxs-lookup"><span data-stu-id="db7ca-235">Test the **Shared** component view.</span></span>
+* <span data-ttu-id="5df8e-233">将 Views/Todo/Components/PriorityList/1Default.cshtml 复制到 Views/Shared/Components/PriorityList/Default.cshtml。</span><span class="sxs-lookup"><span data-stu-id="5df8e-233">Copy *Views/Todo/Components/PriorityList/1Default.cshtml* to *Views/Shared/Components/PriorityList/Default.cshtml*.</span></span>
+* <span data-ttu-id="5df8e-234">将一些标记添加到共享 Todo 视图组件视图以指示视图来自“Shared”文件夹。</span><span class="sxs-lookup"><span data-stu-id="5df8e-234">Add some markup to the *Shared* Todo view component view to indicate the view is from the *Shared* folder.</span></span>
+* <span data-ttu-id="5df8e-235">测试“共享”组件视图。</span><span class="sxs-lookup"><span data-stu-id="5df8e-235">Test the **Shared** component view.</span></span>
 
 ![有共享组件视图的 ToDo 输出](view-components/_static/shared.png)
 
-### <a name="avoiding-magic-strings"></a><span data-ttu-id="db7ca-237">避免魔幻字符串</span><span class="sxs-lookup"><span data-stu-id="db7ca-237">Avoiding magic strings</span></span>
+### <a name="avoiding-magic-strings"></a><span data-ttu-id="5df8e-237">避免魔幻字符串</span><span class="sxs-lookup"><span data-stu-id="5df8e-237">Avoiding magic strings</span></span>
 
-<span data-ttu-id="db7ca-238">若要确保编译时的安全性，可以用类名替换硬编码的视图组件名称。</span><span class="sxs-lookup"><span data-stu-id="db7ca-238">If you want compile time safety, you can replace the hard-coded view component name with the class name.</span></span> <span data-ttu-id="db7ca-239">创建没有“ViewComponent”后缀的视图组件：</span><span class="sxs-lookup"><span data-stu-id="db7ca-239">Create the view component without the "ViewComponent" suffix:</span></span>
+<span data-ttu-id="5df8e-238">若要确保编译时的安全性，可以用类名替换硬编码的视图组件名称。</span><span class="sxs-lookup"><span data-stu-id="5df8e-238">If you want compile time safety, you can replace the hard-coded view component name with the class name.</span></span> <span data-ttu-id="5df8e-239">创建没有“ViewComponent”后缀的视图组件：</span><span class="sxs-lookup"><span data-stu-id="5df8e-239">Create the view component without the "ViewComponent" suffix:</span></span>
 
 [!code-csharp[Main](../../mvc/views/view-components/sample/ViewCompFinal/ViewComponents/PriorityList.cs?highlight=10&range=5-35)]
 
-<span data-ttu-id="db7ca-240">将 `using` 语句添加到 Razor 视图文件，并使用 `nameof` 运算符：</span><span class="sxs-lookup"><span data-stu-id="db7ca-240">Add a `using` statement to your Razor view file, and use the `nameof` operator:</span></span>
+<span data-ttu-id="5df8e-240">将 `using` 语句添加到 Razor 视图文件，并使用 `nameof` 运算符：</span><span class="sxs-lookup"><span data-stu-id="5df8e-240">Add a `using` statement to your Razor view file, and use the `nameof` operator:</span></span>
 
 [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexNameof.cshtml?range=1-6,33-)]
 
-## <a name="additional-resources"></a><span data-ttu-id="db7ca-241">其他资源</span><span class="sxs-lookup"><span data-stu-id="db7ca-241">Additional resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="5df8e-241">其他资源</span><span class="sxs-lookup"><span data-stu-id="5df8e-241">Additional resources</span></span>
 
-* [<span data-ttu-id="db7ca-242">视图中的依赖关系注入</span><span class="sxs-lookup"><span data-stu-id="db7ca-242">Dependency injection into views</span></span>](xref:mvc/views/dependency-injection)
+* [<span data-ttu-id="5df8e-242">视图中的依赖关系注入</span><span class="sxs-lookup"><span data-stu-id="5df8e-242">Dependency injection into views</span></span>](xref:mvc/views/dependency-injection)
