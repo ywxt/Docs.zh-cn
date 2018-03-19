@@ -28,7 +28,7 @@
 ### [检查 Details 和 Delete 方法](tutorials/first-mvc-app/details.md)
 
 ## [生成 Web API](mvc/web-api/index.md)
-### [在 Mac 上创建 Web API](xref:tutorials/first-web-api-mac)
+### [在 macOS 上创建 Web API](xref:tutorials/first-web-api-mac)
 ### [使用 Swagger 的 ASP.NET Core Web API 帮助页](xref:tutorials/web-api-help-pages-using-swagger)
 #### [NSwag 入门](xref:tutorials/get-started-with-nswag)
 #### [Swashbuckle 入门](xref:tutorials/get-started-with-swashbuckle)
@@ -59,7 +59,7 @@
 #### [高级主题](data/ef-mvc/advanced.md)
 
 ## [跨平台教程](xref:tutorials/xplat)
-### [Mac 上的 Razor 页面 Web 应用](xref:tutorials/razor-pages-mac/index)
+### [macOS 上的 Razor 页面 Web 应用](xref:tutorials/razor-pages-mac/index)
 #### [Razor 页面入门](xref:tutorials/razor-pages-mac/razor-pages-start)
 #### [添加模型](xref:tutorials/razor-pages-mac/model)
 #### [已搭建基架的 Razor 页面](xref:tutorials/razor-pages-mac/page)
@@ -87,7 +87,7 @@
 #### [添加验证](xref:tutorials/first-mvc-app-mac/validation)
 #### [检查详细信息和删除方法](xref:tutorials/first-mvc-app/details)
 
-### [MVC web app with Visual Studio Code on Mac or Linux（在 Mac 或 Linux 上使用 Visual Studio Code 创建 MVC Web 应用）](xref:tutorials/first-mvc-app-xplat/index)
+### [在 macOS 或 Linux 上使用 Visual Studio Code 创建 MVC Web 应用](xref:tutorials/first-mvc-app-xplat/index)
 #### [入门](tutorials/first-mvc-app-xplat/start-mvc.md)
 #### [添加控制器](tutorials/first-mvc-app-xplat/adding-controller.md)
 #### [添加视图](tutorials/first-mvc-app-xplat/adding-view.md)
