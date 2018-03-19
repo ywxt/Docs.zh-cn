@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET Core 简介"
 author: rick-anderson
-description: "提供 ASP.NET Core 简介。"
+description: "获取 ASP.NET Core 的简介，它是一个跨平台的高性能开源框架，用于生成基于云且连接 Internet 的新式应用程序。"
 manager: wpickett
 ms.author: riande
 ms.date: 02/28/2018
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: index
-ms.openlocfilehash: 112e1e4dc4eed2cf0ee94741a52ce6625e1f42a6
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+ms.openlocfilehash: 103b7862900e08488dcc0f5fc78c08fefcfa17f3
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="aspnet-core"></a>ASP.NET Core
+# <a name="introduction-to-aspnet-core"></a>ASP.NET Core 简介
 
 作者：[Daniel Roth](https://github.com/danroth27)[Rick Anderson](https://twitter.com/RickAndMSFT) 和 [Shaun Luttin](https://twitter.com/dicshaunary)
 

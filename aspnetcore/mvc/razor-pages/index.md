@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: f24de7ab12a3bbd7915ce6c3c93a107eb47fe864
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: cb80c38fd0284d5153aebfe7bb515722623a4a34
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor 页面介绍
 
@@ -23,7 +23,7 @@ Razor 页面是 ASP.NET Core MVC 的一个新功能，它可以使基于页面�
 
 若要查找使用模型视图控制器方法的教程，请参阅 [ASP.NET Core MVC 入门](xref:tutorials/first-mvc-app/start-mvc)。
 
-本文档介绍 Razor 页面。 它并不是分步教程。 如果认为某些部分难以理解，请参阅[Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)。
+本文档介绍 Razor 页面。 它并不是分步教程。 如果认为某些部分过于复杂，请参阅 [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)。 有关 ASP.NET Core 的概述，请参阅 [ASP.NET Core 简介](xref:index)。
 
 <a name="prerequisites"></a>
 
@@ -93,7 +93,7 @@ Pages/Index2.cshtml.cs 页面模型：
 
 注意：
 
-* 默认情况下，运行时在“Pages”文件夹中查找 Razor 页面文件。
+* 默认情况下，运行时在“页面”文件夹中查找 Razor 页面文件。
 * URL 未包含页面时，`Index` 为默认页面。
 
 ## <a name="writing-a-basic-form"></a>编写基本窗体
@@ -151,6 +151,11 @@ Pages/Create.cshtml.cs 页面模型：
 [!code-cs[](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_PageModel&highlight=10-11)]
 
 默认情况下，Razor 页面只绑定带有非 GET 谓词的属性。 绑定属性可以减少需要编写的代码量。 绑定通过使用相同的属性显示窗体字段 (`<input asp-for="Customer.Name" />`) 来减少代码，并接受输入。
+
+> [!NOTE]
+> 出于安全原因，必须选择绑定 GET 请求数据以对模型属性进行分页。 请在将用户输入映射到属性前对其进行验证。 当构建依赖查询字符串或路由值的功能时，选择加入此行为非常有用。
+>
+> 若要将属性绑定在 GET 请求上，请将 `[BindProperty]` 特性的 `SupportsGet` 属性设置为 `true`：`[BindProperty(SupportsGet = true)]`
 
 主页 (Index.cshtml)：
 
@@ -384,7 +389,7 @@ public string Message { get; set; }
 
 [下载或查看示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/index/sample).
 
-请参阅 [ASP.NET Core 中的 Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)，这篇文章以本文为基础编写。
+请参阅 [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)，这篇文章以本文为基础编写。
 
 ### <a name="specify-that-razor-pages-are-at-the-content-root"></a>指定 Razor 页面位于内容根目录中
 
@@ -414,6 +419,7 @@ services.AddMvc()
 
 ## <a name="see-also"></a>请参阅
 
+* [ASP.NET Core 简介](xref:index)
 * [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)
 * [Razor 页面授权约定](xref:security/authorization/razor-pages-authorization)
 * [Razor 页面自定义路由和页面模型提供程序](xref:mvc/razor-pages/razor-pages-convention-features)

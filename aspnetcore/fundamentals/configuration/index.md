@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 8f52f2dc9515761510de870f10ad0975401db74a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 7c41621db835b452c9aad9463a9ffccdf0c06484
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>配置 ASP.NET Core 应用
 
@@ -24,13 +24,13 @@ ms.lasthandoff: 03/02/2018
 
 配置提供程序适用于：
 
-* 文件格式（INI、JSON 和 XML）
-* 命令行参数
-* 环境变量
-* 内存中的 .NET 对象
-* 加密的用户存储
-* [Azure 密钥保管库](xref:security/key-vault-configuration)
-* （已安装或已创建的）自定义提供程序
+* 文件格式（INI、JSON 和 XML）。
+* 命令行参数。
+* 环境变量。
+* 内存中的 .NET 对象。
+* 未加密的[机密管理器](xref:security/app-secrets)存储。
+* 加密的用户存储，如 [Azure Key Vault](xref:security/key-vault-configuration)。
+* （已安装或已创建的）自定义提供程序。
 
 每个配置值映射到一个字符串键。 可借助内置绑定支持，将设置反序列化为自定义 [POCO](https://wikipedia.org/wiki/Plain_Old_CLR_Object) 对象（一种具有属性的简单 .NET 类）。
 
