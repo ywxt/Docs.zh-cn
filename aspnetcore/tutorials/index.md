@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: 45b00fbc15740fad60202bb7e5ab14beb9ebe495
-ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
+ms.openlocfilehash: fd58a6a3e35a706d503603790fa1c726e6c865d6
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 教程
 
@@ -27,14 +27,14 @@ ms.lasthandoff: 03/12/2018
 * 使用 ASP.NET Core 创建 Razor 页面 Web 应用
 
    * [在 Windows 上创建 Razor 页面](xref:tutorials/razor-pages/index)
-   * [在 Mac 上创建 Razor 页面](xref:tutorials/razor-pages-mac/index)
+   * [macOS 上的 Razor 页面](xref:tutorials/razor-pages-mac/index)
    * [使用 VS Code 创建 Razor 页面](xref:tutorials/razor-pages-vsc/index)  
 
 * 创建 ASP.NET Core MVC Web 应用
 
    * [使用 Visual Studio for Windows 创建 Web 应用](first-mvc-app/index.md)
    * [使用 Visual Studio for Mac 创建 Web 应用](first-mvc-app-mac/index.md)
-   * [在 Mac 或 Linux 上使用 Visual Studio Code 创建 Web 应用](first-mvc-app-xplat/index.md)
+   * [在 macOS 或 Linux 上使用 Visual Studio Code 创建 Web 应用](first-mvc-app-xplat/index.md)
 
 * [通过 Visual Studio 开始使用 ASP.NET Core 和 Entity Framework Core](../data/ef-mvc/index.md)
 * [创建标记帮助程序](../mvc/views/tag-helpers/authoring.md)
