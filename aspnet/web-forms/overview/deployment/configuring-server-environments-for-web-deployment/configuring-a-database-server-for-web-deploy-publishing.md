@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
-title: "数据库服务器配置 web 部署发布 |Microsoft 文档"
+title: 数据库服务器配置 web 部署发布 |Microsoft 文档
 author: jrjlee
-description: "本主题介绍如何配置 SQL Server 2008 R2 数据库服务器以支持 web 部署和发布。 本主题中所述的任务都 co..."
+description: 本主题介绍如何配置 SQL Server 2008 R2 数据库服务器以支持 web 部署和发布。 本主题中所述的任务都 co...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -66,7 +66,7 @@ SQL Server 使用 TCP/IP 与远程计算机通信。 如果你的数据库服务
 2. 在树视图窗格中，展开**SQL Server 网络配置**，然后单击**MSSQLSERVER 的协议**。
 
     > [!NOTE]
-    > 如果已安装多个 SQL Server 实例，你将看到 **协议 * * * [实例名称]*每个实例的项。 你需要配置网络设置基于实例的实例。
+    > 如果已安装多个 SQL Server 实例，你将看到 **协议***[实例名称]* 每个实例的项。 你需要配置网络设置基于实例的实例。
 3. 在细节窗格中，右键单击**TCP/IP**行，然后依次**启用**。
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image1.png)
@@ -130,7 +130,7 @@ SQL Server 使用 TCP/IP 与远程计算机通信。 如果你的数据库服务
 
 ## <a name="configure-logins-and-database-permissions"></a>配置登录名和数据库权限
 
-在部署 web 应用程序到 Internet 信息服务 (IIS) 时，应用程序使用的应用程序池标识运行。 在域环境中，应用程序池标识使用在其上运行来访问网络资源的服务器的计算机帐户。 计算机帐户采用格式 * [域名]***\** * [计算机名称]***$ * * 和 #x 2014; 例如， **FABRIKAM\TESTWEB1$**。 若要允许跨网络访问的数据库将 web 应用程序，你需要：
+在部署 web 应用程序到 Internet 信息服务 (IIS) 时，应用程序使用的应用程序池标识运行。 在域环境中，应用程序池标识使用在其上运行来访问网络资源的服务器的计算机帐户。 计算机帐户采用格式 *[域名]***\***[计算机名称]***$**和#x2014; 例如， **FABRIKAM\TESTWEB1$**。 若要允许跨网络访问的数据库将 web 应用程序，你需要：
 
 - 将 web 服务器计算机帐户的登录名添加到 SQL Server 实例。
 - 计算机帐户登录名映射到任何所需的数据库角色 (通常**db\_datareader**和**db\_datawriter**)。
