@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
-title: "配置 Web 服务器的 Web 部署发布 （脱机部署） |Microsoft 文档"
+title: 配置 Web 服务器的 Web 部署发布 （脱机部署） |Microsoft 文档
 author: jrjlee
-description: "本主题介绍如何配置 IIS web 服务器以支持脱机 web 发布和部署。 当你处理的 Internet Information Services (我..."
+description: 本主题介绍如何配置 IIS web 服务器以支持脱机 web 发布和部署。 当你处理的 Internet Information Services (我...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -175,7 +175,7 @@ ms.lasthandoff: 03/15/2018
 
 若要授予对应用程序池标识的文件或文件夹上的权限，你有两个选项：
 
-- 将权限分配给应用程序池标识直接，使用格式**IIS 应用程序池\***[应用程序池名称] * (例如， **IIS AppPool\DemoSite**)。
+- 将权限分配给应用程序池标识直接，使用格式 **IIS 应用程序池\***[应用程序池名称]*(例如， **IIS AppPool\DemoSite**)。
 - 向其分配权限**IIS\_IUSRS**组。
 
 最常用的方法是将权限分配给本地**IIS\_IUSRS**组，因为这种方法可让你更改应用程序池，而不用重新配置文件系统权限。 下一个过程中使用此基于组的方法。
@@ -193,8 +193,8 @@ ms.lasthandoff: 03/15/2018
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image8.png)
 5. 在**选择用户或组**对话框中，键入**IIS\_IUSRS**，单击**检查名称**，然后单击**确定**。
-6. 在 **权限 * * * [文件夹名称]*对话框中，请注意，在分配新组**读取&amp;执行**，**列出文件夹内容**，和**读取**默认情况下的权限。 保留此保持不变，然后单击**确定**。
-7. 单击**确定**关闭*[文件夹名称] * * * 属性** 对话框。
+6. 在 **权限***[文件夹名称]* 对话框中，请注意，在分配新组 **读取 &amp; 执行**， **列出文件夹内容**， 和 **读取** 默认情况下的权限。 保留此保持不变，然后单击**确定**。
+7. 单击 **确定** 关闭 *[文件夹名称]***属性** 对话框。
 
 ## <a name="disable-the-remote-agent-service"></a>禁用了远程代理服务
 
