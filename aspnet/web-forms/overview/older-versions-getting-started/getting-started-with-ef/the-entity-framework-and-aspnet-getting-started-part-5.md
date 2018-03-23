@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5
-title: "如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 5 部分 |Microsoft 文档"
+title: 如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 5 部分 |Microsoft 文档
 author: tdykstra
-description: "Contoso 大学示例 web 应用程序演示如何创建 ASP.NET Web 窗体应用程序使用实体框架。 该示例应用程序..."
+description: Contoso 大学示例 web 应用程序演示如何创建 ASP.NET Web 窗体应用程序使用实体框架。 该示例应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -123,7 +123,7 @@ ms.lasthandoff: 03/15/2018
 
 [![Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image9.png)
 
-选择一个教师。 **指派课程**下拉列表显示教师不讲述，课程和**删除某一课程**下拉列表显示教师已分配给的课程。 在**指派课程**部分，选择某一课程，然后单击**分配**。 本课程将移到**删除某一课程**下拉列表。 选择在课程**删除某一课程**部分并单击 **删除 * * *。* 本课程将移到**指派课程**下拉列表。
+选择一个教师。 **指派课程**下拉列表显示教师不讲述，课程和**删除某一课程**下拉列表显示教师已分配给的课程。 在**指派课程**部分，选择某一课程，然后单击**分配**。 本课程将移到**删除某一课程**下拉列表。 选择在课程 **删除某一课程** 部分并单击 **删除***。* 本课程将移到**指派课程**下拉列表。
 
 您现在已经了解一些更多的方法，以便使用相关数据。 在以下教程中，你将了解如何在数据模型中使用继承，以提高你的应用程序的可维护性。
 

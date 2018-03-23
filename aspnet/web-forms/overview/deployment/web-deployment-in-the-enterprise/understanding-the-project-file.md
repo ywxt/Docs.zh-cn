@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file
-title: "了解项目文件 |Microsoft 文档"
+title: 了解项目文件 |Microsoft 文档
 author: jrjlee
-description: "Microsoft Build Engine (MSBuild) 项目文件位于生成和部署过程的核心。 本主题开头的 MSBuild 的概念性概述..."
+description: Microsoft Build Engine (MSBuild) 项目文件位于生成和部署过程的核心。 本主题开头的 MSBuild 的概念性概述...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -93,7 +93,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 [!code-xml[Main](understanding-the-project-file/samples/sample2.xml)]
 
 
-若要检索的属性值，你可以使用格式 **$(***PropertyName***) * * *。*例如，若要检索的值**ServerName**属性，你需要键入：
+若要检索的属性值，你可以使用格式 **$(***PropertyName***)***。*例如，若要检索的值 **ServerName** 属性，你需要键入：
 
 
 [!code-powershell[Main](understanding-the-project-file/samples/sample3.ps1)]

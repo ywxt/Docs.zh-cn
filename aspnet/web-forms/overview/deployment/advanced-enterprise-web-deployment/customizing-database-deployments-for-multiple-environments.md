@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
-title: "自定义数据库部署为多个环境 |Microsoft 文档"
+title: 自定义数据库部署为多个环境 |Microsoft 文档
 author: jrjlee
-description: "本主题介绍如何部署过程的一部分定制到特定目标环境数据库的属性。 注意： 本主题假定 th..."
+description: 本主题介绍如何部署过程的一部分定制到特定目标环境数据库的属性。 注意： 本主题假定 th...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -94,7 +94,7 @@ ms.lasthandoff: 03/15/2018
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image1.png)
 3. 在**新部署配置文件**对话框框中，为文件提供有意义的名称 (例如， **TestEnvironment.sqldeployment**)，然后单击**保存**。
-4. 上*[文件名] * * *.sqldeployment** 页上，设置部署属性以匹配你的目标环境的要求，然后保存该文件。
+4. 上 *[文件名]***.sqldeployment** 页上，设置部署属性以匹配你的目标环境的要求，然后保存该文件。
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image2.png)
 5. 注意，新的文件会添加到您的数据库项目中的属性文件夹。

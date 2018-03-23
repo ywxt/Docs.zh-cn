@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy
-title: "拍摄 Web 应用程序脱机与 Web 部署 |Microsoft 文档"
+title: 拍摄 Web 应用程序脱机与 Web 部署 |Microsoft 文档
 author: jrjlee
-description: "本主题介绍如何采用脱机用于自动部署使用 Internet 信息服务 (IIS) Web 部署的持续时间的 web 应用程序..."
+description: 本主题介绍如何采用脱机用于自动部署使用 Internet 信息服务 (IIS) Web 部署的持续时间的 web 应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -148,7 +148,7 @@ Web 发布管道 (WPP) 使用名为的项列表**FilesForPackagingFromProject**�
 1. 在 Visual Studio 2010 中打开你的解决方案。
 2. 在**解决方案资源管理器**窗口中，右键单击你的 web 应用程序项目节点 (例如， **ContactManager.Mvc**)，指向**添加**，然后单击**新项**。
 3. 在**添加新项**对话框中，选择**XML 文件**模板。
-4. 在**名称**框中，键入*[项目名称] * * *.wpp.targets** (例如， **ContactManager.Mvc.wpp.targets**)，然后单击**添加**.
+4. 在 **名称** 框中，键入 *[项目名称]***.wpp.targets** (例如， **ContactManager.Mvc.wpp.targets**)，然后单击 **添加**.
 
     ![](taking-web-applications-offline-with-web-deploy/_static/image4.png)
 
