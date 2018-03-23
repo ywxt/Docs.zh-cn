@@ -78,7 +78,7 @@ WFF 可以跨多个负载平衡的 web 服务器同步 web 平台产品和组件
 2. 在顶部**Web Platform Installer 3.0**窗口中，单击**产品**。
 3. 在左侧的窗口中，在导航窗格中，单击**服务器**。
 4. 在 **IIS 7 建议配置** 行中，单击 **添加** 。
-5. 在 **Web 场框架 2。 * * * x*行中，单击**添加**。
+5. 在 **Web 场框架 2。***x* 行中，单击 **添加**。
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image2.png)
 6. 单击“安装” 。 请注意，Web 平台安装程序具有 Web 部署工具，以及各种其他依赖项，添加到安装列表。
