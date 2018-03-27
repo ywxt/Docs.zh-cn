@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET 核心中的内存中缓存"
+title: ASP .NET Core 中的内存中缓存
 author: rick-anderson
-description: "了解如何在 ASP.NET Core 中的内存中缓存数据。"
+description: 了解如何在 ASP.NET Core 中的内存中缓存数据。
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -12,41 +12,41 @@ ms.topic: article
 uid: performance/caching/memory
 ms.openlocfilehash: 64635235c11b55818da02d63d044334f4b2cdb08
 ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/08/2018
 ---
-# <a name="in-memory-caching-in-aspnet-core"></a>ASP.NET 核心中的内存中缓存
+# <a name="in-memory-caching-in-aspnet-core"></a>ASP .NET Core 中的内存中缓存
 
-通过[Rick Anderson](https://twitter.com/RickAndMSFT)， [John Luo](https://github.com/JunTaoLuo)，和[Steve Smith](https://ardalis.com/)
+作者：[Rick Anderson](https://twitter.com/RickAndMSFT)， [John Luo](https://github.com/JunTaoLuo)，和[Steve Smith](https://ardalis.com/)
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/memory/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
 ## <a name="caching-basics"></a>缓存的基础知识
 
-缓存可以显著提高性能和可伸缩性的应用程序通过减少生成内容所需的工作量。 最适合于不经常更改的数据的缓存工作方式。 缓存可一份很多可以返回的数据比从原始源更快。 你应编写并测试你的应用程序永远不会依赖于缓存的数据。
+通过减少生成内容所需的工作，缓存可以显著提高应用的性能和可伸缩性。 缓存对不经常更改的数据效果最佳。 缓存生成的数据副本的返回速度可以比从原始源返回更快。 在编写并测试应用时，应避免依赖缓存的数据。
 
-ASP.NET 核心支持几个不同的缓存。 最简单的缓存基于[IMemoryCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache)，它表示存储在内存中的 web 服务器的缓存。 在服务器场的多个服务器运行的应用程序应确保使用内存中缓存时，会粘性会话。 粘性会话确保所有客户端的后续请求转到同一台服务器。 例如，Azure Web 应用使用[应用程序请求路由](https://www.iis.net/learn/extensions/planning-for-arr)(ARR) 将所有的后续请求路由到同一台服务器。
+ASP.NET Core 支持多种不同的缓存。 最简单的缓存基于 [IMemoryCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache)，它表示存储在 Web 服务器内存中的缓存。 在包含多个服务器的服务器场上运行的应用应确保在使用内存中缓存时，会话是粘性的。 粘性会话可确保来自客户端的后续请求都转到同一台服务器。 例如，Azure Web 应用使用[应用程序请求路由](https://www.iis.net/learn/extensions/planning-for-arr)(ARR) 将所有的后续请求路由到同一台服务器。
 
-Web 场中的非粘性会话需要[分布式缓存](distributed.md)以避免缓存一致性问题。 对于某些应用，分布式的缓存可以支持更高版本横向扩展比内存中缓存。 使用分布式的缓存将卸载到外部进程缓存内存。 
+Web 场中的非粘性会话需要[分布式缓存](distributed.md)以避免缓存一致性问题。 对于某些应用来说，分布式缓存可以支持比内存中缓存更高程度的横向扩展。 使用分布式缓存可将缓存内存卸载到外部进程。 
 
-`IMemoryCache`缓存将逐出缓存条目内存压力下的，除非[缓存优先级](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheitempriority)设置为`CacheItemPriority.NeverRemove`。 你可以设置`CacheItemPriority`调整与其缓存逐出内存压力下的项的优先级。
+除非将[CacheItemPriority](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheitempriority)设置为`CacheItemPriority.NeverRemove`, 否则`IMemoryCache`缓存会在内存压力下清除缓存条目。 可以通过设置`CacheItemPriority`来调整缓存在内存压力下清除项目的优先级。
 
-内存中缓存中可以存储任何对象;分布式的缓存接口仅限于`byte[]`。
+内存中缓存可以存储任何对象；分布式缓存接口仅限于`byte[]`。
 
 ## <a name="using-imemorycache"></a>使用 IMemoryCache
 
-内存中缓存是*服务*引用从你的应用使用[依赖关系注入](../../fundamentals/dependency-injection.md)。 调用`AddMemoryCache`中`ConfigureServices`:
+内存中缓存是使用[依赖关系注入](../../fundamentals/dependency-injection.md)从应用中引用的服务。 请在`ConfigureServices`中调用`AddMemoryCache`:
 
 [!code-csharp[](memory/sample/WebCache/Startup.cs?highlight=8)] 
 
-请求`IMemoryCache`构造函数中的实例：
+在构造函数中请求 `IMemoryCache`实例：
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ctor&highlight=3,5-999)] 
 
 `IMemoryCache` 需要 NuGet 包"Microsoft.Extensions.Caching.Memory"。
 
-下面的代码使用[TryGetValue](/dotnet/api/microsoft.extensions.caching.memory.imemorycache.trygetvalue?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_IMemoryCache_TryGetValue_System_Object_System_Object__)检查时间是否在缓存中。 如果未缓存的时间，创建并添加到缓存中，使用新的条目[设置](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions.set?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_CacheExtensions_Set__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object___0_Microsoft_Extensions_Caching_Memory_MemoryCacheEntryOptions_)。
+以下代码使用[TryGetValue](/dotnet/api/microsoft.extensions.caching.memory.imemorycache.trygetvalue?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_IMemoryCache_TryGetValue_System_Object_System_Object__)检查时间是否在缓存中。 如果未缓存的时间，创建并添加到缓存中，使用新的条目[设置](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions.set?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_CacheExtensions_Set__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object___0_Microsoft_Extensions_Caching_Memory_MemoryCacheEntryOptions_)。
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet1)]
 
