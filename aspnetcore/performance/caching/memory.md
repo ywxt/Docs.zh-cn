@@ -50,51 +50,51 @@ Web 场中的非粘性会话需要[分布式缓存](distributed.md)以避免缓�
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet1)]
 
-显示当前时间和缓存的时间：
+将会显示当前时间和缓存的时间：
 
 [!code-cshtml[](memory/sample/WebCache/Views/Home/Cache.cshtml)]
 
-已缓存`DateTime`值保持在缓存中，尽管在超时期限 （和由于内存压力没有逐出） 的请求。 下图显示当前时间和较旧时间从缓存中检索：
+已缓存`DateTime`值保持在缓存中，尽管在超时期限 （和由于内存压力没有逐出） 的请求。 下图显示当前时间以及从缓存中检索的较早时间：
 
-![具有两个不同的时间显示的索引视图](memory/_static/time.png)
+![显示了两个不同时间的索引视图](memory/_static/time.png)
 
 下面的代码使用[GetOrCreate](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreate__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry___0__)和[GetOrCreateAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreateAsync__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry_System_Threading_Tasks_Task___0___)缓存数据。 
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet2&highlight=3-7,14-19)]
 
-下面的代码调用[获取](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_Get__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_)提取缓存的时间：
+以下代码调用[Get](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_Get__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_)来提取缓存的时间：
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_gct)]
 
-请参阅[IMemoryCache 方法](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache)和[CacheExtensions 方法](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions)有关缓存方法的说明。
+有关缓存方法的说明，请参阅[IMemoryCache 方法](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache)和[CacheExtensions 方法](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions)
 
 ## <a name="using-memorycacheentryoptions"></a>使用 MemoryCacheEntryOptions
 
-下面的示例：
+下面的示例执行以下操作：
 
-- 设置绝对到期时间。 这是可以缓存条目的最长时间，可防止项持续续订滑动过期时变得太陈旧。
-- 设置滑动过期时间。 访问此缓存的项的请求将重置滑动到期时钟。
+- 设置绝对到期时间。 这是条目可以被缓存的最长时间，防止可调过期持续更新时该条目过时太多。
+- 设置可调过期时间。 访问此缓存项的请求将重置可调过期时钟。
 - 将缓存优先级设置为`CacheItemPriority.NeverRemove`。 
-- 集[PostEvictionDelegate](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.postevictiondelegate)后从缓存逐出项，将调用的。 回调是在从缓存中移除的项的代码与不同的线程上运行。
+- 设置一个[PostEvictionDelegate](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.postevictiondelegate)它将在条目从缓存中清除后调用。 在代码中运行该回调的线程不同于从缓存中移除条目的线程。
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_et&highlight=14-20)]
 
 ## <a name="cache-dependencies"></a>缓存依赖项
 
-下面的示例演示如何过期的缓存项，如果依赖项将过期。 A`CancellationChangeToken`添加到缓存的项。 当`Cancel`上调用`CancellationTokenSource`，这两个缓存条目被逐出。 
+以下示例演示在依赖项过期时如何使缓存项过期。 会将 `CancellationChangeToken`添加到缓存项。 在 `Cancel`上调用 `CancellationTokenSource`，时，这两个缓存条目都将被清除。 
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ed)]
 
-使用`CancellationTokenSource`允许多个缓存条目被逐出作为一个组。 与`using`在上面的代码的模式，在内部创建的缓存条目`using`块将继承触发器和过期时间设置。
+使用`CancellationTokenSource`可以将多个缓存条目作为一个组来清除。 使用上面代码中的 `using`模式时`using`块中创建的缓存条目会继承触发器和过期时间设置。
 
 ## <a name="additional-notes"></a>附加说明
 
-- 当使用的回调以重新填充缓存项：
+- 使用回调重新填充缓存项时：
 
-  - 多个请求可以查找缓存的键值空因为尚未完成的回调。 
+  - 多个请求可能会发现缓存的键值为空，因为回调尚未完成。 
   - 这可能导致重新填充缓存的项的多个线程。
 
-- 当一个缓存条目用于创建另一个时，子复制父项的过期的令牌和基于时间的过期时间设置。 子不过期通过手动删除或更新的父项。
+- 使用一个缓存条目创建另一个缓存条目时，子条目会复制父条目的过期令牌以及基于时间的过期设置。 子不过期通过手动删除或更新的父项。
 
 ## <a name="additional-resources"></a>其他资源
 
