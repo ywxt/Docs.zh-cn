@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 的 Razor 语法参考"
+title: ASP.NET Core 的 Razor 语法参考
 author: rick-anderson
-description: "了解 Razor 标记语法，该语法用于将基于服务器的代码嵌入网页中。"
+description: 了解 Razor 标记语法，该语法用于将基于服务器的代码嵌入网页中。
 manager: wpickett
 ms.author: riande
 ms.date: 10/18/2017
@@ -556,9 +556,9 @@ Razor 公开了 `Model` 属性，用于访问传递到视图的模型：
 ### <a name="razor-keywords"></a>Razor 关键字
 
 * page（需要 ASP.NET Core 2.0 及更高版本）
-* 函数
-* 继承
-* 模型
+* functions
+* inherits
+* model
 * section
 * helper（ASP.NET Core 当前不支持）
 
@@ -566,14 +566,14 @@ Razor 关键字使用 `@(Razor Keyword)` 进行转义（例如，`@(functions)`�
 
 ### <a name="c-razor-keywords"></a>C# Razor 关键字
 
-* 大小写
+* case
 * do
 * default
 * for
 * foreach
 * if
 * else
-* 锁定
+* lock
 * switch
 * try
 * catch
