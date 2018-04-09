@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
-title: "引入的 ASP.NET Web Pages-通过使用 WebMatrix 发布的站点 |Microsoft 文档"
+title: 引入的 ASP.NET Web Pages-通过使用 WebMatrix 发布的站点 |Microsoft 文档
 author: tfitzmac
-description: "本教程是文章中介绍的 ASP.NET Web Pages 和 Microsoft WebMatrix 的教程集最后一部分。 还会讨论如何以发布站点 t..."
+description: 本教程是文章中介绍的 ASP.NET Web Pages 和 Microsoft WebMatrix 的教程集最后一部分。 还会讨论如何以发布站点 t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
-ms.openlocfilehash: 1e718c92a2f94df50fcf7af6859917746a4982ac
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7b9bffac5cc72e1bea3f1b211cc03be2ccb8e499
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>引入了 ASP.NET Web 页-通过使用 WebMatrix 发布站点
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="about-publishing-your-site"></a>有关发布你的站点
 
-到目前为止，则你已完成你的本地计算机上，包括测试页面的所有工作。 若要运行你*.cshtml*页，你已使用内置到 WebMatrix 中，即 IIS Express web 服务器。 但这是当然没有人可以看到已创建不同的站点。 若要让其他人使用你的站点，你必须将其发布到 Internet。
+到目前为止，则你已完成你的本地计算机上，包括测试页面的所有工作。 若要运行你<em>.cshtml</em>页，你已使用内置到 WebMatrix 中，即 IIS Express web 服务器。 但这是当然没有人可以看到已创建不同的站点。 若要让其他人使用你的站点，你必须将其发布到 Internet。
 
 除非你已具有对公共 web 服务器的访问，发布意味着你必须有一个用于帐户*云平台*或*托管提供商*。 云平台，如 Microsoft Azure 为你的应用程序提供按需基础结构。 托管提供程序是的公司拥有可公开访问的 web 服务器和，将出租你空间为您的网站。 托管计划运行从每月只需几美元 （或甚至免费） 对于小型网站到数以百计的大量商业网站的每月的资金。
 
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 <a id="defaultpage"></a>
 ## <a name="setting-up-the-default-page"></a>设置默认页
 
-当用户导航到您的网站的基址时，向用户显示你的站点的默认页面。 例如，如果在 www.contoso.com 情况下，Default.htm 设为该站点的默认页，然后导航到**www.contoso.com**等同于导航到**www.contoso.com/Default.htm**。
+当用户导航到您的网站的基址时，向用户显示你的站点的默认页面。 例如，如果在 www.contoso.com 情况下，Default.htm 设为该站点的默认页，然后导航到<strong>www.contoso.com</strong>等同于导航到<strong>www.contoso.com/Default.htm</strong>。
 
 目前，您的网站使用**Default.cshtml**作为默认页。 此页是相当不错的默认页，但在本教程中你未添加任何内容到该页面以便它将显示一个空白页。 打开 Default.cshtml 并将内容替换为下面的代码。
 
@@ -92,7 +92,7 @@ ms.lasthandoff: 11/10/2017
 
 ![更改的站点名称](publishing/_static/image6.png)
 
-单击“确定”。
+单击 **“确定”**。
 
 WebMatrix performss 测试，确定是否符合你的站点服务器。
 
@@ -219,5 +219,5 @@ WebMatrix 显示的文件和将发布到站点的数据库。 由于这是你要
 
 - [ASP.NET WebMatrix 的 ASP.NET Web Pages 论坛](https://forums.asp.net/1224.aspx/1?WebMatrix+and+ASP+NET+Web+Pages)、 文章的绝佳问题和 get 解答。
 
->[!div class="step-by-step"]
-[上一篇](layouts.md)
+> [!div class="step-by-step"]
+> [上一篇](layouts.md)

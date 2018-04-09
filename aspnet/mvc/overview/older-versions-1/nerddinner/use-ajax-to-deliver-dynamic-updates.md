@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/use-ajax-to-deliver-dynamic-updates
-title: "使用 AJAX 提供动态更新 |Microsoft 文档"
+title: 使用 AJAX 提供动态更新 |Microsoft 文档
 author: microsoft
-description: "步骤 10 实现支持登录的用户的回复到其感兴趣的参加 dinner，使用基于 Ajax 的方法内 dinner 详细信息集成..."
+description: 步骤 10 实现支持登录的用户的回复到其感兴趣的参加 dinner，使用基于 Ajax 的方法内 dinner 详细信息集成...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-deliver-dynamic-updates
 msc.type: authoredcontent
-ms.openlocfilehash: 7b75f8c6cf08112eb77d1a9a40222ed1425ef3a7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7cea3ee2ec52261521941efac484e91a53f6310b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="use-ajax-to-deliver-dynamic-updates"></a>使用 AJAX 提供动态更新
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -117,7 +117,7 @@ ms.lasthandoff: 11/10/2017
 
 *提示： 请确保你已经安装了使 JavaScript 文件 （包括 jQuery） 的更好地 intellisense 支持的 VS 2008 SP1 的 JavaScript intellisense 修补程序。你可以下载它从： http://tinyurl.com/vs2008javascripthotfix*
 
-通常使用 JQuery 编写的代码使用全局"$ （）"JavaScript 方法可检索一个或多个使用 CSS 选择器的 HTML 元素。 例如， *$("#rsvpmsg")*选择 id 为 rsvpmsg，任何 HTML 元素时*$(".something")*将选择具有"内容"CSS 的所有元素类名。 你还可以编写类似"返回所有选中的单选按钮"更多高级的查询使用类似的选择器查询： *$("输入 [@type= 单选] [@checked]")*。
+通常使用 JQuery 编写的代码使用全局"$ （）"JavaScript 方法可检索一个或多个使用 CSS 选择器的 HTML 元素。 例如， <em>$("#rsvpmsg")</em>选择 id 为 rsvpmsg，任何 HTML 元素时<em>$(".something")</em>将选择具有"内容"CSS 的所有元素类名。 你还可以编写类似"返回所有选中的单选按钮"更多高级的查询使用类似的选择器查询： <em>$("输入 [@type= 单选] [@checked]")</em>。
 
 在你选择元素后，你可以对其执行操作，如隐藏它们调用方法： *$("#rsvpmsg").hide();*
 
@@ -153,6 +153,6 @@ ms.lasthandoff: 11/10/2017
 
 让我们现在看一下我们可以进一步使用 AJAX 和将交互式映射支持添加到我们的应用程序。
 
->[!div class="step-by-step"]
-[上一页](secure-applications-using-authentication-and-authorization.md)
-[下一页](use-ajax-to-implement-mapping-scenarios.md)
+> [!div class="step-by-step"]
+> [上一页](secure-applications-using-authentication-and-authorization.md)
+> [下一页](use-ajax-to-implement-mapping-scenarios.md)

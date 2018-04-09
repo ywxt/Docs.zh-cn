@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations
-title: "使用 Visual Studio 的 ASP.NET Web 部署： Web.config 文件转换 |Microsoft 文档"
+title: 使用 Visual Studio 的 ASP.NET Web 部署： Web.config 文件转换 |Microsoft 文档
 author: tdykstra
-description: "本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的..."
+description: 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations
 msc.type: authoredcontent
-ms.openlocfilehash: a526275d76618c325a6b00f33cc550f28ab0cc00
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 77ed0d8b2fe85adb009a3f4759030b7fba8fb9d7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-webconfig-file-transformations"></a>使用 Visual Studio 的 ASP.NET Web 部署： Web.config 文件转换
 ====================
@@ -140,7 +140,7 @@ Contoso 大学 web 页读取在中设置一个值`appSettings`中*Web.config*以
 
 虽然默认转换文件包含的示例，演示如何更新连接字符串，但在大多数情况下你不必设置连接字符串转换，因为你可以发布配置文件中指定连接字符串。 你将在执行该操作[将部署到 IIS](deploying-to-iis.md)和[部署到生产环境](deploying-to-production.md)教程。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 你现在要做尽可能多可以按照与*Web.config*转换之前创建的发布配置文件中，并已了解的内容将在已部署的 Web.config 文件中预览。
 
@@ -152,6 +152,6 @@ Contoso 大学 web 页读取在中设置一个值`appSettings`中*Web.config*以
 
 有关本教程所涵盖主题的详细信息，请参阅[使用 Web.config 转换在部署过程中更改目标 Web.config 文件或 app.config 文件中设置](https://go.microsoft.com/fwlink/p/?LinkId=282413#transforms)的 Web 部署内容映射中Visual Studio 和 ASP.NET。
 
->[!div class="step-by-step"]
-[上一页](preparing-databases.md)
-[下一页](project-properties.md)
+> [!div class="step-by-step"]
+> [上一页](preparing-databases.md)
+> [下一页](project-properties.md)

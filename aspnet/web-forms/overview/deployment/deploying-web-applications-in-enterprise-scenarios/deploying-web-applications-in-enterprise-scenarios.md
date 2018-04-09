@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios
-title: "部署 Web 应用程序在企业方案中使用的 Visual Studio 2010 |Microsoft 文档"
+title: 部署 Web 应用程序在企业方案中使用的 Visual Studio 2010 |Microsoft 文档
 author: jrjlee
-description: "此系列教程描述工具和技术可用于部署各种企业方案中的 web 应用程序。 它还说明了如何充分利用..."
+description: 此系列教程描述工具和技术可用于部署各种企业方案中的 web 应用程序。 它还说明了如何充分利用...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/03/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: 99bab371dd34b30f3554843e49bbec7f57c3f96c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 921b1ccd8a1f2109a51f3f75149588422fefb91d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-web-applications-in-enterprise-scenarios-using-visual-studio-2010"></a>部署 Web 应用程序中使用的 Visual Studio 2010 的企业方案
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 > > 虽然这些教程介绍 TFS 用作 CI 服务器，则本指南可以轻松适应 CI 的任何服务器。 不需要了解和利用教程的 TFS 的详细的知识。
 > 
 > 
-> 这些教程的意大利语翻译，请访问[http://www.lucamorelli.it](http://www.lucamorelli.it)。
+> 这些教程的意大利语翻译，请访问[ http://www.lucamorelli.it ](http://www.lucamorelli.it)。
 
 
 ## <a name="about-the-authors"></a>关于作者
@@ -54,7 +54,7 @@ Benjamin.柯里是与主体技术[内容 Master](http://www.contentmaster.com/)�
 若要遵循演练和执行这些教程描述的任务，你需要在开发计算机上安装此软件：
 
 - Visual Studio 2010 Premium 或 Ultimate Edition 不带 Service Pack 1
-- .NET framework 4.0
+- .NET Framework 4.0
 - .NET framework 3.5 Service Pack 1
 - ASP.NET MVC 3.0
 - IIS 7.5 Express
@@ -80,5 +80,5 @@ Benjamin.柯里是与主体技术[内容 Master](http://www.contentmaster.com/)�
 
 此组的教程使用的示例解决方案与现实级别的复杂性，一家虚构企业部署方案，以及提供的参考实现并为提供的任务和演练常见上下文。 下一主题[企业 Web 部署： 方案概述](enterprise-web-deployment-scenario-overview.md)，引入了该方案和示例解决方案。 在这里您可以处理教程和主题的最接近你的需求。
 
->[!div class="step-by-step"]
-[下一篇](enterprise-web-deployment-scenario-overview.md)
+> [!div class="step-by-step"]
+> [下一篇](enterprise-web-deployment-scenario-overview.md)

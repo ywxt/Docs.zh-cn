@@ -2,21 +2,21 @@
 uid: whitepapers/mvc4-beta-release-notes
 title: ASP.NET MVC 4 | Microsoft Docs
 author: rick-anderson
-description: "本文档介绍 Visual Studio 2010 的 ASP.NET MVC 4 Beta 版。"
+description: 本文档介绍 Visual Studio 2010 的 ASP.NET MVC 4 Beta 版。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/09/2011
 ms.topic: article
 ms.assetid: 666407bb-81de-4319-89ba-0302c382a208
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-beta-release-notes
 msc.type: content
-ms.openlocfilehash: d6797d1dbacff7503f74782d325ff5a9598970c0
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: d29f09d726e835c1eb1fc38e643a4bfe7f00f61c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -139,7 +139,7 @@ ASP.NET Web API 包括以下功能的支持：
 - **基于代码的配置：**只有通过代码来完成 Web API 配置、 离开 config 文件清理。
 - **自承载：** Web Api 可以同时仍可使用的路由的完整功能和其他功能的 Web API 承载在 IIS 除了过程中。
 
-有关 ASP.NET Web API 的详细信息，请访问[https://www.asp.net/web-api](../web-api/index.md)。
+有关 ASP.NET Web API 的详细信息，请访问[ https://www.asp.net/web-api ](../web-api/index.md)。
 
 <a id="_Toc317096198"></a>
 ### <a name="aspnet-single-page-application"></a>ASP.NET 单页面应用程序
@@ -150,7 +150,7 @@ ASP.NET MVC 4 现在包括用于与使用 JavaScript 和 Web Api 的重要客户
 - 单元的工作和 DAL 支持的其他 Web API 组件
 - 使用基架，若要快速开始 MVC 项目模板
 
-为支持 ASP.NET MVC 4 中的单页面应用程序的详细信息，请访问[https://www.asp.net/single-page-application](../single-page-application/index.md)。
+为支持 ASP.NET MVC 4 中的单页面应用程序的详细信息，请访问[ https://www.asp.net/single-page-application ](../single-page-application/index.md)。
 
 <a id="_Toc303253808"></a>
 ### <a name="enhancements-to-default-project-templates"></a>默认的项目模板的增强功能
@@ -185,7 +185,7 @@ ASP.NET MVC 4 现在包括用于与使用 JavaScript 和 Web Api 的重要客户
 
 使用新的显示模式功能，应用程序选择具体取决于正在发出请求的浏览器的视图。 例如，如果桌面浏览器请求主页上，应用程序可能使用 Views\Home\Index.cshtml 模板。 如果移动浏览器请求主页上，该应用程序可能返回 Views\Home\Index.mobile.cshtml 模板。
 
-布局和它们还可以覆盖特定浏览器类型。 例如:
+布局和它们还可以覆盖特定浏览器类型。 例如：
 
 - 如果你 Views\Shared 文件夹包含\_Layout.cshtml 和\_Layout.mobile.cshtml 模板，默认情况下应用程序将使用\_期间从移动浏览器和请求Layout.mobile.cshtml\_Layout.cshtml 期间其他请求。
 - 如果一个文件夹包含\_MyPartial.cshtml 和\_MyPartial.mobile.cshtml，指令@Html.Partial("\_MyPartial") 将呈现\_MyPartial.mobile.cshtml 期间从移动设备的请求浏览器中，和\_MyPartial.cshtml 期间其他请求。
@@ -280,9 +280,9 @@ ASP.NET MVC 4 Beta 支持 Windows Azure SDK 1.5 2011 年 9 月版本。
     修改后的 web.config 中的程序集绑定元素应如下所示：
 
     [!code-xml[Main](mvc4-beta-release-notes/samples/sample12.xml)]
-- **Visual Basic 项目中的"添加控制器"项模板生成不正确的命名空间时调用 * * * 从某个区域内。** 当控制器添加到 ASP.NET MVC 项目使用 Visual Basic 中的某个区域时，项模板中的错误的命名空间插入控制器。 导航到在控制器中的任何操作时，则结果将为"找不到文件"错误。  
+- <strong>Visual Basic 项目中的"添加控制器"项模板生成不正确的命名空间时调用</strong><strong>从某个区域内。</strong> 当控制器添加到 ASP.NET MVC 项目使用 Visual Basic 中的某个区域时，项模板中的错误的命名空间插入控制器。 导航到在控制器中的任何操作时，则结果将为"找不到文件"错误。  
   
- 生成的命名空间的根命名空间后省略的所有内容。 例如，生成的命名空间是*RootNamespace*但应为*RootNamespace.Areas.AreaName.Controllers* 。
+  生成的命名空间的根命名空间后省略的所有内容。 例如，生成的命名空间是*RootNamespace*但应为*RootNamespace.Areas.AreaName.Controllers* 。
 - **在 Razor 视图引擎中的重大更改。** 作为 Razor 分析器的重写的一部分，以下类型已从删除*System.Web.Mvc.Razor*: 
 
     - *ModelSpan*
@@ -290,7 +290,7 @@ ASP.NET MVC 4 Beta 支持 Windows Azure SDK 1.5 2011 年 9 月版本。
     - *MvcCSharpRazorCodeGenerator*
     - *MvcVBRazorCodeParser*
 
- 此外已删除以下方法： 
+  此外已删除以下方法： 
 
     - *MvcCSharpRazorCodeParser.ParseInheritsStatement(System.Web.Razor.Parser.CodeBlockInfo)*
     - *MvcWebPageRazorHost.DecorateCodeGenerator(System.Web.Razor.Generator.RazorCodeGenerator)*
@@ -305,15 +305,15 @@ ASP.NET MVC 4 Beta 支持 Windows Azure SDK 1.5 2011 年 9 月版本。
 
     **所需的更新**
 
-    1. 在根 Web.config 文件中，添加新 *&lt;appSettings&gt;* 具有键项*webPages:Version*和值*1.0.0.0*。
+  1. 在根 Web.config 文件中，添加新*&lt;appSettings&gt;*具有键项*webPages:Version*和值*1.0.0.0*。
 
-        [!code-xml[Main](mvc4-beta-release-notes/samples/sample14.xml)]
-    2. 在解决方案资源管理器，右键单击项目名称，然后选择卸载项目。 再次右键单击名称，然后选择编辑*ProjectName*.csproj。
-    3. 找到以下程序集引用： 
+      [!code-xml[Main](mvc4-beta-release-notes/samples/sample14.xml)]
+  2. 在解决方案资源管理器，右键单击项目名称，然后选择卸载项目。 再次右键单击名称，然后选择编辑*ProjectName*.csproj。
+  3. 找到以下程序集引用： 
 
-        [!code-xml[Main](mvc4-beta-release-notes/samples/sample15.xml)]
+      [!code-xml[Main](mvc4-beta-release-notes/samples/sample15.xml)]
 
-        将它们替换为以下：
+      将它们替换为以下：
 
-        [!code-xml[Main](mvc4-beta-release-notes/samples/sample16.xml)]
-    4. 保存所做的更改，关闭了编辑，然后右键单击项目并选择重新加载项目 (.csproj) 文件。
+      [!code-xml[Main](mvc4-beta-release-notes/samples/sample16.xml)]
+  4. 保存所做的更改，关闭了编辑，然后右键单击项目并选择重新加载项目 (.csproj) 文件。

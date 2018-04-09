@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/18-customizing-site-wide-behavior
-title: "自定义的 ASP.NET 网页 (Razor) 站点的站点范围行为 |Microsoft 文档"
+title: 自定义的 ASP.NET 网页 (Razor) 站点的站点范围行为 |Microsoft 文档
 author: tfitzmac
-description: "本章介绍如何对整个网站或中的整个文件夹，而不是一页中进行设置。"
+description: 本章介绍如何对整个网站或中的整个文件夹，而不是一页中进行设置。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/17/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/18-customizing-site-wide-behavior
 msc.type: authoredcontent
-ms.openlocfilehash: b1caa26a23517bd976addfefac89375ae965eb91
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4457318bcf1d2886eb8ed68fdd795eea7905368b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="customizing-site-wide-behavior-for-aspnet-web-pages-razor-sites"></a>中的 ASP.NET Web 页 (Razor) 网站的自定义站点范围行为
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
 > 
 > 
-> - ASP.NET 网页 (Razor) 2
+> - ASP.NET Web Pages (Razor) 2
 > - WebMatrix 3
 > - ASP.NET Web 帮助程序库 （NuGet 包）
 >   
@@ -93,20 +93,20 @@ ms.lasthandoff: 11/10/2017
 
     修改以下电子邮件的代码中的相关的设置：
 
-    - 设置`your-SMTP-host`到可以访问 SMTP 服务器的名称。
-    - 设置`your-user-name-here`到您的 SMTP 服务器帐户的用户名。
-    - 设置`your-account-password`到您的 SMTP 服务器帐户的密码。
-    - 设置`your-email-address-here`为您自己的电子邮件地址。 这是从发送消息的电子邮件地址。 (某些电子邮件提供商不允许你指定一个不同`From`地址，并将使用你的用户名称作为`From`地址。)
+   - 设置`your-SMTP-host`到可以访问 SMTP 服务器的名称。
+   - 设置`your-user-name-here`到您的 SMTP 服务器帐户的用户名。
+   - 设置`your-account-password`到您的 SMTP 服务器帐户的密码。
+   - 设置`your-email-address-here`为您自己的电子邮件地址。 这是从发送消息的电子邮件地址。 (某些电子邮件提供商不允许你指定一个不同`From`地址，并将使用你的用户名称作为`From`地址。)
 
-    有关 SMTP 设置的详细信息，请参阅[配置电子邮件设置](https://go.microsoft.com/fwlink/?LinkID=202899#configuring_email_settings)文章中[从 ASP.NET Web 页 (Razor) 站点发送电子邮件](https://go.microsoft.com/fwlink/?LinkID=202899)和[问题发送电子邮件](https://go.microsoft.com/fwlink/?LinkId=253001#email)中[ASP.NET 网页 (Razor) 故障排除指南 》](https://go.microsoft.com/fwlink/?LinkId=253001)。
-- 保存 *\_AppStart.cshtml*文件并将其关闭。
-- 在网站的根文件夹中，创建名为的新页*TestEmail.cshtml*。
-- 将现有内容替换为以下： 
+     有关 SMTP 设置的详细信息，请参阅[配置电子邮件设置](https://go.microsoft.com/fwlink/?LinkID=202899#configuring_email_settings)文章中[从 ASP.NET Web 页 (Razor) 站点发送电子邮件](https://go.microsoft.com/fwlink/?LinkID=202899)和[问题发送电子邮件](https://go.microsoft.com/fwlink/?LinkId=253001#email)中[ASP.NET 网页 (Razor) 故障排除指南 》](https://go.microsoft.com/fwlink/?LinkId=253001)。
+4. 保存 *\_AppStart.cshtml*文件并将其关闭。
+5. 在网站的根文件夹中，创建名为的新页*TestEmail.cshtml*。
+6. 将现有内容替换为以下： 
 
-    [!code-cshtml[Main](18-customizing-site-wide-behavior/samples/sample4.cshtml)]
-- 运行*TestEmail.cshtml*在浏览器中的页。
-- 填写字段来向自己发送一封电子邮件，然后单击**发送**。
-- 检查你的电子邮件，以确保你已收到消息。
+     [!code-cshtml[Main](18-customizing-site-wide-behavior/samples/sample4.cshtml)]
+7. 运行*TestEmail.cshtml*在浏览器中的页。
+8. 填写字段来向自己发送一封电子邮件，然后单击**发送**。
+9. 检查你的电子邮件，以确保你已收到消息。
 
 此示例的重要部分是，通常不更改的设置-喜欢的 SMTP 服务器和你的电子邮件凭据的名称-在中设置 *\_AppStart.cshtml*文件。 这样，无需它们再次设置每个页面中，发送电子邮件。 （尽管如果出于某种原因，你需要更改这些设置，你可以设置它们单独在页中。）在页中，只能设置通常每次发生变化，如收件人和电子邮件消息的正文的值。
 

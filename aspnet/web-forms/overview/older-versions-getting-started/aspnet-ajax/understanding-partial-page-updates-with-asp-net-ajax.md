@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax
-title: "了解分部页更新与 ASP.NET AJAX 一起 |Microsoft 文档"
+title: 了解分部页更新与 ASP.NET AJAX 一起 |Microsoft 文档
 author: scottcate
-description: "可能是最明显的 ASP.NET AJAX Extensions 特色是能够执行部分或增量页更新操作而无需执行完整的回发到 t..."
+description: 可能是最明显的 ASP.NET AJAX Extensions 特色是能够执行部分或增量页更新操作而无需执行完整的回发到 t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax
 msc.type: authoredcontent
-ms.openlocfilehash: 1d8d3009df0a264e466d3f7decfb65978d8ae7a4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 91a98bf1c9a71ae84c569f7ae40930422cb652e0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-partial-page-updates-with-aspnet-ajax"></a>了解分部页与 ASP.NET AJAX 一起更新
 ====================
@@ -52,7 +52,7 @@ Microsoft ASP.NET 技术将的面向对象及事件驱动的编程模型，并�
 ## <a name="walkthrough-integrating-partial-rendering-into-an-existing-project"></a>演练： 将部分呈现集成到现有项目
 
 
-1. 在 Microsoft Visual Studio 2008 中，创建新的 ASP.NET 网站项目通过转到*文件* *- &gt;新建* *- &gt;网站*并从对话框中选择 ASP.NET Web 站点。 你可以将其任意命名，并可能到文件系统或到 Internet 信息服务 (IIS) 安装。
+1. 在 Microsoft Visual Studio 2008 中，创建新的 ASP.NET 网站项目通过转到<em>文件</em> <em>- &gt;新建</em> <em>- &gt;网站</em>并从对话框中选择 ASP.NET Web 站点。 你可以将其任意命名，并可能到文件系统或到 Internet 信息服务 (IIS) 安装。
 2. 你将看到基本 ASP.NET 标记的空默认页 (服务器端窗体和`@Page`指令)。 删除一个名为标签`Label1`和一个按钮调用`Button1`拖到窗体元素在页面。 你可能将其文本属性设置为希望的任何内容。
 3. 在设计视图中，双击`Button1`以生成代码隐藏事件处理程序。 在此事件处理程序中，将设置`Label1.Text`到单击该按钮 ！ .
 
@@ -73,11 +73,11 @@ Microsoft ASP.NET 技术将的面向对象及事件驱动的编程模型，并�
 ([单击以查看实际尺寸的图像](understanding-partial-page-updates-with-asp-net-ajax/_static/image3.png))
 
 
-1. *已知问题：*如果到已与 ASP.NET 2.0 AJAX Extensions 一起安装的 Visual Studio 2005 的计算机上安装 Visual Studio 2008，Visual Studio 2008 将导入 AJAX Extensions 工具箱项。 你可以确定这是否用例通过检查组件; 的工具提示它们应该显示版本 3.5.0.0。 如果他们说 2.0.0.0 版，然后导入你旧的工具箱项，并将需要手动使用 Visual Studio 中的选择工具箱项对话框中将它们导入。 你将无法添加通过设计器的版本 2 控件。
+1. <em>已知问题：</em>如果到已与 ASP.NET 2.0 AJAX Extensions 一起安装的 Visual Studio 2005 的计算机上安装 Visual Studio 2008，Visual Studio 2008 将导入 AJAX Extensions 工具箱项。 你可以确定这是否用例通过检查组件; 的工具提示它们应该显示版本 3.5.0.0。 如果他们说 2.0.0.0 版，然后导入你旧的工具箱项，并将需要手动使用 Visual Studio 中的选择工具箱项对话框中将它们导入。 你将无法添加通过设计器的版本 2 控件。
 
-1. 之前`<asp:Label>`标记开始，创建线空格，然后双击工具箱中的 UpdatePanel 控件上。 请注意，新`@Register`指令是在页上，，该值指示应使用导 System.Web.UI 命名空间内的控件的顶部包括`asp:`前缀。
-2. 拖动结束`</asp:UpdatePanel>`末尾的按钮元素中，添加标记以便元素包装的标签和按钮控件的格式正确。
-3. 在起始`<asp:UpdatePanel>`标记中，开始打开新的标记。 请注意，IntelliSense 将提示两个选项。 在这种情况下，创建`<ContentTemplate>`标记。 请务必包装围绕标签和按钮此标记，以便标记的格式正确。
+2. 之前`<asp:Label>`标记开始，创建线空格，然后双击工具箱中的 UpdatePanel 控件上。 请注意，新`@Register`指令是在页上，，该值指示应使用导 System.Web.UI 命名空间内的控件的顶部包括`asp:`前缀。
+3. 拖动结束`</asp:UpdatePanel>`末尾的按钮元素中，添加标记以便元素包装的标签和按钮控件的格式正确。
+4. 在起始`<asp:UpdatePanel>`标记中，开始打开新的标记。 请注意，IntelliSense 将提示两个选项。 在这种情况下，创建`<ContentTemplate>`标记。 请务必包装围绕标签和按钮此标记，以便标记的格式正确。
 
 
 [![](understanding-partial-page-updates-with-asp-net-ajax/_static/image5.png)](understanding-partial-page-updates-with-asp-net-ajax/_static/image4.png)
@@ -114,45 +114,45 @@ Visual Studio 2008 似乎未附带一个支持 ASP.NET AJAX 的网站上的预�
 
 启用了标记的属性：
 
-| **属性名称** | **类型** | **描述** |
+| **属性名称** | **Type** | **说明** |
 | --- | --- | --- |
-| AllowCustomErrors 重定向 | Bool | 指定是否使用 web.config 文件的自定义错误部分来处理错误。 |
-| AsyncPostBackError 消息 | 字符串 | 获取或设置发送到客户端，如果引发错误的错误消息。 |
-| AsyncPostBack 超时 | Int32 | 获取或设置默认的客户端应等待完成的异步请求的时间量。 |
-| EnableScript 全球化 | Bool | 获取或设置是否启用脚本全球化。 |
-| EnableScript 本地化 | Bool | 获取或设置是否启用脚本本地化。 |
+| AllowCustomErrors-Redirect | Bool | 指定是否使用 web.config 文件的自定义错误部分来处理错误。 |
+| AsyncPostBackError-Message | String | 获取或设置发送到客户端，如果引发错误的错误消息。 |
+| AsyncPostBack-Timeout | Int32 | 获取或设置默认的客户端应等待完成的异步请求的时间量。 |
+| EnableScript-Globalization | Bool | 获取或设置是否启用脚本全球化。 |
+| EnableScript-Localization | Bool | 获取或设置是否启用脚本本地化。 |
 | ScriptLoadTimeout | Int32 | 确定允许用于加载到客户端脚本的秒数 |
 | ScriptMode | 枚举 （自动、 调试、 发布、 继承） | 获取或设置是否呈现脚本的发行版本 |
-| ScriptPath | 字符串 | 获取或设置要发送到客户端的脚本文件的位置的根路径。 |
+| ScriptPath | String | 获取或设置要发送到客户端的脚本文件的位置的根路径。 |
 
 仅限代码的属性：
 
-| **属性名称** | **类型** | **描述** |
+| **属性名称** | **Type** | **说明** |
 | --- | --- | --- |
-| 认证 | 认证管理器 | 获取有关将发送到客户端的 ASP.NET 身份验证服务代理的详细信息。 |
+| AuthenticationService | AuthenticationService-Manager | 获取有关将发送到客户端的 ASP.NET 身份验证服务代理的详细信息。 |
 | IsDebuggingEnabled | Bool | 获取是否脚本并且代码调试已启用。 |
 | IsInAsyncPostback | Bool | 获取当前的异步回发请求页是否。 |
-| 页面 | 页面管理器 | 获取有关将发送到客户端的 ASP.NET 分析服务代理的详细信息。 |
-| 脚本 | 集合&lt;脚本参考&gt; | 获取将发送到客户端的脚本引用的集合。 |
-| 服务 | 集合&lt;服务引用&gt; | 获取将发送到客户端的 Web 服务代理引用的集合。 |
+| ProfileService | ProfileService-Manager | 获取有关将发送到客户端的 ASP.NET 分析服务代理的详细信息。 |
+| 脚本 | Collection&lt;Script-Reference&gt; | 获取将发送到客户端的脚本引用的集合。 |
+| 服务 | Collection&lt;Service-Reference&gt; | 获取将发送到客户端的 Web 服务代理引用的集合。 |
 | SupportsPartialRendering | Bool | 获取指示当前的客户端支持部分呈现。 如果此属性返回**false**，则所有页面请求都将标准的回发。 |
 
 公共代码的方法：
 
-| **方法名称** | **类型** | **描述** |
+| **方法名称** | **Type** | **说明** |
 | --- | --- | --- |
 | SetFocus(string) | Void | 当请求已完成，请将客户端的焦点设置到特定控件。 |
 
 标记后代：
 
-| **标记** | **描述** |
+| **标记** | **说明** |
 | --- | --- |
-| &lt;认证&gt; | 提供有关对 ASP.NET 身份验证服务代理的详细信息。 |
-| &lt;页面&gt; | 对分析服务的 ASP.NET 提供有关代理的详细信息。 |
-| &lt;脚本&gt; | 提供其他脚本引用。 |
-| &lt;asp: ScriptReference&gt; | 表示特定的脚本引用。 |
+| &lt;AuthenticationService&gt; | 提供有关对 ASP.NET 身份验证服务代理的详细信息。 |
+| &lt;ProfileService&gt; | 对分析服务的 ASP.NET 提供有关代理的详细信息。 |
+| &lt;Scripts&gt; | 提供其他脚本引用。 |
+| &lt;asp:ScriptReference&gt; | 表示特定的脚本引用。 |
 | &lt;服务&gt; | 提供其他 Web 服务引用，这会生成的代理类。 |
-| &lt;asp: ServiceReference&gt; | 表示特定的 Web 服务引用。 |
+| &lt;asp:ServiceReference&gt; | 表示特定的 Web 服务引用。 |
 
 ScriptManager 控件是基本的核心，以便使用 ASP.NET AJAX Extensions。 它提供对 （包括大量客户端脚本类型系统） 的脚本库的访问、 支持部分呈现，并对其他 ASP.NET 服务 （例如身份验证和分析，但也有其他 Web 服务） 提供广泛支持。 ScriptManager 控件还提供了全球化和本地化的支持的客户端脚本。
 
@@ -188,7 +188,7 @@ ScriptManager 控件提供广泛支持用于本地化的脚本字符串和用户
 
 启用了标记的属性：
 
-| **属性名称** | **类型** | **描述** |
+| **属性名称** | **Type** | **说明** |
 | --- | --- | --- |
 | ChildrenAsTriggers | bool | 指定子控件是否自动调用在回发时刷新。 |
 | RenderMode | 枚举 （块、 内联） | 指定内容的方式将以可视方式显示。 |
@@ -196,27 +196,27 @@ ScriptManager 控件提供广泛支持用于本地化的脚本字符串和用户
 
 仅限代码的属性：
 
-| **属性名称** | **类型** | **描述** |
+| **属性名称** | **Type** | **说明** |
 | --- | --- | --- |
 | IsInPartialRendering | bool | 获取是否 UpdatePanel 支持部分呈现为当前请求。 |
 | ContentTemplate | ITemplate | 获取更新请求标记模板。 |
 | ContentTemplateContainer | 控件 | 获取更新请求以编程方式的模板。 |
-| 触发器 | UpdatePanel-TriggerCollection | 获取与当前 UpdatePanel 相关的触发器的列表。 |
+| 触发器 | UpdatePanel- TriggerCollection | 获取与当前 UpdatePanel 相关的触发器的列表。 |
 
 公共代码的方法：
 
-| **方法名称** | **类型** | **描述** |
+| **方法名称** | **Type** | **说明** |
 | --- | --- | --- |
 | Update （) | Void | 以编程方式更新指定的 UpdatePanel。 允许的服务器请求触发否则为存 UpdatePanel 部分呈现器。 |
 
 标记后代：
 
-| **标记** | **描述** |
+| **标记** | **说明** |
 | --- | --- |
 | &lt;ContentTemplate&gt; | 指定要用于呈现部分呈现结果的标记。 子&lt;asp: UpdatePanel&gt;。 |
-| &lt;触发器&gt; | 指定的集合 *n* 与更新此 UpdatePanel 关联的控件。 子&lt;asp: UpdatePanel&gt;。 |
-| &lt;asp: AsyncPostBackTrigger&gt; | 指定触发器调用有给定 UpdatePanel 部分页呈现器。 这可能或可能不是作为问题 UpdatePanel 后代控件。 精确到事件名称。子&lt;触发器&gt;。 |
-| &lt;asp: PostBackTrigger&gt; | 指定导致整个页面以刷新的控件。 这可能或可能不是作为问题 UpdatePanel 后代控件。 精确到对象。 子&lt;触发器&gt;。 |
+| &lt;触发器&gt; | 指定的集合*n*与更新此 UpdatePanel 关联的控件。 子&lt;asp: UpdatePanel&gt;。 |
+| &lt;asp:AsyncPostBackTrigger&gt; | 指定触发器调用有给定 UpdatePanel 部分页呈现器。 这可能或可能不是作为问题 UpdatePanel 后代控件。 精确到事件名称。子&lt;触发器&gt;。 |
+| &lt;asp:PostBackTrigger&gt; | 指定导致整个页面以刷新的控件。 这可能或可能不是作为问题 UpdatePanel 后代控件。 精确到对象。 子&lt;触发器&gt;。 |
 
 `UpdatePanel`控件是分隔将参与了相应的 AJAX Extensions 部分呈现功能的服务器端内容控件。 没有为 UpdatePanel 控件可在页中，数没有限制，可以嵌套。 每个 UpdatePanel 是孤立的以便每个可以独立处理 （你可以在同一时间运行，为已呈现的页面的不同部分独立于页面的回发的两个 UpdatePanels）。
 
@@ -283,15 +283,15 @@ UpdatePanels 不应是全方位解决方案。 相反，它们提供快速解决
 
 启用了标记的属性：
 
-| **属性名称** | **类型** | **描述** |
+| **属性名称** | **Type** | **说明** |
 | --- | --- | --- |
-| AssociatedUpdate PanelID | 字符串 | 指定此 UpdateProgress 应报告 UpdatePanel 的 ID。 |
+| AssociatedUpdate-PanelID | String | 指定此 UpdateProgress 应报告 UpdatePanel 的 ID。 |
 | DisplayAfter | Int | 在异步请求开始后显示此控件之前，请指定的超时以毫秒为单位。 |
 | DynamicLayout | bool | 指定是否动态呈现进度。 |
 
 标记后代：
 
-| **标记** | **描述** |
+| **标记** | **说明** |
 | --- | --- |
 | &lt;ProgressTemplate&gt; | 包含设置将与此控件显示的内容的控件模板。 |
 
@@ -299,7 +299,7 @@ UpdateProgress 控件使你的反馈，以便在执行必要的工作到传输�
 
 请注意，作为 UpdateProgress 控件可以出现的任何位置的页层次结构上。 但是，在部分的回发发自子 UpdatePanel （其中 UpdatePanel 嵌套在另一个 UpdatePanel） 的情况下，回发的触发器 UpdatePanel 将导致显示 UpdateProgress 模板为子子UpdatePanel 以及父 UpdatePanel。 但如果触发器为父 UpdatePanel 的直接子级，只有与父项关联的 UpdateProgress 模板将会显示。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 Microsoft ASP.NET AJAX 扩展是复杂的产品旨在以帮助使 web 内容更易于访问，从而提供对 web 应用程序提供更丰富的用户体验。 作为 ASP.NET AJAX Extensions 中，分部页呈现控件的一部分包括 ScriptManager、 UpdatePanel 和 UpdateProgress 控件是一些工具包的最明显的组件。
 
@@ -317,5 +317,5 @@ UpdateProgress 控件允许用户知道她或他不会被忽略，并幕后的�
 
 Scott 类别自 1997 年以来处理与 Microsoft Web 技术，并且是 myKB.com 总裁 ([www.myKB.com](http://www.myKB.com)) 其中他专注于编写 ASP.NET 基于侧重于知识库软件解决方案的应用程序。 可以通过在电子邮件联系 Scott [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com)或在其博客地址[ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[下一篇](understanding-asp-net-ajax-updatepanel-triggers.md)
+> [!div class="step-by-step"]
+> [下一篇](understanding-asp-net-ajax-updatepanel-triggers.md)

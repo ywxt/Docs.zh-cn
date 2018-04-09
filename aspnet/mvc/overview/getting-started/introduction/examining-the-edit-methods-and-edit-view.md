@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
-title: "检查编辑方法和编辑视图 |Microsoft 文档"
+title: 检查编辑方法和编辑视图 |Microsoft 文档
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/22/2015
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: d7e1ba503b8aa815cebf431d2f5ffc9436b3575b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a3baa8e9af572d4c21813218ba394715a6db65cb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>检查编辑方法和编辑视图
 ====================
 通过[Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 在此部分中，将检查生成`Edit`操作方法和电影控制器的视图。 但首先将使短的转换，以便更好的外观的发行日期。 打开*Models\Movie.cs*文件并添加突出显示的行，如下所示：
 
@@ -106,12 +106,12 @@ ms.lasthandoff: 03/15/2018
 1. 从**工具**菜单上，单击**NuGetLibrary 程序包管理器**，然后单击**管理解决方案的 NuGet 包**。  
   
     ![](examining-the-edit-methods-and-edit-view/_static/image5.png)
-2. 在左窗格中，选择 **浏览*。 * * * （参阅下图）。
+2. 在左窗格中，选择<strong>浏览*。</strong>*（参阅下图）。
 3. 在输入框中，输入 * Globalize * *。  
   
     ![](examining-the-edit-methods-and-edit-view/_static/image6.png) 选择`jQuery.Validation.Globalize`，选择`MvcMovie`单击**安装**。 *Scripts\jquery.globalize\globalize.js*文件将添加到你的项目。 *Scripts\jquery.globalize\cultures\*文件夹将包含多个区域性 JavaScript 文件。 请注意，它可能需要 5 分钟，安装此包。
 
- 下面的代码演示对 Views\Movies\Edit.cshtml 文件进行修改： 
+   下面的代码演示对 Views\Movies\Edit.cshtml 文件进行修改： 
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample10.cshtml)]
 
@@ -125,6 +125,6 @@ ms.lasthandoff: 03/15/2018
 
 <a id="gettingstarted"></a><a id="jQueryAjaxJSON"></a> 在下一步的教程中，我们将实现搜索功能。
 
->[!div class="step-by-step"]
-[上一页](accessing-your-models-data-from-a-controller.md)
-[下一页](adding-search.md)
+> [!div class="step-by-step"]
+> [上一页](accessing-your-models-data-from-a-controller.md)
+> [下一页](adding-search.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-batched-data/batch-deleting-cs
-title: "删除 (C#) 的批处理 |Microsoft 文档"
+title: 删除 (C#) 的批处理 |Microsoft 文档
 author: rick-anderson
-description: "了解如何删除单个操作中的多个数据库记录。 在用户界面层我们构建后在中创建早期 tut 增强 GridView..."
+description: 了解如何删除单个操作中的多个数据库记录。 在用户界面层我们构建后在中创建早期 tut 增强 GridView...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-deleting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 71c4b323c2604d9e775f75272bb9565505580522
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 59c90dcf373d19aad42250ee6dedba5f09f833b5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="batch-deleting-c"></a>批处理删除 (C#)
 ====================
@@ -99,7 +99,7 @@ ms.lasthandoff: 11/10/2017
 > 若要测试`DeleteProductsWithTransaction`方法 s 原子性，手动添加的条目中的产品`Order Details`表，然后尝试删除该产品 （以及其他）。 尝试删除的产品与关联的顺序，但请注意如何其他所选的产品删除都将回滚时，你将收到外键约束冲突。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 创建批删除接口涉及将添加一个 GridView 具有的列的复选框和按钮 Web 控制，如果单击，则将删除所有选定行的作为单个原子操作。 在本教程中我们生成此类接口进行汇总，在两个前面的教程中完成的工作[添加 GridView 列的复选框](../enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-cs.md)和[在事务中包装数据库修改](wrapping-database-modifications-within-a-transaction-cs.md)。 在第一个教程中我们 GridView 使用创建的列的复选框，并且我们在后一种实现中 BLL 的方法，传递时`List<T>`的`ProductID`值，已将其删除所有在事务范围内。
 
@@ -109,12 +109,12 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已希尔顿 Giesenow 和 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](batch-updating-cs.md)
-[下一页](batch-inserting-cs.md)
+> [!div class="step-by-step"]
+> [上一页](batch-updating-cs.md)
+> [下一页](batch-inserting-cs.md)

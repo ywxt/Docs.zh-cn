@@ -1,7 +1,7 @@
 ---
-title: "从 ASP.NET Web API 迁移到 ASP.NET 核心"
+title: 将从 ASP.NET Web API 迁移到 ASP.NET 核心
 author: ardalis
-description: "了解如何将 Web API 实现从 ASP.NET Web API 迁移到 ASP.NET 核心 MVC。"
+description: 了解如何将 Web API 实现从 ASP.NET Web API 迁移到 ASP.NET 核心 MVC。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/webapi
-ms.openlocfilehash: 929fab90aa88745807761e824a2cf614f078ea36
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 2b9d6ac41266e0e6085153e1302d84a34ee85257
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-from-aspnet-web-api-to-aspnet-core"></a>从 ASP.NET Web API 迁移到 ASP.NET 核心
+# <a name="migrate-from-aspnet-web-api-to-aspnet-core"></a>将从 ASP.NET Web API 迁移到 ASP.NET 核心
 
 作者：[Steve Smith](https://ardalis.com/) 和 [Scott Addie](https://scottaddie.com)
 
@@ -117,6 +117,6 @@ ASP.NET 核心不再使用*Global.asax*， *web.config*，或*App_Start*文件�
 
 你现在应能够运行已迁移的项目，浏览到*/api/产品*; 而且，你应看到 3 产品的完整列表。 浏览到*/api/products/1* ，你应看到第一个产品。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 将一个简单的 ASP.NET Web API 项目迁移到 ASP.NET 核心 MVC 将非常简单，感谢到 ASP.NET 核心 MVC 中的 Web Api 的内置支持。 每个 ASP.NET Web API 项目将需要迁移的主要部分是路由、 控制器和模型，以及更新到控制器和操作由使用的类型。

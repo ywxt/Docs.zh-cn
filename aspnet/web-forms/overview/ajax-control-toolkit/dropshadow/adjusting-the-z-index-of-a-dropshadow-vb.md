@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-vb
-title: "调整 Z-index DropShadow (VB) |Microsoft 文档"
+title: 调整 Z-index DropShadow (VB) |Microsoft 文档
 author: wenz
-description: "AJAX 控件工具包中的 DropShadow 控件扩展带投影一个面板。 但是此卷影有时与其他控件，以便 insta 冲突..."
+description: AJAX 控件工具包中的 DropShadow 控件扩展带投影一个面板。 但是此卷影有时与其他控件，以便 insta 冲突...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 844ea00c2ef1c974aa72c7dd627819b0429d612e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b484dc6bfa6f67bd6b70f7c36c2eb2ec7143edaf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adjusting-the-z-index-of-a-dropshadow-vb"></a>调整 Z-index DropShadow (VB)
 ====================
@@ -68,6 +68,6 @@ AJAX 控件工具包中的 DropShadow 控件扩展带投影一个面板。 但�
 
 之后： 显示菜单项 ([单击以查看实际尺寸的图像](adjusting-the-z-index-of-a-dropshadow-vb/_static/image6.png))
 
->[!div class="step-by-step"]
-[上一页](manipulating-dropshadow-properties-from-client-code-cs.md)
-[下一页](manipulating-dropshadow-properties-from-client-code-vb.md)
+> [!div class="step-by-step"]
+> [上一页](manipulating-dropshadow-properties-from-client-code-cs.md)
+> [下一页](manipulating-dropshadow-properties-from-client-code-vb.md)

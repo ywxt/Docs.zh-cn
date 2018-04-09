@@ -1,7 +1,7 @@
 ---
-title: "Razor 页单元和集成测试，在 ASP.NET 核心"
+title: 在 ASP.NET Core razor 页单元和集成测试
 author: guardrex
-description: "了解如何创建用于 Razor 页的应用程序的单元和集成测试。"
+description: 了解如何创建用于 Razor 页的应用程序的单元和集成测试。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/razor-pages-testing
-ms.openlocfilehash: e4f87a8151e378717aa9198e4629711c4ea6ef77
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: dc5e8651f873b8e86aaa8fdf2527e461bb065424
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Razor 页单元和集成测试，在 ASP.NET 核心
+# <a name="razor-pages-unit-and-integration-tests-in-aspnet-core"></a>在 ASP.NET Core razor 页单元和集成测试
 
 作者：[Luke Latham](https://github.com/guardrex)
 

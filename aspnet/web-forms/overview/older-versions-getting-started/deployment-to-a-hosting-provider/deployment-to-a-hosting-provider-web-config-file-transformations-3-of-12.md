@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
-title: "部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： Web.Config 文件转换的 3 12 |Microsoft 文档"
+title: 部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： Web.Config 文件转换的 3 12 |Microsoft 文档
 author: tdykstra
-description: "这一系列的教程演示如何部署 （发布） ASP.NET web 应用程序项目，它通过使用 Visual Stu 包含 SQL Server Compact 数据库..."
+description: 这一系列的教程演示如何部署 （发布） ASP.NET web 应用程序项目，它通过使用 Visual Stu 包含 SQL Server Compact 数据库...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: ed78b55d2b0315cf428f137c56ad85b29a95e1c5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 86eb74ca35e8804978127412e2276eeee9d615dc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-webconfig-file-transformations---3-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： Web.Config 文件转换的 3 12
 ====================
@@ -136,7 +136,7 @@ Contoso 大学 web 页读取在中设置一个值`appSettings`中*Web.config*以
 
 ## <a name="setting-connection-strings"></a>设置连接字符串
 
-在大多数情况下你不必设置连接字符串转换，因为你可以发布配置文件中指定连接字符串。 但有异常时要部署 SQL Server Compact 数据库，并且你正在使用 Entity Framework Code First 迁移更新目标服务器上的数据库。 对于此方案，你必须指定将用于在服务器更新数据库架构的其他连接字符串。 若要设置此转换，将添加 **&lt;connectionStrings&gt;** 紧跟在打开之后元素**&lt;配置&gt;**中同时标记*Web.Test.config*和*Web.Production.config*转换文件：
+在大多数情况下你不必设置连接字符串转换，因为你可以发布配置文件中指定连接字符串。 但有异常时要部署 SQL Server Compact 数据库，并且你正在使用 Entity Framework Code First 迁移更新目标服务器上的数据库。 对于此方案，你必须指定将用于在服务器更新数据库架构的其他连接字符串。 若要设置此转换，将添加**&lt;connectionStrings&gt;**紧跟在打开之后元素**&lt;配置&gt;**中同时标记*Web.Test.config*和*Web.Production.config*转换文件：
 
 [!code-xml[Main](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12/samples/sample7.xml)]
 
@@ -148,6 +148,6 @@ Contoso 大学 web 页读取在中设置一个值`appSettings`中*Web.config*以
 
 有关涵盖的本教程主题的详细信息，请参阅中的 Web.config 转换方案[ASP.NET 部署内容映射](https://msdn.microsoft.com/library/bb386521.aspx)。
 
->[!div class="step-by-step"]
-[上一页](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
-[下一页](deployment-to-a-hosting-provider-configuring-project-properties-4-of-12.md)
+> [!div class="step-by-step"]
+> [上一页](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
+> [下一页](deployment-to-a-hosting-provider-configuring-project-properties-4-of-12.md)

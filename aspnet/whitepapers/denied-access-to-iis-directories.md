@@ -1,26 +1,26 @@
 ---
 uid: whitepapers/denied-access-to-iis-directories
-title: "ASP.NET 拒绝了对 IIS 目录的访问 |Microsoft 文档"
+title: ASP.NET 拒绝了对 IIS 目录的访问 |Microsoft 文档
 author: rick-anderson
-description: "该白皮书介绍了你必须执行的操作如果对 ASP.NET 应用程序的请求将返回错误，\"拒绝访问 DirectoryName 目录。 未能 s..."
+description: 该白皮书介绍了你必须执行的操作如果对 ASP.NET 应用程序的请求将返回错误，"拒绝访问 DirectoryName 目录。 未能 s...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: 3cb27b8a-354f-4332-bfe0-232b13bbf8aa
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/denied-access-to-iis-directories
 msc.type: content
-ms.openlocfilehash: 64118ac7a5f280775106d2dc7636923b08f28d89
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d95423776a6b58fc67ae6c791685543dadd2480c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/22/2018
 ---
 <a name="aspnet-denied-access-to-iis-directories"></a>ASP.NET 拒绝了对 IIS 目录的访问
 ====================
-> 该白皮书介绍了如果向 ASP.NET 应用程序发出的请求将返回错误，必须执行"拒绝访问*DirectoryName*目录。 无法开始监视目录 chaanges。"
+> 该白皮书介绍了如果向 ASP.NET 应用程序发出的请求将返回错误，必须执行"拒绝访问*DirectoryName*目录。 无法开始监视的目录更改。"
 > 
 > 适用于 ASP.NET 1.0 和 ASP.NET 1.1。
 

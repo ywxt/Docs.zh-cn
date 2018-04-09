@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/adding-a-model
-title: "添加模型 |Microsoft 文档"
+title: 添加模型 |Microsoft 文档
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 79f136257119a8600a65e8d7c5f6e99cb9abceae
-ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
+ms.openlocfilehash: b3ef871c4d7627a03c8f0fd8cce9d3e97fc1a4ba
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-model"></a>添加模型
 ====================
 通过[Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 在本部分中，你将添加用于管理数据库中的电影某些类。 这些类将&quot;模型&quot;ASP.NET MVC 应用程序的一部分。
 
@@ -54,7 +54,7 @@ ms.lasthandoff: 02/05/2018
 
 [!code-csharp[Main](adding-a-model/samples/sample3.cs)]
 
-你可以执行此操作通过手动添加 using 语句，也可以将鼠标悬停在红色波浪线，请单击`Show potential fixes`单击`using System.Data.Entity;`
+你可以执行此操作通过手动添加 using 语句，也可以将鼠标悬停在红色波浪线，请单击`Show potential fixes`单击 `using System.Data.Entity;`
 
 ![](adding-a-model/_static/image2.png)
 
@@ -64,6 +64,6 @@ ms.lasthandoff: 02/05/2018
 
 最后，我们添加了模型 (MVC 中的 M) 上。 在下一部分中你将使用的数据库连接字符串。
 
->[!div class="step-by-step"]
-[上一页](adding-a-view.md)
-[下一页](creating-a-connection-string.md)
+> [!div class="step-by-step"]
+> [上一页](adding-a-view.md)
+> [下一页](creating-a-connection-string.md)

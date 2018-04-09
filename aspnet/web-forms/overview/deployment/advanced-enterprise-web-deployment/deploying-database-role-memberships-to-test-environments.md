@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
-title: "将数据库角色成员身份部署到测试环境 |Microsoft 文档"
+title: 将数据库角色成员身份部署到测试环境 |Microsoft 文档
 author: jrjlee
-description: "本主题介绍如何将用户帐户添加到解决方案部署到测试环境的一部分的数据库角色。 当你部署的解决方案包含..."
+description: 本主题介绍如何将用户帐户添加到解决方案部署到测试环境的一部分的数据库角色。 当你部署的解决方案包含...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 226c28622f76e866fba1fc33cf9b9b7a01e5295b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4f635153213b0695d7d4b64d09adefaf8ee8e892
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-database-role-memberships-to-test-environments"></a>将数据库角色成员身份部署到测试环境
 ====================
@@ -37,9 +37,9 @@ ms.lasthandoff: 03/15/2018
 > 关键因素是，此操作需要条件基于目标环境。 如果你要部署到过渡或生产环境，你想要跳过该操作。 如果你正在将部署到开发人员或测试环境，你想要部署角色成员身份，而无需进一步的干预。 本主题介绍一种方法可用来应对此挑战。
 
 
-本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案 （&） #x 2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 的 web 应用程序Communication Foundation (WCF) 服务和数据库项目。
+本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案&#x2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
-这些教程的核心的部署方法取决于中介绍的拆分项目文件方法[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，在其中生成过程控制由两个项目文件 （&） #x 2014; 一个包含生成适用于每种目标环境和一个包含特定于环境的生成和部署设置的说明。 在生成期间，特定于环境的项目文件合并到环境无关的项目文件中以形成一组完整的生成说明。
+这些教程的核心的部署方法取决于中介绍的拆分项目文件方法[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，两个项目文件中的生成过程控制通过&#x2014;另一个包含生成适用于每种目标环境和一个包含特定于环境的生成和部署设置的说明。 在生成期间，特定于环境的项目文件合并到环境无关的项目文件中以形成一组完整的生成说明。
 
 ## <a name="task-overview"></a>任务概述
 
@@ -94,7 +94,7 @@ ms.lasthandoff: 03/15/2018
 
 - 在更改其角色成员身份之前，必须存在目标数据库。 在这种情况下，你需要运行此脚本*后*的数据库部署。
 - 你需要包括的条件，以便仅用于测试环境执行该脚本。
-- 如果你正在运行的"假设"部署 （&） #x 2014; 换而言之，如果你正在生成部署脚本，但不是实际运行它们 （&） #x 2014; 你不应运行 SQL 脚本。
+- 如果你正在运行"假设"部署&#x2014;换而言之，如果你正在生成部署脚本，但实际上未运行它们&#x2014;不应运行 SQL 脚本。
 
 如果你使用的拆分项目文件方法中所述[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，如的联系人管理器示例解决方案所示，你可以将构建说明拆分 SQL 脚本如下：
 
@@ -132,6 +132,6 @@ ms.lasthandoff: 03/15/2018
 
 使用 VSDBCMD 部署数据库项目的详细信息，请参阅[部署数据库项目](../web-deployment-in-the-enterprise/deploying-database-projects.md)。 有关自定义不同的目标环境的数据库部署的指南，请参阅[为多个环境自定义数据库部署](customizing-database-deployments-for-multiple-environments.md)。 使用自定义 MSBuild 项目文件来控制部署过程的详细信息，请参阅[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)和[了解该生成过程](../web-deployment-in-the-enterprise/understanding-the-build-process.md)。 Sqlcmd 命令行选项的详细信息，请参阅[sqlcmd 实用工具](https://msdn.microsoft.com/library/ms162773.aspx)。
 
->[!div class="step-by-step"]
-[上一页](customizing-database-deployments-for-multiple-environments.md)
-[下一页](deploying-membership-databases-to-enterprise-environments.md)
+> [!div class="step-by-step"]
+> [上一页](customizing-database-deployments-for-multiple-environments.md)
+> [下一页](deploying-membership-databases-to-enterprise-environments.md)

@@ -1,7 +1,7 @@
 ---
-title: "从 ASP.NET MVC 迁移到 ASP.NET 核心 MVC"
+title: 将从 ASP.NET MVC 迁移到 ASP.NET 核心 MVC
 author: ardalis
-description: "了解如何开始迁移到 ASP.NET 核心 MVC ASP.NET MVC 项目。"
+description: 了解如何开始迁移到 ASP.NET 核心 MVC ASP.NET MVC 项目。
 manager: wpickett
 ms.author: riande
 ms.date: 03/07/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/mvc
-ms.openlocfilehash: c9c9f63cd635f364d9b2e081dc051a46a44d3e4f
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e249be06726b307a1c41a525a132f7e0ab8b50ee
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>从 ASP.NET MVC 迁移到 ASP.NET 核心 MVC
+# <a name="migrate-from-aspnet-mvc-to-aspnet-core-mvc"></a>将从 ASP.NET MVC 迁移到 ASP.NET 核心 MVC
 
 通过[Rick Anderson](https://twitter.com/RickAndMSFT)， [Daniel Roth](https://github.com/danroth27)， [Steve Smith](https://ardalis.com/)，和[Scott Addie](https://scottaddie.com)
 
@@ -220,7 +220,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 }
 ```
 
-请参阅**使用开发人员异常页**中[错误处理](../fundamentals/error-handling.md)有关详细信息。
+请参阅**使用开发人员异常页**中[处理错误](../fundamentals/error-handling.md)有关详细信息。
 
 ## <a name="additional-resources"></a>其他资源
 

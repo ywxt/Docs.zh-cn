@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
-title: "引入的 ASP.NET Web Pages-HTML 窗体基础知识 |Microsoft 文档"
+title: 引入的 ASP.NET Web Pages-HTML 窗体基础知识 |Microsoft 文档
 author: tfitzmac
-description: "本教程演示如何创建的输入的窗体以及如何处理用户的输入，当你使用 ASP.NET Web 页 (Razor) 的基础知识。 和现在，您..."
+description: 本教程演示如何创建的输入的窗体以及如何处理用户的输入，当你使用 ASP.NET Web 页 (Razor) 的基础知识。 和现在，您...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
-ms.openlocfilehash: 68056759b2e80230e5fd2c0f9b2d2a89b549cf37
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6f44f74774c2fa6338524987779e15f3940d1830
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---html-form-basics"></a>引入 ASP.NET Web 页的 HTML 窗体基础知识
 ====================
@@ -88,11 +88,11 @@ ms.lasthandoff: 01/24/2018
 
 大多数用户输入的元素为 HTML`<input>`元素。 它们看起来像`<input type="type" name="name">,`其中*类型*指示所需的用户输入控件的种类。 这些元素包括的常见事件：
 
-- 文本框中：`<input type="text">`
-- 复选框：`<input type="check">`
-- 单选按钮：`<input type="radio">`
-- 按钮：`<input type="button">`
-- 提交按钮：`<input type="submit">`
+- 文本框中： `<input type="text">`
+- 复选框： `<input type="check">`
+- 单选按钮： `<input type="radio">`
+- 按钮： `<input type="button">`
+- 提交按钮： `<input type="submit">`
 
 你还可以使用`<textarea>`元素以创建多行文本框和`<select>`元素来创建一个下拉列表或可滚动的列表。 (有关更多关于 HTML 窗体元素中，请参阅[HTML 窗体和输入](http://www.w3schools.com/html/html_forms.asp)W3Schools 站点上。)
 
@@ -167,11 +167,11 @@ ms.lasthandoff: 01/24/2018
 > 
 > `var someValue = Request["name"];`
 > 
-> `Request`对象实际公开多个子集。 例如:
+> `Request`对象实际公开多个子集。 例如：
 > 
-> - `Request.Form`为你提供从内提交元素值`<form>`如果请求的元素`POST`请求。
-> - `Request.QueryString`为你提供的值只是中的 URL 查询字符串。 (如 URL 中`http://mysite/myapp/page?searchGenre=action&page=2`、`?searchGenre=action&page=2`部分 URL 为查询字符串。)
-> - `Request.Cookies`集合访问你的浏览器发送的 cookie。
+> - `Request.Form` 为你提供从内提交元素值`<form>`如果请求的元素`POST`请求。
+> - `Request.QueryString` 为你提供的值只是中的 URL 查询字符串。 (如 URL 中`http://mysite/myapp/page?searchGenre=action&page=2`、`?searchGenre=action&page=2`部分 URL 为查询字符串。)
+> - `Request.Cookies` 集合访问你的浏览器发送的 cookie。
 > 
 > 若要获取一个值，你知道是在提交窗体中，你可以使用`Request["name"]`。 或者，可以使用更具体版本`Request.Form["name"]`(有关`POST`请求) 或`Request.QueryString["name"]`(有关`GET`请求)。 当然，*名称*是要获取的项的名称。
 > 
@@ -218,7 +218,7 @@ ms.lasthandoff: 01/24/2018
 
 > [!NOTE] 
 > 
-> **重要 ！** 使用占位符 (如`@0`) 若要将值传递给 SQL 命令*极其重要*的安全性。 你看到它在这里，带有占位符变量数据的方式是你应该构建 SQL 命令的唯一方法。
+> **重要提示！** 使用占位符 (如`@0`) 若要将值传递给 SQL 命令*极其重要*的安全性。 你看到它在这里，带有占位符变量数据的方式是你应该构建 SQL 命令的唯一方法。
 > 
 > 永远不会通过将放在一起 （串联） 的文字文本和从用户获取的值来构造 SQL 语句。 连接到 SQL 语句的用户输入打开网站*SQL 注入式攻击*其中恶意用户提交到你的页 hack 你的数据库的值。 (你可以阅读更多的文章中[SQL 注入](https://msdn.microsoft.com/library/ms161953.aspx)MSDN 网站。)
 
@@ -363,6 +363,6 @@ ms.lasthandoff: 01/24/2018
 - [SQL WHERE 子句](http://www.w3schools.com/sql/sql_where.asp)W3Schools 站点上
 - [方法定义](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)W3C 网站上的文章
 
->[!div class="step-by-step"]
-[上一页](displaying-data.md)
-[下一页](entering-data.md)
+> [!div class="step-by-step"]
+> [上一页](displaying-data.md)
+> [下一页](entering-data.md)

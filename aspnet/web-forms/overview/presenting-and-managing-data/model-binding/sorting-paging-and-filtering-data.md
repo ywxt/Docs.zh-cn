@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/sorting-paging-and-filtering-data
-title: "排序、 分页和筛选使用模型的绑定和 web 窗体的数据 |Microsoft 文档"
+title: 排序、 分页和筛选使用模型的绑定和 web 窗体的数据 |Microsoft 文档
 author: tfitzmac
-description: "本系列教程演示使用模型绑定的 ASP.NET Web 窗体项目的基本方面。 模型绑定使数据交互详细直接-..."
+description: 本系列教程演示使用模型绑定的 ASP.NET Web 窗体项目的基本方面。 模型绑定使数据交互详细直接-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/sorting-paging-and-filtering-data
 msc.type: authoredcontent
-ms.openlocfilehash: 94fc84533be5fcbcf0612fcdcabea7dee738d89b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d63ebecadd392877e4cb1d1dffe9db2d1d231190
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="sorting-paging-and-filtering-data-with-model-binding-and-web-forms"></a>排序、 分页和筛选使用模型的绑定和 web 窗体的数据
 ====================
@@ -71,8 +71,8 @@ ms.lasthandoff: 11/10/2017
 - QueryString
 - RouteData
 - 会话
-- 用户配置文件
-- 视图状态
+- UserProfile
+- ViewState
 
 在本教程中，你将使用控件的值来筛选的记录会显示在 GridView。 你将添加**控件**属性设为你创建了前面的查询方法。 在[更高版本](using-query-string-values-to-retrieve-data.md)教程中，你将应用**QueryString**属性设为参数来指定参数值来自查询字符串值。
 
@@ -100,6 +100,6 @@ ms.lasthandoff: 11/10/2017
 
 在下一个[教程](integrating-jquery-ui.md)您将通过将 JQuery UI 小组件集成到动态数据模板来增强 UI。
 
->[!div class="step-by-step"]
-[上一页](updating-deleting-and-creating-data.md)
-[下一页](integrating-jquery-ui.md)
+> [!div class="step-by-step"]
+> [上一页](updating-deleting-and-creating-data.md)
+> [下一页](integrating-jquery-ui.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal
-title: "签出和付款与 PayPal |Microsoft 文档"
+title: 签出和付款与 PayPal |Microsoft 文档
 author: Erikre
-description: "本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识..."
+description: 本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal
 msc.type: authoredcontent
-ms.openlocfilehash: dd975850a3ed3e7b1746d5123572065675a88656
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0dba613594686a28b82bc6d7701cda6e24b82e2e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="checkout-and-payment-with-paypal"></a>签出和与 PayPal 付款
 ====================
@@ -55,7 +55,7 @@ ms.lasthandoff: 11/10/2017
 本系列教程中前面定义的类别，产品，架构以及通过创建项目，购物车`Category`， `Product`，和`CartItem`中的类*模型*文件夹。 现在，你将添加两个新类，以定义为产品订单和订单的详细信息的架构。
 
 1. 在**模型**文件夹中，添加一个名为的新类*Order.cs*。   
- 编辑器中将显示新的类文件。
+   编辑器中将显示新的类文件。
 2. 默认代码替换为以下：   
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample1.cs)]
@@ -107,7 +107,7 @@ Wingtip Toys 示例应用程序允许匿名用户，以查看并添加到购物�
 添加一个新的*Web.config*文件为*签出*文件夹中，你将能够限制对文件夹中包含的所有页的访问。
 
 1. 右键单击*签出*文件夹，然后选择**添加** - &gt; **新项**。  
- 随即出现“添加新项”对话框。
+   随即出现“添加新项”对话框。
 2. 选择**Visual C#**  - &gt; **Web**左侧的模板组。 然后，从中间窗格中，选择**Web 配置文件**，接受默认名称的*Web.config*，然后选择**添加**。
 3. 替换的现有 XML 内容中*Web.config*替换为以下文件：  
 
@@ -133,7 +133,7 @@ Wingtip Toys 示例应用程序允许匿名用户，以查看并添加到购物�
 6. 更改**项目 Url**使用**SSL URL**之前保存。   
     ![项目 Web 属性](checkout-and-payment-with-paypal/_static/image5.png)
 7. 通过按保存页面**CTRL + S**。
-8. 按**Ctrl + F5**运行该应用程序。 Visual Studio 将显示一个选项可用于避免 SSL 警告。
+8. 按 Ctrl+F5 运行应用程序。 Visual Studio 将显示一个选项可用于避免 SSL 警告。
 9. 单击**是**以信任 IIS Express SSL 证书并继续。   
     ![IIS Express SSL 证书详细信息](checkout-and-payment-with-paypal/_static/image6.png)  
  将显示安全警告。
@@ -162,32 +162,32 @@ ASP.NET Web 窗体提供了增强的选项，用于成员身份和身份验证�
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample5.cs)]
 3. 导航到[Google 开发人员控制台](https://console.developers.google.com/)。 你还需要使用 Google 开发人员电子邮件帐户 (gmail.com) 登录。 如果你没有 Google 帐户，选择**创建帐户**链接。   
- 接下来，你将看到**Google 开发人员控制台**。   
+   接下来，你将看到**Google 开发人员控制台**。   
     ![Google 开发人员控制台](checkout-and-payment-with-paypal/_static/image8.png)
 4. 单击**创建项目**按钮，然后输入项目名称和 ID （可以使用默认值）。 然后，单击**协议复选框**和**创建**按钮。  
 
     ![Google-新建项目](checkout-and-payment-with-paypal/_static/image9.png)
 
- 几秒钟后将创建新项目和你的浏览器将显示新项目页。
+   几秒钟后将创建新项目和你的浏览器将显示新项目页。
 5. 在左侧选项卡中，单击**Api&amp;身份验证**，然后单击**凭据**。
 6. 单击**创建新的客户端 ID**下**OAuth**。   
- **创建客户端 ID**将显示对话框。   
+   **创建客户端 ID**将显示对话框。   
     ![Google-创建客户端 ID](checkout-and-payment-with-paypal/_static/image10.png)
 7. 在**创建客户端 ID**对话框中，保留默认值**Web 应用程序**的应用程序类型。
 8. 设置**授权的 JavaScript 来源**为之前在本教程中使用的 SSL URL (`https://localhost:44300/`除非你已创建其他 SSL 项目)。   
- 此 URL 是你的应用程序的来源。 此示例中，你只需输入 localhost 测试 URL。 但是，您可以输入多个 Url，以针对 localhost 和生产。
+   此 URL 是你的应用程序的来源。 此示例中，你只需输入 localhost 测试 URL。 但是，您可以输入多个 Url，以针对 localhost 和生产。
 9. 设置**授权重定向 URI**所示： 
 
     [!code-html[Main](checkout-and-payment-with-paypal/samples/sample6.html)]
 
- 此值是 URI ASP.NET OAuth 用户与 google OAuth 服务器通信。 请记住上面使用的 SSL URL (`https://localhost:44300/`除非你已创建其他 SSL 项目)。
+   此值是 URI ASP.NET OAuth 用户与 google OAuth 服务器通信。 请记住上面使用的 SSL URL (`https://localhost:44300/`除非你已创建其他 SSL 项目)。
 10. 单击**创建客户端 ID**按钮。
 11. 在 Google 开发人员控制台的左侧菜单上，单击**同意屏幕**菜单项，然后设置你的电子邮件地址和产品名称。 完成窗体后，单击**保存**。
 12. 单击**Api**菜单项，向下的滚动，单击**关闭**按钮旁边**Google + API**。   
- 接受此选项将启用 Google + API。
+    接受此选项将启用 Google + API。
 13. 你还必须更新**Microsoft.Owin** 3.0.0 版的 NuGet 程序包。   
- 从**工具**菜单上，选择**NuGet 包管理器**，然后选择**管理解决方案的 NuGet 包**。  
- 从**管理 NuGet 包**窗口中，找到并更新**Microsoft.Owin** 3.0.0 版的包。
+    从**工具**菜单上，选择**NuGet 包管理器**，然后选择**管理解决方案的 NuGet 包**。  
+    从**管理 NuGet 包**窗口中，找到并更新**Microsoft.Owin** 3.0.0 版的包。
 14. 在 Visual Studio 中，更新`UseGoogleAuthentication`方法*Startup.Auth.cs*页上通过复制和粘贴**客户端 ID**和**客户端机密**到方法。 **客户端 ID**和**客户端机密**如下所示的值是示例，不起作用。 
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample7.cs?highlight=64-65)]
@@ -293,11 +293,11 @@ PayPal 是接受通过联机商人付款基于 web 的计费平台。 接下来�
 请将大部分 PayPal 代码成一个类。 此类包含用于与 PayPal 进行通信的方法。 此外，你将与此类添加 PayPal 凭据。
 
 1. 在 Visual Studio 中 Wingtip Toys 示例应用程序中，右键单击**逻辑**文件夹，然后选择**添加** - &gt; **新项**。   
- 随即出现“添加新项”对话框。
+   随即出现“添加新项”对话框。
 2. 下**Visual C#**从**已安装**左侧窗格中，选择**代码**。
 3. 从中间窗格中，选择**类**。 将此新类**PayPalFunctions.cs**。
-4. 单击 **“添加”**。  
- 编辑器中将显示新的类文件。
+4. 单击 **添加**。  
+   编辑器中将显示新的类文件。
 5. 默认代码替换为以下代码：  
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample12.cs)]
@@ -312,9 +312,9 @@ PayPal 是接受通过联机商人付款基于 web 的计费平台。 接下来�
 
 NVPAPICaller 类包含大多数 PayPal 功能。 在类中的代码提供了进行一次测试 PayPal 测试环境从购买所需的方法。 在以下三个 PayPal 函数用于进行购买时：
 
-- `SetExpressCheckout`函数
-- `GetExpressCheckoutDetails`函数
-- `DoExpressCheckoutPayment`函数
+- `SetExpressCheckout` 函数
+- `GetExpressCheckoutDetails` 函数
+- `DoExpressCheckoutPayment` 函数
 
 `ShortcutExpressCheckout`方法收集测试采购信息和产品详细信息从购物车和调用`SetExpressCheckout`PayPal 函数。 `GetCheckoutDetails`方法确认采购详细信息和调用`GetExpressCheckoutDetails`PayPal 函数在进行测试购买之前。 `DoCheckoutPayment`方法通过调用来完成测试环境中的测试购买`DoExpressCheckoutPayment`PayPal 函数。 剩余代码支持 PayPal 方法和过程，例如编码字符串、 解码字符串、 处理数组，以及确定凭据。
 
@@ -359,14 +359,14 @@ Wingtip Toys 示例应用程序购买产品，通过导航到 PayPal 测试站�
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample18.cs?highlight=18)]
 6. 将所做的更改保存到同时*ShoppingCart.aspx*文件和*ShoppingCart.aspx.cs*文件。
 7. 从菜单中，选择**调试**-&gt;**生成 WingtipToys**。  
- 将重新生成项目与新添加**ImageButton**控件。
+   将重新生成项目与新添加**ImageButton**控件。
 
 ### <a name="send-purchase-details-to-paypal"></a>向 PayPal 发送采购详细信息
 
 当用户单击**签出**购物车页上的按钮 (*ShoppingCart.aspx*)，它们将首先购买过程。 下面的代码调用购买产品所需的第一个 PayPal 函数。
 
 1. 从*签出*文件夹中，打开代码隐藏文件命名为*CheckoutStart.aspx.cs*。   
- 请确保打开代码隐藏文件。
+   请确保打开代码隐藏文件。
 2. 将现有代码替换为以下代码：   
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample19.cs)]
@@ -389,7 +389,7 @@ Wingtip Toys 示例应用程序购买产品，通过导航到 PayPal 测试站�
 
 > [!NOTE] 
 > 
-> **提示**
+> **Tip**
 > 
 > 中的标记*CheckoutReview.aspx*页上，请注意，`<ItemStyle>`标记用于更改中的项的样式**说明**页面底部附近的控件。 通过查看中的页**设计视图**(通过选择**设计**在 Visual Studio 的左下角)，然后选择**说明**控制，并选择**智能标记**(顶部的箭头图标右侧的控件)，你将能够看到**说明任务**。
 > 
@@ -439,20 +439,20 @@ Wingtip Toys 示例应用程序购买产品，通过导航到 PayPal 测试站�
 运行应用程序以了解如何购买产品。 请注意，你会在中运行 PayPal 测试环境。 要不交换的任何实际的资金。
 
 1. 请确保所有在 Visual Studio 中保存你的文件。
-2. 打开 Web 浏览器并导航到[https://developer.paypal.com](https://developer.paypal.com/)。
+2. 打开 Web 浏览器并导航到[ https://developer.paypal.com ](https://developer.paypal.com/)。
 3. 使用你此前在本教程中创建的 PayPal 开发人员帐户登录。  
- 对于 PayPal 的开发人员沙盒，你需要在登录[https://developer.paypal.com](https://developer.paypal.com/)测试 express 签出。 这仅适用于测试，不适用于 PayPal 的实时环境 PayPal 的沙盒。
+   对于 PayPal 的开发人员沙盒，你需要在登录[ https://developer.paypal.com ](https://developer.paypal.com/)测试 express 签出。 这仅适用于测试，不适用于 PayPal 的实时环境 PayPal 的沙盒。
 4. 在 Visual Studio 中，按**F5**运行 Wingtip Toys 示例应用程序。  
- 浏览器将重新生成数据库后，将打开并显示*Default.aspx*页。
+   浏览器将重新生成数据库后，将打开并显示*Default.aspx*页。
 5. 将三个不同的产品添加到购物车中，通过选择产品类别，如"汽车"，然后单击**将添加到购物车**旁边每个产品。  
- 购物车将显示所选的产品。
+   购物车将显示所选的产品。
 6. 单击**PayPal**签出的按钮。 
 
     ![签出和付款与 PayPal-购物车](checkout-and-payment-with-paypal/_static/image20.png)
 
- 签出将要求你具有用于 Wingtip Toys 示例应用程序的用户帐户。
+   签出将要求你具有用于 Wingtip Toys 示例应用程序的用户帐户。
 7. 单击**Google**在能够使用现有 gmail.com 电子邮件帐户进行登录页的右侧的链接。  
- 如果没有 gmail.com 帐户，则可以创建一个用于测试目的在[www.gmail.com](https://www.gmail.com/)。此外可以通过单击"注册"使用标准的本地帐户。 
+   如果没有 gmail.com 帐户，则可以创建一个用于测试目的在[www.gmail.com](https://www.gmail.com/)。此外可以通过单击"注册"使用标准的本地帐户。 
 
     ![签出和付款与 PayPal-登录](checkout-and-payment-with-paypal/_static/image21.png)
 8. 使用你 gmail 帐户和密码登录。 
@@ -465,7 +465,7 @@ Wingtip Toys 示例应用程序购买产品，通过导航到 PayPal 测试站�
 
     ![签出和付款与 PayPal-PayPal 登录](checkout-and-payment-with-paypal/_static/image24.png)
 11. 同意 PayPal 策略并单击**同意并继续**按钮。  
- 请注意，此页才显示第一次使用此 PayPal 帐户。 再次请注意，这是一个测试帐户，没有真正的现金进行交换。 
+    请注意，此页才显示第一次使用此 PayPal 帐户。 再次请注意，这是一个测试帐户，没有真正的现金进行交换。 
 
     ![签出和付款与 PayPal-PayPal 策略](checkout-and-payment-with-paypal/_static/image25.png)
 12. 查看在测试环境审阅页面上，单击 PayPal 订单信息**继续**。 
@@ -504,7 +504,7 @@ Wingtip Toys 示例应用程序购买产品，通过导航到 PayPal 测试站�
 12. 右键单击 Wingtip Toys 数据库文件 (*Wingtiptoys.mdf*)，然后选择**关闭连接**。
 13. 如果看不到**解决方案资源管理器**窗口中，单击**解决方案资源管理器**底部**服务器资源管理器**窗口以显示**解决方案资源管理器**试。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中你添加了订单和订单详细信息架构跟踪购买产品。 你还可以集成到 Wingtip Toys 示例应用程序 PayPal 功能。
 
@@ -518,6 +518,6 @@ Wingtip Toys 示例应用程序购买产品，通过导航到 PayPal 测试站�
 
 本教程包含示例代码。 此类示例代码"按原样"提供，而无需任何形式的保证。 相应地，Microsoft 不保证准确性、 完整性或对示例代码质量。 您同意在你自己的风险时使用的示例代码。 在任何情况下将 Microsoft 的应承担给你以任何方式内容，包括但不是限于任何错误或遗漏的任何示例代码、 内容，或任何丢失或损坏导致的任何示例代码使用产生任何任何的类型示例代码。 特此收到通知，特此同意赔偿，保存并保存 Microsoft 无害从和针对所有损失、 丢失、 受伤或的任何类型的包括但不限于，那些由 occasioned 或因你发布的材料的损坏的声明传输、 使用或依赖于包括但不是限于表示其中的视图。
 
->[!div class="step-by-step"]
-[上一页](shopping-cart.md)
-[下一页](membership-and-administration.md)
+> [!div class="step-by-step"]
+> [上一页](shopping-cart.md)
+> [下一页](membership-and-administration.md)

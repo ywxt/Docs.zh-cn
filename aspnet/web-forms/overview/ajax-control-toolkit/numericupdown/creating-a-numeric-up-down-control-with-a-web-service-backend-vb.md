@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-vb
-title: "使用 Web 服务后端 (VB) 中创建数值加/减控件 |Microsoft 文档"
+title: 使用 Web 服务后端 (VB) 中创建数值加/减控件 |Microsoft 文档
 author: wenz
-description: "而不是让用户在复选框中键入一个值，数字向上/向下 （即在 Windows 和其他操作系统的系统上存在） 的控件无法证明随着更多 c..."
+description: 而不是让用户在复选框中键入一个值，数字向上/向下 （即在 Windows 和其他操作系统的系统上存在） 的控件无法证明随着更多 c...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5ceefd6c18761c2abe3f3a4298d340642a0951d6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 690fd89c552407ec5d77419aae2488e4832efe44
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-numeric-updown-control-with-a-web-service-backend-vb"></a>使用 Web 服务后端 (VB) 中创建数值向上/向下控件
 ====================
@@ -45,10 +45,10 @@ ASP.NET AJAX 控件工具包中包含`NumericUpDown`会自动将两个按钮添�
 
 最后，创建一个新的 ASP.NET 页。 像往常一样，你需要`ScriptManager`控件，`TextBox`控件和`NumericUpDownExtender`控件。 对于后者，你需要提供 web 服务信息：
 
-- `ServiceDownMethod`名称下的 web 方法或页面方法
-- `ServiceDownPath`使用向下的服务方法; web 服务的路径如果你使用页方法，忽略
-- `ServiceUpMethod`名称最多的 web 方法或页面方法
-- `ServiceUpPath`具有最服务方法; web 服务的路径如果你使用页方法，忽略
+- `ServiceDownMethod` 名称下的 web 方法或页面方法
+- `ServiceDownPath` 使用向下的服务方法; web 服务的路径如果你使用页方法，忽略
+- `ServiceUpMethod` 名称最多的 web 方法或页面方法
+- `ServiceUpPath` 具有最服务方法; web 服务的路径如果你使用页方法，忽略
 
 下面是页的完整标记：
 
@@ -61,5 +61,5 @@ ASP.NET AJAX 控件工具包中包含`NumericUpDown`会自动将两个按钮添�
 
 是 2 的幂的数字显示 ([单击以查看实际尺寸的图像](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一篇](creating-a-numeric-up-down-control-with-a-web-service-backend-cs.md)
+> [!div class="step-by-step"]
+> [上一篇](creating-a-numeric-up-down-control-with-a-web-service-backend-cs.md)

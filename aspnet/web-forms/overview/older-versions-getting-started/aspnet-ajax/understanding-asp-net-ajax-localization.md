@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
-title: "了解 ASP.NET AJAX 本地化 |Microsoft 文档"
+title: 了解 ASP.NET AJAX 本地化 |Microsoft 文档
 author: scottcate
-description: "本地化是设计并将对特定的语言和区域性的支持集成到应用程序或应用程序组件的过程。 Mic..."
+description: 本地化是设计并将对特定的语言和区域性的支持集成到应用程序或应用程序组件的过程。 Mic...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
 msc.type: authoredcontent
-ms.openlocfilehash: 5b801586ea77af78284f780fe47fe09cafb984af
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 565b0294f57b784bc592b286b3d8b28504110415
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-localization"></a>了解 ASP.NET AJAX 本地化
 ====================
@@ -65,8 +65,8 @@ Microsoft AJAX 框架脚本管理支持多种选项用于部署和测试脚本�
 | --- | --- |
 | Script.js | 一个发行版本的非特定于区域性的脚本。 |
 | Script.debug.js | 一个调试版本的非特定于区域性的脚本。 |
-| Script.en US.js | 发行版适用于英语，美国脚本。 |
-| Script.debug.es CO.js | 调试版本西班牙语，哥伦比亚脚本。 |
+| Script.en-US.js | 发行版适用于英语，美国脚本。 |
+| Script.debug.es-CO.js | 调试版本西班牙语，哥伦比亚脚本。 |
 
 ## <a name="walkthrough-create-an-localized-embedded-script"></a>演练： 创建本地化、 嵌入的脚本
 
@@ -143,16 +143,16 @@ ScriptManager 使本地化应用程序的多个自动行为：
 
 以编程方式或通过声明性的标记，则可以将脚本引用添加到 ScriptManager 控件。 声明性的标记时特别有用在使用脚本中嵌入的程序集，而不是网站项目本身，如脚本的名称可能不会发生更改修订推送。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 随着 web 应用程序的增长来访问更大的受众，需要能够访问更广泛的区域性和社区变得内核数与业务模型电子商务 web 应用程序需要能够处理外货币，需要为其内容，但还其导航提示并在其他语言和公司的窗体字段需要知道这一需要是不仅可以存在内容管理系统可访问。
 
 .NET Framework 本质上支持丰富的本地化框架中，利用附属程序集和 XML 资源 (.resx) 文件提供统一的方式来查找资源字符串和图像。 ASP.NET AJAX Extensions 中，包括 Microsoft AJAX Framework 和 Microsoft AJAX 脚本库，提供支持对此编程模型到客户端代码中，启用简单的资源字符串查找。 附属程序集支持自动包含通过 ScriptResource.axd 的脚本资源 （实际的.js 文件），只要文件名遵守给定的命名方案。 利用此支持，使用 ASP.NET AJAX Extensions 简化脚本的本地化和全球化应用程序。
 
-## <a name="bio"></a>*简介*
+## <a name="bio"></a>*Bio*
 
 Scott 类别自 1997 年以来处理与 Microsoft Web 技术，并且是 myKB.com 总裁 ([www.myKB.com](http://www.myKB.com)) 其中他专注于编写 ASP.NET 基于侧重于知识库软件解决方案的应用程序。 可以通过在电子邮件联系 Scott [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com)或在其博客地址[ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[上一页](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
-[下一页](understanding-asp-net-ajax-web-services.md)
+> [!div class="step-by-step"]
+> [上一页](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
+> [下一页](understanding-asp-net-ajax-web-services.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-vb
-title: "处理从具有 UpdatePanel (VB) 的弹出窗口控件的回发 |Microsoft 文档"
+title: 处理从具有 UpdatePanel (VB) 的弹出窗口控件的回发 |Microsoft 文档
 author: wenz
-description: "AJAX 控件工具包中的 PopupControl 扩展程序提供的其他任何控件被激活时触发一个弹出窗口的简单办法。 必须格外小心，要执行..."
+description: AJAX 控件工具包中的 PopupControl 扩展程序提供的其他任何控件被激活时触发一个弹出窗口的简单办法。 必须格外小心，要执行...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4445437f25925429d240b7fe2d019855afc52fe0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 312927e01911ea705d0614eac462cd034820c7b4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="handling-postbacks-from-a-popup-control-with-an-updatepanel-vb"></a>处理从具有 UpdatePanel (VB) 的弹出窗口控件的回发
 ====================
@@ -61,6 +61,6 @@ AJAX 控件工具包中的 PopupControl 扩展程序提供的其他任何控件�
 
 单击在日期将其放在文本框中 ([单击以查看实际尺寸的图像](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb/_static/image6.png))
 
->[!div class="step-by-step"]
-[上一页](using-multiple-popup-controls-vb.md)
-[下一页](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb.md)
+> [!div class="step-by-step"]
+> [上一页](using-multiple-popup-controls-vb.md)
+> [下一页](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb.md)

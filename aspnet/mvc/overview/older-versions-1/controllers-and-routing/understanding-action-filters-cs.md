@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-cs
-title: "了解操作筛选器 (C#) |Microsoft 文档"
+title: 了解操作筛选器 (C#) |Microsoft 文档
 author: microsoft
-description: "本教程旨在说明操作筛选器。 操作筛选器是可以应用到的控制器操作-或整个控制器的属性..."
+description: 本教程旨在说明操作筛选器。 操作筛选器是可以应用到的控制器操作-或整个控制器的属性...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 86d5d429d9900d4c04391804598626705e6c88b4
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: d68933297329370e227f524c4b96ed7e259ef833
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-action-filters-c"></a>了解操作筛选器 (C#)
 ====================
@@ -45,7 +45,7 @@ by [Microsoft](https://github.com/microsoft)
 
 例如，列表 1 中的数据控制器公开名为操作`Index()`返回当前时间。 此操作用修饰`OutputCache`操作筛选器。 此筛选器会导致要为 10 秒缓存的操作返回的值。
 
-**列表 1 –`Controllers\DataController.cs`**
+**列表 1 – `Controllers\DataController.cs`**
 
 [!code-csharp[Main](understanding-action-filters-cs/samples/sample1.cs)]
 
@@ -103,7 +103,7 @@ ASP.NET MVC framework 以使其更轻松地实现自定义操作筛选器，包�
 
 为了说明如何生成自定义操作筛选器，我们将创建自定义操作筛选器来记录处理到 Visual Studio 输出窗口的控制器操作的阶段。 我们`LogActionFilter`中列出 2 包含。
 
-**列出 2 –`ActionFilters\LogActionFilter.cs`**
+**列出 2 – `ActionFilters\LogActionFilter.cs`**
 
 [!code-csharp[Main](understanding-action-filters-cs/samples/sample2.cs)]
 
@@ -117,16 +117,16 @@ ASP.NET MVC framework 以使其更轻松地实现自定义操作筛选器，包�
 
 列出 3 中的主页控制器演示了如何将日志操作筛选器应用于整个控制器类。 每当在主页控制器公开的任何的操作调用 – 或者`Index()`方法或`About()`方法 – 处理操作会记录到 Visual Studio 输出窗口的阶段。
 
-**列出 3 –`Controllers\HomeController.cs`**
+**列出 3 – `Controllers\HomeController.cs`**
 
 [!code-csharp[Main](understanding-action-filters-cs/samples/sample3.cs)]
 
-### <a name="summary"></a>摘要
+### <a name="summary"></a>总结
 
 在本教程中，已向您介绍 ASP.NET MVC 操作筛选器。 了解有关筛选器的四个不同类型： 授权筛选器、 操作筛选器、 结果筛选器和异常筛选器。 你还了解了有关基`ActionFilterAttribute`类。
 
 最后，您学习了如何实现简单的操作筛选器。 我们创建了日志处理到 Visual Studio 输出窗口的控制器操作的阶段的日志操作筛选器。
 
->[!div class="step-by-step"]
-[上一页](asp-net-mvc-routing-overview-cs.md)
-[下一页](improving-performance-with-output-caching-cs.md)
+> [!div class="step-by-step"]
+> [上一页](asp-net-mvc-routing-overview-cs.md)
+> [下一页](improving-performance-with-output-caching-cs.md)

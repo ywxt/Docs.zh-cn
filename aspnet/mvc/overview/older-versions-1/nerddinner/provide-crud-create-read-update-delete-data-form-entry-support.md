@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/provide-crud-create-read-update-delete-data-form-entry-support
-title: "提供 CRUD （创建、 读取、 更新、 删除） 数据窗体条目支持 |Microsoft 文档"
+title: 提供 CRUD （创建、 读取、 更新、 删除） 数据窗体条目支持 |Microsoft 文档
 author: microsoft
-description: "第 5 步演示如何通过启用用于编辑、 创建和删除晚餐也为它的支持，让我们进一步 DinnersController 类。"
+description: 第 5 步演示如何通过启用用于编辑、 创建和删除晚餐也为它的支持，让我们进一步 DinnersController 类。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/provide-crud-create-read-update-delete-data-form-entry-support
 msc.type: authoredcontent
-ms.openlocfilehash: 5a314a1761527d8a2273166a743e3deac012a557
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bd906282db5c620476966ffbe09cecb5ade66ee4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>提供 CRUD （创建、 读取、 更新、 删除） 数据窗体条目支持
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -39,22 +39,22 @@ ms.lasthandoff: 11/10/2017
 
 我们之前添加到实现支持两个 Url 的 DinnersController 的操作方法： */Dinners*和*/Dinners/详细信息 / [id]*。
 
-| **URL** | **谓词** | **目的** |
+| **URL** | **VERB** | **目的** |
 | --- | --- | --- |
 | */Dinners/* | GET | 显示即将到来的晚餐 HTML 列表。 |
-| */Dinners/详细信息 / [id]* | GET | 显示有关特定 dinner 详细信息。 |
+| */Dinners/Details/[id]* | GET | 显示有关特定 dinner 详细信息。 |
 
-我们现在将操作方法来实现三个其他 Url: */Dinners/编辑 / [id]、 / 晚餐/创建、*和*/Dinners/删除 / [id]*。 这些 Url 将启用对编辑现有晚餐，创建新晚餐和删除晚餐支持。
+我们现在将操作方法来实现三个其他 Url: <em>/Dinners/编辑 / [id]、 / 晚餐/创建、</em>和<em>/Dinners/删除 / [id]</em>。 这些 Url 将启用对编辑现有晚餐，创建新晚餐和删除晚餐支持。
 
 我们将支持使用这些新的 Url 的 HTTP GET 和 HTTP POST 谓词交互。 HTTP GET 请求到这些 Url 将显示数据 （使用在"编辑"的情况下的 Dinner 数据填充窗体，在"创建"的情况下的空白窗体和删除确认屏幕中，在"删除"的情况下） 的初始 HTML 视图。 对这些 Url 的 HTTP POST 请求将保存/更新/删除 Dinner 数据中我们 DinnerRepository （和从那里到数据库）。
 
-| **URL** | **谓词** | **目的** |
+| **URL** | **VERB** | **目的** |
 | --- | --- | --- |
-| */Dinners/编辑 / [id]* | GET | 显示可编辑 HTML 窗体使用 Dinner 数据进行填充。 |
+| */Dinners/Edit/[id]* | GET | 显示可编辑 HTML 窗体使用 Dinner 数据进行填充。 |
 | 发布 | 将窗体更改保存到数据库特定 Dinner 为。 |
-| */ 创建晚餐 /* | GET | 显示允许用户定义新晚餐空 HTML 窗体。 |
+| */Dinners/Create* | GET | 显示允许用户定义新晚餐空 HTML 窗体。 |
 | 发布 | 创建新的 Dinner 并将其保存在数据库中。 |
-| */Dinners/删除 / [id]* | GET | 显示删除确认屏幕。 |
+| */Dinners/Delete/[id]* | GET | 显示删除确认屏幕。 |
 | 发布 | 从数据库中删除指定的 dinner。 |
 
 ### <a name="edit-support"></a>编辑支持
@@ -141,7 +141,7 @@ Html.TextBox() 的第三个参数 （可选） 可用来输出 HTML 的其他属
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample9.cs)]
 
-当 [AcceptVerbs] 特性应用于重载的操作方法中时，ASP.NET MVC 将自动处理调度到适当的操作方法，具体取决于传入的 HTTP 谓词的请求。 HTTP POST 请求到*/Dinners/编辑 / [id]* Url 将转到上述的编辑方法，对所有其他 HTTP 谓词请求时*/Dinners/编辑 / [id]*Url 将转到第一个的编辑方法我们实现 （其未不具有 [AcceptVerbs] 属性）。
+当 [AcceptVerbs] 特性应用于重载的操作方法中时，ASP.NET MVC 将自动处理调度到适当的操作方法，具体取决于传入的 HTTP 谓词的请求。 HTTP POST 请求到<em>/Dinners/编辑 / [id]</em> Url 将转到上述的编辑方法，对所有其他 HTTP 谓词请求时<em>/Dinners/编辑 / [id]</em>Url 将转到第一个的编辑方法我们实现 （其未不具有 [AcceptVerbs] 属性）。
 
 | **通过 HTTP 谓词为什么区分端主题内容:？** |
 | --- |
@@ -219,7 +219,7 @@ ASP.NET MVC 包括一些很好的内置功能，用于简化错误处理和窗�
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image10.png)
 
-##### <a name="htmlvalidationmessage-helper-method"></a>Html.ValidationMessage() 帮助器方法
+##### <a name="htmlvalidationmessage-helper-method"></a>Html.ValidationMessage() Helper Method
 
 Html.ValidationMessage() 帮助器方法可以用于输出与特定模型属性关联的 ModelState 错误消息：
 
@@ -231,9 +231,9 @@ Html.ValidationMessage() 帮助器方法还支持允许开发人员重写将显�
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample18.aspx)]
 
-上面的代码将输出：  *&lt;class ="字段验证错误"&gt;\*&lt;/&gt;*而不是为存在错误时的默认错误文本EventDate 属性。
+上面的代码将输出：  <em>&lt;class ="字段验证错误"&gt;\*&lt;/&gt;</em>而不是为存在错误时的默认错误文本EventDate 属性。
 
-##### <a name="htmlvalidationsummary-helper-method"></a>Html.ValidationSummary() 帮助器方法
+##### <a name="htmlvalidationsummary-helper-method"></a>Html.ValidationSummary() Helper Method
 
 Html.ValidationSummary() 帮助器方法可以用于呈现错误消息摘要，伴随&lt;ul&gt;&lt;li /&gt;&lt;u l&gt;消息中的所有详细的错误的列表ModelState 集合：
 
@@ -427,6 +427,6 @@ ASP.NET MVC 包括许多内置功能，可帮助完成实现发布方案的窗�
 
 让我们现在看一下如何我们可以使用 ViewData 和 ViewModel 类我们窗体上启用甚至更丰富的 UI。
 
->[!div class="step-by-step"]
-[上一页](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
-[下一页](use-viewdata-and-implement-viewmodel-classes.md)
+> [!div class="step-by-step"]
+> [上一页](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
+> [下一页](use-viewdata-and-implement-viewmodel-classes.md)

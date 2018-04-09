@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application
-title: "处理与实体框架 4.0 ASP.NET 4 Web 应用程序中的并发 |Microsoft 文档"
+title: 处理与实体框架 4.0 ASP.NET 4 Web 应用程序中的并发 |Microsoft 文档
 author: tdykstra
-description: "本教程系列上的 Contoso 大学 web 应用程序创建的 Getting Started with 实体 Framework 4.0 教程系列生成。 我..."
+description: 本教程系列上的 Contoso 大学 web 应用程序创建的 Getting Started with 实体 Framework 4.0 教程系列生成。 I...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 7bdcf610458631749531ed1279d27e90572f0371
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f40695270006e4f8b0c9ad8e94049e5239f06e63
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="handling-concurrency-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>处理与实体框架 4.0 ASP.NET 4 Web 应用程序中的并发
 ====================
@@ -37,13 +37,13 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="pessimistic-concurrency-locking"></a>保守式并发 （锁定）
 
-如果你的应用程序需要防止并发方案中的意外数据丢失，做到这一点的一种方法是使用数据库锁。 这称为*保守式并发*。 例如，从数据库读取行之前，你请求的锁只读的或更新访问权限。 如果锁定的行更新访问权限时，不允许任何其他用户锁定该行为只读的或更新访问权限，因为它们将获取正在进行更改的数据的副本。 如果锁定用于只读访问的行，其他人可以还将其锁定用于只读访问权限但不是用于更新。
+如果应用程序确实需要防止并发情况下出现意外数据丢失，一种方法是使用数据库锁定。 这称为*保守式并发*。 例如，在从数据库读取一行内容之前，请求锁定为只读或更新访问。 如果将一行锁定为更新访问，则其他用户无法将该行锁定为只读或更新访问，因为那样会使他们得到正在更改的数据的副本。 如果将一行锁定为只读访问，则其他人也可将其锁定为只读访问，但不能进行更新。
 
-管理锁具有某些缺点。 它可以是复杂到程序。 它需要大量的数据库管理资源，并且可能导致性能问题的应用程序的用户数会增加 （即，它不能很好）。 出于这些原因，不是所有数据库管理系统都支持保守式并发。 本教程不向你展示如何实现它，并且实体框架提供，没有内置支持。
+管理锁具有某些缺点。 编程可能很复杂。 它需要大量的数据库管理资源，并且可能导致性能问题的应用程序的用户数会增加 （即，它不能很好）。 由于这些原因，并不是所有的数据库管理系统都支持悲观并发。 本教程不向你展示如何实现它，并且实体框架提供，没有内置支持。
 
 ### <a name="optimistic-concurrency"></a>开放式并发
 
-保守式并发替代方法是*开放式并发*。 开放式并发意味着允许并发冲突发生，然后相应地反应，如果他们这样做。 例如，John 运行*Department.aspx*页上，单击**编辑**链接历史记录部门，并减少**预算**到 $ 从 $ 1000，000.00 量125,000.00。 （John 管理竞争部门并且想要释放自己部门 money。）
+保守式并发替代方法是*开放式并发*。 乐观并发是指允许发生并发冲突，并在并发冲突发生时作出正确反应。 例如，John 运行*Department.aspx*页上，单击**编辑**链接历史记录部门，并减少**预算**到 $ 从 $ 1000，000.00 量125,000.00。 （John 管理竞争部门并且想要释放自己部门 money。）
 
 [![Image07](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image6.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image5.png)
 
@@ -55,15 +55,15 @@ John 单击**更新**第一次，然后 Jane 单击**更新**。 Jane 的浏览�
 
 某些可在此方案中执行的操作包括：
 
-- 你可以跟踪的用户进行了修改的属性，并更新仅在数据库中的相应列。 在示例方案中，任何数据将不会丢失，因为不同的属性已更新由两个用户。 下一次有人浏览历史记录部门，他们将看到 1/1/1999年和 $125,000.00。 
+- 可以跟踪用户已修改的属性，并仅更新数据库中相应的列。 在示例方案中，不会有数据丢失，因为是由两个用户更新不同的属性。 下一次有人浏览历史记录部门，他们将看到 1/1/1999年和 $125,000.00。 
 
     这是实体框架中中的默认行为，它可以显著减少可能导致数据丢失的冲突数。 但是，此行为不避免数据丢失，如果实体的同一属性进行竞争的更改。 此外，此行为并不总是可行;当存储的过程映射到的实体类型时，所有实体的属性更新数据库中进行任何更改到实体时。
-- 你可以让 Jane 的更改覆盖 John 的更改。 Jane 单击后**更新**、**预算**量将返回到 1000，000.00 $。 这称为*客户端优先*或*在 Wins 中最后一个*方案。 （客户端的值优先于什么是在数据存储。）
-- 你可以防止在数据库中正在更新 Jane 的更改。 通常情况下，将显示一条错误消息、 她显示的数据的当前状态和让她可以如果她仍然想要对它们进行重新输入其更改。 通过将保存其输入和为她提供机会重新将其应用而无需重新输入它，你无法进一步自动执行的过程。 这称为*存储 Wins*方案。 （数据存储值优先于提交的客户端的值。）
+- 你可以让 Jane 的更改覆盖 John 的更改。 Jane 单击后**更新**、**预算**量将返回到 1000，000.00 $。 这称为*客户端优先*或*最后一个优先*。 （客户端的值优先于什么是在数据存储。）
+- 你可以防止在数据库中正在更新 Jane 的更改。 通常情况下，将显示一条错误消息、 她显示的数据的当前状态和让她可以如果她仍然想要对它们进行重新输入其更改。 通过将保存其输入和为她提供机会重新将其应用而无需重新输入它，你无法进一步自动执行的过程。 这称为“存储优先”方案。 （数据存储值优先于客户端提交的值。）
 
 ### <a name="detecting-concurrency-conflicts"></a>检测并发冲突
 
-在实体框架中，您可以通过处理中解决冲突`OptimisticConcurrencyException`实体框架引发的异常。 为了知道何时引发这些异常，实体框架必须能够检测到冲突。 因此，你必须从数据库和数据模型正确配置。 有关启用冲突检测某些选项包括：
+在实体框架中，您可以通过处理中解决冲突`OptimisticConcurrencyException`实体框架引发的异常。 为了知道何时引发这些异常，Entity Framework 必须能够检测到冲突。 因此，你必须正确配置数据库和数据模型。 启用冲突检测的某些选项包括：
 
 - 在数据库中，包括可以用于确定何时已更改行的表列。 然后，你可以配置实体框架可以包括中的列`Where`的 SQL 子句`Update`或`Delete`命令。
 
@@ -302,8 +302,8 @@ John 单击**更新**第一次，然后 Jane 单击**更新**。 Jane 的浏览�
 
 [![Image23](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image46.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image45.png)
 
-这将完成简介处理并发冲突。 下一教程将提供有关如何提高性能的 web 应用程序使用实体框架中的指导。
+处理并发冲突已介绍完毕。 下一教程将提供有关如何提高性能的 web 应用程序使用实体框架中的指导。
 
->[!div class="step-by-step"]
-[上一页](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
-[下一页](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
+> [!div class="step-by-step"]
+> [上一页](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+> [下一页](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)

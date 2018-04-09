@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
-title: "第 8 部分： 最终页、 异常处理和结论 |Microsoft 文档"
+title: 第 8 部分： 最终页、 异常处理和结论 |Microsoft 文档
 author: JoeStagner
-description: "本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 8 部分将添加一个联系人页面，页面上和异常有关..."
+description: 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 8 部分将添加一个联系人页面，页面上和异常有关...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: fce1a20f9d1093b6c60542d8a786ddf54fdc922c
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: f82294aab0616012393cf3e10f932f6d1ad0cdb6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-8-final-pages-exception-handling-and-conclusion"></a>第 8 部分： 最终页、 异常处理和结论
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 02/12/2018
 > 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 8 部分添加联系人页，有关页上和异常处理。 这是序列结束。
 
 
-## <a id="_Toc260221680"></a>联系人页 （从 ASP.NET 发送电子邮件）
+## <a id="_Toc260221680"></a>  联系人页 （从 ASP.NET 发送电子邮件）
 
 创建一个名为 ContactUs.aspx 的新页
 
@@ -43,11 +43,11 @@ ms.lasthandoff: 02/12/2018
 
 [!code-xml[Main](tailspin-spyworks-part-8/samples/sample2.xml)]
 
-## <a id="_Toc260221681"></a>有关页面
+## <a id="_Toc260221681"></a>  有关页面
 
 创建一个名为 AboutUs.aspx 页并添加任何您喜欢的内容。
 
-## <a id="_Toc260221682"></a>全局异常处理程序
+## <a id="_Toc260221682"></a>  全局异常处理程序
 
 最后，在整个应用程序中，我们具有引发异常并且没有出现未预见的情况下，冷还在我们的 web 应用程序中的原因的未经处理的异常。
 
@@ -75,11 +75,11 @@ ms.lasthandoff: 02/12/2018
 
 [!code-csharp[Main](tailspin-spyworks-part-8/samples/sample6.cs)]
 
-## <a id="_Toc260221683"></a>结论
+## <a id="_Toc260221683"></a>  结论
 
 我们已了解，ASP.NET WebForms 便于对来创建复杂的网站和数据库访问，成员身份，AJAX 等。 非常快速。
 
 希望本教程已授予所需若要开始构建应用程序的你自己 ASP.NET WebForms 工具 ！
 
->[!div class="step-by-step"]
-[上一篇](tailspin-spyworks-part-7.md)
+> [!div class="step-by-step"]
+> [上一篇](tailspin-spyworks-part-7.md)

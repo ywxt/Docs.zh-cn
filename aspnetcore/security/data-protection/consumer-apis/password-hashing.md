@@ -1,7 +1,7 @@
 ---
-title: "密码哈希"
+title: 在 ASP.NET 核心中的哈希密码
 author: rick-anderson
-description: "本文档说明如何使用 ASP.NET Core 数据保护 Api 的密码执行哈希。"
+description: 了解如何使用 ASP.NET 核心数据保护 Api 的密码执行哈希。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/password-hashing
-ms.openlocfilehash: 8e2796108be14ef382f46e6deb3d584517120d27
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 63348da144e84d614f274b5d816cbecb020dcab4
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="password-hashing"></a>密码哈希
+# <a name="hash-passwords-in-aspnet-core"></a>在 ASP.NET 核心中的哈希密码
 
 基本数据保护代码包括包*Microsoft.AspNetCore.Cryptography.KeyDerivation*其中包含加密密钥派生函数。 此包是一个独立组件，并不依赖于数据保护系统的其余部分。 可以完全单独使用它。 源共存于基本为方便起见数据保护代码。
 

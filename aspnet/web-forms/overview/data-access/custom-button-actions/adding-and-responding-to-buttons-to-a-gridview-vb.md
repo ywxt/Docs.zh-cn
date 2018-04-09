@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-vb
-title: "添加和响应的按钮添加到 GridView (VB) |Microsoft 文档"
+title: 添加和响应的按钮添加到 GridView (VB) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将查看如何添加自定义按钮，同时向模板和 GridView 或说明控件的字段。 具体而言，我们将标示..."
+description: 在本教程中我们将查看如何添加自定义按钮，同时向模板和 GridView 或说明控件的字段。 具体而言，我们将标示...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8a642a9a8e25d64028df0b5d8741da3008700652
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 58b570c897810eeaa182a201616a182c02e9d92c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-and-responding-to-buttons-to-a-gridview-vb"></a>添加和响应的按钮添加到 GridView (VB)
 ====================
@@ -129,7 +129,7 @@ ms.lasthandoff: 01/24/2018
 
 [![指示，供应商 Id 参数应来自供应商 FormView 控件](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image25.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image24.png)
 
-**图 10**： 指示 *`supplierID`* 参数应来自`Suppliers`FormView 控件 ([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image26.png))
+**图 10**： 指示*`supplierID`*参数应来自`Suppliers`FormView 控件 ([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image26.png))
 
 
 完成对象数据源向导后，命令将 BoundField 或 CheckBoxField 为每个产品的数据字段包含 GridView。 允许 s 削减这以显示仅`ProductName`和`UnitPrice`连同 BoundFields `Discontinued` CheckBoxField; 此外，让 s 格式`UnitPrice`BoundField 以便其文本设置为货币的格式。 你 GridView 和`SuppliersProductsDataSource`ObjectDataSource s 声明性标记应类似于以下标记：
@@ -157,7 +157,7 @@ ms.lasthandoff: 01/24/2018
 **图 12**： 创建 DAL 方法使用临时 SQL 语句 ([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image32.png))
 
 
-接下来，向导会提示有关哪种类型的查询以创建我们。 由于`DiscontinueAllProductsForSupplier(supplierID)`方法将需要更新`Products`数据库表，设置`Discontinued`字段为 1。 对于指定提供的所有产品 *`supplierID`* ，我们需要创建更新数据的查询。
+接下来，向导会提示有关哪种类型的查询以创建我们。 由于`DiscontinueAllProductsForSupplier(supplierID)`方法将需要更新`Products`数据库表，设置`Discontinued`字段为 1。 对于指定提供的所有产品*`supplierID`*，我们需要创建更新数据的查询。
 
 
 [![选择更新的查询类型](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image34.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image33.png)
@@ -183,7 +183,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-vb[Main](adding-and-responding-to-buttons-to-a-gridview-vb/samples/sample5.vb)]
 
-此方法只需调用直至`DiscontinueAllProductsForSupplier(supplierID)`中 DAL，沿提供传递方法 *`supplierID`* 参数值。 如果没有任何要在某些情况下停用的 s 产品，只允许一个供应商的业务规则，这些规则应 BLL 在此处，实现。
+此方法只需调用直至`DiscontinueAllProductsForSupplier(supplierID)`中 DAL，沿提供传递方法*`supplierID`*参数值。 如果没有任何要在某些情况下停用的 s 产品，只允许一个供应商的业务规则，这些规则应 BLL 在此处，实现。
 
 > [!NOTE]
 > 与不同`UpdateProduct`重载以`ProductsBLL`类，`DiscontinueAllProductsForSupplier(supplierID)`方法签名不包括`DataObjectMethodAttribute`属性 (`<System.ComponentModel.DataObjectMethodAttribute(System.ComponentModel.DataObjectMethodType.Update, Boolean)>`)。 这将阻止`DiscontinueAllProductsForSupplier(supplierID)`从 ObjectDataSource s 配置数据源向导的下拉列表中更新选项卡的方法。我已省略此属性，因为我们将调用`DiscontinueAllProductsForSupplier(supplierID)`直接从我们 ASP.NET 页中的事件处理方法。
@@ -203,7 +203,7 @@ ms.lasthandoff: 01/24/2018
 
 由于`ItemCommand`激发而不考虑哪些按钮后，事件处理程序我们需要一种方法，以确定被单击了停止所有的产品按钮，或者如果它已某些其他按钮。 若要实现此目的，我们可以设置按钮 Web 控件的`CommandName`为某个标识值的属性。 单击按钮时，这`CommandName`值传递给`ItemCommand`事件处理程序，使我们能够确定是否停止所有的产品按钮所单击的按钮。 将停止所有产品按钮 s 设置`CommandName`DiscontinueProducts 属性。
 
-最后，让我们来使用客户端确认对话框中，以确保用户确实想要停止所选供应商的产品。 正如我们看到在[删除时添加客户端确认](../editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-vb.md)教程，则此操作可以稍加 JavaScript 完成。 具体而言，将按钮 Web 控件的 OnClientClick 属性设置为`return confirm('This will mark _all_ of this supplier\'s products as discontinued. Are you certain you want to do this?');`
+最后，让我们来使用客户端确认对话框中，以确保用户确实想要停止所选供应商的产品。 正如我们看到在[删除时添加客户端确认](../editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-vb.md)教程，则此操作可以稍加 JavaScript 完成。 具体而言，将按钮 Web 控件的 OnClientClick 属性设置为 `return confirm('This will mark _all_ of this supplier\'s products as discontinued. Are you certain you want to do this?');`
 
 进行这些更改后，FormView s 声明性语法应如下所示：
 
@@ -302,7 +302,7 @@ ButtonField 具有`CommandName`属性，将指定的值分配给每个其按钮`
 > `<asp:Button runat="server" ... CommandArgument='<%# CType(Container, GridViewRow).RowIndex %>' />`。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 所有的 GridView、 说明如何和 FormView 控制可以包括按钮、 LinkButtons 或 ImageButtons。 此类按钮，单击时，会导致回发和引发`ItemCommand`FormView 和说明如何控件中的事件和`RowCommand`GridView 中的事件。 这些数据 Web 控件具有内置功能来处理常见的命令相关的操作，如删除或编辑记录。 但是，我们可以还使用按钮，单击时，使用执行自己的自定义代码进行响应。
 
@@ -312,7 +312,7 @@ ButtonField 具有`CommandName`属性，将指定的值分配给每个其按钮`
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
->[!div class="step-by-step"]
-[上一篇](adding-and-responding-to-buttons-to-a-gridview-cs.md)
+> [!div class="step-by-step"]
+> [上一篇](adding-and-responding-to-buttons-to-a-gridview-cs.md)

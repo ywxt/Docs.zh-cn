@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood
-title: "ASP.NET MVC 店面一部分 17： 签出与 Jeff Atwood |Microsoft 文档"
+title: ASP.NET MVC 店面一部分 17： 签出与 Jeff Atwood |Microsoft 文档
 author: robconery
-description: "在本集中我向上结帐过程准备就绪，并与先生 CodingHorror 自己，Jeff Atwood 交流。 我们谈一谈所有类型的操作，但主要讨论 Ope..."
+description: 在本集中我向上结帐过程准备就绪，并与先生 CodingHorror 自己，Jeff Atwood 交流。 我们谈一谈所有类型的操作，但主要讨论 Ope...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood
 msc.type: video
-ms.openlocfilehash: 76dfa285934578bb4fddb2defa6905c1fa7d6cc0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ccb6b6bb76598c1aef2321e22eb0cfc2846f53a4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood"></a>Jeff Atwood 与 ASP.NET MVC 店面一部分 17： 签出
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （34 分钟内）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood)
 
->[!div class="step-by-step"]
-[上一页](aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
-[下一页](aspnet-mvc-storefront-part-18-creating-an-experience.md)
+> [!div class="step-by-step"]
+> [上一页](aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
+> [下一页](aspnet-mvc-storefront-part-18-creating-an-experience.md)

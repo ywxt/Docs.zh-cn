@@ -1,7 +1,7 @@
 ---
-title: "在 Windows 服务中的主机 ASP.NET 核心"
+title: 在 Windows 服务中的主机 ASP.NET 核心
 author: tdykstra
-description: "了解如何托管的 ASP.NET Core 应用 Windows 服务中。"
+description: 了解如何托管的 ASP.NET Core 应用 Windows 服务中。
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: f3455e47cfc06a4492dc4e34871b348184c6ecfb
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: b0b27f274de1ca88b20bf582127132527b553ce0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>在 Windows 服务中的主机 ASP.NET 核心
 
@@ -40,25 +40,23 @@ ms.lasthandoff: 03/15/2018
 
 1. 安装 NuGet 程序包[Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/)。
 
-1. 进行中的以下更改`Program.Main`:
-  
+2. 进行中的以下更改`Program.Main`:
+
    * 调用`host.RunAsService`而不是`host.Run`。
-  
+
    * 如果代码调用`UseContentRoot`，到发布位置而不是使用路径`Directory.GetCurrentDirectory()`。
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+   #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
    [!code-csharp[](windows-service/sample/Program.cs?name=ServiceOnly&highlight=3-4,7,12)]
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
    [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOnly&highlight=3-4,8,14)]
 
-   ---
+   * * *
 
-1. 将应用发布到的文件夹。 使用[dotnet 发布](/dotnet/articles/core/tools/dotnet-publish)或[Visual Studio 发布配置文件](xref:host-and-deploy/visual-studio-publish-profiles)，它发布到的文件夹。
+3. 将应用发布到的文件夹。 使用[dotnet 发布](/dotnet/articles/core/tools/dotnet-publish)或[Visual Studio 发布配置文件](xref:host-and-deploy/visual-studio-publish-profiles)，它发布到的文件夹。
 
-1. 通过创建和启动服务测试。
+4. 通过创建和启动服务测试。
 
    使用管理特权才能使用打开命令行界面[sc.exe](https://technet.microsoft.com/library/bb490995)命令行工具来创建和启动服务。 如果该服务名为 MyService，发布到`c:\svc`，以及名为 AspNetCoreService，命令：
 
@@ -79,16 +77,13 @@ ms.lasthandoff: 03/15/2018
 
 很容易地测试和调试时运行外部服务，因此通常将调用的代码添加`RunAsService`仅在某些情况下。 例如，应用程序可以作为包含的控制台应用程序运行`--console`命令行自变量，或如果附加调试器：
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](windows-service/sample/Program.cs?name=ServiceOrConsole)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOrConsole)]
 
----
-
+* * *
 ## <a name="handle-stopping-and-starting-events"></a>处理停止和启动事件
 
 若要处理`OnStarting`， `OnStarted`，和`OnStopping`事件，进行以下其他更改：
@@ -97,25 +92,26 @@ ms.lasthandoff: 03/15/2018
 
    [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=NoLogging)]
 
-1. 创建扩展方法`IWebHost`，通过自定义`WebHostService`到`ServiceBase.Run`:
+2. 创建扩展方法`IWebHost`，通过自定义`WebHostService`到`ServiceBase.Run`:
 
    [!code-csharp[](windows-service/sample/WebHostServiceExtensions.cs?name=ExtensionsClass)]
 
-1. 在`Program.Main`，调用新的扩展方法， `RunAsCustomService`，而不是`RunAsService`:
+3. 在`Program.Main`，调用新的扩展方法， `RunAsCustomService`，而不是`RunAsService`:
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+   #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
    [!code-csharp[](windows-service/sample/Program.cs?name=HandleStopStart&highlight=24)]
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
    [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=HandleStopStart&highlight=26)]
 
-   ---
-
+   * * *
 如果自定义`WebHostService`代码需要从依赖关系注入 （如记录器） 服务，以获取从`Services`属性`IWebHost`:
 
 [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=Logging&highlight=7)]
+
+## <a name="proxy-server-and-load-balancer-scenarios"></a>代理服务器和负载平衡器方案
+
+与请求来自 Internet 或公司网络进行交互和代理服务器后面或负载平衡器的服务可能需要其他配置。 有关详细信息，请参阅[配置 ASP.NET 核心以使用代理服务器和负载平衡器](xref:host-and-deploy/proxy-load-balancer)。
 
 ## <a name="acknowledgments"></a>致谢
 
