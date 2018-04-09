@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-data-model
-title: "[如何:]LINQ to SQL： 数据模型 |Microsoft 文档"
+title: '[如何:]LINQ to SQL： 数据模型 |Microsoft 文档'
 author: scottstanfield
-description: "LINQ to SQL 依赖于对象到关系模型组将映射到数据库表的类。 Visual Studio 2008 包括 visual 的 ORM 设计图面..."
+description: LINQ to SQL 依赖于对象到关系模型组将映射到数据库表的类。 Visual Studio 2008 包括 visual 的 ORM 设计图面...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/15/2007
@@ -12,21 +12,21 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-data-model
 msc.type: video
-ms.openlocfilehash: 082f74ffc66566220a6bdbcef18c448adcd6cd59
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 628cb181a4ec2cbc4ba2382501599dc89fa596e8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
-<a name="how-do-i-linq-to-sql-data-model"></a><span data-ttu-id="fcd9d-104">[如何:]LINQ to SQL： 数据模型</span><span class="sxs-lookup"><span data-stu-id="fcd9d-104">[How Do I:] LINQ to SQL: Data Model</span></span>
+<a name="how-do-i-linq-to-sql-data-model"></a><span data-ttu-id="e8dbf-104">[如何:]LINQ to SQL： 数据模型</span><span class="sxs-lookup"><span data-stu-id="e8dbf-104">[How Do I:] LINQ to SQL: Data Model</span></span>
 ====================
-<span data-ttu-id="fcd9d-105">通过[Scott Stanfield](https://github.com/scottstanfield)</span><span class="sxs-lookup"><span data-stu-id="fcd9d-105">by [Scott Stanfield](https://github.com/scottstanfield)</span></span>
+<span data-ttu-id="e8dbf-105">通过[Scott Stanfield](https://github.com/scottstanfield)</span><span class="sxs-lookup"><span data-stu-id="e8dbf-105">by [Scott Stanfield](https://github.com/scottstanfield)</span></span>
 
-<span data-ttu-id="fcd9d-106">LINQ to SQL 依赖于对象到关系模型组将映射到数据库表的类。</span><span class="sxs-lookup"><span data-stu-id="fcd9d-106">LINQ to SQL relies on an object-to-relational model set of classes that map to your database tables.</span></span> <span data-ttu-id="fcd9d-107">Visual Studio 2008 包括映射到代码的这些表 visual ORM 设计图面。</span><span class="sxs-lookup"><span data-stu-id="fcd9d-107">Visual Studio 2008 includes a visual ORM design surface that maps these tables to code.</span></span>
+<span data-ttu-id="e8dbf-106">LINQ to SQL 依赖于对象到关系模型组将映射到数据库表的类。</span><span class="sxs-lookup"><span data-stu-id="e8dbf-106">LINQ to SQL relies on an object-to-relational model set of classes that map to your database tables.</span></span> <span data-ttu-id="e8dbf-107">Visual Studio 2008 包括映射到代码的这些表 visual ORM 设计图面。</span><span class="sxs-lookup"><span data-stu-id="e8dbf-107">Visual Studio 2008 includes a visual ORM design surface that maps these tables to code.</span></span>
 
-[<span data-ttu-id="fcd9d-108">&#9654;观看视频 （4 分钟）</span><span class="sxs-lookup"><span data-stu-id="fcd9d-108">&#9654; Watch video (4 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-linq-to-sql-data-model)
+[<span data-ttu-id="e8dbf-108">&#9654;观看视频 （4 分钟）</span><span class="sxs-lookup"><span data-stu-id="e8dbf-108">&#9654; Watch video (4 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-linq-to-sql-data-model)
 
->[!div class="step-by-step"]
-<span data-ttu-id="fcd9d-109">[上一页](how-do-i-linq-to-sql-overview.md)
-[下一页](how-do-i-linq-to-sql-querying-the-database.md)</span><span class="sxs-lookup"><span data-stu-id="fcd9d-109">[Previous](how-do-i-linq-to-sql-overview.md)
+> [!div class="step-by-step"]
+> <span data-ttu-id="e8dbf-109">[上一页](how-do-i-linq-to-sql-overview.md)
+> [下一页](how-do-i-linq-to-sql-querying-the-database.md)</span><span class="sxs-lookup"><span data-stu-id="e8dbf-109">[Previous](how-do-i-linq-to-sql-overview.md)
 [Next](how-do-i-linq-to-sql-querying-the-database.md)</span></span>

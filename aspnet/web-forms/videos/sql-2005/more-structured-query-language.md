@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/sql-2005/more-structured-query-language
-title: "更结构化查询语言 |Microsoft 文档"
+title: 更结构化查询语言 |Microsoft 文档
 author: microsoft
-description: "详细的 SQL 语句类似嵌套 select 和了解存储的过程和 C# 和 VB 方法中的对应项，将发现 SQL Server 新手设计。"
+description: 详细的 SQL 语句类似嵌套 select 和了解存储的过程和 C# 和 VB 方法中的对应项，将发现 SQL Server 新手设计。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/29/2006
@@ -12,21 +12,21 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/sql-2005/more-structured-query-language
 msc.type: video
-ms.openlocfilehash: b52755e4f00ff9e9d8f22da528696a939424dd1b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3ab24feced8068762e14f18172378d8df0dbb5ba
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
-<a name="more-structured-query-language"></a><span data-ttu-id="d993a-103">更结构化的查询语言</span><span class="sxs-lookup"><span data-stu-id="d993a-103">More Structured Query Language</span></span>
+<a name="more-structured-query-language"></a><span data-ttu-id="2a906-103">更结构化的查询语言</span><span class="sxs-lookup"><span data-stu-id="2a906-103">More Structured Query Language</span></span>
 ====================
-<span data-ttu-id="d993a-104">通过[Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="d993a-104">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="2a906-104">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="2a906-104">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="d993a-105">详细的 SQL 语句类似嵌套 select 和了解存储的过程和 C# 和 VB 方法中的对应项，将发现 SQL Server 新手设计。</span><span class="sxs-lookup"><span data-stu-id="d993a-105">SQL Server beginners will discover more SQL statements like sub-select and learn stored procedures and their counterparts in C# and VB methods.</span></span>
+<span data-ttu-id="2a906-105">详细的 SQL 语句类似嵌套 select 和了解存储的过程和 C# 和 VB 方法中的对应项，将发现 SQL Server 新手设计。</span><span class="sxs-lookup"><span data-stu-id="2a906-105">SQL Server beginners will discover more SQL statements like sub-select and learn stored procedures and their counterparts in C# and VB methods.</span></span>
 
-[<span data-ttu-id="d993a-106">&#9654;观看视频 （23 分钟）</span><span class="sxs-lookup"><span data-stu-id="d993a-106">&#9654; Watch video (23 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/more-structured-query-language)
+[<span data-ttu-id="2a906-106">&#9654;观看视频 （23 分钟）</span><span class="sxs-lookup"><span data-stu-id="2a906-106">&#9654; Watch video (23 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/more-structured-query-language)
 
->[!div class="step-by-step"]
-<span data-ttu-id="d993a-107">[上一页](manipulating-database-data.md)
-[下一页](understanding-security-and-network-connectivity.md)</span><span class="sxs-lookup"><span data-stu-id="d993a-107">[Previous](manipulating-database-data.md)
+> [!div class="step-by-step"]
+> <span data-ttu-id="2a906-107">[上一页](manipulating-database-data.md)
+> [下一页](understanding-security-and-network-connectivity.md)</span><span class="sxs-lookup"><span data-stu-id="2a906-107">[Previous](manipulating-database-data.md)
 [Next](understanding-security-and-network-connectivity.md)</span></span>

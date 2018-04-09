@@ -1,0 +1,222 @@
+---
+title: 配置 ASP.NET 核心以使用代理服务器和负载平衡器
+author: guardrex
+description: 了解有关配置的代理服务器和负载平衡器，通常会掩盖重要请求信息后面托管的应用程序。
+manager: wpickett
+ms.author: riande
+ms.custom: mvc
+ms.date: 03/26/2018
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: host-and-deploy/proxy-load-balancer
+ms.openlocfilehash: b153a7406ae1b31a2aa453135c6bd0e5ce0b2997
+ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/30/2018
+---
+# <a name="configure-aspnet-core-to-work-with-proxy-servers-and-load-balancers"></a><span data-ttu-id="1a190-103">配置 ASP.NET 核心以使用代理服务器和负载平衡器</span><span class="sxs-lookup"><span data-stu-id="1a190-103">Configure ASP.NET Core to work with proxy servers and load balancers</span></span>
+
+<span data-ttu-id="1a190-104">通过[Luke Latham](https://github.com/guardrex)和[Chris 跨](https://github.com/Tratcher)</span><span class="sxs-lookup"><span data-stu-id="1a190-104">By [Luke Latham](https://github.com/guardrex) and [Chris Ross](https://github.com/Tratcher)</span></span>
+
+<span data-ttu-id="1a190-105">对于 ASP.NET Core 推荐的配置，在使用 IIS/ASP.NET 核心模块、 Nginx 或 Apache 承载应用程序。</span><span class="sxs-lookup"><span data-stu-id="1a190-105">In the recommended configuration for ASP.NET Core, the app is hosted using IIS/ASP.NET Core Module, Nginx, or Apache.</span></span> <span data-ttu-id="1a190-106">代理服务器、 负载平衡器和其他网络设备中通常在它到达应用程序之前遮盖有关请求的信息：</span><span class="sxs-lookup"><span data-stu-id="1a190-106">Proxy servers, load balancers, and other network appliances often obscure information about the request before it reaches the app:</span></span>
+
+* <span data-ttu-id="1a190-107">当通过 HTTP HTTPS 请求代理时，原始的方案 (HTTPS) 将丢失，并且必须转发标头中。</span><span class="sxs-lookup"><span data-stu-id="1a190-107">When HTTPS requests are proxied over HTTP, the original scheme (HTTPS) is lost and must be forwarded in a header.</span></span>
+* <span data-ttu-id="1a190-108">因为应用程序收到请求时从该代理并不是其源 true 在 Internet 或公司网络上的，还必须在头转发发起的客户端 IP 地址。</span><span class="sxs-lookup"><span data-stu-id="1a190-108">Because an app receives a request from the proxy and not its true source on the Internet or corporate network, the originating client IP address must also be forwarded in a header.</span></span>
+
+<span data-ttu-id="1a190-109">此信息可能会在中处理的请求，例如重定向、 身份验证、 链接生成、 策略评估和客户端 geoloation 十分重要。</span><span class="sxs-lookup"><span data-stu-id="1a190-109">This information may be important in request processing, for example in redirects, authentication, link generation, policy evaluation, and client geoloation.</span></span>
+
+## <a name="forwarded-headers"></a><span data-ttu-id="1a190-110">转发的标头</span><span class="sxs-lookup"><span data-stu-id="1a190-110">Forwarded headers</span></span>
+
+<span data-ttu-id="1a190-111">按照约定，代理将在 HTTP 头中的信息转发。</span><span class="sxs-lookup"><span data-stu-id="1a190-111">By convention, proxies forward information in HTTP headers.</span></span>
+
+| <span data-ttu-id="1a190-112">Header</span><span class="sxs-lookup"><span data-stu-id="1a190-112">Header</span></span> | <span data-ttu-id="1a190-113">描述</span><span class="sxs-lookup"><span data-stu-id="1a190-113">Description</span></span> |
+| ------ | ----------- |
+| <span data-ttu-id="1a190-114">X-Forwarded-For</span><span class="sxs-lookup"><span data-stu-id="1a190-114">X-Forwarded-For</span></span> | <span data-ttu-id="1a190-115">包含有关客户端启动的请求和后续代理的代理链中的信息。</span><span class="sxs-lookup"><span data-stu-id="1a190-115">Holds information about the client that initiated the request and subsequent proxies in a chain of proxies.</span></span> <span data-ttu-id="1a190-116">此参数可能包含 IP 地址 （和 （可选） 端口号）。</span><span class="sxs-lookup"><span data-stu-id="1a190-116">This parameter may contain IP addresses (and, optionally, port numbers).</span></span> <span data-ttu-id="1a190-117">代理服务器链中的第一个参数指示客户端第一次发出请求。</span><span class="sxs-lookup"><span data-stu-id="1a190-117">In a chain of proxy servers, the first parameter indicates the client where the request was first made.</span></span> <span data-ttu-id="1a190-118">后续代理标识符遵循。</span><span class="sxs-lookup"><span data-stu-id="1a190-118">Subsequent proxy identifiers follow.</span></span> <span data-ttu-id="1a190-119">链中的最后一个代理不在列表中的参数。</span><span class="sxs-lookup"><span data-stu-id="1a190-119">The last proxy in the chain isn't in the list of parameters.</span></span> <span data-ttu-id="1a190-120">最后一个代理服务器的 IP 地址和 （可选） 端口号时，都可用作在传输层的远程 IP 地址。</span><span class="sxs-lookup"><span data-stu-id="1a190-120">The last proxy's IP address, and optionally a port number, are available as the remote IP address at the transport layer.</span></span> |
+| <span data-ttu-id="1a190-121">X-Forwarded-Proto</span><span class="sxs-lookup"><span data-stu-id="1a190-121">X-Forwarded-Proto</span></span> | <span data-ttu-id="1a190-122">原始的方案 (HTTP/HTTPS) 的值。</span><span class="sxs-lookup"><span data-stu-id="1a190-122">The value of the originating scheme (HTTP/HTTPS).</span></span> <span data-ttu-id="1a190-123">如果请求具有遍历多个代理服务器，则这也可能的方案的列表。</span><span class="sxs-lookup"><span data-stu-id="1a190-123">The value may also be a list of schemes if the request has traversed multiple proxies.</span></span> |
+| <span data-ttu-id="1a190-124">X-Forwarded-Host</span><span class="sxs-lookup"><span data-stu-id="1a190-124">X-Forwarded-Host</span></span> | <span data-ttu-id="1a190-125">主机标头字段的原始值。</span><span class="sxs-lookup"><span data-stu-id="1a190-125">The original value of the Host header field.</span></span> <span data-ttu-id="1a190-126">通常情况下，代理无需修改的主机标头。</span><span class="sxs-lookup"><span data-stu-id="1a190-126">Usually, proxies don't modify the Host header.</span></span> <span data-ttu-id="1a190-127">请参阅[Microsoft 安全公告 CVE-2018年-0787年](https://github.com/aspnet/Announcements/issues/295)有关一个提升特权漏洞，它会影响的系统代理不验证其中或 restict 主机为已知良好的值的标头信息。</span><span class="sxs-lookup"><span data-stu-id="1a190-127">See [Microsoft Security Advisory CVE-2018-0787](https://github.com/aspnet/Announcements/issues/295) for information on an elevation-of-privileges vulnerability that affects systems where the proxy doesn't validate or restict Host headers to known good values.</span></span> |
+
+<span data-ttu-id="1a190-128">转发标头中间件，从[Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/)打包、 读取这些标头和关联的字段中填充上[HttpContext](/dotnet/api/microsoft.aspnetcore.http.httpcontext)。</span><span class="sxs-lookup"><span data-stu-id="1a190-128">The Forwarded Headers Middleware, from the [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) package, reads these headers and fills in the associated fields on [HttpContext](/dotnet/api/microsoft.aspnetcore.http.httpcontext).</span></span> 
+
+<span data-ttu-id="1a190-129">中间件更新中：</span><span class="sxs-lookup"><span data-stu-id="1a190-129">The middleware updates:</span></span>
+
+* <span data-ttu-id="1a190-130">[HttpContext.Connection.RemoteIpAddress](/dotnet/api/microsoft.aspnetcore.http.connectioninfo.remoteipaddress) &ndash;使用设置`X-Forwarded-For`标头值。</span><span class="sxs-lookup"><span data-stu-id="1a190-130">[HttpContext.Connection.RemoteIpAddress](/dotnet/api/microsoft.aspnetcore.http.connectioninfo.remoteipaddress) &ndash; Set using the `X-Forwarded-For` header value.</span></span> <span data-ttu-id="1a190-131">其他设置会影响该中间件的设置如何`RemoteIpAddress`。</span><span class="sxs-lookup"><span data-stu-id="1a190-131">Additional settings influence how the middleware sets `RemoteIpAddress`.</span></span> <span data-ttu-id="1a190-132">有关详细信息，请参阅[转发标头中间件选项](#forwarded-headers-middleware-options)。</span><span class="sxs-lookup"><span data-stu-id="1a190-132">For details, see the [Forwarded Headers Middleware options](#forwarded-headers-middleware-options).</span></span>
+* <span data-ttu-id="1a190-133">[HttpContext.Request.Scheme](/dotnet/api/microsoft.aspnetcore.http.httprequest.scheme) &ndash;使用设置`X-Forwarded-Proto`标头值。</span><span class="sxs-lookup"><span data-stu-id="1a190-133">[HttpContext.Request.Scheme](/dotnet/api/microsoft.aspnetcore.http.httprequest.scheme) &ndash; Set using the `X-Forwarded-Proto` header value.</span></span>
+* <span data-ttu-id="1a190-134">[HttpContext.Request.Host](/dotnet/api/microsoft.aspnetcore.http.httprequest.host) &ndash;使用设置`X-Forwarded-Host`标头值。</span><span class="sxs-lookup"><span data-stu-id="1a190-134">[HttpContext.Request.Host](/dotnet/api/microsoft.aspnetcore.http.httprequest.host) &ndash; Set using the `X-Forwarded-Host` header value.</span></span>
+
+<span data-ttu-id="1a190-135">请注意，并非所有网络设备都添加`X-Forwarded-For`和`X-Forwarded-Proto`标头，而无需其他配置。</span><span class="sxs-lookup"><span data-stu-id="1a190-135">Note that not all network appliances add the `X-Forwarded-For` and `X-Forwarded-Proto` headers without additional configuration.</span></span> <span data-ttu-id="1a190-136">如果代理的请求不包含这些标头，在达到应用程序时，请查阅设备制造商提供的指导。</span><span class="sxs-lookup"><span data-stu-id="1a190-136">Consult your appliance manufacturer's guidance if the proxied requests don't contain these headers when they reach the app.</span></span>
+
+<span data-ttu-id="1a190-137">转发标头中间件[默认设置](#forwarded-headers-middleware-options)可以配置。</span><span class="sxs-lookup"><span data-stu-id="1a190-137">Forwarded Headers Middleware [default settings](#forwarded-headers-middleware-options) can be configured.</span></span> <span data-ttu-id="1a190-138">默认设置如下：</span><span class="sxs-lookup"><span data-stu-id="1a190-138">The default settings are:</span></span>
+
+* <span data-ttu-id="1a190-139">只有*一个代理*应用程序和请求的源之间。</span><span class="sxs-lookup"><span data-stu-id="1a190-139">There is only *one proxy* between the app and the source of the requests.</span></span>
+* <span data-ttu-id="1a190-140">已知的代理的配置和已知网络仅环回地址。</span><span class="sxs-lookup"><span data-stu-id="1a190-140">Only loopback addresses are configured for known proxies and known networks.</span></span>
+
+## <a name="iisiis-express-and-aspnet-core-module"></a><span data-ttu-id="1a190-141">IIS/IIS Express 和 ASP.NET Core 模块</span><span class="sxs-lookup"><span data-stu-id="1a190-141">IIS/IIS Express and ASP.NET Core Module</span></span>
+
+<span data-ttu-id="1a190-142">IIS 和 ASP.NET 核心模块后面运行应用时，默认情况下，通过 IIS 集成中间件启用转发标头中间件。</span><span class="sxs-lookup"><span data-stu-id="1a190-142">Forwarded Headers Middleware is enabled by default by IIS Integration Middleware when the app is run behind IIS and the ASP.NET Core Module.</span></span> <span data-ttu-id="1a190-143">转发的标头中间件激活到 ASP.NET 核心模块由于信任问题与转发标头一起运行第一个与特定的受限配置中间件管道中 (例如， [IP 欺骗](https://www.iplocation.net/ip-spoofing))。</span><span class="sxs-lookup"><span data-stu-id="1a190-143">Forwarded Headers Middleware is activated to run first in the middleware pipeline with a restricted configuration specific to the ASP.NET Core Module due to trust concerns with forwarded headers (for example, [IP spoofing](https://www.iplocation.net/ip-spoofing)).</span></span> <span data-ttu-id="1a190-144">该中间件配置为转发`X-Forwarded-For`和`X-Forwarded-Proto`标头且被限制到单个 localhost 代理。</span><span class="sxs-lookup"><span data-stu-id="1a190-144">The middleware is configured to forward the `X-Forwarded-For` and `X-Forwarded-Proto` headers and is restricted to a single localhost proxy.</span></span> <span data-ttu-id="1a190-145">如果不需要附加配置，请参阅[转发标头中间件选项](#forwarded-headers-middleware-options)。</span><span class="sxs-lookup"><span data-stu-id="1a190-145">If additional configuration is required, see the [Forwarded Headers Middleware options](#forwarded-headers-middleware-options).</span></span>
+
+## <a name="other-proxy-server-and-load-balancer-scenarios"></a><span data-ttu-id="1a190-146">其他代理服务器和负载平衡器方案</span><span class="sxs-lookup"><span data-stu-id="1a190-146">Other proxy server and load balancer scenarios</span></span>
+
+<span data-ttu-id="1a190-147">除了使用 IIS 集成中间件，默认情况下不启用转发标头中间件。</span><span class="sxs-lookup"><span data-stu-id="1a190-147">Outside of using IIS Integration Middleware, Forwarded Headers Middleware isn't enabled by default.</span></span> <span data-ttu-id="1a190-148">必须为转发过程标头包含应用程序启用转发标头中间件[UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders)。</span><span class="sxs-lookup"><span data-stu-id="1a190-148">Forwarded Headers Middleware must be enabled for an app to process forwarded headers with [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders).</span></span> <span data-ttu-id="1a190-149">如果未启用该中间件后[ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)到中间件，默认值指定[ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders)是[ForwardedHeaders.None](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders).</span><span class="sxs-lookup"><span data-stu-id="1a190-149">After enabling the middleware if no [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) are specified to the middleware, the default [ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) are [ForwardedHeaders.None](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders).</span></span>
+
+<span data-ttu-id="1a190-150">配置与中间件[ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)转发`X-Forwarded-For`和`X-Forwarded-Proto`中的标头`Startup.ConfigureServices`。</span><span class="sxs-lookup"><span data-stu-id="1a190-150">Configure the middleware with [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) to forward the `X-Forwarded-For` and `X-Forwarded-Proto` headers in `Startup.ConfigureServices`.</span></span> <span data-ttu-id="1a190-151">调用[UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders)中的方法`Startup.Configure`在调用其他中间件之前：</span><span class="sxs-lookup"><span data-stu-id="1a190-151">Invoke the [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) method in `Startup.Configure` before calling other middleware:</span></span>
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddMvc();
+    
+    services.Configure<ForwardedHeadersOptions>(options =>
+    {
+        options.ForwardedHeaders = 
+            ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+    });
+}
+
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    app.UseForwardedHeaders();
+
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+    else
+    {
+        app.UseExceptionHandler("/Home/Error");
+    }
+
+    app.UseStaticFiles();
+    // In ASP.NET Core 1.x, replace the following line with: app.UseIdentity();
+    app.UseAuthentication();
+    app.UseMvc();
+}
+```
+
+> [!NOTE]
+> <span data-ttu-id="1a190-152">如果没有[ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)中指定`Startup.ConfigureServices`或直接向与该扩展方法[UseForwardedHeaders （IApplicationBuilder，ForwardedHeadersOptions）](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_ForwardedHeadersExtensions_UseForwardedHeaders_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Builder_ForwardedHeadersOptions_)，默认值标头以转发[ForwardedHeaders.None](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders)。</span><span class="sxs-lookup"><span data-stu-id="1a190-152">If no [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) are specified in `Startup.ConfigureServices` or directly to the extension method with [UseForwardedHeaders(IApplicationBuilder, ForwardedHeadersOptions)](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_ForwardedHeadersExtensions_UseForwardedHeaders_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Builder_ForwardedHeadersOptions_), the default headers to forward are [ForwardedHeaders.None](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders).</span></span> <span data-ttu-id="1a190-153">[ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders)属性必须使用要转发的标头进行配置。</span><span class="sxs-lookup"><span data-stu-id="1a190-153">The [ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) property must be configured with the headers to forward.</span></span>
+
+## <a name="forwarded-headers-middleware-options"></a><span data-ttu-id="1a190-154">转发的标头中间件选项</span><span class="sxs-lookup"><span data-stu-id="1a190-154">Forwarded Headers Middleware options</span></span>
+
+<span data-ttu-id="1a190-155">[ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)控制转发标头中间件的行为：</span><span class="sxs-lookup"><span data-stu-id="1a190-155">[ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) control the behavior of the Forwarded Headers Middleware:</span></span>
+
+```csharp
+services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardLimit = 2;
+    options.KnownProxies.Add(IPAddress.Parse("127.0.10.1"));
+    options.ForwardedForHeaderName = "X-Forwarded-For-Custom-Header-Name";
+});
+```
+
+| <span data-ttu-id="1a190-156">选项</span><span class="sxs-lookup"><span data-stu-id="1a190-156">Option</span></span> | <span data-ttu-id="1a190-157">描述</span><span class="sxs-lookup"><span data-stu-id="1a190-157">Description</span></span> |
+| ------ | ----------- |
+| [<span data-ttu-id="1a190-158">ForwardedForHeaderName</span><span class="sxs-lookup"><span data-stu-id="1a190-158">ForwardedForHeaderName</span></span>](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedforheadername) | <span data-ttu-id="1a190-159">使用而不是指定的此属性指定的标头[ForwardedHeadersDefaults.XForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedforheadername)。</span><span class="sxs-lookup"><span data-stu-id="1a190-159">Use the header specified by this property instead of the one specified by [ForwardedHeadersDefaults.XForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedforheadername).</span></span><br><br><span data-ttu-id="1a190-160">默认值为 `X-Forwarded-For`。</span><span class="sxs-lookup"><span data-stu-id="1a190-160">The default is `X-Forwarded-For`.</span></span> |
+| [<span data-ttu-id="1a190-161">ForwardedHeaders</span><span class="sxs-lookup"><span data-stu-id="1a190-161">ForwardedHeaders</span></span>](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) | <span data-ttu-id="1a190-162">标识应处理的转发器。</span><span class="sxs-lookup"><span data-stu-id="1a190-162">Identifies which forwarders should be processed.</span></span> <span data-ttu-id="1a190-163">请参阅[ForwardedHeaders 枚举](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders)有关应用的字段的列表。</span><span class="sxs-lookup"><span data-stu-id="1a190-163">See the [ForwardedHeaders Enum](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders) for the list of fields that apply.</span></span> <span data-ttu-id="1a190-164">分配给此属性的典型值为<code>ForwardedHeaders.XForwardedFor &#124; ForwardedHeaders.XForwardedProto</code>。</span><span class="sxs-lookup"><span data-stu-id="1a190-164">Typical values assigned to this property are <code>ForwardedHeaders.XForwardedFor &#124; ForwardedHeaders.XForwardedProto</code>.</span></span><br><br><span data-ttu-id="1a190-165">默认值是[ForwardedHeaders.None](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders)。</span><span class="sxs-lookup"><span data-stu-id="1a190-165">The default value is [ForwardedHeaders.None](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders).</span></span> |
+| [<span data-ttu-id="1a190-166">ForwardedHostHeaderName</span><span class="sxs-lookup"><span data-stu-id="1a190-166">ForwardedHostHeaderName</span></span>](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedhostheadername) | <span data-ttu-id="1a190-167">使用而不是指定的此属性指定的标头[ForwardedHeadersDefaults.XForwardedHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedhostheadername)。</span><span class="sxs-lookup"><span data-stu-id="1a190-167">Use the header specified by this property instead of the one specified by [ForwardedHeadersDefaults.XForwardedHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedhostheadername).</span></span><br><br><span data-ttu-id="1a190-168">默认值为 `X-Forwarded-Host`。</span><span class="sxs-lookup"><span data-stu-id="1a190-168">The default is `X-Forwarded-Host`.</span></span> |
+| [<span data-ttu-id="1a190-169">ForwardedProtoHeaderName</span><span class="sxs-lookup"><span data-stu-id="1a190-169">ForwardedProtoHeaderName</span></span>](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedprotoheadername) | <span data-ttu-id="1a190-170">使用而不是指定的此属性指定的标头[ForwardedHeadersDefaults.XForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedprotoheadername)。</span><span class="sxs-lookup"><span data-stu-id="1a190-170">Use the header specified by this property instead of the one specified by [ForwardedHeadersDefaults.XForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedprotoheadername).</span></span><br><br><span data-ttu-id="1a190-171">默认值为 `X-Forwarded-Proto`。</span><span class="sxs-lookup"><span data-stu-id="1a190-171">The default is `X-Forwarded-Proto`.</span></span> |
+| [<span data-ttu-id="1a190-172">ForwardLimit</span><span class="sxs-lookup"><span data-stu-id="1a190-172">ForwardLimit</span></span>](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardlimit) | <span data-ttu-id="1a190-173">限制在处理标头中的项数。</span><span class="sxs-lookup"><span data-stu-id="1a190-173">Limits the number of entries in the headers that are processed.</span></span> <span data-ttu-id="1a190-174">设置为`null`禁用了限制，但这只应该在`KnownProxies`或`KnownNetworks`配置。</span><span class="sxs-lookup"><span data-stu-id="1a190-174">Set to `null` to disable the limit, but this should only be done if `KnownProxies` or `KnownNetworks` are configured.</span></span><br><br><span data-ttu-id="1a190-175">默认值为 1。</span><span class="sxs-lookup"><span data-stu-id="1a190-175">The default is 1.</span></span> |
+| [<span data-ttu-id="1a190-176">KnownNetworks</span><span class="sxs-lookup"><span data-stu-id="1a190-176">KnownNetworks</span></span>](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.knownnetworks) | <span data-ttu-id="1a190-177">地址范围的已知的代理，以接受从转发标头。</span><span class="sxs-lookup"><span data-stu-id="1a190-177">Address ranges of known proxies to accept forwarded headers from.</span></span> <span data-ttu-id="1a190-178">提供使用无类别域际路由选择 (CIDR) 表示法的 IP 范围。</span><span class="sxs-lookup"><span data-stu-id="1a190-178">Provide IP ranges using Classless Interdomain Routing (CIDR) notation.</span></span><br><br><span data-ttu-id="1a190-179">默认值是[IList](/dotnet/api/system.collections.generic.ilist-1)\<[ip 网络](/dotnet/api/microsoft.aspnetcore.httpoverrides.ipnetwork)> 包含为单个条目`IPAddress.Loopback`。</span><span class="sxs-lookup"><span data-stu-id="1a190-179">The default is an [IList](/dotnet/api/system.collections.generic.ilist-1)\<[IPNetwork](/dotnet/api/microsoft.aspnetcore.httpoverrides.ipnetwork)> containing a single entry for `IPAddress.Loopback`.</span></span> |
+| [<span data-ttu-id="1a190-180">KnownProxies</span><span class="sxs-lookup"><span data-stu-id="1a190-180">KnownProxies</span></span>](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.knownproxies) | <span data-ttu-id="1a190-181">已知的代理，以接受从转发标头的地址。</span><span class="sxs-lookup"><span data-stu-id="1a190-181">Addresses of known proxies to accept forwarded headers from.</span></span> <span data-ttu-id="1a190-182">使用`KnownProxies`以指定确切的 IP 地址匹配。</span><span class="sxs-lookup"><span data-stu-id="1a190-182">Use `KnownProxies` to specify exact IP address matches.</span></span><br><br><span data-ttu-id="1a190-183">默认值是[IList](/dotnet/api/system.collections.generic.ilist-1)\<[IPAddress](/dotnet/api/system.net.ipaddress)> 包含为单个条目`IPAddress.IPv6Loopback`。</span><span class="sxs-lookup"><span data-stu-id="1a190-183">The default is an [IList](/dotnet/api/system.collections.generic.ilist-1)\<[IPAddress](/dotnet/api/system.net.ipaddress)> containing a single entry for `IPAddress.IPv6Loopback`.</span></span> |
+| [<span data-ttu-id="1a190-184">OriginalForHeaderName</span><span class="sxs-lookup"><span data-stu-id="1a190-184">OriginalForHeaderName</span></span>](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalforheadername) | <span data-ttu-id="1a190-185">使用而不是指定的此属性指定的标头[ForwardedHeadersDefaults.XOriginalForHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalforheadername)。</span><span class="sxs-lookup"><span data-stu-id="1a190-185">Use the header specified by this property instead of the one specified by [ForwardedHeadersDefaults.XOriginalForHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalforheadername).</span></span><br><br><span data-ttu-id="1a190-186">默认值为 `X-Original-For`。</span><span class="sxs-lookup"><span data-stu-id="1a190-186">The default is `X-Original-For`.</span></span> |
+| [<span data-ttu-id="1a190-187">OriginalHostHeaderName</span><span class="sxs-lookup"><span data-stu-id="1a190-187">OriginalHostHeaderName</span></span>](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalhostheadername) | <span data-ttu-id="1a190-188">使用而不是指定的此属性指定的标头[ForwardedHeadersDefaults.XOriginalHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalhostheadername)。</span><span class="sxs-lookup"><span data-stu-id="1a190-188">Use the header specified by this property instead of the one specified by [ForwardedHeadersDefaults.XOriginalHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalhostheadername).</span></span><br><br><span data-ttu-id="1a190-189">默认值为 `X-Original-Host`。</span><span class="sxs-lookup"><span data-stu-id="1a190-189">The default is `X-Original-Host`.</span></span> |
+| [<span data-ttu-id="1a190-190">OriginalProtoHeaderName</span><span class="sxs-lookup"><span data-stu-id="1a190-190">OriginalProtoHeaderName</span></span>](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalprotoheadername) | <span data-ttu-id="1a190-191">使用而不是指定的此属性指定的标头[ForwardedHeadersDefaults.XOriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalprotoheadername)。</span><span class="sxs-lookup"><span data-stu-id="1a190-191">Use the header specified by this property instead of the one specified by [ForwardedHeadersDefaults.XOriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalprotoheadername).</span></span><br><br><span data-ttu-id="1a190-192">默认值为 `X-Original-Proto`。</span><span class="sxs-lookup"><span data-stu-id="1a190-192">The default is `X-Original-Proto`.</span></span> |
+| [<span data-ttu-id="1a190-193">RequireHeaderSymmetry</span><span class="sxs-lookup"><span data-stu-id="1a190-193">RequireHeaderSymmetry</span></span>](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.requireheadersymmetry) | <span data-ttu-id="1a190-194">要求的数量的标头的值进行之间同步[ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders)正在处理。</span><span class="sxs-lookup"><span data-stu-id="1a190-194">Require the number of header values to be in sync between the [ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) being processed.</span></span><br><br><span data-ttu-id="1a190-195">ASP.NET 核心 1.x 是中的默认值`true`。</span><span class="sxs-lookup"><span data-stu-id="1a190-195">The default in ASP.NET Core 1.x is `true`.</span></span> <span data-ttu-id="1a190-196">默认值在 ASP.NET 核心 2.0 或更高版本是`false`。</span><span class="sxs-lookup"><span data-stu-id="1a190-196">The default in ASP.NET Core 2.0 or later is `false`.</span></span> |
+
+## <a name="scenarios-and-use-cases"></a><span data-ttu-id="1a190-197">方案和用例</span><span class="sxs-lookup"><span data-stu-id="1a190-197">Scenarios and use cases</span></span>
+
+### <a name="when-it-isnt-possible-to-add-forwarded-headers-and-all-requests-are-secure"></a><span data-ttu-id="1a190-198">当无法添加转发标头和所有请求并安全</span><span class="sxs-lookup"><span data-stu-id="1a190-198">When it isn't possible to add forwarded headers and all requests are secure</span></span>
+
+<span data-ttu-id="1a190-199">在某些情况下，它可能不能将转发的头添加到代理到应用程序的请求。</span><span class="sxs-lookup"><span data-stu-id="1a190-199">In some cases, it might not be possible to add forwarded headers to the requests proxied to the app.</span></span> <span data-ttu-id="1a190-200">如果代理强制实施所有的公共外部请求 HTTPS，方案可以手动设置`Startup.Configure`在使用任何类型的中间件之前：</span><span class="sxs-lookup"><span data-stu-id="1a190-200">If the proxy is enforcing that all public external requests are HTTPS, the scheme can be manually set in `Startup.Configure` before using any type of middleware:</span></span>
+
+```csharp
+app.Use((context, next) =>
+{
+    context.Request.Scheme = "https";
+    return next();
+});
+```
+
+<span data-ttu-id="1a190-201">此代码可以使用环境变量或在开发或过渡环境中的其他配置设置来禁用。</span><span class="sxs-lookup"><span data-stu-id="1a190-201">This code can be disabled with an environment variable or other configuration setting in a development or staging environment.</span></span>
+
+### <a name="deal-with-path-base-and-proxies-that-change-the-request-path"></a><span data-ttu-id="1a190-202">处理基路径和更改请求路径的代理</span><span class="sxs-lookup"><span data-stu-id="1a190-202">Deal with path base and proxies that change the request path</span></span>
+
+<span data-ttu-id="1a190-203">某些代理传递路径不变，但与应用，以便路由应删除的基路径可正常工作。</span><span class="sxs-lookup"><span data-stu-id="1a190-203">Some proxies pass the path intact but with an app base path that should be removed so that routing works properly.</span></span> <span data-ttu-id="1a190-204">[UsePathBaseExtensions.UsePathBase](/dotnet/api/microsoft.aspnetcore.builder.usepathbaseextensions.usepathbase)中间件将拆分到路径[HttpRequest.Path](/dotnet/api/microsoft.aspnetcore.http.httprequest.path)和到的应用程序基路径[HttpRequest.PathBase](/dotnet/api/microsoft.aspnetcore.http.httprequest.pathbase)。</span><span class="sxs-lookup"><span data-stu-id="1a190-204">[UsePathBaseExtensions.UsePathBase](/dotnet/api/microsoft.aspnetcore.builder.usepathbaseextensions.usepathbase) middleware splits the path into [HttpRequest.Path](/dotnet/api/microsoft.aspnetcore.http.httprequest.path) and the app base path into [HttpRequest.PathBase](/dotnet/api/microsoft.aspnetcore.http.httprequest.pathbase).</span></span>
+
+<span data-ttu-id="1a190-205">如果`/foo`作为传递代理路径是应用程序基路径`/foo/api/1`，中间件集`Request.PathBase`到`/foo`和`Request.Path`到`/api/1`使用以下命令：</span><span class="sxs-lookup"><span data-stu-id="1a190-205">If `/foo` is the app base path for a proxy path passed as `/foo/api/1`, the middleware sets `Request.PathBase` to `/foo` and `Request.Path` to `/api/1` with the following command:</span></span>
+
+```csharp
+app.UsePathBase("/foo");
+```
+
+<span data-ttu-id="1a190-206">原始路径和基路径都将重新应用时按相反的顺序再次调用该中间件。</span><span class="sxs-lookup"><span data-stu-id="1a190-206">The original path and path base are reapplied when the middleware is called again in reverse.</span></span> <span data-ttu-id="1a190-207">中间件订单处理的详细信息，请参阅[中间件](xref:fundamentals/middleware/index)。</span><span class="sxs-lookup"><span data-stu-id="1a190-207">For more information on middleware order processing, see [Middleware](xref:fundamentals/middleware/index).</span></span>
+
+<span data-ttu-id="1a190-208">如果代理修剪路径 (例如，转发`/foo/api/1`到`/api/1`)，修补程序将重定向，并通过设置请求的链接[PathBase](/dotnet/api/microsoft.aspnetcore.http.httprequest.pathbase)属性：</span><span class="sxs-lookup"><span data-stu-id="1a190-208">If the proxy trims the path (for example, forwarding `/foo/api/1` to `/api/1`), fix redirects and links by setting the request's [PathBase](/dotnet/api/microsoft.aspnetcore.http.httprequest.pathbase) property:</span></span>
+
+```csharp
+app.Use((context, next) =>
+{
+    context.Request.PathBase = new PathString("/foo");
+    return next();
+});
+```
+
+<span data-ttu-id="1a190-209">如果代理添加路径数据，放弃路径重定向和链接使用的进行修复的一部分[StartsWithSegments （PathString，PathString）](/dotnet/api/microsoft.aspnetcore.http.pathstring.startswithsegments#Microsoft_AspNetCore_Http_PathString_StartsWithSegments_Microsoft_AspNetCore_Http_PathString_Microsoft_AspNetCore_Http_PathString__)并将分配给[路径](/dotnet/api/microsoft.aspnetcore.http.httprequest.path)属性：</span><span class="sxs-lookup"><span data-stu-id="1a190-209">If the proxy is adding path data, discard part of the path to fix redirects and links by using [StartsWithSegments(PathString, PathString)](/dotnet/api/microsoft.aspnetcore.http.pathstring.startswithsegments#Microsoft_AspNetCore_Http_PathString_StartsWithSegments_Microsoft_AspNetCore_Http_PathString_Microsoft_AspNetCore_Http_PathString__) and assigning to the [Path](/dotnet/api/microsoft.aspnetcore.http.httprequest.path) property:</span></span>
+
+```csharp
+app.Use((context, next) =>
+{
+    if (context.Request.Path.StartsWithSegments("/foo", out var remainder))
+    {
+        context.Request.Path = remainder;
+    }
+
+    return next();
+});
+```
+
+## <a name="troubleshoot"></a><span data-ttu-id="1a190-210">疑难解答</span><span class="sxs-lookup"><span data-stu-id="1a190-210">Troubleshoot</span></span>
+
+<span data-ttu-id="1a190-211">标头不转发按预期方式，当启用[日志记录](xref:fundamentals/logging/index)。</span><span class="sxs-lookup"><span data-stu-id="1a190-211">When headers aren't forwarded as expected, enable [logging](xref:fundamentals/logging/index).</span></span> <span data-ttu-id="1a190-212">如果日志未提供足够的信息来解决该问题，枚举服务器收到的请求标头。</span><span class="sxs-lookup"><span data-stu-id="1a190-212">If the logs don't provide sufficient information to troubleshoot the problem, enumerate the request headers received by the server.</span></span> <span data-ttu-id="1a190-213">可以对应用程序响应使用内联中间件编写标头：</span><span class="sxs-lookup"><span data-stu-id="1a190-213">The headers can be written to an app response using inline middleware:</span></span>
+
+```csharp
+public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory)
+{
+    app.Run(async (context) =>
+    {
+        context.Response.ContentType = "text/plain";
+
+        // Request method, scheme, and path
+        await context.Response.WriteAsync(
+            $"Request Method: {context.Request.Method}{Environment.NewLine}");
+        await context.Response.WriteAsync(
+            $"Request Scheme: {context.Request.Scheme}{Environment.NewLine}");
+        await context.Response.WriteAsync(
+            $"Request Path: {context.Request.Path}{Environment.NewLine}");
+
+        // Headers
+        await context.Response.WriteAsync($"Request Headers:{Environment.NewLine}");
+
+        foreach (var header in context.Request.Headers)
+        {
+            await context.Response.WriteAsync($"{header.Key}: " +
+                $"{header.Value}{Environment.NewLine}");
+        }
+
+        await context.Response.WriteAsync(Environment.NewLine);
+
+        // Connection: RemoteIp
+        await context.Response.WriteAsync(
+            $"Request RemoteIp: {context.Connection.RemoteIpAddress}");
+    }
+}
+```
+
+<span data-ttu-id="1a190-214">确保转发-X \* 预期值与服务器收到标头。</span><span class="sxs-lookup"><span data-stu-id="1a190-214">Ensure that the X-Forwarded-\* headers are received by the server with the expected values.</span></span> <span data-ttu-id="1a190-215">如果给定的标头中有多个值，请注意按相反的顺序从右到左的转发标头中间件进程标头。</span><span class="sxs-lookup"><span data-stu-id="1a190-215">If there are multiple values in a given header, note Forwarded Headers Middleware processes headers in reverse order from right to left.</span></span>
+
+<span data-ttu-id="1a190-216">请求的原始远程 IP 必须匹配中的条目`KnownProxies`或`KnownNetworks`列出 X-转发-对于处理之前。</span><span class="sxs-lookup"><span data-stu-id="1a190-216">The request's original remote IP must match an entry in the `KnownProxies` or `KnownNetworks` lists before X-Forwarded-For is processed.</span></span> <span data-ttu-id="1a190-217">这就限制了标头欺骗不接受来自不受信任代理转发器。</span><span class="sxs-lookup"><span data-stu-id="1a190-217">This limits header spoofing by not accepting forwarders from untrusted proxies.</span></span>
+
+## <a name="additional-resources"></a><span data-ttu-id="1a190-218">其他资源</span><span class="sxs-lookup"><span data-stu-id="1a190-218">Additional resources</span></span>
+
+* [<span data-ttu-id="1a190-219">Microsoft 安全公告 CVE-2018年-0787: ASP.NET Core 提升特权漏洞</span><span class="sxs-lookup"><span data-stu-id="1a190-219">Microsoft Security Advisory CVE-2018-0787: ASP.NET Core Elevation Of Privilege Vulnerability</span></span>](https://github.com/aspnet/Announcements/issues/295)

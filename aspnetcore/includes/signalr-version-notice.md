@@ -1,0 +1,2 @@
+> [!NOTE]
+> <span data-ttu-id="80f4e-101">本文档详细介绍 ASP.NET 核心 SignalR 的最新版本。</span><span class="sxs-lookup"><span data-stu-id="80f4e-101">This document details the latest version of ASP.NET Core SignalR.</span></span> <span data-ttu-id="80f4e-102">请参阅[SignalR 1.x 文档](/aspnet/signalr/)ASP.NET Framework 版本。</span><span class="sxs-lookup"><span data-stu-id="80f4e-102">See the [SignalR 1.x documentation](/aspnet/signalr/) for the ASP.NET Framework version.</span></span>
