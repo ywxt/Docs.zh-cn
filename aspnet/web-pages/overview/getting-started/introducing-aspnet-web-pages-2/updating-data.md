@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
-title: "引入的 ASP.NET Web Pages-更新数据库数据 |Microsoft 文档"
+title: 引入的 ASP.NET Web Pages-更新数据库数据 |Microsoft 文档
 author: tfitzmac
-description: "本教程演示如何使用 ASP.NET Web 页 (Razor) 时 （更改） 的现有数据库条目更新。 它假定你已完成序列 th..."
+description: 本教程演示如何使用 ASP.NET Web 页 (Razor) 时 （更改） 的现有数据库条目更新。 它假定你已完成序列 th...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/02/2018
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: b016231975bf8d359f4c390b0b478edc383117d4
-ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
+ms.openlocfilehash: e889cd27e2267a08f7b6ea708c92e35edbdd7a1a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---updating-database-data"></a>引入了 ASP.NET Web 页-更新数据库数据
 ====================
@@ -108,7 +108,7 @@ ms.lasthandoff: 01/10/2018
 
 列包含*仅*的呈现链接的标记，加上一些信息 (ID)，从提取数据库记录的行。
 
-> [!TIP] 
+> [!TIP]
 > 
 > **命名的参数和方法的位置参数**
 > 
@@ -120,7 +120,7 @@ ms.lasthandoff: 01/10/2018
 > 
 > 当你第一次看到此代码中，但在每个情况下，你要将参数传递给以特定顺序的方法时，我们没有提到问题&mdash;也就是说，在该参数在该方法中定义的顺序。 有关`db.Execute`和`Validation.RequireFields`，如果你混合传递的值的顺序，你将收到一条错误消息页运行时或至少一些奇怪的结果。 显然，你必须知道传递中的参数顺序。 （在 WebMatrix 中，IntelliSense 可帮助你了解算出名称、 类型和参数的顺序。）
 > 
-> 作为按顺序传递值的替代方法，你可以使用*命名参数*。 (按顺序传递参数被称为使用*位置参数*。)对于命名参数，你可以将其值传递时显式包括到参数的名称。 你使用命名的参数已多次这些教程中。 例如:
+> 作为按顺序传递值的替代方法，你可以使用*命名参数*。 (按顺序传递参数被称为使用*位置参数*。)对于命名参数，你可以将其值传递时显式包括到参数的名称。 你使用命名的参数已多次这些教程中。 例如：
 > 
 > [!code-csharp[Main](updating-data/samples/sample8.cs)]
 > 
@@ -173,7 +173,7 @@ ms.lasthandoff: 01/10/2018
 
 此代码演示不同的方式，以验证信息。 在前面的教程，你使用过`Validation`帮助器。 你注册字段，若要验证，并 ASP.NET 自动未验证，并通过使用显示错误`Html.ValidationMessage`和`Html.ValidationSummary`。 在这种情况下，但是，你要实际上不验证用户输入。 相反，你要验证一个值，从其他位置传递到页。 `Validation`帮助器不会将出此为您。
 
-因此，你自行检查值，通过测试它与`if(!Request.QueryString["ID"].IsEmpty()`)。 如果没有问题，你可以通过使用显示错误`Html.ValidationSummary`，就像处理`Validation`帮助器。 若要做到这一点，你调用`Validation.AddFormError`并将其传递要显示的消息。 `Validation.AddFormError`是，您可以定义自定义消息，同时结合使用你已经熟悉了验证系统的内置方法。 （本教程中稍后我们将讨论如何使此验证过程变得更加可靠。）
+因此，你自行检查值，通过测试它与`if(!Request.QueryString["ID"].IsEmpty()`)。 如果没有问题，你可以通过使用显示错误`Html.ValidationSummary`，就像处理`Validation`帮助器。 若要做到这一点，你调用`Validation.AddFormError`并将其传递要显示的消息。 `Validation.AddFormError` 是，您可以定义自定义消息，同时结合使用你已经熟悉了验证系统的内置方法。 （本教程中稍后我们将讨论如何使此验证过程变得更加可靠。）
 
 确保电影的 ID 后, 的代码读取数据库，为单个数据库项查找。 (你可能已经注意到数据库操作的常规模式： 打开数据库，定义 SQL 语句，然后运行该语句。)这一次，SQL`Select`语句包括`WHERE ID = @0`。 因为该 ID 是唯一的则可以返回只有一条记录。
 
@@ -311,6 +311,6 @@ ms.lasthandoff: 01/10/2018
 - [使用 Razor 语法的 ASP.NET Web 编程简介](../../getting-started/introducing-razor-syntax-c.md)
 - [SQL UPDATE 语句](http://www.w3schools.com/sql/sql_update.asp)W3Schools 站点上
 
->[!div class="step-by-step"]
-[上一页](entering-data.md)
-[下一页](deleting-data.md)
+> [!div class="step-by-step"]
+> [上一页](entering-data.md)
+> [下一页](deleting-data.md)

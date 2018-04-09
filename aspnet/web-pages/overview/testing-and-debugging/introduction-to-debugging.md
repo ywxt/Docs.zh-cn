@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/testing-and-debugging/introduction-to-debugging
-title: "调试 ASP.NET Web 简介页 (Razor) 站点 |Microsoft 文档"
+title: 调试 ASP.NET Web 简介页 (Razor) 站点 |Microsoft 文档
 author: tfitzmac
-description: "调试是查找和修复错误，在你的代码页中的过程。 本章展示的一些工具和技术可用于调试和 analyz..."
+description: 调试是查找和修复错误，在你的代码页中的过程。 本章展示的一些工具和技术可用于调试和 analyz...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: 0b6b5a886efe515b434948dade1ae840ddaecd42
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c28d63acda6e585f4aa64f294049c1790faac850
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>调试 ASP.NET Web 简介页 (Razor) 站点
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 01/24/2018
 > 这些是文章中引入的 ASP.NET 功能：
 > 
 > - `ServerInfo`帮助器。
-> - `ObjectInfo`帮助器。
+> - `ObjectInfo` 帮助器。
 >   
 > 
 > ## <a name="software-versions"></a>软件版本
@@ -66,12 +66,12 @@ ms.lasthandoff: 01/24/2018
 
     `ServerInfo`帮助器页中显示的信息的四个表：
 
-    - 服务器配置。 本部分提供有关托管的 web 服务器，包括计算机名称、 你正在运行的 ASP.NET、 域名和服务器时间的版本信息。
-    - ASP.NET 服务器变量。 本部分提供有关的许多的 HTTP 协议详细信息 （调用 HTTP 变量） 的详细信息并值是每个网页请求的一部分。
-    - HTTP 运行时信息。 本部分提供有关的详细信息的 Microsoft.NET Framework 下运行的 web 页、 路径、 有关缓存中，依次类推的详细信息的版本。 (正如你在中学到[ASP.NET Web 编程使用 Razor 语法的简介](https://go.microsoft.com/fwlink/?LinkId=202890)、 使用 Razor 语法基于 Microsoft 的 ASP.NET web 服务器技术，它本身基于广泛的软件的 ASP.NET Web Pages开发库中调用.NET Framework。）
-    - 环境变量。 本部分提供的 web 服务器上的所有本地环境变量及其值的列表。
+   - 服务器配置。 本部分提供有关托管的 web 服务器，包括计算机名称、 你正在运行的 ASP.NET、 域名和服务器时间的版本信息。
+   - ASP.NET 服务器变量。 本部分提供有关的许多的 HTTP 协议详细信息 （调用 HTTP 变量） 的详细信息并值是每个网页请求的一部分。
+   - HTTP 运行时信息。 本部分提供有关的详细信息的 Microsoft.NET Framework 下运行的 web 页、 路径、 有关缓存中，依次类推的详细信息的版本。 (正如你在中学到[ASP.NET Web 编程使用 Razor 语法的简介](https://go.microsoft.com/fwlink/?LinkId=202890)、 使用 Razor 语法基于 Microsoft 的 ASP.NET web 服务器技术，它本身基于广泛的软件的 ASP.NET Web Pages开发库中调用.NET Framework。）
+   - 环境变量。 本部分提供的 web 服务器上的所有本地环境变量及其值的列表。
 
-    所有服务器和请求信息的完整说明不在本文的范围，但你可以看到，`ServerInfo`帮助程序返回了大量的诊断信息。 有关值的详细信息，`ServerInfo`返回时，请参阅[识别环境变量](https://technet.microsoft.com/library/dd560744(WS.10).aspx)Microsoft TechNet 网站上和[IIS 服务器变量](https://msdn.microsoft.com/library/ms524602(VS.90).aspx)MSDN 网站上。
+     所有服务器和请求信息的完整说明不在本文的范围，但你可以看到，`ServerInfo`帮助程序返回了大量的诊断信息。 有关值的详细信息，`ServerInfo`返回时，请参阅[识别环境变量](https://technet.microsoft.com/library/dd560744(WS.10).aspx)Microsoft TechNet 网站上和[IIS 服务器变量](https://msdn.microsoft.com/library/ms524602(VS.90).aspx)MSDN 网站上。
 
 ## <a name="embedding-output-expressions-to-display-page-values"></a>嵌入输出表达式，以显示页值
 
@@ -115,10 +115,10 @@ ms.lasthandoff: 01/24/2018
 
     在此示例中，`ObjectInfo`帮助器将显示两个项：
 
-    - 类型。 对于第一个变量，该类型是`DayOfWeek`。 对于第二个变量，该类型是`String`。
-    - 值。 在这种情况下，因为你已在页中显示的问候语变量的值，值再次显示当你将变量传递到`ObjectInfo`。
+   - 类型。 对于第一个变量，该类型是`DayOfWeek`。 对于第二个变量，该类型是`String`。
+   - 值。 在这种情况下，因为你已在页中显示的问候语变量的值，值再次显示当你将变量传递到`ObjectInfo`。
 
-    对于更复杂的对象，`ObjectInfo`帮助器可以显示详细信息 &#8212; 基本上，它可以在其中显示的类型和的所有对象的属性的值。
+     对于更复杂的对象，`ObjectInfo`帮助器可以显示详细信息&#8212;基本上，它可以在其中显示的类型和的所有对象的属性的值。
 
 ## <a name="using-debugging-tools-in-visual-studio"></a>使用 Visual Studio 中的调试工具
 

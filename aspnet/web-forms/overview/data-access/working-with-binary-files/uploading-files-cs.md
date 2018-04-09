@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-binary-files/uploading-files-cs
-title: "上载文件 (C#) |Microsoft 文档"
+title: 上载文件 (C#) |Microsoft 文档
 author: rick-anderson
-description: "了解如何允许用户将 （如 Word 或 PDF 文档） 的二进制文件上载到其中就可能存储在服务器的文件系统网站..."
+description: 了解如何允许用户将 （如 Word 或 PDF 文档） 的二进制文件上载到其中就可能存储在服务器的文件系统网站...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/27/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 629c1154683a0370e3e650873edf29dc9f22b4bc
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3c758e94311817d01b17d27083733f805caf600f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="uploading-files-c"></a>上载文件 (C#)
 ====================
@@ -124,9 +124,9 @@ ms.lasthandoff: 01/24/2018
 
 中所述*创建数据访问层*，类型化数据集中数据表构成业务对象。 Tableadapter 负责与数据库通信，并包含查询结果将业务对象填充。 `CategoriesDataTable`由填充`CategoriesTableAdapter`，其中有三个数据检索方法：
 
-- `GetCategories()`执行 TableAdapter s 主查询并返回`CategoryID`， `CategoryName`，和`Description`字段中的所有记录`Categories`表。 在主查询是通过自动生成的用途`Insert`和`Update`方法。
-- `GetCategoryByCategoryID(categoryID)`返回`CategoryID`， `CategoryName`，和`Description`类别字段其`CategoryID`等于*categoryID*。
-- `GetCategoriesAndNumberOfProducts()`-返回`CategoryID`， `CategoryName`，和`Description`中的所有记录的字段`Categories`表。 此外使用子查询返回的每个类别关联的产品数目。
+- `GetCategories()` 执行 TableAdapter s 主查询并返回`CategoryID`， `CategoryName`，和`Description`字段中的所有记录`Categories`表。 在主查询是通过自动生成的用途`Insert`和`Update`方法。
+- `GetCategoryByCategoryID(categoryID)` 返回`CategoryID`， `CategoryName`，和`Description`类别字段其`CategoryID`等于*categoryID*。
+- `GetCategoriesAndNumberOfProducts()` -返回`CategoryID`， `CategoryName`，和`Description`中的所有记录的字段`Categories`表。 此外使用子查询返回的每个类别关联的产品数目。
 
 请注意，不能提供的查询返回`Categories`表 s`Picture`或`BrochurePath`列; 也不会`CategoriesDataTable`提供`DataColumn`为这些字段的 s。 若要使用图和`BrochurePath`属性，我们需要先将其添加到`CategoriesDataTable`，然后更新`CategoriesTableAdapter`类以返回这些列。
 
@@ -270,7 +270,7 @@ FileUpload 控件是不切实际的大型文件上载。 因为文件的内容�
 
 如果你的应用程序需要处理较大的文件，你将需要仔细研究面临的挑战和为你的特定需求找到合适的解决方案。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 生成的应用程序需要捕获二进制数据引入了许多挑战。 在本教程中我们探讨了前两个： 决定在何处存储二进制数据，并允许用户上载通过网页上的二进制内容。 通过接下来三个教程，我们将了解如何将上载的数据与数据库中记录相关联，以及如何显示其文本数据字段旁边的二进制数据。
 
@@ -287,11 +287,11 @@ FileUpload 控件是不切实际的大型文件上载。 因为文件的内容�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Teresa 墨和伯纳黛特 Leigh。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[下一篇](displaying-binary-data-in-the-data-web-controls-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](displaying-binary-data-in-the-data-web-controls-cs.md)

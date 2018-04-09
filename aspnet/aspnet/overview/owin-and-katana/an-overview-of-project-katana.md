@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/owin-and-katana/an-overview-of-project-katana
-title: "项目 Katana 概述 |Microsoft 文档"
+title: 项目 Katana 概述 |Microsoft 文档
 author: howarddierking
-description: "ASP.NET Framework 已超过 10 年，并且平台已启用无数网站和服务的开发。 为 Web 应用程序..."
+description: ASP.NET Framework 已超过 10 年，并且平台已启用无数网站和服务的开发。 为 Web 应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/30/2013
 ms.topic: article
 ms.assetid: 0ee21741-c1bf-4025-a9b0-24580cae24bc
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/an-overview-of-project-katana
 msc.type: authoredcontent
-ms.openlocfilehash: ceb7d3a7d1cb1685c0f1e62698f508c9a73e77c2
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 3c2bcbbc6e506af759f6d77af17d015278cc0bdf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-project-katana"></a>项目 Katana 事件的概述
 ====================
@@ -144,7 +144,7 @@ JavaScript 和.NET 开发之间的一个显著区别是编译器的存在 （或
 - 管理基础的过程。
 - 将处理安排在导致服务器的选择和通过的请求 OWIN 管道的构造工作流。
 
- 目前，有 3 个主宿主选项基于 Katana 的应用程序：  
+  目前，有 3 个主宿主选项基于 Katana 的应用程序：  
   
 **IIS/ASP.NET**： 使用标准的 HttpModule 和 HttpHandler 类型，OWIN 管道可以在 IIS 上运行的 ASP.NET 请求流的一部分。 ASP.NET 承载支持被通过将 Microsoft.AspNet.Host.SystemWeb NuGet 包安装到 Web 应用程序项目。 此外，因为 IIS 可以充当主机和服务器，OWIN 服务器/主机区别交织在一起在此 NuGet 包中，这意味着如果使用 SystemWeb 主机，开发人员不能替换备用服务器实现。  
   
@@ -221,7 +221,7 @@ Katana 2.0 的宿主基础结构包括 SystemWeb 以及基于 HttpListener 的�
 
 ## <a name="for-more-information-about-katana"></a>详细了解 Katana
 
-- GitHub 上的 Katana 项目： [https://github.com/aspnet/AspNetKatana/](https://github.com/aspnet/AspNetKatana/)。
+- GitHub 上的 Katana 项目： [ https://github.com/aspnet/AspNetKatana/ ](https://github.com/aspnet/AspNetKatana/)。
 - 视频： [Katana 项目-ASP.NET 的 OWIN](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET)，通过 Howard Dierking。
 
 ## <a name="acknowledgements"></a>致谢

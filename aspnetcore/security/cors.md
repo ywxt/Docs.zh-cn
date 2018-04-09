@@ -1,7 +1,7 @@
 ---
-title: "启用 ASP.NET Core 中的跨源请求 (CORS)"
+title: 启用 ASP.NET Core 中的跨源请求 (CORS)
 author: rick-anderson
-description: "了解如何作为一种标准允许或拒绝 ASP.NET Core 应用程序中的跨域请求的 CORS。"
+description: 了解如何作为一种标准允许或拒绝 ASP.NET Core 应用程序中的跨域请求的 CORS。
 manager: wpickett
 ms.author: riande
 ms.date: 05/17/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cors
-ms.openlocfilehash: 64d939033fee14fad37a08c60da608898e20c01b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 3c5d0840426c7ed52353a7832a1a1959027121de
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="enabling-cross-origin-requests-cors-in-aspnet-core"></a>启用 ASP.NET Core 中的跨源请求 (CORS)
+# <a name="enable-cross-origin-requests-cors-in-aspnet-core"></a>启用 ASP.NET Core 中的跨源请求 (CORS)
 
 通过[Mike Wasson](https://github.com/mikewasson)， [Shayne 贝叶](https://twitter.com/spboyer)，和[Tom Dykstra](https://github.com/tdykstra)
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-vb
-title: "创建互斥复选框 (VB) |Microsoft 文档"
+title: 创建互斥复选框 (VB) |Microsoft 文档
 author: wenz
-description: "如果可以选择仅一组的选项之一，通常将使用单选按钮。 但没有一个缺点： 选择一个单选按钮组中的后，..."
+description: 如果可以选择仅一组的选项之一，通常将使用单选按钮。 但没有一个缺点： 选择一个单选按钮组中的后，...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 023ca0b145de8147a98e78f4dba20846dc344f06
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cdb93a080fb62cfdc7e3ff0604a1447e2bb99071
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-mutually-exclusive-checkboxes-vb"></a>创建互斥复选框 (VB)
 ====================
@@ -54,5 +54,5 @@ ASP.NET AJAX 控件工具包中包含的 MutuallyExclusiveCheckBox 扩展程序�
 
 只有一个复选框可以检查一次 ([单击以查看实际尺寸的图像](creating-mutually-exclusive-checkboxes-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一篇](creating-mutually-exclusive-checkboxes-cs.md)
+> [!div class="step-by-step"]
+> [上一篇](creating-mutually-exclusive-checkboxes-cs.md)

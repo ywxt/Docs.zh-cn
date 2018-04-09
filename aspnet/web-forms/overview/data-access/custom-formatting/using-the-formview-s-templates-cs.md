@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-cs
-title: "使用 FormView 的模板 (C#) |Microsoft 文档"
+title: 使用 FormView 的模板 (C#) |Microsoft 文档
 author: rick-anderson
-description: "说明如何，与 FormView 不组成字段。 相反，使用模板呈现 FormView。 在本教程中，我们将检查使用 F...."
+description: 说明如何，与 FormView 不组成字段。 相反，使用模板呈现 FormView。 在本教程中，我们将检查使用 F....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 18e76a763e22c0d1046acc60e095bbd11960c5e6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0e1b36f0bfc244e39bb620c1c066b3e2403722cb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-formviews-templates-c"></a>使用 FormView 的模板 (C#)
 ====================
@@ -33,12 +33,12 @@ ms.lasthandoff: 11/10/2017
 
 说明如何，与 FormView 不组成字段。 无法将 BoundField 或 TemplateField 添加到 FormView。 相反，使用模板呈现 FormView。 FormView 看作包含单个 TemplateField 说明如何控制。 FormView 支持以下模板：
 
-- `ItemTemplate`用于呈现特定的记录显示在 FormView
-- `HeaderTemplate`用于指定一个可选标头行
-- `FooterTemplate`用于指定一个可选的页脚行
-- `EmptyDataTemplate`当 FormView`DataSource`缺少任何记录，`EmptyDataTemplate`代替使用`ItemTemplate`来呈现控件的标记
-- `PagerTemplate`可用于为已启用的分页的 FormViews 自定义分页接口
-- `EditItemTemplate` / `InsertItemTemplate`用于为支持此类功能的 FormViews 自定义的编辑界面或插入接口
+- `ItemTemplate` 用于呈现特定的记录显示在 FormView
+- `HeaderTemplate` 用于指定一个可选标头行
+- `FooterTemplate` 用于指定一个可选的页脚行
+- `EmptyDataTemplate` 当 FormView`DataSource`缺少任何记录，`EmptyDataTemplate`代替使用`ItemTemplate`来呈现控件的标记
+- `PagerTemplate` 可用于为已启用的分页的 FormViews 自定义分页接口
+- `EditItemTemplate` / `InsertItemTemplate` 用于为支持此类功能的 FormViews 自定义的编辑界面或插入接口
 
 在本教程中我们将检查使用 FormView 控件呈现以不太严格显示的产品。 而不是使字段的名称、 类别、 供应商和等等，FormView 的`ItemTemplate`将显示使用的标头元素组合这些值和`<table>`（请参见图 1）。
 
@@ -101,7 +101,7 @@ ms.lasthandoff: 11/10/2017
 **图 4**: 流体 FormView 输出 ([单击以查看实际尺寸的图像](using-the-formview-s-templates-cs/_static/image12.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 虽然 GridView 和说明控件都有使用 TemplateFields 自定义其输出，同时仍以一种类似网格、 boxy 格式显示其数据。 当需要显示单个记录这些时间使用不太严格的布局，FormView 是理想的选择。 说明如何，如 FormView 呈现来自的单个记录其`DataSource`，但与说明如何将只需组成模板且不支持字段。
 
@@ -111,12 +111,12 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 E.R. Gilmore。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](using-templatefields-in-the-detailsview-control-cs.md)
-[下一页](displaying-summary-information-in-the-gridview-s-footer-cs.md)
+> [!div class="step-by-step"]
+> [上一页](using-templatefields-in-the-detailsview-control-cs.md)
+> [下一页](displaying-summary-information-in-the-gridview-s-footer-cs.md)

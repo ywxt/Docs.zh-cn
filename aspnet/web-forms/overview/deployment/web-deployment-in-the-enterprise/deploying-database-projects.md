@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-database-projects
-title: "部署数据库项目 |Microsoft 文档"
+title: 部署数据库项目 |Microsoft 文档
 author: jrjlee
-description: "注意： 在许多企业部署方案，你需要向已部署的数据库发布增量更新的能力。 替代方法是重新创建..."
+description: 注意： 在许多企业部署方案，你需要向已部署的数据库发布增量更新的能力。 替代方法是重新创建...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-database-projects
 msc.type: authoredcontent
-ms.openlocfilehash: 9b1f9a19c76e33b5d996cb4d562cf0c1a3e2f83b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a0b3871ea098b549271bce2b9d5f0c24f9ca8a9c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-database-projects"></a>部署数据库项目
 ====================
@@ -92,8 +92,8 @@ VSDBCMD 实用程序可让你部署使用的数据库架构 （.dbschema 文件�
 
 - **/A** (或**/Action**) 开关可指定希望 VSDBCMD 执行。 你可以将此设置为**导入**或**部署**。 **导入**选项用于从现有数据库，生成.dbschema 文件和**部署**选项用于将.dbschema 文件部署到目标数据库。
 - **/清单**(或**/ManifestFile**) 交换机标识你想要部署的.deploymanifest 文件。 如果你想要改为使用.dbschema 文件，则应使用**/模型**(或**/ModelFile**) 切换。
-- **/Cs** (或**/ConnectionString**) 交换机提供对目标数据库服务器的连接字符串。 请注意这不包括数据库和 #x 2014; 的名称VSDBCMD 需要连接到服务器以创建该数据库。它不需要为单个的数据库连接。 如果.deploymanifest 文件包含连接字符串，则可以省略此开关。 如果你仍使用开关，开关值将覆盖.deploymanifest 值。
-- **/P:TargetDatabase**属性提供你想要分配到目标数据库上创建的名称。 此设置的值将替代**TargetDatabase** .deploymanifest 文件中的属性。 你可以使用**/p:** *[属性名称]*.sqlcmdvars 文件中声明的语法来设置部署属性的各种和重写任何 SQLCMD 变量。
+- **/Cs** (或**/ConnectionString**) 交换机提供对目标数据库服务器的连接字符串。 请注意，这不包含的数据库名称&#x2014;VSDBCMD 需要连接到服务器以创建该数据库。它不需要为单个的数据库连接。 如果.deploymanifest 文件包含连接字符串，则可以省略此开关。 如果你仍使用开关，开关值将覆盖.deploymanifest 值。
+- <strong>/P:TargetDatabase</strong>属性提供你想要分配到目标数据库上创建的名称。 此设置的值将替代<strong>TargetDatabase</strong> .deploymanifest 文件中的属性。 你可以使用<strong>/p:</strong> <em>[属性名称]</em>.sqlcmdvars 文件中声明的语法来设置部署属性的各种和重写任何 SQLCMD 变量。
 - **/Dd+** (或**/DeployToDatabase+**) 开关指示你想要创建部署并将其部署到目标环境。 如果指定**/dd-**，或省略开关，VSDBCMD 将生成部署脚本，但将不将其部署到目标环境。 此开关通常是混淆的源，并在下一部分中的更多详细信息中所述。
 - **/** (或**/DeploymentScriptFile**) 开关指定你想要生成部署脚本。 此值不会影响部署过程。
 
@@ -150,6 +150,6 @@ MSDN 上的以下主题提供更广泛的指导和 Visual Studio 数据库项目
 - [如何： 准备数据库以进行部署的命令提示符下使用 VSDBCMD。EXE](https://msdn.microsoft.com/library/dd193258.aspx)
 - [数据库生成和部署的概述](https://msdn.microsoft.com/library/aa833165.aspx)
 
->[!div class="step-by-step"]
-[上一页](deploying-web-packages.md)
-[下一页](creating-and-running-a-deployment-command-file.md)
+> [!div class="step-by-step"]
+> [上一页](deploying-web-packages.md)
+> [下一页](creating-and-running-a-deployment-command-file.md)

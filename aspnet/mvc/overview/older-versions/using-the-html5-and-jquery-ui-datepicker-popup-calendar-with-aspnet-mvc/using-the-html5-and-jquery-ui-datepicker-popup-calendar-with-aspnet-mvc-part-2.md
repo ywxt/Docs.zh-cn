@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2
-title: "使用 ASP.NET MVC-第 2 部分中使用 HTML5 和 jQuery UI Datepicker 弹出日历 |Microsoft 文档"
+title: 使用 ASP.NET MVC-第 2 部分中使用 HTML5 和 jQuery UI Datepicker 弹出日历 |Microsoft 文档
 author: Rick-Anderson
-description: "本教程将教您如何使用编辑器模板、 显示模板和 jQuery UI datepicker 弹出日历，ASP.NET MV 中的基础知识..."
+description: 本教程将教您如何使用编辑器模板、 显示模板和 jQuery UI datepicker 弹出日历，ASP.NET MV 中的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/29/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 69fbaa7761c97895ffee770f6feb9ce6b745d186
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 84112316a9ace732cb7d75d7cbaeb071c72de822
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-2"></a>使用 ASP.NET MVC-第 2 部分中使用 HTML5 和 jQuery UI Datepicker 弹出日历
 ====================
@@ -77,7 +77,7 @@ ms.lasthandoff: 01/24/2018
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/_static/image2.png)
 
-单击 **“添加”**。 A *DateTime.cshtml*中创建模板*Views\Shared\DisplayTemplates*。
+单击 **添加**。 A *DateTime.cshtml*中创建模板*Views\Shared\DisplayTemplates*。
 
 下图显示*视图*文件夹中的**解决方案资源管理器**后`DateTime`创建显示和编辑器模板。
 
@@ -147,6 +147,6 @@ ms.lasthandoff: 01/24/2018
 
 在下一步的部分中，你将创建用于复杂类型的模板。
 
->[!div class="step-by-step"]
-[上一页](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1.md)
-[下一页](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)
+> [!div class="step-by-step"]
+> [上一页](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1.md)
+> [下一页](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)

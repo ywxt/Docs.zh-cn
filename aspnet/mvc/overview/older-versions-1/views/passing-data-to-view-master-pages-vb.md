@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
-title: "将数据传递到视图母版页 (VB) |Microsoft 文档"
+title: 将数据传递到视图母版页 (VB) |Microsoft 文档
 author: microsoft
-description: "本教程旨在说明如何为视图的母版页，从控制器传递数据。 我们检查用于将数据传递到视图 m 的两种策略..."
+description: 本教程旨在说明如何为视图的母版页，从控制器传递数据。 我们检查用于将数据传递到视图 m 的两种策略...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d92a1afe46af124e835b3d59f2b2093402742bbd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fcd7c5baacc00490720d1f82252d81e40c097c88
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="passing-data-to-view-master-pages-vb"></a>将数据传递给视图母版页 (VB)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_13_VB.pdf)
 
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 
 请考虑列出 1 中的控制器。 它公开两个操作名为`Index()`和`Details()`。 `Index()`操作方法会返回每个电影的电影数据库表中。 `Details()`操作方法会返回特定电影类别中每个影片。
 
-**列表 1 –`Controllers\HomeController.vb`**
+**列表 1 – `Controllers\HomeController.vb`**
 
 [!code-vb[Main](passing-data-to-view-master-pages-vb/samples/sample1.vb)]
 
@@ -69,13 +69,13 @@ ms.lasthandoff: 11/10/2017
 
 索引视图包含在清单 2。 它只需循环访问由中查看数据的电影项表示的影片列表。
 
-**列出 2 –`Views\Home\Index.aspx`**
+**列出 2 – `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](passing-data-to-view-master-pages-vb/samples/sample2.aspx)]
 
 视图的母版页包含在清单 3。 视图的母版页循环，并呈现所有影片类别由类别项表示从查看数据。
 
-**列出 3 –`Views\Shared\Site.master`**
+**列出 3 – `Views\Shared\Site.master`**
 
 [!code-aspx[Main](passing-data-to-view-master-pages-vb/samples/sample3.aspx)]
 
@@ -91,7 +91,7 @@ ApplicationController 类包含在清单 4。
 
 ApplicationController 类包含在清单 4。
 
-**列出 4 –`Controllers\ApplicationController.vb`**
+**列出 4 – `Controllers\ApplicationController.vb`**
 
 [!code-vb[Main](passing-data-to-view-master-pages-vb/samples/sample4.vb)]
 
@@ -103,7 +103,7 @@ ApplicationController 类包含在清单 4。
 
 从应用程序控制器继承中列出 5 的电影控制器。
 
-**列出 5-`Controllers\MoviesController.vb`**
+**列出 5- `Controllers\MoviesController.vb`**
 
 [!code-vb[Main](passing-data-to-view-master-pages-vb/samples/sample5.vb)]
 
@@ -111,11 +111,11 @@ ApplicationController 类包含在清单 4。
 
 请注意将视图的母版页的视图数据添加到此解决方案不违反干 （不重复自己） 原则。 将添加影片类别来查看数据列表中的代码包含仅在一个位置： 应用程序控制器的构造函数。
 
-### <a name="summary"></a>摘要
+### <a name="summary"></a>总结
 
 在本教程中，我们讨论了两种方法来将从控制器的视图数据传递到视图的母版页。 首先，我们探讨了一个简单，但难以维护方法。 在第一个部分中，我们讨论了如何添加查看的视图的母版页数据中每个每个控制器操作应用程序中。 我们的结论，这是错误的方法，因为它违反了模拟 （不重复自己） 原则。
 
 接下来，我们探讨了用于添加数据视图的母版页需查看数据的多较好策略。 而不是在每个控制器操作中添加的视图数据，我们添加了视图数据一次在应用程序控制器内。 这样一来，你就可以将数据传递到视图母版页中的 ASP.NET MVC 应用程序时避免重复代码。
 
->[!div class="step-by-step"]
-[上一篇](creating-page-layouts-with-view-master-pages-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](creating-page-layouts-with-view-master-pages-vb.md)

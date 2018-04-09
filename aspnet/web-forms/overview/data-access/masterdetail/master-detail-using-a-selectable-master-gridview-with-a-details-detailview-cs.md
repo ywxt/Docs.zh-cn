@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs
-title: "使用详细信息 DetailView (C#) 的可选择的主 GridView 主/详细信息 |Microsoft 文档"
+title: 使用详细信息 DetailView (C#) 的可选择的主 GridView 主/详细信息 |Microsoft 文档
 author: rick-anderson
-description: "本教程将具有其行中包含的名称和选择按钮以及每个产品的价格 GridView。 单击选择按钮为 particu..."
+description: 本教程将具有其行中包含的名称和选择按钮以及每个产品的价格 GridView。 单击选择按钮为 particu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5f0d380ee411116844f42a542c12050513721eb1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9d39786cb17449b93e6f728a0a3c920e1be089be
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-c"></a>主/从可选择的主 GridView 使用详细信息 DetailView (C#)
 ====================
@@ -131,12 +131,12 @@ Gridview 最终的标记是：
 **图 9**： 调用`ProductsBLL`类的`GetProductByProductID(productID)`方法 ([单击以查看实际尺寸的图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image27.png))
 
 
-具有 *`productID`* 参数的值从 GridView 控件获得`SelectedValue`属性。 如前面所述，GridView`SelectedValue`属性返回的第一个数据所选行的键值。 因此，它是命令性的 GridView`DataKeyNames`属性设置为`ProductID`，以便所选的行`ProductID`值由返回`SelectedValue`。
+具有*`productID`*参数的值从 GridView 控件获得`SelectedValue`属性。 如前面所述，GridView`SelectedValue`属性返回的第一个数据所选行的键值。 因此，它是命令性的 GridView`DataKeyNames`属性设置为`ProductID`，以便所选的行`ProductID`值由返回`SelectedValue`。
 
 
 [![将产品 id 参数设置为 GridView SelectedValue 属性](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image29.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image28.png)
 
-**图 10**： 设置 *`productID`* 参数 GridView`SelectedValue`属性 ([单击以查看实际尺寸的图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image30.png))
+**图 10**： 设置*`productID`*参数 GridView`SelectedValue`属性 ([单击以查看实际尺寸的图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image30.png))
 
 
 一次`productDetailsDataSource`ObjectDataSource 有已正确配置并绑定到说明如何，本教程已完成 ！ 当首次访问页时未选择行，因此 GridView 的`SelectedValue`属性返回`null`。 由于没有与产品`NULL``ProductID`值，通过返回任何记录`GetProductByProductID(productID)`方法，这意味着未显示说明 （请参阅图 11）。 如果单击 GridView 行的选择按钮，回发时，才会和刷新的说明。 这次请 GridView`SelectedValue`属性返回`ProductID`所选行的`GetProductByProductID(productID)`方法返回`ProductsDataTable`提供有关该特定的产品，并说明如何显示这些详细信息 （请参阅图 12）。
@@ -152,7 +152,7 @@ Gridview 最终的标记是：
 **图 12**： 时选择的行，将显示产品的详细信息 ([单击以查看实际尺寸的图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image36.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在此环境及前面的三个教程，我们已了解大量显示主/详细信息报表的技术。 在本教程中，我们探讨了使用可选择 GridView 容纳的主记录和说明如何在同一页上显示有关所选的主记录的详细信息。 前面的教程中我们介绍了如何显示母版/详细报表使用 DropDownLists 并在上一个网页和详细信息记录在另一台显示主记录。
 
@@ -162,12 +162,12 @@ Gridview 最终的标记是：
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已希尔顿 Giesenow。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](master-detail-filtering-across-two-pages-cs.md)
-[下一页](master-detail-filtering-with-a-dropdownlist-vb.md)
+> [!div class="step-by-step"]
+> [上一页](master-detail-filtering-across-two-pages-cs.md)
+> [下一页](master-detail-filtering-with-a-dropdownlist-vb.md)

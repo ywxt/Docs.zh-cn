@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
-title: "配置 TFS 生成服务器用于 Web 部署 |Microsoft 文档"
+title: 配置 TFS 生成服务器用于 Web 部署 |Microsoft 文档
 author: jrjlee
-description: "本主题介绍如何准备要生成和部署解决方案使用 Team Build 和 Internet Informat 的 Team Foundation Server (TFS) 生成服务器..."
+description: 本主题介绍如何准备要生成和部署解决方案使用 Team Build 和 Internet Informat 的 Team Foundation Server (TFS) 生成服务器...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: de31a9dffb95b863a4ec38b74fd2c6e03f287a7f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7b3130ca7d36ffec457e1871fa62c1077b5e3174
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-tfs-build-server-for-web-deployment"></a>配置用于 Web 部署的 TFS 生成服务器
 ====================
@@ -27,9 +27,9 @@ ms.lasthandoff: 01/24/2018
 > 本主题介绍如何准备要生成和部署你使用 Team Build 和 Internet 信息服务 (IIS) Web 部署工具 （Web 部署） 的解决方案的 Team Foundation Server (TFS) 生成服务器。
 
 
-本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案 （&） #x 2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 的 web 应用程序Communication Foundation (WCF) 服务和数据库项目。
+本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案&#x2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
-这些教程的核心的部署方法取决于中介绍的拆分项目文件方法[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，在其中生成过程控制由两个项目文件 （&） #x 2014; 一个包含生成适用于每种目标环境和一个包含特定于环境的生成和部署设置的说明。 在生成期间，特定于环境的项目文件合并到环境无关的项目文件中以形成一组完整的生成说明。
+这些教程的核心的部署方法取决于中介绍的拆分项目文件方法[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，两个项目文件中的生成过程控制通过&#x2014;另一个包含生成适用于每种目标环境和一个包含特定于环境的生成和部署设置的说明。 在生成期间，特定于环境的项目文件合并到环境无关的项目文件中以形成一组完整的生成说明。
 
 ## <a name="task-overview"></a>任务概述
 
@@ -100,7 +100,7 @@ ms.lasthandoff: 01/24/2018
 7. 在**ASP.NET MVC 3 (Visual Studio 2010)**行中，单击**添加**。
 8. 在导航窗格中，单击**服务器**。
 9. 在**Web 部署工具 2.1**行中，单击**添加**。
-10. 单击“安装” 。 Web 平台安装程序将显示列表的产品和 #x 2014年; 以及要安装任何关联的依赖关系 （&） #x 2014; 并将提示你接受许可条款。
+10. 单击“安装” 。 Web 平台安装程序将显示你的产品列表&#x2014;以及任何关联的依赖关系&#x2014;安装，并将提示你接受许可条款。
 11. 查看许可条款，然后如果同意条款，单击**我接受**。
 12. 安装完成后，单击**完成**，然后关闭**Web Platform Installer 3.0**窗口。
 
@@ -116,6 +116,6 @@ ms.lasthandoff: 01/24/2018
 
 使用团队生成的更多常规指南，请参阅[管理 Team Foundation Build](https://msdn.microsoft.com/library/ms252495.aspx)。
 
->[!div class="step-by-step"]
-[上一页](adding-content-to-source-control.md)
-[下一页](creating-a-build-definition-that-supports-deployment.md)
+> [!div class="step-by-step"]
+> [上一页](adding-content-to-source-control.md)
+> [下一页](creating-a-build-definition-that-supports-deployment.md)

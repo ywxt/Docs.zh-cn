@@ -1,22 +1,22 @@
 ---
 uid: whitepapers/aspnet4/overview
-title: "ASP.NET 4 和 Visual Studio 2010 Web 开发概述 |Microsoft 文档"
+title: ASP.NET 4 和 Visual Studio 2010 Web 开发概述 |Microsoft 文档
 author: rick-anderson
-description: "本文档提供有关 ASP.NET 中的.net Framework 4 和 Visual Studio 2010 中包含的许多新功能的概述。"
+description: 本文档提供有关 ASP.NET 中的.net Framework 4 和 Visual Studio 2010 中包含的许多新功能的概述。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 29d5b2f4c04b899b900427ac202c0a4f57f8076f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6ce52c387ff835eda46bc1882b8b974889e2d4af
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 和 Visual Studio 2010 Web 开发概述
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 01/30/2018
 
 **内容**
 
-**[核心服务](#0.2__Toc253429238 "_Toc253429238")**  
+**[Core Services](#0.2__Toc253429238 "_Toc253429238")**  
 [Web.config 文件重构](#0.2__Toc253429239 "_Toc253429239")  
 [可扩展的输出缓存](#0.2__Toc253429240 "_Toc253429240")  
 [自动启动 Web 应用程序](#0.2__Toc253429241 "_Toc253429241")  
@@ -38,14 +38,14 @@ ms.lasthandoff: 01/30/2018
 [对象缓存和对象缓存扩展性](#0.2__Toc253429246 "_Toc253429246")  
 [可扩展的 HTML、 URL 和 HTTP 标头编码](#0.2__Toc253429247 "_Toc253429247")  
 [为在单个辅助进程中的单个应用程序性能监视](#0.2__Toc253429248 "_Toc253429248")  
-[多目标](#0.2__Toc253429249 "_Toc253429249")
+[Multi-Targeting](#0.2__Toc253429249 "_Toc253429249")
 
 **[Ajax](#0.2__Toc253429250 "_Toc253429250")**  
 [jQuery 包含在 Web 窗体和 MVC](#0.2__Toc253429251 "_Toc253429251")  
 [内容传送网络支持](#0.2__Toc253429252 "_Toc253429252")  
-[ScriptManager 显式脚本](#0.2__Toc253429253 "_Toc253429253")
+[ScriptManager Explicit Scripts](#0.2__Toc253429253 "_Toc253429253")
 
-**[Web 窗体](#0.2__Toc253429256 "_Toc253429256")**  
+**[Web Forms](#0.2__Toc253429256 "_Toc253429256")**  
 [设置与 Page.MetaKeywords 和 Page.MetaDescription 属性的 Meta 标记](#0.2__Toc253429257 "_Toc253429257")  
 [启用视图状态的单个控件](#0.2__Toc253429258 "_Toc253429258")  
 [更改为浏览器功能](#0.2__Toc253429259 "_Toc253429259")  
@@ -69,9 +69,9 @@ ms.lasthandoff: 01/30/2018
 [数据注释属性验证支持](#0.2__Toc253429276 "_Toc253429276")  
 [模板化帮助器](#0.2__Toc253429277 "_Toc253429277")
 
-**[动态数据](#0.2__Toc253429278 "_Toc253429278")**  
+**[Dynamic Data](#0.2__Toc253429278 "_Toc253429278")**  
 [启用动态数据的现有项目](#0.2__Toc253429279 "_Toc253429279")  
-[声明性 DynamicDataManager 控件语法](#0.2__Toc253429280 "_Toc253429280")  
+[Declarative DynamicDataManager Control Syntax](#0.2__Toc253429280 "_Toc253429280")  
 [实体模板](#0.2__Toc253429281 "_Toc253429281")  
 [Url 和电子邮件地址的新字段模板](#0.2__Toc253429282 "_Toc253429282")  
 [创建链接与 DynamicHyperLink 控件](#0.2__Toc253429283 "_Toc253429283")  
@@ -86,13 +86,13 @@ ms.lasthandoff: 01/30/2018
 [JavaScript IntelliSense 增强功能](#0.2__Toc253429291 "_Toc253429291")
 
 **[Web 应用程序部署使用 Visual Studio 2010](#0.2__Toc253429292 "_Toc253429292")**  
-[Web 打包](#0.2__Toc253429293 "_Toc253429293")  
-[Web.config 转换](#0.2__Toc253429294 "_Toc253429294")  
+[Web Packaging](#0.2__Toc253429293 "_Toc253429293")  
+[Web.config Transformation](#0.2__Toc253429294 "_Toc253429294")  
 [数据库部署](#0.2__Toc253429295 "_Toc253429295")  
 [单击发布为 Web 应用程序](#0.2__Toc253429296 "_Toc253429296")  
-[资源](#0.2__Toc253429297 "_Toc253429297")
+[Resources](#0.2__Toc253429297 "_Toc253429297")
 
-**[免责声明](#0.2__Toc253429298 "_Toc253429298")**
+**[Disclaimer](#0.2__Toc253429298 "_Toc253429298")**
 
 <a id="0.2__Toc224729018"></a><a id="0.2__Toc253429238"></a><a id="0.2__Toc243304612"></a>
 
@@ -199,13 +199,13 @@ ASP.NET 4 引入了用于扩展应用程序 Url 的大小的新选项。 ASP.NET
 
 [!code-xml[Main](overview/samples/sample10.xml)]
 
-若要允许长于或短的路径 （不包括协议、 服务器名称和查询字符串的 URL 的部分），修改 *[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)* 属性。 若要允许长于或短的查询字符串，可修改的值 *[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)* 属性。
+若要允许长于或短的路径 （不包括协议、 服务器名称和查询字符串的 URL 的部分），修改*[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)*属性。 若要允许长于或短的查询字符串，可修改的值*[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)*属性。
 
 ASP.NET 4 还可配置的 URL 字符检查使用的字符。 当 ASP.NET 的 url 的路径部分中找到无效的字符时，它将拒绝该请求，并发出 HTTP 400 错误。 在以前版本的 ASP.NET，URL 字符检查是限于一组固定的字符。 在 ASP.NET 4 中，你可以自定义的一套使用新的有效字符*requestPathInvalidChars*属性*httpRuntime*配置元素，如下面的示例中所示：
 
 [!code-xml[Main](overview/samples/sample11.xml)]
 
-默认情况下， *requestPathInvalidChars*属性定义为无效的八个字符。 (分配给字符串中*requestPathInvalidChars*默认情况下*，*小于 (&lt;)、 大于 (&gt;)，和 & 符 (&amp;) 字符都是编码，因为`Web.config`文件是一个 XML 文件。)根据需要可以自定义的一套无效字符。
+默认情况下， <em>requestPathInvalidChars</em>属性定义为无效的八个字符。 (分配给字符串中<em>requestPathInvalidChars</em>默认情况下<em>，</em>小于 (&lt;)、 大于 (&gt;)，和 & 符 (&amp;) 字符都是编码，因为`Web.config`文件是一个 XML 文件。)根据需要可以自定义的一套无效字符。
 
 > [!NOTE]
 > 请注意 ASP.NET 4 始终拒绝包含 0x00 到 0x1F、 ASCII 范围内的字符的 URL 路径，因为这些无效的 URL 字符中的 IETF RFC 2396 定义 ([http://www.ietf.org/rfc/rfc2396.txt](http://www.ietf.org/rfc/rfc2396.txt))。 在 Windows Server 版本上运行 IIS 6 或更高版本，http.sys 协议设备驱动程序会自动拒绝 Url 有了这些字符。
@@ -326,6 +326,8 @@ Microsoft Ajax 内容交付网络 (CDN)，可轻松地将 ASP.NET Ajax 和 jQuer
 
 Microsoft Ajax 内容交付网络支持 SSL (HTTPS)，以防你需要服务网页上使用安全套接字层。
 
+实现了回退 CDN 不可用时。 测试回退。
+
 若要了解有关 Microsoft Ajax CDN 的详细信息，请访问以下网站：
 
 [https://www.asp.net/ajaxlibrary/CDN.ashx](../../ajax/cdn/overview.md)
@@ -412,13 +414,13 @@ ASP.NET 4 将两个属性添加*页*类， *MetaKeywords*和*MetaDescription*。
 
 这些设置的效果是，如果首次加载页面，下面的输出将显示在浏览器中：
 
-已禁用`: [DynamicValue]`
+已禁用 `: [DynamicValue]`
 
 启用：`[DynamicValue]`
 
 回发后，但是，将显示以下输出：
 
-已禁用`: [DeclaredValue]`
+已禁用 `: [DeclaredValue]`
 
 启用：`[DynamicValue]`
 
@@ -629,7 +631,7 @@ ASP.NET 自动工作出正确的路由 （即，它生成正确的 URL） 基于
 
 [!code-aspx[Main](overview/samples/sample46.aspx)]
 
-在这种情况下，路由参数术语的值将用于@companyname中的参数*选择*语句。
+在这种情况下，路由参数术语的值将用于@companyname中的参数<em>选择</em>语句。
 
 <a id="0.2__Toc224729037"></a><a id="0.2__Toc253429261"></a><a id="0.2__Toc243304635"></a>
 
@@ -983,10 +985,10 @@ ASP.NET 2.0 和更高版本呈现特定于系统的隐藏的字段 (如*隐藏*�
 默认情况下，以下支持模板的 ASP.NET Web 服务器控件自动将封装在用于将内联样式应用的外部表：
 
 - *FormView*
-- *登录名*
-- *说明*
+- *Login*
+- *PasswordRecovery*
 - *ChangePassword*
-- *向导*
+- *Wizard*
 - *CreateUserWizard*
 
 名为的新属性*RenderOuterTable*已添加到允许的外部表，从标记要删除这些控件。 例如，考虑下面的示例对*FormView*控件：
@@ -1329,7 +1331,7 @@ Visual Studio 2010 提供内置的 MSBuild 任务和用于创建 Web 包的目�
 
 <a id="0.2__Toc224729057"></a><a id="0.2__Toc253429294"></a><a id="0.2__Toc243304665"></a>
 
-### <a name="webconfig-transformation"></a>Web.config 转换
+### <a name="webconfig-transformation"></a>Web.config Transformation
 
 对于 Web 应用程序部署，Visual Studio 2010 引入了[XML 文档转换 (XDT)](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html)，这是一种功能，可以将转换`Web.config`文件从开发设置到生产环境设置。 转换设置在名为的转换文件中指定`web.debug.config`， `web.release.config`，依次类推。 （这些文件的名称匹配 MSBuild 配置。）转换文件包括只需更改，你需要对部署进行`Web.config`文件。 通过使用简单的语法指定所做的更改。
 
@@ -1363,9 +1365,9 @@ Visual Studio 2010 还允许你使用 IIS 的远程管理服务发布到远程�
 
 - [ASP.NET 4](https://msdn.microsoft.com/library/ee532866%28VS.100%29.aspx) -MSDN 网站上的 ASP.NET 4 的官方文档。
 - [https://www.asp.net/](https://www.asp.net/) -ASP.NET 团队自己的网站。
-- [https://www.asp.net/dynamicdata/](https://msdn.microsoft.com/library/cc488545.aspx)和[ASP.NET 动态数据内容映射](https://msdn.microsoft.com/library/cc488545%28VS.100%29.aspx)-联机资源 ASP.NET 团队站点上和中的 ASP.NET 动态数据有关的正式文档。
-- [https://www.asp.net/ajax/](../../ajax/index.md) -ASP.NET Ajax 开发主 Web 资源。
-- [https://blogs.msdn.com/webdevtools/](https://blogs.msdn.com/webdevtools/) -Visual Web 开发人员团队博客，Visual Studio 2010 中包括有关功能的信息。
+- [https://www.asp.net/dynamicdata/](https://msdn.microsoft.com/library/cc488545.aspx) 和[ASP.NET 动态数据内容映射](https://msdn.microsoft.com/library/cc488545%28VS.100%29.aspx)-联机资源 ASP.NET 团队站点上和中的 ASP.NET 动态数据有关的正式文档。
+- [https://www.asp.net/ajax/](../../ajax/index.md) ASP.NET Ajax 开发-主 Web 资源。
+- [https://blogs.msdn.com/webdevtools/](https://blogs.msdn.com/webdevtools/) 有关功能的信息包含在 Visual Studio 2010 中-Visual Web 开发人员团队博客。
 - [ASP.NET WebStack](https://github.com/aspnet/AspNetWebStack) -ASP.NET 的预览版本的主 Web 资源。
 
 <a id="0.2__Toc224729061"></a><a id="0.2__Toc253429298"></a><a id="0.2__Toc243304669"></a>
@@ -1384,7 +1386,7 @@ Visual Studio 2010 还允许你使用 IIS 的远程管理服务发布到远程�
 
 除非另行说明，示例公司、 组织、 产品、 域名、 电子邮件地址、 徽标、 人物、 地点和事件此处所述虚构，是的无意与任何真实的公司、 组织、 产品、 域名、 电子邮件地址、 徽标、 人员、 位置或事件旨在或妄加推断。
 
-© 2009 Microsoft Corporation。 保留所有权利。
+© 2009 Microsoft Corporation. 保留所有权利。
 
 Microsoft 和 Windows 是 Microsoft Corporation 在美国和/或其他国家/地区的注册商标或商标。
 

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-validation-to-the-model
-title: "将验证添加到模型 (VB) |Microsoft 文档"
+title: 将验证添加到模型 (VB) |Microsoft 文档
 author: Rick-Anderson
-description: "本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识..."
+description: 本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: cac86760b90c90a0ea2fad16268f60b5ccf61299
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 86058530aa00ecbc00aeebc6ed7b5cf019fdad72
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-validation-to-the-model-vb"></a>将验证添加到模型 (VB)
 ====================
@@ -123,6 +123,6 @@ ASP.NET MVC 的核心设计原则之一是模拟 （"不重复自己"）。 ASP.
 
 在序列的下一步部分中，我们将查看应用程序并进行一些改进的自动生成`Details`和`Delete`方法...
 
->[!div class="step-by-step"]
-[上一页](adding-a-new-field.md)
-[下一页](improving-the-details-and-delete-methods.md)
+> [!div class="step-by-step"]
+> [上一页](adding-a-new-field.md)
+> [下一页](improving-the-details-and-delete-methods.md)

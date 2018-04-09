@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-vb
-title: "以编程方式指定母版页 (VB) |Microsoft 文档"
+title: 以编程方式指定母版页 (VB) |Microsoft 文档
 author: rick-anderson
-description: "查看设置内容页的母版页以编程方式通过 PreInit 事件处理程序。"
+description: 查看设置内容页的母版页以编程方式通过 PreInit 事件处理程序。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 191de7546e2ba913fda0c8c8a8bfd3531b53336e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4ba2981e627199da89a25b0b59840f66521f2e78
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="specifying-the-master-page-programmatically-vb"></a>以编程方式指定母版页 (VB)
 ====================
@@ -264,7 +264,7 @@ PreInit 阶段开始时`Page`对象引发其[`PreInit`事件](https://msdn.micro
 **图 07**： 内容页是现在显示使用`Alternate.master`母版页 ([单击以查看实际尺寸的图像](specifying-the-master-page-programmatically-vb/_static/image21.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 时访问内容页，其内容的控件使用其母版页 ContentPlaceHolder 控件融合。 内容页的主控页由表示`Page`类的`MasterPageFile`属性，该值将赋给`@Page`指令的`MasterPageFile`在初始化阶段的属性。 与本教程介绍了，我们可以将值赋给`MasterPageFile`只要我们这样 PreInit 阶段结束之前的属性。 能够以编程方式指定主控页将打开用于更高级的方案，如动态绑定到外部因素所基于的母版页的内容页的门。
 
@@ -282,12 +282,12 @@ PreInit 阶段开始时`Page`对象引发其[`PreInit`事件](https://msdn.micro
 
 ### <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
-本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Suchi Banerjee。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Suchi Banerjee。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](master-pages-and-asp-net-ajax-vb.md)
-[下一页](nested-master-pages-vb.md)
+> [!div class="step-by-step"]
+> [上一页](master-pages-and-asp-net-ajax-vb.md)
+> [下一页](nested-master-pages-vb.md)

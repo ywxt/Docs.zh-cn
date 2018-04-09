@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
-title: "验证与 IDataErrorInfo 接口 (C#) |Microsoft 文档"
+title: 验证与 IDataErrorInfo 接口 (C#) |Microsoft 文档
 author: StephenWalther
-description: "Stephen Walther 演示了如何通过模型类中实现该 IDataErrorInfo 接口显示自定义的验证错误消息。"
+description: Stephen Walther 演示了如何通过模型类中实现该 IDataErrorInfo 接口显示自定义的验证错误消息。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c04088c576481e4a91676d7e6962c03b56e7a8a4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b5028b2e07c4144efa59824885ce96cd8b037dff
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-with-the-idataerrorinfo-interface-c"></a>验证与 IDataErrorInfo 接口 (C#)
 ====================
@@ -37,8 +37,8 @@ ms.lasthandoff: 11/10/2017
 | **列名称** | **数据类型** | **允许 null 值** |
 | --- | --- | --- |
 | Id | Int | False |
-| 标题 | nvarchar(100) | False |
-| 控制器 | nvarchar(100) | False |
+| 标题 | Nvarchar(100) | False |
+| 控制器 | Nvarchar(100) | False |
 | DateReleased | DateTime | False |
 
 
@@ -157,10 +157,10 @@ DefaultModelBinder 还检查 IDataErrorInfo.Error 属性。 此属性用于表�
 
 请注意，自动验证 DateReleased 值。 因为 DateReleased 属性不接受 NULL 值，DefaultModelBinder 验证错误，此属性会自动生成时它不具有值。 如果你想要修改 DateReleased 属性的错误消息，则需要创建自定义模型联编程序。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，您学习了如何使用 IDataErrorInfo 接口生成验证错误消息。 首先，我们创建扩展的功能由实体框架生成的部分电影类的分部电影类。 接下来，我们验证逻辑添加到的电影类 OnTitleChanging() 和 OnDirectorChanging() 分部方法。 最后，我们实现 IDataErrorInfo 接口才能公开的 ASP.NET MVC framework 这些验证消息。
 
->[!div class="step-by-step"]
-[上一页](performing-simple-validation-cs.md)
-[下一页](validating-with-a-service-layer-cs.md)
+> [!div class="step-by-step"]
+> [上一页](performing-simple-validation-cs.md)
+> [下一页](validating-with-a-service-layer-cs.md)

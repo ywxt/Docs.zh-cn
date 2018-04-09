@@ -1,7 +1,7 @@
 ---
-title: "在 ASP.NET 核心目的字符串"
+title: 目的层次结构和 ASP.NET Core 中的多租户
 author: rick-anderson
-description: "本文档概述了目的字符串层次结构和多租户，因为它与 ASP.NET 核心数据保护 Api。"
+description: 了解目的字符串层次结构和多租户因为它与 ASP.NET 核心数据保护 Api。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/purpose-strings-multitenancy
-ms.openlocfilehash: 490896563db514aba3904b01e69a23b61659d830
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a1ca2c32f95a86b877cbbe94d106d23b86800443
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="purpose-hierarchy-and-multi-tenancy-in-aspnet-core"></a>目的层次结构和 ASP.NET Core 中的多租户
 
 由于`IDataProtector`也是隐式`IDataProtectionProvider`，目的可以链接在一起。 在这个意义上来说，`provider.CreateProtector([ "purpose1", "purpose2" ])`等效于`provider.CreateProtector("purpose1").CreateProtector("purpose2")`。
 
-这允许通过数据保护系统的一些有趣的层次结构关系。 前面的示例中[Contoso.Messaging.SecureMessage](purpose-strings.md#data-protection-contoso-purpose)，SecureMessage 组件可以调用`provider.CreateProtector("Contoso.Messaging.SecureMessage")`一次前期和到专用缓存结果`_myProvide`字段。 然后可以通过调用创建将来的保护程序`_myProvider.CreateProtector("User: username")`，并且这些保护程序会使用用于保护单个消息。
+这允许通过数据保护系统的一些有趣的层次结构关系。 前面的示例中[Contoso.Messaging.SecureMessage](xref:security/data-protection/consumer-apis/purpose-strings#data-protection-contoso-purpose)，SecureMessage 组件可以调用`provider.CreateProtector("Contoso.Messaging.SecureMessage")`一次前期和到专用缓存结果`_myProvide`字段。 然后可以通过调用创建将来的保护程序`_myProvider.CreateProtector("User: username")`，并且这些保护程序会使用用于保护单个消息。
 
 这可以还翻转。 考虑单个逻辑应用程序可以使用其自己的身份验证和状态管理系统配置多个租户 （CMS 看起来合理） 和每个租户的主机。 涵盖应用程序具有单一的主提供程序，并且它会调用`provider.CreateProtector("Tenant 1")`和`provider.CreateProtector("Tenant 2")`为每个租户提供其自己的数据保护系统的独立的切片。 租户然后无法派生自己单独的保护程序，基于其自己的需求，但无论硬他们将在尝试在不能创建其中发生冲突的保护程序与其他任何租户系统中。 以图形方式，这表示如下。
 

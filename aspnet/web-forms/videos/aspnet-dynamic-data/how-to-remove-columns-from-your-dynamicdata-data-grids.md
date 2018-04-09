@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-dynamic-data/how-to-remove-columns-from-your-dynamicdata-data-grids
-title: "如何从你 DynamicData 数据网格中删除列 |Microsoft 文档"
+title: 如何从你 DynamicData 数据网格中删除列 |Microsoft 文档
 author: JoeStagner
-description: "在本视频中，你将看到如何充分利用完整列基架，但仍排除不想要显示在用户 interfac 的表列..."
+description: 在本视频中，你将看到如何充分利用完整列基架，但仍排除不想要显示在用户 interfac 的表列...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/11/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-to-remove-columns-from-your-dynamicdata-data-grids
 msc.type: video
-ms.openlocfilehash: ef4a639098e56a02d87354399e9178b01ac716c8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ce8bda35e91a1bf6f2388408e321b4c30c42ece9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-to-remove-columns-from-your-dynamicdata-data-grids"></a>如何从你 DynamicData 数据网格中删除列
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （5 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-to-remove-columns-from-your-dynamicdata-data-grids)
 
->[!div class="step-by-step"]
-[上一页](how-to-implement-custom-field-validation-with-imperative-logic-in-vb-or-c.md)
-[下一页](how-to-create-table-specific-custom-forms-in-an-aspnet-dynamic-data-application.md)
+> [!div class="step-by-step"]
+> [上一页](how-to-implement-custom-field-validation-with-imperative-logic-in-vb-or-c.md)
+> [下一页](how-to-create-table-specific-custom-forms-in-an-aspnet-dynamic-data-application.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "代码优先迁移和部署 ASP.NET MVC 应用程序中的实体框架 |Microsoft 文档"
+title: 代码优先迁移和部署 ASP.NET MVC 应用程序中的实体框架 |Microsoft 文档
 author: tdykstra
-description: "Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 的 ASP.NET MVC 5 应用程序..."
+description: Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 的 ASP.NET MVC 5 应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/07/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 2294f2aba3f765d7849d1f407e85f424dc8b2518
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 04d393edca0469df140f06a7d083a48aa8f84b65
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="code-first-migrations-and-deployment-with-the-entity-framework-in-an-aspnet-mvc-application"></a>代码优先迁移和部署 ASP.NET MVC 应用程序中的实体框架
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 11/10/2017
 
 [下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)或[下载 PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 有关教程系列的信息，请参阅[序列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 
 到目前为止应用程序已经运行本地 IIS Express 在开发计算机上。 若要实际的应用程序可用于通过 Internet 使用其他人，你必须将其部署到 web 宿主提供程序。 在本教程中，你将部署到 Azure 中云 Contoso 大学应用程序。
 
@@ -37,9 +37,9 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="enable-code-first-migrations"></a>启用 Code First 迁移
 
-当你开发新的应用程序时，你的数据模型更改通常情况下，和每次将模型更改，它将获取与数据库不同步。 你已配置实体框架可以自动除去并重新创建数据库每次更改数据模型。 当添加、 删除，或更改实体类或更改你`DbContext`类，在下次运行应用程序时自动删除现有数据库，创建一个新的匹配模型，并设定其种子使用测试数据。
+开发新应用程序时，数据模型会频繁更改。每当模型更改时，模型都无法与数据库保持同步。 你已配置实体框架可以自动除去并重新创建数据库每次更改数据模型。 当添加、 删除，或更改实体类或更改你`DbContext`类，在下次运行应用程序时自动删除现有数据库，创建一个新的匹配模型，并设定其种子使用测试数据。
 
-保持数据库与数据模型同步此方法适用很好地部署到生产应用程序之前。 当在生产环境中运行应用程序时，它通常存储数据，你想要保留，并不想丢失的所有内容每次进行一次更改如添加新列。 [Code First 迁移](https://msdn.microsoft.com/data/jj591621)功能启用 Code First 来更新数据库架构，而不是删除并重新创建数据库，从而解决了此问题。 在本教程中，你将部署该应用程序，并准备，你将启用迁移。
+这种使数据库与数据模型保持同步的方法适用于多种情况，但将应用程序部署到生产环境的情况除外。 当在生产环境中运行应用程序时，它通常存储数据，你想要保留，并不想丢失的所有内容每次进行一次更改如添加新列。 [Code First 迁移](https://msdn.microsoft.com/data/jj591621)功能启用 Code First 来更新数据库架构，而不是删除并重新创建数据库，从而解决了此问题。 在本教程中，你将部署该应用程序，并准备，你将启用迁移。
 
 1. 禁用初始值设定项，你将其设置前面通过注释掉或删除`contexts`添加到应用程序 Web.config 文件的元素。
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-xml[Main](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.xml?highlight=2)]
 
-    此更改将项目设置，以便第一次迁移将创建一个新的数据库。 这不是必需，但你将看到更高版本的原因是一个不错的主意。
+    此更改将设置项目，以便初始迁移创建新的数据库。 这不是必需，但你将看到更高版本的原因是一个不错的主意。
 3. 从**工具**菜单上，单击**库程序包管理器**然后**程序包管理器控制台**。
 
     ![Selecting_Package_Manager_Console](https://asp.net/media/4336350/1pm.png)
@@ -112,11 +112,11 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample8.cs)]
 
-迁移调用`Up`方法以实现迁移的数据模型更改。 当你输入命令回滚更新，迁移调用`Down`方法。
+迁移调用 `Up` 方法为迁移实现数据模型更改。 输入用于回退更新的命令时，迁移调用 `Down` 方法。
 
 这是你输入时创建的初始迁移`add-migration InitialCreate`命令。 参数 (`InitialCreate`在示例中) 用于文件命名，并可以是任何所需内容; 你通常要选择的单词或短语，总结了中迁移正在进行的内容。 例如，你可能会将更高版本迁移&quot;AddDepartmentTable&quot;。
 
-如果数据库已存在时创建初始迁移，则生成的数据库创建代码，但它无需运行，因为数据库已与匹配的数据模型。 时应用部署到另一个环境，其中数据库不存在，请运行此代码将创建数据库时，因此它会先测试一个好办法。 这就是为什么以便迁移可以创建一个从零开始的新更改连接字符串前面-中数据库的名称。
+如果创建初始迁移时已存在数据库，则会生成数据库创建代码，但此代码不必运行，因为数据库已与数据库模型相匹配。 将应用部署到其中尚不存在数据库的其他环境时，此代码将运行以创建数据库，因此最好提前进行测试。 这也是提前更改连接字符串中数据库的名称的原因，这样迁移才能从头创建新数据库。
 
 1. 在**程序包管理器控制台**窗口中，输入以下命令：
 
@@ -125,7 +125,7 @@ ms.lasthandoff: 11/10/2017
     ![](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 
     `update-database`命令将运行`Up`方法，创建数据库然后运行`Seed`方法来填充数据库。 相同的过程后将运行自动在生产中部署应用程序，正如你将看到的下一节中。
-- 使用**服务器资源管理器**以检查数据库，就像在第一个教程中，并运行应用程序以验证所有内容仍适用相同像以前那样。
+2. 使用**服务器资源管理器**以检查数据库，就像在第一个教程中，并运行应用程序以验证所有内容仍适用相同像以前那样。
 
 ## <a name="deploy-to-azure"></a>将部署到 Azure
 
@@ -153,7 +153,7 @@ Visual Studio 不执行任何操作与数据库在部署过程时它正在将你
 
     ![在管理门户中的新按钮](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/CreateWeb-Sql.png)
 
- **新的 Web 应用和 SQL-创建**向导随即打开。
+   **新的 Web 应用和 SQL-创建**向导随即打开。
 
 2. 在边栏选项卡，输入中的字符串**应用名称**框，以用作你的应用程序的唯一 URL。 完整的 URL 将包含你在此处输入的 Azure 应用程序服务的默认域 plus 的 (。 azurewebsites.net)。 如果**应用名称**已被使用，该向导将通知你这些带有红色*应用程序名称不可用*消息。 如果**应用名称**是可用，你将获得一个绿色复选标记。
 
@@ -175,9 +175,9 @@ Visual Studio 不执行任何操作与数据库在部署过程时它正在将你
 10. 修改[排序规则](https://docs.microsoft.com/sql/relational-databases/collations/collation-and-unicode-support)根据需要。
 11. 输入管理员**SQL 管理员用户名**和**SQL 管理员密码**。 如果你选择**新建 SQL 数据库服务器**，不要输入现有名称和密码在此处，你应输入新名称和密码，你现在定义以后访问数据库时使用。 如果你选择你之前创建的服务器，你将为该服务器输入凭据。
 12. 可以为 App Service 中使用 Application Insights 启用遥测数据收集。 与配置少的 application Insights 收集有价值的事件、 异常、 依赖项、 请求和跟踪信息。 若要了解有关 Application Insights 的详细信息，开始[Azure 文档](https://azure.microsoft.com/services/application-insights/)。
-12. 单击**创建**底部的边栏选项卡，以指示你已完成。
+13. 单击**创建**底部的边栏选项卡，以指示你已完成。
   
- 管理门户返回到仪表板页上，与**通知**边栏选项卡页顶部显示正在创建网站。 （通常小于一分钟），一段时间后将部署成功的通知。 在左侧的导航栏中的新**App Service**出现在*应用程序服务*部分和新**SQL 数据库**出现在*SQL 数据库*部分。
+    管理门户返回到仪表板页上，与**通知**边栏选项卡页顶部显示正在创建网站。 （通常小于一分钟），一段时间后将部署成功的通知。 在左侧的导航栏中的新**App Service**出现在*应用程序服务*部分和新**SQL 数据库**出现在*SQL 数据库*部分。
 
 ### <a name="deploy-the-application-to-azure"></a>部署到 Azure 应用程序
 
@@ -195,30 +195,30 @@ Visual Studio 不执行任何操作与数据库在部署过程时它正在将你
 5. 在配置配置文件后，**连接**将显示选项卡。 单击**验证连接**若要确保设置正确无误
 
     ![验证连接](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Connection.png)
-7. 在验证连接后，旁边出现一个绿色的复选标记**验证连接**按钮。 单击 **“下一步”**。
+6. 在验证连接后，旁边出现一个绿色的复选标记**验证连接**按钮。 单击 **“下一步”**。
   
     ![已成功验证的连接](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-SettingsValidated.png)
-8. 打开**远程连接字符串**下的下拉列表**SchoolContext** ，然后选择你创建的数据库的连接字符串。
-9. 选择**更新数据库**。
+7. 打开**远程连接字符串**下的下拉列表**SchoolContext** ，然后选择你创建的数据库的连接字符串。
+8. 选择**更新数据库**。
 
     ![设置选项卡](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Settings.png)
 
     此设置会导致自动配置应用程序的部署过程*Web.config*文件在目标服务器上，以便代码优先使用`MigrateDatabaseToLatestVersion`初始值设定项类。
-10. 单击 **“下一步”**。
-11. 在**预览**选项卡上，单击**开始预览**。
+9. 单击 **“下一步”**。
+10. 在**预览**选项卡上，单击**开始预览**。
   
     ![预览选项卡中的开始预览按钮](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Preview.png)
   
- 选项卡显示将复制到服务器的文件列表。 显示预览不需要发布应用程序但有用的功能，需要注意。 在这种情况下，你不必使用显示的文件列表执行任何操作。 下次部署此应用程序，仅将已更改的文件将在此列表中。
+    选项卡显示将复制到服务器的文件列表。 显示预览不需要发布应用程序但有用的功能，需要注意。 在这种情况下，你不必使用显示的文件列表执行任何操作。 下次部署此应用程序，仅将已更改的文件将在此列表中。
     ![开始预览文件输出](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-PreviewLoaded.png)
 
-12. 单击“发布” 。
- Visual Studio 开始将文件复制到 Azure 的服务器的过程。
-13. **输出**窗口将显示已执行的部署操作并报告已成功完成的部署。
+11. 单击“发布” 。
+    Visual Studio 开始将文件复制到 Azure 的服务器的过程。
+12. **输出**窗口将显示已执行的部署操作并报告已成功完成的部署。
   
     ![输出窗口报告部署成功](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-BuildOutput.png)
-14. 成功部署后，默认浏览器自动打开指向已部署的 web 站点的 URL。
- 你创建的应用程序现在在云中运行。 
+13. 成功部署后，默认浏览器自动打开指向已部署的 web 站点的 URL。
+    你创建的应用程序现在在云中运行。 
   
     ![Students_index_page_with_paging](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Site.png)
 
@@ -250,7 +250,7 @@ Visual Studio 不执行任何操作与数据库在部署过程时它正在将你
 
 有关初始值设定项的详细信息，请参阅[了解数据库初始值设定项中 Entity Framework Code First](http://www.codeguru.com/csharp/article.php/c19999/Understanding-Database-Initializers-in-Entity-Framework-Code-First.htm)和书籍的第 6 章[编程实体框架： Code First](http://shop.oreilly.com/product/0636920022220.do)通过 Julie Lerman和 Rowan Miller。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，你已了解如何启用迁移和部署应用程序。 在下一教程将首先通过展开数据模型来查看更高级的主题。
 
@@ -258,6 +258,6 @@ Visual Studio 不执行任何操作与数据库在部署过程时它正在将你
 
 在找不到其他实体框架资源的链接[ASP.NET 数据访问的推荐资源](xref:whitepapers/aspnet-data-access-content-map)。
 
->[!div class="step-by-step"]
-[上一页](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application)
-[下一页](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application)
+> [!div class="step-by-step"]
+> [上一页](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application)
+> [下一页](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application)

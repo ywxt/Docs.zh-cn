@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/generating-views
-title: "首先使用 ASP.NET MVC 的 EF 数据库： 生成视图 |Microsoft 文档"
+title: 首先使用 ASP.NET MVC 的 EF 数据库： 生成视图 |Microsoft 文档
 author: tfitzmac
-description: "使用 MVC、 实体框架和 ASP.NET 基架，可以创建的 web 应用程序提供了一个接口到现有数据库。 此教程系列..."
+description: 使用 MVC、 实体框架和 ASP.NET 基架，可以创建的 web 应用程序提供了一个接口到现有数据库。 此教程系列...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/29/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/generating-views
 msc.type: authoredcontent
-ms.openlocfilehash: 5fccb3c56af0945ec448becff777a3e92dc160d7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b60e89a187a879255eb051dc87241714cef6fa63
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-generating-views"></a>首先使用 ASP.NET MVC 的 EF 数据库： 生成视图
 ====================
@@ -43,7 +43,7 @@ ms.lasthandoff: 11/10/2017
 
 ![指定控制器](generating-views/_static/image3.png)
 
-单击 **“添加”**。
+单击 **添加**。
 
 如果你收到错误，则可能是因为未生成上一节中的项目。 如果是这样，请尝试生成项目，然后再添加基架的项。
 
@@ -109,6 +109,6 @@ ms.lasthandoff: 11/10/2017
 
 你已验证的自动生成的视图，使用户能够处理数据库中的数据。 在本系列中下一步教程中，将更新该数据库，并在 web 应用程序中进行相应更改。
 
->[!div class="step-by-step"]
-[上一页](creating-the-web-application.md)
-[下一页](changing-the-database.md)
+> [!div class="step-by-step"]
+> [上一页](creating-the-web-application.md)
+> [下一页](changing-the-database.md)

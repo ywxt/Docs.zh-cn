@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/creating-user-accounts-cs
-title: "创建用户帐户 (C#) |Microsoft 文档"
+title: 创建用户帐户 (C#) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将探讨使用成员资格框架 （通过 SqlMembershipProvider) 来创建新用户帐户。 我们将了解如何创建新我们..."
+description: 在本教程中我们将探讨使用成员资格框架 （通过 SqlMembershipProvider) 来创建新用户帐户。 我们将了解如何创建新我们...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-user-accounts-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d1bdec096b68a01c36f46765abef00aad319f2c2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e00417639fba71083cbf392db5d5078561ab26e3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-user-accounts-c"></a>创建用户帐户 (C#)
 ====================
@@ -40,7 +40,7 @@ ms.lasthandoff: 01/24/2018
 我们开始使用成员资格 framework 之前，让我们花些时间回顾我们采取了来达到此点的重要步骤。 使用的成员资格 framework 时`SqlMembershipProvider`需要在基于窗体的身份验证方案中，在 web 应用程序中实现成员资格功能之前执行以下步骤：
 
 1. **启用基于窗体的身份验证。** 如我们所述 *<a id="_msoanchor_4"> </a>[概述窗体身份验证的](../introduction/an-overview-of-forms-authentication-cs.md)*，窗体身份验证通过编辑`Web.config`和设置`<authentication>`元素的`mode`属性设为`Forms`。 通过启用 forms 身份验证，每个传入请求检查，以确定*窗体身份验证票证*，它，如果存在，标识请求者。
-2. **将应用程序服务架构添加到相应的数据库。** 使用时`SqlMembershipProvider`我们需要先安装到数据库的应用程序服务架构。 通常将此架构添加到同一个数据库包含应用程序的数据模型。 *<a id="_msoanchor_5"> </a>[在 SQL Server 中创建成员身份架构](creating-the-membership-schema-in-sql-server-cs.md)*教程了解了使用`aspnet_regsql.exe`工具来实现此目的。
+2. **将应用程序服务架构添加到相应的数据库。** 使用时`SqlMembershipProvider`我们需要先安装到数据库的应用程序服务架构。 通常将此架构添加到同一个数据库包含应用程序的数据模型。  *<a id="_msoanchor_5"> </a>[在 SQL Server 中创建成员身份架构](creating-the-membership-schema-in-sql-server-cs.md)*教程了解了使用`aspnet_regsql.exe`工具来实现此目的。
 3. **自定义 Web 应用程序的设置以从步骤 2 中引用该数据库。** *在 SQL Server 中创建成员身份架构*教程介绍了两种方法可以配置 web 应用程序，以便`SqlMembershipProvider`将使用在步骤 2 中所选的数据库： 通过修改`LocalSqlServer`连接字符串名称;或通过将新的已注册提供程序添加到成员资格 framework 提供程序的列表和自定义该新的提供程序，用于将数据库从步骤 2。
 
 当生成 web 应用程序，该使用`SqlMembershipProvider`和基于窗体的身份验证，你将需要使用之前执行以下三个步骤`Membership`类或 ASP.NET 登录 Web 控件。 由于我们已在前面的教程中执行这些步骤，我们已准备好开始使用成员资格 framework ！
@@ -166,11 +166,11 @@ ASP.NET 包括大量导航相关器设计用户界面的 Web 控件。 其中包
 
 若要演示如何使用`CreateUser`方法，让我们创建我们其中提示用户输入其名称、 密码、 电子邮件、 和到预定义的安全问题的答案的用户界面。 打开`CreatingUserAccounts.aspx`页面`Membership`文件夹并将以下 Web 控件添加到内容控件：
 
-- 名为文本框中`Username`
-- 文本框中，名为`Password`、 其`TextMode`属性设置为`Password`
-- 名为文本框中`Email`
+- 名为文本框中 `Username`
+- 文本框中，名为`Password`、 其`TextMode`属性设置为 `Password`
+- 名为文本框中 `Email`
 - 一个名为标签`SecurityQuestion`与其`Text`属性已清除
-- 名为文本框中`SecurityAnswer`
+- 名为文本框中 `SecurityAnswer`
 - 名为的按钮`CreateAccountButton`其文本属性设置为"创建用户帐户"
 - 一个名为的标签控件`CreateAccountResults`与其`Text`属性已清除
 
@@ -192,7 +192,7 @@ ASP.NET 包括大量导航相关器设计用户界面的 Web 控件。 其中包
 
 [!code-csharp[Main](creating-user-accounts-cs/samples/sample6.cs)]
 
-`Click`事件处理程序启动通过定义一个名为变量`createStatus`类型的[ `MembershipCreateStatus` ](https://msdn.microsoft.com/library/system.web.security.membershipcreatestatus.aspx)。 `MembershipCreateStatus`是一个枚举，指示的状态`CreateUser`操作。 例如，如果用户成功创建帐户后，生成`MembershipCreateStatus`实例将设置为值`Success`; 上的其他另一方面，如果操作失败，因为已存在具有相同的用户名的用户，它将设置为的值`DuplicateUserName`. 在`CreateUser`我们使用的重载，我们需要将`MembershipCreateStatus`到该方法为实例`out`参数。 此参数设置为适当的值中`CreateUser`方法，并且我们可以在方法调用，以确定是否已成功创建用户帐户后检查其值。
+`Click`事件处理程序启动通过定义一个名为变量`createStatus`类型的[ `MembershipCreateStatus` ](https://msdn.microsoft.com/library/system.web.security.membershipcreatestatus.aspx)。 `MembershipCreateStatus` 是一个枚举，指示的状态`CreateUser`操作。 例如，如果用户成功创建帐户后，生成`MembershipCreateStatus`实例将设置为值`Success`; 上的其他另一方面，如果操作失败，因为已存在具有相同的用户名的用户，它将设置为的值`DuplicateUserName`. 在`CreateUser`我们使用的重载，我们需要将`MembershipCreateStatus`到该方法为实例`out`参数。 此参数设置为适当的值中`CreateUser`方法，并且我们可以在方法调用，以确定是否已成功创建用户帐户后检查其值。
 
 在调用`CreateUser`，并传入`createStatus`、`switch`语句用于输出赋予的值根据相应的消息`createStatus`。 已成功创建新用户时，图 7 显示输出。 未能创建用户帐户时，数字 8 和 9 显示的输出。 在图 8 中，在距访客输入了不满足密码强度要求拼在成员资格提供程序的配置设置中的五个字母密码。 在图 9 中，在距访客正在尝试使用现有的用户名 （图 7 中创建一个） 创建用户帐户。
 
@@ -260,10 +260,10 @@ ASP.NET 附带了大量的登录 Web 控件。 这些控件有助于许多常见
 
 通过，正如其名，派生自[向导控件](https://msdn.microsoft.com/library/s2etd1ek.aspx)。 向导控件被设计用于提供用于完成多步骤任务的接口。 向导控件可能包含任意数目的`WizardSteps`，其中每个是一个模板，定义 HTML 和 Web 控件为该步骤。 向导控件最初显示第一个`WizardStep`，以及允许用户可从某一步前进到下一行，或返回到前面的步骤的导航控件。
 
-如图 11 中的声明性标记所示，通过默认接口包括两个`WizardSteps:`
+如图 11 中的声明性标记所示，通过默认接口包括两个 `WizardSteps:`
 
-- [`CreateUserWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizardstep.aspx)– 呈现的界面，以收集用于创建新的用户帐户的信息。 这是图 11 中所示的步骤。
-- [`CompleteWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.completewizardstep.aspx)– 呈现，该值指示该帐户已成功创建一条消息。
+- [`CreateUserWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizardstep.aspx) – 呈现的界面，以收集用于创建新的用户帐户的信息。 这是图 11 中所示的步骤。
+- [`CompleteWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.completewizardstep.aspx) – 呈现，该值指示该帐户已成功创建一条消息。
 
 可以修改 CreateUserWizard 的外观和行为，通过将上述任一步骤转换为模板，或添加自己`WizardSteps`。 我们将考察添加`WizardStep`到中的注册界面*存储的其他用户信息*教程。
 
@@ -349,7 +349,7 @@ ASP.NET 附带了大量的登录 Web 控件。 这些控件有助于许多常见
 > 我们将看到举例说明使用通过`CreatedUser`中的事件 *<a id="_msoanchor_11"> </a>[存储的其他用户信息](storing-additional-user-information-cs.md)*教程。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 `Membership`类的`CreateUser`方法中的成员资格 framework 创建新的用户帐户。 它会通过委派对配置成员资格提供程序的调用。 情况下`SqlMembershipProvider`、`CreateUser`方法将添加到记录`aspnet_Users`和`aspnet_Membership`数据库表。
 
@@ -363,7 +363,7 @@ ASP.NET 附带了大量的登录 Web 控件。 这些控件有助于许多常见
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [`CreateUser`技术文档](https://msdn.microsoft.com/library/system.web.security.membershipprovider.createuser.aspx)
+- [`CreateUser` 技术文档](https://msdn.microsoft.com/library/system.web.security.membershipprovider.createuser.aspx)
 - [通过概述](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/createuserwizard.aspx)
 - [创建文件系统基于站点映射提供程序](http://aspnet.4guysfromrolla.com/articles/020106-1.aspx)
 - [使用 ASP.NET 2.0 向导控件创建分步的用户界面](http://aspnet.4guysfromrolla.com/articles/061406-1.aspx)
@@ -373,12 +373,12 @@ ASP.NET 附带了大量的登录 Web 控件。 这些控件有助于许多常见
 
 ### <a name="about-the-author"></a>关于作者
 
-Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢...
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
 
->[!div class="step-by-step"]
-[上一页](creating-the-membership-schema-in-sql-server-cs.md)
-[下一页](validating-user-credentials-against-the-membership-user-store-cs.md)
+> [!div class="step-by-step"]
+> [上一页](creating-the-membership-schema-in-sql-server-cs.md)
+> [下一页](validating-user-credentials-against-the-membership-user-store-cs.md)

@@ -1,7 +1,7 @@
 ---
-title: "响应缓存在 ASP.NET 核心中的中间件"
+title: 响应缓存在 ASP.NET 核心中的中间件
 author: guardrex
-description: "了解如何配置和 ASP.NET Core 中使用缓存响应的中间件。"
+description: 了解如何配置和 ASP.NET Core 中使用缓存响应的中间件。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -9,11 +9,11 @@ ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: e9a74d8f6c3945b1bc8c62d0ab21145a7c5717fb
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: ff92b032fe8bbbcb7bc26a34fdfbc56a0fcc0e2c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>响应缓存在 ASP.NET 核心中的中间件
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 03/02/2018
 
 此文章介绍了如何在 ASP.NET Core 应用程序中配置缓存响应的中间件。 该中间件确定响应何时可缓存、 存储响应和从缓存充当响应。 有关 HTTP 缓存功能的简介和`ResponseCache`属性，请参阅[响应缓存](xref:performance/caching/response)。
 
-## <a name="package"></a>Package
+## <a name="package"></a>包
 
 若要在项目中包含该中间件，添加到引用[ `Microsoft.AspNetCore.ResponseCaching` ](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCaching/)包或使用[ `Microsoft.AspNetCore.All` ](https://www.nuget.org/packages/Microsoft.AspNetCore.All/)包 (ASP.NET Core 2.0 或更高版本时目标.NET 核心)。
 
@@ -88,7 +88,7 @@ if (responseCachingFeature != null)
 | Header | 详细信息 |
 | ------ | ------- |
 | 授权 | 如果标头存在，则不缓存响应。 |
-| Cache-Control | 该中间件只考虑缓存标记为响应`public`缓存指令。 控制缓存使用以下参数：<ul><li>最长时间</li><li>max-stale&#8224;</li><li>最小值全新</li><li>must-revalidate</li><li>无缓存</li><li>no-store</li><li>仅当-缓存</li><li>private</li><li>public</li><li>s maxage</li><li>proxy-revalidate&#8225;</li></ul>&#8224; 如果没有限制指定到`max-stale`，中间件不执行任何操作。<br>&#8225;`proxy-revalidate`具有相同的效果`must-revalidate`。<br><br>有关详细信息，请参阅[RFC 7231： 请求的缓存控制指令](https://tools.ietf.org/html/rfc7234#section-5.2.1)。 |
+| Cache-Control | 该中间件只考虑缓存标记为响应`public`缓存指令。 控制缓存使用以下参数：<ul><li>最长时间</li><li>max-stale&#8224;</li><li>最小值全新</li><li>must-revalidate</li><li>无缓存</li><li>no-store</li><li>仅当-缓存</li><li>private</li><li>public</li><li>s maxage</li><li>proxy-revalidate&#8225;</li></ul>&#8224;如果没有限制指定到`max-stale`，中间件不执行任何操作。<br>&#8225;`proxy-revalidate`具有相同的效果`must-revalidate`。<br><br>有关详细信息，请参阅[RFC 7231： 请求的缓存控制指令](https://tools.ietf.org/html/rfc7234#section-5.2.1)。 |
 | 杂注 | A`Pragma: no-cache`请求标头中的生成相同的效果`Cache-Control: no-cache`。 此标头中的相关指令来重写`Cache-Control`标头，如果存在。 考虑对与 HTTP/1.0 的向后兼容性。 |
 | Set-Cookie | 如果标头存在，则不缓存响应。 |
 | 改变 | `Vary`标头用于改变缓存的响应的另一个标头。 例如，通过包括通过编码来缓存响应`Vary: Accept-Encoding`标头，来缓存响应的请求标头`Accept-Encoding: gzip`和`Accept-Encoding: text/plain`单独。 标头值为响应`*`永远不会存储。 |
@@ -105,7 +105,7 @@ if (responseCachingFeature != null)
 
 为了更好地控制缓存行为，将介绍其他缓存功能的 ASP.NET Core。 请参见下面的主题：
 
-* [内存中缓存](xref:performance/caching/memory)
+* [缓存在内存](xref:performance/caching/memory)
 * [使用分布式缓存](xref:performance/caching/distributed)
 * [缓存 ASP.NET Core MVC 中的标记帮助器](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
 * [分布式缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
@@ -142,7 +142,7 @@ if (responseCachingFeature != null)
 
 * [应用程序启动](xref:fundamentals/startup)
 * [中间件](xref:fundamentals/middleware/index)
-* [内存中缓存](xref:performance/caching/memory)
+* [缓存在内存](xref:performance/caching/memory)
 * [使用分布式缓存](xref:performance/caching/distributed)
 * [使用更改令牌检测更改](xref:fundamentals/primitives/change-tokens)
 * [响应缓存](xref:performance/caching/response)

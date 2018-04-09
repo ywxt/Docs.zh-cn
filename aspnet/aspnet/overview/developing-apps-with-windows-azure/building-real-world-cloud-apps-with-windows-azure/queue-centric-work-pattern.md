@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
-title: "以队列为中心的工作模式 （使用 Azure 构建真实世界云应用） |Microsoft 文档"
+title: 以队列为中心的工作模式 （使用 Azure 构建真实世界云应用） |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以..."
+description: 构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: cc1ad51b-40c3-4c68-8620-9aaa0fd1f6cf
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
 msc.type: authoredcontent
-ms.openlocfilehash: ccfbaa26cbf610f847811e6f3c612458277046ed
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 124e673206ecea2eac5efb8c2802a32a690fa104
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>以队列为中心的工作模式 （使用 Azure 构建真实世界云应用）
 ====================
@@ -170,7 +170,7 @@ Web 应用程序通常都容易遭受流量的突现高峰。 尽管你可以使
 
 在 web 项目中，添加异步代码可以自动提高性能，因为 IIS 管理有限的线程池。 即不是这种情况在辅助角色项目。 若要提高可伸缩性的辅助角色，你可以编写多线程的代码，或使用异步代码来实现[并行编程](https://msdn.microsoft.com/library/ff963553.aspx)。 此示例未实现的并行编程，但演示如何使代码异步，因此您可以实施并行编程。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本章中，你已了解如何通过实现以队列为中心的工作模式来提高应用程序响应能力、 可靠性和可伸缩性。
 
@@ -194,6 +194,6 @@ Web 应用程序通常都容易遭受流量的突现高峰。 尽管你可以使
 
 - [防故障： 构建可扩展、 有弹性的云服务](https://channel9.msdn.com/Series/FailSafe)。 通过 Ulrich Homann、 Marc Mercuri 和 Mark Simms 九一部分视频系列。 高级概念和体系结构原理以非常可访问且有趣方式，提供与 Microsoft 客户咨询团队 (CAT) 体验与实际客户从绘制的情景。 有关 Azure 存储服务和队列的介绍，请参阅段 5 开始 35:13。
 
->[!div class="step-by-step"]
-[上一页](distributed-caching.md)
-[下一页](more-patterns-and-guidance.md)
+> [!div class="step-by-step"]
+> [上一页](distributed-caching.md)
+> [下一页](more-patterns-and-guidance.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution
-title: "设置联系人管理器解决方案 |Microsoft 文档"
+title: 设置联系人管理器解决方案 |Microsoft 文档
 author: jrjlee
-description: "本主题介绍如何下载和配置联系人管理器解决方案，以在开发工作站上本地运行。"
+description: 本主题介绍如何下载和配置联系人管理器解决方案，以在开发工作站上本地运行。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: b8176b3b8622e21187a91647323322e55582373c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e8fb24f5b2d96d864d1aa6bc0f78644773de00ab
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="setting-up-the-contact-manager-solution"></a>设置联系人管理器解决方案
 ====================
@@ -125,6 +125,6 @@ ms.lasthandoff: 01/24/2018
 
 下一主题[了解项目文件](understanding-the-project-file.md)，说明如何使用联系人管理器解决方案中的自定义 Microsoft Build Engine (MSBuild) 项目文件来控制部署过程。
 
->[!div class="step-by-step"]
-[上一页](the-contact-manager-solution.md)
-[下一页](understanding-the-project-file.md)
+> [!div class="step-by-step"]
+> [上一页](the-contact-manager-solution.md)
+> [下一页](understanding-the-project-file.md)

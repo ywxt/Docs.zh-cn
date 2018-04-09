@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
-title: "ASP.NET MVC 4 基础知识 |Microsoft 文档"
+title: ASP.NET MVC 4 基础知识 |Microsoft 文档
 author: rick-anderson
-description: "此动手实验开始算起 MVC （模型视图控制器） 音乐商店的教程应用程序介绍，并说明如何使用 ASP.NET MV 分步..."
+description: 此动手实验开始算起 MVC （模型视图控制器） 音乐商店的教程应用程序介绍，并说明如何使用 ASP.NET MV 分步...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: f93f51219403cd5aeca2dd3648444a84690c3d25
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: a0dd32280321938aba84a2aed5273d80750ed774
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 基础知识
 
@@ -156,15 +156,15 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
 
     *在解决方案资源管理器的 ASP.NET MVC 文件夹结构*
 
-    1. **控制器**。 此文件夹将包含控制器类。 在基于 MVC 的应用中，控制器负责处理最终用户交互、 操作模型，以及最终选择的视图来呈现的 UI。
+   1. **控制器**。 此文件夹将包含控制器类。 在基于 MVC 的应用中，控制器负责处理最终用户交互、 操作模型，以及最终选择的视图来呈现的 UI。
 
-        > [!NOTE]
-        > MVC framework 要求以结尾的所有控制器的名称&quot;控制器&quot;-例如，HomeController、 LoginController 或 ProductController。
-    2. **模型**。 表示 MVC Web 应用程序的应用程序模型的类，提供此文件夹。 这通常包括定义对象和与数据存储区交互的逻辑的代码。 通常情况下，实际的模型对象将在单独的类库。 但是，在创建新的应用程序时，可能包含的类，并且然后在开发周期中将它们移到单独的类库，请在以后。
-    3. **视图**。 此文件夹是视图，负责显示应用程序的用户界面组件的建议的位置。 视图使用.aspx、.ascx、.cshtml 和.master 文件，除了与呈现视图相关的任何其他文件。 视图文件夹包含一个用于每个控制器; 文件夹此文件夹称为具有控制器名称前缀。 例如，如果你有一个名为的控制器**HomeController**，Views 文件夹将包含名为主页的文件夹。 默认情况下，当 ASP.NET MVC framework 加载视图，它查找具有 Views\controllerName 文件夹中的请求的视图名称的.aspx 文件 (**视图 [ControllerName] [操作].aspx**) 或 (**视图 [ControllerName][操作].cshtml**) Razor 视图。
+       > [!NOTE]
+       > MVC framework 要求以结尾的所有控制器的名称&quot;控制器&quot;-例如，HomeController、 LoginController 或 ProductController。
+   2. **模型**。 表示 MVC Web 应用程序的应用程序模型的类，提供此文件夹。 这通常包括定义对象和与数据存储区交互的逻辑的代码。 通常情况下，实际的模型对象将在单独的类库。 但是，在创建新的应用程序时，可能包含的类，并且然后在开发周期中将它们移到单独的类库，请在以后。
+   3. **视图**。 此文件夹是视图，负责显示应用程序的用户界面组件的建议的位置。 视图使用.aspx、.ascx、.cshtml 和.master 文件，除了与呈现视图相关的任何其他文件。 视图文件夹包含一个用于每个控制器; 文件夹此文件夹称为具有控制器名称前缀。 例如，如果你有一个名为的控制器**HomeController**，Views 文件夹将包含名为主页的文件夹。 默认情况下，当 ASP.NET MVC framework 加载视图，它查找具有 Views\controllerName 文件夹中的请求的视图名称的.aspx 文件 (**视图 [ControllerName] [操作].aspx**) 或 (**视图 [ControllerName][操作].cshtml**) Razor 视图。
 
-    > [!NOTE]
-    > 除了前面列出的文件夹，MVC Web 应用程序使用**Global.asax**文件以设置全局 URL 路由默认值，并使用**Web.config**文件来配置应用程序。
+      > [!NOTE]
+      > 除了前面列出的文件夹，MVC Web 应用程序使用**Global.asax**文件以设置全局 URL 路由默认值，并使用**Web.config**文件来配置应用程序。
 
 <a id="Ex1Task3"></a>
 
@@ -192,7 +192,9 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
     (代码段- *ASP.NET MVC 4 基础-Ex1 HomeController 索引*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample1.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample1.cs)]
+~~~
 
 <a id="Ex1Task4"></a>
 
@@ -234,12 +236,12 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
 1. 如果尚未打开，启动**VS Express for Web 2012**。
 2. 在**文件**菜单上，选择**打开项目**。 在打开项目对话框中，浏览到**Source\Ex02 CreatingAController\Begin**，选择**Begin.sln**单击**打开**。 或者，你也可以继续使用该解决方案完成上一练习后获得。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 3. 添加新控制器。 要执行此操作，请右键单击**控制器**在解决方案资源管理器，选择文件夹**添加**然后**控制器**命令。 更改**控制器名称**到*StoreController*，然后单击**添加**。
 
     ![添加控制器对话框](aspnet-mvc-4-fundamentals/_static/image8.png "添加控制器对话框")
@@ -258,13 +260,17 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
     (代码段- *ASP.NET MVC 4 基础-Ex2 StoreController 索引*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample2.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample2.cs)]
+~~~
 2. 添加**浏览**和**详细信息**方法。 若要执行此操作，将添加到下面的代码**StoreController**:
 
     (代码段- *ASP.NET MVC 4 基础-Ex2 StoreController BrowseAndDetails*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample3.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample3.cs)]
+~~~
 
 <a id="Ex2Task3"></a>
 
@@ -302,24 +308,26 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
 1. 如果尚未打开，启动**VS Express for Web**。
 2. 在**文件**菜单上，选择**打开项目**。 在打开项目对话框中，浏览到**Source\Ex03 PassingParametersToAController\Begin**，选择**Begin.sln**单击**打开**。 或者，你也可以继续使用该解决方案完成上一练习后获得。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 3. 打开**StoreController**类。 为此，请在**解决方案资源管理器**，展开**控制器**文件夹并双击**StoreController.cs**。
 4. 更改**浏览**方法，添加要为特定流派请求的字符串参数。 ASP.NET MVC 将自动传递任何查询字符串或窗体发布参数名为**流派**给此操作方法调用时。 若要执行此操作，请替换**浏览**方法替换为以下代码：
 
     (代码段- *ASP.NET MVC 4 基础-Ex3 StoreController BrowseMethod*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample4.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample4.cs)]
 
-    > [!NOTE]
-    > 你使用**HttpUtility.HtmlEncode**到实用程序方法会阻止用户将 Javascript 注入到视图中，使用的链接  **/存储/浏览？流派 =&lt;脚本&gt;window.location=[http://hackersite.com](http://hackersite.com)&lt;/&gt;**。
-    > 
-    > 有关更多说明，请访问[此 msdn 文章](https://msdn.microsoft.com/library/a2a4yykt(v=VS.80).aspx)。
+> [!NOTE]
+> You are using the **HttpUtility.HtmlEncode** utility method to prevents users from injecting Javascript into the View with a link like **/Store/Browse?Genre=&lt;script&gt;window.location='[http://hackersite.com](http://hackersite.com)'&lt;/script&gt;**.
+> 
+> For further explanation, please visit [this msdn article](https://msdn.microsoft.com/library/a2a4yykt(v=VS.80).aspx).
+~~~
 
 <a id="Ex3Task2"></a>
 
@@ -348,7 +356,9 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
     (代码段- *ASP.NET MVC 4 基础-Ex3 StoreController DetailsMethod*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample5.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample5.cs)]
+~~~
 
 <a id="Ex3Task4"></a>
 
@@ -383,26 +393,26 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
 1. 如果尚未打开，启动**VS Express for Web**。
 2. 在**文件**菜单上，选择**打开项目**。 在打开项目对话框中，浏览到**Source\Ex04 CreatingAView\Begin**，选择**Begin.sln**单击**打开**。 或者，你也可以继续使用该解决方案完成上一练习后获得。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
-3. 文件 **\_layout.cshtml**包含站点上的所有页的 HTML 容器布局。 它包括 **&lt;html&gt;**  HTML 响应中，元素以及**&lt;头&gt;**和**&lt;正文&gt;**元素。 **@RenderBody（)**在 HTML 内正文指定区域模板将能够使用动态内容填充该视图。
-(C#)
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+3. 文件 <strong>\_layout.cshtml</strong>包含站点上的所有页的 HTML 容器布局。 它包括<strong>&lt;html&gt;</strong> HTML 响应中，元素以及<strong>&lt;头&gt;</strong>和<strong>&lt;正文&gt;</strong>元素。 <strong>@RenderBody（)</strong>在 HTML 内正文指定区域模板将能够使用动态内容填充该视图。
+   (C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample6.cshtml)]
 4. 将具有链接的常见标头添加到站点中的所有页面上的主页和应用商店区域。 若要做到这一点，请添加下面的代码下面&lt;正文&gt;语句。
-(C#)
+   (C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample7.cshtml)]
-5. 包括 div 呈现每一页的正文部分。 替换 **@RenderBody（)**替换为以下 higlighted 代码: (C#)
+5. 包括 div 呈现每一页的正文部分。 替换 <strong>@RenderBody（)</strong>替换为以下 higlighted 代码: (C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample8.cshtml)]
 
     > [!NOTE]
-    > 你知道吗？ Visual Studio 2012 具有它可以更方便地将常用的代码添加在 HTML、 代码文件和的详细信息的代码段 ！ 尝试通过键入 **&lt;div&gt;** 按**选项卡**两次以插入的完整**div**标记。
+    > 你知道吗？ Visual Studio 2012 具有它可以更方便地将常用的代码添加在 HTML、 代码文件和的详细信息的代码段 ！ 尝试通过键入**&lt;div&gt;**按**选项卡**两次以插入的完整**div**标记。
 
 <a id="Ex4Task2"></a>
 
@@ -432,13 +442,15 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
     (代码段- *ASP.NET MVC 4 基础-Ex4 HomeController 索引*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample9.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample9.cs)]
+~~~
 2. 现在，你需要添加适当的视图模板。 若要这样做，**右键单击**内**索引**操作方法，然后选择**添加视图**。 此时会弹出**添加视图**对话框。
 
     ![添加从索引方法内的某个视图](aspnet-mvc-4-fundamentals/_static/image13.png "添加从索引方法内的某个视图")
 
     *添加从索引方法内的某个视图*
-3. **添加视图**对话框将显示生成的视图模板文件。 默认情况下，此对话框预填充视图模板的名称，使其匹配将使用它的操作方法。 因为你使用**添加视图**中的上下文菜单**索引**内 HomeController，操作方法**添加视图**对话框有作为默认视图名称的索引。 单击 **“添加”**。
+3. **添加视图**对话框将显示生成的视图模板文件。 默认情况下，此对话框预填充视图模板的名称，使其匹配将使用它的操作方法。 因为你使用**添加视图**中的上下文菜单**索引**内 HomeController，操作方法**添加视图**对话框有作为默认视图名称的索引。 单击 **添加**。
 
     ![添加视图对话框](aspnet-mvc-4-fundamentals/_static/image14.png "添加视图对话框")
 
@@ -458,7 +470,9 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
 5. 生成的视图模板基于 **\_layout.cshtml**前面定义的模板。 更新将 ViewBag.Title 属性设为**主页**，并更改到主要内容**这就是起始页**，下面的代码中所示：
 
 
-    [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample10.cshtml)]
+~~~
+[!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample10.cshtml)]
+~~~
 6. 选择**MvcMusicStore**项目中的解决方案资源管理器和按**F5**运行该应用程序。
 
 <a id="Ex4Task4"></a>
@@ -497,12 +511,12 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
 1. 如果尚未打开，启动**VS Express for Web**。
 2. 在**文件**菜单上，选择**打开项目**。 在打开项目对话框中，浏览到**Source\Ex05 CreatingAViewModel\Begin**，选择**Begin.sln**单击**打开**。 或者，你也可以继续使用该解决方案完成上一练习后获得。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 3. 创建**Viewmodel**要用于保存 ViewModel 文件夹。 要执行此操作，请右键单击顶级**MvcMusicStore**项目，依次选择**添加**然后**新文件夹**。
 
     ![添加一个新文件夹](aspnet-mvc-4-fundamentals/_static/image17.png "添加一个新文件夹")
@@ -537,10 +551,12 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
     (代码段- *ASP.NET MVC 4 基础-Ex5 StoreIndexViewModel 属性*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample11.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample11.cs)]
 
-    > [!NOTE]
-    > **{获取; 设置;}**表示法将使用 C# 的自动实现的属性功能。 它而无需我们可以声明一个后备字段提供一个属性的优点。
+> [!NOTE]
+> The **{ get; set; }** notation makes use of C#'s auto-implemented properties feature. It provides the benefits of a property without requiring us to declare a backing field.
+~~~
 
 <a id="Ex5Task3"></a>
 
@@ -561,7 +577,9 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
     (代码段- *ASP.NET MVC 4 基础-使用 Viewmodel Ex5 StoreIndexViewModel*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample12.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample12.cs)]
+~~~
 3. 更改**StoreController**的**索引**操作方法，以便它创建和填充**StoreIndexViewModel**对象，然后将其传递到的视图模板生成它的 HTML 响应。
 
     > [!NOTE]
@@ -573,10 +591,12 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
     (代码段- *ASP.NET MVC 4 基础-Ex5 StoreController Index 方法*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample13.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample13.cs)]
 
-    > [!NOTE]
-    > 如果你熟悉 C#，你可能会假定使用**var**意味着**viewModel**变量是后期绑定。 不正确-C# 编译器使用类型推理基于分配给变量来确定， **viewModel**属于类型**StoreIndexViewModel**。 此外，通过编译本地**viewModel**变量作为**StoreIndexViewModel** get 编译时检查和 Visual Studio 代码编辑器支持类型。
+> [!NOTE]
+> If you're unfamiliar with C#, you may assume that using **var** means that the **viewModel** variable is late-bound. That's not correct - the C# compiler is using type-inference based on what you assign to the variable to determine that **viewModel** is of type **StoreIndexViewModel**. Also, by compiling the local **viewModel** variable as a **StoreIndexViewModel** type you get compile-time checking and Visual Studio code-editor support.
+~~~
 
 <a id="Ex5Task4"></a>
 
@@ -595,7 +615,7 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
     ![添加视图](aspnet-mvc-4-fundamentals/_static/image23.png "添加视图")
 
     *添加视图*
-3. 因为**添加视图对话框**从调用**StoreController**，它将在默认情况下添加的视图模板**\Views\Store\Index.cshtml**文件。 检查**创建强类型化的视图**复选框，然后选择**StoreIndexViewModel**作为**模型类**。 此外，请确保选择的视图引擎是**Razor**。 单击 **“添加”**。
+3. 因为**添加视图对话框**从调用**StoreController**，它将在默认情况下添加的视图模板**\Views\Store\Index.cshtml**文件。 检查**创建强类型化的视图**复选框，然后选择**StoreIndexViewModel**作为**模型类**。 此外，请确保选择的视图引擎是**Razor**。 单击 **添加**。
 
     ![添加视图对话框](aspnet-mvc-4-fundamentals/_static/image24.png "添加视图对话框")
 
@@ -617,20 +637,22 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
 1. 在**Index.cshtml**文件内,**存储**文件夹，其代码替换为以下代码：
 
 
-    [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample14.cshtml)]
+~~~
+[!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample14.cshtml)]
 
-    > [!NOTE]
-    > 一旦完成键入后单词期间**模型**，Visual Studio Intellisense 将显示可能的属性和方法可供选择的列表。
-    > 
-    > ![](aspnet-mvc-4-fundamentals/_static/image25.png)
-    > 
-    > *获取模型属性和方法具有 Visual Studio 的 IntelliSense*
-    > 
-    > **模型**属性引用**StoreIndexViewModel**控制器传递给视图模板对象。 这意味着，你可以访问的所有数据从控制器传递给视图模板通过**模型**属性，并设置其格式到相应的 HTML 响应中查看模板。
-    > 
-    > 只需选择即可**NumberOfGenres**属性从智能感知列表而不是键入它，然后它将自动完成它按**tab 键**。
-2. 循环访问中的 genre 列表**StoreIndexViewModel**并创建一个 HTML  **&lt;ul&gt;** 列表使用**foreach**循环。
-(C#)
+> [!NOTE]
+> As soon as you finish typing the period after the word **Model**, Visual Studio's Intellisense will show a list of possible properties and methods to choose from.
+> 
+> ![](aspnet-mvc-4-fundamentals/_static/image25.png)
+> 
+> *Getting Model properties and methods with Visual Studio's IntelliSense*
+> 
+> The **Model** property references the **StoreIndexViewModel** object that the Controller passed to the View template. This means that you can access all of the data passed from the Controller to the View template via the **Model** property, and format it into an appropriate HTML response within the View template.
+> 
+> You can just select the **NumberOfGenres** property from the Intellisense list rather than typing it in and then it will auto-complete it by pressing the **tab key**.
+~~~
+2. 循环访问中的 genre 列表**StoreIndexViewModel**并创建一个 HTML **&lt;ul&gt;**列表使用**foreach**循环。
+   (C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample15.cshtml)]
 3. 按**F5**运行该应用程序和浏览**应用商店**。 您将看到的传入的风格列表**StoreIndexViewModel**对象**StoreController**到视图模板。
@@ -657,12 +679,12 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
 1. 如果尚未打开，启动**VS Express for Web**
 2. 在**文件**菜单上，选择**打开项目**。 在打开项目对话框中，浏览到**Source\Ex06 UsingParametersInView\Begin**，选择**Begin.sln**单击**打开**。 或者，你也可以继续使用该解决方案完成上一练习后获得。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 3. 添加**流派**模型类。 要执行此操作，请右键单击**模型**文件夹中的**解决方案资源管理器**，选择**添加**然后**新项**选项。 下**代码**，选择**类**项并将该文件命名*Genre.cs*，然后单击**添加**。
 
     ![添加类](aspnet-mvc-4-fundamentals/_static/image27.png "添加类")
@@ -677,14 +699,18 @@ ASP.NET MVC framework 包含可帮助您创建 Web 应用程序支持的 MVC 模
     (代码段- *ASP.NET MVC 4 基础-Ex6 流派*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample16.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample16.cs)]
+~~~
 5. 按照相同的过程之前，添加**唱片集**类。 要执行此操作，请右键单击**模型**文件夹中的**解决方案资源管理器**，选择**添加**然后**新项**选项。 下**代码**，选择**类**项并将该文件命名*Album.cs*，然后单击**添加**。
 6. 将两个属性添加到唱片集类：**流派**和**标题**。 若要执行此操作，添加以下代码：
 
     (代码段- *ASP.NET MVC 4 基础-Ex6 唱片集*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample17.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample17.cs)]
+~~~
 
 <a id="Ex6Task2"></a>
 
@@ -699,20 +725,24 @@ A **StoreBrowseViewModel**将用于在此任务中显示匹配所选的风格唱
     (代码段- *ASP.NET MVC 4 基础-Ex6 UsingModel*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample18.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample18.cs)]
+~~~
 3. 添加到两个属性**StoreBrowseViewModel**类：**流派**和**专辑**。 若要执行此操作，添加以下代码：
 
     (代码段- *ASP.NET MVC 4 基础-Ex6 ModelProperties*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample19.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample19.cs)]
 
-    > [!NOTE]
-    > 什么是**列表&lt;唱片集&gt;** ？: 使用此定义**列表&lt;T&gt;** 类型，其中**T**约束类型设置为此哪些元素**列表**属于，在这种情况下**唱片集**（或其任意后代）。
-    > 
-    > 这种设计类和方法的操作延迟的一个或多个类型的规范的类或方法声明，并且由客户端代码实例化是一项功能的 C# 语言的能力称为**泛型**。
-    > 
-    > **列表&lt;T&gt;** 泛型等效于**ArrayList**键入和位于**System.Collections.Generic**命名空间。 使用的好处之一**泛型**是，由于指定的类型，不需要处理的类型检查操作，例如强制转换到的元素**唱片集**需要像一样**ArrayList**。
+> [!NOTE]
+> What is **List&lt;Album&gt;** ?: This definition is using the **List&lt;T&gt;** type, where **T** constrains the type to which elements of this **List** belong to, in this case **Album** (or any of its descendants).
+> 
+> This ability to design classes and methods that defer the specification of one or more types until the class or method is declared and instantiated by client code is a feature of the C# language called **Generics**.
+> 
+> **List&lt;T&gt;** is the generic equivalent of the **ArrayList** type and is available in the **System.Collections.Generic** namespace. One of the benefits of using **generics** is that since the type is specified, you do not need to take care of type checking operations such as casting the elements into **Album** as you would do with an **ArrayList**.
+~~~
 
 <a id="Ex6Task3"></a>
 
@@ -726,19 +756,25 @@ A **StoreBrowseViewModel**将用于在此任务中显示匹配所选的风格唱
     (代码段- *ASP.NET MVC 4 基础-Ex6 UsingModelInController*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample20.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample20.cs)]
+~~~
 2. 替换**浏览**要使用的操作方法**StoreViewBrowseController**类。 你将创建一种风格和两个新的专辑对象具有虚拟数据 （在下一步的动手实验中你将使用数据库中的实际数据）。 若要执行此操作，请替换**浏览**方法替换为以下代码：
 
     (代码段- *ASP.NET MVC 4 基础-Ex6 BrowseMethod*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample21.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample21.cs)]
+~~~
 3. 替换**详细信息**要使用的操作方法**StoreViewBrowseController**类。 你将创建一个新**唱片集**对象返回给**视图**。 若要执行此操作，请替换**详细信息**方法替换为以下代码：
 
     (代码段- *ASP.NET MVC 4 基础-Ex6 DetailsMethod*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample22.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample22.cs)]
+~~~
 
 <a id="Ex6Task4"></a>
 
@@ -811,22 +847,22 @@ A **StoreBrowseViewModel**将用于在此任务中显示匹配所选的风格唱
 在此任务中，你将添加要为相应的每个风格名称中有一个链接的存储区视图中的链接**/存储/浏览**URL。 这样一来，例如单击一种风格时**Disco**，它将会定位到**/存储/浏览？ 流派 = Disco** URL。
 
 1. 关闭浏览器，如果需要可以返回到 Visual Studio 窗口。 更新**索引**页后，可以添加一个链接到**浏览**页。 为此，请在**解决方案资源管理器**展开**视图**文件夹，则**存储**文件夹并双击**Index.cshtml**页。
-2. 指示所选风格浏览视图中添加的链接。 若要执行此操作，请将以下突出显示的代码中 **&lt;li&gt;** 标记: (C#)
+2. 指示所选风格浏览视图中添加的链接。 若要执行此操作，请将以下突出显示的代码中**&lt;li&gt;**标记: (C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample25.cshtml)]
 
-    > [!NOTE]
-    > 另一种方法将直接链接的页，代码如下所示：
-    > 
-    > &lt;a href=&quot;/Store/Browse?genre=@genreName&quot;&gt;@genreName&lt;/a&gt;
-    > 
-    > 尽管此方法适用，则它将依赖于硬编码字符串。 如果你更高版本重命名控制器，你将需要手动更改此指令。 更好的替代方法是使用**的 HTML 帮助器**方法。 ASP.NET MVC 包括一个 HTML 帮助器方法，这是可用于此类任务。 **Html.ActionLink()**帮助器方法，可以轻松地生成 HTML  **&lt;&gt;** 链接，并确保 URL 路径正确进行 URL 编码。
-    > 
-    > Htlm.ActionLink 具有好几个重载。 在本练习中，你将使用一个采用三个参数：
-    > 
-    > 1. 链接文本，将显示流派名称
-    > 2. 控制器操作名称 (**浏览**)
-    > 3. 路由参数值，指定这两个名称 (**流派**) 和值 (**流派名称**)
+   > [!NOTE]
+   > 另一种方法将直接链接的页，代码如下所示：
+   > 
+   > &lt;a href=&quot;/Store/Browse?genre=@genreName&quot;&gt;@genreName&lt;/a&gt;
+   > 
+   > 尽管此方法适用，则它将依赖于硬编码字符串。 如果你更高版本重命名控制器，你将需要手动更改此指令。 更好的替代方法是使用**的 HTML 帮助器**方法。 ASP.NET MVC 包括一个 HTML 帮助器方法，这是可用于此类任务。 **Html.ActionLink()**帮助器方法，可以轻松地生成 HTML **&lt;&gt;**链接，并确保 URL 路径正确进行 URL 编码。
+   > 
+   > Htlm.ActionLink 具有好几个重载。 在本练习中，你将使用一个采用三个参数：
+   > 
+   > 1. 链接文本，将显示流派名称
+   > 2. 控制器操作名称 (**浏览**)
+   > 3. 路由参数值，指定这两个名称 (**流派**) 和值 (**流派名称**)
 
 <a id="Ex6Task9"></a>
 
@@ -854,17 +890,19 @@ A **StoreBrowseViewModel**将用于在此任务中显示匹配所选的风格唱
 1. 关闭浏览器，如果需要可以返回到 Visual Studio 窗口。 打开**StoreController.cs**和修改**索引**方法来创建一份到 ViewModel 集合星形风格：
 
 
-    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample26.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample26.cs)]
 
-    > [!NOTE]
-    > 你也可以使用语法**ViewBag [&quot;Starred&quot;]**访问属性。
-2. 星形图标 **&quot;starred.png&quot;** 纳入**Source\Assets\Images**这个实验室的文件夹。 要将其添加到应用程序，将从其内容**Windows 资源管理器**到窗口**解决方案资源管理器**Visual Web Developer 学习版中，如下所示：
+> [!NOTE]
+> You could also use the syntax **ViewBag[&quot;Starred&quot;]** to access the properties.
+~~~
+2. 星形图标**&quot;starred.png&quot;**纳入**Source\Assets\Images**这个实验室的文件夹。 要将其添加到应用程序，将从其内容**Windows 资源管理器**到窗口**解决方案资源管理器**Visual Web Developer 学习版中，如下所示：
 
     ![添加到解决方案的星型映像](aspnet-mvc-4-fundamentals/_static/image34.png "添加到解决方案的星型映像")
 
     *将星型映像添加到解决方案*
 3. 打开视图**Store/Index.cshtml**并修改的内容。 将读取&quot;星形&quot;中的属性**ViewBag**集合，并要求当前流派名称是否在列表中。 在这种情况下将显示从右到流派链接星形图标。
-(C#)
+   (C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample27.cshtml)]
 
@@ -931,40 +969,40 @@ A **StoreBrowseViewModel**将用于在此任务中显示匹配所选的风格唱
 
     *ASP.NET MVC 4 Internet 应用程序项目模板*
 
-    1. **HTML5 标记**
+   1. **HTML5 标记**
 
-        浏览模板视图若要了解的新的主题标记，例如打开**About.cshtml**内查看**主页**文件夹。
+       浏览模板视图若要了解的新的主题标记，例如打开**About.cshtml**内查看**主页**文件夹。
 
-        ![使用 Razor 和 HTML5 标记的新模板](aspnet-mvc-4-fundamentals/_static/image41.png "使用 Razor 和 HTML5 标记的新模板")
+       ![使用 Razor 和 HTML5 标记的新模板](aspnet-mvc-4-fundamentals/_static/image41.png "使用 Razor 和 HTML5 标记的新模板")
 
-        *使用 Razor 和 HTML5 标记的新模板*
-    2. **包含的 JavaScript 库**
+       *使用 Razor 和 HTML5 标记的新模板*
+   2. **包含的 JavaScript 库**
 
-        1. **jQuery**: jQuery 简化了 HTML 文档遍历、 事件处理，对进行动画处理，和 Ajax 交互。
-        2. **jQuery UI**： 此库提供低级别交互和动画，高级效果和受主题影响小组件，基于 jQuery JavaScript 库的抽象。
+      1. **jQuery**: jQuery 简化了 HTML 文档遍历、 事件处理，对进行动画处理，和 Ajax 交互。
+      2. **jQuery UI**： 此库提供低级别交互和动画，高级效果和受主题影响小组件，基于 jQuery JavaScript 库的抽象。
 
-            > [!NOTE]
-            > 你可以了解有关 jQuery 和 jQuery UI 中[ [http://docs.jquery.com/](http://docs.jquery.com/)](http://docs.jquery.com/)。
-        3. **KnockoutJS**: ASP.NET MVC 4 默认模板现在包括**KnockoutJS**，JavaScript MVVM 框架，它允许你创建使用 JavaScript 和 HTML 的丰富且响应度高的 web 应用程序。 如在 ASP.NET MVC 3 中，jQuery 和 jQuery UI 库也包括在 ASP.NET MVC 4。
+         > [!NOTE]
+         > 你可以了解有关 jQuery 和 jQuery UI 中[ [ http://docs.jquery.com/ ](http://docs.jquery.com/) ](http://docs.jquery.com/)。
+      3. **KnockoutJS**: ASP.NET MVC 4 默认模板现在包括**KnockoutJS**，JavaScript MVVM 框架，它允许你创建使用 JavaScript 和 HTML 的丰富且响应度高的 web 应用程序。 如在 ASP.NET MVC 3 中，jQuery 和 jQuery UI 库也包括在 ASP.NET MVC 4。
 
-            > [!NOTE]
-            > 你可以获取有关此链接中的 KnockOutJS 库的详细信息： [http://learn.knockoutjs.com/](http://learn.knockoutjs.com/)。
-        4. **Modernizr**： 此库自动运行，使您的网站与较旧的浏览器兼容，在使用 HTML5 和 CSS3 技术时。
+          > [!NOTE]
+          > 你可以获取有关此链接中的 KnockOutJS 库的详细信息： [ http://learn.knockoutjs.com/ ](http://learn.knockoutjs.com/)。
+      4. **Modernizr**： 此库自动运行，使您的网站与较旧的浏览器兼容，在使用 HTML5 和 CSS3 技术时。
 
-            > [!NOTE]
-            > 你可以获取有关此链接中的 Modernizr 库的详细信息： [http://www.modernizr.com/](http://www.modernizr.com/)。
-    3. **解决方案中包含的 SimpleMembership**
+          > [!NOTE]
+          > 你可以获取有关此链接中的 Modernizr 库的详细信息： [ http://www.modernizr.com/ ](http://www.modernizr.com/)。
+   3. **解决方案中包含的 SimpleMembership**
 
-        SimpleMembership 旨在以取代以前的 ASP.NET 角色和成员资格提供程序系统。 它具有许多新功能，能够更轻松地开发人员的安全 web 页面以更灵活的方式。
+       SimpleMembership 旨在以取代以前的 ASP.NET 角色和成员资格提供程序系统。 它具有许多新功能，能够更轻松地开发人员的安全 web 页面以更灵活的方式。
 
-        Internet 模板已具有设置需要集成 SimpleMembership 的一些事项，例如，AccountController 中已准备好使用 OAuthWebSecurity （适用于 OAuth 帐户注册、 登录、 管理等） 和 Web 安全。
+       Internet 模板已具有设置需要集成 SimpleMembership 的一些事项，例如，AccountController 中已准备好使用 OAuthWebSecurity （适用于 OAuth 帐户注册、 登录、 管理等） 和 Web 安全。
 
-        ![解决方案中包含 SimpleMembership](aspnet-mvc-4-fundamentals/_static/image42.png "SimpleMembership 解决方案中包含")
+       ![解决方案中包含 SimpleMembership](aspnet-mvc-4-fundamentals/_static/image42.png "SimpleMembership 解决方案中包含")
 
-        *解决方案中包含 SimpleMembership*
+       *解决方案中包含 SimpleMembership*
 
-        > [!NOTE]
-        > 查找更多有关[OAuthWebSecurity](https://msdn.microsoft.com/library/jj158393(v=vs.111).aspx) MSDN 中。
+       > [!NOTE]
+       > 查找更多有关[OAuthWebSecurity](https://msdn.microsoft.com/library/jj158393(v=vs.111).aspx) MSDN 中。
 
 > [!NOTE]
 > 此外，你可以部署此应用程序对 Windows Azure 网站以下[附录 b： 发布 ASP.NET MVC 4 应用程序使用 Web Deploy](#AppendixB)。
@@ -975,7 +1013,7 @@ A **StoreBrowseViewModel**将用于在此任务中显示匹配所选的风格唱
 <a id="Summary"></a>
 
 <a id="Summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 通过完成本动手实验中，你已经学习了 ASP.NET MVC 的基础知识：
 
@@ -996,7 +1034,7 @@ A **StoreBrowseViewModel**将用于在此任务中显示匹配所选的风格唱
 
 你可以安装**Microsoft Visual Studio Express 2012 for Web**或另一个&quot;Express&quot;版本使用 **[Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)**. 以下说明将指导你完成安装所需的步骤*Visual studio Express 2012 for Web*使用*Microsoft Web 平台安装程序*。
 
-1. 转到[ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; *Visual Studio Express 2012 for Web 的 Windows Azure SDK*&quot;。
+1. 转到[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; <em>Visual Studio Express 2012 for Web 的 Windows Azure SDK</em>&quot;。
 2. 单击**立即安装**。 如果你没有**Web 平台安装程序**将重定向以下载并请先安装它。
 3. 一次**Web 平台安装程序**处于打开状态，单击**安装**以启动安装程序。
 
@@ -1140,14 +1178,14 @@ A **StoreBrowseViewModel**将用于在此任务中显示匹配所选的风格唱
     *Web 部署配置*
 5. 配置数据库连接，如下所示：
 
-    - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:*前缀。
-    - 在**用户名**键入您的服务器管理员登录名。
-    - 在**密码**键入服务器管理员登录密码。
-    - 键入新的数据库名称，例如： *MVC4SampleDB*。
+   - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:*前缀。
+   - 在**用户名**键入您的服务器管理员登录名。
+   - 在**密码**键入服务器管理员登录密码。
+   - 键入新的数据库名称，例如： *MVC4SampleDB*。
 
-    ![配置目标连接字符串](aspnet-mvc-4-fundamentals/_static/image64.png "配置目标连接字符串")
+     ![配置目标连接字符串](aspnet-mvc-4-fundamentals/_static/image64.png "配置目标连接字符串")
 
-    *配置目标连接字符串*
+     *配置目标连接字符串*
 6. 然后单击“确定” 。 当系统提示创建数据库单击**是**。
 
     ![创建数据库](aspnet-mvc-4-fundamentals/_static/image65.png "创建数据库字符串")

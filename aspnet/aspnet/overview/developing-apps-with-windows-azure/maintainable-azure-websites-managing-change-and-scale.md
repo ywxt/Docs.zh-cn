@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
-title: "在实验室上处理： 容易维护的 Azure 网站： 管理更改和缩放 |Microsoft 文档"
+title: 在实验室上处理： 容易维护的 Azure 网站： 管理更改和缩放 |Microsoft 文档
 author: rick-anderson
-description: "在本实验中，了解如何 Microsoft Azure 可以轻松地生成和部署到生产环境的网站。"
+description: 在本实验中，了解如何 Microsoft Azure 可以轻松地生成和部署到生产环境的网站。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
 ms.topic: article
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 4bce02b2c592ff04e0dbce78d18004c69268e4fd
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a79921681b4e742b5cd23f7119d19f4dd74c3f83
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>在实验室上处理： 容易维护的 Azure 网站： 管理更改和缩放
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 01/30/2018
 > 
 > 使用 SQL 数据库，务必使你的工作效率的数据库部署你的应用程序的新版本时保持最新。 感谢到**Entity Framework Code First 迁移**，已简化的开发和部署你的数据模型以在几分钟内更新你的环境。 本动手实验将显示在 web 应用部署到 Microsoft Azure 中的生产环境时，可能会遇到的不同主题。
 > 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit)。
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)。
 > 
 > 本主题的详细深入覆盖率，请参阅[构建真实世界云应用程序与 Azure 的电子书](building-real-world-cloud-apps-with-windows-azure/introduction.md)。
 
@@ -281,13 +281,13 @@ ms.lasthandoff: 01/30/2018
     *自定义新的 web 应用*
 5. 指定数据库设置的以下信息：
 
-    - 在**名称**文本框中，输入数据库名称 (例如*geekquiz\_db*)
-    - 在服务器中**下拉**列表中，选择**新建 SQL 数据库服务器**。 或者，你可以选择现有的服务器。
-    - 在**数据库用户名**和**数据库密码**框中，为 SQL 数据库服务器输入管理员用户名和密码。 如果你选择一个服务器已创建，系统将提示你输入密码。
+   - 在**名称**文本框中，输入数据库名称 (例如*geekquiz\_db*)
+   - 在服务器中**下拉**列表中，选择**新建 SQL 数据库服务器**。 或者，你可以选择现有的服务器。
+   - 在**数据库用户名**和**数据库密码**框中，为 SQL 数据库服务器输入管理员用户名和密码。 如果你选择一个服务器已创建，系统将提示你输入密码。
 
-    ![指定数据库设置](maintainable-azure-websites-managing-change-and-scale/_static/image17.png)
+     ![指定数据库设置](maintainable-azure-websites-managing-change-and-scale/_static/image17.png)
 
-    *指定数据库设置*
+     *指定数据库设置*
 6. 单击 **“下一步”** 以继续。
 7. 选择**本地 Git 存储库**进行源代码管理，以使用单击**下一步**。
 
@@ -687,7 +687,7 @@ ms.lasthandoff: 01/30/2018
 
 在此任务中，您将配置**GeekQuiz**解决方案来使用该映像上载到 Azure Blob 存储 （而不是位于在 web 应用中的映像） 通过添加在 ASP.NET URL 重写规则**web.config**文件。
 
-1. 在 Visual Studio 中，打开**Web.config**文件**GeekQuiz**项目，然后找到 **&lt;system.webServer&gt;** 元素。
+1. 在 Visual Studio 中，打开**Web.config**文件**GeekQuiz**项目，然后找到**&lt;system.webServer&gt;**元素。
 2. 添加以下代码以添加一个 URL 重写规则，更新将占位符替换为你的存储帐户名称。
 
     (代码段- *WebSitesInProduction-Ex4-UrlRewriteRule*)
@@ -785,7 +785,7 @@ ms.lasthandoff: 01/30/2018
     ![将请求添加到 WebTest1](maintainable-azure-websites-managing-change-and-scale/_static/image81.png "将请求添加到 WebTest1")
 
     *将请求添加到 WebTest1*
-4. 在**属性**窗口的新的请求节点中，更新**Url**属性以指向你的 web 应用的 URL (例如 *[http://geek-quiz.azurewebsites.net/](http://geek-quiz.azurewebsites.net/)*).
+4. 在**属性**窗口的新的请求节点中，更新**Url**属性以指向你的 web 应用的 URL (例如*[ http://geek-quiz.azurewebsites.net/ ](http://geek-quiz.azurewebsites.net/)*).
 
     ![更改 Url 属性](maintainable-azure-websites-managing-change-and-scale/_static/image82.png "更改 Url 属性")
 
@@ -797,13 +797,13 @@ ms.lasthandoff: 01/30/2018
     *向 WebTest1 中添加循环*
 6. 在**添加条件规则和项循环**对话框中，选择**For 循环**规则和修改以下属性。
 
-    1. **终止值：** 1000年
-    2. **上下文参数名称：**迭代器
-    3. **增量值：** 1
+   1. **终止值：** 1000年
+   2. **上下文参数名称：**迭代器
+   3. **增量值：** 1
 
-    ![选择 For 循环规则并更新属性](maintainable-azure-websites-managing-change-and-scale/_static/image84.png "选择 For 循环规则并更新属性")
+      ![选择 For 循环规则并更新属性](maintainable-azure-websites-managing-change-and-scale/_static/image84.png "选择 For 循环规则并更新属性")
 
-    *选择 For 循环规则并更新属性*
+      *选择 For 循环规则并更新属性*
 7. 下**循环中的项**部分中，选择你以前创建为 for 循环的第一个和最后一个项的请求。 单击“确定”  继续。
 
     ![选择 for 循环的第一个和最后一个项](maintainable-azure-websites-managing-change-and-scale/_static/image85.png "选择 for 循环的第一个和最后一个项目")
@@ -915,6 +915,6 @@ ms.lasthandoff: 01/30/2018
 * * *
 
 <a id="Summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本动手实验，您学习了如何设置和应用程序部署到 Azure 中的生产 web 应用。 通过检测并更新数据库使用启动**Entity Framework Code First 迁移**，然后继续通过部署你的站点使用的新版本**Git**和执行回退到你的站点的最新稳定版本。 此外，您学习了如何缩放应用程序使用存储将静态内容移到 Blob 容器。

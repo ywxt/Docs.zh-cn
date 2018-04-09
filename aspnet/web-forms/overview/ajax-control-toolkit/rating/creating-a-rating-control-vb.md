@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-vb
-title: "创建分级控件 (VB) |Microsoft 文档"
+title: 创建分级控件 (VB) |Microsoft 文档
 author: wenz
-description: "很多网站中，从电子商务到社区站点，其为用户提供到速率文章或项目。 这通常需要某些编码工作，但是我们具有..."
+description: 很多网站中，从电子商务到社区站点，其为用户提供到速率文章或项目。 这通常需要某些编码工作，但是我们具有...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ff3394865e084c5a24e7e79469a4a7d26aabb552
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c19f36dfe1b72a3954db61ff1845e99c02e47c14
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-rating-control-vb"></a>创建分级控件 (VB)
 ====================
@@ -41,12 +41,12 @@ ms.lasthandoff: 11/10/2017
 
 然后，将添加`Rating`ASP.NET AJAX 控件工具包中的控件。 需要为此示例设置以下属性：
 
-- `CurrentRating`要使用初始分级
-- `MaxRating`最高评级
-- `EmptyStarCssClass`要使用的分级项 （星号） 时的 CSS 类为空
-- `FilledStarCssClass`填写要使用的分级项 （星号） 时的 CSS 类
-- `StarCssClass`要用于可见 stat 的 CSS 类
-- `WaitingStarCssClass`要使用星级发送回发到服务器时的 CSS 类
+- `CurrentRating` 要使用初始分级
+- `MaxRating` 最高评级
+- `EmptyStarCssClass` 要使用的分级项 （星号） 时的 CSS 类为空
+- `FilledStarCssClass` 填写要使用的分级项 （星号） 时的 CSS 类
+- `StarCssClass` 要用于可见 stat 的 CSS 类
+- `WaitingStarCssClass` 要使用星级发送回发到服务器时的 CSS 类
 
 这是将创建具有五个级别控件的标记的其中一个填写最初的项 （表情符号）：
 
@@ -73,5 +73,5 @@ ms.lasthandoff: 11/10/2017
 
 使用最少的代码创建的分级系统 ([单击以查看实际尺寸的图像](creating-a-rating-control-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一篇](creating-a-rating-control-cs.md)
+> [!div class="step-by-step"]
+> [上一篇](creating-a-rating-control-cs.md)

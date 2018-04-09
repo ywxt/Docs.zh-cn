@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb
-title: "使用 DataList 和转发器控件 (VB) 中显示数据 |Microsoft 文档"
+title: 使用 DataList 和转发器控件 (VB) 中显示数据 |Microsoft 文档
 author: rick-anderson
-description: "前面的教程中我们具有用于 GridView 控件以显示数据。 从开始本教程，我们看一下生成使用的常见报表模式..."
+description: 前面的教程中我们具有用于 GridView 控件以显示数据。 从开始本教程，我们看一下生成使用的常见报表模式...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 20a092ee2886932664705c22c3aa88d8a2f7f0ef
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6aa7cb76295d18711d88dd9855b43b259b558060
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-data-with-the-datalist-and-repeater-controls-vb"></a>使用 DataList 和转发器控件 (VB) 中显示数据
 ====================
@@ -161,12 +161,12 @@ GridView，如 DataList 提供了多个与样式有关的属性，如`Font`， `
 
 除了`ItemTemplate`，DataList 支持六个其他可选模板：
 
-- `HeaderTemplate`如果提供，将标题行添加到输出，并用于呈现此行
-- `AlternatingItemTemplate`用于呈现交替项
-- `SelectedItemTemplate`用于呈现所选的项;所选的项目属于其索引对应于 DataList s 项[`SelectedIndex`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
-- `EditItemTemplate`用于呈现所编辑的项
-- `SeparatorTemplate`如果提供，将添加每个项之间的分隔符和用于呈现此分隔符
-- `FooterTemplate`-如果提供，将的页脚行添加到输出，并用于呈现此行
+- `HeaderTemplate` 如果提供，将标题行添加到输出，并用于呈现此行
+- `AlternatingItemTemplate` 用于呈现交替项
+- `SelectedItemTemplate` 用于呈现所选的项;所选的项目属于其索引对应于 DataList s 项[`SelectedIndex`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
+- `EditItemTemplate` 用于呈现所编辑的项
+- `SeparatorTemplate` 如果提供，将添加每个项之间的分隔符和用于呈现此分隔符
+- `FooterTemplate` -如果提供，将的页脚行添加到输出，并用于呈现此行
 
 指定时`HeaderTemplate`或`FooterTemplate`，DataList 将一个附加的页眉或页脚行添加到呈现的输出。 如 GridView 的页眉和页脚行、 页眉和页脚中 DataList 不绑定到数据。 因此中的任何数据绑定语法`HeaderTemplate`或`FooterTemplate`尝试访问绑定的数据都将返回空白字符串。
 
@@ -210,11 +210,11 @@ GridView，如 DataList 提供了多个与样式有关的属性，如`Font`， `
 
 如果您不想发出 HTML `<table>`，不过？ 进行生成的数据的 Web 控件的标记的总计和完全控制，我们必须使用转发器控件。 DataList，如基于模板构造转发器。 转发器，但是，仅提供以下五个模板：
 
-- `HeaderTemplate`如果提供，将添加项之前指定的标记
-- `ItemTemplate`用于呈现项
-- `AlternatingItemTemplate`如果提供，，用于呈现交替项
-- `SeparatorTemplate`如果提供，将添加每个项之间的指定的标记
-- `FooterTemplate`-如果提供，将指定的标记添加的项目之后
+- `HeaderTemplate` 如果提供，将添加项之前指定的标记
+- `ItemTemplate` 用于呈现项
+- `AlternatingItemTemplate` 如果提供，，用于呈现交替项
+- `SeparatorTemplate` 如果提供，将添加每个项之间的指定的标记
+- `FooterTemplate` -如果提供，将指定的标记添加的项目之后
 
 在 ASP.NET 中 1.x，控制通常用于显示其数据来自某些数据源的项目符号列表转发器。 在这种情况下，`HeaderTemplate`和`FooterTemplates`将包含到开始和结束`<ul>`标记，分别而`ItemTemplate`将包含`<li>`使用数据绑定语法的元素。 仍这种方法可以使用在 ASP.NET 2.0 中，正如我们所看到的两个示例中[母版页和网站的导航](../introduction/master-pages-and-site-navigation-vb.md)教程：
 
@@ -300,7 +300,7 @@ DataList，与 Visual Studio 不会自动创建 ItemTemplate 为转发器后将�
 **图 18**: 类别列备用背景色和包括标题行中 ([单击以查看实际尺寸的图像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image50.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 虽然 GridView 控件更便于显示，编辑、 删除、 排序和分页浏览数据，外观是 boxy 和类似网格。 更灵活地控制外观，我们需要打开到 DataList 或转发器控件。 这两种控件显示一组记录使用模板而不 BoundFields、 CheckBoxFields，依次类推。
 
@@ -312,12 +312,12 @@ DataList 和转发器提供了更灵活地其呈现输出，它们没有很多 G
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Yaakov Ellis、 沈 Shulok、 徐 Schmidt 和 Stacy Park。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](nested-data-web-controls-cs.md)
-[下一页](formatting-the-datalist-and-repeater-based-upon-data-vb.md)
+> [!div class="step-by-step"]
+> [上一页](nested-data-web-controls-cs.md)
+> [下一页](formatting-the-datalist-and-repeater-based-upon-data-vb.md)

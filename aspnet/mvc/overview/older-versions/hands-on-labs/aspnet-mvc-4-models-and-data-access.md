@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
-title: "ASP.NET MVC 4 模型和数据访问 |Microsoft 文档"
+title: ASP.NET MVC 4 模型和数据访问 |Microsoft 文档
 author: rick-anderson
-description: "注意： 此动手实验假定你具有的 ASP.NET MVC 的基本知识。 如果你不使用 ASP.NET MVC 之前，我们建议你通过 ASP.NET MVC 4..."
+description: 注意： 此动手实验假定你具有的 ASP.NET MVC 的基本知识。 如果你不使用 ASP.NET MVC 之前，我们建议你通过 ASP.NET MVC 4...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 353419077422516761df56f730352b19b5db5ff2
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 081a71ef67a6eee6c84058c30f9e15301afbed23
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 模型和数据访问
 
@@ -112,12 +112,12 @@ ms.lasthandoff: 03/15/2018
 
 1. 打开**开始**解决方案位于**源/Ex1-AddingADatabaseDBFirst/开始/**文件夹。
 
-    1. 你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 2. 添加**MvcMusicStore**数据库文件。 在本动手实验中，你将使用已创建的数据库调用**MvcMusicStore.mdf**。 为此，请右键单击**应用\_数据**文件夹，指向**添加**，然后单击**现有项**。 浏览到**\Source\Assets**和选择**MvcMusicStore.mdf**文件。
 
     ![添加现有项](aspnet-mvc-4-models-and-data-access/_static/image2.png "添加现有项")
@@ -186,8 +186,8 @@ ms.lasthandoff: 03/15/2018
 
     *实体关系图*
 
-> [!NOTE]
-> T4 模板 (.tt) 运行代码，以生成实体类，并将覆盖具有相同名称的现有类。 在此示例中，类&quot;唱片集&quot;，&quot;流派&quot;和&quot;艺术家&quot;已具有生成的代码覆盖。
+    > [!NOTE]
+    > T4 模板 (.tt) 运行代码，以生成实体类，并将覆盖具有相同名称的现有类。 在此示例中，类&quot;唱片集&quot;，&quot;流派&quot;和&quot;艺术家&quot;已具有生成的代码覆盖。
 
 
 <a id="Ex1Task3"></a>
@@ -225,30 +225,38 @@ ms.lasthandoff: 03/15/2018
     (代码段-*模型的和数据访问-作为 Ex1 storeDB*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample1.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample1.cs)]
+~~~
 2. **MusicStoreEntities**类公开在数据库中每个表使用的集合属性。 更新**浏览**操作方法来检索所有的一种风格**专辑**。
 
     (代码段-*模型和数据访问-Ex1 存储浏览*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
 
-    > [!NOTE]
-    > 正在使用的.NET 调用一项功能**LINQ** （语言集成查询） 来编写针对这些集合-将执行对数据库的代码并返回强类型查询表达式对象，您可以进行编程针对。
-    > 
-    > 有关 LINQ 的详细信息，请访问[msdn 站点](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx)。
+> [!NOTE]
+> You are using a capability of .NET called **LINQ** (language-integrated query) to write strongly-typed query expressions against these collections - which will execute code against the database and return objects that you can program against.
+> 
+> For more information about LINQ, please visit the [msdn site](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
+~~~
 3. 更新**索引**操作方法来检索所有风格。
 
     (代码段-*模型和数据访问-Ex1 存储索引*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample3.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample3.cs)]
+~~~
 4. 更新**索引**操作方法来检索所有风格和转换到列表的集合。
 
     (代码段-*模型和数据访问-Ex1 存储 GenreMenu*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample4.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample4.cs)]
+~~~
 
 <a id="Ex1Task5"></a>
 
@@ -291,12 +299,12 @@ ms.lasthandoff: 03/15/2018
 
 1. 打开**开始**解决方案位于**源/Ex2-CreatingADatabaseCodeFirst/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 2. 添加**SampleData.cs**文件为**模型**文件夹。 为此，请右键单击**模型**文件夹，指向**添加**，然后单击**现有项**。 浏览到**\Source\Assets**和选择**SampleData.cs**文件。
 
     ![示例数据填充代码](aspnet-mvc-4-models-and-data-access/_static/image18.png "示例数据填充代码")
@@ -307,13 +315,17 @@ ms.lasthandoff: 03/15/2018
     (代码段-*模型和数据访问-Ex2 全局 Asax Using*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample5.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample5.cs)]
+~~~
 4. 在**应用程序\_start （)**方法添加以下行以设置数据库初始值设定项。
 
     (代码段-*模型和数据访问-Ex2 全局 Asax SetInitializer*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample6.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample6.cs)]
+~~~
 
 <a id="Ex2Task2"></a>
 
@@ -322,14 +334,16 @@ ms.lasthandoff: 03/15/2018
 
 现在，你已有数据库添加到我们的项目中，你将编写**Web.config**文件的连接字符串。
 
-1. 添加连接字符串中的**Web.config**。为此，请打开**Web.config**在项目根和替换连接字符串中这一行与名为 DefaultConnection  **&lt;connectionStrings&gt;** 部分：
+1. 添加连接字符串中的**Web.config**。为此，请打开**Web.config**在项目根和替换连接字符串中这一行与名为 DefaultConnection **&lt;connectionStrings&gt;**部分：
 
     ![Web.config 文件位置](aspnet-mvc-4-models-and-data-access/_static/image19.png "Web.config 文件位置")
 
     *web.config 文件位置*
 
 
-    [!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]
+~~~
+[!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]
+~~~
 
 <a id="Ex2Task3"></a>
 
@@ -338,7 +352,7 @@ ms.lasthandoff: 03/15/2018
 
 现在，你已配置数据库的连接，你将链接的模型与数据库表。 在此任务中，你将创建将链接到使用 Code First 数据库类。 请记住，应修改存在 POCO 模型类。
 
-> [!NOTE]
+   > [!NOTE]
 > 如果你完成练习 1 中，你将注意此步骤所执行的向导。 通过执行 Code First，您将手动创建将链接到数据实体的类。
 
 
@@ -347,24 +361,30 @@ ms.lasthandoff: 03/15/2018
     (代码段-*模型和数据访问-Ex2 代码第一个流派*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample8.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample8.cs)]
 
-    > [!NOTE]
-    > 若要使用 Code First 的约定，此类流派必须具有主键属性，将自动检测到。
-    > 
-    > 你可以阅读更多有关代码中这第一个约定[msdn 文章](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx)。
+> [!NOTE]
+> To work with Code First conventions, the class Genre must have a primary key property that will be automatically detected.
+> 
+> You can read more about Code First Conventions in this [msdn article](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
+~~~
 2. 现在，打开 POCO 模型类**唱片集**从**模型**项目文件夹和包含外键，创建具有名称的属性**GenreId**和**ArtistId**。 此类已具有**GenreId**为主键。
 
     (代码段-*模型和数据访问-Ex2 代码第一个唱片集*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample9.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample9.cs)]
+~~~
 3. 打开 POCO 模型类**艺术家**和包括**ArtistId**属性。
 
     (代码段-*模型和数据访问-Ex2 代码第一个艺术家*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample10.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample10.cs)]
+~~~
 4. 右键单击**模型**项目文件夹，然后选择**添加 |类**。 命名该文件**MusicStoreEntities.cs**。 然后，单击**添加。**
 
     ![添加类](aspnet-mvc-4-models-and-data-access/_static/image20.png "添加类")
@@ -377,16 +397,20 @@ ms.lasthandoff: 03/15/2018
 5. 打开你刚创建的类**MusicStoreEntities.cs**，包括命名空间和**System.Data.Entity**和**System.Data.Entity.Infrastructure**。
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample11.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample11.cs)]
+~~~
 6. 将类声明来扩展**DbContext**类： 声明一个公共**DBSet** ，并重写**OnModelCreating**方法。 在此步骤后，你将收到将链接与实体框架模型的域类。 为此，将替换为以下的类代码：
 
     (代码段-*模型和数据访问-Ex2 代码第一个 MusicStoreEntities*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
 
-    > [!NOTE]
-    > 使用实体框架**DbContext**和**DBSet**你将能够查询 POCO 类风格。 通过扩展**OnModelCreating**中指定的方法，**代码**如何风格将映射到数据库表。 你可以在此 msdn 文章中找到有关 DBContext 和 DBSet 的详细信息：[链接](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
+> [!NOTE]
+> With Entity Framework **DbContext** and **DBSet** you will be able to query the POCO class Genre. By extending **OnModelCreating** method, you are specifying in the **code** how Genre will be mapped to a database table. You can find more information about DBContext and DBSet in this msdn article: [link](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
+~~~
 
 <a id="Ex2Task4"></a>
 
@@ -406,30 +430,38 @@ ms.lasthandoff: 03/15/2018
     (代码段-*模型的和数据访问-作为 Ex1 storeDB*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample13.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample13.cs)]
+~~~
 2. **MusicStoreEntities**类公开在数据库中每个表使用的集合属性。 更新**浏览**操作方法来检索所有的一种风格**专辑**。
 
     (代码段-*模型和数据访问-Ex2 存储浏览*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample14.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample14.cs)]
 
-    > [!NOTE]
-    > 正在使用的.NET 调用一项功能**LINQ** （语言集成查询） 来编写针对这些集合-将执行对数据库的代码并返回强类型查询表达式对象，您可以进行编程针对。
-    > 
-    > 有关 LINQ 的详细信息，请访问[msdn 站点](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx)。
+> [!NOTE]
+> You are using a capability of .NET called **LINQ** (language-integrated query) to write strongly-typed query expressions against these collections - which will execute code against the database and return objects that you can program against.
+> 
+> For more information about LINQ, please visit the [msdn site](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx).
+~~~
 3. 更新**索引**操作方法来检索所有风格。
 
     (代码段-*模型和数据访问-Ex2 存储索引*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample15.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample15.cs)]
+~~~
 4. 更新**索引**操作方法来检索所有风格和转换到列表的集合。
 
     (代码段-*模型和数据访问-Ex2 存储 GenreMenu*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample16.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample16.cs)]
+~~~
 
 <a id="Ex2Task5"></a>
 
@@ -470,26 +502,28 @@ ms.lasthandoff: 03/15/2018
 
 1. 打开**开始**解决方案位于**Source\Ex3 QueryingTheDatabaseWithParametersCodeFirst\Begin**文件夹，如果你想要使用代码为先的方法或**Source\Ex3 QueryingTheDatabaseWithParametersDBFirst\Begin**文件夹，如果你想要使用数据库为先的方法。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 2. 打开**StoreController**类更改**浏览**操作方法。 为此，请在**解决方案资源管理器**，展开**控制器**文件夹并双击**StoreController.cs**。
 3. 更改**浏览**操作方法来检索特定流派唱片集。 若要执行此操作，将以下代码：
 
     (代码段-*模型和数据访问-Ex3 StoreController BrowseMethod*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample17.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample17.cs)]
 
-    > [!NOTE]
-    > 若要填充的实体集合，你需要使用**包括**方法，以指定你想要太检索唱片集。 你可以使用。**Single()** LINQ 中的扩展由于在这种情况下只有一个流派预期为唱片集。 **Single()**方法采用 Lambda 表达式作为一个参数，它在此情况下指定单个流派对象，以便其名称与定义的值相匹配。
-    > 
-    > 你将利用一项功能，您可以指示检索流派对象时，你需要加载以及其他相关的实体。 此功能称为**查询结果调整**，并使您能够减少需要用于访问数据库来检索信息的次数。 在此方案中，你将想要为你检索流派预提取唱片集。
-    > 
-    > 该查询包含**Genres.Include (&quot;专辑&quot;)**以指示你想以及相关唱片集。 这将导致更高效的应用程序，因为它会检索中的单个数据库请求 Genre 和唱片集的数据。
+> [!NOTE]
+> To populate a collection of the entity, you need to use the **Include** method to specify you want to retrieve the albums too. You can use the .**Single()** extension in LINQ because in this case only one genre is expected for an album. The **Single()** method takes a Lambda expression as a parameter, which in this case specifies a single Genre object such that its name matches the value defined.
+> 
+> You will take advantage of a feature that allows you to indicate other related entities you want loaded as well when the Genre object is retrieved. This feature is called **Query Result Shaping**, and enables you to reduce the number of times needed to access the database to retrieve information. In this scenario, you will want to pre-fetch the Albums for the Genre you retrieve.
+> 
+> The query includes **Genres.Include(&quot;Albums&quot;)** to indicate that you want related albums as well. This will result in a more efficient application, since it will retrieve both Genre and Album data in a single database request.
+~~~
 
 <a id="Ex3Task2"></a>
 
@@ -518,7 +552,9 @@ ms.lasthandoff: 03/15/2018
     (代码段-*模型和数据访问-Ex3 StoreController DetailsMethod*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample18.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample18.cs)]
+~~~
 
 <a id="Ex3Task4"></a>
 
@@ -543,7 +579,7 @@ ms.lasthandoff: 03/15/2018
 <a id="Summary"></a>
 
 <a id="Summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 通过完成本动手实验，你已经学习了 ASP.NET MVC 模型和数据访问的基础知识，请使用**Database First**方法以及**Code First**方法：
 
@@ -560,7 +596,7 @@ ms.lasthandoff: 03/15/2018
 
 你可以安装**Microsoft Visual Studio Express 2012 for Web**或另一个&quot;Express&quot;版本使用 **[Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)**. 以下说明将指导你完成安装所需的步骤*Visual studio Express 2012 for Web*使用*Microsoft Web 平台安装程序*。
 
-1. 转到[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; *Visual Studio Express 2012 for Web 的 Windows Azure SDK*&quot;。
+1. 转到[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; <em>Visual Studio Express 2012 for Web 的 Windows Azure SDK</em>&quot;。
 2. 单击**立即安装**。 如果你没有**Web 平台安装程序**将重定向以下载并请先安装它。
 3. 一次**Web 平台安装程序**处于打开状态，单击**安装**以启动安装程序。
 
@@ -704,14 +740,14 @@ ms.lasthandoff: 03/15/2018
     *Web 部署配置*
 5. 配置数据库连接，如下所示：
 
-    - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:*前缀。
-    - 在**用户名**键入您的服务器管理员登录名。
-    - 在**密码**键入服务器管理员登录密码。
-    - 键入新的数据库名称。
+   - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:*前缀。
+   - 在**用户名**键入您的服务器管理员登录名。
+   - 在**密码**键入服务器管理员登录密码。
+   - 键入新的数据库名称。
 
-    ![配置目标连接字符串](aspnet-mvc-4-models-and-data-access/_static/image47.png "配置目标连接字符串")
+     ![配置目标连接字符串](aspnet-mvc-4-models-and-data-access/_static/image47.png "配置目标连接字符串")
 
-    *配置目标连接字符串*
+     *配置目标连接字符串*
 6. 然后单击“确定” 。 当系统提示创建数据库单击**是**。
 
     ![创建数据库](aspnet-mvc-4-models-and-data-access/_static/image48.png "创建数据库字符串")

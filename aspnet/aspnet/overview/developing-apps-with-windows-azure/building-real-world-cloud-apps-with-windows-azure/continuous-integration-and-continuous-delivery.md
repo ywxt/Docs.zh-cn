@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
-title: "持续集成和持续交付 （使用 Azure 构建真实世界云应用） |Microsoft 文档"
+title: 持续集成和持续交付 （使用 Azure 构建真实世界云应用） |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以..."
+description: 构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 4a5433a7dd70e27b59163822ba427b026c3f4ce0
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4d482aaa0d25d6e6baaf196df4b4bb9335408e46
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>持续集成和持续交付 （使用 Azure 构建真实世界云应用）
 ====================
@@ -59,7 +59,7 @@ VSTS 提供了大量功能以帮助你从规划到部署的应用程序开发。
 
 如果你正在寻找统项目管理，团队协作和源代码管理解决方案，将签出 VSTS。 该服务是免费的最多 5 个用户，并可以为其在注册[Visual Studio Team Services](https://www.visualstudio.com/team-services/)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 有关如何实现使用低的周期时间可重复、 可靠且可预测的开发过程已被第三个云开发模式。 在[下一章](web-development-best-practices.md)我们开始寻找体系结构和编码模式。
 
@@ -76,6 +76,6 @@ VSTS 提供了大量功能以帮助你从规划到部署的应用程序开发。
 - [持续交付： 通过生成、 测试和部署自动化可靠软件释放](https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1377126361)。 通过 Jez 普通的书籍。
 - [发布 ！设计和部署生产就绪软件](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213)。 由 Michael t。 Nygard 的书籍。
 
->[!div class="step-by-step"]
-[上一页](source-control.md)
-[下一页](web-development-best-practices.md)
+> [!div class="step-by-step"]
+> [上一页](source-control.md)
+> [下一页](web-development-best-practices.md)

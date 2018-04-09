@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-cs
-title: "对进行动画处理以响应用户交互 (C#) |Microsoft 文档"
+title: 对进行动画处理以响应用户交互 (C#) |Microsoft 文档
 author: wenz
-description: "ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 动画可以星..."
+description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 动画可以星...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-cs
 msc.type: authoredcontent
-ms.openlocfilehash: efb9c34c317ec56b43c498f40a857a9b47fa50b2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 783563f4e33087e99a071cf829ca6bab246ba3b0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="animating-in-response-to-user-interaction-c"></a>对进行动画处理以响应用户交互 (C#)
 ====================
@@ -51,11 +51,11 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个�
 
 在`<Animations>`节点，有五种方法可以启动动画通过用户交互 (缺少的元素是`<OnLoad>`整个页面完全加载后将执行它):
 
-- `<OnClick>`（在控件上的鼠标单击）
-- `<OnHoverOut>`（鼠标离开控件）
-- `<OnHoverOver>`(鼠标悬停在一个控件，停止`<OnHoverOut>`动画)
-- `<OnMouseOut>`（鼠标离开控件）
-- `<OnMouseOver>`(鼠标悬停在一个控件，不停止`<OnMouseOut>`动画)
+- `<OnClick>` （在控件上的鼠标单击）
+- `<OnHoverOut>` （鼠标离开控件）
+- `<OnHoverOver>` (鼠标悬停在一个控件，停止`<OnHoverOut>`动画)
+- `<OnMouseOut>` （鼠标离开控件）
+- `<OnMouseOver>` (鼠标悬停在一个控件，不停止`<OnMouseOut>`动画)
 
 在此方案中，`<OnClick>`使用。 当用户单击面板上时，它调整大小，并在同一时间淡出。
 
@@ -66,6 +66,6 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个�
 
 鼠标单击启动动画 ([单击以查看实际尺寸的图像](animating-in-response-to-user-interaction-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一页](picking-one-animation-out-of-a-list-cs.md)
-[下一页](disabling-actions-during-animation-cs.md)
+> [!div class="step-by-step"]
+> [上一页](picking-one-animation-out-of-a-list-cs.md)
+> [下一页](disabling-actions-during-animation-cs.md)

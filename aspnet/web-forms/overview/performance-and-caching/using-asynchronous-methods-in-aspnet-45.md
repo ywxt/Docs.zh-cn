@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
-title: "在 ASP.NET 4.5 中使用异步方法 |Microsoft 文档"
+title: 在 ASP.NET 4.5 中使用异步方法 |Microsoft 文档
 author: Rick-Anderson
-description: "本教程将教您生成异步 ASP.NET Web 窗体应用程序使用 Visual Studio Express 2012 for Web，这是一个免费的基础知识..."
+description: 本教程将教您生成异步 ASP.NET Web 窗体应用程序使用 Visual Studio Express 2012 for Web，这是一个免费的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/06/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: d3eb588aad592605a8e368d1af6e62ece34b79d0
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 839cfc39188a91b6674465b8ff8fe51804033295
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-asynchronous-methods-in-aspnet-45"></a>在 ASP.NET 4.5 中使用异步方法
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 02/12/2018
 > - [对高的并发高延迟 Web 服务调用的服务器配置](#ServerConfig)
 > 
 > 在本教程提供完整的示例  
->  [https://github.com/RickAndMSFT/Async-ASP.NET/](https://github.com/RickAndMSFT/Async-ASP.NET/)上[GitHub](https://github.com/)站点。
+>  [https://github.com/RickAndMSFT/Async-ASP.NET/](https://github.com/RickAndMSFT/Async-ASP.NET/) 上[GitHub](https://github.com/)站点。
 
 
 在组合中的 ASP.NET 4.5 Web Pages [.NET 4.5](https://msdn.microsoft.com/library/w0x726c2(VS.110).aspx)使你能够注册返回类型的对象的异步方法[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)。 .NET Framework 4 引入了称为异步编程概念[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)和 ASP.NET 4.5 支持[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)。 任务表示通过**任务**类型和相关的类型中[System.Threading.Tasks](https://msdn.microsoft.com/library/system.threading.tasks.aspx)命名空间。 .NET Framework 4.5 基于此异步支持[await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)和[异步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)使用的关键字[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)比以前更复杂的对象异步方法。 [Await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)关键字是用于指示语法的一段代码应以异步方式等待代码的其他部分的速记。 [异步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)关键字都表示一个提示，可用于将方法标记为基于任务的异步方法。 组合**await**，**异步**，和**任务**对象使可以你在.NET 4.5 中编写异步代码更加容易。 调用异步方法的新模型*基于任务的异步模式*(**点击**)。 本教程假定你已具备一定的异步编程使用[await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)和[异步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)关键字和[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)命名空间。
@@ -45,7 +45,7 @@ ms.lasthandoff: 02/12/2018
 - [异步/等待常见问题](https://blogs.msdn.com/b/pfxteam/archive/2012/04/12/10293335.aspx)
 - [Visual Studio 异步编程](https://msdn.microsoft.com/vstudio/gg316360)
 
-## <a id="HowRequestsProcessedByTP"></a>线程池处理请求的方式
+## <a id="HowRequestsProcessedByTP"></a>  线程池处理请求的方式
 
 在 web 服务器上，.NET Framework 维护一个用于 ASP.NET 请求提供服务的线程池。 当请求到达时，会调度池中的线程来处理该请求。 如果同步处理请求时，处理请求的线程将是忙时请求正在处理，而且线程无法服务另一个请求。   
   
@@ -55,7 +55,7 @@ ms.lasthandoff: 02/12/2018
 
 在 web 应用程序，请参阅大量启动时的并发请求或具有突发负载 （其中并发可增加突然），使 web 服务调用异步将增加你的应用程序的响应能力。 异步请求花费的时间来处理为同步的请求相同的量。 例如，如果请求将发出 web 服务调用需要两秒钟来完成，请求采用两个秒是否同步或异步执行。 但是，在过程的异步调用线程不受阻止等待完成的第一个请求时响应其他请求。 因此，异步请求阻止请求排队和线程池增长时有很多并发请求，以调用长时间运行的操作。
 
-## <a id="ChoosingSyncVasync"></a>选择同步或异步方法
+## <a id="ChoosingSyncVasync"></a>  选择同步或异步方法
 
 本部分列出准则来确定何时使用同步或异步方法。 这些是只是指南;检查每个应用程序单独以确定是否异步方法帮助提高性能。
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 02/12/2018
 - 保持简单很比效率更重要。
 - 操作是主要 CPU 操作而不是涉及大量的磁盘或网络开销的操作。 使用上 CPU 绑定的操作的异步方法不提供任何好处，并且导致更多的开销。
 
- 一般情况下，使用异步方法，在以下情况：
+  一般情况下，使用异步方法，在以下情况：
 
 - 正在呼叫通过异步方法，可以使用的服务和你使用.NET 4.5 或更高版本。
 - 操作是网络绑定或我/O 绑定而不是 CPU 绑定。
@@ -74,19 +74,19 @@ ms.lasthandoff: 02/12/2018
 - 当切换出的线程的好处权重上下文切换的成本。 一般情况下，你应方法异步如果同步方法在不执行任何工作时阻止 ASP.NET 请求线程。 通过进行以下调用异步，ASP.NET 请求线程不会阻止等待完成的 web 服务请求时任何工作。
 - 测试显示阻止操作的性能瓶颈的站点，并且 IIS，可以通过使用异步方法对这些阻塞调用服务更多的请求。
 
- 可下载的示例演示如何有效地使用异步方法。 提供的示例旨在提供简单的 ASP.NET 4.5 中的异步编程的演示。 该示例不是要在 ASP.NET 中的异步编程参考体系结构。 在示例程序调用[ASP.NET Web API](../../../web-api/index.md)反过来调用的方法[Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx)以模拟长时间运行 web 服务调用。 大多数生产应用程序将不会显示此类为使用异步方法带来的明显好处。   
+  可下载的示例演示如何有效地使用异步方法。 提供的示例旨在提供简单的 ASP.NET 4.5 中的异步编程的演示。 该示例不是要在 ASP.NET 中的异步编程参考体系结构。 在示例程序调用[ASP.NET Web API](../../../web-api/index.md)反过来调用的方法[Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx)以模拟长时间运行 web 服务调用。 大多数生产应用程序将不会显示此类为使用异步方法带来的明显好处。   
   
 个别应用程序需要所有方法都是异步。 通常情况下，将几个同步方法转换为异步方法提供所需的工作量会显著增加。
 
-## <a id="SampleApp"></a>示例应用程序
+## <a id="SampleApp"></a>  示例应用程序
 
-你可以下载示例应用程序从[https://github.com/RickAndMSFT/Async-ASP.NET](https://github.com/RickAndMSFT/Async-ASP.NET)上[GitHub](https://github.com/)站点。 存储库中由三个项目组成：
+你可以下载示例应用程序从[ https://github.com/RickAndMSFT/Async-ASP.NET ](https://github.com/RickAndMSFT/Async-ASP.NET)上[GitHub](https://github.com/)站点。 存储库中由三个项目组成：
 
 - *WebAppAsync*： 使用 Web API 的 ASP.NET Web 窗体项目**WebAPIpwg**服务。 本教程是从该代码的大多数项目。
 - *WebAPIpgw*： 实现的 ASP.NET MVC 4 Web API 项目`Products, Gizmos and Widgets`控制器。 它提供的数据*WebAppAsync*项目和*Mvc4Async*项目。
 - *Mvc4Async*： 包含在另一个教程中使用的代码中的 ASP.NET MVC 4 项目。 Web API 调用**WebAPIpwg**服务。
 
-## <a id="GizmosSynch"></a>Gizmos 同步页
+## <a id="GizmosSynch"></a>  Gizmos 同步页
 
  下面的代码演示`Page_Load`用于显示的 gizmos 列表的同步方法。 （对于本文中，零件为虚构的机械设备。） 
 
@@ -101,7 +101,7 @@ ms.lasthandoff: 02/12/2018
 
 ![Gizmos](using-asynchronous-methods-in-aspnet-45/_static/image1.png)
 
-## <a id="CreatingAsynchGizmos"></a>创建异步 Gizmos 页
+## <a id="CreatingAsynchGizmos"></a>  创建异步 Gizmos 页
 
 此示例使用新[异步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)和[await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)关键字 （在.NET 4.5 和 Visual Studio 2012 中可用） 让编译器可以负责维护所需的复杂的转换异步编程。 编译器允许你编写代码使用 C# 的同步的控制流构造，编译器会自动应用需使用回调，以避免阻止线程的转换。
 
@@ -127,7 +127,7 @@ ASP.NET 异步页必须包括[页](https://msdn.microsoft.com/library/ydy4x04a.a
 - [Await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)关键字应用于 web 服务调用。
 - 调用异步的 web 服务 API 时 (`GetGizmosAsync`)。
 
-内`GetGizmosSvcAsync`方法正文另一种异步方法，`GetGizmosAsync`调用。 `GetGizmosAsync`立即返回`Task<List<Gizmo>>`有可用的数据时，最终将完成。 你不想将零件数据之前执行任何其他操作，因为代码等待任务 (使用**await**关键字)。 你可以使用**await**仅在使用批注的方法中的关键字**异步**关键字。
+内`GetGizmosSvcAsync`方法正文另一种异步方法，`GetGizmosAsync`调用。 `GetGizmosAsync` 立即返回`Task<List<Gizmo>>`有可用的数据时，最终将完成。 你不想将零件数据之前执行任何其他操作，因为代码等待任务 (使用**await**关键字)。 你可以使用**await**仅在使用批注的方法中的关键字**异步**关键字。
 
 **Await**关键字不会阻止线程，直到任务完成。 它注册为该任务，在回调方法的其余部分，并立即返回。 在最终完成等待的任务，它将调用该回调并因此恢复中断的位置的方法权限执行。 有关详细信息使用[await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)和[异步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)关键字和[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)命名空间，请参阅[异步引用](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/async)。
 
@@ -157,7 +157,7 @@ ASP.NET 异步页必须包括[页](https://msdn.microsoft.com/library/ydy4x04a.a
 
 异步 void 事件的缺点是开发人员不再具有完全控制事件时执行。 例如，如果这两个.aspx 和。Master 定义`Page_Load`事件与一个或这两个异步的就不能保证的执行顺序。 非事件处理程序的相同 indeterminiate 顺序 (如`async void Button_Click`) 适用。 对于大多数开发人员，这应是一种可以接受的但那些需要进行完全控制执行顺序只应使用类似的 Api`RegisterAsyncTask`使用返回的任务对象方法。
 
-## <a id="Parallel"></a>并行执行多个操作
+## <a id="Parallel"></a>  并行执行多个操作
 
 当某项操作必须执行几个独立的操作时，异步方法的同步方法通过一个明显的优势。 在此示例中提供，同步页上*PWG.aspx*（对于产品、 小组件和 Gizmos） 显示三个 web 服务调用，若要获取的产品、 小组件和 gizmos 列表的结果。 [ASP.NET Web API](../../../web-api/index.md)提供这些服务的项目服务使用[Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx)模拟延迟或慢速网络调用。 当延迟设置为 500 毫秒，异步*PWGasync.aspx*页将稍有超过 500 毫秒完成时同步`PWG`版本将于 1500 毫秒。 同步*PWG.aspx*页显示在下面的代码。
 
@@ -171,7 +171,7 @@ ASP.NET 异步页必须包括[页](https://msdn.microsoft.com/library/ydy4x04a.a
 
 ![](using-asynchronous-methods-in-aspnet-45/_static/image3.png)
 
-## <a id="CancelToken"></a>使用取消标记
+## <a id="CancelToken"></a>  使用取消标记
 
 异步方法会返回`Task`是否可取消，即它们将采用[CancellationToken](https://msdn.microsoft.com/library/system.threading.cancellationtoken(VS.110).aspx)参数时使用提供的一个`AsyncTimeout`属性[页](https://msdn.microsoft.com/library/ydy4x04a.aspx)指令。 下面的代码演示*GizmosCancelAsync.aspx*秒超时的页。
 
@@ -183,14 +183,14 @@ ASP.NET 异步页必须包括[页](https://msdn.microsoft.com/library/ydy4x04a.a
 
 在提供示例应用程序的情况下，选择*GizmosCancelAsync*链接调用*GizmosCancelAsync.aspx*页上，并演示异步调用 （通过超时） 的取消。 由于延迟时间是随机的范围内，你可能需要刷新页面几次以获取超时错误消息。
 
-## <a id="ServerConfig"></a>对高的并发高延迟 Web 服务调用的服务器配置
+## <a id="ServerConfig"></a>  对高的并发高延迟 Web 服务调用的服务器配置
 
 若要实现异步 web 应用程序的优点，你可能需要进行一些更改为默认服务器配置。 请注意配置时和压力测试异步 web 应用程序记住以下。
 
 - Windows 7、 Windows Vista、 Window 8 和所有 Windows 客户端操作系统具有最多 10 个并发请求。 你将需要 Windows 服务器操作系统以查看在高负荷的异步方法的好处。
 - 向 IIS 注册.NET 4.5，从提升的命令提示符使用以下命令：  
- %windir%\Microsoft.NET\Framework64 \v4.0.30319\aspnet\_regiis -i  
- 请参阅[ASP.NET IIS 注册工具 (Aspnet\_regiis.exe)](https://msdn.microsoft.com/library/k6h9cz8h.aspx)
+  %windir%\Microsoft.NET\Framework64 \v4.0.30319\aspnet\_regiis -i  
+  请参阅[ASP.NET IIS 注册工具 (Aspnet\_regiis.exe)](https://msdn.microsoft.com/library/k6h9cz8h.aspx)
 - 你可能需要增加[HTTP.sys](https://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture)队列限制从 1000 到 5000 的默认值。 如果设置得太低，可能会看到[HTTP.sys](https://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture)拒绝的 HTTP 503 状态的请求。 若要更改 HTTP.sys 队列限制：
 
     - 打开 IIS 管理器并导航到应用程序池窗格中。
@@ -199,7 +199,7 @@ ASP.NET 异步页必须包括[页](https://msdn.microsoft.com/library/ydy4x04a.a
     - 在**高级设置**对话框中，更改*队列长度*为 5000 数为 1000。  
         ![队列长度](using-asynchronous-methods-in-aspnet-45/_static/image5.png)  
   
- 请注意，在更高版本，映像的.NET framework 列为 v4.0，即使应用程序池使用.NET 4.5。 若要了解这种差异，请参阅以下：
+  请注意，在更高版本，映像的.NET framework 列为 v4.0，即使应用程序池使用.NET 4.5。 若要了解这种差异，请参阅以下：
 
         - [.NET Versioning and Multi-Targeting - .NET 4.5 is an in-place upgrade to .NET 4.0](http://www.hanselman.com/blog/NETVersioningAndMultiTargetingNET45IsAnInplaceUpgradeToNET40.aspx)
         - [How to set an IIS Application or AppPool to use ASP.NET 3.5 rather than 2.0](http://www.hanselman.com/blog/HowToSetAnIISApplicationOrAppPoolToUseASPNET35RatherThan20.aspx)

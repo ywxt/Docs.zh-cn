@@ -1,7 +1,7 @@
 ---
-title: "上下文标头"
+title: 在 ASP.NET 核心的上下文标头
 author: rick-anderson
-description: "本文档概述了 ASP.NET 核心数据保护上下文标头的实现详细信息。"
+description: 了解 ASP.NET 核心数据保护上下文标头的实现详细信息。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/context-headers
-ms.openlocfilehash: c047c54efdcdb6192e4d38d2822c1077ee0a73e1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 5ba247a74e11408145e1f6e87c7cfa251c66707f
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="context-headers"></a>上下文标头
+# <a name="context-headers-in-aspnet-core"></a>在 ASP.NET 核心的上下文标头
 
 <a name="data-protection-implementation-context-headers"></a>
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 01/30/2018
 
 回顾一下，我们决定我们已从错误方向接近问题。 OID 提示您的算法是什么，但我们不实际关心这。 如果我们需要在两个不同的算法中安全地使用单个 entropic 值，它不是我们要知道算法的实际的所必要的。 我们实际上关心是它们的行为方式。 任何有效的对称块加密算法也是强伪随机排列 (PRP): 修复 （键，链接模式，IV，纯文本） 的输入和已加密文本输出将与急剧的概率为不同于任何其他对称的块密码提供的相同的输入的算法。 同样，任何相当的加密哈希函数也是强伪函数 (PRF)，并且给定的一组固定的输入其输出将极其能不同于任何其他加密哈希函数。
 
-我们使用强 PRPs 和 PRFs 的概念构建上下文标头。 此上下文标头实质上是充当稳定指纹通过对于任何给定的操作，所用的算法，并提供所需的数据保护系统的加密灵活性。 此标头是可重现和更高版本用作的一部分[子项派生过程](subkeyderivation.md#data-protection-implementation-subkey-derivation)。 有两个不同的方法来生成具体的操作模式的基础的算法取决于上下文标头。
+我们使用强 PRPs 和 PRFs 的概念构建上下文标头。 此上下文标头实质上是充当稳定指纹通过对于任何给定的操作，所用的算法，并提供所需的数据保护系统的加密灵活性。 此标头是可重现和更高版本用作的一部分[子项派生过程](xref:security/data-protection/implementation/subkeyderivation#data-protection-implementation-subkey-derivation)。 有两个不同的方法来生成具体的操作模式的基础的算法取决于上下文标头。
 
 ## <a name="cbc-mode-encryption--hmac-authentication"></a>CBC 模式下加密 + HMAC 身份验证
 

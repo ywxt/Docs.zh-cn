@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
-title: "使用 Visual Studio 的 ASP.NET Web 部署： 故障排除 |Microsoft 文档"
+title: 使用 Visual Studio 的 ASP.NET Web 部署： 故障排除 |Microsoft 文档
 author: tdykstra
-description: "本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的..."
+description: 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/01/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: a7a66e7e67539e4b075da6fc054a7b53984b6ce1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 15bda09c59afaf9e5449c68c5206bb28de245541
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>使用 Visual Studio 的 ASP.NET Web 部署： 故障排除
 ====================
@@ -292,8 +292,8 @@ ASP.NET 4 未安装在 IIS 中。 如果您要部署到的服务器是开发计�
 
 你已成功使用一键式发布来部署你的应用程序，然后你启动遇到此错误：
 
-Web 部署任务失败。 （无法完成对远程代理 URL https://serverurl.com/msdeploy.axd?site=sitename 的请求）。  
- 无法完成对远程代理 URL https://url/msdeploy.axd?site=sitename 请求。  
+Web 部署任务失败。 (无法完成对远程代理 URL 请求<https://serverurl.com/msdeploy.axd?site=sitename>。)  
+ 无法完成对远程代理 URL 请求<https://url/msdeploy.axd?site=sitename>。  
 该请求已中止： 该请求已取消。  
 无法使用已分开其基础 RCW 的 COM 对象。
 
@@ -309,7 +309,7 @@ Web 部署任务失败。 （无法完成对远程代理 URL https://serverurl.c
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
-默认情况下，Visual Studio 集对站点的根文件夹的读取权限和写应用程序权限\_数据文件夹。 如果您知道站点文件夹上的默认权限是否正确，并且不需要设置，则禁用此行为通过添加 **&lt;IncludeSetACLProviderOn 目标&gt;False&lt;/IncludeSetACLProviderOnDestination&gt;** 到发布配置文件 （以影响一个配置文件） 或 （要影响的所有配置文件） 的 wpp.targets 文件。 有关如何编辑这些文件的信息，请参阅[如何： 编辑配置文件 (.pubxml) 文件中的部署设置](https://msdn.microsoft.com/library/ff398069.aspx)。
+默认情况下，Visual Studio 集对站点的根文件夹的读取权限和写应用程序权限\_数据文件夹。 如果您知道站点文件夹上的默认权限是否正确，并且不需要设置，则禁用此行为通过添加**&lt;IncludeSetACLProviderOn 目标&gt;False&lt;/IncludeSetACLProviderOnDestination&gt;**到发布配置文件 （以影响一个配置文件） 或 （要影响的所有配置文件） 的 wpp.targets 文件。 有关如何编辑这些文件的信息，请参阅[如何： 编辑配置文件 (.pubxml) 文件中的部署设置](https://msdn.microsoft.com/library/ff398069.aspx)。
 
 ## <a name="access-denied-errors-when-the-application-tries-to-write-to-an-application-folder"></a>当应用程序尝试写入到应用程序文件夹时，访问被拒绝错误
 
@@ -319,7 +319,7 @@ Web 部署任务失败。 （无法完成对远程代理 URL https://serverurl.c
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
-默认情况下，Visual Studio 集对站点的根文件夹的读取权限和写应用程序权限\_数据文件夹。 如果你的应用程序需要的子文件夹的写访问权限，你可以将该文件夹的权限设置为中设置文件夹权限和部署到生产环境教程在本系列中所示。 如果你的应用程序需要的站点的根文件夹的写访问权限，则必须防止它在根文件夹上设置只读访问权限，通过添加 **&lt;IncludeSetACLProviderOn 目标&gt;False&lt;/IncludeSetACLProviderOnDestination&gt;** 到发布配置文件 （以影响一个配置文件） 或 （要影响的所有配置文件） 的 wpp.targets 文件。 有关如何编辑这些文件的信息，请参阅[如何： 编辑配置文件 (.pubxml) 文件中的部署设置](https://msdn.microsoft.com/library/ff398069.aspx)。
+默认情况下，Visual Studio 集对站点的根文件夹的读取权限和写应用程序权限\_数据文件夹。 如果你的应用程序需要的子文件夹的写访问权限，你可以将该文件夹的权限设置为中设置文件夹权限和部署到生产环境教程在本系列中所示。 如果你的应用程序需要的站点的根文件夹的写访问权限，则必须防止它在根文件夹上设置只读访问权限，通过添加**&lt;IncludeSetACLProviderOn 目标&gt;False&lt;/IncludeSetACLProviderOnDestination&gt;**到发布配置文件 （以影响一个配置文件） 或 （要影响的所有配置文件） 的 wpp.targets 文件。 有关如何编辑这些文件的信息，请参阅[如何： 编辑配置文件 (.pubxml) 文件中的部署设置](https://msdn.microsoft.com/library/ff398069.aspx)。
 
 <a id="aspnet45error"></a>
 
@@ -377,5 +377,5 @@ HTTP 错误 404.17-找不到
 
 你计算机上可能未安装 ASP.NET 4.5。 作为本系列中说明了如何安装 ASP.NET 4.5 中的测试环境教程，请参阅中部署到 IIS 的步骤。
 
->[!div class="step-by-step"]
-[上一篇](deploying-extra-files.md)
+> [!div class="step-by-step"]
+> [上一篇](deploying-extra-files.md)
