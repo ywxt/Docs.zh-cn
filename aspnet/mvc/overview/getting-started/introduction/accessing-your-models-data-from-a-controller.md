@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
-title: "从控制器访问您的模型的数据 |Microsoft 文档"
+title: 从控制器访问您的模型的数据 |Microsoft 文档
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 91bfa5fe3c5bd3029b7d7c12c8831e1653fb1d2b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d3dfa079c334e04f368531456ec2ec4e9728f893
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>从控制器访问您的模型的数据
 ====================
 通过[Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 在本部分中，将创建一个新`MoviesController`类，并编写代码检索影片数据并将其显示在浏览器中使用视图模板。
 
@@ -40,11 +40,11 @@ ms.lasthandoff: 01/24/2018
 - 选择**MovieDBContext (MvcMovie.Models)**数据上下文类。
 - 作为控制器名称输入**MoviesController**。
 
- 下图显示已完成对话框。  
+  下图显示已完成对话框。  
   
 ![](accessing-your-models-data-from-a-controller/_static/image3.png)   
 
-单击 **“添加”**。 （如果收到错误，你可能未生成应用程序，然后开始将控制器添加。）Visual Studio 将创建以下文件和文件夹：
+单击 **添加**。 （如果收到错误，你可能未生成应用程序，然后开始将控制器添加。）Visual Studio 将创建以下文件和文件夹：
 
 - *MoviesController.cs*文件中*控制器*文件夹。
 - A *Views\Movies*文件夹。
@@ -64,7 +64,7 @@ Visual Studio 自动创建[CRUD](http://en.wikipedia.org/wiki/Create,_read,_upda
 ![](accessing-your-models-data-from-a-controller/_static/image5.png)
 
 > [!NOTE]
-> 你不能在 Price 字段中输入小数点或逗号。 若要为使用逗号的非英语区域设置支持 jQuery 验证 (&quot;，&quot;) 对于小数点，和非美国英语的日期格式中，您必须包含*globalize.js*和您的特定*cultures/globalize.cultures.js*文件 (从[https://github.com/jquery/globalize](https://github.com/jquery/globalize) ) 和 JavaScript 使用`Globalize.parseFloat`。 我将介绍如何执行此操作在下一步的教程。 目前只能输入整数，例如 10。
+> 你不能在 Price 字段中输入小数点或逗号。 若要为使用逗号的非英语区域设置支持 jQuery 验证 (&quot;，&quot;) 对于小数点，和非美国英语的日期格式中，您必须包含*globalize.js*和您的特定*cultures/globalize.cultures.js*文件 (从[ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 和 JavaScript 使用`Globalize.parseFloat`。 我将介绍如何执行此操作在下一步的教程。 目前只能输入整数，例如 10。
 
 
 单击**创建**按钮使窗体发布到服务器，其中的影片信息保存到数据库中。 然后转向*/Movies* URL，其中你可以看到在列表中新创建的影片。
@@ -157,6 +157,6 @@ MVC 还提供了将传递的功能*强*类型化的对象添加到视图模板�
 
 现在你已拥有用于显示、编辑、更新和删除数据的数据库和页面。 在下一步的教程中，我们将检查基架的代码的其余部分并添加`SearchIndex`方法和一个`SearchIndex`可以搜索此数据库中的电影的视图。 在实体框架使用 MVC 的详细信息，请参阅[为 ASP.NET MVC 应用程序创建实体框架数据模型](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 
->[!div class="step-by-step"]
-[上一页](creating-a-connection-string.md)
-[下一页](examining-the-edit-methods-and-edit-view.md)
+> [!div class="step-by-step"]
+> [上一页](creating-a-connection-string.md)
+> [下一页](examining-the-edit-methods-and-edit-view.md)

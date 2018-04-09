@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
-title: "教程： 开始使用 SignalR 1.x 和 MVC 4 |Microsoft 文档"
+title: 教程： 开始使用 SignalR 1.x 和 MVC 4 |Microsoft 文档
 author: pfletcher
-description: "使用 ASP.NET SignalR 和 ASP.NET MVC 4 构建实时聊天应用程序。"
+description: 使用 ASP.NET SignalR 和 ASP.NET MVC 4 构建实时聊天应用程序。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/29/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 632e6098a03eae02f2367c6dc1c293dbdb6b6170
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1ae330be5caf00c3cac7451f326398c0958538af
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>教程： 开始使用 SignalR 1.x 和 MVC 4
 ====================
@@ -63,17 +63,17 @@ ms.lasthandoff: 01/24/2018
         > 在 VS 2010 中，选择**.NET Framework 4** Framework 版本下拉控件中。 .NET Framework 版本 4 和 4.5 上运行 SignalR 代码。
 
         ![创建 mvc web](tutorial-getting-started-with-signalr-and-mvc-4/_static/image3.png)
-    2. 选择 Internet 应用程序模板，请清除该选项以**创建单元测试项目**，单击确定。
+      2. 选择 Internet 应用程序模板，请清除该选项以**创建单元测试项目**，单击确定。
 
-        ![创建 mvc internet 站点](tutorial-getting-started-with-signalr-and-mvc-4/_static/image4.png)
-    3. 打开**工具 |库包管理器 |程序包管理器控制台**并运行以下命令。 此步骤将一组的脚本文件和启用 SignalR 功能的程序集引用添加到项目中。
+         ![创建 mvc internet 站点](tutorial-getting-started-with-signalr-and-mvc-4/_static/image4.png)
+      3. 打开**工具 |库包管理器 |程序包管理器控制台**并运行以下命令。 此步骤将一组的脚本文件和启用 SignalR 功能的程序集引用添加到项目中。
 
-        `install-package Microsoft.AspNet.SignalR -Version 1.1.3`
-    4. 在**解决方案资源管理器**展开脚本文件夹。 请注意，适用于 SignalR 的脚本库已添加到项目。
+         `install-package Microsoft.AspNet.SignalR -Version 1.1.3`
+      4. 在**解决方案资源管理器**展开脚本文件夹。 请注意，适用于 SignalR 的脚本库已添加到项目。
 
-        ![库引用](tutorial-getting-started-with-signalr-and-mvc-4/_static/image6.png)
-    5. 在**解决方案资源管理器**，右键单击项目，选择**添加 |新文件夹**，并添加一个名为的新文件夹**中心**。
-    6. 右键单击**中心**文件夹中，单击**添加 |类**，并创建一个新 C# 类名为**ChatHub.cs**。 你将使用此类作为将消息发送到所有客户端的 SignalR 服务器集线器。
+         ![库引用](tutorial-getting-started-with-signalr-and-mvc-4/_static/image6.png)
+      5. 在**解决方案资源管理器**，右键单击项目，选择**添加 |新文件夹**，并添加一个名为的新文件夹**中心**。
+      6. 右键单击**中心**文件夹中，单击**添加 |类**，并创建一个新 C# 类名为**ChatHub.cs**。 你将使用此类作为将消息发送到所有客户端的 SignalR 服务器集线器。
 
 > [!NOTE]
 > 如果你使用 Visual Studio 2012 并已安装[ASP.NET 和 Web Tools 2012.2 更新](../../../visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw.md#_Installation)，你可以使用新的 SignalR 项模板创建的中心类。 为此，请右键单击**中心**文件夹中，单击**添加 |新项**，选择**SignalR Hub Class (v1)**，并将命名类**ChatHub.cs**。
@@ -117,7 +117,7 @@ ms.lasthandoff: 01/24/2018
 6. 下面的屏幕截图显示在浏览器中运行的聊天应用程序。
 
     ![聊天浏览器](tutorial-getting-started-with-signalr-and-mvc-4/_static/image11.png)
-7. 在**解决方案资源管理器**，检查**脚本文档**运行的应用程序的节点。 如果你使用的 Internet Explorer 作为你的浏览器，此节点会显示在调试模式下。 没有名为的脚本文件**中心**在运行时动态生成 SignalR 库。 此文件管理 jQuery 脚本和服务器端代码之间的通信。 如果你使用非 Internet Explorer 浏览器，你还可以访问动态**中心**通过浏览到它直接，例如 http://mywebsite/signalr/hubs 的文件。
+7. 在**解决方案资源管理器**，检查**脚本文档**运行的应用程序的节点。 如果你使用的 Internet Explorer 作为你的浏览器，此节点会显示在调试模式下。 没有名为的脚本文件**中心**在运行时动态生成 SignalR 库。 此文件管理 jQuery 脚本和服务器端代码之间的通信。 如果你使用非 Internet Explorer 浏览器，你还可以访问动态**中心**通过浏览到它直接，例如文件http://mywebsite/signalr/hubs。
 
     ![生成的中心脚本](tutorial-getting-started-with-signalr-and-mvc-4/_static/image13.png)
 

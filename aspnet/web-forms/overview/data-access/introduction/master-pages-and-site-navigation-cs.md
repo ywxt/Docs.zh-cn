@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/introduction/master-pages-and-site-navigation-cs
-title: "母版页和网站的导航 (C#) |Microsoft 文档"
+title: 母版页和网站的导航 (C#) |Microsoft 文档
 author: rick-anderson
-description: "用户友好的一个常见特性是网站的它们具有一致的站点范围的页面布局和导航方案。 本教程介绍如何 y..."
+description: 用户友好的一个常见特性是网站的它们具有一致的站点范围的页面布局和导航方案。 本教程介绍如何 y...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/master-pages-and-site-navigation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4c44ad7ec1b43129365cc22f5076b4fa7fe860f4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7bf834373c6f44272a9c4c816e649fefe3247a4e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="master-pages-and-site-navigation-c"></a>母版页和网站的导航 (C#)
 ====================
@@ -285,7 +285,7 @@ SectionLevelTutorialListing.ascx.cs
 **图 15**： 列出基本 Reporting 教程 ([单击以查看实际尺寸的图像](master-pages-and-site-navigation-cs/_static/image37.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 使用定义的站点映射和母版页完成，我们现在具有一致的页面布局和导航方案为我们与数据相关的教程。 我们将添加到我们的站点的多少页面，无论更新站点范围页的布局或站点导航信息是由于正在集中式此信息的快速而简单的过程。 具体而言，在母版页中定义的页布局信息`Site.master`和站点中的映射`Web.sitemap`。 我们不需要编写*任何*代码来实现此站点范围页面布局和导航机制，和我们保留在 Visual Studio 中的完整所见即所得设计器支持。
 
@@ -309,12 +309,12 @@ SectionLevelTutorialListing.ascx.cs
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已沈 Shulok、 Dennis Patterson 和希尔顿 Giesenow。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](creating-a-business-logic-layer-cs.md)
-[下一页](creating-a-data-access-layer-vb.md)
+> [!div class="step-by-step"]
+> [上一页](creating-a-business-logic-layer-cs.md)
+> [下一页](creating-a-data-access-layer-vb.md)

@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
-title: "Web 开发最佳做法 （使用 Azure 构建真实世界云应用） |Microsoft 文档"
+title: Web 开发最佳做法 （使用 Azure 构建真实世界云应用） |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以..."
+description: 构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 52d6c941-2cd9-442f-9872-2c798d6d90cd
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 msc.type: authoredcontent
-ms.openlocfilehash: de536a0ca39cb752c0962f0c4ae36eb00b586bff
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4c43b256018d91e89b3427f90fc5c6cd018641f9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>Web 开发最佳做法 （使用 Azure 构建真实世界云应用）
 ====================
@@ -130,7 +130,7 @@ Entity Framework 6 中会导致查询或命令以发送到数据库的所有方�
 
 没有`Async`版本`ToList`方法，因为它在此代码是，则查询发送到数据库的方法。 `Where`和`OrderByDescending`方法只能配置查询，而`ToListAsync`方法执行查询，并将存储中的响应`result`变量。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 你可以实现在任何 web 编程框架和任何云环境，此处所述的 web 开发最佳做法，但我们无在方便的 ASP.NET 和 Windows Azure 中的工具。 如果你按照这些模式，可以轻松地横向扩展您的 web 层，并将尽量减少您的费用，因为每个服务器将能够处理更多流量。
 
@@ -165,6 +165,6 @@ CDN:
 - [修复它示例应用程序的最佳实践](the-fix-it-sample-application.md#bestpractices)。 此电子书的附录部分列出了一些在修复该应用程序中实现实现的最佳做法。
 - [Web 开发人员清单](http://webdevchecklist.com/asp.net)
 
->[!div class="step-by-step"]
-[上一页](continuous-integration-and-continuous-delivery.md)
-[下一页](single-sign-on.md)
+> [!div class="step-by-step"]
+> [上一页](continuous-integration-and-continuous-delivery.md)
+> [下一页](single-sign-on.md)

@@ -1,7 +1,7 @@
 ---
-title: "使用响应项目模板"
+title: 使用 ASP.NET Core 响应项目模板
 author: SteveSandersonMS
-description: "了解如何开始使用 ASP.NET 核心单页面应用程序 (SPA) 项目模板用于响应和创建响应应用程序。"
+description: 了解如何开始使用 ASP.NET 核心单页面应用程序 (SPA) 项目模板用于响应和创建响应应用程序。
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,13 +11,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react
-ms.openlocfilehash: cda9f52d1f5fa1d240e210488bf1bd5c76e49be7
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 4dcfef2bbb99873a9d716a4942f39123944f495c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="use-the-react-project-template"></a>使用响应项目模板
+# <a name="use-the-react-project-template-with-aspnet-core"></a>使用 ASP.NET Core 响应项目模板
 
 > [!NOTE]
 > 本文档不有关响应项目模板包括在 ASP.NET 核心 2.0。 它是有关与其则可手动更新较新响应模板。 默认情况下，该模板包含在 ASP.NET 核心 2.1。
@@ -65,7 +65,7 @@ cd my-new-app
 
 ## <a name="install-npm-packages"></a>安装 npm 包
 
-若要安装第三方 npm 包，使用命令提示符处， *ClientApp*子目录。 例如:
+若要安装第三方 npm 包，使用命令提示符处， *ClientApp*子目录。 例如：
 
 ```console
 cd ClientApp

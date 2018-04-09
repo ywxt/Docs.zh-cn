@@ -1,7 +1,7 @@
 ---
-title: "目的字符串"
+title: 在 ASP.NET 核心目的字符串
 author: rick-anderson
-description: "本文档详细介绍如何在 ASP.NET 核心数据保护 Api 中使用目的字符串。"
+description: 了解如何在 ASP.NET 核心数据保护 Api 中使用目的字符串。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/purpose-strings
-ms.openlocfilehash: b4a0db801ecc1c4ba0762f0c9faf7429b4ac097b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8fe0020256d3a105b1968db693b0c667244957ec
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="purpose-strings"></a>目的字符串
+# <a name="purpose-strings-in-aspnet-core"></a>在 ASP.NET 核心目的字符串
 
 <a name="data-protection-consumer-apis-purposes"></a>
 

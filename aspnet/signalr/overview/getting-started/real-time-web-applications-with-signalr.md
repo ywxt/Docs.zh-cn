@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/real-time-web-applications-with-signalr
-title: "动手实验： 使用 SignalR 实时 Web 应用程序 |Microsoft 文档"
+title: 动手实验： 使用 SignalR 实时 Web 应用程序 |Microsoft 文档
 author: rick-anderson
-description: "实时 Web 应用程序功能推送服务器端的情况下，实时连接的客户端到内容的能力。 对于 ASP.NET 开发人员，ASP..."
+description: 实时 Web 应用程序功能推送服务器端的情况下，实时连接的客户端到内容的能力。 对于 ASP.NET 开发人员，ASP...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 22123a9c61e6830f3f9f66a45182e1e923950341
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5a2bc120ded18ad2302fd6c5cde65a5323e86ca8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>使用 SignalR 的动手实验： 实时 Web 应用程序
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 01/24/2018
 > 
 > ![SignalR 体系结构](real-time-web-applications-with-signalr/_static/image1.png)
 > 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit)。
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)。
 
 
 <a id="Overview"></a>
@@ -160,12 +160,12 @@ SignalR 支持**服务器推送**或**广播**功能; 它将自动处理的连�
 
     *SignalR 包安装*
 
-    > [!NOTE]
-    > 在安装时**SignalR** NuGet 包版本 2.0.2 从全新的 MVC 5 应用程序，你将需要手动更新**OWIN**程序包更新到版本 2.0.1 （或更高版本） 安装 SignalR 前的准备。 若要执行此操作，你可以执行以下脚本中的**程序包管理器控制台**:
-    > 
-    > [!code-powershell[Main](real-time-web-applications-with-signalr/samples/sample2.ps1)]
-    > 
-    > 在 SignalR 将来版本中，将自动更新 OWIN 依赖关系。
+   > [!NOTE]
+   > 在安装时**SignalR** NuGet 包版本 2.0.2 从全新的 MVC 5 应用程序，你将需要手动更新**OWIN**程序包更新到版本 2.0.1 （或更高版本） 安装 SignalR 前的准备。 若要执行此操作，你可以执行以下脚本中的**程序包管理器控制台**:
+   > 
+   > [!code-powershell[Main](real-time-web-applications-with-signalr/samples/sample2.ps1)]
+   > 
+   > 在 SignalR 将来版本中，将自动更新 OWIN 依赖关系。
 3. 在**解决方案资源管理器**，展开**脚本**文件夹，请注意，SignalR *js*文件已添加到解决方案。
 
     ![SignalR JavaScript 引用](real-time-web-applications-with-signalr/_static/image10.png "SignalR JavaScript 引用")
@@ -397,6 +397,6 @@ SignalR 支持**服务器推送**或**广播**功能; 它将自动处理的连�
 * * *
 
 <a id="Summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在此动手实验中，你学习了如何添加**SignalR**你应用程序和发送通知从服务器到你使用的连接的客户端**中心**。 此外，您学习了如何通过使用横向扩展你的应用程序*底板*组件时你的应用程序部署在多个 IIS 实例中。

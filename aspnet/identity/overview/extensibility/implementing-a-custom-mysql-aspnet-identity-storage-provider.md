@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
-title: "实现自定义 MySQL ASP.NET 标识存储提供程序 |Microsoft 文档"
+title: 实现自定义 MySQL ASP.NET 标识存储提供程序 |Microsoft 文档
 author: raquelsa
-description: "ASP.NET 标识是一种可扩展系统，以便您可以创建自己的存储提供程序并将其插入你的应用程序而无需重新使用应用程序..."
+description: ASP.NET 标识是一种可扩展系统，以便您可以创建自己的存储提供程序并将其插入你的应用程序而无需重新使用应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/22/2015
 ms.topic: article
 ms.assetid: 248f5fe7-39ba-40ea-ab1e-71a69b0bd649
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 3bfbccd91705755fc24bb8305fff171baa26f370
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d843b31e011fe520aad6cfdab0beca2d12477f12
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-a-custom-mysql-aspnet-identity-storage-provider"></a>实现自定义 MySQL ASP.NET 标识存储提供程序
 ====================
@@ -124,7 +124,7 @@ ms.lasthandoff: 11/10/2017
 5. 右键单击 IdentityMySQLDemo 项目中，选择**添加**，**的引用、 解决方案、 项目;**选择 AspNet.Identity.MySQL 项目，然后单击**确定**。
 6. 在 IdentityMySQLDemo 项目中，将对所有引用  
     `using Microsoft.AspNet.Identity.EntityFramework;`  
- 替换为  
+   替换为  
      `using AspNet.Identity.MySQL;`
 7. 在 IdentityModels.cs，集中**ApplicationDbContext**为派生自**MySqlDatabase**和包括构造函数采用一个参数使用的连接名称。  
 

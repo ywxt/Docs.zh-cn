@@ -1,22 +1,22 @@
 ---
 uid: visual-studio/overview/2013/release-notes
-title: "ASP.NET 和 Web Tools for Visual Studio 2013 发行说明 |Microsoft 文档"
+title: ASP.NET 和 Web Tools for Visual Studio 2013 发行说明 |Microsoft 文档
 author: microsoft
-description: "本文档介绍 ASP.NET 和 Web Tools for Visual Studio 2013 的版本。"
+description: 本文档介绍 ASP.NET 和 Web Tools for Visual Studio 2013 的版本。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
 ms.topic: article
 ms.assetid: 08815768-2702-42ae-ae85-0a59934a11d1
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: 7f38a0f2693aeb2a4884b9c03719b583423957a8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e9ddd96f186564834ff6bb2c30cf0ed5444cbf1b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>ASP.NET 和 Web Tools for Visual Studio 2013 发行说明
 ====================
@@ -201,14 +201,14 @@ MVC 项目模板已更新为使用[Bootstrap](http://getbootstrap.com/)提供作
 
 ### <a name="attribute-routing"></a>属性路由
 
-ASP.NET MVC 现在支持的属性路由，感谢通过 Tim McCall 的作者贡献[http://attributerouting.net](http://attributerouting.net)。 使用的属性路由可以对你的操作和控制器进行批注来指定路由。
+ASP.NET MVC 现在支持的属性路由，感谢通过 Tim McCall 的作者贡献[ http://attributerouting.net ](http://attributerouting.net)。 使用的属性路由可以对你的操作和控制器进行批注来指定路由。
 
 <a id="TOC11"></a>
 ## <a name="aspnet-web-api-2"></a>ASP.NET Web API 2
 
 ### <a name="attribute-routing"></a>属性路由
 
-ASP.NET Web API 现在支持的属性路由，感谢通过 Tim McCall 的作者贡献[http://attributerouting.net](http://attributerouting.net)。 使用的属性路由，您可以指定 Web API 路由进行批注你的操作和控制器如下：
+ASP.NET Web API 现在支持的属性路由，感谢通过 Tim McCall 的作者贡献[ http://attributerouting.net ](http://attributerouting.net)。 使用的属性路由，您可以指定 Web API 路由进行批注你的操作和控制器如下：
 
 [!code-csharp[Main](release-notes/samples/sample1.cs)]
 
@@ -332,7 +332,7 @@ ASP.NET Web API 现在完全支持 OWIN，并可以在任何 OWIN 支持主机�
 
 ### <a name="maphubs-and-mapconnection-are-now-mapsignalr"></a>MapHubs 和 MapConnection 现 MapSignalR
 
-为了与 OWIN 标准兼容，这些方法具有已重命名为`MapSignalR`。 `MapSignalR`调用没有参数将映射所有中心 (作为`MapHubs`在版本 1.x); 如果要都映射单独**PersistentConnection**对象，指定连接类型作为类型参数中，和作为连接的 URL 扩展第一个参数。
+为了与 OWIN 标准兼容，这些方法具有已重命名为`MapSignalR`。 `MapSignalR` 调用没有参数将映射所有中心 (作为`MapHubs`在版本 1.x); 如果要都映射单独**PersistentConnection**对象，指定连接类型作为类型参数中，和作为连接的 URL 扩展第一个参数。
 
 `MapSignalR` Owin 启动类中调用方法。 Visual Studio 2013 包含的 Owin 启动类; 的新模板若要使用此模板，请执行以下操作：
 
@@ -392,7 +392,7 @@ ASP.NET Web API 现在完全支持 OWIN，并可以在任何 OWIN 支持主机�
 
 已为 iOS 和 Android 客户端都使用 MonoTouch 和 MonoDroid 组件添加支持[Xamarin 库](https://xamarin.com/)。 有关如何使用它们的详细信息，请参阅[使用 Xamarin 组件](https://github.com/SignalR/SignalR/wiki/Building-Mono.Mobile.sln)。 这些组件可在[Xamarin 应用商店](https://store.xamarin.com/)SignalR RTW 版本时可用。
 
-<a id="portable"></a># # # 可移植.NET 客户端
+<a id="portable"></a> # # # 可移植.NET 客户端
 
 更好地便于实现跨平台开发、 Silverlight、 WinRT 并 Windows Phone 客户端已替换为单个可移植.NET 客户端支持以下平台：
 
@@ -580,8 +580,8 @@ ASP.NET Razor 3 包括以下新功能：
 - 支持选项卡上编辑。 Preivously，**格式文档**命令、 自动缩进，并自动在 Visual Studio 中设置格式未正常工作时使用**保留选项卡**选项。 此更改将更正的格式设置的选项卡的 Razor 代码格式设置的 Visual Studio。
 - 对 URL 重写规则生成的链接时的支持。
 - 删除的安全透明特性。
- > [!NOTE]
- > 这是一项重大更改，并使 Razor 3 不兼容与 MVC4 及更早版本，而 Razor 2 与 MVC5 或针对 MVC5 编译的程序集不兼容。
+  > [!NOTE]
+  > 这是一项重大更改，并使 Razor 3 不兼容与 MVC4 及更早版本，而 Razor 2 与 MVC5 或针对 MVC5 编译的程序集不兼容。
 
 找不到 Visual Studio 2013 中已修复从预发行版本的 razor 3 问题[此处](https://aspnetwebstack.codeplex.com/workitem/list/advanced?keyword=&status=Resolved%7cClosed&type=All&priority=All&release=All%7cv5.0%2bPreview%7cv5.0%2bRC%7cv5.0%2bRTM&assignedTo=All&component=Web%2bPages%252fRazor&reasonClosed=Fixed&sortField=LastUpdatedDate&sortDirection=Descending&page=0)。
 
@@ -603,7 +603,7 @@ ASP.NET 应用挂起是从根本上更改的用户体验和经济的承载大量
 
 ### <a name="aspnet-web-api"></a>ASP.NET Web API
 
-1. `ODataQueryOptions<T>.ApplyTo(IQueryable)`不返回`IQueryable<T>`如我们增加了对支持始终`$select`和`$expand`。
+1. `ODataQueryOptions<T>.ApplyTo(IQueryable)` 不返回`IQueryable<T>`如我们增加了对支持始终`$select`和`$expand`。
 
     我们前面的示例为`ODataQueryOptions<T>`始终强制转换的返回值从`ApplyTo`到`IQueryable<T>`。 此查询选项，因为以前工作正常我们前面要支持 (`$filter`， `$orderby`， `$skip`， `$top`) 不会更改查询的形状。 现在，我们支持`$select`和`$expand`中的返回值`ApplyTo`将不会`IQueryable<T>`始终。
 
@@ -632,7 +632,7 @@ ASP.NET 应用挂起是从根本上更改的用户体验和经济的承载大量
 
     *'/' 应用程序中的服务器错误。*
 
-    *一个声明的类型 http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier 或 http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider 未提供 ClaimsIdentity 上存在。若要启用防伪令牌支持基于声明的身份验证，请验证配置的声明提供程序提供这两个在它生成 ClaimsIdentity 实例上的这些声明。如果配置的声明提供方改为使用不同的声明类型，以唯一标识符形式，这可以通过设置静态属性 AntiForgeryConfig.UniqueClaimTypeIdentifier 进行配置。*
+    <em>一个声明的类型<http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier>'或'<http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider>未提供 ClaimsIdentity 上存在。若要启用防伪令牌支持基于声明的身份验证，请验证配置的声明提供程序提供这两个在它生成 ClaimsIdentity 实例上的这些声明。如果配置的声明提供方改为使用不同的声明类型，以唯一标识符形式，这可以通过设置静态属性 AntiForgeryConfig.UniqueClaimTypeIdentifier 进行配置。</em>
 
     **解决方法**:
 
@@ -647,14 +647,14 @@ ASP.NET 应用挂起是从根本上更改的用户体验和经济的承载大量
 
     若要修复上述错误，请打开*所有*中你的项目和执行以下的 Web.config 文件 （包括视图文件夹中的）：
 
-    1. 更新版本"4.0.0.0"的"System.Web.Mvc"到"5.0.0.0"的所有匹配的项。
-    2. 更新的"System.Web.Helpers"版本"2.0.0.0"的所有匹配项&quot;System.Web.WebPages&quot;和&quot;System.Web.WebPages.Razor&quot;到"3.0.0.0"
+   1. 更新版本"4.0.0.0"的"System.Web.Mvc"到"5.0.0.0"的所有匹配的项。
+   2. 更新的"System.Web.Helpers"版本"2.0.0.0"的所有匹配项&quot;System.Web.WebPages&quot;和&quot;System.Web.WebPages.Razor&quot;到"3.0.0.0"
 
-    例如，进行上述更改后，程序集绑定应如下所示：
+      例如，进行上述更改后，程序集绑定应如下所示：
 
-    [!code-xml[Main](release-notes/samples/sample24.xml)]
+      [!code-xml[Main](release-notes/samples/sample24.xml)]
 
-    有关升级到 MVC 5 的 MVC 4 项目的信息，请参阅[如何将 ASP.NET MVC 4 和 Web API 项目升级到 ASP.NET MVC 5 和 Web API 2](../../../mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md)。
+      有关升级到 MVC 5 的 MVC 4 项目的信息，请参阅[如何将 ASP.NET MVC 4 和 Web API 项目升级到 ASP.NET MVC 5 和 Web API 2](../../../mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md)。
 3. 当使用 jQuery 非介入式验证客户端验证，验证消息有时是 HTML 输入元素类型不正确 = number。 验证错误的所需的值 （"年龄字段必填") 显示数量无效而不是正确的消息有效的号码是必填的输入时。
 
     此问题通常找到了具有基架代码具有整数属性上创建和编辑视图模型。
@@ -697,13 +697,13 @@ Web 窗体基架已从 VS2013 中删除，并将在未来的更新到 Visual Stu
 - 若要为 MVC 修复此错误，添加新的基架的项，然后选择 MVC 5 依赖项 （最小或完整）。 此过程将向你的项目添加所有所需的更改。
 - 若要为 Web API 修复此错误：
 
-    1. 将 WebApiConfig 类添加到你的项目。
+  1. 将 WebApiConfig 类添加到你的项目。
 
-        [!code-csharp[Main](release-notes/samples/sample25.cs)]
+      [!code-csharp[Main](release-notes/samples/sample25.cs)]
 
-        [!code-vb[Main](release-notes/samples/sample26.vb)]
-    2. 在应用程序中配置 WebApiConfig.Register\_，如下所示在 Global.asax 中启动方法：
+      [!code-vb[Main](release-notes/samples/sample26.vb)]
+  2. 在应用程序中配置 WebApiConfig.Register\_，如下所示在 Global.asax 中启动方法：
 
-        [!code-csharp[Main](release-notes/samples/sample27.cs)]
+      [!code-csharp[Main](release-notes/samples/sample27.cs)]
 
-        [!code-vb[Main](release-notes/samples/sample28.vb)]
+      [!code-vb[Main](release-notes/samples/sample28.vb)]

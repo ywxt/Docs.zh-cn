@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
-title: "开发使用 Azure Active Directory 的 ASP.NET 应用程序 |Microsoft 文档"
+title: 开发使用 Azure Active Directory 的 ASP.NET 应用程序 |Microsoft 文档
 author: Rick-Anderson
-description: "Microsoft ASP.NET tools for Azure Active Directory 可以方便地为在 Azure 上托管的 web 应用程序启用身份验证。 你也可以使用 Azure 身份验证..."
+description: Microsoft ASP.NET tools for Azure Active Directory 可以方便地为在 Azure 上托管的 web 应用程序启用身份验证。 你也可以使用 Azure 身份验证...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2014
 ms.topic: article
 ms.assetid: 457d7eaf-ee76-4ceb-9082-c7c1721435ad
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 msc.type: authoredcontent
-ms.openlocfilehash: 1ef0468d5f5c17480b23ac88983f30fe6f4979c0
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 44bf29e099583bf9d49f2715d3ff4f748728ad8b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="developing-aspnet-apps-with-azure-active-directory"></a>开发使用 Azure Active Directory 的 ASP.NET 应用程序
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 01/24/2018
 
 > Microsoft ASP.NET tools 为 Azure Active Directory 可以很容易地为上托管的 web 应用程序启用身份验证[Azure](https://www.windowsazure.com/home/features/web-sites/)。 可以使用 Azure 身份验证从组织、 从本地 Active Directory 同步的公司帐户或用户在你自己的自定义 Azure Active Directory 域中创建的 Office 365 用户进行身份验证。 启用 Windows Azure 身份验证配置你的应用程序使用单个的用户进行身份验证[Azure Active Directory](https://docs.microsoft.com/azure/active-directory/)租户。
 > 
->  本教程编写由 Rick Anderson[@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
+>  本教程编写由 Rick Anderson [@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
 
 
 本教程将演示如何创建的 ASP.NET 应用程序配置为使用登录[Azure Active Directory](https://msdn.microsoft.com/library/azure/mt168838.aspx) (Azure AD)。 你还将了解如何调用 Graph API，以获取有关当前登录的用户的信息以及如何部署应用程序到 Azure。
@@ -52,7 +52,7 @@ ms.lasthandoff: 01/24/2018
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image4.png)  
   
- 保存密码，你将需要在首次登录后更改的密码。 下图显示了新的管理员帐户。 你必须使用 Azure Active Directory 登录到你的应用程序，不也显示此页上的 Microsoft 帐户。  
+   保存密码，你将需要在首次登录后更改的密码。 下图显示了新的管理员帐户。 你必须使用 Azure Active Directory 登录到你的应用程序，不也显示此页上的 Microsoft 帐户。  
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image5.png)
 
@@ -65,11 +65,11 @@ ms.lasthandoff: 01/24/2018
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image6.png)
 3. 上**更改身份验证**对话框中，选择**组织帐户**。 这些选项可以用于自动向 Azure AD 中注册你的应用程序，以及自动配置你的应用程序与 Azure AD 集成。 无需使用**更改身份验证**对话框来注册和配置你的应用程序，但它可以更轻松。 如果正在使用 Visual Studio 2012，例如所示，可以仍手动在 Azure 管理门户中注册应用程序和更新其配置以与 Azure AD 集成。  
- 在下拉列表菜单中，选择**云-单个组织**和**单一登录，读取目录数据**。 输入你的 Azure AD 目录，例如 （在下面的映像） 的域*aricka0yahoo.onmicrosoft.com*，然后单击**确定**。 可以在 azure 门户的默认目录从域选项卡中获取的域名 （向下，请参阅下一步的映像）。   
+   在下拉列表菜单中，选择**云-单个组织**和**单一登录，读取目录数据**。 输入你的 Azure AD 目录，例如 （在下面的映像） 的域*aricka0yahoo.onmicrosoft.com*，然后单击**确定**。 可以在 azure 门户的默认目录从域选项卡中获取的域名 （向下，请参阅下一步的映像）。   
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image7.png)  
   
- 下图显示在 Azure 门户中的域名。  
+   下图显示在 Azure 门户中的域名。  
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image8.png)  
 
@@ -94,11 +94,11 @@ ms.lasthandoff: 01/24/2018
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image13.png)  
   
- 如果收到错误：  
- 值不能为 null 或为空。 参数名称： linkText   
+   如果收到错误：  
+   值不能为 null 或为空。 参数名称： linkText   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image14.png)  
   
- 请参阅[调试](#dbg)在本教程末尾的部分。
+   请参阅[调试](#dbg)在本教程末尾的部分。
 
 ## <a name="basics-of-the-graph-api"></a>Graph API 基础知识
 

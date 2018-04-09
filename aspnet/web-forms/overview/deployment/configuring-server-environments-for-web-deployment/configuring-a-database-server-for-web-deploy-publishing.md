@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
 msc.type: authoredcontent
-ms.openlocfilehash: 98fd728f48f6fb64a61686bc58824b9fb3a28b13
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a2340c0d561ed274e281b5f6d942af0a2027315a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-database-server-for-web-deploy-publishing"></a>Web 部署发布更改为配置数据库服务器
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 03/15/2018
 
 > 本主题介绍如何配置 SQL Server 2008 R2 数据库服务器以支持 web 部署和发布。
 > 
-> 本主题中所述的任务共有的每个部署方案和 #x 2014年; 你的 web 服务器配置为使用 IIS Web 部署工具 （Web 部署） 的远程代理服务、 Web 部署处理程序或脱机的部署是否并不重要或应用程序在单个 web 服务器或服务器场上运行。 部署数据库的方式可能更改根据安全要求和其他注意事项。 例如，你可能部署数据库或不包含示例数据，并可能部署用户角色映射，或在部署后手动配置。 但是，配置数据库服务器的方式保持不变。
+> 本主题中所述的任务共有的每个部署方案&#x2014;不论你的 web 服务器配置为使用 IIS Web 部署工具 （Web 部署） 的远程代理服务、 Web 部署处理程序或脱机的部署并不重要或你运行应用程序的单个 web 服务器或服务器场。 部署数据库的方式可能更改根据安全要求和其他注意事项。 例如，你可能部署数据库或不包含示例数据，并可能部署用户角色映射，或在部署后手动配置。 但是，配置数据库服务器的方式保持不变。
 
 
 你无需安装任何其他产品或工具，配置要支持 web 部署的数据库服务器。 假设你的数据库服务器和 web 服务器运行在不同计算机上，你只需要：
@@ -65,8 +65,8 @@ SQL Server 使用 TCP/IP 与远程计算机通信。 如果你的数据库服务
 1. 上**启动**菜单上，指向**所有程序**，单击**Microsoft SQL Server 2008 R2**，单击**配置工具**，然后单击**SQL Server 配置管理器**。
 2. 在树视图窗格中，展开**SQL Server 网络配置**，然后单击**MSSQLSERVER 的协议**。
 
-    > [!NOTE]
-    > 如果已安装多个 SQL Server 实例，你将看到 **协议***[实例名称]* 每个实例的项。 你需要配置网络设置基于实例的实例。
+   > [!NOTE]
+   > 如果已安装多个 SQL Server 实例，你将看到<strong>协议</strong><em>[实例名称]</em>每个实例的项。 你需要配置网络设置基于实例的实例。
 3. 在细节窗格中，右键单击**TCP/IP**行，然后依次**启用**。
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image1.png)
@@ -130,7 +130,7 @@ SQL Server 使用 TCP/IP 与远程计算机通信。 如果你的数据库服务
 
 ## <a name="configure-logins-and-database-permissions"></a>配置登录名和数据库权限
 
-在部署 web 应用程序到 Internet 信息服务 (IIS) 时，应用程序使用的应用程序池标识运行。 在域环境中，应用程序池标识使用在其上运行来访问网络资源的服务器的计算机帐户。 计算机帐户采用格式 *[域名]***\***[计算机名称]***$**和#x2014; 例如， **FABRIKAM\TESTWEB1$**。 若要允许跨网络访问的数据库将 web 应用程序，你需要：
+在部署 web 应用程序到 Internet 信息服务 (IIS) 时，应用程序使用的应用程序池标识运行。 在域环境中，应用程序池标识使用在其上运行来访问网络资源的服务器的计算机帐户。 计算机帐户采用以下形式<em>[域名]</em><strong>\</ g ><em>[计算机名称]</em><strong>$</strong>&#x2014;例如，<strong>FABRIKAM\TESTWEB1$</strong>。 若要允许跨网络访问的数据库将 web 应用程序，你需要：
 
 - 将 web 服务器计算机帐户的登录名添加到 SQL Server 实例。
 - 计算机帐户登录名映射到任何所需的数据库角色 (通常**db\_datareader**和**db\_datawriter**)。
@@ -231,6 +231,6 @@ SQL Server 登录名是一个服务器级对象，而不只是数据库级别对
 
 有关部署数据库项目的指南，请参阅[部署数据库项目](../web-deployment-in-the-enterprise/deploying-database-projects.md)。 通过运行后期部署脚本创建数据库角色成员身份的指南，请参阅[到测试环境中部署数据库角色成员](../advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md)。 有关如何迎接唯一的部署带来成员资格数据库会带来的挑战的指南，请参阅[将成员资格数据库部署到企业环境](../advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments.md)。
 
->[!div class="step-by-step"]
-[上一页](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
-[下一页](creating-a-server-farm-with-the-web-farm-framework.md)
+> [!div class="step-by-step"]
+> [上一页](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
+> [下一页](creating-a-server-farm-with-the-web-farm-framework.md)

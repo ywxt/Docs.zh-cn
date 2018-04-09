@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/creating-the-web-application
-title: "首先使用 ASP.NET MVC 的 EF 数据库： 创建 Web 应用程序和数据模型 |Microsoft 文档"
+title: 首先使用 ASP.NET MVC 的 EF 数据库： 创建 Web 应用程序和数据模型 |Microsoft 文档
 author: tfitzmac
-description: "使用 MVC、 实体框架和 ASP.NET 基架，可以创建的 web 应用程序提供了一个接口到现有数据库。 此教程系列..."
+description: 使用 MVC、 实体框架和 ASP.NET 基架，可以创建的 web 应用程序提供了一个接口到现有数据库。 此教程系列...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/creating-the-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: f495bfa3aa5332e4ca3e44c2ffbfb760fbbeafc8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 04ccc00fa48702608fdc7b5b00d73778985852f9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-creating-the-web-application-and-data-models"></a>首先使用 ASP.NET MVC 的 EF 数据库： 创建 Web 应用程序和数据模型
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 
 ![创建项目](creating-the-web-application/_static/image1.png)
 
-单击“确定”。
+单击 **“确定”**。
 
 在新建 ASP.NET 项目窗口中，选择**MVC**模板。 您可以清除**在云中托管**现在选项，因为你将部署到云应用程序更高版本。 单击**确定**创建应用程序。
 
@@ -57,7 +57,7 @@ ms.lasthandoff: 11/10/2017
 
 ![创建模型](creating-the-web-application/_static/image5.png)
 
-单击 **“添加”**。
+单击 **添加**。
 
 在实体数据模型向导中，选择**EF 设计器从数据库**。
 
@@ -73,7 +73,7 @@ ms.lasthandoff: 11/10/2017
 
 ![设置连接属性](creating-the-web-application/_static/image8.png)
 
-单击“确定”。
+单击 **“确定”**。
 
 此时将显示正确的连接属性。 你可以在 Web.Config 文件中使用连接的默认名称
 
@@ -101,6 +101,6 @@ ms.lasthandoff: 11/10/2017
 
 本教程前，生成项目。 在下一步的部分中，将生成数据模型中，在基于代码，但该部分不将起作用，如果未生成的项目。
 
->[!div class="step-by-step"]
-[上一页](setting-up-database.md)
-[下一页](generating-views.md)
+> [!div class="step-by-step"]
+> [上一页](setting-up-database.md)
+> [下一页](generating-views.md)

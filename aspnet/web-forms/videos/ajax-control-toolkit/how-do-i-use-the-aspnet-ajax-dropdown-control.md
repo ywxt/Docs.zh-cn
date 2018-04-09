@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-dropdown-control
-title: "[如何:]使用 ASP.NET AJAX 下拉控件？ | Microsoft Docs"
+title: '[如何:]使用 ASP.NET AJAX 下拉控件？ | Microsoft Docs'
 author: JoeStagner
-description: "与 ASP.NET AJAX 控件工具包中的下拉列表中控件扩展程序，你可以向用户提供触发部分 pa 的选项的下拉列表..."
+description: 与 ASP.NET AJAX 控件工具包中的下拉列表中控件扩展程序，你可以向用户提供触发部分 pa 的选项的下拉列表...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/30/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-dropdown-control
 msc.type: video
-ms.openlocfilehash: 720e1aaae412f622b14095ec9f16811eb3e728f7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cf2813290e976134ae080ec2d6dca80ef6c50e18
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-aspnet-ajax-dropdown-control"></a>[如何:]使用 ASP.NET AJAX 下拉控件？
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （11 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-dropdown-control)
 
->[!div class="step-by-step"]
-[上一页](how-do-i-configure-the-aspnet-ajax-calendar-control.md)
-[下一页](how-do-i-use-the-aspnet-ajax-maskededit-controls.md)
+> [!div class="step-by-step"]
+> [上一页](how-do-i-configure-the-aspnet-ajax-calendar-control.md)
+> [下一页](how-do-i-use-the-aspnet-ajax-maskededit-controls.md)

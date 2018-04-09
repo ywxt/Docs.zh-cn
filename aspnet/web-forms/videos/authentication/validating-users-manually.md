@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/authentication/validating-users-manually
-title: "手动验证用户 |Microsoft 文档"
+title: 手动验证用户 |Microsoft 文档
 author: JoeStagner
-description: "在此视频 Joe stagner 将显示你如何手动创建你自己的 web 窗体和处理身份验证的请求。 有关此 vi 其他信息..."
+description: 在此视频 Joe stagner 将显示你如何手动创建你自己的 web 窗体和处理身份验证的请求。 有关此 vi 其他信息...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/22/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/authentication/validating-users-manually
 msc.type: video
-ms.openlocfilehash: f73d799dad0927a6ed6277a5a15898c4d510b9d0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ea517ff56297a085282a554ed4834f12eafc1f93
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-users-manually"></a>手动验证用户
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （13 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/validating-users-manually)
 
->[!div class="step-by-step"]
-[上一页](creating-user-accounts-programmatically.md)
-[下一页](validating-users-with-the-login-control.md)
+> [!div class="step-by-step"]
+> [上一页](creating-user-accounts-programmatically.md)
+> [下一页](validating-users-with-the-login-control.md)

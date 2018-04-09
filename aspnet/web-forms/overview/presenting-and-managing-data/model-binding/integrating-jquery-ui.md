@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/integrating-jquery-ui
-title: "使用模型的绑定和 web 窗体中集成 JQuery UI Datepicker |Microsoft 文档"
+title: 使用模型的绑定和 web 窗体中集成 JQuery UI Datepicker |Microsoft 文档
 author: tfitzmac
-description: "本系列教程演示使用模型绑定的 ASP.NET Web 窗体项目的基本方面。 模型绑定使数据交互详细直接-..."
+description: 本系列教程演示使用模型绑定的 ASP.NET Web 窗体项目的基本方面。 模型绑定使数据交互详细直接-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/integrating-jquery-ui
 msc.type: authoredcontent
-ms.openlocfilehash: da3c8f347a709a4c9a47fd0ecce5201d9b0cd1b1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 126262b440f3e914a7fac3f0b7eeadb4f648d2bb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="integrating-jquery-ui-datepicker-with-model-binding-and-web-forms"></a>使用模型的绑定和 web 窗体中集成 JQuery UI Datepicker
 ====================
@@ -115,6 +115,6 @@ JQuery UI Datepicker 小组件使用户能够轻松地从在用户交互的字�
 
 在下一个[教程](using-query-string-values-to-retrieve-data.md)，选择数据时，将使用的查询字符串值。
 
->[!div class="step-by-step"]
-[上一页](sorting-paging-and-filtering-data.md)
-[下一页](using-query-string-values-to-retrieve-data.md)
+> [!div class="step-by-step"]
+> [上一页](sorting-paging-and-filtering-data.md)
+> [下一页](using-query-string-values-to-retrieve-data.md)

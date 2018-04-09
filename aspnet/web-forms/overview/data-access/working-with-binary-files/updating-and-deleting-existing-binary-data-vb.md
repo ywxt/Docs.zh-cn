@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-vb
-title: "更新和删除现有的二进制数据 (VB) |Microsoft 文档"
+title: 更新和删除现有的二进制数据 (VB) |Microsoft 文档
 author: rick-anderson
-description: "前面的教程中我们已了解如何 GridView 控件可以方便地编辑和删除文本数据。 在本教程中我们看到如何 GridView 控件还建立..."
+description: 前面的教程中我们已了解如何 GridView 控件可以方便地编辑和删除文本数据。 在本教程中我们看到如何 GridView 控件还建立...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/27/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8baf187d484424aeaee57f8c57ac391a0ae9e946
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 37e32167cccd1b9a98b629179cdaeb9e193f88b7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="updating-and-deleting-existing-binary-data-vb"></a>更新和删除现有的二进制数据 (VB)
 ====================
@@ -264,8 +264,8 @@ ObjectDataSource 现在将包括的值其`UpdateMethod`属性以及对应`Update
 
 当完成所需的步骤说明如何 s`SelectedValue`是 3 几乎是相同的所使用的说明如何的`ItemInserting`事件处理程序。 此事件处理程序执行时从我们添加中的说明如何控件添加新类别记录[以前一教程](including-a-file-upload-option-when-adding-a-new-record-vb.md)。 因此，它 behooves 我们可以重构出到单独的方法，此功能。 具体而言，我移出的常见功能为两个方法：
 
-- `ProcessBrochureUpload(FileUpload, out bool)`FileUpload 控件实例和一个输出布尔值，指定是否应继续删除或编辑操作或如果不应将其取消由于某个验证错误，则接受作为输入。 此方法返回的已保存文件的路径或`null`如果没有文件已保存。
-- `DeleteRememberedBrochurePath`删除指定的页面变量中的路径的文件`deletedCategorysPdfPath`如果`deletedCategorysPdfPath`不`null`。
+- `ProcessBrochureUpload(FileUpload, out bool)` FileUpload 控件实例和一个输出布尔值，指定是否应继续删除或编辑操作或如果不应将其取消由于某个验证错误，则接受作为输入。 此方法返回的已保存文件的路径或`null`如果没有文件已保存。
+- `DeleteRememberedBrochurePath` 删除指定的页面变量中的路径的文件`deletedCategorysPdfPath`如果`deletedCategorysPdfPath`不`null`。
 
 遵循这两种方法的代码。 请注意之间的相似性`ProcessBrochureUpload`和说明如何的`ItemInserting`从前面的教程的事件处理程序。 在本教程中，我已更新说明的事件处理程序以使用这些新方法。 下载与本教程，若要查看对说明的事件处理程序的修改关联的代码。
 
@@ -352,7 +352,7 @@ GridView s`RowUpdating`和`RowUpdated`事件处理程序使用`ProcessBrochureUp
 > `UpdatingAndDeleting.aspx`页 s 插入和编辑接口无法使用多做一些工作。 `CategoryName`和`Description`中的说明和 GridView BoundFields 应转换为 TemplateFields。 由于`CategoryName`不允许`NULL`值，应添加 RequiredFieldValidator。 与`Description`文本框中应可能转换为多行文本框。 我为你作为练习保留这些完成收尾工作。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程中完成我们看处理二进制数据。 在本教程和以前的三个，我们已了解如何二进制数据可以存储在文件系统或直接在数据库内。 用户提供的选择从其硬盘的文件并将其上载到 web 服务器，其中可以存储在文件系统或插入到数据库到系统的二进制数据。 ASP.NET 2.0 包括 FileUpload 控件，可提供此类接口一样简单，如拖放。 但是，如中另有说明[上载文件](uploading-files-vb.md)教程中，FileUpload 控件是仅适合于相对较小的文件上载，理想情况下不超过一兆字节。 我们还介绍了如何将上载的数据与基础数据模型中，关联，以及如何编辑和删除来自现有记录的二进制数据。
 
@@ -362,11 +362,11 @@ GridView s`RowUpdating`和`RowUpdated`事件处理程序使用`ProcessBrochureUp
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一篇](including-a-file-upload-option-when-adding-a-new-record-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](including-a-file-upload-option-when-adding-a-new-record-vb.md)

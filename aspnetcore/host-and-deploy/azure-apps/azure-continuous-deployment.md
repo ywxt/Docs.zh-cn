@@ -1,7 +1,7 @@
 ---
-title: "使用 Visual Studio 的 Azure 和 ASP.NET Core 使用 Git 进行持续部署"
+title: 使用 Visual Studio 的 Azure 和 ASP.NET Core 使用 Git 进行持续部署
 author: rick-anderson
-description: "了解如何使用 Visual Studio 创建 ASP.NET Core Web 应用并使用 Git 将它部署到 Azure 应用服务以实现持续部署。"
+description: 了解如何使用 Visual Studio 创建 ASP.NET Core Web 应用并使用 Git 将它部署到 Azure 应用服务以实现持续部署。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: 7302de1ace62dba53b317039aac7f4763314aa19
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4de1893e8c1f7f2f4d9af7278a110067ea777c61
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="continuous-deployment-to-azure-with-visual-studio-and-git-with-aspnet-core"></a>使用 Visual Studio 的 Azure 和 ASP.NET Core 使用 Git 进行持续部署
 
 作者：[Erik Reitan](https://github.com/Erikre)
 
-[!INCLUDE[Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
+[!INCLUDE [Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
 
 本教程演示如何创建使用 Visual Studio 的 ASP.NET 核心 web 应用并将其从 Visual Studio 部署到 Azure App Service，使用连续部署。
 
@@ -34,7 +34,7 @@ ms.lasthandoff: 03/15/2018
 本教程假定安装以下软件：
 
 * [Visual Studio](https://www.visualstudio.com)
-* [.NET 核心 SDK](https://www.microsoft.com/net/download/core) (运行时和工具)
+* [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
 * 用于 Windows 的 [Git](https://git-scm.com/downloads)
 
 ## <a name="create-an-aspnet-core-web-app"></a>创建 ASP.NET Core Web 应用
@@ -43,7 +43,7 @@ ms.lasthandoff: 03/15/2018
 
 1. 从“文件”菜单中选择“新建” > “项目”。
 
-1. 选择“ASP.NET Core Web 应用程序”项目模板。 它出现在“已安装” > “模板” > “Visual C#” > “.NET Core”下。 将项目命名为 `SampleWebAppDemo`。 选择**创建新 Git 存储库**选项，然后单击**确定**。
+1. 选择**ASP.NET Core Web 应用程序**项目模板。 它出现在“已安装” > “模板” > “Visual C#” > “.NET Core”下。 将项目命名为 `SampleWebAppDemo`。 选择**创建新 Git 存储库**选项，然后单击**确定**。
 
    ![“新建项目”对话框](azure-continuous-deployment/_static/01-new-project.png)
 

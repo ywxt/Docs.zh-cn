@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "连接复原和与实体框架中的 ASP.NET MVC 应用程序的命令截获 |Microsoft 文档"
+title: 连接复原和与实体框架中的 ASP.NET MVC 应用程序的命令截获 |Microsoft 文档
 author: tdykstra
-description: "Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 的 ASP.NET MVC 5 应用程序..."
+description: Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 的 ASP.NET MVC 5 应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/13/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1a28284e203904cc943e5e46b369e8a58ea5c820
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4a43a9120bf3fa69b00b234d65d0f59d3ce9975b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a>连接复原和命令截获与实体框架中的 ASP.NET MVC 应用程序
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 01/24/2018
 
 [下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)或[下载 PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 有关教程系列的信息，请参阅[序列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 
 
 到目前为止应用程序已经运行本地 IIS Express 在开发计算机上。 若要使实际的应用程序可用于通过 Internet 使用其他人，你必须将其部署到 web 宿主提供程序，并且必须将数据库部署到数据库服务器。
@@ -60,7 +60,7 @@ ms.lasthandoff: 01/24/2018
 3. 在*StudentController.cs*，添加`using`语句`System.Data.Entity.Infrastructure`。
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
-4. 更改所有`catch`阻止该 catch`DataException`异常，以便它们捕获`RetryLimitExceededException`异常相反。 例如:
+4. 更改所有`catch`阻止该 catch`DataException`异常，以便它们捕获`RetryLimitExceededException`异常相反。 例如：
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample3.cs?highlight=1)]
 
@@ -171,7 +171,7 @@ A[最佳做法的日志记录](../../../../aspnet/overview/developing-apps-with-
     ![Dummy 异常](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
 5. 取消注释*SetExecutionStrategy*中一行*SchoolConfiguration.cs*。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，你已了解如何启用连接复原和记录的实体框架撰写并发送到数据库的 SQL 命令。 在下一教程中，你将部署到 Internet，使用 Code First 迁移将数据库部署应用程序。
 
@@ -179,6 +179,6 @@ A[最佳做法的日志记录](../../../../aspnet/overview/developing-apps-with-
 
 在找不到其他实体框架资源的链接[ASP.NET 数据访问的推荐资源](../../../../whitepapers/aspnet-data-access-content-map.md)。
 
->[!div class="step-by-step"]
-[上一页](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[下一页](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [上一页](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [下一页](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application.md)

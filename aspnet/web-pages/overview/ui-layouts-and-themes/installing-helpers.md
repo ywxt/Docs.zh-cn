@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/installing-helpers
-title: "在 ASP.NET Web 安装程序的帮助页 (Razor) 站点 |Microsoft 文档"
+title: 在 ASP.NET Web 安装程序的帮助页 (Razor) 站点 |Microsoft 文档
 author: tfitzmac
-description: "本文介绍如何在 ASP.NET Web 页 (Razor) 网站上安装程序的帮助。 一个帮助程序是一个可重用组件，包括代码和标记每个..."
+description: 本文介绍如何在 ASP.NET Web 页 (Razor) 网站上安装程序的帮助。 一个帮助程序是一个可重用组件，包括代码和标记每个...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/installing-helpers
 msc.type: authoredcontent
-ms.openlocfilehash: 842c5a56d14314217c1e6ad6d48ded28d3cc5b4e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 766fbb87ae8bcb8917eb8fa7f552c00792242cf6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="installing-a-helper-in-an-aspnet-web-pages-razor-site"></a>在一个 ASP.NET Web 页 (Razor) 站点中安装程序的帮助程序
 ====================
@@ -49,10 +49,10 @@ ASP.NET Web 页具有内置的几个帮助器。 但是，使用 NuGet 包管理
 2. 这将启动 NuGet 包管理器，并显示可用的包。 在搜索框中，输入你想要安装的帮助程序关键字。
 
     ![在 WebMatrix 的 NuGet 库对话框](installing-helpers/_static/image2.png)
-- 选择包，然后单击**安装**。 单击**是**当系统询问你是否想要安装包，并指示你接受条款。
+3. 选择包，然后单击**安装**。 单击**是**当系统询问你是否想要安装包，并指示你接受条款。
 
-    如果这是已安装程序的帮助程序第一次，NuGet 将在你的网站代码的组成帮助器中创建文件夹。
-- 若要卸载程序的帮助，请单击**库**菜单上，单击**已安装**选项卡，然后选择你想要卸载的程序包。
+     如果这是已安装程序的帮助程序第一次，NuGet 将在你的网站代码的组成帮助器中创建文件夹。
+4. 若要卸载程序的帮助，请单击**库**菜单上，单击**已安装**选项卡，然后选择你想要卸载的程序包。
 
 ## <a name="installing-the-twitter-helper"></a>安装的 Twitter 帮助程序
 

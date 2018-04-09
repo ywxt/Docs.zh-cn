@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-cs
-title: "母版页 (C#) 中的 Url |Microsoft 文档"
+title: 母版页 (C#) 中的 Url |Microsoft 文档
 author: rick-anderson
-description: "介绍如何在母版页中的 Url 可以中断由于是在不同的相对目录比内容页的主控页文件。 查看重定基址..."
+description: 介绍如何在母版页中的 Url 可以中断由于是在不同的相对目录比内容页的主控页文件。 查看重定基址...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8b01f0ac780121c4e0941df6016220a1cb1ed2d1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 494338f1a0705c8d7e15bc693ae1ec6362b26d64
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="urls-in-master-pages-c"></a>母版页 (C#) 中的 Url
 ====================
@@ -164,7 +164,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample10.html)]
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 母版页经常包括链接、 图像和其他必须通过 URL 指定的外部资源。 因为主控页和内容页可能不存在的相同文件夹中，务必 abstain 从使用相对 Url。 可以使用硬编码的绝对 Url 时，因此紧密到 web 应用程序中利用的绝对 URL。 如果发生更改的绝对 URL-通常时那样移动或部署 web 应用程序-你将需要记住以返回并更新绝对 Url。
 
@@ -182,12 +182,12 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
 
->[!div class="step-by-step"]
-[上一页](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)
-[下一页](control-id-naming-in-content-pages-cs.md)
+> [!div class="step-by-step"]
+> [上一页](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)
+> [下一页](control-id-naming-in-content-pages-cs.md)

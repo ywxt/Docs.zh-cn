@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-razor-syntax-c
-title: "使用 Razor 语法 (C#) 的 ASP.NET Web 编程简介 |Microsoft 文档"
+title: 使用 Razor 语法 (C#) 的 ASP.NET Web 编程简介 |Microsoft 文档
 author: tfitzmac
-description: "本章概述你的编程与 ASP.NET Web Pages 使用 Razor 语法。 ASP.NET 是 Microsoft 的技术，用于运行动态 web pa..."
+description: 本章概述你的编程与 ASP.NET Web Pages 使用 Razor 语法。 ASP.NET 是 Microsoft 的技术，用于运行动态 web pa...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/07/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: 32cdd8d524d783d7ccc3ab076de636ce4a868132
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 430033c06df74cc3661c40ca7f7bd9244cd257c9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 语法 (C#) 的 ASP.NET Web 编程简介
 ====================
@@ -122,7 +122,7 @@ A*字符串*是作为文本处理的字符的序列。 若要指定一个字符�
 
 ### <a name="6-code-is-case-sensitive"></a>6.代码是区分大小写
 
-在 C# 中，关键字 (如`var`， `true`，和`if`) 且变量名称区分大小写。 代码的以下行创建两个不同的变量，`lastName`和`LastName.`
+在 C# 中，关键字 (如`var`， `true`，和`if`) 且变量名称区分大小写。 代码的以下行创建两个不同的变量，`lastName`和 `LastName.`
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample8.cshtml)]
 
@@ -134,7 +134,7 @@ A*字符串*是作为文本处理的字符的序列。 若要指定一个字符�
 
 ### <a name="7-much-of-your-coding-involves-objects"></a>7.大部分代码涉及对象
 
-*对象*表示，你可以使用编程件事情 &#8212; 页、 文本框、 文件、 映像、 web 请求、 电子邮件、 客户记录 （数据库行），等等。对象具有描述其特征的属性和，可读取或更改和 #8212;文本框对象具有`Text`（及其他） 的属性，请求对象具有`Url`属性，电子邮件具有`From`属性和客户对象都有`FirstName`属性。 对象还具有方法&quot;谓词&quot;他们可以执行。 示例包括文件对象的`Save`方法中，映像对象的`Rotate`方法和电子邮件对象的`Send`方法。
+*对象*表示，你可以使用编程件事情&#8212;页、 文本框、 文件、 映像、 web 请求、 电子邮件、 客户记录 （数据库行），等等。对象具有描述其特征的属性并确保你可以读取或更改&#8212;文本框对象具有`Text`（及其他） 的属性，请求对象具有`Url`属性，电子邮件具有`From`属性，和客户对象都具有`FirstName`属性。 对象还具有方法&quot;谓词&quot;他们可以执行。 示例包括文件对象的`Save`方法中，映像对象的`Rotate`方法和电子邮件对象的`Send`方法。
 
 通常将使用`Request`对象，它会为你提供的文本框 （窗体字段） 的信息，如值在页上，浏览器的类型进行请求的 URL 的页面、 用户标识，等等。下面的示例演示如何访问属性的`Request`对象以及如何调用`MapPath`方法`Request`对象，这将使您在服务器上的页的绝对路径：
 
@@ -199,7 +199,7 @@ A*字符串*是作为文本处理的字符的序列。 若要指定一个字符�
 
 Razor 语法是一种简单的编程语法，为基于服务器的代码嵌入在网页中。 在使用 Razor 语法的网页，有两种类型的内容： 客户端内容和服务器代码。 客户端的内容是用于在网页中的内容： HTML 标记 （元素） 的样式如 CSS 的信息可能某些客户端脚本，如 JavaScript 和纯文本。
 
-Razor 语法允许您添加到此客户端内容的服务器代码。 如果存在服务器代码页中，服务器运行该代码第一次，再将页发送到浏览器。 通过在服务器上运行，代码可以执行任务，可以是更加复杂，无法使用客户端内容单独出现时，例如类似于访问基于服务器的数据库执行操作。 最重要的是，服务器代码可以动态创建客户端内容 （&） #8212;它可以生成 HTML 标记或在运行过程中的其他内容并将其发送到以及页可能会包含任何静态 HTML 浏览器。 从浏览器的角度来看，由服务器代码生成的客户端内容是比任何其他内容，客户端没有什么不同。 如你已经了解，具有所需的服务器代码是非常简单。
+Razor 语法允许您添加到此客户端内容的服务器代码。 如果存在服务器代码页中，服务器运行该代码第一次，再将页发送到浏览器。 通过在服务器上运行，代码可以执行任务，可以是更加复杂，无法使用客户端内容单独出现时，例如类似于访问基于服务器的数据库执行操作。 服务器代码最重要的是，动态创建客户端内容&#8212;它可以生成 HTML 标记或在运行过程中的其他内容中并发送到以及页可能会包含任何静态 HTML 浏览器。 从浏览器的角度来看，由服务器代码生成的客户端内容是比任何其他内容，客户端没有什么不同。 如你已经了解，具有所需的服务器代码是非常简单。
 
 包含 Razor 语法的 ASP.NET web pages 具有特殊的文件扩展名 (*.cshtml*或*.vbhtml*)。 服务器可识别这些扩展，运行的代码，使用 Razor 语法标记，然后将页发送到浏览器。
 
@@ -224,7 +224,7 @@ Razor 语法使您能够 ASP.NET，但使用可以更轻松地了解当你方面
 
 ## <a name="basic-syntax"></a>基本语法
 
-前面你已了解如何创建一个 ASP.NET Web Pages 页面上，以及如何将服务器代码添加到 HTML 标记的一个基本示例。 此处将介绍编写使用 Razor 语法 &#8212; 的 ASP.NET 服务器代码的基础知识即，使用编程语言规则。
+前面你已了解如何创建一个 ASP.NET Web Pages 页面上，以及如何将服务器代码添加到 HTML 标记的一个基本示例。 此处将介绍编写使用 Razor 语法的 ASP.NET 服务器代码的基础知识&#8212;，即使用编程语言规则。
 
 如果你有使用编程 （尤其是如果您使用过 C、 c + +、 C#、 Visual Basic 或 JavaScript） 的经验，此处读取大部分将熟悉。 你可能需要先熟悉一下仅如何服务器代码添加到标记中*.cshtml*文件。
 
@@ -249,7 +249,7 @@ Razor 语法使您能够 ASP.NET，但使用可以更轻松地了解当你方面
     第一个示例重复前面的示例，但使用一对`<text>`标记括起要呈现的文本。 在第二个示例中，`<text>`和`</text>`标记括起三行，它们都有一些非包含的文本和不匹配的 HTML 标记的行 (`<br />`)，以及服务器代码和匹配的 HTML 标记。 另外无法再次，先完成每个行分别`@:`运算符; 它们的方式都有效。
 
     > [!NOTE]
-    > 本部分 &#8212; 中所示，输出文本的时使用 HTML 元素，`@:`运算符，或`<text>`元素 &#8212;ASP.NET 不进行 HTML 编码输出。 (如前所述，ASP.NET 未编码的服务器的代码表达式和服务器代码块前面带有输出`@`，除非在本节中所述的特殊情况。)
+    > 此部分中所述，输出文本的时&#8212;使用 HTML 元素，`@:`运算符，或`<text>`元素&#8212;ASP.NET 不会进行 HTML 编码输出。 (如前所述，ASP.NET 未编码的服务器的代码表达式和服务器代码块前面带有输出`@`，除非在本节中所述的特殊情况。)
 
 ### <a name="whitespace"></a>Whitespace
 
@@ -343,33 +343,35 @@ HTML 注释开头`<!--`字符和以结尾`-->`。 可以使用 HTML 注释来包
 
 下表列出了一些常见的转换和测试方法的变量。
 
-| **方法** | **说明** | **示例** |
-| --- | --- | --- |
-| `AsInt(), IsInt()` | 将转换为整数表示整数数量 （如"593") 的字符串。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)] |
-| `AsBool(), IsBool()` | 将转换字符串如下所示&quot;true&quot;或&quot;false&quot;到类型为 Boolean 类型。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)] |
-| `AsFloat(), IsFloat()` | 将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为浮点数。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)] |
-| `AsDecimal(), IsDecimal()` | 将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为十进制数。 （在 ASP.NET 中，十进制数是比浮点数更精确。） | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)] |
-| `AsDateTime(), IsDateTime()` | 将对 ASP.NET 表示的日期和时间值的字符串转换`DateTime`类型。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)] |
-| `ToString()` | 将任何其他数据类型转换为字符串。 | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)] |
+
+|   <strong>方法</strong>    |                                                                              <strong>说明</strong>                                                                              |                         <strong>示例</strong>                         |
+|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+|      `AsInt(), IsInt()`      |                                                      将转换为整数表示整数数量 （如"593") 的字符串。                                                      |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]   |
+|     `AsBool(), IsBool()`     |                                                    将转换字符串如下所示&quot;true&quot;或&quot;false&quot;到类型为 Boolean 类型。                                                     |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]   |
+|    `AsFloat(), IsFloat()`    |                                    将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为浮点数。                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]   |
+|  `AsDecimal(), IsDecimal()`  | 将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为十进制数。 （在 ASP.NET 中，十进制数是比浮点数更精确。） |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]   |
+| `AsDateTime(), IsDateTime()` |                                                将对 ASP.NET 表示的日期和时间值的字符串转换`DateTime`类型。                                                 |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]   |
+|         `ToString()`         |                                                                       将任何其他数据类型转换为字符串。                                                                        | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)] |
 
 ## <a name="operators"></a>运算符
 
 运算符是命令的关键字或哪种类型的表达式中执行将告诉 ASP.NET 的字符。 C# 语言 （和基于它的 Razor 语法） 支持很多运算符，但你只需以识别一些吧。 下表总结了最常用的运算符。
 
-| **Operator** | **说明** | **示例** |
-| --- | --- | --- |
-| `+` `-` `*` `/` | 在数值表达式中使用的数学运算符。 | [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)] |
-| `=` | 赋值。 将一条语句右侧的值分配给左侧的对象。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)] |
-| `==` | 相等。 返回`true`如果这些值是否相等。 (请注意之间的区别`=`运算符和`==`运算符。) | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)] |
-| `!=` | 不相等。 返回`true`如果值不相等。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)] |
-| `< > <= >=` | 小于-号、 大于-比小于-或-等于和大于或等于。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)] |
-| `+` | 串联，用来联接字符串。 ASP.NET 就会知道此运算符和加法运算符基于表达式的数据类型之间的差异。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)] |
-| `+=` `-=` | 递增和递减运算符，从而添加，并且从变量 （分别） 减去 1。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)] |
-| `.` | 点。 用于区分对象及其属性和方法。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)] |
-| `()` | 括号。 用于到组表达式并将参数传递给方法。 | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)] |
-| `[]` | 方括号。 用于访问数组或集合中的值。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)] |
-| `!` | 不是。 反转`true`值赋给`false`，反之亦然。 通常用作要测试的速记方法`false`(即，为不`true`)。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)] |
-| `&&` <code>&#124;&#124;</code> | 逻辑与和或用于链接条件组合在一起。 | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)] |
+
+|   <strong>Operator</strong>    |                                                                     <strong>说明</strong>                                                                     |                        <strong>示例</strong>                         |
+|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+|        `+` `-` `*` `/`         |                                                            在数值表达式中使用的数学运算符。                                                             |    [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]    |
+|              `=`               |                                    赋值。 将一条语句右侧的值分配给左侧的对象。                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]   |
+|              `==`              |                      相等。 返回`true`如果这些值是否相等。 (请注意之间的区别`=`运算符和`==`运算符。)                      |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]   |
+|              `!=`              |                                                       不相等。 返回`true`如果值不相等。                                                        |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]   |
+|          `< > <= >=`           |                                               小于-号、 大于-比小于-或-等于和大于或等于。                                                |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]   |
+|              `+`               | 串联，用来联接字符串。 ASP.NET 就会知道此运算符和加法运算符基于表达式的数据类型之间的差异。 |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]   |
+|           `+=` `-=`            |                                   递增和递减运算符，从而添加，并且从变量 （分别） 减去 1。                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]   |
+|              `.`               |                                                  点。 用于区分对象及其属性和方法。                                                  |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]   |
+|              `()`              |                                              括号。 用于到组表达式并将参数传递给方法。                                               | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)] |
+|              `[]`              |                                                    方括号。 用于访问数组或集合中的值。                                                     |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]   |
+|              `!`               |               不是。 反转`true`值赋给`false`，反之亦然。 通常用作要测试的速记方法`false`(即，为不`true`)。               |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]   |
+| `&&` <code>&#124;&#124;</code> |                                                   逻辑与和或用于链接条件组合在一起。                                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]   |
 
 <a id="ID_WorkingWithFileAndFolderPaths"></a>
 ## <a name="working-with-file-and-folder-paths-in-code"></a>使用文件和代码中的文件夹路径
@@ -461,7 +463,7 @@ ASP.NET 服务器代码允许你执行基于条件的任务，编写特定次数
 
 循环开头`for`每个以分号结尾的关键字后, 跟置于括号内，三个语句。
 
-- 在括号内的第一个语句 (`var i=10;`) 创建一个计数器并将初始化为 10。 你不需要命名该计数器`i`&#8212; 你可以使用任何变量。 当`for`循环运行时，此计数器时自动递增。
+- 在括号内的第一个语句 (`var i=10;`) 创建一个计数器并将初始化为 10。 你不需要命名该计数器`i`&#8212;你可以使用任何变量。 当`for`循环运行时，此计数器时自动递增。
 - 第二个语句 (`i < 21;`) 设置为你想要计数的距离的条件。 在这种情况下，您希望其转到最多 20 个 （即，继续阅读计数器时小于 21）。
 - 第三个语句 (`i++` ) 使用一个递增运算符，它只需指定计数器应具有 1 添加到其每次循环运行的时。
 
@@ -515,7 +517,7 @@ A*集合*是一组相同的类型，例如的集合对象`Customer`数据库中�
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample59.cshtml)]
 
-数组，可声明特定的数据类型，如`string`， `int`，或`DateTime`。 要指明变量可以包含一个数组，可将括号添加到声明 (如`string[]`或`int[]`)。 你可以访问项数组使用它们的位置 （索引） 中或通过使用`foreach`语句。 数组索引从零开始的是 &#8212;也就是说，第一项是在位置 0，第二项是在位置 1，依此类推。
+数组，可声明特定的数据类型，如`string`， `int`，或`DateTime`。 要指明变量可以包含一个数组，可将括号添加到声明 (如`string[]`或`int[]`)。 你可以访问项数组使用它们的位置 （索引） 中或通过使用`foreach`语句。 数组索引是从零开始&#8212;，即第一项是在位置 0，第二项是在位置 1，依此类推。
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample60.cshtml)]
 
@@ -549,7 +551,7 @@ A*集合*是一组相同的类型，例如的集合对象`Customer`数据库中�
 
 此方法对应的服务器上的物理路径返回到指定的虚拟路径。 该方法的三个参数`virtualPath`， `baseVirtualDir`，和`allowCrossAppMapping`。 （请注意，在声明中，列出了参数将接受的数据的数据类型）。在调用此方法时，你必须提供所有三个参数的值。
 
-Razor 语法为你提供了用于将参数传递给方法的两个选项：*位置参数*和*命名参数*。 若要调用的使用位置参数的方法，请在方法声明中指定严格顺序传递参数。 （你将通常知道此顺序通过阅读的方法的文档。）你必须遵循的顺序，并且你不能跳过任何参数 （&） #8212;如果有必要，你将传递一个空字符串 (`""`) 或`null`为不具有的值的位置参数。
+Razor 语法为你提供了用于将参数传递给方法的两个选项：*位置参数*和*命名参数*。 若要调用的使用位置参数的方法，请在方法声明中指定严格顺序传递参数。 （你将通常知道此顺序通过阅读的方法的文档。）你必须遵循的顺序，并且你不能跳过任何参数&#8212;如果有必要，你将传递一个空字符串 (`""`) 或`null`为不具有的值的位置参数。
 
 下面的示例假定你有一个名为的文件夹*脚本*在网站上。 该代码调用`Request.MapPath`方法并传递正确的顺序中的三个参数的值。 然后，它将显示生成的映射的路径。
 
@@ -568,7 +570,7 @@ Razor 语法为你提供了用于将参数传递给方法的两个选项：*位�
 
 ### <a name="try-catch-statements"></a>Try Catch 语句
 
-通常将在代码中可能会失败的原因，在你的控制范围具有语句。 例如:
+通常将在代码中可能会失败的原因，在你的控制范围具有语句。 例如：
 
 - 如果你的代码尝试创建或访问文件，可能会出现各种类型的错误。 所需的文件可能不存在，则可能锁定，代码可能不具有权限，依次类推。
 - 同样，如果你的代码尝试更新数据库中的记录，可以有权限问题、 与数据库的连接可能会丢弃，要保存的数据可能无效，依次类推。

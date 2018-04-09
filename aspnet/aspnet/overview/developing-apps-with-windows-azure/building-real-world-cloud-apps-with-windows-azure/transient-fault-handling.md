@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
-title: "暂时性故障处理 （构建使用 Azure 真实世界云应用） |Microsoft 文档"
+title: 暂时性故障处理 （构建使用 Azure 真实世界云应用） |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以..."
+description: 构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/03/2015
 ms.topic: article
 ms.assetid: 7ead83bc-c08c-4b26-8617-00e07292e35c
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
-ms.openlocfilehash: b743b04789c5e5ebf5ab922cf34a516a16a6d356
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 86bd67b04931ae2452f6e063e6475a434a0125bc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>暂时性故障处理 （构建真实世界云应用与 Azure）
 ====================
@@ -76,7 +76,7 @@ ms.lasthandoff: 01/24/2018
 
 有关 SQL 数据库重试策略指南，请参阅[暂时性故障和连接到 SQL 数据库的错误的疑难解答](https://azure.microsoft.com/documentation/articles/sql-database-connectivity-issues/)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 重试/退让策略可帮助使临时错误对不可见客户大多数情况下，以及 Microsoft 提供了可用于最大程度减少你的工作实现策略，无论你使用 ADO.NET、 实体框架中或 Azure 的框架存储服务。
 
@@ -104,6 +104,6 @@ ms.lasthandoff: 01/24/2018
 
 - [云服务在 Azure 中的基础知识](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)。 示例应用程序由 Microsoft Azure 客户咨询团队创建，它演示如何使用[企业库暂时性故障处理块](http://nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/)(TFH)。 有关详细信息，请参阅[云服务基础数据访问层-临时故障处理](https://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx)。 TFH 建议为直接 （不使用实体框架） 使用 ADO.NET 的数据库访问。
 
->[!div class="step-by-step"]
-[上一页](monitoring-and-telemetry.md)
-[下一页](distributed-caching.md)
+> [!div class="step-by-step"]
+> [上一页](monitoring-and-telemetry.md)
+> [下一页](distributed-caching.md)

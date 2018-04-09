@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/aspnet-mvc-4-mobile-features
-title: "ASP.NET MVC 4 移动功能 |Microsoft 文档"
+title: ASP.NET MVC 4 移动功能 |Microsoft 文档
 author: Rick-Anderson
-description: "现在有了与在部署 ASP.NET MVC 5 移动 Web 应用程序 Azure 网站上的代码示例本教程的 MVC 5 版本。"
+description: 现在有了与在部署 ASP.NET MVC 5 移动 Web 应用程序 Azure 网站上的代码示例本教程的 MVC 5 版本。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: f4e0e4eb558e0c7b9e94fc83ede986fa4c666739
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 5f38fcdd8e71ce12f7899214b6b2133e21f9910c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 移动功能
 ====================
@@ -190,7 +190,7 @@ ASP.NET MVC 4 中的一个重要的新功能是一个简单的机制，你可以
 1. 从**工具**菜单上，选择**库程序包管理器**，然后选择**程序包管理器控制台**。
 
     [![p3_packageMgr](aspnet-mvc-4-mobile-features/_static/image20.png)](aspnet-mvc-4-mobile-features/_static/image19.png)
-2. 在**程序包管理器控制台**，输入`Install-Package jQuery.Mobile.MVC -version 1.0.0`
+2. 在**程序包管理器控制台**，输入 `Install-Package jQuery.Mobile.MVC -version 1.0.0`
 
 下图显示了文件添加和更改到 MvcMobile 项目 jQuery.Mobile.MVC NuGet 包。 [添加] 追加的文件名称后添加的文件。 映像不会显示 GIF 和 PNG 文件添加到*Content\images*文件夹。
 
@@ -204,7 +204,7 @@ JQuery.Mobile.MVC NuGet 程序包将安装以下：
 - jQuery Mobile JavaScript 文件。
 - JQuery Mobile 样式的布局文件 (*views/shared\\_Layout.Mobile.cshtml*)。
 - 视图切换器分部视图*(MvcMobile\Views\Shared\\_ViewSwitcher.cshtml*)，它提供要从桌面视图，反之亦然，这样和移动视图切换每页顶部的链接。
-- 多个*.png*和*.gif*中的图像文件*Content\images*文件夹。
+- 多个<em>.png</em>和<em>.gif</em>中的图像文件<em>Content\images</em>文件夹。
 
 打开*Global.asax*文件并添加以下代码作为的最后一行`Application_Start`方法。
 
@@ -270,7 +270,7 @@ JQuery.Mobile.MVC NuGet 程序包将安装以下：
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample17.cshtml)]
 
-当`RequireConsistentDisplayMode`设置为`true`，移动布局 (*\_Layout.Mobile.cshtml*) 只用于移动视图。 (即，视图文件仅在窗体 ***ViewName**.Mobile.cshtml *。）你可能想要设置`RequireConsistentDisplayMode`到`true`如果你的移动布局不太适合你的非移动视图。 下面显示的屏幕截图如何*发言人*呈现页面时`RequireConsistentDisplayMode`设置为`true`。
+当`RequireConsistentDisplayMode`设置为`true`，移动布局 (<em>\_Layout.Mobile.cshtml</em>) 只用于移动视图。 (即，视图文件仅在窗体<em>* * ViewName</em><em>。Mobile.cshtml</em>。)你可能想要设置`RequireConsistentDisplayMode`到`true`如果你的移动布局不太适合你的非移动视图。 下面显示的屏幕截图如何<em>发言人</em>呈现页面时`RequireConsistentDisplayMode`设置为`true`。
 
 [![p3_speakersConsistent](aspnet-mvc-4-mobile-features/_static/image33.png)](aspnet-mvc-4-mobile-features/_static/image32.png)
 
@@ -393,7 +393,7 @@ JQuery.Mobile.MVC NuGet 程序包将安装以下：
 - 移动视图切换器小组件视图不是也可以在桌面视图中显示。
 - 支持特定浏览器，如 iPhone 浏览器的支持。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [jQuery Mobile](http://jquerymobile.com)站点。
 - [jQuery Mobile 概述](http://jquerymobile.com/demos/1.0b3/docs/about/intro.html)

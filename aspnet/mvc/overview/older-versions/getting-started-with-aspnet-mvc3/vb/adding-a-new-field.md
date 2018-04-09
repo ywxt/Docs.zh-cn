@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-new-field
-title: "将新字段添加到的电影模型和数据库表 (VB) |Microsoft 文档"
+title: 将新字段添加到的电影模型和数据库表 (VB) |Microsoft 文档
 author: Rick-Anderson
-description: "本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识..."
+description: 本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 377c667a56bb5c0d58ecef5c3550ca510ec52546
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5927b7d977e375881fe618b4b844cbd708023ba1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-database-table-vb"></a>将新字段添加到的电影模型和数据库表 (VB)
 ====================
@@ -49,7 +49,7 @@ ms.lasthandoff: 11/10/2017
 
 现在，你已更新`Model`类，你还需要更新*\Views\Movies\Index.vbhtml*和*\Views\Movies\Create.vbhtml*查看模板以支持新`Rating`属性。
 
-打开*\Views\Movies\Index.vbhtml*文件并添加`<th>Rating</th>`列标题之后**价格**列。 然后添加`<td>`结尾处的模板来呈现的列`@item.Rating`值。 下面是哪些更新*Index.vbhtml*视图模板如下所示：
+打开<em>\Views\Movies\Index.vbhtml</em>文件并添加`<th>Rating</th>`列标题之后<strong>价格</strong>列。 然后添加`<td>`结尾处的模板来呈现的列`@item.Rating`值。 下面是哪些更新<em>Index.vbhtml</em>视图模板如下所示：
 
 [!code-vbhtml[Main](adding-a-new-field/samples/sample3.vbhtml)]
 
@@ -117,12 +117,12 @@ ms.lasthandoff: 11/10/2017
 
 [![7_CreateRioII](adding-a-new-field/_static/image5.png)](adding-a-new-field/_static/image4.png)
 
-单击 **“创建”**。 新的影片，包括评级，现在显示在电影列出：
+单击“创建” 。 新的影片，包括评级，现在显示在电影列出：
 
 ![7_ourNewMovie_SM](adding-a-new-field/_static/image6.png)
 
 在本部分中您将了解如何修改模型对象和保留数据库与更改同步。 你还了解了一种方法来填充新创建的数据库使用示例数据，因此你还可以尝试方案。 接下来，让我们看一下如何将更丰富的验证逻辑添加到模型类和启用一些业务规则，以强制执行。
 
->[!div class="step-by-step"]
-[上一页](examining-the-edit-methods-and-edit-view.md)
-[下一页](adding-validation-to-the-model.md)
+> [!div class="step-by-step"]
+> [上一页](examining-the-edit-methods-and-edit-view.md)
+> [下一页](adding-validation-to-the-model.md)

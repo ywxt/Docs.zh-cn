@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2
-title: "如何升级 ASP.NET MVC 4 和 Web API 项目到 ASP.NET MVC 5 和 Web API 2 |Microsoft 文档"
+title: 如何升级 ASP.NET MVC 4 和 Web API 项目到 ASP.NET MVC 5 和 Web API 2 |Microsoft 文档
 author: Rick-Anderson
-description: "ASP.NET MVC 5 和 Web API 2 会将新功能，包括的属性路由、 身份验证筛选器和其他更多的主机。"
+description: ASP.NET MVC 5 和 Web API 2 会将新功能，包括的属性路由、 身份验证筛选器和其他更多的主机。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 05a3189cf105d1230b96e90b46ea5ab60fef1bf1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f61502933a5ba92896ee97cef9cff915fe23831d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2"></a>如何将 ASP.NET MVC 4 和 Web API 项目升级到 ASP.NET MVC 5 和 Web API 2
 ====================
 通过[Rick Anderson](https://github.com/Rick-Anderson)
 
-> ASP.NET MVC 5 和 Web API 2 会将新功能，包括的属性路由、 身份验证筛选器和其他更多的主机。 请参阅[https://www.asp.net/vnext](https://www.asp.net/core)有关详细信息。
+> ASP.NET MVC 5 和 Web API 2 会将新功能，包括的属性路由、 身份验证筛选器和其他更多的主机。 请参阅[ https://www.asp.net/vnext ](https://www.asp.net/core)有关详细信息。
 > 
 > 本演练将指导你执行升级到最新版本的应用程序所需的步骤。  
 > 
@@ -41,7 +41,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-csharp[Main](how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2/samples/sample1.cs)]
 
- 更改为
+   更改为
 
     [!code-csharp[Main](how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2/samples/sample2.cs)]
 3. 请确保你的项目使用的所有包都都与 MVC 5 和 Web API 2 兼容。 以下表所示 MVC 4 和 Web API 与相关包的不是需要更改。 如果你具有的依赖于一个下面列出的包的包，请联系要获取与 MVC 5 和 Web API 2 兼容的较新版本的发布者。 如果你有这些包的源代码，应使用新的程序集的 MVC 5 和 Web API 2 时将它们重新编译。   
@@ -62,13 +62,13 @@ ms.lasthandoff: 11/10/2017
     | Microsoft.AspNet.WebApi.WebHost | 4.0.x.x | 5.0.0 |
     | Microsoft.AspNet.WebApi.Tracing | 4.0.x.x | 5.0.0 |
     | Microsoft.AspNet.WebApi.HelpPage | 4.0.x.x | 5.0.0 |
-    | Microsoft.Net.Http | 2.0.x。 | 2.2.x。 |
+    | Microsoft.Net.Http | 2.0.x. | 2.2.x. |
     | Microsoft.Data.OData | 5.2.x | 5.6.x |
     | System.Spatial | 5.2.x | 5.6.x |
     | Microsoft.Data.Edm | 5.2.x | 5.6.x |
-    | Microsoft.AspNet.Mvc.FixedDisplayModes | < o:p >< / o:p > | 已删除 |
-    | Microsoft.AspNet.WebPages.Administration | < o:p >< / o:p > | 已删除 |
-    | Microsoft Web 帮助 | < o:p >< / o:p > | Microsoft.AspNet.WebHelpers |
+    | Microsoft.AspNet.Mvc.FixedDisplayModes | <o:p> </o:p> | 已删除 |
+    | Microsoft.AspNet.WebPages.Administration | <o:p> </o:p> | 已删除 |
+    | Microsoft-Web-Helpers | <o:p> </o:p> | Microsoft.AspNet.WebHelpers |
 
     > [!NOTE]
     > 用 Microsoft.AspNet.WebHelpers 替换 Microsoft Web 帮助。 您应首先，删除旧的包，然后安装较新的包。   
@@ -78,17 +78,17 @@ ms.lasthandoff: 11/10/2017
 5. 删除任何已安装的以下 ASP.NET NuGet 包。 你将删除这些使用包管理器控制台 (PMC)。 若要打开 PMC，选择**工具**菜单，然后选择**库程序包管理器，**然后选择**程序包管理器控制台**。 你的项目可能不包括所有这些。
 
     1. `Microsoft.AspNet.WebPages.Administration`  
- 从 MVC 3 升级到 MVC 4 时，通常将特性添加此包。 若要删除它，请在 PMC 中运行以下命令：  
+   从 MVC 3 升级到 MVC 4 时，通常将特性添加此包。 若要删除它，请在 PMC 中运行以下命令：  
         `Uninstall-Package -Id Microsoft.AspNet.WebPages.Administration`
     2. `Microsoft-Web-Helpers`   
- 此包重新命名为`Microsoft.AspNet.WebHelpers`。 若要删除它，请在 PMC 中运行以下命令：  
+   此包重新命名为`Microsoft.AspNet.WebHelpers`。 若要删除它，请在 PMC 中运行以下命令：  
         `Uninstall-Package -Id Microsoft-Web-Helpers`
     3. `Microsoft.AspNet.Mvc.FixedDisplayMode`  
- 此程序包包含解决 MVC 5 中已修复的 MVC 4 中的 bug。 若要删除它，请在 PMC 中运行以下命令：  
+   此程序包包含解决 MVC 5 中已修复的 MVC 4 中的 bug。 若要删除它，请在 PMC 中运行以下命令：  
         `Uninstall-Package -Id Microsoft.AspNet.Mvc.FixedDisplayModes`
 6. 升级使用 PMC 的所有 ASP.NET NuGet 包。 在 PMC，运行以下命令：  
     `Update-Package`  
- `Update-Package`命令没有任何参数将更新每个包。 可以通过使用 ID 参数单独更新包。 有关更新命令的详细信息，请运行`get-help update-package`。
+   `Update-Package`命令没有任何参数将更新每个包。 可以通过使用 ID 参数单独更新包。 有关更新命令的详细信息，请运行`get-help update-package`。
 
 ## <a name="update-the-application-webconfig-file"></a>更新应用程序*web.config*文件
 
@@ -103,7 +103,7 @@ ms.lasthandoff: 11/10/2017
 3. 找到`<appSettings>`部分并更新到 3.0.0.0 从 2.0.0.0.0 webpages:version，如下所示：
 
     [!code-xml[Main](how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2/samples/sample4.xml?highlight=2)]
-4. 删除任何而不是完整的信任级别。 例如: 
+4. 删除任何而不是完整的信任级别。 例如：
 
     [!code-xml[Main](how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2/samples/sample5.xml?highlight=2)]
 

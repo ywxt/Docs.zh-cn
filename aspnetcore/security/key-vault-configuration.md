@@ -1,18 +1,18 @@
 ---
-title: "在 ASP.NET 核心的 azure 密钥保管库配置提供程序"
+title: 在 ASP.NET 核心的 azure 密钥保管库配置提供程序
 author: guardrex
-description: "了解如何使用 Azure 密钥保管库配置提供程序配置应用程序使用在运行时加载的名称-值对。"
+description: 了解如何使用 Azure 密钥保管库配置提供程序配置应用程序使用在运行时加载的名称-值对。
 manager: wpickett
 ms.author: riande
 ms.date: 08/09/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: e1a4be77417f0a74182f1b123bfba429737d4330
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 09f28ec3792cf137fbcfdecc593e27ce6b2e7e09
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>在 ASP.NET 核心的 azure 密钥保管库配置提供程序
 
@@ -36,7 +36,7 @@ ms.lasthandoff: 03/15/2018
 
 本文档说明如何使用[Microsoft Azure 密钥保管库](https://azure.microsoft.com/services/key-vault/)配置提供程序以从 Azure 密钥保管库机密加载应用程序配置值。 Azure 密钥保管库是一种基于云的服务，可帮助你保护加密密钥和机密由应用程序和服务。 常见方案包括控制对敏感的配置数据的访问和会议的必要条件 FIPS 140-2 级别 2 硬件安全模块 (HSM) 时验证存储配置数据。 此功能是可用的应用程序面向 ASP.NET 核心 1.1 或更高版本。
 
-## <a name="package"></a>Package
+## <a name="package"></a>包
 若要使用的提供程序，添加到引用[Microsoft.Extensions.Configuration.AzureKeyVault](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureKeyVault/)包。
 
 ## <a name="application-configuration"></a>应用程序配置
@@ -54,20 +54,21 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="creating-key-vault-secrets-and-loading-configuration-values-basic-sample"></a>创建密钥保管库密码和加载配置值 （basic 示例）
 1. 创建密钥保管库并设置应用程序的指南的 Azure Active Directory (Azure AD)[开始使用 Azure 密钥保管库](https://azure.microsoft.com/documentation/articles/key-vault-get-started/)。
-  * 将机密添加到密钥保管库使用[AzureRM 密钥保管库 PowerShell 模块](/powershell/module/azurerm.keyvault)可从[PowerShell 库](https://www.powershellgallery.com/packages/AzureRM.KeyVault)、 [Azure 密钥保管库 REST API](/rest/api/keyvault/)，或[Azure 门户](https://portal.azure.com/)。 机密创建为*手动*或*证书*机密。 *证书*机密是使用应用程序和服务的证书，但不是支持配置提供程序。 应使用*手动*选项可创建带有配置提供程序使用的名称-值对机密。
-    * 创建简单的机密的名称-值对。 Azure 密钥保管库密钥名称被限制为字母数字字符和短划线。
-    * 分层值 （配置节） 使用`--`（两个短划线） 作为分隔符，在此示例。 通常用于分隔的子项中的一部分的冒号[ASP.NET 核心配置](xref:fundamentals/configuration/index)，机密名称中不允许出现。 因此，两个短划线的使用和机密加载到应用程序的配置时交换冒号。
-    * 创建两个*手动*具有以下名称-值对的机密。 第一个密钥是一个简单的名称和值，并第二个密钥创建一个部分和子项中的密钥名称机密值：
-      * `SecretName`: `secret_value_1`
-      * `Section--SecretName`: `secret_value_2`
-  * 向 Azure Active Directory 注册示例应用程序。
-  * 授权应用程序访问密钥保管库。 当你使用`Set-AzureRmKeyVaultAccessPolicy`PowerShell cmdlet 来授权应用程序访问密钥保管库，提供`List`和`Get`访问与机密`-PermissionsToSecrets list,get`。
+   * 将机密添加到密钥保管库使用[AzureRM 密钥保管库 PowerShell 模块](/powershell/module/azurerm.keyvault)可从[PowerShell 库](https://www.powershellgallery.com/packages/AzureRM.KeyVault)、 [Azure 密钥保管库 REST API](/rest/api/keyvault/)，或[Azure 门户](https://portal.azure.com/)。 机密创建为*手动*或*证书*机密。 *证书*机密是使用应用程序和服务的证书，但不是支持配置提供程序。 应使用*手动*选项可创建带有配置提供程序使用的名称-值对机密。
+     * 创建简单的机密的名称-值对。 Azure 密钥保管库密钥名称被限制为字母数字字符和短划线。
+     * 分层值 （配置节） 使用`--`（两个短划线） 作为分隔符，在此示例。 通常用于分隔的子项中的一部分的冒号[ASP.NET 核心配置](xref:fundamentals/configuration/index)，机密名称中不允许出现。 因此，两个短划线的使用和机密加载到应用程序的配置时交换冒号。
+     * 创建两个*手动*具有以下名称-值对的机密。 第一个密钥是一个简单的名称和值，并第二个密钥创建一个部分和子项中的密钥名称机密值：
+       * `SecretName`: `secret_value_1`
+       * `Section--SecretName`: `secret_value_2`
+   * 向 Azure Active Directory 注册示例应用程序。
+   * 授权应用程序访问密钥保管库。 当你使用`Set-AzureRmKeyVaultAccessPolicy`PowerShell cmdlet 来授权应用程序访问密钥保管库，提供`List`和`Get`访问与机密`-PermissionsToSecrets list,get`。
+
 2. 更新应用程序的*appsettings.json*的值的文件`Vault`， `ClientId`，和`ClientSecret`。
 3. 运行示例应用程序，它可以通过获取其配置值从`IConfigurationRoot`机密的名称与同名。
-  * 非分层值： 的值`SecretName`一起被获取`config["SecretName"]`。
-  * 分层值 （节）： 使用`:`（冒号） 表示法或`GetSection`扩展方法。 使用这些方法之一获取配置值：
-    * `config["Section:SecretName"]`
-    * `config.GetSection("Section")["SecretName"]`
+   * 非分层值： 的值`SecretName`一起被获取`config["SecretName"]`。
+   * 分层值 （节）： 使用`:`（冒号） 表示法或`GetSection`扩展方法。 使用这些方法之一获取配置值：
+     * `config["Section:SecretName"]`
+     * `config.GetSection("Section")["SecretName"]`
 
 运行应用程序时，网页将显示加载的机密值：
 
@@ -97,13 +98,14 @@ ms.lasthandoff: 03/15/2018
 > 你还可以提供你自己`KeyVaultClient`实现`AddAzureKeyVault`。 提供自定义客户端，可共享的配置提供程序和你的应用程序的其他部件之间的客户端的单个实例。
 
 1. 创建密钥保管库并设置应用程序的指南的 Azure Active Directory (Azure AD)[开始使用 Azure 密钥保管库](https://azure.microsoft.com/documentation/articles/key-vault-get-started/)。
-  * 将机密添加到密钥保管库使用[AzureRM 密钥保管库 PowerShell 模块](/powershell/module/azurerm.keyvault)可从[PowerShell 库](https://www.powershellgallery.com/packages/AzureRM.KeyVault)、 [Azure 密钥保管库 REST API](/rest/api/keyvault/)，或[Azure 门户](https://portal.azure.com/)。 机密创建为*手动*或*证书*机密。 *证书*机密是使用应用程序和服务的证书，但不是支持配置提供程序。 应使用*手动*选项可创建带有配置提供程序使用的名称-值对机密。
-    * 分层值 （配置节） 使用`--`（两个短划线） 作为分隔符。
-    * 创建两个*手动*具有以下名称-值对的机密：
-      * `5000-AppSecret`: `5.0.0.0_secret_value`
-      * `5100-AppSecret`: `5.1.0.0_secret_value`
-  * 向 Azure Active Directory 注册示例应用程序。
-  * 授权应用程序访问密钥保管库。 当你使用`Set-AzureRmKeyVaultAccessPolicy`PowerShell cmdlet 来授权应用程序访问密钥保管库，提供`List`和`Get`访问与机密`-PermissionsToSecrets list,get`。
+   * 将机密添加到密钥保管库使用[AzureRM 密钥保管库 PowerShell 模块](/powershell/module/azurerm.keyvault)可从[PowerShell 库](https://www.powershellgallery.com/packages/AzureRM.KeyVault)、 [Azure 密钥保管库 REST API](/rest/api/keyvault/)，或[Azure 门户](https://portal.azure.com/)。 机密创建为*手动*或*证书*机密。 *证书*机密是使用应用程序和服务的证书，但不是支持配置提供程序。 应使用*手动*选项可创建带有配置提供程序使用的名称-值对机密。
+     * 分层值 （配置节） 使用`--`（两个短划线） 作为分隔符。
+     * 创建两个*手动*具有以下名称-值对的机密：
+       * `5000-AppSecret`: `5.0.0.0_secret_value`
+       * `5100-AppSecret`: `5.1.0.0_secret_value`
+   * 向 Azure Active Directory 注册示例应用程序。
+   * 授权应用程序访问密钥保管库。 当你使用`Set-AzureRmKeyVaultAccessPolicy`PowerShell cmdlet 来授权应用程序访问密钥保管库，提供`List`和`Get`访问与机密`-PermissionsToSecrets list,get`。
+
 2. 更新应用程序的*appsettings.json*的值的文件`Vault`， `ClientId`，和`ClientSecret`。
 3. 运行示例应用程序，它可以通过获取其配置值从`IConfigurationRoot`带前缀的机密名称与同名。 在此示例中，该前缀是应用程序的版本，它提供给`PrefixKeyVaultSecretManager`添加 Azure 密钥保管库配置提供程序时。 值`AppSecret`一起被获取`config["AppSecret"]`。 该应用程序生成的网页显示加载的值：
 

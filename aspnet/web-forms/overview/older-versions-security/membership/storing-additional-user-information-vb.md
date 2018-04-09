@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/storing-additional-user-information-vb
-title: "存储的其他用户信息 (VB) |Microsoft 文档"
+title: 存储的其他用户信息 (VB) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将通过生成一个非常基本的来宾簿应用程序来回答这个问题。 在此情况下，我们将查看 modeli 的不同选项..."
+description: 在本教程中我们将通过生成一个非常基本的来宾簿应用程序来回答这个问题。 在此情况下，我们将查看 modeli 的不同选项...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a40238605e8fb3e26d80264af9156eec634affbe
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 9a8673e764ae94b12fbc01f81ef12ea4c133b7d5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="storing-additional-user-information-vb"></a>存储的其他用户信息 (VB)
 ====================
@@ -107,13 +107,13 @@ ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 
 
 现在，我们需要将三个列与每个用户帐户来存储用户的主镇、 主页上和签名，它将显示在自己的来宾簿建议相关联。 有多种不同方法来实现此目的：
 
-- **添加到新列 * * *`aspnet_Users`* * * 或 * * *`aspnet_Membership`* * * 表。** 我将不推荐这种方法，因为它修改所用架构`SqlMembershipProvider`。 此决策可能回来下道路言词你。 例如，如果 ASP.NET 的未来版本使用不同时`SqlMembershipProvider`架构。 Microsoft 可能包括一个工具，可迁移 ASP.NET 2.0`SqlMembershipProvider`数据复制到新架构，但如果你已修改 ASP.NET 2.0`SqlMembershipProvider`架构，此类转换可能不可行。
+- <strong>添加到新列</strong><strong>`aspnet_Users`</strong><strong>或</strong><strong>`aspnet_Membership`</strong><strong>表。</strong> 我将不推荐这种方法，因为它修改所用架构`SqlMembershipProvider`。 此决策可能回来下道路言词你。 例如，如果 ASP.NET 的未来版本使用不同时`SqlMembershipProvider`架构。 Microsoft 可能包括一个工具，可迁移 ASP.NET 2.0`SqlMembershipProvider`数据复制到新架构，但如果你已修改 ASP.NET 2.0`SqlMembershipProvider`架构，此类转换可能不可行。
 
 - **使用 ASP。NET 的配置文件 framework 定义的家乡、 主页上和签名的配置文件属性。** ASP.NET 包括一个配置文件框架，用于存储其他特定于用户的数据。 成员资格 framework 中，如配置文件 framework 是在提供程序模型之上构建的。 .NET Framework 附带`SqlProfileProvider`存储配置文件中的 SQL Server 数据库的数据。 事实上，我们的数据库已使用的表`SqlProfileProvider`(`aspnet_Profile`)，如我们添加后的应用程序服务时添加[*在 SQL Server 中创建成员身份架构*](creating-the-membership-schema-in-sql-server-vb.md)教程。   
- 配置文件 framework 的主要优势是它允许开发人员定义中的配置文件属性`Web.config`– 任何代码需要要写入序列化配置文件数据传入和传出基础数据存储区。 简单地说，它是极其简便的方式来定义一组配置文件属性并在代码中使用它们。 但是，配置文件系统会留下很多需要改进时涉及到版本控制，因此，如果你有其中希望新的特定于用户的属性，以添加在稍后的时间或现有的要删除或修改，则可能不到配置文件 framework 应用程序 最佳选项。 此外，`SqlProfileProvider`高度非规范化的方式，使其下一步，几乎不可能直接对配置文件数据 （例如，多少用户拥有 New York 主镇） 运行查询存储的配置文件属性。   
- 在配置文件架构的详细信息，请在本教程末尾查阅"进一步读数"部分。
+  配置文件 framework 的主要优势是它允许开发人员定义中的配置文件属性`Web.config`– 任何代码需要要写入序列化配置文件数据传入和传出基础数据存储区。 简单地说，它是极其简便的方式来定义一组配置文件属性并在代码中使用它们。 但是，配置文件系统会留下很多需要改进时涉及到版本控制，因此，如果你有其中希望新的特定于用户的属性，以添加在稍后的时间或现有的要删除或修改，则可能不到配置文件 framework 应用程序 最佳选项。 此外，`SqlProfileProvider`高度非规范化的方式，使其下一步，几乎不可能直接对配置文件数据 （例如，多少用户拥有 New York 主镇） 运行查询存储的配置文件属性。   
+  在配置文件架构的详细信息，请在本教程末尾查阅"进一步读数"部分。
 
-- **将这三列添加到数据库中的新表并建立此表之间的一对一关系和 * * *`aspnet_Users`* * *。** 此方法涉及到多做一些工作比使用配置文件框架中，但提供的其他用户属性数据库中的建模方式的最大灵活性。 这是我们将在本教程中使用的选项。
+- <strong>将这三列添加到数据库中的新表并建立此表之间的一对一关系和</strong><strong>`aspnet_Users`</strong><strong>。</strong> 此方法涉及到多做一些工作比使用配置文件框架中，但提供的其他用户属性数据库中的建模方式的最大灵活性。 这是我们将在本教程中使用的选项。
 
 我们将创建名为的新表`UserProfiles`以保存家乡、 主页上，并为每个用户的签名。 右键单击数据库资源管理器窗口中的表文件夹并选择创建新表。 名称的第一列`UserId`并将其类型设置为`uniqueidentifier`。 禁止`NULL`值并将标记为主键列。 接下来，添加名为的列：`HomeTown`类型的`nvarchar(50)`;`HomepageUrl`类型的`nvarchar(100)`; 和类型的签名`nvarchar(500)`。 这三列的每个可接受`NULL`值。
 
@@ -428,9 +428,9 @@ ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 
 
 若要自定义通过的界面，若要包含其他窗体字段，我们可以：
 
-- **创建一个或多个新 * * *`WizardStep`* * * s 以包含附加用户界面元素**。 若要添加新`WizardStep`CreateUserWizard，请单击"添加/删除`WizardStep`s"中的智能标记以启动链接`WizardStep`集合编辑器。 从这里你可以添加、 删除或重新排序向导中的步骤。 这是我们将使用本教程中的方法。
+- <strong>创建一个或多个新</strong><strong>`WizardStep`</strong><strong>s 以包含附加用户界面元素</strong>。 若要添加新`WizardStep`CreateUserWizard，请单击"添加/删除`WizardStep`s"中的智能标记以启动链接`WizardStep`集合编辑器。 从这里你可以添加、 删除或重新排序向导中的步骤。 这是我们将使用本教程中的方法。
 
-- **将转换 * * *`CreateUserWizardStep`* * * 到可编辑 * * *`WizardStep`* * *。** 这将替换`CreateUserWizardStep`为等效`WizardStep`其标记定义匹配的用户界面`CreateUserWizardStep`s。 通过将转换`CreateUserWizardStep`到`WizardStep`我们可以重新定位控件，或将附加用户界面元素添加到此步骤。 要转换`CreateUserWizardStep`或`CompleteWizardStep`到可编辑`WizardStep`、 单击"自定义创建用户步骤"或"自定义完成步骤"链接从控件的智能标记。
+- <strong>将转换</strong><strong>`CreateUserWizardStep`</strong><strong>到可编辑</strong><strong>`WizardStep`</strong><strong>。</strong> 这将替换`CreateUserWizardStep`为等效`WizardStep`其标记定义匹配的用户界面`CreateUserWizardStep`s。 通过将转换`CreateUserWizardStep`到`WizardStep`我们可以重新定位控件，或将附加用户界面元素添加到此步骤。 要转换`CreateUserWizardStep`或`CompleteWizardStep`到可编辑`WizardStep`、 单击"自定义创建用户步骤"或"自定义完成步骤"链接从控件的智能标记。
 
 - **使用上面的两个选项中的某种组合。**
 
@@ -498,7 +498,7 @@ ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 
 > 我们的网站当前有两个访问者可以从中创建新的帐户的页：`CreatingUserAccounts.aspx`和`EnhancedCreateUserWizard.aspx`。 网站的站点地图和登录页指向`CreatingUserAccounts.aspx`页上，但`CreatingUserAccounts.aspx`页不提示用户输入其主镇、 主页上和签名信息，并且不会添加到相应的行`UserProfiles`。 因此，更新`CreatingUserAccounts.aspx`页，以便它提供此功能或更新站点地图和登录页后，可以引用`EnhancedCreateUserWizard.aspx`而不是`CreatingUserAccounts.aspx`。 如果你选择后一种方式，请务必更新`Membership`文件夹的`Web.config`文件以便允许匿名用户访问`EnhancedCreateUserWizard.aspx`页。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中我们介绍了用于与用户帐户的成员资格框架中的数据进行建模的技术。 具体而言，我们介绍了建模与用户帐户，以及共享一对一关系的数据共享一个对多关系的实体。 此外，我们已了解如何这相关的信息可能显示、 插入和更新，与使用 SqlDataSource 控件，而其他一些示例使用的 ADO.NET 代码。
 
@@ -527,11 +527,11 @@ ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 
 
 ### <a name="about-the-author"></a>关于作者
 
-Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢...
 
 本教程系列已由许多有用的审阅者评审。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
 
->[!div class="step-by-step"]
-[上一篇](user-based-authorization-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](user-based-authorization-vb.md)

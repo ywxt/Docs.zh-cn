@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-view
-title: "添加的视图 (C#) |Microsoft 文档"
+title: 添加的视图 (C#) |Microsoft 文档
 author: Rick-Anderson
-description: "本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识..."
+description: 本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 46d5494e668dfe156aeb6647ded83e6ce5366714
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 50ce4a2024ffd9e2bbb5526717052d486689ff38
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-view-c"></a>添加的视图 (C#)
 ====================
@@ -77,7 +77,7 @@ ms.lasthandoff: 11/10/2017
 
 [![_LayoutCshtml](adding-a-view/_static/image8.png)](adding-a-view/_static/image7.png)
 
-布局模板，可以在一个位置中指定你的站点的 HTML 容器布局，然后将它应用跨站点中的多个页面。 请注意`@RenderBody()`文件底部附近的行。 `RenderBody`是，你创建的所有特定于视图的页面都显示，"包装"在布局页中的占位符。 更改布局模板从"My MVC Application"到"MVC 影片应用程序"中的标题标头。
+布局模板，可以在一个位置中指定你的站点的 HTML 容器布局，然后将它应用跨站点中的多个页面。 请注意`@RenderBody()`文件底部附近的行。 `RenderBody` 是，你创建的所有特定于视图的页面都显示，"包装"在布局页中的占位符。 更改布局模板从"My MVC Application"到"MVC 影片应用程序"中的标题标头。
 
 [!code-cshtml[Main](adding-a-view/samples/sample3.cshtml)]
 
@@ -113,7 +113,7 @@ ms.lasthandoff: 11/10/2017
 
 目前，`Welcome`中的操作方法`HelloWorldController`类采用`name`和`numTimes`参数，然后输出直接向浏览器的值。 而不是有呈现为一个字符串，此响应的控制器，让我们更改控制器以改为使用视图模板。 视图模板将生成动态响应，这意味着你需要将适当的数据位从控制器传递给视图以生成响应。 你可以执行此操作通过让将动态视图模板需要的数据控制器`ViewBag`视图模板然后可以访问的对象。
 
-返回到*HelloWorldController.cs*文件并将更改`Welcome`方法将添加`Message`和`NumTimes`值赋给`ViewBag`对象。 `ViewBag`是动态对象，这意味着你可以放置希望中包括的任何内容`ViewBag`对象具有未定义的属性，直到你输入其内部的一些内容。 完整的 HelloWorldController.cs 文件如下所示：
+返回到*HelloWorldController.cs*文件并将更改`Welcome`方法将添加`Message`和`NumTimes`值赋给`ViewBag`对象。 `ViewBag` 是动态对象，这意味着你可以放置希望中包括的任何内容`ViewBag`对象具有未定义的属性，直到你输入其内部的一些内容。 完整的 HelloWorldController.cs 文件如下所示：
 
 [!code-csharp[Main](adding-a-view/samples/sample6.cs)]
 
@@ -141,6 +141,6 @@ ms.lasthandoff: 11/10/2017
 
 当然，这是模型的一种“M”类型，而不是数据库类。 让我们用学到的内容来创建一个电影数据库。
 
->[!div class="step-by-step"]
-[上一页](adding-a-controller.md)
-[下一页](adding-a-model.md)
+> [!div class="step-by-step"]
+> [上一页](adding-a-controller.md)
+> [下一页](adding-a-model.md)

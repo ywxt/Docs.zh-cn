@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/introduction
-title: "使用 Visual Studio 的 ASP.NET Web 部署： 简介 |Microsoft 文档"
+title: 使用 Visual Studio 的 ASP.NET Web 部署： 简介 |Microsoft 文档
 author: tdykstra
-description: "本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，通过使用 V..."
+description: 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，通过使用 V...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: a7c5b348e44a88a56680237b0cac75c999901ec3
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 1ff4cc3b0fa6ce7e6cdc833a0c2f7fea2050c4e6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>使用 Visual Studio 的 ASP.NET Web 部署： 简介
 ====================
@@ -198,9 +198,9 @@ Visual Studio 不执行任何与数据库在部署过程。 当部署的应用�
 - 该应用程序包括必须更改某些设置在部署*Web.config*具体取决于目标环境 （测试、 过渡或生产） 和其他设置，必须根据生成发生更改的文件配置 （调试或发布）。
 - Visual Studio 解决方案包括一个类库项目。 应该部署此项目生成的程序集，不是项目本身。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在此序列中的第一个教程中，你已下载示例的 Visual Studio 项目，并查看站点功能会影响你部署应用程序的方式。 在以下教程中，你为部署准备通过以下操作来自动处理的某些设置。 其他您采取措施的手动。
 
->[!div class="step-by-step"]
-[下一篇](preparing-databases.md)
+> [!div class="step-by-step"]
+> [下一篇](preparing-databases.md)

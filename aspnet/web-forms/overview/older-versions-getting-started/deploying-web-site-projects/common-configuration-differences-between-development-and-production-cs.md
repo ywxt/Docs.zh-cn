@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
-title: "开发和生产环境 (C#) 之间的常见配置差异 |Microsoft 文档"
+title: 开发和生产环境 (C#) 之间的常见配置差异 |Microsoft 文档
 author: rick-anderson
-description: "在前面的教程，我们通过将所有相关文件从开发环境复制到生产环境中部署了我们的网站。 但是，我..."
+description: 在前面的教程，我们通过将所有相关文件从开发环境复制到生产环境中部署了我们的网站。 但是，我...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 092362e3811213047820dab08efc16e1a1e75020
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 2694e0dba774a5bca13b9acc6b14c3e47226a064
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="common-configuration-differences-between-development-and-production-c"></a>开发和生产环境 (C#) 之间的常见配置差异
 ====================
@@ -53,7 +53,7 @@ ms.lasthandoff: 01/30/2018
 调试属性是中最重要的特性之一`<compilation>`元素。 如果`debug`属性设置为"true"则在编译的程序集将调试符号，调试 Visual Studio 中的应用程序时需要用到它。 但调试符号增加程序集的大小和运行代码时有更多的内存要求。 此外，当`debug`属性设置为"true"返回任何内容`WebResource.axd`不缓存，这意味着，每次用户访问页它们将需要重新下载返回的静态内容`WebResource.axd`。
 
 > [!NOTE]
-> `WebResource.axd`是一个内置的 HTTP 处理程序引入的 ASP.NET 2.0 中，服务器控件用于检索嵌入的资源，例如脚本文件、 图像、 CSS 文件和其他内容。 有关详细信息如何`WebResource.axd`工作原理以及如何使用该嵌入的资源访问来自自定义服务器控件，请参阅[访问嵌入资源通过 URL 使用`WebResource.axd` ](http://aspnet.4guysfromrolla.com/articles/080906-1.aspx)。
+> `WebResource.axd` 是一个内置的 HTTP 处理程序引入的 ASP.NET 2.0 中，服务器控件用于检索嵌入的资源，例如脚本文件、 图像、 CSS 文件和其他内容。 有关详细信息如何`WebResource.axd`工作原理以及如何使用该嵌入的资源访问来自自定义服务器控件，请参阅[访问嵌入资源通过 URL 使用`WebResource.axd` ](http://aspnet.4guysfromrolla.com/articles/080906-1.aspx)。
 
 
 `<compilation>`元素的`debug`属性通常设置为"true"，在开发环境中。 事实上，此属性必须设置为"true"若要调试 web 应用程序;如果你尝试调试 ASP.NET 应用程序从 Visual Studio 和`debug`属性设置为"false"，Visual Studio 将显示一个消息，其中说明应用程序不能进行调试直到`debug`属性设置为"true"，将为你进行此更改的优惠。
@@ -116,7 +116,7 @@ ASP.NET 应用程序中发生未经处理的异常时它将冒泡到运行的位
 > 不能与 Visual Web Developer 中使用 Web 部署项目，因为 Web 部署项目实现为 Visual Studio 外接程序和 Visual Studio Express 版本 （包括 Visual Web Developer） 不支持外接程序。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 外部资源和 web 应用程序开发中的行为是通常不同于相同的应用程序时在生产环境中。 例如，数据库连接字符串、 编译选项，以及通常发生未处理的异常时的行为不同环境之间。 在部署过程必须适应这些区别。 如我们在本教程中所述，最简单方法是手动将备用的配置文件复制到生产环境。 更适合的解决方案，还可能使用 Web 部署项目外接程序时，或使用更正式的生成或部署进程可以满足此类自定义项。
 
@@ -136,6 +136,6 @@ ASP.NET 应用程序中发生未经处理的异常时它将冒泡到运行的位
 - [VS 2008 Web 部署项目](https://weblogs.asp.net/scottgu/archive/2005/11/06/429723.aspx) | [VS 2008 Web 部署项目支持发布](https://weblogs.asp.net/scottgu/archive/2008/01/28/vs-2008-web-deployment-project-support-released.aspx)
 - [Web 部署项目](https://msdn.microsoft.com/magazine/cc163448.aspx)
 
->[!div class="step-by-step"]
-[上一页](deploying-your-site-using-visual-studio-cs.md)
-[下一页](core-differences-between-iis-and-the-asp-net-development-server-cs.md)
+> [!div class="step-by-step"]
+> [上一页](deploying-your-site-using-visual-studio-cs.md)
+> [下一页](core-differences-between-iis-and-the-asp-net-development-server-cs.md)

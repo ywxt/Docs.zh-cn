@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework
 msc.type: authoredcontent
-ms.openlocfilehash: c592ed78a7332834923ce2290af77919fb3c7576
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 53a91660953795f2c55edcd795b053641d308dfe
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-server-farm-with-the-web-farm-framework"></a>使用 Web 场框架创建服务器场
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 03/15/2018
 > 本主题介绍如何使用 Web Farm Framework (WFF) 2.0 创建和配置 web 服务器场中服务器的集合。
 
 
-WFF 可以跨多个负载平衡的 web 服务器同步 web 平台产品和组件、 web 应用程序、 网站和配置设置。 在方案中需要多个 web 服务器，例如，过渡和生产环境，这可以极大地简化部署和配置过程。 你可以部署到的单个服务器 （&） #x 2014; web 应用程序*主服务器*& #x 2014; 和 WFF 将自动复制该服务器场中的所有其他 web 服务器上的 web 应用程序。
+WFF 可以跨多个负载平衡的 web 服务器同步 web 平台产品和组件、 web 应用程序、 网站和配置设置。 在方案中需要多个 web 服务器，例如，过渡和生产环境，这可以极大地简化部署和配置过程。 你可以部署到一台服务器的 web 应用程序&#x2014;*主服务器*&#x2014;和 WFF 自动将复制该服务器场中的所有其他 web 服务器上的 web 应用程序。
 
 ## <a name="understanding-the-web-farm-framework"></a>了解 Web 场框架
 
@@ -51,7 +51,7 @@ WFF 可以跨多个负载平衡的 web 服务器同步 web 平台产品和组件
 
 ## <a name="task-overview"></a>任务概述
 
-若要完成的任务和本主题中的演练，你将需要至少三个服务器 （&） #x 2014; 一个 WFF 控制器、 服务器场中，一个主 web 服务器和一个或多个服务器场的辅助 web 服务器。 你可以在任何时间将更多的辅助服务器添加到 WFF 服务器场中。 在高级别上，若要创建和配置您将需要你过渡或生产环境的 WFF 服务器场：
+若要完成的任务和本主题中的演练，你将需要至少三个服务器&#x2014;一个 WFF 控制器、 服务器场中，一个主 web 服务器和一个或多个服务器场的辅助 web 服务器。 你可以在任何时间将更多的辅助服务器添加到 WFF 服务器场中。 在高级别上，若要创建和配置您将需要你过渡或生产环境的 WFF 服务器场：
 
 - 通过安装 Internet Information Services (IIS) 7.5 以及 WFF 2.0 创建控制器服务器。
 - 通过创建一个公用的管理员帐户和配置防火墙例外准备主要和辅助服务器。
@@ -78,7 +78,7 @@ WFF 可以跨多个负载平衡的 web 服务器同步 web 平台产品和组件
 2. 在顶部**Web Platform Installer 3.0**窗口中，单击**产品**。
 3. 在左侧的窗口中，在导航窗格中，单击**服务器**。
 4. 在 **IIS 7 建议配置** 行中，单击 **添加** 。
-5. 在 **Web 场框架 2。***x* 行中，单击 **添加**。
+5. 在<strong>Web 场框架 2。</strong><em>x</em>行中，单击<strong>添加</strong>。
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image2.png)
 6. 单击“安装” 。 请注意，Web 平台安装程序具有 Web 部署工具，以及各种其他依赖项，添加到安装列表。
@@ -96,7 +96,7 @@ WFF 可以跨多个负载平衡的 web 服务器同步 web 平台产品和组件
 
 有关如何在 Windows 防火墙中配置这些防火墙例外的详细信息，请参阅[系统和 IIS 7 Web 场 Framework 2.0 的平台要求](https://go.microsoft.com/?linkid=9805128)。 其他防火墙系统，请查阅产品文档。
 
-下一步过程可用于将域帐户添加到 Windows Server 2008 R2 中的本地管理员组。 应在你想要添加到服务器场和 #x 2014; 每个服务器上执行此步骤在换而言之，将相同的域帐户添加到在主服务器和每个辅助服务器上的本地管理员组。
+下一步过程可用于将域帐户添加到 Windows Server 2008 R2 中的本地管理员组。 应在你想要添加到服务器场中的每个服务器上执行此步骤&#x2014;换而言之，将相同的域帐户添加到在主服务器和每个辅助服务器上的本地管理员组。
 
 **若要将域帐户添加到本地管理员组**
 
@@ -111,7 +111,7 @@ WFF 可以跨多个负载平衡的 web 服务器同步 web 平台产品和组件
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image5.png)
 6. 在**管理员属性**对话框中，单击**确定**。
 
-你的服务器现已添加到服务器场。 对于主服务器，你可以配置服务器来满足应用程序的要求，之前或之后创建的服务器场和 #x 2014年; 在这两种情况下，WFF 将对服务器进行同步通过部署的相同的产品，组件，或到辅助服务器的配置。 为简单起见，本教程假定你已创建服务器场时将要配置主服务器。
+你的服务器现已添加到服务器场。 对于主服务器，你可以配置服务器来满足应用程序的要求，之前或之后创建的服务器场&#x2014;两种情况下，WFF 将通过部署相同的产品、 组件或配置来同步服务器对辅助服务器。 为简单起见，本教程假定你已创建服务器场时将要配置主服务器。
 
 ## <a name="create-the-wff-server-farm"></a>创建 WFF 服务器场
 
@@ -225,12 +225,12 @@ WFF 旨在与 IIS arr。 紧密集成 若要利用此集成，你需要在 WFF �
 
 ## <a name="conclusion"></a>结束语
 
-启动并正在运行，现在应 WFF 服务器场。 你可以配置主服务器以支持任何您喜欢的部署方法 （&） #x 2014年; 有关详细信息和 #x 2014; 以及你的配置的其他阅读材料部分，请参阅将复制到服务器场中每个辅助服务器上。
+启动并正在运行，现在应 WFF 服务器场。 你可以配置主服务器以支持无论您喜欢哪种部署方法&#x2014;请参阅详细信息的其他阅读材料部分&#x2014;和你的配置将复制到服务器场中每个辅助服务器上。
 
 ## <a name="further-reading"></a>其他阅读材料
 
 有关配置和使用 WFF 的所有方面的更多指南，请参阅[适用于 IIS 7 的 Microsoft Web 场框架 2.0](https://go.microsoft.com/?linkid=9805129)网站。
 
->[!div class="step-by-step"]
-[上一页](configuring-a-database-server-for-web-deploy-publishing.md)
-[下一页](configuring-deployment-properties-for-a-target-environment.md)
+> [!div class="step-by-step"]
+> [上一页](configuring-a-database-server-for-web-deploy-publishing.md)
+> [下一页](configuring-deployment-properties-for-a-target-environment.md)

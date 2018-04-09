@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-vb
-title: "数据绑定滑块控件 (VB) |Microsoft 文档"
+title: 数据绑定滑块控件 (VB) |Microsoft 文档
 author: wenz
-description: "AJAX 控件工具包中的滑块控件提供图形滑块，可以使用鼠标进行控制。 就可以将绑定当前 positio..."
+description: AJAX 控件工具包中的滑块控件提供图形滑块，可以使用鼠标进行控制。 就可以将绑定当前 positio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6d106fda523356c9b7abd2d82b2d82537b50bd21
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3ecd8598cd7fdcbbb4812e501bb30fa1f563a054
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="databinding-the-slider-control-vb"></a>数据绑定滑块控件 (VB)
 ====================
@@ -52,5 +52,5 @@ AJAX 控件工具包中的滑块控件提供图形滑块，可以使用鼠标进
 
 滑块和文本框是同步 ([单击以查看实际尺寸的图像](databinding-the-slider-control-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一篇](using-the-slider-control-with-auto-postback-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](using-the-slider-control-with-auto-postback-vb.md)

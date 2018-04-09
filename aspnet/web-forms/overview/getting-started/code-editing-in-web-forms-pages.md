@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/code-editing-in-web-forms-pages
-title: "在 Visual Studio 2013 的 ASP.NET Web 窗体的代码编辑 |Microsoft 文档"
+title: 在 Visual Studio 2013 的 ASP.NET Web 窗体的代码编辑 |Microsoft 文档
 author: Erikre
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/03/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/code-editing-in-web-forms-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 8714f673cb0434189ca23d2dda14035d8652a051
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 79b10df04432490d6338dadb8f7ddd36192beb3e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a>在 Visual Studio 2013 中的代码编辑 ASP.NET Web 窗体
 ====================
@@ -46,7 +46,7 @@ ms.lasthandoff: 01/24/2018
     >   
     > 如果你使用的 Visual Studio，本演练假定你所选**Web 开发**设置的集合，首次启动 Visual Studio。 有关详细信息，请参阅[如何： 选择 Web 开发环境设置](https://msdn.microsoft.com/library/ff521558.aspx)。
 
- Visual Studio 和 ASP.NET 的介绍，请参阅[在 Visual Studio 2013 中创建一个基本的 ASP.NET 4.5 Web 窗体页面](creating-a-basic-web-forms-page.md)。   
+  Visual Studio 和 ASP.NET 的介绍，请参阅[在 Visual Studio 2013 中创建一个基本的 ASP.NET 4.5 Web 窗体页面](creating-a-basic-web-forms-page.md)。   
  
 
 ## <a name="creating-a-web-application-project-and-a-page"></a>创建 Web 应用程序项目和页面
@@ -98,19 +98,19 @@ Visual Studio 中的代码编辑器可帮助你避免错误，因为你编写代
 
 
 1. 在**设计**视图中，双击空白页后，可以创建的处理程序**负载**页的事件。   
-你使用事件处理程序仅作为的位置来编写一些代码。
+   你使用事件处理程序仅作为的位置来编写一些代码。
 2. 内部处理程序中，键入以下行，其中包含了错误和按**ENTER**:
 
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample1.cs)]
 
- 当你按**ENTER**，代码编辑器中将绿色和红色下划线 (通常会调用&quot;波浪&quot;行) 下的代码有问题的区域。 绿色下划线指示警告。 红色下划线指示必须修复错误。 
+   当你按**ENTER**，代码编辑器中将绿色和红色下划线 (通常会调用&quot;波浪&quot;行) 下的代码有问题的区域。 绿色下划线指示警告。 红色下划线指示必须修复错误。 
 
     将鼠标指针停留在`myStr`若要查看工具提示，告诉你有关该警告。 此外，将鼠标指针悬停红色的下划线，以查看错误消息。
 
     下图显示带下划线的代码。
 
     ![在设计视图中的欢迎文本](code-editing-in-web-forms-pages/_static/image5.png "在设计视图中的欢迎文本")  
- 必须通过添加分号修复错误`;`至行尾。 警告只会通知您，尚未使用`myStr`尚未变量。  
+   必须通过添加分号修复错误`;`至行尾。 警告只会通知您，尚未使用`myStr`尚未变量。  
 
     > [!NOTE] 
     > 
@@ -137,7 +137,7 @@ Visual Studio 中的代码编辑器可帮助你避免错误，因为你编写代
 
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample2.cs?highlight=3-16)]
 
- 该代码创建**ArrayList**对象，使用循环包含值，加载它，然后使用另一个循环显示的内容**ArrayList**对象。
+   该代码创建**ArrayList**对象，使用循环包含值，加载它，然后使用另一个循环显示的内容**ArrayList**对象。
 4. 按**CTRL + F5**以运行此页面，然后单击**按钮**若要确保你看到以下输出：   
 
     [!code-html[Main](code-editing-in-web-forms-pages/samples/sample3.html)]

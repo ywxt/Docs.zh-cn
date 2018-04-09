@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-vb
-title: "阻止 JavaScript 注入攻击 (VB) |Microsoft 文档"
+title: 阻止 JavaScript 注入攻击 (VB) |Microsoft 文档
 author: StephenWalther
-description: "防止 JavaScript 注入式攻击和跨站点脚本攻击发生给您。 在本教程中，Stephen Walther 解释了如何可以轻松地 de..."
+description: 防止 JavaScript 注入式攻击和跨站点脚本攻击发生给您。 在本教程中，Stephen Walther 解释了如何可以轻松地 de...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1d49d4d1afa30247d3452a96c8004441ba417ac8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cb19236b22abd455472621ce74a8cddf9752d6c5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="preventing-javascript-injection-attacks-vb"></a>阻止 JavaScript 注入攻击 (VB)
 ====================
@@ -43,7 +43,7 @@ ms.lasthandoff: 11/10/2017
 
 客户反馈网站使用`controller`列表 1 中。 这`controller`包含名为的两个操作`Index()`和`Create()`。
 
-**列表 1 –`HomeController.vb`**
+**列表 1 – `HomeController.vb`**
 
 [!code-vb[Main](preventing-javascript-injection-attacks-vb/samples/sample1.vb)]
 
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 
 `Index`视图包含在清单 2。
 
-**列出 2 –`Index.aspx`**
+**列出 2 – `Index.aspx`**
 
 [!code-aspx[Main](preventing-javascript-injection-attacks-vb/samples/sample2.aspx)]
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-html[Main](preventing-javascript-injection-attacks-vb/samples/sample3.html)]
 
-此文本表示显示警报消息框中的 JavaScript 脚本。 某人为反馈提交此脚本后窗体中，消息*Boo ！*将显示时的任何人访问客户反馈网站将来 （请参见图 2）。
+此文本表示显示警报消息框中的 JavaScript 脚本。 某人为反馈提交此脚本后窗体中，消息<em>Boo ！</em>将显示时的任何人访问客户反馈网站将来 （请参见图 2）。
 
 
 [![JavaScript 注入](preventing-javascript-injection-attacks-vb/_static/image5.png)](preventing-javascript-injection-attacks-vb/_static/image4.png)
@@ -117,9 +117,9 @@ ms.lasthandoff: 11/10/2017
 
 为什么这是错误的？ 如果您需要在以外的网页中显示的数据库数据，则将遇到问题。 例如，可以在 Windows 窗体应用程序不再方便地显示数据。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程的目的是让你有关 JavaScript 注入攻击的潜在客户。 本教程讨论防护 JavaScript 注入式攻击 ASP.NET MVC 应用程序的两种方法： 可以是 HTML 编码用户提交中的视图或你的数据可以 HTML 编码用户提交在控制器中的数据。
 
->[!div class="step-by-step"]
-[上一篇](authenticating-users-with-windows-authentication-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](authenticating-users-with-windows-authentication-vb.md)

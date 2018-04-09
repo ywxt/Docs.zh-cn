@@ -1,7 +1,7 @@
 ---
-title: "在 ASP.NET Core 上的 SignalR 简介"
+title: 在 ASP.NET Core 上的 SignalR 简介
 author: rachelappel
-description: "了解如何 ASP.NET 核心 SignalR 库简化了将实时 web 功能添加到应用。"
+description: 了解如何 ASP.NET 核心 SignalR 库简化了将实时 web 功能添加到应用。
 manager: wpickett
 ms.author: rachelap
 ms.custom: mvc
@@ -11,10 +11,10 @@ ms.technology: aspnet
 ms.topic: article
 uid: signalr/introduction-signalr-core
 ms.openlocfilehash: 3fa70c957b246787d4e457c74f90ad797b3af766
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="introduction-to-signalr"></a>SignalR 简介
 

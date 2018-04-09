@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/user-based-authorization-cs
-title: "基于用户的授权 (C#) |Microsoft 文档"
+title: 基于用户的授权 (C#) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将考察限制对页的访问并限制通过各种技术的页级功能。"
+description: 在本教程中我们将考察限制对页的访问并限制通过各种技术的页级功能。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/user-based-authorization-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5bee98878b5191a096b851c65aaea19ad989f608
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9a0d476ffaf1f176c21b245520fa943f66e8c0d5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="user-based-authorization-c"></a>基于用户的授权 (C#)
 ====================
@@ -168,7 +168,7 @@ ASP.NET，可以轻松可在站点定义不同的文件和文件夹的不同的�
 
 ### <a name="a-look-at-how-theurlauthorizationmoduleuses-the-authorization-rules-to-grant-or-deny-access"></a>如何查看`UrlAuthorizationModule`使用授权规则来允许或拒绝访问
 
-`UrlAuthorizationModule`确定是否授权对特定 URL 的特定标识，通过分析 URL 授权规则一次，从第一个和下使用自己的方式。 只要找到匹配项，用户被授予或拒绝访问，根据如果中找到匹配`<allow>`或`<deny>`元素。 **如果不找到任何匹配项，则用户被授予访问权限。** 因此，如果你想要限制访问，则你使用命令性`<deny>`URL 授权配置中的最后一个元素的元素。 **如果省略 * * *`<deny>`* * * 元素中，所有用户将被都授予访问。**
+`UrlAuthorizationModule`确定是否授权对特定 URL 的特定标识，通过分析 URL 授权规则一次，从第一个和下使用自己的方式。 只要找到匹配项，用户被授予或拒绝访问，根据如果中找到匹配`<allow>`或`<deny>`元素。 <strong>如果不找到任何匹配项，则用户被授予访问权限。</strong> 因此，如果你想要限制访问，则你使用命令性`<deny>`URL 授权配置中的最后一个元素的元素。 <strong>如果省略</strong><strong>`<deny>`</strong><strong>元素中，所有用户将被都授予访问。</strong>
 
 若要更好地了解使用的过程`UrlAuthorizationModule`若要确定颁发机构，例如，我们看之前在此步骤中的 URL 授权规则。 第一个规则是`<allow>`可以访问 Tito 和 Scott 的元素。 第二个规则中是`<deny>`供所有人拒绝访问的元素。 如果匿名用户访问，`UrlAuthorizationModule`通过要求，启动是匿名 Scott 或 Tito？ 答案，显然，为否，以便它将继续进行第二条规则。 是匿名的每个人都集中？ 因为答案此处为是，`<deny>`实际上放规则，并在距访客将重定向到登录页。 同样，如果访问 Jisun，`UrlAuthorizationModule`启动通过要求，是 Jisun Scott 或 Tito？ 因为她不可以，`UrlAuthorizationModule`继续到第二个问题，集中的每个人都是 Jisun？ 她是，因此她，也被拒绝访问。 最后，如果 Tito 访问时，第一个问题所带来`UrlAuthorizationModule`是赞成答案，因此 Tito 被授予访问权限。
 
@@ -384,7 +384,7 @@ LoginView 的模板中的 Web 控件将不再从代码隐藏类直接访问。 �
 
 有关详细信息使用`PrincipalPermission`属性以便定义类和方法的授权规则，请参阅[Scott Guthrie](https://weblogs.asp.net/scottgu/)的博客文章[业务和数据层使用添加授权规则`PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx).
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中我们介绍了如何将基于用户的授权规则应用。 与 ASP 一下，我们已开始。NET 的 URL 授权框架。 在每个请求时，ASP.NET 引擎的`UrlAuthorizationModule`检查在应用程序的配置，以确定是否标识有权访问请求的资源中定义的 URL 授权规则。 简单地说，URL 授权使易于指定特定目录中的特定页或所有页面的授权规则。
 
@@ -396,24 +396,24 @@ URL 授权框架针对授权规则按页。 使用 URL 授权请求标识有权�
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [将授权规则添加到业务和使用的数据层`PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
+- [将授权规则添加到业务和使用的数据层 `PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
 - [ASP.NET 授权](https://msdn.microsoft.com/library/wce3kxhd.aspx)
 - [Iis 6 和 IIS7 安全之间的更改](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/Changes-between-IIS6-and-IIS7-Security)
 - [配置特定文件和子目录](https://msdn.microsoft.com/library/6hbkh9s7.aspx)
 - [限制基于用户的数据修改功能](../../data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-cs.md)
 - [LoginView 控件快速入门](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/loginview.aspx)
 - [了解 IIS7 URL 授权](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/URL-Authorization/Understanding-IIS7-URL-Authorization)
-- [`UrlAuthorizationModule`技术文档](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)
+- [`UrlAuthorizationModule` 技术文档](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)
 - [在 ASP.NET 2.0 中使用数据](../../data-access/index.md)
 
 ### <a name="about-the-author"></a>关于作者
 
-Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
 
->[!div class="step-by-step"]
-[上一页](validating-user-credentials-against-the-membership-user-store-cs.md)
-[下一页](storing-additional-user-information-cs.md)
+> [!div class="step-by-step"]
+> [上一页](validating-user-credentials-against-the-membership-user-store-cs.md)
+> [下一页](storing-additional-user-information-cs.md)

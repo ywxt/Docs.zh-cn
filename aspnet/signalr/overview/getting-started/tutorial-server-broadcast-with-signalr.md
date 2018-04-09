@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
-title: "教程： 使用 SignalR 2 广播的服务器 |Microsoft 文档"
+title: 教程： 使用 SignalR 2 广播的服务器 |Microsoft 文档
 author: tdykstra
-description: "本教程演示如何创建的 web 应用程序使用 ASP.NET SignalR 2 来提供服务器广播的功能。 服务器广播意味着该 commun..."
+description: 本教程演示如何创建的 web 应用程序使用 ASP.NET SignalR 2 来提供服务器广播的功能。 服务器广播意味着该 commun...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/13/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 98a7ce4991d58181177cf56976888e9fd1526987
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: de4ccb4f0865e250fa0d78a9707fe5129c78e764
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>教程： 使用 SignalR 2 广播的服务器
 ====================
@@ -65,7 +65,7 @@ ms.lasthandoff: 01/24/2018
 
 ![StockTicker 初始版本](tutorial-server-broadcast-with-signalr/_static/image1.png)
 
-定期服务器随机更新股票价格并将更新推送到所有连接的客户端。 在浏览器数字和符号中的**更改**和 **%** 列动态更改以响应来自服务器的通知。 如果你打开到相同的 URL，其他浏览器，它们都同时显示相同的数据和对数据的相同更改。
+定期服务器随机更新股票价格并将更新推送到所有连接的客户端。 在浏览器数字和符号中的**更改**和**%**列动态更改以响应来自服务器的通知。 如果你打开到相同的 URL，其他浏览器，它们都同时显示相同的数据和对数据的相同更改。
 
 本教程包含以下各节：
 
@@ -218,7 +218,7 @@ ms.lasthandoff: 01/24/2018
 
     脚本标记指定 jQuery 脚本文件、 SignalR 核心脚本文件、 SignalR 代理脚本文件和稍后要创建的 StockTicker 脚本文件。 SignalR 代理脚本文件的说明进行操作，它指定"/ signalr/中心"URL，动态生成，并在这种情况下定义 StockTickerHub.GetAllStocks 的中心类、 方法的代理方法。 如果你愿意，你可以通过使用手动生成此 JavaScript 文件[SignalR 实用工具](http://nuget.org/packages/Microsoft.AspNet.SignalR.Utils/)和禁用 MapHubs 方法调用中的动态文件创建。
 3. > [!IMPORTANT]
- > 请确保 JavaScript 文件中引用*StockTicker.html*正确无误。 也就是说，确保你的脚本标记 (1.10.2 在示例中) 中的 jQuery 版本是否与你的项目中的 jQuery 版本相同*脚本*文件夹，并确保你的脚本标记中的 SignalR 版本是 SignalR 相同在项目的版本*脚本*文件夹。 如有必要，请更改脚本标记中的文件名称。
+   > 请确保 JavaScript 文件中引用*StockTicker.html*正确无误。 也就是说，确保你的脚本标记 (1.10.2 在示例中) 中的 jQuery 版本是否与你的项目中的 jQuery 版本相同*脚本*文件夹，并确保你的脚本标记中的 SignalR 版本是 SignalR 相同在项目的版本*脚本*文件夹。 如有必要，请更改脚本标记中的文件名称。
 4. 在**解决方案资源管理器**，右键单击*StockTicker.html*，然后单击**设为起始页**。
 5. 在项目文件夹中创建一个新的 JavaScript 文件并将其命名*StockTicker.js*...
 6. 模板代码替换为以下代码：

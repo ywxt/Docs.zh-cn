@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
-title: "创建项目 |Microsoft 文档"
+title: 创建项目 |Microsoft 文档
 author: Erikre
-description: "本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识..."
+description: 本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: 094733dcbe31486385dda2f8b44ba77a17486c82
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b42e62b560e01d592c9f4cb61ea6199a15dc8bb6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-the-project"></a>创建项目
 ====================
@@ -185,7 +185,7 @@ Visual Studio 中的主窗口包含**解决方案资源管理器**、**服务器
 
 有关 Visual Studio 的详细信息，请参阅[Visual 指南 Visual Web Developer](https://msdn.microsoft.com/library/ee410104.aspx)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中具有创建、 查看和运行默认的 Web 窗体应用程序。 在查阅默认 Web 窗体应用程序的不同功能并了解有关如何使用 Visual Studio 环境的一些基础知识。 在以下教程中，你将创建数据访问层。
 
@@ -195,6 +195,6 @@ Visual Studio 中的主窗口包含**解决方案资源管理器**、**服务器
 [与网站项目的 web 应用程序项目](https://msdn.microsoft.com/library/dd547590.aspx)   
 [ASP.NET Web 窗体页概述](https://msdn.microsoft.com/library/428509ah.aspx)
 
->[!div class="step-by-step"]
-[上一页](introduction-and-overview.md)
-[下一页](create_the_data_access_layer.md)
+> [!div class="step-by-step"]
+> [上一页](introduction-and-overview.md)
+> [下一页](create_the_data_access_layer.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-custom-routes-cs
-title: "创建自定义路由 (C#) |Microsoft 文档"
+title: 创建自定义路由 (C#) |Microsoft 文档
 author: microsoft
-description: "了解如何将自定义的路由添加到 ASP.NET MVC 应用程序。 在本教程中，您将学习如何修改 Global.asax 文件中的默认路由表。"
+description: 了解如何将自定义的路由添加到 ASP.NET MVC 应用程序。 在本教程中，您将学习如何修改 Global.asax 文件中的默认路由表。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-custom-routes-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d1542103298f2fa09dc71706284afb18d8381403
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 573b6a3360124feea92788ff7a3de363840fa1ef
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-custom-routes-c"></a>创建自定义路由 (C#)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 了解如何将自定义的路由添加到 ASP.NET MVC 应用程序。 在本教程中，您将学习如何修改 Global.asax 文件中的默认路由表。
 
@@ -69,10 +69,10 @@ ms.lasthandoff: 11/10/2017
 **图 01**： 从将参数转换的错误 ([单击以查看实际尺寸的图像](creating-custom-routes-cs/_static/image2.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程的目标是演示如何创建一个自定义路由。 您学习了如何将自定义的路由添加到表示博客条目 Global.asax 文件中的路由表。 我们讨论了如何将博客条目的请求映射到名为 ArchiveController 的控制器和名为 Entry() 的控制器操作。
 
->[!div class="step-by-step"]
-[上一页](aspnet-mvc-controllers-overview-cs.md)
-[下一页](creating-a-route-constraint-cs.md)
+> [!div class="step-by-step"]
+> [上一页](aspnet-mvc-controllers-overview-cs.md)
+> [下一页](creating-a-route-constraint-cs.md)

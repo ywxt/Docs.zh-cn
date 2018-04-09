@@ -1,7 +1,7 @@
 ---
-title: "密钥管理扩展性"
+title: ASP.NET 核心的密钥管理可扩展性
 author: rick-anderson
-description: "本文档概述了 ASP.NET 核心数据保护密钥管理扩展性。"
+description: 了解有关 ASP.NET 核心数据保护密钥管理扩展性。
 manager: wpickett
 ms.author: riande
 ms.date: 11/22/2017
@@ -9,18 +9,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: bcc4984efcee9a6ffd0f3b503a38089c78adf5e8
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e3042b371cf7be8fa0218c1906042d2810b180e3
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-management-extensibility"></a>密钥管理扩展性
+# <a name="key-management-extensibility-in-aspnet-core"></a>ASP.NET 核心的密钥管理可扩展性
 
 <a name="data-protection-extensibility-key-management"></a>
 
 >[!TIP]
-> 读取[密钥管理](../implementation/key-management.md#data-protection-implementation-key-management)之前阅读此部分中，因为它介绍了这些 Api 的基本概念的某些部分。
+> 读取[密钥管理](xref:security/data-protection/implementation/key-management#data-protection-implementation-key-management)之前阅读此部分中，因为它介绍了这些 Api 的基本概念的某些部分。
 
 >[!WARNING]
 > 实现的任意以下接口的类型应该是线程安全的多个调用方。
@@ -37,11 +37,11 @@ ms.lasthandoff: 03/02/2018
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-此外，`IKey`公开`CreateEncryptor`方法用于创建[IAuthenticatedEncryptor](core-crypto.md#data-protection-extensibility-core-crypto-iauthenticatedencryptor)实例绑定到此密钥。
+此外，`IKey`公开`CreateEncryptor`方法用于创建[IAuthenticatedEncryptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptor)实例绑定到此密钥。
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-此外，`IKey`公开`CreateEncryptorInstance`方法用于创建[IAuthenticatedEncryptor](core-crypto.md#data-protection-extensibility-core-crypto-iauthenticatedencryptor)实例绑定到此密钥。
+此外，`IKey`公开`CreateEncryptorInstance`方法用于创建[IAuthenticatedEncryptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptor)实例绑定到此密钥。
 
 ---
 
@@ -123,7 +123,7 @@ ms.lasthandoff: 03/02/2018
 
 实现中`GetAllKeys`、 XML 文档表示键和从基础读取吊销`IXmlRepository`。 如果这些文档进行加密，系统将自动解密。 `XmlKeyManager` 创建适当`IAuthenticatedEncryptorDescriptorDeserializer`实例进行反序列化文档回`IAuthenticatedEncryptorDescriptor`实例，然后将封装在单个`IKey`实例。 此集合`IKey`实例返回给调用方。
 
-在找不到在特定的 XML 元素上的进一步信息[密钥存储格式文档](../implementation/key-storage-format.md#data-protection-implementation-key-storage-format)。
+在找不到在特定的 XML 元素上的进一步信息[密钥存储格式文档](xref:security/data-protection/implementation/key-storage-format#data-protection-implementation-key-storage-format)。
 
 ## <a name="ixmlrepository"></a>IXmlRepository
 
@@ -135,7 +135,7 @@ ms.lasthandoff: 03/02/2018
 
 实现`IXmlRepository`不需要通过其传递对 XML 进行分析。 它们应视为不透明 XML 文档，让较高层担心生成和分析文档。
 
-有两个内置的具体类型实现`IXmlRepository`:`FileSystemXmlRepository`和`RegistryXmlRepository`。 请参阅[密钥存储提供程序文档](../implementation/key-storage-providers.md#data-protection-implementation-key-storage-providers)有关详细信息。 注册的自定义`IXmlRepository`将适当的方式为使用不同的后备存储，例如，Azure Blob 存储。
+有两个内置的具体类型实现`IXmlRepository`:`FileSystemXmlRepository`和`RegistryXmlRepository`。 请参阅[密钥存储提供程序文档](xref:security/data-protection/implementation/key-storage-providers#data-protection-implementation-key-storage-providers)有关详细信息。 注册的自定义`IXmlRepository`将适当的方式为使用不同的后备存储，例如，Azure Blob 存储。
 
 若要更改默认存储库应用程序级，注册一个自定义`IXmlRepository`实例：
 
@@ -169,7 +169,7 @@ ms.lasthandoff: 03/02/2018
 * `DpapiXmlEncryptor`
 * `NullXmlEncryptor`
 
-请参阅[rest 文档的密钥加密](../implementation/key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest)有关详细信息。
+请参阅[rest 文档的密钥加密](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest)有关详细信息。
 
 若要更改默认密钥加密在 rest 机制整个应用程序范围，注册一个自定义`IXmlEncryptor`实例：
 

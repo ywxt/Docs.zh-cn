@@ -1,7 +1,7 @@
 ---
-title: "基于声明的授权"
+title: ASP.NET 核心中基于声明的授权
 author: rick-anderson
-description: "本文档说明如何在 ASP.NET Core 应用中添加声明授权检查。"
+description: 了解如何在 ASP.NET Core 应用中添加声明授权检查。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/claims
-ms.openlocfilehash: 608aaa469c5ca20fab8250025804e28e7808122d
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: da308b67be046395bb1baa0f272e767cccbc99c8
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="claims-based-authorization"></a>基于声明的授权
+# <a name="claims-based-authorization-in-aspnet-core"></a>ASP.NET 核心中基于声明的授权
 
 <a name="security-authorization-claims-based"></a>
 
@@ -103,7 +103,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="multiple-policy-evaluation"></a>多个策略评估
 
-如果将多个策略应用到的控制器或操作，然后授予访问权限之前也必须传递所有策略。 例如:
+如果将多个策略应用到的控制器或操作，然后授予访问权限之前也必须传递所有策略。 例如：
 
 ```csharp
 [Authorize(Policy = "EmployeeOnly")]
@@ -122,4 +122,4 @@ public class SalaryController : Controller
 
 在上例中任何标识了满足`EmployeeOnly`策略可以访问`Payslip`在控制器上强制执行该策略的操作。 但是为了调用`UpdateSalary`标识必须满足的操作*同时*`EmployeeOnly`策略和`HumanResources`策略。
 
-如果你希望更复杂的策略，如将出生声明的日期，计算年龄字段从它，然后检查年龄为 21 或更低版本，则需要编写[自定义策略处理程序](policies.md)。
+如果你希望更复杂的策略，如将出生声明的日期，计算年龄字段从它，然后检查年龄为 21 或更低版本，则需要编写[自定义策略处理程序](xref:security/authorization/policies)。

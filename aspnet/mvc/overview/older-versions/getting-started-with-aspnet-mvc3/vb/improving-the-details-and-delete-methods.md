@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/improving-the-details-and-delete-methods
-title: "改进的详细信息和删除方法 (VB) |Microsoft 文档"
+title: 改进的详细信息和删除方法 (VB) |Microsoft 文档
 author: Rick-Anderson
-description: "本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识..."
+description: 本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/improving-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: e057d9f106aaa8afbe521d8185a06dfbf48e46fb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0c662510ce9a80e0e808af0eec2561ecdaa12c01
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="improving-the-details-and-delete-methods-vb"></a>改进的详细信息和删除方法 (VB)
 ====================
@@ -57,7 +57,7 @@ ms.lasthandoff: 01/24/2018
 
 公共语言运行时 (CLR) 需要具有唯一的签名 （名称相同，不同的参数列表） 的重载的方法。 但是，此处你需要两个删除方法-一个 get-，一个用于 POST，这两需要相同的签名。 （它们都需要接受单个整数作为参数。）
 
-若要对此项进行排序，你可以执行几个事项。 之一是为方法提供不同的名称。 这就是我们所做的他前面示例中。 但是，这会造成一个小问题：ASP.NET 按名称将 URL 段映射到操作方法，如果重命名方法，则路由通常无法找到该方法。 该示例中也提供了解决方案，即向 `DeleteConfirmed` 方法添加 `ActionName("Delete")` 属性。 这有效地执行映射路由的系统，以使 URL，包括*/Delete/*的 post 请求将查找`DeleteConfirmed`方法。
+若要对此项进行排序，你可以执行几个事项。 之一是为方法提供不同的名称。 这就是我们所做的他前面示例中。 但是，这会造成一个小问题：ASP.NET 按名称将 URL 段映射到操作方法，如果重命名方法，则路由通常无法找到该方法。 该示例中也提供了解决方案，即向 `DeleteConfirmed` 方法添加 `ActionName("Delete")` 属性。 这有效地执行映射路由的系统，以使 URL，包括<em>/Delete/</em>的 post 请求将查找`DeleteConfirmed`方法。
 
 另一种方法，以避免问题具有相同的名称和签名的方法是人为地更改要包括未使用的参数的 POST 方法的签名。 例如，一些开发人员添加的参数类型`FormCollection`传递给 POST 方法中，然后只需不使用参数：
 
@@ -77,11 +77,11 @@ ms.lasthandoff: 01/24/2018
 - [启用 IIS 7.x](https://blogs.msdn.com/b/rickandy/archive/2011/03/14/enabling-iis-7-x-on-windows-7-vista-sp1-windows-2008-windows-2008-r2.aspx)
 - [Web 应用程序项目部署](https://msdn.microsoft.com/library/dd394698.aspx)
 
-我现在鼓励你转到我们中间级[为 ASP.NET MVC 应用程序创建实体框架数据模型](../../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)和[MVC 音乐商店](../../mvc-music-store/mvc-music-store-part-1.md)教程，以浏览[ASP.NETMSDN 上的文章](https://msdn.microsoft.com/library/gg416514(VS.98).aspx)，和签出的许多视频和资源在[https://asp.net/mvc](https://asp.net/mvc)若要了解更多有关 ASP.NET MVC ！ [ASP.NET MVC 论坛](https://forums.asp.net/1146.aspx)是询问的问题的好地方。
+我现在鼓励你转到我们中间级[为 ASP.NET MVC 应用程序创建实体框架数据模型](../../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)和[MVC 音乐商店](../../mvc-music-store/mvc-music-store-part-1.md)教程，以浏览[ASP.NETMSDN 上的文章](https://msdn.microsoft.com/library/gg416514(VS.98).aspx)，和签出的许多视频和资源在[ https://asp.net/mvc ](https://asp.net/mvc)若要了解更多有关 ASP.NET MVC ！ [ASP.NET MVC 论坛](https://forums.asp.net/1146.aspx)是询问的问题的好地方。
 
 请尽情体验吧！
 
--Scott Hanselman ([http://hanselman.com](http://hanselman.com)和[ @shanselman ](http://twitter.com/shanselman)在 Twitter 上) 和 Rick Anderson [blogs.msdn.com/rickAndy](https://blogs.msdn.com/rickAndy)
+-Scott Hanselman ([ http://hanselman.com ](http://hanselman.com)和[ @shanselman ](http://twitter.com/shanselman)在 Twitter 上) 和 Rick Anderson [blogs.msdn.com/rickAndy](https://blogs.msdn.com/rickAndy)
 
->[!div class="step-by-step"]
-[上一篇](adding-validation-to-the-model.md)
+> [!div class="step-by-step"]
+> [上一篇](adding-validation-to-the-model.md)

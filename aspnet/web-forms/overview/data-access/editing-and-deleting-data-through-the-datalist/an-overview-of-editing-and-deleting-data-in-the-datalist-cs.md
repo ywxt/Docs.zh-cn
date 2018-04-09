@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-cs
-title: "编辑和删除 DataList (C#) 中的数据的概述 |Microsoft 文档"
+title: 编辑和删除 DataList (C#) 中的数据的概述 |Microsoft 文档
 author: rick-anderson
-description: "DataList 缺少内置编辑和删除功能，而在本教程中我们将了解如何创建支持编辑和删除 o DataList..."
+description: DataList 缺少内置编辑和删除功能，而在本教程中我们将了解如何创建支持编辑和删除 o DataList...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/30/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8b3067c5a6bcf81a35f66d43886c9b116a0ef7d8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: be86707980b11453ef78fdbddead73ab9808b54d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-c"></a>编辑和删除 DataList (C#) 中的数据的概述
 ====================
@@ -249,7 +249,7 @@ DataList，另一方面，呈现其使用模板的项。 只读项呈现使用`I
 
 若要让 DataList 呈现其所有项中的只读模式，我们需要：
 
-1. 设置 DataList s [ `EditItemIndex`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx)的不存在的索引`DataListItem`索引。 `-1`由于是安全的选择，`DataListItem`索引开始`0`。
+1. 设置 DataList s [ `EditItemIndex`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx)的不存在的索引`DataListItem`索引。 `-1` 由于是安全的选择，`DataListItem`索引开始`0`。
 2. 重新绑定数据到 DataList。 由于否`DataListItem` `ItemIndex` es 对应于 DataList 的`EditItemIndex`，整个 DataList 将呈现在只读模式下。
 
 可以使用下面的事件处理程序代码完成这些步骤：
@@ -263,7 +263,7 @@ DataList，另一方面，呈现其使用模板的项。 只读项呈现使用`I
 
 1. 以编程方式访问的用户输入的产品名称和价格，以及编辑的产品的`ProductID`。
 2. 启动更新过程，通过调用适当`UpdateProduct`重载中`ProductsBLL`类。
-3. 设置 DataList s [ `EditItemIndex`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx)的不存在的索引`DataListItem`索引。 `-1`由于是安全的选择，`DataListItem`索引开始`0`。
+3. 设置 DataList s [ `EditItemIndex`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx)的不存在的索引`DataListItem`索引。 `-1` 由于是安全的选择，`DataListItem`索引开始`0`。
 4. 重新绑定数据到 DataList。 由于否`DataListItem` `ItemIndex` es 对应于 DataList 的`EditItemIndex`，整个 DataList 将呈现在只读模式下。
 
 步骤 1 和 2 负责保存 s 更改; 的用户步骤 3 和 4 DataList 后返回到其预编辑状态更改已保存，并且在中执行的步骤相同`CancelCommand`事件处理程序。
@@ -327,7 +327,7 @@ DataList，另一方面，呈现其使用模板的项。 只读项呈现使用`I
 
 删除该产品后它 s 重要我们重新绑定数据到 DataList (`DataList1.DataBind()`)，否则 DataList 将继续显示的产品，只需删除。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 DataList 缺少点，并单击编辑和删除享受的 GridView 的支持，而进行少量的代码的短它可以得到增强，包括这些功能。 在本教程中我们已了解如何创建的产品，无法删除，无法编辑其名称和价格的两列列表。 添加编辑和删除支持是一种包括在适当的 Web 控件`ItemTemplate`和`EditItemTemplate`、 创建相应的事件处理程序、 读取用户输入和主键值，和业务进行交互逻辑层。
 
@@ -339,11 +339,11 @@ DataList 缺少点，并单击编辑和删除享受的 GridView 的支持，而�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Zack Jones、 Ken Pespisa 和徐 Schmidt。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[下一篇](performing-batch-updates-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](performing-batch-updates-cs.md)

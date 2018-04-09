@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-vb
-title: "将新记录插入从 GridView 的页脚 (VB) |Microsoft 文档"
+title: 将新记录插入从 GridView 的页脚 (VB) |Microsoft 文档
 author: rick-anderson
-description: "虽然 GridView 控件不提供内置支持用于插入的数据的新记录，本教程演示如何增加 GridView 包括..."
+description: 虽然 GridView 控件不提供内置支持用于插入的数据的新记录，本教程演示如何增加 GridView 包括...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/06/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4d452e15ced52fd9dcac8201598146cb9ef38d7b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 32f3cb23805813135bf463720e7479f5f819deb7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="inserting-a-new-record-from-the-gridviews-footer-vb"></a>将新记录插入从 GridView 的页脚 (VB)
 ====================
@@ -140,18 +140,18 @@ ms.lasthandoff: 11/10/2017
 
 以下项目符号列表枚举 GridView 字段，指定要添加的插入接口：
 
-- `ProductID`无。
-- `ProductName`添加一个文本框，并设置其`ID`到`NewProductName`。 添加 RequiredFieldValidator 控件以确保用户输入一个值，新的产品 s 名称。
-- `SupplierID`无。
-- `CategoryID`无。
-- `QuantityPerUnit`添加文本框中，设置其`ID`到`NewQuantityPerUnit`。
-- `UnitPrice`添加名为的文本框`NewUnitPrice`和 CompareValidator，以确保输入的值是大于或等于零的货币值。
-- `UnitsInStock`使用文本框中其`ID`设置为`NewUnitsInStock`。 包括 CompareValidator，以确保输入的值是大于或等于零的整数值。
-- `UnitsOnOrder`使用文本框中其`ID`设置为`NewUnitsOnOrder`。 包括 CompareValidator，以确保输入的值是大于或等于零的整数值。
-- `ReorderLevel`使用文本框中其`ID`设置为`NewReorderLevel`。 包括 CompareValidator，以确保输入的值是大于或等于零的整数值。
-- `Discontinued`添加一个复选框，设置其`ID`到`NewDiscontinued`。
-- `CategoryName`添加的 DropDownList 并设置其`ID`到`NewCategoryID`。 将其绑定到名为新 ObjectDataSource`CategoriesDataSource`和将其配置为使用`CategoriesBLL`类的`GetCategories()`方法。 具有 DropDownList s `ListItem` s 显示`CategoryName`数据字段中，使用`CategoryID`作为其值的数据字段。
-- `SupplierName`添加的 DropDownList 并设置其`ID`到`NewSupplierID`。 将其绑定到名为新 ObjectDataSource`SuppliersDataSource`和将其配置为使用`SuppliersBLL`类的`GetSuppliers()`方法。 具有 DropDownList s `ListItem` s 显示`CompanyName`数据字段中，使用`SupplierID`作为其值的数据字段。
+- `ProductID` 无。
+- `ProductName` 添加一个文本框，并设置其`ID`到`NewProductName`。 添加 RequiredFieldValidator 控件以确保用户输入一个值，新的产品 s 名称。
+- `SupplierID` 无。
+- `CategoryID` 无。
+- `QuantityPerUnit` 添加文本框中，设置其`ID`到`NewQuantityPerUnit`。
+- `UnitPrice` 添加名为的文本框`NewUnitPrice`和 CompareValidator，以确保输入的值是大于或等于零的货币值。
+- `UnitsInStock` 使用文本框中其`ID`设置为`NewUnitsInStock`。 包括 CompareValidator，以确保输入的值是大于或等于零的整数值。
+- `UnitsOnOrder` 使用文本框中其`ID`设置为`NewUnitsOnOrder`。 包括 CompareValidator，以确保输入的值是大于或等于零的整数值。
+- `ReorderLevel` 使用文本框中其`ID`设置为`NewReorderLevel`。 包括 CompareValidator，以确保输入的值是大于或等于零的整数值。
+- `Discontinued` 添加一个复选框，设置其`ID`到`NewDiscontinued`。
+- `CategoryName` 添加的 DropDownList 并设置其`ID`到`NewCategoryID`。 将其绑定到名为新 ObjectDataSource`CategoriesDataSource`和将其配置为使用`CategoriesBLL`类的`GetCategories()`方法。 具有 DropDownList s `ListItem` s 显示`CategoryName`数据字段中，使用`CategoryID`作为其值的数据字段。
+- `SupplierName` 添加的 DropDownList 并设置其`ID`到`NewSupplierID`。 将其绑定到名为新 ObjectDataSource`SuppliersDataSource`和将其配置为使用`SuppliersBLL`类的`GetSuppliers()`方法。 具有 DropDownList s `ListItem` s 显示`CompanyName`数据字段中，使用`SupplierID`作为其值的数据字段。
 
 对于每个验证控件中，清除`ForeColor`属性以便`FooterStyle`CSS 类 s 白色前景颜色将代替红色默认值。 此外使用`ErrorMessage`属性的详细说明，但设置`Text`为星号的属性。 若要防止验证控件的文本导致要换到两个行的插入接口，设置`FooterStyle`s`Wrap`属性设置为 false 的每个`FooterTemplate`使用验证控件的 s。 最后，添加 ValidationSummary 控件下 GridView 并设置其`ShowMessageBox`属性`True`及其`ShowSummary`属性`False`。
 
@@ -234,7 +234,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-vb[Main](inserting-a-new-record-from-the-gridview-s-footer-vb/samples/sample9.vb)]
 
-`SendUserToLastPage`最初的页级别布尔变量分配值`False`。 在 GridView`DataBound`事件处理程序，如果`SendUserToLastPage`为 false，`PageIndex`属性进行更新，向用户发送的最后一页。
+`SendUserToLastPage` 最初的页级别布尔变量分配值`False`。 在 GridView`DataBound`事件处理程序，如果`SendUserToLastPage`为 false，`PageIndex`属性进行更新，向用户发送的最后一页。
 
 
 [!code-vb[Main](inserting-a-new-record-from-the-gridview-s-footer-vb/samples/sample10.vb)]
@@ -250,7 +250,7 @@ ms.lasthandoff: 11/10/2017
 
 这两个选项同样也将工作。 在过去的教程我们使用后一种方式，创建多个重载`ProductsBLL`类的`UpdateProduct`方法。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 GridView 缺少内置插入中的功能之外的说明和 FormView，但进行少量的工作量插入接口可以添加到页脚行。 若要只需在一个 GridView 中显示的页脚行设置其`ShowFooter`属性`True`。 由字段转换为 TemplateField，可以为每个字段定制的页脚行内容，并添加插入接口`FooterTemplate`。 正如我们在本教程中，看到`FooterTemplate`只能包含按钮、 文本框中，DropDownLists、 复选框，用于填充数据驱动的 Web 控件 （如 DropDownLists)，数据源控件和验证控件。 用于收集用户的输入控件，以及需要添加按钮、 LinkButton 或 ImageButton。
 
@@ -262,11 +262,11 @@ GridView 缺少内置插入中的功能之外的说明和 FormView，但进行�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已伯纳黛特 Leigh。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一篇](adding-a-gridview-column-of-checkboxes-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](adding-a-gridview-column-of-checkboxes-vb.md)

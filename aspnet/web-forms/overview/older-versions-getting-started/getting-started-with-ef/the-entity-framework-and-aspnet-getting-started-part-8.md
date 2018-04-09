@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8
-title: "如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 8 部分 |Microsoft 文档"
+title: 如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 8 部分 |Microsoft 文档
 author: tdykstra
-description: "Contoso 大学示例 web 应用程序演示如何创建 ASP.NET Web 窗体应用程序使用实体框架。 该示例应用程序..."
+description: Contoso 大学示例 web 应用程序演示如何创建 ASP.NET Web 窗体应用程序使用实体框架。 该示例应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 323ee44f43f6d4081bd9ba50791755696bc9128f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 035cce022d1b3697b825a96487529dbc9675d90e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 8 部分
 ====================
@@ -101,7 +101,7 @@ ms.lasthandoff: 01/24/2018
 
 应用于元数据类中的属性的特性指定格式设置、 验证、 规则和错误消息。 此处显示的属性将具有以下结果：
 
-- `EnrollmentDate`将显示为日期 （不含时间）。
+- `EnrollmentDate` 将显示为日期 （不含时间）。
 - 这两个名称字段必须是 25 个字符或者小于长度，以及自定义错误消息中提供。
 - 这两个名称字段是必需的并提供自定义错误消息。
 
@@ -132,5 +132,5 @@ ms.lasthandoff: 01/24/2018
 - [MSDN 上的实体框架论坛](https://social.msdn.microsoft.com/forums/adodotnetentityframework/)
 - [Julie Lerman 博客](http://thedatafarm.com/blog/)
 
->[!div class="step-by-step"]
-[上一篇](the-entity-framework-and-aspnet-getting-started-part-7.md)
+> [!div class="step-by-step"]
+> [上一篇](the-entity-framework-and-aspnet-getting-started-part-7.md)

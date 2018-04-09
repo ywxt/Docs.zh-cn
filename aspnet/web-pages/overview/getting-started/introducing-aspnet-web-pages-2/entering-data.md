@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
-title: "引入的 ASP.NET Web Pages-通过使用窗体中输入数据库的数据 |Microsoft 文档"
+title: 引入的 ASP.NET Web Pages-通过使用窗体中输入数据库的数据 |Microsoft 文档
 author: tfitzmac
-description: "本教程演示如何创建的输入表单，然后输入你从获取窗体插入数据库表时使用 ASP.NET Web Pages （...的数据"
+description: 本教程演示如何创建的输入表单，然后输入你从获取窗体插入数据库表时使用 ASP.NET Web Pages （...的数据
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
 msc.type: authoredcontent
-ms.openlocfilehash: b74eecb16b2c4695bb417816b90f701f724cc9d0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bbccf8134e90c19e29efaa5afe1e46e15320c189
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>引入的 ASP.NET Web Pages-通过使用窗体中输入数据库的数据
 ====================
@@ -101,7 +101,7 @@ ms.lasthandoff: 11/10/2017
 
 要插入的列已列在该命令- `(Title, Genre, Year)`。 有趣的部分是如何从到文本框中获取值`VALUES`命令的一部分。 而非实际值，你看到`@0`， `@1`，和`@2`，它们是当然的占位符。 当你运行该命令 (上`db.Execute`行)，传递从文本框中获取的值。
 
-**重要 ！** 请记住，您应曾经包含数据输入的 SQL 语句中的用户的联机的唯一方法是使用占位符，如下所示 (`VALUES(@0, @1, @2)`)。 如果你连接到 SQL 语句的用户输入，则打开自己容易受到 SQL 注入攻击中, 所述[窗体基础知识中的 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251581) （前面的教程）。
+**重要提示！** 请记住，您应曾经包含数据输入的 SQL 语句中的用户的联机的唯一方法是使用占位符，如下所示 (`VALUES(@0, @1, @2)`)。 如果你连接到 SQL 语句的用户输入，则打开自己容易受到 SQL 注入攻击中, 所述[窗体基础知识中的 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251581) （前面的教程）。
 
 仍内`if`块中，添加以下行后的`db.Execute`行：
 
@@ -121,7 +121,7 @@ ms.lasthandoff: 11/10/2017
 
 ![在浏览器中的添加电影页](entering-data/_static/image2.png)
 
-(如果你最终浏览器中的其他页，请确保该 URL 是否`http://localhost:nnnnn/AddMovie`)，其中 *nnnnn* 是你使用的端口号。)
+(如果你最终浏览器中的其他页，请确保该 URL 是否`http://localhost:nnnnn/AddMovie`)，其中*nnnnn*是你使用的端口号。)
 
 未获取了一个错误页面？ 如果是这样，仔细阅读它，并确保，代码看上去完全什么已前面列出。
 
@@ -145,7 +145,7 @@ ms.lasthandoff: 11/10/2017
 
 显然，你不想让用户半空影片信息输入到数据库。 该解决方案旨在验证用户的输入。 最初，验证将只需确保用户具有的所有字段中都输入的值 （即，其中未包含一个空字符串）。
 
-> [!TIP] 
+> [!TIP]
 > 
 > **Null 和空字符串**
 > 
@@ -260,6 +260,6 @@ ASP.NET Web Pages 包括一个帮助程序&mdash;`Validation`帮助器&mdash;可
 - [INTO 语句中插入的 SQL](http://www.w3schools.com/sql/sql_insert.asp) W3Schools 站点上
 - [验证用户输入，在 ASP.NET Web 页站点](https://go.microsoft.com/fwlink/?LinkId=253002)。 有关如何使用的详细信息`Validation`帮助器。
 
->[!div class="step-by-step"]
-[上一页](form-basics.md)
-[下一页](updating-data.md)
+> [!div class="step-by-step"]
+> [上一页](form-basics.md)
+> [下一页](updating-data.md)

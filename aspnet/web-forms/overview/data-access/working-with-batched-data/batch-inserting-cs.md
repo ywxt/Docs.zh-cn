@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
-title: "批处理插入 (C#) |Microsoft 文档"
+title: 批处理插入 (C#) |Microsoft 文档
 author: rick-anderson
-description: "了解如何在单个操作中插入多个数据库记录。 在用户界面层中，我们将扩展以允许用户输入多个 n GridView..."
+description: 了解如何在单个操作中插入多个数据库记录。 在用户界面层中，我们将扩展以允许用户输入多个 n GridView...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9dc18e259da24d71464a156a70a85cfc9a1745ce
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c8995592d9206fb17a7769414212369946304c54
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="batch-inserting-c"></a>批处理插入 (C#)
 ====================
@@ -203,7 +203,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](batch-inserting-cs/samples/sample5.cs)]
 
-同时`Click`事件处理程序只需调用`ReturnToDisplayInterface`方法，尽管我们将从装运返回到添加产品`Click`步骤 4 中的事件处理程序，然后添加代码来保存产品。 `ReturnToDisplayInterface`通过返回启动`Suppliers`和`Categories`DropDownLists 其第一个选项。 两个常量`firstControlID`和`lastControlID`标记的起始和结束命名接口中插入文本框中，并在的界限内使用的的产品名称和单价中使用的控件索引值`for`设置的循环`Text`文本框中控件的属性以返回一个空字符串。 最后，面板`Visible`属性被重置，以便插入界面隐藏和显示的显示界面。
+同时`Click`事件处理程序只需调用`ReturnToDisplayInterface`方法，尽管我们将从装运返回到添加产品`Click`步骤 4 中的事件处理程序，然后添加代码来保存产品。 `ReturnToDisplayInterface` 通过返回启动`Suppliers`和`Categories`DropDownLists 其第一个选项。 两个常量`firstControlID`和`lastControlID`标记的起始和结束命名接口中插入文本框中，并在的界限内使用的的产品名称和单价中使用的控件索引值`for`设置的循环`Text`文本框中控件的属性以返回一个空字符串。 最后，面板`Visible`属性被重置，以便插入界面隐藏和显示的显示界面。
 
 需要一段时间来测试此页在浏览器。 首先访问页时你应看到显示接口，如图 5 中所示。 单击处理产品装运按钮。 将回发页面，你现在应该看到插入接口，如图 12 中所示。 单击任一添加中的产品装运或取消按钮返回到显示接口。
 
@@ -259,7 +259,7 @@ ms.lasthandoff: 01/24/2018
 > 批处理插入本教程中使用的逻辑包装在事务范围内的插入操作。 若要验证这一点，有意引入一个数据库级错误。 例如，这些操作都而不必分配新`ProductsRow`实例 s`CategoryID`属性中的选定值`Categories`DropDownList，分配到一个值喜欢`i * 5`。 此处`i`是循环索引器和具有介于 1 到 5 的值。 因此，当添加两个或多个产品的批处理插入的第一个产品将有一个有效`CategoryID`值 (5)，但后续产品将具有`CategoryID`达不匹配的值`CategoryID`中值`Categories`表。 净效果是，同时第一`INSERT`将成功，但后续的具有外键约束冲突将失败。 批处理插入是原子操作，因为第一个`INSERT`将被回滚，返回到之前批插入过程的状态数据库开始。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 通过这和前面的两个教程中，我们已创建接口，便于更新，删除和插入的数据的批次，它们都使用我们将添加到数据访问层中的事务支持[包装数据库修改在事务中](wrapping-database-modifications-within-a-transaction-cs.md)教程。 对于某些情况下，此类批处理处理用户界面极大地提高最终用户效率通过减少点击次数，回发和键盘鼠标上下文切换，同时还能保留基础数据的完整性。
 
@@ -269,12 +269,12 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 出于本教程已希尔顿 Giesenow 和 S ren 异世 Lauritsen 导致审阅者。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](batch-deleting-cs.md)
-[下一页](wrapping-database-modifications-within-a-transaction-vb.md)
+> [!div class="step-by-step"]
+> [上一页](batch-deleting-cs.md)
+> [下一页](wrapping-database-modifications-within-a-transaction-vb.md)

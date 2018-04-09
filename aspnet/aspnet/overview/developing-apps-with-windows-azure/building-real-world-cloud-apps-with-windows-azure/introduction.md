@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
-title: "构建真实世界云应用与 Azure |Microsoft 文档"
+title: 构建真实世界云应用与 Azure |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云解决方案中，此电子书指导你完成基于模式的方法。 模式适用于开发过程以及与..."
+description: 构建真实世界云解决方案中，此电子书指导你完成基于模式的方法。 模式适用于开发过程以及与...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 4de0b52e0b4ae7ce00e7b07bce2decfc5068964a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5a62818a2dc21128bb0a42a8b296ade460e7b060
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="building-real-world-cloud-apps-with-azure"></a>使用 Azure 构建真实世界云应用
 ====================
@@ -60,7 +60,7 @@ ms.lasthandoff: 01/24/2018
     - 保留 web 层无状态。
     - 演示： 缩放和自动缩放在 Azure App Service Web Apps 中。
     - 避免会话状态。
-    - 使用 CDN。
+    - CDN 不可用时，请使用 CDN，备用方案。
     - 使用异步编程模型。
     - 演示： 在 ASP.NET MVC 和实体框架中的异步。
 - [单一登录](single-sign-on.md)。 
@@ -158,7 +158,7 @@ ms.lasthandoff: 01/24/2018
 快速而简单分步教程演示如何在 Visual Studio 中创建 web 应用程序并将其部署到 Azure 网站，请参阅[Azure 和 ASP.NET 入门](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)。
 
 <a id="summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本简介已提供一个列表的主题将介绍书，屏幕快照的示例应用程序，并在 Azure App Service 云环境中的 Web 应用的简要概述。 开发应用和云环境中的最大好处之一是很容易地自动执行重复开发任务，如创建测试环境和部署代码到它。 如何执行该操作的使用者[下一章](automate-everything.md)。
 
@@ -177,5 +177,5 @@ ms.lasthandoff: 01/24/2018
 - [网站体系结构-使用 Stefan Schackow](https://azure.microsoft.com/documentation/videos/why-azure-web-sites-plus-architecture/)。
 - [Azure 网站与 Nir Mashkowski 的内部结构](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski)。
 
->[!div class="step-by-step"]
-[下一篇](automate-everything.md)
+> [!div class="step-by-step"]
+> [下一篇](automate-everything.md)

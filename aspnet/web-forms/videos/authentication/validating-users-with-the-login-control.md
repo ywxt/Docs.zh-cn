@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/authentication/validating-users-with-the-login-control
-title: "验证与登录控件的用户 |Microsoft 文档"
+title: 验证与登录控件的用户 |Microsoft 文档
 author: JoeStagner
-description: "在此视频中，Joe stagner 将探讨用户身份验证，而是然后创建自定义窗体并调用 API 进行身份验证使用一种替代方法..."
+description: 在此视频中，Joe stagner 将探讨用户身份验证，而是然后创建自定义窗体并调用 API 进行身份验证使用一种替代方法...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/22/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/authentication/validating-users-with-the-login-control
 msc.type: video
-ms.openlocfilehash: 1d29ff581b1ba3a6fbe34851e02132dab49dc20a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 10b692957ab2e634674df9b90dea0aad05c0a751
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-users-with-the-login-control"></a>验证与登录控件的用户
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （5 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/validating-users-with-the-login-control)
 
->[!div class="step-by-step"]
-[上一页](validating-users-manually.md)
-[下一页](adding-users-to-your-membership-system.md)
+> [!div class="step-by-step"]
+> [上一页](validating-users-manually.md)
+> [下一页](adding-users-to-your-membership-system.md)

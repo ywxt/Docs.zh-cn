@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
-title: "使用 Visual Studio 的 ASP.NET Web 部署： 命令行部署 |Microsoft 文档"
+title: 使用 Visual Studio 的 ASP.NET Web 部署： 命令行部署 |Microsoft 文档
 author: tdykstra
-description: "本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的..."
+description: 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 8446b3fc05e3ef4a5a30c753c989252fd7f1a56f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: acc4a0e7f4744a3759b90e0f1b159da68b7c7362
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-command-line-deployment"></a>使用 Visual Studio 的 ASP.NET Web 部署： 命令行部署
 ====================
@@ -45,7 +45,7 @@ ms.lasthandoff: 11/10/2017
 
 运行该项目并选择**有关**页。
 
-![有关页面](command-line-deployment/_static/image2.png)
+![“关于”页面](command-line-deployment/_static/image2.png)
 
 ## <a name="deploy-to-test-by-using-the-command-line"></a>通过使用命令行，将部署到测试
 
@@ -98,9 +98,9 @@ Visual Studio 2010 版本的版本号为 10.0。 有关详细信息，请参阅[
 
 三个发布方法支持用于命令行发布：
 
-- `MSDeploy`-通过使用 Web 部署发布。
-- `Package`通过创建 Web 部署包发布。 必须独立于创建它的 MSBuild 命令安装包。
-- `FileSystem`通过将文件复制到指定的文件夹发布。
+- `MSDeploy` -通过使用 Web 部署发布。
+- `Package` 通过创建 Web 部署包发布。 必须独立于创建它的 MSBuild 命令安装包。
+- `FileSystem` 通过将文件复制到指定的文件夹发布。
 
 ### <a name="specifying-the-build-configuration-and-platform"></a>指定生成配置和平台
 
@@ -136,7 +136,7 @@ Visual Studio 2010 版本的版本号为 10.0。 有关详细信息，请参阅[
     用于实际生产站点时，如果还没有数据库更改，你会通常将复制*应用\_offline.htm*文件之前，作为部署站点并将其删除成功部署后。
 4. 打开浏览器并转至你暂存站点的 URL，然后单击**有关**页后，可以验证部署是否成功。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 现在，你已通过使用命令行来部署应用程序更新。
 
@@ -144,6 +144,6 @@ Visual Studio 2010 版本的版本号为 10.0。 有关详细信息，请参阅[
 
 在下一步的教程中，你将看到举例说明如何扩展 web 发布管道。 该示例将演示如何部署应用程序不包括在项目文件。
 
->[!div class="step-by-step"]
-[上一页](deploying-a-database-update.md)
-[下一页](deploying-extra-files.md)
+> [!div class="step-by-step"]
+> [上一页](deploying-a-database-update.md)
+> [下一页](deploying-extra-files.md)

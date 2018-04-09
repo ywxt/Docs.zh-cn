@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
-title: "显示自定义错误页 (C#) |Microsoft 文档"
+title: 显示自定义错误页 (C#) |Microsoft 文档
 author: rick-anderson
-description: "未用户看到的内容时出现运行时错误，则 ASP.NET web 应用程序中？ 答案取决于如何网站的&lt;customErrors&gt;配置..."
+description: 未用户看到的内容时出现运行时错误，则 ASP.NET web 应用程序中？ 答案取决于如何网站的&lt;customErrors&gt;配置...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8d68dedfc1f606cc6f0381bcbdb3f65c1ea3b2e5
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: f01a0f3af3680d53639512d7a86ac1a8645d00e2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-a-custom-error-page-c"></a>显示自定义错误页 (C#)
 ====================
@@ -60,7 +60,7 @@ ms.lasthandoff: 01/30/2018
 
 另一种 YSOD 是运行时错误 YSOD，和中所示**图 2**。 运行时错误 YSOD 通知发生了运行时错误，访问者，但它不包括有关已引发的异常的任何信息。 (它，但是，提供说明如何使错误详细信息可查看通过修改`Web.config`文件，它是的作用是将查找不专业的此类 YSOD。)
 
-默认情况下，运行时错误 YSOD 显示给用户访问远程 （通过 http://www.yoursite.com)，如在浏览器的地址栏中的 URL**图 2**: `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo`。 存在两个不同的 YSOD 屏幕，因为开发人员想要了解错误详细信息，但此类信息应在实时站点上中显示，因为它可能会泄露潜在的安全漏洞或其他敏感信息到的任何用户访问你站点。
+默认情况下，运行时错误 YSOD 显示到远程访问的用户 (通过http://www.yoursite.com)，如按 URL 在浏览器的地址栏中出现**图 2**: `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo`。 存在两个不同的 YSOD 屏幕，因为开发人员想要了解错误详细信息，但此类信息应在实时站点上中显示，因为它可能会泄露潜在的安全漏洞或其他敏感信息到的任何用户访问你站点。
 
 > [!NOTE]
 > 如果你是内容的观众，并使用 DiscountASP.NET 作为你的 web 主机，你可能注意到运行时错误 YSOD 不会显示访问实时网站时。 这是因为 DiscountASP.NET 具有默认配置为显示异常详细信息 YSOD 其服务器。 好消息是，你可以通过添加来重写此默认行为`<customErrors>`部分为你`Web.config`文件。 "配置错误页显示"部分检查`<customErrors>`中详细信息部分。
@@ -89,11 +89,11 @@ ms.lasthandoff: 01/30/2018
 
 [ `<customErrors>`部分](https://msdn.microsoft.com/library/h0hfz6fc.aspx)中`Web.config`有影响显示哪些错误页的两个属性：`defaultRedirect`和`mode`。 `defaultRedirect` 属性是可选项。 如果提供，它指定自定义错误页的 URL，并指示应而不是运行时错误 YSOD 显示自定义错误页。 `mode`属性是必需的接受三个值之一： `On`， `Off`，或`RemoteOnly`。 这些值具有以下行为：
 
-- `On`-指明自定义错误页或运行时错误 YSOD 显示所有访问者，而不考虑它们是否本地或远程。
-- `Off`-指定异常详细信息 YSOD 对所有访问者，而不考虑它们是否本地或远程显示。
-- `RemoteOnly`-指示，自定义错误页或运行时错误 YSOD 显示给远程访问者，而异常详细信息 YSOD 显示供本地使用访客。
+- `On` -指明自定义错误页或运行时错误 YSOD 显示所有访问者，而不考虑它们是否本地或远程。
+- `Off` -指定异常详细信息 YSOD 对所有访问者，而不考虑它们是否本地或远程显示。
+- `RemoteOnly` -指示，自定义错误页或运行时错误 YSOD 显示给远程访问者，而异常详细信息 YSOD 显示供本地使用访客。
 
-除非另外指定，否则 ASP.NET 看起来就像你已将模式属性设置为`RemoteOnly`且具有未指定`defaultRedirect`值。 换而言之，默认行为是异常详细信息 YSOD 对本地访问者显示，而运行时错误 YSOD 显示远程访问者。 可以通过添加重写此默认行为`<customErrors>`到 web 应用程序的部分`Web.config file.`
+除非另外指定，否则 ASP.NET 看起来就像你已将模式属性设置为`RemoteOnly`且具有未指定`defaultRedirect`值。 换而言之，默认行为是异常详细信息 YSOD 对本地访问者显示，而运行时错误 YSOD 显示远程访问者。 可以通过添加重写此默认行为`<customErrors>`到 web 应用程序的部分 `Web.config file.`
 
 ## <a name="using-a-custom-error-page"></a>使用自定义错误页
 
@@ -144,7 +144,7 @@ ms.lasthandoff: 01/30/2018
 > 签出[404 错误页，一更次](http://www.smashingmagazine.com/2009/01/29/404-error-pages-one-more-time/)有关创建有效的 404 错误页的指导。
 
 
-[![](displaying-a-custom-error-page-cs/_static/image19.png)](displaying-a-custom-error-page-cs/_static/image18.png)**图 7**： 自定义 404 错误页显示比更有针对性的消息`Oops.aspx`  
+[![](displaying-a-custom-error-page-cs/_static/image19.png)](displaying-a-custom-error-page-cs/_static/image18.png)**图 7**： 自定义 404 错误页显示比更有针对性的消息 `Oops.aspx`  
  ([单击以查看实际尺寸的图像](displaying-a-custom-error-page-cs/_static/image20.png)) 
 
 因为您知道`404.aspx`仅当用户进行对找不到页的请求到达页，你可以增强了此自定义错误页，以包含功能，以帮助用户解决此指定类型的错误。 例如，您无法生成映射到正确的 Url，已知错误的 Url 的数据库表，然后让`404.aspx`运行针对查询表，建议用户可能在尝试访问的页面的自定义错误页。
@@ -153,7 +153,7 @@ ms.lasthandoff: 01/30/2018
 > 当资源由 ASP.NET 引擎处理请求时，仅显示自定义错误页。 如我们所述[核心差异之间 IIS 和 ASP.NET Development Server](core-differences-between-iis-and-the-asp-net-development-server-cs.md)教程，则 web 服务器可能会以处理特定请求本身。 默认情况下，IIS web 服务器进程请求的静态内容，例如映像和 HTML 文件而无需调用 ASP.NET 引擎。 因此，如果用户请求一个不存在的映像文件用户将会得到 IIS 的默认 404 错误消息，而不是 ASP。NET 的配置错误页。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 ASP.NET 应用程序中未经处理的异常时，向用户显示三个错误页之一： 异常详细信息黄色屏幕的死亡;运行时错误黄色屏;或自定义错误页。 显示的错误页面取决于应用程序的`<customErrors>`配置和用户是否访问本地或远程。 默认行为是以供远程访客显示异常详细信息 YSOD 供本地使用访客和运行时错误 YSOD。
 
@@ -173,6 +173,6 @@ ASP.NET 应用程序中未经处理的异常时，向用户显示三个错误页
 - [处理和引发异常](https://msdn.microsoft.com/library/5b2yeyab.aspx)
 - [正确在 ASP.NET 中使用自定义错误页](http://professionalaspnet.com/archive/2007/09/30/Properly-Using-Custom-Error-Pages-in-ASP.NET.aspx)
 
->[!div class="step-by-step"]
-[上一页](strategies-for-database-development-and-deployment-cs.md)
-[下一页](processing-unhandled-exceptions-cs.md)
+> [!div class="step-by-step"]
+> [上一页](strategies-for-database-development-and-deployment-cs.md)
+> [下一页](processing-unhandled-exceptions-cs.md)

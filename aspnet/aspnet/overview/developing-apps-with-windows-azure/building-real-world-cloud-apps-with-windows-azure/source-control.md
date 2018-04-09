@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
-title: "源代码管理 （使用 Azure 构建真实世界云应用） |Microsoft 文档"
+title: 源代码管理 （使用 Azure 构建真实世界云应用） |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以..."
+description: 构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/23/2015
 ms.topic: article
 ms.assetid: 2a0370d3-c2fb-4bf3-88b8-aad5a736c793
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: e3ce68b949199db35c18a09771d99d38562b74e9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0022458fa89a3be7ee8303750ad0e072df3b1bab
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a>源代码管理 （使用 Azure 构建真实世界云应用）
 ====================
@@ -191,7 +191,7 @@ Visual Studio 自动转移所有提交的项目文件，并将它们在列出**�
 
 这不是你可以实现敏捷的分支策略，这是当然的唯一方法。 你可以启用使用集中式的源代码控制存储库的相同 agile 工作流。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 衡量成功的源代码管理系统基于多快的速度，你可以进行更改，并获取它实时安全且可预测的方式。 如果你发现自己害怕进行更改，因为你所要做一天或两个在其上的手动测试，您可能会问自己你需要执行 process-wise 或 test-wise，以便您可以使所做的更改，以分钟为单位或在最差不再比一小时。 执行该操作的一个策略是以实现持续集成和持续交付，我们将介绍在[下一章](continuous-integration-and-continuous-delivery.md)。
 
@@ -221,6 +221,6 @@ Visual Studio 自动转移所有提交的项目文件，并将它们在列出**�
 
 若要保持出源控件的敏感信息的其他方法有关的信息，请参阅[ASP.NET MVC： 外出时的源代码管理中保留私有设置](http://typecastexception.com/post/2014/04/06/ASPNET-MVC-Keep-Private-Settings-Out-of-Source-Control.aspx)。
 
->[!div class="step-by-step"]
-[上一页](automate-everything.md)
-[下一页](continuous-integration-and-continuous-delivery.md)
+> [!div class="step-by-step"]
+> [上一页](automate-everything.md)
+> [下一页](continuous-integration-and-continuous-delivery.md)

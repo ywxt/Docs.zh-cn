@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12
-title: "部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 部署某一数据库更新-9 12 |Microsoft 文档"
+title: 部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 部署某一数据库更新-9 12 |Microsoft 文档
 author: tdykstra
-description: "这一系列的教程演示如何部署 （发布） ASP.NET web 应用程序项目，它通过使用 Visual Stu 包含 SQL Server Compact 数据库..."
+description: 这一系列的教程演示如何部署 （发布） ASP.NET web 应用程序项目，它通过使用 Visual Stu 包含 SQL Server Compact 数据库...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 44faca6ac2cdb9193f5c7f6b1d7f5a26e6e22248
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0a00f9d3ed284ebbc1d83c1b5696436e5ba00f4b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-database-update---9-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 部署某一数据库更新-9 12
 ====================
@@ -99,6 +99,6 @@ Visual Studio 将部署更新的应用程序，并浏览器打开到主页。 �
 
 现在，你已部署应用程序更新包含对测试和生产的数据库更改。 下一教程演示如何将数据库从 SQL Server Compact 迁移到 SQL Server Express 和 SQL Server。
 
->[!div class="step-by-step"]
-[上一页](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)
-[下一页](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12.md)
+> [!div class="step-by-step"]
+> [上一页](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)
+> [下一页](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12.md)

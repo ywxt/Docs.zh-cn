@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part1
-title: "ASP.NET MVC 简介 |Microsoft 文档"
+title: ASP.NET MVC 简介 |Microsoft 文档
 author: shanselman
-description: "这是初学者本教程介绍 ASP.NET MVC 的基础知识。 创建一个简单的 web 应用程序读取和写入数据库中。"
+description: 这是初学者本教程介绍 ASP.NET MVC 的基础知识。 创建一个简单的 web 应用程序读取和写入数据库中。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part1
 msc.type: authoredcontent
-ms.openlocfilehash: 08c30f4aab77bff64ed3ab874d13cc5dc863fc99
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 476d832e389b9b5a26fe2d552ca648c79b100056
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="intro-to-aspnet-mvc"></a>ASP.NET MVC 简介
 ====================
@@ -84,5 +84,5 @@ Visual Web Developer 是一个 IDE 或集成开发环境。 就像使用 Microso
 
 现成的此默认模板提供了您这两页访问和基本的登录页。 让我们更改此应用程序的工作原理，并了解得有点 ASP.NET MVC 在进程中。 关闭浏览器，并允许更改某些代码。
 
->[!div class="step-by-step"]
-[下一篇](getting-started-with-mvc-part2.md)
+> [!div class="step-by-step"]
+> [下一篇](getting-started-with-mvc-part2.md)

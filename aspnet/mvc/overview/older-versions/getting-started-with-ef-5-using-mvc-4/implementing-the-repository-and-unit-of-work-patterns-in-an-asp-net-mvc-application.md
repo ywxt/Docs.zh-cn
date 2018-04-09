@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
-title: "在 ASP.NET MVC 应用程序 (9 的 10) 中实现的存储库和单元的工作模式 |Microsoft 文档"
+title: 在 ASP.NET MVC 应用程序 (9 的 10) 中实现的存储库和单元的工作模式 |Microsoft 文档
 author: tdykstra
-description: "Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 的 ASP.NET MVC 4 应用程序..."
+description: Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 的 ASP.NET MVC 4 应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 02b1de31b9513247facc92bc6b72247865d176f9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1f870b61658686769304a7809bde62e66da3bd0c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>在 ASP.NET MVC 应用程序 (9 的 10) 中实现的存储库和单元的工作模式
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 01/24/2018
 
 [下载已完成的项目](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 2012 的 ASP.NET MVC 4 应用程序。 有关教程系列的信息，请参阅[序列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 你可以从头开始教程系列或[下载这一章的初学者项目](building-the-ef5-mvc4-chapter-downloads.md)和从这里开始。
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 2012 的 ASP.NET MVC 4 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 你可以从头开始教程系列或[下载这一章的初学者项目](building-the-ef5-mvc4-chapter-downloads.md)和从这里开始。
 > 
 > > [!NOTE] 
 > > 
@@ -35,7 +35,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="the-repository-and-unit-of-work-patterns"></a>存储库和单元的工作模式
 
-存储库和单元的工作模式旨在创建数据访问层和应用程序的业务逻辑层之间的抽象层。 实现这些模式可帮助防止你的应用程序数据存储区中的更改，而且很容易自动的单元测试驱动开发 (TDD)。
+存储库和单元的工作模式旨在创建数据访问层和应用程序的业务逻辑层之间的抽象层。 实现这些模式有助于使应用程序免受数据存储中所作更改的影响，而且有助于进行自动单元测试或测试驱动开发 (TDD)。
 
 在本教程中，你将实施每个实体类型的存储库类。 有关`Student`你将创建存储库接口和存储库类的实体类型。 当你的控制器中实例化存储库时，你将使用该接口，以便控制器将接受对任何实现存储库接口的对象的引用。 当控制器运行在 web 服务器下时，它将接收适用于实体框架的存储库。 当控制器运行下一个单元测试类时，它将接收适用于你可以轻松地操作进行测试，例如，内存中集合的方式存储数据的存储库。
 
@@ -124,7 +124,7 @@ ms.lasthandoff: 01/24/2018
 
 该代码的原始版本中`students`被类型化为`IQueryable`对象。 查询不发送到数据库中，直到它被转换为使用一种方法，如集合`ToList`，这不会出现在之前的索引视图访问学生模型。 `Where`在上面的原始代码的方法将成为`WHERE`发送到数据库的 SQL 查询中的子句。 这反过来意味着仅所选的实体由数据库。 但是，由于更改`context.Students`到`studentRepository.GetStudents()`、`students`变量后此语句是`IEnumerable`包含所有学生在数据库中的集合。 应用的最终结果`Where`方法相同，但现在在 web 服务器上而不是数据库的内存中完成工作。 对于返回大量数据的查询，这可能效率低下。
 
-> [!TIP] 
+> [!TIP]
 > 
 > **IQueryable vs。IEnumerable**
 > 
@@ -243,12 +243,12 @@ ms.lasthandoff: 01/24/2018
 
 页查找并确实执行此操作之前所做的更改，以及其他课程页也适用相同的操作方式相同。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 你现在已实现的存储库和单元的工作模式。 你为泛型存储库中的方法参数中使用 lambda 表达式。 有关如何使用与这些表达式的详细信息`IQueryable`对象，请参阅[IQueryable(T) 接口 (System.Linq)](https://msdn.microsoft.com/library/bb351562.aspx) MSDN 库中。 在下一个教程中，你将了解如何处理某些高级方案中。
 
 在找不到其他实体框架资源的链接[ASP.NET 数据访问内容映射](../../../../whitepapers/aspnet-data-access-content-map.md)。
 
->[!div class="step-by-step"]
-[上一页](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[下一页](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
+> [!div class="step-by-step"]
+> [上一页](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [下一页](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)

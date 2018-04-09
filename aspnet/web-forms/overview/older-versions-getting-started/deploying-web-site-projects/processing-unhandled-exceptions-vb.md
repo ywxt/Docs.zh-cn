@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb
-title: "处理未经处理的异常 (VB) |Microsoft 文档"
+title: 处理未经处理的异常 (VB) |Microsoft 文档
 author: rick-anderson
-description: "对 web 应用程序在生产中发生运行时错误时务必通知开发人员，并记录错误，以便它可能在诊断，a la..."
+description: 对 web 应用程序在生产中发生运行时错误时务必通知开发人员，并记录错误，以便它可能在诊断，a la...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f5bf39bc2433a2fb277cb56554ddf39bea7a9c79
-ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
+ms.openlocfilehash: cb42cf6c457cf20da7f65352bb7eed1230b59588
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="processing-unhandled-exceptions-vb"></a>处理未经处理的异常 (VB)
 ====================
@@ -145,7 +145,7 @@ ASP.NET 应用程序中未经处理的异常时，它将冒泡到 ASP.NET 运行
 
 未经处理的异常发生时现在`Application_Error`事件处理程序将控制权转交给根据 HTTP 状态代码的相应的自定义错误页。 自定义错误页由于传送控件，有权访问通过未经处理的异常信息`Server.GetLastError`和可以通知开发人员的错误和日志其详细信息。 `Server.Transfer`调用停止中将用户重定向到自定义错误页的 ASP.NET 引擎。 相反，作为对生成错误的页的响应返回自定义错误页的内容。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 ASP.NET 运行时在 ASP.NET web 应用程序中发生未经处理的异常时引发`Error`事件，并显示配置的错误页。 我们可以通知开发人员的错误，记录其详细信息，或者处理其以某种其他方式，通过创建的事件处理程序错误事件。 有两种方法创建的事件处理程序`HttpApplication`事件，如`Error`： 在`Global.asax`文件或从 HTTP 模块。 本教程介绍了如何创建`Error`中的事件处理程序`Global.asax`通过电子邮件通知的错误的开发人员的文件。
 
@@ -167,6 +167,6 @@ ASP.NET 运行时在 ASP.NET web 应用程序中发生未经处理的异常时�
 - [使用 ASP.NET`Global.asax`文件](http://articles.techrepublic.com.com/5100-10878_11-5771721.html)
 - [使用`HttpApplication`实例](https://msdn.microsoft.com/library/a0xez8f2.aspx)
 
->[!div class="step-by-step"]
-[上一页](displaying-a-custom-error-page-vb.md)
-[下一页](logging-error-details-with-asp-net-health-monitoring-vb.md)
+> [!div class="step-by-step"]
+> [上一页](displaying-a-custom-error-page-vb.md)
+> [下一页](logging-error-details-with-asp-net-health-monitoring-vb.md)

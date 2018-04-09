@@ -1,7 +1,7 @@
 ---
-title: "Microsoft 帐户外部登录设置"
+title: 使用 ASP.NET Core 的 Microsoft 帐户外部登录设置
 author: rick-anderson
-description: "本教程演示的集成到现有的 ASP.NET Core 应用程序的 Microsoft 帐户用户身份验证。"
+description: 本教程演示的集成到现有的 ASP.NET Core 应用程序的 Microsoft 帐户用户身份验证。
 manager: wpickett
 ms.author: riande
 ms.date: 08/24/2017
@@ -9,21 +9,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: d57647da978f7edaaddedba7c9f4c1de8dc07405
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: aabbbe66aee8c8b93140bcc4181b432017cec1d7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="configuring-microsoft-account-authentication"></a>配置 Microsoft 帐户身份验证
+# <a name="microsoft-account-external-login-setup-with-aspnet-core"></a>使用 ASP.NET Core 的 Microsoft 帐户外部登录设置
 
 作者：[Valeriy Novytskyy](https://github.com/01binary) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-本教程演示如何使用户可以使用示例 ASP.NET 核心 2.0 项目上创建其 Microsoft 帐户登录[上一页](index.md)。
+本教程演示如何使用户可以使用示例 ASP.NET 核心 2.0 项目上创建其 Microsoft 帐户登录[上一页](xref:security/authentication/social/index)。
 
 ## <a name="create-the-app-in-microsoft-developer-portal"></a>在 Microsoft 开发人员门户中创建应用程序
 
-* 导航到[https://apps.dev.microsoft.com](https://apps.dev.microsoft.com)和创建或登录到 Microsoft 帐户：
+* 导航到[ https://apps.dev.microsoft.com ](https://apps.dev.microsoft.com)和创建或登录到 Microsoft 帐户：
 
 ![登录对话框](index/_static/MicrosoftDevLogin.png)
 
@@ -63,7 +63,7 @@ ms.lasthandoff: 01/30/2018
 
 ![新建生成的密码对话框](index/_static/MicrosoftDevPassword.png)
 
-链接敏感设置，例如 Microsoft`Application ID`和`Password`到你应用程序配置中使用[机密 Manager](../../app-secrets.md)。 对于此教程的目的，命名为令牌`Authentication:Microsoft:ApplicationId`和`Authentication:Microsoft:Password`。
+链接敏感设置，例如 Microsoft`Application ID`和`Password`到你应用程序配置中使用[机密 Manager](xref:security/app-secrets)。 对于此教程的目的，命名为令牌`Authentication:Microsoft:ApplicationId`和`Authentication:Microsoft:Password`。
 
 ## <a name="configure-microsoft-account-authentication"></a>配置 Microsoft 帐户身份验证
 
@@ -74,8 +74,7 @@ ms.lasthandoff: 01/30/2018
 
    `dotnet add package Microsoft.AspNetCore.Authentication.MicrosoftAccount`
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 添加 Microsoft 帐户服务`ConfigureServices`中的方法*Startup.cs*文件：
 
 ```csharp
@@ -90,10 +89,9 @@ services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
 });
 ```
 
-[!INCLUDE[default settings configuration](includes/default-settings.md)]
+[!INCLUDE [default settings configuration](includes/default-settings.md)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 添加在 Microsoft 帐户中间件`Configure`中的方法*Startup.cs*文件：
 
 ```csharp
@@ -104,8 +102,7 @@ app.UseMicrosoftAccountAuthentication(new MicrosoftAccountOptions()
 });
 ```
 
----
-
+* * *
 尽管在 Microsoft 开发人员门户上使用的术语名称这些令牌`ApplicationId`和`Password`，它们作为公开`ClientId`和`ClientSecret`到配置 API。
 
 请参阅[MicrosoftAccountOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.microsoftaccountoptions)支持 Microsoft 帐户身份验证的配置选项的详细信息的 API 参考。 这可以用于请求有关用户的不同信息。
@@ -136,7 +133,7 @@ app.UseMicrosoftAccountAuthentication(new MicrosoftAccountOptions()
 
 ## <a name="next-steps"></a>后续步骤
 
-* 本文介绍了你与 Microsoft 可以进行的验证。 你可以遵循类似的方法进行身份验证使用其他提供商上列出[上一页](index.md)。
+* 本文介绍了你与 Microsoft 可以进行的验证。 你可以遵循类似的方法进行身份验证使用其他提供商上列出[上一页](xref:security/authentication/social/index)。
 
 * 一旦您的网站发布到 Azure web 应用时，你应该创建一个新`Password`Microsoft 开发人员门户中。
 

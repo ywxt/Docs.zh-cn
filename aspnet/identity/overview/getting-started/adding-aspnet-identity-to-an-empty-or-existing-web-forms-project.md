@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
-title: "添加 ASP.NET 标识设置为一个空的或现有的 Web 窗体项目 |Microsoft 文档"
+title: 添加 ASP.NET 标识设置为一个空的或现有的 Web 窗体项目 |Microsoft 文档
 author: raquelsa
-description: "本教程演示如何将 ASP.NET 标识 （ASP.NET 的新成员资格系统） 添加到 ASP.NET 应用程序。 当你创建新的 Web 窗体或 MVC..."
+description: 本教程演示如何将 ASP.NET 标识 （ASP.NET 的新成员资格系统） 添加到 ASP.NET 应用程序。 当你创建新的 Web 窗体或 MVC...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/23/2013
 ms.topic: article
 ms.assetid: 1cbc0ed2-5bd6-4b62-8d34-4c193dcd8b25
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: 3ab67b93a32106c0b79f9e8d739d47835391edb5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8961e596f0d6cc4810e2439be1ec2915bddb8c78
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-aspnet-identity-to-an-empty-or-existing-web-forms-project"></a>添加 ASP.NET 标识设置为一个空的或现有的 Web 窗体项目
 ====================
@@ -40,7 +40,7 @@ ms.lasthandoff: 01/24/2018
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image2.png)  
   
- 请注意**更改身份验证**按钮处于禁用状态和无身份验证支持提供此模板中。 Web 窗体、 MVC 和 Web API 模板允许您选择的身份验证方法。 有关详细信息，请参阅[的身份验证概述](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#auth)。
+   请注意**更改身份验证**按钮处于禁用状态和无身份验证支持提供此模板中。 Web 窗体、 MVC 和 Web API 模板允许您选择的身份验证方法。 有关详细信息，请参阅[的身份验证概述](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#auth)。
 
 ## <a name="adding-identity-packages-to-your-app"></a>将标识包添加到你的应用程序
 
@@ -56,7 +56,7 @@ ms.lasthandoff: 01/24/2018
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image4.png)
 2. 在**指定项名称**对话框中，命名新的 web 窗体**注册**，然后单击**确定**
-3. 将在生成标记*Register.aspx*文件替换为以下代码。 突出显示代码更改。   
+3. 将在生成标记*Register.aspx*文件替换为以下代码。 代码更改处已突出显示。   
 
     [!code-aspx[Main](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/samples/sample1.aspx?highlight=9,12-40)]
 
@@ -152,20 +152,20 @@ ms.lasthandoff: 01/24/2018
     > - `Page_Load`现在检查当前用户的状态并可采取措施基于其`Context.User.Identity.IsAuthenticated`状态。  
     >     **在用户名中显示已登录**： 的 Microsoft ASP.NET Identity Framework 已添加的扩展方法上, [System.Security.Principal.IIdentity](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx) ，使你能获取`UserName`和`UserId`为在已登录的用户。 这些扩展方法定义中`Microsoft.AspNet.Identity.Core`程序集。 这些扩展方法是为替换[HttpContext.User.Identity.Name](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx) 。
     > - 登录方法：   
-    >     `This`方法取代了以前`CreateUser_Click`在此示例和现在登录已成功创建用户之后用户的方法。   
+    >     `This` 方法取代了以前`CreateUser_Click`在此示例和现在登录已成功创建用户之后用户的方法。   
     >  Microsoft OWIN Framework 已添加的扩展方法上, `System.Web.HttpContext` ，你能够获取对引用`IOwinContext`。 这些扩展方法定义中`Microsoft.Owin.Host.SystemWeb`程序集。 `OwinContext`类会公开`IAuthenticationManager`表示可对当前请求的身份验证中间件功能的属性。  
     >  可以通过使用来在用户登录`AuthenticationManager`从 OWIN 和调用`SignIn`和传入`ClaimsIdentity`如上所示。   
     >  因为 ASP.NET 标识和 OWIN Cookie 身份验证是基于声明的系统，框架需要应用程序生成`ClaimsIdentity`用户。   
     >  `ClaimsIdentity`具有的用户，如用户所属的角色的所有声明的信息。 你还可以在此阶段添加用户的多个的声明  
     >  此代码将在用户登录，并生成一个 cookie 以及。 此调用是类似于[FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx)由[FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)模块。
-    > - `SignOut`方法：   
+    > - `SignOut` 方法：   
     >  获取对`AuthenticationManager`从 OWIN 和调用`SignOut`。 这是类似于[FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx)方法，由[FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)模块。
 5. 按**Ctrl + F5**生成并运行 web 应用程序。 输入新的用户名和密码，然后单击**注册**。  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image13.png)  
- 注意： 此时，新用户创建并登录。
+   注意： 此时，新用户创建并登录。
 6. 单击**注销**按钮。你将重定向到窗体中的日志。
 7. 输入无效的用户名称或密码，然后单击上**登录**按钮。   
- `UserManager.Find`方法将返回 null 和错误消息:"*无效的用户名或密码*"将显示。  
+   `UserManager.Find`方法将返回 null 和错误消息:"*无效的用户名或密码*"将显示。  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image14.png)

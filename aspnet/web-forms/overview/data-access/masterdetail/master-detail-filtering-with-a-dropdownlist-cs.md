@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-cs
-title: "使用 DropDownList (C#) 进行筛选主/详细信息 |Microsoft 文档"
+title: 使用 DropDownList (C#) 进行筛选主/详细信息 |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将了解如何在 DropDownList 控件和一个 GridView 中的选定的列表项的详细信息中显示的主记录。"
+description: 在本教程中我们将了解如何在 DropDownList 控件和一个 GridView 中的选定的列表项的详细信息中显示的主记录。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cf3058ac095bc2ed728a716e70f962e260eef5a2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 42a6a76b0b05045bed1ada227b7c32a51600b760
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-c"></a>主/从使用 DropDownList (C#) 进行筛选
 ====================
@@ -87,12 +87,12 @@ ms.lasthandoff: 01/24/2018
 **图 7**： 选择`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-cs/_static/image21.png))
 
 
-在选择此方法之后, ObjectDataSource 向导提示我们值的方法的 *`categoryID`* 参数。 若要使用的所选值`categories`DropDownList 项设置为控件和到 ControlID 参数源`Categories`。
+在选择此方法之后, ObjectDataSource 向导提示我们值的方法的*`categoryID`*参数。 若要使用的所选值`categories`DropDownList 项设置为控件和到 ControlID 参数源`Categories`。
 
 
 [![CategoryID 参数值设置为类别下拉列表](master-detail-filtering-with-a-dropdownlist-cs/_static/image23.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image22.png)
 
-**图 8**： 设置 *`categoryID`* 参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-cs/_static/image24.png))
+**图 8**： 设置*`categoryID`*参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-cs/_static/image24.png))
 
 
 需要一段时间来签出我们的浏览器中的进度。 当第一次访问该页面，这些产品属于所选类别 （如图 9 中所示），则会显示 （饮料），但更改 DropDownList 不更新的数据。 这是因为 GridView 更新必须进行回发。 为了实现此目的进行 （都不需要编写任何代码） 的两个选项：
@@ -145,11 +145,11 @@ ms.lasthandoff: 01/24/2018
 **图 13**： 显示在初始页负载否产品 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-cs/_static/image37.png))
 
 
-因为"-选择一个类别-"列表项被选中时显示任何产品的原因是因为其值是`-1`和与数据库中有任何产品`CategoryID`的`-1`。 如果这是你想要然后完此时的行为 ！ 如果，但是，你想要显示*所有*类别中的选中"-选择一个类别-"列表项时，返回到`ProductsBLL`类和自定义`GetProductsByCategoryID(categoryID)`方法，以便它时，将调用`GetProducts()`方法如果传入中 *`categoryID`* 参数小于零：
+因为"-选择一个类别-"列表项被选中时显示任何产品的原因是因为其值是`-1`和与数据库中有任何产品`CategoryID`的`-1`。 如果这是你想要然后完此时的行为 ！ 如果，但是，你想要显示*所有*类别中的选中"-选择一个类别-"列表项时，返回到`ProductsBLL`类和自定义`GetProductsByCategoryID(categoryID)`方法，以便它时，将调用`GetProducts()`方法如果传入中*`categoryID`*参数小于零：
 
 [!code-csharp[Main](master-detail-filtering-with-a-dropdownlist-cs/samples/sample2.cs)]
 
-此处使用的方法是通过类似于我们用来显示所有供应商的方法返回[声明性参数](../basic-reporting/declarative-parameters-cs.md)教程，虽然此示例中，我们将使用值为`-1`以指示应为所有记录相对于检索`null`。 这是因为 *`categoryID`* 参数`GetProductsByCategoryID(categoryID)`方法要求为整数值通过在中，而声明性的参数教程中我们已传递的字符串输入参数中。
+此处使用的方法是通过类似于我们用来显示所有供应商的方法返回[声明性参数](../basic-reporting/declarative-parameters-cs.md)教程，虽然此示例中，我们将使用值为`-1`以指示应为所有记录相对于检索`null`。 这是因为*`categoryID`*参数`GetProductsByCategoryID(categoryID)`方法要求为整数值通过在中，而声明性的参数教程中我们已传递的字符串输入参数中。
 
 图 14 显示的屏幕截图`FilterByDropDownList.aspx`如果选择"-选择一个类别-"选项。 在这里，默认情况下，将显示所有产品，用户可以通过选择特定类别，缩小显示。
 
@@ -159,7 +159,7 @@ ms.lasthandoff: 01/24/2018
 **图 14**： 所有产品都现在列出默认情况下 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-cs/_static/image40.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 显示按层次结构相关的数据时，它通常有助于呈现使用主/详细信息报表，用户可以从中启动浏览的层次结构中按自上而下的数据以及向下钻取详细信息数据。 在本教程中，我们探讨生成一个简单的主/详细信息报告，显示所选的类别的产品。 这是使用完成的 DropDownList 的类别和一个 GridView 属于所选类别的产品的列表。
 
@@ -169,7 +169,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
->[!div class="step-by-step"]
-[下一篇](master-detail-filtering-with-two-dropdownlists-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](master-detail-filtering-with-two-dropdownlists-cs.md)

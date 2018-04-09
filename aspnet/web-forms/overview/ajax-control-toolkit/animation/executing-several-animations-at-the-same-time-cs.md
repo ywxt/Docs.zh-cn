@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-at-the-same-time-cs
-title: "在同一时间 (C#) 执行几个动画 |Microsoft 文档"
+title: 在同一时间 (C#) 执行几个动画 |Microsoft 文档
 author: wenz
-description: "ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 它允许运行跌落造成的严重..."
+description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 它允许运行跌落造成的严重...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-at-the-same-time-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b7ee9c2da392bed512e259b44237e5ff997dca23
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6ecd822f7fa00a24e97b9aa14888798825624617
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="executing-several-animations-at-the-same-time-c"></a>在同一时间 (C#) 执行几个动画
 ====================
@@ -62,6 +62,6 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个�
 
 面板是淡出和调整大小 （包括其内容，浏览器的呈现引擎感谢） ([单击以查看实际尺寸的图像](executing-several-animations-at-the-same-time-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一页](adding-animation-to-a-control-cs.md)
-[下一页](executing-several-animations-after-each-other-cs.md)
+> [!div class="step-by-step"]
+> [上一页](adding-animation-to-a-control-cs.md)
+> [下一页](executing-several-animations-after-each-other-cs.md)

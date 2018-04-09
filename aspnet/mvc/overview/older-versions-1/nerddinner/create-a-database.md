@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/create-a-database
-title: "创建数据库 |Microsoft 文档"
+title: 创建数据库 |Microsoft 文档
 author: microsoft
-description: "步骤 2 显示的步骤来创建包含所有 dinner 数据库 RSVP 我们 NerdDinner 应用程序的数据。"
+description: 步骤 2 显示的步骤来创建包含所有 dinner 数据库 RSVP 我们 NerdDinner 应用程序的数据。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/create-a-database
 msc.type: authoredcontent
-ms.openlocfilehash: 7635722fc357356edd06fb4cff301a8c4dfebbef
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ba28d671bf13ec54b83b876462e2c23f90310037
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-a-database"></a>创建数据库
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -131,6 +131,6 @@ ms.lasthandoff: 11/10/2017
 
 我们已经完成了创建我们的数据库。 现在让我们创建我们可用于查询和更新它的模型类。
 
->[!div class="step-by-step"]
-[上一页](create-a-new-aspnet-mvc-project.md)
-[下一页](build-a-model-with-business-rule-validations.md)
+> [!div class="step-by-step"]
+> [上一页](create-a-new-aspnet-mvc-project.md)
+> [下一页](build-a-model-with-business-rule-validations.md)

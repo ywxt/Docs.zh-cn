@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb
-title: "实现开放式并发 (VB) |Microsoft 文档"
+title: 实现开放式并发 (VB) |Microsoft 文档
 author: rick-anderson
-description: "Web 应用程序允许多个用户编辑数据，对于没有在同一时间可能两个用户编辑相同的数据的风险。 在此 tutori..."
+description: Web 应用程序允许多个用户编辑数据，对于没有在同一时间可能两个用户编辑相同的数据的风险。 在此 tutori...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a31ce101c3264d10ec80a45718d9222fc18c093c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 056d907e80b5bdfa1848b4b31cb03702ca823583
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-optimistic-concurrency-vb"></a>实现开放式并发 (VB)
 ====================
@@ -259,8 +259,8 @@ DAL 和 BLL 完成，那么保持是创建 ASP.NET 页，可以利用内置于�
 
 还有一个不需要顺序 ObjectDataSource 正确将原始值传递给 BLL 方法进行的最后一个属性设置。 ObjectDataSource 具有[ConflictDetection 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.conflictdetection.aspx)，可分配给[两个值之一](https://msdn.microsoft.com/library/system.web.ui.conflictoptions.aspx):
 
-- `OverwriteChanges`默认值;不向这些 BLL 方法的原始输入参数中发送的原始值
-- `CompareAllValues`-未将原始值发送到 BLL 方法; 这些方法如果使用乐观并发，请选择此选项
+- `OverwriteChanges` 默认值;不向这些 BLL 方法的原始输入参数中发送的原始值
+- `CompareAllValues` -未将原始值发送到 BLL 方法; 这些方法如果使用乐观并发，请选择此选项
 
 花些时间设置`ConflictDetection`属性`CompareAllValues`。
 
@@ -417,7 +417,7 @@ DAL 和 BLL 完成，那么保持是创建 ASP.NET 页，可以利用内置于�
 **图 20**： 删除取消在遇到时并发冲突的用户 s ([单击以查看实际尺寸的图像](implementing-optimistic-concurrency-vb/_static/image58.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 允许多个，每个应用程序中存在并发冲突的机会并发用户更新或删除数据。 如果此类冲突的两个用户同时更新相同的数据在最后一个写入"wins"中获取的任何人员都，覆盖其他用户的更改的更改不计算在内。 或者，开发人员可以实现任一乐观和悲观并发控制。 乐观并发控制假定并发冲突不太频繁，以及只是不允许更新或删除命令将构成并发冲突。 保守式并发控制假定是不可接受的并发冲突频发，并且只需拒绝一个用户的更新或删除命令。 使用保守式并发控制更新记录涉及到锁定，从而阻止任何其他用户修改或删除记录锁定时的数据。
 
@@ -429,8 +429,8 @@ DAL 和 BLL 完成，那么保持是创建 ASP.NET 页，可以利用内置于�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
->[!div class="step-by-step"]
-[上一页](customizing-the-data-modification-interface-vb.md)
-[下一页](adding-client-side-confirmation-when-deleting-vb.md)
+> [!div class="step-by-step"]
+> [上一页](customizing-the-data-modification-interface-vb.md)
+> [下一页](adding-client-side-confirmation-when-deleting-vb.md)

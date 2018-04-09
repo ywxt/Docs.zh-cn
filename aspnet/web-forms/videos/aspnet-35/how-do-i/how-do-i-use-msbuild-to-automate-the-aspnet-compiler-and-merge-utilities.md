@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-35/how-do-i/how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities
-title: "[如何:]使用 MSBuild 来自动 ASP.NET 编译器和合并实用程序 |Microsoft 文档"
+title: '[如何:]使用 MSBuild 来自动 ASP.NET 编译器和合并实用程序 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 演示如何创建可以协调 ASP aspnet_compiler 和 aspnet_merge 实用程序执行的 MSBuild 项目..."
+description: 在此视频 Chris Pels 演示如何创建可以协调 ASP aspnet_compiler 和 aspnet_merge 实用程序执行的 MSBuild 项目...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/07/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities
 msc.type: video
-ms.openlocfilehash: 316703bc14b876030023ab6a5dc050ffed366838
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 50c72bfb6e9646c31b3bd99be3c0393309f2a677
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities"></a>[如何:]使用 MSBuild 来自动 ASP.NET 编译器和合并实用程序
 ====================
@@ -26,5 +26,5 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （31 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities)
 
->[!div class="step-by-step"]
-[上一篇](how-do-i-serialize-a-graph-with-the-entity-framework.md)
+> [!div class="step-by-step"]
+> [上一篇](how-do-i-serialize-a-graph-with-the-entity-framework.md)

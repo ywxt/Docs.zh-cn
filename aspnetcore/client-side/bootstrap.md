@@ -1,7 +1,7 @@
 ---
-title: "生成使用 Bootstrap 和 ASP.NET 核心美观、 响应迅速站点"
+title: 生成带有 Bootstrap 和 ASP.NET Core 美观、 响应迅速网站
 author: ardalis
-description: "了解如何开发使用 ASP.NET Core 的响应式 web 应用程序使用 Bootstrap。"
+description: 了解如何开发使用 ASP.NET Core 的响应式 web 应用程序使用 Bootstrap。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bootstrap
-ms.openlocfilehash: c3dfaa53e9e3277d025d014f65004e4c24a5acc4
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 142a997fa46f37545ea04971ab6593bff053b1ef
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="building-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>生成使用 Bootstrap 和 ASP.NET 核心美观、 响应迅速站点
+# <a name="build-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>生成带有 Bootstrap 和 ASP.NET Core 美观、 响应迅速网站
 
 <a name="bootstrap-index"></a>
 
@@ -216,6 +216,6 @@ Bootstrap 包括从 Glyphicons 图标集 ([http://glyphicons.com](http://glyphic
 
 Bootstrap 的 JavaScript 库包括对包含的组件，使您可以控制其行为以编程方式在你的应用程序的 API 支持。 此外， *bootstrap.js*包括超过 12 个自定义 jQuery 插件，提供其他功能，例如转换，模式对话框，向下滚动 （更新样式基于用户具有滚动文档中的何处） 的检测，因此，它们不会滚动出屏幕折叠到窗口的行为、 行李传送带和将附加菜单。 没有足够的空间来涵盖所有 Bootstrap – 若要了解详细信息，请访问内置的 JavaScript 外接程序[ http://getbootstrap.com/javascript/ ](http://getbootstrap.com/javascript/)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 Bootstrap 提供一个可用来快速和高效布局和样式各种网站和应用程序的 web 框架。 其基本版式和样式提供通过可以手工编写或商业上购买的自定义主题支持可以容易地操作获得愉快外观和感觉。 它支持的 web 组件在过去会要求昂贵的第三方控件，若要完成，同时支持现代和打开 web 标准的主机。

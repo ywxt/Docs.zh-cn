@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/basic-reporting/displaying-data-with-the-objectdatasource-vb
-title: "显示与对象数据源 (VB) 的数据 |Microsoft 文档"
+title: 显示与对象数据源 (VB) 的数据 |Microsoft 文档
 author: rick-anderson
-description: "本教程考察 ObjectDataSource 控件使用此控件，你可以将数据从以前的教程，而无需 havi 中创建 BLL 检索绑定..."
+description: 本教程考察 ObjectDataSource 控件使用此控件，你可以将数据从以前的教程，而无需 havi 中创建 BLL 检索绑定...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/displaying-data-with-the-objectdatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c9e40ff968f82a9d05fc9441e2399e52a6c55f51
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ec3be56e1bb4294402351ff05e9209fe97510748
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-data-with-the-objectdatasource-vb"></a>使用对象数据源 (VB) 显示数据
 ====================
@@ -244,7 +244,7 @@ FormView 将控件添加到`SimpleDisplay.aspx`页的设计图面。 最初 Form
 
 说明如何，如 FormView 只显示从 ObjectDataSource 返回第一条记录。 你可以在中启用分页 FormView，允许访问者遍历一次一个的产品。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 而无需编写一行代码感谢 ASP.NET 2.0 ObjectDataSource 控件，可以实现访问，以及如何显示从业务逻辑层的数据。 ObjectDataSource 调用指定的方法的类，并返回结果。 这些结果可以显示在数据绑定到对象数据源的 Web 控件。 在本教程中我们将讨论在将 GridView、 说明如何和 FormView 控件绑定到对象数据源。
 
@@ -265,12 +265,12 @@ FormView 将控件添加到`SimpleDisplay.aspx`页的设计图面。 最初 Form
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已希尔顿 Giesenow。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](programmatically-setting-the-objectdatasource-s-parameter-values-cs.md)
-[下一页](declarative-parameters-vb.md)
+> [!div class="step-by-step"]
+> [上一页](programmatically-setting-the-objectdatasource-s-parameter-values-cs.md)
+> [下一页](declarative-parameters-vb.md)

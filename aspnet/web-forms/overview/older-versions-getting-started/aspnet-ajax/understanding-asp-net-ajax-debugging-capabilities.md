@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
-title: "了解调试功能的 ASP.NET AJAX |Microsoft 文档"
+title: 了解调试功能的 ASP.NET AJAX |Microsoft 文档
 author: scottcate
-description: "调试代码的能力是在其集中而不管他们正在使用的技术应该具有每个开发人员技能。 许多开发人员时..."
+description: 调试代码的能力是在其集中而不管他们正在使用的技术应该具有每个开发人员技能。 许多开发人员时...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
-ms.openlocfilehash: 426d0182978faf7fc7516203fcc84ef0152790ba
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f082e2206f5e691579670e42634f30b57e3b3593
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-debugging-capabilities"></a>了解 ASP.NET AJAX 调试功能
 ====================
@@ -58,7 +58,7 @@ Dan Wahlin
 
 一旦已开启调试，你将看到新菜单项显示在视图菜单上名为脚本调试器。 在下一条语句，它具有两个选项可用包括打开，并会破坏。 当选中打开时将提示您进行调试在 Visual Studio 2008 （请注意，Visual Web Developer Express 还可用于调试） 页。 如果当前正在运行 Visual Studio.NET 可以选择使用该实例或者若要创建的新实例。 选择下一个语句处中断时系统将提示你时执行的 JavaScript 代码调试页。 如果在页的 onLoad 事件中执行的 JavaScript 代码可以刷新页后，可以触发调试会话。 如果单击的按钮后运行 JavaScript 代码则单击该按钮后立即时，调试器会运行。
 
-> *>[!NOTE]如果运行的在 Windows Vista 与用户访问控制 (UAC) 启用，并且必须设置为以管理员身份运行 Visual Studio 2008，Visual Studio 将无法附加到进程时系统会提示你附加。若要解决此问题，首先，启动 Visual Studio，并使用该实例来调试。*
+> *> [!NOTE] 如果你正在 Windows Vista 与用户访问控制 (UAC) 启用上, 运行并已设置为以管理员身份运行 Visual Studio 2008，Visual Studio 将无法附加到进程，当系统提示你附加。若要解决此问题，首先，启动 Visual Studio，并使用该实例来调试。*
 
 
 已打开的页和你想要更全面检查它时，尽管下一步部分将演示如何调试的 ASP.NET AJAX 页上直接从 Visual Studio 2008 中，使用 Internet Explorer 脚本调试器选项非常有用。
@@ -101,7 +101,7 @@ Debugger 语句命中后你将提示您调试使用 Visual Studio.NET 的页，�
 
 此对话框会显示，因为 Visual Studio.NET 不确定如何访问某些被的页引用的脚本的源代码。 虽然这可能是非常令人沮丧首先，存在是简单的修复程序。 启动调试会话并命中断点后，请转到调试 Windows 脚本资源管理器窗口上的 Visual Studio 2008 菜单或使用 Ctrl + Alt + N 热键。
 
-> *>[!NOTE]如果看不到脚本资源管理器菜单上列出，请转到工具**自定义* *Visual Studio.NET 菜单上的命令。在类别部分中找到调试条目并单击它以显示所有可用菜单项。在命令列表中，向下滚动到脚本资源管理器，然后将它拖到调试* *Windows 菜单中的前面所述。执行此操作会使脚本资源管理器菜单项可每次运行 Visual Studio.NET。*
+> *> [!NOTE] 如果看不到脚本资源管理器菜单上列出，请转到工具**自定义* *Visual Studio.NET 菜单上的命令。在类别部分中找到调试条目并单击它以显示所有可用菜单项。在命令列表中，向下滚动到脚本资源管理器，然后将它拖到调试* *Windows 菜单中的前面所述。执行此操作会使脚本资源管理器菜单项可每次运行 Visual Studio.NET。*
 
 
 脚本资源管理器可以用于查看用于页中的所有脚本和在代码编辑器中打开它们。 脚本资源管理器打开后，双击当前正在调试在代码编辑器窗口中打开它的.aspx 页。 为所有脚本资源管理器中所示的其他脚本中都执行相同操作。 一旦所有脚本处于打开代码窗口可以按 F11 （并使用其他调试热键） 逐句通过代码。 图 3 显示脚本资源管理器的示例。 它列出正在调试的当前文件 (Demo.aspx) 以及两个自定义脚本和动态由 ASP.NET AJAX ScriptManager 插入到页中的两个脚本。
@@ -116,11 +116,11 @@ Debugger 语句命中后你将提示您调试使用 Visual Studio.NET 的页，�
 
 逐句通过代码使用调试器时你可以将鼠标放在代码中以查看它们分配的值的变量。 但是，脚本调试程序有时不会显示任何内容如你将鼠标移到给定的 JavaScript 变量。 若要查看的值，突出显示的语句或你正在尝试在代码编辑器窗口中查看，然后将鼠标移到它的变量。 尽管在任何情况下，此方法不起作用，但很多时候你将能够查看而无需在不同的调试窗口，如局部变量窗口中查找的值。
 
-可以在查看演示的一些功能此处讨论的视频教程[http://www.xmlforasp.net](http://www.xmlforasp.net)。
+可以在查看演示的一些功能此处讨论的视频教程[ http://www.xmlforasp.net ](http://www.xmlforasp.net)。
 
 ## <a name="debugging-with-web-development-helper"></a>使用 Web 开发帮助程序进行调试
 
-尽管 Visual Studio 2008 （和 Visual Web Developer Express 2008） 是非常有用的调试工具，有一些其他也可用于更轻量的选项。 要释放的最新工具之一是 Web 开发帮助器。 Microsoft 的 Nikhil Kothari （一个 microsoft 密钥的 ASP.NET AJAX 架构师） 已写入该极好的工具，它可以从简单的调试查看 HTTP 请求和响应消息执行许多不同的任务。 Web 开发帮助器可以从以下网址下载[http://projects.nikhilk.net/Projects/WebDevHelper.aspx](http://projects.nikhilk.net/Projects/WebDevHelper.aspx)。
+尽管 Visual Studio 2008 （和 Visual Web Developer Express 2008） 是非常有用的调试工具，有一些其他也可用于更轻量的选项。 要释放的最新工具之一是 Web 开发帮助器。 Microsoft 的 Nikhil Kothari （一个 microsoft 密钥的 ASP.NET AJAX 架构师） 已写入该极好的工具，它可以从简单的调试查看 HTTP 请求和响应消息执行许多不同的任务。 Web 开发帮助器可以从以下网址下载[ http://projects.nikhilk.net/Projects/WebDevHelper.aspx ](http://projects.nikhilk.net/Projects/WebDevHelper.aspx)。
 
 直接在其中可以方便地使用 Internet Explorer 内，可以使用 web 开发帮助器。 它通过从 Internet 资源管理器菜单中选择工具 Web 开发帮助程序启动。 这将在浏览器是很好，因为无需离开浏览器来执行多个任务，如 HTTP 请求和响应消息日志记录的下半部分中打开该工具。 图 4 显示 Web 开发帮助程序中操作的外观。
 
@@ -201,11 +201,11 @@ HTTP 日志查看器自动分析 JSON 对象，并显示它们使用变得更加
 **图 8**： 使用 HTTP 日志查看器查看 UpdatePanel 响应消息。  ([单击以查看实际尺寸的图像](understanding-asp-net-ajax-debugging-capabilities/_static/image24.png))
 
 
-有几种可用来查看除了 Web 开发帮助器的请求和响应消息的其他工具。 另一个不错的选择是免费提供的 Fiddler [http://www.fiddlertool.com](http://www.fiddlertool.com)。尽管不将此处讨论 Fiddler，它也是一个不错的选择时需要全面检查消息标头和数据。
+有几种可用来查看除了 Web 开发帮助器的请求和响应消息的其他工具。 另一个不错的选择是免费提供的 Fiddler [ http://www.fiddlertool.com ](http://www.fiddlertool.com)。尽管不将此处讨论 Fiddler，它也是一个不错的选择时需要全面检查消息标头和数据。
 
 ## <a name="debugging-with-firefox-and-firebug"></a>使用 Firefox 和 Firebug 进行调试
 
-虽然 Internet 资源管理器仍是最广泛使用的浏览器，例如 Firefox 其他浏览器将变得非常流行，并且正在多地使用。 因此，你将想要查看和调试 ASP.NET AJAX 网页中 Firefox，以及 Internet 资源管理器以确保你的应用程序正常工作。 Firefox 不能直接与 Visual Studio 2008 以进行调试，尽管它具有调用可用于调试页的 Firebug 扩展。 可以通过转到免费下载 firebug [http://www.getfirebug.com](http://www.getfirebug.com)。
+虽然 Internet 资源管理器仍是最广泛使用的浏览器，例如 Firefox 其他浏览器将变得非常流行，并且正在多地使用。 因此，你将想要查看和调试 ASP.NET AJAX 网页中 Firefox，以及 Internet 资源管理器以确保你的应用程序正常工作。 Firefox 不能直接与 Visual Studio 2008 以进行调试，尽管它具有调用可用于调试页的 Firebug 扩展。 可以通过转到免费下载 firebug [ http://www.getfirebug.com ](http://www.getfirebug.com)。
 
 Firebug 提供了可用于单步执行代码行的行，访问在 page 中使用的所有脚本、 查看 DOM 结构，在页中显示 CSS 样式和甚至是跟踪事件发生一个全面的调试环境。 安装完成后，可以通过从 Firefox 菜单中选择工具 Firebug 打开 Firebug 访问 Firebug。 Web 开发帮助器，如 Firebug 但也可以作为独立的应用程序使用浏览器中直接使用。
 
@@ -245,9 +245,9 @@ Sys.Debug 该类会公开可用于处理跟踪、 代码断言或故障表 1 中
 
 **表 1。Sys.Debug 类函数。**
 
-| **函数名** | **描述** |
+| **函数名** | **说明** |
 | --- | --- |
-| 断言 （条件、 消息、 displayCaller） | 断言的条件参数为 true。 如果所测试的条件为 false，则将使用一个消息框来显示消息参数值。 如果 displayCaller 参数为 true，该方法还会显示有关调用方的信息。 |
+| assert(condition, message, displayCaller) | 断言的条件参数为 true。 如果所测试的条件为 false，则将使用一个消息框来显示消息参数值。 如果 displayCaller 参数为 true，该方法还会显示有关调用方的信息。 |
 | clearTrace() | 清除语句从跟踪操作的输出。 |
 | fail(message) | 会导致程序停止执行并中断调试器。 消息参数可以用于提供失败的原因。 |
 | trace(message) | 消息参数写入跟踪输出。 |
@@ -355,5 +355,5 @@ Dan Wahlin （Microsoft 最有价值专家 ASP.NET 和 XML Web 服务） 是在�
 
 Scott 类别自 1997 年以来处理与 Microsoft Web 技术，并且是 myKB.com 总裁 ([www.myKB.com](http://www.myKB.com)) 其中他专注于编写 ASP.NET 基于侧重于知识库软件解决方案的应用程序。 可以通过在电子邮件联系 Scott [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com)或在其博客地址[ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[上一篇](understanding-asp-net-ajax-web-services.md)
+> [!div class="step-by-step"]
+> [上一篇](understanding-asp-net-ajax-web-services.md)

@@ -1,7 +1,7 @@
 ---
-title: "Visual Studio 发布 ASP.NET 核心应用程序部署的配置文件"
+title: Visual Studio 发布 ASP.NET 核心应用程序部署的配置文件
 author: rick-anderson
-description: "了解如何创建 Visual Studio 中发布 ASP.NET Core 应用的配置文件。"
+description: 了解如何创建 Visual Studio 中发布 ASP.NET Core 应用的配置文件。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: d2c4ec317f235c6d042bd130dbf79f6cb5e2d47d
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 64c96f572c42c56480cfe2bd58f926d54eddf35e
+ms.sourcegitcommit: 71b93b42cbce8a9b1a12c4d88391e75a4dfb6162
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>Visual Studio 发布 ASP.NET 核心应用程序部署的配置文件
 
@@ -91,7 +91,7 @@ MSBuild 或 Visual Studio 加载项目时，执行下列高级别操作：
 * 计算要发布的文件
 * 将文件发布到目标
 
-### <a name="compute-project-items"></a>计算项目项
+## <a name="compute-project-items"></a>计算项目项
 
 加载项目时，将计算项目项（文件）。 `item type` 属性确定如何处理该文件。 默认情况下，.cs 文件包含在 `Compile` 项列表内。 会对 `Compile` 项列表中的文件进行编译。
 
@@ -109,7 +109,7 @@ MSBuild 或 Visual Studio 加载项目时，执行下列高级别操作：
 
 ## <a name="basic-command-line-publishing"></a>基本的命令行发布
 
-命令行发布适用于所有支持的.NET 核心平台，而且不需要 Visual Studio。 在下面的示例中[dotnet 发布](/dotnet/core/tools/dotnet-publish)从项目目录运行命令 (其中包含*.csproj*文件)。 如果未在项目文件夹中，显式传入的项目文件路径。 例如:
+命令行发布适用于所有支持的.NET 核心平台，而且不需要 Visual Studio。 在下面的示例中[dotnet 发布](/dotnet/core/tools/dotnet-publish)从项目目录运行命令 (其中包含*.csproj*文件)。 如果未在项目文件夹中，显式传入的项目文件路径。 例如：
 
 ```console
 dotnet publish c:/webs/web1
@@ -197,11 +197,12 @@ dotnet publish -c Release -o C:/MyWebs/test
 有关详细信息，请参阅[哪些发布选项适合我？](https://docs.microsoft.com/visualstudio/ide/not-in-toc/web-publish-options)。
 
 使用 Visual Studio 中，创建的发布配置文件时*属性/PublishProfiles/\<发布名称 >.pubxml*创建 MSBuild 文件。 此 .pubxml 文件为 MSBuild 文件，包含发布配置设置。 可以更改此文件为自定义生成和发布过程。 通过发布过程读取此文件。 `<LastUsedBuildConfiguration>` 是特殊的因为它的全局属性，且不应是在生成中导入任何文件中。 有关详细信息，请参阅 [MSBuild：如何设置配置属性](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx)。
+
 *.Pubxml*文件不应签入源控件，因为它依赖于*.user*文件。 切不可将 .user 文件签入源控件，因为它可能包含敏感信息，且仅对一个用户和一台计算机有效。
 
 敏感信息（如发布密码）在每个用户/计算机级别上加密，并存储在 Properties/PublishProfiles/\<publish name>.pubxml.user 文件中。 由于此文件可能包含敏感信息，因此，不应将其签入源控件。
 
-有关如何发布 web 应用程序在 ASP.NET Core 上的概述，请参阅[主机并将其部署](index.md)。 [承载并将其部署](index.md)是在 https://github.com/aspnet/websdk 开放源项目。
+有关如何发布 web 应用程序在 ASP.NET Core 上的概述，请参阅[主机并将其部署](index.md)。 [承载并将其部署](index.md)是在一个开放源代码项目https://github.com/aspnet/websdk。
 
 `dotnet publish` 可以使用文件夹，MSDeploy，和[KUDU](https://github.com/projectkudu/kudu/wiki)发布配置文件：
  
@@ -272,7 +273,7 @@ MSBuild file.
 </Project>
 ```
 
-请注意，`<LastUsedBuildConfiguration>` 已设置为 `Release`。 从 Visual Studio 发布时，在启动发布过程后将使用该值设置 `<LastUsedBuildConfiguration>` 配置属性值。 `<LastUsedBuildConfiguration>`配置属性是特殊，并且不应在导入的 MSBuild 文件中重写。 从命令行，可以重写此属性。 例如:
+请注意，`<LastUsedBuildConfiguration>` 已设置为 `Release`。 从 Visual Studio 发布时，在启动发布过程后将使用该值设置 `<LastUsedBuildConfiguration>` 配置属性值。 `<LastUsedBuildConfiguration>`配置属性是特殊，并且不应在导入的 MSBuild 文件中重写。 从命令行，可以重写此属性。 例如：
 
 `dotnet build -c Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile`
 
@@ -444,7 +445,7 @@ MSBuild file.
 
 请参阅 [WebSDK 自述文件](https://github.com/aspnet/websdk)，了解更多部署示例。
 
-### <a name="run-a-target-before-or-after-publishing"></a>在发布前或发布后运行目标
+## <a name="run-a-target-before-or-after-publishing"></a>在发布前或发布后运行目标
 
 内置`BeforePublish`和`AfterPublish`目标可以用于执行目标之前或之后发布目标。 可以将以下标记添加到发布配置文件中，以便在发布前后将消息记录到控制台输出：
 
@@ -457,9 +458,19 @@ MSBuild file.
 </Target>
 ```
 
+## <a name="publish-to-a-server-using-an-untrusted-certificate"></a>将发布到使用不受信任的证书的服务器
+
+添加`<AllowUntrustedCertificate>`属性值为`True`到发布配置文件：
+
+```xml
+<PropertyGroup>
+  <AllowUntrustedCertificate>True</AllowUntrustedCertificate>
+</PropertyGroup>
+```
+
 ## <a name="the-kudu-service"></a>Kudu 服务
 
-若要查看中的文件的 Azure 应用程序服务 web 应用程序部署，使用[Kudu 服务](https://github.com/projectkudu/kudu/wiki/Accessing-the-kudu-service)。 追加`scm`令牌到 web 应用的名称。 例如:
+若要查看中的文件的 Azure 应用程序服务 web 应用程序部署，使用[Kudu 服务](https://github.com/projectkudu/kudu/wiki/Accessing-the-kudu-service)。 追加`scm`令牌到 web 应用的名称。 例如：
 
 | URL                                    | 结果      |
 | -------------------------------------- | ----------- |
@@ -471,4 +482,4 @@ MSBuild file.
 ## <a name="additional-resources"></a>其他资源
 
 * [Web 部署](https://www.iis.net/downloads/microsoft/web-deploy)(MSDeploy) 简化了部署 web 应用和到 IIS 服务器的网站。
-* [https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues)：文件问题和部署的请求功能。
+* [https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues)： 文件的问题并请求适用于部署的功能。

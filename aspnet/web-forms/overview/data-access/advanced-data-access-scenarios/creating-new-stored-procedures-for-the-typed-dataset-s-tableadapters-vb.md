@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
-title: "创建新存储过程的类型化数据集的 Tableadapter (VB) |Microsoft 文档"
+title: 创建新存储过程的类型化数据集的 Tableadapter (VB) |Microsoft 文档
 author: rick-anderson
-description: "在前面的教程中，我们已经在我们的代码中创建 SQL 语句，并且传递给数据库要执行的语句。 另一种方法是使用 s..."
+description: 在前面的教程中，我们已经在我们的代码中创建 SQL 语句，并且传递给数据库要执行的语句。 另一种方法是使用 s...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/18/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b2262df1a56ffa88a22d9dc8000bd0c300fea72e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3df3623f5575a48a22fb1a2c3bc719975a80b9c6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>创建新存储过程的类型化数据集的 Tableadapter (VB)
 ====================
@@ -370,7 +370,7 @@ ObjectDataSource 向导运行完毕后，Visual Studio 将 BoundFields 和添加
 **图 24**: 产品可以查看、 编辑，且已删除从 GridView ([单击以查看实际尺寸的图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image58.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在类型化数据集 Tableadapter 可访问数据，使用临时 SQL 语句从数据库或通过存储过程。 当使用存储过程时，就可以使用任一现有的存储的过程或可指示 TableAdapter 向导来创建新存储过程基于`SELECT`查询。 在本教程中我们探讨了如何为我们自动创建的存储的过程。
 
@@ -392,12 +392,12 @@ ObjectDataSource 向导运行完毕后，Visual Studio 将 BoundFields 和添加
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已希尔顿 Geisenow。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs.md)
-[下一页](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)
+> [!div class="step-by-step"]
+> [上一页](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs.md)
+> [下一页](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)

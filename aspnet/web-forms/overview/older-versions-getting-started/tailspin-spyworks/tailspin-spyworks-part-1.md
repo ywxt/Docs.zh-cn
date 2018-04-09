@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
-title: "第 1 部分： 文件-> 新建项目 |Microsoft 文档"
+title: 第 1 部分： 文件-> 新建项目 |Microsoft 文档
 author: JoeStagner
-description: "本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 1 部分介绍概述和文件 / 新建项目。"
+description: 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 1 部分介绍概述和文件 / 新建项目。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: bd840f9f3f5d723e6bc1bb35955a7770634e9483
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a1b9681516e626b6a0eec420b168a74e05d88afb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-1-file--new-project"></a>第 1 部分： 文件-> 新建项目
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 > 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 1 部分介绍概述和文件 / 新建项目。
 
 
-## <a id="_Toc260221666"></a>概述
+## <a id="_Toc260221666"></a>  概述
 
 本教程是 ASP.NET WebForms 的简介。 我们将启动速度慢，因此初学者级别 web 开发体验没什么关系。
 
@@ -61,11 +61,11 @@ ms.lasthandoff: 11/10/2017
 
 我们将通过在 Visual Studio 2010 中，创建新的 ASP.NET WebForms 项目开始，我们将以增量方式添加功能可以创建一个完整的正常运行应用程序。 与此同时，我们将介绍数据库访问权限、 列表和网格视图、 数据更新页、 数据验证、 使用母版页提供一致的页面布局、 AJAX、 验证、 用户成员身份和的详细信息。
 
-你可以遵循步骤，也可以在下载完成的应用程序从[http://tailspinspyworks.codeplex.com/](http://tailspinspyworks.codeplex.com/)
+您可以执行步骤，或者你可以下载已完成应用程序 [http://tailspinspyworks.codeplex.com/](http://tailspinspyworks.codeplex.com/)
 
-你可以使用 Visual Studio 2010 或免费的 Visual Web Developer 2010 从[https://www.microsoft.com/express/Web/](https://www.microsoft.com/express/Web/)。 若要生成应用程序，可以使用 SQL Server 或可用 SQL Server Express 到主机数据库。
+你可以使用 Visual Studio 2010 或免费的 Visual Web Developer 2010 从[ https://www.microsoft.com/express/Web/ ](https://www.microsoft.com/express/Web/)。 若要生成应用程序，可以使用 SQL Server 或可用 SQL Server Express 到主机数据库。
 
-## <a id="_Toc260221667"></a>文件 / 新项目
+## <a id="_Toc260221667"></a>  文件 / 新项目
 
 我们将开始通过从 Visual Studio 中的文件菜单中选择新项目。 这将显示新项目对话框。
 
@@ -105,5 +105,5 @@ ms.lasthandoff: 11/10/2017
 
 在执行此我们将需要更改母版页后所有的.aspx 文件中的引用默认生成 ASP.NET WebForms 页。
 
->[!div class="step-by-step"]
-[下一篇](tailspin-spyworks-part-2.md)
+> [!div class="step-by-step"]
+> [下一篇](tailspin-spyworks-part-2.md)

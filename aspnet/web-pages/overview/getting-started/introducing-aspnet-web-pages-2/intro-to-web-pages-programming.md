@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
-title: "引入的 ASP.NET Web Pages-编程基础知识 |Microsoft 文档"
+title: 引入的 ASP.NET Web Pages-编程基础知识 |Microsoft 文档
 author: tfitzmac
-description: "本教程提供你的概述如何给程序中的 ASP.NET Web Pages 使用 Razor 语法。 你将了解： 基本 Razor 语法用于 pr..."
+description: 本教程提供你的概述如何给程序中的 ASP.NET Web Pages 使用 Razor 语法。 你将了解： 基本 Razor 语法用于 pr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/17/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 msc.type: authoredcontent
-ms.openlocfilehash: eed07f4f8a13ea9082ab3aad3e3db24febff8ef6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3e2c990a6451c13e03baafa343df156b2d46d219
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---programming-basics"></a>引入了 ASP.NET Web 页-编程基础知识
 ====================
@@ -57,7 +57,7 @@ ms.lasthandoff: 11/10/2017
 
 在功能区中，单击**新建**来创建一个页面。 选择**CSHTML**并命名新页*TestRazor.cshtml*。
 
-单击“确定”。
+单击 **“确定”**。
 
 将以下内容复制到文件中，完全替换什么已存在。
 
@@ -103,7 +103,7 @@ ms.lasthandoff: 11/10/2017
 
 - @(\*b） 呈现变量中的所有内容的产品和 b。 (\*运算符意味着乘法。)
 - @(技术 +""+ 产品) 将它们连接起来并之间添加空格之后呈现变量技术和产品中的值。 为连接字符串的运算符 （+） 是与运算符相同的给出数字相加。 ASP.NET 通常可以判断计算机是否正在与数字或字符串并执行相应的操作使用 + 运算符。
-- @Request.Url呈现请求对象的 Url 属性。 请求对象包含有关浏览器中，从当前请求的信息，这是当然的 Url 属性包含该当前请求的 URL。
+- @Request.Url 呈现请求对象的 Url 属性。 请求对象包含有关浏览器中，从当前请求的信息，这是当然的 Url 属性包含该当前请求的 URL。
 
 该示例还旨在演示你可以执行不同的方式工作。 你可以执行代码块顶部中的计算、 将结果放入变量中，和随后呈现标记中的变量。 也可以执行在标记中的表达式权限中的计算。 你使用的方法取决于你要执行的操作和，在某种程度上，在您自己的首选项。
 
@@ -165,7 +165,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](intro-to-web-pages-programming/samples/sample7.cs)]
 
-你可以通过使用测试变量对值或表达式*逻辑运算符*或*比较运算符*： 等于 （= =） 大于 (&gt;)，小于 (&lt;)，大于或等于 (&gt;=)，并且小于或等于 (&lt;=)。 ！ = 运算符表示不等于-例如，如果 (！ = 0) 意味着*如果* *是否不等于 0*。
+你可以通过使用测试变量对值或表达式<em>逻辑运算符</em>或<em>比较运算符</em>： 等于 （= =） 大于 (&gt;)，小于 (&lt;)，大于或等于 (&gt;=)，并且小于或等于 (&lt;=)。 ！ = 运算符表示不等于-例如，如果 (！ = 0) 意味着<em>如果</em> <em>是否不等于 0</em>。
 
 > [!NOTE]
 > 请确保你注意到等于 （= =） 比较运算符不是 = 的相同。 = 运算符仅用于将值分配 (var = 2)。 如果混合这些运算符，您可以将要获取错误或你将获得一些奇怪的结果。
@@ -207,7 +207,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="testing-the-value-of-a-query-string"></a>测试查询字符串的值
 
-一个多个测试。 此时，你将添加 if 测试某个值的块名为可能传递给查询字符串中的显示。 (如下所示: ' http://localhost:43097/TestRazorPart2.cshtml`?show=true`)，以便消息你已显示，将更改的页 （"这是首次..."，等等） 如果显示的值为 true，则仅显示。
+一个多个测试。 此时，你将添加 if 测试某个值的块名为可能传递给查询字符串中的显示。 (如下所示: 'http://localhost:43097/TestRazorPart2.cshtml`?show=true`)，以便消息你已显示，将更改的页 （"这是首次..."，等等） 如果显示的值为 true，则仅显示。
 
 在底部 （但内部） 在代码块中的页上，顶部添加以下代码：
 
@@ -223,7 +223,7 @@ ms.lasthandoff: 11/10/2017
 
 代码将确定 URL 是否包含名为查询字符串，如 URL 的此版本中显示的变量：
 
-`http://localhost:43097/TestRazorPart2.cshtml`？ 显示 = true
+`http://localhost:43097/TestRazorPart2.cshtml`?show=true
 
 测试本身来看待请求对象的查询字符串属性。 如果查询字符串包含项命名的显示，并且该项设置为 true，如果块运行，并将分隔开多个变量设置为 true。
 
@@ -281,7 +281,7 @@ ASP.NET Web 页具有内置的几个帮助器。 但是，使用 NuGet 包管理
 
 在本教程的此部分中，你将安装的帮助程序便可以显示 Gravatar （"全局识别虚拟形象"） 映像。 你将学习以下两项操作。 一个是如何查找和安装程序的帮助。 你还将了解如何帮助程序可以轻松地执行某些否则需要使用大量您将不得不自己编写的代码执行操作。
 
-你可以注册在 Gravatar 网站在自己 Gravatar [http://www.gravatar.com/](http://www.gravatar.com/)，但它不是创建 Gravatar 帐户执行本教程的此部分非常重要。
+你可以注册在 Gravatar 网站在自己 Gravatar [ http://www.gravatar.com/ ](http://www.gravatar.com/)，但它不是创建 Gravatar 帐户执行本教程的此部分非常重要。
 
 在 WebMatrix 中，单击**NuGet**按钮。
 
@@ -360,6 +360,6 @@ GetHtml 方法还可通过提供其他参数自定义映像。 下面的代码�
 - [使用 Razor 语法的 ASP.NET Web 编程简介](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [Twitter 帮助器](../../ui-layouts-and-themes/twitter-helper.md)
 
->[!div class="step-by-step"]
-[上一页](getting-started.md)
-[下一页](displaying-data.md)
+> [!div class="step-by-step"]
+> [上一页](getting-started.md)
+> [下一页](displaying-data.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
-title: "了解 ASP.NET AJAX UpdatePanel 触发器 |Microsoft 文档"
+title: 了解 ASP.NET AJAX UpdatePanel 触发器 |Microsoft 文档
 author: scottcate
-description: "当使用 Visual Studio 中的标记编辑器，你可能注意到 （从 IntelliSense) 有两个 UpdatePanel 控件的子元素。 疑问词之一..."
+description: 当使用 Visual Studio 中的标记编辑器，你可能注意到 （从 IntelliSense) 有两个 UpdatePanel 控件的子元素。 疑问词之一...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/12/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
 msc.type: authoredcontent
-ms.openlocfilehash: 1338ef0763d9bfab451bc30cafa39f715200153d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f30f2ead402d2f49a89b2caf47cc30b6445d4cfb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-updatepanel-triggers"></a>了解 ASP.NET AJAX UpdatePanel 触发器
 ====================
@@ -57,10 +57,10 @@ Microsoft ASP.NET 技术将的面向对象及事件驱动的编程模型，并�
 
 *标记后代：*
 
-| **标记** | **描述** |
+| **标记** | **说明** |
 | --- | --- |
-| &lt;asp: AsyncPostBackTrigger&gt; | 指定的控件和将会包含此触发器引用 UpdatePanel 导致分部页更新的事件。 |
-| &lt;asp: PostBackTrigger&gt; | 指定的控件和将导致整页更新 （完整的页面刷新） 的事件。 此标记可用于强制完全刷新时控件否则会触发部分呈现。 |
+| &lt;asp:AsyncPostBackTrigger&gt; | 指定的控件和将会包含此触发器引用 UpdatePanel 导致分部页更新的事件。 |
+| &lt;asp:PostBackTrigger&gt; | 指定的控件和将导致整页更新 （完整的页面刷新） 的事件。 此标记可用于强制完全刷新时控件否则会触发部分呈现。 |
 
 ## <a name="walkthrough-cross-updatepanel-triggers"></a>*演练： 跨 UpdatePanel 触发器*
 
@@ -141,7 +141,7 @@ Microsoft ASP.NET 技术将的面向对象及事件驱动的编程模型，并�
 
 它应被指出，但是，，具有我初始化页内的时间\_负载事件时间将具有已正确增加。 因此，开发人员应应谨慎，相应的代码运行期间相应的事件处理程序，并避免使用页\_加载时控件的事件处理程序将适用。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 ASP.NET AJAX 扩展 UpdatePanel 控件是通用的并且可以利用大量用于标识应将导致其要更新的控件事件的方法。 它支持正由子控件，自动更新，但还可以响应在其他位置的页上的控件事件。
 
@@ -151,10 +151,10 @@ ASP.NET AJAX 扩展 UpdatePanel 控件是通用的并且可以利用大量用于
 
 ## <a name="bio"></a>简介
 
-Rob Paveza 是在 Terralever 高级.NET 应用程序开发人员 ([www.terralever.com](http://www.terralever.com))，在 Tempe，AZ.前导交互式市场营销公司 他可以达到在[ robpaveza@gmail.com ](mailto:robpaveza@gmail.com)，且其博客地址位于处[http://geekswithblogs.net/robp/](http://geekswithblogs.net/robp/)。
+Rob Paveza 是在 Terralever 高级.NET 应用程序开发人员 ([www.terralever.com](http://www.terralever.com))，在 Tempe，AZ.前导交互式市场营销公司 他可以达到在[ robpaveza@gmail.com ](mailto:robpaveza@gmail.com)，且其博客地址位于处[ http://geekswithblogs.net/robp/ ](http://geekswithblogs.net/robp/)。
 
 Scott 类别自 1997 年以来处理与 Microsoft Web 技术，并且是 myKB.com 总裁 ([www.myKB.com](http://www.myKB.com)) 其中他专注于编写 ASP.NET 基于侧重于知识库软件解决方案的应用程序。 可以通过在电子邮件联系 Scott [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com)或在其博客地址[ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[上一页](understanding-partial-page-updates-with-asp-net-ajax.md)
-[下一页](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
+> [!div class="step-by-step"]
+> [上一页](understanding-partial-page-updates-with-asp-net-ajax.md)
+> [下一页](understanding-asp-net-ajax-authentication-and-profile-application-services.md)

@@ -1,7 +1,7 @@
 ---
-title: "JavaScriptServices 用于在 ASP.NET Core 中创建单页面应用程序"
+title: JavaScriptServices 用于在 ASP.NET Core 中创建单页面应用程序
 author: scottaddie
-description: "了解有关使用 JavaScriptServices 创建由 ASP.NET Core 单页面应用程序 (SPA) 的好处。"
+description: 了解有关使用 JavaScriptServices 创建由 ASP.NET Core 单页面应用程序 (SPA) 的好处。
 manager: wpickett
 ms.author: scaddie
 ms.custom: H1Hack27Feb2017
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/spa-services
-ms.openlocfilehash: c962fc160cf39ad1c69f4269616c993fde420035
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 05b0d7f31e167e620f2d168109ffd907ba120a49
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a>JavaScriptServices 用于在 ASP.NET Core 中创建单页面应用程序
 
@@ -62,7 +62,7 @@ SpaServices 提供有用的基础结构，如所示：
 
 若要使用 SpaServices，安装以下项：
 * [Node.js](https://nodejs.org/) （6 或更高版本） 与 npm
-    * 若要验证这些组件安装，并找不到，运行以下命令从命令行：
+  * 若要验证这些组件安装，并找不到，运行以下命令从命令行：
 
     ```console
     node -v && npm -v
@@ -70,8 +70,9 @@ SpaServices 提供有用的基础结构，如所示：
 
 注意： 如果你要部署到 Azure 网站，你不需要此处执行任何操作&mdash;Node.js 已安装并且可用的服务器环境中。
 
-* [.NET 核心 SDK](https://www.microsoft.com/net/download/core) 1.0 （或更高版本）
-    * 如果你在 Windows 上，这可以安装通过选择 Visual Studio 2017 **.NET 核心跨平台开发**工作负荷。
+* [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
+
+  * 如果你使用 Visual Studio 2017 在 Windows 上，通过选择安装 SDK **.NET 核心跨平台开发**工作负荷。
 
 * [Microsoft.AspNetCore.SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) NuGet 包
 

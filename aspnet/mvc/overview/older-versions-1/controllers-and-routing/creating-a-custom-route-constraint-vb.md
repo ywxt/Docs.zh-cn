@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-vb
-title: "创建自定义路由约束 (VB) |Microsoft 文档"
+title: 创建自定义路由约束 (VB) |Microsoft 文档
 author: StephenWalther
-description: "Stephen Walther 演示如何创建自定义的路由约束。 我们实现一个简单阻止路由的自定义约束匹配 w..."
+description: Stephen Walther 演示如何创建自定义的路由约束。 我们实现一个简单阻止路由的自定义约束匹配 w...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 41b04c1fea267e7ee9f8a0b1c2f0d4fe4bb96d15
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 094077fa0cb546f4cc91dbf074f8014e62b3b19c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-custom-route-constraint-vb"></a>创建自定义路由约束 (VB)
 ====================
@@ -53,5 +53,5 @@ ms.lasthandoff: 11/10/2017
 
 请注意，默认路由已被注释掉列出 2 中的 Global.asax 文件。 如果包括默认路由，默认路由将匹配的管理控制器的请求。 在这种情况下，远程用户仍可以调用的管理控制器的操作，即使它们的请求不匹配的管理路由。
 
->[!div class="step-by-step"]
-[上一篇](creating-a-route-constraint-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](creating-a-route-constraint-vb.md)

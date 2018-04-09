@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-5
-title: "第 5 部分： 编辑窗体和模板化 |Microsoft 文档"
+title: 第 5 部分： 编辑窗体和模板化 |Microsoft 文档
 author: jongalloway
-description: "本系列教程详细介绍所有生成 ASP.NET MVC 音乐商店示例应用程序所采取的步骤。 第 5 部分介绍如何编辑窗体和模板化。"
+description: 本系列教程详细介绍所有生成 ASP.NET MVC 音乐商店示例应用程序所采取的步骤。 第 5 部分介绍如何编辑窗体和模板化。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: cde6fe133291254531a797a434a4b2cdd226dd5f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d584e614b5a4124044cd9decd2272192ca164643
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-5-edit-forms-and-templating"></a>第 5 部分： 编辑窗体和模板化
 ====================
@@ -265,6 +265,6 @@ Razor 的@helper语法变得很容易在您的视图中创建您自己使用的�
 注意： 这将显示简单的情况下的创建和使用程序的帮助程序在一个视图中。 若要了解有关创建可以在整个站点使用的帮助器的详细信息，请参阅我的博客文章： [http://bit.ly/mvc3-helper-options](http://bit.ly/mvc3-helper-options)
 
 
->[!div class="step-by-step"]
-[上一页](mvc-music-store-part-4.md)
-[下一页](mvc-music-store-part-6.md)
+> [!div class="step-by-step"]
+> [上一页](mvc-music-store-part-4.md)
+> [下一页](mvc-music-store-part-6.md)

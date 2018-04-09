@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
-title: "迭代 6 – 使用测试驱动开发 (C#) |Microsoft 文档"
+title: 迭代 6 – 使用测试驱动开发 (C#) |Microsoft 文档
 author: microsoft
-description: "在此第六个迭代中，我们将添加新功能到我们的应用程序通过首先编写单元测试和针对单元测试编写代码。 此迭代中..."
+description: 在此第六个迭代中，我们将添加新功能到我们的应用程序通过首先编写单元测试和针对单元测试编写代码。 此迭代中...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 85426a7d4024b779848c3ffd05f2ab306152000c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 94502625f66d3eb08a24b8f2a369bf456a3367b1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-6--use-test-driven-development-c"></a>迭代 6 – 使用测试驱动开发 (C#)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载代码](iteration-6-use-test-driven-development-cs/_static/contactmanager_6_cs1.zip)
 
@@ -123,7 +123,7 @@ ms.lasthandoff: 11/10/2017
 
 我们第一个单元测试包含在清单 1。 此测试验证组控制器的 index （） 方法返回一组的组。 测试将验证的组的集合视图中返回数据。
 
-**列表 1-Controllers\GroupControllerTest.cs**
+**Listing 1 - Controllers\GroupControllerTest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample1.cs)]
 
@@ -133,18 +133,18 @@ ms.lasthandoff: 11/10/2017
 
 列出 2 中的组控制器类包含需通过单元测试的代码的最低要求。 Index （） 操作返回组 （组类定义中列出的 3） 的静态编码的的列表。
 
-**列出 2-Controllers\GroupController.cs**
+**Listing 2 - Controllers\GroupController.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample2.cs)]
 
-**列出 3-Models\Group.cs**
+**Listing 3 - Models\Group.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample3.cs)]
 
 我们将 GroupController 和组类添加到我们的项目之后，我们第一个单元测试成功完成 （请参见图 2）。 我们已完成通过的测试所需的最小工作量。 是时候纸婚。
 
 
-[![成功 ！](iteration-6-use-test-driven-development-cs/_static/image2.jpg)](iteration-6-use-test-driven-development-cs/_static/image3.png)
+[![Success!](iteration-6-use-test-driven-development-cs/_static/image2.jpg)](iteration-6-use-test-driven-development-cs/_static/image3.png)
 
 **图 02**： 成功 ！ ([单击以查看实际尺寸的图像](iteration-6-use-test-driven-development-cs/_static/image4.png))
 
@@ -155,7 +155,7 @@ ms.lasthandoff: 11/10/2017
 
 列出 4 中的测试验证调用 create （） 方法与新的组将组添加到组 index （） 方法返回的列表。 换而言之，如果我创建一个新组然后我应能够新组取回从 index （） 方法返回的组的列表。
 
-**列出 4-Controllers\GroupControllerTest.cs**
+**Listing 4 - Controllers\GroupControllerTest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample4.cs)]
 
@@ -177,17 +177,17 @@ ms.lasthandoff: 11/10/2017
 
 列出 6 包含新的测试表明此目的。 此测试验证尝试未提供的验证错误消息模型状态中的名称结果情况下创建组。
 
-**列出 6-Controllers\GroupControllerTest.cs**
+**Listing 6 - Controllers\GroupControllerTest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample6.cs)]
 
 为了满足此测试，我们需要添加到组类 （请参阅列出 7） 的名称属性。 此外，我们需要将一小段验证逻辑添加到我们组控制器 s create （） 操作 （请参阅列出 8）。
 
-**列出 7-Models\Group.cs**
+**Listing 7 - Models\Group.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample7.cs)]
 
-**列出 8-Controllers\GroupController.cs**
+**Listing 8 - Controllers\GroupController.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample8.cs)]
 
@@ -211,11 +211,11 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample9.cs)]
 
-**列出 10-Controllers\ContactManagerService.cs**
+**Listing 10 - Controllers\ContactManagerService.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample10.cs)]
 
-**列出 11-Controllers\FakeContactManagerRepository.cs**
+**Listing 11 - Controllers\FakeContactManagerRepository.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample11.cs)]
 
@@ -226,7 +226,7 @@ ms.lasthandoff: 11/10/2017
 
 最后，我们的应用程序的设计这些更改要求我们使到我们的单元测试中的一些修改。 现在，我们需要执行单元测试时使用 FakeContactManagerRepository。 更新后的 GroupControllerTest 类包含在列出 12。
 
-**列出 12-Controllers\GroupControllerTest.cs**
+**Listing 12 - Controllers\GroupControllerTest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample13.cs)]
 
@@ -351,7 +351,7 @@ ASP.NET MVC 应用程序时使用的默认 ASP.NET 视图引擎。 因此，don 
 **图 08**: 联系人索引视图 ([单击以查看实际尺寸的图像](iteration-6-use-test-driven-development-cs/_static/image16.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在此迭代中，我们添加新功能到我们的联系人管理器应用程序按照测试驱动开发应用程序设计方法。 通过创建一组用户情景，我们已开始。 我们创建一组单元测试，对应于表达用户情景的需求。 最后，我们已写入刚好足够的代码，以满足要求的单元测试来表示。
 
@@ -359,6 +359,6 @@ ASP.NET MVC 应用程序时使用的默认 ASP.NET 视图引擎。 因此，don 
 
 在下一次迭代-最后一个迭代-我们重写应用程序以充分利用 Ajax。 通过利用 Ajax，我们将提高响应能力和联系人管理器应用程序的性能。
 
->[!div class="step-by-step"]
-[上一页](iteration-5-create-unit-tests-cs.md)
-[下一页](iteration-7-add-ajax-functionality-cs.md)
+> [!div class="step-by-step"]
+> [上一页](iteration-5-create-unit-tests-cs.md)
+> [下一页](iteration-7-add-ajax-functionality-cs.md)

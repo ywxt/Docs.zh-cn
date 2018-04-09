@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-cs
-title: "自定义格式设置取决于数据 (C#) |Microsoft 文档"
+title: 自定义格式设置取决于数据 (C#) |Microsoft 文档
 author: rick-anderson
-description: "调整 GridView，说明如何或 FormView 取决于绑定到它的数据的格式可以采用多种方式来完成。 在本教程中我们将 l..."
+description: 调整 GridView，说明如何或 FormView 取决于绑定到它的数据的格式可以采用多种方式来完成。 在本教程中我们将 l...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 606721b01fae34a7bce85d497a442cb110f1b51e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 31cf628baf2250c2e7e71ab38cd64b218dc927e7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="custom-formatting-based-upon-data-c"></a>自定义格式设置取决于数据 (C#)
 ====================
@@ -217,19 +217,19 @@ FormView 不包含任何 BoundFields 并因此缺少`Rows`集合。 相反，For
 
 在步骤的 2 GridView 枚举数据源，并为每个记录，创建`GridViewRow`实例并将当前记录绑定到它。 每个`GridViewRow`添加到 GridView，会引发两个事件：
 
-- **`RowCreated`**之后，将引发`GridViewRow`已创建
-- **`RowDataBound`**当前记录已绑定到之后激发`GridViewRow`。
+- **`RowCreated`** 之后，将引发`GridViewRow`已创建
+- **`RowDataBound`** 当前记录已绑定到之后激发`GridViewRow`。
 
 为 GridView，然后，数据绑定是更准确地由以下序列描述的步骤：
 
 1. GridView`DataBinding`事件激发。
 2. 将数据绑定到 GridView。   
   
- 为数据源中的每个记录 
+   为数据源中的每个记录 
 
     1. 创建`GridViewRow`对象
     2. 激发`RowCreated`事件
-    3. 将绑定到记录`GridViewRow`
+    3. 将绑定到记录 `GridViewRow`
     4. 激发`RowDataBound`事件
     5. 添加`GridViewRow`到`Rows`集合
 3. GridView`DataBound`事件激发。
@@ -275,12 +275,12 @@ FormView 不包含任何 BoundFields 并因此缺少`Rows`集合。 相反，For
 
 使用时`RowDataBound`务必要记住 GridView 组成的行的不同类型，此事件针对激发的事件处理程序*所有*行类型。 A`GridViewRow`的类型可以由其`RowType`属性，并且可以具有可能的值之一：
 
-- `DataRow`从 GridView 的绑定到一个记录行`DataSource`
-- `EmptyDataRow`如果显示的行 GridView`DataSource`为空
-- `Footer`页脚行中;显示的如果 GridView`ShowFooter`属性设置为`true`
-- `Header`标头行中;显示是否 GridView ShowHeader 属性设置为`true`（默认值）
-- `Pager`GridView 的中，来实现分页，将显示分页接口的行
-- `Separator`不用于 GridView，但使用`RowType`DataList 和转发器的属性控制，两个数据，我们将讨论在将来教程的 Web 控件
+- `DataRow` 从 GridView 的绑定到一个记录行 `DataSource`
+- `EmptyDataRow` 如果显示的行 GridView`DataSource`为空
+- `Footer` 页脚行中;显示的如果 GridView`ShowFooter`属性设置为 `true`
+- `Header` 标头行中;显示是否 GridView ShowHeader 属性设置为`true`（默认值）
+- `Pager` GridView 的中，来实现分页，将显示分页接口的行
+- `Separator` 不用于 GridView，但使用`RowType`DataList 和转发器的属性控制，两个数据，我们将讨论在将来教程的 Web 控件
 
 由于`EmptyDataRow`， `Header`， `Footer`，和`Pager`行不与关联`DataSource`记录，它们将始终具有`null`值，则为其`DataItem`属性。 出于此原因，然后再尝试处理当前`GridViewRow`的`DataItem`属性，我们首先必须确保我们正在处理与`DataRow`。 这可以通过检查来实现`GridViewRow`的`RowType`属性如下所示：
 
@@ -307,7 +307,7 @@ FormView 不包含任何 BoundFields 并因此缺少`Rows`集合。 相反，For
 **图 11**： 最经济的产品是突出显示黄色 ([单击以查看实际尺寸的图像](custom-formatting-based-upon-data-cs/_static/image27.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中我们已了解如何设置 GridView，说明如何和 FormView 在基于绑定到控件的数据的格式。 若要完成此我们创建的事件处理程序`DataBound`或`RowDataBound`事件，如果需要格式设置的更改，以及检查基础数据已其中。 若要访问的数据绑定到一个说明如何或 FormView，我们使用`DataItem`中的属性`DataBound`事件处理程序; 对于一个 GridView，每个`GridViewRow`实例的`DataItem`属性包含绑定到该行，即在中可用的数据`RowDataBound`事件处理程序。
 
@@ -319,11 +319,11 @@ FormView 不包含任何 BoundFields 并因此缺少`Rows`集合。 相反，For
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 E.R. Gilmore，Dennis Patterson 和 Dan Jagers。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[下一篇](using-templatefields-in-the-gridview-control-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](using-templatefields-in-the-gridview-control-cs.md)

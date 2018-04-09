@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-vb
-title: "迭代 #4 – 使松耦合的应用程序 (VB) |Microsoft 文档"
+title: '迭代 #4 – 使松耦合的应用程序 (VB) |Microsoft 文档'
 author: microsoft
-description: "在此第三个迭代中，我们利用多个软件设计模式以使其更轻松地监视和修改联系人管理器应用程序。 预测..."
+description: 在此第三个迭代中，我们利用多个软件设计模式以使其更轻松地监视和修改联系人管理器应用程序。 预测...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9c11c89710723c133a306aaf56cc8797cc036475
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d953a1b786c802c070619e553e27d88f2ded149c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-vb"></a>迭代 #4 – 使松耦合的应用程序 (VB)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载代码](iteration-4-make-the-application-loosely-coupled-vb/_static/contactmanager_4_vb1.zip)
 
@@ -82,13 +82,13 @@ ms.lasthandoff: 11/10/2017
 
 首先，我们需要创建一个描述所有我们需要执行的数据访问方法的接口。 IContactManagerRepository 接口包含在清单 1。 此接口描述五个方法： CreateContact()、 DeleteContact()、 EditContact()、 GetContact 和 ListContacts()。
 
-**列表 1-Models\IContactManagerRepository.vb**
+**Listing 1 - Models\IContactManagerRepository.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample1.vb)]
 
 接下来，我们需要创建一个实现 IContactManagerRepository 接口的具体类。 由于我们使用 Microsoft 实体框架来访问数据库，我们将创建一个名为 EntityContactManagerRepository 的新类。 此类包含在清单 2。
 
-**列出 2-Models\EntityContactManagerRepository.vb**
+**Listing 2 - Models\EntityContactManagerRepository.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample2.vb)]
 
@@ -115,7 +115,7 @@ ms.lasthandoff: 11/10/2017
 
 修改后的联系人控制器包含在清单 3。
 
-**列出 3-Controllers\ContactController.vb**
+**Listing 3 - Controllers\ContactController.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample3.vb)]
 
@@ -140,7 +140,7 @@ ms.lasthandoff: 11/10/2017
 
 ContactManagerService 包含在清单 4。 它包含验证逻辑，从联系人控制器类。
 
-**列出 4-Models\ContactManagerService.vb**
+**Listing 4 - Models\ContactManagerService.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample4.vb)]
 
@@ -150,13 +150,13 @@ ContactManagerService 包含在清单 4。 它包含验证逻辑，从联系人�
 
 IContactManagerService 接口包含在列出 5。
 
-**列出 5-Models\IContactManagerService.vb**
+**Listing 5 - Models\IContactManagerService.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample5.vb)]
 
 修改的联系人控制器类包含在列出 6。 请注意联系人控制器不再与 ContactManager 存储库交互。 相反，请与控制器与 ContactManager 服务交互。 每一层隔离尽可能多地从其他层。
 
-**列出 6-Controllers\ContactController.vb**
+**Listing 6 - Controllers\ContactController.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample6.vb)]
 
@@ -172,11 +172,11 @@ IContactManagerService 接口包含在列出 5。
 
 修饰器模式，可将现有类包装在新类，以便实现接口。 我们的联系人管理器项目包括列出 7 中包含的 ModelStateWrapper 类。 在列出 8，ModelStateWrapper 类实现的接口。
 
-**列出 7-Models\Validation\ModelStateWrapper.vb**
+**Listing 7 - Models\Validation\ModelStateWrapper.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample7.vb)]
 
-**列出 8-Models\Validation\IValidationDictionary.vb**
+**Listing 8 - Models\Validation\IValidationDictionary.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample8.vb)]
 
@@ -184,7 +184,7 @@ IContactManagerService 接口包含在列出 5。
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample9.vb)]
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在此迭代中，我们未向联系人管理器应用程序添加任何新功能。 此迭代的目标是重构以便更轻松地监视和修改联系人管理器应用程序。
 
@@ -196,6 +196,6 @@ IContactManagerService 接口包含在列出 5。
 
 最后，我们所花费的名为依赖关系注入模式软件设计模式的优点。 此模式可让我们来针对而不是具体的类接口 （抽象） 进行编程。 实现依赖关系注入设计模式还使我们的代码更可测试。 在下一步的迭代中，我们将单元测试添加到我们的项目。
 
->[!div class="step-by-step"]
-[上一页](iteration-3-add-form-validation-vb.md)
-[下一页](iteration-5-create-unit-tests-vb.md)
+> [!div class="step-by-step"]
+> [上一页](iteration-3-add-form-validation-vb.md)
+> [下一页](iteration-5-create-unit-tests-vb.md)

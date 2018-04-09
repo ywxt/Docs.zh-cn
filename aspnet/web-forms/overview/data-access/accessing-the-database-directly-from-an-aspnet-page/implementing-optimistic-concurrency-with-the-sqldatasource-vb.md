@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-vb
-title: "实现开放式并发使用 SqlDataSource (VB) |Microsoft 文档"
+title: 实现开放式并发使用 SqlDataSource (VB) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将查看的乐观并发控制 essentials，然后研究一下如何实现使用 SqlDataSource 控件。"
+description: 在本教程中我们将查看的乐观并发控制 essentials，然后研究一下如何实现使用 SqlDataSource 控件。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 974ea50a0d12aae09107470815214b20068ea553
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6e7e81b3f3a54596c033caa2cf75e5e3ec01764c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-optimistic-concurrency-with-the-sqldatasource-vb"></a>使用 SqlDataSource (VB) 实现开放式并发
 ====================
@@ -116,7 +116,7 @@ Web 应用程序允许多个并发用户编辑或删除相同的数据，存在�
 
 除了补充`WHERE`子句`UpdateCommand`和`DeleteCommand`属性 （和相应的参数集合中添加其他参数），选择使用乐观并发选项调整其他两个属性：
 
-- 更改[`ConflictDetection`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx)从`OverwriteChanges`（默认值） 到`CompareAllValues`
+- 更改[`ConflictDetection`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx)从`OverwriteChanges`（默认值） 到 `CompareAllValues`
 - 更改[`OldValuesParameterFormatString`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.oldvaluesparameterformatstring.aspx)介于 {0} （默认值） 和原始\_{0}。
 
 Web 控件的数据时调用 SqlDataSource s`Update()`或`Delete()`方法，它将传递的原始值。 如果 SqlDataSource s`ConflictDetection`属性设置为`CompareAllValues`，这些原始值添加到该命令。 `OldValuesParameterFormatString`属性提供了用于这些原始值参数的命名模式。 配置数据源向导使用原始\_{0} 并将其命名中的每个原始参数`UpdateCommand`和`DeleteCommand`属性和`UpdateParameters`和`DeleteParameters`集合相应地。
@@ -221,7 +221,7 @@ Web 控件的数据时调用 SqlDataSource s`Update()`或`Delete()`方法，它�
 **图 9**: 消息显示在遇到时并发冲突 ([单击以查看实际尺寸的图像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image16.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 创建 web 应用程序时其中多个并发用户可以编辑相同的数据，务必要考虑并发控制选项。 默认情况下，Web 控件的 ASP.NET 数据和数据源控件不采用任何并发控制。 正如我们看到在本教程中，实现乐观并发控制使用 SqlDataSource 是相对快速而简单。 SqlDataSource 处理大部分先为你添加扩充`WHERE`到自动生成的子句`UPDATE`和`DELETE`但没有语句是在处理中的一些细微部分`NULL`值列中所述正确处理`NULL`值部分。
 
@@ -231,7 +231,7 @@ Web 控件的数据时调用 SqlDataSource s`Update()`或`Delete()`方法，它�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
->[!div class="step-by-step"]
-[上一篇](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)

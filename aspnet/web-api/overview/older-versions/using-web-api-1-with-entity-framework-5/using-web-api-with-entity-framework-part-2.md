@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2
-title: "第 2 部分： 创建域模型 |Microsoft 文档"
+title: 第 2 部分： 创建域模型 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/03/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: a573b47d27767dc78d557cd2b6c73714eb9e94f4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 84631494c1be266c21e5e5702182df717b1d29b0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-2-creating-the-domain-models"></a>第 2 部分： 创建域模型
 ====================
@@ -39,7 +39,7 @@ ms.lasthandoff: 01/24/2018
 我们将创建以下 POCOs:
 
 - 产品
-- 订单
+- 顺序
 - OrderDetail
 
 若要创建每个类，右键单击解决方案资源管理器中的 Models 文件夹。 从上下文菜单中，选择**添加**，然后选择**类。**
@@ -84,6 +84,6 @@ A[媒体类型格式化程序](../../formats-and-model-binding/media-formatters.
 
 此代码会设置 JSON 格式化程序来保留对象引用，并从管道中完全移除 XML 格式化程序。 （你可以配置 XML 格式化程序来保留对象引用，但该稍有更多工作，并且我们只需要为此应用程序的 JSON。 有关详细信息，请参阅[处理循环对象引用](../../formats-and-model-binding/json-and-xml-serialization.md#handling_circular_object_references)。)
 
->[!div class="step-by-step"]
-[上一页](using-web-api-with-entity-framework-part-1.md)
-[下一页](using-web-api-with-entity-framework-part-3.md)
+> [!div class="step-by-step"]
+> [上一页](using-web-api-with-entity-framework-part-1.md)
+> [下一页](using-web-api-with-entity-framework-part-3.md)

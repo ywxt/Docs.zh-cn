@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12
-title: "部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 部署 SQL Server 数据库更新-11 12 |Microsoft 文档"
+title: 部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 部署 SQL Server 数据库更新-11 12 |Microsoft 文档
 author: tdykstra
-description: "这一系列的教程演示如何部署 （发布） ASP.NET web 应用程序项目，它通过使用 Visual Stu 包含 SQL Server Compact 数据库..."
+description: 这一系列的教程演示如何部署 （发布） ASP.NET web 应用程序项目，它通过使用 Visual Stu 包含 SQL Server Compact 数据库...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: aeec69c7373a111d30e8f32a374a9f02fb4c080a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d8cc072c631900937f31c8f2637869b53d46cf54
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-sql-server-database-update---11-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 部署 SQL Server 数据库更新-11 12
 ====================
@@ -173,6 +173,6 @@ Code First 迁移更新数据库相同的方式在测试环境中做过它。 �
 - [Srđan Božović、 塞尔维亚共和国](http://msforge.net/blogs/zmajcek/)
 - [Vishal Joshi、 Microsoft](http://vishaljoshi.blogspot.com/) (twitter: [ @vishalrjoshi ](http://twitter.com/vishalrjoshi))
 
->[!div class="step-by-step"]
-[上一页](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12.md)
-[下一页](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md)
+> [!div class="step-by-step"]
+> [上一页](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12.md)
+> [下一页](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md)

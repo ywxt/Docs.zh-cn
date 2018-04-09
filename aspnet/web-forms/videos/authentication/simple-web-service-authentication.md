@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/authentication/simple-web-service-authentication
-title: "简单的 Web 服务身份验证 |Microsoft 文档"
+title: 简单的 Web 服务身份验证 |Microsoft 文档
 author: JoeStagner
-description: "在此视频中，Joe stagner 将演示不同的机制，可以添加到 ASP.NET 应用程序来限制对 ASMX web 服务进行未经授权的访问..."
+description: 在此视频中，Joe stagner 将演示不同的机制，可以添加到 ASP.NET 应用程序来限制对 ASMX web 服务进行未经授权的访问...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/16/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/authentication/simple-web-service-authentication
 msc.type: video
-ms.openlocfilehash: fe481e9d9331a73f545ed695a7250e7c3867846b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5b6f9f91ba2d67fe7afd9c171ceec62e1acc509c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="simple-web-service-authentication"></a>简单的 Web 服务身份验证
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （54 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/simple-web-service-authentication)
 
->[!div class="step-by-step"]
-[上一页](implement-the-registration-verification-pattern.md)
-[下一页](creating-inactive-users.md)
+> [!div class="step-by-step"]
+> [上一页](implement-the-registration-verification-pattern.md)
+> [下一页](creating-inactive-users.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
-title: "使用 Visual Studio 的 ASP.NET Web 部署： 将部署到生产 |Microsoft 文档"
+title: 使用 Visual Studio 的 ASP.NET Web 部署： 将部署到生产 |Microsoft 文档
 author: tdykstra
-description: "本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的..."
+description: 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: abd3f3f78dd9a9e6394e2f61aa9bd692810ca875
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f3b3898bd003ace100ba05619f2c45ca808462df
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>使用 Visual Studio 的 ASP.NET Web 部署： 将部署到生产
 ====================
@@ -144,10 +144,10 @@ ms.lasthandoff: 01/24/2018
 9. 1. 选择**更新数据库**。
 
         **远程连接字符串**直接下面框**DefaultConnection**使用.publishsettings 文件中的连接字符串填充。连接字符串包含纯文本中存储的 SQL Server 凭据*.pubxml*文件。 如果你不想将其存储在永久，可以部署数据库后，则会删除它们从发布配置文件，并将它们存储在 Azure 中。 有关详细信息，请参阅[如何保护你的 ASP.NET 数据库连接字符串从源部署到 Azure 时](http://www.hanselman.com/blog/HowToKeepYourASPNETDatabaseConnectionStringsSecureWhenDeployingToAzureFromSource.aspx)Scott Hanselman 的博客上。
-    2. 单击**配置数据库更新**。
-    3. 在**配置数据库更新**对话框中，单击**添加 SQL 脚本**。
-    4. 在**添加 SQL 脚本**框中，导航到*aspnet 数据 prod.sql*脚本，你前面保存在解决方案文件夹中，然后单击**打开**。
-    5. 关闭**配置数据库更新**对话框。
+      2. 单击**配置数据库更新**。
+      3. 在**配置数据库更新**对话框中，单击**添加 SQL 脚本**。
+      4. 在**添加 SQL 脚本**框中，导航到*aspnet 数据 prod.sql*脚本，你前面保存在解决方案文件夹中，然后单击**打开**。
+      5. 关闭**配置数据库更新**对话框。
 10. 下**SchoolContext**中**数据库**部分中，选择**执行 Code First 迁移 （应用程序启动时运行）**。
 
     Visual Studio 将显示**执行 Code First 迁移**而不是**更新数据库**为`DbContext`类。 如果你想要使用 dbDacFx 提供程序而不是迁移部署的数据库，你通过使用访问`DbContext`类，请参阅[如何部署没有迁移的 Code First 数据库？](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) Visual Studio Web 部署常见问题中和 MSDN 上的 ASP.NET。
@@ -286,7 +286,7 @@ A *.pubxml*文件包含适用于特定的发布配置文件的设置。 如果�
 
     所有内容等同于过渡 URL 除外和没有*robots.txt*文件。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 你现在已成功部署和测试你的 web 应用并可公开通过 Internet。
 
@@ -296,11 +296,11 @@ A *.pubxml*文件包含适用于特定的发布配置文件的设置。 如果�
 
 > [!NOTE]
 > 在生产环境中使用你的应用程序时你应实现恢复计划。 也就是说，你应将定期备份你的数据库从生产应用到安全存储位置，并您应保留多个代这样的备份。 在更新数据库时，你应在更改之前立即从的备份副本。 然后，如果犯错，进而不发现它之前，部署到生产环境之后，你仍将能够将数据库恢复到它损坏之前的状态。 有关详细信息，请参阅[Azure SQL Database 备份和还原](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx)。
-
-
+> 
+> 
 > [!NOTE]
 > 在本教程中 SQL Server 部署到的版本是 Azure SQL 数据库。 类似于其他版本的 SQL Server 部署过程时，实际生产应用程序可能在某些情况下为 Azure SQL 数据库需要特殊的代码。 有关详细信息，请参阅[使用 Azure SQL 数据库](../../../../whitepapers/aspnet-data-access-content-map.md#ssdb)和[SQL Server 和 Azure SQL 数据库之间进行选择](../../../../whitepapers/aspnet-data-access-content-map.md#ssdbchoosing)。
-
->[!div class="step-by-step"]
-[上一页](setting-folder-permissions.md)
-[下一页](deploying-a-code-update.md)
+> 
+> [!div class="step-by-step"]
+> [上一页](setting-folder-permissions.md)
+> [下一页](deploying-a-code-update.md)

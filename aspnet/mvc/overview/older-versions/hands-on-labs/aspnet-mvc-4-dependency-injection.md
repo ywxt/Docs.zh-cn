@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
-title: "ASP.NET MVC 4 依赖关系注入 |Microsoft 文档"
+title: ASP.NET MVC 4 依赖关系注入 |Microsoft 文档
 author: rick-anderson
-description: "注意： 此动手实验假定你具有的 ASP.NET MVC 和 ASP.NET MVC 4 的筛选器的基本知识。 如果你没有使用 ASP.NET MVC 4 筛选器之前，我们建议..."
+description: 注意： 此动手实验假定你具有的 ASP.NET MVC 和 ASP.NET MVC 4 的筛选器的基本知识。 如果你没有使用 ASP.NET MVC 4 筛选器之前，我们建议...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: c735bbdafe4b8f0423abb6bacd076f173a1be9d8
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e6c24d03039f0e6005948a73348589627c9df2df
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-mvc-4-dependency-injection"></a>ASP.NET MVC 4 依赖关系注入
 
@@ -158,12 +158,12 @@ ms.lasthandoff: 03/02/2018
 
 1. 打开**开始**解决方案位于**将 Source\Ex01 注入 Controller\Begin**。
 
-    1. 你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 2. 按**Ctrl + F5**运行该应用程序而不进行调试。 你将收到错误消息&quot;**没有此对象定义的无参数构造函数**&quot;:
 
     ![运行 ASP.NET MVC 开始应用程序时出错](aspnet-mvc-4-dependency-injection/_static/image3.png "运行 ASP.NET MVC 开始应用程序时出错")
@@ -265,14 +265,14 @@ ms.lasthandoff: 03/02/2018
 
 1. 打开**开始**解决方案位于**将 Source\Ex02 注入 View\Begin**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
-    > 
-    > 有关详细信息，请参阅此文章： [http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages)。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > 
+      > 有关详细信息，请参阅此文章： [ http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages ](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages)。
 2. 包括**MessageService.cs**和**IMessageService.cs**类位于**源 \Assets**文件夹中的**/**。 要执行此操作，请右键单击**服务**文件夹，然后选择**添加现有项**。 浏览到文件的位置，并将其包含。
 
     ![添加消息服务和服务接口](aspnet-mvc-4-dependency-injection/_static/image8.png "添加消息服务和服务接口")
@@ -290,7 +290,7 @@ ms.lasthandoff: 03/02/2018
 
     [!code-cshtml[Main](aspnet-mvc-4-dependency-injection/samples/sample8.cshtml)]
 5. 在**浏览**视图中，添加对的调用**MessageService**要显示的映像和服务检索一条消息。
-(C#)
+   (C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-dependency-injection/samples/sample9.cshtml)]
 
@@ -305,7 +305,7 @@ ms.lasthandoff: 03/02/2018
 > ASP.NET MVC 3 自依赖关系注入的实现已简化这些接口，以便注册服务。 **IDependencyResolver**和**IViewPageActivator**属于依赖关系注入的 ASP.NET MVC 3 功能。
 > 
 > **-IDependencyResolver**接口替换以前 IMvcServiceLocator。 IDependencyResolver 的实施者必须返回的服务或服务集合的实例。
->
+> 
 > 
 > [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample10.cs)]
 > 
@@ -404,14 +404,14 @@ ms.lasthandoff: 03/02/2018
 
 1. 打开**开始**解决方案位于**Source\Ex03-将注入操作 Filter\Begin**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
-    > 
-    > 有关详细信息，请参阅此文章： [http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages)。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > 
+      > 有关详细信息，请参阅此文章： [ http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages ](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages)。
 2. 包括**TraceActionFilter.cs**文件从**/源/资产**到**/筛选**文件夹。
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample18.cs)]
@@ -492,7 +492,7 @@ ms.lasthandoff: 03/02/2018
 <a id="Summary"></a>
 
 <a id="Summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 通过完成本动手实验中，你已学习如何在 ASP.NET MVC 4 中的依赖关系注入使用通过集成 Unity 使用 NuGet 包。 若要实现此目的，你使用控制器、 视图和操作筛选器内的依赖关系注入。
 
@@ -511,7 +511,7 @@ ms.lasthandoff: 03/02/2018
 
 你可以安装**Microsoft Visual Studio Express 2012 for Web**或另一个&quot;Express&quot;版本使用 **[Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)**. 以下说明将指导你完成安装所需的步骤*Visual studio Express 2012 for Web*使用*Microsoft Web 平台安装程序*。
 
-1. 转到[ [https://go.microsoft.com/? linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; *Visual Studio Express 2012 for Web 的 Windows Azure SDK*&quot;。
+1. 转到[ [ https://go.microsoft.com/? linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; <em>Visual Studio Express 2012 for Web 的 Windows Azure SDK</em>&quot;。
 2. 单击**立即安装**。 如果你没有**Web 平台安装程序**将重定向以下载并请先安装它。
 3. 一次**Web 平台安装程序**处于打开状态，单击**安装**以启动安装程序。
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-dynamic-data/how-do-i-enable-inline-gridview-editing
-title: "如何启用内联 GridView 编辑？ | Microsoft Docs"
+title: 如何启用内联 GridView 编辑？ | Microsoft Docs
 author: shanselman
-description: "既然你已经使用编辑和详细信息视图中创建站点，如何你启用内联 GridView 控件中编辑？ 此视频展示如何操作，以及 touc..."
+description: 既然你已经使用编辑和详细信息视图中创建站点，如何你启用内联 GridView 控件中编辑？ 此视频展示如何操作，以及 touc...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/08/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-do-i-enable-inline-gridview-editing
 msc.type: video
-ms.openlocfilehash: 787395b1de91757db9d08be5de9ff99dee8830bd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8301b3456ad814e6bdc71dd1556e0ab1fbe26ff0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-enable-inline-gridview-editing"></a>如何启用内联 GridView 编辑？
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （6 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-enable-inline-gridview-editing)
 
->[!div class="step-by-step"]
-[上一页](your-first-scaffold-and-what-is-dynamic-data.md)
-[下一页](how-do-i-change-how-my-fields-render.md)
+> [!div class="step-by-step"]
+> [上一页](your-first-scaffold-and-what-is-dynamic-data.md)
+> [下一页](how-do-i-change-how-my-fields-render.md)

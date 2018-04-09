@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/security/create-an-aspnet-web-forms-app-with-sms-two-factor-authentication
-title: "创建 ASP.NET Web 窗体应用程序与 SMS 双因素身份验证 (C#) |Microsoft 文档"
+title: 创建 ASP.NET Web 窗体应用程序与 SMS 双因素身份验证 (C#) |Microsoft 文档
 author: Erikre
-description: "本教程演示了如何生成使用双因素身份验证的 ASP.NET Web 窗体应用程序。 本教程旨在补充标题为 Cr 教程..."
+description: 本教程演示了如何生成使用双因素身份验证的 ASP.NET Web 窗体应用程序。 本教程旨在补充标题为 Cr 教程...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/09/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/security/create-an-aspnet-web-forms-app-with-sms-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: b1f0ec0fdefa12eb7f7b2714dbc224fef735f4bb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6c040fd3e0592b8cfd230dcd85ed3293f0a22ba7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-an-aspnet-web-forms-app-with-sms-two-factor-authentication-c"></a>创建 ASP.NET Web 窗体应用程序与 SMS 双因素身份验证 (C#)
 ====================
@@ -63,7 +63,7 @@ ms.lasthandoff: 01/24/2018
 2. 从**仪表板**选项卡上的 Twilio 帐户，复制**帐户 SID**和**身份验证令牌。** 你将添加到你的应用程序更高版本。
 3. 从**数字**选项卡上，复制你的 Twilio**电话号码**以及。
 4. Twilio**帐户 SID**，**身份验证令牌**和**电话号码**可用于应用。 若要为简单起见将存储这些值*web.config*文件。 在部署到 Azure 时，可以安全地在值存储**appSettings**网站上的部分配置选项卡。此外，在添加时的电话号码，只能使用数字。   
- 请注意，你还可以添加 SendGrid 凭据。 SendGrid 是一电子邮件通知的服务。 有关如何启用 SendGrid，有关详细信息，请参阅本教程标题为挂钩向上 SendGrid 一部分[创建用户注册使用的安全 ASP.NET Web 窗体应用、 电子邮件确认及密码重置。](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset.md)
+   请注意，你还可以添加 SendGrid 凭据。 SendGrid 是一电子邮件通知的服务。 有关如何启用 SendGrid，有关详细信息，请参阅本教程标题为挂钩向上 SendGrid 一部分[创建用户注册使用的安全 ASP.NET Web 窗体应用、 电子邮件确认及密码重置。](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset.md)
 
     [!code-xml[Main](create-an-aspnet-web-forms-app-with-sms-two-factor-authentication/samples/sample1.xml?highlight=2,6-10)]
 
@@ -85,7 +85,7 @@ ms.lasthandoff: 01/24/2018
 
     [!code-csharp[Main](create-an-aspnet-web-forms-app-with-sms-two-factor-authentication/samples/sample6.cs?highlight=3-4,13)]
 
- 通过使上面的代码更改，"提供程序"下拉列表包含的身份验证选项将不重置为第一个值。 这将允许用户成功选择时进行身份验证，而不仅仅是第一个要使用的所有选项。
+   通过使上面的代码更改，"提供程序"下拉列表包含的身份验证选项将不重置为第一个值。 这将允许用户成功选择时进行身份验证，而不仅仅是第一个要使用的所有选项。
 10. 在**解决方案资源管理器**，右键单击*Default.aspx*和选择**设为起始页**。
 11. 通过测试你的应用，首先需要构建应用程序 (**Ctrl**+**Shift**+**B**)，然后运行应用程序 (**F5**) 和请选择**注册**以创建新的用户帐户或选择**登录**如果已注册的用户帐户。
 12. 您 （作为用户） 具有登录后，单击用户 ID （电子邮件地址） 在导航栏中显示**管理帐户**页 (Manage.aspx)。  
@@ -94,7 +94,7 @@ ms.lasthandoff: 01/24/2018
     ![](create-an-aspnet-web-forms-app-with-sms-two-factor-authentication/_static/image3.png)
 14. 添加电话号码 （作为用户） 你想要接收 SMS 消息 （文本消息） 并单击**提交**按钮。   
     ![](create-an-aspnet-web-forms-app-with-sms-two-factor-authentication/_static/image4.png)  
- 此时，应用将使用的凭据从*Web.config*联系 Twilio。 将与用户帐户关联的移动电话发送短信 （文本消息）。 你可以通过验证 Twilio 消息已发送查看 Twilio 仪表板。
+    此时，应用将使用的凭据从*Web.config*联系 Twilio。 将与用户帐户关联的移动电话发送短信 （文本消息）。 你可以通过验证 Twilio 消息已发送查看 Twilio 仪表板。
 15. 几秒钟后，与用户帐户关联的手机将收到包含验证码的短信。 输入验证代码并按**提交**。  
      ![](create-an-aspnet-web-forms-app-with-sms-two-factor-authentication/_static/image5.png)
 

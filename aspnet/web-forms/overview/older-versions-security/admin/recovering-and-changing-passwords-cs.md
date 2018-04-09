@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-cs
-title: "恢复并更改密码 (C#) |Microsoft 文档"
+title: 恢复并更改密码 (C#) |Microsoft 文档
 author: rick-anderson
-description: "ASP.NET 包括两个 Web 控件，以帮助进行恢复，以及更改密码。 如何启用访问者来恢复其丢失的 pa..."
+description: ASP.NET 包括两个 Web 控件，以帮助进行恢复，以及更改密码。 如何启用访问者来恢复其丢失的 pa...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 76c02a3da7dffad25a7bee03efff6b693f261d85
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7f8b019631eff4840bf1759f8e2752946abcaf80
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="recovering-and-changing-passwords-c"></a>恢复并更改密码 (C#)
 ====================
@@ -86,7 +86,7 @@ ASP.NET 包括两个 Web 控件，以帮助进行恢复，以及更改密码。 
 通过指定邮件传递配置[`<system.net>`元素](https://msdn.microsoft.com/library/6484zdc1.aspx)的[`<mailSettings>`元素](https://msdn.microsoft.com/library/w355a94k.aspx)。 使用[`<smtp>`元素](https://msdn.microsoft.com/library/ms164240.aspx)以指示传递方法和默认发件人地址。 以下标记将配置为使用名为网络 SMTP 服务器的电子邮件设置`smtp.example.com`端口 25 并带有用户名/密码凭据的用户名和密码。
 
 > [!NOTE]
-> `<system.net>`是根的子元素`<configuration>`元素和节点的同级`<system.web>`。 因此，不要将放`<system.net>`中的元素`<system.web>`元素; 相反，将其放在相同的级别。
+> `<system.net>` 是根的子元素`<configuration>`元素和节点的同级`<system.web>`。 因此，不要将放`<system.net>`中的元素`<system.web>`元素; 相反，将其放在相同的级别。
 
 
 [!code-xml[Main](recovering-and-changing-passwords-cs/samples/sample1.xml)]
@@ -165,8 +165,8 @@ ASP.NET 包括两个 Web 控件，以帮助进行恢复，以及更改密码。 
 
 当重置用户的密码取回控制调用`MembershipUser`对象的[`ResetPassword`方法](https://msdn.microsoft.com/library/system.web.security.membershipuser.resetpassword.aspx)。 此方法有两个重载：
 
-- **[`ResetPassword`](https://msdn.microsoft.com/library/d94bdzz2.aspx)**-重置用户的密码。 如果使用此重载`RequiresQuestionAndAnswer`为 False。
-- **[`ResetPassword(securityAnswer)`](https://msdn.microsoft.com/library/d90zte4w.aspx)**-重置用户的密码才提供*securityAnswer*正确无误。 如果使用此重载`RequiresQuestionAndAnswer`为 True。
+- **[`ResetPassword`](https://msdn.microsoft.com/library/d94bdzz2.aspx)** -重置用户的密码。 如果使用此重载`RequiresQuestionAndAnswer`为 False。
+- **[`ResetPassword(securityAnswer)`](https://msdn.microsoft.com/library/d90zte4w.aspx)** -重置用户的密码才提供*securityAnswer*正确无误。 如果使用此重载`RequiresQuestionAndAnswer`为 True。
 
 这两个重载均返回的新的随机生成的密码。
 
@@ -285,7 +285,7 @@ ChangePassword 控件可以更新当前登录的用户的密码*或*另一个，
 > `UserInformation.aspx`网页当前仅，如果成员资格 framework 配置为将密码存储在清除或 Hashed 格式。 尽管你受邀添加此功能，它缺少的代码的新密码进行加密。 建议添加必要的代码的方法是使用如反编译程序[反射器](http://www.aisto.com/roeder/dotnet/)来检查.NET Framework 中; 中的方法的源代码通过检查启动`SqlMembershipProvider`类的`ChangePassword`方法。 这是密码的我用于编写用于创建哈希代码的技术。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 ASP.NET 提供两个控件，可以帮助用户管理他们的密码。 说明控件是有用的用户的用户忘记其密码。 根据成员资格框架的配置，用户可以通过电子邮件用户现有的密码或新为随机生成的密码。 ChangePassword 控件使用户可以更新其密码。
 
@@ -300,16 +300,16 @@ ASP.NET 提供两个控件，可以帮助用户管理他们的密码。 说明�
 - [ChangePassword 控件快速入门](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/changepassword.aspx)
 - [取回控件快速入门](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/passwordrecovery.aspx)
 - [在 ASP.NET 中发送电子邮件](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)
-- [`System.Net.Mail`常见问题](http://www.systemnetmail.com/)
+- [`System.Net.Mail` 常见问题](http://www.systemnetmail.com/)
 
 ### <a name="about-the-author"></a>关于作者
 
-Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
-本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者包括 Michael Emmings 和 Suchi Banerjee。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者包括 Michael Emmings 和 Suchi Banerjee。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](building-an-interface-to-select-one-user-account-from-many-cs.md)
-[下一页](unlocking-and-approving-user-accounts-cs.md)
+> [!div class="step-by-step"]
+> [上一页](building-an-interface-to-select-one-user-account-from-many-cs.md)
+> [下一页](unlocking-and-approving-user-accounts-cs.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
-title: "引入的 ASP.NET Web Pages-删除数据库数据 |Microsoft 文档"
+title: 引入的 ASP.NET Web Pages-删除数据库数据 |Microsoft 文档
 author: tfitzmac
-description: "本教程演示了如何删除单个数据库条目。 它假定你已完成的 ASP.NET Web pa。 在更新数据库数据通过一系列..."
+description: 本教程演示了如何删除单个数据库条目。 它假定你已完成的 ASP.NET Web pa。 在更新数据库数据通过一系列...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/02/2018
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
 msc.type: authoredcontent
-ms.openlocfilehash: 5bc92b5d40e7a55dcd730d552c71031d913b277e
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: 146199e862cd6fa2607671d31633476b1cb67021
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---deleting-database-data"></a>引入了 ASP.NET Web 页-删除数据库数据
 ====================
@@ -172,6 +172,6 @@ ms.lasthandoff: 01/03/2018
 - [使用 Razor 语法的 ASP.NET Web 编程简介](../introducing-razor-syntax-c.md)
 - [SQL DELETE 语句](http://www.w3schools.com/sql/sql_delete.asp)W3Schools 站点上
 
->[!div class="step-by-step"]
-[上一页](updating-data.md)
-[下一页](layouts.md)
+> [!div class="step-by-step"]
+> [上一页](updating-data.md)
+> [下一页](layouts.md)

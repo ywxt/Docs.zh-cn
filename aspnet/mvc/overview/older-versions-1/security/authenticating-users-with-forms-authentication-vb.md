@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-vb
-title: "与用户进行身份验证 Forms 身份验证 (VB) |Microsoft 文档"
+title: 与用户进行身份验证 Forms 身份验证 (VB) |Microsoft 文档
 author: microsoft
-description: "了解如何使用 [Authorize] 属性用密码保护 MVC 应用程序中的特定页。 了解如何使用网站管理太..."
+description: 了解如何使用 [Authorize] 属性用密码保护 MVC 应用程序中的特定页。 了解如何使用网站管理太...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c7d52e51158575c674264efd19c81de9b077d27b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0ff425a4c9728de2eec3d0c94e76cb51a15de487
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="authenticating-users-with-forms-authentication-vb"></a>使用 Forms 身份验证 (VB) 的用户进行身份验证
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 了解如何使用 [Authorize] 属性用密码保护 MVC 应用程序中的特定页。 了解如何使用网站管理工具来创建和管理用户和角色。 你还了解了如何配置用户帐户和角色信息的存储位置。
 
@@ -33,25 +33,25 @@ ms.lasthandoff: 11/10/2017
 
 **图 1 – 启动网站管理工具**
 
-![clip_image002 [4]](authenticating-users-with-forms-authentication-vb/_static/image1.jpg)
+![clip_image002[4]](authenticating-users-with-forms-authentication-vb/_static/image1.jpg)
 
 在网站管理工具，你创建新用户和角色通过选择安全选项卡。单击**创建用户**链接创建一个名为 Stephen 的新用户 （请参见图 2）。 Stephen 用户提供所需的任何密码 (例如，*机密*)。
 
 **图 2 – 创建新用户**
 
-![clip_image004 [4]](authenticating-users-with-forms-authentication-vb/_static/image2.jpg)
+![clip_image004[4]](authenticating-users-with-forms-authentication-vb/_static/image2.jpg)
 
 通过第一个启用角色并定义一个或多个角色创建新的角色。 通过单击启用角色**启用角色**链接。 接下来，创建名为的角色*管理员*通过单击**创建或管理角色**链接 （请参见图 3）。
 
 **图 3 – 创建一个新角色**
 
-![clip_image006 [4]](authenticating-users-with-forms-authentication-vb/_static/image3.jpg)
+![clip_image006[4]](authenticating-users-with-forms-authentication-vb/_static/image3.jpg)
 
 最后，创建名为 Sally 的新用户并将 Sally 相关联具有管理员角色，通过单击创建用户链接并选择管理员创建 Sally 时 （请参见图 4）。
 
 **图 4 – 向角色添加用户**
 
-![clip_image008 [4]](authenticating-users-with-forms-authentication-vb/_static/image4.jpg)
+![clip_image008[4]](authenticating-users-with-forms-authentication-vb/_static/image4.jpg)
 
 当所有是说，而且完成时，你应具有名为 Stephen 和 Sally 的两个新用户。 你还应具有名为管理员的新角色。 Sally 是管理员角色的成员，并且 Stephen 不是。
 
@@ -69,7 +69,7 @@ ms.lasthandoff: 11/10/2017
 
 **图 5-登录视图**
 
-![clip_image010 [4]](authenticating-users-with-forms-authentication-vb/_static/image5.jpg)
+![clip_image010[4]](authenticating-users-with-forms-authentication-vb/_static/image5.jpg)
 
 登录视图可用于输入用户名和密码。 如果你不是已注册的用户，则可以单击**注册**链接以导航到注册查看 （请参阅图 6）。 注册视图可用于创建新的用户帐户。
 
@@ -87,7 +87,7 @@ ms.lasthandoff: 11/10/2017
 
 [Authorize] 属性可用于限制对为特定的一组的用户或一组特定的用户角色的控制器操作的访问。 例如，列出 2 中修改后的主控制器包含名为 StephenSecrets() 和 AdministratorSecrets() 的两个新操作。
 
-**列出 2 – Controllers\HomeController.vb**
+**Listing 2 – Controllers\HomeController.vb**
 
 [!code-vb[Main](authenticating-users-with-forms-authentication-vb/samples/sample2.vb)]
 
@@ -117,8 +117,8 @@ ASP.NET SQL Server 安装向导，可选择你的网络上的 SQL Server 数据�
 
 > [!NOTE]
 > 如果你不想使用 ASP.NET SQL Server 安装向导，然后你可以找到 SQL 脚本的以下文件夹中添加应用程序服务数据库对象：
-
-
+> 
+> 
 > C:\Windows\Microsoft.NET\Framework\v2.0.50727
 
 
@@ -148,10 +148,10 @@ ASP.NET SQL Server 安装向导，可选择你的网络上的 SQL Server 数据�
 
 ![clip_image020](authenticating-users-with-forms-authentication-vb/_static/image10.jpg)
 
-#### <a name="summary"></a>摘要
+#### <a name="summary"></a>总结
 
 在本教程中，您学习了如何构建一个 ASP.NET MVC 应用程序时，使用窗体身份验证。 首先，您学习了如何通过利用网站管理工具创建新用户和角色。 接下来，您学习了如何使用 [Authorize] 属性以防止未经授权的用户调用控制器操作。 最后，您学习了如何配置你的 MVC 应用程序在生产数据库中存储用户和角色信息。
 
->[!div class="step-by-step"]
-[上一页](preventing-javascript-injection-attacks-cs.md)
-[下一页](authenticating-users-with-windows-authentication-vb.md)
+> [!div class="step-by-step"]
+> [上一页](preventing-javascript-injection-attacks-cs.md)
+> [下一页](authenticating-users-with-windows-authentication-vb.md)

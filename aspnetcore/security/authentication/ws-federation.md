@@ -1,7 +1,7 @@
 ---
-title: "使用 WS 联合身份验证在 ASP.NET 核心中的用户进行身份验证"
+title: 使用 WS 联合身份验证在 ASP.NET 核心中的用户进行身份验证
 author: chlowell
-description: "本教程演示如何在 ASP.NET Core 应用程序使用 WS 联合身份验证。"
+description: 本教程演示如何在 ASP.NET Core 应用程序使用 WS 联合身份验证。
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/ws-federation
-ms.openlocfilehash: 0532f866e9c58b2e45623f522f62438e15017e54
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: d4621c7b97678903b9f2562e353da3883334b599
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="authenticate-users-with-ws-federation-in-aspnet-core"></a>使用 WS 联合身份验证在 ASP.NET 核心中的用户进行身份验证
 
@@ -111,7 +111,7 @@ ms.lasthandoff: 03/02/2018
      // ...
     ```
 
-[!INCLUDE[default settings configuration](social/includes/default-settings.md)]
+[!INCLUDE [default settings configuration](social/includes/default-settings.md)]
 
 ### <a name="log-in-with-ws-federation"></a>使用 WS 联合身份验证登录
 
@@ -125,7 +125,7 @@ ms.lasthandoff: 03/02/2018
 
 ## <a name="use-ws-federation-without-aspnet-core-identity"></a>使用 WS 联合身份验证而无需 ASP.NET 核心标识
 
-没有标识，可以使用 WS 联合身份验证中间件。 例如:
+没有标识，可以使用 WS 联合身份验证中间件。 例如：
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)

@@ -1,7 +1,7 @@
 ---
-title: "迁移的身份验证和标识到 ASP.NET 核心 2.0"
+title: 将身份验证和标识迁移到 ASP.NET 核心 2.0
 author: scottaddie
-description: "本文概述了迁移 ASP.NET Core 1.x 身份验证和标识为 ASP.NET 核心 2.0 的最常见步骤。"
+description: 本文概述了迁移 ASP.NET Core 1.x 身份验证和标识为 ASP.NET 核心 2.0 的最常见步骤。
 manager: wpickett
 ms.author: scaddie
 ms.date: 10/26/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: f0c29e6b4faa5c9d574726fc960f0c7c60092757
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 16369a14dbe97778724632317a82e11de5a8faed
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-authentication-and-identity-to-aspnet-core-20"></a>迁移的身份验证和标识到 ASP.NET 核心 2.0
+# <a name="migrate-authentication-and-identity-to-aspnet-core-20"></a>将身份验证和标识迁移到 ASP.NET 核心 2.0
 
 通过[Scott Addie](https://github.com/scottaddie)和[Hao 永远](https://github.com/HaoK)
 

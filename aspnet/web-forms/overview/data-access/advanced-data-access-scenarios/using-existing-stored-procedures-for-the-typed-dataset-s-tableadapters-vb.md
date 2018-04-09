@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
-title: "使用现有存储过程的类型化数据集的 Tableadapter (VB) |Microsoft 文档"
+title: 使用现有存储过程的类型化数据集的 Tableadapter (VB) |Microsoft 文档
 author: rick-anderson
-description: "在以前的教程，我们学习了如何使用 TableAdapter 向导来生成新的存储的过程。 在本教程中，我们将了解如何同一个 TableAdapter..."
+description: 在以前的教程，我们学习了如何使用 TableAdapter 向导来生成新的存储的过程。 在本教程中，我们将了解如何同一个 TableAdapter...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/18/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5d1be6c30cda5a06087516210a77f48b6a3fe45b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ac319b67c9215c5dde8e7507076ed45a1f7825c6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>使用现有存储过程的类型化数据集的 Tableadapter (VB)
 ====================
@@ -56,7 +56,7 @@ Visual Studio 便于向数据库添加新的存储的过程。 允许 s 将新�
 
 此脚本，在执行时，将向名为 Northwind 数据库中添加新的存储的过程`Products_SelectByCategoryID`。 此存储的过程接受一个输入的参数 (`@CategoryID`，类型的`int`) 和它返回所有这些产品以匹配的字段`CategoryID`值。
 
-若要执行此`CREATE PROCEDURE`编写脚本和存储的过程添加到数据库、 单击工具栏中的保存图标或按 Ctrl + S。 这样，存储过程文件夹刷新过程中，做之后显示新创建的存储过程。 此外，在窗口中的脚本将更改从种微妙`CREATE PROCEDURE dbo.Products_SelectProductByCategoryID`到`ALTER PROCEDURE` `dbo.Products_SelectProductByCategoryID`。 `CREATE PROCEDURE`向数据库中，添加新的存储的过程时`ALTER PROCEDURE`更新现有。 由于脚本开始已更改为`ALTER PROCEDURE`、 更改的存储的过程输入参数或 SQL 语句，并单击保存图标将使用这些更改更新存储的过程。
+若要执行此`CREATE PROCEDURE`编写脚本和存储的过程添加到数据库、 单击工具栏中的保存图标或按 Ctrl + S。 这样，存储过程文件夹刷新过程中，做之后显示新创建的存储过程。 此外，在窗口中的脚本将更改从种微妙`CREATE PROCEDURE dbo.Products_SelectProductByCategoryID`到`ALTER PROCEDURE` `dbo.Products_SelectProductByCategoryID`。 `CREATE PROCEDURE` 向数据库中，添加新的存储的过程时`ALTER PROCEDURE`更新现有。 由于脚本开始已更改为`ALTER PROCEDURE`、 更改的存储的过程输入参数或 SQL 语句，并单击保存图标将使用这些更改更新存储的过程。
 
 图 2 显示了 Visual Studio 后`Products_SelectByCategoryID`已保存存储的过程。
 
@@ -265,7 +265,7 @@ Visual Studio 便于向数据库添加新的存储的过程。 允许 s 将新�
 > 在测试之前`Categories_Delete`存储的过程，这将删除数以及所选类别的产品，它可能比较明智的做法是，以使你的数据库的备份副本。 如果你使用`NORTHWND.MDF`数据库中`App_Data`，只需关闭 Visual Studio 并复制中的 MDF 和 LDF 文件`App_Data`某些其他文件夹。 正在测试的功能之后, 你可以还原数据库关闭 Visual Studio 和替换当前的 MDF 和 LDF 文件中`App_Data`使用备份副本。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在 TableAdapter 的向导将自动为我们生成的存储的过程，可以在的时间时我们可能已有创建此类存储的过程或想改为创建它们手动或使用其他工具。 为了适应这种情况下，TableAdapter 还可以将配置为指向现有存储过程。 在本教程中我们介绍了如何将存储的过程手动添加到数据库中通过 Visual Studio 环境以及如何将 TableAdapter 的方法连接到这些存储过程。 我们还检查的 T-SQL 命令和脚本模式用于启动、 提交，和回滚从存储过程中的事务。
 
@@ -273,12 +273,12 @@ Visual Studio 便于向数据库添加新的存储的过程。 允许 s 将新�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已希尔顿 Geisenow、 S ren 异世 Lauritsen 和 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)
-[下一页](updating-the-tableadapter-to-use-joins-vb.md)
+> [!div class="step-by-step"]
+> [上一页](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)
+> [下一页](updating-the-tableadapter-to-use-joins-vb.md)

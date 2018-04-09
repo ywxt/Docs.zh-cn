@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs
-title: "自定义的数据修改界面 (C#) |Microsoft 文档"
+title: 自定义的数据修改界面 (C#) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将查看如何通过替换标准的文本框中自定义的可编辑的 GridView，接口和复选框控件 alternati..."
+description: 在本教程中我们将查看如何通过替换标准的文本框中自定义的可编辑的 GridView，接口和复选框控件 alternati...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fb0b20ab25d87eddc0b2f9da786db469b16f861a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f25b265c50870d59721a94c01d78f589a5d5f1c3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="customizing-the-data-modification-interface-c"></a>自定义的数据修改界面 (C#)
 ====================
@@ -236,7 +236,7 @@ BoundFields 和 CheckBoxFields GridView 和说明如何控件所使用的简化�
 替换中的复选框`ItemTemplate`和`EditItemTemplate`有一个说明如何控件设置这两个 RadioButtonLists 的`ID`属性设置为`DiscontinuedChoice`。 接下来，指示 RadioButtonLists 应每个包含两个单选按钮，一个标记为"活动"值为"False"，标记为"停用"的一个值为"True"。 若要完成此您可以输入`<asp:ListItem>`直接通过声明性语法或使用中的元素`ListItem`从设计器的集合编辑器。 图 13 显示`ListItem`集合编辑器后两个单选按钮选项已指定。
 
 
-[![添加](customizing-the-data-modification-interface-cs/_static/image38.png)](customizing-the-data-modification-interface-cs/_static/image37.png)
+[![Add](customizing-the-data-modification-interface-cs/_static/image38.png)](customizing-the-data-modification-interface-cs/_static/image37.png)
 
 **图 13**: 说明如何向中添加"活动"和"已中断"选项 ([单击以查看实际尺寸的图像](customizing-the-data-modification-interface-cs/_static/image39.png))
 
@@ -262,7 +262,7 @@ BoundFields 和 CheckBoxFields GridView 和说明如何控件所使用的简化�
 > 由于`Discontinued`中的列`Products`数据库不能具有`NULL`值，我们不需要担心捕获`NULL`界面中的信息。 如果是，但是，`Discontinued`列无法包含`NULL`值我们想要添加第三个单选按钮与向列表其`Value`设置为空字符串 (`Value=""`)，就像使用的类别和供应商 DropDownLists。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 虽然 BoundField 和 CheckBoxField 自动呈现只读的编辑，并且他们插入接口，缺少自定义项的能力。 通常情况下，不过，我们将需要自定义编辑或将其插入接口，可能添加验证控件 （如在前面的教程，我们已了解） 或通过自定义数据收集用户界面 （如我们在本教程中看到）。 自定义与为 TemplateField 界面可以是计算总和中的以下步骤：
 
@@ -276,8 +276,8 @@ BoundFields 和 CheckBoxFields GridView 和说明如何控件所使用的简化�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
->[!div class="step-by-step"]
-[上一页](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md)
-[下一页](implementing-optimistic-concurrency-cs.md)
+> [!div class="step-by-step"]
+> [上一页](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md)
+> [下一页](implementing-optimistic-concurrency-cs.md)

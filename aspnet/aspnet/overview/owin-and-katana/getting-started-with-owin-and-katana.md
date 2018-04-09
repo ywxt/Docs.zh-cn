@@ -1,28 +1,28 @@
 ---
 uid: aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana
-title: "开始使用 OWIN 和 Katana |Microsoft 文档"
+title: 开始使用 OWIN 和 Katana |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/27/2013
 ms.topic: article
 ms.assetid: 6dae249f-5ac6-4f6e-bc49-13bcd5a54a70
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 8922aada723da9b149ec111902fcd883c8241dfb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ac0302ef1a786f6b1eef8119b3134a965f01c533
+ms.sourcegitcommit: 5ab5c5f4bfdb0150f42ba84c2770eadf540cae48
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/28/2018
 ---
 <a name="getting-started-with-owin-and-katana"></a>开始使用 OWIN 和 Katana
 ====================
 通过[Mike Wasson](https://github.com/MikeWasson)
 
-[打开.NET (OWIN) 的 Web 界面](http://owin.org/)定义.NET web 服务器和 web 应用程序之间的抽象。 通过分离从应用程序的 web 服务器，OWIN 使得更轻松地创建.NET web 开发的中间件。 此外，OWIN，从而更便于端口 web 应用程序到其他主机 &#8212; 例如，Windows 服务或其他进程中的自承载。
+[打开.NET (OWIN) 的 Web 界面](http://owin.org/)定义.NET web 服务器和 web 应用程序之间的抽象。 通过分离从应用程序的 web 服务器，OWIN 使得更轻松地创建.NET web 开发的中间件。 此外，OWIN，从而更便于端口 web 应用程序到其他主机&#8212;例如，Windows 服务或其他进程中的自承载。
 
 OWIN 是一个社区拥有规范，未实现。 Katana 项目是一组由 Microsoft 开发的开源 OWIN 组件。 OWIN 和 Katana 的一般概述，请参阅[项目概述 Katana](an-overview-of-project-katana.md)。 在本文中，我将直接到代码开始。
 
@@ -54,7 +54,7 @@ OWIN 是一个社区拥有规范，未实现。 Katana 项目是一组由 Micros
 
 ![](getting-started-with-owin-and-katana/_static/image4.png)
 
-将以下代码添加到 `Startup1.Configuration` 方法中：
+将以下代码添加到 `Startup1.Configuration` 方法：
 
 [!code-csharp[Main](getting-started-with-owin-and-katana/samples/sample1.cs?highlight=3)]
 
@@ -74,7 +74,7 @@ OWIN 是一个社区拥有规范，未实现。 Katana 项目是一组由 Micros
 
 ## <a name="self-host-owin-in-a-console-application"></a>将 OWIN 自承载在控制台应用程序
 
-很容易地将此应用程序转换从到自定义过程中的自承载的 IIS 承载。 使用 IIS 承载，IIS 可以充当 HTTP 服务器和进程该主机服务器。 与自承载，你的应用程序创建过程，并使用**HttpListener**与 HTTP 服务器的类。
+很容易地将此应用程序转换从到自定义过程中的自承载的 IIS 承载。 使用 IIS 承载，IIS 可以充当 HTTP 服务器和承载服务的进程。 与自承载，你的应用程序创建过程，并使用**HttpListener**与 HTTP 服务器的类。
 
 在 Visual Studio 中，创建一个新的控制台应用程序。 在 Package Manager Console 窗口中，键入以下命令：
 

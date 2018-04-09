@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/create-a-new-aspnet-mvc-project
-title: "创建新的 ASP.NET MVC 项目 |Microsoft 文档"
+title: 创建新的 ASP.NET MVC 项目 |Microsoft 文档
 author: microsoft
-description: "步骤 1 演示了如何将基本 NerdDinner 应用程序结构放在位置。"
+description: 步骤 1 演示了如何将基本 NerdDinner 应用程序结构放在位置。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/create-a-new-aspnet-mvc-project
 msc.type: authoredcontent
-ms.openlocfilehash: 4d30a6803b1478014a2afb814ac317df27394446
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: d15ca67f0ddd8db6842bc5112996ae2dee433536
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-a-new-aspnet-mvc-project"></a>创建新的 ASP.NET MVC 项目
 ====================
@@ -136,6 +136,6 @@ ASP.NET MVC 不需要此结构。 事实上，开发人员处理大型应用程�
 
 我们现在就地提供基本应用程序结构。 让我们现在[创建一个数据库来存储我们的应用程序数据](create-a-database.md)。
 
->[!div class="step-by-step"]
-[上一页](introducing-the-nerddinner-tutorial.md)
-[下一页](create-a-database.md)
+> [!div class="step-by-step"]
+> [上一页](introducing-the-nerddinner-tutorial.md)
+> [下一页](create-a-database.md)

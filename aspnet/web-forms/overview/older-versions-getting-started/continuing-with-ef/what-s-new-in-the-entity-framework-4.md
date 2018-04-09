@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4
-title: "什么是实体框架 4.0 中的新增功能 |Microsoft 文档"
+title: 什么是实体框架 4.0 中的新增功能 |Microsoft 文档
 author: tdykstra
-description: "本教程系列上的 Contoso 大学 web 应用程序创建的 Getting Started with 实体 Framework 4.0 教程系列生成。 I..."
+description: 本教程系列上的 Contoso 大学 web 应用程序创建的 Getting Started with 实体 Framework 4.0 教程系列生成。 I...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4
 msc.type: authoredcontent
-ms.openlocfilehash: c114627388217e892c84d6b76366d0fa96b0b70c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 04444ce98fa60045cf617a6c518dd55677258148
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="whats-new-in-the-entity-framework-40"></a>什么是实体框架 4.0 中的新增功能
 ====================
@@ -203,7 +203,7 @@ POCO 支持 Entity Framework 4 中的仍然需要你创建数据模型，并链�
 - [MVC 音乐商店教程-第 4 部分： 模型和数据访问](../../../../mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-4.md)
 - [Getting Started with MVC 3-第 4 部分： 实体框架代码优先开发](../../../../mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-model.md)
 
-此外，生成类似于 Contoso 大学应用程序的应用程序的新 MVC 代码的第一个教程预计在 2011 年春季发布[https://asp.net/entity-framework/tutorials](../../../../entity-framework.md)
+此外，生成类似于 Contoso 大学应用程序的应用程序的新 MVC 代码的第一个教程预计在 2011 年春季发布 [https://asp.net/entity-framework/tutorials](../../../../entity-framework.md)
 
 ## <a name="more-information"></a>详细信息
 
@@ -212,5 +212,5 @@ POCO 支持 Entity Framework 4 中的仍然需要你创建数据模型，并链�
 - [什么是 ADO.NET 中的新增功能](https://msdn.microsoft.com/library/ex6y04yf.aspx)MSDN 主题中的实体框架版本 4 的新功能。
 - [宣布推出新版实体框架 4](https://blogs.msdn.com/b/efdesign/archive/2010/04/12/announcing-the-release-of-entity-framework-4.aspx)版本 4 中的新增功能有关实体框架开发团队的博客文章。
 
->[!div class="step-by-step"]
-[上一篇](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
+> [!div class="step-by-step"]
+> [上一篇](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)

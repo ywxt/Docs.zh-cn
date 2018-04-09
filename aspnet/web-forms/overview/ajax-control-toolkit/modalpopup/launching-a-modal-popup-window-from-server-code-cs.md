@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-cs
-title: "启动从服务器代码 (C#) 模式弹出窗口 |Microsoft 文档"
+title: 启动从服务器代码 (C#) 模式弹出窗口 |Microsoft 文档
 author: wenz
-description: "AJAX 控件工具包中的 ModalPopup 控制提供一种简单的方法，以创建模式的弹出项，使用客户端的方式。 但是，某些情况下需要该 t..."
+description: AJAX 控件工具包中的 ModalPopup 控制提供一种简单的方法，以创建模式的弹出项，使用客户端的方式。 但是，某些情况下需要该 t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cc2ccf8153de4f2633cc46ebbee2da199ba9d06e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 04bb056ee29065a472a70d480568b897a789ae59
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="launching-a-modal-popup-window-from-server-code-c"></a>启动从服务器代码 (C#) 模式弹出窗口
 ====================
@@ -72,5 +72,5 @@ AJAX 控件工具包中的 ModalPopup 控制提供一种简单的方法，以创
 
 模式的弹出窗口出现时的任一按钮单击 ([单击以查看实际尺寸的图像](launching-a-modal-popup-window-from-server-code-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[下一篇](using-modalpopup-with-a-repeater-control-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](using-modalpopup-with-a-repeater-control-cs.md)

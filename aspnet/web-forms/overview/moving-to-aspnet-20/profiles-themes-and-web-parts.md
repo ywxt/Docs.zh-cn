@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
-title: "配置文件、 主题和 Web 部件 |Microsoft 文档"
+title: 配置文件、 主题和 Web 部件 |Microsoft 文档
 author: microsoft
-description: "有配置中的重大更改和 ASP.NET 2.0 中的检测。 使用新的 ASP.NET 配置 API，配置更改进行 pr..."
+description: 有配置中的重大更改和 ASP.NET 2.0 中的检测。 使用新的 ASP.NET 配置 API，配置更改进行 pr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 msc.type: authoredcontent
-ms.openlocfilehash: 2c6ba11799a5a9be3d8c0037fad5d79d8177c0e8
-ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
+ms.openlocfilehash: b749ed093fbaacf45b60f2826a2c20bac219a5c7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="profiles-themes-and-web-parts"></a>配置文件、 主题和 Web 部件
 ====================
@@ -341,19 +341,19 @@ Web 部件控件集很广泛，但某些控制非常重要，因为它们所需�
 4. 放置一个插入点之前`<div>`在设计图面上，然后按 ENTER 以添加新行上标记。 新行字符之前将插入点的位置，请单击**块格式**下拉列表控件的菜单上，并选择**标题 1**选项。 在标题中，添加文本**Web 部件演示页**。
 5. 从**web 部件**选项卡的工具箱拖**人员**拖到页面上，刚刚之后新行字符和之前对它进行定位的控件`<div>`标记。   
   
- **人员**控件不呈现任何输出，因此它显示为灰色的框，在设计器图面上。
+   **人员**控件不呈现任何输出，因此它显示为灰色的框，在设计器图面上。
 6. 在将插入点位置`<div>`标记。
 7. 在**布局**菜单上，单击**插入表**，并创建具有一个行和三个列的新表。 单击**单元属性**按钮，选择**顶部**从**垂直对齐**下拉列表中，单击**确定**，然后单击**确定**再次以创建的表。
 8. 将 WebPartZone 控件拖到该表左边的列。 右键单击**WebPartZone**控件中，选择**属性**，并设置以下属性：   
   
- ID: SidebarZone   
+   ID: SidebarZone   
   
- HeaderText： 侧栏
+   HeaderText： 侧栏
 9. 将另一个**WebPartZone**控制到中间的表列并设置以下属性：   
   
- ID: MainZone   
+   ID: MainZone   
   
- HeaderText： 主
+   HeaderText： 主
 10. 保存该文件。
 
 现在，页面包含两个不同的区域，你可以单独控制。 但是，两个区域中包含任何内容，因此是下一步创建内容。 对于本演练，你使用只显示静态内容的 Web 部件控件。
@@ -462,10 +462,10 @@ Web 部件提供的用户将其从一个区域中拖动到另一个更改 Web �
 2. 为了演示的个性化正常工作，关闭浏览器中，然后重新加载页面。 你所做的更改保存为将来的浏览器会话中。
 3. 从**显示模式**菜单上，选择**编辑**。   
   
- 页面上的每个控件现在显示在其标题栏中，其中包含谓词下拉菜单中向下箭头。
+   页面上的每个控件现在显示在其标题栏中，其中包含谓词下拉菜单中向下箭头。
 4. 单击箭头以显示上谓词菜单**我的链接**控件。 单击**编辑**谓词。   
   
- **EditorZone**控件的外观、 显示 EditorPart 控制你添加。
+   **EditorZone**控件的外观、 显示 EditorPart 控制你添加。
 5. 在**外观**的编辑控件，更改的部分**标题**到我的收藏夹，使用**Chrome 类型**下拉列表选择**仅标题**，然后单击**应用**。 下面的屏幕快照显示页面处于编辑模式。
 
 ### <a name="web-parts-demo-page-in-edit-mode"></a>在编辑模式下的 web 部件演示页
@@ -496,7 +496,7 @@ Web 部件提供的用户将其从一个区域中拖动到另一个更改 Web �
 1. 打开 WebPartsDemo.aspx 页上，并切换到**设计**视图。
 2. 从**web 部件**选项卡的工具箱中，CatalogZone 将控件拖到表中，右侧列下方**EditorZone**控件。   
   
- 两个控件可能在相同的表单元，因为它们不会显示在同一时间。
+   两个控件可能在相同的表单元，因为它们不会显示在同一时间。
 3. 在属性窗格中，将字符串分配**添加 Web 部件**到的 HeaderText 属性**CatalogZone**控件。
 4. 从**web 部件**部分的工具箱中，将 DeclarativeCatalogPart 控件拖动到的内容区域的**CatalogZone**控件。
 5. 单击中的右上角的箭头**DeclarativeCatalogPart**控件公开其任务菜单中，，然后选择**编辑模板**。
@@ -504,7 +504,7 @@ Web 部件提供的用户将其从一个区域中拖动到另一个更改 Web �
 7. 切换到**源**视图。 检查的源代码&lt;了&gt;元素。 请注意， **DeclarativeCatalogPart**控件包含&lt;webpartstemplate&gt;你将能够从目录添加到页面的两个封装的服务器控件的元素。
 8. 添加**标题**到每个你添加到目录中，为每个标题中下面的代码示例使用显示的字符串值的控件的属性。 即使标题不是属性，但你可以正常情况下设置这些这两个服务器控件在设计时，当用户添加到这些控件**WebPartZone**区域从在运行时目录，它们的每个包装与**GenericWebPart**控件。 这可让其充当 Web 部件控件，因此它们将能以显示标题。   
   
- 中包含的两个控件的代码**DeclarativeCatalogPart**控件的外观，如下所示。 
+   中包含的两个控件的代码**DeclarativeCatalogPart**控件的外观，如下所示。 
 
     [!code-aspx[Main](profiles-themes-and-web-parts/samples/sample26.aspx)]
 9. 保存页。
@@ -516,12 +516,12 @@ Web 部件提供的用户将其从一个区域中拖动到另一个更改 Web �
 1. 加载浏览器中的页。
 2. 单击**显示模式**下拉列表菜单，然后选择**目录**。   
   
- 标题为目录**添加 Web 部件**显示。
+   标题为目录**添加 Web 部件**显示。
 3. 拖动**我的收藏夹**回侧栏区域中，顶部从主区域控件并将它放存在。
 4. 在**添加 Web 部件**目录，选择两个复选框，，然后选择**Main**从下拉列表包含可用区域。
 5. 单击**添加**在目录中。 这些控件添加到主区域中。 如果你想，你可以从目录中向页面添加控件的多个实例。   
   
- 下面的屏幕快照显示在主区域中的文件上载控件和日历的页。 
+   下面的屏幕快照显示在主区域中的文件上载控件和日历的页。 
 
 ![从目录添加到主区域的控件](profiles-themes-and-web-parts/_static/image7.gif)
 

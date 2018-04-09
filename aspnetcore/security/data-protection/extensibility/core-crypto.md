@@ -1,7 +1,7 @@
 ---
-title: "核心加密可扩展性"
+title: 在 ASP.NET 核心中的核心加密可扩展性
 author: rick-anderson
-description: "说明 IAuthenticatedEncryptor、 IAuthenticatedEncryptorDescriptor、 IAuthenticatedEncryptorDescriptorDeserializer 和顶级工厂。"
+description: 了解有关 IAuthenticatedEncryptor、 IAuthenticatedEncryptorDescriptor、 IAuthenticatedEncryptorDescriptorDeserializer 和顶级工厂。
 manager: wpickett
 ms.author: riande
 ms.date: 8/11/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/extensibility/core-crypto
-ms.openlocfilehash: ead4012236244d88cff0b0520d000d89f93f3355
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b5a0dbc9120a8032dbb8d8eee74684495a982ac1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="core-cryptography-extensibility"></a>核心加密可扩展性
+# <a name="core-cryptography-extensibility-in-aspnet-core"></a>在 ASP.NET 核心中的核心加密可扩展性
 
 <a name="data-protection-extensibility-core-crypto"></a>
 
@@ -123,7 +123,7 @@ IAuthenticatedEncryptor 和 IAuthenticatedEncryptorDescriptor 的主要区别是
 
 通过其 ExportToXml 例程，描述符可序列化。 此例程返回 XmlSerializedDescriptorInfo 其中包含两个属性： XElement 表示形式的说明符和表示的类型[IAuthenticatedEncryptorDescriptorDeserializer](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptordeserializer)可以是用于使重新起用给定相应 XElement 此描述符。
 
-序列化的描述符可能包含敏感信息，例如加密的密钥材料。 数据保护系统具有已持久化到存储空间之前加密信息的内置支持。 若要充分利用此功能，描述符应标记的元素，其中包含敏感信息的属性名称"requiresEncryption"(xmlns"http://schemas.asp.net/2015/03/dataProtection")，值"true"。
+序列化的描述符可能包含敏感信息，例如加密的密钥材料。 数据保护系统具有已持久化到存储空间之前加密信息的内置支持。 若要利用此功能，该描述符应标记包含敏感信息的属性名称"requiresEncryption"的元素 (xmlns"<http://schemas.asp.net/2015/03/dataProtection>")，值"true"。
 
 >[!TIP]
 > 没有用于将此属性设置的帮助器 API。 调用 XElement.MarkAsRequiresEncryption() 位于命名空间 Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel 扩展方法。
@@ -161,7 +161,7 @@ ImportFromXml 方法采用返回 XElement [IAuthenticatedEncryptorDescriptor.Exp
 
 当调用 CreateNewDescriptor、 仅用于此调用中，创建新的密钥材料，并且生成新 IAuthenticatedEncryptorDescriptor 其包装此密钥材料以及所需使用材料算法信息。 无法在软件中创建 （和保存在内存中） 的密钥材料，它无法创建并保存在 HSM 中，依次类推。 关键点是 CreateNewDescriptor 任何两个调用应永远不会创建等效 IAuthenticatedEncryptorDescriptor 实例。
 
-AlgorithmConfiguration 类型用作密钥创建例程的入口点如[自动密钥滚动](../implementation/key-management.md#key-expiration-and-rolling)。 若要更改的所有将来的键的实现，请在 KeyManagementOptions 中设置 AuthenticatedEncryptorConfiguration 属性。
+AlgorithmConfiguration 类型用作密钥创建例程的入口点如[自动密钥滚动](xref:security/data-protection/implementation/key-management#key-expiration-and-rolling)。 若要更改的所有将来的键的实现，请在 KeyManagementOptions 中设置 AuthenticatedEncryptorConfiguration 属性。
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -173,6 +173,6 @@ AlgorithmConfiguration 类型用作密钥创建例程的入口点如[自动密�
 
 当调用 CreateNewDescriptor、 仅用于此调用中，创建新的密钥材料，并且生成新 IAuthenticatedEncryptorDescriptor 其包装此密钥材料以及所需使用材料算法信息。 无法在软件中创建 （和保存在内存中） 的密钥材料，它无法创建并保存在 HSM 中，依次类推。 关键点是 CreateNewDescriptor 任何两个调用应永远不会创建等效 IAuthenticatedEncryptorDescriptor 实例。
 
-IAuthenticatedEncryptorConfiguration 类型用作密钥创建例程的入口点如[自动密钥滚动](../implementation/key-management.md#key-expiration-and-rolling)。 若要更改的所有将来的键的实现，请在服务容器中注册的单独 IAuthenticatedEncryptorConfiguration。
+IAuthenticatedEncryptorConfiguration 类型用作密钥创建例程的入口点如[自动密钥滚动](xref:security/data-protection/implementation/key-management#key-expiration-and-rolling)。 若要更改的所有将来的键的实现，请在服务容器中注册的单独 IAuthenticatedEncryptorConfiguration。
 
 ---

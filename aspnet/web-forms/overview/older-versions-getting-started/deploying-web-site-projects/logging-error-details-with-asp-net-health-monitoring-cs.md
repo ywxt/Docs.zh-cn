@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
-title: "与 ASP.NET 运行状况监视 (C#) 中记录错误详细信息 |Microsoft 文档"
+title: 与 ASP.NET 运行状况监视 (C#) 中记录错误详细信息 |Microsoft 文档
 author: rick-anderson
-description: "Microsoft 的运行状况监视系统地轻松且可自定义日志各种 web 事件，包括未经处理的异常。 本教程将指导 thr..."
+description: Microsoft 的运行状况监视系统地轻松且可自定义日志各种 web 事件，包括未经处理的异常。 本教程将指导 thr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5bbba0e4e8660dbc60b9f9ad220c923274144b89
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 370f19b36628a9811a31e263e468453897cb7d92
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>与 ASP.NET 运行状况监视 (C#) 中记录错误详细信息
 ====================
@@ -135,7 +135,7 @@ ms.lasthandoff: 01/30/2018
 **图 2**： 按电子邮件发送错误详细信息  
 ([单击以查看实际尺寸的图像](logging-error-details-with-asp-net-health-monitoring-cs/_static/image6.png))
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 ASP.NET 运行状况监视系统设计用于允许管理员监视已部署的 web 应用程序的运行状况。 运行状况监视事件引发时展开某些操作，例如当应用程序停止时，当用户成功登录到站点，或发生未处理的异常时引发。 可以将这些事件记录到任意数量的日志源。 本教程介绍了如何将登录到数据库以及通过电子邮件的未经处理的异常的详细信息。
 
@@ -154,6 +154,6 @@ ASP.NET 运行状况监视系统设计用于允许管理员监视已部署的 we
 - [如何： 使用 ASP.NET 中的运行状况监视](https://msdn.microsoft.com/library/ms998306.aspx)
 - [在 ASP.NET 中监视的运行状况](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
 
->[!div class="step-by-step"]
-[上一页](processing-unhandled-exceptions-cs.md)
-[下一页](logging-error-details-with-elmah-cs.md)
+> [!div class="step-by-step"]
+> [上一页](processing-unhandled-exceptions-cs.md)
+> [下一页](logging-error-details-with-elmah-cs.md)

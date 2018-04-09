@@ -1,22 +1,22 @@
 ---
 uid: whitepapers/aspnet4/breaking-changes
-title: "ASP.NET 4 的重大更改 |Microsoft 文档"
+title: ASP.NET 4 的重大更改 |Microsoft 文档
 author: rick-anderson
-description: "本文档介绍更改所做的.NET Framework 版本 4 可能会影响使用创建的应用程序的发行版..."
+description: 本文档介绍更改所做的.NET Framework 版本 4 可能会影响使用创建的应用程序的发行版...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: d601c540-f86b-4feb-890c-20c806b3da6c
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: d68723b52ae1ee80142fb1aca3b0b10de34332d1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7eea51add6b05684357314e3d6aa5087383c6408
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-4-breaking-changes"></a>ASP.NET 4 的重大更改
 ====================
@@ -180,7 +180,7 @@ ASP.NET 使用加密算法和哈希算法来帮助保护数据（如窗体身份
 
 第一个方案的解决方法是更新应用程序级`Web.config`文件将从样本配置文本包含`Web.config`由 Visual Studio 2008 自动生成的文件。
 
-备用解决方法的第一个方案是在你的计算机上安装 Service Pack 2 for Vista 或 Windows Server 2008 或安装修补程序 KB958854 ([https://support.microsoft.com/kb/958854](https://support.microsoft.com/kb/958854)) 若要修复的错误IIS 配置系统的配置合并行为。 但是，在执行上述任一操作后，你的应用程序将可能会遇到配置错误，因为对于第二个方案描述的问题。
+备用解决方法的第一个方案是在你的计算机上安装 Service Pack 2 for Vista 或 Windows Server 2008 或安装修补程序 KB958854 ([https://support.microsoft.com/kb/958854](https://support.microsoft.com/kb/958854)) 若要修复的不正确的配置合并行为IIS 配置系统。 但是，在执行上述任一操作后，你的应用程序将可能会遇到配置错误，因为对于第二个方案描述的问题。
 
 第二个方案的解决方法是删除或注释掉所有**system.web.extensions**配置部分定义和配置节组定义的应用程序级`Web.config`文件。 这些定义通常是在应用程序级顶部`Web.config`文件，并可以由标识**configSections**元素及其子级。
 
@@ -192,8 +192,8 @@ ASP.NET 使用加密算法和哈希算法来帮助保护数据（如窗体身份
 
 由于配置或编译错误，配置为运行 ASP.NET 早期版本的应用程序子级的 ASP.NET 4 应用程序可能无法启动。 下面的示例演示受影响的应用程序的目录结构。
 
-`/parentwebapp`（配置为使用 ASP.NET 2.0 或 ASP.NET 3.5）  
-`/childwebapp`（配置为使用 ASP.NET 4）
+`/parentwebapp` （配置为使用 ASP.NET 2.0 或 ASP.NET 3.5）  
+`/childwebapp` （配置为使用 ASP.NET 4）
 
 中的应用程序`childwebapp`文件夹将不能在 IIS 7 或 IIS 7.5 上启动，并将报表配置错误。 错误文本将包括类似于以下的消息：
 
@@ -272,15 +272,15 @@ ASP.NET 使用加密算法和哈希算法来帮助保护数据（如窗体身份
 
 在早期版本的 ASP.NET， **HttpRequest**属性具有以下值：
 
-**HttpRequest.FilePath**:`/testapp/Action.mvc/SomeAction`
+**HttpRequest.FilePath**: `/testapp/Action.mvc/SomeAction`
 
 **HttpRequest.PathInfo**: （空）
 
 在 ASP.NET 4 中， **HttpRequest**属性改为具有以下值：
 
-**HttpRequest.FilePath**:`/testapp/Action.mvc`
+**HttpRequest.FilePath**: `/testapp/Action.mvc`
 
-**HttpRequest.PathInfo**:`SomeAction`
+**HttpRequest.PathInfo**: `SomeAction`
 
 <a id="0.1__Toc252995493"></a><a id="0.1__Toc255587642"></a><a id="0.1__Toc256770153"></a><a id="0.1__Toc245724861"></a>
 
@@ -323,13 +323,13 @@ ASP.NET 4 启用 IIS 6 上之后，在 （在 Windows Server 2003 或 Windows Se
 
 ## <a name="event-handlers-might-not-be-not-raised-in-a-default-document-in-iis-7-or-iis-75-integrated-mode"></a>事件处理程序可能不会不引发在 IIS 7 或 IIS 7.5 中的默认文档中集成模式
 
-ASP.NET 4 中包含的更改的修改如何**操作**特性的 html**窗体**元素呈现时无扩展名的 URL 解析为默认文档。 无扩展名 URL 解析为默认文档的示例将[http://contoso.com/](http://contoso.com/)，这会导致到的请求中[http://contoso.com/Default.aspx](http://contoso.com/Default.aspx)。
+ASP.NET 4 中包含的更改的修改如何**操作**特性的 html**窗体**元素呈现时无扩展名的 URL 解析为默认文档。 无扩展名 URL 解析为默认文档的示例将[ http://contoso.com/ ](http://contoso.com/)，这会导致到的请求中[ http://contoso.com/Default.aspx ](http://contoso.com/Default.aspx)。
 
-ASP.NET 4 现在的 HTML 呈现**窗体**元素的**操作**属性值为一个空字符串，当请求时，都具有映射到它的默认文档的无扩展名的 URL。 例如，在早期版本 ASP.NET 中，对的请求的[http://contoso.com](http://contoso.com)将导致对请求`Default.aspx`。 在该文档中，打开**窗体**标记将呈现如以下示例所示：
+ASP.NET 4 现在的 HTML 呈现**窗体**元素的**操作**属性值为一个空字符串，当请求时，都具有映射到它的默认文档的无扩展名的 URL。 例如，在早期版本 ASP.NET 中，对的请求的[ http://contoso.com ](http://contoso.com)将导致对请求`Default.aspx`。 在该文档中，打开**窗体**标记将呈现如以下示例所示：
 
 `<form action="Default.aspx" />`
 
-在 ASP.NET 4 中，对的请求[http://contoso.com](http://contoso.com)也会导致对请求`Default.aspx`。 但是，ASP.NET 现在呈现 HTML 打开**窗体**标记，如以下示例所示：
+在 ASP.NET 4 中，对的请求[ http://contoso.com ](http://contoso.com)也会导致对请求`Default.aspx`。 但是，ASP.NET 现在呈现 HTML 打开**窗体**标记，如以下示例所示：
 
 `<form action="" />`
 
@@ -370,7 +370,7 @@ ASP.NET 2.0 中，并通过扩展在 3.5 中，已添加的 ASP.NET 功能使用
 - 允许单个应用程序域中的多个不同的权限集。
 - 显式权限断言不需要 GAC 中，只有 ASP.NET 或其他.NET Framework 代码是在堆栈上时调用的程序集。
 
-一种情况将无法还原在.NET Framework 4： 非 Web 部分信任应用程序可以不再调用 System.Web.dll 和 System.Web.Extensions.dll 中的某些 Api。 在以前版本的.NET Framework 中，它是适用于非 Web 部分信任应用程序将被显式授予**AspNetHostingPermission**权限。 然后，这些应用程序可以使用**System.Web.HttpUtility**中的类型**System.Web.ClientServices。\***与成员资格、 角色和配置文件相关的命名空间和类型。 在.NET Framework 4 中不再支持从非 Web 部分信任应用程序中调用这些类型。
+一种情况将无法还原在.NET Framework 4： 非 Web 部分信任应用程序可以不再调用 System.Web.dll 和 System.Web.Extensions.dll 中的某些 Api。 在以前版本的.NET Framework 中，它是适用于非 Web 部分信任应用程序将被显式授予<strong>AspNetHostingPermission</strong>权限。 然后，这些应用程序可以使用<strong>System.Web.HttpUtility</strong>中的类型<strong>System.Web.ClientServices。\<< / g > * 与成员资格、 角色和配置文件相关的命名空间和类型。 在.NET Framework 4 中不再支持从非 Web 部分信任应用程序中调用这些类型。
 
 > [!NOTE]
 > **HtmlEncode**和**HtmlDecode**功能**System.Web.HttpUtility**类已移到新的.NET Framework 4 **System.Net.WebUtility**类。 如果这是使用的唯一 ASP.NET 功能，应用程序的代码修改为使用新**WebUtility**类。

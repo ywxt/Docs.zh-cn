@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-2
-title: "我们的其余部分的 ASP.NET MVC： 第 2 部分 |Microsoft 文档"
+title: 我们的其余部分的 ASP.NET MVC： 第 2 部分 |Microsoft 文档
 author: JoeStagner
-description: "在此视频 Microsoft Joe stagner 将通过添加为 t 的视图、 控制器逻辑和自定义模型的基础的联系我们功能的 ASP.NET MVC 应用程序..."
+description: 在此视频 Microsoft Joe stagner 将通过添加为 t 的视图、 控制器逻辑和自定义模型的基础的联系我们功能的 ASP.NET MVC 应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/22/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-2
 msc.type: video
-ms.openlocfilehash: c5556109bed70fbcef7ef7ac0a734b65cd5c28d9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 11d27dab79720450831ff344cf12669eb2e91d9d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-for-the-rest-of-us-part-2"></a>我们的其余部分的 ASP.NET MVC： 第 2 部分
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （31 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-for-the-rest-of-us-part-2)
 
->[!div class="step-by-step"]
-[上一页](aspnet-mvc-for-the-rest-of-us-part-1.md)
-[下一页](aspnet-mvc-for-the-rest-of-us-part-3.md)
+> [!div class="step-by-step"]
+> [上一页](aspnet-mvc-for-the-rest-of-us-part-1.md)
+> [下一页](aspnet-mvc-for-the-rest-of-us-part-3.md)

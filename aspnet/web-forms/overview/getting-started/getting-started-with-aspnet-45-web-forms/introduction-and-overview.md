@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
-title: "Getting Started with ASP.NET 4.5 Web 窗体和 Visual Studio 2013 |Microsoft 文档"
+title: Getting Started with ASP.NET 4.5 Web 窗体和 Visual Studio 2013 |Microsoft 文档
 author: Erikre
-description: "此分步教程系列将教您构建使用 ASP.NET 4.5 和 Microsoft Visual Studio 截止的 ASP.NET Web 窗体应用程序的基础知识..."
+description: 此分步教程系列将教您构建使用 ASP.NET 4.5 和 Microsoft Visual Studio 截止的 ASP.NET Web 窗体应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 6ae398f94c0ac3872601bdc8fd935f6d285793db
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 572b263a5f968b473457771a1dd4075910218c01
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>ASP.NET 4.5 Web 窗体和 Visual Studio 2013 入门
 ====================
@@ -177,9 +177,9 @@ PayPal 将确认你的帐户、 顺序和付款信息。
 
 [Getting Started with ASP.NET 4.5 Web 窗体和 Visual Studio 2013-Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (C#) 
 
-下载*.zip*文件。 若要查看已完成本教程系列创建的项目中，找到并选择*C#*文件夹中的*.zip*文件。 保存*C#* folderto 使用以使用 Visual Studio 2013 项目的文件夹。 默认情况下，Visual Studio 2013 项目文件夹如下所示：
+下载<em>.zip</em>文件。 若要查看已完成本教程系列创建的项目中，找到并选择<em>C#</em>文件夹中的<em>.zip</em>文件。 保存<em>C#</em> folderto 使用以使用 Visual Studio 2013 项目的文件夹。 默认情况下，Visual Studio 2013 项目文件夹如下所示：
 
-**C:\Users\*****&lt;username&gt;*****\Documents\Visual Studio 2013\Projects**
+<strong>C:\Users\</strong><strong><em>&lt;username&gt;</em></strong><strong>\Documents\Visual Studio 2013\Projects</strong>
 
 重命名***C#***文件夹***WingtipToys***。
 
@@ -197,5 +197,5 @@ PayPal 将确认你的帐户、 顺序和付款信息。
 
 在开发期间，发生错误时，或者如果网站无法正常运行，错误消息可能的问题来源授予复杂线索，或可能不说明如何修复此错误。 若要帮助你解决问题的一些常见方案，你可以使用[ASP.NET 论坛](https://forums.asp.net/)或附带的问题解答节[Getting Started with ASP.NET 4.5 Web 窗体和 Visual Studio 2013-Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (C#) 示例。 如果你收到如下错误消息，或当你完成本教程的内容不起作用，请务必检查上述位置。
 
->[!div class="step-by-step"]
-[下一篇](create-the-project.md)
+> [!div class="step-by-step"]
+> [下一篇](create-the-project.md)

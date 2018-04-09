@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/master-pages
-title: "母版页 |Microsoft 文档"
+title: 母版页 |Microsoft 文档
 author: microsoft
-description: "成功的网站的关键组件之一是一致的外观和感觉。 在 ASP.NET 中 1.x，开发人员用于用户控件复制常见页 elem...."
+description: 成功的网站的关键组件之一是一致的外观和感觉。 在 ASP.NET 中 1.x，开发人员用于用户控件复制常见页 elem....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/master-pages
 msc.type: authoredcontent
-ms.openlocfilehash: bd9effd4b73a014d4d7bb825b382b8db34d636f1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f45dd9704f665244d2a48ec000326f6e98984e4f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="master-pages"></a>母版页
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 成功的网站的关键组件之一是一致的外观和感觉。 在 ASP.NET 中 1.x，开发人员使用用户控件在 Web 应用程序上复制常见页面元素。 虽然这的确是一个可行的解决方案，则使用用户控件也具有一些缺点。 例如，用户控件的位置中的更改需要在站点之间对多个页的更改。 用户控件也不会呈现在之后插入页面上的设计视图中。
 
@@ -74,7 +74,7 @@ ASP.NET 2.0 引入了 Master 页作为一种维护一致的外观和感觉，而
 **图 2**： 创建一个新的主页面
 
 
-请注意，母版页的文件扩展名是*.master*。 这是一个母版页上与普通页不同的方式。 其他主要差别在于，替代@Page指令，母版页包含@Master指令。 切换到源视图的主页面你刚刚创建，并检查代码。
+请注意，母版页的文件扩展名是<em>.master</em>。 这是一个母版页上与普通页不同的方式。 其他主要差别在于，替代@Page指令，母版页包含@Master指令。 切换到源视图的主页面你刚刚创建，并检查代码。
 
 默认情况下，新的母版页将具有一个 ContentPlaceHolder 控件。 在大多数情况下，它更有意义要先创建常见的页面元素，然后插入 ContentPlaceHolder 控件需要自定义内容。 在这些情况下，开发人员将想要删除默认 ContentPlaceHolder 控件并将插入新记录，由于页开发。 ContentPlaceHolder 控件不调整它们显示调整大小控点的情况下。 ContentPlaceHolder 控件大小自动基于有一个例外; 它包含的内容如果块元素内的 ContentPlaceHolder 控件置于如表单元格上时，它将根据元素的大小的大小。
 
@@ -142,7 +142,7 @@ ASP.NET 2.0 引入了 Master 页作为一种维护一致的外观和感觉，而
 
 可以四种不同方式之一中配置母版页和内容页之间的关联：
 
-- **MasterPageFile**属性@Page指令
+- <strong>MasterPageFile</strong>属性@Page指令
 - 设置**Page.MasterPageFile**在代码中的属性。
 - **&lt;页&gt;**应用程序配置文件 (web.config 应用程序的根文件夹中) 中的元素
 - **&lt;页&gt;**子文件夹配置文件 (web.config 的子文件夹中) 中的元素
@@ -157,7 +157,7 @@ MasterPageFile 属性，可以轻松将母版页应用于特定的 ASP.NET 页�
 
 ## <a name="using-the-ltpagesgt-element"></a>使用&lt;页&gt;元素
 
-你可以通过将 masterPageFile 属性设置配置页母版页&lt;页&gt;web.config 文件的元素。 使用此方法时，记住应用程序结构中较低级别的 web.config 文件可以重写此设置。 在中设置任何 MasterPageFile 属性@Page指令还将重写此设置。 使用&lt;页&gt;元素可以很容易地创建*master*母版页可以重写如有必要在特定文件夹或文件中。
+你可以通过将 masterPageFile 属性设置配置页母版页&lt;页&gt;web.config 文件的元素。 使用此方法时，记住应用程序结构中较低级别的 web.config 文件可以重写此设置。 在中设置任何 MasterPageFile 属性@Page指令还将重写此设置。 使用&lt;页&gt;元素可以很容易地创建<em>master</em>母版页可以重写如有必要在特定文件夹或文件中。
 
 ## <a name="properties-in-master-pages"></a>母版页中的属性
 

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/performing-simple-validation-cs
-title: "执行简单的验证 (C#) |Microsoft 文档"
+title: 执行简单的验证 (C#) |Microsoft 文档
 author: StephenWalther
-description: "了解如何在 ASP.NET MVC 应用程序中执行验证。 在本教程中，Stephen Walther 引入你为模型状态和验证 HTML 帮助程序..."
+description: 了解如何在 ASP.NET MVC 应用程序中执行验证。 在本教程中，Stephen Walther 引入你为模型状态和验证 HTML 帮助程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/performing-simple-validation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 005872308d9d4d8ac7feb12dd5ab1fc463d0140e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7fc1dcc6935841382215f67a519cd241ac68931a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="performing-simple-validation-c"></a>执行简单的验证 (C#)
 ====================
@@ -35,7 +35,7 @@ ms.lasthandoff: 11/10/2017
 我不建议将你验证或数据库的逻辑添加到控制器。 控制器应包含仅与应用程序流控制相关的逻辑。 我们正在进行的快捷方式来为简单起见。
 
 
-**列表 1-Controllers\ProductController.cs**
+**Listing 1 - Controllers\ProductController.cs**
 
 [!code-csharp[Main](performing-simple-validation-cs/samples/sample1.cs)]
 
@@ -71,7 +71,7 @@ ASP.NET MVC framework 包括两个验证帮助器： Html.ValidationMessage() �
 
 完成这些步骤后，你将收到列出 2 中创建视图。
 
-**列出 2-Views\Product\Create.aspx**
+**Listing 2 - Views\Product\Create.aspx**
 
 [!code-aspx[Main](performing-simple-validation-cs/samples/sample2.aspx)]
 
@@ -126,10 +126,10 @@ ASP.NET MVC framework 包括两个验证帮助器： Html.ValidationMessage() �
 
 如果你想要自定义这些的外观 prebinding 错误消息，然后需要创建这些消息的资源字符串。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程的目标是验证的介绍用于在 ASP.NET MVC framework 中的基本机制。 您学习了如何使用模型状态和验证 HTML 帮助器。 我们还讨论了 prebinding 和 postbinding 验证之间的区别。 在其他教程中，我们将讨论各种移动你的控制器出来放入模型类验证代码的策略。
 
->[!div class="step-by-step"]
-[上一页](displaying-a-table-of-database-data-cs.md)
-[下一页](validating-with-the-idataerrorinfo-interface-cs.md)
+> [!div class="step-by-step"]
+> [上一页](displaying-a-table-of-database-data-cs.md)
+> [下一页](validating-with-the-idataerrorinfo-interface-cs.md)

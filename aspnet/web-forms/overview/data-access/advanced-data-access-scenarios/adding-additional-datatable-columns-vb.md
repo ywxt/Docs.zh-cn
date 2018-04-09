@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-vb
-title: "添加其他数据表列 (VB) |Microsoft 文档"
+title: 添加其他数据表列 (VB) |Microsoft 文档
 author: rick-anderson
-description: "使用 TableAdapter 向导时创建的类型化数据集，相应的数据表中的主数据库查询返回的列。 但存在..."
+description: 使用 TableAdapter 向导时创建的类型化数据集，相应的数据表中的主数据库查询返回的列。 但存在...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/18/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d357ca7bfe364090ff2c8504b2116e0d99d004bc
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b51089057ad1e14901cb09589534d6e575261c3e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-additional-datatable-columns-vb"></a>添加其他数据表列 (VB)
 ====================
@@ -41,9 +41,9 @@ ms.lasthandoff: 01/24/2018
 
 在*创建新的存储过程类型化数据集 s Tableadapter*我们创建名为类型化数据集的教程`NorthwindWithSprocs`。 此数据集当前包含两个数据表：`ProductsDataTable`和`EmployeesDataTable`。 `ProductsTableAdapter`有以下三个方法：
 
-- `GetProducts`-在主查询，返回中的所有记录`Products`表
-- `GetProductsByCategoryID(categoryID)`-返回使用指定的所有产品*categoryID*。
-- `GetProductByProductID(productID)`-返回具有指定的特定产品*productID*。
+- `GetProducts` -在主查询，返回中的所有记录`Products`表
+- `GetProductsByCategoryID(categoryID)` -返回使用指定的所有产品*categoryID*。
+- `GetProductByProductID(productID)` -返回具有指定的特定产品*productID*。
 
 主查询和两个附加方法将返回相同的数据字段，即所有中的列集`Products`表。 有无相关子查询或`JOIN`拉取来自的相关的数据的 s`Categories`或`Suppliers`表。 因此，`ProductsDataTable`对应的列中每个字段`Products`表。
 
@@ -199,7 +199,7 @@ ms.lasthandoff: 01/24/2018
 
 本教程中下载内容还包括`ProductsWithPriceQuartileTableAdapter`类`NorthwindWithSprocs`演示了此备用方法的数据集。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在大多数情况下，所有 TableAdapter 中的方法将返回组相同的数据字段，但有特定的方法或两个可能需要时要返回的其他字段的时间。 例如，在[母版/详细介绍 Master 记录项目符号列表使用详细信息 DataList](../filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb.md)我们添加了一种对方法的教程`CategoriesTableAdapter`，除了返回的主查询的数据字段`NumberOfProducts`字段，报告的每个类别关联的产品数目。 在本教程中我们查看添加中的方法`ProductsTableAdapter`返回`PriceQuartile`除了主查询的数据字段的字段。 若要捕获更多数据字段由方法返回的 TableAdapter s 我们需要将对应的列添加到数据表。
 
@@ -209,12 +209,12 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已徐 Schmidt、 Jacky Goor、 伯纳黛特 Leigh 和希尔顿 Giesenow。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](updating-the-tableadapter-to-use-joins-vb.md)
-[下一页](working-with-computed-columns-vb.md)
+> [!div class="step-by-step"]
+> [上一页](updating-the-tableadapter-to-use-joins-vb.md)
+> [下一页](working-with-computed-columns-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
-title: "添加到使用模型绑定和 web 窗体的项目的业务逻辑层 |Microsoft 文档"
+title: 添加到使用模型绑定和 web 窗体的项目的业务逻辑层 |Microsoft 文档
 author: tfitzmac
-description: "本系列教程演示使用模型绑定的 ASP.NET Web 窗体项目的基本方面。 模型绑定使数据交互详细直接-..."
+description: 本系列教程演示使用模型绑定的 ASP.NET Web 窗体项目的基本方面。 模型绑定使数据交互详细直接-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
 msc.type: authoredcontent
-ms.openlocfilehash: ca50690052cca73a718342a9725c8096a72f1187
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 25e887bdc316abf65c780bb6c8d075e938e85064
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a>添加到使用模型绑定和 web 窗体的项目的业务逻辑层
 ====================
@@ -66,7 +66,7 @@ SchoolBL.cs 中的代码替换为以下代码。
 
 - studentsGrid\_GetData
 - studentsGrid\_UpdateItem
-- studentsGrid\_删除项
+- studentsGrid\_DeleteItem
 - addStudentForm\_InsertItem
 - coursesGrid\_GetData
 
@@ -98,5 +98,5 @@ SchoolBL.cs 中的代码替换为以下代码。
 
 在本教程中，你重新构建应用程序使用的数据访问层和业务逻辑层。 你指定数据控件使用一个对象，它不数据操作的当前页。
 
->[!div class="step-by-step"]
-[上一篇](using-query-string-values-to-retrieve-data.md)
+> [!div class="step-by-step"]
+> [上一篇](using-query-string-values-to-retrieve-data.md)

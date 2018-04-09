@@ -1,7 +1,7 @@
 ---
-title: "帐户确认和 ASP.NET Core 中的密码恢复"
+title: 帐户确认和 ASP.NET Core 中的密码恢复
 author: rick-anderson
-description: "了解如何生成使用电子邮件确认及密码重置功能的 ASP.NET Core 应用程序。"
+description: 了解如何生成使用电子邮件确认及密码重置功能的 ASP.NET Core 应用程序。
 manager: wpickett
 ms.author: riande
 ms.date: 2/11/2018
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: b236b4e5d3a4fa7212453f2aec209d145f5f5e32
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 8ad2a63ce007a68eac3b607db454c6b4fc834444
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>帐户确认和 ASP.NET Core 中的密码恢复
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 03/02/2018
 
 ## <a name="prerequisites"></a>系统必备
 
-[.NET 核心 2.1.4 SDK](https://www.microsoft.com/net/core)或更高版本。
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 ## <a name="create-a-new-aspnet-core-project-with-the-net-core-cli"></a>使用.NET 核心 CLI 创建新的 ASP.NET Core 项目
 
@@ -74,7 +74,7 @@ dotnet new mvc --auth Individual
 
 ## <a name="view-the-identity-database"></a>查看标识数据库
 
-请参阅[ASP.NET 核心 MVC 项目中使用 SQLite](xref:tutorials/first-mvc-app-xplat/working-with-sql)有关说明如何查看 SQLite 数据库。
+请参阅[ASP.NET 核心 MVC 项目中使用的 SQLite](xref:tutorials/first-mvc-app-xplat/working-with-sql)有关说明如何查看 SQLite 数据库。
 
 Visual studio:
 
@@ -116,7 +116,7 @@ Visual studio:
 
 [!code-csharp[](accconfirm/sample/WebPWrecover/Services/AuthMessageSenderOptions.cs?name=snippet1)]
 
-设置`SendGridUser`和`SendGridKey`与[机密管理器工具](xref:security/app-secrets)。 例如:
+设置`SendGridUser`和`SendGridKey`与[机密管理器工具](xref:security/app-secrets)。 例如：
 
 ```console
 C:\WebAppl\src\WebApp1>dotnet user-secrets set SendGridUser RickAndMSFT
@@ -138,16 +138,13 @@ info: Successfully saved SendGridUser = RickAndMSFT to the secret store.
 
 添加`AuthMessageSenderOptions`到末尾的服务容器`ConfigureServices`中的方法*Startup.cs*文件：
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet2&highlight=28)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](accconfirm/sample/WebApp1/Startup.cs?name=snippet1&highlight=26)]
 
----
-
+* * *
 ### <a name="configure-the-authmessagesender-class"></a>配置 AuthMessageSender 类
 
 本教程演示如何添加通过电子邮件通知[SendGrid](https://sendgrid.com/)，但是你可以发送电子邮件使用 SMTP 和其他机制。
@@ -160,31 +157,28 @@ info: Successfully saved SendGridUser = RickAndMSFT to the secret store.
 
 * 从程序包管理器控制台中，输入以下命令：
 
- `Install-Package SendGrid`
+  `Install-Package SendGrid`
 
 请参阅[免费开始使用 SendGrid](https://sendgrid.com/free/)注册一个免费的 SendGrid 帐户。
 
 #### <a name="configure-sendgrid"></a>配置了 SendGrid
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 若要配置 SendGrid，添加类似于以下的代码*Services/EmailSender.cs*:
 
 [!code-csharp[](accconfirm/sample/WebPWrecover/Services/EmailSender.cs)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 * 中添加代码*Services/MessageServices.cs*类似于以下配置 SendGrid:
 
 [!code-csharp[](accconfirm/sample/WebApp1/Services/MessageServices.cs)]
 
----
-
+* * *
 ## <a name="enable-account-confirmation-and-password-recovery"></a>启用帐户确认和密码恢复
 
 已为帐户确认和密码恢复代码的模板。 查找`OnPostAsync`中的方法*Pages/Account/Register.cshtml.cs*。
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 可防止新注册的用户自动登录通过注释掉以下行：
 
 ```csharp
@@ -195,8 +189,7 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 
 [!code-csharp[](accconfirm/sample/WebPWrecover/Pages/Account/Register.cshtml.cs?highlight=16&name=snippet_Register)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 若要启用帐户确认后，取消注释以下代码：
 
 [!code-csharp[](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=16-25&name=snippet_Register)]
@@ -215,15 +208,14 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 
 [!code-cshtml[](accconfirm/sample/WebApp1/Views/Account/ForgotPassword.cshtml?highlight=7-10,12,28)]
 
----
-
+* * *
 ## <a name="register-confirm-email-and-reset-password"></a>注册、 确认电子邮件，以及重置密码
 
 运行该 web 应用，并测试帐户确认和密码恢复流。
 
 * 运行应用并注册新的用户
 
- ![Web 应用程序帐户注册视图](accconfirm/_static/loginaccconfirm1.png)
+  ![Web 应用程序帐户注册视图](accconfirm/_static/loginaccconfirm1.png)
 
 * 检查你的帐户确认链接的电子邮件。 请参阅[调试电子邮件](#debug)如果你不会获得电子邮件。
 * 单击链接以确认你的电子邮件。

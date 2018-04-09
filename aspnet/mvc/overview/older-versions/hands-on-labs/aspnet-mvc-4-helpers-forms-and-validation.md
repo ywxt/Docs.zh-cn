@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
-title: "ASP.NET MVC 4 帮助器、 窗体和验证 |Microsoft 文档"
+title: ASP.NET MVC 4 帮助器、 窗体和验证 |Microsoft 文档
 author: rick-anderson
-description: "在 ASP.NET MVC 4 模型和数据访问动手实验中，你已加载并显示从数据库的数据。 在本动手实验中，你将添加到..."
+description: 在 ASP.NET MVC 4 模型和数据访问动手实验中，你已加载并显示从数据库的数据。 在本动手实验中，你将添加到...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 243db3708ac4311d423c4c137f503f072f5553e6
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 4cfa98144919c3f1bdb3608970af1a7952fe6ea7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>ASP.NET MVC 4 帮助器、 窗体和验证
 
@@ -112,13 +112,13 @@ ms.lasthandoff: 03/02/2018
 
 1. 打开**开始**解决方案位于**源/Ex1-CreatingTheStoreManagerController/开始/**文件夹。
 
-    1. 你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
-2. 添加一个新的控制器。 要执行此操作，请右键单击**控制器**在解决方案资源管理器，选择文件夹**添加**然后**控制器**命令。 更改**控制器****名称**到**StoreManagerController**并确保选项**包含空读/写操作的MVC控制器**选择。 单击 **“添加”**。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+2. 添加一个新的控制器。 要执行此操作，请右键单击**控制器**在解决方案资源管理器，选择文件夹**添加**然后**控制器**命令。 更改**控制器****名称**到**StoreManagerController**并确保选项**包含空读/写操作的MVC控制器**选择。 单击 **添加**。
 
     ![添加控制器对话框](aspnet-mvc-4-helpers-forms-and-validation/_static/image1.png "添加控制器对话框")
 
@@ -226,19 +226,19 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 在此任务中，你将添加一个新方法**Truncate**到**HTML**公开在 ASP.NET MVC 视图内的对象。 若要执行此操作，则将实现**扩展方法**到内置**System.Web.Mvc.HtmlHelper**类提供的 ASP.NET MVC。
 
 > [!NOTE]
-> 若要阅读更多有关**扩展方法**，请访问此 msdn 文章。 [https://msdn.microsoft.com/library/bb383977.aspx](https://msdn.microsoft.com/library/bb383977.aspx).
+> 若要阅读更多有关**扩展方法**，请访问此 msdn 文章。 [https://msdn.microsoft.com/library/bb383977.aspx](https://msdn.microsoft.com/library/bb383977.aspx)。
 
 
 1. 打开**开始**解决方案位于**源/Ex2-AddingAnHTMLHelper/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 2. 打开 StoreManager 的索引视图。 若要执行此操作，在解决方案资源管理器中展开**视图**文件夹，则**StoreManager**并打开**Index.cshtml**文件。
-3. 添加下面的代码下面 **@model** 指令来定义**Truncate**帮助器方法。
+3. 添加下面的代码下面<strong>@model</strong>指令来定义<strong>Truncate</strong>帮助器方法。
 
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample7.cshtml)]
 
@@ -288,12 +288,12 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
 1. 打开**开始**解决方案位于**源/Ex3-CreatingTheEditView/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 2. 打开**StoreManagerController**类。 若要执行此操作，展开**控制器**文件夹并双击**StoreManagerController.cs**。
 3. 替换**HTTP GET 编辑**替换为以下代码，以检索相应的操作方法**唱片集**以及**风格**和**艺术家**列出。
 
@@ -425,12 +425,12 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
 1. 打开**开始**解决方案位于**源/Ex4-AddingACreateView/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 2. 打开**StoreManagerController**类。 若要执行此操作，展开**控制器**文件夹并双击**StoreManagerController.cs**。
 3. 替换**创建**操作方法代码替换为以下：
 
@@ -524,12 +524,12 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
 1. 打开**开始**解决方案位于**源/Ex5-HandlingDeletion/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 2. 打开**StoreManagerController**类。 若要执行此操作，展开**控制器**文件夹并双击**StoreManagerController.cs**。
 3. 删除控制器操作正是之前存储详细信息控制器操作相同： 它会查询**唱片集**从数据库使用的对象**id** URL 和返回中提供适当**视图**。 若要执行此操作，将 HTTP GET**删除**操作方法代码替换为以下：
 
@@ -613,12 +613,12 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
 1. 打开**开始**解决方案位于**源/Ex6-AddingValidation/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 2. 打开**Album.cs**从**模型**文件夹。
 3. 替换**Album.cs**内容替换为突出显示的代码，以便其类似于下面所示：
 
@@ -657,7 +657,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
     ![在编辑页中的已验证的字段](aspnet-mvc-4-helpers-forms-and-validation/_static/image19.png)
 
-    在编辑页中的已验证的字段
+    *在编辑页中的已验证的字段*
 
 <a id="Exercise7"></a>
 
@@ -679,12 +679,12 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
 1. 打开**开始**解决方案位于**源/Ex7-UnobtrusivejQueryValidation/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 2. 按 **F5** 运行该应用程序。
 3. 在主页页面中启动项目。 浏览**/StoreManager/创建**单击**创建**而不填充此表单以验证你收到验证消息：
 
@@ -739,31 +739,31 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
     [!code-html[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample23.html)]
 
-    > [!NOTE]
-    > 对于每个客户端验证规则，非介入式 jQuery 添加具有数据的属性-val-*rulename*=&quot;*消息*&quot;。 下面是标记列表该 Unobtrusive jQuery 将插入到要执行客户端验证的 html 输入字段：
-    > 
-    > - 数据 val
-    > - Data-val-number
-    > - 数据 val 范围
-    > - 数据 val-范围最小/最大数据 val 范围
-    > - Data-val-required
-    > - 数据 val 长度
-    > - 数据 val-长度最大/最小数据 val 长度
-    > 
-    > 所有数据值将都填入模型**数据注释**。 然后，可以在客户端运行在服务器端工作的所有逻辑。 例如，价格特性具有以下数据注释在模型中：
-    > 
-    > [!code-csharp[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample24.cs)]
-    > 
-    > 使用非介入式 jQuery 后, 生成的代码为：
-    >  
-    > [!code-html[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample25.html)]
+   > [!NOTE]
+   > 对于每个客户端验证规则，非介入式 jQuery 添加具有数据的属性-val-*rulename*=&quot;*消息*&quot;。 下面是标记列表该 Unobtrusive jQuery 将插入到要执行客户端验证的 html 输入字段：
+   > 
+   > - 数据 val
+   > - Data-val-number
+   > - 数据 val 范围
+   > - 数据 val-范围最小/最大数据 val 范围
+   > - Data-val-required
+   > - 数据 val 长度
+   > - 数据 val-长度最大/最小数据 val 长度
+   > 
+   > 所有数据值将都填入模型**数据注释**。 然后，可以在客户端运行在服务器端工作的所有逻辑。 例如，价格特性具有以下数据注释在模型中：
+   > 
+   > [!code-csharp[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample24.cs)]
+   > 
+   > 使用非介入式 jQuery 后, 生成的代码为：
+   > 
+   > [!code-html[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample25.html)]
 
 * * *
 
 <a id="Summary"></a>
 
 <a id="Summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 通过完成本动手实验中，你已了解如何使用户能够更改带有以下使用的数据库中存储的数据：
 
@@ -783,7 +783,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
 你可以安装**Microsoft Visual Studio Express 2012 for Web**或另一个&quot;Express&quot;版本使用 **[Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)**. 以下说明将指导你完成安装所需的步骤*Visual studio Express 2012 for Web*使用*Microsoft Web 平台安装程序*。
 
-1. 转到[ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; *Visual Studio Express 2012 for Web 的 Windows Azure SDK*&quot;。
+1. 转到[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; <em>Visual Studio Express 2012 for Web 的 Windows Azure SDK</em>&quot;。
 2. 单击**立即安装**。 如果你没有**Web 平台安装程序**将重定向以下载并请先安装它。
 3. 一次**Web 平台安装程序**处于打开状态，单击**安装**以启动安装程序。
 

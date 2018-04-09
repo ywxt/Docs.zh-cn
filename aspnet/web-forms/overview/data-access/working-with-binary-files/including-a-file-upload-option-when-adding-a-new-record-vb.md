@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
-title: "添加新记录 (VB) 时包括文件上载选项 |Microsoft 文档"
+title: 添加新记录 (VB) 时包括文件上载选项 |Microsoft 文档
 author: rick-anderson
-description: "本教程演示如何创建一个 Web 界面，允许用户同时输入文本数据，并将二进制文件上载。 为了说明选项可用 t..."
+description: 本教程演示如何创建一个 Web 界面，允许用户同时输入文本数据，并将二进制文件上载。 为了说明选项可用 t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/27/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
 msc.type: authoredcontent
-ms.openlocfilehash: eb462a0e8ce88037855ea12d00c1afc0419fa04e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 39608eef7cc88be56ef6e21820e4afcfaa4ffd8d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>添加新记录 (VB) 时包括文件上载选项
 ====================
@@ -268,7 +268,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-vb[Main](including-a-file-upload-option-when-adding-a-new-record-vb/samples/sample13.vb)]
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 有多个要添加包含二进制数据的记录提供基于 web 的界面，必须执行的步骤。 如果正在直接到数据库中存储二进制数据，则很有你将需要更新体系结构中，添加特定的方法以处理二进制数据正在插入的位置的情况。 一旦体系结构已更新下, 一步创建插入接口，这可以使用自定义要包括的每个二进制数据字段 FileUpload 控制说明如何完成。 上载的数据然后可以保存到 web 服务器的文件系统或分配给说明 s 中的数据源参数`ItemInserting`事件处理程序。
 
@@ -280,12 +280,12 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Dave Gardner、 Teresa 墨和伯纳黛特 Leigh。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](displaying-binary-data-in-the-data-web-controls-vb.md)
-[下一页](updating-and-deleting-existing-binary-data-vb.md)
+> [!div class="step-by-step"]
+> [上一页](displaying-binary-data-in-the-data-web-controls-vb.md)
+> [下一页](updating-and-deleting-existing-binary-data-vb.md)

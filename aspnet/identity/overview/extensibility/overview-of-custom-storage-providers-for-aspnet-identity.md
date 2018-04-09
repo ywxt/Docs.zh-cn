@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
-title: "ASP.NET 标识的自定义的存储提供程序的概述 |Microsoft 文档"
+title: ASP.NET 标识的自定义的存储提供程序的概述 |Microsoft 文档
 author: tfitzmac
-description: "ASP.NET 标识是一种可扩展系统，以便您可以创建自己的存储提供程序并将其插入你的应用程序而无需重新使用应用程序..."
+description: ASP.NET 标识是一种可扩展系统，以便您可以创建自己的存储提供程序并将其插入你的应用程序而无需重新使用应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/13/2014
 ms.topic: article
 ms.assetid: 681a9204-462e-4260-9a0b-19f0644d6ad7
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: bbc1f6ef291eddd7488531943b146bb67ae7ee02
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 06e3ad3b74bf94806f56da9f579255bf2917bc48
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>自定义存储提供程序 ASP.NET 标识概述
 ====================
@@ -153,29 +153,29 @@ Visual Studio 中的默认项目模板包含假定已在用户存储区将许多
 ![](overview-of-custom-storage-providers-for-aspnet-identity/_static/image4.png)
 
 - **IUserStore**  
- [IUserStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613278(v=vs.108).aspx)接口是在用户存储区必须实现的唯一接口。 它定义了用于创建、 更新、 删除和检索用户的方法。
+  [IUserStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613278(v=vs.108).aspx)接口是在用户存储区必须实现的唯一接口。 它定义了用于创建、 更新、 删除和检索用户的方法。
 - **IUserClaimStore**  
- [IUserClaimStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613265(v=vs.108).aspx)接口定义的方法必须在你的用户存储，从而启用用户声明实现。 它包含方法或添加、 删除和检索用户声明。
+  [IUserClaimStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613265(v=vs.108).aspx)接口定义的方法必须在你的用户存储，从而启用用户声明实现。 它包含方法或添加、 删除和检索用户声明。
 - **IUserLoginStore**  
- [IUserLoginStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613272(v=vs.108).aspx)定义的方法必须在你的用户存储区，以启用外部身份验证提供程序实现。 它包含用于添加、 删除和检索用户登录名和用于检索用户的登录信息基于方法的方法。
+  [IUserLoginStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613272(v=vs.108).aspx)定义的方法必须在你的用户存储区，以启用外部身份验证提供程序实现。 它包含用于添加、 删除和检索用户登录名和用于检索用户的登录信息基于方法的方法。
 - **IUserRoleStore**  
- [IUserRoleStore&lt;，热熔器&gt;](https://msdn.microsoft.com/library/dn613276(v=vs.108).aspx)接口定义的方法必须在你的用户存储，从而将用户映射到角色实现。 它包含要添加、 删除和检索用户的角色和方法来检查是否将用户分配到角色的方法。
+  [IUserRoleStore&lt;，热熔器&gt;](https://msdn.microsoft.com/library/dn613276(v=vs.108).aspx)接口定义的方法必须在你的用户存储，从而将用户映射到角色实现。 它包含要添加、 删除和检索用户的角色和方法来检查是否将用户分配到角色的方法。
 - **IUserPasswordStore**  
- [IUserPasswordStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613273(v=vs.108).aspx)接口定义必须在你的用户存储区，以保留实现的方法进行密码哈希处理。 它包含用于获取和设置工作经过哈希处理的密码，以及用于指示用户是否已设置密码的方法的方法。
+  [IUserPasswordStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613273(v=vs.108).aspx)接口定义必须在你的用户存储区，以保留实现的方法进行密码哈希处理。 它包含用于获取和设置工作经过哈希处理的密码，以及用于指示用户是否已设置密码的方法的方法。
 - **IUserSecurityStampStore**  
- [IUserSecurityStampStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613277(v=vs.108).aspx)接口定义必须在你的用户存储区，用于指示是否已更改用户的帐户信息安全戳实现的方法. 当用户更改密码，或添加或删除登录名，将更新此 stamp。 它包含用于获取和设置安全戳的方法。
+  [IUserSecurityStampStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613277(v=vs.108).aspx)接口定义必须在你的用户存储区，用于指示是否已更改用户的帐户信息安全戳实现的方法. 当用户更改密码，或添加或删除登录名，将更新此 stamp。 它包含用于获取和设置安全戳的方法。
 - **IUserTwoFactorStore**  
- [IUserTwoFactorStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613279(v=vs.108).aspx)接口定义必须实现到实现两个因素身份验证的方法。 它包含用于获取和设置是否为用户启用双重身份验证的方法。
+  [IUserTwoFactorStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613279(v=vs.108).aspx)接口定义必须实现到实现两个因素身份验证的方法。 它包含用于获取和设置是否为用户启用双重身份验证的方法。
 - **IUserPhoneNumberStore**  
- [IUserPhoneNumberStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613275(v=vs.108).aspx)接口定义必须实现以存储用户电话号码的方法。 它包含用于获取和设置的电话号码和是否确认的电话号码的方法。
+  [IUserPhoneNumberStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613275(v=vs.108).aspx)接口定义必须实现以存储用户电话号码的方法。 它包含用于获取和设置的电话号码和是否确认的电话号码的方法。
 - **IUserEmailStore**  
- [IUserEmailStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613143(v=vs.108).aspx)接口定义必须实现以存储用户电子邮件地址的方法。 它包含用于获取和设置的电子邮件地址和是否确认电子邮件的方法。
+  [IUserEmailStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613143(v=vs.108).aspx)接口定义必须实现以存储用户电子邮件地址的方法。 它包含用于获取和设置的电子邮件地址和是否确认电子邮件的方法。
 - **IUserLockoutStore**  
- [IUserLockoutStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613271(v=vs.108).aspx)接口定义为存储帐户的锁定信息而必须实现的方法。 它包含用于获取当前的失败的访问尝试次数、 获取和设置是否可以锁定该帐户，获取和设置在锁住结束日期，递增的数字失败的尝试，和重置失败尝试次数的方法。
+  [IUserLockoutStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613271(v=vs.108).aspx)接口定义为存储帐户的锁定信息而必须实现的方法。 它包含用于获取当前的失败的访问尝试次数、 获取和设置是否可以锁定该帐户，获取和设置在锁住结束日期，递增的数字失败的尝试，和重置失败尝试次数的方法。
 - **IQueryableUserStore**  
- [IQueryableUserStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613267(v=vs.108).aspx)接口定义必须实现以提供可查询的用户存储的成员。 它包含一个属性，保存查询的用户。
+  [IQueryableUserStore&lt;热熔器、 TKey&gt; ](https://msdn.microsoft.com/library/dn613267(v=vs.108).aspx)接口定义必须实现以提供可查询的用户存储的成员。 它包含一个属性，保存查询的用户。
 
- 在你的应用程序; 实现所需接口例如，IUserClaimStore、 IUserLoginStore、 IUserRoleStore、 IUserPasswordStore 和 IUserSecurityStampStore 接口如下所示。 
+  在你的应用程序; 实现所需接口例如，IUserClaimStore、 IUserLoginStore、 IUserRoleStore、 IUserPasswordStore 和 IUserSecurityStampStore 接口如下所示。 
 
 [!code-csharp[Main](overview-of-custom-storage-providers-for-aspnet-identity/samples/sample5.cs)]
 
@@ -218,11 +218,11 @@ Microsoft.AspNet.Identity.EntityFramework 命名空间包含的实现[IdentityUs
 [!code-csharp[Main](overview-of-custom-storage-providers-for-aspnet-identity/samples/sample8.cs)]
 
 - **IRoleStore&lt;TRole&gt;**  
- [IRoleStore](https://msdn.microsoft.com/library/dn468195.aspx)接口定义角色存储类中实现的方法。 它包含用于创建、 更新、 删除和检索角色的方法。
+  [IRoleStore](https://msdn.microsoft.com/library/dn468195.aspx)接口定义角色存储类中实现的方法。 它包含用于创建、 更新、 删除和检索角色的方法。
 - **RoleStore&lt;TRole&gt;**  
- 若要自定义 RoleStore，请创建实现 IRoleStore 接口的类。 只需实现此类，如果想要使用你的系统上的角色。 采用名为的参数的构造函数*数据库*ExampleDatabase 是仅举例说明了如何在数据访问类传递的类型。 例如，在 MySQL 实现中，此构造函数采用类型 MySQLDatabase 的参数。  
+  若要自定义 RoleStore，请创建实现 IRoleStore 接口的类。 只需实现此类，如果想要使用你的系统上的角色。 采用名为的参数的构造函数*数据库*ExampleDatabase 是仅举例说明了如何在数据访问类传递的类型。 例如，在 MySQL 实现中，此构造函数采用类型 MySQLDatabase 的参数。  
   
- 有关完整实现，请参阅[RoleStore (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/RoleStore.cs) 。
+  有关完整实现，请参阅[RoleStore (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/RoleStore.cs) 。
 
 <a id="reconfigure"></a>
 ## <a name="reconfigure-application-to-use-new-storage-provider"></a>重新配置应用程序以使用新存储提供程序
@@ -232,7 +232,7 @@ Microsoft.AspNet.Identity.EntityFramework 命名空间包含的实现[IdentityUs
 ### <a name="replace-default-storage-provider-in-mvc-project"></a>将 MVC 项目中的默认存储提供程序
 
 1. 在**管理 NuGet 包**窗口中，卸载**Microsoft ASP.NET Identity EntityFramework**包。 你可以通过 Identity.EntityFramework 搜索已安装的包中找到此包。  
-    ![](overview-of-custom-storage-providers-for-aspnet-identity/_static/image7.png)系统将要求你还希望卸载实体框架。 如果你不需要它在你的应用程序的其他部分，则可以卸载它。
+    ![](overview-of-custom-storage-providers-for-aspnet-identity/_static/image7.png) 系统将要求你还希望卸载实体框架。 如果你不需要它在你的应用程序的其他部分，则可以卸载它。
 2. 在 IdentityModels.cs 文件中的 Models 文件夹中，删除或注释掉**ApplicationUser**和**ApplicationDbContext**类。 在 MVC 应用程序，你可以删除整个 IdentityModels.cs 文件。 在 Web 窗体应用程序中，删除两个类，但请确保你保留也位于 IdentityModels.cs 文件中的帮助器类。
 3. 如果你的存储提供程序驻留在一个单独的项目，请在 web 应用程序中添加对它的引用。
 4. 将对所有引用`using Microsoft.AspNet.Identity.EntityFramework;`使用的命名空间的存储提供程序的语句。

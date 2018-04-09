@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
-title: "AJAX 用于实现映射方案 |Microsoft 文档"
+title: AJAX 用于实现映射方案 |Microsoft 文档
 author: microsoft
-description: "步骤 11 演示如何将 AJAX 映射支持集成到我们 NerdDinner 的应用程序，使得用户创建、 编辑或查看晚餐若要查看 l..."
+description: 步骤 11 演示如何将 AJAX 映射支持集成到我们 NerdDinner 的应用程序，使得用户创建、 编辑或查看晚餐若要查看 l...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: cc55560ce691826b6d52971b16d0515ed73d72a6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4b3f1e46886c4c1f054e43768b0a44695d71bf09
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="use-ajax-to-implement-mapping-scenarios"></a>AJAX 用于实现映射方案
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -115,7 +115,7 @@ JavaScript 函数我们已添加到部分使用 jQuery 要附加到"Address"HTML
 
 ![](use-ajax-to-implement-mapping-scenarios/_static/image7.png)
 
-首先，我们将实现中我们来高效地执行晚餐基于位置的 radius 搜索的数据库和数据的存储库层的支持。 我们无法使用新[地理空间功能的 SQL 2008](https://www.microsoft.com/sqlserver/2008/en/us/spatial-data.aspx)来实现此操作，或者我们可以使用一种 SQL 函数方法，在此处文章中讨论 Gary Dryden 或： [http://www.codeproject.com/KB/cs/distancebetweenlocations.aspx](http://www.codeproject.com/KB/cs/distancebetweenlocations.aspx)和有关此处使用 LINQ to SQL Rob Conery 博客： [http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/](http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/)
+首先，我们将实现中我们来高效地执行晚餐基于位置的 radius 搜索的数据库和数据的存储库层的支持。 我们无法使用新[地理空间功能的 SQL 2008](https://www.microsoft.com/sqlserver/2008/en/us/spatial-data.aspx)来实现此操作，或者我们可以使用一种 SQL 函数方法，在此处文章中讨论 Gary Dryden 或： [ http://www.codeproject.com/KB/cs/distancebetweenlocations.aspx ](http://www.codeproject.com/KB/cs/distancebetweenlocations.aspx)和 Rob Conery有关此处使用 LINQ to SQL 的信息的博客： [http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/](http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/)
 
 若要实现此方法，我们将打开"服务器资源管理器"在 Visual Studio 中，选择 NerdDinner 数据库中，，然后右键单击其下的"函数"子节点，选择创建一个新"标量值函数":
 
@@ -193,6 +193,6 @@ CallbackUpdateMapDinners() 方法是这样的实际工作的位置。 它使用 
 
 现在，我们已实施我们 NerdDinner 的应用程序的所有应用程序的功能。 让我们现在看如何我们可以启用自动单元测试它。
 
->[!div class="step-by-step"]
-[上一页](use-ajax-to-deliver-dynamic-updates.md)
-[下一页](enable-automated-unit-testing.md)
+> [!div class="step-by-step"]
+> [上一页](use-ajax-to-deliver-dynamic-updates.md)
+> [下一页](enable-automated-unit-testing.md)

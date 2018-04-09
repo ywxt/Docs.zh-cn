@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/the-contact-manager-solution
-title: "联系人管理器解决方案 |Microsoft 文档"
+title: 联系人管理器解决方案 |Microsoft 文档
 author: jrjlee
-description: "这一系列的教程使用的示例解决方案 （&) #x 2014年; 联系人管理器解决方案 & #x 2014; 来表示现实调配的企业级应用程序..."
+description: 这一系列的教程使用的示例解决方案&#x2014;联系人管理器解决方案&#x2014;来表示现实调配的企业级应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: b7f691a1ee855788f6a57616aea35d960e4c85c7
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: d7034f800df98747d10401d7e2c7297fea0e46d4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="the-contact-manager-solution"></a>联系人管理器解决方案
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 03/15/2018
 
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> 这[系列教程](web-deployment-in-the-enterprise.md)使用的示例解决方案 （&) #x 2014年; 联系人管理器解决方案 & #x 2014; 来表示现实级别的复杂程度的企业级应用程序。 本主题介绍联系人管理器解决方案，描述该解决方案的关键组件，并标识部署这种企业环境中的各种目标平台的应用程序所面临的挑战。
+> 这[系列教程](web-deployment-in-the-enterprise.md)使用的示例解决方案&#x2014;联系人管理器解决方案&#x2014;来表示现实级别的复杂程度的企业级应用程序。 本主题介绍联系人管理器解决方案，描述该解决方案的关键组件，并标识部署这种企业环境中的各种目标平台的应用程序所面临的挑战。
 > 
 > 当在这些教程工作通过主题，可将联系人管理器解决方案用作演示如何可以满足企业部署方案的特定需求的参考实现。 下一主题[设置联系人管理器解决方案](setting-up-the-contact-manager-solution.md)，介绍如何下载并在你开发人员的工作站上运行解决方案。
 
@@ -67,6 +67,6 @@ ms.lasthandoff: 03/15/2018
 
 下一主题[设置联系人管理器解决方案](setting-up-the-contact-manager-solution.md)，介绍如何下载并在你开发人员的工作站上运行解决方案。
 
->[!div class="step-by-step"]
-[上一页](web-deployment-in-the-enterprise.md)
-[下一页](setting-up-the-contact-manager-solution.md)
+> [!div class="step-by-step"]
+> [上一页](web-deployment-in-the-enterprise.md)
+> [下一页](setting-up-the-contact-manager-solution.md)

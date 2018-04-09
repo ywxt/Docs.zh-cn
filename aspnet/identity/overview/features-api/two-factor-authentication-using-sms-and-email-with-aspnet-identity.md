@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
-title: "具有 ASP.NET 标识使用 SMS 和电子邮件的双因素身份验证 |Microsoft 文档"
+title: 具有 ASP.NET 标识使用 SMS 和电子邮件的双因素身份验证 |Microsoft 文档
 author: HaoK
-description: "本教程将演示如何设置双因素身份验证 (2FA) 使用 SMS 和电子邮件。 由 Rick Anderson 撰写本文时 ( @RickAndMSFT )、 Pr...."
+description: 本教程将演示如何设置双因素身份验证 (2FA) 使用 SMS 和电子邮件。 由 Rick Anderson 撰写本文时 ( @RickAndMSFT )、 Pr....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/15/2015
 ms.topic: article
 ms.assetid: 053e23c4-13c9-40fa-87cb-3e9b0823b31e
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 0f9ff7cf74048a008b150da1e843ff15333269ab
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c8f628d177004a8569dde2651469ed591e48591e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="two-factor-authentication-using-sms-and-email-with-aspnet-identity"></a>具有 ASP.NET 标识使用 SMS 和电子邮件的双因素身份验证
 ====================
@@ -52,11 +52,11 @@ ms.lasthandoff: 01/24/2018
     `Install-Package SendGrid`  
     `Install-Package -Prerelease Microsoft.AspNet.Identity.Samples`  
   
- 在本教程中，我们将使用[SendGrid](http://sendgrid.com/)发送电子邮件和[Twilio](https://www.twilio.com/)或[ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/)有关 sms texting。 `Identity.Samples`程序包将安装我们将使用的代码。
+   在本教程中，我们将使用[SendGrid](http://sendgrid.com/)发送电子邮件和[Twilio](https://www.twilio.com/)或[ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/)有关 sms texting。 `Identity.Samples`程序包将安装我们将使用的代码。
 3. 设置[项目以使用 SSL](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)。
 4. *可选*： 按照中的说明我[电子邮件确认教程](account-confirmation-and-password-recovery-with-aspnet-identity.md)以挂钩 SendGrid 然后运行应用并注册电子邮件帐户。
 5. * 可选: * 的示例删除演示电子邮件链接确认代码 (`ViewBag.Link`帐户控制器中的代码。 请参阅`DisplayEmail`和`ForgotPasswordConfirmation`操作方法和 razor 视图)。
-6. * 可选: * 删除`ViewBag.Status`代码从管理和帐户控制器和*Views\Account\VerifyCode.cshtml*和*Views\Manage\VerifyPhoneNumber.cshtml* razor 视图。 或者，你仍可以保留`ViewBag.Status`显示效果以测试本地而无需挂钩和发送电子邮件和短信的此应用程序工作原理。
+6. <em>可选: * 删除`ViewBag.Status`代码从管理和帐户控制器和 *Views\Account\VerifyCode.cshtml</em>和<em>Views\Manage\VerifyPhoneNumber.cshtml</em> razor 视图。 或者，你仍可以保留`ViewBag.Status`显示效果以测试本地而无需挂钩和发送电子邮件和短信的此应用程序工作原理。
 
 > [!NOTE]
 > 警告： 如果你更改任何在此示例中的安全设置，生产应用将需要经过显式调出所做的更改的安全审核。
@@ -70,44 +70,44 @@ ms.lasthandoff: 01/24/2018
 
 1. **使用 SMS 提供程序创建的用户帐户**  
   
- 创建[Twilio](https://www.twilio.com/try-twilio)或[ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/)帐户。
+   创建[Twilio](https://www.twilio.com/try-twilio)或[ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/)帐户。
 2. **安装其他包或添加服务引用**  
   
- Twilio:  
- 在程序包管理器控制台中，输入以下命令：  
+   Twilio:  
+   在程序包管理器控制台中，输入以下命令：  
     `Install-Package Twilio`  
   
- ASPSMS:  
- 下面的服务引用需要添加：  
+   ASPSMS:  
+   下面的服务引用需要添加：  
   
     ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image1.png)  
   
- 地址:  
+   地址:  
     `https://webservice.aspsms.com/aspsmsx2.asmx?WSDL`  
   
- 命名空间:  
+   命名空间:  
     `ASPSMSX2`
 3. **了解 SMS 提供程序用户凭据**  
   
- Twilio:  
- 从**仪表板**选项卡上的 Twilio 帐户，复制**帐户 SID**和**身份验证令牌**。  
+   Twilio:  
+   从**仪表板**选项卡上的 Twilio 帐户，复制**帐户 SID**和**身份验证令牌**。  
   
- ASPSMS:  
- 从你的帐户设置，导航到**用户密钥**并将其复制以及你自定义**密码**。  
+   ASPSMS:  
+   从你的帐户设置，导航到**用户密钥**并将其复制以及你自定义**密码**。  
   
- 我们将更高版本将这些值存储在变量中`SMSAccountIdentification`和`SMSAccountPassword`。
+   我们将更高版本将这些值存储在变量中`SMSAccountIdentification`和`SMSAccountPassword`。
 4. **指定 SenderID / 发起方**  
   
- Twilio:  
- 从**数字**选项卡上，复制你的 Twilio 电话号码。  
+   Twilio:  
+   从**数字**选项卡上，复制你的 Twilio 电话号码。  
   
- ASPSMS:  
- 在**解锁原始发件人**菜单上，解锁一个或多个发送方或选择 （不支持的所有网络） 的字母数字发起方。  
+   ASPSMS:  
+   在**解锁原始发件人**菜单上，解锁一个或多个发送方或选择 （不支持的所有网络） 的字母数字发起方。  
   
- 我们将更高版本将此值存储在变量`SMSAccountFrom`。
+   我们将更高版本将此值存储在变量`SMSAccountFrom`。
 5. **将 SMS 提供程序凭据传输到应用程序**  
   
- 提供的凭据和发件人的电话号码向应用程序：
+   提供的凭据和发件人的电话号码向应用程序：
 
     [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample1.cs)]
 
@@ -115,9 +115,9 @@ ms.lasthandoff: 01/24/2018
     > 安全-永远不会存储在源代码中敏感数据。 帐户和凭据添加到上面为了让示例比较简单的代码。 请参阅 Jon 输入[ASP.NET MVC： 保留源控件的专用设置扩展](http://typecastexception.com/post/2014/04/06/ASPNET-MVC-Keep-Private-Settings-Out-of-Source-Control.aspx)。
 6. **数据传输到 SMS 提供程序的实现**  
   
- 配置`SmsService`类*应用\_Start\IdentityConfig.cs*文件。  
+   配置`SmsService`类*应用\_Start\IdentityConfig.cs*文件。  
   
- 具体取决于使用 SMS 提供程序激活或者**Twilio**或**ASPSMS**部分： 
+   具体取决于使用 SMS 提供程序激活或者**Twilio**或**ASPSMS**部分： 
 
     [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample2.cs)]
 7. 运行应用程序和你之前注册的帐户登录。

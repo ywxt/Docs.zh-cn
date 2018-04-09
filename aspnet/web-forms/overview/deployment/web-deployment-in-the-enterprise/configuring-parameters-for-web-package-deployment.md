@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
-title: "为 Web 包部署中配置参数 |Microsoft 文档"
+title: 为 Web 包部署中配置参数 |Microsoft 文档
 author: jrjlee
-description: "本主题介绍如何设置参数的值，如 Internet 信息服务 (IIS) web 应用程序名称、 连接字符串和服务终结点..."
+description: 本主题介绍如何设置参数的值，如 Internet 信息服务 (IIS) web 应用程序名称、 连接字符串和服务终结点...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 12a4ba8ad30df43e7192500ad4514dfa9679f899
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 7be08f1a1fb7232911a44cf64e2e784dbb95ff48
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-parameters-for-web-package-deployment"></a>为 Web 包部署中配置参数
 ====================
@@ -92,7 +92,7 @@ WPP 还使它生成的部署包中的这些属性进行参数化。 当你安装
 
 ## <a name="modifying-the-setparametersxml-file"></a>修改 SetParameters.xml 文件
 
-如果你计划手动部署 web 应用程序包 & #x 2014年; 通过运行*。 deploy.cmd*文件或通过从命令行 （&） #x 2014; 运行 MSDeploy.exe 没有要阻止您手动编辑内容*SetParameters.xml*之前部署的文件。 但是，如果你正在对企业级解决方案，你可能需要将 web 应用程序包部署更大、 自动生成和部署过程的一部分。 在此方案中，你需要 Microsoft Build Engine (MSBuild) 修改*SetParameters.xml*为你的文件。 你可以执行此操作使用 MSBuild **XmlPoke**任务。
+如果你计划手动部署 web 应用程序包&#x2014;通过运行*。 deploy.cmd*文件或通过从命令行运行 MSDeploy.exe&#x2014;无需进行任何停止你手动编辑*SetParameters.xml*之前部署的文件。 但是，如果你正在对企业级解决方案，你可能需要将 web 应用程序包部署更大、 自动生成和部署过程的一部分。 在此方案中，你需要 Microsoft Build Engine (MSBuild) 修改*SetParameters.xml*为你的文件。 你可以执行此操作使用 MSBuild **XmlPoke**任务。
 
 [联系人管理器示例解决方案](the-contact-manager-solution.md)阐释了此过程。 下面的代码示例进行了编辑，显示与此示例相关的详细信息。
 
@@ -148,6 +148,6 @@ WPP 还使它生成的部署包中的这些属性进行参数化。 当你安装
 
 有关 Web 部署中的参数化的更多常规信息，请参阅[Web 操作中的部署参数化](https://go.microsoft.com/?linkid=9805119)（博客文章）。
 
->[!div class="step-by-step"]
-[上一页](building-and-packaging-web-application-projects.md)
-[下一页](deploying-web-packages.md)
+> [!div class="step-by-step"]
+> [上一页](building-and-packaging-web-application-projects.md)
+> [下一页](deploying-web-packages.md)

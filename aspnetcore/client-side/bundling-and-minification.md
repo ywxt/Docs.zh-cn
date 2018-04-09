@@ -1,7 +1,7 @@
 ---
-title: "绑定和缩减中 ASP.NET 核心"
+title: 在 ASP.NET 核心中的捆绑和 minifiy 静态资产
 author: scottaddie
-description: "了解如何通过应用绑定和缩减技术优化 ASP.NET 核心 web 应用程序中的静态资源。"
+description: 了解如何通过应用绑定和缩减技术优化 ASP.NET 核心 web 应用程序中的静态资源。
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,13 +11,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: 6c233d0957ce9974adbc6112e6194c072aab0b41
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a155422c0fd638f46fe4a9d8a77faebc0b2a5681
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="bundling-and-minification"></a>绑定和缩减
+# <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>在 ASP.NET 核心中的捆绑和 minifiy 静态资产
 
 作者：[Scott Addie](https://twitter.com/Scott_Addie)
 
@@ -79,7 +79,7 @@ MVC 和 Razor 页项目模板提供了*bundleconfig.json*配置文件用于定�
 
 * `outputFileName`： 要输出的捆绑文件名称。 可以包含中的相对路径*bundleconfig.json*文件。 **required**
 * `inputFiles`： 要将捆绑在一起的文件的数组。 这些是配置文件的相对路径。 **可选**，* 空值会在空的输出文件。 [组合](http://www.tldp.org/LDP/abs/html/globbingref.html)支持模式。
-* `minify`： 输出类型缩减选项。 **可选**，*默认值-`minify: { enabled: true }`*
+* `minify`： 输出类型缩减选项。 **可选**，*默认值- `minify: { enabled: true }`*
   * 每个输出文件类型有配置选项。
     * [CSS Minifier](https://github.com/madskristensen/BundlerMinifier/wiki/cssminifier)
     * [JavaScript Minifier](https://github.com/madskristensen/BundlerMinifier/wiki/JavaScript-Minifier-settings)
@@ -220,28 +220,22 @@ dotnet bundle
 
 以下`environment`标记将呈现的未处理的 CSS 文件，在运行时`Development`环境：
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=21-24)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=9-12)]
 
----
-
+* * *
 以下`environment`标记呈现捆绑和缩减型 CSS 文件，而不在环境中运行时`Development`。 例如，在运行`Production`或`Staging`触发这些样式表的呈现：
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=5&range=25-30)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=13-18)]
 
----
-
+* * *
 ## <a name="consume-bundleconfigjson-from-gulp"></a>使用从 Gulp bundleconfig.json
 
 在情况下在其中应用的绑定和缩减工作流需要额外的处理。 示例包括映像优化、 缓存清除功能，和 CDN 资产处理。 若要满足这些要求，则可以将绑定和缩减工作流使用 Gulp。

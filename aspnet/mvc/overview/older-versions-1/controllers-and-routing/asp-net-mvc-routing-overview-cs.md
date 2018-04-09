@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs
-title: "ASP.NET MVC 路由概述 (C#) |Microsoft 文档"
+title: ASP.NET MVC 路由概述 (C#) |Microsoft 文档
 author: StephenWalther
-description: "在本教程中，Stephen Walther 演示 ASP.NET MVC framework 如何映射到控制器操作的浏览器请求。"
+description: 在本教程中，Stephen Walther 演示 ASP.NET MVC framework 如何映射到控制器操作的浏览器请求。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 714fd1939ffeba11b84a82e80193ecbbe4b12e09
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fa565d2ef253539844f5224df00bdcdc047bb3f9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-routing-overview-c"></a>ASP.NET MVC 路由概述 (C#)
 ====================
@@ -29,9 +29,9 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="using-the-default-route-table"></a>使用默认路由表
 
-在创建新的 ASP.NET MVC 应用程序时，应用程序已配置为使用 ASP.NET 路由。 ASP.NET 路由是在两个位置的安装程序。
+在创建新的 ASP.NET MVC 应用程序时，应用程序已配置为使用 ASP.NET 路由。 ASP.NET 路由是在两个位置设置的。
 
-首先，应用程序的 Web 配置文件（Web.config 文件）启用了 ASP.NET 路由。 配置文件中有四个部分与路由相关：system.web.httpModules 节、 system.web.httpHandlers 节、system.webserver.modules 节和 system.webserver.handlers 节。 请注意不要删除这些节，因为如果没有这些节，路由将不再起作用。
+首先，应用程序的 Web 配置文件（Web.config 文件）启用了 ASP.NET 路由。 配置文件中有四个部分与路由相关：system.web.httpModules 节、system.web.httpHandlers 节、system.webserver.modules 节和 system.webserver.handlers 节。 请注意不要删除这些节，因为如果没有这些节，路由将不再起作用。
 
 其次，更重要的是，路由表是在应用程序的 Global.asax 文件中创建的。 Global.asax 文件是一个特殊文件，其中包含 ASP.NET 应用程序生命周期事件的事件处理程序。 路由表在 Application Start 事件中创建。
 
@@ -47,7 +47,7 @@ MVC 应用程序第一次启动时，会调用 Application\_Start() 方法。 �
 
 假设你为 web 浏览器的地址栏中输入以下 URL:
 
-/ 主页/索引/3
+/Home/Index/3
 
 默认路由将此 URL 映射到以下参数：
 
@@ -105,9 +105,9 @@ URL /Home 还列出 4 中的 HomeController 类 index （） 方法相匹配。
 
 URL /Home/索引/3 另一方面，会顺利运行，与列出 5 中的索引控制器操作。 请求 /Home/Index/3 会导致具有值 3 的 Id 参数调用的 index （） 方法。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程的目的是为你提供对 ASP.NET 路由的简短介绍。 获取与新的 ASP.NET MVC 应用程序的默认路由表，我们探讨。 你已了解默认路由如何映射到控制器操作的 Url。
 
->[!div class="step-by-step"]
-[下一篇](understanding-action-filters-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](understanding-action-filters-cs.md)

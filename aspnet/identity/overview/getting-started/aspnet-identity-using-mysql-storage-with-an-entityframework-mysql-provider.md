@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider
-title: "ASP.NET 标识： 使用 EntityFramework MySQL 提供程序 (C#) 使用 MySQL 存储 |Microsoft 文档"
+title: ASP.NET 标识： 使用 EntityFramework MySQL 提供程序 (C#) 使用 MySQL 存储 |Microsoft 文档
 author: maumar
-description: "本教程演示如何替换 MySQL 签约 ASP.NET Identity 的默认数据存储机制与 EntityFramework （SQL 客户端提供程序）..."
+description: 本教程演示如何替换 MySQL 签约 ASP.NET Identity 的默认数据存储机制与 EntityFramework （SQL 客户端提供程序）...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/10/2013
 ms.topic: article
 ms.assetid: 15253312-a92c-43ba-908e-b5dacd3d08b8
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 82341724286a53f7883df324a391beeae3a9e2bd
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 6018b4f62f95f9abffece536f345d7a16d052aac
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider-c"></a>ASP.NET 标识： 使用 MySQL 存储使用 EntityFramework MySQL 提供程序 (C#)
 ====================
@@ -42,23 +42,23 @@ ms.lasthandoff: 02/12/2018
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image2.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image1.png)
 3. 在**选择和外接程序**向导中，选择**ClearDB MySQL 数据库**，然后单击**下一步**帧底部的箭头：  
   
- [单击下图以将其展开。 ]  
+   [单击下图以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image4.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image3.png)
 4. 保留默认值**免费**计划中，更改**名称**到**IdentityMySQLDatabase**，选择离你最近的区域，然后单击**下一步**帧底部的箭头：  
   
- [单击下图以将其展开。 ]  
+   [单击下图以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image6.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image5.png)
 5. 单击**购买**复选标记以完成创建数据库。  
   
- [单击下图以将其展开。 ]  
+   [单击下图以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image8.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image7.png)
 6. 创建你的数据库后，你可以管理从**外接程序**在管理门户中的选项卡。 若要检索你的数据库的连接信息，请单击**连接信息**位于页的底部：  
   
- [单击下图以将其展开。 ]  
+   [单击下图以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image10.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image9.png)
 7. 通过单击复制按钮通过复制的连接字符串**CONNECTIONSTRING**字段并将其保存; 你将用于 MVC 应用程序的更高版本在本教程中此信息：  
   
- [单击下图以将其展开。 ]  
+   [单击下图以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image12.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image11.png)
 
 ## <a name="creating-an-mvc-application-project"></a>创建 MVC 应用程序项目
@@ -68,15 +68,15 @@ ms.lasthandoff: 02/12/2018
 1. 打开 Visual Studio 2103。
 2. 单击**新项目**从**启动**页上，也可以单击**文件**菜单，然后**新项目**:  
   
- [单击下图以将其展开。 ]  
+   [单击下图以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image2.jpg)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image1.jpg)
 3. 当**新项目**显示对话框中，展开**Visual C#**在模板列表中，然后单击**Web**，然后选择**ASP.NET Web 应用程序**. 命名你的项目**IdentityMySQLDemo** ，然后单击**确定**:  
   
- [单击下图以将其展开。 ]  
+   [单击下图以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image14.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image13.png)
 4. 在**新建 ASP.NET 项目**对话框中，选择**MVC** templatewith 默认选项; 这将配置**单个用户帐户**作为身份验证方法。 单击**确定**:  
   
- [单击下图以将其展开。 ]  
+   [单击下图以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image16.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image15.png)
 
 ## <a name="configure-entityframework-to-work-with-a-mysql-database"></a>配置 EntityFramework 为使用 MySQL 数据库
@@ -88,11 +88,11 @@ ms.lasthandoff: 02/12/2018
 1. 在 Visual Studio 2013 中打开 MVC 项目。
 2. 单击**工具**，然后单击**库程序包管理器**，然后单击**程序包管理器控制台**:  
   
- [单击下图以将其展开。 ]  
+   [单击下图以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image18.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image17.png)
 3. **程序包管理器控制台**会在 Visual Studio 的下半部分中显示。 类型&quot;**更新包 EntityFramework** &quot; ，然后按 Enter:  
   
- [单击下图以将其展开。 ]  
+   [单击下图以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image20.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image19.png)
 
 ### <a name="install-the-mysql-provider-for-entityframework"></a>安装 EntityFramework MySQL 提供程序
@@ -161,15 +161,15 @@ Entity Framework Code First 使用**MigrationHistory**表来跟踪的模型更�
 1. 按**Ctrl + F5**生成并运行 web 应用程序。
 2. 单击**注册**页面顶部的选项卡：  
   
- [单击下图以将其展开。 ]  
+   [单击下图以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image4.jpg)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image3.jpg)
 3. 输入新的用户名和密码，，然后单击**注册**:  
   
- [单击下图以将其展开。 ]  
+   [单击下图以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image24.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image23.png)
 4. 此时在 MySQL 数据库中，创建了 ASP.NET 标识表和用户已注册并登录到应用程序：  
   
- [单击下图以将其展开。 ]  
+   [单击下图以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image6.jpg)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image5.jpg)
 
 ### <a name="installing-mysql-workbench-tool-to-verify-the-data"></a>安装 MySQL Workbench 工具，以验证数据
@@ -180,9 +180,9 @@ Entity Framework Code First 使用**MigrationHistory**表来跟踪的模型更�
 4. 建立连接后，检查**ASP.NET 标识**表上创建**IdentityMySQLDatabase。**
 5. 你将看到所有 ASP.NET 标识所都需表创建下图中所示：  
   
- [单击下图以将其展开。 ]  
+   [单击下图以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image8.jpg)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image7.jpg)
 6. 检查**aspnetusers**实例表以便注册新的用户在项检查。  
   
- [单击下图以将其展开。 ]  
+   [单击下图以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image26.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image25.png)

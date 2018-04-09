@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
-title: "部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 将部署到生产环境-7 / 12 |Microsoft 文档"
+title: 部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 将部署到生产环境-7 / 12 |Microsoft 文档
 author: tdykstra
-description: "这一系列的教程演示如何部署 （发布） ASP.NET web 应用程序项目，它通过使用 Visual Stu 包含 SQL Server Compact 数据库..."
+description: 这一系列的教程演示如何部署 （发布） ASP.NET web 应用程序项目，它通过使用 Visual Stu 包含 SQL Server Compact 数据库...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 4aa6766c2c7765f499f5c5380962a5fe443e8c9d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ab3b7ba332deddae7d04fc37c7aabc72bdb2d17e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-the-production-environment---7-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 将部署到生产环境-7 / 12
 ====================
@@ -125,7 +125,7 @@ Cytanium 欢迎电子邮件包含有关如何更改.NET Framework 的版本的�
 
 ![发布 Web 向导连接选项卡](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image26.png)
 
-.Publishsettings 文件中的目标 URL 框中，将该站点的计划永久 URL，但如果你尚未尚未购买该域，则将值替换为临时的 URL。 对于此示例中，URL 是 *[http://contosouniversity.com.vserver01.cytanium.com](http://contosouniversity.com.vserver01.cytanium.com)。*此框的唯一目的是指定哪些浏览器将打开到自动后成功部署后的 URL。 如果你将其留空，一个唯一的后果是浏览器不会自动启动部署后。
+.Publishsettings 文件中的目标 URL 框中，将该站点的计划永久 URL，但如果你尚未尚未购买该域，则将值替换为临时的 URL。 对于此示例中，URL 是 *[ http://contosouniversity.com.vserver01.cytanium.com ](http://contosouniversity.com.vserver01.cytanium.com)。*此框的唯一目的是指定哪些浏览器将打开到自动后成功部署后的 URL。 如果你将其留空，一个唯一的后果是浏览器不会自动启动部署后。
 
 单击**验证连接**以验证设置是否正确，并可以连接到服务器。 如您前面看到的一个绿色复选标记将验证连接成功。
 
@@ -137,9 +137,9 @@ Cytanium 欢迎电子邮件包含有关如何更改.NET Framework 的版本的�
 
 在**数据库**部分**设置**选项卡上，输入相同的测试输入值，发布配置文件。 下拉列表中，你将找到你需要的连接字符串。
 
-- 中的连接字符串框**SchoolContext，**选择`Data Source=|DataDirectory|School-Prod.sdf`
+- 中的连接字符串框**SchoolContext，**选择 `Data Source=|DataDirectory|School-Prod.sdf`
 - 下**SchoolContext**，选择**应用 Code First 迁移**。
-- 中的连接字符串框**DefaultConnection**，选择`Data Source=|DataDirectory|aspnet-Prod.sdf`
+- 中的连接字符串框**DefaultConnection**，选择 `Data Source=|DataDirectory|aspnet-Prod.sdf`
 - 下**DefaultConnection**，保留**更新数据库**清除。
 
 ![发布 Web 向导设置选项卡](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image28.png)
@@ -252,6 +252,6 @@ Cytanium 欢迎电子邮件包含有关如何更改.NET Framework 的版本的�
 
 在下一步的教程中，将更新应用程序代码，并将所做的更改部署到测试和生产环境。
 
->[!div class="step-by-step"]
-[上一页](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)
-[下一页](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)
+> [!div class="step-by-step"]
+> [上一页](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)
+> [下一页](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)

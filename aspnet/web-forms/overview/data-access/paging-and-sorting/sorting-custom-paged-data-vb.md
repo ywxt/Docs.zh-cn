@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-vb
-title: "排序自定义分页数据 (VB) |Microsoft 文档"
+title: 排序自定义分页数据 (VB) |Microsoft 文档
 author: rick-anderson
-description: "在以前的教程，我们学习了如何实现自定义分页时 presentating 在网页上的数据。 在本教程中我们将了解如何以扩展前面..."
+description: 在以前的教程，我们学习了如何实现自定义分页时 presentating 在网页上的数据。 在本教程中我们将了解如何以扩展前面...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ee02915a5c69d824c6450157b0c734a2e2ab5c11
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e144b434bd759c4253065e365b1337a3eca82fa7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="sorting-custom-paged-data-vb"></a>排序自定义分页数据 (VB)
 ====================
@@ -174,7 +174,7 @@ ms.lasthandoff: 01/24/2018
 **图 10**: 结果可以现在按进行排序供应商 ([单击以查看实际尺寸的图像](sorting-custom-paged-data-vb/_static/image16.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 我们探讨了前面教程中的自定义分页实现所需在设计时指定结果打算进行排序所依据的顺序。 简单地说，这意味着，我们实现的自定义分页实现无法，同时，提供排序功能。 在本教程中我们可以克服此限制了通过扩展存储的过程从第一个包括`@sortExpression`结果无法排序所依据的输入的参数。
 
@@ -184,12 +184,12 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Carlos Santos。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](efficiently-paging-through-large-amounts-of-data-vb.md)
-[下一页](creating-a-customized-sorting-user-interface-vb.md)
+> [!div class="step-by-step"]
+> [上一页](efficiently-paging-through-large-amounts-of-data-vb.md)
+> [下一页](creating-a-customized-sorting-user-interface-vb.md)

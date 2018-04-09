@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-cs
-title: "窗体身份验证 (C#) 的概述 |Microsoft 文档"
+title: 窗体身份验证 (C#) 的概述 |Microsoft 文档
 author: rick-anderson
-description: "创建自定义路由"
+description: 创建自定义路由
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d386a3b6328675fe21f989f8fd36bfc91fc08b32
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1f64384d403f3cf81ffa3327a81b635bc71e2b44
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-forms-authentication-c"></a>窗体身份验证 (C#) 的概述
 ====================
@@ -43,8 +43,8 @@ ASP.NET 运行时处理一个 ASP.NET 资源，如 ASP.NET 页或 ASP.NET Web �
 
 *HTTP 模块*是在响应特定事件在请求生命周期中执行其代码的托管的类。 ASP.NET 附带许多执行所需的任务在后台的 HTTP 模块。 与我们讨论尤其相关的两个内置的 HTTP 模块为：
 
-- **[`FormsAuthenticationModule`](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)**– 对用户进行身份验证通过检查窗体身份验证票证，它通常包括在用户的 cookie 集合。 如果存在未窗体身份验证票证，则用户是匿名的。
-- **[`UrlAuthorizationModule`](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)**– 确定当前用户是否有权访问所请求的 URL。 此模块通过参考应用程序的配置文件中指定的授权规则确定该颁发机构。 ASP.NET 还包括[ `FileAuthorizationModule` ](https://msdn.microsoft.com/library/system.web.security.fileauthorizationmodule.aspx) ，它确定机构通过参考请求的文件 Acl。
+- **[`FormsAuthenticationModule`](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)** – 对用户进行身份验证通过检查窗体身份验证票证，它通常包括在用户的 cookie 集合。 如果存在未窗体身份验证票证，则用户是匿名的。
+- **[`UrlAuthorizationModule`](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)** – 确定当前用户是否有权访问所请求的 URL。 此模块通过参考应用程序的配置文件中指定的授权规则确定该颁发机构。 ASP.NET 还包括[ `FileAuthorizationModule` ](https://msdn.microsoft.com/library/system.web.security.fileauthorizationmodule.aspx) ，它确定机构通过参考请求的文件 Acl。
 
 `FormsAuthenticationModule`尝试进行身份验证之前用户`UrlAuthorizationModule`(和`FileAuthorizationModule`) 执行。 如果发出请求的用户无权访问请求的资源，授权模块终止请求，并返回[HTTP 401 未授权](http://www.checkupdown.com/status/E401.html)状态。 在 Windows 身份验证方案，HTTP 401 状态将返回到浏览器。 此状态代码会导致浏览器以提示用户输入其凭据通过模式对话框。 使用窗体身份验证，但是，HTTP 401 未授权状态是永远不会发送到浏览器由于 FormsAuthenticationModule 检测到此状态并会修改它以将用户重定向到登录页相反 (通过[HTTP 302 重定向](http://www.checkupdown.com/status/E302.html)状态)。
 
@@ -441,7 +441,7 @@ LoginView 的模板可以定义从设计器或声明性的标记。 从 Visual S
 > 我建议你自定义 Logout.aspx 页后，可以隐藏母版页的 LoginContent ContentPlaceHolder （例如，我们为 Login.aspx 在步骤 4 中所做的那样）。 原因是因为由 LoginStatus 控件呈现"登录"LinkButton (下的一个"Hello，stranger") 将用户发送到 ReturnUrl 查询字符串参数中传递的当前 URL 的登录页。 简单地说，如果已注销的用户单击此 LoginStatus"登录"LinkButton，然后日志中的，则他们将被重定向回 Logout.aspx，无法将用户轻松地混淆。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中我们开始使用窗体身份验证工作流的检查，然后打开到 ASP.NET 应用程序中实现窗体身份验证。 窗体身份验证采用 FormsAuthenticationModule，它具有以下两项职责： 标识用户根据其窗体身份验证票证，并将未经授权的用户重定向到登录页。
 
@@ -459,7 +459,7 @@ LoginView 的模板可以定义从设计器或声明性的标记。 从 Visual S
 - [登录 ASP.NET 控件](https://msdn.microsoft.com/library/d51ttbhx.aspx)
 - [专业 ASP.NET 2.0 安全、 成员资格和角色管理](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html)(ISBN: 978-0-7645-9698-8)
 - [`<authentication>`元素](https://msdn.microsoft.com/library/532aee0e.aspx)
-- [`<forms>`元素`<authentication>`](https://msdn.microsoft.com/library/1d3t3c61.aspx)
+- [`<forms>`元素 `<authentication>`](https://msdn.microsoft.com/library/1d3t3c61.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>在本教程中包含的主题的视频培训
 
@@ -467,12 +467,12 @@ LoginView 的模板可以定义从设计器或声明性的标记。 从 Visual S
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢...
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已系列已由许多有用的审阅者评审本教程。 本教程中的前导审阅者包括 Alicja Maziarz、 John Suru 和 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](security-basics-and-asp-net-support-cs.md)
-[下一页](forms-authentication-configuration-and-advanced-topics-cs.md)
+> [!div class="step-by-step"]
+> [上一页](security-basics-and-asp-net-support-cs.md)
+> [下一页](forms-authentication-configuration-and-advanced-topics-cs.md)

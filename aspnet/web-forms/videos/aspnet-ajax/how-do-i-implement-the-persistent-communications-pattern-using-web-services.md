@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-implement-the-persistent-communications-pattern-using-web-services
-title: "[如何:]实现使用 Web 服务的持久性通信模式？ | Microsoft Docs"
+title: '[如何:]实现使用 Web 服务的持久性通信模式？ | Microsoft Docs'
 author: JoeStagner
-description: "在传统的网站中浏览器和服务器不维护正在进行的通信，但通信，则只有在执行操作的用户的响应..."
+description: 在传统的网站中浏览器和服务器不维护正在进行的通信，但通信，则只有在执行操作的用户的响应...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/22/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-persistent-communications-pattern-using-web-services
 msc.type: video
-ms.openlocfilehash: b738e9e35963eb48d08cd77db406d6267c58324c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7aa696443beb1f084a5b3f5a91e761bef1fdc034
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-implement-the-persistent-communications-pattern-using-web-services"></a>[如何:]实现使用 Web 服务的持久性通信模式？
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （16 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-the-persistent-communications-pattern-using-web-services)
 
->[!div class="step-by-step"]
-[上一页](how-do-i-localize-an-aspnet-ajax-application.md)
-[下一页](how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control.md)
+> [!div class="step-by-step"]
+> [上一页](how-do-i-localize-an-aspnet-ajax-application.md)
+> [下一页](how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control.md)

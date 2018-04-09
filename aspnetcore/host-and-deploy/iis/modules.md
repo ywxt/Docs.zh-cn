@@ -1,7 +1,7 @@
 ---
-title: "使用 ASP.NET Core 的 IIS 模块"
+title: 与 ASP.NET 核心的 IIS 模块
 author: guardrex
-description: "发现 ASP.NET Core 应用和如何管理 IIS 模块的活动和非活动 IIS 的模块。"
+description: 发现 ASP.NET Core 应用和如何管理 IIS 模块的活动和非活动 IIS 的模块。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,13 +10,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: a6610e33abdc3eafb5908728b3299e95e6e7183f
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: d9b3de915df333153255f91649f9169f76ba2fe0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="using-iis-modules-with-aspnet-core"></a>使用 ASP.NET Core 的 IIS 模块
+# <a name="iis-modules-with-aspnet-core"></a>与 ASP.NET 核心的 IIS 模块
 
 作者：[Luke Latham](https://github.com/guardrex)
 
@@ -106,21 +106,21 @@ ms.lasthandoff: 03/02/2018
 
 1. 解锁的服务器级别的模块。 选择在 IIS 管理器中的 IIS 服务器**连接**侧栏。 打开**模块**中**IIS**区域。 在列表中选择该模块。 在**操作**侧栏右侧，选择**解锁**。 解锁任意多个模块，因为你打算移除*web.config*更高版本。
 
-1. 部署应用程序而无需**\<模块 >**主题中*web.config*。如果应用程序部署与*web.config*包含**\<模块 >**部分不具有解锁部分首先在 IIS 管理器，配置管理器的情况下将引发异常无法解除锁定节。 因此，部署应用程序而无需**\<模块 >**部分。
+2. 部署应用程序而无需**\<模块 >**主题中*web.config*。如果应用程序部署与*web.config*包含**\<模块 >**部分不具有解锁部分首先在 IIS 管理器，配置管理器的情况下将引发异常无法解除锁定节。 因此，部署应用程序而无需**\<模块 >**部分。
 
-1. 解锁**\<模块 >**部分*web.config*。在**连接**栏中，选择在网站**站点**。 在**管理**区域中，打开**配置编辑器**。 使用导航控件选择`system.webServer/modules`部分。 在**操作**侧栏右侧，选择**解锁**部分。
+3. 解锁**\<模块 >**部分*web.config*。在**连接**栏中，选择在网站**站点**。 在**管理**区域中，打开**配置编辑器**。 使用导航控件选择`system.webServer/modules`部分。 在**操作**侧栏右侧，选择**解锁**部分。
 
-1. 此时， **\<模块 >**部分可以添加到*web.config*文件**\<删除 >**要移除从模块元素应用程序。 多个**\<删除 >**可添加元素以移除多个模块。 如果*web.config*服务器上进行更改，立即对相同的更改进行项目的*web.config*文件在本地。 删除这种方式的模块不会影响服务器上的其他应用的模块使用。
+4. 此时， **\<模块 >**部分可以添加到*web.config*文件**\<删除 >**要移除从模块元素应用程序。 多个**\<删除 >**可添加元素以移除多个模块。 如果*web.config*服务器上进行更改，立即对相同的更改进行项目的*web.config*文件在本地。 删除这种方式的模块不会影响服务器上的其他应用的模块使用。
 
-  ```xml
-  <configuration> 
+   ```xml
+   <configuration> 
     <system.webServer> 
       <modules> 
         <remove name="MODULE_NAME" /> 
       </modules> 
     </system.webServer> 
-  </configuration>
-  ```
+   </configuration>
+   ```
 
 对于与默认模块安装 IIS 安装，使用以下**\<模块 >**部分，以移除默认模块。
 

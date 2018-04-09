@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-model
-title: "添加模型 |Microsoft 文档"
+title: 添加模型 |Microsoft 文档
 author: Rick-Anderson
-description: "注意： 本教程的更新的版本此处提供了使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全，请按照和演示要简单得多..."
+description: 注意： 本教程的更新的版本此处提供了使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全，请按照和演示要简单得多...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/28/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 304c428b0d787e902f30c1989471c476f54d3b39
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 562a06e22aad62b6982aca3316a2dfe18a6eba2e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-model"></a>添加模型
 ====================
@@ -78,6 +78,6 @@ ms.lasthandoff: 01/24/2018
 
 接下来，你将生成一个新`MoviesController`类，该类可以用于显示影片数据，并允许用户创建新的影片列表。
 
->[!div class="step-by-step"]
-[上一页](adding-a-view.md)
-[下一页](accessing-your-models-data-from-a-controller.md)
+> [!div class="step-by-step"]
+> [上一页](adding-a-view.md)
+> [下一页](accessing-your-models-data-from-a-controller.md)

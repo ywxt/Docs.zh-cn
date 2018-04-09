@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-cs
-title: "ASP.NET 宿主选项 (C#) |Microsoft 文档"
+title: ASP.NET 宿主选项 (C#) |Microsoft 文档
 author: rick-anderson
-description: "ASP.NET web 应用程序通常设计，创建，并在本地开发环境中测试并需要将其部署到生产环境 o..."
+description: ASP.NET web 应用程序通常设计，创建，并在本地开发环境中测试并需要将其部署到生产环境 o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 34e1f9c7ee1ae22bceb614eeeaa1ebe286c1ccad
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6f8bb0e5a34d84d448af56285e8761c447229f7d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-hosting-options-c"></a>ASP.NET 宿主选项 (C#)
 ====================
@@ -83,7 +83,7 @@ Web 托管公司的通常提供共享托管计划，专用托管计划。 与共
 > 一些 web 托管公司专注于特定的技术堆栈，如.NET 的其业务或[LAMP](http://en.wikipedia.org/wiki/LAMP_stack) (**L** inux， **A** pache， **M**ySQL，和**P** HP)，因此请确保您选择的公司承载 ASP.NET 应用程序。 另请检查以确保它们支持你要用于生成应用程序的 ASP.NET 的版本。 并且，如果要生成数据驱动的应用程序，请确保 web 主机提供的相同的数据库服务器和你使用的版本。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 ASP.NET web 应用程序通常设计，创建，并在本地开发环境中测试。 准备好发布版本后，则将它移动到生产环境。 虽然可能托管在你的个人计算机或你公司内的服务器上的 ASP.NET 网站，但许多企业和个人选择外包其托管到 web 主机提供商。
 
@@ -95,5 +95,5 @@ ASP.NET web 应用程序通常设计，创建，并在本地开发环境中测�
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
 
->[!div class="step-by-step"]
-[下一篇](determining-what-files-need-to-be-deployed-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](determining-what-files-need-to-be-deployed-cs.md)

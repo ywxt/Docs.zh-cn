@@ -1,7 +1,7 @@
 ---
-title: "Azure App Service 和 ASP.NET Core 了 IIS 的常见错误参考"
+title: Azure App Service 和 ASP.NET Core 了 IIS 的常见错误参考
 author: guardrex
-description: "承载 Azure 应用程序服务和 IIS 上的 ASP.NET Core 应用时，请区分常见错误。"
+description: 承载 Azure 应用程序服务和 IIS 上的 ASP.NET Core 应用时，请区分常见错误。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-iis-errors-reference
-ms.openlocfilehash: cd9f8fc310ba0258477db51aa416c03debadeffe
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: fb833ef8797ea7851cbaf53bb5681df248d07a49
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>Azure App Service 和 ASP.NET Core 了 IIS 的常见错误参考
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 03/02/2018
 
 比较以下常见错误的信息。 如果找到匹配项，请按照故障排除建议。
 
-[!INCLUDE[Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
+[!INCLUDE [Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
 
 ## <a name="installer-unable-to-obtain-vc-redistributable"></a>安装程序无法获取 VC++ Redistributable
 
@@ -42,7 +42,7 @@ ms.lasthandoff: 03/02/2018
 
 疑难解答：
 
-* 如果在安装服务器托管捆绑包时系统无法访问 Internet，则在系统阻止安装程序获取 Microsoft Visual C++ 2015 Redistributable 时会出现此异常。 获取从安装[Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53840)。 如果安装失败，服务器可能不会收到托管依赖于框架的部署 (FDD) 所需.NET Core 运行时。 如果托管 FDD，确认在程序中安装了运行时&amp;功能。 如果需要获取从运行时安装[.NET 下载](https://www.microsoft.com/net/download/core)。 安装运行时后，重启系统，或通过从命令提示符依次执行 net stop was /y 和 net start w3svc 来重启 IIS。
+* 如果在安装服务器托管捆绑包时系统无法访问 Internet，则在系统阻止安装程序获取 Microsoft Visual C++ 2015 Redistributable 时会出现此异常。 获取从安装[Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53840)。 如果安装失败，服务器可能不会收到托管依赖于框架的部署 (FDD) 所需.NET Core 运行时。 如果托管 FDD，确认在程序中安装了运行时&amp;功能。 如果需要获取从运行时安装[.NET 所有下载](https://www.microsoft.com/net/download/all)。 安装运行时后，重启系统，或通过从命令提示符依次执行 net stop was /y 和 net start w3svc 来重启 IIS。
 
 ## <a name="os-upgrade-removed-the-32-bit-aspnet-core-module"></a>OS 升级删除了 32 位 ASP.NET Core 模块
 
@@ -138,7 +138,7 @@ ms.lasthandoff: 03/02/2018
 
 * FDD 可能已部署，.NET 核心安装，无需重新启动 IIS。 重启服务器，或通过从命令提示符依次执行 net stop was /y 和 net start w3svc 来重启 IIS。
 
-* FDD 可能已不在主机系统上安装.NET Core 运行时的情况下部署。 如果尚未安装.NET Core 运行时，运行**.NET 核心 Windows 服务器承载捆绑安装**系统上。 请参阅[安装 .NET Core Windows Server 托管捆绑包](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle)。 如果尝试在未连接到 Internet 的系统上安装.NET Core 运行时，获取从运行时[.NET 下载](https://www.microsoft.com/net/download/core)并运行托管的捆绑包安装，安装 ASP.NET 核心模块。 重启系统，或通过从命令提示符依次执行 net stop was /y 和 net start w3svc 来重启 IIS，完成安装。
+* FDD 可能已不在主机系统上安装.NET Core 运行时的情况下部署。 如果尚未安装.NET Core 运行时，运行**.NET 核心 Windows 服务器承载捆绑安装**系统上。 请参阅[安装 .NET Core Windows Server 托管捆绑包](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle)。 如果尝试在未连接到 Internet 的系统上安装.NET Core 运行时，获取从运行时[.NET 所有下载](https://www.microsoft.com/net/download/all)并运行托管的捆绑包安装，安装 ASP.NET 核心模块。 重启系统，或通过从命令提示符依次执行 net stop was /y 和 net start w3svc 来重启 IIS，完成安装。
 
 * FDD 可能已部署和*Microsoft Visual c + + 2015年可再发行组件 (x64)*系统上未安装。 获取从安装[Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53840)。
 
@@ -211,6 +211,18 @@ ms.lasthandoff: 03/02/2018
 疑难解答
 
 * 确认子应用的 web.config 文件不包括 `<handlers>` 部分。
+
+## <a name="stdout-log-path-incorrect"></a>stdout 日志路径不正确
+
+* **浏览器：**应用程序通常响应。
+
+* **应用程序日志：**警告： 无法创建 stdoutLogFile \\？ \C:\_apps\app_folder\bin\Release\netcoreapp2.0\win10-x64\publish\logs\path_doesnt_exist\stdout_8748_201831835937.log，错误代码 =-2147024893。
+
+* **ASP.NET Core 模块日志：**未创建日志文件
+
+疑难解答
+
+* `stdoutLogFile`中指定的路径`<aspNetCore>`元素*web.config*不存在。 有关详细信息，请参阅[记录创建和重定向](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection)ASP.NET 核心模块配置参考主题的部分。
 
 ## <a name="application-configuration-general-issue"></a>应用程序配置常见问题
 

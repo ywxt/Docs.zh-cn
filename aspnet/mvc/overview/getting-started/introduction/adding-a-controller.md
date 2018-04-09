@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/adding-a-controller
-title: "添加控制器 |Microsoft 文档"
+title: 添加控制器 |Microsoft 文档
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: c8f317b2ac133f560461917af1588b7a1fa51c4f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3864bab284661b0c44f9e4cb363c2d60eccc7c66
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-controller"></a>添加控制器
 ====================
 通过[Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 MVC 代表*模型-视图-控制器*。 MVC 是模式，用于开发的应用程序很好地设计、 可测试且易于维护。 基于 MVC 的应用程序包含：
 
@@ -95,7 +95,7 @@ URL 的第一部分确定要执行的控制器类。 因此*/HelloWorld*映射�
 
 [!code-csharp[Main](adding-a-controller/samples/sample4.cs)]
 
-运行应用程序并输入以下 URL:`http://localhost:xxx/HelloWorld/Welcome/1?name=Scott`
+运行应用程序并输入以下 URL: `http://localhost:xxx/HelloWorld/Welcome/1?name=Scott`
 
 ![](adding-a-controller/_static/image8.png)
 
@@ -115,6 +115,6 @@ URL 的第一部分确定要执行的控制器类。 因此*/HelloWorld*映射�
 
 已在这些示例中执行操作控制器&quot;VC&quot; MVC 部分 — 也就是说，视图和控制器工作。 控制器直接返回 HTML。 通常，你不希望直接返回 HTML，因为该按钮将变为非常麻烦的代码的控制器。 而是我们通常将使用单独的视图模板文件来帮助生成 HTML 响应。 让我们来看如何我们可以执行此操作在下一步。
 
->[!div class="step-by-step"]
-[上一页](getting-started.md)
-[下一页](adding-a-view.md)
+> [!div class="step-by-step"]
+> [上一页](getting-started.md)
+> [下一页](adding-a-view.md)

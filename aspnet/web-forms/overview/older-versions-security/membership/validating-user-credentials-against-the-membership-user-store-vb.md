@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-vb
-title: "正在验证用户凭据对成员资格用户存储区 (VB) |Microsoft 文档"
+title: 正在验证用户凭据对成员资格用户存储区 (VB) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将了解如何验证成员资格用户存储区使用的编程方法和登录控制针对用户的凭据..."
+description: 在本教程中我们将了解如何验证成员资格用户存储区使用的编程方法和登录控制针对用户的凭据...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f57bc8c32757c1ea25bf6bbb34539570e4c09aad
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f8d3de9736d901e02096d20345650b47c47897ae
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-user-credentials-against-the-membership-user-store-vb"></a>正在验证用户凭据对成员资格用户存储区 (VB)
 ====================
@@ -71,8 +71,8 @@ ms.lasthandoff: 01/24/2018
 
 若要防止此类暴力破解攻击，成员身份 framework 将锁定用户是否存在一定数量的一段时间内的失败登录尝试次数。 确切参数均可通过进行以下两个成员资格提供程序配置设置：
 
-- `maxInvalidPasswordAttempts`-指定多少无效密码前的帐户已被锁定的时间段内的用户允许使用尝试。默认值为 5。
-- `passwordAttemptWindow`-指示在此期间指定的无效的登录尝试次数可导致用户帐户被锁定的分钟的时间段。默认值为 10。
+- `maxInvalidPasswordAttempts` -指定多少无效密码前的帐户已被锁定的时间段内的用户允许使用尝试。默认值为 5。
+- `passwordAttemptWindow` -指示在此期间指定的无效的登录尝试次数可导致用户帐户被锁定的分钟的时间段。默认值为 10。
 
 如果用户已被锁定，她无法登录直到管理员将解锁其帐户。 当用户已被锁定时，`ValidateUser`方法将*始终*返回`False`，即使在提供有效凭据。 虽然此行为可以减小黑客通过暴力破解方法将到你的站点中断的可能性越小，它可以得到锁定只需忘记其密码或意外具有了 Caps Lock 或者是具有错误键入每天的有效用户。
 
@@ -110,7 +110,7 @@ ms.lasthandoff: 01/24/2018
 
 登录控件使用四个因素来确定合适的页面，一旦成功登录到将用户重定向：
 
-- 登录控件是否的登录页上定义`loginUrl`设置在窗体身份验证配置中; 此设置的默认值是`Login.aspx`
+- 登录控件是否的登录页上定义`loginUrl`设置在窗体身份验证配置中; 此设置的默认值是 `Login.aspx`
 - 是否存在`ReturnUrl`查询字符串参数
 - 登录控件的值[`DestinationUrl`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.destinationpageurl.aspx)
 - `defaultUrl`身份验证配置设置在窗体中指定值; 此设置的默认值为 Default.aspx
@@ -230,7 +230,7 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="determining-and-validating-the-supplied-credentials"></a>确定和验证提供的凭据
 
-使用登录控件的[ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx)和[`Password`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx)来确定由用户输入的用户名和密码凭据。 若要确定在任何其他 Web 控件中输入的值 (如`Email`我们在上一步中添加的文本框中)，使用`LoginControlID.FindControl`("*`controlID`*") 来获取对 Web 编程引用控件模板中`ID`属性等于 *`controlID`* 。 例如，若要获取对引用`Email`文本框中，使用以下代码：
+使用登录控件的[ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx)和[`Password`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx)来确定由用户输入的用户名和密码凭据。 若要确定在任何其他 Web 控件中输入的值 (如`Email`我们在上一步中添加的文本框中)，使用`LoginControlID.FindControl`("*`controlID`*") 来获取对 Web 编程引用控件模板中`ID`属性等于*`controlID`*。 例如，若要获取对引用`Email`文本框中，使用以下代码：
 
 `Dim EmailTextBox As TextBox = CType(myLogin.FindControl("Email"), TextBox)`
 
@@ -288,7 +288,7 @@ ms.lasthandoff: 01/24/2018
 **图 11**: Tito 执行太多无效登录尝试次数和具有已锁定 ([单击以查看实际尺寸的图像](validating-user-credentials-against-the-membership-user-store-vb/_static/image33.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 以前本教程中，我们登录页验证的用户名/密码对硬编码列表提供的凭据。 在本教程中，我们更新页后，可以验证针对成员资格框架的凭据。 在步骤 1 中我们讨论在使用`Membership.ValidateUser`方法以编程方式。 在步骤 2 中我们已更换我们手动创建的用户界面和代码与登录控件。
 
@@ -310,12 +310,12 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="about-the-author"></a>关于作者
 
-Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Teresa 墨和 Michael Olivero。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
 
->[!div class="step-by-step"]
-[上一页](creating-user-accounts-vb.md)
-[下一页](user-based-authorization-vb.md)
+> [!div class="step-by-step"]
+> [上一页](creating-user-accounts-vb.md)
+> [下一页](user-based-authorization-vb.md)

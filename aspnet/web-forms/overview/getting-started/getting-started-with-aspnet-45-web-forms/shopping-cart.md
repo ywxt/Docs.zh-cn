@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
-title: "购物车 |Microsoft 文档"
+title: 购物车 |Microsoft 文档
 author: Erikre
-description: "本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识..."
+description: 本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
 msc.type: authoredcontent
-ms.openlocfilehash: 9fe6f28685d6a423b03f9c7abe753283b89344e1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a8e96da7737cdf649575711a464c4f7726cb6ded
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="shopping-cart"></a>购物车
 ====================
@@ -65,8 +65,8 @@ ms.lasthandoff: 01/24/2018
 
     ![购物车中的添加新项对话框](shopping-cart/_static/image2.png)
 3. 将此新类*CartItem.cs*。
-4. 单击 **“添加”**。  
- 编辑器中将显示新的类文件。
+4. 单击 **添加**。  
+   编辑器中将显示新的类文件。
 5. 默认代码替换为以下代码：   
 
     [!code-csharp[Main](shopping-cart/samples/sample1.cs)]
@@ -136,7 +136,7 @@ ms.lasthandoff: 01/24/2018
 #### <a name="to-create-the-add-to-cart-functionality"></a>若要创建添加车功能：
 
 1. 在**解决方案资源管理器**，右键单击**WingtipToys**项目中，单击**添加** - &gt; **新项**。  
- 随即出现“添加新项”对话框。
+   随即出现“添加新项”对话框。
 2. 将一个标准的新页 （Web 窗体） 添加到指定的应用程序*AddToCart.aspx*。 
 
     ![购物车-添加 Web 窗体](shopping-cart/_static/image4.png)
@@ -154,7 +154,7 @@ ms.lasthandoff: 01/24/2018
 *ShoppingCart.aspx*页将显示用户已添加到其购物车的产品。 它还将提供添加、 删除和更新购物车中的项的能力。
 
 1. 在**解决方案资源管理器**，右键单击**WingtipToys**，单击**添加** - &gt; **新项**。  
- 随即出现“添加新项”对话框。
+   随即出现“添加新项”对话框。
 2. 添加新页 （Web 窗体） 通过选择包含母版页**使用母版页的 Web 窗体**。 将新该页命名为*ShoppingCart.aspx*。
 3. 选择**Site.Master**要附加到新创建的主控页*.aspx*页。
 4. 在*ShoppingCart.aspx*页上，将现有的标记替换为以下标记：   
@@ -313,7 +313,7 @@ ms.lasthandoff: 01/24/2018
 
     ![购物车-车更新](shopping-cart/_static/image9.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，您已创建购物车 Wingtip Toys Web 窗体示例应用程序。 在本教程过程中，你使用 Entity Framework Code First、 数据批注、 强类型化的数据控件和模型绑定。
 
@@ -323,6 +323,6 @@ ms.lasthandoff: 01/24/2018
 
 [ASP.NET 会话状态概述](https://msdn.microsoft.com/library/ms178581.aspx)
 
->[!div class="step-by-step"]
-[上一页](display_data_items_and_details.md)
-[下一页](checkout-and-payment-with-paypal.md)
+> [!div class="step-by-step"]
+> [上一页](display_data_items_and_details.md)
+> [下一页](checkout-and-payment-with-paypal.md)

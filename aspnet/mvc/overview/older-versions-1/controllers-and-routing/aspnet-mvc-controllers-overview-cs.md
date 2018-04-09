@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/aspnet-mvc-controllers-overview-cs
-title: "ASP.NET MVC 控制器概述 (C#) |Microsoft 文档"
+title: ASP.NET MVC 控制器概述 (C#) |Microsoft 文档
 author: StephenWalther
-description: "在本教程中，Stephen Walther 向你介绍 ASP.NET MVC 控制器。 了解如何创建新的控制器，并返回不同类型的操作 res..."
+description: 在本教程中，Stephen Walther 向你介绍 ASP.NET MVC 控制器。 了解如何创建新的控制器，并返回不同类型的操作 res...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/aspnet-mvc-controllers-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9e4ca745fa068b1813e01b131d53a0199cc47d5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 95e7c555a52c8c3b765a6fffab15276491cf5714
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-controller-overview-c"></a>ASP.NET MVC 控制器概述 (C#)
 ====================
@@ -37,7 +37,7 @@ MVC 控制器负责对针对 ASP.NET MVC 网站发出的请求的响应。 每�
 
 列表 1 包含名为 ProductController 的简单控制器。
 
-**Listing1-Controllers\ProductController.cs**
+**Listing1 - Controllers\ProductController.cs**
 
 [!code-csharp[Main](aspnet-mvc-controllers-overview-cs/samples/sample1.cs)]
 
@@ -75,7 +75,7 @@ ASP.NET MVC framework 支持几种类型的操作的结果，包括：
 
 在大多数情况下，控制器操作返回 ViewResult。 例如，清单 2 中的索引控制器操作返回 ViewResult。
 
-**列出 2-Controllers\BookController.cs**
+**Listing 2 - Controllers\BookController.cs**
 
 [!code-csharp[Main](aspnet-mvc-controllers-overview-cs/samples/sample2.cs)]
 
@@ -114,10 +114,10 @@ ASP.NET MVC framework 支持几种类型的操作的结果，包括：
 
 列出 5 中的 index （） 操作返回的 DateTime 对象。 ASP.NET MVC 框架将 DateTime 对象转换为字符串，并自动在 ContentResult 包装的日期时间值。 浏览器接收的日期和时间作为纯文本。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程的目的是为了向你介绍 ASP.NET MVC 控制器、 控制器操作和控制器操作结果的概念。 在第一个部分中，您学习了如何将新的控制器添加到 ASP.NET MVC 项目。 接下来，您学习了如何公共方法的一个控制器到 universe 公开为控制器操作。 最后，我们讨论了不同类型的操作可从控制器操作返回的结果。 具体而言，我们讨论了如何返回 ViewResult、 RedirectToActionResult 和 ContentResult 的控制器操作。
 
->[!div class="step-by-step"]
-[上一页](creating-an-action-vb.md)
-[下一页](creating-custom-routes-cs.md)
+> [!div class="step-by-step"]
+> [上一页](creating-an-action-vb.md)
+> [下一页](creating-custom-routes-cs.md)

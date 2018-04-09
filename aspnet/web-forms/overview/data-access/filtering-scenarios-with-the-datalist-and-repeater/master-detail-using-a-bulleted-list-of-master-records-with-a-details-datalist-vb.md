@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
-title: "主/详细信息使用详细信息 DataList (VB) 的主机记录的项目符号列表 |Microsoft 文档"
+title: 主/详细信息使用详细信息 DataList (VB) 的主机记录的项目符号列表 |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将压缩以前一教程两页主/详细信息的报表到单个页中，t 上显示的类别名称的项目符号列表..."
+description: 在本教程中我们将压缩以前一教程两页主/详细信息的报表到单个页中，t 上显示的类别名称的项目符号列表...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 613ad1fb101a168c79310c9dc7bf731be264f889
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4d87dc7f4fb00e96d9eb2653e6fbc1efb8bb656c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb"></a>主/从 Master 记录的项目符号列表使用详细信息 DataList (VB)
 ====================
@@ -74,7 +74,7 @@ ms.lasthandoff: 01/24/2018
 
 使用转发器和 DataList s 周围标记完成，我们已准备好将类别数据绑定到中继器重新控制。 但是，如图 1 中的类别的项目符号列表所示，除了每个类别的名称我们还需要显示的与类别关联的产品数目。 若要访问此信息，我们可以：
 
-- **确定此信息从 ASP.NET 页的代码隐藏类。** 给定特定 *`categoryID`* 我们可以通过调用确定关联的产品数`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 此方法返回`ProductsDataTable`对象，其`Count`属性指示多少`ProductsRow`s 存在，即指定的产品数 *`categoryID`* 。 我们可以创建`ItemDataBound`事件处理程序，对于绑定到中继器，每个类别调用中继器`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法并在输出中包含其计数。
+- **确定此信息从 ASP.NET 页的代码隐藏类。** 给定特定*`categoryID`*我们可以通过调用确定关联的产品数`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 此方法返回`ProductsDataTable`对象，其`Count`属性指示多少`ProductsRow`s 存在，即指定的产品数*`categoryID`*。 我们可以创建`ItemDataBound`事件处理程序，对于绑定到中继器，每个类别调用中继器`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法并在输出中包含其计数。
 - **更新`CategoriesDataTable`要包括的类型化数据集中`NumberOfProducts`列。** 然后，我们可以更新`GetCategories()`中的方法`CategoriesDataTable`若要包括此信息或，或者，将保留`GetCategories()`作为-并创建一个新`CategoriesDataTable`调用方法`GetCategoriesAndNumberOfProducts()`。
 
 让我们来浏览这两种技术。 第一种方法会更易于实现的因为我们不需要更新数据访问层;但是，它需要与数据库的多个通信。 调用`ProductsBLL`类 s`GetProductsByCategoryID(categoryID)`中的方法`ItemDataBound`事件处理程序添加的额外数据库调用的转发器中显示每个类别。 凭借此技术有*N* + 1 个数据库调用其中*N*是显示在转发器的类别的数目。 使用第二个方法中，产品计数返回有关从每个类别的信息`CategoriesBLL`类 s `GetCategories()` (或`GetCategoriesAndNumberOfProducts()`) 方法，从而导致检索只需一次到数据库。
@@ -210,7 +210,7 @@ DAL 和 BLL 完成后，我们重新准备好将绑定到此数据`Categories`�
 
 现在我们有`Categories`以及数量的产品类别列表中显示每个类别中的转发器。 转发器的每个类别，单击时，会回发时，在该点我们使用 LinkButton 需要显示在所选类别这些产品`CategoryProducts`DataList。
 
-我们面临的挑战之一是： 如何让 DataList 显示只需为所选类别这些产品。 在[母版/详细介绍与详细信息说明如何使用可选择的主 GridView](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md)可以选择的教程，我们已了解如何生成一个 GridView 其行、 与所选行 s 的详细信息显示在同一页面上的说明。 GridView 的 ObjectDataSource 返回有关使用的所有产品的信息`ProductsBLL`s`GetProducts()`方法，同时说明的 ObjectDataSource 检索有关所选的产品使用信息`GetProductsByProductID(productID)`方法。 *`productID`* 参数值以声明方式由 GridView s 的值与关联`SelectedValue`属性。 遗憾的是，中继器没有`SelectedValue`属性和不能用作参数源。
+我们面临的挑战之一是： 如何让 DataList 显示只需为所选类别这些产品。 在[母版/详细介绍与详细信息说明如何使用可选择的主 GridView](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md)可以选择的教程，我们已了解如何生成一个 GridView 其行、 与所选行 s 的详细信息显示在同一页面上的说明。 GridView 的 ObjectDataSource 返回有关使用的所有产品的信息`ProductsBLL`s`GetProducts()`方法，同时说明的 ObjectDataSource 检索有关所选的产品使用信息`GetProductsByProductID(productID)`方法。 *`productID`*参数值以声明方式由 GridView s 的值与关联`SelectedValue`属性。 遗憾的是，中继器没有`SelectedValue`属性和不能用作参数源。
 
 > [!NOTE]
 > 这是显示在中继器中使用 LinkButton 时这些挑战之一。 我们已使用超链接传入`CategoryID`通过查询字符串相反，我们无法将该查询字符串字段用作源参数的值。
@@ -233,7 +233,7 @@ DAL 和 BLL 完成后，我们重新准备好将绑定到此数据`Categories`�
 
 [![执行不指定 categoryID 参数参数源](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image36.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image35.png)
 
-**图 13**： 未指定参数源 *`categoryID`* 参数 ([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image37.png))
+**图 13**： 未指定参数源*`categoryID`*参数 ([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image37.png))
 
 
 完成配置数据源向导后，Visual Studio 自动生成 DataList 的`ItemTemplate`。 替换此默认设置`ItemTemplate`该模板后，我们前面教程中使用; 此外，还要设置 DataList 的`RepeatColumns`属性设置为 2。 进行这些更改后你 DataList 和其关联的对象数据源的声明性标记应如下所示：
@@ -241,7 +241,7 @@ DAL 和 BLL 完成后，我们重新准备好将绑定到此数据`Categories`�
 
 [!code-aspx[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/samples/sample10.aspx)]
 
-目前， `CategoryProductsDataSource` ObjectDataSource s  *`categoryID`* 永远不会设置参数，以便查看网页时，将显示安装的产品。 我们需要做什么是将此参数值设置基于`CategoryID`的转发器中的被单击类别。 它引入了两个难题： 首先，如何执行我们确定何时在转发器的 LinkButton`ItemTemplate`已单击; 和第二个，我们可以如何确定`CategoryID`其 LinkButton 被单击相应的类别的？
+目前， `CategoryProductsDataSource` ObjectDataSource s *`categoryID`*永远不会设置参数，以便查看网页时，将显示安装的产品。 我们需要做什么是将此参数值设置基于`CategoryID`的转发器中的被单击类别。 它引入了两个难题： 首先，如何执行我们确定何时在转发器的 LinkButton`ItemTemplate`已单击; 和第二个，我们可以如何确定`CategoryID`其 LinkButton 被单击相应的类别的？
 
 与按钮和 ImageButton 控件一样 LinkButton 具有`Click`事件和一个[`Command`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.command.aspx)。 `Click`事件旨在已单击 LinkButton 则只需注意。 有时，但是，除了指出已单击 LinkButton 我们还需要将一些额外信息传递给事件处理程序。 如果出现这种情况，LinkButton s [ `CommandName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandname.aspx)和[ `CommandArgument` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandargument.aspx)属性可以分配此额外信息。 然后，当单击 LinkButton 后，其`Command`事件将触发 (而不是其`Click`事件) 和事件处理程序传递的值`CommandName`和`CommandArgument`属性。
 
@@ -276,7 +276,7 @@ DAL 和 BLL 完成后，我们重新准备好将绑定到此数据`Categories`�
 **图 15**： 单击生成类别列出右侧的匹配产品 ([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image43.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 正如我们看到在本教程和前一次，主/详细信息报表可以分散在两个页，或其中一个上合并。 在单个页面上显示母版/详细信息报告，但是，引入了一些难题如何最布局 master 和此页上的详细信息记录到。 在*母版/详细介绍与详细信息说明如何使用可选择的主 GridView*教程，我们必须出现上方的主记录的详细信息记录; 在本教程中我们用于 CSS 技术具有到的主记录 float左侧的详细信息。
 
@@ -296,11 +296,11 @@ DAL 和 BLL 完成后，我们重新准备好将绑定到此数据`Categories`�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Zack Jones。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一篇](master-detail-filtering-acess-two-pages-datalist-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](master-detail-filtering-acess-two-pages-datalist-vb.md)

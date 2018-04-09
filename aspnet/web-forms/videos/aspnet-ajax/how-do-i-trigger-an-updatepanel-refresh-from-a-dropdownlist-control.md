@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control
-title: "[如何:]触发从 DropDownList 控件 UpdatePanel 刷新？ | Microsoft Docs"
+title: '[如何:]触发从 DropDownList 控件 UpdatePanel 刷新？ | Microsoft Docs'
 author: JoeStagner
-description: "在我们视频在 ASP.NET AJAX UpdatePanel 上的大多数中，我们已用的按钮控件，使 UpdatePanel 刷新其内容。 我们可能使用的任何事件..."
+description: 在我们视频在 ASP.NET AJAX UpdatePanel 上的大多数中，我们已用的按钮控件，使 UpdatePanel 刷新其内容。 我们可能使用的任何事件...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/22/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control
 msc.type: video
-ms.openlocfilehash: 8286f5add8e2c26f98b895869be4960cf4d96694
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c6304736485aaea2501daaf1ad80dd4304b4f67a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control"></a>[如何:]触发从 DropDownList 控件 UpdatePanel 刷新？
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （9 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control)
 
->[!div class="step-by-step"]
-[上一页](how-do-i-implement-the-persistent-communications-pattern-using-web-services.md)
-[下一页](how-do-i-create-an-aspnet-ajax-extender-from-scratch.md)
+> [!div class="step-by-step"]
+> [上一页](how-do-i-implement-the-persistent-communications-pattern-using-web-services.md)
+> [下一页](how-do-i-create-an-aspnet-ajax-extender-from-scratch.md)

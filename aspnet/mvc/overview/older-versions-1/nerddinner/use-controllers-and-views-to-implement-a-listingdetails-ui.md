@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui
-title: "使用控制器和视图来实现的详细信息列表/UI |Microsoft 文档"
+title: 使用控制器和视图来实现的详细信息列表/UI |Microsoft 文档
 author: microsoft
-description: "步骤 4 演示了如何将控制器添加到的应用程序利用我们的模型来为用户提供数据的详细信息列表/导航体验..."
+description: 步骤 4 演示了如何将控制器添加到的应用程序利用我们的模型来为用户提供数据的详细信息列表/导航体验...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui
 msc.type: authoredcontent
-ms.openlocfilehash: 2f9148a2d419863229e2c5a2a0c98984001fcee5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ac3568941eeef24bd9857c5787471aadea15fc7f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="use-controllers-and-views-to-implement-a-listingdetails-ui"></a>使用控制器和视图来实现详细信息列表/用户界面
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -62,7 +62,7 @@ ms.lasthandoff: 11/10/2017
 | **URL** | **目的** |
 | --- | --- |
 | */Dinners/* | 显示即将到来的晚餐 HTML 列表 |
-| */Dinners/详细信息 / [id]* | 显示有关由嵌入中的 URL – 将匹配的数据库中 dinner DinnerID"id"参数指示特定 dinner 详细信息。 例如： /Dinners/Details/2 将显示有关 Dinner DinnerID 值为 2 的详细信息的 HTML 页。 |
+| */Dinners/Details/[id]* | 显示有关由嵌入中的 URL – 将匹配的数据库中 dinner DinnerID"id"参数指示特定 dinner 详细信息。 例如： /Dinners/Details/2 将显示有关 Dinner DinnerID 值为 2 的详细信息的 HTML 页。 |
 
 通过将两个公共"操作方法"添加到我们 DinnersController 类，如下面，我们将发布这些 Url 的初始的实现：
 
@@ -92,15 +92,15 @@ ASP.NET MVC 包括一个功能强大的 URL 路由引擎，提供了大量的灵
 
 "路由。MapRoute()"方法调用上述注册映射到控制器类使用的 URL 格式的传入 Url 的默认路由规则:"/ {controller} / {action} / {id}"– 其中"控制器，"是要实例化，控制器类的名称"action"是的名称公共方法来调用它，然后"id"是可以作为自变量传递给方法的 URL 中嵌入一个可选参数。 传递给"MapRoute()"方法调用的第三个参数是一套要用于控制器/操作/id 值的事件中不存在在 URL 中的默认值 (控制器 ="主页"，操作 ="Index"，Id ="")。
 
-下面是演示如何各种 Url 的表映射使用默认值"*/ {控制器} / {action} / {id}"*路由规则：
+下面是演示如何各种 Url 的表映射使用默认值"<em>/ {控制器} / {action} / {id}"</em>路由规则：
 
 | **URL** | **控制器类** | **操作方法** | **传递参数** |
 | --- | --- | --- | --- |
-| */ 晚餐/详细信息/2* | DinnersController | Details(id) | id = 2 |
-| */ 晚餐/编辑/5* | DinnersController | Edit(id) | id = 5 |
-| */ 创建晚餐 /* | DinnersController | Create （) | 不可用 |
-| */ 晚餐* | DinnersController | Index （) | 不可用 |
-| */ 主页* | HomeController | Index （) | 不可用 |
+| */Dinners/Details/2* | DinnersController | Details(id) | id=2 |
+| */Dinners/Edit/5* | DinnersController | Edit(id) | id=5 |
+| */Dinners/Create* | DinnersController | Create （) | 不可用 |
+| */Dinners* | DinnersController | Index （) | 不可用 |
+| */Home* | HomeController | Index （) | 不可用 |
 | */* | HomeController | Index （) | 不可用 |
 
 最后三行显示的默认值 (控制器 = 主页，操作 = 索引，Id ="") 正在使用。 "索引"方法注册为默认操作名称，如果未指定，因为"/ 晚餐"和"/home"Url 原因 index （） 操作方法要对其控制器类调用。 因为如果未指定，将为默认控制器注册"主页"控制器，"/"URL 使 HomeController 要创建和 index （） 操作方法来调用它。
@@ -301,6 +301,6 @@ Html.ActionLink() 帮助器方法的第一个参数是要显示的链接文本 �
 
 让我们现在启用编辑支持 CRUD （创建、 读取、 更新、 删除） 数据窗体。
 
->[!div class="step-by-step"]
-[上一页](build-a-model-with-business-rule-validations.md)
-[下一页](provide-crud-create-read-update-delete-data-form-entry-support.md)
+> [!div class="step-by-step"]
+> [上一页](build-a-model-with-business-rule-validations.md)
+> [下一页](provide-crud-create-read-update-delete-data-form-entry-support.md)

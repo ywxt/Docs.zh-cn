@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
-title: "配置的团队生成权限部署 |Microsoft 文档"
+title: 配置的团队生成权限部署 |Microsoft 文档
 author: jrjlee
-description: "本主题介绍如何配置权限以使您生成服务器可以自动 b 的一部分将内容部署到 web 服务器和数据库服务器..."
+description: 本主题介绍如何配置权限以使您生成服务器可以自动 b 的一部分将内容部署到 web 服务器和数据库服务器...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: cb3d013d69e36f97335ea31dd6e4997772ba2d8e
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4698349d664816ec49475bbfe71fb32af79ea96d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-permissions-for-team-build-deployment"></a>配置权限的团队的生成部署
 ====================
@@ -27,9 +27,9 @@ ms.lasthandoff: 03/15/2018
 > 本主题介绍如何配置权限以使您生成服务器可以将内容部署到 web 服务器和数据库服务器，作为自动的生成过程的一部分。
 
 
-本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案 （&） #x 2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 的 web 应用程序Communication Foundation (WCF) 服务和数据库项目。
+本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案&#x2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
-这些教程的核心的部署方法取决于中介绍的拆分项目文件方法[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，在其中生成过程控制由两个项目文件 （&） #x 2014; 一个包含生成适用于每种目标环境和一个包含特定于环境的生成和部署设置的说明。 在生成期间，特定于环境的项目文件合并到环境无关的项目文件中以形成一组完整的生成说明。
+这些教程的核心的部署方法取决于中介绍的拆分项目文件方法[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，两个项目文件中的生成过程控制通过&#x2014;另一个包含生成适用于每种目标环境和一个包含特定于环境的生成和部署设置的说明。 在生成期间，特定于环境的项目文件合并到环境无关的项目文件中以形成一组完整的生成说明。
 
 ## <a name="task-overview"></a>任务概述
 
@@ -38,7 +38,7 @@ ms.lasthandoff: 03/15/2018
 需要 Windows 身份验证，以及你打算自动执行使用 Team Build，任何部署任务将使用的生成服务标识运行。 在这种情况下，你将需要授予你的 web 服务器和数据库服务器上任何所需的权限的生成服务标识。
 
 > [!NOTE]
-> 网络服务帐户使用的计算机帐户向其他计算机进行身份验证。 计算机帐户采用格式 * [域名]\[计算机名称] ***$**& #x 2014年; 例如， **FABRIKAM\TFSBUILD$**。 在这种情况下，如果你的生成服务运行时使用的网络服务标识，则应为你的生成服务器授予对计算机帐户标识任何所需的权限。
+> 网络服务帐户使用的计算机帐户向其他计算机进行身份验证。 计算机帐户采用格式 * [域名]\[计算机名称] ***$**&#x2014;例如**FABRIKAM\TFSBUILD$**。 在这种情况下，如果你的生成服务运行时使用的网络服务标识，则应为你的生成服务器授予对计算机帐户标识任何所需的权限。
 
 
 ## <a name="configuring-web-server-permissions"></a>配置 Web 服务器权限
@@ -50,7 +50,7 @@ ms.lasthandoff: 03/15/2018
 
 远程代理在这种情况下具有两个主要限制：
 
-- 远程代理支持仅 NTLM 身份验证。 换而言之，部署必须使用的生成服务标识 （&） #x 2014年; 不能模拟另一个帐户。
+- 远程代理支持仅 NTLM 身份验证。 换而言之，部署必须使用生成服务标识&#x2014;不能模拟另一个帐户。
 - 若要使用远程代理，请执行部署的帐户必须是目标服务器上的管理员。
 
 总之，这些两个限制使远程代理方法不希望出现自动 Team Build 部署。 若要使用此方法，你需要使生成服务帐户在任何目标 web 服务器上的管理员。
@@ -93,5 +93,5 @@ ms.lasthandoff: 03/15/2018
 
 有关配置 Windows server 环境以支持远程部署的详细信息，请参阅[用于 Web 部署配置服务器环境](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md)。
 
->[!div class="step-by-step"]
-[上一篇](deploying-a-specific-build.md)
+> [!div class="step-by-step"]
+> [上一篇](deploying-a-specific-build.md)

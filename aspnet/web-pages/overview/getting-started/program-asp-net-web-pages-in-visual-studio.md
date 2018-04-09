@@ -1,8 +1,8 @@
 ---
 uid: aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio
-title: "编程 ASP.NET 网页 (Razor) 使用 Visual Studio |Microsoft 文档"
+title: 编程 ASP.NET 网页 (Razor) 使用 Visual Studio |Microsoft 文档
 author: tfitzmac
-description: "本附录说明如何使用 Visual Studio 2010 或 Visual Web Developer 2010 Express 给程序的 ASP.NET Web Pages 使用 Razor 语法。"
+description: 本附录说明如何使用 Visual Studio 2010 或 Visual Web Developer 2010 Express 给程序的 ASP.NET Web Pages 使用 Razor 语法。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/13/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 5cfeda206eda8fb3fd769d34fb40bae2c3b65093
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: eb17c8cc1fab5b552c8495e74bb86ae9dbc5b972
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="programming-aspnet-web-pages-razor-using-visual-studio"></a>使用 Visual Studio 编程 ASP.NET Web 页 (Razor)
 ====================
@@ -59,7 +59,7 @@ Visual Studio 2010 不包括支持默认情况下为 ASP.NET 网页。 若要使
 
 |  | Visual Studio 2010 | Visual Studio 2012 | Visual Studio 2013 |
 | --- | --- | --- | --- |
-| **ASP.NET 网页 2** | 安装 ASP.NET MVC 4 | （包括） | （包括） |
+| **ASP.NET Web Pages 2** | 安装 ASP.NET MVC 4 | （包括） | （包括） |
 | **ASP.NET Web Pages 3** |  | 更新到 ASP.NET Web 页 3 通过 NuGet | （包括） |
 
 若要使用 Visual Studio 2010，请参阅[安装支持 ASP.NET Web 页的 Visual Studio 2010 中](#vs2010support)。
@@ -84,7 +84,7 @@ Visual Studio 2010 不包括支持默认情况下为 ASP.NET 网页。 若要使
 4. 选择**ASP.NET 网站 (Razor)**模板。
 
     ![razor 站点](program-asp-net-web-pages-in-visual-studio/_static/image3.png)
-5. 单击“确定”。
+5. 单击 **“确定”**。
 
 新的项目中存在，且使用某些默认的 web 页面以帮助你开始填充。
 
@@ -95,9 +95,9 @@ Visual Studio 2010 不包括支持默认情况下为 ASP.NET 网页。 若要使
 1. 在你刚创建的网站，打开*Default.cshtml*页。
 2. 后`<h3>`标记在页中，键入`@ServerInfo.`（包括该点）。 请注意如何 IntelliSense 显示的可用方法`ServerInfo`下拉列表中的帮助器。 
 
-    ![Intellisense](program-asp-net-web-pages-in-visual-studio/_static/image4.png)
+    ![intellisense](program-asp-net-web-pages-in-visual-studio/_static/image4.png)
 3. 选择`GetHtml`方法从列表，然后按 Enter。 IntelliSense 会自动填写方法中。 (如使用 C# 中的任何方法，你必须添加`()`在方法之后的字符。)  
- 已完成的代码`GetHtml`方法类似于下面的示例：  
+   已完成的代码`GetHtml`方法类似于下面的示例：  
 
     [!code-cshtml[Main](program-asp-net-web-pages-in-visual-studio/samples/sample1.cshtml)]
 4. 按 Ctrl + F5 运行页面。 这是什么时显示在浏览器中网页的外观： 

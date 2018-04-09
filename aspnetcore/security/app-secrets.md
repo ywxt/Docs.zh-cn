@@ -1,7 +1,7 @@
 ---
-title: "安全存储在 ASP.NET Core 在开发过程中的应用程序机密"
+title: 安全存储中 ASP.NET Core 中开发的应用程序机密
 author: rick-anderson
-description: "演示如何在开发过程中安全地存储机密"
+description: 演示如何在开发过程中安全地存储机密
 manager: wpickett
 ms.author: riande
 ms.date: 09/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: a23c9dc9ee1e20c0e0551a372e1cd706bb82070e
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: 166111696a9c4244ede44fca8878dd3725bb3099
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>安全存储在 ASP.NET Core 在开发过程中的应用程序机密
+# <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>安全存储中 ASP.NET Core 中开发的应用程序机密
 
 通过[Rick Anderson](https://twitter.com/RickAndMSFT)， [Daniel Roth](https://github.com/danroth27)，和[Scott Addie](https://scottaddie.com) 
 
@@ -34,15 +34,14 @@ ms.lasthandoff: 03/16/2018
 
 ## <a name="secret-manager"></a>密码管理器
 
-密钥管理器工具存储在项目树之外的开发工作的敏感数据。 密码管理器工具是一个项目工具，可以用于存储机密信息，以便[.NET 核心](https://www.microsoft.com/net/core)在开发过程中的项目。 使用密钥管理器工具中，可以将应用程序机密关联与特定项目，并共享跨多个项目。
+密钥管理器工具存储在项目树之外的开发工作的敏感数据。 密钥管理器工具是一个项目的工具，可以用于在开发期间存储机密信息，以便.NET 核心项目。 使用密钥管理器工具中，可以将应用程序机密关联与特定项目，并共享跨多个项目。
 
 >[!WARNING]
 > 密码管理器工具不加密存储的机密信息，并不应被视为受信任存储区。 它是仅限开发目的。 键和值存储在用户配置文件目录中的 JSON 配置文件中。
 
 ## <a name="installing-the-secret-manager-tool"></a>安装机密管理器工具
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
-
+#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 右键单击解决方案资源管理器中的项目并选择**编辑\<文件的内容\>.csproj**从上下文菜单。 添加到突出显示的行将*.csproj*文件中，并保存以还原相关联的 NuGet 程序包：
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
@@ -59,8 +58,7 @@ ms.lasthandoff: 03/16/2018
 }
 ```
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
-
+#### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 添加`Microsoft.Extensions.SecretManager.Tools`到*.csproj*文件，运行[dotnet 还原](/dotnet/core/tools/dotnet-restore)。 可以使用相同的步骤来安装命令行使用该密钥管理器工具。
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
@@ -89,15 +87,14 @@ dotnet user-secrets set MySecret ValueOfMySecret
 ```
 
 你可以从其他目录，运行密钥管理器工具，但必须使用`--project`选项的路径中传递*.csproj*文件：
- 
+
 ```console
 dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\webapp1
 ```
 
 你可以使用密钥管理器工具能够列出、 删除和清除应用程序密钥。
 
------
-
+* * *
 ## <a name="accessing-user-secrets-via-configuration"></a>访问通过配置的用户机密
 
 可以通过配置系统访问机密 Manager 机密。 添加`Microsoft.Extensions.Configuration.UserSecrets`打包和运行[dotnet 还原](/dotnet/core/tools/dotnet-restore)。
@@ -114,7 +111,7 @@ dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\w
 
 密码管理器工具避开实现详细信息，例如哪里和如何存储值。 无需知道这些实现的详细信息，可以使用该工具。 在当前版本中，这些值存储在[JSON](http://json.org/)用户配置文件目录中的配置文件：
 
-* Windows: `%APPDATA%\microsoft\UserSecrets\<userSecretsId>\secrets.json`
+* Windows：`%APPDATA%\microsoft\UserSecrets\<userSecretsId>\secrets.json`
 
 * Linux: `~/.microsoft/usersecrets/<userSecretsId>/secrets.json`
 

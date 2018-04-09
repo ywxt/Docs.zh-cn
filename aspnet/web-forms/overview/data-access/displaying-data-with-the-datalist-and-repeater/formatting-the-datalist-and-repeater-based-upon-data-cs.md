@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-cs
-title: "设置 DataList 和转发器的格式取决于数据 (C#) |Microsoft 文档"
+title: 设置 DataList 和转发器的格式取决于数据 (C#) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将逐步了解我们如何格式化 DataList 和转发器控件，通过使用格式设置的函数的外观的示例..."
+description: 在本教程中我们将逐步了解我们如何格式化 DataList 和转发器控件，通过使用格式设置的函数的外观的示例...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 604aa63919a881e828b6a3620360c3d1133c5830
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 00dac460ad905d34632bca3249e019ddc626e440
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="formatting-the-datalist-and-repeater-based-upon-data-c"></a>格式设置的 DataList 和转发器取决于数据 (C#)
 ====================
@@ -42,19 +42,19 @@ ms.lasthandoff: 01/24/2018
 
 当数据绑定到 DataList，从数据源控件或通过以编程方式将数据分配给控件 s`DataSource`属性和调用其`DataBind()`方法，DataList 的`DataBinding`事件触发时，枚举，数据源并且每个数据记录绑定到 DataList。 为数据源中的每个记录，DataList 创建[ `DataListItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistitem.aspx)对象，该对象，然后绑定到当前记录。 在此过程中，DataList 引发两个事件：
 
-- **`ItemCreated`**之后，将引发`DataListItem`已创建
-- **`ItemDataBound`**当前记录已绑定到之后激发`DataListItem`
+- **`ItemCreated`** 之后，将引发`DataListItem`已创建
+- **`ItemDataBound`** 当前记录已绑定到之后激发 `DataListItem`
 
 以下步骤概述 DataList 控件的数据绑定过程。
 
 1. DataList s [ `DataBinding`事件](https://msdn.microsoft.com/library/system.web.ui.control.databinding.aspx)激发
 2. 将数据绑定到 DataList  
   
- 为数据源中的每个记录 
+   为数据源中的每个记录 
 
     1. 创建`DataListItem`对象
     2. 激发[`ItemCreated`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.itemcreated.aspx)
-    3. 将绑定到记录`DataListItem`
+    3. 将绑定到记录 `DataListItem`
     4. 激发[`ItemDataBound`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.itemdatabound.aspx)
     5. 添加`DataListItem`到`Items`集合
 
@@ -172,7 +172,7 @@ DataList 控件设置格式的更改可以使用实现整个项`DataListItem`s �
 
 [!code-aspx[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample5.aspx)]
 
-在 DataList s `ItemTemplate` `ProductNameLabel`标签 Web 控件当前显示的产品的名称通过分配其`Text`属性结果的`<%# Eval("ProductName") %>`。 为了让其显示名称和文本 [已中断]，如果需要更新的声明性语法，以便它改为将分配`Text`属性值的`DisplayProductNameAndDiscontinuedStatus`方法。 时这样做，我们必须传递中的产品的名称和不再使用的值使用`Eval("columnName")`语法。 `Eval`返回类型的值`Object`，但`DisplayProductNameAndDiscontinuedStatus`方法需要输入的参数的类型`String`和`Boolean`; 因此，我们必须强制转换返回的值`Eval`到预期的输入的参数类型，方法如下所示：
+在 DataList s `ItemTemplate` `ProductNameLabel`标签 Web 控件当前显示的产品的名称通过分配其`Text`属性结果的`<%# Eval("ProductName") %>`。 为了让其显示名称和文本 [已中断]，如果需要更新的声明性语法，以便它改为将分配`Text`属性值的`DisplayProductNameAndDiscontinuedStatus`方法。 时这样做，我们必须传递中的产品的名称和不再使用的值使用`Eval("columnName")`语法。 `Eval` 返回类型的值`Object`，但`DisplayProductNameAndDiscontinuedStatus`方法需要输入的参数的类型`String`和`Boolean`; 因此，我们必须强制转换返回的值`Eval`到预期的输入的参数类型，方法如下所示：
 
 
 [!code-aspx[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample6.aspx)]
@@ -190,7 +190,7 @@ DataList 控件设置格式的更改可以使用实现整个项`DataListItem`s �
 **图 5**： 对于昂贵的产品，价格替换的文本，请调用针对一个价格的报价 ([单击以查看实际尺寸的图像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image15.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 可以使用两项技术实现格式设置取决于数据 DataList 或转发器控件的内容。 第一种方法是创建的事件处理程序`ItemDataBound`触发的事件，如数据源中的每个记录绑定到一个新`DataListItem`或`RepeaterItem`。 在`ItemDataBound`事件处理程序，可以检查当前的 s 项数据，然后格式设置可应用于的内容的模板，或者，对于`DataListItem`s，到整个项本身。
 
@@ -200,12 +200,12 @@ DataList 控件设置格式的更改可以使用实现整个项`DataListItem`s �
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Yaakov Ellis、 徐 Schmidt 和沈 Shulok。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](displaying-data-with-the-datalist-and-repeater-controls-cs.md)
-[下一页](showing-multiple-records-per-row-with-the-datalist-control-cs.md)
+> [!div class="step-by-step"]
+> [上一页](displaying-data-with-the-datalist-and-repeater-controls-cs.md)
+> [下一页](showing-multiple-records-per-row-with-the-datalist-control-cs.md)

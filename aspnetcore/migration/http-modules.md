@@ -1,7 +1,7 @@
 ---
-title: "迁移的 HTTP 处理程序和 ASP.NET Core 中间件的模块"
+title: 将 HTTP 处理程序和模块迁移到 ASP.NET 核心中间件
 author: rick-anderson
-description: 
+description: ''
 manager: wpickett
 ms.author: tdykstra
 ms.date: 12/07/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: 7f08e155491b56933ae183818e9b9ee562ad8286
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e02f3a75269e5e4a4794d1979d3a5add21fe38be
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>迁移的 HTTP 处理程序和 ASP.NET Core 中间件的模块 
+# <a name="migrate-http-handlers-and-modules-to-aspnet-core-middleware"></a>将 HTTP 处理程序和模块迁移到 ASP.NET 核心中间件
 
 通过[Matt Perdeck](https://www.linkedin.com/in/mattperdeck)
 
@@ -173,17 +173,17 @@ HTTP 处理程序如下所示：
 
 * 使用[选项模式](xref:fundamentals/configuration/options):
 
-1.  创建一个类来保存中间件的选项，例如：
+1. 创建一个类来保存中间件的选项，例如：
 
-    [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Options)]
+   [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Options)]
 
-2.  存储选项的值
+2. 存储选项的值
 
-    配置系统，可存储选项任意位置所需的值。 但是，最站点使用*appsettings.json*，因此我们将采用这种办法：
+   配置系统，可存储选项任意位置所需的值。 但是，最站点使用*appsettings.json*，因此我们将采用这种办法：
 
-    [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,14-18)]
+   [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,14-18)]
 
-    *MyMiddlewareOptionsSection*下面是部分名称。 它不必是你的选项类别的名称相同。
+   *MyMiddlewareOptionsSection*下面是部分名称。 它不必是你的选项类别的名称相同。
 
 3. 将选项值与选项类相关联
 
@@ -191,25 +191,25 @@ HTTP 处理程序如下所示：
 
     更新你`Startup`类：
 
-    1.  如果你使用*appsettings.json*，将其添加到中的配置生成器`Startup`构造函数：
+   1. 如果你使用*appsettings.json*，将其添加到中的配置生成器`Startup`构造函数：
 
       [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Ctor&highlight=5-6)]
 
-    2.  配置选项服务：
+   2. 配置选项服务：
 
       [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=4)]
 
-    3.  将你的选项与选项类相关联：
+   3. 将你的选项与选项类相关联：
 
       [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=6-8)]
 
-4.  插入到中间件构造函数的选项。 这是类似于将注入到控制器的选项。
+4. 插入到中间件构造函数的选项。 这是类似于将注入到控制器的选项。
 
-  [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_MiddlewareWithParams&highlight=4,7,10,15-16)]
+   [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_MiddlewareWithParams&highlight=4,7,10,15-16)]
 
-  [UseMiddleware](#http-modules-usemiddleware)将添加到中间件的扩展方法`IApplicationBuilder`负责的依赖关系注入。
+   [UseMiddleware](#http-modules-usemiddleware)将添加到中间件的扩展方法`IApplicationBuilder`负责的依赖关系注入。
 
-  这已不再局限于`IOptions`对象。 这种方式，可插入中间件需要的任何其他对象。
+   这已不再局限于`IOptions`对象。 这种方式，可插入中间件需要的任何其他对象。
 
 ## <a name="loading-middleware-options-through-direct-injection"></a>加载通过直接注入的中间件选项
 
@@ -219,21 +219,21 @@ HTTP 处理程序如下所示：
 
 解决方法是获取使用中的实际选项值的选项对象你`Startup`类并将这些直接向中间件的每个实例参数传递。
 
-1.  添加到的第二个键*appsettings.json*
+1. 添加到的第二个键*appsettings.json*
 
-    若要添加另一组选项*appsettings.json*文件中，使用新密钥来唯一标识它：
+   若要添加另一组选项*appsettings.json*文件中，使用新密钥来唯一标识它：
 
-    [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,10-18&highlight=2-5)]
+   [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,10-18&highlight=2-5)]
 
-2.  检索选项值，并将它们传递给中间件。 `Use...`扩展方法 （其中添加到管道的中间件） 是传入选项值的逻辑位置： 
+2. 检索选项值，并将它们传递给中间件。 `Use...`扩展方法 （其中添加到管道的中间件） 是传入选项值的逻辑位置： 
 
-    [!code-csharp[](http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=20-23)]
+   [!code-csharp[](http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=20-23)]
 
-4.  启用的中间件来采用选项参数。 提供的重载`Use...`扩展方法 (它接收 options 参数并将其传递给`UseMiddleware`)。 当`UseMiddleware`调用具有参数，它将参数传递给中间件构造函数时它实例化的中间件对象。
+3. 启用的中间件来采用选项参数。 提供的重载`Use...`扩展方法 (它接收 options 参数并将其传递给`UseMiddleware`)。 当`UseMiddleware`调用具有参数，它将参数传递给中间件构造函数时它实例化的中间件对象。
 
-    [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Extensions&highlight=9-14)]
+   [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Extensions&highlight=9-14)]
 
-    请注意这如何包装中的选项对象`OptionsWrapper`对象。 这将实现`IOptions`，如下所需的中间件构造函数。
+   请注意这如何包装中的选项对象`OptionsWrapper`对象。 这将实现`IOptions`，如下所需的中间件构造函数。
 
 ## <a name="migrating-to-the-new-httpcontext"></a>迁移到新 HttpContext
 

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/creating-a-connection-string
-title: "创建连接字符串和使用 SQL Server LocalDB |Microsoft 文档"
+title: 创建连接字符串和使用 SQL Server LocalDB |Microsoft 文档
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/creating-a-connection-string
 msc.type: authoredcontent
-ms.openlocfilehash: 25d1c1c9954baaca9ef91eff3dd3c853930a5893
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: edbd46ef8a03670f0cb7527142babe9bd5846c7a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-connection-string-and-working-with-sql-server-localdb"></a>创建连接字符串和使用 SQL Server LocalDB
 ====================
 通过[Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 ## <a name="creating-a-connection-string-and-working-with-sql-server-localdb"></a>创建连接字符串和使用 SQL Server LocalDB
 
@@ -64,6 +64,6 @@ ms.lasthandoff: 01/24/2018
 
 接下来，你将生成一个新`MoviesController`类，该类可以用于显示影片数据，并允许用户创建新的影片列表。
 
->[!div class="step-by-step"]
-[上一页](adding-a-model.md)
-[下一页](accessing-your-models-data-from-a-controller.md)
+> [!div class="step-by-step"]
+> [上一页](adding-a-model.md)
+> [下一页](accessing-your-models-data-from-a-controller.md)

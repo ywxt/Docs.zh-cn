@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
-title: "ASP.NET 2.0 页模型 |Microsoft 文档"
+title: ASP.NET 2.0 页模型 |Microsoft 文档
 author: microsoft
-description: "在 ASP.NET 中 1.x，开发人员必须内联代码模型与代码隐藏代码模型之间选择。 无法使用任一 Src attr 实现代码隐藏..."
+description: 在 ASP.NET 中 1.x，开发人员必须内联代码模型与代码隐藏代码模型之间选择。 无法使用任一 Src attr 实现代码隐藏...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
 msc.type: authoredcontent
-ms.openlocfilehash: e008f197cf08bec81c560018f2d42306598f9e6d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fda85ec03f845cafa7720382bf85652937932c44
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="the-aspnet-20-page-model"></a>ASP.NET 2.0 页模型
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 在 ASP.NET 中 1.x，开发人员必须内联代码模型与代码隐藏代码模型之间选择。 无法使用 Src 属性或的代码隐藏文件属性来实现代码隐藏@Page指令。 在 ASP.NET 2.0 中，开发人员仍之间进行选择内联代码和代码隐藏，但已对代码隐藏模型的重大增强功能。
 
@@ -69,7 +69,7 @@ ASP.NET 2.0 将许多新特性添加到 @ Page 指令。 以下属性是 ASP.NET
 
 指定异步页的超时值。 默认值为 45 秒。
 
-## <a name="codefile"></a>同
+## <a name="codefile"></a>CodeFile
 
 同属性是对 Visual Studio 2002/2003 中的代码隐藏属性替代。
 
@@ -77,7 +77,7 @@ ASP.NET 2.0 将许多新特性添加到 @ Page 指令。 以下属性是 ASP.NET
 
 在要从单个基类派生的多个页的情况下使用 CodeFileBaseClass 属性。 由于在 ASP.NET 中，如果没有此特性的分部类的实现使用共享的公共字段来引用在 ASPX 页面中声明的控件的基类将不正常工作，因为 ASP。网编译引擎将自动创建基于页中的控件的新成员。 因此，如果你需要一个公共基类在 ASP.NET 中的两个或多个页面，你将需要定义 CodeFileBaseClass 属性中指定基类，然后是每个页类派生自该基类。 使用此特性时，则也需要同属性。
 
-## <a name="compilationmode"></a>compilationMode
+## <a name="compilationmode"></a>CompilationMode
 
 此属性允许你设置的 ASPX 页 CompilationMode 属性。 CompilationMode 属性是一个包含的值的枚举**始终**，**自动**，和**从不**。 默认值是**始终**。 **自动**设置将阻止 ASP.NET 动态尽可能编译页面。 从动态编译排除页提高性能。 但是，如果不对此页包含必须编译该代码，将引发错误时浏览页面。
 
@@ -144,11 +144,11 @@ ASP.NET 2.0 中的 @ Page 指令的另一个新功能是能够设置基类的公
 
 ## <a name="apprelativetemplatesourcedirectory"></a>AppRelativeTemplateSourceDirectory
 
-返回的页面或控件的相对于应用程序路径。 例如，为位于 http://app/folder/page.aspx 页，该属性返回 ~ / 文件夹 /。
+返回的页面或控件的相对于应用程序路径。 例如，对于在位于页的页http://app/folder/page.aspx，该属性返回 ~ / 文件夹 /。
 
 ## <a name="apprelativevirtualpath"></a>AppRelativeVirtualPath
 
-返回的页面或控件的相对虚拟目录路径。 例如位于 http://app/folder/page.aspx 的页面，该属性返回 ~ / folder/page.aspx。
+返回的页面或控件的相对虚拟目录路径。 例如对于在位于页的页http://app/folder/page.aspx，该属性返回 ~ / folder/page.aspx。
 
 ## <a name="asynctimeout"></a>AsyncTimeout
 
@@ -600,11 +600,13 @@ RegisterStartupScript 方法采用与 RegisterClientScriptBlock 方法相同的�
 
 以下是一些 ClientScriptManager 类的其他有用方法。
 
-| **GetCallbackEventReference** | 请参阅本模块前面的脚本回调。 |
-| --- | --- |
-| **GetPostBackClientHyperlink** | 获取 JavaScript 参考 (javascript:&lt;调用&gt;) 可以用于从客户端事件发布。 |
-| **GetPostBackEventReference** | 获取可用于启动重新从客户端 post 的字符串。 |
-| **GetWebResourceUrl** | 返回到嵌入到程序集中的资源的 URL。 必须与结合使用**RegisterClientScriptResource**。 |
-| **RegisterClientScriptResource** | 注册页的 Web 资源。 这些是资源嵌入程序集中并由新 WebResource.axd 处理程序处理。 |
-| **RegisterHiddenField** | 注册页的隐藏的表单域。 |
-| **RegisterOnSubmitStatement** | 注册在提交 HTML 表单时执行的客户端代码。 |
+
+|  <strong>GetCallbackEventReference</strong>   |                                                 请参阅本模块前面的脚本回调。                                                 |
+|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+|  <strong>GetPostBackClientHyperlink</strong>  |                获取 JavaScript 参考 (javascript:&lt;调用&gt;) 可以用于从客户端事件发布。                 |
+|  <strong>GetPostBackEventReference</strong>   |                                   获取可用于启动重新从客户端 post 的字符串。                                    |
+|      <strong>GetWebResourceUrl</strong>       | 返回到嵌入到程序集中的资源的 URL。 必须与结合使用<strong>RegisterClientScriptResource</strong>。 |
+| <strong>RegisterClientScriptResource</strong> |     注册页的 Web 资源。 这些是资源嵌入程序集中并由新 WebResource.axd 处理程序处理。      |
+|     <strong>RegisterHiddenField</strong>      |                                                 注册页的隐藏的表单域。                                                 |
+|  <strong>RegisterOnSubmitStatement</strong>   |                                  注册在提交 HTML 表单时执行的客户端代码。                                   |
+

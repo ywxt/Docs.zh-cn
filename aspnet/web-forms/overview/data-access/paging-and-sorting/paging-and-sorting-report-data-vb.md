@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
-title: "分页和排序报告数据 (VB) |Microsoft 文档"
+title: 分页和排序报告数据 (VB) |Microsoft 文档
 author: rick-anderson
-description: "分页和排序是两个非常常见功能，当在联机应用程序中显示数据。 在本教程中我们将首先查看一下添加排序和..."
+description: 分页和排序是两个非常常见功能，当在联机应用程序中显示数据。 在本教程中我们将首先查看一下添加排序和...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 23dbd63110092b2e91b7f3f9f6b602ef917c5527
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c5e7e110d436caa7b7526eae105fde601367007a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="paging-and-sorting-report-data-vb"></a>分页和排序报表数据 (VB)
 ====================
@@ -115,13 +115,13 @@ ms.lasthandoff: 01/24/2018
 
 可以使用以下属性自定义此 GridView、 说明如何和 FormView 的分页接口：
 
-- `PagerStyle`指示的分页接口; 的样式信息可以指定设置，例如`BackColor`， `ForeColor`， `CssClass`， `HorizontalAlign`，依次类推。
-- `PagerSettings`包含可以自定义分页接口中; 的功能的属性 bevy`PageButtonCount`指示数值页码 （默认值为 10） 的分页界面中显示的最大数目; [ `Mode`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pagersettings.mode.aspx)指示如何分页界面运行，并可以将设置为： 
+- `PagerStyle` 指示的分页接口; 的样式信息可以指定设置，例如`BackColor`， `ForeColor`， `CssClass`， `HorizontalAlign`，依次类推。
+- `PagerSettings` 包含可以自定义分页接口中; 的功能的属性 bevy`PageButtonCount`指示数值页码 （默认值为 10） 的分页界面中显示的最大数目; [ `Mode`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pagersettings.mode.aspx)指示如何分页界面运行，并可以将设置为： 
 
-    - `NextPrevious`显示允许用户在单步向前或向后一页时间下一步和上一步按钮
-    - `NextPreviousFirstLast`下一步和上一步按钮，除了第一个和最后一个按钮，还提供，允许用户以快速移动到第一个或最后一个数据页
-    - `Numeric`显示页码，使用户可立即跳转到任何页的系列
-    - `NumericFirstLast`除了页码，包括第一个和最后一个按钮，从而允许用户以快速移动到第一个或最后一页的数据;第一个/最后一个按钮才会显示是否所有数值的页码无法容纳
+    - `NextPrevious` 显示允许用户在单步向前或向后一页时间下一步和上一步按钮
+    - `NextPreviousFirstLast` 下一步和上一步按钮，除了第一个和最后一个按钮，还提供，允许用户以快速移动到第一个或最后一个数据页
+    - `Numeric` 显示页码，使用户可立即跳转到任何页的系列
+    - `NumericFirstLast` 除了页码，包括第一个和最后一个按钮，从而允许用户以快速移动到第一个或最后一页的数据;第一个/最后一个按钮才会显示是否所有数值的页码无法容纳
 
 此外，GridView、 说明如何和所有提供的 FormView`PageIndex`和`PageCount`属性，分别指示当前正在查看的页和数据，页的总数。 `PageIndex`属性编制了索引从 0，表示该参数时查看数据的第一页开始`PageIndex`将等于 0。 `PageCount`另一方面，启动计数 1，这意味着，`PageIndex`限制为的值介于 0 和`PageCount - 1`。
 
@@ -245,7 +245,7 @@ ms.lasthandoff: 01/24/2018
 
 1. GridView s [Sorting 事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorting(VS.80).aspx)激发
 2. GridView s [ `SortExpression`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sortexpression.aspx)设置为`SortExpression`的字段 LinkButton 被单击其排序标头
-3. ObjectDataSource 重新检索所有 BLL 中的数据，然后对使用 GridView s 的数据进行排序`SortExpression`
+3. ObjectDataSource 重新检索所有 BLL 中的数据，然后对使用 GridView s 的数据进行排序 `SortExpression`
 4. GridView 的`PageIndex`属性重置为 0，这意味着，排序用户时返回到 （假设已实现分页支持） 的数据的第一页
 5. GridView s [ `Sorted`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorted(VS.80).aspx)激发
 
@@ -291,7 +291,7 @@ ms.lasthandoff: 01/24/2018
 **图 15**： 单击按钮订单产品从成本最高到最少 ([单击以查看实际尺寸的图像](paging-and-sorting-report-data-vb/_static/image33.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中我们已了解如何实现分页和排序功能的默认值，这两种都是简单地检查一个复选框的 ！ 当用户对进行排序或数据进行分页时，则展开类似的工作流：
 
@@ -306,8 +306,8 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
->[!div class="step-by-step"]
-[上一页](creating-a-customized-sorting-user-interface-cs.md)
-[下一页](efficiently-paging-through-large-amounts-of-data-vb.md)
+> [!div class="step-by-step"]
+> [上一页](creating-a-customized-sorting-user-interface-cs.md)
+> [下一页](efficiently-paging-through-large-amounts-of-data-vb.md)

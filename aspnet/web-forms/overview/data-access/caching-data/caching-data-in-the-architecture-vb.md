@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-vb
-title: "缓存体系结构 (VB) 中的数据 |Microsoft 文档"
+title: 缓存体系结构 (VB) 中的数据 |Microsoft 文档
 author: rick-anderson
-description: "在以前的教程，我们学习了如何应用缓存，在表示层上。 在本教程中，我们将了解如何充分利用我们分层 architectu..."
+description: 在以前的教程，我们学习了如何应用缓存，在表示层上。 在本教程中，我们将了解如何充分利用我们分层 architectu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/30/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1aca89b022bb3bb7e4154ab575b5bb5513144cd5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 08f83c129d589859723249becb818386bfff19bf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="caching-data-in-the-architecture-vb"></a>缓存体系结构 (VB) 中的数据
 ====================
@@ -50,7 +50,7 @@ ms.lasthandoff: 01/24/2018
 
 ![添加新的文件夹名为 CL 和一个名为 ProductsCL.vb 类](caching-data-in-the-architecture-vb/_static/image2.png)
 
-**图 2**： 添加一个名为的新文件夹`CL`和一个名为类`ProductsCL.vb`
+**图 2**： 添加一个名为的新文件夹`CL`和一个名为类 `ProductsCL.vb`
 
 
 `ProductsCL`类应包含相同的数据访问和修改方法，如在其相应的业务逻辑层类集 (`ProductsBLL`)。 而不是创建所有这些方法，让的 s 只需几个此处以针对的模式感受使用的生成按 CL。 具体而言，我们将添加`GetProducts()`和`GetProductsByCategoryID(categoryID)`步骤 3 中的方法和`UpdateProduct`重载在步骤 4 中。 你可以添加剩余`ProductsCL`方法和`CategoriesCL`， `EmployeesCL`，和`SuppliersCL`类在方便的时候。
@@ -62,7 +62,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample1.vb)]
 
-[ `Cache`类](https://msdn.microsoft.com/library/system.web.caching.cache.aspx)s [ `Insert`方法](https://msdn.microsoft.com/library/system.web.caching.cache.insert.aspx)具有大量重载。 `Cache("key") = value`和`Cache.Insert(key, value)`是同义词并同时添加到缓存中使用指定的密钥，而无需定义到期的一个项。 通常情况下，我们想要时将项添加到缓存中，作为依赖关系和 / 或基于时间的过期时间指定到期时间。 使用的其他`Insert`方法的重载，可提供基于依赖项或时间的过期信息。
+[ `Cache`类](https://msdn.microsoft.com/library/system.web.caching.cache.aspx)s [ `Insert`方法](https://msdn.microsoft.com/library/system.web.caching.cache.insert.aspx)具有大量重载。 `Cache("key") = value` 和`Cache.Insert(key, value)`是同义词并同时添加到缓存中使用指定的密钥，而无需定义到期的一个项。 通常情况下，我们想要时将项添加到缓存中，作为依赖关系和 / 或基于时间的过期时间指定到期时间。 使用的其他`Insert`方法的重载，可提供基于依赖项或时间的过期信息。
 
 S 方法需要先检查所请求的数据是否在缓存中，如果是，缓存层会将其返回从该处中。 如果请求的数据不在缓存中，相应的 BLL 方法需要调用。 其返回值应缓存，则返回的值，如下面的序列图所示。
 
@@ -113,7 +113,7 @@ S 方法需要先检查所请求的数据是否在缓存中，如果是，缓存
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample6.vb)]
 
-`GetCacheItem(key)`不使用*密钥*值提供，而是调用`GetCacheKey(key)`方法，它返回*密钥*前面带有 ProductsCache-。 `MasterCacheKeyArray`，其中包含的字符串 ProductsCache，也可由`AddCacheItem(key, value)`方法，如我们所见短暂出现。
+`GetCacheItem(key)` 不使用*密钥*值提供，而是调用`GetCacheKey(key)`方法，它返回*密钥*前面带有 ProductsCache-。 `MasterCacheKeyArray`，其中包含的字符串 ProductsCache，也可由`AddCacheItem(key, value)`方法，如我们所见短暂出现。
 
 从 ASP.NET 页的代码隐藏类，则数据可以访问缓存使用`Page`类 s [ `Cache`属性](https://msdn.microsoft.com/library/system.web.ui.page.cache.aspx)，并允许进行这样的语法`Cache("key") = value`，在步骤 2 中所述。 从体系结构中的类，则数据可以访问缓存使用`HttpRuntime.Cache`或`HttpContext.Current.Cache`。 [Peter Johnson](https://weblogs.asp.net/pjohnson/default.aspx)的博客文章[HttpRuntime.Cache vs。HttpContext.Current.Cache](https://weblogs.asp.net/pjohnson/httpruntime-cache-vs-httpcontext-current-cache)说明中使用的略微的性能优点`HttpRuntime`而不是`HttpContext.Current`; 因此，`ProductsCL`使用`HttpRuntime`。
 
@@ -126,7 +126,7 @@ S 方法需要先检查所请求的数据是否在缓存中，如果是，缓存
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample7.vb)]
 
-`DateTime.Now.AddSeconds(CacheDuration)`在将来的段中指定的基于时间的到期时间 60 秒[ `System.Web.Caching.Cache.NoSlidingExpiration` ](https://msdn.microsoft.com/library/system.web.caching.cache.noslidingexpiration(vs.80).aspx)指示没有 s 不会滑动过期。 虽然这`Insert`方法重载具有输入参数的这两个绝对，滑动到期，你可以仅提供两种状态之一。 如果你尝试指定一个绝对时间和时间跨度，`Insert`方法会引发`ArgumentException`异常。
+`DateTime.Now.AddSeconds(CacheDuration)` 在将来的段中指定的基于时间的到期时间 60 秒[ `System.Web.Caching.Cache.NoSlidingExpiration` ](https://msdn.microsoft.com/library/system.web.caching.cache.noslidingexpiration(vs.80).aspx)指示没有 s 不会滑动过期。 虽然这`Insert`方法重载具有输入参数的这两个绝对，滑动到期，你可以仅提供两种状态之一。 如果你尝试指定一个绝对时间和时间跨度，`Insert`方法会引发`ArgumentException`异常。
 
 > [!NOTE]
 > 此实现的`AddCacheItem(key, value)`方法当前存在一些不足。 我们解决，克服在步骤 4 中的这些问题。
@@ -150,7 +150,7 @@ S 方法需要先检查所请求的数据是否在缓存中，如果是，缓存
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample9.vb)]
 
-`MasterCacheKeyArray`是一个字符串数组，包含单个值，ProductsCache。 首先，缓存项添加到缓存中并分配的当前日期和时间。 如果缓存项已存在，则它更新内容。 接下来，创建缓存依赖项。 [ `CacheDependency`类](https://msdn.microsoft.com/library/system.web.caching.cachedependency(VS.80).aspx)s 构造函数具有大量的重载，但在此处中正在使用需要两个`String`数组输入。 第一个指定要用作依赖项的文件集。 由于我们不希望使用任何基于文件的依赖关系，值为 t`Nothing`用于第一个输入参数。 第二个输入的参数指定缓存密钥要用作依赖项的集。 在这里，我们指定我们依赖项， `MasterCacheKeyArray`。 `CacheDependency`然后传递到`Insert`方法。
+`MasterCacheKeyArray` 是一个字符串数组，包含单个值，ProductsCache。 首先，缓存项添加到缓存中并分配的当前日期和时间。 如果缓存项已存在，则它更新内容。 接下来，创建缓存依赖项。 [ `CacheDependency`类](https://msdn.microsoft.com/library/system.web.caching.cachedependency(VS.80).aspx)s 构造函数具有大量的重载，但在此处中正在使用需要两个`String`数组输入。 第一个指定要用作依赖项的文件集。 由于我们不希望使用任何基于文件的依赖关系，值为 t`Nothing`用于第一个输入参数。 第二个输入的参数指定缓存密钥要用作依赖项的集。 在这里，我们指定我们依赖项， `MasterCacheKeyArray`。 `CacheDependency`然后传递到`Insert`方法。
 
 在此修改`AddCacheItem(key, value)`、 invaliding 缓存非常简单，只删除的依赖关系。
 
@@ -188,7 +188,7 @@ S 方法需要先检查所请求的数据是否在缓存中，如果是，缓存
 > 下载伴随这篇文章中提供了缓存层不完整。 它包含只有一个类， `ProductsCL`，其中仅运动少量的方法。 此外，仅将一个 ASP.NET 页面使用 CL (`~/Caching/FromTheArchitecture.aspx`) 所有其他用户仍 BLL 直接引用。 如果你计划在你的应用程序中使用 CL，与表示层的所有调用都应都发送到 CL，将要求 CL 的类和方法涵盖这些类和 BLL 当前使用的表示层中的方法。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 时可在表示层为 ASP.NET 2.0 的 SqlDataSource 和 ObjectDataSource 控件应用缓存，理想情况下缓存职责会将委派给一个单独的层体系结构中。 在本教程中我们创建一个表示层和业务逻辑层之间驻留的缓存层。 需要提供一组相同的类和方法中 BLL 存在并从表示层调用缓存层。
 
@@ -198,12 +198,12 @@ S 方法需要先检查所请求的数据是否在缓存中，如果是，缓存
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](caching-data-with-the-objectdatasource-vb.md)
-[下一页](caching-data-at-application-startup-vb.md)
+> [!div class="step-by-step"]
+> [上一页](caching-data-with-the-objectdatasource-vb.md)
+> [下一页](caching-data-at-application-startup-vb.md)

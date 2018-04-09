@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/updating-deleting-and-creating-data
-title: "更新、 删除和使用模型的绑定和 web 窗体中创建的数据 |Microsoft 文档"
+title: 更新、 删除和使用模型的绑定和 web 窗体中创建的数据 |Microsoft 文档
 author: tfitzmac
-description: "本系列教程演示使用模型绑定的 ASP.NET Web 窗体项目的基本方面。 模型绑定使数据交互详细直接-..."
+description: 本系列教程演示使用模型绑定的 ASP.NET Web 窗体项目的基本方面。 模型绑定使数据交互详细直接-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/updating-deleting-and-creating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 18c065b44524e7738c048b5908fa50c592188064
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e6536f7858afde5faf3aedd34f3cbe95c5ed0d53
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a>更新、 删除和使用模型的绑定和 web 窗体中创建的数据
 ====================
@@ -133,6 +133,6 @@ GridView 控件不包括**InsertMethod**属性，因此不能使用与模型绑�
 
 在下一个[教程](sorting-paging-and-filtering-data.md)在此系列中，将启用排序、 分页和筛选数据。
 
->[!div class="step-by-step"]
-[上一页](retrieving-data.md)
-[下一页](sorting-paging-and-filtering-data.md)
+> [!div class="step-by-step"]
+> [上一页](retrieving-data.md)
+> [下一页](sorting-paging-and-filtering-data.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-using-javascript-code-vb
-title: "动态填充控件使用 JavaScript 代码 (VB) |Microsoft 文档"
+title: 动态填充控件使用 JavaScript 代码 (VB) |Microsoft 文档
 author: wenz
-description: "ASP.NET AJAX 控件工具包中的 DynamicPopulate 控件调用 web 服务 （或页方法），并将生成的值填充到 t 上的目标控件..."
+description: ASP.NET AJAX 控件工具包中的 DynamicPopulate 控件调用 web 服务 （或页方法），并将生成的值填充到 t 上的目标控件...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-using-javascript-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b4090b3a785059c8f09de266df79eba0914e9f13
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 04bbc6fca839c2b1ed5cafd3a4411604b98e187d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="dynamically-populating-a-control-using-javascript-code-vb"></a>动态填充控件使用 JavaScript 代码 (VB)
 ====================
@@ -62,6 +62,6 @@ ms.lasthandoff: 11/10/2017
 
 单击按钮从服务器上，在指定的格式中检索日期 ([单击以查看实际尺寸的图像](dynamically-populating-a-control-using-javascript-code-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一页](dynamically-populating-a-control-vb.md)
-[下一页](using-dynamicpopulate-with-a-user-control-and-javascript-vb.md)
+> [!div class="step-by-step"]
+> [上一页](dynamically-populating-a-control-vb.md)
+> [下一页](using-dynamicpopulate-with-a-user-control-and-javascript-vb.md)

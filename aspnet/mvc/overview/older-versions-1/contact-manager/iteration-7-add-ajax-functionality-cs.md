@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-cs
-title: "迭代 #7-添加 Ajax 功能 (C#) |Microsoft 文档"
+title: '迭代 #7-添加 Ajax 功能 (C#) |Microsoft 文档'
 author: microsoft
-description: "在第七个迭代中，我们通过添加对 Ajax 的支持提高响应能力和我们的应用程序的性能。"
+description: 在第七个迭代中，我们通过添加对 Ajax 的支持提高响应能力和我们的应用程序的性能。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-cs
 msc.type: authoredcontent
-ms.openlocfilehash: db313d12dfd6a146347f253dc3a1f4a889bee780
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 35d62383a571725749b2fc629bbb17954657b2f6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-7--add-ajax-functionality-c"></a>迭代 #7-添加 Ajax 功能 (C#)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载代码](iteration-7-add-ajax-functionality-cs/_static/contactmanager_7_cs1.zip)
 
@@ -103,7 +103,7 @@ ms.lasthandoff: 11/10/2017
 
 第一步是视图的将我们想要以异步方式更新到单独的部分 （视图用户控件） 的一部分。 显示的联系人的表的索引视图的部分已移动到列表 1 中部分。
 
-**列表 1-Views\Contact\ContactList.ascx**
+**Listing 1 - Views\Contact\ContactList.ascx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample2.aspx)]
 
@@ -111,7 +111,7 @@ ms.lasthandoff: 11/10/2017
 
 更新的索引视图包含在清单 2。
 
-**列出 2-Views\Contact\Index.aspx**
+**Listing 2 - Views\Contact\Index.aspx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample3.aspx)]
 
@@ -205,7 +205,7 @@ ASP.NET AJAX 浏览器历史记录，你需要做三件事：
 
 删除链接包含在部分联系人列表。 在列出 6 中包含部分 ContactList 的更新的版本。
 
-**列出 6-Views\Contact\ContactList.ascx**
+**Listing 6 - Views\Contact\ContactList.ascx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample10.aspx)]
 
@@ -222,7 +222,7 @@ AjaxOptions 参数具有两个属性。 首先，确认属性用于显示一个�
 
 列出 7 包含新 AjaxDelete() 操作已添加到联系人控制器。
 
-**列出 7-Controllers\ContactController.cs (AjaxDelete)**
+**Listing 7 - Controllers\ContactController.cs (AjaxDelete)**
 
 [!code-csharp[Main](iteration-7-add-ajax-functionality-cs/samples/sample12.cs)]
 
@@ -230,7 +230,7 @@ AjaxDelete() 操作是使用 AcceptVerbs 属性进行修饰。 此属性可防�
 
 删除数据库记录后，你需要显示的联系人不包含已删除的记录更新的列表。 AjaxDelete() 方法返回部分 ContactList 和更新的联系人的列表。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在此迭代中，我们添加到我们的联系人管理器应用程序 Ajax 功能。 我们使用 Ajax 提高响应能力和我们的应用程序的性能。
 
@@ -242,6 +242,6 @@ AjaxDelete() 操作是使用 AcceptVerbs 属性进行修饰。 此属性可防�
 
 最后，我们创建一个删除链接，以支持 HTTP DELETE 操作。 通过执行 Ajax 删除，我们使用户能够删除数据库记录，而无需用户请求其他删除确认页。
 
->[!div class="step-by-step"]
-[上一页](iteration-6-use-test-driven-development-cs.md)
-[下一页](iteration-1-create-the-application-vb.md)
+> [!div class="step-by-step"]
+> [上一页](iteration-6-use-test-driven-development-cs.md)
+> [下一页](iteration-1-create-the-application-vb.md)

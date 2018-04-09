@@ -1,7 +1,7 @@
 ---
-title: "要开始使用数据保护 Api"
+title: 要开始使用 ASP.NET Core 中的数据保护 Api
 author: rick-anderson
-description: "本文档说明如何使用 ASP.NET Core 数据保护 Api 用于保护和取消保护应用中的数据。"
+description: 了解如何使用 ASP.NET Core 数据保护 Api 进行保护和取消保护应用中的数据。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/using-data-protection
-ms.openlocfilehash: ff72773fce28ba75aa8777eea321ed2bfb8f7e54
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 3a69abd2b58e02f87ccaf2317b0a8a2a7e9d7b4a
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="get-started-with-the-data-protection-apis"></a>要开始使用数据保护 Api
+# <a name="get-started-with-the-data-protection-apis-in-aspnet-core"></a>要开始使用 ASP.NET Core 中的数据保护 Api
 
 <a name="security-data-protection-getting-started"></a>
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 03/15/2018
 
 [!code-csharp[](../../security/data-protection/using-data-protection/samples/protectunprotect.cs?highlight=26,34,35,36,37,38,39,40)]
 
-创建一个保护程序时必须提供一个或多个[目的字符串](consumer-apis/purpose-strings.md)。 目的字符串都提供了使用者之间的隔离。 例如，使用"green"的目的字符串创建一个保护程序将无法取消保护数据的目的为"紫色"提供的保护程序。
+创建一个保护程序时必须提供一个或多个[目的字符串](xref:security/data-protection/consumer-apis/purpose-strings)。 目的字符串都提供了使用者之间的隔离。 例如，使用"green"的目的字符串创建一个保护程序将无法取消保护数据的目的为"紫色"提供的保护程序。
 
 >[!TIP]
 > 实例`IDataProtectionProvider`和`IDataProtector`是线程安全的多个调用方。 它具有一个组件获取的引用后应，`IDataProtector`通过调用`CreateProtector`，它将使用该引用，以便多个调用`Protect`和`Unprotect`。

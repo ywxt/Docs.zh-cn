@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-cs
-title: "使用计算列 (C#) |Microsoft 文档"
+title: 使用计算列 (C#) |Microsoft 文档
 author: rick-anderson
-description: "在创建数据库表时，Microsoft SQL Server 允许你定义计算的列从表达式计算其值，通常 referen..."
+description: 在创建数据库表时，Microsoft SQL Server 允许你定义计算的列从表达式计算其值，通常 referen...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 41206f76f9d9ca68971a53d79e84d82349e92333
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7a67abd2a0c140c0503c07f764549a6d90ef7298
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="working-with-computed-columns-c"></a>使用计算列 (C#)
 ====================
@@ -51,7 +51,7 @@ Northwind 数据库没有任何计算的列，因此我们将需要添加一个�
 请注意，可以在 SQL 中串联字符串使用`+`运算符。 `CASE`可像在传统的编程语言中的条件使用语句。 在上面的表达式`CASE`语句可以显示为： 如果`ContactTitle`不`NULL`然后输出`ContactTitle`值加上一个逗号，否则为发出执行任何操作。 有关详细信息的有用性`CASE`语句，请参阅[的 SQL Power`CASE`语句](http://www.4guysfromrolla.com/webtech/102704-1.shtml)。
 
 > [!NOTE]
-> 而不是使用`CASE`此处语句中，我们本来也可以或者使用`ISNULL(ContactTitle, '')`。 [`ISNULL(checkExpression, replacementValue)`](https://msdn.microsoft.com/library/ms184325.aspx)返回*checkExpression*如果它为非 NULL，否则它将返回*replacementValue*。 而是`ISNULL`或`CASE`起在此情况下，有更复杂的方案其中的灵活性`CASE`语句不能由匹配`ISNULL`。
+> 而不是使用`CASE`此处语句中，我们本来也可以或者使用`ISNULL(ContactTitle, '')`。 [`ISNULL(checkExpression, replacementValue)`](https://msdn.microsoft.com/library/ms184325.aspx) 返回*checkExpression*如果它为非 NULL，否则它将返回*replacementValue*。 而是`ISNULL`或`CASE`起在此情况下，有更复杂的方案其中的灵活性`CASE`语句不能由匹配`ISNULL`。
 
 
 添加此计算的列后你的屏幕应如下所示的屏幕快照中图 1 中。
@@ -251,7 +251,7 @@ Northwind 数据库没有任何计算的列，因此我们将需要添加一个�
 > GridView 当前用于 BoundFields 可编辑字段，从而导致是默认的编辑界面。 由于`CompanyName`字段是必需的它应转换为包括 RequiredFieldValidator TemplateField。 我将此作为练习感读取器。 请查阅[将验证控件添加到的编辑和插入接口](../editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md)教程，以转换为 TemplateField BoundField 和添加验证控件的分步说明。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在定义表的架构时，Microsoft SQL Server 允许包含计算列。 下面是通常从同一记录中的其他列引用值的表达式计算其值的列。 自从值计算的列基于一个表达式，它们是只读的并不能分配中的值`INSERT`或`UPDATE`语句。 这将带来挑战将尝试自动生成对应的 TableAdapter 的主查询中使用计算的列时`INSERT`， `UPDATE`，和`DELETE`语句。
 
@@ -261,12 +261,12 @@ Northwind 数据库没有任何计算的列，因此我们将需要添加一个�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已希尔顿 Geisenow 和 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](adding-additional-datatable-columns-cs.md)
-[下一页](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs.md)
+> [!div class="step-by-step"]
+> [上一页](adding-additional-datatable-columns-cs.md)
+> [下一页](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs.md)

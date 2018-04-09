@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing
-title: "URL 路由 |Microsoft 文档"
+title: URL 路由 |Microsoft 文档
 author: Erikre
-description: "本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识..."
+description: 本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 279617e4ebb475d935c0d1e01e08a3a2def0f9e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a195b36517bcae4bbeaf43fe7386e7787fd00212
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="url-routing"></a>URL 路由
 ====================
@@ -143,7 +143,7 @@ URL 模式可以包含文本值和变量 （也称为 URL 参数） 的占位符
     `https://localhost:44300/ProductDetails.aspx?productID=2`  
  该代码仍然会识别包含查询字符串，其中用户都具有标有书签的链接的情况的 URL。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，你添加的类别和产品的路由。 你已学习如何与使用模型绑定的数据控件集成路由。 在下一步的教程中，你将实现全局错误处理。
 
@@ -153,6 +153,6 @@ URL 模式可以包含文本值和变量 （也称为 URL 参数） 的占位符
 [将包含成员资格、 OAuth 和 SQL 数据库的安全的 ASP.NET Web 窗体应用程序部署到 Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)  
 [Microsoft Azure 的免费试用版](https://azure.microsoft.com/pricing/free-trial/)
 
->[!div class="step-by-step"]
-[上一页](membership-and-administration.md)
-[下一页](aspnet-error-handling.md)
+> [!div class="step-by-step"]
+> [上一页](membership-and-administration.md)
+> [下一页](aspnet-error-handling.md)

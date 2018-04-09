@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/caching
-title: "缓存 |Microsoft 文档"
+title: 缓存 |Microsoft 文档
 author: microsoft
-description: "了解缓存很重要的性能良好的 ASP.NET 应用程序。 ASP.NET 1.x 提供缓存; 的三个不同的选项输出缓存..."
+description: 了解缓存很重要的性能良好的 ASP.NET 应用程序。 ASP.NET 1.x 提供缓存; 的三个不同的选项输出缓存...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
-ms.openlocfilehash: 9b229de60e09b94189f62a6bb6fa61a9973d637b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 90faaae75cc85585efa05e6e50eabe8c990d076e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="caching"></a>缓存
 ====================
@@ -59,7 +59,7 @@ by [Microsoft](https://github.com/microsoft)
 
 请注意，用作缓存键的项键必须添加到缓存密钥的数组的值相同。
 
-## <a name="polling-based-sql-cache-dependenciesalso-called-table-based-dependencies"></a>轮询的基于 SQL 缓存依赖项*（也称为基于表的依赖项）*
+## <a name="polling-based-sql-cache-dependenciesemalso-called-table-based-dependenciesem"></a>轮询的基于 SQL 缓存依赖项<em>（也称为基于表的依赖项）</em>
 
 SQL Server 7 和 2000年将基于轮询的模型用于 SQL 缓存依赖项。 基于轮询的模型使用的数据库表的表中的数据更改时触发的触发器。 将触发更新**changeId** ASP.NET 会定期检查通知表中的字段。 如果**changeId**已更新字段，ASP.NET 知道数据已更改，并且它的缓存的数据失效。
 
@@ -237,12 +237,13 @@ ControlCachePolicy 实例可以成功操作仅之间控件生命周期的 Init �
 
 以下属性将可用的&lt;outputCache&gt;元素。
 
-| **特性** | **说明** |
-| --- | --- |
-| **enableOutputCache** | 可选**布尔**属性。 启用/禁用页面输出缓存。 如果禁用，不会缓存页而不考虑以编程方式或声明性设置。 默认值是**true**。 |
-| **enableFragmentCache** | 可选**布尔**属性。 启用/禁用应用程序片段缓存。 如果禁用，不会缓存页而不考虑[@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx)指令或缓存使用的配置文件。 包括一个缓存控制标头，该值，上游代理服务器，以及浏览器客户端不应尝试缓存页面输出。 默认值是**false**。 |
-| **sendCacheControlHeader** | 可选**布尔**属性。 获取或设置一个值，该值指示是否**缓存的控件： 私有**标头默认情况下发送该输出缓存模块。 默认值是**false**。 |
-| **omitVaryStar** | 可选**布尔**属性。 启用/禁用发送 Http"**Vary: \*** "在响应中的标头。 如果使用默认设置为 false，"**Vary: \*** "标头发送为输出缓存页。 当发送 Vary 标头时，它允许不同版本要缓存基于 Vary 标头中指定的内容。 例如， *Vary： 用户-代理*将存储的基于用户代理发出请求的页面的不同版本。 默认值是**false**。 |
+
+|       <strong>特性</strong>        |                                                                                                                                                                                                                                                       <strong>说明</strong>                                                                                                                                                                                                                                                       |
+|-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   <strong>enableOutputCache</strong>    |                                                                                                                                                          可选<strong>布尔</strong>属性。 启用/禁用页面输出缓存。 如果禁用，不会缓存页而不考虑以编程方式或声明性设置。 默认值是<strong>true</strong>。                                                                                                                                                           |
+|  <strong>enableFragmentCache</strong>   |                                                可选<strong>布尔</strong>属性。 启用/禁用应用程序片段缓存。 如果禁用，不会缓存页而不考虑[@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx)指令或缓存使用的配置文件。 包括一个缓存控制标头，该值，上游代理服务器，以及浏览器客户端不应尝试缓存页面输出。 默认值是<strong>false</strong>。                                                 |
+| <strong>sendCacheControlHeader</strong> |                                                                                                                                                      可选<strong>布尔</strong>属性。 获取或设置一个值，该值指示是否<strong>缓存的控件： 私有</strong>标头默认情况下发送该输出缓存模块。 默认值是<strong>false</strong>。                                                                                                                                                      |
+|      <strong>omitVaryStar</strong>      | 可选<strong>布尔</strong>属性。 启用/禁用发送 Http"<strong>Vary: \</ g ><em>"在响应中的标头。如果使用默认设置为 false，"</em>* Vary: \* <strong>"标头发送为输出缓存页。当发送 Vary 标头时，它允许不同版本要缓存基于 Vary 标头中指定的内容。例如， <em>Vary： 用户-代理</em>将存储的基于用户代理发出请求的页面的不同版本。默认值为 * * false</strong>。 |
 
 ### <a name="the-ltoutputcachesettingsgt-element"></a>&lt;OutputCacheSettings&gt;元素
 

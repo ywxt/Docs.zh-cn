@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-cs
-title: "如何使用 HTML 编辑器控件？ (C#) |Microsoft 文档"
+title: 如何使用 HTML 编辑器控件？ (C#) | Microsoft Docs
 author: microsoft
-description: "HTMLEditor 是 ASP.NET AJAX 控件，您可以轻松地创建和编辑通过在工具栏中的按钮的 HTML 内容。"
+description: HTMLEditor 是 ASP.NET AJAX 控件，您可以轻松地创建和编辑通过在工具栏中的按钮的 HTML 内容。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 17343660d7bf7aa6210fa9c6c9c0206598d34b18
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fca18948c0e4f1323f214dc0033f19fa44efad47
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-html-editor-control-c"></a>如何使用 HTML 编辑器控件？ (C#)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > HTMLEditor 是 ASP.NET AJAX 控件，您可以轻松地创建和编辑通过在工具栏中的按钮的 HTML 内容。
 
@@ -85,7 +85,7 @@ HTML 编辑器 Content 属性用于检索输入到 HTML 编辑器中的 HTML 内
 
 你通过派生自的基类的编辑器的新的 HTML 编辑器自定义工具栏按钮。 例如，清单 2 中的自定义编辑器仅包含加粗和倾斜的工具栏按钮。 已删除所有其他工具栏按钮。 此外，HTML 选项卡已从底部的编辑器中 （但设计和预览选项卡仍有）。
 
-**列出 2-应用\_Code\CustomEditor.cs**
+**Listing 2 - App\_Code\CustomEditor.cs**
 
 [!code-csharp[Main](how-do-i-use-the-html-editor-control-cs/samples/sample2.cs)]
 
@@ -107,9 +107,9 @@ HTML 编辑器 Content 属性用于检索输入到 HTML 编辑器中的 HTML 内
 
 例如，假设你要创建一个博客的应用程序。 在此情况下，它有意义时要使用 HTML 编辑器撰写的博客文章。 是唯一提交博客文章的人，并有可能信任自己无法提交恶意 JavaScript。 但是，它没有意义时要使用 HTML 编辑器允许匿名用户发表评论。 你应在用户将提交密码等敏感信息的情况下特别小心。 可能的恶意用户可以将发布包含右 JavaScript 的窃取密码的注释。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，你已提供包括 AJAX 控件工具包中的 HTML 编辑器控件的简要概述。 您学习了如何使用 HTML 编辑器接受来自用户的丰富内容并将其提交到服务器的内容。 我们还讨论了如何自定义工具栏按钮显示由 HTML 编辑器中。 最后，您学习了如何避免跨站点脚本攻击时使用 HTML 编辑器接受潜在的恶意输入。
 
->[!div class="step-by-step"]
-[下一篇](how-do-i-use-the-html-editor-control-vb.md)
+> [!div class="step-by-step"]
+> [下一篇](how-do-i-use-the-html-editor-control-vb.md)

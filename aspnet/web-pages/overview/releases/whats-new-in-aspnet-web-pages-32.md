@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/releases/whats-new-in-aspnet-web-pages-32
-title: "最新信息在 ASP.NET Web 页 3.2 |Microsoft 文档"
+title: 最新信息在 ASP.NET Web 页 3.2 |Microsoft 文档
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/30/2014
@@ -12,15 +12,15 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/releases/whats-new-in-aspnet-web-pages-32
 msc.type: authoredcontent
-ms.openlocfilehash: cdb0e259bbf27d1d3dcf6ada11e6636c9cefcc9c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 80421018e0508d430b6142cd3cee1727d1d17b7e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="whats-new-in-aspnet-web-pages-32"></a>什么是所需的 ASP.NET Web Pages 3.2 中的新增功能
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 本主题介绍什么是用于 ASP.NET Web Pages 3.2，网页 3.2.2 的新功能和[网页 3.2.3 beta1](https://blogs.msdn.com/b/webdev/archive/2014/12/17/asp-net-mvc-5-2-3-web-pages-5-2-3-and-web-api-5-2-3-beta-releases.aspx)
 
@@ -50,11 +50,11 @@ ms.lasthandoff: 11/10/2017
 
 下面是演示的分析结果的表[perfview](https://channel9.msdn.com/Series/PerfView-Tutorial)运行。 CPU 保留常量在大约 68%，而正在呈现大型页。 下表显示，已几乎完全消除第 2 代回收的数量，并将其结果是更高版本的请求速率，并且由垃圾回收暂停时间的相当大减少。
 
-| **区域** | **Before (3.2)** | **后 (3.2.1)** | **增量 %** |
+| **区域** | **Before (3.2)** | **后 (3.2.1)** | **Delta %** |
 | --- | --- | --- | --- |
 | 总请求 （计数） | 26,986 | 32,591 | <font style="background-color: #4bacc6">20.80%</font> |
 | 跟踪持续时间 （秒） | 196.20 | 198.60 | 1.20% |
-| 请求/秒 | 137.53 | 164.10 | <font style="background-color: #4bacc6">19.30%</font> |
+| Request/second | 137.53 | 164.10 | <font style="background-color: #4bacc6">19.30%</font> |
 | CPU 负载 | 68.80% | 68.50% |  -0.40% |
 | GC CPU 示例 | 124,323 | 17,543 | <font style="background-color: #4bacc6">-85.90%</font> |
 | 总分配 （计数） | 55,357,146 | 57,222,949 | 3.40% |
@@ -65,7 +65,8 @@ ms.lasthandoff: 11/10/2017
 | CPU / 请求 （示例数） | 19.73 | 16.47 | -16.50% |
 
 | 颜色编码： | <font style="background-color: #00ff00">核心改善</font> | <font style="background-color: #4bacc6">积极对性能的影响</font> |
-| --- | --- | --- |
+|---------------|-----------------------------------------------------------------|-------------------------------------------------------------------------------|
+|               |                                                                 |                                                                               |
 
 ## <a name="aspnet-web-pages-323-beta1"></a>ASP.NET 网页 3.2.3 beta1
 

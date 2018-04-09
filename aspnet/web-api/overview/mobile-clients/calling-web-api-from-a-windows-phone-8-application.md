@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
-title: "调用 Web API，从 Windows Phone 8 应用程序 (C#) |Microsoft 文档"
+title: 调用 Web API，从 Windows Phone 8 应用程序 (C#) |Microsoft 文档
 author: rmcmurray
-description: "创建包含的 ASP.NET Web API 应用程序提供到 Windows Phone 8 应用程序的书籍目录的完整端到端方案。"
+description: 创建包含的 ASP.NET Web API 应用程序提供到 Windows Phone 8 应用程序的书籍目录的完整端到端方案。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/09/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
-ms.openlocfilehash: 2025f31f369153b93cd293884880c97635fc8ab8
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 7d0486b4cab85ffe77fda87d4b34dd3ec0a9e8fe
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>从 Windows Phone 8 应用程序 (C#) 调用 Web API
 ====================
@@ -52,15 +52,21 @@ ms.lasthandoff: 02/12/2018
 2. 单击**文件**，然后**新**，，然后**项目**。
 3. 当**新项目**显示对话框中，展开**已安装**，然后**模板**，然后**Visual C#**，，然后**Web**。
 
-    | [![](calling-web-api-from-a-windows-phone-8-application/_static/image2.png)](calling-web-api-from-a-windows-phone-8-application/_static/image1.png) |
-    | --- |
-    | 单击图像以展开 |
+
+   | [![](calling-web-api-from-a-windows-phone-8-application/_static/image2.png)](calling-web-api-from-a-windows-phone-8-application/_static/image1.png) |
+   |-----------------------------------------------------------------------------------------------------------------------------------------------------|
+   |                                                                单击图像以展开                                                                |
+
+
 4. 突出显示**ASP.NET Web 应用程序**，输入**BookStore**作为项目名称，然后单击**确定**。
 5. 当**新建 ASP.NET 项目**显示对话框中，选择**Web API**模板，，然后单击**确定**。
 
-    | [![](calling-web-api-from-a-windows-phone-8-application/_static/image4.png)](calling-web-api-from-a-windows-phone-8-application/_static/image3.png) |
-    | --- |
-    | 单击图像以展开 |
+
+   | [![](calling-web-api-from-a-windows-phone-8-application/_static/image4.png)](calling-web-api-from-a-windows-phone-8-application/_static/image3.png) |
+   |-----------------------------------------------------------------------------------------------------------------------------------------------------|
+   |                                                                单击图像以展开                                                                |
+
+
 6. 当 Web API 项目打开后时，请从项目中删除示例控制器：
 
     1. 展开**控制器**在解决方案资源管理器的文件夹。
@@ -68,30 +74,33 @@ ms.lasthandoff: 02/12/2018
     3. 单击**确定**当系统提示确认删除。
 7. 将 XML 数据文件添加到 Web API 项目中;此文件包含 bookstore 目录的内容：
 
-    1. 右键单击**应用\_数据**文件夹在解决方案资源管理器，然后单击**添加**，然后单击**新项**。
-    2. 当**添加新项**显示对话框中，突出显示**XML 文件**模板。
-    3. 命名该文件**Books.xml**，然后单击**添加**。
-    4. 当**Books.xml**打开文件，并将替换中的示例 XML 文件中的代码**books.xml** MSDN 上的文件： 
+   1. 右键单击**应用\_数据**文件夹在解决方案资源管理器，然后单击**添加**，然后单击**新项**。
+   2. 当**添加新项**显示对话框中，突出显示**XML 文件**模板。
+   3. 命名该文件**Books.xml**，然后单击**添加**。
+   4. 当**Books.xml**打开文件，并将替换中的示例 XML 文件中的代码**books.xml** MSDN 上的文件： 
 
-        [!code-xml[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample1.xml)]
-    5. 保存并关闭 XML 文件。
+       [!code-xml[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample1.xml)]
+   5. 保存并关闭 XML 文件。
+
 8. 将 bookstore 模型添加到 Web API 项目中;此模型包含 bookstore 应用程序的创建、 读取、 更新和删除 (CRUD) 逻辑：
 
-    1. 右键单击**模型**文件夹在解决方案资源管理器，然后单击**添加**，然后单击**类**。
-    2. 当**添加新项**显示对话框中，命名类文件**BookDetails.cs**，然后单击**添加**。
-    3. 当**BookDetails.cs**打开文件，将替换为以下文件中的代码： 
+   1. 右键单击**模型**文件夹在解决方案资源管理器，然后单击**添加**，然后单击**类**。
+   2. 当**添加新项**显示对话框中，命名类文件**BookDetails.cs**，然后单击**添加**。
+   3. 当**BookDetails.cs**打开文件，将替换为以下文件中的代码： 
 
-        [!code-csharp[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample2.cs)]
-    4. 保存并关闭**BookDetails.cs**文件。
+       [!code-csharp[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample2.cs)]
+   4. 保存并关闭**BookDetails.cs**文件。
+
 9. 将 bookstore 控制器添加到 Web API 项目：
 
-    1. 右键单击**控制器**文件夹在解决方案资源管理器，然后单击**添加**，然后单击**控制器**。
-    2. 当**添加基架**显示对话框中，突出显示**Web API 2 Controller-Empty**，然后单击**添加**。
-    3. 当**添加控制器**显示对话框中，控制器**BooksController**，然后单击**添加**。
-    4. 当**BooksController.cs**打开文件，将替换为以下文件中的代码： 
+   1. 右键单击**控制器**文件夹在解决方案资源管理器，然后单击**添加**，然后单击**控制器**。
+   2. 当**添加基架**显示对话框中，突出显示**Web API 2 Controller-Empty**，然后单击**添加**。
+   3. 当**添加控制器**显示对话框中，控制器**BooksController**，然后单击**添加**。
+   4. 当**BooksController.cs**打开文件，将替换为以下文件中的代码： 
 
-        [!code-csharp[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample3.cs)]
-    5. 保存并关闭**BooksController.cs**文件。
+       [!code-csharp[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample3.cs)]
+   5. 保存并关闭**BooksController.cs**文件。
+
 10. 生成的 Web API 应用程序来检查有错误。
 
 <a id="STEP2"></a>
@@ -111,41 +120,45 @@ ms.lasthandoff: 02/12/2018
     5. 安装完成后，单击**关闭**。
 5. 添加**BookDetails**模型到**BookCatalog**项目; 这包含 bookstore 类泛型模型：
 
-    1. 右键单击**BookCatalog**项目在解决方案资源管理器，然后单击**添加**，然后单击**新文件夹**。
-    2. 将新文件夹命名**模型**。
-    3. 右键单击**模型**文件夹在解决方案资源管理器，然后单击**添加**，然后单击**类**。
-    4. 当**添加新项**显示对话框中，命名类文件**BookDetails.cs**，然后单击**添加**。
-    5. 当**BookDetails.cs**打开文件，将替换为以下文件中的代码： 
+   1. 右键单击**BookCatalog**项目在解决方案资源管理器，然后单击**添加**，然后单击**新文件夹**。
+   2. 将新文件夹命名**模型**。
+   3. 右键单击**模型**文件夹在解决方案资源管理器，然后单击**添加**，然后单击**类**。
+   4. 当**添加新项**显示对话框中，命名类文件**BookDetails.cs**，然后单击**添加**。
+   5. 当**BookDetails.cs**打开文件，将替换为以下文件中的代码： 
 
-        [!code-csharp[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample4.cs)]
-    6. 保存并关闭**BookDetails.cs**文件。
+       [!code-csharp[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample4.cs)]
+   6. 保存并关闭**BookDetails.cs**文件。
+
 6. 更新**MainViewModel.cs**类，以包含与 BookStore Web API 应用程序进行通信的功能：
 
-    1. 展开**Viewmodel**文件夹中的解决方案资源管理器，然后双击**MainViewModel.cs**文件。
-    2. 当**MainViewModel.cs**打开文件时，将替换为以下文件中的代码; 请注意，你将需要更新的值`apiUrl`常量替换你的 Web API 的实际 URL: 
+   1. 展开**Viewmodel**文件夹中的解决方案资源管理器，然后双击**MainViewModel.cs**文件。
+   2. 当**MainViewModel.cs**打开文件时，将替换为以下文件中的代码; 请注意，你将需要更新的值`apiUrl`常量替换你的 Web API 的实际 URL: 
 
-        [!code-csharp[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample5.cs)]
-    3. 保存并关闭**MainViewModel.cs**文件。
+       [!code-csharp[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample5.cs)]
+   3. 保存并关闭**MainViewModel.cs**文件。
+
 7. 更新**MainPage.xaml**文件以自定义应用程序名称：
 
-    1. 双击**MainPage.xaml**在解决方案资源管理器中的文件。
-    2. 当**MainPage.xaml**打开文件，找到以下代码行： 
+   1. 双击**MainPage.xaml**在解决方案资源管理器中的文件。
+   2. 当**MainPage.xaml**打开文件，找到以下代码行： 
 
-        [!code-xml[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample6.xml)]
-    3. 这些行替换为以下代码： 
+       [!code-xml[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample6.xml)]
+   3. 这些行替换为以下代码： 
 
-        [!code-xml[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample7.xml)]
-    4. 保存并关闭**MainPage.xaml**文件。
+       [!code-xml[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample7.xml)]
+   4. 保存并关闭**MainPage.xaml**文件。
+
 8. 更新**DetailsPage.xaml**文件以自定义显示的项目：
 
-    1. 双击**DetailsPage.xaml**在解决方案资源管理器中的文件。
-    2. 当**DetailsPage.xaml**打开文件，找到以下代码行： 
+   1. 双击**DetailsPage.xaml**在解决方案资源管理器中的文件。
+   2. 当**DetailsPage.xaml**打开文件，找到以下代码行： 
 
-        [!code-xml[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample8.xml)]
-    3. 这些行替换为以下代码： 
+       [!code-xml[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample8.xml)]
+   3. 这些行替换为以下代码： 
 
-        [!code-xml[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample9.xml)]
-    4. 保存并关闭**DetailsPage.xaml**文件。
+       [!code-xml[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample9.xml)]
+   4. 保存并关闭**DetailsPage.xaml**文件。
+
 9. 生成 Windows Phone 应用程序，以检查有错误。
 
 ### <a name="step-3-testing-the-end-to-end-solution"></a>步骤 3： 测试端到端解决方案
@@ -184,6 +197,8 @@ ms.lasthandoff: 02/12/2018
 
 如果你点击错误消息，将显示有关错误的任何其他详细信息：
 
+
 | [![](calling-web-api-from-a-windows-phone-8-application/_static/image16.png)](calling-web-api-from-a-windows-phone-8-application/_static/image15.png) |
-| --- |
-| 单击图像以展开 |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                                                                 单击图像以展开                                                                 |
+

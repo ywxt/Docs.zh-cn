@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-database-update
-title: "使用 Visual Studio 的 ASP.NET Web 部署： 部署某一数据库更新 |Microsoft 文档"
+title: 使用 Visual Studio 的 ASP.NET Web 部署： 部署某一数据库更新 |Microsoft 文档
 author: tdykstra
-description: "本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的..."
+description: 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-database-update
 msc.type: authoredcontent
-ms.openlocfilehash: 8e875a4282df78ec647579e74c3fbeabd2495fc2
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 3020cfa19bf12f21c6d42a77ed257595431b4e86
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-database-update"></a>使用 Visual Studio 的 ASP.NET Web 部署： 部署某一数据库更新
 ====================
@@ -160,7 +160,7 @@ ms.lasthandoff: 02/12/2018
 
     包括数据库更改的实际生产应用程序更新为您通常也将进行应用程序脱机在部署过程中通过上载*应用\_offline.htm*之前发布，将其删除此后，正如你在看到[以前一教程](deploying-a-code-update.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 现在，你已部署包含使用 Code First 迁移和 dbDacFx 提供程序的数据库更改的应用程序更新。
 
@@ -170,6 +170,6 @@ ms.lasthandoff: 02/12/2018
 
 下一教程演示如何通过使用命令行执行部署。
 
->[!div class="step-by-step"]
-[上一页](deploying-a-code-update.md)
-[下一页](command-line-deployment.md)
+> [!div class="step-by-step"]
+> [上一页](deploying-a-code-update.md)
+> [下一页](command-line-deployment.md)

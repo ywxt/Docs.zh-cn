@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset
-title: "创建安全的 ASP.NET Web 窗体应用程序通过用户注册，电子邮件确认及密码重置 (C#) |Microsoft 文档"
+title: 创建安全的 ASP.NET Web 窗体应用程序通过用户注册，电子邮件确认及密码重置 (C#) |Microsoft 文档
 author: Erikre
-description: "本教程演示了如何生成与用户注册，电子邮件确认和密码重置使用 ASP.NET 标识成员的 ASP.NET Web 窗体应用程序..."
+description: 本教程演示了如何生成与用户注册，电子邮件确认和密码重置使用 ASP.NET 标识成员的 ASP.NET Web 窗体应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/02/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: ed39295ed1bcaa924336a1faf52049e291abeadb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1dc7ace69473b45432fd942b9cf1ba32332cb707
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset-c"></a>创建安全的 ASP.NET Web 窗体应用程序通过用户注册，电子邮件确认及密码重置 (C#)
 ====================
@@ -104,9 +104,9 @@ ms.lasthandoff: 01/24/2018
 2. 在**解决方案资源管理器**，右键单击*Default.aspx*和选择**设为起始页**。
 3. 运行应用程序通过按**F5。** 将显示的页后，单击**注册**链接以显示注册页。
 4. 输入你的电子邮件和密码，然后单击**注册**按钮以发送电子邮件通过 SendGrid。  
- 你的项目和代码的当前状态将允许用户登录后它们填写注册表单中，即使它们尚未确认其帐户。
+   你的项目和代码的当前状态将允许用户登录后它们填写注册表单中，即使它们尚未确认其帐户。
 5. 检查你的电子邮件帐户，然后单击链接以确认你的电子邮件。  
- 一旦提交注册表单，你就可登录。  
+   一旦提交注册表单，你就可登录。  
     ![示例网站的登录](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset/_static/image4.png)
 
 <a id="require"></a>
@@ -146,9 +146,9 @@ ms.lasthandoff: 01/24/2018
 4. 运行应用程序通过按**F5。** 将显示的页后，单击**登录**链接。
 5. 单击**忘记了密码？**链接以显示**忘记了密码**页。
 6. 输入你的电子邮件地址，然后单击**提交**按钮将发送一封电子邮件给你的地址将允许你重置密码。   
- 检查你的电子邮件帐户，然后单击链接以显示**重置密码**页。
+   检查你的电子邮件帐户，然后单击链接以显示**重置密码**页。
 7. 上**重置密码**页上，输入你的电子邮件、 密码和确认的密码。 然后，按**重置**按钮。  
- 当你已成功重置你的密码，**更改密码**，将显示页。 现在，你可以登录你的新密码。
+   当你已成功重置你的密码，**更改密码**，将显示页。 现在，你可以登录你的新密码。
 
 <a id="rsend"></a>
 ## <a name="resend-email-confirmation-link"></a>重新发送电子邮件确认链接
@@ -167,7 +167,7 @@ ms.lasthandoff: 01/24/2018
 4. 删除中的任何帐户**AspNetUsers**表包含你要测试的电子邮件别名。
 5. 运行应用程序 (**F5**) 并注册你的电子邮件地址。
 6. 在确认新帐户通过刚被发送的电子邮件之前, 在尝试的新帐户登录。  
- 你将看到你不能登录，并且你必须确认电子邮件帐户。 此外，现在可以重新一条确认消息发送到你的电子邮件帐户。
+   你将看到你不能登录，并且你必须确认电子邮件帐户。 此外，现在可以重新一条确认消息发送到你的电子邮件帐户。
 7. 输入你的电子邮件地址和密码，然后按**重新发送确认**按钮。
 8. 一旦确认你基于新发送的电子邮件的电子邮件地址，请登录到应用程序。
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/caching-data/caching-data-with-the-objectdatasource-cs
-title: "缓存数据与 ObjectDataSource (C#) |Microsoft 文档"
+title: 缓存数据与 ObjectDataSource (C#) |Microsoft 文档
 author: rick-anderson
-description: "缓存可能意味着速度较慢和快速的 Web 应用程序之间的差异。 本教程是 4 的倍数详细一下缓存在 ASP.NET 中的第一个..."
+description: 缓存可能意味着速度较慢和快速的 Web 应用程序之间的差异。 本教程是 4 的倍数详细一下缓存在 ASP.NET 中的第一个...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/30/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-with-the-objectdatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8cd4fd2afb16772baf45618ccee2c3c3caea5b64
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c30dcba7d6ff9849371ef92c84d4ec32aa1dc73d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="caching-data-with-the-objectdatasource-c"></a>缓存数据与 ObjectDataSource (C#)
 ====================
@@ -218,7 +218,7 @@ ObjectDataSource 自动逐出从缓存时的任何一个其项其`Insert`， `Up
 
 如果您愿意为陈旧的数据，可能和数据的新鲜度是重要的方案使用短满简单地说，只能使用基于时间的满。 如果过时的数据不是可接受的则放弃缓存或使用 SQL 缓存依赖项 (假设它为数据库数据所缓存)。 在将来的教程中，我们将探讨 SQL 缓存依赖项。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，我们将探讨 ObjectDataSource s 内置缓存功能。 通过只需设置的几个属性，我们可以指示 ObjectDataSource 缓存返回从指定的结果`SelectMethod`到 ASP.NET 数据缓存。 `CacheDuration`和`CacheExpirationPolicy`属性指示缓存项的持续时间以及它是否是绝对或相对过期机制。 `CacheKeyDependency`属性将与现有的缓存依赖项关联的所有对象数据源的缓存条目。 这可用来收回 ObjectDataSource 的项目从缓存，然后基于时间的过期为止，并通常用于 SQL 缓存依赖项。
 
@@ -236,11 +236,11 @@ ObjectDataSource 自动逐出从缓存时的任何一个其项其`Insert`， `Up
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[下一篇](caching-data-in-the-architecture-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](caching-data-in-the-architecture-cs.md)

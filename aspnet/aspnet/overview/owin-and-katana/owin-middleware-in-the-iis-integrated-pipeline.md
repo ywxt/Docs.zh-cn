@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
-title: "在 IIS 中的 OWIN 中间件集成管道 |Microsoft 文档"
+title: 在 IIS 中的 OWIN 中间件集成管道 |Microsoft 文档
 author: Praburaj
-description: "这篇文章演示如何运行 OWIN 中间件组件 (OMCs) 在 IIS 集成管道、 如何设置管道事件 OMC 上并运行。 你应该..."
+description: 这篇文章演示如何运行 OWIN 中间件组件 (OMCs) 在 IIS 集成管道、 如何设置管道事件 OMC 上并运行。 你应该...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/07/2013
 ms.topic: article
 ms.assetid: d031c021-33c2-45a5-bf9f-98f8fa78c2ab
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: 5f6ed1ae0309e9bdd3ca4ae229195835f20bc729
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 5df70c80084a32c5f61ac9288c8cdbfaaa47f124
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>在 IIS 集成管道中的 OWIN 中间件
 ====================
@@ -83,13 +83,13 @@ Owin 中间件组件 (OMC) 可以配置为在以下 OWIN 管道阶段事件运�
 
     [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample9.cmd)]
 
- 调用`app.UseStageMarker`传递`Authenticate`或`PostAuthenticate`不会遵循，并且会引发任何异常。 在最新的阶段，即默认情况下运行的 OMCs `PreHandlerExecute`。 阶段标记用于使其运行更早版本。 如果你指定无序的阶段标记，则我们舍入到早期标记中。 换而言之，添加一个阶段标记将显示"最晚阶段 X 运行"。 在其后添加 OWIN 管道中的最早阶段标记 OMC 的运行。
+   调用`app.UseStageMarker`传递`Authenticate`或`PostAuthenticate`不会遵循，并且会引发任何异常。 在最新的阶段，即默认情况下运行的 OMCs `PreHandlerExecute`。 阶段标记用于使其运行更早版本。 如果你指定无序的阶段标记，则我们舍入到早期标记中。 换而言之，添加一个阶段标记将显示"最晚阶段 X 运行"。 在其后添加 OWIN 管道中的最早阶段标记 OMC 的运行。
 4. 对的调用的最早阶段`app.UseStageMarker`wins。 例如，如果你切换的顺序`app.UseStageMarker`我们上一示例中的调用：
 
     [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample10.cs?highlight=13,19)]
 
- 输出窗口将显示： 
+   输出窗口将显示： 
 
     [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample11.cmd)]
 
- 在所有运行的 OMCs`AuthenticateRequest`阶段，因为最后一个 OMC 注册与`Authenticate`事件，和`Authenticate`事件之前的所有其他事件。
+   在所有运行的 OMCs`AuthenticateRequest`阶段，因为最后一个 OMC 注册与`Authenticate`事件，和`Authenticate`事件之前的所有其他事件。

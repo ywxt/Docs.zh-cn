@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/getting-started/introduction-to-aspnet-identity
-title: "ASP.NET 标识简介 |Microsoft 文档"
+title: ASP.NET 标识简介 |Microsoft 文档
 author: jongalloway
-description: "ASP.NET 成员资格系统中引入了 ASP.NET 2.0 后在 2005 中，并且由于然后进行了很多更改方式的 web 应用程序 typicall..."
+description: ASP.NET 成员资格系统中引入了 ASP.NET 2.0 后在 2005 中，并且由于然后进行了很多更改方式的 web 应用程序 typicall...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
 ms.topic: article
 ms.assetid: 38717fc1-5989-43cf-952d-4007cc1dd923
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 7c7dcb7903b0d0772acc560161ff39c6869c599a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 59272f4659256e108ee99b22eb3bd3e2583a617c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-aspnet-identity"></a>ASP.NET 标识简介
 ====================
@@ -112,37 +112,37 @@ Visual Studio 2013 项目模板中使用 ASP.NET 标识为 ASP.NET MVC、 Web �
 2. 创建的项目包含 ASP.NET 标识以下三个包。
 
     - [`Microsoft.AspNet.Identity.EntityFramework`](http://www.nuget.org/packages/Microsoft.AspNet.Identity.EntityFramework/)  
- 此包已将保持 ASP.NET 标识数据和架构与 SQL Server ASP.NET 标识的实体框架实现。
+   此包已将保持 ASP.NET 标识数据和架构与 SQL Server ASP.NET 标识的实体框架实现。
     - [`Microsoft.AspNet.Identity.Core`](http://www.nuget.org/packages/Microsoft.AspNet.Identity.Core/)  
- 此包为 ASP.NET 标识有核心接口。 此包可用于编写实现 ASP.NET 标识，目标不同的持久性存储 （如 Azure 表存储） NoSQL 数据库等。
+   此包为 ASP.NET 标识有核心接口。 此包可用于编写实现 ASP.NET 标识，目标不同的持久性存储 （如 Azure 表存储） NoSQL 数据库等。
     - [`Microsoft.AspNet.Identity.OWIN`](http://www.nuget.org/packages/Microsoft.AspNet.Identity.Owin/)  
- 此程序包包含用于在 ASP.NET 应用程序中加入与 ASP.NET Identity OWIN 身份验证的功能。 这用于日志的功能添加到你的应用程序和 OWIN Cookie 身份验证中间件调用生成 cookie 时。
+   此程序包包含用于在 ASP.NET 应用程序中加入与 ASP.NET Identity OWIN 身份验证的功能。 这用于日志的功能添加到你的应用程序和 OWIN Cookie 身份验证中间件调用生成 cookie 时。
 3. 创建用户。  
- 启动应用程序，然后单击**注册**链接来创建的用户。 下图显示了注册页它收集用户名和密码。  
+   启动应用程序，然后单击**注册**链接来创建的用户。 下图显示了注册页它收集用户名和密码。  
   
     ![](introduction-to-aspnet-identity/_static/image2.png)  
   
- 当用户单击**注册**按钮，`Register`在 Account 控制器的操作通过调用 ASP.NET 标识 API 中，为以下突出显示部分创建用户：
+   当用户单击**注册**按钮，`Register`在 Account 控制器的操作通过调用 ASP.NET 标识 API 中，为以下突出显示部分创建用户：
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample1.cs?highlight=8-9)]
 4. 登录。  
- 如果已成功创建用户，她将通过记录中`SignInAsync`方法。  
+   如果已成功创建用户，她将通过记录中`SignInAsync`方法。  
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample2.cs?highlight=12)]
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample3.cs?highlight=5-6)]
 
- 在上面的突出显示的代码`SignInAsync`方法生成[ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx)。 ASP.NET 标识和 OWIN Cookie 身份验证是基于声明的系统事件，因为框架需要生成用户 ClaimsIdentity 应用程序。 ClaimsIdentity 具有的用户，如用户所属的角色的所有声明的信息。 在此阶段，你还可以添加用户的多个的声明。  
+   在上面的突出显示的代码`SignInAsync`方法生成[ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx)。 ASP.NET 标识和 OWIN Cookie 身份验证是基于声明的系统事件，因为框架需要生成用户 ClaimsIdentity 应用程序。 ClaimsIdentity 具有的用户，如用户所属的角色的所有声明的信息。 在此阶段，你还可以添加用户的多个的声明。  
   
- 以下代码中的突出显示`SignInAsync`方法在用户使用签名从 OWIN 和调用 AuthenticationManager`SignIn`和在 ClaimsIdentity 中传递。  
+   以下代码中的突出显示`SignInAsync`方法在用户使用签名从 OWIN 和调用 AuthenticationManager`SignIn`和在 ClaimsIdentity 中传递。  
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample4.cs?highlight=8-11)]
 5. 注销。  
- 单击**注销**链接帐户控制器中调用该注销操作。 
+   单击**注销**链接帐户控制器中调用该注销操作。 
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample5.cs?highlight=6)]
 
- 突出显示的代码所示 OWIN`AuthenticationManager.SignOut`方法。 这是类似于[FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx)方法，由[FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) Web 窗体中的模块。
+   突出显示的代码所示 OWIN`AuthenticationManager.SignOut`方法。 这是类似于[FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx)方法，由[FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) Web 窗体中的模块。
 
 ## <a name="components-of-aspnet-identity"></a>ASP.NET 标识的组件
 

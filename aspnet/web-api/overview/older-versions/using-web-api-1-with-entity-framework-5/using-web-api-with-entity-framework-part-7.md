@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
-title: "第 7 部分： 创建主页面 |Microsoft 文档"
+title: 第 7 部分： 创建主页面 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 4d06e72bc664f707bbbe4603be41347158c58903
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2c378e68a1e6600daf655c19afbfe355e89496d4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-7-creating-the-main-page"></a>第 7 部分： 创建主页面
 ====================
@@ -59,13 +59,13 @@ ms.lasthandoff: 01/24/2018
 
 `OrderDetailsViewModel`初始化顺序，并且它通过向服务器发送 AJAX 请求提取订单详细信息。
 
-另请注意`total`属性`OrderDetailsViewModel`。 此属性是一种特殊的可观测对象调用[计算可观测对象](http://knockoutjs.com/documentation/computedObservables.html)。 顾名思义，计算可观测对象允许你为计算的值 &#8212;的数据绑定; 在这种情况下，总体成本的顺序。
+另请注意`total`属性`OrderDetailsViewModel`。 此属性是一种特殊的可观测对象调用[计算可观测对象](http://knockoutjs.com/documentation/computedObservables.html)。 顾名思义，计算可观测对象允许你为计算值的数据绑定&#8212;在这种情况下，总体成本的顺序。
 
 接下来，添加到这些函数`AppViewModel`:
 
-- `resetCart`从购物车中移除所有项。
-- `getDetails`获取为某一订单的详细信息 (由一个新的 p 通过`OrderDetailsViewModel`到`details`列表)。
-- `createOrder`创建新订单并清空购物车。
+- `resetCart` 从购物车中移除所有项。
+- `getDetails` 获取为某一订单的详细信息 (由一个新的 p 通过`OrderDetailsViewModel`到`details`列表)。
+- `createOrder` 创建新订单并清空购物车。
 
 
 [!code-javascript[Main](using-web-api-with-entity-framework-part-7/samples/sample6.js?highlight=4)]
@@ -119,5 +119,5 @@ ms.lasthandoff: 01/24/2018
 - [ASP.NET 数据访问内容映射](https://msdn.microsoft.com/library/6759sth4.aspx)
 - [实体框架开发人员中心](https://msdn.microsoft.com/data/ef)
 
->[!div class="step-by-step"]
-[上一篇](using-web-api-with-entity-framework-part-6.md)
+> [!div class="step-by-step"]
+> [上一篇](using-web-api-with-entity-framework-part-6.md)

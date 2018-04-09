@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs
-title: "核心 IIS 和 ASP.NET Development Server (C#) 之间的差异 |Microsoft 文档"
+title: 核心 IIS 和 ASP.NET Development Server (C#) 之间的差异 |Microsoft 文档
 author: rick-anderson
-description: "当测试 ASP.NET 应用程序本地时，很有可能正在使用 ASP.NET 开发 Web 服务器。 但是，生产网站是最有可能 pow..."
+description: 当测试 ASP.NET 应用程序本地时，很有可能正在使用 ASP.NET 开发 Web 服务器。 但是，生产网站是最有可能 pow...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 79f06707cadf027baa03652dc722cab31f494b09
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e343a6eac39d7959718cb791012cfa3b931ae33f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="core-differences-between-iis-and-the-aspnet-development-server-c"></a>核心 IIS 和 ASP.NET Development Server (C#) 之间的差异
 ====================
@@ -94,7 +94,7 @@ ASP.NET 运行时执行若干步骤来生成请求的内容，包括 （标识�
 
 [!code-xml[Main](core-differences-between-iis-and-the-asp-net-development-server-cs/samples/sample4.xml)]
 
-使用 ASP.NET 开发服务器，请访问站点和直接 URL 输入到你的浏览器地址栏中的 PDF 文件之一。 如果你下载相关 URL 应类似于本教程的网站：`http://localhost:portNumber/PrivateDocs/aspnet_tutorial01_Basics_vb.pdf`
+使用 ASP.NET 开发服务器，请访问站点和直接 URL 输入到你的浏览器地址栏中的 PDF 文件之一。 如果你下载相关 URL 应类似于本教程的网站： `http://localhost:portNumber/PrivateDocs/aspnet_tutorial01_Basics_vb.pdf`
 
 地址栏中输入此 URL 导致浏览器将请求发送到该文件的 ASP.NET 开发服务器。 关闭对 ASP.NET 运行时进行处理的请求的 ASP.NET Development Server 手中。 由于我们尚未登录，并且`Web.config`中`PrivateDocs`文件夹配置为拒绝匿名访问，ASP.NET 运行时自动将重定向我们到登录页上， `Login.aspx` （请参见图 3）。 当将用户重定向到登录页，包括 ASP.NET`ReturnUrl`用户尝试查看查询字符串参数指示的页。 在用户成功登录后可以返回到此页。
 
@@ -126,7 +126,7 @@ ASP.NET 运行时执行若干步骤来生成请求的内容，包括 （标识�
 > 如果你的 web 宿主提供程序仍在使用 IIS 6，则无法使用集成的管道功能。 一种解决办法是将私有文档放入禁止 HTTP 访问的文件夹 (如`App_Data`)，然后创建页后，可以提供这些文档。 此页可能会调用`GetPDF.aspx`，并传递 PDF 通过查询字符串参数的名称。 `GetPDF.aspx`页将首先验证用户有权查看该文件并且，如果是这样，将使用[ `Response.WriteFile(filePath)` ](https://msdn.microsoft.com/library/system.web.httpresponse.writefile.aspx)方法以返回到请求的客户端发送请求的 PDF 文件的内容。 如果你不希望启用集成的管道，这种技术也将适用于 IIS 7。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 使用 Microsoft 的 IIS web 服务器软件承载在生产环境中的 web 应用程序。 在开发环境中，但是，应用程序可能会使用承载 IIS 或 ASP.NET 开发服务器。 理想情况下，相同的 web 服务器软件应能在这两个环境因为使用不同的软件的组合中添加另一个变量。 但是，使用 ASP.NET 开发服务器的易用性使其成为不错的选择在开发环境中。 好消息是有仅几个基本差异 IIS 和 ASP.NET 开发服务器之间，并且如果你是注意这些区别你可以采取措施以帮助确保应用程序工作原理和函数相同的方式而不考虑环境。
 
@@ -140,6 +140,6 @@ ASP.NET 运行时执行若干步骤来生成请求的内容，包括 （标识�
 - [对所有类型的内容在 IIS 7 上使用 ASP.NET 论坛身份验证](https://blogs.iis.net/bills/archive/2007/05/19/using-asp-net-forms-authentication-with-all-types-of-content-with-iis7-video.aspx)（视频）
 - [Visual Web Developer 中的 web 服务器](https://msdn.microsoft.com/library/58wxa9w5.aspx)
 
->[!div class="step-by-step"]
-[上一页](common-configuration-differences-between-development-and-production-cs.md)
-[下一页](deploying-a-database-cs.md)
+> [!div class="step-by-step"]
+> [上一页](common-configuration-differences-between-development-and-production-cs.md)
+> [下一页](deploying-a-database-cs.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
-title: "第 2 部分： 控制器 |Microsoft 文档"
+title: 第 2 部分： 控制器 |Microsoft 文档
 author: jongalloway
-description: "本系列教程详细介绍所有生成 ASP.NET MVC 音乐商店示例应用程序所采取的步骤。 第 2 部分介绍控制器。"
+description: 本系列教程详细介绍所有生成 ASP.NET MVC 音乐商店示例应用程序所采取的步骤。 第 2 部分介绍控制器。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: bdafd751e996e759d516d0fa25b09eff21241ed7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 680cdea388d9b01961bd626643c0fd91c9205ed7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-2-controllers"></a>第 2 部分： 控制器
 ====================
@@ -63,7 +63,7 @@ ms.lasthandoff: 11/10/2017
 现在让我们运行该站点。 我们可以启动我们的 web 服务器，然后尝试登录网站，使用以下任一::
 
 - 选择调试 ⇨ 启动调试菜单项
-- 单击工具栏中的绿色箭头按钮![](mvc-music-store-part-2/_static/image2.jpg)
+- 单击工具栏中的绿色箭头按钮 ![](mvc-music-store-part-2/_static/image2.jpg)
 - 使用键盘快捷方式，F5。
 
 使用任何上述步骤将编译我们项目中，并导致是内置于 Visual Web Developer 启动 ASP.NET 开发服务器。 通知会在以指示 ASP.NET 开发服务器已启动，屏幕的右下角中，将显示的端口号下运行。
@@ -102,7 +102,7 @@ Visual Web Developer 将自动打开浏览器窗口，其 URL 指向我们的 we
 
 再次运行项目，并浏览以下 Url:
 
-- / Store
+- /Store
 - / 应用商店/浏览
 - / 存储/详细信息
 
@@ -116,7 +116,7 @@ Visual Web Developer 将自动打开浏览器窗口，其 URL 指向我们的 we
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample4.cs)]
 
-*注意： 我们将使用 HttpUtility.HtmlEncode 实用工具方法，整理用户输入。这可以防止用户将 Javascript 注入到我们的视图，如 /Store/Browse 的链接？流派 =&lt;脚本&gt;window.location= http://hackersite.com&lt;/&gt;。*
+*注意： 我们将使用 HttpUtility.HtmlEncode 实用工具方法，整理用户输入。这可以防止用户将 Javascript 注入到我们的视图，如 /Store/Browse 的链接？流派 =&lt;脚本&gt;window.location=http://hackersite.com&lt;/&gt;。*
 
 现在让我们浏览到/存储/浏览？流派 = Disco
 
@@ -141,6 +141,6 @@ ASP.NET MVC 允许我们轻松执行此操作而无需进行任何配置。 ASP.
 - 我们已向我们控制器的响应的 URL 请求并返回到浏览器的文本添加操作方法
 
 
->[!div class="step-by-step"]
-[上一页](mvc-music-store-part-1.md)
-[下一页](mvc-music-store-part-3.md)
+> [!div class="step-by-step"]
+> [上一页](mvc-music-store-part-1.md)
+> [下一页](mvc-music-store-part-3.md)

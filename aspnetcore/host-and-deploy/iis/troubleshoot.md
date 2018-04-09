@@ -1,7 +1,7 @@
 ---
-title: "解决在 IIS 上的 ASP.NET 核心"
+title: 解决在 IIS 上的 ASP.NET 核心
 author: guardrex
-description: "了解如何诊断问题的 ASP.NET Core 应用的 Internet 信息服务 (IIS) 部署。"
+description: 了解如何诊断问题的 ASP.NET Core 应用的 Internet 信息服务 (IIS) 部署。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: 65173e0101a17c64f4cde583e5bbb9fb0a9c7718
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: e44892d2022ca1a176cee9d027e220e196c6572d
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>解决在 IIS 上的 ASP.NET 核心
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 02/11/2018
 [对 Azure 应用服务上的 ASP.NET Core 进行故障排除](xref:host-and-deploy/azure-apps/troubleshoot)  
 尽管应用程序服务使用[ASP.NET 核心模块](xref:fundamentals/servers/aspnet-core-module)和 IIS 承载应用程序，请参阅说明特定于应用程序服务的专用的主题。
 
-[错误处理](xref:fundamentals/error-handling)  
+[处理错误](xref:fundamentals/error-handling)  
 了解如何在本地系统上的开发过程中处理 ASP.NET Core 应用中的错误。
 
 [了解如何使用 Visual Studio 进行调试](/visualstudio/debugger/getting-started-with-the-debugger)  
@@ -96,20 +96,20 @@ ASP.NET 核心模块配置了默认值*startupTimeLimit*的 120 秒。 时保留
 
 1. 导航到主机系统上的站点的部署文件夹。
 1. 如果*日志*文件夹不存在、 创建文件夹。 有关如何启用 MSBuild 的说明创建*日志*部署中的文件夹自动，请参阅[目录结构](xref:host-and-deploy/directory-structure)主题。
-1. 编辑*web.config*文件。 设置**stdoutLogEnabled**到`true`和更改**stdoutLogFile**路径以指向*日志*文件夹 (例如， `.\logs\stdout`)。 `stdout`在路径中是日志文件名称前缀。 时间戳、 进程 id 和文件扩展名自动添加了时创建日志。 使用`stdout`作为文件名称前缀，典型的日志文件名为*stdout_20180205184032_5412.log*。 
+1. 编辑*web.config*文件。 设置**stdoutLogEnabled**到`true`和更改**stdoutLogFile**路径以指向*日志*文件夹 (例如， `.\logs\stdout`)。 `stdout` 在路径中是日志文件名称前缀。 时间戳、 进程 id 和文件扩展名自动添加了时创建日志。 使用`stdout`作为文件名称前缀，典型的日志文件名为*stdout_20180205184032_5412.log*。 
 1. 保存已更新*web.config*文件。
 1. 向应用程序发出的请求。
 1. 导航到*日志*文件夹。 查找并打开最新的标准输出日志。
 1. 研究错误的日志。
 
-**重要 ！** 禁用完成故障排除时，日志记录 stdout。
+**重要提示！** 禁用完成故障排除时，日志记录 stdout。
 
 1. 编辑*web.config*文件。
 1. 设置**stdoutLogEnabled**到`false`。
 1. 保存该文件。
 
 > [!WARNING]
-> 若要禁用 stdout 日志可能会导致应用程序或服务器失败。 没有对日志文件大小没有限制或创建的日志文件数。
+> 若要禁用 stdout 日志可能会导致应用程序或服务器失败。 日志文件大小或创建的日志文件数没有限制。
 >
 > 对于例程日志记录在 ASP.NET Core 应用程序，使用限制日志文件大小和旋转日志的日志记录库。 有关详细信息，请参阅[第三方日志记录提供程序](xref:fundamentals/logging/index#third-party-logging-providers)。
 

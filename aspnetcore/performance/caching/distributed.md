@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: 635c61cbb72a6a9eb822307bbc80936ee73bedc8
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
-ms.translationtype: HT
+ms.openlocfilehash: d9c7c1c3b2c052ba11f9ea5eaaa424d69bc43eb2
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="working-with-a-distributed-cache-in-aspnet-core"></a>使用 ASP.NET Core 中分布式缓存
+# <a name="work-with-a-distributed-cache-in-aspnet-core"></a>使用 ASP.NET Core 中分布式缓存
 
 作者：[Steve Smith](https://ardalis.com/)
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 03/02/2018
 
 ## <a name="what-is-a-distributed-cache"></a>什么是分布式的缓存
 
-分布式缓存由多个应用服务器共享 (请参阅[缓存基础知识](memory.md#caching-basics))。 缓存中的信息不存储在单独的 Web 服务器的内存中，并且缓存的数据可用于所有应用服务器。这具有几个优点： 这提供了几个优点：
+分布式的缓存共享由多个应用程序服务器 (请参阅[缓存基础知识](memory.md#caching-basics))。 缓存中的信息不存储在单独的 Web 服务器的内存中，并且缓存的数据可用于所有应用服务器。这具有几个优点： 这提供了几个优点：
 
 1. 所有 Web 服务器上的缓存数据都是一致的。 用户不会因处理其请求的 Web 服务器的不同而看到不同的结果
 
@@ -95,7 +95,7 @@ ms.lasthandoff: 03/02/2018
 [!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=8,9,10,11,12,13&range=27-40)]
 
 > [!NOTE]
-> 若要在本地计算机上安装 Redis，请安装 chocolatey 包[https://chocolatey.org/packages/redis-64/](https://chocolatey.org/packages/redis-64/)然后从命令提示符处运行`redis-server`。
+> 若要在本地计算机上安装 Redis，安装 chocolatey 程序包[ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/)并运行`redis-server`从命令提示符。
 
 ## <a name="using-a-sql-server-distributed-cache"></a>使用 SQL Server 分布式缓存
 
@@ -138,7 +138,7 @@ C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(loc
 
 * [Redis 在 Azure 上的缓存](https://azure.microsoft.com/documentation/services/redis-cache/)
 * [在 Azure 上的 SQL 数据库](https://azure.microsoft.com/documentation/services/sql-database/)
-* [内存中缓存](xref:performance/caching/memory)
+* [缓存在内存](xref:performance/caching/memory)
 * [使用更改令牌检测更改](xref:fundamentals/primitives/change-tokens)
 * [响应缓存](xref:performance/caching/response)
 * [响应缓存中间件](xref:performance/caching/middleware)

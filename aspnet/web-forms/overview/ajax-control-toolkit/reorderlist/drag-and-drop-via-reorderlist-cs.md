@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs
-title: "拖放通过 ReorderList (C#) |Microsoft 文档"
+title: 拖放通过 ReorderList (C#) |Microsoft 文档
 author: wenz
-description: "AJAX 控件工具包中的 ReorderList 控件提供可由用户通过拖放重新排序的列表。 对当前的列表顺序应..."
+description: AJAX 控件工具包中的 ReorderList 控件提供可由用户通过拖放重新排序的列表。 对当前的列表顺序应...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6afecfc7330647e6f4944c507e308afec6d2401b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 42464d10f119e0ba51d5eebf2a67e76e3e419bda
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="drag-and-drop-via-reorderlist-c"></a>拖放通过 ReorderList (C#)
 ====================
@@ -35,16 +35,16 @@ ms.lasthandoff: 11/10/2017
 
 `ReorderList`控件支持将数据从数据库绑定到列表。 最重要的是，它还支持将更改写入回数据存储区的列表元素的顺序。
 
-此示例使用作为数据存储区的 Microsoft SQL Server 2005 Express Edition。 数据库是包括速成版的 Visual Studio 安装的可选 （和可用） 组成部分。 此外，还可以作为单独的下载下[https://go.microsoft.com/fwlink/?LinkId=64064](https://go.microsoft.com/fwlink/?LinkId=64064)。 对于此示例中，我们假定的 SQL Server 2005 Express Edition 实例称为`SQLEXPRESS`和驻留在与 web 服务器; 相同的计算机上也是默认设置。 如果你的设置不同，你必须调整数据库的连接信息。
+此示例使用作为数据存储区的 Microsoft SQL Server 2005 Express Edition。 数据库是包括速成版的 Visual Studio 安装的可选 （和可用） 组成部分。 此外，还可以作为单独的下载下[ https://go.microsoft.com/fwlink/?LinkId=64064 ](https://go.microsoft.com/fwlink/?LinkId=64064)。 对于此示例中，我们假定的 SQL Server 2005 Express Edition 实例称为`SQLEXPRESS`和驻留在与 web 服务器; 相同的计算机上也是默认设置。 如果你的设置不同，你必须调整数据库的连接信息。
 
 将数据库设置的最简单方法是使用 Microsoft SQL Server Management Studio Express ([https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;-4a83-b309-53b7b77edf78&displaylang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;DisplayLang=en) )。 连接到服务器，请双击`Databases`并创建一个新的数据库 (右键单击并选择`New Database`) 调用`Tutorials`。
 
 在此数据库中，创建名为的新表`AJAX`与以下四列：
 
-- `id`(主键，整数，标识，不为 NULL)
-- `char`（char （1)，NULL）
-- `description`(varchar(50)，NULL)
-- `position`(int、 NULL)
+- `id` (主键，整数，标识，不为 NULL)
+- `char` （char （1)，NULL）
+- `description` (varchar(50)，NULL)
+- `position` (int、 NULL)
 
 
 [![AJAX 表的布局](drag-and-drop-via-reorderlist-cs/_static/image2.png)](drag-and-drop-via-reorderlist-cs/_static/image1.png)
@@ -90,6 +90,6 @@ AJAX 表中的初始数据 ([单击以查看实际尺寸的图像](drag-and-drop
 
 根据新列表的数据库更改数据项顺序 ([单击以查看实际尺寸的图像](drag-and-drop-via-reorderlist-cs/_static/image9.png))
 
->[!div class="step-by-step"]
-[上一页](using-postbacks-with-reorderlist-cs.md)
-[下一页](using-postbacks-with-reorderlist-vb.md)
+> [!div class="step-by-step"]
+> [上一页](using-postbacks-with-reorderlist-cs.md)
+> [下一页](using-postbacks-with-reorderlist-vb.md)

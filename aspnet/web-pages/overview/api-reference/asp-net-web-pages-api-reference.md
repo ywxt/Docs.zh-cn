@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/api-reference/asp-net-web-pages-api-reference
-title: "ASP.NET 网页 (Razor) API 快速参考 |Microsoft 文档"
+title: ASP.NET 网页 (Razor) API 快速参考 |Microsoft 文档
 author: tfitzmac
-description: "此页包含的最常用的对象、 属性和方法进行编程的 ASP.NET Web Pages 使用 Razor 语法的简短示例的列表。"
+description: 此页包含的最常用的对象、 属性和方法进行编程的 ASP.NET Web Pages 使用 Razor 语法的简短示例的列表。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/api-reference/asp-net-web-pages-api-reference
 msc.type: authoredcontent
-ms.openlocfilehash: 35f91f4dbea4881d9dabc4ab7c6b96dbb6a01ea2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5f9d84f4d453583d7d4eae12e4fc510275255616
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-pages-razor-api-quick-reference"></a>ASP.NET 网页 (Razor) API 快速参考
 ====================
@@ -158,13 +158,13 @@ ms.lasthandoff: 11/10/2017
 
 ### `Request.Form[key]`
 
-获取窗体中 （作为字符串） 已发布的数据。 `Request[key]`检查同时`Request.Form`和`Request.QueryString`集合。
+获取窗体中 （作为字符串） 已发布的数据。 `Request[key]` 检查同时`Request.Form`和`Request.QueryString`集合。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample19.cs)]
 
 ### `Request.QueryString[key]`
 
-获取指定的 URL 查询字符串中的数据。 `Request[key]`检查同时`Request.Form`和`Request.QueryString`集合。
+获取指定的 URL 查询字符串中的数据。 `Request[key]` 检查同时`Request.Form`和`Request.QueryString`集合。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample20.cs)]
 
@@ -692,7 +692,7 @@ ms.lasthandoff: 11/10/2017
 
 ### `WebMail.SmtpServer`
 
-设置 SMTP 服务器名称。 在设置此属性通常*\_AppStart*页。
+设置 SMTP 服务器名称。 在设置此属性通常<em>\_AppStart</em>页。
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample105.html)]
 

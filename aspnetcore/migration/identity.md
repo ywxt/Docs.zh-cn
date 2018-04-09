@@ -1,7 +1,7 @@
 ---
-title: "迁移的身份验证和标识到 ASP.NET 核心"
+title: 将身份验证和标识迁移到 ASP.NET 核心
 author: ardalis
-description: "了解如何将身份验证和标识从 ASP.NET MVC 项目迁移到 ASP.NET 核心 MVC 项目。"
+description: 了解如何将身份验证和标识从 ASP.NET MVC 项目迁移到 ASP.NET 核心 MVC 项目。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/identity
-ms.openlocfilehash: bf452ad3969863f8f058b29a31f19af13cb2fc6b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 320f5e079316114832e639d62c780a0639df0c61
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-authentication-and-identity-to-aspnet-core"></a>迁移的身份验证和标识到 ASP.NET 核心
+# <a name="migrate-authentication-and-identity-to-aspnet-core"></a>将身份验证和标识迁移到 ASP.NET 核心
 
 <a name="migration-identity"></a>
 
@@ -144,6 +144,6 @@ else
 
 此时，你应能够刷新浏览器中的站点。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 ASP.NET 核心引入 ASP.NET 标识功能更改。 在本文中，你看到了如何将 ASP.NET 标识的身份验证和用户管理功能迁移到 ASP.NET 核心。

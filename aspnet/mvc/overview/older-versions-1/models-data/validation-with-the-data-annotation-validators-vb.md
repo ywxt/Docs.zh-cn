@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-vb
-title: "验证与数据批注验证程序 (VB) |Microsoft 文档"
+title: 验证与数据批注验证程序 (VB) |Microsoft 文档
 author: microsoft
-description: "利用数据批注模型联编程序来执行验证的 ASP.NET MVC 应用程序中。 了解如何使用不同类型的验证程序..."
+description: 利用数据批注模型联编程序来执行验证的 ASP.NET MVC 应用程序中。 了解如何使用不同类型的验证程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/29/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 227c1acb5e478047c4e5cdc7dbddedd703e91292
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d1987182a44a0ad3f91f455342dc934d1dd50267
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validation-with-the-data-annotation-validators-vb"></a>验证与数据批注验证程序 (VB)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 利用数据批注模型联编程序来执行验证的 ASP.NET MVC 应用程序中。 了解如何使用不同类型的验证程序属性和 Microsoft 实体框架中使用它们。
 
@@ -78,7 +78,7 @@ ms.lasthandoff: 11/10/2017
 
 > [!NOTE] 
 > 
-> 如果你想要完全自定义验证程序显示的错误消息可以将自定义错误消息分配给此类的验证程序的 ErrorMessage 属性：`<Required(ErrorMessage:="This field needs a value!")>`
+> 如果你想要完全自定义验证程序显示的错误消息可以将自定义错误消息分配给此类的验证程序的 ErrorMessage 属性： `<Required(ErrorMessage:="This field needs a value!")>`
 
 
 你可以使用中的产品类**列出 1**与中的 create （） 控制器操作**列出 2**。 当模型状态中包含任何错误，则此控制器操作重新显示创建视图。
@@ -149,9 +149,9 @@ ms.lasthandoff: 11/10/2017
 
 **图 6**： 使用实体框架的验证程序 ([单击以查看实际尺寸的图像](validation-with-the-data-annotation-validators-vb/_static/image14.png))
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，您学习了如何充分利用数据批注模型联编程序来执行验证的 ASP.NET MVC 应用程序中。 您学习了如何使用不同类型的如所需的验证程序属性和 StringLength 属性。 你还了解了如何使用 Microsoft 实体框架时使用这些属性。
 
->[!div class="step-by-step"]
-[上一篇](validating-with-a-service-layer-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](validating-with-a-service-layer-vb.md)

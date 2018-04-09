@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/getting-started/aspnet-identity-recommended-resources
-title: "ASP.NET 标识的推荐资源 |Microsoft 文档"
+title: ASP.NET 标识的推荐资源 |Microsoft 文档
 author: Rick-Anderson
-description: "本主题提供有关如何使用 ASP.NET Identity 的文档资源的链接。 如果你知道出色的博客文章、 堆栈溢出的线程或任何其他链接..."
+description: 本主题提供有关如何使用 ASP.NET Identity 的文档资源的链接。 如果你知道出色的博客文章、 堆栈溢出的线程或任何其他链接...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2015
 ms.topic: article
 ms.assetid: 0f78aec2-f509-46fa-b20f-d5208425d8ec
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-recommended-resources
 msc.type: authoredcontent
-ms.openlocfilehash: cb6e378d6b1de7d43bbc4272b64f9029f4e92924
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f2e1693a32fce6956ddb1e095e6f208b9f0faab6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-identity-recommended-resources"></a>ASP.NET 标识的推荐资源
 ====================
@@ -94,7 +94,7 @@ ms.lasthandoff: 01/24/2018
     - [了解 Owin 外部身份验证管道](http://coding.abel.nu/2014/06/understanding-the-owin-external-authentication-pipeline/)
     - [ASP.NET 标识和 Owin 概述](http://coding.abel.nu/2014/06/asp-net-identity-and-owin-overview/)
 
- 通过[k。 Scott Allen](https://twitter.com/OdeToCode)上 Ode 到代码
+  通过[k。 Scott Allen](https://twitter.com/OdeToCode)上 Ode 到代码
 
     - [ASP.NET 核心标识](http://odetocode.com/blogs/scott/archive/2013/11/25/asp-net-core-identity.aspx)此博客检查核心抽象，包括 IUser、 IUserStore 和 I\*存储区接口。
     - [与实体框架的 ASP.NET 标识](http://odetocode.com/blogs/scott/archive/2014/01/03/asp-net-identity-with-the-entity-framework.aspx)MVC 5、 Web API 和 SPA 应用、 连接字符串和管理上下文中的单个用户帐户
@@ -108,7 +108,7 @@ ms.lasthandoff: 01/24/2018
 - [Pranav Rastogi](https://twitter.com/rustd)
 
     - [获取从社交提供程序的详细信息](https://blogs.msdn.com/b/webdev/archive/2013/10/16/get-more-information-from-social-providers-used-in-the-vs-2013-project-templates.aspx)
-- [@beabigrockstar](https://twitter.com/beabigrockstar)(Jerrie Pelser)
+- [@beabigrockstar](https://twitter.com/beabigrockstar) (Jerrie Pelser)
 
     - [2 因素身份验证](http://www.beabigrockstar.com/blog/2-factor-authentication-with-asp-net-identity-2-0-beta-1/)
     - [具有 ASP.NET 标识使用 Google 身份验证器](http://www.beabigrockstar.com/blog/using-google-authenticator-asp-net-identity/)
@@ -132,7 +132,7 @@ ms.lasthandoff: 01/24/2018
 - 第 9 频道[使用 ASP.NET 标识保护您的网站](https://channel9.msdn.com/Events/TechDays/Techdays-2014-the-Netherlands/Securing-your-website-with-ASP-NET-Identity)通过 Alex Thissen
 - [在现有的数据库模型上使用 ASP.NET 标识](https://www.youtube.com/watch?v=elfqejow5hM)通过 Alexander Schmidt
 - [ASP.NET 一个标识](https://www.youtube.com/watch?v=w8GD-QIusKk)通过的 Telerik Ivaylo Kenov
-- [捷克语 ASP.NET 标识](https://www.youtube.com/watch?v=tVbZp5brcpY)本课在我们将演示如何部署基本身份验证、 如何添加支持 Twitter 或 Facebook 等外部标识提供程序以及如何使用一次性密码 (OTP)。 [ASP.NET 标识 je nástupce 成员身份角色提供程序 &#367; v ASP.NET，tedy knihovna pro zajišt &#283; ní autentizace uživatel &#367;。 V této p &#345; ednášce si ukážeme，jak nasad]
+- [捷克语 ASP.NET 标识](https://www.youtube.com/watch?v=tVbZp5brcpY)本课在我们将演示如何部署基本身份验证、 如何添加支持 Twitter 或 Facebook 等外部标识提供程序以及如何使用一次性密码 (OTP)。 [ASP.NET 标识 je nástupce 成员身份角色提供程序&#367;v ASP.NET，tedy knihovna pro zajišt&#283;ní autentizace uživatel&#367;。 V této p&#345;ednášce si ukážeme，jak nasad]
 
 <a id="cust"></a>
 ## <a name="custom-storage-providers-for-aspnet-identity"></a>ASP.NET 标识的自定义的存储提供程序

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-vb
-title: "滑块控件使用自动回发 (VB) |Microsoft 文档"
+title: 滑块控件使用自动回发 (VB) |Microsoft 文档
 author: wenz
-description: "AJAX 控件工具包中的滑块控件提供图形滑块，可以使用鼠标进行控制。 它是可以进行滑块自动过帐..."
+description: AJAX 控件工具包中的滑块控件提供图形滑块，可以使用鼠标进行控制。 它是可以进行滑块自动过帐...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fedd3ff947c6f5d5d4d00791087e9fd825fdf9d3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: edb8fa13716c3c0beb7cf86dd3843caaec939483
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-slider-control-with-auto-postback-vb"></a>滑块控件使用自动回发 (VB)
 ====================
@@ -63,6 +63,6 @@ AJAX 控件工具包中的滑块控件提供图形滑块，可以使用鼠标进
 
 然后，此更改的日期写入标签中 ([单击以查看实际尺寸的图像](using-the-slider-control-with-auto-postback-vb/_static/image6.png))
 
->[!div class="step-by-step"]
-[上一页](databinding-the-slider-control-cs.md)
-[下一页](databinding-the-slider-control-vb.md)
+> [!div class="step-by-step"]
+> [上一页](databinding-the-slider-control-cs.md)
+> [下一页](databinding-the-slider-control-vb.md)

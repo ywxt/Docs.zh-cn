@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-vb
-title: "使用 Windows 身份验证 (VB) 的用户进行身份验证 |Microsoft 文档"
+title: 使用 Windows 身份验证 (VB) 的用户进行身份验证 |Microsoft 文档
 author: microsoft
-description: "了解如何在 MVC 应用程序的上下文中使用 Windows 身份验证。 了解如何启用 Windows 身份验证在你的应用程序 web co..."
+description: 了解如何在 MVC 应用程序的上下文中使用 Windows 身份验证。 了解如何启用 Windows 身份验证在你的应用程序 web co...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 63b1266e03041c4261e71fd25e988c63932b503e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: cf711d44a05d2457493998ed61e86536c65b5984
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="authenticating-users-with-windows-authentication-vb"></a>使用 Windows 身份验证 (VB) 的用户进行身份验证
 ====================
@@ -51,7 +51,7 @@ ASP.NET 开发 Web 服务器还支持 NTLM 身份验证。 你可以通过右键
 
 > [!NOTE] 
 > 
-> 有关这些不同类型的身份验证的详细概述，请参阅[https://msdn.microsoft.com/library/aa292114(VS.71).aspx](https://msdn.microsoft.com/library/aa292114(VS.71).aspx).
+> 有关这些不同类型的身份验证的详细概述，请参阅[ https://msdn.microsoft.com/library/aa292114(VS.71).aspx ](https://msdn.microsoft.com/library/aa292114(VS.71).aspx)。
 
 
 Internet Information Services 管理器可用于启用特定类型的身份验证。 请注意，所有类型的身份验证都不可用对于每个操作系统。 此外，如果您正在使用 Windows Vista IIS 7.0，你将需要启用 Windows 身份验证的不同类型，它们显示在 Internet Information Services 管理器中之前。 打开**控制面板、 程序、 程序和功能，打开或关闭 Windows 功能**，然后展开 Internet 信息服务节点 （请参见图 2）。
@@ -88,10 +88,10 @@ Internet Information Services 管理器可用于启用特定类型的身份验�
 
 ![clip_image008](authenticating-users-with-windows-authentication-vb/_static/image4.jpg)
 
-#### <a name="summary"></a>摘要
+#### <a name="summary"></a>总结
 
 本教程所述的 ASP.NET MVC 应用程序的上下文中，你就可以使用 Windows 身份验证。 您学习了如何启用应用程序的 web 配置文件中的 Windows 身份验证以及如何使用 IIS 中配置身份验证。 最后，您学习了如何使用&lt;Authorize&gt;特性限制对特定 Windows 用户或组的控制器操作的访问。
 
->[!div class="step-by-step"]
-[上一页](authenticating-users-with-forms-authentication-vb.md)
-[下一页](preventing-javascript-injection-attacks-vb.md)
+> [!div class="step-by-step"]
+> [上一页](authenticating-users-with-forms-authentication-vb.md)
+> [下一页](preventing-javascript-injection-attacks-vb.md)

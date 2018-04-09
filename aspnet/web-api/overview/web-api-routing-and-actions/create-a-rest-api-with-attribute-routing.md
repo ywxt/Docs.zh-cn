@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
-title: "使用 ASP.NET Web API 2 中的属性路由创建 REST API |Microsoft 文档"
+title: 使用 ASP.NET Web API 2 中的属性路由创建 REST API |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: c1d0b3e1644ef7f9ebb4be74c3fdf3df90cf3537
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1f1e90544c9dd8439a522f2196d81d020ea2f4f2
+ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/28/2018
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>使用 ASP.NET Web API 2 中的路由的属性创建 REST API
 ====================
@@ -184,7 +184,7 @@ Web API 2 支持一种新型的路由，调用*的属性路由*。 有关的属�
 
 ## <a name="get-books-by-genre"></a>获取按风格的丛书
 
-若要获取在特定风格的书籍的列表，客户端将发送 GET 请求到`/api/books/genre`，其中*流派*是流派的名称。 （例如 `/get/books/fantasy`。）
+若要获取在特定风格的书籍的列表，客户端将发送 GET 请求到`/api/books/genre`，其中*流派*是流派的名称。 （例如 `/api/books/fantasy`。）
 
 添加以下方法`BooksController`。
 
@@ -254,6 +254,6 @@ Web API 2 支持一种新型的路由，调用*的属性路由*。 有关的属�
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample22.cs)]
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在设计你的 API 的 Uri 的属性路由提供的更多的控制和更大的灵活性。

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/security/16-adding-security-and-membership
-title: "将安全和成员身份添加到 ASP.NET Web 页 (Razor) 站点 |Microsoft 文档"
+title: 将安全和成员身份添加到 ASP.NET Web 页 (Razor) 站点 |Microsoft 文档
 author: tfitzmac
-description: "本章展示如何保护你的网站，以便仅供登录的人员的某些页。 （你还将了解如何创建页 tha..."
+description: 本章展示如何保护你的网站，以便仅供登录的人员的某些页。 （你还将了解如何创建页 tha...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/24/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: af2eeb128cff554e7ae3d903e2117861087344e9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 351368a356a71e85d4abfdceac8d4f84e0b217f4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>将安全和成员身份添加到 ASP.NET 网站页 (Razor)
 ====================
@@ -47,7 +47,7 @@ ms.lasthandoff: 01/24/2018
 > - ASP.NET Web 帮助程序库
 
 
-你可以设置你的网站，以便用户可以登录到 （&） #8212;也就是说，以便站点支持*成员资格*。 这可以是有用出于许多原因。 例如，你的站点可能具有可仅对成员的页。 在某些情况下，你可能会要求用户进行登录，才能向你发送反馈或发表评论。
+你可以设置你的网站，以便用户可以登录到该&#8212;，即，以便站点支持*成员资格*。 这可以是有用出于许多原因。 例如，你的站点可能具有可仅对成员的页。 在某些情况下，你可能会要求用户进行登录，才能向你发送反馈或发表评论。
 
 即使你的网站支持成员资格，则用户不一定需要登录，然后在站点上使用的某些页。 没有登录的用户被称为*匿名用户*。
 
@@ -88,26 +88,26 @@ ms.lasthandoff: 01/24/2018
     如果您不想要设置电子邮件确认，则可以跳过此步骤和下一步。 如果未设置 SMTP 值，则新的帐户是立即可用，而无需确认电子邮件。
 6. 修改代码中电子邮件相关的以下设置：
 
-    - 设置`WebMail.SmtpServer`到可以访问 SMTP 服务器的名称。
-    - 保留`WebMail.EnableSsl`设置为`true`。 此设置能保护对它们进行加密发送到 SMTP 服务器的凭据。
-    - 设置`WebMail.UserName`到您的 SMTP 服务器帐户的用户名。
-    - 设置`WebMail.Password`到您的 SMTP 服务器帐户的密码。
-    - 设置`WebMail.From`为您自己的电子邮件地址。 这是从发送消息的电子邮件地址。
+   - 设置`WebMail.SmtpServer`到可以访问 SMTP 服务器的名称。
+   - 保留`WebMail.EnableSsl`设置为`true`。 此设置能保护对它们进行加密发送到 SMTP 服务器的凭据。
+   - 设置`WebMail.UserName`到您的 SMTP 服务器帐户的用户名。
+   - 设置`WebMail.Password`到您的 SMTP 服务器帐户的密码。
+   - 设置`WebMail.From`为您自己的电子邮件地址。 这是从发送消息的电子邮件地址。
 
-    > [!NOTE] 
-    > 
-    > **提示**有关这些属性的值的其他信息，请参阅[配置电子邮件设置](https://go.microsoft.com/fwlink/?LinkID=202906#configuring_email_settings)中[自定义站点范围的行为的 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkID=202906)。
+     > [!NOTE] 
+     > 
+     > **提示**有关这些属性的值的其他信息，请参阅[配置电子邮件设置](https://go.microsoft.com/fwlink/?LinkID=202906#configuring_email_settings)中[自定义站点范围的行为的 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkID=202906)。
 7. 保存并关闭 *\_AppStart.cshtml*。
 8. 运行*Default.cshtml*在浏览器中的页。
 
     ![security-membership-2](16-adding-security-and-membership/_static/image1.png)
 
-    > [!NOTE]
-    > 如果你看到错误，告知你属性必须为实例`ExtendedMembershipProvider`，不可能将站点配置为使用 ASP.NET Web Pages 成员资格系统 (SimpleMembership)。 如果宿主提供程序的服务器配置不同于你的本地服务器，有时会出现此问题。 若要解决此问题，请将下面的元素添加到站点的*Web.config*文件：
-    > 
-    > [!code-xml[Main](16-adding-security-and-membership/samples/sample2.xml)]
-    > 
-    > 添加此元素的子级作为`<configuration>`元素的对等方的以及`<system.web>`元素。
+   > [!NOTE]
+   > 如果你看到错误，告知你属性必须为实例`ExtendedMembershipProvider`，不可能将站点配置为使用 ASP.NET Web Pages 成员资格系统 (SimpleMembership)。 如果宿主提供程序的服务器配置不同于你的本地服务器，有时会出现此问题。 若要解决此问题，请将下面的元素添加到站点的*Web.config*文件：
+   > 
+   > [!code-xml[Main](16-adding-security-and-membership/samples/sample2.xml)]
+   > 
+   > 添加此元素的子级作为`<configuration>`元素的对等方的以及`<system.web>`元素。
 9. 在页面右上角，单击**注册**链接。 *Register.cshtml*显示页。
 10. 输入用户名和密码，然后单击**注册**。
 
@@ -120,14 +120,14 @@ ms.lasthandoff: 01/24/2018
 12. 单击超链接以激活你的帐户。 确认超链接打开注册确认页。
 
     ![security-membership-5](16-adding-security-and-membership/_static/image4.png)
-- 单击**登录**链接，然后使用你注册的帐户，然后登录。
+13. 单击**登录**链接，然后使用你注册的帐户，然后登录。
 
-    你登录后**登录**和**注册**链接替换为**注销**链接。 您的登录名显示为链接。 （链接使你能够转到一个页面，你可以在其中更改你的密码。）
+      你登录后**登录**和**注册**链接替换为**注销**链接。 您的登录名显示为链接。 （链接使你能够转到一个页面，你可以在其中更改你的密码。）
 
-    ![security-membership-6](16-adding-security-and-membership/_static/image5.png)
+      ![security-membership-6](16-adding-security-and-membership/_static/image5.png)
 
-    > [!NOTE]
-    > 默认情况下，ASP.NET 网页将凭据发送到服务器以明文形式 （作为用户可读文本）。 生产站点应使用安全 HTTP (也称为 https://*安全套接字层*或 SSL) 与的服务器交换的敏感信息进行加密。 你可以所需的电子邮件发送的消息使用 SSL 通过设置`WebMail.EnableSsl=true`如同前面的示例。 有关 SSL 的详细信息，请参阅[保护 Web 通信： 证书、 SSL 和 https://](https://go.microsoft.com/fwlink/?LinkId=208660)。
+      > [!NOTE]
+      > 默认情况下，ASP.NET 网页将凭据发送到服务器以明文形式 （作为用户可读文本）。 生产站点应使用安全 HTTP (也称为 https://*安全套接字层*或 SSL) 与的服务器交换的敏感信息进行加密。 你可以所需的电子邮件发送的消息使用 SSL 通过设置`WebMail.EnableSsl=true`如同前面的示例。 有关 SSL 的详细信息，请参阅[保护 Web 通信： 证书、 SSL 和 https://](https://go.microsoft.com/fwlink/?LinkId=208660)。
 
 ## <a name="additional-membership-functionality-in-the-site"></a>站点中的其他成员身份功能
 
@@ -165,12 +165,12 @@ ms.lasthandoff: 01/24/2018
     （端口号 (38366) 可能将你 URL 中不同。）
 
     要重定向到*Login.cshtml*页上，因为您没有登录。
-- 使用前面创建的帐户登录。 要重定向回*MembersInformation*页。 因为在你登录的此时会显示页面内容。
+7. 使用前面创建的帐户登录。 要重定向回*MembersInformation*页。 因为在你登录的此时会显示页面内容。
 
 若要保护对多个页的访问，可以执行此操作：
 
 - 添加到每个页面的安全检查。
-- 创建 *\_PageStart.cshtml*页中的文件夹，其中保留受保护的页，并添加的安全检查。 *\_PageStart.cshtml*页用作一种类型的全局文件夹中的所有页的页。 此技术中的详细说明了[自定义站点范围的行为的 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access)。
+- 创建 *\_PageStart.cshtml*页中的文件夹，其中保留受保护的页，并添加的安全检查。  *\_PageStart.cshtml*页用作一种类型的全局文件夹中的所有页的页。 此技术中的详细说明了[自定义站点范围的行为的 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access)。
 
 ## <a name="creating-security-for-groups-of-users-roles"></a>创建安全组的用户 （角色）
 
@@ -227,10 +227,10 @@ ASP.NET 成员资格系统设置以支持角色。 但是，与成员身份注�
 7. 替换`PUBLIC_KEY`与你的密钥。
 8. 如果你尚未已删除它，则删除`<div>`包含文本"若要启用 CAPTCHA 验证..."开头的元素。 (删除整个`<div>`元素和其内容。)
 
-1. 运行*Default.cshtml*在浏览器。 如果你登录到站点，请单击**注销**链接。
-2. 单击**注册**链接以及测试使用 CAPTCHA 测试的注册。
+9. 运行*Default.cshtml*在浏览器。 如果你登录到站点，请单击**注销**链接。
+10. 单击**注册**链接以及测试使用 CAPTCHA 测试的注册。
 
-    ![security-membership-10](16-adding-security-and-membership/_static/image9.png)
+     ![security-membership-10](16-adding-security-and-membership/_static/image9.png)
 
 有关详细信息`ReCaptcha`帮助器，请参阅[到防止自动程序 （机器人） 从使用你的 ASP.NET Web 站点使用 CATPCHA](https://go.microsoft.com/fwlink/?LinkId=251967)。
 

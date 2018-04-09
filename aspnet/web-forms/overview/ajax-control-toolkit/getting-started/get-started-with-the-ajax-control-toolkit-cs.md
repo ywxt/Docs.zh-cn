@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/getting-started/get-started-with-the-ajax-control-toolkit-cs
-title: "要开始使用 AJAX 控件工具包 (C#) |Microsoft 文档"
+title: 要开始使用 AJAX 控件工具包 (C#) |Microsoft 文档
 author: microsoft
-description: "了解你需要知道若要开始使用 AJAX 控件工具包。"
+description: 了解你需要知道若要开始使用 AJAX 控件工具包。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/get-started-with-the-ajax-control-toolkit-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8d3f4dd26a9f82dce78b1c3665f9da6b54bdacba
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e6a7a8d45f32a33eaacf3c42b52a02d2ada1aab6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="get-started-with-the-ajax-control-toolkit-c"></a>要开始使用 AJAX 控件工具包 (C#)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 了解你需要知道若要开始使用 AJAX 控件工具包。
 
@@ -89,5 +89,5 @@ AJAX 控件工具包包含 30 多个可用的控件，可以使用 ASP.NET 应�
 - 二进制文件-从你的网站 Bin 文件夹中删除 AjaxControlToolkit.dll 程序集的旧版本。
 - 工具箱项-删除 AJAX 控件工具包选项卡，然后按照上述步骤以重新创建具有 AjaxControlToolkit.dll 程序集的新版本的选项卡。
 
->[!div class="step-by-step"]
-[下一篇](using-ajax-control-toolkit-controls-and-control-extenders-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](using-ajax-control-toolkit-controls-and-control-extenders-cs.md)

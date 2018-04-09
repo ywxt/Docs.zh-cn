@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/setting-folder-permissions
-title: "使用 Visual Studio 的 ASP.NET Web 部署： 设置文件夹权限 |Microsoft 文档"
+title: 使用 Visual Studio 的 ASP.NET Web 部署： 设置文件夹权限 |Microsoft 文档
 author: tdykstra
-description: "本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的..."
+description: 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/setting-folder-permissions
 msc.type: authoredcontent
-ms.openlocfilehash: 19bef5ff97fd5b79135df8ca9bd6bd316594cc5e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7efe267975835e889950983126088f1b637c28fb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-setting-folder-permissions"></a>使用 Visual Studio 的 ASP.NET Web 部署： 设置文件夹权限
 ====================
@@ -67,7 +67,7 @@ ms.lasthandoff: 11/10/2017
 
 ![ELMAH 错误日志页](setting-folder-permissions/_static/image4.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 你现在已经完成获取 Contoso 大学所必需的任务的所有本地计算机上在 IIS 中正常运行。 在下一步的教程中，你会使站点公开可通过将其部署到 Azure。
 
@@ -77,6 +77,6 @@ ms.lasthandoff: 11/10/2017
 
 有关如何向应用程序池标识授予权限的详细信息，请参阅[应用程序池标识](https://www.iis.net/learn/manage/configuring-security/application-pool-identities)和[中通过文件系统 Acl IIS 安全内容](https://www.iis.net/learn/get-started/planning-for-security/secure-content-in-iis-through-file-system-acls)IIS.net 网站上。
 
->[!div class="step-by-step"]
-[上一页](deploying-to-iis.md)
-[下一页](deploying-to-production.md)
+> [!div class="step-by-step"]
+> [上一页](deploying-to-iis.md)
+> [下一页](deploying-to-production.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/external-authentication-services
-title: "与 ASP.NET Web API 的外部身份验证服务 (C#) |Microsoft 文档"
+title: 与 ASP.NET Web API 的外部身份验证服务 (C#) |Microsoft 文档
 author: rmcmurray
-description: "描述如何在 ASP.NET Web API 中使用外部身份验证服务。"
+description: 描述如何在 ASP.NET Web API 中使用外部身份验证服务。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/external-authentication-services
 msc.type: authoredcontent
-ms.openlocfilehash: 744396cb0c95d1887f259b1e2e890bd06ef7d049
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 406a85db7055910cb7a4e15fec8ef68dff5a19dc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="external-authentication-services-with-aspnet-web-api-c"></a>与 ASP.NET Web API 的外部身份验证服务 (C#)
 ====================
@@ -119,7 +119,7 @@ Visual Studio 2013 和 ASP.NET 4.5.1 与外部身份验证服务的集成更轻�
 <a id="FACEBOOK"></a>
 ## <a name="enabling-facebook-authentication"></a>启用 Facebook 身份验证
 
-使用 Facebook 身份验证要求你创建 Facebook 开发人员帐户，并且你的项目需要的应用程序 ID 和密钥从 Facebook 才能正常。 有关创建 Facebook 开发人员帐户，并获取你的应用程序 ID 和机密密钥的信息，请参阅[https://go.microsoft.com/fwlink/?LinkID=252166](https://go.microsoft.com/fwlink/?LinkID=252166)。
+使用 Facebook 身份验证要求你创建 Facebook 开发人员帐户，并且你的项目需要的应用程序 ID 和密钥从 Facebook 才能正常。 有关创建 Facebook 开发人员帐户，并获取你的应用程序 ID 和机密密钥的信息，请参阅[ https://go.microsoft.com/fwlink/?LinkID=252166 ](https://go.microsoft.com/fwlink/?LinkID=252166)。
 
 你一次获取你的应用程序 ID 和机密密钥，使用以下步骤来启用 web 应用程序的 Facebook 身份验证：
 
@@ -180,7 +180,7 @@ Google 是迄今最简单的方法的外部身份验证服务中启用，因为�
 <a id="MICROSOFT"></a>
 ## <a name="enabling-microsoft-authentication"></a>启用 Microsoft 身份验证
 
-Microsoft 身份验证要求你创建开发人员帐户，并且它才能正常需要客户端 ID 和客户端密钥。 有关创建 Microsoft 开发人员帐户，并获取你的客户端 ID 和客户端密钥的信息，请参阅[https://go.microsoft.com/fwlink/?LinkID=144070](https://go.microsoft.com/fwlink/?LinkID=144070)。
+Microsoft 身份验证要求你创建开发人员帐户，并且它才能正常需要客户端 ID 和客户端密钥。 有关创建 Microsoft 开发人员帐户，并获取你的客户端 ID 和客户端密钥的信息，请参阅[ https://go.microsoft.com/fwlink/?LinkID=144070 ](https://go.microsoft.com/fwlink/?LinkID=144070)。
 
 你一次获取你的使用者密钥和使用者机密，使用以下步骤来启用 web 应用程序的 Microsoft 身份验证：
 
@@ -212,7 +212,7 @@ Microsoft 身份验证要求你创建开发人员帐户，并且它才能正常�
 <a id="TWITTER"></a>
 ## <a name="enabling-twitter-authentication"></a>启用 Twitter 身份验证
 
-Twitter 身份验证要求你创建开发人员帐户，并且它才能正常需要使用者密钥和使用者机密。 有关创建 Twitter 开发人员帐户和获取使用者密钥和使用者机密的信息，请参阅[https://go.microsoft.com/fwlink/?LinkID=252166](https://go.microsoft.com/fwlink/?LinkID=252166)。
+Twitter 身份验证要求你创建开发人员帐户，并且它才能正常需要使用者密钥和使用者机密。 有关创建 Twitter 开发人员帐户和获取使用者密钥和使用者机密的信息，请参阅[ https://go.microsoft.com/fwlink/?LinkID=252166 ](https://go.microsoft.com/fwlink/?LinkID=252166)。
 
 你一次获取你的使用者密钥和使用者机密，请使用以下步骤启用 web 应用程序的 Twitter 身份验证：
 
@@ -260,19 +260,21 @@ Twitter 身份验证要求你创建开发人员帐户，并且它才能正常需
 
 - 添加静态 FQDN 映射你的主机文件：
 
-    1. 打开提升的命令提示符窗口中。
-    2. 键入以下命令：
+  1. 打开提升的命令提示符窗口中。
+  2. 键入以下命令：
 
-        <kbd>notepad %WinDir%\system32\drivers\etc\hosts</kbd>
-    3. 类似于以下条目添加到主机文件中：
+      <kbd>notepad %WinDir%\system32\drivers\etc\hosts</kbd>
+  3. 类似于以下条目添加到主机文件中：
 
-        <kbd>127.0.0.1 www.wingtiptoys.com</kbd>
-    4. 保存并关闭你的主机文件。
+      <kbd>127.0.0.1 www.wingtiptoys.com</kbd>
+  4. 保存并关闭你的主机文件。
+
 - 配置 Visual Studio 项目以使用 FQDN:
 
-    1. 在 Visual Studio 2013 中打开你的项目时，单击**项目**菜单，然后选择你的项目的属性。 例如，你可以选择**WebApplication1 属性**。
-    2. 选择**Web**选项卡。
-    3. 输入你的 FQDN 为**项目 Url**。 例如，将输入<kbd>http://www.wingtiptoys.com</kbd> ，如果已添加到你的主机文件的 FQDN 映射。
+  1. 在 Visual Studio 2013 中打开你的项目时，单击**项目**菜单，然后选择你的项目的属性。 例如，你可以选择**WebApplication1 属性**。
+  2. 选择**Web**选项卡。
+  3. 输入你的 FQDN 为<strong>项目 Url</strong>。 例如，将输入<kbd> <http://www.wingtiptoys.com> </kbd> ，如果已添加到你的主机文件的 FQDN 映射。
+
 - 配置 IIS Express 以使用你的应用程序的 FQDN:
 
     1. 打开提升的命令提示符窗口中。
@@ -283,14 +285,14 @@ Twitter 身份验证要求你创建开发人员帐户，并且它才能正常需
 
         <kbd>appcmd.exe set config -section:system.applicationHost/sites /+&quot;[name='WebApplication1'].bindings.[protocol='http',bindingInformation='*:80:www.wingtiptoys.com']&quot; /commit:apphost</kbd>
 
- 其中**WebApplication1**是你的项目的名称和**bindingInformation**包含你想要用于测试的端口号和 FQDN。
+  其中**WebApplication1**是你的项目的名称和**bindingInformation**包含你想要用于测试的端口号和 FQDN。
 
 <a id="OBTAIN"></a>
 ### <a name="how-to-obtain-your-application-settings-for-microsoft-authentication"></a>如何获取 Microsoft 身份验证的应用程序设置
 
 链接到 Windows Live 进行 Microsoft 身份验证的应用程序是一个简单的过程。 如果已未链接到 Windows Live 应用程序，你可以使用以下步骤：
 
-1. 浏览到[https://go.microsoft.com/fwlink/?LinkID=144070](https://go.microsoft.com/fwlink/?LinkID=144070)并输入你的 Microsoft 帐户名和密码出现提示时，然后单击**登录**:
+1. 浏览到[ https://go.microsoft.com/fwlink/?LinkID=144070 ](https://go.microsoft.com/fwlink/?LinkID=144070)并输入你的 Microsoft 帐户名和密码出现提示时，然后单击**登录**:
 
     [![](external-authentication-services/_static/image64.png "单击以展开映像")](external-authentication-services/_static/image63.png)
 2. 输入的名称和出现提示时，应用程序的语言，然后单击**我接受**:

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
-title: "MVC 5 Web 应用程序 (12 的 12) 的高级实体框架 6 方案 |Microsoft 文档"
+title: MVC 5 Web 应用程序 (12 的 12) 的高级实体框架 6 方案 |Microsoft 文档
 author: tdykstra
-description: "Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 的 ASP.NET MVC 5 应用程序..."
+description: Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 的 ASP.NET MVC 5 应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 85276377671b96e65406639c8584d9ebf8d77ff7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 50987b30a49173605e7aeb8eb65ff1fe5d5e5753
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="advanced-entity-framework-6-scenarios-for-an-mvc-5-web-application-12-of-12"></a>MVC 5 Web 应用程序 (12 的 12) 的高级的实体框架 6 方案
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 01/24/2018
 
 [下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)或[下载 PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 有关教程系列的信息，请参阅[序列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 
 
 在以前的教程，你实现的每个层次结构一个表继承。 本教程包括以下引入了几个有用需要注意的时要考虑的因素的基础知识的开发使用 Entity Framework Code First 的 ASP.NET web 应用程序的主题。 分步说明将引导你完成的代码和使用 Visual Studio 的下列主题：
@@ -59,12 +59,12 @@ ms.lasthandoff: 01/24/2018
 实体框架代码的第一个 API 包括使您能够 SQL 命令将直接传递到数据库的方法。 有下列选项：
 
 - 使用[DbSet.SqlQuery](https://msdn.microsoft.com/library/system.data.entity.dbset.sqlquery.aspx)返回实体类型的查询的方法。 返回的对象必须是期望的类型的`DbSet`对象，并且它们是否自动跟踪数据库上下文中的除非关闭跟踪。 (参见下一节[AsNoTracking](https://msdn.microsoft.com/library/system.data.entity.dbextensions.asnotracking.aspx)方法。)
-- 使用[Database.SqlQuery](https://msdn.microsoft.com/library/system.data.entity.database.sqlquery.aspx)方法用于返回不是实体类型的查询。 返回的数据不跟踪数据库上下文中，即使你使用此方法来检索实体类型。
+- 使用[Database.SqlQuery](https://msdn.microsoft.com/library/system.data.entity.database.sqlquery.aspx)方法用于返回不是实体类型的查询。 即便使用此方法来检索实体类型，数据库上下文也不会跟踪返回的数据。
 - 使用[Database.ExecuteSqlCommand](https://msdn.microsoft.com/library/gg679456.aspx)非查询命令。
 
-使用实体框架的优点之一是它可避免将你过于仔细存储数据的特定方法的代码。 此，它会生成 SQL 查询和命令，其中还使你无需自行编写。 但没有特殊情况下当你需要运行特定的 SQL 查询，你已手动创建的并且这些方法使你可以处理此类异常。
+使用 Entity Framework 的优点之一是，它可以避免将代码与存储数据的特定方法过于紧密地绑定在一起。 它通过生成 SQL 查询和命令来实现这一点，这样也可让你免于亲自编写这些内容。 但没有特殊情况下当你需要运行特定的 SQL 查询，你已手动创建的并且这些方法使你可以处理此类异常。
 
-因为时，将始终 true web 应用程序中执行 SQL 命令，你必须采取预防措施来保护你的站点对 SQL 注入式攻击。 若要这样做的一种方法是使用参数化的查询来确保由网页上提交的字符串，不能解释为 SQL 命令。 在本教程中将用户输入集成到查询时，将使用参数化的查询。
+在 Web 应用程序中执行 SQL 命令时，请务必采取预防措施来保护站点免受 SQL 注入攻击。 一种方法是使用参数化查询，确保不会将网页提交的字符串视为 SQL 命令。 在本教程中，将用户输入集成到查询中时会使用参数化查询。
 
 ### <a name="calling-a-query-that-returns-entities"></a>调用一个查询返回实体
 
@@ -74,13 +74,13 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample1.cs?highlight=8-14)]
 
-若要验证新代码是否工作正常，请选择**部门**选项卡，然后**详细信息**部门之一。
+如需验证新代码是否正常工作，请选择“院系”选项卡，然后选择某一院系的“详细信息”。
 
-![部门详细信息](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image2.png)
+![院系详细信息](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image2.png)
 
 ### <a name="calling-a-query-that-returns-other-types-of-objects"></a>调用一个查询返回其他类型的对象
 
-前面你创建的每个注册日期显示学生的数量关于页面的学生统计信息网格。 在执行此代码*HomeController.cs*使用 LINQ:
+“关于”页面中显示了每个注册日期的学生数量，之前已为该页面创建了一个学生统计数据网格。 在执行此代码*HomeController.cs*使用 LINQ:
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample2.cs)]
 
@@ -90,13 +90,13 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample3.cs?highlight=3-18)]
 
-运行关于页面。 它显示它以前的相同数据。
+运行关于页面。 页面中显示的数据与之前相同。
 
 ![About_page](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image3.png)
 
 ### <a name="calling-an-update-query"></a>调用更新查询
 
-假设 Contoso 大学管理员想要能够在数据库中，如更改的每个课程的信用额度数执行大容量更改。 如果该大学具有大量的课程，这会降低效率要检索其所有项作为实体并单独更改。 在本部分中，你将实施一个网页，使用户能够指定要更改用于所有课程的信用额度次数因子和则将进行的更改，通过执行 SQL`UPDATE`语句。 网页外观类似于下图：
+假设 Contoso 大学管理员想要能够在数据库中，如更改的每个课程的信用额度数执行大容量更改。 如果该大学拥有大量课程，将课程全部当作实体进行检索并逐一更改效率很低。 在本部分中，你将实施一个网页，使用户能够指定要更改用于所有课程的信用额度次数因子和则将进行的更改，通过执行 SQL`UPDATE`语句。 该网页如下图所示：
 
 ![Update_Course_Credits_initial_page](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image4.png)
 
@@ -118,15 +118,15 @@ ms.lasthandoff: 01/24/2018
 
 [!code-cshtml[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample5.cshtml)]
 
-运行`UpdateCourseCredits`方法通过选择**课程**选项卡上，然后添加"/ UpdateCourseCredits"到末尾的浏览器的地址栏中的 URL (例如： `http://localhost:50205/Course/UpdateCourseCredits`)。 在文本框中输入数字：
+通过选择“课程”选项卡运行 `UpdateCourseCredits` 方法，然后将“/UpdateCourseCredits”添加到浏览器地址栏中 URL 的末尾（例如 `http://localhost:50205/Course/UpdateCourseCredits`）。 在文本框中输入数字：
 
 ![Update_Course_Credits_initial_page_with_2_entered](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image7.png)
 
-单击“更新” 。 你看到受影响的行数：
+单击“更新” 。 随即显示受影响的行数：
 
 ![Update_Course_Credits_rows_affected_page](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image8.png)
 
-单击**回列表**若要查看的课程替换信用额度的修订号的列表。
+单击“返回列表”，查看具有修订后的学分数的课程列表。
 
 ![Courses_Index_page_showing_revised_credits](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image9.png)
 
@@ -135,19 +135,19 @@ ms.lasthandoff: 01/24/2018
 <a id="notracking"></a>
 ## <a name="no-tracking-queries"></a>否跟踪查询
 
-当数据库上下文检索表行，并创建表示它们的实体对象时，默认情况下它将跟踪的内存中的实体是否同步，与数据库中。 内存中的数据充当缓存，并更新实体时使用。 此缓存通常是不必要的 web 应用中由于上下文实例是否通常生存期较短 （新功能之一是创建和释放为每个请求） 和上下文读取再次使用该实体通常释放实体。
+当数据库上下文检索表行并创建表示它们的实体对象时，默认情况下，它会跟踪内存中的实体是否与数据库中的内容同步。 更新实体时，内存中的数据充当缓存并使用该数据。 在 Web 应用程序中，此缓存通常是不必要的，因为上下文实例通常生存期较短（创建新的实例并用于处理每个请求），并且通常在再次使用该实体之前处理读取实体的上下文。
 
-你可以通过使用禁用的实体对象在内存中的跟踪[AsNoTracking](https://msdn.microsoft.com/library/gg679352(v=vs.103).aspx)方法。 在其中你可能想要执行此操作的典型方案包括：
+你可以通过使用禁用的实体对象在内存中的跟踪[AsNoTracking](https://msdn.microsoft.com/library/gg679352(v=vs.103).aspx)方法。 可能想要执行的典型方案包括以下操作：
 
 - 查询检索此类大型卷数据的关闭跟踪可能会显著提高性能。
-- 你想要将实体附加以便其进行更新，但前面为不同的用途检索相同的实体。 因为该实体已跟踪数据库上下文时，不能将附加你想要更改的实体。 处理这种情况的一种方法是使用`AsNoTracking`与前面的查询的选项。
+- 你想要将实体附加以便其进行更新，但前面为不同的用途检索相同的实体。 由于数据库上下文已跟踪了该实体，因此无法附加要更改的实体。 处理这种情况的一种方法是使用`AsNoTracking`与前面的查询的选项。
 
 有关示例，演示如何使用[AsNoTracking](https://msdn.microsoft.com/library/gg679352(v=vs.103).aspx)方法，请参阅[本教程的早期版本](../../older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application.md)。 本教程的此版本不修改时间标志实体上设置模型联编程序创建在编辑方法中，因此它不需要`AsNoTracking`。
 
 <a id="sql"></a>
 ## <a name="examining-sql-sent-to-the-database"></a>检查 SQL 发送到数据库
 
-有时很有用，能够以查看发送到数据库的实际 SQL 查询。 在早期的教程中，您将了解如何执行该操作在侦听器代码;现在，你将看到执行此操作而无需编写拦截器代码的一些方法。 若要试用此项，将查看一个简单查询，并再看会发生什么情况向其添加选项时，此类 eager 加载、 筛选和排序。
+有时，能够查看发送到数据库的实际 SQL 查询会有所帮助。 在早期的教程中，您将了解如何执行该操作在侦听器代码;现在，你将看到执行此操作而无需编写拦截器代码的一些方法。 若要试用此项，将查看一个简单查询，并再看会发生什么情况向其添加选项时，此类 eager 加载、 筛选和排序。
 
 在*控制器/CourseController*，替换`Index`方法替换为以下代码，若要暂时停止预先加载：
 
@@ -193,12 +193,12 @@ A`SelectList`为下拉列表包含所有部门集合传递到视图。 参数传
 
 <a id="repo"></a>
 
-## <a name="repository-and-unit-of-work-patterns"></a>存储库和单元的工作模式
+## <a name="repository-and-unit-of-work-patterns"></a>存储库和和工作单元模式
 
-许多开发人员编写代码以作为使用实体框架代码的周围的包装器实现的存储库和单元的工作模式。 这些模式用于创建数据访问层和应用程序的业务逻辑层之间的抽象层。 实现这些模式可帮助防止你的应用程序数据存储区中的更改，而且很容易自动的单元测试驱动开发 (TDD)。 但是，编写附加代码以实现这些模式并不总是使用 EF，有几个原因的应用程序的最佳选择：
+许多开发人员通过编写代码将存储库和工作单元模式实现为代码周围的包装器，与 Entity Framework 一起使用。 这些模式被用于在应用程序的数据访问层和业务逻辑层之间创建一个抽象层。 实现这些模式有助于使应用程序免受数据存储中所作更改的影响，而且有助于进行自动单元测试或测试驱动开发 (TDD)。 但是，编写附加代码以实现这些模式并不总是使用 EF，有几个原因的应用程序的最佳选择：
 
-- EF 上下文类本身使应用商店数据特有的代码中的代码。
-- EF 上下文类可以充当数据库的工作单位类更新你不要使用 EF。
+- EF 上下文类本身会将代码与数据存储特定的代码隔离开来。
+- 对于使用 EF 进行的数据库更新，EF 上下文类可充当工作单元类。
 - Entity Framework 6 中引入的功能更加轻松地实现 TDD 而无需编写存储库代码。
 
 有关如何实现的存储库和单元的工作模式的详细信息，请参阅[本系列教程的实体框架 5 版本](../../older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)。 有关如何在 Entity Framework 6 中实现 TDD 的信息，请参阅以下资源：
@@ -229,7 +229,7 @@ A`SelectList`为下拉列表包含所有部门集合传递到视图。 参数传
 <a id="changedetection"></a>
 ## <a name="automatic-change-detection"></a>自动更改检测
 
-实体框架通过比较的实体的当前值与原始值确定更改实体的方式 （并因此需要发送到数据库的更新）。 查询或附加该实体时，存储的原始值。 某些会导致自动更改检测的方法如下所示：
+Entity Framework 通过比较实体的当前值与原始值来确定实体发生的更改，从而确定需将哪些更改发送给数据库。 查询或附加实体时，将存储原始值。 导致自动更改检测的部分方法如下所示：
 
 - `DbSet.Find`
 - `DbSet.Local`
@@ -262,10 +262,10 @@ A`SelectList`为下拉列表包含所有部门集合传递到视图。 参数传
 
 Entity Framework 6 的源代码位于[GitHub](https://github.com/aspnet/EntityFramework6)。 你可以报告 bug，并可以提供你自己的 EF 源代码的增强功能。
 
-尽管源代码处于打开状态，实体框架完全支持的 Microsoft 产品。 Microsoft 实体框架团队将控制哪些接受的贡献保持和测试所有代码更改，以确保每个版本的质量。
+尽管源代码处于打开状态，实体框架完全支持的 Microsoft 产品。 Microsoft Entity Framework 团队持续控制要接受的更改，并对所有代码更改进行测试来确保每个版本的质量。
 
 <a id="summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 这将完成这一系列的 ASP.NET MVC 应用程序中使用实体框架的教程。 有关如何使用实体框架处理数据的详细信息，请参阅[EF MSDN 上的文档页](https://msdn.microsoft.com/data/ee712907)和[ASP.NET 数据访问的推荐资源](../../../../whitepapers/aspnet-data-access-content-map.md)。
 
@@ -274,7 +274,7 @@ Entity Framework 6 的源代码位于[GitHub](https://github.com/aspnet/EntityFr
 有关与相关的 MVC，例如身份验证和授权，其他主题信息请参阅[ASP.NET MVC 的推荐资源](../recommended-resources-for-mvc.md)。
 
 <a id="acknowledgments"></a>
-## <a name="acknowledgments"></a>确认
+## <a name="acknowledgments"></a>致谢
 
 - Tom Dykstra 编写本教程的原始版本，共同撰写了 EF 5 更新，和编写 EF 6 更新。 Tom 是上的 Microsoft Web 平台和工具内容团队的高级编程编写器。
 - [Rick Anderson](https://blogs.msdn.com/b/rickandy/) (twitter [ @RickAndMSFT ](http://twitter.com/RickAndMSFT)) 未的大部分更新本教程适用于 EF 5 和 MVC 4 工作，共同创作 EF 6 更新。 Rick 是 Microsoft 将重点放在 Azure 和 MVC 的高级编程编写器。
@@ -333,16 +333,16 @@ Entity Framework 6 的源代码位于[GitHub](https://github.com/aspnet/EntityFr
 
 可能发生此错误的一种方法是从拥有该解决方案，每个使用相同的端口号的多个副本。 通常可以通过退出的 Visual Studio 中，所有实例，然后重新启动您正在处理的项目来解决此问题。 如果这不起作用，请尝试更改端口号。 右键单击项目文件，然后单击属性。 选择**Web**选项卡上，然后将更改中的端口号**项目 Url**文本框。
 
-### <a name="error-locating-sql-server-instance"></a>错误找到 SQL Server 实例
+### <a name="error-locating-sql-server-instance"></a>定位 SQL Server 实例时出错
 
 错误消息：
 
-> 建立与 SQL Server 的连接时发生与网络相关或特定于实例的错误。 未找到或无法访问服务器。 请验证实例名称是否正确，SQL Server 是否已配置为允许远程连接。 (提供程序： SQL 网络接口，错误： 26-错误查找服务器/实例指定)
+> 建立到 SQL Server 的连接时出现与网络相关或特定于实例的错误。 未找到或无法访问服务器。 请验证实例名称是否正确，SQL Server 是否已配置为允许远程连接。 （提供程序：SQL 网络接口，错误：26 - 定位指定的服务器/实例时出错）
 
 
 解决方案
 
-请检查连接字符串。 如果你已手动删除数据库，更改构造字符串中数据库的名称。
+检查连接字符串。 如果你已手动删除数据库，更改构造字符串中数据库的名称。
 
->[!div class="step-by-step"]
-[上一篇](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [上一篇](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)

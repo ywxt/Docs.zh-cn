@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-cs
-title: "显示表的数据库数据 (C#) |Microsoft 文档"
+title: 显示表的数据库数据 (C#) |Microsoft 文档
 author: microsoft
-description: "在本教程中，我将演示两种方法可以显示一组数据库记录。 我显示以下两种格式的一组数据库记录在 HTML 数据..."
+description: 在本教程中，我将演示两种方法可以显示一组数据库记录。 我显示以下两种格式的一组数据库记录在 HTML 数据...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/07/2008
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 37ea081df2ee26e186669b815a4d769e1976ae9c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1d5dc9dd4a82e4577c6c1a3b124d45fef0b0f67c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-a-table-of-database-data-c"></a>显示表的数据库数据 (C#)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_11_CS.pdf)
 
@@ -39,7 +39,7 @@ ms.lasthandoff: 11/10/2017
 | **列名称** | **数据类型** | **允许 null 值** |
 | --- | --- | --- |
 | Id | Int | False |
-| 标题 | Nvarchar （200) | False |
+| 标题 | Nvarchar(200) | False |
 | 控制器 | NVarchar(50) | False |
 | DateReleased | DateTime | False |
 
@@ -185,10 +185,10 @@ HTML 表中显示一组数据库记录的最简单方法是利用 Visual Studio 
 RenderPartial() 方法是不同于大多数其他帮助器方法，因为它不返回一个字符串。 因此，必须调用 RenderPartial() 方法使用&lt;%html.renderpartial(); %&gt;而不是&lt;%= Html.RenderPartial(); %&gt;。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程的目的是说明如何可以在 HTML 表中显示一组数据库记录。 首先，您学习了如何通过利用 Microsoft 实体框架的控制器操作返回一组数据库记录。 接下来，您学习了如何使用 Visual Studio 基架以生成一个视图，自动显示项的集合。 最后，您学习了如何通过利用部分的简化视图。 您学习了如何将用作模板的部分，以便你可以设置每个数据库记录的格式。
 
->[!div class="step-by-step"]
-[上一页](creating-model-classes-with-linq-to-sql-cs.md)
-[下一页](performing-simple-validation-cs.md)
+> [!div class="step-by-step"]
+> [上一页](creating-model-classes-with-linq-to-sql-cs.md)
+> [下一页](performing-simple-validation-cs.md)

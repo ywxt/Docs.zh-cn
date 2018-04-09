@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-vb
-title: "解锁和批准用户帐户 (VB) |Microsoft 文档"
+title: 解锁和批准用户帐户 (VB) |Microsoft 文档
 author: rick-anderson
-description: "本教程演示如何生成某一网页寻求管理员可以管理用户的锁定和批准状态。 我们将了解如何批准新的用户 o..."
+description: 本教程演示如何生成某一网页寻求管理员可以管理用户的锁定和批准状态。 我们将了解如何批准新的用户 o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f4444e566a760ef3beda4af5fba62dd349a8bba9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 977ed9d1e68e635eadd7aa8339670f5a5d209a7b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="unlocking-and-approving-user-accounts-vb"></a>解锁和批准用户帐户 (VB)
 ====================
@@ -196,7 +196,7 @@ ms.lasthandoff: 01/24/2018
 **图 7**： 的新用户的帐户是现在批准 ([单击以查看实际尺寸的图像](unlocking-and-approving-user-accounts-vb/_static/image21.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 所有成员资格用户帐户具有确定用户可以登录到网站的两个状态：`IsLockedOut`和`IsApproved`。 这两种属性必须是`True`该用户的登录名。
 
@@ -208,11 +208,11 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="about-the-author"></a>关于作者
 
-Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢...
 
-本教程系列已由许多有用的审阅者评审。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+本教程系列已由许多有用的审阅者评审。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一篇](recovering-and-changing-passwords-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](recovering-and-changing-passwords-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "在 ASP.NET MVC 应用程序 (10 的第 8) 中实现继承，并使用实体框架 |Microsoft 文档"
+title: 在 ASP.NET MVC 应用程序 (10 的第 8) 中实现继承，并使用实体框架 |Microsoft 文档
 author: tdykstra
-description: "Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 的 ASP.NET MVC 4 应用程序..."
+description: Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 的 ASP.NET MVC 4 应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 54e46c6f996b6fe86a227c851562e61678b02780
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ee088f841bdb68f4806b0b62be7d379b9eab9f8c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-inheritance-with-the-entity-framework-in-an-aspnet-mvc-application-8-of-10"></a>在 ASP.NET MVC 应用程序 (10 的第 8) 实现与实体框架的继承
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 11/10/2017
 
 [下载已完成的项目](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 2012 的 ASP.NET MVC 4 应用程序。 有关教程系列的信息，请参阅[序列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 你可以从头开始教程系列或[下载这一章的初学者项目](building-the-ef5-mvc4-chapter-downloads.md)和从这里开始。
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 2012 的 ASP.NET MVC 4 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 你可以从头开始教程系列或[下载这一章的初学者项目](building-the-ef5-mvc4-chapter-downloads.md)和从这里开始。
 > 
 > > [!NOTE] 
 > > 
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 
 在前面的教程中，你将处理并发异常。 本教程将演示如何在数据模型中实现继承。
 
-在面向对象编程中，你可以使用继承以消除冗余代码。 本教程中，你将更改`Instructor`和`Student`类，以使其从中派生`Person`基本类，其中包含属性，如`LastName`所共有的教师和学生。 不会添加或更改任何 web 页面，但你将更改某些代码并将在数据库中自动反映这些更改。
+在面向对象编程中，你可以使用继承以消除冗余代码。 在本教程中，将更改 `Instructor` 和 `Student` 类，以便从 `Person` 基类中派生，该基类包含教师和学生所共有的属性（如 `LastName`）。 不会添加或更改任何网页，但会更改部分代码，并将在数据库中自动反映这些更改。
 
 ## <a name="table-per-hierarchy-versus-table-per-type-inheritance"></a>每个-层次结构一个表与每种类型一个表继承
 
@@ -41,23 +41,23 @@ ms.lasthandoff: 11/10/2017
 
 ![Student_and_Instructor_classes](https://asp.net/media/2578113/Windows-Live-Writer_58f5a93579b2_CC7B_Student_and_Instructor_classes_e7a32f99-8bc4-48ce-aeaf-216a18071a8b.png)
 
-假设你想要消除冗余代码由共享的属性以`Instructor`和`Student`实体。 你可以创建`Person`基类其中仅包含那些共享属性，然后进行`Instructor`和`Student`实体继承自该基类，如下面的插图中所示：
+假设想要消除由 `Instructor` 和`Student` 实体共享的属性的冗余代码。 你可以创建`Person`基类其中仅包含那些共享属性，然后进行`Instructor`和`Student`实体继承自该基类，如下面的插图中所示：
 
 ![Student_and_Instructor_classes_deriving_from_Person_class](https://asp.net/media/2578119/Windows-Live-Writer_58f5a93579b2_CC7B_Student_and_Instructor_classes_deriving_from_Person_class_671d708c-cbb8-454a-a8f8-c2d99439acd9.png)
 
-有几种方法无法在数据库中表示此继承结构。 您可以对`Person`包括有关学生和教师单个表中的信息的表。 某些列可能仅适用于教师 (`HireDate`)，某些仅向学生 (`EnrollmentDate`)、 某些对这两个 (`LastName`， `FirstName`)。 通常，您将需要*鉴别器*指示哪种类型的每一行的列表示。 例如，鉴别器列可能有"教师"教师和"学生"学生版。
+有多种方法可以在数据库中表示此继承结构。 您可以对`Person`包括有关学生和教师单个表中的信息的表。 某些列可能仅适用于教师 (`HireDate`)，某些仅向学生 (`EnrollmentDate`)、 某些对这两个 (`LastName`， `FirstName`)。 通常，您将需要*鉴别器*指示哪种类型的每一行的列表示。 例如，鉴别器列可能包含“Instructor”来指示教师，包含“Student”来指示学生。
 
-![每个 hierarchy_example 表](https://asp.net/media/2578125/Windows-Live-Writer_58f5a93579b2_CC7B_Table-per-hierarchy_example_244067cd-b451-4e9b-9595-793b9afca505.png)
+![Table-per-hierarchy_example](https://asp.net/media/2578125/Windows-Live-Writer_58f5a93579b2_CC7B_Table-per-hierarchy_example_244067cd-b451-4e9b-9595-793b9afca505.png)
 
 从单个数据库表生成的实体继承结构的此模式称为*表每个层次结构*(TPH) 继承。
 
-一种替代方法是使看上去更像继承结构数据库。 例如，您可以对只有名称字段`Person`表，并具有单独`Instructor`和`Student`具有日期字段的表。
+另一种方法是使数据库看起来更像继承结构。 例如，您可以对只有名称字段`Person`表，并具有单独`Instructor`和`Student`具有日期字段的表。
 
-![每个 type_inheritance 表](https://asp.net/media/2578131/Windows-Live-Writer_58f5a93579b2_CC7B_Table-per-type_inheritance.png)
+![Table-per-type_inheritance](https://asp.net/media/2578131/Windows-Live-Writer_58f5a93579b2_CC7B_Table-per-type_inheritance.png)
 
 此模式的数据库表，针对每个实体类称为进行*每种类型的表*(TPT) 继承。
 
-TPH 继承模式通常因为 TPT 模式可能会导致复杂的联接查询在实体框架中比 TPT 继承模式提供更好的性能。 本教程演示如何实现 TPH 继承。 将执行以下步骤来执行该操作：
+TPH 继承模式通常因为 TPT 模式可能会导致复杂的联接查询在实体框架中比 TPT 继承模式提供更好的性能。 本教程将演示如何实现 TPH 继承。 将执行以下步骤来执行该操作：
 
 - 创建`Person`类并更改`Instructor`和`Student`类派生自`Person`。
 - 将模型数据库映射代码添加到数据库上下文类。
@@ -71,7 +71,7 @@ TPH 继承模式通常因为 TPT 模式可能会导致复杂的联接查询在�
 
 [!code-csharp[Main](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-在*Instructor.cs*，派生`Instructor`类`Person`类和删除密钥和名称字段。 代码将类似于以下示例：
+在*Instructor.cs*，派生`Instructor`类`Person`类和删除密钥和名称字段。 代码将如下所示：
 
 [!code-csharp[Main](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
 
@@ -85,7 +85,7 @@ TPH 继承模式通常因为 TPT 模式可能会导致复杂的联接查询在�
 
 [!code-csharp[Main](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs)]
 
-这是所有实体框架所需配置每个层次结构一个表继承。 当你将看到的当数据库可重新创建，它将具有`Person`表代替了`Student`和`Instructor`表。
+以上是 Entity Framework 配置每个层次结构一张表继承所需的全部操作。 当你将看到的当数据库可重新创建，它将具有`Person`表代替了`Student`和`Instructor`表。
 
 ## <a name="changing-instructorid-and-studentid-to-personid"></a>分别更改为 PersonID InstructorID 和 StudentID
 
@@ -100,7 +100,7 @@ TPH 继承模式通常因为 TPT 模式可能会导致复杂的联接查询在�
 接下来，你需要更改`InstructorID`到`PersonID`和`StudentID`到`PersonID`在整个项目***除***中的带时间戳迁移文件*迁移*文件夹。 若要执行该操作将查找和打开仅的文件，需要更改，然后在打开的文件上执行全局更改。 中的唯一文件*迁移*应更改的文件夹是*Migrations\Configuration.cs。*
 
 1. > [!IMPORTANT]
- > 开始关闭 Visual Studio 中所有打开的文件。
+   > 开始关闭 Visual Studio 中所有打开的文件。
 2. 单击**查找和替换--查找所有文件**中**编辑**菜单上，，然后搜索的项目中包含的所有文件`InstructorID`。  
   
     ![](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
@@ -108,7 +108,7 @@ TPH 继承模式通常因为 TPT 模式可能会导致复杂的联接查询在�
   
     ![](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image2.png)
 4. 打开**在文件中替换**对话框和更改**查找**到**所有打开的文档**。
-5. 使用**在文件中替换**对话框以更改所有`InstructorID`到`PersonID.`  
+5. 使用**在文件中替换**对话框以更改所有`InstructorID`到 `PersonID.`  
   
     ![](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 6. 找到包含项目中的所有文件`StudentID`。
@@ -147,15 +147,15 @@ TPH 继承模式通常因为 TPT 模式可能会导致复杂的联接查询在�
 > 与新数据库，没有数据迁移，和`update-database`命令是更可能完成且未发生错误。 有关如何删除数据库的说明，请参阅[如何从 Visual Studio 2012 中删除数据库](http://romiller.com/2013/05/17/how-to-drop-a-database-from-visual-studio-2012/)。 如果你接受这种方法，以继续本教程，请跳过部署步骤在本教程中，末尾因为已部署的站点将获取相同的错误，它自动运行迁移时。 如果你想要迁移错误的排查，最佳资源是实体框架论坛或 StackOverflow.com 之一。
 
 
-## <a name="testing"></a>测试
+## <a name="testing"></a>正在测试
 
-运行站点并尝试各种页面。 一切相同像以前一样。
+运行站点并尝试各种页面。 一切都和以前一样。
 
 在**服务器资源管理器，**展开**SchoolContext**然后**表**，和你看到**学生**和**教师**已替换为表**人员**表。 展开**人员**表，你会看到它具有所有使用中的列**学生**和**教师**表。
 
 ![Server_Explorer_showing_Person_table](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 
-Person 表中，右键单击，然后单击**显示表数据**才能看到鉴别器列。
+右键单击 Person 表，然后单击“显示表数据”以查看鉴别器列。
 
 ![](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image7.png)
 
@@ -163,12 +163,12 @@ Person 表中，右键单击，然后单击**显示表数据**才能看到鉴别
 
 ![School_database_diagram](https://asp.net/media/2578143/Windows-Live-Writer_58f5a93579b2_CC7B_School_database_diagram_6350a801-7199-413f-bbac-4a2009ed19d7.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 每个层次结构一个表继承现在已实现的`Person`， `Student`，和`Instructor`类。 有关此设置和其他的继承结构的详细信息，请参阅[继承映射策略](https://weblogs.asp.net/manavi/archive/2010/12/24/inheritance-mapping-strategies-with-entity-framework-code-first-ctp5-part-1-table-per-hierarchy-tph.aspx)Morteza Manavi 博客上。 在下一教程中，你将看到一些方式来实现的存储库和单元的工作模式。
 
 在找不到其他实体框架资源的链接[ASP.NET 数据访问内容映射](../../../../whitepapers/aspnet-data-access-content-map.md)。
 
->[!div class="step-by-step"]
-[上一页](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[下一页](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [上一页](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [下一页](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)

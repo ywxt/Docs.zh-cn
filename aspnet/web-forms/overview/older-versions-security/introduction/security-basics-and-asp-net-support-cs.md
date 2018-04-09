@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-cs
-title: "安全性基础知识和 ASP.NET 支持 (C#) |Microsoft 文档"
+title: 安全性基础知识和 ASP.NET 支持 (C#) |Microsoft 文档
 author: rick-anderson
-description: "这是一系列将浏览进行身份验证通过 web 窗体的访问者授予对 partic 访问权限的技术的教程中的第一个教程..."
+description: 这是一系列将浏览进行身份验证通过 web 窗体的访问者授予对 partic 访问权限的技术的教程中的第一个教程...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/13/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4080e3ccaffefd02c76b89a77e320e963f854961
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2b89a8b0dd88505c1d63054db508590c26684158
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="security-basics-and-aspnet-support-c"></a>安全性基础知识和 ASP.NET 支持 (C#)
 ====================
@@ -162,7 +162,7 @@ ASP.NET 2.0 还引入了角色 framework。 成员资格 framework 中，如角�
 
 实际上各种登录控件与成员资格和角色框架进行交互。 大多数登录控件可以实现无需编写一行代码。 我们将在将来的教程，包括用于扩展和自定义其功能的技术中查看更详细介绍这些控件。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 所有 web 应用程序支持用户帐户还都需要类似的功能，例如： 用户登录并记住网页访问; 跨状态中有其日志的能力某一网页寻求新访问者创建帐户;并向页开发人员能够指定哪些资源、 数据和功能可供哪些用户或角色。 进行身份验证和授权用户和管理用户帐户和角色的任务是非常简单，可以用感谢窗体身份验证、 URL 授权和的成员资格和角色的框架的 ASP.NET 应用程序实现。
 
@@ -188,11 +188,11 @@ ASP.NET 2.0 还引入了角色 framework。 成员资格 framework 中，如角�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已系列已由许多有用的审阅者评审本教程。 本教程中的前导审阅者包括 Alicja Maziarz、 John Suru 和 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[下一篇](an-overview-of-forms-authentication-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](an-overview-of-forms-authentication-cs.md)

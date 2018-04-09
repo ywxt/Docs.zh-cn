@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-cs
-title: "在数据 Web 中显示二进制数据控制 (C#) |Microsoft 文档"
+title: 在数据 Web 中显示二进制数据控制 (C#) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们查看的选项显示在网页上，包括图像文件的显示和的下载链接 f 预配的二进制数据..."
+description: 在本教程中我们查看的选项显示在网页上，包括图像文件的显示和的下载链接 f 预配的二进制数据...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/27/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d66079f784792a2514eefabf57f70826aab5dcf1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c5b56fc45ea8fb5aee934530fc62e23b9d364242
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-binary-data-in-the-data-web-controls-c"></a>在数据 Web 控件 (C#) 中显示二进制数据
 ====================
@@ -89,7 +89,7 @@ ms.lasthandoff: 01/24/2018
 
 ![为 BrochurePath 添加 HyperLinkField](displaying-binary-data-in-the-data-web-controls-cs/_static/image6.gif)
 
-**图 6**： 添加为 HyperLinkField`BrochurePath`
+**图 6**： 添加为 HyperLinkField `BrochurePath`
 
 
 如图 7 所示，这将添加到 GridView，一列链接。 单击视图小册子链接将在浏览器中直接显示 PDF，或者提示用户下载的文件，具体取决于是否安装了 PDF 阅读器和浏览器的设置。
@@ -216,7 +216,7 @@ ms.lasthandoff: 01/24/2018
 **图 13**: The Category 的图片显示每个行 ([单击以查看实际尺寸的图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image20.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，我们将探讨如何显示二进制数据。 数据显示方式取决于数据的类型。 对于 PDF 小册子文件中，我们向用户提供视图小册子链接，单击时，用户直接到达 PDF 文件。 类别的图片，我们首先创建一个页面来检索，从数据库中返回的二进制数据，并且随后用于该页面在一个 GridView 中显示每个类别的图片。
 
@@ -226,12 +226,12 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Teresa 墨和 Dave Gardner。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](uploading-files-cs.md)
-[下一页](including-a-file-upload-option-when-adding-a-new-record-cs.md)
+> [!div class="step-by-step"]
+> [上一页](uploading-files-cs.md)
+> [下一页](including-a-file-upload-option-when-adding-a-new-record-cs.md)

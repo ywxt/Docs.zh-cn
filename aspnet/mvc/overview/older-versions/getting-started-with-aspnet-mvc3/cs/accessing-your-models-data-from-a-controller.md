@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/accessing-your-models-data-from-a-controller
-title: "从控制器 (C#) 访问您的模型的数据 |Microsoft 文档"
+title: 从控制器 (C#) 访问您的模型的数据 |Microsoft 文档
 author: Rick-Anderson
-description: "本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识..."
+description: 本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 5ee29dbc5b4566273592041d94458104e6e0f65e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4218116eec6f177730087955b8fb69e5ecc0022f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="accessing-your-models-data-from-a-controller-c"></a>访问您的模型的数据从控制器 (C#)
 ====================
@@ -48,7 +48,7 @@ ms.lasthandoff: 01/24/2018
 
 [![AddScaffoldedMovieController](accessing-your-models-data-from-a-controller/_static/image2.png "AddScaffoldedMovieController")](accessing-your-models-data-from-a-controller/_static/image1.png)
 
-单击 **“添加”**。 Visual Web Developer 会创建以下文件和文件夹：
+单击 **添加**。 Visual Web Developer 会创建以下文件和文件夹：
 
 - *MoviesController.cs*文件在项目的*控制器*文件夹。
 - A*电影*文件夹在项目的*视图*文件夹。
@@ -142,6 +142,6 @@ ASP.NET MVC 还提供了将强传递的功能类型化数据或查看模板的�
 
 你现在具有数据库和一个简单列表页，以便显示从它的内容。 在下一步的教程中，我们将检查基架的代码的其余部分并添加`SearchIndex`方法和一个`SearchIndex`可以搜索此数据库中的电影的视图。
 
->[!div class="step-by-step"]
-[上一页](adding-a-model.md)
-[下一页](examining-the-edit-methods-and-edit-view.md)
+> [!div class="step-by-step"]
+> [上一页](adding-a-model.md)
+> [下一页](examining-the-edit-methods-and-edit-view.md)

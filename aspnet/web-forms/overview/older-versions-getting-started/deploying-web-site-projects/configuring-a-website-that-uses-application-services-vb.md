@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
-title: "配置网站，以使用应用程序服务 (VB) |Microsoft 文档"
+title: 配置网站，以使用应用程序服务 (VB) |Microsoft 文档
 author: rick-anderson
-description: "ASP.NET 版本 2.0 引入了一系列的应用程序服务，这是.NET Framework 的一部分，并且作为构建基块的一套服务，则..."
+description: ASP.NET 版本 2.0 引入了一系列的应用程序服务，这是.NET Framework 的一部分，并且作为构建基块的一套服务，则...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5f908eb6c6b2d18c6c41870a38bb618737949b0a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 416cc5b3b6ac3c8e7a6c1a99a8b4f8d94b5b3428
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-website-that-uses-application-services-vb"></a>配置网站，以使用应用程序服务 (VB)
 ====================
@@ -182,7 +182,7 @@ ASP.NET 网站管理工具 (WSAT)，可以轻松创建和管理用户帐户、 �
 
 如果你需要该 WSAT 签出的完整功能[*滚动你自己网站管理工具*](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)，在哪个作者 Dan Clem 逐步的过程生成一个自定义的 WSAT 类似的工具。 Dan 共享其应用程序的源代码 （在 C# 中)，并提供有关将其添加到托管网站的分步说明。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 部署的 web 应用程序使用的应用程序服务数据库实现时你首先必须确保生产数据库具有所需的数据库对象。 这些对象可添加使用中讨论的技术*部署数据库*教程; 或者，可以使用`aspnet_regsql.exe`工具，如我们在本教程中看到。 上以同步中 （这是重要信息： 如果你希望用户并在开发环境中创建的角色才能对生产有效） 的开发和生产环境和技术的使用的应用程序名称为中心，我们接触其他挑战管理用户和生产环境中的角色。
 
@@ -200,6 +200,6 @@ ASP.NET 网站管理工具 (WSAT)，可以轻松创建和管理用户帐户、 �
 - [*网站安全教程*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 - [*网站管理工具概述*](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 
->[!div class="step-by-step"]
-[上一页](configuring-the-production-web-application-to-use-the-production-database-vb.md)
-[下一页](strategies-for-database-development-and-deployment-vb.md)
+> [!div class="step-by-step"]
+> [上一页](configuring-the-production-web-application-to-use-the-production-database-vb.md)
+> [下一页](strategies-for-database-development-and-deployment-vb.md)

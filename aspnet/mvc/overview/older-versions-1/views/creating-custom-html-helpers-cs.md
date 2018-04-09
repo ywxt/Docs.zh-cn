@@ -1,8 +1,8 @@
 ---
 uid: aspnet/mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
-title: "创建自定义 HTML 帮助器 (C#) |Microsoft 文档"
+title: 创建自定义 HTML 帮助器 (C#) |Microsoft 文档
 author: microsoft
-description: "本教程的目标是演示如何创建自定义 HTML 帮助程序，你可以使用您的 MVC 视图中。 通过利用 HTML 帮助程序..."
+description: 本教程的目标是演示如何创建自定义 HTML 帮助程序，你可以使用您的 MVC 视图中。 通过利用 HTML 帮助程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/07/2008
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a0b6d67eb7aab51ba2b422fab0788e34255f2c8c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ebc9aa2aa8dbc02dc01833d671c3bfd19141ba74
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-custom-html-helpers-c"></a>创建自定义 HTML 帮助器 (C#)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_9_CS.pdf)
 
@@ -57,7 +57,7 @@ ASP.NET MVC framework 包括以下一组标准 HTML 帮助器 （这不是完整
 **图 01**： 页上呈现的 HTML 帮助器 ([单击以查看实际尺寸的图像](creating-custom-html-helpers-cs/_static/image3.png))
 
 
-**列表 1 –`Views\Home\Index.aspx`**
+**列表 1 – `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-cs/samples/sample1.aspx)]
 
@@ -72,7 +72,7 @@ Html.BeginForm() 帮助器方法用于创建的开始和结束 HTML`<form>`标�
 
 ASP.NET MVC framework 包含一小部分的帮助器。 最有可能，你将需要扩展的自定义 HTML 帮助器 MVC 框架。 在本教程的其余部分中，你了解两种方法可以创建自定义 HTML 帮助器。
 
-**列出 2 –`Index.aspx Source`**
+**列出 2 – `Index.aspx Source`**
 
 [!code-aspx[Main](creating-custom-html-helpers-cs/samples/sample2.aspx)]
 
@@ -80,7 +80,7 @@ ASP.NET MVC framework 包含一小部分的帮助器。 最有可能，你将需
 
 创建新的 HTML 帮助器的最简单方法是创建返回的字符串的静态方法。 例如，假设你决定创建新的 HTML 帮助器上呈现 HTML`<label>`标记。 可以使用在列出 2 中的类来呈现`<label>`。
 
-**列出 2 –`Helpers\LabelHelper.cs`**
+**列出 2 – `Helpers\LabelHelper.cs`**
 
 [!code-csharp[Main](creating-custom-html-helpers-cs/samples/sample3.cs)]
 
@@ -88,7 +88,7 @@ ASP.NET MVC framework 包含一小部分的帮助器。 最有可能，你将需
 
 已修改的索引视图，列出 3 中使用`LabelHelper`呈现 HTML`<label>`标记。 请注意，则视图包括`<%@ imports %>`导入的指令`Application1.Helpers`命名空间。
 
-**列出 2 –`Views\Home\Index2.aspx`**
+**列出 2 – `Views\Home\Index2.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-cs/samples/sample4.aspx)]
 
@@ -100,7 +100,7 @@ ASP.NET MVC framework 包含一小部分的帮助器。 最有可能，你将需
 
 其次，请注意，第一个参数`Label()`方法前面加上关键字`this`。 扩展方法的第一个参数指示该扩展方法所扩展的类。
 
-**列出 3 –`Helpers\LabelExtensions.cs`**
+**列出 3 – `Helpers\LabelExtensions.cs`**
 
 [!code-csharp[Main](creating-custom-html-helpers-cs/samples/sample5.cs)]
 
@@ -114,16 +114,16 @@ ASP.NET MVC framework 包含一小部分的帮助器。 最有可能，你将需
 
 已修改的索引视图，列出 4 中使用 Html.Label() 扩展方法来呈现的所有其`<label>`标记。
 
-**列出 4 –`Views\Home\Index3.aspx`**
+**列出 4 – `Views\Home\Index3.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-cs/samples/sample6.aspx)]
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，您学习了两种方法可以创建自定义 HTML 帮助器。 首先，您学习了如何创建自定义`Label()`通过创建静态方法的 HTML 帮助程序返回的字符串。 接下来，您学习了如何创建自定义`Label()`通过上创建的扩展方法的 HTML 帮助器方法`HtmlHelper`类。
 
 在本教程中，我侧重于生成一个非常简单的 HTML 帮助器方法。 请注意，可根据需要一样复杂 HTML 帮助器。 你可以构建呈现如树视图、 菜单或表的数据库数据的丰富内容的 HTML 帮助器。
 
->[!div class="step-by-step"]
-[上一页](asp-net-mvc-views-overview-cs.md)
-[下一页](using-the-tagbuilder-class-to-build-html-helpers-cs.md)
+> [!div class="step-by-step"]
+> [上一页](asp-net-mvc-views-overview-cs.md)
+> [下一页](using-the-tagbuilder-class-to-build-html-helpers-cs.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-cs
-title: "与用户进行身份验证 Forms 身份验证 (C#) |Microsoft 文档"
+title: 与用户进行身份验证 Forms 身份验证 (C#) |Microsoft 文档
 author: microsoft
-description: "了解如何使用 [Authorize] 属性用密码保护 MVC 应用程序中的特定页。 了解如何使用网站管理太..."
+description: 了解如何使用 [Authorize] 属性用密码保护 MVC 应用程序中的特定页。 了解如何使用网站管理太...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 17bcf02e1351587d64b72ee2b40393e0f748f23e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e1def84bbf48847339e89b239b026d053640b935
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="authenticating-users-with-forms-authentication-c"></a>使用 Forms 身份验证 (C#) 的用户进行身份验证
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 了解如何使用 [Authorize] 属性用密码保护 MVC 应用程序中的特定页。 了解如何使用网站管理工具来创建和管理用户和角色。 你还了解了如何配置用户帐户和角色信息的存储位置。
 
@@ -148,9 +148,9 @@ ASP.NET SQL Server 安装向导，可选择你的网络上的 SQL Server 数据�
 
 ![clip_image020](authenticating-users-with-forms-authentication-cs/_static/image10.jpg)
 
-#### <a name="summary"></a>摘要
+#### <a name="summary"></a>总结
 
 在本教程中，您学习了如何构建一个 ASP.NET MVC 应用程序时，使用窗体身份验证。 首先，您学习了如何通过利用网站管理工具创建新用户和角色。 接下来，您学习了如何使用 [Authorize] 属性以防止未经授权的用户调用控制器操作。 最后，您学习了如何配置你的 MVC 应用程序在生产数据库中存储用户和角色信息。
 
->[!div class="step-by-step"]
-[下一篇](authenticating-users-with-windows-authentication-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](authenticating-users-with-windows-authentication-cs.md)

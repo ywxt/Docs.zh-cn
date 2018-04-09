@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-cs
-title: "使用更新 TableAdapter 联接 (C#) |Microsoft 文档"
+title: 使用更新 TableAdapter 联接 (C#) |Microsoft 文档
 author: rick-anderson
-description: "使用的数据库时，共有分布在多个表的请求数据。 若要从两个不同的表中检索数据我们可以使用..."
+description: 使用的数据库时，共有分布在多个表的请求数据。 若要从两个不同的表中检索数据我们可以使用...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/18/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1a24245a3c846d061a528d520f915b8eac3ff475
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: be74be8865b021be1f2e2d8181d2eb42cb74eb75
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="updating-the-tableadapter-to-use-joins-c"></a>使用更新 TableAdapter 联接 (C#)
 ====================
@@ -54,7 +54,7 @@ ms.lasthandoff: 01/24/2018
 A`JOIN`合并从一个表具有基于某些条件的另一个表中记录的记录。 在上面的查询中，例如，`LEFT JOIN Categories ON Categories.CategoryID = Products.CategoryID`指示 SQL Server 合并每个类别的产品记录记录其`CategoryID`值与产品 s 匹配`CategoryID`值。 合并的结果，我们可以使用相应的类别字段中的每个产品 (如`CategoryName`)。
 
 > [!NOTE]
-> `JOIN`s 常用查询从关系数据库的数据时。 如果你不熟悉如何`JOIN`语法或需要有点画笔有关其用法，我建议[SQL Join 教程](http://www.w3schools.com/sql/sql_join.asp)在[W3 学校](http://www.w3schools.com/)。 此外值得读取是[`JOIN`基础知识](https://msdn.microsoft.com/library/ms191517.aspx)和[子查询基础知识](https://msdn.microsoft.com/library/ms189575.aspx)的部分[SQL 联机丛书](https://msdn.microsoft.com/library/ms130214.aspx)。
+> `JOIN` s 常用查询从关系数据库的数据时。 如果你不熟悉如何`JOIN`语法或需要有点画笔有关其用法，我建议[SQL Join 教程](http://www.w3schools.com/sql/sql_join.asp)在[W3 学校](http://www.w3schools.com/)。 此外值得读取是[`JOIN`基础知识](https://msdn.microsoft.com/library/ms191517.aspx)和[子查询基础知识](https://msdn.microsoft.com/library/ms189575.aspx)的部分[SQL 联机丛书](https://msdn.microsoft.com/library/ms130214.aspx)。
 
 
 由于`JOIN`s 和相关子查询可以同时用于从其他表中检索相关的数据，许多开发人员左划伤着头和想知道要使用哪种方法。 所有 SQL 专家我已讨论以说过大致的相同，它不真正有意义在性能如 SQL Server 将产生大致相同的执行计划。 然后，其建议中，是使用你和你的团队在最熟悉的技术。 它值得注意的，保证此建议，而且传达后这些专家立即会 express 其首选项的`JOIN`随着相关子查询。
@@ -248,7 +248,7 @@ Visual Studio 将为每个到 GridView 添加 BoundField`EmployeesDataTable`的�
 
 我将此作为练习为读取器。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 使用关系数据库时, 很常见的查询以提取其数据从多个相关表。 相关子查询和`JOIN`s 提供数据访问在查询中的相关表中的两个不同的技术。 在前面的教程，我们通常情况下进行使用的相关子查询，因为 TableAdapter 无法自动生成`INSERT`， `UPDATE`，和`DELETE`语句的查询涉及`JOIN`s。 尽管使用 TableAdapter 配置向导完成时，将覆盖任何自定义项的临时 SQL 语句时，可以手动提供这些值。
 
@@ -260,12 +260,12 @@ Visual Studio 将为每个到 GridView 添加 BoundField`EmployeesDataTable`的�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已希尔顿 Geisenow、 David Suru 和 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)
-[下一页](adding-additional-datatable-columns-cs.md)
+> [!div class="step-by-step"]
+> [上一页](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)
+> [下一页](adding-additional-datatable-columns-cs.md)

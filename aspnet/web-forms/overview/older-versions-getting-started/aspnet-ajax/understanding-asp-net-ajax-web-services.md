@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
-title: "了解 ASP.NET AJAX Web 服务 |Microsoft 文档"
+title: 了解 ASP.NET AJAX Web 服务 |Microsoft 文档
 author: scottcate
-description: "Web 服务是为分布式系统之间交换数据提供跨平台解决方案的.NET framework 的必要组成部分。 尽管 Web..."
+description: Web 服务是为分布式系统之间交换数据提供跨平台解决方案的.NET framework 的必要组成部分。 尽管 Web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
 msc.type: authoredcontent
-ms.openlocfilehash: 8eb3486c9b3f4ddb6a8bc2c1cdcac774a6852574
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b9f61f895fea1960ebd25780454b86d5c3ba1bb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-web-services"></a>了解 ASP.NET AJAX Web 服务
 ====================
@@ -51,7 +51,7 @@ ASP.NET AJAX UpdatePanel 控件提供一种简单到 AJAX 启用任何 ASP.NET �
 
 [!code-json[Main](understanding-asp-net-ajax-web-services/samples/sample2.json)]
 
-> *>[!NOTE]操作名称定义为 web 服务的 URL 的一部分; 此外，请求消息也不会始终提交通过 JSON。Web 服务可以利用 ScriptMethod 属性 UseHttpGet 参数设置为 true，这会导致参数通过传递查询字符串参数。*
+> *> [!NOTE] 操作名称被指到 web 服务; URL 的一部分此外，请求消息不会始终提交通过 JSON。Web 服务可以利用 ScriptMethod 属性 UseHttpGet 参数设置为 true，这会导致参数通过传递查询字符串参数。*
 
 
 **列出 3。Web 服务响应消息序列化为 JSON**
@@ -160,7 +160,7 @@ ResponseFormat 属性还可以与 XmlSerializeString 属性一起使用。 XmlSe
 
 [!code-html[Main](understanding-asp-net-ajax-web-services/samples/sample14.html)]
 
-> *>[!NOTE]如果你想要查看生成的实际 JavaScript 代理代码可以在 Internet Explorer 的地址框中键入所需的.NET Web 服务的 URL，还可以将并可通过 /js 追加到它的末尾。*
+> *> [!NOTE] 如果你想要查看生成的实际 JavaScript 代理代码可以在 Internet Explorer 的地址框中键入所需的.NET Web 服务的 URL，还可以将并可通过 /js 追加到它的末尾。*
 
 
 如果 JavaScript 代理的调试版本将在页中为嵌入的 web.config 中启用了调试显示下一步:
@@ -263,7 +263,7 @@ ScriptManager 在页中检测存在 Web 方法时它会生成对前面所述 Pag
 
 ## <a name="the-autocompleteextender-and-the-aspnet-ajax-toolkit"></a>AutoCompleteExtender 和 ASP.NET AJAX 工具包
 
-ASP.NET AJAX 工具包 (可从[http://ajax.asp.net](http://ajax.asp.net)) 提供了几个控件，可用来访问 Web 服务。 具体而言，此工具包中包含一个名为的有用控件`AutoCompleteExtender`，可以用来调用 Web 服务和而无需编写任何 JavaScript 代码在所有页中显示数据。
+ASP.NET AJAX 工具包 (可从[ http://ajax.asp.net ](http://ajax.asp.net)) 提供了几个控件，可用来访问 Web 服务。 具体而言，此工具包中包含一个名为的有用控件`AutoCompleteExtender`，可以用来调用 Web 服务和而无需编写任何 JavaScript 代码在所有页中显示数据。
 
 AutoCompleteExtender 控件可用来扩展现有功能的文本框中，帮助用户更轻松地找到它们正在寻找的数据。 在键入到文本框中时该控件可用于查询 Web 服务，并动态显示文本框下的结果。 图 4 显示使用 AutoCompleteExtender 控件以显示支持应用程序的客户 id 的示例。 当用户在文本框中键入不同的字符，将显示不同的项在下面它基于其输入。 然后，用户可以选择所需的客户 id。
 
@@ -309,6 +309,6 @@ Dan Wahlin （Microsoft 最有价值专家 ASP.NET 和 XML Web 服务） 是在�
 
 Scott 类别自 1997 年以来处理与 Microsoft Web 技术，并且是 myKB.com 总裁 ([www.myKB.com](http://www.myKB.com)) 其中他专注于编写 ASP.NET 基于侧重于知识库软件解决方案的应用程序。 可以通过在电子邮件联系 Scott [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com)或在其博客地址[ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[上一页](understanding-asp-net-ajax-localization.md)
-[下一页](understanding-asp-net-ajax-debugging-capabilities.md)
+> [!div class="step-by-step"]
+> [上一页](understanding-asp-net-ajax-localization.md)
+> [下一页](understanding-asp-net-ajax-debugging-capabilities.md)

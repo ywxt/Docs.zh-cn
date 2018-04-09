@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites
-title: "验证用户输入，在 ASP.NET Web 页 (Razor) 站点 |Microsoft 文档"
+title: 验证用户输入，在 ASP.NET Web 页 (Razor) 站点 |Microsoft 文档
 author: tfitzmac
-description: "此文章介绍了如何验证您获得用户的信息&mdash;也就是说，若要确保用户输入有效 HTML 中的信息在中窗体另存为..."
+description: 此文章介绍了如何验证您获得用户的信息&mdash;也就是说，若要确保用户输入有效 HTML 中的信息在中窗体另存为...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites
 msc.type: authoredcontent
-ms.openlocfilehash: 3bde2a4ea69577ebcbe3e9e89a7ee07e6ece8dd1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 34f703e6db70ac79c22f4a50d4cfd4e2326b4c74
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-user-input-in-aspnet-web-pages-razor-sites"></a>验证在 ASP.NET Web 页 (Razor) 站点中的用户输入
 ====================
@@ -83,15 +83,15 @@ ms.lasthandoff: 11/10/2017
     若要检查的必填字段，请使用`Validation.RequireField(field, [error message])`（为单个字段） 或`Validation.RequireFields(field1, field2, ...))`（有关字段的列表）。 对于其他类型的验证，使用`Validation.Add(field, ValidationType)`。 有关`ValidationType`，你可以使用这些选项：
 
     `Validator.DateTime ([error message])`  
-`Validator.Decimal([error message])`  
-`Validator.EqualsTo(otherField [, error message])`  
-`Validator.Float([error message])`  
-`Validator.Integer([error message])`  
-`Validator.Range(min, max [, error message])`  
-`Validator.RegEx(pattern [, error message])`  
-`Validator.Required([error message])`  
-`Validator.StringLength(length)`  
-`Validator.Url([error message])`
+   `Validator.Decimal([error message])`  
+   `Validator.EqualsTo(otherField [, error message])`  
+   `Validator.Float([error message])`  
+   `Validator.Integer([error message])`  
+   `Validator.Range(min, max [, error message])`  
+   `Validator.RegEx(pattern [, error message])`  
+   `Validator.Required([error message])`  
+   `Validator.StringLength(length)`  
+   `Validator.Url([error message])`
 3. 当提交页面时，检查是否通过检查已通过验证`Validation.IsValid`:
 
     [!code-csharp[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample1.cs)]
@@ -122,7 +122,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-html[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample3.html)]
 
- 两个库是内容交付网络 (CDN)，从加载的因此你不一定对您的计算机或服务器。 但是，你必须具有的本地副本*jquery.validate.unobtrusive.js*。 如果你不已正在使用 WebMatrix 模板 (如**入门站点**) 包含库中，创建基于一个网页站点**入门站点**。 然后将复制*.js*给当前站点的文件。
+   两个库是内容交付网络 (CDN)，从加载的因此你不一定对您的计算机或服务器。 但是，你必须具有的本地副本*jquery.validate.unobtrusive.js*。 如果你不已正在使用 WebMatrix 模板 (如**入门站点**) 包含库中，创建基于一个网页站点**入门站点**。 然后将复制*.js*给当前站点的文件。
 2. 标记，您要验证，每个元素中添加对的调用`Validation.For(field)`。 此方法会发出由客户端验证的属性。 (而不是发出实际的 JavaScript 代码时，该方法发出这样的属性`data-val-...`。 这些属性支持使用 jQuery 来执行工作的非介入式客户端验证）。
 
 以下页面演示如何将客户端验证功能添加到前面所示的示例。

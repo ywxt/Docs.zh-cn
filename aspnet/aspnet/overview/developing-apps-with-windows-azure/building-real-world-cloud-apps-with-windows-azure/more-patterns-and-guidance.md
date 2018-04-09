@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
-title: "详细模式和指南 （使用 Azure 构建真实世界云应用） |Microsoft 文档"
+title: 详细模式和指南 （使用 Azure 构建真实世界云应用） |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以..."
+description: 构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 7e97cfc3-d830-4002-8ff7-5790d1ff49e6
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: a388f2e0ca3e1f0ce24a6def2a2b91711a7bf5a7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5da5110afc50fa02fcfae551a18741821f18fcbb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>详细模式和指南 （使用 Azure 构建真实世界云应用）
 ====================
@@ -78,7 +78,7 @@ ms.lasthandoff: 01/24/2018
 最后，当你开始构建真实的应用程序和在 Azure 中运行它们，更快或更高版本可能需要从专家的协助。 你可以询问社区站点中的问题，如[Azure 论坛或 StackOverflow](https://azure.microsoft.com/support/forums/)，或您可以与 Microsoft 直接为 Azure 支持部门联系。 Microsoft 提供了多个级别的技术支持 Azure： 摘要和比较选项，请参阅[Azure 支持](https://azure.microsoft.com/support/plans/)。
 
 <a id="acknowledgments"></a>
-## <a name="acknowledgments"></a>确认
+## <a name="acknowledgments"></a>致谢
 
 此内容已写入 Tom Dykstra、 Rick Anderson 和 Mike Wasson。 大部分的原始内容来自[Scott Guthrie](https://weblogs.asp.net/scottgu/)，和他反过来吸引了基于内容来自 Mark Simms 和 Microsoft 客户咨询团队 (CAT)。
 
@@ -132,6 +132,6 @@ DGAC 其他成员查看，并初步轮廓上注释：
 - Roger Whitehead
 - Pawel Wilkosz
 
->[!div class="step-by-step"]
-[上一页](queue-centric-work-pattern.md)
-[下一页](the-fix-it-sample-application.md)
+> [!div class="step-by-step"]
+> [上一页](queue-centric-work-pattern.md)
+> [下一页](the-fix-it-sample-application.md)

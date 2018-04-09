@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
-title: "从部署中排除文件和文件夹 |Microsoft 文档"
+title: 从部署中排除文件和文件夹 |Microsoft 文档
 author: jrjlee
-description: "本主题介绍如何时，你可以排除文件和文件夹从 web 部署包生成并打包 web 应用程序项目。"
+description: 本主题介绍如何时，你可以排除文件和文件夹从 web 部署包生成并打包 web 应用程序项目。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 80810415bac473a58f60110fb9d08772e0627bd5
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c435448bf057bbef9127d66ffda24a07729f2322
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="excluding-files-and-folders-from-deployment"></a>从部署中排除文件和文件夹
 ====================
@@ -27,9 +27,9 @@ ms.lasthandoff: 03/15/2018
 > 本主题介绍如何时，你可以排除文件和文件夹从 web 部署包生成并打包 web 应用程序项目。
 
 
-本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案 （&） #x 2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 的 web 应用程序Communication Foundation (WCF) 服务和数据库项目。
+本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案&#x2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
-这些教程的核心的部署方法取决于中介绍的拆分项目文件方法[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，在其中生成过程控制由两个项目文件 （&） #x 2014; 一个包含生成适用于每种目标环境和一个包含特定于环境的生成和部署设置的说明。 在生成期间，特定于环境的项目文件合并到环境无关的项目文件中以形成一组完整的生成说明。
+这些教程的核心的部署方法取决于中介绍的拆分项目文件方法[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，两个项目文件中的生成过程控制通过&#x2014;另一个包含生成适用于每种目标环境和一个包含特定于环境的生成和部署设置的说明。 在生成期间，特定于环境的项目文件合并到环境无关的项目文件中以形成一组完整的生成说明。
 
 ## <a name="overview"></a>概述
 
@@ -74,7 +74,7 @@ ms.lasthandoff: 03/15/2018
 1. 创建一个名为的自定义项目文件*[项目名称].wpp.targets*项目文件所在的文件夹中。
 
     > [!NOTE]
-    > *。 Wpp.targets*文件需要在与你的 web 应用程序项目文件 （&） #x 2014; 位于同一文件夹中转等*ContactManager.Mvc.csproj*（& a) 与任何 #x 2014; 而不是在同一个文件夹管理生成和部署过程使用自定义项目文件。
+    > *。 Wpp.targets*文件需要在你的 web 应用程序项目文件所在的文件夹中转&#x2014;例如*ContactManager.Mvc.csproj*&#x2014;而不是任何自定义所在的文件夹中你使用来控制生成和部署过程的项目文件。
 2. 在*。 wpp.targets*文件中，添加**ItemGroup**元素。
 3. 在**ItemGroup**元素中，添加**ExcludeFromPackageFolders**和**ExcludeFromPackageFiles**要排除特定文件和文件夹所需项。
 
@@ -95,7 +95,7 @@ ms.lasthandoff: 03/15/2018
 1. 在 Visual Studio 2010 中打开你的解决方案。
 2. 在**解决方案资源管理器**窗口中，右键单击你的 web 应用程序项目节点 (例如， **ContactManager.Mvc**)，指向**添加**，然后单击**新项**。
 3. 在**添加新项**对话框中，选择**XML 文件**模板。
-4. 在**名称**框中，键入*[项目名称] * * *.wpp.targets** (例如， **ContactManager.Mvc.wpp.targets**)，然后单击**添加**.
+4. 在 **名称** 框中，键入 *[项目名称]***.wpp.targets** (例如， **ContactManager.Mvc.wpp.targets**)，然后单击 **添加**.
 
     ![](excluding-files-and-folders-from-deployment/_static/image3.png)
 
@@ -106,16 +106,16 @@ ms.lasthandoff: 03/15/2018
     [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample2.xml)]
 6. 如果你想要从 web 包中排除文件夹，将添加**ExcludeFromPackageFolders**元素**ItemGroup**元素：
 
-    1. 在**包括**特性，提供你想要排除的文件夹中的分号分隔的列表。
-    2. 在**FromTarget**元数据元素提供一个有意义的值以指示原因文件夹中排除，如名*。 wpp.targets*文件。
+   1. 在**包括**特性，提供你想要排除的文件夹中的分号分隔的列表。
+   2. 在**FromTarget**元数据元素提供一个有意义的值以指示原因文件夹中排除，如名*。 wpp.targets*文件。
 
-    [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample3.xml)]
+      [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample3.xml)]
 7. 如果你想要从 web 包中排除文件，添加**ExcludeFromPackageFiles**元素**ItemGroup**元素：
 
-    1. 在**包括**特性，提供你想要排除的文件之间用分号分隔列表。
-    2. 在**FromTarget**元数据元素提供一个有意义的值以指示原因文件中排除，如名*。 wpp.targets*文件。
+   1. 在**包括**特性，提供你想要排除的文件之间用分号分隔列表。
+   2. 在**FromTarget**元数据元素提供一个有意义的值以指示原因文件中排除，如名*。 wpp.targets*文件。
 
-    [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample4.xml)]
+      [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample4.xml)]
 8. *[项目名称].wpp.targets*文件现在应类似如下：
 
     [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample5.xml)]
@@ -131,6 +131,6 @@ ms.lasthandoff: 03/15/2018
 
 使用自定义 Microsoft Build Engine (MSBuild) 项目文件来控制部署过程的详细信息，请参阅[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)和[了解该生成过程](../web-deployment-in-the-enterprise/understanding-the-build-process.md)。 打包和部署过程的详细信息，请参阅[生成和打包 Web 应用程序项目](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md)， [Web 包部署的配置参数](../web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment.md)，和[部署 Web 包](../web-deployment-in-the-enterprise/deploying-web-packages.md)。
 
->[!div class="step-by-step"]
-[上一页](deploying-membership-databases-to-enterprise-environments.md)
-[下一页](taking-web-applications-offline-with-web-deploy.md)
+> [!div class="step-by-step"]
+> [上一页](deploying-membership-databases-to-enterprise-environments.md)
+> [下一页](taking-web-applications-offline-with-web-deploy.md)

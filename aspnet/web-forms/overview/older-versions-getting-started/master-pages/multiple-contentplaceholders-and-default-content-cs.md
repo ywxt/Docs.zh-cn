@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/multiple-contentplaceholders-and-default-content-cs
-title: "多个 ContentPlaceHolders 和默认内容 (C#) |Microsoft 文档"
+title: 多个 ContentPlaceHolders 和默认内容 (C#) |Microsoft 文档
 author: rick-anderson
-description: "检查如何将多个内容占位符添加到母版页，以及如何在内容的占位符中指定默认内容。"
+description: 检查如何将多个内容占位符添加到母版页，以及如何在内容的占位符中指定默认内容。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/21/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/multiple-contentplaceholders-and-default-content-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 24bfb85b09b8bd5a60e51f57db79544bea7af22b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b60017c21b4cf45081893af08e68186009475fd2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="multiple-contentplaceholders-and-default-content-c"></a>多个 ContentPlaceHolders 和默认内容 (C#)
 ====================
@@ -169,7 +169,7 @@ ASP.NET 不需要所有内容页为在母版页中定义的每个 ContentPlaceHo
 **图 08**: 默认内容`LeftColumnContent`和`QuickLoginUI`显示 ContentPlaceHolders ([单击以查看实际尺寸的图像](multiple-contentplaceholders-and-default-content-cs/_static/image24.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 ASP.NET 母版页模型允许在母版页中任意数量的 ContentPlaceHolders。 更多的是什么，ContentPlaceHolders 包括默认的内容，它将发出在情况下，没有对应的内容在内容页中的控件。 在本教程中我们已了解如何在母版页中包括其他 ContentPlaceHolder 控件以及如何为新的和现有的 ASP.NET 页中的这些新 ContentPlaceHolders 定义内容控件。 我们还了解了指定默认值 ContentPlaceHolder 中的内容即其中只有极少的页需要自定义否则标准化在某些区域内的内容的方案中十分有用。
 
@@ -179,12 +179,12 @@ ASP.NET 母版页模型允许在母版页中任意数量的 ContentPlaceHolders�
 
 ### <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Suchi Banerjee。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
 
->[!div class="step-by-step"]
-[上一页](creating-a-site-wide-layout-using-master-pages-cs.md)
-[下一页](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)
+> [!div class="step-by-step"]
+> [上一页](creating-a-site-wide-layout-using-master-pages-cs.md)
+> [下一页](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)

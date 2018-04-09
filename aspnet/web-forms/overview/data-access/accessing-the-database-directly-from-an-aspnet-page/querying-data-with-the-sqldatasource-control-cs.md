@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-cs
-title: "查询与 SqlDataSource 控件 (C#) 的数据 |Microsoft 文档"
+title: 查询与 SqlDataSource 控件 (C#) 的数据 |Microsoft 文档
 author: rick-anderson
-description: "前面的教程中我们用于 ObjectDataSource 控件完全分隔的表示层从数据访问层。 与此老师正在启动..."
+description: 前面的教程中我们用于 ObjectDataSource 控件完全分隔的表示层从数据访问层。 与此老师正在启动...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4652e5820e621a7b2ad3b03bb5a1d2cb4968fadd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3d6f681169267ad5c65486c1d1fac0a9396535d1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="querying-data-with-the-sqldatasource-control-c"></a>查询数据与 SqlDataSource 控件 (C#)
 ====================
@@ -201,7 +201,7 @@ SqlDataSource 可以将配置为通过更改返回而不是数据集 DataReader 
 
 ![创建一个名为 ProductsWithCategoryInfoDataSource 的新 SqlDataSource 控件](querying-data-with-the-sqldatasource-control-cs/_static/image18.gif)
 
-**图 12**： 创建一个名为的新 SqlDataSource 控件`ProductsWithCategoryInfoDataSource`
+**图 12**： 创建一个名为的新 SqlDataSource 控件 `ProductsWithCategoryInfoDataSource`
 
 
 下一个屏幕要求我们以指定的数据库。 正如我们做回图 7 中，选择`NORTHWINDConnectionString`从下拉列表，然后单击下一步。 在配置 Select 语句屏幕中，选择指定一个自定义 SQL 语句或存储的过程单选按钮，然后单击下一步。 此时会弹出定义自定义语句或存储过程屏幕，其中提供标记为选择、 更新、 插入和删除的选项卡。 在每个选项卡可以在文本框中输入的自定义的 SQL 语句，或从下拉列表中选择存储的过程。 在本教程中我们将考察输入自定义的 SQL 语句;下一教程包括的示例，使用存储的过程。
@@ -236,7 +236,7 @@ SqlDataSource 可以将配置为通过更改返回而不是数据集 DataReader 
 **图 15**: GridView 显示每个产品的 ID、 名称和关联的类别名称 ([单击以查看实际尺寸的图像](querying-data-with-the-sqldatasource-control-cs/_static/image23.gif))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中我们已了解如何查询并显示使用 SqlDataSource 控件的数据。 如 ObjectDataSource，SqlDataSource 用作代理，提供一种用于访问数据的声明性方式。 其属性指定要连接到的数据库和 SQL`SELECT`查询执行; 通过属性窗口或通过使用配置数据源向导可以指定它们。
 
@@ -256,11 +256,11 @@ SqlDataSource 可以将配置为通过更改返回而不是数据集 DataReader 
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Susan Connery、 伯纳黛特 Leigh 和 David Suru。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[下一篇](using-parameterized-queries-with-the-sqldatasource-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](using-parameterized-queries-with-the-sqldatasource-cs.md)

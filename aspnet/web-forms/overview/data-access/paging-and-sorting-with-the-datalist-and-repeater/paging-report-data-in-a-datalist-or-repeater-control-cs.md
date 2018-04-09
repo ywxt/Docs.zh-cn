@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-cs
-title: "分页 DataList 或转发器控件 (C#) 中的报表数据 |Microsoft 文档"
+title: 分页 DataList 或转发器控件 (C#) 中的报表数据 |Microsoft 文档
 author: rick-anderson
-description: "在 DataList 和转发器都不提供自动分页或排序支持时，本教程演示如何将分页支持添加到 DataList 或转发器..."
+description: 在 DataList 和转发器都不提供自动分页或排序支持时，本教程演示如何将分页支持添加到 DataList 或转发器...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4952adff752ec834b8be5f190181be98a034ccfd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 43b1370e1411858cef02bca534d082a3c105e51e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="paging-report-data-in-a-datalist-or-repeater-control-c"></a>DataList 或转发器控件 (C#) 中的分页报表数据
 ====================
@@ -100,10 +100,10 @@ ms.lasthandoff: 01/24/2018
 
 将方法添加到`ProductsBLL`类名为`GetProductsAsPagedDataSource`采用在两个整数的输入参数：
 
-- `pageIndex`若要显示，页的索引索引为零，并
-- `pageSize`要显示每页的记录数。
+- `pageIndex` 若要显示，页的索引索引为零，并
+- `pageSize` 要显示每页的记录数。
 
-`GetProductsAsPagedDataSource`通过检索启动*所有*的从记录`GetProducts()`。 然后，它创建`PagedDataSource`对象，并设置其`CurrentPageIndex`和`PageSize`属性的值传入的`pageIndex`和`pageSize`参数。 该方法最后返回此进行配置`PagedDataSource`:
+`GetProductsAsPagedDataSource` 通过检索启动*所有*的从记录`GetProducts()`。 然后，它创建`PagedDataSource`对象，并设置其`CurrentPageIndex`和`PageSize`属性的值传入的`pageIndex`和`pageSize`参数。 该方法最后返回此进行配置`PagedDataSource`:
 
 
 [!code-csharp[Main](paging-report-data-in-a-datalist-or-repeater-control-cs/samples/sample2.cs)]
@@ -263,7 +263,7 @@ DataList 和转发器中，为我们负责决定在分页接口和实现它。 �
 
 我们将探讨在下一教程中更详细地实现自定义分页。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 DataList 和转发器都不提供外框分页支持位于 GridView，说明如何，和 FormView 控制，可以使用最小的工作量添加这样的功能。 实现默认分页的最简单方法是将中的产品的整个集`PagedDataSource`，然后将绑定`PagedDataSource`到 DataList 或转发器。 在本教程，我们添加`GetProductsAsPagedDataSource`方法`ProductsBLL`类返回`PagedDataSource`。 `ProductsBLL`类已包含所需的自定义分页方法`GetProductsPaged`和`TotalNumberOfProducts`。
 
@@ -275,11 +275,11 @@ DataList 和转发器都不提供外框分页支持位于 GridView，说明如�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已沈 Shulok、 Ken Pespisa 和伯纳黛特 Leigh。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[下一篇](sorting-data-in-a-datalist-or-repeater-control-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](sorting-data-in-a-datalist-or-repeater-control-cs.md)

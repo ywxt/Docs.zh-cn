@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
-title: "将验证添加到模型 |Microsoft 文档"
+title: 将验证添加到模型 |Microsoft 文档
 author: Rick-Anderson
-description: "注意： 本教程的更新的版本此处提供了使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全，请按照和演示要简单得多..."
+description: 注意： 本教程的更新的版本此处提供了使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全，请按照和演示要简单得多...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/28/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 6de7d279677c7bbf220b956767a97aaaff8da9a1
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 39d1d9d4cb8b11f7ce5a3a85c51f652115d79db7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-validation-to-the-model"></a>添加到模型的验证
 ====================
@@ -81,7 +81,7 @@ ASP.NET MVC 的核心设计原则之一是模拟 (&quot;不重复自己&quot;)�
 ![8_validationErrors](adding-validation-to-the-model/_static/image1.png)
 
 > [!NOTE]
-> 若要为使用逗号的非英语区域设置支持 jQuery 验证 (&quot;，&quot;) 必须包含一个小数点， *globalize.js*和您的特定*cultures/globalize.cultures.js*文件 (从[https://github.com/jquery/globalize](https://github.com/jquery/globalize) ) 和 JavaScript 使用`Globalize.parseFloat`。 下面的代码演示要处理的 Views\Movies\Edit.cshtml 文件修改&quot;FR-FR&quot;区域性：
+> 若要为使用逗号的非英语区域设置支持 jQuery 验证 (&quot;，&quot;) 必须包含一个小数点， *globalize.js*和您的特定*cultures/globalize.cultures.js*文件 (从[ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 和 JavaScript 使用`Globalize.parseFloat`。 下面的代码演示要处理的 Views\Movies\Edit.cshtml 文件修改&quot;FR-FR&quot;区域性：
 
 
 [!code-cshtml[Main](adding-validation-to-the-model/samples/sample6.cshtml)]
@@ -165,6 +165,6 @@ ASP.NET MVC 的核心设计原则之一是模拟 (&quot;不重复自己&quot;)�
 
 在本系列的下一部分中，我们将回顾应用程序，并对自动生成的 `Details` 和 `Delete` 方法进行一些改进。
 
->[!div class="step-by-step"]
-[上一页](adding-a-new-field-to-the-movie-model-and-table.md)
-[下一页](examining-the-details-and-delete-methods.md)
+> [!div class="step-by-step"]
+> [上一页](adding-a-new-field-to-the-movie-model-and-table.md)
+> [下一页](examining-the-details-and-delete-methods.md)

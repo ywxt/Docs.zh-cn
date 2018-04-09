@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/customizing-the-datalist-s-editing-interface-cs
-title: "自定义 DataList 的编辑接口 (C#) |Microsoft 文档"
+title: 自定义 DataList 的编辑接口 (C#) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将创建更丰富的编辑界面 DataList，一个包括 DropDownLists 和一个复选框。"
+description: 在本教程中我们将创建更丰富的编辑界面 DataList，一个包括 DropDownLists 和一个复选框。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/30/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/customizing-the-datalist-s-editing-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ffd649bc5a1af4d211c8b331004cb39c7a591d7a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ad603b7cb80d2266e84d4a521a1748a1e09a5bed
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="customizing-the-datalists-editing-interface-c"></a>自定义 DataList 的编辑界面 (C#)
 ====================
@@ -182,7 +182,7 @@ Northwind 数据库允许`NULL`值`Products`表 s`CategoryID`和`SupplierID`列�
 
 进行此更改后，值为`Nothing`将传递给`UpdateProduct`BLL 方法如果用户选择 （无） 选项从下拉列表中，对应于`NULL`数据库值。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中我们已了解如何创建包含三个不同的输入的 Web 控件，文本框中，两个 DropDownLists 和一个复选框，以及验证控件的更复杂 DataList 编辑界面。 在生成时编辑界面，步骤是相同的而不考虑所使用的 Web 控件： 首先，通过 Web 控件添加到 DataList 的`EditItemTemplate`; 使用数据绑定语法分配相应的数据字段值与相应的 Web控件属性;然后在`UpdateCommand`事件处理程序，以编程方式访问的 Web 控件和其相应的属性，将其值传递到 BLL。
 
@@ -192,12 +192,12 @@ Northwind 数据库允许`NULL`值`Products`表 s`CategoryID`和`SupplierID`列�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Dennis Patterson、 David Suru 和徐 Schmidt。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](adding-validation-controls-to-the-datalist-s-editing-interface-cs.md)
-[下一页](an-overview-of-editing-and-deleting-data-in-the-datalist-vb.md)
+> [!div class="step-by-step"]
+> [上一页](adding-validation-controls-to-the-datalist-s-editing-interface-cs.md)
+> [下一页](an-overview-of-editing-and-deleting-data-in-the-datalist-vb.md)

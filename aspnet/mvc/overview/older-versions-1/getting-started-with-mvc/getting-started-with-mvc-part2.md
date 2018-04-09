@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
-title: "添加控制器 |Microsoft 文档"
+title: 添加控制器 |Microsoft 文档
 author: shanselman
-description: "如果本教程可在此处使用 Visual Studio 2013 更新的版本。 新的教程使用 ASP.NET MVC 5，基础上 t 提供了许多改进..."
+description: 如果本教程可在此处使用 Visual Studio 2013 更新的版本。 新的教程使用 ASP.NET MVC 5，基础上 t 提供了许多改进...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
 msc.type: authoredcontent
-ms.openlocfilehash: 93a362cf83d39b29fcba3f2dee0c28257805a89e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c6ecd1ffdd53a629d0079d57b85c7f6db2f316ce
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-controller"></a>添加控制器
 ====================
@@ -57,7 +57,7 @@ MVC 代表模型、 视图、 控制器。 MVC 是模式，用于开发应用程
 
 ASP.NET MVC 调用不同的控制器类 （和其中的不同操作方法），具体取决于传入的 URL。 使用 ASP.NET MVC 的默认映射逻辑使用如下格式来控制运行哪些代码：
 
-/ [控制器] / [ActionName] / [参数]
+/[Controller]/[ActionName]/[Parameters]
 
 URL 的第一部分确定要执行的控制器类。 因此 /HelloWorld 将映射到 HelloWorldController 类。 URL 的第二部分确定要执行的类上的操作方法。 因此 /HelloWorld/Index 可能会导致要执行的 HelloWorldcontroller 类的 index （） 方法。 请注意，我们仅必须访问 /HelloWorld 上述和索引已隐式的方法。 这是因为名为"Index"的方法是如果有一个未显式指定调用在控制器的默认方法。
 
@@ -77,6 +77,6 @@ URL 的第一部分确定要执行的控制器类。 因此 /HelloWorld 将映�
 
 在这些示例中这两个控制器已被执行所有工作，并具有已直接返回 HTML。 通常，我们不希望我们控制器直接-返回 HTML，因为将非常难以代码结束。 而是我们通常将使用单独的视图模板文件来帮助生成 HTML 响应。 让我们看一下如何我们可以执行此操作。 关闭你的浏览器并返回到 IDE。
 
->[!div class="step-by-step"]
-[上一页](getting-started-with-mvc-part1.md)
-[下一页](getting-started-with-mvc-part3.md)
+> [!div class="step-by-step"]
+> [上一页](getting-started-with-mvc-part1.md)
+> [下一页](getting-started-with-mvc-part3.md)

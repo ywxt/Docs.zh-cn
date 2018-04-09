@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-cs
-title: "控制在内容页 (C#) 中的 ID 命名 |Microsoft 文档"
+title: 控制在内容页 (C#) 中的 ID 命名 |Microsoft 文档
 author: rick-anderson
-description: "说明了如何 ContentPlaceHolder 控件充当命名容器并因此以编程方式使用控件 （通过 FindConrol) 困难..."
+description: 说明了如何 ContentPlaceHolder 控件充当命名容器并因此以编程方式使用控件 （通过 FindConrol) 困难...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0c0db7fd76a7a486ff45085329ef7c77b0af5ebe
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1e834c38457c8477e0c81598d32f1e98473949d7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="control-id-naming-in-content-pages-c"></a>在内容页 (C#) 中命名的控件 ID
 ====================
@@ -121,7 +121,7 @@ Visual Studio 自动为每个母版页的四个 ContentPlaceHolders 创建内容
 
 每个 ASP.NET 服务器控件包含`FindControl("controlID")`搜索名为的控件的控件的后代方法*controlID*。 如果找到这样的控件，则返回;如果不找到任何匹配的控件，则`FindControl`返回`null`。
 
-`FindControl`在其中你需要访问的控件，但不会获得对它的直接引用的方案很有用。 使用 Web 控件，例如 GridView，例如，数据时在 GridView 的字段控件中定义了一次的声明性语法，但是在运行时控件的实例创建的每个 GridView 行。 因此，在运行时生成的控件存在，但我们不提供可从代码隐藏类的直接引用。 因此我们需要使用`FindControl`以编程方式使用特定控件在 GridView 的字段。 (有关详细信息使用`FindControl`若要访问的数据 Web 控件模板中的控件，请参阅[自定义格式设置基于时数据](../../data-access/custom-formatting/custom-formatting-based-upon-data-cs.md)。)这同一情况下发生时动态地将 Web 控件添加到 Web 窗体，则主题所述[创建动态数据条目的用户界面](https://msdn.microsoft.com/library/aa479330.aspx)。
+`FindControl` 在其中你需要访问的控件，但不会获得对它的直接引用的方案很有用。 使用 Web 控件，例如 GridView，例如，数据时在 GridView 的字段控件中定义了一次的声明性语法，但是在运行时控件的实例创建的每个 GridView 行。 因此，在运行时生成的控件存在，但我们不提供可从代码隐藏类的直接引用。 因此我们需要使用`FindControl`以编程方式使用特定控件在 GridView 的字段。 (有关详细信息使用`FindControl`若要访问的数据 Web 控件模板中的控件，请参阅[自定义格式设置基于时数据](../../data-access/custom-formatting/custom-formatting-based-upon-data-cs.md)。)这同一情况下发生时动态地将 Web 控件添加到 Web 窗体，则主题所述[创建动态数据条目的用户界面](https://msdn.microsoft.com/library/aa479330.aspx)。
 
 若要演示如何使用`FindControl`方法搜索控件在内容页中，创建的事件处理程序`SubmitButton`的`Click`事件。 事件处理程序中，添加以下代码，即在以编程方式引用`Age`文本框中和`Results`标签使用`FindControl`方法，然后显示一条消息采用`Results`根据用户的输入。
 
@@ -244,7 +244,7 @@ Visual Studio 自动为每个母版页的四个 ContentPlaceHolders 创建内容
 > 此 JavaScript 示例只是演示如何添加正确引用呈现服务器控件的 HTML 元素的 JavaScript 函数。 若要使用此函数将需要创作其他 JavaScript 加载文档时或在某些特定用户执行任何操作调查时调用该函数。 有关这些详细信息和相关的主题，阅读[使用客户端脚本](https://msdn.microsoft.com/library/aa479302.aspx)。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 某些 ASP.NET 服务器控件充当命名容器，这会影响呈现`id`属性及其子代控件值以及通过 canvassed 的控件的作用域`FindControl`方法。 关于主页面，即母版页本身和其 ContentPlaceHolder 控件命名容器。 因此，我们需要将放规定多做一些工作以编程方式引用内内容页使用的控件`FindControl`。 在本教程中，我们探讨了两种方法： 钻入 ContentPlaceHolder 控制和调用其`FindControl`方法; 和滚动我们自己`FindControl`实现该以递归方式搜索通过所有的命名容器。
 
@@ -256,7 +256,7 @@ Visual Studio 自动为每个母版页的四个 ContentPlaceHolders 创建内容
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [ASP.NET 母版页和`FindControl`](http://www.west-wind.com/WebLog/posts/5127.aspx)
+- [ASP.NET 母版页和 `FindControl`](http://www.west-wind.com/WebLog/posts/5127.aspx)
 - [创建动态数据条目的用户界面](https://msdn.microsoft.com/library/aa479330.aspx)
 - [扩展的扩展方法的基类型功能](http://aspnet.4guysfromrolla.com/articles/120507-1.aspx)
 - [如何： 引用 ASP.NET 母版页页内容](https://msdn.microsoft.com/library/xxwa0ff0.aspx)
@@ -265,12 +265,12 @@ Visual Studio 自动为每个母版页的四个 ContentPlaceHolders 创建内容
 
 ### <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Zack Jones 和 Suchi Barnerjee。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
 
->[!div class="step-by-step"]
-[上一页](urls-in-master-pages-cs.md)
-[下一页](interacting-with-the-master-page-from-the-content-page-cs.md)
+> [!div class="step-by-step"]
+> [上一页](urls-in-master-pages-cs.md)
+> [下一页](interacting-with-the-master-page-from-the-content-page-cs.md)

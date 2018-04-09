@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4
-title: "使用 ASP.NET MVC-第 4 部分中使用 HTML5 和 jQuery UI Datepicker 弹出日历 |Microsoft 文档"
+title: 使用 ASP.NET MVC-第 4 部分中使用 HTML5 和 jQuery UI Datepicker 弹出日历 |Microsoft 文档
 author: Rick-Anderson
-description: "本教程将教您如何使用编辑器模板、 显示模板和 jQuery UI datepicker 弹出日历，ASP.NET MV 中的基础知识..."
+description: 本教程将教您如何使用编辑器模板、 显示模板和 jQuery UI datepicker 弹出日历，ASP.NET MV 中的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/29/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 32211465adeb1353908daa1014d188b84389e1a7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c6df727107b0a045341badefbf99eec773cd4eff
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a>使用 ASP.NET MVC-第 4 部分中使用 HTML5 和 jQuery UI Datepicker 弹出日历
 ====================
@@ -47,7 +47,7 @@ ms.lasthandoff: 01/24/2018
 
 选择**创建为分部视图**复选框。 请确保**使用的布局或 master 页面**和**创建强类型化视图**不选中的复选框。
 
-单击 **“添加”**。 *Views\Shared\EditorTemplates\Date.cshtml*创建模板。
+单击 **添加**。 *Views\Shared\EditorTemplates\Date.cshtml*创建模板。
 
 以下代码添加到*Views\Shared\EditorTemplates\Date.cshtml*模板。
 
@@ -178,5 +178,5 @@ NuGet 将这些调试版本和缩减的版本的 jQuery UI 核心和 jQuery UI �
 - 有关如何本地化 datepicker 控件的信息，请参阅[UI/Datepicker/本地化](http://docs.jquery.com/UI/Datepicker/Localization)。
 - 有关 ASP.NET MVC 模板的详细信息，请参阅 Brad wilson 制作的博客连载文章上[ASP.NET MVC 2 模板](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html)。 序列为 ASP.NET MVC 2 编写的虽然材料将仍适用于当前版本的 ASP.NET MVC。
 
->[!div class="step-by-step"]
-[上一篇](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)
+> [!div class="step-by-step"]
+> [上一篇](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)

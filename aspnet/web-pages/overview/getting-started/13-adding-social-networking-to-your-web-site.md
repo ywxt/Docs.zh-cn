@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/13-adding-social-networking-to-your-web-site
-title: "将社交网络添加到 ASP.NET Web 页 (Razor) 站点 |Microsoft 文档"
+title: 将社交网络添加到 ASP.NET Web 页 (Razor) 站点 |Microsoft 文档
 author: tfitzmac
-description: "本章介绍如何将您的网站与社交网络服务集成。 在本章中，你将了解如何允许用户书签/链接你的网站..."
+description: 本章介绍如何将您的网站与社交网络服务集成。 在本章中，你将了解如何允许用户书签/链接你的网站...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/21/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/13-adding-social-networking-to-your-web-site
 msc.type: authoredcontent
-ms.openlocfilehash: 2c43fa7d286e43f3a4581662ce421c7435e1871f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2d1f0074edf473c4be06adaa32598dd828a7552c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-social-networking-to-aspnet-web-pages-razor-sites"></a>添加社交网络到 ASP.NET 网页 (Razor) 站点
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
 > 
 > 
-> - ASP.NET 网页 (Razor) 2
+> - ASP.NET Web Pages (Razor) 2
 > - ASP.NET Web 帮助程序库 （NuGet 包）
 >   
 > 
@@ -57,10 +57,10 @@ ms.lasthandoff: 11/10/2017
     [!code-cshtml[Main](13-adding-social-networking-to-your-web-site/samples/sample1.cshtml)]
 
     在此示例中，当`LinkShare`帮助程序运行，页面标题将作为一个参数，它又将传递到社交网络站点的页标题。 但是，你无法传递所需的任何字符串。 此示例还指定在列表中包括哪些社交网络站点。 你可以指定与您的网站相关的社交网络站点。
-- 运行*ListLinkShare.cshtml*在浏览器中的页。 (请确保页中选择**文件**工作区之前运行它。)
-- 单击其中一个要注册的站点的字形。 链接将你带到页上所选的社交网络站点在你可以共享的链接。 例如，如果你单击 Reddit 链接，你将会转到`submit to reddit`Reddit 网站上的页面。
+2. 运行*ListLinkShare.cshtml*在浏览器中的页。 (请确保页中选择**文件**工作区之前运行它。)
+3. 单击其中一个要注册的站点的字形。 链接将你带到页上所选的社交网络站点在你可以共享的链接。 例如，如果你单击 Reddit 链接，你将会转到`submit to reddit`Reddit 网站上的页面。
 
-    ![图 2](13-adding-social-networking-to-your-web-site/_static/image2.jpg)
+     ![图 2](13-adding-social-networking-to-your-web-site/_static/image2.jpg)
 
 <a id="Adding_a_Twitter_Feed"></a>
 ## <a name="adding-a-twitter-feed"></a>添加 Twitter 源
@@ -81,7 +81,7 @@ ms.lasthandoff: 11/10/2017
 <a id="Rendering_a_Gravatar_Image"></a>
 ## <a name="rendering-a-gravatar-image"></a>呈现 Gravatar 映像
 
-A *Gravatar* (&quot;全局识别虚拟形象&quot;) 的映像，可在多个网站上作为用户标识和 #8212; 也就是说，表示你的映像。 例如，Gravatar 可以识别的人员在论坛帖子，在博客注释中，依次类推。 (你可以注册在 Gravatar 网站在自己 Gravatar [http://www.gravatar.com/](http://www.gravatar.com/)。)如果你想要显示在网站上的人的名称或电子邮件地址旁边的图像，你可以使用 Gravatar 帮助器。
+A *Gravatar* (&quot;全局识别虚拟形象&quot;) 是可在多个网站作为用户标识的映像&#8212;，即表示你的映像。 例如，Gravatar 可以识别的人员在论坛帖子，在博客注释中，依次类推。 (你可以注册在 Gravatar 网站在自己 Gravatar [ http://www.gravatar.com/ ](http://www.gravatar.com/)。)如果你想要显示在网站上的人的名称或电子邮件地址旁边的图像，你可以使用 Gravatar 帮助器。
 
 在此示例中，你正在使用表示自己单个 Gravatar。 使用 Gravatar 另一种是允许用户指定其 Gravatar 地址时它们在你的站点上注册。 (你可以了解如何使用户可以注册在[添加安全和 ASP.NET Web Pages 站点的成员资格](https://go.microsoft.com/fwlink/?LinkId=202904)。)每当显示为该用户的信息，你可以只需添加 Gravatar 到其中显示用户的名称。
 

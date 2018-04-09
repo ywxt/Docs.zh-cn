@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/how-do-i-work-with-model-binders-in-an-mvc-application
-title: "我如何： 使用 MVC 应用程序中的模型联编程序？ | Microsoft Docs"
+title: 我如何： 使用 MVC 应用程序中的模型联编程序？ | Microsoft Docs
 author: rick-anderson
-description: "在此视频 Chris Pels 演示如何使用模型联编程序来将窗体数据绑定到 MVC 应用程序中的模型中的复杂的业务对象。 首先，MVC applicat..."
+description: 在此视频 Chris Pels 演示如何使用模型联编程序来将窗体数据绑定到 MVC 应用程序中的模型中的复杂的业务对象。 首先，MVC applicat...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/30/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-work-with-model-binders-in-an-mvc-application
 msc.type: video
-ms.openlocfilehash: 202be16e417c4e6797a7e816d3ae2ab5a23efa4e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6cb859126386cfabbd8b4c4e432215438d1ab640
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-work-with-model-binders-in-an-mvc-application"></a>我如何： 使用 MVC 应用程序中的模型联编程序？
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （17 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-work-with-model-binders-in-an-mvc-application)
 
->[!div class="step-by-step"]
-[上一页](how-do-i-create-a-custom-html-helper-for-an-mvc-application.md)
-[下一页](how-do-i-use-httpverbs-attributes-in-an-mvc-application.md)
+> [!div class="step-by-step"]
+> [上一页](how-do-i-create-a-custom-html-helper-for-an-mvc-application.md)
+> [下一页](how-do-i-use-httpverbs-attributes-in-an-mvc-application.md)

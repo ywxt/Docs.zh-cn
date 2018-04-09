@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb
-title: "在母版页 (VB) 中指定的标题、 Meta 标记和其他 HTML 标头 |Microsoft 文档"
+title: 在母版页 (VB) 中指定的标题、 Meta 标记和其他 HTML 标头 |Microsoft 文档
 author: rick-anderson
-description: "查找在不同的技术来定义已分类&lt;头&gt;主页面，从内容页中的元素。"
+description: 查找在不同的技术来定义已分类&lt;头&gt;主页面，从内容页中的元素。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/21/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6d004a0ee0b46e2984aec8d0a99835dbf414ed9d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b8bf9d32eee3e35ffc84521f7f82f7beecc99a0c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb"></a>在母版页 (VB) 中指定的标题、 Meta 标记和其他 HTML 标头
 ====================
@@ -130,7 +130,7 @@ ASP.NET 页可以指定其标题中通过以下方式之一：
 
 ![添加 App_Code 文件夹和一个名为 BasePage 类](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image4.png)
 
-**图 04**： 添加`App_Code`文件夹和名为的类`BasePage`
+**图 04**： 添加`App_Code`文件夹和名为的类 `BasePage`
 
 
 > [!NOTE]
@@ -279,7 +279,7 @@ ASP.NET 提供一个可靠的站点映射框架，允许页开发人员可以在
 
 和前面一样，`OnLoadComplete`方法会启动通过确定是否已显式设置页的标题。 如果`Page.Title`是`Nothing`，空字符串，或已分配的值"无标题页"，然后在代码自动将分配到的值`Page.Title`。
 
-若要确定要使用的标题，代码将启动通过引用[`SiteMap`类](https://msdn.microsoft.com/library/system.web.sitemap.aspx)的[`CurrentNode`属性](https://msdn.microsoft.com/library/system.web.sitemap.currentnode.aspx)。 `CurrentNode`返回[ `SiteMapNode` ](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx)站点地图对应于当前请求的页中的实例。 假设当前请求的页内站点图中，找到`SiteMapNode`的`Title`属性分配给页面的标题。 如果当前请求的页面不在站点图中，`CurrentNode`返回`Nothing`和 （如在步骤 2 中完成），使用请求的页的文件名为标题。
+若要确定要使用的标题，代码将启动通过引用[`SiteMap`类](https://msdn.microsoft.com/library/system.web.sitemap.aspx)的[`CurrentNode`属性](https://msdn.microsoft.com/library/system.web.sitemap.currentnode.aspx)。 `CurrentNode` 返回[ `SiteMapNode` ](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx)站点地图对应于当前请求的页中的实例。 假设当前请求的页内站点图中，找到`SiteMapNode`的`Title`属性分配给页面的标题。 如果当前请求的页面不在站点图中，`CurrentNode`返回`Nothing`和 （如在步骤 2 中完成），使用请求的页的文件名为标题。
 
 图 12 显示`MultipleContentPlaceHolders.aspx`页上查看通过浏览器时。 因为此页面标题未显式设置，则改为使用其相应的站点映射节点的标题。
 
@@ -326,7 +326,7 @@ A `<meta>` description 元素具有以下形式：
 > 若要添加任意标记，创建[ `LiteralControl` ](https://msdn.microsoft.com/library/system.web.ui.literalcontrol.aspx)实例时，设置其`Text`属性，然后将其添加到`Header`的`Controls`集合。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中我们看各种方法来添加`<head>`按页基于区域标记。 母版页应包括`HtmlHead`实例 (`<head runat="server">`) 与 ContentPlaceHolder。 `HtmlHead`实例允许以编程方式访问的内容页`<head>`区域和若要以声明方式和以编程方式将页的标题; ContentPlaceHolder 控件使自定义标记要添加到`<head>`以声明方式通过内容控件的部分。
 
@@ -345,12 +345,12 @@ A `<meta>` description 元素具有以下形式：
 
 ### <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Zack Jones 和 Suchi Banerjee。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
 
->[!div class="step-by-step"]
-[上一页](multiple-contentplaceholders-and-default-content-vb.md)
-[下一页](urls-in-master-pages-vb.md)
+> [!div class="step-by-step"]
+> [上一页](multiple-contentplaceholders-and-default-content-vb.md)
+> [下一页](urls-in-master-pages-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-cs
-title: "生成一个接口，以便从很多的 (C#) 中选择一个用户帐户 |Microsoft 文档"
+title: 生成一个接口，以便从很多的 (C#) 中选择一个用户帐户 |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将生成与分页，可筛选网格的用户界面。 具体而言，我们的用户界面将包含的一系列的 LinkButtons..."
+description: 在本教程中我们将生成与分页，可筛选网格的用户界面。 具体而言，我们的用户界面将包含的一系列的 LinkButtons...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 42a8fb48b8c8cfb653ac4d64f6efe011f92b966b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 304505b18e330425ea1dc8df87a552f3d8cd15f3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="building-an-interface-to-select-one-user-account-from-many-c"></a>生成一个接口，以便从很多的 (C#) 中选择一个用户帐户
 ====================
@@ -242,7 +242,7 @@ GridView 可以配置为使用自定义分页，但仅当绑定到 ObjectDataSou
 **图 9**： 单击下一步链接将显示第二个页面的用户帐户 ([单击以查看实际尺寸的图像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image27.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 管理员通常需要从帐户列表中选择一个用户。 在前面的教程中我们讨论在使用下拉列表填充对于用户，但这种方法可伸缩性差。 在本教程中我们探讨了更好的选择： 其结果显示在分页 GridView 可筛选接口。 与此用户界面，管理员可以快速、 高效地查找和选择千位之间的一个用户帐户。
 
@@ -258,11 +258,11 @@ GridView 可以配置为使用自定义分页，但仅当绑定到 ObjectDataSou
 
 ### <a name="about-the-author"></a>关于作者
 
-Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
-本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Alicja Maziarz。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Alicja Maziarz。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[下一篇](recovering-and-changing-passwords-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](recovering-and-changing-passwords-cs.md)

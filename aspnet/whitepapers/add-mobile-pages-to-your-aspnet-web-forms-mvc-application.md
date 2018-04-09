@@ -1,22 +1,22 @@
 ---
 uid: whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
-title: "如何： 将移动页面添加到 ASP.NET Web 窗体 / MVC 应用程序 |Microsoft 文档"
+title: 如何： 将移动页面添加到 ASP.NET Web 窗体 / MVC 应用程序 |Microsoft 文档
 author: rick-anderson
-description: "本介绍通过多种方式来提供针对 ASP.NET Web 窗体中的移动设备进行了优化的页面 / MVC 应用程序，并提供的建议体系结构和..."
+description: 本介绍通过多种方式来提供针对 ASP.NET Web 窗体中的移动设备进行了优化的页面 / MVC 应用程序，并提供的建议体系结构和...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2011
 ms.topic: article
 ms.assetid: 3124f28e-cc32-418a-afe3-519fa56f4c36
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
-ms.openlocfilehash: aac359b26c508784793a67260dc2e65c30db687a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a8358b91ca424f4f3e576057ab43d850081dda60
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>如何： 将移动页面添加到 ASP.NET Web 窗体 / MVC 应用程序
 ====================
@@ -185,7 +185,7 @@ ASP.NET Web 窗体和 MVC 的开发人员可以立即发现正在访问的浏览
 
     [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample4.cs)]
   
- 此代码假定你的页面具有登录名的服务器控件调用 LoginUser，如下所示的默认项目模板。
+  此代码假定你的页面具有登录名的服务器控件调用 LoginUser，如下所示的默认项目模板。
 
 ### <a name="working-with-output-caching"></a>使用输出缓存
 
@@ -243,7 +243,7 @@ ASP.NET Web 窗体和 MVC 的开发人员可以立即发现正在访问的浏览
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample9.cs)]
 
-现在该错误会离开和 URL http://*yoursite*/ 将到达的桌面主页和 http://*yoursite*/mobile/ 将到达移动主页。
+现在该错误会离开和 URL http://<em>yoursite</em>/ 将到达的桌面主页和 http://<em>yoursite</em>/mobile/ 将到达移动主页。
 
 ### <a name="redirecting-mobile-visitors-to-your-mobile-area"></a>重定向到你移动区域的移动访问者
 

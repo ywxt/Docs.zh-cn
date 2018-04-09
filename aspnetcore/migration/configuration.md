@@ -1,7 +1,7 @@
 ---
-title: "迁移到 ASP.NET 核心配置"
+title: 将配置迁移到 ASP.NET 核心
 author: ardalis
-description: "了解如何将配置从 ASP.NET MVC 项目迁移到 ASP.NET 核心 MVC 项目。"
+description: 了解如何将配置从 ASP.NET MVC 项目迁移到 ASP.NET 核心 MVC 项目。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/configuration
-ms.openlocfilehash: 6c72b324de49a03a3b2c4e96ba8886d1ed249103
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 5bb89401ac54b54810fe5724b293ae8ed7e5afef
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-configuration-to-aspnet-core"></a>迁移到 ASP.NET 核心配置
+# <a name="migrate-configuration-to-aspnet-core"></a>将配置迁移到 ASP.NET 核心
 
 作者：[Steve Smith](https://ardalis.com/) 和 [Scott Addie](https://scottaddie.com)
 
@@ -52,6 +52,6 @@ using Microsoft.Extensions.Configuration;
 
 在突出显示的行将上面所示，将更改从数据库的名称**_CHANGE_ME**为你的数据库的名称。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 ASP.NET 核心将置于单个文件，在其中的必要的服务和依赖项可以定义和配置应用程序的所有启动逻辑。 它将替换*web.config*与一种灵活的配置功能，可以利用多种文件格式，例如 JSON，以及环境变量的文件。

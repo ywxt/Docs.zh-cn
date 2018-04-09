@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-vb
-title: "嵌套母版页 (VB) |Microsoft 文档"
+title: 嵌套母版页 (VB) |Microsoft 文档
 author: rick-anderson
-description: "演示如何嵌套在另一个母版页。"
+description: 演示如何嵌套在另一个母版页。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9059e358311cc80b6a64aa3ee1168f4ffcd4e94c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8c0123c12bb653a7f680154e2155eae0eb129428
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="nested-master-pages-vb"></a>嵌套的母版页 (VB)
 ====================
@@ -94,7 +94,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="step-2-creating-a-simple-nested-master-page"></a>步骤 2： 创建简单的嵌套的母版页
 
-`Simple.master`包含两个 ContentPlaceHolder 控件：`MainContent`连同 Web 窗体中添加的我们的 ContentPlaceHolder`head`中的 ContentPlaceHolder`<head>`元素。 如果要创建内容页，并将其绑定到`Simple.master`内容页将具有两个引用两个 ContentPlaceHolders 的内容控件。 同样，如果我们将创建嵌套的母版页并将其绑定到`Simple.master`然后嵌套的主控页将具有两个内容控件。
+`Simple.master` 包含两个 ContentPlaceHolder 控件：`MainContent`连同 Web 窗体中添加的我们的 ContentPlaceHolder`head`中的 ContentPlaceHolder`<head>`元素。 如果要创建内容页，并将其绑定到`Simple.master`内容页将具有两个引用两个 ContentPlaceHolders 的内容控件。 同样，如果我们将创建嵌套的母版页并将其绑定到`Simple.master`然后嵌套的主控页将具有两个内容控件。
 
 让我们添加到新的嵌套母版页上`NestedMasterPages`文件夹名为`SimpleNested.master`。 右键单击`NestedMasterPages`文件夹，然后选择添加新项。 这会打开添加新项对话框，在图 2 所示。 选择母版页模板类型和输入新的主控页的名称。 若要指示新的主控页应嵌套母板页，请检查"选择母版页"复选框。
 
@@ -126,7 +126,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-aspx[Main](nested-master-pages-vb/samples/sample4.aspx)]
 
-建立此添加后, 保存嵌套的主控页，然后添加到新的内容页`NestedMasterPages`文件夹名为`Default.aspx`，并将其绑定到`SimpleNested.master`母版页。 在添加此页时，你可能感到很惊奇，它不包含任何内容的控件 （请参见图 4） ！ 内容页只能访问其*父*主页面的 ContentPlaceHolders。 `SimpleNested.master`不包含任何 ContentPlaceHolder 控件;因此，所有绑定到此母版页的内容页不能包含任何内容控件。
+建立此添加后, 保存嵌套的主控页，然后添加到新的内容页`NestedMasterPages`文件夹名为`Default.aspx`，并将其绑定到`SimpleNested.master`母版页。 在添加此页时，你可能感到很惊奇，它不包含任何内容的控件 （请参见图 4） ！ 内容页只能访问其*父*主页面的 ContentPlaceHolders。 `SimpleNested.master` 不包含任何 ContentPlaceHolder 控件;因此，所有绑定到此母版页的内容页不能包含任何内容控件。
 
 
 [![新内容页不包含任何内容控件](nested-master-pages-vb/_static/image11.png)](nested-master-pages-vb/_static/image10.png)
@@ -258,7 +258,7 @@ ms.lasthandoff: 01/24/2018
 
 我们将新的内容页添加到管理部分我们需要将其绑定到的任何时候`AdminNested.master`我们刚刚创建的母版页。 但是，有关现有哪些内容页？ 目前，站点中的所有内容页派生自`BasePage`类，该类在运行时以编程方式设置内容页的母版页。 这不是我们想要在管理部分中的内容页面的行为。 相反，我们希望始终使用这些内容页`AdminNested.master`页。 它将嵌套 master 页后，可以选择在运行时右顶级内容页面的责任。
 
-若要实现的最佳方式这所需的行为是创建一个名为的新自定义的基本页类`AdminBasePage`扩展`BasePage`类。 `AdminBasePage`然后可以重写`SetMasterPageFile`并设置`Page`对象的`MasterPageFile`为硬编码值"~ / Admin/AdminNested.master"。 这种方式，任何页，派生自`AdminBasePage`将使用`AdminNested.master`，而派生自的任何页面`BasePage`将具有其`MasterPageFile`属性设置为动态"~ / Site.master"或"~ / Alternate.master"的值`MyMasterPage`会话变量。
+若要实现的最佳方式这所需的行为是创建一个名为的新自定义的基本页类`AdminBasePage`扩展`BasePage`类。 `AdminBasePage` 然后可以重写`SetMasterPageFile`并设置`Page`对象的`MasterPageFile`为硬编码值"~ / Admin/AdminNested.master"。 这种方式，任何页，派生自`AdminBasePage`将使用`AdminNested.master`，而派生自的任何页面`BasePage`将具有其`MasterPageFile`属性设置为动态"~ / Site.master"或"~ / Alternate.master"的值`MyMasterPage`会话变量。
 
 首先，通过添加新的类文件与`App_Code`文件夹名为`AdminBasePage.vb`。 具有`AdminBasePage`扩展`BasePage`，然后重写`SetMasterPageFile`方法。 在该方法将`MasterPageFile`值"~ / Admin/AdminNested.master"。 你的类进行这些更改后文件应类似于以下：
 
@@ -342,7 +342,7 @@ ms.lasthandoff: 01/24/2018
 **图 13**： 嵌套管理页使用顶层 Master 页中选择用户 ([单击以查看实际尺寸的图像](nested-master-pages-vb/_static/image39.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 多 like 如何在内容页可以将绑定到母版页，它是可以创建嵌套具有子级的母版页的主控页将绑定到一个父级母版页。 子母版页可能定义的其父级的 ContentPlaceHolders; 每个内容控件它然后可以将自己 ContentPlaceHolder 控件 （以及其他标记） 添加到这些内容的控件。 嵌套的母版页是其中所有页都共享总体的外观和感觉，但站点某些部分需要唯一的自定义项的大型 web 应用程序中非常有用。
 
@@ -358,11 +358,11 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
-本教程系列已由许多有用的审阅者评审。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+本教程系列已由许多有用的审阅者评审。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一篇](specifying-the-master-page-programmatically-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](specifying-the-master-page-programmatically-vb.md)

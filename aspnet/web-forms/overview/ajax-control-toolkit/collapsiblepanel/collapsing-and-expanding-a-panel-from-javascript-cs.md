@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-cs
-title: "展开和折叠的面板从 JavaScript (C#) |Microsoft 文档"
+title: 展开和折叠的面板从 JavaScript (C#) |Microsoft 文档
 author: wenz
-description: "ASP.NET AJAX 控件工具包中的 CollapsiblePanel 控件扩展一个面板，并为它提供的功能折叠其内容，并将其展开..."
+description: ASP.NET AJAX 控件工具包中的 CollapsiblePanel 控件扩展一个面板，并为它提供的功能折叠其内容，并将其展开...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 666f3e212ccdd5b26b466f4672134ce751dc5dd1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7baa3be7144946bde7d11afd9b1cb5f14ad9dede
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="collapsing-and-expanding-a-panel-from-javascript-c"></a>展开和折叠的面板从 JavaScript (C#)
 ====================
@@ -53,7 +53,7 @@ ASP.NET AJAX 控件工具包中的 CollapsiblePanel 控件扩展一个面板，�
 
 [!code-aspx[Main](collapsing-and-expanding-a-panel-from-javascript-cs/samples/sample5.aspx)]
 
-在客户端 JavaScript 代码 (入门`<script type="text/javascript">`)，则`$find()`方法需要使用访问`CollapsiblePanelExtender`。 `$find("cpe")`将返回对它的引用。 从该处上，特定的方法将解决手头的任务。
+在客户端 JavaScript 代码 (入门`<script type="text/javascript">`)，则`$find()`方法需要使用访问`CollapsiblePanelExtender`。 `$find("cpe")` 将返回对它的引用。 从该处上，特定的方法将解决手头的任务。
 
 方法 （扩展） 中打开面板称为`_doOpen()`; 下面的代码实现`doOpen()`单击第一个按钮时调用的函数：
 
@@ -72,5 +72,5 @@ ASP.NET AJAX 控件工具包中的 CollapsiblePanel 控件扩展一个面板，�
 
 第三个按钮更改面板的状态： 从折叠到展开且后 ([单击以查看实际尺寸的图像](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[下一篇](collapsing-and-expanding-a-panel-from-javascript-vb.md)
+> [!div class="step-by-step"]
+> [下一篇](collapsing-and-expanding-a-panel-from-javascript-vb.md)

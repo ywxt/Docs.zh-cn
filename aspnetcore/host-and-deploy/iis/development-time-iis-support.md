@@ -1,7 +1,7 @@
 ---
-title: "Visual Studio 中针对 ASP.NET Core 的开发时 IIS 支持"
+title: Visual Studio 中针对 ASP.NET Core 的开发时 IIS 支持
 author: shirhatti
-description: "发现的用于调试 ASP.NET Core 应用时在 Windows Server 上运行之后 IIS 的支持。"
+description: 发现的用于调试 ASP.NET Core 应用时在 Windows Server 上运行之后 IIS 的支持。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/development-time-iis-support
-ms.openlocfilehash: a8bdf4c0c0399c62666e6e61e70c0298a42c2c12
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: 218bb2653b92cd7b1cf2c6726b2d4bedbf307a62
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="development-time-iis-support-in-visual-studio-for-aspnet-core"></a>Visual Studio 中针对 ASP.NET Core 的开发时 IIS 支持
 
@@ -24,8 +24,7 @@ ms.lasthandoff: 02/19/2018
 
 ## <a name="prerequisites"></a>系统必备
 
-* Visual Studio（2017/版本 15.3 或更高版本）
-* ASP.NET 和 Web 开发工作负荷或 .NET Core 跨平台开发工作负荷
+[!INCLUDE [](~/includes/net-core-prereqs-windows.md)]
 
 ## <a name="enable-iis"></a>启用 IIS
 
@@ -33,7 +32,7 @@ ms.lasthandoff: 02/19/2018
 
 ![Windows 功能将选中的“Internet Information Services”复选框显示为实心方形（而不是复选标记），指示已启用某些 IIS 功能](development-time-iis-support/_static/enable_iis.png)
 
-如果 IIS 安装需要重新启动，重新启动系统。
+如果 IIS 安装需要重新启动，则重新启动系统。
 
 ## <a name="enable-development-time-iis-support"></a>启用开发时 IIS 支持
 
@@ -45,7 +44,7 @@ ms.lasthandoff: 02/19/2018
 
 创建新的启动配置文件以添加开发时 IIS 支持。 在 Visual Studio 的“解决方案资源管理器”中，右键单击项目，然后选择“属性”。 选择“调试”选项卡。从“启动”下拉列表中选择“IIS”。 确认已为“启动浏览器”功能配置了正确的 URL。
 
-![选择了“调试”选项卡的“项目属性”窗口。 将“配置文件”和“启动”设置设为 IIS。 为“启动浏览器”功能配置了 http://localhost/WebApplication2 地址。 启用“启用匿名身份验证”后，Web Server 设置区域的“应用 URL”字段中也提供相同的地址。](development-time-iis-support/_static/project_properties.png)
+![选择了“调试”选项卡的“项目属性”窗口。 将“配置文件”和“启动”设置设为 IIS。 启动浏览器功能启用地址为http://localhost/WebApplication2。 启用“启用匿名身份验证”后，Web Server 设置区域的“应用 URL”字段中也提供相同的地址。](development-time-iis-support/_static/project_properties.png)
 
 或者，手动添加到的启动配置文件[launchSettings.json](http://json.schemastore.org/launchsettings)应用程序中的文件：
 

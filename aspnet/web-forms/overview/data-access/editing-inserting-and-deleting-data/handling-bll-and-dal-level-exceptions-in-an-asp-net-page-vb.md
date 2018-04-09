@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb
-title: "处理 ASP.NET 页 (VB) 中的 BLL 和 DAL 级别异常 |Microsoft 文档"
+title: 处理 ASP.NET 页 (VB) 中的 BLL 和 DAL 级别异常 |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将了解如何显示友好、 带有提示性错误消息应在插入、 更新或删除操作的过程可能出现异常..."
+description: 在本教程中我们将了解如何显示友好、 带有提示性错误消息应在插入、 更新或删除操作的过程可能出现异常...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2269458cbc41fd3a483aaade0f07288ee805bdd1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b76554b6e8c00dbe3b33de8158b925d7314afb72
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-vb"></a>处理 ASP.NET 页 (VB) 中的 BLL 和 DAL 级别异常
 ====================
@@ -155,9 +155,9 @@ ms.lasthandoff: 01/24/2018
 
 此事件处理程序的第二个输入的参数是类型的对象[GridViewUpdatedEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewupdatedeventargs.aspx)，它具有用于处理的异常感兴趣的三个属性：
 
-- `Exception`对引发的异常; 的引用如果已不引发任何异常，此属性将具有的值`null`
-- `ExceptionHandled`一个布尔值，该值指示是否在处理了该异常`RowUpdated`事件处理程序; 如果`false`（默认值），例外情况是重新引发，percolating 到 ASP.NET 运行时
-- `KeepInEditMode`如果设置为`true`编辑过的 GridView 行处于编辑模式; 如果`false`（默认值）、 GridView 行将恢复到其只读模式
+- `Exception` 对引发的异常; 的引用如果已不引发任何异常，此属性将具有的值 `null`
+- `ExceptionHandled` 一个布尔值，该值指示是否在处理了该异常`RowUpdated`事件处理程序; 如果`false`（默认值），例外情况是重新引发，percolating 到 ASP.NET 运行时
+- `KeepInEditMode` 如果设置为`true`编辑过的 GridView 行处于编辑模式; 如果`false`（默认值）、 GridView 行将恢复到其只读模式
 
 我们的代码，然后，应检查以查看是否`Exception`不`null`，这意味着执行操作时引发了一个异常。 如果出现这种情况，我们希望：
 
@@ -212,7 +212,7 @@ ms.lasthandoff: 01/24/2018
 > 理想情况下我们业务逻辑规则要重构外`UpdateProduct`方法重载，并放入一种常用方法。 这是为读取器作为练习保留您的问题。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在插入、 更新和删除操作，数据 Web 控件和涉及的 ObjectDataSource 激发前和后级别事件该书挡实际操作。 正如我们看到在本教程和前一次，使用可编辑的 GridView 时 GridView`RowUpdating`事件激发，跟 ObjectDataSource`Updating`事件，此时更新命令供 ObjectDataSource基础对象。 完成该操作后，ObjectDataSource`Updated`事件激发，跟 GridView`RowUpdated`事件。
 
@@ -224,12 +224,12 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已沈 Shulok。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)
-[下一页](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md)
+> [!div class="step-by-step"]
+> [上一页](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)
+> [下一页](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md)

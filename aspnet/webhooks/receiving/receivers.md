@@ -1,20 +1,20 @@
 ---
 uid: webhooks/receiving/receivers
-title: "ASP.NET Webhook 接收方 |Microsoft 文档"
+title: ASP.NET Webhook 接收方 |Microsoft 文档
 author: rick-anderson
-description: "ASP.NET Webhook 接收方"
+description: ASP.NET Webhook 接收方
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/17/2012
 ms.topic: article
 ms.assetid: 6cdea089-15b2-4732-8c68-921ca561a8f1
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
-ms.openlocfilehash: 8c42db4056dd7a6ef77c7bcbc0eca3b5bf7c87e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a8e42521f201f88b0ed433550e8786411b4487b0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-webhooks-receivers"></a>ASP.NET Webhook 接收方
 
@@ -36,7 +36,7 @@ https://<host>/api/webhooks/incoming/<receiver>/{id}
 
 出于安全原因，许多 WebHook 接收方需要的 URI 是*https* URI 并在某些情况下，它还必须包含一个其他查询参数用于强制此要求仅预定的接收方可以将 Webhook 发送到上面的 URI.
 
- *<receiver>* 组件是接收方的名称，例如*github*或*slack*。
+<em> <receiver> </em>组件是接收方的名称，例如<em>github</em>或<em>slack</em>。
 
 *{Id}*是用于标识特定的 WebHook 接收方配置的可选标识符。 这可以用于 N 的 Webhook 注册特定的接收方。 例如，以下三个 Uri 可以用于为三个独立的 Webhook 注册：
 

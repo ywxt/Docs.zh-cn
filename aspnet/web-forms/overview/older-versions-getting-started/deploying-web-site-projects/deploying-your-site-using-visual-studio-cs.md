@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-cs
-title: "部署你的网站使用 Visual Studio (C#) |Microsoft 文档"
+title: 部署你的网站使用 Visual Studio (C#) |Microsoft 文档
 author: rick-anderson
-description: "Visual Studio 包含用于部署网站工具。 在本教程中了解有关这些工具的详细信息。"
+description: Visual Studio 包含用于部署网站工具。 在本教程中了解有关这些工具的详细信息。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c0c32c3dd24be5edfea3e17695753973f3fad30a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f06e2fe1fdfb03b106466a1792f6381495f76096
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-your-site-using-visual-studio-c"></a>部署你的网站使用 Visual Studio (C#)
 ====================
@@ -139,7 +139,7 @@ Visual Studio 的复制网站工具是在功能上类似于独立的 FTP 客户�
 
 并不少见，才会生产和开发环境之间不同，其内容的某些文件。 重要的例子就是应用程序的配置文件， `Web.config`。 因为发布选项会盲目地将复制的 web 应用程序文件时，它将与在开发环境中的版本覆盖生产环境中的自定义的配置文件。 后续教程探讨此主题会进一步，并提供用于部署的 web 应用，这种差异存在时的提示。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 将网站部署涉及将从开发环境的所需的文件复制到生产环境。 前面的教程介绍了如何使用 FileZilla 等 FTP 客户端传输文件。 本教程检查 Visual Studio 中的两个部署工具: 复制网站工具和发布选项。 它列出本地计算机和可以轻松地上载或下载两台计算机之间的文件的指定远程计算机上的文件的双窗格界面，该复制网站工具是类似于 FTP 客户端。 发布选项是一个更钝工具显式将编译该项目，然后再部署到指定目标整个应用程序。
 
@@ -155,6 +155,6 @@ Visual Studio 的复制网站工具是在功能上类似于独立的 FTP 客户�
 - [如何： 发布网站](https://msdn.microsoft.com/library/20yh9f1b.aspx)
 - [安装程序和 Visual Studio 中的部署项目](https://msdn.microsoft.com/library/wx3b589t.aspx)
 
->[!div class="step-by-step"]
-[上一页](deploying-your-site-using-an-ftp-client-cs.md)
-[下一页](common-configuration-differences-between-development-and-production-cs.md)
+> [!div class="step-by-step"]
+> [上一页](deploying-your-site-using-an-ftp-client-cs.md)
+> [下一页](common-configuration-differences-between-development-and-production-cs.md)

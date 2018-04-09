@@ -1,7 +1,7 @@
 ---
-title: "阻止在 ASP.NET Core 应用中的打开重定向攻击"
+title: 防止在 ASP.NET 核心中的打开重定向攻击
 author: ardalis
-description: "演示如何阻止对 ASP.NET Core 应用打开重定向攻击"
+description: 演示如何阻止对 ASP.NET Core 应用打开重定向攻击
 manager: wpickett
 ms.author: riande
 ms.date: 07/07/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/preventing-open-redirects
-ms.openlocfilehash: d6cd65a2516c4d5e41428f0c1f2dbbe913ac2123
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4a210b8bb8091e7c036d4bc98306e3b3f90d7d46
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="preventing-open-redirect-attacks-in-an-aspnet-core-app"></a>阻止在 ASP.NET Core 应用中的打开重定向攻击
+# <a name="prevent-open-redirect-attacks-in-aspnet-core"></a>防止在 ASP.NET 核心中的打开重定向攻击
 
 Web 应用程序将重定向到通过如查询字符串或窗体数据请求指定的 URL 可能可能被篡改将用户重定向到外部、 恶意 URL。 此篡改称为打开重定向攻击。
 
@@ -57,11 +57,11 @@ public IActionResult SomeAction(string redirectUrl)
 }
 ```
 
-``LocalRedirect``如果指定非本地 URL，将引发异常。 否则，其行为就像``Redirect``方法。
+``LocalRedirect`` 如果指定非本地 URL，将引发异常。 否则，其行为就像``Redirect``方法。
 
 ### <a name="islocalurl"></a>IsLocalUrl
 
-使用[IsLocalUrl](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.iurlhelper#Microsoft_AspNetCore_Mvc_IUrlHelper_IsLocalUrl_System_String_)方法以测试 Url，然后重定向：
+使用[IsLocalUrl](/dotnet/api/Microsoft.AspNetCore.Mvc.IUrlHelper?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_IUrlHelper_IsLocalUrl_System_String_)方法以测试 Url，然后重定向：
 
 下面的示例演示如何检查 URL 重定向之前是本地。
 

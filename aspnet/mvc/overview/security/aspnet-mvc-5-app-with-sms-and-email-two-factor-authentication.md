@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
-title: "使用 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用程序 |Microsoft 文档"
+title: 使用 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用程序 |Microsoft 文档
 author: Rick-Anderson
-description: "本教程演示了如何生成使用双因素身份验证的 ASP.NET MVC 5 web 应用程序。 您应该完成与创建安全的 ASP.NET MVC 5 web 应用..."
+description: 本教程演示了如何生成使用双因素身份验证的 ASP.NET MVC 5 web 应用程序。 您应该完成与创建安全的 ASP.NET MVC 5 web 应用...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/20/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: d6bc92f3cbe6b61332e33e8a507b4516bf5c15a5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5e1c54b3901f2c8c85134445c1fa91ee9f2e0d59
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication"></a>使用 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用程序
 ====================
@@ -53,44 +53,44 @@ ms.lasthandoff: 01/24/2018
 
 1. **使用 SMS 提供程序创建的用户帐户**  
   
- 创建[Twilio](https://www.twilio.com/try-twilio)或[ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/)帐户。
+   创建[Twilio](https://www.twilio.com/try-twilio)或[ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/)帐户。
 2. **安装其他包或添加服务引用**  
   
- Twilio:  
- 在程序包管理器控制台中，输入以下命令：  
+   Twilio:  
+   在程序包管理器控制台中，输入以下命令：  
     `Install-Package Twilio`  
   
- ASPSMS:  
- 下面的服务引用需要添加：  
+   ASPSMS:  
+   下面的服务引用需要添加：  
   
     ![](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/_static/image2.png)  
   
- 地址:  
+   地址:  
     `https://webservice.aspsms.com/aspsmsx2.asmx?WSDL`  
   
- 命名空间:  
+   命名空间:  
     `ASPSMSX2`
 3. **了解 SMS 提供程序用户凭据**  
   
- Twilio:  
- 从**仪表板**选项卡上的 Twilio 帐户，复制**帐户 SID**和**身份验证令牌**。  
+   Twilio:  
+   从**仪表板**选项卡上的 Twilio 帐户，复制**帐户 SID**和**身份验证令牌**。  
   
- ASPSMS:  
- 从你的帐户设置，导航到**用户密钥**并将其复制以及你自定义**密码**。  
+   ASPSMS:  
+   从你的帐户设置，导航到**用户密钥**并将其复制以及你自定义**密码**。  
   
- 我们将更高版本将存储这些值*web.config*中密钥文件`"SMSAccountIdentification"`和`"SMSAccountPassword"`。
+   我们将更高版本将存储这些值*web.config*中密钥文件`"SMSAccountIdentification"`和`"SMSAccountPassword"`。
 4. **指定 SenderID / 发起方**  
   
- Twilio:  
- 从**数字**选项卡上，复制你的 Twilio 电话号码。  
+   Twilio:  
+   从**数字**选项卡上，复制你的 Twilio 电话号码。  
   
- ASPSMS:  
- 在**解锁原始发件人**菜单上，解锁一个或多个发送方或选择 （不支持的所有网络） 的字母数字发起方。  
+   ASPSMS:  
+   在**解锁原始发件人**菜单上，解锁一个或多个发送方或选择 （不支持的所有网络） 的字母数字发起方。  
   
- 我们将更高版本存储中的此值*web.config*文件在项`"SMSAccountFrom"`。
+   我们将更高版本存储中的此值*web.config*文件在项`"SMSAccountFrom"`。
 5. **将 SMS 提供程序凭据传输到应用程序**  
   
- 提供的凭据和发件人的电话号码向应用程序。 为了简单起见我们将存储这些值*web.config*文件。 当我们将部署到 Azure 时，我们可以将安全地在值存储**应用设置**网站上的部分配置选项卡。 
+   提供的凭据和发件人的电话号码向应用程序。 为了简单起见我们将存储这些值*web.config*文件。 当我们将部署到 Azure 时，我们可以将安全地在值存储**应用设置**网站上的部分配置选项卡。 
 
     [!code-xml[Main](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/samples/sample1.xml?highlight=8-10)]
 
@@ -98,9 +98,9 @@ ms.lasthandoff: 01/24/2018
     > 安全-永远不会存储在源代码中敏感数据。 帐户和凭据添加到上面为了让示例比较简单的代码。 请参阅[用于密码和其他敏感数据部署到 ASP.NET 和 Azure 的最佳做法](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)。
 6. **数据传输到 SMS 提供程序的实现**  
   
- 配置`SmsService`类*应用\_Start\IdentityConfig.cs*文件。  
+   配置`SmsService`类*应用\_Start\IdentityConfig.cs*文件。  
   
- 具体取决于使用 SMS 提供程序激活或者**Twilio**或**ASPSMS**部分： 
+   具体取决于使用 SMS 提供程序激活或者**Twilio**或**ASPSMS**部分： 
 
     [!code-csharp[Main](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/samples/sample2.cs)]
 7. 更新*Views\Manage\Index.cshtml* Razor 视图: (注意： 不只需删除现有代码中的注释，使用下面的代码。)  

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-cs
-title: "使用实体框架 (C#) 创建模型类 |Microsoft 文档"
+title: 使用实体框架 (C#) 创建模型类 |Microsoft 文档
 author: microsoft
-description: "在本教程中，您将学习如何与 Microsoft 实体框架使用 ASP.NET MVC。 了解如何使用实体向导创建 ADO.NET 实体 Da..."
+description: 在本教程中，您将学习如何与 Microsoft 实体框架使用 ASP.NET MVC。 了解如何使用实体向导创建 ADO.NET 实体 Da...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8a897f671de73d9991189e32a5d86b513051ef05
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b0a79da580f14d5ae6bcfaaa00d3900234dc662e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-model-classes-with-the-entity-framework-c"></a>使用实体框架 (C#) 创建模型类
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 在本教程中，您将学习如何与 Microsoft 实体框架使用 ASP.NET MVC。 了解如何使用实体向导创建 ADO.NET 实体数据模型。 在本教程的过程中，我们生成的 web 应用程序演示如何以选择、 插入、 更新和删除通过使用实体框架的数据库数据。
 
@@ -215,11 +215,11 @@ LINQ to Entities 的帮助检索电影记录。 列表 1 中的 index （） 操
 
 Delete （） 操作首先检索的影片的 Id 匹配的实体传递到操作。 接下来，影片从数据库删除通过调用 DeleteObject() 方法跟 savechanges （） 方法。 最后，用户重定向回索引视图。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程的目的是演示如何利用 ASP.NET MVC 和 Microsoft 实体框架可以生成数据库驱动的 web 应用程序。 您学习了如何生成该应用程序，你可以选择、 插入、 更新和删除数据库记录。
 
 首先，我们讨论了如何使用实体数据模型向导生成 Visual Studio 中从一个实体数据模型。 接下来，你将了解如何使用 LINQ to Entities 从数据库表中检索一组数据库记录。 最后，我们使用实体框架来插入、 更新和删除数据库记录。
 
->[!div class="step-by-step"]
-[下一篇](creating-model-classes-with-linq-to-sql-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](creating-model-classes-with-linq-to-sql-cs.md)

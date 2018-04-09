@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/preventing-open-redirection-attacks
-title: "阻止打开重定向攻击 (C#) |Microsoft 文档"
+title: 阻止打开重定向攻击 (C#) |Microsoft 文档
 author: jongalloway
-description: "本教程介绍如何在 ASP.NET MVC 应用程序阻止打开重定向攻击。 本教程讨论所做的更改..."
+description: 本教程介绍如何在 ASP.NET MVC 应用程序阻止打开重定向攻击。 本教程讨论所做的更改...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/preventing-open-redirection-attacks
 msc.type: authoredcontent
-ms.openlocfilehash: 17944c0600a174176e3e9940f414b34f0835b800
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ec1cd1791eb6d32e7c1ea50bc6626929cad2960e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="preventing-open-redirection-attacks-c"></a>阻止打开重定向攻击 (C#)
 ====================
@@ -39,7 +39,7 @@ ms.lasthandoff: 01/30/2018
 
 **图 01**： 与打开的重定向的登录页
 
-由于 ReturnUrl 查询字符串参数未通过验证，攻击者可以修改它以将任何 URL 地址注入要执行的打开的重定向攻击的参数。 若要进行此演示，我们可以修改的 ReturnUrl 参数[http://bing.com](http://bing.com)，因此将生成的登录 URL/帐户/登录？ ReturnUrl = http://www.bing.com/。 在成功登录到站点，我们将重定向到[http://bing.com](http://bing.com)。此重定向未通过验证，因为它无法改为指向恶意站点，试图欺骗用户。
+由于 ReturnUrl 查询字符串参数未通过验证，攻击者可以修改它以将任何 URL 地址注入要执行的打开的重定向攻击的参数。 若要进行此演示，我们可以修改的 ReturnUrl 参数[ http://bing.com ](http://bing.com)，因此将生成的登录 URL/帐户/登录？ReturnUrl =<http://www.bing.com/>。 在成功登录到站点，我们将重定向到[ http://bing.com ](http://bing.com)。此重定向未通过验证，因为它无法改为指向恶意站点，试图欺骗用户。
 
 ### <a name="a-more-complex-open-redirection-attack"></a>更复杂的打开重定向攻击
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 01/30/2018
 
 **图 02**: NerdDinner 与打开的重定向的登录页
 
-我们正确登录时，ASP.NET MVC AccountController 登录操作将重我们定向到 returnUrl 查询字符串参数中指定的 URL。 在这种情况下，它是攻击者已进入，即 URL [http://nerddiner.com/Account/LogOn](http://nerddiner.com/Account/LogOn)。 除非我们极 watchful，它是很有可能，我们不会发现这种情况，尤其是因为攻击者已小心，确保其伪造的页的外观完全一样的合法的登录页。 此登录页包括错误消息，请求我们重新登录。 非常笨拙我们，我们必须有误我们的密码。
+我们正确登录时，ASP.NET MVC AccountController 登录操作将重我们定向到 returnUrl 查询字符串参数中指定的 URL。 在这种情况下，它是攻击者已进入，即 URL [ http://nerddiner.com/Account/LogOn ](http://nerddiner.com/Account/LogOn)。 除非我们极 watchful，它是很有可能，我们不会发现这种情况，尤其是因为攻击者已小心，确保其伪造的页的外观完全一样的合法的登录页。 此登录页包括错误消息，请求我们重新登录。 非常笨拙我们，我们必须有误我们的密码。
 
 [![](preventing-open-redirection-attacks/_static/image6.png)](preventing-open-redirection-attacks/_static/image5.png)
 
@@ -67,13 +67,13 @@ ms.lasthandoff: 01/30/2018
 
 ASP.NET MVC 2 应用程序中的登录操作的代码所示。 请注意，一旦成功登录，则控制器将返回到的重定向到 returnUrl。 你可以看到与 returnUrl 参数执行任何验证。
 
-**列表 1 – 中的 ASP.NET MVC 2 登录操作`AccountController.cs`**
+**列表 1 – 中的 ASP.NET MVC 2 登录操作 `AccountController.cs`**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample1.cs)]
 
 现在让我们看一下 ASP.NET MVC 3 登录操作的更改。 此代码已更改，以通过调用中名为的 System.Web.Mvc.Url 帮助器类的新方法验证 returnUrl 参数`IsLocalUrl()`。
 
-**列出 2 – 在 ASP.NET MVC 3 登录操作`AccountController.cs`**
+**列出 2 – 在 ASP.NET MVC 3 登录操作 `AccountController.cs`**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample2.cs)]
 
@@ -85,7 +85,7 @@ ASP.NET MVC 2 应用程序中的登录操作的代码所示。 请注意，一�
 
 ASP.NET Web Pages 应用程序也使用 UrlHelper IsLocalUrl() 方法实际上就调用到中 System.Web.WebPages，作为此验证的方法。
 
-**列出 3-从 ASP.NET MVC 3 UrlHelper IsLocalUrl() 方法`class`**
+**列出 3-从 ASP.NET MVC 3 UrlHelper IsLocalUrl() 方法 `class`**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample3.cs)]
 
@@ -107,7 +107,7 @@ IsLocalUrl() 方法已到位，我们就可以调用它从我们的登录操作�
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample6.cs)]
 
-现在我们可以通过尝试使用外部的返回 URL 登录测试打开重定向攻击。 让我们使用/帐户/登录？ ReturnUrl = http://www.bing.com/ 试。
+现在我们可以通过尝试使用外部的返回 URL 登录测试打开重定向攻击。 让我们使用 /Account/LogOn？ReturnUrl =<http://www.bing.com/>试。
 
 [![](preventing-open-redirection-attacks/_static/image8.png)](preventing-open-redirection-attacks/_static/image7.png)
 
@@ -119,6 +119,6 @@ IsLocalUrl() 方法已到位，我们就可以调用它从我们的登录操作�
 
 **图 05**： 打开重定向攻击失效
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 重定向 Url 作为应用程序的 URL 中的参数传递时，会发生打开重定向攻击。 模板包括代码，以防止对 ASP.NET MVC 3 打开重定向攻击。 你可以添加与 ASP.NET MVC 1.0 和 2 的应用程序进行一些修改此代码。 若要防止打开重定向攻击，登录到 ASP.NET 1.0 和 2 的应用程序时，将 IsLocalUrl() 方法添加并验证中的登录操作的 returnUrl 参数。

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
-title: "ASP.NET 网页 (Razor) 故障排除指南 |Microsoft 文档"
+title: ASP.NET 网页 (Razor) 故障排除指南 |Microsoft 文档
 author: tfitzmac
-description: "本文介绍使用 ASP.NET Web 页 (Razor) 和一些推荐的解决方案时可能遇到的问题。 软件版本 ASP.NET Web 页的链接..."
+description: 本文介绍使用 ASP.NET Web 页 (Razor) 和一些推荐的解决方案时可能遇到的问题。 软件版本 ASP.NET Web 页的链接...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: 2e25e9c7cea937016301e0f11919adb9647ca216
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ec51169ccea0016712de3fdb28a16a174150a8bd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET 网页 (Razor) 故障排除指南
 ====================
@@ -144,12 +144,12 @@ ms.lasthandoff: 01/30/2018
     *连接尝试失败，因为连接的方未正确响应后一段时间，或建立的连接失败，因为连接的主机未能响应*
 
     此错误通常表示应用程序无法连接到 SMTP 服务器。 请检查服务器名和端口号。
-- *邮箱不可用。服务器响应为： 5.1.0 &lt; someuser@invaliddomain &gt;发件人拒绝： 无效的发件人域*
+- <em>邮箱不可用。服务器响应为： 5.1.0 &lt; someuser@invaliddomain &gt;发件人拒绝： 无效的发件人域</em>
 
     此消息可以指示`From`地址不正确或缺少。
 - *指定的字符串不是所需的电子邮件地址的形式。*
 
-    此错误可能指示的值`To`或`From`属性不会识别为电子邮件地址。 (ASP.NET 无法检查电子邮件地址是否有效，只有它的格式正确，如 *name@domain.com* 。)
+    此错误可能指示的值`To`或`From`属性不会识别为电子邮件地址。 (ASP.NET 无法检查电子邮件地址是否有效，只有它的格式正确，如*name@domain.com*。)
 
 > [!NOTE]
 > 删除显示的错误的标记 (`@errorMessage`) 将页面发布到实时站点之前。 它不是让用户可以查看从服务器获取的错误消息的一个好办法。

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
-title: "创建数据访问层 |Microsoft 文档"
+title: 创建数据访问层 |Microsoft 文档
 author: Erikre
-description: "本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识..."
+description: 本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
 msc.type: authoredcontent
-ms.openlocfilehash: 809609155b06c4632bd4f450082d84c432c7a46f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 671d1bbf661dfb3e56c6ccd67ce0d383990918d6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-the-data-access-layer"></a>创建数据访问层
 ====================
@@ -68,13 +68,13 @@ ms.lasthandoff: 01/24/2018
 
     ![创建数据访问层-新项菜单](create_the_data_access_layer/_static/image1.png)
 
- 随即出现“添加新项”对话框。
+   随即出现“添加新项”对话框。
 2. 下**Visual C#**从**已安装**左侧窗格中，选择**代码**。 
 
     ![创建数据访问层-新项菜单](create_the_data_access_layer/_static/image2.png)
 3. 选择**类**从中间窗格中并将此新类命名*Product.cs*。
-4. 单击 **“添加”**。  
- 编辑器中将显示新的类文件。
+4. 单击 **添加**。  
+   编辑器中将显示新的类文件。
 5. 默认代码替换为以下代码：   
 
     [!code-csharp[Main](create_the_data_access_layer/samples/sample1.cs)]
@@ -95,7 +95,7 @@ ms.lasthandoff: 01/24/2018
 此过程添加到的新 C# 上下文类*模型*文件夹。
 
 1. 右键单击*模型*文件夹，然后选择**添加** - &gt; **新项**。   
- 随即出现“添加新项”对话框。
+   随即出现“添加新项”对话框。
 2. 选择**类**从中间窗格中，将其命名为*ProductContext.cs*单击**添加**。
 3. 将替换为以下代码的类中包含的默认代码：   
 
@@ -173,7 +173,7 @@ ms.lasthandoff: 01/24/2018
 
 如果在遇到错误，请重新检查上述步骤。 中的信息**输出**窗口将指示哪些文件遇到问题，在文件中更改要求的位置。 此信息将使您能够确定哪些属于上述步骤需要评审和在你的项目中修复。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中的序列你已创建数据模型中，以及，添加将用于初始化和植入到数据库的代码。 你已配置应用程序以运行应用程序时使用的数据模型。
 
@@ -188,6 +188,6 @@ ms.lasthandoff: 01/24/2018
 [Code First 数据批注](https://msdn.microsoft.com/data/gg193958)  
 [用于实体框架的工作效率改进](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0)
 
->[!div class="step-by-step"]
-[上一页](create-the-project.md)
-[下一页](ui_and_navigation.md)
+> [!div class="step-by-step"]
+> [上一页](create-the-project.md)
+> [下一页](ui_and_navigation.md)

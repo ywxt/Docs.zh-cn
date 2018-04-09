@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/examining-the-edit-methods-and-edit-view
-title: "检查编辑方法和 (VB) 中的编辑视图 |Microsoft 文档"
+title: 检查编辑方法和 (VB) 中的编辑视图 |Microsoft 文档
 author: Rick-Anderson
-description: "本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识..."
+description: 本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 25ba5887a9fd179e75a45d4e140592d0ea66184a
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: ab55de16baea3010f95c8f23a093544fb1fd7aa3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view-vb"></a>检查编辑方法和 (VB) 中的编辑视图
 ====================
@@ -200,6 +200,6 @@ ASP.NET framework 模型联编程序接受已发布的窗体值并创建`Movie`�
 
 在本部分中检查的 CRUD 操作方法和框架生成的视图。 你创建的搜索操作方法和视图，以让用户通过影片标题和风格搜索。 在下一步的部分中，你将了解如何将属性添加到`Movie`模型以及如何添加初始值设定项将自动创建一个测试数据库。
 
->[!div class="step-by-step"]
-[上一页](accessing-your-models-data-from-a-controller.md)
-[下一页](adding-a-new-field.md)
+> [!div class="step-by-step"]
+> [上一页](accessing-your-models-data-from-a-controller.md)
+> [下一页](adding-a-new-field.md)

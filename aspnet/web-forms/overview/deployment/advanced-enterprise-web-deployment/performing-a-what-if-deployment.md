@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
-title: "如果执行是什么部署 |Microsoft 文档"
+title: 如果执行是什么部署 |Microsoft 文档
 author: jrjlee
-description: "本主题描述如何执行假设 （或模拟） 使用 Internet 信息服务 (IIS) Web 部署工具 （Web 部署） 和 V 部署..."
+description: 本主题描述如何执行假设 （或模拟） 使用 Internet 信息服务 (IIS) Web 部署工具 （Web 部署） 和 V 部署...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: cea805c86f0764c7443ccc5c9f89248860a6a842
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c1a13f38c8e629bcd615190b00104109e25fb289
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="performing-a-what-if-deployment"></a>执行"假设"部署
 ====================
@@ -27,9 +27,9 @@ ms.lasthandoff: 03/15/2018
 > 本主题描述如何执行"假设"（或模拟） 使用的 Internet 信息服务 (IIS) Web 部署工具 （Web 部署） 和 VSDBCMD 部署。 这使你确定你的部署逻辑的对特定目标环境的影响，在实际部署你的应用程序之前。
 
 
-本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案 （&） #x 2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 的 web 应用程序Communication Foundation (WCF) 服务和数据库项目。
+本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案&#x2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
-这些教程的核心的部署方法取决于中介绍的拆分项目文件方法[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，请在生成和部署过程控制由两个项目文件 & #x 2014年; one 包含生成适用于每种目标环境和一个包含特定于环境的生成和部署设置的说明进行操作。 在生成期间，特定于环境的项目文件合并到环境无关的项目文件中以形成一组完整的生成说明。
+这些教程的核心的部署方法取决于中介绍的拆分项目文件方法[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，两个项目文件中生成和部署过程由控制其&#x2014;一个包含生成适用于每种目标环境和一个包含特定于环境的生成和部署设置的说明进行操作。 在生成期间，特定于环境的项目文件合并到环境无关的项目文件中以形成一组完整的生成说明。
 
 ## <a name="performing-a-what-if-deployment-for-web-packages"></a>执行"假设"部署 Web 包
 
@@ -41,7 +41,7 @@ Web 部署包括可以使用"假设"执行中的部署的功能 （或试用版�
 
 因为"假设"部署实际上不会更改任何内容在目标服务器上，它做些什么无法始终是预测部署将会成功。
 
-中所述[部署 Web 包](../web-deployment-in-the-enterprise/deploying-web-packages.md)，你可以部署使用 Web 部署两个方式 & #x 2014年; 通过使用 MSDeploy.exe 命令行实用工具直接或通过运行 web 包*。 deploy.cmd*生成过程生成的文件。
+中所述[部署 Web 包](../web-deployment-in-the-enterprise/deploying-web-packages.md)，你可以部署两种方式使用 Web 部署 web 包&#x2014;通过 MSDeploy.exe 命令行实用工具，直接或通过运行*。 deploy.cmd*文件生成过程生成。
 
 如果你直接使用 MSDeploy.exe，你可以通过添加运行"假设"部署**– whatif**标志设为你的命令。 例如，若要评估如果 ContactManager.Mvc.zip 包部署到过渡环境，会发生什么情况，MSDeploy 命令应类似如下：
 
@@ -122,7 +122,7 @@ VSDBCMD 是一个差异数据库部署工具，并且这种情况下部署脚本
 [!code-xml[Main](performing-a-what-if-deployment/samples/sample6.xml)]
 
 
-同样下, 一步目标使用 VSDBCMD 实用程序来部署数据库。 默认情况下， **/dd**不包含开关。 这意味着 VSDBCMD 将生成部署脚本，但不是会将部署的数据库 （&） #x 2014; 换句话说，"假设"方案。 如果**WhatIf**属性未设置为**true**、 **/dd**添加交换机和 VSDBCMD 将部署数据库。
+同样下, 一步目标使用 VSDBCMD 实用程序来部署数据库。 默认情况下， **/dd**不包含开关。 这意味着 VSDBCMD 将生成部署脚本，但不是会将数据库部署&#x2014;换而言之，"假设"方案。 如果**WhatIf**属性未设置为**true**、 **/dd**添加交换机和 VSDBCMD 将部署数据库。
 
 
 [!code-xml[Main](performing-a-what-if-deployment/samples/sample7.xml)]
@@ -144,6 +144,6 @@ VSDBCMD 是一个差异数据库部署工具，并且这种情况下部署脚本
 
 有关 Web 部署命令行语法的详细信息，请参阅[Web 部署操作设置](https://technet.microsoft.com/library/dd569089(WS.10).aspx)。 有关当你使用的命令行选项的指导*。 deploy.cmd*文件，请参阅[如何： 安装部署包 Using deploy.cmd 文件](https://msdn.microsoft.com/library/ff356104.aspx)。 有关 VSDBCMD 命令行语法的指南，请参阅[VSDBCMD 的命令行参考。EXE （部署和架构导入）](https://msdn.microsoft.com/library/dd193283.aspx)。
 
->[!div class="step-by-step"]
-[上一页](advanced-enterprise-web-deployment.md)
-[下一页](customizing-database-deployments-for-multiple-environments.md)
+> [!div class="step-by-step"]
+> [上一页](advanced-enterprise-web-deployment.md)
+> [下一页](customizing-database-deployments-for-multiple-environments.md)

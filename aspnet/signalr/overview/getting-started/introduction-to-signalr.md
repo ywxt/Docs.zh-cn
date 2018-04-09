@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/introduction-to-signalr
-title: "SignalR 简介 |Microsoft 文档"
+title: SignalR 简介 |Microsoft 文档
 author: pfletcher
-description: "本文介绍了 SignalR 是什么，以及一些了要创建的解决方案。"
+description: 本文介绍了 SignalR 是什么，以及一些了要创建的解决方案。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 5bb49c9c2405d232ba5e067d99f8879b3bc99361
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+ms.openlocfilehash: 0ceca3edc26d35b1155946e60863a84da0bbe592
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-signalr"></a>SignalR 简介
 ====================
@@ -85,11 +85,11 @@ SignalR 是上某些要求进行客户端和服务器之间的实时工作的传
 2. 如果配置 JSONP (即，`jsonp`参数设置为`true`连接在启动时)，使用长轮询。
 3. 如果操作正在进行的跨域连接，（即，如果该 SignalR 终结点不作为宿主的页位于同一域中），然后 WebSocket 将使用如果满足以下条件：
 
-    - 客户端支持 CORS （跨域资源共享）。 有关在其的客户端支持 CORS 的详细信息，请参阅[在 caniuse.com CORS](http://www.caniuse.com/CORS)。
-    - 客户端支持 WebSocket
-    - 服务器支持 WebSocket
+   - 客户端支持 CORS （跨域资源共享）。 有关在其的客户端支持 CORS 的详细信息，请参阅[在 caniuse.com CORS](http://www.caniuse.com/CORS)。
+   - 客户端支持 WebSocket
+   - 服务器支持 WebSocket
 
-    如果不满足任何这些条件，则将使用长轮询。 跨域连接的详细信息，请参阅[如何建立的跨域连接](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain)。
+     如果不满足任何这些条件，则将使用长轮询。 跨域连接的详细信息，请参阅[如何建立的跨域连接](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain)。
 4. 如果未配置 JSONP 并且此连接不是跨域，如果客户端和服务器支持它，将使用 WebSocket。
 5. 如果客户端或服务器不支持 WebSocket，如果可用，则使用服务器发送事件。
 6. 如果服务器发送事件不可用，将尝试永久帧。

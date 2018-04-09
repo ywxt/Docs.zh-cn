@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception
-title: "ASP.NET Web 窗体连接复原和命令截获 |Microsoft 文档"
+title: ASP.NET Web 窗体连接复原和命令截获 |Microsoft 文档
 author: Erikre
-description: "本教程介绍如何修改示例应用程序以支持连接复原和命令截获。"
+description: 本教程介绍如何修改示例应用程序以支持连接复原和命令截获。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception
 msc.type: authoredcontent
-ms.openlocfilehash: e3347657fb5c7bf8c7bb4e51a2e810a1edde826a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d5c4e46209e1b21a303fdf1fb16c6c868b3ca923
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a>ASP.NET Web 窗体连接复原和命令截获
 ====================
@@ -102,9 +102,9 @@ ms.lasthandoff: 01/24/2018
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample4.cs)]
 
- 该接口提供三种跟踪级别，以指示日志的相对重要性和旨在提供有关外部服务调用，如数据库查询的滞后时间信息的一个。 日志记录方法具有重载，可以传递引发异常。 这是以便实现的接口，而不是依靠中每个日志记录方法调用在整个应用程序正在执行的类可靠地记录异常信息包括堆栈跟踪和内部异常。  
+   该接口提供三种跟踪级别，以指示日志的相对重要性和旨在提供有关外部服务调用，如数据库查询的滞后时间信息的一个。 日志记录方法具有重载，可以传递引发异常。 这是以便实现的接口，而不是依靠中每个日志记录方法调用在整个应用程序正在执行的类可靠地记录异常信息包括堆栈跟踪和内部异常。  
   
- `TraceApi`方法使你能够跟踪的 SQL 数据库等外部服务每次调用的延迟。
+   `TraceApi`方法使你能够跟踪的 SQL 数据库等外部服务每次调用的延迟。
 3. 在*日志记录*文件夹中，创建一个名为的类文件*Logger.cs*和默认代码替换为以下代码：  
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample5.cs)]
@@ -121,20 +121,20 @@ ms.lasthandoff: 01/24/2018
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample6.cs)]
 
- 对于成功的查询或命令，此代码将与滞后时间信息的信息日志。 对于异常，它将创建错误日志。
+   对于成功的查询或命令，此代码将与滞后时间信息的信息日志。 对于异常，它将创建错误日志。
 2. 若要创建在输入时，将生成 dummy 暂时性错误的侦听器类&quot;引发&quot;中**名称**上名为的页的文本框中*AdminPage.aspx*，创建一个类名为文件*InterceptorTransientErrors.cs*中*逻辑*文件夹和替换默认代码替换为以下代码：  
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample7.cs)]
 
     此代码仅重写`ReaderExecuting`方法，该调用可以返回多行数据的查询方法。 如果你想要检查连接复原对于其他类型的查询，也可以重写`NonQueryExecuting`和`ScalarExecuting`方法，为日志记录侦听器未。  
   
- 更高版本，你将登录为"Admin"，并选择**管理员**顶部导航栏上的链接。 然后，在*AdminPage.aspx*页将添加名为产品&quot;引发&quot;。 该代码创建错误号 20，类型是已知是通常暂时性 dummy SQL 数据库的异常。 其他当前被识别为暂时性的错误号均 64、 233、 10053、 10054、 10060、 10928、 10929、 40197、 40501 和 40613，但它们是可能会有新版本的 SQL 数据库中的更改。 产品将重命名为"TransientErrorExample"，可在代码中遵循*InterceptorTransientErrors.cs*文件。  
+   更高版本，你将登录为"Admin"，并选择**管理员**顶部导航栏上的链接。 然后，在*AdminPage.aspx*页将添加名为产品&quot;引发&quot;。 该代码创建错误号 20，类型是已知是通常暂时性 dummy SQL 数据库的异常。 其他当前被识别为暂时性的错误号均 64、 233、 10053、 10054、 10060、 10928、 10929、 40197、 40501 和 40613，但它们是可能会有新版本的 SQL 数据库中的更改。 产品将重命名为"TransientErrorExample"，可在代码中遵循*InterceptorTransientErrors.cs*文件。  
   
- 代码会返回该异常对 Entity Framework 而不是运行查询并通过返回结果。 返回暂时性异常*四个*次，然后将代码恢复到将查询传递给数据库的一般过程。
+   代码会返回该异常对 Entity Framework 而不是运行查询并通过返回结果。 返回暂时性异常*四个*次，然后将代码恢复到将查询传递给数据库的一般过程。
 
     记录的所有内容，因为你将能够看到实体框架尝试之后才最后成功，四次执行查询和应用程序中的唯一区别是，它使用更长时间才能呈现包含查询结果页。  
   
- 实体框架将重试次数是可配置;该代码指定四次，因为它是 SQL 数据库执行策略的默认值。 如果更改执行策略，则必须还更改此处指定多少次暂时性错误生成的代码。 您还可以更改代码以生成更多的异常，使实体框架将引发`RetryLimitExceededException`异常。
+   实体框架将重试次数是可配置;该代码指定四次，因为它是 SQL 数据库执行策略的默认值。 如果更改执行策略，则必须还更改此处指定多少次暂时性错误生成的代码。 您还可以更改代码以生成更多的异常，使实体框架将引发`RetryLimitExceededException`异常。
 3. 在*Global.asax*，添加以下 using 语句：  
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample8.cs)]
@@ -158,20 +158,20 @@ ms.lasthandoff: 01/24/2018
 2. 选择**管理员**顶部导航栏中。
 3. 输入新的产品名为"引发"与相应的说明、 价格和图像文件。
 4. 按**添加产品**按钮。  
- 你会注意到，浏览器看上去已挂起了几秒钟时实体框架重试查询多次。 首次重试发生速度非常快，然后在每个其他的重试之前的等待增大。 此过程的调用每次重试之前再等待*指数退让*。
+   你会注意到，浏览器看上去已挂起了几秒钟时实体框架重试查询多次。 首次重试发生速度非常快，然后在每个其他的重试之前的等待增大。 此过程的调用每次重试之前再等待*指数退让*。
 5. 等待，直到页面不再 atttempting 加载。
 6. 停止项目，并查看 Visual Studio**输出**窗口以查看跟踪输出。 你可以找到**输出**窗口，通过选择**调试** - &gt; **Windows**  - &gt; **输出**。 你可能必须滚动条越过数据编写你记录器的几个其他日志。  
   
- 请注意，你可以看到发送到数据库的实际 SQL 查询。 你看到一些初始查询和命令的实体框架执行的操作若要开始，检查数据库版本和迁移历史记录表。   
+   请注意，你可以看到发送到数据库的实际 SQL 查询。 你看到一些初始查询和命令的实体框架执行的操作若要开始，检查数据库版本和迁移历史记录表。   
     ![输出窗口](aspnet-web-forms-connection-resiliency-and-command-interception/_static/image1.png)   
- 请注意，不能重复此测试，除非停止应用程序并重新启动它。 如果你想要能够在应用程序的单次运行中测试连接复原多次，你可以编写代码以重置中的错误计数器`InterceptorTransientErrors`。
+   请注意，不能重复此测试，除非停止应用程序并重新启动它。 如果你想要能够在应用程序的单次运行中测试连接复原多次，你可以编写代码以重置中的错误计数器`InterceptorTransientErrors`。
 7. 可以查看的差异 （重试策略） 的执行策略进行，注释`SetExecutionStrategy`中一行*WingtipToysConfiguration.cs*文件中*逻辑*文件夹中，运行**管理员**同样，在调试模式下页上，添加名为产品&quot;引发&quot;试。  
   
- 这一次调试器停止上第一次生成异常立即时它将尝试执行第一次的查询。  
+   这一次调试器停止上第一次生成异常立即时它将尝试执行第一次的查询。  
     ![调试-查看详细信息](aspnet-web-forms-connection-resiliency-and-command-interception/_static/image2.png)
 8. 取消注释`SetExecutionStrategy`中一行*WingtipToysConfiguration.cs*文件。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，你已了解如何修改 Web 窗体示例应用程序，以支持连接复原和命令截获。
 

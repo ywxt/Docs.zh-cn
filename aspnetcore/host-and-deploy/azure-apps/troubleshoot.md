@@ -1,7 +1,7 @@
 ---
-title: "解决在 Azure App Service 上的 ASP.NET 核心"
+title: 解决在 Azure App Service 上的 ASP.NET 核心
 author: guardrex
-description: "了解如何诊断 ASP.NET Core Azure 应用服务部署问题。"
+description: 了解如何诊断 ASP.NET Core Azure 应用服务部署问题。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: e6a8404d3fe96a0136d7f874107b2cdf63e8e890
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 47056c80c7abf5dd5ad5ae96af7b821d31b21b8b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>解决在 Azure App Service 上的 ASP.NET 核心
 
 作者：[Luke Latham](https://github.com/guardrex)
 
-[!INCLUDE[Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
+[!INCLUDE [Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
 
 本文说明了如何诊断 ASP.NET Core 应用使用 Azure App Service 的诊断工具的启动问题。 有关其他故障排除建议，请参阅[Azure App Service 诊断概述](/azure/app-service/app-service-diagnostics)和[如何： 在 Azure App Service 中监视应用](/azure/app-service/web-sites-monitor)Azure 文档中。
 
@@ -105,9 +105,9 @@ ASP.NET 核心模块 stdout 日志通常记录找不到应用程序事件日志�
 1. 选择**保存**保存文件。
 
 > [!WARNING]
-> 若要禁用 stdout 日志可能会导致应用程序或服务器失败。 日志文件大小或创建的日志文件数没有限制。
+> 若要禁用 stdout 日志可能会导致应用程序或服务器失败。 日志文件大小或创建的日志文件数没有限制。 仅使用日志记录以应用启动问题疑难解答的 stdout。
 >
-> 对于例程日志记录在 ASP.NET Core 应用程序，使用限制日志文件大小和旋转日志的日志记录库。 有关详细信息，请参阅[第三方日志记录提供程序](xref:fundamentals/logging/index#third-party-logging-providers)。
+> 对于常规日志记录在 ASP.NET Core 应用程序在启动之后，使用限制日志文件大小和旋转日志的日志记录库。 有关详细信息，请参阅[第三方日志记录提供程序](xref:fundamentals/logging/index#third-party-logging-providers)。
 
 ## <a name="common-startup-errors"></a>常见的启动错误 
 

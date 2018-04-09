@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-edit-methods-and-edit-view
-title: "检查编辑方法和编辑视图 |Microsoft 文档"
+title: 检查编辑方法和编辑视图 |Microsoft 文档
 author: Rick-Anderson
-description: "注意： 本教程的更新的版本此处提供了使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全，请按照和演示要简单得多..."
+description: 注意： 本教程的更新的版本此处提供了使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全，请按照和演示要简单得多...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/28/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 315914056c0a666fdf23cf82a314a999e03114b6
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 304d3c1efbce8949fd9385529f2a16b07e05ffdf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>检查编辑方法和编辑视图
 ====================
@@ -212,6 +212,6 @@ ms.lasthandoff: 03/15/2018
 
 在本部分中检查的 CRUD 操作方法和框架生成的视图。 你创建的搜索操作方法和视图，以让用户通过影片标题和风格搜索。 在下一步的部分中，你将了解如何将属性添加到`Movie`模型以及如何添加初始值设定项将自动创建一个测试数据库。
 
->[!div class="step-by-step"]
-[上一页](accessing-your-models-data-from-a-controller.md)
-[下一页](adding-a-new-field-to-the-movie-model-and-table.md)
+> [!div class="step-by-step"]
+> [上一页](accessing-your-models-data-from-a-controller.md)
+> [下一页](adding-a-new-field-to-the-movie-model-and-table.md)

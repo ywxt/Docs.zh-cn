@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-vb
-title: "反击机器人 (VB) |Microsoft 文档"
+title: 反击机器人 (VB) |Microsoft 文档
 author: wenz
-description: "自动化的机器人石膏的垃圾邮件，提交注释窗体，而无需任何用户交互的网络日志和其他网站。 在 ASP.NET AJAX Con NoBot 控件..."
+description: 自动化的机器人石膏的垃圾邮件，提交注释窗体，而无需任何用户交互的网络日志和其他网站。 在 ASP.NET AJAX Con NoBot 控件...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3b786fd8605c7521a4aae8e49ca236363a71b572
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 35d5984ac7ff3422bab07a759c93fef3914a22f7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="fighting-bots-vb"></a>反击机器人 (VB)
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 
 有几个优点和缺点，这种方法，但本主题的讨论不在本教程的范围。 但是还有 ASP.NET AJAX 控件工具包提供类似的方法中的控件： `NoBot`。 它可以更轻松地克服比验证码，但非常易于使用以及如其中它被视为成功，如果大多数垃圾邮件尝试博客网站上的运行状况非常好的可为失败，其中`NoBot`控件可以执行操作。
 
-`NoBot`截获当前的 ASP.NET web 窗体回的发，如果满足至少这些条件之一：
+`NoBot` 截获当前的 ASP.NET web 窗体回的发，如果满足至少这些条件之一：
 
 - 浏览器无法解决一个 JavaScript 难题 （例如当 JavaScript 停用）
 - 用户提交到快速表单
@@ -45,9 +45,9 @@ ms.lasthandoff: 11/10/2017
 
 请检查这些条件，以便`NoBot`控件需要这些属性 （所有这些可选）：
 
-- `ResponseMinimumDelaySeconds`最小量之间回发的秒数
-- `CutoffWindowSeconds`从一个 IP 的回发中度量值的时间间隔的长度
-- `CutoffMaximumInstances`每个时间间隔的秒的最大量
+- `ResponseMinimumDelaySeconds` 最小量之间回发的秒数
+- `CutoffWindowSeconds` 从一个 IP 的回发中度量值的时间间隔的长度
+- `CutoffMaximumInstances` 每个时间间隔的秒的最大量
 
 以下标记要求至少两个秒之间回发经过和有只有五回发或小于 30 秒间隔内：
 
@@ -72,5 +72,5 @@ ms.lasthandoff: 11/10/2017
 
 此错误消息可能已由 bot ([单击以查看实际尺寸的图像](fighting-bots-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一篇](fighting-bots-cs.md)
+> [!div class="step-by-step"]
+> [上一篇](fighting-bots-cs.md)

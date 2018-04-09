@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-determine-whether-an-asynchronous-postback-has-occurred
-title: "[如何:]确定是否异步回发发生？ | Microsoft Docs"
+title: '[如何:]确定是否异步回发发生？ | Microsoft Docs'
 author: JoeStagner
-description: "ASP.NET Web 窗体的 Page_Load 方法将在标准的整页回发或 asychnronous 局部页面回发期间执行。 在本视频中..."
+description: ASP.NET Web 窗体的 Page_Load 方法将在标准的整页回发或 asychnronous 局部页面回发期间执行。 在本视频中...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/25/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-determine-whether-an-asynchronous-postback-has-occurred
 msc.type: video
-ms.openlocfilehash: 75c1a5f8b264ca66acca3f47013cc62a50501316
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5fbea5f0aee0e1686c3e459f6a000428ca4b9829
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-determine-whether-an-asynchronous-postback-has-occurred"></a>[如何:]确定是否异步回发发生？
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （5 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-determine-whether-an-asynchronous-postback-has-occurred)
 
->[!div class="step-by-step"]
-[上一页](how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel.md)
-[下一页](how-do-i-use-the-conditional-updatemode-of-the-updatepanel.md)
+> [!div class="step-by-step"]
+> [上一页](how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel.md)
+> [下一页](how-do-i-use-the-conditional-updatemode-of-the-updatepanel.md)

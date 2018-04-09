@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-maskededit-controls
-title: "[如何:]使用 ASP.NET AJAX MaskedEdit 控件？ | Microsoft Docs"
+title: '[如何:]使用 ASP.NET AJAX MaskedEdit 控件？ | Microsoft Docs'
 author: JoeStagner
-description: "ASP.NET AJAX 控件工具包提供 MaskedEdit 控件以及 MaskedEditValidator 控制协同工作以提示，样式，并验证 d..."
+description: ASP.NET AJAX 控件工具包提供 MaskedEdit 控件以及 MaskedEditValidator 控制协同工作以提示，样式，并验证 d...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/04/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-maskededit-controls
 msc.type: video
-ms.openlocfilehash: a43b34827e7bdad5347ab1d22d77f70be5af3fae
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e79d8517028337b0693234dd28d6c0903c12e2f6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-aspnet-ajax-maskededit-controls"></a>[如何:]使用 ASP.NET AJAX MaskedEdit 控件？
 ====================
@@ -26,6 +26,6 @@ ASP.NET AJAX 控件工具包提供 MaskedEdit 控件和 MaskedEditValidator 控�
 
 [&#9654;观看视频 （17 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-maskededit-controls)
 
->[!div class="step-by-step"]
-[上一页](how-do-i-use-the-aspnet-ajax-dropdown-control.md)
-[下一页](how-do-i-use-the-aspnet-ajax-mutuallyexclusive-checkbox-extender.md)
+> [!div class="step-by-step"]
+> [上一页](how-do-i-use-the-aspnet-ajax-dropdown-control.md)
+> [下一页](how-do-i-use-the-aspnet-ajax-mutuallyexclusive-checkbox-extender.md)

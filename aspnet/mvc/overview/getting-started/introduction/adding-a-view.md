@@ -1,7 +1,7 @@
 ---
-title: "将视图添加到 MVC 应用程序"
+title: 将视图添加到 MVC 应用程序
 author: Rick-Anderson
-description: "将视图添加到 MVC 应用程序"
+description: 将视图添加到 MVC 应用程序
 ms.author: riande
 manager: wpickett
 ms.date: 09/1721/2017
@@ -9,17 +9,17 @@ ms.topic: article
 ms.technology: dotnet-mvc
 ms.prod: .net-framework
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: 86887f0dafa31ff3eb6597284c469c4b3053b6b7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 21db97e635b5db580df31f46ca7f8b60a80d6f94
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-view"></a>添加视图
 ====================
 通过[Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 在本节中你要修改`HelloWorldController`类以使用模板文件复制到完全封装生成 HTML 响应客户端的过程的视图。 
 
@@ -119,7 +119,7 @@ ms.lasthandoff: 01/24/2018
 
 目前，`Welcome`中的操作方法`HelloWorldController`类采用`name`和`numTimes`参数，然后输出直接向浏览器的值。 而不是有呈现为一个字符串，此响应的控制器，让我们更改控制器以改为使用视图模板。 视图模板将生成动态响应，这意味着你需要将适当的数据位从控制器传递给视图以生成响应。 你可以执行此操作通过让放在需要查看模板的动态数据 （参数） 的控制器`ViewBag`视图模板然后可以访问的对象。
 
-返回到*HelloWorldController.cs*文件并将更改`Welcome`方法将添加`Message`和`NumTimes`值赋给`ViewBag`对象。 `ViewBag`是动态对象，这意味着你可以放置希望中包括的任何内容`ViewBag`对象具有未定义的属性，直到你输入其内部的一些内容。 [ASP.NET MVC 模型绑定系统](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx)自动将映射的命名的参数 (`name`和`numTimes`) 从到你的方法中的参数的地址栏中的查询字符串。 完整的 HelloWorldController.cs 文件如下所示：
+返回到*HelloWorldController.cs*文件并将更改`Welcome`方法将添加`Message`和`NumTimes`值赋给`ViewBag`对象。 `ViewBag` 是动态对象，这意味着你可以放置希望中包括的任何内容`ViewBag`对象具有未定义的属性，直到你输入其内部的一些内容。 [ASP.NET MVC 模型绑定系统](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx)自动将映射的命名的参数 (`name`和`numTimes`) 从到你的方法中的参数的地址栏中的查询字符串。 完整的 HelloWorldController.cs 文件如下所示：
 
 [!code-csharp[Main](adding-a-view/samples/sample8.cs)]
 
@@ -151,6 +151,6 @@ ms.lasthandoff: 01/24/2018
 
 当然，这是一种类型的&quot;M&quot;模型，但不数据库类型。 让我们用学到的内容来创建一个电影数据库。
 
->[!div class="step-by-step"]
-[上一页](adding-a-controller.md)
-[下一页](adding-a-model.md)
+> [!div class="step-by-step"]
+> [上一页](adding-a-controller.md)
+> [下一页](adding-a-model.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-vb
-title: "显示每个行与 DataList 控件 (VB) 的多个记录 |Microsoft 文档"
+title: 显示每个行与 DataList 控件 (VB) 的多个记录 |Microsoft 文档
 author: rick-anderson
-description: "在本简短的教程，我们将探讨如何自定义其 RepeatColumns 和 RepeatDirection 属性通过 DataList 的布局。"
+description: 在本简短的教程，我们将探讨如何自定义其 RepeatColumns 和 RepeatDirection 属性通过 DataList 的布局。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 416178533f022f2a262799e6f042d6009bb9d999
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9c85e5a1d7b88a9ed53ed8392a300d5118363bf8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-vb"></a>显示每个行与 DataList 控件 (VB) 的多个记录
 ====================
@@ -55,7 +55,7 @@ DataList 示例我们已在过去的两个教程中看到已作为某个单列 H
 
 [!code-aspx[Main](showing-multiple-records-per-row-with-the-datalist-control-vb/samples/sample2.aspx)]
 
-请注意，已包含中的格式说明符`Eval`数据绑定语法`UnitPrice`，格式设置为货币的返回的值`Eval("UnitPrice", "{0:C}").`
+请注意，已包含中的格式说明符`Eval`数据绑定语法`UnitPrice`，格式设置为货币的返回的值 `Eval("UnitPrice", "{0:C}").`
 
 需要一段时间来访问你的浏览器中的页。 如图 2 所示，DataList 将呈现为一个产品中单个列中，多行的表。
 
@@ -107,18 +107,18 @@ DataList 示例我们已在过去的两个教程中看到已作为某个单列 H
 
 生成的表中显示的行数取决于绑定到 DataList 的总记录数。 确切地说，它的数据源项的总数目上限除以的 s`RepeatColumns`属性值。 由于`Products`表当前有 84 产品，这是可由 3 整除、 有 28 行。 如果数据源中的项的数目和`RepeatColumns`属性值不整除，则最后一个行或列将具有空白单元格。 如果`RepeatDirection`设置为`Vertical`，则最后一列将具有空单元格; 如果`RepeatDirection`是`Horizontal`，则最后一行将具有空单元格。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 DataList，默认情况下，列出其一个单一列中，多行的表，该表模仿与单个 TemplateField GridView 的布局中的项。 可接受此默认布局时，我们可以通过显示每行的多个数据源项最大化屏幕的实际空间。 实现此操作是只需设置 DataList 的`RepeatColumns`属性设置为要显示每行的列数。 此外，DataList 的`RepeatDirection`属性可以用于指示是否多列中，多行表的内容应将放置水平方向从左到右、 从上到下或垂直从上到下，从左到右。
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 John Suru。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](formatting-the-datalist-and-repeater-based-upon-data-vb.md)
-[下一页](nested-data-web-controls-vb.md)
+> [!div class="step-by-step"]
+> [上一页](formatting-the-datalist-and-repeater-based-upon-data-vb.md)
+> [下一页](nested-data-web-controls-vb.md)

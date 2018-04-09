@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-vb
-title: "将验证控件添加到 DataList 的编辑界面 (VB) |Microsoft 文档"
+title: 将验证控件添加到 DataList 的编辑界面 (VB) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们会将验证控件添加到 DataList EditItemTemplate，以提供更安全的编辑用户 int。 是多么容易..."
+description: 在本教程中我们会将验证控件添加到 DataList EditItemTemplate，以提供更安全的编辑用户 int。 是多么容易...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/30/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c2daa0eaca2764dec2d6323bf1f5a4f3af2e6bbe
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 46ff0b18c1ea24dd73c9e3034c1b5e53f2e6d0c2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-validation-controls-to-the-datalists-editing-interface-vb"></a>将验证控件添加到 DataList 的编辑界面 (VB)
 ====================
@@ -177,7 +177,7 @@ ASP.NET 验证控件的所有重复回发时将立即对其验证逻辑并报告
 **图 6**： 一个客户端的 Messagebox 中总结了验证错误 ([单击以查看实际尺寸的图像](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image18.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中我们已了解如何通过使用验证控件主动确保我们的用户输入有效在之前尝试更新工作流中使用它们减少引发异常的可能性。 ASP.NET 提供五个验证 Web 控件，旨在检查特定 Web 控制 s 输入和报告回输入的 s 有效性。 在本教程中我们使用这些五个控件的两个 RequiredFieldValidator 和 CompareValidator 以确保提供了产品的名称和价格，必须使用大于或等于零的值以货币格式。
 
@@ -189,12 +189,12 @@ ASP.NET 验证控件的所有重复回发时将立即对其验证逻辑并报告
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Dennis Patterson、 Ken Pespisa 和沈 Shulok。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](handling-bll-and-dal-level-exceptions-vb.md)
-[下一页](customizing-the-datalist-s-editing-interface-vb.md)
+> [!div class="step-by-step"]
+> [上一页](handling-bll-and-dal-level-exceptions-vb.md)
+> [下一页](customizing-the-datalist-s-editing-interface-vb.md)

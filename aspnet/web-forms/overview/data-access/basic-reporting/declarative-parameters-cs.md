@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/basic-reporting/declarative-parameters-cs
-title: "声明性参数 (C#) |Microsoft 文档"
+title: 声明性参数 (C#) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将演示如何使用参数设置为硬编码的值来选择说明控件中显示的数据。"
+description: 在本教程中我们将演示如何使用参数设置为硬编码的值来选择说明控件中显示的数据。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/declarative-parameters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4bbe32ae65f71196fc1f939671b9d1a24bee8c34
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 840630852d28f49f4f4387f1d2cc6b275b468fc2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="declarative-parameters-c"></a>声明性参数 (C#)
 ====================
@@ -127,7 +127,7 @@ ObjectDataSource 的声明性标记会稍有不同我们的第一个示例，使
 
 ## <a name="showing-all-suppliers-by-default"></a>显示默认情况下的所有供应商
 
-而是不是第一次查看网页时将供应商的全不显示我们可能想要显示*所有*供应商首先，允许用户削减通过在文本框中输入国家/地区名称的列表。 当文本框中为空，`SuppliersBLL`类的`GetSuppliersByCountry(country)`方法传递中`null`值，则为其 *`country`* 输入的参数。 这`null`然后容器值传到 DAL 的`GetSupplierByCountry(country)`方法，其中对其进行转换到数据库`NULL`值`@Country`在下面的查询的参数：
+而是不是第一次查看网页时将供应商的全不显示我们可能想要显示*所有*供应商首先，允许用户削减通过在文本框中输入国家/地区名称的列表。 当文本框中为空，`SuppliersBLL`类的`GetSuppliersByCountry(country)`方法传递中`null`值，则为其*`country`*输入的参数。 这`null`然后容器值传到 DAL 的`GetSupplierByCountry(country)`方法，其中对其进行转换到数据库`NULL`值`@Country`在下面的查询的参数：
 
 [!code-sql[Main](declarative-parameters-cs/samples/sample3.sql)]
 
@@ -147,7 +147,7 @@ ObjectDataSource 的声明性标记会稍有不同我们的第一个示例，使
 **图 10**： 所有供应商是默认情况下现在显示 ([单击以查看实际尺寸的图像](declarative-parameters-cs/_static/image30.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 为了使用输入参数的方法，我们需要在对象数据源的指定参数的值`SelectParameters`集合。 要从不同数据源获取的参数值允许不同类型的参数。 默认参数类型使用硬编码的值，但一样轻松地 （以及不带的一行代码） 可以从查询字符串、 会话变量、 cookie 和 Web 页上的控件中甚至用户输入的值获取参数值。
 
@@ -157,12 +157,12 @@ ObjectDataSource 的声明性标记会稍有不同我们的第一个示例，使
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已希尔顿 Giesenow。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](displaying-data-with-the-objectdatasource-cs.md)
-[下一页](programmatically-setting-the-objectdatasource-s-parameter-values-cs.md)
+> [!div class="step-by-step"]
+> [上一页](displaying-data-with-the-objectdatasource-cs.md)
+> [下一页](programmatically-setting-the-objectdatasource-s-parameter-values-cs.md)

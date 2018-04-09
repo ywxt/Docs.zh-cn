@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 927b2490b5c539a79bb9939b88942499b23cc464
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 7e1a457c23ef659bf7ee9c15b66dc5c2d8a31416
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-data-access-layer-c"></a>创建数据访问层 (C#)
 ====================
@@ -84,7 +84,7 @@ ms.lasthandoff: 03/15/2018
 
 这些方法，调用时，将连接到数据库、 发出相应的查询，并返回结果。 我们返回这些结果的方式非常重要。 这些方法可能只需返回的数据集或 DataReader 填充数据库查询，但理想情况下这些结果应返回使用*强类型对象*。 强类型的对象是一个在编译时，严格定义其架构而相反，松散类型化的对象，是一个直到运行时才知道其架构。
 
-例如，DataReader 和 （默认） 数据集是松散类型化对象，因为它们的架构定义的用于填充其数据库查询返回的列。 若要从松散类型化的 DataTable 我们需要使用类似的语法访问特定的列: ***DataTable*。行[*索引*]["*columnName*"]**。 DataTable 的松散类型在此示例中表现出事实，我们需要访问使用字符串或序号索引的列名称。 强类型的数据表，另一方面，将具有每个列实现为属性，从而导致如下所示的代码： ***DataTable*。行[*索引*]。*columnName***\*。
+例如，DataReader 和 （默认） 数据集是松散类型化对象，因为它们的架构定义的用于填充其数据库查询返回的列。 若要从松散类型化的 DataTable 我们需要使用类似的语法访问特定的列：  <strong><em>DataTable</em>。行 [<em>索引</em>] ["<em>columnName</em>"]</strong>。 DataTable 的松散类型在此示例中表现出事实，我们需要访问使用字符串或序号索引的列名称。 强类型的数据表，另一方面，将具有每个列实现为属性，从而导致如下所示的代码：  <strong><em>DataTable</em>。行 [<em>索引</em>]。*columnName</strong>*。
 
 若要返回强类型对象，开发人员可以创建自己的自定义业务对象或使用类型化数据集。 其属性通常反映基础数据库表的业务对象的列的类表示，开发人员实现业务对象。 类型化数据集是由基于数据库架构和其成员都是根据此架构强类型的 Visual Studio 为你生成一个类。 类型化数据集本身扩展 ADO.NET 数据集、 数据表和 DataRow 类的类组成。 除了强类型的数据表，类型化数据集现在还包括 Tableadapter，是使用的填充数据集的数据表和传播回数据库数据表中的修改的方法的类。
 
@@ -233,7 +233,7 @@ AllProducts.aspx.cs
 **图 15**： 选择创建**选择**语句其返回行 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image41.png))
 
 
-下一步是定义用于访问数据的 SQL 查询。 由于我们想要返回属于特定类别的产品，我将使用相同**选择**语句从**GetProducts()**，但将添加以下**其中**子句：**其中 CategoryID = @CategoryID** 。 **@CategoryID**参数到 TableAdapter 向导指示我们正在创建的方法，将需要输入的参数的相应类型 （也就是说，可以为 null 的整数）。
+下一步是定义用于访问数据的 SQL 查询。 由于我们想要返回属于特定类别的产品，我将使用相同<strong>选择</strong>语句从<strong>GetProducts()</strong>，但将添加以下<strong>其中</strong>子句：<strong>其中 CategoryID = @CategoryID</strong> 。 <strong>@CategoryID</strong>参数到 TableAdapter 向导指示我们正在创建的方法，将需要输入的参数的相应类型 （也就是说，可以为 null 的整数）。
 
 
 [![输入查询以仅返回在指定类别中的产品](creating-a-data-access-layer-cs/_static/image43.png)](creating-a-data-access-layer-cs/_static/image42.png)
@@ -241,7 +241,7 @@ AllProducts.aspx.cs
 **图 16**： 输入以仅返回产品指定类别中的查询 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image44.png))
 
 
-最后一步中我们可以选择数据访问模式，来使用，以及自定义所生成的方法的名称。 填充模式中，让我们将名称更改为**FillByCategoryID**并返回数据表返回模式 (**获取 * X*** 方法)，让我们使用**GetProductsByCategoryID**.
+最后一步中我们可以选择数据访问模式，来使用，以及自定义所生成的方法的名称。 填充模式中，让我们将名称更改为<strong>FillByCategoryID</strong>并返回数据表返回模式 (<strong>获取*X</strong>* 方法)，让我们使用<strong>GetProductsByCategoryID</strong>。
 
 
 [![选择的 TableAdapter 方法的名称](creating-a-data-access-layer-cs/_static/image46.png)](creating-a-data-access-layer-cs/_static/image45.png)
@@ -403,48 +403,48 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 
 - **ProductsTableAdapter**
 
-    - **GetProducts**: 
+  - **GetProducts**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample10.sql)]
-    - **GetProductsByCategoryID**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample10.sql)]
+  - **GetProductsByCategoryID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample11.sql)]
-    - **GetProductsBySupplierID**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample11.sql)]
+  - **GetProductsBySupplierID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample12.sql)]
-    - **GetProductByProductID**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample12.sql)]
+  - **GetProductByProductID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample13.sql)]
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample13.sql)]
 - **CategoriesTableAdapter**
 
-    - **GetCategories**: 
+  - **GetCategories**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample14.sql)]
-    - **GetCategoryByCategoryID**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample14.sql)]
+  - **GetCategoryByCategoryID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample15.sql)]
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample15.sql)]
 - **SuppliersTableAdapter**
 
-    - **GetSuppliers**: 
+  - **GetSuppliers**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample16.sql)]
-    - **GetSuppliersByCountry**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample16.sql)]
+  - **GetSuppliersByCountry**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample17.sql)]
-    - **GetSupplierBySupplierID**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample17.sql)]
+  - **GetSupplierBySupplierID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample18.sql)]
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample18.sql)]
 - **EmployeesTableAdapter**
 
-    - **GetEmployees**: 
+  - **GetEmployees**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample19.sql)]
-    - **GetEmployeesByManager**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample19.sql)]
+  - **GetEmployeesByManager**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample20.sql)]
-    - **GetEmployeeByEmployeeID**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample20.sql)]
+  - **GetEmployeeByEmployeeID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample21.sql)]
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample21.sql)]
 
 
 [![数据集设计器后已添加四个 Tableadapter](creating-a-data-access-layer-cs/_static/image84.png)](creating-a-data-access-layer-cs/_static/image83.png)
@@ -509,7 +509,7 @@ SuppliersAndProducts.aspx.cs
 **图 35**: 供应商的公司名称列出在左侧列中，他们的产品的右侧 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image93.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 当生成 web 应用程序创建 DAL 应该是一个你的第一个步骤，发生之前你开始创建表示层。 使用 Visual Studio，创建类型化数据集所基于的 DAL 是完成的任务，可以在 10-15 分钟内无需编写一行代码。 下一步的教程将相互依赖此 DAL。 在[下一教程](creating-a-business-logic-layer-cs.md)我们定义大量的业务规则，请参阅如何在单独的业务逻辑层中实现它们。
 
@@ -543,5 +543,5 @@ SuppliersAndProducts.aspx.cs
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Ron 绿色、 希尔顿 Giesenow、 Dennis Patterson、 沈 Shulok、 Abel Gomez 和 Carlos Santos。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[下一篇](creating-a-business-logic-layer-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](creating-a-business-logic-layer-cs.md)

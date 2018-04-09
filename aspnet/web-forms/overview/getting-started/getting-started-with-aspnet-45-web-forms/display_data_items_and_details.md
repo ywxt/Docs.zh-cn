@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/display_data_items_and_details
-title: "显示数据的项，并详细介绍 |Microsoft 文档"
+title: 显示数据的项，并详细介绍 |Microsoft 文档
 author: Erikre
-description: "本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识..."
+description: 本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/display_data_items_and_details
 msc.type: authoredcontent
-ms.openlocfilehash: 809d7a9c21a3ddf5dfd07d079eb8fe0d1d81712d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5fea654aa5116193cb7496c1b9020ed8e25fc06f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="display-data-items-and-details"></a>显示数据项和详细信息
 ====================
@@ -131,7 +131,7 @@ ms.lasthandoff: 11/10/2017
 若要连接到数据库的上面的标记，必须添加到的其他代码*ProductDetails.aspx*代码。
 
 1. 在**解决方案资源管理器**，右键单击*ProductDetails.aspx* ，然后单击**查看代码**。  
- *ProductDetails.aspx.cs*文件将会显示。
+   *ProductDetails.aspx.cs*文件将会显示。
 2. 用下面的代码替换现有代码：   
 
     [!code-csharp[Main](display_data_items_and_details/samples/sample6.cs)]
@@ -152,7 +152,7 @@ ms.lasthandoff: 11/10/2017
     ![显示数据项数和详细信息-产品](display_data_items_and_details/_static/image4.png)
 4. 关闭浏览器。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中的序列中，你已添加标记和代码以显示产品列表并显示产品详细信息。 在此过程中，你已了解有关强类型化的数据控件、 模型绑定和值在提供程序。 在下一步的教程中，你将添加购物车 Wingtip Toys 示例应用程序。
 
@@ -160,6 +160,6 @@ ms.lasthandoff: 11/10/2017
 
 [检索和显示使用模型的绑定和 web 窗体的数据](../../presenting-and-managing-data/model-binding/retrieving-data.md)
 
->[!div class="step-by-step"]
-[上一页](ui_and_navigation.md)
-[下一页](shopping-cart.md)
+> [!div class="step-by-step"]
+> [上一页](ui_and_navigation.md)
+> [下一页](shopping-cart.md)

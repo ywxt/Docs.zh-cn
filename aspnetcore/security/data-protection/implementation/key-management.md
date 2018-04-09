@@ -1,7 +1,7 @@
 ---
-title: "密钥管理"
+title: ASP.NET 核心中的密钥管理
 author: rick-anderson
-description: "本文档概述了 ASP.NET 核心数据保护密钥管理 Api 的实现详细信息。"
+description: 了解管理 ASP.NET 核心数据保护 Api 的实现详细信息。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-management
-ms.openlocfilehash: a1fd7c55ec94d5def569bb407c064f4fd2fe9695
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 1b073d8779547a828c17e825b0663b26efb61d14
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-management"></a>密钥管理
+# <a name="key-management-in-aspnet-core"></a>ASP.NET 核心中的密钥管理
 
 <a name="data-protection-implementation-key-management"></a>
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 03/02/2018
 
 * 吊销-密钥遭到破坏，并且不必须用于新的保护操作。
 
-创建、 活动和过期密钥可能都用来取消保护传入负载。 默认情况下的吊销的密钥不可能用于取消保护的负载，但应用程序开发人员可以[重写此行为](../consumer-apis/dangerous-unprotect.md#data-protection-consumer-apis-dangerous-unprotect)如有必要。
+创建、 活动和过期密钥可能都用来取消保护传入负载。 默认情况下的吊销的密钥不可能用于取消保护的负载，但应用程序开发人员可以[重写此行为](xref:security/data-protection/consumer-apis/dangerous-unprotect#data-protection-consumer-apis-dangerous-unprotect)如有必要。
 
 >[!WARNING]
 > 开发人员可能想要从密钥链中删除密钥，（例如，通过从文件系统中删除相应的文件）。 此时，保护的密钥的所有数据都都永久密匙，且都没有紧急替代具有吊销键可能没有。 删除键是真正破坏性的行为，并因此数据保护系统公开没有第一类 API 执行此操作。
@@ -83,6 +83,6 @@ services.AddDataProtection()
 
 数据保护系统具有，由此它将尝试自动推导出适当的密钥存储位置和 rest 机制加密启发式方法。 这也是由应用程序开发人员可配置的。 以下文档讨论这些机制的现成实现：
 
-* [内置密钥存储提供程序](key-storage-providers.md#data-protection-implementation-key-storage-providers)
+* [内置密钥存储提供程序](xref:security/data-protection/implementation/key-storage-providers#data-protection-implementation-key-storage-providers)
 
-* [框 rest 服务提供商的密钥加密](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest-providers)
+* [框 rest 服务提供商的密钥加密](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest-providers)

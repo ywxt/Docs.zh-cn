@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/performance/how-do-i-use-the-viewstatemode-property-for-managing-viewstate
-title: "如何： 使用 ViewStateMode 属性用于管理视图状态？ | Microsoft Docs"
+title: 如何： 使用 ViewStateMode 属性用于管理视图状态？ | Microsoft Docs
 author: rick-anderson
-description: "在此视频 Chris Pels 演示如何在 ASP.NET 中的网站的设计视图状态时使用 ViewStateMode 属性。"
+description: 在此视频 Chris Pels 演示如何在 ASP.NET 中的网站的设计视图状态时使用 ViewStateMode 属性。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/17/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/performance/how-do-i-use-the-viewstatemode-property-for-managing-viewstate
 msc.type: video
-ms.openlocfilehash: 86234af617f5dd71564e7248ba588a25640f64c5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0d663cc58f655aa4439071ebd5f895feafc6e898
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-viewstatemode-property-for-managing-viewstate"></a>如何： 使用 ViewStateMode 属性用于管理视图状态？
 ====================
@@ -26,5 +26,5 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （16 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-viewstatemode-property-for-managing-viewstate)
 
->[!div class="step-by-step"]
-[上一篇](aspnet-4-quick-hit-easy-state-compression.md)
+> [!div class="step-by-step"]
+> [上一篇](aspnet-4-quick-hit-easy-state-compression.md)

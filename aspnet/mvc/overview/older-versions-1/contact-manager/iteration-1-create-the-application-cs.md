@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
-title: "迭代 #1 – 创建应用程序 (C#) |Microsoft 文档"
+title: '迭代 #1 – 创建应用程序 (C#) |Microsoft 文档'
 author: microsoft
-description: "在第一次迭代中，我们创建联系人管理器中的最简单方法可能。 我们将添加对基本数据库操作的支持： 创建、 读取、 更新和 D...."
+description: 在第一次迭代中，我们创建联系人管理器中的最简单方法可能。 我们将添加对基本数据库操作的支持： 创建、 读取、 更新和 D....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 12927250595a8f3130328d2fe219280a13349787
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 30f626511164363fea2195a05e73aeee5764933b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-1--create-the-application-c"></a>迭代 #1 – 创建应用程序 (C#)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载代码](iteration-1-create-the-application-cs/_static/contactmanager_1_cs1.zip)
 
@@ -80,13 +80,13 @@ ASP.NET MVC 框架。 你可以从以下地址下载 ASP.NET MVC framework:
 
 在本教程中，我们可以使用 Microsoft 实体框架访问数据库。 实体框架将包含在.NET Framework 3.5 Service Pack 1。 你可以从以下位置下载此 service pack:
 
-[https://www.microsoft.com/downloads/details.aspx?familyid=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;-4a83-b309-53b7b77edf78&displaylang = en](https://www.microsoft.com/downloads/details.aspx?familyid=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;displaylang=en)
+[https://www.microsoft.com/downloads/details.aspx?familyid=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;displaylang=en](https://www.microsoft.com/downloads/details.aspx?familyid=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;displaylang=en)
 
 作为执行每个这些下载逐个的替代方法，可以利用 Web 平台安装程序 (Web PI)。 你可以从以下地址下载 Web PI:
 
 [https://www.asp.net/downloads/essential/](https://www.asp.net/downloads/essential)
 
-## <a name="aspnet-mvc-project"></a>ASP.NET MVC 项目
+## <a name="aspnet-mvc-project"></a>ASP.NET MVC Project
 
 ASP.NET MVC Web 应用程序项目。 启动 Visual Studio，然后选择菜单选项**文件、 新项目**。 **新项目**对话框 （请参见图 1）。 选择**Web**项目类型和**ASP.NET MVC Web 应用程序**模板。 命名新项目*ContactManager* ，然后单击确定按钮。
 
@@ -171,11 +171,11 @@ ASP.NET MVC 项目模板包括用于控制器和视图的示例文件。 在创�
 
 | **列名称** | **数据类型** | **允许 null 值** |
 | --- | --- | --- |
-| Id | int | false |
-| FirstName | nvarchar(50) | false |
-| LastName | nvarchar(50) | false |
-| 电话 | nvarchar(50) | false |
-| 电子邮件 | nvarchar （255) | false |
+| Id | int | False |
+| FirstName | nvarchar(50) | False |
+| LastName | nvarchar(50) | False |
+| 电话 | nvarchar(50) | False |
+| 电子邮件 | nvarchar （255) | False |
 
 
 第一列，Id 列中，是非常特殊。 你需要将 Id 列标记为标识列和主键列。 指示列是标识列，通过展开列属性 （查找底部的图 6） 和滚动到标识规范属性。 设置**（是标识）**属性值**是**。
@@ -262,7 +262,7 @@ ASP.NET MVC 应用程序包含模型、 视图和控制器。 我们首先创建
 
 Home 控制器已包含 index （） 操作。 我们需要修改此方法，使其类似列出 2 所示。
 
-**列出 2-Controllers\HomeController.cs**
+**Listing 2 - Controllers\HomeController.cs**
 
 [!code-csharp[Main](iteration-1-create-the-application-cs/samples/sample2.cs)]
 
@@ -419,7 +419,7 @@ Index （） 方法返回表示联系人的所有联系人数据库表中的视�
 
 我们需要修改索引视图，以使其包含一个链接，以便删除 （请参阅图 21） 的联系人记录。 你需要将以下代码添加到同一个表包含的单元格的编辑链接：
 
-次 Html.ActionLink ({id = 项。Id}) %&gt;
+Html.ActionLink( { id=item.Id }) %&gt;
 
 
 [![新项目对话框](iteration-1-create-the-application-cs/_static/image21.jpg)](iteration-1-create-the-application-cs/_static/image41.png)
@@ -478,7 +478,7 @@ Index （） 方法返回表示联系人的所有联系人数据库表中的视�
 
 进行这些更改之后，联系人管理器将正确运行。 现在，它将使用作为默认控制器的联系控制器类。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在此第一次迭代中，我们创建一个基本的联系人管理器应用程序中的最快方法可能。 我们利用 Visual Studio 自动生成我们控制器和视图的初始代码。 我们还利用实体框架可以自动生成我们数据库模型类。
 
@@ -490,5 +490,5 @@ Index （） 方法返回表示联系人的所有联系人数据库表中的视�
 
 最后，并且最重要的是，联系人管理器应用程序的当前迭代无法轻松地修改或维护。 例如，数据库访问逻辑被融入右控制器操作。 这意味着，我们无法修改数据访问代码，而无需修改我们控制器。 在更高版本迭代中，我们将探讨我们可以实现以更具弹性，若要更改联系人管理器的软件设计模式。
 
->[!div class="step-by-step"]
-[下一篇](iteration-2-make-the-application-look-nice-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](iteration-2-make-the-application-look-nice-cs.md)

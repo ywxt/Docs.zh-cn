@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "读取与实体框架中的 ASP.NET MVC 应用程序的相关的数据 |Microsoft 文档"
+title: 读取与实体框架中的 ASP.NET MVC 应用程序的相关的数据 |Microsoft 文档
 author: tdykstra
 description: /ajax/tutorials/using-ajax-control-toolkit-controls-and-control-extenders-vb
 ms.author: aspnetcontent
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 7a74d01f306abeeac5ac28c942f03001e0fe00f8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 06784d8b610856e71eae78b0db2d0253faedb955
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>读取与相关的数据与实体框架中的 ASP.NET MVC 应用程序
 ====================
@@ -24,12 +24,12 @@ ms.lasthandoff: 01/24/2018
 
 [下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)或[下载 PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 有关教程系列的信息，请参阅[序列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 
 
 在前面的教程中，你将完成 School 数据模型。 在本教程中，你将读取并显示相关的数据-即，实体框架将加载到导航属性的数据。
 
-下图显示了您将使用的页。
+下图是将会用到的页面。
 
 ![](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
 
@@ -39,10 +39,10 @@ ms.lasthandoff: 01/24/2018
 
 有多种实体框架可以加载到实体的导航属性的相关的数据：
 
-- *延迟加载*。 当第一次读取实体时，不检索相关的数据。 但是，第一次尝试访问的导航属性，将自动检索该导航属性所需的数据。 这会导致发送到数据库的多个查询 — 一个用于在实体自身，一个必须检索每个相关实体的数据的时间。 `DbContext`类启用默认延迟加载。 
+- *延迟加载*。 第一次读取实体时，不检索相关数据。 但是，第一次尝试访问导航属性时，将自动检索该导航属性所需的数据。 这会导致发送到数据库的多个查询 — 一个用于在实体自身，一个必须检索每个相关实体的数据的时间。 `DbContext`类启用默认延迟加载。 
 
     ![Lazy_loading_example](https://asp.net/media/2577850/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Lazy_loading_example_2c44eabb-5fd3-485a-837d-8e3d053f2c0c.png)
-- *预先加载*。 实体中读取时，会随之检索相关的数据。 这通常会导致检索所有具有所需的数据的单一联接查询。 使用指定预先加载`Include`方法。
+- *预先加载*。 读取实体时，会检索与之相关的数据。 这通常会导致执行一个检索所有必需数据的联接查询。 使用指定预先加载`Include`方法。
 
     ![Eager_loading_example](https://asp.net/media/2577856/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Eager_loading_example_33f907ff-f0b0-4057-8e75-05a8cacac807.png)
 - *显式加载*。 这是类似于延迟加载的只不过显式检索代码; 中的相关的数据它不会发生自动访问导航属性时。 你相关手动加载数据通过有关实体，以及调用中获取的对象状态管理器项[Collection.Load](https://msdn.microsoft.com/library/gg696220(v=vs.103).aspx)集合的方法或[Reference.Load](https://msdn.microsoft.com/library/gg679166(v=vs.103).aspx)包含属性的方法单个实体。 (在下面的示例中，如果你想要加载管理员导航属性，则将替换`Collection(x => x.Courses)`与`Reference(x => x.Administrator)`。)通常，你将使用显式加载，仅当你已启用延迟加载关闭时。
@@ -53,9 +53,9 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="performance-considerations"></a>性能注意事项
 
-如果你知道需要相关的数据检索的每个实体，预先加载通常提供最佳性能，因为发送到数据库的单个查询通常比用于检索每个实体的单独查询效率更高。 例如，在上面的示例中，假设每个部门都有十个相关的课程。 预先加载示例将导致仅单 （联接） 查询和单个往返到数据库。 延迟加载和显式加载示例将都导致十一种查询和十一个往返行程到数据库。 与数据库额外的往返延迟较高时尤其是对性能造成不利影响。
+如果你知道你需要每个已检索实体的相关数据，则预先加载通常性能最佳，因为数据库执行单个查询通常比执行用于检索每个实体的多个独立查询效率更高。 例如，在上面的示例中，假设每个部门都有十个相关的课程。 预先加载示例将导致仅单 （联接） 查询和单个往返到数据库。 延迟加载和显式加载示例将都导致十一种查询和十一个往返行程到数据库。 当延迟较高时，额外的数据库通信会对性能造成不利影响。
 
-另一方面，在某些情况下延迟加载会更加高效。 预先加载可能会导致非常复杂的联接为其生成 SQL Server 无法有效地处理它。 或如果你需要访问仅针对实体集的子集的实体的导航属性要处理，延迟加载可能更好地执行，因为预先加载将检索比你需要更多的数据。 如果性能非常重要，则最好测试以便做出最佳选择这两种方式的性能。
+另一方面，在某些情况下延迟加载会更加高效。 预先加载可能会导致非常复杂的联接为其生成 SQL Server 无法有效地处理它。 或如果你需要访问仅针对实体集的子集的实体的导航属性要处理，延迟加载可能更好地执行，因为预先加载将检索比你需要更多的数据。 如果性能非常重要，最好测试这两种方式的性能，以便做出最佳选择。
 
 延迟加载可以屏蔽导致性能问题的代码。 例如，未指定 eager 或显式加载但处理大量的实体并在每次迭代中使用多个导航属性的代码可能非常低效，（由于到数据库的许多往返过程）。 执行在开发使用在本地 SQL server 中良好运行的应用程序可能具有性能问题时由于的延迟时间增加和延迟加载移到 Azure SQL 数据库。 分析的实际的测试加载的数据库的查询将帮助你确定延迟加载是否适用。 有关详细信息请参阅[Demystifying 实体框架策略： 加载相关数据](https://msdn.microsoft.com/magazine/hh205756.aspx)和[使用实体框架与 SQL Azure 到减少网络延迟](https://msdn.microsoft.com/magazine/gg309181.aspx)。
 
@@ -88,16 +88,16 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
 
-自动的基架已指定为预先加载`Department`导航属性使用`Include`方法。
+自动支架使用`Include`方法将`Department`导航属性指定为预先加载。
 
-打开*Views\Course\Index.cshtml*和模板代码替换为以下代码。 突出显示所做的更改：
+打开*Views\Course\Index.cshtml*和模板代码替换为以下代码。 突出显示了所做的更改：
 
 [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample3.cshtml?highlight=4,7,14-16,23-25,31-33,40-42)]
 
-你已对基架代码进行以下更改：
+已对基架代码进行了如下更改：
 
 - 更改标题从**索引**到**课程**。
-- 添加**数**显示的列`CourseID`属性值。 默认情况下，主键不基架，因为它们通常是向最终用户无意义。 但是，在这种情况下的主键有意义，以及你想要对其进行说明。
+- 添加了**Number**列以显示`CourseID`属性值。 默认情况下，支架代码不会显示主键，因为通常主键对最终用户来说是无意义的。 而在此示例中，主键是有意义的，因此需要显示。
 - 移动**部门**右侧的列和更改其标题。 基架正确选择要显示`Name`属性从`Department`实体，但应为列标题的课程页面中的此处**部门**而非**名称**。
 
 请注意，部门列的基架的代码显示`Name`属性`Department`实体加载到`Department`导航属性：
@@ -114,15 +114,15 @@ ms.lasthandoff: 01/24/2018
 
 ![Instructors_index_page_with_instructor_and_course_selected](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
 
-此页读取，并通过以下方式显示相关的数据：
+此页通过以下方式读取和显示相关的数据：
 
-- 教师的列表显示来自的相关的数据`OfficeAssignment`实体。 `Instructor`和`OfficeAssignment`实体位于对零或一一个关系。 你将使用的预先加载`OfficeAssignment`实体。 如前面所述，预先加载是通常更高效，您需要为所有检索行的主表的相关的数据。 在这种情况下，你想要显示的所有显示教师 office 分配。
-- 当用户选择一个教师，相关`Course`显示实体。 `Instructor`和`Course`实体位于多对多关系。 你将使用的预先加载`Course`实体和其相关`Department`实体。 在这种情况下，因为你只为所选教师需要课程，延迟加载可能会更有效。 但是，此示例演示如何使用预先加载用于本身是导航属性中的实体内的导航属性。
-- 当用户选择某一课程时，与相关的数据从`Enrollments`显示实体集。 `Course`和`Enrollment`实体位于一个对多关系。 你将添加显式加载`Enrollment`实体和其相关`Student`实体。 （显式加载则无需因为启用了延迟加载，但下面的示例演示如何显式加载。）
+- 教师的列表显示来自的相关的数据`OfficeAssignment`实体。 `Instructor` 和 `OfficeAssignment` 实体之间存在一对零或一的关系。 你将使用的预先加载`OfficeAssignment`实体。 如前所述，在需要主表的所有已检索行的相关数据时，预先加载通常更高效。 在此示例中，需要显示所有已显示教师的办公室分配情况。
+- 当用户选择一个教师，相关`Course`显示实体。 `Instructor` 和 `Course` 实体之间存在多对多关系。 你将使用的预先加载`Course`实体和其相关`Department`实体。 在这种情况下，因为你只为所选教师需要课程，延迟加载可能会更有效。 但是，此示例演示了如何使用预先加载方式来加载本身是导航属性中的实体内的导航属性。
+- 当用户选择某一课程时，与相关的数据从`Enrollments`显示实体集。 `Course` 和 `Enrollment` 实体之间存在一对多的关系。 你将添加显式加载`Enrollment`实体和其相关`Student`实体。 （显式加载则无需因为启用了延迟加载，但下面的示例演示如何显式加载。）
 
 ### <a name="create-a-view-model-for-the-instructor-index-view"></a>为教师索引视图创建视图模型
 
-教师页显示三个不同的表。 因此，你将创建包括三个属性，每个保存的表中的一个数据视图模型。
+教师页显示三个不同的表。 因此，你将创建包含三个属性的视图模型，每个属性保存一个表中的数据。
 
 在*Viewmodel*文件夹中，创建*InstructorIndexData.cs*和替换为以下代码替换现有代码：
 
@@ -146,9 +146,9 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample8.cs)]
 
-该方法将接受可选路由数据 (`id`) 和查询字符串参数 (`courseID`)，提供所选的教师和所选的过程的 ID 值并将所有所需的数据传递到该视图。 参数提供的**选择**网页超链接。
+该方法将接受可选路由数据 (`id`) 和查询字符串参数 (`courseID`)，提供所选的教师和所选的过程的 ID 值并将所有所需的数据传递到该视图。 参数由页面上的“选择”超链接提供。
 
-代码首先通过在创建视图模型的实例并在其中放置教师的列表。 该代码指定为预先加载`Instructor.OfficeAssignment`和`Instructor.Courses`导航属性。
+代码首先创建视图模型的实例并向其中放置教师列表。 该代码指定为预先加载`Instructor.OfficeAssignment`和`Instructor.Courses`导航属性。
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample9.cs?highlight=3-4)]
 
@@ -156,7 +156,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample10.cs)]
 
-如前所述，预先加载不是必需的但做是为了提高性能。 因为视图始终需要`OfficeAssignment`实体，它会在同一查询中提取的更加高效。 `Course`中网页上，选择一个教师，以便预先加载优于延迟加载，仅当与比而无需选择某一课程更通常显示的页面时，实体所需。
+如前所述，预先加载不是必需的但做是为了提高性能。 因为视图始终需要`OfficeAssignment`实体，它会在同一查询中提取的更加高效。 `Course` 中网页上，选择一个教师，以便预先加载优于延迟加载，仅当与比而无需选择某一课程更通常显示的页面时，实体所需。
 
 如果选择 instructor ID，则会将所选的教师检索从教师视图模型中的列表。 视图模型`Courses`属性然后加载`Course`从该 instructor 实体`Courses`导航属性。
 
@@ -172,20 +172,20 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample13.cs)]
 
-接下来，如果选择某一课程，从列表中的课程，视图模型中检索所选的课程。 然后视图模型的`Enrollments`属性加载与`Enrollment`从该过程的实体`Enrollments`导航属性。
+接下来，如果选择一门课程，则会从视图模型中的课程列表检索所选课程。 然后视图模型的`Enrollments`属性加载与`Enrollment`从该过程的实体`Enrollments`导航属性。
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample14.cs)]
 
 ### <a name="modify-the-instructor-index-view"></a>修改教师索引视图
 
-在*Views\Instructor\Index.cshtml*，模板代码替换为以下代码。 突出显示所做的更改：
+在*Views\Instructor\Index.cshtml*，模板代码替换为以下代码。 突出显示了所做的更改：
 
 [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample15.cshtml?highlight=1,4,14-18,21,23-28,38-43,45)]
 
-你已对现有代码做出以下更改：
+你对现有代码做出以下更改：
 
-- 更改到模型类`InstructorIndexData`。
-- 更改页标题从**索引**到**教师**。
+- 将模型类改为`InstructorIndexData`。
+- 将页标题从“索引”改为“教师”。
 - 添加**Office**显示的列`item.OfficeAssignment.Location`才`item.OfficeAssignment`不为 null。 (由于这是一个对零或一一个关系，因此可能不具备相关`OfficeAssignment`实体。) 
 
     [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample16.cshtml)]
@@ -198,23 +198,23 @@ ms.lasthandoff: 01/24/2018
 
 ![Instructors_index_page_with_nothing_selected](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image7.png)
 
-在*Views\Instructor\Index.cshtml*结束后的文件，`table`元素 （在文件末尾），添加以下代码。 此代码将显示一个教师选中与一个教师相关的课程的列表。
+在*Views\Instructor\Index.cshtml*结束后的文件，`table`元素 （在文件末尾），添加以下代码。 此代码用于显示与所选教师相关的课程的列表。
 
 [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample18.cshtml)]
 
-此代码读取`Courses`要显示的课程列表的视图模型的属性。 它还提供了`Select`超链接，以便将发送到所选课程 ID`Index`操作方法。
+此代码读取视图模型的`Courses`属性，以便显示课程列表。 它还提供了`Select`超链接，以便将发送到所选课程 ID`Index`操作方法。
 
-运行页面，然后选择一个教师。 此时你会看到一个网格，其中显示分配给所选教师的课程，对于每个课程中，你将看到分配部门的名称。
+运行页面，然后选择一个教师。 此时会看到一个网格，其中显示分配给所选教师的课程。每个课程都会看到相应系的名称。
 
 ![Instructors_index_page_with_instructor_selected](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image8.png)
 
-之后你刚添加的代码块，添加下面的代码。 当选中该过程时，此值显示课程中注册的学生的列表。
+在刚添加的代码块之后，添加以下代码。 这样就会显示一个注册了所选课程的学生的列表。
 
 [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample19.cshtml)]
 
 此代码读取`Enrollments`为了显示学生的列表视图模型的属性在本课程中注册。
 
-运行页面，然后选择一个教师。 然后选择要查看的已注册的学生和其年级列表的课程。
+运行页面，然后选择一个教师。 然后选择一门课程，查看参与的学生列表及其成绩。
 
 ![Instructors_index_page_with_instructor_and_course_selected](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image9.png)
 
@@ -242,14 +242,14 @@ ms.lasthandoff: 01/24/2018
 
 立即运行教师索引页，你将看到在页上，显示的内容不会改变，虽然已经更改了如何检索的数据。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-你现在使用所有三种方法 （延迟、 eager，和显式） 相关的数据加载到导航属性。 在下一教程你将学习如何更新相关的数据。
+你现在使用所有三种方法 （延迟、 eager，和显式） 相关的数据加载到导航属性。 下一教程介绍如何更新相关数据。
 
 请在如何喜欢本教程的方式，我们可以提高上，留下反馈。 你还可以请求新主题[教我编写代码](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code)。
 
 在找不到其他实体框架资源的链接[ASP.NET 数据访问的推荐资源](../../../../whitepapers/aspnet-data-access-content-map.md)。
 
->[!div class="step-by-step"]
-[上一页](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
-[下一页](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [上一页](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
+> [下一页](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)

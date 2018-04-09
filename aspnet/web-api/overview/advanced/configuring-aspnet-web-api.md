@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/configuring-aspnet-web-api
-title: "配置 ASP.NET Web API 2 |Microsoft 文档"
+title: 配置 ASP.NET Web API 2 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f9b471fe2afdce278869a2e4d9b693a78030324b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: de2396710fb9434c84bf14a2faa37b98154f34d8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-aspnet-web-api-2"></a>配置 ASP.NET Web API 2
 ====================
@@ -120,13 +120,13 @@ ms.lasthandoff: 01/24/2018
 多实例服务
 
 
-| 服务 | 描述 |
-| --- | --- |
-| **IFilterProvider** | 返回的控制器操作的筛选器的列表。 |
-| **ModelBinderProvider** | 返回给定类型的模型联编程序。 |
-| **ModelMetadataProvider** | 模型可提供元数据。 |
-| **ModelValidatorProvider** | 为模型提供一个验证程序。 |
-| **ValueProviderFactory** | 创建值提供程序。 有关详细信息，请参阅 Mike 停止的博客文章[如何在 WebAPI 中创建自定义值提供程序](https://blogs.msdn.com/b/jmstall/archive/2012/04/23/how-to-create-a-custom-value-provider-in-webapi.aspx) |.
+|                 服务                 |                                                                                                              描述                                                                                                               |
+|-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    <strong>IFilterProvider</strong>     |                                                                                           返回的控制器操作的筛选器的列表。                                                                                           |
+|  <strong>ModelBinderProvider</strong>   |                                                                                                返回给定类型的模型联编程序。                                                                                                |
+| <strong>ModelMetadataProvider</strong>  |                                                                                                     模型可提供元数据。                                                                                                     |
+| <strong>ModelValidatorProvider</strong> |                                                                                                   为模型提供一个验证程序。                                                                                                    |
+|  <strong>ValueProviderFactory</strong>  | 创建值提供程序。 有关详细信息，请参阅 Mike 停止的博客文章[如何在 WebAPI 中创建自定义值提供程序](https://blogs.msdn.com/b/jmstall/archive/2012/04/23/how-to-create-a-custom-value-provider-in-webapi.aspx) |
 
 若要添加到多实例服务的自定义实现，调用**添加**或**插入**上**服务**集合：
 

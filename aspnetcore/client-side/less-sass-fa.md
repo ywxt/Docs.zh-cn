@@ -1,7 +1,7 @@
 ---
-title: "小于，Sass 和 ASP.NET Core 中出色的字体"
+title: 小于，Sass 和 ASP.NET Core 中出色的字体
 author: ardalis
-description: "了解如何在 ASP.NET Core 应用程序中使用较少，Sass，和字体出色。"
+description: 了解如何在 ASP.NET Core 应用程序中使用较少，Sass，和字体出色。
 manager: wpickett
 ms.author: tdykstra
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/less-sass-fa
-ms.openlocfilehash: 979f5639e382560d952df45ba6e0b8af3b132c2d
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: 3bb1c9006f8633485a420b52b5fa9b91b1875cc5
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>简介事半功倍的样式应用程序、 Sass，和在 ASP.NET 核心中出色的字体
+# <a name="less-sass-and-font-awesome-in-aspnet-core"></a>小于，Sass 和 ASP.NET Core 中出色的字体
 
 作者：[Steve Smith](https://ardalis.com/)
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 3f732ae6f1b7845bcae88912b4a4fe26574c10de
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: ac5508334bf6d471471a719b98618bdcd3214fb5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-error-handling"></a>ASP.NET 错误处理
 ====================
@@ -104,7 +104,7 @@ Try-catch 语句包含的 try 块后跟一个或多个 catch 子句，指定不�
 在添加之前 Wingtip Toys 示例应用程序处理的错误，可以将错误日志记录通过添加支持添加`ExceptionUtility`类到*逻辑*文件夹。 通过执行此操作，请在每次应用程序处理错误，错误详细信息将添加到错误日志文件。
 
 1. 右键单击*逻辑*文件夹，然后选择**添加** - &gt; **新项**。   
- 随即出现“添加新项”对话框。
+   随即出现“添加新项”对话框。
 2. 选择**Visual C#**  - &gt; **代码**左侧的模板组。 然后，选择**类**从中间列表并将其命名**ExceptionUtility.cs**。
 3. 选择“添加”。 将显示新的类文件。
 4. 将现有代码替换为以下代码：  
@@ -118,9 +118,9 @@ Try-catch 语句包含的 try 块后跟一个或多个 catch 子句，指定不�
 Wingtip Toys 示例应用程序，在一页将用于显示错误。 错误页旨在向站点的用户显示一条安全错误消息。 但是，如果用户是开发人员进行的 HTTP 请求的计算机上本地提供代码所在的位置，将在错误页上显示其他错误详细信息。
 
 1. 右键单击项目名称 (**Wingtip Toys**) 中**解决方案资源管理器**和选择**添加** - &gt; **新项**.   
- 随即出现“添加新项”对话框。
+   随即出现“添加新项”对话框。
 2. 选择**Visual C#**  - &gt; **Web**左侧的模板组。 从中间列表中选择**包含母版页的 Web 窗体**，并将其命名**ErrorPage.aspx**。
-3. 单击 **“添加”**。
+3. 单击 **添加**。
 4. 选择*Site.Master*文件作为主页上，，然后选择**确定**。
 5. 现有的标记替换为以下代码：   
 
@@ -166,7 +166,7 @@ Wingtip Toys 示例应用程序，在一页将用于显示错误。 错误页旨
 若要验证你的应用程序出错时的运行方式发生，你故意在 ASP.NET 中创建错误条件。 在 Wingtip Toys 示例应用程序，将加载默认页面以查看会发生什么情况时引发的测试异常。
 
 1. 打开的代码隐藏*Default.aspx* Visual Studio 中的页。   
- *Default.aspx.cs*将显示代码隐藏页。
+   *Default.aspx.cs*将显示代码隐藏页。
 2. 在`Page_Load`处理程序中，将代码添加，以便处理程序显示方式，如下所示：   
 
     [!code-csharp[Main](aspnet-error-handling/samples/sample9.cs?highlight=3-4)]
@@ -307,7 +307,7 @@ ELMAH 现已准备好存储出现任何未处理的错误。
 
     ![ASP.NET 错误处理-ELMAH 错误日志](aspnet-error-handling/_static/image9.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，你已学习了如何处理在应用程序级别、 页面级别中，而代码级别的错误。 你已学习如何记录处理和未经处理的错误，供以后查看。 添加 ELMAH 实用程序，以提供异常日志记录和通知到应用程序使用 NuGet。 此外，你已了解有关安全的错误消息的重要性。
 
@@ -356,11 +356,11 @@ ELMAH 现已准备好存储出现任何未处理的错误。
 ## <a name="community-contributions"></a>社区贡献
 
 - 格雷厄姆 · Mendick ([@grahammendick](http://twitter.com/grahammendick))  
- Visual Studio 2012 相关 MSDN 上的代码示例：[导航 Wingtip Toys](https://code.msdn.microsoft.com/Navigation-Wingtip-Toys-5f0daba2)
+  Visual Studio 2012 相关 MSDN 上的代码示例：[导航 Wingtip Toys](https://code.msdn.microsoft.com/Navigation-Wingtip-Toys-5f0daba2)
 - James Chaney ([jchaney@agvance.net](mailto:jchaney@agvance.net))  
- Visual Studio 2012 相关 MSDN 上的代码示例：[在 Visual Basic 中的 ASP.NET 4.5 Web 窗体教程系列](https://code.msdn.microsoft.com/ASPNET-45-Web-Forms-f37f0f63)
+  Visual Studio 2012 相关 MSDN 上的代码示例：[在 Visual Basic 中的 ASP.NET 4.5 Web 窗体教程系列](https://code.msdn.microsoft.com/ASPNET-45-Web-Forms-f37f0f63)
 - Andrielle Azevedo-Microsoft 技术受众参与者 (twitter: @driazevedo)  
- Visual Studio 2012 翻译： [Iniciando com Visão Geral 的 ASP.NET Web 窗体 4.5-Parte 1-Introdução e](https://andrielleazevedo.wordpress.com/2013/01/24/iniciando-com-asp-net-web-forms-4-5-introducao-e-visao-geral/)
+  Visual Studio 2012 翻译： [Iniciando com Visão Geral 的 ASP.NET Web 窗体 4.5-Parte 1-Introdução e](https://andrielleazevedo.wordpress.com/2013/01/24/iniciando-com-asp-net-web-forms-4-5-introducao-e-visao-geral/)
 
->[!div class="step-by-step"]
-[上一篇](url-routing.md)
+> [!div class="step-by-step"]
+> [上一篇](url-routing.md)

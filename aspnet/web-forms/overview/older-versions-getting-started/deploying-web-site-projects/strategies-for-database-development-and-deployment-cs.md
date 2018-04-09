@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-cs
-title: "进行数据库开发和部署 (C#) 的策略 |Microsoft 文档"
+title: 进行数据库开发和部署 (C#) 的策略 |Microsoft 文档
 author: rick-anderson
-description: "部署第一次数据驱动应用程序时可以盲目地将数据库复制到生产环境的开发环境中。 B..."
+description: 部署第一次数据驱动应用程序时可以盲目地将数据库复制到生产环境的开发环境中。 B...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 551a04296ff92e174a14bd9d2636714e823397e1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 801eedba50e03b2fd9327e9a2902178b35b4275a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="strategies-for-database-development-and-deployment-c"></a>策略进行数据库开发和部署 (C#)
 ====================
@@ -150,7 +150,7 @@ SQL 比较将分解成组的数据库对象、 快速显示哪些对象在这两
 
 采用应用程序脱机在部署期间，然后，非常简单，只上载`app_offline.htm`文件复制到生产环境 s 根目录开始部署过程，然后将其删除 （或将其更名为其他内容） 之前一次部署已完成。 有关此技术的详细信息请参阅 John Peterson 的文章，采用[*脱机 ASP.NET 应用程序*](http://www.15seconds.com/issue/061207.htm)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 部署数据驱动应用程序的主要难题是围绕将数据库部署。 因为有两个版本的数据库在开发环境中一-以及一个在生产环境中的这些两个数据库架构可以成为同步的如在开发过程中添加新功能。 新增功能更多，因为作为正在用来自真实的用户的真实数据填充的生产数据库，你无法覆盖生产数据库具有修改的开发数据库一样部署构成应用程序 （ASP.NET 页的文件时图像文件，和等等）。 相反，将数据库部署需要实现的精确的一套自上次部署以来对生产数据库上的开发数据库所做更改。
 
@@ -160,6 +160,6 @@ SQL 比较将分解成组的数据库对象、 快速显示哪些对象在这两
 
 尽情享受编程 ！
 
->[!div class="step-by-step"]
-[上一页](configuring-a-website-that-uses-application-services-cs.md)
-[下一页](displaying-a-custom-error-page-cs.md)
+> [!div class="step-by-step"]
+> [上一页](configuring-a-website-that-uses-application-services-cs.md)
+> [下一页](displaying-a-custom-error-page-cs.md)

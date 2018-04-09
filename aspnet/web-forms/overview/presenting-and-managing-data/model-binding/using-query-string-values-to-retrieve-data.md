@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
-title: "使用查询字符串值来筛选具有模型绑定的数据和 web 窗体 |Microsoft 文档"
+title: 使用查询字符串值来筛选具有模型绑定的数据和 web 窗体 |Microsoft 文档
 author: tfitzmac
-description: "本系列教程演示使用模型绑定的 ASP.NET Web 窗体项目的基本方面。 模型绑定使数据交互详细直接-..."
+description: 本系列教程演示使用模型绑定的 ASP.NET Web 窗体项目的基本方面。 模型绑定使数据交互详细直接-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
 msc.type: authoredcontent
-ms.openlocfilehash: 2e5328ccda019462163b984da3661f7322b738df
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 03d20decf0eeff6062fbc6f8dd66f644b405c7cc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a>模型绑定和 web 窗体中使用查询字符串值将筛选器数据
 ====================
@@ -85,6 +85,6 @@ ms.lasthandoff: 11/10/2017
 
 在下一个[教程](adding-business-logic-layer.md)，会将代码隐藏文件的代码移入业务逻辑层和数据访问层。
 
->[!div class="step-by-step"]
-[上一页](integrating-jquery-ui.md)
-[下一页](adding-business-logic-layer.md)
+> [!div class="step-by-step"]
+> [上一页](integrating-jquery-ui.md)
+> [下一页](adding-business-logic-layer.md)

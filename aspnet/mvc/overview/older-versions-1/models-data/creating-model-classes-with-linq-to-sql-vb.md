@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-vb
-title: "使用 LINQ to SQL (VB) 创建模型类 |Microsoft 文档"
+title: 使用 LINQ to SQL (VB) 创建模型类 |Microsoft 文档
 author: microsoft
-description: "本教程旨在说明创建 ASP.NET MVC 应用程序的模型类的一个方法。 在本教程中，你将学习如何构建模型 c..."
+description: 本教程旨在说明创建 ASP.NET MVC 应用程序的模型类的一个方法。 在本教程中，你将学习如何构建模型 c...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/07/2008
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 972d5b11049825e84e070ef1c4b2b90116654397
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5438838123c40d82afbda191a48878d6dca80736
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-model-classes-with-linq-to-sql-vb"></a>使用 LINQ to SQL (VB) 中创建模型类
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_10_VB.pdf)
 
@@ -53,9 +53,10 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 
 创建新的数据库后，你可以通过双击 MoviesDB.mdf 文件，在应用中的打开数据库\_数据文件夹。 双击 MoviesDB.mdf 文件打开服务器资源管理器窗口 （请参见图 2）。
 
-|  | 服务器资源管理器窗口时使用 Visual Web Developer 调用数据库资源管理器窗口。 |
-| --- | --- |
 
+|   | 服务器资源管理器窗口时使用 Visual Web Developer 调用数据库资源管理器窗口。 |
+|---|----------------------------------------------------------------------------------------------------|
+|   |                                                                                                    |
 
 [![使用服务器资源管理器窗口](creating-model-classes-with-linq-to-sql-vb/_static/image5.png)](creating-model-classes-with-linq-to-sql-vb/_static/image4.png)
 
@@ -75,7 +76,7 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 | **列名称** | **数据类型** | **允许 null 值** |
 | --- | --- | --- |
 | Id | Int | False |
-| 标题 | Nvarchar （200) | False |
+| 标题 | Nvarchar(200) | False |
 | 控制器 | nvarchar(50) | False |
 
 你需要执行到 Id 列的两个特殊操作。 首先，你需要将 Id 列标记为主键列，通过在表设计器中选择列并单击项的图标。 LINQ to SQL 要求你在执行插入或更新对数据库时指定主键列。
@@ -112,7 +113,7 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 
 首先，我们需要修改 HomeController 类。 你的应用程序的 Controllers 文件夹中找不到此类。 修改类，使其类似列表 1 中的类。
 
-**列表 1 –`Controllers\HomeController.vb`**
+**列表 1 – `Controllers\HomeController.vb`**
 
 [!code-vb[Main](creating-model-classes-with-linq-to-sql-vb/samples/sample1.vb)]
 
@@ -122,7 +123,7 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 
 为了显示电影，我们接下来需要修改索引视图。 你可以在 Views\Home\ 文件夹中找到索引视图。 更新索引视图，以便它如下所示列出 2 中的视图。
 
-**列出 2 –`Views\Home\Index.aspx`**
+**列出 2 – `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-model-classes-with-linq-to-sql-vb/samples/sample2.aspx)]
 
@@ -164,19 +165,19 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 
 中列出的 3 的接口名称为 IMovieRepository，它表示一个名为 ListAll() 的单个方法。
 
-**列出 3 –`Models\IMovieRepository.vb`**
+**列出 3 – `Models\IMovieRepository.vb`**
 
 [!code-vb[Main](creating-model-classes-with-linq-to-sql-vb/samples/sample3.vb)]
 
 列出 4 中的存储库类实现 IMovieRepository 接口。 请注意，它包含一个名为 IMovieRepository 接口所需的方法对应的 ListAll() 方法。
 
-**列出 4 –`Models\MovieRepository.vb`**
+**列出 4 – `Models\MovieRepository.vb`**
 
 [!code-vb[Main](creating-model-classes-with-linq-to-sql-vb/samples/sample4.vb)]
 
 最后，在列出 5 MoviesController 类使用的存储库模式。 它不再使用 LINQ to SQL 类直接。
 
-**列出 5-`Controllers\MoviesController.vb`**
+**列出 5- `Controllers\MoviesController.vb`**
 
 [!code-vb[Main](creating-model-classes-with-linq-to-sql-vb/samples/sample5.vb)]
 
@@ -194,12 +195,12 @@ MoviesController 类正在调用的依赖关系注入模式软件设计模式的
 
 此外，如果你想要测试 MoviesController 类，则可以为 MoviesController 传递一个假电影存储库类。 你可以实现与不会实际访问数据库，但包含所有 IMovieRepository 接口所需方法的类的 IMovieRepository 类。 这样一来，你可以无需实际访问实际数据库单元测试 MoviesController 类。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程的目标是演示如何利用 Microsoft LINQ to SQL 来创建 MVC 模型类。 有关 ASP.NET MVC 应用程序中显示数据库数据的两种策略，我们探讨。 首先，我们创建 LINQ to SQL 类，并使用直接中的控制器操作的类。 使用 LINQ to SQL 类控制器中，您可以快速并轻松地在 MVC 应用程序中显示数据库数据。
 
 接下来，我们探讨了显示数据库数据的稍微有些困难，但肯定更良性的路径。 我们采用存储库模式的优点，并放在单独的存储库类中的所有我们数据库访问逻辑。 在我们控制器中，我们已写入所有我们针对而不是具体的类接口的代码。 存储库模式的优点是，它使我们能够轻松地在将来更改数据库访问技术，并且它允许我们能够轻松地测试我们控制器类。
 
->[!div class="step-by-step"]
-[上一页](creating-model-classes-with-the-entity-framework-vb.md)
-[下一页](displaying-a-table-of-database-data-vb.md)
+> [!div class="step-by-step"]
+> [上一页](creating-model-classes-with-the-entity-framework-vb.md)
+> [下一页](displaying-a-table-of-database-data-vb.md)

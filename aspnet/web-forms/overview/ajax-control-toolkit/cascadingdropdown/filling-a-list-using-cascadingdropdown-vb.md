@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-vb
-title: "填充使用 CascadingDropDown (VB) 的列表 |Microsoft 文档"
+title: 填充使用 CascadingDropDown (VB) 的列表 |Microsoft 文档
 author: wenz
-description: "AJAX 控件工具包中的 CascadingDropDown 控件扩展的 DropDownList 控件，使得一个 DropDownList 负载中的更改关联中 anoth 值..."
+description: AJAX 控件工具包中的 CascadingDropDown 控件扩展的 DropDownList 控件，使得一个 DropDownList 负载中的更改关联中 anoth 值...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1c5cb23be4366365c73ce4774e6a53e452e2a6c0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e488a30443970d5e2ce825abd96d8e4a027585d1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="filling-a-list-using-cascadingdropdown-vb"></a>填充使用 CascadingDropDown (VB) 的列表
 ====================
@@ -68,6 +68,6 @@ JavaScript 代码来自`CascadingDropDown`扩展程序调用 web 服务方法具
 
 列表已自动填充 ([单击以查看实际尺寸的图像](filling-a-list-using-cascadingdropdown-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一页](using-auto-postback-with-cascadingdropdown-cs.md)
-[下一页](using-cascadingdropdown-with-a-database-vb.md)
+> [!div class="step-by-step"]
+> [上一页](using-auto-postback-with-cascadingdropdown-cs.md)
+> [下一页](using-cascadingdropdown-with-a-database-vb.md)

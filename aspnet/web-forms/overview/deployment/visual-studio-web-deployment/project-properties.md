@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/project-properties
-title: "使用 Visual Studio 的 ASP.NET Web 部署： 项目属性 |Microsoft 文档"
+title: 使用 Visual Studio 的 ASP.NET Web 部署： 项目属性 |Microsoft 文档
 author: tdykstra
-description: "本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的..."
+description: 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/project-properties
 msc.type: authoredcontent
-ms.openlocfilehash: 85b6dbcc8d40c168a49513ef6b549f9ec7fa5097
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: fba3f089bf1693eec873b08b4bc50e3accba06ee
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-project-properties"></a>使用 Visual Studio 的 ASP.NET Web 部署： 项目属性
 ====================
@@ -64,10 +64,10 @@ ms.lasthandoff: 01/24/2018
 
 在**解决方案资源管理器**，右键单击*Elmah*文件夹，选择**添加新项**，并创建一个名为文本文件*Placeholder.txt*。 放入其中的以下文本:"这是一个占位符文件，以确保文件夹获取部署"。 并保存文件。 这就是你所要做为了确保 Visual Studio 部署此文件和文件夹，因为所有**生成操作**属性*.txt*文件设置为**内容**默认情况下。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 你现在已经完成的所有部署设置任务。 在下一步的教程中，你将 Contoso 大学网站部署到测试环境，并对其进行测试。
 
->[!div class="step-by-step"]
-[上一页](web-config-transformations.md)
-[下一页](deploying-to-iis.md)
+> [!div class="step-by-step"]
+> [上一页](web-config-transformations.md)
+> [下一页](deploying-to-iis.md)

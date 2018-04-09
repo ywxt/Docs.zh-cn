@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-3
-title: "如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 3 部分 |Microsoft 文档"
+title: 如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 3 部分 |Microsoft 文档
 author: tdykstra
-description: "Contoso 大学示例 web 应用程序演示如何创建 ASP.NET Web 窗体应用程序使用实体框架。 该示例应用程序..."
+description: Contoso 大学示例 web 应用程序演示如何创建 ASP.NET Web 窗体应用程序使用实体框架。 该示例应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 1ec8891c4ccf71494389ba562fdfb4b88055d12f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 654f3556af5d05ec186e1811421966bbaffd2e21
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-3"></a>如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 3 部分
 ====================
@@ -184,6 +184,6 @@ ms.lasthandoff: 11/10/2017
 
 你已现在显示、 更新、 筛选、 排序，和对各个表中的数据分组。 在下一教程中你将开始处理的相关数据 （主 / 从方案）。
 
->[!div class="step-by-step"]
-[上一页](the-entity-framework-and-aspnet-getting-started-part-2.md)
-[下一页](the-entity-framework-and-aspnet-getting-started-part-4.md)
+> [!div class="step-by-step"]
+> [上一页](the-entity-framework-and-aspnet-getting-started-part-2.md)
+> [下一页](the-entity-framework-and-aspnet-getting-started-part-4.md)

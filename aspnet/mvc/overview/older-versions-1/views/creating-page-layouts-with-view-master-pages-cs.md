@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-cs
-title: "创建视图母版页 (C#) 中使用的页面布局 |Microsoft 文档"
+title: 创建视图母版页 (C#) 中使用的页面布局 |Microsoft 文档
 author: microsoft
-description: "在本教程中，您将学习如何在你的应用程序中创建多个页的常用页面布局，通过利用视图母版页。 你可以使用..."
+description: 在本教程中，您将学习如何在你的应用程序中创建多个页的常用页面布局，通过利用视图母版页。 你可以使用...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5d564b7e562435e8c6b1151287cbb1aec3d6bd10
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 82500a311e1110713a60604027d018ba16539b65
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-page-layouts-with-view-master-pages-c"></a>创建视图母版页 (C#) 中使用的页面布局
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_12_CS.pdf)
 
@@ -51,7 +51,7 @@ ms.lasthandoff: 11/10/2017
 
 例如，列表 1 中的视图母版页定义两列布局。 它包含两个`<contentplaceholder>`标记。 一个`<ContentPlaceHolder>`为每个列。
 
-**列表 1 –`Views\Shared\Site.master`**
+**列表 1 – `Views\Shared\Site.master`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-cs/samples/sample1.aspx)]
 
@@ -83,7 +83,7 @@ ms.lasthandoff: 11/10/2017
 
 创建新视图内容页基于 Site.master 主控页后，你将收到列出 2 中的文件。
 
-**列出 2 –`Views\Home\Index.aspx`**
+**列出 2 – `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-cs/samples/sample2.aspx)]
 
@@ -97,7 +97,7 @@ ms.lasthandoff: 11/10/2017
 
 例如，已修改的索引视图，列出 3 中仅包含两个`<asp:Content>`标记。 每个`<asp:Content>`标记包含一些文本。
 
-**列出 3 –`Views\Home\Index.aspx (modified)`**
+**列出 3 – `Views\Home\Index.aspx (modified)`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-cs/samples/sample3.aspx)]
 
@@ -127,7 +127,7 @@ ms.lasthandoff: 11/10/2017
 
 从单独的视图内容页修改母版页内容的备用方法是将你想要在修改的区域`<asp:ContentPlaceHolder>`标记。 例如，假设你想要更改不仅标题，而且还由母版视图页呈现的 meta 标记。 列出 4 中的母版视图页面包含`<asp:ContentPlaceHolder>`中标记其`<head>`标记。
 
-**列出 4 –`Views\Shared\Site2.master`**
+**列出 4 – `Views\Shared\Site2.master`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-cs/samples/sample5.aspx)]
 
@@ -135,14 +135,14 @@ ms.lasthandoff: 11/10/2017
 
 列出 5 中的内容视图页重写`<asp:ContentPlaceHolder>`为了显示自定义标题和自定义元标记的标记。
 
-**列出 5-`Views\Home\Index2.aspx`**
+**列出 5- `Views\Home\Index2.aspx`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-cs/samples/sample6.aspx)]
 
-### <a name="summary"></a>摘要
+### <a name="summary"></a>总结
 
 本教程向您提供查看主控页并查看内容页的基本简介。 您学习了如何创建新视图的母版页和创建基于这些视图内容页。 我们还检查，您可以如何修改视图母版页从特定视图内容页中的内容。
 
->[!div class="step-by-step"]
-[上一页](using-the-tagbuilder-class-to-build-html-helpers-cs.md)
-[下一页](passing-data-to-view-master-pages-cs.md)
+> [!div class="step-by-step"]
+> [上一页](using-the-tagbuilder-class-to-build-html-helpers-cs.md)
+> [下一页](passing-data-to-view-master-pages-cs.md)

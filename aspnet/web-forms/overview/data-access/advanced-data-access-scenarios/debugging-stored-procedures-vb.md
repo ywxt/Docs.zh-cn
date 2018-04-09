@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
-title: "调试存储的过程 (VB) |Microsoft 文档"
+title: 调试存储的过程 (VB) |Microsoft 文档
 author: rick-anderson
-description: "Visual Studio Professional 和 Team System 的版本，可以设置断点并单步执行到 SQL Server 中的存储过程进行调试存储..."
+description: Visual Studio Professional 和 Team System 的版本，可以设置断点并单步执行到 SQL Server 中的存储过程进行调试存储...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ad09847d828d02019a72e3022d035a8fbe921568
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3391a78eaeb0add46e75048069a614ba00628f67
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="debugging-stored-procedures-vb"></a>调试存储的过程 (VB)
 ====================
@@ -167,7 +167,7 @@ Visual Studio 的同一台计算机上的 SQL Server 数据库实例时，调试
 
 第二个任务要求你使用调试应用程序的 Windows 用户帐户是远程数据库上的有效登录。 但是，很有您登录到你工作站的 Windows 帐户不是 SQL Server 上的有效登录。 而不是将您的特定的登录帐户添加到 SQL Server，是更好的选择将一些 Windows 用户帐户指定为 SQL Server 调试帐户。 然后，若要调试的远程 SQL Server 实例的数据库对象，将运行 Visual Studio 中使用该 Windows 登录帐户的凭据。
 
-示例可以帮助阐明事项。 假设是一个名为的 Windows 帐户`SQLDebug`Windows 域内。 此帐户需要作为有效的登录名的成员以及要添加到远程 SQL Server 实例`sysadmin`角色。 然后，若要调试从 Visual Studio 的远程 SQL Server 实例，我们将需要运行 Visual Studio 作为`SQLDebug`用户。 这可以通过我们的工作站，超出的日志记录返回作为日志记录`SQLDebug`，然后启动 Visual Studio 中，但更简单的方法将登录到我们的工作站使用我们自己的凭据，然后使用`runas.exe`若要启动作为 Visual Studio`SQLDebug`用户。 `runas.exe`允许特定的应用程序的其他用户帐户在伪装下执行。 若要启动 Visual Studio 作为`SQLDebug`，您可以输入以下语句在命令行：
+示例可以帮助阐明事项。 假设是一个名为的 Windows 帐户`SQLDebug`Windows 域内。 此帐户需要作为有效的登录名的成员以及要添加到远程 SQL Server 实例`sysadmin`角色。 然后，若要调试从 Visual Studio 的远程 SQL Server 实例，我们将需要运行 Visual Studio 作为`SQLDebug`用户。 这可以通过我们的工作站，超出的日志记录返回作为日志记录`SQLDebug`，然后启动 Visual Studio 中，但更简单的方法将登录到我们的工作站使用我们自己的凭据，然后使用`runas.exe`若要启动作为 Visual Studio`SQLDebug`用户。 `runas.exe` 允许特定的应用程序的其他用户帐户在伪装下执行。 若要启动 Visual Studio 作为`SQLDebug`，您可以输入以下语句在命令行：
 
 
 [!code-console[Main](debugging-stored-procedures-vb/samples/sample2.cmd)]
@@ -178,7 +178,7 @@ Visual Studio 的同一台计算机上的 SQL Server 数据库实例时，调试
 > 如果你的开发计算机正在运行 Windows XP Service Pack 2 将需要 Internet 连接防火墙配置为允许远程调试。 [如何为： 启用 SQL Server 2005 调试](https://msdn.microsoft.com/library/s0fk6z6e(VS.80).aspx)文章说明这涉及到两个步骤: （a） 在 Visual Studio 主机计算机，则必须添加`Devenv.exe`到例外列表并打开 TCP 135 端口; 以及 （b） 上远程的 (SQL) 计算机，则必须打开TCP 135 端口，并添加`sqlservr.exe`到例外列表。 如果你的域策略要求通过 IPSec 进行网络通信，则必须打开 UDP 4500 和 UDP 500 端口。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 除了提供调试支持.NET 应用程序代码，Visual Studio 还提供了各种 SQL Server 2005 的调试选项。 在本教程中我们讨论这些选项的两名： 直接数据库调试和应用程序调试。 若要直接调试 T-SQL 的数据库对象，找到对象，通过服务器资源管理器，然后右键单击它并选择单步执行。 这将启动调试器并在数据库对象，此时你可以单步执行该对象的语句并查看和修改参数值中的第一个语句上暂停。 在步骤 1 中我们使用此方法进入并单步`Products_SelectByCategoryID`存储过程。
 
@@ -190,8 +190,8 @@ Visual Studio 的同一台计算机上的 SQL Server 数据库实例时，调试
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
->[!div class="step-by-step"]
-[上一页](protecting-connection-strings-and-other-configuration-information-vb.md)
-[下一页](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb.md)
+> [!div class="step-by-step"]
+> [上一页](protecting-connection-strings-and-other-configuration-information-vb.md)
+> [下一页](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb.md)

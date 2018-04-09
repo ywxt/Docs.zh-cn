@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-vb
-title: "主控页和 ASP.NET AJAX (VB) |Microsoft 文档"
+title: 主控页和 ASP.NET AJAX (VB) |Microsoft 文档
 author: rick-anderson
-description: "讨论使用 ASP.NET AJAX 和母版页的选项。 查看使用 ScriptManagerProxy 类;讨论如何 dependi 加载这些各种 JS 文件..."
+description: 讨论使用 ASP.NET AJAX 和母版页的选项。 查看使用 ScriptManagerProxy 类;讨论如何 dependi 加载这些各种 JS 文件...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/11/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b25234f82c46437d853d1ab5b240f8a688995ccc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2c7d8477d6d9d235749d88d0b657d60454298e53
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="master-pages-and-aspnet-ajax-vb"></a>主控页和 ASP.NET AJAX (VB)
 ====================
@@ -184,9 +184,9 @@ ASP.NET AJAX 框架包含在指定的时间; 将执行回发的计时器控件�
 
 若要查看操作中的 ScriptManagerProxy 控件，让我们增加中的 UpdatePanel`ShowRandomProduct.aspx`以包括使用客户端脚本来暂停或恢复计时器控件的按钮。 Timer 控件具有三个客户端方法，我们可以使用来实现此所需的功能：
 
-- `_startTimer()`-启动计时器控件
-- `_raiseTick()`-发布后和引发服务器上的其 Tick 事件从而导致"变化而变化，"计时器控件
-- `_stopTimer()`-停止计时器控件
+- `_startTimer()` -启动计时器控件
+- `_raiseTick()` -发布后和引发服务器上的其 Tick 事件从而导致"变化而变化，"计时器控件
+- `_stopTimer()` -停止计时器控件
 
 让我们使用一个名为变量创建一个 JavaScript 文件`timerEnabled`和一个名为函数`ToggleTimer`。 `timerEnabled`变量指示计时器控件当前是启用还是禁用; 它将默认为 true。 `ToggleTimer`函数接受两个输入参数: 暂停/继续按钮和客户端的参考`id`计时器控件的值。 此函数在切换的值`timerEnabled`、 获取对计时器控件的引用、 启动或停止计时器 (具体取决于值`timerEnabled`)，并更新到"暂停"或"恢复"按钮的显示文本。 每次单击暂停/继续按钮时，将调用此函数。
 
@@ -228,7 +228,7 @@ ASP.NET AJAX 框架包含在指定的时间; 将执行回发的计时器控件�
 
 [!code-aspx[Main](master-pages-and-asp-net-ajax-vb/samples/sample10.aspx)]
 
-此时将显示一个具有文本"暂停"的按钮。 每当它单击后，JavaScript 函数`ToggleTimer`称为传入到按钮的引用和`id`计时器控件的值 (`ProductTimer`)。 请注意用于获取语法`id`计时器控件的值。 `<%=ProductTimer.ClientID%>`发出的值`ProductTimer`计时器控件`ClientID`属性。 在内容页 [SKM3] 教程中的控件 ID 命名在我们讨论了服务器端之间的差异`ID`值和生成的客户端`id`值，以及如何`ClientID`返回客户端`id`。
+此时将显示一个具有文本"暂停"的按钮。 每当它单击后，JavaScript 函数`ToggleTimer`称为传入到按钮的引用和`id`计时器控件的值 (`ProductTimer`)。 请注意用于获取语法`id`计时器控件的值。 `<%=ProductTimer.ClientID%>` 发出的值`ProductTimer`计时器控件`ClientID`属性。 在内容页 [SKM3] 教程中的控件 ID 命名在我们讨论了服务器端之间的差异`ID`值和生成的客户端`id`值，以及如何`ClientID`返回客户端`id`。
 
 图 11 显示时首次通过浏览器访问此页。 计时器当前正在运行，以及更新显示的产品信息每隔 15 秒。 图 12 后单击暂停按钮后显示的屏幕。 单击暂停按钮停止计时器，并更新到"恢复"按钮的文本。 产品信息将刷新 （和继续刷新每 15 秒钟） 在用户点击恢复后。
 
@@ -243,7 +243,7 @@ ASP.NET AJAX 框架包含在指定的时间; 将执行回发的计时器控件�
 **图 12**： 单击恢复按钮以重新启动计时器 ([单击以查看实际尺寸的图像](master-pages-and-asp-net-ajax-vb/_static/image36.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 构建启用了 AJAX 的 web 应用程序使用 ASP.NET AJAX 框架时，命令性的每个启用了 AJAX 的网页，包括 ScriptManager 控件。 若要简化此过程，我们可以将 ScriptManager 添加到母版页，而无需记住将 ScriptManager 添加到每个内容页。 介绍了如何将 ScriptManager 添加主控页时查看在内容页中实现 AJAX 功能的步骤 2 到步骤 1。
 
@@ -264,12 +264,12 @@ ASP.NET AJAX 框架包含在指定的时间; 将执行回发的计时器控件�
 
 ### <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
-本教程系列已由许多有用的审阅者评审。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+本教程系列已由许多有用的审阅者评审。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](interacting-with-the-content-page-from-the-master-page-vb.md)
-[下一页](specifying-the-master-page-programmatically-vb.md)
+> [!div class="step-by-step"]
+> [上一页](interacting-with-the-content-page-from-the-master-page-vb.md)
+> [下一页](specifying-the-master-page-programmatically-vb.md)

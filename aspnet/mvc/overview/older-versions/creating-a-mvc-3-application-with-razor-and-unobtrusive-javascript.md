@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
-title: "创建 MVC 3 具有 Razor 和非介入式 JavaScript 应用程序 |Microsoft 文档"
+title: 创建 MVC 3 具有 Razor 和非介入式 JavaScript 应用程序 |Microsoft 文档
 author: microsoft
-description: "用户列表的示例 web 应用程序演示如何创建使用 Razor 视图引擎的 ASP.NET MVC 3 应用程序是多么简单。 示例应用程序 s..."
+description: 用户列表的示例 web 应用程序演示如何创建使用 Razor 视图引擎的 ASP.NET MVC 3 应用程序是多么简单。 示例应用程序 s...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/01/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 msc.type: authoredcontent
-ms.openlocfilehash: 29b45c07b5498542abbf22c4c3001b1cee41edc9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9b273f6827cad2078b581d6da7b127198dfddaa5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>创建 MVC 3 具有 Razor 和非介入式 JavaScript 应用程序
 ====================
@@ -54,7 +54,7 @@ by [Microsoft](https://github.com/microsoft)
 
 ![Soln Exp](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image5.png)
 
-编辑 *\_Layout.cshtml*文件并将内部标记`<div>`元素名为`logindisplay`并显示消息 *&quot;*登录名已禁用&quot;. 下面的示例显示新的标记：
+编辑 <em>\_Layout.cshtml</em>文件并将内部标记`<div>`元素名为`logindisplay`并显示消息 <em>&quot;</em>登录名已禁用&quot;. 下面的示例显示新的标记：
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample1.cshtml)]
 
@@ -122,7 +122,7 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample8.cs)]
 
-右键单击内部`Details`方法，然后选择**添加视图**。 验证**查看数据类**框包含 **Mvc3Razor.Models.UserModel***。* 设置**查看内容**到**详细信息**，然后单击**添加**。
+右键单击内部`Details`方法，然后选择<strong>添加视图</strong>。 验证<strong>查看数据类</strong>框包含<strong>Mvc3Razor.Models.UserModel</strong><em>。</em> 设置<strong>查看内容</strong>到<strong>详细信息</strong>，然后单击<strong>添加</strong>。
 
 ![添加详细信息视图](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image11.png)
 

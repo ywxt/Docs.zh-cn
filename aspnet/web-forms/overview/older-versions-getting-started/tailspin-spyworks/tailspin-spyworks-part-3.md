@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3
-title: "第 3 部分： 布局和类别菜单 |Microsoft 文档"
+title: 第 3 部分： 布局和类别菜单 |Microsoft 文档
 author: JoeStagner
-description: "本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 3 部分介绍如何添加布局和类别菜单。"
+description: 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 3 部分介绍如何添加布局和类别菜单。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 57c0342efb67b94a0d8c8b06dc13a727e7184db8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 27a493173b03f813ee3dcbbfafd8bc52fb0b9771
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-3-layout-and-category-menu"></a>第 3 部分: 布局和类别菜单
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 > 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 3 部分介绍如何添加布局和类别菜单。
 
 
-## <a id="_Toc260221669"></a>添加一些布局和类别菜单
+## <a id="_Toc260221669"></a>  添加一些布局和类别菜单
 
 在我们站点的主页面中，我们将添加将包含我们的产品类别菜单的左侧列 div。
 
@@ -77,6 +77,6 @@ ASP.NET 语法&lt;%# %&gt;是指示运行时执行任何包含在中，"行"中�
 
 请注意，现在显示我们的产品类别菜单和时我们将鼠标悬停我们可以看到我们必须尚未实现的页的菜单项链接点的类别菜单项的通过一个名为 ProductsList.aspx 并且，我们已生成动态查询字符串自变量，包含 类别 id。
 
->[!div class="step-by-step"]
-[上一页](tailspin-spyworks-part-2.md)
-[下一页](tailspin-spyworks-part-4.md)
+> [!div class="step-by-step"]
+> [上一页](tailspin-spyworks-part-2.md)
+> [下一页](tailspin-spyworks-part-4.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-animation-cs
-title: "期间动画 (C#) 禁用操作 |Microsoft 文档"
+title: 期间动画 (C#) 禁用操作 |Microsoft 文档
 author: wenz
-description: "ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 它还支持操作..."
+description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 它还支持操作...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-animation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 875c6be5e190c31fac030fc17ef040a934233f16
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7862c5026a48fbee6eb48beb411e5e1d60c8b406
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="disabling-actions-during-animation-c"></a>禁用操作期间动画 (C#)
 ====================
@@ -62,6 +62,6 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个�
 
 动画运行时，就会立即将禁用的按钮 ([单击以查看实际尺寸的图像](disabling-actions-during-animation-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一页](animating-in-response-to-user-interaction-cs.md)
-[下一页](triggering-an-animation-in-another-control-cs.md)
+> [!div class="step-by-step"]
+> [上一页](animating-in-response-to-user-interaction-cs.md)
+> [下一页](triggering-an-animation-in-another-control-cs.md)

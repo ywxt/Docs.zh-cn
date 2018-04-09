@@ -1,22 +1,22 @@
 ---
 uid: visual-studio/overview/2012/windows-azure-authentication
-title: "Windows Azure 身份验证 |Microsoft 文档"
+title: Windows Azure 身份验证 |Microsoft 文档
 author: Rick-Anderson
-description: "Microsoft ASP.NET tools for Windows Azure Active Directory 可以简单，以使托管 Windows Azure 网站上的 web 应用程序的身份验证..."
+description: Microsoft ASP.NET tools for Windows Azure Active Directory 可以简单，以使托管 Windows Azure 网站上的 web 应用程序的身份验证...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2013
 ms.topic: article
 ms.assetid: a3cef801-a54b-4ebd-93c3-55764e2e14b1
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/windows-azure-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 4deb3536699f1ef3025f8858ee71a76a1c2def18
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 09cb37ceb0132958a48f5f3a5d52dc46c6f0a78d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="windows-azure-authentication"></a>Windows Azure 身份验证
 ====================
@@ -50,7 +50,7 @@ ms.lasthandoff: 01/24/2018
 
 1. 从项目菜单上选择**启用 Windows Azure 身份验证**:  
   
- ![](windows-azure-authentication/_static/image2.png)
+   ![](windows-azure-authentication/_static/image2.png)
 
 2. 为你的 Windows Azure Active Directory 租户 (例如，contoso.onmicrosoft.com) 输入域，然后单击**启用**:
 
@@ -58,7 +58,7 @@ ms.lasthandoff: 01/24/2018
 
 3. Web 身份验证对话框在登录中作为 Windows Azure Active Directory 租户的管理员：  
   
- ![](windows-azure-authentication/_static/image4.png)
+   ![](windows-azure-authentication/_static/image4.png)
 
 ![](windows-azure-authentication/_static/image5.png)
 

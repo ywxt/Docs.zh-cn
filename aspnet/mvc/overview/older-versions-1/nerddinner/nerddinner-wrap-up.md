@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/nerddinner-wrap-up
-title: "NerdDinner 换行向上 |Microsoft 文档"
+title: NerdDinner 换行向上 |Microsoft 文档
 author: microsoft
-description: "这是 NerdDinner 教程中，结束，你提供有关如何了解详细信息的信息。"
+description: 这是 NerdDinner 教程中，结束，你提供有关如何了解详细信息的信息。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/nerddinner-wrap-up
 msc.type: authoredcontent
-ms.openlocfilehash: bb55668c714532c0a9ff499511b7a47572314194
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8d418f40f6d2911491c1a4f2498a4f711e9c271c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="nerddinner-wrap-up"></a>向上 NerdDinner 换行
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -43,11 +43,11 @@ ms.lasthandoff: 11/10/2017
 
 你可以阅读簿后，若要了解更多有关 ASP.NET MVC 的其余部分。
 
-您还可以找到很好的 ASP.NET MVC 教程和视频，位于： [https://www.asp.net/mvc](../../../index.md)将很快发布其他优秀的 ASP.NET MVC 书籍。 我将更新此页后，可以包括在变得可用的其他丛书链接。
+您还可以找到很好的 ASP.NET MVC 教程和视频，位于： [ https://www.asp.net/mvc ](../../../index.md)将很快发布其他优秀的 ASP.NET MVC 书籍。 我将更新此页后，可以包括在变得可用的其他丛书链接。
 
 希望这可帮助，
 
 Scott
 
->[!div class="step-by-step"]
-[上一篇](enable-automated-unit-testing.md)
+> [!div class="step-by-step"]
+> [上一篇](enable-automated-unit-testing.md)

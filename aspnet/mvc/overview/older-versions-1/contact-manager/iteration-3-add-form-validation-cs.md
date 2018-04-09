@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-cs
-title: "迭代 #3 – 添加窗体验证 (C#) |Microsoft 文档"
+title: '迭代 #3 – 添加窗体验证 (C#) |Microsoft 文档'
 author: microsoft
-description: "在第三个迭代中，我们将添加基本窗体验证。 我们可以防止人员提交窗体，但不完成需要的表单域。 我们还验证 emai..."
+description: 在第三个迭代中，我们将添加基本窗体验证。 我们可以防止人员提交窗体，但不完成需要的表单域。 我们还验证 emai...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 120c35755784ba5a08a9592fdc58f17879848631
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b9353c32b2839fd760513982c5742bb8f521e94a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-3--add-form-validation-c"></a>迭代 #3 – 添加窗体验证 (C#)
 ====================
@@ -118,7 +118,7 @@ by [Microsoft](https://github.com/microsoft)
 
 > [!NOTE] 
 > 
-> 我收到了用于验证在正则表达式存储库中的电话号码和电子邮件地址的正则表达式[ *http://regexlib.com*](http://regexlib.com)
+> 我收到了用于验证在正则表达式存储库中的电话号码和电子邮件地址的正则表达式 [*http://regexlib.com*](http://regexlib.com)
 
 
 ## <a name="adding-validation-logic-to-the-edit-action"></a>将验证逻辑添加到的编辑操作
@@ -131,7 +131,7 @@ Edit （） 操作会更新联系人。 Edit （） 操作必须执行的 create
 
 [!code-csharp[Main](iteration-3-add-form-validation-cs/samples/sample4.cs)]
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在此迭代中，我们将添加基本窗体验证到我们的联系人管理器应用程序。 我们验证逻辑阻止用户提交新的联系人或编辑现有联系人，无需提供 FirstName 和 LastName 属性的值。 此外，用户必须提供有效的电话号码和电子邮件地址。
 
@@ -139,6 +139,6 @@ Edit （） 操作会更新联系人。 Edit （） 操作必须执行的 create
 
 在下一步的迭代中，我们将重构我们的验证逻辑和数据库访问逻辑外我们控制器。 我们将充分利用多个软件设计原则，以便能够创建一个更松散耦合，且更易于维护，应用程序。
 
->[!div class="step-by-step"]
-[上一页](iteration-2-make-the-application-look-nice-cs.md)
-[下一页](iteration-4-make-the-application-loosely-coupled-cs.md)
+> [!div class="step-by-step"]
+> [上一页](iteration-2-make-the-application-look-nice-cs.md)
+> [下一页](iteration-4-make-the-application-loosely-coupled-cs.md)

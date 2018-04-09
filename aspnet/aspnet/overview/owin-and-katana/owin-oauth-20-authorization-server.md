@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
-title: "OWIN OAuth 2.0 授权服务器 |Microsoft 文档"
+title: OWIN OAuth 2.0 授权服务器 |Microsoft 文档
 author: hongyes
-description: "本教程将指导你如何实现 OAuth 2.0 授权服务器使用 OWIN OAuth 中间件。 这是该唯一 outlin 的高级的教程..."
+description: 本教程将指导你如何实现 OAuth 2.0 授权服务器使用 OWIN OAuth 中间件。 这是该唯一 outlin 的高级的教程...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/20/2014
 ms.topic: article
 ms.assetid: 20acee16-c70c-41e9-b38f-92bfcf9a4c1c
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
 ms.openlocfilehash: e5968f8d19191c3f44e9bd58f8e22a39d8d8faff
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="owin-oauth-20-authorization-server"></a>OWIN OAuth 2.0 授权服务器
 ====================
@@ -104,7 +104,7 @@ OAuth 不介意位置和方式如何管理用户帐户信息。 它具有[ASP.NE
 
 [!code-csharp[Main](owin-oauth-20-authorization-server/samples/sample4.cs?highlight=1)]
 
-`ValidateClientRedirectUri`用于验证客户端使用其注册的重定向 URL。 `ValidateClientAuthentication`检查的基本方案标头和窗体正文以获取客户端的凭据。
+`ValidateClientRedirectUri` 用于验证客户端使用其注册的重定向 URL。 `ValidateClientAuthentication` 检查的基本方案标头和窗体正文以获取客户端的凭据。
 
 登录页如下所示：
 
@@ -241,10 +241,10 @@ OAuth 不介意位置和方式如何管理用户帐户信息。 它具有[ASP.NE
 
 [!code-csharp[Main](owin-oauth-20-authorization-server/samples/sample13.cs)]
 
-- `UseCors`方法允许在所有域的 CORS。
-- `UseOAuthBearerAuthentication`方法可实现 OAuth 持有者令牌的身份验证中间它将接收并验证从 authorization 标头中请求的持有者令牌。
-- `Config.SuppressDefaultHostAuthenticaiton`取消显示默认承载的应用中的身份验证的主体，因此所有请求都将匿名在此调用。
-- `HostAuthenticationFilter`启用身份验证只是为了指定的身份验证类型。 在这种情况下，它是持有者身份验证类型。
+- `UseCors` 方法允许在所有域的 CORS。
+- `UseOAuthBearerAuthentication` 方法可实现 OAuth 持有者令牌的身份验证中间它将接收并验证从 authorization 标头中请求的持有者令牌。
+- `Config.SuppressDefaultHostAuthenticaiton` 取消显示默认承载的应用中的身份验证的主体，因此所有请求都将匿名在此调用。
+- `HostAuthenticationFilter` 启用身份验证只是为了指定的身份验证类型。 在这种情况下，它是持有者身份验证类型。
 
 为了演示身份验证的标识，我们创建 ApiController 输出当前用户的声明。
 
@@ -272,7 +272,7 @@ OAuth 不介意位置和方式如何管理用户帐户信息。 它具有[ASP.NE
 
 [!code-csharp[Main](owin-oauth-20-authorization-server/samples/sample16.cs)]
 
-`DotNetOpenAuth`默认情况下需要 SSL。 由于我们的演示程序使用 HTTP，你需要添加以下配置文件中的设置：
+`DotNetOpenAuth` 默认情况下需要 SSL。 由于我们的演示程序使用 HTTP，你需要添加以下配置文件中的设置：
 
 [!code-xml[Main](owin-oauth-20-authorization-server/samples/sample17.xml?highlight=4-6)]
 

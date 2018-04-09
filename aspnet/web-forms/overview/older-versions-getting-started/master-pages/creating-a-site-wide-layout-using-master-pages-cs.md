@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
-title: "创建使用母版页 (C#) 的站点范围布局 |Microsoft 文档"
+title: 创建使用母版页 (C#) 的站点范围布局 |Microsoft 文档
 author: rick-anderson
-description: "本教程将介绍母版页基础知识。 也就是说，什么是母版页，如何执行一个创建母版页、 什么是内容的占位符，如何执行一个 cr..."
+description: 本教程将介绍母版页基础知识。 也就是说，什么是母版页，如何执行一个创建母版页、 什么是内容的占位符，如何执行一个 cr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/21/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8061a2aff318d397116cbc0bc0a8ce24ef35c7fb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 72f870e07a4f7754e352dc3478d9c86d4cb43994
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-c"></a>创建站点范围布局使用母版页 (C#)
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 01/24/2018
 
 [![Www.asp.net 网站在所有页面采用一致的外观和感觉](creating-a-site-wide-layout-using-master-pages-cs/_static/image2.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image1.png)
 
-**图 01**: www.asp.net 网站采用一致的外观和感觉跨所有的页面 ([单击以查看实际尺寸的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image3.png))
+<strong>图 01</strong>: www.asp.net 网站采用一致的外观和感觉跨所有的页面 ([单击以查看实际尺寸的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image3.png))
 
 
 设计良好的另一个特性是站点的站点的外观更改的方便。 图 1 显示 www.asp.net 主页截至 2008 年 3 月，但现在，本教程的发布，可能已更改外观和感觉。 可能是沿顶部的菜单项将展开以包括一个新的节，用于 MVC 框架。 否则可能使用不同的颜色、 字体和布局的全新设计将活跃。 将此类更改应用于整个站点应是快速而简单的过程，不需要修改将组成该网站的 web 页的数千个。
@@ -260,7 +260,7 @@ ms.lasthandoff: 01/24/2018
 > 如本示例所示，母版页可能包含服务器端 Web 控件、 代码和事件处理程序。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 主控页启用 ASP.NET 开发人员设计一致的站点范围布局是可轻松地更新。 Visual Web Developer 提供丰富的设计时支持，则创建母版页和其关联的内容页非常简单，创建标准 ASP.NET 页。
 
@@ -281,11 +281,11 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
 
->[!div class="step-by-step"]
-[下一篇](multiple-contentplaceholders-and-default-content-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](multiple-contentplaceholders-and-default-content-cs.md)

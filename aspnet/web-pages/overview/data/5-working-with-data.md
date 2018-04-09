@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/data/5-working-with-data
-title: "使用在 ASP.NET 网页中的数据库的简介页 (Razor) 站点 |Microsoft 文档"
+title: 使用在 ASP.NET 网页中的数据库的简介页 (Razor) 站点 |Microsoft 文档
 author: tfitzmac
-description: "本章介绍如何从数据库访问数据并将其使用的 ASP.NET Web Pages 显示。"
+description: 本章介绍如何从数据库访问数据并将其使用的 ASP.NET Web Pages 显示。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
-ms.openlocfilehash: 460af471a1b0650f8d782d582ce6cd9a06664d5c
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 563074cf3e60717c2e6c336a2c282b4203f73b8b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>使用在 ASP.NET 网页中的数据库的简介页 (Razor) 站点
 ====================
@@ -361,7 +361,7 @@ ms.lasthandoff: 03/15/2018
 6. 单击**删除**链接，获取的产品之一。 *DeleteProduct.cshtml*显示页以确认你想要删除该记录。
 7. 单击**删除**按钮。 删除该产品记录，并使用更新的产品列表刷新页面。
 
-> [!TIP] 
+> [!TIP]
 > 
 > <a id="SB_ConnectingToADatabase"></a>
 > ### <a name="connecting-to-a-database"></a>连接到数据库

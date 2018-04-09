@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-vb
-title: "允许文本框 (VB) 中的某些字符 |Microsoft 文档"
+title: 允许文本框 (VB) 中的某些字符 |Microsoft 文档
 author: wenz
-description: "ASP.NET 验证控件可以确保只有某些字符允许在用户输入。 但是这仍不会阻止用户键入无效..."
+description: ASP.NET 验证控件可以确保只有某些字符允许在用户输入。 但是这仍不会阻止用户键入无效...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b41ec1dfda5d85c625026e1f1e1ecd7e190ee3ce
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2b63a3582c09e08310c97d4adfc7b8273458a723
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="allowing-only-certain-characters-in-a-text-box-vb"></a>允许仅某些字符在文本框中 (VB)
 ====================
@@ -45,10 +45,10 @@ ASP.NET AJAX 控件工具包中包含`FilteredTextBox`控件扩展了一个文�
 
 最后，`FilteredTextBoxExtender`控件负责限制允许用户键入的字符。 首先，设置`TargetControlID`属性设为`ID`的`TextBox`控件。 然后，选择的某个可用`FilterType`值：
 
-- `Custom`默认设置;你必须提供有效的字符的列表
-- `LowercaseLetters`仅为小写字母
-- `Numbers`仅为数字
-- `UppercaseLetters`仅大写字母
+- `Custom` 默认设置;你必须提供有效的字符的列表
+- `LowercaseLetters` 仅为小写字母
+- `Numbers` 仅为数字
+- `UppercaseLetters` 仅大写字母
 
 如果`Custom FilterType`使用时，`ValidChars`属性必须是一组并提供可能键入的字符的列表。 顺便说一下： 如果你尝试将文本粘贴到文本框中，删除所有的无效字符。
 
@@ -63,5 +63,5 @@ ASP.NET AJAX 控件工具包中包含`FilteredTextBox`控件扩展了一个文�
 
 可能输入仅数字 ([单击以查看实际尺寸的图像](allowing-only-certain-characters-in-a-text-box-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一篇](allowing-only-certain-characters-in-a-text-box-cs.md)
+> [!div class="step-by-step"]
+> [上一篇](allowing-only-certain-characters-in-a-text-box-cs.md)

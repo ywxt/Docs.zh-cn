@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-4
-title: "第 4 部分： 添加管理视图 |Microsoft 文档"
+title: 第 4 部分： 添加管理视图 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 2960eee37201655a9e4632bf0196ba18a0e2e82a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cbf42f1dbd744d7b85dde7d2dcd99a13c6208a13
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-4-adding-an-admin-view"></a>第 4 部分： 添加管理视图
 ====================
@@ -86,6 +86,6 @@ ms.lasthandoff: 11/10/2017
 
 现在只有管理员可以查看管理页。 此外，如果将 HTTP 请求发送到管理控制器，则请求必须包含的身份验证 cookie。 如果没有，服务器发送 HTTP 401 （未经授权） 响应。 你可以看到此 Fiddler 中通过发送 GET 请求到`http://localhost:*port*/api/admin`。
 
->[!div class="step-by-step"]
-[上一页](using-web-api-with-entity-framework-part-3.md)
-[下一页](using-web-api-with-entity-framework-part-5.md)
+> [!div class="step-by-step"]
+> [上一页](using-web-api-with-entity-framework-part-3.md)
+> [下一页](using-web-api-with-entity-framework-part-5.md)

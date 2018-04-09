@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/calling-a-web-api-from-a-net-client
-title: "从.NET 客户端 (C#) 调用 Web API |Microsoft 文档"
+title: 从.NET 客户端 (C#) 调用 Web API |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/24/2017
@@ -11,11 +11,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 44e02888b53ee372ab93db5f90acb691f26b7519
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: a243eeb982ba581e237263c4e31e130d634aff0e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>从.NET 客户端 (C#) 调用 Web API
 ====================
@@ -48,7 +48,7 @@ ms.lasthandoff: 02/12/2018
 
 前面的代码是完整的客户端应用。
 
-`RunAsync`运行并受到阻止，直到它完成。 大多数**HttpClient**方法是异步，因为它们执行网络 I/O。 所有异步任务完成内`RunAsync`。 应用程序通常不会阻止主线程，但此应用不允许任何交互。
+`RunAsync` 运行并受到阻止，直到它完成。 大多数**HttpClient**方法是异步，因为它们执行网络 I/O。 所有异步任务完成内`RunAsync`。 应用程序通常不会阻止主线程，但此应用不允许任何交互。
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_run)]
 
@@ -109,7 +109,7 @@ Json.NET 是用于.NET 的受欢迎的高性能 JSON 框架。
 
 **GetAsync**方法可发送 HTTP GET 请求。 当方法完成时，它将返回**HttpResponseMessage**包含 HTTP 响应。 如果在响应中的状态代码是一个成功代码，响应正文将包含的 JSON 表示形式产品。 调用**ReadAsAsync**进行反序列化到 JSON 负载`Product`实例。 **ReadAsAsync**方法是异步的因为响应正文可以是任意大。
 
-**HttpClient**当 HTTP 响应包含错误代码时不引发异常。 相反， **IsSuccessStatusCode**属性是**false**如果状态为错误代码。 如果想要将异常视为的 HTTP 错误代码，调用[HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx)响应对象上。 `EnsureSuccessStatusCode`如果超出了范围 200 状态代码引发异常&ndash;299。 请注意， **HttpClient**可以出于其他原因引发异常&mdash;例如，如果在请求超时时。
+**HttpClient**当 HTTP 响应包含错误代码时不引发异常。 相反， **IsSuccessStatusCode**属性是**false**如果状态为错误代码。 如果想要将异常视为的 HTTP 错误代码，调用[HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx)响应对象上。 `EnsureSuccessStatusCode` 如果超出了范围 200 状态代码引发异常&ndash;299。 请注意， **HttpClient**可以出于其他原因引发异常&mdash;例如，如果在请求超时时。
 
 <a id="MediaTypeFormatters"></a>
 ### <a name="media-type-formatters-to-deserialize"></a>媒体类型格式化程序进行反序列化
@@ -173,10 +173,10 @@ resp.Content.ReadAsAsync<IEnumerable<Product>>(formatters);
 
 3. 运行客户端应用程序。 将生成以下输出：
 
- ```console
- Created at http://localhost:64195/api/products/4
-Name: Gizmo     Price: 100.0    Category: Widgets
-Updating price...
-Name: Gizmo     Price: 80.0     Category: Widgets
-Deleted (HTTP Status = 204)
-```
+   ```console
+   Created at http://localhost:64195/api/products/4
+   Name: Gizmo     Price: 100.0    Category: Widgets
+   Updating price...
+   Name: Gizmo     Price: 80.0     Category: Widgets
+   Deleted (HTTP Status = 204)
+   ```

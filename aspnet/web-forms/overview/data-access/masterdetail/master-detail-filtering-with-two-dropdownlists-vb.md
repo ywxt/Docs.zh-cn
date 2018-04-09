@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/master-detail-filtering-with-two-dropdownlists-vb
-title: "使用两个 DropDownLists (VB) 进行筛选主/详细信息 |Microsoft 文档"
+title: 使用两个 DropDownLists (VB) 进行筛选主/详细信息 |Microsoft 文档
 author: rick-anderson
-description: "本教程将扩展的主/从关系添加第三个层，使用两个 DropDownList 控件来选择所需的父和祖父 recor..."
+description: 本教程将扩展的主/从关系添加第三个层，使用两个 DropDownList 控件来选择所需的父和祖父 recor...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-two-dropdownlists-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c345fbfe5df4d8ce06695c4dd4b88cc099ad7836
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ee0232cf8f7c0533703a51a4629522fd887f216f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-with-two-dropdownlists-vb"></a>主/从使用两个 DropDownLists (VB) 进行筛选
 ====================
@@ -102,12 +102,12 @@ Northwind 数据库包含中的规范客户/顺序/订单详细信息信息其`C
 **图 9**： 配置使用 ObjectDataSource`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image27.png))
 
 
-我们需要在向导的最后一步中指定的值 *`categoryID`* 参数。 将此参数分配给的选定项`Categories`DropDownList。
+我们需要在向导的最后一步中指定的值*`categoryID`*参数。 将此参数分配给的选定项`Categories`DropDownList。
 
 
 [![从类别 DropDownList 拉取 categoryID 参数值](master-detail-filtering-with-two-dropdownlists-vb/_static/image29.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image28.png)
 
-**图 10**： 拉取 *`categoryID`* 参数值从`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image30.png))
+**图 10**： 拉取*`categoryID`*参数值从`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image30.png))
 
 
 使用配置对象数据源，所有就是指定哪些数据源字段用于显示和值的下拉列表的项。 显示`ProductName`字段并使用`ProductID`字段作为值。
@@ -141,7 +141,7 @@ Northwind 数据库包含中的规范客户/顺序/订单详细信息信息其`C
 
 ## <a name="step-3-using-a-detailsview-to-display-details-for-the-selected-product"></a>步骤 3： 使用说明如何以显示所选产品的详细信息
 
-最后一步是要在说明中显示所选产品的详细信息。 若要实现此目的，将说明如何添加到页中，设置其`ID`属性`ProductDetails`，并为它创建新对象数据源。 配置此对象数据源，将从其数据拉`ProductsBLL`类的`GetProductByProductID(productID)`方法使用的所选的值`ProductsByCategory`的值的 DropDownList  *`productID`* 参数。
+最后一步是要在说明中显示所选产品的详细信息。 若要实现此目的，将说明如何添加到页中，设置其`ID`属性`ProductDetails`，并为它创建新对象数据源。 配置此对象数据源，将从其数据拉`ProductsBLL`类的`GetProductByProductID(productID)`方法使用的所选的值`ProductsByCategory`的值的 DropDownList *`productID`*参数。
 
 
 [![选择使用 ProductsBLL 类](master-detail-filtering-with-two-dropdownlists-vb/_static/image44.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image43.png)
@@ -156,7 +156,7 @@ Northwind 数据库包含中的规范客户/顺序/订单详细信息信息其`C
 
 [![从 ProductsByCategory DropDownList 拉取 productID 参数值](master-detail-filtering-with-two-dropdownlists-vb/_static/image50.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image49.png)
 
-**图 17**： 拉取 *`productID`* 参数值从`ProductsByCategory`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image51.png))
+**图 17**： 拉取*`productID`*参数值从`ProductsByCategory`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image51.png))
 
 
 您可以选择显示可用字段中的任何`ProductDetails`说明。 我已选择删除`ProductID`， `SupplierID`，和`CategoryID`字段和重新排序，格式其余字段。 此外，我已清理说明的`Height`和`Width`属性，允许说明如何扩展到最佳显示所需的宽度，其数据，而不是让限于指定的大小。 完整的标记如下所示：
@@ -207,7 +207,7 @@ Northwind 数据库包含中的规范客户/顺序/订单详细信息信息其`C
 **图 21**:`ProductDetails`说明时，可以显式刷新`ProductsByCategory`DropDownList 的`DataBound`事件将触发 ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image63.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 DropDownList 充当主/详细信息报表的理想的用户界面元素在 master 和详细信息记录之间存在一个对多关系的情况。 在前面的教程中，我们已了解如何使用单个 DropDownList 来筛选显示的所选类别的产品。 在本教程中我们的产品 GridView 替换 DropDownList，说明用于显示所选产品的详细信息。 在本教程中所述的概念可以轻松地扩展到涉及多个一对多的关系，如客户、 订单和订单项的数据模型。 一般情况下，你始终可以为每一个对多关系中的"one"实体添加 DropDownList。
 
@@ -215,12 +215,12 @@ DropDownList 充当主/详细信息报表的理想的用户界面元素在 maste
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已希尔顿 Giesenow。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](master-detail-filtering-with-a-dropdownlist-vb.md)
-[下一页](master-detail-filtering-across-two-pages-vb.md)
+> [!div class="step-by-step"]
+> [上一页](master-detail-filtering-with-a-dropdownlist-vb.md)
+> [下一页](master-detail-filtering-across-two-pages-vb.md)

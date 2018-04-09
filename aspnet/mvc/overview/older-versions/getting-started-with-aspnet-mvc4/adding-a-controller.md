@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-controller
-title: "添加控制器 |Microsoft 文档"
+title: 添加控制器 |Microsoft 文档
 author: Rick-Anderson
-description: "注意： 本教程的更新的版本此处提供了使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全，请按照和演示要简单得多..."
+description: 注意： 本教程的更新的版本此处提供了使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全，请按照和演示要简单得多...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/28/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 69af91401e51470fbc0b67103345325201b06723
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bb76c0a87d935322406b9d8e18fbdb3e41f327f5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-controller"></a>添加控制器
 ====================
@@ -74,6 +74,6 @@ URL 的第一部分确定要执行的控制器类。 因此*/HelloWorld*映射�
 
 在这些示例中这两个控制器就已开始使用&quot;VC&quot; MVC 部分 — 也就是说，视图和控制器工作。 控制器直接返回 HTML。 通常，你不希望直接返回 HTML，因为该按钮将变为非常麻烦的代码的控制器。 而是我们通常将使用单独的视图模板文件来帮助生成 HTML 响应。 让我们来看如何我们可以执行此操作在下一步。
 
->[!div class="step-by-step"]
-[上一页](intro-to-aspnet-mvc-4.md)
-[下一页](adding-a-view.md)
+> [!div class="step-by-step"]
+> [上一页](intro-to-aspnet-mvc-4.md)
+> [下一页](adding-a-view.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
-title: "执行批处理更新 (C#) |Microsoft 文档"
+title: 执行批处理更新 (C#) |Microsoft 文档
 author: rick-anderson
-description: "了解如何创建完全可编辑 DataList 的所有项处于编辑模式和其值可以通过单击全部更新按钮保存..."
+description: 了解如何创建完全可编辑 DataList 的所有项处于编辑模式和其值可以通过单击全部更新按钮保存...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/30/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 46db3c5d733b9c8b6e749a9b8ff1aa9a061c36df
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: af19104edb1849272773193befe1f5b2c7347683
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="performing-batch-updates-c"></a>执行批处理更新 (C#)
 ====================
@@ -43,8 +43,8 @@ ms.lasthandoff: 01/24/2018
 
 在前面的教程，其中我们创建标准的、 项目级别的可编辑 DataList，我们使用两个模板：
 
-- `ItemTemplate`包含只读用户接口 （用于显示每个产品的名称和价格的标签 Web 控件）。
-- `EditItemTemplate`包含编辑模式用户界面 （两个文本框中 Web 控件）。
+- `ItemTemplate` 包含只读用户接口 （用于显示每个产品的名称和价格的标签 Web 控件）。
+- `EditItemTemplate` 包含编辑模式用户界面 （两个文本框中 Web 控件）。
 
 DataList s`EditItemIndex`属性指示什么`DataListItem`（如果有） 使用呈现`EditItemTemplate`。 具体而言，`DataListItem`其`ItemIndex`值与匹配 DataList s`EditItemIndex`属性用来呈现使用`EditItemTemplate`。 此模型适用于创建完全可编辑 DataList 时，可以在时间，但回退拆分编辑只有一项。
 
@@ -155,7 +155,7 @@ ADO.NET DataTable 和 DataAdapter 类旨在支持批处理更新只修改、 删
 > 每次`UpdateSupplierAddress`调用方法，进行调用到数据库以检索有关已更新记录的信息。 然后，如果数据中有任何更改，另一个对数据库进行调用以更新表行。 此工作流无法优化通过创建`UpdateSupplierAddress`接受的方法重载`EmployeesDataTable`实例具有*所有*中的更改的`BatchUpdate.aspx`页。 然后，它无法进行一次调用到数据库，若要获取所有从记录`Suppliers`表。 然后可枚举两个结果集，无法更新已发生更改的那些记录。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，我们将了解如何创建完全可编辑 DataList，从而使用户可快速修改多个供应商的地址信息。 我们已开始将通过在 DataList s 中定义的供应商的地址、 市和国家/地区值的文本框中 Web 控件的编辑界面`ItemTemplate`。 接下来，我们添加更新所有按钮上方和下方 DataList。 用户已创建他的更改，并单击其中一个更新所有按钮之后,`DataListItem`枚举 s 和调用`SuppliersBLL`类的`UpdateSupplierAddress`方法由。
 
@@ -163,12 +163,12 @@ ADO.NET DataTable 和 DataAdapter 类旨在支持批处理更新只修改、 删
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Zack Jones 和 Ken Pespisa。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)
-[下一页](handling-bll-and-dal-level-exceptions-cs.md)
+> [!div class="step-by-step"]
+> [上一页](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)
+> [下一页](handling-bll-and-dal-level-exceptions-cs.md)

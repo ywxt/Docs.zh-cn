@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
-title: "部署具有 SQL Server Compact 使用 Visual Studio 的 ASP.NET Web 应用程序： 简介-1 12 |Microsoft 文档"
+title: 部署具有 SQL Server Compact 使用 Visual Studio 的 ASP.NET Web 应用程序： 简介-1 12 |Microsoft 文档
 author: tdykstra
-description: "这一系列的教程演示如何部署 （发布） ASP.NET web 应用程序项目，它通过使用 Visual Stu 包含 SQL Server Compact 数据库..."
+description: 这一系列的教程演示如何部署 （发布） ASP.NET web 应用程序项目，它通过使用 Visual Stu 包含 SQL Server Compact 数据库...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: a0f38c83bd9231dbd37d3d505c90316af521b336
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 3f1572bb890ee136cdd746040a5efae2ce537116
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 的 ASP.NET Web 应用程序： 简介-1 12
 ====================
@@ -53,7 +53,7 @@ ms.lasthandoff: 02/12/2018
 
 在企业环境中，它是更常见的做法实现持续集成过程，生产环境通常由公司自己的服务器承载的。 不同的人也通常可以执行不同的角色。 有关企业部署的信息，请参阅[企业方案中部署 Web 应用程序](../../deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)。
 
-所有规模的组织还可以将部署 web 应用程序到 Azure，并显示这些教程中的过程的大部分同样适用于 Azure 应用程序服务 Web Apps。 有关 Azure 的简介，请参阅[https://azure.microsoft.com](https://azure.microsoft.com)。
+所有规模的组织还可以将部署 web 应用程序到 Azure，并显示这些教程中的过程的大部分同样适用于 Azure 应用程序服务 Web Apps。 有关 Azure 的简介，请参阅[ https://azure.microsoft.com ](https://azure.microsoft.com)。
 
 ## <a name="the-hosting-provider-shown-in-the-tutorials"></a>托管提供商教程中所示
 
@@ -142,5 +142,5 @@ Contoso 大学是一个 Visual Studio web 应用程序项目。 大部分的部�
 
 在此序列中的第一个教程中，你已下载示例的 Visual Studio 项目，并查看站点功能会影响你部署应用程序的方式。 在以下教程中，你为部署准备通过以下操作来自动处理的某些设置。 其他您采取措施的手动。
 
->[!div class="step-by-step"]
-[下一篇](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
+> [!div class="step-by-step"]
+> [下一篇](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

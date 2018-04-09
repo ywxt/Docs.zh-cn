@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-enforce-coding-standards-with-code-analysis
-title: "[如何:]使用代码分析的编码标准，强制执行？ | Microsoft Docs"
+title: '[如何:]使用代码分析的编码标准，强制执行？ | Microsoft Docs'
 author: rick-anderson
-description: "使用 Visual Studio Team System 必须很好的控制代码分析规则应用于的类库项目、 网站项目和源代码 co..."
+description: 使用 Visual Studio Team System 必须很好的控制代码分析规则应用于的类库项目、 网站项目和源代码 co...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/09/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-enforce-coding-standards-with-code-analysis
 msc.type: video
-ms.openlocfilehash: 1c37ac12f6bbd4e68e0a94b6236f098d8f058e8c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f57e2372ec4a4d1ba7f6a8f9f2f81cdfc275819c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-enforce-coding-standards-with-code-analysis"></a>[如何:]使用代码分析的编码标准，强制执行？
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （6 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-enforce-coding-standards-with-code-analysis)
 
->[!div class="step-by-step"]
-[上一页](how-do-i-set-up-distributed-load-testing-for-high-volume-tests.md)
-[下一页](how-do-i-use-generic-tests.md)
+> [!div class="step-by-step"]
+> [上一页](how-do-i-set-up-distributed-load-testing-for-high-volume-tests.md)
+> [下一页](how-do-i-use-generic-tests.md)

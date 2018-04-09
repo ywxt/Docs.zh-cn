@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
-title: "如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 7 部分 |Microsoft 文档"
+title: 如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 7 部分 |Microsoft 文档
 author: tdykstra
-description: "Contoso 大学示例 web 应用程序演示如何创建 ASP.NET Web 窗体应用程序使用实体框架。 该示例应用程序..."
+description: Contoso 大学示例 web 应用程序演示如何创建 ASP.NET Web 窗体应用程序使用实体框架。 该示例应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: aeea122636f5235364e6a40cb6e041b1fe221317
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: cb84f4f3e130fedb3e2f1a17d630767ff65bfa05
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-7"></a>如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 7 部分
 ====================
@@ -51,7 +51,7 @@ ms.lasthandoff: 01/24/2018
 
 [![image14](the-entity-framework-and-aspnet-getting-started-part-7/_static/image4.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image3.png)
 
-`Student`实体具有四个属性： `PersonID`， `LastName`， `FirstName`，和`EnrollmentDate`。 数据库将自动生成的 ID 值和存储的过程接受其他三个参数。 存储的过程返回的新行的记录密钥的值，以使实体框架可以跟踪的它在内存中保留的实体的版本中。
+`Student` 实体具有四个属性： `PersonID`， `LastName`， `FirstName`，和`EnrollmentDate`。 数据库将自动生成的 ID 值和存储的过程接受其他三个参数。 存储的过程返回的新行的记录密钥的值，以使实体框架可以跟踪的它在内存中保留的实体的版本中。
 
 保存并关闭存储的过程窗口。
 
@@ -139,6 +139,6 @@ ms.lasthandoff: 01/24/2018
 
 在下一步的教程中，你将了解如何使用动态数据功能来更简便地程序和测试数据格式设置和验证规则。 指定每个网页规则，如数据格式字符串和字段是必填，而不可以在数据模型元数据中指定此类规则并自动在每一页上将它们应用于。
 
->[!div class="step-by-step"]
-[上一页](the-entity-framework-and-aspnet-getting-started-part-6.md)
-[下一页](the-entity-framework-and-aspnet-getting-started-part-8.md)
+> [!div class="step-by-step"]
+> [上一页](the-entity-framework-and-aspnet-getting-started-part-6.md)
+> [下一页](the-entity-framework-and-aspnet-getting-started-part-8.md)

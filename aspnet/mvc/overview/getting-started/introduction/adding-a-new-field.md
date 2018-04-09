@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/adding-a-new-field
-title: "添加新字段 |Microsoft 文档"
+title: 添加新字段 |Microsoft 文档
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 453fbf68aa2f3a1d9ea708355c06c53d4f1eabd0
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 0dac798eba586cdcc232cedd262e610b954004df
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-new-field"></a>添加新字段
 ====================
 通过[Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 在本部分中，你将使用 Entity Framework Code First 迁移来迁移到的模型类的一些更改，因此更改应用到数据库。
 
@@ -62,7 +62,7 @@ Visual Studio 将打开*Configuration.cs*文件。 替换`Seed`中的方法*Conf
 
 [!code-csharp[Main](adding-a-new-field/samples/sample2.cs)]
 
-> [!NOTE] 
+> [!NOTE]
 > 
 > 代码优先迁移调用`Seed`每个迁移后的方法 (即，调用**更新数据库**在 Package Manager Console)，和此方法更新行，具有已插入，或将其插入如果它们尚不存在。
 > 
@@ -71,15 +71,15 @@ Visual Studio 将打开*Configuration.cs*文件。 替换`Seed`中的方法*Conf
 > [!code-csharp[Main](adding-a-new-field/samples/sample3.cs)]
 > 
 > 因为[种子](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx)方法运行与每个迁移时，不能只是插入数据，因为你尝试添加的行已将存在后创建数据库的初始迁移。 "[Upsert](http://en.wikipedia.org/wiki/Upsert)"操作可以防止如果你尝试插入行已存在，会发生的错误，但它将重写任何测试应用程序时可能已做的数据更改。 使用某些表中的测试数据您可能不希望这种情况： 在某些情况下在测试期间更改数据时所需更改后数据库更新保留。 在这种情况下要执行条件的插入操作： 仅当它尚不存在插入行。   
->   
+> 
 > 第一个参数传递给[AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)方法指定要用于检查行是否已存在的属性。 为你提供的，测试影片数据`Title`属性可以用于此目的，由于每个列表中的标题都是唯一：
 > 
 > [!code-csharp[Main](adding-a-new-field/samples/sample4.cs)]
 > 
 > 此代码假定： 标题都是唯一的。 如果你手动添加重复的标题，则会将得到以下异常下次执行迁移。   
->   
+> 
 >  *序列包含多个元素*  
->   
+> 
 > 有关详细信息[AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)方法，请参阅[负责使用 EF 4.3 AddOrUpdate 方法](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)...
 
 
@@ -179,7 +179,7 @@ Code First 迁移创建中的另一个类文件*迁移*文件夹 (同名*{日期
 
 ![7_CreateRioII](adding-a-new-field/_static/image13.png)
 
-单击 **“创建”**。 新的影片，包括评级，现在显示在电影列出：
+单击“创建” 。 新的影片，包括评级，现在显示在电影列出：
 
 ![7_ourNewMovie_SM](adding-a-new-field/_static/image14.png)
 
@@ -191,6 +191,6 @@ Code First 迁移创建中的另一个类文件*迁移*文件夹 (同名*{日期
 
 在本部分中您将了解如何修改模型对象和保留数据库与更改同步。 你还了解了一种方法来填充新创建的数据库使用示例数据，因此你还可以尝试方案。 这是只需向 Code First 的快速介绍，请参阅[为 ASP.NET MVC 应用程序创建实体框架数据模型](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)有关主题的更完整教程。 接下来，让我们看一下如何将更丰富的验证逻辑添加到模型类和启用一些业务规则，以强制执行。
 
->[!div class="step-by-step"]
-[上一页](adding-search.md)
-[下一页](adding-validation.md)
+> [!div class="step-by-step"]
+> [上一页](adding-search.md)
+> [下一页](adding-validation.md)

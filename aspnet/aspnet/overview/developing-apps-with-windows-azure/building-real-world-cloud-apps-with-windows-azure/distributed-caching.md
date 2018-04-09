@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
-title: "分布式缓存 （使用 Azure 构建真实世界云应用） |Microsoft 文档"
+title: 分布式缓存 （使用 Azure 构建真实世界云应用） |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以..."
+description: 构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/20/2015
 ms.topic: article
 ms.assetid: 406518e9-3817-49ce-8b90-e82bc461e2c0
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 msc.type: authoredcontent
-ms.openlocfilehash: 24ede9cb9289c84140f6e2573f9d526f19cac64b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3600200f9bb705ccf66c859547668bdf8e89d97a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>分布式缓存 （构建真实世界云应用程序与 Azure）
 ====================
@@ -86,7 +86,7 @@ Azure 提供以下缓存服务： [Azure Redis 缓存](https://msdn.microsoft.co
 
 中所述[web 开发最佳做法章](web-development-best-practices.md)，最佳做法是避免使用会话状态。 如果你的应用程序需要会话状态下, 一步的最佳做法是避免默认内存中提供程序，因为不支持横向扩展 （web 服务器的多个实例）。 ASP.NET SQL Server 会话状态提供程序启用多个 web 服务器以使用会话状态, 运行的站点，但它会导致相比于内存中提供程序的高延迟成本。 如果你需要使用会话状态的最佳解决方案是使用缓存提供程序，如[用于 Azure Cache 的会话状态提供程序](https://msdn.microsoft.com/library/windowsazure/gg185668.aspx)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 你已了解如何解决它应用可以实现缓存为了改进响应时间和可伸缩性，并使应用程序以继续数据库不可用时能够快地响应进行读取操作。 在[下一章](queue-centric-work-pattern.md)我们将演示如何以进一步提高可缩放性和使应用程序继续能够快地响应进行写入操作。
 
@@ -111,6 +111,6 @@ Azure 提供以下缓存服务： [Azure Redis 缓存](https://msdn.microsoft.co
 
 - [云服务在 Azure 中的基础知识](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)。 实现分布式缓存的示例应用程序。 请参阅随附的博客文章[云服务基础知识 – 缓存的基础知识](https://blogs.msdn.com/b/windowsazure/archive/2013/10/03/cloud-service-fundamentals-caching-basics.aspx)。
 
->[!div class="step-by-step"]
-[上一页](transient-fault-handling.md)
-[下一页](queue-centric-work-pattern.md)
+> [!div class="step-by-step"]
+> [上一页](transient-fault-handling.md)
+> [下一页](queue-centric-work-pattern.md)

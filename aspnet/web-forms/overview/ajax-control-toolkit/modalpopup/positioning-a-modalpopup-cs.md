@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/positioning-a-modalpopup-cs
-title: "定位 ModalPopup (C#) |Microsoft 文档"
+title: 定位 ModalPopup (C#) |Microsoft 文档
 author: wenz
-description: "AJAX 控件工具包中的 ModalPopup 控制提供一种简单的方法，以创建模式的弹出项，使用客户端的方式。 但是该控件不提供..."
+description: AJAX 控件工具包中的 ModalPopup 控制提供一种简单的方法，以创建模式的弹出项，使用客户端的方式。 但是该控件不提供...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/positioning-a-modalpopup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8dcc4e20ac98cbbad1ea3e86b7f895d32c853d4a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bee5be84259231d8cd5efde74b610d72f5e250cc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="positioning-a-modalpopup-c"></a>定位 ModalPopup (C#)
 ====================
@@ -62,6 +62,6 @@ AJAX 控件工具包中的 ModalPopup 控制提供一种简单的方法，以创
 
 模式的弹出窗口出现在指定的位置 ([单击以查看实际尺寸的图像](positioning-a-modalpopup-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一页](handling-postbacks-from-a-modalpopup-cs.md)
-[下一页](launching-a-modal-popup-window-from-server-code-vb.md)
+> [!div class="step-by-step"]
+> [上一页](handling-postbacks-from-a-modalpopup-cs.md)
+> [下一页](launching-a-modal-popup-window-from-server-code-vb.md)

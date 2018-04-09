@@ -1,5 +1,5 @@
 ---
-title: ASP .NET Core 中的内存中缓存
+title: 缓存在内存中 ASP.NET 核心
 author: rick-anderson
 description: 了解如何在 ASP.NET Core 中的内存中缓存数据。
 manager: wpickett
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/memory
-ms.openlocfilehash: 64635235c11b55818da02d63d044334f4b2cdb08
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
-ms.translationtype: HT
+ms.openlocfilehash: c2eae83219e8995a614b2933b1290d061f1b7869
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="in-memory-caching-in-aspnet-core"></a>ASP .NET Core 中的内存中缓存
+# <a name="cache-in-memory-in-aspnet-core"></a>缓存在内存中 ASP.NET 核心
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)， [John Luo](https://github.com/JunTaoLuo)，和[Steve Smith](https://ardalis.com/)
 
@@ -46,7 +46,7 @@ Web 场中的非粘性会话需要[分布式缓存](distributed.md)以避免缓�
 
 `IMemoryCache` 需要 NuGet 包"Microsoft.Extensions.Caching.Memory"。
 
-以下代码使用[TryGetValue](/dotnet/api/microsoft.extensions.caching.memory.imemorycache.trygetvalue?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_IMemoryCache_TryGetValue_System_Object_System_Object__)检查时间是否在缓存中。 如果未缓存的时间，创建并添加到缓存中，使用新的条目[设置](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions.set?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_CacheExtensions_Set__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object___0_Microsoft_Extensions_Caching_Memory_MemoryCacheEntryOptions_)。
+下面的代码使用[TryGetValue](/dotnet/api/microsoft.extensions.caching.memory.imemorycache.trygetvalue?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_IMemoryCache_TryGetValue_System_Object_System_Object__)检查时间是否在缓存中。 如果未缓存的时间，创建并添加到缓存中，使用新的条目[设置](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions.set?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_CacheExtensions_Set__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object___0_Microsoft_Extensions_Caching_Memory_MemoryCacheEntryOptions_)。
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet1)]
 

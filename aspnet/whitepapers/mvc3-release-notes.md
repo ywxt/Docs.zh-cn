@@ -2,21 +2,21 @@
 uid: whitepapers/mvc3-release-notes
 title: ASP.NET MVC 3 | Microsoft Docs
 author: rick-anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/06/2010
 ms.topic: article
 ms.assetid: f44c166e-7e91-48a0-a6f8-d9285f3594e5
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: 058b7c6fe6eeeea4403e7e5fdc05bb44d2ba1300
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 0bfe9cdc215226457ccfafff2b85ace87325b91b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -262,7 +262,7 @@ ASP.NET MVC 3 可以在同一台计算机，这将使您能够灵活地选择何
 <a id="tu-Modernizr"></a>
 ### <a name="project-templates-now-include-modernizr-17"></a>项目模板现在包括 Modernizr 1.7
 
-Modernizr 是启用对支持 CSS 3 和 HTML5 尚不支持这些功能的浏览器中的 JavaScript 库。 此库是用作 ASP.NET MVC 3 项目的模板中的预安装 NuGet 包。 有关 Modernizr 的详细信息，请参阅[http://www.modernizr.com/](http://www.modernizr.com/)。
+Modernizr 是启用对支持 CSS 3 和 HTML5 尚不支持这些功能的浏览器中的 JavaScript 库。 此库是用作 ASP.NET MVC 3 项目的模板中的预安装 NuGet 包。 有关 Modernizr 的详细信息，请参阅[ http://www.modernizr.com/ ](http://www.modernizr.com/)。
 
 <a id="tu-UpdatedJQuery"></a>
 ### <a name="project-templates-include-updated-versions-of-jquery-jquery-ui-and-jquery-validation"></a>项目模板包括的 jQuery、 jQuery UI 中和 jQuery 的更新的版本验证
@@ -373,7 +373,7 @@ ASP.NET MVC 3 引入 RC2 版本*CachedDataAnnotationsMetadataProvider*类，提�
 <a id="_Toc2_1"></a>
 ### <a name="project-templates-changed-to-include-jquery-144-jquery-validation-17-and-jquery-ui-186"></a>项目模板更改，以便包括 jQuery 1.4.4、 jQuery 验证 1.7 和 jQuery UI 1.8.6
 
-ASP.NET MVC 3 的项目模板现在包括最新版本的 jQuery、 jQuery 验证和 jQuery UI。 jQuery UI 是一项新增到的项目模板，并提供有用的用户界面小组件。 有关 jQuery UI 的详细信息，请访问其主页： [http://jqueryui.com/](http://jqueryui.com/)。
+ASP.NET MVC 3 的项目模板现在包括最新版本的 jQuery、 jQuery 验证和 jQuery UI。 jQuery UI 是一项新增到的项目模板，并提供有用的用户界面小组件。 有关 jQuery UI 的详细信息，请访问其主页： [ http://jqueryui.com/ ](http://jqueryui.com/)。
 
 <a id="_Toc2_2"></a>
 ### <a name="added-additionalmetadataattribute-class"></a>添加"AdditionalMetadataAttribute"类
@@ -438,7 +438,7 @@ ASP.NET MVC 3 的项目模板现在包括最新版本的 jQuery、 jQuery 验证
 <a id="_Toc2_10"></a>
 ### <a name="fixed-model-declaration-to-not-add-whitespace-to-the-document"></a>固定@model声明，以向文档添加空格
 
-在早期版本中，  *@model* 视图顶部的声明添加到的呈现的 HTML 输出一个空行。 此问题已修复，以便该声明不会引入的空格。
+在早期版本中， <em>@model</em>视图顶部的声明添加到的呈现的 HTML 输出一个空行。 此问题已修复，以便该声明不会引入的空格。
 
 <a id="_Toc2_11"></a>
 ### <a name="added-fileextensions-property-to-view-engines-to-support-engine-specific-file-names"></a>添加"FileExtensions"属性设置为视图引擎，以支持引擎特定文件的名称
@@ -465,7 +465,7 @@ ASP.NET MVC 3 的项目模板现在包括最新版本的 jQuery、 jQuery 验证
 - 在以前版本的 ASP.NET MVC，每个请求除外在少数情况下创建的操作筛选器。 此行为永远不会有保证的行为，但只是实现详细信息，且筛选器的协定为设法无状态。 在 ASP.NET MVC 3 中，筛选器会更加主动地缓存。 因此，实例状态中存储任何自定义操作筛选器可能会被破坏。
 - 异常筛选器的执行顺序已更改为具有相同的异常筛选器*顺序*值。 ASP.NET MVC 2 及更早版本，异常筛选器在包含相同的控制器上*顺序*值上的操作方法已在上的操作方法的异常筛选器之前执行。 这通常会出现此情况，当异常筛选器应用而无需指定*顺序*值。 在 ASP.NET MVC 3 中，此具有已反转顺序，以便最具体的异常处理程序，则首先执行。 如下所示早期版本中，如果*顺序*显式指定属性，以指定顺序运行筛选器。
 - 名为的新属性*FileExtensions*已添加到*VirtualPathProviderViewEngine*基类。 时 ASP.NET 查找视图按路径 （而不是按名称），都只能指定此新属性的列表中包含的文件扩展名的视图。 这是一项重大更改应用程序中的，其中自定义生成提供程序注册以启用 Web 窗体视图的自定义文件扩展，且该提供程序通过使用完整路径，而不是名称来引用这些视图。 解决方法是修改的值*FileExtensions*属性以包含自定义的文件扩展名。
-- 直接实现的自定义控制器工厂实现*IControllerFactory*接口必须提供的新实现*GetControllerSessionBehavior * * 已添加到的方法在此版本中的接口*。 一般情况下，建议你不直接实现此接口和相反派生您的类从*DefaultControllerFactory*。
+- 直接实现的自定义控制器工厂实现<em>IControllerFactory</em>接口必须提供的新实现<em>GetControllerSessionBehavior</em> <em>已添加到此版本中的接口的方法</em>。 一般情况下，建议你不直接实现此接口和相反派生您的类从<em>DefaultControllerFactory</em>。
 
 <a id="_Toc2_KI"></a>
 ## <a name="known-issues"></a>已知问题
@@ -629,11 +629,11 @@ Namespace.ClassName
 
 ASP.NET MVC 3 Beta 已于 2010 年 10 月 6 日发布。 以下说明特定于 Beta 版本中，并且受到任何更新或更改在上面的 ASP.NET MVC 3 预发布版一节中的引用。
 
-## <a id="0.1__Toc274034215"></a>新 Featuresin ASP.NET MVC 3 Beta
+## <a id="0.1__Toc274034215"></a>  新 Featuresin ASP.NET MVC 3 Beta
 
 <a id="0.1__Default_validation_system"></a>本部分介绍已引入的功能在 ASP.NET MVC 3 Beta 版本。
 
-### <a id="0.1__Toc274034216"></a>NuGet 包管理器
+### <a id="0.1__Toc274034216"></a>  NuGet 包管理器
 
 ASP.NET MVC 3 包括 NuGet 包管理器，它是添加的库的集成的包管理工具和 Visual Studio 项目的工具。 大多数情况下，它可以自动化开发人员采取今天到其源树中获取的库的步骤。
 
@@ -641,7 +641,7 @@ ASP.NET MVC 3 包括 NuGet 包管理器，它是添加的库的集成的包管�
 
 有关 NuGet 的详细信息，请阅读[NuGet 文档](https://docs.microsoft.com/nuget/)。
 
-### <a id="0.1__Toc274034217"></a>改进的新项目对话框中
+### <a id="0.1__Toc274034217"></a>  改进的新项目对话框中
 
 当创建新项目时，新建项目对话框中现在允许你指定视图引擎，以及 ASP.NET MVC 项目类型。
 
@@ -655,7 +655,7 @@ ASP.NET MVC 3 包括 NuGet 包管理器，它是添加的库的集成的包管�
 
 Internet 应用程序。 包含演示如何使用 ASP.NET MVC 中的成员资格提供程序的示例功能。
 
-### <a id="0.1__Toc274034218"></a>简化的方法来指定强类型化模型，在 Razor 视图中
+### <a id="0.1__Toc274034218"></a>  简化的方法来指定强类型化模型，在 Razor 视图中
 
 通过使用新简化了指定强类型化 Razor 视图的模型类型的方式@modelCSHTML 视图的指令和@ModelTypeVBHTML 视图的指令。 在早期版本的 ASP.NET MVC，则会指定 Razor 的强类型化的模型视图这种方式：
 
@@ -665,7 +665,7 @@ Internet 应用程序。 包含演示如何使用 ASP.NET MVC 中的成员资格
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample26.cshtml)]
 
-### <a id="0.1__Toc274034219"></a>支持新的 ASP.NET Web 页的帮助器方法
+### <a id="0.1__Toc274034219"></a>  支持新的 ASP.NET Web 页的帮助器方法
 
 新的 ASP.NET Web Pages 技术包括一组可用于将常用的功能添加到视图和控制器的帮助器方法。 ASP.NET MVC 3 支持使用控制器和视图中的这些帮助器方法 （如果适用）。 这些方法包含在 System.Web.Helpers 程序集。 下表列出了 ASP.NET Web Pages 帮助器方法。
 
@@ -681,7 +681,7 @@ Internet 应用程序。 包含演示如何使用 ASP.NET MVC 中的成员资格
 
 [https://www.asp.net/webmatrix/tutorials/asp-net-web-pages-api-reference](../web-pages/overview/api-reference/asp-net-web-pages-api-reference.md)
 
-### <a id="0.1__Toc274034220"></a>附加依赖项注入支持
+### <a id="0.1__Toc274034220"></a>  附加依赖项注入支持
 
 ASP.NET MVC 3 预览 1 发行版上构建，当前版本包括添加了对这两个新的服务和四个现有服务，支持和改进的依赖项解析和常见服务定位符支持。
 
@@ -732,7 +732,7 @@ DefaultControllerFactory 类具有新的构造函数接受 IControllerFactory �
 - 值在提供程序。 实现 ValueProviderFactory 的类可以注册在依赖项解析程序，并且系统将使用它们创建控制器和模型绑定期间使用的值提供程序。
 - 模型联编程序。 实现 IModelBinderProvider 的类可以注册在依赖项解析程序，并且系统将使用它们创建模型联编程序是由模型绑定系统。
 
-### <a id="0.1__Toc274034221"></a>对非介入式基于 jQuery 的 Ajax 的全新支持
+### <a id="0.1__Toc274034221"></a>  对非介入式基于 jQuery 的 Ajax 的全新支持
 
 ASP.NET MVC 包括 Ajax 帮助器方法，如下所示：
 
@@ -748,7 +748,7 @@ ASP.NET MVC 包括 Ajax 帮助器方法，如下所示：
 
 此功能默认情况下，在 ASP.NET MVC 3 新项目模板中，Web.config 文件中启用，但默认情况下的现有项目处于禁用状态。 有关详细信息，请参阅[添加用于客户端验证和非介入式 JavaScript 的应用程序范围内标志](#0.1_AddedApplicationWideFlagsForClientValida)本文档后面部分。
 
-### <a id="0.1__Toc274034222"></a>有关非介入式 jQuery 验证新的支持
+### <a id="0.1__Toc274034222"></a>  有关非介入式 jQuery 验证新的支持
 
 默认情况下，ASP.NET MVC 3 Beta 使用 jQuery 验证以便执行客户端验证非介入式的方式中。 若要启用非介入式客户端验证，请如下所示的视图中的以下方面：
 
@@ -768,7 +768,7 @@ ASP.NET MVC 包括 Ajax 帮助器方法，如下所示：
 
 <a id="0.1__Toc274034223"></a>
 
-### <a id="0.1_AddedApplicationWideFlagsForClientValida"></a>用于客户端验证和非介入式 JavaScript 的新应用程序范围内标志
+### <a id="0.1_AddedApplicationWideFlagsForClientValida"></a>  用于客户端验证和非介入式 JavaScript 的新应用程序范围内标志
 
 你可以启用或禁用客户端验证和全局使用 HtmlHelper 类，如以下示例所示的静态成员的非介入式 JavaScript:
 
@@ -784,7 +784,7 @@ ASP.NET MVC 包括 Ajax 帮助器方法，如下所示：
 
 为了向后兼容，这两项功能默认处于禁用状态。
 
-### <a id="0.1__Toc274034224"></a>对视图运行之前运行的代码的新支持
+### <a id="0.1__Toc274034224"></a>  对视图运行之前运行的代码的新支持
 
 你现在可以将一个名为文件\_viewstart.cshtml (或\_viewstart.vbhtml) Views 目录中并将代码添加到它将在多个视图之间共享该目录及其子目录中。 例如，可能会将下面的代码插入\_viewstart.cshtml 页 ~/Views 文件夹中：
 
@@ -794,7 +794,7 @@ ASP.NET MVC 包括 Ajax 帮助器方法，如下所示：
 
 默认情况下中的代码\_viewstart.cshtml 文件也适用于任何子文件夹中的视图。 但是，各个子文件夹，可以有各自版本\_viewstart.cshtml 文件;，因为情况下，本地版本将优先。 例如，若要运行普遍适用于为 HomeController 的所有视图的代码，将\_viewstart.cshtml ~/Views/Home 文件夹中的文件。
 
-### <a id="0.1__Toc274034225"></a>对 VBHTML Razor 语法的全新支持
+### <a id="0.1__Toc274034225"></a>  对 VBHTML Razor 语法的全新支持
 
 以前的 ASP.NET MVC 预览版包括对使用基于 C# 的 Razor 语法的视图的支持。 这些视图使用.cshtml 文件扩展名。 作为正在进行的工作以支持 Razor 的一部分，ASP.NET MVC 3 Beta 引入了有关在 Visual Basic 中使用的.vbhtml 文件扩展名的 Razor 语法的支持。
 
@@ -802,7 +802,7 @@ ASP.NET MVC 包括 Ajax 帮助器方法，如下所示：
 
 [https://www.asp.net/webmatrix/tutorials/asp-net-web-pages-visual-basic](../web-pages/overview/getting-started/introducing-razor-syntax-vb.md)
 
-### <a id="0.1__Toc274034226"></a>更精细地控制 ValidateInputAttribute
+### <a id="0.1__Toc274034226"></a>  更精细地控制 ValidateInputAttribute
 
 ASP.NET MVC 始终具有包括 ValidateInputAttribute 类，该类时，将调用核心 ASP.NET 请求验证基础结构以确保传入的请求不包含潜在的恶意输入。 默认情况下，启用了输入的验证。 很可能要禁用请求验证使用 ValidateInputAttribute 特性，如以下示例所示：
 
@@ -814,7 +814,7 @@ ASP.NET MVC 始终具有包括 ValidateInputAttribute 类，该类时，将调�
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample38.cs)]
 
-### <a id="0.1__Toc274034227"></a>帮助器将连字符下划线转换为使用匿名对象指定的 HTML 属性名称
+### <a id="0.1__Toc274034227"></a>  帮助器将连字符下划线转换为使用匿名对象指定的 HTML 属性名称
 
 帮助器方法，你可以指定属性名称/值对使用匿名对象，如以下示例所示：
 
@@ -830,7 +830,7 @@ ASP.NET MVC 始终具有包括 ValidateInputAttribute 类，该类时，将调�
 
 [!code-html[Main](mvc3-release-notes/samples/sample41.html)]
 
-## <a id="0.1__Toc274034228"></a>Bug 修复
+## <a id="0.1__Toc274034228"></a>  Bug 修复
 
 EditorFor 和 DisplayFor 模板帮助程序的默认对象模板现在支持 DisplayAttribute.Order 属性中指定的顺序。 （在以前版本，顺序设置未使用。）
 
@@ -838,11 +838,11 @@ EditorFor 和 DisplayFor 模板帮助程序的默认对象模板现在支持 Dis
 
 默认情况下，现在已注册 JsonValueProviderFactory。
 
-## <a id="0.1__Toc274034229"></a>重大更改
+## <a id="0.1__Toc274034229"></a>  重大更改
 
 异常筛选器的执行顺序已更改为具有相同的顺序值的异常筛选器。 ASP.NET MVC 2 及更早版本，异常筛选器具有相同的顺序在控制器上，如上操作方法已在上的操作方法的异常筛选器之前执行。 异常筛选器已应用而无需指定的顺序值时，这通常会出现此情况。 在 ASP.NET MVC 3 中，此具有已反转顺序，以便最具体的异常处理程序，则首先执行。 如下所示早期版本中，如果显式指定顺序属性，以指定顺序运行筛选器。
 
-## <a id="0.1__Toc274034230"></a>已知的问题
+## <a id="0.1__Toc274034230"></a>  已知的问题
 
 在安装期间，最终用户许可协议接受对话框中该小于预期大小的窗口中显示许可条款。
 

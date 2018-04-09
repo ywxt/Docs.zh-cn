@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-cs
-title: "验证与服务层 (C#) |Microsoft 文档"
+title: 验证与服务层 (C#) |Microsoft 文档
 author: StephenWalther
-description: "了解如何移动你的验证逻辑控制器操作出来放入单独的服务层。 在本教程中，Stephen Walther 解释了如何你..."
+description: 了解如何移动你的验证逻辑控制器操作出来放入单独的服务层。 在本教程中，Stephen Walther 解释了如何你...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f36301aef4377c6c00cb4fc33dbc5c57b1c426a9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 06042ac197cc54da767a94a44c57eb09bb3db9fa
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-with-a-service-layer-c"></a>验证与服务层 (C#)
 ====================
@@ -39,7 +39,7 @@ ms.lasthandoff: 11/10/2017
 
 列出 2 中的控制器其 index （） 和 create （） 操作中使用存储库层。 请注意，此控制器不包含任何数据库逻辑。 创建存储库层使您能够维护完全分离关注点。 控制器负责应用程序流控制逻辑和存储库负责数据访问逻辑。
 
-**列出 2-Controllers\ProductController.cs**
+**Listing 2 - Controllers\ProductController.cs**
 
 [!code-csharp[Main](validating-with-a-service-layer-cs/samples/sample2.cs)]
 
@@ -51,13 +51,13 @@ ms.lasthandoff: 11/10/2017
 
 例如，清单 3 的产品服务层具有 CreateProduct() 方法。 CreateProduct() 方法调用 ValidateProduct() 方法以将产品传递给产品存储库之前验证新产品。
 
-**列出 3-Models\ProductService.cs**
+**Listing 3 - Models\ProductService.cs**
 
 [!code-csharp[Main](validating-with-a-service-layer-cs/samples/sample3.cs)]
 
 产品控制器已更新列出 4 而不是存储库层使用的服务层中。 控制器层介绍对服务层。 服务层与存储库层通信。 每个层都有单独的责任。
 
-**列出 4-Controllers\ProductController.cs**
+**Listing 4 - Controllers\ProductController.cs**
 
 [!code-csharp[Main](validating-with-a-service-layer-cs/samples/sample4.cs)]
 
@@ -71,7 +71,7 @@ ms.lasthandoff: 11/10/2017
 
 在列出 5 中，服务层具有已更新，以使其不再使用模型状态。 相反，它使用的任何类都实现 IValidationDictionary 接口。
 
-**列出 5-Models\ProductService.cs （分离）**
+**Listing 5 - Models\ProductService.cs (decoupled)**
 
 [!code-csharp[Main](validating-with-a-service-layer-cs/samples/sample5.cs)]
 
@@ -89,16 +89,16 @@ ms.lasthandoff: 11/10/2017
 
 最后，列出 8 中的更新的控制器使用 ModelStateWrapper 在其构造函数中创建服务层时。
 
-**列出 8-Controllers\ProductController.cs**
+**Listing 8 - Controllers\ProductController.cs**
 
 [!code-csharp[Main](validating-with-a-service-layer-cs/samples/sample8.cs)]
 
 使用 IValidationDictionary 接口和 ModelStateWrapper 类使我们能够将从我们控制器层我们服务层完全隔离。 服务层不再依赖于模型状态。 可以传递任何实现的服务层的 IValidationDictionary 接口的类。 例如，一个 WPF 应用程序可能实现一个简单的集合类 IValidationDictionary 的接口。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程的目的是讨论在 ASP.NET MVC 应用程序中执行验证的一种方法。 在本教程中，您学习了如何将您的验证逻辑你的控制器出来放入单独的服务层的所有移动。 你还了解了如何通过创建 ModelStateWrapper 类隔离你从控制器层的服务层。
 
->[!div class="step-by-step"]
-[上一页](validating-with-the-idataerrorinfo-interface-cs.md)
-[下一页](validation-with-the-data-annotation-validators-cs.md)
+> [!div class="step-by-step"]
+> [上一页](validating-with-the-idataerrorinfo-interface-cs.md)
+> [下一页](validation-with-the-data-annotation-validators-cs.md)

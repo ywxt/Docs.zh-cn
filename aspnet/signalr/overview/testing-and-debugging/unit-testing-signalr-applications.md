@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/testing-and-debugging/unit-testing-signalr-applications
-title: "单元测试 SignalR 应用程序 |Microsoft 文档"
+title: 单元测试 SignalR 应用程序 |Microsoft 文档
 author: pfletcher
-description: "本文介绍如何使用 SignalR 2.0 的单元测试功能。"
+description: 本文介绍如何使用 SignalR 2.0 的单元测试功能。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/testing-and-debugging/unit-testing-signalr-applications
 msc.type: authoredcontent
-ms.openlocfilehash: d767e1a9d27670387133e5a48a8f92f5bdd39d9e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: cff866716cb1179e02b930f33cb0f8c33d4a6cf0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="unit-testing-signalr-applications"></a>单元测试 SignalR 应用程序
 ====================
@@ -72,11 +72,11 @@ XUnit.net 将可用于控制测试;Moq 将用于创建[模拟](http://en.wikiped
     ![添加项目引用](unit-testing-signalr-applications/_static/image3.png)
 6. 添加 SignalR、 Moq 和 XUnit 程序包**TestLibrary**项目。 在**程序包管理器控制台**，将其设置**默认项目**下拉列表中到**TestLibrary**。 在控制台窗口中运行以下命令：
 
-    - `Install-Package Microsoft.AspNet.SignalR`
-    - `Install-Package Moq`
-    - `Install-Package XUnit`
+   - `Install-Package Microsoft.AspNet.SignalR`
+   - `Install-Package Moq`
+   - `Install-Package XUnit`
 
-    ![安装包](unit-testing-signalr-applications/_static/image4.png)
+     ![安装包](unit-testing-signalr-applications/_static/image4.png)
 7. 创建测试文件。 右键单击**TestLibrary**项目，然后单击**添加...**，**类**。 将新类**Tests.cs**。
 8. Tests.cs 的内容替换为以下代码。
 

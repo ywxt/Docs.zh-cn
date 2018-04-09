@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-4
-title: "如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 4 部分 |Microsoft 文档"
+title: 如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 4 部分 |Microsoft 文档
 author: tdykstra
-description: "Contoso 大学示例 web 应用程序演示如何创建 ASP.NET Web 窗体应用程序使用实体框架。 该示例应用程序..."
+description: Contoso 大学示例 web 应用程序演示如何创建 ASP.NET Web 窗体应用程序使用实体框架。 该示例应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 06d129384fc78db21ad1b9224781deab6a0e91a5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6bea5f4faeb0a9c11a406a7e4e87c4929eda6a18
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-4"></a>如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 4 部分
 ====================
@@ -165,6 +165,6 @@ ms.lasthandoff: 11/10/2017
 
 您现在已经了解几种方法可以处理的相关数据。 在以下教程中，你将了解如何添加现有的实体之间的关系如何删除关系，以及如何添加与现有实体建立了关系的新实体。
 
->[!div class="step-by-step"]
-[上一页](the-entity-framework-and-aspnet-getting-started-part-3.md)
-[下一页](the-entity-framework-and-aspnet-getting-started-part-5.md)
+> [!div class="step-by-step"]
+> [上一页](the-entity-framework-and-aspnet-getting-started-part-3.md)
+> [下一页](the-entity-framework-and-aspnet-getting-started-part-5.md)

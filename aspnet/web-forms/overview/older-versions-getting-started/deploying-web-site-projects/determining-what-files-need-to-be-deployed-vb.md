@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb
-title: "确定文件需要是部署 (VB) |Microsoft 文档"
+title: 确定文件需要是部署 (VB) |Microsoft 文档
 author: rick-anderson
-description: "需要从开发环境部署到生产环境的文件部分取决于 ASP.NET 应用程序是否生成我们..."
+description: 需要从开发环境部署到生产环境的文件部分取决于 ASP.NET 应用程序是否生成我们...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb
 msc.type: authoredcontent
-ms.openlocfilehash: aad0d4d4f7db5942c51255c34f36be73ed0e1f2d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4b9fcdbaaa0c2a6d7610339ecb6018a0fe6895f4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="determining-what-files-need-to-be-deployed-vb"></a>确定文件需要被部署 (VB)
 ====================
@@ -41,7 +41,7 @@ ASP.NET web pages 划分为标记和源的声明性代码。 声明性标记部�
 
 [!code-vb[Main](determining-what-files-need-to-be-deployed-vb/samples/sample1.vb)]
 
-要为此页上，该页面的代码部分为请求提供服务的 ASP.NET 引擎顺序 (  *`WebPage`*  `.aspx.vb`文件) 必须首先进行编译。 显式或自动，可能会发生此编译。
+要为此页上，该页面的代码部分为请求提供服务的 ASP.NET 引擎顺序 ( *`WebPage`* `.aspx.vb`文件) 必须首先进行编译。 显式或自动，可能会发生此编译。
 
 如果编译显式发生，则整个应用程序的源代码编译到一个或多个程序集 (`.dll`文件) 位于应用程序的`Bin`目录。 如果编译会自动发生，则生成自动生成程序集，则默认情况下，放置在`Temporary ASP.NET Files`文件夹中，可在中找到`%WINDOWS%\Microsoft.NET\Framework\<version>`，但此位置可通过配置[ &lt;编译&gt;元素](https://msdn.microsoft.com/library/s10awwz0.aspx)中`Web.config`。 与显式编译，你必须采取一些措施来将 ASP.NET 应用程序的代码编译为一个程序集，并在部署之前时会出现此步骤。 与自动编译的编译过程时发生的 web 服务器上首次访问资源。
 
@@ -79,15 +79,15 @@ ASP.NET web pages 划分为标记和源的声明性代码。 声明性标记部�
 - 母版页 (`Site.master`)。
 - 七个不同的 ASP.NET 页：
 
-    - ~/`Default.aspx`-站点的主页。
-    - ~/`About.aspx`-"有关站点"页。
-    - ~/`Fiction/Default.aspx`-列出已经过检查的虚构书籍的页。
+    - ~/`Default.aspx` -站点的主页。
+    - ~/`About.aspx` -"有关站点"页。
+    - ~/`Fiction/Default.aspx` -列出已经过检查的虚构书籍的页。
 
-        - ~/`Fiction/Blaze.aspx`-Richard Bachman novel 评审*Blaze*。
-    - ~/`Tech/Default.aspx`-列出已经过检查的技术书籍的页。
+        - ~/`Fiction/Blaze.aspx` -Richard Bachman novel 评审*Blaze*。
+    - ~/`Tech/Default.aspx` -列出已经过检查的技术书籍的页。
 
-        - ~/`Tech/CYOW.aspx`-检查*创建您自己的网站*。
-        - ~/`Tech/TYASP35.aspx`-检查*教授自己 ASP.NET 3.5 24 小时内*。
+        - ~/`Tech/CYOW.aspx` -检查*创建您自己的网站*。
+        - ~/`Tech/TYASP35.aspx` -检查*教授自己 ASP.NET 3.5 24 小时内*。
 - 中的三个不同 CSS 文件`Styles`文件夹。
 - 四个图像文件-通过 ASP.NET 徽标和图像的三个审阅丛书在后台提供支持的所有位于`Images`文件夹。
 - A`Web.sitemap`文件，也不能定义站点图用于显示中的菜单`Default.aspx`的根目录中的页和`Fiction`和`Tech`文件夹。
@@ -163,7 +163,7 @@ Visual Studio 中的生成菜单选项中不存在 Web 应用程序项目和网�
 > 网站项目还可以使用显式编译。 将来的教程将说明如何显式编译网站项目。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 部署 ASP.NET 应用程序时，需要将从开发环境的所需的文件复制到生产环境。 精确的需要进行同步的文件集取决于是否 ASP.NET 应用程序的显式或自动编译代码。 是否配置 Visual Studio 会影响所使用的编译策略来管理使用 Web 应用程序项目模型或网站项目模型的 ASP.NET 应用程序。
 
@@ -189,6 +189,6 @@ Web 应用程序项目模型使用显式编译，并将项目的代码编译成�
 - [Visual Studio 2005 的网站项目系统： 它是什么，为什么这样做它？](https://weblogs.asp.net/scottgu/archive/2005/08/21/423201.aspx)
 - [演练： 将网站项目转换为 Visual Studio 中的 Web 应用程序项目](https://msdn.microsoft.com/library/aa983476.aspx)
 
->[!div class="step-by-step"]
-[上一页](asp-net-hosting-options-vb.md)
-[下一页](deploying-your-site-using-an-ftp-client-vb.md)
+> [!div class="step-by-step"]
+> [上一页](asp-net-hosting-options-vb.md)
+> [下一页](deploying-your-site-using-an-ftp-client-vb.md)

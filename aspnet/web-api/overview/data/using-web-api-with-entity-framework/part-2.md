@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-2
-title: "添加模型和控制器 |Microsoft 文档"
+title: 添加模型和控制器 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/16/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 7e09316f0faaf0731e4cdda48040fdaedc0f244a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 015bb9698d81387d03ea8f9629316fb53232e708
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="add-models-and-controllers"></a>添加模型和控制器
 ====================
@@ -65,7 +65,7 @@ ms.lasthandoff: 01/24/2018
 
 ![](part-2/_static/image3.png)
 
-在**添加基架**对话框中，选择"Web API 2 控制器其操作使用 Entity Framework"。 单击 **“添加”**。
+在**添加基架**对话框中，选择"Web API 2 控制器其操作使用 Entity Framework"。 单击 **添加**。
 
 ![](part-2/_static/image4.png)
 
@@ -84,8 +84,8 @@ ms.lasthandoff: 01/24/2018
 
 单击**添加**完成**添加控制器**对话框。 该对话框将添加到你的项目的两个类：
 
-- `AuthorsController`定义一个 Web API 控制器。 控制器实现 REST API 客户端用来执行 CRUD 操作列表上的作者。
-- `BookServiceContext`在运行期间，其中包括填充对象具有从数据库、 更改跟踪和将数据永久保存到数据库的数据管理实体对象。 它继承自`DbContext`。
+- `AuthorsController` 定义一个 Web API 控制器。 控制器实现 REST API 客户端用来执行 CRUD 操作列表上的作者。
+- `BookServiceContext` 在运行期间，其中包括填充对象具有从数据库、 更改跟踪和将数据永久保存到数据库的数据管理实体对象。 它继承自`DbContext`。
 
 ![](part-2/_static/image7.png)
 
@@ -93,6 +93,6 @@ ms.lasthandoff: 01/24/2018
 
 ![](part-2/_static/image8.png)
 
->[!div class="step-by-step"]
-[上一页](part-1.md)
-[下一页](part-3.md)
+> [!div class="step-by-step"]
+> [上一页](part-1.md)
+> [下一页](part-3.md)

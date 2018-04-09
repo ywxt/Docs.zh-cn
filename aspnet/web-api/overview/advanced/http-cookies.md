@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/http-cookies
-title: "在 ASP.NET Web API 的 HTTP Cookie |Microsoft 文档"
+title: 在 ASP.NET Web API 的 HTTP Cookie |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/17/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/http-cookies
 msc.type: authoredcontent
-ms.openlocfilehash: e17c51946a268aa13ec035d18dc516928c9f4419
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 363ca975cf75b635b766a53eeda87cf957eed60c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/22/2018
 ---
 <a name="http-cookies-in-aspnet-web-api"></a>在 ASP.NET Web API 的 HTTP Cookie
 ====================
@@ -28,7 +28,7 @@ ms.lasthandoff: 11/10/2017
 
 本部分提供了 cookie 在 HTTP 级别的实现方式的简要概述。 有关详细信息，请查阅[RFC 6265](http://tools.ietf.org/html/rfc6265)。
 
-Cookie 是一种服务器发送的 HTTP 响应中的数据。 客户端 （可选） 将存储在 cookie 并根据 subsequet 请求对其进行返回。 这允许客户端和服务器共享状态。 若要设置一个 cookie，服务器，请在响应中包含集 Cookie 标头。 Cookie 的格式是名称 / 值对，具有可选特性。 例如: 
+Cookie 是一种服务器发送的 HTTP 响应中的数据。 客户端 （可选） 将存储在 cookie 并根据 subsequet 请求对其进行返回。 这允许客户端和服务器共享状态。 若要设置一个 cookie，服务器，请在响应中包含集 Cookie 标头。 Cookie 的格式是名称 / 值对，具有可选特性。 例如：
 
 [!code-powershell[Main](http-cookies/samples/sample1.ps1)]
 
@@ -36,7 +36,7 @@ Cookie 是一种服务器发送的 HTTP 响应中的数据。 客户端 （可�
 
 [!code-powershell[Main](http-cookies/samples/sample2.ps1)]
 
-返回一个 cookie 到服务器，客户端包含 Cookie 标头中更高版本的请求。
+若要返回到服务器的 cookie，客户端，请在更高版本的请求中包含 Cookie 标头。
 
 [!code-console[Main](http-cookies/samples/sample3.cmd)]
 
@@ -79,7 +79,7 @@ A **CookieHeaderValue**包含一套**CookieState**实例。 每个**CookieState*
 
 ## <a name="structured-cookie-data"></a>结构化的 Cookie 数据
 
-很多浏览器限制它们将存储的多少 cookie 和 #8212; 同时总数，以及每个域的数量。 因此，它可用于将结构化的数据置于一个 cookie，而不是设置多个 cookie。
+很多浏览器限制它们将存储的多少 cookie&#8212;总数，以及每个域的数量。 因此，它可用于将结构化的数据置于一个 cookie，而不是设置多个 cookie。
 
 > [!NOTE]
 > RFC 6265 未定义 cookie 数据的结构。

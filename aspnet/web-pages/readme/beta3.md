@@ -1,8 +1,8 @@
 ---
 uid: web-pages/readme/beta3
-title: "Web 矩阵和 ASP.NET Web 页 (Razor) Beta 3 版本自述文件 |Microsoft 文档"
+title: Web 矩阵和 ASP.NET Web 页 (Razor) Beta 3 版本自述文件 |Microsoft 文档
 author: rick-anderson
-description: "Web Matrix 和 ASP.NET Web 页 (Razor) Beta 3 版本自述文件"
+description: Web Matrix 和 ASP.NET Web 页 (Razor) Beta 3 版本自述文件
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/10/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme/beta3
 msc.type: content
-ms.openlocfilehash: def2f4b3e54c8de539e10c1b526a1dababeca8fb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5ef7a6f44758cf94fc19d6fbab3cc4b7bce8e8e5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix 和 ASP.NET Web 页 (Razor) Beta 3 版本自述文件
 ====================
@@ -283,9 +283,9 @@ ms.lasthandoff: 01/24/2018
 > 如果你卸载.NET Framework 版本 4，然后重新安装它，将禁用使用 Razor 语法的 ASP.NET 网页。 与页*.cshtml*扩展可能无法正常运行。 ASP.NET Web Pages 机根目录中注册程序集*Web.config*文件，并删除.NET Framework 中删除该文件。 重新安装.NET Framework 安装新版本的配置文件中，但不会添加 ASP.NET 网页的程序集引用。
 > 
 > **解决方法**后重新安装.NET Framework，请重新安装 ASP.NET 网页使用 Razor 语法。 这将添加到下面的元素*Web.config*机根目录，这通常是在以下位置中的文件：  
->   
+> 
 > `C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config (32-bit)`  
->   
+> 
 > `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config (64-bit)`
 > 
 > [!code-xml[Main](beta3/samples/sample6.xml)]
@@ -302,9 +302,9 @@ ms.lasthandoff: 01/24/2018
 #### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a>问题： 无扩展名的 Url 未找到 IIS 7 或 IIS 7.5 上的.cshtml/.vbhtml 文件
 
 > 在 IIS 7 或 IIS 7.5 上，如下所示 URL 的请求不能找到页具有*.cshtml*或*.vbhtml*扩展：  
->   
+> 
 > `http://www.example.com/ExampleSite/ExampleFile`  
->   
+> 
 > 由于 URL 重写未启用默认情况下为 IIS 7 或 IIS 7.5，因此会出现此问题。 很可能的方案是，你看不见问题时测试使用本地 IIS Express，但在将你的网站部署到托管的网站时，会遇到它。
 > 
 > **Workaround**
@@ -344,7 +344,7 @@ ms.lasthandoff: 01/24/2018
 >     - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **到** *\Bin\x86*
 >     - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **到** *\Bin\amd64*
 > 2. 在网站的根文件夹中创建或打开*Web.config*文件。 (在 WebMatrix Beta 3 中，此文件类型是如果你单击可用**所有**中**选择文件类型**对话框。)
-> 3. 添加以下元素的子级**&lt;配置&gt;**元素 (而不是在 **&lt;system.web&gt;** 元素):
+> 3. 添加以下元素的子级**&lt;配置&gt;**元素 (而不是在**&lt;system.web&gt;**元素):
 > 
 > 
 > [!code-xml[Main](beta3/samples/sample10.xml)]
@@ -366,21 +366,21 @@ ms.lasthandoff: 01/24/2018
 > 
 > **Workaround**  
 > 使用`Encryption Mode`属性`SqlCeConnection`类用于 SQL Server Compact 4.0 数据库文件进行加密。 下面的示例演示如何创建加密的 SQL Server Compact 4.0 数据库使用`Encryption Mode`属性：
->  
+> 
 > [!code-csharp[Main](beta3/samples/sample11.cs)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample12.vb)]
 > 
 > 若要更改现有的 SQL Server Compact 4.0 数据库的加密模式，请执行以下操作：
->  
+> 
 > [!code-csharp[Main](beta3/samples/sample13.cs)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample14.vb)]
 > 
 > 要加密未加密的 SQL Server Compact 4.0 数据库，请执行以下操作：
->  
+> 
 > [!code-csharp[Main](beta3/samples/sample15.cs)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample16.vb)]
 
 
@@ -537,7 +537,7 @@ ms.lasthandoff: 01/24/2018
 > 显式设置参数的数据类型，如`SqlDbType`或`DbType`。 这是在 BLOB 数据类型的情况下关键 (`image`和`ntext`)。 使用代码如下所示：
 > 
 > [!code-sql[Main](beta3/samples/sample20.sql)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample21.vb)]
 
 

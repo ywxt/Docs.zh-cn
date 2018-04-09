@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
-title: "迭代 #5 – 创建单元测试 (C#) |Microsoft 文档"
+title: '迭代 #5 – 创建单元测试 (C#) |Microsoft 文档'
 author: microsoft
-description: "在第五个迭代中，我们使我们的应用程序更轻松地监视和修改通过添加单元测试。 我们模拟我们数据模型类，并生成单元测试 o..."
+description: 在第五个迭代中，我们使我们的应用程序更轻松地监视和修改通过添加单元测试。 我们模拟我们数据模型类，并生成单元测试 o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f9b2d05ec8756d68f6bd2f387c85faf03abd167e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7a61b5791a40088df9d27f7b1bd37df1831ef22b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-5--create-unit-tests-c"></a>迭代 #5 – 创建单元测试 (C#)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载代码](iteration-5-create-unit-tests-cs/_static/contactmanager_5_cs1.zip)
 
@@ -105,9 +105,9 @@ ms.lasthandoff: 11/10/2017
 
 Visual Studio 不包括一个模拟对象框架。 但是，有可用于.NET framework 的多个商业和开放源代码模拟对象框架：
 
-1. Moq-此框架，请参阅的开放源代码 BSD 许可。 你可以下载从 Moq [https://code.google.com/p/moq/](https://code.google.com/p/moq/)。
-2. Rhino Mocks-此框架是开放源代码 BSD 许可下可用。 你可以下载 Rhino Mocks 从[http://ayende.com/projects/rhino-mocks.aspx](http://ayende.com/projects/rhino-mocks.aspx)。
-3. Typemock 隔离器-这是一个商业框架。 你可以下载从试用版[http://www.typemock.com/](http://www.typemock.com/)。
+1. Moq-此框架，请参阅的开放源代码 BSD 许可。 你可以下载从 Moq [ https://code.google.com/p/moq/ ](https://code.google.com/p/moq/)。
+2. Rhino Mocks-此框架是开放源代码 BSD 许可下可用。 你可以下载 Rhino Mocks 从[ http://ayende.com/projects/rhino-mocks.aspx ](http://ayende.com/projects/rhino-mocks.aspx)。
+3. Typemock 隔离器-这是一个商业框架。 你可以下载从试用版[ http://www.typemock.com/ ](http://www.typemock.com/)。
 
 在本教程中，我决定使用 Moq。 但是，你可以轻松地使用 Rhino Mocks Typemock 隔离器创建模型的对象或联系人管理器应用程序。
 
@@ -158,7 +158,7 @@ Visual Studio 不包括一个模拟对象框架。 但是，有可用于.NET fra
 
 列表 1 中包含这些测试的代码。
 
-**列表 1-Models\ContactManagerServiceTest.cs**
+**Listing 1 - Models\ContactManagerServiceTest.cs**
 
 [!code-csharp[Main](iteration-5-create-unit-tests-cs/samples/sample1.cs)]
 
@@ -222,16 +222,16 @@ ASP.NETMVC 应用程序控制的用户交互的流。 当测试控制器时，�
 
 相反，返回如下视图：
 
-返回 View("Create");
+return View("Create");
 
 如果不能显式返回视图时 ViewResult.ViewName 属性将返回空字符串。
 
 
-**列出 2-Controllers\ContactControllerTest.cs**
+**Listing 2 - Controllers\ContactControllerTest.cs**
 
 [!code-csharp[Main](iteration-5-create-unit-tests-cs/samples/sample6.cs)]
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在此迭代中，我们为我们的联系人管理器应用程序创建单元测试。 我们可以在任何时间，以验证，我们的应用程序仍行为与我们的预期方式运行这些单元测试。 单元测试充当一个安全网络，使应用程序，使我们能够安全地修改在将来，我们的应用程序。
 
@@ -239,6 +239,6 @@ ASP.NETMVC 应用程序控制的用户交互的流。 当测试控制器时，�
 
 在下一步的迭代中，我们将修改联系人管理器应用程序，以便它支持联系人组。 我们将此新功能添加到我们的应用程序使用称为测试驱动开发的软件设计过程。
 
->[!div class="step-by-step"]
-[上一页](iteration-4-make-the-application-loosely-coupled-cs.md)
-[下一页](iteration-6-use-test-driven-development-cs.md)
+> [!div class="step-by-step"]
+> [上一页](iteration-4-make-the-application-loosely-coupled-cs.md)
+> [下一页](iteration-6-use-test-driven-development-cs.md)

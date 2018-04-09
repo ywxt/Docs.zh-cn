@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-vb
-title: "动态填充控件 (VB) |Microsoft 文档"
+title: 动态填充控件 (VB) |Microsoft 文档
 author: wenz
-description: "ASP.NET AJAX 控件工具包中的 DynamicPopulate 控件调用 web 服务 （或页方法），并将生成的值填充到 t 上的目标控件..."
+description: ASP.NET AJAX 控件工具包中的 DynamicPopulate 控件调用 web 服务 （或页方法），并将生成的值填充到 t 上的目标控件...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ec0b6d429f3eb4a7243201c2a91adde462cf6345
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e2031a80be71a406e632955583d83920dd0f3ef7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="dynamically-populating-a-control-vb"></a>动态填充控件 (VB)
 ====================
@@ -55,12 +55,12 @@ Web 服务然后另存为`DynamicPopulate.vb.asmx`。 或者，可以实现`getD
 
 最后，我们需要`DynamicPopulateExtender`网络操作的控件。 将设置以下属性 (除了明显的`ID`和`runat` = `"server"`):
 
-- `TargetControlID`从 web 服务调用放置结果
-- `ServicePath`web 服务的路径 （如果你想要使用的页方法忽略）
-- `ServiceMethod`web 方法或页方法的名称
-- `ContextKey`上下文信息发送到 web 服务
-- `PopulateTriggerControlID`随即将会触发 web 服务调用的元素
-- `ClearContentsDuringUpdate`是否要在 web 服务调用期间将空的目标元素
+- `TargetControlID` 从 web 服务调用放置结果
+- `ServicePath` web 服务的路径 （如果你想要使用的页方法忽略）
+- `ServiceMethod` web 方法或页方法的名称
+- `ContextKey` 上下文信息发送到 web 服务
+- `PopulateTriggerControlID` 随即将会触发 web 服务调用的元素
+- `ClearContentsDuringUpdate` 是否要在 web 服务调用期间将空的目标元素
 
 如你所见，该控件所需的一些信息，但将所有内容放入到位是相当直接。 下面是有关标记`DynamicPopulateExtender`当前应用场景中的控件：
 
@@ -73,6 +73,6 @@ Web 服务然后另存为`DynamicPopulate.vb.asmx`。 或者，可以实现`getD
 
 单击按钮从服务器中检索日期 ([单击以查看实际尺寸的图像](dynamically-populating-a-control-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一页](using-dynamicpopulate-with-a-user-control-and-javascript-cs.md)
-[下一页](dynamically-populating-a-control-using-javascript-code-vb.md)
+> [!div class="step-by-step"]
+> [上一页](using-dynamicpopulate-with-a-user-control-and-javascript-cs.md)
+> [下一页](dynamically-populating-a-control-using-javascript-code-vb.md)

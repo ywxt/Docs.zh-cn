@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/color-picker
-title: "颜色选取器 |Microsoft 文档"
+title: 颜色选取器 |Microsoft 文档
 author: JoeStagner
-description: "此视频将演示如何使用 Microsoft AJAX 控件工具包中新的颜色选取器控件。"
+description: 此视频将演示如何使用 Microsoft AJAX 控件工具包中新的颜色选取器控件。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/13/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/color-picker
 msc.type: video
-ms.openlocfilehash: 863f004cdf1ddd58729a376e49b2c2c576df766b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d314fcd3053e8ab7eef8a21b8c17e6a30ce8c1a4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="color-picker"></a>颜色选取器
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （9 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/color-picker)
 
->[!div class="step-by-step"]
-[上一页](control-extenders.md)
-[下一页](combo-box.md)
+> [!div class="step-by-step"]
+> [上一页](control-extenders.md)
+> [下一页](combo-box.md)

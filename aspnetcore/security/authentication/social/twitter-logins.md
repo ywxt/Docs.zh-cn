@@ -1,7 +1,7 @@
 ---
-title: "Twitter 外部登录设置"
+title: Twitter 外部登录名与 ASP.NET 核心的安装程序
 author: rick-anderson
-description: "本教程演示的集成到现有的 ASP.NET Core 应用的 Twitter 帐户用户身份验证。"
+description: 本教程演示的集成到现有的 ASP.NET Core 应用的 Twitter 帐户用户身份验证。
 manager: wpickett
 ms.author: riande
 ms.date: 11/01/2016
@@ -9,21 +9,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/twitter-logins
-ms.openlocfilehash: f684a0e43a4c20092d0edb1d82a31ed3cc611232
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3f0eb9abce067108b82cf8b639cea3b120ca4b5a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="configuring-twitter-authentication"></a>配置 Twitter 身份验证
+# <a name="twitter-external-login-setup-with-aspnet-core"></a>Twitter 外部登录名与 ASP.NET 核心的安装程序
 
 作者：[Valeriy Novytskyy](https://github.com/01binary) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-本教程演示如何启用到你的用户[使用 Twitter 帐户登录](https://dev.twitter.com/web/sign-in/desktop-browser)上使用示例 ASP.NET 核心 2.0 项目创建[上一页](index.md)。
+本教程演示如何启用到你的用户[使用 Twitter 帐户登录](https://dev.twitter.com/web/sign-in/desktop-browser)上使用示例 ASP.NET 核心 2.0 项目创建[上一页](xref:security/authentication/social/index)。
 
 ## <a name="create-the-app-in-twitter"></a>在 Twitter 中创建应用程序
 
-* 导航到[https://apps.twitter.com/](https://apps.twitter.com/)并登录。 如果你没有 Twitter 帐户，使用**[立即注册](https://twitter.com/signup)**链接创建一个。 登录后，**应用程序管理**页所示：
+* 导航到[ https://apps.twitter.com/ ](https://apps.twitter.com/)并登录。 如果你没有 Twitter 帐户，使用**[立即注册](https://twitter.com/signup)**链接创建一个。 登录后，**应用程序管理**页所示：
 
 ![在 Microsoft Edge 中打开的 twitter 应用程序管理](index/_static/TwitterAppManage.png)
 
@@ -41,7 +41,7 @@ ms.lasthandoff: 01/30/2018
 
 ## <a name="storing-twitter-consumerkey-and-consumersecret"></a>存储 Twitter ConsumerKey 和 ConsumerSecret
 
-链接敏感设置，例如 Twitter`Consumer Key`和`Consumer Secret`到你应用程序配置中使用[机密 Manager](../../app-secrets.md)。 对于此教程的目的，命名为令牌`Authentication:Twitter:ConsumerKey`和`Authentication:Twitter:ConsumerSecret`。
+链接敏感设置，例如 Twitter`Consumer Key`和`Consumer Secret`到你应用程序配置中使用[机密 Manager](xref:security/app-secrets)。 对于此教程的目的，命名为令牌`Authentication:Twitter:ConsumerKey`和`Authentication:Twitter:ConsumerSecret`。
 
 可以在上找到这些标记**密钥和访问令牌**选项卡后创建新的 Twitter 应用程序：
 
@@ -56,8 +56,7 @@ ms.lasthandoff: 01/30/2018
 
    `dotnet add package Microsoft.AspNetCore.Authentication.Twitter`
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 添加中的 Twitter 服务`ConfigureServices`中的方法*Startup.cs*文件：
 
 ```csharp
@@ -72,10 +71,9 @@ services.AddAuthentication().AddTwitter(twitterOptions =>
 });
 ```
 
-[!INCLUDE[default settings configuration](includes/default-settings.md)]
+[!INCLUDE [default settings configuration](includes/default-settings.md)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 添加在 Twitter 中间件`Configure`中的方法*Startup.cs*文件：
 
 ```csharp
@@ -86,8 +84,7 @@ app.UseTwitterAuthentication(new TwitterOptions()
 });
 ```
 
----
-
+* * *
 请参阅[TwitterOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.twitteroptions) Twitter 身份验证支持的配置选项的详细信息的 API 参考。 这可以用于请求有关用户的不同信息。
 
 ## <a name="sign-in-with-twitter"></a>使用 Twitter 登录
@@ -113,7 +110,7 @@ app.UseTwitterAuthentication(new TwitterOptions()
 
 ## <a name="next-steps"></a>后续步骤
 
-* 本文介绍了你使用 Twitter 可以进行的验证。 你可以遵循类似的方法进行身份验证使用其他提供商上列出[上一页](index.md)。
+* 本文介绍了你使用 Twitter 可以进行的验证。 你可以遵循类似的方法进行身份验证使用其他提供商上列出[上一页](xref:security/authentication/social/index)。
 
 * 一旦您的网站发布到 Azure web 应用时，您应重置`ConsumerSecret`Twitter 开发人员门户中。
 

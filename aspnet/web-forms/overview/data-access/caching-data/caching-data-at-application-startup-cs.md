@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
-title: "缓存数据在应用程序启动 (C#) |Microsoft 文档"
+title: 缓存数据在应用程序启动 (C#) |Microsoft 文档
 author: rick-anderson
-description: "在任何 Web 应用程序中的某些数据将经常使用，并将不常使用的某些数据。 我们可以改进我们的 ASP.NET 应用程序 b 的性能..."
+description: 在任何 Web 应用程序中的某些数据将经常使用，并将不常使用的某些数据。 我们可以改进我们的 ASP.NET 应用程序 b 的性能...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/30/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3a618ad702763a59b87336784afd1cb74de06d4c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8d962a182b5136d3e44ce678a355c9679b4c8be1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="caching-data-at-application-startup-c"></a>缓存数据在应用程序启动 (C#)
 ====================
@@ -129,11 +129,11 @@ Northwind 数据库表我们已实施方法与日期不包括任何传统的查�
 
 默认值`Global.asax`文件模板包括服务器端中的五个方法`<script>`标记：
 
-- **`Application_Start`**在 web 应用程序第一次启动时执行
-- **`Application_End`**在应用程序关闭时运行
-- **`Application_Error`**执行时未处理的异常到达应用程序
-- **`Session_Start`**在创建新的会话时执行
-- **`Session_End`**运行时会话已过期或已放弃
+- **`Application_Start`** 在 web 应用程序第一次启动时执行
+- **`Application_End`** 在应用程序关闭时运行
+- **`Application_Error`** 执行时未处理的异常到达应用程序
+- **`Session_Start`** 在创建新的会话时执行
+- **`Session_End`** 运行时会话已过期或已放弃
 
 `Application_Start` S 应用程序生命周期内仅一次调用事件处理程序。 在应用程序启动第一次 ASP.NET 资源从应用程序请求，继续运行，直到重新启动应用程序时，这可以通过修改内容的情况可能发生`/Bin`文件夹中，修改`Global.asax`，修改在内容`App_Code`文件夹，或修改`Web.config`文件，在其他原因。 请参阅[ASP.NET 应用程序生命周期概述](https://msdn.microsoft.com/library/ms178473.aspx)有关应用程序生命周期的更多详细讨论。
 
@@ -184,7 +184,7 @@ Northwind 数据库表我们已实施方法与日期不包括任何传统的查�
 **图 7**: 缓存供应商数据将显示在一个 GridView ([单击以查看实际尺寸的图像](caching-data-at-application-startup-cs/_static/image17.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 大多数每个数据模型包含大量的静态数据，在查找表的形式中通常实现。 由于此信息是静态的那里 s 没有理由不断地访问数据库每次需要显示此信息。 此外，由于其静态性质，缓存数据时那里 s 无需到期时间。 在本教程中我们已了解如何执行此类数据并将数据缓存，应用程序状态，或通过静态成员变量对其进行缓存。 此信息缓存在应用程序启动，并保留在缓存在应用程序 s 整个生存期内。
 
@@ -194,12 +194,12 @@ Northwind 数据库表我们已实施方法与日期不包括任何传统的查�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Teresa 墨和 Zack Jones。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](caching-data-in-the-architecture-cs.md)
-[下一页](using-sql-cache-dependencies-cs.md)
+> [!div class="step-by-step"]
+> [上一页](caching-data-in-the-architecture-cs.md)
+> [下一页](using-sql-cache-dependencies-cs.md)

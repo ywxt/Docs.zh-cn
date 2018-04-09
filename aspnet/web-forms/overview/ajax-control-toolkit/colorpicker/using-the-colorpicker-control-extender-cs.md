@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-cs
-title: "使用颜色选取器控件扩展器 (C#) |Microsoft 文档"
+title: 使用颜色选取器控件扩展器 (C#) |Microsoft 文档
 author: microsoft
-description: "颜色选取器是客户端颜色选取功能提供 UI 弹出窗口控件中的 ASP.NET AJAX 扩展。 可以将它附加到任何 ASP.NET..."
+description: 颜色选取器是客户端颜色选取功能提供 UI 弹出窗口控件中的 ASP.NET AJAX 扩展。 可以将它附加到任何 ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5b3cde9552e8aecd5e7e651a825902fb79ae108c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4d44fc81305e668b545246cf044dce275563d81a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-colorpicker-control-extender-c"></a>使用颜色选取器控件扩展器 (C#)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 颜色选取器是客户端颜色选取功能提供 UI 弹出窗口控件中的 ASP.NET AJAX 扩展。 可以将它附加到任何 ASP.NET 文本框控件。 它。
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 **图 01**： 用于创建名片简单窗体 ([单击以查看实际尺寸的图像](using-the-colorpicker-control-extender-cs/_static/image2.png))
 
 
-**列表 1-CreateCard.aspx**
+**Listing 1 - CreateCard.aspx**
 
 [!code-aspx[Main](using-the-colorpicker-control-extender-cs/samples/sample1.aspx)]
 
@@ -58,7 +58,7 @@ ms.lasthandoff: 11/10/2017
 
 你可以使用颜色选取器之前，你必须将 ScriptManager 添加到你的页面。 添加 ScriptManager 的好时机是正下方打开服务器端&lt;窗体&gt;标记。 你可以从 （ScriptManager 位于 AJAX Extensions 选项卡） 工具箱拖到页面上 ScriptManager。 或者，你可以开始服务器端窗体标记下，到源视图中键入以下标记：
 
-&lt;asp: ScriptManager ID ="ScriptManager1"runat ="server"/&gt;
+&lt;asp:ScriptManager ID="ScriptManager1" runat="server" /&gt;
 
 颜色选取器控件扩展程序添加到页面的最简单方法是在设计视图中。 如果鼠标悬停 txtCardColor 文本框中，智能任务选项将显示使用，你可以添加扩展程序 （请参见图 3）。 如果您选择此选项，则将显示扩展程序向导 （请参见图 4）。
 
@@ -94,7 +94,7 @@ ms.lasthandoff: 11/10/2017
 
 这些属性可用于自定义颜色选取器对话框的显示方式以及所选的颜色的显示方式。 中列出的 3 页说明了如何使用几个这些属性。
 
-**列出 3-CreateCardButton.aspx**
+**Listing 3 - CreateCardButton.aspx**
 
 [!code-aspx[Main](using-the-colorpicker-control-extender-cs/samples/sample3.aspx)]
 
@@ -110,9 +110,9 @@ SampleControlID 属性用于将显示颜色选取器与所选的颜色的控件�
 **图 05**： 显示具有一个按钮的颜色选取器对话框 ([单击以查看实际尺寸的图像](using-the-colorpicker-control-extender-cs/_static/image10.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，您学习了如何使用颜色选取器控件扩展程序显示弹出窗口颜色选取器对话框。 首先，我们探讨了如何才能显示对话框时焦点移动到文本框控件。 接下来，您学习了如何创建显示颜色选取器对话框，单击该按钮的按钮。
 
->[!div class="step-by-step"]
-[下一篇](using-the-colorpicker-control-extender-vb.md)
+> [!div class="step-by-step"]
+> [下一篇](using-the-colorpicker-control-extender-vb.md)

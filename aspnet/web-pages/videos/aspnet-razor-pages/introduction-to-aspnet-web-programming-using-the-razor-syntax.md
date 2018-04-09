@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/aspnet-razor-pages/introduction-to-aspnet-web-programming-using-the-razor-syntax
-title: "使用 Razor 语法的 ASP.NET Web 编程简介 |Microsoft 文档"
+title: 使用 Razor 语法的 ASP.NET Web 编程简介 |Microsoft 文档
 author: JoeStagner
-description: "视频伴奏到 ASP.NET Web 编程使用 Razor 语法教程简介"
+description: 视频伴奏到 ASP.NET Web 编程使用 Razor 语法教程简介
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages/introduction-to-aspnet-web-programming-using-the-razor-syntax
 msc.type: video
-ms.openlocfilehash: 8cd01cabe4d8c0c6c80d432242bebe146cc66a43
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0847714f6061c2a352e1605e98aeda21b577e40f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax"></a>使用 Razor 语法进行 ASP.NET Web 编程简介
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （9 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/introduction-to-aspnet-web-programming-using-the-razor-syntax)
 
->[!div class="step-by-step"]
-[上一页](getting-started-with-webmatrix-and-aspnet-web-pages.md)
-[下一页](creating-a-consistent-look-part-1.md)
+> [!div class="step-by-step"]
+> [上一页](getting-started-with-webmatrix-and-aspnet-web-pages.md)
+> [下一页](creating-a-consistent-look-part-1.md)

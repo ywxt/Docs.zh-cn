@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-deploy-a-web-application-during-a-team-build
-title: "[如何:]部署期间的团队项目生成的 Web 应用程序？ | Microsoft Docs"
+title: '[如何:]部署期间的团队项目生成的 Web 应用程序？ | Microsoft Docs'
 author: pjhacker
-description: "此视频演示如何创建新的团队生成以及如何部署 Web 应用程序作为生成过程的一部分。 我们可以看到该包括 deploym..."
+description: 此视频演示如何创建新的团队生成以及如何部署 Web 应用程序作为生成过程的一部分。 我们可以看到该包括 deploym...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/01/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-deploy-a-web-application-during-a-team-build
 msc.type: video
-ms.openlocfilehash: 601a7bac1d14bfc2e7edfe92c566d61f3f6f8eb1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a2e9c9495f2222db12eafacc70d37efa0254a5ec
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-deploy-a-web-application-during-a-team-build"></a>[如何:]部署期间的团队项目生成的 Web 应用程序？
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （5 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-deploy-a-web-application-during-a-team-build)
 
->[!div class="step-by-step"]
-[上一页](how-do-i-automate-testing-using-team-build.md)
-[下一页](how-do-i-run-unit-tests-against-a-deployed-database.md)
+> [!div class="step-by-step"]
+> [上一页](how-do-i-automate-testing-using-team-build.md)
+> [下一页](how-do-i-run-unit-tests-against-a-deployed-database.md)

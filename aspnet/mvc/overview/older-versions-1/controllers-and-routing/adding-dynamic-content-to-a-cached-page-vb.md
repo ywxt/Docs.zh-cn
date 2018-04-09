@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb
-title: "将动态内容添加到缓存的页面 (VB) |Microsoft 文档"
+title: 将动态内容添加到缓存的页面 (VB) |Microsoft 文档
 author: microsoft
-description: "了解如何混合同一页中的动态和缓存内容。 缓存后替换使您能够显示动态内容，如横幅播发 o..."
+description: 了解如何混合同一页中的动态和缓存内容。 缓存后替换使您能够显示动态内容，如横幅播发 o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f07f4ecec36e71679dbc471b65f26d260349a07e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 89421b4bec2170e408ded87ccc918a7a16844a98
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-dynamic-content-to-a-cached-page-vb"></a>将动态内容添加到缓存的页面 (VB)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 了解如何混合同一页中的动态和缓存内容。 缓存后替换，你可以显示动态内容，如横幅播发或用于缓存已输出的页中的新闻的项。
 
@@ -91,12 +91,12 @@ RenderBannerInternal() 方法是私有方法。 此方法不会公开为一个�
 
 ![clip_image004](adding-dynamic-content-to-a-cached-page-vb/_static/image2.jpg)
 
-#### <a name="summary"></a>摘要
+#### <a name="summary"></a>总结
 
 本教程介绍如何动态更新中缓存的页面内容。 您学习了如何使用 HttpResponse.WriteSubstitution() 方法来使动态内容能够注入到缓存的页面。 你还了解了如何封装对 HTML 帮助程序方法内 WriteSubstitution() 方法的调用。
 
 充分利用缓存尽可能 – 它可以对 web 应用程序的性能产生极大影响。 在本教程中所述，你可以利用的缓存甚至当你需要在页面中显示动态内容时。
 
->[!div class="step-by-step"]
-[上一页](improving-performance-with-output-caching-vb.md)
-[下一页](creating-a-controller-vb.md)
+> [!div class="step-by-step"]
+> [上一页](improving-performance-with-output-caching-vb.md)
+> [下一页](creating-a-controller-vb.md)

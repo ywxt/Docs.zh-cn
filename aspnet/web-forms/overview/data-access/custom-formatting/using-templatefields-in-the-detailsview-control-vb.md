@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-vb
-title: "说明如何控件 (VB) 中使用 TemplateFields |Microsoft 文档"
+title: 说明如何控件 (VB) 中使用 TemplateFields |Microsoft 文档
 author: rick-anderson
-description: "提供的 GridView 相同 TemplateFields 功能，还提供个说明。 在本教程中我们将显示一个产品..."
+description: 提供的 GridView 相同 TemplateFields 功能，还提供个说明。 在本教程中我们将显示一个产品...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b368a651253a569865bb92fa93d3462f88d8935f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 67009460477dcc3d1e966220b446a47d6e5b6f5a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-templatefields-in-the-detailsview-control-vb"></a>说明如何控件 (VB) 中使用 TemplateFields
 ====================
@@ -129,7 +129,7 @@ TemplateField 提供更高的灵活地呈现数据比 BoundField、 CheckBoxFiel
 
 添加静态标记、 标签 Web 控件和数据绑定语法，以便的价格和清单 TemplateField 显示的价格和清单信息如下所示：
 
-*单价*  
+*UnitPrice*  
 (**库存量 / Order:** *UnitsInStock* / *UnitsOnOrder*)
 
 执行此任务后你说明如何声明性标记应看起来类似于以下：
@@ -183,7 +183,7 @@ TemplateField 提供更高的灵活地呈现数据比 BoundField、 CheckBoxFiel
 **图 10**: 是或否的值为现在已中断行中所示 ([单击以查看实际尺寸的图像](using-templatefields-in-the-detailsview-control-vb/_static/image30.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 说明如何控件中的 TemplateField 允许灵活地显示数据，同时提供的其他字段控件而适合的情况下使用更高其中：
 
@@ -199,12 +199,12 @@ FormView 控制提供更高程度的灵活地配置呈现的输出。 FormView �
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Dan Jagers。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](using-templatefields-in-the-gridview-control-vb.md)
-[下一页](using-the-formview-s-templates-vb.md)
+> [!div class="step-by-step"]
+> [上一页](using-templatefields-in-the-gridview-control-vb.md)
+> [下一页](using-the-formview-s-templates-vb.md)

@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
-title: "设计得以失败 （使用 Azure 构建真实世界云应用） |Microsoft 文档"
+title: 设计得以失败 （使用 Azure 构建真实世界云应用） |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以..."
+description: 构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 364ce84e-5af8-4e08-afc9-75a512b01f84
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
-ms.openlocfilehash: 62a16e9a99cd1298b0db5f8099092212f9f6850b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 01883cb0be3e7c7b5dc8d32b784ccb3a28652f1e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>设计得以失败 （使用 Azure 构建真实世界云应用）
 ====================
@@ -102,7 +102,7 @@ Azure 目标是使处理所有这些类型的故障容易得多，并且你将�
 
 如果你的应用过度使用它们，某些云服务可能会有意拒绝服务。 这称为*限制*。 如果服务具有 SLA，它应当在其下你可能会被阻止，，并应用设计应避免这些条件和限制，如果发生或相应地作出反应的条件。 例如，如果服务请求的启动失败时超过每秒一定数量，想要确保不太快，它们会导致若要继续，限制发生自动重试。 我们将有更详细说明了在限制[暂时性故障处理章](transient-fault-handling.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本章已尝试帮助你实现具有真实世界云应用程序设计为能够正常经受故障的原因。 从开始[下一章](monitoring-and-telemetry.md)，这一系列中的剩余模式转到更详细地介绍一些策略你可以使用它们来执行该操作：
 
@@ -131,6 +131,6 @@ Azure 目标是使处理所有这些类型的故障容易得多，并且你将�
 - [防故障： 构建可扩展、 有弹性的云服务](https://channel9.msdn.com/Series/FailSafe)。 包含 9 个部分组成的系列 Ulrich Homann、 Marc Mercuri 和 Mark Simms。 高级概念和体系结构原理以非常可访问且有趣方式，提供与 Microsoft 客户咨询团队 (CAT) 体验与实际客户从绘制的情景。 集 1 和 8 进入深度在设计云应用程序后存在失败的原因。 另请参阅后续讨论的限制在段 2 开始 49:57、 故障点和在段 2 开始 56:05，故障模式的讨论和的断路器在段 3 开始 40:55 讨论。
 - [构建大： 从 Azure 客户的第 ii 部分到的经验教训](https://channel9.msdn.com/Events/Build/2012/3-030)。 Mark Simms 介绍的失败的设计和检测的所有内容。 类似于防故障系列但进入更多操作指南的详细信息。
 
->[!div class="step-by-step"]
-[上一页](unstructured-blob-storage.md)
-[下一页](monitoring-and-telemetry.md)
+> [!div class="step-by-step"]
+> [上一页](unstructured-blob-storage.md)
+> [下一页](monitoring-and-telemetry.md)

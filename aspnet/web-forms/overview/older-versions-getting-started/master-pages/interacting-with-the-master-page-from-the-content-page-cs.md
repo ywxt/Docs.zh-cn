@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-cs
-title: "与从内容页 (C#) 母版页交互 |Microsoft 文档"
+title: 与从内容页 (C#) 母版页交互 |Microsoft 文档
 author: rick-anderson
-description: "检查如何调用的方法，从内容页中的代码中设置属性的母版页等。"
+description: 检查如何调用的方法，从内容页中的代码中设置属性的母版页等。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/11/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 977cdea38d240bcae284968de7d780ec59ab6dfd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b550d8c2a64bb2ad91e1db7b2c25433f73dbd5b7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="interacting-with-the-master-page-from-the-content-page-c"></a>与从内容页 (C#) 母版页交互
 ====================
@@ -245,7 +245,7 @@ ms.lasthandoff: 01/24/2018
 **图 08**: 母版页的标签和 GridView 显示 Just-Added 产品 ([单击以查看实际尺寸的图像](interacting-with-the-master-page-from-the-content-page-cs/_static/image24.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 理想情况下，母版页和其内容页是从另一个完全独立的不需要任何级别的交互。 虽然母版页和内容页应设计为具有记住该目标，有大量的顺序内容页必须与其母版页的常见方案。 最常见的原因之一是围绕更新母版页显示在内容页中发生的情况的某种操作所基于的特定部分。
 
@@ -261,18 +261,18 @@ ms.lasthandoff: 01/24/2018
 
 - [访问和更新在 ASP.NET 中的数据](http://aspnet.4guysfromrolla.com/articles/011106-1.aspx)
 - [ASP.NET 母版页： 提示、 技巧和陷阱](http://www.odetocode.com/articles/450.aspx)
-- [`@MasterType`在 ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx)
+- [`@MasterType` 在 ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx)
 - [内容与母版页之间传递信息](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
 - [在 ASP.NET 教程中使用数据](../../data-access/index.md)
 
 ### <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
-本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Zack Jones。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Zack Jones。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](control-id-naming-in-content-pages-cs.md)
-[下一页](interacting-with-the-content-page-from-the-master-page-cs.md)
+> [!div class="step-by-step"]
+> [上一页](control-id-naming-in-content-pages-cs.md)
+> [下一页](interacting-with-the-content-page-from-the-master-page-cs.md)

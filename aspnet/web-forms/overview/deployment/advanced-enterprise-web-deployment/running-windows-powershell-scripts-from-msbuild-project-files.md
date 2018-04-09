@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/running-windows-powershell-scripts-from-msbuild-project-files
-title: "从 MSBuild 项目文件中运行 Windows PowerShell 脚本 |Microsoft 文档"
+title: 从 MSBuild 项目文件中运行 Windows PowerShell 脚本 |Microsoft 文档
 author: jrjlee
-description: "本主题介绍如何生成和部署过程的一部分运行的 Windows PowerShell 脚本。 你可以在本地运行脚本 (换而言之，在 b..."
+description: 本主题介绍如何生成和部署过程的一部分运行的 Windows PowerShell 脚本。 你可以在本地运行脚本 (换而言之，在 b...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/running-windows-powershell-scripts-from-msbuild-project-files
 msc.type: authoredcontent
-ms.openlocfilehash: afee7b0621df42a8bc70fc6f7c4a8fd0383fa83a
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c8ef22cfbba7b3b85944ea4c49f3183e5a6aafbb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="running-windows-powershell-scripts-from-msbuild-project-files"></a>从 MSBuild 项目文件中运行 Windows PowerShell 脚本
 ====================
@@ -39,9 +39,9 @@ ms.lasthandoff: 03/15/2018
 > 本主题将演示如何从 Microsoft Build Engine (MSBuild) 项目文件中的自定义目标本地和远程运行 Windows PowerShell 脚本。
 
 
-本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案 （&） #x 2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 的 web 应用程序Communication Foundation (WCF) 服务和数据库项目。
+本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案&#x2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
-这些教程的核心的部署方法取决于中介绍的拆分项目文件方法[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，在其中生成过程控制由两个项目文件 （&） #x 2014; 一个包含生成适用于每种目标环境和一个包含特定于环境的生成和部署设置的说明。 在生成期间，特定于环境的项目文件合并到环境无关的项目文件中以形成一组完整的生成说明。
+这些教程的核心的部署方法取决于中介绍的拆分项目文件方法[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，两个项目文件中的生成过程控制通过&#x2014;另一个包含生成适用于每种目标环境和一个包含特定于环境的生成和部署设置的说明。 在生成期间，特定于环境的项目文件合并到环境无关的项目文件中以形成一组完整的生成说明。
 
 ## <a name="task-overview"></a>任务概述
 
@@ -89,7 +89,7 @@ ms.lasthandoff: 03/15/2018
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample3.cmd)]
 
 
-例如:
+例如：
 
 
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample4.cmd)]
@@ -111,9 +111,9 @@ ms.lasthandoff: 03/15/2018
 
 最后，你需要在 Windows PowerShell 命令中发生任何保留的 XML 字符进行转义：
 
-- 将使用单引号 **&amp;a p o s;**
-- 将使用双引号 **&amp;q u o t;**
-- 将使用 &  **&amp;amp;**
+- 将使用单引号**&amp;apos;**
+- 将使用双引号**&amp;quot;**
+- 将使用 & **&amp;amp;**
 
 - 当你进行这些更改时，你的命令将类似如下：
 
@@ -183,6 +183,6 @@ Windows PowerShell 是能够在通过远程计算机上运行脚本[Windows 远�
 
 使用自定义 MSBuild 项目文件来控制部署过程的详细信息，请参阅[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)和[了解该生成过程](../web-deployment-in-the-enterprise/understanding-the-build-process.md)。
 
->[!div class="step-by-step"]
-[上一页](taking-web-applications-offline-with-web-deploy.md)
-[下一页](troubleshooting-the-packaging-process.md)
+> [!div class="step-by-step"]
+> [上一页](taking-web-applications-offline-with-web-deploy.md)
+> [下一页](troubleshooting-the-packaging-process.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-cs
-title: "处理从 ModalPopup (C#) 的回发 |Microsoft 文档"
+title: 处理从 ModalPopup (C#) 的回发 |Microsoft 文档
 author: wenz
-description: "AJAX 控件工具包中的 ModalPopup 控制提供一种简单的方法，以创建模式的弹出项，使用客户端的方式。 必须格外小心时 pos..."
+description: AJAX 控件工具包中的 ModalPopup 控制提供一种简单的方法，以创建模式的弹出项，使用客户端的方式。 必须格外小心时 pos...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 096c32d6004474d3d5952ce12d7349b9ebda6003
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 183725db62ba8b4037f368ed9d87d5059e3f1bcb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="handling-postbacks-from-a-modalpopup-c"></a>处理回发从 ModalPopup (C#)
 ====================
@@ -62,6 +62,6 @@ AJAX 控件工具包中的 ModalPopup 控制提供一种简单的方法，以创
 
 模式弹出导致回发 ([单击以查看实际尺寸的图像](handling-postbacks-from-a-modalpopup-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一页](using-modalpopup-with-a-repeater-control-cs.md)
-[下一页](positioning-a-modalpopup-cs.md)
+> [!div class="step-by-step"]
+> [上一页](using-modalpopup-with-a-repeater-control-cs.md)
+> [下一页](positioning-a-modalpopup-cs.md)

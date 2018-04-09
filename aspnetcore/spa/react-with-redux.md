@@ -1,7 +1,7 @@
 ---
-title: "使用响应与回顾的项目模板"
+title: 使用 ASP.NET Core 响应与回顾的项目模板
 author: SteveSandersonMS
-description: "了解如何开始使用 ASP.NET 核心单页面应用程序 (SPA) 项目模板用于使用 Redux 和创建响应应用程序的响应。"
+description: 了解如何开始使用 ASP.NET 核心单页面应用程序 (SPA) 项目模板用于使用 Redux 和创建响应应用程序的响应。
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,13 +11,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react-with-redux
-ms.openlocfilehash: f52f4a866b8bb2adeee19548df32f3e7a91761d1
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: 9abfbfe5be69d3145de453d9d9e56ea35eec64ed
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="use-the-react-with-redux-project-template"></a>使用响应与回顾的项目模板
+# <a name="use-the-react-with-redux-project-template-with-aspnet-core"></a>使用 ASP.NET Core 响应与回顾的项目模板
 
 > [!NOTE]
 > 本文档不有关响应与回顾的项目模板包括在 ASP.NET 核心 2.0。 它是有关与其则可手动更新较新的响应与回顾模板。 默认情况下，该模板包含在 ASP.NET 核心 2.1。

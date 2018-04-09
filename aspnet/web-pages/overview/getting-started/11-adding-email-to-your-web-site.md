@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/11-adding-email-to-your-web-site
-title: "发送电子邮件从 ASP.NET Web 页 (Razor) 站点 |Microsoft 文档"
+title: 发送电子邮件从 ASP.NET Web 页 (Razor) 站点 |Microsoft 文档
 author: tfitzmac
-description: "本章介绍如何从网站发送自动的电子邮件。"
+description: 本章介绍如何从网站发送自动的电子邮件。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/11-adding-email-to-your-web-site
 msc.type: authoredcontent
-ms.openlocfilehash: c5878c3bc468daef050dcebee99f64441066409a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9be242d238c627a9557fe7ff7e596974e5b7d1c8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="sending-email-from-an-aspnet-web-pages-razor-site"></a>从 ASP.NET Web 页 (Razor) 站点发送电子邮件
 ====================
@@ -48,7 +48,7 @@ ms.lasthandoff: 01/24/2018
 
 有各种原因为什么你可能需要从你的网站发送电子邮件。 可能将确认消息发送给用户，或你可能向自己发送通知 （例如情况下，新的用户已注册。）`WebMail`帮助程序轻松用于发送电子邮件。
 
-若要使用`WebMail`帮助器，你必须有权访问 SMTP 服务器。 (代表 SMTP*简单邮件传输协议*。)SMTP 服务器是一个电子邮件服务器，仅将消息转发给接收方的服务器和 #8212;它是电子邮件的出站端。 如果为你的网站使用托管提供商，它们可能你使用设置电子邮件，它们可以告诉你你 SMTP 服务器名称是什么。 如果你正在公司网络内部，管理员或 IT 部门可通常提供有关你可以使用的 SMTP 服务器的信息。 如果你在在家工作，即使可能能够使用你普通的电子邮件提供商联系，可以告诉他们 SMTP 服务器的名称进行测试。 你通常需要：
+若要使用`WebMail`帮助器，你必须有权访问 SMTP 服务器。 (代表 SMTP*简单邮件传输协议*。)SMTP 服务器是仅将消息转发给接收方的服务器的电子邮件服务器&#8212;它是电子邮件的出站端。 如果为你的网站使用托管提供商，它们可能你使用设置电子邮件，它们可以告诉你你 SMTP 服务器名称是什么。 如果你正在公司网络内部，管理员或 IT 部门可通常提供有关你可以使用的 SMTP 服务器的信息。 如果你在在家工作，即使可能能够使用你普通的电子邮件提供商联系，可以告诉他们 SMTP 服务器的名称进行测试。 你通常需要：
 
 - SMTP 服务器的名称。
 - 端口号。 这几乎始终为 25。 但是，你的 ISP 可能要求你为使用端口 587。 如果将安全套接字层 (SSL) 用于电子邮件，你可能需要不同的端口。 咨询你的电子邮件提供商。
@@ -86,23 +86,23 @@ ms.lasthandoff: 01/24/2018
 
     修改以下电子邮件的代码中的相关的设置：
 
-    - 设置`your-SMTP-host`到可以访问 SMTP 服务器的名称。
-    - 设置`your-user-name-here`到您的 SMTP 服务器帐户的用户名。
-    - 设置`your-account-password`到您的 SMTP 服务器帐户的密码。
-    - 设置`your-email-address-here`为您自己的电子邮件地址。 这是从发送消息的电子邮件地址。 (某些电子邮件提供商不允许你指定一个不同`From`地址，并将使用你的用户名称作为`From`地址。)
+   - 设置`your-SMTP-host`到可以访问 SMTP 服务器的名称。
+   - 设置`your-user-name-here`到您的 SMTP 服务器帐户的用户名。
+   - 设置`your-account-password`到您的 SMTP 服务器帐户的密码。
+   - 设置`your-email-address-here`为您自己的电子邮件地址。 这是从发送消息的电子邮件地址。 (某些电子邮件提供商不允许你指定一个不同`From`地址，并将使用你的用户名称作为`From`地址。)
 
-    > [!TIP] 
-    > 
-    > <a id="configuring_email_settings"></a>
-    > ### <a name="configuring-email-settings"></a>配置电子邮件设置
-    > 
-    > 它可以是一个难题，有时以确保具有正确的 SMTP 服务器端口号和等的设置。 下面是一些提示：
-    > 
-    > - SMTP 服务器名称通常是类似`smtp.provider.com`或`smtp.provider.net`。 但是，如果你将你的站点发布到托管提供商，SMTP 服务器名称在该点可能是`localhost`。 这是因为已发布和提供程序的服务器上运行你的站点后，电子邮件服务器可能还会从你的应用程序的角度本地。 这一更改服务器名称可能意味着你必须更改发布过程的一部分的 SMTP 服务器名称。
-    > - 端口号通常为 25。 但是，某些访问接口要求你为使用端口 587 或某些其他端口。
-    > - 请确保使用正确的凭据。 如果你已将站点发布到宿主提供程序，使用提供程序专门指示适用于电子邮件的凭据。 这些可能不同于用来发布的凭据。
-    > - 有时则根本不需要凭据。 如果您要发送电子邮件使用您的个人 ISP，电子邮件提供商可能已经知道你的凭据。 在发布后，你可能需要使用比测试本地计算机上的不同凭据。
-    > - 如果你的电子邮件提供商使用加密，则必须设置`WebMail.EnableSsl`到`true`。
+     > [!TIP] 
+     > 
+     > <a id="configuring_email_settings"></a>
+     > ### <a name="configuring-email-settings"></a>配置电子邮件设置
+     > 
+     > 它可以是一个难题，有时以确保具有正确的 SMTP 服务器端口号和等的设置。 下面是一些提示：
+     > 
+     > - SMTP 服务器名称通常是类似`smtp.provider.com`或`smtp.provider.net`。 但是，如果你将你的站点发布到托管提供商，SMTP 服务器名称在该点可能是`localhost`。 这是因为已发布和提供程序的服务器上运行你的站点后，电子邮件服务器可能还会从你的应用程序的角度本地。 这一更改服务器名称可能意味着你必须更改发布过程的一部分的 SMTP 服务器名称。
+     > - 端口号通常为 25。 但是，某些访问接口要求你为使用端口 587 或某些其他端口。
+     > - 请确保使用正确的凭据。 如果你已将站点发布到宿主提供程序，使用提供程序专门指示适用于电子邮件的凭据。 这些可能不同于用来发布的凭据。
+     > - 有时则根本不需要凭据。 如果您要发送电子邮件使用您的个人 ISP，电子邮件提供商可能已经知道你的凭据。 在发布后，你可能需要使用比测试本地计算机上的不同凭据。
+     > - 如果你的电子邮件提供商使用加密，则必须设置`WebMail.EnableSsl`到`true`。
 4. 运行*EmailRequest.cshtml*在浏览器中的页。 (请确保页中选择**文件**工作区之前运行它。)
 5. 输入您的姓名和问题的说明中，，然后单击**提交**按钮。 要重定向到*ProcessRequest.cshtml*页，其中确认你的消息并向你发送电子邮件。 
 

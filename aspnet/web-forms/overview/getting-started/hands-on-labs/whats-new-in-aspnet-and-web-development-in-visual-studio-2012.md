@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
-title: "ASP.NET 和 Visual Studio 2012 中的 Web 开发的新增功能 |Microsoft 文档"
+title: ASP.NET 和 Visual Studio 2012 中的 Web 开发的新增功能 |Microsoft 文档
 author: rick-anderson
-description: "Visual Studio 的新版本引入了一些增强功能集中于改进的体验和性能，使用 Web 技术时..."
+description: Visual Studio 的新版本引入了一些增强功能集中于改进的体验和性能，使用 Web 技术时...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: f0818cce2a82ede80556b3471cec9d965c3e987f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 00b43cc548df44edded925521991a095ed856494
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>ASP.NET 和 Visual Studio 2012 中的 Web 开发的新增功能
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 01/24/2018
 > 
 > 此实验室将引导你完成的增强功能和前面所述通过将细微的更改应用于源文件夹中提供的示例 Web 应用程序的新功能。
 > 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)。
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)。
 
 
 <a id="Objectives"></a>
@@ -147,7 +147,7 @@ Visual Studio 现在包含功能，可帮助开发人员访问、 工作和有�
     *颜色选取器不透明度*
 
     > [!NOTE]
-    > CSS3 中的 RGBA （红色、 绿色，蓝色、 Alpha） 颜色定义可以定义单个项的颜色不透明度值。 与不同**不透明度-**类似的 CSS 属性 **-**  RGBA 颜色也是最新的浏览器与兼容。
+    > CSS3 中的 RGBA （红色、 绿色，蓝色、 Alpha） 颜色定义可以定义单个项的颜色不透明度值。 与不同**不透明度-**类似的 CSS 属性**-** RGBA 颜色也是最新的浏览器与兼容。
 
 <a id="Ex1Task3"></a>
 
@@ -260,7 +260,9 @@ Visual Studio 现在更新打开或关闭正在编辑相互匹配的元素的标
 1. 上**Default.aspx**页上，添加**H3**具有标题 （例如，Visual Studio 2012 岩石 ！） 的元素。
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample5.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample5.aspx)]
+~~~
 2. 更改**H3**标记和类型**H2**或**h 1。**
 
     请注意，自动更新的结束标记。 你还可以修改以查看，开始标记会相应地更新过的结束标记。
@@ -287,10 +289,12 @@ Visual Studio 现在包含几个 HTML5 代码段。 在此任务中，你将使�
 3. 更新音频源以指向现有的音频文件。
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample6.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample6.aspx)]
 
-    > [!NOTE]
-    > 你将需要向解决方案中添加的音频文件。
+> [!NOTE]
+> You will need to add the audio file to the solution.
+~~~
 4. 按**F5**来运行该站点和播放音频。
 
     ![运行音频控件](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image29.png "运行音频控件")
@@ -546,28 +550,36 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
     请注意，新**Microsoft.Web.Optimization**命名空间被注释掉该文件的开头。 取消注释使用指令以包含绑定和缩减功能。
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample10.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample10.cs)]
+~~~
 4. 找到**应用程序\_启动**方法。
 
     在此方法中，取消注释 EnableDefaultBundles 调用，如下面的代码段中所示。 这使我们能够通过使用该文件夹的路径引用的文件夹中的 CSS 文件捆绑的集合加上&quot;CSS&quot;或&quot;JS&quot;后缀。
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample11.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample11.cs)]
+~~~
 5. 打开**Optimization.aspx**文件并找到的内容控件**HeadContent**。
 
     请注意 CSS 文件和 JS 文件有一个引用的标记。
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample12.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample12.aspx)]
 
-    > [!NOTE]
-    > 此代码是出于演示目的。 理想情况下，将引用 Site.Master 文件中的捆绑包。 在此示例代码中，你会发现，某些捆绑文件也被引用 Site.Master 文件，使此最后一个引用冗余。
+> [!NOTE]
+> This code is for demo purposes. Ideally, you will reference the bundles in the Site.Master file. In this sample code, you will find that some of the bundled files are also being referenced by the Site.Master file, making this last reference redundant.
+~~~
 6. 请注意，使用链接中的捆绑约定**href**属性从样式和 Scripts\custom 获取所有 CSS 或 JS 文件文件夹分别。
 
     你可以使用路径**脚本/自定义/JS**如下所示捆绑和 minify 内的所有 JS 文件**自定义脚本/**文件夹。 这是默认捆绑包的默认行为。
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample13.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample13.aspx)]
+~~~
 7. 打开**Styles\Site.css**文件。
 
     请注意，原始的 CSS 文件包含缩进的代码、 空格和扩大文件的注释。 （还 JavaScript 文件包含空格和注释）。
@@ -609,13 +621,17 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
     请注意，文件不位于同一位置;这是通过默认绑定的另一个优点。
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample14.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample14.cs)]
+~~~
 4. 打开**Optimization.aspx**文件。
 
     请注意，链接到**静态 JS 捆绑**正在使用时的 Global.asax.cs 文件中配置静态捆绑已声明的路径： **/StaticBundle**。
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample15.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample15.aspx)]
+~~~
 5. 按**F5**以运行该应用程序，然后导航到**优化**页。
 6. 单击**静态 JS 捆绑**链接以打开该文件。
 
@@ -641,7 +657,9 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
     定义将使用的动态文件夹捆绑**CoffeeMinify**将仅应用到的文件的自定义缩减处理器&quot; **.coffee** &quot;扩展 (CoffeeScript 文件）。 请注意，你可以使用的搜索模式以选择要在文件夹中，如捆绑的文件\*.coffee。
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample16.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample16.cs)]
+~~~
 3. 打开 NuGet 包管理器控制台。 若要执行此操作，请使用菜单**视图** | **其他窗口** | **程序包管理器控制台**。
 4. 在**程序包管理器控制台中，**类型**安装包 CoffeeSharp**按**ENTER**。
 5. 单击**显示所有文件**按钮**解决方案资源管理器**窗口
@@ -659,7 +677,9 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
     此类继承自 JsMinify 以 minify JavaScript 输出的 CoffeeScript 代码编译引起的。 它调用 CoffeeScript 编译器首先，生成的 JavaScript 代码，然后将它发送到 JsMinify.Process 方法以 minify 生成的代码。
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample17.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample17.cs)]
+~~~
 8. 打开**Script1.coffee**和**Script2.coffee**文件从**脚本/捆绑**文件夹。
 
     这些文件将包括 CoffeScript 代码执行与 CoffeeMinify 类绑定时编译。
@@ -677,7 +697,9 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
     请注意，链接到**动态 JS 捆绑**正在引用**脚本/捆绑**文件夹使用**/咖啡**动态文件夹捆绑包配置的后缀。
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample18.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample18.aspx)]
+~~~
 10. 按**F5**以运行该应用程序，然后导航到**优化**页。
 11. 单击**动态 JS 捆绑**链接以打开生成的文件。
 
@@ -692,7 +714,7 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
 
 
 <a id="Summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 此实验室可帮助你了解 ASP.NET 中的新增功能和 Visual Studio 2012 中的 Web 开发是什么以及如何利用 Visual Studio 2012 中的许多增强功能。
 
@@ -705,7 +727,7 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
 
 你可以安装**Microsoft Visual Studio Express 2012 for Web**或另一个&quot;Express&quot;版本使用 **[Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)**. 以下说明将指导你完成安装所需的步骤*Visual studio Express 2012 for Web*使用*Microsoft Web 平台安装程序*。
 
-1. 转到[ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; *Visual Studio Express 2012 for Web 的 Windows Azure SDK*&quot;。
+1. 转到[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; <em>Visual Studio Express 2012 for Web 的 Windows Azure SDK</em>&quot;。
 2. 单击**立即安装**。 如果你没有**Web 平台安装程序**将重定向以下载并请先安装它。
 3. 一次**Web 平台安装程序**处于打开状态，单击**安装**以启动安装程序。
 
@@ -851,14 +873,14 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
     *Web 部署配置*
 5. 配置数据库连接，如下所示：
 
-    - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:*前缀。
-    - 在**用户名**键入您的服务器管理员登录名。
-    - 在**密码**键入服务器管理员登录密码。
-    - 键入新的数据库名称，例如： *MVC4SampleDB*。
+   - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:*前缀。
+   - 在**用户名**键入您的服务器管理员登录名。
+   - 在**密码**键入服务器管理员登录密码。
+   - 键入新的数据库名称，例如： *MVC4SampleDB*。
 
-    ![配置目标连接字符串](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image80.png "配置目标连接字符串")
+     ![配置目标连接字符串](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image80.png "配置目标连接字符串")
 
-    *配置目标连接字符串*
+     *配置目标连接字符串*
 6. 然后单击“确定” 。 当系统提示创建数据库单击**是**。
 
     ![创建数据库](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image81.png "创建数据库字符串")

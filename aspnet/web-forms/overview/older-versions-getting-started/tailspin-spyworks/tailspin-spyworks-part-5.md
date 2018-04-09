@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5
-title: "第 5 部分： 业务逻辑 |Microsoft 文档"
+title: 第 5 部分： 业务逻辑 |Microsoft 文档
 author: JoeStagner
-description: "本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 5 部分将添加一些业务逻辑。"
+description: 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 5 部分将添加一些业务逻辑。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: e205788e05a2ad94d86d4847c11c40898b1c3113
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e4342e634ef8c4bcf4e0085650a28f414ab23736
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-5-business-logic"></a>第 5 部分： 业务逻辑
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 > 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 5 部分将添加一些业务逻辑。
 
 
-## <a id="_Toc260221671"></a>添加一些业务逻辑
+## <a id="_Toc260221671"></a>  添加一些业务逻辑
 
 我们想要可用，每当有人访问我们的网站时我们购物体验。 访问者将能够浏览并将项添加到购物车，即使未注册或登录。 准备好签出时它们将其提供选项进行身份验证并且如果它们不是尚未成员他们将能创建帐户。
 
@@ -85,7 +85,7 @@ ms.lasthandoff: 11/10/2017
 
 目前我们没有实现全局错误处理程序以便此异常将进入未处理的我们的应用程序，但我们将很快修正此问题。
 
-另请注意语句 Debug.Fail() （可通过使用`using System.Diagnostics;)`
+另请注意语句 Debug.Fail() （可通过使用 `using System.Diagnostics;)`
 
 是在调试器内部运行该应用程序时，此方法将显示包含的信息以及我们指定的错误消息的应用程序状态详细的对话框。
 
@@ -187,6 +187,6 @@ GetValues() 是一个特殊的 helper 函数，我们将在中实现 MyShoppingC
 
 让我们执行此操作之前使用 Visual Studio 生成成员资格数据库并将用户添加到成员身份存储库。
 
->[!div class="step-by-step"]
-[上一页](tailspin-spyworks-part-4.md)
-[下一页](tailspin-spyworks-part-6.md)
+> [!div class="step-by-step"]
+> [上一页](tailspin-spyworks-part-4.md)
+> [下一页](tailspin-spyworks-part-6.md)

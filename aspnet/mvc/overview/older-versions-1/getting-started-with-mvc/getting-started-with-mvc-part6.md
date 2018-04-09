@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part6
-title: "添加创建方法，并创建视图 |Microsoft 文档"
+title: 添加创建方法，并创建视图 |Microsoft 文档
 author: shanselman
-description: "这是初学者本教程介绍 ASP.NET MVC 的基础知识。 创建一个简单的 web 应用程序读取和写入数据库中。"
+description: 这是初学者本教程介绍 ASP.NET MVC 的基础知识。 创建一个简单的 web 应用程序读取和写入数据库中。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part6
 msc.type: authoredcontent
-ms.openlocfilehash: 36b3d6ef0432292f21ecd8f29ea2d88ee8867436
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 48e656a0c394b9db5baaec9c557ec38c4020d41b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-create-method-and-create-view"></a>添加创建方法，并创建视图
 ====================
@@ -65,6 +65,6 @@ ms.lasthandoff: 01/30/2018
 
 我们不检查是否我们电影是正确的不过，并且数据库不会使我们能够与无标题保存一部电影。 如果我们无法告知用户的数据库之前引发了错误，则可以很好。 我们将通过将验证支持添加到我们的应用程序来执行此下一步。
 
->[!div class="step-by-step"]
-[上一页](getting-started-with-mvc-part5.md)
-[下一页](getting-started-with-mvc-part7.md)
+> [!div class="step-by-step"]
+> [上一页](getting-started-with-mvc-part5.md)
+> [下一页](getting-started-with-mvc-part7.md)

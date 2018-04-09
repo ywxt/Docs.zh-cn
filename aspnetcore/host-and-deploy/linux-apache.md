@@ -1,6 +1,6 @@
 ---
-title: "使用 Apache 在 Linux 上托管 ASP.NET Core"
-description: "了解如何设置 Apache 为反向代理服务器在 CentOS 中将 HTTP 流量重定向到 ASP.NET 核心 web 应用程序在 Kestrel 上运行。"
+title: 使用 Apache 在 Linux 上托管 ASP.NET Core
+description: 了解如何设置 Apache 为反向代理服务器在 CentOS 中将 HTTP 流量重定向到 ASP.NET 核心 web 应用程序在 Kestrel 上运行。
 author: spboyer
 manager: wpickett
 ms.author: spboyer
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 033adddc586b60c9f7453df5434617aa838737f8
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 5a8a035ff3f127d01655888d4f83a871645b0bf5
+ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>使用 Apache 在 Linux 上托管 ASP.NET Core
 
@@ -46,7 +46,7 @@ ms.lasthandoff: 03/15/2018
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-调用[UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders)中的方法`Startup.Configure`之前调用[UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication)或类似的身份验证方案中间件：
+调用[UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders)中的方法`Startup.Configure`之前调用[UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication)或类似的身份验证方案中间件。 配置为转发的中间件`X-Forwarded-For`和`X-Forwarded-Proto`标头：
 
 ```csharp
 app.UseForwardedHeaders(new ForwardedHeadersOptions
@@ -59,7 +59,7 @@ app.UseAuthentication();
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-调用[UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders)中的方法`Startup.Configure`之前调用[UseIdentity](/dotnet/api/microsoft.aspnetcore.builder.builderextensions.useidentity)和[UseFacebookAuthentication](/dotnet/api/microsoft.aspnetcore.builder.facebookappbuilderextensions.usefacebookauthentication)或类似的身份验证方案中间件：
+调用[UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders)中的方法`Startup.Configure`之前调用[UseIdentity](/dotnet/api/microsoft.aspnetcore.builder.builderextensions.useidentity)和[UseFacebookAuthentication](/dotnet/api/microsoft.aspnetcore.builder.facebookappbuilderextensions.usefacebookauthentication)或类似的身份验证方案中间件。 配置为转发的中间件`X-Forwarded-For`和`X-Forwarded-Proto`标头：
 
 ```csharp
 app.UseForwardedHeaders(new ForwardedHeadersOptions
@@ -78,6 +78,8 @@ app.UseFacebookAuthentication(new FacebookOptions()
 ---
 
 如果没有[ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)指定到中间件，要转发的默认标头是`None`。
+
+代理服务器和负载平衡器后面托管的应用程序可能需要其他配置。 有关详细信息，请参阅[配置 ASP.NET 核心以使用代理服务器和负载平衡器](xref:host-and-deploy/proxy-load-balancer)。
 
 ### <a name="install-apache"></a>安装 Apache
 
@@ -135,7 +137,7 @@ Apache 的配置文件位于 `/etc/httpd/conf.d/` 目录内。 具有的所有�
 `VirtualHost`块可以出现多次，在服务器上的一个或多个文件。 在前面的配置文件中，Apache 接受公共端口 80 上的流量。 域`www.example.com`正在提供服务，与`*.example.com`别名解析为同一网站。 请参阅[基于名称的虚拟主机支持](https://httpd.apache.org/docs/current/vhosts/name-based.html)有关详细信息。 请求是服务器的代理针对端口 5000 上 127.0.0.1 的根目录。 对于双向通信，`ProxyPass`和`ProxyPassReverse`所需。
 
 > [!WARNING]
-> 如果未能指定合适[ServerName 指令](https://httpd.apache.org/docs/current/mod/core.html#servername)中**VirtualHost**块公开您的应用程序安全漏洞。 子域通配符绑定 (例如， `*.example.com`) 不会带来安全风险，若要控制整个父域 (相对于`*.com`，这是易受攻击)。 请参阅[rfc7230 部分 5.4](https://tools.ietf.org/html/rfc7230#section-5.4)有关详细信息。
+> 如果未能指定合适[ServerName 指令](https://httpd.apache.org/docs/current/mod/core.html#servername)中**VirtualHost**块公开您的应用程序安全漏洞。 子域通配符绑定 (例如， `*.example.com`) 不会带来安全风险，若要控制整个父域 (相对于`*.com`，这是易受攻击)。 有关详细信息，请参阅 [rfc7230 第 5.4 条](https://tools.ietf.org/html/rfc7230#section-5.4)。
 
 可以每个配置日志记录`VirtualHost`使用`ErrorLog`和`CustomLog`指令。 `ErrorLog` 是服务器用来记录错误的位置和`CustomLog`设置的文件名和日志文件格式。 在这种情况下，这是记录请求信息的位置。 没有为每个请求的一行。
 

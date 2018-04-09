@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
-title: "UI 和导航 |Microsoft 文档"
+title: UI 和导航 |Microsoft 文档
 author: Erikre
-description: "本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识..."
+description: 本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
 msc.type: authoredcontent
-ms.openlocfilehash: 7f1d8a1a473820a7c8da4c8086904cc41c86fd2a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d2d4101455a85c53e016e567c0cf1337642f1863
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ui-and-navigation"></a>UI 和导航
 ====================
@@ -54,7 +54,7 @@ ASP.NET Web 窗体，可以创建 Web 应用程序的动态内容。 每个 ASP.
     [!code-aspx[Main](ui_and_navigation/samples/sample2.aspx)]
 5. 保存*Default.aspx*页上通过选择**保存 Default.aspx**从**文件**菜单。
 
- 生成*Default.aspx*页将出现，如下所示： 
+   生成*Default.aspx*页将出现，如下所示： 
 
 [!code-aspx[Main](ui_and_navigation/samples/sample3.aspx)]
 
@@ -62,7 +62,7 @@ ASP.NET Web 窗体，可以创建 Web 应用程序的动态内容。 每个 ASP.
 
 该示例页面包括构成 ASP.NET 网页的基本元素。 此页包含静态文本，你可能可以在 HTML 页，以及特定于 ASP.NET 的元素。 中包含的内容*Default.aspx*将与母版页的内容，它将在本教程后面部分所述集成页。
 
-### <a name="page-directive"></a>@Page指令
+### <a name="page-directive"></a>@Page 指令
 
 ASP.NET Web 窗体通常包含允许你指定的页的页属性和配置信息的指令。 指令用作 asp.net 说明有关如何为进程页面，但它们不会呈现到浏览器发送的标记的一部分。
 
@@ -166,8 +166,8 @@ Visual Studio 2013 项目模板使用[Bootstrap](http://getbootstrap.com/)，由
 2. 右键单击*bootstrap.css*文件并将其命名为*bootstrap original.css*。
 3. 重命名*bootstrap.min.css*到*bootstrap original.min.css*。
 4. 在**解决方案资源管理器**，右键单击*内容*文件夹，然后选择**在文件资源管理器中打开文件夹**。  
- 将显示文件资源管理器。 会将下载的 bootstrap CSS 文件保存到此位置。
-5. 在浏览器中，转到[http://Bootswatch.com](http://bootswatch.com/)。
+   将显示文件资源管理器。 会将下载的 bootstrap CSS 文件保存到此位置。
+5. 在浏览器中，转到[ http://Bootswatch.com ](http://bootswatch.com/)。
 6. 滚动浏览器窗口，直到看到 Cerulean 主题。 
 
     ![UI 和导航-Cerulean 主题](ui_and_navigation/_static/image5.png)
@@ -176,9 +176,9 @@ Visual Studio 2013 项目模板使用[Bootstrap](http://getbootstrap.com/)，由
 
     ![UI 和导航的解决方案资源管理器](ui_and_navigation/_static/image6.png)
 
- 你将看到两个新 CSS 文件中的**内容**文件夹中，但请注意，每个文件名旁边的图标灰显。这意味着，该文件尚未尚未添加到项目。
+   你将看到两个新 CSS 文件中的**内容**文件夹中，但请注意，每个文件名旁边的图标灰显。这意味着，该文件尚未尚未添加到项目。
 9. 右键单击*bootstrap.css*和*bootstrap.min.css*文件，然后选择**包括在项目**。   
- 本教程中稍后运行 Wingtip Toys 应用程序时，将显示新的用户界面。
+   本教程中稍后运行 Wingtip Toys 应用程序时，将显示新的用户界面。
 
 > [!NOTE] 
 > 
@@ -282,7 +282,7 @@ Visual Studio 2013 项目模板使用[Bootstrap](http://getbootstrap.com/)，由
  通过从 Visual Studio 将数据库分离，将能够更高版本在本教程系列中修改数据库架构。
 11. 返回到**解决方案资源管理器**通过选择**解决方案资源管理器**选项卡底部的**服务器资源管理器**窗口。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中的序列已添加一些基本 UI、 图形、 页和导航。 此外，你已运行的 Web 应用程序，从你在前面的教程中添加的数据类创建数据库。 你还查看的内容*产品*通过直接查看数据库的数据库的表。 在下一步的教程中，将显示数据项和从数据库的详细信息。
 
@@ -292,6 +292,6 @@ Visual Studio 2013 项目模板使用[Bootstrap](http://getbootstrap.com/)，由
 [ASP.NET Web 服务器控件概述](https://msdn.microsoft.com/library/zsyt68f1.aspx)   
 [CSS 教程](http://www.w3schools.com/css/default.asp)
 
->[!div class="step-by-step"]
-[上一页](create_the_data_access_layer.md)
-[下一页](display_data_items_and_details.md)
+> [!div class="step-by-step"]
+> [上一页](create_the_data_access_layer.md)
+> [下一页](display_data_items_and_details.md)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: 5efc5ff367d5da5df060eba0028399af898a69fa
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 7f351718123e881e832f4ac95af506ed601d3337
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-5"></a>如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 5 部分
 ====================
@@ -123,10 +123,10 @@ ms.lasthandoff: 03/15/2018
 
 [![Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image9.png)
 
-选择一个教师。 **指派课程**下拉列表显示教师不讲述，课程和**删除某一课程**下拉列表显示教师已分配给的课程。 在**指派课程**部分，选择某一课程，然后单击**分配**。 本课程将移到**删除某一课程**下拉列表。 选择在课程 **删除某一课程** 部分并单击 **删除***。* 本课程将移到**指派课程**下拉列表。
+选择一个教师。 <strong>指派课程</strong>下拉列表显示教师不讲述，课程和<strong>删除某一课程</strong>下拉列表显示教师已分配给的课程。 在<strong>指派课程</strong>部分，选择某一课程，然后单击<strong>分配</strong>。 本课程将移到<strong>删除某一课程</strong>下拉列表。 选择在课程<strong>删除某一课程</strong>部分并单击<strong>删除</strong><em>。</em> 本课程将移到<strong>指派课程</strong>下拉列表。
 
 您现在已经了解一些更多的方法，以便使用相关数据。 在以下教程中，你将了解如何在数据模型中使用继承，以提高你的应用程序的可维护性。
 
->[!div class="step-by-step"]
-[上一页](the-entity-framework-and-aspnet-getting-started-part-4.md)
-[下一页](the-entity-framework-and-aspnet-getting-started-part-6.md)
+> [!div class="step-by-step"]
+> [上一页](the-entity-framework-and-aspnet-getting-started-part-4.md)
+> [下一页](the-entity-framework-and-aspnet-getting-started-part-6.md)

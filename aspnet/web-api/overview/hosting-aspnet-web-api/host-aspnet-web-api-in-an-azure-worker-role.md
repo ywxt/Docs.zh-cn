@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
-title: "承载 ASP.NET Web API 2 中的 Azure 辅助角色 |Microsoft 文档"
+title: 承载 ASP.NET Web API 2 中的 Azure 辅助角色 |Microsoft 文档
 author: MikeWasson
-description: "本教程演示如何承载 ASP.NET Web API 在 Azure 辅助角色中，使用 OWIN 自承载 Web API 框架。 打开 Web 接口的.NET (OWIN) de..."
+description: 本教程演示如何承载 ASP.NET Web API 在 Azure 辅助角色中，使用 OWIN 自承载 Web API 框架。 打开 Web 接口的.NET (OWIN) de...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/02/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 9a7f8242bf482e81513accfe05e10a64ae0ca0b2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7ba1dc850e2f9d9c88e6ddf263a796e1867a98be
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>承载 ASP.NET Web API 2 中的 Azure 辅助角色
 ====================
@@ -131,7 +131,7 @@ ms.lasthandoff: 01/24/2018
 
 [![](host-aspnet-web-api-in-an-azure-worker-role/_static/image11.png)](host-aspnet-web-api-in-an-azure-worker-role/_static/image10.png)
 
-找到在服务部署，部署 [id] 服务详细信息的 IP 地址。 打开 web 浏览器并导航到 http://*地址*/测试/1，其中*地址*是通过计算模拟器中; 分配的 IP 地址等`http://127.0.0.1:80/test/1`。 你应看到来自 Web API 控制器的响应：
+找到在服务部署，部署 [id] 服务详细信息的 IP 地址。 打开 web 浏览器并导航到 http://<em>地址</em>/测试/1，其中<em>地址</em>是通过计算模拟器中; 分配的 IP 地址等`http://127.0.0.1:80/test/1`。 你应看到来自 Web API 控制器的响应：
 
 ![](host-aspnet-web-api-in-an-azure-worker-role/_static/image12.png)
 
@@ -151,7 +151,7 @@ ms.lasthandoff: 01/24/2018
 
 [![](host-aspnet-web-api-in-an-azure-worker-role/_static/image17.png)](host-aspnet-web-api-in-an-azure-worker-role/_static/image16.png)
 
-输入云服务的名称，然后选择一个区域。 单击 **“创建”**。
+输入云服务的名称，然后选择一个区域。 单击“创建” 。
 
 ![](host-aspnet-web-api-in-an-azure-worker-role/_static/image18.png)
 
@@ -159,7 +159,7 @@ ms.lasthandoff: 01/24/2018
 
 [![](host-aspnet-web-api-in-an-azure-worker-role/_static/image20.png)](host-aspnet-web-api-in-an-azure-worker-role/_static/image19.png)
 
-Azure 活动日志窗口显示部署的进度。 部署应用程序时，浏览到 http://appname.cloudapp.net/test/1。
+Azure 活动日志窗口显示部署的进度。 部署应用程序时，浏览到http://appname.cloudapp.net/test/1。
 
 ![](host-aspnet-web-api-in-an-azure-worker-role/_static/image21.png)
 

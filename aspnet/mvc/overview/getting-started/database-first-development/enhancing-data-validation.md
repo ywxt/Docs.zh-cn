@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/enhancing-data-validation
-title: "首先使用 ASP.NET MVC 的 EF 数据库： 增强数据的有效性 |Microsoft 文档"
+title: 首先使用 ASP.NET MVC 的 EF 数据库： 增强数据的有效性 |Microsoft 文档
 author: tfitzmac
-description: "使用 MVC、 实体框架和 ASP.NET 基架，可以创建的 web 应用程序提供了一个接口到现有数据库。 此教程系列..."
+description: 使用 MVC、 实体框架和 ASP.NET 基架，可以创建的 web 应用程序提供了一个接口到现有数据库。 此教程系列...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/29/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/enhancing-data-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 842496c2d3ec56fb81f2409dd7d05d800f83799b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8ea2e94db7956b76c5ccf0a139ac024e38910b49
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-enhancing-data-validation"></a>首先使用 ASP.NET MVC 的 EF 数据库： 增强数据验证
 ====================
@@ -87,6 +87,6 @@ Metadata.cs 中的代码替换为以下代码。
 
 打开 Student.cs 文件或 Enrollment.cs 文件，并请注意您先前应用的数据验证属性将不再在文件中。 但是，运行该应用程序，并且请注意当输入数据时，仍应用验证规则。
 
->[!div class="step-by-step"]
-[上一页](customizing-a-view.md)
-[下一页](publish-to-azure.md)
+> [!div class="step-by-step"]
+> [上一页](customizing-a-view.md)
+> [下一页](publish-to-azure.md)

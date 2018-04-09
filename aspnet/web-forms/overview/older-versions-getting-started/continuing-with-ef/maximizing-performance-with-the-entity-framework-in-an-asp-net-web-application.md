@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
-title: "最大程度地使用实体框架 4.0 ASP.NET 4 Web 应用程序中的性能 |Microsoft 文档"
+title: 最大程度地使用实体框架 4.0 ASP.NET 4 Web 应用程序中的性能 |Microsoft 文档
 author: tdykstra
-description: "本教程系列上的 Contoso 大学 web 应用程序创建的 Getting Started with 实体 Framework 4.0 教程系列生成。 I..."
+description: 本教程系列上的 Contoso 大学 web 应用程序创建的 Getting Started with 实体 Framework 4.0 教程系列生成。 I...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 40a53a110115e5f6342d2a97d21b64470450fd3c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b85645eebf2822b33df944692736ea9d9b69b9aa
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>最大程度地使用实体框架 4.0 ASP.NET 4 Web 应用程序中的性能
 ====================
@@ -54,11 +54,11 @@ ms.lasthandoff: 01/24/2018
 
 有多种实体框架可以加载到实体的导航属性的相关的数据：
 
-- *延迟加载*。 当第一次读取实体时，不检索相关的数据。 但是，第一次尝试访问的导航属性，将自动检索该导航属性所需的数据。 这会导致发送到数据库的多个查询 — 一个用于在实体自身，一个必须检索每个相关实体的数据的时间。 
+- *延迟加载*。 第一次读取实体时，不检索相关数据。 但是，第一次尝试访问导航属性时，将自动检索该导航属性所需的数据。 这会导致发送到数据库的多个查询 — 一个用于在实体自身，一个必须检索每个相关实体的数据的时间。 
 
     [![Image05](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image2.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image1.png)
 
-*预先加载*。 实体中读取时，会随之检索相关的数据。 这通常会导致检索所有具有所需的数据的单一联接查询。 使用指定预先加载`Include`方法，当你已看到这些教程中。
+*预先加载*。 读取实体时，会检索与之相关的数据。 这通常会导致执行一个检索所有必需数据的联接查询。 使用指定预先加载`Include`方法，当你已看到这些教程中。
 
 [![Image07](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image4.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image3.png)
 
@@ -76,7 +76,7 @@ ms.lasthandoff: 01/24/2018
 
 在 web 应用程序，延迟加载可能的相对较小的值，由于会影响对相关数据的需求的用户操作发生在浏览器，没有连接到对象上下文呈现页。 另一方面，当你数据绑定控件，你通常知道哪些数据需要并因此它通常是最佳选择预先加载或基于的延迟的加载时什么是适用于每个方案。
 
-此外，数据绑定控件可能使用的实体对象后释放对象上下文。 在这种情况下，若要延迟加载的导航属性的尝试会失败。 您收到的错误消息十分明显：&quot;`The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.`&quot;
+此外，数据绑定控件可能使用的实体对象后释放对象上下文。 在这种情况下，若要延迟加载的导航属性的尝试会失败。 您收到的错误消息十分明显： &quot;`The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.`&quot;
 
 `EntityDataSource`控件默认情况下禁用延迟加载。 有关`ObjectDataSource`控制你使用的当前教程 （或如果你从页的代码访问的对象上下文），有几种方法，你可以延迟加载默认禁用。 当实例化对象上下文时，你可以禁用它。 例如，可以将以下行添加到构造函数方法`SchoolRepository`类：
 
@@ -266,6 +266,6 @@ Visual Studio 将生成的代码文件创建视图，这名为*SchoolModel.Views
 
 下一教程查看一些对 Entity Framework 版本 4 中新增的重要增强功能。
 
->[!div class="step-by-step"]
-[上一页](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
-[下一页](what-s-new-in-the-entity-framework-4.md)
+> [!div class="step-by-step"]
+> [上一页](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
+> [下一页](what-s-new-in-the-entity-framework-4.md)

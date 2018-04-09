@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-vb
-title: "参数化的查询使用 SqlDataSource (VB) |Microsoft 文档"
+title: 参数化的查询使用 SqlDataSource (VB) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中，我们将继续我们看 SqlDataSource 控件，并了解如何定义参数化的查询。 可以指定参数这两个 decla..."
+description: 在本教程中，我们将继续我们看 SqlDataSource 控件，并了解如何定义参数化的查询。 可以指定参数这两个 decla...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b1cda18620a970c45b05039dd380c393e3854889
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a7442ef3bebb2742cc36d695914b745aa2dfa721
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-parameterized-queries-with-the-sqldatasource-vb"></a>使用 SqlDataSource (VB) 的参数化的查询
 ====================
@@ -235,7 +235,7 @@ SqlDataSource 控件 s 配置数据源向导提供了用于定义要执行若要
 
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample10.sql)]
 
-`ORDER BY NEWID()`返回按随机顺序进行排序的记录 (请参阅[使用`NEWID()`随机排序记录](http://www.sqlteam.com/item.asp?ItemID=8747))。 `SELECT TOP 1`返回从结果集中的第一条记录。 总之，此查询返回`CategoryID`和`CategoryName`列从单一的随机选择的类别的值。
+`ORDER BY NEWID()` 返回按随机顺序进行排序的记录 (请参阅[使用`NEWID()`随机排序记录](http://www.sqlteam.com/item.asp?ItemID=8747))。 `SELECT TOP 1` 返回从结果集中的第一条记录。 总之，此查询返回`CategoryID`和`CategoryName`列从单一的随机选择的类别的值。
 
 若要显示的类别 s`CategoryName`值、 向页面添加标签 Web 控件，请将其`ID`属性`CategoryNameLabel`，并将清空其`Text`属性。 若要以编程方式从 SqlDataSource 控件中检索数据，我们需要调用其`Select()`方法。 [ `Select()`方法](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.select.aspx)需要一个输入的参数的类型[ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx)，它指定应如何在返回前消息数据。 这可以包括排序和筛选的数据的说明，使用 Web 控件进行排序，或从 SqlDataSource 控件数据进行分页的数据。 对于我们的示例，不过，我们不需要数据在返回前修改，因此将将传递中`DataSourceSelectArguments.Empty`对象。
 
@@ -246,7 +246,7 @@ SqlDataSource 控件 s 配置数据源向导提供了用于定义要执行若要
 
 [!code-vb[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample11.vb)]
 
-`randomCategoryView(0)`返回第一个`DataRowView`处于数据视图。 `randomCategoryView(0)("CategoryName")`返回的值`CategoryName`在此第一行中的列。 请注意，数据视图是松散类型化。 若要引用特定的列的值我们需要将作为字符串 (在此情况下，CategoryName) 传递列的名称。 图 13 显示中显示的消息`CategoryNameLabel`查看网页时。 当然，显示的实际类别名称随机选择通过`RandomCategoryDataSource`SqlDataSource 每个访问 （包括回发） 页。
+`randomCategoryView(0)` 返回第一个`DataRowView`处于数据视图。 `randomCategoryView(0)("CategoryName")` 返回的值`CategoryName`在此第一行中的列。 请注意，数据视图是松散类型化。 若要引用特定的列的值我们需要将作为字符串 (在此情况下，CategoryName) 传递列的名称。 图 13 显示中显示的消息`CategoryNameLabel`查看网页时。 当然，显示的实际类别名称随机选择通过`RandomCategoryDataSource`SqlDataSource 每个访问 （包括回发） 页。
 
 
 [![名称显示随机选择的类别 s](using-parameterized-queries-with-the-sqldatasource-vb/_static/image13.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image25.png)
@@ -296,7 +296,7 @@ SqlDataSource 控件 s 配置数据源向导提供了用于定义要执行若要
 **图 15**： 未指定参数源或默认值 ([单击以查看实际尺寸的图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image30.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 SqlDataSource 使页开发人员可以定义其参数值可以为硬编码、 从预定义的参数源中提取或以编程方式分配参数化的查询。 在本教程中我们已了解如何创建参数化的查询从临时 SQL 查询和存储的过程的配置数据源向导。 我们还了解了使用硬编码参数源，Web 控件作为参数源，并以编程方式指定参数值。
 
@@ -306,12 +306,12 @@ SqlDataSource 使页开发人员可以定义其参数值可以为硬编码、 �
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Scott Clyde Randell Schmidt，Ken Pespisa。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](querying-data-with-the-sqldatasource-control-vb.md)
-[下一页](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)
+> [!div class="step-by-step"]
+> [上一页](querying-data-with-the-sqldatasource-control-vb.md)
+> [下一页](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)

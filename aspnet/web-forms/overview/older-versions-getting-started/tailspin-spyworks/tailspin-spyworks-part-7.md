@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
-title: "第 7 部分： 添加功能 |Microsoft 文档"
+title: 第 7 部分： 添加功能 |Microsoft 文档
 author: JoeStagner
-description: "本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 7 部分添加其他功能，如帐户 revie..."
+description: 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 7 部分添加其他功能，如帐户 revie...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 5280de44b3e75f9d1ae85e0248bc3ef6d5444f6d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 17f068155f6726047901e2f7d580d375a4e07c87
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-7-adding-features"></a>第 7 部分： 添加功能
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 > 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 7 部分添加了其他功能，如帐户评审、 产品评论和"常用项"和"还购买"用户控件。
 
 
-## <a id="_Toc260221673"></a>添加功能
+## <a id="_Toc260221673"></a>  添加功能
 
 尽管用户可以浏览我们的目录，将项放在其购物车，和完成结帐过程，有大量的支持功能，我们将包含以改进我们的站点。
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 11/10/2017
 7. 添加有关页面。
 8. 全局错误
 
-## <a id="_Toc260221674"></a>帐户检查
+## <a id="_Toc260221674"></a>  帐户检查
 
 在"帐户"文件夹中创建一个命名的 OrderList.aspx 和其他命名的 OrderDetails.aspx 的两个.aspx 页
 
@@ -56,7 +56,7 @@ EntityDataSoure 从 Orders 表中在用户名上筛选选择记录 （请参阅 
 
 这些名称指定为作为 OrderDetails.aspx 页的查询字符串参数中指定订单 id 字段的每个产品的订单详细信息视图的链接。
 
-## <a id="_Toc260221675"></a>OrderDetails.aspx
+## <a id="_Toc260221675"></a>  OrderDetails.aspx
 
 我们将使用 EntityDataSource 控件访问订单和 FormView 以显示订单数据，另一个 EntityDataSource 与一个 GridView，若要显示的顺序的所有行项。
 
@@ -72,7 +72,7 @@ EntityDataSoure 从 Orders 表中在用户名上筛选选择记录 （请参阅 
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample5.cs)]
 
-## <a id="_Toc260221676"></a>主页页面
+## <a id="_Toc260221676"></a>  主页页面
 
 让我们将一些静态内容添加到 Default.aspx 页上。
 
@@ -82,7 +82,7 @@ EntityDataSoure 从 Orders 表中在用户名上筛选选择记录 （请参阅 
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample6.aspx)]
 
-## <a id="_Toc260221677"></a>产品评论
+## <a id="_Toc260221677"></a>  产品评论
 
 首先我们将向我们可以使用来输入产品评论的窗体添加一个按钮的链接。
 
@@ -94,7 +94,7 @@ EntityDataSoure 从 Orders 表中在用户名上筛选选择记录 （请参阅 
 
 下一步让我们添加名为 ReviewAdd.aspx 页
 
-此页将使用 ASP.NET AJAX 控件工具包。 如果你尚未做以便你可以下载它从[DevExpress](http://devexpress.com/act)和上设置适用于使用 Visual Studio 使用此处的工具包没有指南[https://www.asp.net/learn/ajax-videos/video-76.aspx](../../../videos/ajax-control-toolkit/how-do-i-get-started-with-the-aspnet-ajax-control-toolkit.md).
+此页将使用 ASP.NET AJAX 控件工具包。 如果你尚未做以便你可以下载它从[DevExpress](http://devexpress.com/act)和上设置适用于使用 Visual Studio 使用此处的工具包没有指南[ https://www.asp.net/learn/ajax-videos/video-76.aspx ](../../../videos/ajax-control-toolkit/how-do-i-get-started-with-the-aspnet-ajax-control-toolkit.md)。
 
 在设计模式下，从工具箱中拖动控件和验证程序和生成的窗体，如下所示。
 
@@ -114,7 +114,7 @@ EntityDataSoure 从 Orders 表中在用户名上筛选选择记录 （请参阅 
 
 ![](tailspin-spyworks-part-7/_static/image3.jpg)
 
-## <a id="_Toc260221678"></a>（创建用户控件） 的常用项控件
+## <a id="_Toc260221678"></a>  （创建用户控件） 的常用项控件
 
 为了提高在网站上的销量我们将将几个功能添加到"暗示销售"常用或相关产品。
 
@@ -156,7 +156,7 @@ EntityDataSoure 从 Orders 表中在用户名上筛选选择记录 （请参阅 
 
 ![](tailspin-spyworks-part-7/_static/image6.jpg)
 
-## <a id="_Toc260221679"></a>"还购买"控制 （带参数的用户控件）
+## <a id="_Toc260221679"></a>  "还购买"控制 （带参数的用户控件）
 
 我们将创建第二个用户控件将会暗示通过添加上下文特殊性销售给下一个级别。
 
@@ -236,6 +236,6 @@ ProductId 将是到控件的"属性"。
 
 ![](tailspin-spyworks-part-7/_static/image7.jpg)
 
->[!div class="step-by-step"]
-[上一页](tailspin-spyworks-part-6.md)
-[下一页](tailspin-spyworks-part-8.md)
+> [!div class="step-by-step"]
+> [上一页](tailspin-spyworks-part-6.md)
+> [下一页](tailspin-spyworks-part-8.md)

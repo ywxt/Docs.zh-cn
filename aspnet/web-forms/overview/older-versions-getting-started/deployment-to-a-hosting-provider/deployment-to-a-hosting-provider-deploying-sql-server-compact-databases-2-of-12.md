@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
-title: "部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 部署 SQL Server Compact 数据库-2 12 |Microsoft 文档"
+title: 部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 部署 SQL Server Compact 数据库-2 12 |Microsoft 文档
 author: tdykstra
-description: "这一系列的教程演示如何部署 （发布） ASP.NET web 应用程序项目，它通过使用 Visual Stu 包含 SQL Server Compact 数据库..."
+description: 这一系列的教程演示如何部署 （发布） ASP.NET web 应用程序项目，它通过使用 Visual Stu 包含 SQL Server Compact 数据库...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 5296bc1ca3fd0b24123bd79a550a7e2cffc34a44
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7e2d430bd8e07ed7d97d11a00c61d90beeac005f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 部署 SQL Server Compact 数据库-2 12
 ====================
@@ -190,7 +190,7 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和窗体身份验证
 当你首次部署站点时，很普遍排除大部分或全部为测试创建的用户帐户。 在这种情况下，你将部署一个管理员帐户和任何用户帐户。 而不是手动删除测试帐户，你将创建具有仅在生产环境中需要一个管理员用户帐户的新成员资格数据库。
 
 > [!NOTE]
-> 成员资格数据库将存储帐户密码的哈希值。 若要部署到另一台计算机中的帐户，你必须确保与源计算机上，哈希例程不生成目标服务器上的不同哈希。 它们将生成相同的哈希时使用 ASP.NET Universal Providers，只要你不要更改默认的算法。 默认的算法是 HMACSHA256 和中指定**验证**属性 **[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)**  Web.config 文件中的元素。
+> 成员资格数据库将存储帐户密码的哈希值。 若要部署到另一台计算机中的帐户，你必须确保与源计算机上，哈希例程不生成目标服务器上的不同哈希。 它们将生成相同的哈希时使用 ASP.NET Universal Providers，只要你不要更改默认的算法。 默认的算法是 HMACSHA256 和中指定**验证**属性**[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)** Web.config 文件中的元素。
 
 
 成员资格数据库不会保留通过 Code First 迁移，并且没有设定种子测试帐户的数据库 （如没有的 School 数据库） 没有自动初始值设定项。 因此，要保持可用的测试数据将使测试数据库的副本之前创建一个新。
@@ -245,6 +245,6 @@ SQL Server Compact 数据库引擎和这两个数据库现已准备好可部署�
 
 有关 NuGet 的详细信息，请参阅[使用 NuGet 管理项目库](https://msdn.microsoft.com/magazine/hh547106.aspx)和[NuGet 文档](http://docs.nuget.org/docs/start-here/overview)。 如果你不想使用 NuGet，你将需要了解如何分析以确定它能做什么安装时的 NuGet 包。 (例如，它可能配置*Web.config*转换，PowerShell 将脚本配置为运行在生成时，等等。)若要了解有关 NuGet 的工作原理的详细信息，请参阅尤其[创建和发布包](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package)和[配置文件和源代码转换](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations)。
 
->[!div class="step-by-step"]
-[上一页](deployment-to-a-hosting-provider-introduction-1-of-12.md)
-[下一页](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12.md)
+> [!div class="step-by-step"]
+> [上一页](deployment-to-a-hosting-provider-introduction-1-of-12.md)
+> [下一页](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12.md)

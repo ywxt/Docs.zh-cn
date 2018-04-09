@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/vs-2005/using-the-load-test-agent
-title: "使用负载测试代理 |Microsoft 文档"
+title: 使用负载测试代理 |Microsoft 文档
 author: rick-anderson
-description: "在本视频中，我们将查看如何将合并到我们在对待 Visual Studio Team System 测试中的负载测试代理。 负载测试代理属于..."
+description: 在本视频中，我们将查看如何将合并到我们在对待 Visual Studio Team System 测试中的负载测试代理。 负载测试代理属于...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/08/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/using-the-load-test-agent
 msc.type: video
-ms.openlocfilehash: 86582cef384a3316b3eda1c3558e0712cdf56849
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 034407b7d1d8cb79763cb795172388a4bd685625
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-load-test-agent"></a>使用负载测试代理
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （5 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/using-the-load-test-agent)
 
->[!div class="step-by-step"]
-[上一页](the-effects-of-caching.md)
-[下一页](the-effects-of-viewstate.md)
+> [!div class="step-by-step"]
+> [上一页](the-effects-of-caching.md)
+> [下一页](the-effects-of-viewstate.md)

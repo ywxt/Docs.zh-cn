@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/authentication/using-basic-forms-authentication-in-aspnet
-title: "在 ASP.NET 中使用 Basic Forms 身份验证 |Microsoft 文档"
+title: 在 ASP.NET 中使用 Basic Forms 身份验证 |Microsoft 文档
 author: JoeStagner
-description: "利用基本窗体的过程将 Joe stagner 将演练基于以编程方式使用 ASP.NET 身份验证。 建议的查看者读取此等..."
+description: 利用基本窗体的过程将 Joe stagner 将演练基于以编程方式使用 ASP.NET 身份验证。 建议的查看者读取此等...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/authentication/using-basic-forms-authentication-in-aspnet
 msc.type: video
-ms.openlocfilehash: da501d085195f46c671f8b3ecc411da8505db177
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a1ed9b043f680b836c68c00855c29d2bd6ef2d82
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-basic-forms-authentication-in-aspnet"></a>在 ASP.NET 中使用基本窗体身份验证
 ====================
@@ -26,5 +26,5 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （23 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/using-basic-forms-authentication-in-aspnet)
 
->[!div class="step-by-step"]
-[下一篇](how-to-change-the-forms-authentication-properties.md)
+> [!div class="step-by-step"]
+> [下一篇](how-to-change-the-forms-authentication-properties.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-cs
-title: "使用 LINQ to SQL (C#) 创建模型类 |Microsoft 文档"
+title: 使用 LINQ to SQL (C#) 创建模型类 |Microsoft 文档
 author: microsoft
-description: "本教程旨在说明创建 ASP.NET MVC 应用程序的模型类的一个方法。 在本教程中，你将学习如何构建模型 c..."
+description: 本教程旨在说明创建 ASP.NET MVC 应用程序的模型类的一个方法。 在本教程中，你将学习如何构建模型 c...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/07/2008
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c640007a75f2421e0f6c1e86e525de4834bbc8e4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1f30ff6c97e565059c57c55f26d2dff477774aeb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-model-classes-with-linq-to-sql-c"></a>使用 LINQ to SQL (C#) 创建模型类
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_10_CS.pdf)
 
@@ -74,7 +74,7 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 | **列名称** | **数据类型** | **允许 null 值** |
 | --- | --- | --- |
 | Id | Int | False |
-| 标题 | Nvarchar （200) | False |
+| 标题 | Nvarchar(200) | False |
 | 控制器 | nvarchar(50) | False |
 
 你需要执行到 Id 列的两个特殊操作。 首先，你需要将 Id 列标记为主键列，通过在表设计器中选择列并单击项的图标。 LINQ to SQL 要求你在执行插入或更新对数据库时指定主键列。
@@ -109,7 +109,7 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 
 首先，我们需要修改 HomeController 类。 你的应用程序的 Controllers 文件夹中找不到此类。 修改类，使其类似列表 1 中的类。
 
-**列表 1 –`Controllers\HomeController.cs`**
+**列表 1 – `Controllers\HomeController.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample1.cs)]
 
@@ -119,7 +119,7 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 
 为了显示电影，我们接下来需要修改索引视图。 你可以查找中的索引视图`Views\Home\`文件夹。 更新索引视图，以便它如下所示列出 2 中的视图。
 
-**列出 2 –`Views\Home\Index.aspx`**
+**列出 2 – `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample2.aspx)]
 
@@ -161,19 +161,19 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 
 中列出的 3 的接口名为`IMovieRepository`，它表示一个名为的单个方法`ListAll()`。
 
-**列出 3 –`Models\IMovieRepository.cs`**
+**列出 3 – `Models\IMovieRepository.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample3.cs)]
 
 列出 4 中的存储库类实现`IMovieRepository`接口。 请注意，它包含一个名为方法`ListAll()`相对应的所需的方法`IMovieRepository`接口。
 
-**列出 4 –`Models\MovieRepository.cs`**
+**列出 4 – `Models\MovieRepository.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample4.cs)]
 
 最后，`MoviesController`列出 5 中的类使用的存储库模式。 它不再使用 LINQ to SQL 类直接。
 
-**列出 5-`Controllers\MoviesController.cs`**
+**列出 5- `Controllers\MoviesController.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample5.cs)]
 
@@ -191,12 +191,12 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 
 此外，如果你想要测试`MoviesController`类，则可以将假的电影存储库类中，以便传递`HomeController`。 你可以实现`IMovieRepository`与不执行实际访问数据库，但包含所有所需的方法的类的类`IMovieRepository`接口。 这样一来，你可以将单元测试`MoviesController`不用真正访问实际的数据库的类。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程的目标是演示如何利用 Microsoft LINQ to SQL 来创建 MVC 模型类。 有关 ASP.NET MVC 应用程序中显示数据库数据的两种策略，我们探讨。 首先，我们创建 LINQ to SQL 类，并使用直接中的控制器操作的类。 使用 LINQ to SQL 类控制器中，您可以快速并轻松地在 MVC 应用程序中显示数据库数据。
 
 接下来，我们探讨了显示数据库数据的稍微有些困难，但肯定更良性的路径。 我们采用存储库模式的优点，并放在单独的存储库类中的所有我们数据库访问逻辑。 在我们控制器中，我们已写入所有我们针对而不是具体的类接口的代码。 存储库模式的优点是，它使我们能够轻松地在将来更改数据库访问技术，并且它允许我们能够轻松地测试我们控制器类。
 
->[!div class="step-by-step"]
-[上一页](creating-model-classes-with-the-entity-framework-cs.md)
-[下一页](displaying-a-table-of-database-data-cs.md)
+> [!div class="step-by-step"]
+> [上一页](creating-model-classes-with-the-entity-framework-cs.md)
+> [下一页](displaying-a-table-of-database-data-cs.md)

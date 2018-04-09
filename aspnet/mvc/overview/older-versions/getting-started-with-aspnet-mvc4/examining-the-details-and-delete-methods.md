@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-details-and-delete-methods
-title: "检查的详细信息和删除方法 |Microsoft 文档"
+title: 检查的详细信息和删除方法 |Microsoft 文档
 author: Rick-Anderson
-description: "注意： 本教程的更新的版本此处提供了使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全，请按照和演示要简单得多..."
+description: 注意： 本教程的更新的版本此处提供了使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全，请按照和演示要简单得多...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/28/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: f3c56356aaa595e200a16fe0045a8b00dc5823b7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 00f7e5d6679f1bd8875931e601c8151049f785ac
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="examining-the-details-and-delete-methods"></a>检查的详细信息和删除方法
 ====================
@@ -52,13 +52,13 @@ MVC 基架引擎，可用于创建此操作添加注释，显示调用方法的 
 
 公共语言运行时 (CLR) 需要重载方法拥有唯一的参数签名（相同的方法名称但不同的参数列表）。 但是，此处你需要两个删除方法-一个 get-，一个用于 POST 都具有相同的参数签名。 （它们都需要接受单个整数作为参数。）
 
-若要对此项进行排序，你可以执行几个事项。 之一是为方法提供不同的名称。 这正是前面的示例中的基架机制进行的操作。 但是，这会造成一个小问题：ASP.NET 按名称将 URL 段映射到操作方法，如果重命名方法，则路由通常无法找到该方法。 该示例中也提供了解决方案，即向 `DeleteConfirmed` 方法添加 `ActionName("Delete")` 属性。 这有效地执行映射路由的系统，以使 URL，包括*/Delete/*的 post 请求将查找`DeleteConfirmed`方法。
+若要对此项进行排序，你可以执行几个事项。 之一是为方法提供不同的名称。 这正是前面的示例中的基架机制进行的操作。 但是，这会造成一个小问题：ASP.NET 按名称将 URL 段映射到操作方法，如果重命名方法，则路由通常无法找到该方法。 该示例中也提供了解决方案，即向 `DeleteConfirmed` 方法添加 `ActionName("Delete")` 属性。 这有效地执行映射路由的系统，以使 URL，包括<em>/Delete/</em>的 post 请求将查找`DeleteConfirmed`方法。
 
 另一种常见的方法以避免问题具有相同的名称和签名的方法是人为地更改要包括未使用的参数的 POST 方法的签名。 例如，一些开发人员添加的参数类型`FormCollection`传递给 POST 方法中，然后只需不使用参数：
 
 [!code-csharp[Main](examining-the-details-and-delete-methods/samples/sample4.cs)]
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 你现在具有一个完整的 ASP.NET MVC 应用程序在本地的 DB 数据库中存储数据。 你可以创建、 读取、 更新、 删除和搜索电影。
 
@@ -70,8 +70,8 @@ MVC 基架引擎，可用于创建此操作添加注释，显示调用方法的 
 
 反馈是受欢迎。
 
-- [Rick Anderson](https://blogs.msdn.com/rickAndy) twitter:[@RickAndMSFT](https://twitter.com/RickAndMSFT)  
-- [Scott Hanselman](http://www.hanselman.com/blog/) twitter:[@shanselman](https://twitter.com/shanselman)
+- [Rick Anderson](https://blogs.msdn.com/rickAndy) twitter: [@RickAndMSFT](https://twitter.com/RickAndMSFT)  
+- [Scott Hanselman](http://www.hanselman.com/blog/) twitter: [@shanselman](https://twitter.com/shanselman)
 
->[!div class="step-by-step"]
-[上一篇](adding-validation-to-the-model.md)
+> [!div class="step-by-step"]
+> [上一篇](adding-validation-to-the-model.md)

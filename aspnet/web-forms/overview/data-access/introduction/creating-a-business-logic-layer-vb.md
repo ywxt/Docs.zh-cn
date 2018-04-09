@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/introduction/creating-a-business-logic-layer-vb
-title: "创建业务逻辑层 (VB) |Microsoft 文档"
+title: 创建业务逻辑层 (VB) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将了解如何集中到业务逻辑层 (BLL) 充当一个中介以便 t 之间交换数据的业务规则..."
+description: 在本教程中我们将了解如何集中到业务逻辑层 (BLL) 充当一个中介以便 t 之间交换数据的业务规则...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 858383203ddbaa9cb895c3368705f90546c8c974
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 150862decbbb69747f3e957a941b71b118b7231c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-business-logic-layer-vb"></a>创建业务逻辑层 (VB)
 ====================
@@ -63,13 +63,13 @@ ms.lasthandoff: 01/24/2018
 
 有关`ProductsBLL`我们需要添加总计的七种方法的类：
 
-- `GetProducts()`返回所有产品
-- `GetProductByProductID(productID)`返回具有指定的产品 ID 的产品
-- `GetProductsByCategoryID(categoryID)`返回从指定的类别的所有产品
-- `GetProductsBySupplier(supplierID)`返回指定供应商提供的所有产品
-- `AddProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued)`将新产品插入到数据库中使用的值传入的程序;返回`ProductID`新插入的记录的值
-- `UpdateProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued, productID)`更新现有产品在数据库中使用的传入的值;返回`True`精确一行已更新，如果`False`否则为
-- `DeleteProduct(productID)`从数据库中删除指定的产品
+- `GetProducts()` 返回所有产品
+- `GetProductByProductID(productID)` 返回具有指定的产品 ID 的产品
+- `GetProductsByCategoryID(categoryID)` 返回从指定的类别的所有产品
+- `GetProductsBySupplier(supplierID)` 返回指定供应商提供的所有产品
+- `AddProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued)` 将新产品插入到数据库中使用的值传入的程序;返回`ProductID`新插入的记录的值
+- `UpdateProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued, productID)` 更新现有产品在数据库中使用的传入的值;返回`True`精确一行已更新，如果`False`否则为
+- `DeleteProduct(productID)` 从数据库中删除指定的产品
 
 ProductsBLL.vb
 
@@ -197,7 +197,7 @@ BLL 类应包含检查，以确保遵守应用程序的业务规则。 这些检
 
 我们会在将来的教程、 处理异常向上冒泡从 BLL 使用数据时，Web 控件的插入、 更新，或删除数据可以直接在而不是无需代码包装在一个事件处理程序中处理`Try...Catch`块。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 设计良好的应用程序制作成不同的层，其中每个封装特定角色中。 在本系列文章的第一个教程中，我们将创建使用类型化数据集; 数据访问层在本教程中我们构建业务逻辑层为一系列的类在我们的应用程序`App_Code`调入我们 DAL 的文件夹。 BLL 实现我们的应用程序的字段级别和业务级逻辑。 除了创建单独的 BLL，正如我们在本教程中，做另一个选项是扩展 Tableadapter 的方法，通过使用分部类。 但是，使用此方法不允许我们可以重写现有方法也不它分离我们 DAL 和我们 BLL 完全作为我们已经在本文中的方法。
 
@@ -207,12 +207,12 @@ DAL 和 BLL 完成后，我们已准备好在我们的表示层上启动。 在[
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已沈 Shulok、 Dennis Patterson、 Carlos Santos 和希尔顿 Giesenow。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](creating-a-data-access-layer-vb.md)
-[下一页](master-pages-and-site-navigation-vb.md)
+> [!div class="step-by-step"]
+> [上一页](creating-a-data-access-layer-vb.md)
+> [下一页](master-pages-and-site-navigation-vb.md)

@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
-title: "非结构化的 Blob 存储 （使用 Azure 构建真实世界云应用） |Microsoft 文档"
+title: 非结构化的 Blob 存储 （使用 Azure 构建真实世界云应用） |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以..."
+description: 构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/30/2015
 ms.topic: article
 ms.assetid: 9f05ccb1-2004-4661-ad8b-c370e6c09c8e
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
 msc.type: authoredcontent
-ms.openlocfilehash: 489769533a26c99404c6a5186d66f560385dcffd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c2c82a579feb586287c40bb82eba53c5f84afaba
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="unstructured-blob-storage-building-real-world-cloud-apps-with-azure"></a>非结构化的 Blob 存储 （使用 Azure 构建真实世界云应用）
 ====================
@@ -131,7 +131,7 @@ Azure 不会跨地缘政治边界复制数据： 如果你的主位置是在美�
 
 [!code-cshtml[Main](unstructured-blob-storage/samples/sample13.cshtml?highlight=11)]
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 你已了解如何解决它应用将映像存储在 Blob 服务和映像 Url 仅在 SQL 数据库中。 使用 Blob 服务使 SQL 数据库不是它否则为有可能增加到几乎无限数量的任务，而可以完成而无需编写大量的代码要小得多。
 
@@ -148,6 +148,6 @@ Azure 不会跨地缘政治边界复制数据： 如果你的主位置是在美�
 - [防故障： 构建可扩展、 有弹性的云服务](https://channel9.msdn.com/Series/FailSafe)。 通过 Ulrich Homann、 Marc Mercuri 和 Mark Simms 九一部分视频系列。 高级概念和体系结构原理以非常可访问且有趣方式，提供与 Microsoft 客户咨询团队 (CAT) 体验与实际客户从绘制的情景。 有关 Azure 存储服务和 blob 的讨论，请参阅段 5 开始 35:13。
 - [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/library/dn568099.aspx)。 请参阅 Valet 密钥模式。
 
->[!div class="step-by-step"]
-[上一页](data-partitioning-strategies.md)
-[下一页](design-to-survive-failures.md)
+> [!div class="step-by-step"]
+> [上一页](data-partitioning-strategies.md)
+> [下一页](design-to-survive-failures.md)

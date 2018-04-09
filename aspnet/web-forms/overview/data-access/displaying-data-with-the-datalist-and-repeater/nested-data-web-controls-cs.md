@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-cs
-title: "嵌套的数据 Web 控件 (C#) |Microsoft 文档"
+title: 嵌套的数据 Web 控件 (C#) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将探讨如何使用中继器嵌套在另一个转发器。 示例将演示如何以填充这两个 d 的内部中继器..."
+description: 在本教程中我们将探讨如何使用中继器嵌套在另一个转发器。 示例将演示如何以填充这两个 d 的内部中继器...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 69fa0489ff8baed1423d29ee7bfaa3157d35a76b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4957f555691efaeaafa5bcf92141e0bef1cb1de9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="nested-data-web-controls-c"></a>嵌套的数据 Web 控件 (C#)
 ====================
@@ -93,14 +93,14 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="accessing-the-data-declaratively-with-an-objectdatasource-control-and-theitemdataboundevent-handler"></a>使用访问数据以声明方式 ObjectDataSource 控件和`ItemDataBound`事件处理程序
 
-因为我们已使用在本系列教程的此示例继续使用对象数据源访问数据的最简单选择整个广泛 ObjectDataSource。 `ProductsBLL`类具有`GetProductsByCategoryID(categoryID)`返回属于指定这些产品有关的信息的方法 *`categoryID`* 。 因此，我们可以将添加到 ObjectDataSource`CategoryList`中继器的`ItemTemplate`和将其配置为从此类的方法访问其数据。
+因为我们已使用在本系列教程的此示例继续使用对象数据源访问数据的最简单选择整个广泛 ObjectDataSource。 `ProductsBLL`类具有`GetProductsByCategoryID(categoryID)`返回属于指定这些产品有关的信息的方法*`categoryID`*。 因此，我们可以将添加到 ObjectDataSource`CategoryList`中继器的`ItemTemplate`和将其配置为从此类的方法访问其数据。
 
 遗憾的是，转发器不允许其模板编辑通过设计视图中，因此我们需要手动添加此 ObjectDataSource 控件的声明性语法。 下面的语法演示`CategoryList`中继器 s`ItemTemplate`添加此新对象数据源后 (`ProductsByCategoryDataSource`):
 
 
 [!code-aspx[Main](nested-data-web-controls-cs/samples/sample3.aspx)]
 
-我们使用 ObjectDataSource 方法时需要设置`ProductsByCategoryList`中继器 s`DataSourceID`属性`ID`的 ObjectDataSource (`ProductsByCategoryDataSource`)。 此外，请注意，我们 ObjectDataSource 具有`<asp:Parameter>`指定的元素 *`categoryID`* 值将传递到`GetProductsByCategoryID(categoryID)`方法。 但是，我们如何指定此值？ 理想情况下，我们 d 能够只需设置`DefaultValue`属性`<asp:Parameter>`元素使用数据绑定的语法，如下所示：
+我们使用 ObjectDataSource 方法时需要设置`ProductsByCategoryList`中继器 s`DataSourceID`属性`ID`的 ObjectDataSource (`ProductsByCategoryDataSource`)。 此外，请注意，我们 ObjectDataSource 具有`<asp:Parameter>`指定的元素*`categoryID`*值将传递到`GetProductsByCategoryID(categoryID)`方法。 但是，我们如何指定此值？ 理想情况下，我们 d 能够只需设置`DefaultValue`属性`<asp:Parameter>`元素使用数据绑定的语法，如下所示：
 
 
 [!code-aspx[Main](nested-data-web-controls-cs/samples/sample4.aspx)]
@@ -133,7 +133,7 @@ ms.lasthandoff: 11/10/2017
 
 转发器 s`DataSource`属性使用的数据绑定语法来指示其数据来自于`GetProductsInCategory(categoryID)`方法。 由于`Eval("CategoryID")`返回类型的值`Object`，我们将对象转换为`Integer`然后再将传递到`GetProductsInCategory(categoryID)`方法。 请注意，`CategoryID`访问下面的语法是通过数据绑定`CategoryID`中*外部*转发器 (`CategoryList`)，一个 s 绑定到的记录`Categories`表。 因此，我们知道`CategoryID`不能为数据库`NULL`值，该值是我们可以隐式强制转换的原因`Eval`方法而不会检查如果我们重新处理`DBNull`。
 
-使用此方法，我们需要创建`GetProductsInCategory(categoryID)`方法并让它检索相应的一组给定所提供的产品 *`categoryID`* 。 我们可以执行此操作通过只需返回`ProductsDataTable`返回`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 让我们来创建`GetProductsInCategory(categoryID)`方法中的代码隐藏类我们`NestedControls.aspx`页。 此使用下面的代码：
+使用此方法，我们需要创建`GetProductsInCategory(categoryID)`方法并让它检索相应的一组给定所提供的产品*`categoryID`*。 我们可以执行此操作通过只需返回`ProductsDataTable`返回`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 让我们来创建`GetProductsInCategory(categoryID)`方法中的代码隐藏类我们`NestedControls.aspx`页。 此使用下面的代码：
 
 
 [!code-csharp[Main](nested-data-web-controls-cs/samples/sample7.cs)]
@@ -169,7 +169,7 @@ ms.lasthandoff: 11/10/2017
 
 如往常一样，当涉及到分析的两种技术的性能，仅有效的度量值是运行的应用程序 s 常见案例方案而量身定制的受控的测试。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中我们已了解如何嵌套一个数据在另一个，Web 控件专门检查如何让显示每个类别项列出符号列表中的每个类别的产品内部的转发器与外部转发器。 生成嵌套的用户界面中的主要挑战在于访问并将正确的数据绑定到内部数据 Web 控件。 有多种技术可用，我们在本教程中检查其中有 2 个。 检查第一种方法中的外部数据 Web 控件 s 使用 ObjectDataSource `ItemTemplate` ，已绑定到内部数据 Web 控制通过其`DataSourceID`属性。 第二种方法访问的数据通过在 ASP.NET 页的代码隐藏类的方法。 然后，此方法可以绑定到内部数据 Web 控件的`DataSource`通过数据绑定语法的属性。
 
@@ -179,12 +179,12 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Zack Jones 和沈 Shulok。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](showing-multiple-records-per-row-with-the-datalist-control-cs.md)
-[下一页](displaying-data-with-the-datalist-and-repeater-controls-vb.md)
+> [!div class="step-by-step"]
+> [上一页](showing-multiple-records-per-row-with-the-datalist-control-cs.md)
+> [下一页](displaying-data-with-the-datalist-and-repeater-controls-vb.md)

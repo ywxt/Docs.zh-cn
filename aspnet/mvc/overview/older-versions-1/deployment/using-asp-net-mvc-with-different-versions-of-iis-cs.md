@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs
-title: "与不同版本的 IIS (C#) 使用 ASP.NET MVC |Microsoft 文档"
+title: 与不同版本的 IIS (C#) 使用 ASP.NET MVC |Microsoft 文档
 author: microsoft
-description: "在本教程中，你将了解如何使用 ASP.NET MVC 和 URL 路由，用于不同版本的 Internet Information Services。 了解不同的策略..."
+description: 在本教程中，你将了解如何使用 ASP.NET MVC 和 URL 路由，用于不同版本的 Internet Information Services。 了解不同的策略...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8f2b98d5e5ae677fdac32336d542202a40290e21
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 73c129c1eaf85cb5b110248fe2a2c0faed0157bc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-aspnet-mvc-with-different-versions-of-iis-c"></a>ASP.NET MVC 使用不同版本的 IIS (C#)
 ====================
@@ -33,7 +33,7 @@ by [Microsoft](https://github.com/microsoft)
 - IIS 7.0 （经典模式）-你需要执行特殊的配置来使用 ASP.NET 路由。
 - IIS 6.0 或下面-你需要执行特殊的配置来使用 ASP.NET 路由。
 
-安装最新版本的 IIS 是版本 7.5 （在 Win7)。 IIS 7 的 IIS 是包含 Windows Server 2008 和 VISTA/SP1 和更高版本。 此外可以安装在任何版本的除 Home Basic Vista 操作系统上的 IIS 7.0 (请参阅[https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx](https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx))。
+安装最新版本的 IIS 是版本 7.5 （在 Win7)。 IIS 7 的 IIS 是包含 Windows Server 2008 和 VISTA/SP1 和更高版本。 此外可以安装在任何版本的除 Home Basic Vista 操作系统上的 IIS 7.0 (请参阅[ https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx ](https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx))。
 
 IIS 7.0 支持两种模式，用于处理请求。 你可以使用集成模式下或经典模式。 你不需要在集成模式下使用 IIS 7.0 时执行任何特殊的配置步骤。 但是，你需要在经典模式下使用 IIS 7.0 时执行其他配置。
 
@@ -63,7 +63,7 @@ IIS 7.0 可以处理使用两种不同的请求处理模式的请求： 集成�
 请注意，你可以修改在编辑应用程序对话框中的请求处理模式。 单击选择按钮并更改与应用程序关联的应用程序池。 请注意，我们兼容性问题时将 ASP.NET 应用程序从经典更改为集成模式下。 有关详细信息，请参阅以下文章：
 
 - 升级到 Windows Vista 和 Windows Server 2008-上的 IIS 7.0 的 ASP.NET 1.1 [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008)
-- 与 IIS 7.0 的 ASP.NET 集成[https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
+- 与 IIS 7.0 的 ASP.NET 集成 [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
 
 如果 ASP.NET 应用程序使用 DefaultAppPool，你不需要执行任何额外的步骤，以获得 ASP.NET 路由 （以及因此 ASP.NET MVC） 工作。 但是，如果 ASP.NET 应用程序配置为使用经典.NET 应用程序池，然后继续阅读，你将具有更多工作要做。
 
@@ -103,7 +103,7 @@ IIS 7.0 可以处理使用两种不同的请求处理模式的请求： 集成�
 
 因此，若要获取 ASP.NET 路由来工作，我们必须修改默认路由，以便其包括文件扩展名映射到 ASP.NET 框架。
 
-完成此操作使用名为的脚本`registermvc.wsf`。 它不包括在 ASP.NET MVC 1 发行版`C:\Program Files\Microsoft ASP.NET\ASP.NET MVC\Scripts`，但自 ASP.NET 2 起此脚本已移动到在 ASP.NET Future [http://aspnet.codeplex.com/releases/view/39978](http://aspnet.codeplex.com/releases/view/39978)。
+完成此操作使用名为的脚本`registermvc.wsf`。 它不包括在 ASP.NET MVC 1 发行版`C:\Program Files\Microsoft ASP.NET\ASP.NET MVC\Scripts`，但自 ASP.NET 2 起此脚本已移动到在 ASP.NET Future [ http://aspnet.codeplex.com/releases/view/39978 ](http://aspnet.codeplex.com/releases/view/39978)。
 
 执行此脚本向 IIS 注册一个新的.mvc 扩展。 注册.mvc 扩展后，你可以修改 Global.asax 文件中的路由，以便使用.mvc 扩展的路由。
 
@@ -204,7 +204,7 @@ IIS 7.0 可以处理使用两种不同的请求处理模式的请求： 集成�
 
 / 产品
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程的目的是说明如何使用 ASP.NET MVC 时使用较旧版本的 IIS （或在经典模式下的 IIS 7.0）。 我们讨论两种方法可以获取 ASP.NET 路由要使用较旧版本的 IIS： 修改默认的路由表或者创建一个通配符脚本映射。
 
@@ -212,5 +212,5 @@ IIS 7.0 可以处理使用两种不同的请求处理模式的请求： 集成�
 
 第二个选项是创建通配符脚本映射。 此第二个选项的优点是不需要修改你的 Url。 此第二个选项的缺点是它可以影响 ASP.NET MVC 应用程序的性能。
 
->[!div class="step-by-step"]
-[下一篇](using-asp-net-mvc-with-different-versions-of-iis-vb.md)
+> [!div class="step-by-step"]
+> [下一篇](using-asp-net-mvc-with-different-versions-of-iis-vb.md)

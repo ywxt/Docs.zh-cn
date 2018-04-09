@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-6
-title: "如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体-第 6 部分 |Microsoft 文档"
+title: 如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体-第 6 部分 |Microsoft 文档
 author: tdykstra
-description: "Contoso 大学示例 web 应用程序演示如何创建 ASP.NET Web 窗体应用程序使用实体框架。 该示例应用程序..."
+description: Contoso 大学示例 web 应用程序演示如何创建 ASP.NET Web 窗体应用程序使用实体框架。 该示例应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 164c2002a119420555d2c7065c5a79a5f433a725
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b76be25501275ba676c9a9acca8e73333439ee70
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-6"></a>如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体-第 6 部分
 ====================
@@ -57,7 +57,7 @@ TPH 继承模式通常因为 TPT 模式可能会导致复杂的联接查询在�
 
 ## <a name="adding-instructor-and-student-entities"></a>添加教师和学生实体
 
-打开*SchoolModel.edmx*文件中，右击设计器中，选择中的未占用的区域**添加**，然后选择**实体***。*
+打开<em>SchoolModel.edmx</em>文件中，右击设计器中，选择中的未占用的区域<strong>添加</strong>，然后选择<strong>实体</strong><em>。</em>
 
 [![image01](the-entity-framework-and-aspnet-getting-started-part-6/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-6/_static/image5.png)
 
@@ -65,7 +65,7 @@ TPH 继承模式通常因为 TPT 模式可能会导致复杂的联接查询在�
 
 [![image02](the-entity-framework-and-aspnet-getting-started-part-6/_static/image8.png)](the-entity-framework-and-aspnet-getting-started-part-6/_static/image7.png)
 
-单击“确定”。 设计器创建`Instructor`派生自的实体`Person`实体。 新的实体还没有任何属性。
+单击 **“确定”**。 设计器创建`Instructor`派生自的实体`Person`实体。 新的实体还没有任何属性。
 
 [![image03](the-entity-framework-and-aspnet-getting-started-part-6/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-6/_static/image9.png)
 
@@ -161,6 +161,6 @@ TPH 继承模式通常因为 TPT 模式可能会导致复杂的联接查询在�
 
 现在，你已了解一种方法在实体框架中实施的继承模式。 在以下教程中，你将了解如何使用存储的过程以更好地控制实体框架中如何访问数据库。
 
->[!div class="step-by-step"]
-[上一页](the-entity-framework-and-aspnet-getting-started-part-5.md)
-[下一页](the-entity-framework-and-aspnet-getting-started-part-7.md)
+> [!div class="step-by-step"]
+> [上一页](the-entity-framework-and-aspnet-getting-started-part-5.md)
+> [下一页](the-entity-framework-and-aspnet-getting-started-part-7.md)

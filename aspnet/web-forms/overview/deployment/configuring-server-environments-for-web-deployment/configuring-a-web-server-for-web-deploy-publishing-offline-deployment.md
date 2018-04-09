@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: dfd3ab41e44a3b000bf2c25a5a71db4344617bf2
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: e28bdea26847d4e660d6ee59b15eb38f749d2314
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a>配置 Web 服务器的 Web 部署发布 （脱机部署）
 ====================
@@ -35,7 +35,7 @@ ms.lasthandoff: 03/15/2018
 > 主要功能的优点，这些方法的缺点的详细信息，请参阅[选择用于 Web 部署的右方法](choosing-the-right-approach-to-web-deployment.md)。
 
 
-是，如果你的网络基础结构或安全限制会阻止远程部署。 这是最有可能是这种情况在 web 服务器是独立的面向 Internet 的生产环境中和 #x 2014; 请以物理方式或通过防火墙和子网和 #x 2014年; 从服务器基础结构的其余部分。
+是，如果你的网络基础结构或安全限制会阻止远程部署。 这是最有可能是在 web 服务器是独立的面向 Internet 的生产环境中，这种情况&#x2014;以物理方式或通过防火墙和子网&#x2014;服务器基础结构的其余部分。
 
 显然，此方法变得不够理想，如果定期更新 web 应用程序。 如果你的基础结构允许，你可能想要考虑启用远程部署，使用 Web 部署处理程序或 Web 部署远程代理服务。
 
@@ -95,9 +95,9 @@ ms.lasthandoff: 03/15/2018
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image1.png)
 6. 在**ASP.NET MVC 3 (Visual Studio 2010)**行中，单击**添加**。
 7. 在导航窗格中，单击**服务器**。
-8. 在**IIS 7 建议配置**行中，单击**添加**。
+8. 在 **IIS 7 建议配置** 行中，单击 **添加** 。
 9. 在**Web 部署工具 2.1**行中，单击**添加**。
-10. 单击“安装” 。 Web 平台安装程序将显示列表的产品和 #x 2014年; 以及要安装任何关联的依赖关系 （&） #x 2014; 并将提示你接受许可条款。
+10. 单击“安装” 。 Web 平台安装程序将显示你的产品列表&#x2014;以及任何关联的依赖关系&#x2014;安装，并将提示你接受许可条款。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image2.png)
 11. 查看许可条款，然后如果同意条款，单击**我接受**。
@@ -160,7 +160,7 @@ ms.lasthandoff: 03/15/2018
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image6.png)
 
     > [!NOTE]
-    > 第一个站点绑定允许你访问本地使用的 IP 地址和端口的网站或`http://localhost:85`。 第二个站点绑定，可从其他计算机上使用计算机名称 (例如，http://proweb1:85) 的域中访问站点。
+    > 第一个站点绑定允许你访问本地使用的 IP 地址和端口的网站或`http://localhost:85`。 第二个站点绑定，可从其他计算机上使用计算机名称的域中访问站点 (例如， http://proweb1:85)。
 13. 在**站点绑定**对话框中，单击**关闭**。
 14. 在**连接**窗格中，单击**应用程序池**。
 15. 在**应用程序池**窗格中，右键单击应用程序池的名称，然后单击**基本设置**。 默认情况下，应用程序池的名称将匹配你的网站的名称 (例如， **DemoSite**)。
@@ -171,11 +171,11 @@ ms.lasthandoff: 03/15/2018
     > [!NOTE]
     > 示例解决方案需要.NET Framework 4.0。 这是不要求用于 Web 部署一般情况下。
 
-为了使你的网站以提供内容，应用程序池标识必须具有读取权限的本地文件夹，将内容存储。 在 IIS 7.5 中应用程序池具有唯一的应用程序池标识默认运行 （与以前版本的 IIS，其中应用程序池将通常使用的网络服务帐户运行）。 应用程序池标识不是真实的用户帐户和未显示于的用户或组和 #x 2014年任何列表; 相反，它动态启动时创建的应用程序池。 每个应用程序池标识添加到本地**IIS\_IUSRS**作为隐藏的项的安全组。
+为了使你的网站以提供内容，应用程序池标识必须具有读取权限的本地文件夹，将内容存储。 在 IIS 7.5 中应用程序池具有唯一的应用程序池标识默认运行 （与以前版本的 IIS，其中应用程序池将通常使用的网络服务帐户运行）。 应用程序池标识不是真实的用户帐户和未显示任何用户或组的列表上&#x2014;相反，它动态启动时创建的应用程序池。 每个应用程序池标识添加到本地**IIS\_IUSRS**作为隐藏的项的安全组。
 
 若要授予对应用程序池标识的文件或文件夹上的权限，你有两个选项：
 
-- 将权限分配给应用程序池标识直接，使用格式 **IIS 应用程序池\***[应用程序池名称]*(例如， **IIS AppPool\DemoSite**)。
+- 将权限分配给应用程序池标识直接，使用格式<strong>IIS 应用程序池\</ g ><em>[应用程序池名称]</em>(例如， <strong>IIS AppPool\DemoSite</strong>).
 - 向其分配权限**IIS\_IUSRS**组。
 
 最常用的方法是将权限分配给本地**IIS\_IUSRS**组，因为这种方法可让你更改应用程序池，而不用重新配置文件系统权限。 下一个过程中使用此基于组的方法。
@@ -193,8 +193,8 @@ ms.lasthandoff: 03/15/2018
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image8.png)
 5. 在**选择用户或组**对话框中，键入**IIS\_IUSRS**，单击**检查名称**，然后单击**确定**。
-6. 在 **权限***[文件夹名称]* 对话框中，请注意，在分配新组 **读取 &amp; 执行**， **列出文件夹内容**， 和 **读取** 默认情况下的权限。 保留此保持不变，然后单击**确定**。
-7. 单击 **确定** 关闭 *[文件夹名称]***属性** 对话框。
+6. 在<strong>权限</strong><em>[文件夹名称]</em>对话框中，请注意，在分配新组<strong>读取&amp;执行</strong>，<strong>列表文件夹内容</strong>，和<strong>读取</strong>默认情况下的权限。 保留此保持不变，然后单击<strong>确定</strong>。
+7. 单击<strong>确定</strong>关闭<em>[文件夹名称]</em><strong>属性</strong>对话框。
 
 ## <a name="disable-the-remote-agent-service"></a>禁用了远程代理服务
 
@@ -226,6 +226,6 @@ ms.lasthandoff: 03/15/2018
 - 应用程序池标识没有读取访问权限的源文件夹的你的网站？
 - 已停止 Web 部署代理服务？
 
->[!div class="step-by-step"]
-[上一页](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
-[下一页](configuring-a-database-server-for-web-deploy-publishing.md)
+> [!div class="step-by-step"]
+> [上一页](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
+> [下一页](configuring-a-database-server-for-web-deploy-publishing.md)

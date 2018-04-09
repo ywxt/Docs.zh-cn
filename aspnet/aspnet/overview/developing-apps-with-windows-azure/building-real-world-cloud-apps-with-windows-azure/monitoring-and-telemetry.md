@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
-title: "监视和遥测 （使用 Azure 构建真实世界云应用） |Microsoft 文档"
+title: 监视和遥测 （使用 Azure 构建真实世界云应用） |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以..."
+description: 构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/09/2015
 ms.topic: article
 ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: 9baddd1836323385239206a3cf49e5938bbaff58
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d58c495b3888c146a2a9bc831865cf7cc0d94c7b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>监视和遥测 （使用 Azure 构建真实世界云应用）
 ====================
@@ -252,7 +252,7 @@ Azure 支持以下类型的[云服务中的日志记录](https://docs.microsoft.
 
 ![服务器资源管理器中的日志](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-storagelogs.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 它是非常简单，以实现现成可用遥测系统、 检测登录自己的代码，并配置日志记录在 Azure 中。 和时必须生产问题，遥测系统和自定义日志的组合可帮助你快速解决问题，你的客户趋于主要问题之前。
 
@@ -292,6 +292,6 @@ Azure 支持以下类型的[云服务中的日志记录](https://docs.microsoft.
 
 - [云服务在 Azure 中的基础知识](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)。 通过 Microsoft Azure 客户咨询团队创建了示例应用程序。 以下文章中所述演示遥测和日志记录方案。 此示例使用实现应用程序日志记录[NLog](http://nlog-project.org/)。 相关文档，请参阅[系列有关遥测和日志记录的四个 TechNet wiki 文章](https://social.technet.microsoft.com/wiki/contents/articles/17987.cloud-service-fundamentals.aspx#Telemetry_coming_soon)。
 
->[!div class="step-by-step"]
-[上一页](design-to-survive-failures.md)
-[下一页](transient-fault-handling.md)
+> [!div class="step-by-step"]
+> [上一页](design-to-survive-failures.md)
+> [下一页](transient-fault-handling.md)

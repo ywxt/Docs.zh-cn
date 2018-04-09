@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file
-title: "创建并运行部署命令文件 |Microsoft 文档"
+title: 创建并运行部署命令文件 |Microsoft 文档
 author: jrjlee
-description: "本主题介绍如何构建命令文件，以便可以运行使用 Microsoft Build Engine (MSBuild) 项目文件作为单步重新部署..."
+description: 本主题介绍如何构建命令文件，以便可以运行使用 Microsoft Build Engine (MSBuild) 项目文件作为单步重新部署...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file
 msc.type: authoredcontent
-ms.openlocfilehash: bc31bf55b29661816e0ca9a50b51b0abc3eb2c98
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: e5fb034a67bc9f2ea549af269eae51a49acc4d98
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-and-running-a-deployment-command-file"></a>创建并运行部署命令文件
 ====================
@@ -27,9 +27,9 @@ ms.lasthandoff: 03/15/2018
 > 本主题介绍如何生成一个，可以运行作为一个单步执行、 可重复的过程中使用 Microsoft Build Engine (MSBuild) 项目文件的部署的命令文件。
 
 
-本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案 （&） #x 2014;[联系人管理器](the-contact-manager-solution.md)来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 的 web 应用程序解决方案 （&) #x 2014;Communication Foundation (WCF) 服务和数据库项目。
+本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案&#x2014;[联系人管理器](the-contact-manager-solution.md)解决方案&#x2014;来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
-这些教程的核心的部署方法取决于中介绍的拆分项目文件方法[了解该生成过程](understanding-the-build-process.md)，在其中生成过程控制由两个项目文件 （&） #x 2014; 一个包含生成适用于每种目标环境和一个包含特定于环境的生成和部署设置的说明。 在生成期间，特定于环境的项目文件合并到环境无关的项目文件中以形成一组完整的生成说明。
+这些教程的核心的部署方法取决于中介绍的拆分项目文件方法[了解该生成过程](understanding-the-build-process.md)，两个项目文件中的生成过程控制通过&#x2014;另一个包含生成适用于每种目标环境和一个包含特定于环境的生成和部署设置的说明。 在生成期间，特定于环境的项目文件合并到环境无关的项目文件中以形成一组完整的生成说明。
 
 ## <a name="process-overview"></a>过程概述
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="create-an-msbuild-command"></a>创建的 MSBuild 命令
 
-中所述[了解该生成过程](understanding-the-build-process.md)，特定于环境的项目文件 （&) #x 2014; 例如， *Env Dev.proj*& #x 2014; 设计要导入环境不可知*Publish.proj*在生成时的文件。 在一起，这两个文件提供一组完整的说明，以告诉 MSBuild 如何生成和部署你的解决方案。
+中所述[了解该生成过程](understanding-the-build-process.md)，特定于环境的项目文件&#x2014;例如*Env Dev.proj*&#x2014;设计要导入环境无关*Publish.proj*在生成时的文件。 在一起，这两个文件提供一组完整的说明，以告诉 MSBuild 如何生成和部署你的解决方案。
 
 *Publish.proj*文件使用**导入**元素导入特定于环境的项目文件。
 
@@ -92,7 +92,7 @@ ms.lasthandoff: 03/15/2018
 5. 如果这是首次已将解决方案部署到此环境，你将需要添加到测试 web 服务器计算机帐户**db\_datawriter**和**db\_datareader**上的角色**ContactManager**数据库。 中介绍了此过程[配置用于 Web 部署发布的数据库服务器](../configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing.md)。
 
     > [!NOTE]
-    > 只需创建数据库时分配这些权限。 默认情况下，生成过程将不会重新创建每个部署和 #x 2014年上的数据库; 相反，它将比较最新的架构的现有数据库并进行所需更改。 因此，只需将这些数据库角色映射第一次部署解决方案。
+    > 只需创建数据库时分配这些权限。 默认情况下，每个部署上的数据库将重新生成过程创建&#x2014;相反，它将比较最新的架构的现有数据库并进行所需更改。 因此，只需将这些数据库角色映射第一次部署解决方案。
 6. 打开 Internet Explorer 并浏览到联系人管理器应用程序的 URL (例如， `http://testweb1:85/ContactManager/`)。
 7. 验证应用程序按预期方式工作并且你能够添加联系人。
 
@@ -118,6 +118,6 @@ ms.lasthandoff: 03/15/2018
 
 你还可以通过重写属性或在 MSBuild 命令中设置各种其他开关自定义生成过程中的为每个环境。 有关详细信息，请参阅[MSBuild 命令行参考](https://msdn.microsoft.com/library/ms164311.aspx)。
 
->[!div class="step-by-step"]
-[上一页](deploying-database-projects.md)
-[下一页](manually-installing-web-packages.md)
+> [!div class="step-by-step"]
+> [上一页](deploying-database-projects.md)
+> [下一页](manually-installing-web-packages.md)

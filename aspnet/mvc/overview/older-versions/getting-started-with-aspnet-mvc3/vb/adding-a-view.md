@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
-title: "添加的视图 (VB) |Microsoft 文档"
+title: 添加的视图 (VB) |Microsoft 文档
 author: Rick-Anderson
-description: "本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识..."
+description: 本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 7e8564c743510780b93d56bc1215f4c5b1faeb43
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c9675eb7776116ecbe910d5515abfe9b4391df22
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-view-vb"></a>添加的视图 (VB)
 ====================
@@ -65,7 +65,7 @@ ms.lasthandoff: 11/10/2017
 
 首先，让我们更改文本&quot;我的 MVC 应用程序。&quot;该文本共享，并显示在每一页。 它实际出现在只有一个位置中我们项目中，即使它位于我们的应用程序中每页上。 转到*/视图/共享*文件夹中的**解决方案资源管理器**并打开 *\_Layout.vbhtml*文件。 此文件称为布局页，它是共享&quot;shell&quot;其他所有页使用。
 
-请注意`@RenderBody()`的文件的底部附近的代码行。 `RenderBody`是你创建的所有页面，都会都显示其中一个占位符&quot;包装&quot;布局页中。 更改`<h1>`标题从 **&quot;**  My MVC Application&quot;到&quot;MVC 影片应用程序&quot;。
+请注意`@RenderBody()`的文件的底部附近的代码行。 `RenderBody` 是你创建的所有页面，都会都显示其中一个占位符&quot;包装&quot;布局页中。 更改`<h1>`标题从**&quot;** My MVC Application&quot;到&quot;MVC 影片应用程序&quot;。
 
 [!code-html[Main](adding-a-view/samples/sample3.html)]
 
@@ -111,11 +111,11 @@ ms.lasthandoff: 11/10/2017
 
 [![3AddWelcomeView](adding-a-view/_static/image12.png "3AddWelcomeView")](adding-a-view/_static/image11.png)
 
-添加以下代码在`<h2>`在新的元素*欢迎。*vbhtml 文件。 我们将进行循环，说&quot;Hello&quot;让用户说出我们应多次 ！
+添加以下代码在`<h2>`在新的元素<em>欢迎。</em>vbhtml 文件。 我们将进行循环，说&quot;Hello&quot;让用户说出我们应多次 ！
 
 [!code-vbhtml[Main](adding-a-view/samples/sample8.vbhtml)]
 
-运行应用程序，并浏览到`http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4`
+运行应用程序，并浏览到 `http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4`
 
 现在数据是来自 URL，并自动传递到的控制器。 控制器包将数据分成`Model`对象并将该对象传递到视图。 不是向用户显示以 html 格式的数据视图。
 
@@ -123,6 +123,6 @@ ms.lasthandoff: 11/10/2017
 
 当然，这是一种类型的&quot;M&quot;模型，但不数据库类型。 让我们用学到的内容来创建一个电影数据库。
 
->[!div class="step-by-step"]
-[上一页](adding-a-controller.md)
-[下一页](adding-a-model.md)
+> [!div class="step-by-step"]
+> [上一页](adding-a-controller.md)
+> [下一页](adding-a-model.md)

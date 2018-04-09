@@ -1,7 +1,7 @@
 ---
-title: "密钥存储格式"
+title: 在 ASP.NET 核心中的密钥存储格式
 author: tdykstra
-description: "本文档介绍了 ASP.NET 核心数据保护密钥存储格式的实现详细信息。"
+description: 了解实现的 ASP.NET 核心数据保护密钥的存储格式的详细信息。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-storage-format
-ms.openlocfilehash: 66783eb7264a4551eafdd9d5c7d99b014701a6de
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: abe23da3de70107aa4f4d84f4da27aadfe7b2061
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-storage-format"></a>密钥存储格式
+# <a name="key-storage-format-in-aspnet-core"></a>在 ASP.NET 核心中的密钥存储格式
 
 <a name="data-protection-implementation-key-storage-format"></a>
 
@@ -66,7 +66,7 @@ ms.lasthandoff: 01/30/2018
 
 ## <a name="the-encryptedsecret-element"></a>\<EncryptedSecret > 元素
 
-<encryptedSecret>元素它包含机密的密钥材料的加密的表单可能出现如果[启用了加密对静止的机密](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest)。 属性 decryptorType 将实现 IXmlDecryptor 的类型的程序集限定名称。 此类型是负责读取内部<encryptedKey>元素和解密以恢复原始的纯文本。
+<encryptedSecret>元素它包含机密的密钥材料的加密的表单可能出现如果[启用了加密对静止的机密](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest)。 属性 decryptorType 将实现 IXmlDecryptor 的类型的程序集限定名称。 此类型是负责读取内部<encryptedKey>元素和解密以恢复原始的纯文本。
 
 与\<描述符 >，特定的格式<encryptedSecret>元素取决于正在使用的静态加密机制。 在上面的示例中，每个注释中使用 Windows DPAPI 对主密钥进行加密。
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-vb
-title: "跨两个页 (VB) 筛选主/详细信息 |Microsoft 文档"
+title: 跨两个页 (VB) 筛选主/详细信息 |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们了解如何在两个页上分隔母版/详细信息报告。 在 'master' 页我们使用重复器控件来呈现的 categ 列表..."
+description: 在本教程中我们了解如何在两个页上分隔母版/详细信息报告。 在 'master' 页我们使用重复器控件来呈现的 categ 列表...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/30/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3f43fa998b81800cb1a2b7796ebb3922fc1caeb8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2afc216de3b6894cfdd112787ab92d7483198ecc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-across-two-pages-vb"></a>筛选在两个页面 (VB) 之间的主/从
 ====================
@@ -59,7 +59,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-2-turning-the-category-name-into-a-link-to-the-details-page"></a>步骤 2： 将转换的详细信息页的链接的类别名称
 
-若要允许的用户以显示给定的类别中的"详细信息"信息，我们需要添加到每个项目符号列表项，如果单击，则将需要对用户发出的第二页的链接 (`ProductsForCategoryDetails.aspx`)。 然后，此第二个页面将显示使用 DataList 所选类别的产品。 为了确定被单击其链接的类别，我们需要通过单击的类别`CategoryID`通过某种机制的第二页。 将标量数据从一页传输到另一个的最简单、 最简单方法是通过查询字符串，我们将在本教程中使用此选项。 具体而言，`ProductsForCategoryDetails.aspx`页应所选 *`categoryID`* 要先通过名为的查询字符串字段值`CategoryID`。 例如，若要查看饮料类别的产品具有`CategoryID`为 1，用户需要访问`ProductsForCategoryDetails.aspx?CategoryID=1`。
+若要允许的用户以显示给定的类别中的"详细信息"信息，我们需要添加到每个项目符号列表项，如果单击，则将需要对用户发出的第二页的链接 (`ProductsForCategoryDetails.aspx`)。 然后，此第二个页面将显示使用 DataList 所选类别的产品。 为了确定被单击其链接的类别，我们需要通过单击的类别`CategoryID`通过某种机制的第二页。 将标量数据从一页传输到另一个的最简单、 最简单方法是通过查询字符串，我们将在本教程中使用此选项。 具体而言，`ProductsForCategoryDetails.aspx`页应所选*`categoryID`*要先通过名为的查询字符串字段值`CategoryID`。 例如，若要查看饮料类别的产品具有`CategoryID`为 1，用户需要访问`ProductsForCategoryDetails.aspx?CategoryID=1`。
 
 若要在转发器，我们需要添加超链接 Web 控件或 HTML 定位点元素中创建每个项目符号列表项的超链接 (`<a>`) 到`ItemTemplate`。 中的超链接的方案显示为每个行相同，这两种方法就足够了。 为重复字符，但我更喜欢使用定位元素。 若要使用的定位点元素，请更新到的转发器的 ItemTemplate:
 
@@ -166,22 +166,22 @@ ms.lasthandoff: 11/10/2017
 **图 9**： 如果有任何产品属于所选分类将显示消息 ([单击以查看实际尺寸的图像](master-detail-filtering-acess-two-pages-datalist-vb/_static/image27.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 尽管主/详细信息报表可以显示 master 和详细信息记录在一页，在很多网站中它们被分隔跨两个 web 页。 在本教程中我们介绍了如何通过将"主"网页中使用中继器的项目符号列表中列出的类别和"详细信息"页中列出的关联的产品实现主/详细信息报表。 母板网页中的每个列表项包含指向传递的行的详细信息页面的`CategoryID`值。
 
-在详细信息页中指定的提供程序检索这些产品完成通过`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。  *`categoryID`* 使用以声明方式指定参数值`CategoryID`作为参数源的查询字符串值。 我们还了解了如何在使用 FormView 的详细信息页中显示类别详细信息以及如何显示一条消息，如果没有不属于所选类别的产品。
+在详细信息页中指定的提供程序检索这些产品完成通过`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 *`categoryID`*使用以声明方式指定参数值`CategoryID`作为参数源的查询字符串值。 我们还了解了如何在使用 FormView 的详细信息页中显示类别详细信息以及如何显示一条消息，如果没有不属于所选类别的产品。
 
 尽情享受编程 ！
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢...
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Zack Jones 和沈 Shulok。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](master-detail-filtering-with-a-dropdownlist-datalist-vb.md)
-[下一页](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb.md)
+> [!div class="step-by-step"]
+> [上一页](master-detail-filtering-with-a-dropdownlist-datalist-vb.md)
+> [下一页](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb.md)

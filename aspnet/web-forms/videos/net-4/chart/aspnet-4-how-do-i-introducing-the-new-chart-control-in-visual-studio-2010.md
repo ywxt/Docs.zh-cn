@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/chart/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010
-title: "我如何： 引入 Visual Studio 2010 中新的图表控件 |Microsoft 文档"
+title: 我如何： 引入 Visual Studio 2010 中新的图表控件 |Microsoft 文档
 author: rick-anderson
-description: "没有大量激动人心即将发布的 Microsoft Visual Studio 2010 和.NET Framework 4.0。 在许多新功能是 ASP.NET..."
+description: 没有大量激动人心即将发布的 Microsoft Visual Studio 2010 和.NET Framework 4.0。 在许多新功能是 ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/08/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/chart/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010
 msc.type: video
-ms.openlocfilehash: c48532d8676f46aa20a110d47b7b1fda9370afb3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aa62fe20088ffcdaf280d6d020735ff054ae38cf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-introducing-the-new-chart-control-in-visual-studio-2010"></a>我如何： 引入 Visual Studio 2010 中新的图表控件
 ====================
@@ -26,5 +26,5 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （13 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010)
 
->[!div class="step-by-step"]
-[上一篇](aspnet-4-quick-hit-chart-control.md)
+> [!div class="step-by-step"]
+> [上一篇](aspnet-4-quick-hit-chart-control.md)

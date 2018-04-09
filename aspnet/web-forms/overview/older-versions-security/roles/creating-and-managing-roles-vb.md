@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/roles/creating-and-managing-roles-vb
-title: "创建和管理角色 (VB) |Microsoft 文档"
+title: 创建和管理角色 (VB) |Microsoft 文档
 author: rick-anderson
-description: "本教程可检查为配置角色框架所必需的步骤。 接下来，我们将生成的 web 页面以创建和删除角色。"
+description: 本教程可检查为配置角色框架所必需的步骤。 接下来，我们将生成的 web 页面以创建和删除角色。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/24/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/creating-and-managing-roles-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0b1132c6d782cd85edb8cbee98c8ab95a15171ac
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 75ca9b1c36f9a74d755ef05717f03d139d0b29ea
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-and-managing-roles-vb"></a>创建和管理角色 (VB)
 ====================
@@ -96,10 +96,10 @@ ASP.NET 提供一个用于定义角色和将其与用户帐户关联的角色框
 
 因此，如果我们只需为不在我们的应用程序中指定任何提供程序信息的情况下启用角色 framework`Web.config`文件，应用程序使用注册的默认角色提供程序， `AspNetSqlRoleProvider`。 如果`~/App_Data/aspnet.mdf`数据库不存在，ASP.NET 运行时将自动创建它并添加应用程序服务架构。 但是，我们不想使用`aspnet.mdf`数据库; 相反，我们想要使用`SecurityTutorials.mdf`我们已经创建并添加到应用程序服务架构的数据库。 此修改，可以处于两种方式之一实现：
 
-- **指定的值 * * *`LocalSqlServer`* * * 中的连接字符串名称 * * *`Web.config`* * *。** 通过覆盖`LocalSqlServer`连接字符串名称值中的`Web.config`，我们可以使用注册的默认角色提供程序 (`AspNetSqlRoleProvider`)，并将其正确使用`SecurityTutorials.mdf`数据库。 有关此技术的详细信息，请参阅[Scott Guthrie](https://weblogs.asp.net/scottgu/)的博客文章[配置 ASP.NET 2.0 应用程序服务添加到使用 SQL Server 2000 或 SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)。
-- **添加新的已注册提供程序的类型 * * *`SqlRoleProvider`* * * 并配置其 * * *`connectionStringName`* * * 设置为指向 * * *`SecurityTutorials.mdf`* * * 数据库。** 这是我建议并在中使用的方法<a id="_msoanchor_7"> </a> [*在 SQL Server 中创建成员身份架构*](../membership/creating-the-membership-schema-in-sql-server-vb.md)教程中，也是如此 I will use 以及本教程中使用的方法。
+- <strong>为指定值</strong><strong>`LocalSqlServer`</strong><strong>中的连接字符串名称</strong><strong>`Web.config`</strong><strong>。</strong> 通过覆盖`LocalSqlServer`连接字符串名称值中的`Web.config`，我们可以使用注册的默认角色提供程序 (`AspNetSqlRoleProvider`)，并将其正确使用`SecurityTutorials.mdf`数据库。 有关此技术的详细信息，请参阅[Scott Guthrie](https://weblogs.asp.net/scottgu/)的博客文章[配置 ASP.NET 2.0 应用程序服务添加到使用 SQL Server 2000 或 SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)。
+- <strong>添加新的已注册提供程序类型的</strong><strong>`SqlRoleProvider`</strong><strong>并配置其</strong><strong>`connectionStringName`</strong><strong>设置以指向</strong><strong>`SecurityTutorials.mdf`</strong><strong>数据库。</strong> 这是我建议并在中使用的方法<a id="_msoanchor_7"> </a> [*在 SQL Server 中创建成员身份架构*](../membership/creating-the-membership-schema-in-sql-server-vb.md)教程中，也是如此 I will use 以及本教程中使用的方法。
 
-添加到以下的角色配置标记`Web.config`文件。 此标记注册新的提供程序名为`SecurityTutorialsSqlRoleProvider.`
+添加到以下的角色配置标记`Web.config`文件。 此标记注册新的提供程序名为 `SecurityTutorialsSqlRoleProvider.`
 
 [!code-xml[Main](creating-and-managing-roles-vb/samples/sample5.xml)]
 
@@ -187,7 +187,7 @@ GridView 显示一个标记为项，因为的唯一列的 GridView`AutoGenerateC
 
 显示与一个 GridView 的数据时，我愿意显式定义列，而不能将其隐式生成的 GridView。 通过显式定义列就可以更轻松地设置数据格式、 重新排列列，以及执行其他常见任务。 因此，让我们更新 GridView 的声明性标记，以便其列显式定义如此。
 
-通过设置 GridView 的启动`AutoGenerateColumns`属性设置为 False。 接下来，将为 TemplateField 添加到网格中，设置其`HeaderText`属性角色，并配置其`ItemTemplate`，使其显示数组的内容。 若要完成此操作，将添加一个名为的标签 Web 控件`RoleNameLabel`到`ItemTemplate`并将绑定其`Text`属性`Container.DataItem.`
+通过设置 GridView 的启动`AutoGenerateColumns`属性设置为 False。 接下来，将为 TemplateField 添加到网格中，设置其`HeaderText`属性角色，并配置其`ItemTemplate`，使其显示数组的内容。 若要完成此操作，将添加一个名为的标签 Web 控件`RoleNameLabel`到`ItemTemplate`并将绑定其`Text`属性 `Container.DataItem.`
 
 这些属性和`ItemTemplate`的内容可以设置以声明方式或通过 GridView 的字段对话框和编辑模板接口。 若要访问字段对话框中，单击 GridView 的智能标记中的编辑列链接。 接下来，取消选中自动生成字段复选框以设置`AutoGenerateColumns`属性设置为 False，并将为 TemplateField 添加到 GridView，设置其`HeaderText`到角色的属性。 若要定义`ItemTemplate`的内容，选择编辑模板选项从 GridView 的智能标记。 将标签 Web 控件拖到`ItemTemplate`，将其`ID`属性`RoleNameLabel`，并配置其数据绑定设置，以便其`Text`属性绑定到`Container.DataItem`。
 
@@ -215,8 +215,8 @@ GridView 显示一个标记为项，因为的唯一列的 GridView`AutoGenerateC
 
 用户可以创建新的角色并查看中的所有现有角色此时`ManageRoles.aspx`页。 让我们允许用户还删除角色。 `Roles.DeleteRole`方法有两个重载：
 
-- [`DeleteRole(roleName)`](https://msdn.microsoft.com/library/ek4sywc0.aspx)-删除角色*roleName*。 如果该角色包含一个或多个成员，将引发异常。
-- [`DeleteRole(roleName, throwOnPopulatedRole)`](https://msdn.microsoft.com/library/38h6wf59.aspx)-删除角色*roleName*。 如果*throwOnPopulateRole*是`True`，则如果角色包含一个或多个成员引发异常。 如果*throwOnPopulateRole*是`False`，然后是否它包含任何成员，或不删除此角色。 在内部，`DeleteRole(roleName)`方法调用`DeleteRole(roleName, True)`。
+- [`DeleteRole(roleName)`](https://msdn.microsoft.com/library/ek4sywc0.aspx) -删除角色*roleName*。 如果该角色包含一个或多个成员，将引发异常。
+- [`DeleteRole(roleName, throwOnPopulatedRole)`](https://msdn.microsoft.com/library/38h6wf59.aspx) -删除角色*roleName*。 如果*throwOnPopulateRole*是`True`，则如果角色包含一个或多个成员引发异常。 如果*throwOnPopulateRole*是`False`，然后是否它包含任何成员，或不删除此角色。 在内部，`DeleteRole(roleName)`方法调用`DeleteRole(roleName, True)`。
 
 `DeleteRole`方法将还会引发异常，如果*roleName*是`Nothing`或空字符串或如果*roleName*包含逗号。 如果*roleName*不在系统中，存在`DeleteRole`以无提示方式，失败，且不引发异常。
 
@@ -242,7 +242,7 @@ GridView 显示一个标记为项，因为的唯一列的 GridView`AutoGenerateC
 > 删除角色按钮不需要任何种类的用户从在删除角色之前的确认。 确认某项操作的最简单方法之一是通过客户端确认对话框。 有关此技术的详细信息，请参阅[删除时添加客户端确认](https://asp.net/learn/data-access/tutorial-42-vb.aspx)。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 许多 web 应用程序具有特定的授权规则或仅适用于特定类别的用户正在的页级功能。 例如，可能有一套只有管理员才能访问的网页。 而不是基于用户的用户定义这些授权规则，通常很多有用定义基于角色的规则。 即，而不是显式允许用户访问管理的网页，Scott 并 Jisun，更易于维护的方法是允许的管理员角色的成员才能访问这些页面中，然后为用户属于表示 Scott 和 Jisun管理员角色。
 
@@ -263,12 +263,12 @@ GridView 显示一个标记为项，因为的唯一列的 GridView`AutoGenerateC
 
 ### <a name="about-the-author"></a>关于作者
 
-Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
-本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者包括 Alicja Maziarz、 Suchi Banerjee 和 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者包括 Alicja Maziarz、 Suchi Banerjee 和 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](role-based-authorization-cs.md)
-[下一页](assigning-roles-to-users-vb.md)
+> [!div class="step-by-step"]
+> [上一页](role-based-authorization-cs.md)
+> [下一页](assigning-roles-to-users-vb.md)

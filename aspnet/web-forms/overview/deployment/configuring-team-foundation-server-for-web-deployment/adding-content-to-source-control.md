@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
-title: "将内容添加到源代码管理 |Microsoft 文档"
+title: 将内容添加到源代码管理 |Microsoft 文档
 author: jrjlee
-description: "本主题说明如何将内容添加到源代码管理中 Team Foundation Server (TFS) 2010年。 它描述如何将解决方案和项目添加到团队 proje..."
+description: 本主题说明如何将内容添加到源代码管理中 Team Foundation Server (TFS) 2010年。 它描述如何将解决方案和项目添加到团队 proje...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
 msc.type: authoredcontent
-ms.openlocfilehash: d46e2697d10ca27f8e08533350a6e7f2354b4a43
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c9c3a506d2745a6793661453a293732429d3e46e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-content-to-source-control"></a>将内容添加到源代码管理
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 03/15/2018
 > 本主题说明如何将内容添加到源代码管理中 Team Foundation Server (TFS) 2010年。 它介绍如何将解决方案和项目添加到团队项目在 TFS 中，并介绍如何将如框架或程序集的外部依赖关系添加到源代码管理。
 
 
-本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案 （&） #x 2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 的 web 应用程序Communication Foundation (WCF) 服务和数据库项目。
+本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案&#x2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
 ## <a name="task-overview"></a>任务概述
 
@@ -157,6 +157,6 @@ ms.lasthandoff: 03/15/2018
 
 有关在 TFS 中的源控件使用的更全面信息，请参阅[使用版本控制](https://msdn.microsoft.com/library/ms181368.aspx)。
 
->[!div class="step-by-step"]
-[上一页](creating-a-team-project-in-tfs.md)
-[下一页](configuring-a-tfs-build-server-for-web-deployment.md)
+> [!div class="step-by-step"]
+> [上一页](creating-a-team-project-in-tfs.md)
+> [下一页](configuring-a-tfs-build-server-for-web-deployment.md)

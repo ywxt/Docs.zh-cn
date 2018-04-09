@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
-title: "Web 部署在企业中的 |Microsoft 文档"
+title: Web 部署在企业中的 |Microsoft 文档
 author: jrjlee
-description: "本教程介绍如何迎接大量管理的企业级 web 应用程序到 devel 部署时遇到的难题..."
+description: 本教程介绍如何迎接大量管理的企业级 web 应用程序到 devel 部署时遇到的难题...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
 msc.type: authoredcontent
-ms.openlocfilehash: 6210d01f65bcadf8ae4209e372d5aac68861bd7a
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: fc463cb689f4f63a12788b80958c9fc8fe20119d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="web-deployment-in-the-enterprise"></a>企业中的 web 部署
 ====================
@@ -66,7 +66,7 @@ ms.lasthandoff: 03/15/2018
 
 本教程包括分为四个主要方面的主题。
 
-这些主题介绍参考解决方案 （#x 2014年; 联系人管理器解决方案） #x 2014;，并描述如何下载它并将其配置本地计算机上：
+这些主题还将介绍参考解决方案&#x2014;联系人管理器解决方案&#x2014;并描述如何下载它并将其配置本地计算机上：
 
 - [Contact Manager 解决方案](the-contact-manager-solution.md)
 - [设置 Contact Manager 解决方案](setting-up-the-contact-manager-solution.md)
@@ -104,5 +104,5 @@ ms.lasthandoff: 03/15/2018
 - [用于 Web 部署配置 Team Foundation Server](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md)。 本教程介绍如何配置 TFS 以支持各种部署方案，包括 CI 过程的一部分的自动的部署和手动触发的特定生成的部署。
 - [高级企业级 Web 部署](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md)。 本教程介绍如何完成各种更高级的部署任务，如自定义数据库部署为多个环境、 从部署中排除文件和文件夹以及在部署过程中将 web 应用程序脱机.
 
->[!div class="step-by-step"]
-[下一篇](the-contact-manager-solution.md)
+> [!div class="step-by-step"]
+> [下一篇](the-contact-manager-solution.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/vs-2005/code-coverage-of-automated-tests
-title: "代码覆盖率的自动测试 |Microsoft 文档"
+title: 代码覆盖率的自动测试 |Microsoft 文档
 author: rick-anderson
-description: "此视频演示如何使用代码覆盖率作为某个度量值用于确定如何有效我们的测试为 ASP.NET Web 应用程序。 在测试完成后具有 com..."
+description: 此视频演示如何使用代码覆盖率作为某个度量值用于确定如何有效我们的测试为 ASP.NET Web 应用程序。 在测试完成后具有 com...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/23/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/code-coverage-of-automated-tests
 msc.type: video
-ms.openlocfilehash: 77d1c199ef6f19786c6ba0c5d56966925510cf2a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 47f2ce5a75b52f6fc4cce9a9571f8cedbb90ce9e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="code-coverage-of-automated-tests"></a>自动测试的代码覆盖率
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （6 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/code-coverage-of-automated-tests)
 
->[!div class="step-by-step"]
-[上一页](measuring-the-business-value-of-ajax.md)
-[下一页](custom-extraction-rules-and-coded-web-tests.md)
+> [!div class="step-by-step"]
+> [上一页](measuring-the-business-value-of-ajax.md)
+> [下一页](custom-extraction-rules-and-coded-web-tests.md)

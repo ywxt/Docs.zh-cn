@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
-title: "生成与 ASP.NET Web API RESTful Api |Microsoft 文档"
+title: 生成与 ASP.NET Web API RESTful Api |Microsoft 文档
 author: rick-anderson
-description: "最近几年，它已变得明确 HTTP 并不只是为了提供 HTML 页面。 它也是一个功能强大的平台，用于生成 Web Api，使用几 o..."
+description: 最近几年，它已变得明确 HTTP 并不只是为了提供 HTML 页面。 它也是一个功能强大的平台，用于生成 Web Api，使用几 o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 49dcd86649ceb77cd5a02ebeb5d9d7b11ff4f344
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 320409cd395384a608a07307a56d18105d45de14
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="build-restful-apis-with-aspnet-web-api"></a>生成与 ASP.NET Web API RESTful Api
 ====================
@@ -25,12 +25,12 @@ ms.lasthandoff: 11/10/2017
 > 最近几年，它已变得明确 HTTP 并不只是为了提供 HTML 页面。 它也是一个功能强大的平台，用于生成 Web Api，使用少量的谓词 （GET、 POST 和等） 以及几个简单的概念类似于*Uri*和*标头*。 ASP.NET Web API 是一组组件，用于简化 HTTP 编程。 由于它构建基于 ASP.NET MVC 运行时，Web API 将自动处理 HTTP 低级别的传输详细的信息。 同时，Web API 自然公开 HTTP 编程模型。 事实上，Web api 的一个目标是为*不*抽象化 HTTP 的现实。 因此，Web API 是灵活且易于扩展。 在此动手实验中，你将使用 Web API 构建一个简单的 REST API 为联系人管理器应用程序。 你还将建立客户端使用该 API。 REST 体系结构样式已被证明是一种利用 HTTP 的有效方法，尽管它肯定不是唯一有效的 HTTP 方法。 联系人管理器将公开用于列出、 添加和删除联系人，以及其他基于 Rest。 本实验需要基本了解 HTTP，其余部分，并且假定你已基本了解 HTML、 JavaScript 和 jQuery。
 > 
 > > [!NOTE]
-> > ASP.NET Web 站点有专用于在 ASP.NET Web API 框架的区域[ [https://asp.net/web-api](https://asp.net/web-api)](https://asp.net/web-api)。 此站点将继续提供最新信息、 示例和新闻与 Web API，因此它经常检查如果你想要深入探讨创建可用于几乎任何设备或开发框架自定义 Web Api 的技巧。
+> > ASP.NET Web 站点有专用于在 ASP.NET Web API 框架的区域[ [ https://asp.net/web-api ](https://asp.net/web-api) ](https://asp.net/web-api)。 此站点将继续提供最新信息、 示例和新闻与 Web API，因此它经常检查如果你想要深入探讨创建可用于几乎任何设备或开发框架自定义 Web Api 的技巧。
 > > 
 > > ASP.NET Web API，类似于 ASP.NET MVC 4，具有很大的灵活性，以将服务层与允许你同时使用多个可用的依赖关系注入框架变得相当容易控制器分开。 没有很好的示例演示如何使用你可以下载它从 ASP.NET Web API 项目中的依赖关系注入 Ninject 的 MSDN 中[此处](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)。
 > 
 > 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)。
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)。
 
 
 <a id="Objectives"></a>
@@ -42,7 +42,7 @@ ms.lasthandoff: 11/10/2017
 - 从 HTML 客户端调用 API
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 完成本动手实验需要以下：
 
@@ -92,7 +92,7 @@ ms.lasthandoff: 11/10/2017
     ![创建新的 ASP.NET MVC 4.0 Web 应用程序项目](build-restful-apis-with-aspnet-web-api/_static/image1.png "创建新的 ASP.NET MVC 4.0 Web 应用程序项目")
 
     *创建新的 ASP.NET MVC 4.0 Web 应用程序项目*
-3. 在 ASP.NET MVC 4 项目的类型对话框中，选择**Web API**项目类型。 单击“确定”。
+3. 在 ASP.NET MVC 4 项目的类型对话框中，选择**Web API**项目类型。 单击 **“确定”**。
 
     ![指定 Web API 项目类型](build-restful-apis-with-aspnet-web-api/_static/image2.png "指定 Web API 项目类型")
 
@@ -172,7 +172,9 @@ ms.lasthandoff: 11/10/2017
     (代码段- *Web API 实验-Ex01-联系人类*)
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample2.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample2.cs)]
+~~~
 4. 在**ContactController**类中，选择 word**字符串**方法定义中**获取**方法和类型单词*联系人*。 中键入的单词后, 一个指示器将出现在单词的开头**联系人**。 可以按住**Ctrl**键和按句点 （.） 键或单击使用鼠标以打开代码编辑器中，以自动填充中的帮助对话框图标**使用**指令的模型命名空间。
 
     ![对于命名空间声明中使用 Intellisense 帮助](build-restful-apis-with-aspnet-web-api/_static/image12.png)
@@ -185,16 +187,16 @@ ms.lasthandoff: 11/10/2017
     [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample3.cs)]
 6. 按**F5**调试 web 应用程序在浏览器中的。 若要查看到 API 的响应输出所做的更改，请执行以下步骤。
 
-    1. 浏览器打开后，按**F12**如果开发人员工具还不打开。
-    2. 单击**网络**选项卡。
-    3. 按**启动捕获**按钮。
-    4. 添加 URL 后缀**/api/联系人**到地址栏，然后按 URL **Enter**密钥。
-    5. 按**转到详细视图**按钮。
-    6. 选择**响应正文**选项卡。你应看到表示联系人实例的数组的序列化的格式的 JSON 字符串。
+   1. 浏览器打开后，按**F12**如果开发人员工具还不打开。
+   2. 单击**网络**选项卡。
+   3. 按**启动捕获**按钮。
+   4. 添加 URL 后缀**/api/联系人**到地址栏，然后按 URL **Enter**密钥。
+   5. 按**转到详细视图**按钮。
+   6. 选择**响应正文**选项卡。你应看到表示联系人实例的数组的序列化的格式的 JSON 字符串。
 
-    ![JSON 序列化复杂的 Web API 方法调用的输出](build-restful-apis-with-aspnet-web-api/_static/image13.png "JSON 序列化复杂的 Web API 方法调用的输出")
+      ![JSON 序列化复杂的 Web API 方法调用的输出](build-restful-apis-with-aspnet-web-api/_static/image13.png "JSON 序列化复杂的 Web API 方法调用的输出")
 
-    *复杂的 Web API 方法调用的序列化的 JSON 输出*
+      *复杂的 Web API 方法调用的序列化的 JSON 输出*
 
 <a id="Ex1Task4"></a>
 
@@ -221,7 +223,9 @@ ms.lasthandoff: 11/10/2017
 4. 添加一条 using 指令至**ContactRepository.cs**文件以包括模型命名空间。
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample4.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample4.cs)]
+~~~
 5. 添加以下突出显示的代码**ContactRepository.cs**文件实现 GetAllContacts 方法。
 
     (代码段- *Web API 实验-Ex01-联系存储库*)
@@ -231,7 +235,9 @@ ms.lasthandoff: 11/10/2017
 7. 将以下代码添加到该文件的命名空间声明部分使用语句。
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample6.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample6.cs)]
+~~~
 8. 添加以下突出显示的代码**ContactController.cs**类添加一个私有字段来表示实例存储库，以便成员可以产生的类的其余部分使用的服务实现。
 
     (代码段-*的 Web API 实验-Ex01-联系控制器*)
@@ -244,9 +250,9 @@ ms.lasthandoff: 11/10/2017
     [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample8.cs)]
 10. 放置一个断点**ContactController**的**获取**方法定义。
 
-    ![将断点添加到联系人控制器](build-restful-apis-with-aspnet-web-api/_static/image17.png "将断点添加到联系人控制器")
+   ![将断点添加到联系人控制器](build-restful-apis-with-aspnet-web-api/_static/image17.png "将断点添加到联系人控制器")
 
-    *将断点添加到联系人控制器*
+   *将断点添加到联系人控制器*
 11. 按 **F5** 运行该应用程序。
 12. 当浏览器打开后时，按**F12**打开开发人员工具。
 13. 单击**网络**选项卡。
@@ -254,10 +260,10 @@ ms.lasthandoff: 11/10/2017
 15. 追加后缀的地址栏中的 URL **/api/联系人**按**Enter**加载 API 控制器。
 16. Visual Studio 2012 应会一次中断**获取**方法开始执行。
 
-    ![Get 方法中的重大](build-restful-apis-with-aspnet-web-api/_static/image18.png "重大内 Get 方法")
+   ![Get 方法中的重大](build-restful-apis-with-aspnet-web-api/_static/image18.png "重大内 Get 方法")
 
-    *Get 方法中的重大*
-17. 按**F5**以继续。
+   *Get 方法中的重大*
+17. 按 F5 继续。
 18. 返回到 Internet Explorer 如果尚不具有焦点。 请注意网络捕获窗口。
 
     ![网络中显示的 Web API 调用的结果的 Internet 资源管理器视图](build-restful-apis-with-aspnet-web-api/_static/image19.png "网络中显示的 Web API 调用的结果的 Internet 资源管理器视图")
@@ -287,12 +293,12 @@ ms.lasthandoff: 11/10/2017
 1. 运行**Visual Studio 2012 Express for Web**，为此请转到**启动**和类型**VS Express for Web**然后按**Enter**。
 2. 打开**开始**解决方案位于**源/Ex02-ReadWriteWebAPI/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 3. 打开**Services/ContactRepository.cs**文件。
 
 <a id="Ex2Task2"></a>
@@ -341,21 +347,25 @@ ms.lasthandoff: 11/10/2017
 1. 打开**Visual Studio 2012 Express for Web**如果尚未打开。
 2. 打开**开始**解决方案位于**源/Ex03-ConsumingWebAPI/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
-    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 3. 打开**Index.cshtml**文件位于**视图/主页**文件夹。
 4. 在 div 元素的 HTML 代码替换 id**正文**以便其类似下列代码所示。
 
 
-    [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample13.html)]
+~~~
+[!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample13.html)]
+~~~
 5. 在执行对 Web API 的 HTTP 请求的文件的底部添加以下 Javascript 代码。
 
 
-    [!code-cshtml[Main](build-restful-apis-with-aspnet-web-api/samples/sample14.cshtml)]
+~~~
+[!code-cshtml[Main](build-restful-apis-with-aspnet-web-api/samples/sample14.cshtml)]
+~~~
 6. 打开**ContactController.cs**如果尚未打开文件。
 7. 上放置一个断点**获取**方法**ContactController**类。
 
@@ -391,12 +401,16 @@ ms.lasthandoff: 11/10/2017
     (代码段- *Web API 实验室-Ex03-Post 方法*)
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample15.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample15.cs)]
+~~~
 3. 打开**Index.cshtml**文件在 Visual Studio 中，如果未打开。
 4. 将以下 HTML 代码之后添加在上一任务中的无序列表添加到文件。
 
 
-    [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample16.html)]
+~~~
+[!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample16.html)]
+~~~
 5. 在底部的文档的脚本元素中，添加以下突出显示的代码，以处理按钮单击事件，将将数据发布到 Web API 使用的 HTTP POST 调用。
 
     [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample17.html)]
@@ -414,14 +428,14 @@ ms.lasthandoff: 11/10/2017
     *正在从客户端发送到 Web API 的联系人对象*
 10. 单步执行在调试器中直到方法**响应**创建变量。 在中检查**局部变量**在调试器中的窗口中，你将看到已设置了所有属性。
 
-    ![以下在调试器中的创建的响应](build-restful-apis-with-aspnet-web-api/_static/image26.png "响应后在调试器中的创建")
+   ![以下在调试器中的创建的响应](build-restful-apis-with-aspnet-web-api/_static/image26.png "响应后在调试器中的创建")
 
-    *响应后在调试器中的创建*
+   *响应后在调试器中的创建*
 11. 如果按**F5**或单击**继续**请求将在调试器中完成。 新的联系人后切换回浏览器时，已添加到存储的联系人列表**ContactRepository**实现。
 
-    ![浏览器反映成功创建新的联系人实例](build-restful-apis-with-aspnet-web-api/_static/image27.png "浏览器反映成功创建新的联系人实例")
+   ![浏览器反映成功创建新的联系人实例](build-restful-apis-with-aspnet-web-api/_static/image27.png "浏览器反映成功创建新的联系人实例")
 
-    *浏览器反映成功创建新的联系人实例*
+   *浏览器反映成功创建新的联系人实例*
 
 > [!NOTE]
 > 此外，你可以部署此应用程序对 Azure 以下[附录 c： 发布 ASP.NET MVC 4 应用程序使用 Web Deploy](#AppendixC)。
@@ -430,11 +444,11 @@ ms.lasthandoff: 11/10/2017
 * * *
 
 <a id="Summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 此实验室中已引入到新的 ASP.NET Web API 框架和使用框架的 RESTful Web Api 的实现。 从这里，你可以创建新的存储库，它方便了数据持久性使用任意数量的机制，并连接该服务而不是作为示例在本实验中提供的简单一个。 Web API 支持大量的其他功能，如启用从任何支持 HTTP 和 JSON 或 XML 的语言中编写的非 HTML 客户端的通信。 承载 Web API 典型 web 应用程序之外的能力也是有可能，以及是创建您自己的序列化格式的功能。
 
-ASP.NET Web 站点有专用于在 ASP.NET Web API 框架的区域[ [https://asp.net/web-api](https://asp.net/web-api)](https://asp.net/web-api)。 此站点将继续提供最新信息、 示例和新闻与 Web API，因此它经常检查如果你想要深入探讨创建可用于几乎任何设备或开发框架自定义 Web Api 的技巧。
+ASP.NET Web 站点有专用于在 ASP.NET Web API 框架的区域[ [ https://asp.net/web-api ](https://asp.net/web-api) ](https://asp.net/web-api)。 此站点将继续提供最新信息、 示例和新闻与 Web API，因此它经常检查如果你想要深入探讨创建可用于几乎任何设备或开发框架自定义 Web Api 的技巧。
 
 <a id="AppendixA"></a>
 
@@ -494,7 +508,7 @@ ASP.NET Web 站点有专用于在 ASP.NET Web API 框架的区域[ [https://asp.
 
 你可以安装**Microsoft Visual Studio Express 2012 for Web**或另一个&quot;Express&quot;版本使用 **[Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)**. 以下说明将指导你完成安装所需的步骤*Visual studio Express 2012 for Web*使用*Microsoft Web 平台安装程序*。
 
-1. 转到[ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; *Visual Studio Express 2012 for Web 与 Azure SDK*&quot;。
+1. 转到[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; <em>Visual Studio Express 2012 for Web 与 Azure SDK</em>&quot;。
 2. 单击**立即安装**。 如果你没有**Web 平台安装程序**将重定向以下载并请先安装它。
 3. 一次**Web 平台安装程序**处于打开状态，单击**安装**以启动安装程序。
 
@@ -638,14 +652,14 @@ ASP.NET Web 站点有专用于在 ASP.NET Web API 框架的区域[ [https://asp.
     *Web 部署配置*
 5. 配置数据库连接，如下所示：
 
-    - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:*前缀。
-    - 在**用户名**键入您的服务器管理员登录名。
-    - 在**密码**键入服务器管理员登录密码。
-    - 键入新的数据库名称，例如： *MVC4SampleDB*。
+   - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:*前缀。
+   - 在**用户名**键入您的服务器管理员登录名。
+   - 在**密码**键入服务器管理员登录密码。
+   - 键入新的数据库名称，例如： *MVC4SampleDB*。
 
-    ![配置目标连接字符串](build-restful-apis-with-aspnet-web-api/_static/image55.png "配置目标连接字符串")
+     ![配置目标连接字符串](build-restful-apis-with-aspnet-web-api/_static/image55.png "配置目标连接字符串")
 
-    *配置目标连接字符串*
+     *配置目标连接字符串*
 6. 然后单击“确定” 。 当系统提示创建数据库单击**是**。
 
     ![创建数据库](build-restful-apis-with-aspnet-web-api/_static/image56.png "创建数据库字符串")

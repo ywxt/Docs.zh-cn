@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
-title: "第 3 部分： 视图和 Viewmodel |Microsoft 文档"
+title: 第 3 部分： 视图和 Viewmodel |Microsoft 文档
 author: jongalloway
-description: "本系列教程详细介绍所有生成 ASP.NET MVC 音乐商店示例应用程序所采取的步骤。 第 3 部分介绍视图和 Viewmodel。"
+description: 本系列教程详细介绍所有生成 ASP.NET MVC 音乐商店示例应用程序所采取的步骤。 第 3 部分介绍视图和 Viewmodel。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 5b38f88283c5d2d93f0bab283dbd9451855d95e3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 497c2898db2e03b0650982c3ad1e6b5ac5ca639d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-3-views-and-viewmodels"></a>第 3 部分： 视图和 Viewmodel
 ====================
@@ -262,6 +262,6 @@ Html.ActionLink() 有几个不同的重载来允许指定尽可能多的信息�
 [!code-html[Main](mvc-music-store-part-3/samples/sample22.html)]
 
 
->[!div class="step-by-step"]
-[上一页](mvc-music-store-part-2.md)
-[下一页](mvc-music-store-part-4.md)
+> [!div class="step-by-step"]
+> [上一页](mvc-music-store-part-2.md)
+> [下一页](mvc-music-store-part-4.md)

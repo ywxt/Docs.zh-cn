@@ -1,7 +1,7 @@
 ---
-title: "使用 ASP.NET Core 中的 Bower"
+title: 管理 ASP.NET Core 中的 Bower 的客户端包
 author: rick-anderson
-description: "管理 Bower 的客户端包。"
+description: 管理 Bower 的客户端包。
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: 67695843846cfaf1619db11a7bffcc65802e0f69
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 81244cfb71194876071c64899d627c296aad3802
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>管理 ASP.NET Core 中的 Bower 的客户端包
 
@@ -39,7 +39,7 @@ ms.lasthandoff: 03/02/2018
 
 * 在**Bower:\<项目名称\>**窗口中，单击"浏览"选项卡，并输入，然后筛选包列表`font-awesome`的搜索框中：
 
- ![管理 bower 包](bower/_static/manage-bower-packages.png)
+  ![管理 bower 包](bower/_static/manage-bower-packages.png)
 
 * 确认"保存更改为*bower.json*"复选框已选中。 从下拉列表中选择一个版本，然后单击**安装**按钮。 **输出**窗口显示的安装详细信息。
 
@@ -100,9 +100,9 @@ Bower 使用[语义版本控制](http://semver.org/)来组织依赖关系。 语
 
 * 保存*bower.json*文件。
 
- 验证该项目包括*bootstrap*和*jQuery*中的目录*wwwroot/lib*。 Bower 使用*.bowerrc*文件以安装中的资产*wwwroot/lib*。
+  验证该项目包括*bootstrap*和*jQuery*中的目录*wwwroot/lib*。 Bower 使用*.bowerrc*文件以安装中的资产*wwwroot/lib*。
 
- 注意:"管理 Bower 包"UI 提供手动文件编辑的替代方法。
+  注意:"管理 Bower 包"UI 提供手动文件编辑的替代方法。
 
 ### <a name="enable-static-files"></a>启用静态文件
 
@@ -117,10 +117,10 @@ Bower 使用[语义版本控制](http://semver.org/)来组织依赖关系。 语
 
 * 添加一个名为的新 HTML 页*Index.html*到*wwwroot*文件夹。 注意： 你必须将添加到的 HTML 文件*wwwroot*文件夹。 默认情况下，静态内容无法提供外部*wwwroot*。 请参阅[使用静态文件](xref:fundamentals/static-files)有关详细信息。
 
- 内容替换*Index.html*替换为以下标记：
+  内容替换*Index.html*替换为以下标记：
 
 [!code-html[](bower/sample/Index.html)]
 
 * 运行应用程序并导航到`http://localhost:<port>/Index.html`。 或者，使用*Index.html*打开，按`Ctrl+Shift+W`。 验证应用 jumbotron 样式，jQuery 代码响应时单击该按钮，以及启动按钮更改状态。
 
- ![应用的 jumbotron 样式](bower/_static/jumbotron.png)
+  ![应用的 jumbotron 样式](bower/_static/jumbotron.png)

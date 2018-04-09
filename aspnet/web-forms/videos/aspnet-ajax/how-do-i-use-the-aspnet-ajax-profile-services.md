@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-profile-services
-title: "[如何:]使用 ASP.NET AJAX 配置文件服务？ | Microsoft Docs"
+title: '[如何:]使用 ASP.NET AJAX 配置文件服务？ | Microsoft Docs'
 author: rick-anderson
-description: "ASP.NET 2.0 引入了与可以存储每个用户的 ASP.NET Web 应用程序的详细信息的配置文件属性。 ASP.NET AJAX 配置文件服务允许..."
+description: ASP.NET 2.0 引入了与可以存储每个用户的 ASP.NET Web 应用程序的详细信息的配置文件属性。 ASP.NET AJAX 配置文件服务允许...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-profile-services
 msc.type: video
-ms.openlocfilehash: 508ce4d3f3419737a54484e7dcd18dd5ac88353d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d8104502257a80beb1295edee6bfaee9ff262df1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-aspnet-ajax-profile-services"></a>[如何:]使用 ASP.NET AJAX 配置文件服务？
 ====================
@@ -26,6 +26,6 @@ ASP.NET 2.0 引入[配置文件属性](https://msdn.microsoft.com/library/at64sh
 
 [&#9654;观看视频 （11 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-profile-services)
 
->[!div class="step-by-step"]
-[上一页](how-do-i-use-other-javascript-user-interface-libraries-with-aspnet-ajax.md)
-[下一页](how-do-i-debug-aspnet-ajax-applications-using-visual-studio-2005.md)
+> [!div class="step-by-step"]
+> [上一页](how-do-i-use-other-javascript-user-interface-libraries-with-aspnet-ajax.md)
+> [下一页](how-do-i-debug-aspnet-ajax-applications-using-visual-studio-2005.md)

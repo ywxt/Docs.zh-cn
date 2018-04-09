@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
-title: "部署 Web 包 |Microsoft 文档"
+title: 部署 Web 包 |Microsoft 文档
 author: jrjlee
-description: "本主题介绍如何在您可以发布 web 部署包到远程服务器通过使用 Internet 信息服务 (IIS) Web 部署工具 (Web..."
+description: 本主题介绍如何在您可以发布 web 部署包到远程服务器通过使用 Internet 信息服务 (IIS) Web 部署工具 (Web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: cd2bfa07262155b68ac4605fc7e9748d276d3193
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 5d3af0fdcc6e7ae20194ba658e0cf72ad22c1234
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-web-packages"></a>部署 Web 包
 ====================
@@ -43,10 +43,10 @@ ms.lasthandoff: 03/15/2018
 
 运行 [*项目名称*]*。 deploy.cmd*文件是部署 web 包的最简单方法。 具体而言，使用*。 deploy.cmd*文件提供通过直接使用 MSDeploy.exe 以下优势：
 
-- 不需要指定的位置的 web 部署包 （&） #x 2014; *。 deploy.cmd*文件已知道其所在。
-- 不需要指定的位置*SetParameters.xml*文件 （&) #x 2014; *。 deploy.cmd*文件已知道其所在。
-- 不需要指定源和目标 MSDeploy 提供程序 （&） #x 2014; *。 deploy.cmd*文件已知道要使用的值。
-- 不需要指定 MSDeploy 操作设置 （&） #x 2014; *。 deploy.cmd*文件需要将常需要的值自动添加到 MSDeploy.exe 命令。
+- 不需要指定的 web 部署包的位置&#x2014; *。 deploy.cmd*文件已知道其所在。
+- 不需要指定的位置*SetParameters.xml*文件&#x2014; *。 deploy.cmd*文件已知道其所在。
+- 不需要指定源和目标 MSDeploy 提供程序&#x2014; *。 deploy.cmd*文件已知道要使用的值。
+- 不需要指定 MSDeploy 操作设置&#x2014; *。 deploy.cmd*文件需要将常需要的值自动添加到 MSDeploy.exe 命令。
 
 在使用之前*。 deploy.cmd*文件将部署 web 包，您应该确保：
 
@@ -92,7 +92,7 @@ ms.lasthandoff: 03/15/2018
 在此示例中：
 
 - **/Y**标志指示你想要实际部署包，而不是执行一个试用版运行。
-- **/M**标志指示你想要将包部署到名为 TESTWEB1 的服务器。 此值，从 MSDeploy.exe 将尝试将包部署到 http://TESTWEB1/MSDeployAgentService 的 Web 部署远程代理服务。
+- **/M**标志指示你想要将包部署到名为 TESTWEB1 的服务器。 此值，从 MSDeploy.exe 将尝试将包部署到的 Web 部署远程代理服务http://TESTWEB1/MSDeployAgentService。
 - **/A**标志指示你想要使用 NTLM 身份验证。 在这种情况下，你不必指定用户名和密码。
 
 为了说明如何使用*。 deploy.cmd*文件来简化部署过程，看一看获取生成并执行运行时的 MSDeploy.exe 命令*ContactManager.Mvc.deploy.cmd*使用上面所示的选项。
@@ -105,7 +105,7 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="using-msdeployexe"></a>使用 MSDeploy.exe
 
-尽管使用*。 deploy.cmd*文件通常可简化部署过程，有一些情况下直接使用 MSDeploy.exe 更可取的方法时。 例如:
+尽管使用*。 deploy.cmd*文件通常可简化部署过程，有一些情况下直接使用 MSDeploy.exe 更可取的方法时。 例如：
 
 - 如果你想要将部署到 Web 部署处理程序中作为非管理员用户，则无法使用*。 deploy.cmd*文件。 这是因为 Web Deploy 2.0 中的 bug 下所述**终结点注意事项**。
 - 如果你想要手动切换不同*SetParameters.xml*不同位置中的文件，你可能希望直接使用 MSDeploy.exe。
@@ -117,12 +117,12 @@ ms.lasthandoff: 03/15/2018
 - A **– dest**参数可指示在何处你的数据到。
 - A **– 谓词**参数可指示[操作](https://technet.microsoft.com/library/dd568989(WS.10).aspx)你想要执行。
 
-MSDeploy.exe 依赖于[Web Deploy 提供程序](https://technet.microsoft.com/library/dd569040(WS.10).aspx)处理源和目标数据。 Web 部署包括大量的表示范围内的应用程序和数据源，它就能使用 （&） #x 2014年的提供程序; 例如，有提供程序的 SQL Server 数据库、 IIS web 服务器、 证书、 全局程序集缓存 (GAC) 程序集，各种不同的配置文件和很多其他类型的数据。 这两个**– 源**参数和**– dest**参数必须指定一个提供程序，在窗体中**– 源**: [*providerName*] = [*位置*]。 当你要部署到 IIS 网站的 web 包时，您应使用这些值：
+MSDeploy.exe 依赖于[Web Deploy 提供程序](https://technet.microsoft.com/library/dd569040(WS.10).aspx)处理源和目标数据。 Web 部署包括大量的表示范围内的应用程序和数据源，它就能使用的提供程序&#x2014;例如，有提供程序的 SQL Server 数据库、 IIS web 服务器、 证书、 全局程序集缓存 (GAC) 程序集，各种不同的配置文件和很多其他类型的数据。 这两个**– 源**参数和**– dest**参数必须指定一个提供程序，在窗体中**– 源**: [*providerName*] = [*位置*]。 当你要部署到 IIS 网站的 web 包时，您应使用这些值：
 
-- **– 源**提供程序始终[包](https://technet.microsoft.com/library/dd569019(WS.10).aspx)。 例如:
+- **– 源**提供程序始终[包](https://technet.microsoft.com/library/dd569019(WS.10).aspx)。 例如：
 
     [!code-console[Main](deploying-web-packages/samples/sample4.cmd)]
-- **– Dest**提供程序始终[自动](https://technet.microsoft.com/library/dd569016(WS.10).aspx)。例如:
+- **– Dest**提供程序始终[自动](https://technet.microsoft.com/library/dd569016(WS.10).aspx)。例如：
 
     [!code-console[Main](deploying-web-packages/samples/sample5.cmd)]
 - **– 谓词**始终**同步**。
@@ -213,6 +213,6 @@ MSDeploy.exe 依赖于[Web Deploy 提供程序](https://technet.microsoft.com/li
 
 有关如何创建和参数化 web 部署包的指南，请参阅[生成和打包 Web 应用程序项目](building-and-packaging-web-application-projects.md)和[Web 包部署的配置参数](configuring-parameters-for-web-package-deployment.md)。 有关如何生成和部署 web 包从 Team Foundation Server (TFS) 实例的指南，请参阅[自动 Web 部署配置 Team Foundation Server](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md)。 有关如何自定义以及解决在部署过程的信息，请参阅[排除文件和文件夹从部署](../advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment.md)。
 
->[!div class="step-by-step"]
-[上一页](configuring-parameters-for-web-package-deployment.md)
-[下一页](deploying-database-projects.md)
+> [!div class="step-by-step"]
+> [上一页](configuring-parameters-for-web-package-deployment.md)
+> [下一页](deploying-database-projects.md)

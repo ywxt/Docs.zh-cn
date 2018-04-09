@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
-title: "第 1 部分: 概述和文件-> 新建项目 |Microsoft 文档"
+title: '第 1 部分: 概述和文件-> 新建项目 |Microsoft 文档'
 author: jongalloway
-description: "本系列教程详细介绍所有生成 ASP.NET MVC 音乐商店示例应用程序所采取的步骤。 第 1 部分介绍如何概述和文件-> 新项目。"
+description: 本系列教程详细介绍所有生成 ASP.NET MVC 音乐商店示例应用程序所采取的步骤。 第 1 部分介绍如何概述和文件-> 新项目。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 1e3373a21c7d1766cfad390a7ba68b1363d8d895
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2082927d18c95563893da199d60347fa15952446
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-1-overview-and-file-new-project"></a>第 1 部分: 概述和文件-> 新建项目
 ====================
@@ -115,15 +115,15 @@ MVC 音乐商店是，从而引入并说明如何使用 ASP.NET MVC 和 Visual W
 
 ASP.NET MVC 利用的一些基本的命名约定的文件夹名称：
 
-| **文件夹** | **目的** |
+| **Folder** | **目的** |
 | --- | --- |
-| **/ 控制器** | 控制器响应输入从浏览器时，决定要处理的问题，并向用户返回响应的内容。 |
-| **/ 视图** | 视图保存我们 UI 模板 |
-| **/ 模型** | 模型保存和操作数据 |
-| **/ 内容** | 此文件夹包含我们的图像、 CSS 和任何其他静态内容 |
-| **/ 脚本** | 此文件夹包含我们 JavaScript 文件 |
+| **/Controllers** | 控制器响应输入从浏览器时，决定要处理的问题，并向用户返回响应的内容。 |
+| **/Views** | 视图保存我们 UI 模板 |
+| **/Models** | 模型保存和操作数据 |
+| **/Content** | 此文件夹包含我们的图像、 CSS 和任何其他静态内容 |
+| **/Scripts** | 此文件夹包含我们 JavaScript 文件 |
 
 因为默认情况下的 ASP.NET MVC framework 使用"配置的约定"方法，并使基于文件夹命名约定某些默认假设即使在空的 ASP.NET MVC 应用程序中包含这些文件夹。 例如，控制器看起来的 Views 文件夹中视图的默认情况下您无需显式指定此设置在代码中。 默认约定仍坚持减少的代码需要编写，还可使其便于其他开发人员了解你的项目。 我们将介绍这些约定详细构建我们的应用程序。
 
->[!div class="step-by-step"]
-[下一篇](mvc-music-store-part-2.md)
+> [!div class="step-by-step"]
+> [下一篇](mvc-music-store-part-2.md)

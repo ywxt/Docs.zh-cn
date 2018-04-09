@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb
-title: "窗体身份验证 (VB) 的概述 |Microsoft 文档"
+title: 窗体身份验证 (VB) 的概述 |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将转而从单纯讨论的实现;具体而言，我们将了解实现窗体身份验证。 Web 应用程序 w..."
+description: 在本教程中我们将转而从单纯讨论的实现;具体而言，我们将了解实现窗体身份验证。 Web 应用程序 w...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 90bcff91d0642e6af66f43fd807b253cc516d277
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6482b10a470b50a1fc6f163ee2d59682e83f5a2b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-forms-authentication-vb"></a>窗体身份验证 (VB) 的概述
 ====================
@@ -444,7 +444,7 @@ LoginView 的模板可以定义从设计器或声明性的标记。 从 Visual S
 > 我建议你自定义 Logout.aspx 页后，可以隐藏母版页的 LoginContent ContentPlaceHolder （例如，我们为 Login.aspx 在步骤 4 中所做的那样）。 原因是因为由 LoginStatus 控件呈现登录 LinkButton (Hello 下, 一个陌生人) 将用户发送到 ReturnUrl 查询字符串参数中传递的当前 URL 的登录页。 简单地说，如果已注销的用户单击此 LoginStatus 登录 LinkButton，然后登录，则他们将被重定向回 Logout.aspx，无法将用户轻松地混淆。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中我们开始使用窗体身份验证工作流的检查，然后打开到 ASP.NET 应用程序中实现窗体身份验证。 窗体身份验证采用 FormsAuthenticationModule，它具有以下两项职责： 标识用户根据其窗体身份验证票证，并将未经授权的用户重定向到登录页。
 
@@ -470,12 +470,12 @@ LoginView 的模板可以定义从设计器或声明性的标记。 从 Visual S
 
 ### <a name="about-the-author"></a>关于作者
 
-Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者包括 Alicja Maziarz、 John Suru 和 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)。
 
->[!div class="step-by-step"]
-[上一页](security-basics-and-asp-net-support-vb.md)
-[下一页](forms-authentication-configuration-and-advanced-topics-vb.md)
+> [!div class="step-by-step"]
+> [上一页](security-basics-and-asp-net-support-vb.md)
+> [下一页](forms-authentication-configuration-and-advanced-topics-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
-title: "创建与 Web API 2 OData v3 终结点 |Microsoft 文档"
+title: 创建与 Web API 2 OData v3 终结点 |Microsoft 文档
 author: MikeWasson
-description: "开放式数据协议 (OData) 是 web 数据访问协议。 OData 提供统一的方式来构造数据、 查询的数据，以及处理数据..."
+description: 开放式数据协议 (OData) 是 web 数据访问协议。 OData 提供统一的方式来构造数据、 查询的数据，以及处理数据...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: 33fe4d764bf9bf64c852f1269255925b5cc42536
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 227faacd3f42731e08a4cd2b71075776309961b6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>创建与 Web API 2 OData v3 终结点
 ====================
@@ -150,7 +150,7 @@ EDM 是一个抽象模型的数据。 EDM 用于创建元数据文档并定义�
 
 [!code-csharp[Main](creating-an-odata-endpoint/samples/sample4.cs)]
 
-第一个参数是路由的友好名称。 你的服务的客户端不会看到此名称。 第二个参数是终结点的 URI 前缀。 给定此代码，Products 实体集的 URI 是 http://*主机名*  /odata/产品。 你的应用程序可以具有多个 OData 终结点。 对于每个终结点，调用**MapODataRoute**提供唯一的路由名称和唯一的 URI 前缀。
+第一个参数是路由的友好名称。 你的服务的客户端不会看到此名称。 第二个参数是终结点的 URI 前缀。 给定此代码，Products 实体集的 URI 是 http://<em>主机名</em>  /odata/产品。 你的应用程序可以具有多个 OData 终结点。 对于每个终结点，调用<strong>MapODataRoute</strong>提供唯一的路由名称和唯一的 URI 前缀。
 
 <a id="seed-db"></a>
 ## <a name="seed-the-database-optional"></a>种子数据库 （可选）

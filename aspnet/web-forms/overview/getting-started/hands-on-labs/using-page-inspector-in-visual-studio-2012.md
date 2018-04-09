@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012
-title: "使用 Page Inspector 在 Visual Studio 2012 |Microsoft 文档"
+title: 使用 Page Inspector 在 Visual Studio 2012 |Microsoft 文档
 author: rick-anderson
-description: "在此动手实验中，你会发现新增工具，可查找和修复 Visual Studio-Page Inspector 中的 web 页问题。 Page Inspector 是一个新的工具 b..."
+description: 在此动手实验中，你会发现新增工具，可查找和修复 Visual Studio-Page Inspector 中的 web 页问题。 Page Inspector 是一个新的工具 b...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 1a9e093faae2cea1c27c582e22aebc908f78addb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 052d29dba170d403c2b1c1667c55fc2c34045615
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-page-inspector-in-visual-studio-2012"></a>使用 Page Inspector 在 Visual Studio 2012
 ====================
@@ -38,7 +38,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 此实验室将引导你完成的增强功能和前面所述通过将细微的更改应用于源文件夹中提供的示例 Web 应用程序的新功能。
 > 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)。
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)。
 
 
 <a id="Objectives"></a>
@@ -55,7 +55,7 @@ ms.lasthandoff: 11/10/2017
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 你必须具有要完成本实验的以下项：
 
@@ -96,12 +96,12 @@ ms.lasthandoff: 11/10/2017
 
 1. 打开**开始**解决方案位于**源/Ex1-MVC4/开始/**文件夹。
 
-    1. 你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 2. 在解决方案资源管理器，找到**Index.cshtml**下查看**/视图/主页**项目文件夹，右键单击它，然后选择**在 Page Inspector 中的查看**。
 
     ![选择要在 Page Inspector 中预览的文件](using-page-inspector-in-visual-studio-2012/_static/image1.png "选择要在 Page Inspector 中预览的文件")
@@ -121,14 +121,14 @@ ms.lasthandoff: 11/10/2017
 
     你将看到正在撰写索引页的所有源文件。 此功能可帮助标识一眼的所有元素，尤其是当你正在使用分部视图和模板。 请注意，你也可以打开每个文件是否你单击的链接。
 
-    ![-文件的选项卡](using-page-inspector-in-visual-studio-2012/_static/image3.png)
+    ![The-Files-tab](using-page-inspector-in-visual-studio-2012/_static/image3.png)
 
     *文件选项卡*
 5. 单击**切换检查模式下**按钮，位于左侧的选项卡。
 
     此工具会让你选择页上的任何元素，并查看其 HTML 和 Razor 代码。
 
-    ![切换检查模式按钮](using-page-inspector-in-visual-studio-2012/_static/image4.png)
+    ![Toggle-Inspection-Mode-button](using-page-inspector-in-visual-studio-2012/_static/image4.png)
 
     *切换检查模式按钮*
 6. Page Inspector 浏览器中，将鼠标指针移动到页元素。 将鼠标指针移过所呈现的任何的页面部分，而显示的元素类型，并在 Visual Studio 编辑器中突出显示相应的源标记或代码。
@@ -221,7 +221,7 @@ ms.lasthandoff: 11/10/2017
 2. 选择切换检查模式下，单击要关闭，但不是在注册链接以打开其代码。
 
     请注意，链接的源代码位于 **\_LoginPartial.cshtml**文件，不 Index.cshtml 也不\_Layout.cshtml，可能会在第一个位置中查找位置。 你具有已直接放在正确的源文件。
-3. 在**样式**选项卡上，找到并单击 **<section> #login</section>** 项，它是一个 HTML 容器，这些链接。
+3. 在**样式**选项卡上，找到并单击**<section> #login</section>**项，它是一个 HTML 容器，这些链接。
 
     请注意， **#login**样式自动位于**Site.css**单击后。 此外，代码现在已突出显示。
 
@@ -242,7 +242,7 @@ ms.lasthandoff: 11/10/2017
     ![更新后的网页](using-page-inspector-in-visual-studio-2012/_static/image18.png)
 
     *更新后的网页*
-6. 使用检查模式下，选择任一 **&lt;li&gt;** 包含的项&quot;注册&quot;和&quot;登录&quot;链接。 然后，单击**&lt;部分&gt;#login**项以访问**Styles.css**代码。
+6. 使用检查模式下，选择任一**&lt;li&gt;**包含的项&quot;注册&quot;和&quot;登录&quot;链接。 然后，单击**&lt;部分&gt;#login**项以访问**Styles.css**代码。
 
     ![查找样式](using-page-inspector-in-visual-studio-2012/_static/image19.png "查找样式")
 
@@ -287,12 +287,12 @@ ms.lasthandoff: 11/10/2017
 
 1. 打开**开始**解决方案位于**源/Ex2-WebForms/开始/**文件夹。
 
-    1. 你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
-    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
-    3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
+   1. 你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
+   2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
+   3. 最后，通过单击生成解决方案**生成** | **生成解决方案**。
 
-    > [!NOTE]
-    > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
+      > [!NOTE]
+      > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 2. 在解决方案资源管理器，找到**Default.aspx**页上，右键单击它并选择**在 Page Inspector 中的查看**。
 
     ![使用 Page Inspector 打开 Default.aspx](using-page-inspector-in-visual-studio-2012/_static/image24.png "使用 Page Inspector 打开 Default.aspx")
@@ -433,7 +433,7 @@ ms.lasthandoff: 11/10/2017
     ![更新后的网页](using-page-inspector-in-visual-studio-2012/_static/image41.png)
 
     *更新后的网页*
-6. 使用检查模式下，选择任一 **&lt;li&gt;** 包含的项&quot;注册&quot;和&quot;登录&quot;链接。 然后，单击**&lt;部分&gt;#login**项以访问**Styles.css**代码。
+6. 使用检查模式下，选择任一**&lt;li&gt;**包含的项&quot;注册&quot;和&quot;登录&quot;链接。 然后，单击**&lt;部分&gt;#login**项以访问**Styles.css**代码。
 
     ![查找样式](using-page-inspector-in-visual-studio-2012/_static/image42.png "查找样式")
 
@@ -465,7 +465,7 @@ ms.lasthandoff: 11/10/2017
 <a id="Summary"></a>
 
 <a id="Summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 通过完成本动手实验，您已了解到如何使用 Page Inspector 而无需重新生成并运行网站的浏览器中预览 Web 应用程序。 此外，您已了解到如何快速查找和修复 bug 的源代码中呈现的输出直接访问。
 
@@ -476,7 +476,7 @@ ms.lasthandoff: 11/10/2017
 
 你可以安装**Microsoft Visual Studio Express 2012 for Web**或另一个&quot;Express&quot;版本使用 **[Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)**. 以下说明将指导你完成安装所需的步骤*Visual studio Express 2012 for Web*使用*Microsoft Web 平台安装程序*。
 
-1. 转到[ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; *Visual Studio Express 2012 for Web 的 Windows Azure SDK*&quot;。
+1. 转到[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; <em>Visual Studio Express 2012 for Web 的 Windows Azure SDK</em>&quot;。
 2. 单击**立即安装**。 如果你没有**Web 平台安装程序**将重定向以下载并请先安装它。
 3. 一次**Web 平台安装程序**处于打开状态，单击**安装**以启动安装程序。
 

@@ -1,7 +1,7 @@
 ---
-title: "在 ASP.NET 核心中使用 Grunt"
+title: 在 ASP.NET 核心中使用 Grunt
 author: rick-anderson
-description: 
+description: ''
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-grunt
-ms.openlocfilehash: c23f170b36ac1b9623835337020f2b5ac9514971
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 169552e9b5dd811884ce1c65952677ba83626b58
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="using-grunt-in-aspnet-core"></a>在 ASP.NET 核心中使用 Grunt 
+# <a name="use-grunt-in-aspnet-core"></a>在 ASP.NET 核心中使用 Grunt
 
 通过[了米](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/)
 
@@ -129,16 +129,16 @@ Grunt 是自动化脚本缩减、 TypeScript 编译、 代码质量"链接形式
 
 使用名为的清单配置 grunt *Gruntfile.js*的定义、 加载和注册任务可以手动运行或配置以自动基于运行 Visual Studio 中的事件。
 
-1.  右键单击项目并选择**添加 > 新项**。 选择**Grunt 配置文件**选项，请保留默认名称， *Gruntfile.js*，然后单击**添加**按钮。
+1. 右键单击项目并选择**添加 > 新项**。 选择**Grunt 配置文件**选项，请保留默认名称， *Gruntfile.js*，然后单击**添加**按钮。
 
-    初始代码包含了一个模块定义和`grunt.initConfig()`方法。 `initConfig()`用于为每个包中，设置选项和模块的剩余部分将会加载和注册任务。
+   初始代码包含了一个模块定义和`grunt.initConfig()`方法。 `initConfig()`用于为每个包中，设置选项和模块的剩余部分将会加载和注册任务。
     
-    ```javascript
-    module.exports = function (grunt) {
-      grunt.initConfig({
-      });
-    };
-    ```
+   ```javascript
+   module.exports = function (grunt) {
+     grunt.initConfig({
+     });
+   };
+   ```
 
 2. 内部`initConfig()`方法，添加用于`clean`任务示例中所示*Gruntfile.js*下面。 Clean 任务，接受目录字符串的数组。 此任务从 wwwroot/lib 中删除文件，并将移除整个/临时目录。
 
@@ -207,16 +207,16 @@ Grunt 是自动化脚本缩减、 TypeScript 编译、 代码质量"链接形式
     > [!NOTE]
     > 选项"-W069"一个错误时产生的 jshint JavaScript 使用方括号语法，即分配而不是点表示法，属性`Tastes["Sweet"]`而不是`Tastes.Sweet`。 选项关闭了警告，以允许进程继续的其余部分。
 
-10.  添加`uglify`任务使用下面的代码。
+10. 添加`uglify`任务使用下面的代码。
 
     任务 minifies *combined.js*文件的临时目录中找到并在 wwwroot/lib 以下标准命名约定中创建结果文件*\<文件名\>。 min.js*.
     
     ```javascript
     uglify: {
-      all: {
-        src: ['temp/combined.js'],
-        dest: 'wwwroot/lib/combined.min.js'
-      }
+     all: {
+       src: ['temp/combined.js'],
+       dest: 'wwwroot/lib/combined.min.js'
+     }
     },
     ```
 
@@ -241,7 +241,7 @@ Grunt 是自动化脚本缩减、 TypeScript 编译、 代码质量"链接形式
     ![解决方案资源管理器在所有任务](using-grunt/_static/solution-explorer-after-all-tasks.png)
     
     > [!NOTE]
-    > 每个包的选项的详细信息，请访问[https://www.npmjs.com/](https://www.npmjs.com/)和查找在主页上的搜索框中的包名称。 例如，你可以查找 grunt contrib 清理包以获取说明它的所有参数的文档链接。
+    > 每个包的选项的详细信息，请访问[ https://www.npmjs.com/ ](https://www.npmjs.com/)和查找在主页上的搜索框中的包名称。 例如，你可以查找 grunt contrib 清理包以获取说明它的所有参数的文档链接。
 
 ### <a name="all-together-now"></a>总的来说
 
@@ -255,7 +255,7 @@ grunt.registerTask("all", ['clean', 'concat', 'jshint', 'uglify']);
 
 ![别名 grunt 任务](using-grunt/_static/alias-tasks.png)
 
-## <a name="watching-for-changes"></a>监视的更改
+## <a name="watching-for-changes"></a>监视更改
 
 A`watch`任务保留文件和目录。 如果它检测到更改，监视将自动触发任务。 将下面的代码添加到 initConfig，若要监视的更改\*TypeScript 目录中的.js 文件。 如果更改 JavaScript 文件，`watch`将运行`all`任务。
 
@@ -286,7 +286,7 @@ grunt.loadNpmTasks('grunt-contrib-watch');
 
 卸载并重新加载项目。 在项目加载后再次，监视任务将开始自动运行。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 Grunt 是可以用于自动执行大多数客户端生成任务的功能强大的任务运行程序。 Grunt 利用 NPM 来提供其包和工具与 Visual Studio 的集成的功能。 Visual Studio 的任务运行程序资源管理器检测到配置文件的更改，并提供方便的界面以运行任务，查看正在运行的任务，并将任务绑定到 Visual Studio 事件。
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-cs
-title: "使用 DropDownList (C#) 进行筛选主/详细信息 |Microsoft 文档"
+title: 使用 DropDownList (C#) 进行筛选主/详细信息 |Microsoft 文档
 author: rick-anderson
-description: "在本教程中，我们将了解如何使用 DropDownLists 显示用于显示 'master' 记录和 DataList 单个 web 页中显示主/详细信息报表..."
+description: 在本教程中，我们将了解如何使用 DropDownLists 显示用于显示 'master' 记录和 DataList 单个 web 页中显示主/详细信息报表...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/18/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c2199f0957f4cbe1d35dd971744087da9af1abce
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c84902ccf028c976246380abfaebb6a76c573603
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-c"></a>主/从使用 DropDownList (C#) 进行筛选
 ====================
@@ -103,12 +103,12 @@ ms.lasthandoff: 11/10/2017
 **图 7**： 选择`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image17.png))
 
 
-单击下一步后, ObjectDataSource 向导将提示我们提供的值的源`GetProductsByCategoryID(categoryID)`方法的 *`categoryID`* 参数。 若要使用的所选值`categories`DropDownList 项设置为控件和到 ControlID 参数源`Categories`。
+单击下一步后, ObjectDataSource 向导将提示我们提供的值的源`GetProductsByCategoryID(categoryID)`方法的*`categoryID`*参数。 若要使用的所选值`categories`DropDownList 项设置为控件和到 ControlID 参数源`Categories`。
 
 
 [![CategoryID 参数值设置为类别下拉列表](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image19.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image18.png)
 
-**图 8**： 设置 *`categoryID`* 参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image20.png))
+**图 8**： 设置*`categoryID`*参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image20.png))
 
 
 Visual Studio 将自动生成完成之后配置数据源向导，`ItemTemplate`的显示名称和值的每个数据字段 DataList。 让我们增强 DataList 若要改用`ItemTemplate`显示只需产品的名称、 类别、 供应商，每个单元，并连同价格数量`SeparatorTemplate`，插入`<hr>`每个项之间的元素。 我要使用`ItemTemplate`部分中的示例从[带有 DataList 和转发器控件中显示数据](../displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs.md)教程中，但随意使用查找最引人注目的任何模板标记。
@@ -164,9 +164,9 @@ Visual Studio 将自动生成完成之后配置数据源向导，`ItemTemplate`�
 **图 13**： 选择"-选择一个类别-"列表项目时，将显示否产品 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image31.png))
 
 
-如果您而是将显示*所有*产品选中"-选择一个类别-"选项后，使用值`-1`相反。 敏锐读取器将能在该重新中回调*主/详细信息筛选与 DropDownList*教程我们更新了`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法，以便如果 *`categoryID`* 值`-1`在未返回记录的所有产品中传递。
+如果您而是将显示*所有*产品选中"-选择一个类别-"选项后，使用值`-1`相反。 敏锐读取器将能在该重新中回调*主/详细信息筛选与 DropDownList*教程我们更新了`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法，以便如果*`categoryID`*值`-1`在未返回记录的所有产品中传递。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 显示按层次结构相关的数据时，它通常有助于呈现使用主/详细信息报表，用户可以从中启动浏览的层次结构中按自上而下的数据以及向下钻取详细信息数据。 在本教程中，我们探讨生成一个简单的主/详细信息报告，显示所选的类别的产品。 这通过 DropDownList 用于类别列表，属于所选类别的产品 DataList 完成。
 
@@ -176,11 +176,11 @@ Visual Studio 将自动生成完成之后配置数据源向导，`ItemTemplate`�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢...
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已徐 Schmidt。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[下一篇](master-detail-filtering-acess-two-pages-datalist-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](master-detail-filtering-acess-two-pages-datalist-cs.md)

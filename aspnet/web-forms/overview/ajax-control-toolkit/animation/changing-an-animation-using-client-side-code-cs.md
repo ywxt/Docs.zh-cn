@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-cs
-title: "更改动画使用客户端代码 (C#) |Microsoft 文档"
+title: 更改动画使用客户端代码 (C#) |Microsoft 文档
 author: wenz
-description: "ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 此外可以动画..."
+description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 此外可以动画...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6dcaeac073f54b0804fe3acf7ec22491b1cbbba5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2f572efeb012d88ab15740bab7b0e4383572f3f7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="changing-an-animation-using-client-side-code-c"></a>更改动画使用客户端代码 (C#)
 ====================
@@ -78,6 +78,6 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个�
 
 动画会立即，运行没有鼠标单击 （且很少的标记） ([单击以查看实际尺寸的图像](changing-an-animation-using-client-side-code-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一页](executing-animations-using-client-side-code-cs.md)
-[下一页](animating-an-updatepanel-control-cs.md)
+> [!div class="step-by-step"]
+> [上一页](executing-animations-using-client-side-code-cs.md)
+> [下一页](animating-an-updatepanel-control-cs.md)

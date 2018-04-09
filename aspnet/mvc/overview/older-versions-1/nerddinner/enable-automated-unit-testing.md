@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/enable-automated-unit-testing
-title: "启用自动单元测试 |Microsoft 文档"
+title: 启用自动单元测试 |Microsoft 文档
 author: microsoft
-description: "步骤 12 演示如何开发一套自动的单元测试用于验证 NerdDinner 功能，而且这将向我们提供置信度来更改..."
+description: 步骤 12 演示如何开发一套自动的单元测试用于验证 NerdDinner 功能，而且这将向我们提供置信度来更改...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/enable-automated-unit-testing
 msc.type: authoredcontent
-ms.openlocfilehash: 1a4258054d90b2d5bcc06a63fb6f3b4673a4837d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fede08be7e06327c6d04fa5d36f7dd818d79b380
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="enable-automated-unit-testing"></a>启用自动的单元测试
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -45,7 +45,7 @@ ms.lasthandoff: 11/10/2017
 
 ASP.NET MVC 框架，可以简单而自然到单元测试应用程序功能。 它还使，可以测试第一个基于的开发的测试驱动开发 (TDD) 工作流。
 
-### <a name="nerddinnertests-project"></a>NerdDinner.Tests 项目
+### <a name="nerddinnertests-project"></a>NerdDinner.Tests Project
 
 当我们在本教程开头创建我们 NerdDinner 的应用程序时，我们系统已提示用户与一个对话框，询问是否我们想要创建要会随之提供应用程序项目的单元测试项目：
 
@@ -234,7 +234,7 @@ Visual Studio 2008 专业版 （和更高版本） 包括可以用于运行 Visu
 
 模拟框架简化测试过程通过使我们能够动态创建支持我们的测试中的依赖对象的假版本。 例如，我们可以在我们的编辑操作测试使用模拟框架，动态创建我们 DinnersController 可用于查找模拟的用户名的用户对象。 这将避免当我们运行我们的测试引发空引用。
 
-有许多.NET 模拟框架可与 ASP.NET MVC 使用 (你可以看到此处这些设置的列表： [http://www.mockframeworks.com/](http://www.mockframeworks.com/))。 用于测试，我们将使用一种开放源模拟称为"Moq"framework 我们 NerdDinner 应用程序，其中可免费从下载[http://www.mockframeworks.com/moq](http://www.mockframeworks.com/moq)。
+有许多.NET 模拟框架可与 ASP.NET MVC 使用 (你可以看到此处这些设置的列表： [ http://www.mockframeworks.com/ ](http://www.mockframeworks.com/))。 用于测试，我们将使用一种开放源模拟称为"Moq"framework 我们 NerdDinner 应用程序，其中可免费从下载[ http://www.mockframeworks.com/moq ](http://www.mockframeworks.com/moq)。
 
 下载完成后，我们将对 Moq.dll 程序集 NerdDinner.Tests 项目中添加的引用：
 
@@ -285,6 +285,6 @@ Visual Studio 2008 专业版 （和更高版本） 包括可以用于运行 Visu
 
 向上注释某些最终换行。
 
->[!div class="step-by-step"]
-[上一页](use-ajax-to-implement-mapping-scenarios.md)
-[下一页](nerddinner-wrap-up.md)
+> [!div class="step-by-step"]
+> [上一页](use-ajax-to-implement-mapping-scenarios.md)
+> [下一页](nerddinner-wrap-up.md)

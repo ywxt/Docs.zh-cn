@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
-title: "使用 Visual Studio 的 ASP.NET Web 部署： 为数据库部署做好准备 |Microsoft 文档"
+title: 使用 Visual Studio 的 ASP.NET Web 部署： 为数据库部署做好准备 |Microsoft 文档
 author: tdykstra
-description: "本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的..."
+description: 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
-ms.openlocfilehash: caa79725ede320c4bd3e87ac246966c57175eb8e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 61392af322de454687da522055005a670b34f510
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>使用 Visual Studio 的 ASP.NET Web 部署： 为数据库部署做好准备
 ====================
@@ -171,7 +171,7 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和窗体身份验证
 你将对测试环境和生产用户对过渡和生产部署开发用户。 为此，你将在本教程，一个用于开发，一个用于生产，创建两个 SQL 脚本和更高版本的教程中，你将配置发布过程来运行它们。
 
 > [!NOTE]
-> 成员资格数据库将存储帐户密码的哈希值。 若要部署到另一台计算机中的帐户，你必须确保与源计算机上，哈希例程不生成目标服务器上的不同哈希。 它们将生成相同的哈希时使用 ASP.NET Universal Providers，只要你不要更改默认的算法。 默认的算法是 HMACSHA256 和中指定**验证**属性 **[machineKey](https://msdn.microsoft.com/library/system.web.configuration.machinekeysection.aspx)**  Web.config 文件中的元素。
+> 成员资格数据库将存储帐户密码的哈希值。 若要部署到另一台计算机中的帐户，你必须确保与源计算机上，哈希例程不生成目标服务器上的不同哈希。 它们将生成相同的哈希时使用 ASP.NET Universal Providers，只要你不要更改默认的算法。 默认的算法是 HMACSHA256 和中指定**验证**属性**[machineKey](https://msdn.microsoft.com/library/system.web.configuration.machinekeysection.aspx)** Web.config 文件中的元素。
 
 
 通过使用 SQL Server Management Studio (SSMS)，或使用第三方工具，你可以手动创建数据部署脚本。 本教程的此其余部分将显示如何执行此操作在 SSMS 中，但如果你不想要安装和使用 SSMS 则可以从项目的已完成版本获取脚本并跳到在其中你存储它们在解决方案文件夹中的部分。
@@ -215,13 +215,13 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和窗体身份验证
 1. 在 SSMS**对象资源管理器**，右键单击**数据库**单击**附加**。
 
     ![SSMS 附加](preparing-databases/_static/image15.png)
-- 在**附加数据库**对话框中，单击**添加**然后导航到*aspnet ContosoUniversity Prod.mdf*文件中*应用\_数据*文件夹。
+2. 在**附加数据库**对话框中，单击**添加**然后导航到*aspnet ContosoUniversity Prod.mdf*文件中*应用\_数据*文件夹。
 
-    ![SSMS.mdf 文件添加附加](preparing-databases/_static/image16.png)
-- 单击 **“确定”**。
-- 请按照你之前用来创建用于生产文件的脚本的相同过程。 命名该脚本文件*aspnet 数据 prod.sql*。
+     ![SSMS.mdf 文件添加附加](preparing-databases/_static/image16.png)
+3. 单击 **“确定”**。
+4. 请按照你之前用来创建用于生产文件的脚本的相同过程。 命名该脚本文件*aspnet 数据 prod.sql*。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 这两个数据库现在已准备好部署和解决方案文件夹中有两个数据部署脚本。
 
@@ -233,6 +233,6 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和窗体身份验证
 
 有关 NuGet 的详细信息，请参阅[使用 NuGet 管理项目库](https://msdn.microsoft.com/magazine/hh547106.aspx)和[NuGet 文档](http://docs.nuget.org/docs/start-here/overview)。 如果你不想使用 NuGet，你将需要了解如何分析以确定它能做什么安装时的 NuGet 包。 (例如，它可能配置*Web.config*转换，PowerShell 将脚本配置为运行在生成时，等等。)若要了解有关 NuGet 的工作原理的详细信息，请参阅[创建和发布包](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package)和[配置文件和源代码转换](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations)。
 
->[!div class="step-by-step"]
-[上一页](introduction.md)
-[下一页](web-config-transformations.md)
+> [!div class="step-by-step"]
+> [上一页](introduction.md)
+> [下一页](web-config-transformations.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-cs
-title: "用户和生产网站 (C#) 上的角色 |Microsoft 文档"
+title: 用户和生产网站 (C#) 上的角色 |Microsoft 文档
 author: rick-anderson
-description: "ASP.NET 网站管理工具 (WSAT) 提供基于 web 的用户界面，用于配置成员资格和角色设置和创建，编辑，..."
+description: ASP.NET 网站管理工具 (WSAT) 提供基于 web 的用户界面，用于配置成员资格和角色设置和创建，编辑，...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 68f3a45b6a393f7b6a12b7c296a374536b0d66d6
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e3e1165959ae47715e0037db7a3bc6ac58807653
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="users-and-roles-on-the-production-website-c"></a>用户和生产网站 (C#) 上的角色
 ====================
@@ -37,7 +37,7 @@ ASP。NET 的应用程序服务不限于特定的实现。 相反，指示要使
 
 ## <a name="using-the-aspnet-web-site-administration-tool"></a>使用 ASP.NET 网站管理工具
 
-ASP.NET 包括[网站管理工具](https://msdn.microsoft.com/library/yy40ytx0.aspx)(WSAT)，可轻松创建和管理用户帐户和角色以及指定基于用户和角色的授权规则。 若要使用 WSAT，单击 ASP.NET 配置图标，在解决方案资源管理器，或转到网站或项目菜单上，然后选择 ASP.NET 配置选项。 这两种方法来启动 web 浏览器并指向在这样的地址 WSAT:`http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
+ASP.NET 包括[网站管理工具](https://msdn.microsoft.com/library/yy40ytx0.aspx)(WSAT)，可轻松创建和管理用户帐户和角色以及指定基于用户和角色的授权规则。 若要使用 WSAT，单击 ASP.NET 配置图标，在解决方案资源管理器，或转到网站或项目菜单上，然后选择 ASP.NET 配置选项。 这两种方法来启动 web 浏览器并指向在这样的地址 WSAT: `http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
 
 WSAT 分为三个部分：
 
@@ -102,7 +102,7 @@ ASP.NET 包括大量内置进行实现许多这些管理网页一样简单，如
 
 若要实现 WSAT 类似的功能，生产网站上始终可以生成实现 WSAT 的功能的网页的序列。 若要帮助开始，请查看位于文件夹中的 WSAT 源代码`%WINDIR%\Microsoft.NET\Framework\v2.0.50727\ASP.NETWebAdminFiles`。 另一个选项是使用他共享在他的文章中的 Dan Clem WSAT 备选[滚动你自己网站管理工具](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)。 Dan 指导通过生成一个自定义的 WSAT 类似的工具的进程的读取器，包括其应用程序的源代码 （在 C# 中)，下载和提供将其自定义 WSAT 添加到托管网站的分步说明。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 ASP.NET 网站管理工具 (WSAT) 可相继使用成员资格和角色应用程序服务来管理为你的网站的用户和角色信息。 遗憾的是，WSAT 本地只能为可访问，并且不能从你的生产网站访问。 但是，通过更改连接字符串在开发环境以点到生产数据库可以使用 WSAT 来管理用户和生产网站上的角色。
 
@@ -119,6 +119,6 @@ ASP.NET 网站管理工具 (WSAT) 可相继使用成员资格和角色应用程�
 - [网站管理工具概述](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 - [网站安全教程](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
->[!div class="step-by-step"]
-[上一页](precompiling-your-website-cs.md)
-[下一页](asp-net-hosting-options-vb.md)
+> [!div class="step-by-step"]
+> [上一页](precompiling-your-website-cs.md)
+> [下一页](asp-net-hosting-options-vb.md)

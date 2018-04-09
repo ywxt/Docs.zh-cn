@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/security/hub-authorization
-title: "身份验证和授权 SignalR 集线器的 |Microsoft 文档"
+title: 身份验证和授权 SignalR 集线器的 |Microsoft 文档
 author: pfletcher
-description: "本主题介绍如何限制哪些用户或角色可以访问中心方法。 本主题中的软件版本使用，Visual Studio 2013.NET 4.5 SignalR 遇到..."
+description: 本主题介绍如何限制哪些用户或角色可以访问中心方法。 本主题中的软件版本使用，Visual Studio 2013.NET 4.5 SignalR 遇到...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/05/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/security/hub-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: cb0f06a3ca2b39a4a952c33cea70136c7c5af7a8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8e3bc8889efb1be80c57084fb04dc8030b386601
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="authentication-and-authorization-for-signalr-hubs"></a>身份验证和授权 SignalR 集线器的
 ====================
@@ -73,10 +73,10 @@ SignalR 提供[Authorize](https://msdn.microsoft.com/library/microsoft.aspnet.si
 
 下面的示例地址不同的授权方案：
 
-- `[Authorize]`– 仅身份验证的用户
-- `[Authorize(Roles = "Admin,Manager")]`– 仅经过身份验证中的指定角色的用户
-- `[Authorize(Users = "user1,user2")]`– 仅经过身份验证与指定的用户名的用户
-- `[Authorize(RequireOutgoing=false)]`– 仅经过身份验证的用户可以调用中心，但从服务器返回到客户端的调用不受限制授权，例如，当仅某些用户可以发送一条消息，但所有其他人可以接收消息时。 RequireOutgoing 属性只能应用到整个中心，不能对中心内的个人方法。 RequireOutgoing 未设置为 false，满足的授权要求的用户将调用从服务器中。
+- `[Authorize]` – 仅身份验证的用户
+- `[Authorize(Roles = "Admin,Manager")]` – 仅经过身份验证中的指定角色的用户
+- `[Authorize(Users = "user1,user2")]` – 仅经过身份验证与指定的用户名的用户
+- `[Authorize(RequireOutgoing=false)]` – 仅经过身份验证的用户可以调用中心，但从服务器返回到客户端的调用不受限制授权，例如，当仅某些用户可以发送一条消息，但所有其他人可以接收消息时。 RequireOutgoing 属性只能应用到整个中心，不能对中心内的个人方法。 RequireOutgoing 未设置为 false，满足的授权要求的用户将调用从服务器中。
 
 <a id="requireauth"></a>
 
@@ -126,7 +126,7 @@ SignalR 提供[Authorize](https://msdn.microsoft.com/library/microsoft.aspnet.si
 
 [!code-csharp[Main](hub-authorization/samples/sample7.cs)]
 
-控制台应用程序发送到的凭据**www.contoso.com/RemoteLogin**其引用了包含下面的代码隐藏文件的空页。
+控制台应用程序发送到的凭据<strong>www.contoso.com/RemoteLogin</strong>其引用了包含下面的代码隐藏文件的空页。
 
 [!code-csharp[Main](hub-authorization/samples/sample8.cs)]
 

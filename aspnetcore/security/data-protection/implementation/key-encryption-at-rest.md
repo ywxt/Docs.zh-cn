@@ -1,7 +1,7 @@
 ---
-title: "密钥加密对静止"
+title: 在 ASP.NET Core 中存放的密钥加密
 author: rick-anderson
-description: "本文档概述了 ASP.NET 核心数据保护密钥加密对静止的实现详细信息。"
+description: 了解 ASP.NET 核心数据保护密钥的加密对静止的实现详细信息。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,20 +9,20 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-encryption-at-rest
-ms.openlocfilehash: c66430bfe547cf061e9e79a703ac665a968bbe0b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 9247b141a44c958f34529e5a42a0ddc8c8893cb0
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-encryption-at-rest"></a>密钥加密对静止
+# <a name="key-encryption-at-rest-in-aspnet-core"></a>在 ASP.NET Core 中存放的密钥加密
 
 <a name="data-protection-implementation-key-encryption-at-rest"></a>
 
 默认情况下，数据保护系统[使用启发式方法](xref:security/data-protection/configuration/default-settings)来确定如何加密的密钥材料应加密对静止。 开发人员可以重写启发式方法，并手动指定应如何静态加密密钥。
 
 > [!NOTE]
-> 如果指定在 rest 机制显式密钥加密时，数据保护系统将取消注册启发式方法提供的默认密钥存储机制。 你必须[指定显式的密钥存储机制](key-storage-providers.md#data-protection-implementation-key-storage-providers)，否则数据保护系统将无法启动。
+> 如果指定在 rest 机制显式密钥加密时，数据保护系统将取消注册启发式方法提供的默认密钥存储机制。 你必须[指定显式的密钥存储机制](xref:security/data-protection/implementation/key-storage-providers#data-protection-implementation-key-storage-providers)，否则数据保护系统将无法启动。
 
 <a name="data-protection-implementation-key-encryption-at-rest-providers"></a>
 
@@ -95,7 +95,7 @@ sc.AddDataProtection()
 
 ## <a name="certificate-based-encryption-with-windows-dpapi-ng"></a>基于证书的加密使用 Windows DPAPI NG
 
-如果在 Windows 8.1 上运行 / Windows Server 2012 R2 或更高版本，你可以使用 Windows DPAPI NG 执行基于证书的加密，即使在上运行应用程序[.NET 核心](https://www.microsoft.com/net/core)。 若要充分利用此功能，使用规则描述符字符串"证书 = HashId:thumbprint"，其中指纹是要使用的证书的十六进制编码 SHA1 指纹。 有关示例，请参阅下文。
+如果在 Windows 8.1 上运行 / Windows Server 2012 R2 或更高版本，你可以使用 Windows DPAPI NG 执行基于证书的加密，即使在.NET Core 上运行该应用程序。 若要充分利用此功能，使用规则描述符字符串"证书 = HashId:thumbprint"，其中指纹是要使用的证书的十六进制编码 SHA1 指纹。 有关示例，请参阅下文。
 
 ```csharp
 sc.AddDataProtection()

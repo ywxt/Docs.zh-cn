@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-vb
-title: "在 GridView 的页脚 (VB) 中显示的摘要信息 |Microsoft 文档"
+title: 在 GridView 的页脚 (VB) 中显示的摘要信息 |Microsoft 文档
 author: rick-anderson
-description: "摘要信息通常显示在摘要行中的报表的底部。 GridView 控件可以包含为其单元中，我们可以 pr 的页脚行..."
+description: 摘要信息通常显示在摘要行中的报表的底部。 GridView 控件可以包含为其单元中，我们可以 pr 的页脚行...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e5b7e39a44d43a857c62842ea3e1dddcacf05c9b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d9a1a3f3c680f367395f984254da6cdcdd3c08d4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-summary-information-in-the-gridviews-footer-vb"></a>在 GridView 的页脚 (VB) 中显示的摘要信息
 ====================
@@ -101,7 +101,7 @@ ms.lasthandoff: 11/10/2017
 
 [![从选择的类别 DropDownList 获取 categoryID 参数值](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image22.png)
 
-**图 8**： 获取 *`categoryID`* 从所选类别下拉列表的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image24.png))
+**图 8**： 获取*`categoryID`*从所选类别下拉列表的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image24.png))
 
 
 完成向导后 GridView 都将有 BoundField 的每个产品的属性。 让我们来清理这些 BoundFields 以便仅`ProductName`， `UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`BoundFields 会显示。 请尝试将任何字段级别设置添加到剩余 BoundFields (如格式`UnitPrice`作为一种货币)。 进行这些更改后，GridView 的声明性标记应类似于以下：
@@ -114,7 +114,7 @@ ms.lasthandoff: 11/10/2017
 
 [![从选择的类别 DropDownList 获取 categoryID 参数值](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image25.png)
 
-**图 9**： 获取 *`categoryID`* 从所选类别下拉列表的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image27.png))
+**图 9**： 获取*`categoryID`*从所选类别下拉列表的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image27.png))
 
 
 ## <a name="step-2-displaying-a-footer-in-the-gridview"></a>步骤 2： 在 GridView 中显示页脚
@@ -177,10 +177,10 @@ GridView 控件可以显示页眉和页脚行。 这些行显示的值决定`Sho
 
 为了维护运行总和我们需要定义事件处理程序的范围之外的变量。 创建以下四个页面级别变量：
 
-- `_totalUnitPrice`的类型`Decimal`
-- `_totalNonNullUnitPriceCount`的类型`Integer`
-- `_totalUnitsInStock`的类型`Integer`
-- `_totalUnitsOnOrder`的类型`Integer`
+- `_totalUnitPrice`的类型 `Decimal`
+- `_totalNonNullUnitPriceCount`的类型 `Integer`
+- `_totalUnitsInStock`的类型 `Integer`
+- `_totalUnitsOnOrder`的类型 `Integer`
 
 接下来，编写代码以递增这三个变量，每个数据行中遇到`RowDataBound`事件处理程序。
 
@@ -211,7 +211,7 @@ GridView 控件可以显示页眉和页脚行。 这些行显示的值决定`Sho
 **图 13**: GridView 页脚行现在具有红色背景色 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image39.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 显示摘要数据是常见的报表要求，并 GridView 控件可以轻松地在其页脚行中包括此类信息。 显示页脚行时 GridView`ShowFooter`属性设置为`True`中以编程方式通过设置其单元格可以包含文本和`RowDataBound`事件处理程序。 计算摘要数据或者可以通过重新查询数据库或通过使用代码在 ASP.NET 页的代码隐藏类以编程方式计算摘要数据。
 
@@ -221,7 +221,7 @@ GridView 控件可以显示页眉和页脚行。 这些行显示的值决定`Sho
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
->[!div class="step-by-step"]
-[上一篇](using-the-formview-s-templates-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](using-the-formview-s-templates-vb.md)

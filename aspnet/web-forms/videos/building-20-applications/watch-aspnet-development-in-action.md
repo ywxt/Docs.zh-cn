@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-20-applications/watch-aspnet-development-in-action
-title: "观看操作中的 ASP.NET 开发 |Microsoft 文档"
+title: 观看操作中的 ASP.NET 开发 |Microsoft 文档
 author: JoeStagner
-description: "观看生成是多么容易到 do 任务列表应用程序从零开始使用 ASP.NET 2.0、 ASP.NET AJAX、 SQL Server Express，和 Visual Web Developer。 Mic..."
+description: 观看生成是多么容易到 do 任务列表应用程序从零开始使用 ASP.NET 2.0、 ASP.NET AJAX、 SQL Server Express，和 Visual Web Developer。 Mic...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/24/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/building-20-applications/watch-aspnet-development-in-action
 msc.type: video
-ms.openlocfilehash: 1b9b4eca9aa7f7cb240aab9e77da81225243f4ad
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a90767d45c02929148535e56e5582a685be2d5fd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="watch-aspnet-development-in-action"></a>观看操作中的 ASP.NET 开发
 ====================
@@ -26,5 +26,5 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （20 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/watch-aspnet-development-in-action)
 
->[!div class="step-by-step"]
-[上一篇](lesson-8-working-with-the-gridview-and-formview.md)
+> [!div class="step-by-step"]
+> [上一篇](lesson-8-working-with-the-gridview-and-formview.md)

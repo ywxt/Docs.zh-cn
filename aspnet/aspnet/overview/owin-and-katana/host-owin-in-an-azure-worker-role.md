@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
-title: "托管的 Azure 辅助角色的 OWIN |Microsoft 文档"
+title: 托管的 Azure 辅助角色的 OWIN |Microsoft 文档
 author: MikeWasson
-description: "本教程演示如何自承载在 Microsoft Azure 辅助角色中的 OWIN。 打开 Web 接口的.NET (OWIN) 定义.NET web 服务器之间的抽象..."
+description: 本教程演示如何自承载在 Microsoft Azure 辅助角色中的 OWIN。 打开 Web 接口的.NET (OWIN) 定义.NET web 服务器之间的抽象...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/11/2014
 ms.topic: article
 ms.assetid: 07aa855a-92ee-4d43-ba66-5bfd7de20ee6
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 8c0fdfdf60ff3bde34b6869adf3f8693b4d9615d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 13bccc4b2d6f1b22c94446deaf6795dab766275b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="host-owin-in-an-azure-worker-role"></a>在 Azure 辅助角色的 OWIN 主机
 ====================
@@ -119,7 +119,7 @@ ms.lasthandoff: 01/24/2018
 
 [![](host-owin-in-an-azure-worker-role/_static/image10.png)](host-owin-in-an-azure-worker-role/_static/image9.png)
 
-找到在服务部署，部署 [id] 服务详细信息的 IP 地址。 打开 web 浏览器并导航到 http://*地址*，其中*地址*是通过计算模拟器中; 分配的 IP 地址等`http://127.0.0.1:80`。 你应看到 OWIN 欢迎页：
+找到在服务部署，部署 [id] 服务详细信息的 IP 地址。 打开 web 浏览器并导航到 http://<em>地址</em>，其中<em>地址</em>是通过计算模拟器中; 分配的 IP 地址等`http://127.0.0.1:80`。 你应看到 OWIN 欢迎页：
 
 ![](host-owin-in-an-azure-worker-role/_static/image11.png)
 
@@ -139,7 +139,7 @@ ms.lasthandoff: 01/24/2018
 
 [![](host-owin-in-an-azure-worker-role/_static/image16.png)](host-owin-in-an-azure-worker-role/_static/image15.png)
 
-输入云服务的名称，然后选择一个区域。 单击 **“创建”**。
+输入云服务的名称，然后选择一个区域。 单击“创建” 。
 
 ![](host-owin-in-an-azure-worker-role/_static/image17.png)
 

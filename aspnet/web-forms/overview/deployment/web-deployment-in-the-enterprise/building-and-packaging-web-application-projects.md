@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/building-and-packaging-web-application-projects
-title: "生成和打包 Web 应用程序项目 |Microsoft 文档"
+title: 生成和打包 Web 应用程序项目 |Microsoft 文档
 author: jrjlee
-description: "如果你想要将 web 应用程序项目部署到远程服务器环境，您的首要任务是生成项目并生成 web 部署 packa..."
+description: 如果你想要将 web 应用程序项目部署到远程服务器环境，您的首要任务是生成项目并生成 web 部署 packa...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/building-and-packaging-web-application-projects
 msc.type: authoredcontent
-ms.openlocfilehash: c05f725c9e6b493a6af8f5b5d20dbc9ff73a1ef8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d630e1776607bd0bd7c61e1f0f7234ef58c7533b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="building-and-packaging-web-application-projects"></a>生成和打包 Web 应用程序项目
 ====================
@@ -59,8 +59,8 @@ ms.lasthandoff: 11/10/2017
 **包**中定义目标*Microsoft.Web.Publishing.targets*文件。 实质上，此目标中，采用你的 web 应用程序项目的生成输出，并将其转换成可以发布到 IIS web 服务器的 web 部署包。
 
 > [!NOTE]
-> 若要查看的项目文件 (例如， *ContactManager.Mvc.csproj*) 在 Visual Studio 2010 中，你首先需要卸载你的解决方案中的项目。 在**解决方案资源管理器**窗口中，右键单击项目节点，然后单击**卸载项目**。 再次右键单击项目节点，并依次**编辑***[项目文件]*)。 项目文件将在原始 XML 形式中打开。 请记住完成后，重新加载项目。  
-> 有关 MSBuild 目标，任务的详细信息和**导入**语句，请参阅[了解项目文件](understanding-the-project-file.md)。 项目文件和 WPP 的更深入介绍，请参阅[内 Microsoft 生成引擎： 使用 MSBuild 和 Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi 和 William Bartholomew，ISBN: 978-0-7356-4524-0。
+> 若要查看的项目文件 (例如， <em>ContactManager.Mvc.csproj</em>) 在 Visual Studio 2010 中，你首先需要卸载你的解决方案中的项目。 在<strong>解决方案资源管理器</strong>窗口中，右键单击项目节点，然后单击<strong>卸载项目</strong>。 再次右键单击项目节点，并依次<strong>编辑</strong><em>[项目文件]</em>)。 项目文件将在原始 XML 形式中打开。 请记住完成后，重新加载项目。  
+> 有关 MSBuild 目标，任务的详细信息和<strong>导入</strong>语句，请参阅[了解项目文件](understanding-the-project-file.md)。 项目文件和 WPP 的更深入介绍，请参阅[内 Microsoft 生成引擎： 使用 MSBuild 和 Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi 和 William Bartholomew，ISBN: 978-0-7356-4524-0。
 
 
 ## <a name="what-is-a-web-deployment-package"></a>Web 部署包是什么？
@@ -104,6 +104,6 @@ Web 部署包，以及生成过程生成可以帮助你使用包的两个文件�
 
 项目文件和 WPP 的更深入介绍，请参阅[内 Microsoft 生成引擎： 使用 MSBuild 和 Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi 和 William Bartholomew，ISBN: 978-0-7356-4524-0。
 
->[!div class="step-by-step"]
-[上一页](understanding-the-build-process.md)
-[下一页](configuring-parameters-for-web-package-deployment.md)
+> [!div class="step-by-step"]
+> [上一页](understanding-the-build-process.md)
+> [下一页](configuring-parameters-for-web-package-deployment.md)

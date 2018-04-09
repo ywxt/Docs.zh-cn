@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/creating-a-basic-web-forms-page
-title: "创建一个基本的 ASP.NET 4.5 Web 窗体页在 Visual Studio 2013 |Microsoft 文档"
+title: 创建一个基本的 ASP.NET 4.5 Web 窗体页在 Visual Studio 2013 |Microsoft 文档
 author: Erikre
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/03/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: 6b699cc939292b7ab0167dba7cfa6a00b681ef3a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0dbd3063c9be3564637fad34e60f62c1662dcc07
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-basic-aspnet-45-web-forms-page-in-visual-studio-2013"></a>创建一个基本的 ASP.NET 4.5 Web 窗体页在 Visual Studio 2013
 ====================
@@ -231,7 +231,7 @@ Visual Studio 提供了各种方式来设置页上的控件的属性。 在演�
 2. 双击[按钮](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控件。
 
     默认情况下，Visual Studio 切换到代码隐藏文件，并创建主干事件处理程序[按钮](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控件的默认事件[单击](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx)事件。 代码隐藏文件 （如 C# 中) 在服务器代码中分隔 UI 标记 （如 HTML)。   
-游标位于添加为此事件处理程序的代码。
+   游标位于添加为此事件处理程序的代码。
 
     > [!NOTE] 
     > 
@@ -268,7 +268,7 @@ Visual Studio 提供了各种方式来设置页上的控件的属性。 在演�
     您输入的名称显示在[标签](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控件。 请注意，当你单击按钮时，页面将被发送到 Web 服务器。 ASP.NET 然后重新创建页上，运行你的代码 (在这种情况下，[按钮](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控件的[单击](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx)事件处理程序将运行)，然后将新的页发送到浏览器。 如果你观看浏览器中的状态栏，可以看到，页进行的往返过程到 Web 服务器每次你单击按钮。
 3. 在浏览器中，查看你在正在运行的页上右键单击并选择的页面的源**查看源**。
 
-    在页的源代码，而无需任何服务器代码中看到 HTML。 具体而言，你看不见 **&lt;asp:&gt;** 与你共事中的元素**源**视图。 页运行时，ASP.NET 将处理服务器控件，并呈现到页执行的函数，表示控件的 HTML 元素。 例如，  **&lt;asp： 按钮&gt;**控件呈现为 HTML **&lt;输入类型 =&quot;提交&quot;&gt;** 元素。
+    在页的源代码，而无需任何服务器代码中看到 HTML。 具体而言，你看不见**&lt;asp:&gt;**与你共事中的元素**源**视图。 页运行时，ASP.NET 将处理服务器控件，并呈现到页执行的函数，表示控件的 HTML 元素。 例如，  **&lt;asp： 按钮&gt;**控件呈现为 HTML **&lt;输入类型 =&quot;提交&quot;&gt;** 元素。
 4. 关闭浏览器。
 
 
@@ -316,10 +316,12 @@ Visual Studio 提供了各种方式来设置页上的控件的属性。 在演�
 2. 完成[SelectionChanged](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selectionchanged.aspx)事件处理程序替换为以下代码。
 
 
-    [!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample3.cs?highlight=3)]
+~~~
+[!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample3.cs?highlight=3)]
 
 
-    [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample4.vb?highlight=2)]
+[!code-vb[Main](creating-a-basic-web-forms-page/samples/sample4.vb?highlight=2)]
+~~~
 
  上面的代码将标签控件的文本设置为所选日期的日历控件。
 

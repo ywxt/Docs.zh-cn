@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/authentication/changing-membership-settings-in-the-default-membership-schema
-title: "更改默认成员身份架构中的成员身份设置 |Microsoft 文档"
+title: 更改默认成员身份架构中的成员身份设置 |Microsoft 文档
 author: JoeStagner
-description: "在本视频中 Joe stagner 将讨论如何更改成员资格架构的默认设置，以符合自定义应用程序的特定需求。 预测..."
+description: 在本视频中 Joe stagner 将讨论如何更改成员资格架构的默认设置，以符合自定义应用程序的特定需求。 预测...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/04/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/authentication/changing-membership-settings-in-the-default-membership-schema
 msc.type: video
-ms.openlocfilehash: 1ee8c32aaa23023625ec08c0c79678bd48fdcac6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1d2bb7b3833fbed3645e5ffe24b235529476e4e7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="changing-membership-settings-in-the-default-membership-schema"></a>更改默认成员身份架构中的成员身份设置
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （9 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/changing-membership-settings-in-the-default-membership-schema)
 
->[!div class="step-by-step"]
-[上一页](configuring-sql-to-work-with-membership-schemas.md)
-[下一页](creating-user-accounts-with-the-create-user-wizard.md)
+> [!div class="step-by-step"]
+> [上一页](configuring-sql-to-work-with-membership-schemas.md)
+> [下一页](creating-user-accounts-with-the-create-user-wizard.md)

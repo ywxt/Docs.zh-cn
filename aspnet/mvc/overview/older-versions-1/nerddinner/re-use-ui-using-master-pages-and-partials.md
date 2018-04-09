@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
-title: "重用使用母版页和它们的 UI |Microsoft 文档"
+title: 重用使用母版页和它们的 UI |Microsoft 文档
 author: microsoft
-description: "在我们查看模板，以消除代码重复，使用分部视图模板和主控页内，第 7 步考察我们可以将干原则应用的方式。"
+description: 在我们查看模板，以消除代码重复，使用分部视图模板和主控页内，第 7 步考察我们可以将干原则应用的方式。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
 msc.type: authoredcontent
-ms.openlocfilehash: c42cd6aca40b08a9f8461532fbfd0589901b64ad
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ade655f3a4a429360b678d02fb564ac9cf255d42
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="re-use-ui-using-master-pages-and-partials"></a>重用使用母版页和它们的 UI
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -123,7 +123,7 @@ ASP.NET MVC 支持能够定义可以用于封装视图呈现逻辑的页面的�
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample7.aspx)]
 
-当我们保存 Site.master 文件并刷新我们浏览器，我们将看到我们标头更改显示在我们的应用程序中的所有视图。 例如: 
+当我们保存 Site.master 文件并刷新我们浏览器，我们将看到我们标头更改显示在我们的应用程序中的所有视图。 例如：
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image6.png)
 
@@ -137,6 +137,6 @@ ASP.NET MVC 支持能够定义可以用于封装视图呈现逻辑的页面的�
 
 让我们现在重新考虑我们之前生成的列表方案，并启用可缩放的分页支持。
 
->[!div class="step-by-step"]
-[上一页](use-viewdata-and-implement-viewmodel-classes.md)
-[下一页](implement-efficient-data-paging.md)
+> [!div class="step-by-step"]
+> [上一页](use-viewdata-and-implement-viewmodel-classes.md)
+> [下一页](implement-efficient-data-paging.md)

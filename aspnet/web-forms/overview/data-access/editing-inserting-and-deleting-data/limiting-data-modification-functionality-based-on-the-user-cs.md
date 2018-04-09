@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-cs
-title: "限制数据修改功能根据用户 (C#) |Microsoft 文档"
+title: 限制数据修改功能根据用户 (C#) |Microsoft 文档
 author: rick-anderson
-description: "中的 web 应用程序允许用户编辑数据，另一个用户帐户也可能具有不同数据编辑权限。 在本教程中我们将研究如何 t..."
+description: 中的 web 应用程序允许用户编辑数据，另一个用户帐户也可能具有不同数据编辑权限。 在本教程中我们将研究如何 t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 44d0c192e082a7ad123096acb57fd053f6dcaeb1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b056536eeaa86ef2c73debe23dd38861f41b2a69
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="limiting-data-modification-functionality-based-on-the-user-c"></a>限制基于用户 (C#) 的数据修改功能
 ====================
@@ -236,7 +236,7 @@ ms.lasthandoff: 11/10/2017
 
 我未包括此类的 BLL 层检查，因为在我们的教程用户的权限由在页上，BLL 类不能访问 DropDownList。 使用成员资格系统或由 ASP.NET 提供 （例如 Windows 身份验证），扩展的框身份验证方案之一时当前记录可以从 BLL，从而使此类访问用户 s 访问信息和角色信息权限检查可能在演示文稿和 BLL 层。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 提供用户帐户的大多数站点需要自定义基于在已登录用户的数据修改接口。 管理用户可以删除和编辑任何记录，而非管理用户可能会限制为仅更新或删除他们自己创建的记录。 任何方案可能是，数据 Web 控件，ObjectDataSource，并且可以扩展业务逻辑层类来添加或拒绝基于登录用户的特定功能。 在本教程中我们已了解如何限制可查看和编辑具体取决于用户是否与特定的供应商关联或如果它们的工作为我们的公司数据。
 
@@ -246,8 +246,8 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
->[!div class="step-by-step"]
-[上一页](adding-client-side-confirmation-when-deleting-cs.md)
-[下一页](an-overview-of-inserting-updating-and-deleting-data-vb.md)
+> [!div class="step-by-step"]
+> [上一页](adding-client-side-confirmation-when-deleting-cs.md)
+> [下一页](an-overview-of-inserting-updating-and-deleting-data-vb.md)

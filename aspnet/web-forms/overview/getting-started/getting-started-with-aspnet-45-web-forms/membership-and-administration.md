@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
-title: "成员资格和管理 |Microsoft 文档"
+title: 成员资格和管理 |Microsoft 文档
 author: Erikre
-description: "本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识..."
+description: 本系列教程将教您生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
 msc.type: authoredcontent
-ms.openlocfilehash: a10dbfe1ca49baee1604aac8dd9a1f93ccfcb7f9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 166bc642ea2083f455be0648e424f0b0ae3b082c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="membership-and-administration"></a>成员资格和管理
 ====================
@@ -66,14 +66,14 @@ ASP.NET Web 窗体提供了成员资格功能。 通过使用默认模板，你�
 
     [!code-csharp[Main](membership-and-administration/samples/sample2.cs?highlight=11,26-28)]
 6. 请注意，`AddUserAndRole`以红色下划线标记。 双击 AddUserAndRole 代码。  
- 将带有下划线的字母"A"突出显示方法的开头。
+   将带有下划线的字母"A"突出显示方法的开头。
 7. 将鼠标悬停在字母"A"，然后单击用户界面，可用于生成方法存根出于`AddUserAndRole`方法。 
 
     ![成员资格和 Advministration-生成方法存根 （stub）](membership-and-administration/_static/image1.png)
 8. 单击标题为的选项：  
     `Generate method stub for "AddUserAndRole" in "WingtipToys.Logic.RoleActions"`
 9. 打开*RoleActions.cs*文件从*逻辑*文件夹。  
- `AddUserAndRole`方法也已添加到类文件。
+   `AddUserAndRole`方法也已添加到类文件。
 10. 修改*RoleActions.cs*通过删除文件`NotImplementedeException`和添加以黄色，突出显示的代码，以使其显示，如下所示：  
 
     [!code-csharp[Main](membership-and-administration/samples/sample3.cs?highlight=5-7,15-51)]
@@ -120,8 +120,8 @@ Wingtip Toys 示例应用程序允许匿名用户和登录的用户都能查看�
 1. 右键单击项目名称 (**Wingtip Toys**) 中**解决方案资源管理器**和选择**添加** - &gt; **新文件夹**.
 2. 将新文件夹命名*管理员*。
 3. 右键单击*管理员*文件夹，然后选择**添加** - &gt; **新项**。   
- 随即出现“添加新项”对话框。
-4. 选择**Visual C#** - &gt; **Web**左侧的模板组。 从中间列表中选择**包含母版页的 Web 窗体**，将其命名为*AdminPage.aspx***，** ，然后选择**添加**。
+   随即出现“添加新项”对话框。
+4. 选择<strong>Visual C#</strong> - &gt; <strong>Web</strong>左侧的模板组。 从中间列表中选择<strong>包含母版页的 Web 窗体</strong>，将其命名为<em>AdminPage.aspx</em><strong>，</strong> ，然后选择<strong>添加</strong>。
 5. 选择*Site.Master*文件作为主页上，，然后选择**确定**。
 
 #### <a name="add-a-webconfig-file"></a>添加 Web.config 文件
@@ -129,8 +129,8 @@ Wingtip Toys 示例应用程序允许匿名用户和登录的用户都能查看�
 通过添加*Web.config*文件为*管理员*文件夹中，你可以限制对访问文件夹中包含的页。
 
 1. 右键单击*管理员*文件夹，然后选择**添加** - &gt; **新项**。  
- 随即出现“添加新项”对话框。
-2. 从 Visual C# web 模板列表中，选择**Web 配置文件**从中间列表中，接受默认名称*Web.config***，** ，然后选择**添加**。
+   随即出现“添加新项”对话框。
+2. 从 Visual C# web 模板列表中，选择<strong>Web 配置文件</strong>从中间列表中，接受默认名称<em>Web.config</em><strong>，</strong> ，然后选择<strong>添加</strong>。
 3. 替换的现有 XML 内容中*Web.config*替换为以下文件：  
 
     [!code-xml[Main](membership-and-administration/samples/sample4.xml)]
@@ -167,9 +167,9 @@ Wingtip Toys 示例应用程序允许匿名用户和登录的用户都能查看�
 在代码中为输入*AdminPage.aspx.cs*代码隐藏文件中，一个名为类`AddProducts`执行将产品添加到数据库的实际工作。 此类尚不存在，因此现在你将创建它。
 
 1. 在**解决方案资源管理器**，右键单击*逻辑*文件夹，然后选择**添加** - &gt; **新项**。   
- 随即出现“添加新项”对话框。
+   随即出现“添加新项”对话框。
 2. 选择**Visual C#**  - &gt; **代码**左侧的模板组。 然后，选择**类**从中间列表并将其命名*AddProducts.cs*。   
- 将显示新的类文件。
+   将显示新的类文件。
 3. 将现有代码替换为以下代码：  
 
     [!code-csharp[Main](membership-and-administration/samples/sample9.cs)]
@@ -235,15 +235,15 @@ Wingtip Toys 示例应用程序允许匿名用户和登录的用户都能查看�
 你可以在购物车中运行应用程序现在以查看如何添加、 删除和更新项目。 购物车总计将反映在购物车中的所有项的总成本。
 
 1. 在解决方案资源管理器，按**F5**运行 Wingtip Toys 示例应用程序。  
- 浏览器将打开并显示*Default.aspx*页。
+   浏览器将打开并显示*Default.aspx*页。
 2. 单击**登录**页顶部的链接。 
 
     ![成员资格和管理的登录链接](membership-and-administration/_static/image2.png)
 
- *Login.aspx*显示页。
+   *Login.aspx*显示页。
 3. 使用以下用户名和密码：  
- 用户名：canEditUser@wingtiptoys.com  
- 密码： Pa $$ word1 
+   用户名： canEditUser@wingtiptoys.com  
+   密码： Pa $$ word1 
 
     ![成员资格和管理的登录页](membership-and-administration/_static/image3.png)
 4. 单击**登录**附近页面底部的按钮。
@@ -254,7 +254,7 @@ Wingtip Toys 示例应用程序允许匿名用户和登录的用户都能查看�
 
     ![成员资格和管理-管理员页](membership-and-administration/_static/image5.png)
 
- 请注意，会显示必填的字段消息。
+   请注意，会显示必填的字段消息。
 7. 添加新产品的详细信息，然后单击**添加产品**按钮。 
 
     ![成员资格和管理-添加产品](membership-and-administration/_static/image6.png)
@@ -268,9 +268,9 @@ Wingtip Toys 示例应用程序允许匿名用户和登录的用户都能查看�
     ![成员资格和管理-删除产品](membership-and-administration/_static/image8.png)
 12. 选择**产品**从顶部导航菜单以确认已删除产品。
 13. 单击**注销**存在管理模式。   
- 请注意，顶部导航窗格中将不再显示**管理员**菜单项。
+    请注意，顶部导航窗格中将不再显示**管理员**菜单项。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，你将添加自定义角色和用户属于的自定义角色，对管理文件夹和页上，访问受到限制并提供属于自定义角色的用户的导航。 使用模型绑定来填充**DropDownList**与数据的控件。 你实现**FileUpload**控件和验证控件。 此外，你已学习如何添加和从数据库中删除产品。 在下一步的教程中，你将了解如何实现 ASP.NET 路由。
 
@@ -281,6 +281,6 @@ Wingtip Toys 示例应用程序允许匿名用户和登录的用户都能查看�
 [将包含成员资格、 OAuth 和 SQL 数据库的安全的 ASP.NET Web 窗体应用程序部署到 Azure 网站](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)  
 [Microsoft Azure 的免费试用版](https://azure.microsoft.com/pricing/free-trial/)
 
->[!div class="step-by-step"]
-[上一页](checkout-and-payment-with-paypal.md)
-[下一页](url-routing.md)
+> [!div class="step-by-step"]
+> [上一页](checkout-and-payment-with-paypal.md)
+> [下一页](url-routing.md)

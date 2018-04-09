@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
-title: "检索和显示与数据模型绑定和 web 窗体 |Microsoft 文档"
+title: 检索和显示与数据模型绑定和 web 窗体 |Microsoft 文档
 author: tfitzmac
-description: "本系列教程演示使用模型绑定的 ASP.NET Web 窗体项目的基本方面。 模型绑定使数据交互详细直接-..."
+description: 本系列教程演示使用模型绑定的 ASP.NET Web 窗体项目的基本方面。 模型绑定使数据交互详细直接-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
 msc.type: authoredcontent
-ms.openlocfilehash: e750250285fcb0088da284588d721ac21e73820c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 26873efa5dbfdbdab39a52cfb9cfd5a65c8231a3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>检索和显示使用模型的绑定和 web 窗体的数据
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
 > 
 > 
-> - Microsoft Visual Studio 2013 或 Microsoft Visual Studio Express 2013 for Web
+> - Microsoft Visual Studio 2013 or Microsoft Visual Studio Express 2013 for Web
 >   
 > 
 > 本教程还适用于 Visual Studio 2012，但将有一些差异的用户界面和项目模板。
@@ -182,5 +182,5 @@ Visual Studio 不仅具有正确签名的代码隐藏文件中创建一个方法
 
 在下一个[教程](updating-deleting-and-creating-data.md)在此系列中，将启用更新、 删除和创建的数据。
 
->[!div class="step-by-step"]
-[下一篇](updating-deleting-and-creating-data.md)
+> [!div class="step-by-step"]
+> [下一篇](updating-deleting-and-creating-data.md)

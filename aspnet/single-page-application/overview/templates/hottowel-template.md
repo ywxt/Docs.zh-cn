@@ -1,22 +1,22 @@
 ---
 uid: single-page-application/overview/templates/hottowel-template
-title: "热毛巾模板 |Microsoft 文档"
+title: 热毛巾模板 |Microsoft 文档
 author: madskristensen
-description: "HotTowel 模板"
+description: HotTowel 模板
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/09/2013
 ms.topic: article
 ms.assetid: 75af2e17-6ed3-4d24-8ea1-bc340027c318
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/hottowel-template
 msc.type: authoredcontent
-ms.openlocfilehash: bfc6e2c884c422f44e8be5f4f29554ae86f7ecb6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dbd037c2469d326a3d3248ca07492ed9eb93e225
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="hot-towel-template"></a>热毛巾模板
 ====================
@@ -29,8 +29,8 @@ ms.lasthandoff: 11/10/2017
 > [Visual Studio 2012 的热毛巾 MVC 模板](https://visualstudiogallery.msdn.microsoft.com/1f68fbe8-b4e9-4968-9fd3-ddc7cbc52dca)
 > 
 > [Visual Studio 2013 的热毛巾 MVC 模板](https://visualstudiogallery.msdn.microsoft.com/1eb8780d-d522-4dcf-bf56-56f0eab305c2)
-
-
+> 
+> 
 > 热毛巾： 由于你不想要转到没有 SPA ！
 
 
@@ -60,7 +60,7 @@ ms.lasthandoff: 11/10/2017
 
 - 应用\_启动
 - 内容
-- 控制器
+- Controllers
 - 模型
 - 脚本
 - 视图
@@ -95,7 +95,7 @@ ms.lasthandoff: 11/10/2017
 2. 添加到视图`App/views`文件夹
 3. 添加到 viewmodel`App/viewmodels`文件夹
 4. 将 HTML 和 Knockout 数据绑定添加到你新视图
-5. 更新中的导航的路由`shell.js`
+5. 更新中的导航的路由 `shell.js`
 
 ## <a name="walkthrough-of-the-htmljavascript"></a>HTML/JavaScript 的演练
 
@@ -139,7 +139,7 @@ index.cshtml 是起始路由和视图的 MVC 应用程序。 它包含所有标�
 
 `footer.html`包含显示在页脚中，在底部的 HTML`shell`视图。
 
-## <a name="viewmodels"></a>Viewmodel
+## <a name="viewmodels"></a>ViewModels
 
 在中找到 Viewmodel`App/viewmodels`文件夹。
 

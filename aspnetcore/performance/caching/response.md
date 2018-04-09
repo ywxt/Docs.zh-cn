@@ -1,18 +1,18 @@
 ---
-title: "响应缓存在 ASP.NET 核心"
+title: 响应缓存在 ASP.NET 核心
 author: rick-anderson
-description: "了解如何使用缓存到较低带宽要求的响应，并增加的 ASP.NET Core 应用的性能。"
+description: 了解如何使用缓存到较低带宽要求的响应，并增加的 ASP.NET Core 应用的性能。
 manager: wpickett
 ms.author: riande
 ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: c654cfd7c2d291849067bfd3297f940018ccb3d8
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: cc1ec50155398ba4143a2bf697ca26435c228c49
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>响应缓存在 ASP.NET 核心
 
@@ -64,13 +64,13 @@ ms.lasthandoff: 03/02/2018
 
 内存中缓存使用的服务器内存来存储缓存的数据。 此类型的缓存适合于单个服务器或多个服务器使用*粘性会话*。 粘性会话意味着，客户端的请求始终路由至同一服务器进行处理。
 
-有关详细信息，请参阅[简介内存中缓存中 ASP.NET Core](xref:performance/caching/memory)。
+有关详细信息，请参阅[缓存内存中](xref:performance/caching/memory)。
 
 ### <a name="distributed-cache"></a>分布式的缓存
 
 使用分布式的缓存时云或服务器场中承载应用程序数据存储在内存中。 处理请求的服务器之间共享缓存。 客户端可以提交用于客户端的缓存的数据是否可用的组中的任何服务器处理的请求。 ASP.NET Core 提供 SQL Server 和分布式的 Redis 缓存。
 
-有关详细信息，请参阅[使用分布式缓存](xref:performance/caching/distributed)。
+有关详细信息，请参阅[方式使用分布式缓存](xref:performance/caching/distributed)。
 
 ### <a name="cache-tag-helper"></a>缓存标记帮助器
 
@@ -128,7 +128,7 @@ ms.lasthandoff: 03/02/2018
 
 如果`NoStore`是`false`和`Location`是`None`，`Cache-Control`和`Pragma`设置为`no-cache`。
 
-通常情况下设置`NoStore`到`true`错误页上。 例如:
+通常情况下设置`NoStore`到`true`错误页上。 例如：
 
 [!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet1&highlight=1)]
 
@@ -180,9 +180,9 @@ Cache-Control: public,max-age=60
 
 ## <a name="additional-resources"></a>其他资源
 
-* [在缓存中 HTTP 规范中](https://tools.ietf.org/html/rfc7234#section-3)
+* [在缓存中存储响应](https://tools.ietf.org/html/rfc7234#section-3)
 * [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
-* [内存中缓存](xref:performance/caching/memory)
+* [缓存在内存](xref:performance/caching/memory)
 * [使用分布式缓存](xref:performance/caching/distributed)
 * [使用更改令牌检测更改](xref:fundamentals/primitives/change-tokens)
 * [响应缓存中间件](xref:performance/caching/middleware)

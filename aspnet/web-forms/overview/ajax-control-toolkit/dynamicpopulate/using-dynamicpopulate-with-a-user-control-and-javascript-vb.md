@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-vb
-title: "用户控件和 JavaScript (VB) 中使用 DynamicPopulate |Microsoft 文档"
+title: 用户控件和 JavaScript (VB) 中使用 DynamicPopulate |Microsoft 文档
 author: wenz
-description: "ASP.NET AJAX 控件工具包中的 DynamicPopulate 控件调用 web 服务 （或页方法），并将生成的值填充到 t 上的目标控件..."
+description: ASP.NET AJAX 控件工具包中的 DynamicPopulate 控件调用 web 服务 （或页方法），并将生成的值填充到 t 上的目标控件...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 495a3917ca5fa28bc833ccc666b1a5e6db7bf7f2
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 715973ef4923e635ec2a860d00d55f13a5f8b2d4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-dynamicpopulate-with-a-user-control-and-javascript-vb"></a>用户控件和 JavaScript (VB) 中使用 DynamicPopulate
 ====================
@@ -74,5 +74,5 @@ A &lt; `label` &gt;元素将用于显示来自服务器的数据。
 
 用户控件中驻留的单选按钮 ([单击以查看实际尺寸的图像](using-dynamicpopulate-with-a-user-control-and-javascript-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一篇](dynamically-populating-a-control-using-javascript-code-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](dynamically-populating-a-control-using-javascript-code-vb.md)

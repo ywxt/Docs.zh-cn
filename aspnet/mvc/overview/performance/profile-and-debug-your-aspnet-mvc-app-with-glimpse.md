@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
-title: "配置文件和调试使用 Glimpse 对 ASP.NET MVC 应用程序 |Microsoft 文档"
+title: 配置文件和调试使用 Glimpse 对 ASP.NET MVC 应用程序 |Microsoft 文档
 author: Rick-Anderson
-description: "Glimpse 是一个获得成功和增长的开放源 NuGet 包的系列，提供详细的性能、 调试和诊断信息的 ASP.NET..."
+description: Glimpse 是一个获得成功和增长的开放源 NuGet 包的系列，提供详细的性能、 调试和诊断信息的 ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/26/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: 9cfdced21251b482ca527dda9c3a698de77cc8ca
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6ac23256c57116de81c7bf690d5ce743301c75ce
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>配置文件和调试使用 Glimpse 对 ASP.NET MVC 应用程序
 ====================
@@ -55,7 +55,7 @@ ms.lasthandoff: 01/24/2018
 <a id="eg"></a>
 ## <a name="enable-glimpse-for-localhost"></a>为本地主机启用 Glimpse
 
-导航到 http://localhost:&lt;端口号&gt;/glimpse.axd 和单击**打开 Glimpse 上**按钮。
+导航到http://localhost:&lt;端口号&gt;/glimpse.axd 和单击<strong>打开 Glimpse 上</strong>按钮。
 
 ![Glimpse axd 页](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image4.png)
 

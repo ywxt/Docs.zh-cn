@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-6
-title: "创建 JavaScript 客户端 |Microsoft 文档"
+title: 创建 JavaScript 客户端 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/16/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-6
 msc.type: authoredcontent
-ms.openlocfilehash: b397c5a413ae213c9b79da1c0e0626efe21c7e21
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 29d50e448e6d282c7db06b9d1946ac221347e1ea
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-the-javascript-client"></a>创建 JavaScript 客户端
 ====================
@@ -58,8 +58,8 @@ Knockout 库使用模型-视图-视图模型 (MVVM) 模式：
 
 在 Knockout，`observable`类实现数据绑定。 当可观测对象的内容发生更改时，可观测对象的通知的所有数据绑定控件，以便他们能够更新自己。 (`observableArray`类是数组新版*可观测对象*。)开始时，我们视图模型具有两个可观察对象：
 
-- `books`包含书籍的列表。
-- `error`如果 AJAX 调用失败，则包含一条错误消息。
+- `books` 包含书籍的列表。
+- `error` 如果 AJAX 调用失败，则包含一条错误消息。
 
 `getAllBooks`方法进行的 AJAX 调用，以便获取的书籍列表。 然后它会推送到结果`books`数组。
 
@@ -73,6 +73,6 @@ Knockout 库使用模型-视图-视图模型 (MVVM) 模式：
 
 [!code-csharp[Main](part-6/samples/sample3.cs)]
 
->[!div class="step-by-step"]
-[上一页](part-5.md)
-[下一页](part-7.md)
+> [!div class="step-by-step"]
+> [上一页](part-5.md)
+> [下一页](part-7.md)

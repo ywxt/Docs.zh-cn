@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-cs
-title: "以编程方式设置对象数据源的参数值 (C#) |Microsoft 文档"
+title: 以编程方式设置对象数据源的参数值 (C#) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将查看将方法添加到我们的 DAL 和 BLL 接受一个输入的参数并返回数据。 该示例会将此参数设置..."
+description: 在本教程中我们将查看将方法添加到我们的 DAL 和 BLL 接受一个输入的参数并返回数据。 该示例会将此参数设置...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7694c56fa5c50ff75db931e88c2334f560631d74
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1bd1fd63e5aae74459675d45dd399e449d7897b8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="programmatically-setting-the-objectdatasources-parameter-values-c"></a>以编程方式设置对象数据源的参数值 (C#)
 ====================
@@ -124,7 +124,7 @@ ms.lasthandoff: 01/24/2018
 **图 9**： 单击属性窗口列出 Web 控件的事件中的闪电形图标
 
 
-这两种方法添加的新的事件处理程序 ObjectDataSource`Selecting`到页面的代码隐藏类的事件。 在此事件处理程序中，我们可以读取和写入使用的参数值`e.InputParameters[parameterName]`，其中 *`parameterName`* 是值`Name`属性中`<asp:Parameter>`标记 (`InputParameters`集合也可以是按序号对它们，在索引`e.InputParameters[index]`)。 若要设置`month`到当前月份，参数添加到以下`Selecting`事件处理程序：
+这两种方法添加的新的事件处理程序 ObjectDataSource`Selecting`到页面的代码隐藏类的事件。 在此事件处理程序中，我们可以读取和写入使用的参数值`e.InputParameters[parameterName]`，其中*`parameterName`*是值`Name`属性中`<asp:Parameter>`标记 (`InputParameters`集合也可以是按序号对它们，在索引`e.InputParameters[index]`)。 若要设置`month`到当前月份，参数添加到以下`Selecting`事件处理程序：
 
 
 [!code-csharp[Main](programmatically-setting-the-objectdatasource-s-parameter-values-cs/samples/sample3.cs)]
@@ -137,7 +137,7 @@ ms.lasthandoff: 01/24/2018
 **图 10**： 那些员工其纪念日此月显示 ([单击以查看实际尺寸的图像](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image28.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 尽管对象数据源的参数值通常可设置以声明方式，而无需代码行，很容易以编程方式设置参数值。 我们需要做的就是创建为对象数据源的事件处理程序`Selecting`触发的事件，基础对象的方法未调用，且手动设置通过一个或多个参数的值之前`InputParameters`集合。
 
@@ -147,12 +147,12 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已希尔顿 Giesenow。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](declarative-parameters-cs.md)
-[下一页](displaying-data-with-the-objectdatasource-vb.md)
+> [!div class="step-by-step"]
+> [上一页](declarative-parameters-cs.md)
+> [下一页](displaying-data-with-the-objectdatasource-vb.md)

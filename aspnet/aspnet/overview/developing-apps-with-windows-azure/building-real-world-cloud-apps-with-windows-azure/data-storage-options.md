@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
-title: "数据存储选项 （使用 Azure 构建真实世界云应用） |Microsoft 文档"
+title: 数据存储选项 （使用 Azure 构建真实世界云应用） |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以..."
+description: 构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
-ms.openlocfilehash: 88f57244bfbfdf33df3bb265d8aa2c93689b2f24
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d638dca331cb24c340a4471e5964a00b75bb608a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>数据存储选项 （使用 Azure 构建真实世界云应用）
 ====================
@@ -155,7 +155,7 @@ Azure 使 IaaS 数据存储选项为易于使用，但 PaaS 产品具有使它�
 
 我们通常的建议是知道中每个类别的问题的答案，然后选择你的数据存储解决方案。
 
-此外，你的工作负荷可能存在某些平台可以比其他更好地支持的特定要求。 例如:
+此外，你的工作负荷可能存在某些平台可以比其他更好地支持的特定要求。 例如：
 
 - 不应用程序需要审核功能？
 - 你的数据使用寿命要求是什么-你需要存档或清除的自动的功能吗？
@@ -250,7 +250,7 @@ SQL Database 是易于扩展。 为 Fix It 应用，我们在我们的自动化�
 | Azure SQL 数据库 (PaaS) | 虚拟机 (IaaS) 中的 SQL Server |
 | --- | --- |
 | **专业人员**-无需创建或管理 Vm、 更新或修补程序 OS 或 SQL;Azure 为你执行该操作。 -内置的高可用性，与数据库级别 SLA。 -低总拥有成本 (TCO)，因为你只需支付使用 （不需要许可证）。 -适用于处理大量的小型数据库 (&lt;= 500 GB)。 -轻松地动态创建新的数据库启用横向扩展。 | ***专业人员***-与本地 SQL Server 的功能兼容。 -可以实现 SQL Server[通过 AlwaysOn 高可用性](https://www.microsoft.com/sqlserver/solutions-technologies/mission-critical-operations/high-availability.aspx)2 + Vm，并确保 SLA 来 VM 级别中。 -你可以完全控制如何管理 SQL。 -可以重复使用你已拥有，或按某个小时付费的 SQL 许可证。 -适用于处理更少但更大 (1 TB +) 数据库。 |
-| **Cons**的某些功能相比于在本地 SQL Server 的缺口 (缺少[CLR 集成](https://technet.microsoft.com/library/ms131102.aspx)， [TDE](https://technet.microsoft.com/library/bb934049.aspx)，[压缩支持](https://technet.microsoft.com/library/cc280449.aspx)， [SQLServer Reporting Services](https://technet.microsoft.com/library/ms159106.aspx)等) 的数据库大小限制为 500 GB。 | ***Cons*** -更新/修补程序 （OS 和 SQL） 是您有责任-创建和管理的数据库对于您有责任的限制为大约 8000 （通过 16 个数据驱动器） 的磁盘 IOPS （每秒输入/输出操作）。 |
+| **Cons**的某些功能相比于在本地 SQL Server 的缺口 (缺少[CLR 集成](https://technet.microsoft.com/library/ms131102.aspx)， [TDE](https://technet.microsoft.com/library/bb934049.aspx)，[压缩支持](https://technet.microsoft.com/library/cc280449.aspx)， [SQL ServerReporting Services](https://technet.microsoft.com/library/ms159106.aspx)等) 的数据库大小限制为 500 GB。 | ***Cons*** -更新/修补程序 （OS 和 SQL） 是您有责任-创建和管理的数据库对于您有责任的限制为大约 8000 （通过 16 个数据驱动器） 的磁盘 IOPS （每秒输入/输出操作）。 |
 
 如果你想要在 VM 中使用 SQL Server，你可以使用你自己的 SQL Server 许可证，或可以为一个按小时付费。 例如，在门户中或通过 REST API 可以创建使用 SQL Server 映像的新 VM。
 
@@ -260,7 +260,7 @@ SQL Database 是易于扩展。 为 Fix It 应用，我们在我们的自动化�
 
 在创建 VM 具有 SQL Server 映像，我们创建速率的 SQL Server 许可成本按小时基于你的 VM 的使用情况。 如果你有项目，这只会运行几个月，是按小时付费成本更低。 如果你认为你的项目转到最后一年，是经济购买许可证通常所做的方式。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 云计算变得切实可行来混合和匹配数据的存储方法，以便最好地满足你的应用程序的需求。 如果你正在生成新的应用程序，请仔细考虑有关才能选取将继续在你的应用程序的增长，十分适用的方法在此处列出的问题。 [下一章](data-partitioning-strategies.md)将介绍一些可用于组合多个数据存储方法的分区策略。
 
@@ -301,6 +301,6 @@ HDInsight (Hadoop 在 Azure 上):
 - [Hadoop 和 HDInsight： 在 Azure 中的大数据](https://msdn.microsoft.com/magazine/dn385705.aspx)。 MSDN 杂志文章 Bruno Terkaly 和 Ricardo Villalobos，引入 Azure 上的 Hadoop。
 - [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/library/dn568099.aspx)。 请参阅 MapReduce 模式。
 
->[!div class="step-by-step"]
-[上一页](single-sign-on.md)
-[下一页](data-partitioning-strategies.md)
+> [!div class="step-by-step"]
+> [上一页](single-sign-on.md)
+> [下一页](data-partitioning-strategies.md)

@@ -1,7 +1,7 @@
 ---
-title: "防止跨站点脚本 (XSS) 在 ASP.NET 核心"
+title: 防止跨站点脚本 (XSS) 在 ASP.NET 核心
 author: rick-anderson
-description: "了解有关跨站点脚本 (XSS) 和一些解决这一漏洞在 ASP.NET Core 应用程序技术。"
+description: 了解有关跨站点脚本 (XSS) 和一些解决这一漏洞在 ASP.NET Core 应用程序技术。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cross-site-scripting
-ms.openlocfilehash: 9e54ee0b1169c01629c3cd91a378509a73c53904
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: d9263a2c1bb6a376008b7d8a55864e4d15e77cee
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="preventing-cross-site-scripting-xss-in-aspnet-core"></a>防止跨站点脚本 (XSS) 在 ASP.NET 核心
+# <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>防止跨站点脚本 (XSS) 在 ASP.NET 核心
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="html-encoding-using-razor"></a>使用 Razor 的 HTML 编码
 
-自动使用 MVC Razor 引擎将所有编码输出源自变量，除非您真正努力工作以避免其执行此操作。 它使用编码规则，每当你使用的 HTML 特性 *@* 指令。 为 HTML 属性编码为 HTML 编码，这意味着你不必考虑自己是否应使用 HTML 编码或 HTML 特性编码的超集。 你必须确保您仅使用在 HTML 上下文中，不是在尝试将直接插入 JavaScript 不受信任的输入时。 标记帮助程序还会编码标记参数中使用的输入。
+自动使用 MVC Razor 引擎将所有编码输出源自变量，除非您真正努力工作以避免其执行此操作。 它使用编码规则，每当你使用的 HTML 特性*@*指令。 为 HTML 属性编码为 HTML 编码，这意味着你不必考虑自己是否应使用 HTML 编码或 HTML 特性编码的超集。 你必须确保您仅使用在 HTML 上下文中，不是在尝试将直接插入 JavaScript 不受信任的输入时。 标记帮助程序还会编码标记参数中使用的输入。
 
 考虑以下 Razor 视图;
 
@@ -60,7 +60,7 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="javascript-encoding-using-razor"></a>使用 Razor Javascript 编码
 
-可能有些时候你想要插入处理在视图中的 JavaScript 值。 有两种方法可以实现此目的。 插入简单值的最安全方法是将值放在一个标记的数据属性并检索你在 JavaScript。 例如:
+可能有些时候你想要插入处理在视图中的 JavaScript 值。 有两种方法可以实现此目的。 插入简单值的最安全方法是将值放在一个标记的数据属性并检索你在 JavaScript。 例如：
 
 ```none
 @{
@@ -145,7 +145,7 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="accessing-encoders-in-code"></a>访问代码中的编码器
 
-HTML、 JavaScript 和 URL 编码器可供代码使用两种方式，可以将它们通过注入[依赖关系注入](../fundamentals/dependency-injection.md#fundamentals-dependency-injection)或者你可以使用中包含的默认编码器`System.Text.Encodings.Web`命名空间。 如果你使用的默认编码器，则你应用到任何要被视为为安全的字符范围不会生效-默认编码器使用的可能的安全编码规则。
+HTML、 JavaScript 和 URL 编码器可供代码使用两种方式，可以将它们通过注入[依赖关系注入](xref:fundamentals/dependency-injection#fundamentals-dependency-injection)或者你可以使用中包含的默认编码器`System.Text.Encodings.Web`命名空间。 如果你使用的默认编码器，则你应用到任何要被视为为安全的字符范围不会生效-默认编码器使用的可能的安全编码规则。
 
 若要使用可配置编码器通过你的构造函数应采用的 DI *HtmlEncoder*， *JavaScriptEncoder*和*UrlEncoder*作为适当的参数。 例如，
 

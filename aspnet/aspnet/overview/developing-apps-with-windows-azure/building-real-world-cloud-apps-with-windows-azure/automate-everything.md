@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
-title: "自动执行所有内容 （构建使用 Azure 真实世界云应用） |Microsoft 文档"
+title: 自动执行所有内容 （构建使用 Azure 真实世界云应用） |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以..."
+description: 构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: aa8bb895ed6eaa0ef4c5752f475ea7c911544ef2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2e30ab7831a10f215a08f74e61adf2d147e76543
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>自动执行所有内容 （构建真实世界云应用与 Azure）
 ====================
@@ -90,7 +90,7 @@ ms.lasthandoff: 01/24/2018
 
 ![appSettings 和 connectionStrings](automate-everything/_static/image6.png)
 
-*自动化*文件夹现在还包含 *&lt;websitename&gt;.pubxml*文件。 此文件存储 MSBuild 将用于将应用部署到刚创建的 Azure 环境的设置。 例如:
+*自动化*文件夹现在还包含 *&lt;websitename&gt;.pubxml*文件。 此文件存储 MSBuild 将用于将应用部署到刚创建的 Azure 环境的设置。 例如：
 
 [!code-xml[Main](automate-everything/samples/sample1.xml)]
 
@@ -128,7 +128,7 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="create-the-storage-account"></a>创建存储帐户
 
-然后运行主脚本*新建 AzureStorage.ps1*编写脚本，请指定"*&lt;websitename&gt;*存储"的存储帐户名称，和的相同数据中心位置为web 应用。
+然后运行主脚本<em>新建 AzureStorage.ps1</em>编写脚本，请指定"<em>&lt;websitename&gt;</em>存储"的存储帐户名称，和的相同数据中心位置为web 应用。
 
 [!code-powershell[Main](automate-everything/samples/sample4.ps1?highlight=3)]
 
@@ -158,7 +158,7 @@ ms.lasthandoff: 01/24/2018
 
     [!code-powershell[Main](automate-everything/samples/sample10.ps1?highlight=4)]
 
-    `New-PSCredentialFromPlainText`是一个函数调用的脚本中`ConvertTo-SecureString`cmdlet 可加密的密码和返回`PSCredential`对象，相同的类型， `Get-Credential` cmdlet 将返回。
+    `New-PSCredentialFromPlainText` 是一个函数调用的脚本中`ConvertTo-SecureString`cmdlet 可加密的密码和返回`PSCredential`对象，相同的类型， `Get-Credential` cmdlet 将返回。
 - 通过使用创建应用程序数据库和成员资格数据库`New-AzureSqlDatabase`cmdlet。
 
     [!code-powershell[Main](automate-everything/samples/sample11.ps1?highlight=2,5)]
@@ -245,7 +245,7 @@ Azure 具有一种功能，使你能够存储设置和自动重写时它会尝�
 
 ![修复此错误应用程序部署到 Windows Azure](automate-everything/_static/image7.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 使用这些脚本可以确信与使用相同的选项相同的顺序将始终执行相同的步骤。 这有助于确保团队每个开发人员不缺少某些内容或内容扰乱或部署自定义自己不会实际工作方式类似，在另一个团队成员的环境中或在生产环境中的计算机上的内容。
 
@@ -264,6 +264,6 @@ Azure 具有一种功能，使你能够存储设置和自动重写时它会尝�
 - [使用 Windows PowerShell 脚本发布到开发和测试环境](https://msdn.microsoft.com/library/azure/dn642480.aspx)。 说明如何使用的 MSDN 文档发布 Visual Studio 自动生成用于 web 项目的脚本。
 - [PowerShell Tools for Visual Studio 2013](https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597)。 在 Visual Studio 中添加 Windows PowerShell 语言支持的 visual Studio 扩展。
 
->[!div class="step-by-step"]
-[上一页](introduction.md)
-[下一页](source-control.md)
+> [!div class="step-by-step"]
+> [上一页](introduction.md)
+> [下一页](source-control.md)

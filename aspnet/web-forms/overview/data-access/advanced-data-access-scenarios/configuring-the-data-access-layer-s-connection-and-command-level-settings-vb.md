@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-vb
-title: "配置的数据访问层连接和命令级别设置 (VB) |Microsoft 文档"
+title: 配置的数据访问层连接和命令级别设置 (VB) |Microsoft 文档
 author: rick-anderson
-description: "在类型化数据集中 Tableadapter 自动负责连接到数据库、 发布命令，并填充数据表中使用的结果..."
+description: 在类型化数据集中 Tableadapter 自动负责连接到数据库、 发布命令，并填充数据表中使用的结果...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ab392f2a7d9b6cf97da920f899aea23379209f96
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b73c6113e84e290025e5835781fa2f85587289b1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-vb"></a>配置的数据访问层连接和命令级别设置 (VB)
 ====================
@@ -93,7 +93,7 @@ TableAdapter 的`Connection`属性和其他与连接相关的代码如下所示�
 
 ![添加名为 ConnectionAndCommandSettings 的子文件夹](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image5.png)
 
-**图 3**： 添加名为的子文件夹`ConnectionAndCommandSettings`
+**图 3**： 添加名为的子文件夹 `ConnectionAndCommandSettings`
 
 
 添加名为的新类文件`ProductsTableAdapter.ConnectionAndCommandSettings.vb`，然后输入以下代码：
@@ -159,7 +159,7 @@ A`SqlCommand`对象负责将特定查询发送到数据库，并具有属性，�
 > `Adapter`和`CommandCollection`属性标记为`Private`，这意味着仅从 TableAdapter 中的代码进行访问。 与不同`Connection`属性，这些访问修饰符是不可配置。 因此，如果你需要公开命令级别到体系结构中的其他层的属性必须使用提供前面讨论的分部类方法`Public`方法或属性，可读取或写入`Private`命令对象。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在类型化数据集中 Tableadapter 用来封装数据访问的详细信息和复杂性。 使用 Tableadapter，我们不需要担心编写 ADO.NET 代码，以连接到数据库、 发出命令，或填充到数据表的结果。 它是所有自动处理为我们。
 
@@ -169,12 +169,12 @@ A`SqlCommand`对象负责将特定查询发送到数据库，并具有属性，�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Burnadette Leigh，S ren 异世 Lauritsen Teresa 墨和希尔顿 Geisenow。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](working-with-computed-columns-vb.md)
-[下一页](protecting-connection-strings-and-other-configuration-information-vb.md)
+> [!div class="step-by-step"]
+> [上一页](working-with-computed-columns-vb.md)
+> [下一页](protecting-connection-strings-and-other-configuration-information-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/database-driven-site-maps/building-a-custom-database-driven-site-map-provider-vb
-title: "生成自定义数据库驱动站点映射提供程序 (VB) |Microsoft 文档"
+title: 生成自定义数据库驱动站点映射提供程序 (VB) |Microsoft 文档
 author: rick-anderson
-description: "在 ASP.NET 2.0 中的默认映射提供静态的 XML 文件中检索其数据。 适用于许多小型和中型大小基于 XML 的提供程序时..."
+description: 在 ASP.NET 2.0 中的默认映射提供静态的 XML 文件中检索其数据。 适用于许多小型和中型大小基于 XML 的提供程序时...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/database-driven-site-maps/building-a-custom-database-driven-site-map-provider-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e9b71ed89dce4e973a9096a9e2326d2c16c30673
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: df295f1b8bf0b83647ffb90501936181894634d7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="building-a-custom-database-driven-site-map-provider-vb"></a>生成自定义数据库驱动站点映射提供程序 (VB)
 ====================
@@ -145,7 +145,7 @@ ASP.NET 2.0 的站点地图功能使得页开发人员可以如定义在某些�
 
 ![添加指向 ProductDetails.aspx 视图详细信息 HyperLinkField](building-a-custom-database-driven-site-map-provider-vb/_static/image10.gif)
 
-**图 10**： 添加查看详细信息指向 HyperLinkField`ProductDetails.aspx`
+**图 10**： 添加查看详细信息指向 HyperLinkField `ProductDetails.aspx`
 
 
 进行这些自定义项后, 的 GridView 和 ObjectDataSource s 声明性标记应如下所示：
@@ -210,7 +210,7 @@ ASP.NET 2.0 的站点地图功能使得页开发人员可以如定义在某些�
 
 所有站点映射提供程序必须都派生自[`SiteMapProvider`类](https://msdn.microsoft.com/library/system.web.sitemapprovider.aspx)，其中包括基本的方法和所需的站点的属性将映射提供程序，但省略的许多实现细节。 第二个类的[ `StaticSiteMapProvider` ](https://msdn.microsoft.com/library/system.web.staticsitemapprovider.aspx)，扩展`SiteMapProvider`类并包含所需的功能的更可靠的实现。 在内部，`StaticSiteMapProvider`存储`SiteMapNode`实例的站点中的映射`Hashtable`并提供等方法`AddNode(child, parent)`，`RemoveNode(siteMapNode),`和`Clear()`添加和删除`SiteMapNode`到内部 s `Hashtable`。 `XmlSiteMapProvider` 派生自 `StaticSiteMapProvider`。
 
-当创建自定义网站地图提供商提供扩展`StaticSiteMapProvider`，有两个抽象方法必须重写： [ `BuildSiteMap` ](https://msdn.microsoft.com/library/system.web.staticsitemapprovider.buildsitemap.aspx)和[ `GetRootNodeCore` ](https://msdn.microsoft.com/library/system.web.sitemapprovider.getrootnodecore.aspx)。 `BuildSiteMap`正如其名，负责从持久性存储区加载站点地图结构和构造在内存中。 `GetRootNodeCore`在站点地图中返回的根节点。
+当创建自定义网站地图提供商提供扩展`StaticSiteMapProvider`，有两个抽象方法必须重写： [ `BuildSiteMap` ](https://msdn.microsoft.com/library/system.web.staticsitemapprovider.buildsitemap.aspx)和[ `GetRootNodeCore` ](https://msdn.microsoft.com/library/system.web.sitemapprovider.getrootnodecore.aspx)。 `BuildSiteMap`正如其名，负责从持久性存储区加载站点地图结构和构造在内存中。 `GetRootNodeCore` 在站点地图中返回的根节点。
 
 之前 web 应用程序可以使用它必须在应用程序的配置注册站点地图提供商提供。 默认情况下，`XmlSiteMapProvider`类使用名称进行注册`AspNetXmlSiteMapProvider`。 若要注册其他站点地图提供程序，添加以下标记到`Web.config`:
 
@@ -221,10 +221,10 @@ ASP.NET 2.0 的站点地图功能使得页开发人员可以如定义在某些�
 
 站点映射提供程序类实例化第一次从其访问`SiteMap`类并在 web 应用程序的生存期内的内存中保留。 由于没有可以从多个并发 web 站点访问者调用站点地图提供商提供的一个实例，它是命令性的提供程序的方法，是*线程安全*。
 
-出于性能和可伸缩性原因，它 s 重要我们缓存内存中站点映射结构，并返回此缓存结构，而不是无需重新创建它每次`BuildSiteMap`调用方法。 `BuildSiteMap`可能被调用多次，每个页请求，每个用户，具体取决于在页和站点地图结构的深度导航控件中使用。 在任何情况下，如果我们不会缓存在站点地图结构`BuildSiteMap`然后每次调用它时我们将需要重新检索的体系结构 （这将产生在查询中对数据库） 中的产品和类别信息。 如前面的缓存教程中所述，缓存的数据可能会失效。 为了应对这种情况，我们可以使用时间-或 SQL 缓存依赖项基于满。
+出于性能和可伸缩性原因，它 s 重要我们缓存内存中站点映射结构，并返回此缓存结构，而不是无需重新创建它每次`BuildSiteMap`调用方法。 `BuildSiteMap` 可能被调用多次，每个页请求，每个用户，具体取决于在页和站点地图结构的深度导航控件中使用。 在任何情况下，如果我们不会缓存在站点地图结构`BuildSiteMap`然后每次调用它时我们将需要重新检索的体系结构 （这将产生在查询中对数据库） 中的产品和类别信息。 如前面的缓存教程中所述，缓存的数据可能会失效。 为了应对这种情况，我们可以使用时间-或 SQL 缓存依赖项基于满。
 
 > [!NOTE]
-> 站点地图提供商提供 （可选） 可能会重写[`Initialize`方法](https://msdn.microsoft.com/library/system.web.sitemapprovider.initialize.aspx)。 `Initialize`站点地图提供商提供第一次实例化并传递任何自定义特性分配给中的提供程序时调用`Web.config`中`<add>`类似的元素： `<add name="name" type="type" customAttribute="value" />`。 如果你想要允许页开发人员无需修改提供程序的代码中指定各种站点映射提供程序相关设置，它非常有用。 例如，如果我们已读取的分类和产品数据的体系结构，我们 d 通过相对于数据库中直接可能想要让页开发人员指定的数据库连接字符串通过`Web.config`而不是使用硬编码提供程序的代码中的值。 我们生成了第 6 步中的自定义站点映射提供程序不会覆盖这`Initialize`方法。 有关的使用示例`Initialize`方法，请参阅[Jeff Prosise](http://www.wintellect.com/Weblogs/CategoryView,category,Jeff%20Prosise.aspx) s [SQL Server 中存储站点地图](https://msdn.microsoft.com/msdnmag/issues/05/06/WickedCode/)文章。
+> 站点地图提供商提供 （可选） 可能会重写[`Initialize`方法](https://msdn.microsoft.com/library/system.web.sitemapprovider.initialize.aspx)。 `Initialize` 站点地图提供商提供第一次实例化并传递任何自定义特性分配给中的提供程序时调用`Web.config`中`<add>`类似的元素： `<add name="name" type="type" customAttribute="value" />`。 如果你想要允许页开发人员无需修改提供程序的代码中指定各种站点映射提供程序相关设置，它非常有用。 例如，如果我们已读取的分类和产品数据的体系结构，我们 d 通过相对于数据库中直接可能想要让页开发人员指定的数据库连接字符串通过`Web.config`而不是使用硬编码提供程序的代码中的值。 我们生成了第 6 步中的自定义站点映射提供程序不会覆盖这`Initialize`方法。 有关的使用示例`Initialize`方法，请参阅[Jeff Prosise](http://www.wintellect.com/Weblogs/CategoryView,category,Jeff%20Prosise.aspx) s [SQL Server 中存储站点地图](https://msdn.microsoft.com/msdnmag/issues/05/06/WickedCode/)文章。
 
 
 ## <a name="step-6-creating-the-custom-site-map-provider"></a>步骤 6： 创建自定义站点映射提供程序
@@ -238,13 +238,13 @@ ASP.NET 2.0 的站点地图功能使得页开发人员可以如定义在某些�
 
 类级别`SiteMapNode`变量`root`用于缓存站点地图结构。 站点图构造为第一次，或后已修改基础数据，第一次时`root`将`Nothing`和将构造站点地图结构。 站点映射的根节点分配给`root`的构造过程过程，以便下一次此方法称为，`root`将不会`Nothing`。 因此，只要`root`不`Nothing`站点地图结构将无需重新创建它返回到调用方。
 
-如果根是`Nothing`，站点地图结构创建中的产品和类别信息。 站点图生成通过创建`SiteMapNode`实例，然后组成通过对的调用层次结构`StaticSiteMapProvider`类的`AddNode`方法。 `AddNode`执行内部簿记，存储各种`SiteMapNode`实例`Hashtable`。 我们开始构造层次结构之前，我们首先调用`Clear`方法，从内部元素将清除`Hashtable`。 接下来，`ProductsBLL`类 s`GetProducts`方法以及产生`ProductsDataTable`存储在本地变量。
+如果根是`Nothing`，站点地图结构创建中的产品和类别信息。 站点图生成通过创建`SiteMapNode`实例，然后组成通过对的调用层次结构`StaticSiteMapProvider`类的`AddNode`方法。 `AddNode` 执行内部簿记，存储各种`SiteMapNode`实例`Hashtable`。 我们开始构造层次结构之前，我们首先调用`Clear`方法，从内部元素将清除`Hashtable`。 接下来，`ProductsBLL`类 s`GetProducts`方法以及产生`ProductsDataTable`存储在本地变量。
 
 通过创建根节点并将其分配给站点映射的构造开始`root`。 重载[ `SiteMapNode` s 构造函数](https://msdn.microsoft.com/library/system.web.sitemapnode.sitemapnode.aspx)使用此处并在这整个`BuildSiteMap`传递以下信息：
 
 - 对站点地图提供商提供的引用 (`Me`)。
 - `SiteMapNode` S `Key`。 这所必需的值必须是唯一的每个`SiteMapNode`。
-- `SiteMapNode` S `Url`。 `Url`是可选的但是，如果提供，每个`SiteMapNode`s`Url`值必须唯一。
+- `SiteMapNode` S `Url`。 `Url` 是可选的但是，如果提供，每个`SiteMapNode`s`Url`值必须唯一。
 - `SiteMapNode` S `Title`，这是所必需。
 
 `AddNode(root)`方法调用添加`SiteMapNode``root`到作为根站点映射。 接下来，每个`ProductRow`中`ProductsDataTable`枚举。 如果已存在`SiteMapNode`对于当前产品的类别中，引用它。 否则为新`SiteMapNode`类别已创建，添加作为子项`SiteMapNode``root`通过`AddNode(categoryNode, root)`方法调用。 在相应类别后`SiteMapNode`找到节点或将其创建，`SiteMapNode`为当前产品创建并添加作为类别的子项`SiteMapNode`通过`AddNode(productNode, categoryNode)`。 请注意，类别`SiteMapNode`s`Url`属性值是`~/SiteMapProvider/ProductsByCategory.aspx?CategoryID=categoryID`而产品`SiteMapNode`s`Url`属性分配`~/SiteMapNode/ProductDetails.aspx?ProductID=productID`。
@@ -261,7 +261,7 @@ ASP.NET 2.0 的站点地图功能使得页开发人员可以如定义在某些�
 
 `BuildSiteMap`方法完成通过返回站点图的根节点。
 
-剩余方法都是非常简单。 `GetRootNodeCore`负责返回的根节点。 由于`BuildSiteMap`返回的根，`GetRootNodeCore`只返回`BuildSiteMap`s 返回值。 `OnSiteMapChanged`方法设置`root`回`Nothing`中删除缓存项的时间。 重新设置为根`Nothing`，则下次`BuildSiteMap`是调用，就将重建站点地图结构。 最后，`CachedDate`属性返回的日期和时间值存储在数据缓存中，如果存在这样一个值。 页开发人员可以使用此属性来确定上次缓存站点地图数据。
+剩余方法都是非常简单。 `GetRootNodeCore` 负责返回的根节点。 由于`BuildSiteMap`返回的根，`GetRootNodeCore`只返回`BuildSiteMap`s 返回值。 `OnSiteMapChanged`方法设置`root`回`Nothing`中删除缓存项的时间。 重新设置为根`Nothing`，则下次`BuildSiteMap`是调用，就将重建站点地图结构。 最后，`CachedDate`属性返回的日期和时间值存储在数据缓存中，如果存在这样一个值。 页开发人员可以使用此属性来确定上次缓存站点地图数据。
 
 ## <a name="step-7-registering-thenorthwindsitemapprovider"></a>步骤 7： 注册`NorthwindSiteMapProvider`
 
@@ -343,7 +343,7 @@ ASP.NET 2.0 的站点地图功能使得页开发人员可以如定义在某些�
 > 请务必测试 SQL 缓存依赖项功能。 之后访问`Default.aspx`， `ProductsByCategory.aspx`，和`ProductDetails.aspx`页，请转到之一中编辑，插入和删除部分的教程和编辑类别或产品的名称。 然后返回到中的页之一`SiteMapProvider`文件夹。 假设的轮询机制，请注意到基础数据库更改为经过足够的时间，应该对站点图会更新以显示新的产品或类别名称。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 ASP.NET 2.0 的站点映射功能包括`SiteMap`类，大量的内置导航 Web 控件，并默认站点映射提供程序所需站点映射信息保存到 XML 文件。 若要从如某个其他源数据库、 应用程序 s 体系结构或我们需要创建自定义网站地图提供商提供的远程 Web 服务从使用站点映射信息。 此步骤包括创建直接或间接派生的类从`SiteMapProvider`类。
 
@@ -362,11 +362,11 @@ ASP.NET 2.0 的站点映射功能包括`SiteMap`类，大量的内置导航 Web 
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Dave Gardner、 Zack Jones、 Teresa 墨和伯纳黛特 Leigh。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一篇](building-a-custom-database-driven-site-map-provider-cs.md)
+> [!div class="step-by-step"]
+> [上一篇](building-a-custom-database-driven-site-map-provider-cs.md)

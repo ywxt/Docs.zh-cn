@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slideshow-extender
-title: "[如何:]使用 ASP.NET AJAX 幻灯片放映扩展程序？ | Microsoft Docs"
+title: '[如何:]使用 ASP.NET AJAX 幻灯片放映扩展程序？ | Microsoft Docs'
 author: JoeStagner
-description: "此视频演示如何从 ASP.NET AJAX 控件工具包的幻灯片放映扩展程序变为标准 ASP.NET 图像控件完全正常运行 sl..."
+description: 此视频演示如何从 ASP.NET AJAX 控件工具包的幻灯片放映扩展程序变为标准 ASP.NET 图像控件完全正常运行 sl...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slideshow-extender
 msc.type: video
-ms.openlocfilehash: 1510540833407000ebb22337622ebe37f5a1dbbf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2a4ef518e98e1524c0f598537e86c81d6c14247f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-aspnet-ajax-slideshow-extender"></a>[如何:]使用 ASP.NET AJAX 幻灯片放映扩展程序？
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （19 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-slideshow-extender)
 
->[!div class="step-by-step"]
-[上一页](how-do-i-use-the-aspnet-ajax-tabs-control.md)
-[下一页](how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender.md)
+> [!div class="step-by-step"]
+> [上一页](how-do-i-use-the-aspnet-ajax-tabs-control.md)
+> [下一页](how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
-title: "ASP.NET MVC 4 实体框架基架和迁移 |Microsoft 文档"
+title: ASP.NET MVC 4 实体框架基架和迁移 |Microsoft 文档
 author: rick-anderson
-description: "如果你熟悉 ASP.NET MVC 4 控制器方法，或已完成&quot;帮助器、 窗体和验证&quot;动手实验中，你应注意..."
+description: 如果你熟悉 ASP.NET MVC 4 控制器方法，或已完成&quot;帮助器、 窗体和验证&quot;动手实验中，你应注意...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
-ms.openlocfilehash: 396859463446d95c58271c4b00fc950bcd0d539a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 548afe1926eed49841251832d54dc213da0cb753
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 实体框架基架和迁移
 
@@ -98,7 +98,7 @@ ASP.NET MVC 基架提供创建必要的逻辑，可让你的应用程序与数�
     ![新的 ASP.NET MVC 4 项目对话框](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image1.png "新建 ASP.NET MVC 4 项目对话框")
 
     *新的 ASP.NET MVC 4 项目对话框*
-3. 在**新建 ASP.NET MVC 4 项目**对话框框中，选择**Internet 应用程序**模板，并确保**Razor**是所选**视图引擎**. 单击**确定**以创建该项目。
+3. 在**新建 ASP.NET MVC 4 项目**对话框框中，选择**Internet 应用程序**模板，并确保**Razor**是所选**视图引擎**. 单击“确定”，创建项目。
 
     ![新的 ASP.NET MVC 4 Internet 应用程序](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image2.png "新的 ASP.NET MVC 4 Internet 应用程序")
 
@@ -109,7 +109,9 @@ ASP.NET MVC 基架提供创建必要的逻辑，可让你的应用程序与数�
     (代码段- *ASP.NET MVC 4 和 Entity Framework 迁移-Ex1 人员属性*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample1.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample1.cs)]
+~~~
 6. 单击**生成 |生成解决方案**以保存所做的更改并生成项目。
 
     ![生成应用程序](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image3.png "生成应用程序")
@@ -118,14 +120,14 @@ ASP.NET MVC 基架提供创建必要的逻辑，可让你的应用程序与数�
 7. 在解决方案资源管理器，右键单击 controllers 文件夹，然后选择**添加 |控制器**。
 8. 控制器*PersonController*并完成**基架选项**使用以下值。
 
-    1. 在**模板**下拉列表中，选择**具有读/写操作和视图使用 Entity Framework 的 MVC 控制器**选项。
-    2. 在**模型类**下拉列表中，选择**人员**类。
-    3. 在**数据上下文类**列表中，选择**&lt;新建数据上下文...&gt;**. 选择任何名称，然后单击**确定**。
-    4. 在**视图**下拉列表中，请确保**Razor**选择。
+   1. 在**模板**下拉列表中，选择**具有读/写操作和视图使用 Entity Framework 的 MVC 控制器**选项。
+   2. 在**模型类**下拉列表中，选择**人员**类。
+   3. 在**数据上下文类**列表中，选择**&lt;新建数据上下文...&gt;**. 选择任何名称，然后单击**确定**。
+   4. 在**视图**下拉列表中，请确保**Razor**选择。
 
-    ![添加基架的人员控制器](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image4.png "添加基架的人员控制器")
+      ![添加基架的人员控制器](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image4.png "添加基架的人员控制器")
 
-    *添加基架的人员控制器*
+      *添加基架的人员控制器*
 9. 单击**添加**使用基架的个人创建新的控制器。 您现在已生成的控制器操作以及视图。
 
     ![之后使用基架创建人员控制器](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image5.png "后使用基架创建人员控制器")
@@ -133,9 +135,9 @@ ASP.NET MVC 基架提供创建必要的逻辑，可让你的应用程序与数�
     *之后使用基架创建人员控制器*
 10. 打开**PersonController**类。 请注意自动生成完整的 CRUD 操作方法。
 
-    ![内部人员控制器](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image6.png "内部人员控制器")
+   ![内部人员控制器](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image6.png "内部人员控制器")
 
-    *内部人员控制器*
+   *内部人员控制器*
 
 <a id="Ex1Task2"></a>
 
@@ -195,11 +197,15 @@ ASP.NET MVC 基架提供创建必要的逻辑，可让你的应用程序与数�
 3. 打开**Configuration.cs** Migrations 文件夹中的文件。 找到的类构造函数并将更改**AutomaticMigrationsEnabled**值赋给*true*。
 
 
-    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample3.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample3.cs)]
+~~~
 4. 打开 Person 类并添加人员的中间名属性。 使用此新的属性，您在更改模型。
 
 
-    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample4.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample4.cs)]
+~~~
 5. 选择**生成 |生成解决方案**上生成应用程序的菜单。
 
     ![生成应用程序](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image13.png "生成应用程序")
@@ -245,11 +251,11 @@ ASP.NET MVC 基架提供创建必要的逻辑，可让你的应用程序与数�
     ![添加控制器更新](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image18.png "添加控制器更新")
 
     *更新控制器*
-10. 单击 **“添加”**。 然后，选择值**覆盖 PersonController.cs**和**覆盖关联视图**单击**确定**。
+10. 单击 **添加**。 然后，选择值**覆盖 PersonController.cs**和**覆盖关联视图**单击**确定**。
 
-    ![添加控制器覆盖](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image19.png)
+   ![添加控制器覆盖](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image19.png)
 
-    *更新控制器*
+   *更新控制器*
 
 <a id="Ex1Task4"></a>
 
@@ -271,7 +277,7 @@ ASP.NET MVC 基架提供创建必要的逻辑，可让你的应用程序与数�
 <a id="Summary"></a>
 
 <a id="Summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在此动手实验中，你学习了简单的步骤，使用 ASP.NET MVC 4 基架使用任何模型类创建 CRUD 操作。 然后，你已学习如何使用 Entity Framework 迁移-从数据库到视图的应用程序中执行的端到端更新。
 
@@ -282,7 +288,7 @@ ASP.NET MVC 基架提供创建必要的逻辑，可让你的应用程序与数�
 
 你可以安装**Microsoft Visual Studio Express 2012 for Web**或另一个&quot;Express&quot;版本使用 **[Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)**. 以下说明将指导你完成安装所需的步骤*Visual studio Express 2012 for Web*使用*Microsoft Web 平台安装程序*。
 
-1. 转到[ [https://go.microsoft.com/? linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; *Visual Studio Express 2012 for Web 的 Windows Azure SDK*&quot;。
+1. 转到[ [ https://go.microsoft.com/? linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; <em>Visual Studio Express 2012 for Web 的 Windows Azure SDK</em>&quot;。
 2. 单击**立即安装**。 如果你没有**Web 平台安装程序**将重定向以下载并请先安装它。
 3. 一次**Web 平台安装程序**处于打开状态，单击**安装**以启动安装程序。
 
@@ -293,7 +299,7 @@ ASP.NET MVC 基架提供创建必要的逻辑，可让你的应用程序与数�
 
     ![接受许可条款](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image23.png)
 
-    接受许可条款
+    *接受许可条款*
 5. 等待，直到下载和安装过程完成。
 
     ![安装进度](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image24.png)
@@ -303,13 +309,13 @@ ASP.NET MVC 基架提供创建必要的逻辑，可让你的应用程序与数�
 
     ![安装已完成](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image25.png)
 
-    安装已完成
+    *安装已完成*
 7. 单击**退出**以关闭 Web 平台安装程序。
 8. 若要打开 Visual Studio Express for Web，请转到**启动**屏幕并开始编写&quot; **VS Express**&quot;，然后单击**VS Express for Web**磁贴。
 
     ![Web 磁贴的 VS Express](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image26.png)
 
-    Web 磁贴的 VS Express
+    *Web 磁贴的 VS Express*
 
 <a id="AppendixB"></a>
 

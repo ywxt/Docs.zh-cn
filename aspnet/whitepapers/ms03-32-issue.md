@@ -1,22 +1,22 @@
 ---
 uid: whitepapers/ms03-32-issue
-title: "应用安全更新，IE 后的修复不可用服务器应用程序错误 |Microsoft 文档"
+title: 应用安全更新，IE 后的修复不可用服务器应用程序错误 |Microsoft 文档
 author: rick-anderson
-description: "本白皮书介绍了为影响 Wi 上运行的 ASP.NET 1.0 应用程序的 Internet 资源管理器与 MS03 32 安全更新解决了问题的修补程序..."
+description: 本白皮书介绍了为影响 Wi 上运行的 ASP.NET 1.0 应用程序的 Internet 资源管理器与 MS03 32 安全更新解决了问题的修补程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: 1365eebb-bdf7-4a05-8d18-7f200531be55
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/ms03-32-issue
 msc.type: content
-ms.openlocfilehash: 8658e387aeb4ea0340080666906b2b89db49a31a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dd1a564cd347364abc3ca5ac0a9ffda448bcede8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a>应用安全更新的 IE 后为不可用服务器应用程序错误修复
 ====================
@@ -41,20 +41,20 @@ Microsoft 与 Internet Explorer 的安全修补程序 MS03 32 安全更新和 Wi
 4. 重新注册 ASP.NET。 这将创建新的随机密码的帐户并将应用为其默认 ASP.NET 访问控制设置
 5. 重新启动 IIS 服务
 
-批处理文件包含硬编码的临时密码"**1pass@word**"你将提示您输入的 runas 命令运行批处理文件时。 Runas 命令完成后，ASPNET 帐户密码的强随机值使用重新创建。 请注意，如果硬编码密码不符合你的环境中的密码复杂性要求，可能会失败的批处理文件。 如果是这种情况，你可以将其更改为适合于你的环境的另一个值。
+批处理文件包含硬编码的临时密码"<strong>1pass@word</strong>"你将提示您输入的 runas 命令运行批处理文件时。 Runas 命令完成后，ASPNET 帐户密码的强随机值使用重新创建。 请注意，如果硬编码密码不符合你的环境中的密码复杂性要求，可能会失败的批处理文件。 如果是这种情况，你可以将其更改为适合于你的环境的另一个值。
 
-*> [!IMPORTANT]*如果你已添加自定义访问控制设置或数据库帐户为 ASPNET 帐户的权限，它们将需要此批处理文件完成后重新创建。 这是因为当该帐户将重新创建，它将获取新的安全标识符 (SID)。
+*> [!IMPORTANT]* 如果你已添加自定义访问控制设置或数据库帐户为 ASPNET 帐户的权限，它们将需要此批处理文件完成后重新创建。 这是因为当该帐户将重新创建，它将获取新的安全标识符 (SID)。
 
-*> [!IMPORTANT]*如果运行的 ASP.NET 工作进程具有自定义在 ASPNET 帐户以外的帐户，则你不应运行此批处理文件。 相反，你应该以交互方式登录或与该帐户将创建该帐户的用户配置文件中使用 runas 命令。
+*> [!IMPORTANT]* 如果运行的 ASP.NET 工作进程具有自定义在 ASPNET 帐户以外的帐户，则你不应运行此批处理文件。 相反，你应该以交互方式登录或与该帐户将创建该帐户的用户配置文件中使用 runas 命令。
 
 批处理文件包含以下自解压缩的存档中。 若要使用它：
 
 1. 你必须为帐户运行，使用管理员权限
 2. [下载并打开自解压可执行文件](ms03-32-issue/_static/fixup1.exe)
 3. 将内容提取到 c:\
-4. 从开始菜单中，选择运行...和输入`cmd.exe`
+4. 从开始菜单中，选择运行...和输入 `cmd.exe`
 5. 在打开命令窗口中，键入`c:\fixup.cmd`。
-6. 出现提示时，输入 **1pass@word** 作为密码。
+6. 出现提示时，输入<strong>1pass@word</strong>作为密码。
 7. 如果你有以前自定义访问控制设置或数据库帐户为 ASPNET 帐户的权限，你将需要重新立即应用这些设置。
 
 许多歉意，这导致歉意。 随着可用，我们将发布的其他信息。
@@ -63,16 +63,16 @@ Microsoft 与 Internet Explorer 的安全修补程序 MS03 32 安全更新和 Wi
 
 | .NET Framework | 平台 | 受影响 |
 | --- | --- | --- |
-| 版本 1.0 | Windows 2000 Professional | No |
-| 版本 1.0 | Windows 2000 Server | No |
+| 版本 1.0 | Windows 2000 Professional | 否 |
+| 版本 1.0 | Windows 2000 Server | 否 |
 | 版本 1.0 | Windows XP Professional | 是 |
-| 版本 1.0 | Windows Server 2003 | No |
-| 版本 1.0 | 使用 Cassini 的 Windows XP 家庭版 | No |
-| 版本 1.1 | Windows 2000 Professional | No |
-| 版本 1.1 | Windows 2000 Server | No |
-| 版本 1.1 | Windows XP Professional | No |
-| 版本 1.1 | Windows Server 2003 | No |
-| 版本 1.1 | 使用 Cassini 的 Windows XP 家庭版 | No |
+| 版本 1.0 | Windows Server 2003 | 否 |
+| 版本 1.0 | 使用 Cassini 的 Windows XP 家庭版 | 否 |
+| 版本 1.1 | Windows 2000 Professional | 否 |
+| 版本 1.1 | Windows 2000 Server | 否 |
+| 版本 1.1 | Windows XP Professional | 否 |
+| 版本 1.1 | Windows Server 2003 | 否 |
+| 版本 1.1 | 使用 Cassini 的 Windows XP 家庭版 | 否 |
 
 谢谢，   
  ASP.NET 团队

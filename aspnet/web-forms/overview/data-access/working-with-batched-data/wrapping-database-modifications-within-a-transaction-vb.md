@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb
-title: "包装在一个事务 (VB) 内的数据库修改 |Microsoft 文档"
+title: 包装在一个事务 (VB) 内的数据库修改 |Microsoft 文档
 author: rick-anderson
-description: "本教程是 4 的倍数考察更新、 删除和插入的数据批的第一个。 在本教程中我们了解如何允许数据库事务..."
+description: 本教程是 4 的倍数考察更新、 删除和插入的数据批的第一个。 在本教程中我们了解如何允许数据库事务...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f054445091edbc27263127fb3b7b851776ec617f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2005561755b22f5811d011bd3146853f6cd184af
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="wrapping-database-modifications-within-a-transaction-vb"></a>在事务 (VB) 中的包装数据库修改
 ====================
@@ -117,7 +117,7 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 
 ![添加一个名为 TransactionSupport 文件夹和一个名为 ProductsTableAdapter.TransactionSupport.vb 的类文件](wrapping-database-modifications-within-a-transaction-vb/_static/image4.gif)
 
-**图 4**： 添加名为的文件夹`TransactionSupport`和一个名为的类文件`ProductsTableAdapter.TransactionSupport.vb`
+**图 4**： 添加名为的文件夹`TransactionSupport`和一个名为的类文件 `ProductsTableAdapter.TransactionSupport.vb`
 
 
 输入下面的代码插入`ProductsTableAdapter.TransactionSupport.vb`文件：
@@ -127,7 +127,7 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 
 `Partial`向中添加的成员是要添加到编译器的类声明中的关键字指示`ProductsTableAdapter`类`NorthwindTableAdapters`命名空间。 请注意`Imports System.Data.SqlClient`语句文件的顶部。 TableAdapter 配置为使用 SqlClient 提供程序，因为内部它使用[ `SqlDataAdapter` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqldataadapter.aspx)要向数据库发出其命令对象。 因此，我们需要使用`SqlTransaction`类以开始事务，然后将其提交或回滚它。 如果你使用的 Microsoft SQL Server 之外的数据存储，你将需要使用相应的提供程序。
 
-这些方法提供开始回滚时，所需的构建基块，并提交事务。 它们标记`Public`，使其能够从使用`ProductsTableAdapter`、 DAL 中的另一个类或结构，如 BLL 中的另一层。 `BeginTransaction`将打开 TableAdapter s 内部`SqlConnection`（如果需要），开始事务，并将它分配给`Transaction`属性，并将事务附加到内部`SqlDataAdapter`s`SqlCommand`对象。 `CommitTransaction`和`RollbackTransaction`调用`Transaction`对象 s`Commit`和`Rollback`方法，分别之前关闭内部`Connection`对象。
+这些方法提供开始回滚时，所需的构建基块，并提交事务。 它们标记`Public`，使其能够从使用`ProductsTableAdapter`、 DAL 中的另一个类或结构，如 BLL 中的另一层。 `BeginTransaction` 将打开 TableAdapter s 内部`SqlConnection`（如果需要），开始事务，并将它分配给`Transaction`属性，并将事务附加到内部`SqlDataAdapter`s`SqlCommand`对象。 `CommitTransaction` 和`RollbackTransaction`调用`Transaction`对象 s`Commit`和`Rollback`方法，分别之前关闭内部`Connection`对象。
 
 ## <a name="step-3-adding-methods-to-update-and-delete-data-under-the-umbrella-of-a-transaction"></a>步骤 3： 添加方法以更新和删除数据之下的事务
 
@@ -233,7 +233,7 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 **图 10**： 某些产品`CategoryID`值未更新而其他人已 ([单击以查看实际尺寸的图像](wrapping-database-modifications-within-a-transaction-vb/_static/image14.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 默认情况下，TableAdapter 的方法在事务范围内未包装的执行的数据库语句，但我们可以轻而易举地添加将创建的方法、 提交和回滚事务。 在本教程中，我们将创建三个此类方法中的`ProductsTableAdapter`类： `BeginTransaction`， `CommitTransaction`，和`RollbackTransaction`。 我们已了解如何使用这些方法以及`Try...Catch`用于进行数据修改语句一系列原子块。 具体而言，我们创建`UpdateWithTransaction`中的方法`ProductsTableAdapter`，它用批处理更新模式来执行必要的修改提供的行`ProductsDataTable`。 我们还添加了`DeleteProductsWithTransaction`方法`ProductsBLL`中 BLL，它接受类`List`的`ProductID`值作为其输入并调用 DB 直接模式方法`Delete`每个`ProductID`。 这两种方法启动： 创建事务，然后执行内的数据修改语句`Try...Catch`块。 如果发生异常，事务将回滚，否则它是已提交。
 
@@ -247,18 +247,18 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 
 - [维护与事务的数据库一致性](http://aspnet.4guysfromrolla.com/articles/072705-1.aspx)
 - [管理 SQL Server 中的事务存储过程](http://www.4guysfromrolla.com/webtech/080305-1.shtml)
-- [事务变得更容易：`System.Transactions`](https://blogs.msdn.com/florinlazar/archive/2004/07/23/192239.aspx)
+- [事务变得更容易： `System.Transactions`](https://blogs.msdn.com/florinlazar/archive/2004/07/23/192239.aspx)
 - [TransactionScope 和 Dataadapter](http://andyclymer.blogspot.com/2007/01/transactionscope-and-dataadapters.html)
 - [在.NET 中使用 Oracle 数据库事务](http://www.oracle.com/technology/pub/articles/price_dbtrans_dotnet.html)
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Dave Gardner、 希尔顿 Giesenow 和 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](batch-inserting-cs.md)
-[下一页](batch-updating-vb.md)
+> [!div class="step-by-step"]
+> [上一页](batch-inserting-cs.md)
+> [下一页](batch-updating-vb.md)

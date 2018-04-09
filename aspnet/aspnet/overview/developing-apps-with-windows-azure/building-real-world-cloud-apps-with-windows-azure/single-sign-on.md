@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
-title: "单一登录 （使用 Azure 构建真实世界云应用） |Microsoft 文档"
+title: 单一登录 （使用 Azure 构建真实世界云应用） |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以..."
+description: 构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 7d82d5e9-0619-4f22-9e03-32a6d52940a5
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: b3640c94a8ae9ede330c0fe6a392acb5843cb65c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 82f2f99154d94074b03d580a0f491053d6f53bde
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>单一登录 （使用 Azure 构建真实世界云应用）
 ====================
@@ -130,7 +130,7 @@ Azure AD 目录调用 Azure AD[租户](https://technet.microsoft.com/library/jj5
 
 只需在组织中在 Windows 2003 或更高版本的一个域控制器上运行此。 而无需重新启动。 当完毕后，你的所有用户都位于云中，你可以从任何 web 或移动应用程序，使用 SAML、 OAuth、 或的是 Ws-fed 的单一登录。
 
-有时我们获取要求这是有关如何安全 – Microsoft 使用它自己敏感业务数据？ 和问题的回答是是执行操作。 例如，如果你转到内部 Microsoft SharePoint 站点在[https://microsoft.sharepoint.com/](https://microsoft.sharepoint.com/)，你让系统提示你登录。
+有时我们获取要求这是有关如何安全 – Microsoft 使用它自己敏感业务数据？ 和问题的回答是是执行操作。 例如，如果你转到内部 Microsoft SharePoint 站点在[ https://microsoft.sharepoint.com/ ](https://microsoft.sharepoint.com/)，你让系统提示你登录。
 
 ![Office 365 登录](single-sign-on/_static/image20.png)
 
@@ -172,7 +172,7 @@ Visual Studio 使极为简便地创建应用程序使用 Azure AD 进行单一�
 
 这些屏幕截图来自演示如何生成使用 Azure AD 身份验证的应用程序的完整分步教程：[开发的 ASP.NET 应用程序与 Azure Active Directory](../../../../identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本章你了解 Azure Active Directory、 Visual Studio 和 ASP.NET，使其容易安装在你组织的用户的 Internet 应用程序中的单一登录。 你的用户可在 Internet 应用程序使用他们用于登录在内部网络中使用 Active Directory 的相同凭据登录。
 
@@ -193,6 +193,6 @@ Visual Studio 使极为简便地创建应用程序使用 Azure AD 进行单一�
 - [Azure Active Directory Graph API 博客](https://blogs.msdn.com/b/aadgraphteam/)。
 - [访问控制中 BYOD 和混合标识基础结构中的目录集成](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/PCIT-B213#fbid=)。 技术 Ed 2014 会话视频通过 Gayana Bagdasaryan。
 
->[!div class="step-by-step"]
-[上一页](web-development-best-practices.md)
-[下一页](data-storage-options.md)
+> [!div class="step-by-step"]
+> [上一页](web-development-best-practices.md)
+> [下一页](data-storage-options.md)

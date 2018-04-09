@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-cs
-title: "处理 BLL 和 DAL 级别异常 (C#) |Microsoft 文档"
+title: 处理 BLL 和 DAL 级别异常 (C#) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中，我们将了解如何巧妙地处理可编辑 DataList 更新工作流过程中引发的异常。"
+description: 在本教程中，我们将了解如何巧妙地处理可编辑 DataList 更新工作流过程中引发的异常。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/30/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 284f3bebcd07c9cc70b3a7d645f353f5797889a7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: fd88260e1ac941b053aae8b4e500a7ab5f3091a1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="handling-bll--and-dal-level-exceptions-c"></a>处理 BLL 和 DAL 级别异常 (C#)
 ====================
@@ -128,7 +128,7 @@ ms.lasthandoff: 01/24/2018
 **图 5**: 错误消息是显示时输入负的价格 ([单击以查看实际尺寸的图像](handling-bll-and-dal-level-exceptions-cs/_static/image13.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 GridView 和 ObjectDataSource 提供后级别事件处理程序，包括有关任何更新和删除工作流期间引发的异常以及可以设置，以指示已被异常的属性信息处理。 这些功能，但是，不可用时将使用 DataList 和直接使用 BLL。 相反，我们是负责实现异常处理。
 
@@ -148,12 +148,12 @@ GridView 和 ObjectDataSource 提供后级别事件处理程序，包括有关�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Ken Pespisa。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](performing-batch-updates-cs.md)
-[下一页](adding-validation-controls-to-the-datalist-s-editing-interface-cs.md)
+> [!div class="step-by-step"]
+> [上一页](performing-batch-updates-cs.md)
+> [下一页](adding-validation-controls-to-the-datalist-s-editing-interface-cs.md)

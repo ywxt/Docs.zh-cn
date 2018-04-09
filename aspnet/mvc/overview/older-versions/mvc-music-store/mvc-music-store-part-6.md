@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
-title: "第 6 部分： 使用数据注释为模型验证 |Microsoft 文档"
+title: 第 6 部分： 使用数据注释为模型验证 |Microsoft 文档
 author: jongalloway
-description: "本系列教程详细介绍所有生成 ASP.NET MVC 音乐商店示例应用程序所采取的步骤。 第 6 部分介绍如何为模型 V 使用数据注释..."
+description: 本系列教程详细介绍所有生成 ASP.NET MVC 音乐商店示例应用程序所采取的步骤。 第 6 部分介绍如何为模型 V 使用数据注释...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: b2083d5604741a0142f504f92779c9f931d0d6d9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 328eccb4324bb10a7e8dec819a70129fc14c42c4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-6-using-data-annotations-for-model-validation"></a>模型验证的的第 6 部分： 使用数据注释
 ====================
@@ -81,6 +81,6 @@ ms.lasthandoff: 11/10/2017
 ![](mvc-music-store-part-6/_static/image3.png)
 
 
->[!div class="step-by-step"]
-[上一页](mvc-music-store-part-5.md)
-[下一页](mvc-music-store-part-7.md)
+> [!div class="step-by-step"]
+> [上一页](mvc-music-store-part-5.md)
+> [下一页](mvc-music-store-part-7.md)

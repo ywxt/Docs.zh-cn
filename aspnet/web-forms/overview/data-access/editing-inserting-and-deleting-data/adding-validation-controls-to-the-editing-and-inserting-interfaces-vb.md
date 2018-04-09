@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-vb
-title: "将验证控件添加到的编辑，并将插入接口 (VB) |Microsoft 文档"
+title: 将验证控件添加到的编辑，并将插入接口 (VB) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们会将验证控件添加到 EditItemTemplate 和 InsertItemTemplate 数据 Web 控件，以提供更是多么容易..."
+description: 在本教程中我们会将验证控件添加到 EditItemTemplate 和 InsertItemTemplate 数据 Web 控件，以提供更是多么容易...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 53414aa17514d07083fe05b8c2abcba10a01cf98
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: eda86c5481e5739b6cd9a2470889a26144302a3f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-validation-controls-to-the-editing-and-inserting-interfaces-vb"></a>将验证控件添加到的编辑，并将插入接口 (VB)
 ====================
@@ -259,7 +259,7 @@ GridView CommandField 和 TemplateFields
 
 与此添加我们的教程中已完成 ！
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 BoundFields 可以同时插入和编辑接口提供的而不是可自定义接口。 通常情况下，我们想要添加到的编辑和插入界面可确保用户在合法格式中输入必需的输入的验证控件。 若要实现此目的，我们必须 BoundFields 转换 TemplateFields 并将验证控件添加到合适的模板。 在本教程中我们扩展中的示例*检查与插入、 更新和删除的事件相关联*教程中，向这两个说明如何添加验证控件的插入接口和 GridView编辑接口。 此外，我们已了解如何显示摘要验证信息使用 ValidationSummary 控件以及如何划分为不同的验证组页上的验证控件。
 
@@ -269,12 +269,12 @@ BoundFields 可以同时插入和编辑接口提供的而不是可自定义接�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已沈 Shulok 和 Zack Jones。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb.md)
-[下一页](customizing-the-data-modification-interface-vb.md)
+> [!div class="step-by-step"]
+> [上一页](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb.md)
+> [下一页](customizing-the-data-modification-interface-vb.md)

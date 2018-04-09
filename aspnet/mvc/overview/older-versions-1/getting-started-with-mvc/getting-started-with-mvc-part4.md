@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part4
-title: "创建数据库 |Microsoft 文档"
+title: 创建数据库 |Microsoft 文档
 author: shanselman
-description: "这是初学者本教程介绍 ASP.NET MVC 的基础知识。 创建一个简单的 web 应用程序读取和写入数据库中。"
+description: 这是初学者本教程介绍 ASP.NET MVC 的基础知识。 创建一个简单的 web 应用程序读取和写入数据库中。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part4
 msc.type: authoredcontent
-ms.openlocfilehash: 22f1042555d7cdd0ca8d75f1cbde65fbb65d81cc
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ff2a41803cd31ce50bbf79e630d827b6de441ba3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-database"></a>创建数据库
 ====================
@@ -87,6 +87,6 @@ ms.lasthandoff: 01/30/2018
 
 现在，让我们使用一些实际数据 ！
 
->[!div class="step-by-step"]
-[上一页](getting-started-with-mvc-part3.md)
-[下一页](getting-started-with-mvc-part5.md)
+> [!div class="step-by-step"]
+> [上一页](getting-started-with-mvc-part3.md)
+> [下一页](getting-started-with-mvc-part5.md)

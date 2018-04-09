@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs
-title: "插入、 更新和删除数据 (C#) 的概述 |Microsoft 文档"
+title: 插入、 更新和删除数据 (C#) 的概述 |Microsoft 文档
 author: rick-anderson
-description: "在本教程中，我们将了解如何映射 ObjectDataSource Insert()，update （)，以及对方法的 BLL delete （） 方法类，以及如何 configu..."
+description: 在本教程中，我们将了解如何映射 ObjectDataSource Insert()，update （)，以及对方法的 BLL delete （） 方法类，以及如何 configu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e483c37cc773a7255f18c26bc3609d68f71dff7d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: dbd111f79eda6006cb9aed59d8fd0b0342415833
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-c"></a>插入、 更新和删除数据 (C#) 的概述
 ====================
@@ -238,7 +238,7 @@ CommandField 包含大量`ShowXButton`指示哪些系列按钮显示 CommandFiel
 - 增加`DeleteProduct`方法以包括逻辑来删除指定的产品的订单详细信息
 - 修改 TableAdapter 用于包括删除指定的产品的订单详细信息的 SQL 查询
 
-让我们只需删除所有从记录`Order Details`若要避免的外键约束的表。 请转到 Visual Studio 中的服务器资源管理器，右键单击`NORTHWND.MDF`节点，然后选择新查询。 然后，在查询窗口中，运行以下 SQL 语句：`DELETE FROM [Order Details]`
+让我们只需删除所有从记录`Order Details`若要避免的外键约束的表。 请转到 Visual Studio 中的服务器资源管理器，右键单击`NORTHWND.MDF`节点，然后选择新查询。 然后，在查询窗口中，运行以下 SQL 语句： `DELETE FROM [Order Details]`
 
 
 [![从详细信息表中删除所有记录](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image35.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image34.png)
@@ -432,7 +432,7 @@ FormView 提供内置支持用于插入、 编辑和删除数据，因为它使�
 > 如说明如何，FormView 的`CurrentMode`属性指示要显示的接口并将其`DefaultMode`属性指示的模式 FormView 将返回到在编辑后，要么已完成插入。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，我们将探讨插入、 编辑和删除使用 GridView，说明如何和 FormView 数据的基础知识。 这些控件的所有三个提供一定程度的可以利用而无需编写一行代码感谢数据 Web 控件和 ObjectDataSource ASP.NET 页中的内置数据修改功能。 但是，简单点，然后单击技术呈现相当 frail 和 naïve 数据修改用户界面。 若要提供验证，注入编程值、 适当地处理异常、 自定义用户界面中，和依此类推，我们将需要依赖于将在下一步的几个教程讨论的技术 bevy。
 
@@ -440,7 +440,7 @@ FormView 提供内置支持用于插入、 编辑和删除数据，因为它使�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
->[!div class="step-by-step"]
-[下一篇](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)

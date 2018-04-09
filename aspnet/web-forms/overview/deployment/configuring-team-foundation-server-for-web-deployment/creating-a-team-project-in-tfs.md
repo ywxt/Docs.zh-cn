@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
-title: "在 TFS 中创建团队项目 |Microsoft 文档"
+title: 在 TFS 中创建团队项目 |Microsoft 文档
 author: jrjlee
-description: "本主题介绍如何创建在 Team Foundation Server (TFS) 2010年的新团队项目。"
+description: 本主题介绍如何创建在 Team Foundation Server (TFS) 2010年的新团队项目。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
-ms.openlocfilehash: ef8cddb7733c1f8cacd24c5cf341a42741d25a95
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 79c069a601c0eafd84ae142241895428052acd29
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-team-project-in-tfs"></a>在 TFS 中创建团队项目
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 01/24/2018
 > 本主题介绍如何创建在 Team Foundation Server (TFS) 2010年的新团队项目。
 
 
-本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案 （&） #x 2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 的 web 应用程序Communication Foundation (WCF) 服务和数据库项目。
+本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案&#x2014;[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
 ## <a name="task-overview"></a>任务概述
 
@@ -107,11 +107,11 @@ ms.lasthandoff: 01/24/2018
 
     ![](creating-a-team-project-in-tfs/_static/image9.png)
 
-    > [!NOTE]
-    > 你可能会收到**HTTP 404 未找到**由于 double 的 HTTP 编码 bug 的错误。 如果发生这种情况，将替换此 URL:   
-    > [*站点集合 URL*] /\_layouts/permsetup.aspx  
-    > 例如:  
-    > http://tfs/sites/Fabrikam%20Web%20Projects/\_layouts/permsetup.aspx
+   > [!NOTE]
+   > 你可能会收到<strong>HTTP 404 未找到</strong>由于 double 的 HTTP 编码 bug 的错误。 如果发生这种情况，将替换此 URL:   
+   > [<em>站点集合 URL</em>] /\_layouts/permsetup.aspx  
+   > 例如：  
+   > http://tfs/sites/Fabrikam%20Web%20Projects/\_layouts/permsetup.aspx
 8. 上**为此站点设置用户组**页上，添加将创建到团队项目的用户**所有者**分组，并依次**确定**。
 
     ![](creating-a-team-project-in-tfs/_static/image10.png)
@@ -202,6 +202,6 @@ ms.lasthandoff: 01/24/2018
 
 有关在 TFS 中创建团队项目的更广泛指南，请参阅[创建团队项目](https://msdn.microsoft.com/library/ms181477(v=VS.100).aspx)。 允许用户创建团队项目集合中的新团队项目的详细信息，请参阅[为团队项目集合设置管理员权限](https://msdn.microsoft.com/library/dd547204.aspx)。 将用户添加到团队项目的详细信息，请参阅[向团队项目添加用户](https://msdn.microsoft.com/library/bb558971.aspx)。
 
->[!div class="step-by-step"]
-[上一页](configuring-team-foundation-server-for-web-deployment.md)
-[下一页](adding-content-to-source-control.md)
+> [!div class="step-by-step"]
+> [上一页](configuring-team-foundation-server-for-web-deployment.md)
+> [下一页](adding-content-to-source-control.md)

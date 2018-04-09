@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/performance/bundling-and-minification
-title: "绑定和缩减 |Microsoft 文档"
+title: 绑定和缩减 |Microsoft 文档
 author: Rick-Anderson
-description: "绑定和缩减是两种技术可以在 ASP.NET 4.5 中使用，来提高请求加载时间。 绑定和缩减提高 reducin 加载时间..."
+description: 绑定和缩减是两种技术可以在 ASP.NET 4.5 中使用，来提高请求加载时间。 绑定和缩减提高 reducin 加载时间...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/23/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 7192481de46c36f7de71164766e68afdbba74f6d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 001ebf89cda66a50cddcd7e4944f27b9396d4450
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="bundling-and-minification"></a>绑定和缩减
 ====================
@@ -98,7 +98,7 @@ ms.lasthandoff: 01/24/2018
 [!code-csharp[Main](bundling-and-minification/samples/sample4.cs?highlight=7)]
 
 > [!NOTE]
-> 除非`EnableOptimizations`是`true`或中的调试属性[编译元素](https://msdn.microsoft.com/library/s10awwz0.aspx)中*Web.config*文件设置为`false`，不会捆绑在一起或缩减的文件。 此外，将不使用的文件的.min 版本，将选择的完整的调试版本。 `EnableOptimizations`重写中的调试属性[编译元素](https://msdn.microsoft.com/library/s10awwz0.aspx)中*Web.config*文件
+> 除非`EnableOptimizations`是`true`或中的调试属性[编译元素](https://msdn.microsoft.com/library/s10awwz0.aspx)中*Web.config*文件设置为`false`，不会捆绑在一起或缩减的文件。 此外，将不使用的文件的.min 版本，将选择的完整的调试版本。 `EnableOptimizations` 重写中的调试属性[编译元素](https://msdn.microsoft.com/library/s10awwz0.aspx)中*Web.config*文件
 
 
 ## <a name="using-bundling-and-minification-with-aspnet-web-forms-and-web-pages"></a>使用绑定和缩减与 ASP.NET Web 窗体和 Web 页
@@ -186,7 +186,7 @@ ms.lasthandoff: 01/24/2018
 
     [!code-csharp[Main](bundling-and-minification/samples/sample12.cs)]
 
- 通配符选择器"\*.css"的文件夹中，每个 CSS 文件中将包括*Content\themes\base\jquery.ui.all.css*文件。 *Jquery.ui.all.css*文件导入其他 CSS 文件。
+  通配符选择器"\*.css"的文件夹中，每个 CSS 文件中将包括*Content\themes\base\jquery.ui.all.css*文件。 *Jquery.ui.all.css*文件导入其他 CSS 文件。
 
 ## <a name="bundle-caching"></a>捆绑缓存
 
@@ -233,15 +233,15 @@ ms.lasthandoff: 01/24/2018
 
 `System.Web.Optimization`在 System.Web.Optimization.DLL 中实现命名空间。 它利用 WebGrease 库 (WebGrease.dll) 对于缩减功能，这反过来使用 Antlr3.Runtime.dll。
 
-*我使用 Twitter 进行快速的文章和共享链接。我 Twitter 句柄是*:[@RickAndMSFT](http://twitter.com/RickAndMSFT)
+*我使用 Twitter 进行快速的文章和共享链接。我 Twitter 句柄是*: [@RickAndMSFT](http://twitter.com/RickAndMSFT)
 
 ## <a name="additional-resources"></a>其他资源
 
 - 视频：[绑定和优化](https://channel9.msdn.com/Events/aspConf/aspConf/Bundling-and-Optimizing)通过[Howard Dierking](https://twitter.com/#!/howard_dierking)
 - [将添加到的网页的 Web 优化](https://blogs.msdn.com/b/rickandy/archive/2012/08/15/adding-web-optimization-to-a-web-pages-site.aspx)。
 - [添加绑定和缩减到 Web 窗体](https://blogs.msdn.com/b/rickandy/archive/2012/08/14/adding-bundling-and-minification-to-web-forms.aspx)。
-- [性能影响的绑定和缩减在 Web 浏览](https://blogs.msdn.com/b/henrikn/archive/2012/06/17/performance-implications-of-bundling-and-minification-on-http.aspx)通过[Henrik F Nielsen](http://en.wikipedia.org/wiki/Henrik_Frystyk_Nielsen)[@frystyk](https://twitter.com/frystyk)
-- [使用 Cdn 和过期以提高网站性能](https://blogs.msdn.com/b/rickandy/archive/2011/05/21/using-cdns-to-improve-web-site-performance.aspx)由 Rick Anderson[@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
+- [性能影响的绑定和缩减在 Web 浏览](https://blogs.msdn.com/b/henrikn/archive/2012/06/17/performance-implications-of-bundling-and-minification-on-http.aspx)通过[Henrik F Nielsen](http://en.wikipedia.org/wiki/Henrik_Frystyk_Nielsen) [@frystyk](https://twitter.com/frystyk)
+- [使用 Cdn 和过期以提高网站性能](https://blogs.msdn.com/b/rickandy/archive/2011/05/21/using-cdns-to-improve-web-site-performance.aspx)由 Rick Anderson [@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
 - [最大程度减少 RTT （往返时间）](https://developers.google.com/speed/docs/best-practices/rtt)
 
 ## <a name="contributors"></a>参与者

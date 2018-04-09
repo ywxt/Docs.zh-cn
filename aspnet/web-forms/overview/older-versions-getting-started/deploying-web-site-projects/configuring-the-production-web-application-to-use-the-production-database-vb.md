@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 60ef1f93efea777e9309ad8c664a2c6645f1ce80
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: b1741807fe02b4e60db7098cfd46922d3ba50ccd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>配置用于生产数据库 (VB) 的生产 Web 应用程序
 ====================
@@ -71,7 +71,7 @@ Web 应用程序使用中的信息*连接字符串*以与数据库建立连接�
 
 现在，生产环境数据库应列在服务器资源管理器。 从服务器资源管理器中选择数据库并转到属性窗口。 您将找到名为使用数据库 s 的连接字符串的连接字符串的属性。 假定你在生产和 SqlClient 提供程序上使用 Microsoft SQL Server 数据库连接字符串应类似于以下：
 
-**数据源=*serverName*; 初始目录=*databaseName*; 持久性安全信息=True; 用户 ID=*用户名*; 密码=*密码**\*
+<strong>数据源 =<em>serverName</em>;初始目录 =<em>databaseName</em>;持久性安全信息 = True;用户 ID =<em>用户名</em>;密码 =*密码</strong>*
 
 其中*serverName*， *databaseName*，*用户名*，和*密码*与数据库服务器名称，数据库的值名称和用户名和密码由你的 web 主机公司提供给你。
 
@@ -137,7 +137,7 @@ Web 应用程序使用中的信息*连接字符串*以与数据库建立连接�
 > 你可以指定任何信息`Web.config`中单独的文件并使用元素`configSource`属性中引用该文件`Web.config`。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 数据驱动应用程序通常在开发和生产环境中使用不同的数据库。 因此，存储在 web 应用程序的配置的数据库连接字符串必须是唯一每个环境。 在本教程中我们介绍了如何确定了生产数据库连接字符串以及要维护的两种环境中的唯一连接字符串信息的方式。
 
@@ -152,6 +152,6 @@ Web 应用程序使用中的信息*连接字符串*以与数据库建立连接�
 - [移出 Web.config 文件的设置](http://www.asp101.com/tips/index.asp?id=154)
 - [技术文档&lt;connectionStrings&gt;元素](https://msdn.microsoft.com/library/bf7sd233.aspx)
 
->[!div class="step-by-step"]
-[上一页](deploying-a-database-vb.md)
-[下一页](configuring-a-website-that-uses-application-services-vb.md)
+> [!div class="step-by-step"]
+> [上一页](deploying-a-database-vb.md)
+> [下一页](configuring-a-website-that-uses-application-services-vb.md)

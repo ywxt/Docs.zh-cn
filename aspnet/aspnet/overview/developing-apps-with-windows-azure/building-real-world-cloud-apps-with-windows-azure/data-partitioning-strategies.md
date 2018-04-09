@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
-title: "数据分区策略 （使用 Azure 构建真实世界云应用） |Microsoft 文档"
+title: 数据分区策略 （使用 Azure 构建真实世界云应用） |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以..."
+description: 构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 513837a7-cfea-4568-a4e9-1f5901245d24
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 msc.type: authoredcontent
-ms.openlocfilehash: dca016cb6293a346f5622cc272e510b182c86d58
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9ff7f37a03d8d3dfab50e8007a6645bb0d88f453
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>数据分区策略 （使用 Azure 构建真实世界云应用）
 ====================
@@ -89,7 +89,7 @@ ms.lasthandoff: 01/24/2018
 
 处理程序，但前提是你转到生产环境之前，你计划为其，复杂性是易于管理。 未执行此操作的许多人希望它们具有更高版本。 我们的客户咨询团队 (CAT) 团队中非常大的方式，采用其应用的客户从获取有关每月一次不稳定电话呼叫的平均值和它们未进行此规划。 和他们所说的内容类似的内容:"帮助 ！ 我将所有内容放在单个数据存储和 45 天内我要在其上运行空间不足 ！" 并且，如果你有大量的内置于你如何访问数据存储区的业务逻辑，并且必须使用你的应用程序的客户，没有没有合适的时间为一天就出现故障，在迁移时。 我们得到其数据 herculean 工作量来帮助客户分区经过在运行过程中使用无需停机。 它是非常令人兴奋和非常有点复杂，并且不适合你想要参与如果您可以避免使用它 ！ 提前考虑这并将其集成到你的应用将使你更容易得多如果应用程序的增长更高版本。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 有效的分区方案可以启用你的云应用程序扩展到数千兆而无需瓶颈云中的数据。 和无需支付提前大规模机或广泛的基础结构为的方式可能就像在本地数据中心中运行应用程序。 在云中可以随着您需要它，并且您要仅付款，则根据你正在使用当你使用此选项以增量方式可以增加容量。
 
@@ -113,6 +113,6 @@ ms.lasthandoff: 01/24/2018
 
 - [云服务在 Windows Azure 中的基础知识](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)。 示例包括分片数据库的应用程序。 有关实现的分片方案的说明，请参阅[DAL – 分片的 RDBMS](https://blogs.msdn.com/b/windowsazure/archive/2013/09/05/dal-sharding-of-rdbms.aspx) Windows Azure 博客上。
 
->[!div class="step-by-step"]
-[上一页](data-storage-options.md)
-[下一页](unstructured-blob-storage.md)
+> [!div class="step-by-step"]
+> [上一页](data-storage-options.md)
+> [下一页](unstructured-blob-storage.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-vb
-title: "预编译你的网站 (VB) |Microsoft 文档"
+title: 预编译你的网站 (VB) |Microsoft 文档
 author: rick-anderson
-description: "Visual Studio 为 ASP.NET 开发人员提供了两种类型的项目： Web 应用程序项目 (Wap) 和网站项目 (WSPs)。 一个主要区别 betwe..."
+description: Visual Studio 为 ASP.NET 开发人员提供了两种类型的项目： Web 应用程序项目 (Wap) 和网站项目 (WSPs)。 一个主要区别 betwe...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7cc487aa5276c601fed632e82d7b6d32d1b53b58
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7296808480fa48b4afd0b308cd27707378519747
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="precompiling-your-website-vb"></a>预编译你的网站 (VB)
 ====================
@@ -97,7 +97,7 @@ Visual Studio 为 ASP.NET 开发人员提供了两种不同的项目类型： We
 
 [![](precompiling-your-website-vb/_static/image5.png)](precompiling-your-website-vb/_static/image4.png)
 
-**图 2**： 项目目录包含`.aspx`和`.aspx.cs`文件;`Bin`文件夹只包含`Elmah.dll`  
+**图 2**： 项目目录包含`.aspx`和`.aspx.cs`文件;`Bin`文件夹只包含 `Elmah.dll`  
  ([单击以查看实际尺寸的图像](precompiling-your-website-vb/_static/image6.png))
 
 **图 3**显示其内容由 ASP.NET 编译工具创建的目标位置文件夹。 此文件夹不包含任何代码隐藏文件。 此外，此文件夹`Bin`目录中包括多个程序集和第二个`.compiled`文件除了`Elmah.dll`程序集。
@@ -173,7 +173,7 @@ ASP.NET 编译器工具还可以使用预编译网站具有非可更新 UI 的�
 
 有关从开发环境的文件复制到生产环境中使用刷新程序参考[*部署您的网站使用 FTP 客户端*](deploying-your-site-using-an-ftp-client-vb.md)和[ *部署你的网站使用 Visual Studio* ](determining-what-files-need-to-be-deployed-vb.md)教程。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 ASP.NET 支持两种编译模式： 自动和显式。 如前面的教程中所述，Web 应用程序项目 (Wap) 将使用显式编译，而网站项目 (WSPs) 默认情况下使用自动编译。 但是，很可能以显式编译，方法是使用 ASP.NET 编译工具部署之前 WSP。
 
@@ -190,6 +190,6 @@ ASP.NET 支持两种编译模式： 自动和显式。 如前面的教程中所�
 - [在 ASP.NET 中的预编译](http://www.odetocode.com/Articles/417.aspx)
 - [在 ASP.NET 中的预编译的站点选项](http://www.dotnetperls.com/precompiled)
 
->[!div class="step-by-step"]
-[上一页](logging-error-details-with-elmah-vb.md)
-[下一页](users-and-roles-on-the-production-website-vb.md)
+> [!div class="step-by-step"]
+> [上一页](logging-error-details-with-elmah-vb.md)
+> [下一页](users-and-roles-on-the-production-website-vb.md)

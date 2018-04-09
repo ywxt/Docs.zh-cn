@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs
-title: "使用 ASP.NET MVC (C#) 创建电影数据库应用程序在 15 分钟内 |Microsoft 文档"
+title: 使用 ASP.NET MVC (C#) 创建电影数据库应用程序在 15 分钟内 |Microsoft 文档
 author: StephenWalther
-description: "Stephen Walther 生成整个数据库驱动 ASP.NET MVC 应用程序从头到尾完成。 本教程是人士提供新 t 的极佳介绍..."
+description: Stephen Walther 生成整个数据库驱动 ASP.NET MVC 应用程序从头到尾完成。 本教程是人士提供新 t 的极佳介绍...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a67ca5422d4353b8c23b3fd804246906b8b6d717
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 81e0ae42bc3e7656c933ba70920eaeeffa4c4bd6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-c"></a>创建电影数据库应用程序在 15 分钟内使用 ASP.NET MVC (C#)
 ====================
@@ -362,11 +362,11 @@ Visual Studio 视图列出 5 中会自动生成。 此视图包含 HTML 窗体�
 
 请注意，你必须检索原始的电影，，然后调用 ApplyPropertyChanges()，以更新数据库中已有的电影。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程的目的是体验的为你提供一种生成 ASP.NET MVC 应用程序。 我希望你发现生成 ASP.NET MVC web 应用程序是非常类似于生成 Active Server Pages 或 ASP.NET 应用程序的体验。
 
 在本教程中，我们将探讨的 ASP.NET MVC framework 仅最基本的功能。 在将来的教程中，我们深入了解主题，如控制器、 控制器操作、 视图、 查看数据和 HTML 帮助器。
 
->[!div class="step-by-step"]
-[下一篇](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb.md)
+> [!div class="step-by-step"]
+> [下一篇](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb.md)

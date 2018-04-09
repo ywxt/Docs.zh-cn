@@ -1,7 +1,7 @@
 ---
-title: "密钥存储提供程序"
+title: 在 ASP.NET 核心中的密钥存储提供程序
 author: rick-anderson
-description: "了解有关 ASP.NET 核心以及如何配置密钥的存储位置中的密钥存储提供程序。"
+description: 了解有关 ASP.NET 核心以及如何配置密钥的存储位置中的密钥存储提供程序。
 manager: wpickett
 ms.author: riande
 ms.date: 01/14/2017
@@ -9,20 +9,20 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-storage-providers
-ms.openlocfilehash: 83e02a19e465b3ff81a0c0c62c2c8b090bfab052
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: e8b7804e93b812c2e710ab15510c2fbaa7c4866d
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-storage-providers"></a>密钥存储提供程序
+# <a name="key-storage-providers-in-aspnet-core"></a>在 ASP.NET 核心中的密钥存储提供程序
 
 <a name="data-protection-implementation-key-storage-providers"></a>
 
 默认情况下，数据保护系统[使用启发式方法](xref:security/data-protection/configuration/default-settings)以确定应将在其中保留加密的密钥材料。 开发人员可以重写启发式方法，并手动指定的位置。
 
 > [!NOTE]
-> 如果您指定一个显式的密钥保持位置，将取消注册数据保护系统在 rest 机制启发式方法提供的默认密钥加密，以便密钥将不再加密对静止。 它具有，建议你此外[指定显式密钥加密机制](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest-providers)对于生产应用程序。
+> 如果您指定一个显式的密钥保持位置，将取消注册数据保护系统在 rest 机制启发式方法提供的默认密钥加密，以便密钥将不再加密对静止。 它具有，建议你此外[指定显式密钥加密机制](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest-providers)对于生产应用程序。
 
 数据保护系统附带了几个内置密钥存储提供程序。
 
@@ -36,7 +36,7 @@ sc.AddDataProtection()
        .PersistKeysToFileSystem(new DirectoryInfo(@"c:\temp-keys\"));
    ```
 
-`DirectoryInfo`可以指向本地计算机上的目录或它可以指向网络共享上的文件夹。 如果指向本地计算机上的目录 （和的方案是，只有本地计算机上的应用程序将需要使用此存储库），请考虑使用[Windows DPAPI](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest)来加密存放的密钥。 否则，请考虑使用[X.509 证书](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest)来加密存放的密钥。
+`DirectoryInfo`可以指向本地计算机上的目录或它可以指向网络共享上的文件夹。 如果指向本地计算机上的目录 （和的方案是，只有本地计算机上的应用程序将需要使用此存储库），请考虑使用[Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest)来加密存放的密钥。 否则，请考虑使用[X.509 证书](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest)来加密存放的密钥。
 
 ## <a name="azure-and-redis"></a>Azure 和 Redis
 
@@ -84,7 +84,7 @@ public void ConfigureServices(IServiceCollection services)
        .PersistKeysToRegistry(Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Sample\keys"));
    ```
 
-如果作为持久性机制使用系统注册表，请考虑使用[Windows DPAPI](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest)来加密存放的密钥。
+如果作为持久性机制使用系统注册表，请考虑使用[Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest)来加密存放的密钥。
 
 ## <a name="custom-key-repository"></a>自定义密钥存储库
 

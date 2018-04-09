@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-cs
-title: "添加单选按钮 (C#) 的 GridView 列 |Microsoft 文档"
+title: 添加单选按钮 (C#) 的 GridView 列 |Microsoft 文档
 author: rick-anderson
-description: "本教程讲述如何向用户提供更直观的方式选择的单个行的 GridView 控件添加单选按钮的列..."
+description: 本教程讲述如何向用户提供更直观的方式选择的单个行的 GridView 控件添加单选按钮的列...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/06/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 386fcb1cef896edbb465ba36415712af70d916ec
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 32bfe8463d80dfcff925f3bd6f31de67b071fc0b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-gridview-column-of-radio-buttons-c"></a>添加 GridView 列的单选按钮 (C#)
 ====================
@@ -323,7 +323,7 @@ GridView 控件提供了大量的内置功能。 它包括用于显示文本、 
 **图 20**： 由野人绑架 Breweries 产品提供的同一页面上列出 ([单击以查看实际尺寸的图像](adding-a-gridview-column-of-radio-buttons-cs/_static/image36.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 中所述[母版/详细介绍使用详细信息 DetailView 可选择的主 GridView](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md)教程，则可以从使用 CommandField GridView 选择记录其`ShowSelectButton`属性设置为`true`。 但 CommandField 作为正则下压按钮、 链接或图像显示其按钮。 替代的行选择用户界面是提供的单选按钮或每个 GridView 行中的复选框。 在本教程中，我们将探讨如何添加单选按钮的列。
 
@@ -335,11 +335,11 @@ GridView 控件提供了大量的内置功能。 它包括用于显示文本、 
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 David Suru。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[下一篇](adding-a-gridview-column-of-checkboxes-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](adding-a-gridview-column-of-checkboxes-cs.md)

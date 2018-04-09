@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/mobile/rendering-aspnet-web-pages-sites-for-mobile-devices
-title: "呈现 ASP.NET Web 页 (Razor) 站点对于移动设备 |Microsoft 文档"
+title: 呈现 ASP.NET Web 页 (Razor) 站点对于移动设备 |Microsoft 文档
 author: tfitzmac
-description: "本文介绍如何在将相应地呈现在移动设备的 ASP.NET Web 页 (Razor) 站点中创建页面。 你将了解： 你如何..."
+description: 本文介绍如何在将相应地呈现在移动设备的 ASP.NET Web 页 (Razor) 站点中创建页面。 你将了解： 你如何...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/17/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/mobile/rendering-aspnet-web-pages-sites-for-mobile-devices
 msc.type: authoredcontent
-ms.openlocfilehash: 899bbdef82d689be81cd77ea6805e0484fb614aa
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 641798c5b835be959d02dd0d854b61ca21d83016
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a>移动设备的的呈现 ASP.NET Web 页 (Razor) 站点
 ====================
@@ -40,7 +40,7 @@ ms.lasthandoff: 03/15/2018
 
 ASP.NET Web 页中，可以在移动或其他设备上创建自定义呈现内容的显示。
 
-在 ASP.NET Web Pages 站点中创建设备特定的页上的最简单方法是使用如下的文件命名模式： *FileName。**移动**.cshtml*。 你可以创建两个版本的页面 (例如，一个名为*MyFile.cshtml*和一个名为*MyFile.Mobile.cshtml*)。 在运行的时，当移动设备请求*MyFile.cshtml*，ASP.NET 将从内容呈现*MyFile.Mobile.cshtml*。 否则为*MyFile.cshtml*呈现。
+在 ASP.NET Web Pages 站点中创建设备特定的页上的最简单方法是使用如下的文件命名模式： <em>FileName。</em><em>移动</em><em>.cshtml</em>。 你可以创建两个版本的页面 (例如，一个名为<em>MyFile.cshtml</em>和一个名为<em>MyFile.Mobile.cshtml</em>)。 在运行的时，当移动设备请求<em>MyFile.cshtml</em>，ASP.NET 将从内容呈现<em>MyFile.Mobile.cshtml</em>。 否则为<em>MyFile.cshtml</em>呈现。
 
 下面的示例演示如何通过添加移动设备的内容页中启用移动呈现。 *Page1.cshtml*包含内容以及导航侧边栏。 *Page1.Mobile.cshtml*包含相同的内容，但省略侧栏。
 

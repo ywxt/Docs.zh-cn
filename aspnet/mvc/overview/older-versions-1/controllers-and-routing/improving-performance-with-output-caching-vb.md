@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-vb
-title: "使用提高性能输出缓存 (VB) |Microsoft 文档"
+title: 使用提高性能输出缓存 (VB) |Microsoft 文档
 author: microsoft
-description: "在本教程中，你学习如何极大地提高你的 ASP.NET MVC web 应用程序的性能通过利用的输出缓存。 你..."
+description: 在本教程中，你学习如何极大地提高你的 ASP.NET MVC web 应用程序的性能通过利用的输出缓存。 你...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3bd4b6c3ac52577cbee451d2986f1167e441f0e6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8ee933b477307f5c3f2377e112a1a98d3d6bc337
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="improving-performance-with-output-caching-vb"></a>使用输出缓存 (VB) 提高性能
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 在本教程中，你学习如何极大地提高你的 ASP.NET MVC web 应用程序的性能通过利用的输出缓存。 了解如何缓存，以便不需要创建新的用户调用该操作的每个时间相同的内容的控制器操作返回的结果。
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 11/10/2017
 [!code-vb[Main](improving-performance-with-output-caching-vb/samples/sample1.vb)]
 
 
-在 Beta 版中的 ASP.NET MVC，输出缓存并不适用于的 URL，如[http://www.MySite.com/](http://www.mysite.com/)。 相反，您必须输入的 URL，如[http://www.MySite.com/Home/Index](http://www.mysite.com/Home/Index)。
+在 Beta 版中的 ASP.NET MVC，输出缓存并不适用于的 URL，如[ http://www.MySite.com/ ](http://www.mysite.com/)。 相反，您必须输入的 URL，如[ http://www.MySite.com/Home/Index ](http://www.mysite.com/Home/Index)。
 
 
 列出 1 中为 10 秒时，将缓存 index （） 操作的输出。 如果你愿意，你可以指定一个更长的时间的缓存持续时间。 例如，如果你想要缓存的输出为一天的控制器操作然后你可以指定缓存持续时间为 86400 秒 (60 秒\*60 分钟\*24 小时)。
@@ -134,7 +134,7 @@ Details() 操作包括具有"Id"的值的 VaryByParam 属性。 当不同的 Id 
 
 你可以将 VaryByParam 属性设置为以下值：
 
-> \*= 如果窗体或查询字符串参数变化，可以创建不同的缓存的版本。
+> \* = 如果窗体或查询字符串参数变化，可以创建不同的缓存的版本。
 > 
 > none = Never 创建不同的缓存的版本
 > 
@@ -157,16 +157,16 @@ Details() 操作包括具有"Id"的值的 VaryByParam 属性。 当不同的 Id 
 
 列出 7 中的控制器演示了如何将 Cache1Hour 配置文件应用到的控制器操作具有&lt;OutputCache&gt;属性。
 
-**列出 7-Controllers\ProfileController.vb**
+**Listing 7 – Controllers\ProfileController.vb**
 
 [!code-vb[Main](improving-performance-with-output-caching-vb/samples/sample7.vb)]
 
 如果调用公开的列出 7 中的控制器的 index （） 操作则将以 1 小时为单位返回相同的时间。
 
-#### <a name="summary"></a>摘要
+#### <a name="summary"></a>总结
 
 输出缓存提供与极大地提高你的 ASP.NET MVC 应用程序的性能的轻松方法。 在本教程中，您学习了如何使用&lt;OutputCache&gt;特性来缓存输出的控制器操作。 你还了解了如何修改属性&lt;OutputCache&gt;如要修改如何获取缓存内容的持续时间和 VaryByParam 属性的属性。 最后，您学习了如何在 web 配置文件中定义缓存配置文件。
 
->[!div class="step-by-step"]
-[上一页](understanding-action-filters-vb.md)
-[下一页](adding-dynamic-content-to-a-cached-page-vb.md)
+> [!div class="step-by-step"]
+> [上一页](understanding-action-filters-vb.md)
+> [下一页](adding-dynamic-content-to-a-cached-page-vb.md)

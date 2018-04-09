@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/dynamically-controlling-updatepanel-animations-vb
-title: "动态控制 UpdatePanel 动画 (VB) |Microsoft 文档"
+title: 动态控制 UpdatePanel 动画 (VB) |Microsoft 文档
 author: wenz
-description: "ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 内容..."
+description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 内容...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/dynamically-controlling-updatepanel-animations-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 75b1f169724d8d3f8bcbc46198d320eeb8e7260c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ff2853b4457a83a7367b4d1072d21929c40a3ed2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="dynamically-controlling-updatepanel-animations-vb"></a>动态控制 UpdatePanel 动画 (VB)
 ====================
@@ -65,5 +65,5 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个�
 
 当前时间淡入 ([单击以查看实际尺寸的图像](dynamically-controlling-updatepanel-animations-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一篇](animating-an-updatepanel-control-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](animating-an-updatepanel-control-vb.md)

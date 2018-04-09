@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
-title: "了解 ASP.NET AJAX 身份验证和配置文件应用程序服务 |Microsoft 文档"
+title: 了解 ASP.NET AJAX 身份验证和配置文件应用程序服务 |Microsoft 文档
 author: scottcate
-description: "身份验证服务允许用户提供凭据才能接收身份验证 cookie，并为该网关服务以便进行自定义用户..."
+description: 身份验证服务允许用户提供凭据才能接收身份验证 cookie，并为该网关服务以便进行自定义用户...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
-ms.openlocfilehash: 182276f9f91b99beb1ce0fc40dcda1f19376669a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0bf6538d0c4ae9488e6ac29ccba6d4b243cf070e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>了解 ASP.NET AJAX 身份验证和配置文件应用程序服务
 ====================
@@ -43,7 +43,7 @@ Microsoft ASP.NET 配置文件和身份验证服务由 ASP.NET 窗体身份验�
 
 配置文件服务允许自动集成和根据成员资格，身份验证服务所提供的用户数据的存储。 Web.config 文件中，指定存储的数据和各种的分析服务提供程序处理的数据管理。 与身份验证服务，AJAX 配置文件服务适用于标准 ASP.NET 配置文件服务，以便不应由于包括 AJAX 支持中断当前特有的功能的 ASP.NET 配置文件服务的页。
 
-并入应用程序的 ASP.NET 身份验证和分析服务本身是本白皮书的范围之外。 有关主题的详细信息，请参阅 MSDN 库引用文章在使用成员资格管理用户[https://msdn.microsoft.com/library/tw292whz.aspx](https://msdn.microsoft.com/library/tw292whz.aspx)。 ASP.NET 还包括一个实用工具来自动将使用 SQL Server，这是默认身份验证服务提供程序的 ASP.NET 成员身份的成员资格设置。 有关详细信息，请参阅文章 ASP.NET SQL 服务器注册工具 (Aspnet\_regsql.exe) 在[https://msdn.microsoft.com/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/library/ms229862(vs.80).aspx).
+并入应用程序的 ASP.NET 身份验证和分析服务本身是本白皮书的范围之外。 有关主题的详细信息，请参阅 MSDN 库引用文章在使用成员资格管理用户[ https://msdn.microsoft.com/library/tw292whz.aspx ](https://msdn.microsoft.com/library/tw292whz.aspx)。 ASP.NET 还包括一个实用工具来自动将使用 SQL Server，这是默认身份验证服务提供程序的 ASP.NET 成员身份的成员资格设置。 有关详细信息，请参阅文章 ASP.NET SQL 服务器注册工具 (Aspnet\_regsql.exe) 在[ https://msdn.microsoft.com/library/ms229862(vs.80).aspx ](https://msdn.microsoft.com/library/ms229862(vs.80).aspx)。
 
 ## <a name="using-the-aspnet-ajax-authentication-service"></a>*使用 ASP.NET AJAX 身份验证服务*
 
@@ -131,7 +131,7 @@ Logout （） 方法将移除凭据 cookie，并注销当前用户从 web 应用
 
 | **参数名称** | **含义** |
 | --- | --- |
-| validCredentials | 指定用户是否提供有效凭据。 `true`如果用户成功登录;否则为`false`。 |
+| validCredentials | 指定用户是否提供有效凭据。 `true` 如果用户成功登录;否则为`false`。 |
 | userContext | 指定提供调用 login 函数时的用户上下文信息。 |
 | 方法名称 | 调用方法的名称。 |
 
@@ -335,7 +335,7 @@ ASP.NET AJAX 扩展允许您通过公开你通过自定义 web 服务的功能�
 
 [!code-aspx[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample16.aspx)]
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 ASP.NET 服务-专门分析、 成员身份和身份验证服务-轻松地向 JavaScript 公开在客户端浏览器上。 这允许开发人员其客户端代码使用的身份验证机制无缝集成，而无需根据控件如 UpdatePanels 如何完成的繁重任务。 可以从客户端，通过利用 web 配置设置; 保护配置文件数据不会提供默认情况下，数据和开发人员必须选择性加入到配置文件属性。
 
@@ -345,6 +345,6 @@ ASP.NET 服务-专门分析、 成员身份和身份验证服务-轻松地向 Ja
 
 Scott 类别自 1997 年以来处理与 Microsoft Web 技术，并且是 myKB.com 总裁 ([www.myKB.com](http://www.myKB.com)) 其中他专注于编写 ASP.NET 基于侧重于知识库软件解决方案的应用程序。 可以通过在电子邮件联系 Scott [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com)或在其博客地址[ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[上一页](understanding-asp-net-ajax-updatepanel-triggers.md)
-[下一页](understanding-asp-net-ajax-localization.md)
+> [!div class="step-by-step"]
+> [上一页](understanding-asp-net-ajax-updatepanel-triggers.md)
+> [下一页](understanding-asp-net-ajax-localization.md)

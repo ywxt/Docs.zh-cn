@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-vb
-title: "创建控制器 (VB) |Microsoft 文档"
+title: 创建控制器 (VB) |Microsoft 文档
 author: StephenWalther
-description: "在本教程中，Stephen Walther 演示如何将控制器添加到 ASP.NET MVC 应用程序。"
+description: 在本教程中，Stephen Walther 演示如何将控制器添加到 ASP.NET MVC 应用程序。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d2caf7fe137b48c016ff3cd52db9e36e1e8001c0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e9a2bbcb09672f5247429064908cd4d2ef67f518
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-controller-vb"></a>创建控制器 (VB)
 ====================
@@ -48,7 +48,7 @@ ms.lasthandoff: 11/10/2017
 如果你创建缺少的控制器*控制器*后缀然后你将无法调用控制器。 不执行该操作--我已浪费大量我生命周期后再犯此错误的时间。
 
 
-**列表 1-Controllers\ProductController.vb**
+**Listing 1 - Controllers\ProductController.vb**
 
 [!code-vb[Main](creating-a-controller-vb/samples/sample1.vb)]
 
@@ -64,7 +64,7 @@ ms.lasthandoff: 11/10/2017
 **图 03**： 自动创建操作方法 ([单击以查看实际尺寸的图像](creating-a-controller-vb/_static/image6.png))
 
 
-**列出 2-Controllers\CustomerController.vb**
+**Listing 2 - Controllers\CustomerController.vb**
 
 [!code-vb[Main](creating-a-controller-vb/samples/sample2.vb)]
 
@@ -84,7 +84,7 @@ ASP.NET MVC 控制器是只是一个类。 如果你愿意，你可以忽略方�
 **图 04**： 创建新类 ([单击以查看实际尺寸的图像](creating-a-controller-vb/_static/image8.png))
 
 
-**列出 3-Controllers\PersonController.vb**
+**Listing 3 - Controllers\PersonController.vb**
 
 [!code-vb[Main](creating-a-controller-vb/samples/sample3.vb)]
 
@@ -92,10 +92,10 @@ ASP.NET MVC 控制器是只是一个类。 如果你愿意，你可以忽略方�
 
 `http://localhost:40071/Person`
 
-> [!NOTE] 
+> [!NOTE]
 > 
 > ASP.NET 开发服务器使用一个随机端口号 (例如，40071)。 在输入的 URL 来调用控制器时，你将需要提供正确的端口号。 可以通过将鼠标悬停在图标，为 ASP.NET 开发服务器在 Windows 通知区域中 （屏幕的右下角） 来确定的端口号。
-
->[!div class="step-by-step"]
-[上一页](adding-dynamic-content-to-a-cached-page-vb.md)
-[下一页](creating-an-action-vb.md)
+> 
+> [!div class="step-by-step"]
+> [上一页](adding-dynamic-content-to-a-cached-page-vb.md)
+> [下一页](creating-an-action-vb.md)

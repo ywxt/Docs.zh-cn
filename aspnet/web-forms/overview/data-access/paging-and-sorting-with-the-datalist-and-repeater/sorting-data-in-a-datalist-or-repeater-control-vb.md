@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-vb
-title: "对 DataList 或转发器控件 (VB) 中的数据进行排序 |Microsoft 文档"
+title: 对 DataList 或转发器控件 (VB) 中的数据进行排序 |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将研究如何包含排序 DataList 和转发器中的支持，以及如何构造其数据可以 DataList 或转发器..."
+description: 在本教程中我们将研究如何包含排序 DataList 和转发器中的支持，以及如何构造其数据可以 DataList 或转发器...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0133a74454a7754f4f7087e2121c7387a1aef8a8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 66d6833e69a91aef39cc4a202ef662ecaeeee839
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-vb"></a>DataList 或转发器控件 (VB) 中对数据进行排序
 ====================
@@ -231,9 +231,9 @@ GridView 控件具有`SortExpression`属性，它存储`SortExpression`的 GridV
 
 DataList 示例检查在步骤中，通过使用效率低下的默认分页技术其数据的 5 个页面。 当足够大，大量数据进行分页时, 是命令性，使用自定义分页。 返回[高效地分页通过大型金额的数据](../paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb.md)和[排序自定义分页数据](../paging-and-sorting/sorting-custom-paged-data-vb.md)教程，我们将检查中为 BLL 默认和自定义分页和创建的方法的区别利用自定义分页和排序自定义分页的数据。 具体而言，在这些两个前面的教程，我们添加到以下三种方法`ProductsBLL`类：
 
-- `GetProductsPaged(startRowIndex, maximumRows)`返回开始记录的特定子集*值*和不超过*值*。
-- `GetProductsPagedAndSorted(sortExpression, startRowIndex, maximumRows)`返回按指定的记录的特定子集*sortExpression*输入的参数。
-- `TotalNumberOfProducts()`提供了中的记录的总数`Products`数据库表。
+- `GetProductsPaged(startRowIndex, maximumRows)` 返回开始记录的特定子集*值*和不超过*值*。
+- `GetProductsPagedAndSorted(sortExpression, startRowIndex, maximumRows)` 返回按指定的记录的特定子集*sortExpression*输入的参数。
+- `TotalNumberOfProducts()` 提供了中的记录的总数`Products`数据库表。
 
 这些方法可以用于有效地页和排序通过使用 DataList 或转发器控件的数据。 为了说明这一点，让我们来开始通过使用自定义分页支持; 创建重复器控件然后，我们将添加排序功能。
 
@@ -378,7 +378,7 @@ ObjectDataSource 调用之前`GetProductsPagedAndSorted`方法我们需要将设
 > 在上一示例中，供应商供应商名称用作排序表达式排序时。 但是，对于自定义分页实现中，我们需要使用 CompanyName。 这是因为存储的过程负责实现自定义分页`GetProductsPagedAndSorted`将传递到排序表达式`ROW_NUMBER()`关键字，`ROW_NUMBER()`关键字需要为实际列名，而不是别名。 因此，我们必须使用`CompanyName`(中的列的名称`Suppliers`表) 而不是中使用的别名`SELECT`查询 (`SupplierName`) 的排序表达式。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 既不是 DataList 还是中继器提供排序的内置支持，但可以进行少量的代码和自定义排序界面，添加这样的功能。 在实现排序，但不是分页时，可通过指定的排序表达式`DataSourceSelectArguments`对象传递给 ObjectDataSource 的`Select`方法。 这`DataSourceSelectArguments`对象 s`SortExpression`属性可以分配中 ObjectDataSource 的`Selecting`事件处理程序。
 
@@ -390,11 +390,11 @@ ObjectDataSource 调用之前`GetProductsPagedAndSorted`方法我们需要将设
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 David Suru。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一篇](paging-report-data-in-a-datalist-or-repeater-control-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](paging-report-data-in-a-datalist-or-repeater-control-vb.md)

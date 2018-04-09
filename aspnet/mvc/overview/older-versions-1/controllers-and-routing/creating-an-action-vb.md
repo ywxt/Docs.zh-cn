@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-vb
-title: "创建操作 (VB) |Microsoft 文档"
+title: 创建操作 (VB) |Microsoft 文档
 author: microsoft
-description: "了解如何向 ASP.NET MVC 控制器中添加新操作。 了解有关该方法将被某项操作的要求。"
+description: 了解如何向 ASP.NET MVC 控制器中添加新操作。 了解有关该方法将被某项操作的要求。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3d1d355599c17df597f9c08d9d7f129fffc1a2e4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c77e4738444c61d60bdd78a50b36f98be41fc271
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-an-action-vb"></a>创建操作 (VB)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 了解如何向 ASP.NET MVC 控制器中添加新操作。 了解有关该方法将被某项操作的要求。
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 
 通过将新方法添加到控制器可将新的操作添加到控制器中。 例如，列表 1 中的控制器包含名为 index （） 的操作和名为 SayHello() 操作。 作为操作公开这两种方法。
 
-**列表 1-Controllers\HomeController.vb**
+**Listing 1 - Controllers\HomeController.vb**
 
 [!code-vb[Main](creating-an-action-vb/samples/sample1.vb)]
 
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 
 如果你需要创建一个公共方法中了控制器类并且你不想要公开的控制器操作作为方法，则可以防止使用调用该方法&lt;NonAction&gt;属性。 例如，清单 2 中的控制器包含一个名为 CompanySecrets() 用修饰的公共方法&lt;NonAction&gt;属性。
 
-**列出 2-Controllers\WorkController.vb**
+**Listing 2 - Controllers\WorkController.vb**
 
 [!code-vb[Main](creating-an-action-vb/samples/sample2.vb)]
 
@@ -64,6 +64,6 @@ ms.lasthandoff: 11/10/2017
 
 **图 01**： 调用 NonAction 方法 ([单击以查看实际尺寸的图像](creating-an-action-vb/_static/image2.png))
 
->[!div class="step-by-step"]
-[上一页](creating-a-controller-vb.md)
-[下一页](aspnet-mvc-controllers-overview-cs.md)
+> [!div class="step-by-step"]
+> [上一页](creating-a-controller-vb.md)
+> [下一页](aspnet-mvc-controllers-overview-cs.md)

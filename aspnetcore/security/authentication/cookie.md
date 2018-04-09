@@ -1,7 +1,7 @@
 ---
-title: "使用 Cookie 而无需 ASP.NET 核心标识的身份验证"
+title: 使用 cookie 而无需 ASP.NET 核心标识的身份验证
 author: rick-anderson
-description: "使用 cookie 而无需 ASP.NET 核心标识的身份验证的说明"
+description: 使用 cookie 而无需 ASP.NET 核心标识的身份验证的说明
 manager: wpickett
 ms.author: riande
 ms.date: 10/11/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/cookie
-ms.openlocfilehash: bbc49a0d3ede66ad07ec3f1dea055cae5fec39ff
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 26101d46557c64047f3d121083fe34ad34ff99ea
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="using-cookie-authentication-without-aspnet-core-identity"></a>使用 Cookie 而无需 ASP.NET 核心标识的身份验证
+# <a name="use-cookie-authentication-without-aspnet-core-identity"></a>使用 cookie 而无需 ASP.NET 核心标识的身份验证
 
 通过[Rick Anderson](https://twitter.com/RickAndMSFT)和[Luke Latham](https://github.com/guardrex)
 
@@ -27,8 +27,7 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="configuration"></a>配置
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 如果你未使用[Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage)，安装 2.0 以上版本的[Microsoft.AspNetCore.Authentication.Cookies](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Cookies/) NuGet 包。
 
 在`ConfigureServices`方法，创建具有的身份验证中间件服务`AddAuthentication`和`AddCookie`方法：
@@ -78,8 +77,7 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     });
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 ASP.NET 核心 1.x 使用 cookie[中间件](xref:fundamentals/middleware/index)，序列化为一个用户主体的加密 cookie。 在后续请求中，验证 cookie，并重新创建主体并将其分配到`HttpContext.User`属性。
 
 安装[Microsoft.AspNetCore.Authentication.Cookies](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Cookies/)项目中的 NuGet 包。 此程序包包含 cookie 中间件。
@@ -124,8 +122,7 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions
 });
 ```
 
----
-
+* * *
 ## <a name="cookie-policy-middleware"></a>Cookie 策略中间件
 
 [Cookie 策略中间件](/dotnet/api/microsoft.aspnetcore.cookiepolicy.cookiepolicymiddleware)启用应用程序中的 cookie 策略功能。 将该中间件添加到应用程序处理管道是顺序敏感;它只影响在管道中后它注册的组件。
@@ -167,14 +164,12 @@ Cookie 策略中间件设置`MinimumSameSitePolicy`可能会影响你的设置�
 
 若要创建一个保存用户信息的 cookie，您必须先构造[ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal)。 序列化用户信息并将其存储在 cookie 中。 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 创建[ClaimsIdentity](/dotnet/api/system.security.claims.claimsidentity)与任何所需[声明](/dotnet/api/system.security.claims.claim)s 并调用[SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signinasync?view=aspnetcore-2.0)若要在用户登录：
 
 [!code-csharp[](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet1)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 调用[SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhandler-1.signinasync?view=aspnetcore-1.1)若要在用户登录：
 
 ```csharp
@@ -183,22 +178,19 @@ await HttpContext.Authentication.SignInAsync(
     new ClaimsPrincipal(claimsIdentity));
 ```
 
----
-
+* * *
 `SignInAsync` 创建一个加密的 cookie，并将其添加到当前响应。 如果没有指定`AuthenticationScheme`，则使用默认方案。
 
 事实上，使用的加密是 ASP.NET Core[数据保护](xref:security/data-protection/using-data-protection#security-data-protection-getting-started)系统。 如果您正在承载应用程序在多台计算机、 负载平衡应用程序，或使用 web 场，则必须[配置数据保护](xref:security/data-protection/configuration/overview)使用同一密钥链和应用程序标识符。
 
 ## <a name="signing-out"></a>注销
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 若要注销当前用户，并删除其 cookie，调用[SignOutAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signoutasync?view=aspnetcore-2.0):
 
 [!code-csharp[](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet2)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 若要注销当前用户，并删除其 cookie，调用[SignOutAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhandler-1.signoutasync?view=aspnetcore-1.1):
 
 ```csharp
@@ -206,8 +198,7 @@ await HttpContext.Authentication.SignOutAsync(
     CookieAuthenticationDefaults.AuthenticationScheme);
 ```
 
----
-
+* * *
 如果你未使用`CookieAuthenticationDefaults.AuthenticationScheme`（或"Cookie"） 的方案 (例如，"ContosoCookie")，提供你在配置身份验证提供程序时使用的方案。 否则，使用的默认方案。
 
 ## <a name="reacting-to-back-end-changes"></a>对后端更改的作出反应

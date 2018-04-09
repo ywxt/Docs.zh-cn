@@ -12,15 +12,15 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/releases/top-features-in-web-pages-2
 msc.type: authoredcontent
-ms.openlocfilehash: e8fc758936953970ff3e9ba289516925dee9ef45
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: f0d32edd3ab54c55aa06c803cd91e01cbbb8f08a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="the-top-features-in-aspnet-web-pages-2"></a>在 ASP.NET Web Pages 2 靠前的特征
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 本文概述了 ASP.NET Web Pages 2 RC，附带的轻型 web 编程框架中最新功能的[Microsoft WebMatrix 2 RC](https://www.microsoft.com/web/)。
 > 
@@ -62,9 +62,9 @@ ms.lasthandoff: 11/10/2017
     如果你使用 Internet Explorer，请转到下一步。 如果你使用不同的浏览器，如 Mozilla Firefox 或 Google Chrome，则会提示您保存*Webmatrix.exe*到你的计算机的文件。 保存该文件，然后单击它以启动安装程序。
 3. 运行安装程序并选择**安装**按钮。 这将安装 WebMatrix 和 Web 页。
 
-## <a id="New_and_Enhanced_Features"></a>新的和增强功能
+## <a id="New_and_Enhanced_Features"></a>  新的和增强功能
 
-### <a id="Changes_for_the_RC_Version"></a>RC 版本 (2012 年 6 月) 的更改
+### <a id="Changes_for_the_RC_Version"></a>  RC 版本 (2012 年 6 月) 的更改
 
 在 2012 年 6 月 RC 版本发布具有少量更改从 2012 年 3 月发布的 Beta 版本刷新。 这些更改包括：
 
@@ -94,8 +94,8 @@ ms.lasthandoff: 11/10/2017
     `<a href="~/Default.cshtml">Home</a>`
 - `Scripts`帮助资产 （资源） 管理器已替换`Assets`帮助器，有略有不同的方法，如下所示：
 
-    - 有关`Scripts.Add`，使用`Assets.AddScript`
-    - 有关`Scripts.GetScriptTags`，使用`Assets.GetScripts`
+  - 有关`Scripts.Add`，使用 `Assets.AddScript`
+  - 有关`Scripts.GetScriptTags`，使用 `Assets.GetScripts`
 
     这是一项重大更改;`Scripts`类不是在 Beta 版本中可用。 进行此更改后已更新使用资产管理本文档中的代码示例。
 
@@ -123,7 +123,7 @@ ms.lasthandoff: 11/10/2017
 
 登录页**个人站点**模板允许你跟踪链接以设置您的博客，Twitter 页和照片页。
 
-[![topseven personalsite 3](top-features-in-web-pages-2/_static/image6.png)](top-features-in-web-pages-2/_static/image5.png)
+[![topseven-personalsite-3](top-features-in-web-pages-2/_static/image6.png)](top-features-in-web-pages-2/_static/image5.png)
 
 <a id="validation"></a>
 ### <a name="validating-user-input"></a>验证用户输入
@@ -149,15 +149,15 @@ ms.lasthandoff: 11/10/2017
 
 这些步骤足以实现服务器端验证。 如果你想要添加客户端验证，执行以下此外。
 
-添加以下脚本文件引用内的`<head>`web 页的部分。 前两个脚本引用点移到内容交付网络 (CDN) 服务器上的远程文件。 第三个引用将指向本地脚本文件。
+添加以下脚本文件引用内的`<head>`web 页的部分。 前两个脚本引用点移到内容交付网络 (CDN) 服务器上的远程文件。 第三个引用将指向本地脚本文件。 CDN 不可用时，生产应用程序应实现回退。 测试回退。
 
 [!code-html[Main](top-features-in-web-pages-2/samples/sample5.html)]
 
 若要获取的本地副本的最简单方法*jquery.validate.unobtrusive.min.js*库是创建新的 Web 页站点基于之一 （如入门站点） 的站点模板。 由模板创建该网站包含*jquery.validate.unobtrusive.js*其脚本文件夹中，从中你可以将其复制到你的站点中的文件。
 
-如果你的网站使用*\_SiteLayout*页来控制页面布局中，你可以在该页中包括这些脚本引用，以便验证可供所有内容页。 如果你想要仅在特定的页上执行验证，你可以使用的资产管理器注册仅这些页面上的脚本。 若要执行此操作，调用`Assets.AddScript(path)`中你想要验证并引用每个脚本文件的页。 然后添加对的调用`Assets.GetScripts`中 *\_SiteLayout*以便呈现的已注册的页`<script>`标记。 有关详细信息，请参阅明[与资产管理器注册脚本](#resmanagement)。
+如果你的网站使用<em>\_SiteLayout</em>页来控制页面布局中，你可以在该页中包括这些脚本引用，以便验证可供所有内容页。 如果你想要仅在特定的页上执行验证，你可以使用的资产管理器注册仅这些页面上的脚本。 若要执行此操作，调用`Assets.AddScript(path)`中你想要验证并引用每个脚本文件的页。 然后添加对的调用`Assets.GetScripts`中 <em>\_SiteLayout</em>以便呈现的已注册的页`<script>`标记。 有关详细信息，请参阅明[与资产管理器注册脚本](#resmanagement)。
 
-单个元素的标记，在调用`Validation.For`方法。 此方法发出特性该 jQuery 可以挂钩以便提供客户端验证。 例如: 
+单个元素的标记，在调用`Validation.For`方法。 此方法发出特性该 jQuery 可以挂钩以便提供客户端验证。 例如：
 
 [!code-cshtml[Main](top-features-in-web-pages-2/samples/sample6.cshtml)]
 
@@ -172,15 +172,15 @@ ms.lasthandoff: 11/10/2017
 
 下面是页上，当用户提交有效输入：
 
-[![topSeven 有效 1](top-features-in-web-pages-2/_static/image8.png)](top-features-in-web-pages-2/_static/image7.png)
+[![topSeven-valid-1](top-features-in-web-pages-2/_static/image8.png)](top-features-in-web-pages-2/_static/image7.png)
 
 当用户提交它与必填字段留空，下面是页：
 
-[![topSeven 有效 2](top-features-in-web-pages-2/_static/image10.png)](top-features-in-web-pages-2/_static/image9.png)
+[![topSeven-valid-2](top-features-in-web-pages-2/_static/image10.png)](top-features-in-web-pages-2/_static/image9.png)
 
 下面是页上，当用户提交它与内的整数以外**信用额度**字段：
 
-[![topSeven 有效 3](top-features-in-web-pages-2/_static/image12.png)](top-features-in-web-pages-2/_static/image11.png)
+[![topSeven-valid-3](top-features-in-web-pages-2/_static/image12.png)](top-features-in-web-pages-2/_static/image11.png)
 
 有关详细信息，请参阅以下博客文章：
 
@@ -207,7 +207,7 @@ ms.lasthandoff: 11/10/2017
 
 - 名为自定义 helper `MakeNote`。 此帮助器通过包装来呈现一个框内的字符串`div`元素在其周围的边框以及添加具有风格&quot;注意：&quot;到它。 帮助器还会调用将运行时行为添加到注释的 JavaScript 文件。 而不是引用的脚本`<script>`标记，帮助程序通过调用注册的脚本`Assets.AddScript`。
 - 一个 JavaScript 文件。 这是调用的帮助程序，该文件，同时可注意项目期间的字体大小暂时增加`mouseover`事件。
-- 内容页中，即在引用*\_SiteLayout*页上，呈现在正文中，某些内容，然后调用`MakeNote`帮助器。
+- 内容页中，即在引用<em>\_SiteLayout</em>页上，呈现在正文中，某些内容，然后调用`MakeNote`帮助器。
 - A  *\_SiteLayout*页。 此页会提供常见标头和页面布局结构。 它还包括调用`Assets.GetScripts`，即的资产管理器，如何呈现脚本调用在页中。
 
 若要运行示例：
@@ -288,18 +288,18 @@ Web Pages 2 提供有关成员身份和身份验证的增强的选项。 主要�
 
     网页将请求重定向到 Google 登录页。
 
-    [![topSeven oauth 6](top-features-in-web-pages-2/_static/image18.png)](top-features-in-web-pages-2/_static/image17.png)
+    [![topSeven-oauth-6](top-features-in-web-pages-2/_static/image18.png)](top-features-in-web-pages-2/_static/image17.png)
 3. 输入现有的 Google 帐户凭据。
 4. 如果出现要求你是否想要允许 Localhost 来使用帐户中的信息，请单击 Google**允许**。
 
     代码使用 Google 令牌进行身份验证用户，然后在网站上返回到此页。 可以使用此页将其 Google 登录名与你的网站上的现有帐户相关联的用户或用户可以在注册你将使用的外部登录名相关联的站点上的新帐户。
 
-    [![topSeven oauth 5](top-features-in-web-pages-2/_static/image20.png)](top-features-in-web-pages-2/_static/image19.png)
+    [![topSeven-oauth-5](top-features-in-web-pages-2/_static/image20.png)](top-features-in-web-pages-2/_static/image19.png)
 5. 选择**关联**按钮。 浏览器返回到应用程序的主页。
 
-    [![topSeven oauth 3](top-features-in-web-pages-2/_static/image22.png)](top-features-in-web-pages-2/_static/image21.png)
+    [![topSeven-oauth-3](top-features-in-web-pages-2/_static/image22.png)](top-features-in-web-pages-2/_static/image21.png)
 
-    [![topSeven oauth 3](top-features-in-web-pages-2/_static/image24.png)](top-features-in-web-pages-2/_static/image23.png)
+    [![topSeven-oauth-3](top-features-in-web-pages-2/_static/image24.png)](top-features-in-web-pages-2/_static/image23.png)
 
 **若要启用 Facebook 登录名**:
 
@@ -335,17 +335,17 @@ Web Pages 2 提供有关成员身份和身份验证的增强的选项。 主要�
 
     网页将请求重定向到 Facebook 登录页。
 
-    [![topSeven oauth 2](top-features-in-web-pages-2/_static/image26.png)](top-features-in-web-pages-2/_static/image25.png)
+    [![topSeven-oauth-2](top-features-in-web-pages-2/_static/image26.png)](top-features-in-web-pages-2/_static/image25.png)
 3. 登录到 Facebook 帐户。 
 
     代码使用 Facebook 令牌你进行身份验证，然后返回到页你可以在其中将 Facebook 登录名使用网站的登录名相关联。 你的用户名称或电子邮件地址填充到**电子邮件**窗体上字段。
 
-    [![topSeven oauth 5](top-features-in-web-pages-2/_static/image28.png)](top-features-in-web-pages-2/_static/image27.png)
+    [![topSeven-oauth-5](top-features-in-web-pages-2/_static/image28.png)](top-features-in-web-pages-2/_static/image27.png)
 4. 选择**关联**按钮。 
 
     浏览器返回到主页页面并登录。
 
-    [![topSeven oauth 3](top-features-in-web-pages-2/_static/image30.png)](top-features-in-web-pages-2/_static/image29.png)
+    [![topSeven-oauth-3](top-features-in-web-pages-2/_static/image30.png)](top-features-in-web-pages-2/_static/image29.png)
 
 **若要启用 Twitter 登录名：** 
 
@@ -383,16 +383,16 @@ Web Pages 2 提供有关成员身份和身份验证的增强的选项。 主要�
 
     网页将请求重定向到 Twitter 登录页为您创建的应用程序中。
 
-    [![topSeven oauth 4](top-features-in-web-pages-2/_static/image32.png)](top-features-in-web-pages-2/_static/image31.png)
+    [![topSeven-oauth-4](top-features-in-web-pages-2/_static/image32.png)](top-features-in-web-pages-2/_static/image31.png)
 3. 登录到 Twitter 帐户。
 4. 该代码使用 Twitter 令牌来验证用户身份，然后返回到页你可以将关联您的登录名与你网站的帐户。 您的名称或电子邮件地址填充到**电子邮件**窗体上字段。
 
-    [![topSeven oauth 5](top-features-in-web-pages-2/_static/image34.png)](top-features-in-web-pages-2/_static/image33.png)
+    [![topSeven-oauth-5](top-features-in-web-pages-2/_static/image34.png)](top-features-in-web-pages-2/_static/image33.png)
 5. 选择**关联**按钮。 
 
     浏览器返回到主页页面并登录。
 
-    [![topSeven oauth 3](top-features-in-web-pages-2/_static/image36.png)](top-features-in-web-pages-2/_static/image35.png)
+    [![topSeven-oauth-3](top-features-in-web-pages-2/_static/image36.png)](top-features-in-web-pages-2/_static/image35.png)
 
 <a id="maphelper"></a>
 ### <a name="adding-maps-using-the-maps-helper"></a>添加使用地图帮助程序图
@@ -447,7 +447,7 @@ Web Pages 2 添加了运行并行应用程序的功能。 这使你能够继续�
 - 如果你想要运行使用网页版本 1 （而不是默认值，如下所示的以前的点） 的站点，你可以配置站点以执行该操作。 如果你的站点还没有*web.config*文件在站点的根目录中，创建一个新然后将以下 XML 复制到其中，覆盖现有的内容。 如果该站点已包含*web.config*文件中，添加`<appSettings>`到以下所示的元素`<configuration>`部分。
 
     [!code-xml[Main](top-features-in-web-pages-2/samples/sample22.xml)]
--如果不指定中的版本*web.config*文件，站点部署为版本 2 站点。 (版本 2 程序集复制到*bin*已部署的站点中的文件夹。)
+  -如果不指定中的版本*web.config*文件，站点部署为版本 2 站点。 (版本 2 程序集复制到*bin*已部署的站点中的文件夹。)
 - Web Matrix 2 Beta 包括在站点中的网页版本 2 程序集的版本中使用的站点模板创建的新应用程序*bin*文件夹。
 
 一般情况下，你可以始终控制哪个版本的 Web 页面以通过使用 NuGet 将相应的程序集安装到站点的使用与您的网站*bin*文件夹。 若要查找程序包，请访问[NuGet.org](http://NuGet.org)。
@@ -459,7 +459,7 @@ Web Pages 2 中，可以在移动或其他设备上创建自定义呈现内容�
 
 `System.Web.WebPages`命名空间包含允许您使用的显示模式的以下类： `DefaultDisplayMode`， `DisplayInfo`，和`DisplayModes`。 你可以直接使用这些类，并且可以编写呈现特定设备的正确输出的代码。
 
-或者，你可以创建使用如下的文件命名模式的特定于设备的页面： *FileName。**移动**.cshtml*。 例如，可以创建两个版本的页上，一个名为*MyFile.cshtml*和一个名为*MyFile.Mobile.cshtml*。 在运行的时，当移动设备请求*MyFile.cshtml*，网页将从内容呈现*MyFile.Mobile.cshtml*。 否则为*MyFile.cshtml*呈现。
+或者，你可以创建使用如下的文件命名模式的特定于设备的页面： <em>FileName。</em><em>移动</em><em>.cshtml</em>。 例如，可以创建两个版本的页上，一个名为<em>MyFile.cshtml</em>和一个名为<em>MyFile.Mobile.cshtml</em>。 在运行的时，当移动设备请求<em>MyFile.cshtml</em>，网页将从内容呈现<em>MyFile.Mobile.cshtml</em>。 否则为<em>MyFile.cshtml</em>呈现。
 
 下面的示例演示如何通过添加移动设备的内容页中启用移动呈现。 *Page1.cshtml*包含内容以及导航侧边栏。 *Page1.Mobile.cshtml*包含相同的内容，但省略侧栏。
 
@@ -502,5 +502,5 @@ Web Pages 2 中，可以在移动或其他设备上创建自定义呈现内容�
 ### <a name="webmatrix-resources"></a>WebMatrix 资源
 
 - [WebMatrix 2 新增功能](http://webmatrix.com/next)
-- [Microsoft WebMatrix 网站](https://go.microsoft.com/fwlink/?LinkID=195076)
+- [Microsoft WebMatrix Site](https://go.microsoft.com/fwlink/?LinkID=195076)
 - [开始使用 Microsoft WebMatrix 的 Web 开发](https://msdn.microsoft.com/en-us/library/hh145669(v=VS.99).aspx)（包括一个完整的示例 Web 页面应用程序）

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance
-title: "安全指南用于 ASP.NET Web API 2 OData |Microsoft 文档"
+title: 安全指南用于 ASP.NET Web API 2 OData |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/06/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 799e2a0c742b545acf3b5cd27531d734aa7def80
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 41b05f2a2f8247853d8358e6cc1246c8b438a6db
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="security-guidance-for-aspnet-web-api-2-odata"></a>安全指南用于 ASP.NET Web API 2 OData
 ====================
@@ -70,8 +70,8 @@ ms.lasthandoff: 03/15/2018
     [!code-csharp[Main](odata-security-guidance/samples/sample9.cs)]
 - 请考虑通过编写自定义你的数据库的一个验证程序限制 $filter 查询。 例如，考虑这两个查询： 
 
-    - 具有 actors 最后一个名称以 A 开头的所有影片。
-    - 1994 年发布的所有影片。
+  - 具有 actors 最后一个名称以 A 开头的所有影片。
+  - 1994 年发布的所有影片。
 
     除非电影参与者编制索引，第一个查询可能需要数据库引擎，扫描整个的影片列表。 而第二个查询可能是可接受的那么电影会按发行年份编制索引。
 

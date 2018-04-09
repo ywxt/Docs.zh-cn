@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
-title: "选择 Web 部署到适当的方法 |Microsoft 文档"
+title: 选择 Web 部署到适当的方法 |Microsoft 文档
 author: jrjlee
-description: "当使用 Internet 信息服务 (IIS) Web 部署工具 （Web 部署） 2.0 或更高版本时，有三种主要方法可用于获取..."
+description: 当使用 Internet 信息服务 (IIS) Web 部署工具 （Web 部署） 2.0 或更高版本时，有三种主要方法可用于获取...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: b77aa37160f3822f58908866e44497aea3d3bdc8
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 2d690744687af93a69743dc6ce6c853629f61f5d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="choosing-the-right-approach-to-web-deployment"></a>选择 Web 部署到适当的方法
 ====================
@@ -118,7 +118,7 @@ Web 部署处理程序通过远程代理、 和临时代理，其最大优点是
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample6.cmd)]
 
 
-例如，假设生成过程配置为自动部署到过渡环境的 web 应用程序每次成功生成之后。 如果使用远程代理方法时，你将需要在目标服务器上进行生成进程标识管理员。 与此相反，使用 Web 部署处理程序方法你可以为提供的非管理员用户 （&） #x 2014;**FABRIKAM\stagingdeployer**在此用例和 #x 2014; 对仅，一个特定的 IIS 网站和生成过程的权限可以提供这些凭据以部署 web 包。
+例如，假设生成过程配置为自动部署到过渡环境的 web 应用程序每次成功生成之后。 如果使用远程代理方法时，你将需要在目标服务器上进行生成进程标识管理员。 与此相反，使用 Web 部署处理程序方法你可以向非管理员用户&#x2014;**FABRIKAM\stagingdeployer**在这种情况下&#x2014;仅，一个特定的 IIS 网站和生成过程的权限可以提供这些若要部署 web 包的凭据。
 
 
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample7.cmd)]
@@ -150,6 +150,6 @@ Web 部署处理程序提供到过渡环境、 托管的环境中，和基于 in
 
 你可以在其中部署 web 包从远程计算机的不同方法的更多常规指南，请参阅[使用 Web 部署远程](https://technet.microsoft.com/library/ee461175(WS.10).aspx)。 有关使用 Web 按需部署的详细信息，请参阅[按需部署的 Web](https://technet.microsoft.com/library/ee517345(WS.10).aspx)。
 
->[!div class="step-by-step"]
-[上一页](configuring-server-environments-for-web-deployment.md)
-[下一页](scenario-configuring-a-test-environment-for-web-deployment.md)
+> [!div class="step-by-step"]
+> [上一页](configuring-server-environments-for-web-deployment.md)
+> [下一页](scenario-configuring-a-test-environment-for-web-deployment.md)

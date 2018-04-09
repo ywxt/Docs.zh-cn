@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET 核心 mvc 视图基于授权"
+title: ASP.NET 核心 mvc 视图基于授权
 author: rick-anderson
-description: "本文档演示如何将注入和利用 ASP.NET 核心 Razor 视图内的授权服务。"
+description: 本文档演示如何将注入和利用 ASP.NET 核心 Razor 视图内的授权服务。
 manager: wpickett
 ms.author: riande
 ms.date: 10/30/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/views
-ms.openlocfilehash: 22754d07882cd704309a4e1a28ad0bf6f69432ea
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: dad59a297efb4648755436fbd07742f95af97fb2
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="view-based-authorization"></a>基于视图的授权
+# <a name="view-based-authorization-in-aspnet-core-mvc"></a>ASP.NET 核心 mvc 视图基于授权
 
 开发人员通常需要显示、 隐藏或修改基于当前的用户标识的用户界面。 你可以访问授权服务在服务内通过的 MVC 视图[依赖关系注入](xref:fundamentals/dependency-injection#fundamentals-dependency-injection)。 若要将授权服务注入到 Razor 视图中，使用`@inject`指令：
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 01/30/2018
 @inject IAuthorizationService AuthorizationService
 ```
 
-如果希望每个视图中的授权服务，将放置`@inject`指令插入*_ViewImports.cshtml*文件*视图*目录。 有关详细信息，请参阅[到视图的依赖关系注入](xref:mvc/views/dependency-injection)。
+如果希望每个视图中的授权服务，将放置`@inject`指令插入*_ViewImports.cshtml*文件*视图*目录。 有关详细信息，请参阅[视图中的依赖关系注入](xref:mvc/views/dependency-injection)。
 
 使用插入的授权服务来调用`AuthorizeAsync`中完全相同的方式将检查期间[基于资源的授权](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):
 

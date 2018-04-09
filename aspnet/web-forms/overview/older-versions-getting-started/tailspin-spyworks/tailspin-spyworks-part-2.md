@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2
-title: "第 2 部分： 数据访问层 |Microsoft 文档"
+title: 第 2 部分： 数据访问层 |Microsoft 文档
 author: JoeStagner
-description: "本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 2 部分介绍如何添加数据访问层。"
+description: 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 2 部分介绍如何添加数据访问层。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 8b07b320640c1bb0074a4d3a04ca7c5b7e7bb6cd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9f734b04a0f4cec3c33bc5b42ef283ea64cdb463
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-2-data-access-layer"></a>第 2 部分： 数据访问层
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 > 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 2 部分介绍如何添加数据访问层。
 
 
-## <a id="_Toc260221668"></a>添加数据访问层
+## <a id="_Toc260221668"></a>  添加数据访问层
 
 我们电子商务应用程序将依赖于两个数据库。
 
@@ -57,6 +57,6 @@ ms.lasthandoff: 11/10/2017
 
 现在我们已准备好添加我们第一项功能 – 产品类别菜单。
 
->[!div class="step-by-step"]
-[上一页](tailspin-spyworks-part-1.md)
-[下一页](tailspin-spyworks-part-3.md)
+> [!div class="step-by-step"]
+> [上一页](tailspin-spyworks-part-1.md)
+> [下一页](tailspin-spyworks-part-3.md)

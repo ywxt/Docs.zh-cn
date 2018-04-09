@@ -1,7 +1,7 @@
 ---
-title: "经过身份验证的加密详细信息"
+title: 经过身份验证的加密在 ASP.NET Core 的详细信息
 author: rick-anderson
-description: "本文档概述了 ASP.NET 核心数据保护的实现详细信息进行加密身份验证。"
+description: 了解实现的身份验证的 ASP.NET 核心数据保护加密的详细信息。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/authenticated-encryption-details
-ms.openlocfilehash: b58f36a5f0353da69d6f1ef4db542aba8267027a
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3ca5231e84156ede59793825e1a3e3bea0313055
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="authenticated-encryption-details"></a>经过身份验证的加密详细信息
+# <a name="authenticated-encryption-details-in-aspnet-core"></a>经过身份验证的加密在 ASP.NET Core 的详细信息
 
 <a name="data-protection-implementation-authenticated-encryption-details"></a>
 
@@ -31,7 +31,7 @@ IDataProtector.Protect 采用 byte [] 纯文本参数，并且生成的字节 []
 
 * 128 位密钥 id 标识该密钥用于保护此特定的负载。
 
-* 受保护的负载的剩余部分[特定于加密程序按此键封装](subkeyderivation.md#data-protection-implementation-subkey-derivation)。 在下面的示例密钥表示 AES 256 CBC + HMACSHA256 加密器和负载进一步细分，如下所示: * 一个 128 位密钥修饰符。 * 一个 128 位初始化向量。 * AES 256 CBC 输出 48 个字节。 * 一个 HMACSHA256 身份验证标记。
+* 受保护的负载的剩余部分[特定于加密程序按此键封装](xref:security/data-protection/implementation/subkeyderivation#data-protection-implementation-subkey-derivation)。 在下面的示例密钥表示 AES 256 CBC + HMACSHA256 加密器和负载进一步细分，如下所示: * 一个 128 位密钥修饰符。 * 一个 128 位初始化向量。 * AES 256 CBC 输出 48 个字节。 * 一个 HMACSHA256 身份验证标记。
 
 示例受保护的负载如下所示。
 

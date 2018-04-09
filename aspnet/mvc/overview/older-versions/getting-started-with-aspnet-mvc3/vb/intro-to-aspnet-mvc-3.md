@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/intro-to-aspnet-mvc-3
-title: "ASP.NET MVC 3 (VB) 简介 |Microsoft 文档"
+title: ASP.NET MVC 3 (VB) 简介 |Microsoft 文档
 author: Rick-Anderson
-description: "本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识..."
+description: 本教程将教您构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/intro-to-aspnet-mvc-3
 msc.type: authoredcontent
-ms.openlocfilehash: f0717e8d635818322be8b3242efe756a20351340
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3be0de6ea6d49f9c0de659398190b71c36ba222a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="intro-to-aspnet-mvc-3-vb"></a>ASP.NET MVC 3 (VB) 简介
 ====================
@@ -81,7 +81,7 @@ Visual Web Developer 是一个 IDE 或集成的开发环境。 就像使用 Micr
 
 ![1InternetAppRazor_SM](intro-to-aspnet-mvc-3/_static/image8.png)
 
-单击“确定”。 因此，必须运行的应用程序现在不执行任何操作的情况下，visual Web Developer 刚创建的 ASP.NET MVC 项目使用默认模板 ！ 这是简单"Hello World ！" 项目和它的启动你的应用程序的好时机。
+单击 **“确定”**。 因此，必须运行的应用程序现在不执行任何操作的情况下，visual Web Developer 刚创建的 ASP.NET MVC 项目使用默认模板 ！ 这是简单"Hello World ！" 项目和它的启动你的应用程序的好时机。
 
 [![](intro-to-aspnet-mvc-3/_static/image10.png)](intro-to-aspnet-mvc-3/_static/image9.png)
 
@@ -97,5 +97,5 @@ F5 会导致 Visual Web Developer 启动开发 web 服务器并运行 web 应用
 
 现成的此默认模板提供了您这两页访问和基本的登录页。 让我们更改此应用程序的工作原理，并了解得有点 ASP.NET MVC 在进程中。 关闭你的浏览器并让我们更改某些代码。
 
->[!div class="step-by-step"]
-[下一篇](adding-a-controller.md)
+> [!div class="step-by-step"]
+> [下一篇](adding-a-controller.md)

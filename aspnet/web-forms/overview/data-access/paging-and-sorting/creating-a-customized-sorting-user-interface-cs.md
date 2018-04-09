@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
-title: "创建自定义排序用户界面 (C#) |Microsoft 文档"
+title: 创建自定义排序用户界面 (C#) |Microsoft 文档
 author: rick-anderson
-description: "显示较长的列表已排序数据，它可以是非常有帮助向通过引入分隔符行组相关的数据。 在本教程中我们将了解如何凭据..."
+description: 显示较长的列表已排序数据，它可以是非常有帮助向通过引入分隔符行组相关的数据。 在本教程中我们将了解如何凭据...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: dbd2f6c8f1e21529da8a0fbffab212a29f615cc1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c2680f5e47883c9d5fa874a36eb666270c5e406a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-customized-sorting-user-interface-c"></a>创建自定义排序用户界面 (C#)
 ====================
@@ -141,7 +141,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](creating-a-customized-sorting-user-interface-cs/samples/sample4.cs)]
 
-此代码启动通过以编程方式引用`Table`对象位于 GridView 的控件层次结构的根，并创建一个名为的字符串变量`lastValue`。 `lastValue`用于当前行 s 排序列值与以前的行的值进行比较。 接下来，GridView s`Rows`枚举的集合，并为每个行排序的列的值存储在`currentValue`变量。
+此代码启动通过以编程方式引用`Table`对象位于 GridView 的控件层次结构的根，并创建一个名为的字符串变量`lastValue`。 `lastValue` 用于当前行 s 排序列值与以前的行的值进行比较。 接下来，GridView s`Rows`枚举的集合，并为每个行排序的列的值存储在`currentValue`变量。
 
 > [!NOTE]
 > 若要确定特定行 s 排序列的值我使用的单元格的`Text`属性。 这非常适用于 BoundFields，但将不按预期方式工作的 TemplateFields，CheckBoxFields，依此类推。 我们将探讨如何很快帐户备用 GridView 字段。
@@ -190,7 +190,7 @@ ms.lasthandoff: 01/24/2018
 > 如果你有与产品`NULL`数据库值`CategoryID`， `SupplierID`，或`UnitPrice`字段，这些值将显示为 GridView 中的空字符串默认情况下，这意味着为与这些产品的分隔符行的文本`NULL`值将如下类别: (即，在该处 s 类别后的没有名称： 喜欢个类别： Beverages)。 如果你想此处显示的一个值你可以设置 BoundFields [ `NullDisplayText`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx)文本到您要显示或分配时，可以在 Render 方法中添加条件语句`currentValue`为分隔符行的`Text`属性。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 GridView 不包括用于自定义排序的接口的许多内置选项。 但是，进行少量的低级别的代码，它可以调整 GridView 的控件层次结构，以创建更多自定义的接口的 s。 在本教程中，我们将了解如何将排序组分隔符行添加一个可排序的 GridView，更轻松地标识不同的组和这些组边界。 有关自定义排序接口的其他示例，请参阅[Scott Guthrie](https://weblogs.asp.net/scottgu/) s[几 ASP.NET 2.0 GridView 排序提示和技巧](https://weblogs.asp.net/scottgu/archive/2006/02/11/437995.aspx)博客文章。
 
@@ -198,8 +198,8 @@ GridView 不包括用于自定义排序的接口的许多内置选项。 但是�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
->[!div class="step-by-step"]
-[上一页](sorting-custom-paged-data-cs.md)
-[下一页](paging-and-sorting-report-data-vb.md)
+> [!div class="step-by-step"]
+> [上一页](sorting-custom-paged-data-cs.md)
+> [下一页](paging-and-sorting-report-data-vb.md)

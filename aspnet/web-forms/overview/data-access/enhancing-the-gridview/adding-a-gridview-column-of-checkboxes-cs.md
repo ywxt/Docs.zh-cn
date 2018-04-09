@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-cs
-title: "添加 GridView 列的复选框 (C#) |Microsoft 文档"
+title: 添加 GridView 列的复选框 (C#) |Microsoft 文档
 author: rick-anderson
-description: "本教程讲述如何向 GridView 控件，以便用户提供选择 G.的多个行的一种直观方法中添加列的复选框..."
+description: 本教程讲述如何向 GridView 控件，以便用户提供选择 G.的多个行的一种直观方法中添加列的复选框...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/06/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6f238b8ea8dfbde67dbad7a52d6b4851d67402a8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3c9ad4c66c5bdd24df691180acf354f666e6e578
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-gridview-column-of-checkboxes-c"></a>添加 GridView 列的复选框 (C#)
 ====================
@@ -148,7 +148,7 @@ GridView s [ `Rows`属性](https://msdn.microsoft.com/library/system.web.ui.webc
 > 当显示的列的复选框，选择或取消选择所有复选框的一种方法是通过一个标题行中的复选框。 此外，当前选中所有/取消选中所有实现都需要回发。 复选框可以选中或取消选中后，但是，完全通过客户端脚本，从而提供 snappier 的用户体验。 若要了解详细信息，以及使用客户端技术的讨论中使用的所有检查和取消选中所有的标头行复选框签出[检查 GridView 使用客户端脚本和选中所有复选框中的所有复选框](http://aspnet.4guysfromrolla.com/articles/053106-1.aspx)。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在需要使用户可以从在继续之前 GridView 选择任意数目的行的情况下，添加复选框列是一个选项。 正如我们在本教程中看到的包括在 GridView 的复选框的列时，需要添加与复选框 Web 控件 TemplateField。 通过使用 Web 控件 （而不是像前面的教程，请将标记注入直接到该模板后，） ASP.NET 自动会记住复选框已和未签跨回发。 我们可以以编程方式访问中的复选框代码来确定是否检查一个给定的复选框，或更改的选中的状态。
 
@@ -158,8 +158,8 @@ GridView s [ `Rows`属性](https://msdn.microsoft.com/library/system.web.ui.webc
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
->[!div class="step-by-step"]
-[上一页](adding-a-gridview-column-of-radio-buttons-cs.md)
-[下一页](inserting-a-new-record-from-the-gridview-s-footer-cs.md)
+> [!div class="step-by-step"]
+> [上一页](adding-a-gridview-column-of-radio-buttons-cs.md)
+> [下一页](inserting-a-new-record-from-the-gridview-s-footer-cs.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1
-title: "如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体 |Microsoft 文档"
+title: 如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体 |Microsoft 文档
 author: tdykstra
-description: "Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 4.0 和 Visual Studio 2010 的 ASP.NET Web 窗体应用程序..."
+description: Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 4.0 和 Visual Studio 2010 的 ASP.NET Web 窗体应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,17 +12,17 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: ae2fddc81f6f4da866ec0719a0e74516bdd2a4d1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ad504b02d801f9513787f9fde1a4d00d7b0afff0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体
 ====================
 通过[Tom Dykstra](https://github.com/tdykstra)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 4.0 和 Visual Studio 2010 的 ASP.NET Web 窗体应用程序。 示例应用程序是虚构的 Contoso 大学网站。 它包括诸如学生许可、 过程创建和教师分配等功能。
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 4.0 和 Visual Studio 2010 的 ASP.NET Web 窗体应用程序。 示例应用程序是虚构的 Contoso 大学网站。 它包括诸如学生入学、 课程创建和导师分配等功能。
 > 
 > 本教程将说明在 C# 示例。 [可下载示例](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)包含 C# 和 Visual Basic 中的代码。
 > 
@@ -54,7 +54,7 @@ ms.lasthandoff: 01/24/2018
 
 [![Image03](the-entity-framework-and-aspnet-getting-started-part-1/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image1.png)
 
-用户可以查看和更新学生、 课程中和教师信息。 下面显示了几个你将创建的屏幕。
+用户可以查看和更新学生、 课程和教师信息。 下面显示了几个你将创建的屏幕。
 
 [![Image30](the-entity-framework-and-aspnet-getting-started-part-1/_static/image4.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image3.png)
 
@@ -161,7 +161,7 @@ ms.lasthandoff: 01/24/2018
 
     [![Image40](the-entity-framework-and-aspnet-getting-started-part-1/_static/image38.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image37.png)
 
-    在这种情况下，`Person`实体可能或可能不具有关联`StudentGrade`实体。 A`StudentGrade`实体必须与一个相关联`Person`实体。 `StudentGrade`实体实际表示此数据库中; 中的已注册的课程如果在某一课程中注册一名学生并且尚未，没有无评分`Grade`属性为 null。 换而言之，一名学生可能未注册任何课程中，它可能在一个课程中，注册，或可能在多个课程中注册。 在注册过程中的每个年级适用于仅一名学生。
+    在这种情况下，`Person`实体可能或可能不具有关联`StudentGrade`实体。 A`StudentGrade`实体必须与一个相关联`Person`实体。 `StudentGrade` 实体实际表示此数据库中; 中的已注册的课程如果在某一课程中注册一名学生并且尚未，没有无评分`Grade`属性为 null。 换而言之，一名学生可能未注册任何课程中，它可能在一个课程中，注册，或可能在多个课程中注册。 在注册过程中的每个年级适用于仅一名学生。
 - 由多对多关联"\*"和"\*"。
 
     [![Image41](the-entity-framework-and-aspnet-getting-started-part-1/_static/image40.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image39.png)
@@ -214,5 +214,5 @@ ms.lasthandoff: 01/24/2018
 
 你现在已创建网站、 数据库和数据模型。 在下一个演练中，你将开始处理数据使用数据模型和 ASP.NET`EntityDataSource`控件。
 
->[!div class="step-by-step"]
-[下一篇](the-entity-framework-and-aspnet-getting-started-part-2.md)
+> [!div class="step-by-step"]
+> [下一篇](the-entity-framework-and-aspnet-getting-started-part-2.md)

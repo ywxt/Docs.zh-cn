@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file
 msc.type: authoredcontent
-ms.openlocfilehash: 09c3793e9cdddb7c42cf966f2d079245f441540c
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 49d1d4fbe48cd4f073e774d8a9c6c0c011bd3319
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-the-project-file"></a>了解项目文件
 ====================
@@ -36,9 +36,9 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="msbuild-and-the-project-file"></a>MSBuild 和项目文件
 
-当你创建和生成 Visual Studio 中的解决方案时，Visual Studio 将使用 MSBuild 生成解决方案中的每个项目。 每个 Visual Studio 项目包括 MSBuild 项目文件，以反映的类型的项目 （&） #x 2014年文件扩展名; 例如，C# 项目 (.csproj)、 Visual Basic.NET 项目 (.vbproj) 或数据库项目 (.dbproj)。 若要生成项目时，MSBuild 必须处理与项目关联的项目文件。 项目文件是包含所有信息和说明 MSBuild 需要以便生成项目，如要包括平台要求、 版本控制信息、 web 服务器或数据库服务器设置的内容的 XML 文档和必须执行的任务。
+当你创建和生成 Visual Studio 中的解决方案时，Visual Studio 将使用 MSBuild 生成解决方案中的每个项目。 每个 Visual Studio 项目包括 MSBuild 项目文件，请以反映项目的类型的扩展名&#x2014;例如，C# 项目 (.csproj)、 Visual Basic.NET 项目 (.vbproj) 或数据库项目 (.dbproj)。 若要生成项目时，MSBuild 必须处理与项目关联的项目文件。 项目文件是包含所有信息和说明 MSBuild 需要以便生成项目，如要包括平台要求、 版本控制信息、 web 服务器或数据库服务器设置的内容的 XML 文档和必须执行的任务。
 
-MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/library/5dy88c2e.aspx)，且因此生成过程已完全打开，透明。 此外，你无需安装 Visual Studio，以便使用 MSBuild 引擎和 #x 2014年; MSBuild.exe 可执行文件是.NET Framework 的一部分，你可以从命令提示符中运行它。 作为开发人员，您可以对你自己 MSBuild 项目文件中，使用 MSBuild XML 架构中，以便对设置高级且细化控制如何生成和部署你的项目。 这些自定义项目文件中的 Visual Studio 会自动生成的项目文件的方式完全相同的工作。
+MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/library/5dy88c2e.aspx)，且因此生成过程已完全打开，透明。 此外，你不需要安装 Visual Studio，以便使用 MSBuild 引擎&#x2014;MSBuild.exe 可执行文件是.NET Framework 的一部分，你可以从命令提示符中运行它。 作为开发人员，您可以对你自己 MSBuild 项目文件中，使用 MSBuild XML 架构中，以便对设置高级且细化控制如何生成和部署你的项目。 这些自定义项目文件中的 Visual Studio 会自动生成的项目文件的方式完全相同的工作。
 
 > [!NOTE]
 > 此外可以使用 Team Foundation Server (TFS) 中的团队生成服务使用 MSBuild 项目文件。 例如，可以使用持续集成 (CI) 方案中的项目文件以在签入新代码时自动部署到测试环境。 有关详细信息，请参阅[自动 Web 部署配置 Team Foundation Server](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md)。
@@ -93,7 +93,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 [!code-xml[Main](understanding-the-project-file/samples/sample2.xml)]
 
 
-若要检索的属性值，你可以使用格式 **$(***PropertyName***)***。*例如，若要检索的值 **ServerName** 属性，你需要键入：
+若要检索的属性值，你可以使用格式<strong>$(</strong><em>PropertyName</em><strong>)</strong><em>。</em>例如，若要检索的值<strong>ServerName</strong>属性，你需要键入：
 
 
 [!code-powershell[Main](understanding-the-project-file/samples/sample3.ps1)]
@@ -113,7 +113,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 > 有关参数和可以使用 MSBuild.exe 的开关的详细信息，请参阅[MSBuild 命令行参考](https://msdn.microsoft.com/library/ms164311.aspx)。
 
 
-可以使用相同的属性语法以获取环境变量和内置的项目属性的值。 很多常用的属性由定义，并且它们通过将相关参数名称包含使用项目文件。 例如，若要检索的当前项目平台 （&） #x 2014; 例如， **x86**或**AnyCpu**& #x 2014; 可以包括**$(Platform)**中的属性引用你的项目文件。 有关详细信息，请参阅[用于生成命令和属性的宏](https://msdn.microsoft.com/library/c02as0cs.aspx)，[常用 MSBuild 项目属性](https://msdn.microsoft.com/library/bb629394.aspx)，和[保留属性](https://msdn.microsoft.com/library/ms164309.aspx)。
+可以使用相同的属性语法以获取环境变量和内置的项目属性的值。 很多常用的属性由定义，并且它们通过将相关参数名称包含使用项目文件。 例如，若要检索的当前项目平台&#x2014;例如**x86**或**AnyCpu**&#x2014;可以包括**$(Platform)**中的属性引用你的项目文件。 有关详细信息，请参阅[用于生成命令和属性的宏](https://msdn.microsoft.com/library/c02as0cs.aspx)，[常用 MSBuild 项目属性](https://msdn.microsoft.com/library/bb629394.aspx)，和[保留属性](https://msdn.microsoft.com/library/ms164309.aspx)。
 
 属性通常用于中结合*条件*。 大多数 MSBuild 元素支持**条件**属性，这样就可以指定在其 MSBuild 应该评估元素的条件。 例如，考虑此属性定义：
 
@@ -121,13 +121,13 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 [!code-xml[Main](understanding-the-project-file/samples/sample5.xml)]
 
 
-当 MSBuild 处理此属性定义时，它首先会检查以查看是否**$(OutputRoot)**属性值为可用。 如果属性值为空 （&） #x 2014; 换而言之，用户未为其提供值的此属性 （&） #x 2014年; 条件计算结果为**true**和属性值设置为**...\Publish\Out**。如果用户已为此属性提供一个值，条件计算结果为**false**和不使用静态属性值。
+当 MSBuild 处理此属性定义时，它首先会检查以查看是否**$(OutputRoot)**属性值为可用。 如果属性值为空&#x2014;换而言之，用户未为此属性提供值&#x2014;条件计算结果为**true**和属性值设置为**...\Publish\Out**。如果用户已为此属性提供一个值，条件计算结果为**false**和不使用静态属性值。
 
 可以在其中指定条件的不同方法的详细信息，请参阅[MSBuild 条件](https://msdn.microsoft.com/library/7szfhaft.aspx)。
 
 ### <a name="items-and-item-groups"></a>项目和项组
 
-项目文件的重要的角色之一是定义生成过程的输入。 通常，这些输入是文件和 #x 2014年; 代码文件、 配置文件、 命令文件和你需要处理或将复制为任何其他文件的一部分的生成过程。 在 MSBuild 项目架构中，这些输入由表示[项](https://msdn.microsoft.com/library/ms164283.aspx)元素。 在项目文件中，项必须定义内[ItemGroup](https://msdn.microsoft.com/library/646dk05y.aspx)元素。 就像**属性**元素，您可以命名**项**元素你的喜好。 但是，你必须指定**包括**属性用于标识的文件或项表示的通配符。
+项目文件的重要的角色之一是定义生成过程的输入。 通常情况下，这些输入包括文件&#x2014;代码文件、 配置文件、 命令文件和你需要处理或将复制为任何其他文件生成过程的一部分。 在 MSBuild 项目架构中，这些输入由表示[项](https://msdn.microsoft.com/library/ms164283.aspx)元素。 在项目文件中，项必须定义内[ItemGroup](https://msdn.microsoft.com/library/646dk05y.aspx)元素。 就像**属性**元素，您可以命名**项**元素你的喜好。 但是，你必须指定**包括**属性用于标识的文件或项表示的通配符。
 
 
 [!code-xml[Main](understanding-the-project-file/samples/sample6.xml)]
@@ -139,7 +139,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 [!code-xml[Main](understanding-the-project-file/samples/sample7.xml)]
 
 
-项目文件这种方式，指示 MSBuild 构造的需要处理在相同的方式和 #x 2014; 中的文件列表**引用**列表包括程序集必须到位成功生成、 **编译**列表包括必须进行编译的代码文件和**内容**列表包括必须复制不变的资源。 我们将了解如何生成过程引用和使用本主题中后面的这些项。
+项目文件这种方式，指示 MSBuild 构造需要相同的方式处理的文件的列表&#x2014;**引用**列表包括程序集必须到位成功生成、 **编译**列表包括必须进行编译的代码文件和**内容**列表包括必须复制不变的资源。 我们将了解如何生成过程引用和使用本主题中后面的这些项。
 
 此外可以包含项元素[ItemMetadata](https://msdn.microsoft.com/library/ms164284.aspx)子元素。 这些是用户定义的键 / 值对，并且实质上是表示特定于该项目的属性。 例如，大量的**编译**项目文件中的项元素包括**DependentUpon**子元素。
 
@@ -155,7 +155,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 
 ### <a name="targets-and-tasks"></a>目标和任务
 
-在 MSBuild 架构中，[任务](https://msdn.microsoft.com/library/77f2hx1s.aspx)元素表示程序各个生成指令 （或任务）。 MSBuild 包括许多预定义的任务。 例如:
+在 MSBuild 架构中，[任务](https://msdn.microsoft.com/library/77f2hx1s.aspx)元素表示程序各个生成指令 （或任务）。 MSBuild 包括许多预定义的任务。 例如：
 
 - **复制**任务将文件复制到新位置。
 - **Csc**任务时，将调用 Visual C# 编译器。
@@ -195,11 +195,11 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 
 通常情况下，当你创建有用的任务和目标，你将需要引用的属性和已在项目文件中其他位置定义的项：
 
-- 若要使用的属性值，键入**$(***PropertyName***)**，其中*PropertyName*是的名称**属性**元素或的名称参数。
-- 若要使用的项，请键入**@(***ItemName***)**，其中*ItemName*是的名称**项**元素。
+- 若要使用的属性值，键入<strong>$(</strong><em>PropertyName</em><strong>)</strong>，其中<em>PropertyName</em>是的名称<strong>属性</strong>元素或参数的名称。
+- 若要使用的项，请键入<strong>@(</strong><em>ItemName</em><strong>)</strong>，其中<em>ItemName</em>是的名称<strong>项</strong>元素。
 
 > [!NOTE]
-> 请记住，是否具有相同名称创建多个项，你正在生成列表。 与此相反，如果具有相同名称创建多个属性，你提供的最后一个属性值将使用相同的名称 （&） #x 2014年覆盖任何以前的属性; 一个属性可以仅包含单个值。
+> 请记住，是否具有相同名称创建多个项，你正在生成列表。 与此相反，如果具有相同名称创建多个属性，你提供的最后一个属性值将覆盖任何以前的属性具有相同名称&#x2014;属性只能包含单个值。
 
 
 例如，在*Publish.proj*文件中的示例解决方案中，看一看**BuildProjects**目标。
@@ -227,7 +227,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 
 ## <a name="splitting-project-files-to-support-multiple-environments"></a>拆分项目文件，以支持多个环境
 
-假设你想要能够将解决方案部署到多个环境，如测试服务器、 过渡平台和生产环境。 配置可能有所不同大体上这些环境和 #x 2014年; 不只是在服务器名称、 连接字符串以及等等，但也可能在凭据、 安全设置和其他因素的很多方面。 如果你需要定期执行此操作，不真正有利，每次切换目标环境时编辑项目文件中的多个属性。 也不是一个理想的解决方案需要属性值提供到生成过程的无限列表。
+假设你想要能够将解决方案部署到多个环境，如测试服务器、 过渡平台和生产环境。 这些环境之间可能大大不同配置&#x2014;不只是在服务器名称、 连接字符串以及等等，但也可能在凭据、 安全设置和其他因素的很多方面。 如果你需要定期执行此操作，不真正有利，每次切换目标环境时编辑项目文件中的多个属性。 也不是一个理想的解决方案需要属性值提供到生成过程的无限列表。
 
 幸运的是一种替代方法。 MSBuild，可以跨多个项目文件拆分生成配置。 若要查看此工作原理，在示例解决方案中，请注意，有两个自定义项目文件：
 
@@ -266,6 +266,6 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 
 项目文件和 WPP 的更深入介绍，请参阅[内 Microsoft 生成引擎： 使用 MSBuild 和 Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi 和 William Bartholomew，ISBN: 978-0-7356-4524-0。
 
->[!div class="step-by-step"]
-[上一页](setting-up-the-contact-manager-solution.md)
-[下一页](understanding-the-build-process.md)
+> [!div class="step-by-step"]
+> [上一页](setting-up-the-contact-manager-solution.md)
+> [下一页](understanding-the-build-process.md)

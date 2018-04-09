@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-10
-title: "将应用发布到 Azure 的 Azure App Service |Microsoft 文档"
+title: 将应用发布到 Azure 的 Azure App Service |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/16/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-10
 msc.type: authoredcontent
-ms.openlocfilehash: 08994815cb339800619caacdcb8d717e9986f9d5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cc8a9199144e9fac041435938ea8899374ea199f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="publish-the-app-to-azure-azure-app-service"></a>将应用发布到 Azure 的 Azure App Service
 ====================
@@ -51,11 +51,11 @@ ms.lasthandoff: 11/10/2017
 
 ![](part-10/_static/image9.png)
 
-输入站点名称。 选择你的 Azure 订阅和区域。 下**数据库服务器**，选择**创建新服务器**，或选择现有的服务器。 单击 **“创建”**。
+输入站点名称。 选择你的 Azure 订阅和区域。 下**数据库服务器**，选择**创建新服务器**，或选择现有的服务器。 单击“创建” 。
 
 [![](part-10/_static/image11.png)](part-10/_static/image10.png)
 
 单击**设置**选项卡上，并检查&quot;执行 Code First 迁移&quot;。 然后单击**发布**。
 
->[!div class="step-by-step"]
-[上一篇](part-9.md)
+> [!div class="step-by-step"]
+> [上一篇](part-9.md)

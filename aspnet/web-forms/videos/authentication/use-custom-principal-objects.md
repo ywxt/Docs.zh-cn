@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/authentication/use-custom-principal-objects
-title: "使用自定义主体对象 |Microsoft 文档"
+title: 使用自定义主体对象 |Microsoft 文档
 author: JoeStagner
-description: "Joe stagner 将演示如何在主体对象中实现自定义标识，以存储用户身份验证数据。 有关此演示中，详细信息..."
+description: Joe stagner 将演示如何在主体对象中实现自定义标识，以存储用户身份验证数据。 有关此演示中，详细信息...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/authentication/use-custom-principal-objects
 msc.type: video
-ms.openlocfilehash: a00fe32b503731724763ac3153e8df3a32fca6e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 55cf9a07e08ee535d70dc6c9c2ebf976e5aa1f24
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="use-custom-principal-objects"></a>使用自定义主体对象
 ====================
@@ -26,6 +26,6 @@ Joe stagner 将演示如何在主体对象中实现自定义标识，以存储�
 
 [&#9654;观看视频 （22 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/use-custom-principal-objects)
 
->[!div class="step-by-step"]
-[上一页](add-custom-data-to-the-authentication-method.md)
-[下一页](understanding-aspnet-memberships.md)
+> [!div class="step-by-step"]
+> [上一页](add-custom-data-to-the-authentication-method.md)
+> [下一页](understanding-aspnet-memberships.md)

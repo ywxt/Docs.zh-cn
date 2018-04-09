@@ -2,21 +2,21 @@
 uid: whitepapers/mvc4-release-notes
 title: ASP.NET MVC 4 | Microsoft Docs
 author: rick-anderson
-description: "本文档介绍 ASP.NET MVC 4 发行的版本。"
+description: 本文档介绍 ASP.NET MVC 4 发行的版本。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/09/2011
 ms.topic: article
 ms.assetid: f014524f-25c0-4094-b8e1-886d99536f00
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-release-notes
 msc.type: content
-ms.openlocfilehash: bea6f6112388290a2c6b5ed267626ba28fc36671
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: dbcea6090a0376b8732e02c0891721672bfe50f9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -103,7 +103,7 @@ ASP.NET Web API 包括以下功能的支持：
 - **Web API 项目模板：**选择新的 Web API 项目表单新的 MVC 4 项目向导快速使用 ASP.NET Web API 将启动并正在运行。
 - **基架：**使用**添加控制器**对话框，以快速创建基于实体框架的 web API 控制器的基架基于模型类型。
 
-有关 ASP.NET Web API 的详细信息，请访问[https://www.asp.net/web-api](../web-api/index.md)。
+有关 ASP.NET Web API 的详细信息，请访问[ https://www.asp.net/web-api ](../web-api/index.md)。
 
 <a id="_Toc303253808"></a>
 ### <a name="enhancements-to-default-project-templates"></a>默认的项目模板的增强功能
@@ -134,7 +134,7 @@ ASP.NET Web API 包括以下功能的支持：
 
 使用新的显示模式功能，应用程序选择具体取决于正在发出请求的浏览器的视图。 例如，如果桌面浏览器请求主页上，应用程序可能使用 Views\Home\Index.cshtml 模板。 如果移动浏览器请求主页上，该应用程序可能返回 Views\Home\Index.mobile.cshtml 模板。
 
-布局和它们还可以覆盖特定浏览器类型。 例如:
+布局和它们还可以覆盖特定浏览器类型。 例如：
 
 - 如果你 Views\Shared 文件夹包含\_Layout.cshtml 和\_Layout.mobile.cshtml 模板，默认情况下应用程序将使用\_期间从移动浏览器和请求Layout.mobile.cshtml\_Layout.cshtml 期间其他请求。
 - 如果一个文件夹包含\_MyPartial.cshtml 和\_MyPartial.mobile.cshtml，指令@Html.Partial("\_MyPartial") 将呈现\_MyPartial.mobile.cshtml 期间从移动设备的请求浏览器中，和\_MyPartial.cshtml 期间其他请求。
@@ -245,7 +245,7 @@ ASP.NET MVC 4 预发布版的发行说明可以在此处找到：
 - **链接生成改进：** *UrlHelper*不再依赖于*HttpControllerContext*。 你现在可以访问*UrlHelper*任何上下文中其中*HttpRequestMessage*可用。
 - **消息处理程序执行顺序更改：**消息处理程序现在它们进行配置而不是相反的顺序的顺序执行。
 - **帮助器方式设置消息处理程序：**新*HttpClientFactory* ，可以连接*DelegatingHandlers*并创建*HttpClient*与准备就绪所需的管道。 它还提供功能的方式与备用的内部处理程序设置 (默认值是*HttpClientHandler*) 以及使用时执行连接*HttpMessageInvoker*或另一个*DelegatingHandler*而不是*HttpClient*作为顶部调用程序。
-- **在 ASP.NET Web 优化的 Cdn 的支持：** ASP.NET Web 优化现在提供支持 CDN 备用路径，使你能够指定每个捆绑附加 URL 用于指向该内容传送网络上的相同资源。 支持 Cdn，可获取脚本和样式绑定在地理上靠近 Web 应用程序的结束使用者。
+- **在 ASP.NET Web 优化的 Cdn 的支持：** ASP.NET Web 优化现在提供支持 CDN 备用路径，使你能够指定每个捆绑附加 URL 用于指向该内容传送网络上的相同资源。 支持 Cdn，可获取脚本和样式绑定在地理上靠近 Web 应用程序的结束使用者。 CDN 不可用时，生产应用程序应实现回退。 测试回退。
 - **ASP.NET Web API 将路由并配置移动到*WebApiConfig.Register*可以是 resused 在测试代码中的静态方法。** ASP.NET Web API 路由之前已在中添加*RouteConfig.RegisterRoutes*以及标准 MVC 将路由。 在单独现在处理的默认 ASP.NET Web API 将路由和配置*WebApiConfig.Register*方法以便于测试。
 
 <a id="_Toc303253815"></a>
@@ -261,7 +261,7 @@ ASP.NET MVC 4 预发布版的发行说明可以在此处找到：
     - *MvcCSharpRazorCodeGenerator*
     - *MvcVBRazorCodeParser*
 
- 此外已删除以下方法： 
+  此外已删除以下方法： 
 
     - *MvcCSharpRazorCodeParser.ParseInheritsStatement(System.Web.Razor.Parser.CodeBlockInfo)*
     - *MvcWebPageRazorHost.DecorateCodeGenerator(System.Web.Razor.Generator.RazorCodeGenerator)*
@@ -275,22 +275,23 @@ ASP.NET MVC 4 预发布版的发行说明可以在此处找到：
 
     **所需的更新**
 
-    1. 在根 Web.config 文件中，添加新 *&lt;appSettings&gt;* 具有键项*webPages:Version*和值*1.0.0.0*。 
+  1. 在根 Web.config 文件中，添加新*&lt;appSettings&gt;*具有键项*webPages:Version*和值*1.0.0.0*。 
 
-        [!code-xml[Main](mvc4-release-notes/samples/sample7.xml)]
-    2. 在解决方案资源管理器，右键单击项目名称，然后选择卸载项目。 再次右键单击名称，然后选择编辑*ProjectName*.csproj。
-    3. 找到以下程序集引用： 
+      [!code-xml[Main](mvc4-release-notes/samples/sample7.xml)]
+  2. 在解决方案资源管理器，右键单击项目名称，然后选择卸载项目。 再次右键单击名称，然后选择编辑*ProjectName*.csproj。
+  3. 找到以下程序集引用： 
 
-        [!code-xml[Main](mvc4-release-notes/samples/sample8.xml)]
+      [!code-xml[Main](mvc4-release-notes/samples/sample8.xml)]
 
-        将它们替换为以下：
+      将它们替换为以下：
 
-        [!code-xml[Main](mvc4-release-notes/samples/sample9.xml)]
-    4. 保存所做的更改，关闭了编辑，然后右键单击项目并选择重新加载项目 (.csproj) 文件。
+      [!code-xml[Main](mvc4-release-notes/samples/sample9.xml)]
+  4. 保存所做的更改，关闭了编辑，然后右键单击项目并选择重新加载项目 (.csproj) 文件。
+
 - **更改为目标 4.0 的 ASP.NET MVC 4 项目，从 4.5 不会更新 EntityFramework 程序集引用：**如果你的 ASP.NET MVC 4 项目后更改为目标 4.0 针对 4.5 对 EntityFramework 程序集的引用将仍指向4.5 版本。 若要解决此问题卸载并重新安装 EntityFramework NuGet 包。
-- **从 4.5 更改为目标 4.0 后，在 Azure 上运行 ASP.NET MVC 4 应用程序时的 403 禁止访问：**如果你之后针对 4.5 更改为目标 4.0 的 ASP.NET MVC 4 项目并随后部署到 Azure 可能会看到在运行时一个 403 禁止访问错误。 解决此问题添加到 web.config 以下项：`<modules runAllManagedModulesForAllRequests="true" />`
+- **从 4.5 更改为目标 4.0 后，在 Azure 上运行 ASP.NET MVC 4 应用程序时的 403 禁止访问：**如果你之后针对 4.5 更改为目标 4.0 的 ASP.NET MVC 4 项目并随后部署到 Azure 可能会看到在运行时一个 403 禁止访问错误。 解决此问题添加到 web.config 以下项： `<modules runAllManagedModulesForAllRequests="true" />`
 - **当您键入时，visual Studio 2012 崩溃\'Razor 文件中的文本字符串中。** 若要解决此问题第一次输入的字符串文本右引号。
-- **浏览到&quot;帐户/管理&quot;CHS、 TRK 和 CHT 语言运行时错误中的 Internet 模板结果中。** 若要解决此问题修改页后，可以分离出 *@User.Identity.Name* 置于内仅有的内容作为*&lt;强&gt;*标记。
+- <strong>浏览到&quot;帐户/管理&quot;CHS、 TRK 和 CHT 语言运行时错误中的 Internet 模板结果中。</strong> 若要解决此问题修改页后，可以分离出<em>@User.Identity.Name</em>置于内仅有的内容作为<em>&lt;强&gt;</em>标记。
 - **Google 和 LinkedIn 提供程序不支持 Azure 网站中。** 在部署到 Azure 网站时，请使用备用身份验证提供程序。
 - **当使用 UriPathExtensionMapping 与 IIS 8 Express/IIS，您将收到 404 未找到错误，当你尝试使用该扩展。** 静态文件处理程序到 web Api 使用的请求将会妨碍*UriPathExtensionMappings*。 设置*runAllManagedModulesForAllRequests = true*中 web.config 以解决该问题。
 - **不再调用 Controller.Execute 方法。** 现在始终以异步方式执行所有的 MVC 控制器。

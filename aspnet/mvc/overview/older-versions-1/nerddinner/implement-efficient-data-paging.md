@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/implement-efficient-data-paging
-title: "实现高效数据分页 |Microsoft 文档"
+title: 实现高效数据分页 |Microsoft 文档
 author: microsoft
-description: "步骤 8 演示如何将分页支持添加到我们 /Dinners URL，以便而不是显示的一次晚餐 1000 秒内，我们将仅显示在 10 即将到来晚餐..."
+description: 步骤 8 演示如何将分页支持添加到我们 /Dinners URL，以便而不是显示的一次晚餐 1000 秒内，我们将仅显示在 10 即将到来晚餐...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/implement-efficient-data-paging
 msc.type: authoredcontent
-ms.openlocfilehash: 0b0fba604f97d3bb72d2d403e643b422b9ce48bd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0188e21438820adf2adbe05b047fdb772540e1a0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implement-efficient-data-paging"></a>实现高效数据分页
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -139,6 +139,6 @@ IQueryable&lt;Dinner&gt;我们 FindUpcomingDinners() 方法返回的对象所封
 
 让我们现在看一下我们可以如何添加身份验证和授权支持到我们的应用程序。
 
->[!div class="step-by-step"]
-[上一页](re-use-ui-using-master-pages-and-partials.md)
-[下一页](secure-applications-using-authentication-and-authorization.md)
+> [!div class="step-by-step"]
+> [上一页](re-use-ui-using-master-pages-and-partials.md)
+> [下一页](secure-applications-using-authentication-and-authorization.md)

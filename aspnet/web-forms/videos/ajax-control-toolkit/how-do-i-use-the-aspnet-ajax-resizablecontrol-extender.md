@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-resizablecontrol-extender
-title: "[如何:]使用 ASP.NET AJAX ResizableControl 扩展程序？ | Microsoft Docs"
+title: '[如何:]使用 ASP.NET AJAX ResizableControl 扩展程序？ | Microsoft Docs'
 author: JoeStagner
-description: "从 ASP.NET AJAX 控件工具包的 ResizableControl 扩展程序允许开发人员指定的用户可能会调整大小的网页区域动态..."
+description: 从 ASP.NET AJAX 控件工具包的 ResizableControl 扩展程序允许开发人员指定的用户可能会调整大小的网页区域动态...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/01/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-resizablecontrol-extender
 msc.type: video
-ms.openlocfilehash: c4be6b0e9baa92ab54852d6ece045f0f892255c1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b078e51aa443d1452b622d62fed564d8b0f22013
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-aspnet-ajax-resizablecontrol-extender"></a>[如何:]使用 ASP.NET AJAX ResizableControl 扩展程序？
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （30 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-resizablecontrol-extender)
 
->[!div class="step-by-step"]
-[上一页](how-do-i-use-the-aspnet-ajax-validatorcallout-extender.md)
-[下一页](how-do-i-use-the-aspnet-ajax-tabs-control.md)
+> [!div class="step-by-step"]
+> [上一页](how-do-i-use-the-aspnet-ajax-validatorcallout-extender.md)
+> [下一页](how-do-i-use-the-aspnet-ajax-tabs-control.md)

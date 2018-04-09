@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-vb
-title: "与来自母版页 (VB) 的内容页交互 |Microsoft 文档"
+title: 与来自母版页 (VB) 的内容页交互 |Microsoft 文档
 author: rick-anderson
-description: "检查如何调用的方法，从母版页中的代码中设置属性的内容页等。"
+description: 检查如何调用的方法，从母版页中的代码中设置属性的内容页等。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/11/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a25f739e5d5717d275554909e1584bb7e7fed302
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9274924b441cb21e33eb57de06ff374428fa036b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="interacting-with-the-content-page-from-the-master-page-vb"></a>与来自母版页 (VB) 的内容页进行交互
 ====================
@@ -153,7 +153,7 @@ ms.lasthandoff: 01/24/2018
 类通过创建订阅事件*事件处理程序*，这是在响应引发的事件中执行的方法。 发布服务器定义他通过定义引发的事件*事件委托*。 事件委托指定事件处理程序必须接受哪些输入的参数。 在.NET Framework 中，事件委托不返回任何值并接受两个输入的参数：
 
 - `Object`，它标识事件源和
-- 从派生的类`System.EventArgs`
+- 从派生的类 `System.EventArgs`
 
 传递给事件处理程序的第二个参数可能包括有关事件的其他信息。 虽然基`EventArgs`类不能通过任何信息、.NET Framework 包括了多个扩展的类`EventArgs`和包含其他属性。 例如，`CommandEventArgs`实例传递到响应的事件处理程序`Command`事件，并包括两个条信息性属性：`CommandArgument`和`CommandName`。
 
@@ -238,7 +238,7 @@ ms.lasthandoff: 01/24/2018
 **图 09**: The Just-Doubled 价格显示在 GridViews ([单击以查看实际尺寸的图像](interacting-with-the-content-page-from-the-master-page-vb/_static/image27.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 理想情况下，母版页和其内容页是从另一个完全独立的不需要任何级别的交互。 但是，如果你有一个母版页或显示可以从主页或内容页面修改的数据的内容页，然后你可能需要具有母版页内容页 （或进行相反的转换） 发出警报，以便可以更新显示时修改数据。 我们已在前面的教程了解如何通过编程方式与其母版页; 交互的内容页在本教程中我们介绍了如何让母版页启动交互。
 
@@ -257,12 +257,12 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个 ASP/ASP.NET 丛书和 4GuysFromRolla.com 创始人，具有已使用 Microsoft Web 技术自 1998 年。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
-本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Suchi Banerjee。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Suchi Banerjee。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](interacting-with-the-master-page-from-the-content-page-vb.md)
-[下一页](master-pages-and-asp-net-ajax-vb.md)
+> [!div class="step-by-step"]
+> [上一页](interacting-with-the-master-page-from-the-content-page-vb.md)
+> [下一页](master-pages-and-asp-net-ajax-vb.md)

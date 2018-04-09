@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/routing/how-do-i-use-routing-with-aspnet-web-forms
-title: "我如何： 使用 ASP.NET Web 窗体路由使用？ | Microsoft Docs"
+title: 我如何： 使用 ASP.NET Web 窗体路由使用？ | Microsoft Docs
 author: rick-anderson
-description: "在本视频中 Chris Pels 演示如何实现 ASP.NET 4 中的 Web 窗体的路由。 首先，路由 URL 的概念被相比将 URL 映射到一个 p..."
+description: 在本视频中 Chris Pels 演示如何实现 ASP.NET 4 中的 Web 窗体的路由。 首先，路由 URL 的概念被相比将 URL 映射到一个 p...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/15/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/routing/how-do-i-use-routing-with-aspnet-web-forms
 msc.type: video
-ms.openlocfilehash: f9870dec903ab826e263e9bd7f54ee154da21c48
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b268bd628d3b0108d783023cd30d21b43c1b3758
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-routing-with-aspnet-web-forms"></a>我如何： 使用 ASP.NET Web 窗体路由使用？
 ====================
@@ -26,6 +26,6 @@ ms.lasthandoff: 11/10/2017
 
 [&#9654;观看视频 （15 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-routing-with-aspnet-web-forms)
 
->[!div class="step-by-step"]
-[上一页](aspnet-4-quick-hit-outbound-webforms-routing.md)
-[下一页](how-do-i-work-with-urls-in-aspnet-routing.md)
+> [!div class="step-by-step"]
+> [上一页](aspnet-4-quick-hit-outbound-webforms-routing.md)
+> [下一页](how-do-i-work-with-urls-in-aspnet-routing.md)

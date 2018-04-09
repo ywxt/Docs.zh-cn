@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/use-viewdata-and-implement-viewmodel-classes
-title: "使用 ViewData 和实现 ViewModel 类 |Microsoft 文档"
+title: 使用 ViewData 和实现 ViewModel 类 |Microsoft 文档
 author: microsoft
-description: "步骤 6 显示如何启用对更丰富的形式编辑方案中的支持还介绍了可以用于将数据从控制器传递到视图的两种方法:..."
+description: 步骤 6 显示如何启用对更丰富的形式编辑方案中的支持还介绍了可以用于将数据从控制器传递到视图的两种方法:...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-viewdata-and-implement-viewmodel-classes
 msc.type: authoredcontent
-ms.openlocfilehash: 36b9e87cc24f74f7f2cc592afb5102709b598f74
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9ba8758bd6524f3e300f3fd91ef68cfe8a3587a7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="use-viewdata-and-implement-viewmodel-classes"></a>使用 ViewData 和实现 ViewModel 类
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -127,6 +127,6 @@ ViewData 字典方法具有一个优势是相当快速且轻松地实现。 一�
 
 让我们现在看一下我们可以如何使用它们和主控页重复使用并在我们的应用程序之间共享 UI。
 
->[!div class="step-by-step"]
-[上一页](provide-crud-create-read-update-delete-data-form-entry-support.md)
-[下一页](re-use-ui-using-master-pages-and-partials.md)
+> [!div class="step-by-step"]
+> [上一页](provide-crud-create-read-update-delete-data-form-entry-support.md)
+> [下一页](re-use-ui-using-master-pages-and-partials.md)

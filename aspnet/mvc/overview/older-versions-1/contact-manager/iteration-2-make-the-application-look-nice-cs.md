@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-cs
-title: "迭代 #2 – 使应用程序，看上去很好的 (C#) |Microsoft 文档"
+title: '迭代 #2 – 使应用程序，看上去很好的 (C#) |Microsoft 文档'
 author: microsoft
-description: "在此迭代中，我们通过修改默认 ASP.NET MVC 视图母版页和级联样式表改进应用程序的外观。"
+description: 在此迭代中，我们通过修改默认 ASP.NET MVC 视图母版页和级联样式表改进应用程序的外观。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 10379f5321773155aaff4c384d8e0716d7e0e874
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cad28fb6ff02625674e59674d1ec08d52373c269
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-2--make-the-application-look-nice-c"></a>迭代 #2 – 使应用程序，看上去很好的 (C#)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载代码](iteration-2-make-the-application-look-nice-cs/_static/contactmanager_2_cs1.zip)
 
@@ -115,7 +115,7 @@ ASP.NET MVC 设计库具有不同的设计样式很好选择。 库为你提供�
 
 但是，你可能需要创建你的网站的完全唯一设计。 在这种情况下，最好使用网站设计公司。 我决定采用此方法为联系人管理器应用程序的设计。
 
-我压缩向上联系人管理器从迭代 #1，并发送到设计公司的项目。 它们不归 Visual Studio （耻辱在其上 ！），但这不是 t 会出现问题。 它们是可以从免费下载 Microsoft Visual Web Developer [https://www.asp.net](https://www.asp.net)网站，然后打开 Visual Web Developer 中的联系人管理器应用程序。 在几天，它们必须生成图 7 中的设计。
+我压缩向上联系人管理器从迭代 #1，并发送到设计公司的项目。 它们不归 Visual Studio （耻辱在其上 ！），但这不是 t 会出现问题。 它们是可以从免费下载 Microsoft Visual Web Developer [ https://www.asp.net ](https://www.asp.net)网站，然后打开 Visual Web Developer 中的联系人管理器应用程序。 在几天，它们必须生成图 7 中的设计。
 
 
 [![新项目对话框](iteration-2-make-the-application-look-nice-cs/_static/image7.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image13.png)
@@ -149,13 +149,13 @@ Html.ActionLink() 方法呈现整个 HTML 超链接。 Url.Action() 方法中，
 
 若要支持呈现选定和未选定的选项卡，我创建了名为 MenuItemHelper 的自定义 HTML 帮助。 此帮助器方法呈现或者&lt;li&gt;标记或&lt;li 类 ="所选"&gt;具体取决于当前控制器和操作是否与传递给帮助器的控制器和操作名称对应的标记。 MenuItemHelper 的代码包含在清单 1。
 
-**列表 1-Helpers\MenuItemHelper.cs**
+**Listing 1 - Helpers\MenuItemHelper.cs**
 
 [!code-csharp[Main](iteration-2-make-the-application-look-nice-cs/samples/sample3.cs)]
 
 MenuItemHelper 在内部使用 TagBuilder 类来生成&lt;li&gt; HTML 标记。 TagBuilder 类是当需要生成新的 HTML 标记时可以使用一个非常有用的实用程序类。 它包括用于添加属性、 添加 CSS 类、 生成 Id，和修改标记的方法内部 HTML。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在此迭代中，我们改进我们的 ASP.NET MVC 应用程序的可视设计。 首先，已引入到 ASP.NET MVC 设计库。 您学习了如何从你可以在 ASP.NET MVC 应用程序中使用 ASP.NET MVC 设计库下载免费设计模板。
 
@@ -163,6 +163,6 @@ MenuItemHelper 在内部使用 TagBuilder 类来生成&lt;li&gt; HTML 标记。 
 
 在下一步的迭代中，我们解决的验证非常重要的主题。 以便用户无法未首先提供所需的值，如人员 s 情况下创建一个新的联系人和姓氏，我们将验证代码添加到我们的应用程序。
 
->[!div class="step-by-step"]
-[上一页](iteration-1-create-the-application-cs.md)
-[下一页](iteration-3-add-form-validation-cs.md)
+> [!div class="step-by-step"]
+> [上一页](iteration-1-create-the-application-cs.md)
+> [下一页](iteration-3-add-form-validation-cs.md)

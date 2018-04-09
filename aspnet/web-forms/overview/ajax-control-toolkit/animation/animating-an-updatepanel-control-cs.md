@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-cs
-title: "对进行动画处理 UpdatePanel 控件 (C#) |Microsoft 文档"
+title: 对进行动画处理 UpdatePanel 控件 (C#) |Microsoft 文档
 author: wenz
-description: "ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 内容..."
+description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 内容...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7e6d8954d2ec886994cdd723121e540b471131f6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5d8d5b9c3f15b39045b5e01b455bdddfc9443a24
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="animating-an-updatepanel-control-c"></a>对进行动画处理 UpdatePanel 控件 (C#)
 ====================
@@ -43,8 +43,8 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个�
 
 所需的标记`UpdatePanelAnimationExtender`控件是非常类似于用于标记`AnimationExtender`。 在`TargetControlID`我们提供的属性`ID`的`UpdatePanel`要进行动画处理; 在`UpdatePanelAnimationExtender`控件，`<Animations>`元素包含动画的 XML 标记。 但是没有一个区别： 事件和事件处理程序是有限的相对于`AnimationExtender`。 有关`UpdatePanels`，只有两个其中存在：
 
-- `<OnUpdated>`UpdatePanel 何时已更新
-- `<OnUpdating>`UpdatePanel 启动更新
+- `<OnUpdated>` UpdatePanel 何时已更新
+- `<OnUpdating>` UpdatePanel 启动更新
 
 在此方案中，新内容的`UpdatePanel`（之后回发） 应淡入。 这是为此时必需的标记：
 
@@ -57,6 +57,6 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个�
 
 下一步的向导步骤淡入 ([单击以查看实际尺寸的图像](animating-an-updatepanel-control-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一页](changing-an-animation-using-client-side-code-cs.md)
-[下一页](dynamically-controlling-updatepanel-animations-cs.md)
+> [!div class="step-by-step"]
+> [上一页](changing-an-animation-using-client-side-code-cs.md)
+> [下一页](dynamically-controlling-updatepanel-animations-cs.md)

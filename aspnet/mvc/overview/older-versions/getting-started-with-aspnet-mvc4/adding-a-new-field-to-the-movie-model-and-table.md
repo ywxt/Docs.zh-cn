@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
-title: "将新字段添加到的电影模型和表 |Microsoft 文档"
+title: 将新字段添加到的电影模型和表 |Microsoft 文档
 author: Rick-Anderson
-description: "注意： 本教程的更新的版本此处提供了使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全，请按照和演示要简单得多..."
+description: 注意： 本教程的更新的版本此处提供了使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全，请按照和演示要简单得多...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/28/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
 msc.type: authoredcontent
-ms.openlocfilehash: 9965c8a755857a8e8cb8ecbc6c467a6c856aa83d
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: d8a42e9acdce687ab6e9742071dd2949f244622f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-table"></a>将新字段添加到的电影模型和表
 ====================
@@ -107,7 +107,7 @@ Code First 迁移创建中的另一个类文件*迁移*文件夹 (同名*{日期
 
 现在，你已更新`Model`类，你还需要更新*\Views\Movies\Index.cshtml*和*\Views\Movies\Create.cshtml*查看模板，以显示新`Rating`在浏览器视图的属性。
 
-打开*\Views\Movies\Index.cshtml*文件并添加`<th>Rating</th>`列标题之后**价格**列。 然后添加`<td>`结尾处的模板来呈现的列`@item.Rating`值。 下面是哪些更新*Index.cshtml*视图模板如下所示：
+打开<em>\Views\Movies\Index.cshtml</em>文件并添加`<th>Rating</th>`列标题之后<strong>价格</strong>列。 然后添加`<td>`结尾处的模板来呈现的列`@item.Rating`值。 下面是哪些更新<em>Index.cshtml</em>视图模板如下所示：
 
 [!code-cshtml[Main](adding-a-new-field-to-the-movie-model-and-table/samples/sample5.cshtml?highlight=26-28,46-48)]
 
@@ -163,7 +163,7 @@ Code First 迁移创建中的另一个类文件*迁移*文件夹 (同名*{日期
 
 ![7_CreateRioII](adding-a-new-field-to-the-movie-model-and-table/_static/image14.png)
 
-单击 **“创建”**。 新的影片，包括评级，现在显示在电影列出：
+单击“创建” 。 新的影片，包括评级，现在显示在电影列出：
 
 ![7_ourNewMovie_SM](adding-a-new-field-to-the-movie-model-and-table/_static/image15.png)
 
@@ -173,6 +173,6 @@ Code First 迁移创建中的另一个类文件*迁移*文件夹 (同名*{日期
 
 在本部分中您将了解如何修改模型对象和保留数据库与更改同步。 你还了解了一种方法来填充新创建的数据库使用示例数据，因此你还可以尝试方案。 接下来，让我们看一下如何将更丰富的验证逻辑添加到模型类和启用一些业务规则，以强制执行。
 
->[!div class="step-by-step"]
-[上一页](examining-the-edit-methods-and-edit-view.md)
-[下一页](adding-validation-to-the-model.md)
+> [!div class="step-by-step"]
+> [上一页](examining-the-edit-methods-and-edit-view.md)
+> [下一页](adding-validation-to-the-model.md)

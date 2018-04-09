@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET 核心中基于策略的授权"
+title: ASP.NET 核心中基于策略的授权
 author: rick-anderson
-description: "了解如何创建和使用授权策略处理程序，用于实施 ASP.NET Core 应用程序中的授权要求。"
+description: 了解如何创建和使用授权策略处理程序，用于实施 ASP.NET Core 应用程序中的授权要求。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/policies
-ms.openlocfilehash: a9ee7e6fd06fa88485d7f578a9df74cbf87d9540
-ms.sourcegitcommit: 7ee6e7582421195cbd675355c970d3d292ee668d
+ms.openlocfilehash: 411fee90bdccfb45c33f5d4ccd7864c83c614e70
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="policy-based-authorization"></a>基于策略的授权
+# <a name="policy-based-authorization-in-aspnet-core"></a>ASP.NET 核心中基于策略的授权
 
 实际上，[基于角色的授权](xref:security/authorization/roles)和[基于声明的授权](xref:security/authorization/claims)使用要求，要求处理程序，并预先配置的策略。 这些构建基块支持在代码中的授权评估表达式。 结果是一个更丰富、 可重复使用、 可测试授权结构。
 
@@ -26,11 +26,11 @@ ms.lasthandoff: 02/14/2018
 
 在前面的示例中，创建一个"AtLeast21"策略。 它具有单个要求&mdash;的最短期限，它提供作为参数传递给要求。
 
-通过使用应用策略`[Authorize]`具有策略名称属性。 例如:
+通过使用应用策略`[Authorize]`具有策略名称属性。 例如：
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Controllers/AlcoholPurchaseController.cs?name=snippet_AlcoholPurchaseControllerClass&highlight=4)]
 
-## <a name="requirements"></a>惠?
+## <a name="requirements"></a>要求
 
 授权要求是一个策略可用于评估当前的用户主体的数据参数的集合。 在我们的"AtLeast21"策略的要求是单个参数&mdash;最小存在时间。 要求实现[IAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationrequirement)，这是一个空标记接口。 参数化的最小年龄要求无法实现，如下所示：
 
@@ -69,7 +69,7 @@ ms.lasthandoff: 02/14/2018
 
 ### <a name="handler-registration"></a>处理程序注册
 
-在配置期间服务集合中注册处理程序。 例如:
+在配置期间服务集合中注册处理程序。 例如：
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=40-41,50-55,63-65,72)]
 

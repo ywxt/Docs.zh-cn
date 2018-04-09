@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs
-title: "删除 (C#) 时添加客户端确认 |Microsoft 文档"
+title: 删除 (C#) 时添加客户端确认 |Microsoft 文档
 author: rick-anderson
-description: "在接口中我们已创建了到目前为止，用户可以意外当它们应单击编辑按钮时，单击删除按钮中删除数据。 在此 t..."
+description: 在接口中我们已创建了到目前为止，用户可以意外当它们应单击编辑按钮时，单击删除按钮中删除数据。 在此 t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c5e8ee76224a48d3132597016b81099bd70a1776
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 72b15d498e45cc519a14ecfe39111b224db88c30
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-client-side-confirmation-when-deleting-c"></a>添加客户端确认当删除 (C#)
 ====================
@@ -75,7 +75,7 @@ JavaScript`confirm(string)`函数将其字符串输入的参数显示为模式�
 
 ## <a name="step-2-calling-the-confirmstring-function-from-the-delete-buttons-client-side-onclick-event"></a>步骤 2： 从删除按钮客户端 onclick 事件调用 confirm(string) 函数
 
-与创建 FormView，最后一步是配置删除按钮此类，当它用在距访客，JavaScript 单击 s`confirm(string)`调用函数。 将客户端脚本添加到按钮、 LinkButton 或 ImageButton 的客户端`onclick`事件，可使用`OnClientClick property`，这是新为 ASP.NET 2.0。 由于我们想要使数值`confirm(string)`函数返回，只需将此属性设置为：`return confirm('Are you certain that you want to delete this product?');`
+与创建 FormView，最后一步是配置删除按钮此类，当它用在距访客，JavaScript 单击 s`confirm(string)`调用函数。 将客户端脚本添加到按钮、 LinkButton 或 ImageButton 的客户端`onclick`事件，可使用`OnClientClick property`，这是新为 ASP.NET 2.0。 由于我们想要使数值`confirm(string)`函数返回，只需将此属性设置为： `return confirm('Are you certain that you want to delete this product?');`
 
 此更改之后删除 LinkButton s 声明性语法应如下所示：
 
@@ -146,7 +146,7 @@ CommandField 的缺点之一是其按钮必须通过索引来访问和生成的�
 
 其中*controlID*是按钮的值`ID`属性。 虽然此模式仍需要用于强制转换的硬编码类型，它无需索引，从而使布局以更改不会导致运行时错误。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 JavaScript`confirm(string)`函数是一种用于控制窗体提交工作流的常用的技术。 在执行时，该函数将显示模式，客户端的对话框，其中包含两个按钮，确定和取消。 如果用户单击确定，`confirm(string)`函数返回`true`; 单击取消返回`false`。 此功能，结合了取消提交窗体，如果在提交过程中的事件处理程序返回一个浏览器的行为`false`，可以用于删除一条记录时显示确认消息框。
 
@@ -156,8 +156,8 @@ JavaScript`confirm(string)`函数是一种用于控制窗体提交工作流的�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
->[!div class="step-by-step"]
-[上一页](implementing-optimistic-concurrency-cs.md)
-[下一页](limiting-data-modification-functionality-based-on-the-user-cs.md)
+> [!div class="step-by-step"]
+> [上一页](implementing-optimistic-concurrency-cs.md)
+> [下一页](limiting-data-modification-functionality-based-on-the-user-cs.md)

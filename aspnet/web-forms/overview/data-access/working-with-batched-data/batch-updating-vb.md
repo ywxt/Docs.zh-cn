@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
-title: "批更新 (VB) |Microsoft 文档"
+title: 批更新 (VB) |Microsoft 文档
 author: rick-anderson
-description: "了解如何更新单个操作中的多个数据库记录。 在用户界面层中，我们将生成一个 GridView，其中每一行都是可编辑。 数据中..."
+description: 了解如何更新单个操作中的多个数据库记录。 在用户界面层中，我们将生成一个 GridView，其中每一行都是可编辑。 数据中...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
 msc.type: authoredcontent
-ms.openlocfilehash: bcfdf734de0b4a4aa0a11f35bd6e40d6b97719cf
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2c5119410057b39e7b9a03eca3a2dbdbc315ce00
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="batch-updating-vb"></a>批更新 (VB)
 ====================
@@ -185,7 +185,7 @@ ms.lasthandoff: 01/24/2018
 请注意如何`<asp:ListItem Value="">`-一个选择-具有其`Value`属性显式设置为一个空字符串。 将回指[自定义的数据修改界面](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb.md)教程有关为什么需要此附加的 DropDownList 项处理的更全面讨论`NULL`用例和原因分配`Value`属性为空字符串至关重要。
 
 > [!NOTE]
-> 没有的潜在性能和可伸缩性问题此处值得一提的是。 因为每行都有使用 DropDownList`CategoriesDataSource`作为数据源，`CategoriesBLL`类 s`GetCategories`将调用方法 *n* 每页的次数，请访问，其中 *n*是 GridView 中的行数。 这些 *n* 调用`GetCategories`导致 *n* 到数据库的查询。 此对数据库的影响可能会降低通过缓存每个请求缓存中或通过使用 SQL 缓存依赖关系或非常短时间基于过期的缓存层，返回的类别。 有关每个请求的详细信息缓存选项，请参阅[`HttpContext.Items`每个请求缓存存储](http://aspnet.4guysfromrolla.com/articles/060904-1.aspx)。
+> 没有的潜在性能和可伸缩性问题此处值得一提的是。 因为每行都有使用 DropDownList`CategoriesDataSource`作为数据源，`CategoriesBLL`类 s`GetCategories`将调用方法*n*每页的次数，请访问，其中*n*是数在 GridView 的行。 这些*n*调用`GetCategories`导致*n*到数据库的查询。 此对数据库的影响可能会降低通过缓存每个请求缓存中或通过使用 SQL 缓存依赖关系或非常短时间基于过期的缓存层，返回的类别。 有关每个请求的详细信息缓存选项，请参阅[`HttpContext.Items`每个请求缓存存储](http://aspnet.4guysfromrolla.com/articles/060904-1.aspx)。
 
 
 ## <a name="step-4-completing-the-editing-interface"></a>步骤 4： 完成编辑接口
@@ -270,7 +270,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-vb[Main](batch-updating-vb/samples/sample7.vb)]
 
-`BatchMethodAlternate`通过创建新的空启动`ProductsDataTable`名为`products`。 然后，它通过 GridView 的步骤`Rows`集合并为每个行获取使用 BLL s 的特定产品信息`GetProductByProductID(productID)`方法。 检索`ProductsRow`实例具有与相同的方式更新其属性`BatchUpdate`，但在更新导入到的行后`products``ProductsDataTable`通过 DataTable s [ `ImportRow(DataRow)`方法](https://msdn.microsoft.com/library/system.data.datatable.importrow(VS.80).aspx).
+`BatchMethodAlternate` 通过创建新的空启动`ProductsDataTable`名为`products`。 然后，它通过 GridView 的步骤`Rows`集合并为每个行获取使用 BLL s 的特定产品信息`GetProductByProductID(productID)`方法。 检索`ProductsRow`实例具有与相同的方式更新其属性`BatchUpdate`，但在更新导入到的行后`products``ProductsDataTable`通过 DataTable s [ `ImportRow(DataRow)`方法](https://msdn.microsoft.com/library/system.data.datatable.importrow(VS.80).aspx).
 
 后`For Each`循环完成后，`products`包含一个`ProductsRow`GridView 中的每一行的实例。 由于每个的`ProductsRow`实例已添加到`products`（而不是更新），如果我们盲目地将其传递到`UpdateWithTransaction`方法`ProductsTableAdatper`将尝试将每个记录插入数据库。 相反，我们需要指定，每个这些行已被修改 （未添加）。
 
@@ -279,7 +279,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-vb[Main](batch-updating-vb/samples/sample8.vb)]
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 GridView 提供内置的每个行的编辑功能，但缺少对创建完全可编辑的接口的支持。 正如我们看到在本教程中，此类接口是可能的但需要不少的工作。 若要创建的每个行是可编辑一个 GridView，我们需要将 GridView 的字段转换为 TemplateFields 和定义中的编辑界面`ItemTemplate`s。 此外，更新所有的按钮 Web 控件的类型必须添加到页上，独立于 GridView。 这些按钮`Click`事件处理程序需要枚举 GridView s`Rows`集合，存储中的更改`ProductsDataTable`，并将更新的信息传递到相应的 BLL 方法。
 
@@ -289,12 +289,12 @@ GridView 提供内置的每个行的编辑功能，但缺少对创建完全可�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Teresa 墨和 David Suru。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](wrapping-database-modifications-within-a-transaction-vb.md)
-[下一页](batch-deleting-vb.md)
+> [!div class="step-by-step"]
+> [上一页](wrapping-database-modifications-within-a-transaction-vb.md)
+> [下一页](batch-deleting-vb.md)

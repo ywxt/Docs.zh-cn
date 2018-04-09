@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-vb
-title: "执行动画使用客户端代码 (VB) |Microsoft 文档"
+title: 执行动画使用客户端代码 (VB) |Microsoft 文档
 author: wenz
-description: "ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 动画执行中..."
+description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 动画执行中...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c97ce87addd566ed1ba63ccdb81206c6449f49a2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e2b8c499edaccc70d439a576feb80e91cb28c1c7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="executing-animations-using-client-side-code-vb"></a>执行动画使用客户端代码 (VB)
 ====================
@@ -70,6 +70,6 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个�
 
 动画会立即，运行没有鼠标单击 ([单击以查看实际尺寸的图像](executing-animations-using-client-side-code-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一页](modifying-animations-from-the-server-side-vb.md)
-[下一页](changing-an-animation-using-client-side-code-vb.md)
+> [!div class="step-by-step"]
+> [上一页](modifying-animations-from-the-server-side-vb.md)
+> [下一页](changing-an-animation-using-client-side-code-vb.md)

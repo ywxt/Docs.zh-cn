@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-vb
-title: "动画根据条件 (VB) |Microsoft 文档"
+title: 动画根据条件 (VB) |Microsoft 文档
 author: wenz
-description: "ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 动画是否..."
+description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 动画是否...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cc8600f33f9c27e1045f5083a126b9d2d1e90303
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d3a648ff8299c9720e9f34522f271595ab1b9bc9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="animation-depending-on-a-condition-vb"></a>动画根据条件 (VB)
 ====================
@@ -45,7 +45,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个�
 
 [!code-css[Main](animation-depending-on-a-condition-vb/samples/sample3.css)]
 
-然后，将添加`AnimationExtender`到页中，提供`ID`、`TargetControlID`属性和强制性`runat="server":`
+然后，将添加`AnimationExtender`到页中，提供`ID`、`TargetControlID`属性和强制性 `runat="server":`
 
 [!code-aspx[Main](animation-depending-on-a-condition-vb/samples/sample4.aspx)]
 
@@ -60,6 +60,6 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个�
 
 面板淡出而不调整大小，因此第二个动画运行，第一个未 ([单击以查看实际尺寸的图像](animation-depending-on-a-condition-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[上一页](executing-several-animations-after-each-other-vb.md)
-[下一页](picking-one-animation-out-of-a-list-vb.md)
+> [!div class="step-by-step"]
+> [上一页](executing-several-animations-after-each-other-vb.md)
+> [下一页](picking-one-animation-out-of-a-list-vb.md)

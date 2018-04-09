@@ -1,7 +1,7 @@
 ---
-title: "使用角速度项目模板"
+title: 使用 ASP.NET Core 角度项目模板
 author: SteveSandersonMS
-description: "了解如何开始使用 ASP.NET 核心单页面应用程序 (SPA) 项目模板用于角和角速度 CLI。"
+description: 了解如何开始使用 ASP.NET 核心单页面应用程序 (SPA) 项目模板用于角和角速度 CLI。
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,13 +11,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: 07cfd20809acb67bdae6561b6ccd6edf1e70a3fe
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e3956bedbc243578f6dfdc09f5f043327de7c66b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="use-the-angular-project-template"></a>使用角速度项目模板
+# <a name="use-the-angular-project-template-with-aspnet-core"></a>使用 ASP.NET Core 角度项目模板
 
 > [!NOTE]
 > 本文档不有关角度项目模板包括在 ASP.NET 核心 2.0。 它是有关与其则可手动更新较新角度模板。 默认情况下，该模板包含在 ASP.NET 核心 2.1。
@@ -39,14 +39,12 @@ cd my-new-app
 
 从 Visual Studio 或.NET Core CLI 运行应用程序：
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
-
+#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 打开生成*.csproj*文件中，并从那里运行正常的应用程序。
 
 生成过程还原首次运行，可能需要几分钟的 npm 依赖关系。 后续的生成处于快得多。
 
-# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
-
+#### <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli/)
 确保你具有调用的环境变量`ASPNETCORE_Environment`值为`Development`。 在 Windows 上 （在非 PowerShell 提示），运行`SET ASPNETCORE_Environment=Development`。 在 Linux 或 macOS 上，运行`export ASPNETCORE_Environment=Development`。
 
 运行[dotnet 生成](/dotnet/core/tools/dotnet-build)以验证该应用程序正确生成。 首次在运行，生成过程还原 npm 依赖关系，可能需要几分钟。 后续的生成处于快得多。
@@ -59,10 +57,9 @@ Now listening on: http://localhost:<port>
 
 导航到此 URL 在浏览器。
 
-应用程序启动的后台中的角度 CLI 服务器实例。 记录类似于以下消息： *NG Live 开发服务器正在侦听 localhost:&lt;otherport&gt;，打开浏览器上 http://localhost:&lt;otherport&gt; /*. 忽略此消息&mdash;它具有**不**组合 ASP.NET Core 和角速度 CLI 应用的 URL。
+应用程序启动的后台中的角度 CLI 服务器实例。 记录类似于以下消息： <em>NG Live 开发服务器正在侦听 localhost:&lt;otherport&gt;，打开你的浏览器在http://localhost: &lt;otherport&gt; /</em>. 忽略此消息&mdash;它具有<strong>不</strong>组合 ASP.NET Core 和角速度 CLI 应用的 URL。
 
----
-
+* * *
 项目模板创建 ASP.NET Core 应用和角速度应用。 ASP.NET Core 应用旨在用于数据访问、 授权和其他服务器端问题。 角度的应用程序，驻留在*ClientApp*子目录，旨在用于所有 UI 问题。
 
 ## <a name="add-pages-images-styles-modules-etc"></a>添加页面、 映像，样式、 模块、 等。
@@ -85,7 +82,7 @@ cd ClientApp
 
 ## <a name="install-npm-packages"></a>安装 npm 包
 
-若要安装第三方 npm 包，使用命令提示符处， *ClientApp*子目录。 例如:
+若要安装第三方 npm 包，使用命令提示符处， *ClientApp*子目录。 例如：
 
 ```console
 cd ClientApp

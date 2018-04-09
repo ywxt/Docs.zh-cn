@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3
-title: "第 3 部分： 创建一个管理控制器 |Microsoft 文档"
+title: 第 3 部分： 创建一个管理控制器 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 6fadfb6e96ae287fc5f81516b7535e03853c7e6a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 588d9d1b5d27759692cd840faabf2c3549c309d6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-3-creating-an-admin-controller"></a>第 3 部分： 创建一个管理控制器
 ====================
@@ -71,10 +71,10 @@ A **DbSet**表示一组可查询的实体。 下面是有关的完整列表`Orde
 | 控制器方法 | 描述 | URI | HTTP 方法 |
 | --- | --- | --- | --- |
 | GetProducts | 获取所有产品。 | api/产品 | GET |
-| GetProduct | 找到的产品的 id。 | api/产品/*id* | GET |
-| PutProduct | 更新产品。 | api/产品/*id* | PUT |
+| GetProduct | 找到的产品的 id。 | api/products/*id* | GET |
+| PutProduct | 更新产品。 | api/products/*id* | PUT |
 | PostProduct | 创建新产品。 | api/产品 | 发布 |
-| DeleteProduct | 删除产品。 | api/产品/*id* | DELETE |
+| DeleteProduct | 删除产品。 | api/products/*id* | DELETE |
 
 每个方法调入`OrdersContext`查询数据库。 修改集合 （PUT、 POST 和 DELETE） 的方法调用`db.SaveChanges`以保留对数据库的更改。 控制器与每个 HTTP 请求创建，且然后释放，因此需要来方法返回之前保留更改。
 
@@ -102,6 +102,6 @@ A **DbSet**表示一组可查询的实体。 下面是有关的完整列表`Orde
 
 [!code-console[Main](using-web-api-with-entity-framework-part-3/samples/sample6.cmd)]
 
->[!div class="step-by-step"]
-[上一页](using-web-api-with-entity-framework-part-2.md)
-[下一页](using-web-api-with-entity-framework-part-4.md)
+> [!div class="step-by-step"]
+> [上一页](using-web-api-with-entity-framework-part-2.md)
+> [下一页](using-web-api-with-entity-framework-part-4.md)

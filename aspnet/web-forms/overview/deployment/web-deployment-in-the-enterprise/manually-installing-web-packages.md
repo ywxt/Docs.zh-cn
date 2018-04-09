@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/manually-installing-web-packages
-title: "手动安装 Web 包 |Microsoft 文档"
+title: 手动安装 Web 包 |Microsoft 文档
 author: jrjlee
-description: "本主题介绍如何手动导入 web 部署包到 Internet 信息服务 (IIS)。 主题生成和打包 Web Applicati..."
+description: 本主题介绍如何手动导入 web 部署包到 Internet 信息服务 (IIS)。 主题生成和打包 Web Applicati...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/manually-installing-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: e06d37c01ab66f0723b687f4ed1ee72561099aef
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4a28ea92b22e4928e41a39a8a91b62bfa4f08175
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="manually-installing-web-packages"></a>手动安装 Web 包
 ====================
@@ -30,10 +30,10 @@ ms.lasthandoff: 03/15/2018
 > 
 > 一旦你已创建 web 部署包，你可以将其发布到 IIS 服务器以各种方式。 在许多方案，你将想要利用 MSBuild、 WPP，和 Web 部署来创建并自动进行的或单步执行的生成和部署过程的一部分远程安装 web 包之间的集成点。 此过程所述[部署 Web 包](deploying-web-packages.md)。 但是，这并不总是可行。 假设你想要部署 web 应用程序到面向 Internet 的生产环境。 出于安全原因，生产环境中此类位于非常少，可能需要独立于生成服务器上，在外围网络 （也称为 DMZ、 外围安全区域和外围子网） 的子网防火墙后面。 很多情况下，在生产环境将在单独的域或在物理上隔离的网络。
 > 
-> 在这些情况下，唯一的选项可能是端口 web 包部署到目标服务器上的，手动将其导入到 IIS。 虽然这种方法，不能自动的部署，它仍是一种用于发布的 web 应用程序 （&） #x 2014年的技术很有效; 您只需将单个 zip 文件复制到你的 web 服务器，然后使用向导来指导你完成导入过程。
+> 在这些情况下，唯一的选项可能是端口 web 包部署到目标服务器上的，手动将其导入到 IIS。 虽然这种方法，不能自动的部署，它仍是一种用于发布 web 应用程序的技术很有效&#x2014;只需将单个 zip 文件复制到你的 web 服务器和使用向导来指导你完成导入过程。
 
 
-本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案 （&） #x 2014;[联系人管理器解决方案](the-contact-manager-solution.md)& #x 2014; 来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 的 web 应用程序Communication Foundation (WCF) 服务和数据库项目。
+本主题窗体的基于名为 Fabrikam，Inc.的虚构公司的企业部署要求的教程系列中的一部分本系列教程使用的示例解决方案&#x2014;[联系人管理器解决方案](the-contact-manager-solution.md)&#x2014;来表示具有现实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
 ## <a name="task-overview"></a>任务概述
 
@@ -133,5 +133,5 @@ ms.lasthandoff: 03/15/2018
 
 有关如何配置 IIS web 服务器以支持手动导入 web 包的指南，请参阅[配置用于 Web 部署发布 （脱机部署） 的 Web 服务器](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)。 有关部署 web 包的更多常规指南，请参阅[演练： 部署 Web 应用程序项目使用 Web 部署包 (4 的第 1 部分)](https://msdn.microsoft.com/library/dd483479.aspx)。
 
->[!div class="step-by-step"]
-[上一篇](creating-and-running-a-deployment-command-file.md)
+> [!div class="step-by-step"]
+> [上一篇](creating-and-running-a-deployment-command-file.md)

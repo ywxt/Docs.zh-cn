@@ -1,7 +1,7 @@
 ---
-title: "在 ASP.NET 核心中使用 Gulp"
+title: 在 ASP.NET 核心中使用 Gulp
 author: rick-anderson
-description: "了解如何在 ASP.NET 核心中使用 Gulp。"
+description: 了解如何在 ASP.NET 核心中使用 Gulp。
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-gulp
-ms.openlocfilehash: 0a3443e8187d46992f55dc537d0f400c6771c50c
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: f776b2025b6ebfeff28d3903aaeac4d7d89665b3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="introduction-to-using-gulp-in-aspnet-core"></a>在 ASP.NET 核心中使用 Gulp 简介 
+# <a name="use-gulp-in-aspnet-core"></a>在 ASP.NET 核心中使用 Gulp
 
 通过[艾力克 Reitan](https://github.com/Erikre)， [Scott Addie](https://scottaddie.com)， [Daniel Roth](https://github.com/danroth27)，和[Shayne 贝叶](https://twitter.com/spboyer)
 
@@ -183,6 +183,9 @@ gulp.task("min", ["min:js", "min:css"]);
     **任务运行程序资源管理器**显示 Gulp 任务的列表。 (你可能需要单击**刷新**显示项目名称左侧的按钮。)
     
     ![任务运行程序资源管理器](using-gulp/_static/03-TaskRunnerExplorer.png)
+    
+    > [!IMPORTANT]
+    > **任务运行程序资源管理器**，才会显示上下文菜单项*gulpfile.js*是在根项目目录中。
 
 4.  在此之下**任务**中**任务运行程序资源管理器**，右键单击**干净**，然后选择**运行**从弹出菜单。
 
@@ -228,7 +231,7 @@ gulp.task("min", ["min:js", "min:css"]);
 
     ![任务运行程序资源管理器运行第一个任务](using-gulp/_static/06-TaskRunner-First.png)
 
-    你将看到，输出文本已显示。 如果你有兴趣基于一种常见方案的示例，请参阅的 Gulp 配方。
+    输出文本显示。 若要查看基于常见方案的示例，请参阅[Gulp 配方](#gulp-recipes)。
 
 ## <a name="defining-and-running-tasks-in-a-series"></a>定义和一系列中运行任务
 

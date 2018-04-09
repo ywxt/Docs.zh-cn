@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
-title: "ASP.NET MVC 4 简介 |Microsoft 文档"
+title: ASP.NET MVC 4 简介 |Microsoft 文档
 author: Rick-Anderson
-description: "如果本教程可在此处使用 Visual Studio 2013 更新的版本。 新的教程使用 ASP.NET MVC 5，基础上 t 提供了许多改进..."
+description: 如果本教程可在此处使用 Visual Studio 2013 更新的版本。 新的教程使用 ASP.NET MVC 5，基础上 t 提供了许多改进...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 92d9e583b6c26fa8c928d33e14593d280702a269
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 519bac22ba2607931c5f3123b9b567859a2b3d1c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="intro-to-aspnet-mvc-4"></a>ASP.NET MVC 4 简介
 ====================
@@ -88,5 +88,5 @@ F5 导致 Visual Studio 启动 IIS Express 并运行 web 应用程序。 然后�
 
 现成此默认模板也提供家庭、 联系人和关于页。 它还提供了支持注册和日志，并链接到 Facebook 和 Twitter。 下一步是更改此应用程序的工作原理，并得有点了解 ASP.NET MVC。 关闭你的浏览器并让我们更改某些代码。
 
->[!div class="step-by-step"]
-[下一篇](adding-a-controller.md)
+> [!div class="step-by-step"]
+> [下一篇](adding-a-controller.md)

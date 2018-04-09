@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-vb
-title: "ASP.NET MVC 路由概述 (VB) |Microsoft 文档"
+title: ASP.NET MVC 路由概述 (VB) |Microsoft 文档
 author: StephenWalther
-description: "在本教程中，Stephen Walther 演示 ASP.NET MVC framework 如何映射到控制器操作的浏览器请求。"
+description: 在本教程中，Stephen Walther 演示 ASP.NET MVC framework 如何映射到控制器操作的浏览器请求。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1e4c74e61b1a0d5f5020154756e34dd2fa507034
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3de0e21552a4aa03aa21f21a4e26028f1475f3e9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-routing-overview-vb"></a>ASP.NET MVC 路由概述 (VB)
 ====================
@@ -47,7 +47,7 @@ MVC 应用程序第一次启动时，会调用 Application\_Start() 方法。 �
 
 假设你为 web 浏览器的地址栏中输入以下 URL:
 
-/ 主页/索引/3
+/Home/Index/3
 
 默认路由将此 URL 映射到以下参数：
 
@@ -105,10 +105,10 @@ URL /Home 还列出 4 中的 HomeController 类 index （） 方法相匹配。
 
 URL /Home/索引/3 另一方面，会顺利运行，与列出 5 中的索引控制器操作。 请求 /Home/Index/3 会导致具有值 3 的 Id 参数调用的 index （） 方法。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程的目的是为你提供对 ASP.NET 路由的简短介绍。 获取与新的 ASP.NET MVC 应用程序的默认路由表，我们探讨。 你已了解默认路由如何映射到控制器操作的 Url。
 
->[!div class="step-by-step"]
-[上一页](creating-an-action-cs.md)
-[下一页](understanding-action-filters-vb.md)
+> [!div class="step-by-step"]
+> [上一页](creating-an-action-cs.md)
+> [下一页](understanding-action-filters-vb.md)

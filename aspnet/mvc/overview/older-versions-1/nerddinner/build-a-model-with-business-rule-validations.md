@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/build-a-model-with-business-rule-validations
-title: "生成一个具有业务规则验证模型 |Microsoft 文档"
+title: 生成一个具有业务规则验证模型 |Microsoft 文档
 author: microsoft
-description: "第 3 步演示如何创建模型，我们可以使用这两个查询，并且我们 NerdDinner 为应用程序更新数据库。"
+description: 第 3 步演示如何创建模型，我们可以使用这两个查询，并且我们 NerdDinner 为应用程序更新数据库。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/build-a-model-with-business-rule-validations
 msc.type: authoredcontent
-ms.openlocfilehash: dbe6370979f218988c168df3e80314ef9b338fbd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c5a482474fd2f41836f70952306ada5cd9136455
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="build-a-model-with-business-rule-validations"></a>生成一个具有业务规则验证模型
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -228,6 +228,6 @@ Visual Studio 将自动创建表示的模型和使用 LINQ to SQL 设计器定�
 
 让我们现在将添加一些控制器和视图到我们可以使用生成在其周围的 HTML UI 体验的项目。
 
->[!div class="step-by-step"]
-[上一页](create-a-database.md)
-[下一页](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
+> [!div class="step-by-step"]
+> [上一页](create-a-database.md)
+> [下一页](use-controllers-and-views-to-implement-a-listingdetails-ui.md)

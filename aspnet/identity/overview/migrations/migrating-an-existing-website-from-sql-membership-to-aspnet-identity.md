@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
-title: "从 SQL 成员资格的现有网站迁移到 ASP.NET 标识 |Microsoft 文档"
+title: 从 SQL 成员资格的现有网站迁移到 ASP.NET 标识 |Microsoft 文档
 author: Rick-Anderson
-description: "本教程说明了将迁移用户和角色数据创建使用 SQL 成员资格为新的 ASP.NET 标识 s 的现有 web 应用程序的步骤..."
+description: 本教程说明了将迁移用户和角色数据创建使用 SQL 成员资格为新的 ASP.NET 标识 s 的现有 web 应用程序的步骤...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/19/2014
 ms.topic: article
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 3638c6779a0fcedaaa49623126b28ecf09a4954f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2790f32bc74cecf450f5a258fc1ff5b280a63923
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>从 SQL 成员资格的现有网站迁移到 ASP.NET 标识
 ====================
@@ -42,7 +42,7 @@ ms.lasthandoff: 01/24/2018
 3. 创建一个名为管理员角色并为该角色中的用户添加 oldAdminUser。
 
     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image2.png)
-4. 使用 Default.aspx 创建站点的管理部分。 在 web.config 文件以启用访问仅向管理员角色中的用户设置的授权标记。 详细信息可在此处找到[https://www.asp.net/web-forms/tutorials/security/roles/role-based-authorization-cs](../../../web-forms/overview/older-versions-security/roles/role-based-authorization-cs.md)
+4. 使用 Default.aspx 创建站点的管理部分。 在 web.config 文件以启用访问仅向管理员角色中的用户设置的授权标记。 可在此处找到详细信息 [https://www.asp.net/web-forms/tutorials/security/roles/role-based-authorization-cs](../../../web-forms/overview/older-versions-security/roles/role-based-authorization-cs.md)
 
     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image3.png)
 5. 查看数据库在服务器资源管理器，以了解 SQL 成员资格系统所创建的表。 用户登录名数据存储在 aspnet\_用户和 aspnet\_成员资格表，而角色数据存储在 aspnet\_Roles 表。 用户所在哪些角色存储在 aspnet 信息\_UsersInRoles 表。 对于基本成员资格管理它已足够移植到 ASP.NET 标识系统上述表中的信息。
@@ -67,14 +67,14 @@ ms.lasthandoff: 01/24/2018
 
 1. 在解决方案资源管理器，右键单击项目&gt;**管理 NuGet 包**。 在搜索框中，输入"Asp.net 标识"。 在结果列表中选择的包，然后单击安装。 通过单击"我接受"按钮接受许可协议。 请注意，此包将安装依赖项包： EntityFramework 和 Microsoft ASP.NET Identity Core。 同样安装以下包 （如果你不想要启用 OAuth 登录，请跳过最后 4 OWIN 包）：
 
-    - Microsoft.AspNet.Identity.Owin
-    - Microsoft.Owin.Host.SystemWeb
-    - Microsoft.Owin.Security.Facebook
-    - Microsoft.Owin.Security.Google
-    - Microsoft.Owin.Security.MicrosoftAccount
-    - Microsoft.Owin.Security.Twitter
+   - Microsoft.AspNet.Identity.Owin
+   - Microsoft.Owin.Host.SystemWeb
+   - Microsoft.Owin.Security.Facebook
+   - Microsoft.Owin.Security.Google
+   - Microsoft.Owin.Security.MicrosoftAccount
+   - Microsoft.Owin.Security.Twitter
 
-    ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image6.png)
+     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image6.png)
 
 ### <a name="migrate-database-to-the-new-identity-system"></a>将数据库迁移到新的标识系统
 
@@ -89,7 +89,7 @@ ms.lasthandoff: 01/24/2018
 | **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
 | Id | 字符串 | Id | RoleId | ProviderKey | Id |
-| 用户名 | 字符串 | name | UserId | UserId | ClaimType |
+| 用户名 | 字符串 | 名称 | UserId | UserId | ClaimType |
 | PasswordHash | 字符串 |  |  | LoginProvider | ClaimValue |
 | SecurityStamp | 字符串 |  |  |  | 用户\_Id |
 | 电子邮件 | 字符串 |  |  |  |  |
@@ -193,7 +193,7 @@ SQL 成员资格用户信息具有其他以及标识用户模型类即电子邮�
 
 ### <a name="create-new-account-management-pages"></a>创建新的帐户管理页
 
-迁移的下一步是添加将允许用户注册和登录的帐户管理页。 从 SQL 成员资格的旧帐户页使用的新的标识系统不支持的控件。 若要添加新用户管理页，请按照教程在以下链接[https://www.asp.net/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project](../getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)从步骤启动为注册到你的应用程序的用户添加 Web 窗体由于我们已经创建该项目并添加 NuGet 包。
+迁移的下一步是添加将允许用户注册和登录的帐户管理页。 从 SQL 成员资格的旧帐户页使用的新的标识系统不支持的控件。 若要添加新用户管理页，请按照教程在以下链接[ https://www.asp.net/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project ](../getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)从添加 Web 窗体用于注册到你的应用程序的用户的步骤开始由于我们已经创建该项目并添加到 NuGet包。
 
 我们需要进行一些更改以处理我们在这里有项目的示例。
 

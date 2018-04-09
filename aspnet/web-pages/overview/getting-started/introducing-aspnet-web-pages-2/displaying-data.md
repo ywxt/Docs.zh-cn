@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/displaying-data
-title: "引入的 ASP.NET Web Pages-显示数据 |Microsoft 文档"
+title: 引入的 ASP.NET Web Pages-显示数据 |Microsoft 文档
 author: tfitzmac
-description: "本教程演示了如何在 WebMatrix 中创建数据库以及如何使用 ASP.NET Web 页 (Razor) 时，在页中显示数据库数据。 它假定 y..."
+description: 本教程演示了如何在 WebMatrix 中创建数据库以及如何使用 ASP.NET Web 页 (Razor) 时，在页中显示数据库数据。 它假定 y...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/displaying-data
 msc.type: authoredcontent
-ms.openlocfilehash: fdb9af0ba87c7802c63451ac7aa422e0020b5719
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6c66e5fb0a1a49da411286e19c7954f83055c3fd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---displaying-data"></a>引入了 ASP.NET Web 页的显示数据
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 > 功能/技术讨论：
 > 
 > - WebMatrix 数据库工具。
-> - `WebGrid`帮助器。
+> - `WebGrid` 帮助器。
 
 
 ## <a name="what-youll-build"></a>你将生成
@@ -338,6 +338,6 @@ Tab 键移动到**数据类型**列表并选择**int**。此值指定 ID 列将�
 
 - [使用 Razor 语法的 ASP.NET Web 编程简介](https://go.microsoft.com/fwlink/?LinkID=202890)
 
->[!div class="step-by-step"]
-[上一页](intro-to-web-pages-programming.md)
-[下一页](form-basics.md)
+> [!div class="step-by-step"]
+> [上一页](intro-to-web-pages-programming.md)
+> [下一页](form-basics.md)

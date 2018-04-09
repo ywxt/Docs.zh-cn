@@ -1,7 +1,7 @@
 ---
-title: "从 ASP.NET 迁移到 ASP.NET Core 2.0"
+title: 迁移 ASP.NET ASP.NET 核心 2.0
 author: isaac2004
-description: "接收有关现有 ASP.NET MVC 或 Web API 应用程序迁移到 ASP.NET 核心 2.0 的指导。"
+description: 接收有关现有 ASP.NET MVC 或 Web API 应用程序迁移到 ASP.NET 核心 2.0 的指导。
 manager: wpickett
 ms.author: scaddie
 ms.date: 08/27/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/mvc2
-ms.openlocfilehash: 9424234011525afdba35824b6b324f5175ba023f
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 58fac7642dbfdad58fef99f04d17de33e7218524
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-from-aspnet-to-aspnet-core-20"></a>从 ASP.NET 迁移到 ASP.NET Core 2.0
+# <a name="migrate-from-aspnet-to-aspnet-core-20"></a>迁移 ASP.NET ASP.NET 核心 2.0
 
 作者：[Isaac Levin](https://isaaclevin.com)
 
@@ -23,7 +23,12 @@ ms.lasthandoff: 03/02/2018
 
 ## <a name="prerequisites"></a>系统必备
 
-* [.NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) 或更高版本。
+安装**一个**以下对象的[.NET 下载： Windows](https://www.microsoft.com/net/download/windows):
+
+* .NET Core SDK
+* 适用于 Windows 的 visual Studio
+  * **ASP.NET 和 web 开发**工作负荷
+  * **.NET 核心跨平台开发**工作负荷
 
 ## <a name="target-frameworks"></a>目标框架
 ASP.NET Core 2.0 项目为开发人员提供了面向 .NET Core、.NET Framework 或同时面向这两者的灵活性。 若要确定最合适的目标框架，请参阅[为服务器应用选择 .NET Core 或 .NET Framework](https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server)。
@@ -145,7 +150,7 @@ Web 开发的一个重要环节是提供客户端静态资产的功能。 HTML�
 
 例如，可以通过浏览器从类似 `http://<app>/images/<imageFileName>` 的位置访问 wwwroot/images 文件夹中的图像资产。
 
-注意：若要获取在 ASP.NET Core 中提供静态文件的更深入的参考信息，请参阅[关于在 ASP.NET Core 中使用静态文件的说明](xref:fundamentals/static-files)。
+**注意：**到为 ASP.NET Core 中的静态文件提供服务的更深入参考，请参阅[使用 ASP.NET Core 中的静态文件](xref:fundamentals/static-files)。
 
 ## <a name="additional-resources"></a>其他资源
 

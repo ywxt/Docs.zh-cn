@@ -1,7 +1,7 @@
 ---
-title: "启用 ASP.NET Core 中的身份验证器应用的 QR 代码生成"
+title: 启用 ASP.NET Core 中的身份验证器应用的 QR 代码生成
 author: rick-anderson
-description: "了解如何启用使用 ASP.NET Core 双因素身份验证的身份验证器应用的 QR 代码生成。"
+description: 了解如何启用使用 ASP.NET Core 双因素身份验证的身份验证器应用的 QR 代码生成。
 manager: wpickett
 ms.author: riande
 ms.date: 09/24/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: dd326bb32565b743d21e196bcb616a716d7994bf
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c61918d42b407b01484b67d740edc7a682c3a4b0
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="enabling-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>启用 ASP.NET Core 中的身份验证器应用的 QR 代码生成
+# <a name="enable-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>启用 ASP.NET Core 中的身份验证器应用的 QR 代码生成
 
 注意： 本主题适用于 ASP.NET Core 2.x
 

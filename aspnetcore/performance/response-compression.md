@@ -1,7 +1,7 @@
 ---
-title: "有关 ASP.NET 核心响应压缩中间件"
+title: 有关 ASP.NET 核心响应压缩中间件
 author: guardrex
-description: "了解如何响应压缩以及如何在 ASP.NET Core 应用中使用响应压缩中间件。"
+description: 了解如何响应压缩以及如何在 ASP.NET Core 应用中使用响应压缩中间件。
 manager: wpickett
 ms.author: riande
 ms.date: 08/20/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/response-compression
-ms.openlocfilehash: d05256af4e62834b8d43689786a7b8bb3a5e58fb
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: bde0522de0c70be637b903c3bbced8c0be814c31
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>有关 ASP.NET 核心响应压缩中间件
 
@@ -75,22 +75,19 @@ ms.lasthandoff: 03/02/2018
 * 使用 gzip 和自定义压缩提供程序的应用程序响应的压缩。
 * 如何将 MIME 类型添加到压缩的 MIME 类型的默认列表。
 
-## <a name="package"></a>Package
+## <a name="package"></a>包
 若要在你的项目中包含该中间件，添加到引用[ `Microsoft.AspNetCore.ResponseCompression` ](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/)包或使用[ `Microsoft.AspNetCore.All` ](https://www.nuget.org/packages/Microsoft.AspNetCore.All/)包。 此功能适用于面向 ASP.NET Core 1.1 或更高版本的应用。
 
 ## <a name="configuration"></a>配置
 下面的代码演示如何启用响应压缩中间件与默认 gzip 压缩和默认 MIME 类型。
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](response-compression/samples/2.x/StartupBasic.cs?name=snippet1&highlight=4,8)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](response-compression/samples/1.x/StartupBasic.cs?name=snippet1&highlight=3,8)]
 
----
-
+* * *
 > [!NOTE]
 > 使用之类的工具[Fiddler](http://www.telerik.com/fiddler)， [Firebug](http://getfirebug.com/)，或[Postman](https://www.getpostman.com/)设置`Accept-Encoding`请求标头并研究响应标头、 大小和正文。
 
@@ -115,16 +112,13 @@ Gzip 压缩提供程序默认为最快的压缩级别 (`CompressionLevel.Fastest
 | `CompressionLevel.Optimal`       | 响应应以最佳方式压缩，即使压缩操作将使用更多时间才能完成。                |
 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=3,8-11)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=5,10-13)]
 
----
-
+* * *
 ## <a name="mime-types"></a>MIME 类型
 该中间件指定一组默认的 MIME 类型为压缩：
 * `text/plain`
@@ -138,35 +132,29 @@ Gzip 压缩提供程序默认为最快的压缩级别 (`CompressionLevel.Fastest
 
 您可以替换或追加的响应压缩中间件选项的 MIME 类型。 请注意该通配符 MIME 类型，如`text/*`不受支持。 示例应用程序添加的 MIME 类型`image/svg+xml`和压缩，并提供横幅图像的 ASP.NET Core (*banner.svg*)。
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=5)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=7)]
 
----
-
+* * *
 ### <a name="custom-providers"></a>自定义提供程序
 你可以创建自定义压缩实现与`ICompressionProvider`。 `EncodingName`表示的内容编码此`ICompressionProvider`生成。 该中间件使用此信息来选择基于列表中指定的提供程序`Accept-Encoding`的请求标头。
 
 使用示例应用程序，客户端提交的请求`Accept-Encoding: mycustomcompression`标头。 该中间件使用自定义压缩的实现，并返回响应，其中`Content-Encoding: mycustomcompression`标头。 客户端必须能够解压缩顺序用于工作的自定义压缩实现的自定义编码。
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=4)]
 
 [!code-csharp[](response-compression/samples/2.x/CustomCompressionProvider.cs?name=snippet1)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=6)]
 
 [!code-csharp[](response-compression/samples/1.x/CustomCompressionProvider.cs?name=snippet1)]
 
----
-
+* * *
 向示例应用程序与提交一个申请`Accept-Encoding: mycustomcompression`标头并观察响应标头。 `Vary`和`Content-Encoding`标头会显示在响应。 此示例未压缩响应正文 （未显示）。 没有在压缩的实现`CustomCompressionProvider`类中的示例。 但是，此示例演示您可以用来实现此类的压缩算法。
 
 ![Fiddler 窗口中显示的 Accept-encoding 标头的请求的结果和 mycustomcompression 的值。 变化和的 Content-encoding 标头添加到的响应中。](response-compression/_static/request-custom-compression.png)

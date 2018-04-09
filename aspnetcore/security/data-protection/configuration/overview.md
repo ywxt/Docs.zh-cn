@@ -1,7 +1,7 @@
 ---
-title: "在 ASP.NET 核心中配置数据保护"
+title: 配置 ASP.NET 核心数据保护
 author: rick-anderson
-description: "了解如何在 ASP.NET 核心中配置数据保护。"
+description: 了解如何在 ASP.NET 核心中配置数据保护。
 manager: wpickett
 ms.author: riande
 ms.date: 07/17/2017
@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: 0fe1fd7b81a0e5aa00ae14c7e6fdbd9cc88ec4fe
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3a19cec2ce4387ca44ca120f031a072269b93454
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="configuring-data-protection-in-aspnet-core"></a>在 ASP.NET 核心中配置数据保护
+# <a name="configure-aspnet-core-data-protection"></a>配置 ASP.NET 核心数据保护
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 初始化数据保护系统时，它将应用[默认设置](xref:security/data-protection/configuration/default-settings)基于的操作环境。 这些设置并在一台计算机上运行的应用程序通常适用。 在开发人员可能需要更改默认设置，可能是因为其应用程序分布在多个计算机之间或者出于合规原因的情况下。 对于这些情况下，数据保护系统提供丰富的配置 API。
 
-扩展方法没有[AddDataProtection](/dotnet/api/microsoft.extensions.dependencyinjection.dataprotectionservicecollectionextensions.adddataprotection)返回[IDataProtectionBuilder](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionbuilder)。 `IDataProtectionBuilder`显示扩展方法，你可以链接在一起以配置数据保护选项。
+扩展方法没有[AddDataProtection](/dotnet/api/microsoft.extensions.dependencyinjection.dataprotectionservicecollectionextensions.adddataprotection)返回[IDataProtectionBuilder](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionbuilder)。 `IDataProtectionBuilder` 显示扩展方法，你可以链接在一起以配置数据保护选项。
 
 ## <a name="persistkeystofilesystem"></a>PersistKeysToFileSystem
 

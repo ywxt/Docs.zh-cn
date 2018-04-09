@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application
-title: "MVC Web 应用程序 (10/10) 的高级实体框架方案 |Microsoft 文档"
+title: MVC Web 应用程序 (10/10) 的高级实体框架方案 |Microsoft 文档
 author: tdykstra
-description: "Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 的 ASP.NET MVC 4 应用程序..."
+description: Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 的 ASP.NET MVC 4 应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 148a1aa33f6f713ae471ab14c7180f6c08a8679a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 277503b65d9b75a9d3cc05538d5327f9367f45e0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>MVC Web 应用程序 (10/10) 的高级的实体框架方案
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 01/24/2018
 
 [下载已完成的项目](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 2012 的 ASP.NET MVC 4 应用程序。 有关教程系列的信息，请参阅[序列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 你可以从头开始教程系列或[下载这一章的初学者项目](building-the-ef5-mvc4-chapter-downloads.md)和从这里开始。
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 2012 的 ASP.NET MVC 4 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 你可以从头开始教程系列或[下载这一章的初学者项目](building-the-ef5-mvc4-chapter-downloads.md)和从这里开始。
 > 
 > > [!NOTE] 
 > > 
@@ -53,13 +53,13 @@ ms.lasthandoff: 01/24/2018
 
 实体框架代码的第一个 API 包括使您能够 SQL 命令将直接传递到数据库的方法。 有下列选项：
 
-- 使用`DbSet.SqlQuery`返回实体类型的查询的方法。 返回的对象必须是期望的类型的`DbSet`对象，并且它们是否自动跟踪数据库上下文中的除非关闭跟踪。 (参见下一节`AsNoTracking`方法。)
-- 使用`Database.SqlQuery`方法用于返回不是实体类型的查询。 返回的数据不跟踪数据库上下文中，即使你使用此方法来检索实体类型。
+- 对返回实体类型的查询使用 `DbSet.SqlQuery` 方法。 返回的对象必须是期望的类型的`DbSet`对象，并且它们是否自动跟踪数据库上下文中的除非关闭跟踪。 (参见下一节`AsNoTracking`方法。)
+- 使用`Database.SqlQuery`方法用于返回不是实体类型的查询。 即便使用此方法来检索实体类型，数据库上下文也不会跟踪返回的数据。
 - 使用[Database.ExecuteSqlCommand](https://msdn.microsoft.com/library/gg679456(v=vs.103).aspx)非查询命令。
 
-使用实体框架的优点之一是它可避免将你过于仔细存储数据的特定方法的代码。 此，它会生成 SQL 查询和命令，其中还使你无需自行编写。 但没有特殊情况下当你需要运行特定的 SQL 查询，你已手动创建的并且这些方法使你可以处理此类异常。
+使用 Entity Framework 的优点之一是，它可以避免将代码与存储数据的特定方法过于紧密地绑定在一起。 它通过生成 SQL 查询和命令来实现这一点，这样也可让你免于亲自编写这些内容。 但没有特殊情况下当你需要运行特定的 SQL 查询，你已手动创建的并且这些方法使你可以处理此类异常。
 
-因为时，将始终 true web 应用程序中执行 SQL 命令，你必须采取预防措施来保护你的站点对 SQL 注入式攻击。 若要这样做的一种方法是使用参数化的查询来确保由网页上提交的字符串，不能解释为 SQL 命令。 在本教程中将用户输入集成到查询时，将使用参数化的查询。
+在 Web 应用程序中执行 SQL 命令时，请务必采取预防措施来保护站点免受 SQL 注入攻击。 一种方法是使用参数化查询，确保不会将网页提交的字符串视为 SQL 命令。 在本教程中，将用户输入集成到查询中时会使用参数化查询。
 
 ### <a name="calling-a-query-that-returns-entities"></a>调用一个查询返回实体
 
@@ -81,7 +81,7 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="calling-a-query-that-returns-other-types-of-objects"></a>调用一个查询返回其他类型的对象
 
-前面你创建的每个注册日期显示学生的数量关于页面的学生统计信息网格。 在执行此代码*HomeController.cs*使用 LINQ:
+“关于”页面中显示了每个注册日期的学生数量，之前已为该页面创建了一个学生统计数据网格。 在执行此代码*HomeController.cs*使用 LINQ:
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample3.cs)]
 
@@ -91,13 +91,13 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample4.cs)]
 
-运行关于页面。 它显示它以前的相同数据。
+运行关于页面。 页面中显示的数据与之前相同。
 
 ![About_page](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image4.png)
 
 ### <a name="calling-an-update-query"></a>调用更新查询
 
-假设 Contoso 大学管理员想要能够在数据库中，如更改的每个课程的信用额度数执行大容量更改。 如果该大学具有大量的课程，这会降低效率要检索其所有项作为实体并单独更改。 在本部分中，你将实施一个网页，允许用户指定用来更改用于所有课程的信用额度数因子和则将进行的更改，通过执行 SQL`UPDATE`语句。 网页外观类似于下图：
+假设 Contoso 大学管理员想要能够在数据库中，如更改的每个课程的信用额度数执行大容量更改。 如果该大学拥有大量课程，将课程全部当作实体进行检索并逐一更改效率很低。 在本部分中，你将实施一个网页，允许用户指定用来更改用于所有课程的信用额度数因子和则将进行的更改，通过执行 SQL`UPDATE`语句。 该网页如下图所示：
 
 ![Update_Course_Credits_initial_page](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image5.png)
 
@@ -107,7 +107,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample5.cs)]
 
-在*UnitOfWork.cs*，更改`Course`从存储库类型`GenericRepository<Course>`到`CourseRepository:`
+在*UnitOfWork.cs*，更改`Course`从存储库类型`GenericRepository<Course>`到 `CourseRepository:`
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample6.cs)]
 
@@ -131,15 +131,15 @@ ms.lasthandoff: 01/24/2018
 
 [!code-cshtml[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample9.cshtml)]
 
-运行`UpdateCourseCredits`方法通过选择**课程**选项卡上，然后添加"/ UpdateCourseCredits"到末尾的浏览器的地址栏中的 URL (例如： `http://localhost:50205/Course/UpdateCourseCredits`)。 在文本框中输入数字：
+通过选择“课程”选项卡运行 `UpdateCourseCredits` 方法，然后将“/UpdateCourseCredits”添加到浏览器地址栏中 URL 的末尾（例如 `http://localhost:50205/Course/UpdateCourseCredits`）。 在文本框中输入数字：
 
 ![Update_Course_Credits_initial_page_with_2_entered](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image7.png)
 
-单击“更新” 。 你看到受影响的行数：
+单击“更新” 。 随即显示受影响的行数：
 
 ![Update_Course_Credits_rows_affected_page](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image8.png)
 
-单击**回列表**若要查看的课程替换信用额度的修订号的列表。
+单击“返回列表”，查看具有修订后的学分数的课程列表。
 
 ![Courses_Index_page_showing_revised_credits](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image9.png)
 
@@ -147,12 +147,12 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="no-tracking-queries"></a>否跟踪查询
 
-当数据库上下文检索数据库行，并创建表示它们的实体对象时，默认情况下它将跟踪的内存中的实体是否同步，与数据库中。 内存中的数据充当缓存，并更新实体时使用。 此缓存通常是不必要的 web 应用中由于上下文实例是否通常生存期较短 （新功能之一是创建和释放为每个请求） 和上下文读取再次使用该实体通常释放实体。
+当数据库上下文检索数据库行，并创建表示它们的实体对象时，默认情况下它将跟踪的内存中的实体是否同步，与数据库中。 更新实体时，内存中的数据充当缓存并使用该数据。 在 Web 应用程序中，此缓存通常是不必要的，因为上下文实例通常生存期较短（创建新的实例并用于处理每个请求），并且通常在再次使用该实体之前处理读取实体的上下文。
 
-你可以指定上下文是否通过使用跟踪查询的实体对象`AsNoTracking`方法。 在其中你可能想要执行此操作的典型方案包括：
+你可以指定上下文是否通过使用跟踪查询的实体对象`AsNoTracking`方法。 可能想要执行的典型方案包括以下操作：
 
 - 该查询将检索此类大型卷数据的关闭跟踪可能会显著提高性能。
-- 你想要将实体附加以便其进行更新，但前面为不同的用途检索相同的实体。 因为该实体已跟踪数据库上下文时，不能将附加你想要更改的实体。 要防止此类情况发生的一种方法是使用`AsNoTracking`与前面的查询的选项。
+- 你想要将实体附加以便其进行更新，但前面为不同的用途检索相同的实体。 由于数据库上下文已跟踪了该实体，因此无法附加要更改的实体。 要防止此类情况发生的一种方法是使用`AsNoTracking`与前面的查询的选项。
 
 在本部分中，你将实施阐释了这些方案中的第二个的业务逻辑。 具体而言，你将强制实施业务规则指出一个教师不能为多个部门的管理员。
 
@@ -187,7 +187,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="examining-queries-sent-to-the-database"></a>检查查询发送到数据库
 
-有时很有用，能够以查看发送到数据库的实际 SQL 查询。 若要执行此操作，你可以检查在调试器中的查询变量，或调用查询的`ToString`方法。 若要试用此项，将查看一个简单查询，并再看会发生什么情况向其添加选项时，此类 eager 加载、 筛选和排序。
+有时，能够查看发送到数据库的实际 SQL 查询会有所帮助。 若要执行此操作，你可以检查在调试器中的查询变量，或调用查询的`ToString`方法。 若要试用此项，将查看一个简单查询，并再看会发生什么情况向其添加选项时，此类 eager 加载、 筛选和排序。
 
 在*控制器/CourseController*，替换`Index`方法替换为以下代码：
 
@@ -243,7 +243,7 @@ A`SelectList`为下拉列表包含所有部门集合传递到视图。 参数传
 
 ## <a name="disabling-automatic-detection-of-changes"></a>禁用自动检测更改
 
-实体框架通过比较的实体的当前值与原始值确定更改实体的方式 （并因此需要发送到数据库的更新）。 如果该实体已查询或附加，存储的原始值。 某些会导致自动更改检测的方法如下所示：
+Entity Framework 通过比较实体的当前值与原始值来确定实体发生的更改，从而确定需将哪些更改发送给数据库。 如果该实体已查询或附加，存储的原始值。 导致自动更改检测的部分方法如下所示：
 
 - `DbSet.Find`
 - `DbSet.Local`
@@ -261,7 +261,7 @@ A`SelectList`为下拉列表包含所有部门集合传递到视图。 参数传
 
 当调用`SaveChanges`方法，默认情况下，实体框架中的所有更改的实体的所有属性的数据之前验证更新的数据库。 如果你已更新的大量实体，并且你已验证数据，这一工作是不必要和无法使保存的过程所做的更改通过暂时关闭验证花费更少时间。 你可以执行，使用[ValidateOnSaveEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled(VS.103).aspx)属性。 有关详细信息，请参阅[验证](https://blogs.msdn.com/b/adonet/archive/2010/12/15/ef-feature-ctp5-validation.aspx)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 这将完成这一系列的 ASP.NET MVC 应用程序中使用实体框架的教程。 在找不到其他实体框架资源的链接[ASP.NET 数据访问内容映射](../../../../whitepapers/aspnet-data-access-content-map.md)。
 
@@ -271,7 +271,7 @@ A`SelectList`为下拉列表包含所有部门集合传递到视图。 参数传
 
 <a id="acknowledgments"></a>
 
-## <a name="acknowledgments"></a>确认
+## <a name="acknowledgments"></a>致谢
 
 - Tom Dykstra 编写本教程的原始版本和是上的 Microsoft Web 平台和工具内容团队高级编程的编写器。
 - [Rick Anderson](https://blogs.msdn.com/b/rickandy/) (twitter [ @RickAndMSFT ](http://twitter.com/RickAndMSFT)) 共同撰写本教程并确实执行操作的大部分工作的 EF 5 和 MVC 4 对它进行更新。 Rick 是 Microsoft 将重点放在 Azure 和 MVC 的高级编程编写器。
@@ -299,7 +299,7 @@ A`SelectList`为下拉列表包含所有部门集合传递到视图。 参数传
 
 错误消息：
 
-*术语更新数据库未被识别为 cmdlet、 函数、 脚本文件或可操作程序的名称。请检查拼写的名称，或如果包括路径，请验证路径正确，然后重试。*(从 *`Update-Database`*  PMC 命令。)
+*术语更新数据库未被识别为 cmdlet、 函数、 脚本文件或可操作程序的名称。请检查拼写的名称，或如果包括路径，请验证路径正确，然后重试。*(从*`Update-Database`* PMC 命令。)
 
 解决方案：
 
@@ -309,7 +309,7 @@ A`SelectList`为下拉列表包含所有部门集合传递到视图。 参数传
 
 错误消息：
 
-*一个或多个实体的验证失败。请参阅 EntityValidationErrors 属性的更多详细信息。* (从 *`Update-Database`*  PMC 命令。)
+*一个或多个实体的验证失败。请参阅 EntityValidationErrors 属性的更多详细信息。* (从*`Update-Database`* PMC 命令。)
 
 解决方案：
 
@@ -325,7 +325,7 @@ A`SelectList`为下拉列表包含所有部门集合传递到视图。 参数传
 
 可能发生此错误的一种方法是从拥有该解决方案，每个使用相同的端口号的多个副本。 通常可以通过退出的 Visual Studio 中，所有实例，然后重新项目启动你正在致力于解决此问题。 如果这不起作用，请尝试更改端口号。 右键单击项目文件，然后单击属性。 选择**Web**选项卡上，然后将更改中的端口号**项目 Url**文本框。
 
-### <a name="error-locating-sql-server-instance"></a>错误找到 SQL Server 实例
+### <a name="error-locating-sql-server-instance"></a>定位 SQL Server 实例时出错
 
 错误消息：
 
@@ -335,6 +335,6 @@ A`SelectList`为下拉列表包含所有部门集合传递到视图。 参数传
 
 请检查连接字符串。 如果你已手动删除数据库，更改构造字符串中数据库的名称。
 
->[!div class="step-by-step"]
-[上一页](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)
-[下一页](building-the-ef5-mvc4-chapter-downloads.md)
+> [!div class="step-by-step"]
+> [上一页](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)
+> [下一页](building-the-ef5-mvc4-chapter-downloads.md)

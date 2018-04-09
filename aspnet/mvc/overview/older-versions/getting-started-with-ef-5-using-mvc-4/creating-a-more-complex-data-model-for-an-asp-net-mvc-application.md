@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
-title: "为 ASP.NET MVC 应用程序 (10 的第 4) 创建更复杂的数据模型 |Microsoft 文档"
+title: 为 ASP.NET MVC 应用程序 (10 的第 4) 创建更复杂的数据模型 |Microsoft 文档
 author: tdykstra
-description: "Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 的 ASP.NET MVC 4 应用程序..."
+description: Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 的 ASP.NET MVC 4 应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: accb5ddab8df67dfa29038541dc0cd72eaac173c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c8f01b33c18ce77d91ee2f0db5e561b047c1891c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>为 ASP.NET MVC 应用程序 (10 的第 4) 创建更复杂的数据模型
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 01/24/2018
 
 [下载已完成的项目](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 2012 的 ASP.NET MVC 4 应用程序。 有关教程系列的信息，请参阅[序列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 你可以从头开始教程系列或[下载这一章的初学者项目](building-the-ef5-mvc4-chapter-downloads.md)和从这里开始。
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 2012 的 ASP.NET MVC 4 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 你可以从头开始教程系列或[下载这一章的初学者项目](building-the-ef5-mvc4-chapter-downloads.md)和从这里开始。
 > 
 > > [!NOTE] 
 > > 
@@ -33,23 +33,23 @@ ms.lasthandoff: 01/24/2018
 
 在前面的教程中，你处理简单的数据模型的三个实体组成。 在本教程中你将添加多个实体和关系并将通过指定格式设置、 验证和数据库的映射规则自定义数据模型。 你将看到两种方式自定义数据模型： 通过将特性添加到实体类，通过将代码添加到数据库上下文类。
 
-当完成时，实体类将组成以下图所示的已完成的数据模型：
+完成本教程后，实体类将构成下图所示的完整数据模型：
 
 ![School_class_diagram](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image1.png)
 
-## <a name="customize-the-data-model-by-using-attributes"></a>通过使用属性自定义数据模型
+## <a name="customize-the-data-model-by-using-attributes"></a>使用特性自定义数据模型
 
-在本部分中，你将了解如何通过使用指定格式设置，验证和数据库的映射规则的属性来自定义数据模型。 然后在多个下列各节，你将创建一种完整`School`通过添加数据模型属性的类已在模型中的剩余实体类型的创建和创建新类。
+本节介绍如何使用指定格式化、验证和数据库映射规则的特性来自定义数据模型。 然后在多个下列各节，你将创建一种完整`School`通过添加数据模型属性的类已在模型中的剩余实体类型的创建和创建新类。
 
 ### <a name="the-datatype-attribute"></a>数据类型属性
 
-对于学生注册日期，网页的所有当前显示时间和日期，虽然所有关心为此字段是日期。 通过使用数据 annotation 特性，你可以使一个代码将在每个视图中显示的数据中修复的显示格式的更改。 若要查看如何执行操作，你将添加到属性的示例`EnrollmentDate`中的属性`Student`类。
+对于学生注册日期，目前所有网页都显示有时间和日期，尽管对此字段而言重要的只是日期。 使用数据注释特性，可更改一次代码，修复每个视图中数据的显示格式。 若要查看如何执行操作，请向 `Student`类的`EnrollmentDate`属性添加一个特性。
 
 在*Models\Student.cs*，添加`using`语句`System.ComponentModel.DataAnnotations`命名空间并添加`DataType`和`DisplayFormat`特性以`EnrollmentDate`属性，如下面的示例中所示：
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample1.cs?highlight=3,13-14)]
 
-[DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性用于指定比数据库内部类型更具体的数据类型。 在这种情况下，我们只想跟踪的日期，不的日期和时间。 [DataType 枚举](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)提供多种数据类型，如*日期、 时间、 PhoneNumber、 货币、 电子邮件地址*和的详细信息。 应用程序还可通过 `DataType` 特性自动提供类型特定的功能。 例如，`mailto:`链接可以为创建[DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)，和日期选择器可提供用于[DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)中支持的浏览器[HTML5](http://html5.org/). [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性发出 HTML 5[数据-](http://ejohn.org/blog/html-5-data-attributes/) (发音为*数据 dash*) HTML 5 浏览器可以理解的属性。 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性不提供任何验证。
+[DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性用于指定比数据库内部类型更具体的数据类型。 在此示例中，我们只想跟踪日期，而不是日期和时间。 [DataType 枚举](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)提供多种数据类型，如*日期、 时间、 PhoneNumber、 货币、 电子邮件地址*和的详细信息。 应用程序还可通过 `DataType` 特性自动提供特定于类型的功能。 例如，`mailto:`链接可以为创建[DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)，和日期选择器可提供用于[DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)中支持的浏览器[HTML5](http://html5.org/). [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性发出 HTML 5[数据-](http://ejohn.org/blog/html-5-data-attributes/) (发音为*数据 dash*) HTML 5 浏览器可以理解的属性。 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性不提供任何验证。
 
 `DataType.Date` 不指定显示日期的格式。 默认情况下，数据字段显示根据基于服务器的默认格式[CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx)。
 
@@ -75,7 +75,7 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="the-stringlengthattribute"></a>StringLengthAttribute
 
-你还可以指定数据验证规则和使用属性的消息。 假设你想要确保，用户不超过 50 个字符输入名称。 若要添加此限制，添加[StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)特性以`LastName`和`FirstMidName`属性，如下面的示例中所示：
+你还可以指定数据验证规则和使用属性的消息。 假设要确保用户输入的名称不超过 50 个字符。 若要添加此限制，添加[StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)特性以`LastName`和`FirstMidName`属性，如下面的示例中所示：
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample3.cs?highlight=10,12)]
 
@@ -91,7 +91,7 @@ ms.lasthandoff: 01/24/2018
 
 数据库模型已更改需要在数据库架构中，更改的方式，实体框架检测到。 你将使用迁移来更新架构，而不丢失任何通过使用 UI 添加到数据库的数据。 如果更改数据由`Seed`方法，将会更改回其原始状态由于[AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx)方法使用在`Seed`方法。 ([AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx)等效于"upsert"操作从数据库术语。)
 
-在包管理器控制台 (PMC) 中，输入以下命令：
+在包管理器控制台 (PMC) 中输入以下命令：
 
 [!code-console[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample4.cmd)]
 
@@ -103,9 +103,9 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="the-column-attribute"></a>列属性
 
-特性还可用于控制如何类和属性映射到数据库。 假设你已使用名称`FirstMidName`的第一个名称字段，因为该字段还可能包含中间名。 但你想要将名为的数据库列`FirstName`，因为将编写针对数据库的即席查询的用户习惯于该名称。 若要使此映射，你可以使用`Column`属性。
+还可使用特性来控制类和属性映射到数据库的方式。 假设在名字字段使用了 `FirstMidName`，这是因为该字段也可能包含中间名。 但是，你却希望将数据库列命名为 `FirstName`，因为要针对数据库编写即席查询的用户习惯使用该姓名。 若要进行此映射，可使用 `Column` 特性。
 
-`Column`属性指定当创建数据库时，列`Student`映射到表`FirstMidName`属性将被命名为`FirstName`。 换而言之，你的代码引用到`Student.FirstMidName`，数据将来自或在中更新`FirstName`列`Student`表。 如果未指定列名称，系统会提供与属性名相同的名称。
+`Column` 特性指定，创建数据库时，映射到 `FirstMidName` 属性的 `Student` 表的列将被命名为 `FirstName`。 换言之，在代码引用 `Student.FirstMidName` 时，数据将来自 `Student` 表的`FirstName` 列或在其中进行更新。 如果不指定列名称，则其名称与属性名称相同。
 
 添加 using 语句[System.ComponentModel.DataAnnotations.Schema](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.aspx)和列名称属性与`FirstMidName`属性，如以下突出显示的代码中所示：
 
@@ -137,7 +137,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample7.cs)]
 
-请注意的几个属性都在相同`Student`和`Instructor`实体。 在[实现继承](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)本系列教程更高版本，你将重构使用继承来消除此冗余。
+请注意，`Student` 和 `Instructor` 实体中具有几个相同属性。 在[实现继承](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)本系列教程更高版本，你将重构使用继承来消除此冗余。
 
 ### <a name="the-required-and-display-attributes"></a>所需和显示属性
 
@@ -145,7 +145,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample8.cs)]
 
-[StringLength 属性](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)数据库中设置的最大长度，并提供客户端和服务器端 ASP.NET MVC 的验证。 你还可以通过以下方式指定最小字符串长度中此特性，但最小值对数据库架构没有任何影响。 [必需的特性](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx)不需要值类型，如 DateTime、 int、 双精度型、 和 float。 值类型不能被分配 null 值，因此它们都是本质上是必需。 无法删除[必需的特性](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx)并将其替换的最小长度参数`StringLength`属性：
+[StringLength 属性](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)数据库中设置的最大长度，并提供客户端和服务器端 ASP.NET MVC 的验证。 还可在此属性中指定最小字符串长度，但最小值对数据库架构没有影响。 [必需的特性](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx)不需要值类型，如 DateTime、 int、 双精度型、 和 float。 值类型不能被分配 null 值，因此它们都是本质上是必需。 无法删除[必需的特性](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx)并将其替换的最小长度参数`StringLength`属性：
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample9.cs?highlight=2)]
 
@@ -155,13 +155,13 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="the-fullname-calculated-property"></a>FullName 计算属性
 
-`FullName`是返回一个值，通过串联两个其他属性创建一个计算的属性。 因此只有`get`访问器，但没有`FullName`列将生成数据库中。
+`FullName`是计算属性，可返回通过串联两个其他属性创建的值。 因此只有`get`访问器，但没有`FullName`列将生成数据库中。
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample11.cs)]
 
 ### <a name="the-courses-and-officeassignment-navigation-properties"></a>课程和 OfficeAssignment 导航属性
 
-`Courses`和`OfficeAssignment`属性是导航属性。 如前所述，它们通常定义为[虚拟](https://msdn.microsoft.com/library/9fkccyh4(v=vs.110).aspx)，以便它们可以利用称为实体框架功能[延迟加载](https://msdn.microsoft.com/magazine/hh205756.aspx)。 此外，如果导航属性可以具有多个实体，则其类型必须实现[ICollection&lt;T&gt; ](https://msdn.microsoft.com/library/92t2ye13.aspx)接口。 (例如[IList&lt;T&gt; ](https://msdn.microsoft.com/library/5y536ey6.aspx)但不是限定[IEnumerable&lt;T&gt; ](https://msdn.microsoft.com/library/9eekhta0.aspx)因为`IEnumerable<T>`未实现[添加](https://msdn.microsoft.com/library/63ywd54z.aspx).
+`Courses` 和 `OfficeAssignment` 是导航属性。 如前所述，它们通常定义为[虚拟](https://msdn.microsoft.com/library/9fkccyh4(v=vs.110).aspx)，以便它们可以利用称为实体框架功能[延迟加载](https://msdn.microsoft.com/magazine/hh205756.aspx)。 此外，如果导航属性可以具有多个实体，则其类型必须实现[ICollection&lt;T&gt; ](https://msdn.microsoft.com/library/92t2ye13.aspx)接口。 (例如[IList&lt;T&gt; ](https://msdn.microsoft.com/library/5y536ey6.aspx)但不是限定[IEnumerable&lt;T&gt; ](https://msdn.microsoft.com/library/9eekhta0.aspx)因为`IEnumerable<T>`未实现[添加](https://msdn.microsoft.com/library/63ywd54z.aspx).
 
 一个教师可以教授任意数量的课程，因此`Courses`指一套`Course`实体。 我们业务规则状态教师只能有一个 office 最多，因此`OfficeAssignment`定义为单个`OfficeAssignment`实体 (这可能会`null`如果不分配任何 office)。
 
@@ -179,7 +179,7 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="the-key-attribute"></a>键属性
 
-没有之间的对零或一一个关系`Instructor`和`OfficeAssignment`实体。 相对于其分配给，教师仅存在一个办公室分配，并且因此其主键也是其外的键与`Instructor`实体。 但实体框架无法自动识别`InstructorID`为主因为其名称不遵循此实体键`ID`或*classname* `ID`命名约定。 因此，`Key`属性用于标识作为键：
+没有之间的对零或一一个关系`Instructor`和`OfficeAssignment`实体。 相对于其分配给，教师仅存在一个办公室分配，并且因此其主键也是其外的键与`Instructor`实体。 但实体框架无法自动识别`InstructorID`为主因为其名称不遵循此实体键`ID`或*classname* `ID`命名约定。 因此，`Key` 特性用于将其识别为主键：
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample14.cs)]
 
@@ -199,7 +199,7 @@ ms.lasthandoff: 01/24/2018
 
 您可以将`[Required]`教师导航属性，指定必须有相关的教师，但不需要这样做是因为 InstructorID 外键 （它也是此表的关键） 是不可为 null 的属性。
 
-## <a name="modify-the-course-entity"></a>修改过程实体
+## <a name="modify-the-course-entity"></a>修改 Course 实体
 
 ![Course_entity](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image8.png)
 
@@ -207,7 +207,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample15.cs)]
 
-课程实体具有外键属性`DepartmentID`它指向相关`Department`实体，且没有`Department`导航属性。 实体框架不要求你将外键属性添加到你的数据模型，当你具有相关实体的导航属性时。 EF 会自动在数据库中创建外键在需要的位置。 但是，数据模型中具有外键可以使更新更简单、 更高效。 例如，当提取过程实体，若要编辑，`Department`实体为 null 时，如果你不加载它，当你更新课程实体中，你将需要来首次读取`Department`实体。 当外键属性`DepartmentID`包含在数据模型中，你无需提取`Department`之后更新的实体。
+课程实体具有外键属性`DepartmentID`它指向相关`Department`实体，且没有`Department`导航属性。 如果拥有相关实体的导航属性，则实体框架不会要求为数据模型添加外键属性。 EF 会自动在数据库中创建外键在需要的位置。 但如果数据模型包含外键，则更新会变得更简单、更高效。 例如，当提取过程实体，若要编辑，`Department`实体为 null 时，如果你不加载它，当你更新课程实体中，你将需要来首次读取`Department`实体。 当外键属性`DepartmentID`包含在数据模型中，你无需提取`Department`之后更新的实体。
 
 ### <a name="the-databasegenerated-attribute"></a>DatabaseGenerated 属性
 
@@ -215,19 +215,19 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample16.cs)]
 
-默认情况下，实体框架将假定主键值都由数据库。 在大多数情况下要执行的操作。 但是，对于`Course`实体，将一个部门，另一个部门，一 2000年系列使用用户指定过程号例如 1000年系列，依次类推。
+默认情况下，实体框架将假定主键值都由数据库。 大多数情况下，这是理想情况。 但是，对于`Course`实体，将一个部门，另一个部门，一 2000年系列使用用户指定过程号例如 1000年系列，依次类推。
 
 ### <a name="foreign-key-and-navigation-properties"></a>外键和导航属性
 
 外键属性和中的导航属性`Course`实体反映了以下关系：
 
-- 课程都将分配到一个部门，因此没有`DepartmentID`外键和一个`Department`上面提到的原因的导航属性。 
+- 向一个系分配课程后，出于上述原因，会出现 `DepartmentID` 外键和 `Department` 导航属性。 
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample17.cs)]
-- 课程可以有任意数量的学生注册，因此`Enrollments`导航属性是集合： 
+- 参与一门课程的学生数量不定，因此 `Enrollments` 导航属性是一个集合： 
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample18.cs)]
-- 可能由多个教师讲授课程因此`Instructors`导航属性是集合： 
+- 一门课程可能由多位讲师讲授，因此 `Instructors` 导航属性是一个集合： 
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample19.cs)]
 
@@ -245,21 +245,21 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample21.cs)]
 
-列映射通常不是必需的因为实体框架通常选择基于你定义的属性的 CLR 类型的相应 SQL Server 数据类型。 CLR`decimal`类型映射到 SQL Server`decimal`类型。 但在这种情况下你知道列将包含货币金额和[money](https://msdn.microsoft.com/library/ms179882.aspx)数据类型是更适合。
+列映射通常不是必需的因为实体框架通常选择基于你定义的属性的 CLR 类型的相应 SQL Server 数据类型。 CLR`decimal` 类型会映射到 SQL Server`decimal`类型。 但在这种情况下你知道列将包含货币金额和[money](https://msdn.microsoft.com/library/ms179882.aspx)数据类型是更适合。
 
 ### <a name="foreign-key-and-navigation-properties"></a>外键和导航属性
 
-外键和导航属性反映了以下关系：
+外键和导航属性可反映以下关系：
 
-- 部门可能或可能没有管理员，并且管理员始终是一个教师。 因此`InstructorID`属性是作为外键与包含`Instructor`后添加了实体，以及一个问号`int`键入标记用于将标记为可为 null 的属性。导航属性名为`Administrator`但保留`Instructor`实体： 
+- 一个系可能有也可能没有管理员，而管理员始终是讲师。 因此`InstructorID`属性是作为外键与包含`Instructor`后添加了实体，以及一个问号`int`键入标记用于将标记为可为 null 的属性。导航属性名为`Administrator`但保留`Instructor`实体： 
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample22.cs)]
 - 部门可能有许多课程，因此`Courses`导航属性： 
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample23.cs)]
 
- > [!NOTE]
- > 按照约定，实体框架使级联删除对于不可为 null 的外键以及多对多关系。 这可能导致循环的级联删除规则，初始值设定项代码运行时将引发异常。 例如，如果你未定义`Department.InstructorID`为可为 null 的属性，你会收到以下异常消息的初始值设定项运行时:"的引用关系会导致不允许循环引用。" 如果您的业务规则需要`InstructorID`作为不可为 null 的属性，你将需要使用以下 fluent API 若要禁用的关系上的级联删除： 
+  > [!NOTE]
+  > 按照约定，实体框架能针对不可为 null 的外键和多对多关系启用级联删除。 这可能导致循环的级联删除规则，初始值设定项代码运行时将引发异常。 例如，如果你未定义`Department.InstructorID`为可为 null 的属性，你会收到以下异常消息的初始值设定项运行时:"的引用关系会导致不允许循环引用。" 如果您的业务规则需要`InstructorID`作为不可为 null 的属性，你将需要使用以下 fluent API 若要禁用的关系上的级联删除： 
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample24.cs)]
 
@@ -280,12 +280,12 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="foreign-key-and-navigation-properties"></a>外键和导航属性
 
-外键属性和导航属性反映了以下关系：
+外键属性和导航属性可反映以下关系：
 
-- 注册记录已经是单个的课程，因此`CourseID`外键属性和`Course`导航属性： 
+- 注册记录针对单个课程，因此存在 `CourseID`外键属性和`Course`导航属性： 
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample27.cs)]
-- 因此，注册记录将适用于单个学生，`StudentID`外键属性和`Student`导航属性： 
+- 注册记录针对单个学生，因此存在 `StudentID`外键属性和`Student`导航属性： 
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample28.cs)]
 
@@ -293,7 +293,7 @@ ms.lasthandoff: 01/24/2018
 
 没有之间的多对多关系`Student`和`Course`实体，与`Enrollment`实体充当多对多联接表*具有负载*数据库中。 这意味着，`Enrollment`表包含用于联接的表的外键除了其他数据 (在这种情况下，主键和`Grade`属性)。
 
-下图显示这些关系中的实体关系图的外观。 (此关系图生成使用[实体框架 Power 工具](https://visualstudiogallery.msdn.microsoft.com/72a60b14-1581-4b9b-89f2-846072eff19d); 创建关系图不属于本教程，只需使用此处为说明。)
+下图显示这些关系在实体关系图中的外观。 (此关系图生成使用[实体框架 Power 工具](https://visualstudiogallery.msdn.microsoft.com/72a60b14-1581-4b9b-89f2-846072eff19d); 创建关系图不属于本教程，只需使用此处为说明。)
 
 ![Student-Course_many-to-many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image11.png)
 
@@ -309,9 +309,9 @@ ms.lasthandoff: 01/24/2018
 
 实体框架会自动创建`CourseInstructor`表和你读取和更新到通过读取和更新的间接`Instructor.Courses`和`Course.Instructors`导航属性。
 
-## <a name="entity-diagram-showing-relationships"></a>关系图显示关系的实体
+## <a name="entity-diagram-showing-relationships"></a>显示关系的实体关系图
 
-下图显示为已完成的 School 模型的实体框架 Power 工具创建的关系图。
+下图显示 Entity Framework Power Tools 针对已完成的学校模型创建的关系图。
 
 ![School_data_model_diagram](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image13.png)
 
@@ -321,9 +321,9 @@ ms.lasthandoff: 01/24/2018
 
 接下来你将添加到新的实体`SchoolContext`类和自定义的映射使用某些[fluent API](https://msdn.microsoft.com/data/jj591617)调用。 （API 是"fluent"因为它通常用于通过连接一系列方法调用一起成一条语句。）
 
-在本教程中将仅为不能具有属性的数据库映射中使用 fluent API。 但是，你可以使用 fluent API 指定的格式、 验证和映射规则，你可以通过使用特性执行大多数。 某些属性，如`MinimumLength`不能使用 fluent API 应用。 如前所述，`MinimumLength`不会更改架构，它仅适用于客户端和服务器端验证规则
+在本教程中将仅为不能具有属性的数据库映射中使用 fluent API。 但 Fluent API 还可用于指定大多数格式化、验证和映射规则，这可通过特性完成。 `MinimumLength` 等特性不能通过 Fluent API 应用。 如前所述，`MinimumLength`不会更改架构，它仅适用于客户端和服务器端验证规则
 
-一些开发人员更愿意使用 fluent API 以独占方式，以便它们能够获得它们的实体类"清理"。 如果你想，并且有几个仅可由使用 fluent API 中完成的自定义项，可以混合属性和 fluent API，但建议的做法通常是选择这两种方法之一，并使用该一致地尽可能多地。
+某些开发者倾向于仅使用 Fluent API 以保持实体类的“纯净”。 如有需要，可混合使用特性和 Fluent API，且有些自定义只能通过 Fluent API 实现，但通常建议选择一种方法并尽可能坚持使用这一种。
 
 若要添加新的实体数据模型和执行未通过使用属性执行操作的数据库映射中的代码替换*DAL\SchoolContext.cs*替换为以下代码：
 
@@ -341,7 +341,7 @@ ms.lasthandoff: 01/24/2018
 
 有关在幕后做什么"fluent API"语句的信息，请参阅[Fluent API](https://blogs.msdn.com/b/aspnetue/archive/2011/05/04/entity-framework-code-first-tutorial-supplement-what-is-going-on-in-a-fluent-api-call.aspx)博客文章。
 
-## <a name="seed-the-database-with-test-data"></a>种子使用测试数据的数据库
+## <a name="seed-the-database-with-test-data"></a>使用测试数据设定数据库种子
 
 中的代码替换*Migrations\Configuration.cs*文件替换为以下代码，以便为你已创建的新实体提供种子数据。
 
@@ -393,12 +393,12 @@ ms.lasthandoff: 01/24/2018
 
 ![Table_data_in_CourseInstructor_table](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image15.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-现在将具有更复杂的数据模型和相应的数据库。 在以下教程中你将了解有关访问相关的数据的不同方式的详细信息。
+现在你就得到了更复杂的数据模型和相应的数据库。 在以下教程中你将了解有关访问相关的数据的不同方式的详细信息。
 
 在找不到其他实体框架资源的链接[ASP.NET 数据访问内容映射](../../../../whitepapers/aspnet-data-access-content-map.md)。
 
->[!div class="step-by-step"]
-[上一页](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[下一页](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [上一页](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [下一页](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)

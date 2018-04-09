@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-8
-title: "第 8 部分： 购物车与 Ajax 更新 |Microsoft 文档"
+title: 第 8 部分： 购物车与 Ajax 更新 |Microsoft 文档
 author: jongalloway
-description: "本系列教程详细介绍所有生成 ASP.NET MVC 音乐商店示例应用程序所采取的步骤。 第 8 部分介绍如何使用 Ajax 更新购物车。"
+description: 本系列教程详细介绍所有生成 ASP.NET MVC 音乐商店示例应用程序所采取的步骤。 第 8 部分介绍如何使用 Ajax 更新购物车。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 75e1dff96f8b56d74c28ff9d522f4766fbad669f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 195c01ff0d71b2bfd0c00e71244d47a166330921
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-8-shopping-cart-with-ajax-updates"></a>第 8 部分： 购物车与 Ajax 更新
 ====================
@@ -81,7 +81,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](mvc-music-store-part-8/samples/sample5.cs)]
 
-## <a name="viewmodels"></a>Viewmodel
+## <a name="viewmodels"></a>ViewModels
 
 我们购物车控制器需要进行一些复杂将信息传递给其视图不会完全映射到我们的模型对象。 我们不需要修改以满足我们的视图; 我们模型模型的类应表示我们的域，不是用户界面。 一种解决方案是将信息传递给使用 ViewBag 类中，我们使用存储管理器下拉列表中信息，但通过 ViewBag 传递的大量信息变得非常艰难来管理我们的视图。
 
@@ -161,6 +161,6 @@ ms.lasthandoff: 11/10/2017
 我们已构建了一个有效的购物车这样未注册的用户将项添加到购物车。 在以下部分中，我们将允许用户注册并完成结帐过程。
 
 
->[!div class="step-by-step"]
-[上一页](mvc-music-store-part-7.md)
-[下一页](mvc-music-store-part-9.md)
+> [!div class="step-by-step"]
+> [上一页](mvc-music-store-part-7.md)
+> [下一页](mvc-music-store-part-9.md)

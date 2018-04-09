@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
-title: "在 ASP.NET 网页中显示地图页 (Razor) 站点 |Microsoft 文档"
+title: 在 ASP.NET 网页中显示地图页 (Razor) 站点 |Microsoft 文档
 author: tfitzmac
-description: "此文章介绍了如何在基于映射提供的必应、 Google、 Ma 服务的 ASP.NET Web 页 (Razor) 网站网页上显示交互式的地图..."
+description: 此文章介绍了如何在基于映射提供的必应、 Google、 Ma 服务的 ASP.NET Web 页 (Razor) 网站网页上显示交互式的地图...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 6f3e6a0cfb8c08cd971e88986d0f059dd8237aab
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 608dab8760bad7b877ab6fd4f89b21e980f5b1db
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET 网站页 (Razor) 中显示地图
 ====================
@@ -89,9 +89,9 @@ ms.lasthandoff: 01/24/2018
         > [!NOTE]
         > 如果你正在使用 jQuery 库的不同版本，只需确保的你要指向该版本正确。
     - 调用`@Maps.GetGoogleHtml`页的正文中。 若要将地址映射，你必须传递地址字符串。 对于其他映射引擎方法的工作原理类似的方式 (`@Maps.GetYahooHtml`， `@Maps.GetMapQuestHtml`)。
-- 运行页面，并输入一个地址。 该页面显示地图中，基于 Google 地图，显示你指定的位置。
+3. 运行页面，并输入一个地址。 该页面显示地图中，基于 Google 地图，显示你指定的位置。
 
-    ![mapping-1](displaying-maps-in-an-aspnet-web-pages-site/_static/image2.png)
+     ![mapping-1](displaying-maps-in-an-aspnet-web-pages-site/_static/image2.png)
 
 ## <a name="creating-a-map-based-on-latitude-and-longitude-coordinates-using-bing"></a>创建基于纬度和经度地图坐标 （使用必应）
 
@@ -103,12 +103,12 @@ ms.lasthandoff: 01/24/2018
 2. 替换`your-key-here`替换先前生成的 Bing 地图密钥。
 3. 运行*MapCoordinates.cshtml*页上，输入纬度和经度坐标，然后单击**Map It ！** 按钮。 （如果你不知道任何坐标，请尝试以下。 这是 Microsoft 雷蒙德办公区上的位置）。
 
-    - 纬度： 47.6781005859375
-    - 经度：-122.158317565918
+   - 纬度： 47.6781005859375
+   - 经度：-122.158317565918
 
-    将显示的页，使用你指定的坐标。
+     将显示的页，使用你指定的坐标。
 
-    ![mapping-3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
+     ![mapping-3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他资源

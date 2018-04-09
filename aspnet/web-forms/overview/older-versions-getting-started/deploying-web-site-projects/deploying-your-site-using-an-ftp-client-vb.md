@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-vb
-title: "部署你的网站使用 FTP 客户端 (VB) |Microsoft 文档"
+title: 部署你的网站使用 FTP 客户端 (VB) |Microsoft 文档
 author: rick-anderson
-description: "部署 ASP.NET 应用程序的最简单方法是手动将从开发环境所需的文件复制到生产环境。 此应用..."
+description: 部署 ASP.NET 应用程序的最简单方法是手动将从开发环境所需的文件复制到生产环境。 此应用...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7792891aed6f0c5e952018dacb36a1d267cb6ae0
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 90ae866d82c4dbfd5c3e209c3d397df42d162515
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-your-site-using-an-ftp-client-vb"></a>部署你的网站使用 FTP 客户端 (VB)
 ====================
@@ -148,7 +148,7 @@ Web 应用程序开发和部署不是一次性的过程。 例如，创建簿评
 
 最后，请记住，重新部署应用程序可以花几秒钟到几分钟时间，具体取决于的数量和复制到生产环境所需要的文件的大小。 在此期间用户访问您的网站可能会遇到错误或异常行为。 你可以"关闭"将整个应用程序通过添加一个名为页`App_Offline.htm`到说明你的用户的应用程序的根目录下的站点维护 （或任何） 已关闭，并且将备份功能很快即可。 当`App_Offline.htm`文件存在，ASP.NET 运行时将所有传入请求重定向到该页面。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 部署 web 应用程序时，需要将从开发环境的所需的文件复制到生产环境。 依据通过网络传输文件的最常见方式是文件传输协议 (FTP) 和大多数 web 宿主提供程序支持对 web 服务器的 FTP 访问。 在本教程中我们已了解如何使用 FTP 客户端将所需的文件部署到 web 服务器。 部署后，该网站可访问的任何人都使用连接到 Internet ！
 
@@ -161,6 +161,6 @@ Web 应用程序开发和部署不是一次性的过程。 例如，创建簿评
 - [应用\_Offline.htm 和解决"IE 友好错误"功能](https://weblogs.asp.net/scottgu/App_5F00_Offline.htm-and-working-around-the-_2200_IE-Friendly-Errors_2200_-feature)
 - [会话状态模式](https://msdn.microsoft.com/library/ms178586.aspx)
 
->[!div class="step-by-step"]
-[上一页](determining-what-files-need-to-be-deployed-vb.md)
-[下一页](deploying-your-site-using-visual-studio-vb.md)
+> [!div class="step-by-step"]
+> [上一页](determining-what-files-need-to-be-deployed-vb.md)
+> [下一页](deploying-your-site-using-visual-studio-vb.md)

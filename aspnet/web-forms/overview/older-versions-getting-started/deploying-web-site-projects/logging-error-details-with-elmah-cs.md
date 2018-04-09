@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs
-title: "使用 ELMAH (C#) 进行日志记录错误详细信息 |Microsoft 文档"
+title: 使用 ELMAH (C#) 进行日志记录错误详细信息 |Microsoft 文档
 author: rick-anderson
-description: "错误日志记录模块和处理程序 (ELMAH) 提供日志运行时错误记录在生产环境中的另一种方法。 ELMAH 是一个免费、 开源错误..."
+description: 错误日志记录模块和处理程序 (ELMAH) 提供日志运行时错误记录在生产环境中的另一种方法。 ELMAH 是一个免费、 开源错误...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 26d40d17447b3b03d17265f291b8ac246a449966
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: cd91c745624f09d01a326a445bea2bb756576688
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="logging-error-details-with-elmah-c"></a>日志记录错误的详细信息，ELMAH (C#)
 ====================
@@ -70,9 +70,9 @@ ELMAH 1.0 BETA 3 (生成 10617)，在本文撰写之际，最新版本包括在�
 
 - **HTTP 模块**-HTTP 模块是用于定义事件处理程序类`HttpApplication`事件，如`Error`事件。 ELMAH 包括多个 HTTP 模块，三个最 germane 的正在： 
 
-    - `ErrorLogModule`-将未经处理的异常记录到日志源。
-    - `ErrorMailModule`-发送的电子邮件中的未经处理的异常的详细信息。
-    - `ErrorFilterModule`-将应用开发人员指定筛选器，以确定记录哪些异常的方式以及是将被忽略。
+    - `ErrorLogModule` -将未经处理的异常记录到日志源。
+    - `ErrorMailModule` -发送的电子邮件中的未经处理的异常的详细信息。
+    - `ErrorFilterModule` -将应用开发人员指定筛选器，以确定记录哪些异常的方式以及是将被忽略。
 - **HTTP 处理程序**-一个 HTTP 处理程序是负责生成特定类型的请求的标记的类。 ELMAH 包括呈现错误详细信息，作为网页、 RSS 源，或以逗号分隔的文件 (CSV) 的 HTTP 处理程序。
 - **错误日志源**-现成 ELMAH 可以记录到内存中，到 Microsoft SQL Server 数据库，到 Microsoft Access 数据库，到 Oracle 数据库，错误到 XML 文件，到 SQLite 数据库，或 Vista DB 数据库。 监视系统的运行状况，如 ELMAH 的体系结构是使用提供程序模型，这意味着你可以创建和无缝集成自己自定义日志的源提供程序，如果需要生成的。
 
@@ -238,7 +238,7 @@ ELMAH 的`ErrorLogModule`HTTP 模块将会自动记录到指定的日志源的�
 
 有关 ELMAH 的错误筛选功能的详细信息，请参阅[错误筛选部分](https://code.google.com/p/elmah/wiki/ErrorFiltering)中[ELMAH wiki](https://code.google.com/p/elmah/w/list)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 ELMAH 提供有关 ASP.NET web 应用程序中的日志记录错误的简单但强大机制。 Microsoft 的运行状况监视系统，如 ELMAH 可以将错误记录到数据库，并可以向开发人员通过电子邮件发送错误详细信息。 与监视系统的运行状况，不同 ELMAH 包括外框支持广泛的错误日志数据存储，包括： Microsoft SQL Server、 Microsoft Access、 Oracle、 XML 文件以及其他几个人。 此外，ELMAH 提供内置机制来查看错误日志和 web 页上，从特定错误有关的详细信息`elmah.axd`。 `elmah.axd`页也可呈现为 RSS 源或逗号分隔值文件 (CSV)，您可以使用 Microsoft Excel 读取的错误信息。 你还可以从使用声明性或以编程方式断言的日志筛选器的错误指示 ELMAH。 并可与 ASP.NET 版本 1.x 应用程序使用 ELMAH。
 
@@ -257,6 +257,6 @@ ELMAH 提供有关 ASP.NET web 应用程序中的日志记录错误的简单但�
 - [使用 HTTP 模块和处理程序创建可插入 ASP.NET 组件](https://msdn.microsoft.com/library/aa479332.aspx)
 - [网站安全教程](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
->[!div class="step-by-step"]
-[上一页](logging-error-details-with-asp-net-health-monitoring-cs.md)
-[下一页](precompiling-your-website-cs.md)
+> [!div class="step-by-step"]
+> [上一页](logging-error-details-with-asp-net-health-monitoring-cs.md)
+> [下一页](precompiling-your-website-cs.md)

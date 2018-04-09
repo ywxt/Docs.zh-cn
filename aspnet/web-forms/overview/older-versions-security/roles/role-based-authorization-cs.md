@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/roles/role-based-authorization-cs
-title: "基于角色的授权 (C#) |Microsoft 文档"
+title: 基于角色的授权 (C#) |Microsoft 文档
 author: rick-anderson
-description: "本教程开头一下如何角色 framework 将用户的角色与他的安全上下文相关联。 然后，它会检查如何应用基于角色的 URL..."
+description: 本教程开头一下如何角色 framework 将用户的角色与他的安全上下文相关联。 然后，它会检查如何应用基于角色的 URL...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/24/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/role-based-authorization-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9a71c463f94bafa80b7fd2f97f381b5d8cb5dcaa
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0a494e697eba44fcbf373c979e119572a8e37565
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="role-based-authorization-c"></a>基于角色的授权 (C#)
 ====================
@@ -73,18 +73,18 @@ ms.lasthandoff: 01/24/2018
 > 表 1 中列出的配置设置指定生成的角色缓存 cookie 的属性。 在 cookie、 它们的工作原理和它们的各种属性的详细信息，请阅读[此 Cookie 教程](http://www.quirksmode.org/js/cookies.html)。
 
 
-| **Property** | **说明** |
-| --- | --- |
-| `cacheRolesInCookie` | 一个布尔值，该值指示是否使用 cookie 缓存。 默认为 `false`。 |
-| `cookieName` | 角色缓存 cookie 的名称。 默认值是"。ASPXROLES"。 |
-| `cookiePath` | 角色名称 cookie 的路径。 Path 属性使开发人员可以限制到特定的目录层次结构的 cookie 的作用域。 默认值是"/"，它通知浏览器将身份验证票证 cookie 发送到对域进行任何请求。 |
-| `cookieProtection` | 指示哪些技术用来保护角色缓存 cookie。 允许的值包括： `All` （默认值）;`Encryption`;`None`; 和`Validation`。 步骤 3 中将回指<a id="_anchor_5"> </a> [*窗体身份验证配置和高级主题*](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md)教程，以有关这些保护级别的详细信息。 |
-| `cookieRequireSSL` | 一个布尔值，该值指示是否需要 SSL 连接来传输身份验证 cookie。 默认值为 `false`。 |
-| `cookieSlidingExpiration` | 一个布尔值，该值指示用户是否每次重置的 cookie 超时在单个会话期间访问该站点。 默认值为 `false`。 此值才相关`createPersistentCookie`设置为`true`。 |
-| `cookieTimeout` | 指定时间，以分钟为单位，身份验证票证 cookie 过期。 默认值为 `30`。 此值才相关`createPersistentCookie`设置为`true`。 |
-| `createPersistentCookie` | 一个布尔值，指定的角色缓存 cookie 的会话 cookie 或持久性 cookie。 如果`false`（默认值），使用会话 cookie，关闭浏览器时，其删除。 如果`true`，使用持久性 cookie; 它过期`cookieTimeout`数分钟后已创建或前一次访问，具体取决于的值后`cookieSlidingExpiration`。 |
-| `domain` | 指定 cookie 的域值。 默认值为空字符串，这会导致浏览器使用从该情况下，它已签发 （如 www.yourdomain.com) 的域。 在这种情况下，cookie 将**不**时进行请求定向到子域，例如 admin.yourdomain.com 发送。如果你想要传递给所有子域的 cookie 需要自定义`domain`属性，将其设置为"yourdomain.com"。 |
-| `maxCachedResults` | 在 cookie 中指定缓存的角色名称的最大的数量。 默认值为 25。 `RoleManagerModule`不会创建 cookie 的用户，属于多个`maxCachedResults`角色。 因此，`RolePrincipal`对象的`IsInRole`方法将使用`Roles`类以确定用户的角色。 原因`maxCachedResults`存在是因为许多用户代理不允许 cookie 大于 4096 字节。 因此，此线帽旨在降低超过此大小限制的可能性。 如果你有极长的角色名称，你可能想要考虑指定较小`maxCachedResults`值; contrariwise，如果你有极短的角色名称，您可以可能增大此值。 |
+| <strong>Property</strong> |                                                                                                                                                                                                                                                                                                                                                         <strong>说明</strong>                                                                                                                                                                                                                                                                                                                                                          |
+|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   `cacheRolesInCookie`    |                                                                                                                                                                                                                                                                                                                              一个布尔值，该值指示是否使用 cookie 缓存。 默认为 `false`。                                                                                                                                                                                                                                                                                                                              |
+|       `cookieName`        |                                                                                                                                                                                                                                                                                                                                     角色缓存 cookie 的名称。 默认值是"。ASPXROLES"。                                                                                                                                                                                                                                                                                                                                     |
+|       `cookiePath`        |                                                                                                                                                                                                                                角色名称 cookie 的路径。 Path 属性使开发人员可以限制到特定的目录层次结构的 cookie 的作用域。 默认值是"/"，它通知浏览器将身份验证票证 cookie 发送到对域进行任何请求。                                                                                                                                                                                                                                 |
+|    `cookieProtection`     |                                                                                                                                                               指示哪些技术用来保护角色缓存 cookie。 允许的值包括： `All` （默认值）;`Encryption`;`None`; 和`Validation`。 步骤 3 中将回指<a id="_anchor_5"> </a> [*窗体身份验证配置和高级主题*](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md)教程，以有关这些保护级别的详细信息。                                                                                                                                                                |
+|    `cookieRequireSSL`     |                                                                                                                                                                                                                                                                                                   一个布尔值，该值指示是否需要 SSL 连接来传输身份验证 cookie。 默认值为 `false`。                                                                                                                                                                                                                                                                                                   |
+| `cookieSlidingExpiration` |                                                                                                                                                                                                                                                  一个布尔值，该值指示用户是否每次重置的 cookie 超时在单个会话期间访问该站点。 默认值为 `false`。 此值才相关`createPersistentCookie`设置为`true`。                                                                                                                                                                                                                                                  |
+|      `cookieTimeout`      |                                                                                                                                                                                                                                                                         指定时间，以分钟为单位，身份验证票证 cookie 过期。 默认值为 `30`。 此值才相关`createPersistentCookie`设置为`true`。                                                                                                                                                                                                                                                                         |
+| `createPersistentCookie`  |                                                                                                                                                                   一个布尔值，指定的角色缓存 cookie 的会话 cookie 或持久性 cookie。 如果`false`（默认值），使用会话 cookie，关闭浏览器时，其删除。 如果`true`，使用持久性 cookie; 它过期`cookieTimeout`数分钟后已创建或前一次访问，具体取决于的值后`cookieSlidingExpiration`。                                                                                                                                                                    |
+|         `domain`          |                                                                                                                                                 指定 cookie 的域值。 默认值为空字符串，这会导致浏览器使用从该情况下，它已签发 （如 www.yourdomain.com) 的域。 在这种情况下，cookie 将<strong>不</strong>时进行请求定向到子域，例如 admin.yourdomain.com 发送。如果你想要传递给所有子域的 cookie 需要自定义`domain`属性，将其设置为"yourdomain.com"。                                                                                                                                                 |
+|    `maxCachedResults`     | 在 cookie 中指定缓存的角色名称的最大的数量。 默认值为 25。 `RoleManagerModule`不会创建 cookie 的用户，属于多个`maxCachedResults`角色。 因此，`RolePrincipal`对象的`IsInRole`方法将使用`Roles`类以确定用户的角色。 原因`maxCachedResults`存在是因为许多用户代理不允许 cookie 大于 4096 字节。 因此，此线帽旨在降低超过此大小限制的可能性。 如果你有极长的角色名称，你可能想要考虑指定较小`maxCachedResults`值; contrariwise，如果你有极短的角色名称，您可以可能增大此值。 |
 
 **表 1:**角色缓存 Cookie 配置选项
 
@@ -368,7 +368,7 @@ GridView 控件提供内置的编辑和删除支持时该控件绑定到正确�
 
 有关详细信息使用`PrincipalPermission`属性以便定义类和方法的授权规则，请参阅[Scott Guthrie](https://weblogs.asp.net/scottgu/)的博客文章[业务和数据层使用添加授权规则`PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx).
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中我们介绍了如何指定粗陋和细粒度授权规则基于用户的角色。 ASP。NET 的 URL 授权功能允许页开发人员指定哪些标识允许或拒绝访问哪些页。 正如我们所看到的进来<a id="_msoanchor_10"> </a> [*基于用户的授权*](../membership/user-based-authorization-cs.md)教程，则 URL 授权规则可以应用基于用户的用户。 它们还可以将应用基于角色的角色，如我们在本教程的步骤 1 中看到。
 
@@ -380,19 +380,19 @@ GridView 控件提供内置的编辑和删除支持时该控件绑定到正确�
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [将授权规则添加到业务和使用的数据层`PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
+- [将授权规则添加到业务和使用的数据层 `PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
 - [检查 ASP.NET 2.0 的成员资格、 角色和配置文件： 使用角色](http://aspnet.4guysfromrolla.com/articles/121405-1.aspx)
 - [ASP.NET 2.0 的安全问题列表](https://msdn.microsoft.com/library/ms998375.aspx)
 - [技术文档`<roleManager>`元素](https://msdn.microsoft.com/library/ms164660.aspx)
 
 ### <a name="about-the-author"></a>关于作者
 
-Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢...
 
-本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者包括 Suchi Banerjee 和 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者包括 Suchi Banerjee 和 Teresa 墨。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](assigning-roles-to-users-cs.md)
-[下一页](creating-and-managing-roles-vb.md)
+> [!div class="step-by-step"]
+> [上一页](assigning-roles-to-users-cs.md)
+> [下一页](creating-and-managing-roles-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-cs
-title: "DataList 和转发器 (C#) 中的自定义按钮 |Microsoft 文档"
+title: DataList 和转发器 (C#) 中的自定义按钮 |Microsoft 文档
 author: rick-anderson
-description: "在本教程中，我们将生成一个接口，使用中继器要列出各个类别在系统中，每个类别都提供一个按钮以显示其 associ..."
+description: 在本教程中，我们将生成一个接口，使用中继器要列出各个类别在系统中，每个类别都提供一个按钮以显示其 associ...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9a072ae18bbb19d086eb825c6e72b68d40b2e429
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d6d07f1dc3f97523da6d9ee1d45302cac06b45d2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="custom-buttons-in-the-datalist-and-repeater-c"></a>DataList 和转发器 (C#) 中的自定义按钮
 ====================
@@ -104,8 +104,8 @@ ms.lasthandoff: 01/24/2018
 
 DataList 或转发器中单击按钮时，通常我们需要 （如传递 （在这种情况，可能有多个在控件中，如这两个的编辑按钮和删除按钮） 时单击的按钮和可能的一些其他信息主键值其按钮被单击的项）。 按钮、 LinkButton 和 ImageButton 提供两个属性，其值传递给`ItemCommand`事件处理程序：
 
-- `CommandName`通常用于标识在模板中的每个按钮的字符串
-- `CommandArgument`通常用来保存某些数据字段，如的主键值的值
+- `CommandName` 通常用于标识在模板中的每个按钮的字符串
+- `CommandArgument` 通常用来保存某些数据字段，如的主键值的值
 
 对于此示例中，设置 LinkButton s `CommandName` ShowProducts 和绑定的当前记录 s 主键值的属性`CategoryID`到`CommandArgument`属性使用的数据绑定语法`CategoryArgument='<%# Eval("CategoryID") %>'`。 指定这两个属性后, LinkButton s 声明性语法应如下所示：
 
@@ -116,10 +116,10 @@ DataList 或转发器中单击按钮时，通常我们需要 （如传递 （在
 
 为转发器 s 创建事件处理程序`ItemCommand`事件并记下第二个参数传递到事件处理程序 (名为`e`)。 此第二个参数属于类型[ `RepeaterCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeatercommandeventargs.aspx)并具有以下四个属性：
 
-- `CommandArgument`值被单击的按钮的`CommandArgument`属性
-- `CommandName`按钮的值`CommandName`属性
-- `CommandSource`对被单击的按钮控件的引用
-- `Item`对引用[ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem.aspx)包含被单击的按钮; 绑定到中继器每个记录显示为`RepeaterItem`
+- `CommandArgument` 值被单击的按钮的`CommandArgument`属性
+- `CommandName` 按钮的值`CommandName`属性
+- `CommandSource` 对被单击的按钮控件的引用
+- `Item` 对引用[ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem.aspx)包含被单击的按钮; 绑定到中继器每个记录显示为 `RepeaterItem`
 
 由于所选类别 s`CategoryID`通过传入`CommandArgument`属性，我们可以获取与所选类别中关联的产品集`ItemCommand`事件处理程序。 然后，这些产品可以绑定到中的如何控件`ItemTemplate`(哪些我们遇到有待添加)。 所有保持，，然后是添加如何，都引用在`ItemCommand`事件处理程序，并将绑定到它的一套所选类别，在步骤 4 中，我们将介绍的产品。
 
@@ -154,7 +154,7 @@ DataList 或转发器中单击按钮时，通常我们需要 （如传递 （在
 **图 7**: 如何用来显示所选分类的产品 ([单击以查看实际尺寸的图像](custom-buttons-in-the-datalist-and-repeater-cs/_static/image17.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 DataList 和转发器控件可以包含在其模板中任意数量的按钮、 LinkButtons 或 ImageButtons。 此类按钮，单击时，会导致回发和引发`ItemCommand`事件。 若要将自定义服务器端操作相关联与所单击的按钮，创建的事件处理程序`ItemCommand`事件。 在此事件处理程序首先检查传入`CommandName`值以确定被单击的按钮。 其他信息 （可选） 可以提供通过按钮的`CommandArgument`属性。
 
@@ -162,11 +162,11 @@ DataList 和转发器控件可以包含在其模板中任意数量的按钮、 L
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Dennis Patterson。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[下一篇](custom-buttons-in-the-datalist-and-repeater-vb.md)
+> [!div class="step-by-step"]
+> [下一篇](custom-buttons-in-the-datalist-and-repeater-vb.md)

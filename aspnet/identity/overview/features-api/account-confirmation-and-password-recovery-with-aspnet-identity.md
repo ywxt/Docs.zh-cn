@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
-title: "帐户确认和密码恢复具有 ASP.NET 标识 (C#) |Microsoft 文档"
+title: 帐户确认和密码恢复具有 ASP.NET 标识 (C#) |Microsoft 文档
 author: HaoK
-description: "在进行你应首先完成本教程之前具有登录、 电子邮件确认及密码重置创建安全的 ASP.NET MVC 5 web 应用程序。 本教程中..."
+description: 在进行你应首先完成本教程之前具有登录、 电子邮件确认及密码重置创建安全的 ASP.NET MVC 5 web 应用程序。 本教程中...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/26/2015
 ms.topic: article
 ms.assetid: 8d54180d-f826-4df7-b503-7debf5ed9fb3
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 548baaaa06980fb793c079b66b6edc34422eb579
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0167388cf6b488b72ca36f583a7794690dbf9900
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>帐户确认和密码恢复 ASP.NET 标识 (C#)
 ====================
@@ -88,7 +88,7 @@ ms.lasthandoff: 01/24/2018
   
     ![](account-confirmation-and-password-recovery-with-aspnet-identity/_static/image10.png)  
   
- 此时不已确认电子邮件。
+   此时不已确认电子邮件。
 
 ASP.NET 标识的默认数据存储是实体框架，但你可以配置为使用其他数据存储，以及添加其他字段。 请参阅[其他资源](#addRes)在本教程末尾的部分。
 
@@ -117,7 +117,7 @@ Cookie 中间件检查每个请求上的 cookie。 `SecurityStampValidator`中�
 - 双因素身份验证 (2FA)。 将另一个教程中介绍 2FA 和短信。
 - 挂接电子邮件和 SMS 服务。 （我将介绍 SMS 另一个教程中）。
 
-`ApplicationUserManager`类派生自泛型`UserManager<ApplicationUser>`类。 `ApplicationUser`派生自[IdentityUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityuser.aspx)。 `IdentityUser`派生自泛型`IdentityUser`类：
+`ApplicationUserManager`类派生自泛型`UserManager<ApplicationUser>`类。 `ApplicationUser` 派生自[IdentityUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityuser.aspx)。 `IdentityUser` 派生自泛型`IdentityUser`类：
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample1.cs)]
 
@@ -127,11 +127,11 @@ Cookie 中间件检查每个请求上的 cookie。 `SecurityStampValidator`中�
 
 ### <a name="applicationuser"></a>ApplicationUser
 
-`ApplicationUser`(`public class ApplicationUserManager : UserManager<ApplicationUser>`) 中定义*Models\IdentityModels.cs*作为：
+`ApplicationUser` (`public class ApplicationUserManager : UserManager<ApplicationUser>`) 中定义*Models\IdentityModels.cs*作为：
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample2.cs?highlight=8-9)]
 
-上面的突出显示的代码生成[ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx)。 ASP.NET 标识和 OWIN Cookie 身份验证都是基于声明的因此，框架需要应用程序以生成`ClaimsIdentity`用户。 `ClaimsIdentity`具有信息有关的用户，如用户名、 的所有声明 age 和用户属于哪些角色。 在此阶段，你还可以添加用户的多个的声明。
+上面的突出显示的代码生成[ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx)。 ASP.NET 标识和 OWIN Cookie 身份验证都是基于声明的因此，框架需要应用程序以生成`ClaimsIdentity`用户。 `ClaimsIdentity` 具有信息有关的用户，如用户名、 的所有声明 age 和用户属于哪些角色。 在此阶段，你还可以添加用户的多个的声明。
 
 OWIN`AuthenticationManager.SignIn`方法通过中`ClaimsIdentity`并对用户进行签名：
 
@@ -152,7 +152,7 @@ OWIN`AuthenticationManager.SignIn`方法通过中`ClaimsIdentity`并对用户进
 
     [!code-console[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample4.cmd)]
 
- 在本教程中，我们将使用[SendGrid](http://sendgrid.com/)发送电子邮件。 `Identity.Samples`程序包将安装我们将使用的代码。
+   在本教程中，我们将使用[SendGrid](http://sendgrid.com/)发送电子邮件。 `Identity.Samples`程序包将安装我们将使用的代码。
 3. 设置[项目以使用 SSL](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)。
 4. 通过运行应用程序中，单击测试本地帐户创建**注册**链接，然后发布注册表单。
 5. 单击演示电子邮件链接，这将模拟电子邮件确认。

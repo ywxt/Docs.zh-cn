@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/publish-to-azure
-title: "将 MVC 数据库第一个站点发布到 Azure |Microsoft 文档"
+title: 将 MVC 数据库第一个站点发布到 Azure |Microsoft 文档
 author: tfitzmac
-description: "使用 MVC、 实体框架和 ASP.NET 基架，可以创建的 web 应用程序提供了一个接口到现有数据库。 此教程系列..."
+description: 使用 MVC、 实体框架和 ASP.NET 基架，可以创建的 web 应用程序提供了一个接口到现有数据库。 此教程系列...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/22/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/publish-to-azure
 msc.type: authoredcontent
-ms.openlocfilehash: eadc0f2b08df29f80fe53d03cf88cd3cdcecfb12
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 839bbceba6f0e098303facd40dbb1496bd449ba3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="publish-mvc-database-first-site-to-azure"></a>将 MVC 数据库第一个站点发布到 Azure
 ====================
@@ -152,7 +152,7 @@ ms.lasthandoff: 01/24/2018
 
 ![新表](publish-to-azure/_static/image22.png)
 
-现在你已准备好测试 web 应用程序部署到 Azure。 导航到 Azure 上的 web 应用程序 （如 http://contosositeexample.azurewebsites.net/)。 单击链接可以获得的学生的列表，您应看到学生的索引视图。
+现在你已准备好测试 web 应用程序部署到 Azure。 导航到在 Azure 上的 web 应用 (如http://contosositeexample.azurewebsites.net/)。 单击链接可以获得的学生的列表，您应看到学生的索引视图。
 
 ![查看](publish-to-azure/_static/image23.png)
 
@@ -166,5 +166,5 @@ Code First 开发的介绍性示例，请参阅[Getting Started with ASP.NET MVC
 
 有关更高级的示例，请参阅[为 ASP.NET MVC 4 应用程序创建实体框架数据模型](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 请注意，使用第一个数据库中的数据使用 DbContext API 是用于在第一个代码中使用数据的 API 相同。 即使你想要使用第一个数据库，你可以了解如何处理更复杂的方案，如读取和更新相关的数据，处理并发冲突，Code First 教程中，依此类推。 如何创建数据库、 上下文类和实体类中是唯一的区别。
 
->[!div class="step-by-step"]
-[上一篇](enhancing-data-validation.md)
+> [!div class="step-by-step"]
+> [上一篇](enhancing-data-validation.md)

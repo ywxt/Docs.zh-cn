@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
-title: "使用 Visual Studio 的 ASP.NET Web 部署： 将部署到测试 |Microsoft 文档"
+title: 使用 Visual Studio 的 ASP.NET Web 部署： 将部署到测试 |Microsoft 文档
 author: tdykstra
-description: "本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的..."
+description: 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure App Service Web Apps 或第三方托管提供程序，使用的...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/23/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
-ms.openlocfilehash: 01f72e0240e84944f8ffece9a2dbc5802be4646b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: dc11072e053cbddd089e5df4bcea6d2a7af864fc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>使用 Visual Studio 的 ASP.NET Web 部署： 将部署到测试
 ====================
@@ -52,15 +52,15 @@ ms.lasthandoff: 01/24/2018
 
     若要运行 Web 平台安装程序安装 IIS 和 Web 部署，请使用以下链接。 如果你已安装 IIS、 Web 部署或任何其所需的组件，Web 平台安装程序仅安装功能丢失。
 
-    - [安装 IIS 和 Web 部署使用 WebPI](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=IIS7;ASPNET;NETFramework4;WDeploy)
+   - [安装 IIS 和 Web 部署使用 WebPI](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=IIS7;ASPNET;NETFramework4;WDeploy)
 
-    你将看到，该值指示将安装 IIS 7 的消息。 链接适用于 Windows 8 中 IIS 8 但适用于 Windows 8 确保执行以下步骤安装 ASP.NET 4.5:
+     你将看到，该值指示将安装 IIS 7 的消息。 链接适用于 Windows 8 中 IIS 8 但适用于 Windows 8 确保执行以下步骤安装 ASP.NET 4.5:
 
-    1. 打开**控制面板**，**程序和功能**，**打开或关闭 Windows 功能**。
-    2. 展开**Internet Information Services**， **World Wide Web 服务**，和**应用程序开发功能**。
-    3. 请确保**ASP.NET 4.5**选择。
+   - 打开**控制面板**，**程序和功能**，**打开或关闭 Windows 功能**。
+   - 展开**Internet Information Services**， **World Wide Web 服务**，和**应用程序开发功能**。
+   - 请确保**ASP.NET 4.5**选择。
 
-        ![选择 ASP.NET 4.5](deploying-to-iis/_static/image1.png)
+      ![选择 ASP.NET 4.5](deploying-to-iis/_static/image1.png)
 
 安装 IIS 后，运行**IIS 管理器**若要确保.NET Framework 版本 4 分配给默认应用程序池。
 
@@ -178,7 +178,7 @@ Contoso 大学应用程序具有两个数据库： 成员资格数据库和应�
     该向导将自动前进到**连接**选项卡。
 4. 在**服务 URL**框中，输入*localhost*。
 5. 在**站点/应用程序**框中，输入*默认网站/ContosoUniversity*
-6. 在**目标 URL**框中，输入`http://localhost/ContosoUniversity`
+6. 在**目标 URL**框中，输入 `http://localhost/ContosoUniversity`
 
     **目标 URL**设置不是必需的。 Visual Studio 完成部署应用程序，它将自动打开默认浏览器到此 URL。 如果你不想要在部署后自动打开浏览器，请将此框留空。
 7. 单击**验证连接**以验证设置是否正确，并可以在本地计算机上连接到 IIS。
@@ -318,7 +318,7 @@ Contoso 大学应用程序具有两个数据库： 成员资格数据库和应�
 1. 在**设置**选项卡**发布 Web**向导中，输入完整的数据库架构更新权限，使用指定的用户的连接字符串，然后清除**使用此连接字符串在运行时**复选框。 在已部署的 Web.config 文件中，这将成为`DatabasePublish`连接字符串。
 2. 创建 Web.config 文件转换为你想要在运行时使用的应用程序的连接字符串。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 你现在已在开发计算机上部署到 IIS 应用程序，并且存在测试。
 
@@ -337,6 +337,6 @@ Contoso 大学应用程序具有两个数据库： 成员资格数据库和应�
 
 在中等信任中运行你的应用程序时，可能出现哪些问题有关的信息，请参阅[在中等信任环境中承载 ASP.NET 应用程序](http://www.4guysfromrolla.com/articles/100307-1.aspx)上从 Rolla 站点 4 专家。
 
->[!div class="step-by-step"]
-[上一页](project-properties.md)
-[下一页](setting-folder-permissions.md)
+> [!div class="step-by-step"]
+> [上一页](project-properties.md)
+> [下一页](setting-folder-permissions.md)
