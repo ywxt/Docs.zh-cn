@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-cs
-title: "使用 SQL 缓存依赖项 (C#) |Microsoft 文档"
+title: 使用 SQL 缓存依赖项 (C#) |Microsoft 文档
 author: rick-anderson
-description: "最简单的缓存策略是时间的允许缓存的数据在指定段后过期。 但是，此简单的方法意味着，缓存的数据 maintai..."
+description: 最简单的缓存策略是时间的允许缓存的数据在指定段后过期。 但是，此简单的方法意味着，缓存的数据 maintai...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/30/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a29c77688b0179730ccb1b48e62ae28a0148f94d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8660fd979b5f18ed0182c8ae1e671f362f5dec7e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-sql-cache-dependencies-c"></a>使用 SQL 缓存依赖项 (C#)
 ====================
@@ -295,7 +295,7 @@ ASP.NET 运行时跟踪当前`changeId`表缓存数据使用时`SqlCacheDependen
 > SQL 缓存依赖项也可以用于[输出缓存](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/caching/output.aspx)。 此功能的演示，请参阅：[使用与 SQL Server ASP.NET 输出缓存](https://msdn.microsoft.com/library/e3w8402y(VS.80).aspx)。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 除非在数据库中修改，否则，当缓存数据库的数据，数据将理想情况下会保留在缓存中。 使用 ASP.NET 2.0 中，可以创建和声明性和编程方案中使用 SQL 缓存依赖项。 使用此方法时面临的挑战之一是在发现时修改的数据。 Microsoft SQL Server 2005 的完整版本提供当查询结果已更改时，可以通知应用程序的通知功能。 对于 Express 版本的 SQL Server 2005 和 SQL server 的较旧版本，必须使用一种轮询系统。 幸运的是，设置必要的轮询基础结构将非常简单。
 
@@ -309,16 +309,16 @@ ASP.NET 运行时跟踪当前`changeId`表缓存数据使用时`SqlCacheDependen
 - [创建查询通知](https://msdn.microsoft.com/library/ms188669.aspx)
 - [在缓存中使用的 ASP.NET`SqlCacheDependency`类](https://msdn.microsoft.com/library/ms178604(VS.80).aspx)
 - [ASP.NET SQL 服务器注册工具 (`aspnet_regsql.exe`)](https://msdn.microsoft.com/library/ms229862(vs.80).aspx)
-- [概述`SqlCacheDependency`](http://www.aspnetresources.com/blog/sql_cache_depedency_overview.aspx)
+- [概述 `SqlCacheDependency`](http://www.aspnetresources.com/blog/sql_cache_depedency_overview.aspx)
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Marko Rangel、 Teresa 墨和希尔顿 Giesenow。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](caching-data-at-application-startup-cs.md)
-[下一页](caching-data-with-the-objectdatasource-vb.md)
+> [!div class="step-by-step"]
+> [上一页](caching-data-at-application-startup-cs.md)
+> [下一页](caching-data-with-the-objectdatasource-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs
-title: "创建自定义 AJAX 控件工具包控件扩展程序 (C#) |Microsoft 文档"
+title: 创建自定义 AJAX 控件工具包控件扩展程序 (C#) |Microsoft 文档
 author: microsoft
-description: "自定义扩展程序，可以自定义和扩展 ASP.NET 控件的功能而无需创建新类。"
+description: 自定义扩展程序，可以自定义和扩展 ASP.NET 控件的功能而无需创建新类。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2ae03484dd1161c65b77f4718bb8cedb5abfdd82
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dc058d1d19df880109352caf2dc7d1860121a104
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-custom-ajax-control-toolkit-control-extender-c"></a>创建自定义 AJAX 控件工具包控件扩展程序 (C#)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 自定义扩展程序，可以自定义和扩展 ASP.NET 控件的功能而无需创建新类。
 
@@ -198,7 +198,7 @@ Initialize （） 方法将与行为的目标元素关联的 keyup 事件处理�
 2. ScriptManager 拖到页。
 3. 将 TextBox 控件拖到该页面。
 4. 将按钮控件拖到该页面。
-5. 在属性窗口中，将更改按钮 ID 属性的值*btnSave*和值的文本属性*保存\**。
+5. 在属性窗口中，将更改按钮 ID 属性的值<em>btnSave</em>和值的文本属性*保存\**。
   
 
 我们创建了一个页面，标准 ASP.NET 文本框和按钮控件。
@@ -234,10 +234,10 @@ Initialize （） 方法将与行为的目标元素关联的 keyup 事件处理�
 **图 07**: DisabledButton 扩展程序中操作 ([单击以查看实际尺寸的图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image27.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程的目的是说明如何将扩展 AJAX 控件工具包带有自定义的扩展程序控件。 在本教程中，我们创建了一个简单 DisabledButton 控件扩展程序添加。 我们通过创建 DisabledButtonExtender 类、 DisabledButtonBehavior JavaScript 行为和 DisabledButtonDesigner 类实现了此扩展程序。 每当创建自定义控件扩展程序遵循一组类似的步骤。
 
->[!div class="step-by-step"]
-[上一页](using-ajax-control-toolkit-controls-and-control-extenders-cs.md)
-[下一页](get-started-with-the-ajax-control-toolkit-vb.md)
+> [!div class="step-by-step"]
+> [上一页](using-ajax-control-toolkit-controls-and-control-extenders-cs.md)
+> [下一页](get-started-with-the-ajax-control-toolkit-vb.md)

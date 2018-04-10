@@ -1,7 +1,7 @@
 ---
-title: "使用单页应用程序模板"
+title: 通过 ASP.NET Core 使用单页应用程序模板
 author: SteveSandersonMS
-description: "了解如何安装并开始使用 ASP.NET Core 单页应用程序 (SPA) 项目模板。"
+description: 了解如何安装并开始使用 ASP.NET Core 单页应用程序 (SPA) 项目模板。
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,20 +11,20 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/index
-ms.openlocfilehash: 63b56de101199e9ea0d66d89d2dd7288e47902f6
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: eda4817de007f3c3184b2ba6ed6c97989ff17da5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="use-the-single-page-application-templates"></a>使用单页应用程序模板
+# <a name="use-the-single-page-application-templates-with-aspnet-core"></a>通过 ASP.NET Core 使用单页应用程序模板
 
 > [!NOTE]
 > 已发布的 .NET Core 2.0.x SDK 包括 Angular、React 以及带 Redux 的 React 早期项目模板。 本文档并不涉及这些早期项目模板。 本文档适用于最新的 Angular、React 以及带 Redux 的 React 模板，这些模板可手动安装到 ASP.NET Core 2.0 中。 ASP.NET Core 2.1 中默认包含这些模板。
 
 ## <a name="prerequisites"></a>系统必备
 
-* [.NET Core SDK](https://www.microsoft.com/net/download) 版本 2.0.0 或更高版本
+* [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
 * [Node.js](https://nodejs.org) 版本 6 或更高版本
 
 ## <a name="installation"></a>安装

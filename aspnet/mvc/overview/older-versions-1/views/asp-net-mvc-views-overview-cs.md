@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-cs
-title: "ASP.NET MVC 视图概述 (C#) |Microsoft 文档"
+title: ASP.NET MVC 视图概述 (C#) |Microsoft 文档
 author: StephenWalther
-description: "有何它区别从 HTML 页和 ASP.NET MVC 视图是什么？ 在本教程中，Stephen Walther 向您介绍视图，并演示如何 t..."
+description: 有何它区别从 HTML 页和 ASP.NET MVC 视图是什么？ 在本教程中，Stephen Walther 向您介绍视图，并演示如何 t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9de095b0621af3b6166a2e1cbcb1c63c26a88aa2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5217994168ebac32a4a9754ae09e63e120804813
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-views-overview-c"></a>ASP.NET MVC 视图概述 (C#)
 ====================
@@ -84,7 +84,7 @@ View();
 
 请注意，列出 2 中的 HTML 页面的正文包含以下脚本：
 
-&lt;%Response.write(datetime.now); %&gt;
+&lt;% Response.Write(DateTime.Now);%&gt;
 
 使用脚本分隔符&lt;%和 %&gt;来标记的开头和末尾脚本。 此脚本是用 C# 编写的。 它通过调用 Response.Write() 方法，以呈现到浏览器的内容显示了当前日期和时间。 脚本分隔符&lt;%和 %&gt;可以用于执行一个或多个语句。
 
@@ -118,7 +118,7 @@ View();
 
 使用 HTML 帮助器方法是可选的。 它们使你更轻松通过减少的 HTML 和你需要编写的脚本。 列出 5 中的视图将列出 4 中的视图与完全相同的方式呈现而无需使用 HTML 帮助器。
 
-**列出 5-\Views\Home\Login.aspx**
+**Listing 5 -- \Views\Home\Login.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample5.aspx)]
 
@@ -136,7 +136,7 @@ View();
 
 列出 7 中的视图从查看数据中检索消息，并呈现到浏览器的消息。
 
-**列出 7-\Views\Product\Index.aspx**
+**Listing 7 -- \Views\Product\Index.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample7.aspx)]
 
@@ -148,9 +148,9 @@ View();
 
 此外可以将从控制器的强类型化的视图数据传递到视图。 我们在本教程中浏览本主题**了解强类型化视图数据和视图**。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程提供对 ASP.NET MVC 视图、 查看数据和 HTML 帮助器的简短介绍。 在第一个部分中，您学习了如何将新视图添加到你的项目。 你已了解，你必须添加视图到正确的文件夹以从特定控制器调用它。 接下来，我们讨论 HTML 帮助的主题。 你已了解如何 HTML 帮助器使您能够轻松地生成标准 HTML 内容。 最后，您学习了如何充分利用查看数据以将数据从控制器传递到视图。
 
->[!div class="step-by-step"]
-[下一篇](creating-custom-html-helpers-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](creating-custom-html-helpers-cs.md)

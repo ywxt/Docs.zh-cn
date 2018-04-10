@@ -1,7 +1,7 @@
 ---
-title: "从 ASP.NET Core 1.x 迁移到 2.0"
+title: 从 ASP.NET Core 1.x 迁移到 2.0
 author: scottaddie
-description: "本文概述了将 ASP.NET Core 1.x 项目迁移到 ASP.NET Core 2.0 的先决条件和最常见步骤。"
+description: 本文概述了将 ASP.NET Core 1.x 项目迁移到 ASP.NET Core 2.0 的先决条件和最常见步骤。
 manager: wpickett
 ms.author: scaddie
 ms.date: 10/03/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/1x-to-2x/index
-ms.openlocfilehash: ebc4efdedd60c38280a0d37b20313e09671f7f9d
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4b7a13b31340f01c4f1527f602b925d3ac4e8241
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-from-aspnet-core-1x-to-aspnet-core-20"></a>从 ASP.NET Core 1.x 迁移到 ASP.NET Core 2.0
+# <a name="migrate-from-aspnet-core-1x-to-20"></a>从 ASP.NET Core 1.x 迁移到 2.0
 
 作者：[Scott Addie](https://github.com/scottaddie)
 
@@ -179,7 +179,7 @@ Visual Studio 2017 中创建的 ASP.NET Core 1.1 项目默认添加 Application 
 <a name="auth-and-identity"></a>
 
 ## <a name="adopt-authenticationidentity-improvements"></a>采用身份验证/标识改进
-ASP.NET Core 2.0 具有新的身份验证模型和大量针对 ASP.NET Core 标识的重大更改。 如果在启用单个用户帐户的情况下创建项目，或者已手动添加身份验证或标识，请参阅[将身份验证和标识迁移到 ASP.NET Core 2.0](xref:migration/1x-to-2x/identity-2x)。
+ASP.NET Core 2.0 具有新的身份验证模型和大量针对 ASP.NET Core 标识的重大更改。 如果在启用个人用户帐户的情况下创建了项目，或者已手动添加身份验证或标识，请参阅[将身份验证和标识迁移到 ASP.NET Core 2.0](xref:migration/1x-to-2x/identity-2x)。
 
 ## <a name="additional-resources"></a>其他资源
 

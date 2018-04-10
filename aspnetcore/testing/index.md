@@ -1,7 +1,7 @@
 ---
-title: "在 ASP.NET Core 中测试和调试"
+title: 在 ASP.NET Core 中测试和调试
 author: ardalis
-description: "指向用于测试和调试 ASP.NET Core 应用程序的资源的链接。"
+description: 指向用于测试和调试 ASP.NET Core 应用程序的资源的链接。
 manager: wpickett
 ms.author: riande
 ms.date: 11/20/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/index
-ms.openlocfilehash: 5cf482941e0a45c349d21b27a8cdcc2068e45056
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 73d239070726eda3f572d3e13ad2908c6d7b55c4
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="test-and-debug-in-aspnet-core"></a>在 ASP.NET Core 中测试和调试
 

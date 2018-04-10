@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/getting-started/using-ajax-control-toolkit-controls-and-control-extenders-cs
-title: "使用 AJAX 控件工具包控件和控件扩展 (C#) |Microsoft 文档"
+title: 使用 AJAX 控件工具包控件和控件扩展 (C#) |Microsoft 文档
 author: microsoft
-description: "了解如何将 AJAX 控件工具包控件和扩展程序添加到 ASP.NET 页。"
+description: 了解如何将 AJAX 控件工具包控件和扩展程序添加到 ASP.NET 页。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/using-ajax-control-toolkit-controls-and-control-extenders-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 42a210ac41e83e2379aa64979f42ce66c843f878
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3d7cea2452db01ca116849ffb17631db3b935668
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-ajax-control-toolkit-controls-and-control-extenders-c"></a>使用 AJAX 控件工具包控件和控件扩展 (C#)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 了解如何将 AJAX 控件工具包控件和扩展程序添加到 ASP.NET 页。
 
@@ -106,6 +106,6 @@ AJAX 控件工具包还包含的控件扩展程序。 顾名思义，一个控�
 
 可以由多个控件扩展扩展单个 ASP.NET 控件。 要扩展控件的属性表将列出所有与该控件关联的控件扩展程序。
 
->[!div class="step-by-step"]
-[上一页](get-started-with-the-ajax-control-toolkit-cs.md)
-[下一页](creating-a-custom-ajax-control-toolkit-control-extender-cs.md)
+> [!div class="step-by-step"]
+> [上一页](get-started-with-the-ajax-control-toolkit-cs.md)
+> [下一页](creating-a-custom-ajax-control-toolkit-control-extender-cs.md)

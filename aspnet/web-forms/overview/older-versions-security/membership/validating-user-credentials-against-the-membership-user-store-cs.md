@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-cs
-title: "正在验证用户凭据对成员资格用户存储区 (C#) |Microsoft 文档"
+title: 正在验证用户凭据对成员资格用户存储区 (C#) |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将了解如何验证成员资格用户存储区使用的编程方法和登录控制针对用户的凭据..."
+description: 在本教程中我们将了解如何验证成员资格用户存储区使用的编程方法和登录控制针对用户的凭据...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8f8f4db63ba8c1f1c1df7c1c5c1f92184bf6841d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 484a0f16265ee2d887ee08f6ae7ada47047f1f04
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-user-credentials-against-the-membership-user-store-c"></a>正在验证用户凭据对成员资格用户存储区 (C#)
 ====================
@@ -39,9 +39,9 @@ ms.lasthandoff: 01/24/2018
 
 对于使用 forms 身份验证的网站，用户登录到网站访问登录页并输入其凭据。 然后，针对用户存储比较这些凭据。 如果它们有效，然后将向用户授予窗体身份验证票证，这是安全令牌，该值指示的标识和访问者的真实性。
 
-若要验证对成员资格 framework 用户，使用`Membership`类的[`ValidateUser`方法](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)。 `ValidateUser`方法采用两个输入参数-中 *`username`* 和 *`password`*  -并返回一个布尔值，该值指示凭据是否有效。 与类似`CreateUser`方法，在前面的教程，我们探讨`ValidateUser`方法会委托给配置成员资格提供程序实际的验证。
+若要验证对成员资格 framework 用户，使用`Membership`类的[`ValidateUser`方法](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)。 `ValidateUser`方法采用两个输入参数-中*`username`*和*`password`* -并返回一个布尔值，该值指示凭据是否有效。 与类似`CreateUser`方法，在前面的教程，我们探讨`ValidateUser`方法会委托给配置成员资格提供程序实际的验证。
 
-`SqlMembershipProvider`验证提供的凭据通过获取指定的用户的密码通过`aspnet_Membership_GetPasswordWithFormat`存储过程。 回想一下，`SqlMembershipProvider`存储使用三种格式之一的用户的密码： 清除，加密，或哈希处理。 `aspnet_Membership_GetPasswordWithFormat`存储的过程返回其原始格式的密码。 加密或经过哈希处理密码，`SqlMembershipProvider`转换 *`password`* 值传递给`ValidateUser`方法划分为它的等效项加密或哈希状态，然后将它与什么返回从进行比较数据库。 如果存储在数据库中的密码与用户输入的格式化的密码匹配，则凭据有效。
+`SqlMembershipProvider`验证提供的凭据通过获取指定的用户的密码通过`aspnet_Membership_GetPasswordWithFormat`存储过程。 回想一下，`SqlMembershipProvider`存储使用三种格式之一的用户的密码： 清除，加密，或哈希处理。 `aspnet_Membership_GetPasswordWithFormat`存储的过程返回其原始格式的密码。 加密或经过哈希处理密码，`SqlMembershipProvider`转换*`password`*值传递给`ValidateUser`方法划分为它的等效项加密或哈希状态，然后将它与什么返回从进行比较数据库。 如果存储在数据库中的密码与用户输入的格式化的密码匹配，则凭据有效。
 
 让我们更新我们的登录页 (~ /`Login.aspx`)，以便它会验证对成员资格 framework 用户存储区提供的凭据。 我们创建了此登录页进来<a id="Tutorial02"> </a> [*概述窗体身份验证的*](../introduction/an-overview-of-forms-authentication-cs.md)教程中，使用两个文本框中输入用户名和密码，创建一个接口记住我复选框，和登录按钮 （请参见图 1）。 代码验证输入的凭据与硬编码的用户名和密码对 （Scott/密码、 Jisun/密码和 Sam/密码） 列表。 在<a id="Tutorial03"> </a> [*窗体身份验证配置和高级主题*](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md)我们更新了登录页的代码，以在窗体存储附加信息的教程身份验证票证`UserData`属性。
 
@@ -71,8 +71,8 @@ ms.lasthandoff: 01/24/2018
 
 若要防止此类暴力破解攻击，成员身份 framework 将锁定用户是否存在一定数量的一段时间内的失败登录尝试次数。 确切参数均可通过进行以下两个成员资格提供程序配置设置：
 
-- `maxInvalidPasswordAttempts`-指定多少无效密码前的帐户已被锁定的时间段内的用户允许使用尝试。默认值为 5。
-- `passwordAttemptWindow`-指示在此期间指定的无效的登录尝试次数可导致用户帐户被锁定的分钟的时间段。默认值为 10。
+- `maxInvalidPasswordAttempts` -指定多少无效密码前的帐户已被锁定的时间段内的用户允许使用尝试。默认值为 5。
+- `passwordAttemptWindow` -指示在此期间指定的无效的登录尝试次数可导致用户帐户被锁定的分钟的时间段。默认值为 10。
 
 如果用户已被锁定，她无法登录直到管理员将解锁其帐户。 当用户已被锁定时，`ValidateUser`方法将*始终*返回`false`，即使在提供有效凭据。 虽然此行为可以减小黑客通过暴力破解方法将到你的站点中断的可能性越小，它可以得到锁定只需忘记其密码或意外具有了 Caps Lock 或者是具有错误键入每天的有效用户。
 
@@ -110,10 +110,10 @@ ms.lasthandoff: 01/24/2018
 
 登录控件使用四个因素来确定合适的页面，一旦成功登录到将用户重定向：
 
-- 登录控件是否的登录页上定义`loginUrl`设置在窗体身份验证配置中; 此设置的默认值是`Login.aspx`
+- 登录控件是否的登录页上定义`loginUrl`设置在窗体身份验证配置中; 此设置的默认值是 `Login.aspx`
 - 是否存在`ReturnUrl`查询字符串参数
 - 登录控件的值[`DestinationUrl`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.destinationpageurl.aspx)
-- `defaultUrl`身份验证配置设置在窗体中指定值; 此设置的默认值为`Default.aspx`
+- `defaultUrl`身份验证配置设置在窗体中指定值; 此设置的默认值为 `Default.aspx`
 
 图 4 展示了如何登录控件使用这些四个参数来到达其合适的页面决策。
 
@@ -230,7 +230,7 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="determining-and-validating-the-supplied-credentials"></a>确定和验证提供的凭据
 
-使用登录控件的[ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx)和[`Password`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx)来确定由用户输入的用户名和密码凭据。 若要确定在任何其他 Web 控件中输入的值 (如`Email`我们在上一步中添加的文本框中)，使用 *`LoginControlID`*  `.FindControl`(" *`controlID`* ") 来获取以编程方式引用为 Web 控件模板中其`ID`属性等于 *`controlID`* 。 例如，若要获取对引用`Email`文本框中，使用以下代码：
+使用登录控件的[ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx)和[`Password`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx)来确定由用户输入的用户名和密码凭据。 若要确定在任何其他 Web 控件中输入的值 (如`Email`我们在上一步中添加的文本框中)，使用*`LoginControlID`* `.FindControl`("*`controlID`*") 来获取以编程方式引用为 Web 控件模板中其`ID`属性等于*`controlID`*。 例如，若要获取对引用`Email`文本框中，使用以下代码：
 
 `TextBox EmailTextBox = myLogin.FindControl("Email") as TextBox;`
 
@@ -288,7 +288,7 @@ ms.lasthandoff: 01/24/2018
 **图 11**: Tito 执行太多无效登录尝试次数和具有已锁定 ([单击以查看实际尺寸的图像](validating-user-credentials-against-the-membership-user-store-cs/_static/image33.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 以前本教程中，我们登录页验证的用户名/密码对硬编码列表提供的凭据。 在本教程中，我们更新页后，可以验证针对成员资格框架的凭据。 在步骤 1 中我们讨论在使用`Membership.ValidateUser`方法以编程方式。 在步骤 2 中我们已更换我们手动创建的用户界面和代码与登录控件。
 
@@ -310,12 +310,12 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="about-the-author"></a>关于作者
 
-Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Teresa 墨和 Michael Olivero。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4guysfromrolla.com)。
 
->[!div class="step-by-step"]
-[上一页](creating-user-accounts-cs.md)
-[下一页](user-based-authorization-cs.md)
+> [!div class="step-by-step"]
+> [上一页](creating-user-accounts-cs.md)
+> [下一页](user-based-authorization-cs.md)

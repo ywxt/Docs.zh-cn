@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-vb
-title: "生成一个接口，以便从很多 (VB) 中选择一个用户帐户 |Microsoft 文档"
+title: 生成一个接口，以便从很多 (VB) 中选择一个用户帐户 |Microsoft 文档
 author: rick-anderson
-description: "在本教程中我们将生成与分页，可筛选网格的用户界面。 具体而言，我们的用户界面将包含的一系列的 LinkButtons..."
+description: 在本教程中我们将生成与分页，可筛选网格的用户界面。 具体而言，我们的用户界面将包含的一系列的 LinkButtons...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f0339578291c536a474f1c7314b28668a6519c8c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 56f4d72993bfcb9629d6b4cd08efe0da6dea2486
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="building-an-interface-to-select-one-user-account-from-many-vb"></a>生成一个接口，以便从很多 (VB) 中选择一个用户帐户
 ====================
@@ -148,7 +148,7 @@ ASP.NET 页`Administration`文件夹旨在仅供管理用户。 我们将管理�
 
 若要显示其用户名以字母 A 开头的用户，请设置`UsernameToMatch`到 A 的属性，然后调用`BindUserAccounts`这将导致调用`Membership.FindUsersByName("A%")`，这样就会返回所有用户其用户名开头 a。 同样，若要都返回*所有*用户，分配到一个空字符串`UsernameToMatch`属性以便`BindUserAccounts`方法将调用`Membership.FindUsersByName("%")`，从而返回所有用户帐户。
 
-为转发器的创建事件处理程序`ItemCommand`事件。 单击其中一个筛选器 LinkButtons; 时将引发此事件它传递单击的 LinkButton`CommandName`值通过`RepeaterCommandEventArgs`对象。 我们需要将相应的值赋给`UsernameToMatch`属性，然后调用`BindUserAccounts`方法。 如果`CommandName`为 All，分配到一个空字符串`UsernameToMatch`，以便显示所有用户帐户。 否则，将分配`CommandName`值赋给`UsernameToMatch`
+为转发器的创建事件处理程序`ItemCommand`事件。 单击其中一个筛选器 LinkButtons; 时将引发此事件它传递单击的 LinkButton`CommandName`值通过`RepeaterCommandEventArgs`对象。 我们需要将相应的值赋给`UsernameToMatch`属性，然后调用`BindUserAccounts`方法。 如果`CommandName`为 All，分配到一个空字符串`UsernameToMatch`，以便显示所有用户帐户。 否则，将分配`CommandName`值赋给 `UsernameToMatch`
 
 [!code-vb[Main](building-an-interface-to-select-one-user-account-from-many-vb/samples/sample10.vb)]
 
@@ -240,7 +240,7 @@ GridView 可以配置为使用自定义分页，但仅当绑定到 ObjectDataSou
 **图 9**： 单击下一步链接将显示第二个页面的用户帐户 ([单击以查看实际尺寸的图像](building-an-interface-to-select-one-user-account-from-many-vb/_static/image27.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 管理员通常需要从帐户列表中选择一个用户。 在前面的教程中我们讨论在使用下拉列表填充对于用户，但这种方法可伸缩性差。 在本教程中我们探讨了更好的选择： 其结果显示在分页 GridView 可筛选接口。 与此用户界面，管理员可以快速、 高效地查找和选择千位之间的一个用户帐户。
 
@@ -256,12 +256,12 @@ GridView 可以配置为使用自定义分页，但仅当绑定到 ObjectDataSou
 
 ### <a name="about-the-author"></a>关于作者
 
-Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Alicja Maziarz。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行
 
->[!div class="step-by-step"]
-[上一页](unlocking-and-approving-user-accounts-cs.md)
-[下一页](recovering-and-changing-passwords-vb.md)
+> [!div class="step-by-step"]
+> [上一页](unlocking-and-approving-user-accounts-cs.md)
+> [下一页](recovering-and-changing-passwords-vb.md)

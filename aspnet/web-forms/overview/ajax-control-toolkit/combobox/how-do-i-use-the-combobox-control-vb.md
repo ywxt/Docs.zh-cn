@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-control-vb
-title: "如何使用 ComboBox 控件？ (VB) |Microsoft 文档"
+title: 如何使用 ComboBox 控件？ (VB) | Microsoft Docs
 author: microsoft
-description: "组合框是一个文本框中的灵活性结合的用户可以从中选择的选项列表的 ASP.NET AJAX 控件。"
+description: 组合框是一个文本框中的灵活性结合的用户可以从中选择的选项列表的 ASP.NET AJAX 控件。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 54e36cf275dcc4b85253dc3b8bb5b0dbb027af77
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e42844e326cb190502a51c5a85195b4752d7e827
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-combobox-control-vb"></a>如何使用 ComboBox 控件？ (VB)
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 组合框是一个文本框中的灵活性结合的用户可以从中选择的选项列表的 ASP.NET AJAX 控件。
 
@@ -63,7 +63,7 @@ ms.lasthandoff: 11/10/2017
 
 第二个选项是添加到开始和结束之间的项列表&lt;asp: ComboBox&gt;源视图中的标记。 列表 1 中的页面包含更新组合框具有的项的列表。
 
-**列表 1-Static.aspx**
+**Listing 1 - Static.aspx**
 
 [!code-aspx[Main](how-do-i-use-the-combobox-control-vb/samples/sample1.aspx)]
 
@@ -168,9 +168,9 @@ DropDownList 值将导致 ComboBox 控件，就像标准的 DropDownList 控件�
 **图 10**: 组合框提供的建议，并追加 ([单击以查看实际尺寸的图像](how-do-i-use-the-combobox-control-vb/_static/image20.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，您学习了如何使用 ComboBox 控件来显示一组固定的项。 我们将这两种到的项设置静态和到数据库表该组合框控件绑定。 最后，您学习了如何通过设置其 DropDownStyle 和 AutoCompleteMode 属性修改组合框的行为。
 
->[!div class="step-by-step"]
-[上一篇](how-do-i-use-the-combobox-control-cs.md)
+> [!div class="step-by-step"]
+> [上一篇](how-do-i-use-the-combobox-control-cs.md)

@@ -1,7 +1,7 @@
 ---
-title: "在 Docker 容器中托管 ASP.NET Core"
+title: 在 Docker 容器中托管 ASP.NET Core
 author: rick-anderson
-description: "了解指向如何在 Docker 容器中托管 ASP.NET Core 应用的相关资源的链接。"
+description: 了解指向如何在 Docker 容器中托管 ASP.NET Core 应用的相关资源的链接。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/docker/index
-ms.openlocfilehash: f6646a92e75b79d2193e9cbca7fa8ac8e26dc429
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 12a179287ec302994380e0faf4b843596f8c2f4e
+ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="host-aspnet-core-in-docker-containers"></a>在 Docker 容器中托管 ASP.NET Core
 
@@ -40,3 +40,6 @@ Visual Studio 2017 支持在用于 Windows 的 Docker 上生成、调试和运�
 
 [发布到 Docker 映像](/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)  
 了解如何通过 Visual Studio Tools for Docker 扩展使用 PowerShell 将 ASP.NET Core 应用部署到 Azure 上的 Docker 主机。
+
+[配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)  
+对于托管在代理服务器和负载均衡器后方的应用，可能需要附加配置。 通过代理传递的请求通常会遮盖初始请求相关信息，例如方案和客户端 IP。 可能必须将请求相关的一些信息手动转发给应用。

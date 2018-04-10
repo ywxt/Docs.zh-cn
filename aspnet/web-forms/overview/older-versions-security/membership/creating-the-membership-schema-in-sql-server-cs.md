@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-cs
-title: "在 SQL Server (C#) 中创建成员身份架构 |Microsoft 文档"
+title: 在 SQL Server (C#) 中创建成员身份架构 |Microsoft 文档
 author: rick-anderson
-description: "本教程开始通过检查用于向数据库添加必要的架构，才能使用 SqlMembershipProvider 技术。 以下，我们 wi..."
+description: 本教程开始通过检查用于向数据库添加必要的架构，才能使用 SqlMembershipProvider 技术。 以下，我们 wi...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 38fc60b79a348ab198069a9a80a085e0dc4bcb88
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4fa0476ca8336b56340dd177f9816acbe015ef7d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-the-membership-schema-in-sql-server-c"></a>在 SQL Server (C#) 中创建成员身份架构
 ====================
@@ -158,9 +158,9 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 
 第三个步骤提示输入数据库信息： 服务器名称、 身份验证信息和数据库名称。 如果你按照本教程中，并添加了`SecurityTutorials.mdf`数据库到`App_Data`，附加到`localhost\InstanceName`，和重命名到`SecurityTutorialsDatabase`，然后使用以下值：
 
-- 服务器：`localhost\InstanceName`
+- 服务器： `localhost\InstanceName`
 - Windows 身份验证
-- 数据库：`SecurityTutorialsDatabase`
+- 数据库： `SecurityTutorialsDatabase`
 
 
 [![输入数据库信息](creating-the-membership-schema-in-sql-server-cs/_static/image26.png)](creating-the-membership-schema-in-sql-server-cs/_static/image25.png)
@@ -204,7 +204,7 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 **图 11**： 用户帐户可能是分区跨多个应用程序 ([单击以查看实际尺寸的图像](creating-the-membership-schema-in-sql-server-cs/_static/image33.png))
 
 
-`aspnet_Applications`表是定义这些分区的内容。 此表中的行表示每个应用程序使用数据库来存储用户帐户信息。 `aspnet_Applications`表具有四个列： `ApplicationId`， `ApplicationName`， `LoweredApplicationName`，和`Description`。 `ApplicationId`类型[ `uniqueidentifier` ](https://msdn.microsoft.com/library/ms187942.aspx)和表的主键;`ApplicationName`提供每个应用程序的唯一用户友好名称。
+`aspnet_Applications`表是定义这些分区的内容。 此表中的行表示每个应用程序使用数据库来存储用户帐户信息。 `aspnet_Applications`表具有四个列： `ApplicationId`， `ApplicationName`， `LoweredApplicationName`，和`Description`。 `ApplicationId` 类型[ `uniqueidentifier` ](https://msdn.microsoft.com/library/ms187942.aspx)和表的主键;`ApplicationName`提供每个应用程序的唯一用户友好名称。
 
 其他成员资格和角色相关的表将链接回`ApplicationId`字段`aspnet_Applications`。 例如，`aspnet_Users`表，其中包含每个用户帐户的记录，具有`ApplicationId`外键字段; 有关 ditto`aspnet_Roles`表。 `ApplicationId`这些表中的字段指定应用程序分区的用户帐户或所属角色。
 
@@ -216,7 +216,7 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 - `UserName`
 - `ApplicationId`
 
-`UserId`是的主键 (和类型的`uniqueidentifier`)。 `UserName`类型`nvarchar(256)`以及的密码，使用户的凭据。 (用户的密码存储在`aspnet_Membership`表。)`ApplicationId`链接到特定的应用程序中的用户帐户`aspnet_Applications`。 没有复合[`UNIQUE`约束](https://msdn.microsoft.com/library/ms191166.aspx)上`UserName`和`ApplicationId`列。 这可确保在给定的应用程序中每个用户名是唯一的但它允许对同一`UserName`要在不同的应用程序中使用。
+`UserId` 是的主键 (和类型的`uniqueidentifier`)。 `UserName` 类型`nvarchar(256)`以及的密码，使用户的凭据。 (用户的密码存储在`aspnet_Membership`表。)`ApplicationId`链接到特定的应用程序中的用户帐户`aspnet_Applications`。 没有复合[`UNIQUE`约束](https://msdn.microsoft.com/library/ms191166.aspx)上`UserName`和`ApplicationId`列。 这可确保在给定的应用程序中每个用户名是唯一的但它允许对同一`UserName`要在不同的应用程序中使用。
 
 `aspnet_Membership`表包括其他用户帐户信息，如用户的密码、 电子邮件地址、 最后一个登录名日期和时间，以及等。 中的记录之间不存在一对一的对应关系`aspnet_Users`和`aspnet_Membership`表。 通过将确保此关系`UserId`字段`aspnet_Membership`，它用作表的主键。 如`aspnet_Users`表，`aspnet_Membership`包括`ApplicationId`会绑定到特定应用程序分区此信息的字段。
 
@@ -230,7 +230,7 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 
 使用的密码存储方法取决于`SqlMembershipProvider`中指定设置`Web.config`。 我们将着眼于自定义`SqlMembershipProvider`在步骤 4 中的设置。 默认行为是存储密码哈希。
 
-负责存储密码的列是`Password`， `PasswordFormat`，和`PasswordSalt`。 `PasswordFormat`是类型的字段`int`其值指示用于存储密码的技术： 0 清除; 1 表示 Hashed; 2 表示加密。 `PasswordSalt`分配一个随机生成的字符串而不考虑使用; 的密码存储技术值`PasswordSalt`计算密码的哈希值时才使用。 最后，`Password`列包含的实际密码数据，可以是纯文本密码，密码或加密的密码的哈希。
+负责存储密码的列是`Password`， `PasswordFormat`，和`PasswordSalt`。 `PasswordFormat` 是类型的字段`int`其值指示用于存储密码的技术： 0 清除; 1 表示 Hashed; 2 表示加密。 `PasswordSalt` 分配一个随机生成的字符串而不考虑使用; 的密码存储技术值`PasswordSalt`计算密码的哈希值时才使用。 最后，`Password`列包含的实际密码数据，可以是纯文本密码，密码或加密的密码的哈希。
 
 表 1 说明什么这三列可能如下所示的各种存储技术存储的密码 MySecret 时 ！ .
 
@@ -254,7 +254,7 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 - `RoleName`
 - `ApplicationId`
 
-`RoleId`是的主键 (和类型的`uniqueidentifier`)。 `RoleName` 的类型为 `nvarchar(256)`。 和`ApplicationId`链接到特定的应用程序中的用户帐户`aspnet_Applications`。 没有复合`UNIQUE`约束`RoleName`和`ApplicationId`列，确保在给定的应用程序中每个角色名称是否唯一。
+`RoleId` 是的主键 (和类型的`uniqueidentifier`)。 `RoleName` 的类型为 `nvarchar(256)`。 和`ApplicationId`链接到特定的应用程序中的用户帐户`aspnet_Applications`。 没有复合`UNIQUE`约束`RoleName`和`ApplicationId`列，确保在给定的应用程序中每个角色名称是否唯一。
 
 `aspnet_UsersInRoles`表用作用户和角色之间的映射。 只有两个列-`UserId`和`RoleId`-和一起构成复合主键。
 
@@ -313,8 +313,8 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 
 如果我们未指定任何成员资格提供程序信息中我们的应用程序`Web.config`文件，应用程序使用注册的默认成员资格提供程序， `AspNetSqlMembershipProvider`。 如果`~/App_Data/aspnet.mdf`数据库不存在，ASP.NET 运行时将自动创建它并添加应用程序服务架构。 但是，我们不想使用`aspnet.mdf`数据库; 相反，我们想要使用`SecurityTutorials.mdf`我们在步骤 2 中创建的数据库。 此修改，可以处于两种方式之一实现：
 
-- **指定的值 * * *`LocalSqlServer`* * * 中的连接字符串名称 * * *`Web.config`* * *。** 通过覆盖`LocalSqlServer`连接字符串名称值中的`Web.config`，我们可以使用注册的默认成员资格提供程序 (`AspNetSqlMembershipProvider`)，并将其正确使用`SecurityTutorials.mdf`数据库。 这种方法是如果你是内容替换指定的配置设置正常`AspNetSqlMembershipProvider`。 有关此技术的详细信息，请参阅[Scott Guthrie](https://weblogs.asp.net/scottgu/)的博客文章[配置 ASP.NET 2.0 应用程序服务添加到使用 SQL Server 2000 或 SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)。
-- **添加新的已注册提供程序的类型 * * *`SqlMembershipProvider`* * * 并配置其 * * *`connectionStringName`* * * 设置为指向 * * *`SecurityTutorials.mdf`* * * 数据库。** 这种方法是你想要自定义的数据库连接字符串除了其他配置属性的方案中十分有用。 在我自己的项目我始终使用这种方法由于其灵活性和可读性。
+- <strong>为指定值</strong><strong>`LocalSqlServer`</strong><strong>中的连接字符串名称</strong><strong>`Web.config`</strong><strong>。</strong> 通过覆盖`LocalSqlServer`连接字符串名称值中的`Web.config`，我们可以使用注册的默认成员资格提供程序 (`AspNetSqlMembershipProvider`)，并将其正确使用`SecurityTutorials.mdf`数据库。 这种方法是如果你是内容替换指定的配置设置正常`AspNetSqlMembershipProvider`。 有关此技术的详细信息，请参阅[Scott Guthrie](https://weblogs.asp.net/scottgu/)的博客文章[配置 ASP.NET 2.0 应用程序服务添加到使用 SQL Server 2000 或 SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)。
+- <strong>添加新的已注册提供程序类型的</strong><strong>`SqlMembershipProvider`</strong><strong>并配置其</strong><strong>`connectionStringName`</strong><strong>设置以指向</strong><strong>`SecurityTutorials.mdf`</strong><strong>数据库。</strong> 这种方法是你想要自定义的数据库连接字符串除了其他配置属性的方案中十分有用。 在我自己的项目我始终使用这种方法由于其灵活性和可读性。
 
 我们可以添加新的已注册的提供程序引用之前`SecurityTutorials.mdf`数据库，我们首先需要添加适当的连接字符串值中`<connectionStrings>`主题中`Web.config`。 以下标记将添加名为新的连接字符串`SecurityTutorialsConnectionString`引用 SQL Server 2005 Express Edition`SecurityTutorials.mdf`数据库中`App_Data`文件夹。
 
@@ -337,7 +337,7 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 > 回想一下，该成员身份框架允许在单个用户存储分区跨多个应用程序。 成员资格提供程序的`applicationName`设置指示提供程序时如何使用用户存储区使用哪些应用程序。 你显式设置的值很重要`applicationName`配置设置，因为如果`applicationName`未显式设置，它将分配给在运行时的 web 应用程序的虚拟根路径。 这很好地配合，只要不会更改应用程序的虚拟根路径，但是，如果将移到不同的路径，该应用程序`applicationName`也将更改设置。 在此情况下，成员资格提供程序将开始使用不同的应用程序分区，不是以前使用过。 在移动之前创建的用户帐户将位于不同的应用程序分区，并且这些用户将不再能够登录到网站。 有关此问题的更深入讨论，请参阅[始终设置`applicationName`属性时配置 ASP.NET 2.0 成员资格和其他提供程序](https://weblogs.asp.net/scottgu/443634)。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 此时我们具有配置的应用程序服务的数据库 (`SecurityTutorials.mdf`) 并且已配置 web 应用程序，以便成员资格框架使用`SecurityTutorialsSqlMembershipProvider`我们刚刚注册的提供程序。 此注册的提供程序类型的`SqlMembershipProvider`并具有其`connectionStringName`设置为适当的连接字符串 (`SecurityTutorialsConnectionString`) 并将其`applicationName`显式设置的值。
 
@@ -357,7 +357,7 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 - [`<membership>`元素](https://msdn.microsoft.com/library/1b9hw62f.aspx)
 - [`<providers>`元素的成员身份](https://msdn.microsoft.com/library/6d4936ht.aspx)
 - [使用`<clear />`时添加提供程序](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx)
-- [直接使用`SqlMembershipProvider`](http://aspnet.4guysfromrolla.com/articles/091207-1.aspx)
+- [直接使用 `SqlMembershipProvider`](http://aspnet.4guysfromrolla.com/articles/091207-1.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>在本教程中包含的主题的视频培训
 
@@ -367,11 +367,11 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 
 ### <a name="about-the-author"></a>关于作者
 
-Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[http://ScottOnWriting.NET](http://scottonwriting.net/)。
+Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Alicja Maziarz。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4guysfromrolla.com)。
 
->[!div class="step-by-step"]
-[下一篇](creating-user-accounts-cs.md)
+> [!div class="step-by-step"]
+> [下一篇](creating-user-accounts-cs.md)

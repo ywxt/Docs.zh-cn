@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 基础知识"
+title: ASP.NET Core 基础知识
 author: rick-anderson
-description: "了解生成 ASP.NET Core 应用程序的基础概念。"
+description: 了解生成 ASP.NET Core 应用程序的基础概念。
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,48 +10,42 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: be37df7789354ac4ce8e373a1560366be157ffa5
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: b74870c93ea0120e43931bb75f47bab19a6de201
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 基础知识
 
 ASP.NET Core 应用程序是在其 `Main` 方法中创建 Web 服务器的控制台应用：
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program2x.cs)]
 
 `Main` 方法调用 `WebHost.CreateDefaultBuilder`，后者按照生成器模式来创建 Web 应用程序主机。 生成器提供定义 Web 服务器（例如，`UseKestrel`）和启动类 (`UseStartup`) 的方法。 在前面的例子中，自动分配了 [Kestrel](xref:fundamentals/servers/kestrel) Web 服务器。 ASP.NET Core 的 Web 主机尝试在 IIS 上运行（如果可用）。 对于其他 Web 服务器（如 [HTTP.sys](xref:fundamentals/servers/httpsys)），可通过调用相应的扩展方法来使用。 在下一节对 `UseStartup` 进行了更深入的介绍。
 
 `IWebHostBuilder` 是 `WebHost.CreateDefaultBuilder` 调用的返回类型，它提供了许多可选方法。 其中的一些方法包括用于在 HTTP.sys 中托管应用的 `UseHttpSys`，以及用于指定根内容目录的 `UseContentRoot`。 `Build` 和 `Run` 方法生成 `IWebHost` 对象，该对象托管应用并开始侦听 HTTP 请求。
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program.cs)]
 
 `Main` 方法使用 `WebHostBuilder`，后者按照生成器模式来创建 Web 应用程序主机。 生成器提供定义 Web 服务器（例如，`UseKestrel`）和启动类 (`UseStartup`) 的方法。 在前面的示例中，使用了 [Kestrel](xref:fundamentals/servers/kestrel) Web 服务器。 对于其他 Web 服务器（如 [WebListener](xref:fundamentals/servers/weblistener)），可通过调用相应的扩展方法来使用。 在下一节对 `UseStartup` 进行了更深入的介绍。
 
 `WebHostBuilder` 提供了许多可选方法，其中包括用于在 IIS 和 IIS Express 中进行托管的 `UseIISIntegration`，以及用于指定根内容目录的 `UseContentRoot`。 `Build` 和 `Run` 方法生成 `IWebHost` 对象，该对象托管应用并开始侦听 HTTP 请求。
 
----
-
+* * *
 ## <a name="startup"></a>启动
 
 `WebHostBuilder` 上的 `UseStartup` 方法为你的应用指定 `Startup` 类：
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program2x.cs?highlight=10&range=6-17)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program.cs?highlight=7&range=6-17)]
 
----
-
+* * *
 `Startup` 类用于定义请求处理管道和配置应用所需的任何服务。 `Startup` 必须是公共类，并包含以下方法：
 
 ```csharp
@@ -127,7 +121,7 @@ ASP.NET Core 支持适用于各种日志记录提供程序的日志记录 API。
 
 ASP.NET Core 的内置功能可处理应用中的错误，包括开发人员异常页、自定义错误页、静态状态代码页和启动异常处理。
 
-有关详细信息，请参阅[错误处理](xref:fundamentals/error-handling)。
+有关详细信息，请参阅[如何处理错误](xref:fundamentals/error-handling)。
 
 ## <a name="routing"></a>路由
 

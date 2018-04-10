@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb
-title: "有效地分页大量的数据 (VB) |Microsoft 文档"
+title: 有效地分页大量的数据 (VB) |Microsoft 文档
 author: rick-anderson
-description: "使用大量的数据，作为其基础数据源控件 retriev 时，数据的显示控件的默认分页选项不合适，则..."
+description: 使用大量的数据，作为其基础数据源控件 retriev 时，数据的显示控件的默认分页选项不合适，则...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9a1b7fbb1e60c9f1bc6a26ccaeb7d14b4c95219d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 00057f9bfd9b1c479e500ac591db694388a5d358
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="efficiently-paging-through-large-amounts-of-data-vb"></a>有效地分页大量的数据 (VB)
 ====================
@@ -122,9 +122,9 @@ DAL s`TotalNumberOfProducts`方法返回为 null 的整数; 但是，我们已�
 - **使用 SQL Server 2005 s`ROW_NUMBER()`关键字**到 SQL Server 2005 中，新`ROW_NUMBER()`关键字将排名的某些排序基于每个返回的记录与相关联。 此排名可以用作每个行的行索引。
 - **使用表变量和`SET ROWCOUNT`**  SQL Server s [ `SET ROWCOUNT`语句](https://msdn.microsoft.com/library/ms188774.aspx)可以用于指定查询应终止; 之前处理的总记录数[表变量](http://www.sqlteam.com/item.asp?ItemID=9454)是本地的 T-SQL 的变量，可以容纳 akin 到表格数据、[临时表](http://www.sqlteam.com/item.asp?ItemID=2029)。 此方法适用于 Microsoft SQL Server 2005 和 SQL Server 2000 (而`ROW_NUMBER()`方法仅适用于 SQL Server 2005)。  
   
- 本指南旨在创建具有的表变量`IDENTITY`列和列的主键的表的数据通过正在通过寻呼发送。 接下来，将其数据通过正在通过寻呼发送表的内容转储到表变量中，从而将连续的行索引相关联 (通过`IDENTITY`列) 为表中每个记录。 已填充的表变量之后,`SELECT`表变量中，语句与基础表联接，可以将执行拉出特定的记录。 `SET ROWCOUNT`语句用于智能地限制需要转储到表变量的记录数。  
+  本指南旨在创建具有的表变量`IDENTITY`列和列的主键的表的数据通过正在通过寻呼发送。 接下来，将其数据通过正在通过寻呼发送表的内容转储到表变量中，从而将连续的行索引相关联 (通过`IDENTITY`列) 为表中每个记录。 已填充的表变量之后,`SELECT`表变量中，语句与基础表联接，可以将执行拉出特定的记录。 `SET ROWCOUNT`语句用于智能地限制需要转储到表变量的记录数。  
   
- 此方法的效率取决于所请求的页号作为`SET ROWCOUNT`值分配的值开始的行索引以及最大行数。 当通过： 编号较低的页面，例如第一个分页的数据的几个页面时这种方法是非常高效。 但是，它展示默认分页类似的性能，检索在其结尾附近的页时。
+  此方法的效率取决于所请求的页号作为`SET ROWCOUNT`值分配的值开始的行索引以及最大行数。 当通过： 编号较低的页面，例如第一个分页的数据的几个页面时这种方法是非常高效。 但是，它展示默认分页类似的性能，检索在其结尾附近的页时。
 
 本教程通过实现自定义分页使用`ROW_NUMBER()`关键字。 有关使用表变量的详细信息和`SET ROWCOUNT`技术，请参阅[分页通过大型结果集的多个有效方法](http://www.4guysfromrolla.com/webtech/042606-1.shtml)。
 
@@ -133,7 +133,7 @@ DAL s`TotalNumberOfProducts`方法返回为 null 的整数; 但是，我们已�
 
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample3.sql)]
 
-`ROW_NUMBER()`返回一个数字值，指定每个记录方面指示排序的秩。 例如，若要查看每个产品按从最顺序排列的秩最少的成本较低我们无法使用以下查询：
+`ROW_NUMBER()` 返回一个数字值，指定每个记录方面指示排序的秩。 例如，若要查看每个产品按从最顺序排列的秩最少的成本较低我们无法使用以下查询：
 
 
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample4.sql)]
@@ -147,7 +147,7 @@ DAL s`TotalNumberOfProducts`方法返回为 null 的整数; 但是，我们已�
 
 
 > [!NOTE]
-> `ROW_NUMBER()`只是其中之一的许多新排名函数是在 SQL Server 2005 中可用。 有关的更全面讨论`ROW_NUMBER()`，以及其他排名函数，如读取[Microsoft SQL Server 2005 返回排名结果](http://www.4guysfromrolla.com/webtech/010406-1.shtml)。
+> `ROW_NUMBER()` 只是其中之一的许多新排名函数是在 SQL Server 2005 中可用。 有关的更全面讨论`ROW_NUMBER()`，以及其他排名函数，如读取[Microsoft SQL Server 2005 返回排名结果](http://www.4guysfromrolla.com/webtech/010406-1.shtml)。
 
 
 当指定排名结果`ORDER BY`中的列`OVER`子句 (`UnitPrice`，在上面的示例)，SQL Server 必须将对结果进行排序。 这是快速操作，如果通过对结果进行，正在排序的列没有聚集的索引，或者如果没有覆盖索引，但会否则成本较高。 帮助改进足够大，查询的性能，请考虑添加按对结果排序所依据的列的非聚集索引。 请参阅[排名函数和 SQL Server 2005 中的性能](http://www.sql-server-performance.com/ak_ranking_functions.asp)了解性能注意事项的详细信息。
@@ -163,7 +163,7 @@ DAL s`TotalNumberOfProducts`方法返回为 null 的整数; 但是，我们已�
 [!code-html[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample6.html)]
 
 > [!NOTE]
-> 在本教程中，我们将会看到在更高版本上 *`StartRowIndex`* 提供 ObjectDataSource 编制了索引从零开始，启动而`ROW_NUMBER()`SQL Server 2005 返回值索引从 1 开始。 因此，`WHERE`子句将返回这些记录其中`PriceRank`完全大于 *`StartRowIndex`* 且小于或等于 *`StartRowIndex`*   + *`MaximumRows`*.
+> 在本教程中，我们将会看到在更高版本上*`StartRowIndex`*提供 ObjectDataSource 编制了索引从零开始，启动而`ROW_NUMBER()`SQL Server 2005 返回值索引从 1 开始。 因此，`WHERE`子句将返回这些记录其中`PriceRank`完全大于*`StartRowIndex`*且小于或等于*`StartRowIndex`*  + *`MaximumRows`*.
 
 
 现在我们已讨论如何`ROW_NUMBER()`可以是用于检索给定的开始的行索引和最大行数值数据的特定页，我们现在需要实现此逻辑作为方法的 DAL 和 BLL。
@@ -188,7 +188,7 @@ DAL s`TotalNumberOfProducts`方法返回为 null 的整数; 但是，我们已�
 
 ![输入一个值@startRowIndex和@maximumRows参数](efficiently-paging-through-large-amounts-of-data-vb/_static/image7.png)
 
-**图 7**： 输入一个值@startRowIndex和@maximumRows参数
+<strong>图 7</strong>： 输入一个值@startRowIndex和@maximumRows参数
 
 
 后选择这些输入参数值，输出窗口中会显示结果。 图 8 显示结果时两个传入 10`@startRowIndex`和`@maximumRows`参数。
@@ -276,9 +276,9 @@ DAL s`TotalNumberOfProducts`方法返回为 null 的整数; 但是，我们已�
 若要解决此问题，我们需要配置对象数据源以使用自定义分页。 这可以通过以下步骤完成：
 
 1. **设置 ObjectDataSource s`EnablePaging`属性`true`**这将指示必须将传递给 ObjectDataSource`SelectMethod`两个其他参数： 一个用于指定开始的行索引 ([ `StartRowIndexParameterName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.startrowindexparametername.aspx))，，另一个用于指定最大行数 ([`MaximumRowsParameterName`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.maximumrowsparametername.aspx))。
-2. **设置 ObjectDataSource s`StartRowIndexParameterName`和`MaximumRowsParameterName`属性相应地**`StartRowIndexParameterName`和`MaximumRowsParameterName`属性指示传入的输入参数的名称`SelectMethod`用于自定义分页用途. 默认情况下，这些参数名称是`startIndexRow`和`maximumRows`，这是正因如此，在创建时`GetProductsPaged`方法在 BLL，我使用了这些值为输入参数。 如果选择了使用不同的参数名称 BLL s`GetProductsPaged`如方法`startIndex`和`maxRows`，对于你需要的示例设置 ObjectDataSource s`StartRowIndexParameterName`和`MaximumRowsParameterName`属性相应地 （例如为 startIndex`StartRowIndexParameterName`和最大行数为`MaximumRowsParameterName`)。
+2. **设置 ObjectDataSource s`StartRowIndexParameterName`和`MaximumRowsParameterName`属性相应地**`StartRowIndexParameterName`和`MaximumRowsParameterName`属性指示传入的输入参数的名称`SelectMethod`用于自定义分页用途。 默认情况下，这些参数名称是`startIndexRow`和`maximumRows`，这是正因如此，在创建时`GetProductsPaged`方法在 BLL，我使用了这些值为输入参数。 如果选择了使用不同的参数名称 BLL s`GetProductsPaged`如方法`startIndex`和`maxRows`，对于你需要的示例设置 ObjectDataSource s`StartRowIndexParameterName`和`MaximumRowsParameterName`属性相应地 （例如为 startIndex`StartRowIndexParameterName`和最大行数为`MaximumRowsParameterName`)。
 3. **设置 ObjectDataSource s [ `SelectCountMethod`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selectcountmethod(VS.80).aspx)总数量的记录正在分页通过返回的方法的名称 (`TotalNumberOfProducts`)**回想一下，`ProductsBLL`类的`TotalNumberOfProducts`方法返回的记录正在通过寻呼发送通过使用执行 DAL 方法总数`SELECT COUNT(*) FROM Products`查询。 为正确呈现的分页界面情况下，此信息所需的对象数据源。
-4. **删除`startRowIndex`和`maximumRows``<asp:Parameter>`从 ObjectDataSource s 声明性标记元素**配置时通过向导 ObjectDataSource，Visual Studio 自动添加两个`<asp:Parameter>`元素`GetProductsPaged`方法 s 输入参数。 通过设置`EnablePaging`到`true`，将自动传递这些参数; 如果他们还出现在声明性语法，ObjectDataSource 将尝试传递*四个*参数`GetProductsPaged`方法和两个参数`TotalNumberOfProducts`方法。 如果你忘记了以删除这些`<asp:Parameter>`元素，在访问通过浏览器，您将收到错误消息的页时： *ObjectDataSource ObjectDataSource1 找不到非泛型方法 TotalNumberOfProducts 具有参数： 值，值*。
+4. **删除`startRowIndex`和`maximumRows``<asp:Parameter>`从 ObjectDataSource s 声明性标记元素**配置时通过向导 ObjectDataSource，Visual Studio 自动添加两个`<asp:Parameter>`元素有关`GetProductsPaged`方法 s 输入参数。 通过设置`EnablePaging`到`true`，将自动传递这些参数; 如果他们还出现在声明性语法，ObjectDataSource 将尝试传递*四个*参数`GetProductsPaged`方法和两个参数`TotalNumberOfProducts`方法。 如果你忘记了以删除这些`<asp:Parameter>`元素，在访问通过浏览器，您将收到错误消息的页时： *ObjectDataSource ObjectDataSource1 找不到非泛型方法 TotalNumberOfProducts 具有参数： 值，值*。
 
 进行这些更改后，ObjectDataSource s 声明性语法应如下所示：
 
@@ -326,7 +326,7 @@ DAL s`TotalNumberOfProducts`方法返回为 null 的整数; 但是，我们已�
 一旦删除最后一个产品，GridView*应*自动转到第八个页上，并使用默认分页展现这样的功能。 使用自定义分页，但是，删除最后一页中，于最后一个产品后 GridView 只需从屏幕上消失完全。 确切原因*为什么*发生这种情况均超出了本教程的范围的一个位; 请参阅[从使用自定义分页 GridView 删除最后一页上的最后一个记录](http://scottonwriting.net/sowblog/posts/7326.aspx)并与来源的数据的低级别的详细信息此问题。 在摘要它由于下面的 GridView 时单击删除按钮执行的步骤序列的 s:
 
 1. 删除的记录
-2. 获取相应的记录，若要显示有关指定`PageIndex`和`PageSize`
+2. 获取相应的记录，若要显示有关指定`PageIndex`和 `PageSize`
 3. 检查以确保`PageIndex`不超过数据源; 中的数据的页面数，如果它存在，自动递减 GridView 的`PageIndex`属性
 4. 将合适的页面的数据绑定到 GridView 使用在步骤 2 中获取的记录
 
@@ -365,7 +365,7 @@ DAL s`TotalNumberOfProducts`方法返回为 null 的整数; 但是，我们已�
 
 如你所见，检索数据的特定页平均需要小于读取 354 和很短的时间内完成。 在 ASP.NET 页上，自定义的页面是能够在呈现接近于 1/100<sup>th</sup>它所花时间的使用默认分页时。 请参阅[我文章](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx)对于这些结果以及代码和数据库的详细信息，可以下载重现这些测试在你自己的环境中。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 默认分页很容易做到以实现数据 Web 控件 s 智能标记只检查启用分页的复选框，但这种简单的代价是性能。 使用默认分页，当用户请求数据的任何页*所有*返回记录，即使仅有极小一部分其中可能会显示。 为了应对这项性能开销，ObjectDataSource 提供替代的分页选项自定义分页。
 
@@ -377,8 +377,8 @@ DAL s`TotalNumberOfProducts`方法返回为 null 的整数; 但是，我们已�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
->[!div class="step-by-step"]
-[上一页](paging-and-sorting-report-data-vb.md)
-[下一页](sorting-custom-paged-data-vb.md)
+> [!div class="step-by-step"]
+> [上一页](paging-and-sorting-report-data-vb.md)
+> [下一页](sorting-custom-paged-data-vb.md)

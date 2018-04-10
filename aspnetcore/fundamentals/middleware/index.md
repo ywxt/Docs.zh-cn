@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 中间件"
+title: ASP.NET Core 中间件
 author: rick-anderson
-description: "了解 ASP.NET Core 中间件和请求管道。"
+description: 了解 ASP.NET Core 中间件和请求管道。
 manager: wpickett
 ms.author: riande
 ms.date: 01/22/2018
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 186faa4c02275ae1f4be53f4a2dd4f8325397bd2
-ms.sourcegitcommit: c5ecda3c5b1674b62294cfddcb104e7f0b9ce465
+ms.openlocfilehash: 3312b27f936340a73243224c1a716fe421f178bc
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 中间件
 

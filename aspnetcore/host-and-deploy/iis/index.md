@@ -1,7 +1,7 @@
 ---
-title: "使用 IIS 在 Windows 上托管 ASP.NET Core"
+title: 使用 IIS 在 Windows 上托管 ASP.NET Core
 author: guardrex
-description: "了解如何在 Windows Server Internet Information Services (IIS) 上托管 ASP.NET Core 应用。"
+description: 了解如何在 Windows Server Internet Information Services (IIS) 上托管 ASP.NET Core 应用。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: fa9e60c52f143b20dbf179679fc4932e838a9137
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 64eb85f75a6c2e10bf8c39f32eeda5311744f2a2
+ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -85,6 +85,10 @@ services.Configure<IISOptions>(options =>
 | `AuthenticationDisplayName`    | `null`  | 设置在登录页上向用户显示的显示名。 |
 | `ForwardClientCertificate`     | `true`  | 若为 `true`，且存在 `MS-ASPNETCORE-CLIENTCERT` 请求头，则填充 `HttpContext.Connection.ClientCertificate`。 |
 
+### <a name="proxy-server-and-load-balancer-scenarios"></a>代理服务器和负载均衡器方案
+
+配置转发头中间件的 IIS 集成中间件和 ASP.NET Core 模块将配置为转发方案 (HTTP/HTTPS) 和发出请求的远程 IP 地址。 对于托管在其他代理服务器和负载均衡器后方的应用，可能需要附加配置。 有关详细信息，请参阅[配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)。
+
 ### <a name="webconfig-file"></a>web.config 文件
 
 web.config 文件配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)。 web.config 的创建、转换和发布 由 .NET Core Web SDK (`Microsoft.NET.Sdk.Web`) 处理。 SDK 设置在项目文件的顶部：
@@ -97,7 +101,7 @@ web.config 文件配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-c
 
 如果项目中存在 web.config 文件，则会使用正确的 processPath 和参数转换该文件，以便配置 ASP.NET Core 模块，并将该文件移动到已发布的输出。 转换不会修改文件中的 IIS 配置设置。
 
-web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS 模块。 有关能够处理 ASP.NET Core 应用请求的 IIS 模块的信息，请参阅[使用 IIS 模块](xref:host-and-deploy/iis/modules)主题。
+web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS 模块。 有关能够处理 ASP.NET Core 应用请求的 IIS 模块的信息，请参阅 [IIS 模块](xref:host-and-deploy/iis/modules)主题。
 
 要防止 Web SDK 转换 web.config 文件，请使用项目文件中的 \<IsTransformWebConfigDisabled> 属性：
 
@@ -167,7 +171,11 @@ ASP.NET Core 应用在 IIS 与 Kestrel 服务器之间的反向代理中托管�
 
 ## <a name="install-the-net-core-windows-server-hosting-bundle"></a>安装 .NET Core Windows Server 托管捆绑包
 
-1. 在托管系统上安装 [.NET Core Windows Server 托管捆绑包](https://aka.ms/dotnetcore-2-windowshosting)。 捆绑包可安装 .NET Core 运行时、.NET Core 库和 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)。 该模块创建 IIS 与 Kestrel 服务器之间的反向代理。 如果系统没有 Internet 连接，请先获取并安装 [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840)，再安装 .NET Core Windows Server 托管捆绑包。
+1. 在托管系统上安装 *.NET Core Windows Server 托管捆绑包*。 捆绑包可安装 .NET Core 运行时、.NET Core 库和 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)。 该模块创建 IIS 与 Kestrel 服务器之间的反向代理。 如果系统没有 Internet 连接，请先获取并安装 [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840)，再安装 .NET Core Windows Server 托管捆绑包。
+
+   1. 导航到 [.NET“所有下载”页](https://www.microsoft.com/net/download/all)。
+   1. 从列表中选择最新的非预览 .NET Core 运行时（.NET Core > 运行时 > .NET Core 运行时 x.y.z）。 除非你想要使用预览软件，否则请避免选择其链接文本中包含“预览”一词的运行时。
+   1. 在 Windows 下的 .NET Core 运行时下载页上，选择“服务器托管安装程序”链接以下载 .NET Core Windows Server 托管捆绑包。
 
    **重要提示！** 如果在 IIS 之前安装了托管捆绑包，则必须修复捆绑包安装。 在安装 IIS 后再次运行托管捆绑包安装程序。
    
@@ -278,7 +286,7 @@ ASP.NET Core 应用在 IIS 与 Kestrel 服务器之间的反向代理中托管�
 
 * 所有基于 cookie 的身份验证令牌都无效。 
 * 用户需要在下一次请求时再次登录。 
-* 无法再解密使用密钥环保护的任何数据。 这可能包括 [CSRF 令牌](xref:security/anti-request-forgery#how-does-aspnet-core-mvc-address-csrf)和 [ASP.NET Core MVC tempdata cookie](xref:fundamentals/app-state#tempdata)。
+* 无法再解密使用密钥环保护的任何数据。 这可能包括 [CSRF 令牌](xref:security/anti-request-forgery#aspnet-core-antiforgery-configuration)和 [ASP.NET Core MVC TempData cookie](xref:fundamentals/app-state#tempdata)。
 
 若要在 IIS 下配置数据保护以持久化密钥环，请使用以下方法之一：
 
@@ -288,7 +296,7 @@ ASP.NET Core 应用在 IIS 与 Kestrel 服务器之间的反向代理中托管�
 
   对于独立的非 Web 场 IIS 安装，可以对用于 ASP.NET Core 应用的每个应用池使用[数据保护 Provision-AutoGenKeys.ps1 PowerShell 脚本](https://github.com/aspnet/DataProtection/blob/dev/Provision-AutoGenKeys.ps1)。 此脚本在 HKLM 注册表中创建注册表项，仅应用程序的应用池工作进程帐户可对其进行访问。 通过计算机范围的密钥使用 DPAPI 对密钥静态加密。
 
-  在 web 场方案中，可以将应用配置为使用 UNC 路径存储其数据保护密钥环。 默认情况下，数据保护密钥未加密。 确保网络共享的文件权限仅限于应用在其下运行的 Windows 帐户。 可使用 X509 证书来保护静态密钥。 建议使用允许用户上传证书的机制：将证书放置在用户信任的证书存储中，并确保在运行用户应用的所有计算机上都可使用这些证书。 有关详细信息，请参阅[配置数据保护](xref:security/data-protection/configuration/overview)。
+  在 web 场方案中，可以将应用配置为使用 UNC 路径存储其数据保护密钥环。 默认情况下，数据保护密钥未加密。 确保网络共享的文件权限仅限于应用在其下运行的 Windows 帐户。 可使用 X509 证书来保护静态密钥。 建议使用允许用户上传证书的机制：将证书放置在用户信任的证书存储中，并确保在运行用户应用的所有计算机上都可使用这些证书。 有关详细信息，请参阅[配置 ASP.NET Core 数据保护](xref:security/data-protection/configuration/overview)。
 
 * **配置 IIS 应用程序池以加载用户配置文件**
 
@@ -348,7 +356,7 @@ ASP.NET Core 应用在 IIS 与 Kestrel 服务器之间的反向代理中托管�
 
 对于那些应用于反向代理配置的 IIS 功能，IIS 配置受 web.config 的 \<system.webServer> 部分影响。 如果在服务器级别将 IIS 配置为使用动态压缩，则可通过应用的 web.config 文件中的 \<urlCompression> 元素禁用它。
 
-有关详细信息，请参阅 [\<system.webServer> 的配置参考](/iis/configuration/system.webServer/)、[ASP.NET Core 模块配置参考](xref:host-and-deploy/aspnet-core-module)和[配合使用 IIS 模块与 ASP.NET Core](xref:host-and-deploy/iis/modules)。 若要为在独立应用池中运行的各应用设置环境变量（IIS 10.0 或更高版本中支持此操作），请参阅 IIS 参考文档的[环境变量 \<environmentVariables>](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) 主题中的“AppCmd.exe 命令”部分。
+有关详细信息，请参阅 [\<system.webServer> 的配置参考](/iis/configuration/system.webServer/)、[ASP.NET Core 模块配置参考](xref:host-and-deploy/aspnet-core-module)和[使用 ASP.NET Core 的 IIS 模块](xref:host-and-deploy/iis/modules)。 若要为在独立应用池中运行的各应用设置环境变量（IIS 10.0 或更高版本中支持此操作），请参阅 IIS 参考文档的[环境变量 \<environmentVariables>](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) 主题中的“AppCmd.exe 命令”部分。
 
 ## <a name="configuration-sections-of-webconfig"></a>web.config 的配置节
 
@@ -407,7 +415,7 @@ ICACLS C:\sites\MyWebApp /grant "IIS AppPool\DefaultAppPool":F
 * [Azure 应用服务和 IIS 上 ASP.NET Core 的常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)
 * [ASP.NET Core 模块简介](xref:fundamentals/servers/aspnet-core-module)
 * [ASP.NET Core 模块配置参考](xref:host-and-deploy/aspnet-core-module)
-* [配合使用 IIS 模块与 ASP.NET Core](xref:host-and-deploy/iis/modules)
+* [IIS Modules 与 ASP.NET Core](xref:host-and-deploy/iis/modules)
 * [ASP.NET Core 简介](../index.md)
 * [Microsoft IIS 官方网站](https://www.iis.net/)
 * [Microsoft TechNet 库：Windows Server](/windows-server/windows-server-versions)

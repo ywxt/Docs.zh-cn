@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 中的配置"
+title: ASP.NET Core 中的配置
 author: rick-anderson
-description: "使用配置 API 通过多种方法配置 ASP.NET Core 应用。"
+description: 使用配置 API 通过多种方法配置 ASP.NET Core 应用。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 7c41621db835b452c9aad9463a9ffccdf0c06484
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: f272f9629ab1f9e7f7643cafd0d45f19340d5284
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="configure-an-aspnet-core-app"></a>配置 ASP.NET Core 应用
+# <a name="configuration-in-aspnet-core"></a>ASP.NET Core 中的配置
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)、[Mark Michaelis](http://intellitect.com/author/mark-michaelis/)、[Steve Smith](https://ardalis.com/)、[Daniel Roth](https://github.com/danroth27) 和 [Luke Latham](https://github.com/guardrex)
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 03/15/2018
 
 [!code-json[](index/sample/ConfigJson/appsettings.json)]
 
-配置就是名称/值对的分层列表，其中节点是由冒号分隔。 要检索某个值，请使用相应项的键访问 `Configuration` 索引器：
+配置包含名称/值对的分层列表，其中节点由冒号 (`:`) 分隔。 要检索某个值，请使用相应项的键访问 `Configuration` 索引器：
 
 [!code-csharp[](index/sample/ConfigJson/Program.cs?range=21-22)]
 
@@ -105,15 +105,15 @@ ASP.NET Core 1.x 应用需要调用 `AddJsonFile` 和 [AddEnvironmentVariables](
 
 [!code-csharp[](index/sample/StartupConfig.cs?name=snippet&highlight=3,4)]
 
-
 环境通常设置为 `Development`、`Staging` 或 `Production`。 有关详细信息，请参阅[使用多个环境](xref:fundamentals/environments)。
 
 配置注意事项：
 
-* 配置数据发生更改时，`IOptionsSnapshot` 可将其重载。 有关详细信息，请参阅 [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot)。
+* 配置数据发生更改时，[IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot) 可将其重载。
 * 配置密钥不区分大小写。
-* 请勿在配置提供程序代码或纯文本配置文件中存储密码或其他敏感数据。 不要在开发或测试环境中使用生产机密。 请在项目外部指定机密，避免将其意外提交到源代码存储库。 详细了解如何[使用多个环境](xref:fundamentals/environments)和[在开发期间管理应用机密的安全存储](xref:security/app-secrets)。
-* 如果系统不支持在环境变量中使用冒号 (`:`)，请将冒号 (`:`) 替换为双下划线 (`__`)。
+* 请勿在配置提供程序代码或纯文本配置文件中存储密码或其他敏感数据。 不要在开发或测试环境中使用生产机密。 请在项目外部指定机密，避免将其意外提交到源代码存储库。 详细了解[如何使用多个环境](xref:fundamentals/environments)和[在开发期间管理应用机密的安全存储](xref:security/app-secrets)。
+* 对于在环境变量中指定的分层配置值，冒号 (`:`) 可能不适用于所有平台。 而所有平台均支持采用双下划线 (`__`)。
+* 与配置 API 交互时，冒号 (`:`) 适用于所有平台。
 
 ## <a name="in-memory-provider-and-binding-to-a-poco-class"></a>内存中提供程序及绑定到 POCO 类
 
@@ -234,8 +234,7 @@ key3=value_from_json_3
 
 ### <a name="setup-and-use-the-commandline-configuration-provider"></a>设置和使用 CommandLine 配置提供程序
 
-# <a name="basic-configurationtabbasicconfiguration"></a>[基本配置](#tab/basicconfiguration)
-
+#### <a name="basic-configurationtabbasicconfiguration"></a>[基本配置](#tab/basicconfiguration/)
 要激活命令行配置，请在 [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder) 的实例上调用 `AddCommandLine` 扩展方法：
 
 [!code-csharp[](index/sample_snapshot//CommandLine/Program.cs?highlight=18,21)]
@@ -264,8 +263,7 @@ Left: 1979
 
 [!code-csharp[](index/sample_snapshot//CommandLine/Program2.cs?range=11-16&highlight=1,5)]
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 典型的 ASP.NET Core 2.x 应用使用静态简便方法 `CreateDefaultBuilder` 生成主机：
 
 [!code-csharp[](index/sample_snapshot//Program.cs?highlight=12)]
@@ -282,14 +280,12 @@ Left: 1979
 
 ASP.NET Core 2.x 应用可使用 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)，而不是 `CreateDefaultBuilder`。 使用 `WebHostBuilder` 时，请手动通过 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) 设置配置。 有关详细信息，请参阅 ASP.NET Core 1.x 选项卡。
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 创建 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) 并调用 `AddCommandLine` 方法来使用 CommandLine 配置提供程序。 最后调用提供程序，则在运行时传递的命令行参数可以替代之前调用的其他配置提供程序设置的配置。 使用 `UseConfiguration` 方法向 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 应用配置：
 
 [!code-csharp[](index/sample_snapshot//CommandLine/Program2.cs?highlight=11,15,19)]
 
----
-
+* * *
 ### <a name="arguments"></a>自变量
 
 在命令行上传递的参数必须符合下表所示的两种格式之一：
@@ -413,9 +409,52 @@ Left: 1988
 
 在 IIS 或 IIS Express 中托管应用时，需要 web.config 文件。 通过 web.config 中的设置，[ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module) 可以启动应用并配置其他 IIS 设置和模块。 如果 *web.config* 文件不存在，并且项目文件中包含 `<Project Sdk="Microsoft.NET.Sdk.Web">`，则发布项目时会在发布的输出（“发布”文件夹）中创建一个 *web.config* 文件。 有关详细信息，请参阅 [使用 IIS 在 Windows 上托管 ASP.NET Core](xref:host-and-deploy/iis/index#webconfig-file)。
 
-## <a name="accessing-configuration-during-startup"></a>在启动时访问配置
+## <a name="access-configuration-during-startup"></a>在启动期间访问配置
 
 若要在启动时访问 `ConfigureServices` 或 `Configure` 中的配置，请参阅[应用程序启动](xref:fundamentals/startup)主题中的示例。
+
+## <a name="access-configuration-in-a-razor-page-or-mvc-view"></a>在 Razor 页面或 MVC 视图中访问配置
+
+若要访问 Razor 页面页或 MVC 视图中的配置设置，请为 [Microsoft.Extensions.Configuration 命名空间](/dotnet/api/microsoft.extensions.configuration)添加 [using 指令](xref:mvc/views/razor#using)（[C# 参考：using 指令](/dotnet/csharp/language-reference/keywords/using-directive)）并将 [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) 注入页面或视图。
+
+在 Razor 页面页中：
+
+```cshtml
+@page
+@model IndexModel
+
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index Page</title>
+</head>
+<body>
+    <h1>Access configuration in a Razor Pages page</h1>
+    <p>Configuration[&quot;key&quot;]: @Configuration["key"]</p>
+</body>
+</html>
+```
+
+在 MVC 视图中：
+
+```cshtml
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index View</title>
+</head>
+<body>
+    <h1>Access configuration in an MVC view</h1>
+    <p>Configuration[&quot;key&quot;]: @Configuration["key"]</p>
+</body>
+</html>
+```
 
 ## <a name="additional-notes"></a>附加说明
 
@@ -430,7 +469,7 @@ Left: 1988
 
 * [选项](xref:fundamentals/configuration/options)
 * [使用多个环境](xref:fundamentals/environments)
-* [在开发期间安全存储应用密钥](xref:security/app-secrets)
+* [在开发期间安全存储应用机密](xref:security/app-secrets)
 * [ASP.NET Core 中的托管](xref:fundamentals/hosting)
 * [依赖关系注入](xref:fundamentals/dependency-injection)
 * [Azure Key Vault 配置提供程序](xref:security/key-vault-configuration)

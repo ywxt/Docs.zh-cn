@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: cb80c38fd0284d5153aebfe7bb515722623a4a34
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 532799d013f26869da03fe1062072f55dcce35f8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor 页面介绍
 
@@ -25,16 +25,9 @@ Razor 页面是 ASP.NET Core MVC 的一个新功能，它可以使基于页面�
 
 本文档介绍 Razor 页面。 它并不是分步教程。 如果认为某些部分过于复杂，请参阅 [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)。 有关 ASP.NET Core 的概述，请参阅 [ASP.NET Core 简介](xref:index)。
 
-<a name="prerequisites"></a>
+## <a name="prerequisites"></a>系统必备
 
-## <a name="aspnet-core-20-prerequisites"></a>ASP.NET Core 2.0 必备组件
-
-安装 [.NET Core](https://www.microsoft.com/net/core) 2.0.0 或更高版本。
-
-如果在使用 Visual Studio，请使用以下工作负载安装 [Visual Studio](https://www.visualstudio.com/vs/) 2017 版本 15.3 或更高版本：
-
-* **ASP.NET 和 Web 开发**
-* **.NET Core 跨平台开发**
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 <a name="rpvs17"></a>
 
@@ -44,7 +37,7 @@ Razor 页面是 ASP.NET Core MVC 的一个新功能，它可以使基于页面�
 
 请参阅 [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)，获取关于如何使用 Visual Studio 创建 Razor 页面项目的详细说明。
 
-#   <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 在命令行中运行 `dotnet new razor`。
 
@@ -54,7 +47,7 @@ Razor 页面是 ASP.NET Core MVC 的一个新功能，它可以使基于页面�
 
 在命令行中运行 `dotnet new razor`。
 
-#   <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli) 
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli) 
 
 在命令行中运行 `dotnet new razor`。
 
@@ -98,7 +91,7 @@ Pages/Index2.cshtml.cs 页面模型：
 
 ## <a name="writing-a-basic-form"></a>编写基本窗体
 
-Razor 页面功能旨在简化 Web 浏览器常用的模式。 [模型绑定](xref:mvc/models/model-binding)、[标记帮助程序](xref:mvc/views/tag-helpers/intro)和 HTML 帮助程序均只可用于 Razor 页面类中定义的属性。 请参考为 `Contact` 模型实现的基本的“联系我们”窗体页面：
+Razor 页面功能旨在简化 Web 浏览器常用的模式。 [模型绑定](xref:mvc/models/model-binding)、[标记帮助程序](xref:mvc/views/tag-helpers/intro)和 HTML 帮助程序均只可用于 Razor 页面类中定义的属性。 请参考为 `Contact` 模型实现基本的“联系我们”窗体的页面：
 
 在本文档中的示例中，`DbContext` 在 [Startup.cs](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/razor-pages/index/sample/RazorPagesContacts/Startup.cs#L15-L16) 文件中进行初始化。
 
@@ -175,7 +168,11 @@ Pages/Edit.cshtml 文件：
 
 [!code-cshtml[](index/sample/RazorPagesContacts/Pages/Edit.cshtml?highlight=1)]
 
-第一行包含 `@page "{id:int}"` 指令。 路由约束 `"{id:int}"` 告诉页面接受包含 `int` 路由数据的页面请求。 如果页面请求未包含可转换为 `int` 的路由数据，则运行时返回 HTTP 404（未找到）错误。
+第一行包含 `@page "{id:int}"` 指令。 路由约束 `"{id:int}"` 告诉页面接受包含 `int` 路由数据的页面请求。 如果页面请求未包含可转换为 `int` 的路由数据，则运行时返回 HTTP 404（未找到）错误。 若要使 ID 可选，请将 `?` 追加到路由约束：
+
+ ```cshtml
+@page "{id:int?}"
+```
 
 Pages/Edit.cshtml.cs 文件：
 

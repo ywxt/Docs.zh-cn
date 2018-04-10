@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
-title: "创建存储的过程和用户定义函数与托管代码 (VB) |Microsoft 文档"
+title: 创建存储的过程和用户定义函数与托管代码 (VB) |Microsoft 文档
 author: rick-anderson
-description: "Microsoft SQL Server 2005 与.NET 公共语言运行时允许开发人员创建数据库对象通过托管代码集成。 本教程中..."
+description: Microsoft SQL Server 2005 与.NET 公共语言运行时允许开发人员创建数据库对象通过托管代码集成。 本教程中...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e30df9ddc094d0390d9e5985ec676713b57feaf4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: cb676313b04fab9c7cf9c6d08d08d07852ee1fcb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a>创建存储过程和用户定义函数用托管代码 (VB)
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 01/24/2018
 
 如 Microsoft 的 SQL Server 2005 的数据库使用[Transact-Structured 查询语言 (T-SQL)](http://en.wikipedia.org/wiki/Transact-SQL)用于插入、 修改和检索数据。 大多数数据库系统包括用于对一系列然后可作为单个可重用单元执行的 SQL 语句进行分组构造。 存储的过程是一个示例。 另一种是*用户定义函数*(Udf)，我们将在步骤 9 中的更详细地检查的构造。
 
-在其核心而言，SQL 旨在用于处理的数据集。 `SELECT`， `UPDATE`，和`DELETE`语句本质上是应用于相应的表中的所有记录，并仅受其`WHERE`子句。 尚未有许多，旨在用于一次处理一条记录，用于操作标量数据的语言功能。 [`CURSOR`s](http://www.sqlteam.com/item.asp?ItemID=553)允许记录一组要通过一次一个地循环。 字符串操作函数，如`LEFT`， `CHARINDEX`，和`PATINDEX`适用于标量数据。 SQL 还包括控制流语句，如`IF`和`WHILE`。
+在其核心而言，SQL 旨在用于处理的数据集。 `SELECT`， `UPDATE`，和`DELETE`语句本质上是应用于相应的表中的所有记录，并仅受其`WHERE`子句。 尚未有许多，旨在用于一次处理一条记录，用于操作标量数据的语言功能。 [`CURSOR` s](http://www.sqlteam.com/item.asp?ItemID=553)允许记录一组要通过一次一个地循环。 字符串操作函数，如`LEFT`， `CHARINDEX`，和`PATINDEX`适用于标量数据。 SQL 还包括控制流语句，如`IF`和`WHILE`。
 
 在 Microsoft SQL Server 2005 中之前, 存储的过程和 Udf 可以仅定义为一个 T-SQL 语句的集合。 SQL Server 2005 中，但是，旨在提供与集成[公共语言运行时 (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx)，这是运行时使用的所有.NET 程序集。 因此，存储的过程和 SQL Server 2005 数据库中的 Udf 可以创建使用托管的代码。 也就是说，可以为 Visual Basic 类中的方法中创建的存储的过程或 UDF。 这样，这些存储的过程和 Udf 利用.NET Framework 中和从您自己的自定义类的功能。
 
@@ -424,8 +424,8 @@ Udf 还可以返回表格数据。 例如，我们可以创建返回属于特定
 
 一次您的项目中，返回到 SQL Server Management Studio 部署并刷新标量值函数文件夹。 你现在应看到两个条目：
 
-- `dbo.udf_ComputeInventoryValue`-在步骤 9 中创建 T-SQL 的 UDF 和
-- `dbo.udf ComputeInventoryValue_Managed`-在刚才部署的步骤 10 中创建托管的 UDF。
+- `dbo.udf_ComputeInventoryValue` -在步骤 9 中创建 T-SQL 的 UDF 和
+- `dbo.udf ComputeInventoryValue_Managed` -在刚才部署的步骤 10 中创建托管的 UDF。
 
 若要测试此托管的 UDF，请执行以下查询从 Management Studio 中：
 
@@ -544,7 +544,7 @@ SQL Server 项目更加轻松地创建、 编译和部署托管的数据库对�
 **图 32**:`ManuallyCreatedDBObjects.dll`列在对象资源管理器 ([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image78.png))
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 Microsoft SQL Server 2005 提供集成使用公共语言运行时 (CLR)，它允许使用托管的代码创建数据库对象。 以前，只能无法使用 T-SQL 的创建这些数据库对象，但现在，我们可以创建这些对象使用的.NET 编程语言，如 Visual Basic。 在本教程中我们创建了两个托管存储的过程和托管的用户定义函数。
 
@@ -569,11 +569,11 @@ Visual Studio 的 SQL Server 项目类型便于创建、 编译和部署托管�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 S ren 异世 Lauritsen。 除了查看此文章，S ren 还创建了此文章的下载用于手动编译托管的数据库对象中包含 Visual C# 速成版项目。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一篇](debugging-stored-procedures-vb.md)
+> [!div class="step-by-step"]
+> [上一篇](debugging-stored-procedures-vb.md)

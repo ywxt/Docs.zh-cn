@@ -1,7 +1,7 @@
 ---
-title: "在 Azure 应用服务上托管 ASP.NET Core"
+title: 在 Azure 应用服务上托管 ASP.NET Core
 author: guardrex
-description: "通过指向有用资源的链接，了解如何在 Azure 应用服务中托管 ASP.NET Core 应用。"
+description: 通过指向有用资源的链接，了解如何在 Azure 应用服务中托管 ASP.NET Core 应用。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,17 +10,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: cefbc27c8091a2ed1441663e3779d67aae2c64dd
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c2675f73880a41ee75f6ec13155419945387e109
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>在 Azure 应用服务上托管 ASP.NET Core
 
 [Azure 应用服务](https://azure.microsoft.com/services/app-service/)是一个用于托管 Web 应用（包括 ASP.NET Core）的 [Microsoft 云计算平台服务](https://azure.microsoft.com/)。
-
-[!INCLUDE[Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
 
 ## <a name="useful-resources"></a>有用资源
 
@@ -57,6 +55,10 @@ ASP.NET Core 文档中提供以下文章：
 * [Microsoft.AspNetCore.AzureAppServicesIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServicesIntegration/) 执行 [AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics)，在 `Microsoft.Extensions.Logging.AzureAppServices` 包中添加 Azure 应用服务诊断日志记录提供程序。
 * [Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices/) 提供记录器实现，支持 Azure 应用服务诊断日志和日志流式处理功能。
 
+## <a name="proxy-server-and-load-balancer-scenarios"></a>代理服务器和负载均衡器方案
+
+配置转发头中间件的 IIS 集成中间件和 ASP.NET Core 模块将配置为转发方案 (HTTP/HTTPS) 和发出请求的远程 IP 地址。 对于托管在其他代理服务器和负载均衡器后方的应用，可能需要附加配置。 有关详细信息，请参阅[配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)。
+
 ## <a name="monitoring-and-logging"></a>监视和日志记录
 
 有关监视、日志记录和故障排除的信息，请参阅以下文章：
@@ -89,6 +91,62 @@ ASP.NET Core 文档中提供以下文章：
 
 有关详细信息，请参阅[密钥存储提供程序](xref:security/data-protection/implementation/key-storage-providers)。
 
+## <a name="deploy-aspnet-core-preview-release-to-azure-app-service"></a>将 ASP.NET Core 预览版部署到 Azure 应用服务
+
+可通过以下方法将 ASP.NET Core 预览应用部署到 Azure 应用服务：
+
+* [安装预览站点扩展](#site-x)
+* [部署自包含应用](#self)
+* [对用于容器的 Web 应用使用 Docker](#docker)
+
+如果使用预览站点扩展时遇到问题，请在 [GitHub](https://github.com/aspnet/azureintegration/issues/new) 上打开相应的问题。
+
+<a name="site-x"></a>
+### <a name="install-the-preview-site-extention"></a>安装预览站点扩展
+
+* 从 Azure 门户导航到“应用服务”边栏选项卡。
+* 在搜索框中输入“ex”。
+* 选择“扩展”。
+* 选择“添加”。
+
+![显示上述部署的 Azure 应用边栏选项卡](index/_static/x1.png)
+
+* 选择“ASP.NET Core 运行时扩展”。
+* 选择“确定” > “确定”。
+
+添加操作完成时，即表示已安装最新的 .NET Core 2.1 预览。 可通过在控制台中运行 `dotnet --info` 来验证安装。 从“应用服务”边栏选项卡：
+
+* 在搜索框中输入“con”。
+* 选择“控制台”。
+* 在控制台中输入 `dotnet --info`。
+
+![显示上述部署的 Azure 应用边栏选项卡](index/_static/cons.png)
+
+前面的图像在写入时是最新的。 你可能会看到不同的版本。
+
+`dotnet --info` 显示已安装该预览的站点扩展的路径。 它显示应用从该站点扩展运行，而不是从默认的 ProgramFiles 位置运行。 如果看到 ProgramFiles，请重启该站点并运行 `dotnet --info`。
+
+#### <a name="use-the-preview-site-extention-with-an-arm-template"></a>通过 ARM 模板使用预览站点扩展
+
+如果使用 ARM 模板来创建和部署应用程序，则可使用 `siteextensions` 资源类型将站点扩展添加到 Web 应用。 例如:
+
+[!code-json[Main](index/sample/arm.json?highlight=2)]
+
+<a name="self"></a>
+### <a name="deploy-the-app-self-contained"></a>部署自包含应用
+
+可以部署[自包含应用](/dotnet/core/deploying/#self-contained-deployments-scd)，它在部署时附有预览运行时。 部署自包含应用时：
+
+* 无需准备站点。
+* 在服务器上安装 SDK 后，需要采用不同于部署应用时的方式来发布应用程序。
+
+对所有 .NET Core 应用程序而言，自包含应用都是一个不错的选择。
+
+<a name="docker"></a>
+### <a name="use-docker-with-web-apps-for-containers"></a>对用于容器的 Web 应用使用 Docker
+
+[Docker 中心](https://hub.docker.com/r/microsoft/aspnetcore/)包含最新的 2.1 预览 Docker 映像。 可将这些映像用作基础映像，并像平常一样将其部署到用于容器的 Web 应用。
+
 ## <a name="additional-resources"></a>其他资源
 
 * [Web 应用概述（5 分钟概述视频）](/azure/app-service/app-service-web-overview)
@@ -101,5 +159,5 @@ Windows Server 上的 Azure 应用服务使用 [Internet Information Services (I
 * [使用 IIS 在 Windows 上托管 ASP.NET Core](xref:host-and-deploy/iis/index)
 * [ASP.NET Core 模块简介](xref:fundamentals/servers/aspnet-core-module)
 * [ASP.NET Core 模块配置参考](xref:host-and-deploy/aspnet-core-module)
-* [配合使用 IIS 模块与 ASP.NET Core](xref:host-and-deploy/iis/modules)
+* [IIS Modules 与 ASP.NET Core](xref:host-and-deploy/iis/modules)
 * [Microsoft TechNet 库：Windows Server](/windows-server/windows-server-versions)

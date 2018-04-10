@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 中的 Facebook、Google 和外部提供程序身份验证"
+title: ASP.NET Core 中的 Facebook、Google 和外部提供程序身份验证
 author: rick-anderson
-description: "本教程演示如何使用外部身份验证提供程序通过 OAuth 2.0 生成 ASP.NET Core 2.x 应用。"
+description: 本教程演示如何使用外部身份验证提供程序通过 OAuth 2.0 生成 ASP.NET Core 2.x 应用。
 manager: wpickett
 ms.author: riande
 ms.date: 11/01/2016
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/social/index
-ms.openlocfilehash: 76433f814d6850a449434c29eb0bd27570ce193a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 93fa42be9c551f5bbdf3851aec1d9e01139fdb76
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core 中的 Facebook、Google 和外部提供程序身份验证
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 03/02/2018
 
 本教程演示如何生成 ASP.NET Core 2.x 应用，该应用可让用户使用外部身份验证提供程序提供的凭据通过 OAuth 2.0 登录。
 
-以下几节中介绍了 [Facebook](facebook-logins.md)、[Twitter](twitter-logins.md)、[Google](google-logins.md) 和 [Microsoft](microsoft-logins.md) 提供程序。 第三方程序包中提供了其他提供程序，例如 [AspNet.Security.OAuth.Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers) 和 [AspNet.Security.OpenId.Providers](https://github.com/aspnet-contrib/AspNet.Security.OpenId.Providers)。
+以下几节中介绍了 [Facebook](xref:security/authentication/facebook-logins)、[Twitter](xref:security/authentication/twitter-logins)、[Google](xref:security/authentication/google-logins) 和 [Microsoft](xref:security/authentication/microsoft-logins) 提供程序。 第三方程序包中提供了其他提供程序，例如 [AspNet.Security.OAuth.Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers) 和 [AspNet.Security.OpenId.Providers](https://github.com/aspnet-contrib/AspNet.Security.OpenId.Providers)。
 
 ![Facebook、Twitter、Google plus 和 Windows 的社交媒体图标](index/_static/social.png)
 
@@ -58,7 +58,7 @@ OAuth 2.0 需要使用 SSL 通过 HTTPS 协议进行身份验证。
 
 请注意：如果如上图所示，在项目向导的“更改身份验证”对话框上选择“单个用户帐户”选项，使用 ASP.NET Core 2.x 的“Web 应用程序”或“Web API”项目模板创建的项目自动配置为启用 SSL 并通过 http URL 启动。
 
-* 按照 [Enforcing SSL in an ASP.NET Core app](xref:security/enforcing-ssl)（在 ASP.NET Core 应用中强制实施 SSL）主题中的步骤进行操作，要求在站点上使用 SSL。
+* 按照[在 ASP.NET Core 应用中强制实施 SSL](xref:security/enforcing-ssl)主题中的步骤进行操作，要求在站点上使用 SSL。
 
 ## <a name="use-secretmanager-to-store-tokens-assigned-by-login-providers"></a>使用 SecretManager 存储登录提供程序分配的令牌
 
@@ -66,17 +66,17 @@ OAuth 2.0 需要使用 SSL 通过 HTTPS 协议进行身份验证。
 
 这些值实际上是应用程序用于访问其 API 的“用户名”和“密码”，它们组成的“机密”可在“机密管理器”的帮助下链接到应用程序配置，而不是直接存储在配置文件中或被硬编码。
 
-按照 [Safe storage of app secrets during development in ASP.NET Core](xref:security/app-secrets)（在 ASP.NET Core 中进行开发期间安全存储应用机密）主题中的步骤进行操作，以便可以存储以下每个登录提供程序分配的令牌。
+按照[在 ASP.NET Core 中进行开发期间安全存储应用机密](xref:security/app-secrets)主题中的步骤进行操作，以便可以存储以下每个登录提供程序分配的令牌。
 
 ## <a name="setup-login-providers-required-by-your-application"></a>应用程序所需的安装登录提供程序
 
 使用以下主题配置应用程序，以使用相应的提供程序：
 
-* [Facebook](facebook-logins.md) 相关说明
-* [Twitter](twitter-logins.md) 相关说明
-* [Google](google-logins.md) 相关说明
-* [Microsoft](microsoft-logins.md) 相关说明
-* [其他提供程序](other-logins.md)相关说明
+* [Facebook](xref:security/authentication/facebook-logins) 相关说明
+* [Twitter](xref:security/authentication/twitter-logins) 相关说明
+* [Google](xref:security/authentication/google-logins) 相关说明
+* [Microsoft](xref:security/authentication/microsoft-logins) 相关说明
+* [其他提供程序](xref:security/authentication/otherlogins)相关说明
 
 ## <a name="optionally-set-password"></a>选择性地设置密码
 

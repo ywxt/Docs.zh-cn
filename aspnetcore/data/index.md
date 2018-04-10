@@ -1,7 +1,7 @@
 ---
-title: "在 ASP.NET Core 中使用数据"
+title: 在 ASP.NET Core 中使用数据
 author: rick-anderson
-description: "提供介绍如何处理数据的文章的链接。 许多都使用 Entity Framework Core。"
+description: 提供介绍如何处理数据的文章的链接。 许多都使用 Entity Framework Core。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: data/index
-ms.openlocfilehash: 6cdd8b2889a2a53c2767e5a5ebb170c31d2c31a4
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 068c70c15acc8d8da6759020725e48a77946c53e
+ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="working-with-data-in-aspnet-core"></a>在 ASP.NET Core 中使用数据 
+# <a name="work-with-data-in-aspnet-core"></a>在 ASP.NET Core 中使用数据
 
 * [通过 Visual Studio 开始使用 Razor 页面和 Entity Framework Core](xref:data/ef-rp/index)
 
