@@ -1,5 +1,5 @@
 ---
-title: ASP.NET 核心中基于策略的授权
+title: ASP.NET Core中基于策略的授权
 author: rick-anderson
 description: 了解如何创建和使用授权策略处理程序，用于实施 ASP.NET Core 应用程序中的授权要求。
 manager: wpickett
@@ -16,7 +16,7 @@ ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
 ---
-# <a name="policy-based-authorization-in-aspnet-core"></a>ASP.NET 核心中基于策略的授权
+# <a name="policy-based-authorization-in-aspnet-core"></a>ASP.NET Core中基于策略的授权
 
 实际上，[基于角色的授权](xref:security/authorization/roles)和[基于声明的授权](xref:security/authorization/claims)使用要求，要求处理程序，并预先配置的策略。 这些构建基块支持在代码中的授权评估表达式。 结果是一个更丰富、 可重复使用、 可测试授权结构。
 
@@ -85,7 +85,7 @@ ms.lasthandoff: 03/22/2018
 
 * 若要确保失败，即使其他要求处理程序成功，调用`context.Fail`。
 
-当设置为`false`、 [InvokeHandlersAfterFailure](/dotnet/api/microsoft.aspnetcore.authorization.authorizationoptions.invokehandlersafterfailure#Microsoft_AspNetCore_Authorization_AuthorizationOptions_InvokeHandlersAfterFailure)属性 （位于 ASP.NET 核心 1.1 和更高版本） 会使短路执行的处理程序时`context.Fail`调用。 `InvokeHandlersAfterFailure` 默认为`true`，在这种情况下调用所有处理程序。 这样要求以产生副作用，例如日志记录，这些始终发生即使`context.Fail`已在另一个处理程序调用。
+当设置为`false`、 [InvokeHandlersAfterFailure](/dotnet/api/microsoft.aspnetcore.authorization.authorizationoptions.invokehandlersafterfailure#Microsoft_AspNetCore_Authorization_AuthorizationOptions_InvokeHandlersAfterFailure)属性 （位于 ASP.NET Core 1.1 和更高版本） 会使短路执行的处理程序时`context.Fail`调用。 `InvokeHandlersAfterFailure` 默认为`true`，在这种情况下调用所有处理程序。 这样要求以产生副作用，例如日志记录，这些始终发生即使`context.Fail`已在另一个处理程序调用。
 
 <a name="security-authorization-policies-based-multiple-handlers"></a>
 
@@ -111,17 +111,17 @@ ms.lasthandoff: 03/22/2018
 
 可能有哪些履行策略是简单代码中表示的情况。 可以提供`Func<AuthorizationHandlerContext, bool>`配置与你的策略时`RequireAssertion`策略生成器。
 
-例如，以前`BadgeEntryHandler`无法，如下所示重写：
+例如，上一个`BadgeEntryHandler`可以如下所示重写：
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=52-53,57-63)]
 
-## <a name="accessing-mvc-request-context-in-handlers"></a>访问在处理程序的 MVC 请求上下文
+## <a name="accessing-mvc-request-context-in-handlers"></a>访问在处理程序中的 MVC 请求上下文
 
-`HandleRequirementAsync`授权处理程序中实现的方法具有两个参数：`AuthorizationHandlerContext`和`TRequirement`正在处理。 框架，例如 MVC 或 Jabbr 可用于任何将对象添加到`Resource`属性`AuthorizationHandlerContext`传递额外信息。
+`HandleRequirementAsync`授权处理程序中实现的方法具有两个参数：`AuthorizationHandlerContext`和`TRequirement`正在处理。 框架，例如 MVC 或 Jabbr 可自由将任何对象添加到`AuthorizationHandlerContext`中的`Resource`属性来传递额外信息。
 
 例如，MVC 传递的实例的[AuthorizationFilterContext](/dotnet/api/?term=AuthorizationFilterContext)中`Resource`属性。 此属性提供访问权限`HttpContext`， `RouteData`，以及其他和提供的 MVC Razor 页的所有内容。
 
-使用`Resource`属性是特定于框架。 使用中的信息`Resource`属性限制到特定的框架你授权策略。 应强制转换`Resource`属性使用`as`关键字，然后确认该强制转换具有成功以确保你的代码不崩溃与`InvalidCastException`其他框架上运行时：
+使用`Resource`属性是特定于框架。 使用`Resource`属性中信息限制特定框架上你的授权策略。 应使用`as`关键字强制转换`Resource`属性，然后确认该强制转换是否成功以确保你的代码不因为其他框架抛出`InvalidCastException`异常产生崩溃：
 
 ```csharp
 // Requires the following import:
