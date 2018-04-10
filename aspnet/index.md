@@ -2,13 +2,13 @@
 uid: index
 layout: HubPage
 ms.topic: hub-page
-title: "ASP.NET 文档 | Microsoft Docs"
-description: 
-ms.openlocfilehash: 4ab928b65bc91a24d02cd0450e143cd6bd3b639b
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+title: ASP.NET 文档 | Microsoft Docs
+description: ''
+ms.openlocfilehash: cc887183fba9d3c46fbb1068d13d612a3e1806e6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/06/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -23,7 +23,7 @@ ms.lasthandoff: 03/08/2018
                             <li>
                                 <div class="container intro">
                                     <p>ASP.NET Core 是一种全新的跨平台开源 .NET 框架，用于在 Windows、Mac 或 Linux 上生成基于云的新式 Web 应用程序。</p>
-                                    <p>[了解 ASP.NET Core 和 ASP.NET 各自的优势](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework)并选择最适合自己的。</p>
+                                    <p><a href="https://docs.microsoft.com/aspnet/core/choose-aspnet-framework" data-raw-source="[Learn the benefits of both ASP.NET Core and ASP.NET](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework)">了解 ASP.NET Core 和 ASP.NET 各自的优势</a>并选择最适合自己的。</p>
                                 </div>
                             </li>
                             <li>
@@ -153,7 +153,7 @@ ms.lasthandoff: 03/08/2018
                         <ul id="core_tutorials" class="cardsZ">
                             <li>
                                 <div class="container intro">
-                                    <p>特色教程 | [查看全部 ASP.NET Core 教程](https://docs.microsoft.com/aspnet/core/tutorials/)</p>
+                                    <p>特色教程 | <a href="https://docs.microsoft.com/aspnet/core/tutorials/" data-raw-source="[View all ASP.NET Core tutorials](https://docs.microsoft.com/aspnet/core/tutorials/)">查看全部 ASP.NET Core 教程</a></p>
                                 </div>
                             </li>
                             <li>
@@ -291,7 +291,7 @@ ms.lasthandoff: 03/08/2018
                             <li>
                                 <div class="container intro">
                                     <p>ASP.NET 是一个成熟的 Web 平台，可提供在 Windows 上使用 .NET 生成基于服务器的企业级 Web 应用程序时所需的全部服务。</p>
-                                    <p>[了解 ASP.NET Core 和 ASP.NET 各自的优势](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework)并选择最适合自己的。</p>
+                                    <p><a href="https://docs.microsoft.com/aspnet/core/choose-aspnet-framework" data-raw-source="[Learn the benefits of both ASP.NET Core and ASP.NET](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework)">了解 ASP.NET Core 和 ASP.NET 各自的优势</a>并选择最适合自己的。</p>
                                 </div>
                             </li>
                             <li>
@@ -568,7 +568,7 @@ ms.lasthandoff: 03/08/2018
                         <ul id="aspnet_tutorials" class="cardsZ">
                             <li>
                                 <div class="container intro">
-                                    <p>特色教程 | [查看全部 ASP.NET 教程](https://docs.microsoft.com/aspnet/tutorials/)</p>
+                                    <p>特色教程 | <a href="https://docs.microsoft.com/aspnet/tutorials/" data-raw-source="[View all ASP.NET tutorials](https://docs.microsoft.com/aspnet/tutorials/)">查看全部 ASP.NET 教程</a></p>
                                 </div>
                             </li>
                             <li>

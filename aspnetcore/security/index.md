@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 安全性概述"
+title: ASP.NET Core 安全性概述
 author: rachelappel
-description: "了解 ASP.NET Core 中的身份验证、授权和安全基础知识。"
+description: 了解 ASP.NET Core 中的身份验证、授权和安全基础知识。
 manager: wpickett
 ms.author: rachelap
 ms.date: 11/01/2017
@@ -9,101 +9,101 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/index
-ms.openlocfilehash: e03256d7b8b442569b0b0126983732c10817e20f
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: da3829b2d5ae5db1861c7423da5afc7acbee6697
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="aspnet-core-security-overview"></a><span data-ttu-id="5172e-103">ASP.NET Core 安全性概述</span><span class="sxs-lookup"><span data-stu-id="5172e-103">ASP.NET Core Security Overview</span></span>
+# <a name="overview-of-aspnet-core-security"></a><span data-ttu-id="76198-103">ASP.NET Core 安全性概述</span><span class="sxs-lookup"><span data-stu-id="76198-103">Overview of ASP.NET Core Security</span></span>
 
-<span data-ttu-id="5172e-104">通过 ASP.NET Core，开发者可轻松配置和管理其应用的安全性。</span><span class="sxs-lookup"><span data-stu-id="5172e-104">ASP.NET Core enables developers to easily configure and manage security for their apps.</span></span> <span data-ttu-id="5172e-105">ASP.NET Core 的功能包括管理身份验证、授权、数据保护、SSL 强制、应用机密、请求防伪保护及 CORS 管理。</span><span class="sxs-lookup"><span data-stu-id="5172e-105">ASP.NET Core contains features for managing authentication, authorization, data protection, SSL enforcement, app secrets, anti-request forgery protection, and CORS management.</span></span> <span data-ttu-id="5172e-106">通过这些安全功能，可以生成安全可靠的 ASP.NET Core 应用。</span><span class="sxs-lookup"><span data-stu-id="5172e-106">These security features allow you to build robust yet secure ASP.NET Core apps.</span></span>
+<span data-ttu-id="76198-104">通过 ASP.NET Core，开发者可轻松配置和管理其应用的安全性。</span><span class="sxs-lookup"><span data-stu-id="76198-104">ASP.NET Core enables developers to easily configure and manage security for their apps.</span></span> <span data-ttu-id="76198-105">ASP.NET Core 的功能包括管理身份验证、授权、数据保护、SSL 强制、应用机密、请求防伪保护及 CORS 管理。</span><span class="sxs-lookup"><span data-stu-id="76198-105">ASP.NET Core contains features for managing authentication, authorization, data protection, SSL enforcement, app secrets, anti-request forgery protection, and CORS management.</span></span> <span data-ttu-id="76198-106">通过这些安全功能，可以生成安全可靠的 ASP.NET Core 应用。</span><span class="sxs-lookup"><span data-stu-id="76198-106">These security features allow you to build robust yet secure ASP.NET Core apps.</span></span>
 
-## <a name="aspnet-core-security-features"></a><span data-ttu-id="5172e-107">ASP.NET Core 安全性功能</span><span class="sxs-lookup"><span data-stu-id="5172e-107">ASP.NET Core security features</span></span>
+## <a name="aspnet-core-security-features"></a><span data-ttu-id="76198-107">ASP.NET Core 安全性功能</span><span class="sxs-lookup"><span data-stu-id="76198-107">ASP.NET Core security features</span></span>
 
-<span data-ttu-id="5172e-108">ASP.NET Core 提供许多用于保护应用安全的工具和库（包括内置标识提供程序），但也可使用第三方标志服务（如 Facebook、Twitter 或 LinkedIn）。</span><span class="sxs-lookup"><span data-stu-id="5172e-108">ASP.NET Core provides many tools and libraries to secure your apps including built-in Identity providers but you can use 3rd party identity services such as Facebook, Twitter, or LinkedIn.</span></span> <span data-ttu-id="5172e-109">利用 ASP.NET Core 可以轻松管理应用机密，无需将机密信息暴露在代码中就可存储和使用它们。</span><span class="sxs-lookup"><span data-stu-id="5172e-109">With ASP.NET Core, you can easily manage app secrets, which are a way to store and use confidential information without having to expose it in the code.</span></span>
+<span data-ttu-id="76198-108">ASP.NET Core 提供许多用于保护应用安全的工具和库（包括内置标识提供程序），但也可使用第三方标志服务（如 Facebook、Twitter 或 LinkedIn）。</span><span class="sxs-lookup"><span data-stu-id="76198-108">ASP.NET Core provides many tools and libraries to secure your apps including built-in Identity providers but you can use 3rd party identity services such as Facebook, Twitter, or LinkedIn.</span></span> <span data-ttu-id="76198-109">利用 ASP.NET Core 可以轻松管理应用机密，无需将机密信息暴露在代码中就可存储和使用它们。</span><span class="sxs-lookup"><span data-stu-id="76198-109">With ASP.NET Core, you can easily manage app secrets, which are a way to store and use confidential information without having to expose it in the code.</span></span>
 
-## <a name="authentication-vs-authorization"></a><span data-ttu-id="5172e-110">身份验证 vs授权</span><span class="sxs-lookup"><span data-stu-id="5172e-110">Authentication vs. Authorization</span></span>
+## <a name="authentication-vs-authorization"></a><span data-ttu-id="76198-110">身份验证 vs授权</span><span class="sxs-lookup"><span data-stu-id="76198-110">Authentication vs. Authorization</span></span>
 
-<span data-ttu-id="5172e-111">身份验证是这样一个过程：由用户提供凭据，然后将其与存储在操作系统、数据库、应用或资源中的凭据进行比较。</span><span class="sxs-lookup"><span data-stu-id="5172e-111">Authentication is a process in which a user provides credentials that are then compared to those stored in an operating system, database, app or resource.</span></span> <span data-ttu-id="5172e-112">在授权过程中，如果凭据匹配，则用户身份验证成功，可执行已向其授权的操作。</span><span class="sxs-lookup"><span data-stu-id="5172e-112">If they match, users authenticate successfully, and can then perform actions that they're authorized for, during an authorization process.</span></span> <span data-ttu-id="5172e-113">授权指判断允许用户执行的操作的过程。</span><span class="sxs-lookup"><span data-stu-id="5172e-113">The authorization refers to the process that determines what a user is allowed to do.</span></span>
+<span data-ttu-id="76198-111">身份验证是这样一个过程：由用户提供凭据，然后将其与存储在操作系统、数据库、应用或资源中的凭据进行比较。</span><span class="sxs-lookup"><span data-stu-id="76198-111">Authentication is a process in which a user provides credentials that are then compared to those stored in an operating system, database, app or resource.</span></span> <span data-ttu-id="76198-112">在授权过程中，如果凭据匹配，则用户身份验证成功，可执行已向其授权的操作。</span><span class="sxs-lookup"><span data-stu-id="76198-112">If they match, users authenticate successfully, and can then perform actions that they're authorized for, during an authorization process.</span></span> <span data-ttu-id="76198-113">授权指判断允许用户执行的操作的过程。</span><span class="sxs-lookup"><span data-stu-id="76198-113">The authorization refers to the process that determines what a user is allowed to do.</span></span>
 
-<span data-ttu-id="5172e-114">对身份验证的另一种理解是将其看作进入某一空间（如服务器、数据库、应用或资源）的方式，而将授权看作用户可对该空间（服务器、数据库或应用）内的对象执行的操作。</span><span class="sxs-lookup"><span data-stu-id="5172e-114">Another way to think of authentication is to consider it as a way to enter a space, such as a server, database, app or resource, while authorization is which actions the user can perform to which objects inside that space (server, database, or app).</span></span>
+<span data-ttu-id="76198-114">对身份验证的另一种理解是将其看作进入某一空间（如服务器、数据库、应用或资源）的方式，而将授权看作用户可对该空间（服务器、数据库或应用）内的对象执行的操作。</span><span class="sxs-lookup"><span data-stu-id="76198-114">Another way to think of authentication is to consider it as a way to enter a space, such as a server, database, app or resource, while authorization is which actions the user can perform to which objects inside that space (server, database, or app).</span></span>
 
-## <a name="common-vulnerabilities-in-software"></a><span data-ttu-id="5172e-115">软件中的常见漏洞</span><span class="sxs-lookup"><span data-stu-id="5172e-115">Common Vulnerabilities in software</span></span>
+## <a name="common-vulnerabilities-in-software"></a><span data-ttu-id="76198-115">软件中的常见漏洞</span><span class="sxs-lookup"><span data-stu-id="76198-115">Common Vulnerabilities in software</span></span>
 
-<span data-ttu-id="5172e-116">ASP.NET Core 和 EF 提供维护应用安全、预防安全漏洞的功能。</span><span class="sxs-lookup"><span data-stu-id="5172e-116">ASP.NET Core and EF contain features that help you secure your apps and prevent security breaches.</span></span> <span data-ttu-id="5172e-117">下表中链接的文档详细介绍了在 Web 应用中避免最常见安全漏洞的技术：</span><span class="sxs-lookup"><span data-stu-id="5172e-117">The following list of links takes you to documentation detailing techniques to avoid the most common security vulnerabilities in web apps:</span></span>
+<span data-ttu-id="76198-116">ASP.NET Core 和 EF 提供维护应用安全、预防安全漏洞的功能。</span><span class="sxs-lookup"><span data-stu-id="76198-116">ASP.NET Core and EF contain features that help you secure your apps and prevent security breaches.</span></span> <span data-ttu-id="76198-117">下表中链接的文档详细介绍了在 Web 应用中避免最常见安全漏洞的技术：</span><span class="sxs-lookup"><span data-stu-id="76198-117">The following list of links takes you to documentation detailing techniques to avoid the most common security vulnerabilities in web apps:</span></span>
 
-* [<span data-ttu-id="5172e-118">跨站点脚本攻击</span><span class="sxs-lookup"><span data-stu-id="5172e-118">Cross-site scripting attacks</span></span>](https://docs.microsoft.com/aspnet/core/security/cross-site-scripting)
-* [<span data-ttu-id="5172e-119">SQL 注入式攻击</span><span class="sxs-lookup"><span data-stu-id="5172e-119">SQL injection attacks</span></span>](https://docs.microsoft.com/ef/core/querying/raw-sql)
-* [<span data-ttu-id="5172e-120">跨站点请求伪造 (CSRF)</span><span class="sxs-lookup"><span data-stu-id="5172e-120">Cross-Site Request Forgery (CSRF)</span></span>](https://docs.microsoft.com/aspnet/core/security/anti-request-forgery)
-* [<span data-ttu-id="5172e-121">打开重定向攻击</span><span class="sxs-lookup"><span data-stu-id="5172e-121">Open redirect attacks</span></span>](https://docs.microsoft.com/aspnet/core/security/preventing-open-redirects)
+* [<span data-ttu-id="76198-118">跨站点脚本攻击</span><span class="sxs-lookup"><span data-stu-id="76198-118">Cross-site scripting attacks</span></span>](xref:security/cross-site-scripting)
+* [<span data-ttu-id="76198-119">SQL 注入式攻击</span><span class="sxs-lookup"><span data-stu-id="76198-119">SQL injection attacks</span></span>](https://docs.microsoft.com/ef/core/querying/raw-sql)
+* [<span data-ttu-id="76198-120">跨站点请求伪造 (CSRF)</span><span class="sxs-lookup"><span data-stu-id="76198-120">Cross-Site Request Forgery (CSRF)</span></span>](xref:security/anti-request-forgery)
+* [<span data-ttu-id="76198-121">打开重定向攻击</span><span class="sxs-lookup"><span data-stu-id="76198-121">Open redirect attacks</span></span>](xref:security/preventing-open-redirects)
 
-<span data-ttu-id="5172e-122">还应注意其他漏洞。</span><span class="sxs-lookup"><span data-stu-id="5172e-122">There are more vulnerabilities that you should be aware of.</span></span> <span data-ttu-id="5172e-123">有关详细信息，请参阅本文档中关于 ASP.NET Core 安全文档的部分。</span><span class="sxs-lookup"><span data-stu-id="5172e-123">For more information, see the section in this document on *ASP.NET Security Documentation*.</span></span>
+<span data-ttu-id="76198-122">还应注意其他漏洞。</span><span class="sxs-lookup"><span data-stu-id="76198-122">There are more vulnerabilities that you should be aware of.</span></span> <span data-ttu-id="76198-123">有关详细信息，请参阅本文档中关于 ASP.NET Core 安全文档的部分。</span><span class="sxs-lookup"><span data-stu-id="76198-123">For more information, see the section in this document on *ASP.NET Security Documentation*.</span></span>
 
-## <a name="aspnet-security-documentation"></a><span data-ttu-id="5172e-124">ASP.NET Core 安全文档</span><span class="sxs-lookup"><span data-stu-id="5172e-124">ASP.NET Security Documentation</span></span>
+## <a name="aspnet-security-documentation"></a><span data-ttu-id="76198-124">ASP.NET Core 安全文档</span><span class="sxs-lookup"><span data-stu-id="76198-124">ASP.NET Security Documentation</span></span>
 
-*   [<span data-ttu-id="5172e-125">身份验证</span><span class="sxs-lookup"><span data-stu-id="5172e-125">Authentication</span></span>](authentication/index.md)
-    *   [<span data-ttu-id="5172e-126">标识简介</span><span class="sxs-lookup"><span data-stu-id="5172e-126">Introduction to Identity</span></span>](authentication/identity.md)
-    *   [<span data-ttu-id="5172e-127">启用使用 Facebook、Google 和其他外部提供程序的身份验证</span><span class="sxs-lookup"><span data-stu-id="5172e-127">Enable authentication using Facebook, Google, and other external providers</span></span>](authentication/social/index.md)
-    *   [<span data-ttu-id="5172e-128">通过 WS 联合身份验证启用身份验证</span><span class="sxs-lookup"><span data-stu-id="5172e-128">Enable authentication with WS-Federation</span></span>](authentication/ws-federation.md)
-    * [<span data-ttu-id="5172e-129">配置 Windows 身份验证</span><span class="sxs-lookup"><span data-stu-id="5172e-129">Configure Windows Authentication</span></span>](authentication/windowsauth.md)
-    *   [<span data-ttu-id="5172e-130">帐户确认和密码恢复</span><span class="sxs-lookup"><span data-stu-id="5172e-130">Account confirmation and password recovery</span></span>](authentication/accconfirm.md)
-    *   [<span data-ttu-id="5172e-131">使用 SMS 设置双因素身份验证</span><span class="sxs-lookup"><span data-stu-id="5172e-131">Two-factor authentication with SMS</span></span>](authentication/2fa.md)
-    *   [<span data-ttu-id="5172e-132">在没有标识的情况下使用 cookie 身份验证</span><span class="sxs-lookup"><span data-stu-id="5172e-132">Use cookie authentication without Identity</span></span>](authentication/cookie.md)
-    *   [<span data-ttu-id="5172e-133">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="5172e-133">Azure Active Directory</span></span>](authentication/azure-active-directory/index.md)
-        *   [<span data-ttu-id="5172e-134">将 Azure AD 集成到 ASP.NET Core Web 应用中</span><span class="sxs-lookup"><span data-stu-id="5172e-134">Integrate Azure AD into an ASP.NET Core web app</span></span>](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
-        *   [<span data-ttu-id="5172e-135">使用 Azure AD 从 WPF 应用调用 ASP.NET Core Web API</span><span class="sxs-lookup"><span data-stu-id="5172e-135">Call an ASP.NET Core Web API from a WPF app using Azure AD</span></span>](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
-        *   [<span data-ttu-id="5172e-136">使用 Azure AD 在 ASP.NET Core Web 应用中调用 Web API</span><span class="sxs-lookup"><span data-stu-id="5172e-136">Call a Web API in an ASP.NET Core web app using Azure AD</span></span>](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
-        *   [<span data-ttu-id="5172e-137">带有 Azure AD B2C 的 ASP.NET Core Web 应用</span><span class="sxs-lookup"><span data-stu-id="5172e-137">An ASP.NET Core web app with Azure AD B2C</span></span>](https://azure.microsoft.com/resources/samples/active-directory-b2c-dotnetcore-webapp/)
-    *   [<span data-ttu-id="5172e-138">使用 IdentityServer4 保护 ASP.NET Core 应用</span><span class="sxs-lookup"><span data-stu-id="5172e-138">Secure ASP.NET Core apps with IdentityServer4</span></span>](https://identityserver4.readthedocs.io)
-*   [<span data-ttu-id="5172e-139">授权</span><span class="sxs-lookup"><span data-stu-id="5172e-139">Authorization</span></span>](authorization/index.md)
-    *   [<span data-ttu-id="5172e-140">介绍</span><span class="sxs-lookup"><span data-stu-id="5172e-140">Introduction</span></span>](authorization/introduction.md)
-    *   [<span data-ttu-id="5172e-141">通过授权保护的用户数据创建应用</span><span class="sxs-lookup"><span data-stu-id="5172e-141">Create an app with user data protected by authorization</span></span>](xref:security/authorization/secure-data)
-    *   [<span data-ttu-id="5172e-142">简单授权</span><span class="sxs-lookup"><span data-stu-id="5172e-142">Simple authorization</span></span>](authorization/simple.md)
-    *   [<span data-ttu-id="5172e-143">基于角色的授权</span><span class="sxs-lookup"><span data-stu-id="5172e-143">Role-based authorization</span></span>](authorization/roles.md)
-    *   [<span data-ttu-id="5172e-144">基于声明的授权</span><span class="sxs-lookup"><span data-stu-id="5172e-144">Claims-based authorization</span></span>](authorization/claims.md)
-    *   [<span data-ttu-id="5172e-145">基于策略的授权</span><span class="sxs-lookup"><span data-stu-id="5172e-145">Policy-based authorization</span></span>](authorization/policies.md)
-    *   [<span data-ttu-id="5172e-146">要求处理程序中的依赖关系注入</span><span class="sxs-lookup"><span data-stu-id="5172e-146">Dependency injection in requirement handlers</span></span>](authorization/dependencyinjection.md)
-    *   [<span data-ttu-id="5172e-147">基于资源的授权</span><span class="sxs-lookup"><span data-stu-id="5172e-147">Resource-based authorization</span></span>](authorization/resourcebased.md)
-    *   [<span data-ttu-id="5172e-148">基于视图的授权</span><span class="sxs-lookup"><span data-stu-id="5172e-148">View-based authorization</span></span>](authorization/views.md)
-    *   [<span data-ttu-id="5172e-149">使用方案限制标识</span><span class="sxs-lookup"><span data-stu-id="5172e-149">Limit identity by scheme</span></span>](authorization/limitingidentitybyscheme.md)
-*   [<span data-ttu-id="5172e-150">数据保护</span><span class="sxs-lookup"><span data-stu-id="5172e-150">Data protection</span></span>](data-protection/index.md)
-    *   [<span data-ttu-id="5172e-151">数据保护简介</span><span class="sxs-lookup"><span data-stu-id="5172e-151">Introduction to data protection</span></span>](data-protection/introduction.md)
-    *   [<span data-ttu-id="5172e-152">数据保护 API 入门</span><span class="sxs-lookup"><span data-stu-id="5172e-152">Get started with the Data Protection APIs</span></span>](data-protection/using-data-protection.md)
-    *   [<span data-ttu-id="5172e-153">使用者 API</span><span class="sxs-lookup"><span data-stu-id="5172e-153">Consumer APIs</span></span>](data-protection/consumer-apis/index.md)
-        *   [<span data-ttu-id="5172e-154">使用者 API 概述</span><span class="sxs-lookup"><span data-stu-id="5172e-154">Consumer APIs Overview</span></span>](data-protection/consumer-apis/overview.md)
-        *   [<span data-ttu-id="5172e-155">目标字符串</span><span class="sxs-lookup"><span data-stu-id="5172e-155">Purpose strings</span></span>](data-protection/consumer-apis/purpose-strings.md)
-        *   [<span data-ttu-id="5172e-156">目标层次结构和多租户</span><span class="sxs-lookup"><span data-stu-id="5172e-156">Purpose hierarchy and multi-tenancy</span></span>](data-protection/consumer-apis/purpose-strings-multitenancy.md)
-        *   [<span data-ttu-id="5172e-157">密码哈希</span><span class="sxs-lookup"><span data-stu-id="5172e-157">Password hashing</span></span>](data-protection/consumer-apis/password-hashing.md)
-        *   [<span data-ttu-id="5172e-158">限制受保护负载的生存期</span><span class="sxs-lookup"><span data-stu-id="5172e-158">Limit the lifetime of protected payloads</span></span>](data-protection/consumer-apis/limited-lifetime-payloads.md)
-        *   [<span data-ttu-id="5172e-159">取消保护已撤消其密钥的负载</span><span class="sxs-lookup"><span data-stu-id="5172e-159">Unprotect payloads whose keys have been revoked</span></span>](data-protection/consumer-apis/dangerous-unprotect.md)
-    *   [<span data-ttu-id="5172e-160">配置</span><span class="sxs-lookup"><span data-stu-id="5172e-160">Configuration</span></span>](data-protection/configuration/index.md)
-        *   [<span data-ttu-id="5172e-161">配置数据保护</span><span class="sxs-lookup"><span data-stu-id="5172e-161">Configure data protection</span></span>](data-protection/configuration/overview.md)
-        *   [<span data-ttu-id="5172e-162">默认设置</span><span class="sxs-lookup"><span data-stu-id="5172e-162">Default settings</span></span>](data-protection/configuration/default-settings.md)
-        *   [<span data-ttu-id="5172e-163">计算机范围的策略</span><span class="sxs-lookup"><span data-stu-id="5172e-163">Machine-wide policy</span></span>](data-protection/configuration/machine-wide-policy.md)
-        *   [<span data-ttu-id="5172e-164">非 DI 感知方案</span><span class="sxs-lookup"><span data-stu-id="5172e-164">Non DI-aware scenarios</span></span>](data-protection/configuration/non-di-scenarios.md)
-    *   [<span data-ttu-id="5172e-165">扩展性 API</span><span class="sxs-lookup"><span data-stu-id="5172e-165">Extensibility APIs</span></span>](data-protection/extensibility/index.md)
-        *   [<span data-ttu-id="5172e-166">核心加密扩展性</span><span class="sxs-lookup"><span data-stu-id="5172e-166">Core cryptography extensibility</span></span>](data-protection/extensibility/core-crypto.md)
-        *   [<span data-ttu-id="5172e-167">密钥管理扩展性</span><span class="sxs-lookup"><span data-stu-id="5172e-167">Key management extensibility</span></span>](data-protection/extensibility/key-management.md)
-        *   [<span data-ttu-id="5172e-168">其他 API</span><span class="sxs-lookup"><span data-stu-id="5172e-168">Miscellaneous APIs</span></span>](data-protection/extensibility/misc-apis.md)
-    *   [<span data-ttu-id="5172e-169">实现</span><span class="sxs-lookup"><span data-stu-id="5172e-169">Implementation</span></span>](data-protection/implementation/index.md)
-        *   [<span data-ttu-id="5172e-170">已验证的加密详细信息</span><span class="sxs-lookup"><span data-stu-id="5172e-170">Authenticated encryption details</span></span>](data-protection/implementation/authenticated-encryption-details.md)
-        *   [<span data-ttu-id="5172e-171">子项派生和已验证的加密</span><span class="sxs-lookup"><span data-stu-id="5172e-171">Subkey derivation and authenticated encryption</span></span>](data-protection/implementation/subkeyderivation.md)
-        *   [<span data-ttu-id="5172e-172">上下文标头</span><span class="sxs-lookup"><span data-stu-id="5172e-172">Context headers</span></span>](data-protection/implementation/context-headers.md)
-        *   [<span data-ttu-id="5172e-173">密钥管理</span><span class="sxs-lookup"><span data-stu-id="5172e-173">Key management</span></span>](data-protection/implementation/key-management.md)
-        *   [<span data-ttu-id="5172e-174">密钥存储提供程序</span><span class="sxs-lookup"><span data-stu-id="5172e-174">Key storage providers</span></span>](data-protection/implementation/key-storage-providers.md)
-        *   [<span data-ttu-id="5172e-175">静态密钥加密</span><span class="sxs-lookup"><span data-stu-id="5172e-175">Key encryption at rest</span></span>](data-protection/implementation/key-encryption-at-rest.md)
-        *   [<span data-ttu-id="5172e-176">密钥永久性和更改设置</span><span class="sxs-lookup"><span data-stu-id="5172e-176">Key immutability and changing settings</span></span>](data-protection/implementation/key-immutability.md)
-        *   [<span data-ttu-id="5172e-177">密钥存储格式</span><span class="sxs-lookup"><span data-stu-id="5172e-177">Key storage format</span></span>](data-protection/implementation/key-storage-format.md)
-        *   [<span data-ttu-id="5172e-178">短数据保护提供程序</span><span class="sxs-lookup"><span data-stu-id="5172e-178">Ephemeral data protection providers</span></span>](data-protection/implementation/key-storage-ephemeral.md)
-    *   [<span data-ttu-id="5172e-179">兼容性</span><span class="sxs-lookup"><span data-stu-id="5172e-179">Compatibility</span></span>](data-protection/compatibility/index.md)
-        *   [<span data-ttu-id="5172e-180">在 ASP.NET 中替换 <machineKey></span><span class="sxs-lookup"><span data-stu-id="5172e-180">Replace <machineKey> in ASP.NET</span></span>](data-protection/compatibility/replacing-machinekey.md)
-*   [<span data-ttu-id="5172e-181">通过授权保护的用户数据创建应用</span><span class="sxs-lookup"><span data-stu-id="5172e-181">Create an app with user data protected by authorization</span></span>](xref:security/authorization/secure-data)
-*   [<span data-ttu-id="5172e-182">在开发期间安全存储应用密钥</span><span class="sxs-lookup"><span data-stu-id="5172e-182">Safe storage of app secrets during development</span></span>](app-secrets.md)
-*   [<span data-ttu-id="5172e-183">Azure Key Vault 配置提供程序</span><span class="sxs-lookup"><span data-stu-id="5172e-183">Azure Key Vault configuration provider</span></span>](key-vault-configuration.md)
-*   [<span data-ttu-id="5172e-184">强制实施 SSL</span><span class="sxs-lookup"><span data-stu-id="5172e-184">Enforce SSL</span></span>](enforcing-ssl.md)
-*   [<span data-ttu-id="5172e-185">防请求伪造</span><span class="sxs-lookup"><span data-stu-id="5172e-185">Anti-Request Forgery</span></span>](anti-request-forgery.md)
-*   [<span data-ttu-id="5172e-186">阻止打开重定向攻击</span><span class="sxs-lookup"><span data-stu-id="5172e-186">Prevent open redirect attacks</span></span>](preventing-open-redirects.md)
-*   [<span data-ttu-id="5172e-187">阻止跨站点脚本编写</span><span class="sxs-lookup"><span data-stu-id="5172e-187">Prevent Cross-Site Scripting</span></span>](cross-site-scripting.md)
-*   [<span data-ttu-id="5172e-188">启用跨域请求 (CORS)</span><span class="sxs-lookup"><span data-stu-id="5172e-188">Enable Cross-Origin Requests (CORS)</span></span>](cors.md)
-*   [<span data-ttu-id="5172e-189">在应用之间共享 Cookie</span><span class="sxs-lookup"><span data-stu-id="5172e-189">Share cookies among apps</span></span>](cookie-sharing.md)
+*   [<span data-ttu-id="76198-125">身份验证</span><span class="sxs-lookup"><span data-stu-id="76198-125">Authentication</span></span>](xref:security/authentication/index)
+    *   [<span data-ttu-id="76198-126">标识简介</span><span class="sxs-lookup"><span data-stu-id="76198-126">Introduction to Identity</span></span>](xref:security/authentication/identity)
+    *   [<span data-ttu-id="76198-127">启用使用 Facebook、Google 和其他外部提供程序的身份验证</span><span class="sxs-lookup"><span data-stu-id="76198-127">Enable authentication using Facebook, Google, and other external providers</span></span>](xref:security/authentication/social/index)
+    *   [<span data-ttu-id="76198-128">通过 WS 联合身份验证启用身份验证</span><span class="sxs-lookup"><span data-stu-id="76198-128">Enable authentication with WS-Federation</span></span>](xref:security/authentication/ws-federation)
+    * [<span data-ttu-id="76198-129">配置 Windows 身份验证</span><span class="sxs-lookup"><span data-stu-id="76198-129">Configure Windows Authentication</span></span>](xref:security/authentication/windowsauth)
+    *   [<span data-ttu-id="76198-130">帐户确认和密码恢复</span><span class="sxs-lookup"><span data-stu-id="76198-130">Account confirmation and password recovery</span></span>](xref:security/authentication/accconfirm)
+    *   [<span data-ttu-id="76198-131">使用 SMS 设置双因素身份验证</span><span class="sxs-lookup"><span data-stu-id="76198-131">Two-factor authentication with SMS</span></span>](xref:security/authentication/2fa)
+    *   [<span data-ttu-id="76198-132">在没有标识的情况下使用 cookie 身份验证</span><span class="sxs-lookup"><span data-stu-id="76198-132">Use cookie authentication without Identity</span></span>](xref:security/authentication/cookie)
+    *   [<span data-ttu-id="76198-133">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="76198-133">Azure Active Directory</span></span>](xref:security/authentication/azure-active-directory/index)
+        *   [<span data-ttu-id="76198-134">将 Azure AD 集成到 ASP.NET Core Web 应用中</span><span class="sxs-lookup"><span data-stu-id="76198-134">Integrate Azure AD into an ASP.NET Core web app</span></span>](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+        *   [<span data-ttu-id="76198-135">使用 Azure AD 从 WPF 应用调用 ASP.NET Core Web API</span><span class="sxs-lookup"><span data-stu-id="76198-135">Call an ASP.NET Core Web API from a WPF app using Azure AD</span></span>](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
+        *   [<span data-ttu-id="76198-136">使用 Azure AD 在 ASP.NET Core Web 应用中调用 Web API</span><span class="sxs-lookup"><span data-stu-id="76198-136">Call a Web API in an ASP.NET Core web app using Azure AD</span></span>](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
+        *   [<span data-ttu-id="76198-137">带有 Azure AD B2C 的 ASP.NET Core Web 应用</span><span class="sxs-lookup"><span data-stu-id="76198-137">An ASP.NET Core web app with Azure AD B2C</span></span>](https://azure.microsoft.com/resources/samples/active-directory-b2c-dotnetcore-webapp/)
+    *   [<span data-ttu-id="76198-138">使用 IdentityServer4 保护 ASP.NET Core 应用</span><span class="sxs-lookup"><span data-stu-id="76198-138">Secure ASP.NET Core apps with IdentityServer4</span></span>](https://identityserver4.readthedocs.io)
+*   [<span data-ttu-id="76198-139">授权</span><span class="sxs-lookup"><span data-stu-id="76198-139">Authorization</span></span>](xref:security/authorization/index)
+    *   [<span data-ttu-id="76198-140">介绍</span><span class="sxs-lookup"><span data-stu-id="76198-140">Introduction</span></span>](xref:security/authorization/introduction)
+    *   [<span data-ttu-id="76198-141">通过授权保护的用户数据创建应用</span><span class="sxs-lookup"><span data-stu-id="76198-141">Create an app with user data protected by authorization</span></span>](xref:security/authorization/secure-data)
+    *   [<span data-ttu-id="76198-142">简单授权</span><span class="sxs-lookup"><span data-stu-id="76198-142">Simple authorization</span></span>](xref:security/authorization/simple)
+    *   [<span data-ttu-id="76198-143">基于角色的授权</span><span class="sxs-lookup"><span data-stu-id="76198-143">Role-based authorization</span></span>](xref:security/authorization/roles)
+    *   [<span data-ttu-id="76198-144">基于声明的授权</span><span class="sxs-lookup"><span data-stu-id="76198-144">Claims-based authorization</span></span>](xref:security/authorization/claims)
+    *   [<span data-ttu-id="76198-145">基于策略的授权</span><span class="sxs-lookup"><span data-stu-id="76198-145">Policy-based authorization</span></span>](xref:security/authorization/policies)
+    *   [<span data-ttu-id="76198-146">要求处理程序中的依赖关系注入</span><span class="sxs-lookup"><span data-stu-id="76198-146">Dependency injection in requirement handlers</span></span>](xref:security/authorization/dependencyinjection)
+    *   [<span data-ttu-id="76198-147">基于资源的授权</span><span class="sxs-lookup"><span data-stu-id="76198-147">Resource-based authorization</span></span>](xref:security/authorization/resourcebased)
+    *   [<span data-ttu-id="76198-148">基于视图的授权</span><span class="sxs-lookup"><span data-stu-id="76198-148">View-based authorization</span></span>](xref:security/authorization/views)
+    *   [<span data-ttu-id="76198-149">使用方案限制标识</span><span class="sxs-lookup"><span data-stu-id="76198-149">Limit identity by scheme</span></span>](xref:security/authorization/limitingidentitybyscheme)
+*   [<span data-ttu-id="76198-150">数据保护</span><span class="sxs-lookup"><span data-stu-id="76198-150">Data protection</span></span>](xref:security/data-protection/index)
+    *   [<span data-ttu-id="76198-151">数据保护简介</span><span class="sxs-lookup"><span data-stu-id="76198-151">Introduction to data protection</span></span>](xref:security/data-protection/introduction)
+    *   [<span data-ttu-id="76198-152">数据保护 API 入门</span><span class="sxs-lookup"><span data-stu-id="76198-152">Get started with the Data Protection APIs</span></span>](xref:security/data-protection/using-data-protection)
+    *   [<span data-ttu-id="76198-153">使用者 API</span><span class="sxs-lookup"><span data-stu-id="76198-153">Consumer APIs</span></span>](xref:security/data-protection/consumer-apis/index)
+        *   [<span data-ttu-id="76198-154">使用者 API 概述</span><span class="sxs-lookup"><span data-stu-id="76198-154">Consumer APIs Overview</span></span>](xref:security/data-protection/consumer-apis/overview)
+        *   [<span data-ttu-id="76198-155">目标字符串</span><span class="sxs-lookup"><span data-stu-id="76198-155">Purpose strings</span></span>](xref:security/data-protection/consumer-apis/purpose-strings)
+        *   [<span data-ttu-id="76198-156">目标层次结构和多租户</span><span class="sxs-lookup"><span data-stu-id="76198-156">Purpose hierarchy and multi-tenancy</span></span>](xref:security/data-protection/consumer-apis/purpose-strings-multitenancy)
+        *   [<span data-ttu-id="76198-157">哈希密码</span><span class="sxs-lookup"><span data-stu-id="76198-157">Hash passwords</span></span>](xref:security/data-protection/consumer-apis/password-hashing)
+        *   [<span data-ttu-id="76198-158">限制受保护负载的生存期</span><span class="sxs-lookup"><span data-stu-id="76198-158">Limit the lifetime of protected payloads</span></span>](xref:security/data-protection/consumer-apis/limited-lifetime-payloads)
+        *   [<span data-ttu-id="76198-159">取消保护已撤消其密钥的负载</span><span class="sxs-lookup"><span data-stu-id="76198-159">Unprotect payloads whose keys have been revoked</span></span>](xref:security/data-protection/consumer-apis/dangerous-unprotect)
+    *   [<span data-ttu-id="76198-160">配置</span><span class="sxs-lookup"><span data-stu-id="76198-160">Configuration</span></span>](xref:security/data-protection/configuration/index)
+        *   [<span data-ttu-id="76198-161">配置数据保护</span><span class="sxs-lookup"><span data-stu-id="76198-161">Configure data protection</span></span>](xref:security/data-protection/configuration/overview)
+        *   [<span data-ttu-id="76198-162">默认设置</span><span class="sxs-lookup"><span data-stu-id="76198-162">Default settings</span></span>](xref:security/data-protection/configuration/default-settings)
+        *   [<span data-ttu-id="76198-163">计算机范围的策略</span><span class="sxs-lookup"><span data-stu-id="76198-163">Machine-wide policy</span></span>](xref:security/data-protection/configuration/machine-wide-policy)
+        *   [<span data-ttu-id="76198-164">非 DI 感知方案</span><span class="sxs-lookup"><span data-stu-id="76198-164">Non DI-aware scenarios</span></span>](xref:security/data-protection/configuration/non-di-scenarios)
+    *   [<span data-ttu-id="76198-165">扩展性 API</span><span class="sxs-lookup"><span data-stu-id="76198-165">Extensibility APIs</span></span>](xref:security/data-protection/extensibility/index)
+        *   [<span data-ttu-id="76198-166">核心加密扩展性</span><span class="sxs-lookup"><span data-stu-id="76198-166">Core cryptography extensibility</span></span>](xref:security/data-protection/extensibility/core-crypto)
+        *   [<span data-ttu-id="76198-167">密钥管理扩展性</span><span class="sxs-lookup"><span data-stu-id="76198-167">Key management extensibility</span></span>](xref:security/data-protection/extensibility/key-management)
+        *   [<span data-ttu-id="76198-168">其他 API</span><span class="sxs-lookup"><span data-stu-id="76198-168">Miscellaneous APIs</span></span>](xref:security/data-protection/extensibility/misc-apis)
+    *   [<span data-ttu-id="76198-169">实现</span><span class="sxs-lookup"><span data-stu-id="76198-169">Implementation</span></span>](xref:security/data-protection/implementation/index)
+        *   [<span data-ttu-id="76198-170">已验证的加密详细信息</span><span class="sxs-lookup"><span data-stu-id="76198-170">Authenticated encryption details</span></span>](xref:security/data-protection/implementation/authenticated-encryption-details)
+        *   [<span data-ttu-id="76198-171">子项派生和已验证的加密</span><span class="sxs-lookup"><span data-stu-id="76198-171">Subkey derivation and authenticated encryption</span></span>](xref:security/data-protection/implementation/subkeyderivation)
+        *   [<span data-ttu-id="76198-172">上下文标头</span><span class="sxs-lookup"><span data-stu-id="76198-172">Context headers</span></span>](xref:security/data-protection/implementation/context-headers)
+        *   [<span data-ttu-id="76198-173">密钥管理</span><span class="sxs-lookup"><span data-stu-id="76198-173">Key management</span></span>](xref:security/data-protection/implementation/key-management)
+        *   [<span data-ttu-id="76198-174">密钥存储提供程序</span><span class="sxs-lookup"><span data-stu-id="76198-174">Key storage providers</span></span>](xref:security/data-protection/implementation/key-storage-providers)
+        *   [<span data-ttu-id="76198-175">静态密钥加密</span><span class="sxs-lookup"><span data-stu-id="76198-175">Key encryption at rest</span></span>](xref:security/data-protection/implementation/key-encryption-at-rest)
+        *   [<span data-ttu-id="76198-176">密钥永久性和设置</span><span class="sxs-lookup"><span data-stu-id="76198-176">Key immutability and settings</span></span>](xref:security/data-protection/implementation/key-immutability)
+        *   [<span data-ttu-id="76198-177">密钥存储格式</span><span class="sxs-lookup"><span data-stu-id="76198-177">Key storage format</span></span>](xref:security/data-protection/implementation/key-storage-format)
+        *   [<span data-ttu-id="76198-178">短数据保护提供程序</span><span class="sxs-lookup"><span data-stu-id="76198-178">Ephemeral data protection providers</span></span>](xref:security/data-protection/implementation/key-storage-ephemeral)
+    *   [<span data-ttu-id="76198-179">兼容性</span><span class="sxs-lookup"><span data-stu-id="76198-179">Compatibility</span></span>](xref:security/data-protection/compatibility/index)
+        *   [<span data-ttu-id="76198-180">在 ASP.NET 中替换 <machineKey></span><span class="sxs-lookup"><span data-stu-id="76198-180">Replace <machineKey> in ASP.NET</span></span>](xref:security/data-protection/compatibility/replacing-machinekey)
+*   [<span data-ttu-id="76198-181">通过授权保护的用户数据创建应用</span><span class="sxs-lookup"><span data-stu-id="76198-181">Create an app with user data protected by authorization</span></span>](xref:security/authorization/secure-data)
+*   [<span data-ttu-id="76198-182">在开发期间安全存储应用机密</span><span class="sxs-lookup"><span data-stu-id="76198-182">Safe storage of app secrets in development</span></span>](xref:security/app-secrets)
+*   [<span data-ttu-id="76198-183">Azure Key Vault 配置提供程序</span><span class="sxs-lookup"><span data-stu-id="76198-183">Azure Key Vault configuration provider</span></span>](xref:security/key-vault-configuration)
+*   [<span data-ttu-id="76198-184">强制实施 SSL</span><span class="sxs-lookup"><span data-stu-id="76198-184">Enforce SSL</span></span>](xref:security/enforcing-ssl)
+*   [<span data-ttu-id="76198-185">防请求伪造</span><span class="sxs-lookup"><span data-stu-id="76198-185">Anti-Request Forgery</span></span>](xref:security/anti-request-forgery)
+*   [<span data-ttu-id="76198-186">阻止打开重定向攻击</span><span class="sxs-lookup"><span data-stu-id="76198-186">Prevent open redirect attacks</span></span>](xref:security/preventing-open-redirects)
+*   [<span data-ttu-id="76198-187">阻止跨站点脚本编写</span><span class="sxs-lookup"><span data-stu-id="76198-187">Prevent Cross-Site Scripting</span></span>](xref:security/cross-site-scripting)
+*   [<span data-ttu-id="76198-188">启用跨域请求 (CORS)</span><span class="sxs-lookup"><span data-stu-id="76198-188">Enable Cross-Origin Requests (CORS)</span></span>](xref:security/cors)
+*   [<span data-ttu-id="76198-189">在应用之间共享 Cookie</span><span class="sxs-lookup"><span data-stu-id="76198-189">Share cookies among apps</span></span>](xref:security/cookie-sharing)
