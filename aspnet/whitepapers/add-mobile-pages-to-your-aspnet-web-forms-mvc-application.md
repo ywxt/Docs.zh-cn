@@ -16,13 +16,13 @@ ms.openlocfilehash: a8358b91ca424f4f3e576057ab43d850081dda60
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>如何： 将移动页面添加到 ASP.NET Web 窗体 / MVC 应用程序
 ====================
 > **适用于**
 > 
-> - ASP.NET Web 窗体版本 4.0
+> - ASP.NET Web Forms version 4.0
 > - ASP.NET MVC 版本 3.0
 > 
 > **摘要**
@@ -104,7 +104,7 @@ ASP.NET 移动控件为什么已标记为过时的原因是它们的设计面向
 - 输入的法 （鼠标/键盘、 触摸、 键盘、 游戏杆，...）
 - 屏幕大小 （以物理方式和以像素为单位）
 - 支持的介质和数据格式
-- Etc.
+- 等等。
 
 它是更好的做法因为做出决策基于特征与型号，然后您将能够更好地处理的未来设备。
 
@@ -113,7 +113,7 @@ ASP.NET 移动控件为什么已标记为过时的原因是它们的设计面向
 ASP.NET Web 窗体和 MVC 的开发人员可以立即发现正在访问的浏览器的重要特征，通过检查属性*Request.Browser*对象。 有关示例，请参阅
 
 - Request.Browser.IsMobileDevice
-- Request.Browser.MobileDeviceManufacturer, Request.Browser.MobileDeviceModel
+- Request.Browser.MobileDeviceManufacturer Request.Browser.MobileDeviceModel
 - Request.Browser.ScreenPixelsWidth
 - Request.Browser.SupportsXmlHttp
 - ...以及许多其他

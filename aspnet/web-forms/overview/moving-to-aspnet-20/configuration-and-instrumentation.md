@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
-title: "配置和检测 |Microsoft 文档"
+title: 配置和检测 |Microsoft 文档
 author: microsoft
-description: "有配置中的重大更改和 ASP.NET 2.0 中的检测。 使用新的 ASP.NET 配置 API，配置更改进行 pr..."
+description: 有配置中的重大更改和 ASP.NET 2.0 中的检测。 使用新的 ASP.NET 配置 API，配置更改进行 pr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
 msc.type: authoredcontent
 ms.openlocfilehash: 16dfe3c899dfa028d8a52b4b5f9c2868887e8fa9
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="configuration-and-instrumentation"></a>配置和检测
 ====================
@@ -80,10 +80,10 @@ GetSection 或 GetSectionGroup 方法用于读取配置信息。 用户或读取
 | --- | --- |
 | [System.Configuration](https://msdn.microsoft.com/library/system.configuration.aspx) namespace | 包含所有.NET Framework 应用程序的主要配置类。 部分处理程序类用于从方法，如 GetSection 和 GetSectionGroup 获取节的配置数据。 这两种方法是非静态。 |
 | System.Configuration.Configuration 类 | 表示一组对计算机、 应用程序、 Web 目录或其他资源的配置数据。 此类包含有用的方法，如 GetSection 和 GetSectionGroup，用于更新配置设置和获取对节和节组的引用。 此类用作获取设计时配置数据，如 WebConfigurationManager 和 ConfigurationManager 类方法的方法的返回类型。 |
-| System.Web.Configuration namespace | ASP.NET 配置节定义在包含节处理程序类[ASP.NET 配置设置](https://msdn.microsoft.com/library/b5ysx397.aspx)。 部分处理程序类用于从方法，如 GetSection 和 GetSectionGroup 获取节的配置数据。 |
+| System.Web.Configuration 命名空间 | ASP.NET 配置节定义在包含节处理程序类[ASP.NET 配置设置](https://msdn.microsoft.com/library/b5ysx397.aspx)。 部分处理程序类用于从方法，如 GetSection 和 GetSectionGroup 获取节的配置数据。 |
 | System.Web.Configuration.WebConfigurationManager class | 提供用于获取指向运行时和设计时的配置设置的引用的有用方法。 这些方法将该 System.Configuration.Configuration 类用作返回类型。 你可以交替使用此类的静态 GetSection 方法或 System.Configuration.ConfigurationManager 类的非静态 GetSection 方法。 对于 Web 应用程序配置，而不是 System.Configuration.ConfigurationManager 类建议 System.Web.Configuration.WebConfigurationManager 类。 |
 | [System.Configuration.Provider](https://msdn.microsoft.com/library/system.configuration.provider.aspx) namespace | 使您能够自定义和扩展的配置提供程序。 这是配置系统中的所有提供程序类的基类。 |
-| [System.Web.Management](https://msdn.microsoft.com/library/system.web.management.aspx) namespace | 包含类和接口用于管理和监视的 Web 应用程序的运行状况。 严格地说，此命名空间不被视为配置 API 的一部分。 例如，跟踪和事件触发做出是通过此命名空间中的类实现。 |
+| [System.Web.Management](https://msdn.microsoft.com/library/system.web.management.aspx)命名空间 | 包含类和接口用于管理和监视的 Web 应用程序的运行状况。 严格地说，此命名空间不被视为配置 API 的一部分。 例如，跟踪和事件触发做出是通过此命名空间中的类实现。 |
 | [System.Management.Instrumentation](https://msdn.microsoft.com/library/system.management.instrumentation.aspx)命名空间 | 提供所需的检测应用程序公开其管理信息和潜在的使用者通过 Windows Management Instrumentation (WMI) 事件的类。 ASP.NET 运行状况监视使用 WMI 来提供事件。 严格地说，此命名空间不被视为配置 API 的一部分。 |
 
 ## <a name="reading-from-aspnet-configuration-files"></a>从 ASP.NET 配置文件读取
@@ -148,10 +148,10 @@ ASP.NET 2.0 使用事件日志提供程序的的现成记录事件基于应用�
 
 &lt;HealthMonitoring&gt;部分的全局的 Web.config 文件包含以下各项：
 
-| **提供程序** | 包含提供程序的事件查看器、 WMI、 和 SQL Server 设置。 |
+| **providers** | 包含提供程序的事件查看器、 WMI、 和 SQL Server 设置。 |
 | --- | --- |
 | **eventMappings** | 包含各种 WebBase 类的映射。 如果你生成自己事件的类，你可以扩展此列表。 生成您自己的事件类使能够你更细的粒度对发送到的信息的提供程序。 例如，你可以配置未经处理的异常时将自己的自定义事件发送到电子邮件发送到 SQL Server。 |
-| **规则** | 链接到提供程序 eventMappings。 |
+| **rules** | 链接到提供程序 eventMappings。 |
 | **buffering** | 与 SQL Server 和电子邮件提供程序使用，来确定如何通常刷新到提供程序的事件。 |
 
 下面是全局的 Web.config 文件中的一个代码示例。
@@ -212,7 +212,7 @@ ASP.NET 2.0 使用事件日志提供程序的的现成记录事件基于应用�
 
 [!code-xml[Main](configuration-and-instrumentation/samples/sample12.xml)]
 
-## <a name="aspnet-20-tracing"></a>ASP.NET 2.0 跟踪
+## <a name="aspnet-20-tracing"></a>ASP.NET 2.0 Tracing
 
 有三个主要增强功能，与 ASP.NET 2.0 中的跟踪。
 
@@ -330,7 +330,7 @@ ASP.NET 编译工具可以编译位置中的应用程序，即，它模仿的应
 
 | **文件类型** | **编译器操作** |
 | --- | --- |
-| .ascx、.aspx、.master | 这些文件将被拆分为标记和源的代码，其中包括代码隐藏文件和任何代码都括在&lt;脚本 runat ="server"&gt;元素。 源代码编译到程序集中，使用派生自哈希算法的名称和程序集放置在 Bin 目录中。 任何内联代码，即，代码括 **&lt; %** 和 **% &gt;** 方括号，附带标记，不进行编译。 与源文件同名的新文件进行创建以包含标记，并在相应的输出目录中放入。 |
+| .ascx, .aspx, .master | 这些文件将被拆分为标记和源的代码，其中包括代码隐藏文件和任何代码都括在&lt;脚本 runat ="server"&gt;元素。 源代码编译到程序集中，使用派生自哈希算法的名称和程序集放置在 Bin 目录中。 任何内联代码，即，代码括**&lt; %**和**% &gt;**方括号，附带标记，不进行编译。 与源文件同名的新文件进行创建以包含标记，并在相应的输出目录中放入。 |
 | .ashx、.asmx | 这些文件不进行编译，移动到输出目录，只要是，不进行编译。 如果你想要具有编译的处理程序代码，将代码放入应用程序中的源代码文件\_代码目录。 |
 | .cs、.vb、.jsl、.cpp （不包括前面列出的文件类型的代码隐藏文件） | 编译并在它们引用的程序集作为资源包括这些文件。 源文件不复制到输出目录中。 如果未引用代码文件，则它不会编译。 |
 | 自定义的文件类型 | 这些文件不会编译。 这些文件复制到相应的输出目录。 |
@@ -344,7 +344,7 @@ ASP.NET 编译工具可以编译位置中的应用程序，即，它模仿的应
 
 | **文件类型** | **编译器操作** |
 | --- | --- |
-| .aspx、.asmx、.ashx、.master | 这些文件将被拆分为标记和源的代码，其中包括代码隐藏文件和任何代码都括在&lt;脚本 runat ="server"&gt;元素。 源代码会编译成程序集，使用派生自哈希算法的名称。 生成的程序集放置在 Bin 目录中。 任何内联代码，即，代码括 **&lt; %** 和 **% &gt;** 方括号，附带标记，不进行编译。 编译器将创建新文件以包含与源文件同名的标记。 这些生成的文件放置在 Bin 目录中。 具有与源文件相同名称但扩展名为，编译器还会创建文件。包含的映射信息的编译。 。已编译的文件放置在源代码文件的原始位置所对应的输出目录。 |
+| .aspx、.asmx、.ashx、.master | 这些文件将被拆分为标记和源的代码，其中包括代码隐藏文件和任何代码都括在&lt;脚本 runat ="server"&gt;元素。 源代码会编译成程序集，使用派生自哈希算法的名称。 生成的程序集放置在 Bin 目录中。 任何内联代码，即，代码括**&lt; %**和**% &gt;**方括号，附带标记，不进行编译。 编译器将创建新文件以包含与源文件同名的标记。 这些生成的文件放置在 Bin 目录中。 具有与源文件相同名称但扩展名为，编译器还会创建文件。包含的映射信息的编译。 。已编译的文件放置在源代码文件的原始位置所对应的输出目录。 |
 | .ascx | 这些文件被拆分为标记和源代码。 源代码编译到程序集和放置在 Bin 目录中，使用派生自哈希算法的名称。 生成没有标记文件。 |
 | .cs、.vb、.jsl、.cpp （不包括前面列出的文件类型的代码隐藏文件） | 从.ascx、.ashx 或.aspx 文件生成的程序集引用的源代码是编译为程序集并放置在 Bin 目录中。 不源复制文件。 |
 | 自定义的文件类型 | 像动态文件一样，这些文件进行编译。 具体取决于其所基于的文件的类型，编译器可以在输出目录中放置映射文件。 |

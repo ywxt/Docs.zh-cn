@@ -16,7 +16,7 @@ ms.openlocfilehash: 001ebf89cda66a50cddcd7e4944f27b9396d4450
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="bundling-and-minification"></a>绑定和缩减
 ====================
@@ -55,7 +55,7 @@ ms.lasthandoff: 04/06/2018
 
 除了删除注释和多余的空格，以下参数和变量名已重命名 （缩短），如下所示：
 
-| **源语言** | **重命名** |
+| **源语言** | **Renamed** |
 | --- | --- |
 | imageTagAndImageID | n |
 | imageContext | t |
@@ -69,7 +69,7 @@ ms.lasthandoff: 04/06/2018
 | --- | --- | --- | --- |
 | **文件请求** | 9 | 34 | 256% |
 | **KB Sent** | 3.26 | 11.92 | 266% |
-| **KB Received** | 388.51 | 530 | 36% |
+| **收到的 KB** | 388.51 | 530 | 36% |
 | **加载时间** | 510 MS | 780 MS | 53% |
 
 发送的字节数必须是与绑定因为浏览器是与它们在请求应用的 HTTP 标头非常详细，大大减少。 接收的字节减少不是最大因为最大的文件 (*Scripts\jquery-ui-1.8.11.min.js*和*Scripts\jquery-1.7.1.min.js*) 已缩减。 注意： 的使用的示例程序计时[Fiddler](http://www.fiddler2.com/fiddler2/)工具来模拟慢速网络。 (从 Fiddler**规则**菜单上，选择**性能**然后**模拟调制解调器速度**。)
@@ -170,7 +170,7 @@ ms.lasthandoff: 04/06/2018
 
 | **Call** | **添加文件或引发异常** |
 | --- | --- |
-| Include("~/Scripts/Common/\*.js") | *AddAltToImg.js, ToggleDiv.js, ToggleImg.js* |
+| Include("~/Scripts/Common/\*.js") | *AddAltToImg.js，ToggleDiv.js，ToggleImg.js* |
 | Include("~/Scripts/Common/T\*.js") | 无效模式异常。 通配符字符只能在前缀或后缀上。 |
 | Include("~/Scripts/Common/\*og.\*") | 无效模式异常。 允许只有一个通配符字符。 |
 | "Include("~/Scripts/Common/T\*") | *ToggleDiv.js ToggleImg.js* |

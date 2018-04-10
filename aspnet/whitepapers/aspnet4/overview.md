@@ -16,7 +16,7 @@ ms.openlocfilehash: 6ce52c387ff835eda46bc1882b8b974889e2d4af
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 和 Visual Studio 2010 Web 开发概述
 ====================
@@ -56,7 +56,7 @@ ms.lasthandoff: 04/06/2018
 [筛选数据与 QueryExtender 控件](#0.2__Toc253429264 "_Toc253429264")  
 [Html 编码的代码表达式](#0.2__Toc253429265 "_Toc253429265")  
 [项目模板更改](#0.2__Toc253429266 "_Toc253429266")  
-[CSS 改进](#0.2__Toc253429267 "_Toc253429267")  
+[CSS Improvements](#0.2__Toc253429267 "_Toc253429267")  
 [隐藏 div 元素周围隐藏字段](#0.2__Toc253429268 "_Toc253429268")  
 [模板化控件呈现的外部表](#0.2__Toc253429269 "_Toc253429269")  
 [ListView 控件增强功能](#0.2__Toc253429270 "_Toc253429270")  
@@ -80,7 +80,7 @@ ms.lasthandoff: 04/06/2018
 [控件显示和支持枚举的新特性](#0.2__Toc253429286 "_Toc253429286")  
 [对筛选器的增强支持](#0.2__Toc253429287 "_Toc253429287")
 
-**[Visual Studio 2010 Web 开发改进](#0.2__Toc253429288 "_Toc253429288")**  
+**[Visual Studio 2010 Web Development Improvements](#0.2__Toc253429288 "_Toc253429288")**  
 [改进的 CSS 兼容性](#0.2__Toc253429289 "_Toc253429289")  
 [HTML 和 JavaScript 代码段](#0.2__Toc253429290 "_Toc253429290")  
 [JavaScript IntelliSense 增强功能](#0.2__Toc253429291 "_Toc253429291")
@@ -88,7 +88,7 @@ ms.lasthandoff: 04/06/2018
 **[Web 应用程序部署使用 Visual Studio 2010](#0.2__Toc253429292 "_Toc253429292")**  
 [Web Packaging](#0.2__Toc253429293 "_Toc253429293")  
 [Web.config Transformation](#0.2__Toc253429294 "_Toc253429294")  
-[数据库部署](#0.2__Toc253429295 "_Toc253429295")  
+[Database Deployment](#0.2__Toc253429295 "_Toc253429295")  
 [单击发布为 Web 应用程序](#0.2__Toc253429296 "_Toc253429296")  
 [Resources](#0.2__Toc253429297 "_Toc253429297")
 
@@ -1331,7 +1331,7 @@ Visual Studio 2010 提供内置的 MSBuild 任务和用于创建 Web 包的目�
 
 <a id="0.2__Toc224729057"></a><a id="0.2__Toc253429294"></a><a id="0.2__Toc243304665"></a>
 
-### <a name="webconfig-transformation"></a>Web.config Transformation
+### <a name="webconfig-transformation"></a>Web.config 转换
 
 对于 Web 应用程序部署，Visual Studio 2010 引入了[XML 文档转换 (XDT)](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html)，这是一种功能，可以将转换`Web.config`文件从开发设置到生产环境设置。 转换设置在名为的转换文件中指定`web.debug.config`， `web.release.config`，依次类推。 （这些文件的名称匹配 MSBuild 配置。）转换文件包括只需更改，你需要对部署进行`Web.config`文件。 通过使用简单的语法指定所做的更改。
 

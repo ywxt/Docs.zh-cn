@@ -1,22 +1,22 @@
 ---
 uid: visual-studio/overview/2013/visual-studio-2013-web-tools
-title: "动手实验： Visual Studio 2013 Web 工具 |Microsoft 文档"
+title: 动手实验： Visual Studio 2013 Web 工具 |Microsoft 文档
 author: rick-anderson
-description: "Visual Studio 是用于的出色开发环境。基于网络的 Windows 和 web 项目。 它包括的功能强大的文本编辑器，可以轻松地使用到..."
+description: Visual Studio 是用于的出色开发环境。基于网络的 Windows 和 web 项目。 它包括的功能强大的文本编辑器，可以轻松地使用到...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
 ms.topic: article
 ms.assetid: 09e82351-816b-402d-acd1-0f9ac6901d16
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-tools
 msc.type: authoredcontent
 ms.openlocfilehash: ef8ab82f9043ef9da3a3e6a146a97f083149534d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/10/2018
 ---
 <a name="hands-on-lab-visual-studio-2013-web-tools"></a>动手实验： Visual Studio 2013 Web 工具
 ====================
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 所有这种强大也是可用于扩展，因此很容易扩展了功能强大的新功能以满足你需求的编辑器。 Web Essentials 是一套 （通常） web 相关到 Visual Studio 的增强功能。 它包括大量 （特别是对于 CSS) 的新智能感知完成、 新的浏览器链接功能、 自动 JSHint 的 JavaScript 文件，新的警告，HTML 和 CSS 以及对现代 web 开发至关重要的许多其他功能。
 > 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit)。
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)。
 
 
 <a id="Overview"></a>
@@ -47,7 +47,7 @@ ms.lasthandoff: 11/10/2017
 - 你的浏览器和 Visual Studio 中使用浏览器链接之间交换数据
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 完成本动手实验需要以下：
 
@@ -144,7 +144,7 @@ ms.lasthandoff: 11/10/2017
 
 1. 切换回 Visual Studio。
 2. 打开**Index.cshtml**文件位于**视图** | **主页**文件夹。
-3. 替换 **&lt;！-TODO： 添加选项此处-&gt;** 注释的以下代码，并按**选项卡**。
+3. 替换**&lt;！-TODO： 添加选项此处-&gt;**注释的以下代码，并按**选项卡**。
 
     [!code-css[Main](visual-studio-2013-web-tools/samples/sample1.css)]
 4. 应为 HTML 展开代码。
@@ -180,7 +180,7 @@ ms.lasthandoff: 11/10/2017
     *Lorem Ipsum 自动生成*
 
     > [!NOTE]
-    > 作为 Zen 编码的一部分，你现在可以直接在 HTML 编辑器中生成 Lorem Ipsum 代码。 只需键入**lorem**并点击**选项卡**和 30 字 Lorem Ipsum 将插入文本。 例如 *lorem10*插入 10 位 Lorem Ipsum 的单词。
+    > 作为 Zen 编码的一部分，你现在可以直接在 HTML 编辑器中生成 Lorem Ipsum 代码。 只需键入**lorem**并点击**选项卡**和 30 字 Lorem Ipsum 将插入文本。 例如， *lorem10*插入 10 位 Lorem Ipsum 的单词。
 10. 将在问题的顶部添加徽标，通过在 Web Essentials 调用中使用另一项新功能**Lorem 像素生成器**。 添加以下代码作为第一个子元素**div**具有元素**容器**作为**类**值，然后按**选项卡**。
 
     [!code-css[Main](visual-studio-2013-web-tools/samples/sample3.css)]
@@ -307,7 +307,7 @@ ms.lasthandoff: 11/10/2017
     ![编辑的问题](visual-studio-2013-web-tools/_static/image29.png "编辑的问题")
 
     *编辑的问题*
-4. 切换回 Visual Studio 和打开**Index.cshtml**，如果尚未打开。 请注意，则内部文本的 **&lt;p&gt;** 元素已进行了更新。
+4. 切换回 Visual Studio 和打开**Index.cshtml**，如果尚未打开。 请注意，则内部文本的**&lt;p&gt;**元素已进行了更新。
 
     ![在 HTML 页中的已更新问题](visual-studio-2013-web-tools/_static/image30.png "在 HTML 页中的已更新问题")
 
@@ -385,7 +385,7 @@ HTML5 引入超过 25 个新的语义标记。 Visual Studio 已有对这些标�
 
     > [!NOTE]
     > 通过按**选项卡**键两次，插入代码段。 音频的代码段显示的标准用法*音频*标记，改进了支持的两个源文件。
-3. 删除第二个行并使用以下链接 WebCampsTV Katana 显示更新的第一行的源： [http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3](http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3)。 生成的代码所示。
+3. 删除第二个行并使用以下链接 WebCampsTV Katana 显示更新的第一行的源： [ http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3 ](http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3)。 生成的代码所示。
 
     [!code-html[Main](visual-studio-2013-web-tools/samples/sample7.html)]
 
@@ -517,7 +517,7 @@ HTML5 引入超过 25 个新的语义标记。 Visual Studio 已有对这些标�
 * * *
 
 <a id="Summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 通过完成本动手实验你已学习如何：
 

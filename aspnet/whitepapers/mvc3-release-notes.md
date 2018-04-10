@@ -16,7 +16,7 @@ ms.openlocfilehash: 0bfe9cdc215226457ccfafff2b85ace87325b91b
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -91,7 +91,7 @@ ms.lasthandoff: 04/06/2018
     - [Bug 修复](#0.1__Toc274034228)
     - [重大更改](#0.1__Toc274034229)
     - [已知问题](#0.1__Toc274034230)
-- [Disclaimer](#0.1__Toc274034231)
+- [免责声明](#0.1__Toc274034231)
 
 <a id="overview"></a>
 ## <a name="overview"></a>概述
@@ -165,7 +165,7 @@ ASP.NET MVC 3 可以在同一台计算机，这将使您能够灵活地选择何
     - /Views/Web.config
     - /packages.config
     - /scripts/\*.js
-    - /Content/themes/\*.\*
+    - /内容/主题/\*。\*
 3. 复制*包*空的 ASP.NET MVC 3 项目解决方案到你的解决方案，它是解决方案的.sln 文件所在的目录中的根的根目录中的文件夹。
 4. 如果你的 ASP.NET MVC 2 项目包含的任何区域，/Views/Web.config 将文件复制到*视图*的每个区域的文件夹。
 5. 在这两个 ASP.NET MVC 2 项目中的 Web.config 文件，全局搜索和替换的 ASP.NET MVC 版本。 找到如下信息： 
@@ -178,7 +178,7 @@ ASP.NET MVC 3 可以在同一台计算机，这将使您能够灵活地选择何
 6. 在解决方案资源管理器，删除对引用*System.Web.Mvc* （哪些点对该 DLL 从版本 2），然后添加对的引用*System.Web.Mvc* (v3.0.0.0)。
 7. 添加对 System.Web.WebPages.dll 和 System.Web.Helpers.dll 的引用。 这些程序集位于以下文件夹： 
 
-    - %ProgramFiles%\Microsoft ASP.NET\ASP.NET MVC 3\Assemblies
+    - %ProgramFiles%\ Microsoft ASP.NET\ASP.NET MVC 3\Assemblies
     - %ProgramFiles%\ Microsoft ASP.NET\ASP.NET Web Pages\v1.0\Assemblies
 8. 在解决方案资源管理器，右键单击项目名称并选择卸载项目。 再次右键单击项目名称，然后选择编辑*ProjectName*.csproj。
 9. 找到*ProjectTypeGuids*元素，并替换 {F85E285D-A4E0-4152-9332-AB1D724D3325} 为 {E53F8FEA-EAE0-44A6-8774-FFD645390401}。
@@ -862,7 +862,7 @@ Razor 视图没有 IntelliSense 支持也不语法突出显示。 我们已预�
 
 [!code-xml[Main](mvc3-release-notes/samples/sample43.xml)]
 
-## <a id="0.1__Toc274034231"></a>  Disclaimer
+## <a id="0.1__Toc274034231"></a>  免责声明
 
 © 2011 Microsoft Corporation. 保留所有权利。 本文档提供"作为-是。" 信息和包括 URL 和其他 Internet 网站引用，本文档中表达的观点可能更改恕不另行通知。 您自行承担其使用风险。
 

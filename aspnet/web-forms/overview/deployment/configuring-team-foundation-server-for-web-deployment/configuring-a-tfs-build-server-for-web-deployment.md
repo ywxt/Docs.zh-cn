@@ -16,7 +16,7 @@ ms.openlocfilehash: 7b3130ca7d36ffec457e1871fa62c1077b5e3174
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="configuring-a-tfs-build-server-for-web-deployment"></a>配置用于 Web 部署的 TFS 生成服务器
 ====================
@@ -72,9 +72,9 @@ ms.lasthandoff: 04/06/2018
 
 安装常见 web 平台组件的最佳方法是使用[Web 平台安装程序](https://go.microsoft.com/?linkid=9805118)。 这可确保您正在安装每个产品的最新版本，并且它还会自动检测并安装所有必备组件的每个产品。 情况下[联系人管理器](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)解决方案，你应使用 Web 平台安装程序来安装这些产品和组件：
 
-- **.NET framework 4.0**。 这是运行在此版本的.NET Framework 生成的应用程序所需要的。
+- **.NET Framework 4.0**. 这是运行在此版本的.NET Framework 生成的应用程序所需要的。
 - **Web 部署工具 2.1 或更高版本**。 这在你的服务器上安装 Web 部署 （和其基础可执行文件，MSDeploy.exe）。 作为此过程的一部分，它会安装并启动 Web 部署代理服务。 此服务可让你部署 web 包从远程计算机。
-- **ASP.NET MVC 3**。 这将安装你需要运行 ASP.NET MVC 3 应用程序的程序集。
+- **ASP.NET MVC 3**. 这将安装你需要运行 ASP.NET MVC 3 应用程序的程序集。
 
 **若要安装必需的产品和组件**
 

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/releases/mvc51-release-notes
-title: "什么是 ASP.NET MVC 5.1 中的新增功能 |Microsoft 文档"
+title: 什么是 ASP.NET MVC 5.1 中的新增功能 |Microsoft 文档
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -13,14 +13,14 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/releases/mvc51-release-notes
 msc.type: authoredcontent
 ms.openlocfilehash: be10486c9fd39738f44cdda4fedb409058017601
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/10/2018
 ---
 <a name="whats-new-in-aspnet-mvc-51"></a>什么是 ASP.NET MVC 5.1 中的新增功能
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 本主题介绍什么是用于 ASP.NET Web MVC 5.1 的新功能。
 
@@ -54,7 +54,7 @@ ms.lasthandoff: 11/10/2017
 <a id="documentation"></a>
 ## <a name="documentation"></a>文档
 
-ASP.NET web 站点 (https://www.asp.net) 提供了教程和有关 ASP.NET MVC 5.1 RTM 的其他信息。 
+教程和有关 ASP.NET MVC 5.1 RTM 的其他信息可以从 ASP.NET web 站点 ( https://www.asp.net)。 
 
 <a id="new-features"></a>
 ## <a name="new-features-in-aspnet-mvc-51"></a>ASP.NET MVC 5.1 中的新增功能
@@ -84,7 +84,7 @@ ASP.NET web 站点 (https://www.asp.net) 提供了教程和有关 ASP.NET MVC 5.
 
 我们现在允许在中的 HTML 特性中使用传递[EditorFor](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.editorextensions.editorfor(v=vs.100).aspx)作为[匿名对象](https://msdn.microsoft.com/en-us/library/bb397696.aspx)。
 
-例如: 
+例如：
 
 [!code-cshtml[Main](mvc51-release-notes/samples/sample3.cshtml)]
 
@@ -98,7 +98,7 @@ ASP.NET web 站点 (https://www.asp.net) 提供了教程和有关 ASP.NET MVC 5.
 
 ### <a name="supporting-the-this-context-in-unobtrusive-ajax"></a>支持在非介入式 Ajax 中的 this 上下文
 
-回调函数 (`OnBegin, OnComplete, OnFailure, OnSuccess`) 现在能够找到调用元素通过`this`上下文。 例如: 
+回调函数 (`OnBegin, OnComplete, OnFailure, OnSuccess`) 现在能够找到调用元素通过`this`上下文。 例如：
 
 [!code-html[Main](mvc51-release-notes/samples/sample4.html)]
 

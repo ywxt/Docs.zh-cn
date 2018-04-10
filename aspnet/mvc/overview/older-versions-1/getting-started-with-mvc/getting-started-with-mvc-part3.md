@@ -16,7 +16,7 @@ ms.openlocfilehash: 978d7980274c072ed559b54ed69ab86245b6c5a7
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="adding-a-view"></a>添加视图
 ====================
@@ -112,7 +112,7 @@ ms.lasthandoff: 04/06/2018
 
 另请注意时你输入这些内容因为我们告知这有关 WelcomeViewModel 视图 （已婚，而记住？），我们可以获得有用的 Intellisense 每次我们引用我们模型对象作为下面的屏幕截图所示：
 
-[![NumTime 源代码](getting-started-with-mvc-part3/_static/image12.png)](getting-started-with-mvc-part3/_static/image11.png)
+[![NumTime Source Code](getting-started-with-mvc-part3/_static/image12.png)](getting-started-with-mvc-part3/_static/image11.png)
 
 运行你的应用程序并访问`http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4`试。 现在我们会从该 URL 采用数据，它自动传递到控制器，我们控制器打包数据插入视图模型，并将该对象拖放到我们视图传递。 不是向用户显示以 html 格式的数据视图。
 

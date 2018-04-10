@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 中的视图"
+title: ASP.NET Core MVC 中的视图
 author: ardalis
-description: "了解 ASP.NET Core MVC 中的视图如何处理应用的数据表示和用户交互。"
+description: 了解 ASP.NET Core MVC 中的视图如何处理应用的数据表示和用户交互。
 manager: wpickett
 ms.author: riande
 ms.date: 12/12/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/overview
-ms.openlocfilehash: bab08e75652c75b371438581d6e9f56541844a61
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: HT
+ms.openlocfilehash: b9af2068aec4326585eb2a8994399a16461db3be
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="views-in-aspnet-core-mvc"></a>ASP.NET Core MVC 中的视图
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 01/30/2018
 
 在 Views / [ControllerName] 文件夹中创建特定于控制器的视图。 控制器之间共享的视图都将置于 Views/Shared 文件夹。 要创建一个视图，请添加新文件，并将其命名为与 .cshtml 文件扩展名相关联的控制器操作的相同名称。 要创建与主页控制器中 About 操作相对应的视图，请在 Views/Home 文件夹中创建一个 About.cshtml 文件：
 
-[!code-cshtml[Main](../../common/samples/WebApplication1/Views/Home/About.cshtml)]
+[!code-cshtml[](../../common/samples/WebApplication1/Views/Home/About.cshtml)]
 
 Razor 标记以 `@` 符号开头。 通过将 C# 代码放置在用大括号 (`{ ... }`) 括住的 [Razor 代码块](xref:mvc/views/razor#razor-code-blocks)内，运行 C# 语句。 有关示例，请参阅上面显示的“About”到 `ViewData["Title"]` 的分配。 只需用 `@` 符号来引用值，即可在 HTML 中显示这些值。 请参阅上面的 `<h2>` 和 `<h3>` 元素的内容。
 
@@ -60,7 +60,7 @@ Razor 标记以 `@` 符号开头。 通过将 C# 代码放置在用大括号 (`{
 
 HomeController.cs
 
-[!code-csharp[Main](../../common/samples/WebApplication1/Controllers/HomeController.cs?highlight=5&range=16-21)]
+[!code-csharp[](../../common/samples/WebApplication1/Controllers/HomeController.cs?highlight=5&range=16-21)]
 
 此操作返回时，最后一节显示的 About.cshtml 视图呈现为以下网页：
 
@@ -92,7 +92,7 @@ HomeController.cs
 
 用 `return View();` 隐式返回 `ViewResult` 还是用 `return View("<ViewName>");` 将视图名称显式传递给 `View` 方法并不重要。 在这两种情况下，视图发现都会按以下顺序搜索匹配的视图文件：
 
-   1. Views/\[ControllerName]\[ViewName].cshtml
+   1. *Views/\[ControllerName]/\[ViewName].cshtml*
    1. Views/Shared/\[ViewName].cshtml
 
 可以提供视图文件路径而不提供视图名称。 如果使用从应用根目录开始的绝对路径（可选择以“/”或“~/”开头），则须指定 .cshtml 扩展名：

@@ -16,7 +16,7 @@ ms.openlocfilehash: 977a6b5a84825ebd087752dcc2ebc0c5410e1657
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>什么是 ASP.NET MVC 4 中的新增功能
 
@@ -687,7 +687,7 @@ Microsoft.NET Framework 4.5 引入了以 C# 和 Visual Basic 中的.NET 编程�
 ~~~
 6. 替换**客户端。GetAsync()**调用具有完整的异步版本使用 await 关键字，如下所示。
 
-    (代码段- *ASP.NET MVC 4 实验室-Ex04-GetAsync*)
+    (Code Snippet - *ASP.NET MVC 4 Lab - Ex04 - GetAsync*)
 
 
 ~~~
@@ -700,7 +700,7 @@ Microsoft.NET Framework 4.5 引入了以 C# 和 Visual Basic 中的.NET 编程�
 ~~~
 7. 更改代码以继续进行的异步实现通过将替换为新的代码行，如下所示
 
-    (代码段- *ASP.NET MVC 4 实验室-Ex04-ReadAsStringAsync*)
+    (Code Snippet - *ASP.NET MVC 4 Lab - Ex04 - ReadAsStringAsync*)
 
 
 ~~~

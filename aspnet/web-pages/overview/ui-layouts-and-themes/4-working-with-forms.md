@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/4-working-with-forms
-title: "使用 ASP.NET Web 页 (Razor) 站点中的 HTML 窗体 |Microsoft 文档"
+title: 使用 ASP.NET Web 页 (Razor) 站点中的 HTML 窗体 |Microsoft 文档
 author: tfitzmac
-description: "窗体是用户输入控件，如文本框、 复选框、 单选按钮和下拉列表的放置位置的 HTML 文档的节。 使用窗体疑问词..."
+description: 窗体是用户输入控件，如文本框、 复选框、 单选按钮和下拉列表的放置位置的 HTML 文档的节。 使用窗体疑问词...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
 ms.openlocfilehash: 8579c444fd19d1a366349cc09f9f768de23055f8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>使用 ASP.NET Web 页 (Razor) 站点中的 HTML 窗体
 ====================
@@ -73,7 +73,7 @@ ms.lasthandoff: 01/24/2018
 
     ![显示页面上显示您输入的值的屏幕截图。](4-working-with-forms/_static/image2.jpg)
 
-    查看页的代码。 首次使用`IsPost`方法来确定是否正在发页面 &#8212; 也就是说，用户单击按钮是否**提交**按钮。 如果这是 post， `IsPost` ，则返回 true。 这是标准方法中的 ASP.NET Web Pages 以确定是否你正在使用的初始请求 （GET 请求） 或回发 （POST 请求）。 (有关 GET 和 POST 的详细信息，请参阅"HTTP GET 和 POST 和 IsPost 属性的"边栏中[ASP.NET 网页编程使用 Razor 语法的简介](https://go.microsoft.com/fwlink/?LinkId=202890#SB_HttpGetPost)。)
+    查看页的代码。 首次使用`IsPost`方法来确定是否正在发页面&#8212;，即是否用户单击按钮**提交**按钮。 如果这是 post， `IsPost` ，则返回 true。 这是标准方法中的 ASP.NET Web Pages 以确定是否你正在使用的初始请求 （GET 请求） 或回发 （POST 请求）。 (有关 GET 和 POST 的详细信息，请参阅"HTTP GET 和 POST 和 IsPost 属性的"边栏中[ASP.NET 网页编程使用 Razor 语法的简介](https://go.microsoft.com/fwlink/?LinkId=202890#SB_HttpGetPost)。)
 
     接下来，获取从用户填充的值`Request.Form`对象，并且你将它们放在变量为更高版本。 `Request.Form`对象包含所有已提交的页面中，每个键标识的值。 键是等效于`name`你想要读取的表单域的属性。 例如，若要读取`companyname`字段 （文本框中），你使用`Request.Form["companyname"]`。
 
@@ -89,7 +89,7 @@ ms.lasthandoff: 01/24/2018
 > 
 > HTML 编码用浏览器将解释为正确的符号的代码替换以下保留的字符。 例如，`<`字符替换`&lt;`和`>`字符替换`&gt;`。 浏览器呈现的字符，你想要查看这些替换字符串。
 > 
-> 它是使用 HTML 编码显示字符串的任何时间 （输入） 你从用户获取一个好主意。 如果没有，用户可尝试获取你 web 页后，可以运行恶意脚本或做其他事情这影响了你站点的安全或不想。 （这一点特别重要，如果你需要较长用户输入，将其存储某个地方，，然后显示其更高版本 &#8212; 例如，博客注释，作为用户查看，或类似的。）
+> 它是使用 HTML 编码显示字符串的任何时间 （输入） 你从用户获取一个好主意。 如果没有，用户可尝试获取你 web 页后，可以运行恶意脚本或做其他事情这影响了你站点的安全或不想。 (这一点特别重要的如果你接受用户输入，将其存储某个地方，并在随后显示&#8212;例如，作为博客注释、 用户评审或类似的说明。)
 > 
 > 为了帮助防止这些问题，ASP.NET 网页自动进行 HTML 编码的任何文本内容，您在代码中输出。 例如，当你显示变量或使用代码类似于的表达式的内容时，才`@MyVar`，ASP.NET 网页自动对输出进行编码。
 

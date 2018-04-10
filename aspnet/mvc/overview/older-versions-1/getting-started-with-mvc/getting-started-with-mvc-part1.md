@@ -16,7 +16,7 @@ ms.openlocfilehash: 476d832e389b9b5a26fe2d552ca648c79b100056
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="intro-to-aspnet-mvc"></a>ASP.NET MVC 简介
 ====================
@@ -58,7 +58,7 @@ ms.lasthandoff: 04/06/2018
 
 Visual Web Developer 是一个 IDE 或集成开发环境。 就像使用 Microsoft Word 编写文档，你将使用 IDE 来创建应用程序。 没有到你，以及你也可能使用了到选择的文件的菜单显示各个可用的选项顶部工具栏 |新项目。
 
-[![Microsoft Visual Web Developer 2010 速成版](getting-started-with-mvc-part1/_static/image6.png)](getting-started-with-mvc-part1/_static/image5.png)
+[![Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part1/_static/image6.png)](getting-started-with-mvc-part1/_static/image5.png)
 
 ## <a name="creating-your-first-application"></a>创建第一个应用程序
 
@@ -68,7 +68,7 @@ Visual Web Developer 是一个 IDE 或集成开发环境。 就像使用 Microso
 
 在右侧是应用程序中显示所有文件和文件夹解决方案资源管理器。 在中间的大窗口是你在其中编辑你的代码并花费大部分时间。 因此，必须运行的应用程序现在不执行任何操作的情况下，visual Studio 刚创建的 ASP.NET MVC 项目使用默认模板 ！ 这是简单的"Hello World ！ 项目，然后它是为我们的应用程序启动的好时机。
 
-[![Microsoft Visual Web Developer 2010 速成版](getting-started-with-mvc-part1/_static/image10.png)](getting-started-with-mvc-part1/_static/image9.png)
+[![Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part1/_static/image10.png)](getting-started-with-mvc-part1/_static/image9.png)
 
 选择到工具栏的"播放"按钮。
 

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/data/working-with-files
-title: "使用 ASP.NET Web 页 (Razor) 站点中的文件 |Microsoft 文档"
+title: 使用 ASP.NET Web 页 (Razor) 站点中的文件 |Microsoft 文档
 author: tfitzmac
-description: "本章介绍如何读取、 写入、 追加、 删除和上载文件。"
+description: 本章介绍如何读取、 写入、 追加、 删除和上载文件。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/working-with-files
 msc.type: authoredcontent
 ms.openlocfilehash: 0f119f8fb4873e55292203f21a2efd8f26793ae4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a>使用 ASP.NET Web 页 (Razor) 站点中的文件
 ====================
@@ -46,7 +46,7 @@ ms.lasthandoff: 01/24/2018
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
 > 
 > 
-> - ASP.NET Web Pages (Razor) 2
+> - ASP.NET 网页 (Razor) 2
 > - WebMatrix 2
 >   
 > 
@@ -133,9 +133,9 @@ ms.lasthandoff: 01/24/2018
 
     要执行此操作的代码位于`if`语句。 如果你想要读取的文件，它是一个好办法使用`File.Exists`方法，以首先确定文件是否可用。 代码还将检查文件是否为空。
 
-    页面的正文包含两个`foreach`循环，嵌套在另一个。 外部`foreach`循环从数据文件一次获取一行。 在这种情况下，行定义中的文件 &#8212; 换行也就是说，每个数据项是在其对应行。 外部循环创建新项 (`<li>`元素) 的有序列表内 (`<ol>`元素)。
+    页面的正文包含两个`foreach`循环，嵌套在另一个。 外部`foreach`循环从数据文件一次获取一行。 在这种情况下，这些行由文件中的分行符&#8212;，即每个数据项位于其自己的行。 外部循环创建新项 (`<li>`元素) 的有序列表内 (`<ol>`元素)。
 
-    内部循环将每个数据行拆分为使用逗号作为分隔符的项 （字段）。 （根据前面的示例，这意味着每个行包含三个字段和 #8212; 名字、 姓氏和电子邮件地址，每个以逗号分隔）。内部循环还会创建`<ul>`列表和显示一个列表项为每个数据行中的字段。
+    内部循环将每个数据行拆分为使用逗号作为分隔符的项 （字段）。 (根据前面的示例，这意味着每个行包含三个字段&#8212;名字、 姓氏和电子邮件地址，每个以逗号分隔。)内部循环还会创建`<ul>`列表和显示一个列表项为每个数据行中的字段。
 
     代码演示了如何使用两种数据类型、 数组和`char`数据类型。 该数组是必需的因为`File.ReadAllLines`方法返回的数组形式的数据。 `char`数据类型是必需的因为`Split`方法返回`array`其中每个元素的类型均`char`。 (有关数组的信息，请参阅[ASP.NET Web 编程使用 Razor 语法的简介](https://go.microsoft.com/fwlink/?LinkId=202890#ID_CollectionsAndObjects)。)
 3. 在浏览器中运行页面。 将显示为前面的示例输入的数据。 
@@ -194,7 +194,7 @@ ms.lasthandoff: 01/24/2018
 
     有关设置的属性的`FileUpload`帮助器指定你希望提交按钮以读取和你想要上载的文件的单个框**上载**。 （你将添加多个框本文后面的部分。）
 
-    当用户单击**上载**，在页面顶部的代码获取文件，并将其保存。 `Request`你通常使用从窗体字段中获取值的对象还具有`Files`数组，其中包含的文件 （或文件） 的已上载。 你可以超出数组 #8212; 中的特定位置的单个文件例如，若要获取第一个上载的文件，你获得`Request.Files[0]`，若要获取第二个文件，你获得`Request.Files[1]`，依次类推。 （记住，在编程中，计数通常从零开始）。
+    当用户单击**上载**，在页面顶部的代码获取文件，并将其保存。 `Request`你通常使用从窗体字段中获取值的对象还具有`Files`数组，其中包含的文件 （或文件） 的已上载。 你可以从数组中的特定位置的单个文件&#8212;例如，若要获取第一个上载的文件，你获得`Request.Files[0]`，若要获取第二个文件，您获取`Request.Files[1]`，依次类推。 （记住，在编程中，计数通常从零开始）。
 
     当提取已上载的文件时，你将其放入变量 (在这里， `uploadedFile`)，以便可以对其进行操作。 若要确定已上载的文件的名称，您只会收到其`FileName`属性。 但是，当用户上载一个文件时，才`FileName`包含用户的原始名称，包括完整路径。 它可能如下所示：
 
@@ -238,7 +238,7 @@ ms.lasthandoff: 01/24/2018
 
     ![[image]](working-with-files/_static/image11.jpg)
 
-    若要处理用户上载的文件，该代码使用在前面的示例和 #8212; 中使用的相同基本技术获取从文件`Request.Files`然后将其保存。 （包括各种内容需要操作，以正确的文件名和路径。）这一次的创新是用户可能会上载多个文件，并且你不知道许多。 若要了解，你可以获取`Request.Files.Count`。
+    若要处理用户上载的文件，该代码使用你在前面的示例中使用的相同基本技术&#8212;获取从文件`Request.Files`然后将其保存。 （包括各种内容需要操作，以正确的文件名和路径。）这一次的创新是用户可能会上载多个文件，并且你不知道许多。 若要了解，你可以获取`Request.Files.Count`。
 
     与现有此数字，则可以遍历`Request.Files`，反过来，提取每个文件并将其保存。 如果你想要循环访问集合的已知的次数，你可以使用`for`循环，如下：
 

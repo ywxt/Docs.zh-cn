@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 概述"
+title: ASP.NET Core MVC 概述
 author: ardalis
-description: "了解 ASP.NET Core MVC 这一丰富框架如何使用“模型-视图-控制器”设计模式构建 Web 应用和 API。"
+description: 了解 ASP.NET Core MVC 这一丰富框架如何使用“模型-视图-控制器”设计模式构建 Web 应用和 API。
 manager: wpickett
 ms.author: riande
 ms.date: 01/08/2018
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/overview
-ms.openlocfilehash: 16fd1b5e71cde4364f02640f504d42218ed680df
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: HT
+ms.openlocfilehash: 1cf48499d3bc0ba63e2f0667740668fad0b13c28
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>ASP.NET Core MVC 概述
 
@@ -185,13 +185,13 @@ ASP.NET Core 内置有对[依赖关系注入 (DI)](../fundamentals/dependency-in
 
 除了作为生成网站的强大平台，ASP.NET Core MVC 还对生成 Web API 提供强大的支持。 可以生成可连接大量客户端（包括浏览器和移动设备）的服务。
 
-该框架包括对 HTTP 内容协商的支持，后者有允许[设置数据格式](models/formatting.md)为 JSON 或 XML 的内置支持。 编写[自定义格式化程序](advanced/custom-formatters.md)以添加对自己格式的支持。
+Framework 包括到内置支持通过 HTTP 内容协商支持[设置数据的格式](xref:web-api/advanced/formatting)作为 JSON 或 XML。 编写[自定义格式化程序](xref:web-api/advanced/custom-formatters)以添加对自己格式的支持。
 
 使用链接生成启用对超媒体的支持。 轻松启用对[跨域资源共享 (CORS)](http://www.w3.org/TR/cors/) 的支持，以便 Web API 可以跨多个 Web 应用程序共享。
 
 ### <a name="testability"></a>可测试性
 
-框架对界面和依赖关系注入的使用非常适用于单元测试，并且该框架还包括使得[集成测试](../testing/integration-testing.md)快速轻松的功能（例如 TestHost 和 Entity Framework 的 InMemory 提供程序）。 详细了解[测试控制器逻辑](controllers/testing.md)。
+接口和依赖关系注入框架的使用使其适合对单元测试，和框架包括功能 （如 TestHost 和 InMemory 实体框架提供程序），使[集成测试](../testing/integration-testing.md)快速和轻松以及。 详细了解[如何测试控制器逻辑](controllers/testing.md)。
 
 ### <a name="razor-view-engine"></a>Razor 视图引擎
 

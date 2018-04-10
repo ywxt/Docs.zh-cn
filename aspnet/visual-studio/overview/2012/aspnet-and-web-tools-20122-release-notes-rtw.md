@@ -1,22 +1,22 @@
 ---
 uid: visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw
-title: "ASP.NET 和 Web Tools 2012.2 的发行说明 |Microsoft 文档"
+title: ASP.NET 和 Web Tools 2012.2 的发行说明 |Microsoft 文档
 author: rick-anderson
-description: "ASP.NET 和 Web Tools 2012.2 的发行说明。"
+description: ASP.NET 和 Web Tools 2012.2 的发行说明。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/14/2013
 ms.topic: article
 ms.assetid: 9534e58b-1d15-4f1d-b04c-10c79b9d8227
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw
 msc.type: content
 ms.openlocfilehash: ab1642f1a3de298919aa9c6c1ddbd6bbb0cb99b5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="aspnet-and-web-tools-20122-release-notes"></a>ASP.NET 和 Web Tools 2012.2 发行说明
 ====================
@@ -53,12 +53,12 @@ ASP.NET 和 Web Tools 2012.2 for Visual Studio 2012 可以使用安装[Web 平�
 5. 当提示的单击运行。 你还可以保存该文件以更高版本运行。
 
 > [!NOTE]
-> ASP.NET 和 Web Tools 2012.2 版不包括 SQL Server Data Tools。 SQL Server 和 Windows Azure SQL 数据库提供更丰富的数据库工具包括脱机支持项目的开发，架构比较和增强的数据库部署功能集。 有关详细信息或要安装 SQL Server Data Tools，请访问[https://go.microsoft.com/fwlink/?LinkID=237127](https://go.microsoft.com/fwlink/?LinkID=237127)。
+> ASP.NET 和 Web Tools 2012.2 版不包括 SQL Server Data Tools。 SQL Server 和 Windows Azure SQL 数据库提供更丰富的数据库工具包括脱机支持项目的开发，架构比较和增强的数据库部署功能集。 有关详细信息或要安装 SQL Server Data Tools，请访问[ https://go.microsoft.com/fwlink/?LinkID=237127 ](https://go.microsoft.com/fwlink/?LinkID=237127)。
 
 <a id="_Documentation"></a>
 ## <a name="documentation"></a>文档
 
-ASP.NET web 站点 (https://www.asp.net) 提供了教程和有关 ASP.NET 和 Web Tools 2012.2 的其他信息。
+教程和有关 ASP.NET 和 Web Tools 2012.2 的其他信息可以从 ASP.NET web 站点 ( https://www.asp.net)。
 
 <a id="_Support"></a>
 ## <a name="support"></a>支持
@@ -95,7 +95,7 @@ ASP.NET 和 Web Tools 2012.2 需要 Visual Studio 2012 或 Visual Studio Express
 ### <a name="web-publishing"></a>Web 发布
 
 - 网站项目现在具有包括发布到 Windows Azure 网站的 Web 应用程序项目与相同的发布体验。
-- 选择性发布 &#8211;一个或多个文件可以 （在发布到 Web 部署的终结点） 执行以下操作： 
+- 选择性发布&#8211;的一个或多个文件之后可以执行以下操作 （发布到 Web 部署的终结点）： 
 
     - 发布所选的文件。
     - 请参阅本地文件和远程文件之间的差异。
@@ -104,10 +104,10 @@ ASP.NET 和 Web Tools 2012.2 需要 Visual Studio 2012 或 Visual Studio Express
 <a id="_Templates"></a>
 ### <a name="aspnet-mvc-templates"></a>ASP.NET MVC 模板
 
-- 新的 Facebook 应用程序模板可以编写简单的应用程序的 Facebook 画布。 在几个简单步骤，你可以创建的 Facebook 应用程序在已登录用户从获取数据并与他们的朋友集成。 该模板包含新的库来处理无足轻重的所有生成 Facebook 应用程序，包括身份验证，访问 Facebook 数据以及更多的权限，所涉及的管道。 使用 Facebook 应用程序模板的详细信息请参阅[https://go.microsoft.com/fwlink/?LinkID=269921](https://go.microsoft.com/fwlink/?LinkID=269921)。
-- 新的单页面应用程序 MVC 模板允许开发人员可以构建使用 HTML 5、 CSS 3 和常用 Knockout 和 jQuery JavaScript 库，基于 ASP.NET Web API 的客户端的交互式 web 应用。 该模板包含的"todo"列表应用程序演示如何构建使用 RESTful 服务器 API 的 JavaScript HTML5 应用程序的常见做法。 你可以阅读更多信息，请访问[https://www.asp.net/single-page-application](../../../single-page-application/index.md)。
+- 新的 Facebook 应用程序模板可以编写简单的应用程序的 Facebook 画布。 在几个简单步骤，你可以创建的 Facebook 应用程序在已登录用户从获取数据并与他们的朋友集成。 该模板包含新的库来处理无足轻重的所有生成 Facebook 应用程序，包括身份验证，访问 Facebook 数据以及更多的权限，所涉及的管道。 使用 Facebook 应用程序模板的详细信息请参阅[ https://go.microsoft.com/fwlink/?LinkID=269921 ](https://go.microsoft.com/fwlink/?LinkID=269921)。
+- 新的单页面应用程序 MVC 模板允许开发人员可以构建使用 HTML 5、 CSS 3 和常用 Knockout 和 jQuery JavaScript 库，基于 ASP.NET Web API 的客户端的交互式 web 应用。 该模板包含的"todo"列表应用程序演示如何构建使用 RESTful 服务器 API 的 JavaScript HTML5 应用程序的常见做法。 你可以阅读更多信息，请访问[ https://www.asp.net/single-page-application ](../../../single-page-application/index.md)。
 - 你现在可以创建 VSIX 中，以便将新模板添加到 ASP.NET MVC 新项目对话框。 此处了解操作方法： [https://go.microsoft.com/fwlink/?LinkId=275019](https://go.microsoft.com/fwlink/?LinkId=275019)
-- FixedDisplayModes 包 （&#8211;MVC 项目模板已更新以包括新的 FixedDisplayModes NuGet 包，其中包含一个 MVC 4 中的 bug 的解决方法。 有关包中包含此修补程序的详细信息，请参阅这篇博客文章 ([https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx](https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx)) 从 MVC 团队。
+- FixedDisplayModes 包&#8211;MVC 项目模板已更新，以包括新的 FixedDisplayModes NuGet 包，其中包含一个 MVC 4 中的 bug 的解决方法。 有关包中包含此修补程序的详细信息，请参阅这篇博客文章 ([https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx](https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx)) 从 MVC 团队。
 
 <a id="_ASP.NET_Web_API"></a>
 ### <a name="aspnet-web-api"></a>ASP.NET Web API
@@ -148,33 +148,33 @@ ASP.NET Web API OData 当前支持以下功能：
 - OData 操作。
 - 作为 WCF 数据服务，即 ODataLib 相同的基础之上构建 ([http://www.nuget.org/packages/microsoft.data.odata](http://www.nuget.org/packages/microsoft.data.odata))。
 
-有关 ASP.NET Web API OData 的详细信息请参阅[https://go.microsoft.com/fwlink/?LinkId=271141](https://go.microsoft.com/fwlink/?LinkId=271141)。
+有关 ASP.NET Web API OData 的详细信息请参阅[ https://go.microsoft.com/fwlink/?LinkId=271141 ](https://go.microsoft.com/fwlink/?LinkId=271141)。
 
 #### <a name="aspnet-web-api-tracing"></a>ASP.NET Web API 跟踪
 
 ASP.NET Web API 跟踪与.NET 跟踪集成，从你的 web Api 的跟踪数据。 默认情况下，Web API 项目模板中现在启用它。 跟踪数据的你的 web Api 发送到输出窗口和通过 IntelliTrace。 ASP.NET Web API Tracing 使您能够了解你的 Web API 时通过与集成在 Windows Azure 上托管的跟踪信息[Windows Azure 诊断](https://msdn.microsoft.com/library/windowsazure/hh411529.aspx)。 此外可以安装并启用在使用 ASP.NET Web API 跟踪 NuGet 包的任何应用程序中的 ASP.NET Web API Tracing ([http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing](http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing))。
 
-有关配置和使用 ASP.NET Web API Tracing 的详细信息请参阅[https://go.microsoft.com/fwlink/?LinkID=269874](https://go.microsoft.com/fwlink/?LinkID=269874)。
+有关配置和使用 ASP.NET Web API Tracing 的详细信息请参阅[ https://go.microsoft.com/fwlink/?LinkID=269874 ](https://go.microsoft.com/fwlink/?LinkID=269874)。
 
 #### <a name="aspnet-web-api-help-page"></a>ASP.NET Web API 帮助页
 
 默认情况下，Web API 项目模板中现在包含 ASP.NET Web API 帮助页。 ASP.NET Web API 帮助页自动生成 web Api 包括 HTTP 终结点、 支持的 HTTP 方法、 参数和示例请求和响应消息负载的文档。 从代码中的注释自动拉取文档。 此外可以向任何应用程序使用 ASP.NET Web API 帮助页 NuGet 包添加 ASP.NET Web API 帮助页 ([http://www.nuget.org/packages/microsoft.aspnet.webapi.helppage](http://www.nuget.org/packages/microsoft.aspnet.webapi.helppage))。
 
-有关详细信息来设置和自定义 ASP.NET Web API 帮助页，请参阅[https://go.microsoft.com/fwlink/?LinkId=271140](https://go.microsoft.com/fwlink/?LinkId=271140)。
+有关详细信息来设置和自定义 ASP.NET Web API 帮助页，请参阅[ https://go.microsoft.com/fwlink/?LinkId=271140 ](https://go.microsoft.com/fwlink/?LinkId=271140)。
 
 <a id="_ASP.NET_SignalR"></a>
 ### <a name="aspnet-signalr"></a>ASP.NET SignalR
 
 ASP.NET SignalR 非常容易地将实时 web 功能添加到 ASP.NET 应用程序，使用 Websocket，如果可用，并自动回退到其他技术时它不可以。
 
-有关使用 ASP.NET SignalR 的详细信息请参阅[https://go.microsoft.com/fwlink/?LinkId=271271](https://go.microsoft.com/fwlink/?LinkId=271271)。
+有关使用 ASP.NET SignalR 的详细信息请参阅[ https://go.microsoft.com/fwlink/?LinkId=271271 ](https://go.microsoft.com/fwlink/?LinkId=271271)。
 
 <a id="_ASP.NET_Friendly_URLs"></a>
 ### <a name="aspnet-friendly-urls"></a>ASP.NET 友好的 Url
 
 ASP.NET FriendlyURLs 使非常简便 web 窗体开发人员能够生成清除器正在 Url 查找 （无.aspx 扩展名）。 它需要的没有配置少，并可与现有的 ASP.NET v4.0 应用程序使用。 FriendlyURLs 功能还便于开发人员能够将移动支持添加到其应用程序，通过支持桌面和移动视图之间切换。
 
-安装和使用 ASP.NET 友好 Url 的详细信息请参阅[http://www.hanselman.com/blog/IntroducingASPNETFriendlyUrlsCleanerURLsEasierRoutingAndMobileViewsForASPNETWebForms.aspx](http://www.hanselman.com/blog/IntroducingASPNETFriendlyUrlsCleanerURLsEasierRoutingAndMobileViewsForASPNETWebForms.aspx)。
+安装和使用 ASP.NET 友好 Url 的详细信息请参阅[ http://www.hanselman.com/blog/IntroducingASPNETFriendlyUrlsCleanerURLsEasierRoutingAndMobileViewsForASPNETWebForms.aspx ](http://www.hanselman.com/blog/IntroducingASPNETFriendlyUrlsCleanerURLsEasierRoutingAndMobileViewsForASPNETWebForms.aspx)。
 
 <a id="_Known_Issues_and"></a>
 ## <a name="known-issues-and-breaking-changes"></a>已知的问题和重大更改
@@ -247,7 +247,7 @@ OData 不支持 OData 查询和 odata 路径中的不区分大小写的属性名
 
 #### <a name="default-odata-routing-conventions-doesnt-support-postput-on-navigation-property"></a>默认 OData 路由约定不支持 POST/PUT 导航属性。
 
-默认 OData 路由约定不支持 POST/PUT 导航属性。 请参阅工作项[http://aspnetwebstack.codeplex.com/workitem/366](http://aspnetwebstack.codeplex.com/workitem/366)。 我们缺少默认的约定中此常用的约定。
+默认 OData 路由约定不支持 POST/PUT 导航属性。 请参阅工作项[ http://aspnetwebstack.codeplex.com/workitem/366 ](http://aspnetwebstack.codeplex.com/workitem/366)。 我们缺少默认的约定中此常用的约定。
 
 若要解决这个问题，用户需要扩展新种路由约定无法支持它。
 
@@ -259,7 +259,7 @@ OData 不支持 OData 查询和 odata 路径中的不区分大小写的属性名
 
 #### <a name="real-time-update-controller"></a>实时更新控制器
 
-Facebook 应用程序模板允许用户轻松地创建一个 Web API 控制器来处理从 Facebook 的实时更新。 如果你的开发计算机位于 NAT 后面，你的控制器可能无法工作而无需进一步网络配置。 有关详细信息请参阅本文： [http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook](http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook)
+Facebook 应用程序模板允许用户轻松地创建一个 Web API 控制器来处理从 Facebook 的实时更新。 如果你的开发计算机位于 NAT 后面，你的控制器可能无法工作而无需进一步网络配置。 有关详细信息，请参阅此处： [http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook](http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook)
 
 #### <a name="query-string-values-conflict-with-facebook-oauth-parameters"></a>查询与 Facebook OAuth 参数的字符串值冲突
 
@@ -275,7 +275,7 @@ Facebook 应用程序模板允许用户轻松地创建一个 Web API 控制器�
 
 与 JQuery 1.9/Knockout 2.2.1 更新，当运行默认 MVC SPA 项目时，新的 todo 项编辑不再焦点回新的 todo 项编辑框后输入到 todo 列表中输入新的 todo 项。
 
-解决方法引用[http://knockoutjs.com/documentation/hasfocus-binding.html](http://knockoutjs.com/documentation/hasfocus-binding.html)，并对下面的示例代码进行类似的修复：
+解决方法引用[ http://knockoutjs.com/documentation/hasfocus-binding.html ](http://knockoutjs.com/documentation/hasfocus-binding.html)，并对下面的示例代码进行类似的修复：
 
 文件 todo.model.js  
  函数 todolist(data) 中，添加以下：  

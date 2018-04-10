@@ -16,7 +16,7 @@ ms.openlocfilehash: 166bc642ea2083f455be0648e424f0b0ae3b082c
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="membership-and-administration"></a>成员资格和管理
 ====================
@@ -277,7 +277,7 @@ Wingtip Toys 示例应用程序允许匿名用户和登录的用户都能查看�
 ## <a name="additional-resources"></a>其他资源
 
 [Web.config 的授权元素](https://msdn.microsoft.com/library/8d82143t(v=vs.100).aspx)  
-[ASP.NET 标识](../../../../identity/overview/getting-started/introduction-to-aspnet-identity.md)  
+[ASP.NET Identity](../../../../identity/overview/getting-started/introduction-to-aspnet-identity.md)  
 [将包含成员资格、 OAuth 和 SQL 数据库的安全的 ASP.NET Web 窗体应用程序部署到 Azure 网站](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)  
 [Microsoft Azure 的免费试用版](https://azure.microsoft.com/pricing/free-trial/)
 
