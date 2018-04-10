@@ -45,7 +45,7 @@ ms.lasthandoff: 03/22/2018
 
 授权处理程序负责处理requirement的属性。 授权处理程序处理这些requirement，针对提供的[AuthorizationHandlerContext](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext)来确定是否允许访问。
 
-一项requirement可以有[多个处理程序](#security-authorization-policies-based-multiple-handlers)。 处理程序可以继承[AuthorizationHandler\<TRequirement >](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1)，其中`TRequirement`是要处理的requirement。 或者，一个处理程序[IAuthorizationHandler](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationhandler)可以以处理多个类型的requirement。
+一项requirement可以有[多个处理程序](#security-authorization-policies-based-multiple-handlers)。 处理程序可以继承[AuthorizationHandler\<TRequirement >](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1)，其中`TRequirement`是要处理的requirement。 或者，一个处理程序[IAuthorizationHandler](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationhandler)可以以处理多个requirement类型。
 
 ### <a name="use-a-handler-for-one-requirement"></a>为一个要求使用一个处理程序
 
