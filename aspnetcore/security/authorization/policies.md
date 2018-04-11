@@ -111,17 +111,17 @@ ms.lasthandoff: 03/22/2018
 
 可能有哪些履行策略是简单代码中表示的情况。 可以提供`Func<AuthorizationHandlerContext, bool>`配置与你的策略时`RequireAssertion`策略生成器。
 
-例如，上一个`BadgeEntryHandler`可以如下所示重写：
+例如，上一个 `BadgeEntryHandler` 可以重写，如下所示：
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=52-53,57-63)]
 
-## <a name="accessing-mvc-request-context-in-handlers"></a>访问在处理程序中的 MVC 请求上下文
+## <a name="accessing-mvc-request-context-in-handlers"></a>访问处理程序中的 MVC 请求上下文
 
-`HandleRequirementAsync`授权处理程序中实现的方法具有两个参数：`AuthorizationHandlerContext`和`TRequirement`正在处理。 框架，例如 MVC 或 Jabbr 可自由将任何对象添加到`AuthorizationHandlerContext`中的`Resource`属性来传递额外信息。
+在授权处理程序中实现的 `HandleRequirementAsync` 方法有两个参数：`AuthorizationHandlerContext` 以及你正在处理的 `TRequirement`。MVC 或 Jabbr 之类的框架可以自由地将任何对象添加到 `AuthorizationHandlerContext` 中的 `Resource` 属性，以便传递额外信息。
 
 例如，MVC 传递的实例的[AuthorizationFilterContext](/dotnet/api/?term=AuthorizationFilterContext)中`Resource`属性。 此属性提供访问权限`HttpContext`， `RouteData`，以及其他和提供的 MVC Razor 页的所有内容。
 
-使用`Resource`属性是特定于框架。 使用`Resource`属性中信息限制特定框架上你的授权策略。 应使用`as`关键字强制转换`Resource`属性，然后确认该强制转换是否成功以确保你的代码不因为其他框架抛出`InvalidCastException`异常产生崩溃：
+对 `Resource` 属性的使用是特定于框架的。可以使用 `Resource` 属性中的信息将授权策略限制到特定的框架。应使用 `as` 关键字来强制转换 `Resource` 属性，然后确认该强制转换是否成功，确保代码在其他框架上运行时，不会崩溃并抛出 `InvalidCastException` 异常：
 
 ```csharp
 // Requires the following import:
