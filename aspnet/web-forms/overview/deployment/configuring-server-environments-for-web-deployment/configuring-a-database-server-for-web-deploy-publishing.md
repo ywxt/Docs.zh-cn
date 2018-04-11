@@ -175,7 +175,7 @@ SQL Server 登录名是一个服务器级对象，而不只是数据库级别对
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image12.png)
 3. 在**登录属性**对话框中，单击**用户映射**。
 4. 在**映射到此登录名的用户**表中，选择你的数据库的名称 (例如， **ContactManager**)。
-5. 在**数据库角色成员身份：** *[数据库名称]*列表中，选择所需的权限。 在联系人管理器示例解决方案中，您必须选择**db\_datareader**和**db\_datawriter**角色。
+5. 在**数据库角色成员身份：** *[数据库名称]* 列表中，选择所需的权限。 在联系人管理器示例解决方案中，您必须选择**db\_datareader**和**db\_datawriter**角色。
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image13.png)
 6. 单击 **“确定”**。
@@ -212,7 +212,7 @@ SQL Server 登录名是一个服务器级对象，而不只是数据库级别对
 2. 在**对象资源管理器**窗口中，展开**安全**节点，展开**登录名**节点，然后双击机帐户登录名 (例如， **FABRIKAM\matt**)。
 3. 在**登录属性**对话框中，单击**用户映射**。
 4. 在**映射到此登录名的用户**表中，选择你的数据库的名称 (例如， **ContactManager**)。
-5. 在**数据库角色成员身份：** *[数据库名称]*列表中，选择**db\_所有者**角色。
+5. 在**数据库角色成员身份：** *[数据库名称]* 列表中，选择**db\_所有者**角色。
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image15.png)
 6. 单击 **“确定”**。

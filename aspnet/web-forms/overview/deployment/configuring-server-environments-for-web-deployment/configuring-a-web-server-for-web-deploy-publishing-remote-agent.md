@@ -114,11 +114,11 @@ ms.lasthandoff: 04/06/2018
 
 1. 单击**启动**，然后键入**命令提示符**。
 2. 在搜索结果中，右键单击**命令提示符**，然后单击**以管理员身份运行**。
-3. 在命令提示符窗口中，导航到**%WINDIR%\Microsoft.NET\Framework\v4.0.30319**目录。
+3. 在命令提示符窗口中，导航到 **%WINDIR%\Microsoft.NET\Framework\v4.0.30319** 目录。
 4. 键入以下命令，然后按 Enter:
 
     [!code-console[Main](configuring-a-web-server-for-web-deploy-publishing-remote-agent/samples/sample1.cmd)]
-5. 如果你计划到托管 64 位 web 应用程序的任何时刻，你应该向 IIS 注册 ASP.NET 的 64 位版本。 为此，请在命令提示符窗口中，导航到**%WINDIR%\Microsoft.NET\Framework64\v4.0.30319**目录。
+5. 如果你计划到托管 64 位 web 应用程序的任何时刻，你应该向 IIS 注册 ASP.NET 的 64 位版本。 为此，请在命令提示符窗口中，导航到 **%WINDIR%\Microsoft.NET\Framework64\v4.0.30319** 目录。
 6. 键入以下命令，然后按 Enter:
 
     [!code-console[Main](configuring-a-web-server-for-web-deploy-publishing-remote-agent/samples/sample2.cmd)]
@@ -169,7 +169,7 @@ ms.lasthandoff: 04/06/2018
 13. 在**站点绑定**对话框中，单击**关闭**。
 14. 在**连接**窗格中，单击**应用程序池**。
 15. 在**应用程序池**窗格中，右键单击应用程序池的名称，然后单击**基本设置**。 默认情况下，应用程序池的名称将匹配你的网站的名称 (例如， **DemoSite**)。
-16. 在**.NET Framework 版本**列表中，选择**.NET Framework v4.0.30319**，然后单击**确定**。
+16. 在 **.NET Framework 版本** 列表中，选择 **.NET Framework v4.0.30319** ，然后单击 **确定** 。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-remote-agent/_static/image7.png)
 
