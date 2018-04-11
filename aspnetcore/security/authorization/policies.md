@@ -1,5 +1,5 @@
 ---
-title: ASP.NET 核心中基于策略的授权
+title: ASP.NET Core中基于策略的授权
 author: rick-anderson
 description: 了解如何创建和使用授权策略处理程序，用于实施 ASP.NET Core 应用程序中的授权要求。
 manager: wpickett
@@ -16,36 +16,36 @@ ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
 ---
-# <a name="policy-based-authorization-in-aspnet-core"></a>ASP.NET 核心中基于策略的授权
+# <a name="policy-based-authorization-in-aspnet-core"></a>ASP.NET Core中基于policy的授权
 
-实际上，[基于角色的授权](xref:security/authorization/roles)和[基于声明的授权](xref:security/authorization/claims)使用要求，要求处理程序，并预先配置的策略。 这些构建基块支持在代码中的授权评估表达式。 结果是一个更丰富、 可重复使用、 可测试授权结构。
+实际上，[基于角色的授权](xref:security/authorization/roles)和[基于声明的授权](xref:security/authorization/claims)使用一个requirement（必须条件），一个requirement处理程序，和一个预设置policy（策略）。 这些构建基块支持在代码中执行授权表达式。 结果是一个更丰富、 可重复使用、 可测试的授权结构。
 
-授权策略包含一个或多个要求。 在中注册的授权服务配置中，一部分`Startup.ConfigureServices`方法：
+授权策略包含一个或多个requirement。 在`Startup.ConfigureServices`方法中它注册作为授权服务配置的一部分：
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=40-41,50-55,63,72)]
 
-在前面的示例中，创建一个"AtLeast21"策略。 它具有单个要求&mdash;的最短期限，它提供作为参数传递给要求。
+在前面的示例中，创建一个"AtLeast21"policy。 它有一个唯一的requirement&mdash;限制最小年龄，提供它作为参数传递给requirement。
 
-通过使用应用策略`[Authorize]`具有策略名称属性。 例如：
+通过使用应用policy`[Authorize]`具有policy名称属性。 例如：
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Controllers/AlcoholPurchaseController.cs?name=snippet_AlcoholPurchaseControllerClass&highlight=4)]
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>requirements（必须条件）
 
-授权要求是一个策略可用于评估当前的用户主体的数据参数的集合。 在我们的"AtLeast21"策略的要求是单个参数&mdash;最小存在时间。 要求实现[IAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationrequirement)，这是一个空标记接口。 参数化的最小年龄要求无法实现，如下所示：
+授权requirement是一个policy可用于评估当前的用户主体的数据参数的集合。 在我们的"AtLeast21"policy的requirement是唯一的参数&mdash;限制最小年龄。 requirement实现[IAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationrequirement)，这是一个空标记接口。 这个最小年龄参数requirement可以如下所示实现：
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Requirements/MinimumAgeRequirement.cs?name=snippet_MinimumAgeRequirementClass)]
 
 > [!NOTE]
-> 一项要求不需要具有数据或属性。
+> 一个requirement不需要具有数据或属性。
 
 <a name="security-authorization-policies-based-authorization-handler"></a>
 
 ## <a name="authorization-handlers"></a>授权处理程序
 
-授权处理程序负责的要求的属性求值。 授权处理程序会评估要求，针对提供[AuthorizationHandlerContext](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext)以确定是否允许访问。
+授权处理程序负责处理requirement的属性。 授权处理程序处理这些requirement，针对提供的[AuthorizationHandlerContext](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext)来确定是否允许访问。
 
-可以有一项要求[多个处理程序](#security-authorization-policies-based-multiple-handlers)。 处理程序可以继承[AuthorizationHandler\<TRequirement >](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1)，其中`TRequirement`是要处理的要求。 或者，可以实现一个处理程序[IAuthorizationHandler](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationhandler)以处理多个类型的要求。
+一项requirement可以有[多个处理程序](#security-authorization-policies-based-multiple-handlers)。 处理程序可以继承[AuthorizationHandler\<TRequirement >](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1)，其中`TRequirement`是要处理的requirement。 或者，一个处理程序[IAuthorizationHandler](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationhandler)可以以处理多个requirement类型。
 
 ### <a name="use-a-handler-for-one-requirement"></a>为一个要求使用一个处理程序
 
@@ -85,7 +85,7 @@ ms.lasthandoff: 03/22/2018
 
 * 若要确保失败，即使其他要求处理程序成功，调用`context.Fail`。
 
-当设置为`false`、 [InvokeHandlersAfterFailure](/dotnet/api/microsoft.aspnetcore.authorization.authorizationoptions.invokehandlersafterfailure#Microsoft_AspNetCore_Authorization_AuthorizationOptions_InvokeHandlersAfterFailure)属性 （位于 ASP.NET 核心 1.1 和更高版本） 会使短路执行的处理程序时`context.Fail`调用。 `InvokeHandlersAfterFailure` 默认为`true`，在这种情况下调用所有处理程序。 这样要求以产生副作用，例如日志记录，这些始终发生即使`context.Fail`已在另一个处理程序调用。
+当设置为`false`、 [InvokeHandlersAfterFailure](/dotnet/api/microsoft.aspnetcore.authorization.authorizationoptions.invokehandlersafterfailure#Microsoft_AspNetCore_Authorization_AuthorizationOptions_InvokeHandlersAfterFailure)属性 （位于 ASP.NET Core 1.1 和更高版本） 会使短路执行的处理程序时`context.Fail`调用。 `InvokeHandlersAfterFailure` 默认为`true`，在这种情况下调用所有处理程序。 这样要求以产生副作用，例如日志记录，这些始终发生即使`context.Fail`已在另一个处理程序调用。
 
 <a name="security-authorization-policies-based-multiple-handlers"></a>
 
@@ -111,17 +111,17 @@ ms.lasthandoff: 03/22/2018
 
 可能有哪些履行策略是简单代码中表示的情况。 可以提供`Func<AuthorizationHandlerContext, bool>`配置与你的策略时`RequireAssertion`策略生成器。
 
-例如，以前`BadgeEntryHandler`无法，如下所示重写：
+例如，上一个 `BadgeEntryHandler` 可以重写，如下所示：
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=52-53,57-63)]
 
-## <a name="accessing-mvc-request-context-in-handlers"></a>访问在处理程序的 MVC 请求上下文
+## <a name="accessing-mvc-request-context-in-handlers"></a>访问处理程序中的 MVC 请求上下文
 
-`HandleRequirementAsync`授权处理程序中实现的方法具有两个参数：`AuthorizationHandlerContext`和`TRequirement`正在处理。 框架，例如 MVC 或 Jabbr 可用于任何将对象添加到`Resource`属性`AuthorizationHandlerContext`传递额外信息。
+在授权处理程序中实现的 `HandleRequirementAsync` 方法有两个参数：`AuthorizationHandlerContext` 以及你正在处理的 `TRequirement`。MVC 或 Jabbr 之类的框架可以自由地将任何对象添加到 `AuthorizationHandlerContext` 中的 `Resource` 属性，以便传递额外信息。
 
 例如，MVC 传递的实例的[AuthorizationFilterContext](/dotnet/api/?term=AuthorizationFilterContext)中`Resource`属性。 此属性提供访问权限`HttpContext`， `RouteData`，以及其他和提供的 MVC Razor 页的所有内容。
 
-使用`Resource`属性是特定于框架。 使用中的信息`Resource`属性限制到特定的框架你授权策略。 应强制转换`Resource`属性使用`as`关键字，然后确认该强制转换具有成功以确保你的代码不崩溃与`InvalidCastException`其他框架上运行时：
+对 `Resource` 属性的使用是特定于框架的。可以使用 `Resource` 属性中的信息将授权策略限制到特定的框架。应使用 `as` 关键字来强制转换 `Resource` 属性，然后确认该强制转换是否成功，确保代码在其他框架上运行时，不会崩溃并抛出 `InvalidCastException` 异常：
 
 ```csharp
 // Requires the following import:
