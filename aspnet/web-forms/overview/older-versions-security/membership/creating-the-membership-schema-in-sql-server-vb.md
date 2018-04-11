@@ -16,7 +16,7 @@ ms.openlocfilehash: 44458e8022f1f0d52cf136ad7fbaa5dd1f546632
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="creating-the-membership-schema-in-sql-server-vb"></a>在 SQL Server (VB) 中创建成员身份架构
 ====================
@@ -269,7 +269,7 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 > [!NOTE]
 > 在表 2 中记下任何默认值是指中定义的默认值`SqlMembershipProvider`类。 请注意该 not 中的配置设置的所有`AspNetSqlMembershipProvider`对应的默认值`SqlMembershipProvider`类。 例如，如果未指定成员资格提供程序中,`requiresUniqueEmail`将默认值设置为 true。 但是，`AspNetSqlMembershipProvider`通过显式指定的值来重写此默认值`false`。
 
-| **设置&lt;\_o3a\_p /&gt;** | **Description&lt;\_o3a\_p /&gt;** |
+| **Setting&lt;\_o3a\_p /&gt;** | **Description&lt;\_o3a\_p /&gt;** |
 | --- | --- |
 | `ApplicationName` | 回想一下，该成员身份框架允许在单个用户存储分区跨多个应用程序。 此设置指示所使用的成员资格提供程序的应用程序分区的名称。 如果此值不显式指定时，其设置为，在运行时，应用程序的虚拟根路径的值。 |
 | `commandTimeout` | 指定的 SQL 命令超时值 （以秒为单位）。 默认值为 30。 |
