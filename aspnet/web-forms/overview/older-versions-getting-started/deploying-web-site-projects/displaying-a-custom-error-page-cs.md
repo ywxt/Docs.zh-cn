@@ -60,7 +60,7 @@ ms.lasthandoff: 04/10/2018
 
 另一种 YSOD 是运行时错误 YSOD，和中所示**图 2**。 运行时错误 YSOD 通知发生了运行时错误，访问者，但它不包括有关已引发的异常的任何信息。 (它，但是，提供说明如何使错误详细信息可查看通过修改`Web.config`文件，它是的作用是将查找不专业的此类 YSOD。)
 
-默认情况下，运行时错误 YSOD 显示到远程访问的用户 (通过http://www.yoursite.com)，如按 URL 在浏览器的地址栏中出现**图 2**: `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo`。 存在两个不同的 YSOD 屏幕，因为开发人员想要了解错误详细信息，但此类信息应在实时站点上中显示，因为它可能会泄露潜在的安全漏洞或其他敏感信息到的任何用户访问你站点。
+默认情况下，运行时错误 YSOD 显示到远程访问的用户 (通过 http://www.yoursite.com) ，如按 URL 在浏览器的地址栏中出现**图 2**: `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo`。 存在两个不同的 YSOD 屏幕，因为开发人员想要了解错误详细信息，但此类信息应在实时站点上中显示，因为它可能会泄露潜在的安全漏洞或其他敏感信息到的任何用户访问你站点。
 
 > [!NOTE]
 > 如果你是内容的观众，并使用 DiscountASP.NET 作为你的 web 主机，你可能注意到运行时错误 YSOD 不会显示访问实时网站时。 这是因为 DiscountASP.NET 具有默认配置为显示异常详细信息 YSOD 其服务器。 好消息是，你可以通过添加来重写此默认行为`<customErrors>`部分为你`Web.config`文件。 "配置错误页显示"部分检查`<customErrors>`中详细信息部分。

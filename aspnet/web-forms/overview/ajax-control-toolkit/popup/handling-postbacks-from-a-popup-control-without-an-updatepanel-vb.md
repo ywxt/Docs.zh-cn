@@ -47,7 +47,7 @@ AJAX 控件工具包中的 PopupControl 扩展程序提供的其他任何控件�
 
 [!code-html[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/samples/sample3.html)]
 
-在服务器端代码中，必须读取的隐藏字段的值。 由于隐藏的表单字段进行了一些无关紧要操作，一种白名单方法验证隐藏的值是必需的。 一旦已确定正确的文本框中，从日历日期被写入到它。
+在服务器端代码中，必须读取的隐藏字段的值。 由于隐藏的表单字段进行了一些无关紧要操作，一种允许列表方法验证隐藏的值是必需的。 一旦已确定正确的文本框中，从日历日期被写入到它。
 
 [!code-aspx[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/samples/sample4.aspx)]
 
