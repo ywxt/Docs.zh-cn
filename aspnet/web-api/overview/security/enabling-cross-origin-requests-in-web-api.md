@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/enabling-cross-origin-requests-in-web-api
-title: "启用 ASP.NET Web API 2 中的跨源请求 |Microsoft 文档"
+title: 启用 ASP.NET Web API 2 中的跨源请求 |Microsoft 文档
 author: MikeWasson
-description: "演示如何在 ASP.NET Web API 中支持跨域资源共享 (CORS)。"
+description: 演示如何在 ASP.NET Web API 中支持跨域资源共享 (CORS)。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/15/2014
@@ -227,7 +227,7 @@ CORS 规范引入了几个新的 HTTP 标头启用跨域请求。 如果浏览�
 <a id="allowed-request-headers"></a>
 ## <a name="set-the-allowed-request-headers"></a>设置允许的请求标头
 
-前面我已经说明如何预检请求可能包括一个访问控制的请求标头标头中，列出由应用程序设置的 HTTP 标头 (所谓的"创作请求标头")。 *标头*参数**[EnableCors]**属性指定允许哪些作者请求标头。 若要允许任何标头，设置*标头*到"\*"。 到白名单特定的标头，设置*标头*以逗号分隔列表的允许的标头：
+前面我已经说明如何预检请求可能包括一个访问控制的请求标头标头中，列出由应用程序设置的 HTTP 标头 (所谓的"创作请求标头")。 *标头*参数**[EnableCors]**属性指定允许哪些作者请求标头。 若要允许任何标头，设置*标头*到"\*"。 到允许列表特定的标头，设置*标头*以逗号分隔列表的允许的标头：
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample16.cs)]
 

@@ -115,7 +115,7 @@ Code First 迁移创建中的另一个类文件*迁移*文件夹 (同名*{日期
 
 生成应用程序 (Ctrl + Shift + B)。
 
-因为你已将新字段添加到`Movie`类，你还需要更新绑定*白名单*以便将包含此新属性。 更新`bind`属性，则为`Create`和`Edit`操作方法，以包含`Rating`属性：
+因为你已将新字段添加到`Movie`类，你还需要更新绑定*允许列表以便将包含此新属性。 更新`bind`属性，则为`Create`和`Edit`操作方法，以包含`Rating`属性：
 
 [!code-csharp[Main](adding-a-new-field/samples/sample7.cs?highlight=1)]
 

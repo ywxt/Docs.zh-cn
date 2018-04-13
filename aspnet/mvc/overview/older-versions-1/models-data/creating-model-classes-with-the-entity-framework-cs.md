@@ -193,7 +193,7 @@ LINQ to Entities 的帮助检索电影记录。 列表 1 中的 index （） 操
 
 [!code-csharp[Main](creating-model-classes-with-the-entity-framework-cs/samples/sample7.cs)]
 
-接下来，TryUpdateModel() 方法用于将 HTML 窗体字段的值分配给电影实体的属性。 请注意，提供白名单来指定要更新的确切属性。
+接下来，TryUpdateModel() 方法用于将 HTML 窗体字段的值分配给电影实体的属性。 请注意，提供允许列表来指定要更新的确切属性。
 
 接下来，执行一些简单的验证，以便验证影片标题和控制器属性具有值。 如果这两个属性缺少一个值，然后验证错误消息添加到 ModelState 并 ModelState.IsValid 返回值 false。
 

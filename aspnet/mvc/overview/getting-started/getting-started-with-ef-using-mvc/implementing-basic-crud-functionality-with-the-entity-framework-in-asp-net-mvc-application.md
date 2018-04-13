@@ -114,7 +114,7 @@ ms.lasthandoff: 04/06/2018
 
     然后值“OverPost”将成功添加到插入行的`Secret`属性，即使你不希望网页能够设置该属性。
 
-    它是使用的安全最佳实践`Include`参数`Bind`属性设为*白名单*字段。 还有可能要使用`Exclude`参数*黑名单*你想要排除的字段。 原因`Include`更安全是，当将新属性添加到实体，新的字段不会自动受`Exclude`列表。
+    它是使用的安全最佳实践`Include`参数`Bind`属性设为*允许列表*字段。 还有可能要使用`Exclude`参数*阻止列表*你想要排除的字段。 原因`Include`更安全是，当将新属性添加到实体，新的字段不会自动受`Exclude`列表。
 
     你可以阻止在编辑方案中的 overposting 是通过先从数据库读取实体，然后再调用`TryUpdateModel`，并传递显式允许的属性列表中。 这些教程中使用的也是这种方法。
 
@@ -153,7 +153,7 @@ ms.lasthandoff: 04/06/2018
 
 新的代码读取的现有实体和调用[TryUpdateModel](https://msdn.microsoft.com/library/system.web.mvc.controller.tryupdatemodel(v=vs.118).aspx)更新中的已发布的窗体数据中的用户输入的字段。 实体框架自动更改跟踪设置[已修改](https://msdn.microsoft.com/library/system.data.entitystate.aspx)实体上的标志。 当[SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx)调用方法时，`Modified`标志会导致实体框架创建 SQL 语句，以更新数据库行。 [并发冲突](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)将被忽略，并更新数据库行中的所有列，包括那些用户未更改。 (后面的教程演示如何处理并发冲突，如果你只想要更新数据库中的各个字段，你可以设置为未更改的实体，设置单个字段以修改时间。)
 
-作为最佳做法是以防止 overposting，你想要通过编辑页可更新的字段被列入白名单中的`TryUpdateModel`参数。 目前没有要保护的额外字段，但是列出希望模型绑定器绑定的字段可确保以后将字段添加到数据模型时，它们将自动受到保护，直到明确将其添加到此处为止。
+作为最佳做法是以防止 overposting，你想要通过编辑页可更新的字段被列入允许列表中的`TryUpdateModel`参数。 目前没有要保护的额外字段，但是列出希望模型绑定器绑定的字段可确保以后将字段添加到数据模型时，它们将自动受到保护，直到明确将其添加到此处为止。
 
 由于这些更改，HttpPost 编辑方法的方法签名等同于 HttpGet 编辑方法;因此，你已重命名方法 EditPost。
 

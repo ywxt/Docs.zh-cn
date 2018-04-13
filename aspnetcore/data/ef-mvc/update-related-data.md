@@ -1,7 +1,7 @@
-﻿---
-title: "ASP.NET Core MVC 和 EF Core - 更新相关数据 - 第 7 个教程（共 10 个）"
+---
+title: ASP.NET Core MVC 和 EF Core - 更新相关数据 - 第 7 个教程（共 10 个）
 author: tdykstra
-description: "本教程将通过更新外键字段和导航属性来更新相关数据。"
+description: 本教程将通过更新外键字段和导航属性来更新相关数据。
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -140,7 +140,7 @@ HttpGet `Edit` 方法根据正在编辑的课程已分配到的院系 ID 设置�
     
 -   如果办公室位置为空，请将 Instructor.OfficeAssignment 属性设置为 NULL，以便删除 OfficeAssignment 表中的相关行。
 
-    <!-- Snippets do not play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
+    <!-- Snippets don't play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
 
     ```csharp
     if (String.IsNullOrWhiteSpace(instructorToUpdate.OfficeAssignment?.Location))
@@ -195,7 +195,7 @@ Course 和 Instructor 实体之间是多对多的关系。 若要添加和删除
 
 现在的方法签名与 HttpGet `Edit` 方法不同，因此方法名称将从 `EditPost` 变回 `Edit`。
 
-视图没有 Course 实体的集合，因此模型绑定器无法自动更新 `CourseAssignments` 导航属性。 可在新的 `UpdateInstructorCourses` 方法中更新 `CourseAssignments` 导航属性，而不必使用模型绑定器。 为此，需要从模型绑定中排除 `CourseAssignments` 属性。 此操作无需对调用 `TryUpdateModel` 的代码进行任何更改，因为使用的是白名单重载，并且 `CourseAssignments` 不包括在该列表中。
+视图没有 Course 实体的集合，因此模型绑定器无法自动更新 `CourseAssignments` 导航属性。 可在新的 `UpdateInstructorCourses` 方法中更新 `CourseAssignments` 导航属性，而不必使用模型绑定器。 为此，需要从模型绑定中排除 `CourseAssignments` 属性。 此操作无需对调用 `TryUpdateModel` 的代码进行任何更改，因为使用的是允许列表重载，并且 `CourseAssignments` 不包括在该列表中。
 
 如果未选中任何复选框，则 `UpdateInstructorCourses` 中的代码将使用空集合初始化 `CourseAssignments` 导航属性，并返回以下内容：
 
