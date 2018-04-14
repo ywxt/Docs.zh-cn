@@ -20,19 +20,17 @@ ms.lasthandoff: 03/22/2018
 
 实际上，[基于角色的授权](xref:security/authorization/roles)和[基于声明的授权](xref:security/authorization/claims)使用要求，要求处理程序，并预先配置的策略。 这些构建基块支持在代码中的授权评估表达式。 结果是一个更丰富、 可重复使用、 可测试授权结构。
 
-授权策略包含一个或多个要求。 在中注册的授权服务配置中，一部分`Startup.ConfigureServices`方法：
+授权策略包含一个或多个要求。 并注册在`Startup.ConfigureServices`方法中作为授权服务配置的一部分：[!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=40-41,50-55,63,72)]
 
-[!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=40-41,50-55,63,72)]
+在前面的示例中，创建一个"AtLeast21"策略。 它具有单个要求&mdash;的最低年龄，它提供作为参数传递给要求。
 
-在前面的示例中，创建一个"AtLeast21"策略。 它具有单个要求&mdash;的最短期限，它提供作为参数传递给要求。
-
-通过使用应用策略`[Authorize]`具有策略名称属性。 例如：
+通过使用`[Authorize]`属性和策略名称应用策略。 例如：
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Controllers/AlcoholPurchaseController.cs?name=snippet_AlcoholPurchaseControllerClass&highlight=4)]
 
 ## <a name="requirements"></a>要求
 
-授权要求是一个策略可用于评估当前的用户主体的数据参数的集合。 在我们的"AtLeast21"策略的要求是单个参数&mdash;最小存在时间。 要求实现[IAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationrequirement)，这是一个空标记接口。 参数化的最小年龄要求无法实现，如下所示：
+授权要求是一个策略可用于评估当前的用户主体的数据参数的集合。 在我们的"AtLeast21"策略的要求是单个参数&mdash;最低年龄。 要求实现[IAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationrequirement)，这是一个空标记接口。 参数化的最低年龄要求实现如下所示：
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Requirements/MinimumAgeRequirement.cs?name=snippet_MinimumAgeRequirementClass)]
 
@@ -45,13 +43,13 @@ ms.lasthandoff: 03/22/2018
 
 授权处理程序负责的要求的属性求值。 授权处理程序会评估要求，针对提供[AuthorizationHandlerContext](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext)以确定是否允许访问。
 
-可以有一项要求[多个处理程序](#security-authorization-policies-based-multiple-handlers)。 处理程序可以继承[AuthorizationHandler\<TRequirement >](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1)，其中`TRequirement`是要处理的要求。 或者，可以实现一个处理程序[IAuthorizationHandler](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationhandler)以处理多个类型的要求。
+一项要求可以有[多个处理程序](#security-authorization-policies-based-multiple-handlers)。 处理程序可以继承[AuthorizationHandler\<TRequirement >](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1)，其中`TRequirement`是要处理的要求。 或者，一个处理程序可以实现[IAuthorizationHandler](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationhandler)以处理多个类型的要求。
 
 ### <a name="use-a-handler-for-one-requirement"></a>为一个要求使用一个处理程序
 
 <a name="security-authorization-handler-example"></a>
 
-下面是在其中的最小存在时间处理利用单个要求一对一关系的一个示例：
+下面是单个最低年龄要求处理程序使用一个要求一对一关系的的一个示例：
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Handlers/MinimumAgeHandler.cs?name=snippet_MinimumAgeHandlerClass)]
 
