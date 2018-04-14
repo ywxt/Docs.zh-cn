@@ -53,7 +53,7 @@ ms.lasthandoff: 03/22/2018
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Handlers/MinimumAgeHandler.cs?name=snippet_MinimumAgeHandlerClass)]
 
-前面的代码确定当前的用户主体是否声明已知且受信任的颁发者已发出的出生日期。 授权不能出现缺少声明时，在这种情况下返回的已完成的任务。 当存在声明时，计算用户的年龄。 如果该用户满足定义要求的最低年龄，授权成功后。 当授权成功后，`context.Succeed`调用作为与其唯一参数的满足要求。
+前面的代码确定当前的用户主体是否声明已知且受信任的颁发者已发出的出生日期。 授权不能出现缺少声明时，在这种情况下返回的已完成的任务。 当存在声明时，计算用户的年龄。 如果该用户满足定义要求的最低年龄，授权视为成功。 当授权成功后，`context.Succeed`调用作为与其唯一参数的满足要求。
 
 ### <a name="use-a-handler-for-multiple-requirements"></a>用于多个要求的处理程序
 
@@ -61,7 +61,7 @@ ms.lasthandoff: 03/22/2018
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Handlers/PermissionHandler.cs?name=snippet_PermissionHandlerClass)]
 
-前面的代码遍历[PendingRequirements](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.pendingrequirements#Microsoft_AspNetCore_Authorization_AuthorizationHandlerContext_PendingRequirements)&mdash;一个包不标记为成功要求的属性。 如果用户具有读取权限，他或她必须是所有者或发起人访问请求资源。 如果用户有编辑或删除权限，他或她必须所有者权限才能访问请求的资源。 授权成功后，`context.Succeed`调用与作为其唯一的参数满足要求。
+前面的代码遍历[PendingRequirements](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.pendingrequirements#Microsoft_AspNetCore_Authorization_AuthorizationHandlerContext_PendingRequirements)&mdash;一个包含不标记为成功要求的属性。 如果用户具有读取权限，他或她必须是所有者或发起人访问请求资源。 如果用户有编辑或删除权限，他或她必须所有者权限才能访问请求的资源。 授权成功后，`context.Succeed`调用与作为其唯一的参数满足要求。
 
 <a name="security-authorization-policies-based-handler-registration"></a>
 
