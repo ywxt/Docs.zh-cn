@@ -18,7 +18,7 @@ ms.lasthandoff: 03/22/2018
 ---
 # <a name="policy-based-authorization-in-aspnet-core"></a>ASP.NET Core中基于策略的授权
 
-实际上，[基于角色的授权](xref:security/authorization/roles)和[基于声明的授权](xref:security/authorization/claims)使用要求，要求处理程序，并预先配置的策略。 这些构建基块支持在代码中的授权运算表达式。 结果是一个更丰富、 可重复使用、 可测试授权结构。
+实际上，[基于角色的授权](xref:security/authorization/roles)和[基于声明的授权](xref:security/authorization/claims)使用要求，要求处理程序，并预先配置的策略。 这些构建基块支持在代码中的授权计算表达式。 结果是一个更丰富、 可重复使用、 可测试授权结构。
 
 授权策略包含一个或多个要求。 并注册在`Startup.ConfigureServices`方法中作为授权服务配置的一部分：[!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=40-41,50-55,63,72)]
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="requirements"></a>要求
 
-授权要求是一个策略可用于运算当前的用户主体的数据参数的集合。 在我们的"AtLeast21"策略的要求是单个参数&mdash;最低年龄。 要求实现[IAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationrequirement)，这是一个空标记接口。 参数化的最低年龄要求实现如下所示：
+授权要求是一个策略可用于计算当前的用户主体的数据参数的集合。 在我们的"AtLeast21"策略的要求是单个参数&mdash;最低年龄。 要求实现[IAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationrequirement)，这是一个空标记接口。 参数化的最低年龄要求实现如下所示：
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Requirements/MinimumAgeRequirement.cs?name=snippet_MinimumAgeRequirementClass)]
 
@@ -41,7 +41,7 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="authorization-handlers"></a>授权处理程序
 
-授权处理程序负责的要求的属性求值。 授权处理程序会运算要求，针对提供[AuthorizationHandlerContext](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext)以确定是否允许访问。
+授权处理程序负责的要求的属性求值。 授权处理程序会计算要求，针对提供[AuthorizationHandlerContext](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext)以确定是否允许访问。
 
 一项要求可以有[多个处理程序](#security-authorization-policies-based-multiple-handlers)。 处理程序可以继承[AuthorizationHandler\<TRequirement >](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1)，其中`TRequirement`是要处理的要求。 或者，一个处理程序可以实现[IAuthorizationHandler](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationhandler)以处理多个类型的要求。
 
@@ -53,7 +53,7 @@ ms.lasthandoff: 03/22/2018
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Handlers/MinimumAgeHandler.cs?name=snippet_MinimumAgeHandlerClass)]
 
-前面的代码确定当前的用户主体是否声明已知且受信任的颁发者已发出的出生日期。 授权不能出现缺少声明时，在这种情况下返回的已完成的任务。 当存在声明时，运算用户的年龄。 如果该用户满足定义要求的最低年龄，授权视为成功。 当授权成功后，`context.Succeed`调用作为与其唯一参数的满足要求。
+前面的代码确定当前的用户主体是否声明已知且受信任的颁发者已发出的出生日期。 授权不能出现缺少声明时，在这种情况下返回的已完成的任务。 当存在声明时，计算用户的年龄。 如果该用户满足定义要求的最低年龄，授权视为成功。 当授权成功后，`context.Succeed`调用作为与其唯一参数的满足要求。
 
 ### <a name="use-a-handler-for-multiple-requirements"></a>用于多个要求的处理程序
 
@@ -89,7 +89,7 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="why-would-i-want-multiple-handlers-for-a-requirement"></a>为什么需要一项要求对应多个处理程序？
 
-在要运算一个或可继承要求的情况下，实现单个要求对应多个处理程序。 例如，Microsoft 的门只能使用门禁卡打开。 如果你将门禁卡丢在家中，前台会打印一张临时不干胶标签，并为你打开大门。 在此方案中，您将需要一个要求， *BuildingEntry*，但多个处理程序，每个处理程序都检查一个单一要求。
+在要计算一个或可继承要求的情况下，实现单个要求对应多个处理程序。 例如，Microsoft 的门只能使用门禁卡打开。 如果你将门禁卡丢在家中，前台会打印一张临时不干胶标签，并为你打开大门。 在此方案中，您将需要一个要求， *BuildingEntry*，但多个处理程序，每个处理程序都检查一个单一要求。
 
 *BuildingEntryRequirement.cs*
 
@@ -103,7 +103,7 @@ ms.lasthandoff: 03/22/2018
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Handlers/TemporaryStickerHandler.cs?name=snippet_TemporaryStickerHandlerClass)]
 
-确保这两个处理程序[注册](xref:security/authorization/policies#security-authorization-policies-based-handler-registration)。 如果当一个策略运算`BuildingEntryRequirement`时有一个处理程序成功，策略运算成功。
+确保这两个处理程序[注册](xref:security/authorization/policies#security-authorization-policies-based-handler-registration)。 如果当一个策略计算`BuildingEntryRequirement`时有一个处理程序成功，策略计算成功。
 
 ## <a name="using-a-func-to-fulfill-a-policy"></a>使用 func 来实现策略
 
