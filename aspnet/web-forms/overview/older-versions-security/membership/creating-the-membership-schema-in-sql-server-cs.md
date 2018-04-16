@@ -16,7 +16,7 @@ ms.openlocfilehash: 4fa0476ca8336b56340dd177f9816acbe015ef7d
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="creating-the-membership-schema-in-sql-server-c"></a>在 SQL Server (C#) 中创建成员身份架构
 ====================
@@ -276,7 +276,7 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 > 在表 2 中记下任何默认值是指中定义的默认值`SqlMembershipProvider`类。 请注意该 not 中的配置设置的所有`AspNetSqlMembershipProvider`对应的默认值`SqlMembershipProvider`类。 例如，如果未指定成员资格提供程序中,`requiresUniqueEmail`将默认值设置为 true。 但是，`AspNetSqlMembershipProvider`通过显式指定的值来重写此默认值`false`。
 
 
-| **设置&lt;\_o3a\_p /&gt;** | **Description&lt;\_o3a\_p /&gt;** |
+| **Setting&lt;\_o3a\_p /&gt;** | **Description&lt;\_o3a\_p /&gt;** |
 | --- | --- |
 | `ApplicationName` | 回想一下，该成员身份框架允许在单个用户存储分区跨多个应用程序。 此设置指示所使用的成员资格提供程序的应用程序分区的名称。 如果此值不显式指定时，其设置为，在运行时，应用程序的虚拟根路径的值。 |
 | `commandTimeout` | 指定的 SQL 命令超时值 （以秒为单位）。 默认值为 30。 |
@@ -367,7 +367,7 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表中。 在�
 
 ### <a name="about-the-author"></a>关于作者
 
-Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是 *[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+Scott Mitchell，多个 ASP/ASP.NET 丛书的作者和创始人 4GuysFromRolla.com，具有已使用自 1998 年 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是*[Sam 教授自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过在其博客地址[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 

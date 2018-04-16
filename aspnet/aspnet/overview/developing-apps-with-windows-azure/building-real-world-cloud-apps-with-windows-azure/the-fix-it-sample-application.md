@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
-title: "附录： 修复它示例应用程序 （构建使用 Azure 真实世界云应用） |Microsoft 文档"
+title: 附录： 修复它示例应用程序 （构建使用 Azure 真实世界云应用） |Microsoft 文档
 author: MikeWasson
-description: "构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以..."
+description: 构建真实世界云应用程序与 Azure 的电子书基于由 Scott Guthrie 的演示。 它还说明了 13 模式和实践，他可以...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: c98e79bf8e9a1fe0899ed6d952c3e411ca472f7e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9a1fa36b34c4783b101bb27bc6931241e9251e10
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>附录： 修复它示例应用程序 （构建真实世界云应用与 Azure）
 ====================
@@ -100,7 +100,7 @@ ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输
 
 请注意，将自动释放 AutoFac`FixItTaskRepository`实例，因此我们无需显式释放它。
 
-另一个选项是删除`DbContext`成员变量从`FixItTaskRepository`，并改为创建一个本地`DbContext`变量在每个存储库方法中，内部`using`语句。 例如:
+另一个选项是删除`DbContext`成员变量从`FixItTaskRepository`，并改为创建一个本地`DbContext`变量在每个存储库方法中，内部`using`语句。 例如：
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample2.cs)]
 
@@ -245,18 +245,18 @@ ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输
 
     使用 Visual Studio 2013:
 
-    1. 按 f5 键以运行 FixIt 项目。
-    2. 在**解决方案资源管理器**，右键单击 MyFixItCloudService 项目，然后单击**调试** -- **启动新实例**。
+   1. 按 f5 键以运行 FixIt 项目。
+   2. 在**解决方案资源管理器**，右键单击 MyFixItCloudService 项目，然后单击**调试** -- **启动新实例**。
 
-    使用 Visual Studio 2013 Express for Web:
+      使用 Visual Studio 2013 Express for Web:
 
-    1. 在解决方案资源管理器，右键单击 FixIt 解决方案并选择**属性**。
-    2. 选择**多启动项目**...
-    3. 在**操作**下 MyFixIt 和 MyFixItCloudService，下拉列表选择**启动**。
-    4. 单击 **“确定”**。
-    5. 按 f5 键以运行这两个项目。
+   3. 在解决方案资源管理器，右键单击 FixIt 解决方案并选择**属性**。
+   4. 选择**多启动项目**...
+   5. 在**操作**下 MyFixIt 和 MyFixItCloudService，下拉列表选择**启动**。
+   6. 单击 **“确定”**。
+   7. 按 f5 键以运行这两个项目。
 
-    运行 MyFixItCloudService 项目时，Visual Studio 将启动 Azure 计算仿真程序。 根据您的防火墙配置，你可能需要允许通过防火墙的仿真程序。
+      运行 MyFixItCloudService 项目时，Visual Studio 将启动 Azure 计算仿真程序。 根据您的防火墙配置，你可能需要允许通过防火墙的仿真程序。
 
 <a id="deploybase"></a>
 ## <a name="how-to-deploy-the-base-app-to-azure-app-service-web-apps-by-using-the-windows-powershell-scripts"></a>如何将基本应用程序部署到 Azure App Service Web Apps，通过使用 Windows PowerShell 脚本
@@ -285,7 +285,7 @@ ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输
     这些凭据在一段时间后过期，您必须重新运行`Add-AzureAccount`cmdlet。 正在写入此图书，凭据过期之前的时间限制为 12 小时。
 5. 如果你有多个订阅，请使用 Select-azuresubscription cmdlet 指定你想要创建测试环境中的订阅。
 6. 通过使用导入同一 Azure 订阅的管理证书`Get-AzurePublishSettingsFile`和`Import-AzurePublishSettingsFile`cmdlet。 这些 cmdlet 的第一个下载的证书文件，并以将其导入在第二个指定该文件的位置。 > [!IMPORTANT]
- > 将下载的文件保存在安全的位置，或删除它完成后，因为它包含可以用于管理你的 Azure 服务的证书。
+   > 将下载的文件保存在安全的位置，或删除它完成后，因为它包含可以用于管理你的 Azure 服务的证书。
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample22.cmd)]
 
@@ -326,7 +326,7 @@ ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输
     如果该脚本失败或生成错误，例如"New-azurewebsite:: 调用 Set-azuresubscription 和 Select-azuresubscription 首先，"可能未完成的 Azure PowerShell 的配置。
 
     该脚本完成后，你可以使用 Azure 管理门户以查看已创建的资源中所示[使一切自动化](automate-everything.md)章。
-10. 若要将 FixIt 项目部署到新的 Azure 环境中，使用*AzureWebsite.ps1*脚本。 例如:
+10. 若要将 FixIt 项目部署到新的 Azure 环境中，使用*AzureWebsite.ps1*脚本。 例如：
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample28.cmd)]
 
@@ -399,5 +399,5 @@ ASP.NET 自动可以防止恶意用户可能会在用户输入的文本框中输
 
 现在你已准备好部署云服务。 在解决方案资源管理器，右键单击 MyFixItCloudService 项目并选择**发布**。 有关详细信息，请参阅"[部署到 Azure 应用程序](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)"，即第 2 部分中[本教程](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36)。
 
->[!div class="step-by-step"]
-[上一篇](more-patterns-and-guidance.md)
+> [!div class="step-by-step"]
+> [上一篇](more-patterns-and-guidance.md)

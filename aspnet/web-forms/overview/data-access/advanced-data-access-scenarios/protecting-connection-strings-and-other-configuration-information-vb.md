@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-vb
-title: "保护连接字符串和其他配置信息 (VB) |Microsoft 文档"
+title: 保护连接字符串和其他配置信息 (VB) |Microsoft 文档
 author: rick-anderson
-description: "ASP.NET 应用程序通常将配置信息存储在 Web.config 文件中。 此信息的某些敏感，保证保护。 通过 def。..."
+description: ASP.NET 应用程序通常将配置信息存储在 Web.config 文件中。 此信息的某些敏感，保证保护。 通过 def。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f1514c4b6d041f6bbd83788e2110a95d3d831ff6
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3372416dd9143afbfd442eaffb39cd807fae0de6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="protecting-connection-strings-and-other-configuration-information-vb"></a>保护连接字符串和其他配置信息 (VB)
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 01/24/2018
 
 ASP.NET 应用程序的配置信息通常存储在名为 XML 文件`Web.config`。 我们已更新过程中这些教程`Web.config`少量的次数。 在创建时`Northwind`中的类型化数据集[第一个教程](../introduction/creating-a-data-access-layer-vb.md)，例如，连接字符串信息已自动添加到`Web.config`中`<connectionStrings>`部分。 更高版本，在[母版页和网站的导航](../introduction/master-pages-and-site-navigation-vb.md)教程中，我们手动更新`Web.config`、 添加`<pages>`元素，该值指示所有项目中的 ASP.NET 页应使用`DataWebControls`主题。
 
-由于`Web.config`可能包含敏感数据，例如连接字符串，很重要的内容`Web.config`安全和未经授权的查看者从隐藏保留。 默认情况下，任何 HTTP 请求的文件`.config`扩展由 ASP.NET 引擎，它返回*这种类型的页未被提供服务*图 1 所示的消息。 这意味着访问者不能查看你`Web.config`通过只需其浏览器的地址栏中输入 http://www.YourServer.com/Web.config 文件 s 内容。
+由于`Web.config`可能包含敏感数据，例如连接字符串，很重要的内容`Web.config`安全和未经授权的查看者从隐藏保留。 默认情况下，任何 HTTP 请求的文件`.config`扩展由 ASP.NET 引擎，它返回*这种类型的页未被提供服务*图 1 所示的消息。 这意味着访问者不能查看你`Web.config`只需输入文件 s 内容http://www.YourServer.com/Web.config到其浏览器的地址栏。
 
 
 [![访问 Web.config 通过浏览器返回此类型的页不提供消息](protecting-connection-strings-and-other-configuration-information-vb/_static/image2.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image1.png)
@@ -60,8 +60,8 @@ ASP.NET 2.0 包含一个受保护的配置系统，用于加密和解密配置�
 
 .NET Framework 附带两个受保护的配置提供程序：
 
-- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/library/system.configuration.rsaprotectedconfigurationprovider.aspx)-使用非对称[RSA 算法](http://en.wikipedia.org/wiki/Rsa)加密和解密。
-- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/system.configuration.dpapiprotectedconfigurationprovider.aspx)-使用 Windows[数据保护 API (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx)加密和解密。
+- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/library/system.configuration.rsaprotectedconfigurationprovider.aspx) -使用非对称[RSA 算法](http://en.wikipedia.org/wiki/Rsa)加密和解密。
+- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/system.configuration.dpapiprotectedconfigurationprovider.aspx) -使用 Windows[数据保护 API (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx)加密和解密。
 
 由于受保护的配置系统实现的提供程序设计模式，它是可以创建自己的受保护的配置提供程序并将其插入你的应用程序。 请参阅[实现保护配置提供程序](https://msdn.microsoft.com/library/wfc2t3az(VS.80).aspx)有关此过程的详细信息。
 
@@ -96,7 +96,7 @@ ASP.NET 2.0 包含一个受保护的配置系统，用于加密和解密配置�
 
 [!code-vb[Main](protecting-connection-strings-and-other-configuration-information-vb/samples/sample1.vb)]
 
-`DisplayWebConfig`方法使用[`File`类](https://msdn.microsoft.com/library/system.io.file.aspx)以打开应用程序 s`Web.config`文件， [ `StreamReader`类](https://msdn.microsoft.com/library/system.io.streamreader.aspx)其内容读入一个字符串和[`Path`类](https://msdn.microsoft.com/library/system.io.path.aspx)生成到的物理路径`Web.config`文件。 这三个类在中找到[`System.IO`命名空间](https://msdn.microsoft.com/library/system.io.aspx)。 因此，你将需要添加`Imports``System.IO`语句或顶部的代码隐藏类，或者，这些类具有的名称的前缀`System.IO.`
+`DisplayWebConfig`方法使用[`File`类](https://msdn.microsoft.com/library/system.io.file.aspx)以打开应用程序 s`Web.config`文件， [ `StreamReader`类](https://msdn.microsoft.com/library/system.io.streamreader.aspx)其内容读入一个字符串和[`Path`类](https://msdn.microsoft.com/library/system.io.path.aspx)生成到的物理路径`Web.config`文件。 这三个类在中找到[`System.IO`命名空间](https://msdn.microsoft.com/library/system.io.aspx)。 因此，你将需要添加`Imports``System.IO`语句或顶部的代码隐藏类，或者，这些类具有的名称的前缀 `System.IO.`
 
 接下来，我们需要添加两个按钮控件的事件处理程序`Click`事件并添加必要的代码来加密和解密`<connectionStrings>`部分使用 DPAPI 提供程序的计算机级密钥。 从设计器中，双击每个要添加的按钮`Click`的代码隐藏文件中的事件处理程序类，然后添加以下代码：
 
@@ -206,7 +206,7 @@ Windows 身份验证通过 SQL 身份验证中都是首选的因为它是更安�
 > 关于 SQL Server 中提供的身份验证的不同类型的详细信息，请参阅[生成安全 ASP.NET 应用程序： 身份验证、 授权和安全通信](https://msdn.microsoft.com/library/aa302392.aspx)。 有关其他连接字符串示例演示 Windows 和 SQL 身份验证语法之间的差异，请参阅[ConnectionStrings.com](http://www.connectionstrings.com/)。
 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 默认情况下，文件都具有`.config`无法通过浏览器访问 ASP.NET 应用程序中的扩展。 这些类型的文件不会返回，因为它们可能包含敏感信息，如数据库连接字符串、 用户名和密码，依次类推。 .NET 2.0 中受保护的配置系统可帮助进一步保护通过允许指定的配置节进行加密的敏感信息。 有两个内置的受保护的配置提供程序： 另一个使用 RSA 算法，另一个使用 Windows 数据保护 API (DPAPI)。
 
@@ -228,12 +228,12 @@ Windows 身份验证通过 SQL 身份验证中都是首选的因为它是更安�
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
 本教程系列已由许多有用的审阅者评审。 本教程中的前导审阅者已 Teresa 墨和徐 Schmidt。 对感兴趣查看我即将到来的 MSDN 文章？ 如果是这样，删除我一行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[上一页](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb.md)
-[下一页](debugging-stored-procedures-vb.md)
+> [!div class="step-by-step"]
+> [上一页](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb.md)
+> [下一页](debugging-stored-procedures-vb.md)
