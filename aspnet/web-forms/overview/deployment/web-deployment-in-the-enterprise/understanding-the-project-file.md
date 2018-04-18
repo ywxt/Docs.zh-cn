@@ -121,7 +121,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 [!code-xml[Main](understanding-the-project-file/samples/sample5.xml)]
 
 
-当 MSBuild 处理此属性定义时，它首先会检查以查看是否 **$(OutputRoot)** 属性值为可用。 如果属性值为空&#x2014;换而言之，用户未为此属性提供值&#x2014;条件计算结果为**true**和属性值设置为**...\Publish\Out**。如果用户已为此属性提供一个值，条件计算结果为**false**和不使用静态属性值。
+当 MSBuild 处理此属性定义时，它首先会检查以查看是否 **$(OutputRoot)** 属性值为可用。 如果属性值为空&#x2014;换而言之，用户未为此属性提供值&#x2014;条件计算结果为 **true** 和属性值设置为 **...\Publish\Out** 。如果用户已为此属性提供一个值，条件计算结果为**false**和不使用静态属性值。
 
 可以在其中指定条件的不同方法的详细信息，请参阅[MSBuild 条件](https://msdn.microsoft.com/library/7szfhaft.aspx)。
 

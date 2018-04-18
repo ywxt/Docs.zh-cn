@@ -301,7 +301,7 @@ Beverages.aspx.cs
 **图 22**： 调用更新方法时，所有更改将与数据库都同步 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image60.png))
 
 
-TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直接模式。 由于我们从高级属性选择"生成 Insert、 Update 和 Delete 语句"选项，创建我们 TableAdapter 时**ProductsTableAdapter**包含**update （)**方法，它实现批处理更新模式。 具体而言，TableAdapter 包含**update （)**类型化数据集、 强类型的数据表或一个或多个数据行可传递的方法。 如果保留"GenerateDBDirectMethods"复选框选中时首次创建 TableAdapter 的 DB 直接模式将还可通过实现 **Insert()** ， **update（)** ，和 **delete（)** 方法。
+TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直接模式。 由于我们从高级属性选择"生成 Insert、 Update 和 Delete 语句"选项，创建我们 TableAdapter 时 **ProductsTableAdapter** 包含 **update （)** 方法，它实现批处理更新模式。 具体而言，TableAdapter 包含 **update （)** 类型化数据集、 强类型的数据表或一个或多个数据行可传递的方法。 如果保留"GenerateDBDirectMethods"复选框选中时首次创建 TableAdapter 的 DB 直接模式将还可通过实现 **Insert()** ， **update（)** ，和 **delete（)** 方法。
 
 这两种数据修改模式使用 TableAdapter 的**InsertCommand**， **UpdateCommand**，和**DeleteCommand**属性来颁发其**插入**，**更新**，和**删除**到数据库的命令。 你可以检查和修改**InsertCommand**， **UpdateCommand**，和**DeleteCommand**由数据集设计器中的 TableAdapter 上单击，然后将属性到属性窗口中。 (请确保选择了 TableAdapter，且**ProductsTableAdapter**对象是在属性窗口中的下拉列表中选择。)
 
