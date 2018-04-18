@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 和 EF Core - 排序、筛选、分页 - 第 3 个教程，共 10 个教程"
+title: ASP.NET Core MVC 和 EF Core - 排序、筛选、分页 - 第 3 个教程，共 10 个教程
 author: tdykstra
-description: "本教程将使用 ASP.NET Core 和 Entity Framework Core 向页面添加排序、筛选和分页功能。"
+description: 本教程将使用 ASP.NET Core 和 Entity Framework Core 向页面添加排序、筛选和分页功能。
 ms.author: tdykstra
 ms.date: 03/15/2017
 ms.prod: asp.net-core
@@ -51,7 +51,7 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 | 姓氏升序  | descending          | ascending      |
 | 姓氏降序 | ascending           | ascending      |
 | 日期升序       | ascending           | descending     |
-| 日期降序排列 | 升序 | 升序 |
+| 日期降序      | ascending           | ascending      |
 
 该方法使用 LINQ to Entities 指定要作为排序依据的列。 该代码在 switch 语句之前创建一个 `IQueryable` 变量，在 switch 语句中对其进行修改，并在 `switch` 语句后调用 `ToListAsync` 方法。 当创建和修改 `IQueryable` 变量时，不会向数据库发送任何查询。 只有通过调用 `ToListAsync` 之类的方法将 `IQueryable` 对象转换为集合，查询才会执行。 因此，此代码导致直到 `return View` 语句才会执行单个查询。
 

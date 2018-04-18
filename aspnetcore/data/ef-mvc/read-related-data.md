@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 和 EF Core - 读取相关数据 - 第 6 个课程（共 10 个课程）"
+title: ASP.NET Core MVC 和 EF Core - 读取相关数据 - 第 6 个课程（共 10 个课程）
 author: tdykstra
-description: "本教程将读取并显示相关数据 - 即 Entity Framework 加载到导航属性中的数据。"
+description: 本教程将读取并显示相关数据 - 即 Entity Framework 加载到导航属性中的数据。
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -43,8 +43,6 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 
 * 显式加载。 首次读取实体时，不检索相关数据。 如有需要，可编写检索相关数据的代码。 就像使用单独查询进行预先加载一样，显式加载时会向数据库发送多个查询。 二者的区别在于，代码通过显式加载指定要加载的导航属性。 在 Entity Framework Core 1.1 中，可使用 `Load` 方法执行显式加载。 例如：
 
-Entity Framework Core 1.1 中，可以使用`Load`方法执行显式加载。例如: 
-
   ![显式加载示例](read-related-data/_static/explicit-loading.png)
 
 * 延迟加载。 首次读取实体时，不检索相关数据。 然而，首次尝试访问导航属性时，会自动检索导航属性所需的数据。 每次首次尝试从导航属性获取数据时，都向数据库发送查询。 Entity Framework Core 1.0 不支持延迟加载。
@@ -52,7 +50,7 @@ Entity Framework Core 1.1 中，可以使用`Load`方法执行显式加载。例
 ### <a name="performance-considerations"></a>性能注意事项
 
 如果知道自己需要每个检索的实体的相关数据，选择预先加载可获得最佳性能，因为相比每个检索的实体的单独查询，发送到数据库的单个查询更加有效。 例如，假设每个系有十个相关课程。 预先加载所有相关数据时，只会进行单一（联接）查询，往返数据库一次。 单独查询每个系的课程时，会往返数据库十一次。 延迟较高时，额外往返数据库对性能尤为不利。
-另一方面，在某些情况下的单独查询会更加高效。在查询中预先加载所有相关数据会导致生成一个非常复杂的联接查询语句，SQL Server 无法高效地处理这条查询语句。或者，如果只需要访问要处理的实体集的一部分的实体的导航属性，单独查询可能会更加高效，因为预先加载所有内容所检索的数据比需要的多。如果性能非常重要，最好测试这两种方式的性能，以便做出最佳选择。
+
 另一方面，在某些情况下，单独查询会更加高效。 在一个查询中预先加载所有相关数据时，可能会生成一个非常复杂的联接，SQL Server 无法有效处理该联接。 或者，如果你正在处理一组实体且只需访问其子集的导航属性，那么采用单独查询可获得更佳性能，因为预先加载所有数据后，会检索不需要的数据。 如果看重性能，那么最好测试两种方式的性能，以便做出最佳选择。
 
 ## <a name="create-a-courses-page-that-displays-department-name"></a>创建显示院系名称的“课程”页
@@ -66,8 +64,6 @@ Course 实体包括导航属性，其中包含分配有课程的系的 Departmen
 打开 CoursesController.cs 并检查 `Index` 方法。 自动基架使用 `Include` 方法为 `Department` 导航属性指定了预先加载。
 
 将 `Index` 方法替换为以下代码，该代码为返回 Course 实体（是 `courses` 而不是 `schoolContext`）的 `IQueryable` 赋予了更合适的名称：
-
-将`Index`方法替换为以下代码，对返回课程实体的`IQueryable`使用更合适的名称 (`courses`而不是`schoolContext`)：
 
 [!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_RevisedIndexMethod)]
 

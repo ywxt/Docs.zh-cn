@@ -77,7 +77,7 @@ ms.lasthandoff: 04/06/2018
 
 所有代码都是特定于基础数据源创建连接到数据库，如颁发**选择**，**插入**，**更新**，和**删除**命令，依次类推应位于 DAL。 表示层不应包含对此类数据访问代码的任何引用，但应进行的所有数据请求 DAL 调用。 数据访问层通常包含用于访问基础数据库数据的方法。 Northwind 数据库中，例如，具有**产品**和**类别**记录用于销售和它们所属的类别的产品的表。 在我们 DAL 我们将具有类似的方法：
 
-- **GetCategories()，**这将返回有关所有类别信息
+- **GetCategories()，** 这将返回有关所有类别信息
 - **GetProducts()**，这将返回有关所有产品信息
 - **GetProductsByCategoryID (*categoryID*)**，这样就会返回属于指定类别的所有产品
 - **GetProductByProductID (*productID*)**，这样就会返回有关特定产品的信息
@@ -124,7 +124,7 @@ TableAdapter 配置向导首先提示你选择要使用的数据库。 下拉列
 **图 5**： 从下拉列表中选择 Northwind 数据库 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image13.png))
 
 
-选择数据库并单击下一步后, 你系统将要求你想要保存的连接字符串中**Web.config**文件。 通过保存连接字符串中，你可以避免具有硬编码在 TableAdapter 类中，可简化操作，如果连接字符串信息在将来发生更改。 如果选择将连接字符串保存在配置文件中将被放置在**&lt;connectionStrings&gt;**部分中，可以是[（可选） 加密](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)以改进安全或更高版本通过新的 ASP.NET 2.0 属性页内 IIS GUI 管理工具的说明进行操作，这是更适合管理员已修改。
+选择数据库并单击下一步后, 你系统将要求你想要保存的连接字符串中**Web.config**文件。 通过保存连接字符串中，你可以避免具有硬编码在 TableAdapter 类中，可简化操作，如果连接字符串信息在将来发生更改。 如果选择将连接字符串保存在配置文件中将被放置在 **&lt;connectionStrings&gt;** 部分中，可以是[（可选） 加密](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)以改进安全或更高版本通过新的 ASP.NET 2.0 属性页内 IIS GUI 管理工具的说明进行操作，这是更适合管理员已修改。
 
 
 [![将连接字符串保存到 Web.config](creating-a-data-access-layer-cs/_static/image15.png)](creating-a-data-access-layer-cs/_static/image14.png)
@@ -168,12 +168,12 @@ TableAdapter 配置向导首先提示你选择要使用的数据库。 下拉列
 
 在验证之后的高级的选项，单击下一步转到最后一个屏幕。 此处我们将要求选择要添加到 TableAdapter 的方法。 有两种模式填充数据：
 
-- **填充 DataTable**使用此方法创建一个方法采用作为参数数据表并填充它基于查询的结果。 ADO.NET DataAdapter 类，例如，实现此模式与其**Fill()**方法。
+- **填充 DataTable**使用此方法创建一个方法采用作为参数数据表并填充它基于查询的结果。 ADO.NET DataAdapter 类，例如，实现此模式与其 **Fill()** 方法。
 - **返回 DataTable**使用此方法时该方法将创建和为你填充 DataTable 并返回它作为方法返回值。
 
 你可以实现一个或这两种模式的 TableAdapter。 你还可以重命名此处提供的方法。 即使我们将仅使用这些教程在后一种模式，让我们将检查，这两个复选框保留。 此外，让我们重命名而不是泛型**GetData**方法**GetProducts**。
 
-如果选中，则最终的复选框，"GenerateDBDirectMethods，"创建**Insert()**， **update （)**，和**delete （)** TableAdapter 的方法。 如果选中此选项，所有更新将都需要通过 TableAdapter 的唯一**update （)**方法，后者采用在类型化数据集、 数据表、 单个数据行或返回数据行的数组。 (如果你已经图 9 中的高级属性中此复选框未选中的"生成 Insert、 Update 和 Delete 语句"选项设置不起作用。)让我们保留选中此复选框。
+如果选中，则最终的复选框，"GenerateDBDirectMethods，"创建**Insert()**， **update （)**，和**delete （)** TableAdapter 的方法。 如果选中此选项，所有更新将都需要通过 TableAdapter 的唯一 **update （)** 方法，后者采用在类型化数据集、 数据表、 单个数据行或返回数据行的数组。 (如果你已经图 9 中的高级属性中此复选框未选中的"生成 Insert、 Update 和 Delete 语句"选项设置不起作用。)让我们保留选中此复选框。
 
 
 [![GetData 方法名称更改为 GetProducts](creating-a-data-access-layer-cs/_static/image30.png)](creating-a-data-access-layer-cs/_static/image29.png)
@@ -189,7 +189,7 @@ TableAdapter 配置向导首先提示你选择要使用的数据库。 下拉列
 **图 12**:**产品**DataTable 和**ProductsTableAdapter**已添加到类型化数据集 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image34.png))
 
 
-我们现在有单个数据表的数据集类型 (**Northwind.Products**) 和一个强类型 DataAdapter 类 (**NorthwindTableAdapters.ProductsTableAdapter**) 与**GetProducts()**方法。 这些对象可以用于从类似的代码访问的所有产品的列表：
+我们现在有单个数据表的数据集类型 (**Northwind.Products**) 和一个强类型 DataAdapter 类 (**NorthwindTableAdapters.ProductsTableAdapter**) 与 **GetProducts()** 方法。 这些对象可以用于从类似的代码访问的所有产品的列表：
 
 [!code-html[Main](creating-a-data-access-layer-cs/samples/sample1.html)]
 
@@ -257,7 +257,7 @@ AllProducts.aspx.cs
 **图 18**: 产品可以现在查询按类别
 
 
-花些时间添加**GetProductByProductID (*productID*)**方法使用相同的技术。
+花些时间添加 **GetProductByProductID(*productID*)** 方法使用相同的技术。
 
 这些参数化的查询可以直接从数据集设计器进行测试。 右键单击 TableAdapter 中的方法，然后选择预览数据。 接下来，输入要使用的参数并单击预览的值。
 
@@ -301,7 +301,7 @@ Beverages.aspx.cs
 **图 22**： 调用更新方法时，所有更改将与数据库都同步 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image60.png))
 
 
-TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直接模式。 由于我们从高级属性选择"生成 Insert、 Update 和 Delete 语句"选项，创建我们 TableAdapter 时**ProductsTableAdapter**包含**update （)**方法，它实现批处理更新模式。 具体而言，TableAdapter 包含**update （)**类型化数据集、 强类型的数据表或一个或多个数据行可传递的方法。 如果保留"GenerateDBDirectMethods"复选框选中时首次创建 TableAdapter 的 DB 直接模式将还可通过实现**Insert()**， **update （)**，和**delete （)**方法。
+TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直接模式。 由于我们从高级属性选择"生成 Insert、 Update 和 Delete 语句"选项，创建我们 TableAdapter 时**ProductsTableAdapter**包含**update （)**方法，它实现批处理更新模式。 具体而言，TableAdapter 包含**update （)**类型化数据集、 强类型的数据表或一个或多个数据行可传递的方法。 如果保留"GenerateDBDirectMethods"复选框选中时首次创建 TableAdapter 的 DB 直接模式将还可通过实现 **Insert()** ， **update（)** ，和 **delete（)** 方法。
 
 这两种数据修改模式使用 TableAdapter 的**InsertCommand**， **UpdateCommand**，和**DeleteCommand**属性来颁发其**插入**，**更新**，和**删除**到数据库的命令。 你可以检查和修改**InsertCommand**， **UpdateCommand**，和**DeleteCommand**由数据集设计器中的 TableAdapter 上单击，然后将属性到属性窗口中。 (请确保选择了 TableAdapter，且**ProductsTableAdapter**对象是在属性窗口中的下拉列表中选择。)
 
@@ -344,7 +344,7 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 
 [![增加查询返回 scope_identity （） 值](creating-a-data-access-layer-cs/_static/image71.png)](creating-a-data-access-layer-cs/_static/image70.png)
 
-**图 26**： 增加到返回查询**作用域\_IDENTITY()**值 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image72.png))
+**图 26**： 增加到返回查询 **作用域\_IDENTITY()** 值 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image72.png))
 
 
 最后，将该新方法**InsertProduct**。
@@ -380,7 +380,7 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 
 [![更新的 SELECT 语句 GetProducts() 方法](creating-a-data-access-layer-cs/_static/image80.png)](creating-a-data-access-layer-cs/_static/image79.png)
 
-**图 29**： 更新**选择**语句**GetProducts()**方法 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image81.png))
+**图 29**： 更新 **选择** 语句 **GetProducts()** 方法 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image81.png))
 
 
 在更新后**GetProducts()**要使用此 DataTable 将包括两个新列的新查询方法： **CategoryName**和**供应商名称**。
@@ -391,7 +391,7 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 **图 30**:**产品**DataTable 具有两个新列
 
 
-花一些时间来更新**选择**中的子句**GetProductsByCategoryID (*categoryID*)**以及方法。
+花一些时间来更新 **选择** 中的子句 **GetProductsByCategoryID (*categoryID*)** 以及方法。
 
 如果你更新**GetProducts()** **选择**使用**加入**语法数据集设计器将无法自动生成用于插入、 更新和删除方法使用数据库直接模式的数据库数据。 相反，你将需要手动创建它们更像与我们**InsertProduct**本教程中前面的方法。 此外，手动将需要提供**InsertCommand**， **UpdateCommand**，和**DeleteCommand**属性值，则如果你想要使用批更新模式。
 
@@ -399,7 +399,7 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 
 直到现在，我们只介绍了使用单个 TableAdapter 的单个数据库表。 但是，Northwind 数据库包含我们将需要使用我们的 web 应用程序中的多个相关的表。 类型化数据集可以包含多个相关数据表。 因此，若要完成我们 DAL，我们需要将数据表添加我们将在这些教程中使用的其他表。 若要将新的 TableAdapter 添加到类型化数据集，打开数据集设计器，在设计器中，右键单击并选择添加 / TableAdapter。 这将创建新的 DataTable 和 TableAdapter，并引导你完成本教程中前面部分中，我们探讨向导。
 
-需要几分钟才能创建以下 Tableadapter 和使用下面的查询的方法。 请注意，中的查询**ProductsTableAdapter**包括子查询中获取每个产品类别和供应商名称。 此外，如果你已已之后，你已添加**ProductsTableAdapter**类的**GetProducts()**和**GetProductsByCategoryID (*categoryID*)**方法。
+需要几分钟才能创建以下 Tableadapter 和使用下面的查询的方法。 请注意，中的查询**ProductsTableAdapter**包括子查询中获取每个产品类别和供应商名称。 此外，如果你已已之后，你已添加 **ProductsTableAdapter** 类的 **GetProducts()** 和 **GetProductsByCategoryID(*categoryID*)** 方法。
 
 - **ProductsTableAdapter**
 
@@ -484,14 +484,14 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 **图 34**: **GetProducts()**方法是现在的一部分**Northwind.SuppliersRow**类
 
 
-**GetProducts()**方法现在可以用于枚举的一套产品特定供应商，如以下代码所示：
+**GetProducts()** 方法现在可以用于枚举的一套产品特定供应商，如以下代码所示：
 
 [!code-html[Main](creating-a-data-access-layer-cs/samples/sample23.html)]
 
 此数据也可以显示在任何 ASP。NET 的数据 Web 控件。 以下页面 GridView 控件使用两个字段：
 
 - 显示每个供应商的名称 BoundField 和
-- 包含如何控件绑定到返回的结果为 TemplateField **GetProducts()**每个供应商的方法。
+- 包含如何控件绑定到返回的结果为 TemplateField **GetProducts()** 每个供应商的方法。
 
 我们将查看如何在将来的教程中显示此类主-详细信息报表。 现在，此示例旨在演示如何使用自定义的方法添加到**Northwind.SuppliersRow**类。
 

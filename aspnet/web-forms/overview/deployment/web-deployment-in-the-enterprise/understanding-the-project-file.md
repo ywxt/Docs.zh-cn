@@ -113,7 +113,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 > 有关参数和可以使用 MSBuild.exe 的开关的详细信息，请参阅[MSBuild 命令行参考](https://msdn.microsoft.com/library/ms164311.aspx)。
 
 
-可以使用相同的属性语法以获取环境变量和内置的项目属性的值。 很多常用的属性由定义，并且它们通过将相关参数名称包含使用项目文件。 例如，若要检索的当前项目平台&#x2014;例如**x86**或**AnyCpu**&#x2014;可以包括**$(Platform)**中的属性引用你的项目文件。 有关详细信息，请参阅[用于生成命令和属性的宏](https://msdn.microsoft.com/library/c02as0cs.aspx)，[常用 MSBuild 项目属性](https://msdn.microsoft.com/library/bb629394.aspx)，和[保留属性](https://msdn.microsoft.com/library/ms164309.aspx)。
+可以使用相同的属性语法以获取环境变量和内置的项目属性的值。 很多常用的属性由定义，并且它们通过将相关参数名称包含使用项目文件。 例如，若要检索的当前项目平台&#x2014;例如 **x86** 或 **AnyCpu**&#x2014;可以包括 **$(Platform)** 中的属性引用你的项目文件。 有关详细信息，请参阅[用于生成命令和属性的宏](https://msdn.microsoft.com/library/c02as0cs.aspx)，[常用 MSBuild 项目属性](https://msdn.microsoft.com/library/bb629394.aspx)，和[保留属性](https://msdn.microsoft.com/library/ms164309.aspx)。
 
 属性通常用于中结合*条件*。 大多数 MSBuild 元素支持**条件**属性，这样就可以指定在其 MSBuild 应该评估元素的条件。 例如，考虑此属性定义：
 
@@ -121,7 +121,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 [!code-xml[Main](understanding-the-project-file/samples/sample5.xml)]
 
 
-当 MSBuild 处理此属性定义时，它首先会检查以查看是否**$(OutputRoot)**属性值为可用。 如果属性值为空&#x2014;换而言之，用户未为此属性提供值&#x2014;条件计算结果为**true**和属性值设置为**...\Publish\Out**。如果用户已为此属性提供一个值，条件计算结果为**false**和不使用静态属性值。
+当 MSBuild 处理此属性定义时，它首先会检查以查看是否 **$(OutputRoot)** 属性值为可用。 如果属性值为空&#x2014;换而言之，用户未为此属性提供值&#x2014;条件计算结果为**true**和属性值设置为**...\Publish\Out**。如果用户已为此属性提供一个值，条件计算结果为**false**和不使用静态属性值。
 
 可以在其中指定条件的不同方法的详细信息，请参阅[MSBuild 条件](https://msdn.microsoft.com/library/7szfhaft.aspx)。
 
@@ -173,7 +173,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 [!code-xml[Main](understanding-the-project-file/samples/sample9.xml)]
 
 
-你可以通过调用从命令行中，目标**/t**开关指定目标。
+你可以通过调用从命令行中，目标 **/t** 开关指定目标。
 
 
 [!code-console[Main](understanding-the-project-file/samples/sample10.cmd)]

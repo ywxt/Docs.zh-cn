@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 和 EF Core - 继承 - 第 9 个教程（共 10 个）"
+title: ASP.NET Core MVC 和 EF Core - 继承 - 第 9 个教程（共 10 个）
 author: tdykstra
-description: "本教程将演示如何使用 ASP.NET Core 应用程序中的 Entity Framework Core 在数据模型中实现继承。"
+description: 本教程将演示如何使用 ASP.NET Core 应用程序中的 Entity Framework Core 在数据模型中实现继承。
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -16,6 +16,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/31/2018
 ---
 # <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>继承 - EF Core 和 ASP.NET Core MVC 教程（第 9 个，共 10 个）
+
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC Web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。

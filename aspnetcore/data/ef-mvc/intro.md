@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 和 Entity Framework Core - 第 1 个教程，共 10 个教程"
+title: ASP.NET Core MVC 和 Entity Framework Core - 第 1 个教程，共 10 个教程
 author: tdykstra
-description: 
+description: ''
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
