@@ -153,21 +153,21 @@ Web API 编写的所有值提供程序，因此当模型绑定程序调用**Valu
 
 ## <a name="httpparameterbinding"></a>HttpParameterBinding
 
-模型绑定程序是更多常规机制的特定实例。 如果你看一下**[ModelBinder]**属性中，你将看到它派生自抽象**ParameterBindingAttribute**类。 此类定义一个方法， **GetBinding**，它将返回**HttpParameterBinding**对象：
+模型绑定程序是更多常规机制的特定实例。 如果你看一下<b>[ModelBinder]</b>特性，你将看到它派生自抽象类**ParameterBindingAttribute**。 此类定义一个方法， **GetBinding**，它将返回**HttpParameterBinding**对象：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample18.cs)]
 
-**HttpParameterBinding**负责参数绑定到一个值。 情况下**[ModelBinder]**，属性将返回**HttpParameterBinding**使用的实现**IModelBinder**若要执行实际绑定。 你还可以实现你自己**HttpParameterBinding**。
+**HttpParameterBinding**负责参数绑定到一个值。 如果使用<b>[ModelBinder]</b>，该特性将返回一个**HttpParameterBinding**的实现，该实现使用**IModelBinder**执行实际的绑定。 你还可以实现你自己**HttpParameterBinding**。
 
 例如，假设你想要获取从 Etag`if-match`和`if-none-match`在请求中的标头。 我们将开始通过定义一个类来表示 Etag。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample19.cs)]
 
-我们还将定义一个枚举，以指示是否获取从 ETag`if-match`标头或`if-none-match`标头。
+我们还将定义一个枚举，以指示是否从`if-match`标头或`if-none-match`标头获取 ETag。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample20.cs)]
 
-下面是**HttpParameterBinding** ，从所需标头获取 ETag，并将其绑定到类型 ETag 的参数：
+下面**HttpParameterBinding** 从所需标头获取 ETag，并将其绑定到类型为 ETag 的参数：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample21.cs)]
 
