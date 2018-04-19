@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 和 EF Core 教程 - 创建、读取、更新和删除 (2/10)"
+title: ASP.NET Core MVC 和 EF Core 教程 - 创建、读取、更新和删除 (2/10)
 author: tdykstra
-description: 
+description: ''
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
