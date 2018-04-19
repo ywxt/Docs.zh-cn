@@ -1,7 +1,7 @@
 ---
-title: "使用 EF Core 创建 ASP.NET Core MVC - 高级 - 第 10 个教程（共 10 个）"
+title: 使用 EF Core 创建 ASP.NET Core MVC - 高级 - 第 10 个教程（共 10 个）
 author: tdykstra
-description: "本教程介绍了除开发使用 Entity Framework Core 的 ASP.NET Web 应用程序的基本知识以外的几个主题，了解这些主题大有益处。"
+description: 本教程介绍了除开发使用 Entity Framework Core 的 ASP.NET Web 应用程序的基本知识以外的几个主题，了解这些主题大有益处。
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -15,43 +15,43 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/31/2018
 ---
-# <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>高级主题 - 使用 EF Core 创建 ASP.NET Core MVC 教程（第 10 个教程，共 10 个）
+# <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>EF Core 和 ASP.NET Core MVC 教程 — 高级主题 (10 / 10)
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC Web 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](intro.md)。
+Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC web 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](intro.md)。
 
-之前的教程中，已经以每个类一张表的方式实现了继承。 本教程介绍了几个主题，如果使用 Entity Framework Core 开发 ASP.NET Core Web 应用程序时，要使用比基本知识更高阶的知识，这些主题大有益处。
+之前的教程中，已经以每个类一张表的方式实现了继承。 本教程将会介绍在掌握开发基础 ASP.NET Core web 应用程序之后使用 Entity Framework Core 开发时需要注意的几个问题。
 
-## <a name="raw-sql-queries"></a>原始 SQL 查询
+## <a name="raw-sql-queries"></a>原生 SQL 查询
 
-使用 Entity Framework 的优点之一是，它可以避免将代码与存储数据的特定方法过于紧密地绑定在一起。 它通过生成 SQL 查询和命令来实现这一点，这样也可让你免于亲自编写这些内容。 但需要运行手动创建的特定 SQL 查询时，会有例外。 对于这些情况，Entity Framework Code First API 包含了可用于将 SQL 命令直接传递到数据库的方法。 EF Core 1.0 中提供以下选项：
+使用 Entity Framework 的优点之一是它可避免你编写跟数据库过于耦合的代码 它会自动生成 SQL 查询和命令，使得你无需自行编写。 但有一些特殊情况，你需要执行手动创建的特定 SQL 查询。 对于这些情况下， Entity Framework Code First API 包括直接传递 SQL 命令将到数据库的方法。 在 EF Core 1.0 中具有以下选项：
 
-* 对返回实体类型的查询使用 `DbSet.FromSql` 方法。 返回对象的类型必须是符合 `DbSet` 对象需要的类型，并且数据库上下文会自动跟踪返回对象 [关闭跟踪](crud.md#no-tracking-queries)。
+* 使用`DbSet.FromSql`返回实体类型的查询方法。 返回的对象必须是`DbSet`对象期望的类型，并且它们会自动跟踪数据库上下文中除非你[手动关闭跟踪](crud.md#no-tracking-queries)。
 
-* 对非查询命令使用 `Database.ExecuteSqlCommand`。
+* 对于非查询命令使用`Database.ExecuteSqlCommand`。
 
-如果需要运行返回非实体类型的查询，可将 ADO.NET 与 EF 提供的数据库连接一起使用。 即便使用此方法来检索实体类型，数据库上下文也不会跟踪返回的数据。
+如果需要运行该返回类型不是实体的查询，你可以使用由 EF 提供的 ADO.NET 中使用数据库连接。 数据库上下文不会跟踪返回的数据，即使你使用该方法来检索实体类型也是如此。
 
 在 Web 应用程序中执行 SQL 命令时，请务必采取预防措施来保护站点免受 SQL 注入攻击。 一种方法是使用参数化查询，确保不会将网页提交的字符串视为 SQL 命令。 在本教程中，将用户输入集成到查询中时会使用参数化查询。
 
 ## <a name="call-a-query-that-returns-entities"></a>调用返回实体的查询
 
-`DbSet<TEntity>` 类提供了一种方法，可用于执行返回 `TEntity` 类型的实体的查询。 若想查看其作用方式，需更改“院系”控制器的 `Details` 方法中的代码。
+`DbSet<TEntity>` 类提供了可用于执行查询并返回`TEntity`类型实体的方法。 若要查看实现细节，你需要更改部门控制器中`Details`方法的代码。
 
-在 DepartmentsController.cs 的 `Details` 方法中，将检索院系的代码替换为 `FromSql` 方法调用，如以下突出显示状态的代码所示：
+在*DepartmentsController.cs*中的`Details`方法，通过代码调用`FromSql`方法检索一个部门，如以下高亮代码所示：
 
 [!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_RawSQL&highlight=8,9,10,13)]
 
-如需验证新代码是否正常工作，请选择“院系”选项卡，然后选择某一院系的“详细信息”。
+为了验证新代码是否工作正常，请选择**Department**选项卡，然后点击某个部门的**Detail**。
 
 ![院系详细信息](advanced/_static/department-details.png)
 
 ## <a name="call-a-query-that-returns-other-types"></a>调用返回其他类型的查询
 
-“关于”页面中显示了每个注册日期的学生数量，之前已为该页面创建了一个学生统计数据网格。 从 Students 实体集 (`_context.Students`) 获取数据，并使用 LINQ 将该结果投影到 `EnrollmentDateGroup` 视图模型对象的列表中。 假设你想编写 SQL 本身，而不是使用 LINQ。 为此，需运行返回非实体对象的 SQL 查询。 在 EF Core 1.0 中，实现此操作的一种方法是编写 ADO.NET 代码并从 EF 获取数据库连接。
+之前你在“关于”页面创建了一个学生统计信息网格，显示每个注册日期的学生数量。 可以从学生实体集中获取数据 (`_context.Students`) ，使用 LINQ 将结果投影到`EnrollmentDateGroup`视图模型对象的列表。 假设你想要 SQL 本身编写，而不使用 LINQ。 需要运行 SQL 查询中返回实体对象之外的内容。 在 EF Core 1.0 中，执行该操作的另一种方法是编写 ADO.NET 代码，并从 EF 获取数据库连接。
 
-在 HomeController.cs 中，将 `About` 方法替换为以下代码：
+在*HomeController.cs*中，将`About`方法替换为以下代码：
 
 [!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseRawSQL&highlight=3-32)]
 
@@ -59,13 +59,13 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 
 [!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings2)]
 
-运行应用并转到“关于”页。 页面中显示的数据与之前相同。
+运行应用并转到“关于”页面。 显示的数据和之前一样。
 
 ![“关于”页面](advanced/_static/about.png)
 
 ## <a name="call-an-update-query"></a>调用更新查询
 
-假设 Contoso University 管理员想要在数据库中执行全局更改，例如更改每门课程的学分数。 如果该大学拥有大量课程，将课程全部当作实体进行检索并逐一更改效率很低。 本部分中将实现一个可让用户指定因素（用于更改所有课程的学分数）的网页，并通过执行 SQL UPDATE 语句进行更改。 该网页如下图所示：
+假设 Contoso 大学管理员想要在数据库中执行全局更改，例如如更改的每个课程的可修读人数。 如果该大学有大量的课程，检索所有实体并单独更改会降低效率。 在本节中，你将实现一个页面，使用户能够指定一个参数，通过这个参数可以更改所有课程的可修读人数，在这里你会通过执行 SQL UPDATE 语句来进行更改。 页面外观类似于下图：
 
 ![“更新课程学分”页面](advanced/_static/update-credits.png)
 
@@ -75,41 +75,41 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 
 [!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_UpdatePost)]
 
-控制器处理 HttpGet 请求时，`ViewData["RowsAffected"]` 中不会返回任何内容，并且视图中会显示一个空文本框和一个提交按钮，如上图所示。
+当控制器处理 HttpGet 请求时，`ViewData["RowsAffected"]`中不会返回任何东西，并且在视图中显示一个空文本框和提交按钮，如上图所示。
 
-单击“更新”按钮后，系统会调用 HttpPost 方法，并为乘数赋予在文本框中输入的值。 然后，代码执行更新课程的 SQL，并将受影响的行数返回给 `ViewData` 中的视图。 视图获得 `RowsAffected` 值时，即显示更新后的行数。
+当单击**Update**按钮时，将调用 HttpPost 方法，且从文本框中输入的值获取乘数。 代码接着执行 SQL 语句更新课程，并向视图的`ViewData`返回受影响的行数。 当视图获取`RowsAffected`值，它将显示更新的行数。
 
 在“解决方案资源管理器”中，右键单击“Views/Courses”文件夹，然后依次单击“添加”和“新建项”。
 
-在“添加新项”对话框中，单击左窗格中“已安装”下的“ASP.NET”，单击“MVC 视图页面”并将新视图命名为“UpdateCourseCredits.cshtml”。
+在**添加新项**对话框中，在**已安装**下单击**ASP.NET**，在左窗格中，单击**MVC 视图页**，并将新视图命名为*UpdateCourseCredits.cshtml*。
 
-在 Views/Courses/UpdateCourseCredits.cshtml 中，将模板代码替换为以下代码：
+在*Views/Courses/UpdateCourseCredits.cshtml*中，将模板代码替换为以下代码：
 
 [!code-html[Main](intro/samples/cu/Views/Courses/UpdateCourseCredits.cshtml)]
 
-通过选择“课程”选项卡运行 `UpdateCourseCredits` 方法，然后将“/UpdateCourseCredits”添加到浏览器地址栏中 URL 的末尾（例如 `http://localhost:5813/Courses/UpdateCourseCredits`）。 在文本框中输入数字：
+通过选择**Courses**选项卡运行`UpdateCourseCredits`方法，然后在浏览器地址栏中 URL 的末尾添加"/ UpdateCourseCredits"到 (例如： `http://localhost:5813/Courses/UpdateCourseCredits`)。 在文本框中输入数字：
 
 ![“更新课程学分”页面](advanced/_static/update-credits.png)
 
-单击“更新” 。 随即显示受影响的行数：
+单击**Update**。 你会看到受影响的行数：
 
 ![“更新课程学分”页面中受影响的行](advanced/_static/update-credits-rows-affected.png)
 
-单击“返回列表”，查看具有修订后的学分数的课程列表。
+单击**Back To List**可以看到课程列表，其中可修读人数已经替换成修改后的数字。
 
-请注意，生产代码可确保更新操作始终能生成有效数据。 此处显示的简化代码可将学分数放大到足够大，以生成 5 以上的数字。 （`Credits` 属性具有 `[Range(0, 5)]` 特性。）更新查询可以工作，但无效数据可能会导致系统中假设学分数小于或等于 5 的其他部分出现异常结果。
+请注意生产代码将确保更新最终得到有效的数据。 此处所示的简化代码会使得相乘后可修读人数大于 5。 (`Credits`属性具有`[Range(0, 5)]`特性。)更新查询将起作用，但无效的数据会导致意外的结果，例如在系统的其他部分中加入可修读人数为 5 或更少可能会导致意外的结果。
 
-有关原始 SQL 查询的详细信息，请参阅[原始 SQL 查询](https://docs.microsoft.com/ef/core/querying/raw-sql)。
+有关原生 SQL 查询的详细信息，请参阅[原生 SQL 查询](https://docs.microsoft.com/ef/core/querying/raw-sql)。
 
 ## <a name="examine-sql-sent-to-the-database"></a>检查发送到数据库的 SQL
 
-有时，能够查看发送到数据库的实际 SQL 查询会有所帮助。 EF Core 会自动使用 ASP.NET Core 内置的日志记录功能来编写包含用于查询和更新的 SQL 的日志。 本部分中将介绍 SQL 日志记录的一些示例。
+有时能够以查看发送到数据库的实际 SQL 查询对于开发者来说是很有用的。 EF Core 自动使用 ASP.NET Core 的内置日志记录功能来编写包含 SQL 查询和更新的日志。 在本部分中，你将看到记录 SQL 日志的一些示例。
 
-打开 StudentsController.cs，并在 `Details` 方法的 `if (student == null)` 语句上设置断点。
+打开*StudentsController.cs*并在`Details`方法的`if (student == null)`语句上设置断点。
 
 在调试模式下运行应用，并转到某位学生的“详细信息”页面。
 
-转到显示调试输出的“输出”窗口，可看到以下查询：
+转到**输出**窗口显示调试输出，就可以看到查询语句：
 
 ```
 Microsoft.EntityFrameworkCore.Database.Command:Information: Executed DbCommand (56ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
@@ -130,30 +130,30 @@ INNER JOIN (
 ORDER BY [t].[ID]
 ```
 
-可看到这里可能有意外内容：SQL 从 Person 表中选择的行数多达两行（`TOP(2)`。 `SingleOrDefaultAsync` 方法未解析为服务器上的一行。 原因如下：
+你会注意到一些可能会让你觉得惊讶的操作： SQL 从 Person 表最多选择 2 行 (`TOP(2)`) 。 `SingleOrDefaultAsync`方法服务器上不会解析为 1 行。 原因是：
 
-* 如果查询返回多行，则该方法返回 NULL。
-* 若要确定查询是否返回多行，EF 必须检查它是否至少返回两行。
+* 如果查询返回多个行，该方法会返回 null。
+* 如果想知道查询是否返回多个行，EF 必须检查是否至少返回 2。
 
-请注意，无需使用调试模式，只需在断点处停止即可获取“输出”窗口中的日志记录输出。 这种方法非常便捷，只需在想查看输出时停止日志记录即可。 如果不进行此操作，程序将继续进行日志记录，要查看感兴趣的部分则必须向后滚动。
+请注意，你不必使用调试模式，并在断点处停止，然后在**输出**窗口获取日志记录。 这种方法非常便捷，只需在想查看输出时停止日志记录即可。 如果不进行此操作，程序将继续进行日志记录，要查看感兴趣的部分则必须向后滚动。
 
-## <a name="repository-and-unit-of-work-patterns"></a>存储库和和工作单元模式
+## <a name="repository-and-unit-of-work-patterns"></a>存储库和工作单元模式
 
-许多开发人员通过编写代码将存储库和工作单元模式实现为代码周围的包装器，与 Entity Framework 一起使用。 这些模式被用于在应用程序的数据访问层和业务逻辑层之间创建一个抽象层。 实现这些模式有助于使应用程序免受数据存储中所作更改的影响，而且有助于进行自动单元测试或测试驱动开发 (TDD)。 但是对使用 EF 的应用程序而言，通过编写附加代码来实现这些模式并不总是最佳选择，原因如下：
+许多开发人员编写代码实现存储库和工作模式单元以作为使用 Entity Framework 代码的包装器。 这些模式用于在应用程序的数据访问层和业务逻辑层之间创建抽象层。 实现这些模式可让你的应用程序对数据存储介质的更改不敏感，而且很容易进行自动化单元测试和进行测试驱动开发 (TDD)。 但是，编写附加代码以实现这些模式对于使用 EF 的应用程序并不总是最好的选择，原因有以下几个：
 
-* EF 上下文类本身会将代码与数据存储特定的代码隔离开来。
+* EF 上下文类可以为使用 EF 的数据库更新充当工作单位类。
 
 * 对于使用 EF 进行的数据库更新，EF 上下文类可充当工作单元类。
 
-* EF 包含了一些无需编写存储库代码即可实现 TDD 的功能。
+* EF 包括用于无需编写存储库代码就实现 TDD 的功能。
 
-若要了解如何实现存储库和工作单元模式，请参阅[本系列教程的 Entity Framework 5 版本](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)。
+有关如何实现存储库和工作单元模式的详细信息，请参阅[本系列教程的 Entity Framework 5 版本](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)。
 
-Entity Framework Core 实现可用于测试的内存中数据库提供程序。 有关详细信息，请参阅[使用 InMemory 进行测试](https://docs.microsoft.com/ef/core/miscellaneous/testing/in-memory)。
+Entity Framework Core 的实现可用于测试的内存数据库驱动程序。 有关详细信息，请参阅[测试内存数据库](https://docs.microsoft.com/ef/core/miscellaneous/testing/in-memory)。
 
-## <a name="automatic-change-detection"></a>自动更改检测
+## <a name="automatic-change-detection"></a>自动脏值检测
 
-Entity Framework 通过比较实体的当前值与原始值来确定实体发生的更改，从而确定需将哪些更改发送给数据库。 查询或附加实体时，将存储原始值。 导致自动更改检测的部分方法如下所示：
+Entity Framework 通过比较的实体的当前值与原始值来判断更改实体的方式 （因此需要发送更新到数据库）。 查询或附加该实体时会存储的原始值。 如下方法会导致自动脏值：
 
 * DbContext.SaveChanges
 
@@ -161,46 +161,46 @@ Entity Framework 通过比较实体的当前值与原始值来确定实体发生
 
 * ChangeTracker.Entries
 
-如果跟踪的实体数量巨大，且在循环中多次调用其中某种方法，则使用 `ChangeTracker.AutoDetectChangesEnabled` 属性临时关闭自动更改检测即可显著改善性能。 例如：
+如果正在跟踪大量实体，并且这些方法之一在循环中多次调用，通过使用`ChangeTracker.AutoDetectChangesEnabled`属性暂时关闭自动脏值检测，能够显著改进性能。 例如:
 
 ```csharp
 _context.ChangeTracker.AutoDetectChangesEnabled = false;
 ```
 
-## <a name="entity-framework-core-source-code-and-development-plans"></a>Entity Framework Core 源代码和开发计划
+## <a name="entity-framework-core-source-code-and-development-plans"></a>Entity Framework Core 源代码与开发计划
 
-Entity Framework Core 源代码位于 [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore)。 EF Core 储存库中包含夜间生成、问题跟踪、功能规范、设计会议备注和[后续开发的路线图](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap)。 你可以归档或查找 bug 并进行更改。
+Entity Framework Core 的源代码位于[https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore)。 仓库中除了有源代码，还可包括每夜生成、 问题跟踪、 功能规范、 设计会议备忘录和[将来的开发路线图](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap)。 你可以归档或查找 bug 并进行更改。
 
-尽管源代码开源，但是 Entity Framework Core 也被视为 Microsoft 产品受到完全支持。 Microsoft Entity Framework 团队持续控制要接受的更改，并对所有代码更改进行测试来确保每个版本的质量。
+尽管源代码处于开源状态， Entity Framework Core 是由 Microsoft 完全支持的产品。 Microsoft Entity Framework 团队将控制接受哪些贡献和测试所有的代码更改，以确保每个版本的质量。
 
-## <a name="reverse-engineer-from-existing-database"></a>从现有数据库进行反向工程
+## <a name="reverse-engineer-from-existing-database"></a>现有数据库逆向工程
 
-若要从现有数据库对数据模型（如实体类）进行反向工程，请使用 [scaffold-dbcontext](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell#scaffold-dbcontext) 命令。 请参阅[入门教程](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)。
+若想要通过对现有数据库中的实体类反向工程得出数据模型，可以使用[scaffold-dbcontext](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell#scaffold-dbcontext)。 可以参阅[入门教程](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)。
 
 <a id="dynamic-linq"></a>
-## <a name="use-dynamic-linq-to-simplify-sort-selection-code"></a>使用动态 LINQ 简化排序选择代码
+## <a name="use-dynamic-linq-to-simplify-sort-selection-code"></a>使用动态 LINQ 来简化对所选内容排序的代码
 
-[本系列中的第三个教程](sort-filter-page.md)介绍了如何按照 `switch` 语句中的硬编码列名称编写 LINQ 代码。 如果只有两列可供选择，这种方法可行，但是如果拥有许多列，代码可能会变得冗长。 要解决该问题，可使用 `EF.Property` 方法将属性名称指定为一个字符串。 要尝试此方法，请将 `StudentsController` 中的 `Index` 方法替换为以下代码。
+[本系列的第三个教程](sort-filter-page.md)演示如何通过在`switch`语句中对列名称进行硬编码来编写 LINQ 。 如果只有两列可供选择，这种方法可行，但是如果拥有许多列，代码可能会变得冗长。 要解决该问题，可使用 `EF.Property` 方法将属性名称指定为一个字符串。 要尝试此方法，请将 `StudentsController` 中的 `Index` 方法替换为以下代码。
 
 [!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DynamicLinq)]
 
 ## <a name="next-steps"></a>后续步骤
 
-至此，在 ASP.NET MVC 应用程序中使用 Entity Framework Core 的系列教程已告一段落。
+在这将完成在 ASP.NET MVC 应用程序中使用 Entity Framework Core 这一系列教程。
 
-有关 EF Core 的详细信息，请参阅 [Entity Framework Core 文档](https://docs.microsoft.com/ef/core)。 另外也可参阅 [Entity Framework Core in Action](https://www.manning.com/books/entity-framework-core-in-action)（实际运用 Entity Framework Core）一书。
+有关 EF Core 的详细信息，请参阅[ Entity Framework 的Core文档](https://docs.microsoft.com/ef/core)。 另外也可参阅 [Entity Framework Core in Action](https://www.manning.com/books/entity-framework-core-in-action)（实际运用 Entity Framework Core）一书。
 
-若要了解如何部署 Web 应用，请参阅[托管和部署](xref:host-and-deploy/index)。
+有关如何部署 web 应用程序的信息，请参阅[托管和部署](xref:host-and-deploy/index)。
 
-有关 ASP.NET Core MVC 涉及的其他主题，例如身份验证和授权，请参阅 [ASP.NET Core 文档](https://docs.microsoft.com/aspnet/core/)。
+有关 ASP.NET Core MVC 相关的其他主题 ( 如身份验证与授权 ) 的信息，请参阅[ASP.NET Core文档](https://docs.microsoft.com/aspnet/core/)。
 
-## <a name="acknowledgments"></a>致谢
+## <a name="acknowledgments"></a>鸣谢
 
-感谢 Tom Dykstra 和 Rick Anderson（twitter @RickAndMSFT）编写本教程。 感谢 Rowan Miller、Diego Vega 和 Entity Framework 小组的其他成员帮助进行代码评审，并帮助调试在编写本教程代码时出现的问题。
+Tom Dykstra 和 Rick Anderson (twitter @RickAndMSFT) 共同编写了本教程。 Rowan Miller、 Diego Vega 和 Entity Framework 团队的其他成员协助代码评审和帮助解决编写教程代码时出现的调试问题。
 
 ## <a name="common-errors"></a>常见错误  
 
-### <a name="contosouniversitydll-used-by-another-process"></a>其他进程在使用 ContosoUniversity.dll
+### <a name="contosouniversitydll-used-by-another-process"></a>ContosoUniversity.dll 被另一个进程使用
 
 错误消息：
 
@@ -208,33 +208,33 @@ Entity Framework Core 源代码位于 [https://github.com/aspnet/EntityFramework
 
 解决方案：
 
-在 IIS Express 中停止站点。 转到 Windows 系统任务栏，找到 IIS Express 并右键单击其图表，选择 Contoso University 网站，然后单击“停止站点”。
+停止 IIS Express 中的站点。 请转到 Windows 系统任务栏中，找到 IIS Express 并右键单击其图标、 选择 Contoso 大学站点，然后单击**停止站点**。
 
-### <a name="migration-scaffolded-with-no-code-in-up-and-down-methods"></a>Up 和 Down 方法中存在没有代码搭建基架的迁移
+### <a name="migration-scaffolded-with-no-code-in-up-and-down-methods"></a>迁移基架的 Up 和 Down 方法中没有代码
 
 可能的原因：
 
-EF CLI 命令不自动关闭和保存代码文件。 如果在运行 `migrations add` 命令时有尚未保存的代码，EF 将找不到该更改。
+EF CLI 命令不会自动关闭并保存代码文件。 如果在运行`migrations add`命令时，你未保存更改，EF 将找不到所做的更改。
 
 解决方案：
 
-运行 `migrations remove` 命令，保存代码更改，然后重新运行 `migrations add` 命令。
+运行`migrations remove`命令，保存你更改的代码并重新运行`migrations add`命令。
 
 ### <a name="errors-while-running-database-update"></a>运行数据库更新时出错
 
-在包含现有数据的数据库中更改架构时，可能会发生其他错误。 如果出现无法解决的迁移错误，可以在连接字符串中更改数据库名或者删除数据库。 如果是新数据库，则没有要迁移的数据，因此在完成更新数据库命令时很可能不会出错。
+在有数据的数据库中进行架构更改时，很有可能发生其他错误。 如果遇到无法解决的迁移错误，你可以更改连接字符串中的数据库名称，或删除数据库。 若要迁移，创建新的数据库，在数据库尚没有数据时使用更新数据库命令更有望完成且不发生错误。
 
-最简单的方法是重命名 appsettings.json 中的数据库。 下次运行 `database update` 时将创建一个新的数据库。
+最简单方法是在*appsettings.json*中重命名数据库。 下次运行`database update`时，会创建一个新数据库。
 
-若要在 SSOX 中删除数据库，请右键单击该数据库，单击“删除”，然后在“删除数据库”对话框中选择“关闭现有连接”，然后单击“确定”。
+若要在 SSOX 中删除数据库，右键单击数据库，单击**删除**，然后在**删除数据库**对话框框中，选择**关闭现有连接**，单击**确定**。
 
-若要使用 CLI 删除数据库，请运行 `database drop` CLI 命令：
+若要使用 CLI 删除数据库，可以运行`database drop`CLI 命令：
 
 ```console
 dotnet ef database drop
 ```
 
-### <a name="error-locating-sql-server-instance"></a>定位 SQL Server 实例时出错
+### <a name="error-locating-sql-server-instance"></a>定位 SQL Server 实例出错
 
 错误消息：
 
@@ -242,7 +242,7 @@ dotnet ef database drop
 
 解决方案：
 
-检查连接字符串。 如果已手动删除数据库文件，请更改构造字符串中数据库的名称，以使用新数据库重新开始。
+请检查连接字符串。 如果你已手动删除数据库文件，更改数据库的构造字符串中数据库的名称，然后从头开始使用新的数据库。
 
 >[!div class="step-by-step"]
 [上一篇](inheritance.md)
