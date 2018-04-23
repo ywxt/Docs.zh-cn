@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
-title: "ASP.NET Web API 中的参数绑定 |Microsoft 文档"
+title: "ASP.NET Web API 中的参数绑定 | Microsoft Docs"
 author: MikeWasson
 description: 
 ms.author: aspnetcontent
@@ -22,60 +22,60 @@ ms.lasthandoff: 01/24/2018
 ====================
 通过[Mike Wasson](https://github.com/MikeWasson)
 
-当 Web API 在控制器上调用方法，它必须设置参数，这个过程叫做*绑定*。 本文介绍了 Web API 如何绑定参数，以及如何自定义绑定过程。
+Web API 在控制器上调用方法时，必须设置参数的值，此过程称为“绑定”**。本文介绍了 Web API 如何绑定参数，以及你如何自定义绑定过程。
 
 默认情况下，Web API 使用以下规则进行参数绑定：
 
-- 如果参数为"简单"的类型，Web API 将尝试从 URI 中获取值。 简单类型包括.NET[基元类型](https://msdn.microsoft.com/library/system.type.isprimitive.aspx)(**int**、 **bool**、 **double**等等)，以及**TimeSpan**、 **DateTime**、 **Guid**、**decimal**和**string**，*还有*借助类型转换器可以从字符串转换到的类型。 （有关详细信息的类型转换器更高版本。）
-- 对于复杂类型，Web API 尝试从消息正文中读取值，并使用[媒体类型格式化程序](media-formatters.md)。
+- 如果参数为“简单”类型，Web API 会尝试从 URI 中获取值。简单类型包括 .NET [基元类型](https://msdn.microsoft.com/library/system.type.isprimitive.aspx)（**int**、 **bool**、 **double**等），以及 **TimeSpan**、**DateTime**、**Guid**、**decimal** 和 **string**，此外还有**借助类型转换器即可从字符串进行转换的类型。（稍后介绍有关类型转换器的详细信息。）
+- 对于复杂类型，Web API 尝试使用[媒体类型格式化程序](media-formatters.md)从消息正文中读取值。
 
 例如，以下是典型的 Web API 控制器方法：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample1.cs)]
 
-*Id*参数是&quot;简单&quot;类型，因此 Web API 尝试于请求 URI 中获取的值。 *item*参数是一个复杂类型，因此 Web API 使用媒体类型格式化程序从请求正文中读取值。
+*Id* 参数是“简单”类型，因此 Web API 尝试从请求 URI 中获取值。*item* 参数是复杂类型，因此 Web API 使用媒体类型格式化程序从请求正文中读取值。
 
-若要从 URI 中获取一个值，Web API会查找路由数据和 URI 查询字符串。 路由系统分析 URI 然后匹配到某个路由时，会填充路由数据。 有关详细信息，请参阅[路由和操作选择](../web-api-routing-and-actions/routing-and-action-selection.md)。
+为了从 URI 中获取值，Web API 会在路由数据和 URI 查询字符串中进行查找。路由系统分析 URI 并将其与某个路由匹配时，会填充路由数据。有关详细信息，请参阅[路由和操作选择](../web-api-routing-and-actions/routing-and-action-selection.md)。
 
-在本文的其余部分，我将展示如何自定义模型绑定过程。 但是对于复杂类型，尽可能使用媒体类型格式化程序。 HTTP 的关键原则在于，资源保存在发送的消息正文中，使用内容协商指定的资源表示形式。 媒体类型格式化程序正是被设计为执行此任务。
+本文其余部分介绍如何自定义模型绑定过程。但是，对于复杂类型，请尽可能使用媒体类型格式化程序。HTTP 的关键原则在于，资源在消息正文中发送，同时使用内容协商来指定资源表示形式。媒体类型格式化程序正是专为此而设计的。
 
 ## <a name="using-fromuri"></a>使用 [FromUri]
 
-若要强制 Web API 从URI读取复杂类型，在参数前添加<b>[FromUri]</b>特性。 下面的示例定义`GeoPoint`类型，以及从 URI获取`GeoPoint`的控制器方法。
+若要强制 Web API 从 URI 读取复杂类型，请向参数添加 <b>[FromUri]</b> 特性。下面的示例定义 `GeoPoint` 类型，以及从 URI 获取 `GeoPoint` 的控制器方法。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample2.cs)]
 
-客户端可以将纬度和经度值放在查询字符串， Web API 将使用它们来构造`GeoPoint`。 例如:
+客户端可以将纬度和经度值放在查询字符串中，Web API 会使用它们来构造 `GeoPoint`。例如：
 
 `http://localhost/api/values/?Latitude=47.678558&Longitude=-122.130989`
 
 ## <a name="using-frombody"></a>使用 [FromBody]
 
-若要强制 Web API 以从请求正文读取简单类型，在参数前添加<b>[FromBody]</b>特性：
+若要强制 Web API 从请求正文读取简单类型，请向参数添加 <b>[FromBody]</b> 特性：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample3.cs)]
 
-在此示例中，Web API 将使用媒体类型格式化程序从请求正文读取*name*的值。 下面是一个客户端请求示例。
+在此示例中，Web API 会使用媒体类型格式化程序从请求正文读取 *name* 的值。下面是一个客户端请求示例。
 
 [!code-console[Main](parameter-binding-in-aspnet-web-api/samples/sample4.cmd)]
 
-当参数具有 [FromBody] 时，Web API 使用内容类型标头来选择格式化程序。 在此示例中，内容类型是&quot;application/json&quot;，请求正文是原始的 JSON 字符串 （不是一个 JSON 对象）。
+当参数具有 [FromBody] 时，Web API 使用 Content-Type 标头来选择格式化程序。在此示例中，内容类型是 &quot;application/json&quot;，请求正文是原始的 JSON 字符串（不是 JSON 对象）。
 
-最多允许一个参数从消息正文中读取。 因此这不起作用：
+最多允许一个参数从消息正文中读取。因此以下代码不起作用：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample5.cs)]
 
-此规则的原因是，请求正文可能存储在只能读取一次的非缓冲的流中。
+之所以实施此规则，是因为请求正文可能存储在只能读取一次的非缓冲流中。
 
 ## <a name="type-converters"></a>类型转换器
 
-你可以通过创建**TypeConverter**并提供字符串转换让 Web API 将一个类视为简单类型（以便 Web API 尝试将其从 URI绑定）。
+可以创建 **TypeConverter** 并提供字符串转换，让 Web API 将一个类视为简单类型（这样 Web API 就会尝试将其从 URI 绑定）。
 
-下面的代码演示表示一个地理点的`GeoPoint`类，加上**TypeConverter** 以便把字符串转换为`GeoPoint`实例。 `GeoPoint`类被<b>[TypeConverter]</b>特性修饰以指定的类型转换器。 (此示例受到 Mike Stall的博文[如何将绑定到 MVC/WebAPI 中的操作签名中的自定义对象](https://blogs.msdn.com/b/jmstall/archive/2012/04/20/how-to-bind-to-custom-objects-in-action-signatures-in-mvc-webapi.aspx) 的启发。)
+下面的代码演示一个表示地理点的 `GeoPoint` 类，以及一个可以从字符串转换为 `GeoPoint` 实例的 **TypeConverter**。`GeoPoint` 类使用可指定类型转换器的 <b>[TypeConverter]</b> 特性来修饰。（此示例借鉴了 Mike Stall 的博文 [How to bind to custom objects in action signatures in MVC/WebAPI](https://blogs.msdn.com/b/jmstall/archive/2012/04/20/how-to-bind-to-custom-objects-in-action-signatures-in-mvc-webapi.aspx)（如何在 MVC/WebAPI 中绑定到操作签名中的自定义对象）。）
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample6.cs)]
 
-现在 Web API 会将`GeoPoint`视为简单类型，这意味着它将尝试从 URI 绑定`GeoPoint` 类型的参数。 不再需要<b>[FromUri]</b>的特性。
+现在 Web API 会将 `GeoPoint` 视为简单类型，这意味着它会尝试从 URI 绑定`GeoPoint` 类型的参数。不需要在参数中包括 <b>[FromUri]</b>。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample7.cs)]
 
@@ -83,22 +83,22 @@ ms.lasthandoff: 01/24/2018
 
 `http://localhost/api/values/?location=47.678558,-122.130989`
 
-## <a name="model-binders"></a>模型绑定程序
+## <a name="model-binders"></a>模型绑定器
 
-比类型转换器更灵活的选项是创建自定义模型绑定程序。 模型绑定程序与你拥有对 HTTP 请求、操作说明、路由数据的原始值等的访问权限。
+比类型转换器更灵活的选项是创建自定义模型绑定器。可以通过模型绑定器访问 HTTP 请求、操作说明、路由数据中的原始值等内容。
 
-创建模型绑定程序需要实现**IModelBinder**接口。 此接口定义单个方法**BindModel**:
+创建模型绑定器需要实现 **IModelBinder** 接口。此接口定义单个方法，即 **BindModel**：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample8.cs)]
 
-下面是模型绑定程序`GeoPoint`对象。
+下面是 `GeoPoint` 对象的模型绑定器。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample9.cs)]
 
-模型绑定程序获取原始输入的值从*值提供程序*。 这种设计将分隔两个不同的功能：
+模型绑定器从**值提供程序获取原始输入值。这种设计可以将两种不同的功能分隔开：
 
 - 值提供程序获取 HTTP 请求，并填充键 / 值对的字典。
-- 模型绑定程序使用此字典来填充模型。
+- 模型绑定器使用此字典来填充模型。
 
 Web API 中的默认值提供程序从路由数据和查询字符串中获取值。 例如，如果的 URI 是`http://localhost/api/values/1?location=48,-122`，值提供程序创建以下的键 / 值对：
 
@@ -107,31 +107,31 @@ Web API 中的默认值提供程序从路由数据和查询字符串中获取值
 
 (假设默认路由模板，这是&quot;api / {controller} / {id}&quot;。)
 
-要绑定的参数的名称存储在**ModelBindingContext.ModelName**属性。 模型绑定程序看起来与此值在字典中的键。 如果值存在，并且可以转换为`GeoPoint`，模型绑定程序将该绑定的值赋给**ModelBindingContext.Model**属性。
+要绑定的参数的名称存储在 **ModelBindingContext.ModelName** 属性中。模型绑定器会在字典中查找包含此值的键。如果此值存在，并且可以转换为 `GeoPoint`，模型绑定器会将绑定的值赋给 **ModelBindingContext.Model** 属性。
 
-请注意，模型绑定程序不限于简单类型转换。 在此示例中，模型绑定程序首先查找已知位置，表中，如果失败，它使用类型转换。
+请注意，模型绑定器不限于简单类型转换。在此示例中，模型绑定器首先在包含已知位置的表中进行查找，如果失败，则会使用类型转换。
 
-**设置模型绑定程序**
+**设置模型绑定器**
 
-有多种方法来设置模型绑定程序。 首先，您可以添加**[ModelBinder]**属性设为参数。
+可以通过多种方法来设置模型绑定器。首先，可以向参数添加 **[ModelBinder]** 特性。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample10.cs)]
 
-你还可以添加**[ModelBinder]**属性类型。 Web API 将使用指定的模型绑定程序为该类型的所有参数。
+也可以向类型添加 **[ModelBinder]** 特性。Web API 会对该类型的所有参数使用指定的模型绑定器。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample11.cs)]
 
-最后，你可以添加到模型绑定程序提供程序**HttpConfiguration**。 模型绑定程序提供程序是只需创建模型绑定程序的工厂类。 你可以通过从派生创建提供程序[ModelBinderProvider](https://msdn.microsoft.com/library/system.web.http.modelbinding.modelbinderprovider.aspx)类。 但是，如果模型绑定程序处理的单一类型，很容易地使用内置**SimpleModelBinderProvider**，为此用途设计的。 下面的代码演示如何执行此操作。
+最后，可以将模型绑定器提供程序添加到 **HttpConfiguration**。模型绑定器提供程序只是一个用于创建模型绑定器的工厂类。可以通过从 [ModelBinderProvider](https://msdn.microsoft.com/library/system.web.http.modelbinding.modelbinderprovider.aspx) 类派生来创建提供程序。但是，如果模型绑定器处理的是单一类型，则更简单的方法是使用内置的 **SimpleModelBinderProvider**，后者是专为此而设计的。下面的代码演示如何执行此操作。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample12.cs)]
 
-使用模型绑定提供程序，你仍需要添加**[ModelBinder]**属性设为参数，以告知 Web API，它应使用模型绑定程序和不格式化程序媒体类型。 但是，现在你无需在属性中指定的一种模型绑定程序：
+使用模型绑定提供程序时，仍需向参数添加 **[ModelBinder]** 特性，目的是告知 Web API 使用模型绑定器，而不是使用媒体类型格式化程序。不过，现在无需在特性中指定模型绑定器的类型：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample13.cs)]
 
 ## <a name="value-providers"></a>值在提供程序
 
-我所述模型绑定程序从值提供程序中获取值。 若要编写一个自定义值提供程序，实现**IValueProvider**接口。 下面是在请求中提取 cookie 中的值示例：
+前面提到过，模型绑定器从值提供程序中获取值。若要编写自定义值提供程序，请实现 **IValueProvider** 接口。以下示例演示了如何在请求中从 Cookie 提取值：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample14.cs)]
 
@@ -143,7 +143,7 @@ Web API 中的默认值提供程序从路由数据和查询字符串中获取值
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample16.cs)]
 
-Web API 编写的所有值提供程序，因此当模型绑定程序调用**ValueProvider.GetValue**，模型绑定程序从第一个值提供程序能够生成它接收的值。
+Web API 编写所有值提供程序，因此模型绑定器在调用 **ValueProvider.GetValue** 时，会从第一个能够生成该值的值提供程序接收值。
 
 或者，通过使用，在参数级别设置的值提供程序工厂**ValueProvider**特性，，如下所示：
 
@@ -153,21 +153,21 @@ Web API 编写的所有值提供程序，因此当模型绑定程序调用**Valu
 
 ## <a name="httpparameterbinding"></a>HttpParameterBinding
 
-模型绑定程序是更多常规机制的特定实例。 如果你看一下<b>[ModelBinder]</b>特性，你将看到它派生自抽象类**ParameterBindingAttribute**。 此类定义一个方法， **GetBinding**，它将返回**HttpParameterBinding**对象：
+模型绑定器是一个演示较通用机制的具体实例。如果查看 <b>[ModelBinder]</b> 特性，你会发现它派生自抽象类 **ParameterBindingAttribute**。此类定义的单个方法 **GetBinding** 可返回 **HttpParameterBinding** 对象：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample18.cs)]
 
-**HttpParameterBinding**负责参数绑定到一个值。 如果使用<b>[ModelBinder]</b>，该特性将返回一个**HttpParameterBinding**的实现，该实现使用**IModelBinder**执行实际的绑定。 你还可以实现你自己**HttpParameterBinding**。
+**HttpParameterBinding** 负责将参数绑定到值。如果使用 <b>[ModelBinder]</b>，此特性会返回一个 **HttpParameterBinding** 实现，该实现使用 **IModelBinder** 执行实际的绑定。你还可以实现你自己的**HttpParameterBinding**。
 
 例如，假设你想要获取从 Etag`if-match`和`if-none-match`在请求中的标头。 我们将开始通过定义一个类来表示 Etag。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample19.cs)]
 
-我们还将定义一个枚举，以指示是否从`if-match`标头或`if-none-match`标头获取 ETag。
+我们还将定义一个枚举，指示是从 `if-match` 标头还是从 `if-none-match` 标头获取 ETag。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample20.cs)]
 
-下面**HttpParameterBinding** 从所需标头获取 ETag，并将其绑定到类型为 ETag 的参数：
+下面是一个 **HttpParameterBinding**，该类从所需标头获取 ETag，并将其绑定到类型为 ETag 的参数：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample21.cs)]
 
