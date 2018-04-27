@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bootstrap
-ms.openlocfilehash: 142a997fa46f37545ea04971ab6593bff053b1ef
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: a11ed13c709830795ebfd0e658d3f2fd2fd5a458
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="build-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>生成带有 Bootstrap 和 ASP.NET Core 美观、 响应迅速网站
 
@@ -67,7 +67,7 @@ Install-Package bootstrap
 
 ## <a name="basic-templates-and-features"></a>基本的模板和功能
 
-最基本启动模板看起来非常相似*_Layout.cshtml*所示的文件更高版本，并只包括基本菜单用于导航和呈现页面的其余部分的一个位置。
+最基本启动模板看起来非常相似 *_Layout.cshtml*所示的文件更高版本，并只包括基本菜单用于导航和呈现页面的其余部分的一个位置。
 
 ### <a name="basic-navigation"></a>基本导航
 
@@ -81,7 +81,7 @@ Install-Package bootstrap
 </button>
 ```
 
-它还包括应用程序名称，将显示在左上角。 由呈现的主导航菜单`<ul>`中的第二个 div 元素并包括指向链接为主页，关于，和联系人。 通过在行 29 _LoginPartial 行添加注册和登录名的其他链接。 下面的导航窗格中，主正文中的每个页面呈现在另一个`<div>`、 标记与"容器"和"正文内容"类。 在此处显示简单的默认 _Layout 文件中，页的内容所呈现页面上，，然后选择一个简单与关联的特定视图`<footer>`添加到末尾`<div>`元素。 你可以看到有关页面内置将显示使用此模板：
+它还包括应用程序名称，将显示在左上角。 由呈现的主导航菜单`<ul>`中的第二个 div 元素并包括指向链接为主页，关于，和联系人。 下面的导航窗格中，主正文中的每个页面呈现在另一个`<div>`、 标记与"容器"和"正文内容"类。 在此处显示简单的默认 _Layout 文件中，页的内容所呈现页面上，，然后选择一个简单与关联的特定视图`<footer>`添加到末尾`<div>`元素。 你可以看到有关页面内置将显示使用此模板：
 
 ![有关页面](bootstrap/_static/about-page-wide.png)
 
@@ -116,9 +116,9 @@ Bootstrap 的最流行的功能之一是其网格布局系统。 现代 web 应�
 CSS 类前缀 | 设备层 | 宽度
 :---: | :---: | :---:
 col-xs- | 手机 | < 768px
-col-sm- | 平板电脑 | >= 768px
-col-md- | 桌面 | >= 992px
-col-lg- | 更大的桌面显示 | >= 1200px
+列-sm- | 平板电脑 | >= 768px
+列-md- | 桌面 | >= 992px
+列-lg- | 更大的桌面显示 | > = 1200px
 
 指定的两个列这两个"列-md-6"生成的布局中不会在桌面的解决方法的两个列，但较小的设备 （或在桌面上较窄的浏览器窗口），允许用户轻松地查看上呈现时，这两列将垂直堆叠时而无需水平滚动的内容。
 
@@ -146,7 +146,7 @@ Bootstrap 始终默认为单列布局，以便只需指定列，如果希望多�
 
 ### <a name="badges"></a>徽章
 
-徽章是指导航项旁边的小，通常为数值标注。 它们可以指明大量消息或通知等待或更新的状态。 指定此类徽章非常简单，只添加<span>包含文本，与"徽章"的类：
+徽章是指导航项旁边的小，通常为数值标注。 它们可以指明大量消息或通知等待或更新的状态。 指定此类徽章非常简单，只添加`<span>`包含文本，与"徽章"的类：
 
 ![主题徽章](bootstrap/_static/theme-badges.png)
 
@@ -158,7 +158,7 @@ Bootstrap 始终默认为单列布局，以便只需指定列，如果希望多�
 
 ### <a name="navbars-and-menus"></a>Navbars 和菜单
 
-我们布局已经包括标准的导航栏中，但是的 Bootstrap 主题支持其他样式选项。 我们也很容易可以选择垂直显示导航栏，而不是水平如果，具有首选，以及为添加的子导航中的项弹出菜单。 简单导航菜单，选项卡条带，如生成的顶部 <ul> 元素。 这些内容可以创建非常只需通过只需为他们提供的 CSS 类"导航"和"导航选项卡":
+我们布局已经包括标准的导航栏中，但是的 Bootstrap 主题支持其他样式选项。 我们也很容易可以选择垂直显示导航栏，而不是水平如果，具有首选，以及为添加的子导航中的项弹出菜单。 简单导航菜单，选项卡条带，如生成的顶部`<ul>`元素。 这些内容可以创建非常只需通过只需为他们提供的 CSS 类"导航"和"导航选项卡":
 
 ![主题 tabstrips](bootstrap/_static/theme-tabstrips.png)
 
@@ -178,7 +178,7 @@ Navbars 同样，内置，但较之前更复杂。 启动时出现`<nav>`或`<di
 
 ![示例主题 inspinia](bootstrap/_static/theme-inspinia.png)
 
-如果你想要更改您的 Bootstrap 主题，请将放*bootstrap.css*主题中所需的文件**wwwroot/css**文件夹并将更改中的引用*_Layout.cshtml*以将其指向。 更改所有环境的链接：
+如果你想要更改您的 Bootstrap 主题，请将放*bootstrap.css*主题中所需的文件**wwwroot/css**文件夹并将更改中的引用 *_Layout.cshtml*以将其指向。 更改所有环境的链接：
 
 ```html
 <environment names="Development">

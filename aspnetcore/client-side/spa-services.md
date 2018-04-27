@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/spa-services
-ms.openlocfilehash: 05b0d7f31e167e620f2d168109ffd907ba120a49
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: fd893b7c62f38442bf5633a956786983763e6f9f
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a>JavaScriptServices 用于在 ASP.NET Core 中创建单页面应用程序
 
@@ -95,7 +95,7 @@ ASP.NET 核心[标记帮助程序](xref:mvc/views/tag-helpers/intro)由 SpaServi
 
 ### <a name="configuration"></a>配置
 
-标记帮助程序都在项目的命名空间注册通过可发现*_ViewImports.cshtml*文件：
+标记帮助程序都在项目的命名空间注册通过可发现 *_ViewImports.cshtml*文件：
 
 [!code-cshtml[](../client-side/spa-services/sample/SpaServicesSampleApp/Views/_ViewImports.cshtml?highlight=3)]
 
@@ -166,7 +166,7 @@ Webpack 开发人员中间件注册到中的以下代码通过 HTTP 请求管道
 
 ## <a name="hot-module-replacement"></a>热模块更换
 
-思考的 Webpack 的[热模块更换](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html)(HMR) 功能作为演变而来的[Webpack 开发人员中间件](#webpack-dev-middleware)。 HMR 引入了完全相同的好处，但它进一步，从而简化了开发工作流自动编译所做的更改后更新页面内容。 不要混淆这与刷新浏览器中，这会干扰的当前内存中状态和 SPA 的调试会话。 没有 Webpack 开发人员中间件服务与浏览器中，这意味着更改推送到浏览器之间的实时链接。
+思考的 Webpack 的[热模块更换](https://webpack.js.org/concepts/hot-module-replacement/)(HMR) 功能作为演变而来的[Webpack 开发人员中间件](#webpack-dev-middleware)。 HMR 引入了完全相同的好处，但它进一步，从而简化了开发工作流自动编译所做的更改后更新页面内容。 不要混淆这与刷新浏览器中，这会干扰的当前内存中状态和 SPA 的调试会话。 没有 Webpack 开发人员中间件服务与浏览器中，这意味着更改推送到浏览器之间的实时链接。
 
 ### <a name="prerequisites"></a>系统必备
 
@@ -226,7 +226,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 
 ## <a name="creating-a-new-project"></a>创建新项目
 
-JavaScriptServices 提供了预配置的应用程序模板。 SpaServices 中这些模板，与不同的框架和库如角、 Aurelia、 Knockout、 响应，和 Vue 结合使用。
+JavaScriptServices 提供了预配置的应用程序模板。 SpaServices 中这些模板，与不同的框架和库如角、 响应和 Redux 结合使用。
 
 可以通过.NET 核心 CLI 安装这些模板，通过运行以下命令：
 
@@ -239,11 +239,8 @@ dotnet new --install Microsoft.AspNetCore.SpaTemplates::*
 | 模板                                 | 短名称 | 语言 | Tags        |
 |:------------------------------------------|:-----------|:---------|:------------|
 | 带有角度的 MVC ASP.NET 核心             | angular    | [C#]     | Web/MVC/SPA |
-| 带有 Aurelia 的 MVC ASP.NET 核心             | aurelia    | [C#]     | Web/MVC/SPA |
-| 带有 Knockout.js 的 MVC ASP.NET 核心         | knockout   | [C#]     | Web/MVC/SPA |
 | 带有 React.js 的 MVC ASP.NET 核心            | react      | [C#]     | Web/MVC/SPA |
 | MVC ASP.NET Core React.js 和回顾  | reactredux | [C#]     | Web/MVC/SPA |
-| 带有 Vue.js 的 MVC ASP.NET 核心              | vue        | [C#]     | Web/MVC/SPA | 
 
 若要创建新项目使用 SPA 模板之一时，包含**短名称**中的模板的[dotnet 新](/dotnet/core/tools/dotnet-new)命令。 以下命令将创建与 ASP.NET 核心 MVC 配置为在服务器端角度的应用程序：
 
@@ -263,7 +260,7 @@ dotnet new angular
     * 排除源映射。
     * 优化通过绑定和缩减的客户端代码。
 
-ASP.NET 核心使用名为的环境变量`ASPNETCORE_ENVIRONMENT`来存储配置模式。 请参阅**[将环境设置](xref:fundamentals/environments#setting-the-environment)**有关详细信息。
+ASP.NET 核心使用名为的环境变量`ASPNETCORE_ENVIRONMENT`来存储配置模式。 请参阅**[将环境设置](xref:fundamentals/environments#setting-the-environment)** 有关详细信息。
 
 ### <a name="running-with-net-core-cli"></a>使用.NET Core CLI 运行
 
@@ -283,7 +280,7 @@ dotnet run
 
 ### <a name="running-with-visual-studio-2017"></a>使用 Visual Studio 2017 运行
 
-打开*.csproj*生成文件[dotnet 新](/dotnet/core/tools/dotnet-new)命令。 在项目打开时自动还原所需的 NuGet 和 npm 包。 此还原过程可能需要几分钟时间，并已准备好它完成时要运行的应用程序。 单击绿色运行的按钮或按`Ctrl + F5`，应用程序的登录页将打开浏览器。 在根据本地主机上运行应用程序[运行时配置模式下](#runtime-config-mode)。 
+打开 *.csproj*生成文件[dotnet 新](/dotnet/core/tools/dotnet-new)命令。 在项目打开时自动还原所需的 NuGet 和 npm 包。 此还原过程可能需要几分钟时间，并已准备好它完成时要运行的应用程序。 单击绿色运行的按钮或按`Ctrl + F5`，应用程序的登录页将打开浏览器。 在根据本地主机上运行应用程序[运行时配置模式下](#runtime-config-mode)。 
 
 <a name="app-testing"></a>
 
@@ -295,7 +292,7 @@ SpaServices 模板是预配置为运行客户端测试使用[Karma](https://karm
 
 [!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/app/components/counter/counter.component.spec.ts?range=15-28)]
 
-打开命令提示符下，在项目根目录位置，并运行以下命令：
+打开命令提示符中*ClientApp*目录。 运行下面的命令：
 
 ```console
 npm test

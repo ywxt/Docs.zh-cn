@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 3312b27f936340a73243224c1a716fe421f178bc
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: a410d686b6140a487efb9962e94f64cfbec245f2
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 中间件
 
@@ -241,7 +241,7 @@ ASP.NET Core 附带以下中间件组件，以及用于添加这些组件的顺�
 
 由于中间件是在应用启动时构造的，而不是按请求构造的，因此在每个请求过程中，中间件构造函数使用的范围内生存期服务不与其他依赖关系注入类型共享。 如果必须在中间件和其他类型之间共享范围内服务，请将这些服务添加到 `Invoke` 方法的签名。 `Invoke` 方法可接受由依赖关系注入填充的其他参数。 例如:
 
-```c#
+```csharp
 public class MyMiddleware
 {
     private readonly RequestDelegate _next;

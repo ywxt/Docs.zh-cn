@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-iis-errors-reference
-ms.openlocfilehash: fb833ef8797ea7851cbaf53bb5681df248d07a49
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1500f026c245f80de4120d6db4901cb117552966
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>Azure App Service 和 ASP.NET Core 了 IIS 的常见错误参考
 
@@ -42,7 +42,7 @@ ms.lasthandoff: 04/06/2018
 
 疑难解答：
 
-* 如果在安装服务器托管捆绑包时系统无法访问 Internet，则在系统阻止安装程序获取 Microsoft Visual C++ 2015 Redistributable 时会出现此异常。 获取从安装[Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53840)。 如果安装失败，服务器可能不会收到托管依赖于框架的部署 (FDD) 所需.NET Core 运行时。 如果托管 FDD，确认在程序中安装了运行时&amp;功能。 如果需要获取从运行时安装[.NET 所有下载](https://www.microsoft.com/net/download/all)。 安装运行时后，重启系统，或通过从命令提示符依次执行 net stop was /y 和 net start w3svc 来重启 IIS。
+* 如果安装承载捆绑时，系统不具有 Internet 访问权限，此异常时发生安装已阻止获取*Microsoft Visual c + + 2015年可再发行组件*。 获取从安装[Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53840)。 如果安装失败，服务器可能不会收到托管依赖于框架的部署 (FDD) 所需.NET Core 运行时。 如果托管 FDD，确认在程序中安装了运行时&amp;功能。 如果需要获取从运行时安装[.NET 所有下载](https://www.microsoft.com/net/download/all)。 安装运行时后，重启系统，或通过从命令提示符依次执行 net stop was /y 和 net start w3svc 来重启 IIS。
 
 ## <a name="os-upgrade-removed-the-32-bit-aspnet-core-module"></a>OS 升级删除了 32 位 ASP.NET Core 模块
 
@@ -50,7 +50,7 @@ ms.lasthandoff: 04/06/2018
 
 疑难解答：
 
-* OS 升级期间不会保留 C:\Windows\SysWOW64\inetsrv 目录中的非 OS 文件。 如果之前安装 ASP.NET 核心模块操作系统升级，然后任何应用程序池运行时在 32 位模式下 OS 升级之后，遇到此问题。 在 OS 升级后修复 ASP.NET Core 模块。 请参阅[安装 .NET Core Windows Server 托管捆绑包](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle)。 选择**修复**安装运行时。
+* OS 升级期间不会保留 C:\Windows\SysWOW64\inetsrv 目录中的非 OS 文件。 如果之前安装 ASP.NET 核心模块操作系统升级，然后任何应用程序池运行时在 32 位模式下 OS 升级之后，遇到此问题。 在 OS 升级后修复 ASP.NET Core 模块。 请参阅[安装.NET 核心承载捆绑](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle)。 选择**修复**安装运行时。
 
 ## <a name="platform-conflicts-with-rid"></a>平台与 RID 冲突
 
@@ -64,7 +64,7 @@ ms.lasthandoff: 04/06/2018
 
 * 确认应用在 Kestrel 上本地运行。 进程失败可能是由应用的内部问题导致的。 有关详细信息，请参阅[故障排除](xref:host-and-deploy/iis/troubleshoot)。
 
-* 确认`<PlatformTarget>`中*.csproj*不会与 RID 冲突。 例如，未指定`<PlatformTarget>`的`x86`和发布与的 RID `win10-x64`，通过使用*dotnet 发布-c 版本-r win10 x64*或通过设置`<RuntimeIdentifiers>`中*.csproj*到`win10-x64`。 项目在不显示任何警告或错误的情况下发布，但会失败，且系统上出现上述记录的异常。
+* 确认`<PlatformTarget>`中 *.csproj*不会与 RID 冲突。 例如，未指定`<PlatformTarget>`的`x86`和发布与的 RID `win10-x64`，通过使用*dotnet 发布-c 版本-r win10 x64*或通过设置`<RuntimeIdentifiers>`中 *.csproj*到`win10-x64`。 项目在不显示任何警告或错误的情况下发布，但会失败，且系统上出现上述记录的异常。
 
 * 如果此异常发生的 Azure 应用程序部署升级应用程序时，以及手动部署更新的程序集，从以前的部署中删除所有文件。 部署升级的应用时，延迟的不兼容程序集可能造成 `System.BadImageFormatException` 异常。
 
@@ -114,11 +114,11 @@ ms.lasthandoff: 04/06/2018
 
 * 确认启用了适当的角色。 请参阅 [IIS 配置](xref:host-and-deploy/iis/index#iis-configuration)。
 
-* 检查“程序和功能”，确认已安装Microsoft ASP.NET Core 模块。 如果已安装程序列表中没有 Microsoft ASP.NET Core 模块，请安装该模块。 请参阅[安装 .NET Core Windows Server 托管捆绑包](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle)。
+* 检查“程序和功能”，确认已安装Microsoft ASP.NET Core 模块。 如果已安装程序列表中没有 Microsoft ASP.NET Core 模块，请安装该模块。 请参阅[安装.NET 核心承载捆绑](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle)。
 
 * 请确保**应用程序池** > **进程模型** > **标识**设置为**ApplicationPoolIdentity**或自定义标识具有访问应用程序的部署文件夹的正确权限。
 
-## <a name="incorrect-processpath-missing-path-variable-hosting-bundle-not-installed-systemiis-not-restarted-vc-redistributable-not-installed-or-dotnetexe-access-violation"></a>processPath 不正确、缺少 PATH 变量、未安装托管捆绑包、未重启系统/IIS、未安装 VC++ Redistributable 或 dotnet.exe 访问冲突
+## <a name="incorrect-processpath-missing-path-variable-hosting-bundle-not-installed-systemiis-not-restarted-vc-redistributable-not-installed-or-dotnetexe-access-violation"></a>不正确 processPath、 缺少 PATH 变量、 承载捆绑未安装，不重新启动系统/IIS、 VC + + 可再发行组件未安装，或 dotnet.exe 访问冲突
 
 * **浏览器：**HTTP 错误 502.5 - 进程失败
 
@@ -130,7 +130,7 @@ ms.lasthandoff: 04/06/2018
 
 * 确认应用在 Kestrel 上本地运行。 进程失败可能是由应用的内部问题导致的。 有关详细信息，请参阅[故障排除](xref:host-and-deploy/iis/troubleshoot)。
 
-* 检查*processPath*属性`<aspNetCore>`中的元素*web.config*以确认它是*dotnet*为依赖于框架的部署 (FDD) 或*.\{程序集}.exe*自包含的部署 (SCD)。
+* 检查*processPath*属性`<aspNetCore>`中的元素*web.config*以确认它是*dotnet*为依赖于框架的部署 (FDD) 或 *.\{程序集}.exe*自包含的部署 (SCD)。
 
 * 对于 FDD，可能无法通过路径设置访问 dotnet.exe。 确认系统路径设置中存在 *C:\Program Files\dotnet\*。
 
@@ -138,9 +138,9 @@ ms.lasthandoff: 04/06/2018
 
 * FDD 可能已部署，.NET 核心安装，无需重新启动 IIS。 重启服务器，或通过从命令提示符依次执行 net stop was /y 和 net start w3svc 来重启 IIS。
 
-* FDD 可能已不在主机系统上安装.NET Core 运行时的情况下部署。 如果尚未安装.NET Core 运行时，运行**.NET 核心 Windows 服务器承载捆绑安装**系统上。 请参阅[安装 .NET Core Windows Server 托管捆绑包](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle)。 如果尝试在未连接到 Internet 的系统上安装.NET Core 运行时，获取从运行时[.NET 所有下载](https://www.microsoft.com/net/download/all)并运行托管的捆绑包安装，安装 ASP.NET 核心模块。 重启系统，或通过从命令提示符依次执行 net stop was /y 和 net start w3svc 来重启 IIS，完成安装。
+* FDD 可能已不在主机系统上安装.NET Core 运行时的情况下部署。 如果尚未安装.NET Core 运行时，运行 **.NET 核心承载捆绑安装**系统上。 请参阅[安装.NET 核心承载捆绑](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle)。 如果尝试在未连接到 Internet 的系统上安装.NET Core 运行时，获取从运行时[.NET 所有下载](https://www.microsoft.com/net/download/all)和运行承载捆绑的安装程序安装 ASP.NET 核心模块。 重启系统，或通过从命令提示符依次执行 net stop was /y 和 net start w3svc 来重启 IIS，完成安装。
 
-* FDD 可能已部署和*Microsoft Visual c + + 2015年可再发行组件 (x64)*系统上未安装。 获取从安装[Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53840)。
+* FDD 可能已部署和*Microsoft Visual c + + 2015年可再发行组件 (x64)* 系统上未安装。 获取从安装[Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53840)。
 
 ## <a name="incorrect-arguments-of-aspnetcore-element"></a>\<aspNetCore\> 元素的参数不正确
 

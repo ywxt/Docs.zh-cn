@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 715e52715fb22b92f94d3d602ec58c29a913426c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: aad951a0e4344dbaafbdcc3b3980307a26fa75fc
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>使用 Razor 语法 (Visual Basic) 的 ASP.NET Web 编程简介
 ====================
@@ -40,7 +40,7 @@ ms.lasthandoff: 04/06/2018
 > 本教程还适用于 ASP.NET Web Pages 2。
 
 
-使用 Razor 语法中使用的 ASP.NET Web Pages 的大多数示例使用 C#。 但 Razor 语法也支持 Visual Basic。 要编制 ASP.NET 网页在 Visual Basic 中，你创建一个包含网页*.vbhtml*文件扩展名，然后添加 Visual Basic 代码。 本文提供使用 Visual Basic 语言和用于创建 ASP.NET 网页语法的概述。
+使用 Razor 语法中使用的 ASP.NET Web Pages 的大多数示例使用 C#。 但 Razor 语法也支持 Visual Basic。 要编制 ASP.NET 网页在 Visual Basic 中，你创建一个包含网页 *.vbhtml*文件扩展名，然后添加 Visual Basic 代码。 本文提供使用 Visual Basic 语言和用于创建 ASP.NET 网页语法的概述。
 
 > [!NOTE]
 > Microsoft WebMatrix 的默认网站模板 (**面包店**，**照片库**，和**入门站点**等) 在 C# 和 Visual Basic 版本中可用。 你可以为 NuGet 包安装 Visual Basic 的模板。 名为的文件夹中的站点的根文件夹中安装的网站模板*Microsoft 模板*。
@@ -133,7 +133,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，和
 
 在浏览器中所显示的结果：
 
-![Razor-Img5](introducing-razor-syntax-vb/_static/image6.jpg)
+![Razor Img5](introducing-razor-syntax-vb/_static/image6.jpg)
 
 ### <a name="8-you-can-write-code-that-makes-decisions"></a>8.你可以编写做出决策的代码
 
@@ -145,7 +145,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，和
 
 在浏览器中所显示的结果 (单击后**提交**):
 
-![Razor-Img6](introducing-razor-syntax-vb/_static/image7.jpg)
+![Razor Img6](introducing-razor-syntax-vb/_static/image7.jpg)
 
 > [!TIP] 
 > 
@@ -176,13 +176,13 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，和
     - `<form>`标记包含`method="post"`属性。 此步骤指定当用户单击**添加**，页面将发送到服务器使用 HTTP POST 方法。 当提交页面，则代码`If IsPost`计算结果为 true，条件的代码运行时，显示的添加数字结果。
 3. 保存页并在浏览器中运行它。 (请确保页中选择**文件**工作区之前运行它。)输入两个整数，然后单击**添加**按钮。
 
-    ![Razor-Img7](introducing-razor-syntax-vb/_static/image8.jpg)
+    ![Razor Img7](introducing-razor-syntax-vb/_static/image8.jpg)
 
 ## <a name="visual-basic-language-and-syntax"></a>Visual Basic 语言和语法
 
 前面你已了解如何创建 ASP.NET web 页中，以及如何将服务器代码添加到 HTML 标记的一个基本示例。 此处将介绍使用 Visual Basic 编写使用 Razor 语法的 ASP.NET 服务器代码的基础知识&#8212;，即使用编程语言规则。
 
-如果你有使用编程 （尤其是如果您使用过 C、 c + +、 C#、 Visual Basic 或 JavaScript） 的经验，此处读取大部分将熟悉。 你可能需要先熟悉一下仅如何 WebMatrix 代码添加到标记中*.vbhtml*文件。
+如果你有使用编程 （尤其是如果您使用过 C、 c + +、 C#、 Visual Basic 或 JavaScript） 的经验，此处读取大部分将熟悉。 你可能需要先熟悉一下仅如何 WebMatrix 代码添加到标记中 *.vbhtml*文件。
 
 ### <a id="BM_CombiningTextMarkupAndCode"></a>  组合文本、 标记和代码块中的代码
 
@@ -276,32 +276,78 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，和
 下表列出了一些常见的转换和测试方法的变量。
 
 
-|   <strong>方法</strong>    |                                                                              <strong>说明</strong>                                                                              |                     <strong>示例</strong>                      |
-|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
-|      `AsInt(), IsInt()`      |                                                 将表示为整数的字符串转换 (如&quot;593&quot;) 为整数。                                                 | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)] |
-|     `AsBool(), IsBool()`     |                                                    将转换字符串如下所示&quot;true&quot;或&quot;false&quot;到类型为 Boolean 类型。                                                     | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)] |
-|    `AsFloat(), IsFloat()`    |                                    将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为浮点数。                                    | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)] |
-|  `AsDecimal(), IsDecimal()`  | 将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为十进制数。 （在 ASP.NET 中，十进制数是比浮点数更精确。） | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)] |
-| `AsDateTime(), IsDateTime()` |                                                将对 ASP.NET 表示的日期和时间值的字符串转换`DateTime`类型。                                                 | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)] |
-|         `ToString()`         |                                                                       将任何其他数据类型转换为字符串。                                                                        | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)] |
+::: 行:::::: 列:::<strong>方法</strong>::: 列端:::::: 列:::<strong>说明</strong>::: 列端:::::: 列:::<strong>示例</strong>::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `AsInt(), IsInt()` ::: 列端:::::: 列::: 将表示为整数的字符串转换 (如&quot;593&quot;) 为整数。
+::: 列端:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)]
+    ::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `AsBool(), IsBool()` ::: 列端:::::: 列::: 将转换字符串如下所示&quot;true&quot;或&quot;false&quot;到类型为 Boolean 类型。
+::: 列端:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)]
+    ::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `AsFloat(), IsFloat()` ::: 列端:::::: 列::: 将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为浮点数。
+::: 列端:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)]
+    ::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `AsDecimal(), IsDecimal()` ::: 列端:::::: 列::: 将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为十进制数。 （在 ASP.NET 中，十进制数是比浮点数更精确。）::: 列端:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)]
+    ::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `AsDateTime(), IsDateTime()` ::: 列端:::::: 列::: 将对 ASP.NET 表示的日期和时间值的字符串转换`DateTime`类型。
+::: 列端:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)]
+    ::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `ToString()` ::: 列端:::::: 列::: 将任何其他数据类型转换为字符串。
+::: 列端:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)]
+    ::: 列端:::::: 行尾:::
+
 
 ## <a name="operators"></a>运算符
 
 运算符是命令的关键字或哪种类型的表达式中执行将告诉 ASP.NET 的字符。 Visual Basic 支持许多运算符，但你只需以识别一些若要开始开发 ASP.NET web 页。 下表总结了最常用的运算符。
 
 
-| <strong>Operator</strong> |                                                                        <strong>说明</strong>                                                                         |                         <strong>示例</strong>                         |
-|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-|         `+ - * /`         |                                                                在数值表达式中使用的数学运算符。                                                                |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]     |
-|            `=`            | 分配和相等性。 根据上下文，或者将语句右侧的值分配给左侧，对象，或检查值相等。 |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]     |
-|           `<>`            |                                                           不相等。 返回`True`如果值不相等。                                                           |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]     |
-|        `< > <= >=`        |                                                   小于、 大于、 小于或等于、 和大于或等于。                                                   |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]     |
-|            `&`            |                                                                串联，用来联接字符串。                                                                | [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)] |
-|          `+= -=`          |                                       递增和递减运算符，从而添加，并且从变量 （分别） 减去 1。                                       |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]     |
-|            `.`            |                                                     点。 用于区分对象及其属性和方法。                                                      |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]     |
-|           `()`            |                           括号。 为组表达式，用于将参数传递到方法，并访问数组和集合的成员。                           | [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)] |
-|           `Not`           |                    不是。 反转 true 值为 false，反之亦然。 通常用作要测试的速记方法`False`(即，为不`True`)。                     |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]     |
-|     `AndAlso OrElse`      |                                                       逻辑与和或用于链接条件组合在一起。                                                       |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)]     |
+::: 行:::::: 列:::<strong>运算符</strong>::: 列端:::::: 列:::<strong>说明</strong>::: 列端:::::: 列:::<strong>示例</strong>::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `+ - * /` ::: 列端:::::: 列::: 数学运算符在数值表达式中使用。
+::: 列端:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]
+    ::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `=` ::: 列端:::::: 列::: 分配和相等性。 根据上下文，或者将语句右侧的值分配给左侧，对象，或检查值相等。
+::: 列端:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]
+    ::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `<>` ::: 列端:::::: 列::: 是否不相等。 返回`True`如果值不相等。
+::: 列端:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]
+    ::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `< > <= >=` ::: 列端:::::: 列::: 小于、 大于、 小于或等于、 和大于或等于。
+::: 列端:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]
+    ::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `&` ::: 列端:::::: 列::: 串联，用来联接字符串。
+::: 列端:::::: 列::: [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)]
+    ::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `+= -=` ::: 列端:::::: 列::: 递增和递减运算符，从而添加，并且从变量 （分别） 减去 1。
+::: 列端:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]
+    ::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `.` ::: 列端:::::: 列::: 点。 用于区分对象及其属性和方法。
+::: 列端:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]
+    ::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `()` ::: 列端:::::: 列::: 括号。 为组表达式，用于将参数传递到方法，并访问数组和集合的成员。
+::: 列端:::::: 列::: [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)]
+    ::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `Not` ::: 列端:::::: 列::: 不。 反转 true 值为 false，反之亦然。 通常用作要测试的速记方法`False`(即，为不`True`)。
+::: 列端:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]
+    ::: 列端:::::: 行尾:::
+* * *
+::: 行:::::: 列::: `AndAlso OrElse` ::: 列端:::::: 列::: 逻辑和也用于链接条件组合在一起。
+::: 列端:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)]
+    ::: 列端:::::: 行尾:::
 
 ## <a name="working-with-file-and-folder-paths-in-code"></a>使用文件和代码中的文件夹路径
 
@@ -329,7 +375,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，和
 
 ### <a name="converting-virtual-to-physical-paths-the-servermappath-method"></a>转换虚拟与物理路径： Server.MapPath 方法
 
-`Server.MapPath`方法将转换的虚拟路径 (如*/default.cshtml*) 为绝对物理路径 (如*C:\WebSites\MyWebSiteFolder\default.cshtml*)。 需要完整的物理路径时使用此方法。 一个典型示例是要读取或写入文本文件或 web 服务器上的图像文件时。
+`Server.MapPath`方法将转换的虚拟路径 (如 */default.cshtml*) 为绝对物理路径 (如*C:\WebSites\MyWebSiteFolder\default.cshtml*)。 需要完整的物理路径时使用此方法。 一个典型示例是要读取或写入文本文件或 web 服务器上的图像文件时。
 
 你通常不知道你的站点托管站点的服务器上的绝对物理路径，因此此方法可以将路径转换你知道-的虚拟路径-到你的服务器上的相应路径。 将虚拟路径传递给文件或文件夹的方法，并返回物理路径：
 
@@ -337,7 +383,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，和
 
 ### <a name="referencing-the-virtual-root-the--operator-and-href-method"></a>引用的虚拟根： ~ 运算符和 Href 方法
 
-在*.cshtml*或*.vbhtml*文件，你可以引用虚拟根路径使用`~`运算符。 这是非常方便，因为您可以来回移动网页，在站点中，并且它们包含至其他页面的任何链接不会被破坏。 也很方便以防曾经将你的网站移动到其他位置。 下面是一些可能的恶意活动：
+在 *.cshtml*或 *.vbhtml*文件，你可以引用虚拟根路径使用`~`运算符。 这是非常方便，因为您可以来回移动网页，在站点中，并且它们包含至其他页面的任何链接不会被破坏。 也很方便以防曾经将你的网站移动到其他位置。 下面是一些可能的恶意活动：
 
 [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample40.vbhtml)]
 

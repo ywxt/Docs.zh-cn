@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: content
 uid: testing/troubleshoot
-ms.openlocfilehash: 98077081409949db14b19c7934bc162990ffc302
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a75dc666621600e1e2fe36c29acbe7484bae9229
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="troubleshoot-aspnet-core-projects"></a>解决 ASP.NET 核心项目
 
@@ -24,6 +24,7 @@ ms.lasthandoff: 04/06/2018
 * [对 Azure 应用服务上的 ASP.NET Core 进行故障排除](xref:host-and-deploy/azure-apps/troubleshoot)
 * [对 IIS 上的 ASP.NET Core 进行故障排除](xref:host-and-deploy/iis/troubleshoot)
 * [Azure 应用服务和 IIS 上 ASP.NET Core 的常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)
+* [YouTube： 诊断 ASP.NET 核心应用程序中的问题](https://www.youtube.com/watch?v=RYI0DHoIVaA)
 
 <a name="sdk"></a>
 ## <a name="net-core-sdk-warnings"></a>.NET 核心 SDK 警告

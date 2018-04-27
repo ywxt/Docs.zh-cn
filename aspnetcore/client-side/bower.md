@@ -10,18 +10,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: 81244cfb71194876071c64899d627c296aad3802
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ada8120189baf036296b83f91d20b364ee90d074
+ms.sourcegitcommit: 07903a1be39a99dcf538d57981161592d0e658b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>管理 ASP.NET Core 中的 Bower 的客户端包
 
 通过[Rick Anderson](https://twitter.com/RickAndMSFT)，[了米](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/)，和[Scott Addie](https://scottaddie.com) 
 
 > [!IMPORTANT]
-> 而维持 Bower，其 maintainer 建议使用另一种解决方案。 与 Webpack yarn 是一个常用的替代项为其[迁移说明](https://bower.io/blog/2017/how-to-migrate-away-from-bower/)可用。
+> 而维持 Bower，其 maintainer 建议使用另一种解决方案。 [库管理器](https://blogs.msdn.microsoft.com/webdev/2018/04/18/what-happened-to-bower/)(简称 LibMan) 是 Visual Studio 的新客户端的静态内容管理系统。 与 Webpack yarn 是一个常用的替代项为其[迁移说明](https://bower.io/blog/2017/how-to-migrate-away-from-bower/)可用。
 
 [Bower](https://bower.io/)调用自身"web 程序包管理器"。 内部.NET 生态系统，它将填入 void 留下的 NuGet 的无法传送静态内容的文件。 对于 ASP.NET Core 项目，这些静态文件，则所固有的客户端库，如[jQuery](http://jquery.com/)和[Bootstrap](http://getbootstrap.com/)。 对于.NET 库，你仍然使用[NuGet](https://www.nuget.org/)程序包管理器。
 
@@ -33,11 +33,11 @@ ms.lasthandoff: 04/06/2018
 
 ### <a name="installation-via-manage-bower-packages-ui"></a>通过管理 Bower 包 UI 的安装
 
-* 创建新的 ASP.NET 核心 Web 应用程序与**ASP.NET 核心 Web 应用程序 (.NET Core)**模板。 选择**Web 应用程序**和**无身份验证**。
+* 创建新的 ASP.NET 核心 Web 应用程序与**ASP.NET 核心 Web 应用程序 (.NET Core)** 模板。 选择**Web 应用程序**和**无身份验证**。
 
 * 右键单击解决方案资源管理器中的项目并选择**管理 Bower 包**(或者从主菜单中，**项目** > **管理 Bower 包**).
 
-* 在**Bower:\<项目名称\>**窗口中，单击"浏览"选项卡，并输入，然后筛选包列表`font-awesome`的搜索框中：
+* 在**Bower:\<项目名称\>** 窗口中，单击"浏览"选项卡，并输入，然后筛选包列表`font-awesome`的搜索框中：
 
   ![管理 bower 包](bower/_static/manage-bower-packages.png)
 
@@ -55,7 +55,7 @@ Bower 使用[语义版本控制](http://semver.org/)来组织依赖关系。 语
 
 保存*bower.json*文件。 Visual Studio 监视*bower.json*文件的更改。 保存后， *bower 安装*执行命令。 请参见输出窗口**Bower/npm**视图执行的确切命令。
 
-打开*.bowerrc*文件下*bower.json*。 `directory`属性设置为*wwwroot/lib*指示的位置 Bower 将安装包资产。
+打开 *.bowerrc*文件下*bower.json*。 `directory`属性设置为*wwwroot/lib*指示的位置 Bower 将安装包资产。
 
 ```json
 {
@@ -90,7 +90,7 @@ Bower 使用[语义版本控制](http://semver.org/)来组织依赖关系。 语
 
 一旦列表中的包*bower.json*文件，Visual Studio 将下载它们。 下面的示例使用 Bower 加载 jQuery 和引导定向到*wwwroot*文件夹。
 
-* 创建新的 ASP.NET 核心 Web 应用程序与**ASP.NET 核心 Web 应用程序 (.NET Core)**模板。 选择**空**项目模板，然后单击**确定**。
+* 创建新的 ASP.NET 核心 Web 应用程序与**ASP.NET 核心 Web 应用程序 (.NET Core)** 模板。 选择**空**项目模板，然后单击**确定**。
 
 * 在解决方案资源管理器，右键单击项目 >**添加新项**和选择**Bower 配置文件**。 注意： A *.bowerrc*还添加文件。
 
@@ -100,7 +100,7 @@ Bower 使用[语义版本控制](http://semver.org/)来组织依赖关系。 语
 
 * 保存*bower.json*文件。
 
-  验证该项目包括*bootstrap*和*jQuery*中的目录*wwwroot/lib*。 Bower 使用*.bowerrc*文件以安装中的资产*wwwroot/lib*。
+  验证该项目包括*bootstrap*和*jQuery*中的目录*wwwroot/lib*。 Bower 使用 *.bowerrc*文件以安装中的资产*wwwroot/lib*。
 
   注意:"管理 Bower 包"UI 提供手动文件编辑的替代方法。
 

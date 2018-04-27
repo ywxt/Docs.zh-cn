@@ -3,6 +3,7 @@ title: 要开始使用 SignalR 在 ASP.NET Core 上
 author: rachelappel
 description: 在本教程中，你创建使用 SignalR 为 ASP.NET Core 应用。
 manager: wpickett
+monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
 ms.date: 03/16/2018
@@ -10,17 +11,17 @@ ms.prod: aspnet-core
 ms.topic: tutorial
 ms.technology: aspnet
 uid: signalr/get-started
-ms.openlocfilehash: cf120d535c85c7871f5b1f27039018ea2405b9cb
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 03735359bb22cc3085ddc7b34372ecfc9501a940
+ms.sourcegitcommit: 07903a1be39a99dcf538d57981161592d0e658b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>要开始使用 SignalR 在 ASP.NET Core 上
 
 作者：[Rachel Appel](https://twitter.com/rachelappel)
 
-[!INCLUDE [Version notice](../includes/signalr-version-notice.md)]
+[!INCLUDE [2.1 preview notice](~/includes/2.1.md)]
 
 本教程教生成实时应用程序使用 ASP.NET Core SignalR 的基础知识。
 
@@ -41,14 +42,14 @@ ms.lasthandoff: 04/06/2018
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* [.NET 核心 2.1.0 预览 1 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview1)或更高版本
-* [Visual Studio 2017](https://www.visualstudio.com/downloads/) 15.6 或使用更高版本**ASP.NET 和 web 开发**工作负荷
+* [.NET 核心 2.1.0 预览 2 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview2)或更高版本
+* [Visual Studio 2017](https://www.visualstudio.com/downloads/) 15.7 或使用更高版本**ASP.NET 和 web 开发**工作负荷
 * [npm](https://www.npmjs.com/get-npm)
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
-* [.NET 核心 2.1.0 预览 1 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview1)或更高版本
-* [Visual Studio Code](https://code.visualstudio.com/download) 
+* [.NET 核心 2.1.0 预览 2 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview2)或更高版本
+* [Visual Studio Code](https://code.visualstudio.com/download)
 * [用于 Visual Studio 代码的 C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 * [npm](https://www.npmjs.com/get-npm)
 
@@ -56,7 +57,8 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="create-an-aspnet-core-project-that-hosts-signalr-client-and-server"></a>创建 ASP.NET Core 项目承载 SignalR 客户端和服务器
 
-#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+
 1. 使用**文件** > **新项目**菜单选项，然后选择**ASP.NET 核心 Web 应用程序**。 将项目*SignalRChat*。
 
    ![Visual Studio 中的新建项目对话框](get-started/_static/signalr-new-project-dialog.png)
@@ -65,16 +67,19 @@ ms.lasthandoff: 04/06/2018
 
    ![Visual Studio 中的新建项目对话框](get-started/_static/signalr-new-project-choose-type.png)
 
-3. 右键单击中的项目**解决方案资源管理器** > **添加** > **新项** > **npm 配置文件**. 命名该文件*package.json*。
+Visual Studio 包含`Microsoft.AspNetCore.SignalR`作为的一部分包含其服务器库包其**ASP.NET 核心 Web 应用程序**模板。 但是，适用于 SignalR 的 JavaScript 客户端库必须安装使用*npm*。
 
-4. 在中运行以下命令**程序包管理器控制台**窗口，请从项目根：
+3. 在中运行以下命令**程序包管理器控制台**窗口，请从项目根：
 
     ```console
+      npm init -y
       npm install @aspnet/signalr
-    ```
-5. 复制<em>signalr.js</em>文件从<em>node_modules\\ @aspnet\signalr\dist\browser</em> 到<em>wwwroot\lib</em>项目文件夹中的。
+    ```     
 
-#### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+4. 复制*signalr.js*文件从*node_modules\\ @aspnet\signalr\dist\browser* 到*lib*项目文件夹中的。
+
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+
 1. 从**集成终端**，运行以下命令：
 
     ```console
@@ -88,21 +93,24 @@ ms.lasthandoff: 04/06/2018
       npm install @aspnet/signalr
     ```
 
-* * *
+-----
+
 ## <a name="create-the-signalr-hub"></a>创建 SignalR Hub
 
 允许客户端和服务器相互调用方法的高级管道作为服务的类，则集线器。
 
-#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+
 1. 将类添加到项目中，通过选择**文件** > **新建** > **文件**并选择**Visual C# 类**。
 
 2. 继承自`Microsoft.AspNetCore.SignalR.Hub`。 `Hub`类包含属性和管理连接和组，以及发送和接收数据的事件。
 
-3. 创建`SendMessage`将消息发送到所有连接的聊天客户端的方法。 请注意它将返回[任务](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task(v=vs.110).aspx)，这是因为 SignalR 是异步的。 更好地缩放异步代码。
+3. 创建`SendMessage`将消息发送到所有连接的聊天客户端的方法。 请注意它将返回[任务](https://msdn.microsoft.com/library/system.threading.tasks.task(v=vs.110).aspx)，这是因为 SignalR 是异步的。 更好地缩放异步代码。
 
-   [!code-csharp[Startup](get-started/sample/Hubs/ChatHub.cs?range=7-14)]
+   [!code-csharp[Startup](get-started/sample/Hubs/ChatHub.cs)]
 
-#### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+
 1. 打开*SignalRChat*在 Visual Studio 代码中的文件夹。
 
 2. 将类添加到项目中，通过选择**文件** > **新文件**从菜单。
@@ -111,9 +119,10 @@ ms.lasthandoff: 04/06/2018
 
 4. 将 `SendMessage` 方法添加到类。 `SendMessage`方法将消息发送到所有连接的聊天客户端。 请注意它将返回[任务](/dotnet/api/system.threading.tasks.task)，这是因为 SignalR 是异步的。 更好地缩放异步代码。
 
-   [!code-csharp[Startup](get-started/sample/Hubs/ChatHub.cs?range=7-14)]
+   [!code-csharp[Startup](get-started/sample/Hubs/ChatHub.cs?range=6-12)]
 
-* * *
+-----
+
 ## <a name="configure-the-project-to-use-signalr"></a>配置项目以使用 SignalR
 
 必须配置 SignalR 服务器，这样就知道要传递给 SignalR 的请求。
@@ -124,7 +133,9 @@ ms.lasthandoff: 04/06/2018
 
 2. 配置路由到你使用的中心`UseSignalR`。
 
-   [!code-csharp[Startup](get-started/sample/Startup.cs?highlight=22,40-43)]
+
+   [!code-csharp[Startup](get-started/sample/Startup.cs?highlight=36,56-59)]
+
 
 ## <a name="create-the-signalr-client-code"></a>创建 SignalR 客户端代码
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/webapi
-ms.openlocfilehash: 2b9d6ac41266e0e6085153e1302d84a34ee85257
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 2f1d0b43f565dbf6189406bfd65158f809e1f18f
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="migrate-from-aspnet-web-api-to-aspnet-core"></a>将从 ASP.NET Web API 迁移到 ASP.NET 核心
 
@@ -36,7 +36,7 @@ Web Api 是覆盖广泛的客户端，包括浏览器和移动设备的 HTTP 服
 [!code-csharp[](../migration/webapi/sample/ProductsApp/App_Start/WebApiConfig.cs?highlight=15,16,17,18,19,20)]
 
 
-此类配置[的属性路由](https://docs.microsoft.com/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2)，不过它实际上并没有用于在项目中。 它还将配置由 ASP.NET Web API 的路由表。 在这种情况下，ASP.NET Web API 应 Url 以匹配格式*/api/ {controller} / {id}*，与*{id}*正在可选。
+此类配置[的属性路由](https://docs.microsoft.com/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2)，不过它实际上并没有用于在项目中。 它还将配置由 ASP.NET Web API 的路由表。 在这种情况下，ASP.NET Web API 应 Url 以匹配格式 */api/ {controller} / {id}*，与 *{id}* 正在可选。
 
 *ProductsApp*项目包括一个简单的控制器，它继承自`ApiController`和公开两个方法：
 
@@ -66,13 +66,13 @@ Web Api 是覆盖广泛的客户端，包括浏览器和移动设备的 HTTP 服
 
 ASP.NET 核心不再使用*Global.asax*， *web.config*，或*App_Start*文件夹。 相反，所有启动任务都在都完成*Startup.cs*项目的根目录中 (请参阅[应用程序启动](../fundamentals/startup.md))。 在 ASP.NET 核心 MVC，基于属性的路由现在包含默认情况下时`UseMvc()`称为;，并且，这是建议的配置 Web API 的路由的方法 （Web API 初学者项目处理路由的方式）。
 
-[!code-none[](../migration/webapi/sample/ProductsCore/Startup.cs?highlight=40)]
+[!code-csharp[](../migration/webapi/sample/ProductsCore/Startup.cs?highlight=40)]
 
 假设你想要使用你今后的项目中的属性路由，不需进行任何其他配置。 只需将应用的属性，根据需要向你的控制器和操作，在此示例中的做法一样`ValuesController`Web API 初学者项目中包含的类：
 
 [!code-csharp[](../migration/webapi/sample/ProductsCore/Controllers/ValuesController.cs?highlight=9,13,20,27,33,39)]
 
-请注意是否存在*[控制器]*第 8 行。 基于属性的路由现在支持某些令牌，如*[控制器]*和*[操作]*。 这些标记分别被替换为在运行时的控制器或操作，名称，已向其应用该属性。 此选项可用于减少了大量神奇字符串在项目中，并确保路由将保留其相应的控制器和操作与同步时自动重命名重构应用。
+请注意是否存在 *[控制器]* 第 8 行。 基于属性的路由现在支持某些令牌，如 *[控制器]* 和 *[操作]*。 这些标记分别被替换为在运行时的控制器或操作，名称，已向其应用该属性。 此选项可用于减少了大量神奇字符串在项目中，并确保路由将保留其相应的控制器和操作与同步时自动重命名重构应用。
 
 若要迁移的产品的 API 控制器，我们必须首先将复制*ProductsController*到新项目。 然后只需包括在控制器上的 route 属性：
 
@@ -115,7 +115,7 @@ ASP.NET 核心不再使用*Global.asax*， *web.config*，或*App_Start*文件�
 
 [!code-csharp[](../migration/webapi/sample/ProductsCore/Controllers/ProductsController.cs?highlight=1,2,6,8,9,27)]
 
-你现在应能够运行已迁移的项目，浏览到*/api/产品*; 而且，你应看到 3 产品的完整列表。 浏览到*/api/products/1* ，你应看到第一个产品。
+你现在应能够运行已迁移的项目，浏览到 */api/产品*; 而且，你应看到 3 产品的完整列表。 浏览到 */api/products/1* ，你应看到第一个产品。
 
 ## <a name="summary"></a>总结
 

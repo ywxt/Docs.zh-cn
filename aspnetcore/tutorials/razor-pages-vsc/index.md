@@ -3,17 +3,18 @@ title: 使用 ASP.NET Core 和 Visual Studio Code 创建 Razor 页面 Web 应用
 author: rick-anderson
 description: 使用 ASP.NET Core 和 EF Core 创建 Razor 页面 Web 应用。
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/26/2017
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages-vsc/index
-ms.openlocfilehash: 577a4a1cb28c40a92058ed5ae5c065bd99fdf867
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0d8f049d62cf1e79e3715b01f6eb1edb336ca188
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="create-a-razor-pages-web-app-with-aspnet-core-and-visual-studio-code"></a>使用 ASP.NET Core 和 Visual Studio Code 创建 Razor 页面 Web 应用
 
@@ -23,7 +24,7 @@ ms.lasthandoff: 04/06/2018
 
 1. [通过 VS Code 开始使用 Razor 页面](xref:tutorials/razor-pages-vsc/razor-pages-start)
 2. [向 Razor 页面应用添加模型](xref:tutorials/razor-pages-vsc/model)
-3. [已搭建基架的 Razor 页面]         (xref:tutorials/razor-pages-vsc/page)
+3. [已搭建基架的 Razor 页面](xref:tutorials/razor-pages-vsc/page)
 4. [使用 SQLite](xref:tutorials/razor-pages-vsc/sql)
 5. [更新页面](xref:tutorials/razor-pages-vsc/da1)
 6. [添加搜索](xref:tutorials/razor-pages-vsc/search)

@@ -1,22 +1,22 @@
 ---
 uid: signalr/overview/getting-started/supported-platforms
-title: "受支持的平台 |Microsoft 文档"
+title: 受支持的平台 |Microsoft 文档
 author: pfletcher
-description: "本指南介绍了 SignalR 支持哪些客户端和服务器。"
+description: 本指南介绍了 SignalR 支持哪些客户端和服务器。
 ms.author: aspnetcontent
 manager: wpickett
-ms.date: 06/10/2014
+ms.date: 04/18/2018
 ms.topic: article
 ms.assetid: eac31beb-0f46-4afa-9def-e80904dea4f0
 ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/supported-platforms
 msc.type: authoredcontent
-ms.openlocfilehash: 1379b9fb638f67896d88d7aa4312d95280ef7318
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4d3dc028ff67d0a9cfa03627b5f98f6541ecfff8
+ms.sourcegitcommit: 7c8fd9b7445cd77eb7f7d774bfd120c26f3b5d84
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/19/2018
 ---
 <a name="supported-platforms"></a>支持的平台
 ====================
@@ -37,8 +37,9 @@ SignalR 支持在各种服务器和客户端配置下。 此外，每个传输�
 
 ### <a name="supported-server-operating-systems"></a>支持的服务器操作系统
 
-SignalR 服务器组件可以承载于以下服务器或客户端操作系统。 请注意，适用于 SignalR 使用 Websocket，Windows Server 2012 或 Windows 8 需要 （WebSocket 可以使用 Windows Azure 网站上，只要该站点的.NET framework 版本设置为 4.5，并且在站点的配置页中启用 Web 套接字）。
+SignalR 服务器组件可以承载于以下服务器或客户端操作系统。 请注意，适用于 SignalR 使用 Websocket，Windows Server 2012、 Windows Server 2016 或 Windows 8 需要 （WebSocket 可以使用 Windows Azure 网站上，只要该站点的.NET framework 版本设置为 4.5，并且在站点中启用 Web 套接字配置页）。
 
+- Windows 2016 Server
 - Windows Server 2012
 - Windows Server 2008 r2
 - Windows 10
@@ -114,8 +115,8 @@ SignalR 可在以下浏览器：
 | --- | --- | --- |
 | Web 套接字 | Windows 8 + 和.NET 4.5 + | 不可用 |
 | 不限次数帧 | 不可用 | 不可用 |
-| 服务器发送事件 | .NET 4+ | 5+ |
-| 长轮询 | .NET 4+ | 5+ |
+| 服务器发送事件 | .NET 4 + | 5+ |
+| 长轮询 | .NET 4 + | 5+ |
 
 <a id="android"></a>
 
@@ -125,12 +126,12 @@ SignalR 可在 Windows 应用商店应用程序和 Windows Phone 8 应用程序�
 
 **Windows 应用商店和 Windows Phone 传输要求**
 
-| 传输 | Windows 应用商店 /.NET | Windows 应用商店 / JavaScript | Windows Phone/ IE | Windows Phone/ .NET |
+| 传输 | Windows 应用商店 /.NET | Windows 应用商店 / JavaScript | Windows Phone / IE | Windows Phone /.NET |
 | --- | --- | --- | --- | --- |
-| WebSockets | 不可用 | Win8+ | 8+ | 不可用 |
-| 不限次数帧 | 不可用 | Win8+ | 7.5+ | 不可用 |
-| 服务器发送事件 | Win8+ | 不可用 | 不可用 | 8+ |
-| 长轮询 | Win8+ | Win8+ | 7.5+ | 8+ |
+| WebSockets | 不可用 | Win8 + | 8+ | 不可用 |
+| 不限次数帧 | 不可用 | Win8 + | 7.5+ | 不可用 |
+| 服务器发送事件 | Win8 + | 不可用 | 不可用 | 8+ |
+| 长轮询 | Win8 + | Win8 + | 7.5+ | 8+ |
 
 <a id="updates"></a>
 

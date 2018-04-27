@@ -9,23 +9,31 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: 3a19cec2ce4387ca44ca120f031a072269b93454
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 300feb42dff7f1bb86bab6fedf3f657273ced8be
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="configure-aspnet-core-data-protection"></a>配置 ASP.NET 核心数据保护
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-初始化数据保护系统时，它将应用[默认设置](xref:security/data-protection/configuration/default-settings)基于的操作环境。 这些设置并在一台计算机上运行的应用程序通常适用。 在开发人员可能需要更改默认设置，可能是因为其应用程序分布在多个计算机之间或者出于合规原因的情况下。 对于这些情况下，数据保护系统提供丰富的配置 API。
+初始化数据保护系统时，它将应用[默认设置](xref:security/data-protection/configuration/default-settings)基于的操作环境。 这些设置并在一台计算机上运行的应用程序通常适用。 有情况下，开发人员可能需要更改默认设置：
 
-扩展方法没有[AddDataProtection](/dotnet/api/microsoft.extensions.dependencyinjection.dataprotectionservicecollectionextensions.adddataprotection)返回[IDataProtectionBuilder](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionbuilder)。 `IDataProtectionBuilder` 显示扩展方法，你可以链接在一起以配置数据保护选项。
+* 应用程序分布在多台计算机。
+* 出于合规性原因。
+
+对于这些情况下，数据保护系统提供丰富的配置 API。
+
+> [!WARNING]
+> 类似于配置文件，数据保护密钥环应保护使用适当的权限。 你可以选择加密静止的密钥，但这不能防止攻击者创建新密钥。 因此，应用的安全会受到影响。 使用数据保护配置的存储位置应具有其访问仅限于应用程序本身，你将保护配置文件工作方式相似。 例如，如果你选择存储在磁盘上的密钥令牌环，使用文件系统权限。 确保仅在标识你的 web 应用运行具有读取、 写入和创建该目录的访问。 如果你使用 Azure 表存储，仅该 web 应用应能够读取、 写入或在表存储等中创建新条目。
+>
+> 扩展方法[AddDataProtection](/dotnet/api/microsoft.extensions.dependencyinjection.dataprotectionservicecollectionextensions.adddataprotection)返回[IDataProtectionBuilder](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionbuilder)。 `IDataProtectionBuilder` 显示扩展方法，你可以链接在一起以配置数据保护选项。
 
 ## <a name="persistkeystofilesystem"></a>PersistKeysToFileSystem
 
-将密钥存储在 UNC 共享而不是在*%LOCALAPPDATA%*默认位置，配置与系统[PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem):
+将密钥存储在 UNC 共享而不是在 *%LOCALAPPDATA%* 默认位置，配置与系统[PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem):
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -91,7 +99,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="per-application-isolation"></a>每个应用程序隔离
 
-数据保护系统提供了 ASP.NET 核心主机，但它自动隔离了从另一个，应用程序，即使这些应用在相同的工作进程帐户下运行，并且使用相同的主密钥材料。 这是某种程度上类似于 IsolateApps 修饰符从 System.Web 的 **\<machineKey >**元素。
+数据保护系统提供了 ASP.NET 核心主机，但它自动隔离了从另一个，应用程序，即使这些应用在相同的工作进程帐户下运行，并且使用相同的主密钥材料。 这是某种程度上类似于 IsolateApps 修饰符从 System.Web 的 **\<machineKey >** 元素。
 
 隔离机制的工作原理是作为唯一的租户，因此考虑本地计算机上的每个应用[IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector)取得 root 权限的任何给定的应用会自动包括为鉴别器的应用程序 ID。 应用程序的唯一 ID 来自两个位置之一：
 

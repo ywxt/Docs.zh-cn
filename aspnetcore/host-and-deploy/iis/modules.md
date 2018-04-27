@@ -5,16 +5,16 @@ description: 发现 ASP.NET Core 应用和如何管理 IIS 模块的活动和非
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/15/2018
+ms.date: 04/04/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: d9b3de915df333153255f91649f9169f76ba2fe0
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: e88526d997618658f58488adb37ae1e519ea3f59
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="iis-modules-with-aspnet-core"></a>与 ASP.NET 核心的 IIS 模块
 
@@ -24,8 +24,10 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="native-modules"></a>本机模块
 
-| 模块 | .NET 核心活动 | ASP.NET Core Option |
-| ------ | :--------------: | ------------------- |
+此表指示在对 ASP.NET Core 应用的反向代理请求上正常运行的本机 IIS 模块。
+
+| 模块 | 与 ASP.NET Core 应用功能 | ASP.NET 核心选项 |
+| ------ | :-------------------------------: | ------------------- |
 | **匿名身份验证**<br>`AnonymousAuthenticationModule` | 是 | |
 | **基本身份验证**<br>`BasicAuthenticationModule` | 是 | |
 | **客户端证书映射身份验证**<br>`CertificateMappingAuthenticationModule` | 是 | |
@@ -49,7 +51,7 @@ ms.lasthandoff: 04/06/2018
 | **协议支持**<br>`ProtocolSupportModule` | 是 | |
 | **请求筛选**<br>`RequestFilteringModule` | 是 | [URL 重写中间件 `IRule`](xref:fundamentals/url-rewriting#irule-based-rule) |
 | **请求监视器**<br>`RequestMonitorModule` | 是 | |
-| **URL 重写**<br>`RewriteModule` | Yes&#8224; | [URL 重写中间件](xref:fundamentals/url-rewriting) |
+| **URL 重写**<br>`RewriteModule` | 是的&#8224; | [URL 重写中间件](xref:fundamentals/url-rewriting) |
 | **服务器端包括**<br>`ServerSideIncludeModule` | 否 | |
 | **静态压缩**<br>`StaticCompressionModule` | 否 | [响应压缩中间件](xref:performance/response-compression) |
 | **静态内容**<br>`StaticFileModule` | 否 | [静态文件中间件](xref:fundamentals/static-files) |
@@ -62,21 +64,23 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="managed-modules"></a>托管的模块
 
-| 模块                  | .NET 核心活动 | ASP.NET Core Option |
-| ----------------------- | :--------------: | ------------------- |
-| AnonymousIdentification | 否               | |
-| DefaultAuthentication   | 否               | |
-| FileAuthorization       | 否               | |
-| FormsAuthentication     | 否               | [Cookie 身份验证中间件](xref:security/authentication/cookie) |
-| OutputCache             | 否               | [响应缓存中间件](xref:performance/caching/middleware) |
-| 配置文件                 | 否               | |
-| RoleManager             | 否               | |
-| ScriptModule-4.0        | 否               | |
-| 会话                 | 否               | [会话中间件](xref:fundamentals/app-state) |
-| UrlAuthorization        | 否               | |
-| UrlMappingsModule       | 否               | [URL 重写中间件](xref:fundamentals/url-rewriting) |
-| UrlRoutingModule-4.0    | 否               | [ASP.NET 核心标识](xref:security/authentication/identity) |
-| WindowsAuthentication   | 否               | |
+托管模块是*不*功能与托管的 ASP.NET Core 应用时应用程序池的.NET CLR 版本设置为**无托管代码**。 ASP.NET Core 提供几种情况，中间件的备选项。
+
+| 模块                  | ASP.NET 核心选项 |
+| ----------------------- | ------------------- |
+| AnonymousIdentification | |
+| DefaultAuthentication   | |
+| FileAuthorization       | |
+| FormsAuthentication     | [Cookie 身份验证中间件](xref:security/authentication/cookie) |
+| OutputCache             | [响应缓存中间件](xref:performance/caching/middleware) |
+| 配置文件                 | |
+| RoleManager             | |
+| ScriptModule-4.0        | |
+| 会话                 | [会话中间件](xref:fundamentals/app-state) |
+| UrlAuthorization        | |
+| UrlMappingsModule       | [URL 重写中间件](xref:fundamentals/url-rewriting) |
+| UrlRoutingModule-4.0    | [ASP.NET 核心标识](xref:security/authentication/identity) |
+| WindowsAuthentication   | |
 
 ## <a name="iis-manager-application-changes"></a>IIS 管理器应用程序更改
 
@@ -88,7 +92,7 @@ ms.lasthandoff: 04/06/2018
 
 ### <a name="module-deactivation"></a>模块停用
 
-多个模块提供配置设置，从而使这些要禁用但不从应用程序移除模块。 这是最简单且最快速方式停用模块。 例如，可以使用禁用 IIS URL 重写模块 **\<httpRedirect >**中的元素*web.config*:
+多个模块提供配置设置，从而使这些要禁用但不从应用程序移除模块。 这是最简单且最快速方式停用模块。 例如，可以使用禁用 HTTP 重定向模块 **\<httpRedirect >** 中的元素*web.config*:
 
 ```xml
 <configuration>
@@ -102,15 +106,15 @@ ms.lasthandoff: 04/06/2018
 
 ### <a name="module-removal"></a>模块删除
 
-如果选择加入以移除模块中的设置与*web.config*、 解锁模块和解锁**\<模块 >**部分*web.config*第一个：
+如果选择加入以移除模块中的设置与*web.config*、 解锁模块和解锁**\<模块 >** 部分*web.config*第一个：
 
 1. 解锁的服务器级别的模块。 选择在 IIS 管理器中的 IIS 服务器**连接**侧栏。 打开**模块**中**IIS**区域。 在列表中选择该模块。 在**操作**侧栏右侧，选择**解锁**。 解锁任意多个模块，因为你打算移除*web.config*更高版本。
 
-2. 部署应用程序而无需**\<模块 >**主题中*web.config*。如果应用程序部署与*web.config*包含**\<模块 >**部分不具有解锁部分首先在 IIS 管理器，配置管理器的情况下将引发异常无法解除锁定节。 因此，部署应用程序而无需**\<模块 >**部分。
+2. 部署应用程序而无需**\<模块 >** 主题中*web.config*。如果应用程序部署与*web.config*包含**\<模块 >** 部分不具有解锁部分首先在 IIS 管理器，配置管理器的情况下将引发异常无法解除锁定节。 因此，部署应用程序而无需**\<模块 >** 部分。
 
-3. 解锁**\<模块 >**部分*web.config*。在**连接**栏中，选择在网站**站点**。 在**管理**区域中，打开**配置编辑器**。 使用导航控件选择`system.webServer/modules`部分。 在**操作**侧栏右侧，选择**解锁**部分。
+3. 解锁**\<模块 >** 部分*web.config*。在**连接**栏中，选择在网站**站点**。 在**管理**区域中，打开**配置编辑器**。 使用导航控件选择`system.webServer/modules`部分。 在**操作**侧栏右侧，选择**解锁**部分。
 
-4. 此时， **\<模块 >**部分可以添加到*web.config*文件**\<删除 >**要移除从模块元素应用程序。 多个**\<删除 >**可添加元素以移除多个模块。 如果*web.config*服务器上进行更改，立即对相同的更改进行项目的*web.config*文件在本地。 删除这种方式的模块不会影响服务器上的其他应用的模块使用。
+4. 此时， **\<模块 >** 部分可以添加到*web.config*文件**\<删除 >** 要移除从模块元素应用程序。 多个**\<删除 >** 可添加元素以移除多个模块。 如果*web.config*服务器上进行更改，立即对相同的更改进行项目的*web.config*文件在本地。 删除这种方式的模块不会影响服务器上的其他应用的模块使用。
 
    ```xml
    <configuration> 
@@ -121,22 +125,6 @@ ms.lasthandoff: 04/06/2018
     </system.webServer> 
    </configuration>
    ```
-
-对于与默认模块安装 IIS 安装，使用以下**\<模块 >**部分，以移除默认模块。
-
-```xml
-<modules>
-  <remove name="CustomErrorModule" />
-  <remove name="DefaultDocumentModule" />
-  <remove name="DirectoryListingModule" />
-  <remove name="HttpCacheModule" />
-  <remove name="HttpLoggingModule" />
-  <remove name="ProtocolSupportModule" />
-  <remove name="RequestFilteringModule" />
-  <remove name="StaticCompressionModule" /> 
-  <remove name="StaticFileModule" /> 
-</modules>
-```
 
 IIS 模块也可能会删除与*Appcmd.exe*。 提供`MODULE_NAME`和`APPLICATION_NAME`命令中：
 
@@ -155,6 +143,10 @@ Appcmd.exe delete module MODULE_NAME /app.name:APPLICATION_NAME
 若要运行 ASP.NET Core 应用所需的唯一模块是匿名身份验证模块和 ASP.NET 核心模块。
 
 ![显示最少模块配置到模块打开 IIS 管理器](modules/_static/modules.png)
+
+URI 缓存模块 (`UriCacheModule`) 在 URL 级别的缓存网站配置为允许 IIS。 如果没有此模块，IIS 必须读取和分析对每个请求的配置，即使重复请求相同的 URL。 解析配置每个请求将导致对显著的性能产生负面影响。 *虽然 URI 缓存模块并非是严格要求为托管的 ASP.NET Core 应用程序运行，我们建议，所有 ASP.NET Core 部署都启用 URI 缓存模块。*
+
+HTTP 缓存模块 (`HttpCacheModule`) 实现 IIS 输出缓存以及缓存 HTTP.sys 高速缓存中的项的逻辑。 如果没有此模块内容不再在内核模式下，缓存和缓存配置文件将被忽略。 通常移除 HTTP 缓存模块具有对性能和资源使用情况的负面影响。 *虽然 HTTP 缓存模块并非是严格要求为托管的 ASP.NET Core 应用程序运行，我们建议，所有 ASP.NET Core 部署都启用 HTTP 缓存模块。*
 
 ## <a name="additional-resources"></a>其他资源
 

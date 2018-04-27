@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/introduction
-ms.openlocfilehash: 7ba1966dcaf1ce0510f489cfe0ff11501faffa56
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: f969cb26d1fcddeac967b1e3d13e3c06ebc7631f
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="introduction-to-authorization-in-aspnet-core"></a>在 ASP.NET Core 中授权简介
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 03/22/2018
 
 授权是指确定进程用户是能够执行。 例如，管理用户可以创建文档库、 将文档添加、 编辑文档，以及删除它们。 使用库的非管理用户仅有权读取文档。
 
-授权是正交和独立于身份验证，这是有助于确定用户是谁的过程。 身份验证可能会创建一个或多个标识为当前用户。
+授权是正交和独立于身份验证。 但是，授权要求的身份验证机制。 身份验证是有助于确定用户是谁的过程。 身份验证可能会创建一个或多个标识为当前用户。
 
 ## <a name="authorization-types"></a>授权类型
 

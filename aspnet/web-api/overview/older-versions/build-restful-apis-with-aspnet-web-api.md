@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 320409cd395384a608a07307a56d18105d45de14
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ded549109ca6e7ad806f1c3f53387766527e5a94
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/26/2018
 ---
 <a name="build-restful-apis-with-aspnet-web-api"></a>生成与 ASP.NET Web API RESTful Api
 ====================
@@ -25,7 +25,7 @@ ms.lasthandoff: 04/06/2018
 > 最近几年，它已变得明确 HTTP 并不只是为了提供 HTML 页面。 它也是一个功能强大的平台，用于生成 Web Api，使用少量的谓词 （GET、 POST 和等） 以及几个简单的概念类似于*Uri*和*标头*。 ASP.NET Web API 是一组组件，用于简化 HTTP 编程。 由于它构建基于 ASP.NET MVC 运行时，Web API 将自动处理 HTTP 低级别的传输详细的信息。 同时，Web API 自然公开 HTTP 编程模型。 事实上，Web api 的一个目标是为*不*抽象化 HTTP 的现实。 因此，Web API 是灵活且易于扩展。 在此动手实验中，你将使用 Web API 构建一个简单的 REST API 为联系人管理器应用程序。 你还将建立客户端使用该 API。 REST 体系结构样式已被证明是一种利用 HTTP 的有效方法，尽管它肯定不是唯一有效的 HTTP 方法。 联系人管理器将公开用于列出、 添加和删除联系人，以及其他基于 Rest。 本实验需要基本了解 HTTP，其余部分，并且假定你已基本了解 HTML、 JavaScript 和 jQuery。
 > 
 > > [!NOTE]
-> > ASP.NET Web 站点有专用于在 ASP.NET Web API 框架的区域[ [ https://asp.net/web-api ](https://asp.net/web-api) ](https://asp.net/web-api)。 此站点将继续提供最新信息、 示例和新闻与 Web API，因此它经常检查如果你想要深入探讨创建可用于几乎任何设备或开发框架自定义 Web Api 的技巧。
+> > ASP.NET Web 站点有专用于在 ASP.NET Web API 框架的区域[ https://asp.net/web-api ](https://asp.net/web-api)。 此站点将继续提供最新信息、 示例和新闻与 Web API，因此它经常检查如果你想要深入探讨创建可用于几乎任何设备或开发框架自定义 Web Api 的技巧。
 > > 
 > > ASP.NET Web API，类似于 ASP.NET MVC 4，具有很大的灵活性，以将服务层与允许你同时使用多个可用的依赖关系注入框架变得相当容易控制器分开。 没有很好的示例演示如何使用你可以下载它从 ASP.NET Web API 项目中的依赖关系注入 Ninject 的 MSDN 中[此处](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)。
 > 
@@ -53,7 +53,7 @@ ms.lasthandoff: 04/06/2018
 
 **安装代码片段**
 
-为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。 若要安装运行的代码段**.\Source\Setup\CodeSnippets.vsi**文件。
+为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。 若要安装运行的代码段 **.\Source\Setup\CodeSnippets.vsi**文件。
 
 如果你不熟悉 Visual Studio 代码段，并想要了解如何使用它们，你可以从该文档引用的附录&quot;[附录 a： 使用代码段](#AppendixA)&quot;。
 
@@ -157,7 +157,7 @@ ms.lasthandoff: 04/06/2018
 
 在此任务中，你将创建 API 方法将驻留在其中的控制器类。
 
-1. 右键单击**模型**文件夹，然后选择**添加 |类...**从上下文菜单。
+1. 右键单击**模型**文件夹，然后选择**添加 |类...** 从上下文菜单。
 
     ![将新的模型添加到 web 应用程序](build-restful-apis-with-aspnet-web-api/_static/image10.png "将新的模型添加到 web 应用程序")
 
@@ -190,7 +190,7 @@ ms.lasthandoff: 04/06/2018
    1. 浏览器打开后，按**F12**如果开发人员工具还不打开。
    2. 单击**网络**选项卡。
    3. 按**启动捕获**按钮。
-   4. 添加 URL 后缀**/api/联系人**到地址栏，然后按 URL **Enter**密钥。
+   4. 添加 URL 后缀 **/api/联系人**到地址栏，然后按 URL **Enter**密钥。
    5. 按**转到详细视图**按钮。
    6. 选择**响应正文**选项卡。你应看到表示联系人实例的数组的序列化的格式的 JSON 字符串。
 
@@ -210,7 +210,7 @@ ms.lasthandoff: 04/06/2018
     ![创建服务文件夹](build-restful-apis-with-aspnet-web-api/_static/image14.png "创建服务文件夹")
 
     *创建服务文件夹*
-2. 右键单击**服务**文件夹，然后选择**添加 |类...**从上下文菜单。
+2. 右键单击**服务**文件夹，然后选择**添加 |类...** 从上下文菜单。
 
     ![将新类添加到服务文件夹](build-restful-apis-with-aspnet-web-api/_static/image15.png "将新类添加到服务文件夹")
 
@@ -291,7 +291,7 @@ ms.lasthandoff: 04/06/2018
 在此任务中，你将准备增强，以便它可以接受用户输入在练习 1 中创建的 Web API 项目。
 
 1. 运行**Visual Studio 2012 Express for Web**，为此请转到**启动**和类型**VS Express for Web**然后按**Enter**。
-2. 打开**开始**解决方案位于**源/Ex02-ReadWriteWebAPI/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
+2. 打开**开始**解决方案位于**源/Ex02-ReadWriteWebAPI/开始/** 文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
@@ -345,7 +345,7 @@ ms.lasthandoff: 04/06/2018
 在此任务中，你将要修改默认索引视图的 web 应用程序以支持在 HTML 浏览器中显示现有联系人的列表的要求。
 
 1. 打开**Visual Studio 2012 Express for Web**如果尚未打开。
-2. 打开**开始**解决方案位于**源/Ex03-ConsumingWebAPI/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
+2. 打开**开始**解决方案位于**源/Ex03-ConsumingWebAPI/开始/** 文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
@@ -652,7 +652,7 @@ ASP.NET Web 站点有专用于在 ASP.NET Web API 框架的区域[ [ https://asp
     *Web 部署配置*
 5. 配置数据库连接，如下所示：
 
-   - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:*前缀。
+   - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:* 前缀。
    - 在**用户名**键入您的服务器管理员登录名。
    - 在**密码**键入服务器管理员登录密码。
    - 键入新的数据库名称，例如： *MVC4SampleDB*。
