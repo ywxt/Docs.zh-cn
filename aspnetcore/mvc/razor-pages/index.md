@@ -3,17 +3,18 @@ title: ASP.NET Core 中的 Razor 页面介绍
 author: Rick-Anderson
 description: 了解 ASP.NET Core 中的 Razor 页面如何使基于页面的编码方式比使用 MVC 更简单高效。
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/12/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 532799d013f26869da03fe1062072f55dcce35f8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5e2b53a4771a97b0a4091f593720b9c0e4e345bf
+ms.sourcegitcommit: c4a31aaf902f2e84aaf4a9d882ca980fdf6488c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor 页面介绍
 
@@ -291,7 +292,7 @@ Pages/_ViewImports.cshtml 文件设置以下命名空间：
 * /Pages
 
   * Index.cshtml
-  * /Customer
+  * /Customers
 
     * Create.cshtml
     * Edit.cshtml
@@ -314,7 +315,7 @@ Pages/_ViewImports.cshtml 文件设置以下命名空间：
 | RedirectToPage("../Index") | *Pages/Index* |
 | RedirectToPage("Index")  | *Pages/Customers/Index* |
 
-`RedirectToPage("Index")`、`RedirectToPage("./Index")` 和 `RedirectToPage("../Index")` 是相对名称。 结合 `RedirectToPage` 参数与当前页的路径来计算目标页面的名称。  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page. -- page name, not page path -->
+`RedirectToPage("Index")`、`RedirectToPage("./Index")` 和 `RedirectToPage("../Index")` 是相对名称。 结合 `RedirectToPage` 参数与当前页的路径来计算目标页面的名称。  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page.  page name, not page path -->
 
 构建结构复杂的站点时，相对名称链接很有用。 如果使用相对名称链接文件夹中的页面，则可以重命名该文件夹。 所有链接仍然有效（因为这些链接未包含此文件夹名称）。
 
@@ -417,6 +418,7 @@ services.AddMvc()
 ## <a name="see-also"></a>请参阅
 
 * [ASP.NET Core 简介](xref:index)
+* [Razor 语法](xref:mvc/views/razor)
 * [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)
 * [Razor 页面授权约定](xref:security/authorization/razor-pages-authorization)
 * [Razor 页面自定义路由和页面模型提供程序](xref:mvc/razor-pages/razor-pages-convention-features)

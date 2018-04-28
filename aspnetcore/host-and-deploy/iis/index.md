@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 64eb85f75a6c2e10bf8c39f32eeda5311744f2a2
-ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
+ms.openlocfilehash: 9f164b6e1f3cc520b704cbb5ffdaadb99cebdc57
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -25,9 +25,7 @@ ms.lasthandoff: 04/03/2018
 支持下列操作系统：
 
 * Windows 7 或更高版本
-* Windows Server 2008 R2 或更高版本#8224;
-
-&#8224;在概念上，本文档描述的 IIS 配置也适用于在 Nano Server IIS 上托管 ASP.NET Core 应用。 有关 Nano Server 的具体说明，请参阅 [Nano Server 上运行的 ASP.NET Core 与 IIS](xref:tutorials/nano-server) 教程。
+* Windows Server 2008 R2 或更高版本
 
 [HTTP.sys 服务器](xref:fundamentals/servers/httpsys)（以前称为 [WebListener](xref:fundamentals/servers/weblistener)）在使用 IIS 的反向代理配置中不起作用。 请使用 [Kestrel 服务器](xref:fundamentals/servers/kestrel)。
 
@@ -45,7 +43,7 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-ASP.NET Core 模块生成分配给后端进程的动态端口。 `UseIISIntegration` 方法获取该动态端口，并将 Kestrel 配置为侦听 `http://locahost:{dynamicPort}/`。 这将替代其他 URL 配置，如对 `UseUrls` 或 [Kestrel 的侦听 API](xref:fundamentals/servers/kestrel#endpoint-configuration) 的调用。 因此，使用模块时，不需要调用 `UseUrls` 或 Kestrel 的 `Listen` API。 如果调用 `UseUrls` 或 `Listen`，则 Kestrel 会侦听在没有 IIS 的情况下运行应用时指定的端口。
+ASP.NET Core 模块生成分配给后端进程的动态端口。 `UseIISIntegration` 方法获取该动态端口，并将 Kestrel 配置为侦听 `http://localhost:{dynamicPort}/`。 这将替代其他 URL 配置，如对 `UseUrls` 或 [Kestrel 的侦听 API](xref:fundamentals/servers/kestrel#endpoint-configuration) 的调用。 因此，使用模块时，不需要调用 `UseUrls` 或 Kestrel 的 `Listen` API。 如果调用 `UseUrls` 或 `Listen`，则 Kestrel 会侦听在没有 IIS 的情况下运行应用时指定的端口。
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -169,13 +167,13 @@ ASP.NET Core 应用在 IIS 与 Kestrel 服务器之间的反向代理中托管�
 
 ---
 
-## <a name="install-the-net-core-windows-server-hosting-bundle"></a>安装 .NET Core Windows Server 托管捆绑包
+## <a name="install-the-net-core-hosting-bundle"></a>安装 .NET Core 托管捆绑包
 
-1. 在托管系统上安装 *.NET Core Windows Server 托管捆绑包*。 捆绑包可安装 .NET Core 运行时、.NET Core 库和 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)。 该模块创建 IIS 与 Kestrel 服务器之间的反向代理。 如果系统没有 Internet 连接，请先获取并安装 [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840)，再安装 .NET Core Windows Server 托管捆绑包。
+1. 在托管系统上安装 .NET Core 托管捆绑包。 捆绑包可安装 .NET Core 运行时、.NET Core 库和 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)。 该模块创建 IIS 与 Kestrel 服务器之间的反向代理。 如果系统没有 Internet 连接，请先获取并安装 [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840)，然后再安装 .NET Core 托管捆绑包。
 
    1. 导航到 [.NET“所有下载”页](https://www.microsoft.com/net/download/all)。
    1. 从列表中选择最新的非预览 .NET Core 运行时（.NET Core > 运行时 > .NET Core 运行时 x.y.z）。 除非你想要使用预览软件，否则请避免选择其链接文本中包含“预览”一词的运行时。
-   1. 在 Windows 下的 .NET Core 运行时下载页上，选择“服务器托管安装程序”链接以下载 .NET Core Windows Server 托管捆绑包。
+   1. 在 Windows 下的 .NET Core 运行时下载页上，选择“托管捆绑包安装程序”链接以下载 .NET Core 托管捆绑包。
 
    **重要提示！** 如果在 IIS 之前安装了托管捆绑包，则必须修复捆绑包安装。 在安装 IIS 后再次运行托管捆绑包安装程序。
    
@@ -196,7 +194,8 @@ ASP.NET Core 应用在 IIS 与 Kestrel 服务器之间的反向代理中托管�
 
 1. 在新文件夹中创建一个“日志”文件夹，用于在启用 stdout 日志记录时保存 ASP.NET Core 模块 stdout 日志。 如果部署应用时有效负载中包含了“日志”文件夹，请跳过此步骤。 有关如何启用 MSBuild 以在本地生成项目时自动创建“日志”文件夹的说明，请参阅[目录结构](xref:host-and-deploy/directory-structure)主题。
 
-   **重要提示！** 仅使用 stdout 日志来解决应用启动失败的问题。 请勿使用 stdout 日志记录进行常规应用日志记录。 日志文件大小或创建的日志文件数没有限制。 有关 stdout 日志的详细信息，请参阅[日志创建和重定向](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection)。 有关 ASP.NET Core 应用中的日志记录信息，请参阅[日志记录](xref:fundamentals/logging/index)主题。
+   > [!IMPORTANT]
+   > 仅使用 stdout 日志来解决应用启动失败的问题。 请勿使用 stdout 日志记录进行常规应用日志记录。 日志文件大小或创建的日志文件数没有限制。 应用池必须对写入日志的位置具有写入权限。 日志位置路径上的所有文件夹都必须存在。 有关 stdout 日志的详细信息，请参阅[日志创建和重定向](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection)。 有关 ASP.NET Core 应用中的日志记录信息，请参阅[日志记录](xref:fundamentals/logging/index)主题。
 
 1. 在“IIS 管理器”中，打开“连接”面板中的服务器节点。 右键单击“站点”文件夹。 选择上下文菜单中的“添加网站”。
 
@@ -242,6 +241,8 @@ ASP.NET Core 应用在 IIS 与 Kestrel 服务器之间的反向代理中托管�
 
 有多种方法可将应用移动到托管系统，例如手动复制、Xcopy、Robocopy 或 PowerShell，可使用其中任何一种方法。
 
+有关将 ASP.NET Core 部署到 IIS 的详细信息，请参阅[面向 IIS 管理员的部署资源](#deployment-resources-for-iis-administrators)部分。
+
 ## <a name="browse-the-website"></a>浏览网站
 
 ![Microsoft Edge 浏览器已加载 IIS 启动页。](index/_static/browsewebsite.png)
@@ -250,7 +251,7 @@ ASP.NET Core 应用在 IIS 与 Kestrel 服务器之间的反向代理中托管�
 
 如果应用正在运行，部署文件夹中的文件会被锁定。 在部署期间，无法覆盖已锁定的文件。 若要在部署中解除已锁定的文件，请使用以下方法之一停止应用池：
 
-* 使用 Web 部署并在项目文件中引用 `Microsoft.NET.Sdk.Web`。 系统会在 Web 应用目录的根目录中放置一个 app_offline.htm 文件。 该文件存在时，ASP.NET Core 模块会在部署过程中正常关闭该应用并提供 app_offline.htm 文件。 有关详细信息，请参阅 [ASP.NET Core 模块配置参考](xref:host-and-deploy/aspnet-core-module#appofflinehtm)。
+* 使用 Web 部署并在项目文件中引用 `Microsoft.NET.Sdk.Web`。 系统会在 Web 应用目录的根目录中放置一个 app_offline.htm 文件。 该文件存在时，ASP.NET Core 模块会在部署过程中正常关闭该应用并提供 app_offline.htm 文件。 有关详细信息，请参阅 [ASP.NET Core 模块配置参考](xref:host-and-deploy/aspnet-core-module#app_offlinehtm)。
 * 在服务器上的 IIS 管理器中手动停止应用池。
 * 使用 PowerShell 来停止和重新启动应用池（需要使用 PowerShell 5 或更高版本）：
 
@@ -409,13 +410,34 @@ ICACLS C:\sites\MyWebApp /grant "IIS AppPool\DefaultAppPool":F
 
 有关详细信息，请参阅 [icacls](/windows-server/administration/windows-commands/icacls) 主题。
 
+## <a name="deployment-resources-for-iis-administrators"></a>面向 IIS 管理员的部署资源
+
+在 IIS 文档中深入了解 IIS。  
+[IIS 文档](/iis)
+
+了解 .NET Core 应用部署模型。  
+[.NET Core 应用程序部署](/dotnet/core/deploying/)
+
+了解 ASP.NET Core 模块如何使 Kestrel Web 服务器将 IIS 或 IIS Express 用作反向代理服务器。  
+[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)
+
+了解如何配置 ASP.NET Core 模块以托管 ASP.NET Core 应用。  
+[ASP.NET Core 模块配置参考](xref:host-and-deploy/aspnet-core-module)
+
+了解已发布的 ASP.NET Core 应用的目录结构。  
+[目录结构](xref:host-and-deploy/directory-structure)
+
+了解适用于 ASP.NET Core 应用的活动和非活动 IIS 模块以及如何管理 IIS 模块。  
+[IIS 模块](xref:host-and-deploy/iis/troubleshoot)
+
+了解如何诊断 ASP.NET Core 应用的 IIS 部署的问题。  
+[疑难解答](xref:host-and-deploy/iis/troubleshoot)
+
+了解在 IIS 上托管 ASP.NET Core 应用的常见错误。  
+[Azure 应用服务和 IIS 的常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)
+
 ## <a name="additional-resources"></a>其他资源
 
-* [对 IIS 上的 ASP.NET Core 进行故障排除](xref:host-and-deploy/iis/troubleshoot)
-* [Azure 应用服务和 IIS 上 ASP.NET Core 的常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)
-* [ASP.NET Core 模块简介](xref:fundamentals/servers/aspnet-core-module)
-* [ASP.NET Core 模块配置参考](xref:host-and-deploy/aspnet-core-module)
-* [IIS Modules 与 ASP.NET Core](xref:host-and-deploy/iis/modules)
-* [ASP.NET Core 简介](../index.md)
+* [ASP.NET Core 简介](xref:index)
 * [Microsoft IIS 官方网站](https://www.iis.net/)
-* [Microsoft TechNet 库：Windows Server](/windows-server/windows-server-versions)
+* [Windows Server 技术内容库](/windows-server/windows-server)

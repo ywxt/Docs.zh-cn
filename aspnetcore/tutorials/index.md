@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 教程"
+title: ASP.NET Core 教程
 author: rick-anderson
-description: "用于了解如何开发 ASP.NET Core 应用程序的分步指南列表。"
+description: 用于了解如何开发 ASP.NET Core 应用程序的分步指南列表。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: fd58a6a3e35a706d503603790fa1c726e6c865d6
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: 9cd14a47a512c2a887614e617dd914dbdb25cb9d
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 教程
 
@@ -32,55 +32,54 @@ ms.lasthandoff: 03/16/2018
 
 * 创建 ASP.NET Core MVC Web 应用
 
-   * [使用 Visual Studio for Windows 创建 Web 应用](first-mvc-app/index.md)
-   * [使用 Visual Studio for Mac 创建 Web 应用](first-mvc-app-mac/index.md)
-   * [在 macOS 或 Linux 上使用 Visual Studio Code 创建 Web 应用](first-mvc-app-xplat/index.md)
+   * [使用 Visual Studio for Windows 创建 Web 应用](xref:tutorials/first-mvc-app/index)
+   * [使用 Visual Studio for Mac 创建 Web 应用](xref:tutorials/first-mvc-app-mac/index)
+   * [在 macOS 或 Linux 上使用 Visual Studio Code 创建 Web 应用](xref:tutorials/first-mvc-app-xplat/index)
 
-* [通过 Visual Studio 开始使用 ASP.NET Core 和 Entity Framework Core](../data/ef-mvc/index.md)
-* [创建标记帮助程序](../mvc/views/tag-helpers/authoring.md)
-* [创建简单的视图组件](../mvc/views/view-components.md#walkthrough-creating-a-simple-view-component)
-* [使用 dotnet watch 开发 ASP.NET Core 应用](dotnet-watch.md)
+* [通过 Visual Studio 开始使用 ASP.NET Core 和 Entity Framework Core](xref:data/ef-mvc/index)
+* [创建标记帮助程序](xref:mvc/views/tag-helpers/authoring)
+* [创建简单的视图组件](xref:mvc/views/view-components#walkthrough-creating-a-simple-view-component)
+* [使用 dotnet watch 开发 ASP.NET Core 应用](xref:tutorials/dotnet-watch)
 
 ## <a name="build-web-apis"></a>生成 Web API
 * 使用 ASP.NET Core 创建 Web API
 
-  * [使用 Visual Studio for Windows 创建 Web API](first-web-api.md)
+  * [使用 Visual Studio for Windows 创建 Web API](xref:tutorials/first-web-api)
   * [使用 Visual Studio for Mac 创建 Web API](xref:tutorials/first-web-api-mac)
-  * [使用 Visual Studio Code 创建 Web API](web-api-vsc.md)
+  * [使用 Visual Studio Code 创建 Web API](xref:tutorials/web-api-vsc)
 
 * [使用 Swagger 的 ASP.NET Core Web API 帮助页](xref:tutorials/web-api-help-pages-using-swagger)
   * [NSwag 入门](xref:tutorials/get-started-with-nswag)
   * [Swashbuckle 入门](xref:tutorials/get-started-with-swashbuckle)
 
-* [为本机移动应用创建后端 Web 服务](../mobile/native-mobile-backend.md)
+* [为本机移动应用创建后端 Web 服务](xref:mobile/native-mobile-backend)
 
 ## <a name="data-access-and-storage"></a>数据访问和存储
 * [通过 Visual Studio 开始使用 Razor 页面和 EF Core](xref:data/ef-rp/intro)
-* [通过 Visual Studio 开始使用 ASP.NET Core MVC 和 EF Core](../data/ef-mvc/index.md)
-* [ASP.NET Core MVC 和 EF Core - 新数据库](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
-* [ASP.NET Core MVC 和 EF Core - 现有数据库](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)
+* [通过 Visual Studio 开始使用 ASP.NET Core MVC 和 EF Core](xref:data/ef-mvc/index)
+* [ASP.NET Core MVC 和 EF Core - 新数据库](/ef/core/get-started/aspnetcore/new-db)
+* [ASP.NET Core MVC 和 EF Core - 现有数据库](/ef/core/get-started/aspnetcore/existing-db)
 
 ## <a name="authentication-and-authorization"></a>身份验证和授权
-* [启用使用 Facebook、Google 和其他外部提供程序的身份验证](../security/authentication/social/index.md)
-* [帐户确认和密码恢复](../security/authentication/accconfirm.md)
-* [使用 SMS 设置双因素身份验证](../security/authentication/2fa.md)
+* [启用使用 Facebook、Google 和其他外部提供程序的身份验证](xref:security/authentication/social/index)
+* [帐户确认和密码恢复](xref:security/authentication/accconfirm)
+* [使用 SMS 设置双因素身份验证](xref:security/authentication/2fa)
 
 ## <a name="client-side-development"></a>客户端开发
-* [使用 Gulp](../client-side/using-gulp.md)
-* [使用 Grunt](../client-side/using-grunt.md)
-* [使用 Bower 管理客户端包](../client-side/bower.md)
-* [使用 Bootstrap 构建响应式站点](../client-side/bootstrap.md)
+* [使用 Gulp](xref:client-side/using-gulp)
+* [使用 Grunt](xref:client-side/using-grunt)
+* [使用 Bower 管理客户端包](xref:client-side/bower)
+* [使用 Bootstrap 构建响应式站点](xref:client-side/bootstrap)
 
 ## <a name="test"></a>测试
-* [使用 dotnet 测试在 .NET Core 中进行单元测试](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
+* [使用 dotnet 测试在 .NET Core 中进行单元测试](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 
-## <a name="publish-and-deploy"></a>发布和部署
-* [使用 Visual Studio 将 ASP.NET Core Web 应用部署到 Azure](publish-to-azure-webapp-using-vs.md)
-* [使用命令行将 ASP.NET Core Web 应用部署到 Azure](publish-to-azure-webapp-using-cli.md)
+## <a name="host-and-deploy"></a>托管和部署
+* [使用 Visual Studio 将 ASP.NET Core Web 应用部署到 Azure](xref:tutorials/publish-to-azure-webapp-using-vs)
+* [使用命令行将 ASP.NET Core Web 应用部署到 Azure](xref:tutorials/publish-to-azure-webapp-using-cli)
 * [通过持续部署发布到 Azure Web 应用](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
-* [将 ASP.NET 容器部署到远程 Docker 主机](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
-* [Nano Server 上的 ASP.NET Core](nano-server.md)
-* [ASP.NET Core 和 Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-add-a-web-frontend)
+* [将 ASP.NET 容器部署到远程 Docker 主机](/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
+* [ASP.NET Core 和 Azure Service Fabric](/azure/service-fabric/service-fabric-add-a-web-frontend)
 
 <a name="download"></a> 
 ## <a name="how-to-download-a-sample"></a>如何下载示例

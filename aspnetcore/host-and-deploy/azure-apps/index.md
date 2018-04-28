@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: c2675f73880a41ee75f6ec13155419945387e109
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f53f77d342cc59094a80e8667db6ef345a6e8305
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>在 Azure 应用服务上托管 ASP.NET Core
 
@@ -95,14 +95,13 @@ ASP.NET Core 文档中提供以下文章：
 
 可通过以下方法将 ASP.NET Core 预览应用部署到 Azure 应用服务：
 
-* [安装预览站点扩展](#site-x)
-* [部署自包含应用](#self)
-* [对用于容器的 Web 应用使用 Docker](#docker)
+* [安装预览站点扩展](#install-the-preview-site-extension)
+* [部署自包含应用](#deploy-the-app-self-contained)
+* [对用于容器的 Web 应用使用 Docker](#use-docker-with-web-apps-for-containers)
 
 如果使用预览站点扩展时遇到问题，请在 [GitHub](https://github.com/aspnet/azureintegration/issues/new) 上打开相应的问题。
 
-<a name="site-x"></a>
-### <a name="install-the-preview-site-extention"></a>安装预览站点扩展
+### <a name="install-the-preview-site-extension"></a>安装预览站点扩展
 
 * 从 Azure 门户导航到“应用服务”边栏选项卡。
 * 在搜索框中输入“ex”。
@@ -111,10 +110,10 @@ ASP.NET Core 文档中提供以下文章：
 
 ![显示上述部署的 Azure 应用边栏选项卡](index/_static/x1.png)
 
-* 选择“ASP.NET Core 运行时扩展”。
-* 选择“确定” > “确定”。
+* 选择“ASP.NET Core 2.1 (x86) 运行时”或“ASP.NET Core 2.1 (x64)”运行时。
+* 选择“确定”。 再次选择“确定”。
 
-添加操作完成时，即表示已安装最新的 .NET Core 2.1 预览。 可通过在控制台中运行 `dotnet --info` 来验证安装。 从“应用服务”边栏选项卡：
+添加操作完成时，即表示已安装最新的 .NET Core 2.1 预览。 通过在控制台中运行 `dotnet --info` 来验证安装。 从“应用服务”边栏选项卡：
 
 * 在搜索框中输入“con”。
 * 选择“控制台”。
@@ -126,26 +125,24 @@ ASP.NET Core 文档中提供以下文章：
 
 `dotnet --info` 显示已安装该预览的站点扩展的路径。 它显示应用从该站点扩展运行，而不是从默认的 ProgramFiles 位置运行。 如果看到 ProgramFiles，请重启该站点并运行 `dotnet --info`。
 
-#### <a name="use-the-preview-site-extention-with-an-arm-template"></a>通过 ARM 模板使用预览站点扩展
+**通过 ARM 模板使用预览站点扩展**
 
-如果使用 ARM 模板来创建和部署应用程序，则可使用 `siteextensions` 资源类型将站点扩展添加到 Web 应用。 例如:
+如果使用 ARM 模板创建和部署应用，则可使用 `siteextensions` 资源类型将站点扩展添加到 Web 应用。 例如:
 
 [!code-json[Main](index/sample/arm.json?highlight=2)]
 
-<a name="self"></a>
 ### <a name="deploy-the-app-self-contained"></a>部署自包含应用
 
-可以部署[自包含应用](/dotnet/core/deploying/#self-contained-deployments-scd)，它在部署时附有预览运行时。 部署自包含应用时：
+可以部署在部署中携带部署预览运行时的[自包含应用](/dotnet/core/deploying/#self-contained-deployments-scd)。 部署自包含应用时：
 
-* 无需准备站点。
-* 在服务器上安装 SDK 后，需要采用不同于部署应用时的方式来发布应用程序。
+* 不需要准备站点。
+* 相较于依赖框架的部署（使用服务器上的共享运行时和主机）的发布方式，必须以不同的方式发布此类应用。
 
-对所有 .NET Core 应用程序而言，自包含应用都是一个不错的选择。
+对所有 ASP.NET Core 应用而言，自包含应用都是一个不错的选择。
 
-<a name="docker"></a>
 ### <a name="use-docker-with-web-apps-for-containers"></a>对用于容器的 Web 应用使用 Docker
 
-[Docker 中心](https://hub.docker.com/r/microsoft/aspnetcore/)包含最新的 2.1 预览 Docker 映像。 可将这些映像用作基础映像，并像平常一样将其部署到用于容器的 Web 应用。
+[Docker 中心](https://hub.docker.com/r/microsoft/aspnetcore/)包含最新的 2.1 预览 Docker 映像。 这些映像可以用作基础映像。 按常规方法使用映像并部署到用于容器的 Web 应用。
 
 ## <a name="additional-resources"></a>其他资源
 
