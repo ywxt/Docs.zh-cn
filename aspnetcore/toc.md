@@ -226,6 +226,7 @@
 ## [入门](xref:signalr/get-started)
 ## [中心](xref:signalr/hubs)
 ## [JavaScript 客户端](xref:signalr/javascript-client)
+## [发布到 Azure](xref:signalr/publish-to-azure-web-app)
 ## [支持的平台](xref:signalr/supported-platforms)
 
 # [移动](xref:mobile/index)
