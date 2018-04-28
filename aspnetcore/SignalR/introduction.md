@@ -1,21 +1,21 @@
 ---
 title: ASP.NET 核心 SignalR 简介
 author: rachelappel
-description: 了解如何 ASP.NET 核心 SignalR 库简化了将实时 web 功能添加到应用。
+description: 了解如何 ASP.NET 核心 SignalR 库简化了将实时功能添加到应用。
 manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
-ms.date: 03/07/2018
+ms.date: 04/25/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/introduction
-ms.openlocfilehash: fa9b10201b5dc0e67bcd6d1321a3737e2025fda4
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 190dfe9eac95be646b458870ac4ee95f681f45d7
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="introduction-to-aspnet-core-signalr"></a>ASP.NET 核心 SignalR 简介
 
@@ -51,20 +51,17 @@ SignalR 提供了一个 API，用于创建服务器到客户端[远程过程调�
 
 SignalR 通过多种方法用于构建实时 web 应用程序的摘要。 [Websocket](https://tools.ietf.org/html/rfc7118)是最佳的传输，但那些不可用时，可以使用其他技术 Server-Sent 事件和长轮询。 SignalR 将自动检测并初始化了合适的传输，基于在服务器和客户端上受支持的功能。
 
-## <a name="hubs-and-endpoints"></a>中心和终结点
+## <a name="hubs"></a>中心
 
-SignalR 使用中心和终结点，客户端和服务器之间进行通信。 中心 API 介绍的大多数方案。
+SignalR 使用中心客户端和服务器之间进行通信。
 
-基于终结点 API，从而使你的客户端和服务器相互调用方法的高级管道，则集线器。 SignalR 处理调度跨计算机界限自动，允许客户端在服务器上调用方法，作为轻松地为本地方法，反之亦然。 中心允许将强类型参数传递给方法，从而使模型绑定。 SignalR 提供两个内置的中心协议： 文本协议基于 JSON 和基于二进制协议[MessagePack](https://msgpack.org/)。  MessagePack 通常会产生较小比时使用 JSON 消息。 较旧的浏览器必须支持[XHR 级别 2](https://caniuse.com/#feat=xhr2)以提供 MessagePack 协议支持。
+中心是一种高级的管道，允许你的客户端和服务器相互调用方法。 SignalR 处理调度跨计算机界限自动，允许客户端在服务器上调用方法，作为轻松地为本地方法，反之亦然。 中心允许将强类型参数传递给方法，从而使模型绑定。 SignalR 提供两个内置的中心协议： 文本协议基于 JSON 和基于二进制协议[MessagePack](https://msgpack.org/)。  MessagePack 通常会产生较小比时使用 JSON 消息。 较旧的浏览器必须支持[XHR 级别 2](https://caniuse.com/#feat=xhr2)以提供 MessagePack 协议支持。
 
 中心调用通过使用活动传输发送消息的客户端代码。 消息包含的名称和客户端方法的参数。 为方法参数发送的对象是使用已配置的协议反序列化。 客户端尝试匹配到客户端代码中的方法的名称。 如果找到匹配项，使用反序列化的参数数据运行客户端方法。
 
-终结点提供原始类似套接字的 API，使其能够读取和写入来自客户端。 它是最多向开发人员处理分组、 广播和其他功能。 中心 API 基于终结点层。
+## <a name="additional-resources"></a>其他资源
 
-下图显示了中心、 终结点，和客户端之间的关系。
-
-![SignalR 映射](introduction/_static/signalr-core-architecture.png)
-
-## <a name="related-resources"></a>相关资源
-
-[开始使用 SignalR 为 ASP.NET Core](xref:signalr/get-started)
+* [开始使用 SignalR 为 ASP.NET Core](xref:signalr/get-started)
+* [支持的平台](xref:signalr/supported-platforms)
+* [中心](xref:signalr/hubs)
+* [JavaScript 客户端](xref:signalr/javascript-client)

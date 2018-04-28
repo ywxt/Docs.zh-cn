@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 572b263a5f968b473457771a1dd4075910218c01
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a3527b54d1936bc14e32a1828ac3a2be625107ba
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/28/2018
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>ASP.NET 4.5 Web 窗体和 Visual Studio 2013 入门
 ====================
@@ -71,7 +71,7 @@ ms.lasthandoff: 04/06/2018
 - Web 应用程序项目 （而不是网站项目）
 - Web Forms — Web 窗体
 - 主控页配置
-- Bootstrap
+- bootstrap
 - 实体框架代码优先，LocalDB
 - 请求验证
 - 强类型数据控件模型绑定，数据注释，并且值提供程序
@@ -168,7 +168,7 @@ PayPal 将确认你的帐户、 顺序和付款信息。
 
 ## <a name="download-the-sample-application"></a>下载示例应用程序
 
-安装必备项之后, 你就可以开始创建新的 Web 项目显示在本教程系列。 如果你想要进行**（可选)**运行本系列教程创建示例应用程序，你可以从网站下载它 MSDN 示例。 此下载包含以下项目：
+安装必备项之后, 你就可以开始创建新的 Web 项目显示在本教程系列。 如果你想要进行**（可选)** 运行本系列教程创建示例应用程序，你可以从网站下载它 MSDN 示例。 此下载包含以下项目：
 
 - 中的示例应用程序*WingtipToys*文件夹。
 - 用于创建示例应用程序中的资源*WingtipToys 资产*文件夹中的*WingtipToys*文件夹。
@@ -179,12 +179,12 @@ PayPal 将确认你的帐户、 顺序和付款信息。
 
 下载<em>.zip</em>文件。 若要查看已完成本教程系列创建的项目中，找到并选择<em>C#</em>文件夹中的<em>.zip</em>文件。 保存<em>C#</em> folderto 使用以使用 Visual Studio 2013 项目的文件夹。 默认情况下，Visual Studio 2013 项目文件夹如下所示：
 
-<strong>C:\Users\</strong><strong><em>&lt;username&gt;</em></strong><strong>\Documents\Visual Studio 2013\Projects</strong>
+<strong>C:\Users&#92;</strong><strong><em>&lt;用户名&gt;</em></strong><strong>\Documents\Visual Studio 2013\Projects</strong>
 
-重命名***C#***文件夹***WingtipToys***。
+重命名***C#*** 文件夹***WingtipToys***。
 
 > [!NOTE]
-> 如果你已有一个名为文件夹*WingtipToys*在项目文件夹中，暂时重命名该现有文件夹在重命名之前*C#*文件夹*WingtipToys*。
+> 如果你已有一个名为文件夹*WingtipToys*在项目文件夹中，暂时重命名该现有文件夹在重命名之前*C#* 文件夹*WingtipToys*。
 
 
 若要运行已完成的项目，打开*WingtipToys*文件夹并双击*WingtipToys.sln*文件。 Visual Studio 2013 将打开的项目。 接下来，右键单击*Default.aspx*文件位于解决方案资源管理器窗口，并单击右键单击菜单中浏览器中查看。

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: f272f9629ab1f9e7f7643cafd0d45f19340d5284
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 8325776597eab9c673a4847edf87ae0d9e0d3efb
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core 中的配置
 
@@ -316,7 +316,7 @@ ASP.NET Core 2.x 应用可使用 [WebHostBuilder](/dotnet/api/microsoft.aspnetco
 dotnet run key1=value1 -key2=value2 --key3=value3 /key4=value4
 ```
 
-注意：如果向配置提供程序提供的[交换映射](#switch-mappings)中没有 `-key1`，则将引发 `FormatException`。
+注意：如果向配置提供程序提供的[交换映射](#switch-mappings)中没有 `-key2`，则将引发 `FormatException`。
 
 **两个参数的序列**
 
