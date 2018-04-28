@@ -1,22 +1,25 @@
 ---
-title: ASP.NET 核心 SignalR
+title: ASP.NET Core SignalR
 author: rachelappel
-description: 发现到 ASP.NET 核心 SignalR 相关的主题。
+description: 了解关于 ASP.NET Core SignalR 的主题。
 manager: wpickett
+monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
-ms.date: 03/29/2018
+ms.date: 04/20/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/index
-ms.openlocfilehash: 5ec8d8d1ff7b49281857b0868c289dccf632736d
-ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
-ms.translationtype: MT
+ms.openlocfilehash: 5918b25f595bc545b020df7f020eee592c6045e7
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="aspnet-core-signalr"></a><span data-ttu-id="1e63a-103">ASP.NET 核心 SignalR</span><span class="sxs-lookup"><span data-stu-id="1e63a-103">ASP.NET Core SignalR</span></span>
+# <a name="aspnet-core-signalr"></a><span data-ttu-id="c1f97-103">ASP.NET Core SignalR</span><span class="sxs-lookup"><span data-stu-id="c1f97-103">ASP.NET Core SignalR</span></span>
 
-* [<span data-ttu-id="1e63a-104">开始使用 SignalR 为 ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="1e63a-104">Get started with SignalR for ASP.NET Core</span></span>](xref:signalr/get-started)
-* [<span data-ttu-id="1e63a-105">有关 ASP.NET 核心的 SignalR 简介</span><span class="sxs-lookup"><span data-stu-id="1e63a-105">Introduction to SignalR for ASP.NET Core</span></span>](xref:signalr/introduction)
-* [<span data-ttu-id="1e63a-106">SignalR 集线器</span><span class="sxs-lookup"><span data-stu-id="1e63a-106">SignalR Hubs</span></span>](xref:signalr/hubs)
+* [<span data-ttu-id="c1f97-104">入门</span><span class="sxs-lookup"><span data-stu-id="c1f97-104">Get started</span></span>](xref:signalr/get-started)
+* [<span data-ttu-id="c1f97-105">介绍</span><span class="sxs-lookup"><span data-stu-id="c1f97-105">Introduction</span></span>](xref:signalr/introduction)
+* [<span data-ttu-id="c1f97-106">中心</span><span class="sxs-lookup"><span data-stu-id="c1f97-106">Hubs</span></span>](xref:signalr/hubs)
+* [<span data-ttu-id="c1f97-107">JavaScript 客户端</span><span class="sxs-lookup"><span data-stu-id="c1f97-107">JavaScript client</span></span>](xref:signalr/javascript-client)
+* [<span data-ttu-id="c1f97-108">支持的平台</span><span class="sxs-lookup"><span data-stu-id="c1f97-108">Supported platforms</span></span>](xref:signalr/supported-platforms)
