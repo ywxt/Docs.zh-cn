@@ -1,21 +1,22 @@
 ---
-title: "ASP.NET Core 2.x 及更高版本的 Microsoft.AspNetCore.All 元包"
+title: ASP.NET Core 2.x 及更高版本的 Microsoft.AspNetCore.All 元包
 author: Rick-Anderson
-description: "Microsoft.AspNetCore.All 元包包含所有受支持的 ASP.NET Core 和 Entity Framework Core 包及其依赖关系。"
+description: Microsoft.AspNetCore.All 元包包含所有受支持的 ASP.NET Core 和 Entity Framework Core 包及其依赖关系。
 manager: wpickett
+monikerRange: = aspnetcore-2.0
 ms.author: riande
 ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/metapackage
-ms.openlocfilehash: 07220fdae299723088fa85e452cedff5e5685bd7
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4c11f15e659565325bfe8b8d91188b62177b251d
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/18/2018
 ---
-#<a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-2x"></a>ASP.NET Core 2.x 的 Microsoft.AspNetCore.All 元包
+# <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-2x"></a>ASP.NET Core 2.x 的 Microsoft.AspNetCore.All 元包
 
 此功能需要面向 .NET Core 2.x 的 ASP.NET Core 2.x。
 
@@ -25,7 +26,7 @@ ASP.NET Core 的 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Micro
 * Entity Framework Core 支持的所有包。 
 * ASP.NET Core 和 Entity Framework Core 使用的内部和第三方依赖关系。 
 
-`Microsoft.AspNetCore.All` 包中包含了 ASP.NET Core 2.x 和 Entity Framework Core 2.x 的所有功能。 默认项目模板使用此包。
+`Microsoft.AspNetCore.All` 包中包含了 ASP.NET Core 2.x 和 Entity Framework Core 2.x 的所有功能。 定目标到 ASP.NET Core 2.0 的默认项目模板使用此包。
 
 `Microsoft.AspNetCore.All` 元包的版本号表示 ASP.NET Core 版本和 Entity Framework Core 版本（与 .NET Core 版本对齐）。
 
@@ -35,4 +36,4 @@ ASP.NET Core 的 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Micro
 
 以下 .csproj 文件引用了 ASP.NET Core 的 `Microsoft.AspNetCore.All` 元包：
 
-[!code-xml[Main](..\mvc\views\view-compilation\sample\MvcRazorCompileOnPublish2.csproj?highlight=9)]
+[!code-xml[](../mvc/views/view-compilation/sample/MvcRazorCompileOnPublish2.csproj?highlight=9)]
