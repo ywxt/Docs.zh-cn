@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 166111696a9c4244ede44fca8878dd3725bb3099
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0a04f5762a35426f342b58b8b60288c66c057ae7
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>安全存储中 ASP.NET Core 中开发的应用程序机密
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 04/06/2018
 
 本文档说明如何在开发中使用密钥管理器工具需要机密放在代码外部。 最重要的一点是你应永远不会将密码或其他敏感数据存储在源代码中，且你不应在开发和测试模式下使用生产机密。 你可以改用[配置](xref:fundamentals/configuration/index)系统环境变量读取这些值或从值存储使用密钥管理器工具。 密码管理器工具可帮助避免敏感数据被签入源代码管理。 [配置](xref:fundamentals/configuration/index)系统可以读取此文章中所述的密钥管理器工具与存储的机密。
 
-密码管理器工具仅用于开发。 您可以保护与 Azure 的测试和生产机密[Microsoft Azure 密钥保管库](https://azure.microsoft.com/services/key-vault/)配置提供程序。 请参阅[Azure 密钥保管库配置提供程序](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration)有关详细信息。
+密码管理器工具仅用于开发。 您可以保护与 Azure 的测试和生产机密[Microsoft Azure 密钥保管库](https://azure.microsoft.com/services/key-vault/)配置提供程序。 请参阅[Azure 密钥保管库配置提供程序](xref:security/key-vault-configuration)有关详细信息。
 
 ## <a name="environment-variables"></a>环境变量
 
@@ -42,15 +42,15 @@ ms.lasthandoff: 04/06/2018
 ## <a name="installing-the-secret-manager-tool"></a>安装机密管理器工具
 
 #### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
-右键单击解决方案资源管理器中的项目并选择**编辑\<文件的内容\>.csproj**从上下文菜单。 添加到突出显示的行将*.csproj*文件中，并保存以还原相关联的 NuGet 程序包：
+右键单击解决方案资源管理器中的项目并选择**编辑\<文件的内容\>.csproj**从上下文菜单。 添加到突出显示的行将 *.csproj*文件中，并保存以还原相关联的 NuGet 程序包：
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
 
-再次右键单击解决方案资源管理器中的项目，然后选择**管理用户的机密信息**从上下文菜单。 添加一个新的该笔势`UserSecretsId`中的节点`PropertyGroup`的*.csproj*文件，那么在下面的示例中突出显示：
+再次右键单击解决方案资源管理器中的项目，然后选择**管理用户的机密信息**从上下文菜单。 添加一个新的该笔势`UserSecretsId`中的节点`PropertyGroup`的 *.csproj*文件，那么在下面的示例中突出显示：
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
 
-保存已修改*.csproj*文件还将打开`secrets.json`在文本编辑器中的文件。 内容替换`secrets.json`文件替换为以下代码：
+保存已修改 *.csproj*文件还将打开`secrets.json`在文本编辑器中的文件。 内容替换`secrets.json`文件替换为以下代码：
 
 ```json
 {
@@ -59,7 +59,7 @@ ms.lasthandoff: 04/06/2018
 ```
 
 #### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
-添加`Microsoft.Extensions.SecretManager.Tools`到*.csproj*文件，运行[dotnet 还原](/dotnet/core/tools/dotnet-restore)。 可以使用相同的步骤来安装命令行使用该密钥管理器工具。
+添加`Microsoft.Extensions.SecretManager.Tools`到 *.csproj*文件，运行[dotnet 还原](/dotnet/core/tools/dotnet-restore)。 可以使用相同的步骤来安装命令行使用该密钥管理器工具。
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
 
@@ -72,11 +72,11 @@ dotnet user-secrets -h
 使用情况、 选项和命令的帮助，将显示在密码管理器工具。
 
 > [!NOTE]
-> 你必须在与位于同一目录*.csproj*文件以运行中定义的工具*.csproj*文件的`DotNetCliToolReference`节点。
+> 你必须在与位于同一目录 *.csproj*文件以运行中定义的工具 *.csproj*文件的`DotNetCliToolReference`节点。
 
-密码管理器工具进行存储用户配置文件中的项目的特定配置设置操作。 若要使用用户的机密信息，项目必须指定`UserSecretsId`值在其*.csproj*文件。 值`UserSecretsId`是任意的但通常唯一的项目。 开发人员通常应生成的 GUID `UserSecretsId`。
+密码管理器工具进行存储用户配置文件中的项目的特定配置设置操作。 若要使用用户的机密信息，项目必须指定`UserSecretsId`值在其 *.csproj*文件。 值`UserSecretsId`是任意的但通常唯一的项目。 开发人员通常应生成的 GUID `UserSecretsId`。
 
-添加`UserSecretsId`为你的项目中*.csproj*文件：
+添加`UserSecretsId`为你的项目中 *.csproj*文件：
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
 
@@ -86,7 +86,7 @@ dotnet user-secrets -h
 dotnet user-secrets set MySecret ValueOfMySecret
 ```
 
-你可以从其他目录，运行密钥管理器工具，但必须使用`--project`选项的路径中传递*.csproj*文件：
+你可以从其他目录，运行密钥管理器工具，但必须使用`--project`选项的路径中传递 *.csproj*文件：
 
 ```console
 dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\webapp1
@@ -117,7 +117,7 @@ dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\w
 
 * macOS: `~/.microsoft/usersecrets/<userSecretsId>/secrets.json`
 
-值`userSecretsId`来自中指定的值*.csproj*文件。
+值`userSecretsId`来自中指定的值 *.csproj*文件。
 
 你不应编写代码所依赖的位置或使用密码管理器工具中，保存的数据格式，如这些实现的详细信息可能会更改。 例如，密钥的值是当前*不*今天，加密，但可能有一天。
 

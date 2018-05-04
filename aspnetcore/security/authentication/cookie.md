@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/cookie
-ms.openlocfilehash: 26101d46557c64047f3d121083fe34ad34ff99ea
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b251aa3ff0b4d0c08f9885cd73a111b7c2008766
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-cookie-authentication-without-aspnet-core-identity"></a>使用 cookie 而无需 ASP.NET 核心标识的身份验证
 
@@ -162,7 +162,7 @@ Cookie 策略中间件设置`MinimumSameSitePolicy`可能会影响你的设置�
 
 ## <a name="creating-an-authentication-cookie"></a>创建身份验证 cookie
 
-若要创建一个保存用户信息的 cookie，您必须先构造[ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal)。 序列化用户信息并将其存储在 cookie 中。 
+若要创建一个保存用户信息的 cookie，您必须先构造[ClaimsPrincipal](/dotnet/api/system.security.claims.claimsprincipal)。 序列化用户信息并将其存储在 cookie 中。 
 
 #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 创建[ClaimsIdentity](/dotnet/api/system.security.claims.claimsidentity)与任何所需[声明](/dotnet/api/system.security.claims.claim)s 并调用[SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signinasync?view=aspnetcore-2.0)若要在用户登录：

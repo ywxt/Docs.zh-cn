@@ -9,11 +9,11 @@ ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: ff92b032fe8bbbcb7bc26a34fdfbc56a0fcc0e2c
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 8296d535725d95682fa5904a43ab196e21b4f83c
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>响应缓存在 ASP.NET 核心中的中间件
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 03/22/2018
 
 [!code-csharp[](middleware/sample/Startup.cs?name=snippet1&highlight=3)]
 
-配置应用程序以使用与中间件`UseResponseCaching`扩展方法，将该中间件添加到请求处理管道。 示例应用添加[ `Cache-Control` ](https://tools.ietf.org/html/rfc7234#section-5.2)最多 10 秒钟来缓存可缓存响应的响应的标头。 该示例发送[ `Vary` ](https://tools.ietf.org/html/rfc7231#section-7.1.4)标头来配置用于缓存的响应仅当该中间件[ `Accept-Encoding` ](https://tools.ietf.org/html/rfc7231#section-5.3.4)的后续请求的标头与原始请求相匹配。
+配置应用程序以使用与中间件`UseResponseCaching`扩展方法，将该中间件添加到请求处理管道。 示例应用添加[ `Cache-Control` ](https://tools.ietf.org/html/rfc7234#section-5.2)最多 10 秒钟来缓存可缓存响应的响应的标头。 该示例发送[ `Vary` ](https://tools.ietf.org/html/rfc7231#section-7.1.4)标头来配置用于缓存的响应仅当该中间件[ `Accept-Encoding` ](https://tools.ietf.org/html/rfc7231#section-5.3.4)的后续请求的标头与原始请求相匹配。 在代码示例中， [CacheControlHeaderValue](/dotnet/api/microsoft.net.http.headers.cachecontrolheadervalue)和[HeaderNames](/dotnet/api/microsoft.net.http.headers.headernames)需要`using`语句[Microsoft.Net.Http.Headers](/dotnet/api/microsoft.net.http.headers)命名空间。
 
 [!code-csharp[](middleware/sample/Startup.cs?name=snippet2&highlight=3,7-12)]
 
@@ -88,15 +88,15 @@ if (responseCachingFeature != null)
 | Header | 详细信息 |
 | ------ | ------- |
 | 授权 | 如果标头存在，则不缓存响应。 |
-| Cache-Control | 该中间件只考虑缓存标记为响应`public`缓存指令。 控制缓存使用以下参数：<ul><li>最长时间</li><li>max-stale&#8224;</li><li>最小值全新</li><li>must-revalidate</li><li>无缓存</li><li>no-store</li><li>仅当-缓存</li><li>private</li><li>public</li><li>s maxage</li><li>proxy-revalidate&#8225;</li></ul>&#8224;如果没有限制指定到`max-stale`，中间件不执行任何操作。<br>&#8225;`proxy-revalidate`具有相同的效果`must-revalidate`。<br><br>有关详细信息，请参阅[RFC 7231： 请求的缓存控制指令](https://tools.ietf.org/html/rfc7234#section-5.2.1)。 |
+| Cache-Control | 该中间件只考虑缓存标记为响应`public`缓存指令。 控制缓存使用以下参数：<ul><li>最长时间</li><li>max-stale&#8224;</li><li>最小值全新</li><li>必须重新验证</li><li>无缓存</li><li>无存储</li><li>仅当-缓存</li><li>private</li><li>public</li><li>s maxage</li><li>代理重新验证&#8225;</li></ul>&#8224;如果没有限制指定到`max-stale`，中间件不执行任何操作。<br>&#8225;`proxy-revalidate`具有相同的效果`must-revalidate`。<br><br>有关详细信息，请参阅[RFC 7231： 请求的缓存控制指令](https://tools.ietf.org/html/rfc7234#section-5.2.1)。 |
 | 杂注 | A`Pragma: no-cache`请求标头中的生成相同的效果`Cache-Control: no-cache`。 此标头中的相关指令来重写`Cache-Control`标头，如果存在。 考虑对与 HTTP/1.0 的向后兼容性。 |
-| Set-Cookie | 如果标头存在，则不缓存响应。 |
+| Set-Cookie | 如果标头存在，则不缓存响应。 设置一个或多个 cookie 的请求处理管道中的任何中间件防止响应缓存中间件缓存响应 (例如，[基于 cookie 的 TempData 提供程序](xref:fundamentals/app-state#tempdata))。  |
 | 改变 | `Vary`标头用于改变缓存的响应的另一个标头。 例如，通过包括通过编码来缓存响应`Vary: Accept-Encoding`标头，来缓存响应的请求标头`Accept-Encoding: gzip`和`Accept-Encoding: text/plain`单独。 标头值为响应`*`永远不会存储。 |
 | 过期 | 通过此标头视为过时的响应不存储或检索除非重写由其他`Cache-Control`标头。 |
-| If-None-Match | 如果该值不完整的响应从缓存提供`*`和`ETag`的响应中不匹配任何提供的值。 否则，提供 304 （未修改） 响应。 |
-| If-Modified-Since | 如果`If-None-Match`标头不存在，如果缓存的响应日期晚于提供的值，完整的响应从缓存中提供。 否则，提供 304 （未修改） 响应。 |
+| None-If-match | 如果该值不完整的响应从缓存提供`*`和`ETag`的响应中不匹配任何提供的值。 否则，提供 304 （未修改） 响应。 |
+| 如果-修改-自 | 如果`If-None-Match`标头不存在，如果缓存的响应日期晚于提供的值，完整的响应从缓存中提供。 否则，提供 304 （未修改） 响应。 |
 | 日期 | 从缓存提供服务时`Date`由该中间件设置标头，如果它未在原始响应上提供。 |
-| Content-Length | 从缓存提供服务时`Content-Length`由该中间件设置标头，如果它未在原始响应上提供。 |
+| 内容长度 | 从缓存提供服务时`Content-Length`由该中间件设置标头，如果它未在原始响应上提供。 |
 | 保留时间 | `Age`在原始响应中发送的标头将被忽略。 提供缓存的响应时，该中间件将计算新值。 |
 
 ## <a name="caching-respects-request-cache-control-directives"></a>缓存遵循请求缓存控制指令
@@ -105,7 +105,7 @@ if (responseCachingFeature != null)
 
 为了更好地控制缓存行为，将介绍其他缓存功能的 ASP.NET Core。 请参见下面的主题：
 
-* [缓存在内存](xref:performance/caching/memory)
+* [内存中缓存](xref:performance/caching/memory)
 * [使用分布式缓存](xref:performance/caching/distributed)
 * [缓存 ASP.NET Core MVC 中的标记帮助器](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
 * [分布式缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
@@ -130,19 +130,19 @@ if (responseCachingFeature != null)
 * `Set-Cookie`标头不能存在。
 * `Vary` 标头参数必须是有效且不等于`*`。
 * `Content-Length`标头值 (如果设置) 必须与匹配的响应正文的大小。
-* [IHttpSendFileFeature](/aspnet/core/api/microsoft.aspnetcore.http.features.ihttpsendfilefeature)未使用。
+* [IHttpSendFileFeature](/dotnet/api/microsoft.aspnetcore.http.features.ihttpsendfilefeature)未使用。
 * 响应不能为指定的陈旧`Expires`标头和`max-age`和`s-maxage`缓存指令。
 * 响应缓冲必须成功，并且响应的大小必须小于配置或默认`SizeLimit`。
 * 响应必须是可根据缓存[RFC 7234](https://tools.ietf.org/html/rfc7234)规范。 例如，`no-store`指令必须在请求或响应标头字段中存在。 请参阅*第 3 部分： 在缓存中存储响应*的[RFC 7234](https://tools.ietf.org/html/rfc7234)有关详细信息。
 
 > [!NOTE]
-> Antiforgery 系统用于生成安全令牌，以防止跨站点请求伪造 (CSRF) 攻击集`Cache-Control`和`Pragma`标头到`no-cache`以便不缓存响应。
+> Antiforgery 系统用于生成安全令牌，以防止跨站点请求伪造 (CSRF) 攻击集`Cache-Control`和`Pragma`标头到`no-cache`以便不缓存响应。 有关如何禁用 antiforgery 令牌 HTML 窗体元素的信息，请参阅[ASP.NET Core antiforgery 配置](xref:security/anti-request-forgery#aspnet-core-antiforgery-configuration)。
 
 ## <a name="additional-resources"></a>其他资源
 
 * [应用程序启动](xref:fundamentals/startup)
 * [中间件](xref:fundamentals/middleware/index)
-* [缓存在内存](xref:performance/caching/memory)
+* [内存中缓存](xref:performance/caching/memory)
 * [使用分布式缓存](xref:performance/caching/distributed)
 * [使用更改令牌检测更改](xref:fundamentals/primitives/change-tokens)
 * [响应缓存](xref:performance/caching/response)

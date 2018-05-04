@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: e02f3a75269e5e4a4794d1979d3a5add21fe38be
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: cbdef871ffc3269e3118d23ed20306a71b9df030
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="migrate-http-handlers-and-modules-to-aspnet-core-middleware"></a>将 HTTP 处理程序和模块迁移到 ASP.NET 核心中间件
 
 通过[Matt Perdeck](https://www.linkedin.com/in/mattperdeck)
 
-这篇文章演示如何迁移现有的 ASP.NET [HTTP 模块和处理程序 system.webserver](https://docs.microsoft.com/iis/configuration/system.webserver/)到 ASP.NET 核心[中间件](xref:fundamentals/middleware/index)。
+这篇文章演示如何迁移现有的 ASP.NET [HTTP 模块和处理程序 system.webserver](/iis/configuration/system.webserver/)到 ASP.NET 核心[中间件](xref:fundamentals/middleware/index)。
 
 ## <a name="modules-and-handlers-revisited"></a>模块和处理程序重新访问
 
@@ -29,15 +29,15 @@ ms.lasthandoff: 04/06/2018
 
 **处理程序：**
 
-   * 类实现[IHttpHandler](https://docs.microsoft.com/dotnet/api/system.web.ihttphandler)
+   * 类实现[IHttpHandler](/dotnet/api/system.web.ihttphandler)
 
-   * 用于使用处理请求的给定的文件名或扩展，如*.report*
+   * 用于使用处理请求的给定的文件名或扩展，如 *.report*
 
-   * [配置](https://docs.microsoft.com//iis/configuration/system.webserver/handlers/)中*Web.config*
+   * [配置](/iis/configuration/system.webserver/handlers/)中*Web.config*
 
 **模块为：**
 
-   * 类实现[IHttpModule](https://docs.microsoft.com/dotnet/api/system.web.ihttpmodule)
+   * 类实现[IHttpModule](/dotnet/api/system.web.ihttpmodule)
 
    * 调用为每个请求
 
@@ -45,11 +45,11 @@ ms.lasthandoff: 04/06/2018
 
    * 无法添加到 HTTP 响应中，或创建自己
 
-   * [配置](https://docs.microsoft.com//iis/configuration/system.webserver/modules/)中*Web.config*
+   * [配置](/iis/configuration/system.webserver/modules/)中*Web.config*
 
 **模块顺序处理传入的请求的顺序取决于：**
 
-   1. [应用程序生命周期](https://msdn.microsoft.com/library/ms227673.aspx)，这是由 ASP.NET 激发的系列事件： [BeginRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.beginrequest)， [AuthenticateRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.authenticaterequest)等。每个模块可以创建一个或多个事件处理程序。
+   1. [应用程序生命周期](https://msdn.microsoft.com/library/ms227673.aspx)，这是由 ASP.NET 激发的系列事件： [BeginRequest](/dotnet/api/system.web.httpapplication.beginrequest)， [AuthenticateRequest](/dotnet/api/system.web.httpapplication.authenticaterequest)等。每个模块可以创建一个或多个事件处理程序。
 
    2. 对于相同的事件，它们在配置中的顺序*Web.config*。
 
@@ -243,7 +243,7 @@ HTTP 处理程序如下所示：
 public async Task Invoke(HttpContext context)
 ```
 
-`HttpContext` 已显著更改 ASP.NET Core 中。 本部分说明如何将转换的最常用的属性[System.Web.HttpContext](https://docs.microsoft.com/dotnet/api/system.web.httpcontext)对新`Microsoft.AspNetCore.Http.HttpContext`。
+`HttpContext` 已显著更改 ASP.NET Core 中。 本部分说明如何将转换的最常用的属性[System.Web.HttpContext](/dotnet/api/system.web.httpcontext)对新`Microsoft.AspNetCore.Http.HttpContext`。
 
 ### <a name="httpcontext"></a>HttpContext
 
@@ -283,7 +283,7 @@ public async Task Invoke(HttpContext context)
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Cookies)]
 
-**HttpContext.Request.RequestContext.RouteData** translates to:
+**HttpContext.Request.RequestContext.RouteData**都会转换为：
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Route)]
 
@@ -295,7 +295,7 @@ public async Task Invoke(HttpContext context)
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Agent)]
 
-**HttpContext.Request.UrlReferrer** translates to:
+**HttpContext.Request.UrlReferrer**都会转换为：
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Referrer)]
 

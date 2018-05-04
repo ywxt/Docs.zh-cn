@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET 核心标识的自定义的存储提供程序"
+title: ASP.NET 核心标识的自定义的存储提供程序
 author: ardalis
-description: "了解如何配置 ASP.NET 核心标识的自定义存储提供程序。"
+description: 了解如何配置 ASP.NET 核心标识的自定义存储提供程序。
 manager: wpickett
 ms.author: riande
 ms.date: 05/24/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 559c5c58b416912b1caef1964ff8d7532bd98439
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: bd5e5219765dfea0305fa02e79e5423266ce4df2
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET 核心标识的自定义的存储提供程序
 
@@ -25,7 +25,7 @@ ASP.NET 核心标识是一种可扩展系统，可用于创建自定义存储提
 
 ## <a name="introduction"></a>介绍
 
-默认情况下，ASP.NET 核心标识系统中使用实体框架核心的 SQL Server 数据库存储用户信息。 对于许多应用程序，此方法也适用。 但是，你可能希望使用不同的持久性机制或数据架构。 例如:
+默认情况下，ASP.NET 核心标识系统中使用实体框架核心的 SQL Server 数据库存储用户信息。 对于许多应用程序，此方法也适用。 但是，你可能希望使用不同的持久性机制或数据架构。 例如：
 
 * 你使用[Azure 表存储](https://docs.microsoft.com/azure/storage/)或其他数据存储。
 * 数据库表具有不同的结构。 
@@ -62,19 +62,19 @@ ASP.NET 核心标识包含类称为管理器和存储区。 *管理器*是高级
 
 ### <a name="users"></a>用户
 
-注册用户的网站的用户。 [IdentityUser](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuser)可能扩展类型，或将其用作自定义类型的示例。 你不必继承来实现自定义标识的存储解决方案的特定类型。
+注册用户的网站的用户。 [IdentityUser](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuser)可能扩展类型，或将其用作自定义类型的示例。 你不必继承来实现自定义标识的存储解决方案的特定类型。
 
 ### <a name="user-claims"></a>用户声明
 
-一组语句 (或[声明](https://docs.microsoft.com//dotnet/api/system.security.claims.claim)) 有关的用户的表示用户的标识。 可以启用的用户的标识不是可以通过角色实现更大的表达式。
+一组语句 (或[声明](/dotnet/api/system.security.claims.claim)) 有关的用户的表示用户的标识。 可以启用的用户的标识不是可以通过角色实现更大的表达式。
 
 ### <a name="user-logins"></a>用户登录名
 
-有关外部身份验证提供程序 （如 Facebook 或 Microsoft 帐户） 的信息在用户日志记录时使用。 [示例](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuserlogin)
+有关外部身份验证提供程序 （如 Facebook 或 Microsoft 帐户） 的信息在用户日志记录时使用。 [示例](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuserlogin)
 
 ### <a name="roles"></a>角色
 
-你的站点的授权组。 包括 （如"Admin"或"Employee"） 的角色 Id 和角色名称。 [示例](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityrole)
+你的站点的授权组。 包括 （如"Admin"或"Employee"） 的角色 Id 和角色名称。 [示例](/dotnet/api/microsoft.aspnet.identity.corecompat.identityrole)
 
 ## <a name="the-data-access-layer"></a>数据访问层
 
@@ -86,27 +86,27 @@ ASP.NET 核心标识包含类称为管理器和存储区。 *管理器*是高级
 
 ### <a name="context-class"></a>Context 类
 
-封装用于连接到持久性机制和执行查询的信息。 多个数据类需要通过依赖关系注入通常提供此类的实例。 [示例](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.identitydbcontext-1)。
+封装用于连接到持久性机制和执行查询的信息。 多个数据类需要通过依赖关系注入通常提供此类的实例。 [示例](/dotnet/api/microsoft.aspnet.identity.corecompat.identitydbcontext-1)。
 
 ### <a name="user-storage"></a>用户存储
 
-存储和检索用户信息 （如用户名称和密码哈希）。 [示例](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
+存储和检索用户信息 （如用户名称和密码哈希）。 [示例](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 ### <a name="role-storage"></a>角色存储
 
-存储和检索角色信息 （如角色名称中）。 [示例](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.rolestore-1)
+存储和检索角色信息 （如角色名称中）。 [示例](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.rolestore-1)
 
 ### <a name="userclaims-storage"></a>UserClaims 存储
 
-存储和检索用户声明信息 （如的声明类型和值）。 [示例](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
+存储和检索用户声明信息 （如的声明类型和值）。 [示例](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 ### <a name="userlogins-storage"></a>UserLogins 存储
 
-存储和检索用户登录信息 （例如外部身份验证提供程序）。 [示例](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
+存储和检索用户登录信息 （例如外部身份验证提供程序）。 [示例](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 ### <a name="userrole-storage"></a>UserRole 存储
 
-存储和检索哪些角色分配给哪些用户。 [示例](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
+存储和检索哪些角色分配给哪些用户。 [示例](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 **提示：**仅实现你要在应用程序中使用的类。
 
@@ -118,7 +118,7 @@ ASP.NET 核心标识包含类称为管理器和存储区。 *管理器*是高级
 
 ## <a name="customize-the-user-class"></a>自定义用户类
 
-时实现存储提供程序，创建一个用户类，这等效于[`IdentityUser`类](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuser)。
+时实现存储提供程序，创建一个用户类，这等效于[`IdentityUser`类](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuser)。
 
 您的用户类必须包含至少`Id`和`UserName`属性。
 
@@ -126,13 +126,13 @@ ASP.NET 核心标识包含类称为管理器和存储区。 *管理器*是高级
 
 ## <a name="customize-the-user-store"></a>自定义用户存储区
 
-创建`UserStore`提供用户的所有数据操作的方法的类。 此类是等效于[UserStore<TUser> ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.userstore-1)类。 在你`UserStore`类中，实现`IUserStore<TUser>`和所需的可选接口。 你选择的可选接口，以实现基于你的应用程序中提供的功能。
+创建`UserStore`提供用户的所有数据操作的方法的类。 此类是等效于[UserStore<TUser> ](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.userstore-1)类。 在你`UserStore`类中，实现`IUserStore<TUser>`和所需的可选接口。 你选择的可选接口，以实现基于你的应用程序中提供的功能。
 
 ### <a name="optional-interfaces"></a>可选接口
 
-- IUserRoleStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserrolestore-1
-- IUserClaimStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserclaimstore-1
-- IUserPasswordStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserpasswordstore-1
+- IUserRoleStore /dotnet/api/microsoft.aspnetcore.identity.iuserrolestore-1
+- IUserClaimStore /dotnet/api/microsoft.aspnetcore.identity.iuserclaimstore-1
+- IUserPasswordStore /dotnet/api/microsoft.aspnetcore.identity.iuserpasswordstore-1
 - IUserSecurityStampStore <!-- make these all links and remove / -->
 - IUserEmailStore
 - IPhoneNumberStore
@@ -150,29 +150,29 @@ ASP.NET 核心标识包含类称为管理器和存储区。 *管理器*是高级
 ### <a name="interfaces-to-implement-when-customizing-user-store"></a>要实现自定义用户存储时的接口
 
 - **IUserStore**  
- [IUserStore&lt;热熔器&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserstore-1)接口是在用户存储中必须实现的唯一接口。 它定义了用于创建、 更新、 删除和检索用户的方法。
+ [IUserStore&lt;热熔器&gt;](/dotnet/api/microsoft.aspnetcore.identity.iuserstore-1)接口是在用户存储中必须实现的唯一接口。 它定义了用于创建、 更新、 删除和检索用户的方法。
 - **IUserClaimStore**  
- [IUserClaimStore&lt;热熔器&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserclaimstore-1)接口定义实现以启用用户声明的方法。 它包含用于添加、 删除和检索用户声明的方法。
+ [IUserClaimStore&lt;热熔器&gt;](/dotnet/api/microsoft.aspnetcore.identity.iuserclaimstore-1)接口定义实现以启用用户声明的方法。 它包含用于添加、 删除和检索用户声明的方法。
 - **IUserLoginStore**  
- [IUserLoginStore&lt;热熔器&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserloginstore-1)定义实现以启用外部身份验证提供程序的方法。 它包含用于添加、 删除和检索用户登录名和用于检索用户的登录信息基于方法的方法。
+ [IUserLoginStore&lt;热熔器&gt;](/dotnet/api/microsoft.aspnetcore.identity.iuserloginstore-1)定义实现以启用外部身份验证提供程序的方法。 它包含用于添加、 删除和检索用户登录名和用于检索用户的登录信息基于方法的方法。
 - **IUserRoleStore**  
- [IUserRoleStore&lt;热熔器&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserrolestore-1)接口定义实现的用户映射到角色的方法。 它包含要添加、 删除和检索用户的角色和方法来检查是否将用户分配到角色的方法。
+ [IUserRoleStore&lt;热熔器&gt;](/dotnet/api/microsoft.aspnetcore.identity.iuserrolestore-1)接口定义实现的用户映射到角色的方法。 它包含要添加、 删除和检索用户的角色和方法来检查是否将用户分配到角色的方法。
 - **IUserPasswordStore**  
- [IUserPasswordStore&lt;热熔器&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserpasswordstore-1)接口定义实现以保持经过哈希处理的密码的方法。 它包含用于获取和设置工作经过哈希处理的密码，以及用于指示用户是否已设置密码的方法的方法。
+ [IUserPasswordStore&lt;热熔器&gt;](/dotnet/api/microsoft.aspnetcore.identity.iuserpasswordstore-1)接口定义实现以保持经过哈希处理的密码的方法。 它包含用于获取和设置工作经过哈希处理的密码，以及用于指示用户是否已设置密码的方法的方法。
 - **IUserSecurityStampStore**  
- [IUserSecurityStampStore&lt;热熔器&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iusersecuritystampstore-1)接口定义的方法实现用于安全戳，该值指示是否已更改用户的帐户信息。 当用户更改密码，或添加或删除登录名，将更新此 stamp。 它包含用于获取和设置安全戳的方法。
+ [IUserSecurityStampStore&lt;热熔器&gt;](/dotnet/api/microsoft.aspnetcore.identity.iusersecuritystampstore-1)接口定义的方法实现用于安全戳，该值指示是否已更改用户的帐户信息。 当用户更改密码，或添加或删除登录名，将更新此 stamp。 它包含用于获取和设置安全戳的方法。
 - **IUserTwoFactorStore**  
- [IUserTwoFactorStore&lt;热熔器&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iusertwofactorstore-1)接口定义实现以支持两个因素身份验证的方法。 它包含用于获取和设置是否为用户启用双重身份验证的方法。
+ [IUserTwoFactorStore&lt;热熔器&gt;](/dotnet/api/microsoft.aspnetcore.identity.iusertwofactorstore-1)接口定义实现以支持两个因素身份验证的方法。 它包含用于获取和设置是否为用户启用双重身份验证的方法。
 - **IUserPhoneNumberStore**  
- [IUserPhoneNumberStore&lt;热熔器&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserphonenumberstore-1)接口定义实现以存储用户电话号码的方法。 它包含用于获取和设置的电话号码和是否确认的电话号码的方法。
+ [IUserPhoneNumberStore&lt;热熔器&gt;](/dotnet/api/microsoft.aspnetcore.identity.iuserphonenumberstore-1)接口定义实现以存储用户电话号码的方法。 它包含用于获取和设置的电话号码和是否确认的电话号码的方法。
 - **IUserEmailStore**  
- [IUserEmailStore&lt;热熔器&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuseremailstore-1)接口定义实现以存储用户电子邮件地址的方法。 它包含用于获取和设置的电子邮件地址和是否确认电子邮件的方法。
+ [IUserEmailStore&lt;热熔器&gt;](/dotnet/api/microsoft.aspnetcore.identity.iuseremailstore-1)接口定义实现以存储用户电子邮件地址的方法。 它包含用于获取和设置的电子邮件地址和是否确认电子邮件的方法。
 - **IUserLockoutStore**  
- [IUserLockoutStore&lt;热熔器&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserlockoutstore-1)接口定义为存储帐户的锁定信息而实现的方法。 它包含用于跟踪未成功的访问和锁定方法。
+ [IUserLockoutStore&lt;热熔器&gt;](/dotnet/api/microsoft.aspnetcore.identity.iuserlockoutstore-1)接口定义为存储帐户的锁定信息而实现的方法。 它包含用于跟踪未成功的访问和锁定方法。
 - **IQueryableUserStore**  
- [IQueryableUserStore&lt;热熔器&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iqueryableuserstore-1)接口定义成员实现此方法可以提供可查询的用户存储区。
+ [IQueryableUserStore&lt;热熔器&gt;](/dotnet/api/microsoft.aspnetcore.identity.iqueryableuserstore-1)接口定义成员实现此方法可以提供可查询的用户存储区。
 
-应用程序中实现所需的接口。 例如:
+应用程序中实现所需的接口。 例如：
 
 ```csharp
 public class UserStore : IUserStore<IdentityUser>,
@@ -188,7 +188,7 @@ public class UserStore : IUserStore<IdentityUser>,
 
 ### <a name="identityuserclaim-identityuserlogin-and-identityuserrole"></a>IdentityUserClaim、 IdentityUserLogin 和 IdentityUserRole
 
-``Microsoft.AspNet.Identity.EntityFramework``命名空间包含的实现[IdentityUserClaim](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserclaim-1)， [IdentityUserLogin](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuserlogin)，和[IdentityUserRole](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserrole-1)类。 如果你正使用这些功能，你可能想要创建你自己版本的这些类并定义你的应用程序的属性。 但是，有时它会更加高效，若要执行基本操作 （如添加或删除用户的声明） 时不将这些实体加载到内存。 相反后, 端存储类可以执行这些操作直接在数据源上。 例如，``UserStore.GetClaimsAsync``方法可以调用``userClaimTable.FindByUserId(user.Id)``方法上执行查询，它直接表并返回的声明列表。
+``Microsoft.AspNet.Identity.EntityFramework``命名空间包含的实现[IdentityUserClaim](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserclaim-1)， [IdentityUserLogin](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuserlogin)，和[IdentityUserRole](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserrole-1)类。 如果你正使用这些功能，你可能想要创建你自己版本的这些类并定义你的应用程序的属性。 但是，有时它会更加高效，若要执行基本操作 （如添加或删除用户的声明） 时不将这些实体加载到内存。 相反后, 端存储类可以执行这些操作直接在数据源上。 例如，``UserStore.GetClaimsAsync``方法可以调用``userClaimTable.FindByUserId(user.Id)``方法上执行查询，它直接表并返回的声明列表。
 
 ## <a name="customize-the-role-class"></a>自定义角色类
 
@@ -200,10 +200,10 @@ public class UserStore : IUserStore<IdentityUser>,
 
 ## <a name="customize-the-role-store"></a>自定义角色存储
 
-你可以创建``RoleStore``提供在角色上的所有数据操作的方法的类。 此类是等效于[RoleStore<TRole> ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.rolestore-1)类。 在`RoleStore`类时，实现``IRoleStore<TRole>``和 （可选）``IQueryableRoleStore<TRole>``接口。
+你可以创建``RoleStore``提供在角色上的所有数据操作的方法的类。 此类是等效于[RoleStore<TRole> ](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.rolestore-1)类。 在`RoleStore`类时，实现``IRoleStore<TRole>``和 （可选）``IQueryableRoleStore<TRole>``接口。
 
 - **IRoleStore&lt;TRole&gt;**  
- [IRoleStore](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.irolestore-1)接口定义角色存储类中实现的方法。 它包含用于创建、 更新、 删除和检索角色的方法。
+ [IRoleStore](/dotnet/api/microsoft.aspnetcore.identity.irolestore-1)接口定义角色存储类中实现的方法。 它包含用于创建、 更新、 删除和检索角色的方法。
 - **RoleStore&lt;TRole&gt;**  
  若要自定义`RoleStore`，创建一个类以实现`IRoleStore`接口。 
 

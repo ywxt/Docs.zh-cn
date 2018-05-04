@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: aabbbe66aee8c8b93140bcc4181b432017cec1d7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 484cee3565fc5b72c19559f3fb907070d8178f9d
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="microsoft-account-external-login-setup-with-aspnet-core"></a>使用 ASP.NET Core 的 Microsoft 帐户外部登录设置
 
@@ -45,7 +45,7 @@ ms.lasthandoff: 04/06/2018
 
 ![添加平台对话框](index/_static/MicrosoftDevAppPlatform.png)
 
-* 在新**Web**平台部分中，输入与你开发的 URL */signin-microsoft*追加到**重定向 Url**字段 (例如： `https://localhost:44320/signin-microsoft`)。 本教程中稍后配置的 Microsoft 身份验证方案将自动处理请求在*/signin-microsoft*要实现的 OAuth 流路由：
+* 在新**Web**平台部分中，输入与你开发的 URL */signin-microsoft*追加到**重定向 Url**字段 (例如： `https://localhost:44320/signin-microsoft`)。 本教程中稍后配置的 Microsoft 身份验证方案将自动处理请求在 */signin-microsoft*要实现的 OAuth 流路由：
 
 ![Web 平台部分](index/_static/MicrosoftRedirectUri.png)
 
@@ -105,7 +105,7 @@ app.UseMicrosoftAccountAuthentication(new MicrosoftAccountOptions()
 * * *
 尽管在 Microsoft 开发人员门户上使用的术语名称这些令牌`ApplicationId`和`Password`，它们作为公开`ClientId`和`ClientSecret`到配置 API。
 
-请参阅[MicrosoftAccountOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.microsoftaccountoptions)支持 Microsoft 帐户身份验证的配置选项的详细信息的 API 参考。 这可以用于请求有关用户的不同信息。
+请参阅[MicrosoftAccountOptions](/dotnet/api/microsoft.aspnetcore.builder.microsoftaccountoptions)支持 Microsoft 帐户身份验证的配置选项的详细信息的 API 参考。 这可以用于请求有关用户的不同信息。
 
 ## <a name="sign-in-with-microsoft-account"></a>使用 Microsoft 帐户登录
 

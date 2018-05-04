@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity
-ms.openlocfilehash: b3bfae665403162db1fb012fac227275b1dfd6c9
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f9215767bf9a7c8b43b474848ba7dff7c3ddaf24
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>在 ASP.NET Core 上的标识简介
 
@@ -23,7 +23,7 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 
 你可以配置 ASP.NET 核心标识来使用 SQL Server 数据库来存储用户名、 密码和配置文件数据。 或者，你可以使用你自己的持久存储区，例如，Azure 表存储。 本文档包含用于 Visual Studio 以及有关使用 CLI 的说明。
 
-[查看或下载的示例代码。](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [（如何下载）](https://docs.microsoft.com/aspnet/core/tutorials/index#how-to-download-a-sample)
+[查看或下载的示例代码。](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [（如何下载）](xref:tutorials/index#how-to-download-a-sample)
 
 ## <a name="overview-of-identity"></a>标识的概述
 
@@ -139,7 +139,7 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 
 7. 查看数据库。
 
-   如果你的应用使用 SQL Server 数据库 （默认在 Windows 上以及为 Visual Studio 用户），你可以查看数据库中创建的应用。 你可以使用**SQL Server Management Studio**。 或者，从 Visual Studio 中，选择**视图** > **SQL Server 对象资源管理器**。 连接到**(localdb) \MSSQLLocalDB**。 名称匹配的数据库**aspnet-<*的你的项目名称*>-<*日期字符串*>** 显示。
+   如果你的应用使用 SQL Server 数据库 （默认在 Windows 上以及为 Visual Studio 用户），你可以查看数据库中创建的应用。 你可以使用**SQL Server Management Studio**。 或者，从 Visual Studio 中，选择**视图** > **SQL Server 对象资源管理器**。 连接到 **(localdb) \MSSQLLocalDB**。 名称匹配的数据库**aspnet-<*的你的项目名称*>-<*日期字符串*>** 显示。
 
    ![在 AspNetUsers 数据库表的上下文菜单](identity/_static/04-db.png)
 

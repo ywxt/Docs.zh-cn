@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: ada8120189baf036296b83f91d20b364ee90d074
-ms.sourcegitcommit: 07903a1be39a99dcf538d57981161592d0e658b8
+ms.openlocfilehash: 2d6cc526b5a0890103e2856a0ca4b58c5f162c79
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>管理 ASP.NET Core 中的 Bower 的客户端包
 
@@ -107,7 +107,7 @@ Bower 使用[语义版本控制](http://semver.org/)来组织依赖关系。 语
 ### <a name="enable-static-files"></a>启用静态文件
 
 * 添加`Microsoft.AspNetCore.StaticFiles`到项目的 NuGet 包。
-* 启用静态文件提供与[静态文件中间件](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.staticfileextensions)。 添加对的调用[UseStaticFiles](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.staticfileextensions)到`Configure`方法`Startup`。
+* 启用静态文件提供与[静态文件中间件](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions)。 添加对的调用[UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions)到`Configure`方法`Startup`。
 
 [!code-csharp[](bower/sample/Startup.cs?highlight=9)]
 

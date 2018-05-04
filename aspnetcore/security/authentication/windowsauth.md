@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/windowsauth
-ms.openlocfilehash: ff47519db4e9d1c5aea8811fef24c84bb564e80e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 876e1ab67fd283a9a8788bb2c7ef0ec111075794
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>在 ASP.NET 核心中配置 Windows 身份验证
 
@@ -25,7 +25,7 @@ Windows 身份验证可以配置用于与 IIS 托管的 ASP.NET Core 应用[HTTP
 
 Windows 身份验证依赖于操作系统的 ASP.NET Core 应用的用户进行身份验证。 在使用 Active Directory 域标识或其他 Windows 帐户来标识用户的企业网络上运行你的服务器时，你可以使用 Windows 身份验证。 Windows 身份验证是最适合 intranet 环境中的用户、 客户端应用程序和 web 服务器属于同一 Windows 域。
 
-[了解有关 Windows 身份验证和为 IIS 安装](https://docs.microsoft.com/iis/configuration/system.webServer/security/authentication/windowsAuthentication/)。
+[了解有关 Windows 身份验证和为 IIS 安装](/iis/configuration/system.webServer/security/authentication/windowsAuthentication/)。
 
 ## <a name="enable-windows-authentication-in-an-aspnet-core-app"></a>启用 ASP.NET Core 应用程序中的 Windows 身份验证
 

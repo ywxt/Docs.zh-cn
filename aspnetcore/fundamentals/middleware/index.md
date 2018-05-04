@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: a410d686b6140a487efb9962e94f64cfbec245f2
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: 4c44063fb3385fc625c35c8a3cf06a35b5b0afb7
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 中间件
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 04/26/2018
 
 请求委托用于生成请求管道。 请求委托处理每个 HTTP 请求。
 
-使用 [Run](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions)、[Map](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) 和 [Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions) 扩展方法来配置请求委托。 可将一个单独的请求委托并行指定为匿名方法（称为并行中间件），或在可重用的类中对其进行定义。 这些可重用的类和并行匿名方法即为中间件或中间件组件。 请求管道中的每个中间件组件负责调用管道中的下一个组件，或在适当情况下使链发生短路。
+使用 [Run](/dotnet/api/microsoft.aspnetcore.builder.runextensions)、[Map](/dotnet/api/microsoft.aspnetcore.builder.mapextensions) 和 [Use](/dotnet/api/microsoft.aspnetcore.builder.useextensions) 扩展方法来配置请求委托。 可将一个单独的请求委托并行指定为匿名方法（称为并行中间件），或在可重用的类中对其进行定义。 这些可重用的类和并行匿名方法即为中间件或中间件组件。 请求管道中的每个中间件组件负责调用管道中的下一个组件，或在适当情况下使链发生短路。
 
 [将 HTTP 模块迁移到中间件](xref:migration/http-modules)介绍了 ASP.NET Core 和 ASP.NET 4.x 中请求管道之间的差异，并提供了更多的中间件示例。
 
@@ -46,9 +46,9 @@ ASP.NET Core 请求管道包含一系列相继调用的请求委托，如下图�
 
 [!code-csharp[](index/sample/Middleware/Startup.cs)]
 
-第一个 [app.Run](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions) 委托终止了管道。
+第一个 [app.Run](/dotnet/api/microsoft.aspnetcore.builder.runextensions) 委托终止了管道。
 
-可使用 [app.Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions) 将多个请求委托链接在一起。 `next` 参数表示管道中的下一个委托。 （请记住，可通过不调用 next 参数使管道短路。）通常可在下一个委托前后执行操作，如以下示例所示：
+可使用 [app.Use](/dotnet/api/microsoft.aspnetcore.builder.useextensions) 将多个请求委托链接在一起。 `next` 参数表示管道中的下一个委托。 （请记住，可通过不调用 next 参数使管道短路。）通常可在下一个委托前后执行操作，如以下示例所示：
 
 [!code-csharp[](index/sample/Chain/Startup.cs?name=snippet1)]
 
@@ -57,7 +57,7 @@ ASP.NET Core 请求管道包含一系列相继调用的请求委托，如下图�
 > - 可能导致违反协议。 例如，写入的长度超过规定的 `content-length`。
 > - 可能损坏正文格式。 例如，向 CSS 文件中写入 HTML 页脚。
 >
-> [HttpResponse.HasStarted](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.features.httpresponsefeature#Microsoft_AspNetCore_Http_Features_HttpResponseFeature_HasStarted) 是一个有用的提示，指示是否已发送标头和/或已写入正文。
+> [HttpResponse.HasStarted](/dotnet/api/microsoft.aspnetcore.http.features.httpresponsefeature#Microsoft_AspNetCore_Http_Features_HttpResponseFeature_HasStarted) 是一个有用的提示，指示是否已发送标头和/或已写入正文。
 
 ## <a name="ordering"></a>中间件排序
 
@@ -122,7 +122,7 @@ public void Configure(IApplicationBuilder app)
 
 -----------
 
-以下示例演示中间件排序，其中静态文件的请求在响应压缩中间件前由静态文件中间件进行处理。 静态文件未通过此中间件排序进行压缩。 可压缩来自 [UseMvcWithDefaultRoute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mvcapplicationbuilderextensions#Microsoft_AspNetCore_Builder_MvcApplicationBuilderExtensions_UseMvcWithDefaultRoute_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 的 MVC 响应。
+以下示例演示中间件排序，其中静态文件的请求在响应压缩中间件前由静态文件中间件进行处理。 静态文件未通过此中间件排序进行压缩。 可压缩来自 [UseMvcWithDefaultRoute](/dotnet/api/microsoft.aspnetcore.builder.mvcapplicationbuilderextensions#Microsoft_AspNetCore_Builder_MvcApplicationBuilderExtensions_UseMvcWithDefaultRoute_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 的 MVC 响应。
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -140,7 +140,7 @@ public void Configure(IApplicationBuilder app)
 
 使用 `Use`、`Run` 和 `Map` 配置 HTTP 管道。 `Use` 方法可使管道短路（即不调用 `next` 请求委托）。 `Run` 是一种约定，并且某些中间件组件可公开在管道末尾运行的 `Run[Middleware]` 方法。
 
-`Map*` 扩展用作约定来创建管道分支。 [Map](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) 基于给定请求路径的匹配项来创建请求管道分支。 如果请求路径以给定路径开头，则执行分支。
+`Map*` 扩展用作约定来创建管道分支。 [Map](/dotnet/api/microsoft.aspnetcore.builder.mapextensions) 基于给定请求路径的匹配项来创建请求管道分支。 如果请求路径以给定路径开头，则执行分支。
 
 [!code-csharp[](index/sample/Chain/StartupMap.cs?name=snippet1)]
 
@@ -155,7 +155,7 @@ public void Configure(IApplicationBuilder app)
 
 使用 `Map` 时，将从 `HttpRequest.Path` 中删除匹配的线段，并针对每个请求将该线段追加到 `HttpRequest.PathBase`。
 
-[MapWhen](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapwhenextensions) 基于给定谓词的结果创建请求管道分支。 `Func<HttpContext, bool>` 类型的任何谓词均可用于将请求映射到管道的新分支。 在以下示例中，谓词用于检测查询字符串变量 `branch` 是否存在：
+[MapWhen](/dotnet/api/microsoft.aspnetcore.builder.mapwhenextensions) 基于给定谓词的结果创建请求管道分支。 `Func<HttpContext, bool>` 类型的任何谓词均可用于将请求映射到管道的新分支。 在以下示例中，谓词用于检测查询字符串变量 `branch` 是否存在：
 
 [!code-csharp[](index/sample/Chain/StartupMapWhen.cs?name=snippet1)]
 
@@ -225,7 +225,7 @@ ASP.NET Core 附带以下中间件组件，以及用于添加这些组件的顺�
 > [!NOTE]
 > 在 ASP.NET Core 1.x 中，中间件 `Task` 方法的名称必须是 `Invoke`。 在 ASP.NET Core 2.0 或更高版本中，该名称可以为 `Invoke` 或 `InvokeAsync`。
 
-以下扩展方法通过 [IApplicationBuilder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.iapplicationbuilder) 公开中间件：
+以下扩展方法通过 [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) 公开中间件：
 
 [!code-csharp[](index/sample/Culture/RequestCultureMiddlewareExtensions.cs)]
 
@@ -235,7 +235,7 @@ ASP.NET Core 附带以下中间件组件，以及用于添加这些组件的顺�
 
 中间件应通过在其构造函数中公开其依赖项来遵循[显式依赖项原则](http://deviq.com/explicit-dependencies-principle/)。 在每个应用程序生存期构造一次中间件。 如果需要与请求中的中间件共享服务，请参阅下面讲述的按请求依赖项。
 
-中间件组件可通过构造函数参数从依赖关系注入解析其依赖项。 此外，[`UseMiddleware<T>`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.usemiddlewareextensions#methods_summary) 还可直接接受其他参数。
+中间件组件可通过构造函数参数从依赖关系注入解析其依赖项。 此外，[`UseMiddleware<T>`](/dotnet/api/microsoft.aspnetcore.builder.usemiddlewareextensions#methods_summary) 还可直接接受其他参数。
 
 ### <a name="per-request-dependencies"></a>按请求依赖项
 

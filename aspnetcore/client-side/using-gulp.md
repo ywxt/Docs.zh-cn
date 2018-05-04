@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-gulp
-ms.openlocfilehash: f776b2025b6ebfeff28d3903aaeac4d7d89665b3
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7a3d7807484b76e40e9728e0c750fa1383cc271f
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-gulp-in-aspnet-core"></a>在 ASP.NET 核心中使用 Gulp
 
@@ -63,9 +63,9 @@ paths.concatCssDest = paths.webroot + "css/site.min.css";
 | ----------- | ----------- |
 | gulp        | Gulp 流式处理生成系统中。 有关详细信息，请参阅[gulp](https://www.npmjs.com/package/gulp)。 |
 | rimraf      | 节点删除模块。 有关详细信息，请参阅[rimraf](https://www.npmjs.com/package/rimraf)。 |
-| gulp-concat | 一个连接基于操作系统的换行字符的文件的模块。 有关详细信息，请参阅[gulp concat](https://www.npmjs.com/package/gulp-concat)。 |
+| gulp concat | 一个连接基于操作系统的换行字符的文件的模块。 有关详细信息，请参阅[gulp concat](https://www.npmjs.com/package/gulp-concat)。 |
 | gulp-cssmin | Minifies CSS 文件模块。 有关详细信息，请参阅[gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)。 |
-| gulp-uglify | Minifies 模块*.js*文件。 有关详细信息，请参阅[gulp uglify](https://www.npmjs.com/package/gulp-uglify)。 |
+| gulp uglify | Minifies 模块 *.js*文件。 有关详细信息，请参阅[gulp uglify](https://www.npmjs.com/package/gulp-uglify)。 |
 
 必备项的模块将导入后，可以指定任务。 此处有六项任务注册，表示通过以下代码：
 
@@ -101,8 +101,8 @@ gulp.task("min", ["min:js", "min:css"]);
 
 |任务名称|描述|
 |--- |--- |
-|clean:js|使用 rimraf 节点删除模块删除 site.js 文件的缩减的版本的任务。|
-|clean:css|使用 rimraf 节点删除模块删除 site.css 文件的缩减的版本的任务。|
+|干净： js|使用 rimraf 节点删除模块删除 site.js 文件的缩减的版本的任务。|
+|干净： css|使用 rimraf 节点删除模块删除 site.css 文件的缩减的版本的任务。|
 |清理|一个任务，它调用`clean:js`任务后, 跟`clean:css`任务。|
 |min:js|Minifies 和串联的 js 文件夹中的所有.js 文件的任务。 。 排除 min.js 文件。|
 |min:css|Minifies 和串联的 css 文件夹中的所有.css 文件的任务。 。 排除 min.css 文件。|
@@ -199,7 +199,7 @@ gulp.task("min", ["min:js", "min:css"]);
 
     **之前生成**绑定将配置 clean 任务，以在每次生成项目之前自动运行。
 
-绑定您设置**任务运行程序资源管理器**顶部的注释的形式存储在你*gulpfile.js*和仅在 Visual Studio 中有效。 不需要 Visual Studio 的替代方法是配置 gulp 中的任务自动执行你*.csproj*文件。 例如，将这个放你*.csproj*文件：
+绑定您设置**任务运行程序资源管理器**顶部的注释的形式存储在你*gulpfile.js*和仅在 Visual Studio 中有效。 不需要 Visual Studio 的替代方法是配置 gulp 中的任务自动执行你 *.csproj*文件。 例如，将这个放你 *.csproj*文件：
 
 ```xml
 <Target Name="MyPreCompileTarget" BeforeTargets="Build">
@@ -267,7 +267,7 @@ IntelliSense 提供了代码完成、 参数说明和其他功能来提高工作
 
 ![IntelliSense 的 gulp](using-gulp/_static/08-IntelliSense.png)
 
-Intellisense 的详细信息，请参阅[JavaScript IntelliSense](https://docs.microsoft.com/visualstudio/ide/javascript-intellisense)。
+Intellisense 的详细信息，请参阅[JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense)。
 
 ## <a name="development-staging-and-production-environments"></a>开发、 过渡和生产环境
 

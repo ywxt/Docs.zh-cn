@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-primary-key-configuration
-ms.openlocfilehash: db47055aecc5252dbb3991f29a8255b946deaeb7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ce654492dc7bab6c031c9f82555f877f642171ce
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-identity-primary-key-data-type-in-aspnet-core"></a>在 ASP.NET 核心中配置标识主键数据类型
 
@@ -21,11 +21,11 @@ ASP.NET 核心标识可以配置用于表示为主键的数据类型。 标识�
 
 ## <a name="customize-the-primary-key-data-type"></a>自定义的主键数据类型
 
-1. 创建的自定义实现[IdentityUser](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuser-1)类。 它表示要用于创建用户对象的类型。 在下面的示例中，默认值`string`类型将替换`Guid`。
+1. 创建的自定义实现[IdentityUser](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuser-1)类。 它表示要用于创建用户对象的类型。 在下面的示例中，默认值`string`类型将替换`Guid`。
 
     [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationUser.cs?highlight=4&range=7-13)]
 
-2. 创建的自定义实现[IdentityRole](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityrole-1)类。 它表示要用于创建角色对象的类型。 在下面的示例中，默认值`string`类型将替换`Guid`。
+2. 创建的自定义实现[IdentityRole](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityrole-1)类。 它表示要用于创建角色对象的类型。 在下面的示例中，默认值`string`类型将替换`Guid`。
 
     [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationRole.cs?highlight=3&range=7-12)]
 

@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/roles
-ms.openlocfilehash: 7bc7ed35ef0496e855b024f92c915eb85b55511b
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: f1e7209cae1e2a58ad536547d655dd744ca0d3f7
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="role-based-authorization-in-aspnet-core"></a>ASP.NET 核心中基于角色的授权
 
 <a name="security-authorization-role-based"></a>
 
-当创建标识它可能属于一个或多个角色。 例如，Tracy 可能属于管理员和用户角色，同时 Scott 可能仅属于用户角色。 如何创建和管理这些角色取决于授权过程的后备存储。 角色公开给开发人员通过[IsInRole](https://docs.microsoft.com/dotnet/api/system.security.principal.genericprincipal.isinrole)方法[ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal)类。
+当创建标识它可能属于一个或多个角色。 例如，Tracy 可能属于管理员和用户角色，同时 Scott 可能仅属于用户角色。 如何创建和管理这些角色取决于授权过程的后备存储。 角色公开给开发人员通过[IsInRole](/dotnet/api/system.security.principal.genericprincipal.isinrole)方法[ClaimsPrincipal](/dotnet/api/system.security.claims.claimsprincipal)类。
 
 ## <a name="adding-role-checks"></a>添加角色检查
 

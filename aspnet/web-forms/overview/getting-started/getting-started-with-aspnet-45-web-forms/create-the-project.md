@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: b42e62b560e01d592c9f4cb61ea6199a15dc8bb6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7cfceb38204b6cfd3589a082761273e54ac122ca
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 <a name="create-the-project"></a>创建项目
 ====================
@@ -52,7 +52,10 @@ ms.lasthandoff: 04/06/2018
 
     > [!NOTE]
     > 本教程系列中的项目的名称是**WingtipToys**。 建议你使用此*确切*项目名称，以便整个系列教程函数按预期方式提供的代码。
-6. 接下来，选择**Web 窗体**模板，然后选择**创建项目**按钮。  
+
+6. 单击**更改身份验证**按钮。 选择**单个用户帐户**单击**确定**按钮。
+
+7. 选择**Web 窗体**模板，然后单击**确定**按钮。
 
     ![创建新的项目模板的项目-](create-the-project/_static/image3.png)
 
