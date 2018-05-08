@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: 58b05587458aacad1a633a04f0359a4d2a3605a3
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 6ee4b0db5bf4d1781ce44f1aff8331680ca8686c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="reading-related-data---ef-core-with-aspnet-core-mvc-tutorial-6-of-10"></a>读取相关数据 - EF Core 和 ASP.NET Core MVC 教程（第 6 个课程，共 10 个课程）
+# <a name="aspnet-core-mvc-with-ef-core---read-related-data---6-of-10"></a>ASP.NET Core MVC 和 EF Core - 读取相关数据 - 第 6 个课程（共 10 个课程）
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC Web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
+Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
 
 前面教程创建了学校数据模型。 本教程将读取并显示相关数据 - 即 Entity Framework 加载到导航属性中的数据。
 
@@ -41,7 +41,7 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 
   ![单独查询示例](read-related-data/_static/separate-queries.png)
 
-* 显式加载。 首次读取实体时，不检索相关数据。 如有需要，可编写检索相关数据的代码。 就像使用单独查询进行预先加载一样，显式加载时会向数据库发送多个查询。 二者的区别在于，代码通过显式加载指定要加载的导航属性。 在 Entity Framework Core 1.1 中，可使用 `Load` 方法执行显式加载。 例如：
+* 显式加载。 首次读取实体时，不检索相关数据。 如有需要，可编写检索相关数据的代码。 就像使用单独查询进行预先加载一样，显式加载时会向数据库发送多个查询。 二者的区别在于，代码通过显式加载指定要加载的导航属性。 在 Entity Framework Core 1.1 中，可使用 `Load` 方法执行显式加载。 例如:
 
   ![显式加载示例](read-related-data/_static/explicit-loading.png)
 
@@ -65,7 +65,7 @@ Course 实体包括导航属性，其中包含分配有课程的系的 Departmen
 
 将 `Index` 方法替换为以下代码，该代码为返回 Course 实体（是 `courses` 而不是 `schoolContext`）的 `IQueryable` 赋予了更合适的名称：
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_RevisedIndexMethod)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_RevisedIndexMethod)]
 
 在 Views/Courses/Index.cshtml 中，将模板代码替换为以下代码。 突出显示所作更改：
 
@@ -107,7 +107,7 @@ Course 实体包括导航属性，其中包含分配有课程的系的 Departmen
 
 在 SchoolViewModels 文件夹中，创建 InstructorIndexData.cs，并使用以下代码替换现有代码：
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/InstructorIndexData.cs)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/InstructorIndexData.cs)]
 
 ### <a name="create-the-instructor-controller-and-views"></a>创建讲师控制器和视图
 
@@ -117,31 +117,31 @@ Course 实体包括导航属性，其中包含分配有课程的系的 Departmen
 
 打开 InstructorsController.cs 并为 ViewModels 名称空间添加 using 语句：
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_Using)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_Using)]
 
 使用以下代码替换 Index 方法，预先加载相关数据并将其放入视图模型。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_EagerLoading)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_EagerLoading)]
 
 该方法接受可选路由数据 (`id`) 和查询字符串参数 (`courseID`)，二者提供所选讲师和课程的 ID 值。 参数由页面上的“选择”超链接提供。
 
 代码先创建一个视图模型实例，并在其中放入讲师列表。 代码指定预先加载 `Instructor.OfficeAssignment` 和 `Instructor.CourseAssignments` 导航属性。 在 `CourseAssignments` 属性中，加载 `Course` 属性，在其中加载 `Enrollments` 和 `Department` 属性，同时在每个 `Enrollment` 实体中加载 `Student` 属性。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude)]
 
 由于视图始终需要 OfficeAssignment 实体，因此更有效的做法是在同一查询中获取。 在网页中选择讲师后，需要 Course 实体，因此只有在页面频繁显示选中课程时，单个查询才比多个查询更有效。
 
 代码重复 `CourseAssignments` 和 `Course`，因为你需要 `Course` 中的两个属性。 `ThenInclude` 调用的第一个字符串获取 `CourseAssignment.Course`、`Course.Enrollments` 和 `Enrollment.Student`。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude&highlight=3-6)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude&highlight=3-6)]
 
 此时，代码中的另一个 `ThenInclude` 将成为 `Student` 的导航属性，你不需要该属性。 但调用 `Include` 是从 `Instructor` 属性重新开始，因此必须再次遍历该链，这次指定 `Course.Department` 而不是 `Course.Enrollments`。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude&highlight=7-9)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude&highlight=7-9)]
 
 选择讲师时，将执行以下代码。 从视图模型中的讲师列表检索所选讲师。 然后，该视图模型的 `Courses` 属性加载讲师 `CourseAssignments` 导航属性中的 Course 实体。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=56-62)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?range=56-62)]
 
 `Where` 方法返回一个集合，但在这种情况下，向该方法传入条件后，只返回一个 Instructor 实体。 `Single` 方法将集合转换为单个 Instructor 实体，让你可以访问该实体的 `CourseAssignments` 属性。 `CourseAssignments` 属性包含多个 `CourseAssignment` 实体，而你只需要相关的 `Course` 实体。
 
@@ -159,7 +159,7 @@ Course 实体包括导航属性，其中包含分配有课程的系的 Departmen
 
 接着，如果选择了课程，则从视图模型中的课程列表中检索所选课程。 然后，视图模型的 `Enrollments` 属性加载该课程 `Enrollments` 导航属性中的 Enrollment 实体。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=64-69)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?range=64-69)]
 
 ### <a name="modify-the-instructor-index-view"></a>修改讲师索引视图
 
@@ -182,7 +182,7 @@ Course 实体包括导航属性，其中包含分配有课程的系的 Departmen
   }
   ```
 
-* 添加了显示每位讲师所授课程的“课程”列。 有关此 razor 语法的详细信息，请参阅[使用 `@:` 进行显式行转换](xref:mvc/views/razor#explicit-line-transition-with-)。
+* 添加了显示每位讲师所授课程的“课程”列。 有关此 Razor 语法的详细信息，请参阅[使用 `@:` 进行显式行转换](xref:mvc/views/razor#explicit-line-transition-with-)。
 
 * 添加了向所选讲师的 `tr` 元素中动态添加 `class="success"` 的代码。 此时会使用 Bootstrap 类为所选行设置背景色。
 
@@ -231,13 +231,13 @@ Course 实体包括导航属性，其中包含分配有课程的系的 Departmen
 
 假设你希望用户在选中讲师和课程时尽量少查看注册情况。 此时建议只在有请求时加载注册数据。 若要查看如何执行显式加载的示例，请使用以下代码替换 `Index` 方法，这将删除预先加载 Enrollment 并显式加载该属性。 代码所作更改为突出显示状态。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ExplicitLoading&highlight=23-29)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ExplicitLoading&highlight=23-29)]
 
 新代码将从检索 Instructor 实体的代码中删除注册数据的 ThenInclude 方法调用。 如果选择了讲师和课程，突出显示的代码会检索所选课程的 Enrollment 实体，及每个 Enrollment 的 Student 实体。
 
 运行应用，立即转到“讲师”索引页，尽管已经更改了数据的检索方式，但该页上显示的内容没有任何不同。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 现在你已经使用了预先加载和一个查询及多个查询来读取导航属性中的相关数据。 下一个教程将介绍如何更新相关数据。
 

@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 中的文件提供程序"
+title: ASP.NET Core 中的文件提供程序
 author: ardalis
-description: "了解 ASP.NET Core 如何通过文件提供程序来抽象化文件系统访问。"
+description: 了解 ASP.NET Core 如何通过文件提供程序来抽象化文件系统访问。
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/file-providers
-ms.openlocfilehash: 06197f967e111d75531e9c3bcbcbdb971cb9f99b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: cdbffdadd9616fe941809d67dc2c0bbd52149561
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="file-providers-in-aspnet-core"></a>ASP.NET Core 中的文件提供程序
 
@@ -50,15 +50,15 @@ IFileInfo fileInfo = provider.GetFileInfo("wwwroot/js/site.js"); // a file under
 
 若要从控制器请求提供程序，请在控制器的构造函数中指定该提供程序，并将其分配给本地字段。 使用操作方法中的本地实例：
 
-[!code-csharp[Main](file-providers/sample/src/FileProviderSample/Controllers/HomeController.cs?highlight=5,7,12&range=6-19)]
+[!code-csharp[](file-providers/sample/src/FileProviderSample/Controllers/HomeController.cs?highlight=5,7,12&range=6-19)]
 
 然后，在应用的 `Startup` 类中创建提供程序：
 
-[!code-csharp[Main](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=35,40&range=1-43)]
+[!code-csharp[](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=35,40&range=1-43)]
 
 在 Index.cshtml 视图中，循环访问提供的 `IDirectoryContents`：
 
-[!code-html[Main](file-providers/sample/src/FileProviderSample/Views/Home/Index.cshtml?highlight=2,7,9,11,15)]
+[!code-html[](file-providers/sample/src/FileProviderSample/Views/Home/Index.cshtml?highlight=2,7,9,11,15)]
 
 结果：
 
@@ -68,7 +68,7 @@ IFileInfo fileInfo = provider.GetFileInfo("wwwroot/js/site.js"); // a file under
 
 `EmbeddedFileProvider` 用于访问嵌入在程序集中的文件。 在 .NET Core 中，通过 .csproj 文件中的 `<EmbeddedResource>` 元素将各个文件嵌入程序集中：
 
-[!code-json[Main](file-providers/sample/src/FileProviderSample/FileProviderSample.csproj?range=13-18)]
+[!code-json[](file-providers/sample/src/FileProviderSample/FileProviderSample.csproj?range=13-18)]
 
 在指定要嵌入到程序集中的文件时，你可以使用[通配模式](#globbing-patterns)。 这些模式可用于匹配一个或多个文件。
 
@@ -97,7 +97,7 @@ var embeddedProvider = new EmbeddedFileProvider(Assembly.GetEntryAssembly());
 
 `CompositeFileProvider` 合并 `IFileProvider` 实例，以便公开一个接口来处理多个提供程序中的文件。 创建 `CompositeFileProvider` 时，将一个或多个 `IFileProvider` 实例传递给其构造函数：
 
-[!code-csharp[Main](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=3&range=35-37)]
+[!code-csharp[](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=3&range=35-37)]
 
 更新要使用 `CompositeFileProvider` 的示例应用（该应用包括之前配置的物理和嵌入式提供程序）会导致以下输出：
 
@@ -109,7 +109,7 @@ var embeddedProvider = new EmbeddedFileProvider(Assembly.GetEntryAssembly());
 
 在本文的示例中，控制台应用程序被配置为每当在修改文本文件时显示消息：
 
-[!code-csharp[Main](file-providers/sample/src/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
+[!code-csharp[](file-providers/sample/src/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
 
 多次保存文件之后的结果：
 

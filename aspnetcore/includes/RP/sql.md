@@ -4,7 +4,7 @@
 
 `MovieContext` 对象处理连接到数据库并将 `Movie` 对象映射到数据库记录的任务。 在 Startup.cs 文件的 `ConfigureServices` 方法中向[依赖关系注入](xref:fundamentals/dependency-injection)容器注册数据库上下文：
 
-[!code-csharp[Main](code/Startup.cs?name=snippet2&highlight=6-8)]
+[!code-csharp[](code/Startup.cs?name=snippet2&highlight=6-8)]
 
 ## <a name="sqlite"></a>SQLite
 
@@ -20,7 +20,7 @@
 
 在 Models 文件夹中创建一个名为 `SeedData` 的新类。 将生成的代码替换为以下代码：
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/SeedData.cs?name=snippet_1)]
+[!code-csharp[](code/Models/SeedData.cs)]
 
 如果 DB 中没有任何电影，则会返回种子初始值设定项。
 
@@ -36,10 +36,10 @@ if (context.Movie.Any())
 
 将种子初始值设定项添加 Program.cs 文件中的 `Main` 方法：
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Program.cs?highlight=6,16-32)]
+[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Program.cs)]
 
 ### <a name="test-the-app"></a>测试应用
 
 删除 DB 中的所有记录（使种子方法运行）。 停止并启动应用以设定数据库种子。
-   
+
 应用将显示设定为种子的数据。

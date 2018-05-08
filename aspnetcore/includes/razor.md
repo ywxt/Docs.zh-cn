@@ -4,4 +4,4 @@
 * 易于关注。
 * 涵盖更多功能。
 
-如果通过此 [Razor 页面](xref:tutorials/razor-pages/razor-pages-start)版本选择本教程，请留下注释说明原因。
+如果通过 [Razor 页面](xref:tutorials/razor-pages/razor-pages-start)版本选择本教程，请在[此 GitHub 问题](https://github.com/aspnet/Docs/issues/6146)中说明原因。

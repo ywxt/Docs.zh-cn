@@ -4,13 +4,13 @@
 
 本教程将向 `Movies` 表添加一个新字段。 当更改架构（添加一个新的字段）时，我们将丢弃数据库并创建一个新的数据库。 此工作流适用于在没有要保留的任何生产数据的早期开发阶段。
 
-在部署了应用并且具有要保留的数据后，在需要更改架构时则不能丢弃数据库。 Entity Framework [Code First 迁移](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)使你能够更新架构并迁移数据库，而不会导致数据丢失。 迁移是使用 SQL Server 时的一个常用的功能，但 SQLlite 不支持许多迁移架构操作，因此只可能进行非常简单的迁移。 有关详细信息，请参阅 [SQLite 限制](https://docs.microsoft.com/ef/core/providers/sqlite/limitations)。
+在部署了应用并且具有要保留的数据后，在需要更改架构时则不能丢弃数据库。 Entity Framework [Code First 迁移](/ef/core/get-started/aspnetcore/new-db)使你能够更新架构并迁移数据库，而不会导致数据丢失。 迁移是使用 SQL Server 时的一个常用的功能，但 SQLlite 不支持许多迁移架构操作，因此只可能进行非常简单的迁移。 有关详细信息，请参阅 [SQLite 限制](/ef/core/providers/sqlite/limitations)。
 
 ## <a name="adding-a-rating-property-to-the-movie-model"></a>向电影模型添加分级属性
 
 打开 Models/Movie.cs 文件，并添加 `Rating` 属性：
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
 
 因为已经添加新字段到 `Movie` 类，所以还需要更新绑定允许名单，将此新属性纳入其中。 在 MoviesController.cs 中，更新 `Create` 和 `Edit` 操作方法的 `[Bind]` 属性，以包括 `Rating` 属性：
 
@@ -22,7 +22,7 @@
 
 编辑 /Views/Movies/Index.cshtml 文件并添加 `Rating` 字段：
 
-[!code-HTML[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
+[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
 
 使用 `Rating` 字段更新 /Views/Movies/Create.cshtml。
 
@@ -48,7 +48,7 @@ SqliteException: SQLite Error 1: 'no such column: m.Rating'.
 
 更新 `SeedData` 类，使它提供新列的值。 示例更改如下所示，但可能需要对每个 `new Movie` 做出此更改。
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
 
 将 `Rating` 字段添加到 `Edit`、`Details` 和 `Delete` 视图。
 

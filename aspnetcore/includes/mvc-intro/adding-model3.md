@@ -12,7 +12,7 @@
 
 * 在一些区域设置中，需要指定日期格式。 请参阅下方突出显示的代码。
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateFormat.cs?name=snippet_1&highlight=2,10)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateFormat.cs?name=snippet_1&highlight=2,10)]
 
 我们将在本教程的后续部分中探讨 `DataAnnotations`。
 

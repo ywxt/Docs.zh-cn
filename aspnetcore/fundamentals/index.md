@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: b74870c93ea0120e43931bb75f47bab19a6de201
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: d5b74e213828d1a1f7e09810e5cc72773a821dab
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 基础知识
 
@@ -98,6 +98,10 @@ ASP.NET Core 包含一组丰富的内置中间件：
 可以将任何基于 [OWIN](http://owin.org) 的中间件与 ASP.NET Core 应用结合使用，也可以编写自己的自定义中间件。
 
 有关详细信息，请参阅[中间件](xref:fundamentals/middleware/index)和 [.NET 的开放 Web 接口 (OWIN)](xref:fundamentals/owin)。
+
+## <a name="initiate-http-requests"></a>启动 HTTP 请求
+
+有关使用 `IHttpClientFactory` 访问 `HttpClient` 实例以发出 HTTP 请求的信息，请参阅[启动 HTTP 请求](xref:fundamentals/http-requests)。
 
 ## <a name="environments"></a>环境
 

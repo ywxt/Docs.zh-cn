@@ -10,4 +10,4 @@
 
 打开 Models/Movie.cs 文件，并添加以下代码中突出显示的行：
 
-[!code-csharp[Main](code/Models/Movie.cs?highlight=2,11-12)]
+[!code-csharp[](code/Models/Movie.cs?highlight=2,11-12)]

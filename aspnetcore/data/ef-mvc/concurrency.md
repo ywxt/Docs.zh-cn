@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: c271488d4da72ba340f3617ac20c7b6da2574c69
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 99c4872719a4e46aa27eb7138eb914dc5954c219
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="handling-concurrency-conflicts---ef-core-with-aspnet-core-mvc-tutorial-8-of-10"></a>处理并发冲突 - EF Core 和 ASP.NET Core MVC 教程，第 8 个教程（共 10 个）
+# <a name="aspnet-core-mvc-with-ef-core---concurrency---8-of-10"></a>ASP.NET Core MVC 和 EF Core - 并发 - 第 8 个教程（共 10 个）
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC Web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
+Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
 
 在之前的教程中，你学习了如何更新数据。 本教程介绍如何处理多个用户同时更新同一实体时出现的冲突。
 
@@ -39,7 +39,7 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 
 管理锁定有缺点。 编程可能很复杂。 它需要大量的数据库管理资源，且随着应用程序用户数量的增加，可能会导致性能问题。 由于这些原因，并不是所有的数据库管理系统都支持悲观并发。 Entity Framework Core 未提供对它的内置支持，并且本教程不展示其实现方式。
 
-### <a name="optimistic-concurrency"></a>悲观并发
+### <a name="optimistic-concurrency"></a>开放式并发
 
 悲观并发的替代方法是乐观并发。 悲观并发是指允许发生并发冲突，并在并发冲突发生时作出正确反应。 例如，Jane 访问“院系编辑”页面，并将英语系的预算从 350,000.00 美元更改为 0.00 美元。
 
@@ -89,7 +89,7 @@ Jane 先单击“保存”，并在浏览器返回索引页时看到她的更改
 
 在 Models/Department.cs 中，添加名为 RowVersion 的跟踪属性：
 
-[!code-csharp[Main](intro/samples/cu/Models/Department.cs?name=snippet_Final&highlight=26,27)]
+[!code-csharp[](intro/samples/cu/Models/Department.cs?name=snippet_Final&highlight=26,27)]
 
 `Timestamp` 属性指定此列将包含在发送到数据库的 Update 和 Delete 命令的 Where 子句中。 该属性称为 `Timestamp`，因为 SQL Server 的之前版本在 SQL `rowversion` 类型将其替换之前使用 SQL `timestamp` 数据类型。 用于 `rowversion` 的 .NET 类型为字节数组。
 
@@ -120,7 +120,7 @@ dotnet ef database update
 
 在 DepartmentsController.cs 文件中，将出现的 4 次“FirstMidName”更改为“FullName”，以便院系管理员下拉列表将包含讲师的全名，而不仅仅是姓氏。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_Dropdown)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_Dropdown)]
 
 ## <a name="update-the-departments-index-view"></a>更新“院系索引”视图
 
@@ -128,7 +128,7 @@ dotnet ef database update
 
 将 Views/Departments/Index.cshtml 中的代码替换为以下代码。
 
-[!code-html[Main](intro/samples/cu/Views/Departments/Index.cshtml?highlight=4,7,44)]
+[!code-html[](intro/samples/cu/Views/Departments/Index.cshtml?highlight=4,7,44)]
 
 这会将标题更改为“院系”，删除 RowVersion 列，并显示全名（而非管理员的名字）。
 
@@ -136,11 +136,11 @@ dotnet ef database update
 
 在 HttpGet `Edit` 方法和 `Details` 方法中，添加 `AsNoTracking`。 在 HttpGet `Edit` 方法中，为管理员添加预先加载。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_EagerLoading&highlight=2,3)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_EagerLoading&highlight=2,3)]
 
 将 HttpPost `Edit` 方法的现有代码替换为以下代码：
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_EditPost)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_EditPost)]
 
 代码先尝试读取要更新的院系。 如果 `SingleOrDefaultAsync` 方法返回 NULL，则该院系已被另一用户删除。 此情况下，代码将使用已发布的表单值创建院系实体，以便“编辑”页重新显示错误消息。 或者，如果仅显示错误消息而未重新显示院系字段，则不必重新创建 Department 实体。
 
@@ -154,19 +154,19 @@ _context.Entry(departmentToUpdate).Property("RowVersion").OriginalValue = rowVer
 
 该异常的 catch 块中的代码获取受影响的 Department 实体，该实体具有来自异常对象上的 `Entries` 属性的更新值。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?range=164)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?range=164)]
 
 `Entries` 集合将仅包含一个 `EntityEntry` 对象。  该对象可用于获取用户输入的新值和当前的数据库值。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?range=165-166)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?range=165-166)]
 
 对于所含的数据库值与用户在“编辑”页上输入的值不同的每一列，该代码均为其添加一个自定义错误消息（为简洁起见，此处仅显示一个字段）。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?range=174-178)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?range=174-178)]
 
 最后，该代码将 `departmentToUpdate` 的 `RowVersion` 值设置为从数据库中检索到的新值。 重新显示“编辑”页时，这个新的 `RowVersion` 值将存储在隐藏字段中，当用户下次单击“保存”时，将只捕获自“编辑”页重新显示起发生的并发错误。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?range=199-200)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?range=199-200)]
 
 `ModelState` 具有旧的 `RowVersion` 值，因此需使用 `ModelState.Remove` 语句。 在此视图中，当两者都存在时，字段的 `ModelState` 值优于模型属性值。
 
@@ -178,7 +178,7 @@ _context.Entry(departmentToUpdate).Property("RowVersion").OriginalValue = rowVer
 
 * 向下拉列表添加“选择管理员”选项。
 
-[!code-html[Main](intro/samples/cu/Views/Departments/Edit.cshtml?highlight=16,34-36)]
+[!code-html[](intro/samples/cu/Views/Departments/Edit.cshtml?highlight=16,34-36)]
 
 ## <a name="test-concurrency-conflicts-in-the-edit-page"></a>测试“编辑”页中的并发冲突
 
@@ -208,13 +208,13 @@ _context.Entry(departmentToUpdate).Property("RowVersion").OriginalValue = rowVer
 
 在 DepartmentsController.cs 中，将 HttpGet `Delete` 方法替换为以下代码：
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeleteGet&highlight=1,10,14-17,21-29)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeleteGet&highlight=1,10,14-17,21-29)]
 
 该方法接受可选参数，该参数指示是否在并发错误之后重新显示页面。 如果此标志为 true 且指定的院系不复存在，则它已被其他用户删除。 此情况下，代码将重定向到索引页。  如果此标志为 true 且该院系确实存在，则它已被其他用户更改。 此情况下，代码将使用 `ViewData` 向视图发送一条错误消息。  
 
 将 HttpPost `Delete` 方法（名为 `DeleteConfirmed`）中的代码替换为以下代码：
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeletePost&highlight=1,3,5-8,11-18)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeletePost&highlight=1,3,5-8,11-18)]
 
 在刚替换的基架代码中，此方法仅接受记录 ID：
 
@@ -239,7 +239,7 @@ public async Task<IActionResult> Delete(Department department)
 
 在 Views/Departments/Delete.cshtml 中，将基架代码替换为添加 DepartmentID 和 RowVersion 属性的错误消息字段和隐藏字段的以下代码。 突出显示所作更改。
 
-[!code-html[Main](intro/samples/cu/Views/Departments/Delete.cshtml?highlight=9,38,44,45,48)]
+[!code-html[](intro/samples/cu/Views/Departments/Delete.cshtml?highlight=9,38,44,45,48)]
 
 这将进行以下更改：
 
@@ -269,16 +269,16 @@ public async Task<IActionResult> Delete(Department department)
 
 替换 Views/Departments/Details.cshtml 中的代码，以删除 RowVersion 列并显示管理员的全名。
 
-[!code-html[Main](intro/samples/cu/Views/Departments/Details.cshtml?highlight=35)]
+[!code-html[](intro/samples/cu/Views/Departments/Details.cshtml?highlight=35)]
 
 替换 Views/Departments/Create.cshtml 中的代码，向下拉列表添加“选择”选项。
 
-[!code-html[Main](intro/samples/cu/Views/Departments/Create.cshtml?highlight=32-34)]
+[!code-html[](intro/samples/cu/Views/Departments/Create.cshtml?highlight=32-34)]
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 处理并发冲突已介绍完毕。 要深入了解如何处理 EF Core 中的并发，请参阅[并发冲突](https://docs.microsoft.com/ef/core/saving/concurrency)。 下一个教程将介绍如何为 Instructor 和 Students 实体实现“每个层次结构一个表”继承。
 
->[!div class="step-by-step"]
-[上一页](update-related-data.md)
-[下一页](inheritance.md)  
+> [!div class="step-by-step"]
+> [上一页](update-related-data.md)
+> [下一页](inheritance.md)  

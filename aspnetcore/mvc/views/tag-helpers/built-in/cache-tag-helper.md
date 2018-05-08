@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 中的缓存标记帮助程序"
+title: ASP.NET Core MVC 中的缓存标记帮助程序
 author: pkellner
-description: "演示如何使用缓存标记帮助程序"
+description: 演示如何使用缓存标记帮助程序
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 51811ee1669a24a0fc4ce9bc67e782b61bff655c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6f19a989c9bdfddea7609c5571cdd49de29e036b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>ASP.NET Core MVC 中的缓存标记帮助程序
 
@@ -60,10 +60,9 @@ Razor 视图引擎将默认的 `expires-after` 设置为 20 分钟。
 
 ### <a name="expires-on"></a>expires-on 
 
-| 属性类型    | 示例值     |
-|----------------   |----------------   |
-| DateTimeOffset    | "@new DateTime(2025,1,29,17,02,0)"    |
-
+| 属性类型 |           示例值            |
+|----------------|------------------------------------|
+| DateTimeOffset | "@new DateTime(2025,1,29,17,02,0)" |
 
 设置一个绝对到期日期。 以下示例将在 2025 年 1 月 29 日下午 5:02 之前缓存缓存标记帮助程序的内容。
 
@@ -79,10 +78,9 @@ Razor 视图引擎将默认的 `expires-after` 设置为 20 分钟。
 
 ### <a name="expires-after"></a>expires-after
 
-| 属性类型    | 示例值     |
-|----------------   |----------------   |
-| TimeSpan    | "@TimeSpan.FromSeconds(120)"    |
-
+| 属性类型 |        示例值         |
+|----------------|------------------------------|
+|    TimeSpan    | "@TimeSpan.FromSeconds(120)" |
 
 设置从第一个请求时间到缓存内容的时间长度。 
 
@@ -98,10 +96,9 @@ Razor 视图引擎将默认的 `expires-after` 设置为 20 分钟。
 
 ### <a name="expires-sliding"></a>expires-sliding
 
-| 属性类型    | 示例值     |
-|----------------   |----------------   |
-| TimeSpan    | "@TimeSpan.FromSeconds(60)"     |
-
+| 属性类型 |        示例值        |
+|----------------|-----------------------------|
+|    TimeSpan    | "@TimeSpan.FromSeconds(60)" |
 
 设置缓存条目在未被访问时应被逐出的时间。
 
@@ -169,7 +166,7 @@ routes.MapRoute(
     name: "default",
     template: "{controller=Home}/{action=Index}/{Make?}/{Model?}");
 ```
-  
+
 Index.cshtml
 
 ```cshtml
@@ -224,10 +221,9 @@ Index.cshtml
 
 ### <a name="vary-by"></a>vary-by
 
-| 属性类型    | 示例值                |
-|----------------   |----------------               |
-| String             | “@Model”                 |
-
+| 属性类型 | 示例值 |
+|----------------|----------------|
+|     String     |    “@Model”    |
 
 允许自定义缓存的数据。 当属性的字符串值引用的对象发生更改时，会更新缓存标记帮助程序的内容。 通常将模型值的字符串串联分配给此属性。  从效果上看，这意味着更新任何已连接的值都会使缓存无效。
 

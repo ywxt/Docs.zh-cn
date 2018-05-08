@@ -3,7 +3,7 @@
 
 将连接字符串添加到 appsettings.json 文件。
 
-[!code-json[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/appsettings_SQLite.json?highlight=8-10)]
+[!code-json[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/appsettings_SQLite.json?highlight=8-10)]
 
 <a name="reg"></a>
 ###  <a name="register-the-database-context"></a>注册数据库上下文

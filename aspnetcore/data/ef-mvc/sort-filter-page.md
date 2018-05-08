@@ -8,17 +8,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: feb4a50c9e5602064e7d493b6991485949903f47
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: d4fe6386318210a751d1248c87299d414ab563a3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>排序、筛选、分页和分组 - EF Core 和 ASP.NET Core MVC 教程（第 3 个，共 10 个）
+# <a name="aspnet-core-mvc-with-ef-core---sort-filter-paging---3-of-10"></a>ASP.NET Core MVC 和 EF Core - 排序、筛选、分页 - 第 3 个教程，共 10 个教程
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC Web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
+Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
 
 在上一个教程中，已为 Student 实体实现了一组网页用于执行基本的 CRUD 操作。 在本教程中，将向学生索引页添加排序、筛选和分页功能。 同时，还将创建一个执行简单分组的页面。
 
@@ -34,7 +34,7 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 
 在 StudentsController.cs 中，将 `Index` 方法替换为以下代码：
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortOnly)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortOnly)]
 
 此代码接收来自 URL 中的查询字符串的 `sortOrder` 参数。 查询字符串值由 ASP.NET Core MVC 提供，作为操作方法的参数。 该参数将是一个字符串，可为“Name”或“Date”，可选择后跟下划线和字符串“desc”来指定降序。 默认排序顺序为升序。
 
@@ -42,7 +42,7 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 
 视图使用两个 `ViewData` 元素（NameSortParm 和 DateSortParm）来为列标题超链接配置相应的查询字符串值。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortOnly&highlight=3-4)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortOnly&highlight=3-4)]
 
 这些是三元语句。 第一个指定如果 `sortOrder` 参数为 NULL 或空，则应将 NameSortParm 设置为“name_desc”；否则，应将其设置为空字符串。 通过这两个语句，视图可如下设置列标题超链接：
 
@@ -77,7 +77,7 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 
 在 StudentsController.cs 中，将 `Index` 方法替换为以下代码（所做的更改为突出显示状态）。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortFilter&highlight=1,5,9-13)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortFilter&highlight=1,5,9-13)]
 
 已向 `Index` 方法添加 `searchString` 参数。 从要添加到索引视图的文本框中接收搜索字符串值。 并且，还向 LINQ 语句添加了 where 子句，该子句仅选择名字或姓氏中包含搜索字符串的学生。 只有在有搜索值的情况下，才会执行添加了 where 子句的语句。
 
@@ -116,7 +116,7 @@ http://localhost:5813/Students?SearchString=an
 
 在项目文件夹中，创建 `PaginatedList.cs`，然后用以下代码替换模板代码。
 
-[!code-csharp[Main](intro/samples/cu/PaginatedList.cs)]
+[!code-csharp[](intro/samples/cu/PaginatedList.cs)]
 
 此代码中的 `CreateAsync` 方法将提取页面大小和页码，并将相应的 `Skip` 和 `Take` 语句应用于 `IQueryable`。 当在 `IQueryable` 上调用 `ToListAsync` 时，它将返回仅包含请求页的列表。 属性 `HasPreviousPage` 和 `HasNextPage` 可用于启用或禁用“上一页”和“下一页”的分页按钮。
 
@@ -126,7 +126,7 @@ http://localhost:5813/Students?SearchString=an
 
 在 StudentsController.cs 中，将 `Index` 方法替换为以下代码。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortFilterPage&highlight=1-5,7,11-18,45-46)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortFilterPage&highlight=1-5,7,11-18,45-46)]
 
 该代码向方法签名中添加一个页码参数、一个当前排序顺序参数和一个当前筛选器参数。
 
@@ -213,21 +213,21 @@ return View(await PaginatedList<Student>.CreateAsync(students.AsNoTracking(), pa
 
 在新文件夹中，添加一个类文件 EnrollmentDateGroup.cs，并用以下代码替换模板代码：
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
 
 ### <a name="modify-the-home-controller"></a>修改主控制器
 
 在 HomeController.cs 中，使用文件顶部的语句添加以下内容：
 
-[!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings1)]
+[!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings1)]
 
 在类的左大括号之后立即为数据库上下文添加一个类变量，并从 ASP.NET Core DI 获取上下文的实例：
 
-[!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_AddContext&highlight=3,5,7)]
+[!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_AddContext&highlight=3,5,7)]
 
 将 `About` 方法替换为以下代码：
 
-[!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseDbSet)]
+[!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseDbSet)]
 
 LINQ 语句按注册日期对学生实体进行分组，计算每组中实体的数量，并将结果存储在 `EnrollmentDateGroup` 视图模型对象的集合中。
 > [!NOTE] 
@@ -243,10 +243,10 @@ LINQ 语句按注册日期对学生实体进行分组，计算每组中实体的
 
 ![“关于”页面](sort-filter-page/_static/about.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，你已了解了如何执行排序、筛选、分页和分组。 在下一个教程中，你将了解如何使用迁移来处理数据模型更改。
 
->[!div class="step-by-step"]
-[上一页](crud.md)
-[下一页](migrations.md)  
+> [!div class="step-by-step"]
+> [上一页](crud.md)
+> [下一页](migrations.md)  

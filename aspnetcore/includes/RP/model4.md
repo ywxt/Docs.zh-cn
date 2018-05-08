@@ -19,7 +19,7 @@ dotnet aspnet-codegenerator razorpage -h
 * 运行应用并将 `/Movies` 追加到浏览器中的 URL (`http://localhost:port/movies`)。
 * 测试“创建”链接。
 
- ![创建页面](../../tutorials/razor-pages/model/_static/conan.png)
+  ![创建页面](../../tutorials/razor-pages/model/_static/conan.png)
 
 <a name="scaffold"></a>
 

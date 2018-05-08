@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 985cc38b10ef830b8274e40ad5f7050157fd4d86
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 25d4292e325e208ee08f4a7bb8d06580809f9e40
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>继承 - EF Core 和 ASP.NET Core MVC 教程（第 9 个，共 10 个）
+# <a name="aspnet-core-mvc-with-ef-core---inheritance---9-of-10"></a>ASP.NET Core MVC 和 EF Core - 继承 - 第 9 个教程（共 10 个）
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC Web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
+Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
 
 在上一个教程中，已经处理了并发异常。 本教程将演示如何在数据模型中实现继承。
 
@@ -60,23 +60,23 @@ TPC 和 TPH 继承模式的性能通常比 TPT 继承模式好，因为 TPT 模�
 
 在 Models 文件夹中，创建 Person.cs 并使用以下代码替换模板代码：
 
-[!code-csharp[Main](intro/samples/cu/Models/Person.cs)]
+[!code-csharp[](intro/samples/cu/Models/Person.cs)]
 
 ## <a name="make-student-and-instructor-classes-inherit-from-person"></a>使 Student 和 Instructor 类从 Person 继承
 
 在 Instructor.cs 中，从 Person 类派生 Instructor 类并删除键和姓名字段。 代码将如下所示：
 
-[!code-csharp[Main](intro/samples/cu/Models/Instructor.cs?name=snippet_AfterInheritance&highlight=8)]
+[!code-csharp[](intro/samples/cu/Models/Instructor.cs?name=snippet_AfterInheritance&highlight=8)]
 
 在 Student.cs 中做出相同更改。
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_AfterInheritance&highlight=8)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_AfterInheritance&highlight=8)]
 
 ## <a name="add-the-person-entity-type-to-the-data-model"></a>将 Person 实体类型添加到数据模型
 
 将 Person 实体类型添加到 SchoolContext.cs。 新的行突出显示。
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_AfterInheritance&highlight=19,30)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_AfterInheritance&highlight=19,30)]
 
 以上是 Entity Framework 配置每个层次结构一张表继承所需的全部操作。 正如将看到的，更新数据库时，将有一个 Person 表来代替 Student 和 Instructor 表。
 
@@ -92,7 +92,7 @@ dotnet ef migrations add Inheritance
 
 打开 Migrations/\<timestamp>_Inheritance.cs 并使用以下代码替换 `Up` 方法：
 
-[!code-csharp[Main](intro/samples/cu/Migrations/20170216215525_Inheritance.cs?name=snippet_Up)]
+[!code-csharp[](intro/samples/cu/Migrations/20170216215525_Inheritance.cs?name=snippet_Up)]
 
 此代码负责以下数据库更新任务：
 
@@ -139,10 +139,10 @@ dotnet ef database update
 
 ![SSOX 中的 Person 表 - 表数据](inheritance/_static/ssox-person-data.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 你已经为 `Person`、`Student` 和 `Instructor` 类实现了每个层次结构一张表继承。 若要详细了解 Entity Framework Core 中的继承，请参阅[继承](https://docs.microsoft.com/ef/core/modeling/inheritance)。 下一个教程将介绍如何处理各种相对高级的 Entity Framework 方案。
 
->[!div class="step-by-step"]
-[上一页](concurrency.md)
-[下一页](advanced.md)  
+> [!div class="step-by-step"]
+> [上一页](concurrency.md)
+> [下一页](advanced.md)  

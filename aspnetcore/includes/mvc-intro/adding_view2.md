@@ -1,6 +1,6 @@
 使用以下内容替换 Razor 视图文件 Views/HelloWorld/Index.cshtml 的内容：
 
-[!code-HTML[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Index.cshtml)]
+[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Index.cshtml)]
 
 导航到 `http://localhost:xxxx/HelloWorld`。 `HelloWorldController` 中的 `Index` 方法作用不大；它运行 `return View();` 语句，指定此方法应使用视图模板文件来呈现对浏览器的响应。 因为没有显式指定视图模板文件的名称，所以 MVC 默认使用 /Views/HelloWorld 文件夹中的 Index.cshtml 视图文件。 下面图片显示了视图中硬编码的 字符串“Hello from our View Template!”
 
@@ -18,11 +18,11 @@
 
 ## <a name="change-the-title-and-menu-link-in-the-layout-file"></a>更改布局文件中的标题和菜单链接
 
-在标题元素中，将 `MvcMovie` 更改为 `Movie App`。 将布局模板中的定位文本从 `MvcMovie` 更改为 `Mvc Movie`，并将控制器从 `Home` 更改为 `Movies`，如下所示：
+在标题元素中，将 `MvcMovie` 更改为 `Movie App`。 将布局模板中的定位文本从 `MvcMovie` 更改为 `Movie App`，并将控制器从 `Home` 更改为 `Movies`，如下所示：
 
 注意：ASP.NET Core 2.0 版本略有不同。 它不包含 `@inject ApplicationInsights` 和 `@Html.Raw(JavaScriptSnippet.FullScript)`。
 
-[!code-html[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
+[!code-html[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
 
 >[!WARNING]
 > 我们尚未实现 `Movies` 控制器，所以如果单击此链接，将收到 404（未找到）错误。
@@ -73,7 +73,7 @@ Views/_ViewStart.cshtml 文件将 Views/Shared/_Layout.cshtml 文件引入到每
 
 保存更改并导航到 `http://localhost:xxxx/HelloWorld`。 请注意，浏览器标题、主标题和辅助标题已更改。 （如果没有在浏览器中看到更改，则可能正在查看缓存的内容。 在浏览器中按 Ctrl + F5 强制加载来自服务器的响应。）浏览器标题是使用我们在 Index.cshtml 视图模板中设置的 `ViewData["Title"]` 以及在布局文件中添加的额外“ - Movie App”创建的。
 
-还要注意，Index.cshtml 视图模板中的内容是如何与 Views/Shared/_Layout.cshtml 视图模板合并的，并且注意单个 HTML 响应被发送到了浏览器。 凭借布局模板可以很容易地对应用程序中所有页面进行更改。 若要了解更多信息，请参阅[布局](../../mvc/views/layout.md)。
+还要注意，Index.cshtml 视图模板中的内容是如何与 Views/Shared/_Layout.cshtml 视图模板合并的，并且注意单个 HTML 响应被发送到了浏览器。 凭借布局模板可以很容易地对应用程序中所有页面进行更改。 若要了解更多信息，请参阅[布局](xref:mvc/views/layout)。
 
 ![电影列表视图](../../tutorials/first-mvc-app/adding-view/_static/hell3.png)
 
@@ -89,7 +89,7 @@ Views/_ViewStart.cshtml 文件将 Views/Shared/_Layout.cshtml 文件引入到每
 
 返回到 HelloWorldController.cs 文件，并更改 `Welcome` 方法以将 `Message` 和 `NumTimes` 值添加到 `ViewData` 字典。 `ViewData` 字典是一个动态对象，这意味着你可以将任何所需的内容放在其中；只有将内容放在其中后 `ViewData` 对象才具有定义的属性。 [MVC 模型绑定系统](xref:mvc/models/model-binding)自动将命名参数（`name` 和 `numTimes`）从地址栏中的查询字符串映射到方法中的参数。 完整的 HelloWorldController.cs 文件如下所示：
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_5)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_5)]
 
 `ViewData` 字典对象包含将传递给视图的数据。 
 
@@ -97,7 +97,7 @@ Views/_ViewStart.cshtml 文件将 Views/Shared/_Layout.cshtml 文件引入到每
 
 在 Welcome.cshtml 视图模板中创建一个循环，显示“Hello” `NumTimes`。 使用以下内容替换 Views/HelloWorld/Welcome.cshtml 的内容：
 
-[!code-html[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Welcome.cshtml)]
+[!code-html[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Welcome.cshtml)]
 
 保存更改并浏览到以下 URL：
 
