@@ -1,7 +1,7 @@
 ---
 title: ASP.NET 核心目录结构
 author: guardrex
-description: 了解有关已发布 ASP.NET Core 应用的目录结构。
+description: 了解已发布的 ASP.NET Core 应用的目录结构。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/directory-structure
-ms.openlocfilehash: ac9b777bcc7f4a8634161fc1347a4d0fdc3b4784
-ms.sourcegitcommit: 7c8fd9b7445cd77eb7f7d774bfd120c26f3b5d84
+ms.openlocfilehash: a5cc1f23d624643facddc9e2006fb246e5ae66dc
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="aspnet-core-directory-structure"></a>ASP.NET 核心目录结构
 
@@ -34,7 +34,7 @@ ms.lasthandoff: 04/19/2018
 
 *Wwwroot*目录中，如果存在，仅包含静态资产。
 
-Stdout*日志*可以使用以下两种方法之一部署创建目录：
+Stdout*日志*可以使用以下两种方法之一部署为创建目录：
 
 * 添加以下`<Target>`项目文件的元素：
 

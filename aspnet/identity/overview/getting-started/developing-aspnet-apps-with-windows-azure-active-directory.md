@@ -12,20 +12,17 @@ ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 msc.type: authoredcontent
-ms.openlocfilehash: 44bf29e099583bf9d49f2715d3ff4f748728ad8b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 9b2dc05089126fd5f4c1b0a0bd85b8a39f3041dc
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/07/2018
 ---
 <a name="developing-aspnet-apps-with-azure-active-directory"></a>开发使用 Azure Active Directory 的 ASP.NET 应用程序
 ====================
 通过[Rick Anderson](https://github.com/Rick-Anderson)
 
-> Microsoft ASP.NET tools 为 Azure Active Directory 可以很容易地为上托管的 web 应用程序启用身份验证[Azure](https://www.windowsazure.com/home/features/web-sites/)。 可以使用 Azure 身份验证从组织、 从本地 Active Directory 同步的公司帐户或用户在你自己的自定义 Azure Active Directory 域中创建的 Office 365 用户进行身份验证。 启用 Windows Azure 身份验证配置你的应用程序使用单个的用户进行身份验证[Azure Active Directory](https://docs.microsoft.com/azure/active-directory/)租户。
-> 
->  本教程编写由 Rick Anderson [@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
-
+Microsoft ASP.NET tools 为 Azure Active Directory 简化了为上托管的 web 应用程序启用身份验证[Azure](https://www.windowsazure.com/home/features/web-sites/)。 可以使用 Azure 身份验证从组织、 从本地 Active Directory 同步的公司帐户或用户在你自己的自定义 Azure Active Directory 域中创建的 Office 365 用户进行身份验证。 启用 Windows Azure 身份验证配置你的应用程序使用单个的用户进行身份验证[Azure Active Directory](https://docs.microsoft.com/azure/active-directory/)租户。
 
 本教程将演示如何创建的 ASP.NET 应用程序配置为使用登录[Azure Active Directory](https://msdn.microsoft.com/library/azure/mt168838.aspx) (Azure AD)。 你还将了解如何调用 Graph API，以获取有关当前登录的用户的信息以及如何部署应用程序到 Azure。
 
@@ -87,7 +84,7 @@ ms.lasthandoff: 04/06/2018
     > 此项目需要一个数据库。 你需要选择一个现有的数据库，或创建一个新。 数据库是必需的因为该项目已使用本地数据库文件存储少量的身份验证配置数据。 在部署到 Azure 网站应用程序时，此数据库未附带部署，因此你需要选择一个可访问位于云中。 单击 **“确定”**。
 
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image11.png)
-7. 将创建该项目，并且你的身份验证选项和 web 应用程序选项将自动配置与项目。 此过程完成后，通过按以本地方式运行该项目**^ F5**。 你将需要使用你的组织帐户进行登录。 为前面创建的帐户提供的用户名和密码，单击**登录**。   
+7. 将创建该项目，并且你的身份验证选项和 web 应用程序选项将自动配置与项目。 此过程完成后，通过按以本地方式运行该项目 **^ F5**。 你将需要使用你的组织帐户进行登录。 为前面创建的帐户提供的用户名和密码，单击**登录**。   
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image12.png)
 8. 在成功登录之后, 将显示 ASP.NET 站点，您已通过在页面右上角中显示用户名身份验证。  
@@ -107,7 +104,7 @@ ms.lasthandoff: 04/06/2018
 1. 在你运行的应用程序，单击顶部的登录用户名称页面右上角。 这将转到用户配置文件页上，这是在主页控制器上的操作。 你会注意到表中包含你前面创建的管理员帐户有关的用户信息。 此信息存储在你的目录，并调用图形 API 来加载页面时检索此信息。   
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image15.png)
-2. 返回到 Visual Studio 并展开**控制器**文件夹，然后打开**HomeController.cs**文件。 你将看到**UserProfile()**包含代码，以检索令牌，然后调用 Graph API 的操作。 下面被复制此代码： 
+2. 返回到 Visual Studio 并展开**控制器**文件夹，然后打开**HomeController.cs**文件。 你将看到**UserProfile()** 包含代码，以检索令牌，然后调用 Graph API 的操作。 下面被复制此代码： 
 
     [!code-csharp[Main](developing-aspnet-apps-with-windows-azure-active-directory/samples/sample1.cs?highlight=22)]
 

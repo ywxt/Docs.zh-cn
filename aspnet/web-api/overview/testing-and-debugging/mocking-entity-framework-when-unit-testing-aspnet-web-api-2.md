@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
-title: "模拟实体框架时单元测试 ASP.NET Web API 2 |Microsoft 文档"
+title: 模拟实体框架时单元测试 ASP.NET Web API 2 |Microsoft 文档
 author: tfitzmac
-description: "此指南和应用程序演示如何为 Web API 2 的应用程序使用实体框架创建单元测试。 它演示如何修改..."
+description: 此指南和应用程序演示如何为 Web API 2 的应用程序使用实体框架创建单元测试。 它演示如何修改...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/13/2013

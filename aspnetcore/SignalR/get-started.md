@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.topic: tutorial
 ms.technology: aspnet
 uid: signalr/get-started
-ms.openlocfilehash: 8b27e58a66c9030d92f9b9a6b8b2a7ed292e4ca9
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: ecd40eba5f46d4cbe768c332478c24277f27446b
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>要开始使用 SignalR 在 ASP.NET Core 上
 
@@ -42,13 +42,13 @@ ms.lasthandoff: 05/03/2018
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* [.NET 核心 2.1.0 预览 2 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview2)或更高版本
+* [.NET 核心 2.1.0 RC 1 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-rc1)或更高版本
 * [Visual Studio 2017](https://www.visualstudio.com/downloads/) 15.7 或使用更高版本**ASP.NET 和 web 开发**工作负荷
 * [npm](https://www.npmjs.com/get-npm)
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
-* [.NET 核心 2.1.0 预览 2 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview2)或更高版本
+* [.NET 核心 2.1.0 RC 1 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-rc1)或更高版本
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [用于 Visual Studio 代码的 C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 * [npm](https://www.npmjs.com/get-npm)

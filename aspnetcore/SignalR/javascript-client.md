@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/javascript-client
-ms.openlocfilehash: cca1a523bd536f4365e54c196f6c9024779d5d76
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: d2530fe3c4b47687d3ef4015624499d96fea2d7b
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="aspnet-core-signalr-javascript-client"></a>ASP.NET 核心 SignalR JavaScript 客户端
 
@@ -50,7 +50,7 @@ Npm 安装中的包内容*node_modules\\ @aspnet\signalr\dist\browser* 文件夹
 
 下面的代码创建并启动连接。 中心的名称是区分大小写。
 
-[!code-javascript[Call hub methods](javascript-client/sample/wwwroot/js/chat.js?range=1-2,18)]
+[!code-javascript[Call hub methods](javascript-client/sample/wwwroot/js/chat.js?range=9-12,28)]
 
 ### <a name="cross-origin-connections"></a>跨域连接
 
@@ -67,7 +67,7 @@ JavaScript 客户端调用公共方法的中心使用`connection.invoke`。 `inv
 * 中心方法的名称。 在以下示例中，中心名称是`SendMessage`。
 * 中心方法中定义的任何参数。 在以下示例中，自变量名称是`message`。
 
-[!code-javascript[Call hub methods](javascript-client/sample/wwwroot/js/chat.js?range=14)]
+[!code-javascript[Call hub methods](javascript-client/sample/wwwroot/js/chat.js?range=24)]
 
 ## <a name="call-client-methods-from-hub"></a>从中心调用客户端方法
 
@@ -76,7 +76,7 @@ JavaScript 客户端调用公共方法的中心使用`connection.invoke`。 `inv
 * JavaScript 客户端方法的名称。 在下面的示例中，该方法将`ReceiveMessage`。
 * 中心将传递给方法的自变量。 在以下示例中，自变量值是`message`。
 
-[!code-javascript[Receive calls from hub](javascript-client/sample/wwwroot/js/chat.js?range=4-9)]
+[!code-javascript[Receive calls from hub](javascript-client/sample/wwwroot/js/chat.js?range=14-19)]
 
 在前面的代码`connection.on`运行时服务器端代码将调用它使用`SendAsync`方法。
 
@@ -91,7 +91,7 @@ SignalR 确定要调用的方法名称匹配的客户端方法并在中定义的
 
 链`catch`方法的末尾`connection.start`方法以处理客户端错误。 使用`console.error`输出错误给浏览器的控制台。
 
-[!code-javascript[Error handling](javascript-client/sample/wwwroot/js/chat.js?range=18)]
+[!code-javascript[Error handling](javascript-client/sample/wwwroot/js/chat.js?range=28)]
 
 通过传递要建立连接时记录的记录器和事件类型的安装程序客户端日志跟踪。 使用指定的日志级别和更高版本记录的消息。 可用的日志级别如下所示：
 
@@ -100,9 +100,9 @@ SignalR 确定要调用的方法名称匹配的客户端方法并在中定义的
 * `signalR.LogLevel.Information` ： 未出现错误状态消息。 日志`Information`， `Warning`，和`Error`消息。
 * `signalR.LogLevel.Trace` ： 跟踪消息。 记录所有内容，包括数据中心和客户端之间传输。
 
-将记录器传递给要启动日志记录的连接。 浏览器开发人员工具通常包含显示的消息的控制台。
+使用`configureLogging`方法`HubConnectionBuilder`若要配置的日志级别。 消息会记录到浏览器控制台中。
 
-[!code-javascript[Logging levels](javascript-client/sample/wwwroot/js/chat.js?range=1-2)]
+[!code-javascript[Logging levels](javascript-client/sample/wwwroot/js/chat.js?range=11)]
 
 ## <a name="related-resources"></a>相关资源
 

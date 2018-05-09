@@ -1,5 +1,5 @@
 ---
-title: 迁移 ASP.NET ASP.NET 核心 2.0
+title: 从 ASP.NET 迁移到 ASP.NET Core 2.0
 author: isaac2004
 description: 接收有关现有 ASP.NET MVC 或 Web API 应用程序迁移到 ASP.NET 核心 2.0 的指导。
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/mvc2
-ms.openlocfilehash: 58fac7642dbfdad58fef99f04d17de33e7218524
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: f8e9d3c222bdd5491e946f286bbdf71a2d26ab10
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/08/2018
 ---
-# <a name="migrate-from-aspnet-to-aspnet-core-20"></a>迁移 ASP.NET ASP.NET 核心 2.0
+# <a name="migrate-from-aspnet-to-aspnet-core-20"></a>从 ASP.NET 迁移到 ASP.NET Core 2.0
 
 作者：[Isaac Levin](https://isaaclevin.com)
 
@@ -150,7 +150,7 @@ Web 开发的一个重要环节是提供客户端静态资产的功能。 HTML�
 
 例如，可以通过浏览器从类似 `http://<app>/images/<imageFileName>` 的位置访问 wwwroot/images 文件夹中的图像资产。
 
-**注意：**到为 ASP.NET Core 中的静态文件提供服务的更深入参考，请参阅[使用 ASP.NET Core 中的静态文件](xref:fundamentals/static-files)。
+**注意：**到为 ASP.NET Core 中的静态文件提供服务的更深入参考，请参阅[静态文件](xref:fundamentals/static-files)。
 
 ## <a name="additional-resources"></a>其他资源
 

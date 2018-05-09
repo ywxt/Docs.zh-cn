@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: a155422c0fd638f46fe4a9d8a77faebc0b2a5681
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 381025d1c4a9951349e242482ca9b780c461e588
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>在 ASP.NET 核心中的捆绑和 minifiy 静态资产
 
@@ -77,7 +77,7 @@ MVC 和 Razor 页项目模板提供了*bundleconfig.json*配置文件用于定�
 
 配置选项包括：
 
-* `outputFileName`： 要输出的捆绑文件名称。 可以包含中的相对路径*bundleconfig.json*文件。 **required**
+* `outputFileName`： 要输出的捆绑文件名称。 可以包含中的相对路径*bundleconfig.json*文件。 **必填**
 * `inputFiles`： 要将捆绑在一起的文件的数组。 这些是配置文件的相对路径。 **可选**，* 空值会在空的输出文件。 [组合](http://www.tldp.org/LDP/abs/html/globbingref.html)支持模式。
 * `minify`： 输出类型缩减选项。 **可选**，*默认值- `minify: { enabled: true }`*
   * 每个输出文件类型有配置选项。

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
-title: "启用 ASP.NET Web API 1 中的 CRUD 操作 |Microsoft 文档"
+title: 启用 ASP.NET Web API 1 中的 CRUD 操作 |Microsoft 文档
 author: MikeWasson
-description: "本教程演示如何使用 ASP.NET Web API 的 HTTP 服务中支持 CRUD 操作。 在教程的 Visual Studio 2012 Web AP 中使用的软件版本..."
+description: 本教程演示如何使用 ASP.NET Web API 的 HTTP 服务中支持 CRUD 操作。 在教程的 Visual Studio 2012 Web AP 中使用的软件版本...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/28/2012
@@ -74,7 +74,7 @@ CRUD 代表&quot;创建、 读取、 更新和删除，&quot;哪些是四个基�
 
 通过运行 Visual Studio 启动，然后选择**新项目**从**启动**页。 或从**文件**菜单上，选择**新建**然后**项目**。
 
-在**模板**窗格中，选择**已安装的模板**展开**Visual C#**节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 将项目&quot;ProductStore&quot;单击**确定**。
+在**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 将项目&quot;ProductStore&quot;单击**确定**。
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image1.png)
 

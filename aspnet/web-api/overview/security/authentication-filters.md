@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/authentication-filters
-title: "ASP.NET Web API 2 中的身份验证筛选器 |Microsoft 文档"
+title: ASP.NET Web API 2 中的身份验证筛选器 |Microsoft 文档
 author: MikeWasson
-description: "身份验证筛选器是对 HTTP 请求进行身份验证的组件。 Web API 2 和 MVC 5 都支持身份验证筛选器，但它们略有不同..."
+description: 身份验证筛选器是对 HTTP 请求进行身份验证的组件。 Web API 2 和 MVC 5 都支持身份验证筛选器，但它们略有不同...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/25/2014

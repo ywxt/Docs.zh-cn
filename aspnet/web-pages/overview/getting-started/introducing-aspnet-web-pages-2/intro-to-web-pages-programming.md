@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 msc.type: authoredcontent
-ms.openlocfilehash: 3e2c990a6451c13e03baafa343df156b2d46d219
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 60115dd06a27bf856427953de29e993194afb991
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/07/2018
 ---
 <a name="introducing-aspnet-web-pages---programming-basics"></a>引入了 ASP.NET Web 页-编程基础知识
 ====================
@@ -207,7 +207,7 @@ ms.lasthandoff: 04/06/2018
 
 ### <a name="testing-the-value-of-a-query-string"></a>测试查询字符串的值
 
-一个多个测试。 此时，你将添加 if 测试某个值的块名为可能传递给查询字符串中的显示。 (如下所示: 'http://localhost:43097/TestRazorPart2.cshtml`?show=true`)，以便消息你已显示，将更改的页 （"这是首次..."，等等） 如果显示的值为 true，则仅显示。
+一个多个测试。 此时，你将添加 if 测试某个值的块名为可能传递给查询字符串中的显示。 (如下所示： `http://localhost:43097/TestRazorPart2.cshtml?show=true`)，以便消息你已显示，将更改的页 （"这是首次..."，等等） 如果显示的值为 true，则仅显示。
 
 在底部 （但内部） 在代码块中的页上，顶部添加以下代码：
 
@@ -223,7 +223,7 @@ ms.lasthandoff: 04/06/2018
 
 代码将确定 URL 是否包含名为查询字符串，如 URL 的此版本中显示的变量：
 
-`http://localhost:43097/TestRazorPart2.cshtml`?show=true
+`http://localhost:43097/TestRazorPart2.cshtml`？ 显示 = true
 
 测试本身来看待请求对象的查询字符串属性。 如果查询字符串包含项命名的显示，并且该项设置为 true，如果块运行，并将分隔开多个变量设置为 true。
 

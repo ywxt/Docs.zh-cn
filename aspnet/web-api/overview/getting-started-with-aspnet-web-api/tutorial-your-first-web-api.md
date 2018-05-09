@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
-title: "要开始使用 ASP.NET Web API 2 (C#)"
+title: 要开始使用 ASP.NET Web API 2 (C#)
 author: MikeWasson
-description: "HTTP 不再仅仅用于为网页提供服务。 它也是一个功能强大的平台，用于构建公开服务和数据的 Api。 HTTP 是简单、 灵活、 和 ubiq..."
+description: HTTP 不再仅仅用于为网页提供服务。 它也是一个功能强大的平台，用于构建公开服务和数据的 Api。 HTTP 是简单、 灵活、 和 ubiq...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/28/2017
@@ -43,7 +43,7 @@ ASP.NET Web API 是一个框架，用于生成 web Api 在.NET Framework 之上�
 
 启动 Visual Studio 并选择**新项目**从**启动**页。 或从**文件**菜单上，选择**新建**然后**项目**。
 
-在**模板**窗格中，选择**已安装的模板**展开**Visual C#**节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET Web 应用程序**。 将"ProductsApp"的项目，然后单击**确定**。
+在**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET Web 应用程序**。 将"ProductsApp"的项目，然后单击**确定**。
 
 ![](tutorial-your-first-web-api/_static/image2.png)
 
@@ -104,7 +104,7 @@ ASP.NET Web API 是一个框架，用于生成 web Api 在.NET Framework 之上�
 
 控制器定义返回产品的两个方法：
 
-- `GetAllProducts`方法返回的产品为整个列表**IEnumerable&lt;产品&gt;**类型。
+- `GetAllProducts`方法返回的产品为整个列表**IEnumerable&lt;产品&gt;** 类型。
 - `GetProduct`方法查找单个产品 id
 
 就这么简单！ 具有工作 web API。 在控制器上的每个方法对应于一个或多个 Uri:

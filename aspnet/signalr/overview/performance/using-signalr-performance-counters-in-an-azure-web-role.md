@@ -1,9 +1,9 @@
 ---
 uid: signalr/overview/performance/using-signalr-performance-counters-in-an-azure-web-role
-title: "在 Azure Web 角色中使用 SignalR 性能计数器 |Microsoft 文档"
+title: 在 Azure Web 角色中使用 SignalR 性能计数器 |Microsoft 文档
 author: guardrex
-description: "如何安装和在 Azure Web 角色中使用 SignalR 性能计数器。"
-keywords: "ASP.NET,signalr,performance 计数器，azure web 角色"
+description: 如何安装和在 Azure Web 角色中使用 SignalR 性能计数器。
+keywords: ASP.NET,signalr,performance 计数器，azure web 角色
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/11/2017
@@ -37,7 +37,7 @@ SignalR 性能计数器用于监视 Azure Web 角色中的应用程序的性能�
 
 2. 在 Visual Studio 2015 中，选择**文件** > **新建** > **项目**。
 
-3. 在**模板**窗格**新项目**下的窗口**Visual C#**节点中，选择**云**节点，然后选择**Azure 云服务**模板。 命名应用程序**SignalRPerfCounters**和选择**确定**。
+3. 在**模板**窗格**新项目**下的窗口**Visual C#** 节点中，选择**云**节点，然后选择**Azure 云服务**模板。 命名应用程序**SignalRPerfCounters**和选择**确定**。
 
    ![新的云应用程序](using-signalr-performance-counters-in-an-azure-web-role/_static/image1.png)
     

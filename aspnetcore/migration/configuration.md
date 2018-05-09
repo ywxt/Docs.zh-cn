@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/configuration
-ms.openlocfilehash: 5bb89401ac54b54810fe5724b293ae8ed7e5afef
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: ead4f96aa0041cd919caa972d3bb05bd94a857b3
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="migrate-configuration-to-aspnet-core"></a>将配置迁移到 ASP.NET 核心
 
 作者：[Steve Smith](https://ardalis.com/) 和 [Scott Addie](https://scottaddie.com)
 
-在以前的文章中，我们就已着手[将 ASP.NET MVC 项目迁移到 ASP.NET 核心 MVC](mvc.md)。 在本文中，我们将迁移配置。
+在以前的文章中，我们就已着手[将 ASP.NET MVC 项目迁移到 ASP.NET 核心 MVC](xref:migration/mvc)。 在本文中，我们将迁移配置。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/configuration/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
@@ -29,9 +29,9 @@ ASP.NET 核心不再使用*Global.asax*和*web.config* ASP.NET 的早期版本�
 
 *Web.config*还在 ASP.NET Core 替换文件。 配置本身现在可以配置，作为应用程序启动过程中所述的一部分*Startup.cs*。 配置仍然可以利用 XML 文件，但通常 ASP.NET 核心项目将置于配置值的 JSON 格式文件，如*appsettings.json*。 ASP.NET 核心配置系统可以方便地访问环境变量，可以提供[更安全、 极其可靠的位置](xref:security/app-secrets)特定于环境的值。 这是针对如连接字符串和不应签入源代码管理的 API 密钥的机密尤其如此。 请参阅[配置](xref:fundamentals/configuration/index)若要了解有关 ASP.NET 核心中配置的详细信息。
 
-有关本文中，我们开始使用中的部分迁移 ASP.NET Core 项目[上一篇文章](mvc.md)。 要设置配置中添加以下构造函数和属性*Startup.cs*文件位于项目根目录中：
+有关本文中，我们开始使用从部分已迁移的 ASP.NET Core 项目[上一篇文章](xref:migration/mvc)。 要设置配置中添加以下构造函数和属性*Startup.cs*文件位于项目根目录中：
 
-[!code-csharp[](configuration/samples/WebApp1/src/WebApp1/Startup.cs?range=11-21)]
+[!code-csharp[](configuration/samples/WebApp1/src/WebApp1/Startup.cs?range=11-16)]
 
 请注意，此时， *Startup.cs*文件将无法编译，因为我们仍需要将以下内容添加`using`语句：
 
@@ -49,8 +49,7 @@ using Microsoft.Extensions.Configuration;
 
 [!code-json[](../migration/configuration/samples/WebApp1/src/WebApp1/appsettings.json?highlight=4)]
 
-
-在突出显示的行将上面所示，将更改从数据库的名称**_CHANGE_ME**为你的数据库的名称。
+在突出显示的行将上面所示，将更改从数据库的名称 **_CHANGE_ME**为你的数据库的名称。
 
 ## <a name="summary"></a>总结
 

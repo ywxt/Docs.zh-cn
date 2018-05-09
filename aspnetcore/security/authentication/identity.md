@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity
-ms.openlocfilehash: f9215767bf9a7c8b43b474848ba7dff7c3ddaf24
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: cf63766dc4ae94d784190d6dbc7b5beb57342f42
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>在 ASP.NET Core 上的标识简介
 
@@ -49,7 +49,7 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 
    # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-   如果使用.NET 核心 CLI，创建新的项目使用``dotnet new mvc --auth Individual``。 此命令创建一个新的项目与 Visual Studio 将创建相同的标识模板代码。
+   如果使用.NET 核心 CLI，创建新的项目使用`dotnet new mvc --auth Individual`。 此命令创建一个新的项目与 Visual Studio 将创建相同的标识模板代码。
 
    创建的项目包含`Microsoft.AspNetCore.Identity.EntityFrameworkCore`包，其中的标识数据和 SQL Server 使用的架构仍然存在[实体框架核心](https://docs.microsoft.com/ef/)。
 
@@ -88,30 +88,30 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 
    ![将应用迁移网页](identity/_static/apply-migrations.png)
 
-   或者，你可以测试与你的应用不持久的数据库的情况下通过使用内存中数据库的 ASP.NET 核心标识。 若要使用的内存中数据库，添加``Microsoft.EntityFrameworkCore.InMemory``包到你的应用程序和修改您的应用程序调用``AddDbContext``中``ConfigureServices``，如下所示：
+   或者，你可以测试与你的应用不持久的数据库的情况下通过使用内存中数据库的 ASP.NET 核心标识。 若要使用的内存中数据库，添加`Microsoft.EntityFrameworkCore.InMemory`包到你的应用程序和修改您的应用程序调用`AddDbContext`中`ConfigureServices`，如下所示：
 
    ```csharp
    services.AddDbContext<ApplicationDbContext>(options =>
        options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
    ```
 
-   当用户单击**注册**链接，``Register``上调用操作``AccountController``。 ``Register``操作通过调用创建用户`CreateAsync`上`_userManager`对象 (提供给``AccountController``通过依赖关系注入):
+   当用户单击**注册**链接，`Register`上调用操作`AccountController`。 `Register`操作通过调用创建用户`CreateAsync`上`_userManager`对象 (提供给`AccountController`通过依赖关系注入):
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
 
-   如果已成功创建用户，用户记录通过调用``_signInManager.SignInAsync``。
+   如果已成功创建用户，用户记录通过调用`_signInManager.SignInAsync`。
 
    **注意：**请参阅[帐户确认](xref:security/authentication/accconfirm#prevent-login-at-registration)有关步骤，以防止在注册的即时登录名。
 
 4. 登录。
 
-   用户可以通过单击登录**登录**链接顶部的站点，或可能的登录页导航它们，如果用户尝试访问要求获得授权的站点的一部分。 当用户提交的登录页中上, 窗体``AccountController````Login``调用操作。
+   用户可以通过单击登录**登录**链接顶部的站点，或可能的登录页导航它们，如果用户尝试访问要求获得授权的站点的一部分。 当用户提交的登录页中上, 窗体`AccountController``Login`调用操作。
 
-   ``Login``操作调用``PasswordSignInAsync``上``_signInManager``对象 (提供给``AccountController``通过依赖关系注入)。
+   `Login`操作调用`PasswordSignInAsync`上`_signInManager`对象 (提供给`AccountController`通过依赖关系注入)。
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
 
-   基``Controller``类会公开``User``你可以从控制器方法访问的属性。 例如，可以枚举`User.Claims`并做出授权决策。 有关详细信息，请参阅[授权](xref:security/authorization/index)。
+   基`Controller`类会公开`User`你可以从控制器方法访问的属性。 例如，可以枚举`User.Claims`并做出授权决策。 有关详细信息，请参阅[授权](xref:security/authorization/index)。
 
 5. 注销。
 
@@ -149,7 +149,7 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 
     默认值*ASP.NET 核心 Web 应用程序*项目模板，用户可以访问应用程序中的任何操作，而无到登录名。 若要验证 ASP.NET 标识工作原理，添加`[Authorize]`属性设为`About`操作`Home`控制器。
 
-    ```cs
+    ```csharp
     [Authorize]
     public IActionResult About()
     {
@@ -166,7 +166,7 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 
     打开命令窗口并导航到项目的根目录包含`.csproj`文件。 运行[dotnet 运行](/dotnet/core/tools/dotnet-run)命令以运行应用程序：
 
-    ```cs
+    ```csharp
     dotnet run 
     ```
 

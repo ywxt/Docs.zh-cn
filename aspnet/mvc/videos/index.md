@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/index
-title: "视频 |Microsoft 文档"
+title: 视频 |Microsoft 文档
 author: rick-anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/24/2011

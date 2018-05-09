@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/improvements-in-visual-studio-2005
-title: "Visual Studio 2005 中的改进 |Microsoft 文档"
+title: Visual Studio 2005 中的改进 |Microsoft 文档
 author: microsoft
-description: "Visual Studio 2005 提供 Web 应用程序开发人员的改进和增强功能，Web 项目的长列表。"
+description: Visual Studio 2005 提供 Web 应用程序开发人员的改进和增强功能，Web 项目的长列表。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/10-working-with-video
-title: "在 ASP.NET 网页中显示视频页 (Razor) 站点 |Microsoft 文档"
+title: 在 ASP.NET 网页中显示视频页 (Razor) 站点 |Microsoft 文档
 author: tfitzmac
-description: "本章介绍如何显示在带有 Razor 语法页 ASP.NET Web Pages 的视频。"
+description: 本章介绍如何显示在带有 Razor 语法页 ASP.NET Web Pages 的视频。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -89,10 +89,10 @@ ms.lasthandoff: 02/12/2018
 `Silverlight`播放器的`Video`帮助器，您可以播放 Windows Media 视频 (*.wmv*文件)，Windows Media 音频 (*.wma*文件)，和 MP3 (*.mp3*文件）。 必须设置 path 参数，以指向基于 Silverlight 的应用程序包 (*.xap*文件)。 此外必须设置宽度和高度参数。 其他所有参数都是可选参数。 当你使用 Silverlight 播放器有关视频，如果设置所需的参数时，Silverlight 播放器显示不带背景颜色的视频。
 
 > [!NOTE]
-> 如果您尚不知道 Silverlight: *.xap*文件是一个压缩的文件，其中包含中的布局说明*.xaml*文件，程序集和可选资源中的托管的代码。 你可以创建*.xap*为 Silverlight 应用程序项目的 Visual Studio 中的文件。
+> 如果您尚不知道 Silverlight: *.xap*文件是一个压缩的文件，其中包含中的布局说明 *.xaml*文件，程序集和可选资源中的托管的代码。 你可以创建 *.xap*为 Silverlight 应用程序项目的 Visual Studio 中的文件。
 
 
-`Silverlight`视频播放器使用两个播放器提供的设置和中提供的设置*.xap*文件。
+`Silverlight`视频播放器使用两个播放器提供的设置和中提供的设置 *.xap*文件。
 
 > [!TIP] 
 > 
@@ -109,7 +109,7 @@ ms.lasthandoff: 02/12/2018
 <a id="Playing_Flash"></a>
 ## <a name="playing-flash-swf-videos"></a>播放 Flash (.swf) 视频
 
-此过程演示如何播放闪存视频名为*sample.swf*。 此过程假设您有一个名为文件夹*媒体*你的站点和上*.swf*文件是在该文件夹中。
+此过程演示如何播放闪存视频名为*sample.swf*。 此过程假设您有一个名为文件夹*媒体*你的站点和上 *.swf*文件是在该文件夹中。
 
 1. 将 ASP.NET Web 帮助程序库添加到你的网站中所述[安装 ASP.NET 网页站点中的帮助器](https://go.microsoft.com/fwlink/?LinkId=252372)，如果你尚未添加它。
 2. 在网站中，添加一个页面，并将其命名*FlashVideo.cshtml*。
@@ -169,7 +169,7 @@ Flash player 支持的视频模式设置命名`windowMode`。 你可以将此设
 <a id="Playing_Silverlight"></a>
 ## <a name="playing-silverlight-videos"></a>播放 Silverlight 视频
 
-此过程演示如何播放视频 Silverlight 中包含*.xap*页的文件夹中名为*媒体*。
+此过程演示如何播放视频 Silverlight 中包含 *.xap*页的文件夹中名为*媒体*。
 
 1. 将 ASP.NET Web 帮助程序库添加到你的网站中所述[安装 ASP.NET 网页站点中的帮助器](https://go.microsoft.com/fwlink/?LinkId=252372)，如果你尚未。
 2. 创建一个名为的新页*SilverlightVideo.cshtml*。

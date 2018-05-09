@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/releases/whats-new-in-aspnet-web-api-21
-title: "ASP.NET Web API 2.1 的新增功能 |Microsoft 文档"
+title: ASP.NET Web API 2.1 的新增功能 |Microsoft 文档
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014
@@ -142,7 +142,7 @@ Web API 现在支持轻松创建异步执行的筛选器。 此功能是有用�
 
 在属性路由匹配项中的多义性现在还报告错误，而不是无需选择第一个匹配项。
 
-属性路由禁止使用*{controller}*参数，并从使用*{action}*路由的参数放置在操作上。 这些参数将很有可能会导致多义性。
+属性路由禁止使用 *{controller}* 参数，并从使用 *{action}* 路由的参数放置在操作上。 这些参数将很有可能会导致多义性。
 
 ### <a name="scaffolding-mvcweb-api-into-a-project-with-51-packages-results-in-50-packages-for-ones-that-dont-already-exist-in-the-project"></a>到 5.1 包在中使用结果尚不存在项目中的那些 5.0 包项目的基架 MVC/Web API
 

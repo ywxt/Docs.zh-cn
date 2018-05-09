@@ -3,23 +3,24 @@ title: 在 ASP.NET Core SMS 的双因素身份验证
 author: rick-anderson
 description: 了解如何设置双因素身份验证 (2FA) 与 ASP.NET Core 应用。
 manager: wpickett
+monikerRange: < aspnetcore-2.0
 ms.author: riande
 ms.date: 08/15/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/2fa
-ms.openlocfilehash: 1c4acc4e4be593051d30793b7f73ad90ce727283
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 20f00c2307e140d81e716304c96a143340d934d0
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="two-factor-authentication-with-sms-in-aspnet-core"></a>在 ASP.NET Core SMS 的双因素身份验证
 
 通过[Rick Anderson](https://twitter.com/RickAndMSFT)和[瑞士开发人员](https://github.com/Swiss-Devs)
 
-本教程适用于 ASP.NET Core 仅 1.x。 请参阅[ASP.NET Core 中的身份验证器应用启用 QR 代码生成](xref:security/authentication/identity-enable-qrcodes)ASP.NET 核心 2.0 及更高版本。
+请参阅[ASP.NET Core 中的身份验证器应用启用 QR 代码生成](xref:security/authentication/identity-enable-qrcodes)ASP.NET 核心 2.0 及更高版本。
 
 本教程演示如何设置双因素身份验证 (2FA) 使用短信。 为提供的说明[twilio](https://www.twilio.com/)和[ASPSMS](https://www.aspsms.com/asp.net/identity/core/testcredits/)，但你可以使用任何其他 SMS 提供程序。 我们建议你完成[帐户确认和密码恢复](xref:security/authentication/accconfirm)之前开始学习本教程。
 

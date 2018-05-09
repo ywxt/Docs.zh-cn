@@ -8,7 +8,7 @@
 
 ## <a name="the-create-delete-details-and-edit-pages"></a>“创建”、“删除”、“详细信息”和“编辑”页。
 
-检查 Pages/Movies/Index.cshtml.cs 页面模型：[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml.cs)]
+检查 Pages/Movies/Index.cshtml.cs 页面模型：[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml.cs)]
 
 Razor 页面派生自 `PageModel`。 按照约定，`PageModel` 派生的类称为 `<PageName>Model`。 此构造函数使用[依赖关系注入](xref:fundamentals/dependency-injection)将 `MovieContext` 添加到页。 所有已搭建基架的页面都遵循此模式。 请参阅[异步代码](xref:data/ef-rp/intro#asynchronous-code)，了解有关使用实体框架的异步编程的详细信息。
 
@@ -17,7 +17,7 @@ Razor 页面派生自 `PageModel`。 按照约定，`PageModel` 派生的类称�
 当 `OnGet` 返回 `void` 或 `OnGetAsync` 返回 `Task` 时，不使用任何返回方法。 当返回类型是 `IActionResult` 或 `Task<IActionResult>` 时，必须提供返回语句。 例如，Pages/Movies/Create.cshtml.cs `OnPostAsync` 方法：
 
 <!-- TODO - replace with snippet
-[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetALL)]
+[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetALL)]
  -->
 
 ```csharp
@@ -36,7 +36,7 @@ public async Task<IActionResult> OnPostAsync()
 ```
 检查 Pages/Movies/Index.cshtml Razor 页面：
 
-[!code-cshtml[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml)]
+[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml)]
 
 Razor 可以从 HTML 转换为 C# 或 Razor 特定标记。 当 `@` 符号后跟 [Razor 保留关键字](xref:mvc/views/razor#razor-reserved-keywords)时，它会转换为 Razor 特定标记，否则会转换为 C#。
 
@@ -53,9 +53,9 @@ Razor 可以从 HTML 转换为 C# 或 Razor 特定标记。 当 `@` 符号后跟
 <a name="md"></a>
 ### <a name="the-model-directive"></a>@model 指令
 
-[!code-cshtml[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-2&highlight=2)]
+[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-2&highlight=2)]
 
-`@model` 指令指定传递给 Razor 页面的模型类型。 在前面的示例中，`@model` 行使 `PageModel` 派生的类可用于 Razor 页面。 在页面上的 `@Html.DisplayNameFor` 和 `@Html.DisplayName` [HTML 帮助程序](https://docs.microsoft.com/aspnet/mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs#understanding-html-helpers)中使用该模型。
+`@model` 指令指定传递给 Razor 页面的模型类型。 在前面的示例中，`@model` 行使 `PageModel` 派生的类可用于 Razor 页面。 在页面上的 `@Html.DisplayNameFor` 和 `@Html.DisplayName` [HTML 帮助程序](/aspnet/mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs#understanding-html-helpers)中使用该模型。
 
 <!-- why don't xref links work?
 [HTML Helpers 2](xref:aspnet/mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs)
@@ -66,13 +66,13 @@ Razor 可以从 HTML 转换为 C# 或 Razor 特定标记。 当 `@` 符号后跟
 
 考虑下列代码：
 
-[!code-cshtml[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-6&highlight=4-)]
+[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-6&highlight=4-999)]
 
 前面突出显示的代码是 Razor 转换为 C# 的一个示例。 `{` 和 `}` 字符括住 C# 代码块。
 
 `PageModel` 基类具有 `ViewData` 字典属性，可用于添加要传递到某个视图的数据。 可以使用键/值模式将对象添加到 `ViewData` 字典。 在前面的示例中，“Title”属性被添加到 `ViewData` 字典。 “Title”属性用于 Pages/_Layout.cshtml 文件。 以下标记显示 Pages/_Layout.cshtml 文件的前几行。
 
-[!code-cshtml[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/NU/_Layout1.cshtml?highlight=6-)]
+[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/NU/_Layout1.cshtml?highlight=6-999)]
 
 行 `@*Markup removed for brevity.*@` 为 Razor 注释。 与 HTML 注释不同 (`<!-- -->`)，Razor 注释不会发送到客户端。
 
@@ -80,7 +80,7 @@ Razor 可以从 HTML 转换为 C# 或 Razor 特定标记。 当 `@` 符号后跟
 
 在 Pages/_ViewStart.cshtml 文件中设置 `Layout` 属性：
 
-[!code-cshtml[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_ViewStart.cshtml)]
+[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_ViewStart.cshtml)]
 
 前面的标记针对所有 Razor 文件将布局文件设置为 Pages 文件夹下的 Pages/_Layout.cshtml。 请参阅[布局](xref:mvc/razor-pages/index#layout)了解详细信息。
 
@@ -88,7 +88,7 @@ Razor 可以从 HTML 转换为 C# 或 Razor 特定标记。 当 `@` 符号后跟
 
 更改 Pages/_Layout.cshtml 文件中的 `<title>` 元素以使用较短的字符串。
 
-[!code-cshtml[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=1-6&highlight=6)]
+[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=1-6&highlight=6)]
 
 查找 Pages/_Layout.cshtml 文件中的以下定位点元素。
 
@@ -109,7 +109,7 @@ Razor 可以从 HTML 转换为 C# 或 Razor 特定标记。 当 `@` 符号后跟
 
 检查 *Pages/Movies/Create.cshtml.cs* 页面模型：
 
-[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetALL)]
+[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetALL)]
 
 `OnGet` 方法初始化页面所需的任何状态。 “创建”页没有任何要初始化的状态。 `Page` 方法创建用于呈现 Create.cshtml 页的 `PageResult` 对象。
 
@@ -117,7 +117,7 @@ Razor 可以从 HTML 转换为 C# 或 Razor 特定标记。 当 `@` 符号后跟
 
 当页面发布表单数据时，运行 `OnPostAsync` 方法：
 
-[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetPost)]
+[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetPost)]
 
 如果不存在任何模型错误，将重新显示表单，以及发布的任何表单数据。 在发布表单前，可以在客户端捕获到大部分模型错误。 模型错误的一个示例是，发布的日期字段值无法转换为日期。 我们将在本教程后面的内容中讨论有关客户端验证和模型验证的更多信息。
 
@@ -127,7 +127,7 @@ Razor 可以从 HTML 转换为 C# 或 Razor 特定标记。 当 `@` 符号后跟
 
 检查 Pages/Movies/Create.cshtml Razor 页面文件：
 
-[!code-cshtml[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml)]
+[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml)]
 
 <!--
 Visual Studio displays the `<form method="post">` tag in a distinctive font used for Tag Helpers. The `<form method="post">` element is a [Form Tag Helper](xref:mvc/views/working-with-forms#the-form-tag-helper). The Form Tag Helper automatically includes an [antiforgery token](xref:security/anti-request-forgery).

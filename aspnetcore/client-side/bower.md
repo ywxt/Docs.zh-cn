@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: 2d6cc526b5a0890103e2856a0ca4b58c5f162c79
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 4f53d0f04d17631a12e2c2030d6dbb1f4fcc09d3
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>管理 ASP.NET Core 中的 Bower 的客户端包
 
@@ -115,7 +115,7 @@ Bower 使用[语义版本控制](http://semver.org/)来组织依赖关系。 语
 
 在本部分中，你将创建 HTML 页以验证它可以访问已部署的包。
 
-* 添加一个名为的新 HTML 页*Index.html*到*wwwroot*文件夹。 注意： 你必须将添加到的 HTML 文件*wwwroot*文件夹。 默认情况下，静态内容无法提供外部*wwwroot*。 请参阅[使用静态文件](xref:fundamentals/static-files)有关详细信息。
+* 添加一个名为的新 HTML 页*Index.html*到*wwwroot*文件夹。 注意： 你必须将添加到的 HTML 文件*wwwroot*文件夹。 默认情况下，静态内容无法提供外部*wwwroot*。 请参阅[静态文件](xref:fundamentals/static-files)有关详细信息。
 
   内容替换*Index.html*替换为以下标记：
 

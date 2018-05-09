@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/index
-title: "ASP.NET MVC Storefront |Microsoft 文档"
+title: ASP.NET MVC Storefront |Microsoft 文档
 author: rick-anderson
-description: "ASP.NET MVC 店面初学者工具包"
+description: ASP.NET MVC 店面初学者工具包
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011

@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/hubs
-ms.openlocfilehash: e23d7ef6d5e5e93d5fc69ad4c845a6a896836170
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: d9e06c75692b68c4147b775e5eb77ef000578b2e
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>ASP.NET 核心使用 SignalR 中的中心
 
@@ -75,7 +75,7 @@ SignalR 中间件需要某些服务，通过调用配置`services.AddSignalR`。
 
 ## <a name="send-messages-to-clients"></a>将消息发送到客户端
 
-若要使对特定客户端的调用，使用的属性`Clients`对象。 在下面的示例在以下示例中，`SendMessageToCaller`方法演示如何将消息发送到调用 hub 方法的连接。 `SendMessageToGroups`方法将消息发送到存储中的组`List`名为`groups`。
+若要使对特定客户端的调用，使用的属性`Clients`对象。 在下面的示例中，`SendMessageToCaller`方法演示如何将消息发送到调用 hub 方法的连接。 `SendMessageToGroups`方法将消息发送到存储中的组`List`名为`groups`。
 
 [!code-csharp[Send messages](hubs/sample/hubs/chathub.cs?range=15-24)]
 
@@ -89,7 +89,7 @@ SignalR 中心 API 提供`OnConnectedAsync`和`OnDisconnectedAsync`虚拟方法�
 
 在中心方法中引发的异常会发送到调用的方法的客户端。 JavaScript 客户端上`invoke`方法返回[JavaScript 承诺](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Using_promises)。 当客户端收到错误处理程序附加到承诺使用`catch`，其调用和作为 JavaScript 传递`Error`对象。
 
-[!code-javascript[Error](hubs/sample/wwwroot/js/chat.js?range=22)]
+[!code-javascript[Error](hubs/sample/wwwroot/js/chat.js?range=23)]
 
 ## <a name="related-resources"></a>相关资源
 

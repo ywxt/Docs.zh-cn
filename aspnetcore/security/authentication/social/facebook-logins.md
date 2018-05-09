@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 1798c310f36073e90a4e3521cfd1447bc94af666
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 19e862ef01655b24ba4d323b8f5f012de1455424
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="facebook-external-login-setup-in-aspnet-core"></a>在 ASP.NET Core Facebook 外部登录安装程序
 
 作者：[Valeriy Novytskyy](https://github.com/01binary) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-本教程演示如何使用户可以使用示例 ASP.NET 核心 2.0 项目上创建其 Facebook 帐户登录[上一页](xref:security/authentication/social/index)。 我们首先按照创建 Facebook 应用程序 ID[官方步骤](https://developers.facebook.com)。
+本教程演示如何使用户可以使用示例 ASP.NET 核心 2.0 项目上创建其 Facebook 帐户登录[上一页](xref:security/authentication/social/index)。 Facebook 身份验证需要[Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) NuGet 包。 我们首先按照创建 Facebook 应用程序 ID[官方步骤](https://developers.facebook.com)。
 
 ## <a name="create-the-app-in-facebook"></a>在 Facebook 中创建应用程序
 
