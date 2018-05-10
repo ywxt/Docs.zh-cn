@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: d5b74e213828d1a1f7e09810e5cc72773a821dab
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 223b1906ef9941084e18e0698f007d9564e81f09
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 基础知识
 
@@ -143,7 +143,7 @@ ASP.NET Core 通过使用文件提供程序抽象化文件系统访问，文件�
 
 静态文件中间件为静态文件（如 HTML、CSS、映像和 JavaScript）提供服务。
 
-有关详细信息，请参阅[使用静态文件](xref:fundamentals/static-files)。
+有关详细信息，请参阅[静态文件](xref:fundamentals/static-files)。
 
 ## <a name="hosting"></a>宿主
 

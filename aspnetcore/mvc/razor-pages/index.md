@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 08866543d5b510b86c6af1896a9bd41ae0053ecf
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: f9484d4806a7430177878b462209ba6608cfdd7d
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor 页面介绍
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT) 和 [Ryan Nowak](https://github.com/rynowak)
 
-Razor 页面是 ASP.NET Core MVC 的一个新功能，它可以使基于页面的编码方式更简单高效。
+Razor 页面是 ASP.NET Core MVC 的一个新特性，它可以使基于页面的编码方式更简单高效。
 
 若要查找使用模型视图控制器方法的教程，请参阅 [ASP.NET Core MVC 入门](xref:tutorials/first-mvc-app/start-mvc)。
 
@@ -92,7 +92,7 @@ Pages/Index2.cshtml.cs 页面模型：
 
 ## <a name="writing-a-basic-form"></a>编写基本窗体
 
-Razor 页面功能旨在简化 Web 浏览器常用的模式。 [模型绑定](xref:mvc/models/model-binding)、[标记帮助程序](xref:mvc/views/tag-helpers/intro)和 HTML 帮助程序均只可用于 Razor 页面类中定义的属性。 请参考为 `Contact` 模型实现基本的“联系我们”窗体的页面：
+由于 Razor 页面的设计，在构建应用时可轻松实施用于 Web 浏览器的常用模式。 [模型绑定](xref:mvc/models/model-binding)、[标记帮助程序](xref:mvc/views/tag-helpers/intro)和 HTML 帮助程序均只可用于 Razor 页面类中定义的属性。 请参考为 `Contact` 模型实现基本的“联系我们”窗体的页面：
 
 在本文档中的示例中，`DbContext` 在 [Startup.cs](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/razor-pages/index/sample/RazorPagesContacts/Startup.cs#L15-L16) 文件中进行初始化。
 
@@ -147,7 +147,7 @@ Pages/Create.cshtml.cs 页面模型：
 默认情况下，Razor 页面只绑定带有非 GET 谓词的属性。 绑定属性可以减少需要编写的代码量。 绑定通过使用相同的属性显示窗体字段 (`<input asp-for="Customer.Name" />`) 来减少代码，并接受输入。
 
 > [!NOTE]
-> 出于安全原因，必须选择绑定 GET 请求数据以对模型属性进行分页。 请在将用户输入映射到属性前对其进行验证。 当构建依赖查询字符串或路由值的功能时，选择加入此行为非常有用。
+> 出于安全原因，必须选择绑定 GET 请求数据以对模型属性进行分页。 请在将用户输入映射到属性前对其进行验证。 当处理依赖查询字符串或路由值的方案时，选择加入此行为非常有用。
 >
 > 若要将属性绑定在 GET 请求上，请将 `[BindProperty]` 特性的 `SupportsGet` 属性设置为 `true`：`[BindProperty(SupportsGet = true)]`
 
@@ -250,7 +250,7 @@ services.AddMvc()
 
 页面可使用 Razor 视图引擎的所有功能。 布局、分区、模板、标记帮助程序、_ViewStart.cshtml 和 _ViewImports.cshtml 的工作方式与它们在传统的 Razor 视图中的工作方式相同。
 
-我们来使用其中的一些功能来整理此页面。
+让我们使用其中的一些功能来整理此页面。
 
 向 Pages/_Layout.cshtml 添加[布局页面](xref:mvc/views/layout)：
 
@@ -336,7 +336,7 @@ Pages/_ViewImports.cshtml 文件设置以下命名空间：
 * `<a asp-page="/Index">My Index Page</a>`
 * `RedirectToPage("/Index")`
 
-页面名称是从根“/Pages”文件夹到页面的路径（包含前导 `/`，例如 `/Index`）。 相较于仅对 URL 硬编码，前面的 URL 生成示例的功能更加强大。 URL 生成使用[路由](xref:mvc/controllers/routing)，并且可以根据目标路径定义路由的方式生成参数并对参数编码。
+页面名称是从根“/Pages”文件夹到页面的路径（包含前导 `/`，例如 `/Index`）。 与硬编码 URL 相比，前面的 URL 生成示例提供了改进的选项和功能。 URL 生成使用[路由](xref:mvc/controllers/routing)，并且可以根据目标路径定义路由的方式生成参数并对参数编码。
 
 页面的 URL 生成支持相对名称。 下表显示了 Pages/Customers/Create.cshtml 中不同的 `RedirectToPage` 参数选择的索引页：
 
@@ -455,5 +455,5 @@ services.AddMvc()
 * [Razor 语法](xref:mvc/views/razor)
 * [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)
 * [Razor 页面授权约定](xref:security/authorization/razor-pages-authorization)
-* [Razor 页面自定义路由和页面模型提供程序](xref:mvc/razor-pages/razor-pages-convention-features)
+* [Razor 页面自定义路由和页面模型提供程序](xref:mvc/razor-pages/razor-pages-conventions)
 * [Razor 页面单位与集成测试](xref:testing/razor-pages-testing)

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 4c44063fb3385fc625c35c8a3cf06a35b5b0afb7
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 016f15c13470db53252941acafa25a3c6caf8db5
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 中间件
 
@@ -109,7 +109,7 @@ public void Configure(IApplicationBuilder app)
 
 在以上代码中，`UseExceptionHandler` 是添加到管道的第一个中间件组件，因此，该组件可捕获在后面的调用中发生的任何异常。
 
-因为尽早在管道中调用静态文件中间件，因此该组件可处理请求并使引致短路，而无需通过剩余组件。 静态文件中间件不提供授权检查。 可公开访问由静态文件中间件服务的任何文件，包括 wwwroot 下的文件。 请参阅[使用静态文件](xref:fundamentals/static-files)获取有关保护静态文件的方法。
+因为尽早在管道中调用静态文件中间件，因此该组件可处理请求并使引致短路，而无需通过剩余组件。 静态文件中间件不提供授权检查。 可公开访问由静态文件中间件服务的任何文件，包括 wwwroot 下的文件。 请参阅[静态文件](xref:fundamentals/static-files)，了解如何保护静态文件。
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
