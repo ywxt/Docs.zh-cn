@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: b6939207ee15aa93bfb3ccb9cad553b814896bd1
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f534080fe9aa22eb9092932babc74c5ab96aabbf
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/10/2018
 ---
 <a name="examining-the-details-and-delete-methods"></a>检查的详细信息和删除方法
 ====================
@@ -42,7 +42,7 @@ MVC 基架引擎，可用于创建此操作添加注释，显示调用方法的 
 
 [!code-csharp[Main](examining-the-details-and-delete-methods/samples/sample2.cs?highlight=17)]
 
-请注意，`HTTP Get``Delete`方法不会删除指定的电影，则返回其中可以提交电影的视图 (`HttpPost`) 删除... 执行删除操作以响应 GET 请求（或者说，执行编辑操作、创建操作或更改数据的任何其他操作）会打开安全漏洞。 有关此的详细信息，请参阅博客条目，Stephen Walther [ASP.NET MVC 提示 #46-不要使用删除的链接，因为他们创建的安全漏洞](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx)。
+请注意，HTTP GET`Delete`方法不会删除指定的电影，则返回其中可以提交电影的视图 (`HttpPost`) 删除。 执行删除操作以响应 GET 请求（或者说，执行编辑操作、创建操作或更改数据的任何其他操作）会打开安全漏洞。 有关此的详细信息，请参阅博客条目，Stephen Walther [ASP.NET MVC 提示 #46-不要使用删除的链接，因为他们创建的安全漏洞](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx)。
 
 删除数据的 `HttpPost` 方法命名为 `DeleteConfirmed`，以便为 HTTP POST 方法提供一个唯一的签名或名称。 下面显示了两个方法签名：
 
@@ -50,7 +50,7 @@ MVC 基架引擎，可用于创建此操作添加注释，显示调用方法的 
 
 公共语言运行时 (CLR) 需要重载方法拥有唯一的参数签名（相同的方法名称但不同的参数列表）。 但是，此处你需要两个删除方法-一个 get-，一个用于 POST 都具有相同的参数签名。 （它们都需要接受单个整数作为参数。）
 
-若要对此项进行排序，你可以执行几个事项。 之一是为方法提供不同的名称。 这正是前面的示例中的基架机制进行的操作。 但是，这会造成一个小问题：ASP.NET 按名称将 URL 段映射到操作方法，如果重命名方法，则路由通常无法找到该方法。 该示例中也提供了解决方案，即向 `DeleteConfirmed` 方法添加 `ActionName("Delete")` 属性。 这有效地执行映射路由的系统，以使 URL，包括*/Delete/*的 post 请求将查找`DeleteConfirmed`方法。
+若要对此项进行排序，你可以执行几个事项。 之一是为方法提供不同的名称。 这正是前面的示例中的基架机制进行的操作。 但是，这会造成一个小问题：ASP.NET 按名称将 URL 段映射到操作方法，如果重命名方法，则路由通常无法找到该方法。 该示例中也提供了解决方案，即向 `DeleteConfirmed` 方法添加 `ActionName("Delete")` 属性。 这有效地执行映射路由的系统，以使 URL，包括 */Delete/* 的 post 请求将查找`DeleteConfirmed`方法。
 
 另一种常见的方法以避免问题具有相同的名称和签名的方法是人为地更改要包括未使用的参数的 POST 方法的签名。 例如，一些开发人员添加的参数类型`FormCollection`传递给 POST 方法中，然后只需不使用参数：
 

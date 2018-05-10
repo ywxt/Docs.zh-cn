@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 5a8a035ff3f127d01655888d4f83a871645b0bf5
-ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
+ms.openlocfilehash: 473585f1be180645395c14a154c9c017ca50edab
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>使用 Apache 在 Linux 上托管 ASP.NET Core
 
@@ -79,7 +79,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 如果没有[ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)指定到中间件，要转发的默认标头是`None`。
 
-代理服务器和负载平衡器后面托管的应用程序可能需要其他配置。 有关详细信息，请参阅[配置 ASP.NET 核心以使用代理服务器和负载平衡器](xref:host-and-deploy/proxy-load-balancer)。
+对于托管在代理服务器和负载均衡器后方的应用，可能需要附加配置。 有关详细信息，请参阅[配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)。
 
 ### <a name="install-apache"></a>安装 Apache
 
@@ -118,7 +118,7 @@ Complete!
 
 ### <a name="configure-apache-for-reverse-proxy"></a>配置 Apache 用于反向代理
 
-Apache 的配置文件位于 `/etc/httpd/conf.d/` 目录内。 具有的所有文件*.conf*扩展处理除了中的模块配置文件按字母顺序`/etc/httpd/conf.modules.d/`，其中包含的任何配置所需加载模块文件。
+Apache 的配置文件位于 `/etc/httpd/conf.d/` 目录内。 具有的所有文件 *.conf*扩展处理除了中的模块配置文件按字母顺序`/etc/httpd/conf.modules.d/`，其中包含的任何配置所需加载模块文件。
 
 创建一个配置文件，名为*hellomvc.conf*，应用程序：
 
@@ -189,6 +189,13 @@ WantedBy=multi-user.target
 
 > [!NOTE]
 > **用户**&mdash;如果用户*apache*未使用的配置，用户必须创建第一次并且为文件提供的适当的所有权。
+
+> [!NOTE]
+> 必须为要读取环境变量的配置提供程序转义某些值 （例如，SQL 连接字符串）。 使用以下命令以生成在配置文件中的正确转义的值以供使用：
+>
+> ```console
+> systemd-escape "<value-to-escape>"
+> ```
 
 保存该文件并启用该服务：
 

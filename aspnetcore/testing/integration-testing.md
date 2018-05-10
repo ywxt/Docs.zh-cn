@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/integration-testing
-ms.openlocfilehash: 3c618b2bd5919f6536601631eb4d21359a6bc03a
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: ac3a9e00edfd4c736ee1e7d5c0c724c3e52d0b6b
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="integration-tests-in-aspnet-core"></a>在 ASP.NET Core 的集成测试
 
@@ -43,7 +43,7 @@ ms.lasthandoff: 03/22/2018
 
 ### <a name="the-test-host"></a>测试主机
 
-ASP.NET 核心包括可以添加到集成测试项目，并用于托管 ASP.NET Core 应用程序，而无需实际 web 宿主请求的服务测试的测试主机。 提供的示例包括集成测试项目已配置为使用[xUnit](https://xunit.github.io)和测试主机。 它使用`Microsoft.AspNetCore.TestHost`NuGet 包。
+ASP.NET 核心包括可以添加到集成测试项目，并用于托管 ASP.NET Core 应用程序，而无需实际 web 宿主请求的服务测试的测试主机。 提供的示例包括集成测试项目已配置为使用[xUnit](https://xunit.github.io)和测试主机。 它使用[Microsoft.AspNetCore.TestHost](https://www.nuget.org/packages/Microsoft.AspNetCore.TestHost/) NuGet 包。
 
 一次`Microsoft.AspNetCore.TestHost`包包括在项目中后，你将能够创建和配置`TestServer`在测试中。 下面的代码演示如何验证对站点的根目录的请求返回"Hello World ！" 并且应成功运行针对默认值由 Visual Studio 创建的 ASP.NET 核心空 Web 模板。
 
@@ -66,7 +66,7 @@ ASP.NET 核心包括可以添加到集成测试项目，并用于托管 ASP.NET 
 
 ### <a name="integration-testing-mvcrazor"></a>集成测试 Mvc/Razor
 
-测试项目，其中包含 Razor 视图需要`<PreserveCompilationContext>`设置为 true 中*.csproj*文件：
+测试项目，其中包含 Razor 视图需要`<PreserveCompilationContext>`设置为 true 中 *.csproj*文件：
 
 
 ```xml

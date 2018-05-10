@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: 64093b9fcfa9047145de8f8b142f72fa1515f248
-ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
+ms.openlocfilehash: fe772203e5e3fceb7489e0a5866f60ea914b7329
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>使用 Nginx 在 Linux 上托管 ASP.NET Core
 
@@ -95,7 +95,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 如果没有[ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)指定到中间件，要转发的默认标头是`None`。
 
-代理服务器和负载平衡器后面托管的应用程序可能需要其他配置。 有关详细信息，请参阅[配置 ASP.NET 核心以使用代理服务器和负载平衡器](xref:host-and-deploy/proxy-load-balancer)。
+对于托管在代理服务器和负载均衡器后方的应用，可能需要附加配置。 有关详细信息，请参阅[配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)。
 
 ### <a name="install-nginx"></a>安装 Nginx
 
@@ -116,7 +116,7 @@ sudo service nginx start
 
 ### <a name="configure-nginx"></a>配置 Nginx
 
-若要将 Nginx 配置为转发请求向 ASP.NET Core 应用程序的反向代理，修改*/etc/nginx/sites-available/default*。 在文本编辑器中打开它，并将内容替换为以下内容：
+若要将 Nginx 配置为转发请求向 ASP.NET Core 应用程序的反向代理，修改 */etc/nginx/sites-available/default*。 在文本编辑器中打开它，并将内容替换为以下内容：
 
 ```nginx
 server {
@@ -184,6 +184,13 @@ WantedBy=multi-user.target
 
 **注意：**如果用户*www 数据*未使用的配置，此处定义的用户必须创建第一次并且为文件提供的适当的所有权。
 **注意：** Linux 具有区分大小写的文件系统。 搜索配置文件中的"生产"结果设置 ASPNETCORE_ENVIRONMENT *appsettings。Production.json*，而不*appsettings.production.json*。
+
+> [!NOTE]
+> 必须为要读取环境变量的配置提供程序转义某些值 （例如，SQL 连接字符串）。 使用以下命令以生成在配置文件中的正确转义的值以供使用：
+>
+> ```console
+> systemd-escape "<value-to-escape>"
+> ```
 
 保存该文件并启用该服务。
 
@@ -292,7 +299,7 @@ static char ngx_http_server_full_string[] = "Server: Web Server" CRLF;
 
 * 配置服务器以侦听端口上的 HTTPS 流量`443`通过指定由受信任证书颁发机构 (CA) 颁发的有效证书。
 
-* 通过采用的一些做法在下面的示例所示加强安全*/etc/nginx/nginx.conf*文件。 示例包括选择更强的密码并将通过 HTTP 的所有流量重定向到 HTTPS。
+* 通过采用的一些做法在下面的示例所示加强安全 */etc/nginx/nginx.conf*文件。 示例包括选择更强的密码并将通过 HTTP 的所有流量重定向到 HTTPS。
 
 * 添加 `HTTP Strict-Transport-Security` (HSTS) 标头可确保由客户端发起的所有后续请求都仅通过 HTTPS。
 
