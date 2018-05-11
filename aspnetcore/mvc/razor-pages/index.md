@@ -5,16 +5,16 @@ description: 了解 ASP.NET Core 中的 Razor 页面如何使基于页面的编�
 manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 09/12/2017
+ms.date: 5/12/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: f9484d4806a7430177878b462209ba6608cfdd7d
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: c848c5d66a9e8141d9d737e8ce9c994587b04916
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor 页面介绍
 
@@ -208,6 +208,13 @@ Index.cshtml 文件还包含用于为每个客户联系人创建删除按钮的�
 * 调用 `RedirectToPage`，重定向到根索引页 (`/Index`)。
 
 ::: moniker range=">= aspnetcore-2.1"
+
+## <a name="mark-page-properties-required"></a>标记所需的页属性
+
+`PageModel` 上的属性可通过 [Required](/dotnet/api/system.componentmodel.dataannotations.requiredattribute) 特性进行修饰：
+
+[!code-cs[](index/sample/Create.cshtml.cs?highlight=3,15-16)]
+
 ## <a name="manage-head-requests-with-the-onget-handler"></a>使用 OnGet 处理程序管理 HEAD 请求
 
 通常，针对 HEAD 请求创建和调用 HEAD 处理程序：
@@ -226,9 +233,10 @@ services.AddMvc()
     .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 ```
 
-`SetCompatibilityVersion` 有效地将 Razor 页面选项 `AllowMappingHeadRequestsToGetHandler` 设置为 `true`。 在 ASP.NET Core 3.0 Preview 1 或更高版本之前，会选择加入此行为。 ASP.NET Core 每个主版本都采用前一个版本的所有修补程序版本行为。
+`SetCompatibilityVersion` 有效地将 Razor 页面选项 `AllowMappingHeadRequestsToGetHandler` 设置为 `true`。
 
-可以使用将 HEAD 请求映射到 GET 处理程序的应用配置来避免修补程序版本 2.1 到 2.x 的全局选择加入行为。 将 `AllowMappingHeadRequestsToGetHandler` Razor 页面选项设置为 `true`，而无需调用 `Startup.Configure` 中的 `SetCompatibilityVersion`：
+可以显式地选择使用特定行为，而不是通过 `SetCompatibilityVersion` 选择使用所有 2.1 行为。 以下代码选择使用将 HEAD 映射到 GET 处理程序这一行为。
+
 
 ```csharp
 services.AddMvc()
@@ -267,7 +275,7 @@ services.AddMvc()
 
 [!code-cshtml[](index/sample/RazorPagesContacts2/Pages/_ViewStart.cshtml)]
 
-注意：布局位于“页面”文件夹中。 页面按层次结构从当前页面的文件夹开始查找其他视图（布局、模板、分区）。 可以从“页面”文件夹下的任意 Razor 页面使用“页面”文件夹中的布局。
+布局位于“页面”文件夹中。 页面按层次结构从当前页面的文件夹开始查找其他视图（布局、模板、分区）。 可以从“页面”文件夹下的任意 Razor 页面使用“页面”文件夹中的布局。
 
 建议不要将布局文件放在“视图/共享”文件夹中。 视图/共享 是一种 MVC 视图模式。 Razor 页面旨在依赖文件夹层次结构，而非路径约定。
 
@@ -299,7 +307,7 @@ Pages/_ViewImports.cshtml 文件设置以下命名空间：
 
 为 Pages/Customers/Edit.cshtml Razor 页面生成的命名空间与代码隐藏文件相同. 已对 `@namespace` 指令进行设计，因此添加到项目的 C# 类和页面生成的代码可直接工作，而无需添加代码隐藏文件的 `@using` 指令。
 
-注意：`@namespace` 也可用于传统的 Razor 视图。
+`@namespace` 也可用于传统的 Razor 视图。
 
 原始的 Pages/Create.cshtml 视图文件：
 
@@ -350,6 +358,42 @@ Pages/_ViewImports.cshtml 文件设置以下命名空间：
 `RedirectToPage("Index")`、`RedirectToPage("./Index")` 和 `RedirectToPage("../Index")` 是相对名称。 结合 `RedirectToPage` 参数与当前页的路径来计算目标页面的名称。  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page.  page name, not page path -->
 
 构建结构复杂的站点时，相对名称链接很有用。 如果使用相对名称链接文件夹中的页面，则可以重命名该文件夹。 所有链接仍然有效（因为这些链接未包含此文件夹名称）。
+
+::: moniker range=">= aspnetcore-2.1"
+## <a name="viewdata-attribute"></a>ViewData 特性
+
+可以通过 [ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute) 将数据传递到页面。 控制器或 Razor 页面模型上使用 `[ViewData]` 修饰的属性将其值存储在 [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) 中并从此处进行加载。
+
+在下面的示例中，`AboutModel` 包含使用 `[ViewData]` 修饰的 `Title` 属性。 `Title` 属性设置为“关于”页面的标题：
+
+```csharp
+public class AboutModel : PageModel
+{
+    [ViewData]
+    public string Title { get; } = "About";
+
+    public void OnGet()
+    {
+    }
+}
+```
+
+在“关于”页面中，以模型属性的形式访问 `Title` 属性：
+
+```cshtml
+<h1>@Model.Title</h1>
+```
+
+在布局中，从 ViewData 字典读取标题：
+
+```cshtml
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] - WebApplication</title>
+    ...
+```
+::: moniker-end
 
 ## <a name="tempdata"></a>TempData
 
