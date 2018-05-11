@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: d084c5c7e232b92c8cfe2230e076752d42d8da5d
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 946d4d5e5a506fb437232f9f4440c98e33a1a9b3
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/10/2018
 ---
 <a name="adding-validation"></a>添加验证
 ====================
@@ -78,7 +78,7 @@ ASP.NET MVC 的核心设计原则之一是[干](http://en.wikipedia.org/wiki/Don
 
 ## <a name="validation-error-ui-in-aspnet-mvc"></a>验证错误在 ASP.NET MVC UI
 
-运行应用程序并导航到*/Movies* URL。
+运行应用程序并导航到 */Movies* URL。
 
 单击**新建**链接添加新的影片。 使用无效值填写表单。 当 jQuery 客户端验证检测到错误时，会显示一条错误消息。
 
@@ -148,7 +148,7 @@ ASP.NET MVC 的核心设计原则之一是[干](http://en.wikipedia.org/wiki/Don
 
 - 浏览器可以启用 HTML5 功能 （例如以显示一个日历控件、 区域设置相对应的货币符号、 电子邮件链接，等等）。
 - 默认情况下，浏览器将呈现数据使用基于的正确格式你[区域设置](https://msdn.microsoft.com/library/vstudio/wyzd2bce.aspx)。
-- [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性可以启用 MVC 能够选择要呈现的数据的右侧字段模板 ( [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx)本身如果由使用字符串模板)。 有关详细信息，请参阅 Brad Wilson[ASP.NET MVC 2 模板](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html)。 （尽管为 MVC 2 编写的这篇文章仍适用于 ASP.NET MVC 的当前版本。）
+- [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)属性可以启用 MVC 能够选择要呈现的数据的右侧字段模板 ( [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx)本身如果由使用字符串模板)。 有关详细信息，请参阅 Brad Wilson [ASP.NET MVC 2 模板](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html)。 （尽管为 MVC 2 编写的这篇文章仍适用于 ASP.NET MVC 的当前版本。）
 
 如果你使用`DataType`属性与日期字段中，你必须指定`DisplayFormat`还以确保字段正确呈现在 Chrome 浏览器中的属性。 有关详细信息，请参阅[此 StackOverflow 线程](http://stackoverflow.com/questions/12633471/mvc4-datatype-date-editorfor-wont-display-date-value-in-chrome-fine-in-ie)。
 

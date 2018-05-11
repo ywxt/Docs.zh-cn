@@ -11,8 +11,8 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/hubs
-ms.openlocfilehash: 4810b3a1978f05eb0608320750f31b8bb95d71fd
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: cfe9f7a7321094b8f901687d91745df2247e1da6
+ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/10/2018
@@ -35,7 +35,7 @@ SignalR 中间件需要某些服务，通过调用配置`services.AddSignalR`。
 
 在 SignalR 功能添加到 ASP.NET 核心应用程序时，通过调用设置 SignalR 路由`app.UseSignalR`中`Startup.Configure`方法。
 
-[!code-csharp[Configure routes to hubs](hubs/sample/startup.cs?range=56-59)]
+[!code-csharp[Configure routes to hubs](hubs/sample/startup.cs?range=57-60)]
 
 ## <a name="create-and-use-hubs"></a>创建并使用中心
 
@@ -91,4 +91,6 @@ SignalR 中心 API 提供`OnConnectedAsync`和`OnDisconnectedAsync`虚拟方法�
 
 ## <a name="related-resources"></a>相关资源
 
-[ASP.NET 核心 SignalR 简介](xref:signalr/introduction)
+* [ASP.NET 核心 SignalR 简介](xref:signalr/introduction)
+* [JavaScript 客户端](xref:signalr/javascript-client)
+* [发布到 Azure](xref:signalr/publish-to-azure-web-app)
