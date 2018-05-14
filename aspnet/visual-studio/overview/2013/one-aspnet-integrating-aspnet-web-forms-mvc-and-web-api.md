@@ -1,14 +1,14 @@
 ---
 uid: visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
-title: "动手实验： 一个 ASP.NET： 集成 ASP.NET Web 窗体、 MVC 和 Web API |Microsoft 文档"
+title: 动手实验： 一个 ASP.NET： 集成 ASP.NET Web 窗体、 MVC 和 Web API |Microsoft 文档
 author: rick-anderson
-description: "ASP.NET 是一个框架，用于生成 Web 站点、 应用程序和服务使用专用的技术，如 MVC、 Web API 及其他。 与 ASP.NET h 的扩展..."
+description: ASP.NET 是一个框架，用于生成 Web 站点、 应用程序和服务使用专用的技术，如 MVC、 Web API 及其他。 与 ASP.NET h 的扩展...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
 ms.topic: article
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
@@ -102,12 +102,12 @@ ms.lasthandoff: 11/10/2017
 
 在此任务中，您将开始在 Visual Studio 中创建新的 Web 站点基于**一个 ASP.NET**项目类型。 **一个 ASP.NET**统一所有 ASP.NET 技术和为你提供混合并将根据需要对其进行匹配的选项。 然后将应用程序中并排识别实时 Web 窗体、 MVC 和 Web API 的不同组件。
 
-1. 打开**Visual Studio Express 2013 for Web**和选择**文件 |新建项目...**启动一个新的解决方案。
+1. 打开**Visual Studio Express 2013 for Web**和选择**文件 |新建项目...** 启动一个新的解决方案。
 
     ![创建新项目](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image1.png)
 
     *创建新项目*
-2. 在**新项目**对话框中，选择**ASP.NET Web 应用程序**下**Visual C# |Web**选项卡，并确保**.NET Framework 4.5**选择。 将项目*MyHybridSite*，选择**位置**单击**确定**。
+2. 在**新项目**对话框中，选择**ASP.NET Web 应用程序**下**Visual C# |Web**选项卡，并确保 **.NET Framework 4.5**选择。 将项目*MyHybridSite*，选择**位置**单击**确定**。
 
     ![新的 ASP.NET Web 应用程序项目](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image2.png)
 
@@ -154,14 +154,14 @@ ms.lasthandoff: 11/10/2017
 1. 若要运行解决方案，按**F5**或单击**启动**按钮位于工具栏上。 该应用程序主页应在浏览器中打开。
 
     ![运行解决方案](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image6.png)
-2. 验证正在调用的 Web 窗体页。 若要执行此操作，请追加**/contact.aspx**到地址栏，然后按 URL **Enter**。
+2. 验证正在调用的 Web 窗体页。 若要执行此操作，请追加 **/contact.aspx**到地址栏，然后按 URL **Enter**。
 
     ![友好 Url](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image7.png)
 
     *友好 Url*
 
     > [!NOTE]
-    > 如你所见，URL 更改为**/请联系**。 从开始**ASP.NET 4**，URL 路由功能已添加到 Web 窗体，因此你可以编写 Url 喜欢 *[http://www.mysite.com/products/software](http://www.mysite.com/products/software)* 而不是*[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)*。 有关详细信息，请参阅[URL 路由](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md)。
+    > 如你所见，URL 更改为 **/请联系**。 从开始**ASP.NET 4**，URL 路由功能已添加到 Web 窗体，因此你可以编写 Url 喜欢*[http://www.mysite.com/products/software](http://www.mysite.com/products/software)* 而不是*[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)*。 有关详细信息，请参阅[URL 路由](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md)。
 3. 现在，您将了解到应用程序集成的身份验证流。 若要执行此操作，请单击**注册**页面的右上角。
 
     ![注册一个新用户](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image8.png)
@@ -232,7 +232,7 @@ Entity Framework Code First 建模工作流，可使用您自己的域类来表�
     ![选择 MVC 5 控制器视图和实体框架](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image14.png)
 
     *选择 MVC 5 控制器视图和实体框架*
-3. 设置*MvcPersonController*作为**控制器名称**，选择**使用异步控制器操作**选项并选择**人员 (MyHybridSite.Models)**作为**模型类**。
+3. 设置*MvcPersonController*作为**控制器名称**，选择**使用异步控制器操作**选项并选择**人员 (MyHybridSite.Models)** 作为**模型类**。
 
     ![添加基架 MVC 控制器](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image15.png)
 
@@ -265,7 +265,7 @@ Entity Framework Code First 建模工作流，可使用您自己的域类来表�
 在此任务中，你将运行以验证的解决方案的视图**人员**是否按预期工作。 你将添加新的用户来验证已成功保存到数据库。
 
 1. 按**F5**运行该解决方案。
-2. 导航到**/MvcPerson**。 应显示的基架的视图显示的人员列表。
+2. 导航到 **/MvcPerson**。 应显示的基架的视图显示的人员列表。
 3. 单击**新建**以添加新成员。
 
     ![导航到基架 MVC 视图](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image19.png)
@@ -314,7 +314,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在使实现 HTTP 服务更容
     ![选择包含操作和实体框架的 Web API 2 Controller](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image24.png "选择包含操作和实体框架 Web API 2 控制器")
 
     *选择包含操作和实体框架的 Web API 2 控制器*
-4. 设置*ApiPersonController*作为**控制器名称**，选择**使用异步控制器操作**选项并选择**人员 (MyHybridSite.Models)**和**PersonContext (MyHybridSite.Models)**作为**模型**和**数据上下文**分别类。 然后单击 **“添加”**。
+4. 设置*ApiPersonController*作为**控制器名称**，选择**使用异步控制器操作**选项并选择**人员 (MyHybridSite.Models)** 和**PersonContext (MyHybridSite.Models)** 作为**模型**和**数据上下文**分别类。 然后单击 **“添加”**。
 
     ![添加基架使用一个 Web API 控制器](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image25.png "添加基架使用一个 Web API 控制器")
 
@@ -332,7 +332,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在使实现 HTTP 服务更容
     [!code-csharp[Main](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/samples/sample6.cs)]
 
     > [!NOTE]
-    > 默认情况下，Web API 配置为捕获到的查询*/api*路径，以避免与 MVC 控制器的冲突。 如果你需要更改此设置，请参阅[路由在 ASP.NET Web API 中](../../../web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api.md)。
+    > 默认情况下，Web API 配置为捕获到的查询 */api*路径，以避免与 MVC 控制器的冲突。 如果你需要更改此设置，请参阅[路由在 ASP.NET Web API 中](../../../web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api.md)。
 
 <a id="Ex3Task2"></a>
 #### <a name="task-2--running-the-solution"></a>任务 2 – 运行解决方案
@@ -401,7 +401,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在使实现 HTTP 服务更容
     *生成选项卡中的输出部分*
 6. 按**CTRL** + **S**以保存所做的更改。
 7. 打开**ApiPersonController.cs**文件从**控制器**文件夹。
-8. 输入新行之间*GetPeople*方法签名和*/ / 获取 api/ApiPerson*注释，，然后键入三个正斜杠。
+8. 输入新行之间*GetPeople*方法签名和 */ / 获取 api/ApiPerson*注释，，然后键入三个正斜杠。
 
     > [!NOTE]
     > Visual Studio 会自动插入的 XML 元素定义的方法文档。
@@ -409,7 +409,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在使实现 HTTP 服务更容
 
     [!code-csharp[Main](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/samples/sample9.cs)]
 10. 按**F5**运行该解决方案。
-11. 追加**/帮助**到在地址栏中的该 URL 可浏览到帮助页。
+11. 追加 **/帮助**到在地址栏中的该 URL 可浏览到帮助页。
 
     ![ASP.NET Web API 帮助页](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image34.png "ASP.NET Web API 帮助页")
 
