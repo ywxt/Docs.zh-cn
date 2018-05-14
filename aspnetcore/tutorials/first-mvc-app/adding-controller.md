@@ -32,7 +32,7 @@ ms.lasthandoff: 04/23/2018
 
 [!INCLUDE [adding-controller2](../../includes/mvc-intro/adding-controller2.md)]
 
-在 Visual Studio 的非调试模式下 (Ctrl+F5)，不需要在更改代码后生成应用。 只需要保存文件并更新浏览器，就可以看到所做的更改。
+在 Visual Studio 的非调试模型下 (Ctrl+F5)，不需要在更改代码后生成应用。 只需要保存文件并更新浏览器，就可以看到所做的更改。
 
 > [!div class="step-by-step"]
 > [上一页](start-mvc.md)
