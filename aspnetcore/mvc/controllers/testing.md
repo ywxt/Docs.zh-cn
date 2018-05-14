@@ -1,7 +1,7 @@
 ---
-title: "测试 ASP.NET Core 中的控制器逻辑"
+title: ASP.NET Core 中的测试控制器逻辑
 author: ardalis
-description: "了解如何使用 Moq 和 xUnit 测试 ASP.NET Core 中的控制器逻辑。"
+description: 了解如何使用 Moq 和 xUnit 测试 ASP.NET Core 中的控制器逻辑。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/testing
-ms.openlocfilehash: cabb1d2498e6c993b327c2fb9719525ec2181f9e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 51b7a02c697807c9e3504b70f89370126ee0e781
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="testing-controller-logic-in-aspnet-core"></a>测试 ASP.NET Core 中的控制器逻辑
+# <a name="test-controller-logic-in-aspnet-core"></a>ASP.NET Core 中的测试控制器逻辑
 
 作者：[Steve Smith](https://ardalis.com/)
 
@@ -40,20 +40,20 @@ ASP.NET MVC 应用的控制器应该是小型的，且重点应对用户界面�
 
 ## <a name="unit-testing"></a>单元测试
 
-[单元测试](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)涉及在测试应用程序部分时，使之与它的基础结构和依赖关系相隔离。 单元测试控制器逻辑时，仅测试单个操作的内容，不测试其依赖项或框架自身的行为。 单元测试控制器操作时，请确保仅关注其行为。 控制器单元测试将避开[筛选器](filters.md)、[路由](../../fundamentals/routing.md)或[模型绑定](../models/model-binding.md)等。 仅专注测试一项内容，单位测试通常编写简单、运行迅速。 正确编写的单位测试集无需过多开销即可经常运行。 但是，单位测试不检测部件间交互的问题，这是[集成测试](xref:mvc/controllers/testing#integration-testing)的用途。
+[单元测试](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)涉及在测试应用程序部分时，使之与它的基础结构和依赖关系相隔离。 单元测试控制器逻辑时，仅测试单个操作的内容，不测试其依赖项或框架自身的行为。 单元测试控制器操作时，请确保仅关注其行为。 控制器单元测试将避开[筛选器](filters.md)、[路由](../../fundamentals/routing.md)或[模型绑定](../models/model-binding.md)等。 仅专注测试一项内容，单位测试通常编写简单、运行迅速。 正确编写的单位测试集无需过多开销即可经常运行。 但单元测试不检测组件间交互的问题，[集成测试](xref:mvc/controllers/testing#integration-testing)才会检测。
 
 如果编写自定义筛选器、路由等，应对其进行单位测试，而不是作为特定控制器操作测试的一部分进行。 应该对其进行隔离测试。
 
 > [!TIP]
-> [使用 Visual Studio 创建和运行单位测试](https://docs.microsoft.com/visualstudio/test/unit-test-your-code)。
+> [使用 Visual Studio 创建和运行单位测试](/visualstudio/test/unit-test-your-code)。
 
 若要演示单位测试，请查看以下控制器。 它显示集体讨论会话的列表并允许使用 POST 创建新的集体讨论会话：
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/HomeController.cs?highlight=12,16,21,42,43)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/HomeController.cs?highlight=12,16,21,42,43)]
 
 控制器遵循[显式依赖关系原则](http://deviq.com/explicit-dependencies-principle/)，需要依赖关系注入提供 `IBrainstormSessionRepository` 实例。 因此使用 mock 对象框架（例如 [Moq](https://www.nuget.org/packages/Moq/)）进行测试很简单。 `HTTP GET Index` 方法没有循环或分支，且仅调用一个方法。 若要测试此 `Index` 方法，我们需要验证返回了 `ViewResult`，附带来自存储库 `List` 方法的 `ViewModel`。
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=17-18&range=1-33,76-95)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=17-18&range=1-33,76-95)]
 
 `HomeController` `HTTP POST Index` 方法（如上所示）应该验证：
 
@@ -63,7 +63,7 @@ ASP.NET MVC 应用的控制器应该是小型的，且重点应对用户界面�
 
 通过使用 `AddModelError` 添加错误，可以测试无效模型状态，如下第一个测试所示。
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=8,15-16,37-39&range=35-75)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=8,15-16,37-39&range=35-75)]
 
 第一个测试确认在 `ModelState` 无效时，返回与 `GET` 请求相同的 `ViewResult`。 请注意，测试不会尝试传入无效模型。 即使传入也无济于事，因为模型绑定不会运行（虽然[集成测试](xref:mvc/controllers/testing#integration-testing)将使用练习模型绑定）。 在本例中，不测试模型绑定。 这些单位测试仅测试操作方法中代码的行为。
 
@@ -74,23 +74,23 @@ ASP.NET MVC 应用的控制器应该是小型的，且重点应对用户界面�
 
 应用中的另一个控制器显示与特定集体讨论会话相关的信息。 它包括用于处理无效 ID 值的逻辑：
 
-[!code-csharp[Main](./testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?highlight=19,20,21,22,25,26,27,28)]
+[!code-csharp[](./testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?highlight=19,20,21,22,25,26,27,28)]
 
 控制器操作有三个要测试的事例，每个 `return` 语句对应一个：
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/SessionControllerTests.cs?highlight=27,28,29,46,47,64,65,66,67,68)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/SessionControllerTests.cs?highlight=27,28,29,46,47,64,65,66,67,68)]
 
 应用将功能公开为 Web API（与集体讨论会话相关的想法的列表，以及将新想法添加到会话的方法）：
 
 <a name="ideas-controller"></a>
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/src/TestingControllersSample/Api/IdeasController.cs?highlight=21,22,27,30,31,32,33,34,35,36,41,42,46,52,65)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Api/IdeasController.cs?highlight=21,22,27,30,31,32,33,34,35,36,41,42,46,52,65)]
 
 `ForSession` 方法返回 `IdeaDTO` 类型的列表。 避免直接通过 API 调用返回业务域实体，因为它们常包含 API 客户端所需以外的数据，且它们会不必要地将应用的内部域模型与外部公开的 API 配对。 域实体和通过网络返回的类型之间的映射可以手动（使用 LINQ `Select`，如此处所示）或使用 [AutoMapper](https://github.com/AutoMapper/AutoMapper) 等库完成
 
 `Create` 和 `ForSession` API 方法的单位测试：
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?highlight=18,23,29,33,38-39,43,50,58-59,68-70,76-78&range=1-83,121-135)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?highlight=18,23,29,33,38-39,43,50,58-59,68-70,76-78&range=1-83,121-135)]
 
 如前所述，若要测试方法在 `ModelState` 无效时的行为，请在测试zho 将模型错误添加到控制器。 请勿在单位测试中尝试测试模型有效性或模型绑定 - 仅测试操作方法在遇到特定 `ModelState` 值时的行为。
 
@@ -112,7 +112,7 @@ ASP.NET MVC 应用的控制器应该是小型的，且重点应对用户界面�
 
 `Startup` 类：
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/src/TestingControllersSample/Startup.cs?highlight=19,20,34,35,43,52)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Startup.cs?highlight=19,20,34,35,43,52)]
 
 在以下集成测试中，可以看到频繁使用 `GetTestSession` 方法。
 
@@ -127,11 +127,11 @@ The view 'Index' wasn't found. The following locations were searched:
 
 若要更正此问题，需要配置服务器的内容根，使其可以定位到被测试项目的视图。 这可以通过调用 `TestFixture` 类中的 `UseContentRoot` 完成，如下所示：
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/TestFixture.cs?highlight=30,33)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/TestFixture.cs?highlight=30,33)]
 
 `TestFixture` 类负责配置和创建 `TestServer`，设置 `HttpClient` 与 `TestServer` 通信。 每个集成测试使用 `Client` 属性连接到测试服务器并发出请求。
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/HomeControllerTests.cs?highlight=20,26,29,30,31,35,38,39,40,41,44,47,48)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/HomeControllerTests.cs?highlight=20,26,29,30,31,35,38,39,40,41,44,47,48)]
 
 在上面的第一个测试中，`responseString` 保持“视图”的实际呈现 HTML，可以检查它以确定其包含所需结果。
 
@@ -143,7 +143,7 @@ The view 'Index' wasn't found. The following locations were searched:
 
 以下测试集以 [IdeasController](xref:mvc/controllers/testing#ideas-controller) 类中的 `Create` 方法为目标，如下所示：
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/ApiIdeasControllerTests.cs)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/ApiIdeasControllerTests.cs)]
 
 不同于返回 HTML 视图的操作集成测试，返回结果的 Web API 方法常常可以反序列化为强类型对象，如上面的最后一个测试所示。 在此情况下，测试将结果反序列化到 `BrainstormSession` 实例，并确定想法正确添加到其想法集。
 

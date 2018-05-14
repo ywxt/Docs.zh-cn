@@ -1,7 +1,7 @@
 ---
-title: "布局"
+title: ASP.NET Core 中的布局
 author: ardalis
-description: 
+description: 了解如何在 ASP.NET Core 应用中呈现视图之前，使用通用布局、共享指令和运行常见代码。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/layout
-ms.openlocfilehash: 3e9e5949d8940a33508e24f0da015b49b7ba468c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8e89c8e6cf18c47abb6bf432cdc6bb6b97e8aeb0
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="layout"></a>布局
+# <a name="layout-in-aspnet-core"></a>ASP.NET Core 中的布局
 
 作者：[Steve Smith](https://ardalis.com/)
 
@@ -37,13 +37,13 @@ ms.lasthandoff: 01/30/2018
 
 示例 `_Layout.cshtml`：
 
-[!code-html[Main](../../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=42,66)]
+[!code-html[](../../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=42,66)]
 
 ## <a name="specifying-a-layout"></a>指定布局
 
 Razor 视图具有 `Layout` 属性。 单个视图通过设置此属性来指定布局：
 
-[!code-html[Main](../../common/samples/WebApplication1/Views/_ViewStart.cshtml?highlight=2)]
+[!code-html[](../../common/samples/WebApplication1/Views/_ViewStart.cshtml?highlight=2)]
 
 指定的布局可以使用完整路径（例如：`/Views/Shared/_Layout.cshtml`）或部分名称（例如：`_Layout`）。 如果提供部分名称，Razor 视图引擎将使用其标准发现过程来搜索布局文件。 首先搜索与控制器关联的文件夹，然后搜索 `Shared` 文件夹。 此发现过程与用于发现[分部视图](partial.md)的过程相同。
 
@@ -99,7 +99,7 @@ Razor 视图具有 `Layout` 属性。 单个视图通过设置此属性来指定
 
 示例 `_ViewImports.cshtml` 文件：
 
-[!code-html[Main](../../common/samples/WebApplication1/Views/_ViewImports.cshtml)]
+[!code-html[](../../common/samples/WebApplication1/Views/_ViewImports.cshtml)]
 
 针对 ASP.NET Core MVC 应用的 `_ViewImports.cshtml` 文件通常放置在 `Views` 文件夹中。 `_ViewImports.cshtml` 文件可以放置在任何文件夹中，在这种情况下，它仅适用于该文件夹及其子文件夹中的视图。 由于从根级别开始处理 `_ViewImports` 文件，然后处理视图本身的位置之前的每个文件夹，因此在根级别指定的设置可能会覆盖在文件夹级别。
 
@@ -127,7 +127,7 @@ Razor 视图具有 `Layout` 属性。 单个视图通过设置此属性来指定
 
 示例 `_ViewStart.cshtml` 文件：
 
-[!code-html[Main](../../common/samples/WebApplication1/Views/_ViewStart.cshtml)]
+[!code-html[](../../common/samples/WebApplication1/Views/_ViewStart.cshtml)]
 
 上述文件指定所有视图都将使用 `_Layout.cshtml` 布局。
 

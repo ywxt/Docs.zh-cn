@@ -1,7 +1,7 @@
 ---
-title: "将模型添加到 ASP.NET Core MVC 应用"
+title: 使用 Visual Studio for Mac 将模型添加到 ASP.NET Core MVC 应用
 author: rick-anderson
-description: "将模型添加到简单的 ASP.NET Core 应用。"
+description: 将模型添加到简单的 ASP.NET Core 应用。
 manager: wpickett
 ms.author: riande
 ms.date: 09/22/2017
@@ -10,13 +10,15 @@ ms.prod: .net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-mac/adding-model
-ms.openlocfilehash: bf4d5d289266b585cbdfbb70c7482620fd4ced54
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6792dbc7c9ab063d85c0c4145481b8fd6b40da63
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
+# <a name="add-a-model-to-an-aspnet-core-mvc-app-with-visual-studio-for-mac"></a>使用 Visual Studio for Mac 将模型添加到 ASP.NET Core MVC 应用
+
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model1.md)]
 
 * 右键单击“Models”文件夹，然后选择“添加” > “新建文件”。 
 * 在“新建文件”对话框中：
@@ -27,7 +29,7 @@ ms.lasthandoff: 01/30/2018
 
 向 `Movie` 类添加以下属性：
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
 数据库需要 `ID` 字段以获取主键。
 
@@ -41,17 +43,17 @@ ms.lasthandoff: 01/30/2018
 
 - 将以下突出显示的 NuGet 包添加到 MvcMovie.csproj 文件：
              
-  [!code-csharp[Main](../first-mvc-app-xplat/start-mvc/sample/MvcMovie/MvcMovie.csproj?highlight=7,10)]
+  [!code-csharp[](../first-mvc-app-xplat/start-mvc/sample/MvcMovie/MvcMovie.csproj?highlight=7,10)]
 
 - 保存该文件。
 
-- 创建 Models/MvcMovieContext.cs 文件并添加以下 `MvcMovieContext` 类：[!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
+- 创建 Models/MvcMovieContext.cs 文件并添加以下 `MvcMovieContext` 类：[!code-csharp[](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
    
-- 打开 Startup.cs 文件并添加两个 using：[!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
+- 打开 Startup.cs 文件并添加两个 using：[!code-csharp[](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
 
 - 将数据库上下文添加到 Startup.cs 文件：
 
-   [!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet2&highlight=6-7)]
+   [!code-csharp[](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet2&highlight=6-7)]
 
   这会告诉实体框架，数据模型中包含哪些模型类。 现在定义一个 Movie 对象实体集，此实体集会表示为数据库中的一个 Movie 表。
 
@@ -96,9 +98,9 @@ dotnet aspnet-codegenerator controller -name MoviesController -m Movie -dc MvcMo
   * 导航到“视图”文件夹，选择“视图\电影”，然后选择“打开”。
   * 在“从‘电影’选择要添加的文件”对话框中，选择“包括全部”，然后选择“确定”。
 
-[!INCLUDE[adding-model 2x](../../includes/mvc-intro/adding-model2xp.md)]
+[!INCLUDE [adding-model 2x](../../includes/mvc-intro/adding-model2xp.md)]
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model3.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model3.md)]
 
 现在你已拥有用于显示、编辑、更新和删除数据的数据库和页面。 在下一个教程中，我们将使用此数据库。
 
@@ -107,6 +109,6 @@ dotnet aspnet-codegenerator controller -name MoviesController -m Movie -dc MvcMo
 * [标记帮助程序](xref:mvc/views/tag-helpers/intro)
 * [全球化和本地化](xref:fundamentals/localization)
 
->[!div class="step-by-step"]
-[上一篇：添加视图](adding-view.md)
-[下一篇：使用 SQL](working-with-sql.md)  
+> [!div class="step-by-step"]
+> [上一篇：添加视图](adding-view.md)
+> [下一篇：使用 SQL](working-with-sql.md)  

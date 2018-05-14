@@ -1,7 +1,7 @@
 ---
 title: ASP.NET Core MVC 和 EF Core - 数据模型 - 第 5 个教程（共 10 个）
 author: tdykstra
-description: 本教程将添加更多实体和关系，并通过指定格式设置、验证和数据库映射规则来自定义数据模型。
+description: 本教程将添加更多实体和关系，并通过指定格式设置、验证和映射规则来自定义数据模型。
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: ac30d9ae5531934ba5163a8d9114b11ac54af8d2
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: ab3d4221b498bb2987105fb36f2c6803f8fe6125
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>创建复杂数据模型 - EF Core 和 ASP.NET Core MVC 教程（第 5 个教程，共 10 个）
+# <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>ASP.NET Core MVC 和 EF Core - 数据模型 - 第 5 个教程（共 10 个）
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC Web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
+Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
 
 之前的教程介绍了由三个实体组成的简单数据模型。 本教程将添加更多实体和关系，并通过指定格式化、验证和数据库映射规则来自定义数据模型。
 
@@ -37,7 +37,7 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 
 在 Models/Student.cs 中，为 `System.ComponentModel.DataAnnotations` 命名空间添加一个 `using` 语句，将 `DataType` 和 `DisplayFormat` 特性添加到 `EnrollmentDate` 属性，如以下示例所示：
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
 `DataType` 属性用于指定比数据库内部类型更具体的数据类型。 在此示例中，我们只想跟踪日期，而不是日期和时间。 `DataType` 枚举提供了多种数据类型，例如日期、时间、电话号码、货币、电子邮件地址等。 应用程序还可通过 `DataType` 特性自动提供类型特定的功能。 例如，可以为 `DataType.EmailAddress` 创建 `mailto:` 链接，并且可以在支持 HTML5 的浏览器中为 `DataType.Date` 提供日期选择器。 `DataType` 特性发出 HTML 5 `data-`（读作 data dash）特性供 HTML 5 浏览器理解。 `DataType` 特性不提供任何验证。
 
@@ -69,7 +69,7 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 
 假设要确保用户输入的名称不超过 50 个字符。 若要添加此限制，请将 `StringLength` 特性添加到 `LastName` 和 `FirstMidName` 属性，如下例所示：
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
 
 `StringLength` 特性不会阻止用户在名称中输入空格。 可使用 `RegularExpression` 特性应用输入限制。 例如，以下代码要求第一个字符为大写，其余字符按字母顺序排列：
 
@@ -107,7 +107,7 @@ Entity Framework 使用迁移文件名的前缀时间戳发出迁移命令。 �
 
 在 Student.cs 文件中，为 `System.ComponentModel.DataAnnotations.Schema` 添加一个 `using` 语句，并将列名称特性添加到 `FirstMidName` 属性，如以下突出显示的代码所示：
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
 
 添加 `Column` 特性后，`SchoolContext` 的支持模型会发生改变，与数据库不再匹配。
 
@@ -136,7 +136,7 @@ dotnet ef database update
 
 在 Models/Student.cs 中，将之前添加的代码替换为以下代码。 突出显示所作更改。
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
 
 ### <a name="the-required-attribute"></a>Required 特性
 
@@ -164,7 +164,7 @@ public string LastName { get; set; }
 
 创建 Models/Instructor.cs，使用以下代码替换模板代码：
 
-[!code-csharp[Main](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
+[!code-csharp[](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
 
 请注意，在 Student 和 Instructor 实体中有几个属性是相同的。 本系列后面的[实现继承](inheritance.md)教程将重构此代码以消除冗余。
 
@@ -200,7 +200,7 @@ public OfficeAssignment OfficeAssignment { get; set; }
 
 用以下代码创建 Models/OfficeAssignment.cs：
 
-[!code-csharp[Main](intro/samples/cu/Models/OfficeAssignment.cs)]
+[!code-csharp[](intro/samples/cu/Models/OfficeAssignment.cs)]
 
 ### <a name="the-key-attribute"></a>Key 特性
 
@@ -227,7 +227,7 @@ Instructor 实体具有可为 null `OfficeAssignment` 导航属性（因为可�
 
 在 Models/Course.cs 中，将之前添加的代码替换为以下代码。 突出显示所作更改。
 
-[!code-csharp[Main](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
+[!code-csharp[](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
 
 Course 实体具有外键属性 `DepartmentID`，该属性指向相关 Department 实体，同时它还具有 `Department` 导航属性。
 
@@ -277,7 +277,7 @@ public ICollection<CourseAssignment> CourseAssignments { get; set; }
 
 用以下代码创建 Models/Department.cs：
 
-[!code-csharp[Main](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
+[!code-csharp[](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
 
 ### <a name="the-column-attribute"></a>Column 特性
 
@@ -322,7 +322,7 @@ public ICollection<Course> Courses { get; set; }
 
 在 Models/Enrollment.cs 中，将之前添加的代码替换为以下代码：
 
-[!code-csharp[Main](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
+[!code-csharp[](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
 
 ### <a name="foreign-key-and-navigation-properties"></a>外键和导航属性
 
@@ -362,7 +362,7 @@ Student 和 Course 实体间存在多对多关系，Enrollment 实体在数据�
 
 用以下代码创建 Models/CourseAssignment.cs：
 
-[!code-csharp[Main](intro/samples/cu/Models/CourseAssignment.cs)]
+[!code-csharp[](intro/samples/cu/Models/CourseAssignment.cs)]
 
 ### <a name="join-entity-names"></a>联接实体名称
 
@@ -378,7 +378,7 @@ Student 和 Course 实体间存在多对多关系，Enrollment 实体在数据�
 
 将以下突出显示的代码添加到 Data/SchoolContext.cs 文件：
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
 
 此代码添加新实体并配置 CourseAssignment 实体的组合主键。
 
@@ -413,7 +413,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 使用以下代码替换 Data/DbInitializer.cs 文件中的代码，从而为创建的新实体提供种子数据。
 
-[!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
+[!code-csharp[](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
 
 如第一个教程所述，大部分此类代码仅创建新实体对象，并按测试要求将示例数据加载到属性中。 注意多对多关系的处理方法：代码在 `Enrollments` 和 `CourseAssignment` 联接实体集中创建实体，以此来创建关系。
 
@@ -444,11 +444,11 @@ Done. To undo this action, use 'ef migrations remove'
 
 * 对将 DepartmentID 列添加到 Course 表的代码行添加注释。
 
-  [!code-csharp[Main](intro/samples/cu/Migrations/20170215234014_ComplexDataModel.cs?name=snippet_CommentOut&highlight=9-13)]
+  [!code-csharp[](intro/samples/cu/Migrations/20170215234014_ComplexDataModel.cs?name=snippet_CommentOut&highlight=9-13)]
 
 * 在创建 Department 表的代码后添加以下突出显示的代码：
 
-  [!code-csharp[Main](intro/samples/cu/Migrations/20170215234014_ComplexDataModel.cs?name=snippet_CreateDefaultValue&highlight=22-32)]
+  [!code-csharp[](intro/samples/cu/Migrations/20170215234014_ComplexDataModel.cs?name=snippet_CreateDefaultValue&highlight=22-32)]
 
 在生产应用程序中，可编写代码或脚本来添加 Department 行并将 Course 行与新 Department 行相关联。 随后将不在需要“Temp”系或 Course.DepartmentID 列中的默认值。
 
@@ -491,10 +491,10 @@ dotnet ef database update
 
 ![SSOX 中的 CourseAssignment 数据](complex-data-model/_static/ssox-ci-data.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 现在你就得到了更复杂的数据模型和相应的数据库。 后面教程将更多详细的介绍如何访问相关数据。
 
->[!div class="step-by-step"]
-[上一页](migrations.md)
-[下一页](read-related-data.md)  
+> [!div class="step-by-step"]
+> [上一页](migrations.md)
+> [下一页](read-related-data.md)  

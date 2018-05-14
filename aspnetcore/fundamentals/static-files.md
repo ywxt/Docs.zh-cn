@@ -1,7 +1,7 @@
 ---
-title: "在 ASP.NET Core 中处理静态文件"
+title: 在 ASP.NET Core 中处理静态文件
 author: rick-anderson
-description: "了解如何在 ASP.NET Core Web 应用中提供和保护静态文件，以及如何配置静态文件托管中间件行为。"
+description: 了解如何在 ASP.NET Core Web 应用中提供和保护静态文件，以及如何配置静态文件托管中间件行为。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -11,11 +11,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/static-files
-ms.openlocfilehash: 7b156830ab59db3c08fbff6b2c4180d8765a113b
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 46e868910661024ea3b950e78ced02a095896be1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="work-with-static-files-in-aspnet-core"></a>在 ASP.NET Core 中处理静态文件
 
@@ -31,20 +31,17 @@ ms.lasthandoff: 02/01/2018
 
 应用的 Web 主机必须识别内容根目录。
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 采用 `WebHost.CreateDefaultBuilder` 方法可将内容根目录设置为当前目录：
 
 [!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=9)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 调用 `Program.Main` 中的 [UseContentRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usecontentroot#Microsoft_AspNetCore_Hosting_HostingAbstractionsWebHostBuilderExtensions_UseContentRoot_Microsoft_AspNetCore_Hosting_IWebHostBuilder_System_String_) 将内容根目录设为当前目录：
 
 [!code-csharp[](static-files/samples/1x/Program.cs?name=snippet_ProgramClass&highlight=7)]
 
----
-
+* * *
 可通过 Web 根目录的相关路径访问静态文件。 例如，Web 应用程序项目模板包含 wwwroot 文件夹中的多个文件夹：
 
 * **wwwroot**
@@ -52,7 +49,7 @@ ms.lasthandoff: 02/01/2018
   * **images**
   * **js**
 
-用于访问 images 子文件夹中的文件的 URI 格式为 http://\<server_address>/images/\<image_file_name>。 例如，http://localhost:9189/images/banner3.svg。
+用于访问 images 子文件夹中的文件的 URI 格式为 http://\<server_address>/images/\<image_file_name>。 例如，*http://localhost:9189/images/banner3.svg*。
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -236,9 +233,9 @@ app.UseFileServer(enableDirectoryBrowsing: true);
 > [!WARNING]
 > `UseDirectoryBrowser` 和 `UseStaticFiles` 可能会泄漏机密。 强烈建议在生产中禁用目录浏览。 请仔细查看 `UseStaticFiles` 或 `UseDirectoryBrowser` 启用了哪些目录。 整个目录及其子目录均可公开访问。 将适合公开的文件存储在专用目录中，如 \<content_root>/wwwroot。 将这些文件与 MVC 视图、Razor 页面（仅限 2.x）和配置文件等分开
 
-* 使用 `UseDirectoryBrowser` 和 `UseStaticFiles` 公开的内容的 URL 受大小写和基础文件系统字符限制的影响。 例如，Windows 不区分大小写 &mdash; Mac 和 Linux 却要区分。
+* 使用 `UseDirectoryBrowser` 和 `UseStaticFiles` 公开的内容的 URL 受大小写和基础文件系统字符限制的影响。 例如，Windows 不区分大小写 &mdash; macOS 和 Linux 却要区分。
 
-* 托管于 IIS 中的 ASP.NET Core 应用使用 [ASP.NET Core 模块 (ANCM)](xref:fundamentals/servers/aspnet-core-module) 将所有请求转发到应用，包括静态文件请求。 未使用 IIS 静态文件处理程序。 在 ANCM 处理请求前，处理程序没有机会处理请求。
+* 托管于 IIS 中的 ASP.NET Core 应用使用 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)将所有请求转发到应用，包括静态文件请求。 未使用 IIS 静态文件处理程序。 在模块处理请求前，处理程序没有机会处理请求。
 
 * 在 IIS Manager 中完成以下步骤，删除服务器或网站级别的 IIS 静态文件处理程序：
     1. 转到“模块”功能。
@@ -246,7 +243,7 @@ app.UseFileServer(enableDirectoryBrowsing: true);
     1. 单击“操作”侧栏中的“删除”。
 
 > [!WARNING]
-> 如果启用了 IIS 静态文件处理程序且 ANCM 配置不正确，则会提供静态文件。 例如，如果未部署 web.config 文件，则会发生这种情况。
+> 如果启用了 IIS 静态文件处理程序且 ASP.NET Core 模块配置不正确，则会提供静态文件。 例如，如果未部署 web.config 文件，则会发生这种情况。
 
 * 将代码文件（包括 .cs 和 .cshtml ）放在应用项目的 Web 根目录之外。 这样就在应用的客户端内容和基于服务器的代码间创建了逻辑分隔。 可以防止服务器端代码泄漏。
 

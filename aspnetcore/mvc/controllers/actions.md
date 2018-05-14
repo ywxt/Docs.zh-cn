@@ -1,7 +1,7 @@
 ---
-title: "在 ASP.NET Core MVC 中使用控制器处理请求"
+title: 在 ASP.NET Core MVC 中使用控制器处理请求
 author: ardalis
-description: 
+description: ''
 manager: wpickett
 ms.author: riande
 ms.date: 07/03/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/actions
-ms.openlocfilehash: 0f04891aaeec026120e2afff3ff24fb89f649c8d
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 187ac69322545685380ad8f810bb65208c093d82
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>在 ASP.NET Core MVC 中使用控制器处理请求
+# <a name="handle-requests-with-controllers-in-aspnet-core-mvc"></a>在 ASP.NET Core MVC 中使用控制器处理请求
 
 作者：[Steve Smith](https://ardalis.com/) 和 [Scott Addie](https://github.com/scottaddie)
 
@@ -54,7 +54,7 @@ ms.lasthandoff: 02/01/2018
 
 ### <a name="controller-helper-methods"></a>控制器帮助程序方法
 
-控制器通常继承自[控制器](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller)（尽管没有要求）。 派生自 `Controller` 会提供对三个帮助程序方法类别的访问：
+控制器通常继承自[控制器](/dotnet/api/microsoft.aspnetcore.mvc.controller)（尽管没有要求）。 派生自 `Controller` 会提供对三个帮助程序方法类别的访问：
 
 #### <a name="1-methods-resulting-in-an-empty-response-body"></a>1.导致空响应正文的方法
 
@@ -64,7 +64,7 @@ ms.lasthandoff: 02/01/2018
 
 * **HTTP 状态代码**
 
-    此类型返回 HTTP 状态代码。 此类型的几种帮助程序方法是 `BadRequest``NotFound` 和 `Ok`。 例如，`return BadRequest();` 执行时生成 400 状态代码。 重载 `BadRequest``NotFound` 和 `Ok` 等方法时，它们不再符合 HTTP 状态代码响应方的资格，因为正在进行内容协商。
+    此类型返回 HTTP 状态代码。 此类型的几种帮助程序方法是 `BadRequest`、`NotFound` 和 `Ok`。 例如，`return BadRequest();` 执行时生成 400 状态代码。 重载 `BadRequest``NotFound` 和 `Ok` 等方法时，它们不再符合 HTTP 状态代码响应方的资格，因为正在进行内容协商。
 
 * **重定向**
 
@@ -76,7 +76,7 @@ ms.lasthandoff: 02/01/2018
 
 此类别中的大多数帮助程序方法都包含一个 `ContentType` 属性，通过它可以设置 `Content-Type` 响应标头来描述响应正文。
 
-此类别中有两种结果类型：[视图](xref:mvc/views/overview)和[已格式化的响应](xref:mvc/models/formatting)。
+此类别中有两种结果类型：[视图](xref:mvc/views/overview)和[已格式化的响应](xref:web-api/advanced/formatting)。
 
 * **视图**
 
@@ -90,7 +90,7 @@ ms.lasthandoff: 02/01/2018
 
 #### <a name="3-methods-resulting-in-a-non-empty-response-body-formatted-in-a-content-type-negotiated-with-the-client"></a>3.导致在与客户端协商的内容类型中格式化为非空响应正文的方法
 
-此类别更为熟知的说法是“内容协商”。 每当操作返回 [ObjectResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.objectresult) 类型或除 [IActionResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.iactionresult) 实现之外的任何实现时，会应用[内容协商](xref:mvc/models/formatting#content-negotiation)。 返回非 `IActionResult` 实现（例如 `object`）的操作也会返回已格式化的响应。
+此类别更为熟知的说法是“内容协商”。 每当操作返回 [ObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.objectresult) 类型或除 [IActionResult](/dotnet/api/microsoft.aspnetcore.mvc.iactionresult) 实现之外的任何实现时，会应用[内容协商](xref:web-api/advanced/formatting#content-negotiation)。 返回非 `IActionResult` 实现（例如 `object`）的操作也会返回已格式化的响应。
 
 此类型的一些帮助程序方法包括 `BadRequest`、`CreatedAtRoute` 和 `Ok`。 这些方法的示例分别为 `return BadRequest(modelState);`、`return CreatedAtRoute("routename", values, newobject);` 和 `return Ok(value);`。 请注意，`BadRequest` 和 `Ok` 仅在传递了值的时候才执行内容协商；在没有传递值的情况下，它们充当 HTTP 状态码结果类型。 另一方面，`CreatedAtRoute` 方法始终执行内容协商，因为它的重载均要求传递一个值。
 
@@ -101,7 +101,7 @@ ms.lasthandoff: 02/01/2018
 可在控制器或操作级别上应用大多数筛选器属性（例如 `[Authorize]`），具体取决于所需的粒度级别。
 
 错误处理和响应缓存通常是横切关注点：
-   * [错误处理](xref:mvc/controllers/filters#exception-filters)
+   * [处理错误](xref:mvc/controllers/filters#exception-filters)
    * [响应缓存](xref:performance/caching/response)
 
 使用筛选器或自定义[中间件](xref:fundamentals/middleware/index)可处理许多横切关注点。

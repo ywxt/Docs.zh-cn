@@ -1,7 +1,7 @@
 ---
-title: "为本机移动应用程序创建后端服务"
+title: 使用 ASP.NET Core 为本机移动应用创建后端服务
 author: ardalis
-description: 
+description: 了解如何使用 ASP.NET Core MVC 创建后端服务，以支持本机移动应用。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mobile/native-mobile-backend
-ms.openlocfilehash: ff09f331cff5cca7b42fa89bff55c0ed5c7d82f4
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 18aecea00eb9cda3462ede7e478616a99cf302f8
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="creating-backend-services-for-native-mobile-applications"></a>为本机移动应用程序创建后端服务
+# <a name="create-backend-services-for-native-mobile-apps-with-aspnet-core"></a>使用 ASP.NET Core 为本机移动应用创建后端服务
 
 作者：[Steve Smith](https://ardalis.com/)
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 01/31/2018
 
 ## <a name="the-sample-native-mobile-app"></a>本机移动应用示例
 
-本教程演示如何创建使用 ASP.NET Core MVC 支持本机移动应用的后端服务。 它使用 [Xamarin Forms ToDoRest 应用](https://developer.xamarin.com/guides/xamarin-forms/web-services/consuming/rest/) 作为其本机客户端，其中包括 Android、 iOS、 Windows Universal 和 Window Phone 设备的单独本机客户端。 你可以遵循链接中的教程来创建本机应用程序（并安装需要的免费 Xamarin 工具），以及下载 Xamarin 示例解决方案。 Xamarin 示例包含一个 ASP.NET Web API 2 服务项目，使用本文中的 ASP.NET Core 应用替换（客户端无需进行任何更改）。
+本教程演示如何创建使用 ASP.NET Core MVC 支持本机移动应用的后端服务。 它使用 [Xamarin Forms ToDoRest 应用](/xamarin/xamarin-forms/data-cloud/consuming/rest) 作为其本机客户端，其中包括 Android、 iOS、 Windows Universal 和 Window Phone 设备的单独本机客户端。 你可以遵循链接中的教程来创建本机应用程序（并安装需要的免费 Xamarin 工具），以及下载 Xamarin 示例解决方案。 Xamarin 示例包含一个 ASP.NET Web API 2 服务项目，使用本文中的 ASP.NET Core 应用替换（客户端无需进行任何更改）。
 
 ![在 Android 智能手机上运行的 ToDoRest 应用程序](native-mobile-backend/_static/todo-android.png)
 
@@ -61,31 +61,31 @@ public static string RestUrl = "http://192.168.1.207:5000/api/todoitems/{0}";
 
 对于向端口 5000 进行的请求，应用程序均需作出响应。 更新 Program.cs，使其包含 `.UseUrls("http://*:5000")`，以便实现以下操作：
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Program.cs?range=10-16&highlight=3)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Program.cs?range=10-16&highlight=3)]
 
 > [!NOTE]
-> 请确保直接运行应用程序，而不是在 IIS Express 后运行，因为在默认情况下，后者会忽略非本地请求。 从命令提示符处运行 `dotnet run`，或从 Visual Studio 工具栏中的“调试目标”下拉列表中选择应用程序名称配置文件。
+> 请确保直接运行应用程序，而不是在 IIS Express 后运行，因为在默认情况下，后者会忽略非本地请求。 从命令提示符处运行 [dotnet run](/dotnet/core/tools/dotnet-run)，或从 Visual Studio 工具栏中的“调试目标”下拉列表中选择应用程序名称配置文件。
 
 添加一个模型类来表示待办事项。 使用 `[Required]` 属性标记必需字段：
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Models/ToDoItem.cs)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Models/ToDoItem.cs)]
 
 API 方法需要通过某种方式处理数据。 使用原始 Xamarin 示例所用的 `IToDoRepository` 接口：
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Interfaces/IToDoRepository.cs)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Interfaces/IToDoRepository.cs)]
 
 在此示例中，该实现仅使用一个专用项集合：
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Services/ToDoRepository.cs)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Services/ToDoRepository.cs)]
 
 在 *Startup.cs* 中配置该实现:
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Startup.cs?highlight=6&range=29-35)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Startup.cs?highlight=6&range=29-35)]
 
 现可创建 ToDoItemsController。
 
 > [!TIP]
-> 阅读 [使用 ASP.NET Core MVC 和 Visual Studio 构建你的第一个 Web API](../tutorials/first-web-api.md)，进一步了解如何创建 Web API 。
+> 有关创建 Web API 的详细信息，请参阅[使用 ASP.NET Core MVC 和 Visual Studio 生成首个 Web API](../tutorials/first-web-api.md)。
 
 ## <a name="creating-the-controller"></a>创建控制器
 
@@ -93,7 +93,7 @@ API 方法需要通过某种方式处理数据。 使用原始 Xamarin 示例所
 
 控制器需要 `IToDoRepository` 才能正常运行；通过控制器的构造函数请求该类型的实例。 在运行时，此实例将使用框架对 [依赖关系注入](../fundamentals/dependency-injection.md) 的支持来提供。
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=1-17&highlight=9,14)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=1-17&highlight=9,14)]
 
 此 API 支持四个不同的 HTTP 谓词来执行对数据源的 CRUD（创建、读取、更新、删除）操作。 最简单的是读取操作，它对应于 HTTP GET 请求。
 
@@ -101,7 +101,7 @@ API 方法需要通过某种方式处理数据。 使用原始 Xamarin 示例所
 
 要请求项列表，可对 `List` 方法使用 GET 请求。 `[HttpGet]` 方法的 `List` 属性指示此操作应仅处理 GET 请求。 此操作的路由是在控制器上指定的路由。 你不一定必须将操作名称用作路由的一部分。 你只需确保每个操作都有唯一的和明确的路由。 路由属性可以分别应用在控制器和方法级别，以此生成特定的路由。
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=19-23)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=19-23)]
 
 `List` 方法返回 200 OK 响应代码和所有 ToDo 项，并序列化为 JSON 。
 
@@ -115,11 +115,11 @@ API 方法需要通过某种方式处理数据。 使用原始 Xamarin 示例所
 
 在该方法中，会检查项的有效性和之前是否存在于数据存储，并且如果没有任何问题，则使用存储库添加。 检查 `ModelState.IsValid` 将执行 [模型验证](../mvc/models/validation.md)，应该在每个接受用户输入的 API 方法中执行此步骤。
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=25-46)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=25-46)]
 
 示例中使用一个枚举，后者包含传递到移动客户端的错误代码：
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=91-99)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=91-99)]
 
 使用 Postman 测试添加新项，选择 POST 谓词并在请求正文中以 JSON 格式提供新对象。 你还应添加一个请求标头指定 `Content-Type` 为 `application/json`。
 
@@ -131,7 +131,7 @@ API 方法需要通过某种方式处理数据。 使用原始 Xamarin 示例所
 
 通过使用 HTTP PUT 请求来修改记录。 除了此更改之外，`Edit` 方法几乎与 `Create` 完全相同。 请注意，如果未找到记录，则 `Edit` 操作将返回 `NotFound`(404) 响应。
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=48-69)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=48-69)]
 
 若要使用 Postman 进行测试，将谓词更改为 PUT。 在请求正文中指定要更新的对象数据。
 
@@ -143,7 +143,7 @@ API 方法需要通过某种方式处理数据。 使用原始 Xamarin 示例所
 
 删除记录可以通过向服务发出 DELETE 请求并传递要删除项的 ID 来完成。 与更新一样，请求的项不存在时会收到 `NotFound` 响应。 请求成功会得到 `NoContent` (204) 响应。
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=71-88)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=71-88)]
 
 请注意，在测试删除功能时，请求正文中不需要任何内容。
 

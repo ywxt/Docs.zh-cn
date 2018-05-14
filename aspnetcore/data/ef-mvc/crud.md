@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/crud
-ms.openlocfilehash: a7e0d4ff3d57e42dd7e33ffb5f26f2143520be87
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 54f25733126c6de5a3704664bda7c7942a3643a1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="create-read-update-and-delete---ef-core-with-aspnet-core-mvc-tutorial-2-of-10"></a>创建、读取、更新和删除 - EF Core 和 ASP.NET Core MVC 教程（第 2 个，共 10 个）
+# <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>ASP.NET Core MVC 和 EF Core 教程 - 创建、读取、更新和删除 (2/10)
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC Web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
+Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
 
 在上一个教程中，创建了一个使用 Entity Framework 和 SQL Server LocalDB 来存储和显示数据的 MVC 应用程序。 在本教程中，将评审和自定义 MVC 基架在控制器和视图中自动创建的 CRUD （创建、读取、更新、删除）代码。
 
@@ -42,7 +42,7 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 
 在 Controllers/StudentsController.cs 中，“详细信息”视图的操作方法使用 `SingleOrDefaultAsync` 方法检索单个 `Student` 实体。 添加调用 `Include` 的代码。 `ThenInclude` 和 `AsNoTracking` 方法，如以下突出显示的代码所示。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Details&highlight=8-12)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Details&highlight=8-12)]
 
 `Include` 和 `ThenInclude` 方法使上下文加载 `Student.Enrollments` 导航属性，并在每个注册中加载 `Enrollment.Course` 导航属性。  有关这些方法的详细信息，请参阅[读取相关数据](read-related-data.md)教程。
 
@@ -52,7 +52,7 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 
 传递到 `Details` 方法的键值来自路由数据。 路由数据是模型绑定器在 URL 的段中找到的数据。 例如，默认路由指定控制器、操作和 ID 段：
 
-[!code-csharp[Main](intro/samples/cu/Startup.cs?name=snippet_Route&highlight=5)]
+[!code-csharp[](intro/samples/cu/Startup.cs?name=snippet_Route&highlight=5)]
 
 在下面的 URL 中，默认路由将 Instructor 映射作为控制器、Index 作为操作，1 作为 ID；这些都是路由数据值。
 
@@ -114,7 +114,7 @@ http://localhost:1230/Instructor/Index?id=1&CourseID=2021
 
 在 *StudentsController.cs* 中修改 HttpPost `Create` 方法，在 `Bind` 特性中添加 try catch 块并删除 ID 值。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=4,6-7,14-21)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=4,6-7,14-21)]
 
 此代码将 ASP.NET MVC 模型绑定器创建的 Student 实体添加到 Students 实体集，然后将更改保存到数据库。 （模型绑定器指的是 ASP.NET MVC 功能，用户可利用它来轻松处理使用表单提交的数据；模型绑定器将已发布的表单值转换为 CLR 类型，并将其传递给操作方法的参数。 在本例中，模型绑定器将使用 Form 集合的属性值实例化 Student 实体。）
 
@@ -162,7 +162,7 @@ Views/Students/Create.cshtml 中的代码对每个字段使用 `label`、`input`
 
 这是默认获取的服务器端验证；在下一个教程中，还将介绍如何添加生成客户端验证代码的特性。 以下突出显示的代码显示 `Create` 方法中的模型验证检查。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=8)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=8)]
 
 将日期更改为有效值，并单击“创建”，查看“索引”页中显示的新学生。
 
@@ -174,7 +174,7 @@ Views/Students/Create.cshtml 中的代码对每个字段使用 `label`、`input`
 
 使用以下代码替换 HttpPost Edit 操作方法。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ReadFirst)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ReadFirst)]
 
 这些更改实现安全最佳做法，防止过多发布。 基架生成了 `Bind` 特性，并将模型绑定器创建的实体添加到具有 `Modified` 标记的实体集。 不建议将该代码用于多个方案，因为 `Bind` 特性将清除未在 `Include` 参数中列出的字段中的任何以前存在的数据。
 
@@ -188,7 +188,7 @@ Views/Students/Create.cshtml 中的代码对每个字段使用 `label`、`input`
 
 建议的 HttpPost 编辑代码确保只更新已更改的列，并保留不希望包含在模型绑定内的属性中的数据。 但是，读取优先的方法需要额外的数据库读取，并可能产生处理并发冲突的更复杂代码。 另一种方法是将模型绑定器创建的实体附加到 EF 上下文，并将其标记为已修改。 （请勿使用此代码更新项目，它只是显示一种可选的方法。） 
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_CreateAndAttach)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_CreateAndAttach)]
 
 网页 UI 包含实体中的所有字段并能更新其中任意字段时，可以使用此方法。
 
@@ -236,7 +236,7 @@ Views/Students/Create.cshtml 中的代码对每个字段使用 `label`、`input`
 
 使用以下管理错误报告的代码替换 HttpGet `Delete` 操作方法。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteGet&highlight=1,9,16-21)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteGet&highlight=1,9,16-21)]
 
 此代码接受可选参数，指示保存更改失败后是否调用此方法。 没有失败的情况下调用 HttpGet `Delete` 方法时，此参数为 false。 由 HttpPost `Delete` 方法调用以响应数据库更新错误时，此参数为 true，并且将错误消息传递到视图。
 
@@ -244,7 +244,7 @@ Views/Students/Create.cshtml 中的代码对每个字段使用 `label`、`input`
 
 使用以下执行实际删除操作并捕获任何数据库更新错误的代码替换 HttpPost `Delete` 操作方法（名为 `DeleteConfirmed`）。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteWithReadFirst&highlight=6,8-11,13-14,18-23)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteWithReadFirst&highlight=6,8-11,13-14,18-23)]
 
 此代码检索所选的实体，然后调用 `Remove` 方法以将实体的状态设置为 `Deleted`。 调用 `SaveChanges` 时生成 SQL DELETE 命令。
 
@@ -252,7 +252,7 @@ Views/Students/Create.cshtml 中的代码对每个字段使用 `label`、`input`
 
 如果在大容量应用程序中提高性能是优先事项，则可以通过只使用主键值实例化 Student 实体，然后将实体状态设置为 `Deleted` 来避免不必要的 SQL 查询。 这是 Entity Framework 删除实体需要执行的所有操作。 （请勿将此代码放在项目中；这里只是为了说明替代方法。）
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteWithoutReadFirst&highlight=7-8)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteWithoutReadFirst&highlight=7-8)]
 
 如果实体包含还应删除的相关数据，请确保在数据库中配置了级联删除。 若使用此方法删除实体，EF 可能不知道有需要删除的相关实体。
 
@@ -292,10 +292,10 @@ Views/Students/Create.cshtml 中的代码对每个字段使用 `label`、`input`
 
 有关详细信息，请参阅[跟踪与非跟踪](https://docs.microsoft.com/ef/core/querying/tracking)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 现在拥有一组完整的页面，可对 Student 实体执行简单的 CRUD 操作。 在下一个教程中，将通过添加排序、筛选和分页来扩展“索引”页。
 
->[!div class="step-by-step"]
-[上一页](intro.md)
-[下一页](sort-filter-page.md)  
+> [!div class="step-by-step"]
+> [上一页](intro.md)
+> [下一页](sort-filter-page.md)  

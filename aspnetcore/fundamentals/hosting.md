@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 中的托管"
+title: ASP.NET Core 中的托管
 author: guardrex
-description: "了解有关 ASP.NET Core 中负责应用启动和生存期管理的 Web 主机。"
+description: 了解有关 ASP.NET Core 中负责应用启动和生存期管理的 Web 主机。
 manager: wpickett
 ms.author: riande
 ms.date: 09/21/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/hosting
-ms.openlocfilehash: 78209c8d34fa1a2a164ae333d625feca1e145e89
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 344bf5f0917f4c33d67eeb14176ff2aae3ae75da
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="hosting-in-aspnet-core"></a>ASP.NET Core 中的托管
 
@@ -23,11 +23,10 @@ ASP.NET Core 应用配置和启动“主机”。 主机负责应用程序启动
 
 ## <a name="setting-up-a-host"></a>设置主机
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 创建使用 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 实例的主机。 通常在应用的入口点来执行 `Main` 方法。 在项目模板中，`Main` 位于 Program.cs。 典型的 Program.cs 调用 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 以开始设置主机：
 
-[!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main)]
+[!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main)]
 
 `CreateDefaultBuilder` 执行下列任务：
 
@@ -41,6 +40,7 @@ ASP.NET Core 应用配置和启动“主机”。 主机负责应用程序启动
   * 命令行参数。
 * 配置控制台和调试输出的[日志记录](xref:fundamentals/logging/index)。 日志记录包含 appsettings.json 或 appsettings.{Environment}.json 文件的日志记录配置部分中指定的[日志筛选](xref:fundamentals/logging/index#log-filtering)规则。
 * 在 IIS 后方运行时，启用 [IIS 集成](xref:host-and-deploy/iis/index)。 当使用 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)时配置基路径和被服务器侦听的端口。 该模块创建 IIS 与 Kestrel 之间的反向代理。 还配置应用到[捕获启动错误](#capture-startup-errors)。 有关 IIS 默认选项，请参阅[使用 IIS 在 Windows 上托管 ASP.NET Core 的 IIS 选项部分](xref:host-and-deploy/iis/index#iis-options)。
+* 如果应用环境为“开发”，请将 [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes) 设为 `true`。 有关详细信息，请参阅[作用域验证](#scope-validation)。
 
 内容根确定主机搜索内容文件（如 MVC 视图文件）的位置。 应用从项目的根文件夹启动时，会将项目的根文件夹用作内容根。 这是 [Visual Studio](https://www.visualstudio.com/) 和 [dotnet new 模板](/dotnet/core/tools/dotnet-new)中使用的默认值。
 
@@ -49,17 +49,16 @@ ASP.NET Core 应用配置和启动“主机”。 主机负责应用程序启动
 > [!NOTE]
 > 作为使用静态 `CreateDefaultBuilder` 方法的替代方法，从 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 创建主机是一种受 ASP.NET Core 2.x 支持的方法。 有关详细信息，请参阅 ASP.NET Core 1.x 选项卡。
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 创建使用 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 实例的主机。 通常执行 `Main` 方法，在应用的入口点来创建主机。 在项目模板中，`Main` 位于 Program.cs：
 
-[!code-csharp[Main](../common/samples/WebApplication1/Program.cs)]
+[!code-csharp[](../common/samples/WebApplication1/Program.cs)]
 
 `WebHostBuilder` 需要[实现 IServer 的服务器](servers/index.md)。 内置服务器是 [Kestrel](servers/kestrel.md) 和 [HTTP.sys](servers/httpsys.md)（在 ASP.NET Core 2.0 之前的版本中，HTTP.sys 叫做 [WebListener](xref:fundamentals/servers/weblistener)）。 在此示例中，[UseKestrel 扩展方法](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1)指定 Kestrel 服务器。
 
 内容根确定主机搜索内容文件（如 MVC 视图文件）的位置。 默认内容根通过 [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory?view=netcore-1.1) 为 `UseContentRoot` 获得。 应用从项目的根文件夹启动时，会将项目的根文件夹用作内容根。 这是 [Visual Studio](https://www.visualstudio.com/) 和 [dotnet new 模板](/dotnet/core/tools/dotnet-new)中使用的默认值。
 
-若要使用 IIS 作为反向代理，调用 [UseIISIntegration](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) 作为生成主机的一部分。 `UseIISIntegration` 不配置服务器，而 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) 要配置。 当使用 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)创建 Kestrel 和 IIS 之间的反向代理时，`UseIISIntegration` 配置基路径和被服务器侦听的端口。 要在 ASP.NET Core 中使用 IIS，必须指定 `UseKestrel` 和 `UseIISIntegration`。 `UseIISIntegration` 仅在 IIS 或 IIS Express 后方运行时激活。 有关详细信息，请参阅 [ASP.NET Core 模块简介](xref:fundamentals/servers/aspnet-core-module)和 [ASP.NET Core 模块配置参考](xref:host-and-deploy/aspnet-core-module)。
+若要使用 IIS 作为反向代理，调用 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) 作为生成主机的一部分。 `UseIISIntegration` 不配置服务器，而 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) 要配置。 当使用 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)创建 Kestrel 和 IIS 之间的反向代理时，`UseIISIntegration` 配置基路径和被服务器侦听的端口。 要在 ASP.NET Core 中使用 IIS，必须指定 `UseKestrel` 和 `UseIISIntegration`。 `UseIISIntegration` 仅在 IIS 或 IIS Express 后方运行时激活。 有关详细信息，请参阅 [ASP.NET Core 模块简介](xref:fundamentals/servers/aspnet-core-module)和 [ASP.NET Core 模块配置参考](xref:host-and-deploy/aspnet-core-module)。
 
 配置主机 （和 ASP.NET Core 应用） 的最小实现包括指定服务器和应用的请求管道的配置项：
 
@@ -75,8 +74,7 @@ var host = new WebHostBuilder()
 host.Run();
 ```
 
----
-
+* * *
 设置主机时，可以提供[配置](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure?view=aspnetcore-1.1)和 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.configureservices?view=aspnetcore-1.1) 方法。 如果指定 `Startup` 类，必须定义 `Configure` 方法。 有关详细信息，请参阅 [ASP.NET Core 中的应用程序启动](startup.md)。 多次调用 `ConfigureServices` 将追加到另一个。 多次调用 `WebHostBuilder` 上的 `Configure` 或 `UseStartup` 将替换以前的设置。
 
 ## <a name="host-configuration-values"></a>主机配置值
@@ -265,7 +263,7 @@ WebHost.CreateDefaultBuilder(args)
 
 ### <a name="prevent-hosting-startup"></a>阻止承载启动
 
-阻止承载启动程序集自动加载，包括应用的程序集所配置的承载启动程序集。 有关详细信息，请参阅[使用 IHostingStartup 从外部程序集添加应用功能](xref:host-and-deploy/ihostingstartup)。
+阻止承载启动程序集自动加载，包括应用的程序集所配置的承载启动程序集。 请参阅[使用特定于平台的配置添加应用功能](xref:host-and-deploy/platform-specific-configuration)，获取详细信息。
 
 **键**：preventHostingStartup  
 **类型**：布尔型（`true` 或 `1`）  
@@ -295,7 +293,7 @@ WebHost.CreateDefaultBuilder(args)
 
 **键**：urls  
 **类型**：string  
-**默认值**：http://localhost:5000  
+**默认**：http://localhost:5000  
 **设置使用**：`UseUrls`  
 **环境变量**：`ASPNETCORE_URLS`
 
@@ -331,7 +329,14 @@ var host = new WebHostBuilder()
 **设置使用**：`UseShutdownTimeout`  
 **环境变量**：`ASPNETCORE_SHUTDOWNTIMEOUTSECONDS`
 
-虽然键使用 `UseSetting` 接受 int（例如 `.UseSetting(WebHostDefaults.ShutdownTimeoutKey, "10")`），但是 `UseShutdownTimeout` 扩展方法采用 `TimeSpan`。 此功能是 ASP.NET Core 2.0 中的新增功能。
+虽然键使用 `UseSetting` 接受 int（例如 `.UseSetting(WebHostDefaults.ShutdownTimeoutKey, "10")`），但是 [UseShutdownTimeout](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useshutdowntimeout) 扩展方法采用 [TimeSpan](/dotnet/api/system.timespan)。 此功能是 ASP.NET Core 2.0 中的新增功能。
+
+在超时时间段中，托管：
+
+* 触发器 [IApplicationLifetime.ApplicationStopping](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime.applicationstopping)。
+* 尝试停止托管服务，对服务停止失败的任何错误进行日志记录。
+
+如果在所有托管服务停止之前就达到了超时时间，则会在应用关闭时会终止剩余的所有活动的服务。 即使没有完成处理工作，服务也会停止。 如果停止服务需要额外的时间，请增加超时时间。
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -506,7 +511,7 @@ public class Program
 > [!NOTE]
 > [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) 扩展方法当前不能分析由 `GetSection` 返回的配置部分（例如 `.UseConfiguration(Configuration.GetSection("section"))`。 `GetSection` 方法将配置键筛选到所请求的部分，但将节名称保留在键上（例如 `section:urls`、`section:environment`）。 `UseConfiguration` 方法需要键来匹配 `WebHostBuilder` 键（例如 `urls`、`environment`）。 键上存在的节名称阻止节的值配置主机。 将在即将发布的版本中解决此问题。 有关详细信息和解决方法，请参阅[将配置节传入到 WebHostBuilder.UseConfiguration 使用完整的键](https://github.com/aspnet/Hosting/issues/839)。
 
-若要指定在特定的 URL 上运行的主机，所需的值可以在执行 `dotnet run` 时从命令提示符传入。 命令行参数替代 hosting.json 文件中的 `urls` 值，且服务器侦听端口 8080：
+若要指定在特定的 URL 上运行的主机，所需的值可以在执行 [dotnet 运行](/dotnet/core/tools/dotnet-run)时从命令提示符传入。 命令行参数替代 hosting.json 文件中的 `urls` 值，且服务器侦听端口 8080：
 
 ```console
 dotnet run --urls "http://*:8080"
@@ -732,7 +737,7 @@ using (host)
 
 ## <a name="ihostingenvironment-interface"></a>IHostingEnvironment 接口
 
-[IHostingEnvironment 接口](/aspnet/core/api/microsoft.aspnetcore.hosting.ihostingenvironment)提供有关应用的 Web 承载环境的信息。 使用[构造函数注入](xref:fundamentals/dependency-injection)获取 `IHostingEnvironment` 以使用其属性和扩展方法：
+[IHostingEnvironment 接口](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment)提供有关应用的 Web 承载环境的信息。 使用[构造函数注入](xref:fundamentals/dependency-injection)获取 `IHostingEnvironment` 以使用其属性和扩展方法：
 
 ```csharp
 public class CustomFileReader
@@ -803,7 +808,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-创建自定义[中间件](xref:fundamentals/middleware#writing-middleware)时可以将 `IHostingEnvironment` 注入 `Invoke` 方法：
+创建自定义[中间件](xref:fundamentals/middleware/index#writing-middleware)时可以将 `IHostingEnvironment` 注入 `Invoke` 方法：
 
 ```csharp
 public async Task Invoke(HttpContext context, IHostingEnvironment env)
@@ -823,17 +828,13 @@ public async Task Invoke(HttpContext context, IHostingEnvironment env)
 
 ## <a name="iapplicationlifetime-interface"></a>IApplicationLifetime 接口
 
-[IApplicationLifetime](/aspnet/core/api/microsoft.aspnetcore.hosting.iapplicationlifetime) 允许后启动和关闭活动。 接口上的三个属性是用于注册 `Action` 方法（用于定义启动和关闭事件）的取消标记。 此外，还有 `StopApplication` 方法。
+[IApplicationLifetime](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime) 允许后启动和关闭活动。 接口上的三个属性是用于注册 `Action` 方法（用于定义启动和关闭事件）的取消标记。
 
 | 取消标记    | 触发条件 |
 | --------------------- | --------------------- |
 | `ApplicationStarted`  | 主机已完全启动。 |
 | `ApplicationStopping` | 主机正在执行正常关闭。 仍在处理请求。 关闭受到阻止，直到完成此事件。 |
 | `ApplicationStopped`  | 主机正在完成正常关闭。 应处理所有请求。 关闭受到阻止，直到完成此事件。 |
-
-| 方法            | 操作                                           |
-| ----------------- | ------------------------------------------------ |
-| `StopApplication` | 当前应用程序请求终止。 |
 
 ```csharp
 public class Startup 
@@ -869,6 +870,47 @@ public class Startup
 }
 ```
 
+[StopApplication](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime.stopapplication) 请求应用终止。 以下类在调用类的 `Shutdown` 方法时使用 `StopApplication` 正常关闭应用：
+
+```csharp
+public class MyClass
+{
+    private readonly IApplicationLifetime _appLifetime;
+
+    public MyClass(IApplicationLifetime appLifetime)
+    {
+        _appLifetime = appLifetime;
+    }
+
+    public void Shutdown()
+    {
+        _appLifetime.StopApplication();
+    }
+}
+```
+
+## <a name="scope-validation"></a>作用域验证
+
+在 ASP.NET Core 2.0 或更高版本中，如果应用环境为“开发”，则 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 将 [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes) 设为 `true`。
+
+若将 `ValidateScopes` 设为 `true`，默认服务提供程序会执行检查来验证以下内容：
+
+* 没有从根服务提供程序直接或间接解析到有作用域的服务。
+* 未将有作用域的服务直接或间接注入到单一实例。
+
+调用 [BuildServiceProvider](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectioncontainerbuilderextensions.buildserviceprovider) 时，会创建根服务提供程序。 在启动提供程序和应用时，根服务提供程序的生存期对应于应用/服务的生存期，并在关闭应用时释放。
+
+有作用域的服务由创建它们的容器释放。 如果作用域创建于根容器，则该服务的生存会有效地提升至单一实例，因为根容器只会在应用/服务关闭时将其释放。 验证服务作用域，将在调用 `BuildServiceProvider` 时收集这类情况。
+
+若要始终验证作用域（包括在生存环境中验证），请使用主机生成器上的 [UseDefaultServiceProvider](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usedefaultserviceprovider) 配置 [ServiceProviderOptions](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions)：
+
+```csharp
+WebHost.CreateDefaultBuilder(args)
+    .UseDefaultServiceProvider((context, options) => {
+        options.ValidateScopes = true;
+    })
+```
+
 ## <a name="troubleshooting-systemargumentexception"></a>疑难解答：System.ArgumentException
 
 **仅适用于 ASP.NET Core 2.0**
@@ -885,7 +927,7 @@ services.AddSingleton<IStartup, Startup>();
 Unhandled Exception: System.ArgumentException: A valid non-empty application name must be provided.
 ```
 
-这是因为 [applicationName(ApplicationKey)](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostdefaults#Microsoft_AspNetCore_Hosting_WebHostDefaults_ApplicationKey)（当前程序集）需扫描 `HostingStartupAttributes`。 如果应用手动将 `IStartup` 注入到依赖关系注入容器中，将以下调用添加到具有指定程序集名称的 `WebHostBuilder`：
+这是因为 [applicationName(ApplicationKey)](/dotnet/api/microsoft.aspnetcore.hosting.webhostdefaults#Microsoft_AspNetCore_Hosting_WebHostDefaults_ApplicationKey)（当前程序集）需扫描 `HostingStartupAttributes`。 如果应用手动将 `IStartup` 注入到依赖关系注入容器中，将以下调用添加到具有指定程序集名称的 `WebHostBuilder`：
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)

@@ -1,7 +1,7 @@
 ---
-title: "添加新字段"
+title: 将新字段添加到 ASP.NET Core 应用
 author: rick-anderson
-description: 
+description: 了解如何使用 Entity Framework Code First 迁移将新字段添加到模型，并将此更改迁移到数据库。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/new-field
-ms.openlocfilehash: f8a5f9528d899f75aaabfbca38f075a27763567f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a314115459fedb9561694604509856503c023a5c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="adding-a-new-field"></a>添加新字段
+# <a name="add-a-new-field-to-an-aspnet-core-app"></a>将新字段添加到 ASP.NET Core 应用
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 01/30/2018
 
 打开 Models/Movie.cs 文件，并添加 `Rating` 属性：
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
 
 生成应用 (Ctrl+Shift+B)。
 
@@ -41,7 +41,7 @@ ms.lasthandoff: 01/30/2018
 
 编辑 /Views/Movies/Index.cshtml 文件并添加 `Rating` 字段：
 
-[!code-HTML[Main](start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
+[!code-HTML[](start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
 
 使用 `Rating` 字段更新 /Views/Movies/Create.cshtml。 可以复制/粘贴之前的“窗体组”，并让 intelliSense 帮助更新字段。 IntelliSense 适用于[标记帮助程序](xref:mvc/views/tag-helpers/intro)。 请注意：在 Visual Studio 2017 的 RTM 版本中，需要安装 Razor intelliSense 的 [Razor 语言服务](https://marketplace.visualstudio.com/items?itemName=ms-madsk.RazorLanguageServices)。 此问题将在下一版本中修复。
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 01/30/2018
 
 更新 `SeedData` 类，使它提供新列的值。 示例更改如下所示，但可能需要对每个 `new Movie` 做出此更改。
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
 
 生成解决方案。
 
@@ -86,6 +86,6 @@ Update-Database
 
 运行应用，并验证是否可以创建/编辑/显示具有 `Rating` 字段的电影。 还应向 `Edit`、`Details` 和 `Delete` 视图模板添加 `Rating` 字段。
 
->[!div class="step-by-step"]
-[上一页](search.md)
-[下一页](validation.md)  
+> [!div class="step-by-step"]
+> [上一页](search.md)
+> [下一页](validation.md)  

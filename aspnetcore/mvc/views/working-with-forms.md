@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 表单中的标记帮助程序"
+title: ASP.NET Core 表单中的标记帮助程序
 author: rick-anderson
-description: "介绍与表单配合使用的内置标记帮助程序。"
+description: 介绍与表单配合使用的内置标记帮助程序。
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: 805c2ba5b3a9669d5547e1c595883436eea0d11a
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 9155bd54bc211c8be0678065e857f73d8a139365
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>在 ASP.NET Core 表单中使用标记帮助程序简介
+# <a name="tag-helpers-in-forms-in-aspnet-core"></a>ASP.NET Core 表单中的标记帮助程序
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)、[Dave Paquette](https://twitter.com/Dave_Paquette) 和 [Jerrie Pelser](https://github.com/jerriep)
 
@@ -40,15 +40,15 @@ ms.lasthandoff: 01/30/2018
 
 示例:
 
-[!code-HTML[Main](working-with-forms/sample/final/Views/Demo/RegisterFormOnly.cshtml)]
+[!code-HTML[](working-with-forms/sample/final/Views/Demo/RegisterFormOnly.cshtml)]
 
 上述表单标记帮助程序生成以下 HTML：
 
 ```HTML
 <form method="post" action="/Demo/Register">
-     <!-- Input and Submit elements -->
-     <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>" />
-    </form>
+    <!-- Input and Submit elements -->
+    <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>" />
+</form>
 ```
 
 MVC 运行时通过表单标记帮助程序属性 `asp-controller` 和 `asp-action` 生成 `action` 属性值。 表单标记帮助程序还会生成隐藏的[请求验证令牌](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)，防止跨站点请求伪造（在 HTTP Post 操作方法中与 `[ValidateAntiForgeryToken]` 属性配合使用时）。 保护纯 HTML 表单免受跨站点请求伪造的影响很难，但表单标记帮助程序可提供此服务。
@@ -57,9 +57,9 @@ MVC 运行时通过表单标记帮助程序属性 `asp-controller` 和 `asp-acti
 
 `asp-route` 标记帮助程序属性还可为 HTML `action` 属性生成标记。 具有名为 `register` 的[路由](../../fundamentals/routing.md)的应用可将以下标记用于注册页：
 
-[!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterRoute.cshtml)]
+[!code-HTML[](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterRoute.cshtml)]
 
-*Views/Account* 文件夹中的许多视图（在新建使用*个人用户帐户*身份验证的 Web 应用时生成）包含 [asp-route-returnurl](https://docs.microsoft.com/aspnet/core/mvc/views/working-with-forms) 属性：
+*Views/Account* 文件夹中的许多视图（在新建使用*个人用户帐户*身份验证的 Web 应用时生成）包含 [asp-route-returnurl](xref:mvc/views/working-with-forms) 属性：
 
 ```cshtml
 <form asp-controller="Account" asp-action="Login"
@@ -84,11 +84,11 @@ MVC 运行时通过表单标记帮助程序属性 `asp-controller` 和 `asp-acti
 
 * 为 `asp-for` 属性中指定的表达式名称生成 `id` 和 `name` HTML 属性。 `asp-for="Property1.Property2"` 与 `m => m.Property1.Property2` 相等。 表达式的名称用于 `asp-for` 属性值。 有关其他信息，请参阅[表达式名称](#expression-names)部分。
 
-* 根据模型类型和应用于模型属性的[数据注释](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter)特性设置 HTML `type` 特性值
+* 根据模型类型和应用于模型属性的[数据注释](/dotnet/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter)特性设置 HTML `type` 特性值
 
 * 如果已经指定，不会覆盖 HTML `type` 属性值
 
-* 通过应用于模型属性的[数据注释](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter)特性生成 [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) 验证特性
+* 通过应用于模型属性的[数据注释](/dotnet/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter)特性生成 [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) 验证特性
 
 * 具有与 `Html.TextBoxFor` 和 `Html.EditorFor` 重叠的 HTML 帮助程序功能。 有关详细信息，请参阅**输入标记帮助程序的 HTML 帮助程序替代项**部分。
 
@@ -117,7 +117,7 @@ Type expected
 |Single、Double|type=”number”|
 
 
-下表显示输入标记帮助程序会映射到特定输入类型的一些常见[数据注释](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter)属性（并未列出每个验证属性）：
+下表显示输入标记帮助程序会映射到特定输入类型的一些常见[数据注释](/dotnet/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter)属性（并未列出每个验证属性）：
 
 
 |特性|输入类型|
@@ -133,9 +133,9 @@ Type expected
 
 示例:
 
-[!code-csharp[Main](working-with-forms/sample/final/ViewModels/RegisterViewModel.cs)]
+[!code-csharp[](working-with-forms/sample/final/ViewModels/RegisterViewModel.cs)]
 
-[!code-HTML[Main](working-with-forms/sample/final/Views/Demo/RegisterInput.cshtml)]
+[!code-HTML[](working-with-forms/sample/final/Views/Demo/RegisterInput.cshtml)]
 
 上述代码生成以下 HTML：
 
@@ -189,17 +189,22 @@ Type expected
 
 使用集合属性时，`asp-for="CollectionProperty[23].Member"` 在 `i` 具有值 `23` 时生成与 `asp-for="CollectionProperty[i].Member"` 相同的名称。
 
+在 ASP.NET Core MVC 计算 `ModelExpression` 的值时，它会检查多个源，包括 `ModelState`。 以 `<input type="text" asp-for="@Name" />` 为例。 计算出的 `value` 属性是第一个非 null 值，属于：
+
+* 带有“Name”键的 `ModelState` 条目。
+* `Model.Name` 表达式的结果。
+
 ### <a name="navigating-child-properties"></a>导航子属性
 
 还可使用视图模型的属性路径导航到子属性。 设想一个包含子 `Address` 属性的更复杂的模型类。
 
-[!code-csharp[Main](../../mvc/views/working-with-forms/sample/final/ViewModels/AddressViewModel.cs?highlight=1,2,3,4&range=5-8)]
+[!code-csharp[](../../mvc/views/working-with-forms/sample/final/ViewModels/AddressViewModel.cs?highlight=1,2,3,4&range=5-8)]
 
-[!code-csharp[Main](../../mvc/views/working-with-forms/sample/final/ViewModels/RegisterAddressViewModel.cs?highlight=8&range=5-13)]
+[!code-csharp[](../../mvc/views/working-with-forms/sample/final/ViewModels/RegisterAddressViewModel.cs?highlight=8&range=5-13)]
 
 在视图中，绑定到 `Address.AddressLine1`：
 
-[!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterAddress.cshtml?highlight=6)]
+[!code-HTML[](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterAddress.cshtml?highlight=6)]
 
 为 `Address.AddressLine1` 生成以下 HTML：
 
@@ -211,7 +216,7 @@ Type expected
 
 包含 `Colors` 数组的模型示例：
 
-[!code-csharp[Main](../../mvc/views/working-with-forms/sample/final/ViewModels/Person.cs?highlight=3&range=5-10)]
+[!code-csharp[](../../mvc/views/working-with-forms/sample/final/ViewModels/Person.cs?highlight=3&range=5-10)]
 
 操作方法：
 
@@ -225,23 +230,23 @@ public IActionResult Edit(int id, int colorIndex)
 
 以下 Razor 显示如何访问特定 `Color` 元素：
 
-[!code-HTML[Main](working-with-forms/sample/final/Views/Demo/EditColor.cshtml)]
+[!code-HTML[](working-with-forms/sample/final/Views/Demo/EditColor.cshtml)]
 
 *Views/Shared/EditorTemplates/String.cshtml* 模板：
 
-[!code-HTML[Main](working-with-forms/sample/final/Views/Shared/EditorTemplates/String.cshtml)]
+[!code-HTML[](working-with-forms/sample/final/Views/Shared/EditorTemplates/String.cshtml)]
 
 使用 `List<T>` 的示例：
 
-[!code-csharp[Main](working-with-forms/sample/final/ViewModels/ToDoItem.cs?range=3-8)]
+[!code-csharp[](working-with-forms/sample/final/ViewModels/ToDoItem.cs?range=3-8)]
 
 以下 Razor 演示如何循环访问集合：
 
-[!code-HTML[Main](working-with-forms/sample/final/Views/Demo/Edit.cshtml)]
+[!code-HTML[](working-with-forms/sample/final/Views/Demo/Edit.cshtml)]
 
 *Views/Shared/EditorTemplates/ToDoItem.cshtml* 模板：
 
-[!code-HTML[Main](working-with-forms/sample/final/Views/Shared/EditorTemplates/ToDoItem.cshtml)]
+[!code-HTML[](working-with-forms/sample/final/Views/Shared/EditorTemplates/ToDoItem.cshtml)]
 
 
 >[!NOTE]
@@ -264,9 +269,9 @@ public IActionResult Edit(int id, int colorIndex)
 
 示例:
 
-[!code-csharp[Main](working-with-forms/sample/final/ViewModels/DescriptionViewModel.cs)]
+[!code-csharp[](working-with-forms/sample/final/ViewModels/DescriptionViewModel.cs)]
 
-[!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterTextArea.cshtml?highlight=4)]
+[!code-HTML[](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterTextArea.cshtml?highlight=4)]
 
 生成以下 HTML：
 
@@ -300,9 +305,9 @@ public IActionResult Edit(int id, int colorIndex)
 
 示例:
 
-[!code-csharp[Main](working-with-forms/sample/final/ViewModels/SimpleViewModel.cs)]
+[!code-csharp[](working-with-forms/sample/final/ViewModels/SimpleViewModel.cs)]
 
-[!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterLabel.cshtml?highlight=4)]
+[!code-HTML[](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterLabel.cshtml?highlight=4)]
 
 为 `<label>` 元素生成以下 HTML：
 
@@ -370,9 +375,9 @@ public IActionResult Edit(int id, int colorIndex)
 
 在以下示例中，数据模型使用 `DataAnnotation` 属性修饰，在 `<input>` 元素中生成验证错误消息。  验证标记帮助程序会在发生验证错误时显示错误消息：
 
-[!code-csharp[Main](working-with-forms/sample/final/ViewModels/RegisterViewModel.cs)]
+[!code-csharp[](working-with-forms/sample/final/ViewModels/RegisterViewModel.cs)]
 
-[!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterValidation.cshtml?highlight=4,6,8&range=1-10)]
+[!code-HTML[](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterValidation.cshtml?highlight=4,6,8&range=1-10)]
 
 生成的 HTML（如果模型有效）：
 
@@ -403,23 +408,23 @@ public IActionResult Edit(int id, int colorIndex)
 
 `Select Tag Helper` `asp-for` 为 [select](https://www.w3.org/wiki/HTML/Elements/select) 元素指定模型属性名称，`asp-items` 指定 [option](https://www.w3.org/wiki/HTML/Elements/option) 元素。  例如:
 
-[!code-HTML[Main](working-with-forms/sample/final/Views/Home/Index.cshtml?range=4)]
+[!code-HTML[](working-with-forms/sample/final/Views/Home/Index.cshtml?range=4)]
 
 示例:
 
-[!code-csharp[Main](working-with-forms/sample/final/ViewModels/CountryViewModel.cs)]
+[!code-csharp[](working-with-forms/sample/final/ViewModels/CountryViewModel.cs)]
 
 `Index` 方法初始化 `CountryViewModel`，设置选定的国家/地区并将其传递到 `Index` 视图。
 
-[!code-csharp[Main](working-with-forms/sample/final/Controllers/HomeController.cs?range=114-119)]
+[!code-csharp[](working-with-forms/sample/final/Controllers/HomeController.cs?range=114-119)]
 
 HTTP POST `Index` 方法显示选定内容：
 
-[!code-csharp[Main](working-with-forms/sample/final/Controllers/HomeController.cs?range=15-27)]
+[!code-csharp[](working-with-forms/sample/final/Controllers/HomeController.cs?range=15-27)]
 
 `Index` 视图：
 
-[!code-cshtml[Main](working-with-forms/sample/final/Views/Home/Index.cshtml?highlight=4)]
+[!code-cshtml[](working-with-forms/sample/final/Views/Home/Index.cshtml?highlight=4)]
 
 生成以下 HTML（选择“CA”时）：
 
@@ -440,7 +445,7 @@ HTTP POST `Index` 方法显示选定内容：
 
 `asp-for` 属性值是特殊情况，它不要求提供 `Model` 前缀，但其他标记帮助程序属性需要该前缀（例如 `asp-items`）
 
-[!code-HTML[Main](working-with-forms/sample/final/Views/Home/Index.cshtml?range=4)]
+[!code-HTML[](working-with-forms/sample/final/Views/Home/Index.cshtml?range=4)]
 
 ### <a name="enum-binding"></a>枚举绑定
 
@@ -448,17 +453,17 @@ HTTP POST `Index` 方法显示选定内容：
 
 示例:
 
-[!code-csharp[Main](working-with-forms/sample/final/ViewModels/CountryEnumViewModel.cs?range=3-7)]
+[!code-csharp[](working-with-forms/sample/final/ViewModels/CountryEnumViewModel.cs?range=3-7)]
 
-[!code-csharp[Main](working-with-forms/sample/final/ViewModels/CountryEnum.cs)]
+[!code-csharp[](working-with-forms/sample/final/ViewModels/CountryEnum.cs)]
 
 `GetEnumSelectList` 方法为枚举生成 `SelectList` 对象。
 
-[!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Home/IndexEnum.cshtml?highlight=5)]
+[!code-HTML[](../../mvc/views/working-with-forms/sample/final/Views/Home/IndexEnum.cshtml?highlight=5)]
 
 可使用 `Display` 属性修饰枚举器列表，以获取更丰富的 UI：
 
-[!code-csharp[Main](working-with-forms/sample/final/ViewModels/CountryEnum.cs?highlight=5,7)]
+[!code-csharp[](working-with-forms/sample/final/ViewModels/CountryEnum.cs?highlight=5,7)]
 
 生成以下 HTML：
 
@@ -484,7 +489,7 @@ HTTP POST `Index` 方法显示选定内容：
 
 `CountryViewModelGroup` 将 `SelectListItem` 元素分组为“North America”组和“Europe”组：
 
-[!code-csharp[Main](../../mvc/views/working-with-forms/sample/final/ViewModels/CountryViewModelGroup.cs?highlight=5,6,14,20,26,32,38,44&range=6-56)]
+[!code-csharp[](../../mvc/views/working-with-forms/sample/final/ViewModels/CountryViewModelGroup.cs?highlight=5,6,14,20,26,32,38,44&range=6-56)]
 
 两个组如下所示：
 
@@ -515,11 +520,11 @@ HTTP POST `Index` 方法显示选定内容：
 
 如果 `asp-for` 属性中指定的属性为 `IEnumerable`，选择标记帮助程序会自动生成 [multiple = "multiple"](http://w3c.github.io/html-reference/select.html) 属性。 例如，如果给定以下模型：
 
-[!code-csharp[Main](../../mvc/views/working-with-forms/sample/final/ViewModels/CountryViewModelIEnumerable.cs?highlight=6)]
+[!code-csharp[](../../mvc/views/working-with-forms/sample/final/ViewModels/CountryViewModelIEnumerable.cs?highlight=6)]
 
 及以下视图：
 
-[!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Home/IndexMultiSelect.cshtml?highlight=4)]
+[!code-HTML[](../../mvc/views/working-with-forms/sample/final/Views/Home/IndexMultiSelect.cshtml?highlight=4)]
 
 则会生成以下 HTML：
 
@@ -543,17 +548,17 @@ HTTP POST `Index` 方法显示选定内容：
 
 如果发现自己在多个页面中使用“未指定”选项，可创建模板用于消除重复的 HTML：
 
-[!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Home/IndexEmptyTemplate.cshtml?highlight=5)]
+[!code-HTML[](../../mvc/views/working-with-forms/sample/final/Views/Home/IndexEmptyTemplate.cshtml?highlight=5)]
 
 *Views/Shared/EditorTemplates/CountryViewModel.cshtml* 模板：
 
-[!code-HTML[Main](working-with-forms/sample/final/Views/Shared/EditorTemplates/CountryViewModel.cshtml)]
+[!code-HTML[](working-with-forms/sample/final/Views/Shared/EditorTemplates/CountryViewModel.cshtml)]
 
 添加 HTML [\<option>](https://www.w3.org/wiki/HTML/Elements/option) 元素并不局限于*无选定内容*用例。 例如，以下视图和操作方法会生成与上述代码类似的 HTML：
 
-[!code-csharp[Main](working-with-forms/sample/final/Controllers/HomeController.cs?range=114-119)]
+[!code-csharp[](working-with-forms/sample/final/Controllers/HomeController.cs?range=114-119)]
 
-[!code-HTML[Main](working-with-forms/sample/final/Views/Home/IndexOption.cshtml)]
+[!code-HTML[](working-with-forms/sample/final/Views/Home/IndexOption.cshtml)]
 
 根据当前的 `Country` 值选择正确的 `<option>` 元素（包含 `selected="selected"` 属性）。
 
@@ -578,4 +583,4 @@ HTTP POST `Index` 方法显示选定内容：
 * [模型绑定](xref:mvc/models/model-binding)
 * [模型验证](xref:mvc/models/validation)
 * [IAttributeAdapter 接口](/dotnet/api/Microsoft.AspNetCore.Mvc.DataAnnotations.IAttributeAdapter)
-* [本文档的代码片段](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/forms/sample)
+* [本文档的代码片段](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/working-with-forms/sample/final)

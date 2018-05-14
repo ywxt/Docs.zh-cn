@@ -1,7 +1,7 @@
 ---
-title: "使用 dotnet watch 开发 ASP.NET Core 应用"
+title: 使用 dotnet watch 开发 ASP.NET Core 应用
 author: rick-anderson
-description: "本教程演示如何在 ASP.NET Core 应用程序中安装和使用 .NET Core CLI 的文件观察程序 (dotnet watch) 工具。"
+description: 本教程演示如何在 ASP.NET Core 应用程序中安装和使用 .NET Core CLI 的文件观察程序 (dotnet watch) 工具。
 manager: wpickett
 ms.author: riande
 ms.date: 10/05/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/dotnet-watch
-ms.openlocfilehash: cb15e28cb98ea82091cf5ddeed12df8926079e52
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c3ece3a5b936b2ea7b7772eee10e598cb557b361
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="developing-aspnet-core-apps-using-dotnet-watch"></a>使用 dotnet watch 开发 ASP.NET Core 应用
+# <a name="develop-aspnet-core-apps-using-dotnet-watch"></a>使用 dotnet watch 开发 ASP.NET Core 应用
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT) 和 [Victor Hurdugaci](https://twitter.com/victorhurdugaci)
 
@@ -95,7 +95,7 @@ public static int Product(int a, int b)
 
 1. 将 MathController.cs 的 `Product` 方法改回返回总和并保存文件。
 1. 在命令外壳中，导航到“WebAppTests”文件夹。
-1. 运行 `dotnet restore`。
+1. 运行 [dotnet restore](/dotnet/core/tools/dotnet-restore)。
 1. 运行 `dotnet watch test`。 其输出指示测试失败且观察程序正在等待文件更改：
 
      ```console

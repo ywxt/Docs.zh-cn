@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 和 Visual Studio for Mac 入门"
+title: ASP.NET Core MVC 和 Visual Studio for Mac 入门
 author: rick-anderson
-description: "ASP.NET Core MVC 和 Visual Studio 入门"
+description: 了解如何开始使用 ASP.NET Core MVC 和 Visual Studio
 manager: wpickett
 ms.author: riande
 ms.date: 8/23/2017
@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/first-mvc-app-mac/start-mvc
-ms.openlocfilehash: 05a2323851c58c95667066a74c11f1d015405e6f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ffa620f07251c52c785672d8fbeefacac31ed4c1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="getting-started-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>ASP.NET Core MVC 和 Visual Studio for Mac 入门
+# <a name="get-started-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>ASP.NET Core MVC 和 Visual Studio for Mac 入门
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 本教程介绍使用 [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/) 生成 ASP.NET Core MVC Web 应用所涉及的基础知识。 
 
-[!INCLUDE[consider RP](../../includes/razor.md)]
+[!INCLUDE [consider RP](../../includes/razor.md)]
 
 本教程提供 3 个版本：
 
@@ -31,12 +31,7 @@ ms.lasthandoff: 01/30/2018
 
 ## <a name="prerequisites"></a>系统必备
 
-本教程需要 [.NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) 或更高版本。
-
-安装以下组件：
-
-- [.NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) 或更高版本
-- [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
+[!INCLUDE [](~/includes/net-core-prereqs-macos.md)]
 
 ## <a name="create-a-web-app"></a>创建 Web 应用
 
@@ -67,5 +62,5 @@ ms.lasthandoff: 01/30/2018
 
 在本教程的下一部分中，你将了解 MVC 并开始撰写一些代码。
 
->[!div class="step-by-step"]
-[下一篇](adding-controller.md)  
+> [!div class="step-by-step"]
+> [下一篇](adding-controller.md)  

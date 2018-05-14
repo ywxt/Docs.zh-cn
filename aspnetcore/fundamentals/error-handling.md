@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 中的错误处理"
+title: 处理 ASP.NET Core 中的错误
 author: ardalis
-description: "了解如何处理 ASP.NET Core 应用程序中的错误。"
+description: 了解如何处理 ASP.NET Core 应用程序中的错误。
 manager: wpickett
 ms.author: tdykstra
 ms.custom: H1Hack27Feb2017
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/error-handling
-ms.openlocfilehash: 5b0cda7b79b8a9523d1ba6a9b321d22d3ccc753a
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 5443cbeb1ef95c579e5fc12b625babbfa27c7ec2
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="introduction-to-error-handling-in-aspnet-core"></a>ASP.NET Core 中的错误处理简介
+# <a name="handle-errors-in-aspnet-core"></a>处理 ASP.NET Core 中的错误
 
 作者：[Steve Smith](https://ardalis.com/) 和 [Tom Dykstra](https://github.com/tdykstra/)
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 01/30/2018
 
 如需在应用中配置可以显示异常详细信息的页面，请先安装 `Microsoft.AspNetCore.Diagnostics` NuGet 包并将以下代码行添加到 Startup 类 [Startup 类配置方法](startup.md)：
 
-[!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
+[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
 
 `UseDeveloperExceptionPage` 需要放在所有你想要捕获异常的中间件声明之前，如`app.UseMvc`。
 
@@ -51,7 +51,7 @@ ms.lasthandoff: 01/30/2018
 
 最好配置一个当应用在非 `Development` 环境中运行时可以使用的异常处理页。
 
-[!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
+[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
 在 MVC 应用程序中，不要使用 HTTP 谓词 Attribute（如 `HttpGet`）来显式修饰错误处理程序操作方法。 使用显式谓词会阻止某些请求访问方法。
 
@@ -65,39 +65,44 @@ public IActionResult Index()
 
 ## <a name="configuring-status-code-pages"></a>配置状态代码页
 
-默认情况下，应用程序不会为 500（内部服务器错误） 或 404（未找到）等 HTTP 状态代码提供丰富状态代码页。 可以通过在 `Configure` 方法中添加行来配置 `StatusCodePagesMiddleware`：
+默认情况下，应用不会为 HTTP 状态代码提供丰富状态代码页，例如 404 未找到。 要提供状态代码页，请通过向 `Startup.Configure` 方法添加行来配置状态代码页中间件：
 
 ```csharp
 app.UseStatusCodePages();
 ```
 
-默认情况下，此中间件为常见状态代码（如 404）添加简单的纯文本处理程序：
+默认情况下，状态代码页中间件为常见状态代码（如 404）添加简单的纯文本处理程序：
 
 ![404 页面](error-handling/_static/default-404-status-code.png)
 
-该中间件支持几种不同的扩展方法。 一种采用 lambda 表达式，另一种采用内容类型和格式字符串。
+该中间件支持多种扩展方法。 一种方法采用 Lambda 表达式：
 
-[!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_StatusCodePages)]
+[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_StatusCodePages)]
+
+另一种方法采用内容类型和格式字符串：
 
 ```csharp
 app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 ```
 
-也可以使用重定向扩展方法。 一个将 302 状态代码发送到客户端，另一个将原始的状态代码返回到客户端，但同时还会执行重定向 URL 的处理程序。
+也可以使用重定向和重新执行扩展方法。 重定向方法向客户端发送 302 状态代码：
 
-[!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
+[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
+
+重新执行方法将原始状态代码返回到客户端，但同时还会执行重定向 URL 的处理程序：
 
 ```csharp
 app.UseStatusCodePagesWithReExecute("/error/{0}");
 ```
 
-如需禁用某些请求的状态代码页，可以通过以下代码实现：
+可禁用 Razor 页处理程序方法或 MVC 控制器中的特定请求的状态代码页。 要禁用状态代码页，请尝试从请求的 [HttpContext.Features](/dotnet/api/microsoft.aspnetcore.http.httpcontext.features) 集合中检索 [IStatusCodePagesFeature](/dotnet/api/microsoft.aspnetcore.diagnostics.istatuscodepagesfeature)，并在功能可用时禁用该功能：
 
 ```csharp
-var statusCodePagesFeature = context.Features.Get<IStatusCodePagesFeature>();
+var statusCodePagesFeature = HttpContext.Features.Get<IStatusCodePagesFeature>();
+
 if (statusCodePagesFeature != null)
 {
-  statusCodePagesFeature.Enabled = false;
+    statusCodePagesFeature.Enabled = false;
 }
 ```
 
@@ -115,7 +120,9 @@ if (statusCodePagesFeature != null)
 
 应用程序启动期间发生的异常仅可在承载层进行处理。 可以使用 `captureStartupErrors` 和 `detailedErrors` 键[配置主机在响应启动期间的错误时的行为方式](hosting.md#detailed-errors)。
 
-仅当捕获的启动错误发生在主机地址/端口绑定之后，承载层才会为该错误显示错误页。 如果绑定因任何原因而失败，则承载层会记录关键异常，dotnet 进程崩溃，且不显示任何错误页。
+仅当捕获的启动错误发生在主机地址/端口绑定之后，承载层才会为该错误显示错误页。 如果绑定因任何原因而失败，则承载层会记录关键异常，dotnet 进程崩溃，且在 [Kestrel](xref:fundamentals/servers/kestrel) 服务器上运行应用时，不会显示任何错误页。
+
+在 [IIS](/iis) 或 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 上运行应用时，如果无法启动进程，[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)将返回 502.5 进程失败。 请按照[对 IIS 上的 ASP.NET Core 进行故障排除](xref:host-and-deploy/iis/troubleshoot)主题中的故障排除建议进行操作。
 
 ## <a name="aspnet-mvc-error-handling"></a>ASP.NET MVC 错误处理
 

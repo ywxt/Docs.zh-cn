@@ -1,7 +1,7 @@
 ---
-title: "使用命令行工具将 ASP.NET Core 应用发布到 Azure"
+title: 使用命令行工具将 ASP.NET Core 应用发布到 Azure
 author: camsoper
-description: "了解如何使用 Git 命令行客户端将 ASP.NET Core 应用发布到 Azure 应用服务。"
+description: 了解如何使用 Git 命令行客户端将 ASP.NET Core 应用发布到 Azure 应用服务。
 manager: wpickett
 ms.author: casoper
 ms.custom: mvc
@@ -12,15 +12,17 @@ ms.technology: aspnet
 ms.topic: get-started-article
 services: multiple
 uid: tutorials/publish-to-azure-webapp-using-cli
-ms.openlocfilehash: 0418a2695d3afb6dc2c55b8f694a97d62239835f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0462a4cf18bba23643ed3b1b4e6b76bdbceb24a8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="deploy-an-aspnet-core-application-to-azure-app-service-from-the-command-line"></a>从命令行将 ASP.NET Core 应用程序部署到 Azure App Service
+# <a name="publish-an-aspnet-core-app-to-azure-with-command-line-tools"></a>使用命令行工具将 ASP.NET Core 应用发布到 Azure
 
 作者：[Cam Soper](https://twitter.com/camsoper)
+
+[!INCLUDE [Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
 
 本教程将为你介绍如何使用命令行工具生成 ASP.NET Core 应用程序并将其部署到 Microsoft Azure App Service。  完成后，你将拥有一个在 ASP.NET MVC Core 中构建并作为 Azure App Service Web App 托管的 Web 应用程序。  本教程是使用 Windows 命令行工具编写的，但也可以应用于 macOS 和 Linux 环境。  
 
@@ -35,7 +37,7 @@ ms.lasthandoff: 01/30/2018
 若要完成本教程，你需要：
 
 * [Microsoft Azure 订阅](https://azure.microsoft.com/free/)
-* [.NET Core](https://www.microsoft.com/net/download/core)
+* [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
 * [Git](https://www.git-scm.com/) 命令行客户端
 
 ## <a name="create-a-web-application"></a>创建 Web 应用程序

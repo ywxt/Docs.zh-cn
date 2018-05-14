@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/overview
-ms.openlocfilehash: b9af2068aec4326585eb2a8994399a16461db3be
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
-ms.translationtype: MT
+ms.openlocfilehash: 9af08d8fcbd91a9189fe1f4c6cedd644361773f7
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="views-in-aspnet-core-mvc"></a>ASP.NET Core MVC 中的视图
 
@@ -56,7 +56,7 @@ Razor 标记以 `@` 符号开头。 通过将 C# 代码放置在用大括号 (`{
 
 ## <a name="how-controllers-specify-views"></a>控制器如何指定视图
 
-视图通常以 [ ViewResult](/aspnet/core/api/microsoft.aspnetcore.mvc.viewresult) 的形式从操作返回，这是一种 [ ActionResult ](/aspnet/core/api/microsoft.aspnetcore.mvc.actionresult)。 操作方法可以直接创建并返回 `ViewResult`，但通常不会这样做。 由于大多数控制器均继承自[控制器](/aspnet/core/api/microsoft.aspnetcore.mvc.controller)，因此只需使用 `View` 帮助程序方法即可返回 `ViewResult`：
+视图通常以 [ ViewResult](/dotnet/api/microsoft.aspnetcore.mvc.viewresult) 的形式从操作返回，这是一种 [ ActionResult ](/dotnet/api/microsoft.aspnetcore.mvc.actionresult)。 操作方法可以直接创建并返回 `ViewResult`，但通常不会这样做。 由于大多数控制器均继承自[控制器](/dotnet/api/microsoft.aspnetcore.mvc.controller)，因此只需使用 `View` 帮助程序方法即可返回 `ViewResult`：
 
 HomeController.cs
 
@@ -92,7 +92,7 @@ HomeController.cs
 
 用 `return View();` 隐式返回 `ViewResult` 还是用 `return View("<ViewName>");` 将视图名称显式传递给 `View` 方法并不重要。 在这两种情况下，视图发现都会按以下顺序搜索匹配的视图文件：
 
-   1. *Views/\[ControllerName]/\[ViewName].cshtml*
+   1. Views/\[ControllerName]/\[ViewName].cshtml
    1. Views/Shared/\[ViewName].cshtml
 
 可以提供视图文件路径而不提供视图名称。 如果使用从应用根目录开始的绝对路径（可选择以“/”或“~/”开头），则须指定 .cshtml 扩展名：
@@ -115,7 +115,7 @@ return View("./About");
 
 [分部视图](xref:mvc/views/partial)和[视图组件](xref:mvc/views/view-components)使用类似（但不完全相同）的发现机制。
 
-可以使用自定义 [IViewLocationExpander](/aspnet/core/api/microsoft.aspnetcore.mvc.razor.iviewlocationexpander) 自定义如何在应用中定位视图的默认约定。
+可以使用自定义 [IViewLocationExpander](/dotnet/api/microsoft.aspnetcore.mvc.razor.iviewlocationexpander) 自定义如何在应用中定位视图的默认约定。
 
 视图发现依赖于按文件名称查找视图文件。 如果基础文件系统区分大小写，则视图名称也可能区分大小写。 为了各操作系统的兼容性，请在控制器与操作名称之间，关联视图文件夹与文件名称之间匹配大小写。 如果在处理区分大小写的文件系统时遇到无法找到视图文件的错误，请确认请求的视图文件与实际视图文件名称之间的大小写是否匹配。
 
@@ -205,7 +205,7 @@ namespace WebApplication1.ViewModels
 
 **ViewData**
 
-`ViewData` 是通过 `string` 键访问的 [ViewDataDictionary](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) 对象。 字符串数据可以直接存储和使用，而不需要强制转换，但是在提取其他 `ViewData` 对象值时必须将其强制转换为特定类型。 可以使用 `ViewData` 将数据从控制器传递到视图，以及在视图（包括[分部视图](xref:mvc/views/partial)和[布局](xref:mvc/views/layout)）内传递数据。
+`ViewData` 是通过 `string` 键访问的 [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) 对象。 字符串数据可以直接存储和使用，而不需要强制转换，但是在提取其他 `ViewData` 对象值时必须将其强制转换为特定类型。 可以使用 `ViewData` 将数据从控制器传递到视图，以及在视图（包括[分部视图](xref:mvc/views/partial)和[布局](xref:mvc/views/layout)）内传递数据。
 
 以下是在操作中使用 `ViewData` 设置问候语和地址值的示例：
 
@@ -247,7 +247,7 @@ public IActionResult SomeAction()
 
 注意：`ViewBag` 在 Razor 页中不可用。
 
-`ViewBag` 是 [DynamicViewData](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata) 对象，可提供对存储在 `ViewData` 中的对象的动态访问。 `ViewBag` 不需要强制转换，因此使用起来更加方便。 下例演示如何使用与上述 `ViewData` 有相同结果的 `ViewBag`：
+`ViewBag` 是 [DynamicViewData](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata) 对象，可提供对存储在 `ViewData` 中的对象的动态访问。 `ViewBag` 不需要强制转换，因此使用起来更加方便。 下例演示如何使用与上述 `ViewData` 有相同结果的 `ViewBag`：
 
 ```csharp
 public IActionResult SomeAction()
@@ -321,11 +321,11 @@ public IActionResult SomeAction()
  `ViewBag` 在 Razor 页中不可用。
 
 * `ViewData`
-  * 派生自 [ViewDataDictionary](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary)，因此它有可用的字典属性，如 `ContainsKey`、`Add`、`Remove` 和 `Clear`。
+  * 派生自 [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary)，因此它有可用的字典属性，如 `ContainsKey`、`Add`、`Remove` 和 `Clear`。
   * 字典中的键是字符串，因此允许有空格。 示例：`ViewData["Some Key With Whitespace"]`
   * 任何非 `string` 类型均须在视图中进行强制转换才能使用 `ViewData`。
 * `ViewBag`
-  * 派生自 [DynamicViewData](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata)，因此它可使用点表示法 (`@ViewBag.SomeKey = <value or object>`) 创建动态属性，且无需强制转换。 `ViewBag` 的语法使添加到控制器和视图的速度更快。
+  * 派生自 [DynamicViewData](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata)，因此它可使用点表示法 (`@ViewBag.SomeKey = <value or object>`) 创建动态属性，且无需强制转换。 `ViewBag` 的语法使添加到控制器和视图的速度更快。
   * 更易于检查 NULL 值。 示例：`@ViewBag.Person?.Name`
 
 **何时使用 ViewData 或 ViewBag**

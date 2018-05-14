@@ -1,7 +1,7 @@
 ---
-title: "Razor 页面和 EF Core - 更新相关数据 - 第 7 个教程，共 8 个教程"
+title: ASP.NET Core 中的 Razor 页面和 EF Core - 更新相关数据 - 第 7 个教程（共 8 个）
 author: rick-anderson
-description: "本教程将通过更新外键字段和导航属性来更新相关数据。"
+description: 本教程将通过更新外键字段和导航属性来更新相关数据。
 manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: 5c91c91ab938f3aa4abc55049c54f399469f6163
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 2eff6cd5f4bb737cb79875c9b04c889914376cd0
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="updating-related-data---ef-core-razor-pages-7-of-8"></a>更新相关数据 - EF Core Razor 页面（第 7 个教程，共 8 个）
+# <a name="razor-pages-with-ef-core-in-aspnet-core---update-related-data---7-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 更新相关数据 - 第 7 个教程（共 8 个）
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 本教程演示如何更新相关数据。 如果遇到无法解决的问题，请下载[本阶段的已完成应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part7)。
 
@@ -34,9 +34,9 @@ ms.lasthandoff: 01/31/2018
 
 “课程/创建”和“课程/编辑”页分别需要一个系名称列表。 针对“创建”和“编辑”页创建 Pages/Courses/DepartmentNamePageModel.cshtml.cs 基类：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/DepartmentNamePageModel.cshtml.cs?highlight=9,11,20-21)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/DepartmentNamePageModel.cshtml.cs?highlight=9,11,20-21)]
 
-上面的代码创建 [SelectList](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.rendering.selectlist?view=aspnetcore-2.0) 以包含系名称列表。 如果指定了 `selectedDepartment`，可在 `SelectList` 中选择该系。
+上面的代码创建 [SelectList](/dotnet/api/microsoft.aspnetcore.mvc.rendering.selectlist?view=aspnetcore-2.0) 以包含系名称列表。 如果指定了 `selectedDepartment`，可在 `SelectList` 中选择该系。
 
 “创建”和“编辑”页模型类将派生自 `DepartmentNamePageModel`。
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 01/31/2018
 
 使用以下代码更新“创建”页模型：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/Create.cshtml.cs?highlight=7,18,32-)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/Create.cshtml.cs?highlight=7,18,32-999)]
 
 前面的代码：
 
@@ -62,7 +62,7 @@ ms.lasthandoff: 01/31/2018
 
 使用以下标记更新 Pages/Courses/Create.cshtml：
 
-[!code-cshtml[Main](intro/samples/cu/Pages/Courses/Create.cshtml?highlight=29-34)]
+[!code-cshtml[](intro/samples/cu/Pages/Courses/Create.cshtml?highlight=29-34)]
 
 上述标记进行以下更改：
 
@@ -73,7 +73,7 @@ ms.lasthandoff: 01/31/2018
 
 Razor 页面使用[选择标记帮助器](xref:mvc/views/working-with-forms#the-select-tag-helper)：
 
-[!code-cshtml[Main](intro/samples/cu/Pages/Courses/Create.cshtml?range=28-35&highlight=3-6)]
+[!code-cshtml[](intro/samples/cu/Pages/Courses/Create.cshtml?range=28-35&highlight=3-6)]
 
 测试“创建”页。 “创建”页显示系名称，而不是系 ID。
 
@@ -81,13 +81,13 @@ Razor 页面使用[选择标记帮助器](xref:mvc/views/working-with-forms#the-
 
 使用以下代码更新“编辑”页模型：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/Edit.cshtml.cs?highlight=8,28,35,36,40,47-)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/Edit.cshtml.cs?highlight=8,28,35,36,40,47-999)]
 
 这些更改与在“创建”页模型中所做的更改相似。 在上面的代码中，`PopulateDepartmentsDropDownList` 在系 ID 中传递并将选择下拉列表中指定的系。
 
 使用以下标记更新 Pages/Courses/Edit.cshtml：
 
-[!code-cshtml[Main](intro/samples/cu/Pages/Courses/Edit.cshtml?highlight=17-20,32-35)]
+[!code-cshtml[](intro/samples/cu/Pages/Courses/Edit.cshtml?highlight=17-20,32-35)]
 
 上述标记进行以下更改：
 
@@ -103,19 +103,19 @@ Razor 页面使用[选择标记帮助器](xref:mvc/views/working-with-forms#the-
 
 ## <a name="add-asnotracking-to-the-details-and-delete-page-models"></a>将 AsNoTracking 添加到“详细信息”和“删除”页模型
 
-[AsNoTracking](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.asnotracking?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_AsNoTracking__1_System_Linq_IQueryable___0__) 可以在不需要跟踪时提高性能。 将 `AsNoTracking` 添加到“删除”和“详细信息”页模型。 下面的代码显示更新的“删除”页模型：
+[AsNoTracking](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.asnotracking?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_AsNoTracking__1_System_Linq_IQueryable___0__) 可以在不需要跟踪时提高性能。 将 `AsNoTracking` 添加到“删除”和“详细信息”页模型。 下面的代码显示更新的“删除”页模型：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/Delete.cshtml.cs?name=snippet&highlight=21,23,40,41)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/Delete.cshtml.cs?name=snippet&highlight=21,23,40,41)]
 
 在 Pages/Courses/Details.cshtml.cs 文件中更新 `OnGetAsync` 方法：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/Details.cshtml.cs?name=snippet)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/Details.cshtml.cs?name=snippet)]
 
 ### <a name="modify-the-delete-and-details-pages"></a>修改“删除”和“详细信息”页
 
 使用以下标记更新“删除”Razor 页面：
 
-[!code-cshtml[Main](intro/samples/cu/Pages/Courses/Delete.cshtml?highlight=15-20)]
+[!code-cshtml[](intro/samples/cu/Pages/Courses/Delete.cshtml?highlight=15-20)]
 
 对“详细信息”页执行相同更改。
 
@@ -137,7 +137,7 @@ Razor 页面使用[选择标记帮助器](xref:mvc/views/working-with-forms#the-
 
 使用以下代码更新讲师“编辑”页模型：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Edit1.cshtml.cs?name=snippet&highlight=20-23,32,39-)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Edit1.cshtml.cs?name=snippet&highlight=20-23,32,39-999)]
 
 前面的代码：
 
@@ -149,7 +149,7 @@ Razor 页面使用[选择标记帮助器](xref:mvc/views/working-with-forms#the-
 
 使用办公室位置更新 Pages/Instructors/Edit.cshtml：
 
-[!code-cshtml[Main](intro/samples/cu/Pages/Instructors/Edit1.cshtml?highlight=29-33)]
+[!code-cshtml[](intro/samples/cu/Pages/Instructors/Edit1.cshtml?highlight=29-33)]
 
 验证是否可以更改讲师办公室位置。
 
@@ -170,27 +170,27 @@ Razor 页面使用[选择标记帮助器](xref:mvc/views/working-with-forms#the-
 
 使用以下代码创建 SchoolViewModels/AssignedCourseData.cs：
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/AssignedCourseData.cs)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/AssignedCourseData.cs)]
 
 `AssignedCourseData` 类包含的数据可用于为讲师已分配的课程创建复选框。
 
 创建 Pages/Instructors/InstructorCoursesPageModel.cshtml.cs 基类：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/InstructorCoursesPageModel.cshtml.cs)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/InstructorCoursesPageModel.cshtml.cs)]
 
-`InstructorCoursesPageModel` 是将用于“编辑”和“创建”页模型的基类。 `PopulateAssignedCourseData` 读取所有 `Course` 实体以填充 `AssignedCourseDataList`。 该代码将设置每门课程的 `CourseID` 和标题，并决定是否为讲师分配该课程。 [HashSet](https://docs.microsoft.com/dotnet/api/system.collections.generic.hashset-1) 用于创建高效查找。
+`InstructorCoursesPageModel` 是将用于“编辑”和“创建”页模型的基类。 `PopulateAssignedCourseData` 读取所有 `Course` 实体以填充 `AssignedCourseDataList`。 该代码将设置每门课程的 `CourseID` 和标题，并决定是否为讲师分配该课程。 [HashSet](/dotnet/api/system.collections.generic.hashset-1) 用于创建高效查找。
 
 ### <a name="instructors-edit-page-model"></a>讲师“编辑”页模型
 
 使用以下代码更新讲师“编辑”页模型：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Edit.cshtml.cs?name=snippet&highlight=1,20-24,30,34,41-)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Edit.cshtml.cs?name=snippet&highlight=1,20-24,30,34,41-999)]
 
 上面的代码处理办公室分配更改。
 
 更新“讲师”Razor 视图：
 
-[!code-cshtml[Main](intro/samples/cu/Pages/Instructors/Edit.cshtml?highlight=34-59)]
+[!code-cshtml[](intro/samples/cu/Pages/Instructors/Edit.cshtml?highlight=34-59)]
 
 <a id="notepad"></a>
 > [!NOTE]
@@ -208,13 +208,13 @@ Razor 页面使用[选择标记帮助器](xref:mvc/views/working-with-forms#the-
 
 使用以下代码更新讲师“创建”页模型：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Create.cshtml.cs)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Create.cshtml.cs)]
 
 前面的代码与 Pages/Instructors/Edit.cshtml.cs 代码类似。
 
 使用以下标记更新讲师“创建”Razor 页面：
 
-[!code-cshtml[Main](intro/samples/cu/Pages/Instructors/Create.cshtml?highlight=32-62)]
+[!code-cshtml[](intro/samples/cu/Pages/Instructors/Create.cshtml?highlight=32-62)]
 
 测试讲师“创建”页。
 
@@ -222,7 +222,7 @@ Razor 页面使用[选择标记帮助器](xref:mvc/views/working-with-forms#the-
 
 使用以下代码更新“删除”页模型：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Delete.cshtml.cs?highlight=5,40-)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Delete.cshtml.cs?highlight=5,40-999)]
 
 上面的代码执行以下更改：
 
@@ -230,6 +230,6 @@ Razor 页面使用[选择标记帮助器](xref:mvc/views/working-with-forms#the-
 
 * 如果要删除的讲师被指派为任何系的管理员，则需从这些系中删除该讲师分配。
 
->[!div class="step-by-step"]
-[上一页](xref:data/ef-rp/read-related-data)
-[下一页](xref:data/ef-rp/concurrency)
+> [!div class="step-by-step"]
+> [上一页](xref:data/ef-rp/read-related-data)
+> [下一页](xref:data/ef-rp/concurrency)

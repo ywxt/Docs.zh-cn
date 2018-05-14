@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 中的应用程序部件"
+title: ASP.NET Core 中的应用程序部件
 author: ardalis
-description: "了解如何使用应用程序部件（应用资源的抽象）将应用配置为从程序集中发现功能或避免加载功能。"
+description: 了解如何使用应用程序部件（应用资源的抽象）来发现或避免从程序集加载功能。
 manager: wpickett
 ms.author: riande
 ms.date: 01/04/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: 6b855f8725dacc89a7e0607224ef3c19ab9f5676
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8f7aeadc7a1218bf203575add8c82c95faf137b4
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="application-parts-in-aspnet-core"></a>ASP.NET Core 中的应用程序部件
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 01/30/2018
 
 ## <a name="introducing-application-parts"></a>应用程序部件简介
 
-MVC 应用从[应用程序部件](/aspnet/core/api/microsoft.aspnetcore.mvc.applicationparts.applicationpart)中加载其功能。 具体而言，[AssemblyPart](/aspnet/core/api/microsoft.aspnetcore.mvc.applicationparts.assemblypart#Microsoft_AspNetCore_Mvc_ApplicationParts_AssemblyPart) 类表示受程序集支持的应用程序部件。 可以使用这些类发现和加载 MVC 功能，比如控制器、视图组件、标记帮助程序和 Razor 编译源。 [ApplicationPartManager](/aspnet/core/api/microsoft.aspnetcore.mvc.applicationparts.applicationpartmanager) 负责跟踪可用于 MVC 应用的应用程序部件和功能提供程序。 配置 MVC 时，可以与 `Startup` 中的 `ApplicationPartManager` 交互：
+MVC 应用从[应用程序部件](/dotnet/api/microsoft.aspnetcore.mvc.applicationparts.applicationpart)中加载其功能。 具体而言，[AssemblyPart](/dotnet/api/microsoft.aspnetcore.mvc.applicationparts.assemblypart#Microsoft_AspNetCore_Mvc_ApplicationParts_AssemblyPart) 类表示受程序集支持的应用程序部件。 可以使用这些类发现和加载 MVC 功能，比如控制器、视图组件、标记帮助程序和 Razor 编译源。 [ApplicationPartManager](/dotnet/api/microsoft.aspnetcore.mvc.applicationparts.applicationpartmanager) 负责跟踪可用于 MVC 应用的应用程序部件和功能提供程序。 配置 MVC 时，可以与 `Startup` 中的 `ApplicationPartManager` 交互：
 
 ```csharp
 // create an assembly part from a class's assembly
@@ -35,7 +35,7 @@ services.AddMvc()
 var assembly = typeof(Startup).GetTypeInfo().Assembly;
 var part = new AssemblyPart(assembly);
 services.AddMvc()
-    .ConfigureApplicationPartManager(apm => p.ApplicationParts.Add(part));
+    .ConfigureApplicationPartManager(apm => apm.ApplicationParts.Add(part));
 ```
 
 默认情况下，MVC 将搜索依赖项树并查找控制器（甚至在其他程序集中）。 若要加载任意程序集（例如，从在编译时未引用的插件），可以使用应用程序部件。
@@ -46,9 +46,9 @@ services.AddMvc()
 
 ```csharp
 services.AddMvc()
-    .ConfigureApplicationPartManager(p =>
+    .ConfigureApplicationPartManager(apm =>
     {
-        var dependentLibrary = p.ApplicationParts
+        var dependentLibrary = apm.ApplicationParts
             .FirstOrDefault(part => part.Name == "DependentLibrary");
 
         if (dependentLibrary != null)
@@ -64,10 +64,10 @@ services.AddMvc()
 
 应用程序功能提供程序用于检查应用程序部件，并为这些部件提供功能。 以下 MVC 功能有内置功能提供程序：
 
-* [控制器](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controllers.controllerfeatureprovider)
-* [元数据引用](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.razor.compilation.metadatareferencefeatureprovider)
-* [标记帮助程序](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.razor.taghelpers.taghelperfeatureprovider)
-* [视图组件](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponents.viewcomponentfeatureprovider)
+* [控制器](/dotnet/api/microsoft.aspnetcore.mvc.controllers.controllerfeatureprovider)
+* [元数据引用](/dotnet/api/microsoft.aspnetcore.mvc.razor.compilation.metadatareferencefeatureprovider)
+* [标记帮助程序](/dotnet/api/microsoft.aspnetcore.mvc.razor.taghelpers.taghelperfeatureprovider)
+* [视图组件](/dotnet/api/microsoft.aspnetcore.mvc.viewcomponents.viewcomponentfeatureprovider)
 
 功能提供程序从 `IApplicationFeatureProvider<T>` 继承，其中 `T` 是功能的类型。 你可以为上面列出的任意 MVC 功能类型实现自己的功能提供程序。 `ApplicationPartManager.FeatureProviders` 集合中功能提供程序的顺序可能很重要，因为靠后的提供程序可以对前面的提供程序所执行的操作作出反应。
 
@@ -75,27 +75,27 @@ services.AddMvc()
 
 默认情况下，ASP.NET Core MVC 会忽略泛型控制器（例如，`SomeController<T>`）。 此示例使用的控制器功能提供程序在默认提供程序后面运行并为指定的类型列表（在 `EntityTypes.Types` 中定义）添加泛型控制器实例：
 
-[!code-csharp[Main](./app-parts/sample/AppPartsSample/GenericControllerFeatureProvider.cs?highlight=13&range=18-36)]
+[!code-csharp[](./app-parts/sample/AppPartsSample/GenericControllerFeatureProvider.cs?highlight=13&range=18-36)]
 
 实体类型：
 
-[!code-csharp[Main](./app-parts/sample/AppPartsSample/Model/EntityTypes.cs?range=6-16)]
+[!code-csharp[](./app-parts/sample/AppPartsSample/Model/EntityTypes.cs?range=6-16)]
 
 将该功能提供程序添加到 `Startup` 中：
 
 ```csharp
 services.AddMvc()
-    .ConfigureApplicationPartManager(p => 
-        p.FeatureProviders.Add(new GenericControllerFeatureProvider()));
+    .ConfigureApplicationPartManager(apm => 
+        apm.FeatureProviders.Add(new GenericControllerFeatureProvider()));
 ```
 
 默认情况下，用于路由的泛型控制器名称的格式为 *GenericController`1[Widget]*，而不是 *Widget*。 以下属性用于修改该名称，以便与控制器使用的泛型类型对应：
 
-[!code-csharp[Main](./app-parts/sample/AppPartsSample/GenericControllerNameConvention.cs)]
+[!code-csharp[](./app-parts/sample/AppPartsSample/GenericControllerNameConvention.cs)]
 
 `GenericController` 类：
 
-[!code-csharp[Main](./app-parts/sample/AppPartsSample/GenericController.cs?highlight=5-6)]
+[!code-csharp[](./app-parts/sample/AppPartsSample/GenericController.cs?highlight=5-6)]
 
 当请求匹配的路由时，结果如下：
 
@@ -105,7 +105,7 @@ services.AddMvc()
 
 可循环访问可用于应用的已填充功能，方法为通过[依赖关系注入](../../fundamentals/dependency-injection.md)请求 `ApplicationPartManager`，并用它来填充相应功能的实例：
 
-[!code-csharp[Main](./app-parts/sample/AppPartsSample/Controllers/FeaturesController.cs?highlight=16,25-27)]
+[!code-csharp[](./app-parts/sample/AppPartsSample/Controllers/FeaturesController.cs?highlight=16,25-27)]
 
 示例输出：
 

@@ -1,7 +1,7 @@
 ---
-title: "将模型添加到 ASP.NET Core MVC 应用"
+title: 将模型添加到 ASP.NET Core MVC 应用
 author: rick-anderson
-description: "将模型添加到简单的 ASP.NET Core 应用。"
+description: 将模型添加到简单的 ASP.NET Core 应用。
 manager: wpickett
 ms.author: riande
 ms.date: 12/8/2017
@@ -9,19 +9,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: 1819aff0e6ae68ad3c609466e52fcb6510fe1dcd
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4204d4e2d474db51692d42751a9f82373e9f0c0d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
+# <a name="add-a-model-to-an-aspnet-core-mvc-app"></a>将模型添加到 ASP.NET Core MVC 应用
+
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model1.md)]
 
 请注意：ASP.NET Core 2.0 模板包含 Models 文件夹。
 
 右键单击 Models 文件夹，然后单击“添加” > “类”。 将类命名为“Movie”，并添加以下属性：
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
 数据库需要 `ID` 字段以获取主键。 
 
@@ -113,12 +115,21 @@ Update-Database
   dotnet ef database update
   ```     
   
+  如果运行应用并收到错误消息：
+  
+  ```text
+  SqlException: Cannot open database "Movie" requested by the login.
+  The login failed.
+  Login failed for user 'user name'.
+  ```
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model3.md)]
+可能尚未运行 ` dotnet ef database update`。
+  
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model3.md)]
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model4.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model4.md)]
 
 ![Model 项上的 Intellisense 上下文菜单，列出了 ID、价格、发布日期和标题的可用属性](adding-model/_static/ints.png)
 
@@ -127,6 +138,6 @@ Update-Database
 * [标记帮助程序](xref:mvc/views/tag-helpers/intro)
 * [全球化和本地化](xref:fundamentals/localization)
 
->[!div class="step-by-step"]
-[上一篇：添加视图](adding-view.md)
-[下一篇：使用 SQL](working-with-sql.md)  
+> [!div class="step-by-step"]
+> [上一篇：添加视图](adding-view.md)
+> [下一篇：使用 SQL](working-with-sql.md)  

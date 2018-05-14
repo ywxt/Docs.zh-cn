@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 2.0 入门"
+title: ASP.NET Core 入门
 author: rick-anderson
-description: "介绍如何使用 ASP.NET Core 创建并运行简单的 Hello World 应用的快速教程。"
+description: 介绍如何使用 ASP.NET Core 创建并运行简单的 Hello World 应用的快速教程。
 manager: wpickett
 ms.author: riande
 ms.date: 10/18/2017
@@ -9,18 +9,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: getting-started
-ms.openlocfilehash: eb1fd748029743ca6991927cc95b612ed1975338
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c2f18c69901a5a6503314d508a776e6985872681
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="get-started-with-aspnet-core"></a>ASP.NET Core 入门
 
 > [!NOTE]
-> 这些说明仅适用于 ASP.NET Core 的最新版本。 如果想要从早期版本开始？ 请参阅 [本教程的 1.1 版本](xref:getting-started-1.1)。
+> 这些说明仅适用于 ASP.NET Core 的最新版本。 有关本文档 的1.1 版本，请参阅 [ASP.NET Core 1.1 入门](xref:getting-started-1.1)。
 
-1. 安装 [.NET Core](https://www.microsoft.com/net/core/)。
+1. 安装 [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]。
 
 2. 创建新的 .NET Core 项目。
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 01/30/2018
     dotnet new razor -o aspnetcoreapp
     ```
     
-4. 运行应用。
+3. 运行应用。
 
     使用以下命令运行应用：
 
@@ -39,13 +39,13 @@ ms.lasthandoff: 01/30/2018
     dotnet run
     ```
 
-5. 浏览到 [http://localhost:5000](http://localhost:5000)
+4. 浏览到 [http://localhost:5000](http://localhost:5000)
 
-6. 打开 Pages/About.cshtml 并将页面修改为显示消息“Hello, world! The time on the server is @DateTime.Now”：
+5. 打开 Pages/About.cshtml 并将页面修改为显示消息“Hello, world! The time on the server is @DateTime.Now”：
 
-    [!code-html[Main](getting-started/sample/getting-started/about.cshtml?highlight=9&range=1-9)]
+    [!code-html[](getting-started/sample/getting-started/about.cshtml?highlight=9&range=1-9)]
 
-7. 浏览到 [http://localhost:5000/About](http://localhost:5000/About) 并验证更改。
+6. 浏览到 [http://localhost:5000/About](http://localhost:5000/About) 并验证更改。
 
 ### <a name="next-steps"></a>后续步骤
 

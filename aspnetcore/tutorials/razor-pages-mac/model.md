@@ -1,23 +1,24 @@
 ---
-title: "使用 Visual Studio for Mac 向 Razor 页面应用添加模型"
+title: 使用 Visual Studio for Mac 将模型添加到 ASP.NET Core Razor 页面应用
 author: rick-anderson
-description: "使用 Visual Studio for Mac 在 ASP.NET Core 中向 Razor 页面应用添加模型"
+description: 了解如何使用 Visual Studio for Mac 将模型添加到 ASP.NET Core 中的 Razor 页面应用。
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/27/2017
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages-mac/model
-ms.openlocfilehash: b8e5d65e195f9824602ec15d05dc013faa2a8dc9
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 97bc9f14b8d6da958a7f587e54a37d2d0e0aabd4
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/18/2018
 ---
-# <a name="adding-a-model-to-a-razor-pages-app-in-aspnet-core-with-visual-studio-for-mac"></a>使用 Visual Studio for Mac 在 ASP.NET Core 中向 Razor 页面应用添加模型
+# <a name="add-a-model-to-an-aspnet-core-razor-pages-app-with-visual-studio-for-mac"></a>使用 Visual Studio for Mac 将模型添加到 ASP.NET Core Razor 页面应用
 
-[!INCLUDE[model1](../../includes/RP/model1.md)]
+[!INCLUDE [model1](../../includes/RP/model1.md)]
 
 ## <a name="add-a-data-model"></a>添加数据模型
 
@@ -29,10 +30,11 @@ ms.lasthandoff: 01/30/2018
   * 在中间窗格中，选择“空类”。
   * 将此类命名为“Movie”，然后选择“新建”。
 
-[!INCLUDE[model 2](../../includes/RP/model2.md)]
-[!INCLUDE[model 2a](../../includes/RP/model2a.md)]
+[!INCLUDE [model 2](../../includes/RP/model2.md)]
 
-[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices2&highlight=3-6)]
+[!INCLUDE [model 2a](../../includes/RP/model2a.md)]
+
+[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices2&highlight=3-6)]
 
 右键单击红色波浪线，例如，行 `services.AddDbContext<MovieContext>(options =>` 中的 `MovieContext`。 选择“快速修复”>“使用RazorPagesMovie.Models;”。 Visual Studio 添加 using 语句。
 
@@ -54,25 +56,26 @@ ms.lasthandoff: 01/30/2018
 
 将 `Microsoft.EntityFrameworkCore.Tools.DotNet` 工具引用添加至第二个 \<ItemGroup>：
 
-[!code-xml[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_cli_sample/RazorPagesMovie/RazorPagesMovie.cli.csproj?highlight=10)]
+[!code-xml[](../../tutorials/razor-pages/razor-pages-start/snapshot_cli_sample/RazorPagesMovie/RazorPagesMovie.cli.csproj?highlight=10)]
 
 以下代码中显示的版本号在编写时是正确的。
 
-[!INCLUDE[model3](../../includes/RP/model3.md)]
-[!INCLUDE[model 4x](../../includes/RP/model4x.md)]
+[!INCLUDE [model3](../../includes/RP/model3.md)]
 
-[!INCLUDE[model 4 exit](../../includes/RP/model4exit.md)]
+[!INCLUDE [model 4x](../../includes/RP/model4x.md)]
 
-[!INCLUDE[model 4](../../includes/RP/model4.md)]
+[!INCLUDE [model 4 exit](../../includes/RP/model4exit.md)]
+
+[!INCLUDE [model 4](../../includes/RP/model4.md)]
 
 ### <a name="add-the-pagesmovies-files-to-the-project"></a>将页面/电影文件添加到项目
 
 * 在 Visual Studio 中，右键单击“页面”文件夹，然后选择“添加”>“添加现有文件夹”。
 * 选择“电影”文件夹。
-* 在“选择包括到项目中的文件”对话框中，选择“包括所有”。
+* 在“选择要包含在项目中的文件”对话框中，选择“包括所有”。
 
 下一个教程介绍由基架创建的文件。
 
->[!div class="step-by-step"]
-[上一篇：入门](xref:tutorials/razor-pages-mac/razor-pages-start)
-[下一篇：已搭建基架的 Razor 页面](xref:tutorials/razor-pages-mac/page)
+> [!div class="step-by-step"]
+> [上一篇：入门](xref:tutorials/razor-pages-mac/razor-pages-start)
+> [下一篇：已搭建基架的 Razor 页面](xref:tutorials/razor-pages-mac/page)

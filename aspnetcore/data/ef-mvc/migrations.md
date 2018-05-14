@@ -4,22 +4,22 @@ author: tdykstra
 description: 本教程使用 EF Core 迁移功能管理 ASP.NET Core MVC 应用程序中的数据模型更改。
 manager: wpickett
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.date: 03/15/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: fd466af8a73bf4c568fafe7e7fdcaa82021624da
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: f3f14d6dab1eb03e0ead5edaa9d7ba41a10b21e9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="migrations---ef-core-with-aspnet-core-mvc-tutorial-4-of-10"></a>迁移 - EF Core 和 ASP.NET Core MVC 教程（第 4 个教程，共 10 个）
+# <a name="aspnet-core-mvc-with-ef-core---migrations---4-of-10"></a>ASP.NET Core MVC 和 EF Core - 迁移 - 第 4 个教程（共 10 个）
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC Web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
+Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core 和 Visual Studio 创建 ASP.NET Core MVC web 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](intro.md)。
 
 本教程使用 EF Core 迁移功能管理数据模型更改。 后续教程将在更改数据模型时添加更多迁移。
 
@@ -43,7 +43,7 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework Co
 
 在 appsettings.json 文件中，将连接字符串中的数据库的名称更改为 ContosoUniversity2 或正在使用的计算机上未使用过的其他名称。
 
-[!code-json[Main](intro/samples/cu/appsettings2.json?range=1-4)]
+[!code-json[](intro/samples/cu/appsettings2.json?range=1-4)]
 
 此更改将设置项目，以便初始迁移创建新的数据库。 这并不是开始使用迁移的必要操作，但稍后你便会了解这样做的好处。
 
@@ -91,7 +91,7 @@ Done. To undo this action, use 'ef migrations remove'
 
 执行 `migrations add` 命令时，EF 已生成将用于从头创建数据库的代码。 此代码位于“Migrations”文件夹中名为 \<timestamp>_InitialCreate.cs 的文件中。 `InitialCreate` 类的 `Up` 的方法将创建与数据模型实体集相对应的数据库表，`Down` 方法将删除这些表，如下面的示例所示。
 
-[!code-csharp[Main](intro/samples/cu/Migrations/20170215220724_InitialCreate.cs?range=92-118)]
+[!code-csharp[](intro/samples/cu/Migrations/20170215220724_InitialCreate.cs?range=92-118)]
 
 迁移调用 `Up` 方法为迁移实现数据模型更改。 输入用于回退更新的命令时，迁移调用 `Down` 方法。
 
@@ -99,15 +99,13 @@ Done. To undo this action, use 'ef migrations remove'
 
 如果创建初始迁移时已存在数据库，则会生成数据库创建代码，但此代码不必运行，因为数据库已与数据库模型相匹配。 将应用部署到其中尚不存在数据库的其他环境时，此代码将运行以创建数据库，因此最好提前进行测试。 这也是提前更改连接字符串中数据库的名称的原因，这样迁移才能从头创建新数据库。
 
-## <a name="examine-the-data-model-snapshot"></a>了解数据模型快照
+## <a name="the-data-model-snapshot"></a>数据模型快照
 
-迁移还会在 Migrations/SchoolContextModelSnapshot.cs 中创建当前数据库架构的快照。 该代码与以下类似：
+迁移在 Migrations/SchoolContextModelSnapshot.cs 中创建当前数据库架构的快照。 添加迁移时，EF 会通过将数据模型与快照文件进行对比来确定已更改的内容。
 
-[!code-csharp[Main](intro/samples/cu/Migrations/SchoolContextModelSnapshot1.cs?name=snippet_Truncate)]
+删除迁移时，请使用 [dotnet ef migrations remove](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) 命令。 `dotnet ef migrations remove` 删除迁移，并确保正确重置快照。
 
-由于当前数据库架构以代码表示，因此 EF Core 无需与数据库交互即可创建迁移。 添加迁移时，EF 会通过将数据模型与快照文件进行对比来确定已更改的内容。 EF 仅在必须更新数据库时才与数据库进行交互。 
-
-快照文件必须与创建它的迁移保持同步，因此仅删除名为 \<timestamp>_\<migrationname>.cs 的文件并不能删除迁移。 删除该文件后，剩余的迁移将不会与数据库快照文件保持同步。 若要删除上次添加的迁移，请使用 [dotnet ef migrations remove](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) 命令。
+有关如何使用快照文件的详细信息，请参阅[团队环境中的 EF Core 迁移](/ef/core/managing-schemas/migrations/teams)。
 
 ## <a name="apply-the-migration-to-the-database"></a>将迁移应用到数据库
 
@@ -163,10 +161,10 @@ Done.
 
 有关 PMC 命令的详细信息，请参阅[包管理器控制台 (Visual Studio)](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本教程已介绍如何创建并应用初始迁移。 下一教程将介绍有关展开数据模型的更高级主题。 同时还将介绍创建并应用其他迁移的方法。
 
->[!div class="step-by-step"]
-[上一页](sort-filter-page.md)
-[下一页](complex-data-model.md)  
+> [!div class="step-by-step"]
+> [上一页](sort-filter-page.md)
+> [下一页](complex-data-model.md)  

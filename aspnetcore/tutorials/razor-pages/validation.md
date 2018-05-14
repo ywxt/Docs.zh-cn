@@ -1,7 +1,7 @@
 ---
-title: "添加验证"
+title: 将验证添加到 ASP.NET Core Razor 页面
 author: rick-anderson
-description: "说明如何向 Razor 页面添加验证。"
+description: 了解如何将验证添加到 ASP.NET Core 中的 Razor 页面。
 manager: wpickett
 ms.author: riande
 ms.date: 08/07/2017
@@ -9,13 +9,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 770b930373888c8b4bd578ba6d2524546549800e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 271a5ce517ae550845d96e3969b39b1eda6ae51b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="adding-validation-to-a-razor-page"></a>向 Razor 页面添加验证
+# <a name="add-validation-to-an-aspnet-core-razor-page"></a>将验证添加到 ASP.NET Core Razor 页面
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -33,7 +33,7 @@ Razor 页面和 Entity Framework 提供的验证支持是 DRY 原则的极佳示
 
 更新 `Movie` 类以使用 `Required`、`StringLength`、`RegularExpression` 和 `Range` 验证特性。
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDA.cs?name=snippet1)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDA.cs?name=snippet1)]
 
 验证特性用于指定模型属性上强制执行的行为：
 
@@ -85,7 +85,7 @@ Razor 页面和 Entity Framework 提供的验证支持是 DRY 原则的极佳示
 
 以下代码显示了之前在本教程中设定其基架的“Create.cshtml”的一部分。 它用于在“创建”和“编辑”页面中显示初始表单并在发生错误后重新显示表单。
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Create.cshtml?range=14-20)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Create.cshtml?range=14-20)]
 
 [输入标记帮助程序](xref:mvc/views/working-with-forms)使用 [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) 特性并在客户端生成 jQuery 验证所需的 HTML 特性。 [验证标记帮助程序](xref:mvc/views/working-with-forms#the-validation-tag-helpers)用于显示验证错误。 有关详细信息，请参阅[验证](xref:mvc/models/validation)。
 
@@ -97,7 +97,7 @@ Razor 页面和 Entity Framework 提供的验证支持是 DRY 原则的极佳示
 
 检查 `Movie` 类。 除了一组内置的验证特性，`System.ComponentModel.DataAnnotations` 命名空间还提供格式特性。 `DataType` 特性应用于 `ReleaseDate` 和 `Price` 属性。
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRatingDA.cs?highlight=2,6&name=snippet2)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRatingDA.cs?highlight=2,6&name=snippet2)]
 
 `DataType` 特性仅提供相关提示来帮助视图引擎设置数据格式（并提供特性，例如向 URL 提供 `<a>` 和向电子邮件提供 `<a href="mailto:EmailAddress.com">`）。 使用 `RegularExpression` 特性验证数据的格式。 `DataType` 属性用于指定比数据库内部类型更具体的数据类型。 `DataType` 特性不是验证特性。 示例应用程序中仅显示日期，不显示时间。
 
@@ -130,7 +130,7 @@ public DateTime ReleaseDate { get; set; }
 
 以下代码显示组合在一行上的特性：
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRatingDAmult.cs?name=snippet1)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRatingDAmult.cs?name=snippet1)]
 
 [Razor 页面和 EF Core 入门](xref:data/ef-rp/intro)显示了 Razor 页面的更多高级 EF Core 操作。
 
@@ -145,6 +145,6 @@ public DateTime ReleaseDate { get; set; }
 * [标记帮助程序简介](xref:mvc/views/tag-helpers/intro)
 * [创作标记帮助程序](xref:mvc/views/tag-helpers/authoring)
 
->[!div class="step-by-step"]
-[上一篇：添加新字段](xref:tutorials/razor-pages/new-field)
-[下一篇：上传文件](xref:tutorials/razor-pages/uploading-files)
+> [!div class="step-by-step"]
+> [上一篇：添加新字段](xref:tutorials/razor-pages/new-field)
+> [下一篇：上传文件](xref:tutorials/razor-pages/uploading-files)

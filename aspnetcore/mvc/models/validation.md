@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 中的模型验证"
+title: ASP.NET Core MVC 中的模型验证
 author: rachelappel
-description: "了解 ASP.NET Core MVC 中的模型验证。"
+description: 了解 ASP.NET Core MVC 中的模型验证。
 manager: wpickett
 ms.author: riande
 ms.date: 12/18/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/models/validation
-ms.openlocfilehash: dfb24a4c72b15737295b7aea406be24160fc6674
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 1ab19fad90eab9f2da58b4d62615a85d71894218
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC 模型验证简介
+# <a name="model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC 中的模型验证
 
 作者：[Rachel Appel](https://github.com/rachelappel)
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 01/30/2018
 
 下面是一个应用的已批注 `Movie` 模型，该应用用于存储电影和电视节目的相关信息。 大多数属性都是必需属性，多个字符串属性具有长度要求。 此外，还有一个针对·`Price` 属性设置的从 0 到 $999.99 的数值范围限制，以及一个自定义验证特性。
 
-[!code-csharp[Main](validation/sample/Movie.cs?range=6-29)]
+[!code-csharp[](validation/sample/Movie.cs?range=6-29)]
 
 通过读取整个模型即可显示有关此应用的数据的规则，从而使代码维护变得更轻松。 下面是几个常用的内置验证属性：
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 01/30/2018
 
 * `[Url]`：验证属性是否具有 URL 格式。
 
-MVC 支持从 `ValidationAttribute` 派生的所有用于验证的属性。 在 [System.ComponentModel.DataAnnotations](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations) 命名空间中可找到许多有用的验证属性。
+MVC 支持从 `ValidationAttribute` 派生的所有用于验证的属性。 在 [System.ComponentModel.DataAnnotations](/dotnet/api/system.componentmodel.dataannotations) 命名空间中可找到许多有用的验证属性。
 
 在某些情况下，内置属性可能无法提供所需的功能。 这时，就可以通过从 `ValidationAttribute` 派生或将模型更改为实现 `IValidatableObject`，来创建自定义验证属性。
 
@@ -65,7 +65,7 @@ MVC 支持从 `ValidationAttribute` 派生的所有用于验证的属性。 在 
 
 对于不可为 null 的类型，MVC 模型绑定（与验证和验证属性无关）会拒绝包含缺失值或空白的表单域提交。 如果目标属性上缺少 `BindRequired` 特性，模型绑定会忽略不可为 null 的类型的缺失数据，导致传入表单数据中缺少表单域。
 
-[BindRequired 属性](/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.bindrequiredattribute)（另请参阅[使用属性自定义模型绑定行为](xref:mvc/models/model-binding#customize-model-binding-behavior-with-attributes)）可用于确保表单数据的完整性。 当应用于某个属性时，模型绑定系统要求该属性具有值。 当应用于某个类型时，模型绑定系统要求该类型的所有属性都具有值。
+[BindRequired 属性](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.bindrequiredattribute)（另请参阅[使用属性自定义模型绑定行为](xref:mvc/models/model-binding#customize-model-binding-behavior-with-attributes)）可用于确保表单数据的完整性。 当应用于某个属性时，模型绑定系统要求该属性具有值。 当应用于某个类型时，模型绑定系统要求该类型的所有属性都具有值。
 
 使用 [Nullable\<T> 类型](/dotnet/csharp/programming-guide/nullable-types/)（例如，`decimal?` 或 `System.Nullable<decimal>`）并将其标记为 `Required` 时，将执行服务器端验证检查，就像该属性是标准的可以为 null 的类型（例如，`string`）一样。
 
@@ -77,7 +77,7 @@ MVC 支持从 `ValidationAttribute` 派生的所有用于验证的属性。 在 
 
 MVC 将继续验证字段，直至达到错误数上限（默认为 200 个）。 通过向 *Startup.cs* 文件中的 `ConfigureServices` 方法插入以下代码，可配置该数字：
 
-[!code-csharp[Main](validation/sample/Startup.cs?range=27)]
+[!code-csharp[](validation/sample/Startup.cs?range=27)]
 
 ## <a name="handling-model-state-errors"></a>处理模型状态错误
 
@@ -91,7 +91,7 @@ MVC 将继续验证字段，直至达到错误数上限（默认为 200 个）�
 
 你可能需要手动运行验证。 为此，请调用 `TryValidateModel` 方法，如下所示：
 
-[!code-csharp[Main](validation/sample/MoviesController.cs?range=52)]
+[!code-csharp[](validation/sample/MoviesController.cs?range=52)]
 
 ## <a name="custom-validation"></a>自定义验证
 
@@ -99,13 +99,13 @@ MVC 将继续验证字段，直至达到错误数上限（默认为 200 个）�
 
 在下面的示例中，一项业务规则规定，用户不能将 1960 年以后发行的电影的流派设置为 *Classic*。 `[ClassicMovie]` 属性会先检查流派，如果是经典流派，则查看发行日期是否晚于 1960 年。 如果晚于 1960 年，则验证失败。 此属性采用一个表示年份的整数参数，可用于验证数据。 可以在该属性的构造函数中捕获该参数的值，如下所示：
 
-[!code-csharp[Main](validation/sample/ClassicMovieAttribute.cs?range=9-29)]
+[!code-csharp[](validation/sample/ClassicMovieAttribute.cs?range=9-29)]
 
 上面的 `movie` 变量表示一个 `Movie` 对象，其中包含要验证的表单提交中的数据。 在此例中，验证代码会根据规则检查 `ClassicMovieAttribute` 类的 `IsValid` 方法中的日期和流派。 如果验证成功，`IsValid` 会返回 `ValidationResult.Success` 代码；如果验证失败，则返回包含错误消息的 `ValidationResult`。 当用户修改 `Genre` 字段并提交表单时，`ClassicMovieAttribute` 的 `IsValid` 方法将验证该电影是否为经典电影。 将 `ClassicMovieAttribute` 像所有内置特性一样应用于属性（如 `ReleaseDate`）以确保执行验证，如前面的代码示例所示。 由于此示例仅适用于 `Movie` 类型，因此建议使用 `IValidatableObject`，如下一段中所示。
 
 也可以通过实现 `IValidatableObject` 接口上的 `Validate` 方法，将这段代码直接放入模型中。 如果自定义验证特性可用于验证各个属性，则可使用 `IValidatableObject` 来实现类级别的验证，如下所示。
 
-[!code-csharp[Main](validation/sample/MovieIValidatable.cs?range=32-40)]
+[!code-csharp[](validation/sample/MovieIValidatable.cs?range=32-40)]
 
 ## <a name="client-side-validation"></a>客户端验证
 
@@ -113,13 +113,13 @@ MVC 将继续验证字段，直至达到错误数上限（默认为 200 个）�
 
 你必须有一个包含适当的 JavaScript 脚本引用的视图，才能让客户端验证正常工作，如下所示。
 
-[!code-cshtml[Main](validation/sample/Views/Shared/_Layout.cshtml?range=37)]
+[!code-cshtml[](validation/sample/Views/Shared/_Layout.cshtml?range=37)]
 
-[!code-cshtml[Main](validation/sample/Views/Shared/_ValidationScriptsPartial.cshtml)]
+[!code-cshtml[](validation/sample/Views/Shared/_ValidationScriptsPartial.cshtml)]
 
 [jQuery 非介入式验证](https://github.com/aspnet/jquery-validation-unobtrusive)脚本是一个基于热门 [jQuery Validate](https://jqueryvalidation.org/) 插件的自定义 Microsoft 前端库。 如果没有 jQuery 非介入式验证，则必须在两个位置编码相同的验证逻辑：一次是在模型属性上的服务器端验证特性中，一次是在客户端脚本中（jQuery Validate 的 [`validate()`](https://jqueryvalidation.org/validate/) 方法示例展示了这种情况可能的复杂程度）。 MVC 的[标记帮助程序](xref:mvc/views/tag-helpers/intro)和 [HTML 帮助程序](xref:mvc/views/overview)则能够使用模型属性中的验证特性和类型元数据，呈现需要验证的表单元素中的 HTML 5 [data- 特性](http://w3c.github.io/html/dom.html#embedding-custom-non-visible-data-with-the-data-attributes)。 MVC 为内置属性和自定义属性生成 `data-` 属性。 然后，jQuery 非介入式验证分析这些 `data-` 属性并将逻辑传递给 jQuery Validate，从而将服务器端验证逻辑有效地“复制”到客户端。 可以使用相关标记帮助程序在客户端上显示验证错误，如下所示：
 
-[!code-cshtml[Main](validation/sample/Views/Movies/Create.cshtml?highlight=4,5&range=19-25)]
+[!code-cshtml[](validation/sample/Views/Movies/Create.cshtml?highlight=4,5&range=19-25)]
 
 上面的标记帮助程序将呈现以下 HTML。 请注意，HTML 输出中的 `data-` 特性与 `ReleaseDate` 属性的验证特性相对应。 下面的 `data-val-required` 属性包含在用户未填写发行日期字段时将显示的错误消息。 jQuery 非介入式验证将此值传递给 jQuery Validate [`required()`](https://jqueryvalidation.org/required-method/) 方法，该方法随后在随附的 **\<span>** 元素中显示该消息。
 
@@ -144,7 +144,7 @@ MVC 将继续验证字段，直至达到错误数上限（默认为 200 个）�
 
 客户端验证将阻止提交，直到表单变为有效为止。 “提交”按钮运行 JavaScript：要么提交表单要么显示错误消息。
 
-MVC 基于属性的 .NET 数据类型确定类型特性值（有可能使用 `[DataType]` 特性进行重写）。 `[DataType]` 基本特性不执行真正的服务器端验证。 浏览器选择自己的错误消息，并根据需要显示这些错误，不过，jQuery 非介入式验证包可以重写消息，并使它们与其他消息的显示保持一致。 当用户应用 `[DataType]` 子类（比如 `[EmailAddress]`）时，最常发生这种情况。
+MVC 基于属性的 .NET 数据类型确定类型特性值（有可能使用 `[DataType]` 特性进行重写）。 `[DataType]` 基本特性不执行真正的服务器端验证。 浏览器选择自己的错误消息，并根据需要显示这些错误，但 jQuery 非介入式验证包可以重写消息，并使它们与其他消息的显示保持一致。 当用户应用 `[DataType]` 子类（比如 `[EmailAddress]`）时，最常发生这种情况。
 
 ### <a name="add-validation-to-dynamic-forms"></a>向动态表单添加验证
 
@@ -178,13 +178,13 @@ $.get({
     url: "https://url/that/returns/a/control",
     dataType: "html",
     error: function(jqXHR, textStatus, errorThrown) {
-        alert(textStatus + ": Couldn't add form. " + errorThrown);
+        alert(textStatus + ": Couldn't add control. " + errorThrown);
     },
     success: function(newInputHTML) {
         var form = document.getElementById("my-form");
         form.insertAdjacentHTML("beforeend", newInputHTML);
-        form.removeData("validator")    // Added by the raw jQuery Validate
-            .removeData("unobtrusiveValidation");   // Added by jQuery Unobtrusive Validation
+        $(form).removeData("validator")    // Added by jQuery Validate
+               .removeData("unobtrusiveValidation");   // Added by jQuery Unobtrusive Validation
         $.validator.unobtrusive.parse(form);
     }
 })
@@ -192,9 +192,9 @@ $.get({
 
 ## <a name="iclientmodelvalidator"></a>IClientModelValidator
 
-你可以为自定义属性创建客户端逻辑，[非介入式验证](http://jqueryvalidation.org/documentation/)将在验证过程中，在客户端上自动为你执行此逻辑。 第一步是通过实现 `IClientModelValidator` 接口来控制要添加哪些 data- 属性，如下所示：
+可为自定义属性创建客户端逻辑，创建 [jQuery 验证](http://jqueryvalidation.org/documentation/)的适配器的[非介入式验证](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html)将在验证过程中，在客户端上自动为你执行此逻辑。 第一步是通过实现 `IClientModelValidator` 接口来控制要添加哪些 data- 属性，如下所示：
 
-[!code-csharp[Main](validation/sample/ClassicMovieAttribute.cs?range=30-42)]
+[!code-csharp[](validation/sample/ClassicMovieAttribute.cs?range=30-42)]
 
 实现此接口的属性可以将 HTML 属性添加到生成的字段。 检查 `ReleaseDate` 元素的输出时，将显示与上一示例类似的 HTML，唯一不同的是，此示例包含一个已在 `IClientModelValidator` 的 `AddValidation` 方法中定义的 `data-val-classicmovie` 属性。
 
@@ -207,9 +207,9 @@ $.get({
     id="ReleaseDate" name="ReleaseDate" value="" />
 ```
 
-非介入式验证使用 `data-` 属性中的数据来显示错误消息。 不过，除非将规则或消息添加到 jQuery 的 `validator` 对象，否则 jQuery 并不知道它们的存在。 以下示例对此进行了说明，该示例向 jQuery `validator` 对象添加一个包含自定义客户端验证代码的名为 `classicmovie` 的方法。
+非介入式验证使用 `data-` 属性中的数据来显示错误消息。 不过，除非将规则或消息添加到 jQuery 的 `validator` 对象，否则 jQuery 并不知道它们的存在。 以下示例对此进行了说明，该示例向 jQuery `validator` 对象添加一个包含自定义客户端验证代码的名为 `classicmovie` 的方法。 可在[此处](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html)查看对 unobtrusive.adapters.add 方法的说明
 
-[!code-javascript[Main](validation/sample/Views/Movies/Create.cshtml?range=71-93)]
+[!code-javascript[](validation/sample/Views/Movies/Create.cshtml?range=71-93)]
 
 现在，jQuery 包含用于执行自定义 JavaScript 验证的信息，以及该验证代码返回 false 时将要显示的错误消息。
 
@@ -219,7 +219,7 @@ $.get({
 
 可以分两步实现远程验证。 首先，必须使用 `[Remote]` 属性为模型添加批注。 `[Remote]` 属性采用多个重载，可用于将客户端 JavaScript 定向到要调用的相应代码。 下面的示例指向 `Users` 控制器的 `VerifyEmail` 操作方法。
 
-[!code-csharp[Main](validation/sample/User.cs?range=7-8)]
+[!code-csharp[](validation/sample/User.cs?range=7-8)]
 
 第二步是按照 `[Remote]` 属性中的定义，将验证代码放入相应的操作方法。 根据 jQuery Validate [`remote()`](https://jqueryvalidation.org/remote-method/) 方法文档：
 
@@ -227,17 +227,17 @@ $.get({
 
 `VerifyEmail()` 方法的定义遵循这些规则，如下所示。 如果电子邮件已被占用，它会返回验证错误消息；如果电子邮件可用，则返回 `true`，并将结果包装在 `JsonResult` 对象中。 然后，客户端可以使用返回的值，继续进行下一步操作或根据需要显示错误。
 
-[!code-csharp[Main](validation/sample/UsersController.cs?range=19-28)]
+[!code-csharp[](validation/sample/UsersController.cs?range=19-28)]
 
 现在，当用户输入电子邮件时，视图中的 JavaScript 会发出远程调用，以了解该电子邮件是否已被占用，如果是，则显示错误消息。 如果不是，用户就可以像往常一样提交表单。
 
 `[Remote]` 特性的 `AdditionalFields` 属性可用于根据服务器上的数据验证字段组合。 例如，如果上面的 `User` 模型具有两个附加属性，名为 `FirstName` 和 `LastName`，你可能想要验证该名称对尚未被现有用户占用。 按以下代码所示定义新属性：
 
-[!code-csharp[Main](validation/sample/User.cs?range=10-13)]
+[!code-csharp[](validation/sample/User.cs?range=10-13)]
 
 `AdditionalFields` 可能已显式设置为字符串 `"FirstName"` 和 `"LastName"`，但使用 [`nameof`](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) 这样的操作符可简化稍后的重构过程。 然后，用于执行验证的操作方法必须采用两个参数，一个用于 `FirstName` 的值，一个用于 `LastName` 的值。
 
-[!code-csharp[Main](validation/sample/UsersController.cs?range=30-39)]
+[!code-csharp[](validation/sample/UsersController.cs?range=30-39)]
 
 现在，当用户输入名和姓时，JavaScript 会:
 

@@ -1,7 +1,7 @@
 ---
-title: "Razor 页面和 EF Core - 读取相关数据 - 第 6 个教程（共 8 个）"
+title: ASP.NET Core 中的 Razor 页面和 EF Core - 读取相关数据 - 第 6 个教程（共 8 个）
 author: rick-anderson
-description: "在本教程中，将读取并显示相关数据 - 即 Entity Framework 加载到导航属性中的数据。"
+description: 在本教程中，将读取并显示相关数据 - 即 Entity Framework 加载到导航属性中的数据。
 manager: wpickett
 ms.author: riande
 ms.date: 11/05/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: ccb1e95ae2b43fd0a4c4b1ac9ed58a4d474ab3b6
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 55d9b6743c7d97dc9a354bae218b1fac69d7b6bc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="reading-related-data---ef-core-with-razor-pages-6-of-8"></a>读取相关数据 - EF Core 和 Razor 页面 - 第 6 个教程（共 8 个）
+# <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 读取相关数据 - 第 6 个教程（共 8 个）
 
 作者：[Tom Dykstra](https://github.com/tdykstra)、[Jon P Smith](https://twitter.com/thereformedprog) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 在本教程中，将读取和显示相关数据。 相关数据为 EF Core 加载到导航属性中的数据。
 
@@ -37,22 +37,22 @@ EF Core 可采用多种方式将相关数据加载到实体的导航属性中：
 
 * [预先加载](https://docs.microsoft.com/ef/core/querying/related-data#eager-loading)。 预先加载是指对查询某类型的实体时一并加载相关实体。 读取实体时，会检索其相关数据。 此时通常会出现单一联接查询，检索所有必需数据。 EF Core 将针对预先加载的某些类型发出多个查询。 与存在单一查询的 EF6 中的某些查询相比，发出多个查询可能更有效。 预先加载通过 `Include` 和 `ThenInclude` 方法进行指定。
 
- ![预先加载示例](read-related-data/_static/eager-loading.png)
+  ![预先加载示例](read-related-data/_static/eager-loading.png)
  
- 当包含集合导航时，预先加载会发送多个查询：
+  当包含集合导航时，预先加载会发送多个查询：
 
- * 一个查询用于主查询 
- * 一个查询用于加载树中每个集合“边缘”。
+  * 一个查询用于主查询 
+  * 一个查询用于加载树中每个集合“边缘”。
 
 * 使用 `Load` 的单独查询：可在单独的查询中检索数据，EF Core会“修复”导航属性。 “修复”是指 EF Core 自动填充导航属性。 与预先加载相比，使用 `Load` 的单独查询更像是显式加载。
 
- ![单独查询示例](read-related-data/_static/separate-queries.png)
+  ![单独查询示例](read-related-data/_static/separate-queries.png)
 
- 请注意：EF Core 会将导航属性自动“修复”为之前加载到上下文实例中的任何其他实体。 即使导航属性的数据非显式包含在内，但如果先前加载了部分或所有相关实体，则仍可能填充该属性。
+  请注意：EF Core 会将导航属性自动“修复”为之前加载到上下文实例中的任何其他实体。 即使导航属性的数据非显式包含在内，但如果先前加载了部分或所有相关实体，则仍可能填充该属性。
 
-* [显式加载](https://docs.microsoft.com/ef/core/querying/related-data#explicit-loading)。 首次读取实体时，不检索相关数据。 必须编写代码才能在需要时检索相关数据。 使用单独查询进行显式加载时，会向数据库发送多个查询。 该代码通过显式加载指定要加载的导航属性。 使用 `Load` 方法进行显式加载。 例如：
+* [显式加载](https://docs.microsoft.com/ef/core/querying/related-data#explicit-loading)。 首次读取实体时，不检索相关数据。 必须编写代码才能在需要时检索相关数据。 使用单独查询进行显式加载时，会向数据库发送多个查询。 该代码通过显式加载指定要加载的导航属性。 使用 `Load` 方法进行显式加载。 例如:
 
- ![显式加载示例](read-related-data/_static/explicit-loading.png)
+  ![显式加载示例](read-related-data/_static/explicit-loading.png)
 
 * [延迟加载](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading)。 [EF Core 当前不支持延迟加载](https://github.com/aspnet/EntityFrameworkCore/issues/3797)。 首次读取实体时，不检索相关数据。 首次访问导航属性时，会自动检索该导航属性所需的数据。 首次访问导航属性时，都会向数据库发送一个查询。
 
@@ -76,9 +76,9 @@ EF Core 可采用多种方式将相关数据加载到实体的导航属性中：
 * 打开项目目录（包含 Program.cs、Startup.cs 和 .csproj 文件的目录）中的命令窗口。
 * 运行下面的命令：
 
- ```console
-dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir Pages\Courses --referenceScriptLibraries
- ```
+  ```console
+  dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir Pages\Courses --referenceScriptLibraries
+  ```
 
 上述命令为 `Course` 模型创建基架。 在 Visual Studio 中打开项目。
 
@@ -97,7 +97,7 @@ dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir P
 
 使用以下代码更新 `OnGetAsync` 方法：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/Index.cshtml.cs?name=snippet_RevisedIndexMethod)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/Index.cshtml.cs?name=snippet_RevisedIndexMethod)]
 
 上述代码添加了 `AsNoTracking`。 由于未跟踪返回的实体，因此 `AsNoTracking` 提升了性能。 未跟踪实体，因为未在当前上下文中更新这些实体。
 
@@ -124,17 +124,17 @@ dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir P
 
 `OnGetAsync` 方法使用 `Include` 方法加载相关数据：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/Index.cshtml.cs?name=snippet_RevisedIndexMethod&highlight=4)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/Index.cshtml.cs?name=snippet_RevisedIndexMethod&highlight=4)]
 
-`Select` 运算符仅加载所需的相关数据。 对于单个项（如 `Department.Name`），它使用 SQL INNER JOIN。 对于集合，它使用另一个数据库访问，但集合上的 `Include`  运算符也是如此。
+`Select` 运算符仅加载所需的相关数据。 对于单个项（如 `Department.Name`），它使用 SQL INNER JOIN。 对于集合，它使用另一个数据库访问，但集合上的 `Include` 运算符也是如此。
 
 以下代码使用 `Select` 方法加载相关数据：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/IndexSelect.cshtml.cs?name=snippet_RevisedIndexMethod&highlight=4)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/IndexSelect.cshtml.cs?name=snippet_RevisedIndexMethod&highlight=4)]
 
 `CourseViewModel`：
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/CourseViewModel.cs?name=snippet)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/CourseViewModel.cs?name=snippet)]
 
 有关完整示例的信息，请参阅 [IndexSelect.cshtml](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu/Pages/Courses/IndexSelect.cshtml) 和 [IndexSelect.cshtml.cs](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu/Pages/Courses/IndexSelect.cshtml.cs)。
 
@@ -157,7 +157,7 @@ dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir P
 
 在 SchoolViewModels 文件夹中，使用以下代码创建 InstructorIndexData.cs：
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/InstructorIndexData.cs)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/InstructorIndexData.cs)]
 
 ### <a name="scaffold-the-instructor-model"></a>为讲师模型创建基架
 
@@ -165,9 +165,9 @@ dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir P
 * 打开项目目录（包含 Program.cs、Startup.cs 和 .csproj 文件的目录）中的命令窗口。
 * 运行下面的命令：
 
- ```console
-dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outDir Pages\Instructors --referenceScriptLibraries
- ```
+  ```console
+  dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outDir Pages\Instructors --referenceScriptLibraries
+  ```
 
 上述命令为 `Instructor` 模型创建基架。 在 Visual Studio 中打开项目。
 
@@ -179,13 +179,13 @@ dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outD
 
 将 Pages/Instructors/Index.cshtml.cs 替换为以下代码：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_all&highlight=2,20-)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_all&highlight=2,20-99)]
 
 `OnGetAsync` 方法接受所选讲师 ID 的可选路由数据。
 
 检查 Pages/Instructors/Index.cshtml 页上的查询：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_ThenInclude)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_ThenInclude)]
 
 查询包括两项内容：
 
@@ -201,7 +201,7 @@ dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outD
 
 上述标记进行以下更改：
 
-* 将 `page` 指令从 `@page` 更新为 `@page "{id:int?}"`。 `"{id:int?}"` 是一个路由模板。 路由模板将 URL 中的整数查询字符串更改为路由数据。 例如，当页面指令生成如下所示的 URL 时，单击讲师的“选择”链接 ：
+* 将 `page` 指令从 `@page` 更新为 `@page "{id:int?}"`。 `"{id:int?}"` 是一个路由模板。 路由模板将 URL 中的整数查询字符串更改为路由数据。 例如，单击仅具有 `@page` 指令的讲师的“选择”链接将生成如下 URL：
 
     `http://localhost:1234/Instructors?id=2`
 
@@ -248,17 +248,17 @@ dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outD
 
 将 Pages/Instructors/Index.cshtml.cs 中的 `OnGetAsync` 方法替换为以下代码：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_OnGetAsync&highlight=1,8,16-)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_OnGetAsync&highlight=1,8,16-999)]
 
 检查更新后的查询：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_ThenInclude)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_ThenInclude)]
 
 先前查询添加了 `Department` 实体。
 
 选择讲师时 (`id != null`)，将执行以下代码。 从视图模型中的讲师列表检索所选讲师。 向视图模型的 `Courses` 属性加载来自讲师 `CourseAssignments` 导航属性的 `Course` 实体。
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_ID)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_ID)]
 
 `Where` 方法返回一个集合。 在前面的 `Where` 方法中，仅返回单个 `Instructor` 实体。 `Single` 方法将集合转换为单个 `Instructor` 实体。 `Instructor` 实体提供对 `CourseAssignments` 属性的访问。 `CourseAssignments` 提供对相关 `Course` 实体的访问。
 
@@ -271,11 +271,11 @@ dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outD
 
 选中课程时，视图模型的 `Enrollments` 属性将填充以下代码：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_courseID)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_courseID)]
 
 在 Pages/Courses/Index.cshtml Razor 页面末尾添加以下标记：
 
-[!code-html[](intro/samples/cu/Pages/Instructors/IndexRRD.cshtml?range=60-102&highlight=7-)]
+[!code-html[](intro/samples/cu/Pages/Instructors/IndexRRD.cshtml?range=60-102&highlight=7-999)]
 
 上述标记显示选中某讲师时与该讲师相关的课程列表。
 
@@ -289,7 +289,7 @@ dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outD
 
 使用以下代码在 Pages/Instructors/Index.cshtml.cs 中更新 `OnGetAsync` 方法中的查询：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index.cshtml.cs?name=snippet_ThenInclude&highlight=6-9)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index.cshtml.cs?name=snippet_ThenInclude&highlight=6-9)]
 
 更新 Pages/Instructors/Index.cshtml。 在文件末尾添加以下标记：
 
@@ -305,7 +305,7 @@ dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outD
 
 `Single` 方法可在 `Where` 条件中进行传递，无需分别调用 `Where` 方法：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/IndexSingle.cshtml.cs?name=snippet_single&highlight=21,28-29)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/IndexSingle.cshtml.cs?name=snippet_single&highlight=21,28-29)]
 
 使用 `Where` 时，前面的 `Single` 方法不适用。 一些开发人员更喜欢 `Single` 方法样式。
 
@@ -313,13 +313,13 @@ dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outD
 
 当前代码为 `Enrollments` 和 `Students` 指定预先加载：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index.cshtml.cs?name=snippet_ThenInclude&highlight=6-9)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index.cshtml.cs?name=snippet_ThenInclude&highlight=6-9)]
 
 假设用户几乎不希望课程中显示注册情况。 在此情况下，可仅在请求时加载注册数据进行优化。 在本部分中，会更新 `OnGetAsync` 以使用 `Enrollments` 和 `Students` 的显式加载。
 
 使用以下代码更新 `OnGetAsync`：
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/IndexXp.cshtml.cs?name=snippet_OnGetAsync&highlight=9-13,29-35)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/IndexXp.cshtml.cs?name=snippet_OnGetAsync&highlight=9-13,29-35)]
 
 上述代码取消针对注册和学生数据的 ThenInclude 方法调用。 如果已选中课程，则突出显示的代码会检索：
 

@@ -1,21 +1,22 @@
 ---
-title: "将新字段添加到 Razor 页面"
+title: 将新字段添加到 ASP.NET Core 中的 Razor 页面
 author: rick-anderson
-description: "演示如何使用 Entity Framework Core 将新字段添加到 Razor 页面"
+description: 演示如何使用 Entity Framework Core 将新字段添加到 Razor 页面
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: 36412e9d1f3143f0d1999d0e754e6627f0984ad5
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 45a39defc9480b0e4fe85ae7ed6bfa654a35264a
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/18/2018
 ---
-# <a name="adding-a-new-field-to-a-razor-page"></a>将新字段添加到 Razor 页面
+# <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>将新字段添加到 ASP.NET Core 中的 Razor 页面
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -27,13 +28,13 @@ ms.lasthandoff: 01/30/2018
 
 打开 Models/Movie.cs 文件，并添加 `Rating` 属性：
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
 
 生成应用 (Ctrl+Shift+B)。
 
 编辑 Pages/Movies/Index.cshtml，并添加 `Rating` 字段：
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=40-42,61-63)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=40-42,61-63)]
 
 将 `Rating` 字段添加到“删除”和“详细信息”页面。
 
@@ -43,7 +44,7 @@ ms.lasthandoff: 01/30/2018
 
 下面的代码显示具有 `Rating` 字段的 Create.cshtml：
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Create.cshtml?highlight=36-40)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Create.cshtml?highlight=36-40)]
 
 将 `Rating` 字段添加到“编辑”页面。
 
@@ -67,7 +68,7 @@ SqlException: Invalid column name 'Rating'.
 
 更新 `SeedData` 类，使它提供新列的值。 示例更改如下所示，但可能需要对每个 `new Movie` 块做出此更改。
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs?name=snippet1&highlight=8)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs?name=snippet1&highlight=8)]
 
 请参阅[已完成的 SeedData.cs 文件](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs)。
 
@@ -102,6 +103,6 @@ Update-Database
 
 运行应用，并验证是否可以创建/编辑/显示具有 `Rating` 字段的电影。 如果数据库未设定种子，请先停止 IIS Express，然后再运行应用。
 
->[!div class="step-by-step"]
-[上一篇：添加搜索](xref:tutorials/razor-pages/search)
-[下一篇：添加验证](xref:tutorials/razor-pages/validation)
+> [!div class="step-by-step"]
+> [上一篇：添加搜索](xref:tutorials/razor-pages/search)
+> [下一篇：添加验证](xref:tutorials/razor-pages/validation)

@@ -1,7 +1,7 @@
 ---
-title: "使用应用程序模型"
+title: 使用 ASP.NET Core 中的应用程序模型
 author: ardalis
-description: 
+description: 了解如何读取和控制应用程序模型，从而修改 MVC 元素在 ASP.NET Core 中的行为。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/application-model
-ms.openlocfilehash: 08f67b517b2d7ee1186666a4eb5c6c925eb3bd5d
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: f61d04f6cf0aa054566d9f48a030cf268f2ba72a
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="working-with-the-application-model"></a>使用应用程序模型
+# <a name="work-with-the-application-model-in-aspnet-core"></a>使用 ASP.NET Core 中的应用程序模型
 
 作者：[Steve Smith](https://ardalis.com/)
 
@@ -39,18 +39,18 @@ ASP.NET Core MVC 应用程序模型具有以下结构：
 
 ### <a name="iapplicationmodelprovider"></a>IApplicationModelProvider
 
-ASP.NET Core MVC 使用提供程序模式（由 [IApplicationModelProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelprovider) 接口定义）加载应用程序模型。 此部分介绍此提供程序的工作原理的一些内部实现细节。 这是一项高级主题 — 利用应用程序模型的大多数应用应使用约定来执行此操作。
+ASP.NET Core MVC 使用提供程序模式（由 [IApplicationModelProvider](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelprovider) 接口定义）加载应用程序模型。 此部分介绍此提供程序的工作原理的一些内部实现细节。 这是一项高级主题 — 利用应用程序模型的大多数应用应使用约定来执行此操作。
 
 `IApplicationModelProvider` 接口的实现相互“包装”，每个实现都基于其 `Order` 属性以升序调用 `OnProvidersExecuting`。 然后，按相反的顺序调用 `OnProvidersExecuted` 方法。 该框架定义了多个提供程序：
 
 首先 (`Order=-1000`)：
 
-* [`DefaultApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.internal.defaultapplicationmodelprovider)
+* [`DefaultApplicationModelProvider`](/dotnet/api/microsoft.aspnetcore.mvc.internal.defaultapplicationmodelprovider)
 
 然后 (`Order=-990`)：
 
-* [`AuthorizationApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.internal.authorizationapplicationmodelprovider)
-* [`CorsApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.cors.internal.corsapplicationmodelprovider)
+* [`AuthorizationApplicationModelProvider`](/dotnet/api/microsoft.aspnetcore.mvc.internal.authorizationapplicationmodelprovider)
+* [`CorsApplicationModelProvider`](/dotnet/api/microsoft.aspnetcore.mvc.cors.internal.corsapplicationmodelprovider)
 
 > [!NOTE]
 > 未定义具有相同 `Order` 值的两个提供程序的调用顺序，因此不应依赖此顺序。
@@ -66,7 +66,7 @@ ASP.NET Core MVC 使用提供程序模式（由 [IApplicationModelProvider](http
 * 将操作方法参数添加到上下文
 * 应用路由和其他属性
 
-某些内置行为由 `DefaultApplicationModelProvider` 实现。 此提供程序负责构造 [`ControllerModel`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.controllermodel)，后者又引用 [`ActionModel`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.actionmodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ActionModel)、[`PropertyModel`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.propertymodel) 和 [`ParameterModel`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.parametermodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ParameterModel) 实例。 `DefaultApplicationModelProvider` 类是一个内部框架实现细节，未来将对其进行更改。 
+某些内置行为由 `DefaultApplicationModelProvider` 实现。 此提供程序负责构造 [`ControllerModel`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.controllermodel)，后者又引用 [`ActionModel`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.actionmodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ActionModel)、[`PropertyModel`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.propertymodel) 和 [`ParameterModel`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.parametermodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ParameterModel) 实例。 `DefaultApplicationModelProvider` 类是一个内部框架实现细节，未来将对其进行更改。 
 
 `AuthorizationApplicationModelProvider` 负责应用与 `AuthorizeFilter` 和 `AllowAnonymousFilter` 属性关联的行为。 [详细了解这些属性](xref:security/authorization/simple)。
 
@@ -78,10 +78,10 @@ ASP.NET Core MVC 使用提供程序模式（由 [IApplicationModelProvider](http
 
 可用约定如下：
 
-* [`IApplicationModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelconvention)
-* [`IControllerModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.icontrollermodelconvention)
-* [`IActionModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iactionmodelconvention)
-* [`IParameterModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iparametermodelconvention)
+* [`IApplicationModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelconvention)
+* [`IControllerModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.icontrollermodelconvention)
+* [`IActionModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iactionmodelconvention)
+* [`IParameterModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iparametermodelconvention)
 
 可通过以下方式应用约定：将它们添加到 MVC 选项，或实现 `Attribute` 并将它们应用于控制器、操作或操作参数（类似于 [`Filters`](xref:mvc/controllers/filters)）。 与筛选器不同的是，约定仅在应用启动时执行，而不作为每个请求的一部分执行。
 
@@ -89,25 +89,25 @@ ASP.NET Core MVC 使用提供程序模式（由 [IApplicationModelProvider](http
 
 以下约定用于向应用程序模型添加属性。 
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/ApplicationDescription.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/ApplicationDescription.cs)]
 
 当在 `Startup` 的 `ConfigureServices` 中添加 MVC 时，应用程序模型约定作为选项应用。
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=5)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=5)]
 
 可从控制器操作内的 `ActionDescriptor` 属性集合中访问属性：
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/AppModelController.cs?name=AppModelController)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/AppModelController.cs?name=AppModelController)]
 
 ### <a name="sample-modifying-the-controllermodel-description"></a>示例：修改 ControllerModel 说明
 
 与上一个示例一样，也可以修改控制器模型，以包含自定义属性。 这些属性将覆盖应用程序模型中指定的具有相同名称的现有属性。 以下约定属性可在控制器级别添加说明：
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/ControllerDescriptionAttribute.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/ControllerDescriptionAttribute.cs)]
 
 此约定在控制器上作为属性应用。
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=ControllerDescription&highlight=1)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=ControllerDescription&highlight=1)]
 
 访问“description”属性的方式与前面示例中一样。
 
@@ -115,53 +115,53 @@ ASP.NET Core MVC 使用提供程序模式（由 [IApplicationModelProvider](http
 
 可向各项操作应用不同的属性约定，并覆盖已在应用程序或控制器级别应用的行为。
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/ActionDescriptionAttribute.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/ActionDescriptionAttribute.cs)]
 
 通过将此约定应用于上一示例的控制器中的某项操作，演示了它如何覆盖控制器级别的约定：
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=DescriptionAttributesController&highlight=9)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=DescriptionAttributesController&highlight=9)]
 
 ### <a name="sample-modifying-the-parametermodel"></a>示例：修改 ParameterModel
 
 可将以下约定应用于操作参数，以修改其 `BindingInfo`。 以下约定要求参数为路由参数；忽略其他可能的绑定源（比如查询字符串值）。
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/MustBeInRouteParameterModelConvention.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/MustBeInRouteParameterModelConvention.cs)]
 
 该属性可应用于任何操作参数：
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/ParameterModelController.cs?name=ParameterModelController&highlight=5)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/ParameterModelController.cs?name=ParameterModelController&highlight=5)]
 
 ### <a name="sample-modifying-the-actionmodel-name"></a>示例：修改 ActionModel 名称
 
 以下约定可修改 `ActionModel`，以更新其应用到的操作的*名称*。 新名称以参数形式提供给该属性。 此新名称供路由使用，因此它将影响用于访问此操作方法的路由。
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/CustomActionNameAttribute.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/CustomActionNameAttribute.cs)]
 
 此属性应用于 `HomeController` 中的操作方法：
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/HomeController.cs?name=ActionModelConvention&highlight=2)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/HomeController.cs?name=ActionModelConvention&highlight=2)]
 
 即使方法名称为 `SomeName`，该属性也会覆盖 MVC 使用该方法名称的约定，并将操作名称替换为 `MyCoolAction`。 因此，用于访问此操作的路由为 `/Home/MyCoolAction`。
 
 > [!NOTE]
-> 此示例本质上与使用内置 [ActionName](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.actionnameattribute) 属性相同。
+> 此示例本质上与使用内置 [ActionName](/dotnet/api/microsoft.aspnetcore.mvc.actionnameattribute) 属性相同。
 
 ### <a name="sample-custom-routing-convention"></a>示例：自定义路由约定
 
 可以使用 `IApplicationModelConvention` 来自定义路由的工作方式。 例如，以下约定会将控制器的命名空间合并到其路由中，并将命名空间中的 `.` 替换为路由中的 `/`：
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/NamespaceRoutingConvention.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/NamespaceRoutingConvention.cs)]
 
 该约定作为一个选项添加到 Startup 中。
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=6)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=6)]
 
 > [!TIP]
-> 可以使用 `services.Configure<MvcOptions>(c => c.Conventions.Add(YOURCONVENTION));` 来访问 `MvcOptions`，以将约定添加到[中间件](xref:fundamentals/middleware)
+> 可以使用 `services.Configure<MvcOptions>(c => c.Conventions.Add(YOURCONVENTION));` 来访问 `MvcOptions`，以将约定添加到[中间件](xref:fundamentals/middleware/index)
 
 此示例将此约定应用于未使用属性路由的路由，其中，控制器名称包含“Namespace”。 以下控制器演示了此约定：
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/NamespaceRoutingController.cs?highlight=7-8)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/NamespaceRoutingController.cs?highlight=7-8)]
 
 ## <a name="application-model-usage-in-webapicompatshim"></a>应用程序模型在 WebApiCompatShim 中的使用
 
@@ -178,10 +178,10 @@ services.AddMvc().AddWebApiConventions();
 
 该填充程序提供的约定仅适用于应用中已应用特定属性的部分。 以下四个属性用于控制哪些控制器应使用该填充程序的约定来修改自己的约定：
 
-* [UseWebApiActionConventionsAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiactionconventionsattribute)
-* [UseWebApiOverloadingAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapioverloadingattribute)
-* [UseWebApiParameterConventionsAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiparameterconventionsattribute)
-* [UseWebApiRoutesAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiroutesattribute)
+* [UseWebApiActionConventionsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiactionconventionsattribute)
+* [UseWebApiOverloadingAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapioverloadingattribute)
+* [UseWebApiParameterConventionsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiparameterconventionsattribute)
+* [UseWebApiRoutesAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiroutesattribute)
 
 ### <a name="action-conventions"></a>操作约定
 
@@ -203,8 +203,8 @@ services.AddMvc().AddWebApiConventions();
 
 ## <a name="using-apiexplorer-to-document-your-app"></a>使用 ApiExplorer 记录应用
 
-应用程序模型在每个级别公开了 [`ApiExplorer`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.apiexplorermodel) 属性，该属性可用于遍历应用的结构。 这可用于[使用 Swagger 等工具为 Web API 生成帮助页](https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger)。 `ApiExplorer` 属性公开了 `IsVisible` 属性，后者可设置为指定应公开的应用模型部分。 可以使用约定配置此设置：
+应用程序模型在每个级别公开了 [`ApiExplorer`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.apiexplorermodel) 属性，该属性可用于遍历应用的结构。 这可用于[使用 Swagger 等工具为 Web API 生成帮助页](xref:tutorials/web-api-help-pages-using-swagger)。 `ApiExplorer` 属性公开了 `IsVisible` 属性，后者可设置为指定应公开的应用模型部分。 可以使用约定配置此设置：
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/EnableApiExplorerApplicationConvention.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/EnableApiExplorerApplicationConvention.cs)]
 
 使用此方法（和附加约定，如有需要），可以在应用中的任何级别启用或禁用 API 可见性。 

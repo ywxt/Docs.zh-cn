@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 中的路由"
+title: ASP.NET Core 中的路由
 author: ardalis
-description: "了解 ASP.NET Core 路由功能如何负责将传入请求映射到路由处理程序。"
+description: 了解 ASP.NET Core 路由功能如何负责将传入请求映射到路由处理程序。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: d35c24347e8e06ed85e2af8addcc1f8cf28dc47a
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 2e1257639ec41f657093439c5245b50adbad34dc
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core 中的路由
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 02/01/2018
 
 ## <a name="routing-basics"></a>路由基础知识
 
-路由使用路由（[IRouter](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.routing.irouter) 的实现）来：
+路由使用路由（[IRouter](/dotnet/api/microsoft.aspnetcore.routing.irouter) 的实现）来：
 
 * 将传入请求映射到路由处理程序
 
@@ -88,7 +88,7 @@ URL 遵循类似的迭代过程，但开头是将用户或框架代码调用到�
 
 大多数应用程序通过调用 `MapRoute` 或 `IRouteBuilder` 上定义的一种类似的扩展方法来创建路由。 所有方法都将创建 `Route` 的实例，并将其添加到路由集合中。
 
-注意：`MapRoute` 不采用任何路由处理程序参数，它只添加将由 `DefaultHandler` 处理的路由。 由于默认处理程序是 `IRouter`，它可能决定不处理该请求。 例如，Microsoft ASP.NET MVC 通常被配置为默认处理程序，仅处理与可用控制器和操作匹配的请求。 若要了解路由到 MVC 的详细信息，请参阅[路由到控制器操作](../mvc/controllers/routing.md)。
+注意：`MapRoute` 不采用任何路由处理程序参数，它只添加将由 `DefaultHandler` 处理的路由。 由于默认处理程序是 `IRouter`，它可能决定不处理该请求。 例如，Microsoft ASP.NET MVC 通常被配置为默认处理程序，仅处理与可用控制器和操作匹配的请求。 要了解路由到 MVC 的详细信息，请参阅[路由到控制器操作](../mvc/controllers/routing.md)。
 
 下面是典型 ASP.NET MVC 路由定义使用的一个 `MapRoute` 调用示例：
 
@@ -187,7 +187,7 @@ routes.MapRoute(
 
 将路由添加到 Startup.cs 中的服务容器：
 
-[!code-csharp[Main](../fundamentals/routing/sample/RoutingSample/Startup.cs?highlight=3&start=11&end=14)]
+[!code-csharp[](../fundamentals/routing/sample/RoutingSample/Startup.cs?highlight=3&start=11&end=14)]
 
 必须在 `Startup` 类的 `Configure` 方法中配置路由。 下面的示例使用这些 API：
 
@@ -321,7 +321,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 
 ## <a name="regular-expressions"></a>正则表达式 
 
-ASP.NET Core 框架将向正则表达式构造函数添加 `RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant`。 有关这些成员的介绍，请参阅 [RegexOptions 枚举](https://docs.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions)。
+ASP.NET Core 框架将向正则表达式构造函数添加 `RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant`。 有关这些成员的介绍，请参阅 [RegexOptions 枚举](/dotnet/api/system.text.regularexpressions.regexoptions)。
 
 正则表达式与路由和 C# 计算机语言使用的分隔符和令牌相似。 必须对正则表达式令牌进行转义。 例如，要在路由中使用正则表达式 `^\d{3}-\d{2}-\d{4}$`，需要如 C# 源文件中键入的 `\\` 一样的 `\` 字符，以转义 `\` 字符串转义字符（除非使用 [verbatim 字符串文本](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/string)）。 `{`、`}`、“[”和“]”字符需要成双进行转义，以转义路由参数分隔符字符。  下表显示正则表达式和转义的版本。
 
@@ -351,7 +351,7 @@ ASP.NET Core 框架将向正则表达式构造函数添加 `RegexOptions.IgnoreC
 
 下面的示例演示如何在给定路由值字典和 `RouteCollection` 的情况下生成路由链接。
 
-[!code-csharp[Main](../fundamentals/routing/sample/RoutingSample/Startup.cs?range=45-59)]
+[!code-csharp[](../fundamentals/routing/sample/RoutingSample/Startup.cs?range=45-59)]
 
 上述示例末尾生成的 `VirtualPath` 为 `/package/create/123`。
 

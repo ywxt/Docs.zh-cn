@@ -1,7 +1,7 @@
 ---
-title: "控制器方法和视图"
+title: ASP.NET Core 中的控制器方法和视图
 author: rick-anderson
-description: "使用控制器方法、视图和 DataAnnotations"
+description: 了解如何在 ASP.NET Core 中使用控制器方法、视图和 DataAnnotations。
 manager: wpickett
 ms.author: riande
 ms.date: 03/07/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/controller-methods-views
-ms.openlocfilehash: 200f02f9815966653b3b46918737c60d11f11d5a
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6fe0a0e71079bebcbd3a76abee0f2917f562e766
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="controller-methods-and-views"></a>控制器方法和视图
+# <a name="controller-methods-and-views-in-aspnet-core"></a>ASP.NET Core 中的控制器方法和视图
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 01/30/2018
 
 打开 Models/Movie.cs 文件，并添加以下代码中突出显示的行：
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Models/MovieDateWithExtraUsings.cs?name=snippet_1&highlight=13-14)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Models/MovieDateWithExtraUsings.cs?name=snippet_1&highlight=13-14)]
 
 右键单击红色的波浪线，然后选择“快速操作和重构”。
 
@@ -44,12 +44,12 @@ ms.lasthandoff: 01/30/2018
 
 更新的代码：
 
-[!code-csharp[Main](./start-mvc/sample/MvcMovie/Models/MovieDate.cs?name=snippet_1)]
+[!code-csharp[](./start-mvc/sample/MvcMovie/Models/MovieDate.cs?name=snippet_1)]
 
 <!-- include start -->
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/controller-methods-views.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/controller-methods-views.md)]
 
->[!div class="step-by-step"]
-[上一页](working-with-sql.md)
-[下一页](search.md)  
+> [!div class="step-by-step"]
+> [上一页](working-with-sql.md)
+> [下一页](search.md)  

@@ -1,20 +1,20 @@
 ---
-title: "ASP.NET Core 中的应用程序启动"
+title: ASP.NET Core 中的应用程序启动
 author: ardalis
-description: "了解 ASP.NET Core 中的 Startup 类如何配置服务和应用的请求管道。"
+description: 了解 ASP.NET Core 中的 Startup 类如何配置服务和应用的请求管道。
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 12/08/2017
+ms.date: 4/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: c324918b33af82b619bb2251f32308e4a57c27e5
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 8dd632a2c888e65c6420e0fed7acf6fa15173b3d
+ms.sourcegitcommit: c4a31aaf902f2e84aaf4a9d882ca980fdf6488c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="application-startup-in-aspnet-core"></a>ASP.NET Core 中的应用程序启动
 
@@ -31,18 +31,18 @@ ASP.NET Core 应用使用 `Startup` 类，按照约定命名为 `Startup`。 `St
 
 当应用启动时，运行时调用 `ConfigureServices` 和 `Configure`：
 
-[!code-csharp[Main](startup/snapshot_sample/Startup1.cs)]
+[!code-csharp[](startup/snapshot_sample/Startup1.cs)]
 
 通过 [WebHostBuilderExtensions](/dotnet/api/Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions)、[UseStartup&lt;TStartup&gt;](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_) 方法指定 `Startup` 类：
 
-[!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=10)]
+[!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=10)]
 
 `Startup` 类构造函数接受由主机定义的依赖关系。 在 `Startup` 类中[注入依赖关系](xref:fundamentals/dependency-injection)的常见用途为注入：
 
 * [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment) 以按环境配置服务。
 * [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) 以在启动过程中配置应用。
 
-[!code-csharp[Main](startup/snapshot_sample/Startup2.cs)]
+[!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
 注入 `IHostingEnvironment` 的替代方法是使用基于约定的方法。 该应用可以为不同的环境（例如 `StartupDevelopment`）定义单独的 `Startup` 类，并在运行时选择适当的 startup 类。 优先考虑名称后缀与当前环境相匹配的类。 如果应用在开发环境中运行并包含 `Startup` 类和 `StartupDevelopment` 类，则使用 `StartupDevelopment` 类。 有关详细信息，请参阅[使用多个环境](xref:fundamentals/environments#startup-conventions)。
 
@@ -52,17 +52,55 @@ ASP.NET Core 应用使用 `Startup` 类，按照约定命名为 `Startup`。 `St
 
 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) 方法是：
 
-* 可选。
+* Optional
 * 在 `Configure` 方法配置应用服务之前，由 Web 主机调用。
 * 其中按常规设置[配置选项](xref:fundamentals/configuration/index)。
 
 将服务添加到服务容器，使其在应用和 `Configure` 方法中可用。 这些服务通过[依赖关系注入](xref:fundamentals/dependency-injection)或 [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices) 解析。
 
-Web 主机可能会在调用 `Startup` 方法之前配置某些服务。 有关详细信息，请参阅[承载](xref:fundamentals/hosting)主题。 
+Web 主机可能会在调用 `Startup` 方法之前配置某些服务。 有关详细信息，请参阅[承载](xref:fundamentals/hosting)主题。
 
 对于需要大量设置的功能，[IServiceCollection](/dotnet/api/Microsoft.Extensions.DependencyInjection.IServiceCollection) 上有 `Add[Service]` 扩展方法。 典型 Web 应用将为实体框架、标识和 MVC 注册服务：
 
-[!code-csharp[Main](../common/samples/WebApplication1/Startup.cs?highlight=4,7,11&start=40&end=55)]
+[!code-csharp[](../common/samples/WebApplication1/Startup.cs?highlight=4,7,11&start=40&end=55)]
+
+::: moniker range=">= aspnetcore-2.1" 
+
+<a name="setcompatibilityversion"></a>
+### <a name="setcompatibilityversion-for-aspnet-core-mvc"></a>ASP.NET Core MVC 的 SetCompatibilityVersion 
+
+`SetCompatibilityVersion` 方法允许应用选择加入或退出 ASP.NET MVC Core 2.1+ 中引入的潜在中断行为变更。 这些潜在的中断行为变更通常取决于 MVC 子系统的行为方式以及运行时调用“代码”的方式。 通过选择加入，你将获取最新的行为以及 ASP.NET Core 的长期行为。
+
+以下代码将兼容模式设置为 ASP.NET Core 2.1：
+
+[!code-csharp[Main](startup/sampleCompatibility/Startup.cs?name=snippet1)]
+
+建议使用最新版本 (`CompatibilityVersion.Version_2_1`) 来测试应用程序。 我们预计大多数应用程序不会使用最新版本进行中断行为变更。 
+
+调用 `SetCompatibilityVersion(CompatibilityVersion.Version_2_0)` 的应用程序会被阻止进行 ASP.NET Core 2.1 MVC 和更高的 2.x 版本中引入的潜在中断行为变更。 该阻止操作：
+
+* 不适用于所有 2.1 和更高版本的更改，它的目标是潜在地中断 MVC 子系统中的 ASP.NET Core 运行时行为变更。
+* 不会扩展到下一个主要版本。
+
+不调用 `SetCompatibilityVersion` 的 ASP.NET Core 2.1 和更高 2.x 版本的应用程序的默认兼容性是 2.0 兼容性。 即，未调用 `SetCompatibilityVersion` 与调用 `SetCompatibilityVersion(CompatibilityVersion.Version_2_0)` 相同。
+
+以下代码将兼容模式设置为 ASP.NET Core 2.1（以下行为除外）：
+
+* [AllowCombiningAuthorizeFilters](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
+* [InputFormatterExceptionPolicy](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
+
+[!code-csharp[Main](startup/sampleCompatibility/Startup2.cs?name=snippet1)]
+
+对于遇到中断行为变更的应用，请使用适当的兼容性开关：
+
+* 允许使用最新版本并选择退出特定的中断行为变更。
+* 请用些时间更新应用，以便其适用于最新更改。
+
+[MvcOptions](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs) 类源注释充分地阐述了更改的内容以及为什么更改对大多数用户来说是一种改进。
+
+将来会推出 [ASP.NET Core 3.0 版本](https://github.com/aspnet/Home/wiki/Roadmap)。 在 3.0 版本中，将删除兼容性开关支持的旧行为。 我们认为这些积极的变化几乎使所有用户受益。 现在通过引入这些更改，大多数应用可以立即受益，其他人员将有时间更新其应用程序。
+
+::: moniker-end
 
 ## <a name="services-available-in-startup"></a>Startup 中可用的服务
 
@@ -74,19 +112,21 @@ Web 主机提供 `Startup` 类构造函数可用的某些服务。 应用通过 
 
 [ASP.NET Core 模板](/dotnet/core/tools/dotnet-new)配置支持开发人员异常页、[BrowserLink](http://vswebessentials.com/features/browserlink)、错误页、静态文件和 ASP.NET MVC 的管道：
 
-[!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Startup.cs?range=28-48&highlight=5,6,10,13,15)]
+[!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Startup.cs?range=28-48&highlight=5,6,10,13,15)]
 
-每个 `Use` 扩展方法将中间件组件添加到请求管道。 例如，`UseMvc` 扩展方法将[路由中间件](xref:fundamentals/routing)添加到请求管道，并将 [MVC](xref:mvc/overview) 配置为默认设置。
+每个 `Use` 扩展方法将中间件组件添加到请求管道。 例如，`UseMvc` 扩展方法将[路由中间件](xref:fundamentals/routing)添加到请求管道，并将 [MVC](xref:mvc/overview) 配置为默认处理程序。
+
+请求管道中的每个中间件组件负责调用管道中的下一个组件，或在适当情况下使链发生短路。 如果中间件链中未发生短路，则每个中间件都有第二次机会在将请求发送到客户端前处理该请求。
 
 其他服务（如 `IHostingEnvironment` 和 `ILoggerFactory`），也可以在方法签名中指定。 如果指定，其他服务如果可用，将被注入。
 
-有关如何使用 `IApplicationBuilder` 的详细信息，请参阅[中间件](xref:fundamentals/middleware/index)。
+有关如何使用 `IApplicationBuilder` 和中间件处理顺序的详细信息，请参阅[中间件](xref:fundamentals/middleware/index)。
 
 ## <a name="convenience-methods"></a>便利方法
 
 可使用 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder.configureservices) 和 [Configure](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure) 便利方法，而不是指定 `Startup` 类。 多次调用 `ConfigureServices` 将追加到另一个。 多次调用 `Configure` 将使用上一个方法调用。
 
-[!code-csharp[Main](startup/snapshot_sample/Program.cs?highlight=18,22)]
+[!code-csharp[](startup/snapshot_sample/Program.cs?highlight=18,22)]
 
 ## <a name="startup-filters"></a>Startup 筛选器
 
@@ -98,15 +138,15 @@ Web 主机提供 `Startup` 类构造函数可用的某些服务。 应用通过 
 
 [示例应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/startup/sample/)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）演示如何向 `IStartupFilter` 注册中间件。 示例应用包含一个中间件，该中间件从查询字符串参数中设置选项值：
 
-[!code-csharp[Main](startup/sample/RequestSetOptionsMiddleware.cs?name=snippet1)]
+[!code-csharp[](startup/sample/RequestSetOptionsMiddleware.cs?name=snippet1)]
 
 在 `RequestSetOptionsStartupFilter` 类中配置 `RequestSetOptionsMiddleware`：
 
-[!code-csharp[Main](startup/sample/RequestSetOptionsStartupFilter.cs?name=snippet1&highlight=7)]
+[!code-csharp[](startup/sample/RequestSetOptionsStartupFilter.cs?name=snippet1&highlight=7)]
 
 在 `ConfigureServices` 的服务容器中注册 `IStartupFilter`：
 
-[!code-csharp[Main](startup/sample/Startup.cs?name=snippet1&highlight=3)]
+[!code-csharp[](startup/sample/Startup.cs?name=snippet1&highlight=3)]
 
 当提供 `option` 的查询字符串参数时，中间件在 MVC 中间件呈现响应之前处理分配值：
 

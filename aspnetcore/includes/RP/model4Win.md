@@ -12,7 +12,7 @@
 No executable found matching command "dotnet-aspnet-codegenerator"
   ```
 
-打开一个到项目目录（包含 Program.cs、Startup.cs 和 .csproj 文件的目录）的命令 shell。
+当处于错误的目录时，会发生上述错误。 打开命令行界面，进入项目目录（包含 Program.cs、Startup.cs 和 .csproj 文件的目录），然后运行上述命令。
 
 如果收到错误：
   ```

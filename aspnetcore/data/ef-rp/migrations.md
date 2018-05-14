@@ -1,7 +1,7 @@
 ---
-title: "Razor 页面和 EF Core - 迁移 - 第 4 个教程，共 8 个教程"
+title: ASP.NET Core 中的 Razor 页面和 EF Core - 迁移 - 第 4 个教程（共 8 个）
 author: rick-anderson
-description: "本教程使用 EF Core 迁移功能管理 ASP.NET Core MVC 应用中的数据模型更改。"
+description: 本教程使用 EF Core 迁移功能管理 ASP.NET Core MVC 应用中的数据模型更改。
 manager: wpickett
 ms.author: riande
 ms.date: 10/15/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/migrations
-ms.openlocfilehash: e89d95702cb94556bc6e5dc73253c51acaa11578
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 690beaabeab098cf9b764730b1bf1bd04bf6b003
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="migrations---ef-core-with-razor-pages-tutorial-4-of-8"></a>迁移 - EF Core 和 Razor 页面教程（第 4 个教程，共 8 个）
+# <a name="razor-pages-with-ef-core-in-aspnet-core---migrations---4-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 迁移 - 第 4 个教程（共 8 个）
 
 作者：[Tom Dykstra](https://github.com/tdykstra)、[Jon P Smith](https://twitter.com/thereformedprog) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 本教程使用 EF Core 迁移功能管理数据模型更改。
 
@@ -52,7 +52,7 @@ https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/S
 
 在 appsettings.json 文件中，将连接字符串中 DB 名称更改为 ContosoUniversity2。
 
-[!code-json[Main](intro/samples/cu/appsettings2.json?range=1-4)]
+[!code-json[](intro/samples/cu/appsettings2.json?range=1-4)]
 
 更改连接字符串中的 DB 名称会导致初始迁移创建新的 DB。 之所以会创建新的 DB，是因为不存在具有该名称的 DB。 使用迁移无需更改连接字符串。
 
@@ -100,13 +100,13 @@ Done. To undo this action, use 'ef migrations remove'
 
 EF Core 命令 `migrations add` 已生成用于创建 DB 的代码。 此迁移代码位于 Migrations\<timestamp>_InitialCreate.cs 文件中。 `InitialCreate` 类的 `Up` 的方法创建与数据模型实体集相对应的 DB 表。 `Down` 方法删除这些表，如下例所示：
 
-[!code-csharp[Main](intro/samples/cu/Migrations/20171026010210_InitialCreate.cs?range=8-24,77-)]
+[!code-csharp[](intro/samples/cu/Migrations/20171026010210_InitialCreate.cs?range=8-24,77-)]
 
 迁移调用 `Up` 方法为迁移实现数据模型更改。 输入用于回退更新的命令时，迁移调用 `Down` 方法。
 
 前面的代码适用于初始迁移。 该代码是运行 `migrations add InitialCreate` 命令时创建的。 迁移名称参数（本示例中为“InitialCreate”）用于指定文件名。 迁移名称可以是任何有效的文件名。 最好选择能概括迁移中所执行操作的字词或短语。 例如，添加了系表的迁移可称为“AddDepartmentTable”。
 
-如果创建了初始迁移并且 DB 已退出：
+如果创建了初始迁移并且存在 DB：
 
 * 会生成 DB 创建代码。
 * DB 创建代码不需要运行，因为 DB 已与数据模型相匹配。 即使 DB 创建代码运行也不会做出任何更改，因为 DB 已与数据模型相匹配。
@@ -115,15 +115,13 @@ EF Core 命令 `migrations add` 已生成用于创建 DB 的代码。 此迁移�
 
 以前，需要更改连接字符串才能使用 DB 的新名称。 指定的 DB 不存在，因此迁移会创建 DB。
 
-### <a name="examine-the-data-model-snapshot"></a>了解数据模型快照
+### <a name="the-data-model-snapshot"></a>数据模型快照
 
-迁移会在 Migrations/SchoolContextModelSnapshot.cs 中创建当前 DB 架构的快照：
+迁移在 Migrations/SchoolContextModelSnapshot.cs 中创建当前数据库架构的快照。 添加迁移时，EF 会通过将数据模型与快照文件进行对比来确定已更改的内容。
 
-[!code-csharp[Main](intro/samples/cu/Migrations/SchoolContextModelSnapshot1.cs?name=snippet_Truncate)]
+删除迁移时，请使用 [dotnet ef migrations remove](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) 命令。 `dotnet ef migrations remove` 删除迁移，并确保正确重置快照。
 
-由于当前 DB 架构以代码表示，因此 EF Core 无需与 DB 交互即可创建迁移。 添加迁移时，EF Core 会通过将数据模型与快照文件进行对比来确定已更改的内容。 EF Core 仅在必须更新 DB 时才与 DB 进行交互。
-
-快照文件必须与创建它的迁移保持同步。 删除名为 \<timestamp>_\<migrationname>.cs 的文件时不会删除迁移。 删除该文件后，剩余的迁移不会与 DB 快照文件保持同步。 若要删除上次添加的迁移，请使用 [dotnet ef migrations remove](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) 命令。
+有关如何使用快照文件的详细信息，请参阅[团队环境中的 EF Core 迁移](/ef/core/managing-schemas/migrations/teams)。
 
 ## <a name="remove-ensurecreated"></a>删除 EnsureCreated
 
@@ -181,15 +179,15 @@ info: Microsoft.EntityFrameworkCore.Database.Command[200101]
 Done.
 ```
 
-若要降低日志消息的详细级别，请更改 appsettings.Development.json 文件中的日志级别。 有关详细信息，请参阅[日志记录介绍](xref:fundamentals/logging/index)。
+要降低日志消息的详细级别，请更改 appsettings.Development.json 文件中的日志级别。 有关详细信息，请参阅[日志记录介绍](xref:fundamentals/logging/index)。
 
 使用 SQL Server 对象资源管理器检查 DB。 请注意，增加了 `__EFMigrationsHistory` 表。 `__EFMigrationsHistory` 表跟踪已应用到 DB 的迁移。 查看 `__EFMigrationsHistory` 表中的数据，其中显示对应初始迁移的一行数据。 上面的 CLI 输出示例中最后部分的日志显示了创建此行的 INSERT 语句。
 
 运行应用并验证一切正常运行。
 
-## <a name="appling-migrations-in-production"></a>在生产环境中应用迁移
+## <a name="applying-migrations-in-production"></a>在生产环境中应用迁移
 
-不建议生产应用在应用程序启动时调用 [Database.Migrate](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_)。 不应从服务器场中的应用调用 `Migrate`。 例如，已将应用在云中部署为横向扩展（运行应用的多个示例）的情况。
+不建议生产应用在应用程序启动时调用 [Database.Migrate](/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_)。 不应从服务器场中的应用调用 `Migrate`。 例如，已将应用在云中部署为横向扩展（运行应用的多个示例）的情况。
 
 应在部署过程中以受控的方式执行数据库迁移。 生产数据库迁移方法包括：
 
@@ -224,7 +222,7 @@ https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/S
 应用会生成以下异常：
 
 ```text
-`SqlException: Cannot open database "ContosoUniversity" requested by the login.
+SqlException: Cannot open database "ContosoUniversity" requested by the login.
 The login failed.
 Login failed for user 'user name'.
 ```
@@ -236,6 +234,6 @@ Login failed for user 'user name'.
 * 请再次运行该命令。
 * 请在页面底部留言。
 
->[!div class="step-by-step"]
-[上一页](xref:data/ef-rp/sort-filter-page)
-[下一页](xref:data/ef-rp/complex-data-model)
+> [!div class="step-by-step"]
+> [上一页](xref:data/ef-rp/sort-filter-page)
+> [下一页](xref:data/ef-rp/complex-data-model)

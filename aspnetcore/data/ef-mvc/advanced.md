@@ -1,7 +1,7 @@
 ---
 title: 使用 EF Core 创建 ASP.NET Core MVC - 高级 - 第 10 个教程（共 10 个）
 author: tdykstra
-description: 本教程介绍了除开发使用 Entity Framework Core 的 ASP.NET Web 应用程序的基本知识以外的几个主题，了解这些主题大有益处。
+description: 本教程不止会介绍使用 Entity Framework Core 开发 ASP.NET Core Web 应用的基础知识，还会介绍其他有用主题。
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: 458f2dc8a67f8c706d043f0d9d7cb7ce962e52ce
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 655f60116cbfe1dd81b7e2855906446b919b6489
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>EF Core 和 ASP.NET Core MVC 教程 — 高级主题 (10 / 10)
+# <a name="aspnet-core-mvc-with-ef-core---advanced---10-of-10"></a>使用 EF Core 创建 ASP.NET Core MVC - 高级 - 第 10 个教程（共 10 个）
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -41,7 +41,7 @@ Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core �
 
 在*DepartmentsController.cs*中的`Details`方法，通过代码调用`FromSql`方法检索一个部门，如以下高亮代码所示：
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_RawSQL&highlight=8,9,10,13)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_RawSQL&highlight=8,9,10,13)]
 
 为了验证新代码是否工作正常，请选择**Department**选项卡，然后点击某个部门的**Detail**。
 
@@ -53,11 +53,11 @@ Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core �
 
 在*HomeController.cs*中，将`About`方法替换为以下代码：
 
-[!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseRawSQL&highlight=3-32)]
+[!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseRawSQL&highlight=3-32)]
 
 添加 using 语句：
 
-[!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings2)]
+[!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings2)]
 
 运行应用并转到“关于”页面。 显示的数据和之前一样。
 
@@ -71,9 +71,9 @@ Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core �
 
 在 CoursesContoller.cs 中，为 HttpGet 和 HttpPost 添加 UpdateCourseCredits 方法：
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_UpdateGet)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_UpdateGet)]
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_UpdatePost)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_UpdatePost)]
 
 当控制器处理 HttpGet 请求时，`ViewData["RowsAffected"]`中不会返回任何东西，并且在视图中显示一个空文本框和提交按钮，如上图所示。
 
@@ -85,7 +85,7 @@ Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core �
 
 在*Views/Courses/UpdateCourseCredits.cshtml*中，将模板代码替换为以下代码：
 
-[!code-html[Main](intro/samples/cu/Views/Courses/UpdateCourseCredits.cshtml)]
+[!code-html[](intro/samples/cu/Views/Courses/UpdateCourseCredits.cshtml)]
 
 通过选择**Courses**选项卡运行`UpdateCourseCredits`方法，然后在浏览器地址栏中 URL 的末尾添加"/ UpdateCourseCredits"到 (例如： `http://localhost:5813/Courses/UpdateCourseCredits`)。 在文本框中输入数字：
 
@@ -149,7 +149,7 @@ ORDER BY [t].[ID]
 
 有关如何实现存储库和工作单元模式的详细信息，请参阅[本系列教程的 Entity Framework 5 版本](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)。
 
-Entity Framework Core 的实现可用于测试的内存数据库驱动程序。 有关详细信息，请参阅[测试内存数据库](https://docs.microsoft.com/ef/core/miscellaneous/testing/in-memory)。
+Entity Framework Core 的实现可用于测试的内存数据库驱动程序。 有关详细信息，请参阅[测试以及 InMemory](https://docs.microsoft.com/ef/core/miscellaneous/testing/in-memory)。
 
 ## <a name="automatic-change-detection"></a>自动脏值检测
 
@@ -169,7 +169,7 @@ _context.ChangeTracker.AutoDetectChangesEnabled = false;
 
 ## <a name="entity-framework-core-source-code-and-development-plans"></a>Entity Framework Core 源代码与开发计划
 
-Entity Framework Core 的源代码位于[https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore)。 仓库中除了有源代码，还可包括每夜生成、 问题跟踪、 功能规范、 设计会议备忘录和[将来的开发路线图](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap)。 你可以归档或查找 bug 并进行更改。
+Entity Framework Core 源位于 [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore)。 仓库中除了有源代码，还可包括每夜生成、 问题跟踪、 功能规范、 设计会议备忘录和[将来的开发路线图](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap)。 你可以归档或查找 bug 并进行更改。
 
 尽管源代码处于开源状态， Entity Framework Core 是由 Microsoft 完全支持的产品。 Microsoft Entity Framework 团队将控制接受哪些贡献和测试所有的代码更改，以确保每个版本的质量。
 
@@ -182,7 +182,7 @@ Entity Framework Core 的源代码位于[https://github.com/aspnet/EntityFramewo
 
 [本系列的第三个教程](sort-filter-page.md)演示如何通过在`switch`语句中对列名称进行硬编码来编写 LINQ 。 如果只有两列可供选择，这种方法可行，但是如果拥有许多列，代码可能会变得冗长。 要解决该问题，可使用 `EF.Property` 方法将属性名称指定为一个字符串。 要尝试此方法，请将 `StudentsController` 中的 `Index` 方法替换为以下代码。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DynamicLinq)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DynamicLinq)]
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -192,7 +192,7 @@ Entity Framework Core 的源代码位于[https://github.com/aspnet/EntityFramewo
 
 有关如何部署 web 应用程序的信息，请参阅[托管和部署](xref:host-and-deploy/index)。
 
-有关 ASP.NET Core MVC 相关的其他主题 ( 如身份验证与授权 ) 的信息，请参阅[ASP.NET Core文档](https://docs.microsoft.com/aspnet/core/)。
+有关 ASP.NET Core MVC 相关的其他主题 ( 如身份验证与授权 ) 的信息，请参阅[ASP.NET Core文档](xref:index)。
 
 ## <a name="acknowledgments"></a>鸣谢
 
@@ -244,5 +244,5 @@ dotnet ef database drop
 
 请检查连接字符串。 如果你已手动删除数据库文件，更改数据库的构造字符串中数据库的名称，然后从头开始使用新的数据库。
 
->[!div class="step-by-step"]
-[上一篇](inheritance.md)
+> [!div class="step-by-step"]
+> [上一篇](inheritance.md)

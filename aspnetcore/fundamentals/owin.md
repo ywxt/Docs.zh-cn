@@ -1,7 +1,7 @@
 ---
-title: ".NET 的开放 Web 接口 (OWIN)"
+title: ASP.NET Core 中 .NET 的开放 Web 接口 (OWIN)
 author: ardalis
-description: "了解 ASP.NET Core 如何支持 .NET 的开放 Web 接口 (OWIN)，将 Web 应用与 Web 服务器分离。"
+description: 了解 ASP.NET Core 如何支持 .NET 的开放 Web 接口 (OWIN)，将 Web 应用与 Web 服务器分离。
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/owin
-ms.openlocfilehash: 1a6a49715840d66dc37465758d3a896af96e2976
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 3ff7b6e02284b4f6c61bf5d31013b4edfe8f7f29
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/18/2018
 ---
-# <a name="introduction-to-open-web-interface-for-net-owin"></a>.NET 的开放 Web 接口 (OWIN) 的介绍
+# <a name="open-web-interface-for-net-owin-with-aspnet-core"></a>ASP.NET Core 中 .NET 的开放 Web 接口 (OWIN)
 
 作者：[Steve Smith](https://ardalis.com/) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -80,10 +80,10 @@ public void Configure(IApplicationBuilder app)
 ```csharp
 app.UseOwin(pipeline =>
 {
-    pipeline(next =>
+    pipeline(async (next) =>
     {
         // do something before
-        return OwinHello;
+        await OwinHello(new OwinEnvironment(HttpContext));
         // do something after
     });
 });
@@ -95,7 +95,7 @@ app.UseOwin(pipeline =>
 
 基于 OWIN 的服务器可托管 ASP.NET 应用程序。 [Nowin](https://github.com/Bobris/Nowin)（.NET OWIN Web 服务器）属于这种服务器。 本文的示例中包含了一个引用 Nowin 的项目，并使用它创建了一个自托管 ASP.NET Core 的 `IServer`。
 
-[!code-csharp[Main](owin/sample/src/NowinSample/Program.cs?highlight=15)]
+[!code-csharp[](owin/sample/src/NowinSample/Program.cs?highlight=15)]
 
 `IServer` 是需要 `Features` 属性和 `Start` 方法的接口。
 
@@ -134,10 +134,9 @@ namespace Microsoft.AspNetCore.Hosting
 }
 ```
 
-准备就绪后，只需使用此自定义服务器来运行 ASP.NET 应用程序以调用 Program.cs 中的扩展：
+完成此操作后，调用 Program.cs 中的扩展以使用此自定义服务器运行 ASP.NET Core 应用：
 
 ```csharp
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -162,7 +161,6 @@ namespace NowinSample
         }
     }
 }
-
 ```
 
 了解有关 ASP.NET [服务器](servers/index.md)的更多信息。

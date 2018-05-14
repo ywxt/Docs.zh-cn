@@ -1,7 +1,7 @@
 ---
-title: "Razor 页面和 EF Core - 数据模型 - 第 5 个教程，共 8 个教程"
+title: ASP.NET Core 中的 Razor 页面和 EF Core - 数据模型 - 第 5 个教程（共 8 个）
 author: rick-anderson
-description: "本教程将添加更多实体和关系，并通过指定格式设置、验证和数据库映射规则来自定义数据模型。"
+description: 本教程将添加更多实体和关系，并通过指定格式设置、验证和映射规则来自定义数据模型。
 manager: wpickett
 ms.author: riande
 ms.date: 10/25/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 58bb773ba16314827da84909def05a8ef370479b
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 2cec45afbf08e5dd379a54e780e4218bfc86d13f
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="creating-a-complex-data-model---ef-core-with-razor-pages-tutorial-5-of-8"></a>创建复杂数据模型 - EF Core 和 Razor 页面教程（第 5 个，共 8 个）
+# <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 数据模型 - 第 5 个教程（共 8 个）
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 前面的教程介绍了由三个实体组成的基本数据模型。 本教程将演示如何：
 
@@ -42,16 +42,16 @@ ms.lasthandoff: 01/31/2018
 
 用以下突出显示的代码更新 *Models/Student.cs*：
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
-[DataType](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatypeattribute?view=netframework-4.7.1) 特性指定比数据库内部类型更具体的数据类型。 在此情况下，应仅显示日期，而不是日期加时间。 [DataType 枚举](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatype?view=netframework-4.7.1)提供多种数据类型，例如日期、时间、电话号码、货币、电子邮件地址等。应用还可通过 `DataType` 特性自动提供类型特定的功能。 例如：
+[DataType](/dotnet/api/system.componentmodel.dataannotations.datatypeattribute?view=netframework-4.7.1) 特性指定比数据库内部类型更具体的数据类型。 在此情况下，应仅显示日期，而不是日期加时间。 [DataType 枚举](/dotnet/api/system.componentmodel.dataannotations.datatype?view=netframework-4.7.1)提供多种数据类型，例如日期、时间、电话号码、货币、电子邮件地址等。应用还可通过 `DataType` 特性自动提供类型特定的功能。 例如:
 
 * `mailto:` 链接将依据 `DataType.EmailAddress` 自动创建。
 * 大多数浏览器中都提供面向 `DataType.Date` 的日期选择器。
 
 `DataType` 特性发出 HTML 5 `data-`（读作 data dash）特性供 HTML 5 浏览器使用。 `DataType` 特性不提供验证。
 
-`DataType.Date` 不指定显示日期的格式。 默认情况下，日期字段根据基于服务器的 [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support) 的默认格式进行显示。
+`DataType.Date` 不指定显示日期的格式。 默认情况下，日期字段根据基于服务器的 [CultureInfo](xref:fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support) 的默认格式进行显示。
 
 `DisplayFormat` 特性用于显式指定日期格式：
 
@@ -74,13 +74,13 @@ ms.lasthandoff: 01/31/2018
 
 ### <a name="the-stringlength-attribute"></a>StringLength 特性
 
-可使用特性指定数据验证规则和验证错误消息。 [StringLength](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.stringlengthattribute?view=netframework-4.7.1) 特性指定数据字段中允许的字符的最小长度和最大长度。 `StringLength` 特性还提供客户端和服务器端验证。 最小值对数据库架构没有任何影响。
+可使用特性指定数据验证规则和验证错误消息。 [StringLength](/dotnet/api/system.componentmodel.dataannotations.stringlengthattribute?view=netframework-4.7.1) 特性指定数据字段中允许的字符的最小长度和最大长度。 `StringLength` 特性还提供客户端和服务器端验证。 最小值对数据库架构没有任何影响。
 
 使用以下代码更新 `Student` 模型：
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
 
-上面的代码将名称限制为不超过 50 个字符。 `StringLength` 特性不会阻止用户在名称中输入空格。 [RegularExpression](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1) 特性用于向输入应用限制。 例如，以下代码要求第一个字符为大写，其余字符按字母顺序排列：
+上面的代码将名称限制为不超过 50 个字符。 `StringLength` 特性不会阻止用户在名称中输入空格。 [RegularExpression](/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1) 特性用于向输入应用限制。 例如，以下代码要求第一个字符为大写，其余字符按字母顺序排列：
 
 ```csharp
 [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
@@ -110,7 +110,7 @@ ms.lasthandoff: 01/31/2018
 
 用以下突出显示的代码更新 *Student.cs* 文件：
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
 
 进行上述更改后，应用中的 `Student.FirstMidName` 将映射到 `Student` 表的 `FirstName` 列。
 
@@ -155,7 +155,7 @@ Please review the migration for accuracy.
 
 用以下代码更新 *Models/Student.cs*：
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
 
 ### <a name="the-required-attribute"></a>Required 特性
 
@@ -183,7 +183,7 @@ public string LastName { get; set; }
 
 用以下代码创建 Models/Instructor.cs：
 
-[!code-csharp[Main](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
+[!code-csharp[](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
 
 请注意，`Student` 和 `Instructor` 实体中具有几个相同属性。 本系列后面的“实现继承”教程将重构此代码以消除冗余。
 
@@ -229,7 +229,7 @@ public OfficeAssignment OfficeAssignment { get; set; }
 
 用以下代码创建 Models/OfficeAssignment.cs：
 
-[!code-csharp[Main](intro/samples/cu/Models/OfficeAssignment.cs)]
+[!code-csharp[](intro/samples/cu/Models/OfficeAssignment.cs)]
 
 ### <a name="the-key-attribute"></a>Key 特性
 
@@ -278,7 +278,7 @@ public Instructor Instructor { get; set; }
 
 用以下代码更新 *Models/Course.cs*：
 
-[!code-csharp[Main](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
+[!code-csharp[](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
 
 `Course` 实体具有外键 (FK) 属性 `DepartmentID`。 `DepartmentID` 指向相关的 `Department` 实体。 `Course` 实体具有 `Department` 导航属性。
 
@@ -336,7 +336,7 @@ public ICollection<CourseAssignment> CourseAssignments { get; set; }
 
 用以下代码创建 Models/Department.cs：
 
-[!code-csharp[Main](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
+[!code-csharp[](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
 
 ### <a name="the-column-attribute"></a>Column 特性
 
@@ -397,7 +397,7 @@ public ICollection<Course> Courses { get; set; }
 
 用以下代码更新 *Models/Enrollment.cs*：
 
-[!code-csharp[Main](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
+[!code-csharp[](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
 
 ### <a name="foreign-key-and-navigation-properties"></a>外键和导航属性
 
@@ -439,7 +439,7 @@ public Student Student { get; set; }
 
 用以下代码创建 Models/CourseAssignment.cs：
 
-[!code-csharp[Main](intro/samples/cu/Models/CourseAssignment.cs)]
+[!code-csharp[](intro/samples/cu/Models/CourseAssignment.cs)]
 
 ### <a name="instructor-to-courses"></a>讲师-课程
 
@@ -473,7 +473,7 @@ FK 不能为 NULL。 `CourseAssignment` 中的两个 FK（`InstructorID` 和 `Co
 
 将以下突出显示的代码添加到 Data/SchoolContext.cs：
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
 
 上面的代码添加新实体并配置 `CourseAssignment` 实体的组合 PK。
 
@@ -523,7 +523,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 更新 Data/DbInitializer.cs 中的代码：
 
-[!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
+[!code-csharp[](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
 
 前面的代码为新实体提供种子数据。 大多数此类代码会创建新实体对象并加载示例数据。 示例数据用于测试。 前面的代码将创建以下多对多关系：
 
@@ -572,12 +572,12 @@ database "ContosoUniversity", table "dbo.Department", column 'DepartmentID'.
 
 * 或者使用以下项删除数据库：
 
-    * **SQL Server 对象资源管理器** (SSOX)。
-    * `database drop` CLI 命令：
+  * **SQL Server 对象资源管理器** (SSOX)。
+  * `database drop` CLI 命令：
 
-   ```console
-   dotnet ef database drop
-   ```
+    ```console
+    dotnet ef database drop
+    ```
 
 在命令窗口中运行 `database update`：
 
@@ -613,7 +613,7 @@ dotnet ef database update
 
 {timestamp}_ComplexDataModel.cs 文件包含以下代码：
 
-[!code-csharp[Main](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_DepartmentID)]
+[!code-csharp[](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_DepartmentID)]
 
 上面的代码将向 `Course` 表添加不可为 NULL 的 `DepartmentID` FK。 前面教程中的数据库在 `Course` 中包含行，以便迁移时不会更新表。
 
@@ -629,9 +629,9 @@ dotnet ef database update
 * 打开 {timestamp}_ComplexDataModel.cs 文件。
 * 对将 `DepartmentID` 列添加到 `Course` 表的代码行添加注释。
 
-[!code-csharp[Main](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_CommentOut&highlight=9-13)]
+[!code-csharp[](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_CommentOut&highlight=9-13)]
 
-添加以下突出显示的代码。 新代码在 `.CreateTable( name: "Department"` 块后：[!code-csharp[Main](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_CreateDefaultValue&highlight=22-32)]
+添加以下突出显示的代码。 新代码在 `.CreateTable( name: "Department"` 块后：[!code-csharp[](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_CreateDefaultValue&highlight=22-32)]
 
 经过上面的更改，`Course` 行将在 `ComplexDataModel` `Up` 方法运行后与“临时”系建立联系。
 
@@ -642,6 +642,6 @@ dotnet ef database update
 
 下一教程将介绍相关数据。
 
->[!div class="step-by-step"]
-[上一页](xref:data/ef-rp/migrations)
-[下一页](xref:data/ef-rp/read-related-data)
+> [!div class="step-by-step"]
+> [上一页](xref:data/ef-rp/migrations)
+> [下一页](xref:data/ef-rp/read-related-data)

@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 中基于工厂的中间件激活"
+title: ASP.NET Core 中基于工厂的中间件激活
 author: guardrex
-description: "了解如何在 ASP.NET Core 中通过基于工厂的激活实现使用强类型中间件。"
+description: 了解如何在 ASP.NET Core 中通过基于工厂的激活实现使用强类型中间件。
 ms.author: riande
 manager: wpickett
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware/extensibility
-ms.openlocfilehash: 57ff9db2edbf307f2442443dc14e69b0498f7475
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 76ba257abfb11e0c2950b974f837c6ae5818a6a1
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="factory-based-middleware-activation-in-aspnet-core"></a>ASP.NET Core 中基于工厂的中间件激活
 
@@ -35,8 +35,8 @@ ms.lasthandoff: 02/01/2018
 
 示例应用演示了使用以下两种方式激活的中间件：
 
-* 约定（`ConventionalMiddleware`）。 有关使用约定激活中间件的详细信息，请参阅[中间件](xref:fundamentals/middleware/index)主题。
-* [IMiddlewareFactory](/dotnet/api/microsoft.aspnetcore.http.imiddlewarefactory) 实现（`IMiddlewareMiddleware`）。 默认的 [MiddlewareFactory 类](/dotnet/api/microsoft.aspnetcore.http.middlewarefactory)可激活中间件。
+* 约定。 有关使用约定激活中间件的详细信息，请参阅[中间件](xref:fundamentals/middleware/index)主题。
+* [IMiddleware](/dotnet/api/microsoft.aspnetcore.http.imiddleware) 实现。 默认的 [MiddlewareFactory 类](/dotnet/api/microsoft.aspnetcore.http.middlewarefactory)可激活中间件。
 
 这两种中间件实现的功能相同，并能记录由查询字符串参数 (`key`) 提供的值。 中间件使用插入的数据库上下文（作用域服务）将查询字符串值记录在内存中数据库。
 
@@ -46,15 +46,15 @@ ms.lasthandoff: 02/01/2018
 
 使用约定激活的中间件：
 
-[!code-csharp[Main](extensibility/sample/Middleware/ConventionalMiddleware.cs?name=snippet1)]
+[!code-csharp[](extensibility/sample/Middleware/ConventionalMiddleware.cs?name=snippet1)]
 
 使用 `MiddlewareFactory` 激活的中间件：
 
-[!code-csharp[Main](extensibility/sample/Middleware/IMiddlewareMiddleware.cs?name=snippet1)]
+[!code-csharp[](extensibility/sample/Middleware/IMiddlewareMiddleware.cs?name=snippet1)]
 
 程序会为中间件创建扩展：
 
-[!code-csharp[Main](extensibility/sample/Middleware/MiddlewareExtensions.cs?name=snippet1)]
+[!code-csharp[](extensibility/sample/Middleware/MiddlewareExtensions.cs?name=snippet1)]
 
 无法通过 `UseMiddleware` 将对象传递给工厂激活的中间件：
 
@@ -69,11 +69,11 @@ public static IApplicationBuilder UseIMiddlewareMiddleware(
 
 将工厂激活的中间件添加到 *Startup.cs* 的内置容器中：
 
-[!code-csharp[Main](extensibility/sample/Startup.cs?name=snippet1&highlight=6)]
+[!code-csharp[](extensibility/sample/Startup.cs?name=snippet1&highlight=6)]
 
 两个中间件均在 `Configure` 的请求处理管道中注册：
 
-[!code-csharp[Main](extensibility/sample/Startup.cs?name=snippet2&highlight=12-13)]
+[!code-csharp[](extensibility/sample/Startup.cs?name=snippet2&highlight=12-13)]
 
 ## <a name="imiddlewarefactory"></a>IMiddlewareFactory
 
@@ -84,3 +84,4 @@ public static IApplicationBuilder UseIMiddlewareMiddleware(
 ## <a name="additional-resources"></a>其他资源
 
 * [中间件](xref:fundamentals/middleware/index)
+* [第三方容器中的中间件激活](xref:fundamentals/middleware/extensibility-third-party-container)

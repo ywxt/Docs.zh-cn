@@ -1,19 +1,19 @@
 ---
-title: "ASP.NET Core 中的 WebListener Web 服务器实现"
+title: ASP.NET Core 中的 WebListener Web 服务器实现
 author: rick-anderson
-description: "介绍适用于 Windows 上 ASP.NET Core 的 Web 服务器 WebListener。 WebListener 构建于 Http.Sys 内核模式驱动程序之上，是 Kestrel 的一种替代选择，可用来直接连接到 Internet，而无需 IIS。"
+description: 了解 WebListener，它是 Windows 上 ASP.NET Core 的 Web 服务器，可用于无需 IIS，直接连接到 Internet。
 manager: wpickett
 ms.author: riande
-ms.date: 08/07/2017
+ms.date: 03/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: fb2e0621645a48f4e603d754d8babbc07a78cae4
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: cd2e477824d916afcf1a7901e935dd465a466922
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 WebListener Web 服务器实现
 
@@ -78,7 +78,7 @@ WebListener 对于在无需使用 IIS 的情况下直接向 Internet 公开服�
 
 * 安装 NuGet 包 [Microsoft.AspNetCore.Server.WebListener](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.WebListener/)。 这还将安装 [Microsoft.Net.Http.Server](https://www.nuget.org/packages/Microsoft.Net.Http.Server/) 作为依赖项。
 
-* 在 `Main` 方法中，调用 [WebHostBuilder](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilder) 上的 `UseWebListener` 扩展方法，指定所需的任何 WebListener [选项](https://github.com/aspnet/HttpSysServer/blob/rel/1.1.2/src/Microsoft.AspNetCore.Server.WebListener/WebListenerOptions.cs)和[设置](https://github.com/aspnet/HttpSysServer/blob/rel/1.1.2/src/Microsoft.Net.Http.Server/WebListenerSettings.cs)，如以下示例所示：
+* 在 `Main` 方法中，调用 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 上的 `UseWebListener` 扩展方法，指定所需的任何 WebListener [选项](https://github.com/aspnet/HttpSysServer/blob/rel/1.1.2/src/Microsoft.AspNetCore.Server.WebListener/WebListenerOptions.cs)和[设置](https://github.com/aspnet/HttpSysServer/blob/rel/1.1.2/src/Microsoft.Net.Http.Server/WebListenerSettings.cs)，如以下示例所示：
 
   [!code-csharp[](weblistener/sample/Program.cs?name=snippet_Main&highlight=13-17)]
 
@@ -87,6 +87,9 @@ WebListener 对于在无需使用 IIS 的情况下直接向 Internet 公开服�
   默认情况下，ASP.NET Core 绑定到 `http://localhost:5000`。 若要配置 URL 前缀和端口，可以使用 `UseURLs` 扩展方法、`urls` 命令行参数或 ASP.NET Core 配置系统。 有关详细信息，请参阅[托管](../../fundamentals/hosting.md)。
 
   Web 侦听器使用 [Http.Sys 前缀字符串格式](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)。 没有特定于 WebListener 的前缀字符串格式要求。
+
+  > [!WARNING]
+  > 不应使用顶级通配符绑定（`http://*:80/` 和 `http://+:80`）。 顶级通配符绑定可能会为应用带来安全漏洞。 此行为同时适用于强通配符和弱通配符。 使用显式主机名而不是通配符。 如果可控制整个父域（区别于易受攻击的 `*.com`），则子域通配符绑定（例如，`*.mysub.com`）不具有此安全风险。 有关详细信息，请参阅 [rfc7230 第 5.4 条](https://tools.ietf.org/html/rfc7230#section-5.4)。
 
   > [!NOTE]
   > 请确保在服务器上预先注册的 `UseUrls` 中指定相同的前缀字符串。 

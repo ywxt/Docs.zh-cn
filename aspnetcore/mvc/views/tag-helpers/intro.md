@@ -1,22 +1,22 @@
 ---
-title: "ASP.NET Core 中的标记帮助程序"
+title: ASP.NET Core 中的标记帮助程序
 author: rick-anderson
-description: "了解标记帮助程序的定义及其在 ASP.NET Core 中的用法。"
+description: 了解标记帮助程序的定义及其在 ASP.NET Core 中的用法。
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.date: 7/14/2017
+ms.date: 2/14/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/intro
-ms.openlocfilehash: 939eccd45ec437f379fb9349c24246cc0683528b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0c66b700f9bb3e6349fe2e0c8a7e254b8e7903a5
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="introduction-to-tag-helpers-in-aspnet-core"></a>ASP.NET Core 中标记帮助程序的介绍 
+# <a name="tag-helpers-in-aspnet-core"></a>ASP.NET Core 中的标记帮助程序
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -32,19 +32,32 @@ ms.lasthandoff: 01/30/2018
 
 **使用仅在服务器上可用的信息，可提高生产力，并能生成更稳定、可靠和可维护的代码** 例如，过去更新映像时，必须在更改映像时更改映像名称。 出于性能原因，要主动缓存映像，而若不更改映像的名称，客户端就可能获得过时的副本。 以前，编辑完映像后，必须更改名称，而且需要更新 Web 应用中对该映像的每个引用。 这不仅大费周章，还容易出错（可能会漏掉某个引用、意外输入错误的字符串等等）内置 `ImageTagHelper` 可自动执行此操作。 `ImageTagHelper` 可将版本号追加到映像名称，这样每当映像出现更改时，服务器都会自动为该映像生成新的唯一版本。 客户端总是能获得最新映像。 使用 `ImageTagHelper` 实质上是免费获得稳健性而节省劳动力。
 
-大多数内置标记帮助程序以现有 HTML 元素为目标，为该元素提供服务器端属性。 例如，Views/Account 文件夹中的许多视图都使用的 `<input>` 元素包含 `asp-for` 特性，它会将指定模型属性的名称提取到呈现的 HTML 中。 以下 Razor 标记：
+大多数内置标记帮助程序以标准 HTML 元素为目标，为该元素提供服务器端属性。 例如，`<input>` 用于包含 `asp-for` 特性的“视图/帐户”文件夹中的很多视图。 此特性将指定模型属性的名称提取至所呈现的 HTML。 以一个具备以下模型的 Razor 视图为例：
 
-```cshtml
-<label asp-for="Email"></label>
+```csharp
+public class Movie
+{
+    public int ID { get; set; }
+    public string Title { get; set; }
+    public DateTime ReleaseDate { get; set; }
+    public string Genre { get; set; }
+    public decimal Price { get; set; }
+}
 ```
 
-生成以下 HTML：
+以下 Razor 标记：
 
 ```cshtml
-<label for="Email">Email</label>
+<label asp-for="Movie.Title"></label>
 ```
 
-通过 `LabelTagHelper` 中的 `For` 属性，可使用 `asp-for` 特性。 请参阅[创作标记帮助程序](authoring.md)，获取详细信息。
+则会生成以下 HTML：
+
+```html
+<label for="Movie_Title">Title</label>
+```
+
+通过 [LabelTagHelper](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.labeltaghelper?view=aspnetcore-2.0) 中的 `For` 属性，可使用 `asp-for` 特性。 请参阅[创作标记帮助程序](xref:mvc/views/tag-helpers/authoring)，获取详细信息。
 
 ## <a name="managing-tag-helper-scope"></a>管理标记帮助程序作用域
 
@@ -56,13 +69,13 @@ ms.lasthandoff: 01/30/2018
 
 如果创建名为 AuthoringTagHelpers的新 ASP.NET Core Web 应用（无身份验证），将向项目添加以下 Views/_ViewImports.cshtml 文件：
 
-[!code-cshtml[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=2&range=2-3)]
+[!code-cshtml[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=2&range=2-3)]
 
 `@addTagHelper` 指令让视图可以使用标记帮助程序。 在此示例中，视图文件是 Views/_ViewImports.cshtml，“Views”文件夹及其子目录中的所有视图文件都会默认继承它，使得标记帮助程序可用。 上面的代码使用通配符语法（“\*”），指定程序集 (Microsoft.AspNetCore.Mvc.TagHelpers) 中的所有标记帮助程序对于 Views 目录或子目录中的所有视图文件可用。 `@addTagHelper` 后第一个参数指定要加载的标记帮助程序（我们使用“\*”指定加载所有标记帮助程序），第二个参数“Microsoft.AspNetCore.Mvc.TagHelpers”指定包含标记帮助程序的程序集。 Microsoft.AspNetCore.Mvc.TagHelpers 是内置 ASP.NET Core 标记帮助程序的程序集。
 
 要公开此项目中的所有标记帮助程序（将创建名为 AuthoringTagHelpers 的程序集），可使用以下内容：
 
-[!code-cshtml[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=3)]
+[!code-cshtml[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=3)]
 
 如果项目包含具有默认命名空间 (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`) 的 `EmailTagHelper`，则可提供标记帮助程序的完全限定名称 (FQN)：
 
@@ -148,7 +161,7 @@ ms.lasthandoff: 01/30/2018
 
 ![图像](intro/_static/labelaspfor2.png)
 
-可在双引号 ("") 内输入 Visual Studio CompleteWord 快捷方式（[默认值](https://docs.microsoft.com/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio)为 Ctrl+空格键），即可使用 C#，就像在 C# 类中一样。 IntelliSense 会显示页面模型上的所有方法和属性。 由于属性类型是 `ModelExpression`，所以这些方法和属性可用。 在下图中，我正在编辑 `Register` 视图，所以 `RegisterViewModel` 是可用的。
+可在双引号 ("") 内输入 Visual Studio CompleteWord 快捷方式（[默认值](/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio)为 Ctrl+空格键），即可使用 C#，就像在 C# 类中一样。 IntelliSense 会显示页面模型上的所有方法和属性。 由于属性类型是 `ModelExpression`，所以这些方法和属性可用。 在下图中，我正在编辑 `Register` 视图，所以 `RegisterViewModel` 是可用的。
 
 ![图像](intro/_static/intellemail.png)
 
@@ -166,7 +179,7 @@ IntelliSense 会列出页面上模型可用的属性和方法。 丰富 IntelliS
 @Html.Label("FirstName", "First Name:", new {@class="caption"})
 ```
 
-艾特 (`@`) 符号告诉 Razor 这是代码的开始。 接下来的两个参数（“FirstName”和“First Name:”）是字符串，所以 [IntelliSense](https://docs.microsoft.com/visualstudio/ide/using-intellisense) 无法提供帮助。 最后一个参数：
+艾特 (`@`) 符号告诉 Razor 这是代码的开始。 接下来的两个参数（“FirstName”和“First Name:”）是字符串，所以 [IntelliSense](/visualstudio/ide/using-intellisense) 无法提供帮助。 最后一个参数：
 
 ```cshtml
 new {@class="caption"}
@@ -220,7 +233,7 @@ Visual Studio 编辑器以灰色背景显示 C# 代码。 例如，`AntiForgeryT
 
 请考虑 Email 组：
 
-[!code-csharp[Main](intro/sample/Register.cshtml?range=12-18)]
+[!code-csharp[](intro/sample/Register.cshtml?range=12-18)]
 
 每个“asp-”属性都有一个“Email”值，但是“Email”不是字符串。 在此上下文中，“Email”是 `RegisterViewModel` 的 C# 模型表达式属性。
 
@@ -236,13 +249,13 @@ Visual Studio 编辑器可帮助编写注册窗体的标记帮助程序方法中
 
 * Web 服务器控件包括自动浏览器检测。 标记帮助程序不了解浏览器。
 
-* 通常不能撰写 Web 服务器控件时，多个标记帮助程序可作用于同一元素（请参阅[避免标记帮助程序冲突](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/authoring#avoiding-tag-helper-conflicts)）。
+* 通常不能撰写 Web 服务器控件时，多个标记帮助程序可作用于同一元素（请参阅[避免标记帮助程序冲突](xref:mvc/views/tag-helpers/authoring#avoid-tag-helper-conflicts)）。
 
 * 标记帮助程序可以修改其作用域内 HTML 元素的标记和内容，但不会直接修改页面上的其他内容。 Web 服务器控件的作用域较广，并且可以执行影响页面其他部分的操作，从而可能造成意想不到的副作用。
 
 * Web 服务器控件使用类型转换器将字符串转换为对象。 使用标记帮助程序时，本身就用 C# 语言工作，因此无需进行类型转换。
 
-* Web 服务器控件使用 [System.ComponentModel](https://docs.microsoft.com/dotnet/api/system.componentmodel) 实现组件和控件的运行时和设计时行为。 `System.ComponentModel` 包括用于属性和类型转换器的实现、数据源绑定和组件授权的基类和接口。 与通常派生自 `TagHelper` 的标记帮助程序相比，`TagHelper` 基类仅公开两个方法，即 `Process` 和 `ProcessAsync`。
+* Web 服务器控件使用 [System.ComponentModel](/dotnet/api/system.componentmodel) 实现组件和控件的运行时和设计时行为。 `System.ComponentModel` 包括用于属性和类型转换器的实现、数据源绑定和组件授权的基类和接口。 与通常派生自 `TagHelper` 的标记帮助程序相比，`TagHelper` 基类仅公开两个方法，即 `Process` 和 `ProcessAsync`。
 
 ## <a name="customizing-the-tag-helper-element-font"></a>自定义标记帮助程序元素字体
 
@@ -255,4 +268,3 @@ Visual Studio 编辑器可帮助编写注册窗体的标记帮助程序方法中
 * [创作标记帮助程序](xref:mvc/views/tag-helpers/authoring)
 * [使用窗体](xref:mvc/views/working-with-forms)
 * [GitHub 上的 TagHelperSamples](https://github.com/dpaquette/TagHelperSamples) 包含用于处理 [Bootstrap](http://getbootstrap.com/) 的标记帮助程序示例。
-* [使用窗体](xref:mvc/views/working-with-forms)

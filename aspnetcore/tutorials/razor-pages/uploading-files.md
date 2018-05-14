@@ -1,21 +1,22 @@
 ---
-title: "将文件上传至 ASP.NET Core 中的 Razor 页面"
+title: 将文件上传到 ASP.NET Core 中的 Razor 页面
 author: guardrex
-description: "了解如何将文件上传至 Razor 页面。"
+description: 了解如何将文件上传至 Razor 页面。
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/12/2017
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: 4a2c6da6ed698d1a65ee51bd00a557e607f012da
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 5f86164b3d227e55e11244da7600394809b6a4a7
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="uploading-files-to-a-razor-page-in-aspnet-core"></a>将文件上传至 ASP.NET Core 中的 Razor 页面
+# <a name="upload-files-to-a-razor-page-in-aspnet-core"></a>将文件上传到 ASP.NET Core 中的 Razor 页面
 
 作者：[Luke Latham](https://github.com/guardrex)
 
@@ -47,7 +48,7 @@ ms.lasthandoff: 02/01/2018
 
 创建 Razor 页以处理一对文件上传。 添加 `FileUpload` 类（此类与页面绑定以获取计划数据）。 右键单击“Models”文件夹。 选择“添加” > “类”。 将类命名为“FileUpload”，并添加以下属性：
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/FileUpload.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/FileUpload.cs)]
 
 此类有一个属性对应计划标题，另各有一个属性对应计划的两个版本。 3 个属性皆为必需属性，标题长度必须为 3-60 个字符。
 
@@ -55,20 +56,44 @@ ms.lasthandoff: 02/01/2018
 
 为避免处理未上传计划文件时出现代码重复，请首先上传一个静态 helper 方法。 在此应用中创建一个“Utilities”文件夹，然后在“FileHelpers.cs”文件中添加以下内容。 helper 方法 `ProcessFormFile` 接受 [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile) 和 [ModelStateDictionary](/api/microsoft.aspnetcore.mvc.modelbinding.modelstatedictionary)，并返回包含文件大小和内容的字符串。 检查内容类型和长度。 如果文件未通过验证检查，将向 `ModelState` 添加一个错误。
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Utilities/FileHelpers.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Utilities/FileHelpers.cs)]
 
 ### <a name="save-the-file-to-disk"></a>将文件保存到磁盘
 
-示例应用将文件内容保存到数据库字段。 若要将文件内容保存到磁盘，请使用[文件流](/dotnet/api/system.io.filestream)：
+示例应用将已上传的文件保存到数据库字段中。 要将文件保存到磁盘，请使用 [FileStream](/dotnet/api/system.io.filestream)。 以下示例将 `FileUpload.UploadPublicSchedule` 所保存的文件复制到 `OnPostAsync` 方法中的 `FileStream`。 `FileStream` 将文件写入 `<PATH-AND-FILE-NAME>` 提供的磁盘：
 
 ```csharp
-using (var fileStream = new FileStream(filePath, FileMode.Create))
+public async Task<IActionResult> OnPostAsync()
 {
-    await formFile.CopyToAsync(fileStream);
+    // Perform an initial check to catch FileUpload class attribute violations.
+    if (!ModelState.IsValid)
+    {
+        return Page();
+    }
+
+    var filePath = "<PATH-AND-FILE-NAME>";
+
+    using (var fileStream = new FileStream(filePath, FileMode.Create))
+    {
+        await FileUpload.UploadPublicSchedule.CopyToAsync(fileStream);
+    }
+
+    return RedirectToPage("./Index");
 }
 ```
 
 工作进程必须对 `filePath` 指定的位置具有写入权限。
+
+> [!NOTE]
+> `filePath` 必须包含文件名。 如果未提供文件名，则会在运行时引发 [UnauthorizedAccessException](/dotnet/api/system.unauthorizedaccessexception)。
+
+> [!WARNING]
+> 切勿将上传的文件保存在与应用相同的目录树中。
+>
+> 代码示例不提供针对恶意文件上传的服务器端保护。 有关在接受用户文件时减少攻击外围应用的信息，请参阅以下资源：
+>
+> * [Unrestricted File Upload](https://www.owasp.org/index.php/Unrestricted_File_Upload)（不受限制的文件上传）
+> * [Azure 安全性：确保在接受用户文件时采取适当的控制措施](/azure/security/azure-security-threat-modeling-tool-input-validation#controls-users)
 
 ### <a name="save-the-file-to-azure-blob-storage"></a>将文件保存到 Azure Blob 存储
 
@@ -78,7 +103,7 @@ using (var fileStream = new FileStream(filePath, FileMode.Create))
 
 右键单击“Models”文件夹。 选择“添加” > “类”。 将类命名为“Schedule”，并添加以下属性：
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/Schedule.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/Schedule.cs)]
 
 此类使用 `Display` 和 `DisplayFormat` 特性，呈现计划数据时，这些特性会生成友好型的标题和格式。
 
@@ -86,7 +111,7 @@ using (var fileStream = new FileStream(filePath, FileMode.Create))
 
 在 `MovieContext` (*Models/MovieContext.cs*) 中为计划指定 `DbSet`：
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieContext.cs?highlight=13)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieContext.cs?highlight=13)]
 
 ## <a name="add-the-schedule-table-to-the-database"></a>将 Schedule 表添加到数据库
 
@@ -105,7 +130,7 @@ Update-Database
 
 在“Pages”文件夹中创建“Schedules”文件夹。 在“Schedules”文件夹中，创建名为“Index.cshtml”的页面，用于上传具有如下内容的计划：
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml)]
 
 每个窗体组包含一个 \<label>，它显示每个类属性的名称。 `FileUpload` 模型中的 `Display` 特性提供这些标签的显示值。 例如，`UploadPublicSchedule` 特性的显示名称通过 `[Display(Name="Public Schedule")]` 进行设置，因此呈现窗体时会在此标签中显示“Public Schedule”。
 
@@ -115,43 +140,43 @@ Update-Database
 
 将页面模型 (Index.cshtml.cs) 添加到“Schedules”文件夹中：
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs)]
 
 页面模型（Index.cshtml.cs 中的 `IndexModel`）绑定 `FileUpload` 类：
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet1)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet1)]
 
 此模型还使用计划列表 (`IList<Schedule>`) 在页面上显示数据库中存储的计划：
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet2)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet2)]
 
 页面加载 `OnGetAsync` 时，会从数据库填充 `Schedules`，用于生成已加载计划的 HTML 表：
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet3)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet3)]
 
 将窗体发布到服务器时，会检查 `ModelState`。 如果无效，会重新生成 `Schedule`，且页面会呈现一个或多个验证消息，陈述页面验证失败的原因。 如果有效，`FileUpload` 属性将用于“OnPostAsync”中，以完成两个计划版本的文件上传，并创建一个用于存储数据的新 `Schedule` 对象。 然后会将此计划保存到数据库：
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet4)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet4)]
 
 ## <a name="link-the-file-upload-razor-page"></a>链接文件上传 Razor 页面
 
 打开“_Layout.cshtml”，然后向导航栏添加一个链接以访问文件上传页面：
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=31-38&highlight=4)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=31-38&highlight=4)]
 
 ## <a name="add-a-page-to-confirm-schedule-deletion"></a>添加计划删除确认页面
 
 用户单击删除计划时，为其提供取消此操作的机会。 向“Schedules”文件夹添加删除确认页面 (Delete.cshtml)：
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml)]
 
 页面模型 (Delete.cshtml.cs) 在请求的路由数据中加载由 `id` 标识的单个计划。 将“Delete.cshtml.cs”文件添加到“Schedules”文件夹：
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs)]
 
 `OnPostAsync` 方法按 `id` 处理计划删除：
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs?name=snippet1&highlight=8,12-13)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs?name=snippet1&highlight=8,12-13)]
 
 成功删除计划后，`RedirectToPage` 将返回到计划的“Index.cshtml”页面。
 
@@ -179,12 +204,12 @@ Update-Database
 
 有关上传 `IFormFile` 的疑难解答信息，请参阅 [ASP.NET Core 中的文件上传：疑难解答](xref:mvc/models/file-uploads#troubleshooting)。
 
-感谢读完这篇 Razor 页面简介。 我们非常感谢你的反馈。 完成本教程后，大力推荐了解 [MVC 和 EF Core 入门](xref:data/ef-mvc/intro)。
+感谢读完这篇 Razor 页面简介。 我们非常感谢你的反馈。 [MVC 和 EF Core 入门](xref:data/ef-mvc/intro)是本教程的优选后续教程。
 
 ## <a name="additional-resources"></a>其他资源
 
 * [ASP.NET Core 中的文件上传](xref:mvc/models/file-uploads)
 * [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile)
 
->[!div class="step-by-step"]
-[上一篇：验证](xref:tutorials/razor-pages/validation)
+> [!div class="step-by-step"]
+> [上一篇：验证](xref:tutorials/razor-pages/validation)

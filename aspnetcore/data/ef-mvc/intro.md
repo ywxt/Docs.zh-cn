@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 7de43a390ee0e11f6eda811b0774343ab330c53b
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: eaa3070e182b161087185bbb9007e8067052d95c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>ASP.NET Core MVC 和 Entity Framework Core 入门 (使用 Visual Studio) (1 / 10)
+# <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>ASP.NET Core MVC 和 Entity Framework Core - 第 1 个教程，共 10 个教程
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[此处](xref:data/ef-rp/intro) 提供了本教程的 Razor 页版本。 Razor 页面版本更加通俗易懂，并介绍了更多 EF 功能。 我们建议你学习 [本教程的 Razor 页版本](xref:data/ef-rp/intro)。
+[!INCLUDE [RP better than MVC](../../includes/RP-EF/rp-over-mvc.md)]
 
 Contoso 大学示例 web 应用程序演示如何使用 Entity Framework (EF) Core 2.0 和 Visual Studio 2017 创建 ASP.NET Core 2.0 MVC web 应用程序。
 
@@ -35,7 +35,7 @@ EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 �
 
 ## <a name="prerequisites"></a>系统必备
 
-[!INCLUDE[install 2.0](../../includes/install2.0.md)]
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 ## <a name="troubleshooting"></a>疑难解答
 
@@ -128,7 +128,7 @@ EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 �
 
 在 *Models* 文件夹中，创建一个名为 *Student.cs* 的类文件并且将模板代码替换为以下代码。
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Intro)]
 
 `ID` 属性将成为对应于此类的数据库表中的主键。 默认情况下，EF 将会将名为 `ID` 或 `classnameID` 的属性解析为主键。
 
@@ -142,7 +142,7 @@ EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 �
 
 在 *Models* 文件夹中，创建 *Enrollment.cs* 并且用以下代码替换现有代码：
 
-[!code-csharp[Main](intro/samples/cu/Models/Enrollment.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Models/Enrollment.cs?name=snippet_Intro)]
 
 `EnrollmentID` 属性将被设为主键; 此实体使用 `classnameID` 模式而不是如 `Student` 实体那样直接使用 `ID`。 通常情况下，你选择一个主键模式，并在你的数据模型自始至终使用这种模式。 在这里，使用了两种不同的模式只是为了说明你可以使用任一模式来指定主键。 在 [后面的教程](inheritance.md)，你将了解到使用`ID`这种模式可以更轻松地在数据模型之间实现继承。
 
@@ -160,7 +160,7 @@ EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 �
 
 在 *Models* 文件夹中，创建 *Course.cs* 并且用以下代码替换现有代码：
 
-[!code-csharp[Main](intro/samples/cu/Models/Course.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Models/Course.cs?name=snippet_Intro)]
 
 `Enrollments` 属性是导航属性。 一个 `Course` 体可以与任意数量的 `Enrollment` 实体相关。
 
@@ -174,7 +174,7 @@ EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 �
 
 在 *Data* 文件夹创建名为 *SchoolContext.cs* 的类文件，并将模板代码替换为以下代码：
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_Intro)]
 
 此代码将为每个实体集创建 `DbSet` 属性。 在 Entity Framework 中，实体集通常与数据表相对应，具体实体与表中的行相对应。
 
@@ -182,7 +182,7 @@ EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 �
 
 当数据库创建完成后， EF 创建一系列数据表，表名默认和 `DbSet` 属性名相同。 集合属性的名称一般使用复数形式，但不同的开发人员的命名习惯可能不一样，开发人员根据自己的情况确定是否使用复数形式。 在定义 DbSet 属性的代码之后，添加下面高亮代码，对 DbContext 指定单数的表名来覆盖默认的表名。 此教程在最后一个 DbSet 属性之后，添加以下高亮显示的代码。
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_TableNames&highlight=16-21)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_TableNames&highlight=16-21)]
 
 ## <a name="register-the-context-with-dependency-injection"></a>使用依赖注入注册上下文
 
@@ -190,13 +190,13 @@ ASP.NET Core 默认实现 [依赖注入](../../fundamentals/dependency-injection
 
 若要将 `SchoolContext` 注册为一种服务，打开 *Startup.cs* ，并将高亮代码添加到 `ConfigureServices` 方法中。
 
-[!code-csharp[Main](intro/samples/cu/Startup.cs?name=snippet_SchoolContext&highlight=3-4)]
+[!code-csharp[](intro/samples/cu/Startup.cs?name=snippet_SchoolContext&highlight=3-4)]
 
 通过调用 `DbContextOptionsBuilder` 中的一个方法将数据库连接字符串在配置文件中的名称传递给上下文对象。 进行本地开发时， [ASP.NET Core 配置系统](xref:fundamentals/configuration/index) 在 *appsettings.json* 文件中读取数据库连接字符串。
 
 添加 `using` 语句引用 `ContosoUniversity.Data` 和 `Microsoft.EntityFrameworkCore` 命名空间，然后生成项目。
 
-[!code-csharp[Main](intro/samples/cu/Startup.cs?name=snippet_Usings)]
+[!code-csharp[](intro/samples/cu/Startup.cs?name=snippet_Usings)]
 
 打开 appsettings.json 文件，并如以下示例所示添加连接字符串。
 
@@ -214,7 +214,7 @@ Entity Framework 已经为你创建了一个空数据库。 在本部分中，�
 
 在 *Data* 文件夹中，创建名为的新类文件 *DbInitializer.cs* 并且将模板代码替换为以下代码，使得在需要时能创建数据库并向其填充测试数据。
 
-[!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
 
 这段代码首先检查是否有学生数据在数据库中，如果没有的话，就可以假定数据库是新建的，然后使用测试数据进行填充。 代码中使用数组存放测试数据而不是使用 `List<T>` 集合是为了优化性能。
 
@@ -224,11 +224,11 @@ Entity Framework 已经为你创建了一个空数据库。 在本部分中，�
 * 调用 seed 方法，将上下文传递给它。
 * Seed 方法完成此操作时释放上下文。
 
-[!code-csharp[Main](intro/samples/cu/Program.cs?name=snippet_Seed&highlight=3-20)]
+[!code-csharp[](intro/samples/cu/Program.cs?name=snippet_Seed&highlight=3-20)]
 
 添加 `using` 语句：
 
-[!code-csharp[Main](intro/samples/cu/Program.cs?name=snippet_Usings)]
+[!code-csharp[](intro/samples/cu/Program.cs?name=snippet_Usings)]
 
 在旧版教程中，你可能会在 *Startup.cs* 中的 `Configure` 方法看到类似的代码。 我们建议你只在为了设置请求管道时使用 `Configure` 方法。 将应用程序启动代码放入 `Main` 方法。
 
@@ -271,13 +271,13 @@ CRUD 操作方法和视图的自动创建被称为基架。 基架与代码生�
 
 注意控制器将 `SchoolContext` 作为构造函数参数。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Context&highlight=5,7,9)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Context&highlight=5,7,9)]
 
 ASP.NET 依赖注入机制会传递一个 `SchoolContext` 实例到控制器。 在前面的教程中已经通过修改 *Startup.cs* 文件来配置注入规则。
 
 控制器包含 `Index` 操作方法，用于显示数据库中的所有学生。 该方法从学生实体集中获取学生列表，学生实体集则是通过读取数据库上下文实例中的 `Students` 属性获得：
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ScaffoldedIndex&highlight=3)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ScaffoldedIndex&highlight=3)]
 
 本教程后面部分将介绍此代码中的异步编程元素。
 
@@ -311,7 +311,7 @@ ASP.NET 依赖注入机制会传递一个 `SchoolContext` 实例到控制器。 
 
 ![SSOX 中的 Student 表](intro/_static/ssox-student-table.png)
 
-.mdf 和 .ldf 数据库文件位于 C:\Users\<yourusername> 文件夹中。
+<em>.mdf</em> 和 <em>.ldf</em> 数据库文件位于 <em>C:\Users\\<yourusername></em> 文件夹中。
 
 因为调用 `EnsureCreated` 的初始化方法在启动应用程序时才运行，所以在这之前你可以更改 `Student` 类、 删除数据库、 再运行一次应用程序，这时候数据库将自动重新创建，以匹配所做的更改。 例如，如果向 `Student` 类添加 `EmailAddress` 属性，重新的创建表中会有 `EmailAddress` 列。
 
@@ -325,7 +325,7 @@ ASP.NET 依赖注入机制会传递一个 `SchoolContext` 实例到控制器。 
 
 * 以 ID 或 classnameID 命名的实体属性被视为主键属性。
 
-* 如果属性名为 *<navigation property name><primary key property name>*将被解释为外键属性 (例如，`StudentID` 对应 `Student` 导航属性，`Student` 实体的主键是`ID`，所以`StudentID`被解释为外键属性)。 此外也可以将外键属性命名为 *<primary key property name>* (例如，`EnrollmentID`，由于 `Enrollment` 实体的主键是 `EnrollmentID`，因此被解释为外键)。
+* 如果属性名为 *<navigation property name><primary key property name>* 将被解释为外键属性 (例如，`StudentID` 对应 `Student` 导航属性，`Student` 实体的主键是`ID`，所以`StudentID`被解释为外键属性)。 此外也可以将外键属性命名为 *<primary key property name>* (例如，`EnrollmentID`，由于 `Enrollment` 实体的主键是 `EnrollmentID`，因此被解释为外键)。
 
 约定行为可以重写。 例如，本教程前半部分显式指定表名称。 本系列 [后面教程](complex-data-model.md) 则设置列名称并将任何属性设置为主键或外键。
 
@@ -339,7 +339,7 @@ Web 服务器的可用线程是有限的，而在高负载情况下的可能所�
 
 在以下代码中，`async` 关键字、`Task<T>` 返回值、`await` 关键字和 `ToListAsync` 方法让代码异步执行。
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ScaffoldedIndex)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ScaffoldedIndex)]
 
 * `async` 关键字用于告知编译器该方法主体将生成回调并自动创建 `Task<IActionResult>` 返回对象。
 
@@ -363,5 +363,5 @@ Web 服务器的可用线程是有限的，而在高负载情况下的可能所�
 
 你现在已创建了一个使用 Entity Framework Core 和 SQL Server Express LocalDB 来存储和显示数据的简单应用程序。 在下一个教程中，你将学习如何执行基本的 CRUD （创建、 读取、 更新、 删除） 操作。
 
->[!div class="step-by-step"]
-[下一篇](crud.md)
+> [!div class="step-by-step"]
+> [下一篇](crud.md)

@@ -20,7 +20,7 @@
 
 _Layout.cshtml 文件包含常见的 HTML 元素（脚本和样式表），并设置应用程序的布局。 例如，单击“RazorPagesMovie”、“主页”、“关于”或“联系人”时，将看到相同的元素。 常见的元素包括顶部的导航菜单和窗口底部的标题。 请参阅[布局](xref:mvc/views/layout)了解详细信息。
 
-*_ViewStart.cshtml*将 Razor Pages `Layout` 属性设置为使用 *_Layout.cshtml* 文件。 请参阅[布局](xref:mvc/views/layout)了解详细信息。
+_ViewStart.cshtml 将 Razor 页面 `Layout` 属性设置为使用 _Layout.cshtml 文件。 请参阅[布局](xref:mvc/views/layout)了解详细信息。
 
 _ViewImports.cshtml 文件包含要导入每个 Razor 页面的 Razor 指令。 请参阅[导入共享指令](xref:mvc/views/layout#importing-shared-directives)了解详细信息。
 

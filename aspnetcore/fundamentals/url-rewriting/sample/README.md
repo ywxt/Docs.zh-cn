@@ -33,11 +33,13 @@ using Microsoft.Extensions.FileProviders;
 PhysicalFileProvider fileProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory());
 ```
 ## <a name="secure-redirection-extensions"></a>安全的重定向扩展
-此示例包含应用的 `WebHostBuilder` 配置以使用 URL（https://localhost:5001、https://localhost）和测试证书 (testCert.pfx)，来帮助了解这些重定向方法。 将其中任何一个添加到 Startup.cs 的 `RewriteOptions()` 中以研究其行为。
+此示例包含应用的 `WebHostBuilder` 配置以使用 URL（https://localhost:5001https://localhost和测试证书 (testCert.pfx)，来帮助了解这些重定向方法。 将其中任何一个添加到 Startup.cs 的 `RewriteOptions()` 中以研究其行为。
 
-方法 | 状态代码 | 端口
---- | :---: | :---:
-`.AddRedirectToHttpsPermanent()` | 301 | null (465)
-`.AddRedirectToHttps()` | 302 | null (465)
-`.AddRedirectToHttps(301)` | 301 | null (465)
-`.AddRedirectToHttps(301, 5001)` | 301 | 5001
+
+|              方法              | 状态代码 |    端口    |
+|----------------------------------|:-----------:|:----------:|
+| `.AddRedirectToHttpsPermanent()` |     301     | null (465) |
+|     `.AddRedirectToHttps()`      |     302     | null (465) |
+|    `.AddRedirectToHttps(301)`    |     301     | null (465) |
+| `.AddRedirectToHttps(301, 5001)` |     301     |    5001    |
+

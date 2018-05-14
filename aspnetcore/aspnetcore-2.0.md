@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 2.0 中的新增功能"
+title: ASP.NET Core 2.0 中的新增功能
 author: rick-anderson
-description: "ASP.NET Core 2.0 中的新增功能"
+description: 了解 ASP.NET Core 2.0 的新增功能。
 manager: wpickett
 ms.author: riande
 ms.date: 07/10/2017
@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: aspnetcore-2.0
-ms.openlocfilehash: 35d57abd07e83cd5b190572962fbf43aef03a534
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b4ac500888ce134e8f4f0d4bf16efa4e95f24c15
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>ASP.NET Core 2.0 中的新增功能
 
@@ -38,7 +38,7 @@ Razor 页面是 ASP.NET Core MVC 的一个新功能，它可以使基于页面�
 
 使用 `Microsoft.AspNetCore.All` 元包的应用程序会自动使用新的 .NET Core 运行时存储。 此存储包含运行 ASP.NET Core 2.0 应用程序所需的所有运行时资产。 使用 `Microsoft.AspNetCore.All` 元包时，应用程序不会部署引用的 ASP.NET Core NuGet 包中的任何资产，因为目标系统中已存在这些资产。 运行时存储中的资产也已经过预编译，以便缩短应用程序启动时间。
 
-有关详细信息，请参阅[运行时存储](https://docs.microsoft.com/dotnet/core/deploying/runtime-store)
+有关详细信息，请参阅[运行时存储](/dotnet/core/deploying/runtime-store)
 
 ## <a name="net-standard-20"></a>.NET Standard 2.0
 
@@ -62,7 +62,7 @@ ASP.NET Core 2.0 包面向 NET Standard 2.0。 这些包可以由其他 .NET Sta
 
 新的身份验证模型简化了使用 DI 为应用程序配置身份验证的过程。
 
-借助新模板，可以使用 [Azure AD B2C] (https://azure.microsoft.com/services/active-directory-b2c/) 为 Web 应用和 Web API 配置身份验证。
+使用 [Azure AD B2C] (https://azure.microsoft.com/services/active-directory-b2c/)) 为 Web 应用和 Web API 配置身份验证时可使用新模板。
 
 有关已规划文档的状态的信息，请参阅 [GitHub 问题](https://github.com/aspnet/Docs/issues/3054)。
 
@@ -122,11 +122,13 @@ return File(data, "text/plain", "downloadName.txt", lastModified: DateTime.UtcNo
 
 默认情况下，ASP.NET Core 始终在帮助对内容进行 HTML 编码，但是在新版本中，还采用了额外的措施来帮助预防跨网站请求伪造 (XSRF) 攻击。 现在在默认情况下，ASP.NET Core 会发出防伪标记，并在窗体 POST 操作和页面上验证它们，且无需其他配置。
 
-有关详细信息，请参阅[在 ASP.NET Core 中预防跨网站请求伪造 (XSRF/CSRF) 攻击](xref:security/anti-request-forgery)。
+有关详细信息，请参阅[预防跨网站请求伪造 (XSRF/CSRF) 攻击](xref:security/anti-request-forgery)。
 
 ## <a name="automatic-precompilation"></a>自动预编译
 
 默认情况下，会在发布时启用 Razor 视图预编译，以缩减发布输出大小和应用程序启动时间。
+
+有关详细信息，请参阅 [ASP.NET Core 中的 Razor 视图编译和预编译](xref:mvc/views/view-compilation)。
 
 ## <a name="razor-support-for-c-71"></a>Razor 支持 C# 7.1
 
@@ -142,10 +144,10 @@ Razor 视图引擎已更新为可使用新的 Roslyn 编译器。 其中包含�
 
 * [用于 ASP.NET Core 应用部署的 Visual Studio 发布配置文件](xref:host-and-deploy/visual-studio-publish-profiles)
 * [密钥管理](xref:security/data-protection/implementation/key-management)
-* [为 Facebook 配置身份验证](xref:security/authentication/facebook-logins)
-* [为 Twitter 配置身份验证](xref:security/authentication/twitter-logins)
-* [为 Google 配置身份验证](xref:security/authentication/google-logins)
-* [为 Microsoft 帐户配置身份验证](xref:security/authentication/microsoft-logins)
+* [配置 Facebook 身份验证](xref:security/authentication/facebook-logins)
+* [配置 Twitter 身份验证](xref:security/authentication/twitter-logins)
+* [配置 Google 身份验证](xref:security/authentication/google-logins)
+* [配置 Microsoft 帐户身份验证](xref:security/authentication/microsoft-logins)
 
 ## <a name="migration-guidance"></a>迁移指南
 

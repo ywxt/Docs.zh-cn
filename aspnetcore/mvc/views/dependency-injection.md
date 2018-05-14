@@ -1,7 +1,7 @@
 ---
-title: "视图中的依赖关系注入"
+title: 在 ASP.NET Core 中将依赖项注入到视图
 author: ardalis
-description: 
+description: 了解 ASP.NET Core 如何支持将依赖项注入到 MVC 视图。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/dependency-injection
-ms.openlocfilehash: 690fdd0fd841341d17de48c0a8c9af121da220de
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: cc34b9069ec062f08644c0026c1ccdcd00f667ac
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="dependency-injection-into-views"></a>视图中的依赖关系注入
+# <a name="dependency-injection-into-views-in-aspnet-core"></a>在 ASP.NET Core 中将依赖项注入到视图
 
 作者：[Steve Smith](https://ardalis.com/)
 
@@ -31,15 +31,15 @@ ASP.NET Core 支持将[依赖关系注入](xref:fundamentals/dependency-injectio
 
 操作中的 `@inject` 示例：
 
-[!code-csharp[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Views/ToDo/Index.cshtml?highlight=4,5,15,16,17)]
+[!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Views/ToDo/Index.cshtml?highlight=4,5,15,16,17)]
 
 此视图显示 `ToDoItem` 实例的列表，以及显示总体统计信息的摘要。 摘要从已注入的 `StatisticsService` 中填充。 在 Startup.cs 的 `ConfigureServices` 中为依赖关系注入注册此服务：
 
-[!code-csharp[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Startup.cs?highlight=6,7&range=15-22)]
+[!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Startup.cs?highlight=6,7&range=15-22)]
 
 `StatisticsService` 通过存储库访问 `ToDoItem` 实例集并执行某些计算：
 
-[!code-csharp[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Model/Services/StatisticsService.cs?highlight=15,20,26)]
+[!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Model/Services/StatisticsService.cs?highlight=15,20,25)]
 
 示例存储库使用内存中集合。 建议不将上示实现（对内存中的所有数据进行操作）用于远程访问的大型数据集。
 
@@ -53,7 +53,7 @@ ASP.NET Core 支持将[依赖关系注入](xref:fundamentals/dependency-injectio
 
 另一种方法是将服务直接注入视图以获取选项。 这最大限度地减少了控制器所需的代码量，将此视图元素构造逻辑移入视图本身。 显示个人资料编辑窗体的控制器操作只需要传递个人资料实例的窗体：
 
-[!code-csharp[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Controllers/ProfileController.cs?highlight=9,19)]
+[!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Controllers/ProfileController.cs?highlight=9,19)]
 
 用于更新这些首选项的 HTML 窗体包括三个属性的下拉列表：
 
@@ -61,11 +61,11 @@ ASP.NET Core 支持将[依赖关系注入](xref:fundamentals/dependency-injectio
 
 这些列表由已注入视图的服务填充：
 
-[!code-csharp[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Views/Profile/Index.cshtml?highlight=4,16,17,21,22,26,27)]
+[!code-cshtml[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Views/Profile/Index.cshtml?highlight=4,16,17,21,22,26,27)]
 
 `ProfileOptionsService` 是 UI 级别的服务，旨在准确提供此窗体所需的数据：
 
-[!code-csharp[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Model/Services/ProfileOptionsService.cs?highlight=7,13,24)]
+[!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Model/Services/ProfileOptionsService.cs?highlight=7,13,24)]
 
 >[!TIP]
 > 请记得在 Startup.cs 的 `ConfigureServices` 方法中注册要通过依赖关系注入请求的类型。
@@ -78,7 +78,7 @@ ASP.NET Core 支持将[依赖关系注入](xref:fundamentals/dependency-injectio
 
 如你所见，包括默认字段 `Html`、`Component` 和 `Url`（以及我们注入的 `StatsService`）。 如果想用自己的 HTML 帮助程序替换默认的 HTML 帮助程序，可使用 `@inject` 轻松完成：
 
-[!code-html[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Views/Helper/Index.cshtml?highlight=3,11)]
+[!code-cshtml[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Views/Helper/Index.cshtml?highlight=3,11)]
 
 如果想扩展现有的服务，用自己的方法继承或包装现有的实现时，只需使用此方法。
 

@@ -1,7 +1,7 @@
 ---
-title: "使用 ASP.NET Core 中的更改令牌检测更改"
+title: 使用 ASP.NET Core 中的更改令牌检测更改
 author: guardrex
-description: "了解如何使用更改令牌来跟踪更改。"
+description: 了解如何使用更改令牌来跟踪更改。
 manager: wpickett
 ms.author: riande
 ms.date: 11/10/2017
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/primitives/change-tokens
-ms.openlocfilehash: 94bf356fcbfab3930804485c1b65e4a0f4c52b8e
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 3055eec91adc412b596d4cc73e8523e18ff63331
+ms.sourcegitcommit: 7c8fd9b7445cd77eb7f7d774bfd120c26f3b5d84
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>使用 ASP.NET Core 中的更改令牌检测更改
 
@@ -59,22 +59,22 @@ ms.lasthandoff: 01/31/2018
 
 默认情况下，ASP.NET Core 模板使用 [JSON 配置文件](xref:fundamentals/configuration/index#json-configuration)（appsettings.json、appsettings.Development.json 和 appsettings.Production.json）来加载应用配置设置。
 
-使用接受 `reloadOnChange` 参数（ASP.NET Core 1.1 以及更高版本）的 [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder) 上的 [AddJsonFile(IConfigurationBuilder, String, Boolean, Boolean)](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions.addjsonfile?view=aspnetcore-2.0#Microsoft_Extensions_Configuration_JsonConfigurationExtensions_AddJsonFile_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_System_Boolean_System_Boolean_) 扩展方法配置这些文件。 `reloadOnChange` 指示文件更改时是否应该重载配置。 请参阅 [WebHost](/dotnet/api/microsoft.aspnetcore.webhost) 便捷方法 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)（[引用源](https://github.com/aspnet/MetaPackages/blob/rel/2.0.3/src/Microsoft.AspNetCore/WebHost.cs#L152-L193)）中的此设置：
+使用接受 `reloadOnChange` 参数（ASP.NET Core 1.1 以及更高版本）的 [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder) 上的 [AddJsonFile(IConfigurationBuilder, String, Boolean, Boolean)](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions.addjsonfile?view=aspnetcore-2.0#Microsoft_Extensions_Configuration_JsonConfigurationExtensions_AddJsonFile_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_System_Boolean_System_Boolean_) 扩展方法配置这些文件。 `reloadOnChange` 指示文件更改时是否应该重载配置。 请参阅 [WebHost](/dotnet/api/microsoft.aspnetcore.webhost) 便捷方法 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 中的此设置：
 
 ```csharp
 config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
       .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
 ```
 
-基于文件的配置由 [FileConfigurationSource](/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource) 表示。 `FileConfigurationSource` 使用 [IFileProvider](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider)（[引用源](https://github.com/aspnet/FileSystem/blob/patch/2.0.1/src/Microsoft.Extensions.FileProviders.Abstractions/IFileProvider.cs)）来监视文件。
+基于文件的配置由 [FileConfigurationSource](/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource) 表示。 `FileConfigurationSource` 使用 [IFileProvider](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider) 监视文件。
 
-默认情况下，由使用 [FileSystemWatcher](/dotnet/api/system.io.filesystemwatcher) 来监视配置文件更改的 [PhysicalFileProvider](/dotnet/api/microsoft.extensions.fileproviders.physicalfileprovider)（[引用源](https://github.com/aspnet/Configuration/blob/patch/2.0.1/src/Microsoft.Extensions.Configuration.FileExtensions/FileConfigurationSource.cs#L82)）提供 `IFileMonitor`。
+默认情况下，由使用 [FileSystemWatcher](/dotnet/api/system.io.filesystemwatcher) 来监视配置文件更改的 [PhysicalFileProvider](/dotnet/api/microsoft.extensions.fileproviders.physicalfileprovider) 提供 `IFileMonitor`。
 
 示例应用演示监视配置更改的两个实现。 如果 appsettings.json 文件更改或者文件的 Environment 版本更改，则每个实现执行自定义代码。 示例应用向控制台写入消息。
 
 配置文件的 `FileSystemWatcher` 可以触发多个令牌回调，以用于单个配置文件更改。 该示例的实现通过检查配置文件上的文件哈希来防范此问题。 检查文件哈希可确保在运行自定义代码之前，至少已更改了其中一个配置文件。 本示例使用 SHA1 文件哈希 (Utilities/Utilities.cs)：
 
-   [!code-csharp[Main](change-tokens/sample/Utilities/Utilities.cs?name=snippet1)]
+   [!code-csharp[](change-tokens/sample/Utilities/Utilities.cs?name=snippet1)]
 
    使用指数回退实现重试。 进行重试是因为文件锁定可能暂时阻止对其中一个文件计算新的哈希。
 
@@ -82,11 +82,11 @@ config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 
 将用于更改通知的令牌使用者 `Action` 回调注册到配置重载令牌 (Startup.cs)：
 
-[!code-csharp[Main](change-tokens/sample/Startup.cs?name=snippet2)]
+[!code-csharp[](change-tokens/sample/Startup.cs?name=snippet2)]
 
 `config.GetReloadToken()` 提供令牌。 回调是 `InvokeChanged` 方法：
 
-[!code-csharp[Main](change-tokens/sample/Startup.cs?name=snippet3)]
+[!code-csharp[](change-tokens/sample/Startup.cs?name=snippet3)]
 
 回调的 `state` 用于在 `IHostingEnvironment` 中传递。 这有助于确定要监视的正确 appsettings 配置 JSON 文件，即 appsettings.&lt;Environment&gt;.json。 只更改了一次配置文件时，文件哈希用于防止 `WriteConsole` 语句由于多个令牌回调而多次运行。
 
@@ -102,11 +102,11 @@ config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 
 示例建立 `IConfigurationMonitor` 接口 (Extensions/ConfigurationMonitor.cs)：
 
-[!code-csharp[Main](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet1)]
+[!code-csharp[](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet1)]
 
 已实现的类的构造函数 `ConfigurationMonitor` 注册用于更改通知的回调：
 
-[!code-csharp[Main](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet2)]
+[!code-csharp[](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet2)]
 
 `config.GetReloadToken()` 提供令牌。 `InvokeChanged` 是回调方法。 此实例中的 `state` 是描述监视状态的字符串。 使用了以下两个属性：
 
@@ -119,27 +119,27 @@ config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 * 将 `CurrentState` 属性字符串设置为记录代码运行时间的描述性消息。
 * 注意其 `WriteConsole` 输出中的当前 `state`。
 
-[!code-csharp[Main](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet3)]
+[!code-csharp[](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet3)]
 
 将实例 `ConfigurationMonitor` 作为服务注册在 Startup.cs 的 `ConfigureServices` 中：
 
-[!code-csharp[Main](change-tokens/sample/Startup.cs?name=snippet1)]
+[!code-csharp[](change-tokens/sample/Startup.cs?name=snippet1)]
 
 索引页提供对配置监视的用户控制。 将 `IConfigurationMonitor` 的实例注入到 `IndexModel` 中：
 
-[!code-csharp[Main](change-tokens/sample/Pages/Index.cshtml.cs?name=snippet1)]
+[!code-csharp[](change-tokens/sample/Pages/Index.cshtml.cs?name=snippet1)]
 
 按钮启用和禁用监视：
 
-[!code-cshtml[Main](change-tokens/sample/Pages/Index.cshtml?range=35)]
+[!code-cshtml[](change-tokens/sample/Pages/Index.cshtml?range=35)]
 
-[!code-csharp[Main](change-tokens/sample/Pages/Index.cshtml.cs?name=snippet2)]
+[!code-csharp[](change-tokens/sample/Pages/Index.cshtml.cs?name=snippet2)]
 
 触发 `OnPostStartMonitoring` 时，会启用监视并清除当前状态。 触发 `OnPostStopMonitoring` 时，会禁用监视并设置状态以反映未进行监视。
 
 ## <a name="monitoring-cached-file-changes"></a>监视缓存文件更改
 
-可以使用 [IMemoryCache](/dotnet/api/microsoft.extensions.caching.memory.imemorycache) 将文件内容缓存在内存中。 [在内存中缓存](xref:performance/caching/memory)主题中介绍了在内存中缓存。 无需采取其他步骤（如下面所述的实现），如果源数据更改，将从缓存返回陈旧（过时）数据。
+可以使用 [IMemoryCache](/dotnet/api/microsoft.extensions.caching.memory.imemorycache) 将文件内容缓存在内存中。 [内存中缓存](xref:performance/caching/memory)主题中介绍了在内存中缓存。 无需采取其他步骤（如下面所述的实现），如果源数据更改，将从缓存返回陈旧（过时）数据。
 
 当续订[可调过期](/dotnet/api/microsoft.extensions.caching.memory.memorycacheentryoptions.slidingexpiration)时段造成陈旧缓存数据时，不考虑所缓存源文件的状态。 数据的每个请求续订可调过期时段，但不会将文件重载到缓存中。 任何使用文件缓存内容的应用功能都可能会收到陈旧的内容。
 
@@ -152,7 +152,7 @@ config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 
 Utilities/Utilities.cs：
 
-[!code-csharp[Main](change-tokens/sample/Utilities/Utilities.cs?name=snippet2)]
+[!code-csharp[](change-tokens/sample/Utilities/Utilities.cs?name=snippet2)]
 
 创建 `FileService` 以处理缓存文件查找。 服务的 `GetFileContent` 方法调用尝试从内存中缓存获取文件内容并将其返回到调用方 (Services/FileService.cs)。
 
@@ -162,19 +162,19 @@ Utilities/Utilities.cs：
 1. 使用 [IFileProviders.Watch](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider.watch) 从文件提供程序获取更改令牌。 修改该文件时，会触发令牌的回调。
 1. [可调过期](/dotnet/api/microsoft.extensions.caching.memory.memorycacheentryoptions.slidingexpiration)时段将缓存文件内容。 如果缓存文件时发生了更改，则将更改令牌与 [MemoryCacheEntryExtensions.AddExpirationToken](/dotnet/api/microsoft.extensions.caching.memory.memorycacheentryextensions.addexpirationtoken) 连接在一起，以逐出缓存条目。
 
-[!code-csharp[Main](change-tokens/sample/Services/FileService.cs?name=snippet1)]
+[!code-csharp[](change-tokens/sample/Services/FileService.cs?name=snippet1)]
 
 将 `FileService` 和内存缓存服务 (Startup.cs) 一起注册在服务容器中：
 
-[!code-csharp[Main](change-tokens/sample/Startup.cs?name=snippet4)]
+[!code-csharp[](change-tokens/sample/Startup.cs?name=snippet4)]
 
 页面模型使用服务 (Pages/Index.cshtml.cs) 加载文件内容：
 
-[!code-csharp[Main](change-tokens/sample/Pages/Index.cshtml.cs?name=snippet3)]
+[!code-csharp[](change-tokens/sample/Pages/Index.cshtml.cs?name=snippet3)]
 
 ## <a name="compositechangetoken-class"></a>CompositeChangeToken 类
 
-若要在单个对象中表示一个或多个 `IChangeToken` 实例，请使用 [CompositeChangeToken](/dotnet/api/microsoft.extensions.primitives.compositechangetoken) 类（[引用源](https://github.com/aspnet/Common/blob/patch/2.0.1/src/Microsoft.Extensions.Primitives/CompositeChangeToken.cs)）。
+要在单个对象中表示一个或多个 `IChangeToken` 实例，请使用 [CompositeChangeToken](/dotnet/api/microsoft.extensions.primitives.compositechangetoken) 类。
 
 ```csharp
 var firstCancellationTokenSource = new CancellationTokenSource();
