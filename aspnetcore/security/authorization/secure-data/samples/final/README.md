@@ -1,9 +1,9 @@
-# <a name="how-to-buildrun-secure-user-data-sample"></a><span data-ttu-id="5a4c7-101">如何生成/运行安全的用户数据示例</span><span class="sxs-lookup"><span data-stu-id="5a4c7-101">How to build/run Secure user data sample</span></span>
+# <a name="how-to-buildrun-secure-user-data-sample"></a>如何生成/运行安全的用户数据示例
 
-* <span data-ttu-id="5a4c7-102">设置密码与密码管理器工具：</span><span class="sxs-lookup"><span data-stu-id="5a4c7-102">Set password with the Secret Manager tool:</span></span>
+* 设置密码与密码管理器工具：
 
   `dotnet user-secrets set SeedUserPW <pw>`
 
-* <span data-ttu-id="5a4c7-103">更新数据库：</span><span class="sxs-lookup"><span data-stu-id="5a4c7-103">Update the database:</span></span>
+* 更新数据库：
 
     `dotnet ef database update`

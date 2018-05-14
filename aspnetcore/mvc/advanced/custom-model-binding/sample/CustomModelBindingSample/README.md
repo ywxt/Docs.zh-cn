@@ -1,5 +1,12 @@
-# <a name="custom-model-binding-demo"></a><span data-ttu-id="0e7d9-101">自定义模型绑定演示</span><span class="sxs-lookup"><span data-stu-id="0e7d9-101">Custom Model Binding Demo</span></span>
+# <a name="custom-model-binding-demo"></a>自定义模型绑定演示
 
-<span data-ttu-id="0e7d9-102">可以通过运行应用程序并将 base64 编码字符串发布到 ImageController 终结点 (/api/image/) 来测试 `ByteArrayModelBinder`。</span><span class="sxs-lookup"><span data-stu-id="0e7d9-102">You can test the `ByteArrayModelBinder` by running the application and POSTing a base64-encoded string to the ImageController endpoint (/api/image/).</span></span> <span data-ttu-id="0e7d9-103">应在请求正文中将文件和文件名属性指定为表单数据（使用 Postman 或类似的工具）。</span><span class="sxs-lookup"><span data-stu-id="0e7d9-103">You should specify the file and filename proparties in the request Body as form-data (using Postman or a similar tool).</span></span> <span data-ttu-id="0e7d9-104">可以使用[本示例字符串](Base64String.txt)。</span><span class="sxs-lookup"><span data-stu-id="0e7d9-104">You can use [this sample string](Base64String.txt).</span></span> <span data-ttu-id="0e7d9-105">结果将使用指定的文件名保存在 wwwroot/images/upload 文件夹中。</span><span class="sxs-lookup"><span data-stu-id="0e7d9-105">The result will be saved in the wwwroot/images/upload folder with the filename you specified.</span></span>
+通过运行应用并将 base64 编码的字符串发布至 `ImageController` 终结点 (`/api/image/`) 测试 `ByteArrayModelBinder`。 请在请求正文中将文件和文件名属性指定为表单数据（使用 [Postman](https://www.getpostman.com/) 或类似的工具）。 可以使用[本示例字符串](Base64String.txt)。 结果将以指定的文件名保存在 wwwroot/images/upload 文件夹中。
 
-<span data-ttu-id="0e7d9-106">若要测试自定义绑定示例，请尝试以下终结点：/api/authors/1、/api/authors/2 (NOT FOUND)、/api/boundauthors/1、/api/boundauthors/2 (NOT FOUND)、/api/boundauthors/get/1、/api/boundauthors/get/2 (NO CONTENT)；此操作不会检查 NULL，并返回 Not Found</span><span class="sxs-lookup"><span data-stu-id="0e7d9-106">To test the custom binding example, try the following endpoints: /api/authors/1 /api/authors/2 (NOT FOUND) /api/boundauthors/1 /api/boundauthors/2 (NOT FOUND) /api/boundauthors/get/1 /api/boundauthors/get/2 (NO CONTENT) - this action doesn't check for null and return a Not Found</span></span>
+若要测试自定义绑定示例，请尝试以下终结点：
+
+* /api/authors/1
+* /api/authors/2（未找到）
+* /api/boundauthors/1
+* /api/boundauthors/2（未找到）
+* /api/boundauthors/get/1
+* /api/boundauthors/get/2（无内容）&ndash; 此操作不检查 null，并返回“404 未找到”。
