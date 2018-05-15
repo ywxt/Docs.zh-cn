@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/releases/whats-new-in-aspnet-mvc-52
-title: "什么是 ASP.NET MVC 5.2 中的新增功能 |Microsoft 文档"
+title: 什么是 ASP.NET MVC 5.2 中的新增功能 |Microsoft 文档
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/25/2014

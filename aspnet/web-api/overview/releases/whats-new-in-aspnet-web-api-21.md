@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/releases/whats-new-in-aspnet-web-api-21
-title: "ASP.NET Web API 2.1 的新增功能 |Microsoft 文档"
+title: ASP.NET Web API 2.1 的新增功能 |Microsoft 文档
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014
@@ -142,7 +142,7 @@ ms.lasthandoff: 11/10/2017
 
 <span data-ttu-id="b1919-168">在属性路由匹配项中的多义性现在还报告错误，而不是无需选择第一个匹配项。</span><span class="sxs-lookup"><span data-stu-id="b1919-168">Ambiguities in attribute routing matches now report an error rather than choosing the first match.</span></span>
 
-<span data-ttu-id="b1919-169">属性路由禁止使用*{controller}*参数，并从使用*{action}*路由的参数放置在操作上。</span><span class="sxs-lookup"><span data-stu-id="b1919-169">Attribute routes are prohibited from using the *{controller}* parameter, and from using the *{action}* parameter on routes placed on actions.</span></span> <span data-ttu-id="b1919-170">这些参数将很有可能会导致多义性。</span><span class="sxs-lookup"><span data-stu-id="b1919-170">These parameters would very likely cause ambiguities.</span></span>
+<span data-ttu-id="b1919-169">属性路由禁止使用 *{controller}* 参数，并从使用 *{action}* 路由的参数放置在操作上。</span><span class="sxs-lookup"><span data-stu-id="b1919-169">Attribute routes are prohibited from using the *{controller}* parameter, and from using the *{action}* parameter on routes placed on actions.</span></span> <span data-ttu-id="b1919-170">这些参数将很有可能会导致多义性。</span><span class="sxs-lookup"><span data-stu-id="b1919-170">These parameters would very likely cause ambiguities.</span></span>
 
 ### <a name="scaffolding-mvcweb-api-into-a-project-with-51-packages-results-in-50-packages-for-ones-that-dont-already-exist-in-the-project"></a><span data-ttu-id="b1919-171">到 5.1 包在中使用结果尚不存在项目中的那些 5.0 包项目的基架 MVC/Web API</span><span class="sxs-lookup"><span data-stu-id="b1919-171">Scaffolding MVC/Web API into a project with 5.1 packages results in 5.0 packages for ones that don't already exist in the project</span></span>
 

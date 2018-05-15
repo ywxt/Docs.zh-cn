@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-cascading-style-sheets-for-web-page-layout
-title: "[如何:]用于 Web 页面布局的级联样式表？ | Microsoft Docs"
+title: '[如何:]用于 Web 页面布局的级联样式表？ | Microsoft Docs'
 author: rick-anderson
-description: "在本视频中，我们将了解如何使用&amp;lt; div&amp;gt; 与级联样式表 (CSS) 以创建可靠和更高版本的性能 web p 结合使用的元素..."
+description: 在本视频中，我们将了解如何使用&amp;lt; div&amp;gt; 与级联样式表 (CSS) 以创建可靠和更高版本的性能 web p 结合使用的元素...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2007

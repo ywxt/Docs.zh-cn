@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
-title: "启用 ASP.NET Web API 1 中的 CRUD 操作 |Microsoft 文档"
+title: 启用 ASP.NET Web API 1 中的 CRUD 操作 |Microsoft 文档
 author: MikeWasson
-description: "本教程演示如何使用 ASP.NET Web API 的 HTTP 服务中支持 CRUD 操作。 在教程的 Visual Studio 2012 Web AP 中使用的软件版本..."
+description: 本教程演示如何使用 ASP.NET Web API 的 HTTP 服务中支持 CRUD 操作。 在教程的 Visual Studio 2012 Web AP 中使用的软件版本...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/28/2012
@@ -74,7 +74,7 @@ ms.lasthandoff: 02/12/2018
 
 <span data-ttu-id="ffe38-162">通过运行 Visual Studio 启动，然后选择**新项目**从**启动**页。</span><span class="sxs-lookup"><span data-stu-id="ffe38-162">Start by running Visual Studio and select **New Project** from the **Start** page.</span></span> <span data-ttu-id="ffe38-163">或从**文件**菜单上，选择**新建**然后**项目**。</span><span class="sxs-lookup"><span data-stu-id="ffe38-163">Or, from the **File** menu, select **New** and then **Project**.</span></span>
 
-<span data-ttu-id="ffe38-164">在**模板**窗格中，选择**已安装的模板**展开**Visual C#**节点。</span><span class="sxs-lookup"><span data-stu-id="ffe38-164">In the **Templates** pane, select **Installed Templates** and expand the **Visual C#** node.</span></span> <span data-ttu-id="ffe38-165">下**Visual C#**，选择**Web**。</span><span class="sxs-lookup"><span data-stu-id="ffe38-165">Under **Visual C#**, select **Web**.</span></span> <span data-ttu-id="ffe38-166">在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。</span><span class="sxs-lookup"><span data-stu-id="ffe38-166">In the list of project templates, select **ASP.NET MVC 4 Web Application**.</span></span> <span data-ttu-id="ffe38-167">将项目&quot;ProductStore&quot;单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="ffe38-167">Name the project &quot;ProductStore&quot; and click **OK**.</span></span>
+<span data-ttu-id="ffe38-164">在**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。</span><span class="sxs-lookup"><span data-stu-id="ffe38-164">In the **Templates** pane, select **Installed Templates** and expand the **Visual C#** node.</span></span> <span data-ttu-id="ffe38-165">下**Visual C#**，选择**Web**。</span><span class="sxs-lookup"><span data-stu-id="ffe38-165">Under **Visual C#**, select **Web**.</span></span> <span data-ttu-id="ffe38-166">在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。</span><span class="sxs-lookup"><span data-stu-id="ffe38-166">In the list of project templates, select **ASP.NET MVC 4 Web Application**.</span></span> <span data-ttu-id="ffe38-167">将项目&quot;ProductStore&quot;单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="ffe38-167">Name the project &quot;ProductStore&quot; and click **OK**.</span></span>
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image1.png)
 
@@ -194,8 +194,8 @@ ms.lasthandoff: 02/12/2018
 
 <span data-ttu-id="ffe38-254">此实现将正常工作，但很不完整。</span><span class="sxs-lookup"><span data-stu-id="ffe38-254">This implementation will work, but it is not quite complete.</span></span> <span data-ttu-id="ffe38-255">理想情况下，我们想要的 HTTP 响应包括以下各项：</span><span class="sxs-lookup"><span data-stu-id="ffe38-255">Ideally, we would like the HTTP response to include the following:</span></span>
 
-- <span data-ttu-id="ffe38-256">**响应代码：**默认情况下，Web API 框架将响应状态代码设置为 200 （正常）。</span><span class="sxs-lookup"><span data-stu-id="ffe38-256">**Response code:** By default, the Web API framework sets the response status code to 200 (OK).</span></span> <span data-ttu-id="ffe38-257">但根据 HTTP/1.1 协议，POST 请求导致创建资源时服务器应回复状态 201 （已创建）。</span><span class="sxs-lookup"><span data-stu-id="ffe38-257">But according to the HTTP/1.1 protocol, when a POST request results in the creation of a resource, the server should reply with status 201 (Created).</span></span>
-- <span data-ttu-id="ffe38-258">**位置：**时服务器创建的资源，它应在响应的位置标头中包含新资源的 URI。</span><span class="sxs-lookup"><span data-stu-id="ffe38-258">**Location:** When the server creates a resource, it should include the URI of the new resource in the Location header of the response.</span></span>
+- <span data-ttu-id="ffe38-256">**响应代码：** 默认情况下，Web API 框架将响应状态代码设置为 200 （正常）。</span><span class="sxs-lookup"><span data-stu-id="ffe38-256">**Response code:** By default, the Web API framework sets the response status code to 200 (OK).</span></span> <span data-ttu-id="ffe38-257">但根据 HTTP/1.1 协议，POST 请求导致创建资源时服务器应回复状态 201 （已创建）。</span><span class="sxs-lookup"><span data-stu-id="ffe38-257">But according to the HTTP/1.1 protocol, when a POST request results in the creation of a resource, the server should reply with status 201 (Created).</span></span>
+- <span data-ttu-id="ffe38-258">**位置：** 时服务器创建的资源，它应在响应的位置标头中包含新资源的 URI。</span><span class="sxs-lookup"><span data-stu-id="ffe38-258">**Location:** When the server creates a resource, it should include the URI of the new resource in the Location header of the response.</span></span>
 
 <span data-ttu-id="ffe38-259">ASP.NET Web API，使得容易操作的 HTTP 响应消息。</span><span class="sxs-lookup"><span data-stu-id="ffe38-259">ASP.NET Web API makes it easy to manipulate the HTTP response message.</span></span> <span data-ttu-id="ffe38-260">下面是改进的实现：</span><span class="sxs-lookup"><span data-stu-id="ffe38-260">Here is the improved implementation:</span></span>
 

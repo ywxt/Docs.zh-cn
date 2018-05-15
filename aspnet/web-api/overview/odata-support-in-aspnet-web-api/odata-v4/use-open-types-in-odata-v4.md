@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
-title: "在 ASP.NET web API OData v4 中打开类型 |Microsoft 文档"
+title: 在 ASP.NET web API OData v4 中打开类型 |Microsoft 文档
 author: microsoft
-description: "在 OData v4 开放类型是一个 stuctured 类型，包含动态属性，除了在类型定义中声明的任何属性。 打开..."
+description: 在 OData v4 开放类型是一个 stuctured 类型，包含动态属性，除了在类型定义中声明的任何属性。 打开...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/15/2014

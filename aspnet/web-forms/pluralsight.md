@@ -1,8 +1,8 @@
 ---
 uid: web-forms/pluralsight
-title: "Web 窗体从 Pluralsight 视频培训 |Microsoft 文档"
+title: Web 窗体从 Pluralsight 视频培训 |Microsoft 文档
 author: rick-anderson
-description: "Pluralsight 提供的 Web Forms 培训。此 ASP.NET Web Forms 开发课程向你介绍几个作为一个.NET 开发者所需要知道的关键技术..."
+description: Pluralsight 提供的 Web Forms 培训。此 ASP.NET Web Forms 开发课程向你介绍几个作为一个.NET 开发者所需要知道的关键技术...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/16/2011

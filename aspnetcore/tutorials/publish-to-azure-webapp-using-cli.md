@@ -1,7 +1,7 @@
 ---
-title: "使用命令行工具将 ASP.NET Core 应用发布到 Azure"
+title: 使用命令行工具将 ASP.NET Core 应用发布到 Azure
 author: camsoper
-description: "了解如何使用 Git 命令行客户端将 ASP.NET Core 应用发布到 Azure 应用服务。"
+description: 了解如何使用 Git 命令行客户端将 ASP.NET Core 应用发布到 Azure 应用服务。
 manager: wpickett
 ms.author: casoper
 ms.custom: mvc
@@ -12,37 +12,39 @@ ms.technology: aspnet
 ms.topic: get-started-article
 services: multiple
 uid: tutorials/publish-to-azure-webapp-using-cli
-ms.openlocfilehash: 0418a2695d3afb6dc2c55b8f694a97d62239835f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0462a4cf18bba23643ed3b1b4e6b76bdbceb24a8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="deploy-an-aspnet-core-application-to-azure-app-service-from-the-command-line"></a><span data-ttu-id="4dd86-103">从命令行将 ASP.NET Core 应用程序部署到 Azure App Service</span><span class="sxs-lookup"><span data-stu-id="4dd86-103">Deploy an ASP.NET Core application to Azure App Service from the command line</span></span>
+# <a name="publish-an-aspnet-core-app-to-azure-with-command-line-tools"></a><span data-ttu-id="5a7bb-103">使用命令行工具将 ASP.NET Core 应用发布到 Azure</span><span class="sxs-lookup"><span data-stu-id="5a7bb-103">Publish an ASP.NET Core app to Azure with command line tools</span></span>
 
-<span data-ttu-id="4dd86-104">作者：[Cam Soper](https://twitter.com/camsoper)</span><span class="sxs-lookup"><span data-stu-id="4dd86-104">By [Cam Soper](https://twitter.com/camsoper)</span></span>
+<span data-ttu-id="5a7bb-104">作者：[Cam Soper](https://twitter.com/camsoper)</span><span class="sxs-lookup"><span data-stu-id="5a7bb-104">By [Cam Soper](https://twitter.com/camsoper)</span></span>
 
-<span data-ttu-id="4dd86-105">本教程将为你介绍如何使用命令行工具生成 ASP.NET Core 应用程序并将其部署到 Microsoft Azure App Service。</span><span class="sxs-lookup"><span data-stu-id="4dd86-105">This tutorial will show you how to build and deploy an ASP.NET Core application to Microsoft Azure App Service using command line tools.</span></span>  <span data-ttu-id="4dd86-106">完成后，你将拥有一个在 ASP.NET MVC Core 中构建并作为 Azure App Service Web App 托管的 Web 应用程序。</span><span class="sxs-lookup"><span data-stu-id="4dd86-106">When finished, you'll have a web application built in ASP.NET MVC Core hosted as an Azure App Service Web App.</span></span>  <span data-ttu-id="4dd86-107">本教程是使用 Windows 命令行工具编写的，但也可以应用于 macOS 和 Linux 环境。</span><span class="sxs-lookup"><span data-stu-id="4dd86-107">This tutorial is written using Windows command line tools, but can be applied to macOS and Linux environments, as well.</span></span>  
+[!INCLUDE [Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
 
-<span data-ttu-id="4dd86-108">在本教程中，你将了解：</span><span class="sxs-lookup"><span data-stu-id="4dd86-108">In this tutorial, you learn how to:</span></span>
+<span data-ttu-id="5a7bb-105">本教程将为你介绍如何使用命令行工具生成 ASP.NET Core 应用程序并将其部署到 Microsoft Azure App Service。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-105">This tutorial will show you how to build and deploy an ASP.NET Core application to Microsoft Azure App Service using command line tools.</span></span>  <span data-ttu-id="5a7bb-106">完成后，你将拥有一个在 ASP.NET MVC Core 中构建并作为 Azure App Service Web App 托管的 Web 应用程序。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-106">When finished, you'll have a web application built in ASP.NET MVC Core hosted as an Azure App Service Web App.</span></span>  <span data-ttu-id="5a7bb-107">本教程是使用 Windows 命令行工具编写的，但也可以应用于 macOS 和 Linux 环境。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-107">This tutorial is written using Windows command line tools, but can be applied to macOS and Linux environments, as well.</span></span>  
+
+<span data-ttu-id="5a7bb-108">在本教程中，你将了解：</span><span class="sxs-lookup"><span data-stu-id="5a7bb-108">In this tutorial, you learn how to:</span></span>
 
 > [!div class="checklist"]
-> * <span data-ttu-id="4dd86-109">如何使用 Azure CLI 创建 Azure App Service 网站</span><span class="sxs-lookup"><span data-stu-id="4dd86-109">Create an Azure App Service website using Azure CLI</span></span>
-> * <span data-ttu-id="4dd86-110">如何使用 Git 命令行工具将 ASP.NET Core 应用程序部署到 Azure App Service</span><span class="sxs-lookup"><span data-stu-id="4dd86-110">Deploy an ASP.NET Core application to Azure App Service using the Git command line tool</span></span>
+> * <span data-ttu-id="5a7bb-109">如何使用 Azure CLI 创建 Azure App Service 网站</span><span class="sxs-lookup"><span data-stu-id="5a7bb-109">Create an Azure App Service website using Azure CLI</span></span>
+> * <span data-ttu-id="5a7bb-110">如何使用 Git 命令行工具将 ASP.NET Core 应用程序部署到 Azure App Service</span><span class="sxs-lookup"><span data-stu-id="5a7bb-110">Deploy an ASP.NET Core application to Azure App Service using the Git command line tool</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="4dd86-111">系统必备</span><span class="sxs-lookup"><span data-stu-id="4dd86-111">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="5a7bb-111">系统必备</span><span class="sxs-lookup"><span data-stu-id="5a7bb-111">Prerequisites</span></span>
 
-<span data-ttu-id="4dd86-112">若要完成本教程，你需要：</span><span class="sxs-lookup"><span data-stu-id="4dd86-112">To complete this tutorial, you'll need:</span></span>
+<span data-ttu-id="5a7bb-112">若要完成本教程，你需要：</span><span class="sxs-lookup"><span data-stu-id="5a7bb-112">To complete this tutorial, you'll need:</span></span>
 
-* <span data-ttu-id="4dd86-113">[Microsoft Azure 订阅](https://azure.microsoft.com/free/)</span><span class="sxs-lookup"><span data-stu-id="4dd86-113">A [Microsoft Azure subscription](https://azure.microsoft.com/free/)</span></span>
-* [<span data-ttu-id="4dd86-114">.NET Core</span><span class="sxs-lookup"><span data-stu-id="4dd86-114">.NET Core</span></span>](https://www.microsoft.com/net/download/core)
-* <span data-ttu-id="4dd86-115">[Git](https://www.git-scm.com/) 命令行客户端</span><span class="sxs-lookup"><span data-stu-id="4dd86-115">[Git](https://www.git-scm.com/) command line client</span></span>
+* <span data-ttu-id="5a7bb-113">[Microsoft Azure 订阅](https://azure.microsoft.com/free/)</span><span class="sxs-lookup"><span data-stu-id="5a7bb-113">A [Microsoft Azure subscription](https://azure.microsoft.com/free/)</span></span>
+* [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
+* <span data-ttu-id="5a7bb-114">[Git](https://www.git-scm.com/) 命令行客户端</span><span class="sxs-lookup"><span data-stu-id="5a7bb-114">[Git](https://www.git-scm.com/) command line client</span></span>
 
-## <a name="create-a-web-application"></a><span data-ttu-id="4dd86-116">创建 Web 应用程序</span><span class="sxs-lookup"><span data-stu-id="4dd86-116">Create a web application</span></span>
+## <a name="create-a-web-application"></a><span data-ttu-id="5a7bb-115">创建 Web 应用程序</span><span class="sxs-lookup"><span data-stu-id="5a7bb-115">Create a web application</span></span>
 
-<span data-ttu-id="4dd86-117">为 Web 应用程序创建新目录，创建新的 ASP.NET Core MVC 应用程序，然后在本地运行该网站。</span><span class="sxs-lookup"><span data-stu-id="4dd86-117">Create a new directory for the web application, create a new ASP.NET Core MVC application, and then run the website locally.</span></span>
+<span data-ttu-id="5a7bb-116">为 Web 应用程序创建新目录，创建新的 ASP.NET Core MVC 应用程序，然后在本地运行该网站。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-116">Create a new directory for the web application, create a new ASP.NET Core MVC application, and then run the website locally.</span></span>
 
-# <a name="windowstabwindows"></a>[<span data-ttu-id="4dd86-118">Windows</span><span class="sxs-lookup"><span data-stu-id="4dd86-118">Windows</span></span>](#tab/windows)
+# <a name="windowstabwindows"></a>[<span data-ttu-id="5a7bb-117">Windows</span><span class="sxs-lookup"><span data-stu-id="5a7bb-117">Windows</span></span>](#tab/windows)
 ```cmd
 REM Create a new ASP.NET Core MVC application
 dotnet new razor -o MyApplication
@@ -54,7 +56,7 @@ REM Run the application
 dotnet run
 ```
 
-# <a name="othertabother"></a>[<span data-ttu-id="4dd86-119">其他</span><span class="sxs-lookup"><span data-stu-id="4dd86-119">Other</span></span>](#tab/other)
+# <a name="othertabother"></a>[<span data-ttu-id="5a7bb-118">其他</span><span class="sxs-lookup"><span data-stu-id="5a7bb-118">Other</span></span>](#tab/other)
 ```bash
 # Create a new ASP.NET Core MVC application
 dotnet new razor -o MyApplication
@@ -69,14 +71,14 @@ dotnet run
 
 ![命令行输出](publish-to-azure-webapp-using-cli/_static/new_prj.png)
 
-<span data-ttu-id="4dd86-121">通过浏览到 http://localhost:5000 测试应用程序。</span><span class="sxs-lookup"><span data-stu-id="4dd86-121">Test the application by browsing to http://localhost:5000.</span></span>
+<span data-ttu-id="5a7bb-120">通过浏览到 http://localhost:5000 测试应用程序。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-120">Test the application by browsing to http://localhost:5000.</span></span>
 
 ![本地运行的网站](publish-to-azure-webapp-using-cli/_static/app_test.png)
 
 
-## <a name="create-the-azure-app-service-instance"></a><span data-ttu-id="4dd86-123">创建 Azure App Service 实例</span><span class="sxs-lookup"><span data-stu-id="4dd86-123">Create the Azure App Service instance</span></span>
+## <a name="create-the-azure-app-service-instance"></a><span data-ttu-id="5a7bb-122">创建 Azure App Service 实例</span><span class="sxs-lookup"><span data-stu-id="5a7bb-122">Create the Azure App Service instance</span></span>
 
-<span data-ttu-id="4dd86-124">使用 [Azure Cloud Shell](/azure/cloud-shell/quickstart)，创建资源组、App Service 计划和 App Service Web 应用。</span><span class="sxs-lookup"><span data-stu-id="4dd86-124">Using the [Azure Cloud Shell](/azure/cloud-shell/quickstart), create a resource group, App Service plan, and an App Service web app.</span></span>
+<span data-ttu-id="5a7bb-123">使用 [Azure Cloud Shell](/azure/cloud-shell/quickstart)，创建资源组、App Service 计划和 App Service Web 应用。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-123">Using the [Azure Cloud Shell](/azure/cloud-shell/quickstart), create a resource group, App Service plan, and an App Service web app.</span></span>
 
 ```azurecli-interactive
 # Generate a unique Web App name
@@ -93,27 +95,27 @@ az appservice plan create --name $webappname --resource-group DotNetAzureTutoria
 az webapp create --name $webappname --resource-group DotNetAzureTutorial --plan $webappname
 ```
 
-<span data-ttu-id="4dd86-125">在部署之前，使用以下命令设置帐户级部署凭据：</span><span class="sxs-lookup"><span data-stu-id="4dd86-125">Before deployment, set the account-level deployment credentials using the following command:</span></span>
+<span data-ttu-id="5a7bb-124">在部署之前，使用以下命令设置帐户级部署凭据：</span><span class="sxs-lookup"><span data-stu-id="5a7bb-124">Before deployment, set the account-level deployment credentials using the following command:</span></span>
 
 ```azurecli-interactive
 az webapp deployment user set --user-name <desired user name> --password <desired password>
 ```
 
-<span data-ttu-id="4dd86-126">需要使用部署 URL 来使用 Git 部署应用程序。</span><span class="sxs-lookup"><span data-stu-id="4dd86-126">A deployment URL is needed to deploy the application using Git.</span></span>  <span data-ttu-id="4dd86-127">检索类似如下的 URL。</span><span class="sxs-lookup"><span data-stu-id="4dd86-127">Retrieve the URL like this.</span></span>
+<span data-ttu-id="5a7bb-125">需要使用部署 URL 来使用 Git 部署应用程序。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-125">A deployment URL is needed to deploy the application using Git.</span></span>  <span data-ttu-id="5a7bb-126">检索类似如下的 URL。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-126">Retrieve the URL like this.</span></span>
 
 ```azurecli-interactive
 az webapp deployment source config-local-git -n $webappname -g DotNetAzureTutorial --query [url] -o tsv
 ```
-<span data-ttu-id="4dd86-128">请注意以 `.git` 结尾的已显示 URL。</span><span class="sxs-lookup"><span data-stu-id="4dd86-128">Note the displayed URL ending in `.git`.</span></span> <span data-ttu-id="4dd86-129">它在下一步中使用。</span><span class="sxs-lookup"><span data-stu-id="4dd86-129">It's used in the next step.</span></span>
+<span data-ttu-id="5a7bb-127">请注意以 `.git` 结尾的已显示 URL。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-127">Note the displayed URL ending in `.git`.</span></span> <span data-ttu-id="5a7bb-128">它在下一步中使用。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-128">It's used in the next step.</span></span>
 
-## <a name="deploy-the-application-using-git"></a><span data-ttu-id="4dd86-130">使用 Git 部署应用程序</span><span class="sxs-lookup"><span data-stu-id="4dd86-130">Deploy the application using Git</span></span>
+## <a name="deploy-the-application-using-git"></a><span data-ttu-id="5a7bb-129">使用 Git 部署应用程序</span><span class="sxs-lookup"><span data-stu-id="5a7bb-129">Deploy the application using Git</span></span>
 
-<span data-ttu-id="4dd86-131">你已准备好使用 Git 从本地计算机部署。</span><span class="sxs-lookup"><span data-stu-id="4dd86-131">You're ready to deploy from your local machine using Git.</span></span>
+<span data-ttu-id="5a7bb-130">你已准备好使用 Git 从本地计算机部署。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-130">You're ready to deploy from your local machine using Git.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="4dd86-132">忽略 Git 中任何关于行尾的警告是安全的。</span><span class="sxs-lookup"><span data-stu-id="4dd86-132">It's safe to ignore any warnings from Git about line endings.</span></span>
+> <span data-ttu-id="5a7bb-131">忽略 Git 中任何关于行尾的警告是安全的。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-131">It's safe to ignore any warnings from Git about line endings.</span></span>
 
-# <a name="windowstabwindows"></a>[<span data-ttu-id="4dd86-133">Windows</span><span class="sxs-lookup"><span data-stu-id="4dd86-133">Windows</span></span>](#tab/windows)
+# <a name="windowstabwindows"></a>[<span data-ttu-id="5a7bb-132">Windows</span><span class="sxs-lookup"><span data-stu-id="5a7bb-132">Windows</span></span>](#tab/windows)
 ```cmd
 REM Initialize the local Git repository
 git init
@@ -131,7 +133,7 @@ REM Push the local repository to the remote
 git push azure master
 ```
 
-# <a name="othertabother"></a>[<span data-ttu-id="4dd86-134">其他</span><span class="sxs-lookup"><span data-stu-id="4dd86-134">Other</span></span>](#tab/other)
+# <a name="othertabother"></a>[<span data-ttu-id="5a7bb-133">其他</span><span class="sxs-lookup"><span data-stu-id="5a7bb-133">Other</span></span>](#tab/other)
 ```bash
 # Initialize the local Git repository
 git init
@@ -150,13 +152,13 @@ git push azure master
 ```
 ---
 
-<span data-ttu-id="4dd86-135">Git 提示前面设置的部署凭据。</span><span class="sxs-lookup"><span data-stu-id="4dd86-135">Git prompts for the deployment credentials that were set earlier.</span></span> <span data-ttu-id="4dd86-136">身份验证后，将应用程序推送到远程位置，然后生成并部署。</span><span class="sxs-lookup"><span data-stu-id="4dd86-136">After authenticating, the application will be pushed to the remote location, built, and deployed.</span></span>
+<span data-ttu-id="5a7bb-134">Git 提示前面设置的部署凭据。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-134">Git prompts for the deployment credentials that were set earlier.</span></span> <span data-ttu-id="5a7bb-135">身份验证后，将应用程序推送到远程位置，然后生成并部署。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-135">After authenticating, the application will be pushed to the remote location, built, and deployed.</span></span>
 
 ![Git 部署输出](publish-to-azure-webapp-using-cli/_static/post_deploy.png)
 
-## <a name="test-the-application"></a><span data-ttu-id="4dd86-138">测试应用程序</span><span class="sxs-lookup"><span data-stu-id="4dd86-138">Test the application</span></span>
+## <a name="test-the-application"></a><span data-ttu-id="5a7bb-137">测试应用程序</span><span class="sxs-lookup"><span data-stu-id="5a7bb-137">Test the application</span></span>
 
-<span data-ttu-id="4dd86-139">通过浏览到 `https://<web app name>.azurewebsites.net` 测试应用程序。</span><span class="sxs-lookup"><span data-stu-id="4dd86-139">Test the application by browsing to `https://<web app name>.azurewebsites.net`.</span></span>  <span data-ttu-id="4dd86-140">若要在 Cloud Shell（或 Azure CLI）中显示地址，请使用以下方法：</span><span class="sxs-lookup"><span data-stu-id="4dd86-140">To display the address in the Cloud Shell (or Azure CLI), use the following:</span></span>
+<span data-ttu-id="5a7bb-138">通过浏览到 `https://<web app name>.azurewebsites.net` 测试应用程序。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-138">Test the application by browsing to `https://<web app name>.azurewebsites.net`.</span></span>  <span data-ttu-id="5a7bb-139">若要在 Cloud Shell（或 Azure CLI）中显示地址，请使用以下方法：</span><span class="sxs-lookup"><span data-stu-id="5a7bb-139">To display the address in the Cloud Shell (or Azure CLI), use the following:</span></span>
 
 ```azurecli-interactive
 az webapp show -n $webappname -g DotNetAzureTutorial --query defaultHostName -o tsv
@@ -164,23 +166,23 @@ az webapp show -n $webappname -g DotNetAzureTutorial --query defaultHostName -o 
 
 ![在 Azure 中运行的应用](publish-to-azure-webapp-using-cli/_static/app_deployed.png)
 
-## <a name="clean-up"></a><span data-ttu-id="4dd86-142">清理</span><span class="sxs-lookup"><span data-stu-id="4dd86-142">Clean up</span></span>
+## <a name="clean-up"></a><span data-ttu-id="5a7bb-141">清理</span><span class="sxs-lookup"><span data-stu-id="5a7bb-141">Clean up</span></span>
 
-<span data-ttu-id="4dd86-143">完成测试应用并检查代码和资源后，通过删除资源组来删除 Web 应用并制定计划。</span><span class="sxs-lookup"><span data-stu-id="4dd86-143">When finished testing the app and inspecting the code and resources, delete the web app and plan by deleting the resource group.</span></span>
+<span data-ttu-id="5a7bb-142">完成测试应用并检查代码和资源后，通过删除资源组来删除 Web 应用并制定计划。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-142">When finished testing the app and inspecting the code and resources, delete the web app and plan by deleting the resource group.</span></span>
 
 ```azurecli-interactive
 az group delete -n DotNetAzureTutorial
 ```
 
-## <a name="next-steps"></a><span data-ttu-id="4dd86-144">后续步骤</span><span class="sxs-lookup"><span data-stu-id="4dd86-144">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="5a7bb-143">后续步骤</span><span class="sxs-lookup"><span data-stu-id="5a7bb-143">Next steps</span></span>
 
-<span data-ttu-id="4dd86-145">在本教程中，你将了解：</span><span class="sxs-lookup"><span data-stu-id="4dd86-145">In this tutorial, you learned how to:</span></span>
+<span data-ttu-id="5a7bb-144">在本教程中，你将了解：</span><span class="sxs-lookup"><span data-stu-id="5a7bb-144">In this tutorial, you learned how to:</span></span>
 
 > [!div class="checklist"]
-> * <span data-ttu-id="4dd86-146">如何使用 Azure CLI 创建 Azure App Service 网站</span><span class="sxs-lookup"><span data-stu-id="4dd86-146">Create an Azure App Service website using Azure CLI</span></span>
-> * <span data-ttu-id="4dd86-147">如何使用 Git 命令行工具将 ASP.NET Core 应用程序部署到 Azure App Service</span><span class="sxs-lookup"><span data-stu-id="4dd86-147">Deploy an ASP.NET Core application to Azure App Service using the Git command line tool</span></span>
+> * <span data-ttu-id="5a7bb-145">如何使用 Azure CLI 创建 Azure App Service 网站</span><span class="sxs-lookup"><span data-stu-id="5a7bb-145">Create an Azure App Service website using Azure CLI</span></span>
+> * <span data-ttu-id="5a7bb-146">如何使用 Git 命令行工具将 ASP.NET Core 应用程序部署到 Azure App Service</span><span class="sxs-lookup"><span data-stu-id="5a7bb-146">Deploy an ASP.NET Core application to Azure App Service using the Git command line tool</span></span>
 
-<span data-ttu-id="4dd86-148">接下来，了解如何使用命令行来部署使用 CosmosDB 的现有 Web 应用。</span><span class="sxs-lookup"><span data-stu-id="4dd86-148">Next, learn to use the command line to deploy an existing web app that uses CosmosDB.</span></span>
+<span data-ttu-id="5a7bb-147">接下来，了解如何使用命令行来部署使用 CosmosDB 的现有 Web 应用。</span><span class="sxs-lookup"><span data-stu-id="5a7bb-147">Next, learn to use the command line to deploy an existing web app that uses CosmosDB.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="4dd86-149">通过 .NET Core 从命令行部署到 Azure</span><span class="sxs-lookup"><span data-stu-id="4dd86-149">Deploy to Azure from the command line with .NET Core</span></span>](/dotnet/azure/dotnet-quickstart-xplat)
+> [<span data-ttu-id="5a7bb-148">通过 .NET Core 从命令行部署到 Azure</span><span class="sxs-lookup"><span data-stu-id="5a7bb-148">Deploy to Azure from the command line with .NET Core</span></span>](/dotnet/azure/dotnet-quickstart-xplat)

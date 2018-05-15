@@ -1,25 +1,23 @@
-## <a name="overview"></a>概述
+## <a name="overview"></a><span data-ttu-id="6cc3f-101">概述</span><span class="sxs-lookup"><span data-stu-id="6cc3f-101">Overview</span></span>
 
-本教程将创建以下 API：
+<span data-ttu-id="6cc3f-102">本教程将创建以下 API：</span><span class="sxs-lookup"><span data-stu-id="6cc3f-102">This tutorial creates the following API:</span></span>
 
-|API | 描述 | 请求正文 | 响应正文 |
+|<span data-ttu-id="6cc3f-103">API</span><span class="sxs-lookup"><span data-stu-id="6cc3f-103">API</span></span> | <span data-ttu-id="6cc3f-104">描述</span><span class="sxs-lookup"><span data-stu-id="6cc3f-104">Description</span></span> | <span data-ttu-id="6cc3f-105">请求正文</span><span class="sxs-lookup"><span data-stu-id="6cc3f-105">Request body</span></span> | <span data-ttu-id="6cc3f-106">响应正文</span><span class="sxs-lookup"><span data-stu-id="6cc3f-106">Response body</span></span> |
 |--- | ---- | ---- | ---- |
-|GET /api/todo | 获取所有待办事项 | 无 | 待办事项的数组|
-|GET /api/todo/{id} | 按 ID 获取项 | 无 | 待办事项|
-|POST /api/todo | 添加新项 | 待办事项 | 待办事项 |
-|PUT /api/todo/{id} | 更新现有项 &nbsp; | 待办事项 | 无 |
-|DELETE /api/todo/{id} &nbsp; &nbsp; | 删除项&nbsp; &nbsp; | 无 | 无|
+|<span data-ttu-id="6cc3f-107">GET /api/todo</span><span class="sxs-lookup"><span data-stu-id="6cc3f-107">GET /api/todo</span></span> | <span data-ttu-id="6cc3f-108">获取所有待办事项</span><span class="sxs-lookup"><span data-stu-id="6cc3f-108">Get all to-do items</span></span> | <span data-ttu-id="6cc3f-109">无</span><span class="sxs-lookup"><span data-stu-id="6cc3f-109">None</span></span> | <span data-ttu-id="6cc3f-110">待办事项的数组</span><span class="sxs-lookup"><span data-stu-id="6cc3f-110">Array of to-do items</span></span>|
+|<span data-ttu-id="6cc3f-111">GET /api/todo/{id}</span><span class="sxs-lookup"><span data-stu-id="6cc3f-111">GET /api/todo/{id}</span></span> | <span data-ttu-id="6cc3f-112">按 ID 获取项</span><span class="sxs-lookup"><span data-stu-id="6cc3f-112">Get an item by ID</span></span> | <span data-ttu-id="6cc3f-113">无</span><span class="sxs-lookup"><span data-stu-id="6cc3f-113">None</span></span> | <span data-ttu-id="6cc3f-114">待办事项</span><span class="sxs-lookup"><span data-stu-id="6cc3f-114">To-do item</span></span>|
+|<span data-ttu-id="6cc3f-115">POST /api/todo</span><span class="sxs-lookup"><span data-stu-id="6cc3f-115">POST /api/todo</span></span> | <span data-ttu-id="6cc3f-116">添加新项</span><span class="sxs-lookup"><span data-stu-id="6cc3f-116">Add a new item</span></span> | <span data-ttu-id="6cc3f-117">待办事项</span><span class="sxs-lookup"><span data-stu-id="6cc3f-117">To-do item</span></span> | <span data-ttu-id="6cc3f-118">待办事项</span><span class="sxs-lookup"><span data-stu-id="6cc3f-118">To-do item</span></span> |
+|<span data-ttu-id="6cc3f-119">PUT /api/todo/{id}</span><span class="sxs-lookup"><span data-stu-id="6cc3f-119">PUT /api/todo/{id}</span></span> | <span data-ttu-id="6cc3f-120">更新现有项 &nbsp;</span><span class="sxs-lookup"><span data-stu-id="6cc3f-120">Update an existing item &nbsp;</span></span> | <span data-ttu-id="6cc3f-121">待办事项</span><span class="sxs-lookup"><span data-stu-id="6cc3f-121">To-do item</span></span> | <span data-ttu-id="6cc3f-122">无</span><span class="sxs-lookup"><span data-stu-id="6cc3f-122">None</span></span> |
+|<span data-ttu-id="6cc3f-123">DELETE /api/todo/{id} &nbsp; &nbsp;</span><span class="sxs-lookup"><span data-stu-id="6cc3f-123">DELETE /api/todo/{id} &nbsp; &nbsp;</span></span> | <span data-ttu-id="6cc3f-124">删除项&nbsp; &nbsp;</span><span class="sxs-lookup"><span data-stu-id="6cc3f-124">Delete an item &nbsp; &nbsp;</span></span> | <span data-ttu-id="6cc3f-125">无</span><span class="sxs-lookup"><span data-stu-id="6cc3f-125">None</span></span> | <span data-ttu-id="6cc3f-126">无</span><span class="sxs-lookup"><span data-stu-id="6cc3f-126">None</span></span>|
 
-<br>
+<span data-ttu-id="6cc3f-127">下图显示了应用的基本设计。</span><span class="sxs-lookup"><span data-stu-id="6cc3f-127">The following diagram shows the basic design of the app.</span></span>
 
-下图显示了应用的基本设计。
+![客户端提交请求并从应用程序接收响应，客户端由左侧的框表示，应用程序则由右侧的框表示。](../../tutorials/first-web-api/_static/architecture.png)
 
-![客户端提交请求并从应用程序接收响应，客户端由左侧的框表示，应用程序则由右侧的框表示。 在应用程序框内，三个框分别代表控制器、模型和数据访问层。 请求进入应用程序的控制器，读/写操作是在控制器和数据访问层之间进行的。 模型被序列化并在响应中被返回给客户端。](../../tutorials/first-web-api/_static/architecture.png)
+* <span data-ttu-id="6cc3f-132">该客户端是使用 Web API（移动应用、浏览器等）的对象。</span><span class="sxs-lookup"><span data-stu-id="6cc3f-132">The client is whatever consumes the web API (mobile app, browser, etc.).</span></span> <span data-ttu-id="6cc3f-133">本教程不会创建客户端。</span><span class="sxs-lookup"><span data-stu-id="6cc3f-133">This tutorial doesn't create a client.</span></span> <span data-ttu-id="6cc3f-134">[Postman](https://www.getpostman.com/) 或 [curl](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/curl.1.html) 是用作测试应用的客户端。</span><span class="sxs-lookup"><span data-stu-id="6cc3f-134">[Postman](https://www.getpostman.com/) or [curl](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/curl.1.html) is used as the client to test the app.</span></span>
 
-* 该客户端是使用 Web API（移动应用、浏览器等）的对象。 本教程不会创建客户端。 [Postman](https://www.getpostman.com/) 或 [curl](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/curl.1.html) 是用作测试应用的客户端。
+* <span data-ttu-id="6cc3f-135">模型是表示应用程序中的数据的对象。</span><span class="sxs-lookup"><span data-stu-id="6cc3f-135">A *model* is an object that represents the data in the app.</span></span> <span data-ttu-id="6cc3f-136">在此示例中，唯一的模型是待办事项。</span><span class="sxs-lookup"><span data-stu-id="6cc3f-136">In this case, the only model is a to-do item.</span></span> <span data-ttu-id="6cc3f-137">模型表示为 C# 类，也称为 Plain Old C#  Object (POCO)。</span><span class="sxs-lookup"><span data-stu-id="6cc3f-137">Models are represented as C# classes, also known as **P**lain **O**ld **C**# **O**bject (POCOs).</span></span>
 
-* 模型是表示应用程序中的数据的对象。 在此示例中，唯一的模型是待办事项。 模型表示为 C# 类，也称为 Plain Old C#  Object (POCO)。
+* <span data-ttu-id="6cc3f-138">控制器是处理 HTTP 请求并创建 HTTP 响应的对象。</span><span class="sxs-lookup"><span data-stu-id="6cc3f-138">A *controller* is an object that handles HTTP requests and creates the HTTP response.</span></span> <span data-ttu-id="6cc3f-139">此应用程序具有单个控制器。</span><span class="sxs-lookup"><span data-stu-id="6cc3f-139">This app has a single controller.</span></span>
 
-* 控制器是处理 HTTP 请求并创建 HTTP 响应的对象。 此应用程序具有单个控制器。
-
-* 为了简化教程，应用不会使用永久数据库。 示例应用将待办事项存储在内存数据库中。
+* <span data-ttu-id="6cc3f-140">为了简化教程，应用不会使用永久数据库。</span><span class="sxs-lookup"><span data-stu-id="6cc3f-140">To keep the tutorial simple, the app doesn't use a persistent database.</span></span> <span data-ttu-id="6cc3f-141">示例应用将待办事项存储在内存数据库中。</span><span class="sxs-lookup"><span data-stu-id="6cc3f-141">The sample app stores to-do items in an in-memory database.</span></span>

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
-title: "电子邮件确认及密码重置 (C#) 使用日志中，创建安全的 ASP.NET MVC 5 web 应用程序 |Microsoft 文档"
+title: 电子邮件确认及密码重置 (C#) 使用日志中，创建安全的 ASP.NET MVC 5 web 应用程序 |Microsoft 文档
 author: Rick-Anderson
-description: "本教程演示了如何生成与电子邮件确认及密码重置使用 ASP.NET 标识成员资格系统的 ASP.NET MVC 5 web 应用程序。 Ca..."
+description: 本教程演示了如何生成与电子邮件确认及密码重置使用 ASP.NET 标识成员资格系统的 ASP.NET MVC 5 web 应用程序。 Ca...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/26/2015
@@ -78,7 +78,7 @@ ms.lasthandoff: 02/20/2018
 [!code-xml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample4.xml)]
 
 > [!WARNING]
-> <span data-ttu-id="2ebd1-144">安全-永远不会存储在源代码中敏感数据。</span><span class="sxs-lookup"><span data-stu-id="2ebd1-144">Security - Never store sensitive data in your source code.</span></span> <span data-ttu-id="2ebd1-145">帐户和凭据存储在 appSetting。</span><span class="sxs-lookup"><span data-stu-id="2ebd1-145">The account and credentials are stored in the appSetting.</span></span> <span data-ttu-id="2ebd1-146">在 Azure 上，你可以安全地存储这些值在**[配置](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)**在 Azure 门户中的选项卡。</span><span class="sxs-lookup"><span data-stu-id="2ebd1-146">On Azure, you can securely store these values on the **[Configure](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** tab in the Azure portal.</span></span> <span data-ttu-id="2ebd1-147">请参阅[用于密码和其他敏感数据部署到 ASP.NET 和 Azure 的最佳做法](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)。</span><span class="sxs-lookup"><span data-stu-id="2ebd1-147">See [Best practices for deploying passwords and other sensitive data to ASP.NET and Azure](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md).</span></span>
+> <span data-ttu-id="2ebd1-144">安全-永远不会存储在源代码中敏感数据。</span><span class="sxs-lookup"><span data-stu-id="2ebd1-144">Security - Never store sensitive data in your source code.</span></span> <span data-ttu-id="2ebd1-145">帐户和凭据存储在 appSetting。</span><span class="sxs-lookup"><span data-stu-id="2ebd1-145">The account and credentials are stored in the appSetting.</span></span> <span data-ttu-id="2ebd1-146">在 Azure 上，你可以安全地存储这些值在**[配置](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** 在 Azure 门户中的选项卡。</span><span class="sxs-lookup"><span data-stu-id="2ebd1-146">On Azure, you can securely store these values on the **[Configure](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** tab in the Azure portal.</span></span> <span data-ttu-id="2ebd1-147">请参阅[用于密码和其他敏感数据部署到 ASP.NET 和 Azure 的最佳做法](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)。</span><span class="sxs-lookup"><span data-stu-id="2ebd1-147">See [Best practices for deploying passwords and other sensitive data to ASP.NET and Azure](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md).</span></span>
 
 
 ### <a name="enable-email-confirmation-in-the-account-controller"></a><span data-ttu-id="2ebd1-148">启用帐户控制器中的电子邮件确认</span><span class="sxs-lookup"><span data-stu-id="2ebd1-148">Enable email confirmation in the Account controller</span></span>

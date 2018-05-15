@@ -1,105 +1,140 @@
 ---
-title: "ASP.NET Core 中的 WebSocket 支持"
+title: ASP.NET Core 中的 WebSocket 支持
 author: tdykstra
-description: "了解如何在 ASP.NET Core 中开始使用 WebSocket。"
+description: 了解如何在 ASP.NET Core 中开始使用 WebSocket。
 manager: wpickett
 ms.author: tdykstra
-ms.date: 03/25/2017
+ms.custom: mvc
+ms.date: 02/15/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/websockets
-ms.openlocfilehash: 306eca28b9f1f66e1ccaf185ccae87db8dea1b01
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: e744ab5b81ff85f48edb012a86b55003cc74929c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="introduction-to-websockets-in-aspnet-core"></a><span data-ttu-id="7c32f-103">ASP.NET Core 中 WebSocket 的介绍</span><span class="sxs-lookup"><span data-stu-id="7c32f-103">Introduction to WebSockets in ASP.NET Core</span></span>
+# <a name="websockets-support-in-aspnet-core"></a><span data-ttu-id="e644d-103">ASP.NET Core 中的 WebSocket 支持</span><span class="sxs-lookup"><span data-stu-id="e644d-103">WebSockets support in ASP.NET Core</span></span>
 
-<span data-ttu-id="7c32f-104">作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Andrew Stanton-Nurse](https://github.com/anurse)</span><span class="sxs-lookup"><span data-stu-id="7c32f-104">By [Tom Dykstra](https://github.com/tdykstra) and [Andrew Stanton-Nurse](https://github.com/anurse)</span></span>
+<span data-ttu-id="e644d-104">作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Andrew Stanton-Nurse](https://github.com/anurse)</span><span class="sxs-lookup"><span data-stu-id="e644d-104">By [Tom Dykstra](https://github.com/tdykstra) and [Andrew Stanton-Nurse](https://github.com/anurse)</span></span>
 
-<span data-ttu-id="7c32f-105">本文介绍 ASP.NET Core 中 WebSocket 的入门方法。</span><span class="sxs-lookup"><span data-stu-id="7c32f-105">This article explains how to get started with WebSockets in ASP.NET Core.</span></span> <span data-ttu-id="7c32f-106">[WebSocket](https://wikipedia.org/wiki/WebSocket) 是一个协议，支持通过 TCP 连接建立持久的双向信道。</span><span class="sxs-lookup"><span data-stu-id="7c32f-106">[WebSocket](https://wikipedia.org/wiki/WebSocket) is a protocol that enables two-way persistent communication channels over TCP connections.</span></span> <span data-ttu-id="7c32f-107">它可用于聊天、股票报价和游戏等应用程序，以及 Web 应用程序中需要实时功能的任何情景。</span><span class="sxs-lookup"><span data-stu-id="7c32f-107">It's used for applications such as chat, stock tickers, games, anywhere you want real-time functionality in a web application.</span></span>
+<span data-ttu-id="e644d-105">本文介绍 ASP.NET Core 中 WebSocket 的入门方法。</span><span class="sxs-lookup"><span data-stu-id="e644d-105">This article explains how to get started with WebSockets in ASP.NET Core.</span></span> <span data-ttu-id="e644d-106">[WebSocket](https://wikipedia.org/wiki/WebSocket) ([RFC 6455](https://tools.ietf.org/html/rfc6455)) 是一个协议，支持通过 TCP 连接建立持久的双向信道。</span><span class="sxs-lookup"><span data-stu-id="e644d-106">[WebSocket](https://wikipedia.org/wiki/WebSocket) ([RFC 6455](https://tools.ietf.org/html/rfc6455)) is a protocol that enables two-way persistent communication channels over TCP connections.</span></span> <span data-ttu-id="e644d-107">它用于从快速实时通信中获益的应用，如聊天、仪表板和游戏应用。</span><span class="sxs-lookup"><span data-stu-id="e644d-107">It's used in apps that benefit from fast, real-time communication, such as chat, dashboard, and game apps.</span></span>
 
-<span data-ttu-id="7c32f-108">[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）。</span><span class="sxs-lookup"><span data-stu-id="7c32f-108">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample) ([how to download](xref:tutorials/index#how-to-download-a-sample)).</span></span> <span data-ttu-id="7c32f-109">有关详细信息，请参阅[后续步骤](#next-steps)。</span><span class="sxs-lookup"><span data-stu-id="7c32f-109">See the [Next Steps](#next-steps) section for more information.</span></span>
+<span data-ttu-id="e644d-108">[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）。</span><span class="sxs-lookup"><span data-stu-id="e644d-108">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample) ([how to download](xref:tutorials/index#how-to-download-a-sample)).</span></span> <span data-ttu-id="e644d-109">有关详细信息，请参阅[后续步骤](#next-steps)部分。</span><span class="sxs-lookup"><span data-stu-id="e644d-109">See the [Next steps](#next-steps) section for more information.</span></span>
 
+## <a name="prerequisites"></a><span data-ttu-id="e644d-110">系统必备</span><span class="sxs-lookup"><span data-stu-id="e644d-110">Prerequisites</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="7c32f-110">系统必备</span><span class="sxs-lookup"><span data-stu-id="7c32f-110">Prerequisites</span></span>
-
-* <span data-ttu-id="7c32f-111">ASP.NET Core 1.1（无法在 1.0 上运行）</span><span class="sxs-lookup"><span data-stu-id="7c32f-111">ASP.NET Core 1.1 (doesn't run on 1.0)</span></span>
-* <span data-ttu-id="7c32f-112">ASP.NET Core 运行的任何操作系统：</span><span class="sxs-lookup"><span data-stu-id="7c32f-112">Any OS that ASP.NET Core runs on:</span></span>
+* <span data-ttu-id="e644d-111">ASP.NET Core 1.1 或更高版本</span><span class="sxs-lookup"><span data-stu-id="e644d-111">ASP.NET Core 1.1 or later</span></span>
+* <span data-ttu-id="e644d-112">支持 ASP.NET Core 的任何操作系统：</span><span class="sxs-lookup"><span data-stu-id="e644d-112">Any OS that supports ASP.NET Core:</span></span>
   
-  * <span data-ttu-id="7c32f-113">Windows 7 / Windows Server 2008 及更高版本</span><span class="sxs-lookup"><span data-stu-id="7c32f-113">Windows 7 / Windows Server 2008 and later</span></span>
-  * <span data-ttu-id="7c32f-114">Linux</span><span class="sxs-lookup"><span data-stu-id="7c32f-114">Linux</span></span>
-  * <span data-ttu-id="7c32f-115">macOS</span><span class="sxs-lookup"><span data-stu-id="7c32f-115">macOS</span></span>
+  * <span data-ttu-id="e644d-113">Windows 7/Windows Server 2008 或更高版本</span><span class="sxs-lookup"><span data-stu-id="e644d-113">Windows 7 / Windows Server 2008 or later</span></span>
+  * <span data-ttu-id="e644d-114">Linux</span><span class="sxs-lookup"><span data-stu-id="e644d-114">Linux</span></span>
+  * <span data-ttu-id="e644d-115">macOS</span><span class="sxs-lookup"><span data-stu-id="e644d-115">macOS</span></span>
+  
+* <span data-ttu-id="e644d-116">如果应用在安装了 IIS 的 Windows 上运行：</span><span class="sxs-lookup"><span data-stu-id="e644d-116">If the app runs on Windows with IIS:</span></span>
 
-* <span data-ttu-id="7c32f-116">**例外**：如果在带有 IIS 或 WebListener 的 Windows 上运行应用，必须使用：</span><span class="sxs-lookup"><span data-stu-id="7c32f-116">**Exception**: If your app runs on Windows with IIS, or with WebListener, you must use:</span></span>
+  * <span data-ttu-id="e644d-117">Windows 8 / Windows Server 2012 及更高版本</span><span class="sxs-lookup"><span data-stu-id="e644d-117">Windows 8 / Windows Server 2012 or later</span></span>
+  * <span data-ttu-id="e644d-118">IIS 8 / IIS 8 Express</span><span class="sxs-lookup"><span data-stu-id="e644d-118">IIS 8 / IIS 8 Express</span></span>
+  * <span data-ttu-id="e644d-119">必须在 IIS 中启用 WebSocket（请参阅 [IIS/IIS Express 支持](#iisiis-express-support)部分。）</span><span class="sxs-lookup"><span data-stu-id="e644d-119">WebSockets must be enabled in IIS (See the [IIS/IIS Express support](#iisiis-express-support) section.)</span></span>
+  
+* <span data-ttu-id="e644d-120">如果应用在 [HTTP.sys](xref:fundamentals/servers/httpsys) 上运行：</span><span class="sxs-lookup"><span data-stu-id="e644d-120">If the app runs on [HTTP.sys](xref:fundamentals/servers/httpsys):</span></span>
 
-  * <span data-ttu-id="7c32f-117">Windows 8 / Windows Server 2012 及更高版本</span><span class="sxs-lookup"><span data-stu-id="7c32f-117">Windows 8 / Windows Server 2012 or later</span></span>
-  * <span data-ttu-id="7c32f-118">IIS 8 / IIS 8 Express</span><span class="sxs-lookup"><span data-stu-id="7c32f-118">IIS 8 / IIS 8 Express</span></span>
-  * <span data-ttu-id="7c32f-119">必须在 IIS 中启用 WebSocket</span><span class="sxs-lookup"><span data-stu-id="7c32f-119">WebSocket must be enabled in IIS</span></span>
+  * <span data-ttu-id="e644d-121">Windows 8 / Windows Server 2012 及更高版本</span><span class="sxs-lookup"><span data-stu-id="e644d-121">Windows 8 / Windows Server 2012 or later</span></span>
 
-* <span data-ttu-id="7c32f-120">有关受支持的浏览器，请参阅 http://caniuse.com/#feat=websockets。</span><span class="sxs-lookup"><span data-stu-id="7c32f-120">For supported browsers, see http://caniuse.com/#feat=websockets.</span></span>
+* <span data-ttu-id="e644d-122">有关支持的浏览器，请参阅 https://caniuse.com/#feat=websockets。</span><span class="sxs-lookup"><span data-stu-id="e644d-122">For supported browsers, see https://caniuse.com/#feat=websockets.</span></span>
 
-## <a name="when-to-use-it"></a><span data-ttu-id="7c32f-121">何时使用</span><span class="sxs-lookup"><span data-stu-id="7c32f-121">When to use it</span></span>
+## <a name="when-to-use-websockets"></a><span data-ttu-id="e644d-123">何时使用 WebSocket</span><span class="sxs-lookup"><span data-stu-id="e644d-123">When to use WebSockets</span></span>
 
-<span data-ttu-id="7c32f-122">需要直接使用套接字连接时，请使用 WebSocket。</span><span class="sxs-lookup"><span data-stu-id="7c32f-122">Use WebSockets when you need to work directly with a socket connection.</span></span> <span data-ttu-id="7c32f-123">例如，实时游戏可能需要最佳性能。</span><span class="sxs-lookup"><span data-stu-id="7c32f-123">For example, you might need the best possible performance for a real-time game.</span></span>
+<span data-ttu-id="e644d-124">通过 WebSocket 可直接使用套接字连接。</span><span class="sxs-lookup"><span data-stu-id="e644d-124">Use WebSockets to work directly with a socket connection.</span></span> <span data-ttu-id="e644d-125">例如，使用 WebSocket 可以让实时游戏达到最佳性能。</span><span class="sxs-lookup"><span data-stu-id="e644d-125">For example, use WebSockets for the best possible performance with a real-time game.</span></span>
 
-<span data-ttu-id="7c32f-124">[ASP.NET SignalR](https://docs.microsoft.com/aspnet/signalr/overview/getting-started/introduction-to-signalr) 为实时功能提供了更丰富的应用程序模型，但它仅在 ASP.NET 上运行，不能在 ASP.NET Core 上运行。</span><span class="sxs-lookup"><span data-stu-id="7c32f-124">[ASP.NET SignalR](https://docs.microsoft.com/aspnet/signalr/overview/getting-started/introduction-to-signalr) provides a richer application model for real-time functionality, but it runs only on ASP.NET, not ASP.NET Core.</span></span> <span data-ttu-id="7c32f-125">SignalR 的 Core 版本正在开发中；若要了解其进度，请参阅 [适用于 SignalR Core 的 GitHub 存储库](https://github.com/aspnet/SignalR)。</span><span class="sxs-lookup"><span data-stu-id="7c32f-125">A Core version of SignalR is under development; to follow its progress, see the [GitHub repository for SignalR Core](https://github.com/aspnet/SignalR).</span></span>
+<span data-ttu-id="e644d-126">[ASP.NET SignalR](/aspnet/signalr/overview/getting-started/introduction-to-signalr) 为实时功能提供了更丰富的应用模型，但它仅在 ASP.NET 4.x 上运行，不能在 ASP.NET Core 上运行。</span><span class="sxs-lookup"><span data-stu-id="e644d-126">[ASP.NET SignalR](/aspnet/signalr/overview/getting-started/introduction-to-signalr) provides a richer app model for real-time functionality, but it only runs on ASP.NET 4.x, not ASP.NET Core.</span></span> <span data-ttu-id="e644d-127">SignalR 的 ASP.NET Core 版本计划随 ASP.NET Core 2.1 一起发布。</span><span class="sxs-lookup"><span data-stu-id="e644d-127">An ASP.NET Core version of SignalR is scheduled for release with ASP.NET Core 2.1.</span></span> <span data-ttu-id="e644d-128">请参阅 [ASP.NET Core 2.1 高级计划](https://github.com/aspnet/Announcements/issues/288)。</span><span class="sxs-lookup"><span data-stu-id="e644d-128">See [ASP.NET Core 2.1 high-level planning](https://github.com/aspnet/Announcements/issues/288).</span></span>
 
-<span data-ttu-id="7c32f-126">如果不想等待 SignalR Core，现在可直接使用 WebSocket。</span><span class="sxs-lookup"><span data-stu-id="7c32f-126">If you don't want to wait for SignalR Core, you can use WebSockets directly now.</span></span> <span data-ttu-id="7c32f-127">但是可能必须开发 SignalR 提供的功能，例如：</span><span class="sxs-lookup"><span data-stu-id="7c32f-127">But you might have to develop features that SignalR would provide, such as:</span></span>
+<span data-ttu-id="e644d-129">发布 SignalR Core 前，可使用 WebSocket。</span><span class="sxs-lookup"><span data-stu-id="e644d-129">Until SignalR Core is released, WebSockets can be used.</span></span> <span data-ttu-id="e644d-130">但 SignalR 的功能必须由开发人员提供和支持。</span><span class="sxs-lookup"><span data-stu-id="e644d-130">However, features that SignalR provides must be provided and supported by the developer.</span></span> <span data-ttu-id="e644d-131">例如:</span><span class="sxs-lookup"><span data-stu-id="e644d-131">For example:</span></span>
 
-* <span data-ttu-id="7c32f-128">通过自动回退到替代传输方法来支持更广泛的浏览器版本。</span><span class="sxs-lookup"><span data-stu-id="7c32f-128">Support for a broader range of browser versions by using automatic fallback to alternative transport methods.</span></span>
-* <span data-ttu-id="7c32f-129">连接断开时自动重新连接。</span><span class="sxs-lookup"><span data-stu-id="7c32f-129">Automatic reconnection when a connection drops.</span></span>
-* <span data-ttu-id="7c32f-130">支持服务器上的客户端调用方法，反之亦然。</span><span class="sxs-lookup"><span data-stu-id="7c32f-130">Support for clients calling methods on the server or vice versa.</span></span>
-* <span data-ttu-id="7c32f-131">支持缩放到多个服务器。</span><span class="sxs-lookup"><span data-stu-id="7c32f-131">Support for scaling to multiple servers.</span></span>
+* <span data-ttu-id="e644d-132">通过自动回退到替代传输方法来支持更广泛的浏览器版本。</span><span class="sxs-lookup"><span data-stu-id="e644d-132">Support for a broader range of browser versions by using automatic fallback to alternative transport methods.</span></span>
+* <span data-ttu-id="e644d-133">连接断开时自动重新连接。</span><span class="sxs-lookup"><span data-stu-id="e644d-133">Automatic reconnection when a connection drops.</span></span>
+* <span data-ttu-id="e644d-134">支持服务器上的客户端调用方法，反之亦然。</span><span class="sxs-lookup"><span data-stu-id="e644d-134">Support for clients calling methods on the server or vice versa.</span></span>
+* <span data-ttu-id="e644d-135">支持缩放到多个服务器。</span><span class="sxs-lookup"><span data-stu-id="e644d-135">Support for scaling to multiple servers.</span></span>
 
-## <a name="how-to-use-it"></a><span data-ttu-id="7c32f-132">使用方法</span><span class="sxs-lookup"><span data-stu-id="7c32f-132">How to use it</span></span>
+## <a name="how-to-use-it"></a><span data-ttu-id="e644d-136">使用方法</span><span class="sxs-lookup"><span data-stu-id="e644d-136">How to use it</span></span>
 
-* <span data-ttu-id="7c32f-133">安装 [Microsoft.AspNetCore.WebSockets](https://www.nuget.org/packages/Microsoft.AspNetCore.WebSockets/) 包。</span><span class="sxs-lookup"><span data-stu-id="7c32f-133">Install the [Microsoft.AspNetCore.WebSockets](https://www.nuget.org/packages/Microsoft.AspNetCore.WebSockets/) package.</span></span>
-* <span data-ttu-id="7c32f-134">配置中间件。</span><span class="sxs-lookup"><span data-stu-id="7c32f-134">Configure the middleware.</span></span>
-* <span data-ttu-id="7c32f-135">接受 WebSocket 请求。</span><span class="sxs-lookup"><span data-stu-id="7c32f-135">Accept WebSocket requests.</span></span>
-* <span data-ttu-id="7c32f-136">发送和接收消息。</span><span class="sxs-lookup"><span data-stu-id="7c32f-136">Send and receive messages.</span></span>
+* <span data-ttu-id="e644d-137">安装 [Microsoft.AspNetCore.WebSockets](https://www.nuget.org/packages/Microsoft.AspNetCore.WebSockets/) 包。</span><span class="sxs-lookup"><span data-stu-id="e644d-137">Install the [Microsoft.AspNetCore.WebSockets](https://www.nuget.org/packages/Microsoft.AspNetCore.WebSockets/) package.</span></span>
+* <span data-ttu-id="e644d-138">配置中间件。</span><span class="sxs-lookup"><span data-stu-id="e644d-138">Configure the middleware.</span></span>
+* <span data-ttu-id="e644d-139">接受 WebSocket 请求。</span><span class="sxs-lookup"><span data-stu-id="e644d-139">Accept WebSocket requests.</span></span>
+* <span data-ttu-id="e644d-140">发送和接收消息。</span><span class="sxs-lookup"><span data-stu-id="e644d-140">Send and receive messages.</span></span>
 
-### <a name="configure-the-middleware"></a><span data-ttu-id="7c32f-137">配置中间件</span><span class="sxs-lookup"><span data-stu-id="7c32f-137">Configure the middleware</span></span>
+### <a name="configure-the-middleware"></a><span data-ttu-id="e644d-141">配置中间件</span><span class="sxs-lookup"><span data-stu-id="e644d-141">Configure the middleware</span></span>
 
-<span data-ttu-id="7c32f-138">在 `Startup` 类的 `Configure` 方法中添加 WebSocket 中间件。</span><span class="sxs-lookup"><span data-stu-id="7c32f-138">Add the WebSockets middleware in the `Configure` method of the `Startup` class.</span></span>
+<span data-ttu-id="e644d-142">在 `Startup` 类的 `Configure` 方法中添加 WebSocket 中间件：</span><span class="sxs-lookup"><span data-stu-id="e644d-142">Add the WebSockets middleware in the `Configure` method of the `Startup` class:</span></span>
 
 [!code-csharp[](websockets/sample/Startup.cs?name=UseWebSockets)]
 
-<span data-ttu-id="7c32f-139">可配置以下设置：</span><span class="sxs-lookup"><span data-stu-id="7c32f-139">The following settings can be configured:</span></span>
+<span data-ttu-id="e644d-143">可配置以下设置：</span><span class="sxs-lookup"><span data-stu-id="e644d-143">The following settings can be configured:</span></span>
 
-* <span data-ttu-id="7c32f-140">`KeepAliveInterval` - 向客户端发送“ping”帧的频率，以确保代理保持连接处于打开状态。</span><span class="sxs-lookup"><span data-stu-id="7c32f-140">`KeepAliveInterval` - How frequently to send "ping" frames to the client, to ensure proxies keep the connection open.</span></span>
-* <span data-ttu-id="7c32f-141">`ReceiveBufferSize` - 用于接收数据的缓冲区的大小。</span><span class="sxs-lookup"><span data-stu-id="7c32f-141">`ReceiveBufferSize` - The size of the buffer used to receive data.</span></span> <span data-ttu-id="7c32f-142">只有高级用户才需要对其进行更改，以便根据数据大小调整性能。</span><span class="sxs-lookup"><span data-stu-id="7c32f-142">Only advanced users would need to change this, for performance tuning based on the size of their data.</span></span>
+* <span data-ttu-id="e644d-144">`KeepAliveInterval` - 向客户端发送“ping”帧的频率，以确保代理保持连接处于打开状态。</span><span class="sxs-lookup"><span data-stu-id="e644d-144">`KeepAliveInterval` - How frequently to send "ping" frames to the client to ensure proxies keep the connection open.</span></span>
+* <span data-ttu-id="e644d-145">`ReceiveBufferSize` - 用于接收数据的缓冲区的大小。</span><span class="sxs-lookup"><span data-stu-id="e644d-145">`ReceiveBufferSize` - The size of the buffer used to receive data.</span></span> <span data-ttu-id="e644d-146">高级用户可能需要对其进行更改，以便根据数据大小调整性能。</span><span class="sxs-lookup"><span data-stu-id="e644d-146">Advanced users may need to change this for performance tuning based on the size of the data.</span></span>
 
 [!code-csharp[](websockets/sample/Startup.cs?name=UseWebSocketsOptions)]
 
-### <a name="accept-websocket-requests"></a><span data-ttu-id="7c32f-143">接受 WebSocket 请求</span><span class="sxs-lookup"><span data-stu-id="7c32f-143">Accept WebSocket requests</span></span>
+### <a name="accept-websocket-requests"></a><span data-ttu-id="e644d-147">接受 WebSocket 请求</span><span class="sxs-lookup"><span data-stu-id="e644d-147">Accept WebSocket requests</span></span>
 
-<span data-ttu-id="7c32f-144">在请求生命周期后期（例如在 `Configure` 方法或 MVC 操作的后期），检查它是否是 WebSocket 请求并接受 WebSocket 请求。</span><span class="sxs-lookup"><span data-stu-id="7c32f-144">Somewhere later in the request life cycle (later in the `Configure` method or in an MVC action, for example) check if it's a WebSocket request and accept the WebSocket request.</span></span>
+<span data-ttu-id="e644d-148">在请求生命周期后期（例如在 `Configure` 方法或 MVC 操作的后期），检查它是否是 WebSocket 请求并接受 WebSocket 请求。</span><span class="sxs-lookup"><span data-stu-id="e644d-148">Somewhere later in the request life cycle (later in the `Configure` method or in an MVC action, for example) check if it's a WebSocket request and accept the WebSocket request.</span></span>
 
-<span data-ttu-id="7c32f-145">该示例来自 `Configure` 方法的后期。</span><span class="sxs-lookup"><span data-stu-id="7c32f-145">This example is from later in the `Configure` method.</span></span>
+<span data-ttu-id="e644d-149">以下示例来自 `Configure` 方法的后期：</span><span class="sxs-lookup"><span data-stu-id="e644d-149">The following example is from later in the `Configure` method:</span></span>
 
 [!code-csharp[](websockets/sample/Startup.cs?name=AcceptWebSocket&highlight=7)]
 
-<span data-ttu-id="7c32f-146">WebSocket 请求可以来自任何 URL，但此示例代码只接受 `/ws` 的请求。</span><span class="sxs-lookup"><span data-stu-id="7c32f-146">A WebSocket request could come in on any URL, but this sample code only accepts requests for `/ws`.</span></span>
+<span data-ttu-id="e644d-150">WebSocket 请求可以来自任何 URL，但此示例代码只接受 `/ws` 的请求。</span><span class="sxs-lookup"><span data-stu-id="e644d-150">A WebSocket request could come in on any URL, but this sample code only accepts requests for `/ws`.</span></span>
 
-### <a name="send-and-receive-messages"></a><span data-ttu-id="7c32f-147">发送和接收消息</span><span class="sxs-lookup"><span data-stu-id="7c32f-147">Send and receive messages</span></span>
+### <a name="send-and-receive-messages"></a><span data-ttu-id="e644d-151">发送和接收消息</span><span class="sxs-lookup"><span data-stu-id="e644d-151">Send and receive messages</span></span>
 
-<span data-ttu-id="7c32f-148">`AcceptWebSocketAsync` 方法将 TCP 连接升级到 WebSocket 连接，并提供 [WebSocket](https://docs.microsoft.com/dotnet/core/api/system.net.websockets.websocket) 对象。</span><span class="sxs-lookup"><span data-stu-id="7c32f-148">The `AcceptWebSocketAsync` method upgrades the TCP connection to a WebSocket connection and gives you a [WebSocket](https://docs.microsoft.com/dotnet/core/api/system.net.websockets.websocket) object.</span></span> <span data-ttu-id="7c32f-149">使用 WebSocket 对象发送和接收消息。</span><span class="sxs-lookup"><span data-stu-id="7c32f-149">Use the WebSocket object to send and receive messages.</span></span>
+<span data-ttu-id="e644d-152">`AcceptWebSocketAsync` 方法将 TCP 连接升级到 WebSocket 连接，并提供 [WebSocket](/dotnet/core/api/system.net.websockets.websocket) 对象。</span><span class="sxs-lookup"><span data-stu-id="e644d-152">The `AcceptWebSocketAsync` method upgrades the TCP connection to a WebSocket connection and provides a [WebSocket](/dotnet/core/api/system.net.websockets.websocket) object.</span></span> <span data-ttu-id="e644d-153">使用 `WebSocket` 对象发送和接收消息。</span><span class="sxs-lookup"><span data-stu-id="e644d-153">Use the `WebSocket` object to send and receive messages.</span></span>
 
-<span data-ttu-id="7c32f-150">之前显示的接受 WebSocket 请求的代码将 `WebSocket` 对象传递给 `Echo` 方法；此处为 `Echo` 方法。</span><span class="sxs-lookup"><span data-stu-id="7c32f-150">The code shown earlier that accepts the WebSocket request passes the `WebSocket` object to an `Echo` method; here's the `Echo` method.</span></span> <span data-ttu-id="7c32f-151">代码接收消息并立即发回相同的消息。</span><span class="sxs-lookup"><span data-stu-id="7c32f-151">The code receives a message and immediately sends back the same message.</span></span> <span data-ttu-id="7c32f-152">一直在循环中执行此操作，直到客户端关闭连接。</span><span class="sxs-lookup"><span data-stu-id="7c32f-152">It stays in a loop doing that until the client closes the connection.</span></span> 
+<span data-ttu-id="e644d-154">之前显示的接受 WebSocket 请求的代码将 `WebSocket` 对象传递给 `Echo` 方法。</span><span class="sxs-lookup"><span data-stu-id="e644d-154">The code shown earlier that accepts the WebSocket request passes the `WebSocket` object to an `Echo` method.</span></span> <span data-ttu-id="e644d-155">代码接收消息并立即发回相同的消息。</span><span class="sxs-lookup"><span data-stu-id="e644d-155">The code receives a message and immediately sends back the same message.</span></span> <span data-ttu-id="e644d-156">循环发送和接收消息，直到客户端关闭连接：</span><span class="sxs-lookup"><span data-stu-id="e644d-156">Messages are sent and received in a loop until the client closes the connection:</span></span>
 
 [!code-csharp[](websockets/sample/Startup.cs?name=Echo)]
 
-<span data-ttu-id="7c32f-153">如果在开始此循环之前接受 WebSocket，中间件管道会结束。</span><span class="sxs-lookup"><span data-stu-id="7c32f-153">When you accept the WebSocket before beginning this loop, the middleware pipeline ends.</span></span>  <span data-ttu-id="7c32f-154">关闭套接字后，管道展开。</span><span class="sxs-lookup"><span data-stu-id="7c32f-154">Upon closing the socket, the pipeline unwinds.</span></span> <span data-ttu-id="7c32f-155">也就是说，如果接受 WebSocket ，请求会在管道中停止前进，就像点击 MVC 操作一样。</span><span class="sxs-lookup"><span data-stu-id="7c32f-155">That is, the request stops moving forward in the pipeline when you accept a WebSocket, just as it would when you hit an MVC action, for example.</span></span>  <span data-ttu-id="7c32f-156">但是完成此循环并关闭套接字时，请求将在管道中后退。</span><span class="sxs-lookup"><span data-stu-id="7c32f-156">But when you finish this loop and close the socket, the request proceeds back up the pipeline.</span></span>
+<span data-ttu-id="e644d-157">如果在开始循环之前接受 WebSocket 连接，中间件管道会结束。</span><span class="sxs-lookup"><span data-stu-id="e644d-157">When accepting the WebSocket connection before beginning the loop, the middleware pipeline ends.</span></span> <span data-ttu-id="e644d-158">关闭套接字后，管道展开。</span><span class="sxs-lookup"><span data-stu-id="e644d-158">Upon closing the socket, the pipeline unwinds.</span></span> <span data-ttu-id="e644d-159">即接受 WebSocket 时，请求停止在管道中推进。</span><span class="sxs-lookup"><span data-stu-id="e644d-159">That is, the request stops moving forward in the pipeline when the WebSocket is accepted.</span></span> <span data-ttu-id="e644d-160">循环结束且套接字关闭时，请求继续回到管道。</span><span class="sxs-lookup"><span data-stu-id="e644d-160">When the loop is finished and the socket is closed, the request proceeds back up the pipeline.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="7c32f-157">后续步骤</span><span class="sxs-lookup"><span data-stu-id="7c32f-157">Next steps</span></span>
+## <a name="iisiis-express-support"></a><span data-ttu-id="e644d-161">IIS/IIS Express 支持</span><span class="sxs-lookup"><span data-stu-id="e644d-161">IIS/IIS Express support</span></span>
 
-<span data-ttu-id="7c32f-158">本文附带的[示例应用程序](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample)是一个简单的回显应用程序。</span><span class="sxs-lookup"><span data-stu-id="7c32f-158">The [sample application](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample) that accompanies this article is a simple echo application.</span></span> <span data-ttu-id="7c32f-159">它有一个可建立 WebSocket 连接的网页，且服务器仅将其收到的消息重新发回到客户端。</span><span class="sxs-lookup"><span data-stu-id="7c32f-159">It has a web page that makes WebSocket connections, and the server just resends back to the client any messages it receives.</span></span> <span data-ttu-id="7c32f-160">从命令提示符运行它（它未设置为从具有 IIS Express 的 Visual Studio 运行）并导航到 http://localhost:5000。</span><span class="sxs-lookup"><span data-stu-id="7c32f-160">Run it from a command prompt (it's not set up to run from Visual Studio with IIS Express) and navigate to http://localhost:5000.</span></span> <span data-ttu-id="7c32f-161">该网页的左上方显示连接状态：</span><span class="sxs-lookup"><span data-stu-id="7c32f-161">The web page shows connection status at the upper left:</span></span>
+<span data-ttu-id="e644d-162">安装了 IIS/IIS Express 8 或更高版本的 Windows Server 2012 或更高版本以及 Windows 8 或更高版本支持 WebSocket 协议。</span><span class="sxs-lookup"><span data-stu-id="e644d-162">Windows Server 2012 or later and Windows 8 or later with IIS/IIS Express 8 or later has support for the WebSocket protocol.</span></span>
+
+<span data-ttu-id="e644d-163">在 Windows Server 2012 或更高版本上启用对 WebSocket 协议的支持：</span><span class="sxs-lookup"><span data-stu-id="e644d-163">To enable support for the WebSocket protocol on Windows Server 2012 or later:</span></span>
+
+1. <span data-ttu-id="e644d-164">通过“管理”菜单或“服务器管理器”中的链接使用“添加角色和功能”向导。</span><span class="sxs-lookup"><span data-stu-id="e644d-164">Use the **Add Roles and Features** wizard from the **Manage** menu or the link in **Server Manager**.</span></span>
+1. <span data-ttu-id="e644d-165">选择“基于角色或基于功能的安装”。</span><span class="sxs-lookup"><span data-stu-id="e644d-165">Select **Role-based or Feature-based Installation**.</span></span> <span data-ttu-id="e644d-166">选择“下一步”。</span><span class="sxs-lookup"><span data-stu-id="e644d-166">Select **Next**.</span></span>
+1. <span data-ttu-id="e644d-167">选择适当的服务器（默认情况下选择本地服务器）。</span><span class="sxs-lookup"><span data-stu-id="e644d-167">Select the appropriate server (the local server is selected by default).</span></span> <span data-ttu-id="e644d-168">选择“下一步”。</span><span class="sxs-lookup"><span data-stu-id="e644d-168">Select **Next**.</span></span>
+1. <span data-ttu-id="e644d-169">在“角色”树中展开“Web 服务器 (IIS)”、然后依次展开“Web 服务器”和“应用程序开发”。</span><span class="sxs-lookup"><span data-stu-id="e644d-169">Expand **Web Server (IIS)** in the **Roles** tree, expand **Web Server**, and then expand **Application Development**.</span></span>
+1. <span data-ttu-id="e644d-170">选择“WebSocket 协议”。</span><span class="sxs-lookup"><span data-stu-id="e644d-170">Select **WebSocket Protocol**.</span></span> <span data-ttu-id="e644d-171">选择“下一步”。</span><span class="sxs-lookup"><span data-stu-id="e644d-171">Select **Next**.</span></span>
+1. <span data-ttu-id="e644d-172">如果无需其他功能，请选择“下一步”。</span><span class="sxs-lookup"><span data-stu-id="e644d-172">If additional features aren't needed, select **Next**.</span></span>
+1. <span data-ttu-id="e644d-173">选择“安装” 。</span><span class="sxs-lookup"><span data-stu-id="e644d-173">Select **Install**.</span></span>
+1. <span data-ttu-id="e644d-174">安装完成后，选择“关闭”以退出向导。</span><span class="sxs-lookup"><span data-stu-id="e644d-174">When the installation completes, select **Close** to exit the wizard.</span></span>
+
+<span data-ttu-id="e644d-175">在 Windows 8 或更高版本上启用对 WebSocket 协议的支持：</span><span class="sxs-lookup"><span data-stu-id="e644d-175">To enable support for the WebSocket protocol on Windows 8 or later:</span></span>
+
+1. <span data-ttu-id="e644d-176">导航到“控制面板” > “程序” > “程序和功能” > “打开或关闭 Windows 功能”（位于屏幕左侧）。</span><span class="sxs-lookup"><span data-stu-id="e644d-176">Navigate to **Control Panel** > **Programs** > **Programs and Features** > **Turn Windows features on or off** (left side of the screen).</span></span>
+1. <span data-ttu-id="e644d-177">打开以下节点：“Internet Information Services” > “万维网服务” > “应用程序开发功能”。</span><span class="sxs-lookup"><span data-stu-id="e644d-177">Open the following nodes: **Internet Information Services** > **World Wide Web Services** > **Application Development Features**.</span></span>
+1. <span data-ttu-id="e644d-178">选择“WebSocket 协议”功能。</span><span class="sxs-lookup"><span data-stu-id="e644d-178">Select the **WebSocket Protocol** feature.</span></span> <span data-ttu-id="e644d-179">选择“确定”。</span><span class="sxs-lookup"><span data-stu-id="e644d-179">Select **OK**.</span></span>
+
+<span data-ttu-id="e644d-180">在 node.js 上使用 socket.io 时禁用 WebSocket</span><span class="sxs-lookup"><span data-stu-id="e644d-180">**Disable WebSocket when using socket.io on node.js**</span></span>
+
+<span data-ttu-id="e644d-181">如果在 [Node.js](https://nodejs.org/) 的 [socket.io](https://socket.io/) 中使用 WebSocket 支持，请使用 web.config 或 applicationHost.config 中的 `webSocket` 元素禁用默认的 IIS WebSocket 模块。如果不执行此步骤，IIS WebSocket 模块将尝试处理 WebSocket 通信而不是 Node.js 和应用。</span><span class="sxs-lookup"><span data-stu-id="e644d-181">If using the WebSocket support in [socket.io](https://socket.io/) on [Node.js](https://nodejs.org/), disable the default IIS WebSocket module using the `webSocket` element in *web.config* or *applicationHost.config*. If this step isn't performed, the IIS WebSocket module attempts to handle the WebSocket communication rather than Node.js and the app.</span></span>
+
+```xml
+<system.webServer>
+  <webSocket enabled="false" />
+</system.webServer>
+```
+
+## <a name="next-steps"></a><span data-ttu-id="e644d-182">后续步骤</span><span class="sxs-lookup"><span data-stu-id="e644d-182">Next steps</span></span>
+
+<span data-ttu-id="e644d-183">本文附带的[示例应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample)是一个 echo 应用。</span><span class="sxs-lookup"><span data-stu-id="e644d-183">The [sample app](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample) that accompanies this article is an echo app.</span></span> <span data-ttu-id="e644d-184">它有一个可建立 WebSocket 连接的网页，且服务器将其收到的消息重新发回到客户端。</span><span class="sxs-lookup"><span data-stu-id="e644d-184">It has a web page that makes WebSocket connections, and the server resends any messages it receives back to the client.</span></span> <span data-ttu-id="e644d-185">从命令提示符运行该应用（它未设置为在安装了 IIS Express 的 Visual Studio 中运行）并导航到 http://localhost:5000。</span><span class="sxs-lookup"><span data-stu-id="e644d-185">Run the app from a command prompt (it's not set up to run from Visual Studio with IIS Express) and navigate to http://localhost:5000.</span></span> <span data-ttu-id="e644d-186">该网页的左上方显示连接状态：</span><span class="sxs-lookup"><span data-stu-id="e644d-186">The web page shows the connection status in the upper left:</span></span>
 
 ![网页的初始状态](websockets/_static/start.png)
 
-<span data-ttu-id="7c32f-163">选择“连接”，向显示的 URL 发送 WebSocket 请求。</span><span class="sxs-lookup"><span data-stu-id="7c32f-163">Select **Connect** to send a WebSocket request to the URL shown.</span></span>  <span data-ttu-id="7c32f-164">输入测试消息并选择“发送”。</span><span class="sxs-lookup"><span data-stu-id="7c32f-164">Enter a test message and select **Send**.</span></span> <span data-ttu-id="7c32f-165">完成后，请选择“关闭套接字”。</span><span class="sxs-lookup"><span data-stu-id="7c32f-165">When done, select **Close Socket**.</span></span> <span data-ttu-id="7c32f-166">“通信日志”部分会报告每一个发生的“打开”、“发送”和“关闭”操作。</span><span class="sxs-lookup"><span data-stu-id="7c32f-166">The **Communication Log** section reports each open, send, and close action as it happens.</span></span>
+<span data-ttu-id="e644d-188">选择“连接”，向显示的 URL 发送 WebSocket 请求。</span><span class="sxs-lookup"><span data-stu-id="e644d-188">Select **Connect** to send a WebSocket request to the URL shown.</span></span> <span data-ttu-id="e644d-189">输入测试消息并选择“发送”。</span><span class="sxs-lookup"><span data-stu-id="e644d-189">Enter a test message and select **Send**.</span></span> <span data-ttu-id="e644d-190">完成后，请选择“关闭套接字”。</span><span class="sxs-lookup"><span data-stu-id="e644d-190">When done, select **Close Socket**.</span></span> <span data-ttu-id="e644d-191">“通信日志”部分会报告每一个发生的“打开”、“发送”和“关闭”操作。</span><span class="sxs-lookup"><span data-stu-id="e644d-191">The **Communication Log** section reports each open, send, and close action as it happens.</span></span>
 
 ![网页的初始状态](websockets/_static/end.png)

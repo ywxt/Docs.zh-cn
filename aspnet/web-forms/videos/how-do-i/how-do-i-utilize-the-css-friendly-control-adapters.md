@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-utilize-the-css-friendly-control-adapters
-title: "[如何:]利用 CSS 友好控件适配器？ | Microsoft Docs"
+title: '[如何:]利用 CSS 友好控件适配器？ | Microsoft Docs'
 author: rick-anderson
-description: "CSS 友好控件适配器允许您修改由标准的 ASP.NET 2.0 服务器控件呈现的 HTML。 在本视频中我们将了解到，stan..."
+description: CSS 友好控件适配器允许您修改由标准的 ASP.NET 2.0 服务器控件呈现的 HTML。 在本视频中我们将了解到，stan...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/01/2007

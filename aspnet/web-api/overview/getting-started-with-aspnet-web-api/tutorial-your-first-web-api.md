@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
-title: "要开始使用 ASP.NET Web API 2 (C#)"
+title: 要开始使用 ASP.NET Web API 2 (C#)
 author: MikeWasson
-description: "HTTP 不再仅仅用于为网页提供服务。 它也是一个功能强大的平台，用于构建公开服务和数据的 Api。 HTTP 是简单、 灵活、 和 ubiq..."
+description: HTTP 不再仅仅用于为网页提供服务。 它也是一个功能强大的平台，用于构建公开服务和数据的 Api。 HTTP 是简单、 灵活、 和 ubiq...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/28/2017
@@ -43,7 +43,7 @@ ms.lasthandoff: 03/15/2018
 
 <span data-ttu-id="deeca-121">启动 Visual Studio 并选择**新项目**从**启动**页。</span><span class="sxs-lookup"><span data-stu-id="deeca-121">Start Visual Studio and select **New Project** from the **Start** page.</span></span> <span data-ttu-id="deeca-122">或从**文件**菜单上，选择**新建**然后**项目**。</span><span class="sxs-lookup"><span data-stu-id="deeca-122">Or, from the **File** menu, select **New** and then **Project**.</span></span>
 
-<span data-ttu-id="deeca-123">在**模板**窗格中，选择**已安装的模板**展开**Visual C#**节点。</span><span class="sxs-lookup"><span data-stu-id="deeca-123">In the **Templates** pane, select **Installed Templates** and expand the **Visual C#** node.</span></span> <span data-ttu-id="deeca-124">下**Visual C#**，选择**Web**。</span><span class="sxs-lookup"><span data-stu-id="deeca-124">Under **Visual C#**, select **Web**.</span></span> <span data-ttu-id="deeca-125">在项目模板列表中，选择**ASP.NET Web 应用程序**。</span><span class="sxs-lookup"><span data-stu-id="deeca-125">In the list of project templates, select **ASP.NET Web Application**.</span></span> <span data-ttu-id="deeca-126">将"ProductsApp"的项目，然后单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="deeca-126">Name the project "ProductsApp" and click **OK**.</span></span>
+<span data-ttu-id="deeca-123">在**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。</span><span class="sxs-lookup"><span data-stu-id="deeca-123">In the **Templates** pane, select **Installed Templates** and expand the **Visual C#** node.</span></span> <span data-ttu-id="deeca-124">下**Visual C#**，选择**Web**。</span><span class="sxs-lookup"><span data-stu-id="deeca-124">Under **Visual C#**, select **Web**.</span></span> <span data-ttu-id="deeca-125">在项目模板列表中，选择**ASP.NET Web 应用程序**。</span><span class="sxs-lookup"><span data-stu-id="deeca-125">In the list of project templates, select **ASP.NET Web Application**.</span></span> <span data-ttu-id="deeca-126">将"ProductsApp"的项目，然后单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="deeca-126">Name the project "ProductsApp" and click **OK**.</span></span>
 
 ![](tutorial-your-first-web-api/_static/image2.png)
 
@@ -104,7 +104,7 @@ ms.lasthandoff: 03/15/2018
 
 <span data-ttu-id="deeca-164">控制器定义返回产品的两个方法：</span><span class="sxs-lookup"><span data-stu-id="deeca-164">The controller defines two methods that return products:</span></span>
 
-- <span data-ttu-id="deeca-165">`GetAllProducts`方法返回的产品为整个列表**IEnumerable&lt;产品&gt;**类型。</span><span class="sxs-lookup"><span data-stu-id="deeca-165">The `GetAllProducts` method returns the entire list of products as an **IEnumerable&lt;Product&gt;** type.</span></span>
+- <span data-ttu-id="deeca-165">`GetAllProducts`方法返回的产品为整个列表**IEnumerable&lt;产品&gt;** 类型。</span><span class="sxs-lookup"><span data-stu-id="deeca-165">The `GetAllProducts` method returns the entire list of products as an **IEnumerable&lt;Product&gt;** type.</span></span>
 - <span data-ttu-id="deeca-166">`GetProduct`方法查找单个产品 id</span><span class="sxs-lookup"><span data-stu-id="deeca-166">The `GetProduct` method looks up a single product by its ID.</span></span>
 
 <span data-ttu-id="deeca-167">就这么简单！</span><span class="sxs-lookup"><span data-stu-id="deeca-167">That's it!</span></span> <span data-ttu-id="deeca-168">具有工作 web API。</span><span class="sxs-lookup"><span data-stu-id="deeca-168">You have a working web API.</span></span> <span data-ttu-id="deeca-169">在控制器上的每个方法对应于一个或多个 Uri:</span><span class="sxs-lookup"><span data-stu-id="deeca-169">Each method on the controller corresponds to one or more URIs:</span></span>
