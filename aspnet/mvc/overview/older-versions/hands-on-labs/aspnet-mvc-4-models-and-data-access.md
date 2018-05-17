@@ -12,246 +12,248 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 081a71ef67a6eee6c84058c30f9e15301afbed23
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 57477cf15bf6755523f28356d5384517bea24982
+ms.sourcegitcommit: 5ae0c125ee3bbd324edef3818d1d160f4dd84602
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="aspnet-mvc-4-models-and-data-access"></a><span data-ttu-id="179b1-104">ASP.NET MVC 4 模型和数据访问</span><span class="sxs-lookup"><span data-stu-id="179b1-104">ASP.NET MVC 4 Models and Data Access</span></span>
+# <a name="aspnet-mvc-4-models-and-data-access"></a><span data-ttu-id="59ca6-104">ASP.NET MVC 4 模型和数据访问</span><span class="sxs-lookup"><span data-stu-id="59ca6-104">ASP.NET MVC 4 Models and Data Access</span></span>
 
-<span data-ttu-id="179b1-105">通过[Web 营地团队](https://twitter.com/webcamps)</span><span class="sxs-lookup"><span data-stu-id="179b1-105">By [Web Camps Team](https://twitter.com/webcamps)</span></span>
+<span data-ttu-id="59ca6-105">通过[Web 营地团队](https://twitter.com/webcamps)</span><span class="sxs-lookup"><span data-stu-id="59ca6-105">By [Web Camps Team](https://twitter.com/webcamps)</span></span>
 
-[<span data-ttu-id="179b1-106">下载 Web 营地培训工具包</span><span class="sxs-lookup"><span data-stu-id="179b1-106">Download Web Camps Training Kit</span></span>](https://aka.ms/webcamps-training-kit)
+[<span data-ttu-id="59ca6-106">下载 Web 营地培训工具包</span><span class="sxs-lookup"><span data-stu-id="59ca6-106">Download Web Camps Training Kit</span></span>](https://aka.ms/webcamps-training-kit)
 
-<span data-ttu-id="179b1-107">此动手实验假定你具有的基础知识**ASP.NET MVC**。</span><span class="sxs-lookup"><span data-stu-id="179b1-107">This Hands-on Lab assumes you have basic knowledge of **ASP.NET MVC**.</span></span> <span data-ttu-id="179b1-108">如果您未使用过**ASP.NET MVC**之前，我们建议你转到**ASP.NET MVC 4 基础知识**动手实验。</span><span class="sxs-lookup"><span data-stu-id="179b1-108">If you have not used **ASP.NET MVC** before, we recommend you to go over **ASP.NET MVC 4 Fundamentals** Hands-on Lab.</span></span>
+<span data-ttu-id="59ca6-107">此动手实验假定你具有的基础知识**ASP.NET MVC**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-107">This Hands-on Lab assumes you have basic knowledge of **ASP.NET MVC**.</span></span> <span data-ttu-id="59ca6-108">如果您未使用过**ASP.NET MVC**之前，我们建议你转到**ASP.NET MVC 4 基础知识**动手实验。</span><span class="sxs-lookup"><span data-stu-id="59ca6-108">If you have not used **ASP.NET MVC** before, we recommend you to go over **ASP.NET MVC 4 Fundamentals** Hands-on Lab.</span></span>
 
-<span data-ttu-id="179b1-109">此实验室将引导你完成的增强功能和前面所述通过将细微的更改应用于源文件夹中提供的示例 Web 应用程序的新功能。</span><span class="sxs-lookup"><span data-stu-id="179b1-109">This lab walks you through the enhancements and new features previously described by applying minor changes to a sample Web application provided in the Source folder.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="179b1-110">在 Web 营地培训工具包中，在包括所有的示例代码和代码段[Microsoft 的 Web/WebCampTrainingKit 版本](https://aka.ms/webcamps-training-kit)。</span><span class="sxs-lookup"><span data-stu-id="179b1-110">All sample code and snippets are included in the Web Camps Training Kit, available at [Microsoft-Web/WebCampTrainingKit Releases](https://aka.ms/webcamps-training-kit).</span></span> <span data-ttu-id="179b1-111">特定于此实验室项目位于[ASP.NET MVC 4 模型和数据访问](https://github.com/Microsoft-Web/HOL-MVC4ModelsAndDataAccess)。</span><span class="sxs-lookup"><span data-stu-id="179b1-111">The project specific to this lab is available at [ASP.NET MVC 4 Models and Data Access](https://github.com/Microsoft-Web/HOL-MVC4ModelsAndDataAccess).</span></span>
-
-<span data-ttu-id="179b1-112">在**ASP.NET MVC 基础知识**动手实验中，你已经传递了硬编码数据从控制器到查看模板。</span><span class="sxs-lookup"><span data-stu-id="179b1-112">In **ASP.NET MVC Fundamentals** Hands-on Lab, you have been passing hard-coded data from the Controllers to the View templates.</span></span> <span data-ttu-id="179b1-113">但是，若要生成实际的 Web 应用程序，你可能想要使用实际的数据库。</span><span class="sxs-lookup"><span data-stu-id="179b1-113">But, in order to build a real Web application, you might want to use a real database.</span></span>
-
-<span data-ttu-id="179b1-114">此动手实验将演示如何使用数据库引擎以存储和检索音乐商店应用程序所需的数据。</span><span class="sxs-lookup"><span data-stu-id="179b1-114">This Hands-on Lab will show you how to use a database engine in order to store and retrieve the data needed for the Music Store application.</span></span> <span data-ttu-id="179b1-115">若要完成此操作，将使用现有数据库启动，并从它创建实体数据模型。</span><span class="sxs-lookup"><span data-stu-id="179b1-115">To accomplish that, you will start with an existing database and create the Entity Data Model from it.</span></span> <span data-ttu-id="179b1-116">在本实验中，整个将满足**Database First**方法以及**Code First**方法。</span><span class="sxs-lookup"><span data-stu-id="179b1-116">Throughout this lab, you will meet the **Database First** approach as well as the **Code First** approach.</span></span>
-
-<span data-ttu-id="179b1-117">但是，你还可以使用**Model First**方法，创建相同的模型使用的工具，然后从它生成数据库。</span><span class="sxs-lookup"><span data-stu-id="179b1-117">However, you can also use the **Model First** approach, create the same model using the tools, and then generate the database from it.</span></span>
-
-<span data-ttu-id="179b1-118">![数据库第一个 vs。模型优先](aspnet-mvc-4-models-and-data-access/_static/image1.png "Database First vs。模型优先")</span><span class="sxs-lookup"><span data-stu-id="179b1-118">![Database First vs. Model First](aspnet-mvc-4-models-and-data-access/_static/image1.png "Database First vs. Model First")</span></span>
-
-<span data-ttu-id="179b1-119">*数据库第一个 vs。模型优先*</span><span class="sxs-lookup"><span data-stu-id="179b1-119">*Database First vs. Model First*</span></span>
-
-<span data-ttu-id="179b1-120">后生成模型，你会使 StoreController 为存储视图的数据库，而不是使用硬编码数据中获取的数据提供适当的调整。</span><span class="sxs-lookup"><span data-stu-id="179b1-120">After generating the Model, you will make the proper adjustments in the StoreController to provide the Store Views with the data taken from the database, instead of using hard-coded data.</span></span> <span data-ttu-id="179b1-121">不需要进行任何更改视图模板 StoreController 将返回相同的 Viewmodel 到查看模板，因为虽然此时间的数据将来自数据库。</span><span class="sxs-lookup"><span data-stu-id="179b1-121">You will not need to make any change to the View templates because the StoreController will be returning the same ViewModels to the View templates, although this time the data will come from the database.</span></span>
-
-<span data-ttu-id="179b1-122">**代码第一种方法**</span><span class="sxs-lookup"><span data-stu-id="179b1-122">**The Code First Approach**</span></span>
-
-<span data-ttu-id="179b1-123">代码优先方法使得我们可以定义代码中的模型，而不生成类通常与框架耦合的。</span><span class="sxs-lookup"><span data-stu-id="179b1-123">The Code First approach allows us to define the model from the code without generating classes that are generally coupled with the framework.</span></span>
-
-<span data-ttu-id="179b1-124">在代码中首先，模型对象定义与 POCOs，&quot;纯旧 CLR 对象&quot;。</span><span class="sxs-lookup"><span data-stu-id="179b1-124">In code first, model objects are defined with POCOs, &quot;Plain Old CLR Objects&quot;.</span></span> <span data-ttu-id="179b1-125">POCOs 是简单的普通类，不具有任何继承并不实现接口。</span><span class="sxs-lookup"><span data-stu-id="179b1-125">POCOs are simple plain classes that have no inheritance and do not implement interfaces.</span></span> <span data-ttu-id="179b1-126">我们可以自动生成数据库，从它们，也可以使用现有数据库并从代码生成的类映射。</span><span class="sxs-lookup"><span data-stu-id="179b1-126">We can automatically generate the database from them, or we can use an existing database and generate the class mapping from the code.</span></span>
-
-<span data-ttu-id="179b1-127">使用此方法的好处是，将模型保持独立于持久性框架 （在这种情况下，实体框架），如 POCOs 类不结合映射框架。</span><span class="sxs-lookup"><span data-stu-id="179b1-127">The benefits of using this approach is that the Model remains independent from the persistence framework (in this case, Entity Framework), as the POCOs classes are not coupled with the mapping framework.</span></span>
+<span data-ttu-id="59ca6-109">此实验室将引导你完成的增强功能和前面所述通过将细微的更改应用于源文件夹中提供的示例 Web 应用程序的新功能。</span><span class="sxs-lookup"><span data-stu-id="59ca6-109">This lab walks you through the enhancements and new features previously described by applying minor changes to a sample Web application provided in the Source folder.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="179b1-128">此实验室基于 ASP.NET MVC 4 和音乐商店示例应用程序的版本自定义和最小化以适应仅显示在本动手实验中的功能。</span><span class="sxs-lookup"><span data-stu-id="179b1-128">This Lab is based on ASP.NET MVC 4 and a version of the Music Store sample application customized and minimized to fit only the features shown in this Hands-On Lab.</span></span>
+> <span data-ttu-id="59ca6-110">在 Web 营地培训工具包中，在包括所有的示例代码和代码段[Microsoft 的 Web/WebCampTrainingKit 版本](https://aka.ms/webcamps-training-kit)。</span><span class="sxs-lookup"><span data-stu-id="59ca6-110">All sample code and snippets are included in the Web Camps Training Kit, available at [Microsoft-Web/WebCampTrainingKit Releases](https://aka.ms/webcamps-training-kit).</span></span> <span data-ttu-id="59ca6-111">特定于此实验室项目位于[ASP.NET MVC 4 模型和数据访问](https://github.com/Microsoft-Web/HOL-MVC4ModelsAndDataAccess)。</span><span class="sxs-lookup"><span data-stu-id="59ca6-111">The project specific to this lab is available at [ASP.NET MVC 4 Models and Data Access](https://github.com/Microsoft-Web/HOL-MVC4ModelsAndDataAccess).</span></span>
+
+<span data-ttu-id="59ca6-112">在**ASP.NET MVC 基础知识**动手实验中，你已经传递了硬编码数据从控制器到查看模板。</span><span class="sxs-lookup"><span data-stu-id="59ca6-112">In **ASP.NET MVC Fundamentals** Hands-on Lab, you have been passing hard-coded data from the Controllers to the View templates.</span></span> <span data-ttu-id="59ca6-113">但是，若要生成实际的 Web 应用程序，你可能想要使用实际的数据库。</span><span class="sxs-lookup"><span data-stu-id="59ca6-113">But, in order to build a real Web application, you might want to use a real database.</span></span>
+
+<span data-ttu-id="59ca6-114">此动手实验将演示如何使用数据库引擎以存储和检索音乐商店应用程序所需的数据。</span><span class="sxs-lookup"><span data-stu-id="59ca6-114">This Hands-on Lab will show you how to use a database engine in order to store and retrieve the data needed for the Music Store application.</span></span> <span data-ttu-id="59ca6-115">若要完成此操作，将使用现有数据库启动，并从它创建实体数据模型。</span><span class="sxs-lookup"><span data-stu-id="59ca6-115">To accomplish that, you will start with an existing database and create the Entity Data Model from it.</span></span> <span data-ttu-id="59ca6-116">在本实验中，整个将满足**Database First**方法以及**Code First**方法。</span><span class="sxs-lookup"><span data-stu-id="59ca6-116">Throughout this lab, you will meet the **Database First** approach as well as the **Code First** approach.</span></span>
+
+<span data-ttu-id="59ca6-117">但是，你还可以使用**Model First**方法，创建相同的模型使用的工具，然后从它生成数据库。</span><span class="sxs-lookup"><span data-stu-id="59ca6-117">However, you can also use the **Model First** approach, create the same model using the tools, and then generate the database from it.</span></span>
+
+<span data-ttu-id="59ca6-118">![数据库第一个 vs。模型优先](aspnet-mvc-4-models-and-data-access/_static/image1.png "Database First vs。模型优先")</span><span class="sxs-lookup"><span data-stu-id="59ca6-118">![Database First vs. Model First](aspnet-mvc-4-models-and-data-access/_static/image1.png "Database First vs. Model First")</span></span>
+
+<span data-ttu-id="59ca6-119">*数据库第一个 vs。模型优先*</span><span class="sxs-lookup"><span data-stu-id="59ca6-119">*Database First vs. Model First*</span></span>
+
+<span data-ttu-id="59ca6-120">后生成模型，你会使 StoreController 为存储视图的数据库，而不是使用硬编码数据中获取的数据提供适当的调整。</span><span class="sxs-lookup"><span data-stu-id="59ca6-120">After generating the Model, you will make the proper adjustments in the StoreController to provide the Store Views with the data taken from the database, instead of using hard-coded data.</span></span> <span data-ttu-id="59ca6-121">不需要进行任何更改视图模板 StoreController 将返回相同的 Viewmodel 到查看模板，因为虽然此时间的数据将来自数据库。</span><span class="sxs-lookup"><span data-stu-id="59ca6-121">You will not need to make any change to the View templates because the StoreController will be returning the same ViewModels to the View templates, although this time the data will come from the database.</span></span>
+
+<span data-ttu-id="59ca6-122">**代码第一种方法**</span><span class="sxs-lookup"><span data-stu-id="59ca6-122">**The Code First Approach**</span></span>
+
+<span data-ttu-id="59ca6-123">代码优先方法使得我们可以定义代码中的模型，而不生成类通常与框架耦合的。</span><span class="sxs-lookup"><span data-stu-id="59ca6-123">The Code First approach allows us to define the model from the code without generating classes that are generally coupled with the framework.</span></span>
+
+<span data-ttu-id="59ca6-124">在代码中首先，模型对象定义与 POCOs，&quot;纯旧 CLR 对象&quot;。</span><span class="sxs-lookup"><span data-stu-id="59ca6-124">In code first, model objects are defined with POCOs, &quot;Plain Old CLR Objects&quot;.</span></span> <span data-ttu-id="59ca6-125">POCOs 是简单的普通类，不具有任何继承并不实现接口。</span><span class="sxs-lookup"><span data-stu-id="59ca6-125">POCOs are simple plain classes that have no inheritance and do not implement interfaces.</span></span> <span data-ttu-id="59ca6-126">我们可以自动生成数据库，从它们，也可以使用现有数据库并从代码生成的类映射。</span><span class="sxs-lookup"><span data-stu-id="59ca6-126">We can automatically generate the database from them, or we can use an existing database and generate the class mapping from the code.</span></span>
+
+<span data-ttu-id="59ca6-127">使用此方法的好处是，将模型保持独立于持久性框架 （在这种情况下，实体框架），如 POCOs 类不结合映射框架。</span><span class="sxs-lookup"><span data-stu-id="59ca6-127">The benefits of using this approach is that the Model remains independent from the persistence framework (in this case, Entity Framework), as the POCOs classes are not coupled with the mapping framework.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="59ca6-128">此实验室基于 ASP.NET MVC 4 和音乐商店示例应用程序的版本自定义和最小化以适应仅显示在本动手实验中的功能。</span><span class="sxs-lookup"><span data-stu-id="59ca6-128">This Lab is based on ASP.NET MVC 4 and a version of the Music Store sample application customized and minimized to fit only the features shown in this Hands-On Lab.</span></span>
 > 
-> <span data-ttu-id="179b1-129">如果你想要浏览整个**音乐商店**教程应用程序，你可以找到它在[MVC 音乐商店](https://github.com/evilDave/MVC-Music-Store)。</span><span class="sxs-lookup"><span data-stu-id="179b1-129">If you wish to explore the whole **Music Store** tutorial application you can find it in [MVC-Music-Store](https://github.com/evilDave/MVC-Music-Store).</span></span>
+> <span data-ttu-id="59ca6-129">如果你想要浏览整个**音乐商店**教程应用程序，你可以找到它在[MVC 音乐商店](https://github.com/evilDave/MVC-Music-Store)。</span><span class="sxs-lookup"><span data-stu-id="59ca6-129">If you wish to explore the whole **Music Store** tutorial application you can find it in [MVC-Music-Store](https://github.com/evilDave/MVC-Music-Store).</span></span>
 
 
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a><span data-ttu-id="179b1-130">系统必备</span><span class="sxs-lookup"><span data-stu-id="179b1-130">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="59ca6-130">系统必备</span><span class="sxs-lookup"><span data-stu-id="59ca6-130">Prerequisites</span></span>
 
-<span data-ttu-id="179b1-131">你必须具有要完成本实验的以下项：</span><span class="sxs-lookup"><span data-stu-id="179b1-131">You must have the following items to complete this lab:</span></span>
+<span data-ttu-id="59ca6-131">你必须具有要完成本实验的以下项：</span><span class="sxs-lookup"><span data-stu-id="59ca6-131">You must have the following items to complete this lab:</span></span>
 
-- <span data-ttu-id="179b1-132">[Microsoft Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web)或更高 (读取[附录 A](#AppendixA)有关如何安装它的说明)。</span><span class="sxs-lookup"><span data-stu-id="179b1-132">[Microsoft Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) or superior (read [Appendix A](#AppendixA) for instructions on how to install it).</span></span>
-
-<a id="Setup"></a>
+- <span data-ttu-id="59ca6-132">[Microsoft Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web)或更高 (读取[附录 A](#AppendixA)有关如何安装它的说明)。</span><span class="sxs-lookup"><span data-stu-id="59ca6-132">[Microsoft Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) or superior (read [Appendix A](#AppendixA) for instructions on how to install it).</span></span>
 
 <a id="Setup"></a>
-### <a name="setup"></a><span data-ttu-id="179b1-133">安装</span><span class="sxs-lookup"><span data-stu-id="179b1-133">Setup</span></span>
 
-<span data-ttu-id="179b1-134">**安装代码片段**</span><span class="sxs-lookup"><span data-stu-id="179b1-134">**Installing Code Snippets**</span></span>
+<a id="Setup"></a>
+### <a name="setup"></a><span data-ttu-id="59ca6-133">安装</span><span class="sxs-lookup"><span data-stu-id="59ca6-133">Setup</span></span>
 
-<span data-ttu-id="179b1-135">为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。</span><span class="sxs-lookup"><span data-stu-id="179b1-135">For convenience, much of the code you will be managing along this lab is available as Visual Studio code snippets.</span></span> <span data-ttu-id="179b1-136">若要安装运行的代码段**.\Source\Setup\CodeSnippets.vsi**文件。</span><span class="sxs-lookup"><span data-stu-id="179b1-136">To install the code snippets run **.\Source\Setup\CodeSnippets.vsi** file.</span></span>
+<span data-ttu-id="59ca6-134">**安装代码片段**</span><span class="sxs-lookup"><span data-stu-id="59ca6-134">**Installing Code Snippets**</span></span>
 
-<span data-ttu-id="179b1-137">如果你不熟悉 Visual Studio 代码段，并想要了解如何使用它们，你可以从该文档引用的附录&quot;[附录 c： 使用代码段](#AppendixC)&quot;。</span><span class="sxs-lookup"><span data-stu-id="179b1-137">If you are not familiar with the Visual Studio Code Snippets, and want to learn how to use them, you can refer to the appendix from this document &quot;[Appendix C: Using Code Snippets](#AppendixC)&quot;.</span></span>
+<span data-ttu-id="59ca6-135">为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。</span><span class="sxs-lookup"><span data-stu-id="59ca6-135">For convenience, much of the code you will be managing along this lab is available as Visual Studio code snippets.</span></span> <span data-ttu-id="59ca6-136">若要安装运行的代码段 **.\Source\Setup\CodeSnippets.vsi**文件。</span><span class="sxs-lookup"><span data-stu-id="59ca6-136">To install the code snippets run **.\Source\Setup\CodeSnippets.vsi** file.</span></span>
+
+<span data-ttu-id="59ca6-137">如果你不熟悉 Visual Studio 代码段，并想要了解如何使用它们，你可以从该文档引用的附录&quot;[附录 c： 使用代码段](#AppendixC)&quot;。</span><span class="sxs-lookup"><span data-stu-id="59ca6-137">If you are not familiar with the Visual Studio Code Snippets, and want to learn how to use them, you can refer to the appendix from this document &quot;[Appendix C: Using Code Snippets](#AppendixC)&quot;.</span></span>
 
 * * *
 
 <a id="Exercises"></a>
 
 <a id="Exercises"></a>
-## <a name="exercises"></a><span data-ttu-id="179b1-138">练习</span><span class="sxs-lookup"><span data-stu-id="179b1-138">Exercises</span></span>
+## <a name="exercises"></a><span data-ttu-id="59ca6-138">练习</span><span class="sxs-lookup"><span data-stu-id="59ca6-138">Exercises</span></span>
 
-<span data-ttu-id="179b1-139">此动手实验包含通过在以下练习：</span><span class="sxs-lookup"><span data-stu-id="179b1-139">This Hands-on Lab is comprised by the following exercises:</span></span>
+<span data-ttu-id="59ca6-139">此动手实验包含通过在以下练习：</span><span class="sxs-lookup"><span data-stu-id="59ca6-139">This Hands-on Lab is comprised by the following exercises:</span></span>
 
-1. [<span data-ttu-id="179b1-140">练习 1： 添加数据库</span><span class="sxs-lookup"><span data-stu-id="179b1-140">Exercise 1: Adding a Database</span></span>](#Exercise1)
-2. [<span data-ttu-id="179b1-141">练习 2： 创建使用 Code First 数据库</span><span class="sxs-lookup"><span data-stu-id="179b1-141">Exercise 2: Creating a Database using Code First</span></span>](#Exercise2)
-3. [<span data-ttu-id="179b1-142">练习 3： 查询参数的数据库</span><span class="sxs-lookup"><span data-stu-id="179b1-142">Exercise 3: Querying the Database with Parameters</span></span>](#Exercise3)
+1. [<span data-ttu-id="59ca6-140">练习 1： 添加数据库</span><span class="sxs-lookup"><span data-stu-id="59ca6-140">Exercise 1: Adding a Database</span></span>](#Exercise1)
+2. [<span data-ttu-id="59ca6-141">练习 2： 创建使用 Code First 数据库</span><span class="sxs-lookup"><span data-stu-id="59ca6-141">Exercise 2: Creating a Database using Code First</span></span>](#Exercise2)
+3. [<span data-ttu-id="59ca6-142">练习 3： 查询参数的数据库</span><span class="sxs-lookup"><span data-stu-id="59ca6-142">Exercise 3: Querying the Database with Parameters</span></span>](#Exercise3)
 
 > [!NOTE]
-> <span data-ttu-id="179b1-143">每个练习均附带由**结束**包含生成您应该完成练习后获得的解决方案文件夹。</span><span class="sxs-lookup"><span data-stu-id="179b1-143">Each exercise is accompanied by an **End** folder containing the resulting solution you should obtain after completing the exercises.</span></span> <span data-ttu-id="179b1-144">如果你需要通过在练习工作的更多帮助，可以使用此解决方案作为指南。</span><span class="sxs-lookup"><span data-stu-id="179b1-144">You can use this solution as a guide if you need additional help working through the exercises.</span></span>
+> <span data-ttu-id="59ca6-143">每个练习均附带由**结束**包含生成您应该完成练习后获得的解决方案文件夹。</span><span class="sxs-lookup"><span data-stu-id="59ca6-143">Each exercise is accompanied by an **End** folder containing the resulting solution you should obtain after completing the exercises.</span></span> <span data-ttu-id="59ca6-144">如果你需要通过在练习工作的更多帮助，可以使用此解决方案作为指南。</span><span class="sxs-lookup"><span data-stu-id="59ca6-144">You can use this solution as a guide if you need additional help working through the exercises.</span></span>
 
 
-<span data-ttu-id="179b1-145">估计时间来完成该实验： **35 分钟**。</span><span class="sxs-lookup"><span data-stu-id="179b1-145">Estimated time to complete this lab: **35 minutes**.</span></span>
+<span data-ttu-id="59ca6-145">估计时间来完成该实验： **35 分钟**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-145">Estimated time to complete this lab: **35 minutes**.</span></span>
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Adding_a_Database"></a>
-### <a name="exercise-1-adding-a-database"></a><span data-ttu-id="179b1-146">练习 1： 添加数据库</span><span class="sxs-lookup"><span data-stu-id="179b1-146">Exercise 1: Adding a Database</span></span>
+### <a name="exercise-1-adding-a-database"></a><span data-ttu-id="59ca6-146">练习 1： 添加数据库</span><span class="sxs-lookup"><span data-stu-id="59ca6-146">Exercise 1: Adding a Database</span></span>
 
-<span data-ttu-id="179b1-147">在此练习中，你将了解如何添加具有 MusicStore 应用程序，到解决方案以便使用其数据的表的数据库。</span><span class="sxs-lookup"><span data-stu-id="179b1-147">In this exercise, you will learn how to add a database with the tables of the MusicStore application to the solution in order to consume its data.</span></span> <span data-ttu-id="179b1-148">一旦使用该模型生成数据库并将其添加到解决方案，你将修改 StoreController 类，以查看模板提供从数据库，而不是使用硬编码值获取的数据。</span><span class="sxs-lookup"><span data-stu-id="179b1-148">Once the database is generated with the model, and added to the solution, you will modify the StoreController class to provide the View template with the data taken from the database, instead of using hard-coded values.</span></span>
+<span data-ttu-id="59ca6-147">在此练习中，你将了解如何添加具有 MusicStore 应用程序，到解决方案以便使用其数据的表的数据库。</span><span class="sxs-lookup"><span data-stu-id="59ca6-147">In this exercise, you will learn how to add a database with the tables of the MusicStore application to the solution in order to consume its data.</span></span> <span data-ttu-id="59ca6-148">一旦使用该模型生成数据库并将其添加到解决方案，你将修改 StoreController 类，以查看模板提供从数据库，而不是使用硬编码值获取的数据。</span><span class="sxs-lookup"><span data-stu-id="59ca6-148">Once the database is generated with the model, and added to the solution, you will modify the StoreController class to provide the View template with the data taken from the database, instead of using hard-coded values.</span></span>
 
 <a id="Ex1Task1"></a>
 
 <a id="Task_1_-_Adding_a_Database"></a>
-#### <a name="task-1---adding-a-database"></a><span data-ttu-id="179b1-149">任务 1-添加数据库</span><span class="sxs-lookup"><span data-stu-id="179b1-149">Task 1 - Adding a Database</span></span>
+#### <a name="task-1---adding-a-database"></a><span data-ttu-id="59ca6-149">任务 1-添加数据库</span><span class="sxs-lookup"><span data-stu-id="59ca6-149">Task 1 - Adding a Database</span></span>
 
-<span data-ttu-id="179b1-150">在此任务中，你将添加到解决方案 MusicStore 应用程序的主表已创建的数据库。</span><span class="sxs-lookup"><span data-stu-id="179b1-150">In this task, you will add an already created database with the main tables of the MusicStore application to the solution.</span></span>
+<span data-ttu-id="59ca6-150">在此任务中，你将添加到解决方案 MusicStore 应用程序的主表已创建的数据库。</span><span class="sxs-lookup"><span data-stu-id="59ca6-150">In this task, you will add an already created database with the main tables of the MusicStore application to the solution.</span></span>
 
-1. <span data-ttu-id="179b1-151">打开**开始**解决方案位于**源/Ex1-AddingADatabaseDBFirst/开始/**文件夹。</span><span class="sxs-lookup"><span data-stu-id="179b1-151">Open the **Begin** solution located at **Source/Ex1-AddingADatabaseDBFirst/Begin/** folder.</span></span>
+1. <span data-ttu-id="59ca6-151">打开**开始**解决方案位于**源/Ex1-AddingADatabaseDBFirst/开始/** 文件夹。</span><span class="sxs-lookup"><span data-stu-id="59ca6-151">Open the **Begin** solution located at **Source/Ex1-AddingADatabaseDBFirst/Begin/** folder.</span></span>
 
-   1. <span data-ttu-id="179b1-152">你将需要下载一些缺少的 NuGet 程序包才能继续。</span><span class="sxs-lookup"><span data-stu-id="179b1-152">You will need to download some missing NuGet packages before continue.</span></span> <span data-ttu-id="179b1-153">若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。</span><span class="sxs-lookup"><span data-stu-id="179b1-153">To do this, click the **Project** menu and select **Manage NuGet Packages**.</span></span>
-   2. <span data-ttu-id="179b1-154">在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。</span><span class="sxs-lookup"><span data-stu-id="179b1-154">In the **Manage NuGet Packages** dialog, click **Restore** in order to download missing packages.</span></span>
-   3. <span data-ttu-id="179b1-155">最后，通过单击生成解决方案**生成** | **生成解决方案**。</span><span class="sxs-lookup"><span data-stu-id="179b1-155">Finally, build the solution by clicking **Build** | **Build Solution**.</span></span>
+   1. <span data-ttu-id="59ca6-152">你将需要下载一些缺少的 NuGet 程序包才能继续。</span><span class="sxs-lookup"><span data-stu-id="59ca6-152">You will need to download some missing NuGet packages before continue.</span></span> <span data-ttu-id="59ca6-153">若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-153">To do this, click the **Project** menu and select **Manage NuGet Packages**.</span></span>
+   2. <span data-ttu-id="59ca6-154">在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。</span><span class="sxs-lookup"><span data-stu-id="59ca6-154">In the **Manage NuGet Packages** dialog, click **Restore** in order to download missing packages.</span></span>
+   3. <span data-ttu-id="59ca6-155">最后，通过单击生成解决方案**生成** | **生成解决方案**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-155">Finally, build the solution by clicking **Build** | **Build Solution**.</span></span>
 
       > [!NOTE]
-      > <span data-ttu-id="179b1-156">使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。</span><span class="sxs-lookup"><span data-stu-id="179b1-156">One of the advantages of using NuGet is that you don't have to ship all the libraries in your project, reducing the project size.</span></span> <span data-ttu-id="179b1-157">使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。</span><span class="sxs-lookup"><span data-stu-id="179b1-157">With NuGet Power Tools, by specifying the package versions in the Packages.config file, you will be able to download all the required libraries the first time you run the project.</span></span> <span data-ttu-id="179b1-158">这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。</span><span class="sxs-lookup"><span data-stu-id="179b1-158">This is why you will have to run these steps after you open an existing solution from this lab.</span></span>
-2. <span data-ttu-id="179b1-159">添加**MvcMusicStore**数据库文件。</span><span class="sxs-lookup"><span data-stu-id="179b1-159">Add **MvcMusicStore** database file.</span></span> <span data-ttu-id="179b1-160">在本动手实验中，你将使用已创建的数据库调用**MvcMusicStore.mdf**。</span><span class="sxs-lookup"><span data-stu-id="179b1-160">In this Hands-on Lab, you will use an already created database called **MvcMusicStore.mdf**.</span></span> <span data-ttu-id="179b1-161">为此，请右键单击**应用\_数据**文件夹，指向**添加**，然后单击**现有项**。</span><span class="sxs-lookup"><span data-stu-id="179b1-161">To do that, right-click **App\_Data** folder, point to **Add** and then click **Existing Item**.</span></span> <span data-ttu-id="179b1-162">浏览到**\Source\Assets**和选择**MvcMusicStore.mdf**文件。</span><span class="sxs-lookup"><span data-stu-id="179b1-162">Browse to **\Source\Assets** and select the **MvcMusicStore.mdf** file.</span></span>
+      > <span data-ttu-id="59ca6-156">使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。</span><span class="sxs-lookup"><span data-stu-id="59ca6-156">One of the advantages of using NuGet is that you don't have to ship all the libraries in your project, reducing the project size.</span></span> <span data-ttu-id="59ca6-157">使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。</span><span class="sxs-lookup"><span data-stu-id="59ca6-157">With NuGet Power Tools, by specifying the package versions in the Packages.config file, you will be able to download all the required libraries the first time you run the project.</span></span> <span data-ttu-id="59ca6-158">这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。</span><span class="sxs-lookup"><span data-stu-id="59ca6-158">This is why you will have to run these steps after you open an existing solution from this lab.</span></span>
+2. <span data-ttu-id="59ca6-159">添加**MvcMusicStore**数据库文件。</span><span class="sxs-lookup"><span data-stu-id="59ca6-159">Add **MvcMusicStore** database file.</span></span> <span data-ttu-id="59ca6-160">在本动手实验中，你将使用已创建的数据库调用**MvcMusicStore.mdf**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-160">In this Hands-on Lab, you will use an already created database called **MvcMusicStore.mdf**.</span></span> <span data-ttu-id="59ca6-161">为此，请右键单击**应用\_数据**文件夹，指向**添加**，然后单击**现有项**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-161">To do that, right-click **App\_Data** folder, point to **Add** and then click **Existing Item**.</span></span> <span data-ttu-id="59ca6-162">浏览到**\Source\Assets**和选择**MvcMusicStore.mdf**文件。</span><span class="sxs-lookup"><span data-stu-id="59ca6-162">Browse to **\Source\Assets** and select the **MvcMusicStore.mdf** file.</span></span>
 
-    <span data-ttu-id="179b1-163">![添加现有项](aspnet-mvc-4-models-and-data-access/_static/image2.png "添加现有项")</span><span class="sxs-lookup"><span data-stu-id="179b1-163">![Adding an Existing Item](aspnet-mvc-4-models-and-data-access/_static/image2.png "Adding an Existing Item")</span></span>
+    <span data-ttu-id="59ca6-163">![添加现有项](aspnet-mvc-4-models-and-data-access/_static/image2.png "添加现有项")</span><span class="sxs-lookup"><span data-stu-id="59ca6-163">![Adding an Existing Item](aspnet-mvc-4-models-and-data-access/_static/image2.png "Adding an Existing Item")</span></span>
 
-    <span data-ttu-id="179b1-164">*添加现有项*</span><span class="sxs-lookup"><span data-stu-id="179b1-164">*Adding an Existing Item*</span></span>
+    <span data-ttu-id="59ca6-164">*添加现有项*</span><span class="sxs-lookup"><span data-stu-id="59ca6-164">*Adding an Existing Item*</span></span>
 
-    <span data-ttu-id="179b1-165">![MvcMusicStore.mdf 数据库文件](aspnet-mvc-4-models-and-data-access/_static/image3.png "MvcMusicStore.mdf 数据库文件")</span><span class="sxs-lookup"><span data-stu-id="179b1-165">![MvcMusicStore.mdf database file](aspnet-mvc-4-models-and-data-access/_static/image3.png "MvcMusicStore.mdf database file")</span></span>
+    <span data-ttu-id="59ca6-165">![MvcMusicStore.mdf 数据库文件](aspnet-mvc-4-models-and-data-access/_static/image3.png "MvcMusicStore.mdf 数据库文件")</span><span class="sxs-lookup"><span data-stu-id="59ca6-165">![MvcMusicStore.mdf database file](aspnet-mvc-4-models-and-data-access/_static/image3.png "MvcMusicStore.mdf database file")</span></span>
 
-    <span data-ttu-id="179b1-166">*MvcMusicStore.mdf 数据库文件*</span><span class="sxs-lookup"><span data-stu-id="179b1-166">*MvcMusicStore.mdf database file*</span></span>
+    <span data-ttu-id="59ca6-166">*MvcMusicStore.mdf 数据库文件*</span><span class="sxs-lookup"><span data-stu-id="59ca6-166">*MvcMusicStore.mdf database file*</span></span>
 
-    <span data-ttu-id="179b1-167">数据库已添加到项目。</span><span class="sxs-lookup"><span data-stu-id="179b1-167">The database has been added to the project.</span></span> <span data-ttu-id="179b1-168">即使数据库位于的解决方案内，您可以查询和更新它，因为它已托管在不同的数据库服务器。</span><span class="sxs-lookup"><span data-stu-id="179b1-168">Even when the database is located inside the solution, you can query and update it as it was hosted in a different database server.</span></span>
+    <span data-ttu-id="59ca6-167">数据库已添加到项目。</span><span class="sxs-lookup"><span data-stu-id="59ca6-167">The database has been added to the project.</span></span> <span data-ttu-id="59ca6-168">即使数据库位于的解决方案内，您可以查询和更新它，因为它已托管在不同的数据库服务器。</span><span class="sxs-lookup"><span data-stu-id="59ca6-168">Even when the database is located inside the solution, you can query and update it as it was hosted in a different database server.</span></span>
 
-    <span data-ttu-id="179b1-169">![在解决方案资源管理器的 MvcMusicStore 数据库](aspnet-mvc-4-models-and-data-access/_static/image4.png "MvcMusicStore 数据库在解决方案资源管理器")</span><span class="sxs-lookup"><span data-stu-id="179b1-169">![MvcMusicStore database in Solution Explorer](aspnet-mvc-4-models-and-data-access/_static/image4.png "MvcMusicStore database in Solution Explorer")</span></span>
+    <span data-ttu-id="59ca6-169">![在解决方案资源管理器的 MvcMusicStore 数据库](aspnet-mvc-4-models-and-data-access/_static/image4.png "MvcMusicStore 数据库在解决方案资源管理器")</span><span class="sxs-lookup"><span data-stu-id="59ca6-169">![MvcMusicStore database in Solution Explorer](aspnet-mvc-4-models-and-data-access/_static/image4.png "MvcMusicStore database in Solution Explorer")</span></span>
 
-    <span data-ttu-id="179b1-170">*在解决方案资源管理器的 MvcMusicStore 数据库*</span><span class="sxs-lookup"><span data-stu-id="179b1-170">*MvcMusicStore database in Solution Explorer*</span></span>
-3. <span data-ttu-id="179b1-171">验证到数据库的连接。</span><span class="sxs-lookup"><span data-stu-id="179b1-171">Verify the connection to the database.</span></span> <span data-ttu-id="179b1-172">若要执行此操作，请双击**MvcMusicStore.mdf**来建立连接。</span><span class="sxs-lookup"><span data-stu-id="179b1-172">To do this, double-click **MvcMusicStore.mdf** to establish a connection.</span></span>
+    <span data-ttu-id="59ca6-170">*在解决方案资源管理器的 MvcMusicStore 数据库*</span><span class="sxs-lookup"><span data-stu-id="59ca6-170">*MvcMusicStore database in Solution Explorer*</span></span>
+3. <span data-ttu-id="59ca6-171">验证到数据库的连接。</span><span class="sxs-lookup"><span data-stu-id="59ca6-171">Verify the connection to the database.</span></span> <span data-ttu-id="59ca6-172">若要执行此操作，请双击**MvcMusicStore.mdf**来建立连接。</span><span class="sxs-lookup"><span data-stu-id="59ca6-172">To do this, double-click **MvcMusicStore.mdf** to establish a connection.</span></span>
 
-    <span data-ttu-id="179b1-173">![连接到 MvcMusicStore.mdf](aspnet-mvc-4-models-and-data-access/_static/image5.png "连接到 MvcMusicStore.mdf")</span><span class="sxs-lookup"><span data-stu-id="179b1-173">![Connecting to MvcMusicStore.mdf](aspnet-mvc-4-models-and-data-access/_static/image5.png "Connecting to MvcMusicStore.mdf")</span></span>
+    <span data-ttu-id="59ca6-173">![连接到 MvcMusicStore.mdf](aspnet-mvc-4-models-and-data-access/_static/image5.png "连接到 MvcMusicStore.mdf")</span><span class="sxs-lookup"><span data-stu-id="59ca6-173">![Connecting to MvcMusicStore.mdf](aspnet-mvc-4-models-and-data-access/_static/image5.png "Connecting to MvcMusicStore.mdf")</span></span>
 
-    <span data-ttu-id="179b1-174">*连接到 MvcMusicStore.mdf*</span><span class="sxs-lookup"><span data-stu-id="179b1-174">*Connecting to MvcMusicStore.mdf*</span></span>
+    <span data-ttu-id="59ca6-174">*连接到 MvcMusicStore.mdf*</span><span class="sxs-lookup"><span data-stu-id="59ca6-174">*Connecting to MvcMusicStore.mdf*</span></span>
 
 <a id="Ex1Task2"></a>
 
 <a id="Task_2_-_Creating_a_Data_Model"></a>
-#### <a name="task-2---creating-a-data-model"></a><span data-ttu-id="179b1-175">任务 2-创建数据模型</span><span class="sxs-lookup"><span data-stu-id="179b1-175">Task 2 - Creating a Data Model</span></span>
+#### <a name="task-2---creating-a-data-model"></a><span data-ttu-id="59ca6-175">任务 2-创建数据模型</span><span class="sxs-lookup"><span data-stu-id="59ca6-175">Task 2 - Creating a Data Model</span></span>
 
-<span data-ttu-id="179b1-176">在此任务中，你将创建数据模型与在上一任务中添加的数据库进行交互。</span><span class="sxs-lookup"><span data-stu-id="179b1-176">In this task, you will create a data model to interact with the database added in the previous task.</span></span>
+<span data-ttu-id="59ca6-176">在此任务中，你将创建数据模型与在上一任务中添加的数据库进行交互。</span><span class="sxs-lookup"><span data-stu-id="59ca6-176">In this task, you will create a data model to interact with the database added in the previous task.</span></span>
 
-1. <span data-ttu-id="179b1-177">创建将表示的数据库的数据模型。</span><span class="sxs-lookup"><span data-stu-id="179b1-177">Create a data model that will represent the database.</span></span> <span data-ttu-id="179b1-178">为此，请在解决方案资源管理器右击**模型**文件夹，指向**添加**，然后单击**新项**。</span><span class="sxs-lookup"><span data-stu-id="179b1-178">To do this, in Solution Explorer right-click the **Models** folder, point to **Add** and then click **New Item**.</span></span> <span data-ttu-id="179b1-179">在**添加新项**对话框中，选择**数据**模板，然后**ADO.NET 实体数据模型**项。</span><span class="sxs-lookup"><span data-stu-id="179b1-179">In the **Add New Item** dialog, select the **Data** template and then the **ADO.NET Entity Data Model** item.</span></span> <span data-ttu-id="179b1-180">数据模型将名称更改为**StoreDB.edmx**单击**添加**。</span><span class="sxs-lookup"><span data-stu-id="179b1-180">Change the data model name to **StoreDB.edmx** and click **Add**.</span></span>
+1. <span data-ttu-id="59ca6-177">创建将表示的数据库的数据模型。</span><span class="sxs-lookup"><span data-stu-id="59ca6-177">Create a data model that will represent the database.</span></span> <span data-ttu-id="59ca6-178">为此，请在解决方案资源管理器右击**模型**文件夹，指向**添加**，然后单击**新项**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-178">To do this, in Solution Explorer right-click the **Models** folder, point to **Add** and then click **New Item**.</span></span> <span data-ttu-id="59ca6-179">在**添加新项**对话框中，选择**数据**模板，然后**ADO.NET 实体数据模型**项。</span><span class="sxs-lookup"><span data-stu-id="59ca6-179">In the **Add New Item** dialog, select the **Data** template and then the **ADO.NET Entity Data Model** item.</span></span> <span data-ttu-id="59ca6-180">数据模型将名称更改为**StoreDB.edmx**单击**添加**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-180">Change the data model name to **StoreDB.edmx** and click **Add**.</span></span>
 
-    <span data-ttu-id="179b1-181">![添加 StoreDB ADO.NET 实体数据模型](aspnet-mvc-4-models-and-data-access/_static/image6.png "添加 StoreDB ADO.NET 实体数据模型")</span><span class="sxs-lookup"><span data-stu-id="179b1-181">![Adding the StoreDB ADO.NET Entity Data Model](aspnet-mvc-4-models-and-data-access/_static/image6.png "Adding the StoreDB ADO.NET Entity Data Model")</span></span>
+    <span data-ttu-id="59ca6-181">![添加 StoreDB ADO.NET 实体数据模型](aspnet-mvc-4-models-and-data-access/_static/image6.png "添加 StoreDB ADO.NET 实体数据模型")</span><span class="sxs-lookup"><span data-stu-id="59ca6-181">![Adding the StoreDB ADO.NET Entity Data Model](aspnet-mvc-4-models-and-data-access/_static/image6.png "Adding the StoreDB ADO.NET Entity Data Model")</span></span>
 
-    <span data-ttu-id="179b1-182">*添加 StoreDB ADO.NET 实体数据模型*</span><span class="sxs-lookup"><span data-stu-id="179b1-182">*Adding the StoreDB ADO.NET Entity Data Model*</span></span>
-2. <span data-ttu-id="179b1-183">**实体数据模型向导**将出现。</span><span class="sxs-lookup"><span data-stu-id="179b1-183">The **Entity Data Model Wizard** will appear.</span></span> <span data-ttu-id="179b1-184">此向导将指导你完成创建模型层。</span><span class="sxs-lookup"><span data-stu-id="179b1-184">This wizard will guide you through the creation of the model layer.</span></span> <span data-ttu-id="179b1-185">由于应根据现有的数据库 recentyl 添加创建该模型，请选择**从数据库生成**单击**下一步**。</span><span class="sxs-lookup"><span data-stu-id="179b1-185">Since the model should be created based on the existing database recentyl added, select **Generate from database** and click **Next**.</span></span>
+    <span data-ttu-id="59ca6-182">*添加 StoreDB ADO.NET 实体数据模型*</span><span class="sxs-lookup"><span data-stu-id="59ca6-182">*Adding the StoreDB ADO.NET Entity Data Model*</span></span>
+2. <span data-ttu-id="59ca6-183">**实体数据模型向导**将出现。</span><span class="sxs-lookup"><span data-stu-id="59ca6-183">The **Entity Data Model Wizard** will appear.</span></span> <span data-ttu-id="59ca6-184">此向导将指导你完成创建模型层。</span><span class="sxs-lookup"><span data-stu-id="59ca6-184">This wizard will guide you through the creation of the model layer.</span></span> <span data-ttu-id="59ca6-185">由于应根据现有的数据库 recentyl 添加创建该模型，请选择**从数据库生成**单击**下一步**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-185">Since the model should be created based on the existing database recentyl added, select **Generate from database** and click **Next**.</span></span>
 
-    <span data-ttu-id="179b1-186">![选择模型内容](aspnet-mvc-4-models-and-data-access/_static/image7.png "选择模型内容")</span><span class="sxs-lookup"><span data-stu-id="179b1-186">![Choosing the model content](aspnet-mvc-4-models-and-data-access/_static/image7.png "Choosing the model content")</span></span>
+    <span data-ttu-id="59ca6-186">![选择模型内容](aspnet-mvc-4-models-and-data-access/_static/image7.png "选择模型内容")</span><span class="sxs-lookup"><span data-stu-id="59ca6-186">![Choosing the model content](aspnet-mvc-4-models-and-data-access/_static/image7.png "Choosing the model content")</span></span>
 
-    <span data-ttu-id="179b1-187">*选择模型内容*</span><span class="sxs-lookup"><span data-stu-id="179b1-187">*Choosing the model content*</span></span>
-3. <span data-ttu-id="179b1-188">要从数据库生成模型，因为你将需要指定要使用的连接。</span><span class="sxs-lookup"><span data-stu-id="179b1-188">Since you are generating a model from a database, you will need to specify the connection to use.</span></span> <span data-ttu-id="179b1-189">单击**新连接**。</span><span class="sxs-lookup"><span data-stu-id="179b1-189">Click **New Connection**.</span></span>
-4. <span data-ttu-id="179b1-190">选择**Microsoft SQL Server 数据库文件**单击**继续**。</span><span class="sxs-lookup"><span data-stu-id="179b1-190">Select **Microsoft SQL Server Database File** and click **Continue**.</span></span>
+    <span data-ttu-id="59ca6-187">*选择模型内容*</span><span class="sxs-lookup"><span data-stu-id="59ca6-187">*Choosing the model content*</span></span>
+3. <span data-ttu-id="59ca6-188">要从数据库生成模型，因为你将需要指定要使用的连接。</span><span class="sxs-lookup"><span data-stu-id="59ca6-188">Since you are generating a model from a database, you will need to specify the connection to use.</span></span> <span data-ttu-id="59ca6-189">单击**新连接**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-189">Click **New Connection**.</span></span>
+4. <span data-ttu-id="59ca6-190">选择**Microsoft SQL Server 数据库文件**单击**继续**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-190">Select **Microsoft SQL Server Database File** and click **Continue**.</span></span>
 
-    <span data-ttu-id="179b1-191">![选择数据源](aspnet-mvc-4-models-and-data-access/_static/image8.png "选择数据源")</span><span class="sxs-lookup"><span data-stu-id="179b1-191">![Choose data source](aspnet-mvc-4-models-and-data-access/_static/image8.png "Choose data source")</span></span>
+    <span data-ttu-id="59ca6-191">![选择数据源](aspnet-mvc-4-models-and-data-access/_static/image8.png "选择数据源")</span><span class="sxs-lookup"><span data-stu-id="59ca6-191">![Choose data source](aspnet-mvc-4-models-and-data-access/_static/image8.png "Choose data source")</span></span>
 
-    <span data-ttu-id="179b1-192">*选择数据源对话框*</span><span class="sxs-lookup"><span data-stu-id="179b1-192">*Choose data source dialog*</span></span>
-5. <span data-ttu-id="179b1-193">单击**浏览**和选择的数据库**MvcMusicStore.mdf**你在中找到**应用\_数据**文件夹，然后单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="179b1-193">Click **Browse** and select the database **MvcMusicStore.mdf** you located in the **App\_Data** folder and click **OK**.</span></span>
+    <span data-ttu-id="59ca6-192">*选择数据源对话框*</span><span class="sxs-lookup"><span data-stu-id="59ca6-192">*Choose data source dialog*</span></span>
+5. <span data-ttu-id="59ca6-193">单击**浏览**和选择的数据库**MvcMusicStore.mdf**你在中找到**应用\_数据**文件夹，然后单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-193">Click **Browse** and select the database **MvcMusicStore.mdf** you located in the **App\_Data** folder and click **OK**.</span></span>
 
-    <span data-ttu-id="179b1-194">![连接属性](aspnet-mvc-4-models-and-data-access/_static/image9.png "连接属性")</span><span class="sxs-lookup"><span data-stu-id="179b1-194">![Connection properties](aspnet-mvc-4-models-and-data-access/_static/image9.png "Connection properties")</span></span>
+    <span data-ttu-id="59ca6-194">![连接属性](aspnet-mvc-4-models-and-data-access/_static/image9.png "连接属性")</span><span class="sxs-lookup"><span data-stu-id="59ca6-194">![Connection properties](aspnet-mvc-4-models-and-data-access/_static/image9.png "Connection properties")</span></span>
 
-    <span data-ttu-id="179b1-195">*连接属性*</span><span class="sxs-lookup"><span data-stu-id="179b1-195">*Connection properties*</span></span>
-6. <span data-ttu-id="179b1-196">生成的类应该具有同名的实体连接字符串，因此其将名称更改为**MusicStoreEntities**单击**下一步**。</span><span class="sxs-lookup"><span data-stu-id="179b1-196">The generated class should have the same name as the entity connection string, so change its name to **MusicStoreEntities** and click **Next**.</span></span>
+    <span data-ttu-id="59ca6-195">*连接属性*</span><span class="sxs-lookup"><span data-stu-id="59ca6-195">*Connection properties*</span></span>
+6. <span data-ttu-id="59ca6-196">生成的类应该具有同名的实体连接字符串，因此其将名称更改为**MusicStoreEntities**单击**下一步**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-196">The generated class should have the same name as the entity connection string, so change its name to **MusicStoreEntities** and click **Next**.</span></span>
 
-    <span data-ttu-id="179b1-197">![选择数据连接](aspnet-mvc-4-models-and-data-access/_static/image10.png "选择数据连接")</span><span class="sxs-lookup"><span data-stu-id="179b1-197">![Choosing the data connection](aspnet-mvc-4-models-and-data-access/_static/image10.png "Choosing the data connection")</span></span>
+    <span data-ttu-id="59ca6-197">![选择数据连接](aspnet-mvc-4-models-and-data-access/_static/image10.png "选择数据连接")</span><span class="sxs-lookup"><span data-stu-id="59ca6-197">![Choosing the data connection](aspnet-mvc-4-models-and-data-access/_static/image10.png "Choosing the data connection")</span></span>
 
-    <span data-ttu-id="179b1-198">*选择数据连接*</span><span class="sxs-lookup"><span data-stu-id="179b1-198">*Choosing the data connection*</span></span>
-7. <span data-ttu-id="179b1-199">选择要使用的数据库对象。</span><span class="sxs-lookup"><span data-stu-id="179b1-199">Choose the database objects to use.</span></span> <span data-ttu-id="179b1-200">因为实体模型将使用只是数据库的表，选择**表**选项，并确保**模型中包括外键列**和**单复数形式所生成对象名称**选项也将被选中。</span><span class="sxs-lookup"><span data-stu-id="179b1-200">As the Entity Model will use just the database's tables, select the **Tables** option, and make sure that the **Include foreign key columns in the model** and **Pluralize or singularize generated object names** options are also selected.</span></span> <span data-ttu-id="179b1-201">更改到模型 Namespace **MvcMusicStore.Model**单击**完成**。</span><span class="sxs-lookup"><span data-stu-id="179b1-201">Change the Model Namespace to **MvcMusicStore.Model** and click **Finish**.</span></span>
+    <span data-ttu-id="59ca6-198">*选择数据连接*</span><span class="sxs-lookup"><span data-stu-id="59ca6-198">*Choosing the data connection*</span></span>
+7. <span data-ttu-id="59ca6-199">选择要使用的数据库对象。</span><span class="sxs-lookup"><span data-stu-id="59ca6-199">Choose the database objects to use.</span></span> <span data-ttu-id="59ca6-200">因为实体模型将使用只是数据库的表，选择**表**选项，并确保**模型中包括外键列**和**单复数形式所生成对象名称**选项也将被选中。</span><span class="sxs-lookup"><span data-stu-id="59ca6-200">As the Entity Model will use just the database's tables, select the **Tables** option, and make sure that the **Include foreign key columns in the model** and **Pluralize or singularize generated object names** options are also selected.</span></span> <span data-ttu-id="59ca6-201">更改到模型 Namespace **MvcMusicStore.Model**单击**完成**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-201">Change the Model Namespace to **MvcMusicStore.Model** and click **Finish**.</span></span>
 
-    <span data-ttu-id="179b1-202">![选择数据库对象](aspnet-mvc-4-models-and-data-access/_static/image11.png "选择数据库对象")</span><span class="sxs-lookup"><span data-stu-id="179b1-202">![Choosing the database objects](aspnet-mvc-4-models-and-data-access/_static/image11.png "Choosing the database objects")</span></span>
+    <span data-ttu-id="59ca6-202">![选择数据库对象](aspnet-mvc-4-models-and-data-access/_static/image11.png "选择数据库对象")</span><span class="sxs-lookup"><span data-stu-id="59ca6-202">![Choosing the database objects](aspnet-mvc-4-models-and-data-access/_static/image11.png "Choosing the database objects")</span></span>
 
-    <span data-ttu-id="179b1-203">*选择数据库对象*</span><span class="sxs-lookup"><span data-stu-id="179b1-203">*Choosing the database objects*</span></span>
-
-    > [!NOTE]
-    > <span data-ttu-id="179b1-204">如果显示安全警告对话框，单击**确定**运行该模板并生成模型实体的类。</span><span class="sxs-lookup"><span data-stu-id="179b1-204">If a Security Warning dialog is shown, click **OK** to run the template and generate the classes for the model entities.</span></span>
-8. <span data-ttu-id="179b1-205">用于数据库的实体关系图将出现，将创建一个单独的类映射到数据库的每个表时。</span><span class="sxs-lookup"><span data-stu-id="179b1-205">An entity diagram for the database will appear, while a separate class that maps each table to the database will be created.</span></span> <span data-ttu-id="179b1-206">例如，**专辑**表将由表示**唱片集**类，其中每个表中的列将映射到类属性。</span><span class="sxs-lookup"><span data-stu-id="179b1-206">For example, the **Albums** table will be represented by an **Album** class, where each column in the table will map to a class property.</span></span> <span data-ttu-id="179b1-207">这将允许你以查询和使用对象，表示数据库中的行。</span><span class="sxs-lookup"><span data-stu-id="179b1-207">This will allow you to query and work with objects that represent rows in the database.</span></span>
-
-    <span data-ttu-id="179b1-208">![实体关系图](aspnet-mvc-4-models-and-data-access/_static/image12.png "实体关系图")</span><span class="sxs-lookup"><span data-stu-id="179b1-208">![Entity diagram](aspnet-mvc-4-models-and-data-access/_static/image12.png "Entity diagram")</span></span>
-
-    <span data-ttu-id="179b1-209">*实体关系图*</span><span class="sxs-lookup"><span data-stu-id="179b1-209">*Entity diagram*</span></span>
+    <span data-ttu-id="59ca6-203">*选择数据库对象*</span><span class="sxs-lookup"><span data-stu-id="59ca6-203">*Choosing the database objects*</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="179b1-210">T4 模板 (.tt) 运行代码，以生成实体类，并将覆盖具有相同名称的现有类。</span><span class="sxs-lookup"><span data-stu-id="179b1-210">The T4 templates (.tt) run code to generate the entities classes and will overwrite the existing classes with the same name.</span></span> <span data-ttu-id="179b1-211">在此示例中，类&quot;唱片集&quot;，&quot;流派&quot;和&quot;艺术家&quot;已具有生成的代码覆盖。</span><span class="sxs-lookup"><span data-stu-id="179b1-211">In this example, the classes &quot;Album&quot;, &quot;Genre&quot; and &quot;Artist&quot; were overwritten with the generated code.</span></span>
+    > <span data-ttu-id="59ca6-204">如果显示安全警告对话框，单击**确定**运行该模板并生成模型实体的类。</span><span class="sxs-lookup"><span data-stu-id="59ca6-204">If a Security Warning dialog is shown, click **OK** to run the template and generate the classes for the model entities.</span></span>
+8. <span data-ttu-id="59ca6-205">用于数据库的实体关系图将出现，将创建一个单独的类映射到数据库的每个表时。</span><span class="sxs-lookup"><span data-stu-id="59ca6-205">An entity diagram for the database will appear, while a separate class that maps each table to the database will be created.</span></span> <span data-ttu-id="59ca6-206">例如，**专辑**表将由表示**唱片集**类，其中每个表中的列将映射到类属性。</span><span class="sxs-lookup"><span data-stu-id="59ca6-206">For example, the **Albums** table will be represented by an **Album** class, where each column in the table will map to a class property.</span></span> <span data-ttu-id="59ca6-207">这将允许你以查询和使用对象，表示数据库中的行。</span><span class="sxs-lookup"><span data-stu-id="59ca6-207">This will allow you to query and work with objects that represent rows in the database.</span></span>
+
+    <span data-ttu-id="59ca6-208">![实体关系图](aspnet-mvc-4-models-and-data-access/_static/image12.png "实体关系图")</span><span class="sxs-lookup"><span data-stu-id="59ca6-208">![Entity diagram](aspnet-mvc-4-models-and-data-access/_static/image12.png "Entity diagram")</span></span>
+
+    <span data-ttu-id="59ca6-209">*实体关系图*</span><span class="sxs-lookup"><span data-stu-id="59ca6-209">*Entity diagram*</span></span>
+
+    > [!NOTE]
+    > <span data-ttu-id="59ca6-210">T4 模板 (.tt) 运行代码，以生成实体类，并将覆盖具有相同名称的现有类。</span><span class="sxs-lookup"><span data-stu-id="59ca6-210">The T4 templates (.tt) run code to generate the entities classes and will overwrite the existing classes with the same name.</span></span> <span data-ttu-id="59ca6-211">在此示例中，类&quot;唱片集&quot;，&quot;流派&quot;和&quot;艺术家&quot;已具有生成的代码覆盖。</span><span class="sxs-lookup"><span data-stu-id="59ca6-211">In this example, the classes &quot;Album&quot;, &quot;Genre&quot; and &quot;Artist&quot; were overwritten with the generated code.</span></span>
 
 
 <a id="Ex1Task3"></a>
 
 <a id="Task_3_-_Building_the_Application"></a>
-#### <a name="task-3---building-the-application"></a><span data-ttu-id="179b1-212">任务 3-生成应用程序</span><span class="sxs-lookup"><span data-stu-id="179b1-212">Task 3 - Building the Application</span></span>
+#### <a name="task-3---building-the-application"></a><span data-ttu-id="59ca6-212">任务 3-生成应用程序</span><span class="sxs-lookup"><span data-stu-id="59ca6-212">Task 3 - Building the Application</span></span>
 
-<span data-ttu-id="179b1-213">在此任务中，你将检查，尽管模型生成已删除**唱片集**，**流派**和**艺术家**模型类，成功生成项目通过使用新的数据模型类。</span><span class="sxs-lookup"><span data-stu-id="179b1-213">In this task, you will check that, although the model generation have removed the **Album**, **Genre** and **Artist** model classes, the project builds successfully by using the new data model classes.</span></span>
+<span data-ttu-id="59ca6-213">在此任务中，你将检查，尽管模型生成已删除**唱片集**，**流派**和**艺术家**模型类，成功生成项目通过使用新的数据模型类。</span><span class="sxs-lookup"><span data-stu-id="59ca6-213">In this task, you will check that, although the model generation have removed the **Album**, **Genre** and **Artist** model classes, the project builds successfully by using the new data model classes.</span></span>
 
-1. <span data-ttu-id="179b1-214">通过选择生成项目**生成**菜单项，然后**生成 MvcMusicStore**。</span><span class="sxs-lookup"><span data-stu-id="179b1-214">Build the project by selecting the **Build** menu item and then **Build MvcMusicStore**.</span></span>
+1. <span data-ttu-id="59ca6-214">通过选择生成项目**生成**菜单项，然后**生成 MvcMusicStore**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-214">Build the project by selecting the **Build** menu item and then **Build MvcMusicStore**.</span></span>
 
-    <span data-ttu-id="179b1-215">![生成项目](aspnet-mvc-4-models-and-data-access/_static/image13.png "生成项目")</span><span class="sxs-lookup"><span data-stu-id="179b1-215">![Building the project](aspnet-mvc-4-models-and-data-access/_static/image13.png "Building the project")</span></span>
+    <span data-ttu-id="59ca6-215">![生成项目](aspnet-mvc-4-models-and-data-access/_static/image13.png "生成项目")</span><span class="sxs-lookup"><span data-stu-id="59ca6-215">![Building the project](aspnet-mvc-4-models-and-data-access/_static/image13.png "Building the project")</span></span>
 
-    <span data-ttu-id="179b1-216">*生成项目*</span><span class="sxs-lookup"><span data-stu-id="179b1-216">*Building the project*</span></span>
-2. <span data-ttu-id="179b1-217">成功生成项目。</span><span class="sxs-lookup"><span data-stu-id="179b1-217">The project builds successfully.</span></span> <span data-ttu-id="179b1-218">为什么它仍工作？</span><span class="sxs-lookup"><span data-stu-id="179b1-218">Why does it still work?</span></span> <span data-ttu-id="179b1-219">因为数据库表中移除类包括你使用的属性的字段，会**唱片集**和**流派**。</span><span class="sxs-lookup"><span data-stu-id="179b1-219">It works because the database tables have fields that include the properties that you were using in the removed classes **Album** and **Genre**.</span></span>
+    <span data-ttu-id="59ca6-216">*生成项目*</span><span class="sxs-lookup"><span data-stu-id="59ca6-216">*Building the project*</span></span>
+2. <span data-ttu-id="59ca6-217">成功生成项目。</span><span class="sxs-lookup"><span data-stu-id="59ca6-217">The project builds successfully.</span></span> <span data-ttu-id="59ca6-218">为什么它仍工作？</span><span class="sxs-lookup"><span data-stu-id="59ca6-218">Why does it still work?</span></span> <span data-ttu-id="59ca6-219">因为数据库表中移除类包括你使用的属性的字段，会**唱片集**和**流派**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-219">It works because the database tables have fields that include the properties that you were using in the removed classes **Album** and **Genre**.</span></span>
 
-    <span data-ttu-id="179b1-220">![成功生成](aspnet-mvc-4-models-and-data-access/_static/image14.png "生成成功")</span><span class="sxs-lookup"><span data-stu-id="179b1-220">![Builds succeeded](aspnet-mvc-4-models-and-data-access/_static/image14.png "Builds succeeded")</span></span>
+    <span data-ttu-id="59ca6-220">![成功生成](aspnet-mvc-4-models-and-data-access/_static/image14.png "生成成功")</span><span class="sxs-lookup"><span data-stu-id="59ca6-220">![Builds succeeded](aspnet-mvc-4-models-and-data-access/_static/image14.png "Builds succeeded")</span></span>
 
-    <span data-ttu-id="179b1-221">*生成成功*</span><span class="sxs-lookup"><span data-stu-id="179b1-221">*Builds succeeded*</span></span>
-3. <span data-ttu-id="179b1-222">时设计器的关系图格式显示实体，但它们实际上是 C# 类。</span><span class="sxs-lookup"><span data-stu-id="179b1-222">While the designer displays the entities in a diagram format, they are really C# classes.</span></span> <span data-ttu-id="179b1-223">展开**StoreDB.edmx**在解决方案资源管理器中的节点，然后**StoreDB.tt**，你将看到新生成的实体。</span><span class="sxs-lookup"><span data-stu-id="179b1-223">Expand the **StoreDB.edmx** node in the Solution Explorer and then **StoreDB.tt**, you will see the new generated entities.</span></span>
+    <span data-ttu-id="59ca6-221">*生成成功*</span><span class="sxs-lookup"><span data-stu-id="59ca6-221">*Builds succeeded*</span></span>
+3. <span data-ttu-id="59ca6-222">时设计器的关系图格式显示实体，但它们实际上是 C# 类。</span><span class="sxs-lookup"><span data-stu-id="59ca6-222">While the designer displays the entities in a diagram format, they are really C# classes.</span></span> <span data-ttu-id="59ca6-223">展开**StoreDB.edmx**在解决方案资源管理器中的节点，然后**StoreDB.tt**，你将看到新生成的实体。</span><span class="sxs-lookup"><span data-stu-id="59ca6-223">Expand the **StoreDB.edmx** node in the Solution Explorer and then **StoreDB.tt**, you will see the new generated entities.</span></span>
 
-    <span data-ttu-id="179b1-224">![生成的文件](aspnet-mvc-4-models-and-data-access/_static/image15.png "生成的文件")</span><span class="sxs-lookup"><span data-stu-id="179b1-224">![Generated files](aspnet-mvc-4-models-and-data-access/_static/image15.png "Generated files")</span></span>
+    <span data-ttu-id="59ca6-224">![生成的文件](aspnet-mvc-4-models-and-data-access/_static/image15.png "生成的文件")</span><span class="sxs-lookup"><span data-stu-id="59ca6-224">![Generated files](aspnet-mvc-4-models-and-data-access/_static/image15.png "Generated files")</span></span>
 
-    <span data-ttu-id="179b1-225">*生成的文件*</span><span class="sxs-lookup"><span data-stu-id="179b1-225">*Generated files*</span></span>
+    <span data-ttu-id="59ca6-225">*生成的文件*</span><span class="sxs-lookup"><span data-stu-id="59ca6-225">*Generated files*</span></span>
 
 <a id="Ex1Task4"></a>
 
 <a id="Task_4_-_Querying_the_Database"></a>
-#### <a name="task-4---querying-the-database"></a><span data-ttu-id="179b1-226">任务 4-查询数据库</span><span class="sxs-lookup"><span data-stu-id="179b1-226">Task 4 - Querying the Database</span></span>
+#### <a name="task-4---querying-the-database"></a><span data-ttu-id="59ca6-226">任务 4-查询数据库</span><span class="sxs-lookup"><span data-stu-id="59ca6-226">Task 4 - Querying the Database</span></span>
 
-<span data-ttu-id="179b1-227">在此任务中，你将更新 StoreController 类，以便不使用硬编码数据，它将查询要检索的信息的数据库。</span><span class="sxs-lookup"><span data-stu-id="179b1-227">In this task, you will update the StoreController class so that, instead of using hardcoded data, it will query the database to retrieve the information.</span></span>
+<span data-ttu-id="59ca6-227">在此任务中，你将更新 StoreController 类，以便不使用硬编码数据，它将查询要检索的信息的数据库。</span><span class="sxs-lookup"><span data-stu-id="59ca6-227">In this task, you will update the StoreController class so that, instead of using hardcoded data, it will query the database to retrieve the information.</span></span>
 
-1. <span data-ttu-id="179b1-228">打开**Controllers\StoreController.cs**并将以下字段添加到要保存的实例的类**MusicStoreEntities**名为的类**storeDB**:</span><span class="sxs-lookup"><span data-stu-id="179b1-228">Open **Controllers\StoreController.cs** and add the following field to the class to hold an instance of the **MusicStoreEntities** class, named **storeDB**:</span></span>
+1. <span data-ttu-id="59ca6-228">打开**Controllers\StoreController.cs**并将以下字段添加到要保存的实例的类**MusicStoreEntities**名为的类**storeDB**:</span><span class="sxs-lookup"><span data-stu-id="59ca6-228">Open **Controllers\StoreController.cs** and add the following field to the class to hold an instance of the **MusicStoreEntities** class, named **storeDB**:</span></span>
 
-    <span data-ttu-id="179b1-229">(代码段-*模型的和数据访问-作为 Ex1 storeDB*)</span><span class="sxs-lookup"><span data-stu-id="179b1-229">(Code Snippet - *Models And Data Access - Ex1 storeDB*)</span></span>
+    <span data-ttu-id="59ca6-229">(代码段-*模型的和数据访问-作为 Ex1 storeDB*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-229">(Code Snippet - *Models And Data Access - Ex1 storeDB*)</span></span>
 
 
 ~~~
 [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample1.cs)]
 ~~~
-2. <span data-ttu-id="179b1-230">**MusicStoreEntities**类公开在数据库中每个表使用的集合属性。</span><span class="sxs-lookup"><span data-stu-id="179b1-230">The **MusicStoreEntities** class exposes a collection property for each table in the database.</span></span> <span data-ttu-id="179b1-231">更新**浏览**操作方法来检索所有的一种风格**专辑**。</span><span class="sxs-lookup"><span data-stu-id="179b1-231">Update **Browse** action method to retrieve a Genre with all of the **Albums**.</span></span>
+2. <span data-ttu-id="59ca6-230">**MusicStoreEntities**类公开在数据库中每个表使用的集合属性。</span><span class="sxs-lookup"><span data-stu-id="59ca6-230">The **MusicStoreEntities** class exposes a collection property for each table in the database.</span></span> <span data-ttu-id="59ca6-231">更新**浏览**操作方法来检索所有的一种风格**专辑**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-231">Update **Browse** action method to retrieve a Genre with all of the **Albums**.</span></span>
 
-    <span data-ttu-id="179b1-232">(代码段-*模型和数据访问-Ex1 存储浏览*)</span><span class="sxs-lookup"><span data-stu-id="179b1-232">(Code Snippet - *Models And Data Access - Ex1 Store Browse*)</span></span>
+    <span data-ttu-id="59ca6-232">(代码段-*模型和数据访问-Ex1 存储浏览*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-232">(Code Snippet - *Models And Data Access - Ex1 Store Browse*)</span></span>
 
 
 ~~~
 [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
+~~~
 
 > [!NOTE]
-> You are using a capability of .NET called **LINQ** (language-integrated query) to write strongly-typed query expressions against these collections - which will execute code against the database and return objects that you can program against.
+> <span data-ttu-id="59ca6-233">正在使用的.NET 调用一项功能**LINQ** （语言集成查询） 来编写针对这些集合-将执行对数据库的代码并返回强类型查询表达式对象，您可以进行编程针对。</span><span class="sxs-lookup"><span data-stu-id="59ca6-233">You are using a capability of .NET called **LINQ** (language-integrated query) to write strongly-typed query expressions against these collections - which will execute code against the database and return objects that you can program against.</span></span>
 > 
-> For more information about LINQ, please visit the [msdn site](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
-~~~
-3. <span data-ttu-id="179b1-233">更新**索引**操作方法来检索所有风格。</span><span class="sxs-lookup"><span data-stu-id="179b1-233">Update **Index** action method to retrieve all the genres.</span></span>
+> <span data-ttu-id="59ca6-234">有关 LINQ 的详细信息，请访问[msdn 站点](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx)。</span><span class="sxs-lookup"><span data-stu-id="59ca6-234">For more information about LINQ, please visit the [msdn site](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).</span></span>
 
-    <span data-ttu-id="179b1-234">(代码段-*模型和数据访问-Ex1 存储索引*)</span><span class="sxs-lookup"><span data-stu-id="179b1-234">(Code Snippet - *Models And Data Access - Ex1 Store Index*)</span></span>
+
+3. <span data-ttu-id="59ca6-235">更新**索引**操作方法来检索所有风格。</span><span class="sxs-lookup"><span data-stu-id="59ca6-235">Update **Index** action method to retrieve all the genres.</span></span>
+
+    <span data-ttu-id="59ca6-236">(代码段-*模型和数据访问-Ex1 存储索引*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-236">(Code Snippet - *Models And Data Access - Ex1 Store Index*)</span></span>
 
 
 ~~~
 [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample3.cs)]
 ~~~
-4. <span data-ttu-id="179b1-235">更新**索引**操作方法来检索所有风格和转换到列表的集合。</span><span class="sxs-lookup"><span data-stu-id="179b1-235">Update **Index** action method to retrieve all the genres and transform the collection to a list.</span></span>
+4. <span data-ttu-id="59ca6-237">更新**索引**操作方法来检索所有风格和转换到列表的集合。</span><span class="sxs-lookup"><span data-stu-id="59ca6-237">Update **Index** action method to retrieve all the genres and transform the collection to a list.</span></span>
 
-    <span data-ttu-id="179b1-236">(代码段-*模型和数据访问-Ex1 存储 GenreMenu*)</span><span class="sxs-lookup"><span data-stu-id="179b1-236">(Code Snippet - *Models And Data Access - Ex1 Store GenreMenu*)</span></span>
+    <span data-ttu-id="59ca6-238">(代码段-*模型和数据访问-Ex1 存储 GenreMenu*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-238">(Code Snippet - *Models And Data Access - Ex1 Store GenreMenu*)</span></span>
 
 
 ~~~
@@ -261,66 +263,66 @@ ms.lasthandoff: 04/06/2018
 <a id="Ex1Task5"></a>
 
 <a id="Task_5_-_Running_the_Application"></a>
-#### <a name="task-5---running-the-application"></a><span data-ttu-id="179b1-237">任务 5-运行应用程序</span><span class="sxs-lookup"><span data-stu-id="179b1-237">Task 5 - Running the Application</span></span>
+#### <a name="task-5---running-the-application"></a><span data-ttu-id="59ca6-239">任务 5-运行应用程序</span><span class="sxs-lookup"><span data-stu-id="59ca6-239">Task 5 - Running the Application</span></span>
 
-<span data-ttu-id="179b1-238">在此任务中，将检查存储索引页现在将显示存储在数据库而不是硬编码的风格。</span><span class="sxs-lookup"><span data-stu-id="179b1-238">In this task, you will check that the Store Index page will now display the Genres stored in the database instead of the hardcoded ones.</span></span> <span data-ttu-id="179b1-239">若要更改视图模板，因为无需**StoreController**和前面一样，将返回相同的实体，尽管这一次的数据将来自数据库。</span><span class="sxs-lookup"><span data-stu-id="179b1-239">There is no need to change the View template because the **StoreController** is returning the same entities as before, although this time the data will come from the database.</span></span>
+<span data-ttu-id="59ca6-240">在此任务中，将检查存储索引页现在将显示存储在数据库而不是硬编码的风格。</span><span class="sxs-lookup"><span data-stu-id="59ca6-240">In this task, you will check that the Store Index page will now display the Genres stored in the database instead of the hardcoded ones.</span></span> <span data-ttu-id="59ca6-241">若要更改视图模板，因为无需**StoreController**和前面一样，将返回相同的实体，尽管这一次的数据将来自数据库。</span><span class="sxs-lookup"><span data-stu-id="59ca6-241">There is no need to change the View template because the **StoreController** is returning the same entities as before, although this time the data will come from the database.</span></span>
 
-1. <span data-ttu-id="179b1-240">重新生成解决方案，按**F5**运行该应用程序。</span><span class="sxs-lookup"><span data-stu-id="179b1-240">Rebuild the solution and press **F5** to run the Application.</span></span>
-2. <span data-ttu-id="179b1-241">在主页页面中启动项目。</span><span class="sxs-lookup"><span data-stu-id="179b1-241">The project starts in the Home page.</span></span> <span data-ttu-id="179b1-242">验证的菜单**风格**不再是硬编码列表，并直接从数据库检索的数据。</span><span class="sxs-lookup"><span data-stu-id="179b1-242">Verify that the menu of **Genres** is no longer a hardcoded list, and the data is directly retrieved from the database.</span></span>
+1. <span data-ttu-id="59ca6-242">重新生成解决方案，按**F5**运行该应用程序。</span><span class="sxs-lookup"><span data-stu-id="59ca6-242">Rebuild the solution and press **F5** to run the Application.</span></span>
+2. <span data-ttu-id="59ca6-243">在主页页面中启动项目。</span><span class="sxs-lookup"><span data-stu-id="59ca6-243">The project starts in the Home page.</span></span> <span data-ttu-id="59ca6-244">验证的菜单**风格**不再是硬编码列表，并直接从数据库检索的数据。</span><span class="sxs-lookup"><span data-stu-id="59ca6-244">Verify that the menu of **Genres** is no longer a hardcoded list, and the data is directly retrieved from the database.</span></span>
 
     ![BrowsingGenresFromDataBase](aspnet-mvc-4-models-and-data-access/_static/image16.png)
 
-    <span data-ttu-id="179b1-244">*从数据库中浏览风格*</span><span class="sxs-lookup"><span data-stu-id="179b1-244">*Browsing Genres from the database*</span></span>
-3. <span data-ttu-id="179b1-245">现在浏览到任何流派，并确认专辑填充从数据库。</span><span class="sxs-lookup"><span data-stu-id="179b1-245">Now browse to any genre and verify the albums are populated from database.</span></span>
+    <span data-ttu-id="59ca6-246">*从数据库中浏览风格*</span><span class="sxs-lookup"><span data-stu-id="59ca6-246">*Browsing Genres from the database*</span></span>
+3. <span data-ttu-id="59ca6-247">现在浏览到任何流派，并确认专辑填充从数据库。</span><span class="sxs-lookup"><span data-stu-id="59ca6-247">Now browse to any genre and verify the albums are populated from database.</span></span>
 
-    <span data-ttu-id="179b1-246">![从数据库中浏览专辑](aspnet-mvc-4-models-and-data-access/_static/image17.png "浏览专辑从数据库")</span><span class="sxs-lookup"><span data-stu-id="179b1-246">![Browsing Albums from the database](aspnet-mvc-4-models-and-data-access/_static/image17.png "Browsing Albums from the database")</span></span>
+    <span data-ttu-id="59ca6-248">![从数据库中浏览专辑](aspnet-mvc-4-models-and-data-access/_static/image17.png "浏览专辑从数据库")</span><span class="sxs-lookup"><span data-stu-id="59ca6-248">![Browsing Albums from the database](aspnet-mvc-4-models-and-data-access/_static/image17.png "Browsing Albums from the database")</span></span>
 
-    <span data-ttu-id="179b1-247">*从数据库中浏览专辑*</span><span class="sxs-lookup"><span data-stu-id="179b1-247">*Browsing Albums from the database*</span></span>
+    <span data-ttu-id="59ca6-249">*从数据库中浏览专辑*</span><span class="sxs-lookup"><span data-stu-id="59ca6-249">*Browsing Albums from the database*</span></span>
 
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Creating_a_Database_Using_Code_First"></a>
-### <a name="exercise-2-creating-a-database-using-code-first"></a><span data-ttu-id="179b1-248">练习 2： 创建第一次使用代码的数据库</span><span class="sxs-lookup"><span data-stu-id="179b1-248">Exercise 2: Creating a Database Using Code First</span></span>
+### <a name="exercise-2-creating-a-database-using-code-first"></a><span data-ttu-id="59ca6-250">练习 2： 创建第一次使用代码的数据库</span><span class="sxs-lookup"><span data-stu-id="59ca6-250">Exercise 2: Creating a Database Using Code First</span></span>
 
-<span data-ttu-id="179b1-249">在此练习中，你将了解如何使用代码第一种方法使用的表 MusicStore 应用程序，创建数据库以及如何访问其数据。</span><span class="sxs-lookup"><span data-stu-id="179b1-249">In this exercise, you will learn how to use the Code First approach to create a database with the tables of the MusicStore application, and how to access its data.</span></span>
+<span data-ttu-id="59ca6-251">在此练习中，你将了解如何使用代码第一种方法使用的表 MusicStore 应用程序，创建数据库以及如何访问其数据。</span><span class="sxs-lookup"><span data-stu-id="59ca6-251">In this exercise, you will learn how to use the Code First approach to create a database with the tables of the MusicStore application, and how to access its data.</span></span>
 
-<span data-ttu-id="179b1-250">后生成的模型，您将修改 StoreController 视图模板提供从数据库，而不是使用硬编码值获取的数据。</span><span class="sxs-lookup"><span data-stu-id="179b1-250">Once the model is generated, you will modify the StoreController to provide the View template with the data taken from the database, instead of using hardcoded values.</span></span>
+<span data-ttu-id="59ca6-252">后生成的模型，您将修改 StoreController 视图模板提供从数据库，而不是使用硬编码值获取的数据。</span><span class="sxs-lookup"><span data-stu-id="59ca6-252">Once the model is generated, you will modify the StoreController to provide the View template with the data taken from the database, instead of using hardcoded values.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="179b1-251">如果你已完成练习 1，并且已在使用数据库第一种方法，你现在将了解如何获取相同的结果与另一个进程。</span><span class="sxs-lookup"><span data-stu-id="179b1-251">If you have completed Exercise 1 and have already worked with the Database First approach, you will now learn how to get the same results with a different process.</span></span> <span data-ttu-id="179b1-252">已标记与练习 1 相同的任务以方便你阅读。</span><span class="sxs-lookup"><span data-stu-id="179b1-252">The tasks that are in common with Exercise 1 have been marked to make your reading easier.</span></span> <span data-ttu-id="179b1-253">如果你尚未完成练习 1，但想要了解代码第一种方法，你可以从本练习中启动，并获取主题的方方面面。</span><span class="sxs-lookup"><span data-stu-id="179b1-253">If you have not completed Exercise 1 but would like to learn the Code First approach, you can start from this exercise and get a full coverage of the topic.</span></span>
+> <span data-ttu-id="59ca6-253">如果你已完成练习 1，并且已在使用数据库第一种方法，你现在将了解如何获取相同的结果与另一个进程。</span><span class="sxs-lookup"><span data-stu-id="59ca6-253">If you have completed Exercise 1 and have already worked with the Database First approach, you will now learn how to get the same results with a different process.</span></span> <span data-ttu-id="59ca6-254">已标记与练习 1 相同的任务以方便你阅读。</span><span class="sxs-lookup"><span data-stu-id="59ca6-254">The tasks that are in common with Exercise 1 have been marked to make your reading easier.</span></span> <span data-ttu-id="59ca6-255">如果你尚未完成练习 1，但想要了解代码第一种方法，你可以从本练习中启动，并获取主题的方方面面。</span><span class="sxs-lookup"><span data-stu-id="59ca6-255">If you have not completed Exercise 1 but would like to learn the Code First approach, you can start from this exercise and get a full coverage of the topic.</span></span>
 
 
 <a id="Ex2Task1"></a>
 
 <a id="Task_1_-_Populating_Sample_Data"></a>
-#### <a name="task-1---populating-sample-data"></a><span data-ttu-id="179b1-254">任务 1-填充示例数据</span><span class="sxs-lookup"><span data-stu-id="179b1-254">Task 1 - Populating Sample Data</span></span>
+#### <a name="task-1---populating-sample-data"></a><span data-ttu-id="59ca6-256">任务 1-填充示例数据</span><span class="sxs-lookup"><span data-stu-id="59ca6-256">Task 1 - Populating Sample Data</span></span>
 
-<span data-ttu-id="179b1-255">在此任务中，你将使用代码优先最初创建它时填充示例数据的数据库。</span><span class="sxs-lookup"><span data-stu-id="179b1-255">In this task, you will populate the database with sample data when it is intially created using Code-First.</span></span>
+<span data-ttu-id="59ca6-257">在此任务中，你将使用代码优先最初创建它时填充示例数据的数据库。</span><span class="sxs-lookup"><span data-stu-id="59ca6-257">In this task, you will populate the database with sample data when it is intially created using Code-First.</span></span>
 
-1. <span data-ttu-id="179b1-256">打开**开始**解决方案位于**源/Ex2-CreatingADatabaseCodeFirst/开始/**文件夹。</span><span class="sxs-lookup"><span data-stu-id="179b1-256">Open the **Begin** solution located at **Source/Ex2-CreatingADatabaseCodeFirst/Begin/** folder.</span></span> <span data-ttu-id="179b1-257">否则，可能会继续使用**结束**解决方案获取通过完成上一练习。</span><span class="sxs-lookup"><span data-stu-id="179b1-257">Otherwise, you might continue using the **End** solution obtained by completing the previous exercise.</span></span>
+1. <span data-ttu-id="59ca6-258">打开**开始**解决方案位于**源/Ex2-CreatingADatabaseCodeFirst/开始/** 文件夹。</span><span class="sxs-lookup"><span data-stu-id="59ca6-258">Open the **Begin** solution located at **Source/Ex2-CreatingADatabaseCodeFirst/Begin/** folder.</span></span> <span data-ttu-id="59ca6-259">否则，可能会继续使用**结束**解决方案获取通过完成上一练习。</span><span class="sxs-lookup"><span data-stu-id="59ca6-259">Otherwise, you might continue using the **End** solution obtained by completing the previous exercise.</span></span>
 
-   1. <span data-ttu-id="179b1-258">如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。</span><span class="sxs-lookup"><span data-stu-id="179b1-258">If you opened the provided **Begin** solution, you will need to download some missing NuGet packages before continue.</span></span> <span data-ttu-id="179b1-259">若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。</span><span class="sxs-lookup"><span data-stu-id="179b1-259">To do this, click the **Project** menu and select **Manage NuGet Packages**.</span></span>
-   2. <span data-ttu-id="179b1-260">在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。</span><span class="sxs-lookup"><span data-stu-id="179b1-260">In the **Manage NuGet Packages** dialog, click **Restore** in order to download missing packages.</span></span>
-   3. <span data-ttu-id="179b1-261">最后，通过单击生成解决方案**生成** | **生成解决方案**。</span><span class="sxs-lookup"><span data-stu-id="179b1-261">Finally, build the solution by clicking **Build** | **Build Solution**.</span></span>
+   1. <span data-ttu-id="59ca6-260">如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。</span><span class="sxs-lookup"><span data-stu-id="59ca6-260">If you opened the provided **Begin** solution, you will need to download some missing NuGet packages before continue.</span></span> <span data-ttu-id="59ca6-261">若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-261">To do this, click the **Project** menu and select **Manage NuGet Packages**.</span></span>
+   2. <span data-ttu-id="59ca6-262">在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。</span><span class="sxs-lookup"><span data-stu-id="59ca6-262">In the **Manage NuGet Packages** dialog, click **Restore** in order to download missing packages.</span></span>
+   3. <span data-ttu-id="59ca6-263">最后，通过单击生成解决方案**生成** | **生成解决方案**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-263">Finally, build the solution by clicking **Build** | **Build Solution**.</span></span>
 
       > [!NOTE]
-      > <span data-ttu-id="179b1-262">使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。</span><span class="sxs-lookup"><span data-stu-id="179b1-262">One of the advantages of using NuGet is that you don't have to ship all the libraries in your project, reducing the project size.</span></span> <span data-ttu-id="179b1-263">使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。</span><span class="sxs-lookup"><span data-stu-id="179b1-263">With NuGet Power Tools, by specifying the package versions in the Packages.config file, you will be able to download all the required libraries the first time you run the project.</span></span> <span data-ttu-id="179b1-264">这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。</span><span class="sxs-lookup"><span data-stu-id="179b1-264">This is why you will have to run these steps after you open an existing solution from this lab.</span></span>
-2. <span data-ttu-id="179b1-265">添加**SampleData.cs**文件为**模型**文件夹。</span><span class="sxs-lookup"><span data-stu-id="179b1-265">Add the **SampleData.cs** file to the **Models** folder.</span></span> <span data-ttu-id="179b1-266">为此，请右键单击**模型**文件夹，指向**添加**，然后单击**现有项**。</span><span class="sxs-lookup"><span data-stu-id="179b1-266">To do that, right-click **Models** folder, point to **Add** and then click **Existing Item**.</span></span> <span data-ttu-id="179b1-267">浏览到**\Source\Assets**和选择**SampleData.cs**文件。</span><span class="sxs-lookup"><span data-stu-id="179b1-267">Browse to **\Source\Assets** and select the **SampleData.cs** file.</span></span>
+      > <span data-ttu-id="59ca6-264">使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。</span><span class="sxs-lookup"><span data-stu-id="59ca6-264">One of the advantages of using NuGet is that you don't have to ship all the libraries in your project, reducing the project size.</span></span> <span data-ttu-id="59ca6-265">使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。</span><span class="sxs-lookup"><span data-stu-id="59ca6-265">With NuGet Power Tools, by specifying the package versions in the Packages.config file, you will be able to download all the required libraries the first time you run the project.</span></span> <span data-ttu-id="59ca6-266">这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。</span><span class="sxs-lookup"><span data-stu-id="59ca6-266">This is why you will have to run these steps after you open an existing solution from this lab.</span></span>
+2. <span data-ttu-id="59ca6-267">添加**SampleData.cs**文件为**模型**文件夹。</span><span class="sxs-lookup"><span data-stu-id="59ca6-267">Add the **SampleData.cs** file to the **Models** folder.</span></span> <span data-ttu-id="59ca6-268">为此，请右键单击**模型**文件夹，指向**添加**，然后单击**现有项**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-268">To do that, right-click **Models** folder, point to **Add** and then click **Existing Item**.</span></span> <span data-ttu-id="59ca6-269">浏览到**\Source\Assets**和选择**SampleData.cs**文件。</span><span class="sxs-lookup"><span data-stu-id="59ca6-269">Browse to **\Source\Assets** and select the **SampleData.cs** file.</span></span>
 
-    <span data-ttu-id="179b1-268">![示例数据填充代码](aspnet-mvc-4-models-and-data-access/_static/image18.png "示例数据填充代码")</span><span class="sxs-lookup"><span data-stu-id="179b1-268">![Sample data populate code](aspnet-mvc-4-models-and-data-access/_static/image18.png "Sample data populate code")</span></span>
+    <span data-ttu-id="59ca6-270">![示例数据填充代码](aspnet-mvc-4-models-and-data-access/_static/image18.png "示例数据填充代码")</span><span class="sxs-lookup"><span data-stu-id="59ca6-270">![Sample data populate code](aspnet-mvc-4-models-and-data-access/_static/image18.png "Sample data populate code")</span></span>
 
-    <span data-ttu-id="179b1-269">*示例数据填充代码*</span><span class="sxs-lookup"><span data-stu-id="179b1-269">*Sample data populate code*</span></span>
-3. <span data-ttu-id="179b1-270">打开**Global.asax.cs**文件并添加以下*使用*语句。</span><span class="sxs-lookup"><span data-stu-id="179b1-270">Open the **Global.asax.cs** file and add the following *using* statements.</span></span>
+    <span data-ttu-id="59ca6-271">*示例数据填充代码*</span><span class="sxs-lookup"><span data-stu-id="59ca6-271">*Sample data populate code*</span></span>
+3. <span data-ttu-id="59ca6-272">打开**Global.asax.cs**文件并添加以下*使用*语句。</span><span class="sxs-lookup"><span data-stu-id="59ca6-272">Open the **Global.asax.cs** file and add the following *using* statements.</span></span>
 
-    <span data-ttu-id="179b1-271">(代码段-*模型和数据访问-Ex2 全局 Asax Using*)</span><span class="sxs-lookup"><span data-stu-id="179b1-271">(Code Snippet - *Models And Data Access - Ex2 Global Asax Usings*)</span></span>
+    <span data-ttu-id="59ca6-273">(代码段-*模型和数据访问-Ex2 全局 Asax Using*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-273">(Code Snippet - *Models And Data Access - Ex2 Global Asax Usings*)</span></span>
 
 
 ~~~
 [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample5.cs)]
 ~~~
-4. <span data-ttu-id="179b1-272">在**应用程序\_start （)**方法添加以下行以设置数据库初始值设定项。</span><span class="sxs-lookup"><span data-stu-id="179b1-272">In the **Application\_Start()** method add the following line to set the database initializer.</span></span>
+4. <span data-ttu-id="59ca6-274">在**应用程序\_start （)** 方法添加以下行以设置数据库初始值设定项。</span><span class="sxs-lookup"><span data-stu-id="59ca6-274">In the **Application\_Start()** method add the following line to set the database initializer.</span></span>
 
-    <span data-ttu-id="179b1-273">(代码段-*模型和数据访问-Ex2 全局 Asax SetInitializer*)</span><span class="sxs-lookup"><span data-stu-id="179b1-273">(Code Snippet - *Models And Data Access - Ex2 Global Asax SetInitializer*)</span></span>
+    <span data-ttu-id="59ca6-275">(代码段-*模型和数据访问-Ex2 全局 Asax SetInitializer*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-275">(Code Snippet - *Models And Data Access - Ex2 Global Asax SetInitializer*)</span></span>
 
 
 ~~~
@@ -330,15 +332,15 @@ ms.lasthandoff: 04/06/2018
 <a id="Ex2Task2"></a>
 
 <a id="Task_2_-_Configuring_the_connection_to_the_Database"></a>
-#### <a name="task-2---configuring-the-connection-to-the-database"></a><span data-ttu-id="179b1-274">任务 2-配置数据库的连接</span><span class="sxs-lookup"><span data-stu-id="179b1-274">Task 2 - Configuring the connection to the Database</span></span>
+#### <a name="task-2---configuring-the-connection-to-the-database"></a><span data-ttu-id="59ca6-276">任务 2-配置数据库的连接</span><span class="sxs-lookup"><span data-stu-id="59ca6-276">Task 2 - Configuring the connection to the Database</span></span>
 
-<span data-ttu-id="179b1-275">现在，你已有数据库添加到我们的项目中，你将编写**Web.config**文件的连接字符串。</span><span class="sxs-lookup"><span data-stu-id="179b1-275">Now that you have already added a database to our project, you will write in the **Web.config** file the connection string.</span></span>
+<span data-ttu-id="59ca6-277">现在，你已有数据库添加到我们的项目中，你将编写**Web.config**文件的连接字符串。</span><span class="sxs-lookup"><span data-stu-id="59ca6-277">Now that you have already added a database to our project, you will write in the **Web.config** file the connection string.</span></span>
 
-1. <span data-ttu-id="179b1-276">添加连接字符串中的**Web.config**。为此，请打开**Web.config**在项目根和替换连接字符串中这一行与名为 DefaultConnection **&lt;connectionStrings&gt;**部分：</span><span class="sxs-lookup"><span data-stu-id="179b1-276">Add a connection string at **Web.config**. To do that, open **Web.config** at project root and replace the connection string named DefaultConnection with this line in the **&lt;connectionStrings&gt;** section:</span></span>
+1. <span data-ttu-id="59ca6-278">添加连接字符串中的**Web.config**。为此，请打开**Web.config**在项目根和替换连接字符串中这一行与名为 DefaultConnection **&lt;connectionStrings&gt;** 部分：</span><span class="sxs-lookup"><span data-stu-id="59ca6-278">Add a connection string at **Web.config**. To do that, open **Web.config** at project root and replace the connection string named DefaultConnection with this line in the **&lt;connectionStrings&gt;** section:</span></span>
 
-    <span data-ttu-id="179b1-277">![Web.config 文件位置](aspnet-mvc-4-models-and-data-access/_static/image19.png "Web.config 文件位置")</span><span class="sxs-lookup"><span data-stu-id="179b1-277">![Web.config file location](aspnet-mvc-4-models-and-data-access/_static/image19.png "Web.config file location")</span></span>
+    <span data-ttu-id="59ca6-279">![Web.config 文件位置](aspnet-mvc-4-models-and-data-access/_static/image19.png "Web.config 文件位置")</span><span class="sxs-lookup"><span data-stu-id="59ca6-279">![Web.config file location](aspnet-mvc-4-models-and-data-access/_static/image19.png "Web.config file location")</span></span>
 
-    <span data-ttu-id="179b1-278">*web.config 文件位置*</span><span class="sxs-lookup"><span data-stu-id="179b1-278">*Web.config file location*</span></span>
+    <span data-ttu-id="59ca6-280">*web.config 文件位置*</span><span class="sxs-lookup"><span data-stu-id="59ca6-280">*Web.config file location*</span></span>
 
 
 ~~~
@@ -348,17 +350,17 @@ ms.lasthandoff: 04/06/2018
 <a id="Ex2Task3"></a>
 
 <a id="Task_3_-_Working_with_the_Model"></a>
-#### <a name="task-3---working-with-the-model"></a><span data-ttu-id="179b1-279">任务 3-使用模型</span><span class="sxs-lookup"><span data-stu-id="179b1-279">Task 3 - Working with the Model</span></span>
+#### <a name="task-3---working-with-the-model"></a><span data-ttu-id="59ca6-281">任务 3-使用模型</span><span class="sxs-lookup"><span data-stu-id="59ca6-281">Task 3 - Working with the Model</span></span>
 
-<span data-ttu-id="179b1-280">现在，你已配置数据库的连接，你将链接的模型与数据库表。</span><span class="sxs-lookup"><span data-stu-id="179b1-280">Now that you have already configured the connection to the database, you will link the model with the database tables.</span></span> <span data-ttu-id="179b1-281">在此任务中，你将创建将链接到使用 Code First 数据库类。</span><span class="sxs-lookup"><span data-stu-id="179b1-281">In this task, you will create a class that will be linked to the database with Code First.</span></span> <span data-ttu-id="179b1-282">请记住，应修改存在 POCO 模型类。</span><span class="sxs-lookup"><span data-stu-id="179b1-282">Remember that there is an existent POCO model class that should be modified.</span></span>
+<span data-ttu-id="59ca6-282">现在，你已配置数据库的连接，你将链接的模型与数据库表。</span><span class="sxs-lookup"><span data-stu-id="59ca6-282">Now that you have already configured the connection to the database, you will link the model with the database tables.</span></span> <span data-ttu-id="59ca6-283">在此任务中，你将创建将链接到使用 Code First 数据库类。</span><span class="sxs-lookup"><span data-stu-id="59ca6-283">In this task, you will create a class that will be linked to the database with Code First.</span></span> <span data-ttu-id="59ca6-284">请记住，应修改存在 POCO 模型类。</span><span class="sxs-lookup"><span data-stu-id="59ca6-284">Remember that there is an existent POCO model class that should be modified.</span></span>
 
    > [!NOTE]
-> <span data-ttu-id="179b1-283">如果你完成练习 1 中，你将注意此步骤所执行的向导。</span><span class="sxs-lookup"><span data-stu-id="179b1-283">If you completed Exercise 1, you will note that this step was performed by a wizard.</span></span> <span data-ttu-id="179b1-284">通过执行 Code First，您将手动创建将链接到数据实体的类。</span><span class="sxs-lookup"><span data-stu-id="179b1-284">By doing Code First, you will manually create classes that will be linked to data entities.</span></span>
+> <span data-ttu-id="59ca6-285">如果你完成练习 1 中，你将注意此步骤所执行的向导。</span><span class="sxs-lookup"><span data-stu-id="59ca6-285">If you completed Exercise 1, you will note that this step was performed by a wizard.</span></span> <span data-ttu-id="59ca6-286">通过执行 Code First，您将手动创建将链接到数据实体的类。</span><span class="sxs-lookup"><span data-stu-id="59ca6-286">By doing Code First, you will manually create classes that will be linked to data entities.</span></span>
 
 
-1. <span data-ttu-id="179b1-285">打开 POCO 模型类**流派**从**模型**项目文件夹并包含一个 id。</span><span class="sxs-lookup"><span data-stu-id="179b1-285">Open the POCO model class **Genre** from **Models** project folder and include an ID.</span></span> <span data-ttu-id="179b1-286">使用带名称的 int 属性**GenreId**。</span><span class="sxs-lookup"><span data-stu-id="179b1-286">Use an int property with the name **GenreId**.</span></span>
+1. <span data-ttu-id="59ca6-287">打开 POCO 模型类**流派**从**模型**项目文件夹并包含一个 id。</span><span class="sxs-lookup"><span data-stu-id="59ca6-287">Open the POCO model class **Genre** from **Models** project folder and include an ID.</span></span> <span data-ttu-id="59ca6-288">使用带名称的 int 属性**GenreId**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-288">Use an int property with the name **GenreId**.</span></span>
 
-    <span data-ttu-id="179b1-287">(代码段-*模型和数据访问-Ex2 代码第一个流派*)</span><span class="sxs-lookup"><span data-stu-id="179b1-287">(Code Snippet - *Models And Data Access - Ex2 Code First Genre*)</span></span>
+    <span data-ttu-id="59ca6-289">(代码段-*模型和数据访问-Ex2 代码第一个流派*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-289">(Code Snippet - *Models And Data Access - Ex2 Code First Genre*)</span></span>
 
 
 ~~~
@@ -369,40 +371,40 @@ ms.lasthandoff: 04/06/2018
 > 
 > You can read more about Code First Conventions in this [msdn article](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
 ~~~
-2. <span data-ttu-id="179b1-288">现在，打开 POCO 模型类**唱片集**从**模型**项目文件夹和包含外键，创建具有名称的属性**GenreId**和**ArtistId**。</span><span class="sxs-lookup"><span data-stu-id="179b1-288">Now, open the POCO model class **Album** from **Models** project folder and include the foreign keys, create properties with the names **GenreId** and **ArtistId**.</span></span> <span data-ttu-id="179b1-289">此类已具有**GenreId**为主键。</span><span class="sxs-lookup"><span data-stu-id="179b1-289">This class already have the **GenreId** for the primary key.</span></span>
+2. <span data-ttu-id="59ca6-290">现在，打开 POCO 模型类**唱片集**从**模型**项目文件夹和包含外键，创建具有名称的属性**GenreId**和**ArtistId**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-290">Now, open the POCO model class **Album** from **Models** project folder and include the foreign keys, create properties with the names **GenreId** and **ArtistId**.</span></span> <span data-ttu-id="59ca6-291">此类已具有**GenreId**为主键。</span><span class="sxs-lookup"><span data-stu-id="59ca6-291">This class already have the **GenreId** for the primary key.</span></span>
 
-    <span data-ttu-id="179b1-290">(代码段-*模型和数据访问-Ex2 代码第一个唱片集*)</span><span class="sxs-lookup"><span data-stu-id="179b1-290">(Code Snippet - *Models And Data Access - Ex2 Code First Album*)</span></span>
+    <span data-ttu-id="59ca6-292">(代码段-*模型和数据访问-Ex2 代码第一个唱片集*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-292">(Code Snippet - *Models And Data Access - Ex2 Code First Album*)</span></span>
 
 
 ~~~
 [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample9.cs)]
 ~~~
-3. <span data-ttu-id="179b1-291">打开 POCO 模型类**艺术家**和包括**ArtistId**属性。</span><span class="sxs-lookup"><span data-stu-id="179b1-291">Open the POCO model class **Artist** and include the **ArtistId** property.</span></span>
+3. <span data-ttu-id="59ca6-293">打开 POCO 模型类**艺术家**和包括**ArtistId**属性。</span><span class="sxs-lookup"><span data-stu-id="59ca6-293">Open the POCO model class **Artist** and include the **ArtistId** property.</span></span>
 
-    <span data-ttu-id="179b1-292">(代码段-*模型和数据访问-Ex2 代码第一个艺术家*)</span><span class="sxs-lookup"><span data-stu-id="179b1-292">(Code Snippet - *Models And Data Access - Ex2 Code First Artist*)</span></span>
+    <span data-ttu-id="59ca6-294">(代码段-*模型和数据访问-Ex2 代码第一个艺术家*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-294">(Code Snippet - *Models And Data Access - Ex2 Code First Artist*)</span></span>
 
 
 ~~~
 [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample10.cs)]
 ~~~
-4. <span data-ttu-id="179b1-293">右键单击**模型**项目文件夹，然后选择**添加 |类**。</span><span class="sxs-lookup"><span data-stu-id="179b1-293">Right-click the **Models** project folder and select **Add | Class**.</span></span> <span data-ttu-id="179b1-294">命名该文件**MusicStoreEntities.cs**。</span><span class="sxs-lookup"><span data-stu-id="179b1-294">Name the file **MusicStoreEntities.cs**.</span></span> <span data-ttu-id="179b1-295">然后，单击**添加。**</span><span class="sxs-lookup"><span data-stu-id="179b1-295">Then, click **Add.**</span></span>
+4. <span data-ttu-id="59ca6-295">右键单击**模型**项目文件夹，然后选择**添加 |类**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-295">Right-click the **Models** project folder and select **Add | Class**.</span></span> <span data-ttu-id="59ca6-296">命名该文件**MusicStoreEntities.cs**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-296">Name the file **MusicStoreEntities.cs**.</span></span> <span data-ttu-id="59ca6-297">然后，单击**添加。**</span><span class="sxs-lookup"><span data-stu-id="59ca6-297">Then, click **Add.**</span></span>
 
-    <span data-ttu-id="179b1-296">![添加类](aspnet-mvc-4-models-and-data-access/_static/image20.png "添加类")</span><span class="sxs-lookup"><span data-stu-id="179b1-296">![Adding a class](aspnet-mvc-4-models-and-data-access/_static/image20.png "Adding a class")</span></span>
+    <span data-ttu-id="59ca6-298">![添加类](aspnet-mvc-4-models-and-data-access/_static/image20.png "添加类")</span><span class="sxs-lookup"><span data-stu-id="59ca6-298">![Adding a class](aspnet-mvc-4-models-and-data-access/_static/image20.png "Adding a class")</span></span>
 
-    <span data-ttu-id="179b1-297">*添加新项*</span><span class="sxs-lookup"><span data-stu-id="179b1-297">*Adding a new item*</span></span>
+    <span data-ttu-id="59ca6-299">*添加新项*</span><span class="sxs-lookup"><span data-stu-id="59ca6-299">*Adding a new item*</span></span>
 
-    <span data-ttu-id="179b1-298">![添加 class2](aspnet-mvc-4-models-and-data-access/_static/image21.png "添加 class2")</span><span class="sxs-lookup"><span data-stu-id="179b1-298">![Adding a class2](aspnet-mvc-4-models-and-data-access/_static/image21.png "Adding a class2")</span></span>
+    <span data-ttu-id="59ca6-300">![添加 class2](aspnet-mvc-4-models-and-data-access/_static/image21.png "添加 class2")</span><span class="sxs-lookup"><span data-stu-id="59ca6-300">![Adding a class2](aspnet-mvc-4-models-and-data-access/_static/image21.png "Adding a class2")</span></span>
 
-    <span data-ttu-id="179b1-299">*添加类*</span><span class="sxs-lookup"><span data-stu-id="179b1-299">*Adding a class*</span></span>
-5. <span data-ttu-id="179b1-300">打开你刚创建的类**MusicStoreEntities.cs**，包括命名空间和**System.Data.Entity**和**System.Data.Entity.Infrastructure**。</span><span class="sxs-lookup"><span data-stu-id="179b1-300">Open the class you have just created, **MusicStoreEntities.cs**, and include the namespaces **System.Data.Entity** and **System.Data.Entity.Infrastructure**.</span></span>
+    <span data-ttu-id="59ca6-301">*添加类*</span><span class="sxs-lookup"><span data-stu-id="59ca6-301">*Adding a class*</span></span>
+5. <span data-ttu-id="59ca6-302">打开你刚创建的类**MusicStoreEntities.cs**，包括命名空间和**System.Data.Entity**和**System.Data.Entity.Infrastructure**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-302">Open the class you have just created, **MusicStoreEntities.cs**, and include the namespaces **System.Data.Entity** and **System.Data.Entity.Infrastructure**.</span></span>
 
 
 ~~~
 [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample11.cs)]
 ~~~
-6. <span data-ttu-id="179b1-301">将类声明来扩展**DbContext**类： 声明一个公共**DBSet** ，并重写**OnModelCreating**方法。</span><span class="sxs-lookup"><span data-stu-id="179b1-301">Replace the class declaration to extend the **DbContext** class: declare a public **DBSet** and override **OnModelCreating** method.</span></span> <span data-ttu-id="179b1-302">在此步骤后，你将收到将链接与实体框架模型的域类。</span><span class="sxs-lookup"><span data-stu-id="179b1-302">After this step you will get a domain class that will link your model with the Entity Framework.</span></span> <span data-ttu-id="179b1-303">为此，将替换为以下的类代码：</span><span class="sxs-lookup"><span data-stu-id="179b1-303">In order to do that, replace the class code with the following:</span></span>
+6. <span data-ttu-id="59ca6-303">将类声明来扩展**DbContext**类： 声明一个公共**DBSet** ，并重写**OnModelCreating**方法。</span><span class="sxs-lookup"><span data-stu-id="59ca6-303">Replace the class declaration to extend the **DbContext** class: declare a public **DBSet** and override **OnModelCreating** method.</span></span> <span data-ttu-id="59ca6-304">在此步骤后，你将收到将链接与实体框架模型的域类。</span><span class="sxs-lookup"><span data-stu-id="59ca6-304">After this step you will get a domain class that will link your model with the Entity Framework.</span></span> <span data-ttu-id="59ca6-305">为此，将替换为以下的类代码：</span><span class="sxs-lookup"><span data-stu-id="59ca6-305">In order to do that, replace the class code with the following:</span></span>
 
-    <span data-ttu-id="179b1-304">(代码段-*模型和数据访问-Ex2 代码第一个 MusicStoreEntities*)</span><span class="sxs-lookup"><span data-stu-id="179b1-304">(Code Snippet - *Models And Data Access - Ex2 Code First MusicStoreEntities*)</span></span>
+    <span data-ttu-id="59ca6-306">(代码段-*模型和数据访问-Ex2 代码第一个 MusicStoreEntities*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-306">(Code Snippet - *Models And Data Access - Ex2 Code First MusicStoreEntities*)</span></span>
 
 
 ~~~
@@ -415,27 +417,27 @@ ms.lasthandoff: 04/06/2018
 <a id="Ex2Task4"></a>
 
 <a id="Task_4_-_Querying_the_Database"></a>
-#### <a name="task-4---querying-the-database"></a><span data-ttu-id="179b1-305">任务 4-查询数据库</span><span class="sxs-lookup"><span data-stu-id="179b1-305">Task 4 - Querying the Database</span></span>
+#### <a name="task-4---querying-the-database"></a><span data-ttu-id="59ca6-307">任务 4-查询数据库</span><span class="sxs-lookup"><span data-stu-id="59ca6-307">Task 4 - Querying the Database</span></span>
 
-<span data-ttu-id="179b1-306">在此任务中，你将更新 StoreController 类，以便不使用硬编码数据，它将它从数据库中检索。</span><span class="sxs-lookup"><span data-stu-id="179b1-306">In this task, you will update the StoreController class so that, instead of using hardcoded data, it will retrieve it from the database.</span></span>
+<span data-ttu-id="59ca6-308">在此任务中，你将更新 StoreController 类，以便不使用硬编码数据，它将它从数据库中检索。</span><span class="sxs-lookup"><span data-stu-id="59ca6-308">In this task, you will update the StoreController class so that, instead of using hardcoded data, it will retrieve it from the database.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="179b1-307">此任务是与练习 1 相同。</span><span class="sxs-lookup"><span data-stu-id="179b1-307">This task is in common with Exercise 1.</span></span>
+> <span data-ttu-id="59ca6-309">此任务是与练习 1 相同。</span><span class="sxs-lookup"><span data-stu-id="59ca6-309">This task is in common with Exercise 1.</span></span>
 > 
-> <span data-ttu-id="179b1-308">如果你完成练习 1 你将会注意这些步骤都相同，则这两种方法 (第一个数据库或代码第一次)。</span><span class="sxs-lookup"><span data-stu-id="179b1-308">If you completed Exercise 1 you will note these steps are the same in both approaches (Database first or Code first).</span></span> <span data-ttu-id="179b1-309">它们仍然是不同中如何将数据链接模型，但尚未从控制器透明对数据实体的访问权限。</span><span class="sxs-lookup"><span data-stu-id="179b1-309">They are different in how the data is linked with the model, but the access to data entities is yet transparent from the controller.</span></span>
+> <span data-ttu-id="59ca6-310">如果你完成练习 1 你将会注意这些步骤都相同，则这两种方法 (第一个数据库或代码第一次)。</span><span class="sxs-lookup"><span data-stu-id="59ca6-310">If you completed Exercise 1 you will note these steps are the same in both approaches (Database first or Code first).</span></span> <span data-ttu-id="59ca6-311">它们仍然是不同中如何将数据链接模型，但尚未从控制器透明对数据实体的访问权限。</span><span class="sxs-lookup"><span data-stu-id="59ca6-311">They are different in how the data is linked with the model, but the access to data entities is yet transparent from the controller.</span></span>
 
 
-1. <span data-ttu-id="179b1-310">打开**Controllers\StoreController.cs**并将以下字段添加到要保存的实例的类**MusicStoreEntities**名为的类**storeDB**:</span><span class="sxs-lookup"><span data-stu-id="179b1-310">Open **Controllers\StoreController.cs** and add the following field to the class to hold an instance of the **MusicStoreEntities** class, named **storeDB**:</span></span>
+1. <span data-ttu-id="59ca6-312">打开**Controllers\StoreController.cs**并将以下字段添加到要保存的实例的类**MusicStoreEntities**名为的类**storeDB**:</span><span class="sxs-lookup"><span data-stu-id="59ca6-312">Open **Controllers\StoreController.cs** and add the following field to the class to hold an instance of the **MusicStoreEntities** class, named **storeDB**:</span></span>
 
-    <span data-ttu-id="179b1-311">(代码段-*模型的和数据访问-作为 Ex1 storeDB*)</span><span class="sxs-lookup"><span data-stu-id="179b1-311">(Code Snippet - *Models And Data Access - Ex1 storeDB*)</span></span>
+    <span data-ttu-id="59ca6-313">(代码段-*模型的和数据访问-作为 Ex1 storeDB*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-313">(Code Snippet - *Models And Data Access - Ex1 storeDB*)</span></span>
 
 
 ~~~
 [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample13.cs)]
 ~~~
-2. <span data-ttu-id="179b1-312">**MusicStoreEntities**类公开在数据库中每个表使用的集合属性。</span><span class="sxs-lookup"><span data-stu-id="179b1-312">The **MusicStoreEntities** class exposes a collection property for each table in the database.</span></span> <span data-ttu-id="179b1-313">更新**浏览**操作方法来检索所有的一种风格**专辑**。</span><span class="sxs-lookup"><span data-stu-id="179b1-313">Update **Browse** action method to retrieve a Genre with all of the **Albums**.</span></span>
+2. <span data-ttu-id="59ca6-314">**MusicStoreEntities**类公开在数据库中每个表使用的集合属性。</span><span class="sxs-lookup"><span data-stu-id="59ca6-314">The **MusicStoreEntities** class exposes a collection property for each table in the database.</span></span> <span data-ttu-id="59ca6-315">更新**浏览**操作方法来检索所有的一种风格**专辑**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-315">Update **Browse** action method to retrieve a Genre with all of the **Albums**.</span></span>
 
-    <span data-ttu-id="179b1-314">(代码段-*模型和数据访问-Ex2 存储浏览*)</span><span class="sxs-lookup"><span data-stu-id="179b1-314">(Code Snippet - *Models And Data Access - Ex2 Store Browse*)</span></span>
+    <span data-ttu-id="59ca6-316">(代码段-*模型和数据访问-Ex2 存储浏览*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-316">(Code Snippet - *Models And Data Access - Ex2 Store Browse*)</span></span>
 
 
 ~~~
@@ -446,17 +448,17 @@ ms.lasthandoff: 04/06/2018
 > 
 > For more information about LINQ, please visit the [msdn site](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx).
 ~~~
-3. <span data-ttu-id="179b1-315">更新**索引**操作方法来检索所有风格。</span><span class="sxs-lookup"><span data-stu-id="179b1-315">Update **Index** action method to retrieve all the genres.</span></span>
+3. <span data-ttu-id="59ca6-317">更新**索引**操作方法来检索所有风格。</span><span class="sxs-lookup"><span data-stu-id="59ca6-317">Update **Index** action method to retrieve all the genres.</span></span>
 
-    <span data-ttu-id="179b1-316">(代码段-*模型和数据访问-Ex2 存储索引*)</span><span class="sxs-lookup"><span data-stu-id="179b1-316">(Code Snippet - *Models And Data Access - Ex2 Store Index*)</span></span>
+    <span data-ttu-id="59ca6-318">(代码段-*模型和数据访问-Ex2 存储索引*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-318">(Code Snippet - *Models And Data Access - Ex2 Store Index*)</span></span>
 
 
 ~~~
 [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample15.cs)]
 ~~~
-4. <span data-ttu-id="179b1-317">更新**索引**操作方法来检索所有风格和转换到列表的集合。</span><span class="sxs-lookup"><span data-stu-id="179b1-317">Update **Index** action method to retrieve all the genres and transform the collection to a list.</span></span>
+4. <span data-ttu-id="59ca6-319">更新**索引**操作方法来检索所有风格和转换到列表的集合。</span><span class="sxs-lookup"><span data-stu-id="59ca6-319">Update **Index** action method to retrieve all the genres and transform the collection to a list.</span></span>
 
-    <span data-ttu-id="179b1-318">(代码段-*模型和数据访问-Ex2 存储 GenreMenu*)</span><span class="sxs-lookup"><span data-stu-id="179b1-318">(Code Snippet - *Models And Data Access - Ex2 Store GenreMenu*)</span></span>
+    <span data-ttu-id="59ca6-320">(代码段-*模型和数据访问-Ex2 存储 GenreMenu*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-320">(Code Snippet - *Models And Data Access - Ex2 Store GenreMenu*)</span></span>
 
 
 ~~~
@@ -466,52 +468,52 @@ ms.lasthandoff: 04/06/2018
 <a id="Ex2Task5"></a>
 
 <a id="Task_5_-_Running_the_Application"></a>
-#### <a name="task-5---running-the-application"></a><span data-ttu-id="179b1-319">任务 5-运行应用程序</span><span class="sxs-lookup"><span data-stu-id="179b1-319">Task 5 - Running the Application</span></span>
+#### <a name="task-5---running-the-application"></a><span data-ttu-id="59ca6-321">任务 5-运行应用程序</span><span class="sxs-lookup"><span data-stu-id="59ca6-321">Task 5 - Running the Application</span></span>
 
-<span data-ttu-id="179b1-320">在此任务中，将检查存储索引页现在将显示存储在数据库而不是硬编码的风格。</span><span class="sxs-lookup"><span data-stu-id="179b1-320">In this task, you will check that the Store Index page will now display the Genres stored in the database instead of the hardcoded ones.</span></span> <span data-ttu-id="179b1-321">若要更改视图模板，因为无需**StoreController**返回相同**StoreIndexViewModel**和前面一样，但此数据将来自数据库的时间。</span><span class="sxs-lookup"><span data-stu-id="179b1-321">There is no need to change the View template because the **StoreController** is returning the same **StoreIndexViewModel** as before, but this time the data will come from the database.</span></span>
+<span data-ttu-id="59ca6-322">在此任务中，将检查存储索引页现在将显示存储在数据库而不是硬编码的风格。</span><span class="sxs-lookup"><span data-stu-id="59ca6-322">In this task, you will check that the Store Index page will now display the Genres stored in the database instead of the hardcoded ones.</span></span> <span data-ttu-id="59ca6-323">若要更改视图模板，因为无需**StoreController**返回相同**StoreIndexViewModel**和前面一样，但此数据将来自数据库的时间。</span><span class="sxs-lookup"><span data-stu-id="59ca6-323">There is no need to change the View template because the **StoreController** is returning the same **StoreIndexViewModel** as before, but this time the data will come from the database.</span></span>
 
-1. <span data-ttu-id="179b1-322">重新生成解决方案，按**F5**运行该应用程序。</span><span class="sxs-lookup"><span data-stu-id="179b1-322">Rebuild the solution and press **F5** to run the Application.</span></span>
-2. <span data-ttu-id="179b1-323">在主页页面中启动项目。</span><span class="sxs-lookup"><span data-stu-id="179b1-323">The project starts in the Home page.</span></span> <span data-ttu-id="179b1-324">验证的菜单**风格**不再是硬编码列表，并直接从数据库检索的数据。</span><span class="sxs-lookup"><span data-stu-id="179b1-324">Verify that the menu of **Genres** is no longer a hardcoded list, and the data is directly retrieved from the database.</span></span>
+1. <span data-ttu-id="59ca6-324">重新生成解决方案，按**F5**运行该应用程序。</span><span class="sxs-lookup"><span data-stu-id="59ca6-324">Rebuild the solution and press **F5** to run the Application.</span></span>
+2. <span data-ttu-id="59ca6-325">在主页页面中启动项目。</span><span class="sxs-lookup"><span data-stu-id="59ca6-325">The project starts in the Home page.</span></span> <span data-ttu-id="59ca6-326">验证的菜单**风格**不再是硬编码列表，并直接从数据库检索的数据。</span><span class="sxs-lookup"><span data-stu-id="59ca6-326">Verify that the menu of **Genres** is no longer a hardcoded list, and the data is directly retrieved from the database.</span></span>
 
     ![BrowsingGenresFromDataBase](aspnet-mvc-4-models-and-data-access/_static/image22.png)
 
-    <span data-ttu-id="179b1-326">*从数据库中浏览风格*</span><span class="sxs-lookup"><span data-stu-id="179b1-326">*Browsing Genres from the database*</span></span>
-3. <span data-ttu-id="179b1-327">现在浏览到任何流派，并确认专辑填充从数据库。</span><span class="sxs-lookup"><span data-stu-id="179b1-327">Now browse to any genre and verify the albums are populated from database.</span></span>
+    <span data-ttu-id="59ca6-328">*从数据库中浏览风格*</span><span class="sxs-lookup"><span data-stu-id="59ca6-328">*Browsing Genres from the database*</span></span>
+3. <span data-ttu-id="59ca6-329">现在浏览到任何流派，并确认专辑填充从数据库。</span><span class="sxs-lookup"><span data-stu-id="59ca6-329">Now browse to any genre and verify the albums are populated from database.</span></span>
 
-    <span data-ttu-id="179b1-328">![从数据库中浏览专辑](aspnet-mvc-4-models-and-data-access/_static/image23.png "浏览专辑从数据库")</span><span class="sxs-lookup"><span data-stu-id="179b1-328">![Browsing Albums from the database](aspnet-mvc-4-models-and-data-access/_static/image23.png "Browsing Albums from the database")</span></span>
+    <span data-ttu-id="59ca6-330">![从数据库中浏览专辑](aspnet-mvc-4-models-and-data-access/_static/image23.png "浏览专辑从数据库")</span><span class="sxs-lookup"><span data-stu-id="59ca6-330">![Browsing Albums from the database](aspnet-mvc-4-models-and-data-access/_static/image23.png "Browsing Albums from the database")</span></span>
 
-    <span data-ttu-id="179b1-329">*从数据库中浏览专辑*</span><span class="sxs-lookup"><span data-stu-id="179b1-329">*Browsing Albums from the database*</span></span>
+    <span data-ttu-id="59ca6-331">*从数据库中浏览专辑*</span><span class="sxs-lookup"><span data-stu-id="59ca6-331">*Browsing Albums from the database*</span></span>
 
 <a id="Exercise3"></a>
 
 <a id="Exercise_3_Querying_the_Database_with_Parameters"></a>
-### <a name="exercise-3-querying-the-database-with-parameters"></a><span data-ttu-id="179b1-330">练习 3： 查询参数的数据库</span><span class="sxs-lookup"><span data-stu-id="179b1-330">Exercise 3: Querying the Database with Parameters</span></span>
+### <a name="exercise-3-querying-the-database-with-parameters"></a><span data-ttu-id="59ca6-332">练习 3： 查询参数的数据库</span><span class="sxs-lookup"><span data-stu-id="59ca6-332">Exercise 3: Querying the Database with Parameters</span></span>
 
-<span data-ttu-id="179b1-331">在此练习中，您将了解如何使用参数，在数据库中查询以及如何使用查询结果调整，功能可减少号码数据库以更有效的方式访问中检索数据。</span><span class="sxs-lookup"><span data-stu-id="179b1-331">In this exercise, you will learn how to query the database using parameters, and how to use Query Result Shaping, a feature that reduces the number database accesses retrieving data in a more efficient way.</span></span>
+<span data-ttu-id="59ca6-333">在此练习中，您将了解如何使用参数，在数据库中查询以及如何使用查询结果调整，功能可减少号码数据库以更有效的方式访问中检索数据。</span><span class="sxs-lookup"><span data-stu-id="59ca6-333">In this exercise, you will learn how to query the database using parameters, and how to use Query Result Shaping, a feature that reduces the number database accesses retrieving data in a more efficient way.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="179b1-332">有关查询结果调整的进一步信息，请访问以下[msdn 文章](https://msdn.microsoft.com/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx)。</span><span class="sxs-lookup"><span data-stu-id="179b1-332">For further information on Query Result Shaping, visit the following [msdn article](https://msdn.microsoft.com/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx).</span></span>
+> <span data-ttu-id="59ca6-334">有关查询结果调整的进一步信息，请访问以下[msdn 文章](https://msdn.microsoft.com/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx)。</span><span class="sxs-lookup"><span data-stu-id="59ca6-334">For further information on Query Result Shaping, visit the following [msdn article](https://msdn.microsoft.com/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx).</span></span>
 
 
 <a id="Ex3Task1"></a>
 
 <a id="Task_1_-_Modifying_StoreController_to_Retrieve_Albums_from_Database"></a>
-#### <a name="task-1---modifying-storecontroller-to-retrieve-albums-from-database"></a><span data-ttu-id="179b1-333">任务 1-修改 StoreController 从数据库检索专辑</span><span class="sxs-lookup"><span data-stu-id="179b1-333">Task 1 - Modifying StoreController to Retrieve Albums from Database</span></span>
+#### <a name="task-1---modifying-storecontroller-to-retrieve-albums-from-database"></a><span data-ttu-id="59ca6-335">任务 1-修改 StoreController 从数据库检索专辑</span><span class="sxs-lookup"><span data-stu-id="59ca6-335">Task 1 - Modifying StoreController to Retrieve Albums from Database</span></span>
 
-<span data-ttu-id="179b1-334">在此任务中，你将更改**StoreController**类用于访问数据库来检索专辑从特定的风格。</span><span class="sxs-lookup"><span data-stu-id="179b1-334">In this task, you will change the **StoreController** class to access the database to retrieve albums from a specific genre.</span></span>
+<span data-ttu-id="59ca6-336">在此任务中，你将更改**StoreController**类用于访问数据库来检索专辑从特定的风格。</span><span class="sxs-lookup"><span data-stu-id="59ca6-336">In this task, you will change the **StoreController** class to access the database to retrieve albums from a specific genre.</span></span>
 
-1. <span data-ttu-id="179b1-335">打开**开始**解决方案位于**Source\Ex3 QueryingTheDatabaseWithParametersCodeFirst\Begin**文件夹，如果你想要使用代码为先的方法或**Source\Ex3 QueryingTheDatabaseWithParametersDBFirst\Begin**文件夹，如果你想要使用数据库为先的方法。</span><span class="sxs-lookup"><span data-stu-id="179b1-335">Open the **Begin** solution located at the **Source\Ex3-QueryingTheDatabaseWithParametersCodeFirst\Begin** folder if you want to use Code-First approach or **Source\Ex3-QueryingTheDatabaseWithParametersDBFirst\Begin** folder if you want to use Database-First approach.</span></span> <span data-ttu-id="179b1-336">否则，可能会继续使用**结束**解决方案获取通过完成上一练习。</span><span class="sxs-lookup"><span data-stu-id="179b1-336">Otherwise, you might continue using the **End** solution obtained by completing the previous exercise.</span></span>
+1. <span data-ttu-id="59ca6-337">打开**开始**解决方案位于**Source\Ex3 QueryingTheDatabaseWithParametersCodeFirst\Begin**文件夹，如果你想要使用代码为先的方法或**Source\Ex3 QueryingTheDatabaseWithParametersDBFirst\Begin**文件夹，如果你想要使用数据库为先的方法。</span><span class="sxs-lookup"><span data-stu-id="59ca6-337">Open the **Begin** solution located at the **Source\Ex3-QueryingTheDatabaseWithParametersCodeFirst\Begin** folder if you want to use Code-First approach or **Source\Ex3-QueryingTheDatabaseWithParametersDBFirst\Begin** folder if you want to use Database-First approach.</span></span> <span data-ttu-id="59ca6-338">否则，可能会继续使用**结束**解决方案获取通过完成上一练习。</span><span class="sxs-lookup"><span data-stu-id="59ca6-338">Otherwise, you might continue using the **End** solution obtained by completing the previous exercise.</span></span>
 
-   1. <span data-ttu-id="179b1-337">如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。</span><span class="sxs-lookup"><span data-stu-id="179b1-337">If you opened the provided **Begin** solution, you will need to download some missing NuGet packages before continue.</span></span> <span data-ttu-id="179b1-338">若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。</span><span class="sxs-lookup"><span data-stu-id="179b1-338">To do this, click the **Project** menu and select **Manage NuGet Packages**.</span></span>
-   2. <span data-ttu-id="179b1-339">在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。</span><span class="sxs-lookup"><span data-stu-id="179b1-339">In the **Manage NuGet Packages** dialog, click **Restore** in order to download missing packages.</span></span>
-   3. <span data-ttu-id="179b1-340">最后，通过单击生成解决方案**生成** | **生成解决方案**。</span><span class="sxs-lookup"><span data-stu-id="179b1-340">Finally, build the solution by clicking **Build** | **Build Solution**.</span></span>
+   1. <span data-ttu-id="59ca6-339">如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。</span><span class="sxs-lookup"><span data-stu-id="59ca6-339">If you opened the provided **Begin** solution, you will need to download some missing NuGet packages before continue.</span></span> <span data-ttu-id="59ca6-340">若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-340">To do this, click the **Project** menu and select **Manage NuGet Packages**.</span></span>
+   2. <span data-ttu-id="59ca6-341">在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。</span><span class="sxs-lookup"><span data-stu-id="59ca6-341">In the **Manage NuGet Packages** dialog, click **Restore** in order to download missing packages.</span></span>
+   3. <span data-ttu-id="59ca6-342">最后，通过单击生成解决方案**生成** | **生成解决方案**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-342">Finally, build the solution by clicking **Build** | **Build Solution**.</span></span>
 
       > [!NOTE]
-      > <span data-ttu-id="179b1-341">使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。</span><span class="sxs-lookup"><span data-stu-id="179b1-341">One of the advantages of using NuGet is that you don't have to ship all the libraries in your project, reducing the project size.</span></span> <span data-ttu-id="179b1-342">使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。</span><span class="sxs-lookup"><span data-stu-id="179b1-342">With NuGet Power Tools, by specifying the package versions in the Packages.config file, you will be able to download all the required libraries the first time you run the project.</span></span> <span data-ttu-id="179b1-343">这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。</span><span class="sxs-lookup"><span data-stu-id="179b1-343">This is why you will have to run these steps after you open an existing solution from this lab.</span></span>
-2. <span data-ttu-id="179b1-344">打开**StoreController**类更改**浏览**操作方法。</span><span class="sxs-lookup"><span data-stu-id="179b1-344">Open the **StoreController** class to change the **Browse** action method.</span></span> <span data-ttu-id="179b1-345">为此，请在**解决方案资源管理器**，展开**控制器**文件夹并双击**StoreController.cs**。</span><span class="sxs-lookup"><span data-stu-id="179b1-345">To do this, in the **Solution Explorer**, expand the **Controllers** folder and double-click **StoreController.cs**.</span></span>
-3. <span data-ttu-id="179b1-346">更改**浏览**操作方法来检索特定流派唱片集。</span><span class="sxs-lookup"><span data-stu-id="179b1-346">Change the **Browse** action method to retrieve albums for a specific genre.</span></span> <span data-ttu-id="179b1-347">若要执行此操作，将以下代码：</span><span class="sxs-lookup"><span data-stu-id="179b1-347">To do this, replace the following code:</span></span>
+      > <span data-ttu-id="59ca6-343">使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。</span><span class="sxs-lookup"><span data-stu-id="59ca6-343">One of the advantages of using NuGet is that you don't have to ship all the libraries in your project, reducing the project size.</span></span> <span data-ttu-id="59ca6-344">使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。</span><span class="sxs-lookup"><span data-stu-id="59ca6-344">With NuGet Power Tools, by specifying the package versions in the Packages.config file, you will be able to download all the required libraries the first time you run the project.</span></span> <span data-ttu-id="59ca6-345">这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。</span><span class="sxs-lookup"><span data-stu-id="59ca6-345">This is why you will have to run these steps after you open an existing solution from this lab.</span></span>
+2. <span data-ttu-id="59ca6-346">打开**StoreController**类更改**浏览**操作方法。</span><span class="sxs-lookup"><span data-stu-id="59ca6-346">Open the **StoreController** class to change the **Browse** action method.</span></span> <span data-ttu-id="59ca6-347">为此，请在**解决方案资源管理器**，展开**控制器**文件夹并双击**StoreController.cs**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-347">To do this, in the **Solution Explorer**, expand the **Controllers** folder and double-click **StoreController.cs**.</span></span>
+3. <span data-ttu-id="59ca6-348">更改**浏览**操作方法来检索特定流派唱片集。</span><span class="sxs-lookup"><span data-stu-id="59ca6-348">Change the **Browse** action method to retrieve albums for a specific genre.</span></span> <span data-ttu-id="59ca6-349">若要执行此操作，将以下代码：</span><span class="sxs-lookup"><span data-stu-id="59ca6-349">To do this, replace the following code:</span></span>
 
-    <span data-ttu-id="179b1-348">(代码段-*模型和数据访问-Ex3 StoreController BrowseMethod*)</span><span class="sxs-lookup"><span data-stu-id="179b1-348">(Code Snippet - *Models And Data Access - Ex3 StoreController BrowseMethod*)</span></span>
+    <span data-ttu-id="59ca6-350">(代码段-*模型和数据访问-Ex3 StoreController BrowseMethod*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-350">(Code Snippet - *Models And Data Access - Ex3 StoreController BrowseMethod*)</span></span>
 
 
 ~~~
@@ -528,28 +530,28 @@ ms.lasthandoff: 04/06/2018
 <a id="Ex3Task2"></a>
 
 <a id="Task_2_-_Running_the_Application"></a>
-#### <a name="task-2---running-the-application"></a><span data-ttu-id="179b1-349">任务 2-运行应用程序</span><span class="sxs-lookup"><span data-stu-id="179b1-349">Task 2 - Running the Application</span></span>
+#### <a name="task-2---running-the-application"></a><span data-ttu-id="59ca6-351">任务 2-运行应用程序</span><span class="sxs-lookup"><span data-stu-id="59ca6-351">Task 2 - Running the Application</span></span>
 
-<span data-ttu-id="179b1-350">在此任务中，将运行应用程序，并从数据库中检索特定流派专辑。</span><span class="sxs-lookup"><span data-stu-id="179b1-350">In this task, you will run the application and retrieve albums of a specific genre from the database.</span></span>
+<span data-ttu-id="59ca6-352">在此任务中，将运行应用程序，并从数据库中检索特定流派专辑。</span><span class="sxs-lookup"><span data-stu-id="59ca6-352">In this task, you will run the application and retrieve albums of a specific genre from the database.</span></span>
 
-1. <span data-ttu-id="179b1-351">按**F5**运行该应用程序。</span><span class="sxs-lookup"><span data-stu-id="179b1-351">Press **F5** to run the Application.</span></span>
-2. <span data-ttu-id="179b1-352">在主页页面中启动项目。</span><span class="sxs-lookup"><span data-stu-id="179b1-352">The project starts in the Home page.</span></span> <span data-ttu-id="179b1-353">将 URL 更改为**/存储/浏览？ 流派 = Pop**以验证正在从数据库检索的结果。</span><span class="sxs-lookup"><span data-stu-id="179b1-353">Change the URL to **/Store/Browse?genre=Pop** to verify that the results are being retrieved from the database.</span></span>
+1. <span data-ttu-id="59ca6-353">按**F5**运行该应用程序。</span><span class="sxs-lookup"><span data-stu-id="59ca6-353">Press **F5** to run the Application.</span></span>
+2. <span data-ttu-id="59ca6-354">在主页页面中启动项目。</span><span class="sxs-lookup"><span data-stu-id="59ca6-354">The project starts in the Home page.</span></span> <span data-ttu-id="59ca6-355">将 URL 更改为 **/存储/浏览？ 流派 = Pop**以验证正在从数据库检索的结果。</span><span class="sxs-lookup"><span data-stu-id="59ca6-355">Change the URL to **/Store/Browse?genre=Pop** to verify that the results are being retrieved from the database.</span></span>
 
-    <span data-ttu-id="179b1-354">![浏览按风格](aspnet-mvc-4-models-and-data-access/_static/image24.png "浏览按风格")</span><span class="sxs-lookup"><span data-stu-id="179b1-354">![Browsing by genre](aspnet-mvc-4-models-and-data-access/_static/image24.png "Browsing by genre")</span></span>
+    <span data-ttu-id="59ca6-356">![浏览按风格](aspnet-mvc-4-models-and-data-access/_static/image24.png "浏览按风格")</span><span class="sxs-lookup"><span data-stu-id="59ca6-356">![Browsing by genre](aspnet-mvc-4-models-and-data-access/_static/image24.png "Browsing by genre")</span></span>
 
-    <span data-ttu-id="179b1-355">*浏览/存储/浏览？ 流派 = Pop*</span><span class="sxs-lookup"><span data-stu-id="179b1-355">*Browsing /Store/Browse?genre=Pop*</span></span>
+    <span data-ttu-id="59ca6-357">*浏览/存储/浏览？ 流派 = Pop*</span><span class="sxs-lookup"><span data-stu-id="59ca6-357">*Browsing /Store/Browse?genre=Pop*</span></span>
 
 <a id="Ex3Task3"></a>
 
 <a id="Task_3_-_Accessing_Albums_by_Id"></a>
-#### <a name="task-3---accessing-albums-by-id"></a><span data-ttu-id="179b1-356">任务 3-访问专辑按 Id</span><span class="sxs-lookup"><span data-stu-id="179b1-356">Task 3 - Accessing Albums by Id</span></span>
+#### <a name="task-3---accessing-albums-by-id"></a><span data-ttu-id="59ca6-358">任务 3-访问专辑按 Id</span><span class="sxs-lookup"><span data-stu-id="59ca6-358">Task 3 - Accessing Albums by Id</span></span>
 
-<span data-ttu-id="179b1-357">在此任务中，将重复前面的过程来获取专辑由其 id。</span><span class="sxs-lookup"><span data-stu-id="179b1-357">In this task, you will repeat the previous procedure to get albums by their Id.</span></span>
+<span data-ttu-id="59ca6-359">在此任务中，将重复前面的过程来获取专辑由其 id。</span><span class="sxs-lookup"><span data-stu-id="59ca6-359">In this task, you will repeat the previous procedure to get albums by their Id.</span></span>
 
-1. <span data-ttu-id="179b1-358">关闭浏览器，如果需要可以返回到 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="179b1-358">Close the browser if needed, to return to Visual Studio.</span></span> <span data-ttu-id="179b1-359">打开**StoreController**类更改**详细信息**操作方法。</span><span class="sxs-lookup"><span data-stu-id="179b1-359">Open the **StoreController** class to change the **Details** action method.</span></span> <span data-ttu-id="179b1-360">为此，请在**解决方案资源管理器**，展开**控制器**文件夹并双击**StoreController.cs**。</span><span class="sxs-lookup"><span data-stu-id="179b1-360">To do this, in the **Solution Explorer**, expand the **Controllers** folder and double-click **StoreController.cs**.</span></span>
-2. <span data-ttu-id="179b1-361">更改**详细信息**操作方法来检索唱片集详细信息基于其**Id**。若要执行此操作，将以下代码：</span><span class="sxs-lookup"><span data-stu-id="179b1-361">Change the **Details** action method to retrieve albums details based on their **Id**. To do this, replace the following code:</span></span>
+1. <span data-ttu-id="59ca6-360">关闭浏览器，如果需要可以返回到 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="59ca6-360">Close the browser if needed, to return to Visual Studio.</span></span> <span data-ttu-id="59ca6-361">打开**StoreController**类更改**详细信息**操作方法。</span><span class="sxs-lookup"><span data-stu-id="59ca6-361">Open the **StoreController** class to change the **Details** action method.</span></span> <span data-ttu-id="59ca6-362">为此，请在**解决方案资源管理器**，展开**控制器**文件夹并双击**StoreController.cs**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-362">To do this, in the **Solution Explorer**, expand the **Controllers** folder and double-click **StoreController.cs**.</span></span>
+2. <span data-ttu-id="59ca6-363">更改**详细信息**操作方法来检索唱片集详细信息基于其**Id**。若要执行此操作，将以下代码：</span><span class="sxs-lookup"><span data-stu-id="59ca6-363">Change the **Details** action method to retrieve albums details based on their **Id**. To do this, replace the following code:</span></span>
 
-    <span data-ttu-id="179b1-362">(代码段-*模型和数据访问-Ex3 StoreController DetailsMethod*)</span><span class="sxs-lookup"><span data-stu-id="179b1-362">(Code Snippet - *Models And Data Access - Ex3 StoreController DetailsMethod*)</span></span>
+    <span data-ttu-id="59ca6-364">(代码段-*模型和数据访问-Ex3 StoreController DetailsMethod*)</span><span class="sxs-lookup"><span data-stu-id="59ca6-364">(Code Snippet - *Models And Data Access - Ex3 StoreController DetailsMethod*)</span></span>
 
 
 ~~~
@@ -559,19 +561,19 @@ ms.lasthandoff: 04/06/2018
 <a id="Ex3Task4"></a>
 
 <a id="Task_4_-_Running_the_Application"></a>
-#### <a name="task-4---running-the-application"></a><span data-ttu-id="179b1-363">任务 4-运行应用程序</span><span class="sxs-lookup"><span data-stu-id="179b1-363">Task 4 - Running the Application</span></span>
+#### <a name="task-4---running-the-application"></a><span data-ttu-id="59ca6-365">任务 4-运行应用程序</span><span class="sxs-lookup"><span data-stu-id="59ca6-365">Task 4 - Running the Application</span></span>
 
-<span data-ttu-id="179b1-364">在此任务中，你将在 web 浏览器中运行应用程序，并获得唱片集的详细信息，由其 id。</span><span class="sxs-lookup"><span data-stu-id="179b1-364">In this task, you will run the Application in a web browser and obtain album details by their Id.</span></span>
+<span data-ttu-id="59ca6-366">在此任务中，你将在 web 浏览器中运行应用程序，并获得唱片集的详细信息，由其 id。</span><span class="sxs-lookup"><span data-stu-id="59ca6-366">In this task, you will run the Application in a web browser and obtain album details by their Id.</span></span>
 
-1. <span data-ttu-id="179b1-365">按**F5**运行该应用程序。</span><span class="sxs-lookup"><span data-stu-id="179b1-365">Press **F5** to run the Application.</span></span>
-2. <span data-ttu-id="179b1-366">在主页页面中启动项目。</span><span class="sxs-lookup"><span data-stu-id="179b1-366">The project starts in the Home page.</span></span> <span data-ttu-id="179b1-367">将 URL 更改为**/Store/Details/51**或浏览风格并选择唱片集以验证正在从数据库检索的结果。</span><span class="sxs-lookup"><span data-stu-id="179b1-367">Change the URL to **/Store/Details/51** or browse the genres and select an album to verify that the results are being retrieved from the database.</span></span>
+1. <span data-ttu-id="59ca6-367">按**F5**运行该应用程序。</span><span class="sxs-lookup"><span data-stu-id="59ca6-367">Press **F5** to run the Application.</span></span>
+2. <span data-ttu-id="59ca6-368">在主页页面中启动项目。</span><span class="sxs-lookup"><span data-stu-id="59ca6-368">The project starts in the Home page.</span></span> <span data-ttu-id="59ca6-369">将 URL 更改为 **/Store/Details/51**或浏览风格并选择唱片集以验证正在从数据库检索的结果。</span><span class="sxs-lookup"><span data-stu-id="59ca6-369">Change the URL to **/Store/Details/51** or browse the genres and select an album to verify that the results are being retrieved from the database.</span></span>
 
-    <span data-ttu-id="179b1-368">![浏览详细信息](aspnet-mvc-4-models-and-data-access/_static/image25.png "浏览详细信息")</span><span class="sxs-lookup"><span data-stu-id="179b1-368">![Browsing Details](aspnet-mvc-4-models-and-data-access/_static/image25.png "Browsing Details")</span></span>
+    <span data-ttu-id="59ca6-370">![浏览详细信息](aspnet-mvc-4-models-and-data-access/_static/image25.png "浏览详细信息")</span><span class="sxs-lookup"><span data-stu-id="59ca6-370">![Browsing Details](aspnet-mvc-4-models-and-data-access/_static/image25.png "Browsing Details")</span></span>
 
-    <span data-ttu-id="179b1-369">*浏览 /Store/Details/51*</span><span class="sxs-lookup"><span data-stu-id="179b1-369">*Browsing /Store/Details/51*</span></span>
+    <span data-ttu-id="59ca6-371">*浏览 /Store/Details/51*</span><span class="sxs-lookup"><span data-stu-id="59ca6-371">*Browsing /Store/Details/51*</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="179b1-370">此外，你可以部署此应用程序对 Windows Azure 网站以下[附录 b： 发布 ASP.NET MVC 4 应用程序使用 Web Deploy](#AppendixB)。</span><span class="sxs-lookup"><span data-stu-id="179b1-370">Additionally, you can deploy this application to Windows Azure Web Sites following [Appendix B: Publishing an ASP.NET MVC 4 Application using Web Deploy](#AppendixB).</span></span>
+> <span data-ttu-id="59ca6-372">此外，你可以部署此应用程序对 Windows Azure 网站以下[附录 b： 发布 ASP.NET MVC 4 应用程序使用 Web Deploy](#AppendixB)。</span><span class="sxs-lookup"><span data-stu-id="59ca6-372">Additionally, you can deploy this application to Windows Azure Web Sites following [Appendix B: Publishing an ASP.NET MVC 4 Application using Web Deploy](#AppendixB).</span></span>
 
 
 * * *
@@ -579,232 +581,232 @@ ms.lasthandoff: 04/06/2018
 <a id="Summary"></a>
 
 <a id="Summary"></a>
-## <a name="summary"></a><span data-ttu-id="179b1-371">总结</span><span class="sxs-lookup"><span data-stu-id="179b1-371">Summary</span></span>
+## <a name="summary"></a><span data-ttu-id="59ca6-373">总结</span><span class="sxs-lookup"><span data-stu-id="59ca6-373">Summary</span></span>
 
-<span data-ttu-id="179b1-372">通过完成本动手实验，你已经学习了 ASP.NET MVC 模型和数据访问的基础知识，请使用**Database First**方法以及**Code First**方法：</span><span class="sxs-lookup"><span data-stu-id="179b1-372">By completing this Hands-on Lab you have learned the fundamentals of ASP.NET MVC Models and Data Access, using the **Database First** approach as well as the **Code First** Approach:</span></span>
+<span data-ttu-id="59ca6-374">通过完成本动手实验，你已经学习了 ASP.NET MVC 模型和数据访问的基础知识，请使用**Database First**方法以及**Code First**方法：</span><span class="sxs-lookup"><span data-stu-id="59ca6-374">By completing this Hands-on Lab you have learned the fundamentals of ASP.NET MVC Models and Data Access, using the **Database First** approach as well as the **Code First** Approach:</span></span>
 
-- <span data-ttu-id="179b1-373">如何将数据库添加到解决方案，以便使用其数据</span><span class="sxs-lookup"><span data-stu-id="179b1-373">How to add a database to the solution in order to consume its data</span></span>
-- <span data-ttu-id="179b1-374">如何更新控制器以向提供而不是硬编码的一个数据库中获取数据的视图模板</span><span class="sxs-lookup"><span data-stu-id="179b1-374">How to update Controllers to provide View templates with the data taken from the database instead of hard-coded one</span></span>
-- <span data-ttu-id="179b1-375">如何查询数据库中使用参数</span><span class="sxs-lookup"><span data-stu-id="179b1-375">How to query the database using parameters</span></span>
-- <span data-ttu-id="179b1-376">如何使用查询结果调整，可以减少的数据库访问，一种更有效的方式检索数据</span><span class="sxs-lookup"><span data-stu-id="179b1-376">How to use the Query Result Shaping, a feature that reduces the number of database accesses, retrieving data in a more efficient way</span></span>
-- <span data-ttu-id="179b1-377">如何在 Microsoft 实体框架中使用数据库第一个和第一个代码方法，以将与模型数据库链接</span><span class="sxs-lookup"><span data-stu-id="179b1-377">How to use both Database First and Code First approaches in Microsoft Entity Framework to link the database with the model</span></span>
+- <span data-ttu-id="59ca6-375">如何将数据库添加到解决方案，以便使用其数据</span><span class="sxs-lookup"><span data-stu-id="59ca6-375">How to add a database to the solution in order to consume its data</span></span>
+- <span data-ttu-id="59ca6-376">如何更新控制器以向提供而不是硬编码的一个数据库中获取数据的视图模板</span><span class="sxs-lookup"><span data-stu-id="59ca6-376">How to update Controllers to provide View templates with the data taken from the database instead of hard-coded one</span></span>
+- <span data-ttu-id="59ca6-377">如何查询数据库中使用参数</span><span class="sxs-lookup"><span data-stu-id="59ca6-377">How to query the database using parameters</span></span>
+- <span data-ttu-id="59ca6-378">如何使用查询结果调整，可以减少的数据库访问，一种更有效的方式检索数据</span><span class="sxs-lookup"><span data-stu-id="59ca6-378">How to use the Query Result Shaping, a feature that reduces the number of database accesses, retrieving data in a more efficient way</span></span>
+- <span data-ttu-id="59ca6-379">如何在 Microsoft 实体框架中使用数据库第一个和第一个代码方法，以将与模型数据库链接</span><span class="sxs-lookup"><span data-stu-id="59ca6-379">How to use both Database First and Code First approaches in Microsoft Entity Framework to link the database with the model</span></span>
 
 <a id="AppendixA"></a>
 
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
-## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a><span data-ttu-id="179b1-378">附录 a： 安装 Visual Studio Express 2012 for Web</span><span class="sxs-lookup"><span data-stu-id="179b1-378">Appendix A: Installing Visual Studio Express 2012 for Web</span></span>
+## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a><span data-ttu-id="59ca6-380">附录 a： 安装 Visual Studio Express 2012 for Web</span><span class="sxs-lookup"><span data-stu-id="59ca6-380">Appendix A: Installing Visual Studio Express 2012 for Web</span></span>
 
-<span data-ttu-id="179b1-379">你可以安装**Microsoft Visual Studio Express 2012 for Web**或另一个&quot;Express&quot;版本使用 **[Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)**.</span><span class="sxs-lookup"><span data-stu-id="179b1-379">You can install **Microsoft Visual Studio Express 2012 for Web** or another &quot;Express&quot; version using the **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**.</span></span> <span data-ttu-id="179b1-380">以下说明将指导你完成安装所需的步骤*Visual studio Express 2012 for Web*使用*Microsoft Web 平台安装程序*。</span><span class="sxs-lookup"><span data-stu-id="179b1-380">The following instructions guide you through the steps required to install *Visual studio Express 2012 for Web* using *Microsoft Web Platform Installer*.</span></span>
+<span data-ttu-id="59ca6-381">你可以安装**Microsoft Visual Studio Express 2012 for Web**或另一个&quot;Express&quot;版本使用 **[Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)**.</span><span class="sxs-lookup"><span data-stu-id="59ca6-381">You can install **Microsoft Visual Studio Express 2012 for Web** or another &quot;Express&quot; version using the **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**.</span></span> <span data-ttu-id="59ca6-382">以下说明将指导你完成安装所需的步骤*Visual studio Express 2012 for Web*使用*Microsoft Web 平台安装程序*。</span><span class="sxs-lookup"><span data-stu-id="59ca6-382">The following instructions guide you through the steps required to install *Visual studio Express 2012 for Web* using *Microsoft Web Platform Installer*.</span></span>
 
-1. <span data-ttu-id="179b1-381">转到[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。</span><span class="sxs-lookup"><span data-stu-id="179b1-381">Go to [[https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169).</span></span> <span data-ttu-id="179b1-382">或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; <em>Visual Studio Express 2012 for Web 的 Windows Azure SDK</em>&quot;。</span><span class="sxs-lookup"><span data-stu-id="179b1-382">Alternatively, if you already have installed Web Platform Installer, you can open it and search for the product &quot;<em>Visual Studio Express 2012 for Web with Windows Azure SDK</em>&quot;.</span></span>
-2. <span data-ttu-id="179b1-383">单击**立即安装**。</span><span class="sxs-lookup"><span data-stu-id="179b1-383">Click on **Install Now**.</span></span> <span data-ttu-id="179b1-384">如果你没有**Web 平台安装程序**将重定向以下载并请先安装它。</span><span class="sxs-lookup"><span data-stu-id="179b1-384">If you do not have **Web Platform Installer** you will be redirected to download and install it first.</span></span>
-3. <span data-ttu-id="179b1-385">一次**Web 平台安装程序**处于打开状态，单击**安装**以启动安装程序。</span><span class="sxs-lookup"><span data-stu-id="179b1-385">Once **Web Platform Installer** is open, click **Install** to start the setup.</span></span>
+1. <span data-ttu-id="59ca6-383">转到[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。</span><span class="sxs-lookup"><span data-stu-id="59ca6-383">Go to [[https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169).</span></span> <span data-ttu-id="59ca6-384">或者，如果你已安装 Web 平台安装程序，你可以打开它，并搜索产品&quot; <em>Visual Studio Express 2012 for Web 的 Windows Azure SDK</em>&quot;。</span><span class="sxs-lookup"><span data-stu-id="59ca6-384">Alternatively, if you already have installed Web Platform Installer, you can open it and search for the product &quot;<em>Visual Studio Express 2012 for Web with Windows Azure SDK</em>&quot;.</span></span>
+2. <span data-ttu-id="59ca6-385">单击**立即安装**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-385">Click on **Install Now**.</span></span> <span data-ttu-id="59ca6-386">如果你没有**Web 平台安装程序**将重定向以下载并请先安装它。</span><span class="sxs-lookup"><span data-stu-id="59ca6-386">If you do not have **Web Platform Installer** you will be redirected to download and install it first.</span></span>
+3. <span data-ttu-id="59ca6-387">一次**Web 平台安装程序**处于打开状态，单击**安装**以启动安装程序。</span><span class="sxs-lookup"><span data-stu-id="59ca6-387">Once **Web Platform Installer** is open, click **Install** to start the setup.</span></span>
 
-    <span data-ttu-id="179b1-386">![安装 Visual Studio Express](aspnet-mvc-4-models-and-data-access/_static/image26.png "安装 Visual Studio Express")</span><span class="sxs-lookup"><span data-stu-id="179b1-386">![Install Visual Studio Express](aspnet-mvc-4-models-and-data-access/_static/image26.png "Install Visual Studio Express")</span></span>
+    <span data-ttu-id="59ca6-388">![安装 Visual Studio Express](aspnet-mvc-4-models-and-data-access/_static/image26.png "安装 Visual Studio Express")</span><span class="sxs-lookup"><span data-stu-id="59ca6-388">![Install Visual Studio Express](aspnet-mvc-4-models-and-data-access/_static/image26.png "Install Visual Studio Express")</span></span>
 
-    <span data-ttu-id="179b1-387">*安装 Visual Studio Express*</span><span class="sxs-lookup"><span data-stu-id="179b1-387">*Install Visual Studio Express*</span></span>
-4. <span data-ttu-id="179b1-388">阅读所有产品的许可证和条款，然后单击**我接受**以继续。</span><span class="sxs-lookup"><span data-stu-id="179b1-388">Read all the products' licenses and terms and click **I Accept** to continue.</span></span>
+    <span data-ttu-id="59ca6-389">*安装 Visual Studio Express*</span><span class="sxs-lookup"><span data-stu-id="59ca6-389">*Install Visual Studio Express*</span></span>
+4. <span data-ttu-id="59ca6-390">阅读所有产品的许可证和条款，然后单击**我接受**以继续。</span><span class="sxs-lookup"><span data-stu-id="59ca6-390">Read all the products' licenses and terms and click **I Accept** to continue.</span></span>
 
     ![接受许可条款](aspnet-mvc-4-models-and-data-access/_static/image27.png)
 
-    <span data-ttu-id="179b1-390">*接受许可条款*</span><span class="sxs-lookup"><span data-stu-id="179b1-390">*Accepting the license terms*</span></span>
-5. <span data-ttu-id="179b1-391">等待，直到下载和安装过程完成。</span><span class="sxs-lookup"><span data-stu-id="179b1-391">Wait until the downloading and installation process completes.</span></span>
+    <span data-ttu-id="59ca6-392">*接受许可条款*</span><span class="sxs-lookup"><span data-stu-id="59ca6-392">*Accepting the license terms*</span></span>
+5. <span data-ttu-id="59ca6-393">等待，直到下载和安装过程完成。</span><span class="sxs-lookup"><span data-stu-id="59ca6-393">Wait until the downloading and installation process completes.</span></span>
 
     ![安装进度](aspnet-mvc-4-models-and-data-access/_static/image28.png)
 
-    <span data-ttu-id="179b1-393">*安装进度*</span><span class="sxs-lookup"><span data-stu-id="179b1-393">*Installation progress*</span></span>
-6. <span data-ttu-id="179b1-394">当安装完成后时，单击**完成**。</span><span class="sxs-lookup"><span data-stu-id="179b1-394">When the installation completes, click **Finish**.</span></span>
+    <span data-ttu-id="59ca6-395">*安装进度*</span><span class="sxs-lookup"><span data-stu-id="59ca6-395">*Installation progress*</span></span>
+6. <span data-ttu-id="59ca6-396">当安装完成后时，单击**完成**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-396">When the installation completes, click **Finish**.</span></span>
 
     ![安装已完成](aspnet-mvc-4-models-and-data-access/_static/image29.png)
 
-    <span data-ttu-id="179b1-396">*安装已完成*</span><span class="sxs-lookup"><span data-stu-id="179b1-396">*Installation completed*</span></span>
-7. <span data-ttu-id="179b1-397">单击**退出**以关闭 Web 平台安装程序。</span><span class="sxs-lookup"><span data-stu-id="179b1-397">Click **Exit** to close Web Platform Installer.</span></span>
-8. <span data-ttu-id="179b1-398">若要打开 Visual Studio Express for Web，请转到**启动**屏幕并开始编写&quot; **VS Express**&quot;，然后单击**VS Express for Web**磁贴。</span><span class="sxs-lookup"><span data-stu-id="179b1-398">To open Visual Studio Express for Web, go to the **Start** screen and start writing &quot;**VS Express**&quot;, then click on the **VS Express for Web** tile.</span></span>
+    <span data-ttu-id="59ca6-398">*安装已完成*</span><span class="sxs-lookup"><span data-stu-id="59ca6-398">*Installation completed*</span></span>
+7. <span data-ttu-id="59ca6-399">单击**退出**以关闭 Web 平台安装程序。</span><span class="sxs-lookup"><span data-stu-id="59ca6-399">Click **Exit** to close Web Platform Installer.</span></span>
+8. <span data-ttu-id="59ca6-400">若要打开 Visual Studio Express for Web，请转到**启动**屏幕并开始编写&quot; **VS Express**&quot;，然后单击**VS Express for Web**磁贴。</span><span class="sxs-lookup"><span data-stu-id="59ca6-400">To open Visual Studio Express for Web, go to the **Start** screen and start writing &quot;**VS Express**&quot;, then click on the **VS Express for Web** tile.</span></span>
 
     ![Web 磁贴的 VS Express](aspnet-mvc-4-models-and-data-access/_static/image30.png)
 
-    <span data-ttu-id="179b1-400">*Web 磁贴的 VS Express*</span><span class="sxs-lookup"><span data-stu-id="179b1-400">*VS Express for Web tile*</span></span>
+    <span data-ttu-id="59ca6-402">*Web 磁贴的 VS Express*</span><span class="sxs-lookup"><span data-stu-id="59ca6-402">*VS Express for Web tile*</span></span>
 
 <a id="AppendixB"></a>
 
 <a id="Appendix_B_Publishing_an_ASPNET_MVC_4_Application_using_Web_Deploy"></a>
-## <a name="appendix-b-publishing-an-aspnet-mvc-4-application-using-web-deploy"></a><span data-ttu-id="179b1-401">附录 b： 发布 ASP.NET MVC 4 应用程序使用 Web 部署</span><span class="sxs-lookup"><span data-stu-id="179b1-401">Appendix B: Publishing an ASP.NET MVC 4 Application using Web Deploy</span></span>
+## <a name="appendix-b-publishing-an-aspnet-mvc-4-application-using-web-deploy"></a><span data-ttu-id="59ca6-403">附录 b： 发布 ASP.NET MVC 4 应用程序使用 Web 部署</span><span class="sxs-lookup"><span data-stu-id="59ca6-403">Appendix B: Publishing an ASP.NET MVC 4 Application using Web Deploy</span></span>
 
-<span data-ttu-id="179b1-402">本附录将演示如何从 Windows Azure 管理门户创建新的网站和发布应用程序获取按照本实验中，利用 Windows Azure 提供的 Web 部署发布功能。</span><span class="sxs-lookup"><span data-stu-id="179b1-402">This appendix will show you how to create a new web site from the Windows Azure Management Portal and publish the application you obtained by following the lab, taking advantage of the Web Deploy publishing feature provided by Windows Azure.</span></span>
+<span data-ttu-id="59ca6-404">本附录将演示如何从 Windows Azure 管理门户创建新的网站和发布应用程序获取按照本实验中，利用 Windows Azure 提供的 Web 部署发布功能。</span><span class="sxs-lookup"><span data-stu-id="59ca6-404">This appendix will show you how to create a new web site from the Windows Azure Management Portal and publish the application you obtained by following the lab, taking advantage of the Web Deploy publishing feature provided by Windows Azure.</span></span>
 
 <a id="ApxBTask1"></a>
 
 <a id="Task_1_-_Creating_a_New_Web_Site_from_the_Windows_Azure_Portal"></a>
-#### <a name="task-1---creating-a-new-web-site-from-the-windows-azure-portal"></a><span data-ttu-id="179b1-403">任务 1-创建新的 Web 站点从 Windows Azure 门户</span><span class="sxs-lookup"><span data-stu-id="179b1-403">Task 1 - Creating a New Web Site from the Windows Azure Portal</span></span>
+#### <a name="task-1---creating-a-new-web-site-from-the-windows-azure-portal"></a><span data-ttu-id="59ca6-405">任务 1-创建新的 Web 站点从 Windows Azure 门户</span><span class="sxs-lookup"><span data-stu-id="59ca6-405">Task 1 - Creating a New Web Site from the Windows Azure Portal</span></span>
 
-1. <span data-ttu-id="179b1-404">转到[Windows Azure 管理门户](https://manage.windowsazure.com/)并使用与你的订阅关联的 Microsoft 凭据登录。</span><span class="sxs-lookup"><span data-stu-id="179b1-404">Go to the [Windows Azure Management Portal](https://manage.windowsazure.com/) and sign in using the Microsoft credentials associated with your subscription.</span></span>
-
-    > [!NOTE]
-    > <span data-ttu-id="179b1-405">使用 Windows Azure 可以免费承载 10 个 ASP.NET 网站，然后随着流量增长而扩展。</span><span class="sxs-lookup"><span data-stu-id="179b1-405">With Windows Azure you can host 10 ASP.NET Web Sites for free and then scale as your traffic grows.</span></span> <span data-ttu-id="179b1-406">你可以注册[此处](http://aka.ms/aspnet-hol-azure)。</span><span class="sxs-lookup"><span data-stu-id="179b1-406">You can sign up [here](http://aka.ms/aspnet-hol-azure).</span></span>
-
-    <span data-ttu-id="179b1-407">![登录到 Windows Azure 门户](aspnet-mvc-4-models-and-data-access/_static/image31.png "登录到 Windows Azure 门户")</span><span class="sxs-lookup"><span data-stu-id="179b1-407">![Log on to Windows Azure portal](aspnet-mvc-4-models-and-data-access/_static/image31.png "Log on to Windows Azure portal")</span></span>
-
-    <span data-ttu-id="179b1-408">*登录到 Windows Azure 管理门户*</span><span class="sxs-lookup"><span data-stu-id="179b1-408">*Log on to Windows Azure Management Portal*</span></span>
-2. <span data-ttu-id="179b1-409">单击**新建**命令栏上。</span><span class="sxs-lookup"><span data-stu-id="179b1-409">Click **New** on the command bar.</span></span>
-
-    <span data-ttu-id="179b1-410">![创建新网站](aspnet-mvc-4-models-and-data-access/_static/image32.png "创建新网站")</span><span class="sxs-lookup"><span data-stu-id="179b1-410">![Creating a new Web Site](aspnet-mvc-4-models-and-data-access/_static/image32.png "Creating a new Web Site")</span></span>
-
-    <span data-ttu-id="179b1-411">*创建新网站*</span><span class="sxs-lookup"><span data-stu-id="179b1-411">*Creating a new Web Site*</span></span>
-3. <span data-ttu-id="179b1-412">单击**计算** | **网站**。</span><span class="sxs-lookup"><span data-stu-id="179b1-412">Click **Compute** | **Web Site**.</span></span> <span data-ttu-id="179b1-413">然后选择**快速创建**选项。</span><span class="sxs-lookup"><span data-stu-id="179b1-413">Then select **Quick Create** option.</span></span> <span data-ttu-id="179b1-414">为新网站提供可用的 URL，然后单击**创建网站**。</span><span class="sxs-lookup"><span data-stu-id="179b1-414">Provide an available URL for the new web site and click **Create Web Site**.</span></span>
+1. <span data-ttu-id="59ca6-406">转到[Windows Azure 管理门户](https://manage.windowsazure.com/)并使用与你的订阅关联的 Microsoft 凭据登录。</span><span class="sxs-lookup"><span data-stu-id="59ca6-406">Go to the [Windows Azure Management Portal](https://manage.windowsazure.com/) and sign in using the Microsoft credentials associated with your subscription.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="179b1-415">Windows Azure 网站是在云中，你可以控制和管理运行的 web 应用程序的宿主。</span><span class="sxs-lookup"><span data-stu-id="179b1-415">A Windows Azure Web Site is the host for a web application running in the cloud that you can control and manage.</span></span> <span data-ttu-id="179b1-416">快速创建选项，可将已完成的 web 应用程序到 Windows Azure 网站从在门户外部部署。</span><span class="sxs-lookup"><span data-stu-id="179b1-416">The Quick Create option allows you to deploy a completed web application to the Windows Azure Web Site from outside the portal.</span></span> <span data-ttu-id="179b1-417">它不包括用于设置数据库的步骤。</span><span class="sxs-lookup"><span data-stu-id="179b1-417">It does not include steps for setting up a database.</span></span>
+    > <span data-ttu-id="59ca6-407">使用 Windows Azure 可以免费承载 10 个 ASP.NET 网站，然后随着流量增长而扩展。</span><span class="sxs-lookup"><span data-stu-id="59ca6-407">With Windows Azure you can host 10 ASP.NET Web Sites for free and then scale as your traffic grows.</span></span> <span data-ttu-id="59ca6-408">你可以注册[此处](http://aka.ms/aspnet-hol-azure)。</span><span class="sxs-lookup"><span data-stu-id="59ca6-408">You can sign up [here](http://aka.ms/aspnet-hol-azure).</span></span>
 
-    <span data-ttu-id="179b1-418">![创建新的网站使用快速创建](aspnet-mvc-4-models-and-data-access/_static/image33.png "创建新的网站使用快速创建")</span><span class="sxs-lookup"><span data-stu-id="179b1-418">![Creating a new Web Site using Quick Create](aspnet-mvc-4-models-and-data-access/_static/image33.png "Creating a new Web Site using Quick Create")</span></span>
+    <span data-ttu-id="59ca6-409">![登录到 Windows Azure 门户](aspnet-mvc-4-models-and-data-access/_static/image31.png "登录到 Windows Azure 门户")</span><span class="sxs-lookup"><span data-stu-id="59ca6-409">![Log on to Windows Azure portal](aspnet-mvc-4-models-and-data-access/_static/image31.png "Log on to Windows Azure portal")</span></span>
 
-    <span data-ttu-id="179b1-419">*创建新的网站使用快速创建*</span><span class="sxs-lookup"><span data-stu-id="179b1-419">*Creating a new Web Site using Quick Create*</span></span>
-4. <span data-ttu-id="179b1-420">等到新**网站**创建。</span><span class="sxs-lookup"><span data-stu-id="179b1-420">Wait until the new **Web Site** is created.</span></span>
-5. <span data-ttu-id="179b1-421">创建网站后单击下的链接**URL**列。</span><span class="sxs-lookup"><span data-stu-id="179b1-421">Once the Web Site is created click the link under the **URL** column.</span></span> <span data-ttu-id="179b1-422">检查新的 Web 站点工作。</span><span class="sxs-lookup"><span data-stu-id="179b1-422">Check that the new Web Site is working.</span></span>
+    <span data-ttu-id="59ca6-410">*登录到 Windows Azure 管理门户*</span><span class="sxs-lookup"><span data-stu-id="59ca6-410">*Log on to Windows Azure Management Portal*</span></span>
+2. <span data-ttu-id="59ca6-411">单击**新建**命令栏上。</span><span class="sxs-lookup"><span data-stu-id="59ca6-411">Click **New** on the command bar.</span></span>
 
-    <span data-ttu-id="179b1-423">![浏览到新的 web 站点](aspnet-mvc-4-models-and-data-access/_static/image34.png "浏览到新的 web 站点")</span><span class="sxs-lookup"><span data-stu-id="179b1-423">![Browsing to the new web site](aspnet-mvc-4-models-and-data-access/_static/image34.png "Browsing to the new web site")</span></span>
+    <span data-ttu-id="59ca6-412">![创建新网站](aspnet-mvc-4-models-and-data-access/_static/image32.png "创建新网站")</span><span class="sxs-lookup"><span data-stu-id="59ca6-412">![Creating a new Web Site](aspnet-mvc-4-models-and-data-access/_static/image32.png "Creating a new Web Site")</span></span>
 
-    <span data-ttu-id="179b1-424">*浏览到新的 web 站点*</span><span class="sxs-lookup"><span data-stu-id="179b1-424">*Browsing to the new web site*</span></span>
-
-    <span data-ttu-id="179b1-425">![运行网站](aspnet-mvc-4-models-and-data-access/_static/image35.png "运行的网站")</span><span class="sxs-lookup"><span data-stu-id="179b1-425">![Web site running](aspnet-mvc-4-models-and-data-access/_static/image35.png "Web site running")</span></span>
-
-    <span data-ttu-id="179b1-426">*运行的网站*</span><span class="sxs-lookup"><span data-stu-id="179b1-426">*Web site running*</span></span>
-6. <span data-ttu-id="179b1-427">返回到门户并单击在网站的名称**名称**列以显示的管理页。</span><span class="sxs-lookup"><span data-stu-id="179b1-427">Go back to the portal and click the name of the web site under the **Name** column to display the management pages.</span></span>
-
-    <span data-ttu-id="179b1-428">![打开网站管理页](aspnet-mvc-4-models-and-data-access/_static/image36.png "打开网站管理页")</span><span class="sxs-lookup"><span data-stu-id="179b1-428">![Opening the web site management pages](aspnet-mvc-4-models-and-data-access/_static/image36.png "Opening the web site management pages")</span></span>
-
-    <span data-ttu-id="179b1-429">*打开网站管理页*</span><span class="sxs-lookup"><span data-stu-id="179b1-429">*Opening the Web Site management pages*</span></span>
-7. <span data-ttu-id="179b1-430">在**仪表板**页上，在**速览**部分中，单击**下载发布配置文件**链接。</span><span class="sxs-lookup"><span data-stu-id="179b1-430">In the **Dashboard** page, under the **quick glance** section, click the **Download publish profile** link.</span></span>
+    <span data-ttu-id="59ca6-413">*创建新网站*</span><span class="sxs-lookup"><span data-stu-id="59ca6-413">*Creating a new Web Site*</span></span>
+3. <span data-ttu-id="59ca6-414">单击**计算** | **网站**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-414">Click **Compute** | **Web Site**.</span></span> <span data-ttu-id="59ca6-415">然后选择**快速创建**选项。</span><span class="sxs-lookup"><span data-stu-id="59ca6-415">Then select **Quick Create** option.</span></span> <span data-ttu-id="59ca6-416">为新网站提供可用的 URL，然后单击**创建网站**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-416">Provide an available URL for the new web site and click **Create Web Site**.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="179b1-431">*发布配置文件*包含所有 web 应用程序发布到 Windows Azure 网站中的每个启用的发布方法所需的信息。</span><span class="sxs-lookup"><span data-stu-id="179b1-431">The *publish profile* contains all of the information required to publish a web application to a Windows Azure website for each enabled publication method.</span></span> <span data-ttu-id="179b1-432">发布配置文件包含的 Url、 用户凭据和连接到并针对每个发布方法启用的终结点进行身份验证所需的数据库字符串。</span><span class="sxs-lookup"><span data-stu-id="179b1-432">The publish profile contains the URLs, user credentials and database strings required to connect to and authenticate against each of the endpoints for which a publication method is enabled.</span></span> <span data-ttu-id="179b1-433">**Microsoft WebMatrix 2**， **Microsoft Visual Studio Express for Web**和**Microsoft Visual Studio 2012**支持读取发布配置文件以自动执行的这些程序，以便配置web 应用程序发布到 Windows Azure 网站。</span><span class="sxs-lookup"><span data-stu-id="179b1-433">**Microsoft WebMatrix 2**, **Microsoft Visual Studio Express for Web** and **Microsoft Visual Studio 2012** support reading publish profiles to automate configuration of these programs for publishing web applications to Windows Azure websites.</span></span>
+    > <span data-ttu-id="59ca6-417">Windows Azure 网站是在云中，你可以控制和管理运行的 web 应用程序的宿主。</span><span class="sxs-lookup"><span data-stu-id="59ca6-417">A Windows Azure Web Site is the host for a web application running in the cloud that you can control and manage.</span></span> <span data-ttu-id="59ca6-418">快速创建选项，可将已完成的 web 应用程序到 Windows Azure 网站从在门户外部部署。</span><span class="sxs-lookup"><span data-stu-id="59ca6-418">The Quick Create option allows you to deploy a completed web application to the Windows Azure Web Site from outside the portal.</span></span> <span data-ttu-id="59ca6-419">它不包括用于设置数据库的步骤。</span><span class="sxs-lookup"><span data-stu-id="59ca6-419">It does not include steps for setting up a database.</span></span>
 
-    <span data-ttu-id="179b1-434">![下载网站发布配置文件](aspnet-mvc-4-models-and-data-access/_static/image37.png "下载网站发布配置文件")</span><span class="sxs-lookup"><span data-stu-id="179b1-434">![Downloading the web site publish profile](aspnet-mvc-4-models-and-data-access/_static/image37.png "Downloading the web site publish profile")</span></span>
+    <span data-ttu-id="59ca6-420">![创建新的网站使用快速创建](aspnet-mvc-4-models-and-data-access/_static/image33.png "创建新的网站使用快速创建")</span><span class="sxs-lookup"><span data-stu-id="59ca6-420">![Creating a new Web Site using Quick Create](aspnet-mvc-4-models-and-data-access/_static/image33.png "Creating a new Web Site using Quick Create")</span></span>
 
-    <span data-ttu-id="179b1-435">*下载网站发布配置文件*</span><span class="sxs-lookup"><span data-stu-id="179b1-435">*Downloading the Web Site publish profile*</span></span>
-8. <span data-ttu-id="179b1-436">到一个已知位置下载发布配置文件。</span><span class="sxs-lookup"><span data-stu-id="179b1-436">Download the publish profile file to a known location.</span></span> <span data-ttu-id="179b1-437">进一步在本练习中您将了解如何使用此文件来发布 Visual Studio 中的 web 应用程序到 Windows Azure 网站。</span><span class="sxs-lookup"><span data-stu-id="179b1-437">Further in this exercise you will see how to use this file to publish a web application to a Windows Azure Web Sites from Visual Studio.</span></span>
+    <span data-ttu-id="59ca6-421">*创建新的网站使用快速创建*</span><span class="sxs-lookup"><span data-stu-id="59ca6-421">*Creating a new Web Site using Quick Create*</span></span>
+4. <span data-ttu-id="59ca6-422">等到新**网站**创建。</span><span class="sxs-lookup"><span data-stu-id="59ca6-422">Wait until the new **Web Site** is created.</span></span>
+5. <span data-ttu-id="59ca6-423">创建网站后单击下的链接**URL**列。</span><span class="sxs-lookup"><span data-stu-id="59ca6-423">Once the Web Site is created click the link under the **URL** column.</span></span> <span data-ttu-id="59ca6-424">检查新的 Web 站点工作。</span><span class="sxs-lookup"><span data-stu-id="59ca6-424">Check that the new Web Site is working.</span></span>
 
-    <span data-ttu-id="179b1-438">![保存发布配置文件](aspnet-mvc-4-models-and-data-access/_static/image38.png "保存发布配置文件")</span><span class="sxs-lookup"><span data-stu-id="179b1-438">![Saving the publish profile file](aspnet-mvc-4-models-and-data-access/_static/image38.png "Saving the publish profile")</span></span>
+    <span data-ttu-id="59ca6-425">![浏览到新的 web 站点](aspnet-mvc-4-models-and-data-access/_static/image34.png "浏览到新的 web 站点")</span><span class="sxs-lookup"><span data-stu-id="59ca6-425">![Browsing to the new web site](aspnet-mvc-4-models-and-data-access/_static/image34.png "Browsing to the new web site")</span></span>
 
-    <span data-ttu-id="179b1-439">*保存发布配置文件*</span><span class="sxs-lookup"><span data-stu-id="179b1-439">*Saving the publish profile file*</span></span>
+    <span data-ttu-id="59ca6-426">*浏览到新的 web 站点*</span><span class="sxs-lookup"><span data-stu-id="59ca6-426">*Browsing to the new web site*</span></span>
+
+    <span data-ttu-id="59ca6-427">![运行网站](aspnet-mvc-4-models-and-data-access/_static/image35.png "运行的网站")</span><span class="sxs-lookup"><span data-stu-id="59ca6-427">![Web site running](aspnet-mvc-4-models-and-data-access/_static/image35.png "Web site running")</span></span>
+
+    <span data-ttu-id="59ca6-428">*运行的网站*</span><span class="sxs-lookup"><span data-stu-id="59ca6-428">*Web site running*</span></span>
+6. <span data-ttu-id="59ca6-429">返回到门户并单击在网站的名称**名称**列以显示的管理页。</span><span class="sxs-lookup"><span data-stu-id="59ca6-429">Go back to the portal and click the name of the web site under the **Name** column to display the management pages.</span></span>
+
+    <span data-ttu-id="59ca6-430">![打开网站管理页](aspnet-mvc-4-models-and-data-access/_static/image36.png "打开网站管理页")</span><span class="sxs-lookup"><span data-stu-id="59ca6-430">![Opening the web site management pages](aspnet-mvc-4-models-and-data-access/_static/image36.png "Opening the web site management pages")</span></span>
+
+    <span data-ttu-id="59ca6-431">*打开网站管理页*</span><span class="sxs-lookup"><span data-stu-id="59ca6-431">*Opening the Web Site management pages*</span></span>
+7. <span data-ttu-id="59ca6-432">在**仪表板**页上，在**速览**部分中，单击**下载发布配置文件**链接。</span><span class="sxs-lookup"><span data-stu-id="59ca6-432">In the **Dashboard** page, under the **quick glance** section, click the **Download publish profile** link.</span></span>
+
+    > [!NOTE]
+    > <span data-ttu-id="59ca6-433">*发布配置文件*包含所有 web 应用程序发布到 Windows Azure 网站中的每个启用的发布方法所需的信息。</span><span class="sxs-lookup"><span data-stu-id="59ca6-433">The *publish profile* contains all of the information required to publish a web application to a Windows Azure website for each enabled publication method.</span></span> <span data-ttu-id="59ca6-434">发布配置文件包含的 Url、 用户凭据和连接到并针对每个发布方法启用的终结点进行身份验证所需的数据库字符串。</span><span class="sxs-lookup"><span data-stu-id="59ca6-434">The publish profile contains the URLs, user credentials and database strings required to connect to and authenticate against each of the endpoints for which a publication method is enabled.</span></span> <span data-ttu-id="59ca6-435">**Microsoft WebMatrix 2**， **Microsoft Visual Studio Express for Web**和**Microsoft Visual Studio 2012**支持读取发布配置文件以自动执行的这些程序，以便配置web 应用程序发布到 Windows Azure 网站。</span><span class="sxs-lookup"><span data-stu-id="59ca6-435">**Microsoft WebMatrix 2**, **Microsoft Visual Studio Express for Web** and **Microsoft Visual Studio 2012** support reading publish profiles to automate configuration of these programs for publishing web applications to Windows Azure websites.</span></span>
+
+    <span data-ttu-id="59ca6-436">![下载网站发布配置文件](aspnet-mvc-4-models-and-data-access/_static/image37.png "下载网站发布配置文件")</span><span class="sxs-lookup"><span data-stu-id="59ca6-436">![Downloading the web site publish profile](aspnet-mvc-4-models-and-data-access/_static/image37.png "Downloading the web site publish profile")</span></span>
+
+    <span data-ttu-id="59ca6-437">*下载网站发布配置文件*</span><span class="sxs-lookup"><span data-stu-id="59ca6-437">*Downloading the Web Site publish profile*</span></span>
+8. <span data-ttu-id="59ca6-438">到一个已知位置下载发布配置文件。</span><span class="sxs-lookup"><span data-stu-id="59ca6-438">Download the publish profile file to a known location.</span></span> <span data-ttu-id="59ca6-439">进一步在本练习中您将了解如何使用此文件来发布 Visual Studio 中的 web 应用程序到 Windows Azure 网站。</span><span class="sxs-lookup"><span data-stu-id="59ca6-439">Further in this exercise you will see how to use this file to publish a web application to a Windows Azure Web Sites from Visual Studio.</span></span>
+
+    <span data-ttu-id="59ca6-440">![保存发布配置文件](aspnet-mvc-4-models-and-data-access/_static/image38.png "保存发布配置文件")</span><span class="sxs-lookup"><span data-stu-id="59ca6-440">![Saving the publish profile file](aspnet-mvc-4-models-and-data-access/_static/image38.png "Saving the publish profile")</span></span>
+
+    <span data-ttu-id="59ca6-441">*保存发布配置文件*</span><span class="sxs-lookup"><span data-stu-id="59ca6-441">*Saving the publish profile file*</span></span>
 
 <a id="ApxBTask2"></a>
 
 <a id="Task_2_-_Configuring_the_Database_Server"></a>
-#### <a name="task-2---configuring-the-database-server"></a><span data-ttu-id="179b1-440">任务 2-配置数据库服务器</span><span class="sxs-lookup"><span data-stu-id="179b1-440">Task 2 - Configuring the Database Server</span></span>
+#### <a name="task-2---configuring-the-database-server"></a><span data-ttu-id="59ca6-442">任务 2-配置数据库服务器</span><span class="sxs-lookup"><span data-stu-id="59ca6-442">Task 2 - Configuring the Database Server</span></span>
 
-<span data-ttu-id="179b1-441">如果你的应用程序将使用 SQL Server 数据库将需要创建 SQL 数据库服务器。</span><span class="sxs-lookup"><span data-stu-id="179b1-441">If your application makes use of SQL Server databases you will need to create a SQL Database server.</span></span> <span data-ttu-id="179b1-442">如果你想要部署的简单应用程序不使用 SQL Server 可能会跳过此任务。</span><span class="sxs-lookup"><span data-stu-id="179b1-442">If you want to deploy a simple application that does not use SQL Server you might skip this task.</span></span>
+<span data-ttu-id="59ca6-443">如果你的应用程序将使用 SQL Server 数据库将需要创建 SQL 数据库服务器。</span><span class="sxs-lookup"><span data-stu-id="59ca6-443">If your application makes use of SQL Server databases you will need to create a SQL Database server.</span></span> <span data-ttu-id="59ca6-444">如果你想要部署的简单应用程序不使用 SQL Server 可能会跳过此任务。</span><span class="sxs-lookup"><span data-stu-id="59ca6-444">If you want to deploy a simple application that does not use SQL Server you might skip this task.</span></span>
 
-1. <span data-ttu-id="179b1-443">需要将用于存储应用程序数据库的 SQL 数据库服务器。</span><span class="sxs-lookup"><span data-stu-id="179b1-443">You will need a SQL Database server for storing the application database.</span></span> <span data-ttu-id="179b1-444">你可以从你的订阅在 Windows Azure 管理门户中查看 SQL 数据库服务器**Sql 数据库** | **服务器** | **服务器的仪表板**。</span><span class="sxs-lookup"><span data-stu-id="179b1-444">You can view the SQL Database servers from your subscription in the Windows Azure Management portal at **Sql Databases** | **Servers** | **Server's Dashboard**.</span></span> <span data-ttu-id="179b1-445">如果你没有创建的服务器，则可以创建一个使用**添加**命令栏上的按钮。</span><span class="sxs-lookup"><span data-stu-id="179b1-445">If you do not have a server created, you can create one using the **Add** button on the command bar.</span></span> <span data-ttu-id="179b1-446">请记下的**服务器名称和 URL、 管理员登录名和密码**，如你将在接下来的任务中使用它们。</span><span class="sxs-lookup"><span data-stu-id="179b1-446">Take note of the **server name and URL, administrator login name and password**, as you will use them in the next tasks.</span></span> <span data-ttu-id="179b1-447">不创建数据库，它将在后面的阶段中创建。</span><span class="sxs-lookup"><span data-stu-id="179b1-447">Do not create the database yet, as it will be created in a later stage.</span></span>
+1. <span data-ttu-id="59ca6-445">需要将用于存储应用程序数据库的 SQL 数据库服务器。</span><span class="sxs-lookup"><span data-stu-id="59ca6-445">You will need a SQL Database server for storing the application database.</span></span> <span data-ttu-id="59ca6-446">你可以从你的订阅在 Windows Azure 管理门户中查看 SQL 数据库服务器**Sql 数据库** | **服务器** | **服务器的仪表板**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-446">You can view the SQL Database servers from your subscription in the Windows Azure Management portal at **Sql Databases** | **Servers** | **Server's Dashboard**.</span></span> <span data-ttu-id="59ca6-447">如果你没有创建的服务器，则可以创建一个使用**添加**命令栏上的按钮。</span><span class="sxs-lookup"><span data-stu-id="59ca6-447">If you do not have a server created, you can create one using the **Add** button on the command bar.</span></span> <span data-ttu-id="59ca6-448">请记下的**服务器名称和 URL、 管理员登录名和密码**，如你将在接下来的任务中使用它们。</span><span class="sxs-lookup"><span data-stu-id="59ca6-448">Take note of the **server name and URL, administrator login name and password**, as you will use them in the next tasks.</span></span> <span data-ttu-id="59ca6-449">不创建数据库，它将在后面的阶段中创建。</span><span class="sxs-lookup"><span data-stu-id="59ca6-449">Do not create the database yet, as it will be created in a later stage.</span></span>
 
-    <span data-ttu-id="179b1-448">![SQL 数据库服务器仪表板](aspnet-mvc-4-models-and-data-access/_static/image39.png "SQL Database 服务器仪表板")</span><span class="sxs-lookup"><span data-stu-id="179b1-448">![SQL Database Server Dashboard](aspnet-mvc-4-models-and-data-access/_static/image39.png "SQL Database Server Dashboard")</span></span>
+    <span data-ttu-id="59ca6-450">![SQL 数据库服务器仪表板](aspnet-mvc-4-models-and-data-access/_static/image39.png "SQL Database 服务器仪表板")</span><span class="sxs-lookup"><span data-stu-id="59ca6-450">![SQL Database Server Dashboard](aspnet-mvc-4-models-and-data-access/_static/image39.png "SQL Database Server Dashboard")</span></span>
 
-    <span data-ttu-id="179b1-449">*SQL 数据库服务器仪表板*</span><span class="sxs-lookup"><span data-stu-id="179b1-449">*SQL Database Server Dashboard*</span></span>
-2. <span data-ttu-id="179b1-450">在下一个任务将测试从 Visual Studio 中，数据库连接，因此你需要在的服务器的列表中包括你的本地 IP 地址**允许的 IP 地址**。</span><span class="sxs-lookup"><span data-stu-id="179b1-450">In the next task you will test the database connection from Visual Studio, for that reason you need to include your local IP address in the server's list of **Allowed IP Addresses**.</span></span> <span data-ttu-id="179b1-451">若要做到这一点，请单击**配置**，选择的 IP 地址从**当前客户端 IP 地址**并将其粘贴在**起始 IP 地址**和**结束 IP 地址**文本框和单击![add-client-ip-address-ok-button](aspnet-mvc-4-models-and-data-access/_static/image40.png)按钮。</span><span class="sxs-lookup"><span data-stu-id="179b1-451">To do that, click **Configure**, select the IP address from **Current Client IP Address** and paste it on the **Start IP Address** and **End IP Address** text boxes and click the ![add-client-ip-address-ok-button](aspnet-mvc-4-models-and-data-access/_static/image40.png) button.</span></span>
+    <span data-ttu-id="59ca6-451">*SQL 数据库服务器仪表板*</span><span class="sxs-lookup"><span data-stu-id="59ca6-451">*SQL Database Server Dashboard*</span></span>
+2. <span data-ttu-id="59ca6-452">在下一个任务将测试从 Visual Studio 中，数据库连接，因此你需要在的服务器的列表中包括你的本地 IP 地址**允许的 IP 地址**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-452">In the next task you will test the database connection from Visual Studio, for that reason you need to include your local IP address in the server's list of **Allowed IP Addresses**.</span></span> <span data-ttu-id="59ca6-453">若要做到这一点，请单击**配置**，选择的 IP 地址从**当前客户端 IP 地址**并将其粘贴在**起始 IP 地址**和**结束 IP 地址**文本框和单击![add-client-ip-address-ok-button](aspnet-mvc-4-models-and-data-access/_static/image40.png)按钮。</span><span class="sxs-lookup"><span data-stu-id="59ca6-453">To do that, click **Configure**, select the IP address from **Current Client IP Address** and paste it on the **Start IP Address** and **End IP Address** text boxes and click the ![add-client-ip-address-ok-button](aspnet-mvc-4-models-and-data-access/_static/image40.png) button.</span></span>
 
     ![添加客户端 IP 地址](aspnet-mvc-4-models-and-data-access/_static/image41.png)
 
-    <span data-ttu-id="179b1-453">*添加客户端 IP 地址*</span><span class="sxs-lookup"><span data-stu-id="179b1-453">*Adding Client IP Address*</span></span>
-3. <span data-ttu-id="179b1-454">一次**客户端 IP 地址**添加到允许的 IP 地址列表中，单击**保存**以确认所做的更改。</span><span class="sxs-lookup"><span data-stu-id="179b1-454">Once the **Client IP Address** is added to the allowed IP addresses list, click on **Save** to confirm the changes.</span></span>
+    <span data-ttu-id="59ca6-455">*添加客户端 IP 地址*</span><span class="sxs-lookup"><span data-stu-id="59ca6-455">*Adding Client IP Address*</span></span>
+3. <span data-ttu-id="59ca6-456">一次**客户端 IP 地址**添加到允许的 IP 地址列表中，单击**保存**以确认所做的更改。</span><span class="sxs-lookup"><span data-stu-id="59ca6-456">Once the **Client IP Address** is added to the allowed IP addresses list, click on **Save** to confirm the changes.</span></span>
 
     ![确认做的更改](aspnet-mvc-4-models-and-data-access/_static/image42.png)
 
-    <span data-ttu-id="179b1-456">*确认做的更改*</span><span class="sxs-lookup"><span data-stu-id="179b1-456">*Confirm Changes*</span></span>
+    <span data-ttu-id="59ca6-458">*确认做的更改*</span><span class="sxs-lookup"><span data-stu-id="59ca6-458">*Confirm Changes*</span></span>
 
 <a id="ApxBTask3"></a>
 
 <a id="Task_3_-_Publishing_an_ASPNET_MVC_4_Application_using_Web_Deploy"></a>
-#### <a name="task-3---publishing-an-aspnet-mvc-4-application-using-web-deploy"></a><span data-ttu-id="179b1-457">任务 3-发布 ASP.NET MVC 4 应用程序使用 Web 部署</span><span class="sxs-lookup"><span data-stu-id="179b1-457">Task 3 - Publishing an ASP.NET MVC 4 Application using Web Deploy</span></span>
+#### <a name="task-3---publishing-an-aspnet-mvc-4-application-using-web-deploy"></a><span data-ttu-id="59ca6-459">任务 3-发布 ASP.NET MVC 4 应用程序使用 Web 部署</span><span class="sxs-lookup"><span data-stu-id="59ca6-459">Task 3 - Publishing an ASP.NET MVC 4 Application using Web Deploy</span></span>
 
-1. <span data-ttu-id="179b1-458">返回到 ASP.NET MVC 4 解决方案。</span><span class="sxs-lookup"><span data-stu-id="179b1-458">Go back to the ASP.NET MVC 4 solution.</span></span> <span data-ttu-id="179b1-459">在**解决方案资源管理器**，右键单击网站项目，然后选择**发布**。</span><span class="sxs-lookup"><span data-stu-id="179b1-459">In the **Solution Explorer**, right-click the web site project and select **Publish**.</span></span>
+1. <span data-ttu-id="59ca6-460">返回到 ASP.NET MVC 4 解决方案。</span><span class="sxs-lookup"><span data-stu-id="59ca6-460">Go back to the ASP.NET MVC 4 solution.</span></span> <span data-ttu-id="59ca6-461">在**解决方案资源管理器**，右键单击网站项目，然后选择**发布**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-461">In the **Solution Explorer**, right-click the web site project and select **Publish**.</span></span>
 
-    <span data-ttu-id="179b1-460">![发布应用程序](aspnet-mvc-4-models-and-data-access/_static/image43.png "发布应用程序")</span><span class="sxs-lookup"><span data-stu-id="179b1-460">![Publishing the Application](aspnet-mvc-4-models-and-data-access/_static/image43.png "Publishing the Application")</span></span>
+    <span data-ttu-id="59ca6-462">![发布应用程序](aspnet-mvc-4-models-and-data-access/_static/image43.png "发布应用程序")</span><span class="sxs-lookup"><span data-stu-id="59ca6-462">![Publishing the Application](aspnet-mvc-4-models-and-data-access/_static/image43.png "Publishing the Application")</span></span>
 
-    <span data-ttu-id="179b1-461">*发布此网站*</span><span class="sxs-lookup"><span data-stu-id="179b1-461">*Publishing the web site*</span></span>
-2. <span data-ttu-id="179b1-462">导入发布配置文件保存在第一个任务。</span><span class="sxs-lookup"><span data-stu-id="179b1-462">Import the publish profile you saved in the first task.</span></span>
+    <span data-ttu-id="59ca6-463">*发布此网站*</span><span class="sxs-lookup"><span data-stu-id="59ca6-463">*Publishing the web site*</span></span>
+2. <span data-ttu-id="59ca6-464">导入发布配置文件保存在第一个任务。</span><span class="sxs-lookup"><span data-stu-id="59ca6-464">Import the publish profile you saved in the first task.</span></span>
 
-    <span data-ttu-id="179b1-463">![导入发布配置文件](aspnet-mvc-4-models-and-data-access/_static/image44.png "导入发布配置文件")</span><span class="sxs-lookup"><span data-stu-id="179b1-463">![Importing the publish profile](aspnet-mvc-4-models-and-data-access/_static/image44.png "Importing the publish profile")</span></span>
+    <span data-ttu-id="59ca6-465">![导入发布配置文件](aspnet-mvc-4-models-and-data-access/_static/image44.png "导入发布配置文件")</span><span class="sxs-lookup"><span data-stu-id="59ca6-465">![Importing the publish profile](aspnet-mvc-4-models-and-data-access/_static/image44.png "Importing the publish profile")</span></span>
 
-    <span data-ttu-id="179b1-464">*导入发布配置文件*</span><span class="sxs-lookup"><span data-stu-id="179b1-464">*Importing publish profile*</span></span>
-3. <span data-ttu-id="179b1-465">单击**验证连接**。</span><span class="sxs-lookup"><span data-stu-id="179b1-465">Click **Validate Connection**.</span></span> <span data-ttu-id="179b1-466">验证完成后单击**下一步**。</span><span class="sxs-lookup"><span data-stu-id="179b1-466">Once Validation is complete click **Next**.</span></span>
+    <span data-ttu-id="59ca6-466">*导入发布配置文件*</span><span class="sxs-lookup"><span data-stu-id="59ca6-466">*Importing publish profile*</span></span>
+3. <span data-ttu-id="59ca6-467">单击**验证连接**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-467">Click **Validate Connection**.</span></span> <span data-ttu-id="59ca6-468">验证完成后单击**下一步**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-468">Once Validation is complete click **Next**.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="179b1-467">请参阅验证连接按钮旁边将显示绿色的复选标记后，验证已完成。</span><span class="sxs-lookup"><span data-stu-id="179b1-467">Validation is complete once you see a green checkmark appear next to the Validate Connection button.</span></span>
+    > <span data-ttu-id="59ca6-469">请参阅验证连接按钮旁边将显示绿色的复选标记后，验证已完成。</span><span class="sxs-lookup"><span data-stu-id="59ca6-469">Validation is complete once you see a green checkmark appear next to the Validate Connection button.</span></span>
 
-    <span data-ttu-id="179b1-468">![正在验证连接](aspnet-mvc-4-models-and-data-access/_static/image45.png "验证连接")</span><span class="sxs-lookup"><span data-stu-id="179b1-468">![Validating connection](aspnet-mvc-4-models-and-data-access/_static/image45.png "Validating connection")</span></span>
+    <span data-ttu-id="59ca6-470">![正在验证连接](aspnet-mvc-4-models-and-data-access/_static/image45.png "验证连接")</span><span class="sxs-lookup"><span data-stu-id="59ca6-470">![Validating connection](aspnet-mvc-4-models-and-data-access/_static/image45.png "Validating connection")</span></span>
 
-    <span data-ttu-id="179b1-469">*正在验证连接*</span><span class="sxs-lookup"><span data-stu-id="179b1-469">*Validating connection*</span></span>
-4. <span data-ttu-id="179b1-470">在**设置**页上，在**数据库**部分中，单击你的数据库连接的文本框旁边的按钮 (即**DefaultConnection**)。</span><span class="sxs-lookup"><span data-stu-id="179b1-470">In the **Settings** page, under the **Databases** section, click the button next to your database connection's textbox (i.e. **DefaultConnection**).</span></span>
+    <span data-ttu-id="59ca6-471">*正在验证连接*</span><span class="sxs-lookup"><span data-stu-id="59ca6-471">*Validating connection*</span></span>
+4. <span data-ttu-id="59ca6-472">在**设置**页上，在**数据库**部分中，单击你的数据库连接的文本框旁边的按钮 (即**DefaultConnection**)。</span><span class="sxs-lookup"><span data-stu-id="59ca6-472">In the **Settings** page, under the **Databases** section, click the button next to your database connection's textbox (i.e. **DefaultConnection**).</span></span>
 
-    <span data-ttu-id="179b1-471">![Web 部署配置](aspnet-mvc-4-models-and-data-access/_static/image46.png "Web 部署配置")</span><span class="sxs-lookup"><span data-stu-id="179b1-471">![Web deploy configuration](aspnet-mvc-4-models-and-data-access/_static/image46.png "Web deploy configuration")</span></span>
+    <span data-ttu-id="59ca6-473">![Web 部署配置](aspnet-mvc-4-models-and-data-access/_static/image46.png "Web 部署配置")</span><span class="sxs-lookup"><span data-stu-id="59ca6-473">![Web deploy configuration](aspnet-mvc-4-models-and-data-access/_static/image46.png "Web deploy configuration")</span></span>
 
-    <span data-ttu-id="179b1-472">*Web 部署配置*</span><span class="sxs-lookup"><span data-stu-id="179b1-472">*Web deploy configuration*</span></span>
-5. <span data-ttu-id="179b1-473">配置数据库连接，如下所示：</span><span class="sxs-lookup"><span data-stu-id="179b1-473">Configure the database connection as follows:</span></span>
+    <span data-ttu-id="59ca6-474">*Web 部署配置*</span><span class="sxs-lookup"><span data-stu-id="59ca6-474">*Web deploy configuration*</span></span>
+5. <span data-ttu-id="59ca6-475">配置数据库连接，如下所示：</span><span class="sxs-lookup"><span data-stu-id="59ca6-475">Configure the database connection as follows:</span></span>
 
-   - <span data-ttu-id="179b1-474">在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:*前缀。</span><span class="sxs-lookup"><span data-stu-id="179b1-474">In the **Server name** type your SQL Database server URL using the *tcp:* prefix.</span></span>
-   - <span data-ttu-id="179b1-475">在**用户名**键入您的服务器管理员登录名。</span><span class="sxs-lookup"><span data-stu-id="179b1-475">In **User name** type your server administrator login name.</span></span>
-   - <span data-ttu-id="179b1-476">在**密码**键入服务器管理员登录密码。</span><span class="sxs-lookup"><span data-stu-id="179b1-476">In **Password** type your server administrator login password.</span></span>
-   - <span data-ttu-id="179b1-477">键入新的数据库名称。</span><span class="sxs-lookup"><span data-stu-id="179b1-477">Type a new database name.</span></span>
+   - <span data-ttu-id="59ca6-476">在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:* 前缀。</span><span class="sxs-lookup"><span data-stu-id="59ca6-476">In the **Server name** type your SQL Database server URL using the *tcp:* prefix.</span></span>
+   - <span data-ttu-id="59ca6-477">在**用户名**键入您的服务器管理员登录名。</span><span class="sxs-lookup"><span data-stu-id="59ca6-477">In **User name** type your server administrator login name.</span></span>
+   - <span data-ttu-id="59ca6-478">在**密码**键入服务器管理员登录密码。</span><span class="sxs-lookup"><span data-stu-id="59ca6-478">In **Password** type your server administrator login password.</span></span>
+   - <span data-ttu-id="59ca6-479">键入新的数据库名称。</span><span class="sxs-lookup"><span data-stu-id="59ca6-479">Type a new database name.</span></span>
 
-     <span data-ttu-id="179b1-478">![配置目标连接字符串](aspnet-mvc-4-models-and-data-access/_static/image47.png "配置目标连接字符串")</span><span class="sxs-lookup"><span data-stu-id="179b1-478">![Configuring destination connection string](aspnet-mvc-4-models-and-data-access/_static/image47.png "Configuring destination connection string")</span></span>
+     <span data-ttu-id="59ca6-480">![配置目标连接字符串](aspnet-mvc-4-models-and-data-access/_static/image47.png "配置目标连接字符串")</span><span class="sxs-lookup"><span data-stu-id="59ca6-480">![Configuring destination connection string](aspnet-mvc-4-models-and-data-access/_static/image47.png "Configuring destination connection string")</span></span>
 
-     <span data-ttu-id="179b1-479">*配置目标连接字符串*</span><span class="sxs-lookup"><span data-stu-id="179b1-479">*Configuring destination connection string*</span></span>
-6. <span data-ttu-id="179b1-480">然后单击“确定” 。</span><span class="sxs-lookup"><span data-stu-id="179b1-480">Then click **OK**.</span></span> <span data-ttu-id="179b1-481">当系统提示创建数据库单击**是**。</span><span class="sxs-lookup"><span data-stu-id="179b1-481">When prompted to create the database click **Yes**.</span></span>
+     <span data-ttu-id="59ca6-481">*配置目标连接字符串*</span><span class="sxs-lookup"><span data-stu-id="59ca6-481">*Configuring destination connection string*</span></span>
+6. <span data-ttu-id="59ca6-482">然后单击“确定” 。</span><span class="sxs-lookup"><span data-stu-id="59ca6-482">Then click **OK**.</span></span> <span data-ttu-id="59ca6-483">当系统提示创建数据库单击**是**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-483">When prompted to create the database click **Yes**.</span></span>
 
-    <span data-ttu-id="179b1-482">![创建数据库](aspnet-mvc-4-models-and-data-access/_static/image48.png "创建数据库字符串")</span><span class="sxs-lookup"><span data-stu-id="179b1-482">![Creating the database](aspnet-mvc-4-models-and-data-access/_static/image48.png "Creating the database string")</span></span>
+    <span data-ttu-id="59ca6-484">![创建数据库](aspnet-mvc-4-models-and-data-access/_static/image48.png "创建数据库字符串")</span><span class="sxs-lookup"><span data-stu-id="59ca6-484">![Creating the database](aspnet-mvc-4-models-and-data-access/_static/image48.png "Creating the database string")</span></span>
 
-    <span data-ttu-id="179b1-483">*创建数据库*</span><span class="sxs-lookup"><span data-stu-id="179b1-483">*Creating the database*</span></span>
-7. <span data-ttu-id="179b1-484">在默认连接文本框中显示了将用于连接到 Windows Azure 中的 SQL 数据库连接字符串。</span><span class="sxs-lookup"><span data-stu-id="179b1-484">The connection string you will use to connect to SQL Database in Windows Azure is shown within Default Connection textbox.</span></span> <span data-ttu-id="179b1-485">然后，单击 **“下一步”**。</span><span class="sxs-lookup"><span data-stu-id="179b1-485">Then click **Next**.</span></span>
+    <span data-ttu-id="59ca6-485">*创建数据库*</span><span class="sxs-lookup"><span data-stu-id="59ca6-485">*Creating the database*</span></span>
+7. <span data-ttu-id="59ca6-486">在默认连接文本框中显示了将用于连接到 Windows Azure 中的 SQL 数据库连接字符串。</span><span class="sxs-lookup"><span data-stu-id="59ca6-486">The connection string you will use to connect to SQL Database in Windows Azure is shown within Default Connection textbox.</span></span> <span data-ttu-id="59ca6-487">然后，单击 **“下一步”**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-487">Then click **Next**.</span></span>
 
-    <span data-ttu-id="179b1-486">![连接字符串指向 SQL 数据库](aspnet-mvc-4-models-and-data-access/_static/image49.png "指向 SQL 数据库的连接字符串")</span><span class="sxs-lookup"><span data-stu-id="179b1-486">![Connection string pointing to SQL Database](aspnet-mvc-4-models-and-data-access/_static/image49.png "Connection string pointing to SQL Database")</span></span>
+    <span data-ttu-id="59ca6-488">![连接字符串指向 SQL 数据库](aspnet-mvc-4-models-and-data-access/_static/image49.png "指向 SQL 数据库的连接字符串")</span><span class="sxs-lookup"><span data-stu-id="59ca6-488">![Connection string pointing to SQL Database](aspnet-mvc-4-models-and-data-access/_static/image49.png "Connection string pointing to SQL Database")</span></span>
 
-    <span data-ttu-id="179b1-487">*连接字符串指向 SQL 数据库*</span><span class="sxs-lookup"><span data-stu-id="179b1-487">*Connection string pointing to SQL Database*</span></span>
-8. <span data-ttu-id="179b1-488">在**预览**页上，单击**发布**。</span><span class="sxs-lookup"><span data-stu-id="179b1-488">In the **Preview** page, click **Publish**.</span></span>
+    <span data-ttu-id="59ca6-489">*连接字符串指向 SQL 数据库*</span><span class="sxs-lookup"><span data-stu-id="59ca6-489">*Connection string pointing to SQL Database*</span></span>
+8. <span data-ttu-id="59ca6-490">在**预览**页上，单击**发布**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-490">In the **Preview** page, click **Publish**.</span></span>
 
-    <span data-ttu-id="179b1-489">![Web 应用程序发布](aspnet-mvc-4-models-and-data-access/_static/image50.png "发布 web 应用程序")</span><span class="sxs-lookup"><span data-stu-id="179b1-489">![Publishing the web application](aspnet-mvc-4-models-and-data-access/_static/image50.png "Publishing the web application")</span></span>
+    <span data-ttu-id="59ca6-491">![Web 应用程序发布](aspnet-mvc-4-models-and-data-access/_static/image50.png "发布 web 应用程序")</span><span class="sxs-lookup"><span data-stu-id="59ca6-491">![Publishing the web application](aspnet-mvc-4-models-and-data-access/_static/image50.png "Publishing the web application")</span></span>
 
-    <span data-ttu-id="179b1-490">*发布 web 应用程序*</span><span class="sxs-lookup"><span data-stu-id="179b1-490">*Publishing the web application*</span></span>
-9. <span data-ttu-id="179b1-491">完成发布过程后，默认浏览器将打开已发布的网站。</span><span class="sxs-lookup"><span data-stu-id="179b1-491">Once the publishing process finishes, your default browser will open the published web site.</span></span>
+    <span data-ttu-id="59ca6-492">*发布 web 应用程序*</span><span class="sxs-lookup"><span data-stu-id="59ca6-492">*Publishing the web application*</span></span>
+9. <span data-ttu-id="59ca6-493">完成发布过程后，默认浏览器将打开已发布的网站。</span><span class="sxs-lookup"><span data-stu-id="59ca6-493">Once the publishing process finishes, your default browser will open the published web site.</span></span>
 
 <a id="AppendixC"></a>
 
 <a id="Appendix_C_Using_Code_Snippets"></a>
-## <a name="appendix-c-using-code-snippets"></a><span data-ttu-id="179b1-492">附录 c： 使用代码段</span><span class="sxs-lookup"><span data-stu-id="179b1-492">Appendix C: Using Code Snippets</span></span>
+## <a name="appendix-c-using-code-snippets"></a><span data-ttu-id="59ca6-494">附录 c： 使用代码段</span><span class="sxs-lookup"><span data-stu-id="59ca6-494">Appendix C: Using Code Snippets</span></span>
 
-<span data-ttu-id="179b1-493">和代码片段，必须将你能够轻松获得所需的所有代码所示。</span><span class="sxs-lookup"><span data-stu-id="179b1-493">With code snippets, you have all the code you need at your fingertips.</span></span> <span data-ttu-id="179b1-494">实验室文档将告诉您完全时你可以使用它们，如下图中所示。</span><span class="sxs-lookup"><span data-stu-id="179b1-494">The lab document will tell you exactly when you can use them, as shown in the following figure.</span></span>
+<span data-ttu-id="59ca6-495">和代码片段，必须将你能够轻松获得所需的所有代码所示。</span><span class="sxs-lookup"><span data-stu-id="59ca6-495">With code snippets, you have all the code you need at your fingertips.</span></span> <span data-ttu-id="59ca6-496">实验室文档将告诉您完全时你可以使用它们，如下图中所示。</span><span class="sxs-lookup"><span data-stu-id="59ca6-496">The lab document will tell you exactly when you can use them, as shown in the following figure.</span></span>
 
-<span data-ttu-id="179b1-495">![使用 Visual Studio 代码段将代码插入到你的项目](aspnet-mvc-4-models-and-data-access/_static/image51.png "使用 Visual Studio 代码片段，可将代码插入到你的项目")</span><span class="sxs-lookup"><span data-stu-id="179b1-495">![Using Visual Studio code snippets to insert code into your project](aspnet-mvc-4-models-and-data-access/_static/image51.png "Using Visual Studio code snippets to insert code into your project")</span></span>
+<span data-ttu-id="59ca6-497">![使用 Visual Studio 代码段将代码插入到你的项目](aspnet-mvc-4-models-and-data-access/_static/image51.png "使用 Visual Studio 代码片段，可将代码插入到你的项目")</span><span class="sxs-lookup"><span data-stu-id="59ca6-497">![Using Visual Studio code snippets to insert code into your project](aspnet-mvc-4-models-and-data-access/_static/image51.png "Using Visual Studio code snippets to insert code into your project")</span></span>
 
-<span data-ttu-id="179b1-496">*使用 Visual Studio 代码段将代码插入到你的项目*</span><span class="sxs-lookup"><span data-stu-id="179b1-496">*Using Visual Studio code snippets to insert code into your project*</span></span>
+<span data-ttu-id="59ca6-498">*使用 Visual Studio 代码段将代码插入到你的项目*</span><span class="sxs-lookup"><span data-stu-id="59ca6-498">*Using Visual Studio code snippets to insert code into your project*</span></span>
 
-<span data-ttu-id="179b1-497">***若要添加代码片段使用键盘 (仅限 C#)***</span><span class="sxs-lookup"><span data-stu-id="179b1-497">***To add a code snippet using the keyboard (C# only)***</span></span>
+<span data-ttu-id="59ca6-499">***若要添加代码片段使用键盘 (仅限 C#)***</span><span class="sxs-lookup"><span data-stu-id="59ca6-499">***To add a code snippet using the keyboard (C# only)***</span></span>
 
-1. <span data-ttu-id="179b1-498">将光标置于想要插入代码。</span><span class="sxs-lookup"><span data-stu-id="179b1-498">Place the cursor where you would like to insert the code.</span></span>
-2. <span data-ttu-id="179b1-499">开始键入代码段名称 （不带空格或连字符）。</span><span class="sxs-lookup"><span data-stu-id="179b1-499">Start typing the snippet name (without spaces or hyphens).</span></span>
-3. <span data-ttu-id="179b1-500">观看作为 IntelliSense 显示匹配的代码段的名称。</span><span class="sxs-lookup"><span data-stu-id="179b1-500">Watch as IntelliSense displays matching snippets' names.</span></span>
-4. <span data-ttu-id="179b1-501">选择正确的代码段 （或继续键入直到选中整个代码段的名称）。</span><span class="sxs-lookup"><span data-stu-id="179b1-501">Select the correct snippet (or keep typing until the entire snippet's name is selected).</span></span>
-5. <span data-ttu-id="179b1-502">按 Tab 键两次以光标位置处插入代码段。</span><span class="sxs-lookup"><span data-stu-id="179b1-502">Press the Tab key twice to insert the snippet at the cursor location.</span></span>
+1. <span data-ttu-id="59ca6-500">将光标置于想要插入代码。</span><span class="sxs-lookup"><span data-stu-id="59ca6-500">Place the cursor where you would like to insert the code.</span></span>
+2. <span data-ttu-id="59ca6-501">开始键入代码段名称 （不带空格或连字符）。</span><span class="sxs-lookup"><span data-stu-id="59ca6-501">Start typing the snippet name (without spaces or hyphens).</span></span>
+3. <span data-ttu-id="59ca6-502">观看作为 IntelliSense 显示匹配的代码段的名称。</span><span class="sxs-lookup"><span data-stu-id="59ca6-502">Watch as IntelliSense displays matching snippets' names.</span></span>
+4. <span data-ttu-id="59ca6-503">选择正确的代码段 （或继续键入直到选中整个代码段的名称）。</span><span class="sxs-lookup"><span data-stu-id="59ca6-503">Select the correct snippet (or keep typing until the entire snippet's name is selected).</span></span>
+5. <span data-ttu-id="59ca6-504">按 Tab 键两次以光标位置处插入代码段。</span><span class="sxs-lookup"><span data-stu-id="59ca6-504">Press the Tab key twice to insert the snippet at the cursor location.</span></span>
 
-<span data-ttu-id="179b1-503">![开始键入代码段名称](aspnet-mvc-4-models-and-data-access/_static/image52.png "开始键入代码段名称")</span><span class="sxs-lookup"><span data-stu-id="179b1-503">![Start typing the snippet name](aspnet-mvc-4-models-and-data-access/_static/image52.png "Start typing the snippet name")</span></span>
+<span data-ttu-id="59ca6-505">![开始键入代码段名称](aspnet-mvc-4-models-and-data-access/_static/image52.png "开始键入代码段名称")</span><span class="sxs-lookup"><span data-stu-id="59ca6-505">![Start typing the snippet name](aspnet-mvc-4-models-and-data-access/_static/image52.png "Start typing the snippet name")</span></span>
 
-<span data-ttu-id="179b1-504">*开始键入代码段名称*</span><span class="sxs-lookup"><span data-stu-id="179b1-504">*Start typing the snippet name*</span></span>
+<span data-ttu-id="59ca6-506">*开始键入代码段名称*</span><span class="sxs-lookup"><span data-stu-id="59ca6-506">*Start typing the snippet name*</span></span>
 
-<span data-ttu-id="179b1-505">![按 Tab 以选择突出显示代码段](aspnet-mvc-4-models-and-data-access/_static/image53.png "按选项卡以选择突出显示代码段")</span><span class="sxs-lookup"><span data-stu-id="179b1-505">![Press Tab to select the highlighted snippet](aspnet-mvc-4-models-and-data-access/_static/image53.png "Press Tab to select the highlighted snippet")</span></span>
+<span data-ttu-id="59ca6-507">![按 Tab 以选择突出显示代码段](aspnet-mvc-4-models-and-data-access/_static/image53.png "按选项卡以选择突出显示代码段")</span><span class="sxs-lookup"><span data-stu-id="59ca6-507">![Press Tab to select the highlighted snippet](aspnet-mvc-4-models-and-data-access/_static/image53.png "Press Tab to select the highlighted snippet")</span></span>
 
-<span data-ttu-id="179b1-506">*按 Tab 以选择突出显示代码段*</span><span class="sxs-lookup"><span data-stu-id="179b1-506">*Press Tab to select the highlighted snippet*</span></span>
+<span data-ttu-id="59ca6-508">*按 Tab 以选择突出显示代码段*</span><span class="sxs-lookup"><span data-stu-id="59ca6-508">*Press Tab to select the highlighted snippet*</span></span>
 
-<span data-ttu-id="179b1-507">![再次按 Tab 和代码段将会扩展](aspnet-mvc-4-models-and-data-access/_static/image54.png "再次按 Tab 和代码段将会扩展")</span><span class="sxs-lookup"><span data-stu-id="179b1-507">![Press Tab again and the snippet will expand](aspnet-mvc-4-models-and-data-access/_static/image54.png "Press Tab again and the snippet will expand")</span></span>
+<span data-ttu-id="59ca6-509">![再次按 Tab 和代码段将会扩展](aspnet-mvc-4-models-and-data-access/_static/image54.png "再次按 Tab 和代码段将会扩展")</span><span class="sxs-lookup"><span data-stu-id="59ca6-509">![Press Tab again and the snippet will expand](aspnet-mvc-4-models-and-data-access/_static/image54.png "Press Tab again and the snippet will expand")</span></span>
 
-<span data-ttu-id="179b1-508">*再次按 Tab 和代码段将会扩展*</span><span class="sxs-lookup"><span data-stu-id="179b1-508">*Press Tab again and the snippet will expand*</span></span>
+<span data-ttu-id="59ca6-510">*再次按 Tab 和代码段将会扩展*</span><span class="sxs-lookup"><span data-stu-id="59ca6-510">*Press Tab again and the snippet will expand*</span></span>
 
-<span data-ttu-id="179b1-509">***若要添加代码片段使用鼠标 （C#、 Visual Basic 和 XML）*** 1。</span><span class="sxs-lookup"><span data-stu-id="179b1-509">***To add a code snippet using the mouse (C#, Visual Basic and XML)*** 1.</span></span> <span data-ttu-id="179b1-510">右键单击你想要插入代码段。</span><span class="sxs-lookup"><span data-stu-id="179b1-510">Right-click where you want to insert the code snippet.</span></span>
+<span data-ttu-id="59ca6-511">***若要添加代码片段使用鼠标 （C#、 Visual Basic 和 XML）*** 1。</span><span class="sxs-lookup"><span data-stu-id="59ca6-511">***To add a code snippet using the mouse (C#, Visual Basic and XML)*** 1.</span></span> <span data-ttu-id="59ca6-512">右键单击你想要插入代码段。</span><span class="sxs-lookup"><span data-stu-id="59ca6-512">Right-click where you want to insert the code snippet.</span></span>
 
-1. <span data-ttu-id="179b1-511">选择**插入代码段**跟**我的代码段**。</span><span class="sxs-lookup"><span data-stu-id="179b1-511">Select **Insert Snippet** followed by **My Code Snippets**.</span></span>
-2. <span data-ttu-id="179b1-512">选择相关的代码段从列表中，通过单击它。</span><span class="sxs-lookup"><span data-stu-id="179b1-512">Pick the relevant snippet from the list, by clicking on it.</span></span>
+1. <span data-ttu-id="59ca6-513">选择**插入代码段**跟**我的代码段**。</span><span class="sxs-lookup"><span data-stu-id="59ca6-513">Select **Insert Snippet** followed by **My Code Snippets**.</span></span>
+2. <span data-ttu-id="59ca6-514">选择相关的代码段从列表中，通过单击它。</span><span class="sxs-lookup"><span data-stu-id="59ca6-514">Pick the relevant snippet from the list, by clicking on it.</span></span>
 
-<span data-ttu-id="179b1-513">![右键单击你想要插入代码段，并选择插入代码段](aspnet-mvc-4-models-and-data-access/_static/image55.png "右键单击你想要插入代码段，并选择插入代码段")</span><span class="sxs-lookup"><span data-stu-id="179b1-513">![Right-click where you want to insert the code snippet and select Insert Snippet](aspnet-mvc-4-models-and-data-access/_static/image55.png "Right-click where you want to insert the code snippet and select Insert Snippet")</span></span>
+<span data-ttu-id="59ca6-515">![右键单击你想要插入代码段，并选择插入代码段](aspnet-mvc-4-models-and-data-access/_static/image55.png "右键单击你想要插入代码段，并选择插入代码段")</span><span class="sxs-lookup"><span data-stu-id="59ca6-515">![Right-click where you want to insert the code snippet and select Insert Snippet](aspnet-mvc-4-models-and-data-access/_static/image55.png "Right-click where you want to insert the code snippet and select Insert Snippet")</span></span>
 
-<span data-ttu-id="179b1-514">*右键单击你想要插入代码段，并选择插入代码段*</span><span class="sxs-lookup"><span data-stu-id="179b1-514">*Right-click where you want to insert the code snippet and select Insert Snippet*</span></span>
+<span data-ttu-id="59ca6-516">*右键单击你想要插入代码段，并选择插入代码段*</span><span class="sxs-lookup"><span data-stu-id="59ca6-516">*Right-click where you want to insert the code snippet and select Insert Snippet*</span></span>
 
-<span data-ttu-id="179b1-515">![通过单击它选取列表中中的相关代码片段](aspnet-mvc-4-models-and-data-access/_static/image56.png "选取相关的代码段从列表中，通过单击它")</span><span class="sxs-lookup"><span data-stu-id="179b1-515">![Pick the relevant snippet from the list, by clicking on it](aspnet-mvc-4-models-and-data-access/_static/image56.png "Pick the relevant snippet from the list, by clicking on it")</span></span>
+<span data-ttu-id="59ca6-517">![通过单击它选取列表中中的相关代码片段](aspnet-mvc-4-models-and-data-access/_static/image56.png "选取相关的代码段从列表中，通过单击它")</span><span class="sxs-lookup"><span data-stu-id="59ca6-517">![Pick the relevant snippet from the list, by clicking on it](aspnet-mvc-4-models-and-data-access/_static/image56.png "Pick the relevant snippet from the list, by clicking on it")</span></span>
 
-<span data-ttu-id="179b1-516">*通过单击它选取从列表中，相关代码段*</span><span class="sxs-lookup"><span data-stu-id="179b1-516">*Pick the relevant snippet from the list, by clicking on it*</span></span>
+<span data-ttu-id="59ca6-518">*通过单击它选取从列表中，相关代码段*</span><span class="sxs-lookup"><span data-stu-id="59ca6-518">*Pick the relevant snippet from the list, by clicking on it*</span></span>

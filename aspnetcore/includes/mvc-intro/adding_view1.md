@@ -1,13 +1,13 @@
-# <a name="adding-a-view-to-an-aspnet-core-mvc-app"></a>将视图添加到 ASP.NET Core MVC 应用
+# <a name="adding-a-view-to-an-aspnet-core-mvc-app"></a><span data-ttu-id="891c5-101">将视图添加到 ASP.NET Core MVC 应用</span><span class="sxs-lookup"><span data-stu-id="891c5-101">Adding a view to an ASP.NET Core MVC app</span></span>
 
-作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
+<span data-ttu-id="891c5-102">作者：[Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="891c5-102">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-在本部分中，将修改 `HelloWorldController` 类，进而使用 Razor 视图模板文件来顺利封装为客户端生成 HTML 响应的过程。
+<span data-ttu-id="891c5-103">在本部分中，将修改 `HelloWorldController` 类，进而使用 Razor 视图模板文件来顺利封装为客户端生成 HTML 响应的过程。</span><span class="sxs-lookup"><span data-stu-id="891c5-103">In this section you modify the `HelloWorldController` class to use Razor view template files to cleanly encapsulate the process of generating HTML responses to a client.</span></span>
 
-使用 Razor 创建视图模板文件。 基于 Razor 的模板具有“.cshtml”文件扩展名。 它们提供了一种巧妙的方法来使用 C# 创建 HTML 输出。
+<span data-ttu-id="891c5-104">使用 Razor 创建视图模板文件。</span><span class="sxs-lookup"><span data-stu-id="891c5-104">You create a view template file using Razor.</span></span> <span data-ttu-id="891c5-105">基于 Razor 的模板具有“.cshtml”文件扩展名。</span><span class="sxs-lookup"><span data-stu-id="891c5-105">Razor-based view templates have a *.cshtml* file extension.</span></span> <span data-ttu-id="891c5-106">它们提供了一种巧妙的方法来使用 C# 创建 HTML 输出。</span><span class="sxs-lookup"><span data-stu-id="891c5-106">They provide an elegant way to create HTML output using C#.</span></span>
 
-当前，`Index` 方法返回带有在控制器类中硬编码的消息的字符串。 在 `HelloWorldController` 类中，将 `Index` 方法替换为以下代码：
+<span data-ttu-id="891c5-107">当前，`Index` 方法返回带有在控制器类中硬编码的消息的字符串。</span><span class="sxs-lookup"><span data-stu-id="891c5-107">Currently the `Index` method returns a string with a message that's hard-coded in the controller class.</span></span> <span data-ttu-id="891c5-108">在 `HelloWorldController` 类中，将 `Index` 方法替换为以下代码：</span><span class="sxs-lookup"><span data-stu-id="891c5-108">In the `HelloWorldController` class, replace the `Index` method with the following code:</span></span>
 
 [!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_4)]
 
-上述代码返回 `View` 对象。 它使用视图模板对浏览器生成 HTML 响应。 类似上述 `Index` 方法的控制器方法（也称为操作方法）通常返回 [IActionResult](/dotnet/api/microsoft.aspnetcore.mvc.iactionresult)（或派生自 `ActionResult` 的类），而非类似字符串的类型。
+<span data-ttu-id="891c5-109">上述代码返回 `View` 对象。</span><span class="sxs-lookup"><span data-stu-id="891c5-109">The preceding code returns a `View` object.</span></span> <span data-ttu-id="891c5-110">它使用视图模板对浏览器生成 HTML 响应。</span><span class="sxs-lookup"><span data-stu-id="891c5-110">It uses a view template to generate an HTML response to the browser.</span></span> <span data-ttu-id="891c5-111">类似上述 `Index` 方法的控制器方法（也称为操作方法）通常返回 [IActionResult](/dotnet/api/microsoft.aspnetcore.mvc.iactionresult)（或派生自 `ActionResult` 的类），而非类似字符串的类型。</span><span class="sxs-lookup"><span data-stu-id="891c5-111">Controller methods (also known as action methods) such as the `Index` method above, generally return an [IActionResult](/dotnet/api/microsoft.aspnetcore.mvc.iactionresult) (or a class derived from `ActionResult`), not a type like string.</span></span>
