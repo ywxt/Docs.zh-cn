@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: e3956bedbc243578f6dfdc09f5f043327de7c66b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b4e48f40c3d4e3167e7fdb3534d2c33b3544592c
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="use-the-angular-project-template-with-aspnet-core"></a>使用 ASP.NET Core 角度项目模板
 
@@ -39,12 +39,14 @@ cd my-new-app
 
 从 Visual Studio 或.NET Core CLI 运行应用程序：
 
-#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
-打开生成*.csproj*文件中，并从那里运行正常的应用程序。
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+
+打开生成 *.csproj*文件中，并从那里运行正常的应用程序。
 
 生成过程还原首次运行，可能需要几分钟的 npm 依赖关系。 后续的生成处于快得多。
 
-#### <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli/)
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli/)
+
 确保你具有调用的环境变量`ASPNETCORE_Environment`值为`Development`。 在 Windows 上 （在非 PowerShell 提示），运行`SET ASPNETCORE_Environment=Development`。 在 Linux 或 macOS 上，运行`export ASPNETCORE_Environment=Development`。
 
 运行[dotnet 生成](/dotnet/core/tools/dotnet-build)以验证该应用程序正确生成。 首次在运行，生成过程还原 npm 依赖关系，可能需要几分钟。 后续的生成处于快得多。
@@ -57,9 +59,10 @@ Now listening on: http://localhost:<port>
 
 导航到此 URL 在浏览器。
 
-应用程序启动的后台中的角度 CLI 服务器实例。 记录类似于以下消息： <em>NG Live 开发服务器正在侦听 localhost:&lt;otherport&gt;，打开你的浏览器在http://localhost: &lt;otherport&gt; /</em>. 忽略此消息&mdash;它具有<strong>不</strong>组合 ASP.NET Core 和角速度 CLI 应用的 URL。
+应用程序启动的后台中的角度 CLI 服务器实例。 记录类似于以下消息： <em>NG Live 开发服务器正在侦听 localhost:&lt;otherport&gt;，打开你的浏览器在http://localhost:&lt; otherport&gt; /</em> . 忽略此消息&mdash;它具有<strong>不</strong>组合 ASP.NET Core 和角速度 CLI 应用的 URL。
 
-* * *
+---
+
 项目模板创建 ASP.NET Core 应用和角速度应用。 ASP.NET Core 应用旨在用于数据访问、 授权和其他服务器端问题。 角度的应用程序，驻留在*ClientApp*子目录，旨在用于所有 UI 问题。
 
 ## <a name="add-pages-images-styles-modules-etc"></a>添加页面、 映像，样式、 模块、 等。
@@ -152,13 +155,13 @@ npm install --save <package_name>
 
 此模块继承自客户端`app.module`并定义哪些额外角度模块 SSR 中均可用。
 
-回想一下，新`ssr`中的条目*.angular cli.json*引用一个入口点文件称为*main.server.ts*。 你尚未尚未添加该文件中，并现在是时候，若要这样做。 创建一个新文件*ClientApp/src/main.server.ts* (与现有一起*main.ts*)，包含以下：
+回想一下，新`ssr`中的条目 *.angular cli.json*引用一个入口点文件称为*main.server.ts*。 你尚未尚未添加该文件中，并现在是时候，若要这样做。 创建一个新文件*ClientApp/src/main.server.ts* (与现有一起*main.ts*)，包含以下：
 
 [!code-typescript[](sample/AngularServerSideRendering/ClientApp/src/main.server.ts)]
 
 此文件的代码是什么 ASP.NET Core 执行每个请求运行时`UseSpaPrerendering`添加到的中间件*启动*类。 处理接收`params`从.NET 代码 （如所请求的 URL) 以及角度 SSR Api 调用以获取生成的 HTML。 
 
-严格来讲，这不足以在开发模式下启用 SSR。 若要使一个最终的更改，以便你的应用程序能否正常工作时发布至关重要。 在您的应用程序的 main 中*.csproj*文件中，将`BuildServerSideRenderer`属性值设置为`true`:
+严格来讲，这不足以在开发模式下启用 SSR。 若要使一个最终的更改，以便你的应用程序能否正常工作时发布至关重要。 在您的应用程序的 main 中 *.csproj*文件中，将`BuildServerSideRenderer`属性值设置为`true`:
 
 [!code-xml[](sample/AngularServerSideRendering/AngularServerSideRendering.csproj?name=snippet_EnableBuildServerSideRenderer)]
 

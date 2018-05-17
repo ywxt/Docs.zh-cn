@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity
-ms.openlocfilehash: cf63766dc4ae94d784190d6dbc7b5beb57342f42
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 4eebda171f02c46ff831adf2798a025cd094051d
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>在 ASP.NET Core 上的标识简介
 
@@ -59,7 +59,8 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 
    标识服务添加到中的应用程序`ConfigureServices`中的方法`Startup`类：
 
-   #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-42)]
 
    这些服务都提供给应用程序通过[依赖关系注入](xref:fundamentals/dependency-injection)。
@@ -68,7 +69,8 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 
    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
 
-   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,13-33)]
 
    这些服务都提供给应用程序通过[依赖关系注入](xref:fundamentals/dependency-injection)。
@@ -77,7 +79,8 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
 
-   * * *
+   ---
+
    有关进程的应用程序启动的详细信息，请参阅[应用程序启动](xref:fundamentals/startup)。
 
 3. 创建一个用户。
@@ -101,7 +104,7 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 
    如果已成功创建用户，用户记录通过调用`_signInManager.SignInAsync`。
 
-   **注意：**请参阅[帐户确认](xref:security/authentication/accconfirm#prevent-login-at-registration)有关步骤，以防止在注册的即时登录名。
+   **注意：** 请参阅[帐户确认](xref:security/authentication/accconfirm#prevent-login-at-registration)有关步骤，以防止在注册的即时登录名。
 
 4. 登录。
 
@@ -126,13 +129,16 @@ ASP.NET 核心标识是允许你向你的应用程序添加登录功能的成员
 
    标识具有一些可以在应用程序的 startup 类中重写的默认行为。 `IdentityOptions` 无需使用的默认行为时配置。 下面的代码设置多个密码强度选项：
 
-   #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-42)]
 
-   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=13-33)]
 
-   * * *
+   ---
+
    有关如何配置标识的详细信息，请参阅[配置标识](xref:security/authentication/identity-configuration)。
 
    你还可以配置的数据类型的主键，请参阅[配置标识主键数据类型](xref:security/authentication/identity-primary-key-configuration)。

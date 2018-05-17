@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 0a04f5762a35426f342b58b8b60288c66c057ae7
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
-ms.translationtype: MT
+ms.openlocfilehash: a268fd76a303dc1185b451e4f678fc2fe761e80a
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>安全存储中 ASP.NET Core 中开发的应用程序机密
 
@@ -41,7 +41,8 @@ ms.lasthandoff: 05/03/2018
 
 ## <a name="installing-the-secret-manager-tool"></a>安装机密管理器工具
 
-#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+
 右键单击解决方案资源管理器中的项目并选择**编辑\<文件的内容\>.csproj**从上下文菜单。 添加到突出显示的行将 *.csproj*文件中，并保存以还原相关联的 NuGet 程序包：
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
@@ -58,7 +59,8 @@ ms.lasthandoff: 05/03/2018
 }
 ```
 
-#### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+
 添加`Microsoft.Extensions.SecretManager.Tools`到 *.csproj*文件，运行[dotnet 还原](/dotnet/core/tools/dotnet-restore)。 可以使用相同的步骤来安装命令行使用该密钥管理器工具。
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
@@ -94,7 +96,8 @@ dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\w
 
 你可以使用密钥管理器工具能够列出、 删除和清除应用程序密钥。
 
-* * *
+---
+
 ## <a name="accessing-user-secrets-via-configuration"></a>访问通过配置的用户机密
 
 可以通过配置系统访问机密 Manager 机密。 添加`Microsoft.Extensions.Configuration.UserSecrets`打包和运行[dotnet 还原](/dotnet/core/tools/dotnet-restore)。

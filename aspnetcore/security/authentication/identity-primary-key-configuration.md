@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-primary-key-configuration
-ms.openlocfilehash: ce654492dc7bab6c031c9f82555f877f642171ce
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 49d5ef94abeb5bd616c5ddbcdd4358a58a8e63a4
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="configure-identity-primary-key-data-type-in-aspnet-core"></a>在 ASP.NET 核心中配置标识主键数据类型
 
@@ -35,17 +35,20 @@ ASP.NET 核心标识可以配置用于表示为主键的数据类型。 标识�
 
 4. 在应用程序的启动类添加身份验证服务时，请注册自定义数据库上下文类。
 
-   #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
-    `AddEntityFrameworkStores`方法不接受`TKey`自变量，因为它未在 ASP.NET Core 1.x。 主键的数据类型推断通过分析`DbContext`对象。
+   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 
-    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=6-8&range=25-37)]
+   `AddEntityFrameworkStores`方法不接受`TKey`自变量，因为它未在 ASP.NET Core 1.x。 主键的数据类型推断通过分析`DbContext`对象。
 
-   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
-    `AddEntityFrameworkStores`方法接受`TKey`，该值指示主键的数据类型的自变量。
+   [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=6-8&range=25-37)]
 
-    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=9-11&range=39-55)]
+   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 
-   * * *
+   `AddEntityFrameworkStores`方法接受`TKey`，该值指示主键的数据类型的自变量。
+
+   [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=9-11&range=39-55)]
+
+   ---
+
 ## <a name="test-the-changes"></a>测试更改
 
 在完成配置更改，表示为主键的属性将反映新的数据类型。 下面的示例演示如何访问一个 MVC 控制器中的属性。

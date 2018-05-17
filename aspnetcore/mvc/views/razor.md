@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/razor
-ms.openlocfilehash: 9c96ea34071bf3009f1ec53ed9af9206439aa229
-ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
+ms.openlocfilehash: 224c855b355b8ecde36377bba6966edec251af6a
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="razor-syntax-reference-for-aspnet-core"></a>ASP.NET Core 的 Razor 语法参考
 
@@ -545,6 +545,7 @@ Razor 公开了 `Model` 属性，用于访问传递到视图的模型：
 ### <a name="razor-keywords"></a>Razor 关键字
 
 * page（需要 ASP.NET Core 2.0 及更高版本）
+* namespace
 * functions
 * inherits
 * model
@@ -574,7 +575,6 @@ C# Razor 关键字必须使用 `@(@C# Razor Keyword)` 进行双转义（例如�
 
 ### <a name="reserved-keywords-not-used-by-razor"></a>Razor 不使用的保留关键字
 
-* namespace
 * 类
 
 ## <a name="viewing-the-razor-c-class-generated-for-a-view"></a>查看为视图生成的 Razor C# 类

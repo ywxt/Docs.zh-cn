@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/logging/index
-ms.openlocfilehash: 78dcee05799965c72f878662df61034018a23021
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 7e2a4657211b0142ec87fd792d013f7ef397de2b
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core 中的日志记录
 
@@ -47,7 +47,8 @@ ASP.NET Core 不提供异步记录器方法，因为日志记录的速度应非�
 
 ## <a name="how-to-add-providers"></a>如何添加提供程序
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 日志记录提供程序通过 `ILogger` 对象获取所创建的消息，并显示或存储它们。 例如，控制台提供程序在控制台上显示消息，Azure App Service 提供程序可将消息存储在 Azure blob 存储中。
 
 要使用提供程序，请在 Program.cs 中调用提供程序的 `Add<ProviderName>` 扩展方法：
@@ -58,7 +59,8 @@ ASP.NET Core 不提供异步记录器方法，因为日志记录的速度应非�
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_TemplateCode&highlight=7)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 日志记录提供程序通过 `ILogger` 对象获取所创建的消息，并显示或存储它们。 例如，控制台提供程序在控制台上显示消息，Azure App Service 提供程序可将消息存储在 Azure blob 存储中。
 
 要使用提供程序，请安装其 NuGet 包，并在 `ILoggerFactory` 的实例上调用提供程序的扩展方法，如下方示例所示。
@@ -70,7 +72,8 @@ ASP.NET Core [依赖关系注入](xref:fundamentals/dependency-injection) (DI) �
 > [!NOTE]
 > 本文的示例应用程序将在 `Startup` 类的 `Configure` 方法中添加日志记录提供程序。 要从先前执行的代码获取日志输出，请改为在 `Startup` 类构造函数中添加日志记录提供程序。 
 
-* * *
+---
+
 本文稍后部分介绍了每个[内置日志记录提供程序](#built-in-logging-providers)，并提供了[第三方日志记录提供程序](#third-party-logging-providers)的链接。
 
 ## <a name="sample-logging-output"></a>日志记录输出示例
@@ -263,7 +266,8 @@ System.Exception: Item not found exception.
 
 ## <a name="log-filtering"></a>日志筛选
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 可为特定或所有提供程序和类别指定最低日志级别。 最低级别以下的日志不会传递给该提供程序，因此不会显示或存储它们。 
 
 要禁止显示所有日志，可将 `LogLevel.None` 指定为最低日志级别。 `LogLevel.None` 的整数值为 6，它大于 `LogLevel.Critical` (5)。
@@ -344,7 +348,8 @@ System.Exception: Item not found exception.
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_FilterFunction&highlight=5-13)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 通过某些日志记录提供程序，可根据日志级别和类别指定何时向存储介质写入日志、何时忽略日志。
 
 `AddConsole` 和 `AddDebug` 扩展方法提供允许传入筛选条件的重载。 下列示例代码将使控制台提供程序忽略低于 `Warning` 级别的日志，而使调试提供程序忽略由框架创建的日志。
@@ -361,7 +366,8 @@ System.Exception: Item not found exception.
 
 `WithFilter` 扩展方法由 [Microsoft.Extensions.Logging.Filter](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Filter) NuGet 包提供。 该方法返回一个新的 `ILoggerFactory` 实例，该实例将筛选传递给注册的所有记录器提供程序的日志消息。 它不会影响其他任何 `ILoggerFactory` 实例，包括原始 `ILoggerFactory` 实例。
 
-* * *
+---
+
 ## <a name="log-scopes"></a>日志作用域
 
 可以将逻辑操作集划入范围，从而将相同的数据附加到在此集中创建的每个日志。 例如，可让处理事务时创建的每个日志都包含事务 ID。
@@ -372,7 +378,8 @@ System.Exception: Item not found exception.
 
 下列代码为控制台提供程序启用作用域：
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 在 Program.cs 中：
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_Scopes&highlight=4)]
@@ -380,12 +387,14 @@ System.Exception: Item not found exception.
 > [!NOTE]
 > 要启用基于作用域的日志记录，必须先配置 `IncludeScopes` 控制台记录器选项。 ASP.NET Core 2.1 发布后，将支持使用 appsettings 配置文件来配置 `IncludeScopes`。
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 在 Startup.cs 中：
 
 [!code-csharp[](index/sample/Startup.cs?name=snippet_Scopes&highlight=6)]
 
-* * *
+---
+
 每条日志消息都包含作用域内的信息：
 
 ```
@@ -413,12 +422,14 @@ ASP.NET Core 提供以下提供程序：
 
 [Microsoft.Extensions.Logging.Console](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console) 提供程序包向控制台发送日志输出。 
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 ```csharp
 logging.AddConsole()
 ```
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 ```csharp
 loggerFactory.AddConsole()
 ```
@@ -439,7 +450,8 @@ loggerFactory.AddConsole(Configuration.GetSection("Logging"));
 
 所显示的设置将框架日志限制为警告，并允许在调试级别记录应用日志，如[日志筛选](#log-filtering)部分所述。 有关详细信息，请参阅[配置](xref:fundamentals/configuration/index)。
 
-* * *
+---
+
 <a id="debug"></a>
 ### <a name="the-debug-provider"></a>调试提供程序
 

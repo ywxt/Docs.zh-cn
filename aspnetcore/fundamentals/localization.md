@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/localization
-ms.openlocfilehash: b81926f81fdfb832ff6ae3bd65c00fa09412fec4
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 929c73c314a15e7003853d3996158d1328e597cb
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core 全球化和本地化
 
@@ -141,14 +141,6 @@ ASP.NET Core 允许指定两个区域性值，`SupportedCultures` 和 `Supported
     Visual Studio 将显示 Welcome.es.resx 文件。
 
     ![显示 Welcome Spanish (es) 资源文件的解决方案资源管理器](localization/_static/se.png)
-
-<a name="error"></a>
-
-如果使用 Visual Studio 2017 预览版 15.3，资源编辑器中将显示错误指示器。 从“自定义工具”属性网格中删除 ResXFileCodeGenerator 值，以避免此错误消息：
-
-![Resx 编辑器](localization/_static/err.png)
-
-或者，你可以忽略此错误。 我们计划在下一版本中修复此问题。
 
 ## <a name="resource-file-naming"></a>资源文件命名
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/twitter-logins
-ms.openlocfilehash: e0bf0084f8e46f3774fa070602404840aa803661
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: f6b03c01ae0da1cc8fb3bc2e0546c0d9752ddf75
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="twitter-external-login-setup-with-aspnet-core"></a>Twitter 外部登录名与 ASP.NET 核心的安装程序
 
@@ -56,7 +56,8 @@ ms.lasthandoff: 05/03/2018
 
    `dotnet add package Microsoft.AspNetCore.Authentication.Twitter`
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 添加中的 Twitter 服务`ConfigureServices`中的方法*Startup.cs*文件：
 
 ```csharp
@@ -73,7 +74,8 @@ services.AddAuthentication().AddTwitter(twitterOptions =>
 
 [!INCLUDE [default settings configuration](includes/default-settings.md)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 添加在 Twitter 中间件`Configure`中的方法*Startup.cs*文件：
 
 ```csharp
@@ -84,7 +86,8 @@ app.UseTwitterAuthentication(new TwitterOptions()
 });
 ```
 
-* * *
+---
+
 请参阅[TwitterOptions](/dotnet/api/microsoft.aspnetcore.builder.twitteroptions) Twitter 身份验证支持的配置选项的详细信息的 API 参考。 这可以用于请求有关用户的不同信息。
 
 ## <a name="sign-in-with-twitter"></a>使用 Twitter 登录
@@ -105,7 +108,7 @@ app.UseTwitterAuthentication(new TwitterOptions()
 
 ## <a name="troubleshooting"></a>疑难解答
 
-* **ASP.NET 核心 2.x 仅：**如果标识未通过调用配置`services.AddIdentity`中`ConfigureServices`，尝试进行身份验证将导致*ArgumentException： 必须提供 SignInScheme 选项*。 在本教程使用的项目模板可确保，这完成的。
+* **ASP.NET 核心 2.x 仅：** 如果标识未通过调用配置`services.AddIdentity`中`ConfigureServices`，尝试进行身份验证将导致*ArgumentException： 必须提供 SignInScheme 选项*。 在本教程使用的项目模板可确保，这完成的。
 * 如果尚未通过应用初始迁移创建站点数据库，则会出现*处理请求时，数据库操作失败*错误。 点击**应用迁移**创建数据库和刷新可跳过错误。
 
 ## <a name="next-steps"></a>后续步骤

@@ -1,6 +1,6 @@
 ---
 title: ASP.NET Core 中的 Web 服务器实现
-author: tdykstra
+author: rick-anderson
 description: 发现适用于 ASP.NET Core 的 Web 服务器 Kestrel 和 HTTP.sys。 了解如何选择服务器以及何时使用反向代理服务器。
 manager: wpickett
 ms.author: tdykstra
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/index
-ms.openlocfilehash: cdf6fafce644f424d3cd58395e1fa91e5e6fa2cb
-ms.sourcegitcommit: 71b93b42cbce8a9b1a12c4d88391e75a4dfb6162
+ms.openlocfilehash: 38af9d0206d66ac7fd2dc13a5a8245e8f66df41e
+ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>ASP.NET Core 中的 Web 服务器实现
 
@@ -24,13 +24,12 @@ ASP.NET Core 应用与进程内 HTTP 服务器实现一起运行。 服务器实
 
 ASP.NET Core 交付两种服务器实现：
 
-* [Kestrel](xref:fundamentals/servers/kestrel) 是跨平台 HTTP 服务器，它基于 [libuv](https://github.com/libuv/libuv)（一个跨平台异步 I/O 库）。
-
+* [Kestrel](xref:fundamentals/servers/kestrel) 是适用于 ASP.NET Core 的默认跨平台 HTTP 服务器。
 * [HTTP.sys](xref:fundamentals/servers/httpsys) 是仅适用于 Windows 的 HTTP 服务器，它基于 [ 核心驱动程序和 HTTP 服务器 API](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)。 （HTTP.sys 在 ASP.NET 1.x 中被命名为 [WebListener](xref:fundamentals/servers/weblistener)。）
 
 ## <a name="kestrel"></a>Kestrel
 
-Kestrel 是 Web 服务器，默认包括在 ASP.NET Core 新项目模板中。 
+Kestrel 是 ASP.NET Core 项目模板中包括的默认 Web 服务器。
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 

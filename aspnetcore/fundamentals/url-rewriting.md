@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: b6465aa7b56450f43be64da19f2e2228a5d68f50
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 336a097c2186bc195854bd54211d4554a577ed14
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>ASP.NET Core 中的 URL 重写中间件
 
@@ -36,6 +36,7 @@ URL 重写是根据一个或多个预定义规则修改请求 URL 的行为。 U
 > URL 重写可能会降低应用的性能。 如果可行，应限制规则的数量和复杂度。
 
 ## <a name="url-redirect-and-url-rewrite"></a>URL 重定向和 URL 重写
+
 URL 重定向和 URL 重写之间的用词差异乍一看可能很细微，但这对于向客户端提供资源具有重要意义。 ASP.NET Core 的 URL 重写中间件能够满足两者的需求。
 
 URL 重定向是客户端操作，指示客户端访问另一个地址的资源。 这需要往返服务器。 客户端对资源发出新请求时，返回客户端的重定向 URL 会出现在浏览器地址栏。 
@@ -51,21 +52,27 @@ URL 重写是服务器端操作，提供来自不同资源地址的资源。 重
 ![WebAPI 服务终结点已从服务器上的版本 1 (v1) 更改为版本 2 (v2)。 客户端向版本 1 路径 /v1/api 上的服务发出请求。 重写请求 URL 以访问版本 2 路径 /v2/api 上的服务。 服务以“200 (正常)”状态代码对客户端作出响应。](url-rewriting/_static/url_rewrite.png)
 
 ## <a name="url-rewriting-sample-app"></a>URL 重写示例应用
+
 可使用 [URL 重写示例应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/)了解 URL 重写中间件的功能。 此应用使用重写和重定向规则，并显示重写或重定向 URL。
 
 ## <a name="when-to-use-url-rewriting-middleware"></a>何时使用 URL 重写中间件
+
 无法结合使用 [URL 重写模块](https://www.iis.net/downloads/microsoft/url-rewrite)和 Windows Server 上的 IIS、Apache Server 上的 [Apache mod_rewrite 模块](https://httpd.apache.org/docs/2.4/rewrite/)、[Nginx 上的 URL 重写](https://www.nginx.com/blog/creating-nginx-rewrite-rules/)，或者应用托管在 [HTTP.sys 服务器](xref:fundamentals/servers/httpsys)（以前称为 [WebListener](xref:fundamentals/servers/weblistener)）上时，请使用 URL 重写中间件。 在 IIS、Apache 或 Nginx 中使用基于服务器的 URL 重写技术的主要原因是，中间件不支持这些模块的全部功能，而且中间件的性能可能与模块的性能不匹配。 但是，服务器模块的某些功能不适用于 ASP.NET Core 项目，例如 IIS 重写模块的 `IsFile` 和 `IsDirectory` 约束。 在这些情况下，请改为使用中间件。
 
 ## <a name="package"></a>Package
+
 要将中间件包含在项目中，请添加对 [`Microsoft.AspNetCore.Rewrite`](https://www.nuget.org/packages/Microsoft.AspNetCore.Rewrite/) 包的引用。 此功能适用于面向 ASP.NET Core 1.1 或更高版本的应用。
 
 ## <a name="extension-and-options"></a>扩展和选项
+
 通过使用扩展方法为每条规则创建 `RewriteOptions` 类的实例，建立 URL 重写和重定向规则。 按所需的处理顺序链接多个规则。 使用 `app.UseRewriter(options);` 将 `RewriteOptions` 添加到请求管道时，它会被传递到 URL 重写中间件。
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
@@ -83,14 +90,18 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-* * *
+---
+
 ### <a name="url-redirect"></a>URL 重定向
+
 使用 `AddRedirect` 将请求重定向。 第一个参数包含用于匹配传入 URL 路径的正则表达式。 第二个参数是替换字符串。 第三个参数（如有）指定状态代码。 如不指定状态代码，则默认为“302 (已找到)”，指示资源暂时移动或替换。
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=9)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 ```csharp
 public void Configure(IApplicationBuilder app)
 {
@@ -101,7 +112,8 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-* * *
+---
+
 在启用了开发人员工具的浏览器中，向路径为 `/redirect-rule/1234/5678` 的示例应用发出请求。 正则表达式匹配 `redirect-rule/(.*)` 上的请求路径，且该路径会被 `/redirected/1234/5678` 替代。 重定向 URL 以“302 (已找到)”状态代码发回客户端。 浏览器会在浏览器地址栏中出现的重定向 URL 上发出新请求。 由于示例应用中的任何规则均不匹配重定向 URL，因此第二个请求会收到来自应用的“200 (正常)”响应，且响应正文会显示此重定向 URL。 重定向 URL 时，系统将向服务器进行一次往返。
 
 > [!WARNING]
@@ -152,12 +164,15 @@ public void Configure(IApplicationBuilder app)
 ![开发人员工具正跟踪请求和响应的浏览器窗口](url-rewriting/_static/add_redirect_to_https_permanent.png)
 
 ### <a name="url-rewrite"></a>URL 重写
+
 使用 `AddRewrite` 创建重写 URL 的规则。 第一个参数包含用于匹配传入 URL 路径的正则表达式。 第二个参数是替换字符串。 第三个参数 `skipRemainingRules: {true|false}` 指示如果当前规则适用，中间件是否要跳过其他重写规则。
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=10-11)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 ```csharp
 public void Configure(IApplicationBuilder app)
 {
@@ -169,7 +184,8 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-* * *
+---
+
 原始请求：`/rewrite-rule/1234/5678`
 
 ![开发人员工具正跟踪请求和响应的浏览器窗口](url-rewriting/_static/add_rewrite.png)
@@ -202,14 +218,17 @@ public void Configure(IApplicationBuilder app)
 > * 如果出现匹配项且无需处理任何其他规则，则跳过剩余规则的处理。
 
 ### <a name="apache-modrewrite"></a>Apache mod_rewrite
+
 使用 `AddApacheModRewrite` 应用 Apache mod_rewrite 规则。 请确保将规则文件与应用一起部署。 有关 mod_rewrite 规则的详细信息和示例，请参阅 [Apache mod_rewrite](https://httpd.apache.org/docs/2.4/rewrite/)。
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 `StreamReader` 用于读取 ApacheModRewrite.txt 规则文件中的规则。
 
 [!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=3-4,12)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 第一个参数采用 `IFileProvider`，后者可通过[依赖关系注入](dependency-injection.md)提供。 注入 `IHostingEnvironment` 以提供 `ContentRootFileProvider`。 第二个参数是规则文件（即示例应用中的 ApacheModRewrite.txt）的路径。
 
 ```csharp
@@ -222,7 +241,8 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-* * *
+---
+
 示例应用将请求从 `/apache-mod-rules-redirect/(.\*)` 重定向到 `/redirected?id=$1`。 响应状态代码为“302 (已找到)”。
 
 [!code[](url-rewriting/sample/ApacheModRewrite.txt)]
@@ -232,6 +252,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 ![开发人员工具正跟踪请求和响应的浏览器窗口](url-rewriting/_static/add_apache_mod_redirect.png)
 
 ##### <a name="supported-server-variables"></a>受支持的服务器变量
+
 中间件支持下列 Apache mod_rewrite 服务器变量：
 * CONN_REMOTE_ADDR
 * HTTP_ACCEPT
@@ -264,14 +285,17 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 * TIME_YEAR
 
 ### <a name="iis-url-rewrite-module-rules"></a>IIS URL 重写模块规则
+
 要使用适用于 IIS URL 重写模块的规则，请使用 `AddIISUrlRewrite`。 请确保将规则文件与应用一起部署。 当 web.config 文件在 Windows Server IIS 上运行时，请勿指示中间件使用该文件。 使用 IIS 时，应将这些规则存储在 web.config 之外，避免与 IIS 重写模块发生冲突。 有关 IIS URL 重写模块规则的详细信息和示例，请参阅 [Using Url Rewrite Module 2.0](/iis/extensions/url-rewrite-module/using-url-rewrite-module-20)（使用 URL 重写模块 2.0）和 [URL Rewrite Module Configuration Reference](/iis/extensions/url-rewrite-module/url-rewrite-module-configuration-reference)（URL 重写模块配置引用）。
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 `StreamReader` 用于读取 IISUrlRewrite.xml 规则文件中的规则。
 
 [!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=5-6,13)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 第一个参数采用 `IFileProvider`，而第二个参数是 XML 规则文件（即示例应用中的 IISUrlRewrite.xml）的路径。
 
 ```csharp
@@ -284,7 +308,8 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-* * *
+---
+
 示例应用将请求从 `/iis-rules-rewrite/(.*)` 重写为 `/rewritten?id=$1`。 以“200 (正常)”状态代码作为响应发送到客户端。
 
 [!code-xml[](url-rewriting/sample/IISUrlRewrite.xml)]
@@ -320,6 +345,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 ---
 
 #### <a name="supported-server-variables"></a>受支持的服务器变量
+
 中间件支持下列 IIS URL 重写模块服务器变量：
 * CONTENT_LENGTH
 * CONTENT_TYPE
@@ -345,6 +371,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 > ```
 
 ### <a name="method-based-rule"></a>基于方法的规则
+
 使用 `Add(Action<RewriteContext> applyRule)` 在方法中实现自己的规则逻辑。 为了在方法中使用 `HttpContext`，`RewriteContext` 会将其公开。 `context.Result` 决定如何处理其他管道进程。
 
 | context.Result                       | 操作                                                          |
@@ -353,10 +380,12 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 | `RuleResult.EndResponse`             | 停止应用规则并发送响应                       |
 | `RuleResult.SkipRemainingRules`      | 停止应用规则并将上下文发送给下一个中间件 |
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=14)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 ```csharp
 public void Configure(IApplicationBuilder app)
 {
@@ -367,7 +396,8 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-* * *
+---
+
 示例应用演示了如何对以 .xml 结尾的路径的请求进行重定向。 如果为 `/file.xml` 发出请求，则它将重定向到 `/xmlfiles/file.xml`。 状态代码设置为“301 (永久移动)”。 对于重定向，必须明确设置响应的状态代码；否则会返回 “200 (正常)”状态代码，且在客户端上不会进行重定向。
 
 [!code-csharp[](url-rewriting/sample/RewriteRules.cs?name=snippet1)]
@@ -377,12 +407,15 @@ public void Configure(IApplicationBuilder app)
 ![开发人员工具正跟踪 file.xml 的请求和响应的浏览器窗口](url-rewriting/_static/add_redirect_xml_requests.png)
 
 ### <a name="irule-based-rule"></a>基于 IRule 的规则
+
 使用 `Add(IRule)` 在派生自 `IRule` 的类中实现自己的规则逻辑。 通过 `IRule` 为使用基于方法的规则方式提供更大的灵活性。 派生类可能包含构造函数，你可在其中传入 `ApplyRule` 方法的参数。
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=15-16)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 ```csharp
 public void Configure(IApplicationBuilder app)
 {
@@ -394,7 +427,8 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-* * *
+---
+
 检查示例应用中 `extension` 和 `newPath` 的参数值是否符合多个条件。 `extension` 须包含一个值，并且该值必须是 .png、.jpg 或 .gif。 如果 `newPath` 无效，则会引发 `ArgumentException`。 如果为 image.png 发出请求，则它将重定向到 `/png-images/image.png`。 如果为 image.jpg 发出请求，则它将重定向到 `/jpg-images/image.jpg`。 状态代码设置为“301 (永久移动)”，`context.Result` 设置为停止处理规则并发送响应。
 
 [!code-csharp[](url-rewriting/sample/RewriteRules.cs?name=snippet2)]
@@ -419,6 +453,7 @@ public void Configure(IApplicationBuilder app)
 | 替换 URL 段 | `^(.*)/segment2/(.*)`<br>`/segment1/segment2/segment3` | `$1/replaced/$2`<br>`/segment1/replaced/segment3` |
 
 ## <a name="additional-resources"></a>其他资源
+
 * [应用程序启动](startup.md)
 * [中间件](xref:fundamentals/middleware/index)
 * [.NET 中的正则表达式](/dotnet/articles/standard/base-types/regular-expressions)

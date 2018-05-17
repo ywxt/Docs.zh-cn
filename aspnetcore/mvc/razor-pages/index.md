@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: c848c5d66a9e8141d9d737e8ce9c994587b04916
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: 651d47ce20f3269340f0796f487e2f1a2a155710
+ms.sourcegitcommit: 0063338c2e130409081bb60fcffa0c3f190cd46a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor 页面介绍
 
@@ -214,6 +214,8 @@ Index.cshtml 文件还包含用于为每个客户联系人创建删除按钮的�
 `PageModel` 上的属性可通过 [Required](/dotnet/api/system.componentmodel.dataannotations.requiredattribute) 特性进行修饰：
 
 [!code-cs[](index/sample/Create.cshtml.cs?highlight=3,15-16)]
+
+有关详细信息，请参阅[模型验证](xref:mvc/models/validation)。
 
 ## <a name="manage-head-requests-with-the-onget-handler"></a>使用 OnGet 处理程序管理 HEAD 请求
 
@@ -418,7 +420,7 @@ Pages/Customers/Index.cshtml.cs 页面模型将 `[TempData]` 属性应用到 `Me
 public string Message { get; set; }
 ```
 
-请参阅 [TempData](xref:fundamentals/app-state#temp) 了解详细信息。
+请参阅 [TempData](xref:fundamentals/app-state#tempdata) 了解详细信息。
 
 <a name="mhpp"></a>
 ## <a name="multiple-handlers-per-page"></a>针对一个页面的多个处理程序

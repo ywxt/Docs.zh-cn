@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: d9c7c1c3b2c052ba11f9ea5eaaa424d69bc43eb2
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: c40209e3b3f2b5bf28450bb2a88cbe40e9e23230
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="work-with-a-distributed-cache-in-aspnet-core"></a>使用 ASP.NET Core 中分布式缓存
 
@@ -132,13 +132,13 @@ C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(loc
 
 ## <a name="recommendations"></a>建议
 
-在决定哪种`IDistributedCache`实现适合应用时，请根据现有的基础架构和环境、性能要求和团队经验在 Redis 和 SQL Server 之间进行选择。 如果团队更喜欢使用 Redis，那就使用它。 如果团队倾向于 SQL Server，那么也应对这么做充满信心。 请注意，传统的缓存解决方案会将数据存储在内存中，以便快速检索数据。 应该将常用数据存储在缓存中，将整个数据存储在后端持久性存储（如 SQL Server 或 Azure 存储）中。 与 SQL Cache 相比，Redis Cache 是一种吞吐量高且延迟轻微的缓存解决方案。
+在决定哪种`IDistributedCache`实现适合应用时，请根据现有的基础架构和环境、性能要求和团队经验在 Redis 和 SQL Server 之间进行选择。 如果团队更喜欢使用 Redis，那就使用它。 如果团队倾向于 SQL Server，那么也应对这么做充满信心。 请注意，传统的缓存解决方案将存储数据的内存中用于进行快速检索的数据。 应该将常用数据存储在缓存中，将整个数据存储在后端持久性存储（如 SQL Server 或 Azure 存储）中。 与 SQL Cache 相比，Redis Cache 是一种吞吐量高且延迟轻微的缓存解决方案。
 
 ## <a name="additional-resources"></a>其他资源
 
 * [Redis 在 Azure 上的缓存](https://azure.microsoft.com/documentation/services/redis-cache/)
 * [在 Azure 上的 SQL 数据库](https://azure.microsoft.com/documentation/services/sql-database/)
-* [缓存在内存](xref:performance/caching/memory)
+* [内存中缓存](xref:performance/caching/memory)
 * [使用更改令牌检测更改](xref:fundamentals/primitives/change-tokens)
 * [响应缓存](xref:performance/caching/response)
 * [响应缓存中间件](xref:performance/caching/middleware)

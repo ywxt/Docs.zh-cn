@@ -58,7 +58,7 @@ ASP.NET MVC 提供用于执行筛选逻辑之前或之后，则操作方法调�
 
 **安装代码片段**
 
-为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。 若要安装运行的代码段**.\Source\Setup\CodeSnippets.vsi**文件。
+为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。 若要安装运行的代码段 **.\Source\Setup\CodeSnippets.vsi**文件。
 
 如果你不熟悉 Visual Studio 代码段，并想要了解如何使用它们，你可以从该文档引用的附录&quot;[附录 c： 使用代码段](#AppendixC)&quot;。
 
@@ -87,7 +87,7 @@ ASP.NET MVC 提供用于执行筛选逻辑之前或之后，则操作方法调�
 
 在本练习中，你将学习如何使用 ASP.NET MVC 4 筛选器提供程序创建自定义操作日志筛选器。 为该目的将到将在所选的控制器中记录所有活动的 MusicStore 站点应用日志记录筛选器。
 
-筛选器将扩展**ActionFilterAttributeClass** ，并重写**OnActionExecuting**方法来捕获每个请求，然后执行日志记录操作。 有关 HTTP 请求的上下文信息，执行方法、 结果和参数将会予以提供 ASP.NET MVC **ActionExecutingContext**类**。**
+筛选器将扩展**ActionFilterAttributeClass** ，并重写**OnActionExecuting**方法来捕获每个请求，然后执行日志记录操作。 有关 HTTP 请求的上下文信息，执行方法、 结果和参数将会予以提供 ASP.NET MVC **ActionExecutingContext**类 **。**
 
 > [!NOTE]
 > ASP.NET MVC 4 还具有默认筛选器提供程序可以使用而无需创建自定义筛选器。 ASP.NET MVC 4 提供以下类型的筛选器：
@@ -181,12 +181,12 @@ ASP.NET MVC 提供用于执行筛选逻辑之前或之后，则操作方法调�
 1. 打开**StoreController**在**MvcMusicStore\Controllers**并添加对引用**筛选器**命名空间：
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample4.cs)]
-2. 插入自定义筛选器**CustomActionFilter**到**StoreController**类通过添加**[CustomActionFilter]**之前类声明的属性。
+2. 插入自定义筛选器**CustomActionFilter**到**StoreController**类通过添加 **[CustomActionFilter]** 之前类声明的属性。
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample5.cs)]
 
    > [!NOTE]
-   > 当筛选器注入到控制器类时，是还将插入的所有操作。 如果你想要应用筛选器仅针对一组操作，你将不得不注入**[CustomActionFilter]**到每个：
+   > 当筛选器注入到控制器类时，是还将插入的所有操作。 如果你想要应用筛选器仅针对一组操作，你将不得不注入 **[CustomActionFilter]** 到每个：
    > 
    > [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample6.cs)]
 
@@ -198,7 +198,7 @@ ASP.NET MVC 提供用于执行筛选逻辑之前或之后，则操作方法调�
 在此任务中，将测试的日志记录筛选器正常工作。 将启动应用程序，请访问应用商店，，然后你将检查记录的活动。
 
 1. 按 **F5** 运行该应用程序。
-2. 浏览到**/ActionLog**若要查看日志视图初始状态：
+2. 浏览到 **/ActionLog**若要查看日志视图初始状态：
 
     ![登录页的活动发生之前的跟踪器状态](aspnet-mvc-4-custom-action-filters/_static/image3.png "登录页的活动发生之前的跟踪器状态")
 
@@ -213,7 +213,7 @@ ASP.NET MVC 提供用于执行筛选逻辑之前或之后，则操作方法调�
    > 
    > [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample7.cs)]
 3. 单击其中一个**风格**从菜单并执行某些操作，如浏览可用唱片集。
-4. 浏览到**/ActionLog**和如果日志已空按**F5**刷新该页面。 请检查跟踪，您的访问：
+4. 浏览到 **/ActionLog**和如果日志已空按**F5**刷新该页面。 请检查跟踪，您的访问：
 
     ![与活动记录的操作日志](aspnet-mvc-4-custom-action-filters/_static/image4.png "与活动记录的操作日志")
 
@@ -264,7 +264,7 @@ ASP.NET MVC 提供用于执行筛选逻辑之前或之后，则操作方法调�
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample9.cs)]
 
     > [!NOTE]
-    > 此自定义操作筛选器是与你在上一练习中创建几乎相同的。 主要区别是它有*&quot;记录通过&quot;*更新与此新类的名称以标识 wich 筛选器属性注册日志。
+    > 此自定义操作筛选器是与你在上一练习中创建几乎相同的。 主要区别是它有*&quot;记录通过&quot;* 更新与此新类的名称以标识 wich 筛选器属性注册日志。
 
 <a id="Ex2Task2"></a>
 
@@ -277,7 +277,7 @@ ASP.NET MVC 提供用于执行筛选逻辑之前或之后，则操作方法调�
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample10.cs)]
 2. 现在，运行应用程序，以便了解这些两个自定义操作筛选器的工作。 若要执行此操作，请按**F5**并等待，直到应用程序启动。
-3. 浏览到**/ActionLog**若要查看日志视图初始状态。
+3. 浏览到 **/ActionLog**若要查看日志视图初始状态。
 
     ![登录页的活动发生之前的跟踪器状态](aspnet-mvc-4-custom-action-filters/_static/image5.png "登录页的活动发生之前的跟踪器状态")
 
@@ -301,7 +301,7 @@ ASP.NET MVC 提供用于执行筛选逻辑之前或之后，则操作方法调�
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample11.cs)]
 2. 现在，验证如何根据其顺序属性的值执行的筛选器。 您会发现具有最小的顺序值的筛选器 (**CustomActionFilter**) 是执行的第一个。 按**F5**并等待，直到应用程序启动。
-3. 浏览到**/ActionLog**若要查看日志视图初始状态。
+3. 浏览到 **/ActionLog**若要查看日志视图初始状态。
 
     ![登录页的活动发生之前的跟踪器状态](aspnet-mvc-4-custom-action-filters/_static/image7.png "登录页的活动发生之前的跟踪器状态")
 
@@ -330,7 +330,7 @@ ASP.NET MVC 提供用于执行筛选逻辑之前或之后，则操作方法调�
 
 在此任务中，你将更新解决方案以注册新的筛选器 (**MyNewCustomActionFilter**) 作为全局筛选器。 通过执行此操作，将会触发的所有操作执行应用程序中并不只在如下所示的上一任务 StoreController 的。
 
-1. 在**StoreController**类中，删除**[MyNewCustomActionFilter]**属性和顺序属性从**[CustomActionFilter]**。 其外观应如下所示：
+1. 在**StoreController**类中，删除 **[MyNewCustomActionFilter]** 属性和顺序属性从 **[CustomActionFilter]**。 其外观应如下所示：
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample13.cs)]
 2. 打开**Global.asax**文件并找到**应用程序\_启动**方法。 请注意，每次在应用程序启动它正在注册全局筛选器，通过调用**RegisterGlobalFilters**方法内的**FilterConfig**类。
@@ -347,7 +347,7 @@ ASP.NET MVC 提供用于执行筛选逻辑之前或之后，则操作方法调�
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample15.cs)]
 6. 通过按运行该应用程序**F5**。
 7. 单击其中一个**风格**从菜单并执行某些操作，如浏览可用唱片集。
-8. 检查该现在**[MyNewCustomActionFilter]**被注入到 HomeController 和 ActionLogController 过。
+8. 检查该现在 **[MyNewCustomActionFilter]** 被注入到 HomeController 和 ActionLogController 过。
 
     ![与活动记录的操作日志](aspnet-mvc-4-custom-action-filters/_static/image11.png "与活动记录的操作日志")
 
@@ -522,7 +522,7 @@ ASP.NET MVC 提供用于执行筛选逻辑之前或之后，则操作方法调�
     *Web 部署配置*
 5. 配置数据库连接，如下所示：
 
-   - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:*前缀。
+   - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:* 前缀。
    - 在**用户名**键入您的服务器管理员登录名。
    - 在**密码**键入服务器管理员登录密码。
    - 键入新的数据库名称。

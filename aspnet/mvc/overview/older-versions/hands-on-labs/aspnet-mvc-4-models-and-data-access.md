@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 081a71ef67a6eee6c84058c30f9e15301afbed23
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 57477cf15bf6755523f28356d5384517bea24982
+ms.sourcegitcommit: 5ae0c125ee3bbd324edef3818d1d160f4dd84602
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 模型和数据访问
 
@@ -73,7 +73,7 @@ ms.lasthandoff: 04/06/2018
 
 **安装代码片段**
 
-为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。 若要安装运行的代码段**.\Source\Setup\CodeSnippets.vsi**文件。
+为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。 若要安装运行的代码段 **.\Source\Setup\CodeSnippets.vsi**文件。
 
 如果你不熟悉 Visual Studio 代码段，并想要了解如何使用它们，你可以从该文档引用的附录&quot;[附录 c： 使用代码段](#AppendixC)&quot;。
 
@@ -110,7 +110,7 @@ ms.lasthandoff: 04/06/2018
 
 在此任务中，你将添加到解决方案 MusicStore 应用程序的主表已创建的数据库。
 
-1. 打开**开始**解决方案位于**源/Ex1-AddingADatabaseDBFirst/开始/**文件夹。
+1. 打开**开始**解决方案位于**源/Ex1-AddingADatabaseDBFirst/开始/** 文件夹。
 
    1. 你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
@@ -235,12 +235,14 @@ ms.lasthandoff: 04/06/2018
 
 ~~~
 [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
+~~~
 
 > [!NOTE]
-> You are using a capability of .NET called **LINQ** (language-integrated query) to write strongly-typed query expressions against these collections - which will execute code against the database and return objects that you can program against.
+> 正在使用的.NET 调用一项功能**LINQ** （语言集成查询） 来编写针对这些集合-将执行对数据库的代码并返回强类型查询表达式对象，您可以进行编程针对。
 > 
-> For more information about LINQ, please visit the [msdn site](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
-~~~
+> 有关 LINQ 的详细信息，请访问[msdn 站点](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx)。
+
+
 3. 更新**索引**操作方法来检索所有风格。
 
     (代码段-*模型和数据访问-Ex1 存储索引*)
@@ -297,7 +299,7 @@ ms.lasthandoff: 04/06/2018
 
 在此任务中，你将使用代码优先最初创建它时填充示例数据的数据库。
 
-1. 打开**开始**解决方案位于**源/Ex2-CreatingADatabaseCodeFirst/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
+1. 打开**开始**解决方案位于**源/Ex2-CreatingADatabaseCodeFirst/开始/** 文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
@@ -318,7 +320,7 @@ ms.lasthandoff: 04/06/2018
 ~~~
 [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample5.cs)]
 ~~~
-4. 在**应用程序\_start （)**方法添加以下行以设置数据库初始值设定项。
+4. 在**应用程序\_start （)** 方法添加以下行以设置数据库初始值设定项。
 
     (代码段-*模型和数据访问-Ex2 全局 Asax SetInitializer*)
 
@@ -334,7 +336,7 @@ ms.lasthandoff: 04/06/2018
 
 现在，你已有数据库添加到我们的项目中，你将编写**Web.config**文件的连接字符串。
 
-1. 添加连接字符串中的**Web.config**。为此，请打开**Web.config**在项目根和替换连接字符串中这一行与名为 DefaultConnection **&lt;connectionStrings&gt;**部分：
+1. 添加连接字符串中的**Web.config**。为此，请打开**Web.config**在项目根和替换连接字符串中这一行与名为 DefaultConnection **&lt;connectionStrings&gt;** 部分：
 
     ![Web.config 文件位置](aspnet-mvc-4-models-and-data-access/_static/image19.png "Web.config 文件位置")
 
@@ -533,7 +535,7 @@ ms.lasthandoff: 04/06/2018
 在此任务中，将运行应用程序，并从数据库中检索特定流派专辑。
 
 1. 按**F5**运行该应用程序。
-2. 在主页页面中启动项目。 将 URL 更改为**/存储/浏览？ 流派 = Pop**以验证正在从数据库检索的结果。
+2. 在主页页面中启动项目。 将 URL 更改为 **/存储/浏览？ 流派 = Pop**以验证正在从数据库检索的结果。
 
     ![浏览按风格](aspnet-mvc-4-models-and-data-access/_static/image24.png "浏览按风格")
 
@@ -564,7 +566,7 @@ ms.lasthandoff: 04/06/2018
 在此任务中，你将在 web 浏览器中运行应用程序，并获得唱片集的详细信息，由其 id。
 
 1. 按**F5**运行该应用程序。
-2. 在主页页面中启动项目。 将 URL 更改为**/Store/Details/51**或浏览风格并选择唱片集以验证正在从数据库检索的结果。
+2. 在主页页面中启动项目。 将 URL 更改为 **/Store/Details/51**或浏览风格并选择唱片集以验证正在从数据库检索的结果。
 
     ![浏览详细信息](aspnet-mvc-4-models-and-data-access/_static/image25.png "浏览详细信息")
 
@@ -740,7 +742,7 @@ ms.lasthandoff: 04/06/2018
     *Web 部署配置*
 5. 配置数据库连接，如下所示：
 
-   - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:*前缀。
+   - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:* 前缀。
    - 在**用户名**键入您的服务器管理员登录名。
    - 在**密码**键入服务器管理员登录密码。
    - 键入新的数据库名称。

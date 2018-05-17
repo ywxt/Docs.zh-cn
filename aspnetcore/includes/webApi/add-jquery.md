@@ -2,7 +2,7 @@
 
 在本部分中，添加了 HTML 页面使用 jQuery 调用 Web API。 jQuery 启动请求，并用 API 响应中的详细信息更新页面。
 
-配置项目提供静态文件并启用默认文件映射。 通过在 Startup.Configure 中调用 [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles#Microsoft_AspNetCore_Builder_StaticFileExtensions_UseStaticFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 和 [UseDefaultFiles](/dotnet/api/microsoft.aspnetcore.builder.defaultfilesextensions.usedefaultfiles#Microsoft_AspNetCore_Builder_DefaultFilesExtensions_UseDefaultFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 扩展方法完成这一点。 有关详细信息，请参阅[在 ASP.NET Core 中使用静态文件](xref:fundamentals/static-files)。
+配置项目提供静态文件并启用默认文件映射。 通过在 Startup.Configure 中调用 [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles#Microsoft_AspNetCore_Builder_StaticFileExtensions_UseStaticFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 和 [UseDefaultFiles](/dotnet/api/microsoft.aspnetcore.builder.defaultfilesextensions.usedefaultfiles#Microsoft_AspNetCore_Builder_DefaultFilesExtensions_UseDefaultFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 扩展方法完成这一点。 有关详细信息，请参阅[静态文件](xref:fundamentals/static-files)。
 
 [!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Startup2.cs?name=snippet_Configure&highlight=3-4)]
 

@@ -1,6 +1,6 @@
 ---
 title: 使用 EF Core 创建 ASP.NET Core MVC - 高级 - 第 10 个教程（共 10 个）
-author: tdykstra
+author: rick-anderson
 description: 本教程不止会介绍使用 Entity Framework Core 开发 ASP.NET Core Web 应用的基础知识，还会介绍其他有用主题。
 manager: wpickett
 ms.author: tdykstra
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: 655f60116cbfe1dd81b7e2855906446b919b6489
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 95500686052a3f75dd71244bc9da500300416dec
+ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="aspnet-core-mvc-with-ef-core---advanced---10-of-10"></a>使用 EF Core 创建 ASP.NET Core MVC - 高级 - 第 10 个教程（共 10 个）
 
