@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-iis-errors-reference
-ms.openlocfilehash: 1500f026c245f80de4120d6db4901cb117552966
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 995890a5e6b0cc1d9cebc21486917a7a39587076
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>Azure App Service 和 ASP.NET Core 了 IIS 的常见错误参考
 
@@ -34,9 +34,9 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="installer-unable-to-obtain-vc-redistributable"></a>安装程序无法获取 VC++ Redistributable
 
-* **安装程序异常：**0x80072efd 或 0x80072f76 - 未指定的错误
+* **安装程序异常：** 0x80072efd 或 0x80072f76 - 未指定的错误
 
-* **安装程序日志异常&#8224;：**0x80072efd 或 0x80072f76 错误：未能执行 EXE 包
+* **安装程序日志异常&#8224;：** 0x80072efd 或 0x80072f76 错误：未能执行 EXE 包
 
   &#8224;此日志位于 C:\Users\\{USER}\AppData\Local\Temp\dd_DotNetCoreWinSvrHosting__{timestamp}.log。
 
@@ -46,7 +46,7 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="os-upgrade-removed-the-32-bit-aspnet-core-module"></a>OS 升级删除了 32 位 ASP.NET Core 模块
 
-* **应用程序日志：**未能加载模块 DLL C:\WINDOWS\system32\inetsrv\aspnetcore.dll。 该数据是个错误。
+* **应用程序日志：** 未能加载模块 DLL C:\WINDOWS\system32\inetsrv\aspnetcore.dll。 该数据是个错误。
 
 疑难解答：
 
@@ -54,11 +54,11 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="platform-conflicts-with-rid"></a>平台与 RID 冲突
 
-* **浏览器：**HTTP 错误 502.5 - 进程失败
+* **浏览器：** HTTP 错误 502.5 - 进程失败
 
-* **应用程序日志：**应用程序 ' MACHINE/WEBROOT/APPHOST / {程序集} 与物理根 c:\{路径}\'无法使用命令行启动进程"c:\\{路径} {程序集}。 {exe | dll}"，错误代码 ="0x80004005: ff。
+* **应用程序日志：** 应用程序 ' MACHINE/WEBROOT/APPHOST / {程序集} 与物理根 c:\{路径}\'无法使用命令行启动进程"c:\\{路径} {程序集}。 {exe | dll}"，错误代码 ="0x80004005: ff。
 
-* **ASP.NET 核心模块日志：**未经处理的异常： System.BadImageFormatException： 无法加载文件或程序集 {程序集}.dll。 试图加载的程序的格式不正确。
+* **ASP.NET 核心模块日志：** 未经处理的异常： System.BadImageFormatException： 无法加载文件或程序集 {程序集}.dll。 试图加载的程序的格式不正确。
 
 疑难解答：
 
@@ -70,11 +70,11 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="uri-endpoint-wrong-or-stopped-website"></a>URI 终结点错误或网站已停止
 
-* **浏览器：**ERR_CONNECTION_REFUSED
+* **浏览器：** ERR_CONNECTION_REFUSED
 
-* **应用程序日志：**没有任何条目
+* **应用程序日志：** 没有任何条目
 
-* **ASP.NET Core 模块日志：**未创建日志文件
+* **ASP.NET Core 模块日志：** 未创建日志文件
 
 疑难解答：
 
@@ -84,7 +84,7 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="corewebengine-or-w3svc-server-features-disabled"></a>已禁用 CoreWebEngine 或 W3SVC 服务器功能
 
-* **OS 异常：**必须安装 IIS 7.0 CoreWebEngine 和 W3SVC 功能，以便使用 ASP.NET Core 模块。
+* **OS 异常：** 必须安装 IIS 7.0 CoreWebEngine 和 W3SVC 功能，以便使用 ASP.NET Core 模块。
 
 疑难解答：
 
@@ -92,11 +92,11 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="incorrect-website-physical-path-or-app-missing"></a>不正确的网站物理路径或缺少应用程序
 
-* **浏览器：**403 禁止访问 - 访问被拒绝 --或者-- 403.14 禁止访问 - Web 服务器被配置为不列出此目录的内容。
+* **浏览器：** 403 禁止访问 - 访问被拒绝 --或者-- 403.14 禁止访问 - Web 服务器被配置为不列出此目录的内容。
 
-* **应用程序日志：**没有任何条目
+* **应用程序日志：** 没有任何条目
 
-* **ASP.NET Core 模块日志：**未创建日志文件
+* **ASP.NET Core 模块日志：** 未创建日志文件
 
 疑难解答：
 
@@ -104,11 +104,11 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="incorrect-role-module-not-installed-or-incorrect-permissions"></a>角色不正确、未安装模块或权限不正确
 
-* **浏览器：**500.19 内部服务器错误 - 无法访问请求的页面，因为该页面的相关配置数据无效。
+* **浏览器：** 500.19 内部服务器错误 - 无法访问请求的页面，因为该页面的相关配置数据无效。
 
-* **应用程序日志：**没有任何条目
+* **应用程序日志：** 没有任何条目
 
-* **ASP.NET Core 模块日志：**未创建日志文件
+* **ASP.NET Core 模块日志：** 未创建日志文件
 
 疑难解答：
 
@@ -120,11 +120,11 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="incorrect-processpath-missing-path-variable-hosting-bundle-not-installed-systemiis-not-restarted-vc-redistributable-not-installed-or-dotnetexe-access-violation"></a>不正确 processPath、 缺少 PATH 变量、 承载捆绑未安装，不重新启动系统/IIS、 VC + + 可再发行组件未安装，或 dotnet.exe 访问冲突
 
-* **浏览器：**HTTP 错误 502.5 - 进程失败
+* **浏览器：** HTTP 错误 502.5 - 进程失败
 
-* **应用程序日志：**应用程序 ' MACHINE/WEBROOT/APPHOST / {程序集} 与物理根 c:\\{路径}\'无法使用命令行启动进程"。\{程序集}.exe"，错误代码 ="0x80070002: 0。
+* **应用程序日志：** 应用程序 ' MACHINE/WEBROOT/APPHOST / {程序集} 与物理根 c:\\{路径}\'无法使用命令行启动进程"。\{程序集}.exe"，错误代码 ="0x80070002: 0。
 
-* **ASP.NET Core 模块日志：**已创建日志文件，但该日志文件为空
+* **ASP.NET Core 模块日志：** 已创建日志文件，但该日志文件为空
 
 疑难解答：
 
@@ -144,11 +144,11 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="incorrect-arguments-of-aspnetcore-element"></a>\<aspNetCore\> 元素的参数不正确
 
-* **浏览器：**HTTP 错误 502.5 - 进程失败
+* **浏览器：** HTTP 错误 502.5 - 进程失败
 
-* **应用程序日志：**应用程序 ' MACHINE/WEBROOT/APPHOST / {程序集} 与物理根 c:\\{路径}\'无法使用命令行启动进程"dotnet"。\{程序集}.dll，错误代码 ="0x80004005: 80008081。
+* **应用程序日志：** 应用程序 ' MACHINE/WEBROOT/APPHOST / {程序集} 与物理根 c:\\{路径}\'无法使用命令行启动进程"dotnet"。\{程序集}.dll，错误代码 ="0x80004005: 80008081。
 
-* **ASP.NET 核心模块日志：**要执行的应用程序不存在: 路径\{程序集}.dll
+* **ASP.NET 核心模块日志：** 要执行的应用程序不存在: 路径\{程序集}.dll
 
 疑难解答：
 
@@ -158,11 +158,11 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="missing-net-framework-version"></a>缺少 .NET Framework 版本
 
-* **浏览器：**502.3 错误网关 - 尝试路由请求时出现连接错误。
+* **浏览器：** 502.3 错误网关 - 尝试路由请求时出现连接错误。
 
 * **应用程序日志：** ErrorCode = 应用程序 ' MACHINE/WEBROOT/APPHOST / {程序集} 与物理根 c:\\{路径}\'无法使用命令行启动进程"dotnet"。\{程序集}.dll，错误代码 ="0x80004005: 80008081。
 
-* **ASP.NET Core 模块日志：**缺少方法、文件或程序集异常。 在异常中指定的方法、文件或程序集是 .NET Framework 方法、文件或程序集。
+* **ASP.NET Core 模块日志：** 缺少方法、文件或程序集异常。 在异常中指定的方法、文件或程序集是 .NET Framework 方法、文件或程序集。
 
 疑难解答：
 
@@ -172,11 +172,11 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="stopped-application-pool"></a>应用程序池已停止
 
-* **浏览器：**503 服务不可用
+* **浏览器：** 503 服务不可用
 
-* **应用程序日志：**没有任何条目
+* **应用程序日志：** 没有任何条目
 
-* **ASP.NET Core 模块日志：**未创建日志文件
+* **ASP.NET Core 模块日志：** 未创建日志文件
 
 疑难解答
 
@@ -184,11 +184,11 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="iis-integration-middleware-not-implemented"></a>未实现 IIS 集成中间件
 
-* **浏览器：**HTTP 错误 502.5 - 进程失败
+* **浏览器：** HTTP 错误 502.5 - 进程失败
 
-* **应用程序日志：**应用程序 ' MACHINE/WEBROOT/APPHOST / {程序集} 与物理根 c:\\{路径}\'使用命令行创建过程"c:\\{路径}\{程序集}。 {exe | dll}"但损坏或未不响应，或者没有侦听给定的端口 {PORT}，错误代码 ="0x800705b4"
+* **应用程序日志：** 应用程序 ' MACHINE/WEBROOT/APPHOST / {程序集} 与物理根 c:\\{路径}\'使用命令行创建过程"c:\\{路径}\{程序集}。 {exe | dll}"但损坏或未不响应，或者没有侦听给定的端口 {PORT}，错误代码 ="0x800705b4"
 
-* **ASP.NET Core 模块日志：**已创建日志文件，且该日志文件显示正常操作。
+* **ASP.NET Core 模块日志：** 已创建日志文件，且该日志文件显示正常操作。
 
 疑难解答
 
@@ -198,15 +198,15 @@ ms.lasthandoff: 04/18/2018
   * IIS 集成中间件是 referencedby 调用`UseIISIntegration`上应用的方法`WebHostBuilder`(ASP.NET Core 1.x)
   * 应用程序使用`CreateDefaultBuilder`方法 (ASP.NET Core 2.x)。
   
-  有关详细信息，请参阅 [ASP.NET Core 中的承载](xref:fundamentals/hosting)。
+  请参阅[中 ASP.NET 核心主机](xref:fundamentals/host/index)有关详细信息。
 
 ## <a name="sub-application-includes-a-handlers-section"></a>子应用程序包括 \<handlers\> 部分
 
-* **浏览器：**HTTP 错误 500.19 - 内部服务器错误
+* **浏览器：** HTTP 错误 500.19 - 内部服务器错误
 
-* **应用程序日志：**没有任何条目
+* **应用程序日志：** 没有任何条目
 
-* **ASP.NET 核心模块日志：**日志文件创建并显示有关根应用程序的正常操作。 不会为订阅应用程序创建的日志文件。
+* **ASP.NET 核心模块日志：** 日志文件创建并显示有关根应用程序的正常操作。 不会为订阅应用程序创建的日志文件。
 
 疑难解答
 
@@ -214,11 +214,11 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="stdout-log-path-incorrect"></a>stdout 日志路径不正确
 
-* **浏览器：**应用程序通常响应。
+* **浏览器：** 应用程序通常响应。
 
-* **应用程序日志：**警告： 无法创建 stdoutLogFile \\？ \C:\_apps\app_folder\bin\Release\netcoreapp2.0\win10-x64\publish\logs\path_doesnt_exist\stdout_8748_201831835937.log，错误代码 =-2147024893。
+* **应用程序日志：** 警告： 无法创建 stdoutLogFile \\？ \C:\_apps\app_folder\bin\Release\netcoreapp2.0\win10-x64\publish\logs\path_doesnt_exist\stdout_8748_201831835937.log，错误代码 =-2147024893。
 
-* **ASP.NET Core 模块日志：**未创建日志文件
+* **ASP.NET Core 模块日志：** 未创建日志文件
 
 疑难解答
 
@@ -226,11 +226,11 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="application-configuration-general-issue"></a>应用程序配置常见问题
 
-* **浏览器：**HTTP 错误 502.5 - 进程失败
+* **浏览器：** HTTP 错误 502.5 - 进程失败
 
-* **应用程序日志：**应用程序 ' MACHINE/WEBROOT/APPHOST / {程序集} 与物理根 c:\\{路径}\'使用命令行创建过程"c:\\{路径}\{程序集}。 {exe | dll}"但损坏或未不响应，或者没有侦听给定的端口 {PORT}，错误代码 ="0x800705b4"
+* **应用程序日志：** 应用程序 ' MACHINE/WEBROOT/APPHOST / {程序集} 与物理根 c:\\{路径}\'使用命令行创建过程"c:\\{路径}\{程序集}。 {exe | dll}"但损坏或未不响应，或者没有侦听给定的端口 {PORT}，错误代码 ="0x800705b4"
 
-* **ASP.NET Core 模块日志：**已创建日志文件，但该日志文件为空
+* **ASP.NET Core 模块日志：** 已创建日志文件，但该日志文件为空
 
 疑难解答
 

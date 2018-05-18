@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: content
 uid: testing/troubleshoot
-ms.openlocfilehash: f2c785bfe27ddd67db0313b8ee1c077a8cc06e05
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 3bba085c69ee96b5725331b14dcf15350d66e4a4
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="troubleshoot-aspnet-core-projects"></a>解决 ASP.NET 核心项目
 
@@ -66,3 +66,15 @@ ms.lasthandoff: 05/08/2018
 
 * 安装或验证.NET 核心 SDK 的安装。
 * 验证`PATH`环境变量指向 SDK 的安装位置。 安装程序通常设置`PATH`。
+
+::: moniker range=">= aspnetcore-2.1"
+
+### <a name="use-of-ihtmlhelperpartial-may-result-in-application-deadlocks"></a>利用 IHtmlHelper.Partial 可能会导致应用程序死锁
+
+在 ASP.NET 核心 2.1 及更高版本，则调用`Html.Partial`导致死锁的可能性由于分析器警告。 警告消息为：
+
+*利用 IHtmlHelper.Partial 可能会导致应用程序死锁。请考虑使用`<partial>`标记帮助器或`IHtmlHelper.PartialAsync`。*
+
+调用`@Html.Partial`应替换为`@await Html.PartialAsync`或部分标记帮助器`<partial name="_Partial" />`。
+
+::: moniker-end
