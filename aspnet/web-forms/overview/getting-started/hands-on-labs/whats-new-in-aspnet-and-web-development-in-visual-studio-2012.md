@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 00b43cc548df44edded925521991a095ed856494
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f447dc0108dffb36ed6d627fb83b3117fd22c94c
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/18/2018
 ---
 <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>ASP.NET 和 Visual Studio 2012 中的 Web 开发的新增功能
 ====================
@@ -112,7 +112,7 @@ Visual Studio 现在包含功能，可帮助开发人员访问、 工作和有�
     ![在 CSS 层次结构的对齐方式](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image10.png "CSS 中的层次结构对齐方式")
 
     *在 CSS 层次结构的对齐方式*
-7. 内部**.main div**类，在末尾找到光标**边框： 0px;**按**Enter**以显示 IntelliSense 列表。 开始键入**顶部**，并注意你进行键入筛选列表的方式。 该列表将显示包含的元素**顶部**在 word 的任何部分 (在以前版本的 Visual Studio 中，对列表进行筛选的项，*开始*一词的)。
+7. 内部 **.main div**类，在末尾找到光标**边框： 0px;** 按**Enter**以显示 IntelliSense 列表。 开始键入**顶部**，并注意你进行键入筛选列表的方式。 该列表将显示包含的元素**顶部**在 word 的任何部分 (在以前版本的 Visual Studio 中，对列表进行筛选的项，*开始*一词的)。
 
     ![在 CSS 中的 IntelliSense 增强功能](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image11.png "CSS 中的 IntelliSense 增强功能")
 
@@ -125,7 +125,7 @@ Visual Studio 现在包含功能，可帮助开发人员访问、 工作和有�
 
 在此任务中，你会发现新的 CSS 颜色选取器集成到 Visual Studio IntelliSense。
 
-1. 在**Site.css，**找到标头类定义 (.header) 并将光标放在旁边**背景色**特性，之间&quot;:&quot;和&quot; #&quot;上的代码行的字符**。**
+1. 在**Site.css，** 找到标头类定义 (.header) 并将光标放在旁边**背景色**特性，之间&quot;:&quot;和&quot; #&quot;上的代码行的字符 **。**
 
     ![定位光标](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image12.png "定位光标")
 
@@ -147,7 +147,7 @@ Visual Studio 现在包含功能，可帮助开发人员访问、 工作和有�
     *颜色选取器不透明度*
 
     > [!NOTE]
-    > CSS3 中的 RGBA （红色、 绿色，蓝色、 Alpha） 颜色定义可以定义单个项的颜色不透明度值。 与不同**不透明度-**类似的 CSS 属性**-** RGBA 颜色也是最新的浏览器与兼容。
+    > CSS3 中的 RGBA （红色、 绿色，蓝色、 Alpha） 颜色定义可以定义单个项的颜色不透明度值。 与不同**不透明度-** 类似的 CSS 属性**-** RGBA 颜色也是最新的浏览器与兼容。
 
 <a id="Ex1Task3"></a>
 
@@ -156,7 +156,7 @@ Visual Studio 现在包含功能，可帮助开发人员访问、 工作和有�
 
 在此任务中，你将了解如何使用跨浏览器兼容 CSS3 代码段以实现你的网站中的某些功能。
 
-1. 在**Site.css**文件中，找到**标头**CSS 类定义 (.header)，将以下光标 **/\*边框 radius\* /**占位符，以添加新的代码段。 按**Enter**以显示类型以及智能感知列表**radius**以筛选列表。 选择**边框 radius**从该列表与双击，选项，然后按**选项卡**键以插入代码段。 然后，键入像素为单位，然后按 radius 大小**Enter**。 例如，键入**15px**。
+1. 在**Site.css**文件中，找到**标头**CSS 类定义 (.header)，将以下光标 **/\*边框 radius\* /** 占位符，以添加新的代码段。 按**Enter**以显示类型以及智能感知列表**radius**以筛选列表。 选择**边框 radius**从该列表与双击，选项，然后按**选项卡**键以插入代码段。 然后，键入像素为单位，然后按 radius 大小**Enter**。 例如，键入**15px**。
 
     添加的代码段 CSS3 属性将呈现在大多数的 HTML5 法规遵从性浏览器，包括 Mozilla 和基于 WebKit 浏览器中的圆角的边框。
 
@@ -183,12 +183,12 @@ Visual Studio 现在包含功能，可帮助开发人员访问、 工作和有�
 
     > [!NOTE]
     > 此时，则使用相应的前缀 （moz、 易于使用的功能、 o） 以支持 Mozilla 和 Webkit (Chrome、 Safari，Konkeror) 浏览器中插入卷影属性。
-7. 创建一个新类**div.images ul li img:hover**下面**div.images ul li img**类定义，并将光标置于括号**。**
+7. 创建一个新类**div.images ul li img:hover**下面**div.images ul li img**类定义，并将光标置于括号 **。**
 
     CSS
 
     [!code-css[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample3.css)]
-8. 类型**转换**按**选项卡**两次以插入转换代码段的密钥。 然后，输入**rotate(-15deg)**图像光标悬停上时更改旋转角度值。
+8. 类型**转换**按**选项卡**两次以插入转换代码段的密钥。 然后，输入**rotate(-15deg)** 图像光标悬停上时更改旋转角度值。
 
     CSS
 
@@ -202,7 +202,7 @@ Visual Studio 现在包含功能，可帮助开发人员访问、 工作和有�
     > [!NOTE]
     > 如果你使用 Internet Explorer 10，并且无法看到阴影，请确保文档模式设置为 IE10 标准。 按**F12**若要打开 Internet Explorer 开发人员工具，然后单击**文档模式**更改为 IE10 标准。
 
-    ![about-us](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image21.png)
+    ![有关-我们](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image21.png)
 
 <a id="Exercise2"></a>
 
@@ -259,10 +259,7 @@ Visual Studio 现在更新打开或关闭正在编辑相互匹配的元素的标
 
 1. 上**Default.aspx**页上，添加**H3**具有标题 （例如，Visual Studio 2012 岩石 ！） 的元素。
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample5.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample5.aspx)]
 2. 更改**H3**标记和类型**H2**或**h 1。**
 
     请注意，自动更新的结束标记。 你还可以修改以查看，开始标记会相应地更新过的结束标记。
@@ -288,13 +285,10 @@ Visual Studio 现在包含几个 HTML5 代码段。 在此任务中，你将使�
     *插入 HTML5 代码代码段*
 3. 更新音频源以指向现有的音频文件。
 
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample6.aspx)]
 
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample6.aspx)]
-
-> [!NOTE]
-> You will need to add the audio file to the solution.
-~~~
+    > [!NOTE]
+    > 你将需要向解决方案中添加的音频文件。
 4. 按**F5**来运行该站点和播放音频。
 
     ![运行音频控件](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image29.png "运行音频控件")
@@ -303,7 +297,7 @@ Visual Studio 现在包含几个 HTML5 代码段。 在此任务中，你将使�
 
     > [!NOTE]
     > 你还可以尝试多个代码段包含在 Visual Studio 中，例如视频、 图，等等。
-5. 现在，尝试将控件插入页的某些部分。 例如，尝试插入**GridView**控件，但而不是键入 **&lt;gri 可持续发展，**开始键入 **&lt;GV**。 请注意，IntelliSense 列表显示**asp: GridView**控件。
+5. 现在，尝试将控件插入页的某些部分。 例如，尝试插入**GridView**控件，但而不是键入 **&lt;gri 可持续发展，** 开始键入 **&lt;GV**。 请注意，IntelliSense 列表显示**asp: GridView**控件。
 
     IntelliSense 的 HTML 编辑器现在提供标题大小写搜索，以及部分匹配 （检索包含术语的所有元素）。
 
@@ -408,7 +402,7 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
 
     *Page 计数器*
 3. 关闭浏览器并返回到 Visual Studio。
-4. 打开**JavaScript.aspx**页然后找到**&lt;脚本&gt;**块 （如下所示）。
+4. 打开**JavaScript.aspx**页然后找到**&lt;脚本&gt;** 块 （如下所示）。
 
     下面的代码使用 HTML5 本地存储来存储*pageLoadCount*变量，用于存储的当前用户访问页的次数。 本地存储是引入 HTML5 标准的客户端键值对的数据库。 在用户的浏览器内的本地计算机上保存的数据。
 
@@ -453,7 +447,7 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
     ![JavaScript 验证错误消息](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image42.png "JavaScript 验证错误消息")
 
     *JavaScript 验证错误消息*
-3. 注释掉**&quot;使用严格&quot;**方向和请注意，错误消失，但警告保持。
+3. 注释掉**&quot;使用严格&quot;** 方向和请注意，错误消失，但警告保持。
 4. 在该文件的最后一行，编写任何字符串如下所示**&quot;测试&quot;** （包括引号引起来，以指示它是以字符串形式）。 编写一段时间的字符串可以显示智能感知列表中，并选择旁边**trim**选项。
 
     在 ECMAScript5 标准中，字符串值和变量也有定义，如 trim、 大写、 搜索和替换的字符串方法。
@@ -469,7 +463,7 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
 
 在此任务中，您将了解有关在 JavaScript 中的 XML 文档的 Visual Studio 功能。 你将看到 JavaScript IntelliSense 列表现在显示每个函数的 XML 文档。 此外，你会发现在 JavaScript 中的导航功能。
 
-1. 打开**XMLDoc.js**文件位于**自定义脚本/**项目文件夹。 此文件包含有关每个 JavaScript 函数的 XML 文档。
+1. 打开**XMLDoc.js**文件位于**自定义脚本/** 项目文件夹。 此文件包含有关每个 JavaScript 函数的 XML 文档。
 
     ![JavaScript XML 文档集成到 IntelliSense](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image44.png "JavaScript XML 文档集成到 IntelliSense")
 
@@ -492,7 +486,7 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
     ![重载的 XML 文档](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image47.png "重载的 XML 文档")
 
     *重载的 XML 文档*
-6. 打开**GotoDefinition.js**文件并找到**$().html()**函数调用。 在上找到光标**html**。
+6. 打开**GotoDefinition.js**文件并找到 **$().html()** 函数调用。 在上找到光标**html**。
 7. 按**F12**和导航到的定义。 请注意，现在可以访问，并浏览你的 JavaScript 代码，而无需使用**查找**工具。
 8. 在底部的代码文件的签名块之前的 jQuery 指令上查找光标。 按**F12**。 你将导航到 jQuery 库文件。 请注意你还可以使用 jQuery 文件中导航**F12**。
 
@@ -526,7 +520,7 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
     ![打开程序包管理器 file:///C:/Users/User/AppData/Local/Temp/Marker3744//media/44462/Multiple-Stylesheets-and-JavaScript-files-in-the-application.pngconsole](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image49.png "打开包管理器控制台")
 
     *打开包管理器控制台*
-3. 在**程序包管理器控制台中，**类型**安装包 Microsoft.Web.Optimization**按**ENTER**。
+3. 在**程序包管理器控制台中，** 类型**安装包 Microsoft.Web.Optimization**按**ENTER**。
 
 <a id="Ex4Task2"></a>
 
@@ -549,37 +543,25 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
 
     请注意，新**Microsoft.Web.Optimization**命名空间被注释掉该文件的开头。 取消注释使用指令以包含绑定和缩减功能。
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample10.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample10.cs)]
 4. 找到**应用程序\_启动**方法。
 
     在此方法中，取消注释 EnableDefaultBundles 调用，如下面的代码段中所示。 这使我们能够通过使用该文件夹的路径引用的文件夹中的 CSS 文件捆绑的集合加上&quot;CSS&quot;或&quot;JS&quot;后缀。
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample11.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample11.cs)]
 5. 打开**Optimization.aspx**文件并找到的内容控件**HeadContent**。
 
     请注意 CSS 文件和 JS 文件有一个引用的标记。
 
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample12.aspx)]
 
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample12.aspx)]
-
-> [!NOTE]
-> This code is for demo purposes. Ideally, you will reference the bundles in the Site.Master file. In this sample code, you will find that some of the bundled files are also being referenced by the Site.Master file, making this last reference redundant.
-~~~
+    > [!NOTE]
+    > 此代码是出于演示目的。 理想情况下，将引用 Site.Master 文件中的捆绑包。 在此示例代码中，你会发现，某些捆绑文件也被引用 Site.Master 文件，使此最后一个引用冗余。
 6. 请注意，使用链接中的捆绑约定**href**属性从样式和 Scripts\custom 获取所有 CSS 或 JS 文件文件夹分别。
 
-    你可以使用路径**脚本/自定义/JS**如下所示捆绑和 minify 内的所有 JS 文件**自定义脚本/**文件夹。 这是默认捆绑包的默认行为。
+    你可以使用路径**脚本/自定义/JS**如下所示捆绑和 minify 内的所有 JS 文件**自定义脚本/** 文件夹。 这是默认捆绑包的默认行为。
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample13.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample13.aspx)]
 7. 打开**Styles\Site.css**文件。
 
     请注意，原始的 CSS 文件包含缩进的代码、 空格和扩大文件的注释。 （还 JavaScript 文件包含空格和注释）。
@@ -620,18 +602,12 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
 
     请注意，文件不位于同一位置;这是通过默认绑定的另一个优点。
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample14.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample14.cs)]
 4. 打开**Optimization.aspx**文件。
 
     请注意，链接到**静态 JS 捆绑**正在使用时的 Global.asax.cs 文件中配置静态捆绑已声明的路径： **/StaticBundle**。
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample15.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample15.aspx)]
 5. 按**F5**以运行该应用程序，然后导航到**优化**页。
 6. 单击**静态 JS 捆绑**链接以打开该文件。
 
@@ -656,12 +632,9 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
 
     定义将使用的动态文件夹捆绑**CoffeeMinify**将仅应用到的文件的自定义缩减处理器&quot; **.coffee** &quot;扩展 (CoffeeScript 文件）。 请注意，你可以使用的搜索模式以选择要在文件夹中，如捆绑的文件\*.coffee。
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample16.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample16.cs)]
 3. 打开 NuGet 包管理器控制台。 若要执行此操作，请使用菜单**视图** | **其他窗口** | **程序包管理器控制台**。
-4. 在**程序包管理器控制台中，**类型**安装包 CoffeeSharp**按**ENTER**。
+4. 在**程序包管理器控制台中，** 类型**安装包 CoffeeSharp**按**ENTER**。
 5. 单击**显示所有文件**按钮**解决方案资源管理器**窗口
 
     ![显示的所有文件](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image55.png "都显示的所有文件")
@@ -676,10 +649,7 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
 
     此类继承自 JsMinify 以 minify JavaScript 输出的 CoffeeScript 代码编译引起的。 它调用 CoffeeScript 编译器首先，生成的 JavaScript 代码，然后将它发送到 JsMinify.Process 方法以 minify 生成的代码。
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample17.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample17.cs)]
 8. 打开**Script1.coffee**和**Script2.coffee**文件从**脚本/捆绑**文件夹。
 
     这些文件将包括 CoffeScript 代码执行与 CoffeeMinify 类绑定时编译。
@@ -694,16 +664,13 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
     > [CofeeScript](https://github.com/jashkenas/coffeescript/)提供更简单的语法来编写 JavaScript 代码、 增强了 JavaScript 的简洁起见和可读性，以及添加其他功能，如数组理解和模式匹配。
 9. 打开**Optimization.aspx**文件并找到的捆绑包链接。
 
-    请注意，链接到**动态 JS 捆绑**正在引用**脚本/捆绑**文件夹使用**/咖啡**动态文件夹捆绑包配置的后缀。
+    请注意，链接到**动态 JS 捆绑**正在引用**脚本/捆绑**文件夹使用 **/咖啡**动态文件夹捆绑包配置的后缀。
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample18.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample18.aspx)]
 10. 按**F5**以运行该应用程序，然后导航到**优化**页。
 11. 单击**动态 JS 捆绑**链接以打开生成的文件。
 
-    请注意，此包中包含的内容仅包含**.coffee**文件。 你还可以看到 CoffeeScript 代码已编译为 JavaScript 和注释掉的行已删除。
+    请注意，此包中包含的内容仅包含 **.coffee**文件。 你还可以看到 CoffeeScript 代码已编译为 JavaScript 和注释掉的行已删除。
 
     ![动态 JS 文件捆绑](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image58.png "动态 JS 文件捆绑")
 
@@ -873,7 +840,7 @@ Visual Studio 已续订承诺来使代码模式，可访问和组织的 JavaScri
     *Web 部署配置*
 5. 配置数据库连接，如下所示：
 
-   - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:*前缀。
+   - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:* 前缀。
    - 在**用户名**键入您的服务器管理员登录名。
    - 在**密码**键入服务器管理员登录密码。
    - 键入新的数据库名称，例如： *MVC4SampleDB*。

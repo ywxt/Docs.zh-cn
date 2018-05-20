@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 977a6b5a84825ebd087752dcc2ebc0c5410e1657
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 485d2ba7a1274bbb36cfbcbca9322cecc8c8d77c
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>什么是 ASP.NET MVC 4 中的新增功能
 
@@ -152,13 +152,10 @@ ASP.NET MVC 4 是一个框架，用于构建可缩放的、 基于标准的 web 
 6. 打开文件**AuthConfig.cs**位于**应用\_启动**文件夹。
 7. 从注册的 Google 客户端的最后一行中删除注释*OAuth*身份验证。
 
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample1.cs)]
 
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample1.cs)]
-
-> [!NOTE]
-> Notice you can easily enable authentication using any OpenID or OAuth service like Facebook, Twitter, Microsoft, etc.
-~~~
+    > [!NOTE]
+    > 请注意你可以轻松地实现使用如 Facebook、 Twitter、 Microsoft 等任何 OpenID 或 OAuth 服务身份验证。
 8. 按**F5**若要运行解决方案，并导航到登录页。
 9. 选择**Google**服务进行登录。
 
@@ -226,24 +223,20 @@ ASP.NET MVC 4 便于移动的网站和平板电脑浏览器的开发。 此模�
     ![项目模板在移动设备中的页](whats-new-in-aspnet-mvc-4/_static/image14.png "项目在移动设备中的模板页")
 
     *在移动设备中的项目模板页*
-8. 新模板还使用**视区元标记**。 大多数移动浏览器定义一个虚拟的浏览器窗口的宽度或&quot;视区&quot;，该值大于移动设备的实际宽度。 这使得移动浏览器以显示内部虚拟显示整个 web 页。 **视区元标记**允许 web 开发人员可以在移动设备上设置的宽度、 高度和浏览器区域的小数位数**。** 移动应用程序的 ASP.NET MVC 4 模板将视区设置为设备宽度 (&quot;宽度 = 设备宽度&quot;) 中的布局模板 (*views/shared\_Layout.cshtml*)，以便所有页将具有设置为设备屏幕宽度其视区。 请注意视区元标记不会更改默认浏览器视图。
+8. 新模板还使用**视区元标记**。 大多数移动浏览器定义一个虚拟的浏览器窗口的宽度或&quot;视区&quot;，该值大于移动设备的实际宽度。 这使得移动浏览器以显示内部虚拟显示整个 web 页。 **视区元标记**允许 web 开发人员可以在移动设备上设置的宽度、 高度和浏览器区域的小数位数 **。** 移动应用程序的 ASP.NET MVC 4 模板将视区设置为设备宽度 (&quot;宽度 = 设备宽度&quot;) 中的布局模板 (*views/shared\_Layout.cshtml*)，以便所有页将具有设置为设备屏幕宽度其视区。 请注意视区元标记不会更改默认浏览器视图。
 9. 打开 **\_Layout.cshtml**为位于**视图 |共享**文件夹，并注释视区 meta 标记。 运行该应用程序，如果不是已打开，并且签出差异。
 
 
-~~~
 [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample2.cshtml)]
 
-![The site after commenting the viewport meta tag](whats-new-in-aspnet-mvc-4/_static/image15.png "The site after commenting the viewport meta tag")
+![注释视区元标记后的站点](whats-new-in-aspnet-mvc-4/_static/image15.png "后注释视区元标记站点")
 
-*The site after commenting the viewport meta tag*
-~~~
+*站点后注释视区元标记*
 10. 在 Visual Studio 中，按**SHIFT** + **F5**来停止调试应用程序。
 11. 请取消注释视区 meta 标记。
 
 
-~~~
 [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample3.cshtml)]
-~~~
 
 <a id="Task_3_-_Using_Adaptive_Rendering"></a>
 #### <a name="task-3---using-adaptive-rendering"></a>任务 3-使用自适应呈现
@@ -326,10 +319,7 @@ ASP.NET MVC 4 便于移动的网站和平板电脑浏览器的开发。 此模�
 
     (代码段- *ASP.NET MVC 4 实验-Ex02-库操作*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample4.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample4.cs)]
 7. 按**F5**运行该解决方案，然后浏览到以下 URL 若要测试的模拟的照片服务： `http://localhost:[port]/photo/gallery` （[端口] 值依赖于已启动应用程序的当前端口）。 对此 URL 的请求应检索其内容的**Photos.json**文件。
 
     ![测试的模拟的照片服务](whats-new-in-aspnet-mvc-4/_static/image20.png "测试的模拟的照片服务")
@@ -349,37 +339,25 @@ ASP.NET MVC 4 便于移动的网站和平板电脑浏览器的开发。 此模�
 
     (代码段- *ASP.NET MVC 4 实验-Ex02-照片模型*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample5.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample5.cs)]
 4. 从“控制器”文件夹打开 HomeController.cs 文件。
 5. 添加下面的 using 语句。
 
     (代码段- *ASP.NET MVC 4 实验-Ex02-HomeController Using*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample6.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample6.cs)]
 6. 更新**索引**操作使用**HttpClient**检索库数据，然后使用**JavaScriptSerializer**反其序列化到视图模型。
 
     (代码段- *ASP.NET MVC 4 实验-Ex02-索引操作*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample7.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample7.cs)]
 7. 打开**Index.cshtml**文件位于**views/home**文件夹，然后替换替换为以下代码的所有内容。
 
     此代码循环访问所有从服务检索的照片，并显示它们转换为无序的列表。
 
     (代码段- *ASP.NET MVC 4 实验-Ex02-照片列表*)
 
-
-~~~
-[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample8.cshtml)]
-~~~
+    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample8.cshtml)]
 8. 在**解决方案资源管理器**，右键单击**内容**文件夹的项目，然后选择**添加 |现有项**。 浏览到**Source\Assets\Content**这个实验室的文件夹并添加**Site.css**文件。 你将需要确认其替换。 如果你有**Site.css**文件打开时，你将需要确认还重新加载该文件。
 9. 打开文件资源管理器并将复制整个**照片**文件夹位于下**Source\Assets**的解决方案资源管理器中的项目的根文件夹到本实验的文件夹。
 10. 运行该应用程序。 你现在应看到在库中显示照片的主页。
@@ -399,7 +377,7 @@ ASP.NET MVC 4 中的密钥更新之一是对移动开发的支持。 在此练�
 <a id="Task_1_-_Installing_jQuery_Mobile_in_an_ASPNET_MVC_4_Application"></a>
 #### <a name="task-1---installing-jquery-mobile-in-an-aspnet-mvc-4-application"></a>任务 1-ASP.NET MVC 4 应用程序中的安装 jQuery Mobile
 
-1. 打开**开始**解决方案位于**源/Ex3-MobileSupport/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
+1. 打开**开始**解决方案位于**源/Ex3-MobileSupport/开始/** 文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
@@ -434,12 +412,9 @@ ASP.NET MVC 4 中的密钥更新之一是对移动开发的支持。 在此练�
 
     (代码段- *ASP.NET MVC 4 实验室-Ex03-注册移动捆绑*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample10.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample10.cs)]
 5. 运行使用桌面 web 浏览器的应用程序。
-6. 打开**Windows Phone 7 仿真程序中，**位于**开始菜单 |所有程序 |Windows Phone SDK 7.1 |Windows Phone 仿真程序。**
+6. 打开**Windows Phone 7 仿真程序中，** 位于**开始菜单 |所有程序 |Windows Phone SDK 7.1 |Windows Phone 仿真程序。**
 7. 在 phone 开始屏幕中，打开 Internet Explorer。 签出启动该应用程序的 URL 并浏览到 phone 浏览器使用该 URL (例如`http://localhost:[PortNumber]/`)。
 
     你将注意到： 你的应用程序将看起来不同在 Windows Phone 模拟器中，如 jQuery.Mobile.MVC 具有显示针对移动设备进行了优化的视图在项目中创建新的资产。
@@ -462,22 +437,19 @@ ASP.NET MVC 4 中的密钥更新之一是对移动开发的支持。 在此练�
 1. 复制**Views\Home\Index.cshtml**查看并将其创建的副本，请重命名新文件与粘贴**Index.Mobile.cshtml**。
 2. 打开新创建**Index.Mobile.cshtml**查看和将现有&lt;ul&gt;标记替换为以下代码。 通过执行此操作，你将更新&lt;ul&gt;标记中使用 jQuery 移动数据注释，用于从 jQuery 移动的主题。
 
+    [!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample11.html)]
 
-~~~
-[!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample11.html)]
-
-> [!NOTE] 
-> 
-> Notice that:
-> 
-> - The **data-role** attribute set to **listview** will render the list using the listview styles.
-> 
-> - The **data-inset** attribute set to true will show the list with rounded border and margin.
-> 
-> - The **data-filter** attribute set to **true** will generate a search box.
-> 
-> You can learn more about jQuery Mobile conventions in the project documentation: [[http://jquerymobile.com/demos/1.1.1/](http://jquerymobile.com/demos/1.1.1/)](http://jquerymobile.com/demos/1.1.1/)
-~~~
+    > [!NOTE] 
+    > 
+    > 请注意：
+    > 
+    > - **数据角色**属性设置为**listview**将呈现使用 listview 样式的列表。
+    > 
+    > - **数据内嵌**属性设置为 true 将显示该列表与圆角的边框和边距。
+    > 
+    > - **数据筛选器**属性设置为**true**将生成一个搜索框。
+    > 
+    > 你可以了解有关项目文档中的 jQuery 移动约定的详细信息： [[http://jquerymobile.com/demos/1.1.1/](http://jquerymobile.com/demos/1.1.1/)](http://jquerymobile.com/demos/1.1.1/)
 3. 按**CTRL + S**以保存所做的更改。
 4. 切换到**Windows Phone 仿真程序**和刷新站点。 请注意新的外观和感觉的库列表中，以及新的搜索框位于顶部。 然后，在搜索框中键入一个词 (例如，**郁金香**) 照片库中开始搜索。
 
@@ -512,10 +484,7 @@ jQuery Mobile 默认情况下主题包括 5 样本是否指定字母 (a、 b、 
 2. 打开 **\_Layout.Mobile.cshtml**文件位于**views/shared**。
 3. 使用数据的角色设置为找到的 div 元素&quot;页&quot;和更新**数据主题**到&quot; **e**&quot;。
 
-
-~~~
-[!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample13.html)]
-~~~
+    [!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample13.html)]
 4. 按**CTRL + S**以保存所做的更改。
 5. 刷新中的站点**Windows Phone 仿真程序**并留意新的颜色方案。
 
@@ -544,7 +513,7 @@ jQuery Mobile 默认情况下主题包括 5 样本是否指定字母 (a、 b、 
     *使用视图切换器组件的移动布局*
 3. 打开 **\_ViewSwitcher.cshtml**分部视图。
 
-    分部视图使用的新方法**ViewContext.HttpContext.GetOverriddenBrowser()**确定 web 请求的源，并显示相应的链接可切换到桌面或移动视图。
+    分部视图使用的新方法**ViewContext.HttpContext.GetOverriddenBrowser()** 确定 web 请求的源，并显示相应的链接可切换到桌面或移动视图。
 
     **GetOverridenBrowser**方法返回**HttpBrowserCapabilitiesBase**对应于当前为请求设置的用户代理的实例 （实际或重写）。 你可以使用此值以获取属性，如**IsMobileDevice**。
 
@@ -553,8 +522,8 @@ jQuery Mobile 默认情况下主题包括 5 样本是否指定字母 (a、 b、 
     *ViewSwitcher 分部视图*
 4. 打开**ViewSwitcherController.cs**类位于**控制器**文件夹。 签出该 SwitchView 操作由 ViewSwitcher 组件中的链接，并注意新的 HttpContext 方法。
 
-    - **HttpContext.ClearOverridenBrowser()**方法移除当前请求的任何重写的用户代理。
-    - **HttpContext.SetOverridenBrowser()**方法重写请求的实际用户代理值使用指定的用户代理。  
+    - **HttpContext.ClearOverridenBrowser()** 方法移除当前请求的任何重写的用户代理。
+    - **HttpContext.SetOverridenBrowser()** 方法重写请求的实际用户代理值使用指定的用户代理。  
         ![ViewSwitcher 控制器](whats-new-in-aspnet-mvc-4/_static/image31.png "ViewSwitcher 控制器")  
 *ViewSwitcher 控制器*
 
@@ -570,10 +539,7 @@ jQuery Mobile 默认情况下主题包括 5 样本是否指定字母 (a、 b、 
 3. 返回到 Visual Studio 和打开 **\_Layout.cshtml**视图。
 4. 查找登录部分和插入的调用来呈现 **\_ViewSwitcher**下面的部分视图 **\_LogOnPartial**分部视图。 然后，按**CTRL + S**以保存所做的更改。
 
-
-~~~
-[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample14.cshtml)]
-~~~
+    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample14.cshtml)]
 5. 按**CTRL + S**以保存所做的更改。
 6. 刷新 Windows Phone 仿真程序中的页，然后双击以放大屏幕。 请注意，主页页面现在显示**移动视图**从移动切换到桌面视图的链接。
 
@@ -603,39 +569,32 @@ jQuery Mobile 默认情况下主题包括 5 样本是否指定字母 (a、 b、 
 1. 在 Visual Studio 中，按**SHIFT** + **F5**来停止调试应用程序。
 2. 打开**Global.asax.cs**并添加以下 using 语句。
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample15.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample15.cs)]
 3. 将以下突出显示的代码添加到应用程序\_Start 方法。
 
     (代码段- *ASP.NET MVC 4 实验室-Ex03-iPhone DisplayMode*)
 
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample16.cs)]
 
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample16.cs)]
+你注册一个新**DefaultDisplayMode 名为&quot;iPhone&quot;**，静态内**DisplayModeProvider.Instance.Modes**静态列表中，将与匹配每个传入请求。 如果传入的请求包含字符串&quot;iPhone&quot;，ASP.NET MVC 将查找其名称包含的视图&quot;iPhone&quot;后缀。 0 的参数指示如何特定是新的模式;例如，此视图是比常规更具体&quot;.mobile&quot;与移动设备发出的请求匹配的规则。
 
-You have registered a new **DefaultDisplayMode named &quot;iPhone&quot;**, within the static **DisplayModeProvider.Instance.Modes** static list, that will be matched against each incoming request. If the incoming request contains the string &quot;iPhone&quot;, ASP.NET MVC will find the views whose name contain the &quot;iPhone&quot; suffix. The 0 parameter indicates how specific is the new mode; for instance, this view is more specific than the general &quot;.mobile&quot; rule that matches requests from mobile devices.
-
-After this code runs, when an iPhone browser generates a request, your application will use the **Views\Shared\\_Layout.iPhone.cshtml** layout you will create in the next steps.
+此代码运行时为 iPhone 浏览器生成请求后，将使用你的应用程序**views/shared\\_Layout.iPhone.cshtml**将在后续步骤中创建的布局。
 
 > [!NOTE]
-> This way of testing the request for iPhone has been simplified for demo purposes and might not work as expected for every iPhone user agent string (for example test is case sensitive).
-~~~
+> 这种测试请求的 iPhone 经过简化，出于演示目的，可能无法按预期进行每个 iPhone 用户代理字符串 （对应于示例测试是区分大小写） 的方式。
+
 4. 创建一份 **\_Layout.Mobile.cshtml**文件中**views/shared**文件夹并将复制到重命名&quot;  **\_Layout.iPhone.csthml**&quot;.
 5. 打开 **\_Layout.iPhone.csthml**你在上一步中创建。
 6. 将数据角色属性设置为使用找到的 div 元素**页**和更改**数据主题**属性设为&quot; &quot;。
 
 
-~~~
 [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample17.cshtml)]
 
-Now you have 3 layouts in your ASP.NET MVC 4 application:
+现在你的 ASP.NET MVC 4 应用程序中有 3 布局：
 
-1. **\_Layout.cshtml**: default layout used for desktop browsers.
-2. **\_Layout.mobile.cshtml**: default layout used for mobile devices.
-3. **\_Layout.iPhone.cshtml**: specific layout for iPhone devices, using a different color scheme to differentiate from \_Layout.mobile.cshtml.
-~~~
+1. **\_Layout.cshtml**： 用于桌面浏览器的默认布局。
+2. **\_Layout.mobile.cshtml**： 用于移动设备的默认布局。
+3. **\_Layout.iPhone.cshtml**： 对于 iPhone 设备，使用不同的配色方案来区分开来的特定布局\_Layout.mobile.cshtml。
 7. 按**F5**运行该应用程序和浏览中的站点**Windows Phone 仿真程序**。
 8. 打开**iPhone 模拟器**(请参阅[附录 C](#AppendixC)有关如何安装和配置 iPhone 模拟器的说明)，和太浏览到该网站。 请注意，每个 phone 使用特定的模板。
 
@@ -655,7 +614,7 @@ Microsoft.NET Framework 4.5 引入了以 C# 和 Visual Basic 中的.NET 编程�
 <a id="Task_1_-_Implementing_an_Asynchronous_Controller"></a>
 #### <a name="task-1---implementing-an-asynchronous-controller"></a>任务 1-实现异步控制器
 
-1. 打开**开始**解决方案位于**源/Ex4-Async/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
+1. 打开**开始**解决方案位于**源/Ex4-Async/开始/** 文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
@@ -666,46 +625,31 @@ Microsoft.NET Framework 4.5 引入了以 C# 和 Visual Basic 中的.NET 编程�
 2. 打开**HomeController.cs**类**控制器**文件夹。
 3. 添加以下 using 语句。
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample18.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample18.cs)]
 4. 更新**HomeController**类继承自**AsyncController**。 从 AsyncController 派生的控制器使 ASP.NET 能够处理异步请求和它们仍可以服务的同步操作方法。
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample19.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample19.cs)]
 5. 添加**异步**关键字**索引**方法并使其返回类型**任务&lt;ActionResult&gt;**。
 
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample20.cs)]
 
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample20.cs)]
+    > [!NOTE]
+    > **异步**关键字是.NET Framework 4.5 提供的新关键字之一; 它会告知编译器，此方法包含异步代码。 A**任务**对象表示可能会在将来的某个时候完成一个异步操作。
+6. 替换**客户端。GetAsync()** 调用具有完整的异步版本使用 await 关键字，如下所示。
 
-> [!NOTE]
-> The **async** keyword is one of the new keywords the .NET Framework 4.5 provides; it tells the compiler that this method contains asynchronous code. A **Task** object represents an asynchronous operation that may complete at some point in the future.
-~~~
-6. 替换**客户端。GetAsync()**调用具有完整的异步版本使用 await 关键字，如下所示。
+    (代码段- *ASP.NET MVC 4 实验室-Ex04-GetAsync*)
 
-    (Code Snippet - *ASP.NET MVC 4 Lab - Ex04 - GetAsync*)
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample21.cs)]
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample21.cs)]
-
-> [!NOTE]
-> In the previous version, you were using the **Result** property from the **Task** object to block the thread until the result is returned (sync version).
-> 
-> Adding the **await** keyword tells the compiler to asynchronously wait for the task returned from the method call. This means that the rest of the code will be executed as a callback only after the awaited method completes. Another thing to notice is that you do not need to change your try-catch block in order to make this work: the exceptions that happen in background or in foreground will still be caught without any extra work using a handler provided by the framework.
-~~~
+    > [!NOTE]
+    > 在以前版本中，你已使用**结果**属性从**任务**要阻止线程，直至 （同步版本），则返回的结果对象。
+    > 
+    > 添加**await**关键字告知编译器以异步方式等待从方法调用返回的任务。 这意味着只有在处于等待状态的方法完成后将为回调执行代码的其余部分。 需要注意的另一件事情是你不需要更改才能使此工作的 try catch 块： 发生这种情况中背景或前景中的异常将仍然会捕获而无需使用处理程序框架提供的任何额外工作。
 7. 更改代码以继续进行的异步实现通过将替换为新的代码行，如下所示
 
-    (Code Snippet - *ASP.NET MVC 4 Lab - Ex04 - ReadAsStringAsync*)
+    (代码段- *ASP.NET MVC 4 实验室-Ex04-ReadAsStringAsync*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample22.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample22.cs)]
 8. 运行该应用程序。 你将注意到没有较大的变化，但你的代码不会阻止线程池中进行的服务器资源的更好的利用率并提高性能的线程。
 
     > [!NOTE]
@@ -719,44 +663,26 @@ Microsoft.NET Framework 4.5 引入了以 C# 和 Visual Basic 中的.NET 编程�
 1. 返回到 Visual Studio，然后按**SHIFT + F5**来停止调试。
 2. 添加以下 using 语句到**HomeController.cs**文件。
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample23.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample23.cs)]
 3. 更新索引操作，即可接收**CancellationToken**自变量。
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample24.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample24.cs)]
 4. 更新**GetAsync**调用即可传递的取消标记。
 
     (代码段- *CancellationToken 与 ASP.NET MVC 4 实验室-Ex04-SendAsync*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample25.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample25.cs)]
 5. 修饰*索引*方法替换**AsyncTimeout**属性设置为 500 毫秒和**HandleError**属性配置为以处理**TaskCanceledException**通过重定向到**TimedOut**视图。
 
     (代码段- *ASP.NET MVC 4 实验室-Ex04-特性*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample26.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample26.cs)]
 6. 打开**PhotoController**类和更新**库**方法延迟执行 1000年毫秒 （1 秒），以模拟长时间运行的任务。
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample27.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample27.cs)]
 7. 打开**Web.config**文件，并通过添加下面的元素启用自定义错误。
 
-
-~~~
-[!code-xml[Main](whats-new-in-aspnet-mvc-4/samples/sample28.xml)]
-~~~
+    [!code-xml[Main](whats-new-in-aspnet-mvc-4/samples/sample28.xml)]
 8. 创建新视图在**views/shared**名为**TimedOut**并使用默认的布局。 在解决方案资源管理器，右键单击**views/shared**文件夹，然后选择**添加 |视图**。
 
     ![对于每个移动设备使用不同的视图](whats-new-in-aspnet-mvc-4/_static/image36.png "为每个移动设备使用不同的视图")
@@ -764,10 +690,7 @@ Microsoft.NET Framework 4.5 引入了以 C# 和 Visual Basic 中的.NET 编程�
     *对于每个移动设备使用不同的视图*
 9. 更新**TimedOut**查看内容，如下所示。
 
-
-~~~
-[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample29.cshtml)]
-~~~
+    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample29.cshtml)]
 10. 运行应用程序并导航到根 URL。 如已添加**Thread.Sleep**为 1000年毫秒，则会超时错误，生成的**AsyncTimeout**属性，并通过捕获**HandleError**属性。
 
     ![处理的超时异常](whats-new-in-aspnet-mvc-4/_static/image37.png "超时异常处理")
@@ -1084,7 +1007,7 @@ Microsoft.NET Framework 4.5 引入了以 C# 和 Visual Basic 中的.NET 编程�
     *Web 部署配置*
 5. 配置数据库连接，如下所示：
 
-   - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:*前缀。
+   - 在**服务器名称**类型 SQL 数据库服务器 URL 使用*tcp:* 前缀。
    - 在**用户名**键入您的服务器管理员登录名。
    - 在**密码**键入服务器管理员登录密码。
    - 键入新的数据库名称，例如： *MVC4SampleDB*。

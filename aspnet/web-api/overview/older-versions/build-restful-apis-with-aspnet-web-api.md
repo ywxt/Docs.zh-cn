@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: ded549109ca6e7ad806f1c3f53387766527e5a94
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: cb02288e93be801a1e55852741ed1443d8d3617d
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/18/2018
 ---
 <a name="build-restful-apis-with-aspnet-web-api"></a>生成与 ASP.NET Web API RESTful Api
 ====================
@@ -171,10 +171,7 @@ ms.lasthandoff: 04/26/2018
 
     (代码段- *Web API 实验-Ex01-联系人类*)
 
-
-~~~
-[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample2.cs)]
-~~~
+    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample2.cs)]
 4. 在**ContactController**类中，选择 word**字符串**方法定义中**获取**方法和类型单词*联系人*。 中键入的单词后, 一个指示器将出现在单词的开头**联系人**。 可以按住**Ctrl**键和按句点 （.） 键或单击使用鼠标以打开代码编辑器中，以自动填充中的帮助对话框图标**使用**指令的模型命名空间。
 
     ![对于命名空间声明中使用 Intellisense 帮助](build-restful-apis-with-aspnet-web-api/_static/image12.png)
@@ -222,10 +219,7 @@ ms.lasthandoff: 04/26/2018
     *创建一个类文件以包含联系人存储库服务层的代码*
 4. 添加一条 using 指令至**ContactRepository.cs**文件以包括模型命名空间。
 
-
-~~~
-[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample4.cs)]
-~~~
+    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample4.cs)]
 5. 添加以下突出显示的代码**ContactRepository.cs**文件实现 GetAllContacts 方法。
 
     (代码段- *Web API 实验-Ex01-联系存储库*)
@@ -234,10 +228,7 @@ ms.lasthandoff: 04/26/2018
 6. 打开**ContactController.cs**如果尚未打开文件。
 7. 将以下代码添加到该文件的命名空间声明部分使用语句。
 
-
-~~~
-[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample6.cs)]
-~~~
+    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample6.cs)]
 8. 添加以下突出显示的代码**ContactController.cs**类添加一个私有字段来表示实例存储库，以便成员可以产生的类的其余部分使用的服务实现。
 
     (代码段-*的 Web API 实验-Ex01-联系控制器*)
@@ -356,16 +347,10 @@ ms.lasthandoff: 04/26/2018
 3. 打开**Index.cshtml**文件位于**视图/主页**文件夹。
 4. 在 div 元素的 HTML 代码替换 id**正文**以便其类似下列代码所示。
 
-
-~~~
-[!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample13.html)]
-~~~
+    [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample13.html)]
 5. 在执行对 Web API 的 HTTP 请求的文件的底部添加以下 Javascript 代码。
 
-
-~~~
-[!code-cshtml[Main](build-restful-apis-with-aspnet-web-api/samples/sample14.cshtml)]
-~~~
+    [!code-cshtml[Main](build-restful-apis-with-aspnet-web-api/samples/sample14.cshtml)]
 6. 打开**ContactController.cs**如果尚未打开文件。
 7. 上放置一个断点**获取**方法**ContactController**类。
 
@@ -400,17 +385,11 @@ ms.lasthandoff: 04/26/2018
 
     (代码段- *Web API 实验室-Ex03-Post 方法*)
 
-
-~~~
-[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample15.cs)]
-~~~
+    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample15.cs)]
 3. 打开**Index.cshtml**文件在 Visual Studio 中，如果未打开。
 4. 将以下 HTML 代码之后添加在上一任务中的无序列表添加到文件。
 
-
-~~~
-[!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample16.html)]
-~~~
+    [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample16.html)]
 5. 在底部的文档的脚本元素中，添加以下突出显示的代码，以处理按钮单击事件，将将数据发布到 Web API 使用的 HTTP POST 调用。
 
     [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample17.html)]

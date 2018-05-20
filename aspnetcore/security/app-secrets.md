@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 4db09d3d41b705597f93d05af91077f2b9236b7e
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 88b4ee9a963543f8cc97cb66271628a14fe657de
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>安全存储中 ASP.NET Core 中开发的应用程序机密
 
@@ -55,8 +55,25 @@ ms.lasthandoff: 05/17/2018
 
 密码管理器工具避开实现详细信息，例如哪里和如何存储值。 无需知道这些实现的详细信息，可以使用该工具。 这些值存储在[JSON](https://json.org/)受系统保护用户配置文件文件夹中本地计算机上的配置文件：
 
-* Windows：`%APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json`
-* Linux 和 macOS: `~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+
+文件系统路径：
+
+`%APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json`
+
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
+
+文件系统路径：
+
+`~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`
+
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+
+文件系统路径：
+
+`~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`
+
+---
 
 在前面文件路径中，将`<user_secrets_id>`与`UserSecretsId`中指定的值 *.csproj*文件。
 
@@ -133,17 +150,33 @@ dotnet user-secrets set "Movies:ServiceApiKey" "12345" --project "C:\apps\WebApp
 
 ## <a name="set-multiple-secrets"></a>设置多个机密
 
-可以通过管道传递到的 JSON 设置机密一批`set`命令。 在下面的示例中， *input.json*文件的内容通过管道传递给`set`命令在 Windows 上：
+可以通过管道传递到的 JSON 设置机密一批`set`命令。 在下面的示例中， *input.json*文件的内容通过管道传递给`set`命令。
 
-```console
-type .\input.json | dotnet user-secrets set
-```
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-在 macOS 和 Linux 上使用以下命令：
+打开命令 shell，并执行以下命令：
 
-```console
-cat ./input.json | dotnet user-secrets set
-```
+  ```console
+  type .\input.json | dotnet user-secrets set
+  ```
+
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
+
+打开命令 shell，并执行以下命令：
+
+  ```console
+  cat ./input.json | dotnet user-secrets set
+  ```
+
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+
+打开命令 shell，并执行以下命令：
+
+  ```console
+  cat ./input.json | dotnet user-secrets set
+  ```
+
+---
 
 ## <a name="access-a-secret"></a>访问机密
 

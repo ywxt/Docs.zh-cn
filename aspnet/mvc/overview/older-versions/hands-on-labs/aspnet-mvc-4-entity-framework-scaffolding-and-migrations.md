@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
-ms.openlocfilehash: 548afe1926eed49841251832d54dc213da0cb753
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 42a12ee39223a06054382dbe9b4784196a706216
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 实体框架基架和迁移
 
@@ -57,7 +57,7 @@ ms.lasthandoff: 04/06/2018
 
 **安装代码片段**
 
-为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。 若要安装运行的代码段**.\Source\Setup\CodeSnippets.vsi**文件。
+为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。 若要安装运行的代码段 **.\Source\Setup\CodeSnippets.vsi**文件。
 
 如果你不熟悉 Visual Studio 代码段，并想要了解如何使用它们，你可以从该文档引用的附录&quot;[附录 b： 使用代码段](#AppendixB)&quot;。
 
@@ -108,10 +108,7 @@ ASP.NET MVC 基架提供创建必要的逻辑，可让你的应用程序与数�
 
     (代码段- *ASP.NET MVC 4 和 Entity Framework 迁移-Ex1 人员属性*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample1.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample1.cs)]
 6. 单击**生成 |生成解决方案**以保存所做的更改并生成项目。
 
     ![生成应用程序](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image3.png "生成应用程序")
@@ -147,7 +144,7 @@ ASP.NET MVC 基架提供创建必要的逻辑，可让你的应用程序与数�
 此时，将不创建数据库。 在此任务中，将运行的应用程序第一次，并测试的 CRUD 操作。 将使用 Code First 动态创建数据库。
 
 1. 按 **F5** 运行该应用程序。
-2. 在浏览器中，添加**/Person**到 URL 以打开人员页。
+2. 在浏览器中，添加 **/Person**到 URL 以打开人员页。
 
     ![首次运行的应用程序](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image7.png "首次运行的应用程序")
 
@@ -196,16 +193,10 @@ ASP.NET MVC 基架提供创建必要的逻辑，可让你的应用程序与数�
     *迁移文件夹*
 3. 打开**Configuration.cs** Migrations 文件夹中的文件。 找到的类构造函数并将更改**AutomaticMigrationsEnabled**值赋给*true*。
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample3.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample3.cs)]
 4. 打开 Person 类并添加人员的中间名属性。 使用此新的属性，您在更改模型。
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample4.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample4.cs)]
 5. 选择**生成 |生成解决方案**上生成应用程序的菜单。
 
     ![生成应用程序](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image13.png "生成应用程序")
@@ -263,7 +254,7 @@ ASP.NET MVC 基架提供创建必要的逻辑，可让你的应用程序与数�
 #### <a name="task4--running-the-application"></a>任务 4-运行应用程序
 
 1. 按 **F5** 运行该应用程序。
-2. 打开**/Person**。 请注意已保留的数据时的中间名列已添加。
+2. 打开 **/Person**。 请注意已保留的数据时的中间名列已添加。
 
     ![添加的中间名](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image20.png "添加的中间名")
 
