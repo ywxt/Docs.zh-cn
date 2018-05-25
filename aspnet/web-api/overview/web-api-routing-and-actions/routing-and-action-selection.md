@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/routing-and-action-selection
-title: "路由和 ASP.NET Web API 中的操作选择 |Microsoft 文档"
+title: 路由和 ASP.NET Web API 中的操作选择 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2012
@@ -150,7 +150,7 @@ URI"`http://localhost/api/products`"与此路由匹配。 "{类别}"段分配默
     2. 从此列表中，尝试路由字典中或在 URI 查询字符串中查找每个参数名称的匹配项。 匹配项区分大小，并不依赖于参数顺序。
     3. 选择列表中的每个参数的 URI 中具有匹配的其中一项操作。
     4. 如果多该一个操作不符合这些标准，选取大多数的参数匹配的一个。
-4. 忽略操作**[NonAction]**属性。
+4. 忽略操作 **[NonAction]** 属性。
 
 步骤 #3 是可能最容易混淆。 基本理念都是从 URI、 从请求正文中，或从自定义绑定，参数可以获取其值。 对于来自 URI 的参数，我们想要确保 URI 实际包含该参数，在 （通过路由字典） 的路径或查询字符串中的值。
 

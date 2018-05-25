@@ -8,11 +8,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: be7d55bf1a5d3da63ff137ed86f71984dc897eff
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 26f516716864bdce81cf3acdacb0f9d2f98407b7
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 排序、筛选、分页 - 第 3 个教程（共 8 个）
 
@@ -58,7 +58,7 @@ Razor 页面使用 `NameSort` 和 `DateSort` 为列标题超链接配置相应�
 
 `?: operator` 也称为三元运算符。
 
-通过这两个语句，视图可如下设置列标题超链接：
+通过这两个语句，页面可如下设置列标题超链接：
 
 | 当前排序顺序 | 姓氏超链接 | 日期超链接 |
 |:--------------------:|:-------------------:|:--------------:|
@@ -77,7 +77,7 @@ Razor 页面使用 `NameSort` 和 `DateSort` 为列标题超链接配置相应�
 
 `OnGetAsync` 可能获得包含大量列的详细信息。
 
-### <a name="add-column-heading-hyperlinks-to-the-student-index-view"></a>向“学生索引”视图添加列标题超链接
+### <a name="add-column-heading-hyperlinks-to-the-student-index-page"></a>向“学生索引”页添加列标题超链接
 
 将 Students/Index.cshtml 中的代码替换为以下突出显示的代码：
 
@@ -133,9 +133,9 @@ Razor 页面使用 `NameSort` 和 `DateSort` 为列标题超链接配置相应�
 
 调用 `ToUpper` 不会对性能产生负面影响。 `ToUpper` 代码会在 TSQL SELECT 语句的 WHERE 子句中添加一个函数。 添加的函数会防止优化器使用索引。 如果安装的 SQL 区分大小写，则最好避免在不必要时调用 `ToUpper`。
 
-### <a name="add-a-search-box-to-the-student-index-view"></a>向“学生索引”视图添加搜索框
+### <a name="add-a-search-box-to-the-student-index-page"></a>向“学生索引”页添加搜索框
 
-在 Views/Student/Index.cshtml 中，添加以下突出显示的代码以创建“搜索”按钮和各种 chrome。
+在 Pages/Students/Index.cshtml中，添加以下突出显示的代码以创建“搜索”按钮和各种 chrome。
 
 [!code-html[](intro/samples/cu/Pages/Students/Index3.cshtml?highlight=14-23&range=1-25)]
 
@@ -267,7 +267,7 @@ LINQ 语句按注册日期对学生实体进行分组，计算每组中实体的
 
 ### <a name="modify-the-about-razor-page"></a>修改“关于”Razor 页面
 
-将 Views/Home/About.cshtml 文件中的代码替换为以下代码：
+将 Pages/About.cshtml 文件中的代码替换为以下代码：
 
 [!code-html[](intro/samples/cu/Pages/About.cshtml)]
 

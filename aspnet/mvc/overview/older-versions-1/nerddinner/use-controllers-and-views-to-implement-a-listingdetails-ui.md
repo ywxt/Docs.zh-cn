@@ -68,11 +68,11 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-csharp[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample1.cs)]
 
-我们然后运行 NerdDinner 应用程序，使用我们的浏览器调用它们。 在中键入*"/ 晚餐 /"* URL 将导致我们*index （)*方法运行，然后它将发送回以下响应：
+我们然后运行 NerdDinner 应用程序，使用我们的浏览器调用它们。 在中键入 *"/ 晚餐 /"* URL 将导致我们*index （)* 方法运行，然后它将发送回以下响应：
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image4.png)
 
-在中键入*"/ 2-晚餐/详细信息"* URL 将导致我们*Details()*方法运行，并将发送回以下响应：
+在中键入 *"/ 2-晚餐/详细信息"* URL 将导致我们*Details()* 方法运行，并将发送回以下响应：
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image5.png)
 
@@ -125,21 +125,21 @@ ASP.NET MVC 包括一个功能强大的 URL 路由引擎，提供了大量的灵
 
 在我们视图呈现分隔我们控制器逻辑带来了几大好处。 具体而言，它有助于之间的应用程序代码和 UI 格式呈现代码强制"明显的问题"。 这很容易得多到单元测试中隔离的应用程序逻辑与 UI 呈现逻辑。 它便于以后修改 UI 呈现模板，而无需更改应用程序代码。 并且它可以使开发人员和设计器以协作项目上更容易。
 
-我们可以更新我们 DinnersController 类，以指示我们想要查看模板用于通过将我们的两个操作方法的方法签名从具有返回类型为"void"改为具有返回类型为"ActionResult"更改发送回 HTML UI 响应。 然后，我们可以调用*View()*控制器基本类返回的帮助器方法"ViewResult"对象与下面类似：
+我们可以更新我们 DinnersController 类，以指示我们想要查看模板用于通过将我们的两个操作方法的方法签名从具有返回类型为"void"改为具有返回类型为"ActionResult"更改发送回 HTML UI 响应。 然后，我们可以调用*View()* 控制器基本类返回的帮助器方法"ViewResult"对象与下面类似：
 
 [!code-csharp[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample4.cs)]
 
-签名*View()*下面，我们将使用上面的帮助器方法如下所示：
+签名*View()* 下面，我们将使用上面的帮助器方法如下所示：
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image7.png)
 
-第一个参数*View()*帮助器方法是我们想要用来呈现的 HTML 响应的视图模板文件的名称。 第二个参数是一个包含视图模板呈现的 HTML 响应所需的数据的模型对象。
+第一个参数*View()* 帮助器方法是我们想要用来呈现的 HTML 响应的视图模板文件的名称。 第二个参数是一个包含视图模板呈现的 HTML 响应所需的数据的模型对象。
 
-我们正在呼叫我们 index （） 操作方法内*View()*帮助器方法并指示我们想要呈现晚餐使用"索引"视图模板的 HTML 列表。 我们要传递的视图模板以生成从列表的 Dinner 对象的序列：
+我们正在呼叫我们 index （） 操作方法内*View()* 帮助器方法并指示我们想要呈现晚餐使用"索引"视图模板的 HTML 列表。 我们要传递的视图模板以生成从列表的 Dinner 对象的序列：
 
 [!code-csharp[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample5.cs)]
 
-在我们 Details() 操作方法中，我们尝试检索 Dinner 对象使用的 URL 中提供的 id。 如果我们调用找到有效 Dinner *View()* ，该值指示我们想要使用的"详细信息"视图模板来呈现检索到的 Dinner 对象的帮助器方法。 如果请求无效 dinner，则我们呈现一有用的错误消息，指示 Dinner 不存在使用"NotFound"视图模板 (和重载的版本*View()*帮助器方法，只需模板名称):
+在我们 Details() 操作方法中，我们尝试检索 Dinner 对象使用的 URL 中提供的 id。 如果我们调用找到有效 Dinner *View()* ，该值指示我们想要使用的"详细信息"视图模板来呈现检索到的 Dinner 对象的帮助器方法。 如果请求无效 dinner，则我们呈现一有用的错误消息，指示 Dinner 不存在使用"NotFound"视图模板 (和重载的版本*View()* 帮助器方法，只需模板名称):
 
 [!code-csharp[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample6.cs)]
 
@@ -171,7 +171,7 @@ ASP.NET MVC 包括一个功能强大的 URL 路由引擎，提供了大量的灵
 
 [!code-aspx[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample7.aspx)]
 
-我们可以然后试试看以及浏览器中。 若要让我们执行此请求*"/ 晚餐/详细信息/9999"* URL。 这将参考 dinner，当前不在数据库中，存在且不会导致呈现我们"NotFound"视图模板我们 DinnersController.Details() 操作方法：
+我们可以然后试试看以及浏览器中。 若要让我们执行此请求 *"/ 晚餐/详细信息/9999"* URL。 这将参考 dinner，当前不在数据库中，存在且不会导致呈现我们"NotFound"视图模板我们 DinnersController.Details() 操作方法：
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image12.png)
 
@@ -201,7 +201,7 @@ ASP.NET MVC 包括一个功能强大的 URL 路由引擎，提供了大量的灵
 
 [!code-aspx[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample8.aspx)]
 
-我们可以请求*"/ 1/晚餐/详细信息"* URL 以查看此"详细信息"基架实现在浏览器的外观。 使用此 URL 将显示我们手动添加到我们的数据库我们首次创建时晚餐之一：
+我们可以请求 *"/ 1/晚餐/详细信息"* URL 以查看此"详细信息"基架实现在浏览器的外观。 使用此 URL 将显示我们手动添加到我们的数据库我们首次创建时晚餐之一：
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image16.png)
 
@@ -217,7 +217,7 @@ ASP.NET MVC 包括一个功能强大的 URL 路由引擎，提供了大量的灵
 
 [!code-aspx[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample9.aspx)]
 
-当我们访问*"/ 1/晚餐/详细信息"* URL 再次它将立即呈现与下面类似：
+当我们访问 *"/ 1/晚餐/详细信息"* URL 再次它将立即呈现与下面类似：
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image18.png)
 
@@ -231,7 +231,7 @@ ASP.NET MVC 包括一个功能强大的 URL 路由引擎，提供了大量的灵
 
 当我们单击"添加"按钮时，Visual Studio 将创建新"Index.aspx"视图模板文件为我们在我们"\Views\Dinners"目录中。 它将"搭建基架"初始中的实现，提供我们将传递给视图晚餐 HTML 表列表。
 
-当我们运行的应用程序和访问*"/ 晚餐 /"*它会呈现晚餐我们列表的 URL 如下所示：
+当我们运行的应用程序和访问 *"/ 晚餐 /"* 它会呈现晚餐我们列表的 URL 如下所示：
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image20.png)
 
@@ -243,7 +243,7 @@ ASP.NET MVC 包括一个功能强大的 URL 路由引擎，提供了大量的灵
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image21.png)
 
-当我们命中一次刷新*/Dinners*在我们更新的视图现在看起来像下面我们浏览器中的 URL:
+当我们命中一次刷新 */Dinners*在我们更新的视图现在看起来像下面我们浏览器中的 URL:
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image22.png)
 
@@ -265,7 +265,7 @@ Html.ActionLink() 帮助器方法的第一个参数是要显示的链接文本 �
 
 [!code-aspx[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample13.aspx)]
 
-现在我们命中条件和*/Dinners*我们 dinner 列表类似于下面的 URL:
+现在我们命中条件和 */Dinners*我们 dinner 列表类似于下面的 URL:
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image24.png)
 
@@ -283,11 +283,11 @@ Html.ActionLink() 帮助器方法的第一个参数是要显示的链接文本 �
 
 请注意如何在该处的上方是当前项目中的三个控制器类 (DinnersController、 HomeController 和 AccountController – 我们创建项目时，最后两个已添加默认情况下)，并且有三个子目录 （一个用于每个控制器） \Views 目录中。
 
-从主页和帐户控制器中引用的视图将自动解决了相应的其视图模板*\Views\Home*和*\Views\Account*目录。 *\Views\Shared*子目录提供一种方法都是重复使用应用程序中的多个控制器的视图模板存储。 当 ASP.NET MVC 尝试解析查看模板时，它将首先检查内*\Views\[控制器]*特定目录中，如果它找不到视图模板存在它将查找内*\Views\共享*目录。
+从主页和帐户控制器中引用的视图将自动解决了相应的其视图模板*\Views\Home*和*\Views\Account*目录。 *\Views\Shared*子目录提供一种方法都是重复使用应用程序中的多个控制器的视图模板存储。 当 ASP.NET MVC 尝试解析查看模板时，它将首先检查内*\Views\[控制器]* 特定目录中，如果它找不到视图模板存在它将查找内*\Views\共享*目录。
 
 命名单独的视图模板时，推荐的指南，是能够共享相同的名称与操作方法导致它呈现的视图模板。 例如，高于我们"索引"操作方法使用"索引"视图呈现视图结果，而"详细信息"操作方法使用"详细信息"视图中呈现其结果。 这很容易地快速查看哪些模板是与每个操作相关联。
 
-开发人员不需要显式指定的视图模板名称，当视图模板具有与从中调用在控制器上的操作方法相同的名称。 我们可以改为仅的模型对象传递给"View()"帮助器方法 （如果没有指定的视图名称），和 ASP.NET MVC 将自动推断我们想要使用*\Views\[ControllerName]\[ActionName]*磁盘来呈现不上的查看模板。
+开发人员不需要显式指定的视图模板名称，当视图模板具有与从中调用在控制器上的操作方法相同的名称。 我们可以改为仅的模型对象传递给"View()"帮助器方法 （如果没有指定的视图名称），和 ASP.NET MVC 将自动推断我们想要使用*\Views\[ControllerName]\[ActionName]* 磁盘来呈现不上的查看模板。
 
 这使得我们可以进行稍微清理我们控制器代码并避免重复的名称在我们的代码中两次：
 

@@ -71,14 +71,14 @@ ms.lasthandoff: 04/06/2018
 
 尽管你可能会将项目文件中排除特定文件和文件夹操作，但是没有更简单的方法。 WPP 包括一种机制来通过构建名为的项列表中排除文件和文件夹**ExcludeFromPackageFolders**和**ExcludeFromPackageFiles**。 你可以通过将你自己的项添加到这些列表来扩展此机制。 若要执行此操作，你需要完成以下高级步骤：
 
-1. 创建一个名为的自定义项目文件*[项目名称].wpp.targets*项目文件所在的文件夹中。
+1. 创建一个名为的自定义项目文件 *[项目名称].wpp.targets*项目文件所在的文件夹中。
 
     > [!NOTE]
     > *。 Wpp.targets*文件需要在你的 web 应用程序项目文件所在的文件夹中转&#x2014;例如*ContactManager.Mvc.csproj*&#x2014;而不是任何自定义所在的文件夹中你使用来控制生成和部署过程的项目文件。
-2. 在*。 wpp.targets*文件中，添加**ItemGroup**元素。
+2. 在 *。 wpp.targets*文件中，添加**ItemGroup**元素。
 3. 在**ItemGroup**元素中，添加**ExcludeFromPackageFolders**和**ExcludeFromPackageFiles**要排除特定文件和文件夹所需项。
 
-这是此基本结构*。 wpp.targets*文件：
+这是此基本结构 *。 wpp.targets*文件：
 
 
 [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample1.xml)]
@@ -88,7 +88,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="excluding-files-and-folders-from-a-web-package"></a>从 Web 包中排除文件和文件夹
 
-下一个过程演示如何将添加*。 wpp.targets* web 应用程序项目以及如何使用文件来生成你的项目时从 web 包排除特定文件和文件夹的文件。
+下一个过程演示如何将添加 *。 wpp.targets* web 应用程序项目以及如何使用文件来生成你的项目时从 web 包排除特定文件和文件夹的文件。
 
 **若要从 web 部署包中排除文件和文件夹**
 
@@ -107,25 +107,25 @@ ms.lasthandoff: 04/06/2018
 6. 如果你想要从 web 包中排除文件夹，将添加**ExcludeFromPackageFolders**元素**ItemGroup**元素：
 
    1. 在**包括**特性，提供你想要排除的文件夹中的分号分隔的列表。
-   2. 在**FromTarget**元数据元素提供一个有意义的值以指示原因文件夹中排除，如名*。 wpp.targets*文件。
+   2. 在**FromTarget**元数据元素提供一个有意义的值以指示原因文件夹中排除，如名 *。 wpp.targets*文件。
 
       [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample3.xml)]
 7. 如果你想要从 web 包中排除文件，添加**ExcludeFromPackageFiles**元素**ItemGroup**元素：
 
    1. 在**包括**特性，提供你想要排除的文件之间用分号分隔列表。
-   2. 在**FromTarget**元数据元素提供一个有意义的值以指示原因文件中排除，如名*。 wpp.targets*文件。
+   2. 在**FromTarget**元数据元素提供一个有意义的值以指示原因文件中排除，如名 *。 wpp.targets*文件。
 
       [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample4.xml)]
 8. *[项目名称].wpp.targets*文件现在应类似如下：
 
     [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample5.xml)]
-9. 保存并关闭*[项目名称].wpp.targets*文件。
+9. 保存并关闭 *[项目名称].wpp.targets*文件。
 
 下一次你生成和包你的 web 应用程序项目，将自动检测 WPP *。 wpp.targets*文件。 不将 web 包中包括任何文件和你指定的文件夹。
 
 ## <a name="conclusion"></a>结束语
 
-本主题描述如何创建自定义生成 web 包时, 排除特定文件和文件夹*。 wpp.targets*与你的 web 应用程序项目文件相同的文件夹中的文件。
+本主题描述如何创建自定义生成 web 包时, 排除特定文件和文件夹 *。 wpp.targets*与你的 web 应用程序项目文件相同的文件夹中的文件。
 
 ## <a name="further-reading"></a>其他阅读材料
 

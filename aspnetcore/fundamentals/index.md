@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: ce79118fa025f912d7f04e2c9bff481a04489674
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 97c0b289b259332d57f8175e05020fe03d505723
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 基础知识
 
@@ -155,7 +155,7 @@ ASP.NET Core 通过使用文件提供程序抽象化文件系统访问，文件�
 
 ASP.NET Core 应用可配置和启动一个*主机*，负责应用启动和生存期管理。
 
-有关详细信息，请参阅[托管](xref:fundamentals/hosting)。
+有关详细信息，请参阅[在 ASP.NET Core 中托管](xref:fundamentals/host/index)。
 
 ## <a name="session-and-application-state"></a>会话和应用程序状态
 
@@ -189,7 +189,7 @@ ASP.NET Core 托管模型不直接侦听请求。 托管模型依赖 HTTP 服务
 
 后台任务作为*托管服务*实现。 托管服务是一个类，具有实现 [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice) 接口的后台任务逻辑。
 
-有关详细信息，请参阅[使用托管服务的后台任务](xref:fundamentals/hosted-services)。
+有关详细信息，请参阅[使用托管服务的后台任务](xref:fundamentals/host/hosted-services)。
 
 ## <a name="open-web-interface-for-net-owin"></a>.NET 的开放 Web 接口 (OWIN)
 

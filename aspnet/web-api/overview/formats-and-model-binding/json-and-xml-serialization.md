@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/json-and-xml-serialization
-title: "JSON 和 ASP.NET Web API 中的 XML 序列化 |Microsoft 文档"
+title: JSON 和 ASP.NET Web API 中的 XML 序列化 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/30/2012

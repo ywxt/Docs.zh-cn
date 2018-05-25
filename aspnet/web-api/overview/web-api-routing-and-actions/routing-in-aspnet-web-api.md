@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api
-title: "ASP.NET Web API 中的路由 |Microsoft 文档"
+title: ASP.NET Web API 中的路由 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/11/2012
@@ -61,9 +61,9 @@ ms.lasthandoff: 11/10/2017
 
 一旦找到匹配的路由，Web API 选择控制器和操作：
 
-- 若要查找控制器，Web API 添加&quot;控制器&quot;为的值*{controller}*变量。
+- 若要查找控制器，Web API 添加&quot;控制器&quot;为的值 *{controller}* 变量。
 - 若要查找操作，Web API 的 HTTP 方法，查找并随后查找名称开头的 HTTP 方法名称的操作。 例如，使用 GET 请求，Web API 中寻找开头的操作&quot;获取...&quot;，如&quot;GetContact&quot;或&quot;GetAllContacts&quot;。 此约定仅适用于获取、 POST、 PUT 和删除方法。 可以通过在你的控制器上使用属性来启用其他 HTTP 方法。 我们将更高版本看到举例说明的。
-- 在路由模板中，其他占位符变量如*{id}、*映射到操作参数。
+- 在路由模板中，其他占位符变量如 *{id}、* 映射到操作参数。
 
 让我们看一个示例。 假设定义以下控制器：
 
@@ -78,7 +78,7 @@ ms.lasthandoff: 11/10/2017
 | DELETE | api/产品/4 | DeleteProduct | 4 |
 | 发布 | api/产品 | *（没有匹配项）* |  |
 
-请注意， *{id}*段的 URI，如果存在，将映射到*id*操作的参数。 在此示例中，控制器定义两个 GET 方法，其中一个有*id*参数，另一个不带任何参数。
+请注意， *{id}* 段的 URI，如果存在，将映射到*id*操作的参数。 在此示例中，控制器定义两个 GET 方法，其中一个有*id*参数，另一个不带任何参数。
 
 此外，请注意，POST 请求将失败，因为控制器不会定义&quot;Post...&quot;方法。
 
@@ -105,7 +105,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample5.cs)]
 
-在此路由模板中， *{action}*参数名称在控制器上的操作方法。 这种样式的路由，与使用属性来指定允许的 HTTP 方法。 例如，假设你的控制器具有以下方法：
+在此路由模板中， *{action}* 参数名称在控制器上的操作方法。 这种样式的路由，与使用属性来指定允许的 HTTP 方法。 例如，假设你的控制器具有以下方法：
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample6.cs)]
 

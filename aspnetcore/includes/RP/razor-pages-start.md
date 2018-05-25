@@ -10,10 +10,10 @@
 
 | 文件或文件夹              | 目标 |
 | ----------------- | ------------ | 
-| wwwroot | 包含静态文件。 请参阅[使用静态文件](xref:fundamentals/static-files)。 |
+| wwwroot | 包含静态文件。 请参阅[静态文件](xref:fundamentals/static-files)。 |
 | 页数 | [Razor Pages](xref:mvc/razor-pages/index)的文件夹。 | 
 | *appsettings.json* | [配置](xref:fundamentals/configuration/index) |
-| *Program.cs* | [托管](xref:fundamentals/hosting) ASP.NET Core 应用。|
+| *Program.cs* | [托管](xref:fundamentals/host/index) ASP.NET Core 应用。|
 | *Startup.cs* | 配置服务和请求管道。 请参阅[启动](xref:fundamentals/startup)。|
 
 ### <a name="the-pages-folder"></a>“页面”文件夹

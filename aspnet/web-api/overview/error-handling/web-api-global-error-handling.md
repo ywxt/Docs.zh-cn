@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/error-handling/web-api-global-error-handling
-title: "全局错误处理 ASP.NET Web API 2 中 |Microsoft 文档"
+title: 全局错误处理 ASP.NET Web API 2 中 |Microsoft 文档
 author: davidmatson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/03/2014
@@ -122,7 +122,7 @@ Catch 块字符串的列表也会提供通过静态只读属性。 （核心 cat
 
 ## <a name="registering-exception-filters"></a>注册异常筛选器
 
-如果你使用"ASP.NET MVC 4 Web 应用程序"项目模板创建你的项目，将 Web API 配置代码内的放置`WebApiConfig`类，在*应用/启动 （_s)*文件夹：
+如果你使用"ASP.NET MVC 4 Web 应用程序"项目模板创建你的项目，将 Web API 配置代码内的放置`WebApiConfig`类，在*应用/启动 （_s)* 文件夹：
 
 [!code-csharp[Main](exception-handling/samples/sample7.cs?highlight=5)]
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/using-page-inspector-in-a-visual-studio-11-beta-web-forms-project
-title: "使用 Page Inspector 在 ASP.NET 网页中的 Visual Studio 2012 窗体 |Microsoft 文档"
+title: 使用 Page Inspector 在 ASP.NET 网页中的 Visual Studio 2012 窗体 |Microsoft 文档
 author: rick-anderson
-description: "Visual Studio 2012 的 Page Inspector 是 web 开发工具，具备集成浏览器。 选择任何元素中的集成浏览器和 Page Inspector..."
+description: Visual Studio 2012 的 Page Inspector 是 web 开发工具，具备集成浏览器。 选择任何元素中的集成浏览器和 Page Inspector...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
@@ -249,7 +249,7 @@ Visual Studio 2012 中的 CSS 编辑器具有可以轻松地选择和插入颜�
 
 ![Intellisense 筛选值](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image24.png)
 
-现在，键入一个冒号。 执行操作时，将插入完整的背景色属性名称。 类型 **#** 或**rgb (**，和颜色选取器栏将显示：
+现在，键入一个冒号。 执行操作时，将插入完整的背景色属性名称。 类型**#** 或**rgb (**，和颜色选取器栏将显示：
 
 ![CSS 颜色选取器栏](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image25.png)
 

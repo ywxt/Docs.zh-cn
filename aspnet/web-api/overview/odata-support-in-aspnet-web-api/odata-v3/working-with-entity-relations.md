@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations
-title: "与 Web API 2 OData v3 支持实体关系 |Microsoft 文档"
+title: 与 Web API 2 OData v3 支持实体关系 |Microsoft 文档
 author: MikeWasson
-description: "大多数的数据集定义的实体之间的关系： 客户下了订单;书有作者;产品具有供应商。 使用 OData，可以通过导航客户端..."
+description: 大多数的数据集定义的实体之间的关系： 客户下了订单;书有作者;产品具有供应商。 使用 OData，可以通过导航客户端...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/26/2014
@@ -70,7 +70,7 @@ ms.lasthandoff: 11/10/2017
 
 *密钥*参数是该产品的键。 该方法将返回相关的实体与用于在此情况下，`Supplier`实例。 方法名称和参数名称都很重要。 一般情况下，如果导航属性名为"X"，你需要添加一个名为"GetX"方法。 方法必须采用名为的参数"*密钥*"的父项的数据类型匹配。
 
-还有一点需要包括**[FromOdataUri]**属性中*密钥*参数。 此特性告知 Web API，若要在分析请求 URI 中的键时使用 OData 语法规则。
+还有一点需要包括 **[FromOdataUri]** 属性中*密钥*参数。 此特性告知 Web API，若要在分析请求 URI 中的键时使用 OData 语法规则。
 
 ## <a name="creating-and-deleting-links"></a>创建和删除链接
 

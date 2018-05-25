@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 8a105f835dddfcd0e9f32059e644f60dc1fdbbe1
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 700ceb081b2067f932ce8ed08c45c62058775e33
+ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>在 ASP.NET Core 依赖注入
 
@@ -351,13 +351,15 @@ public class DefaultModule : Module
 
 * 避免静态访问 `HttpContext`。
 
-> [!NOTE]
-> 如所有建议组合一样，你可能会遇到必须忽略一个的情况。 我们发现例外情况很罕见 - 大多数是框架本身内部非常特殊的情况。
+如所有建议组合一样，你可能会遇到必须忽略一个的情况。 我们发现例外情况很罕见 - 大多数是框架本身内部非常特殊的情况。
 
-请记住，依赖注入是静态/全局对象访问模式的*替代*方法。 如果将其与静态对象访问混合使用，则无法实现 DI 的优点。
+依赖注入是静态/全局对象访问模式的替代方法。 如果将其与静态对象访问混合使用，则可能无法实现 DI 的优点。
 
 ## <a name="additional-resources"></a>其他资源
 
+* [视图中的依赖关系注入](xref:mvc/views/dependency-injection)
+* [控制器中的依赖关系注入](xref:mvc/controllers/dependency-injection)
+* [要求处理程序中的依赖关系注入](xref:security/authorization/dependencyinjection)
 * [应用程序启动](xref:fundamentals/startup)
 * [测试和调试](xref:testing/index)
 * [基于工厂的中间件激活](xref:fundamentals/middleware/extensibility)

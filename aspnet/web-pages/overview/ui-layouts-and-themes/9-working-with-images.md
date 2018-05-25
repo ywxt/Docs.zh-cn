@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/9-working-with-images
-title: "使用 ASP.NET Web 页 (Razor) 站点中的映像 |Microsoft 文档"
+title: 使用 ASP.NET Web 页 (Razor) 站点中的映像 |Microsoft 文档
 author: tfitzmac
-description: "本章展示如何添加、 显示和操作图像 （调整大小、 翻转，并添加水印） 在你的网站。"
+description: 本章展示如何添加、 显示和操作图像 （调整大小、 翻转，并添加水印） 在你的网站。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -58,7 +58,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-html[Main](9-working-with-images/samples/sample1.html)]
 
-有时，不过，你需要能够动态显示图像 &#8212;也就是说，你不知道运行哪些图像之前页面显示。
+有时，不过，你需要能够动态显示图像 & #8212;也就是说，你不知道运行哪些图像之前页面显示。
 
 此部分中的过程演示如何在运行过程中用户在其中指定图像文件名称从映像名称的列表中显示图像。 他们选择的映像名称从下拉列表中，并且当它们提交页时，将显示它们所选择的映像。
 
@@ -73,7 +73,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-cshtml[Main](9-working-with-images/samples/sample2.cshtml)]
 
-    页面的正文都具有一个下拉列表 (`<select>`元素)，名为`photoChoice`。 列表具有三个选项和`value`的每个列表选项的属性具有的一个放在映像名称*映像*文件夹。 实质上，则列表让用户选择友好名称，例如&quot;照片 1&quot;，然后传递*.jpg*时提交页面的文件名称。
+    页面的正文都具有一个下拉列表 (`<select>`元素)，名为`photoChoice`。 列表具有三个选项和`value`的每个列表选项的属性具有的一个放在映像名称*映像*文件夹。 实质上，则列表让用户选择友好名称，例如&quot;照片 1&quot;，然后传递 *.jpg*时提交页面的文件名称。
 
     在代码中，你可以获取用户的选择 （换而言之，图像文件名称） 从列表通过阅读`Request["photoChoice"]`。 你首先查看是否存在所选内容根本。 如果没有，你构造组成为映像的文件夹名称和用户的图像文件名称的映像的路径。 (如果你尝试以构造的路径，但没有在中为 nothing `Request["photoChoice"]`，你会收到一个错误。)这会导致的相对路径如下：
 
@@ -90,7 +90,7 @@ ms.lasthandoff: 11/10/2017
 <a id="Uploading_an_Image"></a>
 ## <a name="uploading-an-image"></a>上载映像
 
-前面的示例演示如何动态，显示图像，但它仅使用已在网站的映像的工作。 此过程演示如何让用户上载的映像，然后显示在页上。 在 ASP.NET 中，你能够在运行过程中使用的映像`WebImage`帮助器，有可让你创建、 处理和保存映像的方法。 `WebImage`帮助器支持所有常见 web 图像文件类型，包括*.jpg*， *.png*，和*.bmp*。 在整篇文章中，你将使用*.jpg*映像，但你可以使用任何图像类型。
+前面的示例演示如何动态，显示图像，但它仅使用已在网站的映像的工作。 此过程演示如何让用户上载的映像，然后显示在页上。 在 ASP.NET 中，你能够在运行过程中使用的映像`WebImage`帮助器，有可让你创建、 处理和保存映像的方法。 `WebImage`帮助器支持所有常见 web 图像文件类型，包括 *.jpg*， *.png*，和 *.bmp*。 在整篇文章中，你将使用 *.jpg*映像，但你可以使用任何图像类型。
 
 ![[image]] (9-working-with-images/_static/image2.jpg "ch9images 2.jpg")
 
@@ -109,7 +109,7 @@ ms.lasthandoff: 11/10/2017
 
     *C:\Users\Joe\Pictures\SamplePhoto1.jpg*
 
-    你不希望所有这些路径信息，但 &#8212;你只是想实际文件名 (*SamplePhoto1.jpg*)。 可以通过使用剥离出只需从路径文件`Path.GetFileName`方法，如下：
+    你不希望所有这些路径信息，但 & #8212;你只是想实际文件名 (*SamplePhoto1.jpg*)。 可以通过使用剥离出只需从路径文件`Path.GetFileName`方法，如下：
 
     [!code-csharp[Main](9-working-with-images/samples/sample4.cs)]
 

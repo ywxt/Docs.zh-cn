@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/using-select-expand-and-value
-title: "使用 $select，$expand、 和中 ASP.NET Web API 2 OData $value |Microsoft 文档"
+title: 使用 $select，$expand、 和中 ASP.NET Web API 2 OData $value |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/11/2013
@@ -54,7 +54,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](using-select-expand-and-value/samples/sample3.cs)]
 
-此外，修饰你`Get`方法**[Queryable]**特性，如前面的代码段中所示。 或者，调用**EnableQuerySupport**上**HttpConfiguration**在启动时的对象。 (有关详细信息，请参阅[启用 OData 查询选项](supporting-odata-query-options.md#enable)。)
+此外，修饰你`Get`方法 **[Queryable]** 特性，如前面的代码段中所示。 或者，调用**EnableQuerySupport**上**HttpConfiguration**在启动时的对象。 (有关详细信息，请参阅[启用 OData 查询选项](supporting-odata-query-options.md#enable)。)
 
 ## <a name="using-expand"></a>使用 $展开
 
@@ -88,7 +88,7 @@ $ Expand 选项的导航属性以展开的采用逗号分隔列表。 以下请�
 
 [!code-console[Main](using-select-expand-and-value/samples/sample10.cmd)]
 
-默认情况下，Web API 限制为 2 的最大扩展深度。 可阻止客户端发送类似的复杂请求`$expand=Orders/OrderDetails/Product/Supplier/Region`，这可能很低效查询并创建大型的响应。 若要覆盖默认值，设置**MaxExpansionDepth**属性**[Queryable]**属性。
+默认情况下，Web API 限制为 2 的最大扩展深度。 可阻止客户端发送类似的复杂请求`$expand=Orders/OrderDetails/Product/Supplier/Region`，这可能很低效查询并创建大型的响应。 若要覆盖默认值，设置**MaxExpansionDepth**属性 **[Queryable]** 属性。
 
 [!code-csharp[Main](using-select-expand-and-value/samples/sample11.cs)]
 

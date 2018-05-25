@@ -445,7 +445,7 @@ Visual Studio 2005 中移除而言，依赖于在 mdm.exe 和 vs7jit.exe 过程�
 
 ASP.NET 开发服务器是受限制的 Web 服务器。 它不允许远程连接，因此它不允许任何请求启动 Web 服务器的用户以外的任何用户。 它还没有为 ASP 页面提供服务的功能。 仅 ASP.NET 资源和 HTML 资源 （包括图像、 CSS 文件等） 进行处理。
 
-可以通过运行位于 c:/Windows/Microsoft.NET/Framework/v2.0./ WebDev.WebServer.exe 文件通过命令行启动 ASP.NET Development Server */*  /  */*/*. 以下对话框显示可用的参数。
+可以通过运行位于 c:/Windows/Microsoft.NET/Framework/v2.0./ WebDev.WebServer.exe 文件通过命令行启动 ASP.NET Development Server*/* /  */*/*. 以下对话框显示可用的参数。
 
 
 ![](improvements-in-visual-studio-2005/_static/image11.jpg)

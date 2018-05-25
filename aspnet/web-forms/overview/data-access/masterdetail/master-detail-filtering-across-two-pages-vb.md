@@ -87,7 +87,7 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值在每个 GridView
 **图 5**： 设置 HyperLinkField`Text`查看产品属性 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image13.png))
 
 
-若要设置的文本或 URL 值根据基础数据绑定到 GridView 行，指定数据字段的文本或应从在请求 URL 值`DataTextField`或`DataNavigateUrlFields`属性。 `DataTextField` 只能设置为的单个数据字段;`DataNavigateUrlFields`，但是，可以将设置为以逗号分隔列表的数据字段。 我们经常需要基于文本或在当前行的数据字段值和一些静态标记的组合的 URL。 在本教程中，例如，我们希望 HyperLinkField 的链接的 URL 为`ProductsForSupplierDetails.aspx?SupplierID=supplierID`，其中*`supplierID`*是每个 GridView 行`SupplierID`值。 请注意，我们需要这两个静态数据驱动此处值：`ProductsForSupplierDetails.aspx?SupplierID=`链接的 URL 部分是静态的而*`supplierID`*部分是数据驱动由于其值是每个行自己的`SupplierID`值。
+若要设置的文本或 URL 值根据基础数据绑定到 GridView 行，指定数据字段的文本或应从在请求 URL 值`DataTextField`或`DataNavigateUrlFields`属性。 `DataTextField` 只能设置为的单个数据字段;`DataNavigateUrlFields`，但是，可以将设置为以逗号分隔列表的数据字段。 我们经常需要基于文本或在当前行的数据字段值和一些静态标记的组合的 URL。 在本教程中，例如，我们希望 HyperLinkField 的链接的 URL 为`ProductsForSupplierDetails.aspx?SupplierID=supplierID`，其中*`supplierID`* 是每个 GridView 行`SupplierID`值。 请注意，我们需要这两个静态数据驱动此处值：`ProductsForSupplierDetails.aspx?SupplierID=`链接的 URL 部分是静态的而*`supplierID`* 部分是数据驱动由于其值是每个行自己的`SupplierID`值。
 
 若要指示静态和数据驱动的值的组合，使用`DataTextFormatString`和`DataNavigateUrlFormatString`属性。 根据需要则这些属性中输入的静态标记，然后使用标记`{0}`想中指定的字段的值`DataTextField`或`DataNavigateUrlFields`属性显示。 如果`DataNavigateUrlFields`属性具有多个字段指定的使用`{0}`插入的第一个字段值的位置`{1}`第二个字段值，等等。
 
@@ -132,12 +132,12 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值在每个 GridView
 **图 10**： 具有 ObjectDataSource 调用`GetProductsBySupplierID(supplierID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image28.png))
 
 
-配置数据源向导的最后步骤要求我们提供的源`GetProductsBySupplierID(supplierID)`方法的*`supplierID`*参数。 若要使用的查询字符串值，将参数源设置为查询字符串，并输入要使用的 QueryStringField 文本框中的查询字符串值的名称 (`SupplierID`)。
+配置数据源向导的最后步骤要求我们提供的源`GetProductsBySupplierID(supplierID)`方法的*`supplierID`* 参数。 若要使用的查询字符串值，将参数源设置为查询字符串，并输入要使用的 QueryStringField 文本框中的查询字符串值的名称 (`SupplierID`)。
 
 
 [![填充供应商 Id 从供应商 Id 查询字符串值的参数值](master-detail-filtering-across-two-pages-vb/_static/image30.png)](master-detail-filtering-across-two-pages-vb/_static/image29.png)
 
-**图 11**： 填充*`supplierID`*参数值从`SupplierID`查询字符串值 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image31.png))
+**图 11**： 填充*`supplierID`* 参数值从`SupplierID`查询字符串值 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image31.png))
 
 
 这就是所有到它 ！ 图 12 显示`ProductsForSupplierDetails.aspx`页上通过单击东京 Traders 链接进行访问时`SupplierListMaster.aspx`。
@@ -165,12 +165,12 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值在每个 GridView
 **图 14**： 具有 ObjectDataSource 调用`GetSupplierBySupplierID(supplierID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image40.png))
 
 
-与`ProductsBySupplierDataSource`，具有*`supplierID`*参数分配的值为`SupplierID`查询字符串值。
+与`ProductsBySupplierDataSource`，具有*`supplierID`* 参数分配的值为`SupplierID`查询字符串值。
 
 
 [![填充供应商 Id 从供应商 Id 查询字符串值的参数值](master-detail-filtering-across-two-pages-vb/_static/image42.png)](master-detail-filtering-across-two-pages-vb/_static/image41.png)
 
-**图 15**： 填充*`supplierID`*参数值从`SupplierID`查询字符串值 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image43.png))
+**图 15**： 填充*`supplierID`* 参数值从`SupplierID`查询字符串值 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image43.png))
 
 
 在绑定到设计视图中 ObjectDataSource FormView，Visual Studio 会自动创建 FormView `ItemTemplate`， `InsertItemTemplate`，和`EditItemTemplate`与每个返回的数据字段的标签和文本框 Web 控件对象数据源。 由于我们只想要显示供应商信息随意删除`InsertItemTemplate`和`EditItemTemplate`。 接下来，编辑 ItemTemplate，使其显示中的供应商的公司名称`<h3>`元素的地址、 城市、 国家/地区和公司名称下的电话号码。 或者，你可以手动设置 FormView`DataSourceID`并创建`ItemTemplate`标记中，正如我们做返回"[将数据显示与 ObjectDataSource](../basic-reporting/displaying-data-with-the-objectdatasource-cs.md)"教程。
@@ -212,7 +212,7 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值在每个 GridView
 
 尽管主/详细信息报表可以显示 master 和详细信息记录在一页，在很多网站中它们被分隔跨两个 web 页。 在本教程中我们介绍了如何通过将列在"主"网页中 GridView 供应商和"详细信息"页中列出的关联的产品实现主/详细信息报表。 每个供应商中行母板网页包含指向传递的行的详细信息页面的`SupplierID`值。 可以使用 GridView HyperLinkField 轻松地添加此类特定行的链接。
 
-在详细信息页中指定的提供程序检索这些产品已进行调用来完成`ProductsBLL`类的`GetProductsBySupplierID(supplierID)`方法。 *`supplierID`*作为参数源使用查询字符串以声明方式指定参数值。 我们还了解了如何在使用 FormView 的详细信息页中显示的供应商详细信息。
+在详细信息页中指定的提供程序检索这些产品已进行调用来完成`ProductsBLL`类的`GetProductsBySupplierID(supplierID)`方法。 *`supplierID`* 作为参数源使用查询字符串以声明方式指定参数值。 我们还了解了如何在使用 FormView 的详细信息页中显示的供应商详细信息。
 
 我们[下一教程](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md)是主/详细信息报表上的最后一个。 我们将了解如何在每行都有一个选择按钮 GridView 中显示的产品列表。 单击选择按钮将同一页上的说明控件中显示该产品的详细信息。
 

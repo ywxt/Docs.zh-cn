@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: afff36ffc232b00389c52d9e751ae398555c9656
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: f4b0af39ea865d5d8b47a7b385de72e616c13cd7
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core 中的配置
 
@@ -478,6 +478,6 @@ Left: 1988
 * [选项](xref:fundamentals/configuration/options)
 * [使用多个环境](xref:fundamentals/environments)
 * [在开发期间安全存储应用机密](xref:security/app-secrets)
-* [ASP.NET Core 中的托管](xref:fundamentals/hosting)
+* [在 ASP.NET Core 中托管](xref:fundamentals/host/index)
 * [依赖关系注入](xref:fundamentals/dependency-injection)
 * [Azure Key Vault 配置提供程序](xref:security/key-vault-configuration)

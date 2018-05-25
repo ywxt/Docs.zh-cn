@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/tutorial-high-frequency-realtime-with-signalr
-title: "高频率实时使用 SignalR 1.x |Microsoft 文档"
+title: 高频率实时使用 SignalR 1.x |Microsoft 文档
 author: pfletcher
-description: "本教程演示如何创建的 web 应用程序使用 ASP.NET SignalR 来提供高频率的消息传递功能。 高频率在消息传递..."
+description: 本教程演示如何创建的 web 应用程序使用 ASP.NET SignalR 来提供高频率的消息传递功能。 高频率在消息传递...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/16/2013
@@ -71,7 +71,7 @@ ms.lasthandoff: 11/10/2017
 在此部分中，我们将创建 Visual Studio 中的项目。
 
 1. 从**文件**菜单上，单击**新项目**。
-2. 在**新项目**对话框框中，展开**C#**下**模板**和选择**Web**。
+2. 在**新项目**对话框框中，展开**C#** 下**模板**和选择**Web**。
 3. 选择**ASP.NET 空 Web 应用程序**模板，将项目*MoveShapeDemo*，然后单击**确定**。
 
     ![创建新项目](tutorial-high-frequency-realtime-with-signalr/_static/image2.png)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-vb
-title: "了解模型、 视图和控制器 (VB) |Microsoft 文档"
+title: 了解模型、 视图和控制器 (VB) |Microsoft 文档
 author: StephenWalther
-description: "感到迷惑的模型、 视图和控制器？ 在本教程中，Stephen Walther 引入你对 ASP.NET MVC 应用程序的不同部分。"
+description: 感到迷惑的模型、 视图和控制器？ 在本教程中，Stephen Walther 引入你对 ASP.NET MVC 应用程序的不同部分。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -77,7 +77,7 @@ ms.lasthandoff: 11/10/2017
 **图 05**: 索引页 ([单击以查看实际尺寸的图像](understanding-models-views-and-controllers-vb/_static/image10.png))
 
 
-请注意您的浏览器的地址栏中的 Url。 例如，当你单击关于菜单链接时，浏览器地址栏中的 URL 更改为**/Home/有关**。
+请注意您的浏览器的地址栏中的 Url。 例如，当你单击关于菜单链接时，浏览器地址栏中的 URL 更改为 **/Home/有关**。
 
 如果你关闭浏览器窗口，并返回到 Visual Studio，你将无法使用路径主页 / 关于查找的文件。 文件不存在。 如何这是可能的？
 

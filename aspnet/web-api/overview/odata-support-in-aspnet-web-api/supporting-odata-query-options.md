@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/supporting-odata-query-options
-title: "支持 ASP.NET Web API 2 中的 OData 查询选项 |Microsoft 文档"
+title: 支持 ASP.NET Web API 2 中的 OData 查询选项 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/04/2013
@@ -58,7 +58,7 @@ Web API 支持以下 OData 查询选项：
 
 [!code-csharp[Main](supporting-odata-query-options/samples/sample1.cs)]
 
-**EnableQuerySupport**方法启用返回任何控制器操作为全局查询选项**IQueryable**类型。 如果你不希望对整个应用程序启用的查询选项，你可以启用它们特定控制器操作的添加**[Queryable]**属性设为的操作方法。
+**EnableQuerySupport**方法启用返回任何控制器操作为全局查询选项**IQueryable**类型。 如果你不希望对整个应用程序启用的查询选项，你可以启用它们特定控制器操作的添加 **[Queryable]** 属性设为的操作方法。
 
 [!code-csharp[Main](supporting-odata-query-options/samples/sample2.cs)]
 
@@ -131,7 +131,7 @@ $Filter 选项允许客户端通过将应用的布尔表达式筛选结果。 �
 <a id="limiting_query_options"></a>
 ## <a name="limiting-the-query-options"></a>限制查询选项
 
-查询选项为客户提供了大量的控制在服务器运行的查询。 在某些情况下，你可能想要限制可用于安全或性能原因的选项。 **[Queryable]**属性具有一些属性中为此生成的。 以下是一些示例。
+查询选项为客户提供了大量的控制在服务器运行的查询。 在某些情况下，你可能想要限制可用于安全或性能原因的选项。 **[Queryable]** 属性具有一些属性中为此生成的。 以下是一些示例。
 
 允许使用仅 $skip 和 $top，以支持分页和其他任何内容：
 
@@ -156,7 +156,7 @@ $Filter 选项允许客户端通过将应用的布尔表达式筛选结果。 �
 <a id="ODataQueryOptions"></a>
 ## <a name="invoking-query-options-directly"></a>直接调用查询选项
 
-而不是使用**[Queryable]**属性中，你可以直接在你的控制器中调用的查询选项。 为此，请添加**ODataQueryOptions**控制器方法的参数。 在这种情况下，不需要**[Queryable]**属性。
+而不是使用 **[Queryable]** 属性中，你可以直接在你的控制器中调用的查询选项。 为此，请添加**ODataQueryOptions**控制器方法的参数。 在这种情况下，不需要 **[Queryable]** 属性。
 
 [!code-csharp[Main](supporting-odata-query-options/samples/sample13.cs)]
 
@@ -167,7 +167,7 @@ Web API 填充**ODataQueryOptions**从 URI 查询字符串。 若要应用该查
 <a id="query-validation"></a>
 ## <a name="query-validation"></a>查询验证
 
-**[Queryable]**属性在执行前验证查询。 在中执行的验证步骤**QueryableAttribute.ValidateQuery**方法。 你还可以自定义验证过程。
+**[Queryable]** 属性在执行前验证查询。 在中执行的验证步骤**QueryableAttribute.ValidateQuery**方法。 你还可以自定义验证过程。
 
 另请参阅[OData 安全指南](odata-security-guidance.md)。
 
@@ -175,7 +175,7 @@ Web API 填充**ODataQueryOptions**从 URI 查询字符串。 若要应用该查
 
 [!code-csharp[Main](supporting-odata-query-options/samples/sample14.cs)]
 
-子类**[Queryable]**属性重写**ValidateQuery**方法。
+子类 **[Queryable]** 属性重写**ValidateQuery**方法。
 
 [!code-csharp[Main](supporting-odata-query-options/samples/sample15.cs)]
 

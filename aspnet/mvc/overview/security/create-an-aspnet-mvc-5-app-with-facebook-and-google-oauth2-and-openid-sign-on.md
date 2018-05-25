@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
 ms.openlocfilehash: c289c209b50f0c2c1f2d8b15a3aedeaebf671d0b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/21/2018
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>创建 ASP.NET MVC 5 应用程序使用 Facebook、 Twitter、 LinkedIn 和 Google OAuth2 登录 (C#)
 ====================
@@ -48,7 +48,7 @@ ms.lasthandoff: 04/06/2018
 <a id="1st"></a>
 ## <a name="creating-your-first-application"></a>创建第一个应用程序
 
-单击**新项目**，然后选择**Visual C#**在左侧，然后**Web** ，然后选择**ASP.NET Web 应用程序**。 将你的项目"MvcAuth"，然后单击**确定**。
+单击**新项目**，然后选择**Visual C#** 在左侧，然后**Web** ，然后选择**ASP.NET Web 应用程序**。 将你的项目"MvcAuth"，然后单击**确定**。
 
 ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image2.png)
 
@@ -259,9 +259,9 @@ ms.lasthandoff: 04/06/2018
 
 从**工具**菜单上，单击**NuGet 包管理器**，然后单击**程序包管理器控制台**(PMC)。 在 PMC 中输入以下命令。
 
-1. Enable-Migrations
+1. Enable-migrations
 2. 添加迁移 Init
-3. Update-Database
+3. 更新数据库
 
 运行应用程序并使用 FaceBook 和 Google 登录并注册某些用户。
 

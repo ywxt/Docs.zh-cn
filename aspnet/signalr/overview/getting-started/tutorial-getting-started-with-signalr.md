@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr
-title: "教程： 开始使用 SignalR 2 |Microsoft 文档"
+title: 教程： 开始使用 SignalR 2 |Microsoft 文档
 author: pfletcher
-description: "本教程介绍如何使用 SignalR 创建实时聊天应用程序。 将 SignalR 添加空的 ASP.NET web 应用程序，并创建 HTML pa..."
+description: 本教程介绍如何使用 SignalR 创建实时聊天应用程序。 将 SignalR 添加空的 ASP.NET web 应用程序，并创建 HTML pa...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -112,7 +112,7 @@ SignalR 简化了生成实时应用程序的过程。 它包括 ASP.NET server �
     如果你使用控制台添加 SignalR，单独的步骤创建 SignalR hub 类后添加 SignalR。
 
     > [!NOTE]
-    > 如果你正在使用 Visual Studio 2012， **SignalR Hub Class (v2)**模板将不可用。 你可以添加普通**类**调用`ChatHub`相反。
+    > 如果你正在使用 Visual Studio 2012， **SignalR Hub Class (v2)** 模板将不可用。 你可以添加普通**类**调用`ChatHub`相反。
 4. 在**解决方案资源管理器**，展开脚本节点。 用于 jQuery 和 SignalR 的脚本库是在项目中可见。
 5. 将在新代码**ChatHub**类替换为以下代码。
 

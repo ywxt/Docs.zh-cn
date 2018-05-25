@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/scaleout-with-windows-azure-service-bus
-title: "使用 Azure 服务总线的 SignalR 扩展 (SignalR 1.x) |Microsoft 文档"
+title: 使用 Azure 服务总线的 SignalR 扩展 (SignalR 1.x) |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/01/2013

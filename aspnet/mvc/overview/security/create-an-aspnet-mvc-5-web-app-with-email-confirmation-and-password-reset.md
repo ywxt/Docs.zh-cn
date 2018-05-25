@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: d55b34135d5bab98ab8de31cc4b12dcc272cbc0a
-ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
+ms.openlocfilehash: bfa5d52019be81374c7a544e255ab7ffb301fa7b
+ms.sourcegitcommit: 50d40c83fa641d283c097f986dde5341ebe1b44c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 05/22/2018
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>创建安全的 ASP.NET MVC 5 web 应用程序日志中，使用电子邮件确认及密码重置 (C#)
 ====================
@@ -62,7 +62,7 @@ ms.lasthandoff: 02/20/2018
 
 虽然本教程只显示如何添加通过电子邮件通知[SendGrid](http://sendgrid.com/)，你可以发送电子邮件使用 SMTP 和其他机制 (请参阅[其他资源](#addRes))。
 
-1. 在程序包管理器控制台中，输入以下以下命令： 
+1. 在程序包管理器控制台中，输入以下命令： 
 
     [!code-console[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample1.cmd)]
 2. 转到[Azure SendGrid 注册页面](https://go.microsoft.com/fwlink/?linkid=271033&clcid=0x409)并注册一个免费的 SendGrid 帐户。 通过添加类似于在以下代码来配置 SendGrid *App_Start/IdentityConfig.cs*:
@@ -108,7 +108,7 @@ ms.lasthandoff: 02/20/2018
 
 [!code-cshtml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample8.cshtml)]
 
-添加[Authorize 属性](https://msdn.microsoft.com/library/system.web.mvc.authorizeattribute(v=vs.118).aspx)到`Contact`主控制器的操作方法。 你可以使用单击**联系人**链接以验证匿名用户无权访问和经过身份验证的用户具有访问权限。
+添加[Authorize 属性](https://msdn.microsoft.com/library/system.web.mvc.authorizeattribute(v=vs.118).aspx)到`Contact`主控制器的操作方法。 你可以单击**联系人**链接以验证匿名用户无权访问和经过身份验证的用户具有访问权限。
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample9.cs?highlight=1)]
 
@@ -148,18 +148,18 @@ ms.lasthandoff: 02/20/2018
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample15.cs?highlight=17)]
 
-更新要重新发送密码的登录方法时如果尚未确认的用户帐户：
+更新要重新发送密码，如果尚未确认的用户帐户的登录方法：
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample16.cs?highlight=20)]
 
 <a id="combine"></a>
 ## <a name="combine-social-and-local-login-accounts"></a>合并社交和本地登录帐户
 
-你可以通过单击电子邮件链接组合本地和社交帐户。 按以下顺序 **RickAndMSFT@gmail.com** 最初创建为本地登录名，但你可以创建帐户作为社交日志中的第一个，然后添加本地登录名。
+你可以通过单击电子邮件链接组合本地和社交帐户。 按以下顺序**RickAndMSFT@gmail.com**最初创建为本地登录名，但你可以创建帐户作为社交日志中的第一个，然后添加本地登录名。
 
 ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image5.png)
 
-单击**管理**链接。 请注意与此帐户关联 0 外部 （社交登录名）。
+单击**管理**链接。 请注意**外部登录名： 0**与此帐户关联。
 
 ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image6.png)
 

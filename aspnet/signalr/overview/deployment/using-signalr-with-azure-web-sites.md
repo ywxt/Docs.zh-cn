@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/deployment/using-signalr-with-azure-web-sites
-title: "与在 Azure App Service Web Apps 使用 SignalR |Microsoft 文档"
+title: 与在 Azure App Service Web Apps 使用 SignalR |Microsoft 文档
 author: pfletcher
-description: "本文档介绍如何配置的 SignalR 应用程序在 Microsoft Azure 上运行。 在本教程中的软件版本使用，Visual Studio 2013 或 Vis...."
+description: 本文档介绍如何配置的 SignalR 应用程序在 Microsoft Azure 上运行。 在本教程中的软件版本使用，Visual Studio 2013 或 Vis....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/01/2015
@@ -70,7 +70,7 @@ SignalR 不会添加到应用程序部署到 Azure 与部署到本地服务器�
 3. 在"发布 Web"对话框中，选择"Windows Azure 网站"。
 
     ![选择 Azure 网站](using-signalr-with-azure-web-sites/_static/image1.png)
-4. 如果您没有登录到你的 Microsoft 帐户，请单击**登录...**在"选择现有网站"对话框中，并登录。
+4. 如果您没有登录到你的 Microsoft 帐户，请单击**登录...** 在"选择现有网站"对话框中，并登录。
 
     ![选择现有网站](using-signalr-with-azure-web-sites/_static/image2.png)    ![登录到 Azure](using-signalr-with-azure-web-sites/_static/image3.png)
 5. 在"选择现有网站"对话框中，单击**新建**。

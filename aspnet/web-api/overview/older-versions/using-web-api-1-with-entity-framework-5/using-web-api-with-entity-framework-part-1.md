@@ -71,7 +71,7 @@ ms.lasthandoff: 04/06/2018
 
 从**启动**页上，单击**新项目**。
 
-在**模板**窗格中，选择**已安装的模板**展开**Visual C#**节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 将"ProductStore"的项目，然后单击**确定**。
+在**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 将"ProductStore"的项目，然后单击**确定**。
 
 ![](using-web-api-with-entity-framework-part-1/_static/image5.png)
 

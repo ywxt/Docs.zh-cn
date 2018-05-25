@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions
-title: "ASP.NET Web API 2 中的路由约定 Odata |Microsoft 文档"
+title: ASP.NET Web API 2 中的路由约定 Odata |Microsoft 文档
 author: MikeWasson
-description: "本指南介绍了 Web API 使用 OData 终结点的路由约定。"
+description: 本指南介绍了 Web API 使用 OData 终结点的路由约定。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/31/2013
@@ -127,7 +127,7 @@ ms.lasthandoff: 01/24/2018
 
 - 如果路径包含一个密钥，该操作应具有一个名为参数*密钥*。
 - 如果路径包含转换的导航属性的密钥，该操作应具有一个名为参数*relatedKey*。
-- 修饰*密钥*和*relatedKey*参数**[FromODataUri]**参数。
+- 修饰*密钥*和*relatedKey*参数 **[FromODataUri]** 参数。
 - POST 和 PUT 请求需要实体类型的参数。
 - PATCH 请求需要类型的参数**增量&lt;T&gt;**，其中*T*是实体类型。
 
@@ -147,7 +147,7 @@ ms.lasthandoff: 01/24/2018
 
 对于这两种方法，如果约定不适用于该请求，该方法应返回 null。
 
-**ODataPath**参数表示的已分析的 OData 资源路径。 它包含的列表 **[ODataPathSegment](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatapathsegment.aspx)** 实例，每个段的资源路径的一个。 **ODataPathSegment**是一个抽象类; 每个段类型由派生自的类**ODataPathSegment**。
+**ODataPath**参数表示的已分析的 OData 资源路径。 它包含的列表**[ODataPathSegment](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatapathsegment.aspx)** 实例，每个段的资源路径的一个。 **ODataPathSegment**是一个抽象类; 每个段类型由派生自的类**ODataPathSegment**。
 
 **ODataPath.TemplatePath**属性是一个字符串，表示串联所有的路径段。 例如，如果的 URI 是`/Products(1)/Supplier`，路径模板是&quot;~/entityset/key/navigation&quot;。 请注意，段不直接对应 URI 段。 例如，实体键 (1) 表示为其自身**ODataPathSegment**。
 
@@ -169,7 +169,7 @@ ms.lasthandoff: 01/24/2018
 
 1. 我派生自**EntitySetRoutingConvention**，这是因为**SelectController**在该类的方法适合于此新的路由约定。 这意味着我不需要重新实现**SelectController**。
 2. 约定适用仅对 GET 请求中，并且仅当路径模板时&quot;~/entityset/key/navigation/key&quot;。
-3. 操作名称是&quot;获取 {EntityType}&quot;，其中*{EntityType}*是导航集合的类型。 例如， &quot;GetSupplier&quot;。 您可以使用任何您喜欢的命名约定和 #8212;只需确保你与匹配的控制器操作。
+3. 操作名称是&quot;获取 {EntityType}&quot;，其中 *{EntityType}* 是导航集合的类型。 例如， &quot;GetSupplier&quot;。 您可以使用任何您喜欢的命名约定和 #8212;只需确保你与匹配的控制器操作。
 4. 将名为的两个参数的操作*密钥*和*relatedKey*。 (有关某些预定义的参数名称的列表，请参阅[ODataRouteConstants](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatarouteconstants.aspx)。)
 
 下一步向路由约定的列表添加新的约定。 发生这种情况在配置期间，如下面的代码中所示：

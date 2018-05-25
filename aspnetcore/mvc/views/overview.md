@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/overview
-ms.openlocfilehash: 9af08d8fcbd91a9189fe1f4c6cedd644361773f7
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: b9947de03942bd71616e4bf12263befd9f784915
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="views-in-aspnet-core-mvc"></a>ASP.NET Core MVC 中的视图
 
@@ -123,7 +123,16 @@ return View("./About");
 
 ## <a name="passing-data-to-views"></a>向视图传递数据
 
-可使用多种方法将数据传递给视图。 最可靠的方法是在视图中指定[模型](xref:mvc/models/model-binding)类型。 此模型通常称为 viewmodel。 将 viewmodel 类型的实例传递给此操作的视图。
+使用多种方法将数据传递给视图：
+
+* 强类型数据：viewmodel
+* 弱类型数据
+  - `ViewData` (`ViewDataAttribute`)
+  - `ViewBag`
+
+### <a name="strongly-typed-data-viewmodel"></a>强类型数据 (viewmodel)
+
+最可靠的方法是在视图中指定[模型](xref:mvc/models/model-binding)类型。 此模型通常称为 viewmodel。 将 viewmodel 类型的实例传递给此操作的视图。
 
 使用 viewmodel 将数据传递给视图可让视图充分利用强类型检查。 强类型化（或强类型）意味着每个变量和常量都有明确定义的类型（例如 `string`、`int` 或 `DateTime`）。 在编译时检查视图中使用的类型是否有效。
 
@@ -178,15 +187,13 @@ namespace WebApplication1.ViewModels
 }
 ```
 
-> [!NOTE]
-> 可随意对 viewmodel 类型和业务模型类型使用相同的类。 但是，使用单独的模型可使视图独立于应用的业务逻辑和数据访问部分。 模型为用户发送给应用的数据使用[模型绑定](xref:mvc/models/model-binding)和[验证](xref:mvc/models/validation)时，模型和 viewmodel 的分离也会提供安全优势。
-
+可随意对 viewmodel 类型和业务模型类型使用相同的类。 但是，使用单独的模型可使视图独立于应用的业务逻辑和数据访问部分。 模型为用户发送给应用的数据使用[模型绑定](xref:mvc/models/model-binding)和[验证](xref:mvc/models/validation)时，模型和 viewmodel 的分离也会提供安全优势。
 
 <a name="VD_VB"></a>
 
-### <a name="weakly-typed-data-viewdata-and-viewbag"></a>弱类型数据（ViewData 和 ViewBag）
+### <a name="weakly-typed-data-viewdata-viewdata-attribute-and-viewbag"></a>弱类型数据（ViewData、ViewData 属性和 ViewBag）
 
-注意：`ViewBag` 在 Razor 页中不可用。
+`ViewBag` 在 Razor 页中不可用。
 
 除了强类型视图，视图还可以访问弱类型（也称为松散类型）的数据集合。 与强类型不同，弱类型（或松散类型）意味着不显式声明要使用的数据类型。 可以使用弱类型数据的集合将少量数据传入及传出控制器和视图。
 
@@ -199,7 +206,6 @@ namespace WebApplication1.ViewModels
 可以通过控制器和视图上的 `ViewData` 或 `ViewBag` 属性来引用此集合。 `ViewData` 属性是弱类型对象的字典。 `ViewBag` 属性是 `ViewData` 的包装器，为基础 `ViewData` 集合提供动态属性。
 
 `ViewData` 和 `ViewBag` 在运行时进行动态解析。 由于它们不提供编译时类型检查，因此使用这两者通常比使用 viewmodel 更容易出错。 出于上述原因，一些开发者希望尽量减少或根本不使用 `ViewData` 和 `ViewBag`。
-
 
 <a name="VD"></a>
 
@@ -243,9 +249,49 @@ public IActionResult SomeAction()
 </address>
 ```
 
+::: moniker range=">= aspnetcore-2.1"
+**ViewData 特性**
+
+另一种会使用 [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) 的方法是 [ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute)。 控制器或 Razor 页面模型上使用 `[ViewData]` 修饰的属性将其值存储在字典中并从此处进行加载。
+
+在下面的示例中，“主页”控制器包含使用 `[ViewData]` 修饰的 `Title` 属性。 `About` 方法设置“关于”视图的标题：
+
+```csharp
+public class HomeController : Controller
+{
+    [ViewData]
+    public string Title { get; set; }
+
+    public IActionResult About()
+    {
+        Title = "About Us";
+        ViewData["Message"] = "Your application description page.";
+
+        return View();
+    }
+}
+```
+
+在“关于”视图中，以模型属性的形式访问 `Title` 属性：
+
+```cshtml
+<h1>@Model.Title</h1>
+```
+
+在布局中，从 ViewData 字典读取标题：
+
+```cshtml
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] - WebApplication</title>
+    ...
+```
+::: moniker-end
+
 **ViewBag**
 
-注意：`ViewBag` 在 Razor 页中不可用。
+`ViewBag` 在 Razor 页中不可用。
 
 `ViewBag` 是 [DynamicViewData](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata) 对象，可提供对存储在 `ViewData` 中的对象的动态访问。 `ViewBag` 不需要强制转换，因此使用起来更加方便。 下例演示如何使用与上述 `ViewData` 有相同结果的 `ViewBag`：
 
@@ -278,7 +324,7 @@ public IActionResult SomeAction()
 
 **同时使用 ViewData 和 ViewBag**
 
-注意：`ViewBag` 在 Razor 页中不可用。
+`ViewBag` 在 Razor 页中不可用。
 
 由于 `ViewData` 和 `ViewBag` 引用相同的基础 `ViewData` 集合，因此在读取和写入值时，可以同时使用 `ViewData` 和 `ViewBag`，并在两者之间进行混合和匹配。
 

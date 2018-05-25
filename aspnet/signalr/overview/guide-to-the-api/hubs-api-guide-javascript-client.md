@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
-title: "ASP.NET SignalR 中心 API 指南-JavaScript 客户端 |Microsoft 文档"
+title: ASP.NET SignalR 中心 API 指南-JavaScript 客户端 |Microsoft 文档
 author: pfletcher
-description: "本文档介绍了使用适用于 SignalR 的版本 2 中 JavaScript 客户端，如浏览器和 Windows 应用商店 (WinJS) applicat 中心 API..."
+description: 本文档介绍了使用适用于 SignalR 的版本 2 中 JavaScript 客户端，如浏览器和 Windows 应用商店 (WinJS) applicat 中心 API...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2015
@@ -166,7 +166,7 @@ JavaScript 客户端需要对 jQuery 和 SignalR 的核心 JavaScript 文件的�
 
     `signalr ghp /path:[path to the .dll that contains your Hub class]`
 
-    路径你*.dll*通常是*bin*项目文件夹中的文件夹。
+    路径你 *.dll*通常是*bin*项目文件夹中的文件夹。
 
     此命令创建名为的文件*server.js*在所在的文件夹*signalr.exe*。
 4. Put *server.js*文件在项目中的相应文件夹中，将其重命名为适合你的应用程序，并添加对它代替"signalr/中心"引用的引用。
@@ -229,7 +229,7 @@ JavaScript 客户端需要对 jQuery 和 SignalR 的核心 JavaScript 文件的�
 
 JSONP 需要在客户端 （用于在较旧的浏览器中支持跨域请求） 上，如果它将需要通过设置显式启用`EnableJSONP`上`HubConfiguration`对象传递给`true`，如下所示。 JSONP 已禁用默认情况下，因为它比 CORS 不太安全。
 
-**向项目中添加 Microsoft.Owin.Cors:**若要安装此库，包管理器控制台中运行以下命令：
+**向项目中添加 Microsoft.Owin.Cors:** 若要安装此库，包管理器控制台中运行以下命令：
 
 `Install-Package Microsoft.Owin.Cors`
 

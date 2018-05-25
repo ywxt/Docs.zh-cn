@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/media-formatters
-title: "ASP.NET Web API 2 中的媒体格式化程序 |Microsoft 文档"
+title: ASP.NET Web API 2 中的媒体格式化程序 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014
@@ -12,23 +12,23 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/media-formatters
 msc.type: authoredcontent
-ms.openlocfilehash: 9103574597df126a22e21a2f51815f608e46f47f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1cb1c7e0f832a0a0160276fbd41facc017e2ae3e
+ms.sourcegitcommit: 50d40c83fa641d283c097f986dde5341ebe1b44c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 05/22/2018
 ---
 <a name="media-formatters-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的媒体格式化程序
 ====================
 通过[Mike Wasson](https://github.com/MikeWasson)
 
-本教程将说明如何在 ASP.NET Web API 中支持的其他媒体格式。
+本教程演示如何在 ASP.NET Web API 中支持的其他媒体格式。
 
 ## <a name="internet-media-types"></a>Internet 媒体类型
 
-媒体类型，也称为 MIME 类型，标识一段数据的格式。 在 HTTP，媒体类型描述消息正文的格式。 媒体类型由两个字符串、 类型和子类型组成。 例如:
+媒体类型，也称为 MIME 类型，标识一段数据的格式。 在 HTTP，媒体类型描述消息正文的格式。 媒体类型由两个字符串、 类型和子类型组成。 例如：
 
-- text/html
+- 文本/html
 - 图像/png
 - application/json
 
@@ -38,7 +38,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-console[Main](media-formatters/samples/sample1.cmd)]
 
-当客户端发送请求消息时，它可以包括 Accept 标头。 Accept 标头指示的服务器的媒体类型的客户端想要从服务器。 例如:
+当客户端发送请求消息时，它可以包括 Accept 标头。 Accept 标头指示的服务器的媒体类型的客户端想要从服务器。 例如：
 
 [!code-console[Main](media-formatters/samples/sample2.cmd)]
 
@@ -48,8 +48,8 @@ ms.lasthandoff: 01/24/2018
 
 若要创建媒体格式化程序，派生自这些类之一：
 
-- [MediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.mediatypeformatter.aspx). 此类使用的异步读取和写入方法。
-- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.bufferedmediatypeformatter.aspx). 此类派生自**MediaTypeFormatter**但使用 sychronous 读/写方法。
+- [MediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.mediatypeformatter.aspx)。 此类使用的异步读取和写入方法。
+- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.bufferedmediatypeformatter.aspx)。 此类派生自**MediaTypeFormatter**但使用 sychronous 读/写方法。
 
 派生自**BufferedMediaTypeFormatter**是更简单，因为没有异步代码，但它还意味着在 I/O 期间可以阻止调用线程。
 

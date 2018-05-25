@@ -39,9 +39,9 @@ ms.lasthandoff: 04/06/2018
 
 对于使用 forms 身份验证的网站，用户登录到网站访问登录页并输入其凭据。 然后，针对用户存储比较这些凭据。 如果它们有效，然后将向用户授予窗体身份验证票证，这是安全令牌，该值指示的标识和访问者的真实性。
 
-若要验证对成员资格 framework 用户，使用`Membership`类的[`ValidateUser`方法](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)。 `ValidateUser`方法采用两个输入参数-中*`username`*和*`password`* -并返回一个布尔值，该值指示凭据是否有效。 与类似`CreateUser`方法，在前面的教程，我们探讨`ValidateUser`方法会委托给配置成员资格提供程序实际的验证。
+若要验证对成员资格 framework 用户，使用`Membership`类的[`ValidateUser`方法](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)。 `ValidateUser`方法采用两个输入参数-中*`username`* 和*`password`* -并返回一个布尔值，该值指示凭据是否有效。 与类似`CreateUser`方法，在前面的教程，我们探讨`ValidateUser`方法会委托给配置成员资格提供程序实际的验证。
 
-`SqlMembershipProvider`验证提供的凭据通过获取指定的用户的密码通过`aspnet_Membership_GetPasswordWithFormat`存储过程。 回想一下，`SqlMembershipProvider`存储使用三种格式之一的用户的密码： 清除，加密，或哈希处理。 `aspnet_Membership_GetPasswordWithFormat`存储的过程返回其原始格式的密码。 加密或经过哈希处理密码，`SqlMembershipProvider`转换*`password`*值传递给`ValidateUser`方法划分为它的等效项加密或哈希状态，然后将它与什么返回从进行比较数据库。 如果存储在数据库中的密码与用户输入的格式化的密码匹配，则凭据有效。
+`SqlMembershipProvider`验证提供的凭据通过获取指定的用户的密码通过`aspnet_Membership_GetPasswordWithFormat`存储过程。 回想一下，`SqlMembershipProvider`存储使用三种格式之一的用户的密码： 清除，加密，或哈希处理。 `aspnet_Membership_GetPasswordWithFormat`存储的过程返回其原始格式的密码。 加密或经过哈希处理密码，`SqlMembershipProvider`转换*`password`* 值传递给`ValidateUser`方法划分为它的等效项加密或哈希状态，然后将它与什么返回从进行比较数据库。 如果存储在数据库中的密码与用户输入的格式化的密码匹配，则凭据有效。
 
 让我们更新我们的登录页 (~ /`Login.aspx`)，以便它会验证对成员资格 framework 用户存储区提供的凭据。 我们创建了此登录页进来<a id="Tutorial02"> </a> [*概述窗体身份验证的*](../introduction/an-overview-of-forms-authentication-cs.md)教程中，使用两个文本框中输入用户名和密码，创建一个接口记住我复选框，和登录按钮 （请参见图 1）。 代码验证输入的凭据与硬编码的用户名和密码对 （Scott/密码、 Jisun/密码和 Sam/密码） 列表。 在<a id="Tutorial03"> </a> [*窗体身份验证配置和高级主题*](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md)我们更新了登录页的代码，以在窗体存储附加信息的教程身份验证票证`UserData`属性。
 

@@ -10,23 +10,23 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/app-state
-ms.openlocfilehash: 3a9463e5c501b5f32471f002ecab5ad7a81a5c4a
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 887aefdeaa45957f7b95bfe8df342eb34d267e3a
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="session-and-application-state-in-aspnet-core"></a>ASP.NET Core 中的会话和应用程序状态
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)、[Steve Smith](https://ardalis.com/) 和 [Diana LaRose](https://github.com/DianaLaRose)
 
-HTTP 是无状态的协议。 Web 服务器将每个 HTTP 请求视为独立的请求，并不会保留以前请求中的用户值。 本文讨论保留请求之间的应用程序和会话状态的不同方式。 
+HTTP 是无状态的协议。 Web 服务器将每个 HTTP 请求视为独立的请求，并不会保留以前请求中的用户值。 本文讨论保留请求之间的应用程序和会话状态的不同方式。
 
 ## <a name="session-state"></a>会话状态
 
 会话状态是 ASP.NET Core 中的一项功能，可用于在用户浏览 Web 应用时保存和存储用户数据。 会话状态由服务器上的字典或哈希表组成，在浏览器的请求中保持数据。 会话数据由缓存支持。
 
-ASP.NET Core 通过向客户端提供包含会话 ID 的 Cookie 来维护会话状态，该会话 ID 与每个请求一起发送到服务器。 服务器使用会话 ID 来获取会话数据。 因为会话 Cookie 是特定于浏览器的，所以不能跨浏览器中共享会话。 仅当浏览器会话结束时才能删除会话 Cookie。 如果收到过期的会话 Cookie，则创建使用相同会话 Cookie 的新会话。 
+ASP.NET Core 通过向客户端提供包含会话 ID 的 Cookie 来维护会话状态，该会话 ID 与每个请求一起发送到服务器。 服务器使用会话 ID 来获取会话数据。 因为会话 Cookie 是特定于浏览器的，所以不能跨浏览器中共享会话。 仅当浏览器会话结束时才能删除会话 Cookie。 如果收到过期的会话 Cookie，则创建使用相同会话 Cookie 的新会话。
 
 服务器在上次请求后保留会话的时间有限。 设置会话超时，或者使用 20 分钟的默认值。 会话状态非常适合用于存储特定于特定会话但并不需要永久保留的用户数据。 在调用 `Session.Clear` 时或数据存储中会话到期时将删除后备存储中的数据。 服务器不知道关闭浏览器或删除会话 Cookie 的时间。
 
@@ -35,27 +35,24 @@ ASP.NET Core 通过向客户端提供包含会话 ID 的 Cookie 来维护会话�
 
 内存中会话提供程序将会话数据存储在本地服务器上。 如果计划在服务器场上运行 Web 应用，则必须使用粘性会话将每个会话绑定到特定的服务器上。 Microsoft Azure 网站平台默认设置为粘性会话（应用程序请求路由或 ARR）。 然而，粘性会话可能会影响可伸缩性，并使 Web 应用更新变得复杂。 更好的选择是使用 Redis 或 SQL Server 分布式缓存，它们不需要粘性会话。 有关详细信息，请参阅[使用分布式缓存](xref:performance/caching/distributed)。 有关服务提供程序设置的详细信息，请参阅本文后续部分中的[配置会话](#configuring-session)。
 
-<a name="temp"></a>
 ## <a name="tempdata"></a>TempData
 
 ASP.NET Core MVC 在[控制器](/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0)上公开了 [TempData](/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) 属性。 此属性存储未读取的数据。 `Keep` 和 `Peek` 方法可用于检查数据，而不执行删除。 多个请求需要数据时，`TempData` 非常有助于进行重定向。 通过 TempData 提供程序实现 `TempData`，例如，使用 Cookie 或会话状态。
 
-<a name="tempdata-providers"></a>
 ### <a name="tempdata-providers"></a>TempData 提供程序
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ASP.NET Core 2.0 及更高版本中，基于 Cookie 的 TempData 提供程序在默认情况下使用，将 TempData 存储在 Cookie 中。
 
-使用 [Base64UrlTextEncoder](/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder?view=aspnetcore-2.0) 对 Cookie 数据进行编码。 因为 Cookie 被加密并分块，所以 ASP.NET Core 1.x 中的单个 Cookie 大小限制不适用。 未压缩 Cookie 数据，因为压缩加密的数据会导致安全问题，如 [CRIME](https://wikipedia.org/wiki/CRIME_(security_exploit)) 和 [BREACH](https://wikipedia.org/wiki/BREACH_(security_exploit)) 攻击。 有关基于 Cookie 的 TempData 提供程序的详细信息，请参阅 [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs)。
+使用由 [Base64UrlTextEncoder](/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder) 编码的 [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector) 对 Cookie 数据进行加密，然后进行分块。 因为 Cookie 进行了分块，所以 ASP.NET Core 1.x 中的单个 Cookie 大小限制不适用。 未压缩 Cookie 数据，因为压缩加密的数据会导致安全问题，如 [CRIME](https://wikipedia.org/wiki/CRIME_(security_exploit)) 和 [BREACH](https://wikipedia.org/wiki/BREACH_(security_exploit)) 攻击。 有关基于 Cookie 的 TempData 提供程序的详细信息，请参阅 [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs)。
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 在 ASP.NET Core 1.0 和 1.1 中，会话状态 TempData 提供程序是默认值。
 
---------------
+---
 
-<a name="choose-temp"></a>
 ### <a name="choosing-a-tempdata-provider"></a>选择 TempData 提供程序
 
 选择 TempData 提供程序涉及几个注意事项，例如：
@@ -67,20 +64,22 @@ ASP.NET Core 2.0 及更高版本中，基于 Cookie 的 TempData 提供程序在
 > [!NOTE]
 > 大多数 Web 客户端（如 Web 浏览器）针对每个 Cookie 的最大大小和/或 Cookie 总数强制实施限制。 因此，使用 Cookie TempData 提供程序时，请验证应用程序未超过这些限制。 请考虑数据的总大小，将加密和分块的开销考虑在内。
 
-<a name="config-temp"></a>
 ### <a name="configure-the-tempdata-provider"></a>配置 TempData 提供程序
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 默认情况下启用基于 Cookie 的 TempData 提供程序。 以下 `Startup` 类代码配置基于会话的 TempData 提供程序：
 
 [!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/StartupTempDataSession.cs?name=snippet_TempDataSession&highlight=4,6,11)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 以下 `Startup` 类代码配置基于会话的 TempData 提供程序：
 
 [!code-csharp[](app-state/sample/src/WebAppSession/StartupTempDataSession.cs?name=snippet_TempDataSession&highlight=4,9)]
 
-* * *
+---
+
 排序对于中间件组件至关重要。 在前面的示例中，在 `UseMvcWithDefaultRoute` 之后调用 `UseSession` 时会发生 `InvalidOperationException` 类型的异常。 有关详细信息，请参阅[中间件排序](xref:fundamentals/middleware/index#ordering)。
 
 > [!IMPORTANT]
@@ -92,11 +91,11 @@ ASP.NET Core 2.0 及更高版本中，基于 Cookie 的 TempData 提供程序在
 
 ## <a name="post-data-and-hidden-fields"></a>后期数据和隐藏字段
 
-数据可以保存在隐藏的表单域中，并在下一个请求上回发。 这在多页窗体中很常见。 但是，由于客户端可能会篡改数据，因此服务器必须始终重新验证数据。 
+数据可以保存在隐藏的表单域中，并在下一个请求上回发。 这在多页窗体中很常见。 但是，由于客户端可能会篡改数据，因此服务器必须始终重新验证数据。
 
 ## <a name="cookies"></a>Cookie
 
-Cookie 提供了一种在 Web 应用程序中存储用户特定数据的方法。 因为 Cookie 是随每个请求发送的，所以它们的大小应该保持在最低限度。 理想情况下，仅标识符应存储在 Cookie 中，而实际数据存储在服务器上。 大多数浏览器将 Cookie 限制为 4096 个字节。 此外，每个域仅有有限数量的 Cookie 可用。  
+Cookie 提供了一种在 Web 应用程序中存储用户特定数据的方法。 因为 Cookie 是随每个请求发送的，所以它们的大小应该保持在最低限度。 理想情况下，仅标识符应存储在 Cookie 中，而实际数据存储在服务器上。 大多数浏览器将 Cookie 限制为 4096 个字节。 此外，每个域仅有有限数量的 Cookie 可用。
 
 因为 Cookie 易被篡改，所以它们必须在服务器上进行验证。 尽管在客户端的 Cookie 的持续性是受用户干预并到期，但它们通常是客户端上最持久的数据持久形式。
 
@@ -110,7 +109,6 @@ Cookie 通常用于个性化设置，其中的内容是为已知用户定制的�
 
 缓存是存储和检索数据的有效方法。 可以根据时间和其他注意事项控制缓存项的生存期。 了解有关[如何缓存](../performance/caching/index.md)的详细信息。
 
-<a name="session"></a>
 ## <a name="working-with-session-state"></a>使用会话状态
 
 ### <a name="configuring-session"></a>配置会话
@@ -123,20 +121,23 @@ Cookie 通常用于个性化设置，其中的内容是为已知用户定制的�
 
 下面的代码演示如何设置内存中的会话提供程序。
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/Startup.cs?highlight=11-19,24)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 [!code-csharp[](app-state/sample/src/WebAppSession/Startup.cs?highlight=11-19,24)]
 
-* * *
+---
+
 一旦 `HttpContext` 安装并配置，可以从它引用会话。
 
 如果在 `UseSession` 被调用前尝试访问 `Session`，将引发异常 `InvalidOperationException: Session has not been configured for this application or request`。
 
 如果在已经开始写入 `Response` 流后尝试创建一个新 `Session`（即，未创建会话 Cookie），将引发异常 `InvalidOperationException: The session cannot be established after the response has started`。 此异常可在 Web 服务器日志中找到；它将不会在浏览器中显示。
 
-### <a name="loading-session-asynchronously"></a>以异步方式加载会话 
+### <a name="loading-session-asynchronously"></a>以异步方式加载会话
 
 只有在 `TryGetValue`、`Set` 或 `Remove` 方法之前显式调用 [ISession.LoadAsync](/dotnet/api/microsoft.aspnetcore.http.isession#Microsoft_AspNetCore_Http_ISession_LoadAsync) 方法，ASP.NET Core 中的默认会话提供程序才会从基础 [IDistributedCache](/dotnet/api/microsoft.extensions.caching.distributed.idistributedcache) 存储以异步方式加载会话记录。 如果不首先调用 `LoadAsync`，基础会话记录以同步方式加载，这可能影响应用的扩展能力。
 
@@ -148,20 +149,27 @@ Cookie 通常用于个性化设置，其中的内容是为已知用户定制的�
 
 若要重写会话默认值，使用 `SessionOptions`：
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/StartupCopy.cs?name=snippet1&highlight=8-12)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 [!code-csharp[](app-state/sample/src/WebAppSession/StartupCopy.cs?name=snippet1&highlight=8-12)]
 
-* * *
+---
+
 服务器使用 `IdleTimeout` 属性来确定在放弃会话内容之前可以保持空闲的时间长短。 此属性独立于 Cookie 到期时间。 通过会话中间件（从会话中间件读取或写入）传递每个请求都会重置超时。
 
 因为 `Session` 是非锁定的，如果两个请求都试图修改会话内容，最后一个内容会重写第一个内容。 `Session` 是作为一个连贯会话实现的，这意味着所有内容都存储在一起。 正在修改会话的不同部分（不同键）的两个请求仍可能会相互影响。
 
-### <a name="setting-and-getting-session-values"></a>设置和获取会话值
+### <a name="set-and-get-session-values"></a>设置和获取会话值
 
-通过 `HttpContext` 的 `Session` 属性访问会话。 此属性是 [ISession](/dotnet/api/microsoft.aspnetcore.http.isession) 实现。
+使用 `Context.Session` 从 Razor 页或视图访问会话：
+
+[!code-cshtml[](app-state/sample/src/WebAppSessionDotNetCore2.0App/Views/Home/About.cshtml)]
+
+使用 `HttpContext.Session` 从 `PageModel` 类或控制器访问会话。 此属性是 [ISession](/dotnet/api/microsoft.aspnetcore.http.isession) 实现。
 
 下面的示例演示了设置和获取 int 和字符串：
 
@@ -174,7 +182,6 @@ Cookie 通常用于个性化设置，其中的内容是为已知用户定制的�
 下面的示例演示如何设置和获取可序列化的对象：
 
 [!code-csharp[](app-state/sample/src/WebAppSession/Controllers/HomeController.cs?name=snippet2)]
-
 
 ## <a name="working-with-httpcontextitems"></a>使用 HttpContext.Items
 
@@ -196,7 +203,7 @@ app.Use(async (context, next) =>
 ```csharp
 app.Run(async (context) =>
 {
-    await context.Response.WriteAsync("Verified request? " + 
+    await context.Response.WriteAsync("Verified request? " +
         context.Items["isVerified"]);
 });
 ```
@@ -230,33 +237,33 @@ public class HomeController : Controller
 
 这种方法还具有消除代码中多个位置重复使用“神奇字符串”的优点。
 
-<a name="appstate-errors"></a>
-
 ## <a name="application-state-data"></a>应用程序状态数据
 
 使用[依赖关系注入](xref:fundamentals/dependency-injection)可向所有用户提供数据：
 
 1. 定义包含数据的服务（例如，一个名为 `MyAppData` 的类）。
 
-```csharp
-public class MyAppData
-{
-    // Declare properties/methods/etc.
-} 
-```
+    ```csharp
+    public class MyAppData
+    {
+        // Declare properties/methods/etc.
+    } 
+    ```
+
 2. 添加服务类到 `ConfigureServices`（例如 `services.AddSingleton<MyAppData>();`）。
+
 3. 使用每个控制器中的数据服务类：
 
-```csharp
-public class MyController : Controller
-{
-    public MyController(MyAppData myService)
+    ```csharp
+    public class MyController : Controller
     {
-        // Do something with the service (read some data from it, 
-        // store it in a private field/property, etc.)
-    }
-} 
-```
+        public MyController(MyAppData myService)
+        {
+            // Do something with the service (read some data from it, 
+            // store it in a private field/property, etc.)
+        }
+    } 
+    ```
 
 ## <a name="common-errors-when-working-with-session"></a>使用会话时的常见错误
 

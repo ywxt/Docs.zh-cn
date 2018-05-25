@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-4/using-page-inspector-in-aspnet-mvc
-title: "使用 Page Inspector 在 ASP.NET MVC |Microsoft 文档"
+title: 使用 Page Inspector 在 ASP.NET MVC |Microsoft 文档
 author: rick-anderson
-description: "视频浏览 Page Inspector 的 ASP.NET MVC web 应用程序的使用情况。 读取本教程"
+description: 视频浏览 Page Inspector 的 ASP.NET MVC web 应用程序的使用情况。 读取本教程
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/04/2012
@@ -24,4 +24,4 @@ ms.lasthandoff: 11/10/2017
 
 视频浏览 Page Inspector 的 ASP.NET MVC web 应用程序的使用情况。 [读取本教程](../../overview/views/using-page-inspector-in-aspnet-mvc.md)
 
-[&#9654;观看视频 （6 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/using-page-inspector-in-aspnet-mvc)
+[& #9654;观看视频 （6 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/using-page-inspector-in-aspnet-mvc)

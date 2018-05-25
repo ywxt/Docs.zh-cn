@@ -77,7 +77,7 @@ ms.lasthandoff: 04/06/2018
 
 
 > [!NOTE]
-> **/Fl**切换 (短，无法用于**/fileLogger**) 将生成输出记录到名为的文件*msbuild.log*当前目录中。 有关详细信息，请参阅[MSBuild 命令行参考](https://msdn.microsoft.com/library/ms164311.aspx)。
+> **/Fl**切换 (短，无法用于 **/fileLogger**) 将生成输出记录到名为的文件*msbuild.log*当前目录中。 有关详细信息，请参阅[MSBuild 命令行参考](https://msdn.microsoft.com/library/ms164311.aspx)。
 
 
 此时，MSBuild 开始运行，加载*Publish.proj*文件，并开始处理其中的说明进行操作。 第一个指令告知导入项目的 MSBuild 文件**TargetEnvPropsFile**参数指定。
@@ -94,7 +94,7 @@ MSBuild 遇到在合并的项目文件中的下一个元素是属性组。 在�
 [!code-xml[Main](understanding-the-build-process/samples/sample3.xml)]
 
 
-当 MSBuild 处理第一个**OutputRoot**元素，提供类似名称的参数未提供，它将的值设置**OutputRoot**属性**...\Publish\Out**。当它遇到第二个**OutputRoot**元素，如果条件计算结果为**true**，它将覆盖的值**OutputRoot**具有的值的属性**OutDir**参数。
+当 MSBuild 处理第一个**OutputRoot**元素，提供类似名称的参数未提供，它将的值设置**OutputRoot**属性 **...\Publish\Out**。当它遇到第二个**OutputRoot**元素，如果条件计算结果为**true**，它将覆盖的值**OutputRoot**具有的值的属性**OutDir**参数。
 
 MSBuild 遇到下一个元素是一个包含名为的单个项组**ProjectsToBuild**。
 
@@ -210,7 +210,7 @@ MSBuild 的生成名为的项列表来处理此指令**ProjectsToBuild**。 在�
 [!code-xml[Main](understanding-the-build-process/samples/sample11.xml)]
 
 
-在这种情况下， **%(DbPublishPackages.DatabaseConnectionString)**， **%(DbPublishPackages.TargetDatabase)**，和**%(DbPublishPackages.FullPath)**所有引用元数据值的**DbPublishPackages**项集合。  **\_Cmd**属性由**Exec**任务，调用该命令。
+在这种情况下， **%(DbPublishPackages.DatabaseConnectionString)**， **%(DbPublishPackages.TargetDatabase)**，和 **%(DbPublishPackages.FullPath)** 所有引用元数据值的**DbPublishPackages**项集合。 **\_Cmd**属性由**Exec**任务，调用该命令。
 
 
 [!code-xml[Main](understanding-the-build-process/samples/sample12.xml)]

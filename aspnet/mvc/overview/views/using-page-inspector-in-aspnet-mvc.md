@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/views/using-page-inspector-in-aspnet-mvc
-title: "使用 Page Inspector 在 ASP.NET MVC |Microsoft 文档"
+title: 使用 Page Inspector 在 ASP.NET MVC |Microsoft 文档
 author: rick-anderson
-description: "Page Inspector 在 Visual Studio 2012 是 web 开发工具，具备集成浏览器。 选择任何元素中的集成浏览器和 Page Inspector i..."
+description: Page Inspector 在 Visual Studio 2012 是 web 开发工具，具备集成浏览器。 选择任何元素中的集成浏览器和 Page Inspector i...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
@@ -202,7 +202,7 @@ CSS 自动同步功能，可直接编辑 CSS 文件，并查看立即在 Page In
 
 Visual Studio 2012 中的 CSS 编辑器具有可以轻松地选择和插入颜色颜色选取器。 颜色选取器包括一个标准的调色板，支持标准颜色名称、 哈希代码、 RGB、 RGBA、 HSL 和 HSLA 颜色，并维护你已在文档中最近使用的颜色的列表。
 
-在前面的部分中，你可以更改的值`background-color`属性。 若要调用颜色选取器，将插入点之后的属性名称和类型 **#** 或**rgb (**。
+在前面的部分中，你可以更改的值`background-color`属性。 若要调用颜色选取器，将插入点之后的属性名称和类型**#** 或**rgb (**。
 
 ![CSS 颜色选取器栏](using-page-inspector-in-aspnet-mvc/_static/image36.png)
 

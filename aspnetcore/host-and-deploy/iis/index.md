@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 9f164b6e1f3cc520b704cbb5ffdaadb99cebdc57
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: 3a9479dc1bb09218ebb4a5a76078ea514041d751
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -64,7 +64,7 @@ ASP.NET Core 模块生成分配给后端进程的动态端口。 `UseIISIntegrat
 
 ---
 
-有关托管的详细信息，请参阅 [ASP.NET Core 中的托管](xref:fundamentals/hosting)。
+有关托管的详细信息，请参阅[在 ASP.NET Core 中托管](xref:fundamentals/host/index)。
 
 ### <a name="iis-options"></a>IIS 选项
 

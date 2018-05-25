@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/error-handling
-ms.openlocfilehash: 5443cbeb1ef95c579e5fc12b625babbfa27c7ec2
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 3ff3a17d14d9ed7c438399191ffe3cf93d555d49
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="handle-errors-in-aspnet-core"></a>处理 ASP.NET Core 中的错误
 
@@ -26,14 +26,14 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="the-developer-exception-page"></a>开发人员异常页
 
-如需在应用中配置可以显示异常详细信息的页面，请先安装 `Microsoft.AspNetCore.Diagnostics` NuGet 包并将以下代码行添加到 Startup 类 [Startup 类配置方法](startup.md)：
+如需在应用中配置可以显示异常详细信息的页面，请先安装 `Microsoft.AspNetCore.Diagnostics` NuGet 包并将以下代码行添加到 Startup 类 [Startup 类配置方法](xref:fundamentals/startup)：
 
 [!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
 
 `UseDeveloperExceptionPage` 需要放在所有你想要捕获异常的中间件声明之前，如`app.UseMvc`。
 
 >[!WARNING]
-> **仅当应用程序在开发环境中运行时**才启用开发人员异常页。 否则当应用程序在生产环境中运行时，详细的异常信息会向公众泄露 了解[环境配置](environments.md)。
+> **仅当应用程序在开发环境中运行时**才启用开发人员异常页。 否则当应用程序在生产环境中运行时，详细的异常信息会向公众泄露 了解[环境配置](xref:fundamentals/environments)。
 
 若要查看开发人员异常页，可使用`Development`环境来运行应用程序，并在基础 URL 后添加`?throw=true`。 该页面包括几个选项卡，这些选项卡中包含关于异常和请求的信息。 第一个选项卡包括堆栈跟踪。 
 
@@ -53,7 +53,7 @@ ms.lasthandoff: 03/22/2018
 
 [!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
-在 MVC 应用程序中，不要使用 HTTP 谓词 Attribute（如 `HttpGet`）来显式修饰错误处理程序操作方法。 使用显式谓词会阻止某些请求访问方法。
+在 MVC 应用程序中，不要使用 HTTP 谓词 Attribute（如 `HttpGet`）来显式修饰错误处理程序操作方法。  使用显式谓词会阻止某些请求访问方法。
 
 ```csharp
 [Route("/Error")]
@@ -114,11 +114,11 @@ if (statusCodePagesFeature != null)
 
 ## <a name="server-exception-handling"></a>服务器异常处理
 
-除应用程序中的异常处理逻辑外，托管应用程序的服务器[服务器](servers/index.md)也会执行一些异常处理。 如果服务器在发送标头之前捕获异常，服务器将发送没有正文的 500 内部服务器错误响应。 如果服务器在已发送标头后捕获异常，服务器会关闭连接。 应用程序无法处理的请求将由服务器进行处理。 发生的任何异常都将由服务器进行处理。 任何配置的自定义错误页面或异常处理中间件或筛选器都不会影响此行为。
+除应用程序中的异常处理逻辑外，托管应用程序的服务器[服务器](xref:fundamentals/servers/index)也会执行一些异常处理。 如果服务器在发送标头之前捕获异常，服务器将发送没有正文的 500 内部服务器错误响应。 如果服务器在已发送标头后捕获异常，服务器会关闭连接。 应用程序无法处理的请求将由服务器进行处理。 发生的任何异常都将由服务器进行处理。 任何配置的自定义错误页面或异常处理中间件或筛选器都不会影响此行为。
 
 ## <a name="startup-exception-handling"></a>启动异常处理
 
-应用程序启动期间发生的异常仅可在承载层进行处理。 可以使用 `captureStartupErrors` 和 `detailedErrors` 键[配置主机在响应启动期间的错误时的行为方式](hosting.md#detailed-errors)。
+应用程序启动期间发生的异常仅可在承载层进行处理。 利用 [Web](xref:fundamentals/host/web-host) 主机，你可以使用 `captureStartupErrors` 和 `detailedErrors` 键[配置主机在响应启动期间出现错误时的行为方式](xref:fundamentals/host/web-host#detailed-errors)。
 
 仅当捕获的启动错误发生在主机地址/端口绑定之后，承载层才会为该错误显示错误页。 如果绑定因任何原因而失败，则承载层会记录关键异常，dotnet 进程崩溃，且在 [Kestrel](xref:fundamentals/servers/kestrel) 服务器上运行应用时，不会显示任何错误页。
 
@@ -130,16 +130,16 @@ if (statusCodePagesFeature != null)
 
 ### <a name="exception-filters"></a>异常筛选器
 
-在 MVC 应用中，异常筛选器可以进行全局配置，也可以为每个控制器或每个操作单独配置。 这些筛选器处理在执行控制器操作或其他筛选器时出现的任何未处理的异常，且不会以其他方式调用。 通过[筛选器](../mvc/controllers/filters.md)详细了解异常筛选器。
+在 MVC 应用中，异常筛选器可以进行全局配置，也可以为每个控制器或每个操作单独配置。 这些筛选器处理在执行控制器操作或其他筛选器时出现的任何未处理的异常，且不会以其他方式调用。 通过[筛选器](xref:mvc/controllers/filters)详细了解异常筛选器。
 
 >[!TIP]
 > 异常筛选器非常适用于捕获 MVC 操作内出现的异常，但灵活性不如错误处理中间件。 一般情况下建议使用中间件；仅在需要根据所选 MVC 操作以不同方式执行错误处理时，才使用筛选器。
 
 ### <a name="handling-model-state-errors"></a>处理模型状态错误
 
-[模型验证](../mvc/models/validation.md)在每个控制器操作被调用之前发生，操作方法负责检查 `ModelState.IsValid` 并相应地作出反应。
+[模型验证](xref:mvc/models/validation)在每个控制器操作被调用之前发生，操作方法负责检查 `ModelState.IsValid` 并相应地作出反应。
 
-某些应用会使用标准约定来处理模型验证错误，在这种情况下，使用[筛选器](../mvc/controllers/filters.md)可以更好地实施这种策略。 你需要使用无效模型状态测试操作的行为。 查看[测试控制器逻辑](../mvc/controllers/testing.md)了解详情。
+某些应用会使用标准约定来处理模型验证错误，在这种情况下，使用[筛选器](xref:mvc/controllers/filters)可以更好地实施这种策略。 你需要使用无效模型状态测试操作的行为。 查看[测试控制器逻辑](xref:mvc/controllers/testing)了解详情。
 
 
 

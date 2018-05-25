@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
-title: "教程： 开始使用 SignalR 2 和 MVC 5 |Microsoft 文档"
+title: 教程： 开始使用 SignalR 2 和 MVC 5 |Microsoft 文档
 author: pfletcher
-description: "本教程演示如何使用 ASP.NET SignalR 2 创建实时聊天应用程序。 将 MVC 5 应用程序中添加 SignalR 和创建聊天视图..."
+description: 本教程演示如何使用 ASP.NET SignalR 2 创建实时聊天应用程序。 将 MVC 5 应用程序中添加 SignalR 和创建聊天视图...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -107,7 +107,7 @@ ms.lasthandoff: 01/24/2018
 
     ![脚本文件夹](tutorial-getting-started-with-signalr-and-mvc/_static/image5.png)
 7. 在**解决方案资源管理器**，右键单击项目，选择**添加 |新文件夹**，并添加一个名为的新文件夹**中心**。
-8. 右键单击**中心**文件夹中，单击**添加 |新项**，选择**Visual C# |Web |SignalR**中的节点**已安装**窗格中，选择**SignalR Hub Class (v2)**从中间窗格中，并创建名为的新集线器**ChatHub.cs**。 你将使用此类作为将消息发送到所有客户端的 SignalR 服务器集线器。
+8. 右键单击**中心**文件夹中，单击**添加 |新项**，选择**Visual C# |Web |SignalR**中的节点**已安装**窗格中，选择**SignalR Hub Class (v2)** 从中间窗格中，并创建名为的新集线器**ChatHub.cs**。 你将使用此类作为将消息发送到所有客户端的 SignalR 服务器集线器。
 
     ![创建新的中心](tutorial-getting-started-with-signalr-and-mvc/_static/image6.png)
 9. 中的代码替换**ChatHub**类替换为以下代码。
@@ -136,7 +136,7 @@ ms.lasthandoff: 01/24/2018
 ## <a name="run-the-sample"></a>运行示例
 
 1. 按 F5 以在调试模式下运行该项目。
-2. 在浏览器地址行中，追加**/home/聊天**项目的默认页的 url。 聊天页面加载的浏览器实例并提示输入用户名。
+2. 在浏览器地址行中，追加 **/home/聊天**项目的默认页的 url。 聊天页面加载的浏览器实例并提示输入用户名。
 
     ![输入用户名](tutorial-getting-started-with-signalr-and-mvc/_static/image8.png)
 3. 输入用户名称。

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/aspnet-web-pages-razor-faq
-title: "ASP.NET 网页 (Razor) 常见问题 |Microsoft 文档"
+title: ASP.NET 网页 (Razor) 常见问题 |Microsoft 文档
 author: tfitzmac
-description: "本文列出了一些有关 ASP.NET Web 页 (Razor) 和 WebMatrix 的常见问题。 使用在教程的 ASP.NET Web Pages （.的软件版本"
+description: 本文列出了一些有关 ASP.NET Web 页 (Razor) 和 WebMatrix 的常见问题。 使用在教程的 ASP.NET Web Pages （.的软件版本
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/07/2014
@@ -74,23 +74,23 @@ ASP.NET 网页尤其旨在简化已经知道 HTML 中以将服务器处理添加
 - IIS Express （web 服务器）
 - Microsoft SQL Server Compact 4.0 （数据库）
 
-你可以使用文本编辑器编辑*.cshtml* (或*.vbhtml*) 页。
+你可以使用文本编辑器编辑 *.cshtml* (或 *.vbhtml*) 页。
 
-管理 SQL Server Compact 数据库 (*.sdf*文件) 不是有点困难的工具。 用于管理的 visual Studio containds 工具*.sdf*数据库。 此外可以在代码中执行许多 SQL Server 管理任务来运行 SQL 命令。
+管理 SQL Server Compact 数据库 (*.sdf*文件) 不是有点困难的工具。 用于管理的 visual Studio containds 工具 *.sdf*数据库。 此外可以在代码中执行许多 SQL Server 管理任务来运行 SQL 命令。
 
-若要测试*.cshtml*页，而不使用的集成的开发环境 (IDE)，你可以将它们部署到实时的服务器。 (请参阅[可以将 ASP.NET Web Pages 站点部署而无需使用 WebMatrix？](#Can_I_deploy_an_ASP.NET_Web_Pages_site_without_using_WebMatrix))
+若要测试 *.cshtml*页，而不使用的集成的开发环境 (IDE)，你可以将它们部署到实时的服务器。 (请参阅[可以将 ASP.NET Web Pages 站点部署而无需使用 WebMatrix？](#Can_I_deploy_an_ASP.NET_Web_Pages_site_without_using_WebMatrix))
 
 ### <a name="running-iis-express-without-using-an-ide"></a>正在运行的 IIS Express，而无需使用一个 IDE
 
-如果在你的 web 服务器的计算机上安装 IIS Express，你可以使用，来测试页面。 你可以从命令行运行 IIS Express，并将其与特定的端口号。 请求时然后指定该端口*.cshtml*在浏览器中的文件。
+如果在你的 web 服务器的计算机上安装 IIS Express，你可以使用，来测试页面。 你可以从命令行运行 IIS Express，并将其与特定的端口号。 请求时然后指定该端口 *.cshtml*在浏览器中的文件。
 
-在 Windows 中，使用管理员特权打开命令提示符，并将更改为*C:\Program Files\IIS Express。* (对于 64 位系统，使用文件夹*C:\Program Files (x86) \IIS Express。)*然后输入以下命令，你的站点使用的实际路径：
+在 Windows 中，使用管理员特权打开命令提示符，并将更改为*C:\Program Files\IIS Express。* (对于 64 位系统，使用文件夹*C:\Program Files (x86) \IIS Express。)* 然后输入以下命令，你的站点使用的实际路径：
 
 `iisexpress.exe /port:35896 /path:C:\BasicWebSite`
 
-你可以使用任何不通过某些其他进程已保留的端口号。 （1024年以上的端口号是通常免费的。）有关`path`值，请使用网站文件夹的路径其中*.cshtml*文件。
+你可以使用任何不通过某些其他进程已保留的端口号。 （1024年以上的端口号是通常免费的。）有关`path`值，请使用网站文件夹的路径其中 *.cshtml*文件。
 
-运行此命令以设置 IIS Express 以服务页面后，你可以打开浏览器并浏览到*.cshtml*文件。 使用类似于以下 URL:
+运行此命令以设置 IIS Express 以服务页面后，你可以打开浏览器并浏览到 *.cshtml*文件。 使用类似于以下 URL:
 
 `http://localhost:35896/default.cshtml`
 
@@ -116,14 +116,14 @@ ASP.NET 网页尤其旨在简化已经知道 HTML 中以将服务器处理添加
 <a id="Does_ASP.NET_Web_Pages_support_HTML5"></a>
 ## <a name="does-aspnet-web-pages-support-html5"></a>ASP.NET 网页是否支持 HTML5？
 
-可以。 创建与 ASP.NET Web 页的页 (*.cshtml*或*.vbhtml*页) 是实质上是 HTML 页面，其中还包含在呈现页之前，在服务器上，运行的代码。 只要用户的浏览器支持 HTML5，你可以使用中的 HTML5 元素*.cshtml*或*.vbhtml*页。
+可以。 创建与 ASP.NET Web 页的页 (*.cshtml*或 *.vbhtml*页) 是实质上是 HTML 页面，其中还包含在呈现页之前，在服务器上，运行的代码。 只要用户的浏览器支持 HTML5，你可以使用中的 HTML5 元素 *.cshtml*或 *.vbhtml*页。
 
 <a id="Can_I_use_JavaScript_and_jQuery_with_Web_Pages"></a>
 ## <a name="can-i-use-javascript-and-jquery-with-web-pages"></a>可以将 JavaScript 和 jQuery 用于 Web 页？
 
-当然可以。 创建与 ASP.NET Web 页的页 (*.cshtml*或*.vbhtml*页) 只需用服务器代码中的 HTML 页。 因此，你可以使用执行操作在普通的 HTML 页面通过 JavaScript 或 jQuery 的任何内容还可以执行*.cshtml*或*.vbhtml*页。
+当然可以。 创建与 ASP.NET Web 页的页 (*.cshtml*或 *.vbhtml*页) 只需用服务器代码中的 HTML 页。 因此，你可以使用执行操作在普通的 HTML 页面通过 JavaScript 或 jQuery 的任何内容还可以执行 *.cshtml*或 *.vbhtml*页。
 
-**入门站点**模板在 WebMatrix 中包含大量的 jQuery 库。 如果你使用该模板，创建一个站点*脚本*文件夹包含 jQuery 核心库 (*jquery 1.6.2.js)*和 jQuery 验证库 (*jquery.validate.js 中定义*等。)。
+**入门站点**模板在 WebMatrix 中包含大量的 jQuery 库。 如果你使用该模板，创建一个站点*脚本*文件夹包含 jQuery 核心库 (*jquery 1.6.2.js)* 和 jQuery 验证库 (*jquery.validate.js 中定义*等。)。
 
 下面是一些说明了使用 jQuery 与 ASP.NET Web 页的方法的博客文章：
 

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/odata-actions
-title: "支持在 ASP.NET Web API 2 OData 操作 |Microsoft 文档"
+title: 支持在 ASP.NET Web API 2 OData 操作 |Microsoft 文档
 author: MikeWasson
-description: "在 OData 中，操作是一种方法中添加不很容易定义为对实体的 CRUD 操作的服务器端行为。 操作的一些用途包括： 实现..."
+description: 在 OData 中，操作是一种方法中添加不很容易定义为对实体的 CRUD 操作的服务器端行为。 操作的一些用途包括： 实现...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2014
@@ -78,7 +78,7 @@ POST 请求中的数据是只需产品级别：
 - *密钥*： 速率的产品密钥。
 - *参数*： 操作参数值的字典。
 
-如果你使用的默认路由约定，按键参数必须命名为"关键"。 还有一点需要包括**[FromOdataUri]**特性，如所示。 此特性告知 Web API，若要在分析请求 URI 中的键时使用 OData 语法规则。
+如果你使用的默认路由约定，按键参数必须命名为"关键"。 还有一点需要包括 **[FromOdataUri]** 特性，如所示。 此特性告知 Web API，若要在分析请求 URI 中的键时使用 OData 语法规则。
 
 使用*参数*字典，以获取操作参数：
 

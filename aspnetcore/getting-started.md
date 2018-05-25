@@ -4,23 +4,23 @@ author: rick-anderson
 description: 介绍如何使用 ASP.NET Core 创建并运行简单的 Hello World 应用的快速教程。
 manager: wpickett
 ms.author: riande
-ms.date: 10/18/2017
+ms.custom: mvc
+ms.date: 05/10/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: getting-started
-ms.openlocfilehash: c2f18c69901a5a6503314d508a776e6985872681
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: e814277663ff5a964171a71ebb6e0f094e0ddc60
+ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="get-started-with-aspnet-core"></a>ASP.NET Core 入门
 
-> [!NOTE]
-> 这些说明仅适用于 ASP.NET Core 的最新版本。 有关本文档 的1.1 版本，请参阅 [ASP.NET Core 1.1 入门](xref:getting-started-1.1)。
+::: moniker range=">= aspnetcore-2.0"
 
-1. 安装 [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]。
+1. 安装 [!INCLUDE[](~/includes/net-core-sdk-download-link.md)]。
 
 2. 创建新的 .NET Core 项目。
 
@@ -29,28 +29,67 @@ ms.lasthandoff: 04/06/2018
     ```terminal
     dotnet new razor -o aspnetcoreapp
     ```
-    
-3. 运行应用。
 
-    使用以下命令运行应用：
+3. 使用以下命令运行应用：
 
     ```terminal
     cd aspnetcoreapp
     dotnet run
     ```
 
-4. 浏览到 [http://localhost:5000](http://localhost:5000)
+4. 浏览到 [http://localhost:5000](http://localhost:5000)。
 
-5. 打开 Pages/About.cshtml 并将页面修改为显示消息“Hello, world! The time on the server is @DateTime.Now”：
+5. 打开 Pages/About.cshtml 并将页面修改为显示消息“Hello, world! The time on the server is @DateTime.Now” ：
 
-    [!code-html[](getting-started/sample/getting-started/about.cshtml?highlight=9&range=1-9)]
+    [!code-cshtml[](getting-started/sample/getting-started/about.cshtml?highlight=9&range=1-9)]
 
 6. 浏览到 [http://localhost:5000/About](http://localhost:5000/About) 并验证更改。
 
-### <a name="next-steps"></a>后续步骤
+[!INCLUDE[next steps](~/includes/getting-started/next-steps.md)]
+::: moniker-end
 
-有关入门教程，请参阅 [ASP.NET Core 教程](tutorials/index.md)
+::: moniker range="<= aspnetcore-1.1"
 
-有关 ASP.NET Core 概念和体系结构的简介，请参阅 [ASP.NET Core 简介](index.md)和 [ASP.NET Core 基础知识](fundamentals/index.md)。
+1. 从 [.NET Core 所有下载页面](https://www.microsoft.com/net/download/all)安装 SDK 1.0.4 的 .NET Core SDK 安装程序。
 
-ASP.NET Core 应用可使用 .NET Core 或.NET Framework 基类库和运行时。 有关详细信息，请参阅[在 .NET Core 和 .NET Framework 之间进行选择](https://docs.microsoft.com/dotnet/articles/standard/choosing-core-framework-server)。
+2. 为新 .NET Core 项目创建文件夹。
+
+   在 macOS 和 Linux 上，打开终端窗口。 在 Windows 上，打开命令提示符。
+
+   ```terminal
+   mkdir aspnetcoreapp
+   cd aspnetcoreapp
+   ```
+
+3. 如果已计算机上安装了 SDK 的更高版本，则创建一个 global.json 文件以选择 1.0.4 SDK。
+
+   ```json
+   {
+     "sdk": { "version": "1.0.4" }
+   }
+   ```
+
+4. 创建新的 .NET Core 项目。
+
+   ```terminal
+   dotnet new web
+   ```
+
+5. 还原程序包。
+
+    ```terminal
+    dotnet restore
+    ```
+
+6. 运行应用。
+
+   ```terminal
+   dotnet run
+   ```
+
+   如有需要，[dotnet run](/dotnet/core/tools/dotnet-run) 命令会首先生成应用。
+
+7. 浏览到 `http://localhost:5000`。
+
+[!INCLUDE[next steps](~/includes/getting-started/next-steps.md)]
+::: moniker-end

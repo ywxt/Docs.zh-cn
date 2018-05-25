@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms
-title: "使用 ASP.NET Web 窗体的 Web API |Microsoft 文档"
+title: 使用 ASP.NET Web 窗体的 Web API |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/03/2012
@@ -35,7 +35,7 @@ ms.lasthandoff: 12/01/2017
 
 启动 Visual Studio 并选择**新项目**从**启动**页。 或从**文件**菜单上，选择**新建**然后**项目**。
 
-在**模板**窗格中，选择**已安装的模板**展开**Visual C#**节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET Web 窗体应用程序**。 输入项目的名称，然后单击**确定**。
+在**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET Web 窗体应用程序**。 输入项目的名称，然后单击**确定**。
 
 ![](using-web-api-with-aspnet-web-forms/_static/image1.png)
 
@@ -53,7 +53,7 @@ ms.lasthandoff: 12/01/2017
 
 ![](using-web-api-with-aspnet-web-forms/_static/image2.png)
 
-下**已安装的模板**，展开**Visual C#**和选择**Web**。 然后，从模板列表中，选择**Web API 控制器类**。 将"ProductsController"的控制器，然后单击**添加**。
+下**已安装的模板**，展开**Visual C#** 和选择**Web**。 然后，从模板列表中，选择**Web API 控制器类**。 将"ProductsController"的控制器，然后单击**添加**。
 
 ![](using-web-api-with-aspnet-web-forms/_static/image3.png)
 

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/self-host-a-web-api
-title: "自承载 ASP.NET Web API 1 (C#) |Microsoft 文档"
+title: 自承载 ASP.NET Web API 1 (C#) |Microsoft 文档
 author: MikeWasson
-description: "ASP.NET Web API 不需要 IIS。 在主机过程中，你可以自承载 web API。 本教程演示如何承载 web API applic 控制台中..."
+description: ASP.NET Web API 不需要 IIS。 在主机过程中，你可以自承载 web API。 本教程演示如何承载 web API applic 控制台中...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2012
@@ -37,7 +37,7 @@ ms.lasthandoff: 01/24/2018
 
 启动 Visual Studio 并选择**新项目**从**启动**页。 或从**文件**菜单上，选择**新建**然后**项目**。
 
-在**模板**窗格中，选择**已安装的模板**展开**Visual C#**节点。 下**Visual C#**，选择**Windows**。 在项目模板列表中，选择**控制台应用程序**。 将项目&quot;SelfHost&quot;单击**确定**。
+在**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Windows**。 在项目模板列表中，选择**控制台应用程序**。 将项目&quot;SelfHost&quot;单击**确定**。
 
 ![](self-host-a-web-api/_static/image1.png)
 

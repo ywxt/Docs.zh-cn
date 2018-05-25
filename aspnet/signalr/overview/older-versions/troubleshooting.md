@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/troubleshooting
-title: "SignalR 故障排除 (SignalR 1.x) |Microsoft 文档"
+title: SignalR 故障排除 (SignalR 1.x) |Microsoft 文档
 author: pfletcher
-description: "本文介绍开发 SignalR 应用程序的常见问题。"
+description: 本文介绍开发 SignalR 应用程序的常见问题。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/05/2013
@@ -160,8 +160,8 @@ SignalR 将自动使用 JSON 序列化你的方法参数-这无需自行执行�
 
 有几个原因，此问题。 验证所有以下操作：
 
-- **中心代理地址引用的格式不正确：**如果对生成的中心代理地址的引用的格式不正确，则通常会出现此错误。 验证对中心地址的引用可以正确地完成。 请参阅[如何引用动态生成的代理](../guide-to-the-api/hubs-api-guide-javascript-client.md#dynamicproxy)有关详细信息。
-- **将路由添加到应用程序，然后添加中心路由：**如果你的应用程序使用的其他路由，验证是否添加的第一个路由是对调用`MapHubs`。
+- **中心代理地址引用的格式不正确：** 如果对生成的中心代理地址的引用的格式不正确，则通常会出现此错误。 验证对中心地址的引用可以正确地完成。 请参阅[如何引用动态生成的代理](../guide-to-the-api/hubs-api-guide-javascript-client.md#dynamicproxy)有关详细信息。
+- **将路由添加到应用程序，然后添加中心路由：** 如果你的应用程序使用的其他路由，验证是否添加的第一个路由是对调用`MapHubs`。
 
 ### <a name="500-internal-server-error"></a>"500 内部服务器错误"
 

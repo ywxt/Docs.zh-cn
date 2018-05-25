@@ -39,7 +39,7 @@ ms.lasthandoff: 04/06/2018
 
 - 在 Microsoft Build Engine (MSBuild) 项目文件中用于控制在部署过程，创建的 MSBuild 目标复制*应用\_offline.htm*到之前的任何部署任务在目标服务器的文件开始。
 - 添加另一个中移除的 MSBuild 目标*应用\_offline.htm*从目标服务器时所有的部署任务都已完成的文件。
-- 在 web 应用程序项目中，创建*。 wpp.targets*文件，它可确保*应用\_offline.htm* Web 部署调用时，将文件添加到部署包。
+- 在 web 应用程序项目中，创建 *。 wpp.targets*文件，它可确保*应用\_offline.htm* Web 部署调用时，将文件添加到部署包。
 
 本主题将演示如何执行这些过程。 任务和本主题中的演练假定你已创建了包含至少一个 web 应用程序项目中，一个解决方案和使用自定义项目文件来控制部署过程中所述[中的 Web 部署企业](../web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md)。 或者，可以使用[联系人管理器](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)示例解决方案遵循主题中的示例。
 
@@ -103,7 +103,7 @@ ms.lasthandoff: 04/06/2018
 7. 添加名为的新目标**DeployAppOffline**。 在此目标内调用 MSDeploy.exe 命令以部署你*应用\_脱机*到目标 web 服务器的文件。
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample5.xml)]
-8. 在此示例中， **ContactManagerIisPath**属性在项目文件中其他位置定义。 这是只需一个 IIS 应用程序路径的形式*[IIS 网站名称] / [应用程序名称]*。 目标中包括条件使用户能够切换*应用\_脱机*部署打开或关闭通过更改属性值或提供命令行参数。
+8. 在此示例中， **ContactManagerIisPath**属性在项目文件中其他位置定义。 这是只需一个 IIS 应用程序路径的形式 *[IIS 网站名称] / [应用程序名称]*。 目标中包括条件使用户能够切换*应用\_脱机*部署打开或关闭通过更改属性值或提供命令行参数。
 9. 添加名为的新目标**DeleteAppOffline**。 在此目标内调用 MSDeploy.exe 命令删除你*应用\_脱机*从目标 web 服务器的文件。
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample6.xml)]
@@ -122,11 +122,11 @@ ms.lasthandoff: 04/06/2018
 
 Web 发布管道 (WPP) 使用名为的项列表**FilesForPackagingFromProject**生成的文件应包含在 web 部署包的列表。 你可以将您自己的项添加到此列表自定义 web 包的内容。 若要执行此操作，你需要完成以下高级步骤：
 
-1. 创建一个名为的自定义项目文件*[项目名称].wpp.targets*项目文件所在的文件夹中。
+1. 创建一个名为的自定义项目文件 *[项目名称].wpp.targets*项目文件所在的文件夹中。
 
     > [!NOTE]
     > *。 Wpp.targets*文件需要在你的 web 应用程序项目文件所在的文件夹中转&#x2014;例如*ContactManager.Mvc.csproj*&#x2014;而不是任何自定义所在的文件夹中你使用来控制生成和部署过程的项目文件。
-2. 在*。 wpp.targets*文件中，创建新的 MSBuild 目标执行*之前* **CopyAllFilesToSingleFolderForPackage**目标。 这是生成要在包中包括的事项列表的 WPP 目标。
+2. 在 *。 wpp.targets*文件中，创建新的 MSBuild 目标执行*之前* **CopyAllFilesToSingleFolderForPackage**目标。 这是生成要在包中包括的事项列表的 WPP 目标。
 3. 在新的目标中，创建**ItemGroup**元素。
 4. 在**ItemGroup**元素中，添加**FilesForPackagingFromProject**项并指定*应用\_offline.htm*文件。
 
@@ -141,7 +141,7 @@ Web 发布管道 (WPP) 使用名为的项列表**FilesForPackagingFromProject**�
 - **BeforeTargets**属性将插入它应立即之前执行通过指定 WPP 到此目标**CopyAllFilesToSingleFolderForPackage**目标。
 - **FilesForPackagingFromProject**项使用**DestinationRelativePath**要重命名的文件的元数据值*应用\_脱机 template.htm*到*应用\_offline.htm*被添加到列表。
 
-下一个过程演示如何添加此*。 wpp.targets*到 web 应用程序项目的文件。
+下一个过程演示如何添加此 *。 wpp.targets*到 web 应用程序项目的文件。
 
 **若要添加。 web 部署包的 wpp.targets 文件**
 
@@ -157,7 +157,7 @@ Web 发布管道 (WPP) 使用名为的项列表**FilesForPackagingFromProject**�
 5. 在文件中，添加前面所述的 MSBuild 标记。
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample9.xml)]
-6. 保存并关闭*[项目名称].wpp.targets*文件。
+6. 保存并关闭 *[项目名称].wpp.targets*文件。
 
 下一次你生成和包你的 web 应用程序项目，将自动检测 WPP *。 wpp.targets*文件。 *应用\_脱机 template.htm*将作为生成的 web 部署包中包含文件*应用\_offline.htm*。
 

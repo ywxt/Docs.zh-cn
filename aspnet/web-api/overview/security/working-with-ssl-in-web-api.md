@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/working-with-ssl-in-web-api
-title: "使用 Web API 中的 SSL |Microsoft 文档"
+title: 使用 Web API 中的 SSL |Microsoft 文档
 author: MikeWasson
-description: "演示如何使用 SSL 与 ASP.NET Web API，包括使用 SSL 客户端证书。"
+description: 演示如何使用 SSL 与 ASP.NET Web API，包括使用 SSL 客户端证书。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/12/2012

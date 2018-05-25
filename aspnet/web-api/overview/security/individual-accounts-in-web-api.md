@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/individual-accounts-in-web-api
-title: "保护 Web API 与单个帐户和 ASP.NET Web API 2.2 中的本地登录名 |Microsoft 文档"
+title: 保护 Web API 与单个帐户和 ASP.NET Web API 2.2 中的本地登录名 |Microsoft 文档
 author: MikeWasson
-description: "本主题说明如何保护 web API 使用 OAuth2 对成员资格数据库进行身份验证。 在教程的 Visual Studio 201 中使用的软件版本..."
+description: 本主题说明如何保护 web API 使用 OAuth2 对成员资格数据库进行身份验证。 在教程的 Visual Studio 201 中使用的软件版本...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/15/2014
@@ -88,7 +88,7 @@ ms.lasthandoff: 01/24/2018
 
 ![](individual-accounts-in-web-api/_static/image4.png)
 
-在此方案中，Web API 控制器充当资源服务器。 身份验证筛选器验证访问令牌和**[Authorize]**特性用于保护资源。 当控制器或操作具有**[Authorize]**属性，对该控制器的所有请求或操作必须进行身份验证。 否则为授权被拒绝，然后 Web API 将返回 401 （未经授权） 的错误。
+在此方案中，Web API 控制器充当资源服务器。 身份验证筛选器验证访问令牌和 **[Authorize]** 特性用于保护资源。 当控制器或操作具有 **[Authorize]** 属性，对该控制器的所有请求或操作必须进行身份验证。 否则为授权被拒绝，然后 Web API 将返回 401 （未经授权） 的错误。
 
 授权服务器和身份验证筛选器同时调入[OWIN 中间件](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md)处理 OAuth2 的详细信息的组件。 在本教程后面，我将介绍更多详细信息中的设计。
 
@@ -249,7 +249,7 @@ OAuth 中间件不知道有关用户帐户的任何信息。 提供程序之间�
 1. **HostAuthentication**筛选器会调用 OAuth 中间件，该令牌进行验证。
 2. 该中间件将声明标识转换为令牌。
 3. 此时，该请求是*身份验证*但不是*授权*。
-4. 授权筛选器检查的声明标识。 如果声明授权用户对该资源，请对请求进行授权。 默认情况下， **[Authorize]**属性将授权进行身份验证的任何请求。 但是，你可以授权角色或其他声明。 有关详细信息，请参阅[身份验证和 Web API 中的授权](authentication-and-authorization-in-aspnet-web-api.md)。
+4. 授权筛选器检查的声明标识。 如果声明授权用户对该资源，请对请求进行授权。 默认情况下， **[Authorize]** 属性将授权进行身份验证的任何请求。 但是，你可以授权角色或其他声明。 有关详细信息，请参阅[身份验证和 Web API 中的授权](authentication-and-authorization-in-aspnet-web-api.md)。
 5. 如果前面的步骤都成功，则控制器将返回受保护的资源。 否则，客户端收到 401 （未经授权） 的错误。
 
 [![](individual-accounts-in-web-api/_static/image18.png)](individual-accounts-in-web-api/_static/image17.png)

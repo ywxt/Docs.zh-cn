@@ -28,7 +28,7 @@ ms.lasthandoff: 04/06/2018
 > 
 > **SignalR**拍摄服务器到客户端 RPC 还提供简单、 高级别 API （在从服务器端.NET 代码的客户端的浏览器中调用 JavaScript 函数） 在 ASP.NET 应用程序，以及添加用于连接管理的有用挂钩如连接/断开事件、 分组连接和授权。
 > 
-> **SignalR**是上某些要求进行客户端和服务器之间的实时工作的传输的抽象。 A **SignalR**连接作为 HTTP，启动，并随后将提升到**WebSocket**如果可用的连接。 **WebSocket**是有关的理想传输**SignalR**，因为它使最有效的服务器内存使用具有最低的延迟，并且具有最基础的功能 (如客户端之间的全双工通信和服务器），但它也有最严格的要求： **WebSocket**要求服务器使用**Windows Server 2012**或**Windows 8**，以及**.NET framework 4.5**。 如果不满足这些要求， **SignalR**将尝试使用其他传输，以使其连接 (如*Ajax 长轮询*)。
+> **SignalR**是上某些要求进行客户端和服务器之间的实时工作的传输的抽象。 A **SignalR**连接作为 HTTP，启动，并随后将提升到**WebSocket**如果可用的连接。 **WebSocket**是有关的理想传输**SignalR**，因为它使最有效的服务器内存使用具有最低的延迟，并且具有最基础的功能 (如客户端之间的全双工通信和服务器），但它也有最严格的要求： **WebSocket**要求服务器使用**Windows Server 2012**或**Windows 8**，以及 **.NET framework 4.5**。 如果不满足这些要求， **SignalR**将尝试使用其他传输，以使其连接 (如*Ajax 长轮询*)。
 > 
 > **SignalR** API 包含用于客户端和服务器之间进行通信的两个模型：**永久连接**和**中心**。 A**连接**代表一个简单的终结点发送单个接收方组合在一起，或将消息广播。 A**中心**是基于连接 API，从而使你的客户端和服务器相互直接调用方法的更多高级管道。
 > 
@@ -177,7 +177,7 @@ SignalR 支持**服务器推送**或**广播**功能; 它将自动处理的连�
     ![添加新项](real-time-web-applications-with-signalr/_static/image11.png "添加新项")
 
     *添加新项*
-6. 在**添加新项**对话框中，选择**Visual C# |Web |SignalR**的左窗格中，选择的节点**SignalR Hub Class (v2)**从中间窗格中，命名该文件**StatisticsHub.cs**单击**添加**。
+6. 在**添加新项**对话框中，选择**Visual C# |Web |SignalR**的左窗格中，选择的节点**SignalR Hub Class (v2)** 从中间窗格中，命名该文件**StatisticsHub.cs**单击**添加**。
 
     ![添加新项对话框](real-time-web-applications-with-signalr/_static/image12.png "添加新项对话框")
 
@@ -314,12 +314,12 @@ SignalR 支持**服务器推送**或**广播**功能; 它将自动处理的连�
 在此任务中，你将创建数据库将充当基架**专家 Quiz**应用程序。 你将使用**SQL Server 对象资源管理器**浏览你的服务器和初始化数据库。 此外，你将启用**Service Broker**。
 
 1. 在**Visual Studio**，打开菜单**视图**和选择**SQL Server 对象资源管理器**。
-2. 通过右键单击连接到 LocalDB 实例**SQL Server**节点并选择**添加 SQL Server...**选项。
+2. 通过右键单击连接到 LocalDB 实例**SQL Server**节点并选择**添加 SQL Server...** 选项。
 
     ![添加 SQL Server 实例](real-time-web-applications-with-signalr/_static/image20.png "添加 SQL Server 实例")
 
     *将 SQL Server 实例添加到 SQL Server 对象资源管理器*
-3. 设置**服务器名称**到*(localdb) \v11.0*并使**Windows 身份验证**作为身份验证模式。 单击**连接**以继续。
+3. 设置**服务器名称**到 *(localdb) \v11.0*并使**Windows 身份验证**作为身份验证模式。 单击**连接**以继续。
 
     ![连接到 LocalDB](real-time-web-applications-with-signalr/_static/image21.png "连接到 LocalDB")
 
@@ -349,7 +349,7 @@ SignalR 支持**服务器推送**或**广播**功能; 它将自动处理的连�
     ![查询服务 Broker 状态](real-time-web-applications-with-signalr/_static/image25.png "查询服务代理状态")
 
     *查询服务代理状态*
-8. 如果值**是\_broker\_启用**数据库中的列是&quot;0&quot;，使用以下命令来启用它。 替换 **&lt;YOUR 数据库&gt;**与创建数据库时设置的名称 (例如： SignalR)。
+8. 如果值**是\_broker\_启用**数据库中的列是&quot;0&quot;，使用以下命令来启用它。 替换 **&lt;YOUR 数据库&gt;** 与创建数据库时设置的名称 (例如： SignalR)。
 
     [!code-sql[Main](real-time-web-applications-with-signalr/samples/sample12.sql)]
 
@@ -369,7 +369,7 @@ SignalR 支持**服务器推送**或**广播**功能; 它将自动处理的连�
 
     [!code-powershell[Main](real-time-web-applications-with-signalr/samples/sample13.ps1)]
 2. 对项目重复上一步但这次**GeekQuiz2**。
-3. 若要配置 SQL Server 底板，打开**Startup.cs**文件**GeekQuiz**项目，并添加以下代码**配置**方法。 替换 **&lt;YOUR 数据库&gt;**替换为你创建 SQL Server 底板时使用的数据库名称。 重复此步骤**GeekQuiz2**项目。
+3. 若要配置 SQL Server 底板，打开**Startup.cs**文件**GeekQuiz**项目，并添加以下代码**配置**方法。 替换 **&lt;YOUR 数据库&gt;** 替换为你创建 SQL Server 底板时使用的数据库名称。 重复此步骤**GeekQuiz2**项目。
 
     (代码段- *RealTimeSignalR-Ex2-StartupConfiguration*)
 

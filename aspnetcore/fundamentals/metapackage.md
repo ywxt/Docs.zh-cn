@@ -1,22 +1,25 @@
 ---
-title: ASP.NET Core 2.x 及更高版本的 Microsoft.AspNetCore.All 元包
+title: ASP.NET Core 2.0 及更高版本的 Microsoft.AspNetCore.All 元包
 author: Rick-Anderson
 description: Microsoft.AspNetCore.All 元包包含所有受支持的 ASP.NET Core 和 Entity Framework Core 包及其依赖关系。
 manager: wpickett
-monikerRange: = aspnetcore-2.0
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/metapackage
-ms.openlocfilehash: 4c11f15e659565325bfe8b8d91188b62177b251d
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: c0d7d7fb5f41a91f8d881dd7880d8adcaa478968
+ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/20/2018
 ---
-# <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-2x"></a>ASP.NET Core 2.x 的 Microsoft.AspNetCore.All 元包
+# <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-20"></a>ASP.NET Core 2.0 的 Microsoft.AspNetCore.All 元包
+
+> [!NOTE]
+> 对于面向 ASP.NET Core 2.1 及更高版本的应用程序，建议使用 [Microsoft.AspNetCore.App](xref:fundamentals/metapackage) 而不是此包。 请参阅本文中的[从 Microsoft.AspNetCore.All 迁移到 Microsoft.AspNetCore.App](#migrate)。
 
 此功能需要面向 .NET Core 2.x 的 ASP.NET Core 2.x。
 
@@ -28,7 +31,7 @@ ASP.NET Core 的 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Micro
 
 `Microsoft.AspNetCore.All` 包中包含了 ASP.NET Core 2.x 和 Entity Framework Core 2.x 的所有功能。 定目标到 ASP.NET Core 2.0 的默认项目模板使用此包。
 
-`Microsoft.AspNetCore.All` 元包的版本号表示 ASP.NET Core 版本和 Entity Framework Core 版本（与 .NET Core 版本对齐）。
+`Microsoft.AspNetCore.All` 元包的版本号表示 ASP.NET Core 版本和 Entity Framework Core 版本。
 
 使用 `Microsoft.AspNetCore.All` 元包的应用程序会自动使用 [.NET Core 运行时存储](https://docs.microsoft.com/dotnet/core/deploying/runtime-store)。 此运行时存储包含运行 ASP.NET Core 2.x 应用程序所需的所有运行时资产。 使用 `Microsoft.AspNetCore.All` 元包时，应用程序不会部署引用的 ASP.NET Core NuGet 包中的任何资产&mdash;.NET Core 运行时存储包含这些资产。 运行时存储中的资产已经过预编译，以便缩短应用程序启动时间。
 
@@ -36,4 +39,32 @@ ASP.NET Core 的 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Micro
 
 以下 .csproj 文件引用了 ASP.NET Core 的 `Microsoft.AspNetCore.All` 元包：
 
-[!code-xml[](../mvc/views/view-compilation/sample/MvcRazorCompileOnPublish2.csproj?highlight=9)]
+[!code-xml[](metapackage/samples/Metapackage.All.Example.csproj?highlight=6)]
+
+<a name="migrate"></a>
+## <a name="migrating-from-microsoftaspnetcoreall-to-microsoftaspnetcoreapp"></a>从 Microsoft.AspNetCore.All 迁移到 Microsoft.AspNetCore.App
+
+`Microsoft.AspNetCore.All` 包中包含以下包，而 `Microsoft.AspNetCore.App` 包中不包含以下包。 
+
+* `Microsoft.AspNetCore.ApplicationInsights.HostingStartup`
+* `Microsoft.AspNetCore.AzureAppServices.HostingStartup`
+* `Microsoft.AspNetCore.AzureAppServicesIntegration`
+* `Microsoft.AspNetCore.DataProtection.AzureKeyVault`
+* `Microsoft.AspNetCore.DataProtection.AzureStorage`
+* `Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv`
+* `Microsoft.AspNetCore.SignalR.Redis`
+* `Microsoft.Data.Sqlite`
+* `Microsoft.Data.Sqlite.Core`
+* `Microsoft.EntityFrameworkCore.Sqlite`
+* `Microsoft.EntityFrameworkCore.Sqlite.Core`
+* `Microsoft.Extensions.Caching.Redis`
+* `Microsoft.Extensions.Configuration.AzureKeyVault`
+* `Microsoft.Extensions.Logging.AzureAppServices`
+* `Microsoft.VisualStudio.Web.BrowserLink`
+
+要从 `Microsoft.AspNetCore.All` 移到 `Microsoft.AspNetCore.App`，如果应用使用上述包或由这些包引入的包中的任何 API，请在项目中添加对这些包的引用。
+
+不会隐式包含非 `Microsoft.AspNetCore.App` 依赖项的上述包的任何依赖项。 例如:
+
+* `StackExchange.Redis` 作为 `Microsoft.Extensions.Caching.Redis` 的依赖项
+* `Microsoft.ApplicationInsights` 作为 `Microsoft.AspNetCore.ApplicationInsights.HostingStartup` 的依赖项

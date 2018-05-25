@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
-title: "动手实验： 生成与 ASP.NET Web API 和 Angular.js 的单页面应用程序 (SPA) |Microsoft 文档"
+title: 动手实验： 生成与 ASP.NET Web API 和 Angular.js 的单页面应用程序 (SPA) |Microsoft 文档
 author: rick-anderson
-description: "在传统 web 应用程序，客户端 （浏览器） 中请求页面来启动与服务器通信。 服务器然后处理该请求..."
+description: 在传统 web 应用程序，客户端 （浏览器） 中请求页面来启动与服务器通信。 服务器然后处理该请求...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/30/2015
@@ -103,12 +103,12 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在方便地实现 HTTP 服务
 
 在此任务将开始创建新的 ASP.NET MVC 项目支持 ASP.NET Web API 基于**一个 ASP.NET**项目附带了 Visual Studio 的类型。 **一个 ASP.NET**统一所有 ASP.NET 技术和为你提供混合并将根据需要对其进行匹配的选项。 然后，你将添加实体框架模型类和数据库 initializator 要插入的测验问题。
 
-1. 打开**Visual Studio Express 2013 for Web**和选择**文件 |新建项目...**启动一个新的解决方案。
+1. 打开**Visual Studio Express 2013 for Web**和选择**文件 |新建项目...** 启动一个新的解决方案。
 
     ![创建新的项目](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image1.png "创建新项目")
 
     *创建新项目*
-2. 在**新项目**对话框中，选择**ASP.NET Web 应用程序**下**Visual C# |Web**选项卡。请确保**.NET Framework 4.5**是选择，将其命名*GeekQuiz*，选择**位置**单击**确定**。
+2. 在**新项目**对话框中，选择**ASP.NET Web 应用程序**下**Visual C# |Web**选项卡。请确保 **.NET Framework 4.5**是选择，将其命名*GeekQuiz*，选择**位置**单击**确定**。
 
     ![创建新的 ASP.NET Web 应用程序项目](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image2.png "创建新的 ASP.NET Web 应用程序项目")
 
@@ -132,15 +132,15 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在方便地实现 HTTP 服务
     > [!NOTE]
     > 通过将添加这些文件，你要添加数据模型、 实体框架数据库上下文和专家 Quiz 应用程序的数据库初始值设定项。
     > 
-    > **Entity Framework (EF)**是对象关系映射器 (ORM)，可用于创建数据访问应用程序使用而不是直接使用关系存储架构编程概念应用程序模型编程。 你可以了解有关实体框架[此处](../../../entity-framework.md)。
+    > **Entity Framework (EF)** 是对象关系映射器 (ORM)，可用于创建数据访问应用程序使用而不是直接使用关系存储架构编程概念应用程序模型编程。 你可以了解有关实体框架[此处](../../../entity-framework.md)。
     > 
     > 下面是你刚添加的类的说明：
     > 
-    > - **TriviaOption:**表示与测验问题关联的单个选项
-    > - **TriviaQuestion:**表示测验问题，并公开通过关联的选项**选项**属性
-    > - **TriviaAnswer:**表示通过对测验问题的响应中的用户选择的选项
-    > - **TriviaContext:**表示专家 Quiz 应用程序的实体框架数据库上下文。 此类派生自**DContext**并公开**DbSet**表示集合的上面所述的实体的属性。
-    > - **TriviaDatabaseInitializer:**的实体框架初始值设定项的实现**TriviaContext**类继承自**CreateDatabaseIfNotExists**。 此类的默认行为是创建数据库，仅当它不存在中, 插入实体指定**种子**方法。
+    > - **TriviaOption:** 表示与测验问题关联的单个选项
+    > - **TriviaQuestion:** 表示测验问题，并公开通过关联的选项**选项**属性
+    > - **TriviaAnswer:** 表示通过对测验问题的响应中的用户选择的选项
+    > - **TriviaContext:** 表示专家 Quiz 应用程序的实体框架数据库上下文。 此类派生自**DContext**并公开**DbSet**表示集合的上面所述的实体的属性。
+    > - **TriviaDatabaseInitializer:** 的实体框架初始值设定项的实现**TriviaContext**类继承自**CreateDatabaseIfNotExists**。 此类的默认行为是创建数据库，仅当它不存在中, 插入实体指定**种子**方法。
 6. 打开**Global.asax.cs**文件并添加以下 using 语句。
 
     [!code-csharp[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample1.cs)]
@@ -153,13 +153,13 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在方便地实现 HTTP 服务
 
     > [!NOTE]
     > **Authorize**筛选检查以确定用户进行身份验证。 如果用户未通过身份验证，则将返回 HTTP 状态代码 401 （未授权），而无需调用该操作。 你可以应用筛选器全局范围内，在控制器级别，或各个操作级别。
-9. 现在，您将自定义的 web 页面，并且该品牌的布局。 若要执行此操作，打开 **\_Layout.cshtml**文件**视图 |共享**文件夹和更新的内容**&lt;标题&gt;**元素替换*My ASP.NET Application*与*专家测验*.
+9. 现在，您将自定义的 web 页面，并且该品牌的布局。 若要执行此操作，打开 **\_Layout.cshtml**文件**视图 |共享**文件夹和更新的内容**&lt;标题&gt;** 元素替换*My ASP.NET Application*与*专家测验*.
 
     [!code-cshtml[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample4.cshtml)]
 10. 在相同的文件中，通过删除更新的导航栏*有关*和*联系人*链接和重命名*主页*链接到*播放*。 此外，重命名*应用程序名称*链接到*专家 Quiz*。 导航栏的 HTML 应类似下面的代码。
 
     [!code-cshtml[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample5.cshtml)]
-11. 通过替换来更新布局页的页脚*My ASP.NET Application*与*专家 Quiz*。 若要执行此操作，将内容**&lt;页脚&gt;**元素替换为以下突出显示代码。
+11. 通过替换来更新布局页的页脚*My ASP.NET Application*与*专家 Quiz*。 若要执行此操作，将内容**&lt;页脚&gt;** 元素替换为以下突出显示代码。
 
     [!code-html[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample6.html)]
 
@@ -332,18 +332,18 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在方便地实现 HTTP 服务
     [!code-javascript[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample17.js)]
 
     > [!NOTE]
-    > 构造函数的**QuizCtrl**控制器需要名为的注射参数**$scope**。 作用域的初始状态应设置在构造函数中通过附加到属性**$scope**对象。 属性包含**视图模型**，并可供模板时注册了该控制器。
+    > 构造函数的**QuizCtrl**控制器需要名为的注射参数 **$scope**。 作用域的初始状态应设置在构造函数中通过附加到属性 **$scope**对象。 属性包含**视图模型**，并可供模板时注册了该控制器。
     > 
     > **QuizCtrl**控制器定义在名为模块内**QuizApp**。 模块是工作的让你单元将应用程序分解为单独的组件。 使用模块的主要优势是易于理解的代码，并便于单元测试、 可重用性和可维护性。
-7. 若要对从视图触发的事件做出响应，现在将将行为添加到作用域。 将以下代码添加在结束**QuizCtrl**控制器定义**nextQuestion**函数中**$scope**对象。
+7. 若要对从视图触发的事件做出响应，现在将将行为添加到作用域。 将以下代码添加在结束**QuizCtrl**控制器定义**nextQuestion**函数中 **$scope**对象。
 
     (代码段- *AspNetWebApiSpa-Ex2-AngularQuizControllerNextQuestion*)
 
     [!code-javascript[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample18.js)]
 
     > [!NOTE]
-    > 此函数可检索下一个问题从**琐事**Web API 在上一练习中创建和附加到的问题数据**$scope**对象。
-8. 将下面的代码插入的结尾处**QuizCtrl**控制器定义**sendAnswer**函数中**$scope**对象。
+    > 此函数可检索下一个问题从**琐事**Web API 在上一练习中创建和附加到的问题数据 **$scope**对象。
+8. 将下面的代码插入的结尾处**QuizCtrl**控制器定义**sendAnswer**函数中 **$scope**对象。
 
     (代码段- *AspNetWebApiSpa-Ex2-AngularQuizControllerSendAnswer*)
 
@@ -352,7 +352,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在方便地实现 HTTP 服务
     > [!NOTE]
     > 此函数将发送到用户的所选回答**琐事**Web API，并将存储中的结果 – 即如果答案不正确，或未 – **$scope**对象。
     > 
-    > **NextQuestion**和**sendAnswer**上面提供的函数使用 AngularJS **$http**对象抽象与通过 XMLHttpRequest Web API 的通信从浏览器的 JavaScript 对象。 AngularJS 支持使更高级别的抽象，以执行针对通过 RESTful Api 资源的 CRUD 操作的另一个服务。 AngularJS **$resource**对象有提供高级行为而无需与之交互的操作方法**$http**对象。 请考虑使用**$resource**方案需要 CRUD 模型的对象 (fore 信息，请参阅[$resource 文档](https://docs.angularjs.org/api/ngResource/service/$resource))。
+    > **NextQuestion**和**sendAnswer**上面提供的函数使用 AngularJS **$http**对象抽象与通过 XMLHttpRequest Web API 的通信从浏览器的 JavaScript 对象。 AngularJS 支持使更高级别的抽象，以执行针对通过 RESTful Api 资源的 CRUD 操作的另一个服务。 AngularJS **$resource**对象有提供高级行为而无需与之交互的操作方法 **$http**对象。 请考虑使用 **$resource**方案需要 CRUD 模型的对象 (fore 信息，请参阅[$resource 文档](https://docs.angularjs.org/api/ngResource/service/$resource))。
 9. 下一步是创建定义测验的视图的 AngularJS 模板。 若要执行此操作，打开**Index.cshtml**文件**视图 |主页**文件夹，然后替换其中的内容替换为以下代码。
 
     (代码段- *AspNetWebApiSpa-Ex2-GeekQuizView*)
@@ -364,7 +364,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在方便地实现 HTTP 服务
     > 
     > - **Ng 应用**指令指示 AngularJS 表示应用程序的根元素的 DOM 元素。
     > - **Ng 控制器**指令将控制器附加到 DOM 指令的声明位置的点处。
-    > - 大括号表示法**{{}}**表示到控制器中定义的作用域属性的绑定。
+    > - 大括号表示法 **{{}}** 表示到控制器中定义的作用域属性的绑定。
     > - **Ng 单击**指令用于调用以响应用户单击作用域中定义的函数。
 10. 打开**Site.css**文件**内容**文件夹和文件可供测验视图的外观和感觉的末尾添加以下突出显示的样式。
 
@@ -421,7 +421,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在方便地实现 HTTP 服务
 5. 找到**期间翻转背面窗格隐藏**注释。 该注释下面的样式时它们将面临离开查看器通过设置隐藏的平面的后端**背面可见性**CSS 属性*隐藏*。
 
     [!code-css[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample23.css)]
-6. 打开**BundleConfig.cs**文件**应用\_启动**文件夹并添加对引用**Flip.css**文件中 **&quot;~/Content/css&quot;** 样式捆绑包
+6. 打开**BundleConfig.cs**文件**应用\_启动**文件夹并添加对引用**Flip.css**文件中**&quot;~/Content/css&quot;** 样式捆绑包
 
     [!code-csharp[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample24.cs)]
 7. 按**F5**运行解决方案，并登录你的凭据。
