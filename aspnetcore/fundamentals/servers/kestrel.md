@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: a1162da01fad67f3e8ccb1e70bd646b39c38997f
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: 251385b268e75cfadb815c293be52176297ed3e4
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 Kestrel Web 服务器实现
 
@@ -276,7 +276,7 @@ Kestrel 在 `http://localhost:5000` 和 `https://localhost:5001` 上进行侦听
 * `urls` 主机配置键。
 * `UseUrls` 扩展方法。
 
-有关详细信息，请参阅[服务器 URL](xref:fundamentals/hosting#server-urls) 和[重写配置](xref:fundamentals/hosting#overriding-configuration)。
+有关详细信息，请参阅[服务器 URL](xref:fundamentals/host/web-host#server-urls) 和[重写配置](xref:fundamentals/host/web-host#override-configuration)。
 
 采用这些方法提供的值可以是一个或多个 HTTP 和 HTTPS 终结点（如果默认证书可用，则为 HTTPS）。 将值配置为以分号分隔的列表（例如 `"Urls": "http://localhost:8000;http://localhost:8001"`）。
 
@@ -489,7 +489,7 @@ Now listening on: http://127.0.0.1:48508
 * `urls` 主机配置键
 * ASP.NET Core 配置系统，包括 `ASPNETCORE_URLS` 环境变量
 
-有关这些方法的详细信息，请参阅[承载](xref:fundamentals/hosting)。
+有关这些方法的详细信息，请参阅[承载](xref:fundamentals/host/index)。
 
 **IIS 终结点配置**
 

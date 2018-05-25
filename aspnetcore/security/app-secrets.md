@@ -5,16 +5,16 @@ description: 了解如何存储和检索在 ASP.NET Core 应用程序开发期�
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 05/16/2018
+ms.date: 05/23/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 9e9b548e5572da2c347bc874c473a02d8691e738
-ms.sourcegitcommit: 300a1127957dcdbce1b6ad79a7b9dc676f571510
-ms.translationtype: HT
+ms.openlocfilehash: ece2bf541df2b4acac60a88767cc57ede473bd49
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>安全存储中 ASP.NET Core 中开发的应用程序机密
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 05/23/2018
 
 ## <a name="how-the-secret-manager-tool-works"></a>密码管理器工具的工作原理
 
-密码管理器工具避开实现详细信息，例如哪里和如何存储值。 无需知道这些实现的详细信息，可以使用该工具。 这些值存储在[JSON](https://json.org/)受系统保护用户配置文件文件夹中本地计算机上的配置文件：
+密码管理器工具避开实现详细信息，例如哪里和如何存储值。 无需知道这些实现的详细信息，可以使用该工具。 值存储在本地计算机上的 JSON 配置文件受系统保护用户配置文件文件夹中：
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
@@ -77,9 +77,18 @@ ms.lasthandoff: 05/23/2018
 ::: moniker range="<= aspnetcore-2.0"
 ## <a name="install-the-secret-manager-tool"></a>安装机密管理器工具
 
-密码管理器工具是与.NET 核心 SDK 2.1 中的.NET 核心 CLI 捆绑。 有关.NET 核心 SDK 2.0 及更早版本，则工具安装是必需的。
+密钥管理器工具是与.NET 核心 CLI 截至.NET 核心 SDK 2.1.300 捆绑。 有关.NET 核心 SDK 2.1.300 之前的版本中，工具安装是必需的。
 
-安装[Microsoft.Extensions.SecretManager.Tools](https://www.nuget.org/packages/Microsoft.Extensions.SecretManager.Tools/) ASP.NET Core 项目中的 NuGet 包：
+> [!TIP]
+> 运行`dotnet --version`从命令行界面中，若要查看已安装的.NET 核心 SDK 版本号。
+
+如果正在使用的.NET 核心 SDK 包括的工具，将显示警告：
+
+```console
+The tool 'Microsoft.Extensions.SecretManager.Tools' is now included in the .NET Core SDK. Information on resolving this warning is available at (https://aka.ms/dotnetclitools-in-box).
+```
+
+安装[Microsoft.Extensions.SecretManager.Tools](https://www.nuget.org/packages/Microsoft.Extensions.SecretManager.Tools/) ASP.NET Core 项目中的 NuGet 包。 例如：
 
 [!code-xml[](app-secrets/samples/1.x/UserSecrets/UserSecrets.csproj?name=snippet_CsprojFile&highlight=13-14)]
 
