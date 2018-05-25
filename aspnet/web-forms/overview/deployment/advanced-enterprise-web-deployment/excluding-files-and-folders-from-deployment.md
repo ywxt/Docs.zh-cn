@@ -71,14 +71,14 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="20a9e-143">尽管你可能会将项目文件中排除特定文件和文件夹操作，但是没有更简单的方法。</span><span class="sxs-lookup"><span data-stu-id="20a9e-143">Although you could manipulate your project files to exclude specific files and folders, there is an easier way.</span></span> <span data-ttu-id="20a9e-144">WPP 包括一种机制来通过构建名为的项列表中排除文件和文件夹**ExcludeFromPackageFolders**和**ExcludeFromPackageFiles**。</span><span class="sxs-lookup"><span data-stu-id="20a9e-144">The WPP includes a mechanism to exclude files and folders by building item lists named **ExcludeFromPackageFolders** and **ExcludeFromPackageFiles**.</span></span> <span data-ttu-id="20a9e-145">你可以通过将你自己的项添加到这些列表来扩展此机制。</span><span class="sxs-lookup"><span data-stu-id="20a9e-145">You can extend this mechanism by adding your own items to these lists.</span></span> <span data-ttu-id="20a9e-146">若要执行此操作，你需要完成以下高级步骤：</span><span class="sxs-lookup"><span data-stu-id="20a9e-146">To do this, you need to complete these high-level steps:</span></span>
 
-1. <span data-ttu-id="20a9e-147">创建一个名为的自定义项目文件*[项目名称].wpp.targets*项目文件所在的文件夹中。</span><span class="sxs-lookup"><span data-stu-id="20a9e-147">Create a custom project file named *[project name].wpp.targets* in the same folder as your project file.</span></span>
+1. <span data-ttu-id="20a9e-147">创建一个名为的自定义项目文件 *[项目名称].wpp.targets*项目文件所在的文件夹中。</span><span class="sxs-lookup"><span data-stu-id="20a9e-147">Create a custom project file named *[project name].wpp.targets* in the same folder as your project file.</span></span>
 
     > [!NOTE]
     > <span data-ttu-id="20a9e-148">*。 Wpp.targets*文件需要在你的 web 应用程序项目文件所在的文件夹中转&#x2014;例如*ContactManager.Mvc.csproj*&#x2014;而不是任何自定义所在的文件夹中你使用来控制生成和部署过程的项目文件。</span><span class="sxs-lookup"><span data-stu-id="20a9e-148">The *.wpp.targets* file needs to go in the same folder as your web application project file&#x2014;for example, *ContactManager.Mvc.csproj*&#x2014;rather than in the same folder as any custom project files you use to control the build and deployment process.</span></span>
-2. <span data-ttu-id="20a9e-149">在*。 wpp.targets*文件中，添加**ItemGroup**元素。</span><span class="sxs-lookup"><span data-stu-id="20a9e-149">In the *.wpp.targets* file, add an **ItemGroup** element.</span></span>
+2. <span data-ttu-id="20a9e-149">在 *。 wpp.targets*文件中，添加**ItemGroup**元素。</span><span class="sxs-lookup"><span data-stu-id="20a9e-149">In the *.wpp.targets* file, add an **ItemGroup** element.</span></span>
 3. <span data-ttu-id="20a9e-150">在**ItemGroup**元素中，添加**ExcludeFromPackageFolders**和**ExcludeFromPackageFiles**要排除特定文件和文件夹所需项。</span><span class="sxs-lookup"><span data-stu-id="20a9e-150">In the **ItemGroup** element, add **ExcludeFromPackageFolders** and **ExcludeFromPackageFiles** items to exclude specific files and folders as required.</span></span>
 
-<span data-ttu-id="20a9e-151">这是此基本结构*。 wpp.targets*文件：</span><span class="sxs-lookup"><span data-stu-id="20a9e-151">This is the basic structure of this *.wpp.targets* file:</span></span>
+<span data-ttu-id="20a9e-151">这是此基本结构 *。 wpp.targets*文件：</span><span class="sxs-lookup"><span data-stu-id="20a9e-151">This is the basic structure of this *.wpp.targets* file:</span></span>
 
 
 [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample1.xml)]
@@ -88,7 +88,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="excluding-files-and-folders-from-a-web-package"></a><span data-ttu-id="20a9e-154">从 Web 包中排除文件和文件夹</span><span class="sxs-lookup"><span data-stu-id="20a9e-154">Excluding Files and Folders from a Web Package</span></span>
 
-<span data-ttu-id="20a9e-155">下一个过程演示如何将添加*。 wpp.targets* web 应用程序项目以及如何使用文件来生成你的项目时从 web 包排除特定文件和文件夹的文件。</span><span class="sxs-lookup"><span data-stu-id="20a9e-155">The next procedure shows you how to add a *.wpp.targets* file to a web application project and how to use the file to exclude specific files and folders from the web package when you build your project.</span></span>
+<span data-ttu-id="20a9e-155">下一个过程演示如何将添加 *。 wpp.targets* web 应用程序项目以及如何使用文件来生成你的项目时从 web 包排除特定文件和文件夹的文件。</span><span class="sxs-lookup"><span data-stu-id="20a9e-155">The next procedure shows you how to add a *.wpp.targets* file to a web application project and how to use the file to exclude specific files and folders from the web package when you build your project.</span></span>
 
 <span data-ttu-id="20a9e-156">**若要从 web 部署包中排除文件和文件夹**</span><span class="sxs-lookup"><span data-stu-id="20a9e-156">**To exclude files and folders from a web deployment package**</span></span>
 
@@ -107,25 +107,25 @@ ms.lasthandoff: 04/06/2018
 6. <span data-ttu-id="20a9e-164">如果你想要从 web 包中排除文件夹，将添加**ExcludeFromPackageFolders**元素**ItemGroup**元素：</span><span class="sxs-lookup"><span data-stu-id="20a9e-164">If you want to exclude folders from the web package, add an **ExcludeFromPackageFolders** element to the **ItemGroup** element:</span></span>
 
    1. <span data-ttu-id="20a9e-165">在**包括**特性，提供你想要排除的文件夹中的分号分隔的列表。</span><span class="sxs-lookup"><span data-stu-id="20a9e-165">In the **Include** attribute, provide a semicolon-separated list of the folders you want to exclude.</span></span>
-   2. <span data-ttu-id="20a9e-166">在**FromTarget**元数据元素提供一个有意义的值以指示原因文件夹中排除，如名*。 wpp.targets*文件。</span><span class="sxs-lookup"><span data-stu-id="20a9e-166">In the **FromTarget** metadata element, provide a meaningful value to indicate why the folders are being excluded, like the name of the *.wpp.targets* file.</span></span>
+   2. <span data-ttu-id="20a9e-166">在**FromTarget**元数据元素提供一个有意义的值以指示原因文件夹中排除，如名 *。 wpp.targets*文件。</span><span class="sxs-lookup"><span data-stu-id="20a9e-166">In the **FromTarget** metadata element, provide a meaningful value to indicate why the folders are being excluded, like the name of the *.wpp.targets* file.</span></span>
 
       [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample3.xml)]
 7. <span data-ttu-id="20a9e-167">如果你想要从 web 包中排除文件，添加**ExcludeFromPackageFiles**元素**ItemGroup**元素：</span><span class="sxs-lookup"><span data-stu-id="20a9e-167">If you want to exclude files from the web package, add an **ExcludeFromPackageFiles** element to the **ItemGroup** element:</span></span>
 
    1. <span data-ttu-id="20a9e-168">在**包括**特性，提供你想要排除的文件之间用分号分隔列表。</span><span class="sxs-lookup"><span data-stu-id="20a9e-168">In the **Include** attribute, provide a semicolon-separated list of the files you want to exclude.</span></span>
-   2. <span data-ttu-id="20a9e-169">在**FromTarget**元数据元素提供一个有意义的值以指示原因文件中排除，如名*。 wpp.targets*文件。</span><span class="sxs-lookup"><span data-stu-id="20a9e-169">In the **FromTarget** metadata element, provide a meaningful value to indicate why the files are being excluded, like the name of the *.wpp.targets* file.</span></span>
+   2. <span data-ttu-id="20a9e-169">在**FromTarget**元数据元素提供一个有意义的值以指示原因文件中排除，如名 *。 wpp.targets*文件。</span><span class="sxs-lookup"><span data-stu-id="20a9e-169">In the **FromTarget** metadata element, provide a meaningful value to indicate why the files are being excluded, like the name of the *.wpp.targets* file.</span></span>
 
       [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample4.xml)]
 8. <span data-ttu-id="20a9e-170">*[项目名称].wpp.targets*文件现在应类似如下：</span><span class="sxs-lookup"><span data-stu-id="20a9e-170">The *[project name].wpp.targets* file should now resemble this:</span></span>
 
     [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample5.xml)]
-9. <span data-ttu-id="20a9e-171">保存并关闭*[项目名称].wpp.targets*文件。</span><span class="sxs-lookup"><span data-stu-id="20a9e-171">Save and close the *[project name].wpp.targets* file.</span></span>
+9. <span data-ttu-id="20a9e-171">保存并关闭 *[项目名称].wpp.targets*文件。</span><span class="sxs-lookup"><span data-stu-id="20a9e-171">Save and close the *[project name].wpp.targets* file.</span></span>
 
 <span data-ttu-id="20a9e-172">下一次你生成和包你的 web 应用程序项目，将自动检测 WPP *。 wpp.targets*文件。</span><span class="sxs-lookup"><span data-stu-id="20a9e-172">The next time you build and package your web application project, the WPP will automatically detect the *.wpp.targets* file.</span></span> <span data-ttu-id="20a9e-173">不将 web 包中包括任何文件和你指定的文件夹。</span><span class="sxs-lookup"><span data-stu-id="20a9e-173">Any files and folders you specified will not be included in the web package.</span></span>
 
 ## <a name="conclusion"></a><span data-ttu-id="20a9e-174">结束语</span><span class="sxs-lookup"><span data-stu-id="20a9e-174">Conclusion</span></span>
 
-<span data-ttu-id="20a9e-175">本主题描述如何创建自定义生成 web 包时, 排除特定文件和文件夹*。 wpp.targets*与你的 web 应用程序项目文件相同的文件夹中的文件。</span><span class="sxs-lookup"><span data-stu-id="20a9e-175">This topic described how to exclude specific files and folders when you build a web package, by creating a custom *.wpp.targets* file in the same folder as your web application project file.</span></span>
+<span data-ttu-id="20a9e-175">本主题描述如何创建自定义生成 web 包时, 排除特定文件和文件夹 *。 wpp.targets*与你的 web 应用程序项目文件相同的文件夹中的文件。</span><span class="sxs-lookup"><span data-stu-id="20a9e-175">This topic described how to exclude specific files and folders when you build a web package, by creating a custom *.wpp.targets* file in the same folder as your web application project file.</span></span>
 
 ## <a name="further-reading"></a><span data-ttu-id="20a9e-176">其他阅读材料</span><span class="sxs-lookup"><span data-stu-id="20a9e-176">Further Reading</span></span>
 

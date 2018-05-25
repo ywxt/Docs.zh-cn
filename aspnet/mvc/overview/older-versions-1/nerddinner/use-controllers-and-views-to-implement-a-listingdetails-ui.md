@@ -68,11 +68,11 @@ ms.lasthandoff: 04/06/2018
 
 [!code-csharp[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample1.cs)]
 
-<span data-ttu-id="e121c-133">我们然后运行 NerdDinner 应用程序，使用我们的浏览器调用它们。</span><span class="sxs-lookup"><span data-stu-id="e121c-133">We'll then run the NerdDinner application and use our browser to invoke them.</span></span> <span data-ttu-id="e121c-134">在中键入*"/ 晚餐 /"* URL 将导致我们*index （)*方法运行，然后它将发送回以下响应：</span><span class="sxs-lookup"><span data-stu-id="e121c-134">Typing in the *"/Dinners/"* URL will cause our *Index()* method to run, and it will send back the following response:</span></span>
+<span data-ttu-id="e121c-133">我们然后运行 NerdDinner 应用程序，使用我们的浏览器调用它们。</span><span class="sxs-lookup"><span data-stu-id="e121c-133">We'll then run the NerdDinner application and use our browser to invoke them.</span></span> <span data-ttu-id="e121c-134">在中键入 *"/ 晚餐 /"* URL 将导致我们*index （)* 方法运行，然后它将发送回以下响应：</span><span class="sxs-lookup"><span data-stu-id="e121c-134">Typing in the *"/Dinners/"* URL will cause our *Index()* method to run, and it will send back the following response:</span></span>
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image4.png)
 
-<span data-ttu-id="e121c-135">在中键入*"/ 2-晚餐/详细信息"* URL 将导致我们*Details()*方法运行，并将发送回以下响应：</span><span class="sxs-lookup"><span data-stu-id="e121c-135">Typing in the *"/Dinners/Details/2"* URL will cause our *Details()* method to run, and send back the following response:</span></span>
+<span data-ttu-id="e121c-135">在中键入 *"/ 2-晚餐/详细信息"* URL 将导致我们*Details()* 方法运行，并将发送回以下响应：</span><span class="sxs-lookup"><span data-stu-id="e121c-135">Typing in the *"/Dinners/Details/2"* URL will cause our *Details()* method to run, and send back the following response:</span></span>
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image5.png)
 
@@ -125,21 +125,21 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="e121c-191">在我们视图呈现分隔我们控制器逻辑带来了几大好处。</span><span class="sxs-lookup"><span data-stu-id="e121c-191">Separating our controller logic from our view rendering brings several big benefits.</span></span> <span data-ttu-id="e121c-192">具体而言，它有助于之间的应用程序代码和 UI 格式呈现代码强制"明显的问题"。</span><span class="sxs-lookup"><span data-stu-id="e121c-192">In particular it helps enforce a clear "separation of concerns" between the application code and UI formatting/rendering code.</span></span> <span data-ttu-id="e121c-193">这很容易得多到单元测试中隔离的应用程序逻辑与 UI 呈现逻辑。</span><span class="sxs-lookup"><span data-stu-id="e121c-193">This makes it much easier to unit-test application logic in isolation from UI rendering logic.</span></span> <span data-ttu-id="e121c-194">它便于以后修改 UI 呈现模板，而无需更改应用程序代码。</span><span class="sxs-lookup"><span data-stu-id="e121c-194">It makes it easier to later modify the UI rendering templates without having to make application code changes.</span></span> <span data-ttu-id="e121c-195">并且它可以使开发人员和设计器以协作项目上更容易。</span><span class="sxs-lookup"><span data-stu-id="e121c-195">And it can make it easier for developers and designers to collaborate together on projects.</span></span>
 
-<span data-ttu-id="e121c-196">我们可以更新我们 DinnersController 类，以指示我们想要查看模板用于通过将我们的两个操作方法的方法签名从具有返回类型为"void"改为具有返回类型为"ActionResult"更改发送回 HTML UI 响应。</span><span class="sxs-lookup"><span data-stu-id="e121c-196">We can update our DinnersController class to indicate that we want to use a view template to send back an HTML UI response by changing the method signatures of our two action methods from having a return type of "void" to instead have a return type of "ActionResult".</span></span> <span data-ttu-id="e121c-197">然后，我们可以调用*View()*控制器基本类返回的帮助器方法"ViewResult"对象与下面类似：</span><span class="sxs-lookup"><span data-stu-id="e121c-197">We can then call the *View()* helper method on the Controller base class to return back a "ViewResult" object like below:</span></span>
+<span data-ttu-id="e121c-196">我们可以更新我们 DinnersController 类，以指示我们想要查看模板用于通过将我们的两个操作方法的方法签名从具有返回类型为"void"改为具有返回类型为"ActionResult"更改发送回 HTML UI 响应。</span><span class="sxs-lookup"><span data-stu-id="e121c-196">We can update our DinnersController class to indicate that we want to use a view template to send back an HTML UI response by changing the method signatures of our two action methods from having a return type of "void" to instead have a return type of "ActionResult".</span></span> <span data-ttu-id="e121c-197">然后，我们可以调用*View()* 控制器基本类返回的帮助器方法"ViewResult"对象与下面类似：</span><span class="sxs-lookup"><span data-stu-id="e121c-197">We can then call the *View()* helper method on the Controller base class to return back a "ViewResult" object like below:</span></span>
 
 [!code-csharp[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample4.cs)]
 
-<span data-ttu-id="e121c-198">签名*View()*下面，我们将使用上面的帮助器方法如下所示：</span><span class="sxs-lookup"><span data-stu-id="e121c-198">The signature of the *View()* helper method we are using above looks like below:</span></span>
+<span data-ttu-id="e121c-198">签名*View()* 下面，我们将使用上面的帮助器方法如下所示：</span><span class="sxs-lookup"><span data-stu-id="e121c-198">The signature of the *View()* helper method we are using above looks like below:</span></span>
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image7.png)
 
-<span data-ttu-id="e121c-199">第一个参数*View()*帮助器方法是我们想要用来呈现的 HTML 响应的视图模板文件的名称。</span><span class="sxs-lookup"><span data-stu-id="e121c-199">The first parameter to the *View()* helper method is the name of the view template file we want to use to render the HTML response.</span></span> <span data-ttu-id="e121c-200">第二个参数是一个包含视图模板呈现的 HTML 响应所需的数据的模型对象。</span><span class="sxs-lookup"><span data-stu-id="e121c-200">The second parameter is a model object that contains the data that the view template needs in order to render the HTML response.</span></span>
+<span data-ttu-id="e121c-199">第一个参数*View()* 帮助器方法是我们想要用来呈现的 HTML 响应的视图模板文件的名称。</span><span class="sxs-lookup"><span data-stu-id="e121c-199">The first parameter to the *View()* helper method is the name of the view template file we want to use to render the HTML response.</span></span> <span data-ttu-id="e121c-200">第二个参数是一个包含视图模板呈现的 HTML 响应所需的数据的模型对象。</span><span class="sxs-lookup"><span data-stu-id="e121c-200">The second parameter is a model object that contains the data that the view template needs in order to render the HTML response.</span></span>
 
-<span data-ttu-id="e121c-201">我们正在呼叫我们 index （） 操作方法内*View()*帮助器方法并指示我们想要呈现晚餐使用"索引"视图模板的 HTML 列表。</span><span class="sxs-lookup"><span data-stu-id="e121c-201">Within our Index() action method we are calling the *View()* helper method and indicating that we want to render an HTML listing of dinners using an "Index" view template.</span></span> <span data-ttu-id="e121c-202">我们要传递的视图模板以生成从列表的 Dinner 对象的序列：</span><span class="sxs-lookup"><span data-stu-id="e121c-202">We are passing the view template a sequence of Dinner objects to generate the list from:</span></span>
+<span data-ttu-id="e121c-201">我们正在呼叫我们 index （） 操作方法内*View()* 帮助器方法并指示我们想要呈现晚餐使用"索引"视图模板的 HTML 列表。</span><span class="sxs-lookup"><span data-stu-id="e121c-201">Within our Index() action method we are calling the *View()* helper method and indicating that we want to render an HTML listing of dinners using an "Index" view template.</span></span> <span data-ttu-id="e121c-202">我们要传递的视图模板以生成从列表的 Dinner 对象的序列：</span><span class="sxs-lookup"><span data-stu-id="e121c-202">We are passing the view template a sequence of Dinner objects to generate the list from:</span></span>
 
 [!code-csharp[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample5.cs)]
 
-<span data-ttu-id="e121c-203">在我们 Details() 操作方法中，我们尝试检索 Dinner 对象使用的 URL 中提供的 id。</span><span class="sxs-lookup"><span data-stu-id="e121c-203">Within our Details() action method we attempt to retrieve a Dinner object using the id provided within the URL.</span></span> <span data-ttu-id="e121c-204">如果我们调用找到有效 Dinner *View()* ，该值指示我们想要使用的"详细信息"视图模板来呈现检索到的 Dinner 对象的帮助器方法。</span><span class="sxs-lookup"><span data-stu-id="e121c-204">If a valid Dinner is found we call the *View()* helper method, indicating we want to use a "Details" view template to render the retrieved Dinner object.</span></span> <span data-ttu-id="e121c-205">如果请求无效 dinner，则我们呈现一有用的错误消息，指示 Dinner 不存在使用"NotFound"视图模板 (和重载的版本*View()*帮助器方法，只需模板名称):</span><span class="sxs-lookup"><span data-stu-id="e121c-205">If an invalid dinner is requested, we render a helpful error message that indicates that the Dinner doesn't exist using a "NotFound" view template (and an overloaded version of the *View()* helper method that just takes the template name):</span></span>
+<span data-ttu-id="e121c-203">在我们 Details() 操作方法中，我们尝试检索 Dinner 对象使用的 URL 中提供的 id。</span><span class="sxs-lookup"><span data-stu-id="e121c-203">Within our Details() action method we attempt to retrieve a Dinner object using the id provided within the URL.</span></span> <span data-ttu-id="e121c-204">如果我们调用找到有效 Dinner *View()* ，该值指示我们想要使用的"详细信息"视图模板来呈现检索到的 Dinner 对象的帮助器方法。</span><span class="sxs-lookup"><span data-stu-id="e121c-204">If a valid Dinner is found we call the *View()* helper method, indicating we want to use a "Details" view template to render the retrieved Dinner object.</span></span> <span data-ttu-id="e121c-205">如果请求无效 dinner，则我们呈现一有用的错误消息，指示 Dinner 不存在使用"NotFound"视图模板 (和重载的版本*View()* 帮助器方法，只需模板名称):</span><span class="sxs-lookup"><span data-stu-id="e121c-205">If an invalid dinner is requested, we render a helpful error message that indicates that the Dinner doesn't exist using a "NotFound" view template (and an overloaded version of the *View()* helper method that just takes the template name):</span></span>
 
 [!code-csharp[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample6.cs)]
 
@@ -171,7 +171,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-aspx[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample7.aspx)]
 
-<span data-ttu-id="e121c-219">我们可以然后试试看以及浏览器中。</span><span class="sxs-lookup"><span data-stu-id="e121c-219">We can then try it out within the browser.</span></span> <span data-ttu-id="e121c-220">若要让我们执行此请求*"/ 晚餐/详细信息/9999"* URL。</span><span class="sxs-lookup"><span data-stu-id="e121c-220">To do this let's request the *"/Dinners/Details/9999"* URL.</span></span> <span data-ttu-id="e121c-221">这将参考 dinner，当前不在数据库中，存在且不会导致呈现我们"NotFound"视图模板我们 DinnersController.Details() 操作方法：</span><span class="sxs-lookup"><span data-stu-id="e121c-221">This will refer to a dinner that doesn't currently exist in the database, and will cause our DinnersController.Details() action method to render our "NotFound" view template:</span></span>
+<span data-ttu-id="e121c-219">我们可以然后试试看以及浏览器中。</span><span class="sxs-lookup"><span data-stu-id="e121c-219">We can then try it out within the browser.</span></span> <span data-ttu-id="e121c-220">若要让我们执行此请求 *"/ 晚餐/详细信息/9999"* URL。</span><span class="sxs-lookup"><span data-stu-id="e121c-220">To do this let's request the *"/Dinners/Details/9999"* URL.</span></span> <span data-ttu-id="e121c-221">这将参考 dinner，当前不在数据库中，存在且不会导致呈现我们"NotFound"视图模板我们 DinnersController.Details() 操作方法：</span><span class="sxs-lookup"><span data-stu-id="e121c-221">This will refer to a dinner that doesn't currently exist in the database, and will cause our DinnersController.Details() action method to render our "NotFound" view template:</span></span>
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image12.png)
 
@@ -201,7 +201,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-aspx[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample8.aspx)]
 
-<span data-ttu-id="e121c-240">我们可以请求*"/ 1/晚餐/详细信息"* URL 以查看此"详细信息"基架实现在浏览器的外观。</span><span class="sxs-lookup"><span data-stu-id="e121c-240">We can request the *"/Dinners/Details/1"* URL to see what this "details" scaffold implementation looks like in the browser.</span></span> <span data-ttu-id="e121c-241">使用此 URL 将显示我们手动添加到我们的数据库我们首次创建时晚餐之一：</span><span class="sxs-lookup"><span data-stu-id="e121c-241">Using this URL will display one of the dinners we manually added to our database when we first created it:</span></span>
+<span data-ttu-id="e121c-240">我们可以请求 *"/ 1/晚餐/详细信息"* URL 以查看此"详细信息"基架实现在浏览器的外观。</span><span class="sxs-lookup"><span data-stu-id="e121c-240">We can request the *"/Dinners/Details/1"* URL to see what this "details" scaffold implementation looks like in the browser.</span></span> <span data-ttu-id="e121c-241">使用此 URL 将显示我们手动添加到我们的数据库我们首次创建时晚餐之一：</span><span class="sxs-lookup"><span data-stu-id="e121c-241">Using this URL will display one of the dinners we manually added to our database when we first created it:</span></span>
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image16.png)
 
@@ -217,7 +217,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-aspx[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample9.aspx)]
 
-<span data-ttu-id="e121c-249">当我们访问*"/ 1/晚餐/详细信息"* URL 再次它将立即呈现与下面类似：</span><span class="sxs-lookup"><span data-stu-id="e121c-249">When we access the *"/Dinners/Details/1"* URL again it will now render like below:</span></span>
+<span data-ttu-id="e121c-249">当我们访问 *"/ 1/晚餐/详细信息"* URL 再次它将立即呈现与下面类似：</span><span class="sxs-lookup"><span data-stu-id="e121c-249">When we access the *"/Dinners/Details/1"* URL again it will now render like below:</span></span>
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image18.png)
 
@@ -231,7 +231,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="e121c-255">当我们单击"添加"按钮时，Visual Studio 将创建新"Index.aspx"视图模板文件为我们在我们"\Views\Dinners"目录中。</span><span class="sxs-lookup"><span data-stu-id="e121c-255">When we click the "Add" button, Visual Studio will create a new "Index.aspx" view template file for us within our "\Views\Dinners" directory.</span></span> <span data-ttu-id="e121c-256">它将"搭建基架"初始中的实现，提供我们将传递给视图晚餐 HTML 表列表。</span><span class="sxs-lookup"><span data-stu-id="e121c-256">It will "scaffold" an initial implementation within it that provides an HTML table listing of the Dinners we pass to the view.</span></span>
 
-<span data-ttu-id="e121c-257">当我们运行的应用程序和访问*"/ 晚餐 /"*它会呈现晚餐我们列表的 URL 如下所示：</span><span class="sxs-lookup"><span data-stu-id="e121c-257">When we run the application and access the *"/Dinners/"* URL it will render our list of dinners like so:</span></span>
+<span data-ttu-id="e121c-257">当我们运行的应用程序和访问 *"/ 晚餐 /"* 它会呈现晚餐我们列表的 URL 如下所示：</span><span class="sxs-lookup"><span data-stu-id="e121c-257">When we run the application and access the *"/Dinners/"* URL it will render our list of dinners like so:</span></span>
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image20.png)
 
@@ -243,7 +243,7 @@ ms.lasthandoff: 04/06/2018
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image21.png)
 
-<span data-ttu-id="e121c-263">当我们命中一次刷新*/Dinners*在我们更新的视图现在看起来像下面我们浏览器中的 URL:</span><span class="sxs-lookup"><span data-stu-id="e121c-263">When we hit refresh on the */Dinners* URL in our browser our updated view now looks like below:</span></span>
+<span data-ttu-id="e121c-263">当我们命中一次刷新 */Dinners*在我们更新的视图现在看起来像下面我们浏览器中的 URL:</span><span class="sxs-lookup"><span data-stu-id="e121c-263">When we hit refresh on the */Dinners* URL in our browser our updated view now looks like below:</span></span>
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image22.png)
 
@@ -265,7 +265,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-aspx[Main](use-controllers-and-views-to-implement-a-listingdetails-ui/samples/sample13.aspx)]
 
-<span data-ttu-id="e121c-273">现在我们命中条件和*/Dinners*我们 dinner 列表类似于下面的 URL:</span><span class="sxs-lookup"><span data-stu-id="e121c-273">And now when we hit the */Dinners* URL our dinner list looks like below:</span></span>
+<span data-ttu-id="e121c-273">现在我们命中条件和 */Dinners*我们 dinner 列表类似于下面的 URL:</span><span class="sxs-lookup"><span data-stu-id="e121c-273">And now when we hit the */Dinners* URL our dinner list looks like below:</span></span>
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image24.png)
 
@@ -283,11 +283,11 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="e121c-281">请注意如何在该处的上方是当前项目中的三个控制器类 (DinnersController、 HomeController 和 AccountController – 我们创建项目时，最后两个已添加默认情况下)，并且有三个子目录 （一个用于每个控制器） \Views 目录中。</span><span class="sxs-lookup"><span data-stu-id="e121c-281">Notice above how there are currently three controller classes within the project (DinnersController, HomeController and AccountController – the last two were added by default when we created the project), and there are three sub-directories (one for each controller) within the \Views directory.</span></span>
 
-<span data-ttu-id="e121c-282">从主页和帐户控制器中引用的视图将自动解决了相应的其视图模板*\Views\Home*和*\Views\Account*目录。</span><span class="sxs-lookup"><span data-stu-id="e121c-282">Views referenced from the Home and Accounts controllers will automatically resolve their view templates from the respective *\Views\Home* and *\Views\Account* directories.</span></span> <span data-ttu-id="e121c-283">*\Views\Shared*子目录提供一种方法都是重复使用应用程序中的多个控制器的视图模板存储。</span><span class="sxs-lookup"><span data-stu-id="e121c-283">The *\Views\Shared* sub-directory provides a way to store view templates that are re-used across multiple controllers within the application.</span></span> <span data-ttu-id="e121c-284">当 ASP.NET MVC 尝试解析查看模板时，它将首先检查内*\Views\[控制器]*特定目录中，如果它找不到视图模板存在它将查找内*\Views\共享*目录。</span><span class="sxs-lookup"><span data-stu-id="e121c-284">When ASP.NET MVC attempts to resolve a view template, it will first check within the *\Views\[Controller]* specific directory, and if it can't find the view template there it will look within the *\Views\Shared* directory.</span></span>
+<span data-ttu-id="e121c-282">从主页和帐户控制器中引用的视图将自动解决了相应的其视图模板*\Views\Home*和*\Views\Account*目录。</span><span class="sxs-lookup"><span data-stu-id="e121c-282">Views referenced from the Home and Accounts controllers will automatically resolve their view templates from the respective *\Views\Home* and *\Views\Account* directories.</span></span> <span data-ttu-id="e121c-283">*\Views\Shared*子目录提供一种方法都是重复使用应用程序中的多个控制器的视图模板存储。</span><span class="sxs-lookup"><span data-stu-id="e121c-283">The *\Views\Shared* sub-directory provides a way to store view templates that are re-used across multiple controllers within the application.</span></span> <span data-ttu-id="e121c-284">当 ASP.NET MVC 尝试解析查看模板时，它将首先检查内*\Views\[控制器]* 特定目录中，如果它找不到视图模板存在它将查找内*\Views\共享*目录。</span><span class="sxs-lookup"><span data-stu-id="e121c-284">When ASP.NET MVC attempts to resolve a view template, it will first check within the *\Views\[Controller]* specific directory, and if it can't find the view template there it will look within the *\Views\Shared* directory.</span></span>
 
 <span data-ttu-id="e121c-285">命名单独的视图模板时，推荐的指南，是能够共享相同的名称与操作方法导致它呈现的视图模板。</span><span class="sxs-lookup"><span data-stu-id="e121c-285">When it comes to naming individual view templates, the recommended guidance is to have the view template share the same name as the action method that caused it to render.</span></span> <span data-ttu-id="e121c-286">例如，高于我们"索引"操作方法使用"索引"视图呈现视图结果，而"详细信息"操作方法使用"详细信息"视图中呈现其结果。</span><span class="sxs-lookup"><span data-stu-id="e121c-286">For example, above our "Index" action method is using the "Index" view to render the view result, and the "Details" action method is using the "Details" view to render its results.</span></span> <span data-ttu-id="e121c-287">这很容易地快速查看哪些模板是与每个操作相关联。</span><span class="sxs-lookup"><span data-stu-id="e121c-287">This makes it easy to quickly see which template is associated with each action.</span></span>
 
-<span data-ttu-id="e121c-288">开发人员不需要显式指定的视图模板名称，当视图模板具有与从中调用在控制器上的操作方法相同的名称。</span><span class="sxs-lookup"><span data-stu-id="e121c-288">Developers do not need to explicitly specify the view template name when the view template has the same name as the action method being invoked on the controller.</span></span> <span data-ttu-id="e121c-289">我们可以改为仅的模型对象传递给"View()"帮助器方法 （如果没有指定的视图名称），和 ASP.NET MVC 将自动推断我们想要使用*\Views\[ControllerName]\[ActionName]*磁盘来呈现不上的查看模板。</span><span class="sxs-lookup"><span data-stu-id="e121c-289">We can instead just pass the model object to the "View()" helper method (without specifying the view name), and ASP.NET MVC will automatically infer that we want to use the *\Views\[ControllerName]\[ActionName]* view template on disk to render it.</span></span>
+<span data-ttu-id="e121c-288">开发人员不需要显式指定的视图模板名称，当视图模板具有与从中调用在控制器上的操作方法相同的名称。</span><span class="sxs-lookup"><span data-stu-id="e121c-288">Developers do not need to explicitly specify the view template name when the view template has the same name as the action method being invoked on the controller.</span></span> <span data-ttu-id="e121c-289">我们可以改为仅的模型对象传递给"View()"帮助器方法 （如果没有指定的视图名称），和 ASP.NET MVC 将自动推断我们想要使用*\Views\[ControllerName]\[ActionName]* 磁盘来呈现不上的查看模板。</span><span class="sxs-lookup"><span data-stu-id="e121c-289">We can instead just pass the model object to the "View()" helper method (without specifying the view name), and ASP.NET MVC will automatically infer that we want to use the *\Views\[ControllerName]\[ActionName]* view template on disk to render it.</span></span>
 
 <span data-ttu-id="e121c-290">这使得我们可以进行稍微清理我们控制器代码并避免重复的名称在我们的代码中两次：</span><span class="sxs-lookup"><span data-stu-id="e121c-290">This allows us to clean up our controller code a little, and avoid duplicating the name twice in our code:</span></span>
 

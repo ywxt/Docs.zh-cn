@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
-title: "ASP.NET SignalR 中心 API 指南-JavaScript 客户端 |Microsoft 文档"
+title: ASP.NET SignalR 中心 API 指南-JavaScript 客户端 |Microsoft 文档
 author: pfletcher
-description: "本文档介绍了使用适用于 SignalR 的版本 2 中 JavaScript 客户端，如浏览器和 Windows 应用商店 (WinJS) applicat 中心 API..."
+description: 本文档介绍了使用适用于 SignalR 的版本 2 中 JavaScript 客户端，如浏览器和 Windows 应用商店 (WinJS) applicat 中心 API...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2015
@@ -166,7 +166,7 @@ ms.lasthandoff: 01/24/2018
 
     `signalr ghp /path:[path to the .dll that contains your Hub class]`
 
-    <span data-ttu-id="86238-191">路径你*.dll*通常是*bin*项目文件夹中的文件夹。</span><span class="sxs-lookup"><span data-stu-id="86238-191">The path to your *.dll* is typically the *bin* folder in your project folder.</span></span>
+    <span data-ttu-id="86238-191">路径你 *.dll*通常是*bin*项目文件夹中的文件夹。</span><span class="sxs-lookup"><span data-stu-id="86238-191">The path to your *.dll* is typically the *bin* folder in your project folder.</span></span>
 
     <span data-ttu-id="86238-192">此命令创建名为的文件*server.js*在所在的文件夹*signalr.exe*。</span><span class="sxs-lookup"><span data-stu-id="86238-192">This command creates a file named *server.js* in the same folder as *signalr.exe*.</span></span>
 4. <span data-ttu-id="86238-193">Put *server.js*文件在项目中的相应文件夹中，将其重命名为适合你的应用程序，并添加对它代替"signalr/中心"引用的引用。</span><span class="sxs-lookup"><span data-stu-id="86238-193">Put the *server.js* file in an appropriate folder in your project, rename it as appropriate for your application, and add a reference to it in place of the "signalr/hubs" reference.</span></span>
@@ -229,7 +229,7 @@ ms.lasthandoff: 01/24/2018
 
 <span data-ttu-id="86238-228">JSONP 需要在客户端 （用于在较旧的浏览器中支持跨域请求） 上，如果它将需要通过设置显式启用`EnableJSONP`上`HubConfiguration`对象传递给`true`，如下所示。</span><span class="sxs-lookup"><span data-stu-id="86238-228">If JSONP is required on the client (to support cross-domain requests in older browsers), it will need to be enabled explicitly by setting `EnableJSONP` on the `HubConfiguration` object to `true`, as shown below.</span></span> <span data-ttu-id="86238-229">JSONP 已禁用默认情况下，因为它比 CORS 不太安全。</span><span class="sxs-lookup"><span data-stu-id="86238-229">JSONP is disabled by default, as it is less secure than CORS.</span></span>
 
-<span data-ttu-id="86238-230">**向项目中添加 Microsoft.Owin.Cors:**若要安装此库，包管理器控制台中运行以下命令：</span><span class="sxs-lookup"><span data-stu-id="86238-230">**Adding Microsoft.Owin.Cors to your project:** To install this library, run the following command in the Package Manager Console:</span></span>
+<span data-ttu-id="86238-230">**向项目中添加 Microsoft.Owin.Cors:** 若要安装此库，包管理器控制台中运行以下命令：</span><span class="sxs-lookup"><span data-stu-id="86238-230">**Adding Microsoft.Owin.Cors to your project:** To install this library, run the following command in the Package Manager Console:</span></span>
 
 `Install-Package Microsoft.Owin.Cors`
 

@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
-title: "教程： 开始使用 SignalR 2 和 MVC 5 |Microsoft 文档"
+title: 教程： 开始使用 SignalR 2 和 MVC 5 |Microsoft 文档
 author: pfletcher
-description: "本教程演示如何使用 ASP.NET SignalR 2 创建实时聊天应用程序。 将 MVC 5 应用程序中添加 SignalR 和创建聊天视图..."
+description: 本教程演示如何使用 ASP.NET SignalR 2 创建实时聊天应用程序。 将 MVC 5 应用程序中添加 SignalR 和创建聊天视图...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -107,7 +107,7 @@ ms.lasthandoff: 01/24/2018
 
     ![脚本文件夹](tutorial-getting-started-with-signalr-and-mvc/_static/image5.png)
 7. <span data-ttu-id="1bacd-158">在**解决方案资源管理器**，右键单击项目，选择**添加 |新文件夹**，并添加一个名为的新文件夹**中心**。</span><span class="sxs-lookup"><span data-stu-id="1bacd-158">In **Solution Explorer**, right-click the project, select **Add | New Folder**, and add a new folder named **Hubs**.</span></span>
-8. <span data-ttu-id="1bacd-159">右键单击**中心**文件夹中，单击**添加 |新项**，选择**Visual C# |Web |SignalR**中的节点**已安装**窗格中，选择**SignalR Hub Class (v2)**从中间窗格中，并创建名为的新集线器**ChatHub.cs**。</span><span class="sxs-lookup"><span data-stu-id="1bacd-159">Right-click the **Hubs** folder, click **Add | New Item**, select the **Visual C# | Web | SignalR** node in the **Installed** pane, select **SignalR Hub Class (v2)** from the center pane, and create a new hub named **ChatHub.cs**.</span></span> <span data-ttu-id="1bacd-160">你将使用此类作为将消息发送到所有客户端的 SignalR 服务器集线器。</span><span class="sxs-lookup"><span data-stu-id="1bacd-160">You will use this class as a SignalR server hub that sends messages to all clients.</span></span>
+8. <span data-ttu-id="1bacd-159">右键单击**中心**文件夹中，单击**添加 |新项**，选择**Visual C# |Web |SignalR**中的节点**已安装**窗格中，选择**SignalR Hub Class (v2)** 从中间窗格中，并创建名为的新集线器**ChatHub.cs**。</span><span class="sxs-lookup"><span data-stu-id="1bacd-159">Right-click the **Hubs** folder, click **Add | New Item**, select the **Visual C# | Web | SignalR** node in the **Installed** pane, select **SignalR Hub Class (v2)** from the center pane, and create a new hub named **ChatHub.cs**.</span></span> <span data-ttu-id="1bacd-160">你将使用此类作为将消息发送到所有客户端的 SignalR 服务器集线器。</span><span class="sxs-lookup"><span data-stu-id="1bacd-160">You will use this class as a SignalR server hub that sends messages to all clients.</span></span>
 
     ![创建新的中心](tutorial-getting-started-with-signalr-and-mvc/_static/image6.png)
 9. <span data-ttu-id="1bacd-162">中的代码替换**ChatHub**类替换为以下代码。</span><span class="sxs-lookup"><span data-stu-id="1bacd-162">Replace the code in the **ChatHub** class with the following code.</span></span>
@@ -136,7 +136,7 @@ ms.lasthandoff: 01/24/2018
 ## <a name="run-the-sample"></a><span data-ttu-id="1bacd-174">运行示例</span><span class="sxs-lookup"><span data-stu-id="1bacd-174">Run the Sample</span></span>
 
 1. <span data-ttu-id="1bacd-175">按 F5 以在调试模式下运行该项目。</span><span class="sxs-lookup"><span data-stu-id="1bacd-175">Press F5 to run the project in debug mode.</span></span>
-2. <span data-ttu-id="1bacd-176">在浏览器地址行中，追加**/home/聊天**项目的默认页的 url。</span><span class="sxs-lookup"><span data-stu-id="1bacd-176">In the browser address line, append **/home/chat** to the URL of the default page for the project.</span></span> <span data-ttu-id="1bacd-177">聊天页面加载的浏览器实例并提示输入用户名。</span><span class="sxs-lookup"><span data-stu-id="1bacd-177">The Chat page loads in a browser instance and prompts for a user name.</span></span>
+2. <span data-ttu-id="1bacd-176">在浏览器地址行中，追加 **/home/聊天**项目的默认页的 url。</span><span class="sxs-lookup"><span data-stu-id="1bacd-176">In the browser address line, append **/home/chat** to the URL of the default page for the project.</span></span> <span data-ttu-id="1bacd-177">聊天页面加载的浏览器实例并提示输入用户名。</span><span class="sxs-lookup"><span data-stu-id="1bacd-177">The Chat page loads in a browser instance and prompts for a user name.</span></span>
 
     ![输入用户名](tutorial-getting-started-with-signalr-and-mvc/_static/image8.png)
 3. <span data-ttu-id="1bacd-179">输入用户名称。</span><span class="sxs-lookup"><span data-stu-id="1bacd-179">Enter a user name.</span></span>

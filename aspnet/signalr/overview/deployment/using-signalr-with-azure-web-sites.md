@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/deployment/using-signalr-with-azure-web-sites
-title: "与在 Azure App Service Web Apps 使用 SignalR |Microsoft 文档"
+title: 与在 Azure App Service Web Apps 使用 SignalR |Microsoft 文档
 author: pfletcher
-description: "本文档介绍如何配置的 SignalR 应用程序在 Microsoft Azure 上运行。 在本教程中的软件版本使用，Visual Studio 2013 或 Vis...."
+description: 本文档介绍如何配置的 SignalR 应用程序在 Microsoft Azure 上运行。 在本教程中的软件版本使用，Visual Studio 2013 或 Vis....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/01/2015
@@ -70,7 +70,7 @@ ms.lasthandoff: 01/24/2018
 3. <span data-ttu-id="9b0d1-136">在"发布 Web"对话框中，选择"Windows Azure 网站"。</span><span class="sxs-lookup"><span data-stu-id="9b0d1-136">In the "Publish Web" dialog, select "Windows Azure Web Sites".</span></span>
 
     ![选择 Azure 网站](using-signalr-with-azure-web-sites/_static/image1.png)
-4. <span data-ttu-id="9b0d1-138">如果您没有登录到你的 Microsoft 帐户，请单击**登录...**在"选择现有网站"对话框中，并登录。</span><span class="sxs-lookup"><span data-stu-id="9b0d1-138">If you aren't signed in to your Microsoft account, click **Sign In...** in the "Select Existing Web Site" dialog, and sign in.</span></span>
+4. <span data-ttu-id="9b0d1-138">如果您没有登录到你的 Microsoft 帐户，请单击**登录...** 在"选择现有网站"对话框中，并登录。</span><span class="sxs-lookup"><span data-stu-id="9b0d1-138">If you aren't signed in to your Microsoft account, click **Sign In...** in the "Select Existing Web Site" dialog, and sign in.</span></span>
 
     ![选择现有网站](using-signalr-with-azure-web-sites/_static/image2.png)    ![登录到 Azure](using-signalr-with-azure-web-sites/_static/image3.png)
 5. <span data-ttu-id="9b0d1-141">在"选择现有网站"对话框中，单击**新建**。</span><span class="sxs-lookup"><span data-stu-id="9b0d1-141">In the "Select Existing Web Site" dialog, click **New**.</span></span>

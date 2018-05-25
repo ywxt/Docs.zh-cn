@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/troubleshooting
-title: "SignalR 故障排除 (SignalR 1.x) |Microsoft 文档"
+title: SignalR 故障排除 (SignalR 1.x) |Microsoft 文档
 author: pfletcher
-description: "本文介绍开发 SignalR 应用程序的常见问题。"
+description: 本文介绍开发 SignalR 应用程序的常见问题。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/05/2013
@@ -160,8 +160,8 @@ ms.lasthandoff: 11/10/2017
 
 <span data-ttu-id="207ba-191">有几个原因，此问题。</span><span class="sxs-lookup"><span data-stu-id="207ba-191">There are several causes for this issue.</span></span> <span data-ttu-id="207ba-192">验证所有以下操作：</span><span class="sxs-lookup"><span data-stu-id="207ba-192">Verify all of the following:</span></span>
 
-- <span data-ttu-id="207ba-193">**中心代理地址引用的格式不正确：**如果对生成的中心代理地址的引用的格式不正确，则通常会出现此错误。</span><span class="sxs-lookup"><span data-stu-id="207ba-193">**Hub proxy address reference not formatted correctly:** This error is commonly seen if the reference to the generated hub proxy address is not formatted correctly.</span></span> <span data-ttu-id="207ba-194">验证对中心地址的引用可以正确地完成。</span><span class="sxs-lookup"><span data-stu-id="207ba-194">Verify that the reference to the hub address is made properly.</span></span> <span data-ttu-id="207ba-195">请参阅[如何引用动态生成的代理](../guide-to-the-api/hubs-api-guide-javascript-client.md#dynamicproxy)有关详细信息。</span><span class="sxs-lookup"><span data-stu-id="207ba-195">See [How to reference the dynamically generated proxy](../guide-to-the-api/hubs-api-guide-javascript-client.md#dynamicproxy) for details.</span></span>
-- <span data-ttu-id="207ba-196">**将路由添加到应用程序，然后添加中心路由：**如果你的应用程序使用的其他路由，验证是否添加的第一个路由是对调用`MapHubs`。</span><span class="sxs-lookup"><span data-stu-id="207ba-196">**Adding routes to application before adding the hub route:** If your application uses other routes, verify that the first route added is the call to `MapHubs`.</span></span>
+- <span data-ttu-id="207ba-193">**中心代理地址引用的格式不正确：** 如果对生成的中心代理地址的引用的格式不正确，则通常会出现此错误。</span><span class="sxs-lookup"><span data-stu-id="207ba-193">**Hub proxy address reference not formatted correctly:** This error is commonly seen if the reference to the generated hub proxy address is not formatted correctly.</span></span> <span data-ttu-id="207ba-194">验证对中心地址的引用可以正确地完成。</span><span class="sxs-lookup"><span data-stu-id="207ba-194">Verify that the reference to the hub address is made properly.</span></span> <span data-ttu-id="207ba-195">请参阅[如何引用动态生成的代理](../guide-to-the-api/hubs-api-guide-javascript-client.md#dynamicproxy)有关详细信息。</span><span class="sxs-lookup"><span data-stu-id="207ba-195">See [How to reference the dynamically generated proxy](../guide-to-the-api/hubs-api-guide-javascript-client.md#dynamicproxy) for details.</span></span>
+- <span data-ttu-id="207ba-196">**将路由添加到应用程序，然后添加中心路由：** 如果你的应用程序使用的其他路由，验证是否添加的第一个路由是对调用`MapHubs`。</span><span class="sxs-lookup"><span data-stu-id="207ba-196">**Adding routes to application before adding the hub route:** If your application uses other routes, verify that the first route added is the call to `MapHubs`.</span></span>
 
 ### <a name="500-internal-server-error"></a><span data-ttu-id="207ba-197">"500 内部服务器错误"</span><span class="sxs-lookup"><span data-stu-id="207ba-197">"500 Internal Server Error"</span></span>
 

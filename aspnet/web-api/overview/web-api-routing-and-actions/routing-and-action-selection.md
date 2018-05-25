@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/routing-and-action-selection
-title: "路由和 ASP.NET Web API 中的操作选择 |Microsoft 文档"
+title: 路由和 ASP.NET Web API 中的操作选择 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2012
@@ -150,7 +150,7 @@ ms.lasthandoff: 01/24/2018
     2. <span data-ttu-id="bf1e9-200">从此列表中，尝试路由字典中或在 URI 查询字符串中查找每个参数名称的匹配项。</span><span class="sxs-lookup"><span data-stu-id="bf1e9-200">From this list, try to find a match for each parameter name, either in the route dictionary or in the URI query string.</span></span> <span data-ttu-id="bf1e9-201">匹配项区分大小，并不依赖于参数顺序。</span><span class="sxs-lookup"><span data-stu-id="bf1e9-201">Matches are case insensitive and do not depend on the parameter order.</span></span>
     3. <span data-ttu-id="bf1e9-202">选择列表中的每个参数的 URI 中具有匹配的其中一项操作。</span><span class="sxs-lookup"><span data-stu-id="bf1e9-202">Select an action where every parameter in the list has a match in the URI.</span></span>
     4. <span data-ttu-id="bf1e9-203">如果多该一个操作不符合这些标准，选取大多数的参数匹配的一个。</span><span class="sxs-lookup"><span data-stu-id="bf1e9-203">If more that one action meets these criteria, pick the one with the most parameter matches.</span></span>
-4. <span data-ttu-id="bf1e9-204">忽略操作**[NonAction]**属性。</span><span class="sxs-lookup"><span data-stu-id="bf1e9-204">Ignore actions with the **[NonAction]** attribute.</span></span>
+4. <span data-ttu-id="bf1e9-204">忽略操作 **[NonAction]** 属性。</span><span class="sxs-lookup"><span data-stu-id="bf1e9-204">Ignore actions with the **[NonAction]** attribute.</span></span>
 
 <span data-ttu-id="bf1e9-205">步骤 #3 是可能最容易混淆。</span><span class="sxs-lookup"><span data-stu-id="bf1e9-205">Step #3 is probably the most confusing.</span></span> <span data-ttu-id="bf1e9-206">基本理念都是从 URI、 从请求正文中，或从自定义绑定，参数可以获取其值。</span><span class="sxs-lookup"><span data-stu-id="bf1e9-206">The basic idea is that a parameter can get its value either from the URI, from the request body, or from a custom binding.</span></span> <span data-ttu-id="bf1e9-207">对于来自 URI 的参数，我们想要确保 URI 实际包含该参数，在 （通过路由字典） 的路径或查询字符串中的值。</span><span class="sxs-lookup"><span data-stu-id="bf1e9-207">For parameters that come from the URI, we want to ensure that the URI actually contains a value for that parameter, either in the path (via the route dictionary) or in the query string.</span></span>
 

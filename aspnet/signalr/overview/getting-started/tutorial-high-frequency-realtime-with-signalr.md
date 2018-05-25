@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr
-title: "教程： 高频率实时使用 SignalR 2 |Microsoft 文档"
+title: 教程： 高频率实时使用 SignalR 2 |Microsoft 文档
 author: pfletcher
-description: "本教程演示如何创建的 web 应用程序使用 ASP.NET SignalR 来提供高频率的消息传递功能。 高频率在消息传递..."
+description: 本教程演示如何创建的 web 应用程序使用 ASP.NET SignalR 来提供高频率的消息传递功能。 高频率在消息传递...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014

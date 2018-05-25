@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/supporting-odata-query-options
-title: "支持 ASP.NET Web API 2 中的 OData 查询选项 |Microsoft 文档"
+title: 支持 ASP.NET Web API 2 中的 OData 查询选项 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/04/2013
@@ -58,7 +58,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](supporting-odata-query-options/samples/sample1.cs)]
 
-<span data-ttu-id="24c0a-139">**EnableQuerySupport**方法启用返回任何控制器操作为全局查询选项**IQueryable**类型。</span><span class="sxs-lookup"><span data-stu-id="24c0a-139">The **EnableQuerySupport** method enables query options globally for any controller action that returns an **IQueryable** type.</span></span> <span data-ttu-id="24c0a-140">如果你不希望对整个应用程序启用的查询选项，你可以启用它们特定控制器操作的添加**[Queryable]**属性设为的操作方法。</span><span class="sxs-lookup"><span data-stu-id="24c0a-140">If you don't want query options enabled for the entire application, you can enable them for specific controller actions by adding the **[Queryable]** attribute to the action method.</span></span>
+<span data-ttu-id="24c0a-139">**EnableQuerySupport**方法启用返回任何控制器操作为全局查询选项**IQueryable**类型。</span><span class="sxs-lookup"><span data-stu-id="24c0a-139">The **EnableQuerySupport** method enables query options globally for any controller action that returns an **IQueryable** type.</span></span> <span data-ttu-id="24c0a-140">如果你不希望对整个应用程序启用的查询选项，你可以启用它们特定控制器操作的添加 **[Queryable]** 属性设为的操作方法。</span><span class="sxs-lookup"><span data-stu-id="24c0a-140">If you don't want query options enabled for the entire application, you can enable them for specific controller actions by adding the **[Queryable]** attribute to the action method.</span></span>
 
 [!code-csharp[Main](supporting-odata-query-options/samples/sample2.cs)]
 
@@ -131,7 +131,7 @@ ms.lasthandoff: 11/10/2017
 <a id="limiting_query_options"></a>
 ## <a name="limiting-the-query-options"></a><span data-ttu-id="24c0a-183">限制查询选项</span><span class="sxs-lookup"><span data-stu-id="24c0a-183">Limiting the Query Options</span></span>
 
-<span data-ttu-id="24c0a-184">查询选项为客户提供了大量的控制在服务器运行的查询。</span><span class="sxs-lookup"><span data-stu-id="24c0a-184">The query options give the client a lot of control over the query that is run on the server.</span></span> <span data-ttu-id="24c0a-185">在某些情况下，你可能想要限制可用于安全或性能原因的选项。</span><span class="sxs-lookup"><span data-stu-id="24c0a-185">In some cases, you might want to limit the available options for security or performance reasons.</span></span> <span data-ttu-id="24c0a-186">**[Queryable]**属性具有一些属性中为此生成的。</span><span class="sxs-lookup"><span data-stu-id="24c0a-186">The **[Queryable]** attribute has some built in properties for this.</span></span> <span data-ttu-id="24c0a-187">以下是一些示例。</span><span class="sxs-lookup"><span data-stu-id="24c0a-187">Here are some examples.</span></span>
+<span data-ttu-id="24c0a-184">查询选项为客户提供了大量的控制在服务器运行的查询。</span><span class="sxs-lookup"><span data-stu-id="24c0a-184">The query options give the client a lot of control over the query that is run on the server.</span></span> <span data-ttu-id="24c0a-185">在某些情况下，你可能想要限制可用于安全或性能原因的选项。</span><span class="sxs-lookup"><span data-stu-id="24c0a-185">In some cases, you might want to limit the available options for security or performance reasons.</span></span> <span data-ttu-id="24c0a-186">**[Queryable]** 属性具有一些属性中为此生成的。</span><span class="sxs-lookup"><span data-stu-id="24c0a-186">The **[Queryable]** attribute has some built in properties for this.</span></span> <span data-ttu-id="24c0a-187">以下是一些示例。</span><span class="sxs-lookup"><span data-stu-id="24c0a-187">Here are some examples.</span></span>
 
 <span data-ttu-id="24c0a-188">允许使用仅 $skip 和 $top，以支持分页和其他任何内容：</span><span class="sxs-lookup"><span data-stu-id="24c0a-188">Allow only $skip and $top, to support paging and nothing else:</span></span>
 
@@ -156,7 +156,7 @@ ms.lasthandoff: 11/10/2017
 <a id="ODataQueryOptions"></a>
 ## <a name="invoking-query-options-directly"></a><span data-ttu-id="24c0a-193">直接调用查询选项</span><span class="sxs-lookup"><span data-stu-id="24c0a-193">Invoking Query Options Directly</span></span>
 
-<span data-ttu-id="24c0a-194">而不是使用**[Queryable]**属性中，你可以直接在你的控制器中调用的查询选项。</span><span class="sxs-lookup"><span data-stu-id="24c0a-194">Instead of using the **[Queryable]** attribute, you can invoke the query options directly in your controller.</span></span> <span data-ttu-id="24c0a-195">为此，请添加**ODataQueryOptions**控制器方法的参数。</span><span class="sxs-lookup"><span data-stu-id="24c0a-195">To do so, add an **ODataQueryOptions** parameter to the controller method.</span></span> <span data-ttu-id="24c0a-196">在这种情况下，不需要**[Queryable]**属性。</span><span class="sxs-lookup"><span data-stu-id="24c0a-196">In this case, you don't need the **[Queryable]** attribute.</span></span>
+<span data-ttu-id="24c0a-194">而不是使用 **[Queryable]** 属性中，你可以直接在你的控制器中调用的查询选项。</span><span class="sxs-lookup"><span data-stu-id="24c0a-194">Instead of using the **[Queryable]** attribute, you can invoke the query options directly in your controller.</span></span> <span data-ttu-id="24c0a-195">为此，请添加**ODataQueryOptions**控制器方法的参数。</span><span class="sxs-lookup"><span data-stu-id="24c0a-195">To do so, add an **ODataQueryOptions** parameter to the controller method.</span></span> <span data-ttu-id="24c0a-196">在这种情况下，不需要 **[Queryable]** 属性。</span><span class="sxs-lookup"><span data-stu-id="24c0a-196">In this case, you don't need the **[Queryable]** attribute.</span></span>
 
 [!code-csharp[Main](supporting-odata-query-options/samples/sample13.cs)]
 
@@ -167,7 +167,7 @@ ms.lasthandoff: 11/10/2017
 <a id="query-validation"></a>
 ## <a name="query-validation"></a><span data-ttu-id="24c0a-202">查询验证</span><span class="sxs-lookup"><span data-stu-id="24c0a-202">Query Validation</span></span>
 
-<span data-ttu-id="24c0a-203">**[Queryable]**属性在执行前验证查询。</span><span class="sxs-lookup"><span data-stu-id="24c0a-203">The **[Queryable]** attribute validates the query before executing it.</span></span> <span data-ttu-id="24c0a-204">在中执行的验证步骤**QueryableAttribute.ValidateQuery**方法。</span><span class="sxs-lookup"><span data-stu-id="24c0a-204">The validation step is performed in the **QueryableAttribute.ValidateQuery** method.</span></span> <span data-ttu-id="24c0a-205">你还可以自定义验证过程。</span><span class="sxs-lookup"><span data-stu-id="24c0a-205">You can also customize the validation process.</span></span>
+<span data-ttu-id="24c0a-203">**[Queryable]** 属性在执行前验证查询。</span><span class="sxs-lookup"><span data-stu-id="24c0a-203">The **[Queryable]** attribute validates the query before executing it.</span></span> <span data-ttu-id="24c0a-204">在中执行的验证步骤**QueryableAttribute.ValidateQuery**方法。</span><span class="sxs-lookup"><span data-stu-id="24c0a-204">The validation step is performed in the **QueryableAttribute.ValidateQuery** method.</span></span> <span data-ttu-id="24c0a-205">你还可以自定义验证过程。</span><span class="sxs-lookup"><span data-stu-id="24c0a-205">You can also customize the validation process.</span></span>
 
 <span data-ttu-id="24c0a-206">另请参阅[OData 安全指南](odata-security-guidance.md)。</span><span class="sxs-lookup"><span data-stu-id="24c0a-206">Also see [OData Security Guidance](odata-security-guidance.md).</span></span>
 
@@ -175,7 +175,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](supporting-odata-query-options/samples/sample14.cs)]
 
-<span data-ttu-id="24c0a-209">子类**[Queryable]**属性重写**ValidateQuery**方法。</span><span class="sxs-lookup"><span data-stu-id="24c0a-209">Subclass the **[Queryable]** attribute to override the **ValidateQuery** method.</span></span>
+<span data-ttu-id="24c0a-209">子类 **[Queryable]** 属性重写**ValidateQuery**方法。</span><span class="sxs-lookup"><span data-stu-id="24c0a-209">Subclass the **[Queryable]** attribute to override the **ValidateQuery** method.</span></span>
 
 [!code-csharp[Main](supporting-odata-query-options/samples/sample15.cs)]
 

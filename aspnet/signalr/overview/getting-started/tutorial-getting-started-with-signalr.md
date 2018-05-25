@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr
-title: "教程： 开始使用 SignalR 2 |Microsoft 文档"
+title: 教程： 开始使用 SignalR 2 |Microsoft 文档
 author: pfletcher
-description: "本教程介绍如何使用 SignalR 创建实时聊天应用程序。 将 SignalR 添加空的 ASP.NET web 应用程序，并创建 HTML pa..."
+description: 本教程介绍如何使用 SignalR 创建实时聊天应用程序。 将 SignalR 添加空的 ASP.NET web 应用程序，并创建 HTML pa...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -112,7 +112,7 @@ ms.lasthandoff: 01/24/2018
     <span data-ttu-id="6fb9c-164">如果你使用控制台添加 SignalR，单独的步骤创建 SignalR hub 类后添加 SignalR。</span><span class="sxs-lookup"><span data-stu-id="6fb9c-164">If you use the console to add SignalR, create the SignalR hub class as a separate step after you add SignalR.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="6fb9c-165">如果你正在使用 Visual Studio 2012， **SignalR Hub Class (v2)**模板将不可用。</span><span class="sxs-lookup"><span data-stu-id="6fb9c-165">If you are using Visual Studio 2012, the **SignalR Hub Class (v2)** template will not be available.</span></span> <span data-ttu-id="6fb9c-166">你可以添加普通**类**调用`ChatHub`相反。</span><span class="sxs-lookup"><span data-stu-id="6fb9c-166">You can add a plain **Class** called `ChatHub` instead.</span></span>
+    > <span data-ttu-id="6fb9c-165">如果你正在使用 Visual Studio 2012， **SignalR Hub Class (v2)** 模板将不可用。</span><span class="sxs-lookup"><span data-stu-id="6fb9c-165">If you are using Visual Studio 2012, the **SignalR Hub Class (v2)** template will not be available.</span></span> <span data-ttu-id="6fb9c-166">你可以添加普通**类**调用`ChatHub`相反。</span><span class="sxs-lookup"><span data-stu-id="6fb9c-166">You can add a plain **Class** called `ChatHub` instead.</span></span>
 4. <span data-ttu-id="6fb9c-167">在**解决方案资源管理器**，展开脚本节点。</span><span class="sxs-lookup"><span data-stu-id="6fb9c-167">In **Solution Explorer**, expand the Scripts node.</span></span> <span data-ttu-id="6fb9c-168">用于 jQuery 和 SignalR 的脚本库是在项目中可见。</span><span class="sxs-lookup"><span data-stu-id="6fb9c-168">Script libraries for jQuery and SignalR are visible in the project.</span></span>
 5. <span data-ttu-id="6fb9c-169">将在新代码**ChatHub**类替换为以下代码。</span><span class="sxs-lookup"><span data-stu-id="6fb9c-169">Replace the code in the new **ChatHub** class with the following code.</span></span>
 

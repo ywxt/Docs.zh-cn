@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/signalr-1x-hubs-api-guide-javascript-client
-title: "SignalR 1.x 中心 API 指南-JavaScript 客户端 |Microsoft 文档"
+title: SignalR 1.x 中心 API 指南-JavaScript 客户端 |Microsoft 文档
 author: pfletcher
-description: "本文档提供使用中心 API 为 SignalR JavaScript 客户端，如浏览器和 Windows 应用商店 (WinJS) applic 中的版本 1.1 的说明..."
+description: 本文档提供使用中心 API 为 SignalR JavaScript 客户端，如浏览器和 Windows 应用商店 (WinJS) applic 中的版本 1.1 的说明...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/17/2013
@@ -149,7 +149,7 @@ ms.lasthandoff: 01/24/2018
 
     `signalr ghp /path:[path to the .dll that contains your Hub class]`
 
-    <span data-ttu-id="4e504-183">路径你*.dll*通常是*bin*项目文件夹中的文件夹。</span><span class="sxs-lookup"><span data-stu-id="4e504-183">The path to your *.dll* is typically the *bin* folder in your project folder.</span></span>
+    <span data-ttu-id="4e504-183">路径你 *.dll*通常是*bin*项目文件夹中的文件夹。</span><span class="sxs-lookup"><span data-stu-id="4e504-183">The path to your *.dll* is typically the *bin* folder in your project folder.</span></span>
 
     <span data-ttu-id="4e504-184">此命令创建名为的文件*server.js*在所在的文件夹*signalr.exe*。</span><span class="sxs-lookup"><span data-stu-id="4e504-184">This command creates a file named *server.js* in the same folder as *signalr.exe*.</span></span>
 4. <span data-ttu-id="4e504-185">Put *server.js*文件在项目中的相应文件夹中，将其重命名为适合你的应用程序，并添加对它代替"signalr/中心"引用的引用。</span><span class="sxs-lookup"><span data-stu-id="4e504-185">Put the *server.js* file in an appropriate folder in your project, rename it as appropriate for your application, and add a reference to it in place of the "signalr/hubs" reference.</span></span>

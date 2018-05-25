@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations
-title: "与 Web API 2 OData v3 支持实体关系 |Microsoft 文档"
+title: 与 Web API 2 OData v3 支持实体关系 |Microsoft 文档
 author: MikeWasson
-description: "大多数的数据集定义的实体之间的关系： 客户下了订单;书有作者;产品具有供应商。 使用 OData，可以通过导航客户端..."
+description: 大多数的数据集定义的实体之间的关系： 客户下了订单;书有作者;产品具有供应商。 使用 OData，可以通过导航客户端...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/26/2014
@@ -70,7 +70,7 @@ ms.lasthandoff: 11/10/2017
 
 <span data-ttu-id="5538c-132">*密钥*参数是该产品的键。</span><span class="sxs-lookup"><span data-stu-id="5538c-132">The *key* parameter is the key of the product.</span></span> <span data-ttu-id="5538c-133">该方法将返回相关的实体与用于在此情况下，`Supplier`实例。</span><span class="sxs-lookup"><span data-stu-id="5538c-133">The method returns the related entity&#8212in this case, a `Supplier` instance.</span></span> <span data-ttu-id="5538c-134">方法名称和参数名称都很重要。</span><span class="sxs-lookup"><span data-stu-id="5538c-134">The method name and parameter name are both important.</span></span> <span data-ttu-id="5538c-135">一般情况下，如果导航属性名为"X"，你需要添加一个名为"GetX"方法。</span><span class="sxs-lookup"><span data-stu-id="5538c-135">In general, if the navigation property is named "X", you need to add a method named "GetX".</span></span> <span data-ttu-id="5538c-136">方法必须采用名为的参数"*密钥*"的父项的数据类型匹配。</span><span class="sxs-lookup"><span data-stu-id="5538c-136">The method must take a parameter named "*key*" that matches the data type of the parent's key.</span></span>
 
-<span data-ttu-id="5538c-137">还有一点需要包括**[FromOdataUri]**属性中*密钥*参数。</span><span class="sxs-lookup"><span data-stu-id="5538c-137">It is also important to include the **[FromOdataUri]** attribute in the *key* parameter.</span></span> <span data-ttu-id="5538c-138">此特性告知 Web API，若要在分析请求 URI 中的键时使用 OData 语法规则。</span><span class="sxs-lookup"><span data-stu-id="5538c-138">This attribute tells Web API to use OData syntax rules when it parses the key from the request URI.</span></span>
+<span data-ttu-id="5538c-137">还有一点需要包括 **[FromOdataUri]** 属性中*密钥*参数。</span><span class="sxs-lookup"><span data-stu-id="5538c-137">It is also important to include the **[FromOdataUri]** attribute in the *key* parameter.</span></span> <span data-ttu-id="5538c-138">此特性告知 Web API，若要在分析请求 URI 中的键时使用 OData 语法规则。</span><span class="sxs-lookup"><span data-stu-id="5538c-138">This attribute tells Web API to use OData syntax rules when it parses the key from the request URI.</span></span>
 
 ## <a name="creating-and-deleting-links"></a><span data-ttu-id="5538c-139">创建和删除链接</span><span class="sxs-lookup"><span data-stu-id="5538c-139">Creating and Deleting Links</span></span>
 

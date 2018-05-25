@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/guide-to-the-api/working-with-groups
-title: "使用 SignalR 中的组 |Microsoft 文档"
+title: 使用 SignalR 中的组 |Microsoft 文档
 author: pfletcher
-description: "本主题介绍如何保持与中心 API 的组成员身份信息。"
+description: 本主题介绍如何保持与中心 API 的组成员身份信息。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014

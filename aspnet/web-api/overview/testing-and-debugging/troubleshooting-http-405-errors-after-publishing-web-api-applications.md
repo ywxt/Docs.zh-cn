@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-after-publishing-web-api-applications
-title: "故障排除 HTTP 405 错误后发布 Web API 2 应用程序 |Microsoft 文档"
+title: 故障排除 HTTP 405 错误后发布 Web API 2 应用程序 |Microsoft 文档
 author: rmcmurray
-description: "本教程介绍如何在发布到生产 web 服务器的 Web API 应用程序后解决 HTTP 405 错误。"
+description: 本教程介绍如何在发布到生产 web 服务器的 Web API 应用程序后解决 HTTP 405 错误。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/01/2014

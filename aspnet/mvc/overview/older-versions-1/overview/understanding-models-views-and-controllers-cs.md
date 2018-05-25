@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-cs
-title: "了解模型、 视图和控制器 (C#) |Microsoft 文档"
+title: 了解模型、 视图和控制器 (C#) |Microsoft 文档
 author: StephenWalther
-description: "感到迷惑的模型、 视图和控制器？ 在本教程中，Stephen Walther 引入你对 ASP.NET MVC 应用程序的不同部分。"
+description: 感到迷惑的模型、 视图和控制器？ 在本教程中，Stephen Walther 引入你对 ASP.NET MVC 应用程序的不同部分。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -77,7 +77,7 @@ ms.lasthandoff: 11/10/2017
 <span data-ttu-id="ac1e9-146">**图 05**: 索引页 ([单击以查看实际尺寸的图像](understanding-models-views-and-controllers-cs/_static/image11.png))</span><span class="sxs-lookup"><span data-stu-id="ac1e9-146">**Figure 05**: The Index Page ([Click to view full-size image](understanding-models-views-and-controllers-cs/_static/image11.png))</span></span>
 
 
-<span data-ttu-id="ac1e9-147">请注意您的浏览器的地址栏中的 Url。</span><span class="sxs-lookup"><span data-stu-id="ac1e9-147">Notice the URLs in the address bar of your browser.</span></span> <span data-ttu-id="ac1e9-148">例如，当你单击关于菜单链接时，浏览器地址栏中的 URL 更改为**/Home/有关**。</span><span class="sxs-lookup"><span data-stu-id="ac1e9-148">For example, when you click the About menu link, the URL in the browser address bar changes to **/Home/About**.</span></span>
+<span data-ttu-id="ac1e9-147">请注意您的浏览器的地址栏中的 Url。</span><span class="sxs-lookup"><span data-stu-id="ac1e9-147">Notice the URLs in the address bar of your browser.</span></span> <span data-ttu-id="ac1e9-148">例如，当你单击关于菜单链接时，浏览器地址栏中的 URL 更改为 **/Home/有关**。</span><span class="sxs-lookup"><span data-stu-id="ac1e9-148">For example, when you click the About menu link, the URL in the browser address bar changes to **/Home/About**.</span></span>
 
 <span data-ttu-id="ac1e9-149">如果你关闭浏览器窗口，并返回到 Visual Studio，你将无法使用路径主页 / 关于查找的文件。</span><span class="sxs-lookup"><span data-stu-id="ac1e9-149">If you close the browser window and return to Visual Studio, you won't be able to find a file with the path Home/About.</span></span> <span data-ttu-id="ac1e9-150">文件不存在。</span><span class="sxs-lookup"><span data-stu-id="ac1e9-150">The files don't exist.</span></span> <span data-ttu-id="ac1e9-151">如何这是可能的？</span><span class="sxs-lookup"><span data-stu-id="ac1e9-151">How is this possible?</span></span>
 
