@@ -4,16 +4,17 @@ author: rick-anderson
 description: 了解如何在 ASP.NET 核心中配置数据保护。
 manager: wpickett
 ms.author: riande
+ms.custom: mvc
 ms.date: 07/17/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: 300feb42dff7f1bb86bab6fedf3f657273ced8be
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 803b81f5f69496900791ca1d1976f70f8c266f29
+ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/27/2018
 ---
 # <a name="configure-aspnet-core-data-protection"></a>配置 ASP.NET 核心数据保护
 
@@ -30,6 +31,33 @@ ms.lasthandoff: 04/18/2018
 > 类似于配置文件，数据保护密钥环应保护使用适当的权限。 你可以选择加密静止的密钥，但这不能防止攻击者创建新密钥。 因此，应用的安全会受到影响。 使用数据保护配置的存储位置应具有其访问仅限于应用程序本身，你将保护配置文件工作方式相似。 例如，如果你选择存储在磁盘上的密钥令牌环，使用文件系统权限。 确保仅在标识你的 web 应用运行具有读取、 写入和创建该目录的访问。 如果你使用 Azure 表存储，仅该 web 应用应能够读取、 写入或在表存储等中创建新条目。
 >
 > 扩展方法[AddDataProtection](/dotnet/api/microsoft.extensions.dependencyinjection.dataprotectionservicecollectionextensions.adddataprotection)返回[IDataProtectionBuilder](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionbuilder)。 `IDataProtectionBuilder` 显示扩展方法，你可以链接在一起以配置数据保护选项。
+
+::: moniker range=">= aspnetcore-2.1"
+
+## <a name="protectkeyswithazurekeyvault"></a>ProtectKeysWithAzureKeyVault
+
+将中的密钥存储[Azure 密钥保管库](https://azure.microsoft.com/services/key-vault/)，配置与系统[ProtectKeysWithAzureKeyVault](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.protectkeyswithazurekeyvault)中`Startup`类：
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDataProtection()
+        .PersistKeysToAzureBlobStorage(new Uri("<blobUriWithSasToken>"))
+        .ProtectKeysWithAzureKeyVault("<keyIdentifier>", "<clientId>", "<clientSecret>");
+}
+```
+
+设置密钥链存储位置 (例如， [PersistKeysToAzureBlobStorage](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.persistkeystoazureblobstorage))。 必须设置位置，因为调用`ProtectKeysWithAzureKeyVault`实现[IXmlEncryptor](/dotnet/api/microsoft.aspnetcore.dataprotection.xmlencryption.ixmlencryptor)禁用自动数据保护设置，包括密钥链存储位置。 前面的示例使用 Azure Blob 存储来持久保存密钥链。 有关详细信息，请参阅[密钥存储提供程序： Azure 和 Redis](xref:security/data-protection/implementation/key-storage-providers#azure-and-redis)。 您还可以保留使用在本地密钥环[PersistKeysToFileSystem](xref:security/data-protection/implementation/key-storage-providers#file-system)。
+
+`keyIdentifier`是用于密钥加密的密钥保管库密钥标识符 (例如， `https://contosokeyvault.vault.azure.net/keys/dataprotection/`)。
+
+`ProtectKeysWithAzureKeyVault` 重载：
+
+* [ProtectKeysWithAzureKeyVault (IDataProtectionBuilder，KeyVaultClient，String)](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.protectkeyswithazurekeyvault#Microsoft_AspNetCore_DataProtection_AzureDataProtectionBuilderExtensions_ProtectKeysWithAzureKeyVault_Microsoft_AspNetCore_DataProtection_IDataProtectionBuilder_Microsoft_Azure_KeyVault_KeyVaultClient_System_String_)允许使用[KeyVaultClient](/dotnet/api/microsoft.azure.keyvault.keyvaultclient)以启用数据保护系统使用密钥保管库。
+* [ProtectKeysWithAzureKeyVault （IDataProtectionBuilder、 字符串、 字符串、 X509Certificate2）](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.protectkeyswithazurekeyvault#Microsoft_AspNetCore_DataProtection_AzureDataProtectionBuilderExtensions_ProtectKeysWithAzureKeyVault_Microsoft_AspNetCore_DataProtection_IDataProtectionBuilder_System_String_System_String_System_Security_Cryptography_X509Certificates_X509Certificate2_)允许使用`ClientId`和[X509Certificate](/dotnet/api/system.security.cryptography.x509certificates.x509certificate2)以启用数据保护系统使用密钥保管库。
+* [ProtectKeysWithAzureKeyVault （IDataProtectionBuilder、 字符串、 字符串、 字符串）](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.protectkeyswithazurekeyvault#Microsoft_AspNetCore_DataProtection_AzureDataProtectionBuilderExtensions_ProtectKeysWithAzureKeyVault_Microsoft_AspNetCore_DataProtection_IDataProtectionBuilder_System_String_System_String_System_String_)允许使用`ClientId`和`ClientSecret`以启用数据保护系统使用密钥保管库。
+
+::: moniker-end
 
 ## <a name="persistkeystofilesystem"></a>PersistKeysToFileSystem
 

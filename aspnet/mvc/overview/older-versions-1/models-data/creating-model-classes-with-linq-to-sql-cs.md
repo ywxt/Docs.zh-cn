@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1f30ff6c97e565059c57c55f26d2dff477774aeb
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 9a56ceb9eab5774906ecc89ce9da570d4f691a82
+ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/27/2018
 ---
 <a name="creating-model-classes-with-linq-to-sql-c"></a>使用 LINQ to SQL (C#) 创建模型类
 ====================
@@ -74,7 +74,7 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 | **列名称** | **数据类型** | **允许 null 值** |
 | --- | --- | --- |
 | Id | Int | False |
-| 标题 | Nvarchar(200) | False |
+| 标题 | Nvarchar （200) | False |
 | 控制器 | nvarchar(50) | False |
 
 你需要执行到 Id 列的两个特殊操作。 首先，你需要将 Id 列标记为主键列，通过在表设计器中选择列并单击项的图标。 LINQ to SQL 要求你在执行插入或更新对数据库时指定主键列。
@@ -149,7 +149,7 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 
 ## <a name="using-the-repository-pattern"></a>使用存储库模式
 
-在上一节中，我们使用 LINQ to SQL 类直接中的控制器操作。 我们使用`MovieDataContex`t 类直接从`Index()`控制器操作。 没有任何问题时执行此操作对于简单的应用程序。 但是，控制器类中直接使用 LINQ to SQL 的工作创建问题时你需要生成更复杂的应用程序。
+在上一节中，我们使用 LINQ to SQL 类直接中的控制器操作。 我们使用`MovieDataContext`类直接从`Index()`控制器操作。 没有任何问题时执行此操作对于简单的应用程序。 但是，控制器类中直接使用 LINQ to SQL 的工作创建问题时你需要生成更复杂的应用程序。
 
 在控制器类内使用 LINQ to SQL 难以将来切换数据访问技术。 例如，你可能决定可以从使用 Microsoft LINQ to SQL 将用作你的数据访问技术的 Microsoft 实体框架切换。 在这种情况下，你将需要重写访问该数据库在你的应用程序的每个控制器。
 
