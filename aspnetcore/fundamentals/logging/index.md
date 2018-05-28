@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/logging/index
-ms.openlocfilehash: 7e2a4657211b0142ec87fd792d013f7ef397de2b
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 8b53a19f4958e97198175d6acea4017d54f827bb
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core 中的日志记录
 
@@ -583,21 +583,22 @@ loggerFactory.AddAzureWebAppDiagnostics();
 
 ## <a name="third-party-logging-providers"></a>第三方日志记录提供程序
 
-以下第三方日志记录框架适用于 ASP.NET Core：
+适用于 ASP.NET Core 的第三方日志记录框架：
 
-* [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging) - Elmah.Io 服务的提供程序
-
-* [JSNLog](http://jsnlog.com) - 在服务器端日志中记录 JavaScript 异常和其他客户端事件。
-
-* [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging) - Loggr 服务的提供程序
-
-* [NLog](https://github.com/NLog/NLog.Extensions.Logging) - NLog 库的提供程序
-
-* [Serilog](https://github.com/serilog/serilog-extensions-logging) - Serilog 库的提供程序
+* [elmah.io](https://elmah.io/)（[GitHub 存储库](https://github.com/elmahio/Elmah.Io.Extensions.Logging)）
+* [JSNLog](http://jsnlog.com/)（[GitHub 存储库](https://github.com/mperdeck/jsnlog)）
+* [Loggr](http://loggr.net/)（[GitHub 存储库](https://github.com/imobile3/Loggr.Extensions.Logging)）
+* [NLog](http://nlog-project.org/)（[GitHub 存储库](https://github.com/NLog/NLog.Extensions.Logging)）
+* [Serilog](https://serilog.net/)（[GitHub 存储库](https://github.com/serilog/serilog-extensions-logging)）
 
 某些第三方框架可以执行[语义日志记录（又称结构化日志记录）](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging)。
 
-使用第三方框架与使用内置提供程序类似：向项目添加 NuGet 包并在 `ILoggerFactory` 上调用扩展方法即可。 有关详细信息，请参阅各框架的相关文档。
+使用第三方框架类似于使用以下内置提供程序之一：
+
+1. 将 NuGet 包添加到你的项目。
+1. 在 `ILoggerFactory` 上调用扩展方法。
+
+有关详细信息，请参阅各框架的相关文档。
 
 ## <a name="azure-log-streaming"></a>Azure 日志流式处理
 

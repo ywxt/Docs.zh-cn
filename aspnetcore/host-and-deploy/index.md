@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/index
-ms.openlocfilehash: 6364f54ede43b8eec070166a75b4552d896644f3
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: 1ffc7f9f2dc2a06dddb629d2d2553964b56cec05
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="host-and-deploy-aspnet-core"></a>托管和部署 ASP.NET Core
 
@@ -22,9 +22,9 @@ ms.lasthandoff: 05/14/2018
 
 * 将应用发布到托管服务器上的文件夹。
 * 设置进程管理器，该管理器在收到请求时启动应用，并在应用发生故障或服务器重启后重新启动应用。
-* 设置将请求转发到应用的反向代理。
+* 如果需要配置反向代理，设置将请求转发到应用的反向代理。
 
-## <a name="publish-to-a-folder"></a>发布到文件夹 
+## <a name="publish-to-a-folder"></a>发布到文件夹
 
 [dotnet 发布](/dotnet/articles/core/tools/dotnet-publish) CLI 命令编译应用代码并复制所需的文件，以便在“发布”文件夹中运行应用。 从 Visual Studio 进行部署时，在文件被复制到部署目标前，系统会自动执行 [dotnet publish](/dotnet/core/tools/dotnet-publish) 步骤。
 
@@ -51,7 +51,9 @@ ASP.NET Core 应用是一个控制台应用，在服务器启动时必须启动�
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-如果该应用使用的是 [Kestrel](xref:fundamentals/servers/kestrel) Web 服务器，则可以将 [Nginx](xref:host-and-deploy/linux-nginx)、[Apache](xref:host-and-deploy/linux-apache) 或 [IIS](xref:host-and-deploy/iis/index) 用作反向代理服务器。 反向代理服务器接收到来自 Internet 的 HTTP 请求，并在进行一些初步处理后将这些请求转发到 Kestrel。 有关详细信息，请参阅[何时结合使用 Kestrel 和反向代理](xref:fundamentals/servers/kestrel?tabs=aspnetcore2x#when-to-use-kestrel-with-a-reverse-proxy)。
+如果该应用使用的是 [Kestrel](xref:fundamentals/servers/kestrel) Web 服务器，则可以将 [Nginx](xref:host-and-deploy/linux-nginx)、[Apache](xref:host-and-deploy/linux-apache) 或 [IIS](xref:host-and-deploy/iis/index) 用作反向代理服务器。 反向代理服务器接收到来自 Internet 的 HTTP 请求，并在进行一些初步处理后将这些请求转发到 Kestrel。
+
+使用或不使用反向代理服务器进行配置对 ASP.NET Core 2.0 或更高版本的应用来说都是有效且受支持的托管配置。 有关详细信息，请参阅[何时结合使用 Kestrel 和反向代理](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)。
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 

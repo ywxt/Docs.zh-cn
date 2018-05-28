@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/index
-ms.openlocfilehash: 38af9d0206d66ac7fd2dc13a5a8245e8f66df41e
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: c9ed385208df083f631174c7071ca31ed2114350
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>ASP.NET Core 中的 Web 服务器实现
 
@@ -39,9 +39,7 @@ Kestrel 可以单独使用，也可以与反向代理服务器（如 IIS、Nginx
 
 ![Kestrel 通过反向代理服务器（如 IIS、Nginx 或 Apache）间接与 Internet 进行通信](kestrel/_static/kestrel-to-internet.png)
 
-如果仅向内部网络公开 Kestrel，可以使用任一配置（无需考虑是否使用反向代理服务器）。
-
-有关详细信息，请参阅[何时结合使用 Kestrel 和反向代理](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)。
+使用或不使用反向代理服务器进行配置对 ASP.NET Core 2.0 或更高版本的应用来说都是有效且受支持的托管配置。 有关详细信息，请参阅[何时结合使用 Kestrel 和反向代理](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)。
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 

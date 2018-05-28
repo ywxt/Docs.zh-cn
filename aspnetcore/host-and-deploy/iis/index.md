@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 3a9479dc1bb09218ebb4a5a76078ea514041d751
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 6b2c3334798861ebdb14787205480422d7d536ea
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -113,7 +113,7 @@ web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS
 
 ### <a name="webconfig-file-location"></a>web.config 文件位置
 
-ASP.NET Core 应用在 IIS 与 Kestrel 服务器之间的反向代理中托管。 为了创建反向代理，web.config 文件必须存在于已部署应用的内容根路径（通常为应用基路径）中。 该位置与向 IIS 提供的网站物理路径相同。 若要使用 Web 部署发布多个应用，应用的根路径中需要包含 web.config 文件。
+为了在 IIS 和 Kestrel 服务器之间创建反向代理，web.config 文件必须存在于已部署应用的内容根路径（通常为应用基路径）中。 该位置与向 IIS 提供的网站物理路径相同。 若要使用 Web 部署发布多个应用，应用的根路径中需要包含 web.config 文件。
 
 敏感文件存在于应用的物理路径中，如 \<assembly>.runtimeconfig.json、\<assembly>.xml（XML 文档注释）和 \<assembly>.deps.json。 当存在 web.config 文件且站点正常启动的情况下，若要请求获取这些敏感文件，IIS 不会提供。 如果缺少 web.config 文件、命名不正确，或无法配置站点以正常启动，IIS 可能会公开提供敏感文件。
 
@@ -172,7 +172,7 @@ ASP.NET Core 应用在 IIS 与 Kestrel 服务器之间的反向代理中托管�
 1. 在托管系统上安装 .NET Core 托管捆绑包。 捆绑包可安装 .NET Core 运行时、.NET Core 库和 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)。 该模块创建 IIS 与 Kestrel 服务器之间的反向代理。 如果系统没有 Internet 连接，请先获取并安装 [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840)，然后再安装 .NET Core 托管捆绑包。
 
    1. 导航到 [.NET“所有下载”页](https://www.microsoft.com/net/download/all)。
-   1. 从列表中选择最新的非预览 .NET Core 运行时（.NET Core > 运行时 > .NET Core 运行时 x.y.z）。 除非你想要使用预览软件，否则请避免选择其链接文本中包含“预览”一词的运行时。
+   1. 从列表中选择最新的非预览 .NET Core 运行时（.NET Core > 运行时 > .NET Core 运行时 x.y.z）。 除非你想要使用预览软件，否则请避免在其链接文本中使用含有单词“预览”或“rc”（候选发布）的运行时。
    1. 在 Windows 下的 .NET Core 运行时下载页上，选择“托管捆绑包安装程序”链接以下载 .NET Core 托管捆绑包。
 
    **重要提示！** 如果在 IIS 之前安装了托管捆绑包，则必须修复捆绑包安装。 在安装 IIS 后再次运行托管捆绑包安装程序。
