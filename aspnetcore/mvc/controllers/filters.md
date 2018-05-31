@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/filters
-ms.openlocfilehash: edc2e9460eb68febe25e8dd60e3872e5ab28e9e9
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 49e51a867e47ce375a5048cae5979360c4103365
+ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/27/2018
+ms.locfileid: "34555399"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core 中的筛选器
 
@@ -66,7 +67,7 @@ ASP.NET Core MVC 中的筛选器允许在请求处理管道中的特定阶段之
 
 [!code-csharp[](./filters/sample/src/FiltersSample/Filters/SampleActionFilter.cs?name=snippet1)]
 
-异步筛选器定义单一的 On*Stage*ExecutionAsync 方法。 此方法采用 *FilterType*ExecutionDelegate 委托来执行筛选器的管道阶段。 例如，`ActionExecutionDelegate` 调用该操作方法，用户可以在调用它之前和之后执行代码。
+异步筛选器定义单一的 On*Stage*ExecutionAsync 方法。 此方法采用 *FilterType*ExecutionDelegate 委托来执行筛选器的管道阶段。 例如，`ActionExecutionDelegate` 调用该操作方法或下一个操作筛选器，用户可以在调用它之前和之后执行代码。
 
 [!code-csharp[](./filters/sample/src/FiltersSample/Filters/SampleAsyncActionFilter.cs?highlight=6,8-10,13)]
 

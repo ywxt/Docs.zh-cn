@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/host/hosted-services
-ms.openlocfilehash: ace7fc8622864099b7c0e36e4a914de340d4d4e9
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: cc39d125b639719599eca68d627fda014fb107e0
+ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/27/2018
+ms.locfileid: "34555295"
 ---
 # <a name="background-tasks-with-hosted-services-in-aspnet-core"></a>在 ASP.NET Core 中使用托管服务实现后台任务
 
@@ -27,6 +28,15 @@ ms.lasthandoff: 05/17/2018
 * 按顺序运行的已排队后台任务。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/host/hosted-services/samples/)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+
+::: moniker range=">= aspnetcore-2.1"
+
+此示例应用分为两个版本：
+
+* Web 主机 &ndash; Web 主机可用于托管 Web 应用。 本主题中所示的示例代码来自示例的 Web 主机版本。 有关详细信息，请参阅 [Web 主机](xref:fundamentals/host/web-host)主题。
+* 通用主机 &ndash; 通用主机是 ASP.NET Core 2.1 中的新增功能。 有关详细信息，请参阅[通用主机](xref:fundamentals/host/generic-host)主题。
+
+::: moniker-end
 
 ## <a name="ihostedservice-interface"></a>IHostedService 接口
 
@@ -42,11 +52,11 @@ ms.lasthandoff: 05/17/2018
 
 定时后台任务使用 [System.Threading.Timer](/dotnet/api/system.threading.timer) 类。 计时器触发任务的 `DoWork` 方法。 在 `StopAsync` 上禁用计时器，并在 `Dispose` 上处置服务容器时处置计时器：
 
-[!code-csharp[](hosted-services/samples/2.x/Services/TimedHostedService.cs?name=snippet1&highlight=15-16,30,37)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/TimedHostedService.cs?name=snippet1&highlight=15-16,30,37)]
 
 已在 `Startup.ConfigureServices` 中注册该服务：
 
-[!code-csharp[](hosted-services/samples/2.x/Startup.cs?name=snippet1)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet1)]
 
 ## <a name="consuming-a-scoped-service-in-a-background-task"></a>在后台任务中使用有作用域的服务
 
@@ -54,37 +64,37 @@ ms.lasthandoff: 05/17/2018
 
 作用域后台任务服务包含后台任务的逻辑。 在以下示例中，将 [ILogger](/dotnet/api/microsoft.extensions.logging.ilogger) 注入到服务中：
 
-[!code-csharp[](hosted-services/samples/2.x/Services/ScopedProcessingService.cs?name=snippet1)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/ScopedProcessingService.cs?name=snippet1)]
 
 托管服务创建一个作用域来解决作用域后台任务服务以调用其 `DoWork` 方法：
 
-[!code-csharp[](hosted-services/samples/2.x/Services/ConsumeScopedServiceHostedService.cs?name=snippet1&highlight=29-36)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/ConsumeScopedServiceHostedService.cs?name=snippet1&highlight=29-36)]
 
 已在 `Startup.ConfigureServices` 中注册这些服务：
 
-[!code-csharp[](hosted-services/samples/2.x/Startup.cs?name=snippet2)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet2)]
 
 ## <a name="queued-background-tasks"></a>排队的后台任务
 
 后台任务队列基于 .NET 4.x [QueueBackgroundWorkItem](/dotnet/api/system.web.hosting.hostingenvironment.queuebackgroundworkitem)（[暂定为 ASP.NET Core 2.2 内置版本](https://github.com/aspnet/Hosting/issues/1280)）：
 
-[!code-csharp[](hosted-services/samples/2.x/Services/BackgroundTaskQueue.cs?name=snippet1)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/BackgroundTaskQueue.cs?name=snippet1)]
 
 在 `QueueHostedService` 中，取消排队并执行队列中的后台任务 (`workItem`)：
 
-[!code-csharp[](hosted-services/samples/2.x/Services/QueuedHostedService.cs?name=snippet1&highlight=30-31,35)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/QueuedHostedService.cs?name=snippet1&highlight=30-31,35)]
 
 已在 `Startup.ConfigureServices` 中注册这些服务：
 
-[!code-csharp[](hosted-services/samples/2.x/Startup.cs?name=snippet3)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet3)]
 
 在索引页模型类中，将 `IBackgroundTaskQueue` 注入构造函数并分配给 `Queue`：
 
-[!code-csharp[](hosted-services/samples/2.x/Pages/Index.cshtml.cs?name=snippet1)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Pages/Index.cshtml.cs?name=snippet1)]
 
 在索引页上选择“添加任务”按钮时，会执行 `OnPostAddTask` 方法。 调用 `QueueBackgroundWorkItem` 来将工作项排入队列：
 
-[!code-csharp[](hosted-services/samples/2.x/Pages/Index.cshtml.cs?name=snippet2)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Pages/Index.cshtml.cs?name=snippet2)]
 
 ## <a name="additional-resources"></a>其他资源
 

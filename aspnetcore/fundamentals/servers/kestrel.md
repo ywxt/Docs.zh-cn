@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: 251385b268e75cfadb815c293be52176297ed3e4
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 1c5d229614e6d6ca6889d19a5f3dc145da01bc04
+ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/27/2018
+ms.locfileid: "34555321"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 Kestrel Web 服务器实现
 
@@ -42,7 +43,7 @@ Kestrel 支持以下功能：
 
 ![Kestrel 通过反向代理服务器（如 IIS、Nginx 或 Apache）间接与 Internet 进行通信](kestrel/_static/kestrel-to-internet.png)
 
-建议通过反向代理服务器使用 Kestrel，除非 Kestrel 只对内部网络公开。
+使用或不使用反向代理服务器进行配置对 ASP.NET Core 2.0 或更高版本的应用来说都是有效且受支持的托管配置。
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -438,9 +439,9 @@ WebHost.CreateDefaultBuilder()
 
 [Listen](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions.listen) 方法绑定至 TCP 套接字，并可通过选项 lambda 配置 SSL 证书：
 
-[!code-csharp[](kestrel/samples/2.x/Program.cs?name=snippet_DefaultBuilder&highlight=9-16)]
+[!code-csharp[](kestrel/samples/2.x/Program.cs?name=snippet_TCPSocket&highlight=9-16)]
 
-请注意此示例如何使用 [ListenOptions](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.listenoptions) 为特定终结点配置 SSL。 可使用相同 API 为特定终结点配置其他 Kestrel 设置。
+该示例为带有 [ListenOptions](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.listenoptions).的终结点配置 SSL。 可使用相同 API 为特定终结点配置其他 Kestrel 设置。
 
 [!INCLUDE [How to make an X.509 cert](~/includes/make-x509-cert.md)]
 
