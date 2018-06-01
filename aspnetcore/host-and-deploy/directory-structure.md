@@ -1,5 +1,5 @@
 ---
-title: ASP.NET 核心目录结构
+title: ASP.NET Core 目录结构
 author: guardrex
 description: 了解已发布的 ASP.NET Core 应用的目录结构。
 manager: wpickett
@@ -12,31 +12,32 @@ ms.topic: article
 uid: host-and-deploy/directory-structure
 ms.openlocfilehash: a5cc1f23d624643facddc9e2006fb246e5ae66dc
 ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33838431"
 ---
-# <a name="aspnet-core-directory-structure"></a>ASP.NET 核心目录结构
+# <a name="aspnet-core-directory-structure"></a>ASP.NET Core 目录结构
 
 作者：[Luke Latham](https://github.com/guardrex)
 
-在 ASP.NET 核，发布的应用程序目录中，*发布*，组成应用程序文件、 配置文件、 静态资产、 包和运行时 (有关[自包含的部署](/dotnet/core/deploying/#self-contained-deployments-scd))。
+在 ASP.NET Core 中，发布的应用程序目录 publish 由应用程序文件、配置文件、静态资产、程序包和运行时（适用于[独立部署](/dotnet/core/deploying/#self-contained-deployments-scd)）组成。
 
 
 | 应用类型 | 目录结构 |
 | -------- | ------------------- |
-| [依赖于框架的部署](/dotnet/core/deploying/#framework-dependent-deployments-fdd) | <ul><li>发布&dagger;<ul><li>日志&dagger;（除非需要接收 stdout 日志可选）</li><li>视图&dagger;（MVC 应用程序; 如果不预编译视图）</li><li>页&dagger;（MVC 或 Razor 页应用; 如果不预编译页）</li><li>wwwroot&dagger;</li><li>*\.dll 文件</li><li>\<程序集名称 >。 deps.json</li><li>\<程序集名称 >.dll</li><li>\<程序集名称 >.pdb</li><li>\<程序集名称 >。PrecompiledViews.dll</li><li>\<程序集名称 >。PrecompiledViews.pdb</li><li>\<程序集名称 >。 runtimeconfig.json</li><li>web.config （IIS 部署）</li></ul></li></ul> |
-| [自包含的部署](/dotnet/core/deploying/#self-contained-deployments-scd) | <ul><li>发布&dagger;<ul><li>日志&dagger;（除非需要接收 stdout 日志可选）</li><li>refs&dagger;</li><li>视图&dagger;（MVC 应用程序; 如果不预编译视图）</li><li>页&dagger;（MVC 或 Razor 页应用; 如果不预编译页）</li><li>wwwroot&dagger;</li><li>\*.dll 文件</li><li>\<程序集名称 >。 deps.json</li><li>\<程序集名称 >.exe</li><li>\<程序集名称 >.pdb</li><li>\<程序集名称 >。PrecompiledViews.dll</li><li>\<程序集名称 >。PrecompiledViews.pdb</li><li>\<程序集名称 >。 runtimeconfig.json</li><li>web.config （IIS 部署）</li></ul></li></ul> |
+| [依赖框架的部署](/dotnet/core/deploying/#framework-dependent-deployments-fdd) | <ul><li>publish&dagger;<ul><li>logs&dagger;（除非需要接收 stdout 日志，否则为可选）</li><li>Views&dagger;（MVC 应用；如果未预编译视图）</li><li>Pages&dagger;（MVC 或 Razor 页应用；如果未预编译页）</li><li>wwwroot&dagger;</li><li>*\.dll 文件</li><li>\<assembly-name>.deps.json</li><li>\<assembly-name>.dll</li><li>\<assembly-name>.pdb</li><li>\<assembly-name>.PrecompiledViews.dll</li><li>\<assembly-name>.PrecompiledViews.pdb</li><li>\<assembly-name>.runtimeconfig.json</li><li>web.config（IIS 部署）</li></ul></li></ul> |
+| [独立部署](/dotnet/core/deploying/#self-contained-deployments-scd) | <ul><li>publish&dagger;<ul><li>logs&dagger;（除非需要接收 stdout 日志，否则为可选）</li><li>refs&dagger;</li><li>Views&dagger;（MVC 应用；如果未预编译视图）</li><li>Pages&dagger;（MVC 或 Razor 页应用；如果未预编译页）</li><li>wwwroot&dagger;</li><li>\*.dll 文件</li><li>\<assembly-name>.deps.json</li><li>\<assembly-name>.exe</li><li>\<assembly-name>.pdb</li><li>\<assembly-name>.PrecompiledViews.dll</li><li>\<assembly-name>.PrecompiledViews.pdb</li><li>\<assembly-name>.runtimeconfig.json</li><li>web.config（IIS 部署）</li></ul></li></ul> |
 
 &dagger;指示目录
 
-*发布*目录表示*内容的根路径*，也称为*应用程序基路径*，部署。 任何名称提供给*发布*目录中的服务器上部署的应用程序，其位置用作托管的应用程序服务器的物理路径。
+publish 目录代表部署的内容根路径，也称为应用程序基路径。 无论对服务器上已部署应用的 publish 目录如何命名，其位置都可作为托管应用的服务器物理路径。
 
-*Wwwroot*目录中，如果存在，仅包含静态资产。
+wwwroot 目录（如果存在）仅包含静态资产。
 
-Stdout*日志*可以使用以下两种方法之一部署为创建目录：
+可以使用以下两种方法之一为部署创建 stdout logs 目录：
 
-* 添加以下`<Target>`项目文件的元素：
+* 向项目添加以下 `<Target>` 元素：
 
    ```xml
    <Target Name="CreateLogsFolder" AfterTargets="Publish">
@@ -49,8 +50,8 @@ Stdout*日志*可以使用以下两种方法之一部署为创建目录：
    </Target>
    ```
 
-   `<MakeDir>`元素创建一个空*日志*中已发布的输出文件夹。 元素使用`PublishDir`属性来确定用于创建文件夹的目标位置。 多种部署方法，例如 Web 部署，在部署过程中跳过空文件夹。 `<WriteLinesToFile>`元素生成的文件中*日志*文件夹中，这可确保部署到服务器的文件夹。 请注意，如果工作进程不具有写访问权限的目标文件夹的文件夹创建可能仍会失败。
+   `<MakeDir>` 元素在发布的输出中创建一个空的 Logs 文件夹。 该元素使用 `PublishDir` 属性来确定创建文件夹的目标位置。 几种部署方法（如 Web 部署）均在部署期间跳过空文件夹。 `<WriteLinesToFile>` 元素在 Logs 文件夹中生成一个文件，该文件可确保将文件夹部署到服务器。 注意，如果工作进程不具有对目标文件夹的写入权限，那么文件夹创建可能仍会失败。
 
-* 以物理方式创建*日志*目录部署中的服务器。
+* 在部署中的服务器上物理创建 Logs 目录。
 
-部署目录中需要读取/Execute 权限。 *日志*目录需要读/写权限。 其中写入文件的其他目录需要读/写权限。
+部署目录需要读取/执行权限。 Logs 目录需要读/写权限。 将文件写入其他目录需要读/写权限。

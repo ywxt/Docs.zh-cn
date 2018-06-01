@@ -1,7 +1,7 @@
 ---
-title: ASP.NET 核心模块配置参考
+title: ASP.NET Core 模块配置参考
 author: guardrex
-description: 了解如何配置 ASP.NET 核心模块用于承载 ASP.NET Core 应用。
+description: 了解如何配置 ASP.NET Core 模块以托管 ASP.NET Core 应用。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -12,21 +12,22 @@ ms.topic: article
 uid: host-and-deploy/aspnet-core-module
 ms.openlocfilehash: 954841a1b1465c80e60d5745ad9e22294a88fdf4
 ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31483742"
 ---
-# <a name="aspnet-core-module-configuration-reference"></a>ASP.NET 核心模块配置参考
+# <a name="aspnet-core-module-configuration-reference"></a>ASP.NET Core 模块配置参考
 
-通过[Luke Latham](https://github.com/guardrex)， [Rick Anderson](https://twitter.com/RickAndMSFT)，和[Sourabh Shirhatti](https://twitter.com/sshirhatti)
+作者：[Luke Latham](https://github.com/guardrex)、[Rick Anderson](https://twitter.com/RickAndMSFT) 和 [Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
-本文档将说明了如何配置 ASP.NET 核心模块用于承载 ASP.NET Core 应用。 有关 ASP.NET 核心模块和安装说明简介，请参阅[ASP.NET 核心模块概述](xref:fundamentals/servers/aspnet-core-module)。
+本文档说明了如何配置 ASP.NET Core 模块以托管 ASP.NET Core 应用。 有关 ASP.NET Core 模块简介和安装说明，请参阅 [ASP.NET Core 模块概述](xref:fundamentals/servers/aspnet-core-module)。
 
-## <a name="configuration-with-webconfig"></a>Web.config 配置
+## <a name="configuration-with-webconfig"></a>web.config 的配置
 
-使用配置 ASP.NET 核心模块`aspNetCore`部分`system.webServer`在站点的节点*web.config*文件。
+在站点的 *web.config* 文件中使用 `system.webServer` 节点的 `aspNetCore` 部分配置 ASP.NET Core 模块。
 
-以下*web.config*发布文件以便进行[framework 相关部署](/dotnet/articles/core/deploying/#framework-dependent-deployments-fdd)和配置 ASP.NET 核心模块，以处理站点请求：
+以下 *web.config* 文件发布用于[依赖框架的部署](/dotnet/articles/core/deploying/#framework-dependent-deployments-fdd)，并配置 ASP.NET Core 模块以处理站点请求：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -43,7 +44,7 @@ ms.lasthandoff: 04/18/2018
 </configuration>
 ```
 
-以下*web.config*为发布[独立的部署](/dotnet/articles/core/deploying/#self-contained-deployments-scd):
+以下 web.config 发布用于[独立部署](/dotnet/articles/core/deploying/#self-contained-deployments-scd)：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -59,46 +60,46 @@ ms.lasthandoff: 04/18/2018
 </configuration>
 ```
 
-当应用程序部署到[Azure App Service](https://azure.microsoft.com/services/app-service/)、`stdoutLogFile`路径设置为`\\?\%home%\LogFiles\stdout`。 路径将保存到 stdout 日志*LogFiles*文件夹，它是一个位置自动创建的服务。
+将应用部署为 [Azure 应用服务](https://azure.microsoft.com/services/app-service/)时，`stdoutLogFile` 路径将设置为 `\\?\%home%\LogFiles\stdout`。 该路径会将 stdout 日志保存到 *LogFiles* 文件夹，该文件夹是由服务自动创建的位置。
 
-请参阅[子应用程序配置](xref:host-and-deploy/iis/index#sub-application-configuration)的与配置相关的重要说明*web.config*子应用程序中的文件。
+有关在子应用中配置 *web.config* 文件的重要说明，请参阅[子应用程序配置](xref:host-and-deploy/iis/index#sub-application-configuration)。
 
-### <a name="attributes-of-the-aspnetcore-element"></a>AspNetCore 元素的特性
+### <a name="attributes-of-the-aspnetcore-element"></a>aspNetCore 元素的属性
 
 ::: moniker range="<= aspnetcore-2.0"
 | 特性 | 描述 | 默认 |
 | --------- | ----------- | :-----: |
-| `arguments` | <p>可选的字符串属性。</p><p>可执行文件中指定的自变量**processPath**。</p>| |
-| `disableStartUpErrorPage` | “真”或“假”。</p><p>如果为 true， **502.5-进程失败**页被禁止显示，并且 502 状态代码页中配置*web.config*优先。</p> | `false` |
-| `forwardWindowsAuthToken` | “真”或“假”。</p><p>如果为 true，该令牌将转发到侦听作为每个请求的标头 MS ASPNETCORE WINAUTHTOKEN 的 %aspnetcore_port%的子进程。 它是该进程可以在每个请求此令牌上调用 CloseHandle 责任。</p> | `true` |
-| `processPath` | <p>必需的字符串属性。</p><p>将启动侦听 HTTP 请求的进程的可执行文件的路径。 支持相对路径。 如果路径以开始`.`，考虑使用该路径是相对站点根。</p> | |
-| `rapidFailsPerMinute` | <p>可选的整数属性。</p><p>指定在指定的进程的次数**processPath**允许每分钟崩溃。 如果超出此限制，该模块将停止启动剩余秒数的进程。</p> | `10` |
-| `requestTimeout` | <p>可选的 timespan 属性。</p><p>指定为其 ASP.NET 核心模块等待侦听 %aspnetcore_port%的进程响应的持续时间。</p><p>中附带的版本的 ASP.NET 核心 2.0 或更早版本，ASP.NET 核心模块的版本`requestTimeout`必须指定整分钟数，否则它将默认为 2 分钟。</p> | `00:02:00` |
-| `shutdownTimeLimit` | <p>可选的整数属性。</p><p>正常关闭的可执行文件的模块等待的秒数的持续时间时*app_offline.htm*检测到文件。</p> | `10` |
-| `startupTimeLimit` | <p>可选的整数属性。</p><p>持续时间以启动侦听端口的进程的可执行文件的模块等待的秒数。 如果超过此时间限制，该模块可终止进程。 模块将尝试重新启动该过程，在它接收新请求，并将继续尝试重新启动此过程在后续的传入请求，除非应用程序启动失败时**rapidFailsPerMinute**次数在最后一个滚动分钟。</p> | `120` |
-| `stdoutLogEnabled` | <p>可选布尔属性。</p><p>如果为 true， **stdout**和**stderr**中指定的进程的**processPath**重定向到中指定的文件**stdoutLogFile**。</p> | `false` |
-| `stdoutLogFile` | <p>可选的字符串属性。</p><p>为其指定的相对或绝对文件路径**stdout**和**stderr**中指定的进程从**processPath**记录。 相对路径是相对于站点的根目录。 从任何路径`.`是相对于站点根和所有其他路径被视为绝对路径。 路径中提供的任何文件夹必须存在于要创建的日志文件的模块的顺序。 使用下划线分隔符、 时间戳、 进程 ID 和文件扩展名 (*.log*) 添加到最后一个段**stdoutLogFile**路径。 如果`.\logs\stdout`提供一个值，作为示例 stdout 日志另存为*stdout_20180205194132_1934.log*中*日志*文件夹保存在 19:41:32 并且进程 ID 为 1934年 2/5/2018年。</p> | `aspnetcore-stdout` |
+| `arguments` | <p>可选的字符串属性。</p><p>processPath 中指定的可执行文件的参数。</p>| |
+| `disableStartUpErrorPage` | “真”或“假”。</p><p>如果为 true，将禁止显示“502.5 - 进程失败”页面，而会优先显示 web.config 中配置的 502 状态代码页面。</p> | `false` |
+| `forwardWindowsAuthToken` | “真”或“假”。</p><p>如果为 true，会将令牌作为每个请求的标头“MS-ASPNETCORE-WINAUTHTOKEN”，转发到在 %ASPNETCORE_PORT% 上侦听的子进程。 该进程负责在每个请求的此令牌上调用 CloseHandle。</p> | `true` |
+| `processPath` | <p>必需的字符串属性。</p><p>为 HTTP 请求启动进程侦听的可执行文件的路径。 支持相对路径。 如果路径以 `.` 开头，则该路径被视为与站点根目录相对。</p> | |
+| `rapidFailsPerMinute` | <p>可选的整数属性。</p><p>指定允许 processPath 中指定的进程每分钟崩溃的次数。 如果超出了此限制，模块将在剩余分钟数内停止启动该进程。</p> | `10` |
+| `requestTimeout` | <p>可选的 timespan 属性。</p><p>指定 ASP.NET Core 模块等待来自 %ASPNETCORE_PORT% 上侦听的进程的响应的持续时间。</p><p>在 ASP.NET Core 2.0 或更早版本附带的 ASP.NET Core 模块版本中，必须仅使用整分钟数指定 `requestTimeout`，否则默认为 2 分钟。</p> | `00:02:00` |
+| `shutdownTimeLimit` | <p>可选的整数属性。</p><p>检测到 app_offline.htm 文件时，模块等待可执行文件正常关闭的持续时间（以秒为单位）。</p> | `10` |
+| `startupTimeLimit` | <p>可选的整数属性。</p><p>模块等待可执行文件启动端口上侦听的进程的持续时间（以秒为单位）。 如果超出了此时间限制，模块将终止该进程。 模块在收到新请求时尝试重新启动该进程，并在收到后续传入请求时继续尝试重新启动该进程，除非应用在上一回滚分钟内无法启动 rapidFailsPerMinute 次。</p> | `120` |
+| `stdoutLogEnabled` | <p>可选布尔属性。</p><p>如果为 true，processPath 中指定的 进程的 stdout 和 stderr 将重定向到 stdoutLogFile 中指定的文件。</p> | `false` |
+| `stdoutLogFile` | <p>可选的字符串属性。</p><p>指定在其中记录 processPath 中指定进程的 stdout 和 stderr 的相对路径或绝对路径。 相对路径与站点根目录相对。 以 `.` 开头的任何路径均与站点根目录相对，所有其他路径被视为绝对路径。 路径中提供的任何文件夹都必须存在，以便模块创建日志文件。 使用下划线分隔符，将时间戳、进程 ID 和文件扩展名 (.log) 添加到 stdoutLogFile 路径的最后一段。 如果 `.\logs\stdout` 作为值提供，则在示例 stdout 日志使用进程 ID 1934 于 2018 年 2 月 5 日 19:41:32 保存时，将在 logs 文件夹中保存为 stdout_20180205194132_1934.log。</p> | `aspnetcore-stdout` |
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.1"
 | 特性 | 描述 | 默认 |
 | --------- | ----------- | :-----: |
-| `arguments` | <p>可选的字符串属性。</p><p>可执行文件中指定的自变量**processPath**。</p>| |
-| `disableStartUpErrorPage` | “真”或“假”。</p><p>如果为 true， **502.5-进程失败**页被禁止显示，并且 502 状态代码页中配置*web.config*优先。</p> | `false` |
-| `forwardWindowsAuthToken` | “真”或“假”。</p><p>如果为 true，该令牌将转发到侦听作为每个请求的标头 MS ASPNETCORE WINAUTHTOKEN 的 %aspnetcore_port%的子进程。 它是该进程可以在每个请求此令牌上调用 CloseHandle 责任。</p> | `true` |
-| `processPath` | <p>必需的字符串属性。</p><p>将启动侦听 HTTP 请求的进程的可执行文件的路径。 支持相对路径。 如果路径以开始`.`，考虑使用该路径是相对站点根。</p> | |
-| `rapidFailsPerMinute` | <p>可选的整数属性。</p><p>指定在指定的进程的次数**processPath**允许每分钟崩溃。 如果超出此限制，该模块将停止启动剩余秒数的进程。</p> | `10` |
-| `requestTimeout` | <p>可选的 timespan 属性。</p><p>指定为其 ASP.NET 核心模块等待侦听 %aspnetcore_port%的进程响应的持续时间。</p><p>中附带的版本的 ASP.NET 核心 2.1 或更高版本，ASP.NET 核心模块的版本`requestTimeout`中小时、 分钟和秒为单位指定。</p> | `00:02:00` |
-| `shutdownTimeLimit` | <p>可选的整数属性。</p><p>正常关闭的可执行文件的模块等待的秒数的持续时间时*app_offline.htm*检测到文件。</p> | `10` |
-| `startupTimeLimit` | <p>可选的整数属性。</p><p>持续时间以启动侦听端口的进程的可执行文件的模块等待的秒数。 如果超过此时间限制，该模块可终止进程。 模块将尝试重新启动该过程，在它接收新请求，并将继续尝试重新启动此过程在后续的传入请求，除非应用程序启动失败时**rapidFailsPerMinute**次数在最后一个滚动分钟。</p> | `120` |
-| `stdoutLogEnabled` | <p>可选布尔属性。</p><p>如果为 true， **stdout**和**stderr**中指定的进程的**processPath**重定向到中指定的文件**stdoutLogFile**。</p> | `false` |
-| `stdoutLogFile` | <p>可选的字符串属性。</p><p>为其指定的相对或绝对文件路径**stdout**和**stderr**中指定的进程从**processPath**记录。 相对路径是相对于站点的根目录。 从任何路径`.`是相对于站点根和所有其他路径被视为绝对路径。 路径中提供的任何文件夹必须存在于要创建的日志文件的模块的顺序。 使用下划线分隔符、 时间戳、 进程 ID 和文件扩展名 (*.log*) 添加到最后一个段**stdoutLogFile**路径。 如果`.\logs\stdout`提供一个值，作为示例 stdout 日志另存为*stdout_20180205194132_1934.log*中*日志*文件夹保存在 19:41:32 并且进程 ID 为 1934年 2/5/2018年。</p> | `aspnetcore-stdout` |
+| `arguments` | <p>可选的字符串属性。</p><p>processPath 中指定的可执行文件的参数。</p>| |
+| `disableStartUpErrorPage` | “真”或“假”。</p><p>如果为 true，将禁止显示“502.5 - 进程失败”页面，而会优先显示 web.config 中配置的 502 状态代码页面。</p> | `false` |
+| `forwardWindowsAuthToken` | “真”或“假”。</p><p>如果为 true，会将令牌作为每个请求的标头“MS-ASPNETCORE-WINAUTHTOKEN”，转发到在 %ASPNETCORE_PORT% 上侦听的子进程。 该进程负责在每个请求的此令牌上调用 CloseHandle。</p> | `true` |
+| `processPath` | <p>必需的字符串属性。</p><p>为 HTTP 请求启动进程侦听的可执行文件的路径。 支持相对路径。 如果路径以 `.` 开头，则该路径被视为与站点根目录相对。</p> | |
+| `rapidFailsPerMinute` | <p>可选的整数属性。</p><p>指定允许 processPath 中指定的进程每分钟崩溃的次数。 如果超出了此限制，模块将在剩余分钟数内停止启动该进程。</p> | `10` |
+| `requestTimeout` | <p>可选的 timespan 属性。</p><p>指定 ASP.NET Core 模块等待来自 %ASPNETCORE_PORT% 上侦听的进程的响应的持续时间。</p><p>在 ASP.NET Core 2.1 或更高版本附带的 ASP.NET Core 模块版本中，使用小时数、分钟数和秒数指定 `requestTimeout`。</p> | `00:02:00` |
+| `shutdownTimeLimit` | <p>可选的整数属性。</p><p>检测到 app_offline.htm 文件时，模块等待可执行文件正常关闭的持续时间（以秒为单位）。</p> | `10` |
+| `startupTimeLimit` | <p>可选的整数属性。</p><p>模块等待可执行文件启动端口上侦听的进程的持续时间（以秒为单位）。 如果超出了此时间限制，模块将终止该进程。 模块在收到新请求时尝试重新启动该进程，并在收到后续传入请求时继续尝试重新启动该进程，除非应用在上一回滚分钟内无法启动 rapidFailsPerMinute 次。</p> | `120` |
+| `stdoutLogEnabled` | <p>可选布尔属性。</p><p>如果为 true，processPath 中指定的 进程的 stdout 和 stderr 将重定向到 stdoutLogFile 中指定的文件。</p> | `false` |
+| `stdoutLogFile` | <p>可选的字符串属性。</p><p>指定在其中记录 processPath 中指定进程的 stdout 和 stderr 的相对路径或绝对路径。 相对路径与站点根目录相对。 以 `.` 开头的任何路径均与站点根目录相对，所有其他路径被视为绝对路径。 路径中提供的任何文件夹都必须存在，以便模块创建日志文件。 使用下划线分隔符，将时间戳、进程 ID 和文件扩展名 (.log) 添加到 stdoutLogFile 路径的最后一段。 如果 `.\logs\stdout` 作为值提供，则在示例 stdout 日志使用进程 ID 1934 于 2018 年 2 月 5 日 19:41:32 保存时，将在 logs 文件夹中保存为 stdout_20180205194132_1934.log。</p> | `aspnetcore-stdout` |
 ::: moniker-end
 
 ### <a name="setting-environment-variables"></a>设置环境变量
 
-环境变量可以为中的过程指定`processPath`属性。 指定的环境变量`environmentVariable`的子元素`environmentVariables`集合元素。 在本部分中设置的环境变量优先于系统环境变量。
+可以为 `processPath` 属性中的进程指定环境变量。 使用 `environmentVariables` 集合元素的 `environmentVariable` 子元素指定环境变量。 本部分中设置的环境变量优先于系统环境变量。
 
-下面的示例设置两个环境变量。 `ASPNETCORE_ENVIRONMENT` 配置应用程序的环境以`Development`。 开发人员可能将此值暂时设置*web.config*文件以便强制[开发人员异常页](xref:fundamentals/error-handling)以便在调试应用程序异常时加载。 `CONFIG_DIR` 是一种用户定义的环境变量中，开发人员曾读取启动窗体中用于加载应用程序的配置文件的路径上的值的代码。
+以下示例设置了两个环境变量。 `ASPNETCORE_ENVIRONMENT` 将应用的环境配置为 `Development`。 开发人员可能会暂时在 web.config 文件中设置此值，以便在调试应用异常时强制加载[开发人员异常页面](xref:fundamentals/error-handling)。 `CONFIG_DIR` 是用户定义的环境变量的一个示例，其中开发人员已写入可在启动时读取值的代码以便形成用于加载应用配置文件的路径。
 
 ```xml
 <aspNetCore processPath="dotnet"
@@ -113,31 +114,31 @@ ms.lasthandoff: 04/18/2018
 ```
 
 > [!WARNING]
-> 只能设置`ASPNETCORE_ENVIRONMENT`envirnonment 变量`Development`过渡和测试不到不受信任的网络，例如 Internet 可访问的服务器上。
+> 在不可访问不受信任的网络（如 Internet）的暂存服务器和测试服务器上，仅将 `ASPNETCORE_ENVIRONMENT` 环境变量设置为 `Development`。
 
 ## <a name="appofflinehtm"></a>app_offline.htm
 
-如果具有名称的文件*app_offline.htm*中检测到一个应用程序的根目录下 ASP.NET 核心模块尝试正常关闭应用程序，并停止处理传入请求。 如果应用程序中定义的秒数后仍在运行`shutdownTimeLimit`，ASP.NET 核心模块将终止正在运行的进程。
+如果在应用的根目录中检测到名为 “app_offline.htm”的文件，ASP.NET Core 模块将尝试正常关闭应用并停止处理传入请求。 如果应用在 `shutdownTimeLimit` 中定义的秒数之后仍在运行，ASP.NET Core 模块将终止正在运行的进程。
 
-虽然*app_offline.htm*存在文件，则 ASP.NET 核心模块响应请求通过发回的内容*app_offline.htm*文件。 当*app_offline.htm*删除文件，则下一个请求启动应用程序。
+存在 app_offline.htm 文件时，ASP.NET Core 模块会通过发送回 app_offline.htm 文件的内容来响应请求。 删除 app_offline.htm 文件后，下一个请求将启动应用。
 
-## <a name="start-up-error-page"></a>启动错误页
+## <a name="start-up-error-page"></a>启动错误页面
 
-如果 ASP.NET 核心模块无法启动后端进程或后端进程启动但不能在配置的端口上侦听*502.5 进程失败*状态代码页将出现。 若要禁止显示此页并还原为默认 IIS 502 状态代码页，请使用`disableStartUpErrorPage`属性。 有关配置自定义错误消息的详细信息，请参阅[HTTP 错误`<httpErrors>` ](/iis/configuration/system.webServer/httpErrors/)。
+如果 ASP.NET Core 模块无法启动后端进程或后端进程启动但无法在配置的端口上侦听，则将显示“502.5 进程失败”状态代码页面。 若要禁止显示此页面并还原为默认 IIS 502 状态代码页面，请使用 `disableStartUpErrorPage` 属性。 有关配置自定义错误消息的详细信息，请参阅 [HTTP 错误 `<httpErrors>`](/iis/configuration/system.webServer/httpErrors/)。
 
-![502.5 进程失败状态代码页](aspnet-core-module/_static/ANCM-502_5.png)
+![“502.5 进程失败”状态代码页面](aspnet-core-module/_static/ANCM-502_5.png)
 
 ## <a name="log-creation-and-redirection"></a>日志创建和重定向
 
-ASP.NET 核心模块将重定向 stdout 和 stderr 的日志磁盘如果`stdoutLogEnabled`和`stdoutLogFile`属性`aspNetCore`元素设置。 中的任何文件夹`stdoutLogFile`路径必须存在于要创建的日志文件的模块的顺序。 应用程序池必须具有写入访问权限日志将写入其中的位置 (使用`IIS AppPool\<app_pool_name>`提供写入权限)。
+如果已设置 `aspNetCore` 元素的 `stdoutLogEnabled` 和 `stdoutLogFile` 属性，ASP.NET Core 模块会将 stdout 和 stderr 日志重定向到磁盘。 `stdoutLogFile` 路径中的任何文件夹都必须存在，以便模块创建日志文件。 应用池必须对写入日志的位置具有写入权限（使用 `IIS AppPool\<app_pool_name>` 提供写入权限）。
 
-日志不轮换，除非进程回收/重新启动时发生。 它负责的托管商来限制日志使用的磁盘空间。
+日志不会旋转，除非回收/重新启动进程。 宿主负责限制日志占用的磁盘空间。
 
-应用程序启动问题的故障排除，仅建议使用 stdout 日志。 不要使用用于常规应用程序日志记录的 stdout 日志。 对于例程日志记录在 ASP.NET Core 应用程序，使用限制日志文件大小和旋转日志的日志记录库。 有关详细信息，请参阅[第三方日志记录提供程序](xref:fundamentals/logging/index#third-party-logging-providers)。
+仅建议使用 stdout 日志来解决应用启动问题。 不要将 stdout 日志用于常规应用日志记录。 对于 ASP.NET Core 应用中的例程日志记录，使用限制日志文件大小和旋转日志的日志记录库。 有关详细信息，请参阅[第三方日志记录提供程序](xref:fundamentals/logging/index#third-party-logging-providers)。
 
-创建日志文件时，将自动添加时间戳和文件扩展名。 日志文件名称由后面追加时间戳、 进程 ID 和文件扩展名 (*.log*) 到的最后一段`stdoutLogFile`路径 (通常*stdout*) 由下划线分隔。 如果`stdoutLogFile`路径以结束*stdout*，pid 为 1934 在 19:42:32 2/5/2018年上创建的应用程序日志中的文件名称*stdout_20180205194132_1934.log*。
+创建日志文件时，将自动添加时间戳和文件扩展名。 日志文件名是通过将时间戳、进程 ID 和文件扩展名 (.log) 附加到由下划线分隔的 `stdoutLogFile` 路径的最后一段（通常为 stdout）组合而成的。 如果 `stdoutLogFile` 路径以 stdout 结尾，则 PID 为 1934 且于 2018 年 2 月 5 日 19:42:32 创建的应用的日志的文件名为 stdout_20180205194132_1934.log。
 
-下面的示例`aspNetCore`元素会配置的 Azure App Service 中承载的应用的标准输出日志记录。 本地路径或网络共享路径是可接受的本地日志记录。 确认应用程序池用户标识有权写入提供的路径。
+以下示例 `aspNetCore` 元素为 Azure 应用服务中托管的应用配置 stdout 日志记录。 本地日志记录可以接受本地路径或网络共享路径。 确认应用池用户标识是否已提供写入路径的权限。
 
 ```xml
 <aspNetCore processPath="dotnet"
@@ -147,45 +148,45 @@ ASP.NET 核心模块将重定向 stdout 和 stderr 的日志磁盘如果`stdoutL
 </aspNetCore>
 ```
 
-请参阅[web.config 配置](#configuration-with-webconfig)有关的示例`aspNetCore`中的元素*web.config*文件。
+有关 web.config 文件中的 `aspNetCore` 元素的示例，请参阅 [web.config 的配置](#configuration-with-webconfig)。
 
 ## <a name="proxy-configuration-uses-http-protocol-and-a-pairing-token"></a>代理配置使用 HTTP 协议和配对令牌
 
-在 ASP.NET 核心模块和 Kestrel 之间创建的代理服务器使用 HTTP 协议。 使用 HTTP 是一种性能优化，其中模块和 Kestrel 之间的通信发生在上环回地址从网络接口中移出。 没有任何风险的窃听模块和 Kestrel 从服务器中移出的位置之间的通信。
+在 ASP.NET Core 模块和 Kestrel 之间创建的代理使用 HTTP 协议。 使用 HTTP 是一种性能优化，其中模块和 Kestrel 之间的流量发生于脱离网络接口的环回地址。 因此，不存在从脱离服务器的位置窃取模块和 Kestrel 之间的流量的风险。
 
-配对令牌用于保证 Kestrel 收到的请求已由 IIS 代理且不来自某些其他源。 创建并设置环境变量到配对的令牌 (`ASPNETCORE_TOKEN`) 由模块。 此外，配对令牌还设置到每个代理请求的标头 (`MSAspNetCoreToken`)。 IIS 中间件检查它所接收的每个请求，以确认配对令牌标头值与环境变量值相匹配。 如果令牌值不匹配，则将记录请求并拒绝该请求。 配对的令牌的环境变量和模块和 Kestrel 之间的通信无法访问从服务器中移出的位置。 如果不知道配对令牌值，攻击者就无法提交绕过 IIS 中间件中的检查的请求。
+配对令牌用于保证 Kestrel 收到的请求已由 IIS 代理且不来自某些其他源。 模块已创建配对令牌并将其设置到环境变量 (`ASPNETCORE_TOKEN`)。 此外，配对令牌还设置到每个代理请求的标头 (`MSAspNetCoreToken`)。 IIS 中间件检查它所接收的每个请求，以确认配对令牌标头值与环境变量值相匹配。 如果令牌值不匹配，则将记录请求并拒绝该请求。 无法从脱离服务器的位置访问配对令牌环境变量及模块和 Kestrel 之间的流量。 如果不知道配对令牌值，攻击者就无法提交绕过 IIS 中间件中的检查的请求。
 
-## <a name="aspnet-core-module-with-an-iis-shared-configuration"></a>ASP.NET 核心模块与 IIS 共享配置
+## <a name="aspnet-core-module-with-an-iis-shared-configuration"></a>具有 IIS 共享配置的 ASP.NET Core 模块
 
-ASP.NET 核心模块安装程序使用的特权运行**系统**帐户。 安装程序的本地系统帐户不具有修改权限使用 IIS 共享配置的共享路径，因为达到拒绝访问错误时尝试进行配置中的模块设置*applicationHost.config*共享上。 在将非 IIS 共享配置，请按照下列步骤：
+ASP.NET Core 模块安装程序使用系统帐户的权限运行。 由于本地系统帐户没有对 IIS 共享配置所用的共享路径的修改权限，因此在尝试配置共享上的 applicationHost.config 中的模块设置时，安装程序将遇到拒绝访问错误。 使用 IIS 共享配置时，请执行以下步骤：
 
-1. 禁用 IIS 共享的配置。
+1. 禁用 IIS 共享配置。
 1. 运行安装程序。
-1. 导出已更新*applicationHost.config*到共享的文件。
-1. 重新启用 IIS 共享的配置。
+1. 将已更新的 applicationHost.config 文件导出到共享。
+1. 重新启用 IIS 共享配置。
 
-## <a name="module-version-and-hosting-bundle-installer-logs"></a>模块版本和承载捆绑安装程序日志
+## <a name="module-version-and-hosting-bundle-installer-logs"></a>模块版本和托管捆绑安装程序日志
 
-若要确定已安装 ASP.NET 核心模块的版本：
+若要确定已安装 ASP.NET Core 模块的版本，请执行以下操作：
 
-1. 在托管系统上，导航到 *%windir%\System32\inetsrv*。
-1. 找到*aspnetcore.dll*文件。
-1. 右键单击该文件并选择**属性**从上下文菜单。
-1. 选择**详细信息**选项卡。**文件版本**和**产品版本**表示已安装的模块版本。
+1. 在托管系统上，导航到 %windir%\System32\inetsrv。
+1. 找到 aspnetcore.dll 文件。
+1. 右键单击该文件，然后从上下文菜单中选择“属性”。
+1. 选择“详细信息”选项卡。“文件版本”和“产品版本”表示模块的已安装版本。
 
-在找到承载捆绑安装程序日志模块*c:\\用户\\%username%\\AppData\\本地\\Temp*。将文件命名为*dd_DotNetCoreWinSvrHosting__\<时间戳 > _000_AspNetCoreModule_x64.log*。
+在 C:\\Users\\%UserName%\\AppData\\Local\\Temp 中找到了模块的托管捆绑安装程序日志。该文件名为 dd_DotNetCoreWinSvrHosting__\<timestamp>_000_AspNetCoreModule_x64.log。
 
-## <a name="module-schema-and-configuration-file-locations"></a>模块、 架构和配置文件位置
+## <a name="module-schema-and-configuration-file-locations"></a>模块、架构和配置文件位置
 
 ### <a name="module"></a>模块
 
-**IIS (x86/amd64):**
+**IIS (x86/amd64)**：
 
    * %windir%\System32\inetsrv\aspnetcore.dll
 
    * %windir%\SysWOW64\inetsrv\aspnetcore.dll
 
-**IIS Express (x86/amd64):**
+**IIS Express (x86/amd64)**：
 
    * %ProgramFiles%\IIS Express\aspnetcore.dll
 
@@ -211,4 +212,4 @@ ASP.NET 核心模块安装程序使用的特权运行**系统**帐户。 安装�
 
    * .vs\config\applicationHost.config
 
-可以通过搜索找到文件*aspnetcore.dll*中*applicationHost.config*文件。 IIS express， *applicationHost.config*文件不存在默认情况下。 在创建文件 *\<application_root >\\.vs\\配置*时从任何 web 应用程序项目开始在 Visual Studio 解决方案。
+可以通过在 applicationHost.config 文件中搜索 aspnetcore.dll 找到这些文件。 对于 IIS Express，默认情况下不会存在 applicationHost.config 文件。 在 Visual Studio 解决方案中启动任何 Web 应用项目时，将在 \<application_root>\\.vs\\config 中创建该文件。

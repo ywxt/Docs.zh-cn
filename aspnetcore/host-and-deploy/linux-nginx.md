@@ -1,7 +1,7 @@
 ---
 title: 使用 Nginx 在 Linux 上托管 ASP.NET Core
 author: rick-anderson
-description: 描述如何在 Ubuntu 16.04 转发到 ASP.NET 核心 web 应用程序在 Kestrel 上运行的 HTTP 流量的反向代理设置 Nginx。
+description: 介绍如何在 Ubuntu 16.04 上将 Nginx 设置为反向代理，从而将 HTTP 流量转发到在 Kestrel 上运行的 ASP.NET Core Web 应用。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: fe772203e5e3fceb7489e0a5866f60ea914b7329
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
-ms.translationtype: MT
+ms.openlocfilehash: d37aa25c712d715aa4134587a84e5923f9cb5b79
+ms.sourcegitcommit: 50d40c83fa641d283c097f986dde5341ebe1b44c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/22/2018
+ms.locfileid: "34452550"
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>使用 Nginx 在 Linux 上托管 ASP.NET Core
 
@@ -23,46 +24,46 @@ ms.lasthandoff: 05/10/2018
 本指南介绍如何在 Ubuntu 16.04 服务器上设置生产就绪 ASP.NET Core 环境。
 
 > [!NOTE]
-> 对于 Ubuntu 14.04 *supervisord*建议为用于监视 Kestrel 进程的解决方案。 *systemd*在 Ubuntu 14.04 上不可用。 [请参阅本文档的以前版本](https://github.com/aspnet/Docs/blob/e9c1419175c4dd7e152df3746ba1df5935aaafd5/aspnetcore/publishing/linuxproduction.md)。
+> 对于 Ubuntu 14.04，建议进行监控，以此作为监视 Kestrel 进程的解决方案。 在 Ubuntu 14.04 上不提供 systemd。 [请参阅本文档的早期版本](https://github.com/aspnet/Docs/blob/e9c1419175c4dd7e152df3746ba1df5935aaafd5/aspnetcore/publishing/linuxproduction.md)。
 
 本指南：
 
-* 将现有 ASP.NET Core 应用程序反向代理服务器后面。
-* 将设置反向代理服务器将请求转发到 Kestrel web 服务器。
-* 可确保在作为后台进程启动时运行的 web 应用。
-* 配置有助于重新启动 web 应用的进程管理工具。
+* 将现有 ASP.NET Core 应用置于反向代理服务器后方。
+* 设置反向代理服务器，以便将请求转发到 Kestrel Web 服务器。
+* 确保 Web 应用在启动时作为守护程序运行。
+* 配置进程管理工具以帮助重新启动 Web 应用。
 
 ## <a name="prerequisites"></a>系统必备
 
 1. 使用具有 sudo 特权的标准用户帐户访问 Ubuntu 16.04 服务器
-1. 现有的 ASP.NET Core 应用程序
+1. 现有 ASP.NET Core 应用
 
-## <a name="copy-over-the-app"></a>通过应用程序复制
+## <a name="copy-over-the-app"></a>复制应用
 
-运行[dotnet 发布](/dotnet/core/tools/dotnet-publish)从要打包到一个自包含的目录，可以在服务器上运行的应用程序的开发环境。
+从开发环境中运行 [dotnet publish](/dotnet/core/tools/dotnet-publish) 以将应用打包到可在服务器上运行的独立目录。
 
-将 ASP.NET Core 应用程序复制到使用任何工具集成到组织的工作流 （例如，SCP，FTP） 服务器。 测试应用，例如：
+使用集成到组织工作流的任何工具（例如 SCP、FTP）将 ASP.NET Core 应用复制到服务器。 测试应用，例如：
 
-* 从命令行中，运行`dotnet <app_assembly>.dll`。
+* 从命令行中，运行 `dotnet <app_assembly>.dll`。
 * 在浏览器中，导航到 `http://<serveraddress>:<port>` 以确认应用在 Linux 上正常运行。 
  
 ## <a name="configure-a-reverse-proxy-server"></a>配置反向代理服务器
 
-反向代理是为动态 web 应用程序提供服务的常见设置。 反向代理终止 HTTP 请求，并将其转发到 ASP.NET 核心应用程序。
+反向代理是为动态 Web 应用提供服务的常见设置。 反向代理终止 HTTP 请求，并将其转发到 ASP.NET Core 应用。
 
 ### <a name="why-use-a-reverse-proxy-server"></a>为何使用反向代理服务器？
 
-Kestrel 非常适合从 ASP.NET Core 提供动态内容。 但是，web 服务功能不是为 IIS、 Apache 或 Nginx 例如与服务器的功能丰富。 反向代理服务器可以卸载例如提供静态内容、 缓存请求、 压缩请求和从 HTTP 服务器的 SSL 终止的工作。 反向代理服务器可能驻留在专用计算机上，也可能与 HTTP 服务器一起部署。
+Kestrel 非常适合从 ASP.NET Core 提供动态内容。 但是，Web 服务功能不像服务器（如 IIS、Apache 或 Nginx）那样功能丰富。 反向代理服务器可以从 HTTP 服务器卸载服务静态内容、缓存请求、压缩请求和 SSL 终端等工作。 反向代理服务器可能驻留在专用计算机上，也可能与 HTTP 服务器一起部署。
 
-鉴于此指南的目的，使用 Nginx 的单个实例。 它与 HTTP 服务器一起运行在同一服务器上。 根据要求，可以选择不同的安装。
+鉴于此指南的目的，使用 Nginx 的单个实例。 它与 HTTP 服务器一起运行在同一服务器上。 根据要求，可以选择不同的设置。
 
-因为通过反向代理转发请求，使用从转发标头 Middleware [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/)包。 中间件更新`Request.Scheme`，使用`X-Forwarded-Proto`标头，因此该重定向 Uri 和其他安全策略正常工作。
+由于请求是通过反向代理转接的，因此使用 [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) 程序包中的转接头中间件。 此中间件使用 `X-Forwarded-Proto` 标头来更新 `Request.Scheme`，使重定向 URI 和其他安全策略能够正常工作。
 
-当使用任何类型的身份验证中间件，转发标头中间件必须运行第一个。 此顺序可确保身份验证中间件可使用的标头值并生成正确的重定向 Uri。
+当使用任何类型的身份验证中间件时，必须先运行转接头中间件。 此顺序可确保身份验证中间件可以使用标头值，并生成正确的重定向 URI。
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-调用[UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders)中的方法`Startup.Configure`之前调用[UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication)或类似的身份验证方案中间件。 配置为转发的中间件`X-Forwarded-For`和`X-Forwarded-Proto`标头：
+在调用 [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication) 或类似的身份验证方案中间件之前，调用 `Startup.Configure` 中的 [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) 方法。 配置中间件以转接 `X-Forwarded-For` 和 `X-Forwarded-Proto` 标头：
 
 ```csharp
 app.UseForwardedHeaders(new ForwardedHeadersOptions
@@ -75,7 +76,7 @@ app.UseAuthentication();
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-调用[UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders)中的方法`Startup.Configure`之前调用[UseIdentity](/dotnet/api/microsoft.aspnetcore.builder.builderextensions.useidentity)和[UseFacebookAuthentication](/dotnet/api/microsoft.aspnetcore.builder.facebookappbuilderextensions.usefacebookauthentication)或类似的身份验证方案中间件。 配置为转发的中间件`X-Forwarded-For`和`X-Forwarded-Proto`标头：
+在调用 [UseIdentity](/dotnet/api/microsoft.aspnetcore.builder.builderextensions.useidentity) 和 [UseFacebookAuthentication](/dotnet/api/microsoft.aspnetcore.builder.facebookappbuilderextensions.usefacebookauthentication) 或类似的身份验证方案中间件之前，调用 `Startup.Configure` 中的 [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) 方法。 配置中间件以转接 `X-Forwarded-For` 和 `X-Forwarded-Proto` 标头：
 
 ```csharp
 app.UseForwardedHeaders(new ForwardedHeadersOptions
@@ -93,7 +94,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 ---
 
-如果没有[ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)指定到中间件，要转发的默认标头是`None`。
+如果没有为中间件指定 [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)，则要转接的默认标头为 `None`。
 
 对于托管在代理服务器和负载均衡器后方的应用，可能需要附加配置。 有关详细信息，请参阅[配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)。
 
@@ -104,7 +105,7 @@ sudo apt-get install nginx
 ```
 
 > [!NOTE]
-> 如果将安装可选 Nginx 模块，生成从源 Nginx 可能需要。
+> 如果将安装可选 Nginx 模块，则可能需要从源代码生成 Nginx。
 
 使用 `apt-get` 安装 Nginx。 安装程序创建一个 System V init 脚本，该脚本运行 Nginx 作为系统启动时的守护程序。 因为是首次安装 Nginx，通过运行以下命令显式启动：
 
@@ -116,7 +117,7 @@ sudo service nginx start
 
 ### <a name="configure-nginx"></a>配置 Nginx
 
-若要将 Nginx 配置为转发请求向 ASP.NET Core 应用程序的反向代理，修改 */etc/nginx/sites-available/default*。 在文本编辑器中打开它，并将内容替换为以下内容：
+若要将 Nginx 配置为反向代理以将请求转接到 ASP.NET Core 应用，请修改 /etc/nginx/sites-available/default。 在文本编辑器中打开它，并将内容替换为以下内容：
 
 ```nginx
 server {
@@ -133,7 +134,7 @@ server {
 }
 ```
 
-如果没有`server_name`Nginx 的匹配项，使用默认服务器。 如果定义了默认的服务器，配置文件中的第一个服务器将是默认服务器。 最佳做法，将添加在配置文件中返回 444 状态代码的特定的默认服务器。 默认服务器配置示例是：
+当没有匹配的 `server_name` 时，Nginx 使用默认服务器。 如果没有定义默认服务器，则配置文件中的第一台服务器是默认服务器。 作为最佳做法，添加指定默认服务器，它会在配置文件中返回状态代码 444。 默认的服务器配置示例是：
 
 ```nginx
 server {
@@ -143,16 +144,16 @@ server {
 }
 ```
 
-与上述配置文件和默认服务器，Nginx 接受主机标头使用的端口 80 上的公共流量`example.com`或`*.example.com`。 不会获取与这些主机不匹配的请求转发到 Kestrel。 Nginx 将匹配的请求转发到在 Kestrel `http://localhost:5000`。 请参阅[nginx 如何处理请求](https://nginx.org/docs/http/request_processing.html)有关详细信息。
+使用上述配置文件和默认服务器，Nginx 接受主机标头 `example.com` 或 `*.example.com` 端口 80 上的公共流量。 与这些主机不匹配的请求不会转接到 Kestrel。 Nginx 将匹配的请求转接到 `http://localhost:5000` 中的 Kestrel。 有关详细信息，请参阅 [nginx 如何处理请求](https://nginx.org/docs/http/request_processing.html)。
 
 > [!WARNING]
-> 如果未能指定合适[server_name 指令](https://nginx.org/docs/http/server_names.html)公开您的应用程序安全漏洞。 子域通配符绑定 (例如， `*.example.com`) 不会带来安全风险，若要控制整个父域 (相对于`*.com`，这是易受攻击)。 有关详细信息，请参阅 [rfc7230 第 5.4 条](https://tools.ietf.org/html/rfc7230#section-5.4)。
+> 未能指定正确的 [server_name 指令](https://nginx.org/docs/http/server_names.html)会公开应用的安全漏洞。 如果可控制整个父域（区别于易受攻击的 `*.com`），则子域通配符绑定（例如，`*.example.com`）不具有此安全风险。 有关详细信息，请参阅 [rfc7230 第 5.4 条](https://tools.ietf.org/html/rfc7230#section-5.4)。
 
-一旦建立 Nginx 配置，运行`sudo nginx -t`若要验证的配置文件的语法。 如果配置文件测试成功，强制 Nginx 以便通过运行选取更改`sudo nginx -s reload`。
+完成配置 Nginx 后，运行 `sudo nginx -t` 来验证配置文件的语法。 如果配置文件测试成功，可以通过运行 `sudo nginx -s reload` 强制 Nginx 选取更改。
 
-## <a name="monitoring-the-app"></a>监视应用程序
+## <a name="monitoring-the-app"></a>监视应用
 
-服务器已设置为转发到发出的请求`http://<serveraddress>:80`Kestrel 在上运行 ASP.NET Core 应用到`http://127.0.0.1:5000`。 但是，Nginx 未设置来管理 Kestrel 过程。 *systemd*可以用于创建服务文件以启动和监视基础的 web 应用。 systemd 是一个 init 系统，可以提供用于启动、停止和管理进程的许多强大的功能。 
+服务器设置为将对 `http://<serveraddress>:80` 发起的请求转接到在 `http://127.0.0.1:5000` 中的 Kestrel 上运行的 ASP.NET Core 应用。 但是，未将 Nginx 设置为管理 Kestrel 进程。 systemd 可用于创建服务文件以启动和监视基础 Web 应用。 systemd 是一个 init 系统，可以提供用于启动、停止和管理进程的许多强大的功能。 
 
 ### <a name="create-the-service-file"></a>创建服务文件
 
@@ -162,7 +163,7 @@ server {
 sudo nano /etc/systemd/system/kestrel-hellomvc.service
 ```
 
-下面是应用程序的示例服务文件：
+以下是应用的一个示例服务文件：
 
 ```ini
 [Unit]
@@ -182,11 +183,12 @@ Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
 WantedBy=multi-user.target
 ```
 
-**注意：**如果用户*www 数据*未使用的配置，此处定义的用户必须创建第一次并且为文件提供的适当的所有权。
-**注意：** Linux 具有区分大小写的文件系统。 搜索配置文件中的"生产"结果设置 ASPNETCORE_ENVIRONMENT *appsettings。Production.json*，而不*appsettings.production.json*。
+如果配置未使用用户 www-data，则必须先创建此处定义的用户，并为该用户提供适当的文件所有权。
+
+Linux 具有区分大小写的文件系统。 将 ASPNETCORE_ENVIRONMENT 设置为“生产”会导致搜索配置文件 appsettings.Production.json，而不是 appsettings.production.json。
 
 > [!NOTE]
-> 必须为要读取环境变量的配置提供程序转义某些值 （例如，SQL 连接字符串）。 使用以下命令以生成在配置文件中的正确转义的值以供使用：
+> 必须转义某些值（例如，SQL 连接字符串）以供配置提供程序读取环境变量。 使用以下命令生成适当的转义值以供在配置文件中使用：
 >
 > ```console
 > systemd-escape "<value-to-escape>"
@@ -198,7 +200,7 @@ WantedBy=multi-user.target
 systemctl enable kestrel-hellomvc.service
 ```
 
-启动服务并验证它正在运行。
+启用该服务，并确认它正在运行。
 
 ```
 systemctl start kestrel-hellomvc.service
@@ -212,7 +214,7 @@ Main PID: 9021 (dotnet)
             └─9021 /usr/local/bin/dotnet /var/aspnetcore/hellomvc/hellomvc.dll
 ```
 
-配置反向代理和管理通过 systemd Kestrel，web 应用完全配置，并且可以从处的本地计算机上的浏览器访问`http://localhost`。 它也是可从远程计算机，禁止任何防火墙可能阻止访问。 检查响应标头，`Server`标头将显示 ASP.NET Core 应用程序提供的 Kestrel。
+在配置了反向代理并通过 systemd 管理 Kestrel 后，Web 应用现已完全配置，并能在本地计算机上的浏览器中从 `http://localhost` 进行访问。 也可以从远程计算机进行访问，同时限制可能进行阻止的任何防火墙。 检查响应标头，`Server` 标头显示由 Kestrel 所提供的 ASP.NET Core 应用。
 
 ```text
 HTTP/1.1 200 OK
@@ -225,7 +227,7 @@ Transfer-Encoding: chunked
 
 ### <a name="viewing-logs"></a>查看日志
 
-因为 web 应用使用 Kestrel 管理使用`systemd`，到集中式日志记录所有事件和进程。 但是，此日志包含由 `systemd` 管理的所有服务和进程的全部条目。 若要查看特定于 `kestrel-hellomvc.service` 的项，请使用以下命令：
+使用 Kestrel 的 Web 应用是通过 `systemd` 进行管理的，因此所有事件和进程都被记录到集中日志。 但是，此日志包含由 `systemd` 管理的所有服务和进程的全部条目。 若要查看特定于 `kestrel-hellomvc.service` 的项，请使用以下命令：
 
 ```bash
 sudo journalctl -fu kestrel-hellomvc.service
@@ -237,15 +239,15 @@ sudo journalctl -fu kestrel-hellomvc.service
 sudo journalctl -fu kestrel-hellomvc.service --since "2016-10-18" --until "2016-10-18 04:00"
 ```
 
-## <a name="securing-the-app"></a>保护应用程序
+## <a name="securing-the-app"></a>保护应用
 
 ### <a name="enable-apparmor"></a>启用 AppArmor
 
-Linux 安全模块 (LSM) 是一个框架，是从 Linux 2.6 Linux 内核的一部分。 LSM 支持安全模块的不同实现。 [AppArmor](https://wiki.ubuntu.com/AppArmor) 是实现强制访问控制系统的 LSM，它允许将程序限制在一组有限的资源内。 确保已启用并成功配置 AppArmor。
+Linux 安全模块 (LSM) 是一个框架，它是自 Linux 2.6 后的 Linux kernel 的一部分。 LSM 支持安全模块的不同实现。 [AppArmor](https://wiki.ubuntu.com/AppArmor) 是实现强制访问控制系统的 LSM，它允许将程序限制在一组有限的资源内。 确保已启用并成功配置 AppArmor。
 
 ### <a name="configuring-the-firewall"></a>配置防火墙
 
-关闭所有未使用的外部端口。 通过为配置防火墙提供命令行接口，不复杂的防火墙 (ufw) 为 `iptables` 提供了前端。 验证`ufw`配置为允许所需的任何端口上的流量。
+关闭所有未使用的外部端口。 通过为配置防火墙提供命令行接口，不复杂的防火墙 (ufw) 为 `iptables` 提供了前端。 确认已配置 `ufw` 以允许所需的任何端口上的流量。
 
 ```bash
 sudo apt-get install ufw
@@ -284,7 +286,7 @@ static char ngx_http_server_full_string[] = "Server: Web Server" CRLF;
 
 正则表达式需要 PCRE 库。 正则表达式用于 ngx_http_rewrite_module 的位置指令。 http_ssl_module adds HTTPS 协议支持。
 
-请考虑使用类似的 web 应用程序防火墙*ModSecurity*来加强应用程序。
+请考虑使用诸如“ModSecurity”的 Web 应用防火墙来加强对应用的保护。
 
 ```bash
 ./configure
@@ -297,13 +299,13 @@ static char ngx_http_server_full_string[] = "Server: Web Server" CRLF;
 
 #### <a name="configure-ssl"></a>配置 SSL
 
-* 配置服务器以侦听端口上的 HTTPS 流量`443`通过指定由受信任证书颁发机构 (CA) 颁发的有效证书。
+* 通过指定由受信任的证书颁发机构 (CA) 颁发的有效证书来配置服务器，以侦听端口 `443` 上的 HTTPS 流量。
 
-* 通过采用的一些做法在下面的示例所示加强安全 */etc/nginx/nginx.conf*文件。 示例包括选择更强的密码并将通过 HTTP 的所有流量重定向到 HTTPS。
+* 通过采用以下“/etc/nginx/nginx.conf”文件中所示的某些做法来增强安全保护。 示例包括选择更强的密码并将通过 HTTP 的所有流量重定向到 HTTPS。
 
 * 添加 `HTTP Strict-Transport-Security` (HSTS) 标头可确保由客户端发起的所有后续请求都仅通过 HTTPS。
 
-* 不添加 Strict 传输安全标头或选择适当`max-age`如果将在将来禁用 SSL。
+* 如果以后会禁用 SSL，则不要添加 Strict-Transport-Security 标头或选择相应的 `max-age`。
 
 添加 /etc/nginx/proxy.conf 配置文件：
 
@@ -314,7 +316,7 @@ static char ngx_http_server_full_string[] = "Server: Web Server" CRLF;
 [!code-nginx[](linux-nginx/nginx.conf?highlight=2)]
 
 #### <a name="secure-nginx-from-clickjacking"></a>保护 Nginx 免受点击劫持的侵害
-点击劫持是收集受感染用户的点击数的恶意技术。 点击劫持诱使受害者（访问者）点击受感染的网站。 使用 X-框架的选项以确保网站的安全。
+点击劫持是收集受感染用户的点击数的恶意技术。 点击劫持诱使受害者（访问者）点击受感染的网站。 使用 X-FRAME-OPTIONS 保护站点。
 
 编辑 nginx.conf 文件：
 

@@ -1,7 +1,7 @@
 ---
-title: 解决在 IIS 上的 ASP.NET 核心
+title: 对 IIS 上的 ASP.NET Core 进行故障排除
 author: guardrex
-description: 了解如何诊断问题的 ASP.NET Core 应用的 Internet 信息服务 (IIS) 部署。
+description: 了解如何诊断 ASP.NET Core 应用的 Internet Information Services (IIS) 部署的问题。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -12,110 +12,111 @@ ms.topic: article
 uid: host-and-deploy/iis/troubleshoot
 ms.openlocfilehash: e44892d2022ca1a176cee9d027e220e196c6572d
 ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30073888"
 ---
-# <a name="troubleshoot-aspnet-core-on-iis"></a>解决在 IIS 上的 ASP.NET 核心
+# <a name="troubleshoot-aspnet-core-on-iis"></a>对 IIS 上的 ASP.NET Core 进行故障排除
 
 作者：[Luke Latham](https://github.com/guardrex)
 
-本文说明了如何诊断 ASP.NET Core 应用启动问题使用承载时[Internet 信息服务 (IIS)](/iis)。 这篇文章中的信息适用于在 Windows Server 和 Windows 桌面上的 IIS 中承载。
+本文说明了如何在使用 [Internet Information Services (IIS)](/iis) 托管时诊断 ASP.NET Core 应用启动问题。 本文提供的信息适用于在 Windows Server 和 Windows 桌面上的 IIS 中托管。
 
-在 Visual Studio 中，ASP.NET Core 项目默认为[IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)承载在调试过程。 A *502.5 进程失败*本地调试可能会使用本主题中的建议的 troubleshooted 时发生。
+在 Visual Studio 中，ASP.NET Core 项目默认为在调试期间进行 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 托管。 可以使用本主题中的建议对本地调试进行故障排除时，出现“502.5 进程失败”。
 
 其他故障排除主题：
 
 [对 Azure 应用服务上的 ASP.NET Core 进行故障排除](xref:host-and-deploy/azure-apps/troubleshoot)  
-尽管应用程序服务使用[ASP.NET 核心模块](xref:fundamentals/servers/aspnet-core-module)和 IIS 承载应用程序，请参阅说明特定于应用程序服务的专用的主题。
+虽然应用服务使用 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)和 IIS 托管应用，但若要获取特定于应用服务的说明，请参阅专用主题。
 
 [处理错误](xref:fundamentals/error-handling)  
-了解如何在本地系统上的开发过程中处理 ASP.NET Core 应用中的错误。
+了解如何在本地系统上处理 ASP.NET Core 应用在开发期间的错误。
 
 [了解如何使用 Visual Studio 进行调试](/visualstudio/debugger/getting-started-with-the-debugger)  
-本主题介绍 Visual Studio 调试器的功能。
+本主题介绍了 Visual Studio 调试器的功能。
 
-## <a name="app-startup-errors"></a>应用程序启动错误
+## <a name="app-startup-errors"></a>应用启动错误
 
 **502.5 进程故障**  
-工作进程将失败。 不启动应用程序。
+工作进程失败。 应用不启动。
 
-ASP.NET 核心模块尝试启动工作进程，但它无法启动。 进程启动失败的原因通常根据中的条目[应用程序事件日志](#application-event-log)和[ASP.NET 核心模块 stdout 日志](#aspnet-core-module-stdout-log)。
+ASP.NET Core 模块尝试启动工作进程，但启动失败。 通常可以从“[应用程序事件日志](#application-event-log)”和“[ASP.NET Core 模块 stdout 日志](#aspnet-core-module-stdout-log)”的条目中确定进程启动失败的原因。
 
-*502.5 进程失败*当承载或应用程序配置错误导致工作进程失败时返回错误页：
+托管或应用配置错误导致工作进程失败时，将返回“502.5 进程失败”错误页面：
 
-![显示 502.5 进程失败页的浏览器窗口](troubleshoot/_static/process-failure-page.png)
+![显示“502.5 进程故障”页面的浏览器窗口](troubleshoot/_static/process-failure-page.png)
 
 **500 内部服务器错误**  
-启动该应用程序，但某个错误阻止在完成请求的服务器。
+应用启动，但某个错误阻止了服务器完成请求。
 
-启动过程中或创建响应时，应用程序的代码中出现此错误。 响应可能包含任何内容，或响应可能显示为*500 内部服务器错误*浏览器中。 应用程序事件日志通常表明应用程序正常启动。 从服务器的角度来看，这是正确的。 应用程序未启动，但它无法生成有效的响应。 [在命令提示符下运行应用程序](#run-the-app-at-a-command-prompt)服务器上或[启用 ASP.NET 核心模块 stdout 日志](#aspnet-core-module-stdout-log)以解决该问题。
+在启动期间或在创建响应时，应用的代码内出现此错误。 响应可能不包含任何内容，或响应可能会在浏览器中显示为“500 内部服务器错误”。 应用程序事件日志通常表明应用正常启动。 从服务器的角度来看，这是正确的。 应用已启动，但无法生成有效的响应。 在服务器上[在命令提示符处运行应用](#run-the-app-at-a-command-prompt)或[启用 ASP.NET Core 模块 stdout 日志](#aspnet-core-module-stdout-log)以解决该问题。
 
 **连接重置**
 
-如果发送标头后，将发生错误，则服务器尝试发送太晚**500 内部服务器错误**发生错误时。 响应的复杂对象的序列化期间发生错误时经常会出现这种情况。 此类型的错误显示为*连接重置*客户端上的错误。 [应用程序日志记录](xref:fundamentals/logging/index)可以帮助解决这些类型的错误。
+如果在发送标头后出现错误，则服务器在出现错误时发送“500 内部服务器错误”已经太晚了。 通常在序列化响应的复杂对象期间出现错误时发生这种情况。 此类型的错误在客户端上显示为“连接重置”错误。 [应用程序日志记录](xref:fundamentals/logging/index)可以帮助解决这些类型的错误。
 
 ## <a name="default-startup-limits"></a>默认启动限制
 
-ASP.NET 核心模块配置了默认值*startupTimeLimit*的 120 秒。 时保留为默认值，应用可能需要最多两分钟，以启动之前模块记录进程失败。 有关模块的配置的信息，请参阅[aspNetCore 元素的特性的](xref:host-and-deploy/aspnet-core-module#attributes-of-the-aspnetcore-element)。
+ASP.NET Core 模块的默认“startupTimeLimit”配置为 120 秒。 保留默认值时，在模块记录进程故障之前，可能最多需要两分钟来启动应用。 有关配置模块的信息，请参阅 [aspNetCore 元素的属性](xref:host-and-deploy/aspnet-core-module#attributes-of-the-aspnetcore-element)。
 
-## <a name="troubleshoot-app-startup-errors"></a>应用程序启动错误疑难解答
+## <a name="troubleshoot-app-startup-errors"></a>解决应用启动错误
 
 ### <a name="application-event-log"></a>应用程序事件日志
 
 访问应用程序事件日志：
 
-1. 打开开始菜单，搜索**事件查看器**，然后选择**事件查看器**应用。
-1. 在**事件查看器**，打开**Windows 日志**节点。
-1. 选择**应用程序**以打开应用程序事件日志。
-1. 搜索与失败应用相关联的错误。 错误都具有值*IIS AspNetCore 模块*或*IIS Express AspNetCore 模块*中*源*列。
+1. 打开“开始”菜单，搜索“事件查看器”，然后选择“事件查看器”应用。
+1. 在“事件查看器”中，打开“Windows 日志”节点。
+1. 选择“应用程序”以打开应用程序事件日志。
+1. 搜索与失败应用相关联的错误。 错误具有“源”列中“IIS AspNetCore 模块”或“IIS Express AspNetCore 模块”的值。
 
-### <a name="run-the-app-at-a-command-prompt"></a>在命令提示符下运行应用程序
+### <a name="run-the-app-at-a-command-prompt"></a>在命令提示符处运行应用
 
-许多启动错误未生成应用程序事件日志中的有用信息。 你可以通过在命令提示符下运行应用，在主机系统上找到某些错误的原因。
+许多启动错误未在应用程序事件日志中生成有用信息。 可以通过在托管系统上在命令提示符处运行应用来找到某些错误的原因。
 
-**依赖于框架的部署**
+**依赖框架的部署**
 
-如果在应用程序处于[framework 相关部署](/dotnet/core/deploying/#framework-dependent-deployments-fdd):
+如果应用是[依赖框架的部署](/dotnet/core/deploying/#framework-dependent-deployments-fdd)：
 
-1. 在命令提示符处，导航到部署文件夹，并通过执行应用程序的程序集与运行应用*dotnet.exe*。 在下面的命令中，应用程序的程序集的名称替换\<程序集 _ 名称 >: `dotnet .\<assembly_name>.dll`。
-1. 控制台应用程序中，显示任何错误，从输出写入到控制台窗口。
-1. 如果向应用程序发出请求时出现错误，请向主机和其中 Kestrel 侦听的端口发出请求。 使用默认主机和开机自检，请发出请求以`http://localhost:5000/`。 如果应用程序通常响应 Kestrel 终结点地址，该问题更可能是相关的反向代理配置和不太可能在应用内。
+1. 在命令提示符处，导航到部署文件夹并通过使用 dotnet.exe 执行应用的程序集来运行应用。 在以下命令中，替换 \<assembly_name> 的应用程序集的名称：`dotnet .\<assembly_name>.dll`。
+1. 来自应用且显示任何错误的控制台输出将写入控制台窗口。
+1. 如果向应用发出请求时出现错误，请向 Kestrel 侦听所在的主机和端口发出请求。 如果使用默认主机和端口，请向 `http://localhost:5000/` 发出请求。 如果应用在 Kestrel 终结点地址处正常响应，则问题更可能与反向代理配置相关，而不太可能在于应用。
 
-**自包含的部署**
+**独立部署**
 
-如果在应用程序处于[独立的部署](/dotnet/core/deploying/#self-contained-deployments-scd):
+如果应用是[独立部署](/dotnet/core/deploying/#self-contained-deployments-scd)：
 
-1. 在命令提示符处，导航到部署文件夹并运行应用程序的可执行文件。 在下面的命令中，应用程序的程序集的名称替换\<程序集 _ 名称 >: `<assembly_name>.exe`。
-1. 控制台应用程序中，显示任何错误，从输出写入到控制台窗口。
-1. 如果向应用程序发出请求时出现错误，请向主机和其中 Kestrel 侦听的端口发出请求。 使用默认主机和开机自检，请发出请求以`http://localhost:5000/`。 如果应用程序通常响应 Kestrel 终结点地址，该问题更可能是相关的反向代理配置和不太可能在应用内。
+1. 在命令提示符处，导航到部署文件夹并运行应用的可执行文件。 在以下命令中，替换 \<assembly_name> 的应用程序集的名称：`<assembly_name>.exe`。
+1. 来自应用且显示任何错误的控制台输出将写入控制台窗口。
+1. 如果向应用发出请求时出现错误，请向 Kestrel 侦听所在的主机和端口发出请求。 如果使用默认主机和端口，请向 `http://localhost:5000/` 发出请求。 如果应用在 Kestrel 终结点地址处正常响应，则问题更可能与反向代理配置相关，而不太可能在于应用。
 
-### <a name="aspnet-core-module-stdout-log"></a>ASP.NET 核心模块 stdout 日志
+### <a name="aspnet-core-module-stdout-log"></a>ASP.NET Core 模块 stdout 日志
 
-用于启用和查看 stdout 日志：
+若要启用和查看 stdout 日志，请执行以下操作：
 
-1. 导航到主机系统上的站点的部署文件夹。
-1. 如果*日志*文件夹不存在、 创建文件夹。 有关如何启用 MSBuild 的说明创建*日志*部署中的文件夹自动，请参阅[目录结构](xref:host-and-deploy/directory-structure)主题。
-1. 编辑*web.config*文件。 设置**stdoutLogEnabled**到`true`和更改**stdoutLogFile**路径以指向*日志*文件夹 (例如， `.\logs\stdout`)。 `stdout` 在路径中是日志文件名称前缀。 时间戳、 进程 id 和文件扩展名自动添加了时创建日志。 使用`stdout`作为文件名称前缀，典型的日志文件名为*stdout_20180205184032_5412.log*。 
-1. 保存已更新*web.config*文件。
-1. 向应用程序发出的请求。
-1. 导航到*日志*文件夹。 查找并打开最新的标准输出日志。
-1. 研究错误的日志。
+1. 在托管系统上导航到站点的部署文件夹。
+1. 如果 logs 文件夹不存在，请创建该文件夹。 有关如何启用 MSBuild 以在部署中自动创建 logs 文件夹的说明，请参阅[目录结构](xref:host-and-deploy/directory-structure)主题。
+1. 编辑 web.config 文件。 将“stdoutLogEnabled”设置为 `true` 并更改“stdoutLogFile”路径以指向 logs 文件夹（例如，`.\logs\stdout`）。 路径中的 `stdout` 是日志文件名的前缀。 创建日志时，将自动添加时间戳、进程 ID 和文件扩展名。 如果将 `stdout` 用作文件名的前缀，典型的日志文件将命名为“stdout_20180205184032_5412.log”。 
+1. 保存已更新的 web.config 文件。
+1. 向应用发出请求。
+1. 导航到 logs 文件夹。 查找并打开最新的 stdout 日志。
+1. 研究日志以查找错误。
 
-**重要提示！** 禁用完成故障排除时，日志记录 stdout。
+**重要提示！** 故障排除完成后，禁用 stdout 日志记录。
 
-1. 编辑*web.config*文件。
-1. 设置**stdoutLogEnabled**到`false`。
+1. 编辑 web.config 文件。
+1. 将“stdoutLogEnabled”设置为 `false`。
 1. 保存该文件。
 
 > [!WARNING]
-> 若要禁用 stdout 日志可能会导致应用程序或服务器失败。 日志文件大小或创建的日志文件数没有限制。
+> 无法禁用 stdout 日志可能会导致应用或服务器出现故障。 日志文件大小或创建的日志文件数没有限制。
 >
-> 对于例程日志记录在 ASP.NET Core 应用程序，使用限制日志文件大小和旋转日志的日志记录库。 有关详细信息，请参阅[第三方日志记录提供程序](xref:fundamentals/logging/index#third-party-logging-providers)。
+> 对于 ASP.NET Core 应用中的例程日志记录，使用限制日志文件大小和旋转日志的日志记录库。 有关详细信息，请参阅[第三方日志记录提供程序](xref:fundamentals/logging/index#third-party-logging-providers)。
 
-## <a name="enabling-the-developer-exception-page"></a>启用开发人员异常页
+## <a name="enabling-the-developer-exception-page"></a>启用开发人员异常页面
 
-`ASPNETCORE_ENVIRONMENT` [环境变量可以添加到 web.config](xref:host-and-deploy/aspnet-core-module#setting-environment-variables)在开发环境中运行应用程序。 只要环境不重写中的应用程序启动`UseEnvironment`主机生成器中，在设置环境变量允许[开发人员异常页](xref:fundamentals/error-handling)显示应用程序运行时。
+`ASPNETCORE_ENVIRONMENT` [环境变量可以添加到 web.config](xref:host-and-deploy/aspnet-core-module#setting-environment-variables) 以在开发环境中运行应用。 只要在应用启动时环境不被主机生成器上的 `UseEnvironment` 重写，设置环境变量就会在运行应用时显示“[开发人员异常页面](xref:fundamentals/error-handling)”。
 
 ```xml
 <aspNetCore processPath="dotnet"
@@ -128,41 +129,41 @@ ASP.NET 核心模块配置了默认值*startupTimeLimit*的 120 秒。 时保留
 </aspNetCore>
 ```
 
-设置环境变量中的`ASPNETCORE_ENVIRONMENT`建议只在过渡和测试不公开到 Internet 的服务器上使用。 删除从该环境变量*web.config*诊断后的文件。 有关设置环境变量的信息*web.config*，请参阅[environmentVariables 子元素的 aspNetCore](xref:host-and-deploy/aspnet-core-module#setting-environment-variables)。
+仅建议在未向 Internet 公开的暂存服务器和测试服务器上设置 `ASPNETCORE_ENVIRONMENT` 的环境变量。 在故障排除后从 web.config 文件中删除环境变量。 有关设置 web.config 中的环境变量的信息，请参阅 [aspNetCore 的 environmentVariables 子元素](xref:host-and-deploy/aspnet-core-module#setting-environment-variables)。
 
-## <a name="common-startup-errors"></a>常见的启动错误 
+## <a name="common-startup-errors"></a>常见启动错误 
 
-请参阅[ASP.NET 核心常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)。 中的参考主题介绍了大部分常见防止应用程序启动的问题。
+请参阅 [ASP.NET Core 常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)。 参考主题介绍了阻止应用启动的大部分常见问题。
 
-## <a name="slow-or-hanging-app"></a>慢速或悬挂应用程序
+## <a name="slow-or-hanging-app"></a>应用缓慢或挂起
 
-当应用程序响应速度很慢或挂起的请求时，获取并分析[转储文件](/visualstudio/debugger/using-dump-files)。 可以使用任何以下工具获取转储文件：
+当应用响应缓慢或挂起请求时，获取并分析[转储文件](/visualstudio/debugger/using-dump-files)。 可以使用以下任何工具获取转储文件：
 
 * [ProcDump](/sysinternals/downloads/procdump)
 * [DebugDiag](https://www.microsoft.com/download/details.aspx?id=49924)
-* WinDbg:[下载适用于 Windows 调试工具](https://developer.microsoft.com/windows/hardware/download-windbg)，[调试使用 WinDbg](/windows-hardware/drivers/debugger/debugging-using-windbg)
+* WinDbg：[下载 Windows 调试工具](https://developer.microsoft.com/windows/hardware/download-windbg)，[使用 WinDbg 进行调试](/windows-hardware/drivers/debugger/debugging-using-windbg)
 
 ## <a name="remote-debugging"></a>远程调试
 
-请参阅[在 Visual Studio 2017 远程 IIS 计算机上的远程调试 ASP.NET Core](/visualstudio/debugger/remote-debugging-aspnet-on-a-remote-iis-computer) Visual Studio 文档中。
+请参阅 Visual Studio 文档中的[在 Visual Studio 2017 中远程调试远程 IIS 计算机上的 ASP.NET Core](/visualstudio/debugger/remote-debugging-aspnet-on-a-remote-iis-computer)。
 
 ## <a name="application-insights"></a>Application Insights
 
-[Application Insights](/azure/application-insights/)提供从托管的 IIS，包括错误日志记录和报告功能的应用程序的遥测。 Application Insights 只能针对在应用程序启动时应用的日志记录功能变得可用之后发生的错误报告。 有关详细信息，请参阅[Application Insights for ASP.NET Core](/azure/application-insights/app-insights-asp-net-core)。
+[Application Insights](/azure/application-insights/) 提供来自 IIS 托管的应用的遥测，包括错误日志记录和报告功能。 当应用的日志记录功能变得可用时，Application Insights 只能报告应用启动后出现的错误。 有关详细信息，请参阅[用于 ASP.NET Core 的 Application Insights](/azure/application-insights/app-insights-asp-net-core)。
 
 ## <a name="additional-troubleshooting-advice"></a>其他故障排除建议
 
-有时会正常运行的应用程序升级任一.NET 核心 SDK 在应用内的开发计算机或包版本之后立即失败。 在某些情况下，不同的包可能在执行主要升级时中断应用。 可以按以下说明来修复大部分这些问题：
+有时，正常运行的应用在开发计算机上升级 .NET Core SDK 或在应用内升级包版本后立即出现故障。 在某些情况下，不同的包可能在执行主要升级时中断应用。 可以按照以下说明来修复其中大部分问题：
 
-1. 删除*bin*和*obj*文件夹。
-1. 在包的缓存清除*%userprofile%\\.nuget\\包*和*%localappdata%\\Nuget\\v3 缓存*。
-1. 还原和重新生成项目。
-1. 确认已完全重新部署应用程序之前删除以前部署到服务器上。
+1. 删除 bin 和 obj 文件夹。
+1. 清除 %UserProfile%\\.nuget\\packages 和 %LocalAppData%\\Nuget\\v3-cache 中的包缓存。
+1. 还原并重新生成项目。
+1. 确认在重新部署应用之前已完全删除服务器上的先前部署。
 
 > [!TIP]
-> 清除包缓存的简便方法是执行`dotnet nuget locals all --clear`从命令提示符。
+> 清除包缓存的简便方法是从命令提示符执行 `dotnet nuget locals all --clear`。
 > 
-> 清除包缓存还可通过使用[nuget.exe](https://www.nuget.org/downloads)工具并执行命令`nuget locals all -clear`。 *nuget.exe*必须从单独获取和不与 Windows 桌面操作系统的捆绑的安装[NuGet 网站](https://www.nuget.org/downloads)。
+> 清除包缓存还可通过使用 [nuget.exe](https://www.nuget.org/downloads) 工具并执行命令 `nuget locals all -clear` 来完成。 *nuget.exe* 不是与 Windows 桌面操作系统的捆绑安装，必须从 [NuGet 网站](https://www.nuget.org/downloads)中单独获取。
 
 ## <a name="additional-resources"></a>其他资源
 
