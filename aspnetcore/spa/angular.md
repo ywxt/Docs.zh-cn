@@ -3,6 +3,7 @@ title: 通过 ASP.NET Core 使用 Angular 项目模板
 author: SteveSandersonMS
 description: 了解如何开始使用适用于 Angular 和 Angular CLI 的 ASP.NET Core 单页应用程序 (SPA) 项目模板。
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 02/21/2018
@@ -11,17 +12,21 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: b4e48f40c3d4e3167e7fdb3534d2c33b3544592c
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 244fece83279ae4d9ead9b345fcdd66ad6ed4225
+ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2018
-ms.locfileid: "34094293"
+ms.lasthandoff: 05/27/2018
+ms.locfileid: "34555425"
 ---
 # <a name="use-the-angular-project-template-with-aspnet-core"></a>通过 ASP.NET Core 使用 Angular 项目模板
 
+::: moniker range="= aspnetcore-2.0"
+
 > [!NOTE]
 > 本文档不涉及 ASP.NET Core 2.0 中包含的 Angular 项目模板。 本文介绍的是你可以手动更新的新版 Angular 模板。 该模板默认包含在 ASP.NET Core 2.1 中。
+
+::: moniker-end
 
 更新的 Angular 项目模板为使用 Angular 和 Angular CLI 实现丰富的客户端用户界面 (UI) 的 ASP.NET Core 应用提供了便捷起点。
 
@@ -60,7 +65,7 @@ Now listening on: http://localhost:<port>
 
 在浏览器中导航到此 URL。
 
-该应用在后台启动 Angular CLI 服务器的一个实例。 记录类似于以下内容的消息：<em>NG Live 开发服务器正在 localhost:&lt;otherport&gt; 上进行侦听，在 http://localhost:&lt;otherport&gt;/</em> 上打开浏览器。 忽略此消息&mdash;这<strong>不是</strong>组合 ASP.NET Core 和 Angular CLI 应用的 URL。
+该应用在后台启动 Angular CLI 服务器的一个实例。 记录类似于以下内容的消息：*NG Live 开发服务器正在 localhost:&lt;otherport&gt; 上进行侦听，在 http://localhost:&lt;otherport&gt;/* 上打开浏览器。 忽略此消息&mdash;这**不是**组合 ASP.NET Core 和 Angular CLI 应用的 URL。
 
 ---
 
@@ -138,7 +143,7 @@ npm install --save <package_name>
 
 [!code-csharp[](sample/AngularServerSideRendering/Startup.cs?name=snippet_Call_UseSpa&highlight=5-12)]
 
-在开发模式下，此代码尝试通过运行在 ClientApp\package.json 中定义的脚本 `build:ssr` 来构建 SSR 捆绑包。 这将生成一个名为 `ssr` 的 Angular 应用，该应用尚未定义。 
+在开发模式下，此代码尝试通过运行在 ClientApp\package.json 中定义的脚本 `build:ssr` 来构建 SSR 捆绑包。 这将生成一个名为 `ssr` 的 Angular 应用，该应用尚未定义。
 
 在 ClientApp/.angular-cli.json 中 `apps` 数组的末尾，定义一个名为 `ssr` 的额外应用。 使用以下选项：
 
@@ -150,7 +155,7 @@ npm install --save <package_name>
 
 [!code-json[](sample/AngularServerSideRendering/ClientApp/src/tsconfig.server.json)]
 
-该文件将 Angular 的 AoT 编译器配置为查找名为 `app.server.module` 的模块。 通过在 ClientApp/src/app/app.server.module.ts （与现有 app.module.ts 同时存在）处创建新文件来添加该模块，其中包含以下内容： 
+该文件将 Angular 的 AoT 编译器配置为查找名为 `app.server.module` 的模块。 通过在 ClientApp/src/app/app.server.module.ts （与现有 app.module.ts 同时存在）处创建新文件来添加该模块，其中包含以下内容：
 
 [!code-typescript[](sample/AngularServerSideRendering/ClientApp/src/app/app.server.module.ts)]
 
@@ -160,7 +165,7 @@ npm install --save <package_name>
 
 [!code-typescript[](sample/AngularServerSideRendering/ClientApp/src/main.server.ts)]
 
-此文件的代码是 ASP.NET Core 在运行添加到 Startup 类的 `UseSpaPrerendering` 中间件时为每个请求执行的内容。 它处理从 .NET 代码（例如所请求的 URL）收到的 `params`，并调用 Angular SSR API 以获取生成的 HTML。 
+此文件的代码是 ASP.NET Core 在运行添加到 Startup 类的 `UseSpaPrerendering` 中间件时为每个请求执行的内容。 它处理从 .NET 代码（例如所请求的 URL）收到的 `params`，并调用 Angular SSR API 以获取生成的 HTML。
 
 严格来说，这足以在开发模式下启用 SSR。 重要的是做出最后的更改，以便应用在发布时能够正常工作。 在应用的主 .csproj 文件中，将 `BuildServerSideRenderer` 属性值设置为 `true`：
 
