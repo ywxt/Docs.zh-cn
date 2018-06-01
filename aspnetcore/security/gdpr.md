@@ -10,17 +10,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/gdpr
-ms.openlocfilehash: dc1724e8a78c25d3697d14ad784ce853737681f2
-ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
+ms.openlocfilehash: 92a7000f4f8e4c2097065cb530fe106ef0e98545
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34688622"
 ---
 # <a name="eu-general-data-protection-regulation-gdpr-support-in-aspnet-core"></a>在 ASP.NET Core 欧洲常规数据保护法规 (GDPR) 支持
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-ASP.NET Core 提供 Api 和模板，以帮助满足一些[UE 常规数据保护法规 (GDPR)](https://www.eugdpr.org/)要求：
+ASP.NET Core 提供 Api 和模板，以帮助满足一些[欧洲常规数据保护法规 (GDPR)](https://www.eugdpr.org/)要求：
 
 * 项目模板包含扩展点以及可以将替换为您的隐私和 cookie 的使用策略的存根的标记。
 * 用于存储的个人信息中，cookie 同意功能允许你以寻求 （和跟踪） 同意的情况下从你的用户。 如果用户不与数据收集同意和应用程序设置[CheckConsentNeeded](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions.checkconsentneeded?view=aspnetcore-2.1#Microsoft_AspNetCore_Builder_CookiePolicyOptions_CheckConsentNeeded)到`true`，不重要 cookie 将不会发送到浏览器。
@@ -38,7 +39,7 @@ Razor 页和 MVC 项目模板创建的项目包括以下 GDPR 支持：
 
 * [CookiePolicyOptions](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions?view=aspnetcore-2.0)和[UseCookiePolicy](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyappbuilderextensions.usecookiepolicy?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_CookiePolicyAppBuilderExtensions_UseCookiePolicy_Microsoft_AspNetCore_Builder_IApplicationBuilder_)中设置`Startup`。
 * *_CookieConsentPartial.cshtml* [分部视图](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper)。
-* *Pages/Privacy.cshtml*或*Home/rivacy.cshtml*视图提供页详细介绍站点的隐私策略。 *_CookieConsentPartial.cshtml*文件生成隐私页的链接。
+* *Pages/Privacy.cshtml*或*Home/Privacy.cshtml*视图提供页详细介绍站点的隐私策略。 *_CookieConsentPartial.cshtml*文件生成隐私页的链接。
 * 对于使用单个用户帐户创建的应用程序，管理页提供了用于下载和删除链接[个人用户数据](#pd)。
 
 ### <a name="cookiepolicyoptions-and-usecookiepolicy"></a>CookiePolicyOptions 和 UseCookiePolicy
