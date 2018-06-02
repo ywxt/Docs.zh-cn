@@ -11,12 +11,12 @@ ms.prod: aspnet-core
 ms.topic: tutorial
 ms.technology: aspnet
 uid: signalr/get-started
-ms.openlocfilehash: eb14fbf42f5c18ccdc3ca42af8fd8bcfaa15c623
-ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
+ms.openlocfilehash: 880abd87805990baf8dd977c340a60582e54d2df
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2018
-ms.locfileid: "34688583"
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729490"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>要开始使用 SignalR 在 ASP.NET Core 上
 
@@ -75,7 +75,7 @@ Visual Studio 包含`Microsoft.AspNetCore.SignalR`作为的一部分包含其服
     npm install @aspnet/signalr
     ```     
 
-4. 复制*signalr.js*文件从*node_modules\\ @aspnet\signalr\dist\browser* 到*lib*项目文件夹中的。
+4. 在创建新的文件夹名为"signalr" *lib*项目文件夹中的。 然后将复制*signalr.js*文件从*node_modules\\ @aspnet\signalr\dist\browser* 到此文件夹。
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
@@ -102,7 +102,7 @@ Visual Studio 包含`Microsoft.AspNetCore.SignalR`作为的一部分包含其服
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 
-1. 将类添加到项目中，通过选择**文件** > **新建** > **文件**并选择**Visual C# 类**。
+1. 将类添加到项目中，通过选择**文件** > **新建** > **文件**并选择**Visual C# 类**。 命名该文件*ChatHub*。 
 
 2. 继承自`Microsoft.AspNetCore.SignalR.Hub`。 `Hub`类包含属性和管理连接和组，以及发送和接收数据的事件。
 

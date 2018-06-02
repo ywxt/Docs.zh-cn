@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/scaffold-identity
-ms.openlocfilehash: 7527d3c075fd845ac804d4cfd56469a0679ed7e8
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: a43b7bbaf1f90d3373b3846bc3f4f32be6b80bd4
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729605"
 ---
 # <a name="scaffold-identity-in-aspnet-core-projects"></a>ASP.NET 核心项目中的基架标识
 
@@ -26,7 +27,7 @@ ASP.NET 核心 2.1 及更高版本提供了[ASP.NET 核心标识](xref:security/
 
 虽然 scaffolder 生成大部分所需的代码，但你将需要更新你的项目以完成该过程。 本文档说明完成标识基架更新所需的步骤。
 
-当运行时标识 scaffolder 时， *ScaffoldingReadme.txt*在项目目录中创建文件。 *ScaffoldingReadme.txt*文件包含什么具有需要完成标识基架更新的一般说明。 本文档包含比读取的更完整说明*ScaffoldingReadme.txt*文件。
+当运行时标识 scaffolder 时， *ScaffoldingReadme.txt*在项目目录中创建文件。 *ScaffoldingReadme.txt*文件包含有关需要哪些条件完成标识基架更新的常规说明。 本文档包含比读取的更完整说明*ScaffoldingReadme.txt*文件。
 
 我们建议使用源代码管理系统，它显示文件的差异，并允许你地将带外更改。 运行标识 scaffolder 后检查所做的更改。
 
@@ -47,7 +48,7 @@ ASP.NET 核心 2.1 及更高版本提供了[ASP.NET 核心标识](xref:security/
 <!--
 set projNam=RPnoAuth
 set projType=razor
-set version=2.1.0-rc1-final
+set version=2.1.0
 
 dotnet new %projType% -o %projNam%
 cd %projNam%
@@ -76,12 +77,13 @@ dotnet ef database update
 
 [!code-html[Main](scaffold-identity/sample/_Layout.cshtml?highlight=37)]
 
-## <a name="scaffold-identity-into-a-razor-project-with-individual-authorization"></a>到具有单个授权 Razor 项目的基架标识
+## <a name="scaffold-identity-into-a-razor-project-with-authorization"></a>到与授权 Razor 项目的基架标识
 
 <!--
-dotnet new razor -au Individual -o RPauth
+Use >=2.1: dotnet new webapp -au Individual -o RPauth
+Use = 2.0: dotnet new razor -au Individual -o RPauth
 cd RPauth
-dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design -v "2.1.0-rc1-final"
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 2.1.0
 dotnet restore
 dotnet aspnet-codegenerator identity -dc RPauth.Data.ApplicationDbContext --files Account.Register
 -->
@@ -94,7 +96,7 @@ dotnet aspnet-codegenerator identity -dc RPauth.Data.ApplicationDbContext --file
 <!--
 set projNam=MvcNoAuth
 set projType=mvc
-set version=2.1.0-rc1-final
+set version=2.1.0
 
 dotnet new %projType% -o %projNam%
 cd %projNam%
@@ -123,12 +125,12 @@ dotnet ef database update
 
 [!INCLUDE[](~/includes/scaffold-identity/hsts.md)]
 
-## <a name="scaffold-identity-into-an-mvc-project-with-individual-authorization"></a>到具有单个授权的 MVC 项目的基架标识
+## <a name="scaffold-identity-into-an-mvc-project-with-authorization"></a>到具有授权的 MVC 项目的基架标识
 
 <!--
 dotnet new mvc -au Individual -o MvcAuth
 cd MvcAuth
-dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design -v "2.1.0-rc1-final"
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 2.1.0
 dotnet restore
 dotnet aspnet-codegenerator identity -dc MvcAuth.Data.ApplicationDbContext --files Account.Register
 -->

@@ -12,11 +12,12 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: cee5fded4d8005df6054ab921f39882c3e5f21b8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5b3b9b82fa64155c1dfd2a49649def10d7dae87e
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729176"
 ---
 <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>在 ASP.NET MVC 4 中使用异步方法
 ====================
@@ -43,7 +44,7 @@ ASP.NET MVC 4[控制器](https://msdn.microsoft.com/library/system.web.mvc.contr
 
 ## <a name="processing-asynchronous-requests"></a>处理异步请求
 
-在 web 应用程序看到大量的启动时的并发请求或具有突发负载 （其中并发可增加突然），使这些 web 服务调用异步将增加你的应用程序的响应能力。 异步请求花费的时间来处理为同步的请求相同的量。 例如，如果请求将发出 web 服务调用需要两秒钟来完成，请求采用两个秒是否同步或异步执行。 但是，在过程的异步调用线程不受阻止等待完成的第一个请求时响应其他请求。 因此，异步请求阻止请求排队和线程池增长时有很多并发请求，以调用长时间运行的操作。
+在 web 应用程序，请参阅大量启动时的并发请求或具有突发负载 （其中并发可增加突然），使这些 web 服务调用异步将增加应用程序的响应的能力。 异步请求花费的时间来处理为同步的请求相同的量。 例如，如果请求将发出 web 服务调用需要两秒钟来完成，请求采用两个秒是否同步或异步执行。 但是，在过程的异步调用线程不受阻止等待完成的第一个请求时响应其他请求。 因此，异步请求阻止请求排队和线程池增长时有很多并发请求，以调用长时间运行的操作。
 
 ## <a id="ChoosingSyncVasync"></a>  选择同步或异步操作方法
 
@@ -61,7 +62,7 @@ ASP.NET MVC 4[控制器](https://msdn.microsoft.com/library/system.web.mvc.contr
 - 操作是网络绑定或我/O 绑定而不是 CPU 绑定。
 - 并行度是代码的比简单更重要。
 - 你想要提供一种机制，允许取消长时间运行请求的用户。
-- 当切换出的线程的好处权重上下文切换的成本。 一般情况下，你应方法异步在不执行任何工作时在 ASP.NET 请求线程上等待同步方法。 通过进行以下调用异步，ASP.NET 请求线程已不停止等待完成的 web 服务请求时任何工作。
+- 当切换线程的好处超过带来的上下文切换的成本。 一般情况下，你应方法异步在不执行任何工作时在 ASP.NET 请求线程上等待同步方法。 通过进行以下调用异步，ASP.NET 请求线程已不停止等待完成的 web 服务请求时任何工作。
 - 测试显示阻止操作的性能瓶颈的站点，并且 IIS，可以通过使用异步方法对这些阻塞调用服务更多的请求。
 
   可下载的示例演示如何有效地使用异步操作方法。 提供的示例旨在提供简单的 ASP.NET MVC 4 使用.NET 4.5 中的异步编程的演示。 该示例不是为 ASP.NET MVC 中的异步编程参考体系结构。 在示例程序调用[ASP.NET Web API](../../../web-api/index.md)反过来调用的方法[Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx)以模拟长时间运行 web 服务调用。 大多数生产应用程序将不会显示此类到使用异步操作方法的明显优势。   
@@ -163,7 +164,7 @@ ASP.NET MVC 4[控制器](https://msdn.microsoft.com/library/system.web.mvc.contr
 
 - Windows 7、 Windows Vista 和所有 Windows 客户端操作系统具有最多 10 个并发请求。 你将需要 Windows 服务器操作系统以查看在高负荷的异步方法的好处。
 - 向 IIS 注册.NET 4.5，从提升的命令提示符：  
-  %windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet\_regiis -i  
+  %windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet\_regiis-i  
   请参阅[ASP.NET IIS 注册工具 (Aspnet\_regiis.exe)](https://msdn.microsoft.com/library/k6h9cz8h.aspx)
 - 你可能需要增加[HTTP.sys](https://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture)队列限制从 1000 到 5000 的默认值。 如果设置得太低，可能会看到[HTTP.sys](https://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture)拒绝的 HTTP 503 状态的请求。 若要更改 HTTP.sys 队列限制：
 

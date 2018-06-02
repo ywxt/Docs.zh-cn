@@ -7,11 +7,12 @@ ms.date: 11/03/2016
 ms.prod: asp.net-core
 ms.topic: article
 uid: security/authentication/otherlogins
-ms.openlocfilehash: ed42f0f61c8ed7e04216828ff5a64c36fd028dc6
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 25c88ae2fdd210c827f3f71d90b1bcca164d86af
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729514"
 ---
 # <a name="short-survey-of-other-authentication-providers"></a>简短的调查的其他身份验证提供程序
 
@@ -46,3 +47,7 @@ ms.lasthandoff: 03/22/2018
 * 设置**SoundCloud**登录： [ https://soundcloud.com/you/apps/new ](https://soundcloud.com/you/apps/new)。 请参阅[官方步骤](https://developers.soundcloud.com/blog/we-love-oauth-2)。
 
 * 设置**VK**登录： [ https://vk.com/apps?act=manage ](https://vk.com/apps?act=manage)。 请参阅[官方步骤](https://vk.com/pages?oid=-17680044&p=Authorizing_Sites)。
+
+## <a name="multiple-authentication-providers"></a>多个身份验证提供程序
+
+[!INCLUDE[](~/includes/chain-auth-providers.md)]

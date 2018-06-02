@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/individual
-ms.openlocfilehash: 40715debb48c0a7121ce84d7843b8517b0973e74
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 699def0133f53b922477ac294f70db41998945ef
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729543"
 ---
 # <a name="articles-based-on-aspnet-core-projects-created-with-individual-user-accounts"></a>基于 ASP.NET 核心项目使用单个用户帐户创建项目
 
@@ -21,11 +22,25 @@ ASP.NET 核心标识包含在 Visual Studio 中使用"单个用户帐户"选项�
 
 中使用的.NET 核心 CLI 中可用的身份验证模板`-au Individual`:
 
+::: moniker range=">= aspnetcore-2.1"
+
+```console
+dotnet new mvc -au Individual
+dotnet new webapi -au Individual
+dotnet new webapp -au Individual
+```
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
 ```console
 dotnet new mvc -au Individual
 dotnet new webapi -au Individual
 dotnet new razor -au Individual
 ```
+
+::: moniker-end
 
 以下文章演示了如何使用 ASP.NET Core 使用单个用户帐户的模板中生成的代码：
 
