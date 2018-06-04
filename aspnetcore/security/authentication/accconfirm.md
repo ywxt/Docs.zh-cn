@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 397d8bf04abf6be811ad8c91d52565251ac61678
-ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
+ms.openlocfilehash: b6dbe234973431448c18d3cc82a6ac98d4f53a3b
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2018
-ms.locfileid: "34688965"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34730446"
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>帐户确认和 ASP.NET Core 中的密码恢复
 
@@ -110,7 +110,7 @@ Visual studio:
 <a name="prevent-login-at-registration"></a>
 ## <a name="require-email-confirmation"></a>需要电子邮件确认
 
-它是一种最佳做法以确认新的用户注册的电子邮件。 电子邮件确认有助于验证它们不模拟其他人 （即，它们尚未注册与其他人的电子邮件）。 假设有论坛，并且你想阻止"yli@example.com"发件人将注册为"nolivetto@contoso.com。" 而无需电子邮件确认"nolivetto@contoso.com"无法接收来自您的应用程序不需要的电子邮件。 假设用户意外注册为"ylo@example.com"和未注意到"yli"的拼写错误。 它们将无法使用恢复密码，因为此应用程序没有正确的电子邮件。 电子邮件确认从机器人提供有限的保护。 电子邮件确认不免受恶意用户的多个电子邮件帐户与提供保护。
+它是一种最佳做法以确认新的用户注册的电子邮件。 电子邮件确认有助于验证它们不模拟其他人 （即，它们尚未注册与其他人的电子邮件）。 假设有论坛，并且你想阻止"yli@example.com"发件人将注册为"nolivetto@contoso.com"。 而无需电子邮件确认"nolivetto@contoso.com"无法接收来自您的应用程序不需要的电子邮件。 假设用户意外注册为"ylo@example.com"和未注意到"yli"的拼写错误。 它们将无法使用恢复密码，因为此应用程序没有正确的电子邮件。 电子邮件确认从机器人提供有限的保护。 电子邮件确认不免受恶意用户的多个电子邮件帐户与提供保护。
 
 你通常想要使不能在有确认电子邮件之前发布到网站的任何数据的新用户。
 
@@ -307,7 +307,7 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 
 ## <a name="enable-account-confirmation-after-a-site-has-users"></a>启用帐户确认后某个站点具有用户
 
-启用站点上与用户的帐户确认锁定更改所有现有用户。 现有用户被锁定，因为他们的帐户不确认。 若要解决退出用户锁定，请使用以下方法之一：
+启用站点上与用户的帐户确认锁定更改所有现有用户。 现有用户被锁定，因为他们的帐户不确认。 若要解决现有用户锁定，请使用以下方法之一：
 
-* 更新数据库，将标记为正在确认的所有现有用户
+* 更新数据库，将标记为正在确认的所有现有用户。
 * 确认正在退出用户。 例如，批处理-发送电子邮件中的标注确认链接。
