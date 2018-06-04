@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26530146"
 ---
 <a name="working-with-images-in-an-aspnet-web-pages-razor-site"></a>使用 ASP.NET Web 页 (Razor) 站点中的图像
 ====================
@@ -62,7 +63,7 @@ ms.lasthandoff: 11/10/2017
 
 此部分中的过程演示如何在运行过程中用户在其中指定图像文件名称从映像名称的列表中显示图像。 他们选择的映像名称从下拉列表中，并且当它们提交页时，将显示它们所选择的映像。
 
-![[image]] (9-working-with-images/_static/image1.jpg "ch9images 1.jpg")
+![[image]](9-working-with-images/_static/image1.jpg "ch9images 1.jpg")
 
 1. 在 WebMatrix 中，创建新网站。
 2. 添加一个名为的新页*DynamicImage.cshtml*。
@@ -92,7 +93,7 @@ ms.lasthandoff: 11/10/2017
 
 前面的示例演示如何动态，显示图像，但它仅使用已在网站的映像的工作。 此过程演示如何让用户上载的映像，然后显示在页上。 在 ASP.NET 中，你能够在运行过程中使用的映像`WebImage`帮助器，有可让你创建、 处理和保存映像的方法。 `WebImage`帮助器支持所有常见 web 图像文件类型，包括 *.jpg*， *.png*，和 *.bmp*。 在整篇文章中，你将使用 *.jpg*映像，但你可以使用任何图像类型。
 
-![[image]] (9-working-with-images/_static/image2.jpg "ch9images 2.jpg")
+![[image]](9-working-with-images/_static/image2.jpg "ch9images 2.jpg")
 
 1. 添加新的页并将其命名*UploadImage.cshtml*。
 2. 在页中的现有内容替换为以下： 
@@ -144,7 +145,7 @@ ms.lasthandoff: 11/10/2017
 
 此过程演示如何调整已上载的图像创建缩略图，然后保存的网站中的缩略图和原始图像大小。 可以显示缩略图在页面上，并使用超链接将用户重定向到的全尺寸的图像。
 
-![[image]] (9-working-with-images/_static/image3.jpg "ch9images 3.jpg")
+![[image]](9-working-with-images/_static/image3.jpg "ch9images 3.jpg")
 
 1. 添加一个名为的新页*Thumbnail.cshtml*。
 2. 在*映像*文件夹中，创建名为的子*拇指*。
@@ -165,7 +166,7 @@ ms.lasthandoff: 11/10/2017
 
 `WebImage`帮助器还可以翻转和旋转图像。 此过程演示如何从服务器获取映像、 （垂直） 倒置翻转图像、 将其保存，然后显示在页面上的翻转的图像。 在此示例中，你仅用在服务器已有的文件 (*Photo2.jpg*)。 在实际应用中，你可能将翻转图像动态，如你在前面的示例获取其名称。
 
-![[image]] (9-working-with-images/_static/image4.jpg "ch9images 4.jpg")
+![[image]](9-working-with-images/_static/image4.jpg "ch9images 4.jpg")
 
 1. 添加一个名为的新页*FlipImage.cshtml*。
 2. 在页中的现有内容替换为以下： 
@@ -189,7 +190,7 @@ ms.lasthandoff: 11/10/2017
 
 当将映像添加到你的网站时，你可能想要添加到映像水印，然后将其保存或将其显示在页面上。 人们通常使用水印，将版权信息添加到映像，或要播发其公司名称。
 
-![[image]] (9-working-with-images/_static/image5.jpg "ch9images 5.jpg")
+![[image]](9-working-with-images/_static/image5.jpg "ch9images 5.jpg")
 
 1. 添加一个名为的新页*Watermark.cshtml*。
 2. 在页中的现有内容替换为以下： 
@@ -206,7 +207,7 @@ ms.lasthandoff: 11/10/2017
 
 而不是使用水印文本，你可以使用另一个映像。 人们有时作为水印，使用图像，例如公司徽标或它们而不是文本中使用水印图像的版权信息。
 
-![[image]] (9-working-with-images/_static/image6.jpg "ch9images 6.jpg")
+![[image]](9-working-with-images/_static/image6.jpg "ch9images 6.jpg")
 
 1. 添加一个名为的新页*ImageWatermark.cshtml*。
 2. 将映像添加到*映像*文件夹，你可以用作徽标，并且重命名图像*MyCompanyLogo.jpg*。 此映像应设置为 80 像素宽和 20 像素高时你可以清楚地查看的映像。
