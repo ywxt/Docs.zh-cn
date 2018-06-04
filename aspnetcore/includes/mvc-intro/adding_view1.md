@@ -8,6 +8,6 @@
 
 当前，`Index` 方法返回带有在控制器类中硬编码的消息的字符串。 在 `HelloWorldController` 类中，将 `Index` 方法替换为以下代码：
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_4)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_4)]
 
 上述代码返回 `View` 对象。 它使用视图模板对浏览器生成 HTML 响应。 类似上述 `Index` 方法的控制器方法（也称为操作方法）通常返回 [IActionResult](/dotnet/api/microsoft.aspnetcore.mvc.iactionresult)（或派生自 `ActionResult` 的类），而非类似字符串的类型。

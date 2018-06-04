@@ -1,14 +1,14 @@
 使用以下内容替换 Razor 视图文件 Views/HelloWorld/Index.cshtml 的内容：
 
-[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Index.cshtml)]
+[!code-HTML[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Index.cshtml)]
 
 导航到 `http://localhost:xxxx/HelloWorld`。 `HelloWorldController` 中的 `Index` 方法作用不大；它运行 `return View();` 语句，指定此方法应使用视图模板文件来呈现对浏览器的响应。 因为没有显式指定视图模板文件的名称，所以 MVC 默认使用 /Views/HelloWorld 文件夹中的 Index.cshtml 视图文件。 下面图片显示了视图中硬编码的 字符串“Hello from our View Template!”
 
-![浏览器窗口](../../tutorials/first-mvc-app/adding-view/_static/hell_template.png)
+![浏览器窗口](~/tutorials/first-mvc-app/adding-view/_static/hell_template.png)
 
 如果浏览器窗口较小（例如在移动设备上），则可能需要在右上角切换（点击）[Bootstrap 导航按钮](http://getbootstrap.com/components/#navbar)以查看“首页”、“关于”和“联系人”链接。
 
-![突出显示 Bootstrap 导航按钮的浏览器窗口](../../tutorials/first-mvc-app/adding-view/_static/1.png)
+![突出显示 Bootstrap 导航按钮的浏览器窗口](~/tutorials/first-mvc-app/adding-view/_static/1.png)
 
 ## <a name="changing-views-and-layout-pages"></a>更改视图和布局页面
 
@@ -20,16 +20,21 @@
 
 在标题元素中，将 `MvcMovie` 更改为 `Movie App`。 将布局模板中的定位文本从 `MvcMovie` 更改为 `Movie App`，并将控制器从 `Home` 更改为 `Movies`，如下所示：
 
-注意：ASP.NET Core 2.0 版本略有不同。 它不包含 `@inject ApplicationInsights` 和 `@Html.Raw(JavaScriptSnippet.FullScript)`。
+::: moniker range="<= aspnetcore-2.0"
+[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
 
-[!code-html[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout21.cshtml?highlight=6,29)]
+::: moniker-end
 
 >[!WARNING]
 > 我们尚未实现 `Movies` 控制器，所以如果单击此链接，将收到 404（未找到）错误。
 
-保存更改并点击“关于”链接。 请注意浏览器选项卡上的标题现在显示的是**“关于 - 电影应用”**，而不是**“关于 - Mvc 电影”**: 
+保存更改并点击“关于”链接。 请注意浏览器选项卡上的标题现在显示的是 **“关于 - 电影应用”**，而不是 **“关于 - Mvc 电影”**: 
 
-![关于标签](../../tutorials/first-mvc-app/adding-view/_static/about2.png)
+![关于标签](~/tutorials/first-mvc-app/adding-view/_static/about2.png)
 
 点击“联系人”链接，请注意，标题和定位文本还会显示“电影应用”。 我们能够在布局模板中进行一次更改，让网站上的所有页面都反映新的链接文本和新标题。
 
@@ -75,7 +80,7 @@ Views/_ViewStart.cshtml 文件将 Views/Shared/_Layout.cshtml 文件引入到每
 
 还要注意，Index.cshtml 视图模板中的内容是如何与 Views/Shared/_Layout.cshtml 视图模板合并的，并且注意单个 HTML 响应被发送到了浏览器。 凭借布局模板可以很容易地对应用程序中所有页面进行更改。 若要了解更多信息，请参阅[布局](xref:mvc/views/layout)。
 
-![电影列表视图](../../tutorials/first-mvc-app/adding-view/_static/hell3.png)
+![电影列表视图](~/tutorials/first-mvc-app/adding-view/_static/hell3.png)
 
 但我们这一点点“数据”（在此示例中为“Hello from our View Template!” 消息）是硬编码的。 MVC 应用程序有一个“V”（视图），而你已有一个“C”（控制器），但还没有“M”（模型）。
 
@@ -89,7 +94,7 @@ Views/_ViewStart.cshtml 文件将 Views/Shared/_Layout.cshtml 文件引入到每
 
 返回到 HelloWorldController.cs 文件，并更改 `Welcome` 方法以将 `Message` 和 `NumTimes` 值添加到 `ViewData` 字典。 `ViewData` 字典是一个动态对象，这意味着你可以将任何所需的内容放在其中；只有将内容放在其中后 `ViewData` 对象才具有定义的属性。 [MVC 模型绑定系统](xref:mvc/models/model-binding)自动将命名参数（`name` 和 `numTimes`）从地址栏中的查询字符串映射到方法中的参数。 完整的 HelloWorldController.cs 文件如下所示：
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_5)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_5)]
 
 `ViewData` 字典对象包含将传递给视图的数据。 
 
@@ -97,7 +102,7 @@ Views/_ViewStart.cshtml 文件将 Views/Shared/_Layout.cshtml 文件引入到每
 
 在 Welcome.cshtml 视图模板中创建一个循环，显示“Hello” `NumTimes`。 使用以下内容替换 Views/HelloWorld/Welcome.cshtml 的内容：
 
-[!code-html[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Welcome.cshtml)]
+[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Welcome.cshtml)]
 
 保存更改并浏览到以下 URL：
 
@@ -105,7 +110,7 @@ Views/_ViewStart.cshtml 文件将 Views/Shared/_Layout.cshtml 文件引入到每
 
 数据取自 URL，并传递给使用 [MVC 模型绑定器](xref:mvc/models/model-binding)的控制器。 控制器将数据打包到 `ViewData` 字典中，并将该对象传递给视图。 然后，视图将数据作为 HTML 呈现给浏览器。
 
-![“关于”视图，显示了 Welcome 标签以及四个“Hello Rick”短语](../../tutorials/first-mvc-app/adding-view/_static/rick2.png)
+![“关于”视图，显示了 Welcome 标签以及四个“Hello Rick”短语](~/tutorials/first-mvc-app/adding-view/_static/rick2.png)
 
 在上面的示例中，我们使用 `ViewData` 字典将数据从控制器传递给视图。 稍后在本教程中，我们将使用视图模型将数据从控制器传递给视图。 传递数据的视图模型方法通常比 `ViewData` 字典方法更为优先。 有关详细信息，请参阅 [ViewModel vs ViewData vs ViewBag vs TempData vs Session in MVC](http://www.mytecbits.com/microsoft/dot-net/viewmodel-viewdata-viewbag-tempdata-mvc)（MVC 中 ViewModel、ViewData、ViewBag、TempData 和 Session 之间的比较）。
 

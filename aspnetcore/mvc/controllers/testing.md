@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/testing
-ms.openlocfilehash: 51b7a02c697807c9e3504b70f89370126ee0e781
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: a0073e4de361c37a6854ceaf54ffd9eaea4837d4
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34567044"
 ---
 # <a name="test-controller-logic-in-aspnet-core"></a>ASP.NET Core 中的测试控制器逻辑
 
@@ -74,7 +75,7 @@ ASP.NET MVC 应用的控制器应该是小型的，且重点应对用户界面�
 
 应用中的另一个控制器显示与特定集体讨论会话相关的信息。 它包括用于处理无效 ID 值的逻辑：
 
-[!code-csharp[](./testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?highlight=19,20,21,22,25,26,27,28)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?highlight=19,20,21,22,25,26,27,28)]
 
 控制器操作有三个要测试的事例，每个 `return` 语句对应一个：
 
@@ -100,7 +101,7 @@ ASP.NET MVC 应用的控制器应该是小型的，且重点应对用户界面�
 
 ## <a name="integration-testing"></a>集成测试
 
-完成[集成测试](../../testing/integration-testing.md)，可确保应用中各独立模块正确协作。 通常情况下，可以使用单位测试测试的内容也可以使用集成测试测试，但反之不成立。 但是，集成测试比单位测试慢。 因此，最好使用单位测试测试其可测内容，并在设计多个协作者时使用集成测试。
+完成[集成测试](xref:test/integration-tests)，可确保应用中各独立模块正确协作。 通常情况下，可以使用单位测试测试的内容也可以使用集成测试测试，但反之不成立。 但是，集成测试比单位测试慢。 因此，最好使用单位测试测试其可测内容，并在设计多个协作者时使用集成测试。
 
 虽然它们也可能起作用，但是 mock 对象很少在集成测试中使用。 在单位测试中，mock 对象是出于测试目的控制测试单位外协作者行为的有效方法。 在集成测试中，使用真实协作者确定整个子系统以正确的方式协同工作。
 

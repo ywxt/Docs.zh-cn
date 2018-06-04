@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 700ceb081b2067f932ce8ed08c45c62058775e33
-ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
+ms.openlocfilehash: 14c3d464773fe78a563a27776bfcd124c22df134
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34566953"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>在 ASP.NET Core 依赖注入
 
@@ -72,7 +73,7 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 
 ## <a name="using-framework-provided-services"></a>使用框架提供的服务
 
-`Startup` 类中的 `ConfigureServices` 方法负责定义应用程序将使用的服务，包括 Entity Framework Core 和 ASP.NET Core MVC 之类的平台功能。 最初，提供给 `ConfigureServices` 的 `IServiceCollection` 定义了以下服务（具体取决于[配置主机的方式](xref:fundamentals/hosting)）：
+`Startup` 类中的 `ConfigureServices` 方法负责定义应用程序将使用的服务，包括 Entity Framework Core 和 ASP.NET Core MVC 之类的平台功能。 最初，提供给 `ConfigureServices` 的 `IServiceCollection` 定义了以下服务（具体取决于[配置主机的方式](xref:fundamentals/host/index)）：
 
 | 服务类型 | 生存期 |
 | ----- | ------- |
@@ -235,7 +236,7 @@ public static void Main(string[] args)
 
 有作用域的服务由创建它们的容器释放。 如果作用域创建于根容器，则该服务的生存会有效地提升至单一实例，因为根容器只会在应用/服务关闭时将其释放。 验证服务作用域，将在调用 `BuildServiceProvider` 时收集这类情况。
 
-有关详细信息，请参阅[托管主题中的作用域验证](xref:fundamentals/hosting#scope-validation)。
+有关详细信息，请参阅 [Web 托管主题中的作用域验证](xref:fundamentals/host/web-host#scope-validation)。
 
 ## <a name="request-services"></a>请求服务
 
@@ -245,7 +246,7 @@ public static void Main(string[] args)
 
 请求服务表示你作为应用程序的一部分配置的服务和请求。 当对象指定依赖关系时，`RequestServices`（而不是 `ApplicationServices`）中的类型将满足这些要求。
 
-通常情况下，不应直接使用这些属性，而应该通过类的构造函数来请求所需类的类型，并让框架注入这些依赖关系。 这将生成更易于测试且耦合更松散的类（请参阅[测试和调试](../testing/index.md)）。
+通常情况下，不应直接使用这些属性，而应该通过类的构造函数来请求所需类的类型，并让框架注入这些依赖关系。 这将生成更易于测试且耦合更松散的类（请参阅[测试和调试](xref:test/index)）。
 
 > [!NOTE]
 > 与访问 `RequestServices` 集合相比，以构造函数参数的形式请求依赖项是更优先的选择。
@@ -361,7 +362,7 @@ public class DefaultModule : Module
 * [控制器中的依赖关系注入](xref:mvc/controllers/dependency-injection)
 * [要求处理程序中的依赖关系注入](xref:security/authorization/dependencyinjection)
 * [应用程序启动](xref:fundamentals/startup)
-* [测试和调试](xref:testing/index)
+* [测试和调试](xref:test/index)
 * [基于工厂的中间件激活](xref:fundamentals/middleware/extensibility)
 * [在 ASP.NET Core 中使用依赖关系注入编写干净代码 (MSDN) ](https://msdn.microsoft.com/magazine/mt703433.aspx)
 * [Container-Managed Application Design, Prelude: Where does the Container Belong?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)（容器托管的应用程序设计，序言：容器属于何处？）

@@ -10,12 +10,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: e88526d997618658f58488adb37ae1e519ea3f59
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 4a60b6c9bab77e8095cb9f19e615219817702b32
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31483427"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34566641"
 ---
 # <a name="iis-modules-with-aspnet-core"></a>IIS 模块与 ASP.NET Core
 
@@ -40,7 +40,7 @@ ASP.NET Core 应用由 IIS 在反向代理配置中托管。 某些本机 IIS �
 | **摘要式身份验证**<br>`DigestAuthenticationModule` | 是 | |
 | **目录浏览**<br>`DirectoryListingModule` | 否 | [目录浏览中间件](xref:fundamentals/static-files#enable-directory-browsing) |
 | **动态压缩**<br>`DynamicCompressionModule` | 是 | [响应压缩中间件](xref:performance/response-compression) |
-| **跟踪**<br>`FailedRequestsTracingModule` | 是 | [ASP.NET Core 日志记录](xref:fundamentals/logging/index#the-tracesource-provider) |
+| **跟踪**<br>`FailedRequestsTracingModule` | 是 | [ASP.NET Core 日志记录](xref:fundamentals/logging/index#tracesource-provider) |
 | **文件缓存**<br>`FileCacheModule` | 否 | [响应缓存中间件](xref:performance/caching/middleware) |
 | **HTTP 缓存**<br>`HttpCacheModule` | 否 | [响应缓存中间件](xref:performance/caching/middleware) |
 | **HTTP 日志记录**<br>`HttpLoggingModule` | 是 | [ASP.NET Core 日志记录](xref:fundamentals/logging/index)<br>实现：[elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging)、[Loggr](https://github.com/imobile3/Loggr.Extensions.Logging)、[NLog](https://github.com/NLog/NLog.Extensions.Logging)、[Serilog](https://github.com/serilog/serilog-extensions-logging)

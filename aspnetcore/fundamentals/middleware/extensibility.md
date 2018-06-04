@@ -10,11 +10,12 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware/extensibility
-ms.openlocfilehash: 76ba257abfb11e0c2950b974f837c6ae5818a6a1
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 8cec5b3b498f5a23463d8c3cd5901e14f22f6eab
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729111"
 ---
 # <a name="factory-based-middleware-activation-in-aspnet-core"></a>ASP.NET Core 中基于工厂的中间件激活
 
@@ -69,11 +70,11 @@ public static IApplicationBuilder UseIMiddlewareMiddleware(
 
 将工厂激活的中间件添加到 *Startup.cs* 的内置容器中：
 
-[!code-csharp[](extensibility/sample/Startup.cs?name=snippet1&highlight=6)]
+[!code-csharp[](extensibility/sample/Startup.cs?name=snippet1&highlight=12)]
 
 两个中间件均在 `Configure` 的请求处理管道中注册：
 
-[!code-csharp[](extensibility/sample/Startup.cs?name=snippet2&highlight=12-13)]
+[!code-csharp[](extensibility/sample/Startup.cs?name=snippet2&highlight=13-14)]
 
 ## <a name="imiddlewarefactory"></a>IMiddlewareFactory
 

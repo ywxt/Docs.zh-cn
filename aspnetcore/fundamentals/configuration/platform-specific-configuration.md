@@ -11,11 +11,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/platform-specific-configuration
-ms.openlocfilehash: 9bd54319b312e18e6114cd800231c47e1fa22894
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 618cb4349dcff696db37012af3aee844b82974f2
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729046"
 ---
 # <a name="enhance-an-app-from-an-external-assembly-in-aspnet-core-with-ihostingstartup"></a>在 ASP.NET Core 中使用 IHostingStartup 从外部程序集增强应用
 
@@ -37,7 +38,7 @@ ms.lasthandoff: 05/07/2018
 
 有两种方法可用于禁用承载启动程序集的自动加载：
 
-* 设置[阻止承载启动](xref:fundamentals/hosting#prevent-hosting-startup)主机配置设置。
+* 设置[阻止承载启动](xref:fundamentals/host/web-host#prevent-hosting-startup)主机配置设置。
 * 设置 `ASPNETCORE_PREVENTHOSTINGSTARTUP` 环境变量。
 
 当主机设置或环境变量设置为 `true` 或 `1` 时，不会自动加载承载启动程序集。 如果同时设置了两者，则行为由主机设置控制。
@@ -68,7 +69,7 @@ ms.lasthandoff: 05/07/2018
 
 ### <a name="update-the-dependencies-file"></a>更新依赖项文件
 
-运行时位置在 \*.deps.json 文件中指定。 若要激活增强功能，`runtime` 元素必须指定增强功能运行时程序集的位置。 将 `runtime` 位置的前缀设为 `lib/netcoreapp2.0/`：
+运行时位置在 \*.deps.json 文件中指定。 若要激活增强功能，`runtime` 元素必须指定增强功能运行时程序集的位置。 将 `runtime` 位置的前缀设为 `lib/<TARGET_FRAMEWORK_MONIKER>/`：
 
 [!code-json[](platform-specific-configuration/snapshot_sample/StartupEnhancement2.deps.json?range=2-13&highlight=8)]
 
@@ -83,13 +84,13 @@ ms.lasthandoff: 05/07/2018
 若要实现按用户使用，将程序集放入用户配置文件的运行时存储：
 
 ```
-<DRIVE>\Users\<USER>\.dotnet\store\x64\netcoreapp2.0\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\netcoreapp2.0\
+<DRIVE>\Users\<USER>\.dotnet\store\x64\<TARGET_FRAMEWORK_MONIKER>\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\<TARGET_FRAMEWORK_MONIKER>\
 ```
 
 若要实现全局使用，将程序集放入 .NET Core 安装的运行时存储：
 
 ```
-<DRIVE>\Program Files\dotnet\store\x64\netcoreapp2.0\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\netcoreapp2.0\
+<DRIVE>\Program Files\dotnet\store\x64\<TARGET_FRAMEWORK_MONIKER>\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\<TARGET_FRAMEWORK_MONIKER>\
 ```
 
 将程序集部署到运行时存储时，可能也会部署符号文件，但增强功能的运行无需此文件。
@@ -101,16 +102,16 @@ ms.lasthandoff: 05/07/2018
 若要实现按用户使用，将文件置于用户配置文件 `.dotnet` 设置的 `additonalDeps`文件夹中： 
 
 ```
-<DRIVE>\Users\<USER>\.dotnet\x64\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.0.0\
+<DRIVE>\Users\<USER>\.dotnet\x64\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\
 ```
 
 若要实现全局使用，将文件置于 .NET Core 安装的 `additonalDeps` 文件夹中：
 
 ```
-<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.0.0\
+<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\
 ```
 
-请注意，版本 `2.0.0` 反映目标应用使用的共享运行时的版本。 共享运行时显示在 \*.runtimeconfig.json 文件中。 在示例应用中，共享运行时在 HostingStartupSample.runtimeconfig.json 文件中指定。
+请注意，版本 `2.1.0` 反映目标应用使用的共享运行时的版本。 共享运行时显示在 \*.runtimeconfig.json 文件中。 在示例应用中，共享运行时在 HostingStartupSample.runtimeconfig.json 文件中指定。
 
 **设置环境变量**
 
@@ -120,7 +121,7 @@ ASPNETCORE\_HOSTINGSTARTUPASSEMBLIES
 
 仅扫描承载启动程序集以查找 `HostingStartupAttribute`。 在此环境变量中提供实现的程序集名称。 示例应用将此值设置为 `StartupDiagnostics`。
 
-还可使用[承载启动程序集](xref:fundamentals/hosting#hosting-startup-assemblies)主机配置设置来设置此值。
+还可使用[承载启动程序集](xref:fundamentals/host/web-host#hosting-startup-assemblies)主机配置设置来设置此值。
 
 DOTNET\_ADDITIONAL\_DEPS
 
@@ -135,7 +136,7 @@ DOTNET\_ADDITIONAL\_DEPS
 如果将文件放置在 .NET Core 安装中以实现全局使用，则提供该文件的完整路径：
 
 ```
-<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.0.0\<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
+<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
 ```
 
 示例应用将此值设置为：

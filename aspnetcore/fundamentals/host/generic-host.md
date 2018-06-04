@@ -11,11 +11,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: 15f4a689b2756d2bfb6320ab31f2e8d63af51a09
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 15ce81a4226921ce053096751d7678ada36235c0
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34728968"
 ---
 # <a name="net-generic-host"></a>.NET 通用主机
 
@@ -57,7 +58,7 @@ ms.lasthandoff: 05/17/2018
 
 ### <a name="configuration-builder"></a>配置生成器
 
-通过在 [IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder) 实现上调用 [ConfigureHostConfiguration](/dotnet/api/microsoft.extensions.hosting.ihostbuilder.configurehostconfiguration) 来创建主机生成器配置。 `ConfigureHostConfiguration` 使用 [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder) 为主机创建 [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration)。 配置生成器初始化 [IHostingEnvironment](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment)，以在应用程序的生成过程中使用。 可以利用相加结果多次调用 `ConfigureHostConfiguration`。 主机使用任何一个选项设置上一个值。
+通过在 [IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder) 实现上调用 [ConfigureHostConfiguration](/dotnet/api/microsoft.extensions.hosting.ihostbuilder.configurehostconfiguration) 来创建主机生成器配置。 `ConfigureHostConfiguration` 使用 [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder) 为主机创建 [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration)。 配置生成器初始化 [IHostingEnvironment](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment)，以在应用程序的生成过程中使用。 可多次调用 `ConfigureHostConfiguration`，并得到累计结果。 主机使用任何一个选项设置上一个值。
 
 hostsettings.json：
 
@@ -127,7 +128,7 @@ appsettings.Production.json：
 
 ## <a name="configureservices"></a>ConfigureServices
 
-[ConfigureServices](/dotnet/api/microsoft.extensions.hosting.hostinghostbuilderextensions.configureservices) 将服务添加到应用的[依赖关系注入](xref:fundamentals/dependency-injection)容器。 可以利用相加结果多次调用 `ConfigureServices`。
+[ConfigureServices](/dotnet/api/microsoft.extensions.hosting.hostinghostbuilderextensions.configureservices) 将服务添加到应用的[依赖关系注入](xref:fundamentals/dependency-injection)容器。 可多次调用 `ConfigureServices`，并得到累计结果。
 
 托管服务是一个类，具有实现 [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice) 接口的后台任务逻辑。 有关详细信息，请参阅[使用托管服务的后台任务](xref:fundamentals/host/hosted-services)主题。
 
@@ -226,10 +227,9 @@ public class Program
 {
     public static async Task Main(string[] args)
     {
-        var host = new HostBuilder()
-            .Build();
+        var hostBuilder = new HostBuilder();
 
-        await host.RunConsoleAsync();
+        await hostBuilder.RunConsoleAsync();
     }
 }
 ```
