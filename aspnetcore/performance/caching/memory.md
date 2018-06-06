@@ -4,17 +4,18 @@ author: rick-anderson
 description: 了解如何在 ASP.NET Core 中的内存中缓存数据。
 manager: wpickett
 ms.author: riande
-ms.custom: H1Hack27Feb2017
+ms.custom: mvc
 ms.date: 12/14/2016
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/memory
-ms.openlocfilehash: 4835e2331afca7a648abac6bc35d255ec6356067
-ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
+ms.openlocfilehash: eca6610caf4e0a654c9a31f89a42e2ac82e94d23
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734479"
 ---
 # <a name="cache-in-memory-in-aspnet-core"></a>缓存在内存中 ASP.NET 核心
 
@@ -28,7 +29,7 @@ ms.lasthandoff: 05/24/2018
 
 ASP.NET Core 支持多种不同的缓存。 最简单的缓存基于 [IMemoryCache](/dotnet/api/microsoft.extensions.caching.memory.imemorycache)，它表示存储在 Web 服务器内存中的缓存。 在包含多个服务器的服务器场上运行的应用应确保在使用内存中缓存时，会话是粘性的。 粘性会话可确保来自客户端的后续请求都转到同一台服务器。 例如，Azure Web 应用使用[应用程序请求路由](https://www.iis.net/learn/extensions/planning-for-arr)(ARR) 将所有的后续请求路由到同一台服务器。
 
-Web 场中的非粘性会话需要[分布式缓存](distributed.md)以避免缓存一致性问题。 对于某些应用来说，分布式缓存可以支持比内存中缓存更高程度的横向扩展。 使用分布式缓存可将缓存内存卸载到外部进程。 
+Web 场中的非粘性会话需要[分布式缓存](distributed.md)以避免缓存一致性问题。 对于某些应用来说，分布式缓存可以支持比内存中缓存更高程度的横向扩展。 使用分布式缓存可将缓存内存卸载到外部进程。
 
 除非将[CacheItemPriority](/dotnet/api/microsoft.extensions.caching.memory.cacheitempriority)设置为`CacheItemPriority.NeverRemove`, 否则`IMemoryCache`缓存会在内存压力下清除缓存条目。 可以通过设置`CacheItemPriority`来调整缓存在内存压力下清除项目的优先级。
 
@@ -38,13 +39,29 @@ Web 场中的非粘性会话需要[分布式缓存](distributed.md)以避免缓�
 
 内存中缓存是使用[依赖关系注入](../../fundamentals/dependency-injection.md)从应用中引用的服务。 请在`ConfigureServices`中调用`AddMemoryCache`:
 
-[!code-csharp[](memory/sample/WebCache/Startup.cs?highlight=8)] 
+[!code-csharp[](memory/sample/WebCache/Startup.cs?highlight=9)]
 
 在构造函数中请求 `IMemoryCache`实例：
 
-[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ctor&highlight=3,5-999)] 
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ctor)]
 
-`IMemoryCache` 需要 NuGet 包"Microsoft.Extensions.Caching.Memory"。
+::: moniker range="< aspnetcore-2.0"
+
+`IMemoryCache` 需要 NuGet 包[Microsoft.Extensions.Caching.Memory](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Memory/)。
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+`IMemoryCache` 需要 NuGet 包[Microsoft.Extensions.Caching.Memory](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Memory/)，这是可供使用的[Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage)。
+
+::: moniker-end
+
+::: moniker range="> aspnetcore-2.0"
+
+`IMemoryCache` 需要 NuGet 包[Microsoft.Extensions.Caching.Memory](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Memory/)，这是可供使用的[Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app)。
+
+::: moniker-end
 
 下面的代码使用[TryGetValue](/dotnet/api/microsoft.extensions.caching.memory.imemorycache.trygetvalue?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_IMemoryCache_TryGetValue_System_Object_System_Object__)检查时间是否在缓存中。 如果未缓存的时间，创建并添加到缓存中，使用新的条目[设置](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions.set?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_CacheExtensions_Set__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object___0_Microsoft_Extensions_Caching_Memory_MemoryCacheEntryOptions_)。
 
@@ -74,14 +91,14 @@ Web 场中的非粘性会话需要[分布式缓存](distributed.md)以避免缓�
 
 - 设置绝对到期时间。 这是条目可以被缓存的最长时间，防止可调过期持续更新时该条目过时太多。
 - 设置可调过期时间。 访问此缓存项的请求将重置可调过期时钟。
-- 将缓存优先级设置为`CacheItemPriority.NeverRemove`。 
+- 将缓存优先级设置为`CacheItemPriority.NeverRemove`。
 - 设置一个[PostEvictionDelegate](/dotnet/api/microsoft.extensions.caching.memory.postevictiondelegate)它将在条目从缓存中清除后调用。 在代码中运行该回调的线程不同于从缓存中移除条目的线程。
 
-[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_et&highlight=14-20)]
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_et&highlight=14-21)]
 
 ## <a name="cache-dependencies"></a>缓存依赖项
 
-以下示例演示在依赖项过期时如何使缓存项过期。 会将 `CancellationChangeToken`添加到缓存项。 在 `Cancel`上调用 `CancellationTokenSource`，时，这两个缓存条目都将被清除。 
+以下示例演示在依赖项过期时如何使缓存项过期。 会将 `CancellationChangeToken`添加到缓存项。 在 `Cancel`上调用 `CancellationTokenSource`，时，这两个缓存条目都将被清除。
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ed)]
 
@@ -91,7 +108,7 @@ Web 场中的非粘性会话需要[分布式缓存](distributed.md)以避免缓�
 
 - 使用回调重新填充缓存项时：
 
-  - 多个请求可能会发现缓存的键值为空，因为回调尚未完成。 
+  - 多个请求可能会发现缓存的键值为空，因为回调尚未完成。
   - 这可能导致重新填充缓存的项的多个线程。
 
 - 使用一个缓存条目创建另一个缓存条目时，子条目会复制父条目的过期令牌以及基于时间的过期设置。 子不过期通过手动删除或更新的父项。

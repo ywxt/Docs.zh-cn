@@ -8,20 +8,21 @@ ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: cc1ec50155398ba4143a2bf697ca26435c228c49
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: e5a3877c68f8475e7dd49d44f4a92cf7b09ac7f5
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734505"
 ---
 # <a name="response-caching-in-aspnet-core"></a>响应缓存在 ASP.NET 核心
 
 通过[John Luo](https://github.com/JunTaoLuo)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Steve Smith](https://ardalis.com/)，和[Luke Latham](https://github.com/guardrex)
 
 > [!NOTE]
-> 响应缓存[Razor 页与 ASP.NET 核心 2.0 中不支持](https://github.com/aspnet/Mvc/issues/6437)。 此功能将支持[ASP.NET 核心 2.1 版本](https://github.com/aspnet/Home/wiki/Roadmap)。
-  
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+> 响应缓存在 Razor 页中是位于 ASP.NET 核心 2.1 或更高版本。
+
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
 响应缓存可减少客户端或代理对 web 服务器的请求数。 响应缓存还可减少量工作的 web 服务器执行程序生成响应。 响应缓存由标头，指定你希望客户端、 代理和缓存响应的中间件如何控制。
 
@@ -46,8 +47,8 @@ ms.lasthandoff: 03/22/2018
 | Header                                                     | 函数 |
 | ---------------------------------------------------------- | -------- |
 | [保留时间](https://tools.ietf.org/html/rfc7234#section-5.1)     | 以秒为单位由于生成或者在源服务器已成功验证响应的时间量的估计值。 |
-| [Expires](https://tools.ietf.org/html/rfc7234#section-5.3) | 日期/时间后响应被视为是陈旧。 |
-| [Pragma](https://tools.ietf.org/html/rfc7234#section-5.4)  | 存在向后兼容性与 HTTP/1.0 缓存设置`no-cache`行为。 如果`Cache-Control`标头是否存在、`Pragma`标头将被忽略。 |
+| [过期](https://tools.ietf.org/html/rfc7234#section-5.3) | 日期/时间后响应被视为是陈旧。 |
+| [杂注](https://tools.ietf.org/html/rfc7234#section-5.4)  | 存在向后兼容性与 HTTP/1.0 缓存设置`no-cache`行为。 如果`Cache-Control`标头是否存在、`Pragma`标头将被忽略。 |
 | [改变](https://tools.ietf.org/html/rfc7231#section-7.1.4)  | 指定缓存的响应必须不发送除非所有的`Vary`中缓存的响应的原始请求和新的请求标头字段所匹配。 |
 
 ## <a name="http-based-caching-respects-request-cache-control-directives"></a>基于 HTTP 的缓存方面请求的缓存控制指令
@@ -113,7 +114,17 @@ ms.lasthandoff: 03/22/2018
 
 此标头只会写入时`VaryByHeader`属性设置。 设置为`Vary`属性的值。 下面的示例使用`VaryByHeader`属性：
 
-[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_VaryByHeader&highlight=1)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](response/samples/2.x/ResponseCacheSample/Controllers/HomeController.cs?name=snippet_VaryByHeader&highlight=1)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](response/samples/1.x/ResponseCacheSample/Controllers/HomeController.cs?name=snippet_VaryByHeader&highlight=1)]
+
+::: moniker-end
 
 你可以查看你的浏览器的网络工具的响应标头。 下图显示了输出上边缘 F12**网络**选项卡上时`About2`刷新操作方法：
 
@@ -130,7 +141,17 @@ ms.lasthandoff: 03/22/2018
 
 通常情况下设置`NoStore`到`true`错误页上。 例如：
 
-[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet1&highlight=1)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](response/samples/2.x/ResponseCacheSample/Controllers/HomeController.cs?name=snippet1&highlight=1)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](response/samples/1.x/ResponseCacheSample/Controllers/HomeController.cs?name=snippet1&highlight=1)]
+
+::: moniker-end
 
 这将导致以下标头：
 
@@ -148,7 +169,17 @@ Pragma: no-cache
 
 下面生成通过设置一个示例，演示标头`Duration`并保留默认值`Location`值：
 
-[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_duration&highlight=1)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](response/samples/2.x/ResponseCacheSample/Controllers/HomeController.cs?name=snippet_duration&highlight=1)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](response/samples/1.x/ResponseCacheSample/Controllers/HomeController.cs?name=snippet_duration&highlight=1)]
+
+::: moniker-end
 
 这将产生以下标头：
 
@@ -162,11 +193,31 @@ Cache-Control: public,max-age=60
 
 设置缓存配置文件：
 
-[!code-csharp[](response/sample/Startup.cs?name=snippet1)] 
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](response/samples/2.x/ResponseCacheSample/Startup.cs?name=snippet1)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](response/samples/1.x/ResponseCacheSample/Startup.cs?name=snippet1)]
+
+::: moniker-end
 
 引用缓存配置文件：
 
-[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_controller&highlight=1,4)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](response/samples/2.x/ResponseCacheSample/Controllers/HomeController.cs?name=snippet_controller&highlight=1,4)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](response/samples/1.x/ResponseCacheSample/Controllers/HomeController.cs?name=snippet_controller&highlight=1,4)]
+
+::: moniker-end
 
 `ResponseCache`特性可应用于操作 （方法） 和控制器 （类）。 方法级别的属性重写在类级别特性中指定的设置。
 
@@ -182,7 +233,7 @@ Cache-Control: public,max-age=60
 
 * [在缓存中存储响应](https://tools.ietf.org/html/rfc7234#section-3)
 * [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
-* [缓存在内存](xref:performance/caching/memory)
+* [内存中缓存](xref:performance/caching/memory)
 * [使用分布式缓存](xref:performance/caching/distributed)
 * [使用更改令牌检测更改](xref:fundamentals/primitives/change-tokens)
 * [响应缓存中间件](xref:performance/caching/middleware)

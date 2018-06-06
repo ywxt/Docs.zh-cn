@@ -4,16 +4,18 @@ author: ardalis
 description: 了解如何使用 ASP.NET Core 分布式缓存以提高应用性能和可伸缩性，尤其是在云或服务器场环境。
 manager: wpickett
 ms.author: riande
+ms.custom: mvc
 ms.date: 02/14/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: c40209e3b3f2b5bf28450bb2a88cbe40e9e23230
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 6c595572641604d241c0c8f702d4f392afe34f71
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734453"
 ---
 # <a name="work-with-a-distributed-cache-in-aspnet-core"></a>使用 ASP.NET Core 中分布式缓存
 
@@ -73,13 +75,13 @@ ms.lasthandoff: 05/12/2018
 
 下面的示例演示如何在简单的中间件组件中使用`IDistributedCache` 实例：
 
-[!code-csharp[](./distributed/sample/src/DistCacheSample/StartTimeHeader.cs?highlight=15,18,21,27,28,29,30,31)]
+[!code-csharp[](distributed/sample/src/DistCacheSample/StartTimeHeader.cs)]
 
 在上面的代码中，缓存值用于读取，不用于写入。 在此示例中，该值仅在服务器启动时设置，并且不会更改。 在多服务器方案中，要启动的最新服务器会覆盖由其他服务器设置的以前的任何值。 `Get`和`Set`方法使用 `byte[]`类型。 因此，字符串值必须使用 `Encoding.UTF8.GetString`(适用于`Get`) 和 `Encoding.UTF8.GetBytes`(适用于 `Set`)进行转换。
 
 *Startup.cs*中的以下代码显示要设置的值：
 
-[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=2,4,5,6&range=58-66)]
+[!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet1)]
 
 > [!NOTE]
 > 由于`IDistributedCache`是在`ConfigureServices`方法中配置的，因此它可以作为参数提供给`Configure`方法。 将其添加作为参数将允许通过 DI 提供配置的实例。
@@ -92,7 +94,7 @@ ms.lasthandoff: 05/12/2018
 
 在示例代码中，为`RedisCache`环境配置服务器时使用`Staging`实现。 因此，`ConfigureStagingServices`方法用于配置 `RedisCache`:
 
-[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=8,9,10,11,12,13&range=27-40)]
+[!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet2)]
 
 > [!NOTE]
 > 若要在本地计算机上安装 Redis，安装 chocolatey 程序包[ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/)并运行`redis-server`从命令提示符。
@@ -101,31 +103,42 @@ ms.lasthandoff: 05/12/2018
 
 SqlServerCache 实现允许分布式缓存使用 SQL Server 数据库作为其后备存储。 若要创建 SQL Server 表，可以使用 sql-cache 工具，该工具将使用指定的名称和模式创建一个表。
 
-若要使用 sql-cache 工具，请将 `SqlConfig.Tools`添加到`<ItemGroup>`文件的 *.csproj*元素，然后运行 dotnet restore。
+::: moniker range="< aspnetcore-2.1"
 
-[!code-xml[](./distributed/sample/src/DistCacheSample/DistCacheSample.csproj?range=23-25)]
+添加`SqlConfig.Tools`到`<ItemGroup>`元素的项目文件和运行`dotnet restore`。
 
-通过运行以下命令来测试 SqlConfig.Tools
+```xml
+<ItemGroup>
+  <DotNetCliToolReference Include="Microsoft.Extensions.Caching.SqlConfig.Tools" 
+                          Version="2.0.2" />
+</ItemGroup>
+```
 
-```none
-C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create --help
-   ```
+::: moniker-end
 
-sql-cache 工具将显示用法、选项和命令帮助。现在可以将表创建到 sql server 中，只需运行“sql-cache create”命令即可：
+通过运行以下命令来测试 SqlConfig.Tools:
 
-```none
-C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(localdb)\v11.0;Initial Catalog=DistCache;Integrated Security=True;" dbo TestCache
-   info: Microsoft.Extensions.Caching.SqlConfig.Tools.Program[0]
-       Table and index were created successfully.
-   ```
+```console
+dotnet sql-cache create --help
+```
+
+SqlConfig.Tools 显示使用情况、 选项和命令的帮助。
+
+在 SQL Server 中创建表，通过运行`sql-cache create`命令：
+
+```console
+dotnet sql-cache create "Data Source=(localdb)\v11.0;Initial Catalog=DistCache;Integrated Security=True;" dbo TestCache
+info: Microsoft.Extensions.Caching.SqlConfig.Tools.Program[0]
+Table and index were created successfully.
+```
 
 创建的表具有以下架构：
 
 ![Sql Server 缓存表](distributed/_static/SqlServerCacheTable.png)
 
-像所有缓存实现一样，应用应该使用`IDistributedCache`，实例来获取和设置缓存值，而不是使用`SqlServerCache`实例。 此示例实现`SqlServerCache`中`Production`环境 (以便在配置`ConfigureProductionServices`)。
+像所有缓存实现一样，应用应该使用`IDistributedCache`，实例来获取和设置缓存值，而不是使用`SqlServerCache`实例。 此示例实现`SqlServerCache`在生产环境中 (以便在配置`ConfigureProductionServices`)。
 
-[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=7,8,9,10,11,12&range=42-56)]
+[!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet3)]
 
 > [!NOTE]
 > `ConnectionString` (以及可选的`SchemaName`和`TableName`) 通常应该存储在源代码管理之外（例如存储在 UserSecrets 中），因为它们可能包含凭据。

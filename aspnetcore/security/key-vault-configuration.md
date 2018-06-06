@@ -8,11 +8,12 @@ ms.date: 08/09/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: 78a00e04e260863af17d7888ca6bf77d3f915ce1
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: cf56515a2a7116f399af7e671547fc81b616619c
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734700"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>在 ASP.NET 核心的 azure 密钥保管库配置提供程序
 
@@ -30,16 +31,18 @@ ms.lasthandoff: 05/03/2018
 查看或下载 1.x 的示例代码：
 
 * [基本示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/1.x)([如何下载](xref:tutorials/index#how-to-download-a-sample))-读取到应用的密钥值。
-* [密钥名称前缀示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/1.x)([如何下载](xref:tutorials/index#how-to-download-a-sample))-读取机密值使用密钥名称作为前缀表示版本的应用，这允许你加载一组不同的每个应用程序版本的机密值。 
+* [密钥名称前缀示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/1.x)([如何下载](xref:tutorials/index#how-to-download-a-sample))-读取机密值使用密钥名称作为前缀表示版本的应用，这允许你加载一组不同的每个应用程序版本的机密值。
 
 ---
 
 本文档说明如何使用[Microsoft Azure 密钥保管库](https://azure.microsoft.com/services/key-vault/)配置提供程序以从 Azure 密钥保管库机密加载应用程序配置值。 Azure 密钥保管库是一种基于云的服务，可帮助你保护加密密钥和机密由应用程序和服务。 常见方案包括控制对敏感的配置数据的访问和会议的必要条件 FIPS 140-2 级别 2 硬件安全模块 (HSM) 时验证存储配置数据。 此功能是可用的应用程序面向 ASP.NET 核心 1.1 或更高版本。
 
-## <a name="package"></a>包
+## <a name="package"></a>Package
+
 若要使用的提供程序，添加到引用[Microsoft.Extensions.Configuration.AzureKeyVault](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureKeyVault/)包。
 
 ## <a name="application-configuration"></a>应用程序配置
+
 你可以浏览的提供程序[示例应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples)。 一旦建立密钥保管库，并在保管库中创建机密，该示例应用将安全地加载到其配置的密钥值和在网页中显示它们。
 
 提供程序添加到`ConfigurationBuilder`与`AddAzureKeyVault`扩展。 在示例应用中，则该扩展将从加载的三个配置值*appsettings.json*文件。
@@ -50,9 +53,10 @@ ms.lasthandoff: 05/03/2018
 | `ClientId`     | Azure Active Directory 应用程序 Id  | 627e911e-43cc-61d4-992e-12db9c81b413         |
 | `ClientSecret` | Azure Active Directory 应用程序键 | g58K3dtg59o1Pa+e59v2Tx829w6VxTB2yv9sv/101di= |
 
-[!code-csharp[Program](key-vault-configuration/samples/basic-sample/2.x/Program.cs?name=snippet1&highlight=2,7-10)]
+[!code-csharp[Program](key-vault-configuration/samples/basic-sample/2.x/Program.cs?name=snippet1)]
 
 ## <a name="creating-key-vault-secrets-and-loading-configuration-values-basic-sample"></a>创建密钥保管库密码和加载配置值 （basic 示例）
+
 1. 创建密钥保管库并设置应用程序的指南的 Azure Active Directory (Azure AD)[开始使用 Azure 密钥保管库](https://azure.microsoft.com/documentation/articles/key-vault-get-started/)。
    * 将机密添加到密钥保管库使用[AzureRM 密钥保管库 PowerShell 模块](/powershell/module/azurerm.keyvault)可从[PowerShell 库](https://www.powershellgallery.com/packages/AzureRM.KeyVault)、 [Azure 密钥保管库 REST API](/rest/api/keyvault/)，或[Azure 门户](https://portal.azure.com/)。 机密创建为*手动*或*证书*机密。 *证书*机密是使用应用程序和服务的证书，但不是支持配置提供程序。 应使用*手动*选项可创建带有配置提供程序使用的名称-值对机密。
      * 创建简单的机密的名称-值对。 Azure 密钥保管库密钥名称被限制为字母数字字符和短划线。
@@ -75,6 +79,7 @@ ms.lasthandoff: 05/03/2018
 ![通过 Azure 密钥保管库配置提供程序加载浏览器窗口中显示密钥值](key-vault-configuration/_static/sample1.png)
 
 ## <a name="creating-prefixed-key-vault-secrets-and-loading-configuration-values-key-name-prefix-sample"></a>创建带前缀的密钥保管库密码和加载配置值 （密钥的名称的前缀的示例）
+
 `AddAzureKeyVault` 此外提供了一个接受的实现重载`IKeyVaultSecretManager`，这样，你可以控制如何密钥保管库密码将转换为配置密钥。 例如，你可以实现接口后，可加载基于你在应用启动时提供的前缀值的密钥值。 这使你，例如，加载基于应用程序的版本的机密。
 
 > [!WARNING]
@@ -82,7 +87,7 @@ ms.lasthandoff: 05/03/2018
 
 使用第二个示例应用程序，为密钥保管库中创建一个机密`5000-AppSecret`（密钥保管库密钥名称中不允许句点） 表示你的应用程序的版本为 5.0.0.0 应用程序密钥。 有关另一个版本，5.1.0.0，创建密钥`5100-AppSecret`。 每个应用程序版本将自己机密的值加载到作为其配置`AppSecret`、 关闭版本剥离加载时为它的机密。 示例的实现如下所示：
 
-[!code-csharp[Configuration builder](key-vault-configuration/samples/key-name-prefix-sample/2.x/Program.cs?name=snippet1&highlight=12)]
+[!code-csharp[Configuration builder](key-vault-configuration/samples/key-name-prefix-sample/2.x/Program.cs?name=snippet1&highlight=20)]
 
 [!code-csharp[PrefixKeyVaultSecretManager](key-vault-configuration/samples/key-name-prefix-sample/2.x/Startup.cs?name=snippet1)]
 
@@ -116,6 +121,7 @@ ms.lasthandoff: 05/03/2018
    ![通过 Azure 密钥保管库配置提供程序加载的浏览器窗口中显示一个机密的值，如果应用程序的版本，则 5.1.0.0](key-vault-configuration/_static/sample2-2.png)
 
 ## <a name="controlling-access-to-the-clientsecret"></a>控制对 ClientSecret 的访问
+
 使用[机密管理器工具](xref:security/app-secrets)维护`ClientSecret`外部项目源树。 使用密钥管理器中，你将应用程序机密关联与特定项目并共享跨多个项目。
 
 在开发时支持证书的环境中的.NET Framework 应用，可以使用 X.509 证书验证到 Azure 密钥保管库。 X.509 证书的私钥由操作系统管理。 有关详细信息，请参阅[使用而不是客户端密钥证书的身份验证](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application#authenticate-with-a-certificate-instead-of-a-client-secret)。 使用`AddAzureKeyVault`接受的重载`X509Certificate2`。
@@ -136,6 +142,7 @@ Configuration = builder.Build();
 ```
 
 ## <a name="reloading-secrets"></a>重新加载机密
+
 机密缓存直到`IConfigurationRoot.Reload()`调用。 过期，禁用，并且应用程序之前未遵从密钥保管库中的更新的机密`Reload`执行。
 
 ```csharp
@@ -143,10 +150,13 @@ Configuration.Reload();
 ```
 
 ## <a name="disabled-and-expired-secrets"></a>禁用和过期机密
+
 禁用和过期机密引发`KeyVaultClientException`。 若要防止你的应用引发，替换你的应用程序或更新的过期已禁用/机密。
 
 ## <a name="troubleshooting"></a>疑难解答
+
 当应用程序失败时加载使用提供程序的配置时，将一条错误消息写入到[ASP.NET 日志记录基础结构](xref:fundamentals/logging/index)。 以下条件将阻止从加载的配置：
+
 * 应用程序未正确配置 Azure Active Directory 中。
 * Azure 密钥保管库中不存在密钥保管库。
 * 应用程序未授权访问密钥保管库。
@@ -157,6 +167,7 @@ Configuration.Reload();
 * 配置密钥 （名称） 不正确的应用中的你正在试图加载的值。
 
 ## <a name="additional-resources"></a>其他资源
+
 * [配置](xref:fundamentals/configuration/index)
 * [Microsoft Azure： 密钥保管库](https://azure.microsoft.com/services/key-vault/)
 * [Microsoft Azure： 密钥保管库文档](https://docs.microsoft.com/azure/key-vault/)

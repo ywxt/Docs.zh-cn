@@ -11,12 +11,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/response-compression
-ms.openlocfilehash: 152799500577dd09247bcee8c87cde39ca20aa79
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
-ms.translationtype: HT
+ms.openlocfilehash: e970e74547f1f3efaf719c1f9e26918f34788005
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729569"
+ms.locfileid: "34734622"
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>有关 ASP.NET 核心响应压缩中间件
 
@@ -83,21 +83,15 @@ ms.locfileid: "34729569"
 
 ## <a name="package"></a>Package
 
-::: moniker range="< aspnetcore-2.0"
+::: moniker range="< aspnetcore-2.1"
 
 若要在你的项目中包含该中间件，添加到引用[Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/)包。 此功能适用于面向 ASP.NET Core 1.1 或更高版本的应用。
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0"
+::: moniker range=">= aspnetcore-2.1"
 
-若要在你的项目中包含该中间件，添加到引用[Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/)包或使用[Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage)。
-
-::: moniker-end
-
-::: moniker range="> aspnetcore-2.0"
-
-若要在你的项目中包含该中间件，添加到引用[Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/)包或使用[Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app)。
+若要在你的项目中包含该中间件，添加到引用[Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/)包或使用[Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app) (ASP.NET Core 2.1 或更高版本)。
 
 ::: moniker-end
 

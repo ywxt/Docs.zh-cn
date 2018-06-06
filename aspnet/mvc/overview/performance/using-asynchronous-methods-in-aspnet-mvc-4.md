@@ -12,12 +12,12 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 5b3b9b82fa64155c1dfd2a49649def10d7dae87e
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
-ms.translationtype: HT
+ms.openlocfilehash: 65ba01dd1b0ed5a43ca5c868608f2858f86b4b59
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729176"
+ms.locfileid: "34734531"
 ---
 <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>在 ASP.NET MVC 4 中使用异步方法
 ====================
@@ -44,7 +44,7 @@ ASP.NET MVC 4[控制器](https://msdn.microsoft.com/library/system.web.mvc.contr
 
 ## <a name="processing-asynchronous-requests"></a>处理异步请求
 
-在 web 应用程序，请参阅大量启动时的并发请求或具有突发负载 （其中并发可增加突然），使这些 web 服务调用异步将增加应用程序的响应的能力。 异步请求花费的时间来处理为同步的请求相同的量。 例如，如果请求将发出 web 服务调用需要两秒钟来完成，请求采用两个秒是否同步或异步执行。 但是，在过程的异步调用线程不受阻止等待完成的第一个请求时响应其他请求。 因此，异步请求阻止请求排队和线程池增长时有很多并发请求，以调用长时间运行的操作。
+在 web 应用中看到大量的启动时的并发请求或具有突发负载 （其中并发可增加突然），使 web 服务调用异步会增加应用的响应能力。 异步请求花费的时间来处理为同步的请求相同的量。 如果请求将发出 web 服务调用需要两秒钟来完成，请求需要两个的秒是否同步或异步执行。 但是过程的异步调用线程不阻止等待完成的第一个请求时响应其他请求。 因此，异步请求阻止请求排队和线程池增长时有很多并发请求，以调用长时间运行的操作。
 
 ## <a id="ChoosingSyncVasync"></a>  选择同步或异步操作方法
 

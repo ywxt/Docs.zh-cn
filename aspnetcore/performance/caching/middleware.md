@@ -3,39 +3,41 @@ title: 响应缓存在 ASP.NET 核心中的中间件
 author: guardrex
 description: 了解如何配置和 ASP.NET Core 中使用缓存响应的中间件。
 manager: wpickett
+monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: 8296d535725d95682fa5904a43ab196e21b4f83c
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 7ceccffa39baf5f13d63c26e78c64a595bb42f60
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734492"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>响应缓存在 ASP.NET 核心中的中间件
 
 通过[Luke Latham](https://github.com/guardrex)和[John Luo](https://github.com/JunTaoLuo)
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载 ASP.NET 核心 2.1 示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/samples)([如何下载](xref:tutorials/index#how-to-download-a-sample))
 
 此文章介绍了如何在 ASP.NET Core 应用程序中配置缓存响应的中间件。 该中间件确定响应何时可缓存、 存储响应和从缓存充当响应。 有关 HTTP 缓存功能的简介和`ResponseCache`属性，请参阅[响应缓存](xref:performance/caching/response)。
 
-## <a name="package"></a>包
+## <a name="package"></a>Package
 
-若要在项目中包含该中间件，添加到引用[ `Microsoft.AspNetCore.ResponseCaching` ](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCaching/)包或使用[ `Microsoft.AspNetCore.All` ](https://www.nuget.org/packages/Microsoft.AspNetCore.All/)包 (ASP.NET Core 2.0 或更高版本时目标.NET 核心)。
+若要在你的项目中包含该中间件，添加到引用[Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/)包或使用[Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app)，这是可在中使用ASP.NET 核心 2.1 或更高版本。
 
 ## <a name="configuration"></a>配置
 
 在`ConfigureServices`，将该中间件添加到服务集合。
 
-[!code-csharp[](middleware/sample/Startup.cs?name=snippet1&highlight=3)]
+[!code-csharp[](middleware/samples/2.x/ResponseCachingMiddleware/Startup.cs?name=snippet1&highlight=9)]
 
 配置应用程序以使用与中间件`UseResponseCaching`扩展方法，将该中间件添加到请求处理管道。 示例应用添加[ `Cache-Control` ](https://tools.ietf.org/html/rfc7234#section-5.2)最多 10 秒钟来缓存可缓存响应的响应的标头。 该示例发送[ `Vary` ](https://tools.ietf.org/html/rfc7231#section-7.1.4)标头来配置用于缓存的响应仅当该中间件[ `Accept-Encoding` ](https://tools.ietf.org/html/rfc7231#section-5.3.4)的后续请求的标头与原始请求相匹配。 在代码示例中， [CacheControlHeaderValue](/dotnet/api/microsoft.net.http.headers.cachecontrolheadervalue)和[HeaderNames](/dotnet/api/microsoft.net.http.headers.headernames)需要`using`语句[Microsoft.Net.Http.Headers](/dotnet/api/microsoft.net.http.headers)命名空间。
 
-[!code-csharp[](middleware/sample/Startup.cs?name=snippet2&highlight=3,7-12)]
+[!code-csharp[](middleware/samples/2.x/ResponseCachingMiddleware/Startup.cs?name=snippet2&highlight=17,21-28)]
 
 响应缓存中间件仅缓存导致状态代码为 200 （正常） 的服务器响应。 任何其他响应，包括[错误页](xref:fundamentals/error-handling)，将忽略的中间件。
 
@@ -46,10 +48,10 @@ ms.lasthandoff: 05/03/2018
 
 该中间件提供三个选项用于控制响应缓存。
 
-| 选项                | 默认值 |
-| --------------------- | ------------- |
-| UseCaseSensitivePaths | 确定响应将在区分大小写的路径上缓存。</p><p>默认值为 `false`。 |
-| MaximumBodySize       | 以字节为单位的响应正文的最大缓存大小。</p>默认值是`64 * 1024 * 1024`(64 MB)。 |
+| 选项                | 描述 |
+| --------------------- | ----------- |
+| UseCaseSensitivePaths | 确定响应将在区分大小写的路径上缓存。 默认值为 `false`。 |
+| MaximumBodySize       | 以字节为单位的响应正文的最大缓存大小。 默认值是`64 * 1024 * 1024`(64 MB)。 |
 | 大小限制             | 以字节为单位的响应缓存中间件大小限制。 默认值是`100 * 1024 * 1024`(100 MB)。 |
 
 下面的示例将配置到中间件：
