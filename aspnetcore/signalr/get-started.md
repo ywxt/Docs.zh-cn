@@ -11,12 +11,12 @@ ms.prod: aspnet-core
 ms.topic: tutorial
 ms.technology: aspnet
 uid: signalr/get-started
-ms.openlocfilehash: 880abd87805990baf8dd977c340a60582e54d2df
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: ba1db640e5608fd9f5e7fa024283a651bf7772c2
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729490"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34819053"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>要开始使用 SignalR 在 ASP.NET Core 上
 
@@ -75,7 +75,7 @@ Visual Studio 包含`Microsoft.AspNetCore.SignalR`作为的一部分包含其服
     npm install @aspnet/signalr
     ```     
 
-4. 在创建新的文件夹名为"signalr" *lib*项目文件夹中的。 然后将复制*signalr.js*文件从*node_modules\\ @aspnet\signalr\dist\browser* 到此文件夹。
+4. 在创建新的文件夹名为"signalr" *lib*项目文件夹中的。 复制*signalr.js*文件从*node_modules\\ @aspnet\signalr\dist\browser* 到此文件夹。
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
@@ -92,7 +92,7 @@ Visual Studio 包含`Microsoft.AspNetCore.SignalR`作为的一部分包含其服
     npm install @aspnet/signalr
     ```
 
-3. 复制*signalr.js*文件从*node_modules\\ @aspnet\signalr\dist\browser* 到*lib*项目文件夹中的。
+3. 在创建新的文件夹名为"signalr" *lib*项目文件夹中的。 复制*signalr.js*文件从*node_modules\\ @aspnet\signalr\dist\browser* 到此文件夹。
 
 -----
 
@@ -140,15 +140,16 @@ Visual Studio 包含`Microsoft.AspNetCore.SignalR`作为的一部分包含其服
 
 ## <a name="create-the-signalr-client-code"></a>创建 SignalR 客户端代码
 
-1. 替换中的内容*Pages\Index.cshtml*替换为以下代码：
+1. 添加一个名为的 JavaScript 文件*chat.js*到*wwwroot\js*文件夹。 向新文件添加以下代码：
+
+   [!code-javascript[Index](get-started/sample/wwwroot/js/chat.js)]
+
+2. 替换中的内容*Pages\Index.cshtml*替换为以下代码：
 
    [!code-cshtml[Index](get-started/sample/Pages/Index.cshtml)]
 
    前面的 HTML 显示名称和消息字段和提交按钮。 请注意在底部的脚本引用： 至 SignalR 的引用和*chat.js*。
 
-2. 添加一个名为的 JavaScript 文件*chat.js*到*wwwroot\js*文件夹。 向新文件添加以下代码：
-
-   [!code-javascript[Index](get-started/sample/wwwroot/js/chat.js)]
 
 ## <a name="run-the-app"></a>运行应用
 

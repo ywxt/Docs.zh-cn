@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/add-user-data
-ms.openlocfilehash: 23fd792c0d93c038f31ce947e7885ad6e36d119e
-ms.sourcegitcommit: d4cefc0c63550c64a8040b11867cc05efcfb7e86
+ms.openlocfilehash: cc7b29499e9db702cab70be7c15eac53373d450d
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34758762"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34819066"
 ---
 # <a name="add-download-and-delete-custom-user-data-to-identity-in-an-aspnet-core-project"></a>添加、 下载和删除标识到 ASP.NET 核心项目中的自定义用户数据
 
@@ -116,7 +116,7 @@ dotnet aspnet-codegenerator identity -u WebApp1User -fi Account.Register;Account
 
 使用修饰属性， [PersonalData](/dotnet/api/microsoft.aspnetcore.identity.personaldataattribute?view=aspnetcore-2.1)属性：
 
-* 当删除*Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml* Razor 页调用`UserManager.Delete`。
+* 删除时*Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml* Razor 页调用`UserManager.Delete`。
 * 包含在下载的数据通过*Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml* Razor 页。
 
 ### <a name="update-the-accountmanageindexcshtml-page"></a>更新 Account/Manage/Index.cshtml 页

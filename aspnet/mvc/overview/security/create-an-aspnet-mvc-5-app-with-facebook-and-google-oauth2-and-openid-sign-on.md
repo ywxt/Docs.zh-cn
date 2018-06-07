@@ -12,11 +12,12 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: c289c209b50f0c2c1f2d8b15a3aedeaebf671d0b
-ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
+ms.openlocfilehash: aa4c91865f7b720846a5e8deb4281c3ca6933c8e
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34819092"
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>创建 ASP.NET MVC 5 应用程序使用 Facebook、 Twitter、 LinkedIn 和 Google OAuth2 登录 (C#)
 ====================
@@ -174,7 +175,7 @@ ms.lasthandoff: 05/21/2018
     ![创建新的应用程序](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image22.png)
 4. 输入**应用名称**和**类别**，然后单击**创建应用**。
 
-    这必须是唯一的 Facebook。 <strong>应用 Namespace</strong>是你的应用程序将用于访问 Facebook 应用程序进行身份验证的 URL 的一部分 (例如， https://apps.facebook.com/{App Namespace})。 如果没有指定<strong>应用 Namespace</strong>、<strong>应用程序 ID</strong>用于 URL。 <strong>应用程序 ID</strong>是你将在下一步中看到一个长时间的系统生成的数字。
+    <strong>应用 Namespace</strong>是你的应用程序将用于访问 Facebook 应用程序进行身份验证的 URL 的一部分 (例如，https\://apps.facebook.com/{App Namespace})。 如果没有指定<strong>应用 Namespace</strong>、<strong>应用程序 ID</strong>用于 URL。 <strong>应用程序 ID</strong>是你将在下一步中看到一个长时间的系统生成的数字。
 
     ![创建新的应用程序对话框](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image23.png)
 5. 提交的标准安全检查。

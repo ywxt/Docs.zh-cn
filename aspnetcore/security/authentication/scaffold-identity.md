@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/scaffold-identity
-ms.openlocfilehash: 8933cf9c4063bd94f7f3a9ba53b5372b443eb7c8
-ms.sourcegitcommit: d4cefc0c63550c64a8040b11867cc05efcfb7e86
+ms.openlocfilehash: 6202cb4d28cc8d77c1f83c8cee8c90892deef26e
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34758747"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818972"
 ---
 # <a name="scaffold-identity-in-aspnet-core-projects"></a>ASP.NET 核心项目中的基架标识
 
@@ -27,7 +27,7 @@ ASP.NET 核心 2.1 及更高版本提供了[ASP.NET 核心标识](xref:security/
 
 虽然 scaffolder 生成大部分所需的代码，但你将需要更新你的项目以完成该过程。 本文档说明完成标识基架更新所需的步骤。
 
-当运行时标识 scaffolder 时， *ScaffoldingReadme.txt*在项目目录中创建文件。 *ScaffoldingReadme.txt*文件包含有关需要哪些条件完成标识基架更新的常规说明。 本文档包含比读取的更完整说明*ScaffoldingReadme.txt*文件。
+当运行时标识 scaffolder 时， *ScaffoldingReadme.txt*在项目目录中创建文件。 *ScaffoldingReadme.txt*文件包含有关需要哪些条件完成标识基架更新的常规说明。 本文档包含比的更完整说明*ScaffoldingReadme.txt*文件。
 
 我们建议使用源代码管理系统，它显示文件的差异，并允许你地将带外更改。 运行标识 scaffolder 后检查所做的更改。
 
