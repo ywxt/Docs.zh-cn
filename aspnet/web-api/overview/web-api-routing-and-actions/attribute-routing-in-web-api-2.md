@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
-title: "属性 ASP.NET Web API 2 中的路由 |Microsoft 文档"
+title: 属性 ASP.NET Web API 2 中的路由 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
 ms.openlocfilehash: 173add73a150d3e13ae243d6548463da912dadee
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28038044"
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的属性路由
 ====================
@@ -151,11 +152,11 @@ Web API 还将选择基于请求 （GET、 POST 等） 的 HTTP 方法的操作�
 <a id="prefixes"></a>
 ## <a name="route-prefixes"></a>路由前缀
 
-通常情况下，所有以相同的前缀开头的控制器中路由。 例如:
+通常情况下，所有以相同的前缀开头的控制器中路由。 例如：
 
 [!code-csharp[Main](attribute-routing-in-web-api-2/samples/sample10.cs)]
 
-可以通过使用为整个控制器设置公共前缀**[RoutePrefix]**属性：
+可以通过使用为整个控制器设置公共前缀 **[RoutePrefix]** 属性：
 
 [!code-csharp[Main](attribute-routing-in-web-api-2/samples/sample11.cs)]
 
@@ -170,7 +171,7 @@ Web API 还将选择基于请求 （GET、 POST 等） 的 HTTP 方法的操作�
 <a id="constraints"></a>
 ## <a name="route-constraints"></a>路由约束
 
-路由约束可让你限制如何匹配路由模板中的参数。 常规语法&quot;{参数： 约束}&quot;。 例如:
+路由约束可让你限制如何匹配路由模板中的参数。 常规语法&quot;{参数： 约束}&quot;。 例如：
 
 [!code-csharp[Main](attribute-routing-in-web-api-2/samples/sample14.cs)]
 
@@ -183,19 +184,19 @@ Web API 还将选择基于请求 （GET、 POST 等） 的 HTTP 方法的操作�
 | Alpha | 匹配大写或小写拉丁字母字符 (a-z、 A-Z) | {x： 字母} |
 | bool | 匹配一个布尔值。 | {x: bool} |
 | datetime | 匹配**DateTime**值。 | {x: datetime} |
-| decimal | 匹配十进制值。 | {x:decimal} |
-| double | 与 64 位浮点值匹配。 | {x:double} |
+| decimal | 匹配十进制值。 | {x： 小数} |
+| double | 与 64 位浮点值匹配。 | {x： 双} |
 | float | 匹配一个 32 位浮点值。 | {x: float} |
 | guid | 匹配的 GUID 值。 | {x: guid} |
-| int | 匹配一个 32 位整数值。 | {x:int} |
-| length | 与具有指定长度或长度的指定的范围中的字符串匹配。 | {x:length(6)} {x:length(1,20)} |
-| long | 与 64 位整数值匹配。 | {x:long} |
+| int | 匹配一个 32 位整数值。 | {x: int} |
+| length | 与具有指定长度或长度的指定的范围中的字符串匹配。 | {x: length(6)}{x: length(1,20)} |
+| long | 与 64 位整数值匹配。 | {x： 长时间} |
 | max | 匹配一个整数，最大值。 | {x:max(10)} |
-| maxlength | 与最大长度的字符串匹配。 | {x:maxlength(10)} |
-| min | 匹配一个整数，最小值。 | {x:min(10)} |
-| minlength | 与最小长度的字符串匹配。 | {x:minlength(10)} |
-| range | 一个整数值的范围之内的匹配项。 | {x:range(10,50)} |
-| 正则表达式 | 与正则表达式匹配。 | {x:regex(^\d{3}-\d{3}-\d{4}$)} |
+| maxlength | 与最大长度的字符串匹配。 | {x: maxlength(10)} |
+| min | 匹配一个整数，最小值。 | {x: min(10)} |
+| minlength | 与最小长度的字符串匹配。 | {x: minlength(10)} |
+| range | 一个整数值的范围之内的匹配项。 | {x: range(10,50)} |
+| 正则表达式 | 与正则表达式匹配。 | {x: regex(^\d{3}-\d{3}-\d{4}$)} |
 
 请注意，某些约束，如&quot;min&quot;，在括号中采用自变量。 你可以将多个约束应用于由冒号分隔的参数。
 
@@ -269,8 +270,8 @@ Web API 还将选择基于请求 （GET、 POST 等） 的 HTTP 方法的操作�
 
 这些路由进行排序，如下所示。
 
-1. orders/details
-2. orders/{id}
+1. 订单/详细信息
+2. 订单 / {id}
 3. orders/{customerName}
 4. orders/{\*date}
 5. 订单 / 挂起

@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/enabling-cross-origin-requests-in-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: 453ad29ff4f10f9660f3aa8bab358519b4cfd48b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26508376"
 ---
 <a name="enabling-cross-origin-requests-in-aspnet-web-api-2"></a>启用 ASP.NET Web API 2 中的跨源请求
 ====================
@@ -51,10 +52,10 @@ ms.lasthandoff: 11/10/2017
 
 这些 Url 有两个比以前的不同来源：
 
-- `http://example.net`-不同的域
-- `http://example.com:9000/foo.html`-不同的端口
-- `https://example.com/foo.html`-不同的方案
-- `http://www.example.com/foo.html`的不同子域
+- `http://example.net` -不同的域
+- `http://example.com:9000/foo.html` -不同的端口
+- `https://example.com/foo.html` -不同的方案
+- `http://www.example.com/foo.html` 的不同子域
 
 > [!NOTE]
 > 比较来源时，Internet Explorer 不考虑端口。
@@ -115,11 +116,11 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample4.cs?highlight=9)]
 
-接下来，添加**[EnableCors]**属性设为`TestController`类：
+接下来，添加 **[EnableCors]** 属性设为`TestController`类：
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample5.cs?highlight=3,7)]
 
-有关*来源*参数，请使用 WebClient 应用程序的部署位置的 URI。 这样，跨域请求来自 WebClient，同时仍不允许其他所有跨域请求。 更高版本，我将介绍的参数**[EnableCors]**中更多详细信息。
+有关*来源*参数，请使用 WebClient 应用程序的部署位置的 URI。 这样，跨域请求来自 WebClient，同时仍不允许其他所有跨域请求。 更高版本，我将介绍的参数 **[EnableCors]** 中更多详细信息。
 
 不包含正斜杠末尾*来源*URL。
 
@@ -130,7 +131,7 @@ ms.lasthandoff: 11/10/2017
 <a id="how-it-works"></a>
 ## <a name="how-cors-works"></a>CORS 的工作原理
 
-本部分介绍在 CORS 请求中，在 HTTP 消息的级别会发生什么情况。 务必了解 CORS 的工作原理，以便你可以配置**[EnableCors]**属性是否正确，并解决如果操作不能按预期工作。
+本部分介绍在 CORS 请求中，在 HTTP 消息的级别会发生什么情况。 务必了解 CORS 的工作原理，以便你可以配置 **[EnableCors]** 属性是否正确，并解决如果操作不能按预期工作。
 
 CORS 规范引入了几个新的 HTTP 标头启用跨域请求。 如果浏览器支持 CORS，则将自动为跨源请求; 这些标头设置你不必执行任何特殊的 JavaScript 代码中。
 
@@ -182,13 +183,13 @@ CORS 规范引入了几个新的 HTTP 标头启用跨域请求。 如果浏览�
 
 **每个操作**
 
-若要为单个操作启用 CORS，设置**[EnableCors]**上的操作方法的属性。 以下示例启用 CORS 的`GetItem`仅限方法。
+若要为单个操作启用 CORS，设置 **[EnableCors]** 上的操作方法的属性。 以下示例启用 CORS 的`GetItem`仅限方法。
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample10.cs)]
 
 **每个控制器**
 
-如果你设置**[EnableCors]**控制器类中，它适用于在控制器上的所有操作。 若要禁用 CORS 操作，将添加**[DisableCors]**属性设为该操作。 下面的示例为每个方法，但启用 CORS `PutItem`。
+如果你设置 **[EnableCors]** 控制器类中，它适用于在控制器上的所有操作。 若要禁用 CORS 操作，将添加 **[DisableCors]** 属性设为该操作。 下面的示例为每个方法，但启用 CORS `PutItem`。
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample11.cs)]
 
@@ -207,7 +208,7 @@ CORS 规范引入了几个新的 HTTP 标头启用跨域请求。 如果浏览�
 <a id="allowed-origins"></a>
 ## <a name="set-the-allowed-origins"></a>设置允许的来源
 
-*来源*参数**[EnableCors]**属性指定允许哪些来源访问该资源。 值是允许的来源的以逗号分隔列表。
+*来源*参数 **[EnableCors]** 属性指定允许哪些来源访问该资源。 值是允许的来源的以逗号分隔列表。
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample13.cs)]
 
@@ -220,14 +221,14 @@ CORS 规范引入了几个新的 HTTP 标头启用跨域请求。 如果浏览�
 <a id="allowed-methods"></a>
 ## <a name="set-the-allowed-http-methods"></a>设置允许的 HTTP 方法
 
-*方法*参数**[EnableCors]**属性指定允许哪些 HTTP 方法的访问的资源。 若要允许所有方法，使用通配符值"\*"。 下面的示例允许仅 GET 和 POST 请求。
+*方法*参数 **[EnableCors]** 属性指定允许哪些 HTTP 方法的访问的资源。 若要允许所有方法，使用通配符值"\*"。 下面的示例允许仅 GET 和 POST 请求。
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample15.cs)]
 
 <a id="allowed-request-headers"></a>
 ## <a name="set-the-allowed-request-headers"></a>设置允许的请求标头
 
-前面我已经说明如何预检请求可能包括一个访问控制的请求标头标头中，列出由应用程序设置的 HTTP 标头 (所谓的"创作请求标头")。 *标头*参数**[EnableCors]**属性指定允许哪些作者请求标头。 若要允许任何标头，设置*标头*到"\*"。 到允许列表特定的标头，设置*标头*以逗号分隔列表的允许的标头：
+前面我已经说明如何预检请求可能包括一个访问控制的请求标头标头中，列出由应用程序设置的 HTTP 标头 (所谓的"创作请求标头")。 *标头*参数 **[EnableCors]** 属性指定允许哪些作者请求标头。 若要允许任何标头，设置*标头*到"\*"。 到允许列表特定的标头，设置*标头*以逗号分隔列表的允许的标头：
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample16.cs)]
 
@@ -240,14 +241,14 @@ CORS 规范引入了几个新的 HTTP 标头启用跨域请求。 如果浏览�
 
 默认情况下，浏览器不公开所有向应用程序的响应标头。 默认为可用的响应标头是：
 
-- 缓存控制
+- Cache-Control
 - 内容语言
-- 内容类型
+- Content-Type
 - 过期
 - 上次修改
 - 杂注
 
-CORS 规范调用这些[简单响应标头](https://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html#simple-response-header)。 若要使其他标头可用于应用程序，将设置*exposedHeaders*参数**[EnableCors]**。
+CORS 规范调用这些[简单响应标头](https://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html#simple-response-header)。 若要使其他标头可用于应用程序，将设置*exposedHeaders*参数 **[EnableCors]**。
 
 在以下示例中，控制器的`Get`方法设置的名为 X-自定义的标头的自定义标头。 默认情况下，浏览器并不会跨域请求中的此标头。 若要提供标头中, 包含 X-自定义的标头*exposedHeaders*。
 
@@ -266,7 +267,7 @@ CORS 规范调用这些[简单响应标头](https://dvcs.w3.org/hg/cors/raw-file
 
 [!code-javascript[Main](enabling-cross-origin-requests-in-web-api/samples/sample19.js)]
 
-此外，则服务器必须允许凭据。 若要允许跨域凭据 Web API 中，设置**SupportsCredentials**属性设置为 true; 如果**[EnableCors]**属性：
+此外，则服务器必须允许凭据。 若要允许跨域凭据 Web API 中，设置**SupportsCredentials**属性设置为 true; 如果 **[EnableCors]** 属性：
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample20.cs)]
 
@@ -279,11 +280,11 @@ CORS 规范调用这些[简单响应标头](https://dvcs.w3.org/hg/cors/raw-file
 <a id="cors-policy-providers"></a>
 ## <a name="custom-cors-policy-providers"></a>自定义 CORS 策略提供程序
 
-**[EnableCors]**特性实现**ICorsPolicyProvider**接口。 您可以通过创建派生自的类提供您自己的实现**属性**并实现**ICorsProlicyProvider**。
+**[EnableCors]** 特性实现**ICorsPolicyProvider**接口。 您可以通过创建派生自的类提供您自己的实现**属性**并实现**ICorsProlicyProvider**。
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample21.cs)]
 
-现在你可以将的特性应用任何位置，可使**[EnableCors]**。
+现在你可以将的特性应用任何位置，可使 **[EnableCors]**。
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample22.cs)]
 

@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
 ms.openlocfilehash: 7d0486b4cab85ffe77fda87d4b34dd3ec0a9e8fe
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30874221"
 ---
 <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>从 Windows Phone 8 应用程序 (C#) 调用 Web API
 ====================
@@ -40,7 +41,7 @@ ms.lasthandoff: 04/06/2018
 - 有关其他要求的列表，请参阅*系统要求*节[Windows Phone SDK 8.0](https://www.microsoft.com/download/details.aspx?id=35471)下载页。
 
 > [!NOTE]
-> 如果你要测试 Web API 与您的本地系统上的 Windows Phone 8 项目之间的连接，你将需要按照中的说明*[连接到位于本地的 Web API 应用程序的 Windows Phone 8 模拟器计算机](https://go.microsoft.com/fwlink/?LinkId=324014)*文章以设置你的测试环境。
+> 如果你要测试 Web API 与您的本地系统上的 Windows Phone 8 项目之间的连接，你将需要按照中的说明*[连接到位于本地的 Web API 应用程序的 Windows Phone 8 模拟器计算机](https://go.microsoft.com/fwlink/?LinkId=324014)* 文章以设置你的测试环境。
 
 
 <a id="STEP1"></a>
@@ -163,7 +164,7 @@ ms.lasthandoff: 04/06/2018
 
 ### <a name="step-3-testing-the-end-to-end-solution"></a>步骤 3： 测试端到端解决方案
 
-中所述*先决条件*本教程中，当测试 Web API 和 Windows Phone 8 之间的连接部分项目在您的本地系统上，将需要按照中的说明 *[连接到本地计算机上的 Web API 应用程序的 Windows Phone 8 模拟器](https://go.microsoft.com/fwlink/?LinkId=324014)*文章以设置你的测试环境。
+中所述*先决条件*本教程中，当测试 Web API 和 Windows Phone 8 之间的连接部分项目在您的本地系统上，将需要按照中的说明 *[连接到本地计算机上的 Web API 应用程序的 Windows Phone 8 模拟器](https://go.microsoft.com/fwlink/?LinkId=324014)* 文章以设置你的测试环境。
 
 配置测试环境后，你将需要将 Windows Phone 应用程序设置为启动项目。 为此，请突出显示**BookCatalog**在解决方案资源管理器，然后单击应用程序**设为启动项目**:
 

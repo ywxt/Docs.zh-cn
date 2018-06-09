@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions
 msc.type: authoredcontent
 ms.openlocfilehash: 0ab99dd443040b90ffefd2f5b9261a63b91e9463
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28037316"
 ---
 <a name="routing-conventions-in-aspnet-web-api-2-odata"></a>ASP.NET Web API 2 中的路由约定 Odata
 ====================
@@ -47,9 +48,9 @@ ms.lasthandoff: 01/24/2018
 
 用于路由，重要的部分是资源路径。 资源路径分为段。 例如，`/Products(1)/Supplier`具有三个段：
 
-- `Products`引用名为"产品"实体集。
-- `1`是否为实体键，从组中选择单个实体。
-- `Supplier`是一个导航属性，选择相关的实体。
+- `Products` 引用名为"产品"实体集。
+- `1` 是否为实体键，从组中选择单个实体。
+- `Supplier` 是一个导航属性，选择相关的实体。
 
 因此出供应商产品 1 会选取此路径。
 
@@ -80,15 +81,15 @@ ms.lasthandoff: 01/24/2018
 | PUT /entityset （密钥）/强制转换 | /Products(1)/Models.Book | PutEntityType 或 Put | PutBook |
 | 修补程序 /entityset(key) | /Products(1) | PatchEntityType 或修补程序 | PatchProduct |
 | 修补程序 /entityset （密钥）/强制转换 | /Products(1)/Models.Book | PatchEntityType 或修补程序 | PatchBook |
-| DELETE /entityset(key) | /Products(1) | DeleteEntityType 或删除 | DeleteProduct |
-| DELETE /entityset(key)/cast | /Products(1)/Models.Book | DeleteEntityType 或删除 | DeleteBook |
+| 删除 /entityset(key) | /Products(1) | DeleteEntityType 或删除 | DeleteProduct |
+| 删除 /entityset （密钥）/强制转换 | /Products(1)/Models.Book | DeleteEntityType 或删除 | DeleteBook |
 
 **查询的导航属性**
 
 | 请求 | 示例 URI | 操作名称 | 示例操作 |
 | --- | --- | --- | --- |
-| GET /entityset （密钥） / 导航 | /Products(1)/Supplier | GetNavigationFromEntityType or GetNavigation | GetSupplierFromProduct |
-| 获取 /entityset （密钥）/转换/导航 | /Products(1)/Models.Book/Author | GetNavigationFromEntityType or GetNavigation | GetAuthorFromBook |
+| GET /entityset （密钥） / 导航 | / 产品 （1）/供应商 | GetNavigationFromEntityType 或 GetNavigation | GetSupplierFromProduct |
+| 获取 /entityset （密钥）/转换/导航 | /Products(1)/Models.Book/Author | GetNavigationFromEntityType 或 GetNavigation | GetAuthorFromBook |
 
 有关详细信息，请参阅[使用实体关系](odata-v3/working-with-entity-relations.md)。
 
@@ -96,10 +97,10 @@ ms.lasthandoff: 01/24/2018
 
 | 请求 | 示例 URI | 操作名称 |
 | --- | --- | --- |
-| POST /entityset(key)/$links/navigation | /Products(1)/$links/Supplier | CreateLink |
-| PUT 的 /entityset （密钥） / $links/导航 | /Products(1)/$links/Supplier | CreateLink |
-| DELETE /entityset(key)/$links/navigation | /Products(1)/$links/Supplier | DeleteLink |
-| DELETE /entityset(key)/$links/navigation(relatedKey) | /Products/(1)/$links/Suppliers(1) | DeleteLink |
+| POST /entityset （密钥） / $links/导航 | / 产品 （1） / $ 链接/供应商 | CreateLink |
+| PUT 的 /entityset （密钥） / $links/导航 | / 产品 （1） / $ 链接/供应商 | CreateLink |
+| 删除 /entityset （密钥） / $links/导航 | / 产品 （1） / $ 链接/供应商 | DeleteLink |
+| 删除 /entityset(key)/$links/navigation(relatedKey) | /Products/(1)/$links/Suppliers(1) | DeleteLink |
 
 有关详细信息，请参阅[使用实体关系](odata-v3/working-with-entity-relations.md)。
 
@@ -116,8 +117,8 @@ ms.lasthandoff: 01/24/2018
 
 | 请求 | 示例 URI | 操作名称 | 示例操作 |
 | --- | --- | --- | --- |
-| POST /entityset(key)/action | /Products(1)/Rate | ActionNameOnEntityType 或 ActionName | RateOnProduct |
-| POST /entityset(key)/cast/action | /Products(1)/Models.Book/CheckOut | ActionNameOnEntityType 或 ActionName | CheckOutOnBook |
+| POST /entityset （密钥） / 操作 | / 产品 （1）/速率 | ActionNameOnEntityType 或 ActionName | RateOnProduct |
+| 后 /entityset （密钥）/转换/操作 | /Products(1)/Models.Book/CheckOut | ActionNameOnEntityType 或 ActionName | CheckOutOnBook |
 
 有关详细信息，请参阅[OData 操作](odata-v3/odata-actions.md)。
 
@@ -169,7 +170,7 @@ ms.lasthandoff: 01/24/2018
 
 1. 我派生自**EntitySetRoutingConvention**，这是因为**SelectController**在该类的方法适合于此新的路由约定。 这意味着我不需要重新实现**SelectController**。
 2. 约定适用仅对 GET 请求中，并且仅当路径模板时&quot;~/entityset/key/navigation/key&quot;。
-3. 操作名称是&quot;获取 {EntityType}&quot;，其中 *{EntityType}* 是导航集合的类型。 例如， &quot;GetSupplier&quot;。 您可以使用任何您喜欢的命名约定和 #8212;只需确保你与匹配的控制器操作。
+3. 操作名称是&quot;获取 {EntityType}&quot;，其中 *{EntityType}* 是导航集合的类型。 例如， &quot;GetSupplier&quot;。 你可以使用任何您喜欢的命名约定&#8212;只需确保你与匹配的控制器操作。
 4. 将名为的两个参数的操作*密钥*和*relatedKey*。 (有关某些预定义的参数名称的列表，请参阅[ODataRouteConstants](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatarouteconstants.aspx)。)
 
 下一步向路由约定的列表添加新的约定。 发生这种情况在配置期间，如下面的代码中所示：

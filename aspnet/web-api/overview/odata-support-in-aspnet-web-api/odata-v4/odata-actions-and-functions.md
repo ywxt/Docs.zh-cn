@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-actions-and-functions
-title: "操作和函数在 OData v4 使用 ASP.NET Web API 2.2 |Microsoft 文档"
+title: 操作和函数在 OData v4 使用 ASP.NET Web API 2.2 |Microsoft 文档
 author: MikeWasson
-description: "在 OData 中，操作和函数都可添加轻松未定义为对实体的 CRUD 操作的服务器端行为的方法。 本教程演示如何..."
+description: 在 OData 中，操作和函数都可添加轻松未定义为对实体的 CRUD 操作的服务器端行为的方法。 本教程演示如何...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/27/2014
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-actions-and-functions
 msc.type: authoredcontent
 ms.openlocfilehash: 532362f0c0faaaf0cb0c04726856f0497e5261b5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26508226"
 ---
 <a name="actions-and-functions-in-odata-v4-using-aspnet-web-api-22"></a>操作和使用 ASP.NET Web API 2.2 中 OData v4 函数
 ====================
@@ -88,7 +89,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](odata-actions-and-functions/samples/sample6.cs)]
 
-请注意的方法名称匹配的操作名称。 **[HttpPost]**属性指定该方法是 HTTP POST 方法。
+请注意的方法名称匹配的操作名称。 **[HttpPost]** 属性指定该方法是 HTTP POST 方法。
 
 若要调用的操作，客户端发送 HTTP POST 请求如下所示：
 
@@ -116,7 +117,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](odata-actions-and-functions/samples/sample11.cs)]
 
-请注意的方法名称匹配的函数名称。 **[HttpGet]**属性指定方法是 HTTP GET 方法。
+请注意的方法名称匹配的函数名称。 **[HttpGet]** 属性指定方法是 HTTP GET 方法。
 
 下面是 HTTP 响应：
 
@@ -136,7 +137,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](odata-actions-and-functions/samples/sample14.cs)]
 
-它并不重要放置在此方法的 Web API 控制器。 无法将其放入`ProductsController`，或定义单独的控制器。 **[ODataRoute]**属性定义用于函数的 URI 模板。
+它并不重要放置在此方法的 Web API 控制器。 无法将其放入`ProductsController`，或定义单独的控制器。 **[ODataRoute]** 属性定义用于函数的 URI 模板。
 
 下面是一个示例客户端请求：
 

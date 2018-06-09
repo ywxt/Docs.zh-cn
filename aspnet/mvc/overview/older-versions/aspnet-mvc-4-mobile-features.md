@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
 ms.openlocfilehash: 5f38fcdd8e71ce12f7899214b6b2133e21f9910c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30876834"
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 移动功能
 ====================
@@ -63,7 +64,7 @@ ms.lasthandoff: 04/06/2018
 
 ### <a name="getting-started"></a>入门
 
-下载会议列表应用程序初学者项目使用以下链接：[下载](https://go.microsoft.com/fwlink/?LinkId=228307)。 然后在 Windows 资源管理器，右键单击*MvcMobile.zip*文件，然后选择**属性**。 在**MvcMobile.zip 属性**对话框框中，选择**解除阻止**按钮。 (取消阻止一条安全警告，当你尝试使用*.zip*已从 web 下载的文件。)
+下载会议列表应用程序初学者项目使用以下链接：[下载](https://go.microsoft.com/fwlink/?LinkId=228307)。 然后在 Windows 资源管理器，右键单击*MvcMobile.zip*文件，然后选择**属性**。 在**MvcMobile.zip 属性**对话框框中，选择**解除阻止**按钮。 (取消阻止一条安全警告，当你尝试使用 *.zip*已从 web 下载的文件。)
 
 ![p1_unBlock](aspnet-mvc-4-mobile-features/_static/image4.png)
 
@@ -121,7 +122,7 @@ ASP.NET 标记视图显示非常混乱。 例如，**日期**列是很难阅读�
 
 ## <a name="overriding-views-layouts-and-partial-views"></a>重写视图、 布局和分部视图
 
-ASP.NET MVC 4 中的一个重要的新功能是一个简单的机制，你可以重写任何视图 （包括布局和分部视图） 的移动浏览一般情况下，单个移动浏览器，或任何特定浏览器。 若要提供移动特定视图，你可以复制视图文件并添加*。移动*到的文件名称。 例如，若要创建移动*索引*视图中，复制*Views\Home\Index.cshtml*到*Views\Home\Index.Mobile.cshtml*。
+ASP.NET MVC 4 中的一个重要的新功能是一个简单的机制，你可以重写任何视图 （包括布局和分部视图） 的移动浏览一般情况下，单个移动浏览器，或任何特定浏览器。 若要提供移动特定视图，你可以复制视图文件并添加 *。移动*到的文件名称。 例如，若要创建移动*索引*视图中，复制*Views\Home\Index.cshtml*到*Views\Home\Index.Mobile.cshtml*。
 
 在本部分中，你将创建一个移动特定布局文件。
 
@@ -183,7 +184,7 @@ ASP.NET MVC 4 中的一个重要的新功能是一个简单的机制，你可以
 
 若要开始，删除*共享\\_Layout.Mobile.cshtml*和*共享\\_Layout.iPhone.cshtml*前面创建的文件。
 
-重命名*Views\Home\AllTags.Mobile.cshtml*和*Views\Home\AllTags.iPhone.cshtml*文件到*Views\Home\AllTags.iPhone.cshtml.hide*和*将 Views\Home\AllTags.Mobile.cshtml.hide*。 因为文件不再具有*.cshtml*扩展，它们不会用于 ASP.NET MVC 运行时呈现*AllTags*视图。
+重命名*Views\Home\AllTags.Mobile.cshtml*和*Views\Home\AllTags.iPhone.cshtml*文件到*Views\Home\AllTags.iPhone.cshtml.hide*和*将 Views\Home\AllTags.Mobile.cshtml.hide*。 因为文件不再具有 *.cshtml*扩展，它们不会用于 ASP.NET MVC 运行时呈现*AllTags*视图。
 
 安装*jQuery.Mobile.MVC*通过执行此操作的 NuGet 包：
 
@@ -203,7 +204,7 @@ JQuery.Mobile.MVC NuGet 程序包将安装以下：
 - A`ViewSwitcher`控制器小组件 (*Controllers\ViewSwitcherController.cs*)。
 - jQuery Mobile JavaScript 文件。
 - JQuery Mobile 样式的布局文件 (*views/shared\\_Layout.Mobile.cshtml*)。
-- 视图切换器分部视图*(MvcMobile\Views\Shared\\_ViewSwitcher.cshtml*)，它提供要从桌面视图，反之亦然，这样和移动视图切换每页顶部的链接。
+- 视图切换器分部视图 *(MvcMobile\Views\Shared\\_ViewSwitcher.cshtml*)，它提供要从桌面视图，反之亦然，这样和移动视图切换每页顶部的链接。
 - 多个<em>.png</em>和<em>.gif</em>中的图像文件<em>Content\images</em>文件夹。
 
 打开*Global.asax*文件并添加以下代码作为的最后一行`Application_Start`方法。
@@ -393,7 +394,7 @@ JQuery.Mobile.MVC NuGet 程序包将安装以下：
 - 移动视图切换器小组件视图不是也可以在桌面视图中显示。
 - 支持特定浏览器，如 iPhone 浏览器的支持。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [jQuery Mobile](http://jquerymobile.com)站点。
 - [jQuery Mobile 概述](http://jquerymobile.com/demos/1.0b3/docs/about/intro.html)

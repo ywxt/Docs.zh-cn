@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
 ms.openlocfilehash: 06f22bc9a3068ee5621df62ee5ed1bea06d7e9e6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30881352"
 ---
 <a name="customizing-database-deployments-for-multiple-environments"></a>多个环境的的自定义数据库部署
 ====================
@@ -69,7 +70,7 @@ ms.lasthandoff: 04/06/2018
 
 此表显示不同的目标环境的典型的部署设置。 但是，你的设置可能不同，具体取决于你的确切需求。
 
-|  | Developer/Test | 过渡/集成 | 生产 |
+|  | 开发人员/测试 | 过渡/集成 | 生产 |
 | --- | --- | --- | --- |
 | **部署比较排序规则** | 源 | 目标 | 目标 |
 | **部署数据库属性** | True | 仅在第一次 | 仅在第一次 |

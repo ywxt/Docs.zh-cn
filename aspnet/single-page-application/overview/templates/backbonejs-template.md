@@ -1,22 +1,23 @@
 ---
 uid: single-page-application/overview/templates/backbonejs-template
-title: "Backbone 模板 |Microsoft 文档"
+title: Backbone 模板 |Microsoft 文档
 author: madskristensen
-description: "Backbone.js SPA 模板"
+description: Backbone.js SPA 模板
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/04/2013
 ms.topic: article
 ms.assetid: 00aca413-f067-4108-9bd1-cf21e64a2646
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/backbonejs-template
 msc.type: authoredcontent
 ms.openlocfilehash: 3b8eabd3cefcb96dc40bbf6cc6e3ee81accb0d7c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26506676"
 ---
 <a name="backbone-template"></a>Backbone 模板
 ====================
@@ -39,7 +40,7 @@ Backbone.js SPA 模板旨在帮助你入门快速构建客户端的交互式 web
 
 下载并安装该模板通过单击上面的下载按钮。 模板被打包为 Visual Studio 扩展 (VSIX) 文件。 你可能需要重新启动 Visual Studio。
 
-在**模板**窗格中，选择**已安装的模板**展开**Visual C#**节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 命名该项目并单击**确定**。
+在**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 命名该项目并单击**确定**。
 
 ![](backbonejs-template/_static/image1.png)
 
@@ -61,7 +62,7 @@ Backbone.js SPA 模板旨在帮助你入门快速构建客户端的交互式 web
 
 **应用程序**
 
-`Application`在 application.ts 中定义。 此对象初始化应用程序，并且可作为根命名空间。 这样可保持在应用程序之间共享的配置和状态信息，如用户已登录。
+`Application` 在 application.ts 中定义。 此对象初始化应用程序，并且可作为根命名空间。 这样可保持在应用程序之间共享的配置和状态信息，如用户已登录。
 
 `application.start`方法创建的模式视图，并将附加应用程序级事件，例如用户登录事件处理程序。 接下来，它创建的默认路由器，并检查是否指定任何客户端的 URL。 如果不是，它将重定向到默认 url (# ！ /)。
 

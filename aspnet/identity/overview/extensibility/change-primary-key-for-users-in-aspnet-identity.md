@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
-title: "更改为在 ASP.NET Identity 中的用户的主要密钥 |Microsoft 文档"
+title: 更改为在 ASP.NET Identity 中的用户的主要密钥 |Microsoft 文档
 author: tfitzmac
-description: "在 Visual Studio 2013 中，默认 web 应用程序使用用户帐户的密钥的字符串值。 ASP.NET 标识使你能够更改的一种..."
+description: 在 Visual Studio 2013 中，默认 web 应用程序使用用户帐户的密钥的字符串值。 ASP.NET 标识使你能够更改的一种...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/30/2014
 ms.topic: article
 ms.assetid: 44925849-5762-4504-a8cd-8f0cd06f6dc3
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
 msc.type: authoredcontent
 ms.openlocfilehash: 79812efb4de2461fad3765d6005bbd20393e62b2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26498226"
 ---
 <a name="change-primary-key-for-users-in-aspnet-identity"></a>更改主键在 ASP.NET Identity 中的用户
 ====================
@@ -120,7 +121,7 @@ ThrowIfV1Schema 参数不再在构造函数中有效。 更改构造函数，因
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample10.cs?highlight=5,9)]
 
-**Manage(ManageUserViewModel)**方法
+**Manage(ManageUserViewModel)** 方法
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample11.cs?highlight=11,17,41)]
 
@@ -275,7 +276,7 @@ ThrowIfV1Schema 参数不再在构造函数中有效。 更改构造函数，因
 <a id="other"></a>
 ## <a name="other-resources"></a>其他资源
 
-- [自定义存储提供程序 ASP.NET 标识概述](overview-of-custom-storage-providers-for-aspnet-identity.md)
-- [从 SQL 成员资格的现有网站迁移到 ASP.NET 标识](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
+- [ASP.NET 标识的自定义存储提供程序概述](overview-of-custom-storage-providers-for-aspnet-identity.md)
+- [将现有网站从 SQL 成员身份迁移到 ASP.NET 标识](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
 - [将通用提供程序的数据迁移的成员身份和到 ASP.NET 标识的用户配置文件](../migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity.md)
 - [示例应用程序](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/ChangePK/readme.txt)具有已更改的主关键字

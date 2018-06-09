@@ -1,22 +1,23 @@
 ---
 uid: single-page-application/overview/templates/breezeknockout-template
-title: "轻松/Knockout 模板 |Microsoft 文档"
+title: 轻松/Knockout 模板 |Microsoft 文档
 author: madskristensen
-description: "轻松/Knockout 单页面应用程序模板"
+description: 轻松/Knockout 单页面应用程序模板
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/30/2013
 ms.topic: article
 ms.assetid: 3bd94827-3c59-448f-abc3-36e6df4858db
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/breezeknockout-template
 msc.type: authoredcontent
 ms.openlocfilehash: 07ec099a0381458fe42c1972a2554f76fd34638c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26506696"
 ---
 <a name="breezeknockout-template"></a>轻松/Knockout 模板
 ====================
@@ -57,7 +58,7 @@ BreezeJS 库为你，释放你开发而言最为重要的应用程序逻辑和�
 
 下载并安装该模板通过单击上面的下载按钮。 模板被打包为 Visual Studio 扩展 (VSIX) 文件。 你可能需要重新启动 Visual Studio。
 
-在**模板**窗格中，选择**已安装的模板**展开**Visual C#**节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 命名该项目并单击**确定**。
+在**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 命名该项目并单击**确定**。
 
 在**新项目**向导中，选择**轻松 Knockout SPA**。
 

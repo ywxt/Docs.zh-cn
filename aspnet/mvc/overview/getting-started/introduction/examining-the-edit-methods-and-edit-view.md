@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
 ms.openlocfilehash: a3baa8e9af572d4c21813218ba394715a6db65cb
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30874741"
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>检查编辑方法和编辑视图
 ====================
@@ -72,11 +73,11 @@ ms.lasthandoff: 04/06/2018
 
 基架的代码使用了若干个*帮助器方法*来简化的 HTML 标记。 [ `Html.LabelFor` ](https://msdn.microsoft.com/library/gg401864(VS.98).aspx)帮助器显示的字段的名称 (&quot;标题&quot;， &quot;ReleaseDate&quot;，&quot;流派&quot;，或&quot;价格&quot;). [ `Html.EditorFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx)帮助器上呈现 HTML`<input>`元素。 [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx)帮助器显示与该属性相关联的任何验证消息。
 
-运行应用程序并导航到*/Movies* URL。 点击“编辑”链接。 在浏览器中查看页面的源。 下面显示了窗体元素的 HTML。
+运行应用程序并导航到 */Movies* URL。 点击“编辑”链接。 在浏览器中查看页面的源。 下面显示了窗体元素的 HTML。
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample8.cshtml?highlight=1-2)]
 
-`<input>`元素是在 HTML`<form>`元素其`action`特性设置为发布到*/电影/编辑*URL。 窗体数据将发送到服务器时**保存**单击按钮。 第二行显示隐藏[XSRF](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)生成令牌`@Html.AntiForgeryToken()`调用。
+`<input>`元素是在 HTML`<form>`元素其`action`特性设置为发布到 */电影/编辑*URL。 窗体数据将发送到服务器时**保存**单击按钮。 第二行显示隐藏[XSRF](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)生成令牌`@Html.AntiForgeryToken()`调用。
 
 ## <a name="processing-the-post-request"></a>处理 POST 请求
 
@@ -106,7 +107,7 @@ ms.lasthandoff: 04/06/2018
 1. 从**工具**菜单上，单击**NuGetLibrary 程序包管理器**，然后单击**管理解决方案的 NuGet 包**。  
   
     ![](examining-the-edit-methods-and-edit-view/_static/image5.png)
-2. 在左窗格中，选择<strong>浏览*。</strong>*（参阅下图）。
+2. 在左窗格中，选择<strong>浏览 *。</strong>*（参阅下图）。
 3. 在输入框中，输入 * Globalize * *。  
   
     ![](examining-the-edit-methods-and-edit-view/_static/image6.png) 选择`jQuery.Validation.Globalize`，选择`MvcMovie`单击**安装**。 *Scripts\jquery.globalize\globalize.js*文件将添加到你的项目。 *Scripts\jquery.globalize\cultures\*文件夹将包含多个区域性 JavaScript 文件。 请注意，它可能需要 5 分钟，安装此包。

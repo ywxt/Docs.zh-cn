@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
 msc.type: authoredcontent
 ms.openlocfilehash: c9675eb7776116ecbe910d5515abfe9b4391df22
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30873347"
 ---
 <a name="adding-a-view-vb"></a>添加的视图 (VB)
 ====================
@@ -63,7 +64,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="changing-views-and-layout-pages"></a>更改视图和布局页面
 
-首先，让我们更改文本&quot;我的 MVC 应用程序。&quot;该文本共享，并显示在每一页。 它实际出现在只有一个位置中我们项目中，即使它位于我们的应用程序中每页上。 转到*/视图/共享*文件夹中的**解决方案资源管理器**并打开 *\_Layout.vbhtml*文件。 此文件称为布局页，它是共享&quot;shell&quot;其他所有页使用。
+首先，让我们更改文本&quot;我的 MVC 应用程序。&quot;该文本共享，并显示在每一页。 它实际出现在只有一个位置中我们项目中，即使它位于我们的应用程序中每页上。 转到 */视图/共享*文件夹中的**解决方案资源管理器**并打开 *\_Layout.vbhtml*文件。 此文件称为布局页，它是共享&quot;shell&quot;其他所有页使用。
 
 请注意`@RenderBody()`的文件的底部附近的代码行。 `RenderBody` 是你创建的所有页面，都会都显示其中一个占位符&quot;包装&quot;布局页中。 更改`<h1>`标题从**&quot;** My MVC Application&quot;到&quot;MVC 影片应用程序&quot;。
 

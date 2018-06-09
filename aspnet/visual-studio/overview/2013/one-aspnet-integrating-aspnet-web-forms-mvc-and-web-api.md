@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: 55109723e566a9f7c66c1a59414377b05dbec760
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26507116"
 ---
 <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>动手实验： 一个 ASP.NET： 将 ASP.NET Web 窗体、 MVC 和 Web API 集成
 ====================
@@ -28,7 +29,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > Visual Studio 2013 引入了新的统一的项目系统，这样就可以生成应用程序，并使用一个项目中的所有 ASP.NET 技术。 此功能消除了需要在开始时的项目和它，坚持选择一种技术，并改为鼓励使用一个项目中的多个 ASP.NET 框架。
 > 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit)。
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)。
 
 
 <a id="Overview"></a>
@@ -46,7 +47,7 @@ ms.lasthandoff: 11/10/2017
 - 公开相同的信息的计算机和可读的格式为每个作业使用的正确工具集
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 完成本动手实验需要以下：
 
@@ -161,7 +162,7 @@ ms.lasthandoff: 11/10/2017
     *友好 Url*
 
     > [!NOTE]
-    > 如你所见，URL 更改为 **/请联系**。 从开始**ASP.NET 4**，URL 路由功能已添加到 Web 窗体，因此你可以编写 Url 喜欢*[http://www.mysite.com/products/software](http://www.mysite.com/products/software)* 而不是*[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)*。 有关详细信息，请参阅[URL 路由](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md)。
+    > 如你所见，URL 更改为 **/请联系**。 从开始**ASP.NET 4**，URL 路由功能已添加到 Web 窗体，因此你可以编写 Url 喜欢*[ http://www.mysite.com/products/software ](http://www.mysite.com/products/software)* 而不是 *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)*. 有关详细信息，请参阅[URL 路由](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md)。
 3. 现在，您将了解到应用程序集成的身份验证流。 若要执行此操作，请单击**注册**页面的右上角。
 
     ![注册一个新用户](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image8.png)
@@ -433,7 +434,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在使实现 HTTP 服务更容
 * * *
 
 <a id="Summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 通过完成本动手实验你已学习如何：
 

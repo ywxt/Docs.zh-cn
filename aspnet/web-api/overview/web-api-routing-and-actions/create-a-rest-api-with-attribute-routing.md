@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
 ms.openlocfilehash: 1f1e90544c9dd8439a522f2196d81d020ea2f4f2
-ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30223257"
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>使用 ASP.NET Web API 2 中的路由的属性创建 REST API
 ====================
@@ -55,7 +56,7 @@ Web API 2 支持一种新型的路由，调用*的属性路由*。 有关的属�
 
 通过运行 Visual Studio 来启动。 从**文件**菜单上，选择**新建**，然后选择**项目**。
 
-在**模板**窗格中，选择**已安装的模板**展开**Visual C#**节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 将项目&quot;BooksAPI&quot;。
+在**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 将项目&quot;BooksAPI&quot;。
 
 ![](create-a-rest-api-with-attribute-routing/_static/image1.png)
 
@@ -159,7 +160,7 @@ Web API 2 支持一种新型的路由，调用*的属性路由*。 有关的属�
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample11.cs?highlight=1)]
 
-然后添加**[Route]**特性以控制器操作，如下所示：
+然后添加 **[Route]** 特性以控制器操作，如下所示：
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample12.cs?highlight=1,7)]
 
@@ -172,7 +173,7 @@ Web API 2 支持一种新型的路由，调用*的属性路由*。 有关的属�
 
 ## <a name="get-book-details"></a>获取书详细信息
 
-若要获取簿详细信息，客户端将发送 GET 请求到`/api/books/{id}/details`，其中*{id}*是书籍的 ID。
+若要获取簿详细信息，客户端将发送 GET 请求到`/api/books/{id}/details`，其中 *{id}* 是书籍的 ID。
 
 将以下方法添加到 `BooksController` 类。
 
@@ -236,7 +237,7 @@ Web API 2 支持一种新型的路由，调用*的属性路由*。 有关的属�
 
 在窗体中的仅限现在日期&quot;yyyy-月-日&quot;将匹配。 请注意，我们不使用正则表达式来验证我们获得的实际日期。 当尝试将转换到的 URI 段 Web API 处理**DateTime**实例。 无效的日期如"2012年-47-99 将无法进行转换，并且客户端将收到 404 错误。
 
-你还可以支持斜杠分隔符 (`/api/books/date/yyyy/mm/dd`) 通过添加另一个**[Route]**与其他正则表达式的属性。
+你还可以支持斜杠分隔符 (`/api/books/date/yyyy/mm/dd`) 通过添加另一个 **[Route]** 与其他正则表达式的属性。
 
 [!code-html[Main](create-a-rest-api-with-attribute-routing/samples/sample20.html)]
 

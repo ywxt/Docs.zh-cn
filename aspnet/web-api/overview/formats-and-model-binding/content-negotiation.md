@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/content-negotiation
-title: "内容在 ASP.NET Web API 的协商 |Microsoft 文档"
+title: 内容在 ASP.NET Web API 的协商 |Microsoft 文档
 author: MikeWasson
-description: "描述如何 ASP.NET Web API 实现 HTTP 内容协商。"
+description: 描述如何 ASP.NET Web API 实现 HTTP 内容协商。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/20/2012
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/content-negotiation
 msc.type: authoredcontent
 ms.openlocfilehash: ca373af6754e82889dc100b63f73b76aaa4e4f27
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26507016"
 ---
 <a name="content-negotiation-in-aspnet-web-api"></a>ASP.NET Web API 中的内容协商
 ====================
@@ -26,10 +27,10 @@ ms.lasthandoff: 11/10/2017
 
 HTTP 规范 (RFC 2616) 定义为"有多个表示形式之间实现可用时选择的最佳表示对于给定的响应的处理。"的内容协商 用于在 HTTP 中的内容协商的主要机制是这些请求标头：
 
-- **接受：**哪些媒体类型都可接受的响应，如"application/json;"的"application/xml"或自定义媒体类型，如&quot;application/vnd.example+xml&quot;
-- **Accept-charset:**哪些字符集是可以接受的例如 utf-8 或 ISO 8859-1。
-- **Accept-encoding:**是可接受的例如 gzip 的哪种内容编码。
-- **接受语言：**首选的自然语言，例如"en-我们"。
+- **接受：** 哪些媒体类型都可接受的响应，如"application/json;"的"application/xml"或自定义媒体类型，如&quot;application/vnd.example+xml&quot;
+- **Accept-charset:** 哪些字符集是可以接受的例如 utf-8 或 ISO 8859-1。
+- **Accept-encoding:** 是可接受的例如 gzip 的哪种内容编码。
+- **接受语言：** 首选的自然语言，例如"en-我们"。
 
 服务器还可以查看在 HTTP 请求的其他部分。 例如，如果请求包含 X-请求的带有标头，指示 AJAX 请求，服务器可能默认为 JSON 如果没有任何 Accept 标头。
 
@@ -95,7 +96,7 @@ HTTP 规范 (RFC 2616) 定义为"有多个表示形式之间实现可用时选�
 - **SupportedMediaTypes**集合，其中包含的受支持的媒体类型的列表。 内容 negotiator 尝试匹配此列表针对请求的 Accept 标头。 请注意，Accept 标头可以包含范围。 例如，"文本/plain"是文本的匹配项 /\*或\* / \*。
 - **MediaTypeMappings**集合，其中包含一份**MediaTypeMapping**对象。 **MediaTypeMapping**类提供一种来匹配 HTTP 请求和媒体类型的泛型方法。 例如，它无法映射到某个特定媒体类型的自定义的 HTTP 标头。
 
-如果有多个匹配，在最高的质量因素 wins 的匹配项。 例如: 
+如果有多个匹配，在最高的质量因素 wins 的匹配项。 例如：
 
 [!code-console[Main](content-negotiation/samples/sample6.cmd)]
 

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
-title: "创建用于 ASP.NET Web API 的帮助页 |Microsoft 文档"
+title: 创建用于 ASP.NET Web API 的帮助页 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2013
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
 msc.type: authoredcontent
 ms.openlocfilehash: 37fd26ebaea192cb540c443eff8a07343ab8c15b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28037898"
 ---
 <a name="creating-help-pages-for-aspnet-web-api"></a>创建用于 ASP.NET Web API 的帮助页
 ====================
@@ -60,9 +61,9 @@ ms.lasthandoff: 01/24/2018
 
 从**工具**菜单上，选择**库程序包管理器**，然后选择**程序包管理器控制台**。 在[程序包管理器控制台](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)窗口中，键入以下命令之一：
 
-有关**C#**应用程序：`Install-Package Microsoft.AspNet.WebApi.HelpPage`
+有关**C#** 应用程序： `Install-Package Microsoft.AspNet.WebApi.HelpPage`
 
-有关**Visual Basic**应用程序：`Install-Package Microsoft.AspNet.WebApi.HelpPage.VB`
+有关**Visual Basic**应用程序： `Install-Package Microsoft.AspNet.WebApi.HelpPage.VB`
 
 有两个包，一个用于 C# 和 Visual Basic 的一个。 请确保使用与你的项目匹配的一个。
 
@@ -88,7 +89,7 @@ ms.lasthandoff: 01/24/2018
 
 ![](creating-api-help-pages/_static/image7.png)
 
-接下来，打开的代码`ValuesController`/Controllers/ValuesControler.cs 中定义的 API 控制器。 将文档注释添加到控制器方法。 例如:
+接下来，打开的代码`ValuesController`/Controllers/ValuesControler.cs 中定义的 API 控制器。 将文档注释添加到控制器方法。 例如：
 
 [!code-csharp[Main](creating-api-help-pages/samples/sample4.cs)]
 

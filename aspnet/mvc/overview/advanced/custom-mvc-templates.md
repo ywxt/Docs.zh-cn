@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/advanced/custom-mvc-templates
-title: "自定义 MVC 模板 |Microsoft 文档"
+title: 自定义 MVC 模板 |Microsoft 文档
 author: joeloff
-description: "创建模板作为 VSIX 扩展。"
+description: 创建模板作为 VSIX 扩展。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/10/2012
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/advanced/custom-mvc-templates
 msc.type: authoredcontent
 ms.openlocfilehash: c3ddd4e341511f520927e924b25d890088adb69e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28034602"
 ---
 <a name="custom-mvc-template"></a>自定义 MVC 模板
 ====================
@@ -79,9 +80,9 @@ ms.lasthandoff: 01/24/2018
 
 ![打开与对话框](custom-mvc-templates/_static/image7.jpg)
 
-创建**&lt;资产&gt;**元素和添加**&lt;资产&gt;**必须包括在 VSIX 每个文件的元素。 **类型**每个属性**&lt;资产&gt;**元素必须设置为**Microsoft.VisualStudio.Mvc.Template**。 这是 MVC 的项目向导理解的自定义命名空间。 请参阅有关其他信息的结构和清单文件布局的 VSIX 2.0 架构文档。
+创建**&lt;资产&gt;** 元素和添加**&lt;资产&gt;** 必须包括在 VSIX 每个文件的元素。 **类型**每个属性**&lt;资产&gt;** 元素必须设置为**Microsoft.VisualStudio.Mvc.Template**。 这是 MVC 的项目向导理解的自定义命名空间。 请参阅有关其他信息的结构和清单文件布局的 VSIX 2.0 架构文档。
 
-只需将文件添加到 VSIX 不足以使用 MVC 向导注册模板。 你需要向 MVC 向导提供如模板名称、 描述、 受支持的视图引擎和编程语言的信息。 与相关联的自定义特性中携带有此信息**&lt;资产&gt;**每个元素**vstemplate**文件。
+只需将文件添加到 VSIX 不足以使用 MVC 向导注册模板。 你需要向 MVC 向导提供如模板名称、 描述、 受支持的视图引擎和编程语言的信息。 与相关联的自定义特性中携带有此信息**&lt;资产&gt;** 每个元素**vstemplate**文件。
 
 &lt;Asset d:VsixSubPath=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx&quot;
 
@@ -93,7 +94,7 @@ Path=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicMvcWe
 
 ProjectType=&quot;MVC&quot;
 
-Language=&quot;C#&quot;
+语言 =&quot;C#&quot;
 
 ViewEngine=&quot;Aspx&quot;
 
@@ -103,7 +104,7 @@ TemplateId=&quot;MyMvcApplication&quot;
 
 说明 =&quot;自定义模板派生自基本 MVC web 应用程序 (Razor)&quot;
 
-Version=&quot;4.0&quot;/&gt;
+版本 =&quot;4.0&quot;/&gt;
 
 下面是必须存在的自定义属性的说明：
 
@@ -114,7 +115,7 @@ Version=&quot;4.0&quot;/&gt;
 - **标题**指定下每个项目模板 MVC 向导中显示的简短描述。
 - **说明**指定模板的更详细说明。
 
-所有的文件添加到清单并保存它，你将注意到，后**资产**设计器中的选项卡将显示所有文件，但不是的自定义特性添加到**&lt;资产&gt;**元素**vstemplate**文件。
+所有的文件添加到清单并保存它，你将注意到，后**资产**设计器中的选项卡将显示所有文件，但不是的自定义特性添加到**&lt;资产&gt;** 元素**vstemplate**文件。
 
 ![项目设计器资产](custom-mvc-templates/_static/image8.jpg)
 
@@ -124,7 +125,7 @@ Version=&quot;4.0&quot;/&gt;
 
 ![VSIX 安装程序](custom-mvc-templates/_static/image9.jpg)
 
-从菜单中，选择**工具 > 扩展和更新**若要确认你的扩展已安装。 如果 VSIX 安装扩展的安装过程中报告任何错误，则可以查看 VSIX 安装程序日志以了解更多信息。 通常在创建日志**%temp%**文件夹的用户安装该扩展，例如**C:\Users\Bob\AppData\Local\Temp**。
+从菜单中，选择**工具 > 扩展和更新**若要确认你的扩展已安装。 如果 VSIX 安装扩展的安装过程中报告任何错误，则可以查看 VSIX 安装程序日志以了解更多信息。 通常在创建日志 **%temp%** 文件夹的用户安装该扩展，例如**C:\Users\Bob\AppData\Local\Temp**。
 
 ![扩展和更新](custom-mvc-templates/_static/image10.jpg)
 

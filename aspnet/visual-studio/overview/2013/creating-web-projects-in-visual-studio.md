@@ -1,22 +1,23 @@
 ---
 uid: visual-studio/overview/2013/creating-web-projects-in-visual-studio
-title: "创建 Visual Studio 2013 中的 ASP.NET Web 项目 |Microsoft 文档"
+title: 创建 Visual Studio 2013 中的 ASP.NET Web 项目 |Microsoft 文档
 author: tdykstra
-description: "本主题介绍在使用此处更新 3 的 Visual Studio 2013 中创建 ASP.NET web 项目的选项是一些用于 web 开发 c 的新增功能..."
+description: 本主题介绍在使用此处更新 3 的 Visual Studio 2013 中创建 ASP.NET web 项目的选项是一些用于 web 开发 c 的新增功能...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/01/2014
 ms.topic: article
 ms.assetid: 61941e64-0c0d-4996-9270-cb8ccfd0cabc
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
 ms.openlocfilehash: aacae7a9ccf483b21d3c6796c0411d558fa3c75b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28038860"
 ---
 <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>在 Visual Studio 2013 中创建 ASP.NET Web 项目
 ====================
@@ -124,7 +125,7 @@ Visual Studio 2013 为对面向.NET 4.5 或更高版本的.NET framework 的项�
 <a id="empty"></a>
 ### <a name="empty-template"></a>空模板
 
-空模板提供的裸机最小的文件夹和 ASP.NET web 应用程序，如项目文件的文件 (*.csproj*或。*vbproj*) 和一个*Web.config*文件。 你可以使用下面的复选框添加 Web 窗体、 MVC，和/或 Web API 的支持**将文件夹添加和核心引用：**标签。
+空模板提供的裸机最小的文件夹和 ASP.NET web 应用程序，如项目文件的文件 (*.csproj*或。*vbproj*) 和一个*Web.config*文件。 你可以使用下面的复选框添加 Web 窗体、 MVC，和/或 Web API 的支持**将文件夹添加和核心引用：** 标签。
 
 空的模板没有身份验证选项才可用。 在示例应用程序中实现身份验证功能和空模板不会创建示例应用程序。
 
@@ -243,7 +244,7 @@ Visual Studio 2013 项目模板使用[Bootstrap](http://getbootstrap.com/)，由
 
 Bootstrap 的主题功能还可用于轻松地影响应用程序的外观和行为的更改。 例如，你可以执行以下步骤以更改的主题。
 
-1. 在浏览器中，转到[http://Bootswatch.com](http://Bootswatch.com)，选择一个主题，然后单击**下载**。 (这会将下载*bootstrap.min.css*默认情况下; 如果你想要检查 CSS 代码，获取*bootstrap.css*而不是缩减的版本。)
+1. 在浏览器中，转到[ http://Bootswatch.com ](http://Bootswatch.com)，选择一个主题，然后单击**下载**。 (这会将下载*bootstrap.min.css*默认情况下; 如果你想要检查 CSS 代码，获取*bootstrap.css*而不是缩减的版本。)
 2. 下载的 CSS 文件的内容复制。
 3. 在 Visual Studio 中，创建一个新**样式表**名为文件*bootstrap theme.css*中*内容*文件夹，然后粘贴下载 CSS 代码到它。
 4. 打开*应用\_Start/Bundle.config*和更改*bootstrap.css*到*bootstrap theme.css*。
@@ -265,7 +266,7 @@ Bootstrap 的主题功能还可用于轻松地影响应用程序的外观和行�
 
 ![添加框架](creating-web-projects-in-visual-studio/_static/image22.png)
 
-你可以选择不包括在模板以创建项目时添加对该 framework 的支持的框架复选框。 例如，若要启用的 Web 窗体使用*.aspx*页，如果你已选择 MVC 模板中，选择**Web 窗体**复选框。 若要在你使用 Web 窗体模板时，请启用 MVC，单击或**MVC**复选框。 添加一个框架，使设计时，以及运行时支持。 例如，如果 MVC 支持添加到 Web 窗体项目时，你将能够创建控制器和视图的基架。
+你可以选择不包括在模板以创建项目时添加对该 framework 的支持的框架复选框。 例如，若要启用的 Web 窗体使用 *.aspx*页，如果你已选择 MVC 模板中，选择**Web 窗体**复选框。 若要在你使用 Web 窗体模板时，请启用 MVC，单击或**MVC**复选框。 添加一个框架，使设计时，以及运行时支持。 例如，如果 MVC 支持添加到 Web 窗体项目时，你将能够创建控制器和视图的基架。
 
 如果你将 Web 窗体和 MVC 合并项目中，启用[友好 Url](http://www.hanselman.com/blog/IntroducingASPNETFriendlyUrlsCleanerURLsEasierRoutingAndMobileViewsForASPNETWebForms.aspx)在 Web 窗体，可能会有意外路由问题有一个 URL，其中具有多个可能的目标。 定义的路由首先将优先。 例如，如果你有`Home`控制器和一个*Home.aspx*页上， `http://contoso.com/home` URL 将转到*Home.aspx*如果调用`EnableFriendlyUrls`方法之前调用`MapRoute`中的方法*RouteConfig.cs*，或者相同的 URL 将转到的默认视图你`Home`控制器如果调用`MapRoute`之前`EnableFriendlyUrls`。
 
@@ -426,4 +427,4 @@ Visual Studio 2013 提供 Web 窗体、 MVC 和 Web API 模板的多个身份验
 <a id="nextsteps"></a>
 ## <a name="next-steps"></a>后续步骤
 
-本文档提供一些基本帮助让 Visual Studio 2013 中创建新的 ASP.NET web 项目。 有关使用 for Visual Studio 进行 web 开发的详细信息，请参阅[https://www.asp.net/visual-studio/](../../index.md)。
+本文档提供一些基本帮助让 Visual Studio 2013 中创建新的 ASP.NET web 项目。 有关使用 for Visual Studio 进行 web 开发的详细信息，请参阅[ https://www.asp.net/visual-studio/ ](../../index.md)。

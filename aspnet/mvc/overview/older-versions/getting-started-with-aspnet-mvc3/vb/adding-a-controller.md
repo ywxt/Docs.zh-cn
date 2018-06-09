@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-controller
 msc.type: authoredcontent
 ms.openlocfilehash: 9a433083c31c7929f7599e52800c887f301d7727
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30870604"
 ---
 <a name="adding-a-controller-vb"></a>添加控制器 (VB)
 ====================
@@ -63,7 +64,7 @@ ASP.NET MVC 调用另一个控制器类 （和其中的不同的操作方法）�
 
 `/[Controller]/[ActionName]/[Parameters]`
 
-URL 的第一部分确定要执行的控制器类。 因此*/HelloWorld*映射到`HelloWorldController`类。 URL 的第二部分确定要执行的类上的操作方法。 因此*/HelloWorld/索引*将导致`Index`方法`HelloWorldController`类执行。 请注意，我们仅必须访问*/HelloWorld*上面和`Index`时默认情况下使用方法。 这是因为方法名为`Index`是如果有一个未显式指定调用在控制器的默认方法。
+URL 的第一部分确定要执行的控制器类。 因此 */HelloWorld*映射到`HelloWorldController`类。 URL 的第二部分确定要执行的类上的操作方法。 因此 */HelloWorld/索引*将导致`Index`方法`HelloWorldController`类执行。 请注意，我们仅必须访问 */HelloWorld*上面和`Index`时默认情况下使用方法。 这是因为方法名为`Index`是如果有一个未显式指定调用在控制器的默认方法。
 
 浏览到 `http://localhost:xxxx/HelloWorld/Welcome`。 `Welcome`方法将运行并返回字符串&quot;这是欢迎操作方法...&quot;. 默认 MVC 映射是`/[Controller]/[ActionName]/[Parameters]`。 对于此 URL，该控制器是`HelloWorld`和`Welcome`是方法。 我们尚未使用`[Parameters]`尚未的 URL 的一部分。
 

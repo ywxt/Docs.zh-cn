@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
 ms.openlocfilehash: 2e30ab7831a10f215a08f74e61adf2d147e76543
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30875170"
 ---
 <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>自动执行所有内容 （构建真实世界云应用与 Azure）
 ====================
@@ -195,9 +196,9 @@ Azure 具有一种功能，使你能够存储设置和自动重写时它会尝�
 
 在过程结束时，环境创建脚本调用两个函数来创建部署脚本将使用的文件。
 
-这些函数之一可创建的发布配置文件*(&lt;websitename&gt;.pubxml*文件)。 该代码调用 Azure REST API，以获取发布设置，并将保存中的信息*.publishsettings*文件。 然后，它使用的模板文件以及该文件中的信息 (*pubxml.template*) 创建*.pubxml*包含发布配置文件的文件。 此两步过程模拟你在 Visual Studio 中所执行的操作： 下载*.publishsettings*文件并导入，若要创建的发布配置文件。
+这些函数之一可创建的发布配置文件 *(&lt;websitename&gt;.pubxml*文件)。 该代码调用 Azure REST API，以获取发布设置，并将保存中的信息 *.publishsettings*文件。 然后，它使用的模板文件以及该文件中的信息 (*pubxml.template*) 创建 *.pubxml*包含发布配置文件的文件。 此两步过程模拟你在 Visual Studio 中所执行的操作： 下载 *.publishsettings*文件并导入，若要创建的发布配置文件。
 
-其他函数使用另一个模板文件 (网站 environment.template) 来创建*网站 environment.xml*包含部署脚本将一起使用的设置文件*.pubxml*文件。
+其他函数使用另一个模板文件 (网站 environment.template) 来创建*网站 environment.xml*包含部署脚本将一起使用的设置文件 *.pubxml*文件。
 
 ### <a name="troubleshooting-and-error-handling"></a>疑难解答和错误处理
 
@@ -225,7 +226,7 @@ Azure 具有一种功能，使你能够存储设置和自动重写时它会尝�
 
 [!code-powershell[Main](automate-everything/samples/sample23.ps1)]
 
-它获取部署用户密码从*.publishsettings*文件：
+它获取部署用户密码从 *.publishsettings*文件：
 
 [!code-powershell[Main](automate-everything/samples/sample24.ps1)]
 

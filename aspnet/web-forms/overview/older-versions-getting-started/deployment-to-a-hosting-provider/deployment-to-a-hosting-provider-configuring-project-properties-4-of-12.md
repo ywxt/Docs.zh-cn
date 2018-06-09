@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-configuring-project-properties-4-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: b8352c1832ffc79db93b6324dd673afaff6b0d74
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30887195"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-configuring-project-properties---4-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 配置项目属性-4 12
 ====================
@@ -31,7 +32,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="overview"></a>概述
 
-存储在项目文件中的项目属性中配置一些部署选项 ( *.csproj*或*.vbproj*文件)。 在大多数情况下，这些设置的默认值是所需的但你可以使用**项目属性**UI 内置于 Visual Studio 以使用这些设置，如果你需要更改它们。 在本教程中，你将查看中的部署设置**项目属性**。 你还创建一个占位符文件导致要部署的空文件夹。
+存储在项目文件中的项目属性中配置一些部署选项 ( *.csproj*或 *.vbproj*文件)。 在大多数情况下，这些设置的默认值是所需的但你可以使用**项目属性**UI 内置于 Visual Studio 以使用这些设置，如果你需要更改它们。 在本教程中，你将查看中的部署设置**项目属性**。 你还创建一个占位符文件导致要部署的空文件夹。
 
 ## <a name="configuring-deployment-settings-in-the-project-properties-window"></a>在项目属性窗口中配置部署设置
 
@@ -45,9 +46,9 @@ ms.lasthandoff: 04/06/2018
 
 ![Package_Publish_Web_tab_selecting_Release](deployment-to-a-hosting-provider-configuring-project-properties-4-of-12/_static/image2.png)
 
-与**活动 （发行版）**或**版本**选择，请参阅部署使用发布生成配置时有效的值：
+与**活动 （发行版）** 或**版本**选择，请参阅部署使用发布生成配置时有效的值：
 
-- 在**项部署**框中，**仅运行该应用程序所需的文件**选择。 其他选项**此项目中的所有文件**或**此项目文件夹中的所有文件**。 通过将保留不变的默认选择可以避免例如部署源代码文件。 此设置是为什么包含 SQL Server Compact 的二进制文件的文件夹必须包括在项目中的原因。 有关此设置的详细信息，请参阅**为什么不我的项目文件夹中的文件的所有部署呢？**中[ASP.NET Web 应用程序项目部署常见问题](https://msdn.microsoft.com/library/ee942158.aspx)。
+- 在**项部署**框中，**仅运行该应用程序所需的文件**选择。 其他选项**此项目中的所有文件**或**此项目文件夹中的所有文件**。 通过将保留不变的默认选择可以避免例如部署源代码文件。 此设置是为什么包含 SQL Server Compact 的二进制文件的文件夹必须包括在项目中的原因。 有关此设置的详细信息，请参阅**为什么不我的项目文件夹中的文件的所有部署呢？** 中[ASP.NET Web 应用程序项目部署常见问题](https://msdn.microsoft.com/library/ee942158.aspx)。
 - **排除生成调试符号**选择。 你不会使用此生成配置时调试。
 - **将应用程序中排除文件\_数据文件夹**未选中。 用于成员资格数据库的 SQL Server Compact 文件是在该文件夹中，你必须先部署它。 当你部署不包括数据库更改的更新时，你将选择此复选框。
 - **预编译此应用程序，然后发布**未选中。 在大多数情况下，没有必要预编译 web 应用程序项目。 有关此选项的详细信息，请参阅[打包/发布 Web 选项卡上，项目属性](https://msdn.microsoft.com/library/dd410108(v=vs.110).aspx)和[高级预编译设置对话框](https://msdn.microsoft.com/library/hh475319(v=vs.110).aspx)。
@@ -64,9 +65,9 @@ ms.lasthandoff: 04/06/2018
 
 从部署中排除特定文件或文件夹是常见的要求;另一个示例是用户可以将文件上载到的文件夹。 你不希望日志文件，或在开发环境以便部署到生产环境中创建的文件上载。 并且，如果您要将更新部署到生产您不想删除在生产环境中存在的文件的部署过程。 （具体取决于如何设置部署选项，如果在部署时，目标站点，但不是源站点中存在的文件，Web 部署将其删除的目标。）
 
-正如你此前在本教程中，看到**项部署**选项**打包/发布 Web**选项卡设置为**只需运行此应用程序文件**。 因此，在开发过程中创建的 Elmah 的日志文件将不部署，这是你想要发生这种情况。 (若要部署，他们可能需要包括在项目且其**生成操作**属性必须设置为**内容**。 有关详细信息，请参阅**为什么不我的项目文件夹中的文件的所有部署呢？**中[ASP.NET Web 应用程序项目部署常见问题](https://msdn.microsoft.com/library/ee942158.aspx))。 但是，Web 部署不会创建一个文件夹在目标站点中除非存在至少一个文件将复制到它。 因此，你将添加*.txt*使其作为一个占位符，以便将复制文件夹的文件夹的文件。
+正如你此前在本教程中，看到**项部署**选项**打包/发布 Web**选项卡设置为**只需运行此应用程序文件**。 因此，在开发过程中创建的 Elmah 的日志文件将不部署，这是你想要发生这种情况。 (若要部署，他们可能需要包括在项目且其**生成操作**属性必须设置为**内容**。 有关详细信息，请参阅**为什么不我的项目文件夹中的文件的所有部署呢？** 中[ASP.NET Web 应用程序项目部署常见问题](https://msdn.microsoft.com/library/ee942158.aspx))。 但是，Web 部署不会创建一个文件夹在目标站点中除非存在至少一个文件将复制到它。 因此，你将添加 *.txt*使其作为一个占位符，以便将复制文件夹的文件夹的文件。
 
-在**解决方案资源管理器**，右键单击*Elmah*文件夹，选择**添加新项**，并创建名为的文件*Placeholder.txt*。 放入其中的以下文本:"这是一个占位符文件，以确保文件夹获取部署"。 并保存文件。 这就是你所要做为了确保 Visual Studio 部署此文件和文件夹，因为所有**生成操作**属性*.txt*文件设置为**内容**默认情况下。
+在**解决方案资源管理器**，右键单击*Elmah*文件夹，选择**添加新项**，并创建名为的文件*Placeholder.txt*。 放入其中的以下文本:"这是一个占位符文件，以确保文件夹获取部署"。 并保存文件。 这就是你所要做为了确保 Visual Studio 部署此文件和文件夹，因为所有**生成操作**属性 *.txt*文件设置为**内容**默认情况下。
 
 你现在已经完成的所有部署设置任务。 在下一步的教程中，你将 Contoso 大学网站部署到测试环境，并对其进行测试。
 

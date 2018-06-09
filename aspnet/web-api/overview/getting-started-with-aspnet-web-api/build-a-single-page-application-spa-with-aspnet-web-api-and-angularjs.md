@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
 msc.type: authoredcontent
 ms.openlocfilehash: 9a748628d53878be380869ac5327de0111d2284d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26507256"
 ---
 <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>动手实验： 生成与 ASP.NET Web API 和 Angular.js 的单页面应用程序 (SPA)
 ====================
@@ -32,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 在此动手实验，你将利用这些技术来实现专家 Quiz，根据 SPA 概念琐事网站。 首先将实现与 ASP.NET Web API 公开要检索的测验问题和存储答案的所需的终结点的服务层。 然后，你将构建使用 AngularJS 和 CSS3 转换效果的丰富且高度可响应用户界面。
 > 
-> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit)。
+> 在 Web 营地培训工具包中，在包括所有的示例代码和代码段[ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)。
 
 
 ## <a name="overview"></a>概述
@@ -47,7 +48,7 @@ ms.lasthandoff: 11/10/2017
 - 增强 CSS3 转换的 UI 体验
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 完成本动手实验需要以下：
 
@@ -123,7 +124,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在方便地实现 HTTP 服务
     ![添加现有项](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image4.png "添加现有项")
 
     *添加现有项*
-5. 在**添加现有项**对话框框中，导航到**源/资产/模型**文件夹，然后选择所有文件。 单击 **“添加”**。
+5. 在**添加现有项**对话框框中，导航到**源/资产/模型**文件夹，然后选择所有文件。 单击 **添加**。
 
     ![添加模型资产](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image5.png "添加模型资产")
 
@@ -307,7 +308,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在方便地实现 HTTP 服务
 首先，将通过从 Visual Studio 的程序包管理器控制台安装 AngularJS。 然后，你将创建要提供专家测验应用以及要呈现的测验问题和解答使用 AngularJS 模板引擎的视图的行为的控制器。
 
 > [!NOTE]
-> 有关 AngularJS 的详细信息，请参阅[ [http://angularjs.org/](http://angularjs.org/)](http://angularjs.org/)。
+> 有关 AngularJS 的详细信息，请参阅[ [ http://angularjs.org/ ](http://angularjs.org/) ](http://angularjs.org/)。
 
 
 1. 打开**Visual Studio Express 2013 for Web**并打开**GeekQuiz.sln**解决方案位于**源/Ex2-CreatingASPAInterface/开始**文件夹。 或者，继续与解决方案并在上一练习中获取。
@@ -409,7 +410,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在方便地实现 HTTP 服务
     ![将现有项添加到内容文件夹](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image22.png "将现有项添加到内容文件夹")
 
     *将现有项添加到内容文件夹*
-2. 在**添加现有项**对话框框中，导航到**源/资产**文件夹，然后选择**Flip.css**。 单击 **“添加”**。
+2. 在**添加现有项**对话框框中，导航到**源/资产**文件夹，然后选择**Flip.css**。 单击 **添加**。
 
     ![从资产添加 Flip.css 文件](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image23.png "从资产添加 Flip.css 文件")
 
@@ -439,7 +440,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在方便地实现 HTTP 服务
 * * *
 
 <a id="Summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 通过完成本动手实验你已学习如何：
 

@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
 ms.openlocfilehash: 4cfa98144919c3f1bdb3608970af1a7952fe6ea7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30878173"
 ---
 # <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>ASP.NET MVC 4 帮助器、 窗体和验证
 
@@ -69,7 +70,7 @@ ms.lasthandoff: 04/06/2018
 
 **安装代码片段**
 
-为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。 若要安装运行的代码段**.\Source\Setup\CodeSnippets.vsi**文件。
+为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。 若要安装运行的代码段 **.\Source\Setup\CodeSnippets.vsi**文件。
 
 如果你不熟悉 Visual Studio 代码段，并想要了解如何使用它们，你可以从该文档引用的附录&quot;[附录 b： 使用代码段](#AppendixB)&quot;。
 
@@ -110,7 +111,7 @@ ms.lasthandoff: 04/06/2018
 
 在此任务中，你将创建新的控制器调用**StoreManagerController**以支持 CRUD 操作。
 
-1. 打开**开始**解决方案位于**源/Ex1-CreatingTheStoreManagerController/开始/**文件夹。
+1. 打开**开始**解决方案位于**源/Ex1-CreatingTheStoreManagerController/开始/** 文件夹。
 
    1. 你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
@@ -164,7 +165,7 @@ ms.lasthandoff: 04/06/2018
     ![添加视图](aspnet-mvc-4-helpers-forms-and-validation/_static/image2.png "添加视图")
 
     *添加从索引方法内的某个视图*
-3. 在添加视图对话框中，验证是否视图名称**索引**。 选择**创建强类型化视图**选项，然后选择**唱片集 (MvcMusicStore.Models)**从**模型类**下拉列表。 选择**列表**从**基架模板**下拉列表。 保留**视图引擎**到**Razor**和其他字段使用其默认值，然后单击**添加**。
+3. 在添加视图对话框中，验证是否视图名称**索引**。 选择**创建强类型化视图**选项，然后选择**唱片集 (MvcMusicStore.Models)** 从**模型类**下拉列表。 选择**列表**从**基架模板**下拉列表。 保留**视图引擎**到**Razor**和其他字段使用其默认值，然后单击**添加**。
 
     ![添加索引视图](aspnet-mvc-4-helpers-forms-and-validation/_static/image3.png "添加索引视图")
 
@@ -184,7 +185,7 @@ ms.lasthandoff: 04/06/2018
 1. 查看创建的代码。 生成的字段列表将作为一部分的以下 HTML 表**基架**用于显示表格格式数据。
 
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample4.cshtml)]
-2. 替换**&lt;表&gt;**代码替换为以下代码，以仅显示**流派**，**艺术家**，**唱片集标题**，和**价格**字段。 这将删除**AlbumId**和**唱片集艺术作品 URL**列。 此外，它将更改 GenreId 和 ArtistId 列以显示其链接的类属性**Artist.Name**和**Genre.Name**，并删除**详细信息**链接。
+2. 替换**&lt;表&gt;** 代码替换为以下代码，以仅显示**流派**，**艺术家**，**唱片集标题**，和**价格**字段。 这将删除**AlbumId**和**唱片集艺术作品 URL**列。 此外，它将更改 GenreId 和 ArtistId 列以显示其链接的类属性**Artist.Name**和**Genre.Name**，并删除**详细信息**链接。
 
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample5.cshtml)]
 3. 更改以下说明。
@@ -199,7 +200,7 @@ ms.lasthandoff: 04/06/2018
 在此任务中，你将测试**StoreManager** **索引**视图模板显示根据前面的步骤的设计的唱片集的列表。
 
 1. 按**F5**运行该应用程序。
-2. 在主页页面中启动项目。 将 URL 更改为**/StoreManager**验证，显示的唱片集的列表，显示其**标题**，**艺术家**和**流派**。
+2. 在主页页面中启动项目。 将 URL 更改为 **/StoreManager**验证，显示的唱片集的列表，显示其**标题**，**艺术家**和**流派**。
 
     ![浏览的专辑列表](aspnet-mvc-4-helpers-forms-and-validation/_static/image4.png "浏览唱片集的列表")
 
@@ -229,7 +230,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 > 若要阅读更多有关**扩展方法**，请访问此 msdn 文章。 [https://msdn.microsoft.com/library/bb383977.aspx](https://msdn.microsoft.com/library/bb383977.aspx)。
 
 
-1. 打开**开始**解决方案位于**源/Ex2-AddingAnHTMLHelper/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
+1. 打开**开始**解决方案位于**源/Ex2-AddingAnHTMLHelper/开始/** 文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
@@ -262,7 +263,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 在此任务中，你将测试**StoreManager** **索引**视图模板将截断唱片集的标题和艺术家名称。
 
 1. 按**F5**运行该应用程序。
-2. 在主页页面中启动项目。 将 URL 更改为**/StoreManager**以验证该 long 类型的值中的文本**标题**和**艺术家**列将被截断。
+2. 在主页页面中启动项目。 将 URL 更改为 **/StoreManager**以验证该 long 类型的值中的文本**标题**和**艺术家**列将被截断。
 
     ![截断标题和艺术家名称](aspnet-mvc-4-helpers-forms-and-validation/_static/image6.png "截断标题和艺术家名称")
 
@@ -273,11 +274,11 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 <a id="Exercise_3_Creating_the_Edit_View"></a>
 ### <a name="exercise-3-creating-the-edit-view"></a>练习 3： 创建编辑视图
 
-在本练习中，您将学习如何创建窗体，以允许存储管理器编辑唱片集。 用户将浏览**/StoreManager/Edit/id** URL (**id**正在编辑的唱片集的唯一 id)，从而使到服务器的 HTTP GET 调用。
+在本练习中，您将学习如何创建窗体，以允许存储管理器编辑唱片集。 用户将浏览 **/StoreManager/Edit/id** URL (**id**正在编辑的唱片集的唯一 id)，从而使到服务器的 HTTP GET 调用。
 
-控制器编辑操作方法将从数据库中检索相应唱片集，创建**StoreManagerViewModel**对象，用于封装 （以及专业人员和风格的列表），并将其传递给的视图模板向用户呈现的 HTML 页面。 此页将包含**&lt;窗体&gt;**使用文本框和下拉列表编辑唱片集属性的元素。
+控制器编辑操作方法将从数据库中检索相应唱片集，创建**StoreManagerViewModel**对象，用于封装 （以及专业人员和风格的列表），并将其传递给的视图模板向用户呈现的 HTML 页面。 此页将包含**&lt;窗体&gt;** 使用文本框和下拉列表编辑唱片集属性的元素。
 
-用户更新唱片集窗体值并单击后**保存**按钮，所做的更改会提交通过 HTTP 发送回叫**/StoreManager/Edit/id**。虽然 URL 仍与最后一次调用中的相同，ASP.NET MVC 标识，此时它是 HTTP POST，并因此执行不同的编辑操作方法 (一个使用修饰**[HttpPost]**)。
+用户更新唱片集窗体值并单击后**保存**按钮，所做的更改会提交通过 HTTP 发送回叫 **/StoreManager/Edit/id**。虽然 URL 仍与最后一次调用中的相同，ASP.NET MVC 标识，此时它是 HTTP POST，并因此执行不同的编辑操作方法 (一个使用修饰 **[HttpPost]**)。
 
 <a id="Ex3Task1"></a>
 
@@ -286,7 +287,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
 在此任务中，将实现来检索从数据库中的相应唱片集的编辑操作方法的 HTTP GET 版本以及所有风格和专业人员的列表。 它将此数据打包成**StoreManagerViewModel**最后一个步骤，然后将传递给要呈现具有的响应的视图模板中定义的对象。
 
-1. 打开**开始**解决方案位于**源/Ex3-CreatingTheEditView/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
+1. 打开**开始**解决方案位于**源/Ex3-CreatingTheEditView/开始/** 文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
@@ -314,7 +315,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 在此任务中，你将创建更高版本显示唱片集属性的编辑视图模板。
 
 1. 创建编辑视图。 若要执行此操作，右键单击内**编辑**操作方法，然后选择**添加视图**。
-2. 在添加视图对话框中，验证是否视图名称**编辑**。 检查**创建强类型化视图**复选框，然后选择**唱片集 (MvcMusicStore.Models)**从**查看数据类**下拉列表。 选择**编辑**从**基架模板**下拉列表。 将其他字段保留其默认值，然后单击**添加**。
+2. 在添加视图对话框中，验证是否视图名称**编辑**。 检查**创建强类型化视图**复选框，然后选择**唱片集 (MvcMusicStore.Models)** 从**查看数据类**下拉列表。 选择**编辑**从**基架模板**下拉列表。 将其他字段保留其默认值，然后单击**添加**。
 
     ![添加的编辑视图](aspnet-mvc-4-helpers-forms-and-validation/_static/image7.png "添加的编辑视图")
 
@@ -328,7 +329,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 在此任务中，你将测试**StoreManager** **编辑**视图页中显示的唱片集作为参数传递的属性的值。
 
 1. 按**F5**运行该应用程序。
-2. 在主页页面中启动项目。 将 URL 更改为**/StoreManager/Edit/1**以验证显示是否传递唱片集的属性的值。
+2. 在主页页面中启动项目。 将 URL 更改为 **/StoreManager/Edit/1**以验证显示是否传递唱片集的属性的值。
 
     ![浏览唱片集的编辑视图](aspnet-mvc-4-helpers-forms-and-validation/_static/image8.png "浏览唱片集的编辑视图")
 
@@ -359,7 +360,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 在此任务中，你将测试**StoreManager** **编辑**视图页中显示而不是艺术家和风格 ID 文本字段的下拉列表。
 
 1. 按**F5**运行该应用程序。
-2. 在主页页面中启动项目。 将 URL 更改为**/StoreManager/Edit/1**以验证它显示而不是艺术家和风格 ID 文本字段的下拉列表。
+2. 在主页页面中启动项目。 将 URL 更改为 **/StoreManager/Edit/1**以验证它显示而不是艺术家和风格 ID 文本字段的下拉列表。
 
     ![浏览唱片集的下拉列表编辑视图](aspnet-mvc-4-helpers-forms-and-validation/_static/image9.png "浏览唱片集的下拉列表编辑视图")
 
@@ -380,7 +381,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
     [!code-csharp[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample11.cs)]
 
     > [!NOTE]
-    > 将执行此方法，当用户单击**保存**视图的按钮，并执行 HTTP POST 的回发到服务器的窗体值将其保留在数据库中。 修饰**[HttpPost]**指示该方法应用于这些 HTTP POST 方案。 该方法采用**唱片集**对象。 ASP.NET MVC 将自动创建唱片集对象从已发布&lt;窗体&gt;值。
+    > 将执行此方法，当用户单击**保存**视图的按钮，并执行 HTTP POST 的回发到服务器的窗体值将其保留在数据库中。 修饰 **[HttpPost]** 指示该方法应用于这些 HTTP POST 方案。 该方法采用**唱片集**对象。 ASP.NET MVC 将自动创建唱片集对象从已发布&lt;窗体&gt;值。
     > 
     > 该方法将执行以下步骤：
     > 
@@ -398,7 +399,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 在此任务中，你将测试**StoreManager 编辑**视图页中实际将更新后的唱片集数据保存在数据库中。
 
 1. 按**F5**运行该应用程序。
-2. 在主页页面中启动项目。 将 URL 更改为**/StoreManager/Edit/1**。 将唱片集标题更改为**负载**，然后单击**保存**。 验证唱片集的列表中实际更改唱片集的标题。
+2. 在主页页面中启动项目。 将 URL 更改为 **/StoreManager/Edit/1**。 将唱片集标题更改为**负载**，然后单击**保存**。 验证唱片集的列表中实际更改唱片集的标题。
 
     ![更新唱片集](aspnet-mvc-4-helpers-forms-and-validation/_static/image10.png "更新唱片集")
 
@@ -413,8 +414,8 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
 如你具有编辑功能，您将实现使用两个不同方法中的创建方案**StoreManagerController**类：
 
-1. 在首次访问应用商店管理器时，一种操作方法将显示空窗体**/StoreManager/创建**URL。
-2. 第二个操作方法将处理该方案的存储管理器单击其中**保存**在窗体按钮和提交值回**/StoreManager/创建**URL 为 HTTP POST。
+1. 在首次访问应用商店管理器时，一种操作方法将显示空窗体 **/StoreManager/创建**URL。
+2. 第二个操作方法将处理该方案的存储管理器单击其中**保存**在窗体按钮和提交值回 **/StoreManager/创建**URL 为 HTTP POST。
 
 <a id="Ex4Task1"></a>
 
@@ -423,7 +424,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
 在此任务中，你将实现若要检索的所有风格和艺术家列表，请打包到此数据的创建操作方法的 HTTP GET 版本**StoreManagerViewModel**对象，然后将传递给视图模板。
 
-1. 打开**开始**解决方案位于**源/Ex4-AddingACreateView/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
+1. 打开**开始**解决方案位于**源/Ex4-AddingACreateView/开始/** 文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
@@ -446,7 +447,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 在此任务中，你将添加 Create View 模板将显示新的 （空） 唱片集窗体。
 
 1. 右键单击内部**创建**操作方法，然后选择**添加视图**。 这将显示添加视图对话框。
-2. 在添加视图对话框中，验证是否视图名称**创建**。 选择**创建强类型化视图**选项并选择**唱片集 (MvcMusicStore.Models)**从**模型类**下拉列表和**创建**从**基架模板**下拉列表。 将其他字段保留其默认值，然后单击**添加**。
+2. 在添加视图对话框中，验证是否视图名称**创建**。 选择**创建强类型化视图**选项并选择**唱片集 (MvcMusicStore.Models)** 从**模型类**下拉列表和**创建**从**基架模板**下拉列表。 将其他字段保留其默认值，然后单击**添加**。
 
     ![添加 create 视图](aspnet-mvc-4-helpers-forms-and-validation/_static/image11.png "添加-a-创建-view.png")
 
@@ -463,7 +464,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 在此任务中，你将测试**StoreManager** **创建**视图页中显示一个空的唱片集窗体。
 
 1. 按**F5**运行该应用程序。
-2. 在主页页面中启动项目。 将 URL 更改为**/StoreManager/创建**。 验证空窗体显示用于填充新唱片集属性。
+2. 在主页页面中启动项目。 将 URL 更改为 **/StoreManager/创建**。 验证空窗体显示用于填充新唱片集属性。
 
     ![使用空的窗体中创建视图](aspnet-mvc-4-helpers-forms-and-validation/_static/image12.png "创建空的窗体视图")
 
@@ -494,7 +495,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 在此任务中，你将测试**StoreManager 创建**视图页中可以创建新唱片集，然后将重定向到 StoreManager 索引视图。
 
 1. 按**F5**运行该应用程序。
-2. 在主页页面中启动项目。 将 URL 更改为**/StoreManager/创建**。 所有窗体字段用数据填充新唱片集，如下图中所示：
+2. 在主页页面中启动项目。 将 URL 更改为 **/StoreManager/创建**。 所有窗体字段用数据填充新唱片集，如下图中所示：
 
     ![创建唱片集](aspnet-mvc-4-helpers-forms-and-validation/_static/image13.png "创建唱片集")
 
@@ -522,7 +523,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
 在此任务中，你将实现来检索唱片集的信息的删除操作方法的 HTTP GET 版本。
 
-1. 打开**开始**解决方案位于**源/Ex5-HandlingDeletion/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
+1. 打开**开始**解决方案位于**源/Ex5-HandlingDeletion/开始/** 文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
@@ -537,7 +538,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
     [!code-csharp[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample15.cs)]
 4. 右键单击内部**删除**操作方法，然后选择**添加视图**。 这将显示添加视图对话框。
-5. 在添加视图对话框中，验证是否视图名称**删除**。 选择**创建强类型化视图**选项并选择**唱片集 (MvcMusicStore.Models)**从**模型类**下拉列表。 选择**删除**从**基架模板**下拉列表。 将其他字段保留其默认值，然后单击**添加**。
+5. 在添加视图对话框中，验证是否视图名称**删除**。 选择**创建强类型化视图**选项并选择**唱片集 (MvcMusicStore.Models)** 从**模型类**下拉列表。 选择**删除**从**基架模板**下拉列表。 将其他字段保留其默认值，然后单击**添加**。
 
     ![添加删除视图](aspnet-mvc-4-helpers-forms-and-validation/_static/image15.png "添加删除视图")
 
@@ -554,7 +555,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 在此任务中，你将测试**StoreManager** **删除**视图页中显示一个确认删除窗体。
 
 1. 按**F5**运行该应用程序。
-2. 在主页页面中启动项目。 将 URL 更改为**/StoreManager**。 选择要删除通过单击一个相册**删除**并验证是否已上载新视图。
+2. 在主页页面中启动项目。 将 URL 更改为 **/StoreManager**。 选择要删除通过单击一个相册**删除**并验证是否已上载新视图。
 
     ![删除唱片集](aspnet-mvc-4-helpers-forms-and-validation/_static/image16.png "删除唱片集")
 
@@ -582,7 +583,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 在此任务中，你将测试**StoreManager 删除**视图页可让您删除唱片集，然后重定向到 StoreManager 索引视图。
 
 1. 按**F5**运行该应用程序。
-2. 在主页页面中启动项目。 将 URL 更改为**/StoreManager**。 选择要删除通过单击一个相册**删除。** 通过单击确认删除**删除**按钮：
+2. 在主页页面中启动项目。 将 URL 更改为 **/StoreManager**。 选择要删除通过单击一个相册**删除。** 通过单击确认删除**删除**按钮：
 
     ![删除唱片集](aspnet-mvc-4-helpers-forms-and-validation/_static/image17.png "删除唱片集")
 
@@ -605,13 +606,13 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
 在此任务中，你将添加到将使创建和编辑页唱片集模型的数据注释显示在适当的时候验证消息。
 
-对于简单的模型类，添加数据批注仅处理通过添加**使用**语句**System.ComponentModel.DataAnnotation**，然后将放到**[必需]**上适当的属性的属性。 下面的示例会使**名称**属性视图中的必需字段。
+对于简单的模型类，添加数据批注仅处理通过添加**使用**语句**System.ComponentModel.DataAnnotation**，然后将放到 **[必需]** 上适当的属性的属性。 下面的示例会使**名称**属性视图中的必需字段。
 
 [!code-csharp[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample18.cs)]
 
-这是在与此应用程序一样的情况下变得更加复杂实体数据模型生成的位置。 如果你直接向模型类添加数据注释，如果你从数据库更新模型它们将被覆盖。 相反，你可以使用元数据的分部类将是为了容纳批注，并且是与模型关联的类使用**[MetadataType]**属性。
+这是在与此应用程序一样的情况下变得更加复杂实体数据模型生成的位置。 如果你直接向模型类添加数据注释，如果你从数据库更新模型它们将被覆盖。 相反，你可以使用元数据的分部类将是为了容纳批注，并且是与模型关联的类使用 **[MetadataType]** 属性。
 
-1. 打开**开始**解决方案位于**源/Ex6-AddingValidation/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
+1. 打开**开始**解决方案位于**源/Ex6-AddingValidation/开始/** 文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
@@ -623,7 +624,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 3. 替换**Album.cs**内容替换为突出显示的代码，以便其类似于下面所示：
 
     > [!NOTE]
-    > 行**[DisplayFormat(ConvertEmptyStringToNull=false)]**指示在数据源中更新数据字段时，将不会从模型的空字符串转换为 null。 实体框架将 null 值分配给模型之前数据注释验证字段时，此设置将避免异常。
+    > 行 **[DisplayFormat(ConvertEmptyStringToNull=false)]** 指示在数据源中更新数据字段时，将不会从模型的空字符串转换为 null。 实体框架将 null 值分配给模型之前数据注释验证字段时，此设置将避免异常。
 
     (代码段- *ASP.NET MVC 4 帮助器、 窗体和验证-Ex6 唱片集元数据分部类*)
 
@@ -647,13 +648,13 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 在此任务中，你将测试的创建和编辑页验证字段，使用选择的最后一个任务中的显示名称。
 
 1. 按**F5**运行该应用程序。
-2. 在主页页面中启动项目。 将 URL 更改为**/StoreManager/创建**。 验证是否显示名称匹配的分部类中的 (如**唱片集艺术作品 URL**而不是**AlbumArtUrl**)
+2. 在主页页面中启动项目。 将 URL 更改为 **/StoreManager/创建**。 验证是否显示名称匹配的分部类中的 (如**唱片集艺术作品 URL**而不是**AlbumArtUrl**)
 3. 单击**创建**，而不填充窗体。 验证你获取相应的验证消息。
 
     ![验证创建页中的字段](aspnet-mvc-4-helpers-forms-and-validation/_static/image18.png "验证创建页中的字段")
 
     *在创建页中的已验证的字段*
-4. 你可以验证相同出现**编辑**页。 将 URL 更改为**/StoreManager/Edit/1**和验证的显示名称与在分部类中的匹配 (如**唱片集艺术作品 URL**而不是**AlbumArtUrl**)。 空**标题**和**价格**字段，然后单击**保存**。 验证你获取相应的验证消息。
+4. 你可以验证相同出现**编辑**页。 将 URL 更改为 **/StoreManager/Edit/1**和验证的显示名称与在分部类中的匹配 (如**唱片集艺术作品 URL**而不是**AlbumArtUrl**)。 空**标题**和**价格**字段，然后单击**保存**。 验证你获取相应的验证消息。
 
     ![在编辑页中的已验证的字段](aspnet-mvc-4-helpers-forms-and-validation/_static/image19.png)
 
@@ -677,7 +678,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 
 在此任务中，你将运行应用程序，然后才能比较这两个验证模型包括 jQuery。
 
-1. 打开**开始**解决方案位于**源/Ex7-UnobtrusivejQueryValidation/开始/**文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
+1. 打开**开始**解决方案位于**源/Ex7-UnobtrusivejQueryValidation/开始/** 文件夹。 否则，可能会继续使用**结束**解决方案获取通过完成上一练习。
 
    1. 如果你打开提供**开始**解决方案，你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
@@ -686,7 +687,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
       > [!NOTE]
       > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
 2. 按 **F5** 运行该应用程序。
-3. 在主页页面中启动项目。 浏览**/StoreManager/创建**单击**创建**而不填充此表单以验证你收到验证消息：
+3. 在主页页面中启动项目。 浏览 **/StoreManager/创建**单击**创建**而不填充此表单以验证你收到验证消息：
 
     ![禁用的客户端验证](aspnet-mvc-4-helpers-forms-and-validation/_static/image20.png "禁用客户端验证")
 
@@ -718,7 +719,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample22.cshtml)]
 
     > [!NOTE]
-    > 所有这些 jQuery 库包含在 MVC 4 中的新项目。 你可以找到更多库中的**/脚本**你项目的文件夹。
+    > 所有这些 jQuery 库包含在 MVC 4 中的新项目。 你可以找到更多库中的 **/脚本**你项目的文件夹。
     > 
     > 为了使此验证的库工作，你需要添加对 jQuery framework 库的引用。 由于已在添加此引用 **\_Layout.cshtml**文件，则你不需要将其添加此特定的视图中。
 
@@ -730,7 +731,7 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
 在此任务中，你将测试**StoreManager**创建模板执行客户端验证使用 jQuery 库，当用户创建新唱片集的视图。
 
 1. 按 **F5** 运行该应用程序。
-2. 在主页页面中启动项目。 浏览**/StoreManager/创建**单击**创建**而不填充此表单以验证你收到验证消息：
+2. 在主页页面中启动项目。 浏览 **/StoreManager/创建**单击**创建**而不填充此表单以验证你收到验证消息：
 
     ![使用 jQuery 启用的客户端验证](aspnet-mvc-4-helpers-forms-and-validation/_static/image21.png "使用 jQuery 启用的客户端验证")
 
@@ -743,10 +744,10 @@ StoreManager 索引页都有一个潜在问题： 标题和艺术家名称属性
    > 对于每个客户端验证规则，非介入式 jQuery 添加具有数据的属性-val-*rulename*=&quot;*消息*&quot;。 下面是标记列表该 Unobtrusive jQuery 将插入到要执行客户端验证的 html 输入字段：
    > 
    > - 数据 val
-   > - Data-val-number
+   > - 数据 val 数
    > - 数据 val 范围
    > - 数据 val-范围最小/最大数据 val 范围
-   > - Data-val-required
+   > - 数据 val 所需
    > - 数据 val 长度
    > - 数据 val-长度最大/最小数据 val 长度
    > 

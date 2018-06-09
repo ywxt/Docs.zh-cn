@@ -1,22 +1,23 @@
 ---
 uid: single-page-application/overview/templates/emberjs-template
-title: "EmberJS 模板 |Microsoft 文档"
+title: EmberJS 模板 |Microsoft 文档
 author: xqiu
-description: "EmberJS 模板"
+description: EmberJS 模板
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/30/2013
 ms.topic: article
 ms.assetid: 04d5f142-5f62-494a-b5ea-4f3d068d34cb
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/emberjs-template
 msc.type: authoredcontent
 ms.openlocfilehash: 1fb7633aee288be648d4f9681b43c8911b7dbab9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26506796"
 ---
 <a name="emberjs-template"></a>EmberJS 模板
 ====================
@@ -43,7 +44,7 @@ EmberJS SPA 模板使用[Ember](http://emberjs.com/) JavaScript 库来处理从 
 
 下载并安装该模板通过单击上面的下载按钮。 你可能需要重新启动 Visual Studio。
 
-在**模板**窗格中，选择**已安装的模板**展开**Visual C#**节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 命名该项目并单击**确定**。
+在**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 命名该项目并单击**确定**。
 
 ![](emberjs-template/_static/image2.png)
 
@@ -134,7 +135,7 @@ TodoListRoute.js 为 TodoListRoute 中加载数据，通过重写 setupControlle
 
 [!code-javascript[Main](emberjs-template/samples/sample11.js)]
 
-Ember 使用命名约定来匹配 Url、 路由名称、 控制器和模板。 有关详细信息，请参阅[http://emberjs.com/guides/routing/defining-your-routes/](http://emberjs.com/guides/routing/defining-your-routes/)在 EmberJS 文档。
+Ember 使用命名约定来匹配 Url、 路由名称、 控制器和模板。 有关详细信息，请参阅[ http://emberjs.com/guides/routing/defining-your-routes/ ](http://emberjs.com/guides/routing/defining-your-routes/)在 EmberJS 文档。
 
 ## <a name="templates"></a>模板
 
@@ -146,7 +147,7 @@ Ember 使用命名约定来匹配 Url、 路由名称、 控制器和模板。 �
 - todoList.hbs： 的模板"/ todo"路由。
 - \_navbar.hbs: 模板定义导航菜单。
 
-应用程序模板的作用类似母版页。 它包含页眉、 页脚和"{{插座}}"可插入具体取决于路由中的其他模板。 有关 Ember 中的应用程序模板的详细信息，请参阅[http://guides.emberjs.com/v1.10.0/templates/the-application-template//](http://guides.emberjs.com/v1.10.0/templates/the-application-template/)。
+应用程序模板的作用类似母版页。 它包含页眉、 页脚和"{{插座}}"可插入具体取决于路由中的其他模板。 有关 Ember 中的应用程序模板的详细信息，请参阅[ http://guides.emberjs.com/v1.10.0/templates/the-application-template// ](http://guides.emberjs.com/v1.10.0/templates/the-application-template/)。
 
 "/ TodoList"模板包含两个循环表达式。 外部循环是`{{#each controller}}`，与内部循环是`{{#each todos}}`。 下面的代码演示内置`Ember.Checkbox`查看，自定义`App.TodoItemEditView`，以及使用的链接`deleteTodo`操作。
 

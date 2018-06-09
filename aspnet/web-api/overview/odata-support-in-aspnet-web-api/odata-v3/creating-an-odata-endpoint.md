@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
 ms.openlocfilehash: 227faacd3f42731e08a4cd2b71075776309961b6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30874624"
 ---
 <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>创建与 Web API 2 OData v3 终结点
 ====================
@@ -107,7 +108,7 @@ A*控制器*是处理 HTTP 请求的类。 定义每个实体集在你的 OData 
 
 ![](creating-an-odata-endpoint/_static/image7.png)
 
-单击**新建数据上下文...**按钮。 保留的数据上下文类型的默认名称，然后单击**添加**。
+单击**新建数据上下文...** 按钮。 保留的数据上下文类型的默认名称，然后单击**添加**。
 
 ![](creating-an-odata-endpoint/_static/image8.png)
 

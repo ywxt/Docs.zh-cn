@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 7e1a457c23ef659bf7ee9c15b66dc5c2d8a31416
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30891455"
 ---
 <a name="creating-a-data-access-layer-c"></a>创建数据访问层 (C#)
 ====================
@@ -181,7 +182,7 @@ TableAdapter 配置向导首先提示你选择要使用的数据库。 下拉列
 **图 11**： 将方法名称由**GetData**到**GetProducts** ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image31.png))
 
 
-通过单击完成完成向导。 在向导关闭后我们将返回到显示 DataTable 我们刚刚创建的数据集设计器。 您可以看到中的列列表**产品**DataTable (**ProductID**， **ProductName**，依次类推)，以及的方法**ProductsTableAdapter** (**Fill()**和**GetProducts()**)。
+通过单击完成完成向导。 在向导关闭后我们将返回到显示 DataTable 我们刚刚创建的数据集设计器。 您可以看到中的列列表**产品**DataTable (**ProductID**， **ProductName**，依次类推)，以及的方法**ProductsTableAdapter** (**Fill()** 和**GetProducts()**)。
 
 
 [![已添加到类型化数据集的产品 DataTable 和 ProductsTableAdapter](creating-a-data-access-layer-cs/_static/image33.png)](creating-a-data-access-layer-cs/_static/image32.png)
@@ -195,7 +196,7 @@ TableAdapter 配置向导首先提示你选择要使用的数据库。 下拉列
 
 此代码不需要我们要写入的数据访问特定代码的一位。 我们不一定非要实例化任何 ADO.NET 类，我们没有来指代的任意连接字符串，SQL 查询或存储过程。 相反，TableAdapter 为我们提供低级别的数据访问代码。
 
-此示例中使用每个对象也是强类型，允许 Visual Studio 以提供 IntelliSense 和编译时类型检查。 并且返回的 TableAdapter 的所有数据表的最佳可以绑定到 ASP.NET Web 控件，如 GridView、 说明、 DropDownList、 如何，以及多个其他数据。 下面的示例演示绑定返回 DataTable **GetProducts()**方法只需获得的三个行中的代码中一个 GridView**页\_负载**事件处理程序。
+此示例中使用每个对象也是强类型，允许 Visual Studio 以提供 IntelliSense 和编译时类型检查。 并且返回的 TableAdapter 的所有数据表的最佳可以绑定到 ASP.NET Web 控件，如 GridView、 说明、 DropDownList、 如何，以及多个其他数据。 下面的示例演示绑定返回 DataTable **GetProducts()** 方法只需获得的三个行中的代码中一个 GridView**页\_负载**事件处理程序。
 
 AllProducts.aspx
 
@@ -217,7 +218,7 @@ AllProducts.aspx.cs
 
 此时我们**ProductsTableAdapter**类具有一个方法，但**GetProducts()**，它返回数据库中的所有产品。 在能够使用的所有产品是肯定有用，可以在我们将需要检索有关特定产品或属于特定类别的所有产品的信息的时间。 若要将此类功能添加到我们的数据访问层我们可以向 TableAdapter 添加参数化的方法。
 
-让我们添加**GetProductsByCategoryID (*categoryID*)**方法。 要将新方法添加到 DAL，返回到数据集设计器中，右键单击**ProductsTableAdapter**部分，然后选择添加查询。
+让我们添加**GetProductsByCategoryID (*categoryID*)** 方法。 要将新方法添加到 DAL，返回到数据集设计器中，右键单击**ProductsTableAdapter**部分，然后选择添加查询。
 
 
 ![右键单击 TableAdapter，然后选择添加查询](creating-a-data-access-layer-cs/_static/image38.png)
@@ -267,7 +268,7 @@ AllProducts.aspx.cs
 **图 19**： 显示那些产品属于饮料类别 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image51.png))
 
 
-与**GetProductsByCategoryID (*categoryID*)**方法中我们 DAL，我们现在可以创建仅显示那些产品指定类别中的 ASP.NET 页。 下面的示例显示的所有产品中饮料类别中，其具有**CategoryID**为 1。
+与**GetProductsByCategoryID (*categoryID*)** 方法中我们 DAL，我们现在可以创建仅显示那些产品指定类别中的 ASP.NET 页。 下面的示例显示的所有产品中饮料类别中，其具有**CategoryID**为 1。
 
 Beverages.asp
 
@@ -329,7 +330,7 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 
 ## <a name="creating-custom-insert-update-and-delete-methods"></a>创建自定义插入、 更新和删除方法
 
-**Insert()**， **update （)**，和**delete （)**由数据库直接方法创建的方法可能会有点麻烦，尤其是对于包含许多列的表。 查看前面的代码示例中，没有 IntelliSense 的帮助不特别清楚什么**产品**表列将映射到每个输入参数为**update （)**和**Insert()**方法。 可能有些时候当我们只想要更新的单个列或两个，或者想自定义**Insert()**将可能的方法返回的值的新插入的记录**标识**（自动递增）字段。
+**Insert()**， **update （)**，和**delete （)** 由数据库直接方法创建的方法可能会有点麻烦，尤其是对于包含许多列的表。 查看前面的代码示例中，没有 IntelliSense 的帮助不特别清楚什么**产品**表列将映射到每个输入参数为**update （)** 和**Insert()** 方法。 可能有些时候当我们只想要更新的单个列或两个，或者想自定义**Insert()** 将可能的方法返回的值的新插入的记录**标识**（自动递增）字段。
 
 若要创建这样的自定义方法，请返回到数据集设计器。 右键单击 TableAdapter，然后选择添加的查询，返回到 TableAdapter 向导。 在第二个屏幕上我们可以指示查询创建的类型。 让我们创建一个方法来添加新的产品，然后返回新添加记录的值**ProductID**。 因此，选择创建**插入**查询。
 
@@ -339,7 +340,7 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 **图 25**： 创建一个要向其中添加新建行方法**产品**表 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image69.png))
 
 
-在下一个屏幕**InsertCommand**的**CommandText**显示。 通过添加增强此查询**选择作用域\_IDENTITY()**在查询结束时，这将返回插入到的最后一个标识值**标识**同一范围内的列。 (请参阅[技术文档](https://msdn.microsoft.com/library/ms190315.aspx)有关详细信息**作用域\_IDENTITY()**以及为何可能愿意[使用范围\_IDENTITY() 替代的 @@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).)请确保你最终**插入**用分号的语句才能添加**选择**语句。
+在下一个屏幕**InsertCommand**的**CommandText**显示。 通过添加增强此查询**选择作用域\_IDENTITY()** 在查询结束时，这将返回插入到的最后一个标识值**标识**同一范围内的列。 (请参阅[技术文档](https://msdn.microsoft.com/library/ms190315.aspx)有关详细信息**作用域\_IDENTITY()** 以及为何可能愿意[使用范围\_IDENTITY() 替代的 @@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).)请确保你最终**插入**用分号的语句才能添加**选择**语句。
 
 
 [![增加查询返回 scope_identity （） 值](creating-a-data-access-layer-cs/_static/image71.png)](creating-a-data-access-layer-cs/_static/image70.png)
@@ -373,7 +374,7 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 
 请注意， **ProductsTableAdapters**类返回**CategoryID**和**供应商 Id**值从**产品**表，但不包括**CategoryName**列从**类别**表或**CompanyName**列从**供应商**表，尽管这些可能是我们想要在其中显示了产品信息时显示的列。 我们可以增加 TableAdapter 的初始方法**GetProducts()**、 同时包含这两者**CategoryName**和**CompanyName**列的值，这将更新若要包括这些新的列的强类型的 DataTable。
 
-这可以显示问题，但是，为 TableAdapter 的方法插入、 更新和删除数据基于此初始的方法。 幸运的是，自动生成的方法插入、 更新和删除将不可受中的子查询**选择**子句。 注意，要添加到我们查询通过**类别**和**供应商**为子查询，而不是**加入**s，我们将避免不得不返工这些修改数据的方法。 右键单击**GetProducts()**中的方法**ProductsTableAdapter**并选择配置。 然后，调整**选择**子句，以便其所示类似：
+这可以显示问题，但是，为 TableAdapter 的方法插入、 更新和删除数据基于此初始的方法。 幸运的是，自动生成的方法插入、 更新和删除将不可受中的子查询**选择**子句。 注意，要添加到我们查询通过**类别**和**供应商**为子查询，而不是**加入**s，我们将避免不得不返工这些修改数据的方法。 右键单击**GetProducts()** 中的方法**ProductsTableAdapter**并选择配置。 然后，调整**选择**子句，以便其所示类似：
 
 [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample9.sql)]
 
@@ -383,7 +384,7 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 **图 29**： 更新 **选择** 语句 **GetProducts()** 方法 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image81.png))
 
 
-在更新后**GetProducts()**要使用此 DataTable 将包括两个新列的新查询方法： **CategoryName**和**供应商名称**。
+在更新后**GetProducts()** 要使用此 DataTable 将包括两个新列的新查询方法： **CategoryName**和**供应商名称**。
 
 
 ![产品 DataTable 具有两个新列](creating-a-data-access-layer-cs/_static/image82.png)
@@ -472,16 +473,16 @@ TableAdapter 默认情况下，使用批处理更新模式，但也支持 DB 直
 
 虽然自动生成的代码可节省了很好的时间，该代码通常是非常泛型，并需要进行自定义以满足应用程序的独特需求。 扩展自动生成的代码的风险，是生成代码的工具可能会决定是时候"重新生成"，并覆盖你的自定义。 使用.NET 2.0 的新的分部类概念，很容易将类拆分到多个文件。 这使我们能够向自动生成的类中添加我们自己的方法、 属性和事件，而无需担心覆盖我们自定义项的 Visual Studio。
 
-为了演示如何自定义 DAL，让我们添加**GetProducts()**方法**SuppliersRow**类。 **SuppliersRow**类表示中的单个记录**供应商**表; 每个供应商可以提供程序零到许多产品，因此**GetProducts()**将返回那些指定的供应商的产品。 若要完成此创建中的新类文件**应用\_代码**文件夹名为**SuppliersRow.cs**并添加以下代码：
+为了演示如何自定义 DAL，让我们添加**GetProducts()** 方法**SuppliersRow**类。 **SuppliersRow**类表示中的单个记录**供应商**表; 每个供应商可以提供程序零到许多产品，因此**GetProducts()** 将返回那些指定的供应商的产品。 若要完成此创建中的新类文件**应用\_代码**文件夹名为**SuppliersRow.cs**并添加以下代码：
 
 [!code-csharp[Main](creating-a-data-access-layer-cs/samples/sample22.cs)]
 
-此分部类指示编译器，当生成**Northwind.SuppliersRow**类，以包含**GetProducts()**我们刚才定义的方法。 如果你生成你的项目，然后返回到类视图你将看到**GetProducts()**现在作为一种列出**Northwind.SuppliersRow**。
+此分部类指示编译器，当生成**Northwind.SuppliersRow**类，以包含**GetProducts()** 我们刚才定义的方法。 如果你生成你的项目，然后返回到类视图你将看到**GetProducts()** 现在作为一种列出**Northwind.SuppliersRow**。
 
 
 ![GetProducts() 方法属于现在 Northwind.SuppliersRow 类](creating-a-data-access-layer-cs/_static/image90.png)
 
-**图 34**: **GetProducts()**方法是现在的一部分**Northwind.SuppliersRow**类
+**图 34**: **GetProducts()** 方法是现在的一部分**Northwind.SuppliersRow**类
 
 
 **GetProducts()** 方法现在可以用于枚举的一套产品特定供应商，如以下代码所示：
@@ -537,7 +538,7 @@ SuppliersAndProducts.aspx.cs
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 ## <a name="special-thanks-to"></a>特别感谢
 

@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
 ms.openlocfilehash: 69b7d5453b6ff36d6e28a69428b016cb8cfd06e9
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "29153003"
 ---
 <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>启用 ASP.NET Web API 1 中的 CRUD 操作
 ====================
@@ -42,11 +43,11 @@ CRUD 代表&quot;创建、 读取、 更新和删除，&quot;哪些是四个基�
 | 操作 | HTTP 方法 | 相对 URI |
 | --- | --- | --- |
 | 获取所有产品的列表 | GET | / api/产品 |
-| 获取按 ID 的产品 | GET | /api/products/*id* |
+| 获取按 ID 的产品 | GET | /api/产品/*id* |
 | 按类别获取产品 | GET | /api/products?category=*category* |
 | 创建新产品 | 发布 | / api/产品 |
-| 将产品更新 | PUT | /api/products/*id* |
-| 删除产品 | DELETE | /api/products/*id* |
+| 将产品更新 | PUT | /api/产品/*id* |
+| 删除产品 | DELETE | /api/产品/*id* |
 
 请注意一些 Uri 在路径中包括的产品 ID。 例如，若要获取其 ID 28 的产品，客户端发送 GET 请求`http://hostname/api/products/28`。
 
@@ -57,7 +58,7 @@ CRUD 代表&quot;创建、 读取、 更新和删除，&quot;哪些是四个基�
 | 资源 | URI |
 | --- | --- |
 | 所有产品的列表。 | / api/产品 |
-| 单独的产品。 | /api/products/*id* |
+| 单独的产品。 | /api/产品/*id* |
 
 ### <a name="methods"></a>方法
 
@@ -158,14 +159,14 @@ ProductStore API 将公开多个&quot;读取&quot;作为 HTTP GET 方法的操�
 | 操作 | HTTP 方法 | 相对 URI |
 | --- | --- | --- |
 | 获取所有产品的列表 | GET | / api/产品 |
-| 获取按 ID 的产品 | GET | /api/products/*id* |
+| 获取按 ID 的产品 | GET | /api/产品/*id* |
 | 按类别获取产品 | GET | /api/products?category=*category* |
 
 若要获取所有产品的列表，将以下方法添加到`ProductsController`类：
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample6.cs)]
 
-方法名称开头&quot;获取&quot;，因此按照约定它映射到 GET 请求。 此外，因为该方法不具有任何参数，它映射到一个 URI，不包含 *&quot;id&quot;* 路径中的段。
+方法名称开头&quot;获取&quot;，因此按照约定它映射到 GET 请求。 此外，因为该方法不具有任何参数，它映射到一个 URI，不包含*&quot;id&quot;* 路径中的段。
 
 若要获取的产品按 ID，将以下方法添加到`ProductsController`类：
 
@@ -194,8 +195,8 @@ GetProduct 方法将引发类型的异常**HttpResponseException**如果*id*无�
 
 此实现将正常工作，但很不完整。 理想情况下，我们想要的 HTTP 响应包括以下各项：
 
-- **响应代码：**默认情况下，Web API 框架将响应状态代码设置为 200 （正常）。 但根据 HTTP/1.1 协议，POST 请求导致创建资源时服务器应回复状态 201 （已创建）。
-- **位置：**时服务器创建的资源，它应在响应的位置标头中包含新资源的 URI。
+- **响应代码：** 默认情况下，Web API 框架将响应状态代码设置为 200 （正常）。 但根据 HTTP/1.1 协议，POST 请求导致创建资源时服务器应回复状态 201 （已创建）。
+- **位置：** 时服务器创建的资源，它应在响应的位置标头中包含新资源的 URI。
 
 ASP.NET Web API，使得容易操作的 HTTP 响应消息。 下面是改进的实现：
 

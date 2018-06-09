@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-controller
 msc.type: authoredcontent
 ms.openlocfilehash: 3864bab284661b0c44f9e4cb363c2d60eccc7c66
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30869616"
 ---
 <a name="adding-a-controller"></a>添加控制器
 ====================
@@ -71,7 +72,7 @@ ASP.NET MVC 调用另一个控制器类 （和其中的不同的操作方法）�
 
 当你运行应用程序，并且不提供任何 URL 段时，它默认为"Home"控制器和"索引"操作方法的上面的代码中的默认值部分中指定。
 
-URL 的第一部分确定要执行的控制器类。 因此*/HelloWorld*映射到`HelloWorldController`类。 URL 的第二部分确定要执行的类上的操作方法。 因此*/HelloWorld/索引*将导致`Index`方法`HelloWorldController`类执行。 请注意，我们仅必须浏览到*/HelloWorld*和`Index`时默认情况下使用方法。 这是因为方法名为`Index`是如果有一个未显式指定调用在控制器的默认方法。 URL 段的第三部分 (`Parameters`) 针对的是路由数据。 在本教程中，我们将更高版本上看到路由数据。
+URL 的第一部分确定要执行的控制器类。 因此 */HelloWorld*映射到`HelloWorldController`类。 URL 的第二部分确定要执行的类上的操作方法。 因此 */HelloWorld/索引*将导致`Index`方法`HelloWorldController`类执行。 请注意，我们仅必须浏览到 */HelloWorld*和`Index`时默认情况下使用方法。 这是因为方法名为`Index`是如果有一个未显式指定调用在控制器的默认方法。 URL 段的第三部分 (`Parameters`) 针对的是路由数据。 在本教程中，我们将更高版本上看到路由数据。
 
 浏览到 `http://localhost:xxxx/HelloWorld/Welcome`。 `Welcome`方法将运行并返回字符串&quot;这是欢迎操作方法...&quot;. 默认 MVC 映射是`/[Controller]/[ActionName]/[Parameters]`。 对于此 URL，采用 `HelloWorld` 控制器和 `Welcome` 操作方法。 目前尚未使用 URL 的 `[Parameters]` 部分。
 

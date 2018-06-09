@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: ab3b7ba332deddae7d04fc37c7aabc72bdb2d17e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30889678"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-the-production-environment---7-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 将部署到生产环境-7 / 12
 ====================
@@ -89,7 +90,7 @@ Cytanium 欢迎电子邮件包含有关如何更改.NET Framework 的版本的�
 
 ## <a name="publishing-to-the-hosting-provider"></a>发布到托管提供商
 
-托管提供商发送的欢迎电子邮件包括所有所需发布该项目的设置和您可以手动输入该信息到发布配置文件。 但你将使用更容易和更少易出错的方法来配置部署到提供程序： 你将下载*.publishsettings*文件并将其导入发布配置文件。
+托管提供商发送的欢迎电子邮件包括所有所需发布该项目的设置和您可以手动输入该信息到发布配置文件。 但你将使用更容易和更少易出错的方法来配置部署到提供程序： 你将下载 *.publishsettings*文件并将其导入发布配置文件。
 
 在浏览器中，转到 Cytanium 控制面板，并选择**Web** ，然后选择**网站。**
 
@@ -121,11 +122,11 @@ Cytanium 欢迎电子邮件包含有关如何更改.NET Framework 的版本的�
 
 ![发布 Web 向导导入按钮](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image25.png)
 
-在**导入发布设置**对话框中，选择*.publishsettings*文件你下载，并单击**打开**。 该向导将前进到连接选项卡使用的所有字段填充。
+在**导入发布设置**对话框中，选择 *.publishsettings*文件你下载，并单击**打开**。 该向导将前进到连接选项卡使用的所有字段填充。
 
 ![发布 Web 向导连接选项卡](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image26.png)
 
-.Publishsettings 文件中的目标 URL 框中，将该站点的计划永久 URL，但如果你尚未尚未购买该域，则将值替换为临时的 URL。 对于此示例中，URL 是 *[ http://contosouniversity.com.vserver01.cytanium.com ](http://contosouniversity.com.vserver01.cytanium.com)。*此框的唯一目的是指定哪些浏览器将打开到自动后成功部署后的 URL。 如果你将其留空，一个唯一的后果是浏览器不会自动启动部署后。
+.Publishsettings 文件中的目标 URL 框中，将该站点的计划永久 URL，但如果你尚未尚未购买该域，则将值替换为临时的 URL。 对于此示例中，URL 是 *[ http://contosouniversity.com.vserver01.cytanium.com ](http://contosouniversity.com.vserver01.cytanium.com)。* 此框的唯一目的是指定哪些浏览器将打开到自动后成功部署后的 URL。 如果你将其留空，一个唯一的后果是浏览器不会自动启动部署后。
 
 单击**验证连接**以验证设置是否正确，并可以连接到服务器。 如您前面看到的一个绿色复选标记将验证连接成功。
 
@@ -137,7 +138,7 @@ Cytanium 欢迎电子邮件包含有关如何更改.NET Framework 的版本的�
 
 在**数据库**部分**设置**选项卡上，输入相同的测试输入值，发布配置文件。 下拉列表中，你将找到你需要的连接字符串。
 
-- 中的连接字符串框**SchoolContext，**选择 `Data Source=|DataDirectory|School-Prod.sdf`
+- 中的连接字符串框**SchoolContext，** 选择 `Data Source=|DataDirectory|School-Prod.sdf`
 - 下**SchoolContext**，选择**应用 Code First 迁移**。
 - 中的连接字符串框**DefaultConnection**，选择 `Data Source=|DataDirectory|aspnet-Prod.sdf`
 - 下**DefaultConnection**，保留**更新数据库**清除。
@@ -246,7 +247,7 @@ Cytanium 欢迎电子邮件包含有关如何更改.NET Framework 的版本的�
 
 `User-agent`一行通知文件中的规则应用于所有搜索引擎 web 爬网程序 （机器人） 的搜索引擎和`Disallow`行指定应在站点上的没有页已爬网。
 
-您可能希望搜索引擎以目录生产站点，因此你需要从生产部署中排除此文件。 若要做到这一点，请参阅**可以我排除特定文件或文件夹从部署？**中[ASP.NET Web 应用程序项目部署常见问题](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment)。 请确保仅为生产发布配置文件时，才指定排除。
+您可能希望搜索引擎以目录生产站点，因此你需要从生产部署中排除此文件。 若要做到这一点，请参阅**可以我排除特定文件或文件夹从部署？** 中[ASP.NET Web 应用程序项目部署常见问题](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment)。 请确保仅为生产发布配置文件时，才指定排除。
 
 创建第二个托管帐户是一种方法使用的测试环境不是必需的但可能值得额外的费用。 在以下教程中，你将继续使用 IIS 作为你的测试环境。
 

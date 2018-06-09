@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/views/dynamic-v-strongly-typed-views
-title: "动态 v。 强类型视图 |Microsoft 文档"
+title: 动态 v。 强类型视图 |Microsoft 文档
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2011
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/views/dynamic-v-strongly-typed-views
 msc.type: authoredcontent
 ms.openlocfilehash: 8a96d43e04a0a50d5176c10c26aa49918a0e56ef
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26504086"
 ---
 <a name="dynamic-v-strongly-typed-views"></a>动态 v。 强类型化的视图
 ====================
@@ -53,7 +54,7 @@ ms.lasthandoff: 11/10/2017
 [!code-csharp[Main](dynamic-v-strongly-typed-views/samples/sample5.cs)]
 
 
-请注意它是完全相同返回 View(topBlogs);调用作为非强类型化视图。 右键单击内*StonglyTypedIndex()*和选择**添加视图**。 这次请选择**博客**模型类，并选择**列表**作为基架模板。
+请注意它是完全相同返回 View(topBlogs);调用作为非强类型化视图。 右键单击内*StonglyTypedIndex()* 和选择**添加视图**。 这次请选择**博客**模型类，并选择**列表**作为基架模板。
 
 [![5658.StrongView [1]](dynamic-v-strongly-typed-views/_static/image6.png)](dynamic-v-strongly-typed-views/_static/image5.png)
 

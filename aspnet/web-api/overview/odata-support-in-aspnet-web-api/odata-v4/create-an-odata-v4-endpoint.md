@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint
-title: "创建 OData v4 终结点使用 ASP.NET Web API 2.2 |Microsoft 文档"
+title: 创建 OData v4 终结点使用 ASP.NET Web API 2.2 |Microsoft 文档
 author: MikeWasson
-description: "开放式数据协议 (OData) 是 web 数据访问协议。 OData 提供统一的方式来查询和操作通过 CRUD 操作的数据集..."
+description: 开放式数据协议 (OData) 是 web 数据访问协议。 OData 提供统一的方式来查询和操作通过 CRUD 操作的数据集...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/24/2014
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint
 msc.type: authoredcontent
 ms.openlocfilehash: a3f94818f9674b0e1e9a45b2a6cc9455edc79726
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26508046"
 ---
 <a name="create-an-odata-v4-endpoint-using-aspnet-web-api-22"></a>创建 OData v4 终结点使用 ASP.NET Web API 2.2
 ====================
@@ -51,7 +52,7 @@ ms.lasthandoff: 11/10/2017
 
 [![](create-an-odata-v4-endpoint/_static/image2.png)](create-an-odata-v4-endpoint/_static/image1.png)
 
-在**新项目**对话框中，选择**空**模板。 下&quot;将文件夹添加和核心引用...&quot;，单击**Web API**。 单击“确定”。
+在**新项目**对话框中，选择**空**模板。 下&quot;将文件夹添加和核心引用...&quot;，单击**Web API**。 单击 **“确定”**。
 
 [![](create-an-odata-v4-endpoint/_static/image4.png)](create-an-odata-v4-endpoint/_static/image3.png)
 
@@ -152,7 +153,7 @@ A*控制器*是处理 HTTP 请求的类。 你创建的每个实体在你的 ODa
 
 无参数版本`Get`方法将返回整个产品集合。 `Get`方法替换*密钥*参数按照键查找产品 (在这种情况下，`Id`属性)。
 
-**[EnableQuery]**属性使客户端能够修改查询，通过使用如 $filter、 $sort 和 $page 的查询选项。 有关详细信息，请参阅[支持 OData 查询选项](../supporting-odata-query-options.md)。
+**[EnableQuery]** 属性使客户端能够修改查询，通过使用如 $filter、 $sort 和 $page 的查询选项。 有关详细信息，请参阅[支持 OData 查询选项](../supporting-odata-query-options.md)。
 
 ## <a name="adding-an-entity-to-the-entity-set"></a>将实体添加到实体集
 

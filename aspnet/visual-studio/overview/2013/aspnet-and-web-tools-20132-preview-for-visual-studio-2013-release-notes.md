@@ -1,22 +1,23 @@
 ---
 uid: visual-studio/overview/2013/aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes
-title: "ASP.NET 和 Web 工具 2013.2 for Visual Studio 2013 发行说明 |Microsoft 文档"
+title: ASP.NET 和 Web 工具 2013.2 for Visual Studio 2013 发行说明 |Microsoft 文档
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/06/2014
 ms.topic: article
 ms.assetid: 7ef5f73c-ca60-43c1-bdb2-702800347e7e
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes
 msc.type: authoredcontent
 ms.openlocfilehash: 0e7ad52662f7ceaa1f087d007d0b14b610f90bee
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28036019"
 ---
 <a name="aspnet-and-web-tools-20132--for-visual-studio-2013-release-notes"></a>ASP.NET 和 Web Tools 2013.2 for Visual Studio 2013 发行说明
 ====================
@@ -78,7 +79,7 @@ ASP.NET 和 Web Tools for Visual Studio 2013.2 需要 Visual Studio 2013。
 
 按 Ctrl+F5 运行应用程序。 按照说明信任 IIS Express 生成的自签名的证书。
 
-![SSL Warning](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image3.png)
+![SSL 警告](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image3.png)
 
 读取**安全警告**对话框，然后单击**是**如果你想要安装表示本地主机的证书。
 
@@ -151,7 +152,7 @@ Firefox 会使用其自己的证书存储，因此它将显示一条警告。
 <a id="scaffolding"></a>
 ### <a name="aspnet-scaffolding"></a>ASP.NET 基架
 
-- **枚举支持：**如果您的模型正在使用的枚举，则 MVC 基架将为枚举生成下拉列表。 这将在 MVC 中使用的枚举帮助器。
+- **枚举支持：** 如果您的模型正在使用的枚举，则 MVC 基架将为枚举生成下拉列表。 这将在 MVC 中使用的枚举帮助器。
 - **启动支持**： 更新中 MVC 基架的 EditorFor 模板，以便他们使用的启动类。
 - **包支持**: MVC 和 Web API Scaffolders 将 MVC 和 Web API 添加 5.1 包
 
@@ -247,15 +248,15 @@ NuGet 2.8.1 RTM 将在 2014 年 4 月发布。 以下是从发行说明中，突
 ### <a name="aspnet-identity-200"></a>ASP.NET 标识 2.0.0
 
 - **双因素身份验证**: ASP.NET 标识现在支持双因素身份验证。 双因素身份验证提供了一层额外的你在其中遭到入侵你的密码的情况下的用户帐户的安全。 此外，还有针对两个因素代码遭到暴力破解攻击的保护。
-- **帐户锁定：**提供一种方式锁定用户，如果用户输入其密码或双因素代码不正确。 无效尝试次数和时间跨度的用户被锁定可以配置。 开发人员可以根据需要关闭帐户锁定为特定用户帐户应在需要。
+- **帐户锁定：** 提供一种方式锁定用户，如果用户输入其密码或双因素代码不正确。 无效尝试次数和时间跨度的用户被锁定可以配置。 开发人员可以根据需要关闭帐户锁定为特定用户帐户应在需要。
 - **帐户确认：** ASP.NET 标识系统现在支持帐户确认。 这是相当常见方案，在今天大多数网站中，当你注册网站上的新帐户，你需要以确认你的电子邮件之前您可以执行的网站中的任何操作。 电子邮件确认很有用，因为它可防止虚假帐户创建。 这是网站的非常有用，如果你使用的电子邮件作为与你论坛网站、 银行、 电子商务或社交网站等的用户进行通信的方法。
-- **密码重置：**密码重置是一项功能，用户才能重置密码，如果用户忘记其密码。
-- **安全戳 （注销无处不在）：**支持一种方式，以重新生成安全令牌的用户在情况下，当用户更改其密码或任何其他安全相关的删除关联的登录名 （如 Facebook、 Google、 等的信息Microsoft 帐户和等等）。 需要这些信息来确保使用旧密码生成任何标记将会失效。 在示例项目中，如果你更改用户的密码然后为用户生成新的令牌和任何以前的令牌失效。 此功能提供一层额外的安全到你的应用程序，因为当你更改你的密码，你将被注销从 everywhere （所有其他浏览器），您已登录到此应用程序。
+- **密码重置：** 密码重置是一项功能，用户才能重置密码，如果用户忘记其密码。
+- **安全戳 （注销无处不在）：** 支持一种方式，以重新生成安全令牌的用户在情况下，当用户更改其密码或任何其他安全相关的删除关联的登录名 （如 Facebook、 Google、 等的信息Microsoft 帐户和等等）。 需要这些信息来确保使用旧密码生成任何标记将会失效。 在示例项目中，如果你更改用户的密码然后为用户生成新的令牌和任何以前的令牌失效。 此功能提供一层额外的安全到你的应用程序，因为当你更改你的密码，你将被注销从 everywhere （所有其他浏览器），您已登录到此应用程序。
 - **创建主键的用户和角色可扩展该类型**： 在 ASP.NET 标识 1.0，主键表用户和角色的类型为字符串。 这意味着通过使用实体框架中的 ASP.NET 标识系统已保留 SQL Server 中时，我们已使用 nvarchar。 没有堆栈溢出此默认实现许多主题讨论并基于传入的反馈。 我们提供了扩展性挂钩，你可以在其中指定了应用户和角色表的主键。 扩展性挂钩，此方法特别有用，如果你要迁移你的应用程序和应用程序已存储的 Userid 是否 Guid 或整数。
 - **对用户和角色支持 IQueryable**： 添加了对 UsersStore 和 RolesStore IQueryable 的支持，可以轻松地获取的用户和角色的列表。
 - **支持通过 UserManager 的删除操作**
 - **索引的用户名**： 在 ASP.NET 标识实体框架实现中，我们已添加唯一索引的用户名在 EF 6.1.0 中使用新的 IndexAttribute。 这可确保用户名始终是唯一的而且没有任何争用条件，在其中你最终可能会得到重复的用户名。
-- **增强的密码验证程序：**出厂在 ASP.NET 标识 1.0 中的密码验证程序已仅已验证的最小长度非常基本的密码验证程序。 没有新的密码验证程序，可让你更好地控制密码的复杂性。 请注意，即使你打开此密码中的所有设置，我们建议你在启用双因素身份验证的用户帐户。
+- **增强的密码验证程序：** 出厂在 ASP.NET 标识 1.0 中的密码验证程序已仅已验证的最小长度非常基本的密码验证程序。 没有新的密码验证程序，可让你更好地控制密码的复杂性。 请注意，即使你打开此密码中的所有设置，我们建议你在启用双因素身份验证的用户帐户。
 - **IdentityFactory 中间件 / CreatePerOwinContext**:
 
     - **用户管理器**： 你可以使用工厂实现从 OWIN 上下文中获取的 UserManager 实例。 此模式为类似于我们为获取 AuthenticationManager OWIN 上下文中登录和注销的使用。 这是推荐的方法来获取每个应用程序的请求的 UserManager 实例。

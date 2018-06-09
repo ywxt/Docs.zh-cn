@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
-title: "用于将密码和其他敏感数据部署到 ASP.NET 和 Azure App Service 的最佳做法 |Microsoft 文档"
+title: 用于将密码和其他敏感数据部署到 ASP.NET 和 Azure App Service 的最佳做法 |Microsoft 文档
 author: Rick-Anderson
-description: "本教程演示如何在代码可以安全地存储和访问安全信息。 最重要的一点是你应永远不会存储密码或其他服务..."
+description: 本教程演示如何在代码可以安全地存储和访问安全信息。 最重要的一点是你应永远不会存储密码或其他服务...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/21/2015
 ms.topic: article
 ms.assetid: 97902c66-cb61-4d11-be52-73f962f2db0a
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
 msc.type: authoredcontent
 ms.openlocfilehash: 995d9a088e3095f36a01d2adb19ec08e6a6d1b3e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28033016"
 ---
 <a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>密码和其他敏感数据部署到 ASP.NET 和 Azure App Service 的最佳做法
 ====================
@@ -54,7 +55,7 @@ ms.lasthandoff: 01/24/2018
 ASP.NET 运行时将包含中的标记的外部文件的内容合并&lt;appSettings&gt;元素。 如果找不到指定的文件，运行时将忽略的文件属性。
 
 > [!WARNING]
-> 安全-不要添加你*机密.config*文件添加到项目，或将其签入源代码管理。 默认情况下，Visual Studio 会将设置`Build Action`到`Content`，这意味着文件部署。 有关详细信息请参阅[为什么不我的项目文件夹中的文件的所有部署呢？](https://msdn.microsoft.com/library/ee942158(v=vs.110).aspx#can_i_exclude_specific_files_or_folders_from_deployment) 尽管可以使用任何扩展*机密.config*文件，则最好使其保持*.config*，如配置文件不由 IIS 提供。 此外请注意， *AppSettingsSecrets.config*文件是从两个目录级别向上*web.config*文件，因此它完全不足解决方案目录。 将外解决方案目录，该文件移&quot;git 添加\*&quot;不会将其添加到你的存储库。
+> 安全-不要添加你*机密.config*文件添加到项目，或将其签入源代码管理。 默认情况下，Visual Studio 会将设置`Build Action`到`Content`，这意味着文件部署。 有关详细信息请参阅[为什么不我的项目文件夹中的文件的所有部署呢？](https://msdn.microsoft.com/library/ee942158(v=vs.110).aspx#can_i_exclude_specific_files_or_folders_from_deployment) 尽管可以使用任何扩展*机密.config*文件，则最好使其保持 *.config*，如配置文件不由 IIS 提供。 此外请注意， *AppSettingsSecrets.config*文件是从两个目录级别向上*web.config*文件，因此它完全不足解决方案目录。 将外解决方案目录，该文件移&quot;git 添加\*&quot;不会将其添加到你的存储库。
 
 
 <a id="con"></a>
@@ -75,7 +76,7 @@ Visual Studio 将创建使用的新 ASP.NET 项目[LocalDB](https://blogs.msdn.c
 
 
 > [!NOTE]
-> **机密文件上的安全警告：**一种最佳做法是不使用生产中测试和开发的机密。 使用在测试或开发的生产密码泄漏这些机密。
+> **机密文件上的安全警告：** 一种最佳做法是不使用生产中测试和开发的机密。 使用在测试或开发的生产密码泄漏这些机密。
 
 
 <a id="wj"></a>
@@ -90,7 +91,7 @@ Visual Studio 将创建使用的新 ASP.NET 项目[LocalDB](https://blogs.msdn.c
 
 当你的 web 应用部署到 Azure， *AppSettingsSecrets.config*文件不会将部署 （这是你想得到）。 无法转到[Azure 管理门户](https://azure.microsoft.com/services/management-portal/)和手动设置这些设置，以执行此操作：
 
-1. 转到[https://portal.azure.com](https://portal.azure.com)，并使用你的 Azure 凭据登录。
+1. 转到[ https://portal.azure.com ](https://portal.azure.com)，并使用你的 Azure 凭据登录。
 2. 单击**浏览&gt;Web Apps**，然后单击你的 web 应用的名称。
 3. 单击**所有设置&gt;应用程序设置**。
 

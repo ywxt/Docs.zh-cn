@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-view
 msc.type: authoredcontent
 ms.openlocfilehash: 50ce4a2024ffd9e2bbb5526717052d486689ff38
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30873165"
 ---
 <a name="adding-a-view-c"></a>添加的视图 (C#)
 ====================
@@ -39,7 +40,7 @@ ms.lasthandoff: 04/06/2018
 
 在本节中你要修改`HelloWorldController`类以使用模板文件复制到完全封装生成 HTML 响应客户端的过程的视图。
 
-你将创建使用新的视图模板文件[Razor 视图引擎](https://weblogs.asp.net/scottgu/archive/2010/07/02/introducing-razor.aspx)引入了 ASP.NET MVC 3。 基于 razor 视图模板具有*.cshtml*文件扩展名，并且提供一种简洁的方式来创建 HTML 输出使用 C#。 Razor 降至最低数量的字符时编写视图模板，所需的击键，并使快，流体编码工作流。
+你将创建使用新的视图模板文件[Razor 视图引擎](https://weblogs.asp.net/scottgu/archive/2010/07/02/introducing-razor.aspx)引入了 ASP.NET MVC 3。 基于 razor 视图模板具有 *.cshtml*文件扩展名，并且提供一种简洁的方式来创建 HTML 输出使用 C#。 Razor 降至最低数量的字符时编写视图模板，所需的击键，并使快，流体编码工作流。
 
 使用具有的视图模板启动`Index`中的方法`HelloWorldController`类。 当前，`Index` 方法返回带有在控制器类中硬编码的消息的字符串。 更改`Index`方法以返回`View`对象，如在下面的示例所示：
 
@@ -73,7 +74,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="changing-views-and-layout-pages"></a>更改视图和布局页
 
-首先，你想要更改页面顶部的"My MVC Application"标题。 该文本是通用的每一页。 它实际上被实现只能在一个位置，在项目中，即使在应用程序中的每一页上显示。 转到*/视图/共享*文件夹中的**解决方案资源管理器**并打开 *\_Layout.cshtml*文件。 此文件称为*布局页*且共享的"shell"其他所有页使用。
+首先，你想要更改页面顶部的"My MVC Application"标题。 该文本是通用的每一页。 它实际上被实现只能在一个位置，在项目中，即使在应用程序中的每一页上显示。 转到 */视图/共享*文件夹中的**解决方案资源管理器**并打开 *\_Layout.cshtml*文件。 此文件称为*布局页*且共享的"shell"其他所有页使用。
 
 [![_LayoutCshtml](adding-a-view/_static/image8.png)](adding-a-view/_static/image7.png)
 

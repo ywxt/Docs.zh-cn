@@ -1,22 +1,23 @@
 ---
 uid: single-page-application/overview/templates/breezeangular-template
-title: "轻松/角模板 |Microsoft 文档"
+title: 轻松/角模板 |Microsoft 文档
 author: madskristensen
-description: "轻松/角单页面应用程序模板"
+description: 轻松/角单页面应用程序模板
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/08/2013
 ms.topic: article
 ms.assetid: db31e909-563a-4516-aadd-62aa210ac7e4
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/breezeangular-template
 msc.type: authoredcontent
 ms.openlocfilehash: faf28a510a83b7fa07585904344176601c2e1f34
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26506686"
 ---
 <a name="breezeangular-template"></a>轻松/角模板
 ====================
@@ -62,7 +63,7 @@ ms.lasthandoff: 11/10/2017
 
 下载并安装该模板通过单击上面的下载按钮。 模板被打包为 Visual Studio 扩展 (VSIX) 文件。 你可能需要重新启动 Visual Studio。
 
-在**模板**窗格中，选择**已安装的模板**展开**Visual C#**节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 命名该项目并单击**确定**。
+在**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 命名该项目并单击**确定**。
 
 在**新项目**向导中，选择**轻松角度 SPA**。
 

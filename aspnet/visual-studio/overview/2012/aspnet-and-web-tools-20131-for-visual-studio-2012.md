@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
 msc.type: authoredcontent
 ms.openlocfilehash: c11e2ef9c33b0cae1f196690533094ce1c342da5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28036422"
 ---
 <a name="release-notes-for-aspnet-and-web-tools-20131-for-visual-studio-2012"></a>ASP.NET 和 Web Tools 2013.1 for Visual Studio 2012 的发行说明
 ====================
@@ -66,7 +67,7 @@ by [Microsoft](https://github.com/microsoft)
 ## <a name="new-features-in-aspnet-and-web-tools-20131-for-visual-studio-2012"></a>ASP.NET 和 Web Tools 2013.1 for Visual Studio 2012 中的新增功能
 
 <a id="bootstrap"></a>
-### <a name="bootstrap"></a>Bootstrap
+### <a name="bootstrap"></a>bootstrap
 
 当你创建的基架 MVC 5 控制器和视图时，使用视图的标记[Bootstrap](http://getbootstrap.com/)。
 
@@ -168,7 +169,7 @@ NuGet 2.7 详细的介绍包含一组丰富的新的特征描述了这些[NuGet 
 <a id="browseissue"></a>
 #### <a name="viewing-cshtml-file-withbrowse-withorf5causes-a-server-error"></a>查看服务器错误的 cshtml 文件 withBrowse WithorF5causes
 
-当你在 Visual Studio 2012 （或在 Visual Studio 2013 中创建的 Visual Studio 2012 MVC 5 项目中打开） 中创建的 MVC 5 项目，并尝试通过使用浏览或 F5 查看 cshtml 文件时，你将收到错误，状态-**中的服务器错误'/' 应用程序**。 服务器尝试导航到`http://localhost:XXXX/Views/../XXXX.cshtml`
+当你在 Visual Studio 2012 （或在 Visual Studio 2013 中创建的 Visual Studio 2012 MVC 5 项目中打开） 中创建的 MVC 5 项目，并尝试通过使用浏览或 F5 查看 cshtml 文件时，你将收到错误，状态-**中的服务器错误'/' 应用程序**。 服务器尝试导航到 `http://localhost:XXXX/Views/../XXXX.cshtml`
 
 若要解决此问题，更改**启动操作**在您的项目中设置**特定页**。 不需要为页面提供一个值。
 

@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui
 msc.type: authoredcontent
 ms.openlocfilehash: ac3568941eeef24bd9857c5787471aadea15fc7f
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30875729"
 ---
 <a name="use-controllers-and-views-to-implement-a-listingdetails-ui"></a>使用控制器和视图来实现详细信息列表/用户界面
 ====================
@@ -99,8 +100,8 @@ ASP.NET MVC 包括一个功能强大的 URL 路由引擎，提供了大量的灵
 | */Dinners/Details/2* | DinnersController | Details(id) | id=2 |
 | */Dinners/Edit/5* | DinnersController | Edit(id) | id=5 |
 | */Dinners/Create* | DinnersController | Create （) | 不可用 |
-| */Dinners* | DinnersController | Index （) | 不可用 |
-| */Home* | HomeController | Index （) | 不可用 |
+| */ 晚餐* | DinnersController | Index （) | 不可用 |
+| */ 主页* | HomeController | Index （) | 不可用 |
 | */* | HomeController | Index （) | 不可用 |
 
 最后三行显示的默认值 (控制器 = 主页，操作 = 索引，Id ="") 正在使用。 "索引"方法注册为默认操作名称，如果未指定，因为"/ 晚餐"和"/home"Url 原因 index （） 操作方法要对其控制器类调用。 因为如果未指定，将为默认控制器注册"主页"控制器，"/"URL 使 HomeController 要创建和 index （） 操作方法来调用它。

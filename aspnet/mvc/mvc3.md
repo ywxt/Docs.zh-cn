@@ -2,7 +2,7 @@
 uid: mvc/mvc3
 title: ASP.NET MVC 3 | Microsoft Docs
 author: rick-anderson
-description: "(包括 2011 年 4 月工具更新)ASP.NET MVC 3 是一个框架，用于构建使用成熟设计模式的可缩放的、 基于标准的 web 应用程序..."
+description: (包括 2011 年 4 月工具更新)ASP.NET MVC 3 是一个框架，用于构建使用成熟设计模式的可缩放的、 基于标准的 web 应用程序...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2010
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/mvc3
 msc.type: content
 ms.openlocfilehash: c7eee987b28a5d7f8b40fe89a7bf7517ec06646f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28034732"
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -128,8 +129,8 @@ ASP.NET MVC 3 附带了名为提供以下好处的 Razor 新视图引擎：
 
 一些新的 Razor 功能包括：
 
-- `@model`用于指定传递到该视图的类型的语法。
-- `@* *@`注释语法。
+- `@model` 用于指定传递到该视图的类型的语法。
+- `@* *@` 注释语法。
 - 能够指定默认值 (如`layoutpage`) 一次针对整个站点。
 - `Html.Raw`用于显示不带 HTML 编码的文本的方法它。
 - 对多个视图之间共享代码的支持 (*\_viewstart.cshtml*或 *\_viewstart.vbhtml*文件)。
