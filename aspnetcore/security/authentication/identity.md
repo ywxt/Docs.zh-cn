@@ -1,7 +1,7 @@
 ---
-title: ASP.NET Core Identity 简介
+title: ASP.NET Core 上的标识简介
 author: rick-anderson
-description: 与 ASP.NET Core 应用中使用Identity。 包括，设置密码要求 （RequireDigit、 RequiredLength、 RequiredUniqueChars 和的详细信息）。
+description: 将标识与 ASP.NET Core 应用配合使用。 包括设置密码要求（RequireDigit、RequiredLength、RequiredUniqueChars 等）。
 manager: wpickett
 ms.author: riande
 ms.date: 01/24/2018
@@ -15,19 +15,19 @@ ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/12/2018
 ---
-# <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 简介
+# <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core 上的标识简介
 
 通过[Pranav Rastogi](https://github.com/rustd)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom Dykstra](https://github.com/tdykstra)，Jon Galloway[艾力克 Reitan](https://github.com/Erikre)，和[Steve Smith](https://ardalis.com/)
 
-ASP.NET Core Identity 是允许你向你的应用程序添加登录功能的成员身份系统。 用户可以创建帐户和登录名使用的用户名和密码或它们可以使用如 Facebook、 Google、 Microsoft 帐户、 Twitter 或其他外部登录提供程序。
+ASP.NET Core 标识是一种用于向应用程序添加登录功能的成员身份系统。用户可以创建一个帐户，然后使用用户名和密码登录，也可以使用 Facebook、Google、Microsoft 帐户、Twitter 等外部登录提供程序。
 
-你可以配置 ASP.NET Core Identity 来使用 SQL Server 数据库来存储用户名、 密码和配置文件数据。 或者，你可以使用你自己的持久存储区，例如，Azure 表存储。 本文档包含用于 Visual Studio 以及有关使用 CLI 的说明。
+可以将 ASP.NET Core 标识配置为使用 SQL Server 数据库来存储用户名、密码和配置文件数据。也可以使用你自己的持久存储，例如 Azure 表存储。本文档包含的说明适用于 Visual Studio 和 CLI。	
 
 [查看或下载的示例代码。](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [（如何下载）](xref:tutorials/index#how-to-download-a-sample)
 
 ## <a name="overview-of-identity"></a>标识的概述
 
-在本主题中，你将了解如何使用 ASP.NET Core Identity 来添加功能，用于注册、 登录，并注销用户。 有关创建使用 ASP.NET Core Identity 应用的更多详细说明，请参阅本文末尾的后续步骤部分。
+本主题介绍如何使用 ASP.NET Core 标识来添加用于注册、登录和注销用户的功能。若要详细了解如何使用 ASP.NET Core 标识来创建应用，请参阅本文末尾的“后续步骤”部分。
 
 1. 使用单个用户帐户创建一个 ASP.NET 核心 Web 应用程序项目。
 
@@ -91,7 +91,7 @@ ASP.NET Core Identity 是允许你向你的应用程序添加登录功能的成�
 
    ![将应用迁移网页](identity/_static/apply-migrations.png)
 
-   或者，你可以测试与你的应用不持久的数据库的情况下通过使用内存中数据库的 ASP.NET Core Identity 。 若要使用的内存中数据库，添加`Microsoft.EntityFrameworkCore.InMemory`包到你的应用程序和修改您的应用程序调用`AddDbContext`中`ConfigureServices`，如下所示：
+   也可使用内存中数据库来测试如何在没有持久数据库的情况下将 ASP.NET Core 标识与应用配合使用。若要使用内存中数据库，请将 `Microsoft.EntityFrameworkCore.InMemory` 包添加到应用，然后在 `ConfigureServices` 中修改应用对 `AddDbContext` 的调用，如下所示：
 
    ```csharp
    services.AddDbContext<ApplicationDbContext>(options =>
@@ -182,17 +182,17 @@ ASP.NET Core Identity 是允许你向你的应用程序添加登录功能的成�
 
 ## <a name="identity-components"></a>标识组件
 
-标识系统的主引用程序集是`Microsoft.AspNetCore.Identity`。 此程序包包含 ASP.NET Core Identity 接口的核心集，包括`Microsoft.AspNetCore.Identity.EntityFrameworkCore`。
+标识系统的主引用程序集是 `Microsoft.AspNetCore.Identity`。此包包含 ASP.NET Core 标识的核心接口集，是 `Microsoft.AspNetCore.Identity.EntityFrameworkCore` 提供的。
 
 这些依赖关系需要 ASP.NET Core 应用程序中使用的标识系统：
 
-* `Microsoft.AspNetCore.Identity.EntityFrameworkCore` -包含要应用Identity于Entity Framework Core 所需的类型。
+* `Microsoft.AspNetCore.Identity.EntityFrameworkCore` - 包含将标识与 Entity Framework Core 配合使用所需的类型。
 
 * `Microsoft.EntityFrameworkCore.SqlServer` 实体框架的核心是用于类似于 SQL Server 关系数据库的 Microsoft 的推荐使用此数据访问技术。 对于测试，你可以使用`Microsoft.EntityFrameworkCore.InMemory`。
 
 * `Microsoft.AspNetCore.Authentication.Cookies` -使应用可以使用基于 cookie 的身份验证的中间。
 
-## <a name="migrating-to-aspnet-core-identity"></a>迁移到 ASP.NET Core Identity 
+## <a name="migrating-to-aspnet-core-identity"></a>迁移到 ASP.NET Core 标识
 
 有关其他信息和指南迁移你现有的标识存储，请参阅[迁移身份验证和标识](xref:migration/identity)。
 
