@@ -3,6 +3,8 @@
 * 易于关注。
 * 提供更多 EF Core 最佳做法。
 * 使用更高效的查询。
-* 通过最新 API 保持最新。
+* 通过最新 API 更新到更高版本。
 * 涵盖更多功能。
 * 是开发新应用程序的首选方法。
+
+如果通过 [Razor 页面](xref:data/ef-rp/intro)版本选择本教程，请在[此 GitHub 问题](https://github.com/aspnet/Docs/issues/6146)中说明原因。
