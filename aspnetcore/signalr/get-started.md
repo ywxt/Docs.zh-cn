@@ -11,12 +11,12 @@ ms.prod: aspnet-core
 ms.topic: tutorial
 ms.technology: aspnet
 uid: signalr/get-started
-ms.openlocfilehash: ba1db640e5608fd9f5e7fa024283a651bf7772c2
-ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.openlocfilehash: c71d98f86c15a4c6fbbe400f912123419b4ad076
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34819053"
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252199"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>要开始使用 SignalR 在 ASP.NET Core 上
 
@@ -85,6 +85,8 @@ Visual Studio 包含`Microsoft.AspNetCore.SignalR`作为的一部分包含其服
     dotnet new webapp -o SignalRChat
     ```
 
+    [!INCLUDE[](~/includes/webapp-alias-notice.md)]
+
 2. 安装 JavaScript 客户端库使用*npm*。
 
     ```console
@@ -94,7 +96,7 @@ Visual Studio 包含`Microsoft.AspNetCore.SignalR`作为的一部分包含其服
 
 3. 在创建新的文件夹名为"signalr" *lib*项目文件夹中的。 复制*signalr.js*文件从*node_modules\\ @aspnet\signalr\dist\browser* 到此文件夹。
 
------
+---
 
 ## <a name="create-the-signalr-hub"></a>创建 SignalR Hub
 
