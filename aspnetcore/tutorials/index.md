@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: 9cd14a47a512c2a887614e617dd914dbdb25cb9d
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: 019224e86f1f5583ce0f212d8be70e8829274c7e
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34688423"
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 教程
 
@@ -39,7 +40,7 @@ ms.lasthandoff: 04/26/2018
 * [通过 Visual Studio 开始使用 ASP.NET Core 和 Entity Framework Core](xref:data/ef-mvc/index)
 * [创建标记帮助程序](xref:mvc/views/tag-helpers/authoring)
 * [创建简单的视图组件](xref:mvc/views/view-components#walkthrough-creating-a-simple-view-component)
-* [使用 dotnet watch 开发 ASP.NET Core 应用](xref:tutorials/dotnet-watch)
+* [使用文件观察程序开发应用](xref:tutorials/dotnet-watch)
 
 ## <a name="build-web-apis"></a>生成 Web API
 * 使用 ASP.NET Core 创建 Web API

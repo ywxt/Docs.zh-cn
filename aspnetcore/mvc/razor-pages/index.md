@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 651d47ce20f3269340f0796f487e2f1a2a155710
-ms.sourcegitcommit: 0063338c2e130409081bb60fcffa0c3f190cd46a
+ms.openlocfilehash: c8611ef9218711410cde9e142202fa25c3e51862
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729453"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor 页面介绍
 
@@ -40,17 +41,47 @@ Razor 页面是 ASP.NET Core MVC 的一个新特性，它可以使基于页面�
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
+::: moniker range=">= aspnetcore-2.1"
+
+在命令行中运行 `dotnet new webapp`。
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
 在命令行中运行 `dotnet new razor`。
+
+::: moniker-end
 
 在 Visual Studio for Mac 中打开生成的 .csproj 文件。
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code) 
 
+::: moniker range=">= aspnetcore-2.1"
+
+在命令行中运行 `dotnet new webapp`。
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
 在命令行中运行 `dotnet new razor`。
+
+::: moniker-end
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli) 
 
+::: moniker range=">= aspnetcore-2.1"
+
+在命令行中运行 `dotnet new webapp`。
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
 在命令行中运行 `dotnet new razor`。
+
+::: moniker-end
 
 ---
 
@@ -116,7 +147,7 @@ Pages/Create.cshtml.cs 页面模型：
 
 按照惯例，`PageModel` 类命名为 `<PageName>Model`并且它与页面位于同一个命名空间中。
 
-使用 `PageModel` 类，可以将页面的逻辑与其展示分离开来。 它定义了页面处理程序，用于处理发送到页面的请求和用于呈现页面的数据。 借助这种分离，可以通过[依赖关系注入](xref:fundamentals/dependency-injection)管理页面依赖关系，并对页面执行[单元测试](xref:testing/razor-pages-testing)。
+使用 `PageModel` 类，可以将页面的逻辑与其展示分离开来。 它定义了页面处理程序，用于处理发送到页面的请求和用于呈现页面的数据。 借助这种分离，可以通过[依赖关系注入](xref:fundamentals/dependency-injection)管理页面依赖关系，并对页面执行[单元测试](xref:test/razor-pages-tests)。
 
 页面包含 `OnPostAsync` 处理程序方法，它在 `POST` 请求上运行（当用户发布窗体时）。 可以为任何 HTTP 谓词添加处理程序方法。 最常见的处理程序是：
 
@@ -502,4 +533,4 @@ services.AddMvc()
 * [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)
 * [Razor 页面授权约定](xref:security/authorization/razor-pages-authorization)
 * [Razor 页面自定义路由和页面模型提供程序](xref:mvc/razor-pages/razor-pages-conventions)
-* [Razor 页面单位与集成测试](xref:testing/razor-pages-testing)
+* [Razor 页面单元测试](xref:test/razor-pages-tests)
