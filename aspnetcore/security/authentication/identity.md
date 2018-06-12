@@ -14,20 +14,21 @@ ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/12/2018
+ms.locfileid: "34094124"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core 上的标识简介
 
 通过[Pranav Rastogi](https://github.com/rustd)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom Dykstra](https://github.com/tdykstra)，Jon Galloway[艾力克 Reitan](https://github.com/Erikre)，和[Steve Smith](https://ardalis.com/)
 
-ASP.NET Core 标识是一种用于向应用程序添加登录功能的成员身份系统。用户可以创建一个帐户，然后使用用户名和密码登录，也可以使用 Facebook、Google、Microsoft 帐户、Twitter 等外部登录提供程序。
+ASP.NET Core 标识是一种用于向应用程序添加登录功能的成员身份系统。 用户可以创建一个帐户，然后使用用户名和密码登录，也可以使用 Facebook、Google、Microsoft 帐户、Twitter 等外部登录提供程序。
 
-可以将 ASP.NET Core 标识配置为使用 SQL Server 数据库来存储用户名、密码和配置文件数据。也可以使用你自己的持久存储，例如 Azure 表存储。本文档包含的说明适用于 Visual Studio 和 CLI。	
+可以将 ASP.NET Core 标识配置为使用 SQL Server 数据库来存储用户名、密码和配置文件数据。 也可以使用你自己的持久存储，例如 Azure 表存储。 本文档包含的说明适用于 Visual Studio 和 CLI。
 
 [查看或下载的示例代码。](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [（如何下载）](xref:tutorials/index#how-to-download-a-sample)
 
 ## <a name="overview-of-identity"></a>标识的概述
 
-本主题介绍如何使用 ASP.NET Core 标识来添加用于注册、登录和注销用户的功能。若要详细了解如何使用 ASP.NET Core 标识来创建应用，请参阅本文末尾的“后续步骤”部分。
+本主题介绍如何使用 ASP.NET Core 标识来添加用于注册、登录和注销用户的功能。 若要详细了解如何使用 ASP.NET Core 标识来创建应用，请参阅本文末尾的“后续步骤”部分。
 
 1. 使用单个用户帐户创建一个 ASP.NET 核心 Web 应用程序项目。
 
@@ -91,7 +92,7 @@ ASP.NET Core 标识是一种用于向应用程序添加登录功能的成员身�
 
    ![将应用迁移网页](identity/_static/apply-migrations.png)
 
-   也可使用内存中数据库来测试如何在没有持久数据库的情况下将 ASP.NET Core 标识与应用配合使用。若要使用内存中数据库，请将 `Microsoft.EntityFrameworkCore.InMemory` 包添加到应用，然后在 `ConfigureServices` 中修改应用对 `AddDbContext` 的调用，如下所示：
+   也可使用内存中数据库来测试如何在没有持久数据库的情况下将 ASP.NET Core 标识与应用配合使用。 若要使用内存中数据库，请将 `Microsoft.EntityFrameworkCore.InMemory` 包添加到应用，然后在 `ConfigureServices` 中修改应用对 `AddDbContext` 的调用，如下所示：
 
    ```csharp
    services.AddDbContext<ApplicationDbContext>(options =>
@@ -182,7 +183,7 @@ ASP.NET Core 标识是一种用于向应用程序添加登录功能的成员身�
 
 ## <a name="identity-components"></a>标识组件
 
-标识系统的主引用程序集是 `Microsoft.AspNetCore.Identity`。此包包含 ASP.NET Core 标识的核心接口集，是 `Microsoft.AspNetCore.Identity.EntityFrameworkCore` 提供的。
+标识系统的主引用程序集是 `Microsoft.AspNetCore.Identity`。 此包包含 ASP.NET Core 标识的核心接口集，是 `Microsoft.AspNetCore.Identity.EntityFrameworkCore` 提供的。
 
 这些依赖关系需要 ASP.NET Core 应用程序中使用的标识系统：
 
