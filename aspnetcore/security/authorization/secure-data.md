@@ -9,12 +9,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: 1ffa44d1816284d563b80b2d9a02b7b816116ee1
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 0b67d4aef198aa418b54fb92db76d331ffa2785a
+ms.sourcegitcommit: 0d6f151e69c159d776ed0142773279e645edbc0a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252108"
+ms.lasthandoff: 06/13/2018
+ms.locfileid: "35415028"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>使用受授权的用户数据创建 ASP.NET Core 应用
 
@@ -111,7 +111,7 @@ dotnet ef database update
 
 若要将 HTTP 请求重定向到 HTTPS，请参阅[URL 重写中间件](xref:fundamentals/url-rewriting)。 如果你使用 Visual Studio Code 或不包括为支持 HTTPS 的测试证书的本地平台上测试：
 
-  设置`"LocalTest:skipSSL": true`中*appsettings。Developement.json*文件。
+  设置`"LocalTest:skipHTTPS": true`中*appsettings。Developement.json*文件。
 
 ### <a name="require-authenticated-users"></a>要求经过身份验证的用户
 
@@ -273,7 +273,7 @@ dotnet user-secrets set SeedUserPW <PW>
 
 如果你使用 Visual Studio Code 或不包括为支持 HTTPS 的测试证书的本地平台上测试：
 
-* 设置`"LocalTest:skipSSL": true`中*appsettings。Developement.json*文件中跳过 HTTPS 要求。 跳过仅在开发计算机上的 HTTPS。
+* 设置`"LocalTest:skipHTTPS": true`中*appsettings。Developement.json*文件中跳过 HTTPS 要求。 跳过仅在开发计算机上的 HTTPS。
 
 如果应用了联系人：
 

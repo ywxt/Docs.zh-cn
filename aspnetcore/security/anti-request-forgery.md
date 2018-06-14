@@ -10,17 +10,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/anti-request-forgery
-ms.openlocfilehash: ad50f8b261447d40ccc24c0ee006239aa976bf20
-ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
+ms.openlocfilehash: 3bca96f4a2e247eeeb93140df93221371d88d4d3
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341855"
 ---
 # <a name="prevent-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>在 ASP.NET Core 防止跨站点请求伪造 (XSRF/CSRF) 攻击
 
 通过[Steve Smith](https://ardalis.com/)， [Fiyaz Hasan](https://twitter.com/FiyazBinHasan)，和[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-跨站点请求伪造 (也称为 XSRF 或 CSRF，发音*，请参阅冲浪*) 是针对恶意网站凭此可以影响客户端浏览器和信任，一个 web 应用程序之间的交互的 web 承载的应用程序的攻击浏览器。 这些攻击是可能的因为 web 浏览器将自动与每个请求某些类型的身份验证令牌发送到网站。 这种形式的攻击也称为是*一键式攻击*或*会话乘坐*因为攻击充分利用用户的先前进行身份验证会话。
+跨站点请求伪造 (也称为 XSRF 或 CSRF，发音 *，请参阅冲浪*) 是针对恶意网站凭此可以影响客户端浏览器和信任，一个 web 应用程序之间的交互的 web 承载的应用程序的攻击浏览器。 这些攻击是可能的因为 web 浏览器将自动与每个请求某些类型的身份验证令牌发送到网站。 这种形式的攻击也称为是*一键式攻击*或*会话乘坐*因为攻击充分利用用户的先前进行身份验证会话。
 
 CSRF 攻击的示例：
 
@@ -43,11 +44,13 @@ CSRF 攻击的示例：
 1. 用户选择提交按钮。 浏览器发出请求，并自动将请求的域中，身份验证 cookie `www.good-banking-site.com`。
 1. 在上运行的请求`www.good-banking-site.com`与用户的身份验证上下文的服务器，并且可以执行允许经过身份验证的用户执行任何操作。
 
-当用户选择按钮以提交表单时，将无法恶意站点：
+除了其中用户选择按钮以提交该表单的方案中，恶意的站点无法：
 
 * 运行自动提交该表单的脚本。
-* 将窗体提交作为 AJAX 请求中发送。 
-* 使用 CSS 的隐藏的表单。 
+* 将窗体提交作为 AJAX 请求中发送。
+* 隐藏使用 CSS 窗体。
+
+这些备用方案无需任何操作或从用户而不是最初访问恶意网站的输入。
 
 使用 HTTPS，则不会阻止 CSRF 攻击。 恶意站点可以将发送`https://www.good-banking-site.com/`请求一样轻松它可发送的不安全的请求。
 

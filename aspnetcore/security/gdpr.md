@@ -1,21 +1,22 @@
 ---
 title: 在 ASP.NET 核心中的常规数据保护法规 (GDPR) 支持
 author: rick-anderson
-description: 演示如何访问 GDPR 扩展点，在 ASP.NET 核心中的 web 应用。
+description: 了解如何访问 ASP.NET 核心 web 应用中的 GDPR 扩展点。
 manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
-ms.date: 5/29/2018
+ms.custom: mvc
+ms.date: 05/29/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/gdpr
-ms.openlocfilehash: 92a7000f4f8e4c2097065cb530fe106ef0e98545
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: c3c8a3fcd4a303aea65c57ff6be2ff0434383f33
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34688622"
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341920"
 ---
 # <a name="eu-general-data-protection-regulation-gdpr-support-in-aspnet-core"></a>在 ASP.NET Core 欧洲常规数据保护法规 (GDPR) 支持
 
@@ -24,7 +25,7 @@ ms.locfileid: "34688622"
 ASP.NET Core 提供 Api 和模板，以帮助满足一些[欧洲常规数据保护法规 (GDPR)](https://www.eugdpr.org/)要求：
 
 * 项目模板包含扩展点以及可以将替换为您的隐私和 cookie 的使用策略的存根的标记。
-* 用于存储的个人信息中，cookie 同意功能允许你以寻求 （和跟踪） 同意的情况下从你的用户。 如果用户不与数据收集同意和应用程序设置[CheckConsentNeeded](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions.checkconsentneeded?view=aspnetcore-2.1#Microsoft_AspNetCore_Builder_CookiePolicyOptions_CheckConsentNeeded)到`true`，不重要 cookie 将不会发送到浏览器。
+* 用于存储的个人信息中，cookie 同意功能允许你以寻求 （和跟踪） 同意的情况下从你的用户。 如果用户不与数据收集同意和应用程序设置[CheckConsentNeeded](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions.checkconsentneeded)到`true`，不重要 cookie 将不会发送到浏览器。
 * 可以将 cookie 标记为重要。 基本 cookie 发送到浏览器中，即使用户不同意，并且已禁用跟踪。
 * [TempData 和会话 cookie](#tempdata)禁用跟踪时不起作用。
 * [标识管理](#pd)页提供的链接下载和删除用户数据。
@@ -37,18 +38,18 @@ ASP.NET Core 提供 Api 和模板，以帮助满足一些[欧洲常规数据保�
 
 Razor 页和 MVC 项目模板创建的项目包括以下 GDPR 支持：
 
-* [CookiePolicyOptions](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions?view=aspnetcore-2.0)和[UseCookiePolicy](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyappbuilderextensions.usecookiepolicy?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_CookiePolicyAppBuilderExtensions_UseCookiePolicy_Microsoft_AspNetCore_Builder_IApplicationBuilder_)中设置`Startup`。
+* [CookiePolicyOptions](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions)和[UseCookiePolicy](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyappbuilderextensions.usecookiepolicy)中设置`Startup`。
 * *_CookieConsentPartial.cshtml* [分部视图](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper)。
 * *Pages/Privacy.cshtml*或*Home/Privacy.cshtml*视图提供页详细介绍站点的隐私策略。 *_CookieConsentPartial.cshtml*文件生成隐私页的链接。
 * 对于使用单个用户帐户创建的应用程序，管理页提供了用于下载和删除链接[个人用户数据](#pd)。
 
 ### <a name="cookiepolicyoptions-and-usecookiepolicy"></a>CookiePolicyOptions 和 UseCookiePolicy
 
-[CookiePolicyOptions](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions?view=aspnetcore-2.0)中初始化`Startup`类`ConfigureServices`方法：
+[CookiePolicyOptions](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions)中初始化`Startup`类`ConfigureServices`方法：
 
 [!code-csharp[Main](gdpr/sample/Startup.cs?name=snippet1&highlight=14-20)]
 
-[UseCookiePolicy](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyappbuilderextensions.usecookiepolicy?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_CookiePolicyAppBuilderExtensions_UseCookiePolicy_Microsoft_AspNetCore_Builder_IApplicationBuilder_)中称为`Startup`类`Configure`方法：
+[UseCookiePolicy](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyappbuilderextensions.usecookiepolicy)中称为`Startup`类`Configure`方法：
 
 [!code-csharp[Main](gdpr/sample/Startup.cs?name=snippet1&highlight=49)]
 
@@ -94,7 +95,7 @@ ASP.NET 核心应用程序使用单个用户帐户创建包含代码，从而下
 
 * 若要生成`Account/Manage`代码，请参阅[基架标识](xref:security/authentication/scaffold-identity)。
 * 删除并下载仅影响的默认标识数据。 应用程序创建自定义用户数据必须进行扩展，以删除/下载自定义用户数据。 GitHub 问题[如何添加/删除到标识的自定义用户数据](https://github.com/aspnet/Docs/issues/6226)跟踪上创建自定义/删除/下载自定义用户数据的建议的文章。 如果你想要查看该主题按优先级排列，将向上反应拇指保留为问题。
-* 保存用户标识数据库表中存储的令牌`AspNetUserTokens`时由于的级联删除行为通过删除该用户会被删除[外键](https://github.com/aspnet/Identity/blob/b4fc72c944e0589a7e1f076794d7e5d8dcf163bf/src/EF/IdentityUserContext.cs#L152)。
+* 保存用户标识数据库表中存储的令牌`AspNetUserTokens`时由于的级联删除行为通过删除该用户会被删除[外键](https://github.com/aspnet/Identity/blob/release/2.1/src/EF/IdentityUserContext.cs#L152)。
 
 ## <a name="encryption-at-rest"></a>静态加密
 
@@ -107,17 +108,17 @@ ASP.NET 核心应用程序使用单个用户帐户创建包含代码，从而下
 
 例如：
 
-* Microsoft SQL 和 Azure SQL 提供[透明数据加密](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-2017)(TDE)。
-* [SQL Azure 默认情况下加密数据库](https://azure.microsoft.com/en-us/updates/newly-created-azure-sql-databases-encrypted-by-default/)
-* [默认情况下加密 azure Blob、 文件、 表和队列存储](https://azure.microsoft.com/en-us/blog/announcing-default-encryption-for-azure-blobs-files-table-and-queue-storage/)。
+* Microsoft SQL 和 Azure SQL 提供[透明数据加密](/sql/relational-databases/security/encryption/transparent-data-encryption)(TDE)。
+* [SQL Azure 默认情况下加密数据库](https://azure.microsoft.com/updates/newly-created-azure-sql-databases-encrypted-by-default/)
+* [默认情况下加密 azure Blob、 文件、 表和队列存储](https://azure.microsoft.com/blog/announcing-default-encryption-for-azure-blobs-files-table-and-queue-storage/)。
 
 对于不提供内置加密对静止的数据库，你可能能够使用磁盘加密提供相同的保护。 例如：
 
-* [Windows server 的 Bitlocker](https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-how-to-deploy-on-windows-server)
+* [Windows Server 的 BitLocker](/windows/security/information-protection/bitlocker/bitlocker-how-to-deploy-on-windows-server)
 * Linux:
   * [eCryptfs](https://launchpad.net/ecryptfs)
   * [EncFS](https://github.com/vgough/encfs)。
 
 ## <a name="additional-resources"></a>其他资源
 
-* [Microsoft.com/GDPR](https://www.microsoft.com/en-us/trustcenter/Privacy/GDPR)
+* [Microsoft.com/GDPR](https://www.microsoft.com/trustcenter/Privacy/GDPR)

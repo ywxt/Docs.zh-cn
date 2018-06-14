@@ -10,12 +10,12 @@ ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: 7ceccffa39baf5f13d63c26e78c64a595bb42f60
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: abf07ec2d2692a8504caea243eacead6aa6e1a62
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734492"
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341699"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>响应缓存在 ASP.NET 核心中的中间件
 
@@ -27,7 +27,7 @@ ms.locfileid: "34734492"
 
 ## <a name="package"></a>Package
 
-若要在你的项目中包含该中间件，添加到引用[Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/)包或使用[Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app)，这是可在中使用ASP.NET 核心 2.1 或更高版本。
+若要在你的项目中包含该中间件，添加到引用[Microsoft.AspNetCore.ResponseCaching](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCaching/)包或使用[Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app)，这是可在 ASP 中使用。2.1 或更高版本的 NET 核心。
 
 ## <a name="configuration"></a>配置
 

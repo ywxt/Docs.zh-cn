@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/razor-pages-authorization
-ms.openlocfilehash: 35a21156c001d8703e09e604129c4c2c500fe25f
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: cd1fa7957ca50db0de71f71234f84d3fbc631f45
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734648"
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341738"
 ---
 # <a name="razor-pages-authorization-conventions-in-aspnet-core"></a>在 ASP.NET Core razor 页授权约定
 
@@ -23,7 +23,7 @@ ms.locfileid: "34734648"
 
 若要控制在 Razor 页面应用程序的访问的一个方法是在启动时使用授权约定。 这些约定，可以为用户授权，并允许匿名用户访问各个页的文件夹。 自动本主题中所述的约定应用[授权筛选器](xref:mvc/controllers/filters#authorization-filters)来控制访问权限。
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/razor-pages-authorization/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/razor-pages-authorization/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
 此示例应用程序使用[Cookie 身份验证，而无需 ASP.NET 核心标识](xref:security/authentication/cookie)。 假设用户，Maria Rodriguez 的用户帐户是硬编码到应用程序。 使用电子邮件用户名"maria.rodriguez@contoso.com"和任何密码以登录用户。 用户进行身份验证中`AuthenticateUser`中的方法*Pages/Account/Login.cshtml.cs*文件。 在实际示例中，对用户的身份验证将对数据库。 若要使用 ASP.NET 核心标识，请按照中的指导[ASP.NET Core 上的标识简介](xref:security/authentication/identity)主题。 概念和本主题中所示的示例同样适用于使用 ASP.NET 核心标识的应用。
 
