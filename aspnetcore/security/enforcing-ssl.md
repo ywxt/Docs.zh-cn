@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/enforcing-ssl
-ms.openlocfilehash: 69ce182855878e4d05bff95139fefb9e1312f3d5
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 48a25b7ba7affe84cfa6fe16096409239c510221
+ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252069"
+ms.lasthandoff: 06/15/2018
+ms.locfileid: "35652183"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>强制实施 HTTPS 在 ASP.NET 核心
 
@@ -48,8 +48,8 @@ ms.locfileid: "35252069"
 
 前面的突出显示的代码：
 
-* 集[HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode)。
-* 将 HTTPS 端口设置为 5001。
+* 集[HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode)到`Status307TemporaryRedirect`，这是默认值。 生产应用程序应调用[UseHsts](#hsts)。
+* 将 HTTPS 端口设置为 5001。 默认值为 443。
 
 使用以下机制将自动设置端口：
 
@@ -77,6 +77,11 @@ ms.locfileid: "35252069"
 * 请求没有重定向。
 * 该中间件记录警告。
 
+> [!NOTE]
+> 使用 HTTPS 重定向中间件的替代方法 (`UseHttpsRedirection`) 是使用 URL 重写中间件 (`AddRedirectToHttps`)。 `AddRedirectToHttps` 此外可以设置的状态代码和端口执行重定向时。 有关详细信息，请参阅[URL 重写中间件](xref:fundamentals/url-rewriting)。
+>
+> 当将重定向到 HTTPS 而无需其他重定向规则，我们建议使用 HTTPS 重定向中间件 (`UseHttpsRedirection`) 本主题中所述。
+
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.1"
@@ -89,7 +94,7 @@ ms.locfileid: "35252069"
 
 [!code-csharp[](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet_AddRedirectToHttps&highlight=7-999)]
 
-有关详细信息，请参阅[URL 重写中间件](xref:fundamentals/url-rewriting)。
+有关详细信息，请参阅[URL 重写中间件](xref:fundamentals/url-rewriting)。 该中间件还允许应用程序以执行重定向时设置的状态代码或状态代码和端口。
 
 全局需要 HTTPS (`options.Filters.Add(new RequireHttpsAttribute());`) 是最佳安全方案。 应用`[RequireHttps]`特性应用到所有控制器/Razor 页面不会被视为尽可能安全全局需要 HTTPS。 你不能保证`[RequireHttps]`添加新控制器和 Razor 页时应用特性。
 

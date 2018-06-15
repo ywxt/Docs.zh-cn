@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: cabb5acc6e593c02c20b3403b39c601ce26a4d99
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: f9c28930c1f8a9c54792a2f689d890f16d795a55
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34688978"
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613104"
 ---
 # <a name="facebook-external-login-setup-in-aspnet-core"></a>在 ASP.NET Core Facebook 外部登录安装程序
 
@@ -47,6 +47,9 @@ ms.locfileid: "34688978"
 ![客户端的 OAuth 设置页](index/_static/FBOAuthSetup.png)
 
 * 输入你的开发 URI 与 */signin-facebook*追加到**有效的 OAuth 重定向 Uri**字段 (例如： `https://localhost:44320/signin-facebook`)。 本教程中稍后配置的 Facebook 身份验证将自动处理请求在 */signin-facebook*要实现的 OAuth 流路由。
+
+> [!NOTE]
+> URI */signin-facebook*被设置为 Facebook 身份验证提供程序的默认回调。 你可以配置通过继承的 Facebook 身份验证中间件时更改默认的回调 URI [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath)属性[FacebookOptions](/dotnet/api/microsoft.aspnetcore.authentication.facebook.facebookoptions)类。
 
 * 单击**保存更改**。
 

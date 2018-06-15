@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: c61918d42b407b01484b67d740edc7a682c3a4b0
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 463c1c7b3aef624622e34943f1a7a518e658a037
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613029"
 ---
 # <a name="enable-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>启用 ASP.NET Core 中的身份验证器应用的 QR 代码生成
 
@@ -89,4 +90,4 @@ QR 代码的格式正确 URL 可用于:
 
 ## <a name="totp-client-and-server-time-skew"></a>TOTP 客户端和服务器时间偏差
 
-TOTP 身份验证依赖于服务器和身份验证器的设备具有精确的时间。 仅在 30 秒内，最后一个令牌。 如果未 TOTP 2FA 登录名，请检查服务器的时间比准确，并且最好是同步到准确 NTP 服务。
+TOTP （基于时间的一次性密码） 身份验证依赖于服务器和身份验证器的设备具有精确的时间。 仅在 30 秒内，最后一个令牌。 如果未 TOTP 2FA 登录名，请检查服务器的时间比准确，并且最好是同步到准确 NTP 服务。

@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cookie-sharing
-ms.openlocfilehash: f6d62d5f6e446e3e2001ed6bde72a6c409aa2833
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: c22db501a2689feb8c16649eba4866e1190361a4
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734674"
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613013"
 ---
 # <a name="share-cookies-among-apps-with-aspnet-and-aspnet-core"></a>与 ASP.NET 和 ASP.NET Core 共享在应用之间的 cookie
 
@@ -141,19 +141,15 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions
 
 ASP.NET 4.x 应用程序使用 Katana cookie 身份验证中间件该对话框可以配置为生成与 ASP.NET Core cookie 身份验证中间件兼容的身份验证 cookie。 这样，段落将大型站点的单个应用升级时站点内提供顺畅的 SSO 体验。
 
-> [!TIP]
-> 当应用使用 Katana cookie 身份验证中间件时，它将调用`UseCookieAuthentication`在项目的*Startup.Auth.cs*文件。 ASP.NET 4.x web 应用程序项目创建与 Visual Studio 2013 和更高版本默认情况下使用 Katana cookie 身份验证中间件。
+当应用使用 Katana cookie 身份验证中间件时，它将调用`UseCookieAuthentication`在项目的*Startup.Auth.cs*文件。 ASP.NET 4.x web 应用程序项目创建与 Visual Studio 2013 和更高版本默认情况下使用 Katana cookie 身份验证中间件。 尽管`UseCookieAuthentication`已过时，不支持对于 ASP.NET Core 应用程序，调用`UseCookieAuthentication`在 ASP.NET 4.x 应用程序使用 Katana cookie 身份验证中间件是有效的。
 
-> [!NOTE]
-> ASP.NET 4.x 应用程序必须面向.NET Framework 4.5.1 或更高版本。 否则，所需的 NuGet 包将无法安装。
+ASP.NET 4.x 应用程序必须面向.NET Framework 4.5.1 或更高版本。 否则，所需的 NuGet 包将无法安装。
 
-若要共享的 ASP.NET 4.x 应用程序和 ASP.NET Core 应用之间的身份验证 cookie，如前所述，将 ASP.NET Core 应用配置，然后通过执行以下步骤配置 ASP.NET 4.x 应用程序。
+若要共享 ASP.NET 4.x 应用程序和 ASP.NET Core 应用程序之间的身份验证 cookie，如前所述，将 ASP.NET Core 应用配置，然后通过执行以下步骤配置 ASP.NET 4.x 应用程序：
 
 1. 安装包[Microsoft.Owin.Security.Interop](https://www.nuget.org/packages/Microsoft.Owin.Security.Interop/)到每个 ASP.NET 4.x 应用程序。
 
 2. 在*Startup.Auth.cs*，找到调用`UseCookieAuthentication`和对其进行修改，如下所示。 更改要匹配使用 ASP.NET Core cookie 身份验证中间件的名称的 cookie 名称。 提供的一个实例`DataProtectionProvider`初始化为常见的数据保护密钥的存储位置。 请确保应用程序名称设置为使用共享 cookie 的所有应用程序的常见应用程序名称`SharedCookieApp`示例应用中。
-
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 
 [!code-csharp[](cookie-sharing/sample/CookieAuthWithIdentity.NETFramework/CookieAuthWithIdentity.NETFramework/App_Start/Startup.Auth.cs?name=snippet1)]
 
@@ -164,32 +160,6 @@ ASP.NET 4.x 应用程序使用 Katana cookie 身份验证中间件该对话框�
 *Models/IdentityModels.cs*:
 
 [!code-csharp[](cookie-sharing/sample/CookieAuthWithIdentity.NETFramework/CookieAuthWithIdentity.NETFramework/Models/IdentityModels.cs?name=snippet1)]
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
-
-设置`CookieManager`互操作`ChunkingCookieManager`以便块区格式不兼容。
-
-```csharp
-app.UseCookieAuthentication(new CookieAuthenticationOptions
-{
-    AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-    CookieName = ".AspNetCore.Cookies",
-    // CookieName = ".AspNetCore.ApplicationCookie", (if using ASP.NET Identity)
-    // CookiePath = "...", (if necessary)
-    // ...
-    TicketDataFormat = new AspNetTicketDataFormat(
-        new DataProtectorShim(
-            DataProtectionProvider.Create(
-                new DirectoryInfo(@"PATH_TO_KEY_RING_FOLDER"))
-            .CreateProtector(
-                "Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationMiddleware",
-                "Cookies", 
-                "v2"))),
-    CookieManager = new ChunkingCookieManager()
-});
-```
-
----
 
 ## <a name="use-a-common-user-database"></a>使用常见的用户数据库
 
