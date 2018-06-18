@@ -17,11 +17,11 @@ ms.lasthandoff: 03/22/2018
 ---
 # <a name="enable-cross-origin-requests-cors-in-aspnet-core"></a>启用 ASP.NET Core 中的跨域请求 (CORS)
 
-作者：[Mike Wasson](https://github.com/mikewasson)， [Shayne Boyer](https://twitter.com/spboyer)，和[Tom Dykstra](https://github.com/tdykstra)
+作者：[Mike Wasson](https://github.com/mikewasson)、[Shayne Boyer](https://twitter.com/spboyer) 和 [Tom Dykstra](https://github.com/tdykstra)
 
-浏览器安全策略阻止Web页到另一个域进行 AJAX 请求。 此限制称为*同源策略*，可防止恶意站点读取另一个站点中的敏感数据。 但是，有时你可能想要允许其他站点对你的 web API 进行的跨域请求。
+浏览器安全策略阻止 Web 页向另一个域发出 AJAX 请求。此限制称为“同源策略”**，可防止恶意站点读取另一个站点中的敏感数据。但是，有时你可能需要允许其他站点对你的 Web API 进行跨域请求。
 
-[跨域资源共享](http://www.w3.org/TR/cors/)(CORS) 是一种 W3C 标准，允许服务器放宽了同源策略。 使用 CORS，服务器可以显式允许某些跨域请求时拒绝其他跨域请求。 CORS 比早期技术如[JSONP](https://wikipedia.org/wiki/JSONP)更安全、 更灵活。 本主题演示如何在 ASP.NET Core 应用程序中启用 CORS。
+[跨域资源共享](http://www.w3.org/TR/cors/)(CORS) 是一种 W3C 标准，允许服务器放宽同源策略。使用 CORS，服务器可以在显式允许某些跨域请求时拒绝其他跨域请求。CORS 比早期技术（例如 [JSONP](https://wikipedia.org/wiki/JSONP)）更安全、更灵活。本主题演示如何在 ASP.NET Core 应用程序中启用 CORS。
 
 ## <a name="what-is-same-origin"></a>什么是"相同源"？
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="setting-up-cors"></a>CORS 设置
 
-将`Microsoft.AspNetCore.Cors`包添加到你的项目来为你的应用程序配置CORS 。
+若要为应用程序设置 CORS，请将 `Microsoft.AspNetCore.Cors` 包添加到项目。
 
 在 Startup.cs 中添加 CORS 服务：
 
@@ -56,7 +56,7 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="enabling-cors-with-middleware"></a>启用 CORS 的中间件
 
-通过使用`UseCors`扩展方法在请求管道添加CORS中间件来在整个应用中启用CORS。请注意 CORS 中间件，必须在任何定义的终结点之前你想要支持跨源请求 （例如应用程序中。 对任何调用之前`UseMvc`)。
+若要为整个应用程序启用 CORS，请使用 `UseCors` 扩展方法向请求管道添加 CORS 中间件。请注意，CORS 中间件在时间上必须先于需要支持跨域请求的应用中的任何定义的终结点（例如，必须在调用 `UseMvc` 之前)。
 
 添加 CORS 中间件使用时，可以指定跨域策略`CorsPolicyBuilder`类。 有两种方法可以实现此目的。 第一种是使用 lambda 调用 UseCors:
 
