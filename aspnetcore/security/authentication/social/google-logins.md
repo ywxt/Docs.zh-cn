@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/google-logins
-ms.openlocfilehash: ccb771dbefefb007aede1bdf05ab50ec363a3089
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 878c0b16e24f48a0ee84f93393af67af1728e284
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34689030"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725960"
 ---
 # <a name="google-external-login-setup-in-aspnet-core"></a>在 ASP.NET Core Google 外部登录安装程序
 
@@ -61,7 +61,10 @@ ms.locfileid: "34689030"
 
 * 因为我们将使用只对一个功能 （登录），我们可以输入相同创建 Google + 项目**名称**与我们的项目使用的 OAuth 2.0 客户端 id。
 
-* 输入你的开发 URI 与 */signin-google*追加到**已授权重定向 Uri**字段 (例如： `https://localhost:44320/signin-google`)。 本教程中稍后配置 Google 身份验证将自动处理请求在 */signin-google*要实现的 OAuth 流路由。
+* 输入你的开发 URI 与`/signin-google`追加到**已授权重定向 Uri**字段 (例如： `https://localhost:44320/signin-google`)。 本教程中稍后配置 Google 身份验证将自动处理请求在`/signin-google`要实现的 OAuth 流路由。
+
+> [!NOTE]
+> URI 段`/signin-google`被设置为 Google 身份验证提供程序的默认回调。 你可以在配置通过继承 Google 身份验证中间件同时更改默认的回调 URI [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath)属性[GoogleOptions](/dotnet/api/microsoft.aspnetcore.authentication.google.googleoptions)类。
 
 * 按 tab 键以添加**已授权重定向 Uri**条目。
 

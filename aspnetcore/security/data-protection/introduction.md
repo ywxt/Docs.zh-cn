@@ -1,5 +1,5 @@
 ---
-title: ASP.NET Core Data Protection
+title: ASP.NET 核心数据保护
 author: rick-anderson
 description: 了解有关数据保护的概念和 ASP.NET 核心数据保护 Api 的设计原则。
 manager: wpickett
@@ -9,17 +9,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/introduction
-ms.openlocfilehash: 5526b517ba9f1ac4b041576156b2964217460726
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 56876f43ed48b577f4d870825fd9230f526baec3
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725947"
 ---
-# <a name="aspnet-core-data-protection"></a>ASP.NET Core Data Protection
+# <a name="aspnet-core-data-protection"></a>ASP.NET 核心数据保护
 
 Web 应用程序通常需要存储安全敏感数据。 Windows 提供 DPAPI 用于桌面应用程序，但这不适用于 web 应用程序。 ASP.NET 核心数据保护堆栈提供一个简单、 易于使用的加密 API，开发人员可以使用来保护数据，包括密钥管理和旋转。
 
-ASP.NET 核心数据保护堆栈旨在用作的长期替代<machineKey>在 ASP.NET 中的元素 1.x-4.x。 它旨在解决许多旧加密堆栈的不足之处同时为大多数现代应用程序都可能会遇到的使用情况下提供的现成可用的解决方案。
+ASP.NET 核心数据保护堆栈旨在用作的长期替代&lt;machineKey&gt;在 ASP.NET 中的元素 1.x-4.x。 它旨在解决许多旧加密堆栈的不足之处同时为大多数现代应用程序都可能会遇到的使用情况下提供的现成可用的解决方案。
 
 ## <a name="problem-statement"></a>问题陈述
 
@@ -75,6 +76,6 @@ ASP.NET 核心数据保护 Api 主要不用于机密负载的无限期持久性�
 
 * Microsoft.AspNetCore.DataProtection.Extensions 包含其他 Api 的开发人员可能会发现很有用，但这不属于核心包中。 例如，此程序包包含一个简单的"实例化指向没有依赖关系注入安装程序的特定密钥的存储目录系统"API （详细信息）。 它还包含用于限制受保护负载 （详细信息） 的生存期的扩展方法。
 
-* Microsoft.AspNetCore.DataProtection.SystemWeb 可安装到现有 ASP.NET 4.x 应用程序将重定向其<machineKey>操作改为使用新的数据保护堆栈。 请参阅[兼容性](xref:security/data-protection/compatibility/replacing-machinekey#compatibility-replacing-machinekey)有关详细信息。
+* Microsoft.AspNetCore.DataProtection.SystemWeb 可安装到现有 ASP.NET 4.x 应用程序将重定向其&lt;machineKey&gt;操作改为使用新的数据保护堆栈。 请参阅[兼容性](xref:security/data-protection/compatibility/replacing-machinekey#compatibility-replacing-machinekey)有关详细信息。
 
 * Microsoft.AspNetCore.Cryptography.KeyDerivation 提供的哈希例程 PBKDF2 密码的实现，并且可以由系统需要安全地处理用户密码。 请参阅[哈希处理密码](xref:security/data-protection/consumer-apis/password-hashing)有关详细信息。

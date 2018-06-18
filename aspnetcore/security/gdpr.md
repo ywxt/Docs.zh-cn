@@ -11,12 +11,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/gdpr
-ms.openlocfilehash: c3c8a3fcd4a303aea65c57ff6be2ff0434383f33
-ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
+ms.openlocfilehash: eb9173bfe554b8b00ef8deb255e8347a534e7ba3
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2018
-ms.locfileid: "35341920"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725791"
 ---
 # <a name="eu-general-data-protection-regulation-gdpr-support-in-aspnet-core"></a>在 ASP.NET Core 欧洲常规数据保护法规 (GDPR) 支持
 
@@ -121,4 +121,4 @@ ASP.NET 核心应用程序使用单个用户帐户创建包含代码，从而下
 
 ## <a name="additional-resources"></a>其他资源
 
-* [Microsoft.com/GDPR](https://www.microsoft.com/trustcenter/Privacy/GDPR)
+* [Microsoft.com/GDPR](https://www.microsoft.com/en-us/trustcenter/Privacy/GDPR)

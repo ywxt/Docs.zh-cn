@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/twitter-logins
-ms.openlocfilehash: 3f59f7d1bf0280cef8f7757e8cd57d4872769b3d
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 440695f98714f33cff9e4bf97bfc09477901e14c
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34688991"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725986"
 ---
 # <a name="twitter-external-login-setup-with-aspnet-core"></a>Twitter 外部登录名与 ASP.NET 核心的安装程序
 
@@ -32,7 +32,10 @@ ms.locfileid: "34688991"
 
 ![创建的应用程序页](index/_static/TwitterCreate.png)
 
-* 输入你的开发 URI 与 */signin-twitter*追加到**有效的 OAuth 重定向 Uri**字段 (例如： `https://localhost:44320/signin-twitter`)。 本教程中稍后配置的 Twitter 身份验证方案将自动处理请求在 */signin-twitter*要实现的 OAuth 流路由。
+* 输入你的开发 URI 与`/signin-twitter`追加到**有效的 OAuth 重定向 Uri**字段 (例如： `https://localhost:44320/signin-twitter`)。 本教程中稍后配置的 Twitter 身份验证方案将自动处理请求在`/signin-twitter`要实现的 OAuth 流路由。
+
+> [!NOTE]
+> URI 段`/signin-twitter`被设置为 Twitter 身份验证提供程序的默认回调。 你可以在配置通过继承 Twitter 身份验证中间件同时更改默认的回调 URI [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath)属性[TwitterOptions](/dotnet/api/microsoft.aspnetcore.authentication.twitter.twitteroptions)类。
 
 * 填写表单的其余部分并点击**创建 Twitter 应用程序**。 显示新的应用程序详细信息：
 

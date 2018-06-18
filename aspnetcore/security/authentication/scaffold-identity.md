@@ -10,18 +10,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/scaffold-identity
-ms.openlocfilehash: e7a2cf3633ed48a0d2030739cdc092441fcae2ff
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 80cd39af61e856d3ce92db1c26e70788bcdca83d
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252030"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725814"
 ---
 # <a name="scaffold-identity-in-aspnet-core-projects"></a>ASP.NET 核心项目中的基架标识
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-ASP.NET 核心 2.1 及更高版本提供了[ASP.NET 核心标识](xref:security/authentication/identity)作为[Razor 类库](xref:mvc/razor-pages/ui-class)。 包含标识的应用程序可以应用基架以有选择地添加包含在标识 Razor 类库 (RCL) 的源代码。 你可能想要生成源代码，因此你可以修改的代码和更改的行为。 例如，你可以指示 scaffolder 生成在注册中使用的代码。 生成的代码将优先于标识 RCL 中的相同代码。
+ASP.NET 核心 2.1 及更高版本提供了[ASP.NET 核心标识](xref:security/authentication/identity)作为[Razor 类库](xref:mvc/razor-pages/ui-class)。 包含标识的应用程序可以应用基架以有选择地添加包含在标识 Razor 类库 (RCL) 的源代码。 你可能想要生成源代码，因此你可以修改的代码和更改的行为。 例如，你可以指示 scaffolder 生成在注册中使用的代码。 生成的代码将优先于标识 RCL 中的相同代码。 若要获取的用户界面的完全控制权，并使用默认 RCL，请参阅明[创建完整的标识 UI 源](#full)。
 
 应用程序执行**不**包括身份验证可以应用基架添加 RCL 标识包。 必须选择标识代码生成的选项。
 
@@ -144,3 +144,24 @@ dotnet aspnet-codegenerator identity -dc MvcAuth.Data.ApplicationDbContext --fil
 [!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg-auth.md)]
 
 删除*页/共享*文件夹和该文件夹中的文件。
+
+<a name="full"></a>
+
+## <a name="create-full-identity-ui-source"></a>创建完整的标识 UI 源
+
+若要维护的标识 UI 的完全控制，运行标识基架，并选择**重写所有文件**。
+
+以下突出显示的代码显示默认标识 UI 替换标识在 ASP.NET 核心 2.1 web 应用的更改。 你可能想要执行此操作可具有完全控制权限的标识 UI。
+
+[!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet1&highlight=13-14,17-999)]
+
+下面的代码替换默认标识： [!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet2)]
+
+下面的代码将配置 ASP.NET Core 授权需要授权的标识页： [!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet3)]
+
+以下代码将设置要使用正确的标识页路径的标识 cookie。
+[!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet3)]
+
+注册`IEmailSender`实现，例如：
+
+[!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet4)]

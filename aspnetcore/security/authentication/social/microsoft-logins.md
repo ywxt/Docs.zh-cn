@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: a9bf7b49b1cfdfff65c639eed1e14c94c5432350
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 46973f8a82034bd99a6e6634bbd6da06b1b14f25
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34689017"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35726025"
 ---
 # <a name="microsoft-account-external-login-setup-with-aspnet-core"></a>使用 ASP.NET Core 的 Microsoft 帐户外部登录设置
 
@@ -46,9 +46,12 @@ ms.locfileid: "34689017"
 
 ![添加平台对话框](index/_static/MicrosoftDevAppPlatform.png)
 
-* 在新**Web**平台部分中，输入与你开发的 URL */signin-microsoft*追加到**重定向 Url**字段 (例如： `https://localhost:44320/signin-microsoft`)。 本教程中稍后配置的 Microsoft 身份验证方案将自动处理请求在 */signin-microsoft*要实现的 OAuth 流路由：
+* 在新**Web**平台部分中，输入与你开发的 URL`/signin-microsoft`追加到**重定向 Url**字段 (例如： `https://localhost:44320/signin-microsoft`)。 本教程中稍后配置的 Microsoft 身份验证方案将自动处理请求在`/signin-microsoft`要实现的 OAuth 流路由：
 
 ![Web 平台部分](index/_static/MicrosoftRedirectUri.png)
+
+> [!NOTE]
+> URI 段`/signin-microsoft`被设置为 Microsoft 身份验证提供程序的默认回调。 配置 Microsoft 身份验证中间件通过继承时，可以更改默认的回调 URI [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath)属性[MicrosoftAccountOptions](/dotnet/api/microsoft.aspnetcore.authentication.microsoftaccount.microsoftaccountoptions)类。
 
 * 点击**添加 URL**以确保该 URL 已添加。
 
