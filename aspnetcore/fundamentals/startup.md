@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: a61f78b2d0e5c6c171a26690fcce256462a82508
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 58ced0ae11f462bc309526b7db7bda7897c33009
+ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "34233165"
 ---
 # <a name="application-startup-in-aspnet-core"></a>ASP.NET Core 中的应用程序启动
 
@@ -46,7 +47,7 @@ ASP.NET Core 应用使用 `Startup` 类，按照约定命名为 `Startup`。 `St
 
 注入 `IHostingEnvironment` 的替代方法是使用基于约定的方法。 该应用可以为不同的环境（例如 `StartupDevelopment`）定义单独的 `Startup` 类，并在运行时选择适当的 startup 类。 优先考虑名称后缀与当前环境相匹配的类。 如果应用在开发环境中运行并包含 `Startup` 类和 `StartupDevelopment` 类，则使用 `StartupDevelopment` 类。 有关详细信息，请参阅[使用多个环境](xref:fundamentals/environments#startup-conventions)。
 
-若要详细了解 `WebHostBuilder`，请参阅[承载](xref:fundamentals/hosting)主题。 有关在启动过程中处理错误的信息，请参阅[启动异常处理](xref:fundamentals/error-handling#startup-exception-handling)。
+若要详细了解 `WebHostBuilder`，请参阅[承载](xref:fundamentals/host/index)主题。 有关在启动过程中处理错误的信息，请参阅[启动异常处理](xref:fundamentals/error-handling#startup-exception-handling)。
 
 ## <a name="the-configureservices-method"></a>ConfigureServices 方法
 
@@ -58,7 +59,7 @@ ASP.NET Core 应用使用 `Startup` 类，按照约定命名为 `Startup`。 `St
 
 将服务添加到服务容器，使其在应用和 `Configure` 方法中可用。 这些服务通过[依赖关系注入](xref:fundamentals/dependency-injection)或 [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices) 解析。
 
-Web 主机可能会在调用 `Startup` 方法之前配置某些服务。 有关详细信息，请参阅[承载](xref:fundamentals/hosting)主题。
+Web 主机可能会在调用 `Startup` 方法之前配置某些服务。 有关详细信息，请参阅[在 ASP.NET Core 中托管](xref:fundamentals/host/index)主题。
 
 对于需要大量设置的功能，[IServiceCollection](/dotnet/api/Microsoft.Extensions.DependencyInjection.IServiceCollection) 上有 `Add[Service]` 扩展方法。 典型 Web 应用将为实体框架、标识和 MVC 注册服务：
 
@@ -164,7 +165,7 @@ Web 主机提供 `Startup` 类构造函数可用的某些服务。 应用通过 
 
 ## <a name="additional-resources"></a>其他资源
 
-* [承载](xref:fundamentals/hosting)
+* [承载](xref:fundamentals/host/index)
 * [使用多个环境](xref:fundamentals/environments)
 * [中间件](xref:fundamentals/middleware/index)
 * [日志记录](xref:fundamentals/logging/index)

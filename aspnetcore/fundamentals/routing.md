@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: d9d5a26b08f67fe4ee39d6b974027826a93e5d5f
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: a23e2e1a1dd25a57e5d6189bbd5938c48078515b
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341777"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core 中的路由
 
@@ -262,7 +263,6 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 尝试捕获具有可选文件扩展名的文件名的 URL 模式还有其他注意事项。 例如，使用模板 `files/{filename}.{ext?}`，如果 `filename` 和 `ext` 同时存在，将同时填充这两个值。 如果 URL 中仅存在 `filename`，则路由匹配，因为尾随句点 `.` 是可选的。 以下 URL 与此路由相匹配：
 
 * `/files/myFile.txt`
-* `/files/myFile.`
 * `/files/myFile`
 
 你可以使用 `*` 字符作为路由参数的前缀，以绑定到 URI 的其余部分，这称之为调用全方位参数。 例如，`blog/{*slug}` 将匹配以 `/blog` 开头且其后带有任何值（将分配给 `slug` 路由值）的 URI。 全方位参数还可以匹配空字符串。
