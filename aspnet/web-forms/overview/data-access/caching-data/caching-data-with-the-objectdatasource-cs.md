@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879187"
 ---
 <a name="caching-data-with-the-objectdatasource-c"></a>缓存数据与 ObjectDataSource (C#)
 ====================

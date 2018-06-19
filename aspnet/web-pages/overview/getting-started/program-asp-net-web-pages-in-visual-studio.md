@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896572"
 ---
 <a name="programming-aspnet-web-pages-razor-using-visual-studio"></a>使用 Visual Studio 编程 ASP.NET Web 页 (Razor)
 ====================
@@ -81,7 +82,7 @@ Visual Studio 2010 不包括支持默认情况下为 ASP.NET 网页。 若要使
 
     ![创建新网站](program-asp-net-web-pages-in-visual-studio/_static/image2.png)
 3. 在**新网站**对话框框中，选择要使用 （Visual C# 或 Visual Basic） 的语言。
-4. 选择**ASP.NET 网站 (Razor)**模板。
+4. 选择**ASP.NET 网站 (Razor)** 模板。
 
     ![razor 站点](program-asp-net-web-pages-in-visual-studio/_static/image3.png)
 5. 单击 **“确定”**。

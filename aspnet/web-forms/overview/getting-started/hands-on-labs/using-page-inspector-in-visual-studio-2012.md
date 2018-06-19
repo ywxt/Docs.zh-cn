@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891238"
 ---
 <a name="using-page-inspector-in-visual-studio-2012"></a>使用 Page Inspector 在 Visual Studio 2012
 ====================
@@ -94,7 +95,7 @@ ms.lasthandoff: 04/10/2018
 
 在此任务中，您将学习如何在显示照片库的 ASP.NET MVC 4 项目的上下文中使用 Page Inspector。
 
-1. 打开**开始**解决方案位于**源/Ex1-MVC4/开始/**文件夹。
+1. 打开**开始**解决方案位于**源/Ex1-MVC4/开始/** 文件夹。
 
    1. 你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
@@ -102,12 +103,12 @@ ms.lasthandoff: 04/10/2018
 
       > [!NOTE]
       > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
-2. 在解决方案资源管理器，找到**Index.cshtml**下查看**/视图/主页**项目文件夹，右键单击它，然后选择**在 Page Inspector 中的查看**。
+2. 在解决方案资源管理器，找到**Index.cshtml**下查看 **/视图/主页**项目文件夹，右键单击它，然后选择**在 Page Inspector 中的查看**。
 
     ![选择要在 Page Inspector 中预览的文件](using-page-inspector-in-visual-studio-2012/_static/image1.png "选择要在 Page Inspector 中预览的文件")
 
     *选择要在 Page Inspector 中预览的文件*
-3. Page Inspector 窗口将显示*/Home/索引*映射到所选的视图的源的 URL。
+3. Page Inspector 窗口将显示 */Home/索引*映射到所选的视图的源的 URL。
 
     ![ThefirstcontactwithPageInspector](using-page-inspector-in-visual-studio-2012/_static/image2.png)
 
@@ -167,7 +168,7 @@ ms.lasthandoff: 04/10/2018
     ![选择元素](using-page-inspector-in-visual-studio-2012/_static/image10.png "选择元素")
 
     *选择元素*
-12. 在样式窗格中，找到**背景图像**项下面**.main 内容**组。 **取消选中****背景图像**，看看效果。 你将注意到浏览器将立即反映所做的更改和隐藏圆。
+12. 在样式窗格中，找到**背景图像**项下面 **.main 内容**组。 **取消选中****背景图像**，看看效果。 你将注意到浏览器将立即反映所做的更改和隐藏圆。
 
     > [!NOTE]
     > 在页面检查器样式选项卡应用的更改不影响原始样式表。 你可以取消选中样式或更改它们所想，但它们将刷新页面后还原次数的值。
@@ -176,7 +177,7 @@ ms.lasthandoff: 04/10/2018
 
     *启用和禁用 CSS 样式*
 13. 现在，单击**此处你的徽标**上使用检查模式下的标头的文本。
-14. 在**样式**选项卡上，找到**字体大小**CSS 属性下**.site 标题**组。 双击属性值，然后将 2.3 em 值替换**3 em**，然后按**ENTER**。 请注意标题看起来更大。
+14. 在**样式**选项卡上，找到**字体大小**CSS 属性下 **.site 标题**组。 双击属性值，然后将 2.3 em 值替换**3 em**，然后按**ENTER**。 请注意标题看起来更大。
 
     ![更改在 Page Inspector 的 CSS 值](using-page-inspector-in-visual-studio-2012/_static/image12.png "Page Inspector 中的更改的 CSS 值")
 
@@ -221,7 +222,7 @@ ms.lasthandoff: 04/10/2018
 2. 选择切换检查模式下，单击要关闭，但不是在注册链接以打开其代码。
 
     请注意，链接的源代码位于 **\_LoginPartial.cshtml**文件，不 Index.cshtml 也不\_Layout.cshtml，可能会在第一个位置中查找位置。 你具有已直接放在正确的源文件。
-3. 在**样式**选项卡上，找到并单击**<section> #login</section>**项，它是一个 HTML 容器，这些链接。
+3. 在**样式**选项卡上，找到并单击**<section> #login</section>** 项，它是一个 HTML 容器，这些链接。
 
     请注意， **#login**样式自动位于**Site.css**单击后。 此外，代码现在已突出显示。
 
@@ -242,12 +243,12 @@ ms.lasthandoff: 04/10/2018
     ![更新后的网页](using-page-inspector-in-visual-studio-2012/_static/image18.png)
 
     *更新后的网页*
-6. 使用检查模式下，选择任一**&lt;li&gt;**包含的项&quot;注册&quot;和&quot;登录&quot;链接。 然后，单击**&lt;部分&gt;#login**项以访问**Styles.css**代码。
+6. 使用检查模式下，选择任一**&lt;li&gt;** 包含的项&quot;注册&quot;和&quot;登录&quot;链接。 然后，单击**&lt;部分&gt;#login**项以访问**Styles.css**代码。
 
     ![查找样式](using-page-inspector-in-visual-studio-2012/_static/image19.png "查找样式")
 
     *查找样式*
-7. 在**Style.css**，取消注释的代码**#login li**项。 要添加的样式将隐藏项目符号和水平显示的项目。
+7. 在**Style.css**，取消注释的代码 **#login li**项。 要添加的样式将隐藏项目符号和水平显示的项目。
 
     ![右列的登录链接](using-page-inspector-in-visual-studio-2012/_static/image20.png "右列的登录链接")
 
@@ -285,7 +286,7 @@ ms.lasthandoff: 04/10/2018
 
 在此任务中，您将学习如何在显示照片库 WebForms 项目的上下文中使用 Page Inspector 功能。
 
-1. 打开**开始**解决方案位于**源/Ex2-WebForms/开始/**文件夹。
+1. 打开**开始**解决方案位于**源/Ex2-WebForms/开始/** 文件夹。
 
    1. 你将需要下载一些缺少的 NuGet 程序包才能继续。 若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。
    2. 在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。
@@ -358,7 +359,7 @@ ms.lasthandoff: 04/10/2018
     ![选择元素](using-page-inspector-in-visual-studio-2012/_static/image33.png "选择元素")
 
     *选择元素*
-12. 在样式窗格中，找到**背景图像**项下面**.main 内容**组。 **取消选中****背景图像**，看看效果。 你将注意到浏览器将立即反映所做的更改和隐藏圆。
+12. 在样式窗格中，找到**背景图像**项下面 **.main 内容**组。 **取消选中****背景图像**，看看效果。 你将注意到浏览器将立即反映所做的更改和隐藏圆。
 
     > [!NOTE]
     > 在页面检查器样式选项卡应用的更改不影响原始样式表。 你可以取消选中样式或更改它们所想，但它们将刷新页面后还原次数的值。
@@ -367,7 +368,7 @@ ms.lasthandoff: 04/10/2018
 
     *启用和禁用 CSS 样式*
 13. 现在，单击**你****此处显示的徽标**上使用检查模式下的标头的文本。
-14. 在**样式**选项卡上，找到**字体大小**CSS 属性下**.site 标题**组。 双击该属性一次以编辑它的值。 替换 2.3em 值与**3em**，然后按 ENTER。 请注意标题看起来更大。
+14. 在**样式**选项卡上，找到**字体大小**CSS 属性下 **.site 标题**组。 双击该属性一次以编辑它的值。 替换 2.3em 值与**3em**，然后按 ENTER。 请注意标题看起来更大。
 
     ![更改页 Inspector2 中的 CSS 值](using-page-inspector-in-visual-studio-2012/_static/image35.png "Page Inspector 中的更改的 CSS 值")
 
@@ -433,12 +434,12 @@ ms.lasthandoff: 04/10/2018
     ![更新后的网页](using-page-inspector-in-visual-studio-2012/_static/image41.png)
 
     *更新后的网页*
-6. 使用检查模式下，选择任一**&lt;li&gt;**包含的项&quot;注册&quot;和&quot;登录&quot;链接。 然后，单击**&lt;部分&gt;#login**项以访问**Styles.css**代码。
+6. 使用检查模式下，选择任一**&lt;li&gt;** 包含的项&quot;注册&quot;和&quot;登录&quot;链接。 然后，单击**&lt;部分&gt;#login**项以访问**Styles.css**代码。
 
     ![查找样式](using-page-inspector-in-visual-studio-2012/_static/image42.png "查找样式")
 
     *查找样式*
-7. 在**Style.css**，取消注释的代码**#login li**项。 要添加的样式将隐藏项目符号和水平显示的项目。
+7. 在**Style.css**，取消注释的代码 **#login li**项。 要添加的样式将隐藏项目符号和水平显示的项目。
 
     ![右列的登录链接](using-page-inspector-in-visual-studio-2012/_static/image43.png "右列的登录链接")
 

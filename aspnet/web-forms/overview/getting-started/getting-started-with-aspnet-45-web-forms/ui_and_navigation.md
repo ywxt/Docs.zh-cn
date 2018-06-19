@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890237"
 ---
 <a name="ui-and-navigation"></a>UI 和导航
 ====================
@@ -38,7 +39,7 @@ ms.lasthandoff: 04/06/2018
 
 ASP.NET Web 窗体，可以创建 Web 应用程序的动态内容。 每个 ASP.NET Web 页创建的方式类似到静态 HTML 网页上 （不包括基于服务器的处理页），但 ASP.NET Web 页包括额外的元素，ASP.NET 识别并处理页将运行时生成 HTML。
 
-与静态 HTML 页面 (*.htm*或*.html*文件)，服务器担当`Web`通过读取文件并将其作为发送的请求-在浏览器。 有人与此相反，当请求 ASP.NET 网页 (*.aspx*文件)，该页在 Web 服务器上运行的程序。 在运行页面时，它可以执行您的网站需要，包括计算值、 读取或写入数据库信息，或调用其他程序的任何任务。 作为其输出，该页面动态生成标记 （例如 HTML 中的元素），并将此动态输出发送到浏览器。
+与静态 HTML 页面 (*.htm*或 *.html*文件)，服务器担当`Web`通过读取文件并将其作为发送的请求-在浏览器。 有人与此相反，当请求 ASP.NET 网页 (*.aspx*文件)，该页在 Web 服务器上运行的程序。 在运行页面时，它可以执行您的网站需要，包括计算值、 读取或写入数据库信息，或调用其他程序的任何任务。 作为其输出，该页面动态生成标记 （例如 HTML 中的元素），并将此动态输出发送到浏览器。
 
 ## <a name="modifying-the-ui"></a>修改 UI
 
@@ -92,7 +93,7 @@ ASP.NET Web 窗体通常包含允许你指定的页的页属性和配置信息�
 
 大多数 ASP.NET Web 窗体应用程序包括在页处理时，在服务器运行的代码。 如上所述，服务器代码可以用于执行各种操作，例如将数据添加到 ListView 控件。 ASP.NET 支持的许多语言包括 C#、 Visual Basic、 J# 中，和其他人在服务器上运行。
 
-ASP.NET 支持用于编写用于网页的服务器代码的两个模型。 在单文件模型中，页的代码是在脚本元素，其中包括开始标记中`runat="server"`属性。 或者，你可以在单独的类文件中，称为代码隐藏模型创建页的代码。 在这种情况下，ASP.NET Web 窗体页通常不包含服务器代码。 相反，`@Page`指令包含的信息的链接*.aspx*与其关联的代码隐藏文件的页。
+ASP.NET 支持用于编写用于网页的服务器代码的两个模型。 在单文件模型中，页的代码是在脚本元素，其中包括开始标记中`runat="server"`属性。 或者，你可以在单独的类文件中，称为代码隐藏模型创建页的代码。 在这种情况下，ASP.NET Web 窗体页通常不包含服务器代码。 相反，`@Page`指令包含的信息的链接 *.aspx*与其关联的代码隐藏文件的页。
 
 `CodeBehind`属性中包含`@Page`指令指定单独的类文件的名称和`Inherits`特性指定对应于页的代码隐藏文件中的类的名称。
 
@@ -112,7 +113,7 @@ ASP.NET 支持用于编写用于网页的服务器代码的两个模型。 在�
 
 ### <a name="master-pages"></a>母版页
 
-母版页为具有扩展.master 的 ASP.NET 文件 (例如， *Site.Master*) 有一个可以包含静态文本、 HTML 元素和服务器控件的预定义布局。 母版页由特殊`@Master`替换的指令`@Page`适用于普通的指令*.aspx*页。
+母版页为具有扩展.master 的 ASP.NET 文件 (例如， *Site.Master*) 有一个可以包含静态文本、 HTML 元素和服务器控件的预定义布局。 母版页由特殊`@Master`替换的指令`@Page`适用于普通的指令 *.aspx*页。
 
 除了`@Master`指令，主控页还包含的所有页，顶层的 HTML 元素例如`html`， `head`，和`form`。 例如，在前面添加主页面上的情况下，你使用 HTML`table`对于布局，`img`公司徽标、 静态文本和服务器控件以处理你的站点的公共成员身份的元素。 作为你母版页的一部分，可以使用任何 HTML 和 ASP.NET 的任何元素。
 
@@ -151,7 +152,7 @@ ASP.NET 支持用于编写用于网页的服务器代码的两个模型。 在�
 2. 选择**Visual C#**  - &gt; **Web**左侧的模板组。 然后，选择**包含母版页的 Web 窗体**从中间列表并将其命名*ProductList.aspx*。 
 
     ![UI 和导航的添加新项对话框](ui_and_navigation/_static/image3.png)
-3. 选择**Site.Master**要附加到新创建的主控页*.aspx*页。 
+3. 选择**Site.Master**要附加到新创建的主控页 *.aspx*页。 
 
     ![UI 和导航-选择母版页](ui_and_navigation/_static/image4.png)
 4. 添加名为另一个页面*ProductDetails.aspx*按照相同的步骤。

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892174"
 ---
 <a name="creating-user-accounts-c"></a>创建用户帐户 (C#)
 ====================
@@ -31,7 +32,7 @@ ms.lasthandoff: 04/06/2018
 
 在<a id="_msoanchor_1"> </a>[前面教程](creating-the-membership-schema-in-sql-server-cs.md)我们在数据库中，也不能添加表、 视图、 存储过程所需的安装应用程序服务架构`SqlMembershipProvider`和`SqlRoleProvider`。 这将创建我们将需要这一系列中的教程的其余部分的基础结构。 在本教程中我们将探讨使用成员资格框架 (通过`SqlMembershipProvider`) 来创建新用户帐户。 我们将了解如何以编程方式和通过 ASP 创建新用户。NET 的内置通过。
 
-除了学习如何创建新的用户帐户，我们将还需要更新我们首先创建中的演示网站 *<a id="_msoanchor_2"> </a>[概述窗体身份验证的](../introduction/an-overview-of-forms-authentication-cs.md)*教程，然后中增强 *<a id="https://www.asp.net/learn/security/tutorial-03-cs.aspx"> </a>窗体身份验证配置和高级主题*教程。 我们演示 web 应用程序登录页，用于验证针对硬编码的用户名/密码对用户的凭据。 此外，`Global.asax`包括创建自定义代码`IPrincipal`和`IIdentity`为经过身份验证的用户的对象。 我们将更新登录页后，可以验证用户的凭据针对成员资格框架和删除的自定义的主体和标识逻辑。
+除了学习如何创建新的用户帐户，我们将还需要更新我们首先创建中的演示网站 *<a id="_msoanchor_2"> </a>[概述窗体身份验证的](../introduction/an-overview-of-forms-authentication-cs.md)* 教程，然后中增强 *<a id="https://www.asp.net/learn/security/tutorial-03-cs.aspx"> </a>窗体身份验证配置和高级主题*教程。 我们演示 web 应用程序登录页，用于验证针对硬编码的用户名/密码对用户的凭据。 此外，`Global.asax`包括创建自定义代码`IPrincipal`和`IIdentity`为经过身份验证的用户的对象。 我们将更新登录页后，可以验证用户的凭据针对成员资格框架和删除的自定义的主体和标识逻辑。
 
 让我们进入正题！
 
@@ -40,7 +41,7 @@ ms.lasthandoff: 04/06/2018
 我们开始使用成员资格 framework 之前，让我们花些时间回顾我们采取了来达到此点的重要步骤。 使用的成员资格 framework 时`SqlMembershipProvider`需要在基于窗体的身份验证方案中，在 web 应用程序中实现成员资格功能之前执行以下步骤：
 
 1. **启用基于窗体的身份验证。** 如我们所述 *<a id="_msoanchor_4"> </a>[概述窗体身份验证的](../introduction/an-overview-of-forms-authentication-cs.md)*，窗体身份验证通过编辑`Web.config`和设置`<authentication>`元素的`mode`属性设为`Forms`。 通过启用 forms 身份验证，每个传入请求检查，以确定*窗体身份验证票证*，它，如果存在，标识请求者。
-2. **将应用程序服务架构添加到相应的数据库。** 使用时`SqlMembershipProvider`我们需要先安装到数据库的应用程序服务架构。 通常将此架构添加到同一个数据库包含应用程序的数据模型。  *<a id="_msoanchor_5"> </a>[在 SQL Server 中创建成员身份架构](creating-the-membership-schema-in-sql-server-cs.md)*教程了解了使用`aspnet_regsql.exe`工具来实现此目的。
+2. **将应用程序服务架构添加到相应的数据库。** 使用时`SqlMembershipProvider`我们需要先安装到数据库的应用程序服务架构。 通常将此架构添加到同一个数据库包含应用程序的数据模型。  *<a id="_msoanchor_5"> </a>[在 SQL Server 中创建成员身份架构](creating-the-membership-schema-in-sql-server-cs.md)* 教程了解了使用`aspnet_regsql.exe`工具来实现此目的。
 3. **自定义 Web 应用程序的设置以从步骤 2 中引用该数据库。** *在 SQL Server 中创建成员身份架构*教程介绍了两种方法可以配置 web 应用程序，以便`SqlMembershipProvider`将使用在步骤 2 中所选的数据库： 通过修改`LocalSqlServer`连接字符串名称;或通过将新的已注册提供程序添加到成员资格 framework 提供程序的列表和自定义该新的提供程序，用于将数据库从步骤 2。
 
 当生成 web 应用程序，该使用`SqlMembershipProvider`和基于窗体的身份验证，你将需要使用之前执行以下三个步骤`Membership`类或 ASP.NET 登录 Web 控件。 由于我们已在前面的教程中执行这些步骤，我们已准备好开始使用成员资格 framework ！
@@ -69,7 +70,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-aspx[Main](creating-user-accounts-cs/samples/sample1.aspx)]
 
-回想一下， `LoginContent` ContentPlaceHolder 的默认标记显示在登录或注销的站点，具体取决于是否对用户进行身份验证的链接。 是否存在`Content2`内容控件中，但是，将覆盖主页面的默认标记。 如我们所述 *<a id="_msoanchor_6"> </a>[概述窗体身份验证的](../introduction/an-overview-of-forms-authentication-cs.md)*教程中，这可在页中，我们不希望左侧列中显示与登录相关的选项。
+回想一下， `LoginContent` ContentPlaceHolder 的默认标记显示在登录或注销的站点，具体取决于是否对用户进行身份验证的链接。 是否存在`Content2`内容控件中，但是，将覆盖主页面的默认标记。 如我们所述 *<a id="_msoanchor_6"> </a>[概述窗体身份验证的](../introduction/an-overview-of-forms-authentication-cs.md)* 教程中，这可在页中，我们不希望左侧列中显示与登录相关的选项。
 
 有关这些的 5 个页面，但是，我们希望能够显示主控页的默认标记`LoginContent`ContentPlaceHolder。 因此，删除的声明性标记`Content2`内容控件。 这么做，每个五个页面的标记应包含几个内容控件。
 
@@ -107,7 +108,7 @@ XML 映射文件定义为层次结构的网站的结构。 此层次结构关系
 
 ASP.NET 包括大量导航相关器设计用户界面的 Web 控件。 其中包括菜单、 树视图和 SiteMapPath 控件。 菜单和 TreeView 控件呈现菜单或树中，在站点地图结构分别而 SiteMapPath 显示显示当前正在访问以及其祖先节点痕迹导航。 站点地图数据可以绑定到 Web 控件使用 SiteMapDataSource 其他数据，可以通过以编程方式访问`SiteMap`类。
 
-由于站点图 framework 和导航控件的全面讨论超出了本系列教程的范围，而不是花时间来让我们创建我们自己导航用户界面改为借用在中使用我 *[在 ASP.NET 2.0 中使用数据](../../data-access/index.md)*教程系列，使用转发器控件来显示导航链接的两个深层项目符号列表中图 4 所示。
+由于站点图 framework 和导航控件的全面讨论超出了本系列教程的范围，而不是花时间来让我们创建我们自己导航用户界面改为借用在中使用我 *[在 ASP.NET 2.0 中使用数据](../../data-access/index.md)* 教程系列，使用转发器控件来显示导航链接的两个深层项目符号列表中图 4 所示。
 
 ### <a name="adding-a-two-level-list-of-links-in-the-left-column"></a>在左侧列中添加两个级别的链接列表
 
@@ -143,7 +144,7 @@ ASP.NET 包括大量导航相关器设计用户界面的 Web 控件。 其中包
 
 ## <a name="step-4-removing-the-custom-principal-and-identity-logic"></a>步骤 4： 删除的自定义主体和标识逻辑
 
-在 *<a id="_msoanchor_7"> </a>[窗体身份验证配置和高级主题](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md)*我们已了解如何将向经过身份验证的用户的自定义主体和标识对象关联的教程。 我们实现了这一点通过创建事件处理程序中的`Global.asax`为应用程序的`PostAuthenticateRequest`后触发的事件`FormsAuthenticationModule`已经身份验证的用户。 在此事件处理程序中，我们替换`GenericPrincipal`和`FormsIdentity`通过添加对象`FormsAuthenticationModule`与`CustomPrincipal`和`CustomIdentity`对象我们在该教程中创建。
+在 *<a id="_msoanchor_7"> </a>[窗体身份验证配置和高级主题](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md)* 我们已了解如何将向经过身份验证的用户的自定义主体和标识对象关联的教程。 我们实现了这一点通过创建事件处理程序中的`Global.asax`为应用程序的`PostAuthenticateRequest`后触发的事件`FormsAuthenticationModule`已经身份验证的用户。 在此事件处理程序中，我们替换`GenericPrincipal`和`FormsIdentity`通过添加对象`FormsAuthenticationModule`与`CustomPrincipal`和`CustomIdentity`对象我们在该教程中创建。
 
 而自定义的主体和标识对象是在某些情况下，在大多数情况下有用`GenericPrincipal`和`FormsIdentity`对象已经足够。 因此，我认为很值得以返回到默认行为。 通过删除或注释掉进行此更改`PostAuthenticateRequest`事件处理程序或通过删除`Global.asax`完全文件。
 
@@ -160,7 +161,7 @@ ASP.NET 包括大量导航相关器设计用户界面的 Web 控件。 其中包
 
 在收集信息的量上不同这些四个重载。 第一个重载，例如，需要只是用户名和密码对于新的用户帐户，而第二个还要求用户的电子邮件地址。
 
-这些重载存在，因为创建新的用户帐户所需的信息取决于成员资格提供程序的配置设置。 在 *<a id="_msoanchor_8"> </a>[在 SQL Server 中创建成员身份架构](creating-the-membership-schema-in-sql-server-cs.md)*教程，我们探讨了中的指定成员资格提供程序配置设置`Web.config`。 表 2 包含的配置设置的完整列表。
+这些重载存在，因为创建新的用户帐户所需的信息取决于成员资格提供程序的配置设置。 在 *<a id="_msoanchor_8"> </a>[在 SQL Server 中创建成员身份架构](creating-the-membership-schema-in-sql-server-cs.md)* 教程，我们探讨了中的指定成员资格提供程序配置设置`Web.config`。 表 2 包含的配置设置的完整列表。
 
 一个此类成员资格提供程序配置设置会影响什么`CreateUser`可能使用重载是`requiresQuestionAndAnswer`设置。 如果`requiresQuestionAndAnswer`设置为`true`（默认值），然后创建新的用户帐户时我们必须指定一个安全提示问题和答案。 如果用户需要进行重置或更改其密码，更高版本使用此信息。 具体而言，此时，它们显示安全问题，并且他们必须输入正确答案若要重置或更改其密码。 因此，如果`requiresQuestionAndAnswer`设置为`true`然后调用前两个任一`CreateUser`重载会引发异常，因为安全问题和答案缺失。 由于我们的应用程序当前配置为需要安全问题和答案，我们将需要时以编程方式创建用户的使用后一种两个重载之一。
 
@@ -227,7 +228,7 @@ ASP.NET 包括大量导航相关器设计用户界面的 Web 控件。 其中包
 虽然成员资格用户存储现在包含罗斯向她和 Tito 的帐户的信息，我们还实现允许进行罗斯向她或 Tito 登录到站点的功能。 目前，`Login.aspx`验证用户的凭据对硬编码的用户名/密码对 – 集与其*不*验证针对成员资格框架提供的凭据。 现在出现在新的用户帐户的`aspnet_Users`和`aspnet_Membership`表将需要满足要求。 在下一步的教程中，  *<a id="_msoanchor_9"> </a>[验证用户凭据对成员资格用户存储](validating-user-credentials-against-the-membership-user-store-cs.md)*，我们将更新成员资格存储针对验证的登录页。
 
 > [!NOTE]
-> 如果你看不到内的任何用户你`SecurityTutorials.mdf`数据库，则可能是因为 web 应用程序正在使用默认成员资格提供程序， `AspNetSqlMembershipProvider`，它使用`ASPNETDB.mdf`作为其用户存储区的数据库。 若要确定如果出现此问题，请单击解决方案资源管理器中的刷新按钮。 如果一个名为数据库`ASPNETDB.mdf`已添加到`App_Data`文件夹中，出现此问题。 返回到的第 4 步 *<a id="_msoanchor_10"> </a>[在 SQL Server 中创建成员身份架构](creating-the-membership-schema-in-sql-server-cs.md)*教程有关如何正确配置成员资格提供程序的说明。
+> 如果你看不到内的任何用户你`SecurityTutorials.mdf`数据库，则可能是因为 web 应用程序正在使用默认成员资格提供程序， `AspNetSqlMembershipProvider`，它使用`ASPNETDB.mdf`作为其用户存储区的数据库。 若要确定如果出现此问题，请单击解决方案资源管理器中的刷新按钮。 如果一个名为数据库`ASPNETDB.mdf`已添加到`App_Data`文件夹中，出现此问题。 返回到的第 4 步 *<a id="_msoanchor_10"> </a>[在 SQL Server 中创建成员身份架构](creating-the-membership-schema-in-sql-server-cs.md)* 教程有关如何正确配置成员资格提供程序的说明。
 
 
 在大多数创建用户帐户方案、 在距访客出现某些接口输入他们的用户名、 密码、 电子邮件和其他重要信息，此时创建新的帐户。 在此步骤中，我们看手动生成此类接口，然后了解了如何使用`Membership.CreateUser`方法以编程方式添加新的用户帐户基于用户的输入。 但是，我们的代码，只需创建新的用户帐户。 它没有执行任何跟进操作，如用户访问刚创建的用户帐户，该站点中的日志记录或向用户发送确认电子邮件。 这些附加步骤将需要附加代码按钮的`Click`事件处理程序。
@@ -346,7 +347,7 @@ ASP.NET 附带了大量的登录 Web 控件。 这些控件有助于许多常见
 
 
 > [!NOTE]
-> 我们将看到举例说明使用通过`CreatedUser`中的事件 *<a id="_msoanchor_11"> </a>[存储的其他用户信息](storing-additional-user-information-cs.md)*教程。
+> 我们将看到举例说明使用通过`CreatedUser`中的事件 *<a id="_msoanchor_11"> </a>[存储的其他用户信息](storing-additional-user-information-cs.md)* 教程。
 
 
 ## <a name="summary"></a>总结

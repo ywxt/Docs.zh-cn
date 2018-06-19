@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895295"
 ---
 <a name="how-do-i-deploy-a-web-application-during-a-team-build"></a>[如何:]部署期间的团队项目生成的 Web 应用程序？
 ====================

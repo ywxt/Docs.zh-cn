@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898505"
 ---
 <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET 网页 (Razor) 故障排除指南
 ====================
@@ -46,7 +47,7 @@ ms.lasthandoff: 04/06/2018
 <a id="Issues_Running_.cshtml_Pages"></a>
 ## <a name="issues-with-running-pages"></a>问题与运行页
 
-各种问题可能会阻止*.cshtml*和*.vbhtml*页从正常运行。 本部分列出了常见的错误消息和可能的原因。
+各种问题可能会阻止 *.cshtml*和 *.vbhtml*页从正常运行。 本部分列出了常见的错误消息和可能的原因。
 
 ### <a name="http-error-403---forbidden-access-is-denied"></a>HTTP 错误 403-禁止访问： 访问被拒绝
 
@@ -54,9 +55,9 @@ ms.lasthandoff: 04/06/2018
 
 如果服务器未运行的.NET framework 的正确版本，可能出现此错误。 请确保正在运行 server （本地或远程） 的计算机具有至少安装.NET Framework 4。 此外请确保应用程序本身配置为运行正确版本。
 
-如果本地在 WebMatrix 中工作时看到此问题，请单击**站点**工作区中，然后在树视图中单击**设置**。 在**选择.NET Framework 版本**列表中，选择**.NET 4 （集成）**。 如果已设置此版本，请尝试以管理员身份运行 WebMatrix。
+如果本地在 WebMatrix 中工作时看到此问题，请单击**站点**工作区中，然后在树视图中单击**设置**。 在**选择.NET Framework 版本**列表中，选择 **.NET 4 （集成）**。 如果已设置此版本，请尝试以管理员身份运行 WebMatrix。
 
-请确保你网站的根目录具有至少一个*.cshtml*在其中的文件。
+请确保你网站的根目录具有至少一个 *.cshtml*在其中的文件。
 
 如果 web 服务器上的远程服务器时，你会看到此错误，请与服务器管理员联系。 请确保服务器具有.NET Framework 4 或更高版本安装。 此外请确保应用程序在配置为使用该版本的.net Framework 的应用程序池中运行。
 
@@ -78,7 +79,7 @@ ms.lasthandoff: 04/06/2018
 
 *请求筛选模块被配置为拒绝文件扩展名*
 
-如果可能发生此错误*.cshtml*或*.vbhtml*扩展明确阻止在服务器上。 此问题的症状它们不包括的扩展，但包含的 Url 时该 Url 工作*.cshtml*或*.vbhtml*不起作用。 可能的解决方案是重新启用的站点中的扩展*Web.config*文件。 下面的示例演示如何启用*.cshtml*扩展。
+如果可能发生此错误 *.cshtml*或 *.vbhtml*扩展明确阻止在服务器上。 此问题的症状它们不包括的扩展，但包含的 Url 时该 Url 工作 *.cshtml*或 *.vbhtml*不起作用。 可能的解决方案是重新启用的站点中的扩展*Web.config*文件。 下面的示例演示如何启用 *.cshtml*扩展。
 
 [!code-xml[Main](aspnet-web-pages-razor-troubleshooting-guide/samples/sample1.xml?highlight=5-6)]
 

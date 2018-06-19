@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899173"
 ---
 <a name="validating-user-input-in-aspnet-web-pages-razor-sites"></a>验证在 ASP.NET Web 页 (Razor) 站点中的用户输入
 ====================
@@ -122,7 +123,7 @@ ms.lasthandoff: 04/06/2018
 
     [!code-html[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample3.html)]
 
-   两个库是内容交付网络 (CDN)，从加载的因此你不一定对您的计算机或服务器。 但是，你必须具有的本地副本*jquery.validate.unobtrusive.js*。 如果你不已正在使用 WebMatrix 模板 (如**入门站点**) 包含库中，创建基于一个网页站点**入门站点**。 然后将复制*.js*给当前站点的文件。
+   两个库是内容交付网络 (CDN)，从加载的因此你不一定对您的计算机或服务器。 但是，你必须具有的本地副本*jquery.validate.unobtrusive.js*。 如果你不已正在使用 WebMatrix 模板 (如**入门站点**) 包含库中，创建基于一个网页站点**入门站点**。 然后将复制 *.js*给当前站点的文件。
 2. 标记，您要验证，每个元素中添加对的调用`Validation.For(field)`。 此方法会发出由客户端验证的属性。 (而不是发出实际的 JavaScript 代码时，该方法发出这样的属性`data-val-...`。 这些属性支持使用 jQuery 来执行工作的非介入式客户端验证）。
 
 以下页面演示如何将客户端验证功能添加到前面所示的示例。

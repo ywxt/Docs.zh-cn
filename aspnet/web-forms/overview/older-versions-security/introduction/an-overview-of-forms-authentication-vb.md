@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891901"
 ---
 <a name="an-overview-of-forms-authentication-vb"></a>窗体身份验证 (VB) 的概述
 ====================
@@ -221,7 +222,7 @@ IIS 7，但是，可以集成的 IIS 和 ASP.NET 的管道。 使用其他一些
 
 在 ASP.NET 2.0 中之前, 开发人员负责实施自己两个用户存储区，并编写代码以验证针对存储提供的凭据。 大多数开发人员将实现用户存储在数据库中，创建表包含如用户名、 密码、 电子邮件、 LastLoginDate 和等的列的命名用户。 然后，此表中，将包含每个用户帐户的一条记录。 验证的用户提供的凭据将涉及查询数据库中的匹配的用户名，然后确保数据库中的密码对应于提供的密码。
 
-使用 ASP.NET 2.0，开发人员应使用成员资格提供程序之一来管理用户存储区。 在本系列教程中我们将使用 SqlMembershipProvider，为用户存储使用 SQL Server 数据库。 使用 SqlMembershipProvider 时，我们需要实现特定的数据库架构，包括表、 视图和提供程序所需的存储的过程。 我们将研究如何实现此架构中的*[在 SQL Server 中创建成员身份架构](../membership/creating-the-membership-schema-in-sql-server-vb.md)*教程。 与就地成员身份提供程序中，验证用户的凭据非常简单，只调用[成员资格类](https://msdn.microsoft.com/library/system.web.security.membership.aspx)的[ValidateUser (*用户名*，*密码*)方法](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)，这将返回一个布尔值，该值指示是否的有效性*用户名*和*密码*组合。 如看到我们未实现 SqlMembershipProvider 的用户存储区，我们无法在此时使用成员资格类 ValidateUser 方法。
+使用 ASP.NET 2.0，开发人员应使用成员资格提供程序之一来管理用户存储区。 在本系列教程中我们将使用 SqlMembershipProvider，为用户存储使用 SQL Server 数据库。 使用 SqlMembershipProvider 时，我们需要实现特定的数据库架构，包括表、 视图和提供程序所需的存储的过程。 我们将研究如何实现此架构中的*[在 SQL Server 中创建成员身份架构](../membership/creating-the-membership-schema-in-sql-server-vb.md)* 教程。 与就地成员身份提供程序中，验证用户的凭据非常简单，只调用[成员资格类](https://msdn.microsoft.com/library/system.web.security.membership.aspx)的[ValidateUser (*用户名*，*密码*)方法](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)，这将返回一个布尔值，该值指示是否的有效性*用户名*和*密码*组合。 如看到我们未实现 SqlMembershipProvider 的用户存储区，我们无法在此时使用成员资格类 ValidateUser 方法。
 
 而不是花时间来生成我们自己自定义用户数据库表 （它将是已过时，我们实现 SqlMembershipProvider 后），让我们改为硬编码在该登录名的有效凭据页本身。 在 LoginButton 的单击事件处理程序，添加以下代码：
 

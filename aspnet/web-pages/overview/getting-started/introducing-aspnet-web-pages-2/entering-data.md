@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897957"
 ---
 <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>引入的 ASP.NET Web Pages-通过使用窗体中输入数据库的数据
 ====================
@@ -222,7 +223,7 @@ ASP.NET Web Pages 包括一个帮助程序&mdash;`Validation`帮助器&mdash;可
 
 [!code-cshtml[Main](entering-data/samples/sample13.cshtml?highlight=4-17)]
 
-通常情况下你可能会将放入一个单独的样式信息*.css*文件，但为简单起见你可以将它们放在页现在。 (更高版本中设置此教程，您就可以单独切换的 CSS 规则*.css*文件。)
+通常情况下你可能会将放入一个单独的样式信息 *.css*文件，但为简单起见你可以将它们放在页现在。 (更高版本中设置此教程，您就可以单独切换的 CSS 规则 *.css*文件。)
 
 如果没有验证错误，`Html.ValidationMessage`方法呈现`<span>`包含元素`class="field-validation-error"`。 通过添加为该类的样式定义，你可以配置消息如下所示。 如果存在错误，`ValidationSummary`方法同样动态呈现属性`class="validation-summary-errors"`。
 
@@ -238,7 +239,7 @@ ASP.NET Web Pages 包括一个帮助程序&mdash;`Validation`帮助器&mdash;可
 
 [!code-cshtml[Main](entering-data/samples/sample14.cshtml)]
 
-正如你看到之前，ASP.NET 将解释`~`运算符用作在网站的根目录。 无需使用`~`运算符; 你可以使用标记`<a href="./AddMovie">Add a movie</a>`或某种其他方式来定义 HTML 理解的路径。 但是`~`运算符是一种好的常规方法时创建链接对于 Razor 页，因为它使站点更灵活-如果将当前页移到一个子文件夹中，将仍将链接转到*AddMovie*页。 (请记住，`~`运算符仅适用于*.cshtml*页。 ASP.NET 理解它，但它不是标准 HTML）。
+正如你看到之前，ASP.NET 将解释`~`运算符用作在网站的根目录。 无需使用`~`运算符; 你可以使用标记`<a href="./AddMovie">Add a movie</a>`或某种其他方式来定义 HTML 理解的路径。 但是`~`运算符是一种好的常规方法时创建链接对于 Razor 页，因为它使站点更灵活-如果将当前页移到一个子文件夹中，将仍将链接转到*AddMovie*页。 (请记住，`~`运算符仅适用于 *.cshtml*页。 ASP.NET 理解它，但它不是标准 HTML）。
 
 完成后，运行*电影*页。 它将类似此页：
 

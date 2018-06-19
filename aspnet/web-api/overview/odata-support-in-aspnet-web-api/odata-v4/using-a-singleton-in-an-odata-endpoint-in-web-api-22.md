@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/using-a-singleton-in-an-odata-endpoint-in-web-api-22
-title: "创建单一实例 OData v4 中的使用 Web API 2.2 |Microsoft 文档"
+title: 创建单一实例 OData v4 中的使用 Web API 2.2 |Microsoft 文档
 author: rick-anderson
-description: "本主题演示如何定义中的 Web API 2.2 OData 终结点中的单一实例。"
+description: 本主题演示如何定义中的 Web API 2.2 OData 终结点中的单一实例。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/27/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508206"
 ---
 <a name="create-a-singleton-in-odata-v4-using-web-api-22"></a>创建单一实例 OData v4 中的使用 Web API 2.2
 ====================

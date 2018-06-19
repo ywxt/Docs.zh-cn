@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889990"
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-vb"></a>显示每个行与 DataList 控件 (VB) 的多个记录
 ====================

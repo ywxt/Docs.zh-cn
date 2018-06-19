@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868420"
 ---
 <a name="host-owin-in-an-azure-worker-role"></a>在 Azure 辅助角色的 OWIN 主机
 ====================

@@ -1,7 +1,7 @@
 ---
-title: "使用 ASP.NET Core 的移动开发"
+title: 使用 ASP.NET Core 的移动开发
 author: rick-anderson
-description: "了解与 ASP.NET Core 移动开发相关的主题。"
+description: 了解与 ASP.NET Core 移动开发相关的主题。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29902274"
 ---
 # <a name="mobile-development-with-aspnet-core"></a>使用 ASP.NET Core 的移动开发
 

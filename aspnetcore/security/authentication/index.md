@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 中的身份验证"
+title: ASP.NET Core 中的身份验证
 author: rick-anderson
-description: "发现与 ASP.NET Core 身份验证技术相关的主题。"
+description: 发现与 ASP.NET Core 身份验证技术相关的主题。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29903294"
 ---
 # <a name="authentication-in-aspnet-core"></a>ASP.NET Core 中的身份验证
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890861"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>使用 Visual Studio 的 ASP.NET Web 部署： 将部署到测试
 ====================
@@ -82,7 +83,7 @@ ms.lasthandoff: 04/06/2018
 6. 在**应用程序池**窗格中，单击**DefaultAppPool**，然后在**操作**窗格中，单击**基本设置**。
 
     [![Inetmgr_selecting_Basic_Settings_for_app_pool](deploying-to-iis/_static/image5.png)](deploying-to-iis/_static/image4.png)
-7. 在**编辑应用程序池**对话框中，更改**.NET Framework 版本**到**.NET Framework v4.0.30319**单击**确定**。
+7. 在**编辑应用程序池**对话框中，更改 **.NET Framework 版本**到 **.NET Framework v4.0.30319**单击**确定**。
 
     [![Selecting_.NET_4_for_DefaultAppPool](deploying-to-iis/_static/image7.png)](deploying-to-iis/_static/image6.png)
 
@@ -145,7 +146,7 @@ Contoso 大学应用程序具有两个数据库： 成员资格数据库和应�
 2. 单击“连接” 。 
 
     ![连接按钮](deploying-to-iis/_static/image11.png)
-3. 在**连接到服务器**对话框框中，输入*。 \SQLExpress*作为**服务器名称**，然后单击**连接**。
+3. 在**连接到服务器**对话框框中，输入 *。 \SQLExpress*作为**服务器名称**，然后单击**连接**。
 4. 在数据库下拉列表选择**ContosoUniversity**，然后单击**执行**。 
 
     ![](deploying-to-iis/_static/image12.png)
@@ -158,12 +159,12 @@ Contoso 大学应用程序具有两个数据库： 成员资格数据库和应�
 
 - 使用一键式发布的 Visual Studio。
 - 从命令行发布。
-- 创建*部署包*和使用 IIS 管理器 UI 安装它。 部署包所包含的*.zip*包含的所有文件和在 IIS 中安装站点所需的元数据的文件。
+- 创建*部署包*和使用 IIS 管理器 UI 安装它。 部署包所包含的 *.zip*包含的所有文件和在 IIS 中安装站点所需的元数据的文件。
 - 创建部署包并将其使用命令行安装。
 
 你已完成在前面的教程，若要将 Visual Studio 设置来自动执行部署任务适用于所有这些方法的过程。 这些教程中，你将使用这些方法在前的两个。 有关使用部署包的信息，请参阅[部署 web 应用程序创建和安装 web 部署包](https://go.microsoft.com/fwlink/p/?LinkId=282413#package)for Visual Studio 和 ASP.NET Web 部署内容映射中。
 
-在发布前，请确保在管理员模式下运行 Visual Studio。 如果看不到**（管理员）**在标题栏中，关闭 Visual Studio。 Windows 8 中**启动**页或 Windows 7**启动**菜单中，右键单击要使用的 Visual Studio 版本的图标，然后选择**以管理员身份运行**。 管理员模式下是发布仅当你准备向 IIS 发布在本地计算机上所必需的。
+在发布前，请确保在管理员模式下运行 Visual Studio。 如果看不到 **（管理员）** 在标题栏中，关闭 Visual Studio。 Windows 8 中**启动**页或 Windows 7**启动**菜单中，右键单击要使用的 Visual Studio 版本的图标，然后选择**以管理员身份运行**。 管理员模式下是发布仅当你准备向 IIS 发布在本地计算机上所必需的。
 
 ### <a name="create-the-publish-profile"></a>创建发布配置文件
 

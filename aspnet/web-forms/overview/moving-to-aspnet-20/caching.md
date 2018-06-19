@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891875"
 ---
 <a name="caching"></a>缓存
 ====================
@@ -158,7 +159,7 @@ SQL Server 7 和 2000年将基于轮询的模型用于 SQL 缓存依赖项。 �
 
 在此情况下，如果在指定的查询**SelectCommand**返回不同的结果比最初，将缓存的结果会失效。
 
-你还可以指定所有数据源通过设置启用了 SQL 缓存依赖项**SqlDependency**属性**@ OutputCache**指令至**CommandNotification**. 下面的示例阐释了这一点。
+你还可以指定所有数据源通过设置启用了 SQL 缓存依赖项**SqlDependency**属性 **@ OutputCache**指令至**CommandNotification**. 下面的示例阐释了这一点。
 
 [!code-aspx[Main](caching/samples/sample13.aspx)]
 

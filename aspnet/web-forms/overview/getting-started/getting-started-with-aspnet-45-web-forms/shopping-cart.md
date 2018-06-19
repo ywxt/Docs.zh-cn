@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890715"
 ---
 <a name="shopping-cart"></a>购物车
 ====================
@@ -156,7 +157,7 @@ ms.lasthandoff: 04/06/2018
 1. 在**解决方案资源管理器**，右键单击**WingtipToys**，单击**添加** - &gt; **新项**。  
    随即出现“添加新项”对话框。
 2. 添加新页 （Web 窗体） 通过选择包含母版页**使用母版页的 Web 窗体**。 将新该页命名为*ShoppingCart.aspx*。
-3. 选择**Site.Master**要附加到新创建的主控页*.aspx*页。
+3. 选择**Site.Master**要附加到新创建的主控页 *.aspx*页。
 4. 在*ShoppingCart.aspx*页上，将现有的标记替换为以下标记：   
 
     [!code-aspx[Main](shopping-cart/samples/sample5.aspx)]

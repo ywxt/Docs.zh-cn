@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control
-title: "[如何:]保存和加载视图状态信息自定义 Web 服务器控件 |Microsoft 文档"
+title: '[如何:]保存和加载视图状态信息自定义 Web 服务器控件 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 将演示如何来持久保存并还原在 ViewState 中的自定义用户控件的信息。 首先，了解如何保持简单值..."
+description: 在此视频 Chris Pels 将演示如何来持久保存并还原在 ViewState 中的自定义用户控件的信息。 首先，了解如何保持简单值...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525566"
 ---
 <a name="how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control"></a>[如何:]保存和加载视图状态信息的自定义 Web 服务器控件
 ====================

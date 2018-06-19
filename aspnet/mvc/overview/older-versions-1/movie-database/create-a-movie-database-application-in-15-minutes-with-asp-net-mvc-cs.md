@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877029"
 ---
 <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-c"></a>创建电影数据库应用程序在 15 分钟内使用 ASP.NET MVC (C#)
 ====================
@@ -228,7 +229,7 @@ Home 控制器的 index （） 方法是 ASP.NET MVC 应用程序的默认方法
 
 我已修改中列出的 2 的 HomeController 类，以使其包含名为的新私有字段\_db。 MoviesDBEntities 类表示我们的数据库模型，并且我们将使用此类与我们的数据库进行通信。
 
-我已修改中列出的 2 的 index （） 方法。 Index （） 方法使用 MoviesDBEntities 类来从电影数据库表中检索的所有影片记录。 表达式 *\_db。MovieSet.ToList()*返回电影数据库表中的所有影片记录的列表。
+我已修改中列出的 2 的 index （） 方法。 Index （） 方法使用 MoviesDBEntities 类来从电影数据库表中检索的所有影片记录。 表达式 *\_db。MovieSet.ToList()* 返回电影数据库表中的所有影片记录的列表。
 
 影片列表传递给视图。 获取传递给 View() 方法的任何内容获取传递给视图作为视图数据。
 

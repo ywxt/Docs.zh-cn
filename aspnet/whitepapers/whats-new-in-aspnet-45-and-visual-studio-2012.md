@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
-title: "在 ASP.NET 4.5 和 Visual Studio 2012 中的新增功能 |Microsoft 文档"
+title: 在 ASP.NET 4.5 和 Visual Studio 2012 中的新增功能 |Microsoft 文档
 author: rick-anderson
-description: "本文档介绍新功能和 ASP.NET 4.5 中引入的增强功能。 它还介绍了为 web 开发正在进行的改进..."
+description: 本文档介绍新功能和 ASP.NET 4.5 中引入的增强功能。 它还介绍了为 web 开发正在进行的改进...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/29/2012
 ms.topic: article
 ms.assetid: ba1fabb4-31a3-4ebf-8327-41a6bbba6eaf
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28886437"
 ---
 <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>在 ASP.NET 4.5 和 Visual Studio 2012 中的新增功能
 ====================
@@ -583,11 +584,11 @@ VSToolsPath 属性用于确定正确的.targets 文件以导入从 MSBuildExtens
 
 [!code-xml[Main](whats-new-in-aspnet-45-and-visual-studio-2012/samples/sample34.xml?highlight=3)]
 
-时**runAllManagedModulesForAllRequests**是 true，如 URL`http://mysite/myapp/home`就会转到 ASP.NET，即使没有任何*.aspx*， *.mvc*，或类似的扩展名URL。
+时**runAllManagedModulesForAllRequests**是 true，如 URL`http://mysite/myapp/home`就会转到 ASP.NET，即使没有任何 *.aspx*， *.mvc*，或类似的扩展名URL。
 
 IIS 7，已更新使**runAllManagedModulesForAllRequests**设置不必要和支持 ASP.NET 本机路由。 (有关更新的信息，请参阅 Microsoft 支持文章[有可用启用某些 IIS 7.0 或 IIS 7.5 的处理程序，来处理请求其 Url 不要以句点结尾的更新](https://support.microsoft.com/kb/980368)。)
 
-如果在 IIS 7 上运行你的网站和 IIS 已更新，如果你不需要设置**runAllManagedModulesForAllRequests**为 true。 事实上，将其设置为 true 不是建议，因为它会不必要的处理开销到请求。 当此设置为 true 时，所有请求，包括*.htm*， *.jpg*，和其他静态文件，也需要通过 ASP.NET 请求管道。
+如果在 IIS 7 上运行你的网站和 IIS 已更新，如果你不需要设置**runAllManagedModulesForAllRequests**为 true。 事实上，将其设置为 true 不是建议，因为它会不必要的处理开销到请求。 当此设置为 true 时，所有请求，包括 *.htm*， *.jpg*，和其他静态文件，也需要通过 ASP.NET 请求管道。
 
 如果创建新的 ASP.NET 4.5 网站，以使用 Visual Studio 2012 RC 中提供的模板时，该网站的配置不包括**runAllManagedModulesForAllRequests**设置。 这意味着默认情况下设置为 false。
 
@@ -632,7 +633,7 @@ IIS 7，已更新使**runAllManagedModulesForAllRequests**设置不必要和支�
 
 ![](whats-new-in-aspnet-45-and-visual-studio-2012/_static/image10.png)
 
-WAI ARIA 标准还引入了带有前缀的特性*aria-*能够让你将语义添加到 HTML5 文档。 Visual Studio 还完全支持这些*aria-*属性：
+WAI ARIA 标准还引入了带有前缀的特性*aria-* 能够让你将语义添加到 HTML5 文档。 Visual Studio 还完全支持这些*aria-* 属性：
 
 ![](whats-new-in-aspnet-45-and-visual-studio-2012/_static/image11.png) ![](whats-new-in-aspnet-45-and-visual-studio-2012/_static/image12.png)
 
@@ -750,7 +751,7 @@ DOM Api 的 IntelliSense 得到了提高，支持的许多新 HTML5 Api 包括�
 <a id="_Toc318097413"></a>
 #### <a name="vsdoc-signature-overloads"></a>VSDOC 签名重载
 
-详细的 IntelliSense 注释现在为 JavaScript 函数的单独重载使用新的声明*&lt;签名&gt;*元素，如本示例中所示：
+详细的 IntelliSense 注释现在为 JavaScript 函数的单独重载使用新的声明*&lt;签名&gt;* 元素，如本示例中所示：
 
 [!code-csharp[Main](whats-new-in-aspnet-45-and-visual-studio-2012/samples/sample35.cs)]
 

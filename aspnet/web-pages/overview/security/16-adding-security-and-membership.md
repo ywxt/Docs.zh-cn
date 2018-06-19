@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898854"
 ---
 <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>将安全和成员身份添加到 ASP.NET 网站页 (Razor)
 ====================
@@ -158,7 +159,7 @@ ms.lasthandoff: 04/06/2018
 
     此代码还设置 *\_SiteLayout.cshtml*作为其布局页的页。 (有关详细信息布局页，请参阅[在 ASP.NET 网页站点中创建一致的布局](https://go.microsoft.com/fwlink/?LinkId=202891)。)
 5. 运行该站点。 如果你仍登录，请单击**注销**页顶部的按钮。
-6. 在浏览器中，请求页*/Members/MembersInformation*。 例如，URL 可能如下所示：
+6. 在浏览器中，请求页 */Members/MembersInformation*。 例如，URL 可能如下所示：
 
     `http://localhost:38366/Members/MembersInformation`
 

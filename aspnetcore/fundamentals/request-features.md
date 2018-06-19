@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 中的请求功能"
+title: ASP.NET Core 中的请求功能
 author: ardalis
-description: "了解与 ASP.NET Core 的接口中定义的 HTTP 请求和响应相关的 Web 服务器实现详细信息。"
+description: 了解与 ASP.NET Core 的接口中定义的 HTTP 请求和响应相关的 Web 服务器实现详细信息。
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -14,6 +14,7 @@ ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/01/2018
+ms.locfileid: "28913567"
 ---
 # <a name="request-features-in-aspnet-core"></a>ASP.NET Core 中的请求功能
 

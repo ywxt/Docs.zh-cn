@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899111"
 ---
 <a name="aspnet-4-breaking-changes"></a>ASP.NET 4 的重大更改
 ====================
@@ -437,7 +438,7 @@ ASP.NET 2.0 中，并通过扩展在 3.5 中，已添加的 ASP.NET 功能使用
 
 因此， **SetOmitVaryStar**不再需要以禁止显示`Vary:*`标头。
 
-指定的应用程序中`Location="ServerAndClient"`中**@ OutputCache**指令在页面上，现在，你将看到的名称所暗示的行为**位置**属性的值-即，将页可在你调用而无需浏览器缓存**SetOmitVaryStar**方法。
+指定的应用程序中`Location="ServerAndClient"`中 **@ OutputCache**指令在页面上，现在，你将看到的名称所暗示的行为**位置**属性的值-即，将页可在你调用而无需浏览器缓存**SetOmitVaryStar**方法。
 
 如果你的应用程序中的页必须发出`Vary:*`，调用**AppendHeader**方法，如下面的示例所示：
 

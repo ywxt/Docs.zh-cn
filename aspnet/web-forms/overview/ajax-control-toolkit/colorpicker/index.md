@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/colorpicker/index
-title: "颜色选取器 |Microsoft 文档"
+title: 颜色选取器 |Microsoft 文档
 author: rick-anderson
-description: "本教程演示如何使用颜色选取器控件，允许用户从弹出窗口中选择一种颜色。"
+description: 本教程演示如何使用颜色选取器控件，允许用户从弹出窗口中选择一种颜色。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/colorpicker
 msc.type: chapter
 ms.openlocfilehash: 28a5801af256a1457f486c658783fb153f8428e1
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26509296"
 ---
 <a name="colorpicker"></a>颜色选取器
 ====================

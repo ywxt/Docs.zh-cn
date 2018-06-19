@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890839"
 ---
 <a name="interacting-with-the-master-page-from-the-content-page-c"></a>与从内容页 (C#) 母版页交互
 ====================

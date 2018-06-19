@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/guide-to-the-api/hubs-api-guide-net-client
-title: "ASP.NET SignalR 中心 API 指南-.NET 客户端 (C#) |Microsoft 文档"
+title: ASP.NET SignalR 中心 API 指南-.NET 客户端 (C#) |Microsoft 文档
 author: pfletcher
-description: "本文档提供使用 SignalR 在.NET 客户端，如 Windows 应用商店 (WinRT)、 WPF、 Silverlight 和 cons 版本 2 的中心 API 的说明..."
+description: 本文档提供使用 SignalR 在.NET 客户端，如 Windows 应用商店 (WinRT)、 WPF、 Silverlight 和 cons 版本 2 的中心 API 的说明...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28043933"
 ---
 <a name="aspnet-signalr-hubs-api-guide---net-client-c"></a>ASP.NET SignalR 中心 API 指南-.NET 客户端 (C#)
 ====================

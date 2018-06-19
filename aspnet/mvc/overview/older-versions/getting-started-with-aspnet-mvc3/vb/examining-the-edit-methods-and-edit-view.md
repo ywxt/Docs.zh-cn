@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875456"
 ---
 <a name="examining-the-edit-methods-and-edit-view-vb"></a>检查编辑方法和 (VB) 中的编辑视图
 ====================
@@ -35,7 +36,7 @@ ms.lasthandoff: 04/06/2018
 
 在此部分中，你将检查生成的操作方法和电影控制器的视图。 然后你将添加自定义搜索页。
 
-运行应用程序，并浏览到`Movies`控制器通过追加*/Movies*到你的浏览器的地址栏中的 URL。 将鼠标指针停留在**编辑**链接以查看链接到的 URL。
+运行应用程序，并浏览到`Movies`控制器通过追加 */Movies*到你的浏览器的地址栏中的 URL。 将鼠标指针停留在**编辑**链接以查看链接到的 URL。
 
 ![EditLink_sm](examining-the-edit-methods-and-edit-view/_static/image1.png)
 
@@ -67,11 +68,11 @@ ms.lasthandoff: 04/06/2018
 
 基架的代码使用了若干个*帮助器方法*来简化的 HTML 标记。 [ `Html.LabelFor` ](https://msdn.microsoft.com/library/gg401864(VS.98).aspx)帮助器显示的字段的名称 (&quot;标题&quot;， &quot;ReleaseDate&quot;，&quot;流派&quot;，或&quot;价格&quot;). [ `Html.EditorFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx)帮助器将显示 HTML`<input>`元素。 [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx)帮助器显示与该属性相关联的任何验证消息。
 
-运行应用程序并导航到*/Movies* URL。 点击“编辑”链接。 在浏览器中查看页面的源。 在页中的 HTML 类似于下面的示例。 （菜单标记被排除为清楚起见。）
+运行应用程序并导航到 */Movies* URL。 点击“编辑”链接。 在浏览器中查看页面的源。 在页中的 HTML 类似于下面的示例。 （菜单标记被排除为清楚起见。）
 
 [!code-html[Main](examining-the-edit-methods-and-edit-view/samples/sample5.html)]
 
-`<input>`元素是在 HTML`<form>`元素其`action`特性设置为发布到*/电影/编辑*URL。 窗体数据将发送到服务器时**编辑**单击按钮。
+`<input>`元素是在 HTML`<form>`元素其`action`特性设置为发布到 */电影/编辑*URL。 窗体数据将发送到服务器时**编辑**单击按钮。
 
 ## <a name="processing-the-post-request"></a>处理 POST 请求
 
@@ -104,7 +105,7 @@ ASP.NET framework 模型联编程序接受已发布的窗体值并创建`Movie`�
 
 ## <a name="adding-a-search-method-and-search-view"></a>添加搜索方法和搜索视图
 
-在本部分将添加`SearchIndex`操作方法，可使你搜索电影按风格或名称。 这将是可通过*/电影/SearchIndex* URL。 请求将显示 HTML 窗体，其中包含用户可以填写以便搜索一部电影的输入的元素。 当用户提交表单时，操作方法将获取发布的用户的搜索值，并使用这些值来搜索数据库。
+在本部分将添加`SearchIndex`操作方法，可使你搜索电影按风格或名称。 这将是可通过 */电影/SearchIndex* URL。 请求将显示 HTML 窗体，其中包含用户可以填写以便搜索一部电影的输入的元素。 当用户提交表单时，操作方法将获取发布的用户的搜索值，并使用这些值来搜索数据库。
 
 ![SearchIndx_SM](examining-the-edit-methods-and-edit-view/_static/image10.png)
 
@@ -136,7 +137,7 @@ ASP.NET framework 模型联编程序接受已发布的窗体值并创建`Movie`�
 
 [!code-vbhtml[Main](examining-the-edit-methods-and-edit-view/samples/sample10.vbhtml)]
 
-运行应用程序并导航到*/电影/SearchIndex*。 将查询字符串（如 `?searchString=ghost`）追加到 URL。 筛选的电影将显示出来。
+运行应用程序并导航到 */电影/SearchIndex*。 将查询字符串（如 `?searchString=ghost`）追加到 URL。 筛选的电影将显示出来。
 
 [![SearchQryStr](examining-the-edit-methods-and-edit-view/_static/image14.png)](examining-the-edit-methods-and-edit-view/_static/image13.png)
 
@@ -196,7 +197,7 @@ ASP.NET framework 模型联编程序接受已发布的窗体值并创建`Movie`�
 
 [!code-vbhtml[Main](examining-the-edit-methods-and-edit-view/samples/sample18.vbhtml)]
 
-运行应用程序，并浏览到*/电影/SearchIndex*。 按风格、 电影名称，以及这两个条件，请尝试搜索。
+运行应用程序，并浏览到 */电影/SearchIndex*。 按风格、 电影名称，以及这两个条件，请尝试搜索。
 
 在本部分中检查的 CRUD 操作方法和框架生成的视图。 你创建的搜索操作方法和视图，以让用户通过影片标题和风格搜索。 在下一步的部分中，你将了解如何将属性添加到`Movie`模型以及如何添加初始值设定项将自动创建一个测试数据库。
 

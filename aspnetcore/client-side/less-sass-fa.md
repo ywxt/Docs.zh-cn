@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30073518"
 ---
 # <a name="less-sass-and-font-awesome-in-aspnet-core"></a>小于，Sass 和 ASP.NET Core 中出色的字体
 
@@ -369,7 +370,7 @@ body {
 }
 ```
 
-保存你所有文件。 现在刷新**任务运行程序资源管理器**，你看到`sass`任务。 运行它，并查找*/wwwroot/css*文件夹。 现在有了*main2.css*文件，使用以下内容：
+保存你所有文件。 现在刷新**任务运行程序资源管理器**，你看到`sass`任务。 运行它，并查找 */wwwroot/css*文件夹。 现在有了*main2.css*文件，使用以下内容：
 
 ```css
 body {

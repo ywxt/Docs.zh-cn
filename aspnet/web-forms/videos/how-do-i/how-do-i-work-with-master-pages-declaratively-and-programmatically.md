@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-work-with-master-pages-declaratively-and-programmatically
-title: "[如何:]以声明方式和以编程方式使用母版页 |Microsoft 文档"
+title: '[如何:]以声明方式和以编程方式使用母版页 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 中将显示定义和 ASP.NET web 站点中使用母版页的几个方面。 首先，请参阅如何创建母版页 declarati..."
+description: 在此视频 Chris Pels 中将显示定义和 ASP.NET web 站点中使用母版页的几个方面。 首先，请参阅如何创建母版页 declarati...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/21/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526516"
 ---
 <a name="how-do-i-work-with-master-pages-declaratively-and-programmatically"></a>[如何:]以声明方式和以编程方式使用母版页
 ====================

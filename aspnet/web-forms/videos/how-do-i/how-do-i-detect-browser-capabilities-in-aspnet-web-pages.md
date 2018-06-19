@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-detect-browser-capabilities-in-aspnet-web-pages
-title: "[如何:]在 ASP.NET Web 页检测浏览器功能 |Microsoft 文档"
+title: '[如何:]在 ASP.NET Web 页检测浏览器功能 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 将演示如何确定用户的浏览器具有一个 ASP.NET web 站点中查看页面时哪些功能。 首先，了解如何 acc...."
+description: 在此视频 Chris Pels 将演示如何确定用户的浏览器具有一个 ASP.NET web 站点中查看页面时哪些功能。 首先，了解如何 acc....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28884086"
 ---
 <a name="how-do-i-detect-browser-capabilities-in-aspnet-web-pages"></a>[如何:]在 ASP.NET Web 页检测浏览器功能
 ====================

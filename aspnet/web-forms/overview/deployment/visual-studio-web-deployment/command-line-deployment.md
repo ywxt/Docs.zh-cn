@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890523"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-command-line-deployment"></a>使用 Visual Studio 的 ASP.NET Web 部署： 命令行部署
 ====================
@@ -90,7 +91,7 @@ Visual Studio 2010 版本的版本号为 10.0。 有关详细信息，请参阅[
 
 ### <a name="specifying-the-publish-profile"></a>指定的发布配置文件
 
-按名称或完整路径，可以指定发布配置文件*.pubxml*文件，如下面的示例中所示：
+按名称或完整路径，可以指定发布配置文件 *.pubxml*文件，如下面的示例中所示：
 
 [!code-console[Main](command-line-deployment/samples/sample5.cmd?highlight=1)]
 
@@ -108,9 +109,9 @@ Visual Studio 2010 版本的版本号为 10.0。 有关详细信息，请参阅[
 
 ## <a name="deploy-to-staging"></a>部署到过渡环境
 
-若要部署到 Azure，必须将密码添加到命令行中。 如果您在 Visual Studio 中的发布配置文件中保存了密码，它已存储在加密形式你*。 pubxml.user*文件。 当你执行操作的命令行部署，因此你必须在密码命令行参数中传递，MSBuild 不访问该文件。
+若要部署到 Azure，必须将密码添加到命令行中。 如果您在 Visual Studio 中的发布配置文件中保存了密码，它已存储在加密形式你 *。 pubxml.user*文件。 当你执行操作的命令行部署，因此你必须在密码命令行参数中传递，MSBuild 不访问该文件。
 
-1. 复制中所需的密码*.publishsettings*前面为过渡网站下载的文件。 密码是值`userPWD`用于 Web 部署的属性`publishProfile`元素。
+1. 复制中所需的密码 *.publishsettings*前面为过渡网站下载的文件。 密码是值`userPWD`用于 Web 部署的属性`publishProfile`元素。
 
     ![Web 部署密码](command-line-deployment/_static/image5.png)
 2. 在 Windows 8 起始页中，搜索**vs2012 的开发人员命令提示**，然后单击图标以打开命令提示符。 （你不需要它以管理员身份打开这一次因为你不部署到 IIS 在本地计算机上。）
@@ -127,7 +128,7 @@ Visual Studio 2010 版本的版本号为 10.0。 有关详细信息，请参阅[
 
 部署到生产环境的过程是临时的过程相似。
 
-1. 复制中所需的密码*.publishsettings*前面为生产 web 站点下载的文件。
+1. 复制中所需的密码 *.publishsettings*前面为生产 web 站点下载的文件。
 2. 打开**vs2012 的开发人员命令提示**。
 3. 输入以下命令在命令提示符下，解决方案文件的路径替换为你的解决方案文件和你的密码与密码的路径：
 

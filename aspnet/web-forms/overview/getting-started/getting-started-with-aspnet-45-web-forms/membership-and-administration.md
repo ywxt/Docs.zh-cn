@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30889626"
 ---
 <a name="membership-and-administration"></a>成员资格和管理
 ====================
@@ -78,14 +79,14 @@ ASP.NET Web 窗体提供了成员资格功能。 通过使用默认模板，你�
 
     [!code-csharp[Main](membership-and-administration/samples/sample3.cs?highlight=5-7,15-51)]
 
-上面的代码首先建立用于成员资格数据库的数据库上下文。 成员资格数据库也存储为*.mdf*文件中*应用\_数据*文件夹。 你将能够查看此数据库后的第一个用户已登录到此 web 应用程序。 
+上面的代码首先建立用于成员资格数据库的数据库上下文。 成员资格数据库也存储为 *.mdf*文件中*应用\_数据*文件夹。 你将能够查看此数据库后的第一个用户已登录到此 web 应用程序。 
 
 > [!NOTE] 
 > 
 > 如果你想要存储以及产品的数据的成员身份数据，则可以考虑使用相同**DbContext**用于将产品数据存储在上面的代码。
 
 
- *内部*关键字是类型 （例如类） 和 （如方法或属性） 的类型成员的访问修饰符。 内部类型或成员是只能在同一程序集中包含的文件中访问*(.dll*文件)。 当你生成应用程序，程序集文件*(.dll*) 创建包含运行你的应用程序时执行的代码。 
+ *内部*关键字是类型 （例如类） 和 （如方法或属性） 的类型成员的访问修饰符。 内部类型或成员是只能在同一程序集中包含的文件中访问 *(.dll*文件)。 当你生成应用程序，程序集文件 *(.dll*) 创建包含运行你的应用程序时执行的代码。 
 
 A`RoleStore`对象，它提供角色管理，创建基于数据库上下文。
 
@@ -214,7 +215,7 @@ Wingtip Toys 示例应用程序允许匿名用户和登录的用户都能查看�
 
 ### <a name="how-the-application-will-work"></a>应用程序将如何工作
 
-当属于"canEdit"角色的用户首次导航到页面`DropDownAddCategory` **DropDownList**控件中填充上文所述。 `DropDownRemoveProduct` **DropDownList**控件还使用相同的方法的产品中填充。 属于"canEdit"角色的用户选定的类别类型，并添加产品详细信息 (**名称**，**说明**，**价格**，和**映像文件**). 当用户属于"canEdit"角色单击**添加产品**按钮，`AddProductButton_Click`触发事件处理程序。 `AddProductButton_Click`事件处理程序位于的代码隐藏文件 (*AdminPage.aspx.cs*) 检查要确保它匹配允许的文件类型的图像文件*(.gif*， *.png*， *.jpeg*，或*.jpg*)。 然后，该图像文件保存到 Wingtip Toys 示例应用程序的文件夹。 接下来，将新的产品添加到数据库。 若要完成添加一个新的产品的新实例`AddProducts`类被创建并命名为产品。 `AddProducts`类具有一个名为方法`AddProduct`，和产品对象调用此方法以将产品添加到数据库。
+当属于"canEdit"角色的用户首次导航到页面`DropDownAddCategory` **DropDownList**控件中填充上文所述。 `DropDownRemoveProduct` **DropDownList**控件还使用相同的方法的产品中填充。 属于"canEdit"角色的用户选定的类别类型，并添加产品详细信息 (**名称**，**说明**，**价格**，和**映像文件**). 当用户属于"canEdit"角色单击**添加产品**按钮，`AddProductButton_Click`触发事件处理程序。 `AddProductButton_Click`事件处理程序位于的代码隐藏文件 (*AdminPage.aspx.cs*) 检查要确保它匹配允许的文件类型的图像文件 *(.gif*， *.png*， *.jpeg*，或 *.jpg*)。 然后，该图像文件保存到 Wingtip Toys 示例应用程序的文件夹。 接下来，将新的产品添加到数据库。 若要完成添加一个新的产品的新实例`AddProducts`类被创建并命名为产品。 `AddProducts`类具有一个名为方法`AddProduct`，和产品对象调用此方法以将产品添加到数据库。
 
 [!code-csharp[Main](membership-and-administration/samples/sample15.cs)]
 

@@ -1,7 +1,7 @@
 ---
-title: "Azure Active Directory B2C ASP.NET 核心中使用云身份验证"
+title: Azure Active Directory B2C ASP.NET 核心中使用云身份验证
 author: camsoper
-description: "了解如何设置与 ASP.NET 核心的 Azure Active Directory B2C 身份验证。"
+description: 了解如何设置与 ASP.NET 核心的 Azure Active Directory B2C 身份验证。
 manager: wpickett
 ms.date: 01/25/2018
 ms.topic: tutorial
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29905070"
 ---
 # <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a>Azure Active Directory B2C ASP.NET 核心中使用云身份验证
 
@@ -114,7 +115,7 @@ Visual Studio Web 应用程序模板可以配置为使用 Azure AD B2C 租户进
 
 ![登录到应用](./azure-ad-b2c/_static/signin.png)
 
-浏览器将重定向到 Azure AD B2C 租户。 使用现有帐户登录 （如果已创建一个测试策略） 或选择**立即注册**创建新帐户。 **忘记了密码？**链接用于重置忘记了的密码。
+浏览器将重定向到 Azure AD B2C 租户。 使用现有帐户登录 （如果已创建一个测试策略） 或选择**立即注册**创建新帐户。 **忘记了密码？** 链接用于重置忘记了的密码。
 
 ![Azure AD B2C 登录](./azure-ad-b2c/_static/b2csts.png)
 

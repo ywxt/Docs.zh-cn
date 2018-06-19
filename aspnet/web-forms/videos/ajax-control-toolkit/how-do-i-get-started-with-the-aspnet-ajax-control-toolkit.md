@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892265"
 ---
 <a name="how-do-i-get-started-with-the-aspnet-ajax-control-toolkit"></a>[如何:]开始使用 ASP.NET AJAX 控件工具包？
 ====================

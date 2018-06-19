@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30076628"
 ---
 # <a name="view-based-authorization-in-aspnet-core-mvc"></a>ASP.NET 核心 mvc 视图基于授权
 
@@ -24,7 +25,7 @@ ms.lasthandoff: 03/22/2018
 @inject IAuthorizationService AuthorizationService
 ```
 
-如果希望每个视图中的授权服务，将放置`@inject`指令插入*_ViewImports.cshtml*文件*视图*目录。 有关详细信息，请参阅[视图中的依赖关系注入](xref:mvc/views/dependency-injection)。
+如果希望每个视图中的授权服务，将放置`@inject`指令插入 *_ViewImports.cshtml*文件*视图*目录。 有关详细信息，请参阅[视图中的依赖关系注入](xref:mvc/views/dependency-injection)。
 
 使用插入的授权服务来调用`AuthorizeAsync`中完全相同的方式将检查期间[基于资源的授权](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):
 
@@ -75,4 +76,4 @@ ms.lasthandoff: 03/22/2018
 在前面的代码中，该模型作为资源应采取的策略评估传递纳入考虑范围。
 
 > [!WARNING]
-> 不要依赖于与唯一的授权检查的应用程序的 UI 元素的切换可见性。 隐藏的 UI 元素可能无法完全阻止访问到其关联的控制器操作。 例如，考虑前面的代码段中的按钮。 用户可以调用`Edit`操作方法如果他或她知道的相对资源 URL 是*/Document/Edit/1*。 为此，`Edit`操作方法应执行其自己的授权检查。
+> 不要依赖于与唯一的授权检查的应用程序的 UI 元素的切换可见性。 隐藏的 UI 元素可能无法完全阻止访问到其关联的控制器操作。 例如，考虑前面的代码段中的按钮。 用户可以调用`Edit`操作方法如果他或她知道的相对资源 URL 是 */Document/Edit/1*。 为此，`Edit`操作方法应执行其自己的授权检查。

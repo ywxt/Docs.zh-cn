@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892090"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 迁移到 SQL Server-10 12
 ====================
@@ -108,7 +109,7 @@ Contoso 大学应用程序具有两个 SQL Server Compact 数据库： 成员资
 
 打开**项目属性**窗口，然后选择**打包/发布 SQL**选项卡。
 
-请确保**活动 （发行版）**或**版本**中选择**配置**下拉列表。
+请确保**活动 （发行版）** 或**版本**中选择**配置**下拉列表。
 
 单击**启用此页**。
 
@@ -297,7 +298,7 @@ Visual Studio 部署应用程序，并在测试环境中打开浏览器向该站
 
 现在你已准备好设置中的数据库部署设置**打包/发布 SQL**选项卡上，如你此前为测试环境。
 
-打开**项目属性**窗口中，选择**打包/发布 SQL**选项卡上，并确保**活动 （发行版）**或**版本**是在所选**配置**下拉列表。
+打开**项目属性**窗口中，选择**打包/发布 SQL**选项卡上，并确保**活动 （发行版）** 或**版本**是在所选**配置**下拉列表。
 
 在配置每个数据库的部署设置时，你的生产和测试环境所执行的操作的主要区别是你如何配置连接字符串中。 为测试环境中输入不同的目标数据库连接字符串，但对于生产环境目标连接字符串将为这两个数据库相同。 这是因为这两个数据库部署到生产中的一个数据库。
 
@@ -434,7 +435,7 @@ Code First 迁移应用初始迁移，创建数据库，然后将应用 AddBirth
 
 你不再需要的文件和已包含至 SQL Server Compact 的 NuGet 包。 如果你想 （此步骤不需要），你可以清理不需要的文件和引用。
 
-在**解决方案资源管理器**，删除*.sdf*文件从*应用\_数据*文件夹和*amd64*和*x86*文件夹从*bin*文件夹。
+在**解决方案资源管理器**，删除 *.sdf*文件从*应用\_数据*文件夹和*amd64*和*x86*文件夹从*bin*文件夹。
 
 在**解决方案资源管理器**，右键单击该解决方案 （不是一种项目），，然后单击**管理解决方案的 NuGet 包**。
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890078"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 部署 SQL Server Compact 数据库-2 12
 ====================
@@ -151,7 +152,7 @@ NuGet 包安装通常将负责部署与应用程序的此软件所需的所有�
 
 按 CTRL-SHIFT-B 生成项目。
 
-下一步是创建`DbMigration`类初始迁移。 你希望此迁移，以创建新的数据库，因此你必须删除已存在的数据库。 SQL Server Compact 数据库包含在*.sdf*文件中*应用\_数据*文件夹。 在**解决方案资源管理器**，展开*应用\_数据*在 ContosoUniversity 项目中以查看两个 SQL Server Compact 数据库，这由*.sdf*文件。
+下一步是创建`DbMigration`类初始迁移。 你希望此迁移，以创建新的数据库，因此你必须删除已存在的数据库。 SQL Server Compact 数据库包含在 *.sdf*文件中*应用\_数据*文件夹。 在**解决方案资源管理器**，展开*应用\_数据*在 ContosoUniversity 项目中以查看两个 SQL Server Compact 数据库，这由 *.sdf*文件。
 
 右键单击*School.sdf*文件并单击**删除**。
 
@@ -229,7 +230,7 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和窗体身份验证
 
 重命名*School.sdf*到*学校 Dev.sdf*。
 
-当你不想使用的 Visual Studio 中运行应用程序*-Prod*版本的数据库文件中，你想要使用*-开发人员*版本。 因此你必须更改 Web.config 文件中的连接字符串，以便它们指向*-开发人员*版本与数据库。 （你尚未创建的 School Prod.sdf 文件，但这是确定，因为 Code First 将创建该数据库有运行你的应用程序的生产第一个时间。）
+当你不想使用的 Visual Studio 中运行应用程序 *-Prod*版本的数据库文件中，你想要使用 *-开发人员*版本。 因此你必须更改 Web.config 文件中的连接字符串，以便它们指向 *-开发人员*版本与数据库。 （你尚未创建的 School Prod.sdf 文件，但这是确定，因为 Code First 将创建该数据库有运行你的应用程序的生产第一个时间。）
 
 打开应用程序 Web.config 文件，并找到连接字符串：
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "28033991"
 ---
 <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>在 ASP.NET MVC 和 Web Pages XSRF/CSRF 防护
 ====================
@@ -86,7 +87,7 @@ ANTI-XSRF 令牌的负载进行加密和签名，以便使用工具来检查令�
 若要生成的 ANTI-XSRF 令牌，请调用[ @Html.AntiForgeryToken ](https://msdn.microsoft.com/library/dd470175.aspx)从的 MVC 视图的方法或@AntiForgery.GetHtml从 Razor 页 （)。 然后，运行时将执行以下步骤：
 
 1. 如果当前 HTTP 请求已包含的 ANTI-XSRF 会话令牌 (ANTI-XSRF cookie \_ \_RequestVerificationToken)，从其提取的安全令牌。 如果 HTTP 请求不包含 ANTI-XSRF 会话令牌或安全令牌提取失败，将生成新的随机的 ANTI-XSRF 令牌。
-2. ANTI-XSRF 字段标记为生成使用从上面的步骤 (1) 和标识的当前登录的用户的安全令牌。 (有关确定用户标识的详细信息，请参阅**[具有特殊的支持方案](#_Scenarios_with_special)**下面一节。)此外，如果[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/jj158328(v=vs.111).aspx)是配置，运行时将调用其[GetAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx)方法并将返回的字符串包括在字段标记。 (请参阅**[配置和可扩展性](#_Configuration_and_extensibility)**部分以了解更多信息。)
+2. ANTI-XSRF 字段标记为生成使用从上面的步骤 (1) 和标识的当前登录的用户的安全令牌。 (有关确定用户标识的详细信息，请参阅**[具有特殊的支持方案](#_Scenarios_with_special)** 下面一节。)此外，如果[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/jj158328(v=vs.111).aspx)是配置，运行时将调用其[GetAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx)方法并将返回的字符串包括在字段标记。 (请参阅**[配置和可扩展性](#_Configuration_and_extensibility)** 部分以了解更多信息。)
 3. 如果在步骤 (1) 中生成新的 ANTI-XSRF 令牌，新的会话令牌将创建包含它，并且将添加到出站 HTTP cookie 集合。 步骤 (2) 中的字段令牌将包装在`<input type="hidden" />`元素，并且此 HTML 标记将是的返回值`Html.AntiForgeryToken()`或`AntiForgery.GetHtml()`。
 
 ## <a name="validating-the-tokens"></a>验证令牌
@@ -108,9 +109,9 @@ ANTI-XSRF 令牌的负载进行加密和签名，以便使用工具来检查令�
 - 会话令牌和字段令牌已交换。
 - 会话令牌和字段标记包含不匹配的安全令牌。
 - 字段标记中嵌入用户名与当前登录的用户的用户名不匹配。
-- *[IAntiForgeryAdditionalDataProvider.ValidateAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.validateadditionaldata(v=vs.111).aspx)*方法返回*false*。
+- *[IAntiForgeryAdditionalDataProvider.ValidateAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.validateadditionaldata(v=vs.111).aspx)* 方法返回*false*。
 
-ANTI-XSRF 设施可能还执行生成令牌或验证过程的其他检查，这些检查期间出现的故障可能会导致引发异常。 请参阅[WIF / ACS / 基于声明的身份验证](#_WIF_ACS)和**[配置和可扩展性](#_Configuration_and_extensibility)**部分以获取更多信息。
+ANTI-XSRF 设施可能还执行生成令牌或验证过程的其他检查，这些检查期间出现的故障可能会导致引发异常。 请参阅[WIF / ACS / 基于声明的身份验证](#_WIF_ACS)和**[配置和可扩展性](#_Configuration_and_extensibility)** 部分以获取更多信息。
 
 <a id="_Scenarios_with_special"></a>
 
@@ -142,7 +143,7 @@ ANTI-XSRF 系统包含额外支持匿名用户，其中"匿名"指用户其中*I
 - `Microsoft.IdentityModel.Claims.IClaimsIdentity, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35` （有关 WIF SDK。)
 - `System.Security.Claims.ClaimsIdentity` （用于.NET 4.5)。
 
-如果这些类型存在，并且当前用户的*IIIIdentity*实现或子类其中一种类型，（标识提供程序，名称标识符），将使用的 ANTI-XSRF 设施代替用户名生成时的元组和验证令牌。 如果存在任何此类元组，不则请求将失败并出错到开发人员描述如何配置 ANTI-XSRF 系统，以便了解中使用的特定基于声明的身份验证机制。 请参阅**[配置和可扩展性](#_Configuration_and_extensibility)**部分以了解更多信息。
+如果这些类型存在，并且当前用户的*IIIIdentity*实现或子类其中一种类型，（标识提供程序，名称标识符），将使用的 ANTI-XSRF 设施代替用户名生成时的元组和验证令牌。 如果存在任何此类元组，不则请求将失败并出错到开发人员描述如何配置 ANTI-XSRF 系统，以便了解中使用的特定基于声明的身份验证机制。 请参阅**[配置和可扩展性](#_Configuration_and_extensibility)** 部分以了解更多信息。
 
 ### <a name="oauth--openid-authentication"></a>OAuth / OpenID 身份验证
 
@@ -175,7 +176,7 @@ ANTI-XSRF 系统包含额外支持匿名用户，其中"匿名"指用户其中*I
 
 ### <a name="iantiforgeryadditionaldataprovider"></a>IAntiForgeryAdditionalDataProvider
 
-*[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)*类型允许开发人员通过往返中每个令牌的其他数据扩展的 ANTI-XSRF 系统的行为。 *GetAdditionalData*每次调用方法生成的字段标记，和在生成的标记内嵌入的返回值。 实施者无法通过此方法返回时间戳、 一个 nonce 或她希望的任何其他值。
+*[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)* 类型允许开发人员通过往返中每个令牌的其他数据扩展的 ANTI-XSRF 系统的行为。 *GetAdditionalData*每次调用方法生成的字段标记，和在生成的标记内嵌入的返回值。 实施者无法通过此方法返回时间戳、 一个 nonce 或她希望的任何其他值。
 
 同样， *ValidateAdditionalData*每次调用方法将验证字段标记，并且已在令牌内嵌入的"其他数据"字符串传递给方法。 验证例程无法实现超时 （通过检查当前时间，但创建令牌时存储的时间）、 nonce 检查例程，或任何其他所需的逻辑。
 

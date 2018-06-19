@@ -1,22 +1,23 @@
 ---
 uid: whitepapers/index
-title: "白皮书 |Microsoft 文档"
+title: 白皮书 |Microsoft 文档
 author: rick-anderson
-description: "在此页上将找到白皮书来帮助你安装和配置 ASP.NET，并帮助您编写安全的、 快速且灵活的 ASP.NET 应用程序。"
+description: 在此页上将找到白皮书来帮助你安装和配置 ASP.NET，并帮助您编写安全的、 快速且灵活的 ASP.NET 应用程序。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/15/2011
 ms.topic: article
 ms.assetid: 3824e2d7-446f-406b-9c8b-5a1634359a78
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
-msc.legacyurl: 
+msc.legacyurl: ''
 msc.type: content
 ms.openlocfilehash: 5d335017a28f3dcbb8332b5361a2b068bddd2cce
 ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28883798"
 ---
 <a name="whitepapers"></a>白皮书
 ====================

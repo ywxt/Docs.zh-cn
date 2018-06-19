@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890692"
 ---
 <a name="efficiently-paging-through-large-amounts-of-data-vb"></a>有效地分页大量的数据 (VB)
 ====================
@@ -163,7 +164,7 @@ DAL s`TotalNumberOfProducts`方法返回为 null 的整数; 但是，我们已�
 [!code-html[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample6.html)]
 
 > [!NOTE]
-> 在本教程中，我们将会看到在更高版本上*`StartRowIndex`*提供 ObjectDataSource 编制了索引从零开始，启动而`ROW_NUMBER()`SQL Server 2005 返回值索引从 1 开始。 因此，`WHERE`子句将返回这些记录其中`PriceRank`完全大于*`StartRowIndex`*且小于或等于*`StartRowIndex`*  + *`MaximumRows`*.
+> 在本教程中，我们将会看到在更高版本上*`StartRowIndex`* 提供 ObjectDataSource 编制了索引从零开始，启动而`ROW_NUMBER()`SQL Server 2005 返回值索引从 1 开始。 因此，`WHERE`子句将返回这些记录其中`PriceRank`完全大于*`StartRowIndex`* 且小于或等于*`StartRowIndex`*  + *`MaximumRows`*.
 
 
 现在我们已讨论如何`ROW_NUMBER()`可以是用于检索给定的开始的行索引和最大行数值数据的特定页，我们现在需要实现此逻辑作为方法的 DAL 和 BLL。
@@ -275,9 +276,9 @@ DAL s`TotalNumberOfProducts`方法返回为 null 的整数; 但是，我们已�
 
 若要解决此问题，我们需要配置对象数据源以使用自定义分页。 这可以通过以下步骤完成：
 
-1. **设置 ObjectDataSource s`EnablePaging`属性`true`**这将指示必须将传递给 ObjectDataSource`SelectMethod`两个其他参数： 一个用于指定开始的行索引 ([ `StartRowIndexParameterName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.startrowindexparametername.aspx))，，另一个用于指定最大行数 ([`MaximumRowsParameterName`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.maximumrowsparametername.aspx))。
+1. **设置 ObjectDataSource s`EnablePaging`属性`true`** 这将指示必须将传递给 ObjectDataSource`SelectMethod`两个其他参数： 一个用于指定开始的行索引 ([ `StartRowIndexParameterName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.startrowindexparametername.aspx))，，另一个用于指定最大行数 ([`MaximumRowsParameterName`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.maximumrowsparametername.aspx))。
 2. **设置 ObjectDataSource s`StartRowIndexParameterName`和`MaximumRowsParameterName`属性相应地**`StartRowIndexParameterName`和`MaximumRowsParameterName`属性指示传入的输入参数的名称`SelectMethod`用于自定义分页用途。 默认情况下，这些参数名称是`startIndexRow`和`maximumRows`，这是正因如此，在创建时`GetProductsPaged`方法在 BLL，我使用了这些值为输入参数。 如果选择了使用不同的参数名称 BLL s`GetProductsPaged`如方法`startIndex`和`maxRows`，对于你需要的示例设置 ObjectDataSource s`StartRowIndexParameterName`和`MaximumRowsParameterName`属性相应地 （例如为 startIndex`StartRowIndexParameterName`和最大行数为`MaximumRowsParameterName`)。
-3. **设置 ObjectDataSource s [ `SelectCountMethod`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selectcountmethod(VS.80).aspx)总数量的记录正在分页通过返回的方法的名称 (`TotalNumberOfProducts`)**回想一下，`ProductsBLL`类的`TotalNumberOfProducts`方法返回的记录正在通过寻呼发送通过使用执行 DAL 方法总数`SELECT COUNT(*) FROM Products`查询。 为正确呈现的分页界面情况下，此信息所需的对象数据源。
+3. **设置 ObjectDataSource s [ `SelectCountMethod`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selectcountmethod(VS.80).aspx)总数量的记录正在分页通过返回的方法的名称 (`TotalNumberOfProducts`)** 回想一下，`ProductsBLL`类的`TotalNumberOfProducts`方法返回的记录正在通过寻呼发送通过使用执行 DAL 方法总数`SELECT COUNT(*) FROM Products`查询。 为正确呈现的分页界面情况下，此信息所需的对象数据源。
 4. **删除`startRowIndex`和`maximumRows``<asp:Parameter>`从 ObjectDataSource s 声明性标记元素**配置时通过向导 ObjectDataSource，Visual Studio 自动添加两个`<asp:Parameter>`元素有关`GetProductsPaged`方法 s 输入参数。 通过设置`EnablePaging`到`true`，将自动传递这些参数; 如果他们还出现在声明性语法，ObjectDataSource 将尝试传递*四个*参数`GetProductsPaged`方法和两个参数`TotalNumberOfProducts`方法。 如果你忘记了以删除这些`<asp:Parameter>`元素，在访问通过浏览器，您将收到错误消息的页时： *ObjectDataSource ObjectDataSource1 找不到非泛型方法 TotalNumberOfProducts 具有参数： 值，值*。
 
 进行这些更改后，ObjectDataSource s 声明性语法应如下所示：

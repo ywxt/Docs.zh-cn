@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/create-a-data-driven-dynamic-web-page
-title: "创建数据驱动动态网页上 |Microsoft 文档"
+title: 创建数据驱动动态网页上 |Microsoft 文档
 author: rick-anderson
-description: "第 5 部分是有关数据，其中你将了解如何在 web 页中，使用的数据库并使其更动态的。"
+description: 第 5 部分是有关数据，其中你将了解如何在 web 页中，使用的数据库并使其更动态的。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28882511"
 ---
 <a name="create-a-data-driven-dynamic-web-page"></a>创建数据驱动动态网页上
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893857"
 ---
 <a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET 网站页 (Razor) 中显示地图
 ====================
@@ -84,7 +85,7 @@ ms.lasthandoff: 04/06/2018
 
     请注意页上的以下功能：
 
-    - `<script>`中的元素`<head>`元素。 在示例中，`<script>`元素引用*jquery 1.6.4.min.js*文件，它是 jQuery 库，版本 1.6.4 的缩减 （压缩） 版本。 请注意引用假定*.js*文件位于*脚本*网站文件夹。 
+    - `<script>`中的元素`<head>`元素。 在示例中，`<script>`元素引用*jquery 1.6.4.min.js*文件，它是 jQuery 库，版本 1.6.4 的缩减 （压缩） 版本。 请注意引用假定 *.js*文件位于*脚本*网站文件夹。 
 
         > [!NOTE]
         > 如果你正在使用 jQuery 库的不同版本，只需确保的你要指向该版本正确。

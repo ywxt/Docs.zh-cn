@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899377"
 ---
 <a name="the-top-features-in-aspnet-web-pages-2"></a>在 ASP.NET Web Pages 2 靠前的特征
 ====================
@@ -164,7 +165,7 @@ by [Microsoft](https://github.com/microsoft)
 下面的示例演示验证窗体上的用户输入的页。 若要运行和测试此验证代码，请执行此操作：
 
 1. 创建新的网站使用包括 WebMatrix 2 站点模板之一*脚本*文件夹，如**入门站点**模板。
-2. 在新的站点中，创建一个新*.cshtml*页，然后将页面内容替换为下面的代码。
+2. 在新的站点中，创建一个新 *.cshtml*页，然后将页面内容替换为下面的代码。
 3. 在浏览器中运行页面。 输入有效和无效的值，以查看对验证的影响。 例如，将必填的字段留空，或输入的字母**信用额度**字段。
 
 
@@ -217,7 +218,7 @@ by [Microsoft](https://github.com/microsoft)
 3. 在*脚本*文件夹中，创建名为的文件*Test.js*，复制*Test.js*内容到该示例中，并保存该文件...
 4. 创建名为的文件夹*应用\_代码*站点中。
 5. 在*应用\_代码*文件夹中，创建名为的文件*Helpers.cshtml*、 执行它，请复制代码示例并将其保存在名为的文件夹中*应用\_代码*的根文件夹中。
-6. 在站点的根文件夹中，创建名为的文件 *\_SiteLayout.cshtml，*将本示例复制到其中，并保存该文件。
+6. 在站点的根文件夹中，创建名为的文件 *\_SiteLayout.cshtml，* 将本示例复制到其中，并保存该文件。
 7. 在网站根下创建名为的文件*ContentPage.cshtml*、 添加示例代码中，并将其保存。
 8. 运行*内容页*在浏览器。 传递给字符串`MakeNote`帮助器呈现为装箱的注意。
 9. 将鼠标指针移注意。 该脚本暂时增大注意的字号。
@@ -271,13 +272,13 @@ Web Pages 2 提供有关成员身份和身份验证的增强的选项。 主要�
 1. 在你的网站，编辑 *\_AppStart.cshtml*页上，在 Razor 代码块中的调用后添加以下两行代码`WebSecurity.InitializeDatabaseConnection`方法。 此代码使 Google 和 Yahoo OpenID 提供程序。 
 
     [!code-css[Main](top-features-in-web-pages-2/samples/sample12.css)]
-2. 在*~/Account/Login.cshtml*页上，从以下删除注释`<fieldset>`块的结尾处页面的标记。 若要取消注释的代码，删除`@*`前面或后面的字符`<fieldset>`块。 生成的代码块如下所示：
+2. 在 *~/Account/Login.cshtml*页上，从以下删除注释`<fieldset>`块的结尾处页面的标记。 若要取消注释的代码，删除`@*`前面或后面的字符`<fieldset>`块。 生成的代码块如下所示：
 
     [!code-html[Main](top-features-in-web-pages-2/samples/sample13.html)]
-3. 添加`<input>`的 Google 或 Yahoo 提供程序的元素`<fieldset>`组中*~/Account/Login.cshtml*页。 已更新`<fieldset>`组具有`<input>`如以下示例中为 Google 和 Yahoo 如下所示的元素： 
+3. 添加`<input>`的 Google 或 Yahoo 提供程序的元素`<fieldset>`组中 *~/Account/Login.cshtml*页。 已更新`<fieldset>`组具有`<input>`如以下示例中为 Google 和 Yahoo 如下所示的元素： 
 
     [!code-html[Main](top-features-in-web-pages-2/samples/sample14.html)]
-4. 在*~/Account/AssociateServiceAccount.cshtml*页上，添加`<input>`Google 或 Yahoo 到元素`<fieldset>`组文件末尾附近。 你可以复制相同`<input>`刚添加到的元素`<fieldset>`主题中*~/Account/Login.cshtml*页。 
+4. 在 *~/Account/AssociateServiceAccount.cshtml*页上，添加`<input>`Google 或 Yahoo 到元素`<fieldset>`组文件末尾附近。 你可以复制相同`<input>`刚添加到的元素`<fieldset>`主题中 *~/Account/Login.cshtml*页。 
 
     *~/Account/AssociateServiceAccount.cshtml*可以使用入门站点模板中的页，如果你想要创建在其的用户可以将其他站点中的多个登录名关联与你的网站上的单个帐户页。
 
@@ -323,7 +324,7 @@ Web Pages 2 提供有关成员身份和身份验证的增强的选项。 主要�
 2. 复制**应用程序 ID**从 Facebook 应用程序的值作为值`consumerKey`（引号） 内的参数。
 3. 复制**应用程序密钥**值从 Facebook 应用程序作为`consumerSecret`参数值。
 4. 保存并关闭文件。
-5. 编辑*~/Account/Login.cshtml*页上，删除从注释`<fieldset>`页末尾附近的块。 若要取消注释的代码，删除`@*`前面或后面的字符`<fieldset>`块。 注释的代码块中删除类似于以下内容： 
+5. 编辑 *~/Account/Login.cshtml*页上，删除从注释`<fieldset>`页末尾附近的块。 若要取消注释的代码，删除`@*`前面或后面的字符`<fieldset>`块。 注释的代码块中删除类似于以下内容： 
 
     [!code-html[Main](top-features-in-web-pages-2/samples/sample16.html)]
 6. 保存并关闭文件。
@@ -371,7 +372,7 @@ Web Pages 2 提供有关成员身份和身份验证的增强的选项。 主要�
 2. 复制**使用者密钥**值形式的值的 Twitter 应用程序从`consumerKey`（引号） 内的参数。
 3. 复制**使用者机密**值形式的值的 Twitter 应用程序从`consumerSecret`参数。
 4. 保存并关闭文件。
-5. 编辑*~/Account/Login.cshtml*页上，删除从注释`<fieldset>`页末尾附近的块。 若要取消注释的代码，删除`@*`前面或后面的字符`<fieldset>`块。 注释的代码块中删除类似于以下内容： 
+5. 编辑 *~/Account/Login.cshtml*页上，删除从注释`<fieldset>`页末尾附近的块。 若要取消注释的代码，删除`@*`前面或后面的字符`<fieldset>`块。 注释的代码块中删除类似于以下内容： 
 
     [!code-html[Main](top-features-in-web-pages-2/samples/sample18.html)]
 6. 保存并关闭文件。

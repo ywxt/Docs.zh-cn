@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891976"
 ---
 <a name="storing-additional-user-information-vb"></a>存储的其他用户信息 (VB)
 ====================
@@ -131,7 +132,7 @@ ASP。NET 的成员资格框架提供了灵活的界面，用于管理用户。 
 
 有各种方法来允许当前登录的用户查看和编辑其主镇、 主页上和签名信息。 我们无法使用手动创建用户界面文本框和标签控件，或者我们可以使用一个 Web 控件，如说明如何控制的数据。 若要执行数据库`SELECT`和`UPDATE`我们可以编写 ADO.NET 的语句中我们的页面的代码隐藏类的代码，或者，或者，使用声明性方法使用 SqlDataSource。 理想情况下我们的应用程序将包含分层体系结构，我们无法调用以编程方式从页面的代码隐藏类或以声明方式通过 ObjectDataSource 控件。
 
-由于本系列教程着重于窗体身份验证、 授权、 用户帐户和角色，不会详细讨论了这些不同的数据访问选项或为什么分层体系结构的效果好于直接执行 SQL 语句从 ASP.NET 页中。 我要使用说明和 SqlDataSource – 最快和最简单选项 – 指导，但所述的概念可以肯定是可应用于备用的 Web 控件和数据访问逻辑。 有关使用 ASP.NET 中的数据的详细信息，请参阅我*[在 ASP.NET 2.0 中使用数据](../../data-access/index.md)*教程系列。
+由于本系列教程着重于窗体身份验证、 授权、 用户帐户和角色，不会详细讨论了这些不同的数据访问选项或为什么分层体系结构的效果好于直接执行 SQL 语句从 ASP.NET 页中。 我要使用说明和 SqlDataSource – 最快和最简单选项 – 指导，但所述的概念可以肯定是可应用于备用的 Web 控件和数据访问逻辑。 有关使用 ASP.NET 中的数据的详细信息，请参阅我*[在 ASP.NET 2.0 中使用数据](../../data-access/index.md)* 教程系列。
 
 打开`AdditionalUserInfo.aspx`页面`Membership`文件夹并将说明如何控件添加到页上，将其 ID 属性设置为`UserProfile`和清除其`Width`和`Height`属性。 展开说明的智能标记，并选择要绑定到一个新的数据源控件。 这将启动数据源配置向导 （请参阅图 7）。 第一步会要求您指定的数据源类型。 由于我们将直接连接到`SecurityTutorials`数据库中，选择数据库图标指定`ID`作为`UserProfileDataSource`。
 

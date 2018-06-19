@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878342"
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>在实验室上处理： 容易维护的 Azure 网站： 管理更改和缩放
 ====================
@@ -170,12 +171,12 @@ ms.lasthandoff: 04/06/2018
     ![在 SQL Server 对象资源管理器中打开](maintainable-azure-websites-managing-change-and-scale/_static/image4.png "在 SQL Server 对象资源管理器中打开")
 
     *在 SQL Server 对象资源管理器中打开*
-9. 在**SQL Server 对象资源管理器**窗口中，右键单击连接到 LocalDB 实例**SQL Server**节点并选择**添加 SQL Server...**选项。
+9. 在**SQL Server 对象资源管理器**窗口中，右键单击连接到 LocalDB 实例**SQL Server**节点并选择**添加 SQL Server...** 选项。
 
     ![添加 SQL Server 实例](maintainable-azure-websites-managing-change-and-scale/_static/image5.png "添加 SQL Server 实例")
 
     *将 SQL Server 实例添加到 SQL Server 对象资源管理器*
-10. 设置**服务器名称**到*(localdb) \v11.0*并使**Windows 身份验证**作为身份验证模式。 单击**连接**以继续。
+10. 设置**服务器名称**到 *(localdb) \v11.0*并使**Windows 身份验证**作为身份验证模式。 单击**连接**以继续。
 
     ![连接到 LocalDB](maintainable-azure-websites-managing-change-and-scale/_static/image6.png "连接到 LocalDB")
 
@@ -274,7 +275,7 @@ ms.lasthandoff: 04/06/2018
     ![创建新的 web 应用程序使用自定义创建](maintainable-azure-websites-managing-change-and-scale/_static/image15.png "创建使用自定义创建新的 web 应用程序")
 
     *创建使用自定义创建新的 web 应用程序*
-4. 在**新建网站-自定义创建**对话框框中，提供可用**URL** (例如*专家测验*) 中, 选择一个位置**区域**下拉列表，然后选择**创建新的 SQL 数据库**中**数据库**下拉列表。 最后，选择**--从源代码管理发布**复选框，然后单击**下一步**。
+4. 在**新建网站-自定义创建**对话框框中，提供可用**URL** (例如*专家测验*) 中, 选择一个位置**区域**下拉列表，然后选择**创建新的 SQL 数据库**中**数据库**下拉列表。 最后，选择 **--从源代码管理发布**复选框，然后单击**下一步**。
 
     ![自定义新的 web 应用](maintainable-azure-websites-managing-change-and-scale/_static/image16.png)
 
@@ -359,7 +360,7 @@ ms.lasthandoff: 04/06/2018
     *允许的 IP 地址*
 8. 单击**保存**要完成该步骤的页的底部。
 9. 切换回 Visual Studio。
-10. 在**程序包管理器控制台**，执行以下命令将*[您的连接字符串]*占位符替换为从 Azure 复制的连接字符串
+10. 在**程序包管理器控制台**，执行以下命令将 *[您的连接字符串]* 占位符替换为从 Azure 复制的连接字符串
 
     [!code-powershell[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample10.ps1)]
 
@@ -400,7 +401,7 @@ ms.lasthandoff: 04/06/2018
     ![确认暂存发布](maintainable-azure-websites-managing-change-and-scale/_static/image35.png "单击是以启用暂存的发布")
 
     *确认过渡的发布*
-6. 在 web apps 列表中，展开您的 web 应用名称以显示过渡站点槽左侧的标记。 它具有名称的 web 应用跟***（过渡）***。 单击要转到管理页的过渡站点。
+6. 在 web apps 列表中，展开您的 web 应用名称以显示过渡站点槽左侧的标记。 它具有名称的 web 应用跟 ***（过渡）***。 单击要转到管理页的过渡站点。
 
     ![导航到过渡 web 应用](maintainable-azure-websites-managing-change-and-scale/_static/image36.png "导航到过渡 web 应用")
 
@@ -410,7 +411,7 @@ ms.lasthandoff: 04/06/2018
     ![复制 Git URL 值](maintainable-azure-websites-managing-change-and-scale/_static/image37.png)
 
     *复制 Git URL 值*
-8. 打开一个新**Git Bash**控制台，然后执行以下命令。 更新*[您的应用程序的路径]*占位符替换为的路径**GeekQuiz**解决方案，位于**Source\Ex1 DeployingWebSiteToStaging\Begin**文件夹此实验室中。
+8. 打开一个新**Git Bash**控制台，然后执行以下命令。 更新 *[您的应用程序的路径]* 占位符替换为的路径**GeekQuiz**解决方案，位于**Source\Ex1 DeployingWebSiteToStaging\Begin**文件夹此实验室中。
 
     [!code-console[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample11.cmd)]
 
@@ -442,7 +443,7 @@ ms.lasthandoff: 04/06/2018
 14. 如果已成功部署的应用，你将看到专家 Quiz 登录页。
 
     > [!NOTE]
-    > 部署的应用程序的地址 URL 包含名称的 web 应用跟*-暂存*。
+    > 部署的应用程序的地址 URL 包含名称的 web 应用跟 *-暂存*。
 
     ![在过渡环境中运行的应用程序](maintainable-azure-websites-managing-change-and-scale/_static/image42.png)
 
@@ -526,7 +527,7 @@ ms.lasthandoff: 04/06/2018
 你现在将推送到存储库，将触发新的部署到生产环境中前一项任务所做的更改。 然后，你将已进行故障诊断问题使用**F12 开发工具**提供由 Internet Explorer，然后执行回滚到以前的部署从 Azure 管理门户。
 
 1. 打开一个新**Git Bash**控制台部署到 Azure App Service 更新的应用程序。
-2. 执行以下命令以将更改推送到 Azure。 更新*[您的应用程序的路径]*占位符替换为的路径**GeekQuiz**解决方案。 系统将提示您输入部署密码。
+2. 执行以下命令以将更改推送到 Azure。 更新 *[您的应用程序的路径]* 占位符替换为的路径**GeekQuiz**解决方案。 系统将提示您输入部署密码。
 
     [!code-console[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample15.cmd)]
 
@@ -687,7 +688,7 @@ ms.lasthandoff: 04/06/2018
 
 在此任务中，您将配置**GeekQuiz**解决方案来使用该映像上载到 Azure Blob 存储 （而不是位于在 web 应用中的映像） 通过添加在 ASP.NET URL 重写规则**web.config**文件。
 
-1. 在 Visual Studio 中，打开**Web.config**文件**GeekQuiz**项目，然后找到**&lt;system.webServer&gt;**元素。
+1. 在 Visual Studio 中，打开**Web.config**文件**GeekQuiz**项目，然后找到**&lt;system.webServer&gt;** 元素。
 2. 添加以下代码以添加一个 URL 重写规则，更新将占位符替换为你的存储帐户名称。
 
     (代码段- *WebSitesInProduction-Ex4-UrlRewriteRule*)
@@ -698,7 +699,7 @@ ms.lasthandoff: 04/06/2018
     > URL 重写是拦截传入 Web 请求，并将请求重定向到不同的资源的过程。 URL 重写规则告知重写引擎请求时需要重定向，并在其中应它们重定向。 重写规则两个字符串组成： 要在请求 URL 中查找的模式 （通常情况下，使用正则表达式），并找到要替换的模式，如果的字符串。 有关详细信息，请参阅[URL 重写在 ASP.NET 中](https://msdn.microsoft.com/library/ms972974.aspx)。
 3. 按**CTRL + S**以保存所做的更改。
 4. 打开一个新**Git Bash**控制台部署到 Azure App Service 更新的应用程序。
-5. 执行以下命令以将更改推送到 Azure。 更新*[您的应用程序的路径]*占位符替换为的路径**GeekQuiz**解决方案。 系统将提示您输入部署密码。
+5. 执行以下命令以将更改推送到 Azure。 更新 *[您的应用程序的路径]* 占位符替换为的路径**GeekQuiz**解决方案。 系统将提示您输入部署密码。
 
     [!code-console[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample18.cmd)]
 
@@ -722,7 +723,7 @@ ms.lasthandoff: 04/06/2018
 
     *启动网络录制*
 3. 按**CTRL + F5**刷新网页。
-4. 一旦页面完成加载，你应看到的 HTTP 请求**/img/logo-big.png**带有 HTTP URL **301**结果 （重定向） 和另一请求`http://[YOUR-STORAGE-ACCOUNT].blob.core.windows.net/images/logo-big.png`URL 使用 HTTP **200**结果。
+4. 一旦页面完成加载，你应看到的 HTTP 请求 **/img/logo-big.png**带有 HTTP URL **301**结果 （重定向） 和另一请求`http://[YOUR-STORAGE-ACCOUNT].blob.core.windows.net/images/logo-big.png`URL 使用 HTTP **200**结果。
 
     ![验证 URL 重定向](maintainable-azure-websites-managing-change-and-scale/_static/image76.png "开发人员工具中显示重定向")
 
@@ -770,12 +771,12 @@ ms.lasthandoff: 04/06/2018
 
 现在，**自动缩放**已配置，你将创建**Web 性能测试和负载测试项目**在 Visual Studio 生成你的 web 应用一些 CPU 负载。
 
-1. 打开**Visual Studio Ultimate 2013**和选择**文件 |新 |项目...**启动一个新的解决方案。
+1. 打开**Visual Studio Ultimate 2013**和选择**文件 |新 |项目...** 启动一个新的解决方案。
 
     ![创建新的项目](maintainable-azure-websites-managing-change-and-scale/_static/image79.png "创建新项目")
 
     *创建新项目*
-2. 在**新项目**对话框中，选择**Web 性能测试和负载测试项目**下**Visual C# |测试**选项卡。请确保**.NET Framework 4.5**是选择，将该项目命名*WebAndLoadTestProject*，选择**位置**单击**确定**。
+2. 在**新项目**对话框中，选择**Web 性能测试和负载测试项目**下**Visual C# |测试**选项卡。请确保 **.NET Framework 4.5**是选择，将该项目命名*WebAndLoadTestProject*，选择**位置**单击**确定**。
 
     ![创建新的 Web 和负载测试项目](maintainable-azure-websites-managing-change-and-scale/_static/image80.png "创建新的 Web 和负载测试项目")
 
@@ -798,7 +799,7 @@ ms.lasthandoff: 04/06/2018
 6. 在**添加条件规则和项循环**对话框中，选择**For 循环**规则和修改以下属性。
 
    1. **终止值：** 1000年
-   2. **上下文参数名称：**迭代器
+   2. **上下文参数名称：** 迭代器
    3. **增量值：** 1
 
       ![选择 For 循环规则并更新属性](maintainable-azure-websites-managing-change-and-scale/_static/image84.png "选择 For 循环规则并更新属性")
@@ -834,7 +835,7 @@ ms.lasthandoff: 04/06/2018
     ![选择测试组合模型](maintainable-azure-websites-managing-change-and-scale/_static/image90.png "选择测试组合模型")
 
     *选择测试组合模型*
-13. 在**测试组合模型**页上，单击**添加...**要添加到组合的测试。
+13. 在**测试组合模型**页上，单击**添加...** 要添加到组合的测试。
 
     ![向测试组合中添加测试](maintainable-azure-websites-managing-change-and-scale/_static/image91.png "向测试组合中添加测试")
 

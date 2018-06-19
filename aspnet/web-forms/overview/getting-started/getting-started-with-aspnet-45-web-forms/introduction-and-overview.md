@@ -17,6 +17,7 @@ ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/28/2018
+ms.locfileid: "32078601"
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>ASP.NET 4.5 Web 窗体和 Visual Studio 2013 入门
 ====================
@@ -168,7 +169,7 @@ PayPal 将确认你的帐户、 顺序和付款信息。
 
 ## <a name="download-the-sample-application"></a>下载示例应用程序
 
-安装必备项之后, 你就可以开始创建新的 Web 项目显示在本教程系列。 如果你想要进行**（可选)** 运行本系列教程创建示例应用程序，你可以从网站下载它 MSDN 示例。 此下载包含以下项目：
+安装必备项之后, 你就可以开始创建新的 Web 项目显示在本教程系列。 如果你想要进行 **（可选)** 运行本系列教程创建示例应用程序，你可以从网站下载它 MSDN 示例。 此下载包含以下项目：
 
 - 中的示例应用程序*WingtipToys*文件夹。
 - 用于创建示例应用程序中的资源*WingtipToys 资产*文件夹中的*WingtipToys*文件夹。

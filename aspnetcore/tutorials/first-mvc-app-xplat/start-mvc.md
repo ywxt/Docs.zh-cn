@@ -14,6 +14,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893555"
 ---
 # <a name="introduction-to-aspnet-core-mvc-on-macos-linux-or-windows"></a>macOS、Linux 或 Windows 上的 ASP.NET Core MVC 简介
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870682"
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>使用 ASP.NET MVC-第 1 部分中使用 HTML5 和 jQuery UI Datepicker 弹出日历
 ====================
@@ -57,7 +58,7 @@ ms.lasthandoff: 04/06/2018
 
 ### <a name="getting-started"></a>入门
 
-如果你还没有从的初学者项目的影片列表应用，将其使用以下链接下载：[下载](https://code.msdn.microsoft.com/Project/Download/FileDownload.aspx?https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800)。 然后在 Windows 资源管理器，右键单击*MvcMovie.zip*文件，然后选择**属性**。 在**MvcMovie.zip 属性**对话框中，选择**解除阻止**。 (取消阻止一条安全警告，当你尝试使用*.zip*已从 web 下载的文件。)
+如果你还没有从的初学者项目的影片列表应用，将其使用以下链接下载：[下载](https://code.msdn.microsoft.com/Project/Download/FileDownload.aspx?https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800)。 然后在 Windows 资源管理器，右键单击*MvcMovie.zip*文件，然后选择**属性**。 在**MvcMovie.zip 属性**对话框中，选择**解除阻止**。 (取消阻止一条安全警告，当你尝试使用 *.zip*已从 web 下载的文件。)
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image2.png)
 

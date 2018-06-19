@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891521"
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-vb"></a>DataList 或转发器控件 (VB) 中对数据进行排序
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895830"
 ---
 <a name="tailspin-spyworks---display-per-product-details"></a>Tailspin Spyworks-显示每个产品详细信息
 ====================

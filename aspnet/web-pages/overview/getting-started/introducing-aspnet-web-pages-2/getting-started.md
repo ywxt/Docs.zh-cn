@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898094"
 ---
 <a name="introducing-aspnet-web-pages---getting-started"></a>引入了 ASP.NET Web 页-入门
 ====================
@@ -271,11 +272,11 @@ WebMatrix 启动可用于测试你的计算机上的页面的内置 web 服务�
 
 [!code-html[Main](getting-started/samples/sample5.html)]
 
-请注意，`@{ }`顶部块不存在。 另请注意，日期和时间屏幕将显示实际字符串的字符 (`1/18/2012 2:49:50 PM`或任何)，而不`@currentDateTime`像中有*.cshtml*页。 发生了什么情况下面是运行时页上，ASP.NET 将处理所有的代码 （几乎在此情况下），标记有`@`。 此代码生成输出，然后该输出已插入到页。
+请注意，`@{ }`顶部块不存在。 另请注意，日期和时间屏幕将显示实际字符串的字符 (`1/18/2012 2:49:50 PM`或任何)，而不`@currentDateTime`像中有 *.cshtml*页。 发生了什么情况下面是运行时页上，ASP.NET 将处理所有的代码 （几乎在此情况下），标记有`@`。 此代码生成输出，然后该输出已插入到页。
 
 ## <a name="this-is-what-aspnet-web-pages-are-about"></a>这是 ASP.NET Web 页即将
 
-当你读取的 ASP.NET Web Pages 生成动态 web 内容时，你已了解是主意。 你刚刚创建的页面包含如上所示的相同的 HTML 标记。 它还可以包含可以执行各种任务的代码。 在此示例中，它未获取当前日期和时间的重要任务。 如你所看到的你可以使用 HTML 中以生成在页中的输出点缀代码。 当有人请求*.cshtml*中浏览器中，ASP.NET 页处理页，同时仍在手中的 web 服务器。 ASP.NET 将插入代码的输出 （如果有） 到页以 HTML 的形式。 完成的代码处理后，ASP.NET 将发送到浏览器所生成的页面。 所有浏览器曾获取为 HTML。 下面是一个关系图：
+当你读取的 ASP.NET Web Pages 生成动态 web 内容时，你已了解是主意。 你刚刚创建的页面包含如上所示的相同的 HTML 标记。 它还可以包含可以执行各种任务的代码。 在此示例中，它未获取当前日期和时间的重要任务。 如你所看到的你可以使用 HTML 中以生成在页中的输出点缀代码。 当有人请求 *.cshtml*中浏览器中，ASP.NET 页处理页，同时仍在手中的 web 服务器。 ASP.NET 将插入代码的输出 （如果有） 到页以 HTML 的形式。 完成的代码处理后，ASP.NET 将发送到浏览器所生成的页面。 所有浏览器曾获取为 HTML。 下面是一个关系图：
 
 ![如何 ASP.NET 动态生成 HTML 时的概念流](getting-started/_static/image21.png)
 

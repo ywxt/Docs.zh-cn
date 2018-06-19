@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
-title: "单元测试 ASP.NET Web API 2 |Microsoft 文档"
+title: 单元测试 ASP.NET Web API 2 |Microsoft 文档
 author: tfitzmac
-description: "此指南和应用程序演示如何为你的 Web API 2 应用程序创建简单的单元测试。 本教程演示如何包含单元测试项目..."
+description: 此指南和应用程序演示如何为你的 Web API 2 应用程序创建简单的单元测试。 本教程演示如何包含单元测试项目...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/05/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28042740"
 ---
 <a name="unit-testing-aspnet-web-api-2"></a>单元测试 ASP.NET Web API 2
 ====================

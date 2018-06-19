@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/guide-to-the-api/handling-connection-lifetime-events
-title: "了解和处理在 SignalR 连接生存期事件 |Microsoft 文档"
+title: 了解和处理在 SignalR 连接生存期事件 |Microsoft 文档
 author: pfletcher
-description: "本文介绍如何使用事件中心 API 公开的。"
+description: 本文介绍如何使用事件中心 API 公开的。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036565"
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>了解和处理在 SignalR 连接生存期事件
 ====================

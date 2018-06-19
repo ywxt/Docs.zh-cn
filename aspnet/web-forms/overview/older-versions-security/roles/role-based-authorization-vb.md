@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892148"
 ---
 <a name="role-based-authorization-vb"></a>基于角色的授权 (VB)
 ====================
@@ -158,7 +159,7 @@ ms.lasthandoff: 04/06/2018
 让我们创建 GridView 在系统中列出的所有用户帐户的页面。 GridView 将包括每个用户的用户名、 电子邮件地址、 上次登录的日期和有关用户的注释。 除了显示每个用户的信息，GridView 将包括编辑和删除功能。 最初，我们将创建具有编辑此页，或删除功能可供所有用户。 "使用 LoginView 控件"和"以编程方式限制的功能"部分中我们将了解如何启用或禁用这些功能基于正在访问用户的角色。
 
 > [!NOTE]
-> 我们将要生成 ASP.NET 页使用 GridView 控件来显示用户帐户。 自系列侧重于窗体身份验证、 授权、 用户帐户和角色本教程中，我不希望花费太多时间来讨论 GridView 控件的内部工作情况。 虽然本教程提供了有关设置此页的特定分步说明，它不会不深入探讨原因所做的某些选择，或影响特定属性对呈现输出的详细信息。 GridView 控件全面检查，请查看我*[在 ASP.NET 2.0 中使用数据](../../data-access/index.md)*教程系列。
+> 我们将要生成 ASP.NET 页使用 GridView 控件来显示用户帐户。 自系列侧重于窗体身份验证、 授权、 用户帐户和角色本教程中，我不希望花费太多时间来讨论 GridView 控件的内部工作情况。 虽然本教程提供了有关设置此页的特定分步说明，它不会不深入探讨原因所做的某些选择，或影响特定属性对呈现输出的详细信息。 GridView 控件全面检查，请查看我*[在 ASP.NET 2.0 中使用数据](../../data-access/index.md)* 教程系列。
 
 
 首先打开`RoleBasedAuthorization.aspx`页面`Roles`文件夹。 从拖到设计器和组页上拖动一个 GridView 其`ID`到`UserGrid`。 在稍后我们将编写调用的代码`Membership`。`GetAllUsers` 方法，并将绑定生成`MembershipUserCollection`对象到 GridView。 `MembershipUserCollection`包含`MembershipUser`系统; 中的每个用户帐户的对象`MembershipUser`对象具有属性，例如`UserName`，`Email`，`LastLoginDate` ，依此类推。

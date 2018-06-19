@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879421"
 ---
 <a name="use-viewdata-and-implement-viewmodel-classes"></a>使用 ViewData 和实现 ViewModel 类
 ====================
@@ -61,7 +62,7 @@ MVC 模式的定义特征之一是指严格"隔离的问题"它有助于强制�
 
 上面的 Html.DropDownList() 帮助程序方法采用两个参数。 第一个是要输出的 HTML 窗体元素的名称。 第二个是我们通过 ViewData 字典传递"此时"模型。 我们将使用 C#"as"关键字来强制转换为此时字典中的类型。
 
-现在当我们运行我们的应用程序和访问时和*/Dinners/Edit/1* URL 我们浏览器中我们将看到我们编辑 UI 更新以显示国家/地区，而不是文本框中的说明：
+现在当我们运行我们的应用程序和访问时和 */Dinners/Edit/1* URL 我们浏览器中我们将看到我们编辑 UI 更新以显示国家/地区，而不是文本框中的说明：
 
 ![](use-viewdata-and-implement-viewmodel-classes/_static/image1.png)
 

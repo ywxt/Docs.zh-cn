@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897397"
 ---
 <a name="introducing-aspnet-web-pages---deleting-database-data"></a>引入了 ASP.NET Web 页-删除数据库数据
 ====================

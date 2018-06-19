@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894891"
 ---
 <a name="how-do-i-publish-and-analyze-test-results"></a>[如何:]发布和分析测试结果？
 ====================

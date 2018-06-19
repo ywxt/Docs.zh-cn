@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891830"
 ---
 <a name="role-based-authorization-c"></a>基于角色的授权 (C#)
 ====================
@@ -86,7 +87,7 @@ ms.lasthandoff: 04/06/2018
 |         `domain`          |                                                                                                                                                 指定 cookie 的域值。 默认值为空字符串，这会导致浏览器使用从该情况下，它已签发 （如 www.yourdomain.com) 的域。 在这种情况下，cookie 将<strong>不</strong>时进行请求定向到子域，例如 admin.yourdomain.com 发送。如果你想要传递给所有子域的 cookie 需要自定义`domain`属性，将其设置为"yourdomain.com"。                                                                                                                                                 |
 |    `maxCachedResults`     | 在 cookie 中指定缓存的角色名称的最大的数量。 默认值为 25。 `RoleManagerModule`不会创建 cookie 的用户，属于多个`maxCachedResults`角色。 因此，`RolePrincipal`对象的`IsInRole`方法将使用`Roles`类以确定用户的角色。 原因`maxCachedResults`存在是因为许多用户代理不允许 cookie 大于 4096 字节。 因此，此线帽旨在降低超过此大小限制的可能性。 如果你有极长的角色名称，你可能想要考虑指定较小`maxCachedResults`值; contrariwise，如果你有极短的角色名称，您可以可能增大此值。 |
 
-**表 1:**角色缓存 Cookie 配置选项
+**表 1:** 角色缓存 Cookie 配置选项
 
 让我们配置应用程序以使用非持久的角色缓存 cookie。 若要实现此目的，更新`<roleManager>`中的元素`Web.config`包括以下与 cookie 相关的属性：
 
@@ -158,7 +159,7 @@ ms.lasthandoff: 04/06/2018
 让我们创建 GridView 在系统中列出的所有用户帐户的页面。 GridView 将包括每个用户的用户名、 电子邮件地址、 上次登录的日期和有关用户的注释。 除了显示每个用户的信息，GridView 将包括编辑和删除功能。 最初，我们将创建具有编辑此页，或删除功能可供所有用户。 "使用 LoginView 控件"和"以编程方式限制的功能"部分中我们将了解如何启用或禁用这些功能基于正在访问用户的角色。
 
 > [!NOTE]
-> 我们将要生成 ASP.NET 页使用 GridView 控件来显示用户帐户。 自系列侧重于窗体身份验证、 授权、 用户帐户和角色本教程中，我不希望花费太多时间来讨论 GridView 控件的内部工作情况。 虽然本教程提供了有关设置此页的特定分步说明，它不会不深入探讨原因所做的某些选择，或影响特定属性对呈现输出的详细信息。 GridView 控件全面检查，请查看我*[在 ASP.NET 2.0 中使用数据](../../data-access/index.md)*教程系列。
+> 我们将要生成 ASP.NET 页使用 GridView 控件来显示用户帐户。 自系列侧重于窗体身份验证、 授权、 用户帐户和角色本教程中，我不希望花费太多时间来讨论 GridView 控件的内部工作情况。 虽然本教程提供了有关设置此页的特定分步说明，它不会不深入探讨原因所做的某些选择，或影响特定属性对呈现输出的详细信息。 GridView 控件全面检查，请查看我*[在 ASP.NET 2.0 中使用数据](../../data-access/index.md)* 教程系列。
 
 
 首先打开`RoleBasedAuthorization.aspx`页面`Roles`文件夹。 从拖到设计器和组页上拖动一个 GridView 其`ID`到`UserGrid`。 在稍后我们将编写调用的代码`Membership.GetAllUsers`方法并将绑定生成`MembershipUserCollection`对象到 GridView。 `MembershipUserCollection`包含`MembershipUser`系统; 中的每个用户帐户的对象`MembershipUser`对象具有属性，例如`UserName`， `Email`， `LastLoginDate`，依次类推。

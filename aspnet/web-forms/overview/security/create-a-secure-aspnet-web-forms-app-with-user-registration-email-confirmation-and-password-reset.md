@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892694"
 ---
 <a name="create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset-c"></a>创建安全的 ASP.NET Web 窗体应用程序通过用户注册，电子邮件确认及密码重置 (C#)
 ====================
@@ -90,7 +91,7 @@ ms.lasthandoff: 04/06/2018
     [!code-xml[Main](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset/samples/sample3.xml?highlight=2-5)]
 
     > [!WARNING]
-    > 安全-永远不会存储在源代码中敏感数据。 在此示例中，帐户和凭据存储在**appSetting**部分*Web.config*文件。 在 Azure 上，你可以安全地存储这些值在**[配置](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)**在 Azure 门户中的选项卡。 有关相关信息请参阅标题为 Rick Anderson 主题[用于密码和其他敏感数据部署到 ASP.NET 和 Azure 的最佳做法](https://go.microsoft.com/fwlink/?LinkId=513141)。
+    > 安全-永远不会存储在源代码中敏感数据。 在此示例中，帐户和凭据存储在**appSetting**部分*Web.config*文件。 在 Azure 上，你可以安全地存储这些值在**[配置](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** 在 Azure 门户中的选项卡。 有关相关信息请参阅标题为 Rick Anderson 主题[用于密码和其他敏感数据部署到 ASP.NET 和 Azure 的最佳做法](https://go.microsoft.com/fwlink/?LinkId=513141)。
 6. 添加电子邮件服务值以反映你的 SendGrid 身份验证值 （用户名和密码），以便你可以成功从你的应用程序发送电子邮件。 请务必使用你的 SendGrid 帐户名称，而不是你提供 SendGrid 电子邮件地址。
 
 ### <a name="enable-email-confirmation"></a>启用电子邮件确认
@@ -144,7 +145,7 @@ ms.lasthandoff: 04/06/2018
 
     [!code-csharp[Main](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset/samples/sample9.cs?highlight=5)]
 4. 运行应用程序通过按**F5。** 将显示的页后，单击**登录**链接。
-5. 单击**忘记了密码？**链接以显示**忘记了密码**页。
+5. 单击**忘记了密码？** 链接以显示**忘记了密码**页。
 6. 输入你的电子邮件地址，然后单击**提交**按钮将发送一封电子邮件给你的地址将允许你重置密码。   
    检查你的电子邮件帐户，然后单击链接以显示**重置密码**页。
 7. 上**重置密码**页上，输入你的电子邮件、 密码和确认的密码。 然后，按**重置**按钮。  

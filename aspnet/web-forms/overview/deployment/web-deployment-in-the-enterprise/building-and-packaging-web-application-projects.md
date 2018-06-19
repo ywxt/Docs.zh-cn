@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892304"
 ---
 <a name="building-and-packaging-web-application-projects"></a>生成和打包 Web 应用程序项目
 ====================
@@ -79,11 +80,11 @@ ms.lasthandoff: 04/06/2018
 
 ![](building-and-packaging-web-application-projects/_static/image2.png)
 
-生成过程生成的 web 应用程序项目时，生成一个名为文件*[项目名称]。SourceManifest.xml*。 以及项目文件和生成输出中，这*。SourceManifest.xml*文件告知 Web 部署它需要在 web 部署包中包括。 使用这些输入，Web 部署生成名为 web 部署包*[项目名称].zip*。
+生成过程生成的 web 应用程序项目时，生成一个名为文件 *[项目名称]。SourceManifest.xml*。 以及项目文件和生成输出中，这 *。SourceManifest.xml*文件告知 Web 部署它需要在 web 部署包中包括。 使用这些输入，Web 部署生成名为 web 部署包 *[项目名称].zip*。
 
 Web 部署包，以及生成过程生成可以帮助你使用包的两个文件：
 
-- *。 Deploy.cmd*文件包括一组将你的 web 部署包发布到远程的 IIS web 服务器的 Web Deploy (MSDeploy.exe) 的参数化命令。 运行*。 deploy.cmd*文件，结合适当的参数，通常提供一种更快，并且变得更容易替代手动构造 MSDeploy.exe 命令自己。
+- *。 Deploy.cmd*文件包括一组将你的 web 部署包发布到远程的 IIS web 服务器的 Web Deploy (MSDeploy.exe) 的参数化命令。 运行 *。 deploy.cmd*文件，结合适当的参数，通常提供一种更快，并且变得更容易替代手动构造 MSDeploy.exe 命令自己。
 - *SetParameters.xml*文件提供了一套到 MSDeploy.exe 命令的参数值。 这些值包括之类的 IIS web 应用程序到你想要部署包的任何服务终结点的值和连接字符串中定义的名称的属性*web.config*文件和任何部署属性在项目属性页上定义的值。
 
 *SetParameters.xml*文件是管理部署过程的关键。 此文件是根据你的 web 应用程序项目的内容在动态生成的。 例如，如果你添加的连接字符串你*web.config*文件，生成过程将自动检测连接字符串，相应地，参数化部署并创建中的条目*SetParameters.xml*文件，以便可以修改连接字符串作为部署过程的一部分。 下一主题[Web 包部署的配置参数](configuring-parameters-for-web-package-deployment.md)、 介绍的更详细地此文件的角色和介绍您在其中可以修改它生成和部署过程的不同方法。

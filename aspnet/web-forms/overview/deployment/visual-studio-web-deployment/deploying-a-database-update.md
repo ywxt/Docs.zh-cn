@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892616"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-database-update"></a>使用 Visual Studio 的 ASP.NET Web 部署： 部署某一数据库更新
 ====================
@@ -99,15 +100,15 @@ ms.lasthandoff: 04/06/2018
 ### <a name="add-a-column-to-a-table-in-the-membership-database"></a>向成员资格数据库中的表中添加列
 
 1. 在 Visual Studio 中，打开**SQL Server 对象资源管理器**。
-2. 展开**(localdb) \v11.0**，展开**数据库**，展开**aspnet ContosoUniversity** (不**aspnet ContosoUniversity Prod**)然后展开**表**。
+2. 展开 **(localdb) \v11.0**，展开**数据库**，展开**aspnet ContosoUniversity** (不**aspnet ContosoUniversity Prod**)然后展开**表**。
 
-    如果看不到**(localdb) \v11.0**下**SQL Server**节点，右键单击**SQL Server**节点，然后单击**添加 SQL Server**。 在**连接到服务器**对话框中，输入*(localdb) \v11.0*作为**服务器名称**，然后单击**连接**。
+    如果看不到 **(localdb) \v11.0**下**SQL Server**节点，右键单击**SQL Server**节点，然后单击**添加 SQL Server**。 在**连接到服务器**对话框中，输入 *(localdb) \v11.0*作为**服务器名称**，然后单击**连接**。
 
     如果看不到**aspnet ContosoUniversity**、 运行该项目并使用登录*管理员*凭据 (密码*devpwd*)，然后刷新**SQL Server 对象资源管理器**窗口。
 3. 右键单击**用户**表，并依次**视图设计器**。
 
     ![SSOX 视图设计器](deploying-a-database-update/_static/image3.png)
-4. 在设计器中，添加*注释*列并使其*nvarchar （128)*和可以为 null，然后单击**更新**。
+4. 在设计器中，添加*注释*列并使其*nvarchar （128)* 和可以为 null，然后单击**更新**。
 
     ![添加注释列](deploying-a-database-update/_static/image4.png)
 5. 在**预览数据库更新**框中，单击**更新数据库**。

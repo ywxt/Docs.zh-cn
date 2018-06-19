@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/membership
-title: "成员身份 |Microsoft 文档"
+title: 成员身份 |Microsoft 文档
 author: microsoft
-description: "ASP.NET 成员资格生成的窗体身份验证模型成功从 ASP.NET 1.x。 ASP.NET 窗体身份验证提供 incorp 到一种简便方式..."
+description: ASP.NET 成员资格生成的窗体身份验证模型成功从 ASP.NET 1.x。 ASP.NET 窗体身份验证提供 incorp 到一种简便方式...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28885551"
 ---
 <a name="membership"></a>成员身份
 ====================

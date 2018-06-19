@@ -14,6 +14,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/08/2018
+ms.locfileid: "33851022"
 ---
 # <a name="migrate-from-aspnet-mvc-to-aspnet-core-mvc"></a>将从 ASP.NET MVC 迁移到 ASP.NET 核心 MVC
 
@@ -32,7 +33,7 @@ ms.lasthandoff: 05/08/2018
 
 ![新建 Web 应用程序对话框： 在 ASP.NET 模板面板中选择 MVC 项目模板](mvc/_static/new-project-select-mvc-template.png)
 
-*可选：*更改从解决方案的名称*WebApp1*到*Mvc5*。 Visual Studio 将显示新的解决方案名称 (*Mvc5*)，从而更轻松地判断此项目从下一步的项目。
+*可选：* 更改从解决方案的名称*WebApp1*到*Mvc5*。 Visual Studio 将显示新的解决方案名称 (*Mvc5*)，从而更轻松地判断此项目从下一步的项目。
 
 ## <a name="create-the-aspnet-core-project"></a>创建 ASP.NET Core 项目
 
@@ -42,7 +43,7 @@ ms.lasthandoff: 05/08/2018
 
 ![新建 ASP.NET Web 应用程序对话框： 在 ASP.NET 核心模板面板中选择的空项目模板](mvc/_static/new-project-select-empty-aspnet5-template.png)
 
-* *可选：*创建新的 ASP.NET Core 应用使用*Web 应用程序*项目模板。 将项目*WebApp1*，然后选择的一个身份验证选项**单个用户帐户**。 重命名此应用程序到*FullAspNetCore*。 在转换过程中创建此项目为您节省时间。 你可以查看若要查看的最终结果或将代码复制到转换项目模板生成的代码。 它也是很有帮助时遇到困难在转换步骤中，要与模板生成项目进行比较。
+* *可选：* 创建新的 ASP.NET Core 应用使用*Web 应用程序*项目模板。 将项目*WebApp1*，然后选择的一个身份验证选项**单个用户帐户**。 重命名此应用程序到*FullAspNetCore*。 在转换过程中创建此项目为您节省时间。 你可以查看若要查看的最终结果或将代码复制到转换项目模板生成的代码。 它也是很有帮助时遇到困难在转换步骤中，要与模板生成项目进行比较。
 
 ## <a name="configure-the-site-to-use-mvc"></a>配置站点以使用 MVC
 
@@ -136,7 +137,7 @@ ms.lasthandoff: 05/08/2018
 
 * 创建*视图/共享*文件夹。
 
-* *可选：*复制 *_ViewImports.cshtml*从*FullAspNetCore* MVC 项目*视图*文件夹导入到 ASP.NET 核心项目*视图*文件夹。 删除中的任何命名空间声明 *_ViewImports.cshtml*文件。 *_ViewImports.cshtml*文件对于视图的所有文件提供命名空间，并使[标记帮助程序](xref:mvc/views/tag-helpers/intro)。 新的布局文件中使用标记帮助程序。 *_ViewImports.cshtml*文件是用于 ASP.NET 核心新功能。
+* *可选：* 复制 *_ViewImports.cshtml*从*FullAspNetCore* MVC 项目*视图*文件夹导入到 ASP.NET 核心项目*视图*文件夹。 删除中的任何命名空间声明 *_ViewImports.cshtml*文件。 *_ViewImports.cshtml*文件对于视图的所有文件提供命名空间，并使[标记帮助程序](xref:mvc/views/tag-helpers/intro)。 新的布局文件中使用标记帮助程序。 *_ViewImports.cshtml*文件是用于 ASP.NET 核心新功能。
 
 * 复制 *_Layout.cshtml*文件从旧的 ASP.NET MVC 项目*视图/共享*文件夹导入到 ASP.NET 核心项目*视图/共享*文件夹。
 
@@ -175,7 +176,7 @@ JQuery 和 Bootstrap JavaScript 包含的替换标记：
 
 在浏览器中查看站点。 它应现在正确加载，以就地预期的样式。
 
-* *可选：*可能想要尝试使用新的布局文件。 对于此项目中，你可以复制中的布局文件*FullAspNetCore*项目。 新的布局文件使用[标记帮助程序](xref:mvc/views/tag-helpers/intro)并且具有其他的改进功能。
+* *可选：* 可能想要尝试使用新的布局文件。 对于此项目中，你可以复制中的布局文件*FullAspNetCore*项目。 新的布局文件使用[标记帮助程序](xref:mvc/views/tag-helpers/intro)并且具有其他的改进功能。
 
 ## <a name="configure-bundling-and-minification"></a>配置绑定和缩减
 

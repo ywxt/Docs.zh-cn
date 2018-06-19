@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30899035"
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 和 Visual Studio 2010 Web 开发概述
 ====================
@@ -199,7 +200,7 @@ ASP.NET 4 引入了用于扩展应用程序 Url 的大小的新选项。 ASP.NET
 
 [!code-xml[Main](overview/samples/sample10.xml)]
 
-若要允许长于或短的路径 （不包括协议、 服务器名称和查询字符串的 URL 的部分），修改*[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)*属性。 若要允许长于或短的查询字符串，可修改的值*[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)*属性。
+若要允许长于或短的路径 （不包括协议、 服务器名称和查询字符串的 URL 的部分），修改*[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)* 属性。 若要允许长于或短的查询字符串，可修改的值*[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)* 属性。
 
 ASP.NET 4 还可配置的 URL 字符检查使用的字符。 当 ASP.NET 的 url 的路径部分中找到无效的字符时，它将拒绝该请求，并发出 HTTP 400 错误。 在以前版本的 ASP.NET，URL 字符检查是限于一组固定的字符。 在 ASP.NET 4 中，你可以自定义的一套使用新的有效字符*requestPathInvalidChars*属性*httpRuntime*配置元素，如下面的示例中所示：
 
@@ -388,7 +389,7 @@ ASP.NET 4 将两个属性添加*页*类， *MetaKeywords*和*MetaDescription*。
 
 你可以在运行时，它可让你从数据库或其他源获取的内容和它可让你设置标记动态来描述什么设置这些属性的特定页适用。
 
-你还可以设置*关键字*和*说明*中的属性*@ Page*指令顶部的 Web 窗体页标记中，如以下示例所示：
+你还可以设置*关键字*和*说明*中的属性 *@ Page*指令顶部的 Web 窗体页标记中，如以下示例所示：
 
 [!code-aspx[Main](overview/samples/sample24.aspx)]
 
@@ -426,7 +427,7 @@ ASP.NET 4 将两个属性添加*页*类， *MetaKeywords*和*MetaDescription*。
 
 Label1 控件 (其*ViewStateMode*值设置为*禁用*) 具有不会保留在代码中设置为它的值。 但是，label2 控制 (其*ViewStateMode*值设置为*已启用*) 均保留其状态。
 
-你还可以设置*ViewStateMode*中*@ Page*指令，如以下示例所示：
+你还可以设置*ViewStateMode*中 *@ Page*指令，如以下示例所示：
 
 [!code-aspx[Main](overview/samples/sample26.aspx)]
 
@@ -652,7 +653,7 @@ ASP.NET 自动工作出正确的路由 （即，它生成正确的 URL） 基于
 
 默认值*ClientIDMode*页级别的值是*AutoID*，也是默认值*ClientIDMode*控件级别的值是*继承*. 因此，如果不执行在代码中任何位置设置此属性，则所有控件将都默认为*AutoID*算法。
 
-在中设置的页级别值*@ Page*指令，如下面的示例中所示：
+在中设置的页级别值 *@ Page*指令，如下面的示例中所示：
 
 [!code-aspx[Main](overview/samples/sample47.aspx)]
 
@@ -1222,7 +1223,7 @@ ASP.NET 4 中的动态数据支持的主要目标是能够对任何 ASP.NET 应�
 
 ### <a name="new-field-templates-for-urls-and-email-addresses"></a>新的字段模板的 Url 和电子邮件地址
 
-ASP.NET 4 引入了两个新的内置字段模板，`EmailAddress.ascx`和`Url.ascx`。 这些模板用于字段标记为*EmailAddress*或*Url*与*DataType*属性。 有关*EmailAddress*对象，该字段显示为超链接，通过创建*mailto:*协议。 当用户单击此链接时，打开用户的电子邮件客户端，并创建主干消息。 对象类型化为*Url*显示为普通的超链接。
+ASP.NET 4 引入了两个新的内置字段模板，`EmailAddress.ascx`和`Url.ascx`。 这些模板用于字段标记为*EmailAddress*或*Url*与*DataType*属性。 有关*EmailAddress*对象，该字段显示为超链接，通过创建*mailto:* 协议。 当用户单击此链接时，打开用户的电子邮件客户端，并创建主干消息。 对象类型化为*Url*显示为普通的超链接。
 
 下面的示例演示如何将标记字段。
 

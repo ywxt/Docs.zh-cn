@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892077"
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>使用 Entity Framework 4.0 和 ObjectDataSource 控件，第 1 部分： 入门
 ====================
@@ -50,7 +51,7 @@ ms.lasthandoff: 04/06/2018
 > 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)、[实体框架和 LINQ to Entities 论坛](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
 
 
-`EntityDataSource`控制，你可以非常快速地创建应用程序，但它通常需要你需要占用大量的业务逻辑和中的数据访问逻辑你*.aspx*页。 如果希望你的应用程序，以增大复杂性和需要持续不断的维护，您可以为了创建预先购买更多的开发时间*n 层*或*分层*应用程序结构这就是更易于维护。 若要实现此体系结构，请从业务逻辑层 (BLL) 和数据访问层 (DAL) 分隔的表示层。 若要实现此结构的一种方法是使用`ObjectDataSource`而不是控制`EntityDataSource`控件。 当你使用`ObjectDataSource`控件，实现您自己的数据访问代码，然后调用在*.aspx*页使用具有多个相同的控件功能的其他数据源控件。 这样就可以使用 Web 窗体控件进行数据访问的好处与合并的 n 层方法的优点。
+`EntityDataSource`控制，你可以非常快速地创建应用程序，但它通常需要你需要占用大量的业务逻辑和中的数据访问逻辑你 *.aspx*页。 如果希望你的应用程序，以增大复杂性和需要持续不断的维护，您可以为了创建预先购买更多的开发时间*n 层*或*分层*应用程序结构这就是更易于维护。 若要实现此体系结构，请从业务逻辑层 (BLL) 和数据访问层 (DAL) 分隔的表示层。 若要实现此结构的一种方法是使用`ObjectDataSource`而不是控制`EntityDataSource`控件。 当你使用`ObjectDataSource`控件，实现您自己的数据访问代码，然后调用在 *.aspx*页使用具有多个相同的控件功能的其他数据源控件。 这样就可以使用 Web 窗体控件进行数据访问的好处与合并的 n 层方法的优点。
 
 `ObjectDataSource`控制使你更大的灵活性以及通过其他方式。 由于写入你自己的数据访问代码，它是更轻松地执行操作远不止读取、 插入、 更新或删除特定实体类型，这是任务的`EntityDataSource`控件设计执行。 例如，你可以执行日志记录每次更新实体时，每当删除的实体，或自动检查和更新与相关的数据根据需要插入具有外键的值的行时存档数据。
 

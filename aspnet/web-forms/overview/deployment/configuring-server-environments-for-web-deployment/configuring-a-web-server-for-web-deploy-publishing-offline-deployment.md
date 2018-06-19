@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884023"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a>配置 Web 服务器的 Web 部署发布 （脱机部署）
 ====================
@@ -93,7 +94,7 @@ ms.lasthandoff: 04/06/2018
     > 你可能已安装.NET Framework 4.0 通过 Windows 更新。 如果已安装的产品或组件，则 Web 平台安装程序将指示这一点通过将**添加**按钮，其文本**已安装**。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image1.png)
-6. 在**ASP.NET MVC 3 (Visual Studio 2010)**行中，单击**添加**。
+6. 在**ASP.NET MVC 3 (Visual Studio 2010)** 行中，单击**添加**。
 7. 在导航窗格中，单击**服务器**。
 8. 在 **IIS 7 建议配置** 行中，单击 **添加** 。
 9. 在**Web 部署工具 2.1**行中，单击**添加**。
@@ -109,11 +110,11 @@ ms.lasthandoff: 04/06/2018
 
 1. 单击**启动**，然后键入**命令提示符**。
 2. 在搜索结果中，右键单击**命令提示符**，然后单击**以管理员身份运行**。
-3. 在命令提示符窗口中，导航到**%WINDIR%\Microsoft.NET\Framework\v4.0.30319**目录。
+3. 在命令提示符窗口中，导航到 **%WINDIR%\Microsoft.NET\Framework\v4.0.30319**目录。
 4. 键入以下命令，然后按 Enter:
 
     [!code-console[Main](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/samples/sample1.cmd)]
-5. 如果你计划到托管 64 位 web 应用程序的任何时刻，你应该向 IIS 注册 ASP.NET 的 64 位版本。 为此，请在命令提示符窗口中，导航到**%WINDIR%\Microsoft.NET\Framework64\v4.0.30319**目录。
+5. 如果你计划到托管 64 位 web 应用程序的任何时刻，你应该向 IIS 注册 ASP.NET 的 64 位版本。 为此，请在命令提示符窗口中，导航到 **%WINDIR%\Microsoft.NET\Framework64\v4.0.30319**目录。
 6. 键入以下命令，然后按 Enter:
 
     [!code-console[Main](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/samples/sample2.cmd)]
@@ -164,7 +165,7 @@ ms.lasthandoff: 04/06/2018
 13. 在**站点绑定**对话框中，单击**关闭**。
 14. 在**连接**窗格中，单击**应用程序池**。
 15. 在**应用程序池**窗格中，右键单击应用程序池的名称，然后单击**基本设置**。 默认情况下，应用程序池的名称将匹配你的网站的名称 (例如， **DemoSite**)。
-16. 在**.NET Framework 版本**列表中，选择**.NET Framework v4.0.30319**，然后单击**确定**。
+16. 在 **.NET Framework 版本**列表中，选择 **.NET Framework v4.0.30319**，然后单击**确定**。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image7.png)
 

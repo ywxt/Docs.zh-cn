@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891940"
 ---
 <a name="user-based-authorization-vb"></a>基于用户的授权 (VB)
 ====================
@@ -217,7 +218,7 @@ URL 授权更便于指定粗糙的授权规则。 正如我们看到在步骤 1 
 让我们创建的页面列出一个 GridView 中特定目录中的文件。 GridView 将列出每个文件的名称、 大小和其他信息，以及包括 LinkButtons 两列： 一个，标题为视图和一个名为的删除。 如果单击视图 LinkButton 后，将显示所选文件的内容;如果单击删除 LinkButton 后，将删除该文件。 让我们最初创建此页，这样，其视图和 delete 功能可供所有用户如此。 在使用中我们将了解如何启用或禁用这些功能根据用户访问的页面的 LoginView 控件和以编程方式限制功能部分。
 
 > [!NOTE]
-> 我们将要生成 ASP.NET 页使用 GridView 控件显示的文件的列表。 自系列侧重于窗体身份验证、 授权、 用户帐户和角色本教程中，我不希望花费太多时间来讨论 GridView 控件的内部工作情况。 虽然本教程提供了有关设置此页的特定分步说明，它不会不深入探讨原因所做的某些选择，或影响特定属性对呈现输出的详细信息。 GridView 控件全面检查，请查阅我*[在 ASP.NET 2.0 中使用数据](../../data-access/index.md)*教程系列。
+> 我们将要生成 ASP.NET 页使用 GridView 控件显示的文件的列表。 自系列侧重于窗体身份验证、 授权、 用户帐户和角色本教程中，我不希望花费太多时间来讨论 GridView 控件的内部工作情况。 虽然本教程提供了有关设置此页的特定分步说明，它不会不深入探讨原因所做的某些选择，或影响特定属性对呈现输出的详细信息。 GridView 控件全面检查，请查阅我*[在 ASP.NET 2.0 中使用数据](../../data-access/index.md)* 教程系列。
 
 
 首先打开`UserBasedAuthorization.aspx`文件中`Membership`文件夹并将 GridView 控件添加到名为的页`FilesGrid`。 在 GridView 的智能标记，单击编辑列链接以启动字段对话框中。 从此处，取消选中自动生成字段中的复选框左下角。 接下来，添加选择按钮、 删除按钮和两个 BoundFields 从左上角 （选择和删除按钮可以找到的 CommandField 类型下方）。 设置选择按钮的`SelectText`属性来查看和第一个 BoundField`HeaderText`和`DataField`为名称的属性。 设置第二个 BoundField`HeaderText`属性大小 （字节），其`DataField`属性长度，其`DataFormatString`{0: n0} 的属性并将其`HtmlEncode`属性设置为 False。

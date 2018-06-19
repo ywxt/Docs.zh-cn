@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898452"
 ---
 <a name="introducing-aspnet-web-pages---displaying-data"></a>引入了 ASP.NET Web 页的显示数据
 ====================
@@ -79,7 +80,7 @@ WebMatrix 包含工具，可以轻松创建数据库，并在数据库中创建�
 
 ![在 WebMatrix 功能区的新数据库按钮](displaying-data/_static/image4.png)
 
-WebMatrix 创建 SQL Server CE 数据库 ( *.sdf*文件) 作为你的站点具有相同名称&mdash; *WebPagesMovies.sdf*。 (不会执行此操作在这里，但你可以将重命名该文件为您喜欢的任何，只要它具有*.sdf*扩展。)
+WebMatrix 创建 SQL Server CE 数据库 ( *.sdf*文件) 作为你的站点具有相同名称&mdash; *WebPagesMovies.sdf*。 (不会执行此操作在这里，但你可以将重命名该文件为您喜欢的任何，只要它具有 *.sdf*扩展。)
 
 ## <a name="creating-a-table"></a>创建表
 
@@ -135,7 +136,7 @@ Tab 键移动到**数据类型**列表并选择**int**。此值指定 ID 列将�
 
 稍后在本教程系列中，你将创建可以在窗体中输入新影片的页。 但是，现在，可以添加一些示例数据，然后可以显示在页面上。
 
-在**数据库**在 WebMatrix 中，请注意，没有一个树，它显示你的工作区*.sdf*前面创建的文件。 打开新的节点*.sdf*文件中，并随后打开**表**节点。
+在**数据库**在 WebMatrix 中，请注意，没有一个树，它显示你的工作区 *.sdf*前面创建的文件。 打开新的节点 *.sdf*文件中，并随后打开**表**节点。
 
 ![目录树到电影表打开 WebMatrix 数据库工作区](displaying-data/_static/image10.png)
 
@@ -201,7 +202,7 @@ Tab 键移动到**数据类型**列表并选择**int**。此值指定 ID 列将�
 
 [!code-csharp[Main](displaying-data/samples/sample1.cs)]
 
-第一行将打开更早版本，创建的数据库，这是始终第一个步骤之前执行某项与数据库。 你判断`Database.Open`要打开的数据库的方法名称。 请注意，不包含*.sdf*名称中。 `Open`方法假设它正在寻找*.sdf*文件 (即， *WebPagesMovies.sdf*) 并且*.sdf*文件位于*应用\_数据*文件夹。 (前面我们注意到，*应用\_数据*保留文件夹; 这种情况下是 ASP.NET 其中假定该名称的位置之一。)
+第一行将打开更早版本，创建的数据库，这是始终第一个步骤之前执行某项与数据库。 你判断`Database.Open`要打开的数据库的方法名称。 请注意，不包含 *.sdf*名称中。 `Open`方法假设它正在寻找 *.sdf*文件 (即， *WebPagesMovies.sdf*) 并且 *.sdf*文件位于*应用\_数据*文件夹。 (前面我们注意到，*应用\_数据*保留文件夹; 这种情况下是 ASP.NET 其中假定该名称的位置之一。)
 
 当打开该数据库时，对它的引用被放置到命名的变量`db`。 （这可以命名为任何内容。）`db`变量是如何将显示与数据库交互。
 
@@ -292,7 +293,7 @@ Tab 键移动到**数据类型**列表并选择**int**。此值指定 ID 列将�
 
 [!code-css[Main](displaying-data/samples/sample5.css)]
 
-此 CSS 标记定义名为的类`grid`， `head`，依次类推。 您还可以通过以下方式将这些样式定义在单独*.css*文件并将该链接到页。 （事实上，您将执行的更高版本中此教程的集。）但是，为了方便起见出于本教程，它们很内显示的数据的同一页面。
+此 CSS 标记定义名为的类`grid`， `head`，依次类推。 您还可以通过以下方式将这些样式定义在单独 *.css*文件并将该链接到页。 （事实上，您将执行的更高版本中此教程的集。）但是，为了方便起见出于本教程，它们很内显示的数据的同一页面。
 
 现在你可以获取`WebGrid`帮助器以使用这些样式类。 帮助器具有多个属性 (例如， `tableStyle`) 只需这样 — 为它们，分配的 CSS 样式类名称并作为一部分的帮助程序呈现的标记呈现该类的名称。
 

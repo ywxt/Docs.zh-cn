@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897314"
 ---
 <a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a>移动设备的的呈现 ASP.NET Web 页 (Razor) 站点
 ====================
@@ -51,7 +52,7 @@ ASP.NET Web 页中，可以在移动或其他设备上创建自定义呈现内�
 
     [!code-html[Main](rendering-aspnet-web-pages-sites-for-mobile-devices/samples/sample2.html)]
 3. 运行桌面浏览器并浏览到*Page1.cshtml*。 ![mobilesites-1](rendering-aspnet-web-pages-sites-for-mobile-devices/_static/image1.png)
-4. 运行移动浏览器 （或移动设备仿真程序） 并浏览到*Page1.cshtml*。 (请注意，不包括*.mobile。* 作为 URL 的一部分。）即使该请求是*Page1.cshtml*，ASP.NET 呈现*Page1.Mobile.cshtml*。
+4. 运行移动浏览器 （或移动设备仿真程序） 并浏览到*Page1.cshtml*。 (请注意，不包括 *.mobile。* 作为 URL 的一部分。）即使该请求是*Page1.cshtml*，ASP.NET 呈现*Page1.Mobile.cshtml*。
 
     ![mobilesites-2](rendering-aspnet-web-pages-sites-for-mobile-devices/_static/image2.png)
 

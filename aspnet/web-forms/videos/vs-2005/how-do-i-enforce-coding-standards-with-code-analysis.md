@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893142"
 ---
 <a name="how-do-i-enforce-coding-standards-with-code-analysis"></a>[如何:]使用代码分析的编码标准，强制执行？
 ====================

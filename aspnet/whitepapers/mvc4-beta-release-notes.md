@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30899611"
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -128,15 +129,15 @@ ASP.NET MVC 4 现在包含 ASP.NET Web API，一个新的框架，用于创建 H
 
 ASP.NET Web API 包括以下功能的支持：
 
-- **现代的 HTTP 编程模型：**直接访问和处理 HTTP 请求和响应中你使用新的强类型化的 HTTP 对象模型的 Web Api。 相同的编程模型和 HTTP 管道是在客户端通过新的 HttpClient 类型上所需可用。
+- **现代的 HTTP 编程模型：** 直接访问和处理 HTTP 请求和响应中你使用新的强类型化的 HTTP 对象模型的 Web Api。 相同的编程模型和 HTTP 管道是在客户端通过新的 HttpClient 类型上所需可用。
 - **完全支持路由**: Web Api 现在支持完整的一套路由功能，它们始终被 Web 堆栈，包括路由参数和约束的一部分。 此外，映射到操作具有完全支持约定，因此你不再需要将如 [HttpPost] 特性应用到您的类和方法。
 - **内容协商**： 客户端和服务器可协同工作来确定正确的格式为从 API 返回的数据。 我们提供对 XML、 JSON 和窗体 URL 编码格式的默认支持并可以通过添加你自己格式化程序，扩展此支持或甚至替换默认内容协商策略。
-- **模型绑定和验证：**模型联编程序提供了简便的方法，以从各个部分的 HTTP 请求中提取数据并将这些消息部分转换为.NET 对象以便可以由 Web API 操作。
+- **模型绑定和验证：** 模型联编程序提供了简便的方法，以从各个部分的 HTTP 请求中提取数据并将这些消息部分转换为.NET 对象以便可以由 Web API 操作。
 - **筛选器：** Web Api 现在支持筛选器，包括已知的筛选器，如 [Authorize] 属性。 可以创作并插入自己的筛选器操作、 授权和异常处理。
-- **查询组合：**通过只需返回 IQueryable&lt;T&gt;，你的 Web API 将支持的 OData URL 约定通过查询。
-- **改进了 HTTP 详细信息的可测试性：**而不是静态的上下文对象中设置 HTTP 详细信息，Web API 操作现在可以使用 HttpRequestMessage 和 HttpResponseMessage 的实例。 这些对象的泛型版本还存在以便你可以使用你自定义类型，除了 HTTP 类型。
+- **查询组合：** 通过只需返回 IQueryable&lt;T&gt;，你的 Web API 将支持的 OData URL 约定通过查询。
+- **改进了 HTTP 详细信息的可测试性：** 而不是静态的上下文对象中设置 HTTP 详细信息，Web API 操作现在可以使用 HttpRequestMessage 和 HttpResponseMessage 的实例。 这些对象的泛型版本还存在以便你可以使用你自定义类型，除了 HTTP 类型。
 - **改进了控制反向 (IoC) 通过 DependencyResolver:** Web API 现在使用由 MVC 的依赖项解析程序实现的服务定位符模式来获取为许多不同设施的实例。
-- **基于代码的配置：**只有通过代码来完成 Web API 配置、 离开 config 文件清理。
+- **基于代码的配置：** 只有通过代码来完成 Web API 配置、 离开 config 文件清理。
 - **自承载：** Web Api 可以同时仍可使用的路由的完整功能和其他功能的 Web API 承载在 IIS 除了过程中。
 
 有关 ASP.NET Web API 的详细信息，请访问[ https://www.asp.net/web-api ](../web-api/index.md)。
@@ -219,7 +220,7 @@ jQuery Mobile 是用于构建触控优化 web UI 一个开放源代码库。 如
 
 如果访问者单击此链接，它们正在切换到同一页上的桌面版本。
 
-因为桌面布局并不包含视图切换器，默认情况下，访问者将不具有一种方法可用于访问移动模式。 若要启用此功能，将添加到以下引用 *\_ViewSwitcher*到桌面的布局，只在*&lt;正文&gt;*元素：
+因为桌面布局并不包含视图切换器，默认情况下，访问者将不具有一种方法可用于访问移动模式。 若要启用此功能，将添加到以下引用 *\_ViewSwitcher*到桌面的布局，只在*&lt;正文&gt;* 元素：
 
 [!code-cshtml[Main](mvc4-beta-release-notes/samples/sample7.cshtml)]
 
@@ -305,7 +306,7 @@ ASP.NET MVC 4 Beta 支持 Windows Azure SDK 1.5 2011 年 9 月版本。
 
     **所需的更新**
 
-  1. 在根 Web.config 文件中，添加新*&lt;appSettings&gt;*具有键项*webPages:Version*和值*1.0.0.0*。
+  1. 在根 Web.config 文件中，添加新*&lt;appSettings&gt;* 具有键项*webPages:Version*和值*1.0.0.0*。
 
       [!code-xml[Main](mvc4-beta-release-notes/samples/sample14.xml)]
   2. 在解决方案资源管理器，右键单击项目名称，然后选择卸载项目。 再次右键单击名称，然后选择编辑*ProjectName*.csproj。

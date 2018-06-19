@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891212"
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-c"></a>显示多个记录每行与 DataList 控件 (C#)
 ====================

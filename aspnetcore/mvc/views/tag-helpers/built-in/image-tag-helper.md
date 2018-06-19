@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30072257"
 ---
 # <a name="image-tag-helper-in-aspnet-core"></a>ASP.NET Core 中的图像标记帮助程序
 

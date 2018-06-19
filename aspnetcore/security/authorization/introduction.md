@@ -14,6 +14,7 @@ ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31483077"
 ---
 # <a name="introduction-to-authorization-in-aspnet-core"></a>在 ASP.NET Core 中授权简介
 

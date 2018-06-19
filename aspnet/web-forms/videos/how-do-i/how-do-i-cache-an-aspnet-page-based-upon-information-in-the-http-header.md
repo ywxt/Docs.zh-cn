@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-cache-an-aspnet-page-based-upon-information-in-the-http-header
-title: "[如何:] ASP.NET 页基于 HTTP 标头中的信息的缓存 |Microsoft 文档"
+title: '[如何:] ASP.NET 页基于 HTTP 标头中的信息的缓存 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 演示如何在基于页面的 HTTP 标头中的信息 ASP.NET 输出缓存中保留一个页面。 首先，潜在 HTTP hea..."
+description: 在此视频 Chris Pels 演示如何在基于页面的 HTTP 标头中的信息 ASP.NET 输出缓存中保留一个页面。 首先，潜在 HTTP hea...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/26/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28882212"
 ---
 <a name="how-do-i--cache-an-aspnet-page-based-upon-information-in-the-http-header"></a>[如何:] 缓存 ASP.NET 页基于 HTTP 标头中的信息
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871514"
 ---
 <a name="using-a-confirmbutton-in-a-repeater-c"></a>在转发器 (C#) 中使用 ConfirmButton
 ====================

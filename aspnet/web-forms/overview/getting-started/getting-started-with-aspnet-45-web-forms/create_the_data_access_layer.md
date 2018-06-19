@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881459"
 ---
 <a name="create-the-data-access-layer"></a>创建数据访问层
 ====================
@@ -69,7 +70,7 @@ ms.lasthandoff: 04/06/2018
     ![创建数据访问层-新项菜单](create_the_data_access_layer/_static/image1.png)
 
    随即出现“添加新项”对话框。
-2. 下**Visual C#**从**已安装**左侧窗格中，选择**代码**。 
+2. 下**Visual C#** 从**已安装**左侧窗格中，选择**代码**。 
 
     ![创建数据访问层-新项菜单](create_the_data_access_layer/_static/image2.png)
 3. 选择**类**从中间窗格中并将此新类命名*Product.cs*。

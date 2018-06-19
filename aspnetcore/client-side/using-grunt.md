@@ -14,6 +14,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897176"
 ---
 # <a name="use-grunt-in-aspnet-core"></a>在 ASP.NET 核心中使用 Grunt
 

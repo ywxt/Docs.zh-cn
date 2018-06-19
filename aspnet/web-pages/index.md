@@ -1,8 +1,8 @@
 ---
 uid: web-pages/index
-title: "ASP.NET Web Pages |Microsoft 文档"
+title: ASP.NET Web Pages |Microsoft 文档
 author: rick-anderson
-description: "下载 WebMatrix （&) 了解如何快速生成一个简便的方法与 HTML 组合服务器代码中的网页。"
+description: 下载 WebMatrix （&) 了解如何快速生成一个简便的方法与 HTML 组合服务器代码中的网页。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages
 msc.type: categoryindex
 ms.openlocfilehash: d6c2d8a564b5144845e89cd0ee86841b9f305bf5
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528656"
 ---
 <a name="aspnet-web-pages"></a>ASP.NET 网页
 ====================

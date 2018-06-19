@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872268"
 ---
 <a name="displaying-a-table-of-database-data-vb"></a>显示表的数据库数据 (VB)
 ====================
@@ -105,7 +106,7 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-vb[Main](displaying-a-table-of-database-data-vb/samples/sample1.vb)]
 
-在清单 1 MoviesDBEntities 类用于表示 MoviesDB 数据库。 表达式*实体。MovieSet.ToList()*返回所有电影的集，从电影数据库表。
+在清单 1 MoviesDBEntities 类用于表示 MoviesDB 数据库。 表达式*实体。MovieSet.ToList()* 返回所有电影的集，从电影数据库表。
 
 ## <a name="create-the-view"></a>创建视图
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875690"
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a>源代码管理 （使用 Azure 构建真实世界云应用）
 ====================
@@ -53,7 +54,7 @@ ms.lasthandoff: 04/06/2018
 
 通常可太多的人，它是一个密码等敏感数据的适当安全位置到源代码存储库进行访问。 如果脚本依赖于机密例如密码，参数化这些设置，以便它们不保存在源代码中，并将存储您的机密信息的其他位置。
 
-例如，Azure 可让你下载包含的文件以自动发布配置文件创建发布设置。 这些文件包括用户名和密码用于列出被授权管理你的 Azure 服务。 如果你使用此方法来创建发布配置文件，并签入到源代码管理这些文件时，如果有权访问你的存储库的任何人都可以看到这些用户名和密码。 你可以安全地将密码存储在发布配置文件本身由于对其进行加密，并且它是*。 pubxml.user*默认情况下不包括在源代码管理中的文件。
+例如，Azure 可让你下载包含的文件以自动发布配置文件创建发布设置。 这些文件包括用户名和密码用于列出被授权管理你的 Azure 服务。 如果你使用此方法来创建发布配置文件，并签入到源代码管理这些文件时，如果有权访问你的存储库的任何人都可以看到这些用户名和密码。 你可以安全地将密码存储在发布配置文件本身由于对其进行加密，并且它是 *。 pubxml.user*默认情况下不包括在源代码管理中的文件。
 
 <a id="devops"></a>
 ## <a name="structure-source-branches-to-facilitate-devops-workflow"></a>结构源分支来促进 DevOps 工作流
@@ -83,7 +84,7 @@ ms.lasthandoff: 04/06/2018
 
 它们包含在 Visual Studio 解决方案文件夹中 （假定你的项目在源代码管理中），可以将脚本添加到 Visual Studio 中的源控件。 此处是一种方法来完成此操作。
 
-在解决方案文件夹中创建的脚本的文件夹 (为相同文件夹中你*.sln*文件)。
+在解决方案文件夹中创建的脚本的文件夹 (为相同文件夹中你 *.sln*文件)。
 
 ![自动化文件夹](source-control/_static/image3.png)
 
@@ -112,7 +113,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-xml[Main](source-control/samples/sample1.xml?highlight=2-3,11)]
 
-如果将实际生产中的这些设置的值你*Web.config*文件，或如果将它们放在*Web.Release.config*文件来配置用于将其插入在部署期间，Web.config 转换它们将存储在源代码存储库中。 如果在生产中输入数据库连接字符串时发布配置文件，密码将在你*.pubxml*文件。 (你无法排除*.pubxml*从源代码管理文件，但共享所有其他部署设置的优势的丧失然后。)
+如果将实际生产中的这些设置的值你*Web.config*文件，或如果将它们放在*Web.Release.config*文件来配置用于将其插入在部署期间，Web.config 转换它们将存储在源代码存储库中。 如果在生产中输入数据库连接字符串时发布配置文件，密码将在你 *.pubxml*文件。 (你无法排除 *.pubxml*从源代码管理文件，但共享所有其他部署设置的优势的丧失然后。)
 
 Azure 允许你提供的备用**appSettings**和连接字符串的部分*Web.config*文件。 以下是相关的部分**配置**Azure 管理门户中的 web 站点的选项卡：
 

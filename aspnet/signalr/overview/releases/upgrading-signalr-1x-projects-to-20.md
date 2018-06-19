@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/releases/upgrading-signalr-1x-projects-to-20
-title: "将 SignalR 1.x 项目升级到版本 2 |Microsoft 文档"
+title: 将 SignalR 1.x 项目升级到版本 2 |Microsoft 文档
 author: pfletcher
-description: "本主题介绍如何将现有 SignalR 1.x 项目升级到 SignalR 2.x，以及如何解决在升级过程中可能出现的问题..."
+description: 本主题介绍如何将现有 SignalR 1.x 项目升级到 SignalR 2.x，以及如何解决在升级过程中可能出现的问题...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26505736"
 ---
 <a name="upgrading-signalr-1x-projects-to-version-2"></a>将 SignalR 1.x 项目升级到版本 2
 ====================
@@ -68,7 +69,7 @@ SignalR 2 提供一种一致的开发体验跨服务器平台使用[OWIN](http:/
 
 在此部分中，你将更新应用程序中创建[SignalR 1.x 版入门教程](../older-versions/index.md)使用 SignalR 2。
 
-1. 完成入门教程后，右键单击项目，然后选择**属性**。 验证**目标框架**设置为**.NET Framework 4.5。**
+1. 完成入门教程后，右键单击项目，然后选择**属性**。 验证**目标框架**设置为 **.NET Framework 4.5。**
 2. 打开程序包管理器控制台。 删除 SignalR 1.x 从项目使用以下命令：
 
     [!code-powershell[Main](upgrading-signalr-1x-projects-to-20/samples/sample1.ps1)]

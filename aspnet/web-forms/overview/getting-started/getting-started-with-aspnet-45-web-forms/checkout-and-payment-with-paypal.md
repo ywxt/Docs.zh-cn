@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891888"
 ---
 <a name="checkout-and-payment-with-paypal"></a>签出和与 PayPal 付款
 ====================
@@ -294,7 +295,7 @@ PayPal 是接受通过联机商人付款基于 web 的计费平台。 接下来�
 
 1. 在 Visual Studio 中 Wingtip Toys 示例应用程序中，右键单击**逻辑**文件夹，然后选择**添加** - &gt; **新项**。   
    随即出现“添加新项”对话框。
-2. 下**Visual C#**从**已安装**左侧窗格中，选择**代码**。
+2. 下**Visual C#** 从**已安装**左侧窗格中，选择**代码**。
 3. 从中间窗格中，选择**类**。 将此新类**PayPalFunctions.cs**。
 4. 单击 **添加**。  
    编辑器中将显示新的类文件。

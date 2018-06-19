@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890159"
 ---
 <a name="creating-and-using-an-ajax-enabled-web-service-in-a-web-site"></a>创建和使用的网站中启用了 AJAX 的 Web 服务
 ====================

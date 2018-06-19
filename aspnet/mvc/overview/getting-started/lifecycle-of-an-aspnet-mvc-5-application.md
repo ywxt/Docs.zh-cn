@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application
-title: "ASP.NET MVC 5 应用程序生命周期 |Microsoft 文档"
+title: ASP.NET MVC 5 应用程序生命周期 |Microsoft 文档
 author: cephalin
-description: "下载 PDF 文档绘制图表的 ASP.NET MVC 5 应用程序生命周期。 此生命周期文档提供的 MVC 生命周期的高级视图..."
+description: 下载 PDF 文档绘制图表的 ASP.NET MVC 5 应用程序生命周期。 此生命周期文档提供的 MVC 生命周期的高级视图...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/28/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036487"
 ---
 <a name="lifecycle-of-an-aspnet-mvc-5-application"></a>ASP.NET MVC 5 应用程序生命周期
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879097"
 ---
 <a name="using-templatefields-in-the-detailsview-control-c"></a>说明如何控件 (C#) 中使用 TemplateFields
 ====================

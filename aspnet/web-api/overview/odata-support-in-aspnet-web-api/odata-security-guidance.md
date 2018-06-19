@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868703"
 ---
 <a name="security-guidance-for-aspnet-web-api-2-odata"></a>安全指南用于 ASP.NET Web API 2 OData
 ====================
@@ -28,7 +29,7 @@ ms.lasthandoff: 04/06/2018
 
 查询语义基于实体数据模型 (EDM) 中，不是基础的模型类型。 您可以从 EDM 排除属性和它将看不到查询。 例如，假设您的模型包含具有薪金属性的员工类型。 你可能想要从 EDM 以隐藏它从客户端排除此属性。
 
-有两种方法对排除来自 EDM 的属性。 你可以设置**[IgnoreDataMember]**模型类中的属性上的属性：
+有两种方法对排除来自 EDM 的属性。 你可以设置 **[IgnoreDataMember]** 模型类中的属性上的属性：
 
 [!code-csharp[Main](odata-security-guidance/samples/sample1.cs)]
 
@@ -40,7 +41,7 @@ ms.lasthandoff: 04/06/2018
 
 恶意或 naïve 客户端可以来构造查询中需要很长时间才能执行。 在最坏情况下这可能会中断服务的访问权限。
 
-**[Queryable]**属性是一个操作筛选器，用于分析、 验证，并适用查询。 筛选器将转换为 LINQ 表达式的查询选项。 当 OData 控制器返回**IQueryable**类型， **IQueryable** LINQ 提供程序将查询转换为 LINQ 表达式。 因此，性能取决于使用时，LINQ 提供程序和数据集或数据库架构的特定特征。
+**[Queryable]** 属性是一个操作筛选器，用于分析、 验证，并适用查询。 筛选器将转换为 LINQ 表达式的查询选项。 当 OData 控制器返回**IQueryable**类型， **IQueryable** LINQ 提供程序将查询转换为 LINQ 表达式。 因此，性能取决于使用时，LINQ 提供程序和数据集或数据库架构的特定特征。
 
 有关在 ASP.NET Web API 中使用 OData 查询选项的详细信息，请参阅[支持 OData 查询选项](supporting-odata-query-options.md)。
 
@@ -56,7 +57,7 @@ ms.lasthandoff: 04/06/2018
 - 请考虑将 $orderby 限制为聚集索引中的属性。 对没有聚集索引的大型数据进行排序很慢。 
 
     [!code-csharp[Main](odata-security-guidance/samples/sample5.cs)]
-- 最大节点计数： **MaxNodeCount**属性**[Queryable]**设置 $filter 语法树中允许的最大数字节点。 默认值为 100，但你可能想要设置较低的值，因为大量的节点可能会很慢进行编译。 这是如果你使用 LINQ to Objects （即，在内存中，而不使用中间的 LINQ 提供程序的集合的 LINQ 查询） 尤其如此。 
+- 最大节点计数： **MaxNodeCount**属性 **[Queryable]** 设置 $filter 语法树中允许的最大数字节点。 默认值为 100，但你可能想要设置较低的值，因为大量的节点可能会很慢进行编译。 这是如果你使用 LINQ to Objects （即，在内存中，而不使用中间的 LINQ 提供程序的集合的 LINQ 查询） 尤其如此。 
 
     [!code-csharp[Main](odata-security-guidance/samples/sample6.cs)]
 - 考虑禁用了 any （） 和 all() 函数中，因为这些可能会很慢。 

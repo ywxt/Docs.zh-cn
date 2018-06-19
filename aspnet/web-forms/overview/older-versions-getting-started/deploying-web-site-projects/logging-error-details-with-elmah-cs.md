@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30890614"
 ---
 <a name="logging-error-details-with-elmah-c"></a>日志记录错误的详细信息，ELMAH (C#)
 ====================

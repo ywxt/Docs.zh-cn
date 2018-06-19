@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/overview/asp-net-mvc-overview
-title: "ASP.NET MVC 概述 |Microsoft 文档"
+title: ASP.NET MVC 概述 |Microsoft 文档
 author: microsoft
-description: "了解有关 ASP.NET MVC 应用程序和 ASP.NET Web 窗体应用程序之间的差异。 了解如何决定何时生成 ASP.NET MVC 应用程序。"
+description: 了解有关 ASP.NET MVC 应用程序和 ASP.NET Web 窗体应用程序之间的差异。 了解如何决定何时生成 ASP.NET MVC 应用程序。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26500866"
 ---
 <a name="aspnet-mvc-overview"></a>ASP.NET MVC 概述
 ====================

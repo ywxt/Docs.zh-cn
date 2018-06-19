@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867913"
 ---
 <a name="creating-a-connection-string-and-working-with-sql-server-localdb"></a>创建连接字符串和使用 SQL Server LocalDB
 ====================
@@ -30,7 +31,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-[LocalDB](https://docs.microsoft.com/sql/database-engine/configure-windows/sql-server-2016-express-localdb)是 SQL Server Express 数据库引擎的按需启动并在用户模式下运行的轻量版本。 LocalDB 运行中的 SQL Server Express，可用于处理数据库作为一种特殊的执行模式*.mdf*文件。 通常，将 LocalDB 数据库文件保存在*应用\_数据*web 项目的文件夹。
+[LocalDB](https://docs.microsoft.com/sql/database-engine/configure-windows/sql-server-2016-express-localdb)是 SQL Server Express 数据库引擎的按需启动并在用户模式下运行的轻量版本。 LocalDB 运行中的 SQL Server Express，可用于处理数据库作为一种特殊的执行模式 *.mdf*文件。 通常，将 LocalDB 数据库文件保存在*应用\_数据*web 项目的文件夹。
 
 不建议在生产 web 应用程序中使用 SQL Server Express。 LocalDB 尤其应不用于与 web 应用程序的生产因为它不是使用 IIS。 但是，LocalDB 数据库可以轻松地迁移到 SQL Server 或 SQL Azure。
 
@@ -60,7 +61,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-csharp[Main](creating-a-connection-string/samples/sample3.cs?highlight=15)]
 
-你实际上不需要添加`MovieDBContext`连接字符串。 如果未指定连接字符串，实体框架将带有完全限定名称的用户目录中创建 LocalDB 数据库[DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)类 (在这种情况下`MvcMovie.Models.MovieDBContext`)。 你可以将数据库命名您喜欢的任何，只要它具有*。MDF*后缀。 例如，我们无法将数据库命名*MyFilms.mdf*。
+你实际上不需要添加`MovieDBContext`连接字符串。 如果未指定连接字符串，实体框架将带有完全限定名称的用户目录中创建 LocalDB 数据库[DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)类 (在这种情况下`MvcMovie.Models.MovieDBContext`)。 你可以将数据库命名您喜欢的任何，只要它具有 *。MDF*后缀。 例如，我们无法将数据库命名*MyFilms.mdf*。
 
 接下来，你将生成一个新`MoviesController`类，该类可以用于显示影片数据，并允许用户创建新的影片列表。
 

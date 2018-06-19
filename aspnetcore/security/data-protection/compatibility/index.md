@@ -14,6 +14,7 @@ ms.sourcegitcommit: 71b93b42cbce8a9b1a12c4d88391e75a4dfb6162
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/20/2018
+ms.locfileid: "30001332"
 ---
 # <a name="compatibility-in-aspnet-core"></a>ASP.NET Core 中的兼容性
 

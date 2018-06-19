@@ -14,6 +14,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30076002"
 ---
 # <a name="consumer-apis-overview-for-aspnet-core"></a>有关 ASP.NET 核心的使用者 Api 概述
 

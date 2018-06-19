@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872970"
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>配置文件和调试使用 Glimpse 对 ASP.NET MVC 应用程序
 ====================
@@ -95,7 +96,7 @@ ms.lasthandoff: 04/06/2018
 <a id="mb"></a>
 ## <a name="model-binding"></a>模型绑定
 
-[模型绑定选项卡](http://getglimpse.com/Docs/Model-Binding-Tab)提供丰富的信息来帮助你了解为何某些未被绑定如所料，窗体变量的绑定方式。 下面的图像显示**？** 图标，你可以单击以打开该功能的 glimpse 帮助页。
+[模型绑定选项卡](http://getglimpse.com/Docs/Model-Binding-Tab)提供丰富的信息来帮助你了解为何某些未被绑定如所料，窗体变量的绑定方式。 下面的图像显示 **？** 图标，你可以单击以打开该功能的 glimpse 帮助页。
 
 ![glimpse 模型绑定视图](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image11.png)
 

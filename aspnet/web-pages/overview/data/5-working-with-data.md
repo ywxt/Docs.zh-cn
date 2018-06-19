@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898903"
 ---
 <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>使用在 ASP.NET 网页中的数据库的简介页 (Razor) 站点
 ====================
@@ -86,7 +87,7 @@ ms.lasthandoff: 04/06/2018
     ![[image]](5-working-with-data/_static/image1.jpg)
 7. 在单击**名称**列和输入&quot;Id&quot;。
 8. 在**数据类型**列中，选择**int**。
-9. 设置**是主键？**和**是识别？**选项到**是**。
+9. 设置**是主键？** 和**是识别？** 选项到**是**。
 
     顾名思义，**是 Primary Key**告诉数据库，这将是表的主键。 **是标识**告诉数据库自动创建新的每个记录的 ID 号并将其分配下一步的序列号 （从 1 开始）。
 10. 单击下一步的行中。 此时将启动一个新的列定义编辑器。
@@ -94,7 +95,7 @@ ms.lasthandoff: 04/06/2018
 12. 有关**数据类型**，选择&quot;nvarchar&quot;和长度设置为 50。 *Var*属于`nvarchar`告诉数据库此列的数据将为其大小可能有所不同记录之间的字符串。 ( *N*前缀表示*国家/地区*、，该值指示字段可以保存表示任何字母的字符数据或写入系统&#8212;，即，该字段将持有 Unicode 数据。)
 13. 设置**允许 null 值**选项设为**否**。 这会强制此要求*名称*列不会保留空白。
 14. 使用此相同的过程中，创建一个名为列*说明*。 设置**数据类型**"nvarchar"和长度，并设置 50**允许 null 值**为 false。
-15. 创建一个名为列*价格*。 设置**数据类型设置为"货币"**并设置**允许 null 值**为 false。
+15. 创建一个名为列*价格*。 设置**数据类型设置为"货币"** 并设置**允许 null 值**为 false。
 16. 在顶部的框中，命名表&quot;产品&quot;。
 
     完成后，定义将如下所示：
@@ -136,7 +137,7 @@ ms.lasthandoff: 04/06/2018
 
     [!code-cshtml[Main](5-working-with-data/samples/sample1.cshtml)]
 
-    你可以在第一个代码块中，打开*SmallBakery.sdf*前面创建的文件 （数据库）。 `Database.Open`方法假设*.sdf*文件位于你的网站*应用\_数据*文件夹。 (请注意，不需要指定*.sdf*扩展&#8212;事实上，如果这样做，`Open`方法将不起作用。)
+    你可以在第一个代码块中，打开*SmallBakery.sdf*前面创建的文件 （数据库）。 `Database.Open`方法假设 *.sdf*文件位于你的网站*应用\_数据*文件夹。 (请注意，不需要指定 *.sdf*扩展&#8212;事实上，如果这样做，`Open`方法将不起作用。)
 
     > [!NOTE]
     > *应用\_数据*文件夹是用于存储数据文件的 ASP.NET 中的特殊文件夹。 有关详细信息，请参阅[连接到数据库](#SB_ConnectingToADatabase)本文后续部分中。
@@ -366,7 +367,7 @@ ms.lasthandoff: 04/06/2018
 > <a id="SB_ConnectingToADatabase"></a>
 > ### <a name="connecting-to-a-database"></a>连接到数据库
 > 
-> 你可以连接到两种方法中的数据库。 第一种是使用`Database.Open`方法并指定数据库文件的名称 (较少*.sdf*扩展):
+> 你可以连接到两种方法中的数据库。 第一种是使用`Database.Open`方法并指定数据库文件的名称 (较少 *.sdf*扩展):
 > 
 > `var db = Database.Open("SmallBakery");`
 > 
@@ -378,15 +379,15 @@ ms.lasthandoff: 04/06/2018
 > 
 > [!code-xml[Main](5-working-with-data/samples/sample27.xml)]
 > 
-> 在示例中，连接字符串指向的某处的服务器运行的 SQL Server 实例中的数据库 (而不是本地*.sdf*文件)。 你将需要进行替换为相应的名称`myServer`和`myDatabase`，并指定 SQL Server 登录名值`username`和`password`。 （用户名和密码值不一定是相同作为您的 Windows 凭据或你托管提供商已授予你用于登录到其服务器的值。 与管理员一起检查所需的确切值。）
+> 在示例中，连接字符串指向的某处的服务器运行的 SQL Server 实例中的数据库 (而不是本地 *.sdf*文件)。 你将需要进行替换为相应的名称`myServer`和`myDatabase`，并指定 SQL Server 登录名值`username`和`password`。 （用户名和密码值不一定是相同作为您的 Windows 凭据或你托管提供商已授予你用于登录到其服务器的值。 与管理员一起检查所需的确切值。）
 > 
-> `Database.Open`方法非常灵活，因为它允许您将数据库名称传递*.sdf*文件或存储在连接字符串的名称*Web.config*文件。 下面的示例演示如何使用连接到数据库的连接字符串，在前面的示例所示：
+> `Database.Open`方法非常灵活，因为它允许您将数据库名称传递 *.sdf*文件或存储在连接字符串的名称*Web.config*文件。 下面的示例演示如何使用连接到数据库的连接字符串，在前面的示例所示：
 > 
 > [!code-cshtml[Main](5-working-with-data/samples/sample28.cshtml)]
 > 
-> 如前所述，`Database.Open`方法使你可以将数据库名称或连接字符串，传递和它将找出使用哪一个。 在部署时，这是非常有用 （发布） 网站。 你可以使用*.sdf*文件中*应用\_数据*文件夹时你开发和测试你的站点。 然后，将你的站点移到生产服务器时，可以使用中的连接字符串*Web.config*具有同名的文件您*.sdf*文件，但该点添加到托管提供商的数据库&#8212;所有而无需更改代码。
+> 如前所述，`Database.Open`方法使你可以将数据库名称或连接字符串，传递和它将找出使用哪一个。 在部署时，这是非常有用 （发布） 网站。 你可以使用 *.sdf*文件中*应用\_数据*文件夹时你开发和测试你的站点。 然后，将你的站点移到生产服务器时，可以使用中的连接字符串*Web.config*具有同名的文件您 *.sdf*文件，但该点添加到托管提供商的数据库&#8212;所有而无需更改代码。
 > 
-> 最后，如果你想要直接使用连接字符串，则可以调用`Database.OpenConnectionString`方法并传入该实际的连接字符串而不只在中的名称，它*Web.config*文件。 这可能会在其中出于某种原因不具备访问权限的连接字符串的情况下很有用 (或值，例如*.sdf*文件名称) 之前运行页面。 但是，对于大多数情况下，你可以使用`Database.Open`这篇文章中所述。
+> 最后，如果你想要直接使用连接字符串，则可以调用`Database.OpenConnectionString`方法并传入该实际的连接字符串而不只在中的名称，它*Web.config*文件。 这可能会在其中出于某种原因不具备访问权限的连接字符串的情况下很有用 (或值，例如 *.sdf*文件名称) 之前运行页面。 但是，对于大多数情况下，你可以使用`Database.Open`这篇文章中所述。
 
 
 ## <a name="additional-resources"></a>其他资源

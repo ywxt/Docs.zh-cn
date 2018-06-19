@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 内置标记帮助程序"
+title: ASP.NET Core 内置标记帮助程序
 author: pkellner
-description: "了解 ASP.NET Core 内置标记帮助程序如何提高生产力。"
+description: 了解 ASP.NET Core 内置标记帮助程序如何提高生产力。
 manager: wpickett
 ms.author: riande
 ms.date: 09/13/2017
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29903203"
 ---
 # <a name="aspnet-core-built-in-tag-helpers"></a>ASP.NET Core 内置标记帮助程序
 

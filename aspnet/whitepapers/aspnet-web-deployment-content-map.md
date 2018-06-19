@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/aspnet-web-deployment-content-map
-title: "ASP.NET Web 部署的推荐资源 |Microsoft 文档"
+title: ASP.NET Web 部署的推荐资源 |Microsoft 文档
 author: rick-anderson
-description: "本主题提供有关如何部署的资源 （发布） ASP.NET web 文档的链接到 IIS 的应用程序通过使用 Visual Studio 2010 中，Visual Web De..."
+description: 本主题提供有关如何部署的资源 （发布） ASP.NET web 文档的链接到 IIS 的应用程序通过使用 Visual Studio 2010 中，Visual Web De...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/14/2014
 ms.topic: article
 ms.assetid: 58b583cd-c4ab-47a3-8527-8c92c298c91f
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet-web-deployment-content-map
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28048163"
 ---
 <a name="aspnet-web-deployment---recommended-resources"></a>ASP.NET Web 部署的推荐资源
 ====================

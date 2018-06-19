@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875885"
 ---
 <a name="how-do-i-work-with-model-binders-in-an-mvc-application"></a>我如何： 使用 MVC 应用程序中的模型联编程序？
 ====================

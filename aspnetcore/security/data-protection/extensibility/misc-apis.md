@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30072759"
 ---
 # <a name="miscellaneous-aspnet-core-data-protection-apis"></a>杂项 ASP.NET 核心数据保护 Api
 
