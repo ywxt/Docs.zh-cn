@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/releases/whats-new-aspnet-web-pages-31
-title: "最新信息在 ASP.NET Web 页 3.1 |Microsoft 文档"
+title: 最新信息在 ASP.NET Web 页 3.1 |Microsoft 文档
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529506"
 ---
 <a name="whats-new-in-aspnet-web-pages-31"></a>什么是所需的 ASP.NET Web Pages 3.1 中的新增功能
 ====================

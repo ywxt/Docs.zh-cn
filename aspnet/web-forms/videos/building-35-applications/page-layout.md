@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/page-layout
-title: "页面布局 |Microsoft 文档"
+title: 页面布局 |Microsoft 文档
 author: JoeStagner
-description: "表或样式表？ 相对定位或绝对？ 此视频将演示支持使用开发则 Visual Web developer 的功能..."
+description: 表或样式表？ 相对定位或绝对？ 此视频将演示支持使用开发则 Visual Web developer 的功能...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525396"
 ---
 <a name="page-layout"></a>页面布局
 ====================

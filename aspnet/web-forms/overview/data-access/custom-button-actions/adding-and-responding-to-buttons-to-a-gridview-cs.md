@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878290"
 ---
 <a name="adding-and-responding-to-buttons-to-a-gridview-c"></a>添加和响应的按钮添加到 GridView (C#)
 ====================
@@ -127,7 +128,7 @@ ms.lasthandoff: 04/06/2018
 
 [![指示，供应商 Id 参数应来自供应商 FormView 控件](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image25.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image24.png)
 
-**图 10**： 指示*`supplierID`*参数应来自`Suppliers`FormView 控件 ([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image26.png))
+**图 10**： 指示*`supplierID`* 参数应来自`Suppliers`FormView 控件 ([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image26.png))
 
 
 完成对象数据源向导后，命令将 BoundField 或 CheckBoxField 为每个产品的数据字段包含 GridView。 让我们削减这以显示仅`ProductName`和`UnitPrice`连同 BoundFields `Discontinued` CheckBoxField; 此外，让我们格式`UnitPrice`BoundField 以便其文本设置为货币的格式。 你 GridView 和`SuppliersProductsDataSource`ObjectDataSource 的声明性标记应类似于以下标记：
@@ -178,7 +179,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-csharp[Main](adding-and-responding-to-buttons-to-a-gridview-cs/samples/sample5.cs)]
 
-此方法只需调用直至`DiscontinueAllProductsForSupplier(supplierID)`中 DAL，沿提供传递方法*`supplierID`*参数值。 如果没有要在某些情况下停用的供应商的产品，只允许任何业务规则，这些规则应 BLL 在此处，实现。
+此方法只需调用直至`DiscontinueAllProductsForSupplier(supplierID)`中 DAL，沿提供传递方法*`supplierID`* 参数值。 如果没有要在某些情况下停用的供应商的产品，只允许任何业务规则，这些规则应 BLL 在此处，实现。
 
 > [!NOTE]
 > 与不同`UpdateProduct`重载以`ProductsBLL`类，`DiscontinueAllProductsForSupplier(supplierID)`方法签名不包括`DataObjectMethodAttribute`属性 (`<System.ComponentModel.DataObjectMethodAttribute(System.ComponentModel.DataObjectMethodType.Update, Boolean)>`)。 这将阻止`DiscontinueAllProductsForSupplier(supplierID)`从 ObjectDataSource 的配置数据源向导的下拉列表中更新选项卡的方法。我已省略此属性，因为我们将调用`DiscontinueAllProductsForSupplier(supplierID)`直接从我们 ASP.NET 页中的事件处理方法。

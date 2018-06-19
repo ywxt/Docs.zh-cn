@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872733"
 ---
 <a name="implementing-a-custom-mysql-aspnet-identity-storage-provider"></a>实现自定义 MySQL ASP.NET 标识存储提供程序
 ====================
@@ -77,7 +78,7 @@ ms.lasthandoff: 04/06/2018
 ## <a name="create-a-mysql-database-instance-on-azure"></a>在 Azure 上创建 MySQL 数据库实例
 
 1. 登录到[Azure 门户](https://manage.windowsazure.com/)。
-2. 单击**+ 新建**页上，，然后选择底部**存储**。  
+2. 单击 **+ 新建**页上，，然后选择底部**存储**。  
     ![](implementing-a-custom-mysql-aspnet-identity-storage-provider/_static/image1.png)
 3. 在**选择和外接程序**向导中，选择**ClearDB MySQL 数据库**，然后单击右下角的对话框中的下一步箭头。  
     ![](implementing-a-custom-mysql-aspnet-identity-storage-provider/_static/image2.png)
@@ -97,7 +98,7 @@ ms.lasthandoff: 04/06/2018
 ### <a name="install-mysql-workbench-tool-to-connect-and-manage-mysql-database"></a>安装 MySQL Workbench 工具连接和管理 MySQL 数据库
 
 1. 安装**MySQL Workbench**工具[MySQL 下载页](http://dev.mysql.com/downloads/windows/installer/)
-2. 启动应用并在上添加单击**MySQLConnections +**按钮以添加新连接。 使用从本教程中前面创建的 Azure MySQL 数据库复制的连接字符串数据。
+2. 启动应用并在上添加单击**MySQLConnections +** 按钮以添加新连接。 使用从本教程中前面创建的 Azure MySQL 数据库复制的连接字符串数据。
 3. 建立连接后，打开一个新**查询**选项卡上; 粘贴从命令[MySQLIdentity.sql](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/MySQLIdentity.sql)到查询并执行它才能创建数据库表。
 4. 你现在具有所有如下所示，在 Azure 上托管的 MySQL 数据库上创建的 ASP.NET 标识所需表。  
     ![](implementing-a-custom-mysql-aspnet-identity-storage-provider/_static/image1.jpg)
@@ -116,12 +117,12 @@ ms.lasthandoff: 04/06/2018
 ### <a name="create-a-new-mvc-application-project-from-template"></a>从模板创建新的 MVC 应用程序项目
 
 1. 右键单击**AspNet.Identity.MySQL**解决方案和**添加**，**新项目**
-2. 在**添加新项目**对话框中，选择**Visual C#**在左侧，然后**Web** ，然后选择**ASP.NET Web 应用程序**。 命名你的项目**IdentityMySQLDemo**; 然后单击确定。  
+2. 在**添加新项目**对话框中，选择**Visual C#** 在左侧，然后**Web** ，然后选择**ASP.NET Web 应用程序**。 命名你的项目**IdentityMySQLDemo**; 然后单击确定。  
   
     ![](implementing-a-custom-mysql-aspnet-identity-storage-provider/_static/image2.jpg)
 3. 在**新建 ASP.NET 项目**对话框中，选择 MVC 模板中的使用默认选项 (包括**单个用户帐户**作为身份验证方法)，然后单击**确定**.![](implementing-a-custom-mysql-aspnet-identity-storage-provider/_static/image3.jpg)
 4. 在解决方案资源管理器，右键单击 IdentityMySQLDemo 项目并选择**管理 NuGet 包**。 在搜索文本框对话框中，键入**Identity.EntityFramework**。 在结果列表中选择此包，然后单击**卸载**。 系统将提示您要卸载依赖项包 EntityFramework。 单击是我们无法再将此应用程序上的此包。
-5. 右键单击 IdentityMySQLDemo 项目中，选择**添加**，**的引用、 解决方案、 项目;**选择 AspNet.Identity.MySQL 项目，然后单击**确定**。
+5. 右键单击 IdentityMySQLDemo 项目中，选择**添加**，**的引用、 解决方案、 项目;** 选择 AspNet.Identity.MySQL 项目，然后单击**确定**。
 6. 在 IdentityMySQLDemo 项目中，将对所有引用  
     `using Microsoft.AspNet.Identity.EntityFramework;`  
    替换为  

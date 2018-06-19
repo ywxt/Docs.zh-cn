@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/rating/index
-title: "评级 |Microsoft 文档"
+title: 评级 |Microsoft 文档
 author: rick-anderson
-description: "本教程演示如何使用分级控件可让用户输入的项目或项级别。"
+description: 本教程演示如何使用分级控件可让用户输入的项目或项级别。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating
 msc.type: chapter
 ms.openlocfilehash: cabc043fd4be36d5d81563fa2f4b7e46a08fcad8
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26511606"
 ---
 <a name="rating"></a>评级
 ====================

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34306642"
 ---
 # <a name="session-and-application-state-in-aspnet-core"></a>ASP.NET Core 中的会话和应用程序状态
 

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32740031"
 ---
 # <a name="role-based-authorization-in-aspnet-core"></a>ASP.NET 核心中基于角色的授权
 

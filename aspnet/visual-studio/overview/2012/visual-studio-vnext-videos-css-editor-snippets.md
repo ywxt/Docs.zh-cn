@@ -1,14 +1,14 @@
 ---
 uid: visual-studio/overview/2012/visual-studio-vnext-videos-css-editor-snippets
-title: "Visual Studio vNext 视频： CSS 代码段 |Microsoft 文档"
+title: Visual Studio vNext 视频： CSS 代码段 |Microsoft 文档
 author: madskristensen
-description: "在此视频中，Mads Kristensen 演示 Visual Studio 的 vNext CSS 编辑器，其中添加 CSS3 的转换，媒体 q 一些有用的代码片段中的改进..."
+description: 在此视频中，Mads Kristensen 演示 Visual Studio 的 vNext CSS 编辑器，其中添加 CSS3 的转换，媒体 q 一些有用的代码片段中的改进...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/30/2011
 ms.topic: article
 ms.assetid: a87af3be-589d-4b0c-846d-4de60a8745c0
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/visual-studio-vnext-videos-css-editor-snippets
 msc.type: video
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506466"
 ---
 <a name="visual-studio-vnext-videos-css-snippets"></a>Visual Studio vNext 视频： CSS 代码段
 ====================

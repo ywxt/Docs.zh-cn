@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/unit-testing/index
-title: "单元测试 |Microsoft 文档"
+title: 单元测试 |Microsoft 文档
 author: rick-anderson
-description: "此教程集演示如何创建针对 ASP.NET MVC 控制器操作的单元测试。"
+description: 此教程集演示如何创建针对 ASP.NET MVC 控制器操作的单元测试。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions-1/unit-testing
 msc.type: chapter
 ms.openlocfilehash: 8d003486ae45938dfed93b908c4be44e66085189
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26500716"
 ---
 <a name="unit-testing"></a>单元测试
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/index
-title: "ASP.NET 4-继续以实体框架 4 和 Web 窗体 |Microsoft 文档"
+title: ASP.NET 4-继续以实体框架 4 和 Web 窗体 |Microsoft 文档
 author: rick-anderson
-description: "如何生成使用 ObjectDataSource 控件的 n 层应用程序作为 Contoso U 应用程序以及如何处理并发和最大程度提高性能。"
+description: 如何生成使用 ObjectDataSource 控件的 n 层应用程序作为 Contoso U 应用程序以及如何处理并发和最大程度提高性能。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-wit
 msc.type: chapter
 ms.openlocfilehash: aa412b55bddf886f6915dc852599a423c56c9fc3
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26516636"
 ---
 <a name="aspnet-4---continuing-with-entity-framework-4-and-web-forms"></a>ASP.NET 4-继续以实体框架 4 和 Web 窗体
 ====================

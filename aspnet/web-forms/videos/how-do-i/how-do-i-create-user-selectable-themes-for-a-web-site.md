@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-user-selectable-themes-for-a-web-site
-title: "[如何:]为网站创建用户可选择的主题 |Microsoft 文档"
+title: '[如何:]为网站创建用户可选择的主题 |Microsoft 文档'
 author: rick-anderson
-description: "在本视频中 Chris Pels 将演示如何创建网站的多个主题，然后允许用户选择的主题应用于该站点。 请参阅如何..."
+description: 在本视频中 Chris Pels 将演示如何创建网站的多个主题，然后允许用户选择的主题应用于该站点。 请参阅如何...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/13/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26524946"
 ---
 <a name="how-do-i-create-user-selectable-themes-for-a-web-site"></a>[如何:]为网站创建用户可选择的主题
 ====================

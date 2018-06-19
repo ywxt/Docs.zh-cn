@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-implement-url-rewriting
-title: "[如何:]实现 URL 重写？ | Microsoft Docs"
+title: '[如何:]实现 URL 重写？ | Microsoft Docs'
 author: scottgolightly
-description: "在本视频中 Scott Golightly 演示如何创建 ASP.NET HttpModule 重写 URL 对 web 页的请求到达时。 你可能想要重写..."
+description: 在本视频中 Scott Golightly 演示如何创建 ASP.NET HttpModule 重写 URL 对 web 页的请求到达时。 你可能想要重写...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/01/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526256"
 ---
 <a name="how-do-i-implement-url-rewriting"></a>[如何:]实现 URL 重写？
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867809"
 ---
 <a name="publish-the-app-to-azure-azure-app-service"></a>将应用发布到 Azure 的 Azure App Service
 ====================

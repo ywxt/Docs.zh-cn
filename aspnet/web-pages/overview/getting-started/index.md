@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/index
-title: "Getting Started with ASP.NET Web Pages |Microsoft 文档"
+title: Getting Started with ASP.NET Web Pages |Microsoft 文档
 author: rick-anderson
-description: "了解有关 ASP.NET 网页的 ASP.NET Web Pages 和新的 Razor 语法提供快速、 便于访问，轻量的方法与 HTML t 合并的服务器代码..."
+description: 了解有关 ASP.NET 网页的 ASP.NET Web Pages 和新的 Razor 语法提供快速、 便于访问，轻量的方法与 HTML t 合并的服务器代码...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages/overview/getting-started
 msc.type: chapter
 ms.openlocfilehash: 879110bba5e3465dd413764816603bcdb56eac31
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528586"
 ---
 <a name="getting-started-with-aspnet-web-pages"></a>Getting Started with ASP.NET 网页
 ====================

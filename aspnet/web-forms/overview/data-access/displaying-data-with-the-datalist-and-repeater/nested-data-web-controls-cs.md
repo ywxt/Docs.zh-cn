@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875846"
 ---
 <a name="nested-data-web-controls-c"></a>嵌套的数据 Web 控件 (C#)
 ====================
@@ -100,7 +101,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-aspx[Main](nested-data-web-controls-cs/samples/sample3.aspx)]
 
-我们使用 ObjectDataSource 方法时需要设置`ProductsByCategoryList`中继器 s`DataSourceID`属性`ID`的 ObjectDataSource (`ProductsByCategoryDataSource`)。 此外，请注意，我们 ObjectDataSource 具有`<asp:Parameter>`指定的元素*`categoryID`*值将传递到`GetProductsByCategoryID(categoryID)`方法。 但是，我们如何指定此值？ 理想情况下，我们 d 能够只需设置`DefaultValue`属性`<asp:Parameter>`元素使用数据绑定的语法，如下所示：
+我们使用 ObjectDataSource 方法时需要设置`ProductsByCategoryList`中继器 s`DataSourceID`属性`ID`的 ObjectDataSource (`ProductsByCategoryDataSource`)。 此外，请注意，我们 ObjectDataSource 具有`<asp:Parameter>`指定的元素*`categoryID`* 值将传递到`GetProductsByCategoryID(categoryID)`方法。 但是，我们如何指定此值？ 理想情况下，我们 d 能够只需设置`DefaultValue`属性`<asp:Parameter>`元素使用数据绑定的语法，如下所示：
 
 
 [!code-aspx[Main](nested-data-web-controls-cs/samples/sample4.aspx)]

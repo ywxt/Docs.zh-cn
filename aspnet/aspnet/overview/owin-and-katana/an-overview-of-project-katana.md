@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878758"
 ---
 <a name="an-overview-of-project-katana"></a>项目 Katana 事件的概述
 ====================
@@ -133,7 +134,7 @@ JavaScript 和.NET 开发之间的一个显著区别是编译器的存在 （或
 
 ## <a name="katana-architecture"></a>Katana 体系结构
 
- Katana 组件体系结构将划分成四个逻辑层，应用程序，如下所示：*主机、 服务器、 中间件，*和*应用程序*。 组件体系结构计入，实现这些层可轻松地使用替代，在许多情况下，而无需重新编译的应用程序的方式。   
+ Katana 组件体系结构将划分成四个逻辑层，应用程序，如下所示：*主机、 服务器、 中间件，* 和*应用程序*。 组件体系结构计入，实现这些层可轻松地使用替代，在许多情况下，而无需重新编译的应用程序的方式。   
 
 ![](an-overview-of-project-katana/_static/image3.png)
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880422"
 ---
 <a name="creating-a-team-project-in-tfs"></a>在 TFS 中创建团队项目
 ====================
@@ -179,8 +180,8 @@ ms.lasthandoff: 04/06/2018
 1. 在 Visual Studio 2010 中，在**团队资源管理器**窗口中，右键单击团队项目，指向**团队项目设置**，然后单击**组成员身份**。
 
     ![](creating-a-team-project-in-tfs/_static/image15.png)
-2. 若要使用户能够添加、 修改和删除在源代码管理下的代码，你需要添加他或她到**contributors （参与者)**组。
-3. 在**项目组**对话框中，选择**contributors （参与者)**分组，并依次**属性**。
+2. 若要使用户能够添加、 修改和删除在源代码管理下的代码，你需要添加他或她到**contributors （参与者)** 组。
+3. 在**项目组**对话框中，选择**contributors （参与者)** 分组，并依次**属性**。
 
     ![](creating-a-team-project-in-tfs/_static/image16.png)
 4. 在**Team Foundation Server 组属性**对话框中，选择**Windows 用户或组**，然后单击**添加**。

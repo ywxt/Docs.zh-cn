@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/security/persistent-connection-authorization
-title: "身份验证和授权的 SignalR 永久性连接 |Microsoft 文档"
+title: 身份验证和授权的 SignalR 永久性连接 |Microsoft 文档
 author: pfletcher
-description: "本主题介绍如何强制在持续性连接上的进行授权。 有关将安全集成到 SignalR 应用程序的常规信息..."
+description: 本主题介绍如何强制在持续性连接上的进行授权。 有关将安全集成到 SignalR 应用程序的常规信息...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28042194"
 ---
 <a name="authentication-and-authorization-for-signalr-persistent-connections"></a>身份验证和授权的 SignalR 永久性连接
 ====================

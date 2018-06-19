@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/sql-2005/index
-title: "SQL 2005 |Microsoft 文档"
+title: SQL 2005 |Microsoft 文档
 author: rick-anderson
-description: "如何使用 SQL Server Express 向 ASP.NET 应用程序添加数据库功能。"
+description: 如何使用 SQL Server Express 向 ASP.NET 应用程序添加数据库功能。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/sql-2005
 msc.type: chapter
 ms.openlocfilehash: 42fc321b4d1d51ec2fe71e4c8873ae62da43c345
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26522246"
 ---
 <a name="sql-2005"></a>SQL 2005
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867146"
 ---
 <a name="aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood"></a>Jeff Atwood 与 ASP.NET MVC 店面一部分 17： 签出
 ====================

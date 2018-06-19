@@ -1,8 +1,8 @@
 ---
 uid: web-api/videos/getting-started/custom-validation
-title: "ASP.NET Web API，第 5 部分： 自定义验证 |Microsoft 文档"
+title: ASP.NET Web API，第 5 部分： 自定义验证 |Microsoft 文档
 author: jongalloway
-description: "注意： 此视频包含 ASP.NET Web API 的预发行版本中的信息"
+description: 注意： 此视频包含 ASP.NET Web API 的预发行版本中的信息
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26509006"
 ---
 <a name="aspnet-web-api-part-5-custom-validation"></a>ASP.NET Web API，第 5 部分： 自定义验证
 ====================

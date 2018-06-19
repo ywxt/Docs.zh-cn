@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873074"
 ---
 <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>暂时性故障处理 （构建真实世界云应用与 Azure）
 ====================

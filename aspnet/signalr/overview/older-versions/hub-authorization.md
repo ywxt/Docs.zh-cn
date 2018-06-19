@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/hub-authorization
-title: "身份验证和授权 SignalR 集线器的 (SignalR 1.x) |Microsoft 文档"
+title: 身份验证和授权 SignalR 集线器的 (SignalR 1.x) |Microsoft 文档
 author: pfletcher
-description: "本主题介绍如何限制哪些用户或角色可以访问中心方法。"
+description: 本主题介绍如何限制哪些用户或角色可以访问中心方法。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28042870"
 ---
 <a name="authentication-and-authorization-for-signalr-hubs-signalr-1x"></a>身份验证和授权 SignalR 集线器的 (SignalR 1.x)
 ====================

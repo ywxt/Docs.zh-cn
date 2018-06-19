@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-35/aspnet-ajax/index
-title: "ASP.NET Ajax |Microsoft 文档"
+title: ASP.NET Ajax |Microsoft 文档
 author: rick-anderson
-description: "此视频系列探究了如何将 Ajax 功能添加到 ASP.NET 应用程序。"
+description: 此视频系列探究了如何将 Ajax 功能添加到 ASP.NET 应用程序。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/aspnet-35/aspnet-ajax
 msc.type: chapter
 ms.openlocfilehash: 1731f8611bbd3593f3add89d7765c07a0fbe6c2b
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520226"
 ---
 <a name="aspnet-ajax"></a>ASP.NET Ajax
 ====================

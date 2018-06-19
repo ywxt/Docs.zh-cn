@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870994"
 ---
 <a name="authenticating-users-with-forms-authentication-vb"></a>使用 Forms 身份验证 (VB) 的用户进行身份验证
 ====================

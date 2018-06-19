@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884777"
 ---
 <a name="how-do-i-use-the-conditional-updatemode-of-the-updatepanel"></a>[如何:]使用 UpdatePanel 条件 UpdateMode？
 ====================

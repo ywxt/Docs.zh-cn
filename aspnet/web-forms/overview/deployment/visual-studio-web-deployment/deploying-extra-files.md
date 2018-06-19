@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881758"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>使用 Visual Studio 的 ASP.NET Web 部署： 部署额外文件
 ====================
@@ -83,7 +84,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="more-information"></a>详细信息
 
-如果你知道如何使用 MSBuild 文件，你可以通过在编写代码来自动处理许多其他部署任务*.pubxml*文件 （针对特定配置文件的任务） 或项目*。 wpp.targets*文件 （的任务适用于所有配置文件）。 有关详细信息*.pubxml*和*。 wpp.targets*文件，请参阅[如何： 编辑发布配置文件 (.pubxml) 文件中的部署设置与。 wpp.targets 在 Visual Studio Web 的文件项目](https://msdn.microsoft.com/library/ff398069)。 有关 MSBuild 的代码的基本介绍，请参阅**剖析项目文件**中[企业部署系列： 了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)。 若要了解如何使用 MSBuild 文件为你自己的方案执行任务，请参阅本书：[内 Microsoft 生成引擎： 使用 MSBuild 和 Team Foundation Build](http://msbuildbook.com) Sayed Ibraham Hashimi 和 William Bartholomew。
+如果你知道如何使用 MSBuild 文件，你可以通过在编写代码来自动处理许多其他部署任务 *.pubxml*文件 （针对特定配置文件的任务） 或项目 *。 wpp.targets*文件 （的任务适用于所有配置文件）。 有关详细信息 *.pubxml*和 *。 wpp.targets*文件，请参阅[如何： 编辑发布配置文件 (.pubxml) 文件中的部署设置与。 wpp.targets 在 Visual Studio Web 的文件项目](https://msdn.microsoft.com/library/ff398069)。 有关 MSBuild 的代码的基本介绍，请参阅**剖析项目文件**中[企业部署系列： 了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)。 若要了解如何使用 MSBuild 文件为你自己的方案执行任务，请参阅本书：[内 Microsoft 生成引擎： 使用 MSBuild 和 Team Foundation Build](http://msbuildbook.com) Sayed Ibraham Hashimi 和 William Bartholomew。
 
 ## <a name="acknowledgements"></a>致谢
 

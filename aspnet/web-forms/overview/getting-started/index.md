@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/index
-title: "ASP.NET Web 窗体入门 |Microsoft 文档"
+title: ASP.NET Web 窗体入门 |Microsoft 文档
 author: rick-anderson
-description: "了解有关 ASP.NET Web 窗体 ASP.NET Web 窗体，可以使用熟悉的拖放、 事件驱动模型生成动态网站。 设计图面和 hund..."
+description: 了解有关 ASP.NET Web 窗体 ASP.NET Web 窗体，可以使用熟悉的拖放、 事件驱动模型生成动态网站。 设计图面和 hund...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/08/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/getting-started
 msc.type: chapter
 ms.openlocfilehash: 219379b12e207755e8d27f0b5dae761527215519
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26516566"
 ---
 <a name="getting-started-with-aspnet-web-forms"></a>ASP.NET Web 窗体入门
 ====================

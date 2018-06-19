@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/index
-title: "直接从 ASP.NET 页访问数据库 |Microsoft 文档"
+title: 直接从 ASP.NET 页访问数据库 |Microsoft 文档
 author: rick-anderson
-description: "这些教程将说明如何使用 SqlDataSource 控件可以在不需要严格的表示层和数据分离时直接查询数据库..."
+description: 这些教程将说明如何使用 SqlDataSource 控件可以在不需要严格的表示层和数据分离时直接查询数据库...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-f
 msc.type: chapter
 ms.openlocfilehash: ec6474ccfd2aadc76dc21596fa1e4a5dc7bf01f8
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26511716"
 ---
 <a name="accessing-the-database-directly-from-an-aspnet-page"></a>直接从 ASP.NET 页访问数据库
 ====================

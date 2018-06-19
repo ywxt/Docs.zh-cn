@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/advanced/dependency-injection
-title: "在 SignalR 的依赖关系注入 |Microsoft 文档"
+title: 在 SignalR 的依赖关系注入 |Microsoft 文档
 author: MikeWasson
-description: "Visual Studio 2013.NET 4.5 SignalR 本主题中使用软件版本的早期版本的信息的本主题的版本 2 早期版本..."
+description: Visual Studio 2013.NET 4.5 SignalR 本主题中使用软件版本的早期版本的信息的本主题的版本 2 早期版本...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26504176"
 ---
 <a name="dependency-injection-in-signalr"></a>在 SignalR 的依赖关系注入
 ====================

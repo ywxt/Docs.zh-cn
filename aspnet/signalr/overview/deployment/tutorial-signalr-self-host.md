@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/deployment/tutorial-signalr-self-host
-title: "教程： 自承载 SignalR |Microsoft 文档"
+title: 教程： 自承载 SignalR |Microsoft 文档
 author: pfletcher
-description: "本教程演示如何创建自承载的 SignalR 2 服务器，以及如何与 JavaScript 客户端连接到它。 教程 V 中使用的软件版本..."
+description: 本教程演示如何创建自承载的 SignalR 2 服务器，以及如何与 JavaScript 客户端连接到它。 教程 V 中使用的软件版本...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036773"
 ---
 <a name="tutorial-signalr-self-host"></a>自承载的教程： SignalR
 ====================
@@ -74,7 +75,7 @@ SignalR 服务器通常承载在 IIS 中，ASP.NET 应用程序中，但它也�
 
 在本教程中，你将在控制台应用程序中，创建托管的服务器，但服务器可以承载于任何种类的过程中，如 Windows 服务或 Azure 辅助角色。 有关用于宿主 SignalR 服务器 Windows 服务中的示例代码，请参阅[Windows 服务中的 Self-Hosting SignalR](https://code.msdn.microsoft.com/SignalR-self-hosted-in-6ff7e6c3)。
 
-1. 使用管理员特权打开 Visual Studio 2013。 选择**文件**，**新项目**。 选择**Windows**下**Visual C#**中的节点**模板**窗格中，然后选择**控制台应用程序**模板。 将新项目"SignalRSelfHost"，然后单击**确定**。
+1. 使用管理员特权打开 Visual Studio 2013。 选择**文件**，**新项目**。 选择**Windows**下**Visual C#** 中的节点**模板**窗格中，然后选择**控制台应用程序**模板。 将新项目"SignalRSelfHost"，然后单击**确定**。
 
     ![](tutorial-signalr-self-host/_static/image1.png)
 2. 通过选择打开库包管理器控制台**工具**，**库程序包管理器**，**程序包管理器控制台**。

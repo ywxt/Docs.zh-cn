@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875430"
 ---
 <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>以队列为中心的工作模式 （使用 Azure 构建真实世界云应用）
 ====================
@@ -135,11 +136,11 @@ Web 应用程序通常都容易遭受流量的突现高峰。 尽管你可以使
 
 以下步骤演示如何将工作人员添加到具有标准 web 项目的解决方案的角色项目。 已修复它在项目中，你可以下载完成这些步骤。
 
-首先将云服务项目添加到 Visual Studio 解决方案。 右键单击解决方案并选择**添加**，然后**新项目**。 在左窗格中，展开**Visual C#**和选择**云**。
+首先将云服务项目添加到 Visual Studio 解决方案。 右键单击解决方案并选择**添加**，然后**新项目**。 在左窗格中，展开**Visual C#** 和选择**云**。
 
 [![](queue-centric-work-pattern/_static/image5.png)](queue-centric-work-pattern/_static/image4.png)
 
-在**新建 Azure 云服务**对话框中，展开**Visual C#**左窗格中的节点。 选择**辅助角色**，然后单击右箭头图标。
+在**新建 Azure 云服务**对话框中，展开**Visual C#** 左窗格中的节点。 选择**辅助角色**，然后单击右箭头图标。
 
 ![](queue-centric-work-pattern/_static/image6.png)
 

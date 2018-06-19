@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-extend-and-customize-an-aspnet-server-control-for-a-specific-purpose
-title: "[如何:]扩展和自的 ASP.NET 服务器控件定义出于特定目的 |Microsoft 文档"
+title: '[如何:]扩展和自的 ASP.NET 服务器控件定义出于特定目的 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 中将显示如何扩展标准的 ASP.NET 服务器控件和自定义它出于特定目的。 专用的控件提供 c..."
+description: 在此视频 Chris Pels 中将显示如何扩展标准的 ASP.NET 服务器控件和自定义它出于特定目的。 专用的控件提供 c...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/20/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526496"
 ---
 <a name="how-do-i-extend-and-customize-an-aspnet-server-control-for-a-specific-purpose"></a>[如何:]扩展和自的 ASP.NET 服务器控件定义于某种特定用途
 ====================

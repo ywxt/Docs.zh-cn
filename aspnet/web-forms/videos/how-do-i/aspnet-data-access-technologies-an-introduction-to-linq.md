@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/aspnet-data-access-technologies-an-introduction-to-linq
-title: "ASP.NET 数据访问技术、 LINQ 简介 |Microsoft 文档"
+title: ASP.NET 数据访问技术、 LINQ 简介 |Microsoft 文档
 author: JoeStagner
-description: "LINQ 是 ASP.NET 开发人员的首选数据访问机制。 此视频介绍如何使用 LINQ 编程和比较简单数据访问 betwee..."
+description: LINQ 是 ASP.NET 开发人员的首选数据访问机制。 此视频介绍如何使用 LINQ 编程和比较简单数据访问 betwee...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/13/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525416"
 ---
 <a name="aspnet-data-access-technologies-an-introduction-to-linq"></a>ASP.NET 数据访问技术，LINQ 简介
 ====================

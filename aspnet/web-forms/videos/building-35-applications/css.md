@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/css
-title: "CSS |Microsoft 文档"
+title: CSS |Microsoft 文档
 author: JoeStagner
-description: "级联样式表是必不可少的现代 web 开发和 Visual Web Developer 2008 包括一套强大的 CSS 构建工具，以帮助..."
+description: 级联样式表是必不可少的现代 web 开发和 Visual Web Developer 2008 包括一套强大的 CSS 构建工具，以帮助...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/30/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521476"
 ---
 <a name="css"></a>CSS
 ====================

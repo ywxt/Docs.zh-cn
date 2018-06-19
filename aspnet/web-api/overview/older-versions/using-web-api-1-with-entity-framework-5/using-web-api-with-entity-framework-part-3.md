@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870539"
 ---
 <a name="part-3-creating-an-admin-controller"></a>第 3 部分： 创建一个管理控制器
 ====================

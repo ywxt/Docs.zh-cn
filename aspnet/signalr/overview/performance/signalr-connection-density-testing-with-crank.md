@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/performance/signalr-connection-density-testing-with-crank
-title: "使用曲柄测试 SignalR 连接密度 |Microsoft 文档"
+title: 使用曲柄测试 SignalR 连接密度 |Microsoft 文档
 author: tfitzmac
-description: "使用曲柄测试 SignalR 连接密度"
+description: 使用曲柄测试 SignalR 连接密度
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/22/2015
@@ -17,6 +17,7 @@ ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/21/2017
+ms.locfileid: "26535326"
 ---
 <a name="signalr-connection-density-testing-with-crank"></a>使用曲柄测试 SignalR 连接密度
 ====================

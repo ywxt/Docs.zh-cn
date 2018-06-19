@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-to-best-learn-aspnet-web-forms
-title: "如何最了解 ASP.NET Web 窗体 |Microsoft 文档"
+title: 如何最了解 ASP.NET Web 窗体 |Microsoft 文档
 author: JoeStagner
-description: "Microsoft 的 Joe stagner 将显示你需要了解如何使用 ASP.NET Web 窗体开发 web 应用程序。"
+description: Microsoft 的 Joe stagner 将显示你需要了解如何使用 ASP.NET Web 窗体开发 web 应用程序。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/03/2010
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521736"
 ---
 <a name="how-to-best-learn-aspnet-web-forms"></a>如何最了解 ASP.NET Web 窗体
 ====================

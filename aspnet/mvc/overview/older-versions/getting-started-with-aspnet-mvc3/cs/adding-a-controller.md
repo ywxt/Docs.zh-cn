@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868290"
 ---
 <a name="adding-a-controller-c"></a>添加控制器 (C#)
 ====================
@@ -69,7 +70,7 @@ ASP.NET MVC 调用另一个控制器类 （和其中的不同的操作方法）�
 
 `/[Controller]/[ActionName]/[Parameters]`
 
-URL 的第一部分确定要执行的控制器类。 因此*/HelloWorld*映射到`HelloWorldController`类。 URL 的第二部分确定要执行的类上的操作方法。 因此*/HelloWorld/索引*将导致`Index`方法`HelloWorldController`类执行。 请注意，我们仅必须浏览到*/HelloWorld*和`Index`时默认情况下使用方法。 这是因为方法名为`Index`是如果有一个未显式指定调用在控制器的默认方法。
+URL 的第一部分确定要执行的控制器类。 因此 */HelloWorld*映射到`HelloWorldController`类。 URL 的第二部分确定要执行的类上的操作方法。 因此 */HelloWorld/索引*将导致`Index`方法`HelloWorldController`类执行。 请注意，我们仅必须浏览到 */HelloWorld*和`Index`时默认情况下使用方法。 这是因为方法名为`Index`是如果有一个未显式指定调用在控制器的默认方法。
 
 浏览到 `http://localhost:xxxx/HelloWorld/Welcome`。 `Welcome` 方法运行并返回字符串“这是 Welcome 操作方法...”。 默认 MVC 映射是`/[Controller]/[ActionName]/[Parameters]`。 对于此 URL，采用 `HelloWorld` 控制器和 `Welcome` 操作方法。 目前尚未使用 URL 的 `[Parameters]` 部分。
 

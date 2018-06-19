@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/views/index
-title: "ASP.NET MVC UI、 布局和主题 |Microsoft 文档"
+title: ASP.NET MVC UI、 布局和主题 |Microsoft 文档
 author: rick-anderson
-description: "Razor 语法以及如何使用它在视图 (在 MVC V) 中显示信息。"
+description: Razor 语法以及如何使用它在视图 (在 MVC V) 中显示信息。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/10/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/views
 msc.type: chapter
 ms.openlocfilehash: 914820b5d086f2f194881ec9d47da2e5db9732a7
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503276"
 ---
 <a name="aspnet-mvc-ui-layouts-and-themes"></a>ASP.NET MVC UI、 布局和主题
 ====================

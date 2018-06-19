@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/index
-title: "较旧版本的数据访问 |Microsoft 文档"
+title: 较旧版本的数据访问 |Microsoft 文档
 author: rick-anderson
-description: "如何执行各种与数据相关的任务，使用 ASP.NET Web 窗体数据控件。"
+description: 如何执行各种与数据相关的任务，使用 ASP.NET Web 窗体数据控件。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access
 msc.type: chapter
 ms.openlocfilehash: 9356c58db6ef5d57babdc7c6e6c09b7cc78a8167
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26514196"
 ---
 <a name="older-versions---data-access"></a>较旧版本的数据访问
 ====================

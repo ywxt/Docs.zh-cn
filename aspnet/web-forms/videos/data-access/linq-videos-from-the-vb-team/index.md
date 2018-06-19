@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/data-access/linq-videos-from-the-vb-team/index
-title: "从 VB 团队 LINQ 视频 |Microsoft 文档"
+title: 从 VB 团队 LINQ 视频 |Microsoft 文档
 author: rick-anderson
-description: "这些视频提供通过一个小时的时间和另一半内容侧重于 Visual Basic 9.0 包括在 Visual Studio 2008 的新 LINQ 语言功能。"
+description: 这些视频提供通过一个小时的时间和另一半内容侧重于 Visual Basic 9.0 包括在 Visual Studio 2008 的新 LINQ 语言功能。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/24/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/data-access/linq-videos-from-the-vb-team
 msc.type: chapter
 ms.openlocfilehash: a33cb02630be7ec688e4fce3d290f4a692f958ff
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525916"
 ---
 <a name="linq-videos-from-the-vb-team"></a>从 VB 团队 LINQ 视频
 ====================

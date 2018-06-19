@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/getting-started/index
-title: "Getting Started with ASP.NET 标识 |Microsoft 文档"
+title: Getting Started with ASP.NET 标识 |Microsoft 文档
 author: rick-anderson
-description: "ASP.NET 标识系统旨在替换以前的 ASP.NET 成员资格和简单的成员身份系统。 它包括配置文件支持，OAuth 集成..."
+description: ASP.NET 标识系统旨在替换以前的 ASP.NET 成员资格和简单的成员身份系统。 它包括配置文件支持，OAuth 集成...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/02/2013
 ms.topic: article
 ms.assetid: 72bb0051-a696-437e-a4e6-ca1225a6e271
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started
 msc.type: chapter
 ms.openlocfilehash: c798b7fd79591ad4dffba21b4a3c110590edc7a5
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26497886"
 ---
 <a name="getting-started-with-aspnet-identity"></a>Getting Started with ASP.NET 标识
 ====================

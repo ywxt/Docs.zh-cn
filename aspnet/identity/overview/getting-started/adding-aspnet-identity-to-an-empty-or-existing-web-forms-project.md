@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874650"
 ---
 <a name="adding-aspnet-identity-to-an-empty-or-existing-web-forms-project"></a>添加 ASP.NET 标识设置为一个空的或现有的 Web 窗体项目
 ====================

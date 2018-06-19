@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/performance-and-traffic/index
-title: "性能 |Microsoft 文档"
+title: 性能 |Microsoft 文档
 author: rick-anderson
-description: "如何更快的性能以及如何测量站点流量的缓存内容。"
+description: 如何更快的性能以及如何测量站点流量的缓存内容。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages/overview/performance-and-traffic
 msc.type: chapter
 ms.openlocfilehash: fffeb7c5b5a202a273bfd8b144ad1f63d5743087
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528516"
 ---
 <a name="performance"></a>性能
 ====================

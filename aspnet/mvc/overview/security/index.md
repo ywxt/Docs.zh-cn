@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/index
-title: "安全、 验证和授权使用 ASP.NET MVC |Microsoft 文档"
+title: 安全、 验证和授权使用 ASP.NET MVC |Microsoft 文档
 author: rick-anderson
-description: "如何使 ASP.NET 站点更加安全，以及如何实现身份验证和授权。"
+description: 如何使 ASP.NET 站点更加安全，以及如何实现身份验证和授权。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/10/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/security
 msc.type: chapter
 ms.openlocfilehash: ae6cee1fcccc080c9865f618f162e5f2acdcb620
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503206"
 ---
 <a name="security-authentication-and-authorization-with-aspnet-mvc"></a>安全、 验证和授权使用 ASP.NET MVC
 ====================

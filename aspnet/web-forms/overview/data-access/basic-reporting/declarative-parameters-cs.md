@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875934"
 ---
 <a name="declarative-parameters-c"></a>声明性参数 (C#)
 ====================
@@ -127,7 +128,7 @@ ObjectDataSource 的声明性标记会稍有不同我们的第一个示例，使
 
 ## <a name="showing-all-suppliers-by-default"></a>显示默认情况下的所有供应商
 
-而是不是第一次查看网页时将供应商的全不显示我们可能想要显示*所有*供应商首先，允许用户削减通过在文本框中输入国家/地区名称的列表。 当文本框中为空，`SuppliersBLL`类的`GetSuppliersByCountry(country)`方法传递中`null`值，则为其*`country`*输入的参数。 这`null`然后容器值传到 DAL 的`GetSupplierByCountry(country)`方法，其中对其进行转换到数据库`NULL`值`@Country`在下面的查询的参数：
+而是不是第一次查看网页时将供应商的全不显示我们可能想要显示*所有*供应商首先，允许用户削减通过在文本框中输入国家/地区名称的列表。 当文本框中为空，`SuppliersBLL`类的`GetSuppliersByCountry(country)`方法传递中`null`值，则为其*`country`* 输入的参数。 这`null`然后容器值传到 DAL 的`GetSupplierByCountry(country)`方法，其中对其进行转换到数据库`NULL`值`@Country`在下面的查询的参数：
 
 [!code-sql[Main](declarative-parameters-cs/samples/sample3.sql)]
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875040"
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>检查编辑方法和编辑视图
 ====================
@@ -28,7 +29,7 @@ ms.lasthandoff: 04/06/2018
 
 在此部分中，你将检查生成的操作方法和电影控制器的视图。 然后你将添加自定义搜索页。
 
-运行应用程序，并浏览到`Movies`控制器通过追加*/Movies*到你的浏览器的地址栏中的 URL。 将鼠标指针停留在**编辑**链接以查看链接到的 URL。
+运行应用程序，并浏览到`Movies`控制器通过追加 */Movies*到你的浏览器的地址栏中的 URL。 将鼠标指针停留在**编辑**链接以查看链接到的 URL。
 
 ![EditLink_sm](examining-the-edit-methods-and-edit-view/_static/image1.png)
 
@@ -62,11 +63,11 @@ ms.lasthandoff: 04/06/2018
 
 基架的代码使用了若干个*帮助器方法*来简化的 HTML 标记。 [ `Html.LabelFor` ](https://msdn.microsoft.com/library/gg401864(VS.98).aspx)帮助器显示的字段的名称 (&quot;标题&quot;， &quot;ReleaseDate&quot;，&quot;流派&quot;，或&quot;价格&quot;). [ `Html.EditorFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx)帮助器上呈现 HTML`<input>`元素。 [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx)帮助器显示与该属性相关联的任何验证消息。
 
-运行应用程序并导航到*/Movies* URL。 点击“编辑”链接。 在浏览器中查看页面的源。 下面显示了窗体元素的 HTML。
+运行应用程序并导航到 */Movies* URL。 点击“编辑”链接。 在浏览器中查看页面的源。 下面显示了窗体元素的 HTML。
 
 [!code-html[Main](examining-the-edit-methods-and-edit-view/samples/sample5.html?highlight=7,10-11)]
 
-`<input>`元素是在 HTML`<form>`元素其`action`特性设置为发布到*/电影/编辑*URL。 窗体数据将发送到服务器时**编辑**单击按钮。
+`<input>`元素是在 HTML`<form>`元素其`action`特性设置为发布到 */电影/编辑*URL。 窗体数据将发送到服务器时**编辑**单击按钮。
 
 ## <a name="processing-the-post-request"></a>处理 POST 请求
 
@@ -94,7 +95,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="adding-a-search-method-and-search-view"></a>添加搜索方法和搜索视图
 
-在本部分将添加`SearchIndex`操作方法，可使你搜索电影按风格或名称。 这将是可通过*/电影/SearchIndex* URL。 请求将显示 HTML 窗体，其中包含用户可以输入以便搜索一部电影的输入的元素。 当用户提交表单时，操作方法将获取发布的用户的搜索值，并使用这些值来搜索数据库。
+在本部分将添加`SearchIndex`操作方法，可使你搜索电影按风格或名称。 这将是可通过 */电影/SearchIndex* URL。 请求将显示 HTML 窗体，其中包含用户可以输入以便搜索一部电影的输入的元素。 当用户提交表单时，操作方法将获取发布的用户的搜索值，并使用这些值来搜索数据库。
 
 ## <a name="displaying-the-searchindex-form"></a>显示 SearchIndex 窗体
 
@@ -122,7 +123,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample12.cshtml)]
 
-运行应用程序并导航到*/电影/SearchIndex*。 将查询字符串（如 `?searchString=ghost`）追加到 URL。 筛选的电影将显示出来。
+运行应用程序并导航到 */电影/SearchIndex*。 将查询字符串（如 `?searchString=ghost`）追加到 URL。 筛选的电影将显示出来。
 
 ![SearchQryStr](examining-the-edit-methods-and-edit-view/_static/image6.png)
 
@@ -206,7 +207,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample24.cshtml?highlight=4)]
 
-运行应用程序，并浏览到*/电影/SearchIndex*。 按风格、 电影名称，以及这两个条件，请尝试搜索。
+运行应用程序，并浏览到 */电影/SearchIndex*。 按风格、 电影名称，以及这两个条件，请尝试搜索。
 
 ![](examining-the-edit-methods-and-edit-view/_static/image12.png)
 

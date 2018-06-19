@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876561"
 ---
 <a name="querying-data-with-the-sqldatasource-control-vb"></a>查询与 SqlDataSource 控件 (VB) 的数据
 ====================

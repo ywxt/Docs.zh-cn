@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873399"
 ---
 <a name="implementing-inheritance-with-the-entity-framework-6-in-an-aspnet-mvc-5-application-11-of-12"></a>在 ASP.NET MVC 5 应用程序 (11 12 的) 实现与 Entity Framework 6 的继承
 ====================
@@ -129,7 +130,7 @@ TPC 和 TPH 继承模式通常提供更好的性能在实体框架中比 TPT 继
 
 运行站点并尝试各种页面。 一切都和以前一样。
 
-在**服务器资源管理器，**展开**数据 Connections\SchoolContext**然后**表**，和你看到**学生**和**教师**已替换为表**人员**表。 展开**人员**表，你会看到它具有所有使用中的列**学生**和**教师**表。
+在**服务器资源管理器，** 展开**数据 Connections\SchoolContext**然后**表**，和你看到**学生**和**教师**已替换为表**人员**表。 展开**人员**表，你会看到它具有所有使用中的列**学生**和**教师**表。
 
 ![Server_Explorer_showing_Person_table](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
 

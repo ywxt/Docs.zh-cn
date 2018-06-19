@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/side-by-side-with-10
-title: ".NET framework 1.0 和 1.1 的 ASP.NET 并行执行 |Microsoft 文档"
+title: .NET framework 1.0 和 1.1 的 ASP.NET 并行执行 |Microsoft 文档
 author: rick-anderson
-description: "该白皮书介绍了如何在您允许 ASP.NET Web 应用程序框架的任一版本上运行的计算机上安装.NET 1.0 和.NET 1.1..."
+description: 该白皮书介绍了如何在您允许 ASP.NET Web 应用程序框架的任一版本上运行的计算机上安装.NET 1.0 和.NET 1.1...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: bdea2003-e964-4db5-9092-d56cc7560616
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/side-by-side-with-10
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26530176"
 ---
 <a name="aspnet-side-by-side-execution-of-net-framework-10-and-11"></a>.NET framework 1.0 和 1.1 的 ASP.NET 并行执行
 ====================
@@ -119,7 +120,7 @@ Aspnet\_regiis.exe 提供脚本映射 Web 应用程序的两个选项：
 6. 从属性窗口中，选择**配置。**  
   
     ![](side-by-side-with-10/_static/image10.gif)
-7. 从应用程序映射表中，选择**.aspx**，然后单击**编辑**。  
+7. 从应用程序映射表中，选择 **.aspx**，然后单击**编辑**。  
   
     ![](side-by-side-with-10/_static/image11.gif)
 8. 从**可执行文件**文本框中，查看滚动的版本目录。 如果版本目录为 v.1.1.4322，应用程序映射到.NET Framework 1.1。 相反，如果版本目录为 v1.0.3705，应用程序将映射到.NET Framework 1.0。  

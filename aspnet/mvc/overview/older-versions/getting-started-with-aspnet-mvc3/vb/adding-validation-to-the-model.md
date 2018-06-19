@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872918"
 ---
 <a name="adding-validation-to-the-model-vb"></a>将验证添加到模型 (VB)
 ====================
@@ -71,7 +72,7 @@ ASP.NET MVC 的核心设计原则之一是模拟 （"不重复自己"）。 ASP.
 
 ## <a name="validation-error-ui-in-aspnet-mvc"></a>验证错误在 ASP.NET MVC UI
 
-重新运行该应用程序并导航到*/Movies* URL。
+重新运行该应用程序并导航到 */Movies* URL。
 
 单击**创建电影**链接添加新的影片。 填写表单的某些无效的值，然后单击**创建**按钮。
 

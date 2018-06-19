@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/index
-title: "高级数据访问方案 |Microsoft 文档"
+title: 高级数据访问方案 |Microsoft 文档
 author: rick-anderson
-description: "这些教程介绍如何使用存储的过程和计算的列、 如何使用数据库表的联接以及如何加密数据连接信息..."
+description: 这些教程介绍如何使用存储的过程和计算的列、 如何使用数据库表的联接以及如何加密数据连接信息...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios
 msc.type: chapter
 ms.openlocfilehash: e773ced66465ab99e9b662d84e1cdb8e607918e7
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26512286"
 ---
 <a name="advanced-data-access-scenarios"></a>高级的数据访问方案
 ====================

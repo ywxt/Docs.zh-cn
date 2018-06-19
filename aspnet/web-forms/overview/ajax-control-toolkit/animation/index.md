@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/index
-title: "动画 |Microsoft 文档"
+title: 动画 |Microsoft 文档
 author: rick-anderson
-description: "本教程演示如何创建使用动画控件和动画 framework 的动画。"
+description: 本教程演示如何创建使用动画控件和动画 framework 的动画。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/11/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation
 msc.type: chapter
 ms.openlocfilehash: 96a27f734e616022e17dc073ac0467b88eddced3
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26509506"
 ---
 <a name="animation"></a>动画
 ====================

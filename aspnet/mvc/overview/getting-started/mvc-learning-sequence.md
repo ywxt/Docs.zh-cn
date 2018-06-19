@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/mvc-learning-sequence
-title: "MVC 建议教程和文章 |Microsoft 文档"
+title: MVC 建议教程和文章 |Microsoft 文档
 author: Rick-Anderson
-description: "此页包含指向 ASP.NET MVC 教程和用于遵循它们的建议的序列。"
+description: 此页包含指向 ASP.NET MVC 教程和用于遵循它们的建议的序列。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/22/2015
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28032636"
 ---
 <a name="mvc-recommended-tutorials-and-articles"></a>MVC 建议教程和文章
 ====================

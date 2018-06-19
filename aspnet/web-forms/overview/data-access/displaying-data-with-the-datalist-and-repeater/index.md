@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/index
-title: "使用 DataList 和转发器中显示数据 |Microsoft 文档"
+title: 使用 DataList 和转发器中显示数据 |Microsoft 文档
 author: rick-anderson
-description: "这些教程介绍用于通过使用 DataList 和转发器控件来显示数据的其他方法。"
+description: 这些教程介绍用于通过使用 DataList 和转发器控件来显示数据的其他方法。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist
 msc.type: chapter
 ms.openlocfilehash: 99d24bafb594df2005ba4a7ca9326524e713f25f
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26513096"
 ---
 <a name="displaying-data-with-the-datalist-and-repeater"></a>使用 DataList 和转发器中显示数据
 ====================

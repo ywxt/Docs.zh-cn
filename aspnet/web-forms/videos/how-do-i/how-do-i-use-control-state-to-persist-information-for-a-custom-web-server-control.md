@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-control-state-to-persist-information-for-a-custom-web-server-control
-title: "[如何:]使用要保留的自定义 Web 服务器控件的信息的控件状态 |Microsoft 文档"
+title: '[如何:]使用要保留的自定义 Web 服务器控件的信息的控件状态 |Microsoft 文档'
 author: rick-anderson
-description: "在本视频 Chris Pels 将演示如何将存储于自定义 web 服务器控件中的控件状态，这是独立的视图状态相关的信息..."
+description: 在本视频 Chris Pels 将演示如何将存储于自定义 web 服务器控件中的控件状态，这是独立的视图状态相关的信息...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/17/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526216"
 ---
 <a name="how-do-i-use-control-state-to-persist-information-for-a-custom-web-server-control"></a>[如何:]使用控件状态，以保留的自定义 Web 服务器控件的信息
 ====================

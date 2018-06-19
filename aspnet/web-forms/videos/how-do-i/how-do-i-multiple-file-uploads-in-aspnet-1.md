@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-multiple-file-uploads-in-aspnet-1
-title: "[如何:] ASP.NET 1 中的多个文件上载 |Microsoft 文档"
+title: '[如何:] ASP.NET 1 中的多个文件上载 |Microsoft 文档'
 author: JoeStagner
-description: "在本视频中，我将说明上将多个文件上载到 ASP.NET 应用程序。"
+description: 在本视频中，我将说明上将多个文件上载到 ASP.NET 应用程序。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/12/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528176"
 ---
 <a name="how-do-i--multiple-file-uploads-in-aspnet-1"></a>[如何:] ASP.NET 1 中的多个文件上载
 ====================

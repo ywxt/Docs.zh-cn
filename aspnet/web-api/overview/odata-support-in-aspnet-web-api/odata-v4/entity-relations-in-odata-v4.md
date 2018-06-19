@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/entity-relations-in-odata-v4
-title: "使用 ASP.NET Web API 2.2 OData v4 中的实体关系 |Microsoft 文档"
+title: 使用 ASP.NET Web API 2.2 OData v4 中的实体关系 |Microsoft 文档
 author: MikeWasson
-description: "大多数的数据集定义的实体之间的关系： 客户下了订单;书有作者;产品具有供应商。 使用 OData，可以通过导航客户端..."
+description: 大多数的数据集定义的实体之间的关系： 客户下了订单;书有作者;产品具有供应商。 使用 OData，可以通过导航客户端...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508096"
 ---
 <a name="entity-relations-in-odata-v4-using-aspnet-web-api-22"></a>使用 ASP.NET Web API 2.2 OData v4 中的实体关系
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-implement-error-handling-when-sending-email-with-aspnet
-title: "[如何:]利用 ASP.NET 发送电子邮件时，会实现错误处理 |Microsoft 文档"
+title: '[如何:]利用 ASP.NET 发送电子邮件时，会实现错误处理 |Microsoft 文档'
 author: rick-anderson
-description: "Chris Pels 演示如何实现 ASP.NET 电子邮件时的错误处理。 他创建 ASP.NET 网页发送电子邮件，演示如何配置和 lt...."
+description: Chris Pels 演示如何实现 ASP.NET 电子邮件时的错误处理。 他创建 ASP.NET 网页发送电子邮件，演示如何配置和 lt....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/06/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526426"
 ---
 <a name="how-do-i-implement-error-handling-when-sending-email-with-aspnet"></a>[如何:]利用 ASP.NET 发送电子邮件时，会实现错误处理
 ====================

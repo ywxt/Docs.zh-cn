@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "26507126"
 ---
 <a name="hands-on-lab-visual-studio-2013-web-tools"></a>动手实验： Visual Studio 2013 Web 工具
 ====================
@@ -106,7 +107,7 @@ ms.lasthandoff: 04/10/2018
 在此任务中，你将配置 web 应用程序以在多个浏览器在运行一次，这是适用于跨浏览器测试。
 
 1. 打开**Microsoft Visual Studio**。
-2. 在**文件**菜单上，选择**打开 |项目/解决方案...**并浏览到**Ex1 WorkingwithBrowserLinkandWebEssentials\Begin**中**源**实验室 (C:\WebCampsTK\HOL\VSWebTooling\Source) 的文件夹。 选择**Begin.sln**单击**打开**。
+2. 在**文件**菜单上，选择**打开 |项目/解决方案...** 并浏览到**Ex1 WorkingwithBrowserLinkandWebEssentials\Begin**中**源**实验室 (C:\WebCampsTK\HOL\VSWebTooling\Source) 的文件夹。 选择**Begin.sln**单击**打开**。
 3. 在 Visual Studio 工具栏上，展开浏览器菜单并选择**浏览...**.
 
     ![浏览与菜单选项](visual-studio-2013-web-tools/_static/image1.png "与...浏览在浏览器菜单")
@@ -144,7 +145,7 @@ ms.lasthandoff: 04/10/2018
 
 1. 切换回 Visual Studio。
 2. 打开**Index.cshtml**文件位于**视图** | **主页**文件夹。
-3. 替换**&lt;！-TODO： 添加选项此处-&gt;**注释的以下代码，并按**选项卡**。
+3. 替换**&lt;！-TODO： 添加选项此处-&gt;** 注释的以下代码，并按**选项卡**。
 
     [!code-css[Main](visual-studio-2013-web-tools/samples/sample1.css)]
 4. 应为 HTML 展开代码。
@@ -222,12 +223,12 @@ ms.lasthandoff: 04/10/2018
     ![在 Visual Studio HTML 编辑器中选择 HTML 元素](visual-studio-2013-web-tools/_static/image15.png "在 Visual Studio HTML 编辑器中选择 HTML 元素")
 
     *在 Visual Studio HTML 编辑器中选择 HTML 元素*
-4. 现在，你将更新**前面**CSS 类使用，以便更改所选元素的样式。 为此，请按**CTRL** + **，**以打开**导航到**搜索框。 类型**site.css**按**ENTER**打开文件。
+4. 现在，你将更新**前面**CSS 类使用，以便更改所选元素的样式。 为此，请按**CTRL** + **，** 以打开**导航到**搜索框。 类型**site.css**按**ENTER**打开文件。
 
     ![打开文件 Site.css](visual-studio-2013-web-tools/_static/image16.png "打开文件 Site.css")
 
     *打开文件 Site.css*
-5. 按**CTRL** + **F**和类型**.flip 容器.front**若要查找的 CSS 选择器。
+5. 按**CTRL** + **F**和类型 **.flip 容器.front**若要查找的 CSS 选择器。
 6. 单击要打开颜色选择器的类的边框属性中的浅蓝色方块。
 
     ![打开颜色选取器](visual-studio-2013-web-tools/_static/image17.png "打开颜色选取器")
@@ -250,13 +251,13 @@ ms.lasthandoff: 04/10/2018
 
     *Google Chrome 的更新的边框颜色*
 11. 切换回 Visual Studio。
-12. 转到末尾**Site.css**文件，然后按**CTRL** + **F**查找**.btn**选择器。
+12. 转到末尾**Site.css**文件，然后按**CTRL** + **F**查找 **.btn**选择器。
 13. 请注意， **-webkit 边框 radius**属性下划线为绿色。
 
     ![为按钮选择器-webkit 边框 radius 属性](visual-studio-2013-web-tools/_static/image21.png "按钮选择器-webkit 边框 radius 属性")
 
     *-webkit 边框 radius 属性的按钮选择器*
-14. 在将光标放置**-webkit 边框 radius**属性。 在属性的第一个单词的第一个字母下应显示一条蓝线。 这是**智能标记**。
+14. 在将光标放置 **-webkit 边框 radius**属性。 在属性的第一个单词的第一个字母下应显示一条蓝线。 这是**智能标记**。
 15. 按**CTRL** + **。** 若要打开建议菜单上，然后单击**添加缺少标准属性 (边框 radius)**。
 
     ![添加缺少标准属性建议](visual-studio-2013-web-tools/_static/image22.png "添加缺少标准属性建议")
@@ -278,7 +279,7 @@ ms.lasthandoff: 04/10/2018
 
     *边框 radius 属性值警告*
 19. 删除的单元**边框 radius**根据由工具提示的建议的属性值。
-20. 作为**边框 radius**是定义如何圆的角是，你可以删除的边框的标准属性**-webkit 边框 radius**属性和值从 CSS 规则。
+20. 作为**边框 radius**是定义如何圆的角是，你可以删除的边框的标准属性 **-webkit 边框 radius**属性和值从 CSS 规则。
 21. 在将光标放置**自动换行**属性，请注意，下面还显示智能标记。
 22. 打开菜单，然后单击**添加缺少的供应商细节**。
 
@@ -307,7 +308,7 @@ ms.lasthandoff: 04/10/2018
     ![编辑的问题](visual-studio-2013-web-tools/_static/image29.png "编辑的问题")
 
     *编辑的问题*
-4. 切换回 Visual Studio 和打开**Index.cshtml**，如果尚未打开。 请注意，则内部文本的**&lt;p&gt;**元素已进行了更新。
+4. 切换回 Visual Studio 和打开**Index.cshtml**，如果尚未打开。 请注意，则内部文本的**&lt;p&gt;** 元素已进行了更新。
 
     ![在 HTML 页中的已更新问题](visual-studio-2013-web-tools/_static/image30.png "在 HTML 页中的已更新问题")
 
@@ -323,7 +324,7 @@ ms.lasthandoff: 04/10/2018
     ![错误列表视图中菜单](visual-studio-2013-web-tools/_static/image31.png "视图菜单中的错误列表")
 
     *错误列表视图中菜单*
-2. 请注意，没有 SEO 警告，通知的**&lt;元&gt;**标记缺少页面描述为。 双击要修复此错误的 SEO 警告项。
+2. 请注意，没有 SEO 警告，通知的**&lt;元&gt;** 标记缺少页面描述为。 双击要修复此错误的 SEO 警告项。
 
     ![错误列表窗口](visual-studio-2013-web-tools/_static/image32.png "错误列表窗口")
 
@@ -333,7 +334,7 @@ ms.lasthandoff: 04/10/2018
     ![Web Essentials 对话框](visual-studio-2013-web-tools/_static/image33.png "Web Essentials 对话框")
 
     *Web Essentials 对话框*
-4. 编辑器 **\_Layout.cshtml**打开和**&lt;元&gt;**标记都会自动添加到**头**部分HTML 文件。
+4. 编辑器 **\_Layout.cshtml**打开和**&lt;元&gt;** 标记都会自动添加到**头**部分HTML 文件。
 
     ![自动 _Layout 页中添加元标记](visual-studio-2013-web-tools/_static/image34.png "_Layout 页中自动添加元标记")
 
@@ -354,7 +355,7 @@ ms.lasthandoff: 04/10/2018
 
 1. 打开**Visual Studio Express 2013 for Web**和**Begin.sln**解决方案位于**源/Ex2-TakingAdvantageofCodeSnippetsandIntelliSense/开始**文件夹。 或者，继续与解决方案并在上一练习中获取。
 2. 在**解决方案资源管理器**，打开**Index.cshtml**文件位于**视图** | **主页**文件夹。
-3. 将以下表单内的添加**&lt;部分&gt;**元素。
+3. 将以下表单内的添加**&lt;部分&gt;** 元素。
 
     (代码段- *VisualStudio2013WebTooling* - *Ex2* - *窗体*)
 
@@ -362,19 +363,19 @@ ms.lasthandoff: 04/10/2018
 4. 输入的标记之前应该具有某些说明的字段的标签。 添加下列标签之前输入的标记。
 
     [!code-html[Main](visual-studio-2013-web-tools/samples/sample5.html)]
-5. **为**属性**&lt;标签&gt;**指定标签的窗体元素绑定到。 该特性的值应设置为相关的元素的 id。 添加**为**属性设为**&lt;标签&gt;**元素。 下图中中, 所示&quot;名称&quot;值弹出 IntelliSense 框中，在基于相同的作用域内的元素的 id (封闭**&lt;窗体&gt;**)。
+5. **为**属性**&lt;标签&gt;** 指定标签的窗体元素绑定到。 该特性的值应设置为相关的元素的 id。 添加**为**属性设为**&lt;标签&gt;** 元素。 下图中中, 所示&quot;名称&quot;值弹出 IntelliSense 框中，在基于相同的作用域内的元素的 id (封闭**&lt;窗体&gt;**)。
 
     ![在 IntelliSense 中显示 id](visual-studio-2013-web-tools/_static/image35.png "IntelliSense 中显示的 id")
 
     *在 IntelliSense 中显示的 id*
-6. 删除最近添加**&lt;窗体&gt;**元素和其内容。
+6. 删除最近添加**&lt;窗体&gt;** 元素和其内容。
 
 <a id="Ex2Task2"></a>
 #### <a name="task-2---using-html-code-snippets"></a>任务 2-使用 HTML 代码段
 
 HTML5 引入超过 25 个新的语义标记。 Visual Studio 已有对这些标记，IntelliSense 支持，但是 Visual Studio 2013 可以更快、 更轻松地通过添加新的代码片段编写标记。 尽管这些标记不是复杂的但它们附带了几个小的细微部分，例如添加为将正确的编解码器回退字符*音频*标记。 在此任务中，你将看到音频标记的 HTML 代码段。
 
-1. 在**Index.cshtml**文件，请键入 **&lt;aud**内**&lt;部分&gt;**元素下图中所示。
+1. 在**Index.cshtml**文件，请键入 **&lt;aud**内**&lt;部分&gt;** 元素下图中所示。
 
     ![插入音频元素](visual-studio-2013-web-tools/_static/image36.png "插入音频元素")
 
@@ -465,7 +466,7 @@ HTML5 引入超过 25 个新的语义标记。 Visual Studio 已有对这些标�
     ![GetElementByTagName 方法显示 IntelliSense](visual-studio-2013-web-tools/_static/image45.png "getElementByTagName 方法显示 IntelliSense")
 
     *GetElementsByTagName 方法显示 IntelliSense*
-13. 选择**&quot;音频&quot;**从列表和按**ENTER**。 结果如下图所示。
+13. 选择**&quot;音频&quot;** 从列表和按**ENTER**。 结果如下图所示。
 
     ![检索音频元素](visual-studio-2013-web-tools/_static/image46.png "检索音频元素")
 

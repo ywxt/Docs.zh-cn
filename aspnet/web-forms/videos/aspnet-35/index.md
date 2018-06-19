@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-35/index
-title: "ASP.NET 3.5 |Microsoft 文档"
+title: ASP.NET 3.5 |Microsoft 文档
 author: rick-anderson
-description: "如何生成 ASP.NET 3.5 应用程序，主要侧重于新的功能。"
+description: 如何生成 ASP.NET 3.5 应用程序，主要侧重于新的功能。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/aspnet-35
 msc.type: chapter
 ms.openlocfilehash: 4f3d6f408cef7d095462c580a53971af957b2a3b
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521906"
 ---
 <a name="aspnet-35"></a>ASP.NET 3.5
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-3/mvc-3-razor-helpers
-title: "MVC 3-Razor 帮助程序 |Microsoft 文档"
+title: MVC 3-Razor 帮助程序 |Microsoft 文档
 author: jongalloway
-description: "在本视频中，您将学习如何使用这两种扩展方法和声明性@helper在 Razor 视图中的语法。"
+description: 在本视频中，您将学习如何使用这两种扩展方法和声明性@helper在 Razor 视图中的语法。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/23/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503656"
 ---
 <a name="mvc-3---razor-helpers"></a>MVC 3-Razor 帮助程序
 ====================

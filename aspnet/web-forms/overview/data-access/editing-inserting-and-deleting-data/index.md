@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/index
-title: "编辑、 插入和删除数据 |Microsoft 文档"
+title: 编辑、 插入和删除数据 |Microsoft 文档
 author: rick-anderson
-description: "这些教程中，你看到了如何将 ObjectDataSource 控件的方法映射到 BLL 方法，以及如何配置的 GridView，说明如何和 FormView co..."
+description: 这些教程中，你看到了如何将 ObjectDataSource 控件的方法映射到 BLL 方法，以及如何配置的 GridView，说明如何和 FormView co...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-da
 msc.type: chapter
 ms.openlocfilehash: 424781d445443ff2df3b5fda359dadc5243e1ea9
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26513806"
 ---
 <a name="editing-inserting-and-deleting-data"></a>编辑、 插入和删除数据
 ====================

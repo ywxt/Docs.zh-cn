@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-add-client-script-event-handlers-controls-on-an-aspnet-page
-title: "[如何操作]: 添加客户端脚本事件处理程序将 ASP.NET 页上的控件？ | Microsoft Docs"
+title: '[如何操作]: 添加客户端脚本事件处理程序将 ASP.NET 页上的控件？ | Microsoft Docs'
 author: rick-anderson
-description: "在此视频 Chris Pels 演示如何将客户端脚本事件添加到 ASP.NET 页上的控件。 首先，多个 ASP.NET 控件添加到页和 e..."
+description: 在此视频 Chris Pels 演示如何将客户端脚本事件添加到 ASP.NET 页上的控件。 首先，多个 ASP.NET 控件添加到页和 e...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525156"
 ---
 <a name="how-do-i-add-client-script-event-handlers-controls-on-an-aspnet-page"></a>[如何操作]: 添加客户端脚本事件处理程序将 ASP.NET 页上的控件？
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890666"
 ---
 <a name="building-an-interface-to-select-one-user-account-from-many-c"></a>生成一个接口，以便从很多的 (C#) 中选择一个用户帐户
 ====================

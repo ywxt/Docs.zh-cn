@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872762"
 ---
 <a name="iteration-2--make-the-application-look-nice-vb"></a>迭代 #2 – 使应用程序，看上去很好 (VB)
 ====================
@@ -83,7 +84,7 @@ ASP.NET MVC 设计库承载专门为使用 ASP.NET MVC 项目中创建的免费�
 3. 将文件提取到名为年 10 月的文件夹。
 4. 从包含在年 10 月文件夹 DesignTemplate 文件夹中选择的所有文件，右键单击文件，然后选择菜单选项**复制**。
 5. 右键单击 Visual Studio 解决方案资源管理器窗口中的 ContactManager 项目节点并选择菜单选项**粘贴**（请参见图 4）。
-6. 选择 Visual Studio 菜单选项**编辑、 查找和替换，快速替换**和替换*[MyProjectName]*与*ContactManager* （请参见图 5）。
+6. 选择 Visual Studio 菜单选项**编辑、 查找和替换，快速替换**和替换 *[MyProjectName]* 与*ContactManager* （请参见图 5）。
 
 
 [![新项目对话框](iteration-2-make-the-application-look-nice-vb/_static/image3.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image5.png)

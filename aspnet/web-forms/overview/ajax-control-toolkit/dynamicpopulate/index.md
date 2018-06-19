@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/index
-title: "DynamicPopulate |Microsoft 文档"
+title: DynamicPopulate |Microsoft 文档
 author: rick-anderson
-description: "本教程演示如何使用 DynamicPopulate 控件，调用的 web 服务并在页上的控件中显示生成的值。"
+description: 本教程演示如何使用 DynamicPopulate 控件，调用的 web 服务并在页上的控件中显示生成的值。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate
 msc.type: chapter
 ms.openlocfilehash: 1d16b9e1b1f24e21bbc05c31c30c59fbe923b6c5
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26510556"
 ---
 <a name="dynamicpopulate"></a>DynamicPopulate
 ====================

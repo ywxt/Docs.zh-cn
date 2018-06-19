@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-outputcache-to-cache-an-aspnet-page
-title: "[如何:]使用缓存来缓存 ASP.NET 页 |Microsoft 文档"
+title: '[如何:]使用缓存来缓存 ASP.NET 页 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 演示如何利用内置的 ASP.NET 可以在缓存中存储一个页面，使它不一定要重新生成缓存。 首先，..."
+description: 在此视频 Chris Pels 演示如何利用内置的 ASP.NET 可以在缓存中存储一个页面，使它不一定要重新生成缓存。 首先，...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/05/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526196"
 ---
 <a name="how-do-i-use-outputcache-to-cache-an-aspnet-page"></a>[如何:]使用缓存来缓存 ASP.NET 页
 ====================

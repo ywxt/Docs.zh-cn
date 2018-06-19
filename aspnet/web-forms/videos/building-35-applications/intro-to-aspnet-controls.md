@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/intro-to-aspnet-controls
-title: "ASP.NET 控件简介 |Microsoft 文档"
+title: ASP.NET 控件简介 |Microsoft 文档
 author: JoeStagner
-description: "控件驱动开发实际上可以增加你开发的工作效率。 本视频中提供了标准的 ASP.NET 控件的基本介绍。"
+description: 控件驱动开发实际上可以增加你开发的工作效率。 本视频中提供了标准的 ASP.NET 控件的基本介绍。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520956"
 ---
 <a name="intro-to-aspnet-controls"></a>ASP.NET 控件简介
 ====================

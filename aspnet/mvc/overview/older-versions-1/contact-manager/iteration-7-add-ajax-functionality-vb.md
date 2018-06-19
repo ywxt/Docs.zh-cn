@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875261"
 ---
 <a name="iteration-7--add-ajax-functionality-vb"></a>迭代 #7-添加 Ajax 功能 (VB)
 ====================

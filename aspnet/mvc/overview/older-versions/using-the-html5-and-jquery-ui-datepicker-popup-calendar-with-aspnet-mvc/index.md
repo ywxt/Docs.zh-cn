@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/index
-title: "MVC 3-HTML5 和 jQuery UI Datepicker 弹出日历 |Microsoft 文档"
+title: MVC 3-HTML5 和 jQuery UI Datepicker 弹出日历 |Microsoft 文档
 author: rick-anderson
-description: "本教程介绍如何使用编辑器模板、 显示模板和 jQuery UI datepicker 弹出日历，ASP.NET MVC Web 应用程序中。"
+description: 本教程介绍如何使用编辑器模板、 显示模板和 jQuery UI datepicker 弹出日历，ASP.NET MVC Web 应用程序中。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/19/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepi
 msc.type: chapter
 ms.openlocfilehash: 0e1ee1798d260215f8824a9222605a1a9a900917
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26502596"
 ---
 <a name="mvc-3---the-html5-and-jquery-ui-datepicker-popup-calendar"></a>MVC 3-HTML5 和 jQuery UI Datepicker 弹出日历
 ====================

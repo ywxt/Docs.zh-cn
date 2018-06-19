@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/testing-and-debugging/index
-title: "测试和调试 ASP.NET Web API |Microsoft 文档"
+title: 测试和调试 ASP.NET Web API |Microsoft 文档
 author: rick-anderson
-description: "测试和调试 ASP.NET Web API"
+description: 测试和调试 ASP.NET Web API
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/overview/testing-and-debugging
 msc.type: chapter
 ms.openlocfilehash: 567fe8f790d5f7684b74018503f97ea8caabccc9
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508256"
 ---
 <a name="testing-and-debugging-aspnet-web-api"></a>测试和调试 ASP.NET Web API
 ====================

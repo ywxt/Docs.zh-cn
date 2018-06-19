@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-implement-site-navigation-in-aspnet
-title: "[如何:]在 ASP.NET 中的实现站点导航？ | Microsoft Docs"
+title: '[如何:]在 ASP.NET 中的实现站点导航？ | Microsoft Docs'
 author: rick-anderson
-description: "在本视频中，我们将了解如何定义站点地图并将其用于菜单、 树视图和站点地图服务器控件。 我们将了解如何在母板页上使用站点地图..."
+description: 在本视频中，我们将了解如何定义站点地图并将其用于菜单、 树视图和站点地图服务器控件。 我们将了解如何在母板页上使用站点地图...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/18/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525686"
 ---
 <a name="how-do-i-implement-site-navigation-in-aspnet"></a>[如何:]在 ASP.NET 中的实现站点导航？
 ====================

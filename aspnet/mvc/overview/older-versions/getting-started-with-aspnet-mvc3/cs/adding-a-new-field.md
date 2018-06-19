@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871553"
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-table-c"></a>将新字段添加到的电影模型和表 (C#)
 ====================
@@ -65,7 +66,7 @@ ms.lasthandoff: 04/06/2018
 
 你现在已更新应用程序代码以支持新`Rating`属性。
 
-现在运行应用程序并导航到*/Movies* URL。 执行此操作，不过，你将看到以下错误：
+现在运行应用程序并导航到 */Movies* URL。 执行此操作，不过，你将看到以下错误：
 
 ![](adding-a-new-field/_static/image1.png)
 
@@ -119,7 +120,7 @@ ms.lasthandoff: 04/06/2018
 
 关闭*Global.asax*文件。
 
-重新运行该应用程序并导航到*/Movies* URL。 当应用程序启动时，它将检测模型结构不再与数据库架构相匹配。 自动重新创建数据库，以匹配新的模型结构，并填充示例电影的数据库：
+重新运行该应用程序并导航到 */Movies* URL。 当应用程序启动时，它将检测模型结构不再与数据库架构相匹配。 自动重新创建数据库，以匹配新的模型结构，并填充示例电影的数据库：
 
 ![7_MyMovieList_SM](adding-a-new-field/_static/image5.png)
 

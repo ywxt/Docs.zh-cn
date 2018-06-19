@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873998"
 ---
 <a name="implementing-inheritance-with-the-entity-framework-in-an-aspnet-mvc-application-8-of-10"></a>在 ASP.NET MVC 应用程序 (10 的第 8) 实现与实体框架的继承
 ====================
@@ -151,7 +152,7 @@ TPH 继承模式通常因为 TPT 模式可能会导致复杂的联接查询在�
 
 运行站点并尝试各种页面。 一切都和以前一样。
 
-在**服务器资源管理器，**展开**SchoolContext**然后**表**，和你看到**学生**和**教师**已替换为表**人员**表。 展开**人员**表，你会看到它具有所有使用中的列**学生**和**教师**表。
+在**服务器资源管理器，** 展开**SchoolContext**然后**表**，和你看到**学生**和**教师**已替换为表**人员**表。 展开**人员**表，你会看到它具有所有使用中的列**学生**和**教师**表。
 
 ![Server_Explorer_showing_Person_table](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 

@@ -1,8 +1,8 @@
 ---
 uid: mvc/pluralsight
-title: "从 Pluralsight MVC 视频培训 |Microsoft 文档"
+title: 从 Pluralsight MVC 视频培训 |Microsoft 文档
 author: rick-anderson
-description: "MVC 从 Pluralsight 此可用的视频培训视频培训将帮助你启动并运行使用 ASP.NET MVC。 它涵盖中设置一个开发的所有内容..."
+description: MVC 从 Pluralsight 此可用的视频培训视频培训将帮助你启动并运行使用 ASP.NET MVC。 它涵盖中设置一个开发的所有内容...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/09/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503886"
 ---
 <a name="mvc-video-training-from-pluralsight"></a>从 Pluralsight MVC 视频培训
 ====================

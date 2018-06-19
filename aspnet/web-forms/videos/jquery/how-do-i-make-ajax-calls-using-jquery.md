@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/jquery/how-do-i-make-ajax-calls-using-jquery
-title: "我如何： 生成 Ajax 调用使用 jQuery？ | Microsoft Docs"
+title: 我如何： 生成 Ajax 调用使用 jQuery？ | Microsoft Docs
 author: rick-anderson
-description: "在此视频 Chris Pels 演示如何使 Ajax 调用使用 jQuery 库。 示例 web 站点创建包含返回的简单的 web 服务..."
+description: 在此视频 Chris Pels 演示如何使 Ajax 调用使用 jQuery 库。 示例 web 站点创建包含返回的简单的 web 服务...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2010
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526416"
 ---
 <a name="how-do-i-make-ajax-calls-using-jquery"></a>我如何： 生成 Ajax 调用使用 jQuery？
 ====================

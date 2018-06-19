@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-to-install-asp-net-and-tools
-title: "如何安装 ASP.NET 和工具 |Microsoft 文档"
+title: 如何安装 ASP.NET 和工具 |Microsoft 文档
 author: shanselman
-description: "Microsoft 的 Scott Hanselman 演示了如何下载并安装 ASP.NET 和工具，以便你可以启动开发 web 应用程序。"
+description: Microsoft 的 Scott Hanselman 演示了如何下载并安装 ASP.NET 和工具，以便你可以启动开发 web 应用程序。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/10/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526286"
 ---
 <a name="how-to-install-aspnet-and-tools"></a>如何安装 ASP.NET 和工具
 ====================

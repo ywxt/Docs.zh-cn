@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/performance-and-traffic/bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site
-title: "绑定和贴图层在 ASP.NET 网页中的资产页 (Razor) 站点 |Microsoft 文档"
+title: 绑定和贴图层在 ASP.NET 网页中的资产页 (Razor) 站点 |Microsoft 文档
 author: microsoft
-description: "绑定和缩减是方式使您的网站更快。 绑定允许你组合多个 JavaScript (.js) 文件或多个级联样式表 （..."
+description: 绑定和缩减是方式使您的网站更快。 绑定允许你组合多个 JavaScript (.js) 文件或多个级联样式表 （...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/21/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528546"
 ---
 <a name="bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site"></a>绑定和贴图层 ASP.NET Web 页 (Razor) 站点中的资产
 ====================

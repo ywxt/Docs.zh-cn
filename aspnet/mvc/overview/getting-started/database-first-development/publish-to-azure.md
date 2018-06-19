@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869954"
 ---
 <a name="publish-mvc-database-first-site-to-azure"></a>将 MVC 数据库第一个站点发布到 Azure
 ====================

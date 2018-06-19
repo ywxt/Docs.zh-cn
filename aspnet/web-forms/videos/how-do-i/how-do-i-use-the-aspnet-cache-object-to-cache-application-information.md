@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-aspnet-cache-object-to-cache-application-information
-title: "[如何操作]: 使用 ASP.NET 缓存对象来缓存应用程序信息 |Microsoft 文档"
+title: '[如何操作]: 使用 ASP.NET 缓存对象来缓存应用程序信息 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 演示如何使用 ASP.NET 缓存对象来存储应用程序信息。 使用简单的用户界面创建一个示例页..."
+description: 在此视频 Chris Pels 演示如何使用 ASP.NET 缓存对象来存储应用程序信息。 使用简单的用户界面创建一个示例页...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/26/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525976"
 ---
 <a name="how-do-i-use-the-aspnet-cache-object-to-cache-application-information"></a>[如何操作]: 使用 ASP.NET 缓存对象来缓存应用程序信息
 ====================

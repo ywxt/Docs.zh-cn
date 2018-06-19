@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/index
-title: "与实体框架 6 使用 Web API 2 |Microsoft 文档"
+title: 与实体框架 6 使用 Web API 2 |Microsoft 文档
 author: rick-anderson
-description: "如何创建的 Web API 应用程序使用 Entity Framework 进行数据库持久性。"
+description: 如何创建的 Web API 应用程序使用 Entity Framework 进行数据库持久性。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/03/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework
 msc.type: chapter
 ms.openlocfilehash: 560a12f2625366947efa2afd00bbb184d9060e1e
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506646"
 ---
 <a name="using-web-api-2-with-entity-framework-6"></a>与实体框架 6 使用 Web API 2
 ====================

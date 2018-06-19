@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871111"
 ---
 <a name="aspnet-mvc-storefront-part-8-testing-controllers-iteration-1-complete"></a>ASP.NET MVC 店面一部分 8： 测试控制器、 迭代 1 完成
 ====================

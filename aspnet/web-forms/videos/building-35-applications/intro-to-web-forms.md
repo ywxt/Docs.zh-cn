@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/intro-to-web-forms
-title: "Web 窗体简介 |Microsoft 文档"
+title: Web 窗体简介 |Microsoft 文档
 author: JoeStagner
-description: "ASP.NET Web 窗体是用于 ASP.NET 应用程序的默认用户界面机制... 此视频将演示的开发与 Web 窗体的基本。"
+description: ASP.NET Web 窗体是用于 ASP.NET 应用程序的默认用户界面机制... 此视频将演示的开发与 Web 窗体的基本。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521016"
 ---
 <a name="intro-to-web-forms"></a>Web 窗体简介
 ====================

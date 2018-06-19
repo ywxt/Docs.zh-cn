@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/sending-html-form-data-part-1
-title: "在 ASP.NET Web API 发送 HTML 窗体数据： 窗体编码形式数据 |Microsoft 文档"
+title: 在 ASP.NET Web API 发送 HTML 窗体数据： 窗体编码形式数据 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/15/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506936"
 ---
 <a name="sending-html-form-data-in-aspnet-web-api-form-urlencoded-data"></a>在 ASP.NET Web API 发送 HTML 窗体数据： 窗体编码形式的数据
 ====================

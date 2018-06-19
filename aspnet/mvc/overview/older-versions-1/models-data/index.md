@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/index
-title: "模型 （数据） |Microsoft 文档"
+title: 模型 （数据） |Microsoft 文档
 author: rick-anderson
-description: "在本系列教程中，您将学习如何与 Microsoft 实体框架使用 ASP.NET MVC。 在本教程的过程中，你将构建的 web 应用..."
+description: 在本系列教程中，您将学习如何与 Microsoft 实体框架使用 ASP.NET MVC。 在本教程的过程中，你将构建的 web 应用...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions-1/models-data
 msc.type: chapter
 ms.openlocfilehash: b531a5ad6924840487985a57c178d18d945a0b06
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26499976"
 ---
 <a name="models-data"></a>模型 （数据）
 ====================

@@ -1,14 +1,14 @@
 ---
 uid: single-page-application/overview/introduction/knockoutjs-template
-title: "单页面应用程序： KnockoutJS 模板 |Microsoft 文档"
+title: 单页面应用程序： KnockoutJS 模板 |Microsoft 文档
 author: MikeWasson
-description: "Knockout 模板"
+description: Knockout 模板
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/30/2013
 ms.topic: article
 ms.assetid: f9c07af0-4b20-4b08-af8f-47fc3df169a2
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "28036890"
 ---
 <a name="single-page-application-knockoutjs-template"></a>单页面应用程序： KnockoutJS 模板
 ====================
@@ -46,7 +47,7 @@ AJAX 已是老生常谈，但目前有更加轻松地生成和维护一个大型
 
 启动 Visual Studio 并选择**新项目**从开始页。 或从**文件**菜单上，选择**新建**然后**项目**。
 
-在**模板**窗格中，选择**已安装的模板**展开**Visual C#**节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 命名该项目并单击**确定**。
+在**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 命名该项目并单击**确定**。
 
 ![](knockoutjs-template/_static/image2.png)
 
@@ -96,7 +97,7 @@ Entity Framework (EF) 是 O/RM 层。 它面向对象的世界上的 ASP.NET 和
 
 这些是用于 Entity Framework Code First 的数据库模型。 请注意这些模型具有指向对方的属性。 `ToDoList` 包含的 Todoitem，并且每个集合`ToDoItem`已返回到其父 ToDoList 的引用。 这些属性被称为导航属性，以及它们所表示的一对多关系待办事项列表和其待办事项。
 
-`ToDoItem`类还使用**[ForeignKey]**特性来指定`ToDoListId`是到的外键`ToDoList`表。 这将告知 EF 将 foreign key 约束添加到数据库。
+`ToDoItem`类还使用 **[ForeignKey]** 特性来指定`ToDoListId`是到的外键`ToDoList`表。 这将告知 EF 将 foreign key 约束添加到数据库。
 
 [!code-csharp[Main](knockoutjs-template/samples/sample1.cs)]
 
@@ -156,7 +157,7 @@ SPA 模板使用 EF Code First。 在 Code First 开发中，你定义模型首�
 
 - `GetTodoLists`方法使用 LINQ 查询来筛选的登录的用户 ID 通过结果。 这样一来，用户仅看到他 / 她所属的数据。 此外，请注意 Select 语句用于将转换`ToDoList`实例到`TodoListDto`实例。
 - PUT 和 POST 方法修改数据库之前检查模型状态。 如果**ModelState.IsValid**为 false，这些方法将返回 HTTP 400 错误的请求。 阅读有关在 Web API 中的模型验证的详细信息[模型验证](../../../web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api.md)。
-- 控制器类也用修饰**[Authorize]**属性。 此属性检查 HTTP 请求进行身份验证。 如果请求未通过身份验证，客户端收到 HTTP 401 未授权。 阅读有关在身份验证的详细信息[身份验证和 ASP.NET Web API 中的授权](../../../web-api/overview/security/authentication-and-authorization-in-aspnet-web-api.md)。
+- 控制器类也用修饰 **[Authorize]** 属性。 此属性检查 HTTP 请求进行身份验证。 如果请求未通过身份验证，客户端收到 HTTP 401 未授权。 阅读有关在身份验证的详细信息[身份验证和 ASP.NET Web API 中的授权](../../../web-api/overview/security/authentication-and-authorization-in-aspnet-web-api.md)。
 
 `TodoController`类是非常类似于`TodoListController`。 最大的区别是它不定义任何 GET 方法中，因为客户端将会获得待办事项项目，以及每个待办事项列表。
 
@@ -214,7 +215,7 @@ Views/Home/Index.cshtml 中定义了主要 HTML 页。 因为我们正在使用�
 
 [!code-html[Main](knockoutjs-template/samples/sample8.html)]
 
-在此示例中，Knockout 更新的内容**&lt;跨越&gt;**具有的值的元素`myItems.count()`。 当此值发生更改时，Knockout 更新文档。
+在此示例中，Knockout 更新的内容**&lt;跨越&gt;** 具有的值的元素`myItems.count()`。 当此值发生更改时，Knockout 更新文档。
 
 Knockout 提供大量的不同绑定类型。 下面是一些在 SPA 模板中使用的绑定：
 

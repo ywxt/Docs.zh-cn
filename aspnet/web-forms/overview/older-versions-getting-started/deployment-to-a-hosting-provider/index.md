@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/index
-title: "ASP.NET 4-使用 SQL Server Compact 使用 Visual Studio 的 Web 部署 |Microsoft 文档"
+title: ASP.NET 4-使用 SQL Server Compact 使用 Visual Studio 的 Web 部署 |Microsoft 文档
 author: rick-anderson
-description: "本系列教程演示如何使的 ASP.NET web 应用程序使用 SQL Server Compact 可用在 internet 上通过将其部署到第三方 h..."
+description: 本系列教程演示如何使的 ASP.NET web 应用程序使用 SQL Server Compact 可用在 internet 上通过将其部署到第三方 h...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/29/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-
 msc.type: chapter
 ms.openlocfilehash: 2674550e6e69c2b8b9f463c5e9cb2d1d3e0713af
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26518096"
 ---
 <a name="aspnet-4---web-deployment-with-sql-server-compact-using-visual-studio"></a>ASP.NET 4-使用 SQL Server Compact 使用 Visual Studio 的 Web 部署
 ====================

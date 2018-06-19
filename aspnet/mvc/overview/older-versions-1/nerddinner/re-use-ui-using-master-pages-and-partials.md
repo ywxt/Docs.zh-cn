@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870006"
 ---
 <a name="re-use-ui-using-master-pages-and-partials"></a>重用使用母版页和它们的 UI
 ====================
@@ -127,7 +128,7 @@ ASP.NET MVC 支持能够定义可以用于封装视图呈现逻辑的页面的�
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image6.png)
 
-与*/Dinners/编辑 / [id]* URL:
+与 */Dinners/编辑 / [id]* URL:
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image7.png)
 

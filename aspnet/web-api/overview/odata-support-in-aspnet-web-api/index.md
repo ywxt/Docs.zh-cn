@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/index
-title: "在 ASP.NET Web API OData |Microsoft 文档"
+title: 在 ASP.NET Web API OData |Microsoft 文档
 author: rick-anderson
-description: "如何创建在 Web API 中的 OData 终结点。 OData 是用于 web 的数据访问协议。 它提供了统一的方式来查询和操作数据集。 Web API s..."
+description: 如何创建在 Web API 中的 OData 终结点。 OData 是用于 web 的数据访问协议。 它提供了统一的方式来查询和操作数据集。 Web API s...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/17/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api
 msc.type: chapter
 ms.openlocfilehash: dd46454ae78424ab383a71d185ff7a563692cc5f
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508036"
 ---
 <a name="odata-in-aspnet-web-api"></a>ASP.NET Web API 中的 OData
 ====================

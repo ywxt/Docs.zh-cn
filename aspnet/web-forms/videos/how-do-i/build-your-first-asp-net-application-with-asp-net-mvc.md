@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/build-your-first-asp-net-application-with-asp-net-mvc
-title: "生成第一个 ASP.NET 应用程序使用 ASP.NET MVC |Microsoft 文档"
+title: 生成第一个 ASP.NET 应用程序使用 ASP.NET MVC |Microsoft 文档
 author: lmoroney
-description: "Microsoft 的网站 Moroney 演示了如何生成第一个 ASP.NET 应用程序使用 ASP.NET MVC。"
+description: Microsoft 的网站 Moroney 演示了如何生成第一个 ASP.NET 应用程序使用 ASP.NET MVC。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/09/2010
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525166"
 ---
 <a name="build-your-first-aspnet-application-with-aspnet-mvc"></a>生成第一个 ASP.NET 应用程序使用 ASP.NET MVC
 ====================

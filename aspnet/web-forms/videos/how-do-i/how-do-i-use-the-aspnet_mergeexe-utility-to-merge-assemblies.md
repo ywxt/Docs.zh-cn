@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies
-title: "[如何:]Aspnet_merge.exe 实用程序用于将合并程序集 |Microsoft 文档"
+title: '[如何:]Aspnet_merge.exe 实用程序用于将合并程序集 |Microsoft 文档'
 author: rick-anderson
-description: "在本视频 Chris Pels 将演示如何使用 aspnet_merge.exe 实用工具来合并使用 aspnet_compiler.exe utilit 已编译的程序集..."
+description: 在本视频 Chris Pels 将演示如何使用 aspnet_merge.exe 实用工具来合并使用 aspnet_compiler.exe utilit 已编译的程序集...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526486"
 ---
 <a name="how-do-i-use-the-aspnetmergeexe-utility-to-merge-assemblies"></a>[如何:]Aspnet_merge.exe 实用程序用于将合并程序集
 ====================

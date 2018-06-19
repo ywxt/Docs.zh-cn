@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868030"
 ---
 <a name="aspnet-mvc-storefront-part-16-membership-redo-with-openid"></a>采用 OpenID 的 ASP.NET MVC 店面一部分 16： 成员身份重做
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877871"
 ---
 <a name="using-templatefields-in-the-gridview-control-c"></a>GridView 控件 (C#) 中使用 TemplateFields
 ====================
@@ -94,7 +95,7 @@ GridView 组成的字段，指示哪些属性从一组`DataSource`要包括在�
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample2.aspx)]
 
-如你所见，TemplateField 包含两个模板`ItemTemplate`具有标签其`Text`属性设置为的值`FirstName`数据字段和`EditItemTemplate`与文本框控件`Text`也设置属性到`FirstName`数据字段。 数据绑定语法中- `<%# Bind("fieldName") %>` -指示数据字段*`fieldName`*绑定到指定的 Web 控件属性。
+如你所见，TemplateField 包含两个模板`ItemTemplate`具有标签其`Text`属性设置为的值`FirstName`数据字段和`EditItemTemplate`与文本框控件`Text`也设置属性到`FirstName`数据字段。 数据绑定语法中- `<%# Bind("fieldName") %>` -指示数据字段*`fieldName`* 绑定到指定的 Web 控件属性。
 
 若要添加`LastName`数据字段值我们需要添加另一个标签 Web 控件中的此 TemplateField`ItemTemplate`并将绑定其`Text`属性`LastName`。 这可以手动或通过设计器实现。 若要手动执行它，只需将添加到合适的声明性语法`ItemTemplate`:
 

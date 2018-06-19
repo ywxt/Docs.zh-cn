@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872785"
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-table"></a>将新字段添加到的电影模型和表
 ====================
@@ -81,7 +82,7 @@ Visual Studio 将打开*Configuration.cs*文件。 替换`Seed`中的方法*Conf
 
 ![](adding-a-new-field-to-the-movie-model-and-table/_static/image7.png)
 
-Code First 迁移创建中的另一个类文件*迁移*文件夹 (同名*{日期时间戳}\_Initial.cs* )，并且此类包含创建数据库架构的代码。 迁移 filename 是预先固定的使用时间戳来帮助进行排序。 检查*{日期时间戳}\_Initial.cs*文件，它包含的说明进行操作，对于影片 DB 创建电影表。 下面，这说明中的数据库的更新时*{日期时间戳}\_Initial.cs*文件将运行并创建数据库架构。 则**种子**方法将运行，以填充使用测试数据的数据库。
+Code First 迁移创建中的另一个类文件*迁移*文件夹 (同名 *{日期时间戳}\_Initial.cs* )，并且此类包含创建数据库架构的代码。 迁移 filename 是预先固定的使用时间戳来帮助进行排序。 检查 *{日期时间戳}\_Initial.cs*文件，它包含的说明进行操作，对于影片 DB 创建电影表。 下面，这说明中的数据库的更新时 *{日期时间戳}\_Initial.cs*文件将运行并创建数据库架构。 则**种子**方法将运行，以填充使用测试数据的数据库。
 
 在**程序包管理器控制台**，输入命令"更新数据库"创建数据库并运行**种子**方法。
 
@@ -89,7 +90,7 @@ Code First 迁移创建中的另一个类文件*迁移*文件夹 (同名*{日期
 
 如果你收到的错误消息指示表已存在，无法创建，则可能是因为你运行应用程序删除了数据库后，在你执行之前`update-database`。 在这种情况下，删除*Movies.mdf*再次文件，然后重试`update-database`命令。 如果仍然收到错误，删除 migrations 文件夹及其内容，则使用此页顶部的说明启动 (即删除*Movies.mdf*文件，然后转到 Enable-migrations)。
 
-运行应用程序并导航到*/Movies* URL。 将显示种子数据。
+运行应用程序并导航到 */Movies* URL。 将显示种子数据。
 
 ![](adding-a-new-field-to-the-movie-model-and-table/_static/image9.png)
 
@@ -117,7 +118,7 @@ Code First 迁移创建中的另一个类文件*迁移*文件夹 (同名*{日期
 
 你现在已更新应用程序代码以支持新`Rating`属性。
 
-现在运行应用程序并导航到*/Movies* URL。 执行此操作，不过，你将看到以下错误之一：
+现在运行应用程序并导航到 */Movies* URL。 执行此操作，不过，你将看到以下错误之一：
 
 ![](adding-a-new-field-to-the-movie-model-and-table/_static/image10.png)
 

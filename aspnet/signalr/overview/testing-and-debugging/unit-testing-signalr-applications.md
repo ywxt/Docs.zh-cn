@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870838"
 ---
 <a name="unit-testing-signalr-applications"></a>单元测试 SignalR 应用程序
 ====================
@@ -64,7 +65,7 @@ XUnit.net 将可用于控制测试;Moq 将用于创建[模拟](http://en.wikiped
 3. 如果你正在使用的快速入门应用程序的下载版本，打开**程序包管理器控制台**单击**还原**将 SignalR 包添加到项目。
 
     ![还原包](unit-testing-signalr-applications/_static/image1.png)
-4. 将项目添加到单元测试的解决方案。 右键单击你的解决方案中**解决方案资源管理器**和选择**添加**，**新项目...**.下**C#**节点中，选择**Windows**节点。 选择**类库**。 将新项目**TestLibrary**单击**确定**。
+4. 将项目添加到单元测试的解决方案。 右键单击你的解决方案中**解决方案资源管理器**和选择**添加**，**新项目...**.下**C#** 节点中，选择**Windows**节点。 选择**类库**。 将新项目**TestLibrary**单击**确定**。
 
     ![创建测试库](unit-testing-signalr-applications/_static/image2.png)
 5. 到 SignalRChat 项目测试库项目中添加的引用。 右键单击**TestLibrary**项目，然后选择**添加**，**引用...**.选择**项目**节点下的**解决方案**节点，并选中**SignalRChat**。 单击 **“确定”**。

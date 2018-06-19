@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-customize-my-site-with-profiles-and-themes
-title: "[如何:]自定义配置文件和主题与我的站点？ | Microsoft Docs"
+title: '[如何:]自定义配置文件和主题与我的站点？ | Microsoft Docs'
 author: microsoft
-description: "了解如何使用配置文件来收集每个用户的配置信息并应用主题扩展一致和外观整个 Web 站点。"
+description: 了解如何使用配置文件来收集每个用户的配置信息并应用主题扩展一致和外观整个 Web 站点。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/06/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526186"
 ---
 <a name="how-do-i-customize-my-site-with-profiles-and-themes"></a>[如何:]自定义配置文件和主题与我的站点？
 ====================

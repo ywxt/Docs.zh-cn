@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/index
-title: "网页视频简介 |Microsoft 文档"
+title: 网页视频简介 |Microsoft 文档
 author: rick-anderson
-description: "哪些视频你可以查看若要了解有关 Web 页和 WebMatrix 的基础知识。"
+description: 哪些视频你可以查看若要了解有关 Web 页和 WebMatrix 的基础知识。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages/videos/introduction
 msc.type: chapter
 ms.openlocfilehash: d128715483de83125166d75988181e729d5207bf
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529966"
 ---
 <a name="introduction-to-web-pages-videos"></a>网页视频简介
 ====================

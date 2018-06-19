@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-implement-a-custom-health-monitoring-event
-title: "[如何:]实现自定义的运行状况监视事件 |Microsoft 文档"
+title: '[如何:]实现自定义的运行状况监视事件 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 中将显示如何创建自定义运行状况监视扩展标准健康状况监视 ASP.NET 中的事件的事件。 自定义 pro..."
+description: 在此视频 Chris Pels 中将显示如何创建自定义运行状况监视扩展标准健康状况监视 ASP.NET 中的事件的事件。 自定义 pro...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/17/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26524956"
 ---
 <a name="how-do-i-implement-a-custom-health-monitoring-event"></a>[如何:]实现自定义的运行状况监视事件
 ====================

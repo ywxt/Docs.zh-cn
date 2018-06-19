@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/index
-title: "ASP.NET MVC 3 音乐商店 |Microsoft 文档"
+title: ASP.NET MVC 3 音乐商店 |Microsoft 文档
 author: rick-anderson
-description: "如何创建 MVC 音乐商店应用程序，示例应用程序的销售音乐集联机，并实现用户登录，网站管理..."
+description: 如何创建 MVC 音乐商店应用程序，示例应用程序的销售音乐集联机，并实现用户登录，网站管理...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions/mvc-music-store
 msc.type: chapter
 ms.openlocfilehash: b8fc43d8a8803a5b4cacfe46b55282e8dfd988c8
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26502446"
 ---
 <a name="aspnet-mvc-3-music-store"></a>ASP.NET MVC 3 音乐商店
 ====================

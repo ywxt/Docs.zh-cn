@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/data-access/adonet-data-services/index
-title: "ADO.NET Data Services |Microsoft 文档"
+title: ADO.NET Data Services |Microsoft 文档
 author: rick-anderson
-description: "这些视频向你演示如何创建简单的 ASP.NET 应用程序中使用类型化的数据集的数据访问层。"
+description: 这些视频向你演示如何创建简单的 ASP.NET 应用程序中使用类型化的数据集的数据访问层。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/04/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/data-access/adonet-data-services
 msc.type: chapter
 ms.openlocfilehash: 07181564ee701c71ce74ac7cea3d8cfd0f9f4ffd
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525096"
 ---
 <a name="adonet-data-services"></a>ADO.NET 数据服务
 ====================

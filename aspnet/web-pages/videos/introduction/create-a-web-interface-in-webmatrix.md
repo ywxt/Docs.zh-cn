@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/create-a-web-interface-in-webmatrix
-title: "在 WebMatrix 中创建一个 Web 界面 |Microsoft 文档"
+title: 在 WebMatrix 中创建一个 Web 界面 |Microsoft 文档
 author: rick-anderson
-description: "第 6 部分演示如何生成一个页面，让你的用户将数据添加到您的数据库，，供你的站点可呈现它。"
+description: 第 6 部分演示如何生成一个页面，让你的用户将数据添加到您的数据库，，供你的站点可呈现它。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529736"
 ---
 <a name="create-a-web-interface-in-webmatrix"></a>在 WebMatrix 中创建一个 Web 界面
 ====================

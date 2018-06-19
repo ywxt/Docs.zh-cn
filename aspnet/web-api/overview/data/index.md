@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/data/index
-title: "在 ASP.NET Web API 中使用数据 |Microsoft 文档"
+title: 在 ASP.NET Web API 中使用数据 |Microsoft 文档
 author: rick-anderson
-description: "如何程序 CRUD （创建、 读取、 更新、 删除） Web API 中的操作。"
+description: 如何程序 CRUD （创建、 读取、 更新、 删除） Web API 中的操作。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/23/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/overview/data
 msc.type: chapter
 ms.openlocfilehash: d10b37ffcbaf4124bab05045f0c0608e437bd74d
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506656"
 ---
 <a name="working-with-data-in-aspnet-web-api"></a>在 ASP.NET Web API 中使用数据
 ====================

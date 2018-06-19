@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874845"
 ---
 <a name="part-3-views-and-viewmodels"></a>第 3 部分： 视图和 Viewmodel
 ====================
@@ -229,7 +230,7 @@ Visual Web Developer 中创建并打开"Index.cshtml"查看模板之后我们单
 
 ## <a name="adding-links-between-pages"></a>页之间添加链接
 
-当前列出风格我们 /Store URL 只需以纯文本形式列出流派名称。 让我们更改这，以便而不是纯文本我们改为具有流派名称链接到相应的应用商店/浏览 URL，以便单击音乐流派，如"Disco"将导航到 / 存储/浏览？ 流派 = Disco URL。 我们无法更新我们 \Views\Store\Index.cshtml 视图模板使用这些链接的代码类似下面的输出到**（不键入此中-我们将在其上改进）**:
+当前列出风格我们 /Store URL 只需以纯文本形式列出流派名称。 让我们更改这，以便而不是纯文本我们改为具有流派名称链接到相应的应用商店/浏览 URL，以便单击音乐流派，如"Disco"将导航到 / 存储/浏览？ 流派 = Disco URL。 我们无法更新我们 \Views\Store\Index.cshtml 视图模板使用这些链接的代码类似下面的输出到 **（不键入此中-我们将在其上改进）**:
 
 [!code-html[Main](mvc-music-store-part-3/samples/sample19.html)]
 

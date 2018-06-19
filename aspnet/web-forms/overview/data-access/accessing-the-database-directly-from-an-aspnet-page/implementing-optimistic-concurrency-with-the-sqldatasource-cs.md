@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876158"
 ---
 <a name="implementing-optimistic-concurrency-with-the-sqldatasource-c"></a>使用 SqlDataSource (C#) 的实现开放式并发
 ====================

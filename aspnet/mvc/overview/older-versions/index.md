@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/index
-title: "较旧版本的 MVC 3 和 4 |Microsoft 文档"
+title: 较旧版本的 MVC 3 和 4 |Microsoft 文档
 author: rick-anderson
-description: "指向有关学习如何使用早期版本的 ASP.NET MVC 的资源的链接。"
+description: 指向有关学习如何使用早期版本的 ASP.NET MVC 的资源的链接。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/09/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions
 msc.type: chapter
 ms.openlocfilehash: b017b33346c3d61741f2285896870002d61d3703
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26502566"
 ---
 <a name="older-versions---mvc-3-and-4"></a>较旧版本的 MVC 3 和 4
 ====================

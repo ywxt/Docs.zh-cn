@@ -1,8 +1,8 @@
 ---
 uid: web-api/videos/getting-started/index
-title: "ASP.NET Web API 概述和获取启动视频 |Microsoft 文档"
+title: ASP.NET Web API 概述和获取启动视频 |Microsoft 文档
 author: rick-anderson
-description: "这是一系列视频可帮助你开始使用 ASP.NET Web API。"
+description: 这是一系列视频可帮助你开始使用 ASP.NET Web API。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/videos/getting-started
 msc.type: chapter
 ms.openlocfilehash: c06a3e5670839af357a515331cd864521d260c0e
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508986"
 ---
 <a name="aspnet-web-api-overview-and-getting-started-videos"></a>ASP.NET Web API 概述和获取启动视频
 ====================

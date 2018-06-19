@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/index
-title: "模型绑定和 Visual Studio 2013 中的 Web 窗体 |Microsoft 文档"
+title: 模型绑定和 Visual Studio 2013 中的 Web 窗体 |Microsoft 文档
 author: rick-anderson
-description: "如何使用模型绑定和 Web 窗体处理数据。"
+description: 如何使用模型绑定和 Web 窗体处理数据。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/13/2013
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding
 msc.type: chapter
 ms.openlocfilehash: f653a1394af8bfc562c244dad00ff35bc4744647
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26519766"
 ---
 <a name="model-binding-and-web-forms-in-visual-studio-2013"></a>模型绑定和 Visual Studio 2013 中的 Web 窗体
 ====================

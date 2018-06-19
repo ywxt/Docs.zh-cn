@@ -14,6 +14,7 @@ ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153458"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---tutorial-series"></a>ASP.NET Core MVC 和 EF Core - 教程系列
 

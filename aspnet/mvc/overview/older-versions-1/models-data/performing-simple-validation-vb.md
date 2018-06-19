@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869746"
 ---
 <a name="performing-simple-validation-vb"></a>执行简单的验证 (VB)
 ====================
@@ -87,7 +88,7 @@ ASP.NET MVC framework 包括两个验证帮助器： Html.ValidationMessage() �
 **图 03**： 提交有问题的 Create view ([单击以查看实际尺寸的图像](performing-simple-validation-vb/_static/image6.png))
 
 
-请注意的 html 外观输入验证错误时，还会修改字段。 Html.TextBox() 帮助器呈现*类 ="输入验证错误"*与呈现 Html.TextBox() 帮助程序属性关联的验证错误时的特性。
+请注意的 html 外观输入验证错误时，还会修改字段。 Html.TextBox() 帮助器呈现*类 ="输入验证错误"* 与呈现 Html.TextBox() 帮助程序属性关联的验证错误时的特性。
 
 有用于控制验证错误的外观的三个级联样式表类：
 

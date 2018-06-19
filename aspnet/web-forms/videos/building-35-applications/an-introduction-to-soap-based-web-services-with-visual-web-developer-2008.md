@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/an-introduction-to-soap-based-web-services-with-visual-web-developer-2008
-title: "SOAP 简介基于 Web 服务服务与 Visual Web Developer 2008 |Microsoft 文档"
+title: SOAP 简介基于 Web 服务服务与 Visual Web Developer 2008 |Microsoft 文档
 author: JoeStagner
-description: "此视频展示如何快速和开始开发基于 SOAP 的分布式应用程序能够轻松 / XML web 服务。"
+description: 此视频展示如何快速和开始开发基于 SOAP 的分布式应用程序能够轻松 / XML web 服务。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/08/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521636"
 ---
 <a name="an-introduction-to-soap-based-web-services-with-visual-web-developer-2008"></a>SOAP 简介基于与 Visual Web Developer 2008 的 Web 服务
 ====================

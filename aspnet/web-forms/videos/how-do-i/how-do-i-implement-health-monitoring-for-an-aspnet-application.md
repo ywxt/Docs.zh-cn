@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-implement-health-monitoring-for-an-aspnet-application
-title: "[如何:] 实现运行状况监视 ASP.NET 应用程序？ | Microsoft Docs"
+title: '[如何:] 实现运行状况监视 ASP.NET 应用程序？ | Microsoft Docs'
 author: rick-anderson
-description: "在此视频 Chris Pels 将演示如何实现运行状况监视 ASP.NET 应用程序的详细运行时信息。 了解强大和..."
+description: 在此视频 Chris Pels 将演示如何实现运行状况监视 ASP.NET 应用程序的详细运行时信息。 了解强大和...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/05/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526246"
 ---
 <a name="how-do-i--implement-health-monitoring-for-an-aspnet-application"></a>[如何:] 实现运行状况监视 ASP.NET 应用程序？
 ====================

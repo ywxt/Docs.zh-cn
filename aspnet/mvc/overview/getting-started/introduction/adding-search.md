@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871826"
 ---
 <a name="search"></a>搜索
 ====================
@@ -51,7 +52,7 @@ ms.lasthandoff: 04/06/2018
 
 现在你可以更新`Index`将向用户显示该窗体的视图。
 
-运行应用程序并导航到*/电影/索引*。 将查询字符串（如 `?searchString=ghost`）追加到 URL。 筛选的电影将显示出来。
+运行应用程序并导航到 */电影/索引*。 将查询字符串（如 `?searchString=ghost`）追加到 URL。 筛选的电影将显示出来。
 
 ![SearchQryStr](adding-search/_static/image1.png)
 
@@ -151,7 +152,7 @@ Visual Studio 2013 具有良好的改善时显示和编辑视图文件。 使用
 
 [!code-cshtml[Main](adding-search/samples/sample17.cshtml)]
 
-运行应用程序，并浏览到*/电影/索引*。 按风格、 电影名称，以及这两个条件，请尝试搜索。
+运行应用程序，并浏览到 */电影/索引*。 按风格、 电影名称，以及这两个条件，请尝试搜索。
 
 ![](adding-search/_static/image8.png)
 

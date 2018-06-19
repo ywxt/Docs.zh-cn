@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/index
-title: "联系人管理器 |Microsoft 文档"
+title: 联系人管理器 |Microsoft 文档
 author: rick-anderson
-description: "如何生成整个联系人管理应用程序从头到尾完成。"
+description: 如何生成整个联系人管理应用程序从头到尾完成。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions-1/contact-manager
 msc.type: chapter
 ms.openlocfilehash: 1dfcaeef7f292a24f2ba191d965028f5c0f912e4
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26499186"
 ---
 <a name="contact-manager"></a>联系人管理器
 ====================

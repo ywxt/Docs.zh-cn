@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-event-handlers-in-aspnet-web-pages-and-controls
-title: "[如何:]在 ASP.NET Web 页面和控件的事件处理程序 |Microsoft 文档"
+title: '[如何:]在 ASP.NET Web 页面和控件的事件处理程序 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 将演示如何创建 ASP.NET 网页和 web 服务器控件的事件处理程序。 首先，了解如何创建页级别事件 f..."
+description: 在此视频 Chris Pels 将演示如何创建 ASP.NET 网页和 web 服务器控件的事件处理程序。 首先，了解如何创建页级别事件 f...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/17/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526036"
 ---
 <a name="how-do-i-event-handlers-in-aspnet-web-pages-and-controls"></a>[如何:]在 ASP.NET Web 页面和控件的事件处理程序
 ====================

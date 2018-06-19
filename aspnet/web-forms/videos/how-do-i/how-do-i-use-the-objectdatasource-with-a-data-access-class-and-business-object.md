@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-objectdatasource-with-a-data-access-class-and-business-object
-title: "[如何:]使用数据访问类和业务对象使用 ObjectDataSource |Microsoft 文档"
+title: '[如何:]使用数据访问类和业务对象使用 ObjectDataSource |Microsoft 文档'
 author: rick-anderson
-description: "在本视频 Chris Pels 将演示如何使用对象数据源作为数据绑定用户界面元素和 acc.的自定义数据之间的中间层..."
+description: 在本视频 Chris Pels 将演示如何使用对象数据源作为数据绑定用户界面元素和 acc.的自定义数据之间的中间层...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/21/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526116"
 ---
 <a name="how-do-i-use-the-objectdatasource-with-a-data-access-class-and-business-object"></a>[如何:]使用数据访问类和业务对象使用对象数据源
 ====================

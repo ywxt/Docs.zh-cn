@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-fixednames-option-with-the-compiler-utility-for-maximum-flexibility
-title: "[如何:]编译器实用程序中使用的 Fixednames 选项，来最大的灵活性 |Microsoft 文档"
+title: '[如何:]编译器实用程序中使用的 Fixednames 选项，来最大的灵活性 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 中将显示如何使用由 aspnet_compiler.exe 实用程序 fixednames 选项来生成在编译的 ou 中是一致的文件名称..."
+description: 在此视频 Chris Pels 中将显示如何使用由 aspnet_compiler.exe 实用程序 fixednames 选项来生成在编译的 ou 中是一致的文件名称...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/24/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525926"
 ---
 <a name="how-do-i-use-the-fixednames-option-with-the-compiler-utility-for-maximum-flexibility"></a>[如何:]编译器实用程序中使用的 Fixednames 选项，来最大的灵活性
 ====================

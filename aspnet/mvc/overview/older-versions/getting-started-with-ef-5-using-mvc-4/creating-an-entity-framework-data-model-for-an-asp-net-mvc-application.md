@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877926"
 ---
 <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>为 ASP.NET MVC 应用程序 (第 1 个 10) 创建的实体框架数据模型
 ====================
@@ -84,7 +85,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="create-an-mvc-web-application"></a>创建 MVC Web 应用程序
 
-打开 Visual Studio 并创建一个新 C# 项目名为"ContosoUniversity"使用**ASP.NET MVC 4 Web 应用程序**模板。 请确保针对**.NET Framework 4.5** (你将使用[`enum`属性](https://msdn.microsoft.com/data/hh859576.aspx)，并且需要.NET 4.5)。
+打开 Visual Studio 并创建一个新 C# 项目名为"ContosoUniversity"使用**ASP.NET MVC 4 Web 应用程序**模板。 请确保针对 **.NET Framework 4.5** (你将使用[`enum`属性](https://msdn.microsoft.com/data/hh859576.aspx)，并且需要.NET 4.5)。
 
 ![New_project_dialog_box](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image3.png)
 
@@ -191,13 +192,13 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-[LocalDB](https://blogs.msdn.com/b/sqlexpress/archive/2011/07/12/introducing-localdb-a-better-sql-express.aspx)是 SQL Server Express 数据库引擎的按需启动并在用户模式下运行的轻量版本。 LocalDB 运行中的 SQL Server Express，可用于处理数据库作为一种特殊的执行模式*.mdf*文件。 通常，将 LocalDB 数据库文件保存在*应用\_数据*web 项目的文件夹。 在 SQL Server Express 用户实例功能还可以使您能够使用*.mdf*文件，但用户实例功能已弃用; 因此，使用建议 LocalDB *.mdf*文件。
+[LocalDB](https://blogs.msdn.com/b/sqlexpress/archive/2011/07/12/introducing-localdb-a-better-sql-express.aspx)是 SQL Server Express 数据库引擎的按需启动并在用户模式下运行的轻量版本。 LocalDB 运行中的 SQL Server Express，可用于处理数据库作为一种特殊的执行模式 *.mdf*文件。 通常，将 LocalDB 数据库文件保存在*应用\_数据*web 项目的文件夹。 在 SQL Server Express 用户实例功能还可以使您能够使用 *.mdf*文件，但用户实例功能已弃用; 因此，使用建议 LocalDB *.mdf*文件。
 
 通常 SQL Server Express 不用于生产 web 应用程序。 LocalDB 具体而言不是建议生产使用与 web 应用程序由于它不是使用 IIS。
 
 在 Visual Studio 2012 和更高版本中，默认情况下，使用 Visual Studio 安装 LocalDB。 在 Visual Studio 2010 和早期版本中，在使用 Visual Studio; 默认情况下安装 SQL Server Express （而不是 LocalDB)你必须手动安装，如果你使用 Visual Studio 2010。
 
-在本教程中你将使用 LocalDB，以便数据库可以存储在*应用\_数据*文件夹作为*.mdf*文件。 打开根*Web.config*文件并添加到新的连接字符串`connectionStrings`集合，如下面的示例中所示。 (请确保你更新*Web.config*根项目文件夹中的文件。 此外，还有*Web.config*文件位于*视图*无需更新的子文件夹。)
+在本教程中你将使用 LocalDB，以便数据库可以存储在*应用\_数据*文件夹作为 *.mdf*文件。 打开根*Web.config*文件并添加到新的连接字符串`connectionStrings`集合，如下面的示例中所示。 (请确保你更新*Web.config*根项目文件夹中的文件。 此外，还有*Web.config*文件位于*视图*无需更新的子文件夹。)
 
 [!code-xml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample8.xml)]
 
@@ -273,7 +274,7 @@ ms.lasthandoff: 04/06/2018
 
     ![](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image13.png)
 
-    `add-migration`命令将添加到迁移文件夹*[日期时间戳]\_InitialCreate.cs*包含代码将创建数据库的文件。 第一个参数 (`InitialCreate)`用于文件命名，并可以是任何所需内容; 你通常要选择的单词或短语，总结了中迁移正在进行的内容。 例如，你可能会将更高版本迁移&quot;AddDepartmentTable&quot;。
+    `add-migration`命令将添加到迁移文件夹 *[日期时间戳]\_InitialCreate.cs*包含代码将创建数据库的文件。 第一个参数 (`InitialCreate)`用于文件命名，并可以是任何所需内容; 你通常要选择的单词或短语，总结了中迁移正在进行的内容。 例如，你可能会将更高版本迁移&quot;AddDepartmentTable&quot;。
 
     ![初始迁移的迁移文件夹](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image14.png)
 
@@ -283,7 +284,7 @@ ms.lasthandoff: 04/06/2018
 
     `update-database`命令将运行`Up`方法，创建数据库然后运行`Seed`方法来填充数据库。
 
-现在已为你的数据模型创建的 SQL Server 数据库。 数据库的名称是*ContosoUniversity*，和*.mdf*文件位于项目的*应用\_数据*文件夹，因为它是你在中指定你连接字符串。
+现在已为你的数据模型创建的 SQL Server 数据库。 数据库的名称是*ContosoUniversity*，和 *.mdf*文件位于项目的*应用\_数据*文件夹，因为它是你在中指定你连接字符串。
 
 你可以使用**服务器资源管理器**或**SQL Server 对象资源管理器**(SSOX) 若要查看 Visual Studio 中的数据库。 对于本教程将使用**服务器资源管理器**。 在 Visual Studio Express 2012 for Web，**服务器资源管理器**称为**数据库资源管理器**。
 
@@ -294,7 +295,7 @@ ms.lasthandoff: 04/06/2018
 3. 如果系统会提示你**选择数据源**对话框中，单击**Microsoft SQL Server**，然后单击**继续**。  
   
     ![](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image16.png)
-4. 在**添加连接**对话框框中，输入**(localdb) \v11.0**为**服务器名称**。 下**选择或输入数据库名称**，选择**ContosoUniversity。**  
+4. 在**添加连接**对话框框中，输入 **(localdb) \v11.0**为**服务器名称**。 下**选择或输入数据库名称**，选择**ContosoUniversity。**  
   
     ![](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image17.png)
 5. 单击“确定” 

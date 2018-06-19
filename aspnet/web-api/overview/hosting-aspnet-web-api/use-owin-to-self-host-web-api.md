@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api
-title: "使用 OWIN 自承载 ASP.NET Web API 2 |Microsoft 文档"
+title: 使用 OWIN 自承载 ASP.NET Web API 2 |Microsoft 文档
 author: rick-anderson
-description: "本教程演示如何在控制台应用程序，使用 OWIN 自承载 Web API 框架中托管 ASP.NET Web API。 打开.NET (OWIN) d 的 Web 界面..."
+description: 本教程演示如何在控制台应用程序，使用 OWIN 自承载 Web API 框架中托管 ASP.NET Web API。 打开.NET (OWIN) d 的 Web 界面...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/09/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506966"
 ---
 <a name="use-owin-to-self-host-aspnet-web-api-2"></a>使用 OWIN 自承载 ASP.NET Web API 2
 ====================

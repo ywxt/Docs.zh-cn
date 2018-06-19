@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/ajax-style-services-with-microsoft-visual-web-developer-2008
-title: "AJAX 样式服务与 Microsoft Visual Web Developer 2008 |Microsoft 文档"
+title: AJAX 样式服务与 Microsoft Visual Web Developer 2008 |Microsoft 文档
 author: JoeStagner
-description: "AJAX 有着不同的人到不同的含义。 此视频演示在 Visual Web 开发、 编写 AJAX 样式服务 （和客户端一侧使用者） 的基础知识..."
+description: AJAX 有着不同的人到不同的含义。 此视频演示在 Visual Web 开发、 编写 AJAX 样式服务 （和客户端一侧使用者） 的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/08/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525426"
 ---
 <a name="ajax-style-services-with-microsoft-visual-web-developer-2008"></a>AJAX 样式服务与 Microsoft Visual Web Developer 2008
 ====================

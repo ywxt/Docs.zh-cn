@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-and-use-classes-in-javascript
-title: "如何 i： 创建并在 JavaScript 中使用类？ | Microsoft Docs"
+title: 如何 i： 创建并在 JavaScript 中使用类？ | Microsoft Docs
 author: rick-anderson
-description: "在本视频中 Chris Pels 演示如何创建类在 JavaScript 中具有功能类似于面向对象的能力。 与其他编程语言..."
+description: 在本视频中 Chris Pels 演示如何创建类在 JavaScript 中具有功能类似于面向对象的能力。 与其他编程语言...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/08/2010
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525936"
 ---
 <a name="how-do-i-create-and-use-classes-in-javascript"></a>如何 i： 创建并在 JavaScript 中使用类？
 ====================

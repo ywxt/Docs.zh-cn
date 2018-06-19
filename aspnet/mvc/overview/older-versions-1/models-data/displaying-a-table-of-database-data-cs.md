@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872879"
 ---
 <a name="displaying-a-table-of-database-data-c"></a>显示表的数据库数据 (C#)
 ====================
@@ -109,7 +110,7 @@ by [Microsoft](https://github.com/microsoft)
 
 使用 MvcApplication1.Models;
 
-表达式*实体。MovieSet.ToList()*返回所有电影的集，从电影数据库表。
+表达式*实体。MovieSet.ToList()* 返回所有电影的集，从电影数据库表。
 
 ## <a name="create-the-view"></a>创建视图
 

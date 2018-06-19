@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-ability-to-create-groups-with-the-listview-control-for-different-data
-title: "[如何:]使用的功能来创建具有不同的数据 ListView 控件的组 |Microsoft 文档"
+title: '[如何:]使用的功能来创建具有不同的数据 ListView 控件的组 |Microsoft 文档'
 author: rick-anderson
-description: "在本视频 Chris Pels 将演示如何在 ListView 控件中显示数据时对项进行分组。 首先，请参阅在 ListView contro 项布局的基础知识."
+description: 在本视频 Chris Pels 将演示如何在 ListView 控件中显示数据时对项进行分组。 首先，请参阅在 ListView contro 项布局的基础知识.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/20/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525196"
 ---
 <a name="how-do-i-use-the-ability-to-create-groups-with-the-listview-control-for-different-data"></a>[如何:]使用的功能来创建具有不同的数据 ListView 控件的组
 ====================
