@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877584"
 ---
 <a name="iteration-6--use-test-driven-development-vb"></a>迭代 6 – 使用测试驱动开发 (VB)
 ====================

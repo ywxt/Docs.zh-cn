@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881807"
 ---
 <a name="setting-up-the-contact-manager-solution"></a>设置联系人管理器解决方案
 ====================
@@ -63,9 +64,9 @@ ms.lasthandoff: 04/06/2018
 
     [!code-console[Main](setting-up-the-contact-manager-solution/samples/sample1.cmd)]
 
-    1. 使用**– C**开关来指定你的数据库服务器的连接字符串。
-    2. 使用**–**开关来指定应用程序服务的功能，你想要添加到数据库。 在这种情况下， **m**指示你想要添加为成员资格提供程序的支持和**r**指示你想要添加的角色管理器的支持。
-    3. 使用**– d**开关来指定你的应用程序服务数据库的名称。 如果省略此开关，该实用程序将使用的默认名称创建数据库**aspnetdb**。
+    1. 使用 **– C**开关来指定你的数据库服务器的连接字符串。
+    2. 使用 **–** 开关来指定应用程序服务的功能，你想要添加到数据库。 在这种情况下， **m**指示你想要添加为成员资格提供程序的支持和**r**指示你想要添加的角色管理器的支持。
+    3. 使用 **– d**开关来指定你的应用程序服务数据库的名称。 如果省略此开关，该实用程序将使用的默认名称创建数据库**aspnetdb**。
 3. 当数据库已成功创建时，命令提示符将显示一条确认消息。
 
     ![](setting-up-the-contact-manager-solution/_static/image1.png)

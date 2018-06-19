@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/caching-data/index
-title: "缓存数据 |Microsoft 文档"
+title: 缓存数据 |Microsoft 文档
 author: rick-anderson
-description: "此教程一组说明缓存，从而提高站点性能，以及如何将应用到使用 ObjectDataSource 控件表示层缓存..."
+description: 此教程一组说明缓存，从而提高站点性能，以及如何将应用到使用 ObjectDataSource 控件表示层缓存...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/caching-data
 msc.type: chapter
 ms.openlocfilehash: 0b14ecdd4a8cab1d61bf9b7c238fc32330d54e52
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26512616"
 ---
 <a name="caching-data"></a>缓存数据
 ====================

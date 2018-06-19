@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886792"
 ---
 <a name="using-script-combining-to-improve-ajax-performance"></a>使用脚本组合提高 AJAX 性能
 ====================

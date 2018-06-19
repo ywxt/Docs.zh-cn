@@ -12,11 +12,12 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
 msc.type: authoredcontent
-ms.openlocfilehash: 8cad6ee45a8331513c72c4079f300fbb06c1ed77
-ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
-ms.translationtype: HT
+ms.openlocfilehash: 9f3a55c5e68e61a2d7907c765209d3786e05a485
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2018
+ms.lasthandoff: 05/24/2018
+ms.locfileid: "34473202"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-remote-agent"></a>配置 Web 服务器的 Web 部署发布 （远程代理）
 ====================
@@ -217,7 +218,7 @@ ms.lasthandoff: 05/21/2018
 
 默认情况下，远程代理服务侦听 TCP 端口 80，在此 URL:
 
-http:// [<em>服务器名称</em>] / MSDEPLOYAGENTSERVICE
+<http://servername.com/MSDEPLOYAGENTSERVICE>
 
 在大多数情况下，不需要为远程代理服务配置任何其他防火墙规则，因为 web 服务器通常侦听端口 80 上的 HTTP 请求。 如果自定义你的安装在非标准端口上侦听时，你将需要根据需要配置防火墙例外。
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877965"
 ---
 <a name="building-a-custom-database-driven-site-map-provider-vb"></a>生成自定义数据库驱动站点映射提供程序 (VB)
 ====================

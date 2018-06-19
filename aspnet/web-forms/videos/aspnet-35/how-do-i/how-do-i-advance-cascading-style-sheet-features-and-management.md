@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882652"
 ---
 <a name="how-do-i-advance-cascading-style-sheet-features-and-management"></a>[如何:]向前移动级联样式表功能和管理
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30877478"
 ---
 <a name="bundling-and-minification"></a>绑定和缩减
 ====================
@@ -29,7 +30,7 @@ ms.lasthandoff: 04/10/2018
 
 ![B/M](bundling-and-minification/_static/image1.png)
 
-灰色条显示该请求排队等待的六个连接限制上的浏览器的时间。 黄色的条为至第一字节的请求时间，即发送请求和从服务器接收第一个响应所花费的时间。 蓝色条显示从服务器收到的响应数据所花的时间。 你可以双击资产中，以获取详细的计时信息。 例如下, 图显示加载的计时详细信息*/Scripts/MyScripts/JavaScript6.js*文件。
+灰色条显示该请求排队等待的六个连接限制上的浏览器的时间。 黄色的条为至第一字节的请求时间，即发送请求和从服务器接收第一个响应所花费的时间。 蓝色条显示从服务器收到的响应数据所花的时间。 你可以双击资产中，以获取详细的计时信息。 例如下, 图显示加载的计时详细信息 */Scripts/MyScripts/JavaScript6.js*文件。
 
 ![](bundling-and-minification/_static/image2.png)
 
@@ -114,7 +115,7 @@ ms.lasthandoff: 04/10/2018
 
 [!code-csharp[Main](bundling-and-minification/samples/sample5.cs)]
 
-前面的代码创建名为的新 JavaScript 捆绑*~/bundles/jquery* ，包括所有相应 (调试或缩减的但不是。*vsdoc*) 中的文件*脚本*匹配通配符字符串"~/Scripts/jquery-{version}.js"的文件夹。 对于 ASP.NET MVC 4 中，这意味着使用调试配置，该文件*jquery 1.7.1.js*将添加到该绑定。 在版本配置中， *jquery 1.7.1.min.js*将添加。 捆绑 framework 如遵循几个常见约定：
+前面的代码创建名为的新 JavaScript 捆绑 *~/bundles/jquery* ，包括所有相应 (调试或缩减的但不是。*vsdoc*) 中的文件*脚本*匹配通配符字符串"~/Scripts/jquery-{version}.js"的文件夹。 对于 ASP.NET MVC 4 中，这意味着使用调试配置，该文件*jquery 1.7.1.js*将添加到该绑定。 在版本配置中， *jquery 1.7.1.min.js*将添加。 捆绑 framework 如遵循几个常见约定：
 
 - 当"FileX.min.js"和"FileX.js"存在，请选择".min"版本的文件。
 - 选择用于调试的非".min"版本。

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884537"
 ---
 <a name="creating-user-accounts-with-the-create-user-wizard"></a>创建具有的用户帐户创建用户向导
 ====================

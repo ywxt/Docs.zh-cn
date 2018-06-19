@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870149"
 ---
 <a name="allowing-only-certain-characters-in-a-text-box-vb"></a>允许仅某些字符在文本框中 (VB)
 ====================

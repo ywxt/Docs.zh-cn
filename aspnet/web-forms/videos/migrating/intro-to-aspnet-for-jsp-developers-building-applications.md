@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885063"
 ---
 <a name="intro-to-aspnet-for-jsp-developers-building-applications"></a>简介 JSP 开发人员的 ASP.NET： 生成应用程序
 ====================

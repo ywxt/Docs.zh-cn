@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882460"
 ---
 <a name="creating-a-server-farm-with-the-web-farm-framework"></a>使用 Web 场框架创建服务器场
 ====================

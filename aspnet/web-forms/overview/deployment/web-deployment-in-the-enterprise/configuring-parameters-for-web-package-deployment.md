@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880396"
 ---
 <a name="configuring-parameters-for-web-package-deployment"></a>为 Web 包部署中配置参数
 ====================
@@ -58,9 +59,9 @@ ms.lasthandoff: 04/06/2018
 这种情况下：
 
 - **IIS Web 应用程序名称**参数是你想要部署 web 应用程序的 IIS 路径。 默认值取自**打包/发布 Web**在项目属性页中的页。
-- **ApplicationServices Web.config 连接字符串**参数从生成**添加 connectionStrings/**中的元素*web.config*文件。 它表示应用程序应使用联系成员资格数据库的连接字符串。 此处将提供的值替换到部署*web.config*文件。 默认值取自预部署*web.config*文件。
+- **ApplicationServices Web.config 连接字符串**参数从生成**添加 connectionStrings/** 中的元素*web.config*文件。 它表示应用程序应使用联系成员资格数据库的连接字符串。 此处将提供的值替换到部署*web.config*文件。 默认值取自预部署*web.config*文件。
 
-WPP 还使它生成的部署包中的这些属性进行参数化。 当你安装的部署包时，你可以为这些属性提供值。 如果你安装包手动通过 IIS 管理器中所述[手动安装 Web 包](manually-installing-web-packages.md)，安装向导会提示您提供任何参数的值。 当你安装使用远程包*。 deploy.cmd*文件，如下所述[部署 Web 包](deploying-web-packages.md)，Web 部署将此查找*SetParameters.xml*到文件提供参数值。 你可以编辑中的值*SetParameters.xml*文件手动，或可以自定义自动化的生成和部署过程的一部分的文件。 本主题中后面的更详细地描述了此过程。
+WPP 还使它生成的部署包中的这些属性进行参数化。 当你安装的部署包时，你可以为这些属性提供值。 如果你安装包手动通过 IIS 管理器中所述[手动安装 Web 包](manually-installing-web-packages.md)，安装向导会提示您提供任何参数的值。 当你安装使用远程包 *。 deploy.cmd*文件，如下所述[部署 Web 包](deploying-web-packages.md)，Web 部署将此查找*SetParameters.xml*到文件提供参数值。 你可以编辑中的值*SetParameters.xml*文件手动，或可以自定义自动化的生成和部署过程的一部分的文件。 本主题中后面的更详细地描述了此过程。
 
 ### <a name="custom-parameterization"></a>自定义参数化
 
@@ -86,13 +87,13 @@ WPP 还使它生成的部署包中的这些属性进行参数化。 当你安装
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample3.xml)]
 
 
-如果你手动安装的部署包，IIS 管理器将提示你自动参数化的属性旁边的服务终结点地址。 当你通过运行安装了部署包*。 deploy.cmd*文件，你可以编辑*SetParameters.xml*文件服务终结点地址以及为值提供的值自动参数化的属性。
+如果你手动安装的部署包，IIS 管理器将提示你自动参数化的属性旁边的服务终结点地址。 当你通过运行安装了部署包 *。 deploy.cmd*文件，你可以编辑*SetParameters.xml*文件服务终结点地址以及为值提供的值自动参数化的属性。
 
 有关如何创建的完整详细信息*parameters.xml*文件，请参阅[如何： 安装到配置部署设置包时使用参数](https://msdn.microsoft.com/library/ff398068.aspx)。 名为的过程**要用于 Web.config 文件设置的部署参数**提供分步说明。
 
 ## <a name="modifying-the-setparametersxml-file"></a>修改 SetParameters.xml 文件
 
-如果你计划手动部署 web 应用程序包&#x2014;通过运行*。 deploy.cmd*文件或通过从命令行运行 MSDeploy.exe&#x2014;无需进行任何停止你手动编辑*SetParameters.xml*之前部署的文件。 但是，如果你正在对企业级解决方案，你可能需要将 web 应用程序包部署更大、 自动生成和部署过程的一部分。 在此方案中，你需要 Microsoft Build Engine (MSBuild) 修改*SetParameters.xml*为你的文件。 你可以执行此操作使用 MSBuild **XmlPoke**任务。
+如果你计划手动部署 web 应用程序包&#x2014;通过运行 *。 deploy.cmd*文件或通过从命令行运行 MSDeploy.exe&#x2014;无需进行任何停止你手动编辑*SetParameters.xml*之前部署的文件。 但是，如果你正在对企业级解决方案，你可能需要将 web 应用程序包部署更大、 自动生成和部署过程的一部分。 在此方案中，你需要 Microsoft Build Engine (MSBuild) 修改*SetParameters.xml*为你的文件。 你可以执行此操作使用 MSBuild **XmlPoke**任务。
 
 [联系人管理器示例解决方案](the-contact-manager-solution.md)阐释了此过程。 下面的代码示例进行了编辑，显示与此示例相关的详细信息。
 
@@ -110,7 +111,7 @@ WPP 还使它生成的部署包中的这些属性进行参数化。 当你安装
 > 有关如何自定义服务器环境的特定于环境的项目文件的指南，请参阅[配置为目标环境的部署属性](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md)。
 
 
-接下来， *Publish.proj*文件导入这些属性。 因为每个*SetParameters.xml*文件关联*。 deploy.cmd*文件和我们最终需要调用每个项目文件*。 deploy.cmd*文件，项目文件将创建 MSBuild*项*每个*。 deploy.cmd*文件，并定义为感兴趣的属性*项元数据*。
+接下来， *Publish.proj*文件导入这些属性。 因为每个*SetParameters.xml*文件关联 *。 deploy.cmd*文件和我们最终需要调用每个项目文件 *。 deploy.cmd*文件，项目文件将创建 MSBuild*项*每个 *。 deploy.cmd*文件，并定义为感兴趣的属性*项元数据*。
 
 
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample5.xml)]
@@ -140,7 +141,7 @@ WPP 还使它生成的部署包中的这些属性进行参数化。 当你安装
 
 本主题所述的角色*SetParameters.xml*文件并且说明了在生成 web 应用程序项目时的生成方式。 它说明如何通过添加参数化的其他设置*parameters.xml*到你的项目文件。 它还介绍了如何修改*SetParameters.xml*文件作为更大、 自动生成过程，通过使用的一部分**XmlPoke**项目文件中的任务。
 
-下一主题[部署 Web 包](deploying-web-packages.md)，描述你如何可以部署 web 包通过运行*。 deploy.cmd*文件，或者通过使用 MSDeploy.exe 命令直接。 在这两种情况下，你可以指定你*SetParameters.xml*文件作为部署参数。
+下一主题[部署 Web 包](deploying-web-packages.md)，描述你如何可以部署 web 包通过运行 *。 deploy.cmd*文件，或者通过使用 MSDeploy.exe 命令直接。 在这两种情况下，你可以指定你*SetParameters.xml*文件作为部署参数。
 
 ## <a name="further-reading"></a>其他阅读材料
 

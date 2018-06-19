@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872411"
 ---
 <a name="part-6-using-data-annotations-for-model-validation"></a>模型验证的的第 6 部分： 使用数据注释
 ====================

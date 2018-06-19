@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873243"
 ---
 <a name="implement-efficient-data-paging"></a>实现高效数据分页
 ====================
@@ -33,7 +34,7 @@ by [Microsoft](https://github.com/microsoft)
 
 ## <a name="nerddinner-step-8-paging-support"></a>NerdDinner 步骤 8： 分页支持
 
-如果我们的站点操作成功，将会有数千个即将到来的晚餐。 我们需要确保我们的 UI 进行缩放以处理所有这些晚餐，并允许用户对其进行浏览。 若要启用此功能，我们将添加到的分页支持我们*/Dinners* URL，因此的晚餐 1000 秒内显示在一次，我们将仅显示一次-10 即将到来晚餐和允许最终用户页后和向前移动的完整列表SEO 友好的方式。
+如果我们的站点操作成功，将会有数千个即将到来的晚餐。 我们需要确保我们的 UI 进行缩放以处理所有这些晚餐，并允许用户对其进行浏览。 若要启用此功能，我们将添加到的分页支持我们 */Dinners* URL，因此的晚餐 1000 秒内显示在一次，我们将仅显示一次-10 即将到来晚餐和允许最终用户页后和向前移动的完整列表SEO 友好的方式。
 
 ### <a name="index-action-method-recap"></a>Index （） 操作方法概述
 
@@ -41,7 +42,7 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-csharp[Main](implement-efficient-data-paging/samples/sample1.cs)]
 
-当请求*/Dinners* URL，它将检索所有即将发布晚餐的列表，然后呈现所有的效果的列表：
+当请求 */Dinners* URL，它将检索所有即将发布晚餐的列表，然后呈现所有的效果的列表：
 
 ![](implement-efficient-data-paging/_static/image1.png)
 
@@ -77,7 +78,7 @@ IQueryable&lt;Dinner&gt;我们 FindUpcomingDinners() 方法返回的对象所封
 
 #### <a name="using-embedded-url-values"></a>使用嵌入的 URL 值
 
-使用查询字符串值的替代方法是嵌入的实际 URL 本身中的页参数。 例如： */Dinners/Page/2*或*/晚餐/2*。 ASP.NET MVC 包括一个功能强大的 URL 路由引擎，可以轻松地支持与此类似的方案。
+使用查询字符串值的替代方法是嵌入的实际 URL 本身中的页参数。 例如： */Dinners/Page/2*或 */晚餐/2*。 ASP.NET MVC 包括一个功能强大的 URL 路由引擎，可以轻松地支持与此类似的方案。
 
 我们可以注册自定义的路由规则的映射任何传入的 URL 或 URL 格式，我们想要任何控制器类或操作方法。 我们只需待办事项是打开我们项目中的 Global.asax 文件：
 
@@ -93,11 +94,11 @@ IQueryable&lt;Dinner&gt;我们 FindUpcomingDinners() 方法返回的对象所封
 
 [!code-csharp[Main](implement-efficient-data-paging/samples/sample6.cs)]
 
-现在我们运行应用程序并在键入*/Dinners*我们将看到前 10 个即将到来晚餐：
+现在我们运行应用程序并在键入 */Dinners*我们将看到前 10 个即将到来晚餐：
 
 ![](implement-efficient-data-paging/_static/image3.png)
 
-当我们键入*/Dinners/Page/1*我们将看到晚餐的第二页：
+当我们键入 */Dinners/Page/1*我们将看到晚餐的第二页：
 
 ![](implement-efficient-data-paging/_static/image4.png)
 

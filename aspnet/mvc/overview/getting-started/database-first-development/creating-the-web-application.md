@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878771"
 ---
 <a name="ef-database-first-with-aspnet-mvc-creating-the-web-application-and-data-models"></a>首先使用 ASP.NET MVC 的 EF 数据库： 创建 Web 应用程序和数据模型
 ====================
@@ -69,7 +70,7 @@ ms.lasthandoff: 04/06/2018
 
 ![连接到数据库](creating-the-web-application/_static/image7.png)
 
-在连接属性窗口中，提供您的数据库创建的本地服务器的名称 (在这种情况下**(localdb) \ProjectsV12**)。 提供服务器名称后, 从可用数据库中选择 ContosoUniversityData。
+在连接属性窗口中，提供您的数据库创建的本地服务器的名称 (在这种情况下 **(localdb) \ProjectsV12**)。 提供服务器名称后, 从可用数据库中选择 ContosoUniversityData。
 
 ![设置连接属性](creating-the-web-application/_static/image8.png)
 

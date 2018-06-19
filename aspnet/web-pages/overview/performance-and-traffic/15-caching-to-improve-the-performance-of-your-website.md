@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/performance-and-traffic/15-caching-to-improve-the-performance-of-your-website
-title: "在 ASP.NET Web 中缓存数据页 (Razor) 站点的更好的性能 |Microsoft 文档"
+title: 在 ASP.NET Web 中缓存数据页 (Razor) 站点的更好的性能 |Microsoft 文档
 author: tfitzmac
-description: "你可以提高网站的速度进行存储的即缓存-通常会需要很长时间来检索或处理的数据的结果..."
+description: 你可以提高网站的速度进行存储的即缓存-通常会需要很长时间来检索或处理的数据的结果...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/14/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28039191"
 ---
 <a name="caching-data-in-an-aspnet-web-pages-razor-site-for-better-performance"></a>缓存 ASP.NET Web 页 (Razor) 站点中的数据以便更好的性能
 ====================

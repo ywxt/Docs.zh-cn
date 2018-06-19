@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873139"
 ---
 <a name="accessing-your-models-data-from-a-controller-vb"></a>从控制器 (VB) 访问您的模型的数据
 ====================
@@ -55,7 +56,7 @@ ms.lasthandoff: 04/06/2018
 
 ASP.NET MVC 3 基架机制自动创建 CRUD （创建、 读取、 更新和删除） 操作方法和为你的视图。 你现在具有完全正常运行的 web 应用程序，你可以创建、 列出、 编辑和删除电影条目。
 
-运行应用程序，并浏览到`Movies`控制器通过追加*/Movies*到你的浏览器的地址栏中的 URL。 因为应用程序依赖于默认路由 (在中定义*Global.asax*文件)，浏览器请求`http://localhost:xxxxx/Movies`路由到默认值`Index`操作方法`Movies`控制器。 换而言之，浏览器请求`http://localhost:xxxxx/Movies`实际上是浏览器请求相同`http://localhost:xxxxx/Movies/Index`。 结果是电影、 一个空列表，因为你尚未添加。
+运行应用程序，并浏览到`Movies`控制器通过追加 */Movies*到你的浏览器的地址栏中的 URL。 因为应用程序依赖于默认路由 (在中定义*Global.asax*文件)，浏览器请求`http://localhost:xxxxx/Movies`路由到默认值`Index`操作方法`Movies`控制器。 换而言之，浏览器请求`http://localhost:xxxxx/Movies`实际上是浏览器请求相同`http://localhost:xxxxx/Movies/Index`。 结果是电影、 一个空列表，因为你尚未添加。
 
 ![](accessing-your-models-data-from-a-controller/_static/image5.png)
 
@@ -65,7 +66,7 @@ ASP.NET MVC 3 基架机制自动创建 CRUD （创建、 读取、 更新和删�
 
 ![](accessing-your-models-data-from-a-controller/_static/image6.png)
 
-单击**创建**按钮使窗体发布到服务器，其中的影片信息保存到数据库中。 然后转向*/Movies* URL，其中你可以看到在列表中新创建的影片。
+单击**创建**按钮使窗体发布到服务器，其中的影片信息保存到数据库中。 然后转向 */Movies* URL，其中你可以看到在列表中新创建的影片。
 
 [![IndexWhenHarryMet](accessing-your-models-data-from-a-controller/_static/image8.png)](accessing-your-models-data-from-a-controller/_static/image7.png)
 

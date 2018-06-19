@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883329"
 ---
 <a name="how-to-enable-table-specific-routing-in-dynamic-data-applications"></a>如何启用表特定中的路由动态数据应用程序
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877419"
 ---
 <a name="displaying-summary-information-in-the-gridviews-footer-c"></a>在 GridView 的页脚 (C#) 中显示的摘要信息
 ====================
@@ -101,7 +102,7 @@ ms.lasthandoff: 04/06/2018
 
 [![从选择的类别 DropDownList 获取 categoryID 参数值](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image22.png)
 
-**图 8**： 获取*`categoryID`*从所选类别下拉列表的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))
+**图 8**： 获取*`categoryID`* 从所选类别下拉列表的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))
 
 
 完成向导后 GridView 都将有 BoundField 的每个产品的属性。 让我们来清理这些 BoundFields 以便仅`ProductName`， `UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`BoundFields 会显示。 请尝试将任何字段级别设置添加到剩余 BoundFields (如格式`UnitPrice`作为一种货币)。 进行这些更改后，GridView 的声明性标记应类似于以下：
@@ -114,7 +115,7 @@ ms.lasthandoff: 04/06/2018
 
 [![从选择的类别 DropDownList 获取 categoryID 参数值](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image25.png)
 
-**图 9**： 获取*`categoryID`*从所选类别下拉列表的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))
+**图 9**： 获取*`categoryID`* 从所选类别下拉列表的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))
 
 
 ## <a name="step-2-displaying-a-footer-in-the-gridview"></a>步骤 2： 在 GridView 中显示页脚

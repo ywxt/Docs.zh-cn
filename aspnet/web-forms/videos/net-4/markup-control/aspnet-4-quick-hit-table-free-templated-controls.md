@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885646"
 ---
 <a name="aspnet-4-quick-hit--table-free-templated-controls"></a>ASP.NET 4"快速 Hit"– 表可用模板化控件
 ====================

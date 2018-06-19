@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889802"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>使用 Visual Studio 的 ASP.NET Web 部署： 将部署到生产
 ====================
@@ -99,7 +100,7 @@ ms.lasthandoff: 04/06/2018
 既然你已经创建 web 应用和过渡环境的数据库，你可以将项目部署到它。
 
 > [!NOTE]
-> 这些说明演示如何创建通过下载发布配置文件*.publishsettings*文件，其工作方式不只供 Azure 也为第三方宿主提供程序。 最新 Azure SDK 还可以直接连接到 Azure 从 Visual Studio 中，并从具有 Azure 帐户中的 web 应用的列表中选择。 在 Visual Studio 2013 中，你可以登录到 Azure 从**Web 发布**对话框或从**服务器资源管理器**窗口。 有关详细信息，请参阅[在 Azure App Service 中创建 ASP.NET web 应用](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet)。
+> 这些说明演示如何创建通过下载发布配置文件 *.publishsettings*文件，其工作方式不只供 Azure 也为第三方宿主提供程序。 最新 Azure SDK 还可以直接连接到 Azure 从 Visual Studio 中，并从具有 Azure 帐户中的 web 应用的列表中选择。 在 Visual Studio 2013 中，你可以登录到 Azure 从**Web 发布**对话框或从**服务器资源管理器**窗口。 有关详细信息，请参阅[在 Azure App Service 中创建 ASP.NET web 应用](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet)。
 
 
 ### <a name="download-the-publishsettings-file"></a>下载.publishsettings 文件
@@ -112,12 +113,12 @@ ms.lasthandoff: 04/06/2018
     ![下载发布配置文件链接](deploying-to-production/_static/image5.png)
 
     此步骤将下载包含所有所需应用程序部署到你的 web 应用的设置的文件。 因此你不必手动输入此信息，将导入 Visual Studio 的此文件。
-3. 保存*.publishsettings*可以从 Visual Studio 访问的文件夹中的文件。
+3. 保存 *.publishsettings*可以从 Visual Studio 访问的文件夹中的文件。
 
     ![保存.publishsettings 文件](deploying-to-production/_static/image6.png)
 
     > [!WARNING]
-    > 安全- *.publishsettings*文件包含你用于管理你的 Azure 订阅和服务的凭据 （未编码）。 此文件的最佳安全方案是将其临时存储 （例如在 Libraries\Documents 文件夹中），源目录以外，然后在导入完毕后删除它。 恶意用户获得访问权*.publishsettings*文件可以编辑、 创建和删除你的 Azure 服务。
+    > 安全- *.publishsettings*文件包含你用于管理你的 Azure 订阅和服务的凭据 （未编码）。 此文件的最佳安全方案是将其临时存储 （例如在 Libraries\Documents 文件夹中），源目录以外，然后在导入完毕后删除它。 恶意用户获得访问权 *.publishsettings*文件可以编辑、 创建和删除你的 Azure 服务。
 
 ### <a name="create-a-publish-profile"></a>创建发布配置文件
 
@@ -126,7 +127,7 @@ ms.lasthandoff: 04/06/2018
     **发布 Web**向导随即打开。
 2. 单击**配置文件**选项卡。
 3. 单击“导入” 。
-4. 导航到*.publishsettings*更早版本，下载文件，然后单击**打开**。
+4. 导航到 *.publishsettings*更早版本，下载文件，然后单击**打开**。
 
     ![导入发布设置对话框](deploying-to-production/_static/image7.png)
 5. 在**连接**选项卡上，单击**验证连接**若要确保设置正确无误。
@@ -143,7 +144,7 @@ ms.lasthandoff: 04/06/2018
 8. 下**DefaultConnection**中**数据库**部分中，配置成员资格数据库的数据库部署。
 9. 1. 选择**更新数据库**。
 
-        **远程连接字符串**直接下面框**DefaultConnection**使用.publishsettings 文件中的连接字符串填充。连接字符串包含纯文本中存储的 SQL Server 凭据*.pubxml*文件。 如果你不想将其存储在永久，可以部署数据库后，则会删除它们从发布配置文件，并将它们存储在 Azure 中。 有关详细信息，请参阅[如何保护你的 ASP.NET 数据库连接字符串从源部署到 Azure 时](http://www.hanselman.com/blog/HowToKeepYourASPNETDatabaseConnectionStringsSecureWhenDeployingToAzureFromSource.aspx)Scott Hanselman 的博客上。
+        **远程连接字符串**直接下面框**DefaultConnection**使用.publishsettings 文件中的连接字符串填充。连接字符串包含纯文本中存储的 SQL Server 凭据 *.pubxml*文件。 如果你不想将其存储在永久，可以部署数据库后，则会删除它们从发布配置文件，并将它们存储在 Azure 中。 有关详细信息，请参阅[如何保护你的 ASP.NET 数据库连接字符串从源部署到 Azure 时](http://www.hanselman.com/blog/HowToKeepYourASPNETDatabaseConnectionStringsSecureWhenDeployingToAzureFromSource.aspx)Scott Hanselman 的博客上。
       2. 单击**配置数据库更新**。
       3. 在**配置数据库更新**对话框中，单击**添加 SQL 脚本**。
       4. 在**添加 SQL 脚本**框中，导航到*aspnet 数据 prod.sql*脚本，你前面保存在解决方案文件夹中，然后单击**打开**。
@@ -241,8 +242,8 @@ ms.lasthandoff: 04/06/2018
 1. 在 Azure 中，执行用于过渡的同一过程中创建的生产 web 应用和数据库。
 
     在创建数据库时，你可以选择将其放在同一台服务器更早版本，创建或创建新的服务器。
-2. 下载*.publishsettings*文件。
-3. 通过导入生产环境中创建的发布配置文件*.publishsettings*文件，用于过渡执行同一过程。
+2. 下载 *.publishsettings*文件。
+3. 通过导入生产环境中创建的发布配置文件 *.publishsettings*文件，用于过渡执行同一过程。
 
     不要忘记将配置数据部署脚本在**DefaultConnection**中**数据库**部分**设置**选项卡。
 4. 重命名为发布配置文件*生产*。
@@ -250,13 +251,13 @@ ms.lasthandoff: 04/06/2018
 
 ### <a name="edit-the-pubxml-file-to-exclude-robotstxt"></a>编辑要排除 robots.txt 的.pubxml 文件
 
-发布配置文件文件被命名为&lt;profilename&gt;*.pubxml*并位于*PublishProfiles*文件夹。 *PublishProfiles*文件夹低于*属性*文件夹中的 C# web 应用程序项目，在*我的项目*中 VB web 应用程序项目中，或以下的文件夹*应用\_数据*文件夹中的 web 应用程序项目。 每个*.pubxml*文件包含将应用于某个设置发布配置文件。 在发布 Web 向导中输入的值存储在这些文件，并可以编辑它们以便创建或更改不会在 Visual Studio UI 中提供的设置。
+发布配置文件文件被命名为&lt;profilename&gt;*.pubxml*并位于*PublishProfiles*文件夹。 *PublishProfiles*文件夹低于*属性*文件夹中的 C# web 应用程序项目，在*我的项目*中 VB web 应用程序项目中，或以下的文件夹*应用\_数据*文件夹中的 web 应用程序项目。 每个 *.pubxml*文件包含将应用于某个设置发布配置文件。 在发布 Web 向导中输入的值存储在这些文件，并可以编辑它们以便创建或更改不会在 Visual Studio UI 中提供的设置。
 
-默认情况下， *.pubxml*文件包括在项目中，在你创建的发布配置文件中，但你可以从项目中排除它们和 Visual Studio 仍将使用它们。 Visual Studio 将查找*PublishProfiles*文件夹*.pubxml*文件，无论它们是否包括在项目中。
+默认情况下， *.pubxml*文件包括在项目中，在你创建的发布配置文件中，但你可以从项目中排除它们和 Visual Studio 仍将使用它们。 Visual Studio 将查找*PublishProfiles*文件夹 *.pubxml*文件，无论它们是否包括在项目中。
 
-每个*.pubxml*文件没有*。 pubxml.user*文件。 *。 Pubxml.user*文件包含加密的密码，如果你选择**保存密码**选项，并且默认情况下会从项目中排除。
+每个 *.pubxml*文件没有 *。 pubxml.user*文件。 *。 Pubxml.user*文件包含加密的密码，如果你选择**保存密码**选项，并且默认情况下会从项目中排除。
 
-A *.pubxml*文件包含适用于特定的发布配置文件的设置。 如果你想要配置应用于所有配置文件的设置，则可以创建*。 wpp.targets*文件。 生成过程中导入到这些文件*.csproj*或*.vbproj*项目文件中，因此可以在这些文件中配置大多数设置都可以在项目文件中配置。 有关详细信息*.pubxml*文件和*。 wpp.targets*文件，请参阅[如何： 编辑发布配置文件 (.pubxml) 文件中的部署设置与。 wpp.targets Visual Studio 中的文件Web 项目发布](https://msdn.microsoft.com/library/ff398069.aspx)。
+A *.pubxml*文件包含适用于特定的发布配置文件的设置。 如果你想要配置应用于所有配置文件的设置，则可以创建 *。 wpp.targets*文件。 生成过程中导入到这些文件 *.csproj*或 *.vbproj*项目文件中，因此可以在这些文件中配置大多数设置都可以在项目文件中配置。 有关详细信息 *.pubxml*文件和 *。 wpp.targets*文件，请参阅[如何： 编辑发布配置文件 (.pubxml) 文件中的部署设置与。 wpp.targets Visual Studio 中的文件Web 项目发布](https://msdn.microsoft.com/library/ff398069.aspx)。
 
 1. 在**解决方案资源管理器**，展开**属性**展开**PublishProfiles**。
 2. 右键单击*Production.pubxml*单击**打开**。
@@ -279,7 +280,7 @@ A *.pubxml*文件包含适用于特定的发布配置文件的设置。 如果�
 
     ![要发布到生产环境的文件的预览](deploying-to-production/_static/image14.png)
 
-    查看将复制的文件的列表。 你会看到所有的*.cs*文件，包括*。 aspx.cs*， *。 aspx.designer.cs*， *Master.cs*，和*Master.designer.cs*文件被忽略。 所有此代码编译为*ContosoUniversity.dll*和*ContosUniversity.pdb*将在中找到的文件*bin*文件夹。 因为仅*.dll*需要的运行该应用程序，并且你前面指定应部署仅运行该应用程序所需的文件，则不*.cs*文件被复制到目标环境。 *Obj*文件夹和*ContosoUniversity.csproj*和*。 csproj.user*文件省略出于同样的原因。
+    查看将复制的文件的列表。 你会看到所有的 *.cs*文件，包括 *。 aspx.cs*， *。 aspx.designer.cs*， *Master.cs*，和*Master.designer.cs*文件被忽略。 所有此代码编译为*ContosoUniversity.dll*和*ContosUniversity.pdb*将在中找到的文件*bin*文件夹。 因为仅 *.dll*需要的运行该应用程序，并且你前面指定应部署仅运行该应用程序所需的文件，则不 *.cs*文件被复制到目标环境。 *Obj*文件夹和*ContosoUniversity.csproj*和 *。 csproj.user*文件省略出于同样的原因。
 
     单击**发布**将部署到生产环境。
 2. 在生产环境，用于过渡执行同一过程中测试。

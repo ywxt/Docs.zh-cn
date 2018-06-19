@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872226"
 ---
 <a name="using-the-tagbuilder-class-to-build-html-helpers-vb"></a>使用 TagBuilder 类来生成 HTML 帮助程序 (VB)
 ====================
@@ -31,7 +32,7 @@ ASP.NET MVC framework 包括一个名为生成 HTML 帮助器时，可以使用 
 
 TagBuilder 类包含在 System.Web.Mvc 命名空间。 它具有五个方法：
 
-- AddCssClass() – 使您能够添加新*类 =""*属性设为标记。
+- AddCssClass() – 使您能够添加新*类 =""* 属性设为标记。
 - GenerateId() – 可用于向标记添加 id 属性。 此方法将自动替换 id 中的句点 （默认情况下，期间将被下划线取代）
 - MergeAttribute() – 可以将属性添加到一个标记。 有多个重载此方法。
 - SetInnerText() – 可设置内部标记的文本。 内部文本是 HTML 编码自动。

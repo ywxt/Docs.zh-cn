@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-aspnet-iis-registration-tool-to-configure-aspnet
-title: "如何使用 ASP.NET IIS 注册工具配置 ASP.NET |Microsoft 文档"
+title: 如何使用 ASP.NET IIS 注册工具配置 ASP.NET |Microsoft 文档
 author: rick-anderson
-description: "在此视频 Chris Pels 显示如何使用 ASP.NET IIS 注册工具将 ASP.NET 配置。 首先，请参阅如何将文件扩展名映射到中的 ASP.NET..."
+description: 在此视频 Chris Pels 显示如何使用 ASP.NET IIS 注册工具将 ASP.NET 配置。 首先，请参阅如何将文件扩展名映射到中的 ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/01/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525886"
 ---
 <a name="how-do-i-use-the-aspnet-iis-registration-tool-to-configure-aspnet"></a>如何使用 ASP.NET IIS 注册工具配置 ASP.NET
 ====================

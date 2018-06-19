@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/slider/index
-title: "滑块 |Microsoft 文档"
+title: 滑块 |Microsoft 文档
 author: rick-anderson
-description: "本教程演示如何使用滑块控件来显示用户可以控制使用鼠标图形滑块。"
+description: 本教程演示如何使用滑块控件来显示用户可以控制使用鼠标图形滑块。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider
 msc.type: chapter
 ms.openlocfilehash: 52b6fda01b6ef9931c3557b57b5ebd216a7f2eda
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26511626"
 ---
 <a name="slider"></a>Slider
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876028"
 ---
 <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>帐户确认和密码恢复 ASP.NET 标识 (C#)
 ====================
@@ -198,7 +199,7 @@ OWIN`AuthenticationManager.SignIn`方法通过中`ClaimsIdentity`并对用户进
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample8.cs)]
 
 > [!WARNING]
-> 安全-永远不会存储在源代码中敏感数据。 帐户和凭据存储在 appSetting。 在 Azure 上，你可以安全地存储这些值在**[配置](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)**在 Azure 门户中的选项卡。 请参阅[用于密码和其他敏感数据部署到 ASP.NET 和 Azure 的最佳做法](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)。
+> 安全-永远不会存储在源代码中敏感数据。 帐户和凭据存储在 appSetting。 在 Azure 上，你可以安全地存储这些值在**[配置](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** 在 Azure 门户中的选项卡。 请参阅[用于密码和其他敏感数据部署到 ASP.NET 和 Azure 的最佳做法](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)。
 
 
 输入你的 SendGrid 凭据、 运行应用，注册的电子邮件别名可以单击你的电子邮件中的确认链接。 若要了解如何执行此操作与你[Outlook.com](http://outlook.com)电子邮件帐户，请参阅 John 输入[的 Outlook.Com SMTP 主机的 C# SMTP 配置](http://typecastexception.com/post/2013/12/20/C-SMTP-Configuration-for-OutlookCom-SMTP-Host.aspx)和他[ASP.NET 标识 2.0： 设置帐户验证和双因素授权](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx)文章。

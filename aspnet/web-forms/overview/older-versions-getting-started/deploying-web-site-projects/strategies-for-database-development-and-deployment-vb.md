@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889587"
 ---
 <a name="strategies-for-database-development-and-deployment-vb"></a>进行数据库开发和部署 (VB) 的策略
 ====================

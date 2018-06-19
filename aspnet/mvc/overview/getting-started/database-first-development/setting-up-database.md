@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879330"
 ---
 <a name="getting-started-with-entity-framework-6-database-first-using-mvc-5"></a>借助实体框架 6 数据库优先使用 MVC 5 入门
 ====================
@@ -97,7 +98,7 @@ Visual Studio 2013 or Visual Studio Express 2013 for Web
 
 ![显示输出](setting-up-database/_static/image7.png)
 
-若要查看已创建新数据库，请打开**SQL Server 对象资源管理器**并查找正确的本地数据库服务器中项目的名称 (在这种情况下**(localdb) \ProjectsV12**)。
+若要查看已创建新数据库，请打开**SQL Server 对象资源管理器**并查找正确的本地数据库服务器中项目的名称 (在这种情况下 **(localdb) \ProjectsV12**)。
 
 ![显示新的数据库](setting-up-database/_static/image8.png)
 

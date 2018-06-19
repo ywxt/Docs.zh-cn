@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877653"
 ---
 # <a name="aspnet-mvc-4-dependency-injection"></a>ASP.NET MVC 4 依赖关系注入
 
@@ -39,7 +40,7 @@ ms.lasthandoff: 04/06/2018
 
 依赖关系注入模式是控制反向的特定实现。 **反向 (IoC) 控件的**意味着对象不会创建其他对象，它们依赖来完成其工作。 相反，它们获得所需从外部源 （例如，xml 配置文件） 的对象。
 
-**依赖关系注入 (DI)**意味着这是通过无需对象干预，通常将构造函数参数传递一个 framework 组件，设置属性。
+**依赖关系注入 (DI)** 意味着这是通过无需对象干预，通常将构造函数参数传递一个 framework 组件，设置属性。
 
 <a id="The_Dependency_Injection_DI_Design_Pattern"></a>
 ### <a name="the-dependency-injection-di-design-pattern"></a>依赖关系注入 (DI) 设计模式
@@ -90,7 +91,7 @@ ms.lasthandoff: 04/06/2018
 
 **安装代码片段**
 
-为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。 若要安装运行的代码段**.\Source\Setup\CodeSnippets.vsi**文件。
+为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。 若要安装运行的代码段 **.\Source\Setup\CodeSnippets.vsi**文件。
 
 如果你不熟悉 Visual Studio 代码段，并想要了解如何使用它们，你可以从该文档引用的附录&quot;[附录 b： 使用代码段](#AppendixB)&quot;。
 
@@ -273,7 +274,7 @@ ms.lasthandoff: 04/06/2018
       > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
       > 
       > 有关详细信息，请参阅此文章： [ http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages ](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages)。
-2. 包括**MessageService.cs**和**IMessageService.cs**类位于**源 \Assets**文件夹中的**/**。 要执行此操作，请右键单击**服务**文件夹，然后选择**添加现有项**。 浏览到文件的位置，并将其包含。
+2. 包括**MessageService.cs**和**IMessageService.cs**类位于**源 \Assets**文件夹中的 **/**。 要执行此操作，请右键单击**服务**文件夹，然后选择**添加现有项**。 浏览到文件的位置，并将其包含。
 
     ![添加消息服务和服务接口](aspnet-mvc-4-dependency-injection/_static/image8.png "添加消息服务和服务接口")
 
@@ -281,12 +282,12 @@ ms.lasthandoff: 04/06/2018
 
     > [!NOTE]
     > **IMessageService**接口定义两个属性由实现**MessageService**类。 这些属性-**消息**和**ImageUrl**-存储要显示的消息和图像的 URL。
-3. 创建文件夹**/页**在项目的根文件夹，并将现有类**MyBasePage.cs**从**Source\Assets**。 将继承从基本页具有以下结构。
+3. 创建文件夹 **/页**在项目的根文件夹，并将现有类**MyBasePage.cs**从**Source\Assets**。 将继承从基本页具有以下结构。
 
     ![Pages 文件夹](aspnet-mvc-4-dependency-injection/_static/image9.png "Pages 文件夹")
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample7.cs)]
-4. 打开**Browse.cshtml**查看从**/视图/存储**文件夹，并使其从继承**MyBasePage.cs**。
+4. 打开**Browse.cshtml**查看从 **/视图/存储**文件夹，并使其从继承**MyBasePage.cs**。
 
     [!code-cshtml[Main](aspnet-mvc-4-dependency-injection/samples/sample8.cshtml)]
 5. 在**浏览**视图中，添加对的调用**MessageService**要显示的映像和服务检索一条消息。
@@ -316,13 +317,13 @@ ms.lasthandoff: 04/06/2018
 
 
 1. 创建 /**工厂**项目的根文件夹中的文件夹。
-2. 包括**CustomViewPageActivator.cs**到你的解决方案从**/源/资产/**到**工厂**文件夹。 为此，请右键单击**/Factories**文件夹，选择**添加 |现有项**，然后选择**CustomViewPageActivator.cs**。 此类实现**IViewPageActivator**接口来保存 Unity 容器。
+2. 包括**CustomViewPageActivator.cs**到你的解决方案从 **/源/资产/** 到**工厂**文件夹。 为此，请右键单击 **/Factories**文件夹，选择**添加 |现有项**，然后选择**CustomViewPageActivator.cs**。 此类实现**IViewPageActivator**接口来保存 Unity 容器。
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample12.cs)]
 
     > [!NOTE]
     > **CustomViewPageActivator**负责使用 Unity 容器管理视图的创建。
-3. 包括**UnityDependencyResolver.cs**文件从**/源/资产**到**/Factories**文件夹。 为此，请右键单击**/Factories**文件夹，选择**添加 |现有项**，然后选择**UnityDependencyResolver.cs**文件。
+3. 包括**UnityDependencyResolver.cs**文件从 **/源/资产**到 **/Factories**文件夹。 为此，请右键单击 **/Factories**文件夹，选择**添加 |现有项**，然后选择**UnityDependencyResolver.cs**文件。
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample13.cs)]
 
@@ -412,7 +413,7 @@ ms.lasthandoff: 04/06/2018
       > 使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。 使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。 这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。
       > 
       > 有关详细信息，请参阅此文章： [ http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages ](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages)。
-2. 包括**TraceActionFilter.cs**文件从**/源/资产**到**/筛选**文件夹。
+2. 包括**TraceActionFilter.cs**文件从 **/源/资产**到 **/筛选**文件夹。
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample18.cs)]
 
@@ -476,7 +477,7 @@ ms.lasthandoff: 04/06/2018
     ![音乐商店](aspnet-mvc-4-dependency-injection/_static/image11.png "音乐商店")
 
     *Music 商店*
-3. 浏览到**/Trace.axd**以查看应用程序跟踪页，，然后单击**查看详细信息**。
+3. 浏览到 **/Trace.axd**以查看应用程序跟踪页，，然后单击**查看详细信息**。
 
     ![应用程序跟踪日志](aspnet-mvc-4-dependency-injection/_static/image12.png "应用程序跟踪日志")
 

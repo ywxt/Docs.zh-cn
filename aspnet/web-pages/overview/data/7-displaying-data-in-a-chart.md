@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899718"
 ---
 <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>具有 ASP.NET Web 页 (Razor) 的图表中显示数据
 ====================
@@ -111,7 +112,7 @@ by [Microsoft](https://github.com/microsoft)
 2. 将现有的 XML 替换为以下内容，这是有关在一家虚构公司的员工的一些 XML 数据。 
 
     [!code-xml[Main](7-displaying-data-in-a-chart/samples/sample5.xml)]
-3. 在*应用\_数据*文件夹中，创建名为的新 XML 文件*data.xsd*。 (请注意，扩展此时间是*.xsd*。)
+3. 在*应用\_数据*文件夹中，创建名为的新 XML 文件*data.xsd*。 (请注意，扩展此时间是 *.xsd*。)
 4. 现有的 XML 替换为以下代码： 
 
     [!code-xml[Main](7-displaying-data-in-a-chart/samples/sample6.xml)]
@@ -154,7 +155,7 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample8.cshtml)]
 > 
-> 你可以添加`using`你想要引用任何其他.NET Framework 命名空间的语句。 但是，如所述，你无需执行此操作通常情况下，因为您将使用的类的大多数都都会自动导入由 ASP.NET 在中使用的命名空间中*.cshtml*和*.vbhtml*页。
+> 你可以添加`using`你想要引用任何其他.NET Framework 命名空间的语句。 但是，如所述，你无需执行此操作通常情况下，因为您将使用的类的大多数都都会自动导入由 ASP.NET 在中使用的命名空间中 *.cshtml*和 *.vbhtml*页。
 
 
 <a id="Displaying_Charts"></a>
@@ -162,7 +163,7 @@ by [Microsoft](https://github.com/microsoft)
 
 在示例中你已了解到目前为止，创建一个图表，然后再将图表呈现直接向图形的浏览器。 在许多情况下，不过，想要显示一个图表作为一部分页上，而不仅仅是通过在浏览器本身。 若要执行此操作需要两步过程。 第一步是创建页生成图表，如已看到的一样。
 
-第二步是在另一个页中显示生成的映像。 若要显示图像，你使用 HTML`<img>`中相同的元素，就会显示任何图像。 但是，而不是引用*.jpg*或*.png*文件，`<img>`元素引用*.cshtml*文件，其中包含`Chart`帮助器，创建图表。 显示页的运行时，则`<img>`元素获取的输出`Chart`帮助器，并将呈现的图表。
+第二步是在另一个页中显示生成的映像。 若要显示图像，你使用 HTML`<img>`中相同的元素，就会显示任何图像。 但是，而不是引用 *.jpg*或 *.png*文件，`<img>`元素引用 *.cshtml*文件，其中包含`Chart`帮助器，创建图表。 显示页的运行时，则`<img>`元素获取的输出`Chart`帮助器，并将呈现的图表。
 
 ![](7-displaying-data-in-a-chart/_static/image11.jpg)
 
@@ -255,7 +256,7 @@ by [Microsoft](https://github.com/microsoft)
 
 ### <a name="saving-a-chart-as-an-image-file"></a>将图表另存为图像文件
 
-你还可以将图表保存为图像文件 (例如，作为*.jpg*文件) 在服务器上。 您然后可以使用图像文件的任何图像那样。 优点是该文件是存储而不是保存到临时缓存。 你可以将新的图表图像保存在不同时间 （例如，每隔一小时），然后保持的随着时间的推移发生的更改的永久记录。 请注意，你必须确保你的 web 应用程序有权将文件保存到文件夹，你想要将图像文件放在服务器上。
+你还可以将图表保存为图像文件 (例如，作为 *.jpg*文件) 在服务器上。 您然后可以使用图像文件的任何图像那样。 优点是该文件是存储而不是保存到临时缓存。 你可以将新的图表图像保存在不同时间 （例如，每隔一小时），然后保持的随着时间的推移发生的更改的永久记录。 请注意，你必须确保你的 web 应用程序有权将文件保存到文件夹，你想要将图像文件放在服务器上。
 
 1. 在你的网站的根目录，创建名为的文件夹 *\_ChartFiles*如果不存在。
 2. 在你的网站的根目录，创建一个名为的新文件*ChartSave.cshtml*。
@@ -263,7 +264,7 @@ by [Microsoft](https://github.com/microsoft)
 
     [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample15.cshtml)]
 
-    代码首先检查以查看是否*.jpg*文件存在通过调用`File.Exists`方法。 如果文件不存在，代码将创建一个新`Chart`从数组。 这一次，该代码调用`Save`方法并传递`path`参数来指定的文件路径和文件名称保存该图表的位置。 中的页上，正文`<img>`元素使用的路径指向*.jpg*文件以显示。
+    代码首先检查以查看是否 *.jpg*文件存在通过调用`File.Exists`方法。 如果文件不存在，代码将创建一个新`Chart`从数组。 这一次，该代码调用`Save`方法并传递`path`参数来指定的文件路径和文件名称保存该图表的位置。 中的页上，正文`<img>`元素使用的路径指向 *.jpg*文件以显示。
 4. 运行*ChartSave.cshtml*文件。
 5. 返回到 WebMatrix。 请注意，映像文件命名为*chart01.jpg*已保存在 *\_ChartFiles*文件夹。
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877757"
 ---
 <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>创建新存储过程的类型化数据集的 Tableadapter (VB)
 ====================
@@ -41,7 +42,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="stored-procedure-basics"></a>存储的过程的基础知识
 
-函数是普遍适用于所有编程语言构造。 函数是调用函数时执行的语句的集合。 函数可以接受输入的参数和 （可选） 可以返回的值。 *[存储过程](http://en.wikipedia.org/wiki/Stored_procedure)*的数据库构造，函数编程语言中与共享许多相似之处。 存储的过程由一组时调用存储的过程执行的 T-SQL 语句组成。 存储的过程可接受 0 到多个输入参数，并可以返回标量值、 输出参数，或，结果通常情况下，设置从`SELECT`查询。
+函数是普遍适用于所有编程语言构造。 函数是调用函数时执行的语句的集合。 函数可以接受输入的参数和 （可选） 可以返回的值。 *[存储过程](http://en.wikipedia.org/wiki/Stored_procedure)* 的数据库构造，函数编程语言中与共享许多相似之处。 存储的过程由一组时调用存储的过程执行的 T-SQL 语句组成。 存储的过程可接受 0 到多个输入参数，并可以返回标量值、 输出参数，或，结果通常情况下，设置从`SELECT`查询。
 
 > [!NOTE]
 > 存储的过程通常称为 sprocs 或 SPs。

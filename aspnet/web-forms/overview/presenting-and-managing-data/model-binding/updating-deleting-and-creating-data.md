@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885840"
 ---
 <a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a>更新、 删除和使用模型的绑定和 web 窗体中创建的数据
 ====================
@@ -105,7 +106,7 @@ GridView 控件不包括**InsertMethod**属性，因此不能使用与模型绑�
 
 然后，添加新 web 窗体使用母版页，并将其命名为**AddStudent**。 选择作为主控页的 Site.Master。
 
-将呈现为通过添加新的学生字段**DynamicEntity**控件。 DynamicEntity 控件呈现该 ItemType 属性中指定的类中可编辑的属性。 StudentID 属性已标记有**[ScaffoldColumn(false)]**属性以便不呈现。 在 AddStudent 页主内容占位符，添加以下代码。
+将呈现为通过添加新的学生字段**DynamicEntity**控件。 DynamicEntity 控件呈现该 ItemType 属性中指定的类中可编辑的属性。 StudentID 属性已标记有 **[ScaffoldColumn(false)]** 属性以便不呈现。 在 AddStudent 页主内容占位符，添加以下代码。
 
 [!code-aspx[Main](updating-deleting-and-creating-data/samples/sample6.aspx)]
 

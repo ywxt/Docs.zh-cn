@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880097"
 ---
 <a name="handling-bll--and-dal-level-exceptions-vb"></a>处理 BLL 和 DAL 级别异常 (VB)
 ====================

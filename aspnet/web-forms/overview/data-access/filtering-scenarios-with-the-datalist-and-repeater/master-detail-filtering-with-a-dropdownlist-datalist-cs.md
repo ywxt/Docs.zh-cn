@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880669"
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-c"></a>主/从使用 DropDownList (C#) 进行筛选
 ====================
@@ -103,12 +104,12 @@ ms.lasthandoff: 04/06/2018
 **图 7**： 选择`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image17.png))
 
 
-单击下一步后, ObjectDataSource 向导将提示我们提供的值的源`GetProductsByCategoryID(categoryID)`方法的*`categoryID`*参数。 若要使用的所选值`categories`DropDownList 项设置为控件和到 ControlID 参数源`Categories`。
+单击下一步后, ObjectDataSource 向导将提示我们提供的值的源`GetProductsByCategoryID(categoryID)`方法的*`categoryID`* 参数。 若要使用的所选值`categories`DropDownList 项设置为控件和到 ControlID 参数源`Categories`。
 
 
 [![CategoryID 参数值设置为类别下拉列表](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image19.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image18.png)
 
-**图 8**： 设置*`categoryID`*参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image20.png))
+**图 8**： 设置*`categoryID`* 参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image20.png))
 
 
 Visual Studio 将自动生成完成之后配置数据源向导，`ItemTemplate`的显示名称和值的每个数据字段 DataList。 让我们增强 DataList 若要改用`ItemTemplate`显示只需产品的名称、 类别、 供应商，每个单元，并连同价格数量`SeparatorTemplate`，插入`<hr>`每个项之间的元素。 我要使用`ItemTemplate`部分中的示例从[带有 DataList 和转发器控件中显示数据](../displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs.md)教程中，但随意使用查找最引人注目的任何模板标记。
@@ -164,7 +165,7 @@ Visual Studio 将自动生成完成之后配置数据源向导，`ItemTemplate`�
 **图 13**： 选择"-选择一个类别-"列表项目时，将显示否产品 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image31.png))
 
 
-如果您而是将显示*所有*产品选中"-选择一个类别-"选项后，使用值`-1`相反。 敏锐读取器将能在该重新中回调*主/详细信息筛选与 DropDownList*教程我们更新了`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法，以便如果*`categoryID`*值`-1`在未返回记录的所有产品中传递。
+如果您而是将显示*所有*产品选中"-选择一个类别-"选项后，使用值`-1`相反。 敏锐读取器将能在该重新中回调*主/详细信息筛选与 DropDownList*教程我们更新了`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法，以便如果*`categoryID`* 值`-1`在未返回记录的所有产品中传递。
 
 ## <a name="summary"></a>总结
 

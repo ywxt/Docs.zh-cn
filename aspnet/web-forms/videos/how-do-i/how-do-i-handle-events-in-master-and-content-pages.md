@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-handle-events-in-master-and-content-pages
-title: "[如何:]在 Master 和内容页中处理事件 |Microsoft 文档"
+title: '[如何:]在 Master 和内容页中处理事件 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 将演示如何在主和各个内容页中处理的事件。 即使 master 和各个碳精笔的最终结果..."
+description: 在此视频 Chris Pels 将演示如何在主和各个内容页中处理的事件。 即使 master 和各个碳精笔的最终结果...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/21/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525996"
 ---
 <a name="how-do-i-handle-events-in-master-and-content-pages"></a>[如何:]在 Master 和内容页中处理事件
 ====================

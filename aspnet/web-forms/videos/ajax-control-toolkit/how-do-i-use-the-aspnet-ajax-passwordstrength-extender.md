@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885918"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-passwordstrength-extender"></a>[如何:]使用 ASP.NET AJAX PasswordStrength 扩展程序？
 ====================

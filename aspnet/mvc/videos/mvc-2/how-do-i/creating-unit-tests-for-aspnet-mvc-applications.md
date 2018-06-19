@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878716"
 ---
 <a name="creating-unit-tests-for-aspnet-mvc-applications"></a>为 ASP.NET MVC 应用程序创建单元测试
 ====================

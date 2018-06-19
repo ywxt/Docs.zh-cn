@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876808"
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>教程： 使用 SignalR 2 广播的服务器
 ====================
@@ -65,7 +66,7 @@ ms.lasthandoff: 04/06/2018
 
 ![StockTicker 初始版本](tutorial-server-broadcast-with-signalr/_static/image1.png)
 
-定期服务器随机更新股票价格并将更新推送到所有连接的客户端。 在浏览器数字和符号中的**更改**和**%**列动态更改以响应来自服务器的通知。 如果你打开到相同的 URL，其他浏览器，它们都同时显示相同的数据和对数据的相同更改。
+定期服务器随机更新股票价格并将更新推送到所有连接的客户端。 在浏览器数字和符号中的**更改**和**%** 列动态更改以响应来自服务器的通知。 如果你打开到相同的 URL，其他浏览器，它们都同时显示相同的数据和对数据的相同更改。
 
 本教程包含以下各节：
 
@@ -95,7 +96,7 @@ ms.lasthandoff: 04/06/2018
 ## <a name="create-the-project"></a>创建项目
 
 1. 从**文件**菜单上，单击**新项目**。
-2. 在**新项目**对话框框中，展开**C#**下**模板**和选择**Web**。
+2. 在**新项目**对话框框中，展开**C#** 下**模板**和选择**Web**。
 3. 选择**ASP.NET 空 Web 应用程序**模板，将项目*SignalR.StockTicker*，然后单击**确定**。
 
     ![“新建项目”对话框](tutorial-server-broadcast-with-signalr/_static/image2.png)

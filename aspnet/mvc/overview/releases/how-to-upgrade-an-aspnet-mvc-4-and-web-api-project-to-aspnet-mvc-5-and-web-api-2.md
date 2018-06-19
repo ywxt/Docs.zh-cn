@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874725"
 ---
 <a name="how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2"></a>如何将 ASP.NET MVC 4 和 Web API 项目升级到 ASP.NET MVC 5 和 Web API 2
 ====================
@@ -75,7 +76,7 @@ ms.lasthandoff: 04/06/2018
     >   
     > 没有在主要 ASP.NET 包之间交叉的版本兼容性。 例如，MVC 5 是与仅 Razor 3 和 Razor 2 不兼容。
 4. 在 Visual Studio 2013 中打开你的项目。
-5. 删除任何已安装的以下 ASP.NET NuGet 包。 你将删除这些使用包管理器控制台 (PMC)。 若要打开 PMC，选择**工具**菜单，然后选择**库程序包管理器，**然后选择**程序包管理器控制台**。 你的项目可能不包括所有这些。
+5. 删除任何已安装的以下 ASP.NET NuGet 包。 你将删除这些使用包管理器控制台 (PMC)。 若要打开 PMC，选择**工具**菜单，然后选择**库程序包管理器，** 然后选择**程序包管理器控制台**。 你的项目可能不包括所有这些。
 
     1. `Microsoft.AspNet.WebPages.Administration`  
    从 MVC 3 升级到 MVC 4 时，通常将特性添加此包。 若要删除它，请在 PMC 中运行以下命令：  

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-batched-data/index
-title: "使用批处理数据 |Microsoft 文档"
+title: 使用批处理数据 |Microsoft 文档
 author: rick-anderson
-description: "这些教程查看更新、 删除和插入的数据使用事务批处理。"
+description: 这些教程查看更新、 删除和插入的数据使用事务批处理。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data
 msc.type: chapter
 ms.openlocfilehash: 1a6af028c2d4ac8b6085a34bec16893d1e1632af
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26514756"
 ---
 <a name="working-with-batched-data"></a>使用批处理的数据
 ====================

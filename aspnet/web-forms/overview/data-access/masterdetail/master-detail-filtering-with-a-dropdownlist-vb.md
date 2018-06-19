@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880370"
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>主/从使用 DropDownList (VB) 进行筛选
 ====================
@@ -87,12 +88,12 @@ ms.lasthandoff: 04/06/2018
 **图 7**： 选择`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image21.png))
 
 
-在选择此方法之后, ObjectDataSource 向导提示我们值的方法的*`categoryID`*参数。 若要使用的所选值`categories`DropDownList 项设置为控件和到 ControlID 参数源`Categories`。
+在选择此方法之后, ObjectDataSource 向导提示我们值的方法的*`categoryID`* 参数。 若要使用的所选值`categories`DropDownList 项设置为控件和到 ControlID 参数源`Categories`。
 
 
 [![CategoryID 参数值设置为类别下拉列表](master-detail-filtering-with-a-dropdownlist-vb/_static/image23.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image22.png)
 
-**图 8**： 设置*`categoryID`*参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image24.png))
+**图 8**： 设置*`categoryID`* 参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image24.png))
 
 
 需要一段时间来签出我们的浏览器中的进度。 当第一次访问该页面，这些产品属于所选类别 （如图 9 中所示），则会显示 （饮料），但更改 DropDownList 不更新的数据。 这是因为 GridView 更新必须进行回发。 为了实现此目的进行 （都不需要编写任何代码） 的两个选项：
@@ -146,12 +147,12 @@ ms.lasthandoff: 04/06/2018
 **图 13**： 显示在初始页负载否产品 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image37.png))
 
 
-因为"-选择一个类别-"列表项被选中时显示任何产品的原因是因为其值是`-1`和与数据库中有任何产品`CategoryID`的`-1`。 如果这是你想要然后完此时的行为 ！ 如果，但是，你想要显示*所有*类别中的选中"-选择一个类别-"列表项时，返回到`ProductsBLL`类和自定义`GetProductsByCategoryID(categoryID)`方法，以便它时，将调用`GetProducts()`方法如果传入中*`categoryID`*参数小于零：
+因为"-选择一个类别-"列表项被选中时显示任何产品的原因是因为其值是`-1`和与数据库中有任何产品`CategoryID`的`-1`。 如果这是你想要然后完此时的行为 ！ 如果，但是，你想要显示*所有*类别中的选中"-选择一个类别-"列表项时，返回到`ProductsBLL`类和自定义`GetProductsByCategoryID(categoryID)`方法，以便它时，将调用`GetProducts()`方法如果传入中*`categoryID`* 参数小于零：
 
 
 [!code-vb[Main](master-detail-filtering-with-a-dropdownlist-vb/samples/sample2.vb)]
 
-此处使用的方法是通过类似于我们用来显示所有供应商的方法返回[声明性参数](../basic-reporting/declarative-parameters-cs.md)教程，虽然此示例中，我们将使用值为`-1`以指示应为所有记录相对于检索`Nothing`。 这是因为*`categoryID`*参数`GetProductsByCategoryID(categoryID)`方法要求为整数值通过在中，而声明性的参数教程中我们已传递的字符串输入参数中。
+此处使用的方法是通过类似于我们用来显示所有供应商的方法返回[声明性参数](../basic-reporting/declarative-parameters-cs.md)教程，虽然此示例中，我们将使用值为`-1`以指示应为所有记录相对于检索`Nothing`。 这是因为*`categoryID`* 参数`GetProductsByCategoryID(categoryID)`方法要求为整数值通过在中，而声明性的参数教程中我们已传递的字符串输入参数中。
 
 图 14 显示的屏幕截图`FilterByDropDownList.aspx`如果选择"-选择一个类别-"选项。 在这里，默认情况下，将显示所有产品，用户可以通过选择特定类别，缩小显示。
 

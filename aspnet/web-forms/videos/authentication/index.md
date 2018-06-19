@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/authentication/index
-title: "身份验证 |Microsoft 文档"
+title: 身份验证 |Microsoft 文档
 author: rick-anderson
-description: "如何实现和管理 ASP.NET 应用程序中的安全 （身份验证）。"
+description: 如何实现和管理 ASP.NET 应用程序中的安全 （身份验证）。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/authentication
 msc.type: chapter
 ms.openlocfilehash: b9cd2d86bce12795802302b822e945762690a57b
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521726"
 ---
 <a name="authentication"></a>身份验证
 ====================

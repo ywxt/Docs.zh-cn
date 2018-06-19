@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881917"
 ---
 <a name="lesson-5-debugging-and-tracing-your-website"></a>[第 5 课:]调试和跟踪你的网站
 ====================

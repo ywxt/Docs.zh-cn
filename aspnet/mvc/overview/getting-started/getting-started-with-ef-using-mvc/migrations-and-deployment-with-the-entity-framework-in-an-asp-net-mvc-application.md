@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879551"
 ---
 <a name="code-first-migrations-and-deployment-with-the-entity-framework-in-an-aspnet-mvc-application"></a>代码优先迁移和部署 ASP.NET MVC 应用程序中的实体框架
 ====================
@@ -226,7 +227,7 @@ Visual Studio 不执行任何操作与数据库在部署过程时它正在将你
 
 ![](https://asp.net/media/4367421/mig.png)
 
-在部署过程还创建新的连接字符串*(SchoolContext\_DatabasePublish*) 的代码优先迁移来用于更新数据库架构和数据库进行种子设定。
+在部署过程还创建新的连接字符串 *(SchoolContext\_DatabasePublish*) 的代码优先迁移来用于更新数据库架构和数据库进行种子设定。
 
 ![Database_Publish 连接字符串](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image26.png)
 

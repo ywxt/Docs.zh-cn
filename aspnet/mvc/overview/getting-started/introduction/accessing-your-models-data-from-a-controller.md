@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873552"
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>从控制器访问您的模型的数据
 ====================
@@ -36,8 +37,8 @@ ms.lasthandoff: 04/06/2018
 
 ![](accessing-your-models-data-from-a-controller/_static/image2.png)
 
-- 选择**电影 (MvcMovie.Models)**模型类。
-- 选择**MovieDBContext (MvcMovie.Models)**数据上下文类。
+- 选择**电影 (MvcMovie.Models)** 模型类。
+- 选择**MovieDBContext (MvcMovie.Models)** 数据上下文类。
 - 作为控制器名称输入**MoviesController**。
 
   下图显示已完成对话框。  
@@ -52,7 +53,7 @@ ms.lasthandoff: 04/06/2018
 
 Visual Studio 自动创建[CRUD](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) （创建、 读取、 更新和删除） 操作方法和为你的视图 （自动创建的 CRUD 操作方法和视图称为基架）。 你现在具有完全正常运行的 web 应用程序，你可以创建、 列出、 编辑和删除电影条目。
 
-运行应用程序并单击**MVC 影片**链接 (或浏览到`Movies`控制器通过追加*/Movies*到你的浏览器的地址栏中的 URL)。 因为应用程序依赖于默认路由 (在中定义*应用\_Start\RouteConfig.cs*文件)，浏览器请求`http://localhost:xxxxx/Movies`路由到默认值`Index`操作方法`Movies`控制器。 换而言之，浏览器请求`http://localhost:xxxxx/Movies`实际上是浏览器请求相同`http://localhost:xxxxx/Movies/Index`。 结果是电影、 一个空列表，因为你尚未添加。
+运行应用程序并单击**MVC 影片**链接 (或浏览到`Movies`控制器通过追加 */Movies*到你的浏览器的地址栏中的 URL)。 因为应用程序依赖于默认路由 (在中定义*应用\_Start\RouteConfig.cs*文件)，浏览器请求`http://localhost:xxxxx/Movies`路由到默认值`Index`操作方法`Movies`控制器。 换而言之，浏览器请求`http://localhost:xxxxx/Movies`实际上是浏览器请求相同`http://localhost:xxxxx/Movies/Index`。 结果是电影、 一个空列表，因为你尚未添加。
 
 ![](accessing-your-models-data-from-a-controller/_static/image4.png)
 
@@ -67,7 +68,7 @@ Visual Studio 自动创建[CRUD](http://en.wikipedia.org/wiki/Create,_read,_upda
 > 你不能在 Price 字段中输入小数点或逗号。 若要为使用逗号的非英语区域设置支持 jQuery 验证 (&quot;，&quot;) 对于小数点，和非美国英语的日期格式中，您必须包含*globalize.js*和您的特定*cultures/globalize.cultures.js*文件 (从[ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 和 JavaScript 使用`Globalize.parseFloat`。 我将介绍如何执行此操作在下一步的教程。 目前只能输入整数，例如 10。
 
 
-单击**创建**按钮使窗体发布到服务器，其中的影片信息保存到数据库中。 然后转向*/Movies* URL，其中你可以看到在列表中新创建的影片。
+单击**创建**按钮使窗体发布到服务器，其中的影片信息保存到数据库中。 然后转向 */Movies* URL，其中你可以看到在列表中新创建的影片。
 
 ![](accessing-your-models-data-from-a-controller/_static/image6.png)
 

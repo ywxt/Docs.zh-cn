@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889051"
 ---
 <a name="multiple-contentplaceholders-and-default-content-c"></a>多个 ContentPlaceHolders 和默认内容 (C#)
 ====================

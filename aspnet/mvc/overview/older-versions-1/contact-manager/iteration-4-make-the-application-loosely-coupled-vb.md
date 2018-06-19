@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873935"
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-vb"></a>迭代 #4 – 使松耦合的应用程序 (VB)
 ====================

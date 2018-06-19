@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889366"
 ---
 <a name="common-configuration-differences-between-development-and-production-vb"></a>开发和生产环境 (VB) 之间的常见配置差异
 ====================

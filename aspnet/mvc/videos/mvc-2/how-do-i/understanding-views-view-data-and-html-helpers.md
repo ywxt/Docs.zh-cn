@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872085"
 ---
 <a name="understanding-views-view-data-and-html-helpers"></a>了解视图、 查看数据和 HTML 帮助器
 ====================
