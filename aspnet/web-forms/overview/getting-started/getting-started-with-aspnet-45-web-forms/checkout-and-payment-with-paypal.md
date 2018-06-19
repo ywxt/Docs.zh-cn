@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891888"
 ---
 <a name="checkout-and-payment-with-paypal"></a><span data-ttu-id="a4e35-103">签出和与 PayPal 付款</span><span class="sxs-lookup"><span data-stu-id="a4e35-103">Checkout and Payment with PayPal</span></span>
 ====================
@@ -294,7 +295,7 @@ ms.lasthandoff: 04/10/2018
 
 1. <span data-ttu-id="a4e35-333">在 Visual Studio 中 Wingtip Toys 示例应用程序中，右键单击**逻辑**文件夹，然后选择**添加** - &gt; **新项**。</span><span class="sxs-lookup"><span data-stu-id="a4e35-333">In the Wingtip Toys sample application within Visual Studio, right-click the **Logic** folder and then select **Add** -&gt; **New Item**.</span></span>   
    <span data-ttu-id="a4e35-334">随即出现“添加新项”对话框。</span><span class="sxs-lookup"><span data-stu-id="a4e35-334">The **Add New Item** dialog box is displayed.</span></span>
-2. <span data-ttu-id="a4e35-335">下**Visual C#**从**已安装**左侧窗格中，选择**代码**。</span><span class="sxs-lookup"><span data-stu-id="a4e35-335">Under **Visual C#** from the **Installed** pane on the left, select **Code**.</span></span>
+2. <span data-ttu-id="a4e35-335">下**Visual C#** 从**已安装**左侧窗格中，选择**代码**。</span><span class="sxs-lookup"><span data-stu-id="a4e35-335">Under **Visual C#** from the **Installed** pane on the left, select **Code**.</span></span>
 3. <span data-ttu-id="a4e35-336">从中间窗格中，选择**类**。</span><span class="sxs-lookup"><span data-stu-id="a4e35-336">From the middle pane, select **Class**.</span></span> <span data-ttu-id="a4e35-337">将此新类**PayPalFunctions.cs**。</span><span class="sxs-lookup"><span data-stu-id="a4e35-337">Name this new class **PayPalFunctions.cs**.</span></span>
 4. <span data-ttu-id="a4e35-338">单击 **添加**。</span><span class="sxs-lookup"><span data-stu-id="a4e35-338">Click **Add**.</span></span>  
    <span data-ttu-id="a4e35-339">编辑器中将显示新的类文件。</span><span class="sxs-lookup"><span data-stu-id="a4e35-339">The new class file is displayed in the editor.</span></span>

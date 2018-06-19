@@ -14,6 +14,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897615"
 ---
 # <a name="publish-an-aspnet-core-app-to-azure-with-visual-studio"></a><span data-ttu-id="8e592-103">使用 Visual Studio 将 ASP.NET Core 应用发布到 Azure</span><span class="sxs-lookup"><span data-stu-id="8e592-103">Publish an ASP.NET Core app to Azure with Visual Studio</span></span>
 

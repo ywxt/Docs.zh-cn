@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890211"
 ---
 <a name="manually-installing-web-packages"></a><span data-ttu-id="06d3d-104">手动安装 Web 包</span><span class="sxs-lookup"><span data-stu-id="06d3d-104">Manually Installing Web Packages</span></span>
 ====================

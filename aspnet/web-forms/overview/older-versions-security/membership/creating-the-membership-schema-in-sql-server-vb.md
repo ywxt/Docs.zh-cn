@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891752"
 ---
 <a name="creating-the-membership-schema-in-sql-server-vb"></a><span data-ttu-id="c231f-104">在 SQL Server (VB) 中创建成员身份架构</span><span class="sxs-lookup"><span data-stu-id="c231f-104">Creating the Membership Schema in SQL Server (VB)</span></span>
 ====================

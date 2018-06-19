@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879434"
 ---
 <a name="executing-several-animations-at-the-same-time-vb"></a><span data-ttu-id="52e27-104">在同一时间 (VB) 中执行几个动画</span><span class="sxs-lookup"><span data-stu-id="52e27-104">Executing Several Animations at The Same Time (VB)</span></span>
 ====================

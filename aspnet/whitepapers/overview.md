@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "28049260"
 ---
 <a name="whitepapers"></a><span data-ttu-id="bb89a-103">白皮书</span><span class="sxs-lookup"><span data-stu-id="bb89a-103">Whitepapers</span></span>
 ====================

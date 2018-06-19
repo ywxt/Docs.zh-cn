@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890572"
 ---
 <a name="configuring-a-website-that-uses-application-services-vb"></a><span data-ttu-id="a1f3d-103">配置网站，以使用应用程序服务 (VB)</span><span class="sxs-lookup"><span data-stu-id="a1f3d-103">Configuring a Website that Uses Application Services (VB)</span></span>
 ====================

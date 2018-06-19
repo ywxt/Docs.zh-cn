@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895246"
 ---
 <a name="adding-email-to-your-web-site"></a><span data-ttu-id="2afa9-103">将电子邮件添加到您的网站</span><span class="sxs-lookup"><span data-stu-id="2afa9-103">Adding Email to Your Web Site</span></span>
 ====================

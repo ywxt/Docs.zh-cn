@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890816"
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-vb"></a><span data-ttu-id="6fa96-103">插入、 更新和删除数据 (VB) 的概述</span><span class="sxs-lookup"><span data-stu-id="6fa96-103">An Overview of Inserting, Updating, and Deleting Data (VB)</span></span>
 ====================

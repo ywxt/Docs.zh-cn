@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/application-level-objects
-title: "应用程序级别对象 |Microsoft 文档"
+title: 应用程序级别对象 |Microsoft 文档
 author: JoeStagner
-description: "此视频将介绍应用程序级别事件和对象，并说明的概念&quot;作用域&quot;有关它们。"
+description: 此视频将介绍应用程序级别事件和对象，并说明的概念&quot;作用域&quot;有关它们。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/20/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521556"
 ---
 <a name="application-level-objects"></a><span data-ttu-id="463bc-103">应用程序级别对象</span><span class="sxs-lookup"><span data-stu-id="463bc-103">Application Level Objects</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899111"
 ---
 <a name="aspnet-4-breaking-changes"></a><span data-ttu-id="ff980-103">ASP.NET 4 的重大更改</span><span class="sxs-lookup"><span data-stu-id="ff980-103">ASP.NET 4 Breaking Changes</span></span>
 ====================
@@ -437,7 +438,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="ff980-381">因此， **SetOmitVaryStar**不再需要以禁止显示`Vary:*`标头。</span><span class="sxs-lookup"><span data-stu-id="ff980-381">As a result, **SetOmitVaryStar** is no longer needed in order to suppress the `Vary:*` header.</span></span>
 
-<span data-ttu-id="ff980-382">指定的应用程序中`Location="ServerAndClient"`中**@ OutputCache**指令在页面上，现在，你将看到的名称所暗示的行为**位置**属性的值-即，将页可在你调用而无需浏览器缓存**SetOmitVaryStar**方法。</span><span class="sxs-lookup"><span data-stu-id="ff980-382">In applications that specify `Location="ServerAndClient"` in the **@ OutputCache** directive on a page, you will now see the behavior implied by the name of the **Location** attribute's value – that is, pages will be cacheable in the browser without requiring that you call the **SetOmitVaryStar** method.</span></span>
+<span data-ttu-id="ff980-382">指定的应用程序中`Location="ServerAndClient"`中 **@ OutputCache**指令在页面上，现在，你将看到的名称所暗示的行为**位置**属性的值-即，将页可在你调用而无需浏览器缓存**SetOmitVaryStar**方法。</span><span class="sxs-lookup"><span data-stu-id="ff980-382">In applications that specify `Location="ServerAndClient"` in the **@ OutputCache** directive on a page, you will now see the behavior implied by the name of the **Location** attribute's value – that is, pages will be cacheable in the browser without requiring that you call the **SetOmitVaryStar** method.</span></span>
 
 <span data-ttu-id="ff980-383">如果你的应用程序中的页必须发出`Vary:*`，调用**AppendHeader**方法，如下面的示例所示：</span><span class="sxs-lookup"><span data-stu-id="ff980-383">If pages in your application must emit `Vary:*`, call the **AppendHeader** method, as in the following example:</span></span>
 

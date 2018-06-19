@@ -14,6 +14,7 @@ ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/28/2018
+ms.locfileid: "32078481"
 ---
 # <a name="advanced-topics-for-aspnet-core-web-api"></a><span data-ttu-id="a284a-103">适用于 ASP.NET Core Web API 的高级主题</span><span class="sxs-lookup"><span data-stu-id="a284a-103">Advanced topics for ASP.NET Core Web API</span></span>
 

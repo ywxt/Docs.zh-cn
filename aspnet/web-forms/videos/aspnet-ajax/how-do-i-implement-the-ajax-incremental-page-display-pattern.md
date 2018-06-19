@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883867"
 ---
 <a name="how-do-i-implement-the-ajax-incremental-page-display-pattern"></a><span data-ttu-id="5e5a1-104">[如何:]实现 AJAX 增量页面显示模式？</span><span class="sxs-lookup"><span data-stu-id="5e5a1-104">[How Do I:] Implement the AJAX Incremental Page Display Pattern?</span></span>
 ====================

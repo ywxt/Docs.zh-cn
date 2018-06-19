@@ -17,6 +17,7 @@ ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/28/2018
+ms.locfileid: "32078601"
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a><span data-ttu-id="a0e57-103">ASP.NET 4.5 Web 窗体和 Visual Studio 2013 入门</span><span class="sxs-lookup"><span data-stu-id="a0e57-103">Getting Started with ASP.NET 4.5 Web Forms and Visual Studio 2013</span></span>
 ====================
@@ -168,7 +169,7 @@ ms.lasthandoff: 04/28/2018
 
 ## <a name="download-the-sample-application"></a><span data-ttu-id="a0e57-211">下载示例应用程序</span><span class="sxs-lookup"><span data-stu-id="a0e57-211">Download the Sample Application</span></span>
 
-<span data-ttu-id="a0e57-212">安装必备项之后, 你就可以开始创建新的 Web 项目显示在本教程系列。</span><span class="sxs-lookup"><span data-stu-id="a0e57-212">After installing the prerequisites, you are ready to begin creating the new Web project that is presented in this tutorial series.</span></span> <span data-ttu-id="a0e57-213">如果你想要进行**（可选)** 运行本系列教程创建示例应用程序，你可以从网站下载它 MSDN 示例。</span><span class="sxs-lookup"><span data-stu-id="a0e57-213">If you would like to **optionally** run the sample application that this tutorial series creates, you can download it from the MSDN Samples site.</span></span> <span data-ttu-id="a0e57-214">此下载包含以下项目：</span><span class="sxs-lookup"><span data-stu-id="a0e57-214">This download contains the following:</span></span>
+<span data-ttu-id="a0e57-212">安装必备项之后, 你就可以开始创建新的 Web 项目显示在本教程系列。</span><span class="sxs-lookup"><span data-stu-id="a0e57-212">After installing the prerequisites, you are ready to begin creating the new Web project that is presented in this tutorial series.</span></span> <span data-ttu-id="a0e57-213">如果你想要进行 **（可选)** 运行本系列教程创建示例应用程序，你可以从网站下载它 MSDN 示例。</span><span class="sxs-lookup"><span data-stu-id="a0e57-213">If you would like to **optionally** run the sample application that this tutorial series creates, you can download it from the MSDN Samples site.</span></span> <span data-ttu-id="a0e57-214">此下载包含以下项目：</span><span class="sxs-lookup"><span data-stu-id="a0e57-214">This download contains the following:</span></span>
 
 - <span data-ttu-id="a0e57-215">中的示例应用程序*WingtipToys*文件夹。</span><span class="sxs-lookup"><span data-stu-id="a0e57-215">The sample application in the *WingtipToys* folder.</span></span>
 - <span data-ttu-id="a0e57-216">用于创建示例应用程序中的资源*WingtipToys 资产*文件夹中的*WingtipToys*文件夹。</span><span class="sxs-lookup"><span data-stu-id="a0e57-216">The resources used to create the sample application in the *WingtipToys-Assets* folder in the *WingtipToys* folder.</span></span>

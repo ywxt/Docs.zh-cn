@@ -15,6 +15,7 @@ ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31483492"
 ---
 # <a name="open-web-interface-for-net-owin-with-aspnet-core"></a><span data-ttu-id="8cb73-103">ASP.NET Core 中 .NET 的开放 Web 接口 (OWIN)</span><span class="sxs-lookup"><span data-stu-id="8cb73-103">Open Web Interface for .NET (OWIN) with ASP.NET Core</span></span>
 

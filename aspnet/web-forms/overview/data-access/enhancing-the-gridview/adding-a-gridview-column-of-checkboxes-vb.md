@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892733"
 ---
 <a name="adding-a-gridview-column-of-checkboxes-vb"></a><span data-ttu-id="51cf2-103">添加 GridView 列的复选框 (VB)</span><span class="sxs-lookup"><span data-stu-id="51cf2-103">Adding a GridView Column of Checkboxes (VB)</span></span>
 ====================

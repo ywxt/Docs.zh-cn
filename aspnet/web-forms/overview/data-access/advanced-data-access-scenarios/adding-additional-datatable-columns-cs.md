@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877497"
 ---
 <a name="adding-additional-datatable-columns-c"></a><span data-ttu-id="22c7f-104">添加其他数据表列 (C#)</span><span class="sxs-lookup"><span data-stu-id="22c7f-104">Adding Additional DataTable Columns (C#)</span></span>
 ====================

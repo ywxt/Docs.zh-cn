@@ -1,7 +1,7 @@
 ---
-title: "Azure Active Directory B2C ASP.NET 核心中使用云身份验证"
+title: Azure Active Directory B2C ASP.NET 核心中使用云身份验证
 author: camsoper
-description: "了解如何设置与 ASP.NET 核心的 Azure Active Directory B2C 身份验证。"
+description: 了解如何设置与 ASP.NET 核心的 Azure Active Directory B2C 身份验证。
 manager: wpickett
 ms.date: 01/25/2018
 ms.topic: tutorial
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29905070"
 ---
 # <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a><span data-ttu-id="daed9-103">Azure Active Directory B2C ASP.NET 核心中使用云身份验证</span><span class="sxs-lookup"><span data-stu-id="daed9-103">Cloud authentication with Azure Active Directory B2C in ASP.NET Core</span></span>
 
@@ -114,7 +115,7 @@ ms.lasthandoff: 03/15/2018
 
 ![登录到应用](./azure-ad-b2c/_static/signin.png)
 
-<span data-ttu-id="daed9-194">浏览器将重定向到 Azure AD B2C 租户。</span><span class="sxs-lookup"><span data-stu-id="daed9-194">The browser redirects to the Azure AD B2C tenant.</span></span> <span data-ttu-id="daed9-195">使用现有帐户登录 （如果已创建一个测试策略） 或选择**立即注册**创建新帐户。</span><span class="sxs-lookup"><span data-stu-id="daed9-195">Sign in with an existing account (if one was created testing the policies) or select **Sign up now** to create a new account.</span></span> <span data-ttu-id="daed9-196">**忘记了密码？**链接用于重置忘记了的密码。</span><span class="sxs-lookup"><span data-stu-id="daed9-196">The **Forgot your password?** link is used to reset a forgotten password.</span></span>
+<span data-ttu-id="daed9-194">浏览器将重定向到 Azure AD B2C 租户。</span><span class="sxs-lookup"><span data-stu-id="daed9-194">The browser redirects to the Azure AD B2C tenant.</span></span> <span data-ttu-id="daed9-195">使用现有帐户登录 （如果已创建一个测试策略） 或选择**立即注册**创建新帐户。</span><span class="sxs-lookup"><span data-stu-id="daed9-195">Sign in with an existing account (if one was created testing the policies) or select **Sign up now** to create a new account.</span></span> <span data-ttu-id="daed9-196">**忘记了密码？** 链接用于重置忘记了的密码。</span><span class="sxs-lookup"><span data-stu-id="daed9-196">The **Forgot your password?** link is used to reset a forgotten password.</span></span>
 
 ![Azure AD B2C 登录](./azure-ad-b2c/_static/b2csts.png)
 

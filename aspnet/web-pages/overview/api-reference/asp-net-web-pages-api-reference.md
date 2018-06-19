@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897579"
 ---
 <a name="aspnet-web-pages-razor-api-quick-reference"></a><span data-ttu-id="0049e-103">ASP.NET 网页 (Razor) API 快速参考</span><span class="sxs-lookup"><span data-stu-id="0049e-103">ASP.NET Web Pages (Razor) API Quick Reference</span></span>
 ====================
@@ -587,7 +588,7 @@ ms.lasthandoff: 04/06/2018
 
 ### `Video.Silverlight(filename, width, height)`
 
-<span data-ttu-id="0049e-228">呈现为指定的 Silverlight 播放器*.xap*文件所需的宽度和高度。</span><span class="sxs-lookup"><span data-stu-id="0049e-228">Renders a Silverlight player for the specified *.xap* file with required width and height.</span></span>
+<span data-ttu-id="0049e-228">呈现为指定的 Silverlight 播放器 *.xap*文件所需的宽度和高度。</span><span class="sxs-lookup"><span data-stu-id="0049e-228">Renders a Silverlight player for the specified *.xap* file with required width and height.</span></span>
 
 [!code-cshtml[Main](asp-net-web-pages-api-reference/samples/sample88.cshtml)]
 

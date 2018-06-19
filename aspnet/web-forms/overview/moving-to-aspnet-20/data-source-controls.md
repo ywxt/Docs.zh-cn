@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/data-source-controls
-title: "数据源控件 |Microsoft 文档"
+title: 数据源控件 |Microsoft 文档
 author: microsoft
-description: "DataGrid 控件在 ASP.NET 1.x 标记为 Web 应用程序中的数据访问中的重大改进。 但是，它不是因为它可能是用户友好..."
+description: DataGrid 控件在 ASP.NET 1.x 标记为 Web 应用程序中的数据访问中的重大改进。 但是，它不是因为它可能是用户友好...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28885890"
 ---
 <a name="data-source-controls"></a><span data-ttu-id="74343-104">数据源控件</span><span class="sxs-lookup"><span data-stu-id="74343-104">Data Source Controls</span></span>
 ====================

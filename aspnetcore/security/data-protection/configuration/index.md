@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30076367"
 ---
 # <a name="data-protection-configuration-in-aspnet-core"></a><span data-ttu-id="12508-103">ASP.NET Core 中的数据保护配置</span><span class="sxs-lookup"><span data-stu-id="12508-103">Data Protection configuration in ASP.NET Core</span></span>
 

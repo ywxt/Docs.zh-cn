@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895174"
 ---
 <a name="introduction-to-managing-and-running-tests-with-team-system"></a><span data-ttu-id="c229a-104">与管理和运行 Team System 的测试的简介</span><span class="sxs-lookup"><span data-stu-id="c229a-104">Introduction to Managing and Running Tests with Team System</span></span>
 ====================

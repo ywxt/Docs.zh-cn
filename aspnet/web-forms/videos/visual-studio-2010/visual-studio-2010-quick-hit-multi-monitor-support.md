@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894661"
 ---
 <a name="visual-studio-2010-quick-hit---multi-monitor-support"></a><span data-ttu-id="f5fcf-103">Visual Studio 2010"快速命中"-多监视器支持</span><span class="sxs-lookup"><span data-stu-id="f5fcf-103">Visual Studio 2010 "Quick Hit" - Multi-Monitor Support</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34306840"
 ---
 # <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a><span data-ttu-id="3bbad-103">ASP.NET MVC 4 实体框架基架和迁移</span><span class="sxs-lookup"><span data-stu-id="3bbad-103">ASP.NET MVC 4 Entity Framework Scaffolding and Migrations</span></span>
 

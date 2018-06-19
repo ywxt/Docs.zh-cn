@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30073518"
 ---
 # <a name="less-sass-and-font-awesome-in-aspnet-core"></a><span data-ttu-id="52d03-103">小于，Sass 和 ASP.NET Core 中出色的字体</span><span class="sxs-lookup"><span data-stu-id="52d03-103">Less, Sass, and Font Awesome in ASP.NET Core</span></span>
 
@@ -369,7 +370,7 @@ body {
 }
 ```
 
-<span data-ttu-id="52d03-189">保存你所有文件。</span><span class="sxs-lookup"><span data-stu-id="52d03-189">Save all of your files.</span></span> <span data-ttu-id="52d03-190">现在刷新**任务运行程序资源管理器**，你看到`sass`任务。</span><span class="sxs-lookup"><span data-stu-id="52d03-190">Now when you refresh **Task Runner Explorer**, you see a `sass` task.</span></span> <span data-ttu-id="52d03-191">运行它，并查找*/wwwroot/css*文件夹。</span><span class="sxs-lookup"><span data-stu-id="52d03-191">Run it, and look in the */wwwroot/css* folder.</span></span> <span data-ttu-id="52d03-192">现在有了*main2.css*文件，使用以下内容：</span><span class="sxs-lookup"><span data-stu-id="52d03-192">There's now a *main2.css* file, with these contents:</span></span>
+<span data-ttu-id="52d03-189">保存你所有文件。</span><span class="sxs-lookup"><span data-stu-id="52d03-189">Save all of your files.</span></span> <span data-ttu-id="52d03-190">现在刷新**任务运行程序资源管理器**，你看到`sass`任务。</span><span class="sxs-lookup"><span data-stu-id="52d03-190">Now when you refresh **Task Runner Explorer**, you see a `sass` task.</span></span> <span data-ttu-id="52d03-191">运行它，并查找 */wwwroot/css*文件夹。</span><span class="sxs-lookup"><span data-stu-id="52d03-191">Run it, and look in the */wwwroot/css* folder.</span></span> <span data-ttu-id="52d03-192">现在有了*main2.css*文件，使用以下内容：</span><span class="sxs-lookup"><span data-stu-id="52d03-192">There's now a *main2.css* file, with these contents:</span></span>
 
 ```css
 body {

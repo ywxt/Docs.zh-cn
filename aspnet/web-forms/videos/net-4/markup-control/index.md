@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/markup-control/index
-title: "标记控件 |Microsoft 文档"
+title: 标记控件 |Microsoft 文档
 author: rick-anderson
-description: "此视频系列演示对 ASP.NET 4 中的 Web 窗体页面的控件的改进。"
+description: 此视频系列演示对 ASP.NET 4 中的 Web 窗体页面的控件的改进。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/net-4/markup-control
 msc.type: chapter
 ms.openlocfilehash: 48bb88cad6362adab51561eaba2d603bac49c9c7
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528136"
 ---
 <a name="markup-control"></a><span data-ttu-id="36742-103">标记控件</span><span class="sxs-lookup"><span data-stu-id="36742-103">Markup Control</span></span>
 ====================

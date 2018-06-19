@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892681"
 ---
 <a name="troubleshooting-the-packaging-process"></a><span data-ttu-id="25db5-103">打包过程的故障排除</span><span class="sxs-lookup"><span data-stu-id="25db5-103">Troubleshooting the Packaging Process</span></span>
 ====================

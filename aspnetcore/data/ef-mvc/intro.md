@@ -14,6 +14,7 @@ ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153772"
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a><span data-ttu-id="0e3c4-102">ASP.NET Core MVC 和 Entity Framework Core - 第 1 个教程，共 10 个教程</span><span class="sxs-lookup"><span data-stu-id="0e3c4-102">ASP.NET Core MVC with Entity Framework Core - Tutorial 1 of 10</span></span>
 

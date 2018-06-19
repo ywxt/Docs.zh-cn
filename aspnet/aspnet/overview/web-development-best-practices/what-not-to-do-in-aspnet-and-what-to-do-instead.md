@@ -1,14 +1,14 @@
 ---
 uid: aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
-title: "不需要在 ASP.NET 中，做什么和要改为执行的操作 |Microsoft 文档"
+title: 不需要在 ASP.NET 中，做什么和要改为执行的操作 |Microsoft 文档
 author: tfitzmac
-description: "本主题介绍在 ASP.NET web 项目中的人员进行的几个常见错误。 它提供有关你应执行哪些操作来避免这些 commo 建议..."
+description: 本主题介绍在 ASP.NET web 项目中的人员进行的几个常见错误。 它提供有关你应执行哪些操作来避免这些 commo 建议...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/08/2014
 ms.topic: article
 ms.assetid: c39b9965-545c-4b04-8f55-21be7f28a9e5
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 msc.type: authoredcontent
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28034915"
 ---
 <a name="what-not-to-do-in-aspnet-and-what-to-do-instead"></a><span data-ttu-id="e7d63-104">不需要在 ASP.NET 中，做什么和要改为执行的操作</span><span class="sxs-lookup"><span data-stu-id="e7d63-104">What not to do in ASP.NET, and what to do instead</span></span>
 ====================

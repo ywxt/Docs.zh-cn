@@ -17,6 +17,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30070519"
 ---
 <a name="jquery-validation-1160"></a><span data-ttu-id="e9f8a-102">jQuery 验证 1.16.0</span><span class="sxs-lookup"><span data-stu-id="e9f8a-102">jQuery Validation 1.16.0</span></span>
 ====================

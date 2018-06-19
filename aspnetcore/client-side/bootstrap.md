@@ -14,6 +14,7 @@ ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31483706"
 ---
 # <a name="build-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a><span data-ttu-id="e9b12-103">生成带有 Bootstrap 和 ASP.NET Core 美观、 响应迅速网站</span><span class="sxs-lookup"><span data-stu-id="e9b12-103">Build beautiful, responsive sites with Bootstrap and ASP.NET Core</span></span>
 

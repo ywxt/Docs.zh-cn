@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874923"
 ---
 <a name="creating-model-classes-with-the-entity-framework-c"></a><span data-ttu-id="b2603-104">使用实体框架 (C#) 创建模型类</span><span class="sxs-lookup"><span data-stu-id="b2603-104">Creating Model Classes with the Entity Framework (C#)</span></span>
 ====================

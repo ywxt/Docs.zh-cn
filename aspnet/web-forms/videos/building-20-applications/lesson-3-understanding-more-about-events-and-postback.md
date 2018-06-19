@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886142"
 ---
 <a name="lesson-3--understanding-more-about-events-and-postback"></a><span data-ttu-id="4b85c-103">[第 3 课:] 了解有关事件和回发详细信息</span><span class="sxs-lookup"><span data-stu-id="4b85c-103">[Lesson 3:]  Understanding More About Events and Postback</span></span>
 ====================

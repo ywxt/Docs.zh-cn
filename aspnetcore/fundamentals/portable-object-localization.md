@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29904542"
 ---
 # <a name="configure-portable-object-localization-in-aspnet-core"></a><span data-ttu-id="38c77-103">在 ASP.NET Core 中配置可移植对象本地化</span><span class="sxs-lookup"><span data-stu-id="38c77-103">Configure portable object localization in ASP.NET Core</span></span>
 

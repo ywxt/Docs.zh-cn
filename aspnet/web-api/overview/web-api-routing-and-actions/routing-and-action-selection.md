@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28043413"
 ---
 <a name="routing-and-action-selection-in-aspnet-web-api"></a><span data-ttu-id="bf1e9-102">路由和 ASP.NET Web API 中的操作选择</span><span class="sxs-lookup"><span data-stu-id="bf1e9-102">Routing and Action Selection in ASP.NET Web API</span></span>
 ====================

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30077344"
 ---
 # <a name="key-storage-providers-in-aspnet-core"></a><span data-ttu-id="92946-103">在 ASP.NET 核心中的密钥存储提供程序</span><span class="sxs-lookup"><span data-stu-id="92946-103">Key storage providers in ASP.NET Core</span></span>
 

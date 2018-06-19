@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884023"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a><span data-ttu-id="96cd2-104">配置 Web 服务器的 Web 部署发布 （脱机部署）</span><span class="sxs-lookup"><span data-stu-id="96cd2-104">Configuring a Web Server for Web Deploy Publishing (Offline Deployment)</span></span>
 ====================
@@ -93,7 +94,7 @@ ms.lasthandoff: 04/06/2018
     > <span data-ttu-id="96cd2-164">你可能已安装.NET Framework 4.0 通过 Windows 更新。</span><span class="sxs-lookup"><span data-stu-id="96cd2-164">You may have already installed the .NET Framework 4.0 through Windows Update.</span></span> <span data-ttu-id="96cd2-165">如果已安装的产品或组件，则 Web 平台安装程序将指示这一点通过将**添加**按钮，其文本**已安装**。</span><span class="sxs-lookup"><span data-stu-id="96cd2-165">If a product or component is already installed, the Web Platform Installer will indicate this by replacing the **Add** button with the text **Installed**.</span></span>
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image1.png)
-6. <span data-ttu-id="96cd2-166">在**ASP.NET MVC 3 (Visual Studio 2010)**行中，单击**添加**。</span><span class="sxs-lookup"><span data-stu-id="96cd2-166">In the **ASP.NET MVC 3 (Visual Studio 2010)** row, click **Add**.</span></span>
+6. <span data-ttu-id="96cd2-166">在**ASP.NET MVC 3 (Visual Studio 2010)** 行中，单击**添加**。</span><span class="sxs-lookup"><span data-stu-id="96cd2-166">In the **ASP.NET MVC 3 (Visual Studio 2010)** row, click **Add**.</span></span>
 7. <span data-ttu-id="96cd2-167">在导航窗格中，单击**服务器**。</span><span class="sxs-lookup"><span data-stu-id="96cd2-167">In the navigation pane, click **Server**.</span></span>
 8. <span data-ttu-id="96cd2-168">在 **IIS 7 建议配置** 行中，单击 **添加** 。</span><span class="sxs-lookup"><span data-stu-id="96cd2-168">In the **IIS 7 Recommended Configuration** row, click **Add**.</span></span>
 9. <span data-ttu-id="96cd2-169">在**Web 部署工具 2.1**行中，单击**添加**。</span><span class="sxs-lookup"><span data-stu-id="96cd2-169">In the **Web Deployment Tool 2.1** row, click **Add**.</span></span>
@@ -109,11 +110,11 @@ ms.lasthandoff: 04/06/2018
 
 1. <span data-ttu-id="96cd2-178">单击**启动**，然后键入**命令提示符**。</span><span class="sxs-lookup"><span data-stu-id="96cd2-178">Click **Start**, and then type **Command Prompt**.</span></span>
 2. <span data-ttu-id="96cd2-179">在搜索结果中，右键单击**命令提示符**，然后单击**以管理员身份运行**。</span><span class="sxs-lookup"><span data-stu-id="96cd2-179">In the search results, right-click **Command Prompt**, and then click **Run as administrator**.</span></span>
-3. <span data-ttu-id="96cd2-180">在命令提示符窗口中，导航到**%WINDIR%\Microsoft.NET\Framework\v4.0.30319**目录。</span><span class="sxs-lookup"><span data-stu-id="96cd2-180">In the Command Prompt window, navigate to the **%WINDIR%\Microsoft.NET\Framework\v4.0.30319** directory.</span></span>
+3. <span data-ttu-id="96cd2-180">在命令提示符窗口中，导航到 **%WINDIR%\Microsoft.NET\Framework\v4.0.30319**目录。</span><span class="sxs-lookup"><span data-stu-id="96cd2-180">In the Command Prompt window, navigate to the **%WINDIR%\Microsoft.NET\Framework\v4.0.30319** directory.</span></span>
 4. <span data-ttu-id="96cd2-181">键入以下命令，然后按 Enter:</span><span class="sxs-lookup"><span data-stu-id="96cd2-181">Type this command, and then press Enter:</span></span>
 
     [!code-console[Main](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/samples/sample1.cmd)]
-5. <span data-ttu-id="96cd2-182">如果你计划到托管 64 位 web 应用程序的任何时刻，你应该向 IIS 注册 ASP.NET 的 64 位版本。</span><span class="sxs-lookup"><span data-stu-id="96cd2-182">If you plan to host 64-bit web applications at any point, you should also register the 64-bit version of ASP.NET with IIS.</span></span> <span data-ttu-id="96cd2-183">为此，请在命令提示符窗口中，导航到**%WINDIR%\Microsoft.NET\Framework64\v4.0.30319**目录。</span><span class="sxs-lookup"><span data-stu-id="96cd2-183">To do this, in the Command Prompt window, navigate to the **%WINDIR%\Microsoft.NET\Framework64\v4.0.30319** directory.</span></span>
+5. <span data-ttu-id="96cd2-182">如果你计划到托管 64 位 web 应用程序的任何时刻，你应该向 IIS 注册 ASP.NET 的 64 位版本。</span><span class="sxs-lookup"><span data-stu-id="96cd2-182">If you plan to host 64-bit web applications at any point, you should also register the 64-bit version of ASP.NET with IIS.</span></span> <span data-ttu-id="96cd2-183">为此，请在命令提示符窗口中，导航到 **%WINDIR%\Microsoft.NET\Framework64\v4.0.30319**目录。</span><span class="sxs-lookup"><span data-stu-id="96cd2-183">To do this, in the Command Prompt window, navigate to the **%WINDIR%\Microsoft.NET\Framework64\v4.0.30319** directory.</span></span>
 6. <span data-ttu-id="96cd2-184">键入以下命令，然后按 Enter:</span><span class="sxs-lookup"><span data-stu-id="96cd2-184">Type this command, and then press Enter:</span></span>
 
     [!code-console[Main](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/samples/sample2.cmd)]
@@ -164,7 +165,7 @@ ms.lasthandoff: 04/06/2018
 13. <span data-ttu-id="96cd2-215">在**站点绑定**对话框中，单击**关闭**。</span><span class="sxs-lookup"><span data-stu-id="96cd2-215">In the **Site Bindings** dialog box, click **Close**.</span></span>
 14. <span data-ttu-id="96cd2-216">在**连接**窗格中，单击**应用程序池**。</span><span class="sxs-lookup"><span data-stu-id="96cd2-216">In the **Connections** pane, click **Application Pools**.</span></span>
 15. <span data-ttu-id="96cd2-217">在**应用程序池**窗格中，右键单击应用程序池的名称，然后单击**基本设置**。</span><span class="sxs-lookup"><span data-stu-id="96cd2-217">In the **Application Pools** pane, right-click the name of your application pool, and then click **Basic Settings**.</span></span> <span data-ttu-id="96cd2-218">默认情况下，应用程序池的名称将匹配你的网站的名称 (例如， **DemoSite**)。</span><span class="sxs-lookup"><span data-stu-id="96cd2-218">By default, the name of your application pool will match the name of your website (for example, **DemoSite**).</span></span>
-16. <span data-ttu-id="96cd2-219">在**.NET Framework 版本**列表中，选择**.NET Framework v4.0.30319**，然后单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="96cd2-219">In the **.NET Framework version** list, select **.NET Framework v4.0.30319**, and then click **OK**.</span></span>
+16. <span data-ttu-id="96cd2-219">在 **.NET Framework 版本**列表中，选择 **.NET Framework v4.0.30319**，然后单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="96cd2-219">In the **.NET Framework version** list, select **.NET Framework v4.0.30319**, and then click **OK**.</span></span>
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image7.png)
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876132"
 ---
 <a name="two-factor-authentication-using-sms-and-email-with-aspnet-identity"></a><span data-ttu-id="bfd06-104">具有 ASP.NET 标识使用 SMS 和电子邮件的双因素身份验证</span><span class="sxs-lookup"><span data-stu-id="bfd06-104">Two-factor authentication using SMS and email with ASP.NET Identity</span></span>
 ====================

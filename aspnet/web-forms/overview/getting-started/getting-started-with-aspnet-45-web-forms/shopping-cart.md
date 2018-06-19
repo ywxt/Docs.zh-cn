@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890715"
 ---
 <a name="shopping-cart"></a><span data-ttu-id="a87d5-103">购物车</span><span class="sxs-lookup"><span data-stu-id="a87d5-103">Shopping Cart</span></span>
 ====================
@@ -156,7 +157,7 @@ ms.lasthandoff: 04/06/2018
 1. <span data-ttu-id="a87d5-227">在**解决方案资源管理器**，右键单击**WingtipToys**，单击**添加** - &gt; **新项**。</span><span class="sxs-lookup"><span data-stu-id="a87d5-227">In **Solution Explorer**, right-click **WingtipToys**, click **Add** -&gt; **New Item**.</span></span>  
    <span data-ttu-id="a87d5-228">随即出现“添加新项”对话框。</span><span class="sxs-lookup"><span data-stu-id="a87d5-228">The **Add New Item** dialog box is displayed.</span></span>
 2. <span data-ttu-id="a87d5-229">添加新页 （Web 窗体） 通过选择包含母版页**使用母版页的 Web 窗体**。</span><span class="sxs-lookup"><span data-stu-id="a87d5-229">Add a new page (Web Form) that includes a master page by selecting **Web Form using Master Page**.</span></span> <span data-ttu-id="a87d5-230">将新该页命名为*ShoppingCart.aspx*。</span><span class="sxs-lookup"><span data-stu-id="a87d5-230">Name the new page *ShoppingCart.aspx*.</span></span>
-3. <span data-ttu-id="a87d5-231">选择**Site.Master**要附加到新创建的主控页*.aspx*页。</span><span class="sxs-lookup"><span data-stu-id="a87d5-231">Select **Site.Master** to attach the master page to the newly created *.aspx* page.</span></span>
+3. <span data-ttu-id="a87d5-231">选择**Site.Master**要附加到新创建的主控页 *.aspx*页。</span><span class="sxs-lookup"><span data-stu-id="a87d5-231">Select **Site.Master** to attach the master page to the newly created *.aspx* page.</span></span>
 4. <span data-ttu-id="a87d5-232">在*ShoppingCart.aspx*页上，将现有的标记替换为以下标记：</span><span class="sxs-lookup"><span data-stu-id="a87d5-232">In the *ShoppingCart.aspx* page, replace the existing markup with the following markup:</span></span>   
 
     [!code-aspx[Main](shopping-cart/samples/sample5.aspx)]

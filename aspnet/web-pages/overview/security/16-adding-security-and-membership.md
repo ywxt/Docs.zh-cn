@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898854"
 ---
 <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a><span data-ttu-id="9fd8a-104">将安全和成员身份添加到 ASP.NET 网站页 (Razor)</span><span class="sxs-lookup"><span data-stu-id="9fd8a-104">Adding Security and Membership to an ASP.NET Web Pages (Razor) Site</span></span>
 ====================
@@ -158,7 +159,7 @@ ms.lasthandoff: 04/06/2018
 
     <span data-ttu-id="9fd8a-222">此代码还设置 *\_SiteLayout.cshtml*作为其布局页的页。</span><span class="sxs-lookup"><span data-stu-id="9fd8a-222">The code also sets *\_SiteLayout.cshtml* page as its layout page.</span></span> <span data-ttu-id="9fd8a-223">(有关详细信息布局页，请参阅[在 ASP.NET 网页站点中创建一致的布局](https://go.microsoft.com/fwlink/?LinkId=202891)。)</span><span class="sxs-lookup"><span data-stu-id="9fd8a-223">(For more about layout pages, see [Creating a Consistent Layout in ASP.NET Web Pages Sites](https://go.microsoft.com/fwlink/?LinkId=202891).)</span></span>
 5. <span data-ttu-id="9fd8a-224">运行该站点。</span><span class="sxs-lookup"><span data-stu-id="9fd8a-224">Run the site.</span></span> <span data-ttu-id="9fd8a-225">如果你仍登录，请单击**注销**页顶部的按钮。</span><span class="sxs-lookup"><span data-stu-id="9fd8a-225">If you're still logged in, click the **Logout** button at the top of the page.</span></span>
-6. <span data-ttu-id="9fd8a-226">在浏览器中，请求页*/Members/MembersInformation*。</span><span class="sxs-lookup"><span data-stu-id="9fd8a-226">In the browser, request the page */Members/MembersInformation*.</span></span> <span data-ttu-id="9fd8a-227">例如，URL 可能如下所示：</span><span class="sxs-lookup"><span data-stu-id="9fd8a-227">For example, the URL might look like this:</span></span>
+6. <span data-ttu-id="9fd8a-226">在浏览器中，请求页 */Members/MembersInformation*。</span><span class="sxs-lookup"><span data-stu-id="9fd8a-226">In the browser, request the page */Members/MembersInformation*.</span></span> <span data-ttu-id="9fd8a-227">例如，URL 可能如下所示：</span><span class="sxs-lookup"><span data-stu-id="9fd8a-227">For example, the URL might look like this:</span></span>
 
     `http://localhost:38366/Members/MembersInformation`
 

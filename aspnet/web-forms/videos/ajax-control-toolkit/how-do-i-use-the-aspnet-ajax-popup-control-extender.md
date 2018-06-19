@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885050"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-popup-control-extender"></a><span data-ttu-id="73ce8-105">[如何:]使用 ASP.NET AJAX 弹出窗口控件扩展程序？</span><span class="sxs-lookup"><span data-stu-id="73ce8-105">[How Do I:] Use the ASP.NET AJAX Popup Control Extender?</span></span>
 ====================

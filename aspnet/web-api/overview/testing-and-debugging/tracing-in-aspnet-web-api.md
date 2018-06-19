@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
-title: "在 ASP.NET Web API 2 中进行跟踪 |Microsoft 文档"
+title: 在 ASP.NET Web API 2 中进行跟踪 |Microsoft 文档
 author: MikeWasson
-description: "演示如何在 ASP.NET Web API 中启用跟踪。"
+description: 演示如何在 ASP.NET Web API 中启用跟踪。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28044203"
 ---
 <a name="tracing-in-aspnet-web-api-2"></a><span data-ttu-id="a32a2-103">在 ASP.NET Web API 2 中进行跟踪</span><span class="sxs-lookup"><span data-stu-id="a32a2-103">Tracing in ASP.NET Web API 2</span></span>
 ====================

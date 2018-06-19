@@ -14,6 +14,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33840952"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a><span data-ttu-id="2bce5-103">在 ASP.NET Core 中使用多个环境</span><span class="sxs-lookup"><span data-stu-id="2bce5-103">Use multiple environments in ASP.NET Core</span></span>
 

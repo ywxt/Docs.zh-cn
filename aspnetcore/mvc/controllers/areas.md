@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30072716"
 ---
 # <a name="areas-in-aspnet-core"></a><span data-ttu-id="efc2e-103">ASP.NET Core 中的区域</span><span class="sxs-lookup"><span data-stu-id="efc2e-103">Areas in ASP.NET Core</span></span>
 

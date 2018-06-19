@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891495"
 ---
 <a name="control-id-naming-in-content-pages-vb"></a><span data-ttu-id="b1f05-103">在内容页 (VB) 中命名的控件 ID</span><span class="sxs-lookup"><span data-stu-id="b1f05-103">Control ID Naming in Content Pages (VB)</span></span>
 ====================

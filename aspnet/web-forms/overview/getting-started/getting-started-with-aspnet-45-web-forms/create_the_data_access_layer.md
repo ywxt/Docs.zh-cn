@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881459"
 ---
 <a name="create-the-data-access-layer"></a><span data-ttu-id="9c31e-103">创建数据访问层</span><span class="sxs-lookup"><span data-stu-id="9c31e-103">Create the Data Access Layer</span></span>
 ====================
@@ -69,7 +70,7 @@ ms.lasthandoff: 04/06/2018
     ![创建数据访问层-新项菜单](create_the_data_access_layer/_static/image1.png)
 
    <span data-ttu-id="9c31e-155">随即出现“添加新项”对话框。</span><span class="sxs-lookup"><span data-stu-id="9c31e-155">The **Add New Item** dialog box is displayed.</span></span>
-2. <span data-ttu-id="9c31e-156">下**Visual C#**从**已安装**左侧窗格中，选择**代码**。</span><span class="sxs-lookup"><span data-stu-id="9c31e-156">Under **Visual C#** from the **Installed** pane on the left, select **Code**.</span></span> 
+2. <span data-ttu-id="9c31e-156">下**Visual C#** 从**已安装**左侧窗格中，选择**代码**。</span><span class="sxs-lookup"><span data-stu-id="9c31e-156">Under **Visual C#** from the **Installed** pane on the left, select **Code**.</span></span> 
 
     ![创建数据访问层-新项菜单](create_the_data_access_layer/_static/image2.png)
 3. <span data-ttu-id="9c31e-158">选择**类**从中间窗格中并将此新类命名*Product.cs*。</span><span class="sxs-lookup"><span data-stu-id="9c31e-158">Select **Class** from the middle pane and name this new class *Product.cs*.</span></span>

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896767"
 ---
 <a name="installing-a-helper-in-an-aspnet-web-pages-razor-site"></a><span data-ttu-id="7bd83-104">在一个 ASP.NET Web 页 (Razor) 站点中安装程序的帮助程序</span><span class="sxs-lookup"><span data-stu-id="7bd83-104">Installing a Helper in an ASP.NET Web Pages (Razor) Site</span></span>
 ====================

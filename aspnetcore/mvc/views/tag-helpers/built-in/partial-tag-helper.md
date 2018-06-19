@@ -16,6 +16,7 @@ ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33962589"
 ---
 # <a name="partial-tag-helper-in-aspnet-core"></a><span data-ttu-id="a0b41-103">ASP.NET Core 中的部分标记帮助程序</span><span class="sxs-lookup"><span data-stu-id="a0b41-103">Partial Tag Helper in ASP.NET Core</span></span>
 

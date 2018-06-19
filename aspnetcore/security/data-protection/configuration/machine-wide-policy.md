@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30076957"
 ---
 # <a name="data-protection-machine-wide-policy-support-in-aspnet-core"></a><span data-ttu-id="d3f18-103">在 ASP.NET 核心中支持的数据保护计算机范围的策略</span><span class="sxs-lookup"><span data-stu-id="d3f18-103">Data Protection machine-wide policy support in ASP.NET Core</span></span>
 

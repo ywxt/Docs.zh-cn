@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876756"
 ---
 <a name="updating-the-tableadapter-to-use-joins-c"></a><span data-ttu-id="a0df0-104">使用更新 TableAdapter 联接 (C#)</span><span class="sxs-lookup"><span data-stu-id="a0df0-104">Updating the TableAdapter to Use JOINs (C#)</span></span>
 ====================

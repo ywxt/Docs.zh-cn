@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891394"
 ---
 <a name="unlocking-and-approving-user-accounts-c"></a><span data-ttu-id="b12c7-104">解锁和批准用户帐户 (C#)</span><span class="sxs-lookup"><span data-stu-id="b12c7-104">Unlocking and Approving User Accounts (C#)</span></span>
 ====================

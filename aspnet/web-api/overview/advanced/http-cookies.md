@@ -17,6 +17,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30071624"
 ---
 <a name="http-cookies-in-aspnet-web-api"></a><span data-ttu-id="174db-102">在 ASP.NET Web API 的 HTTP Cookie</span><span class="sxs-lookup"><span data-stu-id="174db-102">HTTP Cookies in ASP.NET Web API</span></span>
 ====================

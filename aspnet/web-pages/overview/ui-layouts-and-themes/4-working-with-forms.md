@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "28046425"
 ---
 <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a><span data-ttu-id="314f8-104">使用 ASP.NET Web 页 (Razor) 站点中的 HTML 窗体</span><span class="sxs-lookup"><span data-stu-id="314f8-104">Working with HTML Forms in ASP.NET Web Pages (Razor) Sites</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30078122"
 ---
 <a name="jquery-mobile-10-rc1-on-the-microsoft-ajax-cdn"></a><span data-ttu-id="45adc-102">Microsoft Ajax CDN 上的 jQuery Mobile 1.0 RC1</span><span class="sxs-lookup"><span data-stu-id="45adc-102">jQuery Mobile 1.0 RC1 on the Microsoft Ajax CDN</span></span>
 ====================

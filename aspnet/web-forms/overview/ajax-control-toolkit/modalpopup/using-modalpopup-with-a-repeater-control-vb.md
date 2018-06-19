@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870916"
 ---
 <a name="using-modalpopup-with-a-repeater-control-vb"></a><span data-ttu-id="e4373-104">转发器控件 (VB) 中使用 ModalPopup</span><span class="sxs-lookup"><span data-stu-id="e4373-104">Using ModalPopup with a Repeater Control (VB)</span></span>
 ====================

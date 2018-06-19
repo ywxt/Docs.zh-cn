@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/data/index
-title: "使用数据 |Microsoft 文档"
+title: 使用数据 |Microsoft 文档
 author: rick-anderson
-description: "如何使用数据库和 Web 页和如何显示和更新数据中的文件。"
+description: 如何使用数据库和 Web 页和如何显示和更新数据中的文件。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages/overview/data
 msc.type: chapter
 ms.openlocfilehash: 99893092b5f6a4cc7112795b3ff1541a653682ea
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528536"
 ---
 <a name="working-with-data"></a><span data-ttu-id="4386a-103">使用数据</span><span class="sxs-lookup"><span data-stu-id="4386a-103">Working with Data</span></span>
 ====================

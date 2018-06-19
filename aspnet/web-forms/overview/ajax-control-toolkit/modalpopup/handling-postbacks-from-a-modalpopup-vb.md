@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874205"
 ---
 <a name="handling-postbacks-from-a-modalpopup-vb"></a><span data-ttu-id="19527-104">处理回发从 ModalPopup (VB)</span><span class="sxs-lookup"><span data-stu-id="19527-104">Handling Postbacks from a ModalPopup (VB)</span></span>
 ====================

@@ -16,6 +16,7 @@ ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 02/11/2018
+ms.locfileid: "29143184"
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a><span data-ttu-id="4b3e0-104">将 ASP.NET MVC 应用程序迁移到 Windows 容器</span><span class="sxs-lookup"><span data-stu-id="4b3e0-104">Migrating ASP.NET MVC Applications to Windows Containers</span></span>
 

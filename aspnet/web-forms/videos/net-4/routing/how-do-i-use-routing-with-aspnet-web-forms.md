@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896236"
 ---
 <a name="how-do-i-use-routing-with-aspnet-web-forms"></a><span data-ttu-id="bb4c5-105">我如何： 使用 ASP.NET Web 窗体路由使用？</span><span class="sxs-lookup"><span data-stu-id="bb4c5-105">How Do I: Use Routing with ASP.NET Web Forms?</span></span>
 ====================

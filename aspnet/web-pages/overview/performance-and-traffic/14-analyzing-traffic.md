@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/performance-and-traffic/14-analyzing-traffic
-title: "跟踪 ASP.NET 网页 (Razor) 站点访问者信息 （分析） |Microsoft 文档"
+title: 跟踪 ASP.NET 网页 (Razor) 站点访问者信息 （分析） |Microsoft 文档
 author: tfitzmac
-description: "你已收到将你的网站后，你可能想要分析你的网站流量。"
+description: 你已收到将你的网站后，你可能想要分析你的网站流量。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/17/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528756"
 ---
 <a name="tracking-visitor-information-analytics-for-an-aspnet-web-pages-razor-site"></a><span data-ttu-id="5338e-103">跟踪一个 ASP.NET Web 页 (Razor) 站点的访问者信息 （分析）</span><span class="sxs-lookup"><span data-stu-id="5338e-103">Tracking Visitor Information (Analytics) for an ASP.NET Web Pages (Razor) Site</span></span>
 ====================

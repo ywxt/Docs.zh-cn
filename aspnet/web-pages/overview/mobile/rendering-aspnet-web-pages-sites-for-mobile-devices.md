@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897314"
 ---
 <a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a><span data-ttu-id="a7039-104">移动设备的的呈现 ASP.NET Web 页 (Razor) 站点</span><span class="sxs-lookup"><span data-stu-id="a7039-104">Rendering ASP.NET Web Pages (Razor) Sites for Mobile Devices</span></span>
 ====================
@@ -51,7 +52,7 @@ ms.lasthandoff: 04/06/2018
 
     [!code-html[Main](rendering-aspnet-web-pages-sites-for-mobile-devices/samples/sample2.html)]
 3. <span data-ttu-id="a7039-123">运行桌面浏览器并浏览到*Page1.cshtml*。</span><span class="sxs-lookup"><span data-stu-id="a7039-123">Run a desktop browser and browse to *Page1.cshtml*.</span></span> <span data-ttu-id="a7039-124">![mobilesites-1](rendering-aspnet-web-pages-sites-for-mobile-devices/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="a7039-124">![mobilesites-1](rendering-aspnet-web-pages-sites-for-mobile-devices/_static/image1.png)</span></span>
-4. <span data-ttu-id="a7039-125">运行移动浏览器 （或移动设备仿真程序） 并浏览到*Page1.cshtml*。</span><span class="sxs-lookup"><span data-stu-id="a7039-125">Run a mobile browser (or a mobile device emulator) and browse to *Page1.cshtml*.</span></span> <span data-ttu-id="a7039-126">(请注意，不包括*.mobile。*</span><span class="sxs-lookup"><span data-stu-id="a7039-126">(Notice that you do not include *.mobile.*</span></span> <span data-ttu-id="a7039-127">作为 URL 的一部分。）即使该请求是*Page1.cshtml*，ASP.NET 呈现*Page1.Mobile.cshtml*。</span><span class="sxs-lookup"><span data-stu-id="a7039-127">as part of the URL.) Even though the request is to *Page1.cshtml*, ASP.NET renders *Page1.Mobile.cshtml*.</span></span>
+4. <span data-ttu-id="a7039-125">运行移动浏览器 （或移动设备仿真程序） 并浏览到*Page1.cshtml*。</span><span class="sxs-lookup"><span data-stu-id="a7039-125">Run a mobile browser (or a mobile device emulator) and browse to *Page1.cshtml*.</span></span> <span data-ttu-id="a7039-126">(请注意，不包括 *.mobile。*</span><span class="sxs-lookup"><span data-stu-id="a7039-126">(Notice that you do not include *.mobile.*</span></span> <span data-ttu-id="a7039-127">作为 URL 的一部分。）即使该请求是*Page1.cshtml*，ASP.NET 呈现*Page1.Mobile.cshtml*。</span><span class="sxs-lookup"><span data-stu-id="a7039-127">as part of the URL.) Even though the request is to *Page1.cshtml*, ASP.NET renders *Page1.Mobile.cshtml*.</span></span>
 
     ![mobilesites-2](rendering-aspnet-web-pages-sites-for-mobile-devices/_static/image2.png)
 

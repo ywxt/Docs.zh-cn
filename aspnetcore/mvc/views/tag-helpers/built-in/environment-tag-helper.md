@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 中的环境标记帮助程序"
+title: ASP.NET Core 中的环境标记帮助程序
 author: pkellner
-description: "定义的 ASP.NET Core 环境标记帮助程序（包括所有属性）"
+description: 定义的 ASP.NET Core 环境标记帮助程序（包括所有属性）
 manager: wpickett
 ms.author: riande
 ms.date: 07/14/2017
@@ -14,6 +14,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28901179"
 ---
 # <a name="environment-tag-helper-in-aspnet-core"></a><span data-ttu-id="e9b21-103">ASP.NET Core 中的环境标记帮助程序</span><span class="sxs-lookup"><span data-stu-id="e9b21-103">Environment Tag Helper in ASP.NET Core</span></span>
 

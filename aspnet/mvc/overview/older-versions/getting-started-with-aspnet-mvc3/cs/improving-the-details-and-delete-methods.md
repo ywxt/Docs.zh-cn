@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871579"
 ---
 <a name="improving-the-details-and-delete-methods-c"></a><span data-ttu-id="ae22a-103">改进的详细信息和删除方法 (C#)</span><span class="sxs-lookup"><span data-stu-id="ae22a-103">Improving the Details and Delete Methods (C#)</span></span>
 ====================

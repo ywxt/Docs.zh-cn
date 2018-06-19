@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898916"
 ---
 <a name="introducing-aspnet-web-pages---html-form-basics"></a><span data-ttu-id="f1bb0-104">引入 ASP.NET Web 页的 HTML 窗体基础知识</span><span class="sxs-lookup"><span data-stu-id="f1bb0-104">Introducing ASP.NET Web Pages - HTML Form Basics</span></span>
 ====================

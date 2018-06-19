@@ -14,6 +14,7 @@ ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/03/2018
+ms.locfileid: "30305768"
 ---
 # <a name="advanced-topics-for-aspnet-core-mvc"></a><span data-ttu-id="33186-103">适用于 ASP.NET Core MVC 的高级主题</span><span class="sxs-lookup"><span data-stu-id="33186-103">Advanced topics for ASP.NET Core MVC</span></span>
 

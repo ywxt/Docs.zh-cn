@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-send-templated-emails-for-health-monitoring-events-in-aspnet
-title: "[如何:]将模板化的电子邮件发送运行状况监视在 ASP.NET 中的事件 |Microsoft 文档"
+title: '[如何:]将模板化的电子邮件发送运行状况监视在 ASP.NET 中的事件 |Microsoft 文档'
 author: rick-anderson
-description: "在本视频中 Chris Pels 演示如何使用 TemplatedEmailWebEventProvider 发送电子邮件运行状况监视事件发生时利用 t 的模板..."
+description: 在本视频中 Chris Pels 演示如何使用 TemplatedEmailWebEventProvider 发送电子邮件运行状况监视事件发生时利用 t 的模板...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/18/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521786"
 ---
 <a name="how-do-i-send-templated-emails-for-health-monitoring-events-in-aspnet"></a><span data-ttu-id="f3089-103">[如何:]将模板化的电子邮件发送运行状况监视在 ASP.NET 中的事件</span><span class="sxs-lookup"><span data-stu-id="f3089-103">[How Do I:] Send Templated Emails for Health Monitoring Events in ASP.NET</span></span>
 ====================

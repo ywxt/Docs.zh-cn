@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876444"
 ---
 <a name="debugging-stored-procedures-vb"></a><span data-ttu-id="b0afd-103">调试存储的过程 (VB)</span><span class="sxs-lookup"><span data-stu-id="b0afd-103">Debugging Stored Procedures (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33966554"
 ---
 <a name="adding-validation"></a><span data-ttu-id="b7832-102">添加验证</span><span class="sxs-lookup"><span data-stu-id="b7832-102">Adding Validation</span></span>
 ====================

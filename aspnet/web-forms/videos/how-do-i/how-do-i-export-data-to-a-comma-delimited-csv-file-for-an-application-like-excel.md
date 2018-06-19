@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-export-data-to-a-comma-delimited-csv-file-for-an-application-like-excel
-title: "[如何:]为 Excel 等应用程序将数据导出到逗号分隔 (CSV) 文件 |Microsoft 文档"
+title: '[如何:]为 Excel 等应用程序将数据导出到逗号分隔 (CSV) 文件 |Microsoft 文档'
 author: rick-anderson
-description: "在本视频中 Chris Pels 演示如何从数据库或其他源中获取数据并将其导出到可在应用程序限制的逗号分隔文件..."
+description: 在本视频中 Chris Pels 演示如何从数据库或其他源中获取数据并将其导出到可在应用程序限制的逗号分隔文件...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/22/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525636"
 ---
 <a name="how-do-i-export-data-to-a-comma-delimited-csv-file-for-an-application-like-excel"></a><span data-ttu-id="10780-103">[如何:]将数据导出到逗号分隔 (CSV) 文件，以应用程序 （如 Excel)</span><span class="sxs-lookup"><span data-stu-id="10780-103">[How Do I:] Export Data to a Comma Delimited (CSV) File for an Application Like Excel</span></span>
 ====================

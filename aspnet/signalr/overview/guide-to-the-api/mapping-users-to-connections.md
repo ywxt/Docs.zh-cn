@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/guide-to-the-api/mapping-users-to-connections
-title: "将 SignalR 用户映射至连接 |Microsoft 文档"
+title: 将 SignalR 用户映射至连接 |Microsoft 文档
 author: tfitzmac
-description: "本主题说明如何保留有关用户和他们的连接信息。 Patrick Fletcher 协助编写本主题。 本主题中使用的软件版本..."
+description: 本主题说明如何保留有关用户和他们的连接信息。 Patrick Fletcher 协助编写本主题。 本主题中使用的软件版本...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/30/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036409"
 ---
 <a name="mapping-signalr-users-to-connections"></a><span data-ttu-id="e0075-105">将 SignalR 用户映射至连接</span><span class="sxs-lookup"><span data-stu-id="e0075-105">Mapping SignalR Users to Connections</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879421"
 ---
 <a name="use-viewdata-and-implement-viewmodel-classes"></a><span data-ttu-id="43311-103">使用 ViewData 和实现 ViewModel 类</span><span class="sxs-lookup"><span data-stu-id="43311-103">Use ViewData and Implement ViewModel Classes</span></span>
 ====================
@@ -61,7 +62,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="43311-130">上面的 Html.DropDownList() 帮助程序方法采用两个参数。</span><span class="sxs-lookup"><span data-stu-id="43311-130">The Html.DropDownList() helper method above takes two parameters.</span></span> <span data-ttu-id="43311-131">第一个是要输出的 HTML 窗体元素的名称。</span><span class="sxs-lookup"><span data-stu-id="43311-131">The first is the name of the HTML form element to output.</span></span> <span data-ttu-id="43311-132">第二个是我们通过 ViewData 字典传递"此时"模型。</span><span class="sxs-lookup"><span data-stu-id="43311-132">The second is the "SelectList" model we passed via the ViewData dictionary.</span></span> <span data-ttu-id="43311-133">我们将使用 C#"as"关键字来强制转换为此时字典中的类型。</span><span class="sxs-lookup"><span data-stu-id="43311-133">We are using the C# "as" keyword to cast the type within the dictionary as a SelectList.</span></span>
 
-<span data-ttu-id="43311-134">现在当我们运行我们的应用程序和访问时和*/Dinners/Edit/1* URL 我们浏览器中我们将看到我们编辑 UI 更新以显示国家/地区，而不是文本框中的说明：</span><span class="sxs-lookup"><span data-stu-id="43311-134">And now when we run our application and access the */Dinners/Edit/1* URL within our browser we'll see that our edit UI has been updated to display a dropdownlist of countries instead of a textbox:</span></span>
+<span data-ttu-id="43311-134">现在当我们运行我们的应用程序和访问时和 */Dinners/Edit/1* URL 我们浏览器中我们将看到我们编辑 UI 更新以显示国家/地区，而不是文本框中的说明：</span><span class="sxs-lookup"><span data-stu-id="43311-134">And now when we run our application and access the */Dinners/Edit/1* URL within our browser we'll see that our edit UI has been updated to display a dropdownlist of countries instead of a textbox:</span></span>
 
 ![](use-viewdata-and-implement-viewmodel-classes/_static/image1.png)
 

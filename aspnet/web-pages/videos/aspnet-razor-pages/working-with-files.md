@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30895098"
 ---
 <a name="working-with-files"></a><span data-ttu-id="cb2e9-103">使用文件</span><span class="sxs-lookup"><span data-stu-id="cb2e9-103">Working with Files</span></span>
 ====================

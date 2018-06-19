@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877198"
 ---
 <a name="working-with-computed-columns-vb"></a><span data-ttu-id="c747c-103">使用计算列 (VB)</span><span class="sxs-lookup"><span data-stu-id="c747c-103">Working with Computed Columns (VB)</span></span>
 ====================

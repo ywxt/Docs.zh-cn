@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30874683"
 ---
 <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a><span data-ttu-id="12855-104">创建 MVC 3 具有 Razor 和非介入式 JavaScript 应用程序</span><span class="sxs-lookup"><span data-stu-id="12855-104">Creating a MVC 3 Application with Razor and Unobtrusive JavaScript</span></span>
 ====================

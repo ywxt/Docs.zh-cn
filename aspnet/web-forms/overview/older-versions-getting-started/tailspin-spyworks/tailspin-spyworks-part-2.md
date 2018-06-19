@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890484"
 ---
 <a name="part-2-data-access-layer"></a><span data-ttu-id="6c24f-104">第 2 部分： 数据访问层</span><span class="sxs-lookup"><span data-stu-id="6c24f-104">Part 2: Data Access Layer</span></span>
 ====================

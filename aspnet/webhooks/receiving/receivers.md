@@ -15,6 +15,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896291"
 ---
 # <a name="aspnet-webhooks-receivers"></a><span data-ttu-id="951d6-103">ASP.NET Webhook 接收方</span><span class="sxs-lookup"><span data-stu-id="951d6-103">ASP.NET WebHooks receivers</span></span>
 
@@ -38,7 +39,7 @@ https://<host>/api/webhooks/incoming/<receiver>/{id}
 
 <span data-ttu-id="951d6-117"><em> <receiver> </em>组件是接收方的名称，例如<em>github</em>或<em>slack</em>。</span><span class="sxs-lookup"><span data-stu-id="951d6-117">The <em><receiver></em> component is the name of the receiver, for example <em>github</em> or <em>slack</em>.</span></span>
 
-<span data-ttu-id="951d6-118">*{Id}*是用于标识特定的 WebHook 接收方配置的可选标识符。</span><span class="sxs-lookup"><span data-stu-id="951d6-118">The *{id}* is an optional identifier which can be used to identify a particular WebHook receiver configuration.</span></span> <span data-ttu-id="951d6-119">这可以用于 N 的 Webhook 注册特定的接收方。</span><span class="sxs-lookup"><span data-stu-id="951d6-119">This can be used to register N WebHooks with a particular receiver.</span></span> <span data-ttu-id="951d6-120">例如，以下三个 Uri 可以用于为三个独立的 Webhook 注册：</span><span class="sxs-lookup"><span data-stu-id="951d6-120">For example, the following three URIs can be used to register for three independent WebHooks:</span></span>
+<span data-ttu-id="951d6-118">*{Id}* 是用于标识特定的 WebHook 接收方配置的可选标识符。</span><span class="sxs-lookup"><span data-stu-id="951d6-118">The *{id}* is an optional identifier which can be used to identify a particular WebHook receiver configuration.</span></span> <span data-ttu-id="951d6-119">这可以用于 N 的 Webhook 注册特定的接收方。</span><span class="sxs-lookup"><span data-stu-id="951d6-119">This can be used to register N WebHooks with a particular receiver.</span></span> <span data-ttu-id="951d6-120">例如，以下三个 Uri 可以用于为三个独立的 Webhook 注册：</span><span class="sxs-lookup"><span data-stu-id="951d6-120">For example, the following three URIs can be used to register for three independent WebHooks:</span></span>
 
 ```
 https://<host>/api/webhooks/incoming/github
@@ -66,7 +67,7 @@ https://<host>/api/webhooks/incoming/github/54321
 MS_WebHookReceiverSecret_<receiver>
 ```
 
-<span data-ttu-id="951d6-132">值是匹配的值的以逗号分隔列表*{id}*值的 Webhook 已注册，例如：</span><span class="sxs-lookup"><span data-stu-id="951d6-132">The value is a comma-separated list of values matching the *{id}* values for which WebHooks have been registered, for example:</span></span>
+<span data-ttu-id="951d6-132">值是匹配的值的以逗号分隔列表 *{id}* 值的 Webhook 已注册，例如：</span><span class="sxs-lookup"><span data-stu-id="951d6-132">The value is a comma-separated list of values matching the *{id}* values for which WebHooks have been registered, for example:</span></span>
 
 ```
 MS_WebHookReceiverSecret_GitHub = <secret1>, 12345=<secret2>, 54321=<secret3>

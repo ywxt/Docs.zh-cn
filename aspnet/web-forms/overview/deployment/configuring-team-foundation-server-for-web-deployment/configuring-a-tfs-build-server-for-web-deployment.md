@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30892512"
 ---
 <a name="configuring-a-tfs-build-server-for-web-deployment"></a><span data-ttu-id="3b02e-103">配置用于 Web 部署的 TFS 生成服务器</span><span class="sxs-lookup"><span data-stu-id="3b02e-103">Configuring a TFS Build Server for Web Deployment</span></span>
 ====================
@@ -97,7 +98,7 @@ ms.lasthandoff: 04/10/2018
     > <span data-ttu-id="3b02e-170">你可能已安装.NET Framework 4.0 通过 Windows 更新。</span><span class="sxs-lookup"><span data-stu-id="3b02e-170">You may have already installed the .NET Framework 4.0 through Windows Update.</span></span> <span data-ttu-id="3b02e-171">如果已安装的产品或组件，则 Web 平台安装程序将指示这一点通过将**添加**按钮，其文本**已安装**。</span><span class="sxs-lookup"><span data-stu-id="3b02e-171">If a product or component is already installed, the Web Platform Installer will indicate this by replacing the **Add** button with the text **Installed**.</span></span>
 
     ![](configuring-a-tfs-build-server-for-web-deployment/_static/image2.png)
-7. <span data-ttu-id="3b02e-172">在**ASP.NET MVC 3 (Visual Studio 2010)**行中，单击**添加**。</span><span class="sxs-lookup"><span data-stu-id="3b02e-172">In the **ASP.NET MVC 3 (Visual Studio 2010)** row, click **Add**.</span></span>
+7. <span data-ttu-id="3b02e-172">在**ASP.NET MVC 3 (Visual Studio 2010)** 行中，单击**添加**。</span><span class="sxs-lookup"><span data-stu-id="3b02e-172">In the **ASP.NET MVC 3 (Visual Studio 2010)** row, click **Add**.</span></span>
 8. <span data-ttu-id="3b02e-173">在导航窗格中，单击**服务器**。</span><span class="sxs-lookup"><span data-stu-id="3b02e-173">In the navigation pane, click **Server**.</span></span>
 9. <span data-ttu-id="3b02e-174">在**Web 部署工具 2.1**行中，单击**添加**。</span><span class="sxs-lookup"><span data-stu-id="3b02e-174">In the **Web Deployment Tool 2.1** row, click **Add**.</span></span>
 10. <span data-ttu-id="3b02e-175">单击“安装” 。</span><span class="sxs-lookup"><span data-stu-id="3b02e-175">Click **Install**.</span></span> <span data-ttu-id="3b02e-176">Web 平台安装程序将显示你的产品列表&#x2014;以及任何关联的依赖关系&#x2014;安装，并将提示你接受许可条款。</span><span class="sxs-lookup"><span data-stu-id="3b02e-176">The Web Platform Installer will show you a list of products&#x2014;together with any associated dependencies&#x2014;to be installed and will prompt you to accept the license terms.</span></span>

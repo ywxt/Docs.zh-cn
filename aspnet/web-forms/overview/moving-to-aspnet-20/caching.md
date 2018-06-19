@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891875"
 ---
 <a name="caching"></a><span data-ttu-id="eb48a-104">缓存</span><span class="sxs-lookup"><span data-stu-id="eb48a-104">Caching</span></span>
 ====================
@@ -158,7 +159,7 @@ ms.lasthandoff: 04/10/2018
 
 <span data-ttu-id="eb48a-214">在此情况下，如果在指定的查询**SelectCommand**返回不同的结果比最初，将缓存的结果会失效。</span><span class="sxs-lookup"><span data-stu-id="eb48a-214">In this case, if the query specified in the **SelectCommand** returns a different result than it did originally, the results that are cached are invalidated.</span></span>
 
-<span data-ttu-id="eb48a-215">你还可以指定所有数据源通过设置启用了 SQL 缓存依赖项**SqlDependency**属性**@ OutputCache**指令至**CommandNotification**.</span><span class="sxs-lookup"><span data-stu-id="eb48a-215">You can also specify that all of your data sources be enabled for SQL cache dependencies by setting the **SqlDependency** attribute of the **@ OutputCache** directive to **CommandNotification**.</span></span> <span data-ttu-id="eb48a-216">下面的示例阐释了这一点。</span><span class="sxs-lookup"><span data-stu-id="eb48a-216">The example below illustrates this.</span></span>
+<span data-ttu-id="eb48a-215">你还可以指定所有数据源通过设置启用了 SQL 缓存依赖项**SqlDependency**属性 **@ OutputCache**指令至**CommandNotification**.</span><span class="sxs-lookup"><span data-stu-id="eb48a-215">You can also specify that all of your data sources be enabled for SQL cache dependencies by setting the **SqlDependency** attribute of the **@ OutputCache** directive to **CommandNotification**.</span></span> <span data-ttu-id="eb48a-216">下面的示例阐释了这一点。</span><span class="sxs-lookup"><span data-stu-id="eb48a-216">The example below illustrates this.</span></span>
 
 [!code-aspx[Main](caching/samples/sample13.aspx)]
 

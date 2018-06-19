@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892616"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-database-update"></a><span data-ttu-id="6a4f7-103">使用 Visual Studio 的 ASP.NET Web 部署： 部署某一数据库更新</span><span class="sxs-lookup"><span data-stu-id="6a4f7-103">ASP.NET Web Deployment using Visual Studio: Deploying a Database Update</span></span>
 ====================
@@ -99,15 +100,15 @@ ms.lasthandoff: 04/06/2018
 ### <a name="add-a-column-to-a-table-in-the-membership-database"></a><span data-ttu-id="6a4f7-152">向成员资格数据库中的表中添加列</span><span class="sxs-lookup"><span data-stu-id="6a4f7-152">Add a column to a table in the membership database</span></span>
 
 1. <span data-ttu-id="6a4f7-153">在 Visual Studio 中，打开**SQL Server 对象资源管理器**。</span><span class="sxs-lookup"><span data-stu-id="6a4f7-153">In Visual Studio, open **SQL Server Object Explorer**.</span></span>
-2. <span data-ttu-id="6a4f7-154">展开**(localdb) \v11.0**，展开**数据库**，展开**aspnet ContosoUniversity** (不**aspnet ContosoUniversity Prod**)然后展开**表**。</span><span class="sxs-lookup"><span data-stu-id="6a4f7-154">Expand **(localdb)\v11.0**, expand **Databases**, expand **aspnet-ContosoUniversity** (not **aspnet-ContosoUniversity-Prod**) and then expand **Tables**.</span></span>
+2. <span data-ttu-id="6a4f7-154">展开 **(localdb) \v11.0**，展开**数据库**，展开**aspnet ContosoUniversity** (不**aspnet ContosoUniversity Prod**)然后展开**表**。</span><span class="sxs-lookup"><span data-stu-id="6a4f7-154">Expand **(localdb)\v11.0**, expand **Databases**, expand **aspnet-ContosoUniversity** (not **aspnet-ContosoUniversity-Prod**) and then expand **Tables**.</span></span>
 
-    <span data-ttu-id="6a4f7-155">如果看不到**(localdb) \v11.0**下**SQL Server**节点，右键单击**SQL Server**节点，然后单击**添加 SQL Server**。</span><span class="sxs-lookup"><span data-stu-id="6a4f7-155">If you don't see **(localdb)\v11.0** under the **SQL Server** node, right-click the **SQL Server** node and click **Add SQL Server**.</span></span> <span data-ttu-id="6a4f7-156">在**连接到服务器**对话框中，输入*(localdb) \v11.0*作为**服务器名称**，然后单击**连接**。</span><span class="sxs-lookup"><span data-stu-id="6a4f7-156">In the **Connect to Server** dialog box enter *(localdb)\v11.0* as the **Server name**, and then click **Connect**.</span></span>
+    <span data-ttu-id="6a4f7-155">如果看不到 **(localdb) \v11.0**下**SQL Server**节点，右键单击**SQL Server**节点，然后单击**添加 SQL Server**。</span><span class="sxs-lookup"><span data-stu-id="6a4f7-155">If you don't see **(localdb)\v11.0** under the **SQL Server** node, right-click the **SQL Server** node and click **Add SQL Server**.</span></span> <span data-ttu-id="6a4f7-156">在**连接到服务器**对话框中，输入 *(localdb) \v11.0*作为**服务器名称**，然后单击**连接**。</span><span class="sxs-lookup"><span data-stu-id="6a4f7-156">In the **Connect to Server** dialog box enter *(localdb)\v11.0* as the **Server name**, and then click **Connect**.</span></span>
 
     <span data-ttu-id="6a4f7-157">如果看不到**aspnet ContosoUniversity**、 运行该项目并使用登录*管理员*凭据 (密码*devpwd*)，然后刷新**SQL Server 对象资源管理器**窗口。</span><span class="sxs-lookup"><span data-stu-id="6a4f7-157">If you don't see **aspnet-ContosoUniversity**, run the project and log in using the *admin* credentials (password is *devpwd*), and then refresh the **SQL Server Object Explorer** window.</span></span>
 3. <span data-ttu-id="6a4f7-158">右键单击**用户**表，并依次**视图设计器**。</span><span class="sxs-lookup"><span data-stu-id="6a4f7-158">Right-click the **Users** table, and then click **View Designer**.</span></span>
 
     ![SSOX 视图设计器](deploying-a-database-update/_static/image3.png)
-4. <span data-ttu-id="6a4f7-160">在设计器中，添加*注释*列并使其*nvarchar （128)*和可以为 null，然后单击**更新**。</span><span class="sxs-lookup"><span data-stu-id="6a4f7-160">In the designer, add a *Comments* column and make it *nvarchar(128)* and nullable, and then click **Update**.</span></span>
+4. <span data-ttu-id="6a4f7-160">在设计器中，添加*注释*列并使其*nvarchar （128)* 和可以为 null，然后单击**更新**。</span><span class="sxs-lookup"><span data-stu-id="6a4f7-160">In the designer, add a *Comments* column and make it *nvarchar(128)* and nullable, and then click **Update**.</span></span>
 
     ![添加注释列](deploying-a-database-update/_static/image4.png)
 5. <span data-ttu-id="6a4f7-162">在**预览数据库更新**框中，单击**更新数据库**。</span><span class="sxs-lookup"><span data-stu-id="6a4f7-162">In the **Preview Database Updates** box, click **Update Database**.</span></span>

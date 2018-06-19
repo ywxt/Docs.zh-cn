@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886389"
 ---
 <a name="how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel"></a><span data-ttu-id="9041c-104">[如何:]实现将永久通信模式与 UpdatePanel？</span><span class="sxs-lookup"><span data-stu-id="9041c-104">[How Do I:] Implement the Persistent Communications Pattern with the UpdatePanel?</span></span>
 ====================

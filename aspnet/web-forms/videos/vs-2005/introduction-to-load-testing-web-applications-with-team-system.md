@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894215"
 ---
 <a name="introduction-to-load-testing-web-applications-with-team-system"></a><span data-ttu-id="67de3-103">若要加载测试的 Web 应用程序使用 Team System 的简介</span><span class="sxs-lookup"><span data-stu-id="67de3-103">Introduction to Load Testing Web Applications with Team System</span></span>
 ====================

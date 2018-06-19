@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/request-validation
-title: "请求验证-阻止脚本攻击 |Microsoft 文档"
+title: 请求验证-阻止脚本攻击 |Microsoft 文档
 author: rick-anderson
-description: "本白皮书介绍了请求验证功能的位置，默认情况下，应用程序允许处理未编码的 HTML 内容 submitt 的 ASP.NET..."
+description: 本白皮书介绍了请求验证功能的位置，默认情况下，应用程序允许处理未编码的 HTML 内容 submitt 的 ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: fa429113-5f8f-4ef4-97c5-5c04900a19fa
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/request-validation
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28883550"
 ---
 <a name="request-validation---preventing-script-attacks"></a><span data-ttu-id="6ded2-103">请求验证-阻止脚本攻击</span><span class="sxs-lookup"><span data-stu-id="6ded2-103">Request Validation - Preventing Script Attacks</span></span>
 ====================

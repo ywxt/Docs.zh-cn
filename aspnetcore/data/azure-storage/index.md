@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30071280"
 ---
 # <a name="azure-storage-in-aspnet-core"></a><span data-ttu-id="172f0-102">ASP.NET Core 中的 Azure 存储</span><span class="sxs-lookup"><span data-stu-id="172f0-102">Azure Storage in ASP.NET Core</span></span>
 

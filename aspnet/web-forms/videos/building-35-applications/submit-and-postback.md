@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/submit-and-postback
-title: "提交并回发 |Microsoft 文档"
+title: 提交并回发 |Microsoft 文档
 author: JoeStagner
-description: "此视频将介绍都发生了什么&quot;事实上&quot;当 ASP.NET 应用程序的浏览器和服务器进行交互。"
+description: 此视频将介绍都发生了什么&quot;事实上&quot;当 ASP.NET 应用程序的浏览器和服务器进行交互。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/20/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28882349"
 ---
 <a name="submit-and-postback"></a><span data-ttu-id="9198e-103">提交并回发</span><span class="sxs-lookup"><span data-stu-id="9198e-103">Submit and Postback</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890549"
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-2"></a><span data-ttu-id="38fd6-104">如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 2 部分</span><span class="sxs-lookup"><span data-stu-id="38fd6-104">Getting Started with Entity Framework 4.0 Database First and ASP.NET 4 Web Forms - Part 2</span></span>
 ====================

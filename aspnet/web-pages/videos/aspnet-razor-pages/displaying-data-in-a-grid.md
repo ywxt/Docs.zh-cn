@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895989"
 ---
 <a name="displaying-data-in-a-grid"></a><span data-ttu-id="13df6-103">在网格中显示数据</span><span class="sxs-lookup"><span data-stu-id="13df6-103">Displaying Data in a Grid</span></span>
 ====================

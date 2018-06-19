@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880032"
 ---
 <a name="deploying-a-specific-build"></a><span data-ttu-id="4b5fb-103">将特定的生成部署</span><span class="sxs-lookup"><span data-stu-id="4b5fb-103">Deploying a Specific Build</span></span>
 ====================

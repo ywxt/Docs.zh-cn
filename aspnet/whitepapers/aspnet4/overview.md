@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30899035"
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a><span data-ttu-id="f8a2c-103">ASP.NET 4 和 Visual Studio 2010 Web 开发概述</span><span class="sxs-lookup"><span data-stu-id="f8a2c-103">ASP.NET 4 and Visual Studio 2010 Web Development Overview</span></span>
 ====================
@@ -199,7 +200,7 @@ ms.lasthandoff: 04/10/2018
 
 [!code-xml[Main](overview/samples/sample10.xml)]
 
-<span data-ttu-id="f8a2c-233">若要允许长于或短的路径 （不包括协议、 服务器名称和查询字符串的 URL 的部分），修改*[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)*属性。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-233">To allow longer or shorter paths (the portion of the URL that does not include protocol, server name, and query string), modify the *[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)* attribute.</span></span> <span data-ttu-id="f8a2c-234">若要允许长于或短的查询字符串，可修改的值*[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)*属性。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-234">To allow longer or shorter query strings, modify the value of the *[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)* attribute.</span></span>
+<span data-ttu-id="f8a2c-233">若要允许长于或短的路径 （不包括协议、 服务器名称和查询字符串的 URL 的部分），修改*[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)* 属性。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-233">To allow longer or shorter paths (the portion of the URL that does not include protocol, server name, and query string), modify the *[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)* attribute.</span></span> <span data-ttu-id="f8a2c-234">若要允许长于或短的查询字符串，可修改的值*[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)* 属性。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-234">To allow longer or shorter query strings, modify the value of the *[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)* attribute.</span></span>
 
 <span data-ttu-id="f8a2c-235">ASP.NET 4 还可配置的 URL 字符检查使用的字符。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-235">ASP.NET 4 also enables you to configure the characters that are used by the URL character check.</span></span> <span data-ttu-id="f8a2c-236">当 ASP.NET 的 url 的路径部分中找到无效的字符时，它将拒绝该请求，并发出 HTTP 400 错误。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-236">When ASP.NET finds an invalid character in the path portion of a URL, it rejects the request and issues an HTTP 400 error.</span></span> <span data-ttu-id="f8a2c-237">在以前版本的 ASP.NET，URL 字符检查是限于一组固定的字符。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-237">In previous versions of ASP.NET, the URL character checks were limited to a fixed set of characters.</span></span> <span data-ttu-id="f8a2c-238">在 ASP.NET 4 中，你可以自定义的一套使用新的有效字符*requestPathInvalidChars*属性*httpRuntime*配置元素，如下面的示例中所示：</span><span class="sxs-lookup"><span data-stu-id="f8a2c-238">In ASP.NET 4, you can customize the set of valid characters using the new *requestPathInvalidChars* attribute of the *httpRuntime* configuration element, as shown in the following example:</span></span>
 
@@ -388,7 +389,7 @@ ms.lasthandoff: 04/10/2018
 
 <span data-ttu-id="f8a2c-358">你可以在运行时，它可让你从数据库或其他源获取的内容和它可让你设置标记动态来描述什么设置这些属性的特定页适用。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-358">You can set these properties at run time, which lets you get the content from a database or other source, and which lets you set the tags dynamically to describe what a particular page is for.</span></span>
 
-<span data-ttu-id="f8a2c-359">你还可以设置*关键字*和*说明*中的属性*@ Page*指令顶部的 Web 窗体页标记中，如以下示例所示：</span><span class="sxs-lookup"><span data-stu-id="f8a2c-359">You can also set the *Keywords* and *Description* properties in the *@ Page* directive at the top of the Web Forms page markup, as in the following example:</span></span>
+<span data-ttu-id="f8a2c-359">你还可以设置*关键字*和*说明*中的属性 *@ Page*指令顶部的 Web 窗体页标记中，如以下示例所示：</span><span class="sxs-lookup"><span data-stu-id="f8a2c-359">You can also set the *Keywords* and *Description* properties in the *@ Page* directive at the top of the Web Forms page markup, as in the following example:</span></span>
 
 [!code-aspx[Main](overview/samples/sample24.aspx)]
 
@@ -426,7 +427,7 @@ ms.lasthandoff: 04/10/2018
 
 <span data-ttu-id="f8a2c-386">Label1 控件 (其*ViewStateMode*值设置为*禁用*) 具有不会保留在代码中设置为它的值。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-386">The label1 control (whose *ViewStateMode* value is set to *Disabled*) has not preserved the value that it was set to in code.</span></span> <span data-ttu-id="f8a2c-387">但是，label2 控制 (其*ViewStateMode*值设置为*已启用*) 均保留其状态。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-387">However, the label2 control (whose *ViewStateMode* value is set to *Enabled*) has preserved its state.</span></span>
 
-<span data-ttu-id="f8a2c-388">你还可以设置*ViewStateMode*中*@ Page*指令，如以下示例所示：</span><span class="sxs-lookup"><span data-stu-id="f8a2c-388">You can also set *ViewStateMode* in the *@ Page* directive, as in the following example:</span></span>
+<span data-ttu-id="f8a2c-388">你还可以设置*ViewStateMode*中 *@ Page*指令，如以下示例所示：</span><span class="sxs-lookup"><span data-stu-id="f8a2c-388">You can also set *ViewStateMode* in the *@ Page* directive, as in the following example:</span></span>
 
 [!code-aspx[Main](overview/samples/sample26.aspx)]
 
@@ -652,7 +653,7 @@ ms.lasthandoff: 04/10/2018
 
 <span data-ttu-id="f8a2c-554">默认值*ClientIDMode*页级别的值是*AutoID*，也是默认值*ClientIDMode*控件级别的值是*继承*.</span><span class="sxs-lookup"><span data-stu-id="f8a2c-554">The default *ClientIDMode* value at the page level is *AutoID*, and the default *ClientIDMode* value at the control level is *Inherit*.</span></span> <span data-ttu-id="f8a2c-555">因此，如果不执行在代码中任何位置设置此属性，则所有控件将都默认为*AutoID*算法。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-555">As a result, if you do not set this property anywhere in your code, all controls will default to the *AutoID* algorithm.</span></span>
 
-<span data-ttu-id="f8a2c-556">在中设置的页级别值*@ Page*指令，如下面的示例中所示：</span><span class="sxs-lookup"><span data-stu-id="f8a2c-556">You set the page-level value in the *@ Page* directive, as shown in the following example:</span></span>
+<span data-ttu-id="f8a2c-556">在中设置的页级别值 *@ Page*指令，如下面的示例中所示：</span><span class="sxs-lookup"><span data-stu-id="f8a2c-556">You set the page-level value in the *@ Page* directive, as shown in the following example:</span></span>
 
 [!code-aspx[Main](overview/samples/sample47.aspx)]
 
@@ -1222,7 +1223,7 @@ ms.lasthandoff: 04/10/2018
 
 ### <a name="new-field-templates-for-urls-and-email-addresses"></a><span data-ttu-id="f8a2c-897">新的字段模板的 Url 和电子邮件地址</span><span class="sxs-lookup"><span data-stu-id="f8a2c-897">New Field Templates for URLs and Email Addresses</span></span>
 
-<span data-ttu-id="f8a2c-898">ASP.NET 4 引入了两个新的内置字段模板，`EmailAddress.ascx`和`Url.ascx`。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-898">ASP.NET 4 introduces two new built-in field templates, `EmailAddress.ascx` and `Url.ascx`.</span></span> <span data-ttu-id="f8a2c-899">这些模板用于字段标记为*EmailAddress*或*Url*与*DataType*属性。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-899">These templates are used for fields that are marked as *EmailAddress* or *Url* with the *DataType* attribute.</span></span> <span data-ttu-id="f8a2c-900">有关*EmailAddress*对象，该字段显示为超链接，通过创建*mailto:*协议。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-900">For *EmailAddress* objects, the field is displayed as a hyperlink that is created by using the *mailto:* protocol.</span></span> <span data-ttu-id="f8a2c-901">当用户单击此链接时，打开用户的电子邮件客户端，并创建主干消息。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-901">When users click the link, it opens the user's email client and creates a skeleton message.</span></span> <span data-ttu-id="f8a2c-902">对象类型化为*Url*显示为普通的超链接。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-902">Objects typed as *Url* are displayed as ordinary hyperlinks.</span></span>
+<span data-ttu-id="f8a2c-898">ASP.NET 4 引入了两个新的内置字段模板，`EmailAddress.ascx`和`Url.ascx`。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-898">ASP.NET 4 introduces two new built-in field templates, `EmailAddress.ascx` and `Url.ascx`.</span></span> <span data-ttu-id="f8a2c-899">这些模板用于字段标记为*EmailAddress*或*Url*与*DataType*属性。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-899">These templates are used for fields that are marked as *EmailAddress* or *Url* with the *DataType* attribute.</span></span> <span data-ttu-id="f8a2c-900">有关*EmailAddress*对象，该字段显示为超链接，通过创建*mailto:* 协议。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-900">For *EmailAddress* objects, the field is displayed as a hyperlink that is created by using the *mailto:* protocol.</span></span> <span data-ttu-id="f8a2c-901">当用户单击此链接时，打开用户的电子邮件客户端，并创建主干消息。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-901">When users click the link, it opens the user's email client and creates a skeleton message.</span></span> <span data-ttu-id="f8a2c-902">对象类型化为*Url*显示为普通的超链接。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-902">Objects typed as *Url* are displayed as ordinary hyperlinks.</span></span>
 
 <span data-ttu-id="f8a2c-903">下面的示例演示如何将标记字段。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-903">The following example shows how fields would be marked.</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889964"
 ---
 <a name="sql-injection-defense"></a><span data-ttu-id="d0db1-104">SQL 注入防御</span><span class="sxs-lookup"><span data-stu-id="d0db1-104">SQL Injection Defense</span></span>
 ====================

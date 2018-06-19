@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891814"
 ---
 <a name="nested-master-pages-vb"></a><span data-ttu-id="f3026-103">嵌套的母版页 (VB)</span><span class="sxs-lookup"><span data-stu-id="f3026-103">Nested Master Pages (VB)</span></span>
 ====================

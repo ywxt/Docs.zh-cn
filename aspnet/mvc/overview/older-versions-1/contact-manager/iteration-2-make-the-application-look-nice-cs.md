@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871839"
 ---
 <a name="iteration-2--make-the-application-look-nice-c"></a><span data-ttu-id="b5411-103">迭代 #2 – 使应用程序，看上去很好的 (C#)</span><span class="sxs-lookup"><span data-stu-id="b5411-103">Iteration #2 – Make the application look nice (C#)</span></span>
 ====================
@@ -83,7 +84,7 @@ ms.lasthandoff: 04/06/2018
 3. <span data-ttu-id="b5411-158">将文件提取到名为年 10 月的文件夹。</span><span class="sxs-lookup"><span data-stu-id="b5411-158">Unzip the file to a folder named October.</span></span>
 4. <span data-ttu-id="b5411-159">从包含在年 10 月文件夹 DesignTemplate 文件夹中选择的所有文件，右键单击文件，然后选择菜单选项**复制**。</span><span class="sxs-lookup"><span data-stu-id="b5411-159">Select all of the files from the DesignTemplate folder contained in the October folder, right-click the files, and select the menu option **Copy**.</span></span>
 5. <span data-ttu-id="b5411-160">右键单击 Visual Studio 解决方案资源管理器窗口中的 ContactManager 项目节点并选择菜单选项**粘贴**（请参见图 4）。</span><span class="sxs-lookup"><span data-stu-id="b5411-160">Right-click the ContactManager project node in the Visual Studio Solution Explorer window and select the menu option **Paste** (see Figure 4).</span></span>
-6. <span data-ttu-id="b5411-161">选择 Visual Studio 菜单选项**编辑、 查找和替换，快速替换**和替换*[MyProjectName]*与*ContactManager* （请参见图 5）。</span><span class="sxs-lookup"><span data-stu-id="b5411-161">Select the Visual Studio menu option **Edit, Find and Replace, Quick Replace** and replace *[MyProjectName]* with *ContactManager* (see Figure 5).</span></span>
+6. <span data-ttu-id="b5411-161">选择 Visual Studio 菜单选项**编辑、 查找和替换，快速替换**和替换 *[MyProjectName]* 与*ContactManager* （请参见图 5）。</span><span class="sxs-lookup"><span data-stu-id="b5411-161">Select the Visual Studio menu option **Edit, Find and Replace, Quick Replace** and replace *[MyProjectName]* with *ContactManager* (see Figure 5).</span></span>
 
 
 <span data-ttu-id="b5411-162">[![新项目对话框](iteration-2-make-the-application-look-nice-cs/_static/image3.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image5.png)</span><span class="sxs-lookup"><span data-stu-id="b5411-162">[![The New Project dialog box](iteration-2-make-the-application-look-nice-cs/_static/image3.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image5.png)</span></span>

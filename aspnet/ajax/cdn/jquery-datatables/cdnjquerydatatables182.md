@@ -17,6 +17,7 @@ ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/21/2018
+ms.locfileid: "30078304"
 ---
 <a name="jquery-datatables-182"></a><span data-ttu-id="c8a8f-102">jQuery 数据表 1.8.2</span><span class="sxs-lookup"><span data-stu-id="c8a8f-102">jQuery DataTables 1.8.2</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/error-handling/exception-handling
-title: "ASP.NET Web API 中的异常处理 |Microsoft 文档"
+title: ASP.NET Web API 中的异常处理 |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/12/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506956"
 ---
 <a name="exception-handling-in-aspnet-web-api"></a><span data-ttu-id="54b62-102">ASP.NET Web API 中的异常处理</span><span class="sxs-lookup"><span data-stu-id="54b62-102">Exception Handling in ASP.NET Web API</span></span>
 ====================

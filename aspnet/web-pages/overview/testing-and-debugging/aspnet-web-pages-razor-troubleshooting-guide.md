@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898505"
 ---
 <a name="aspnet-web-pages-razor-troubleshooting-guide"></a><span data-ttu-id="d1803-104">ASP.NET 网页 (Razor) 故障排除指南</span><span class="sxs-lookup"><span data-stu-id="d1803-104">ASP.NET Web Pages (Razor) Troubleshooting Guide</span></span>
 ====================
@@ -46,7 +47,7 @@ ms.lasthandoff: 04/06/2018
 <a id="Issues_Running_.cshtml_Pages"></a>
 ## <a name="issues-with-running-pages"></a><span data-ttu-id="d1803-117">问题与运行页</span><span class="sxs-lookup"><span data-stu-id="d1803-117">Issues with Running Pages</span></span>
 
-<span data-ttu-id="d1803-118">各种问题可能会阻止*.cshtml*和*.vbhtml*页从正常运行。</span><span class="sxs-lookup"><span data-stu-id="d1803-118">A variety of issues can prevent *.cshtml* and *.vbhtml* pages from running properly.</span></span> <span data-ttu-id="d1803-119">本部分列出了常见的错误消息和可能的原因。</span><span class="sxs-lookup"><span data-stu-id="d1803-119">This section lists common error messages and likely causes.</span></span>
+<span data-ttu-id="d1803-118">各种问题可能会阻止 *.cshtml*和 *.vbhtml*页从正常运行。</span><span class="sxs-lookup"><span data-stu-id="d1803-118">A variety of issues can prevent *.cshtml* and *.vbhtml* pages from running properly.</span></span> <span data-ttu-id="d1803-119">本部分列出了常见的错误消息和可能的原因。</span><span class="sxs-lookup"><span data-stu-id="d1803-119">This section lists common error messages and likely causes.</span></span>
 
 ### <a name="http-error-403---forbidden-access-is-denied"></a><span data-ttu-id="d1803-120">HTTP 错误 403-禁止访问： 访问被拒绝</span><span class="sxs-lookup"><span data-stu-id="d1803-120">HTTP Error 403 - Forbidden: Access is denied</span></span>
 
@@ -54,9 +55,9 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="d1803-122">如果服务器未运行的.NET framework 的正确版本，可能出现此错误。</span><span class="sxs-lookup"><span data-stu-id="d1803-122">This error can occur if the server is not running the correct version of the .NET Framework.</span></span> <span data-ttu-id="d1803-123">请确保正在运行 server （本地或远程） 的计算机具有至少安装.NET Framework 4。</span><span class="sxs-lookup"><span data-stu-id="d1803-123">Make sure that the computer that's running the server (locally or remotely) has at least the .NET Framework 4 installed.</span></span> <span data-ttu-id="d1803-124">此外请确保应用程序本身配置为运行正确版本。</span><span class="sxs-lookup"><span data-stu-id="d1803-124">Also make sure that the application itself is configured to run the right version.</span></span>
 
-<span data-ttu-id="d1803-125">如果本地在 WebMatrix 中工作时看到此问题，请单击**站点**工作区中，然后在树视图中单击**设置**。</span><span class="sxs-lookup"><span data-stu-id="d1803-125">If you see this problem locally while working in WebMatrix, click the **Site** workspace, and then in the treeview click **Settings**.</span></span> <span data-ttu-id="d1803-126">在**选择.NET Framework 版本**列表中，选择**.NET 4 （集成）**。</span><span class="sxs-lookup"><span data-stu-id="d1803-126">In the **Select .NET Framework Version** list, select **.NET 4 (Integrated)**.</span></span> <span data-ttu-id="d1803-127">如果已设置此版本，请尝试以管理员身份运行 WebMatrix。</span><span class="sxs-lookup"><span data-stu-id="d1803-127">If this version is already set, try running WebMatrix as an administrator.</span></span>
+<span data-ttu-id="d1803-125">如果本地在 WebMatrix 中工作时看到此问题，请单击**站点**工作区中，然后在树视图中单击**设置**。</span><span class="sxs-lookup"><span data-stu-id="d1803-125">If you see this problem locally while working in WebMatrix, click the **Site** workspace, and then in the treeview click **Settings**.</span></span> <span data-ttu-id="d1803-126">在**选择.NET Framework 版本**列表中，选择 **.NET 4 （集成）**。</span><span class="sxs-lookup"><span data-stu-id="d1803-126">In the **Select .NET Framework Version** list, select **.NET 4 (Integrated)**.</span></span> <span data-ttu-id="d1803-127">如果已设置此版本，请尝试以管理员身份运行 WebMatrix。</span><span class="sxs-lookup"><span data-stu-id="d1803-127">If this version is already set, try running WebMatrix as an administrator.</span></span>
 
-<span data-ttu-id="d1803-128">请确保你网站的根目录具有至少一个*.cshtml*在其中的文件。</span><span class="sxs-lookup"><span data-stu-id="d1803-128">Make sure that the root of your website has at least one *.cshtml* file in it.</span></span>
+<span data-ttu-id="d1803-128">请确保你网站的根目录具有至少一个 *.cshtml*在其中的文件。</span><span class="sxs-lookup"><span data-stu-id="d1803-128">Make sure that the root of your website has at least one *.cshtml* file in it.</span></span>
 
 <span data-ttu-id="d1803-129">如果 web 服务器上的远程服务器时，你会看到此错误，请与服务器管理员联系。</span><span class="sxs-lookup"><span data-stu-id="d1803-129">If you see this error when the web server is on a remote server, contact the server administrator.</span></span> <span data-ttu-id="d1803-130">请确保服务器具有.NET Framework 4 或更高版本安装。</span><span class="sxs-lookup"><span data-stu-id="d1803-130">Make sure that the server has the .NET Framework 4 or later installed.</span></span> <span data-ttu-id="d1803-131">此外请确保应用程序在配置为使用该版本的.net Framework 的应用程序池中运行。</span><span class="sxs-lookup"><span data-stu-id="d1803-131">Also make sure that the application is running in an application pool that's configured to use that version of the.NET Framework.</span></span>
 
@@ -78,7 +79,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="d1803-143">*请求筛选模块被配置为拒绝文件扩展名*</span><span class="sxs-lookup"><span data-stu-id="d1803-143">*The request filtering module is configured to deny the file extension*</span></span>
 
-<span data-ttu-id="d1803-144">如果可能发生此错误*.cshtml*或*.vbhtml*扩展明确阻止在服务器上。</span><span class="sxs-lookup"><span data-stu-id="d1803-144">This error can occur if *.cshtml* or *.vbhtml* extensions have been explicitly blocked on the server.</span></span> <span data-ttu-id="d1803-145">此问题的症状它们不包括的扩展，但包含的 Url 时该 Url 工作*.cshtml*或*.vbhtml*不起作用。</span><span class="sxs-lookup"><span data-stu-id="d1803-145">A symptom of this problem is that URLs work when they do not include the extension, but URLs that include *.cshtml* or *.vbhtml* do not work.</span></span> <span data-ttu-id="d1803-146">可能的解决方案是重新启用的站点中的扩展*Web.config*文件。</span><span class="sxs-lookup"><span data-stu-id="d1803-146">A possible solution is to re-enable the extensions in the site's *Web.config* file.</span></span> <span data-ttu-id="d1803-147">下面的示例演示如何启用*.cshtml*扩展。</span><span class="sxs-lookup"><span data-stu-id="d1803-147">The following example shows how to enable the *.cshtml* extension.</span></span>
+<span data-ttu-id="d1803-144">如果可能发生此错误 *.cshtml*或 *.vbhtml*扩展明确阻止在服务器上。</span><span class="sxs-lookup"><span data-stu-id="d1803-144">This error can occur if *.cshtml* or *.vbhtml* extensions have been explicitly blocked on the server.</span></span> <span data-ttu-id="d1803-145">此问题的症状它们不包括的扩展，但包含的 Url 时该 Url 工作 *.cshtml*或 *.vbhtml*不起作用。</span><span class="sxs-lookup"><span data-stu-id="d1803-145">A symptom of this problem is that URLs work when they do not include the extension, but URLs that include *.cshtml* or *.vbhtml* do not work.</span></span> <span data-ttu-id="d1803-146">可能的解决方案是重新启用的站点中的扩展*Web.config*文件。</span><span class="sxs-lookup"><span data-stu-id="d1803-146">A possible solution is to re-enable the extensions in the site's *Web.config* file.</span></span> <span data-ttu-id="d1803-147">下面的示例演示如何启用 *.cshtml*扩展。</span><span class="sxs-lookup"><span data-stu-id="d1803-147">The following example shows how to enable the *.cshtml* extension.</span></span>
 
 [!code-xml[Main](aspnet-web-pages-razor-troubleshooting-guide/samples/sample1.xml?highlight=5-6)]
 

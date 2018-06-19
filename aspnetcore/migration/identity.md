@@ -14,6 +14,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/08/2018
+ms.locfileid: "33851438"
 ---
 # <a name="migrate-authentication-and-identity-to-aspnet-core"></a><span data-ttu-id="b6a72-103">将身份验证和标识迁移到 ASP.NET 核心</span><span class="sxs-lookup"><span data-stu-id="b6a72-103">Migrate Authentication and Identity to ASP.NET Core</span></span>
 

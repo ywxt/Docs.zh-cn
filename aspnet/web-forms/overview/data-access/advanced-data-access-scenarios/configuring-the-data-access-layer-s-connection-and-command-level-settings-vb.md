@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877172"
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-vb"></a><span data-ttu-id="28610-103">配置的数据访问层连接和命令级别设置 (VB)</span><span class="sxs-lookup"><span data-stu-id="28610-103">Configuring the Data Access Layer's Connection- and Command-Level Settings (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890224"
 ---
 <a name="deploying-web-applications-in-enterprise-scenarios-using-visual-studio-2010"></a><span data-ttu-id="df7ff-104">部署 Web 应用程序中使用的 Visual Studio 2010 的企业方案</span><span class="sxs-lookup"><span data-stu-id="df7ff-104">Deploying Web Applications in Enterprise Scenarios using Visual Studio 2010</span></span>
 ====================

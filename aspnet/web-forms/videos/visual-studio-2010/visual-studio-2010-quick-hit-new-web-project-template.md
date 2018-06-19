@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893763"
 ---
 <a name="visual-studio-2010-quick-hit---new-web-project-template"></a><span data-ttu-id="3ab8d-103">Visual Studio 2010"快速命中"的新的 Web 项目模板</span><span class="sxs-lookup"><span data-stu-id="3ab8d-103">Visual Studio 2010 "Quick Hit" - New Web Project Template</span></span>
 ====================

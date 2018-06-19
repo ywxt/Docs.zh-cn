@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878342"
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a><span data-ttu-id="0fead-103">在实验室上处理： 容易维护的 Azure 网站： 管理更改和缩放</span><span class="sxs-lookup"><span data-stu-id="0fead-103">Hands on Lab: Maintainable Azure Websites: Managing Change and Scale</span></span>
 ====================
@@ -170,12 +171,12 @@ ms.lasthandoff: 04/06/2018
     <span data-ttu-id="0fead-202">![在 SQL Server 对象资源管理器中打开](maintainable-azure-websites-managing-change-and-scale/_static/image4.png "在 SQL Server 对象资源管理器中打开")</span><span class="sxs-lookup"><span data-stu-id="0fead-202">![Open in SQL Server Object Explorer](maintainable-azure-websites-managing-change-and-scale/_static/image4.png "Open in SQL Server Object Explorer")</span></span>
 
     <span data-ttu-id="0fead-203">*在 SQL Server 对象资源管理器中打开*</span><span class="sxs-lookup"><span data-stu-id="0fead-203">*Open in SQL Server Object Explorer*</span></span>
-9. <span data-ttu-id="0fead-204">在**SQL Server 对象资源管理器**窗口中，右键单击连接到 LocalDB 实例**SQL Server**节点并选择**添加 SQL Server...**选项。</span><span class="sxs-lookup"><span data-stu-id="0fead-204">In the **SQL Server Object Explorer** window, connect to your LocalDB instance by right-clicking the **SQL Server** node and selecting **Add SQL Server...** option.</span></span>
+9. <span data-ttu-id="0fead-204">在**SQL Server 对象资源管理器**窗口中，右键单击连接到 LocalDB 实例**SQL Server**节点并选择**添加 SQL Server...** 选项。</span><span class="sxs-lookup"><span data-stu-id="0fead-204">In the **SQL Server Object Explorer** window, connect to your LocalDB instance by right-clicking the **SQL Server** node and selecting **Add SQL Server...** option.</span></span>
 
     <span data-ttu-id="0fead-205">![添加 SQL Server 实例](maintainable-azure-websites-managing-change-and-scale/_static/image5.png "添加 SQL Server 实例")</span><span class="sxs-lookup"><span data-stu-id="0fead-205">![Adding a SQL Server Instance](maintainable-azure-websites-managing-change-and-scale/_static/image5.png "Adding a SQL Server Instance")</span></span>
 
     <span data-ttu-id="0fead-206">*将 SQL Server 实例添加到 SQL Server 对象资源管理器*</span><span class="sxs-lookup"><span data-stu-id="0fead-206">*Adding a SQL Server instance to SQL Server Object Explorer*</span></span>
-10. <span data-ttu-id="0fead-207">设置**服务器名称**到*(localdb) \v11.0*并使**Windows 身份验证**作为身份验证模式。</span><span class="sxs-lookup"><span data-stu-id="0fead-207">Set the **server name** to *(localdb)\v11.0* and leave **Windows Authentication** as your authentication mode.</span></span> <span data-ttu-id="0fead-208">单击**连接**以继续。</span><span class="sxs-lookup"><span data-stu-id="0fead-208">Click **Connect** to continue.</span></span>
+10. <span data-ttu-id="0fead-207">设置**服务器名称**到 *(localdb) \v11.0*并使**Windows 身份验证**作为身份验证模式。</span><span class="sxs-lookup"><span data-stu-id="0fead-207">Set the **server name** to *(localdb)\v11.0* and leave **Windows Authentication** as your authentication mode.</span></span> <span data-ttu-id="0fead-208">单击**连接**以继续。</span><span class="sxs-lookup"><span data-stu-id="0fead-208">Click **Connect** to continue.</span></span>
 
     <span data-ttu-id="0fead-209">![连接到 LocalDB](maintainable-azure-websites-managing-change-and-scale/_static/image6.png "连接到 LocalDB")</span><span class="sxs-lookup"><span data-stu-id="0fead-209">![Connecting to LocalDB](maintainable-azure-websites-managing-change-and-scale/_static/image6.png "Connecting to LocalDB")</span></span>
 
@@ -274,7 +275,7 @@ ms.lasthandoff: 04/06/2018
     <span data-ttu-id="0fead-271">![创建新的 web 应用程序使用自定义创建](maintainable-azure-websites-managing-change-and-scale/_static/image15.png "创建使用自定义创建新的 web 应用程序")</span><span class="sxs-lookup"><span data-stu-id="0fead-271">![Creating a new web app using Custom Create](maintainable-azure-websites-managing-change-and-scale/_static/image15.png "Creating a new web app using Custom Create")</span></span>
 
     <span data-ttu-id="0fead-272">*创建使用自定义创建新的 web 应用程序*</span><span class="sxs-lookup"><span data-stu-id="0fead-272">*Creating a new web app using Custom Create*</span></span>
-4. <span data-ttu-id="0fead-273">在**新建网站-自定义创建**对话框框中，提供可用**URL** (例如*专家测验*) 中, 选择一个位置**区域**下拉列表，然后选择**创建新的 SQL 数据库**中**数据库**下拉列表。</span><span class="sxs-lookup"><span data-stu-id="0fead-273">In the **New Website - Custom Create** dialog box, provide an available **URL** (e.g. *geek-quiz*), select a location in the **Region** drop-down list, and select **Create a new SQL database** in the **Database** drop-down list.</span></span> <span data-ttu-id="0fead-274">最后，选择**--从源代码管理发布**复选框，然后单击**下一步**。</span><span class="sxs-lookup"><span data-stu-id="0fead-274">Finally, select the **Publish from source control** check box and click **Next**.</span></span>
+4. <span data-ttu-id="0fead-273">在**新建网站-自定义创建**对话框框中，提供可用**URL** (例如*专家测验*) 中, 选择一个位置**区域**下拉列表，然后选择**创建新的 SQL 数据库**中**数据库**下拉列表。</span><span class="sxs-lookup"><span data-stu-id="0fead-273">In the **New Website - Custom Create** dialog box, provide an available **URL** (e.g. *geek-quiz*), select a location in the **Region** drop-down list, and select **Create a new SQL database** in the **Database** drop-down list.</span></span> <span data-ttu-id="0fead-274">最后，选择 **--从源代码管理发布**复选框，然后单击**下一步**。</span><span class="sxs-lookup"><span data-stu-id="0fead-274">Finally, select the **Publish from source control** check box and click **Next**.</span></span>
 
     ![自定义新的 web 应用](maintainable-azure-websites-managing-change-and-scale/_static/image16.png)
 
@@ -359,7 +360,7 @@ ms.lasthandoff: 04/06/2018
     <span data-ttu-id="0fead-327">*允许的 IP 地址*</span><span class="sxs-lookup"><span data-stu-id="0fead-327">*Allowed IP addresses*</span></span>
 8. <span data-ttu-id="0fead-328">单击**保存**要完成该步骤的页的底部。</span><span class="sxs-lookup"><span data-stu-id="0fead-328">Click **Save** at the bottom of the page to complete the step.</span></span>
 9. <span data-ttu-id="0fead-329">切换回 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="0fead-329">Switch back to Visual Studio.</span></span>
-10. <span data-ttu-id="0fead-330">在**程序包管理器控制台**，执行以下命令将*[您的连接字符串]*占位符替换为从 Azure 复制的连接字符串</span><span class="sxs-lookup"><span data-stu-id="0fead-330">In the **Package Manager Console**, execute the following command replacing *[YOUR-CONNECTION-STRING]* placeholder with the connection string you copied from Azure</span></span>
+10. <span data-ttu-id="0fead-330">在**程序包管理器控制台**，执行以下命令将 *[您的连接字符串]* 占位符替换为从 Azure 复制的连接字符串</span><span class="sxs-lookup"><span data-stu-id="0fead-330">In the **Package Manager Console**, execute the following command replacing *[YOUR-CONNECTION-STRING]* placeholder with the connection string you copied from Azure</span></span>
 
     [!code-powershell[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample10.ps1)]
 
@@ -400,7 +401,7 @@ ms.lasthandoff: 04/06/2018
     <span data-ttu-id="0fead-352">![确认暂存发布](maintainable-azure-websites-managing-change-and-scale/_static/image35.png "单击是以启用暂存的发布")</span><span class="sxs-lookup"><span data-stu-id="0fead-352">![Confirming staged publishing](maintainable-azure-websites-managing-change-and-scale/_static/image35.png "Clicking Yes to enable staged publishing")</span></span>
 
     <span data-ttu-id="0fead-353">*确认过渡的发布*</span><span class="sxs-lookup"><span data-stu-id="0fead-353">*Confirming staged publishing*</span></span>
-6. <span data-ttu-id="0fead-354">在 web apps 列表中，展开您的 web 应用名称以显示过渡站点槽左侧的标记。</span><span class="sxs-lookup"><span data-stu-id="0fead-354">In the list of web apps, expand the mark to the left of your web app name to display the staging site slot.</span></span> <span data-ttu-id="0fead-355">它具有名称的 web 应用跟***（过渡）***。</span><span class="sxs-lookup"><span data-stu-id="0fead-355">It has the name of your web app followed by ***(staging)***.</span></span> <span data-ttu-id="0fead-356">单击要转到管理页的过渡站点。</span><span class="sxs-lookup"><span data-stu-id="0fead-356">Click the staging site to go to the management page.</span></span>
+6. <span data-ttu-id="0fead-354">在 web apps 列表中，展开您的 web 应用名称以显示过渡站点槽左侧的标记。</span><span class="sxs-lookup"><span data-stu-id="0fead-354">In the list of web apps, expand the mark to the left of your web app name to display the staging site slot.</span></span> <span data-ttu-id="0fead-355">它具有名称的 web 应用跟 ***（过渡）***。</span><span class="sxs-lookup"><span data-stu-id="0fead-355">It has the name of your web app followed by ***(staging)***.</span></span> <span data-ttu-id="0fead-356">单击要转到管理页的过渡站点。</span><span class="sxs-lookup"><span data-stu-id="0fead-356">Click the staging site to go to the management page.</span></span>
 
     <span data-ttu-id="0fead-357">![导航到过渡 web 应用](maintainable-azure-websites-managing-change-and-scale/_static/image36.png "导航到过渡 web 应用")</span><span class="sxs-lookup"><span data-stu-id="0fead-357">![Navigating to the staging web app](maintainable-azure-websites-managing-change-and-scale/_static/image36.png "Navigating to the staging web app")</span></span>
 
@@ -410,7 +411,7 @@ ms.lasthandoff: 04/06/2018
     ![复制 Git URL 值](maintainable-azure-websites-managing-change-and-scale/_static/image37.png)
 
     <span data-ttu-id="0fead-363">*复制 Git URL 值*</span><span class="sxs-lookup"><span data-stu-id="0fead-363">*Copying the Git URL value*</span></span>
-8. <span data-ttu-id="0fead-364">打开一个新**Git Bash**控制台，然后执行以下命令。</span><span class="sxs-lookup"><span data-stu-id="0fead-364">Open a new **Git Bash** console and execute the following commands.</span></span> <span data-ttu-id="0fead-365">更新*[您的应用程序的路径]*占位符替换为的路径**GeekQuiz**解决方案，位于**Source\Ex1 DeployingWebSiteToStaging\Begin**文件夹此实验室中。</span><span class="sxs-lookup"><span data-stu-id="0fead-365">Update the *[YOUR-APPLICATION-PATH]* placeholder with the path to the **GeekQuiz** solution, located in the **Source\Ex1-DeployingWebSiteToStaging\Begin** folder of this lab.</span></span>
+8. <span data-ttu-id="0fead-364">打开一个新**Git Bash**控制台，然后执行以下命令。</span><span class="sxs-lookup"><span data-stu-id="0fead-364">Open a new **Git Bash** console and execute the following commands.</span></span> <span data-ttu-id="0fead-365">更新 *[您的应用程序的路径]* 占位符替换为的路径**GeekQuiz**解决方案，位于**Source\Ex1 DeployingWebSiteToStaging\Begin**文件夹此实验室中。</span><span class="sxs-lookup"><span data-stu-id="0fead-365">Update the *[YOUR-APPLICATION-PATH]* placeholder with the path to the **GeekQuiz** solution, located in the **Source\Ex1-DeployingWebSiteToStaging\Begin** folder of this lab.</span></span>
 
     [!code-console[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample11.cmd)]
 
@@ -442,7 +443,7 @@ ms.lasthandoff: 04/06/2018
 14. <span data-ttu-id="0fead-388">如果已成功部署的应用，你将看到专家 Quiz 登录页。</span><span class="sxs-lookup"><span data-stu-id="0fead-388">If the application is successfully deployed, you will see the Geek Quiz login page.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="0fead-389">部署的应用程序的地址 URL 包含名称的 web 应用跟*-暂存*。</span><span class="sxs-lookup"><span data-stu-id="0fead-389">The address URL of the deployed application contains the name of your web app followed by *-staging*.</span></span>
+    > <span data-ttu-id="0fead-389">部署的应用程序的地址 URL 包含名称的 web 应用跟 *-暂存*。</span><span class="sxs-lookup"><span data-stu-id="0fead-389">The address URL of the deployed application contains the name of your web app followed by *-staging*.</span></span>
 
     ![在过渡环境中运行的应用程序](maintainable-azure-websites-managing-change-and-scale/_static/image42.png)
 
@@ -526,7 +527,7 @@ ms.lasthandoff: 04/06/2018
 <span data-ttu-id="0fead-445">你现在将推送到存储库，将触发新的部署到生产环境中前一项任务所做的更改。</span><span class="sxs-lookup"><span data-stu-id="0fead-445">You will now push the changes you made in the previous task to the repository, which will trigger a new deployment to the production environment.</span></span> <span data-ttu-id="0fead-446">然后，你将已进行故障诊断问题使用**F12 开发工具**提供由 Internet Explorer，然后执行回滚到以前的部署从 Azure 管理门户。</span><span class="sxs-lookup"><span data-stu-id="0fead-446">Then, you will troubleshot an issue using the **F12 development tools** provided by Internet Explorer, and then perform a rollback to the previous deployment from the Azure management portal.</span></span>
 
 1. <span data-ttu-id="0fead-447">打开一个新**Git Bash**控制台部署到 Azure App Service 更新的应用程序。</span><span class="sxs-lookup"><span data-stu-id="0fead-447">Open a new **Git Bash** console to deploy the updated application to Azure App Service.</span></span>
-2. <span data-ttu-id="0fead-448">执行以下命令以将更改推送到 Azure。</span><span class="sxs-lookup"><span data-stu-id="0fead-448">Execute the following commands to push the changes to Azure.</span></span> <span data-ttu-id="0fead-449">更新*[您的应用程序的路径]*占位符替换为的路径**GeekQuiz**解决方案。</span><span class="sxs-lookup"><span data-stu-id="0fead-449">Update the *[YOUR-APPLICATION-PATH]* placeholder with the path to the **GeekQuiz** solution.</span></span> <span data-ttu-id="0fead-450">系统将提示您输入部署密码。</span><span class="sxs-lookup"><span data-stu-id="0fead-450">You will be prompted for your deployment password.</span></span>
+2. <span data-ttu-id="0fead-448">执行以下命令以将更改推送到 Azure。</span><span class="sxs-lookup"><span data-stu-id="0fead-448">Execute the following commands to push the changes to Azure.</span></span> <span data-ttu-id="0fead-449">更新 *[您的应用程序的路径]* 占位符替换为的路径**GeekQuiz**解决方案。</span><span class="sxs-lookup"><span data-stu-id="0fead-449">Update the *[YOUR-APPLICATION-PATH]* placeholder with the path to the **GeekQuiz** solution.</span></span> <span data-ttu-id="0fead-450">系统将提示您输入部署密码。</span><span class="sxs-lookup"><span data-stu-id="0fead-450">You will be prompted for your deployment password.</span></span>
 
     [!code-console[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample15.cmd)]
 
@@ -687,7 +688,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="0fead-563">在此任务中，您将配置**GeekQuiz**解决方案来使用该映像上载到 Azure Blob 存储 （而不是位于在 web 应用中的映像） 通过添加在 ASP.NET URL 重写规则**web.config**文件。</span><span class="sxs-lookup"><span data-stu-id="0fead-563">In this task, you will configure the **GeekQuiz** solution to consume the image uploaded to Azure Blob Storage (instead of the image located in the web app) by adding an ASP.NET URL rewrite rule in the **web.config** file.</span></span>
 
-1. <span data-ttu-id="0fead-564">在 Visual Studio 中，打开**Web.config**文件**GeekQuiz**项目，然后找到**&lt;system.webServer&gt;**元素。</span><span class="sxs-lookup"><span data-stu-id="0fead-564">In Visual Studio, open the **Web.config** file inside the **GeekQuiz** project and locate the **&lt;system.webServer&gt;** element.</span></span>
+1. <span data-ttu-id="0fead-564">在 Visual Studio 中，打开**Web.config**文件**GeekQuiz**项目，然后找到**&lt;system.webServer&gt;** 元素。</span><span class="sxs-lookup"><span data-stu-id="0fead-564">In Visual Studio, open the **Web.config** file inside the **GeekQuiz** project and locate the **&lt;system.webServer&gt;** element.</span></span>
 2. <span data-ttu-id="0fead-565">添加以下代码以添加一个 URL 重写规则，更新将占位符替换为你的存储帐户名称。</span><span class="sxs-lookup"><span data-stu-id="0fead-565">Add the following code to add an URL rewrite rule, updating the placeholder with your storage account name.</span></span>
 
     <span data-ttu-id="0fead-566">(代码段- *WebSitesInProduction-Ex4-UrlRewriteRule*)</span><span class="sxs-lookup"><span data-stu-id="0fead-566">(Code Snippet - *WebSitesInProduction - Ex4 - UrlRewriteRule*)</span></span>
@@ -698,7 +699,7 @@ ms.lasthandoff: 04/06/2018
     > <span data-ttu-id="0fead-567">URL 重写是拦截传入 Web 请求，并将请求重定向到不同的资源的过程。</span><span class="sxs-lookup"><span data-stu-id="0fead-567">URL rewriting is the process of intercepting an incoming Web request and redirecting the request to a different resource.</span></span> <span data-ttu-id="0fead-568">URL 重写规则告知重写引擎请求时需要重定向，并在其中应它们重定向。</span><span class="sxs-lookup"><span data-stu-id="0fead-568">The URL rewriting rules tells the rewriting engine when a request needs to be redirected, and where should they be redirected.</span></span> <span data-ttu-id="0fead-569">重写规则两个字符串组成： 要在请求 URL 中查找的模式 （通常情况下，使用正则表达式），并找到要替换的模式，如果的字符串。</span><span class="sxs-lookup"><span data-stu-id="0fead-569">A rewriting rule is composed of two strings: the pattern to look for in the requested URL (usually, using regular expressions), and the string to replace the pattern with, if found.</span></span> <span data-ttu-id="0fead-570">有关详细信息，请参阅[URL 重写在 ASP.NET 中](https://msdn.microsoft.com/library/ms972974.aspx)。</span><span class="sxs-lookup"><span data-stu-id="0fead-570">For more information, see [URL Rewriting in ASP.NET](https://msdn.microsoft.com/library/ms972974.aspx).</span></span>
 3. <span data-ttu-id="0fead-571">按**CTRL + S**以保存所做的更改。</span><span class="sxs-lookup"><span data-stu-id="0fead-571">Press **CTRL + S** to save the changes.</span></span>
 4. <span data-ttu-id="0fead-572">打开一个新**Git Bash**控制台部署到 Azure App Service 更新的应用程序。</span><span class="sxs-lookup"><span data-stu-id="0fead-572">Open a new **Git Bash** console to deploy the updated application to Azure App Service.</span></span>
-5. <span data-ttu-id="0fead-573">执行以下命令以将更改推送到 Azure。</span><span class="sxs-lookup"><span data-stu-id="0fead-573">Execute the following commands to push the changes to Azure.</span></span> <span data-ttu-id="0fead-574">更新*[您的应用程序的路径]*占位符替换为的路径**GeekQuiz**解决方案。</span><span class="sxs-lookup"><span data-stu-id="0fead-574">Update the *[YOUR-APPLICATION-PATH]* placeholder with the path to the **GeekQuiz** solution.</span></span> <span data-ttu-id="0fead-575">系统将提示您输入部署密码。</span><span class="sxs-lookup"><span data-stu-id="0fead-575">You will be prompted for your deployment password.</span></span>
+5. <span data-ttu-id="0fead-573">执行以下命令以将更改推送到 Azure。</span><span class="sxs-lookup"><span data-stu-id="0fead-573">Execute the following commands to push the changes to Azure.</span></span> <span data-ttu-id="0fead-574">更新 *[您的应用程序的路径]* 占位符替换为的路径**GeekQuiz**解决方案。</span><span class="sxs-lookup"><span data-stu-id="0fead-574">Update the *[YOUR-APPLICATION-PATH]* placeholder with the path to the **GeekQuiz** solution.</span></span> <span data-ttu-id="0fead-575">系统将提示您输入部署密码。</span><span class="sxs-lookup"><span data-stu-id="0fead-575">You will be prompted for your deployment password.</span></span>
 
     [!code-console[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample18.cmd)]
 
@@ -722,7 +723,7 @@ ms.lasthandoff: 04/06/2018
 
     <span data-ttu-id="0fead-586">*启动网络录制*</span><span class="sxs-lookup"><span data-stu-id="0fead-586">*Starting network recording*</span></span>
 3. <span data-ttu-id="0fead-587">按**CTRL + F5**刷新网页。</span><span class="sxs-lookup"><span data-stu-id="0fead-587">Press **CTRL + F5** to refresh the web page.</span></span>
-4. <span data-ttu-id="0fead-588">一旦页面完成加载，你应看到的 HTTP 请求**/img/logo-big.png**带有 HTTP URL **301**结果 （重定向） 和另一请求`http://[YOUR-STORAGE-ACCOUNT].blob.core.windows.net/images/logo-big.png`URL 使用 HTTP **200**结果。</span><span class="sxs-lookup"><span data-stu-id="0fead-588">Once the page has finished loading, you should see an HTTP request for the **/img/logo-big.png** URL with an HTTP **301** result (redirect) and another request for `http://[YOUR-STORAGE-ACCOUNT].blob.core.windows.net/images/logo-big.png` URL with a HTTP **200** result.</span></span>
+4. <span data-ttu-id="0fead-588">一旦页面完成加载，你应看到的 HTTP 请求 **/img/logo-big.png**带有 HTTP URL **301**结果 （重定向） 和另一请求`http://[YOUR-STORAGE-ACCOUNT].blob.core.windows.net/images/logo-big.png`URL 使用 HTTP **200**结果。</span><span class="sxs-lookup"><span data-stu-id="0fead-588">Once the page has finished loading, you should see an HTTP request for the **/img/logo-big.png** URL with an HTTP **301** result (redirect) and another request for `http://[YOUR-STORAGE-ACCOUNT].blob.core.windows.net/images/logo-big.png` URL with a HTTP **200** result.</span></span>
 
     <span data-ttu-id="0fead-589">![验证 URL 重定向](maintainable-azure-websites-managing-change-and-scale/_static/image76.png "开发人员工具中显示重定向")</span><span class="sxs-lookup"><span data-stu-id="0fead-589">![Verifying the URL redirect](maintainable-azure-websites-managing-change-and-scale/_static/image76.png "Showing the redirect in Dev Tools")</span></span>
 
@@ -770,12 +771,12 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="0fead-619">现在，**自动缩放**已配置，你将创建**Web 性能测试和负载测试项目**在 Visual Studio 生成你的 web 应用一些 CPU 负载。</span><span class="sxs-lookup"><span data-stu-id="0fead-619">Now that **Autoscale** has been configured, you will create a **Web Performance and Load Test Project** in Visual Studio to generate some CPU load on your web app.</span></span>
 
-1. <span data-ttu-id="0fead-620">打开**Visual Studio Ultimate 2013**和选择**文件 |新 |项目...**启动一个新的解决方案。</span><span class="sxs-lookup"><span data-stu-id="0fead-620">Open **Visual Studio Ultimate 2013** and select **File | New | Project...** to start a new solution.</span></span>
+1. <span data-ttu-id="0fead-620">打开**Visual Studio Ultimate 2013**和选择**文件 |新 |项目...** 启动一个新的解决方案。</span><span class="sxs-lookup"><span data-stu-id="0fead-620">Open **Visual Studio Ultimate 2013** and select **File | New | Project...** to start a new solution.</span></span>
 
     <span data-ttu-id="0fead-621">![创建新的项目](maintainable-azure-websites-managing-change-and-scale/_static/image79.png "创建新项目")</span><span class="sxs-lookup"><span data-stu-id="0fead-621">![Creating a new project](maintainable-azure-websites-managing-change-and-scale/_static/image79.png "Creating a new project")</span></span>
 
     <span data-ttu-id="0fead-622">*创建新项目*</span><span class="sxs-lookup"><span data-stu-id="0fead-622">*Creating a new project*</span></span>
-2. <span data-ttu-id="0fead-623">在**新项目**对话框中，选择**Web 性能测试和负载测试项目**下**Visual C# |测试**选项卡。请确保**.NET Framework 4.5**是选择，将该项目命名*WebAndLoadTestProject*，选择**位置**单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="0fead-623">In the **New Project** dialog box, select **Web Performance and Load Test Project** under the **Visual C# | Test** tab. Make sure **.NET Framework 4.5** is selected, name the project *WebAndLoadTestProject*, choose a **Location** and click **OK**.</span></span>
+2. <span data-ttu-id="0fead-623">在**新项目**对话框中，选择**Web 性能测试和负载测试项目**下**Visual C# |测试**选项卡。请确保 **.NET Framework 4.5**是选择，将该项目命名*WebAndLoadTestProject*，选择**位置**单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="0fead-623">In the **New Project** dialog box, select **Web Performance and Load Test Project** under the **Visual C# | Test** tab. Make sure **.NET Framework 4.5** is selected, name the project *WebAndLoadTestProject*, choose a **Location** and click **OK**.</span></span>
 
     <span data-ttu-id="0fead-624">![创建新的 Web 和负载测试项目](maintainable-azure-websites-managing-change-and-scale/_static/image80.png "创建新的 Web 和负载测试项目")</span><span class="sxs-lookup"><span data-stu-id="0fead-624">![Creating a new Web and Load Test project](maintainable-azure-websites-managing-change-and-scale/_static/image80.png "Creating a new Web and Load Test project")</span></span>
 
@@ -798,7 +799,7 @@ ms.lasthandoff: 04/06/2018
 6. <span data-ttu-id="0fead-635">在**添加条件规则和项循环**对话框中，选择**For 循环**规则和修改以下属性。</span><span class="sxs-lookup"><span data-stu-id="0fead-635">In the **Add Conditional Rule and Items to Loop** dialog box, select the **For Loop** rule and modify the following properties.</span></span>
 
    1. <span data-ttu-id="0fead-636">**终止值：** 1000年</span><span class="sxs-lookup"><span data-stu-id="0fead-636">**Terminating value:** 1000</span></span>
-   2. <span data-ttu-id="0fead-637">**上下文参数名称：**迭代器</span><span class="sxs-lookup"><span data-stu-id="0fead-637">**Context Parameter Name:** Iterator</span></span>
+   2. <span data-ttu-id="0fead-637">**上下文参数名称：** 迭代器</span><span class="sxs-lookup"><span data-stu-id="0fead-637">**Context Parameter Name:** Iterator</span></span>
    3. <span data-ttu-id="0fead-638">**增量值：** 1</span><span class="sxs-lookup"><span data-stu-id="0fead-638">**Increment Value:** 1</span></span>
 
       <span data-ttu-id="0fead-639">![选择 For 循环规则并更新属性](maintainable-azure-websites-managing-change-and-scale/_static/image84.png "选择 For 循环规则并更新属性")</span><span class="sxs-lookup"><span data-stu-id="0fead-639">![Selecting the For Loop rule and updating the properties](maintainable-azure-websites-managing-change-and-scale/_static/image84.png "Selecting the For Loop rule and updating the properties")</span></span>
@@ -834,7 +835,7 @@ ms.lasthandoff: 04/06/2018
     <span data-ttu-id="0fead-659">![选择测试组合模型](maintainable-azure-websites-managing-change-and-scale/_static/image90.png "选择测试组合模型")</span><span class="sxs-lookup"><span data-stu-id="0fead-659">![Selecting the test mix model](maintainable-azure-websites-managing-change-and-scale/_static/image90.png "Selecting the test mix model")</span></span>
 
     <span data-ttu-id="0fead-660">*选择测试组合模型*</span><span class="sxs-lookup"><span data-stu-id="0fead-660">*Selecting the test mix model*</span></span>
-13. <span data-ttu-id="0fead-661">在**测试组合模型**页上，单击**添加...**要添加到组合的测试。</span><span class="sxs-lookup"><span data-stu-id="0fead-661">In the **Test Mix Model** page, click **Add...** to add a test to the mix.</span></span>
+13. <span data-ttu-id="0fead-661">在**测试组合模型**页上，单击**添加...** 要添加到组合的测试。</span><span class="sxs-lookup"><span data-stu-id="0fead-661">In the **Test Mix Model** page, click **Add...** to add a test to the mix.</span></span>
 
     <span data-ttu-id="0fead-662">![向测试组合中添加测试](maintainable-azure-websites-managing-change-and-scale/_static/image91.png "向测试组合中添加测试")</span><span class="sxs-lookup"><span data-stu-id="0fead-662">![Adding a test to the test mix](maintainable-azure-websites-managing-change-and-scale/_static/image91.png "Adding a test to the test mix")</span></span>
 

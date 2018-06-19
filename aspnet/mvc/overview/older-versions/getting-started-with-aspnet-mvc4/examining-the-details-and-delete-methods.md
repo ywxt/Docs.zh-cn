@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868771"
 ---
 <a name="examining-the-details-and-delete-methods"></a><span data-ttu-id="ba5c1-104">检查的详细信息和删除方法</span><span class="sxs-lookup"><span data-stu-id="ba5c1-104">Examining the Details and Delete Methods</span></span>
 ====================

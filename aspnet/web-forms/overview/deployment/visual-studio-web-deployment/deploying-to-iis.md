@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890861"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a><span data-ttu-id="25a13-103">使用 Visual Studio 的 ASP.NET Web 部署： 将部署到测试</span><span class="sxs-lookup"><span data-stu-id="25a13-103">ASP.NET Web Deployment using Visual Studio: Deploying to Test</span></span>
 ====================
@@ -82,7 +83,7 @@ ms.lasthandoff: 04/06/2018
 6. <span data-ttu-id="25a13-157">在**应用程序池**窗格中，单击**DefaultAppPool**，然后在**操作**窗格中，单击**基本设置**。</span><span class="sxs-lookup"><span data-stu-id="25a13-157">In the **Application Pools** pane, click **DefaultAppPool**, and then in the **Actions** pane click **Basic Settings**.</span></span>
 
     <span data-ttu-id="25a13-158">[![Inetmgr_selecting_Basic_Settings_for_app_pool](deploying-to-iis/_static/image5.png)](deploying-to-iis/_static/image4.png)</span><span class="sxs-lookup"><span data-stu-id="25a13-158">[![Inetmgr_selecting_Basic_Settings_for_app_pool](deploying-to-iis/_static/image5.png)](deploying-to-iis/_static/image4.png)</span></span>
-7. <span data-ttu-id="25a13-159">在**编辑应用程序池**对话框中，更改**.NET Framework 版本**到**.NET Framework v4.0.30319**单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="25a13-159">In the **Edit Application Pool** dialog box, change **.NET Framework version** to **.NET Framework v4.0.30319** and click **OK**.</span></span>
+7. <span data-ttu-id="25a13-159">在**编辑应用程序池**对话框中，更改 **.NET Framework 版本**到 **.NET Framework v4.0.30319**单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="25a13-159">In the **Edit Application Pool** dialog box, change **.NET Framework version** to **.NET Framework v4.0.30319** and click **OK**.</span></span>
 
     <span data-ttu-id="25a13-160">[![Selecting_.NET_4_for_DefaultAppPool](deploying-to-iis/_static/image7.png)](deploying-to-iis/_static/image6.png)</span><span class="sxs-lookup"><span data-stu-id="25a13-160">[![Selecting_.NET_4_for_DefaultAppPool](deploying-to-iis/_static/image7.png)](deploying-to-iis/_static/image6.png)</span></span>
 
@@ -145,7 +146,7 @@ ms.lasthandoff: 04/06/2018
 2. <span data-ttu-id="25a13-203">单击“连接” 。</span><span class="sxs-lookup"><span data-stu-id="25a13-203">Click **Connect**.</span></span> 
 
     ![连接按钮](deploying-to-iis/_static/image11.png)
-3. <span data-ttu-id="25a13-205">在**连接到服务器**对话框框中，输入*。 \SQLExpress*作为**服务器名称**，然后单击**连接**。</span><span class="sxs-lookup"><span data-stu-id="25a13-205">In the **Connect to Server** dialog box, enter *.\SQLExpress* as the **Server Name**, and then click **Connect**.</span></span>
+3. <span data-ttu-id="25a13-205">在**连接到服务器**对话框框中，输入 *。 \SQLExpress*作为**服务器名称**，然后单击**连接**。</span><span class="sxs-lookup"><span data-stu-id="25a13-205">In the **Connect to Server** dialog box, enter *.\SQLExpress* as the **Server Name**, and then click **Connect**.</span></span>
 4. <span data-ttu-id="25a13-206">在数据库下拉列表选择**ContosoUniversity**，然后单击**执行**。</span><span class="sxs-lookup"><span data-stu-id="25a13-206">In the database drop-down list select **ContosoUniversity**, and then click **Execute**.</span></span> 
 
     ![](deploying-to-iis/_static/image12.png)
@@ -158,12 +159,12 @@ ms.lasthandoff: 04/06/2018
 
 - <span data-ttu-id="25a13-210">使用一键式发布的 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="25a13-210">Use Visual Studio one-click publish.</span></span>
 - <span data-ttu-id="25a13-211">从命令行发布。</span><span class="sxs-lookup"><span data-stu-id="25a13-211">Publish from the command line.</span></span>
-- <span data-ttu-id="25a13-212">创建*部署包*和使用 IIS 管理器 UI 安装它。</span><span class="sxs-lookup"><span data-stu-id="25a13-212">Create a *deployment package* and install it using the IIS Manager UI.</span></span> <span data-ttu-id="25a13-213">部署包所包含的*.zip*包含的所有文件和在 IIS 中安装站点所需的元数据的文件。</span><span class="sxs-lookup"><span data-stu-id="25a13-213">The deployment package consists of a *.zip* file that contains all the files and metadata needed to install a site in IIS.</span></span>
+- <span data-ttu-id="25a13-212">创建*部署包*和使用 IIS 管理器 UI 安装它。</span><span class="sxs-lookup"><span data-stu-id="25a13-212">Create a *deployment package* and install it using the IIS Manager UI.</span></span> <span data-ttu-id="25a13-213">部署包所包含的 *.zip*包含的所有文件和在 IIS 中安装站点所需的元数据的文件。</span><span class="sxs-lookup"><span data-stu-id="25a13-213">The deployment package consists of a *.zip* file that contains all the files and metadata needed to install a site in IIS.</span></span>
 - <span data-ttu-id="25a13-214">创建部署包并将其使用命令行安装。</span><span class="sxs-lookup"><span data-stu-id="25a13-214">Create a deployment package and install it using the command line.</span></span>
 
 <span data-ttu-id="25a13-215">你已完成在前面的教程，若要将 Visual Studio 设置来自动执行部署任务适用于所有这些方法的过程。</span><span class="sxs-lookup"><span data-stu-id="25a13-215">The process you went through in the previous tutorials to set up Visual Studio to automate deployment tasks applies to all of these methods.</span></span> <span data-ttu-id="25a13-216">这些教程中，你将使用这些方法在前的两个。</span><span class="sxs-lookup"><span data-stu-id="25a13-216">In these tutorials you'll use the first two of these methods.</span></span> <span data-ttu-id="25a13-217">有关使用部署包的信息，请参阅[部署 web 应用程序创建和安装 web 部署包](https://go.microsoft.com/fwlink/p/?LinkId=282413#package)for Visual Studio 和 ASP.NET Web 部署内容映射中。</span><span class="sxs-lookup"><span data-stu-id="25a13-217">For information about using deployment packages, see [Deploying a web application by creating and installing a web deployment package](https://go.microsoft.com/fwlink/p/?LinkId=282413#package) in the Web Deployment Content Map for Visual Studio and ASP.NET.</span></span>
 
-<span data-ttu-id="25a13-218">在发布前，请确保在管理员模式下运行 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="25a13-218">Before publishing, make sure that you are running Visual Studio in administrator mode.</span></span> <span data-ttu-id="25a13-219">如果看不到**（管理员）**在标题栏中，关闭 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="25a13-219">If you don't see **(Administrator)** in the title bar, close Visual Studio.</span></span> <span data-ttu-id="25a13-220">Windows 8 中**启动**页或 Windows 7**启动**菜单中，右键单击要使用的 Visual Studio 版本的图标，然后选择**以管理员身份运行**。</span><span class="sxs-lookup"><span data-stu-id="25a13-220">In the Windows 8 **Start** page or the Windows 7 **Start** menu, right-click the icon for the version of Visual Studio you're using and select **Run as Administrator**.</span></span> <span data-ttu-id="25a13-221">管理员模式下是发布仅当你准备向 IIS 发布在本地计算机上所必需的。</span><span class="sxs-lookup"><span data-stu-id="25a13-221">Administrator mode is required for publishing only when you are publishing to IIS on the local computer.</span></span>
+<span data-ttu-id="25a13-218">在发布前，请确保在管理员模式下运行 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="25a13-218">Before publishing, make sure that you are running Visual Studio in administrator mode.</span></span> <span data-ttu-id="25a13-219">如果看不到 **（管理员）** 在标题栏中，关闭 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="25a13-219">If you don't see **(Administrator)** in the title bar, close Visual Studio.</span></span> <span data-ttu-id="25a13-220">Windows 8 中**启动**页或 Windows 7**启动**菜单中，右键单击要使用的 Visual Studio 版本的图标，然后选择**以管理员身份运行**。</span><span class="sxs-lookup"><span data-stu-id="25a13-220">In the Windows 8 **Start** page or the Windows 7 **Start** menu, right-click the icon for the version of Visual Studio you're using and select **Run as Administrator**.</span></span> <span data-ttu-id="25a13-221">管理员模式下是发布仅当你准备向 IIS 发布在本地计算机上所必需的。</span><span class="sxs-lookup"><span data-stu-id="25a13-221">Administrator mode is required for publishing only when you are publishing to IIS on the local computer.</span></span>
 
 ### <a name="create-the-publish-profile"></a><span data-ttu-id="25a13-222">创建发布配置文件</span><span class="sxs-lookup"><span data-stu-id="25a13-222">Create the publish profile</span></span>
 

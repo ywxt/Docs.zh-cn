@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-custom-provider-for-logging-health-monitoring-events
-title: "[如何:]创建的自定义提供程序日志记录运行状况监视事件 |Microsoft 文档"
+title: '[如何:]创建的自定义提供程序日志记录运行状况监视事件 |Microsoft 文档'
 author: rick-anderson
-description: "Chris Pels 演示如何创建的自定义提供程序 ASP.NET 运行状况监视系统，其中记录了运行状况监视事件，以便将基于文本的日志文件。 Le..."
+description: Chris Pels 演示如何创建的自定义提供程序 ASP.NET 运行状况监视系统，其中记录了运行状况监视事件，以便将基于文本的日志文件。 Le...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/06/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26524966"
 ---
 <a name="how-do-i-create-a-custom-provider-for-logging-health-monitoring-events"></a><span data-ttu-id="6c270-104">[如何:]创建的自定义提供程序日志记录运行状况监视事件</span><span class="sxs-lookup"><span data-stu-id="6c270-104">[How Do I:] Create a Custom Provider for Logging Health Monitoring Events</span></span>
 ====================

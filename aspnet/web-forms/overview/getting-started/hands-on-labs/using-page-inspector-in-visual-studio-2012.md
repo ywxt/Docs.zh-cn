@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891238"
 ---
 <a name="using-page-inspector-in-visual-studio-2012"></a><span data-ttu-id="cd704-104">使用 Page Inspector 在 Visual Studio 2012</span><span class="sxs-lookup"><span data-stu-id="cd704-104">Using Page Inspector in Visual Studio 2012</span></span>
 ====================
@@ -94,7 +95,7 @@ ms.lasthandoff: 04/10/2018
 
 <span data-ttu-id="cd704-146">在此任务中，您将学习如何在显示照片库的 ASP.NET MVC 4 项目的上下文中使用 Page Inspector。</span><span class="sxs-lookup"><span data-stu-id="cd704-146">In this task, you will learn how to use the Page Inspector in the context of an ASP.NET MVC 4 project that shows a photo gallery.</span></span>
 
-1. <span data-ttu-id="cd704-147">打开**开始**解决方案位于**源/Ex1-MVC4/开始/**文件夹。</span><span class="sxs-lookup"><span data-stu-id="cd704-147">Open the **Begin** solution located at **Source/Ex1-MVC4/Begin/** folder.</span></span>
+1. <span data-ttu-id="cd704-147">打开**开始**解决方案位于**源/Ex1-MVC4/开始/** 文件夹。</span><span class="sxs-lookup"><span data-stu-id="cd704-147">Open the **Begin** solution located at **Source/Ex1-MVC4/Begin/** folder.</span></span>
 
    1. <span data-ttu-id="cd704-148">你将需要下载一些缺少的 NuGet 程序包才能继续。</span><span class="sxs-lookup"><span data-stu-id="cd704-148">You will need to download some missing NuGet packages before continue.</span></span> <span data-ttu-id="cd704-149">若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。</span><span class="sxs-lookup"><span data-stu-id="cd704-149">To do this, click the **Project** menu and select **Manage NuGet Packages**.</span></span>
    2. <span data-ttu-id="cd704-150">在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。</span><span class="sxs-lookup"><span data-stu-id="cd704-150">In the **Manage NuGet Packages** dialog, click **Restore** in order to download missing packages.</span></span>
@@ -102,12 +103,12 @@ ms.lasthandoff: 04/10/2018
 
       > [!NOTE]
       > <span data-ttu-id="cd704-152">使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。</span><span class="sxs-lookup"><span data-stu-id="cd704-152">One of the advantages of using NuGet is that you don't have to ship all the libraries in your project, reducing the project size.</span></span> <span data-ttu-id="cd704-153">使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。</span><span class="sxs-lookup"><span data-stu-id="cd704-153">With NuGet Power Tools, by specifying the package versions in the Packages.config file, you will be able to download all the required libraries the first time you run the project.</span></span> <span data-ttu-id="cd704-154">这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。</span><span class="sxs-lookup"><span data-stu-id="cd704-154">This is why you will have to run these steps after you open an existing solution from this lab.</span></span>
-2. <span data-ttu-id="cd704-155">在解决方案资源管理器，找到**Index.cshtml**下查看**/视图/主页**项目文件夹，右键单击它，然后选择**在 Page Inspector 中的查看**。</span><span class="sxs-lookup"><span data-stu-id="cd704-155">In the Solution Explorer, locate **Index.cshtml** view under the **/Views/Home** project folder, right-click it and select **View in Page Inspector**.</span></span>
+2. <span data-ttu-id="cd704-155">在解决方案资源管理器，找到**Index.cshtml**下查看 **/视图/主页**项目文件夹，右键单击它，然后选择**在 Page Inspector 中的查看**。</span><span class="sxs-lookup"><span data-stu-id="cd704-155">In the Solution Explorer, locate **Index.cshtml** view under the **/Views/Home** project folder, right-click it and select **View in Page Inspector**.</span></span>
 
     <span data-ttu-id="cd704-156">![选择要在 Page Inspector 中预览的文件](using-page-inspector-in-visual-studio-2012/_static/image1.png "选择要在 Page Inspector 中预览的文件")</span><span class="sxs-lookup"><span data-stu-id="cd704-156">![Selecting a file to preview in Page Inspector](using-page-inspector-in-visual-studio-2012/_static/image1.png "Selecting a file to preview in Page Inspector")</span></span>
 
     <span data-ttu-id="cd704-157">*选择要在 Page Inspector 中预览的文件*</span><span class="sxs-lookup"><span data-stu-id="cd704-157">*Selecting a file to preview in Page Inspector*</span></span>
-3. <span data-ttu-id="cd704-158">Page Inspector 窗口将显示*/Home/索引*映射到所选的视图的源的 URL。</span><span class="sxs-lookup"><span data-stu-id="cd704-158">The Page Inspector window will show the */Home/Index* URL mapped to the source View you selected.</span></span>
+3. <span data-ttu-id="cd704-158">Page Inspector 窗口将显示 */Home/索引*映射到所选的视图的源的 URL。</span><span class="sxs-lookup"><span data-stu-id="cd704-158">The Page Inspector window will show the */Home/Index* URL mapped to the source View you selected.</span></span>
 
     ![ThefirstcontactwithPageInspector](using-page-inspector-in-visual-studio-2012/_static/image2.png)
 
@@ -167,7 +168,7 @@ ms.lasthandoff: 04/10/2018
     <span data-ttu-id="cd704-200">![选择元素](using-page-inspector-in-visual-studio-2012/_static/image10.png "选择元素")</span><span class="sxs-lookup"><span data-stu-id="cd704-200">![Selecting an element](using-page-inspector-in-visual-studio-2012/_static/image10.png "Selecting an element")</span></span>
 
     <span data-ttu-id="cd704-201">*选择元素*</span><span class="sxs-lookup"><span data-stu-id="cd704-201">*Selecting an element*</span></span>
-12. <span data-ttu-id="cd704-202">在样式窗格中，找到**背景图像**项下面**.main 内容**组。</span><span class="sxs-lookup"><span data-stu-id="cd704-202">In the Styles pane, locate the **background-image** item under the **.main-content** group.</span></span> <span data-ttu-id="cd704-203">**取消选中****背景图像**，看看效果。</span><span class="sxs-lookup"><span data-stu-id="cd704-203">**Uncheck** the **background-image** and see what happens.</span></span> <span data-ttu-id="cd704-204">你将注意到浏览器将立即反映所做的更改和隐藏圆。</span><span class="sxs-lookup"><span data-stu-id="cd704-204">You will notice that the browser will reflect the changes immediately and the circle is hidden.</span></span>
+12. <span data-ttu-id="cd704-202">在样式窗格中，找到**背景图像**项下面 **.main 内容**组。</span><span class="sxs-lookup"><span data-stu-id="cd704-202">In the Styles pane, locate the **background-image** item under the **.main-content** group.</span></span> <span data-ttu-id="cd704-203">**取消选中****背景图像**，看看效果。</span><span class="sxs-lookup"><span data-stu-id="cd704-203">**Uncheck** the **background-image** and see what happens.</span></span> <span data-ttu-id="cd704-204">你将注意到浏览器将立即反映所做的更改和隐藏圆。</span><span class="sxs-lookup"><span data-stu-id="cd704-204">You will notice that the browser will reflect the changes immediately and the circle is hidden.</span></span>
 
     > [!NOTE]
     > <span data-ttu-id="cd704-205">在页面检查器样式选项卡应用的更改不影响原始样式表。</span><span class="sxs-lookup"><span data-stu-id="cd704-205">The changes you apply on the Page Inspector Styles tab do not affect the original stylesheet.</span></span> <span data-ttu-id="cd704-206">你可以取消选中样式或更改它们所想，但它们将刷新页面后还原次数的值。</span><span class="sxs-lookup"><span data-stu-id="cd704-206">You can uncheck styles or change their values as many times as you want, but they will be restored after refreshing the page.</span></span>
@@ -176,7 +177,7 @@ ms.lasthandoff: 04/10/2018
 
     <span data-ttu-id="cd704-208">*启用和禁用 CSS 样式*</span><span class="sxs-lookup"><span data-stu-id="cd704-208">*Enabling and disabling CSS styles*</span></span>
 13. <span data-ttu-id="cd704-209">现在，单击**此处你的徽标**上使用检查模式下的标头的文本。</span><span class="sxs-lookup"><span data-stu-id="cd704-209">Now, click the '**your logo here**' text on the header using the inspection mode.</span></span>
-14. <span data-ttu-id="cd704-210">在**样式**选项卡上，找到**字体大小**CSS 属性下**.site 标题**组。</span><span class="sxs-lookup"><span data-stu-id="cd704-210">In the **Styles** tab, locate the **font-size** CSS attribute under the **.site-title** group.</span></span> <span data-ttu-id="cd704-211">双击属性值，然后将 2.3 em 值替换**3 em**，然后按**ENTER**。</span><span class="sxs-lookup"><span data-stu-id="cd704-211">Double-click the attribute value and replace the 2.3 em value with **3 em**, and then press **ENTER**.</span></span> <span data-ttu-id="cd704-212">请注意标题看起来更大。</span><span class="sxs-lookup"><span data-stu-id="cd704-212">Notice that the title looks bigger.</span></span>
+14. <span data-ttu-id="cd704-210">在**样式**选项卡上，找到**字体大小**CSS 属性下 **.site 标题**组。</span><span class="sxs-lookup"><span data-stu-id="cd704-210">In the **Styles** tab, locate the **font-size** CSS attribute under the **.site-title** group.</span></span> <span data-ttu-id="cd704-211">双击属性值，然后将 2.3 em 值替换**3 em**，然后按**ENTER**。</span><span class="sxs-lookup"><span data-stu-id="cd704-211">Double-click the attribute value and replace the 2.3 em value with **3 em**, and then press **ENTER**.</span></span> <span data-ttu-id="cd704-212">请注意标题看起来更大。</span><span class="sxs-lookup"><span data-stu-id="cd704-212">Notice that the title looks bigger.</span></span>
 
     <span data-ttu-id="cd704-213">![更改在 Page Inspector 的 CSS 值](using-page-inspector-in-visual-studio-2012/_static/image12.png "Page Inspector 中的更改的 CSS 值")</span><span class="sxs-lookup"><span data-stu-id="cd704-213">![Changing CSS values in the Page Inspector](using-page-inspector-in-visual-studio-2012/_static/image12.png "Changing CSS values in the Page Inspector")</span></span>
 
@@ -221,7 +222,7 @@ ms.lasthandoff: 04/10/2018
 2. <span data-ttu-id="cd704-246">选择切换检查模式下，单击要关闭，但不是在注册链接以打开其代码。</span><span class="sxs-lookup"><span data-stu-id="cd704-246">With Toggle Inspection Mode selected, click close to, but not on, the Register link to open its code.</span></span>
 
     <span data-ttu-id="cd704-247">请注意，链接的源代码位于 **\_LoginPartial.cshtml**文件，不 Index.cshtml 也不\_Layout.cshtml，可能会在第一个位置中查找位置。</span><span class="sxs-lookup"><span data-stu-id="cd704-247">Notice that the source code of the links is located in the **\_LoginPartial.cshtml** file, not the Index.cshtml nor the \_Layout.cshtml, which are the places you might look in first place.</span></span> <span data-ttu-id="cd704-248">你具有已直接放在正确的源文件。</span><span class="sxs-lookup"><span data-stu-id="cd704-248">You have been placed directly in the correct source file.</span></span>
-3. <span data-ttu-id="cd704-249">在**样式**选项卡上，找到并单击**<section> #login</section>**项，它是一个 HTML 容器，这些链接。</span><span class="sxs-lookup"><span data-stu-id="cd704-249">In the **Styles** tab, locate and click the **<section> #login</section>** item, which is the HTML container for these links.</span></span>
+3. <span data-ttu-id="cd704-249">在**样式**选项卡上，找到并单击**<section> #login</section>** 项，它是一个 HTML 容器，这些链接。</span><span class="sxs-lookup"><span data-stu-id="cd704-249">In the **Styles** tab, locate and click the **<section> #login</section>** item, which is the HTML container for these links.</span></span>
 
     <span data-ttu-id="cd704-250">请注意， **#login**样式自动位于**Site.css**单击后。</span><span class="sxs-lookup"><span data-stu-id="cd704-250">Notice that the **#login** style is automatically located in **Site.css** after you click.</span></span> <span data-ttu-id="cd704-251">此外，代码现在已突出显示。</span><span class="sxs-lookup"><span data-stu-id="cd704-251">Moreover, the code is now highlighted.</span></span>
 
@@ -242,12 +243,12 @@ ms.lasthandoff: 04/10/2018
     ![更新后的网页](using-page-inspector-in-visual-studio-2012/_static/image18.png)
 
     <span data-ttu-id="cd704-263">*更新后的网页*</span><span class="sxs-lookup"><span data-stu-id="cd704-263">*Updated page*</span></span>
-6. <span data-ttu-id="cd704-264">使用检查模式下，选择任一**&lt;li&gt;**包含的项&quot;注册&quot;和&quot;登录&quot;链接。</span><span class="sxs-lookup"><span data-stu-id="cd704-264">Using the inspection mode, select any of the **&lt;li&gt;** items that contain the &quot;Register&quot; and &quot;Log in&quot; links.</span></span> <span data-ttu-id="cd704-265">然后，单击**&lt;部分&gt;#login**项以访问**Styles.css**代码。</span><span class="sxs-lookup"><span data-stu-id="cd704-265">Then, click the **&lt;section&gt; #login** item to access **Styles.css** code.</span></span>
+6. <span data-ttu-id="cd704-264">使用检查模式下，选择任一**&lt;li&gt;** 包含的项&quot;注册&quot;和&quot;登录&quot;链接。</span><span class="sxs-lookup"><span data-stu-id="cd704-264">Using the inspection mode, select any of the **&lt;li&gt;** items that contain the &quot;Register&quot; and &quot;Log in&quot; links.</span></span> <span data-ttu-id="cd704-265">然后，单击**&lt;部分&gt;#login**项以访问**Styles.css**代码。</span><span class="sxs-lookup"><span data-stu-id="cd704-265">Then, click the **&lt;section&gt; #login** item to access **Styles.css** code.</span></span>
 
     <span data-ttu-id="cd704-266">![查找样式](using-page-inspector-in-visual-studio-2012/_static/image19.png "查找样式")</span><span class="sxs-lookup"><span data-stu-id="cd704-266">![Finding the style](using-page-inspector-in-visual-studio-2012/_static/image19.png "Finding the style")</span></span>
 
     <span data-ttu-id="cd704-267">*查找样式*</span><span class="sxs-lookup"><span data-stu-id="cd704-267">*Finding the style*</span></span>
-7. <span data-ttu-id="cd704-268">在**Style.css**，取消注释的代码**#login li**项。</span><span class="sxs-lookup"><span data-stu-id="cd704-268">In **Style.css**, uncomment the code for **#login li** items.</span></span> <span data-ttu-id="cd704-269">要添加的样式将隐藏项目符号和水平显示的项目。</span><span class="sxs-lookup"><span data-stu-id="cd704-269">The style you are adding will hide the bullet and display the items horizontally.</span></span>
+7. <span data-ttu-id="cd704-268">在**Style.css**，取消注释的代码 **#login li**项。</span><span class="sxs-lookup"><span data-stu-id="cd704-268">In **Style.css**, uncomment the code for **#login li** items.</span></span> <span data-ttu-id="cd704-269">要添加的样式将隐藏项目符号和水平显示的项目。</span><span class="sxs-lookup"><span data-stu-id="cd704-269">The style you are adding will hide the bullet and display the items horizontally.</span></span>
 
     <span data-ttu-id="cd704-270">![右列的登录链接](using-page-inspector-in-visual-studio-2012/_static/image20.png "右列的登录链接")</span><span class="sxs-lookup"><span data-stu-id="cd704-270">![Restyling the login links](using-page-inspector-in-visual-studio-2012/_static/image20.png "Restyling the login links")</span></span>
 
@@ -285,7 +286,7 @@ ms.lasthandoff: 04/10/2018
 
 <span data-ttu-id="cd704-292">在此任务中，您将学习如何在显示照片库 WebForms 项目的上下文中使用 Page Inspector 功能。</span><span class="sxs-lookup"><span data-stu-id="cd704-292">In this task, you will learn how to use the Page Inspector features in the context of a WebForms project that shows a photo gallery.</span></span>
 
-1. <span data-ttu-id="cd704-293">打开**开始**解决方案位于**源/Ex2-WebForms/开始/**文件夹。</span><span class="sxs-lookup"><span data-stu-id="cd704-293">Open the **Begin** solution located at **Source/Ex2-WebForms/Begin/** folder.</span></span>
+1. <span data-ttu-id="cd704-293">打开**开始**解决方案位于**源/Ex2-WebForms/开始/** 文件夹。</span><span class="sxs-lookup"><span data-stu-id="cd704-293">Open the **Begin** solution located at **Source/Ex2-WebForms/Begin/** folder.</span></span>
 
    1. <span data-ttu-id="cd704-294">你将需要下载一些缺少的 NuGet 程序包才能继续。</span><span class="sxs-lookup"><span data-stu-id="cd704-294">You will need to download some missing NuGet packages before continue.</span></span> <span data-ttu-id="cd704-295">若要执行此操作，请单击**项目**菜单，然后选择**管理 NuGet 包**。</span><span class="sxs-lookup"><span data-stu-id="cd704-295">To do this, click the **Project** menu and select **Manage NuGet Packages**.</span></span>
    2. <span data-ttu-id="cd704-296">在**管理 NuGet 包**对话框中，单击**还原**以便下载缺少的程序包。</span><span class="sxs-lookup"><span data-stu-id="cd704-296">In the **Manage NuGet Packages** dialog, click **Restore** in order to download missing packages.</span></span>
@@ -358,7 +359,7 @@ ms.lasthandoff: 04/10/2018
     <span data-ttu-id="cd704-346">![选择元素](using-page-inspector-in-visual-studio-2012/_static/image33.png "选择元素")</span><span class="sxs-lookup"><span data-stu-id="cd704-346">![Selecting an element](using-page-inspector-in-visual-studio-2012/_static/image33.png "Selecting an element")</span></span>
 
     <span data-ttu-id="cd704-347">*选择元素*</span><span class="sxs-lookup"><span data-stu-id="cd704-347">*Selecting an element*</span></span>
-12. <span data-ttu-id="cd704-348">在样式窗格中，找到**背景图像**项下面**.main 内容**组。</span><span class="sxs-lookup"><span data-stu-id="cd704-348">In the Styles pane, locate the **background-image** item under the **.main-content** group.</span></span> <span data-ttu-id="cd704-349">**取消选中****背景图像**，看看效果。</span><span class="sxs-lookup"><span data-stu-id="cd704-349">**Uncheck** the **background-image** and see what happens.</span></span> <span data-ttu-id="cd704-350">你将注意到浏览器将立即反映所做的更改和隐藏圆。</span><span class="sxs-lookup"><span data-stu-id="cd704-350">You will notice that the browser will reflect the changes immediately and the circle is hidden.</span></span>
+12. <span data-ttu-id="cd704-348">在样式窗格中，找到**背景图像**项下面 **.main 内容**组。</span><span class="sxs-lookup"><span data-stu-id="cd704-348">In the Styles pane, locate the **background-image** item under the **.main-content** group.</span></span> <span data-ttu-id="cd704-349">**取消选中****背景图像**，看看效果。</span><span class="sxs-lookup"><span data-stu-id="cd704-349">**Uncheck** the **background-image** and see what happens.</span></span> <span data-ttu-id="cd704-350">你将注意到浏览器将立即反映所做的更改和隐藏圆。</span><span class="sxs-lookup"><span data-stu-id="cd704-350">You will notice that the browser will reflect the changes immediately and the circle is hidden.</span></span>
 
     > [!NOTE]
     > <span data-ttu-id="cd704-351">在页面检查器样式选项卡应用的更改不影响原始样式表。</span><span class="sxs-lookup"><span data-stu-id="cd704-351">The changes you apply on the Page Inspector Styles tab do not affect the original stylesheet.</span></span> <span data-ttu-id="cd704-352">你可以取消选中样式或更改它们所想，但它们将刷新页面后还原次数的值。</span><span class="sxs-lookup"><span data-stu-id="cd704-352">You can uncheck styles or change their values as many times as you want, but they will be restored after refreshing the page.</span></span>
@@ -367,7 +368,7 @@ ms.lasthandoff: 04/10/2018
 
     <span data-ttu-id="cd704-354">*启用和禁用 CSS 样式*</span><span class="sxs-lookup"><span data-stu-id="cd704-354">*Enabling and disabling CSS styles*</span></span>
 13. <span data-ttu-id="cd704-355">现在，单击**你****此处显示的徽标**上使用检查模式下的标头的文本。</span><span class="sxs-lookup"><span data-stu-id="cd704-355">Now, click the '**your** **logo here'** text on the header using the inspection mode.</span></span>
-14. <span data-ttu-id="cd704-356">在**样式**选项卡上，找到**字体大小**CSS 属性下**.site 标题**组。</span><span class="sxs-lookup"><span data-stu-id="cd704-356">In the **Styles** tab, locate the **font-size** CSS attribute under the **.site-title** group.</span></span> <span data-ttu-id="cd704-357">双击该属性一次以编辑它的值。</span><span class="sxs-lookup"><span data-stu-id="cd704-357">Double-click the attribute once to edit its value.</span></span> <span data-ttu-id="cd704-358">替换 2.3em 值与**3em**，然后按 ENTER。</span><span class="sxs-lookup"><span data-stu-id="cd704-358">Replace the 2.3em value with **3em**, and then press ENTER.</span></span> <span data-ttu-id="cd704-359">请注意标题看起来更大。</span><span class="sxs-lookup"><span data-stu-id="cd704-359">Notice that the title looks bigger.</span></span>
+14. <span data-ttu-id="cd704-356">在**样式**选项卡上，找到**字体大小**CSS 属性下 **.site 标题**组。</span><span class="sxs-lookup"><span data-stu-id="cd704-356">In the **Styles** tab, locate the **font-size** CSS attribute under the **.site-title** group.</span></span> <span data-ttu-id="cd704-357">双击该属性一次以编辑它的值。</span><span class="sxs-lookup"><span data-stu-id="cd704-357">Double-click the attribute once to edit its value.</span></span> <span data-ttu-id="cd704-358">替换 2.3em 值与**3em**，然后按 ENTER。</span><span class="sxs-lookup"><span data-stu-id="cd704-358">Replace the 2.3em value with **3em**, and then press ENTER.</span></span> <span data-ttu-id="cd704-359">请注意标题看起来更大。</span><span class="sxs-lookup"><span data-stu-id="cd704-359">Notice that the title looks bigger.</span></span>
 
     <span data-ttu-id="cd704-360">![更改页 Inspector2 中的 CSS 值](using-page-inspector-in-visual-studio-2012/_static/image35.png "Page Inspector 中的更改的 CSS 值")</span><span class="sxs-lookup"><span data-stu-id="cd704-360">![Changing CSS values in the Page Inspector2](using-page-inspector-in-visual-studio-2012/_static/image35.png "Changing CSS values in the Page Inspector")</span></span>
 
@@ -433,12 +434,12 @@ ms.lasthandoff: 04/10/2018
     ![更新后的网页](using-page-inspector-in-visual-studio-2012/_static/image41.png)
 
     <span data-ttu-id="cd704-410">*更新后的网页*</span><span class="sxs-lookup"><span data-stu-id="cd704-410">*Updated page*</span></span>
-6. <span data-ttu-id="cd704-411">使用检查模式下，选择任一**&lt;li&gt;**包含的项&quot;注册&quot;和&quot;登录&quot;链接。</span><span class="sxs-lookup"><span data-stu-id="cd704-411">Using the inspection mode, select any of the **&lt;li&gt;** items that contain the &quot;Register&quot; and &quot;Log in&quot; links.</span></span> <span data-ttu-id="cd704-412">然后，单击**&lt;部分&gt;#login**项以访问**Styles.css**代码。</span><span class="sxs-lookup"><span data-stu-id="cd704-412">Then, click the **&lt;section&gt; #login** item to access **Styles.css** code.</span></span>
+6. <span data-ttu-id="cd704-411">使用检查模式下，选择任一**&lt;li&gt;** 包含的项&quot;注册&quot;和&quot;登录&quot;链接。</span><span class="sxs-lookup"><span data-stu-id="cd704-411">Using the inspection mode, select any of the **&lt;li&gt;** items that contain the &quot;Register&quot; and &quot;Log in&quot; links.</span></span> <span data-ttu-id="cd704-412">然后，单击**&lt;部分&gt;#login**项以访问**Styles.css**代码。</span><span class="sxs-lookup"><span data-stu-id="cd704-412">Then, click the **&lt;section&gt; #login** item to access **Styles.css** code.</span></span>
 
     <span data-ttu-id="cd704-413">![查找样式](using-page-inspector-in-visual-studio-2012/_static/image42.png "查找样式")</span><span class="sxs-lookup"><span data-stu-id="cd704-413">![Finding the style](using-page-inspector-in-visual-studio-2012/_static/image42.png "Finding the style")</span></span>
 
     <span data-ttu-id="cd704-414">*查找样式*</span><span class="sxs-lookup"><span data-stu-id="cd704-414">*Finding the style*</span></span>
-7. <span data-ttu-id="cd704-415">在**Style.css**，取消注释的代码**#login li**项。</span><span class="sxs-lookup"><span data-stu-id="cd704-415">In **Style.css**, uncomment the code for **#login li** items.</span></span> <span data-ttu-id="cd704-416">要添加的样式将隐藏项目符号和水平显示的项目。</span><span class="sxs-lookup"><span data-stu-id="cd704-416">The style you are adding will hide the bullet and display the items horizontally.</span></span>
+7. <span data-ttu-id="cd704-415">在**Style.css**，取消注释的代码 **#login li**项。</span><span class="sxs-lookup"><span data-stu-id="cd704-415">In **Style.css**, uncomment the code for **#login li** items.</span></span> <span data-ttu-id="cd704-416">要添加的样式将隐藏项目符号和水平显示的项目。</span><span class="sxs-lookup"><span data-stu-id="cd704-416">The style you are adding will hide the bullet and display the items horizontally.</span></span>
 
     <span data-ttu-id="cd704-417">![右列的登录链接](using-page-inspector-in-visual-studio-2012/_static/image43.png "右列的登录链接")</span><span class="sxs-lookup"><span data-stu-id="cd704-417">![Restyling the login links](using-page-inspector-in-visual-studio-2012/_static/image43.png "Restyling the login links")</span></span>
 

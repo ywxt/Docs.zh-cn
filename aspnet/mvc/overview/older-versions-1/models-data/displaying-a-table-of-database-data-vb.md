@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872268"
 ---
 <a name="displaying-a-table-of-database-data-vb"></a><span data-ttu-id="76b03-104">显示表的数据库数据 (VB)</span><span class="sxs-lookup"><span data-stu-id="76b03-104">Displaying a Table of Database Data (VB)</span></span>
 ====================
@@ -105,7 +106,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-vb[Main](displaying-a-table-of-database-data-vb/samples/sample1.vb)]
 
-<span data-ttu-id="76b03-170">在清单 1 MoviesDBEntities 类用于表示 MoviesDB 数据库。</span><span class="sxs-lookup"><span data-stu-id="76b03-170">In Listing 1, the MoviesDBEntities class is used to represent the MoviesDB database.</span></span> <span data-ttu-id="76b03-171">表达式*实体。MovieSet.ToList()*返回所有电影的集，从电影数据库表。</span><span class="sxs-lookup"><span data-stu-id="76b03-171">The expression *entities.MovieSet.ToList()* returns the set of all movies from the Movies database table.</span></span>
+<span data-ttu-id="76b03-170">在清单 1 MoviesDBEntities 类用于表示 MoviesDB 数据库。</span><span class="sxs-lookup"><span data-stu-id="76b03-170">In Listing 1, the MoviesDBEntities class is used to represent the MoviesDB database.</span></span> <span data-ttu-id="76b03-171">表达式*实体。MovieSet.ToList()* 返回所有电影的集，从电影数据库表。</span><span class="sxs-lookup"><span data-stu-id="76b03-171">The expression *entities.MovieSet.ToList()* returns the set of all movies from the Movies database table.</span></span>
 
 ## <a name="create-the-view"></a><span data-ttu-id="76b03-172">创建视图</span><span class="sxs-lookup"><span data-stu-id="76b03-172">Create the View</span></span>
 

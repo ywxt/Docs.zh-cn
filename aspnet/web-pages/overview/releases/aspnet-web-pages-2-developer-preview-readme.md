@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899085"
 ---
 <a name="aspnet-web-pages-2-developer-preview-readme"></a><span data-ttu-id="e3936-102">ASP.NET Web Pages 2 开发人员预览自述文件</span><span class="sxs-lookup"><span data-stu-id="e3936-102">ASP.NET Web Pages 2 Developer Preview ReadMe</span></span>
 ====================

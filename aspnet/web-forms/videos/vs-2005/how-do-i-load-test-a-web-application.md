@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893994"
 ---
 <a name="how-do-i-load-test-a-web-application"></a><span data-ttu-id="d9938-105">[如何:]负载测试的 Web 应用程序？</span><span class="sxs-lookup"><span data-stu-id="d9938-105">[How Do I:] Load Test a Web Application?</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890458"
 ---
 <a name="web-deployment-in-the-enterprise"></a><span data-ttu-id="a4f6c-103">企业中的 web 部署</span><span class="sxs-lookup"><span data-stu-id="a4f6c-103">Web Deployment in the Enterprise</span></span>
 ====================

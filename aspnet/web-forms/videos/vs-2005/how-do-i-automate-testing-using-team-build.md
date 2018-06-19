@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893532"
 ---
 <a name="how-do-i-automate-testing-using-team-build"></a><span data-ttu-id="f23ae-104">[如何:]实现使用团队生成的测试的自动化？</span><span class="sxs-lookup"><span data-stu-id="f23ae-104">[How Do I:] Automate Testing using Team Build?</span></span>
 ====================

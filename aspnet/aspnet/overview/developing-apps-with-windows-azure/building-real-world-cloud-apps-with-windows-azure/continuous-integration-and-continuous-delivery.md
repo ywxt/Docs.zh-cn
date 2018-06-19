@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869408"
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a><span data-ttu-id="31be6-104">持续集成和持续交付 （使用 Azure 构建真实世界云应用）</span><span class="sxs-lookup"><span data-stu-id="31be6-104">Continuous Integration and Continuous Delivery (Building Real-World Cloud Apps with Azure)</span></span>
 ====================

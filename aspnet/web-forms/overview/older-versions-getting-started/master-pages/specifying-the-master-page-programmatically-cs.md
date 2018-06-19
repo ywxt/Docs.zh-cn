@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891147"
 ---
 <a name="specifying-the-master-page-programmatically-c"></a><span data-ttu-id="65828-103">以编程方式指定 Master 页 (C#)</span><span class="sxs-lookup"><span data-stu-id="65828-103">Specifying the Master Page Programmatically (C#)</span></span>
 ====================

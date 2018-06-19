@@ -14,6 +14,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32739849"
 ---
 # <a name="application-parts-in-aspnet-core"></a><span data-ttu-id="b2b13-103">ASP.NET Core 中的应用程序部件</span><span class="sxs-lookup"><span data-stu-id="b2b13-103">Application Parts in ASP.NET Core</span></span>
 

@@ -14,6 +14,7 @@ ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34154538"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a><span data-ttu-id="4f5a7-103">ASP.NET Core MVC 和 EF Core - 数据模型 - 第 5 个教程（共 10 个）</span><span class="sxs-lookup"><span data-stu-id="4f5a7-103">ASP.NET Core MVC with EF Core - Data Model - 5 of 10</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34306710"
 ---
 <a name="mvc-recommended-resources"></a><span data-ttu-id="bf897-104">MVC 的推荐资源</span><span class="sxs-lookup"><span data-stu-id="bf897-104">MVC Recommended Resources</span></span>
 ====================

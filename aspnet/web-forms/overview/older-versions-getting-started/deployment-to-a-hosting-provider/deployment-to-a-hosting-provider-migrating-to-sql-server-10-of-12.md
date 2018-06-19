@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892090"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a><span data-ttu-id="bbc87-103">部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 迁移到 SQL Server-10 12</span><span class="sxs-lookup"><span data-stu-id="bbc87-103">Deploying an ASP.NET Web Application with SQL Server Compact using Visual Studio or Visual Web Developer: Migrating to SQL Server - 10 of 12</span></span>
 ====================
@@ -108,7 +109,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="bbc87-172">打开**项目属性**窗口，然后选择**打包/发布 SQL**选项卡。</span><span class="sxs-lookup"><span data-stu-id="bbc87-172">Open the **Project Properties** window and select the **Package/Publish SQL** tab.</span></span>
 
-<span data-ttu-id="bbc87-173">请确保**活动 （发行版）**或**版本**中选择**配置**下拉列表。</span><span class="sxs-lookup"><span data-stu-id="bbc87-173">Make sure that **Active (Release)** or **Release** is selected in the **Configuration** drop-down list.</span></span>
+<span data-ttu-id="bbc87-173">请确保**活动 （发行版）** 或**版本**中选择**配置**下拉列表。</span><span class="sxs-lookup"><span data-stu-id="bbc87-173">Make sure that **Active (Release)** or **Release** is selected in the **Configuration** drop-down list.</span></span>
 
 <span data-ttu-id="bbc87-174">单击**启用此页**。</span><span class="sxs-lookup"><span data-stu-id="bbc87-174">Click **Enable this Page**.</span></span>
 
@@ -297,7 +298,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="bbc87-306">现在你已准备好设置中的数据库部署设置**打包/发布 SQL**选项卡上，如你此前为测试环境。</span><span class="sxs-lookup"><span data-stu-id="bbc87-306">Now you're ready to set up database deployment settings in the **Package/Publish SQL** tab, as you did earlier for the test environment.</span></span>
 
-<span data-ttu-id="bbc87-307">打开**项目属性**窗口中，选择**打包/发布 SQL**选项卡上，并确保**活动 （发行版）**或**版本**是在所选**配置**下拉列表。</span><span class="sxs-lookup"><span data-stu-id="bbc87-307">Open the **Project Properties** window, select the **Package/Publish SQL** tab, and make sure that **Active (Release)** or **Release** is selected in the **Configuration** drop-down list.</span></span>
+<span data-ttu-id="bbc87-307">打开**项目属性**窗口中，选择**打包/发布 SQL**选项卡上，并确保**活动 （发行版）** 或**版本**是在所选**配置**下拉列表。</span><span class="sxs-lookup"><span data-stu-id="bbc87-307">Open the **Project Properties** window, select the **Package/Publish SQL** tab, and make sure that **Active (Release)** or **Release** is selected in the **Configuration** drop-down list.</span></span>
 
 <span data-ttu-id="bbc87-308">在配置每个数据库的部署设置时，你的生产和测试环境所执行的操作的主要区别是你如何配置连接字符串中。</span><span class="sxs-lookup"><span data-stu-id="bbc87-308">When you configure deployment settings for each database, the key difference between what you do for production and test environments is in how you configure connection strings.</span></span> <span data-ttu-id="bbc87-309">为测试环境中输入不同的目标数据库连接字符串，但对于生产环境目标连接字符串将为这两个数据库相同。</span><span class="sxs-lookup"><span data-stu-id="bbc87-309">For the test environment you entered different destination database connection strings, but for the production environment the destination connection string will be the same for both databases.</span></span> <span data-ttu-id="bbc87-310">这是因为这两个数据库部署到生产中的一个数据库。</span><span class="sxs-lookup"><span data-stu-id="bbc87-310">This is because you are deploying both databases to one database in production.</span></span>
 
@@ -434,7 +435,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="bbc87-390">你不再需要的文件和已包含至 SQL Server Compact 的 NuGet 包。</span><span class="sxs-lookup"><span data-stu-id="bbc87-390">You no longer need files and NuGet packages that were included to support SQL Server Compact.</span></span> <span data-ttu-id="bbc87-391">如果你想 （此步骤不需要），你可以清理不需要的文件和引用。</span><span class="sxs-lookup"><span data-stu-id="bbc87-391">If you want (this step is not required), you can clean up unneeded files and references.</span></span>
 
-<span data-ttu-id="bbc87-392">在**解决方案资源管理器**，删除*.sdf*文件从*应用\_数据*文件夹和*amd64*和*x86*文件夹从*bin*文件夹。</span><span class="sxs-lookup"><span data-stu-id="bbc87-392">In **Solution Explorer**, delete the *.sdf* files from the *App\_Data* folder and the *amd64* and *x86* folders from the *bin* folder.</span></span>
+<span data-ttu-id="bbc87-392">在**解决方案资源管理器**，删除 *.sdf*文件从*应用\_数据*文件夹和*amd64*和*x86*文件夹从*bin*文件夹。</span><span class="sxs-lookup"><span data-stu-id="bbc87-392">In **Solution Explorer**, delete the *.sdf* files from the *App\_Data* folder and the *amd64* and *x86* folders from the *bin* folder.</span></span>
 
 <span data-ttu-id="bbc87-393">在**解决方案资源管理器**，右键单击该解决方案 （不是一种项目），，然后单击**管理解决方案的 NuGet 包**。</span><span class="sxs-lookup"><span data-stu-id="bbc87-393">In **Solution Explorer**, right-click the solution (not one of the projects), and then click **Manage NuGet Packages for Solution**.</span></span>
 

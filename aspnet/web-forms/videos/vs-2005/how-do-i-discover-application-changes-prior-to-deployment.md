@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894312"
 ---
 <a name="how-do-i-discover-application-changes-prior-to-deployment"></a><span data-ttu-id="d9765-104">[如何:]发现之前部署的应用程序更改？</span><span class="sxs-lookup"><span data-stu-id="d9765-104">[How Do I:] Discover Application Changes Prior to Deployment?</span></span>
 ====================

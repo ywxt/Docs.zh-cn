@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891225"
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-c"></a><span data-ttu-id="b0751-103">插入、 更新和删除数据 (C#) 的概述</span><span class="sxs-lookup"><span data-stu-id="b0751-103">An Overview of Inserting, Updating, and Deleting Data (C#)</span></span>
 ====================

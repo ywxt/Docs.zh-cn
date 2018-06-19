@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/server-controls
-title: "服务器控件 |Microsoft 文档"
+title: 服务器控件 |Microsoft 文档
 author: microsoft
-description: "ASP.NET 2.0 增强了在许多方面的服务器控件。 在此模块中，我们将介绍一些方式 ASP.NET 2.0 和 Visual Studio 200 体系结构更改..."
+description: ASP.NET 2.0 增强了在许多方面的服务器控件。 在此模块中，我们将介绍一些方式 ASP.NET 2.0 和 Visual Studio 200 体系结构更改...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28885188"
 ---
 <a name="server-controls"></a><span data-ttu-id="ba45f-104">服务器控件</span><span class="sxs-lookup"><span data-stu-id="ba45f-104">Server Controls</span></span>
 ====================

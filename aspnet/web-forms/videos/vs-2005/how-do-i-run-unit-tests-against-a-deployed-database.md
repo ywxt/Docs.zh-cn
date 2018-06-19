@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893516"
 ---
 <a name="how-do-i-run-unit-tests-against-a-deployed-database"></a><span data-ttu-id="9ff5d-104">[如何:]对已部署的数据库中运行单元测试？</span><span class="sxs-lookup"><span data-stu-id="9ff5d-104">[How Do I:] Run Unit Tests against a Deployed Database?</span></span>
 ====================

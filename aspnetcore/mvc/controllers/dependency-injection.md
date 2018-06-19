@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30071797"
 ---
 # <a name="dependency-injection-into-controllers-in-aspnet-core"></a><span data-ttu-id="d009f-103">在 ASP.NET Core 中将依赖项注入到控制器</span><span class="sxs-lookup"><span data-stu-id="d009f-103">Dependency injection into controllers in ASP.NET Core</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896572"
 ---
 <a name="programming-aspnet-web-pages-razor-using-visual-studio"></a><span data-ttu-id="96f82-103">使用 Visual Studio 编程 ASP.NET Web 页 (Razor)</span><span class="sxs-lookup"><span data-stu-id="96f82-103">Programming ASP.NET Web Pages (Razor) Using Visual Studio</span></span>
 ====================
@@ -81,7 +82,7 @@ ms.lasthandoff: 04/06/2018
 
     ![创建新网站](program-asp-net-web-pages-in-visual-studio/_static/image2.png)
 3. <span data-ttu-id="96f82-154">在**新网站**对话框框中，选择要使用 （Visual C# 或 Visual Basic） 的语言。</span><span class="sxs-lookup"><span data-stu-id="96f82-154">In the **New Web Site** dialog box, select the language to use (Visual C# or Visual Basic).</span></span>
-4. <span data-ttu-id="96f82-155">选择**ASP.NET 网站 (Razor)**模板。</span><span class="sxs-lookup"><span data-stu-id="96f82-155">Select the **ASP.NET Web Site (Razor)** template.</span></span>
+4. <span data-ttu-id="96f82-155">选择**ASP.NET 网站 (Razor)** 模板。</span><span class="sxs-lookup"><span data-stu-id="96f82-155">Select the **ASP.NET Web Site (Razor)** template.</span></span>
 
     ![razor 站点](program-asp-net-web-pages-in-visual-studio/_static/image3.png)
 5. <span data-ttu-id="96f82-157">单击 **“确定”**。</span><span class="sxs-lookup"><span data-stu-id="96f82-157">Click **OK**.</span></span>

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868641"
 ---
 <a name="disabling-actions-during-animation-vb"></a><span data-ttu-id="d8ba7-104">禁用操作期间动画 (VB)</span><span class="sxs-lookup"><span data-stu-id="d8ba7-104">Disabling Actions during Animation (VB)</span></span>
 ====================

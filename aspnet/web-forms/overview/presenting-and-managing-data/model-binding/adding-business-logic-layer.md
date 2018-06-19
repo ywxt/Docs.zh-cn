@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892746"
 ---
 <a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a><span data-ttu-id="c0682-104">添加到使用模型绑定和 web 窗体的项目的业务逻辑层</span><span class="sxs-lookup"><span data-stu-id="c0682-104">Adding business logic layer to a project that uses model binding and web forms</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890650"
 ---
 <a name="configuring-a-website-that-uses-application-services-c"></a><span data-ttu-id="87016-103">配置网站，以使用应用程序服务 (C#)</span><span class="sxs-lookup"><span data-stu-id="87016-103">Configuring a Website that Uses Application Services (C#)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890003"
 ---
 <a name="security-basics-and-aspnet-support-vb"></a><span data-ttu-id="30443-103">安全性基础知识和 ASP.NET 支持 (VB)</span><span class="sxs-lookup"><span data-stu-id="30443-103">Security Basics and ASP.NET Support (VB)</span></span>
 ====================

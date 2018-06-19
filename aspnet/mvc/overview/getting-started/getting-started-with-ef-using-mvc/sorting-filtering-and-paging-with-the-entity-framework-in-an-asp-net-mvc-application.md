@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874676"
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application"></a><span data-ttu-id="a5c4e-103">排序、 筛选和分页与实体框架中的 ASP.NET MVC 应用程序</span><span class="sxs-lookup"><span data-stu-id="a5c4e-103">Sorting, Filtering, and Paging with the Entity Framework in an ASP.NET MVC Application</span></span>
 ====================

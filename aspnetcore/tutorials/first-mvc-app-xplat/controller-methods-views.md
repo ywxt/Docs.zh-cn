@@ -14,6 +14,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896934"
 ---
 # <a name="controller-methods-and-views-in-aspnet-core"></a><span data-ttu-id="60c41-103">ASP.NET Core 中的控制器方法和视图</span><span class="sxs-lookup"><span data-stu-id="60c41-103">Controller methods and views in ASP.NET Core</span></span>
 

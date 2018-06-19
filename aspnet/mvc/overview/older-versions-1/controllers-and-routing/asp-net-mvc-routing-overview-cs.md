@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868589"
 ---
 <a name="aspnet-mvc-routing-overview-c"></a><span data-ttu-id="30d1a-103">ASP.NET MVC 路由概述 (C#)</span><span class="sxs-lookup"><span data-stu-id="30d1a-103">ASP.NET MVC Routing Overview (C#)</span></span>
 ====================

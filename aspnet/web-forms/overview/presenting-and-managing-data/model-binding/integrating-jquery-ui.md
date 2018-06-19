@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887907"
 ---
 <a name="integrating-jquery-ui-datepicker-with-model-binding-and-web-forms"></a><span data-ttu-id="f3037-104">使用模型的绑定和 web 窗体中集成 JQuery UI Datepicker</span><span class="sxs-lookup"><span data-stu-id="f3037-104">Integrating JQuery UI Datepicker with model binding and web forms</span></span>
 ====================

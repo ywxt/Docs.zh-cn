@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "28039822"
 ---
 <a name="mobile-apps--sites-with-aspnet"></a><span data-ttu-id="9f68f-103">移动应用 （&) 与 ASP.NET 站点</span><span class="sxs-lookup"><span data-stu-id="9f68f-103">Mobile Apps & Sites with ASP.NET</span></span>
 ====================

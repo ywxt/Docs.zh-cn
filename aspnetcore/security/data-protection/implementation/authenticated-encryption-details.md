@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30077902"
 ---
 # <a name="authenticated-encryption-details-in-aspnet-core"></a><span data-ttu-id="f851a-103">经过身份验证的加密在 ASP.NET Core 的详细信息</span><span class="sxs-lookup"><span data-stu-id="f851a-103">Authenticated encryption details in ASP.NET Core</span></span>
 

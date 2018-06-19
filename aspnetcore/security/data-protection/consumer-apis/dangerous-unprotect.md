@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30077412"
 ---
 # <a name="unprotect-payloads-whose-keys-have-been-revoked-in-aspnet-core"></a><span data-ttu-id="2f275-103">取消保护已吊销在 ASP.NET 核心中键的有效负载</span><span class="sxs-lookup"><span data-stu-id="2f275-103">Unprotect payloads whose keys have been revoked in ASP.NET Core</span></span>
 
