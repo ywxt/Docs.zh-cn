@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898576"
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -87,21 +88,21 @@ ASP.NET MVC 4 包括 ASP.NET Web API，新的框架，用于创建可以覆盖�
 
 ASP.NET Web API 包括以下功能的支持：
 
-- **现代的 HTTP 编程模型：**直接访问和处理 HTTP 请求和响应中你使用新的强类型化的 HTTP 对象模型的 Web Api。 相同的编程模型和 HTTP 管道是通过新客户端上所需有*HttpClient*类型。
+- **现代的 HTTP 编程模型：** 直接访问和处理 HTTP 请求和响应中你使用新的强类型化的 HTTP 对象模型的 Web Api。 相同的编程模型和 HTTP 管道是通过新客户端上所需有*HttpClient*类型。
 - **完全支持路由：** ASP.NET Web API 支持的 ASP.NET 路由，包括路由参数和约束的路由功能的完整集。 此外，使用简单的约定操作映射到 HTTP 方法。
-- **内容协商：**客户端和服务器可协同工作来确定从 web API 返回的数据的正确格式。 ASP.NET Web API 提供对于 XML，JSON，默认支持和窗体 URL 编码格式，并且你可以通过添加你自己格式化程序，扩展此支持或甚至替换默认内容协商策略。
-- **模型绑定和验证：**模型联编程序提供了简便的方法，以从各个部分的 HTTP 请求中提取数据并将这些消息部分转换为.NET 对象以便可以由 Web API 操作。 基于数据注释的 action 参数还执行验证。
-- **筛选器：** ASP.NET Web API 支持筛选器，如包括的已知的筛选器*[Authorize]*属性。 可以创作并插入自己的筛选器操作、 授权和异常处理。
-- **查询组合：**使用*[Queryable]*上返回的操作的筛选器属性*IQueryable*查询你的 web API 通过 OData 查询约定的支持。
-- **改进的可测试性：**而不是静态的上下文对象中设置 HTTP 详细信息，web API 操作工作的实例，并用*HttpRequestMessage*和*HttpResponseMessage*。 创建单元测试项目以及你的 Web API 项目，若要开始快速编写你的 Web API 功能的单元测试。
-- **基于代码的配置：**只有通过代码实现 ASP.NET Web API 配置、 离开 config 文件清理。 使用提供的服务定位符模式配置扩展点。
+- **内容协商：** 客户端和服务器可协同工作来确定从 web API 返回的数据的正确格式。 ASP.NET Web API 提供对于 XML，JSON，默认支持和窗体 URL 编码格式，并且你可以通过添加你自己格式化程序，扩展此支持或甚至替换默认内容协商策略。
+- **模型绑定和验证：** 模型联编程序提供了简便的方法，以从各个部分的 HTTP 请求中提取数据并将这些消息部分转换为.NET 对象以便可以由 Web API 操作。 基于数据注释的 action 参数还执行验证。
+- **筛选器：** ASP.NET Web API 支持筛选器，如包括的已知的筛选器 *[Authorize]* 属性。 可以创作并插入自己的筛选器操作、 授权和异常处理。
+- **查询组合：** 使用 *[Queryable]* 上返回的操作的筛选器属性*IQueryable*查询你的 web API 通过 OData 查询约定的支持。
+- **改进的可测试性：** 而不是静态的上下文对象中设置 HTTP 详细信息，web API 操作工作的实例，并用*HttpRequestMessage*和*HttpResponseMessage*。 创建单元测试项目以及你的 Web API 项目，若要开始快速编写你的 Web API 功能的单元测试。
+- **基于代码的配置：** 只有通过代码实现 ASP.NET Web API 配置、 离开 config 文件清理。 使用提供的服务定位符模式配置扩展点。
 - **改进了对控制反向 (IoC) 容器支持：** ASP.NET Web API 提供通过改进的依赖项解析程序抽象 IoC 容器的全力支持
 - **自承载：** Web Api 可以同时仍可使用的路由的完整功能和其他功能的 Web API 承载在 IIS 除了过程中。
-- **创建自定义帮助和测试页：**您现在可以轻松地生成自定义帮助和你的 web Api 使用新的测试页*IApiExplorer*要得到你的 web Api 的完整运行时说明的服务。
+- **创建自定义帮助和测试页：** 您现在可以轻松地生成自定义帮助和你的 web Api 使用新的测试页*IApiExplorer*要得到你的 web Api 的完整运行时说明的服务。
 - **监视和诊断：** ASP.NET Web API 现在提供轻型跟踪基础结构，可以轻松地将现有的日志记录解决方案，例如 System.Diagnostics、 ETW 和第三方日志记录框架与相集成。 你可以通过提供启用跟踪*ITraceWriter*实现并将其添加到你的 web API 配置。
-- **链接生成：**使用 ASP.NET Web API *UrlHelper*生成在同一应用程序的相关资源链接。
-- **Web API 项目模板：**选择新的 Web API 项目表单新的 MVC 4 项目向导快速使用 ASP.NET Web API 将启动并正在运行。
-- **基架：**使用**添加控制器**对话框，以快速创建基于实体框架的 web API 控制器的基架基于模型类型。
+- **链接生成：** 使用 ASP.NET Web API *UrlHelper*生成在同一应用程序的相关资源链接。
+- **Web API 项目模板：** 选择新的 Web API 项目表单新的 MVC 4 项目向导快速使用 ASP.NET Web API 将启动并正在运行。
+- **基架：** 使用**添加控制器**对话框，以快速创建基于实体框架的 web API 控制器的基架基于模型类型。
 
 有关 ASP.NET Web API 的详细信息，请访问[ https://www.asp.net/web-api ](../web-api/index.md)。
 
@@ -227,24 +228,24 @@ ASP.NET MVC 4 预发布版的发行说明可以在此处找到：
 下面概括了 ASP.NET MVC 4 预发布版中此版本中的主要更改：
 
 - **每个控制器配置：** ASP.NET Web API 控制器可以使用实现的自定义特性进行特性化*IControllerConfiguration*如何设置其自己的格式化程序，操作选择器和参数联编程序. *HttpControllerConfigurationAttribute*已删除。
-- **每个路由消息处理程序：**现在可以为给定路由请求链中指定的最后一条消息处理程序。 这样，对于持续一段时间沿框架若要使用路由来调度到其自身的支持 (非*IHttpController*) 终结点。
+- **每个路由消息处理程序：** 现在可以为给定路由请求链中指定的最后一条消息处理程序。 这样，对于持续一段时间沿框架若要使用路由来调度到其自身的支持 (非*IHttpController*) 终结点。
 - **进度通知：** *ProgressMessageHandler*生成的请求实体正在上载和下载的响应实体的进度通知。 使用此处理程序可跟踪的距离要上载的请求正文或正在下载响应正文。
 - **将内容推送：** *PushStreamContent*类使数据制造者要直接写入请求或响应 （同步或异步） 使用一个流方案。 当*PushStreamContent*已准备好接受它调用至授权操作的输出流的数据。 只要有必要和关闭流编写时已完成，开发人员然后可以写入到流。 *PushStreamContent*检测流在关闭并完成基础异步*任务*用于写出内容。
-- **创建错误响应：**使用*HttpError*类型来一致地表示错误信息从验证错误和异常等时仍遵循*IncludeErrorDetailPolicy*. 使用新*CreateErrorResponse*扩展方法来轻松地创建使用的错误响应*HttpError*作为内容。 *HttpError*内容是完全内容协商。
-- **删除 MediaRangeMapping:**现在由默认内容 negotiator 处理媒体类型范围。
-- **简单类型参数的默认参数绑定现 [FromUri]:**在以前版本的默认参数绑定，简单类型参数使用模型绑定的 ASP.NET Web API。 简单类型参数的默认参数绑定现*[FromUri]*。
+- **创建错误响应：** 使用*HttpError*类型来一致地表示错误信息从验证错误和异常等时仍遵循*IncludeErrorDetailPolicy*. 使用新*CreateErrorResponse*扩展方法来轻松地创建使用的错误响应*HttpError*作为内容。 *HttpError*内容是完全内容协商。
+- **删除 MediaRangeMapping:** 现在由默认内容 negotiator 处理媒体类型范围。
+- **简单类型参数的默认参数绑定现 [FromUri]:** 在以前版本的默认参数绑定，简单类型参数使用模型绑定的 ASP.NET Web API。 简单类型参数的默认参数绑定现 *[FromUri]*。
 - **操作选择具有所需的参数：** ASP.NET Web API 中的操作选择将现在仅选择操作，如果提供来自 URI 的所有必需的参数。 可以通过提供有关操作方法签名中的自变量的默认值为可选指定的参数。
-- **自定义 HTTP 参数绑定：**使用*ParameterBindingAttribute*自定义特定的操作参数的参数绑定，或使用*ParameterBindingRules*上*HttpConfiguration*可以自定义参数绑定范围更加广泛。
-- **MediaTypeFormatter 改进：**格式化程序现在可以访问完整*HttpContent*实例。
-- **缓冲策略选择的主机：**实现和配置*IHostBufferPolicySelector*服务在 ASP.NET Web API 以启用主机来确定缓冲时要使用的策略。
-- **主机不可知的方式访问客户端证书：**使用*GetClientCertificate*扩展方法，以从请求消息获取提供的客户端证书。
-- **内容协商扩展性：**通过从派生自定义内容协商*DefaultContentNegotiator*和重写你想要的内容协商的任何方面。
-- **用于返回 406 不可接受的响应的支持：**你现在可以返回 406 不可接受的响应在 ASP.NET Web API 中通过创建找不到合适的格式化程序时*DefaultContentNegotiator*与*excludeMatchOnTypeOnly*参数设置为*true*。
-- **窗体数据作为 NameValueCollection 或 JToken 读取：**可以读取 URI 查询字符串中或作为请求正文中的窗体数据*NameValueCollection*使用*ParseQueryString*和*ReadAsFormDataAsync*扩展方法分别。 同样，你可以读取 URI 查询字符串中或作为请求正文中的窗体数据*JToken*使用*TryReadQueryAsJson*和*ReadAsAsync*&lt;T&gt;扩展方法分别。
-- **多部分改进：**现可以用来编写*MultipartStreamProvider*完全适合多部分 MIME 数据其能够读取并以最佳方式向用户显示结果的类型。 您还可以通过以下方式挂钩后续处理步骤上*MultipartStreamProvider*允许实现来完成任何后期处理它在 MIME 多部分正文部分的需要。 例如， *MultipartFormDataStreamProvider*实现读取数据部分的 HTML 窗体并将它们添加到*NameValueCollection*以便它们可轻松地从调用方处获取。
+- **自定义 HTTP 参数绑定：** 使用*ParameterBindingAttribute*自定义特定的操作参数的参数绑定，或使用*ParameterBindingRules*上*HttpConfiguration*可以自定义参数绑定范围更加广泛。
+- **MediaTypeFormatter 改进：** 格式化程序现在可以访问完整*HttpContent*实例。
+- **缓冲策略选择的主机：** 实现和配置*IHostBufferPolicySelector*服务在 ASP.NET Web API 以启用主机来确定缓冲时要使用的策略。
+- **主机不可知的方式访问客户端证书：** 使用*GetClientCertificate*扩展方法，以从请求消息获取提供的客户端证书。
+- **内容协商扩展性：** 通过从派生自定义内容协商*DefaultContentNegotiator*和重写你想要的内容协商的任何方面。
+- **用于返回 406 不可接受的响应的支持：** 你现在可以返回 406 不可接受的响应在 ASP.NET Web API 中通过创建找不到合适的格式化程序时*DefaultContentNegotiator*与*excludeMatchOnTypeOnly*参数设置为*true*。
+- **窗体数据作为 NameValueCollection 或 JToken 读取：** 可以读取 URI 查询字符串中或作为请求正文中的窗体数据*NameValueCollection*使用*ParseQueryString*和*ReadAsFormDataAsync*扩展方法分别。 同样，你可以读取 URI 查询字符串中或作为请求正文中的窗体数据*JToken*使用*TryReadQueryAsJson*和*ReadAsAsync*&lt;T&gt;扩展方法分别。
+- **多部分改进：** 现可以用来编写*MultipartStreamProvider*完全适合多部分 MIME 数据其能够读取并以最佳方式向用户显示结果的类型。 您还可以通过以下方式挂钩后续处理步骤上*MultipartStreamProvider*允许实现来完成任何后期处理它在 MIME 多部分正文部分的需要。 例如， *MultipartFormDataStreamProvider*实现读取数据部分的 HTML 窗体并将它们添加到*NameValueCollection*以便它们可轻松地从调用方处获取。
 - **链接生成改进：** *UrlHelper*不再依赖于*HttpControllerContext*。 你现在可以访问*UrlHelper*任何上下文中其中*HttpRequestMessage*可用。
-- **消息处理程序执行顺序更改：**消息处理程序现在它们进行配置而不是相反的顺序的顺序执行。
-- **帮助器方式设置消息处理程序：**新*HttpClientFactory* ，可以连接*DelegatingHandlers*并创建*HttpClient*与准备就绪所需的管道。 它还提供功能的方式与备用的内部处理程序设置 (默认值是*HttpClientHandler*) 以及使用时执行连接*HttpMessageInvoker*或另一个*DelegatingHandler*而不是*HttpClient*作为顶部调用程序。
+- **消息处理程序执行顺序更改：** 消息处理程序现在它们进行配置而不是相反的顺序的顺序执行。
+- **帮助器方式设置消息处理程序：** 新*HttpClientFactory* ，可以连接*DelegatingHandlers*并创建*HttpClient*与准备就绪所需的管道。 它还提供功能的方式与备用的内部处理程序设置 (默认值是*HttpClientHandler*) 以及使用时执行连接*HttpMessageInvoker*或另一个*DelegatingHandler*而不是*HttpClient*作为顶部调用程序。
 - **在 ASP.NET Web 优化的 Cdn 的支持：** ASP.NET Web 优化现在提供支持 CDN 备用路径，使你能够指定每个捆绑附加 URL 用于指向该内容传送网络上的相同资源。 支持 Cdn，可获取脚本和样式绑定在地理上靠近 Web 应用程序的结束使用者。 CDN 不可用时，生产应用程序应实现回退。 测试回退。
 - **ASP.NET Web API 将路由并配置移动到*WebApiConfig.Register*可以是 resused 在测试代码中的静态方法。** ASP.NET Web API 路由之前已在中添加*RouteConfig.RegisterRoutes*以及标准 MVC 将路由。 在单独现在处理的默认 ASP.NET Web API 将路由和配置*WebApiConfig.Register*方法以便于测试。
 
@@ -275,7 +276,7 @@ ASP.NET MVC 4 预发布版的发行说明可以在此处找到：
 
     **所需的更新**
 
-  1. 在根 Web.config 文件中，添加新*&lt;appSettings&gt;*具有键项*webPages:Version*和值*1.0.0.0*。 
+  1. 在根 Web.config 文件中，添加新*&lt;appSettings&gt;* 具有键项*webPages:Version*和值*1.0.0.0*。 
 
       [!code-xml[Main](mvc4-release-notes/samples/sample7.xml)]
   2. 在解决方案资源管理器，右键单击项目名称，然后选择卸载项目。 再次右键单击名称，然后选择编辑*ProjectName*.csproj。
@@ -288,8 +289,8 @@ ASP.NET MVC 4 预发布版的发行说明可以在此处找到：
       [!code-xml[Main](mvc4-release-notes/samples/sample9.xml)]
   4. 保存所做的更改，关闭了编辑，然后右键单击项目并选择重新加载项目 (.csproj) 文件。
 
-- **更改为目标 4.0 的 ASP.NET MVC 4 项目，从 4.5 不会更新 EntityFramework 程序集引用：**如果你的 ASP.NET MVC 4 项目后更改为目标 4.0 针对 4.5 对 EntityFramework 程序集的引用将仍指向4.5 版本。 若要解决此问题卸载并重新安装 EntityFramework NuGet 包。
-- **从 4.5 更改为目标 4.0 后，在 Azure 上运行 ASP.NET MVC 4 应用程序时的 403 禁止访问：**如果你之后针对 4.5 更改为目标 4.0 的 ASP.NET MVC 4 项目并随后部署到 Azure 可能会看到在运行时一个 403 禁止访问错误。 解决此问题添加到 web.config 以下项： `<modules runAllManagedModulesForAllRequests="true" />`
+- **更改为目标 4.0 的 ASP.NET MVC 4 项目，从 4.5 不会更新 EntityFramework 程序集引用：** 如果你的 ASP.NET MVC 4 项目后更改为目标 4.0 针对 4.5 对 EntityFramework 程序集的引用将仍指向4.5 版本。 若要解决此问题卸载并重新安装 EntityFramework NuGet 包。
+- **从 4.5 更改为目标 4.0 后，在 Azure 上运行 ASP.NET MVC 4 应用程序时的 403 禁止访问：** 如果你之后针对 4.5 更改为目标 4.0 的 ASP.NET MVC 4 项目并随后部署到 Azure 可能会看到在运行时一个 403 禁止访问错误。 解决此问题添加到 web.config 以下项： `<modules runAllManagedModulesForAllRequests="true" />`
 - **当您键入时，visual Studio 2012 崩溃\'Razor 文件中的文本字符串中。** 若要解决此问题第一次输入的字符串文本右引号。
 - <strong>浏览到&quot;帐户/管理&quot;CHS、 TRK 和 CHT 语言运行时错误中的 Internet 模板结果中。</strong> 若要解决此问题修改页后，可以分离出<em>@User.Identity.Name</em>置于内仅有的内容作为<em>&lt;强&gt;</em>标记。
 - **Google 和 LinkedIn 提供程序不支持 Azure 网站中。** 在部署到 Azure 网站时，请使用备用身份验证提供程序。

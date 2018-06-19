@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885705"
 ---
 <a name="how-do-i-linq-to-sql-executing-arbitrary-sql"></a>我如何： LINQ to SQL： 执行任意 SQL
 ====================

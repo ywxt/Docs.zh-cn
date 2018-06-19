@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34306775"
 ---
 <a name="whats-new-in-web-forms-in-aspnet-45"></a>什么是在 ASP.NET 4.5 Web 窗体中的新增功能
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892876"
 ---
 <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix 和 ASP.NET Web 页 (Razor) Beta 3 版本自述文件
 ====================
@@ -280,7 +281,7 @@ ms.lasthandoff: 04/06/2018
 
 #### <a name="issue-uninstalling-the-net-framework-version-4-disables-aspnet-web-pages-with-razor-syntax"></a>问题： 卸载.NET Framework 版本 4 禁用带有 Razor 语法的 ASP.NET Web Pages
 
-> 如果你卸载.NET Framework 版本 4，然后重新安装它，将禁用使用 Razor 语法的 ASP.NET 网页。 与页*.cshtml*扩展可能无法正常运行。 ASP.NET Web Pages 机根目录中注册程序集*Web.config*文件，并删除.NET Framework 中删除该文件。 重新安装.NET Framework 安装新版本的配置文件中，但不会添加 ASP.NET 网页的程序集引用。
+> 如果你卸载.NET Framework 版本 4，然后重新安装它，将禁用使用 Razor 语法的 ASP.NET 网页。 与页 *.cshtml*扩展可能无法正常运行。 ASP.NET Web Pages 机根目录中注册程序集*Web.config*文件，并删除.NET Framework 中删除该文件。 重新安装.NET Framework 安装新版本的配置文件中，但不会添加 ASP.NET 网页的程序集引用。
 > 
 > **解决方法**后重新安装.NET Framework，请重新安装 ASP.NET 网页使用 Razor 语法。 这将添加到下面的元素*Web.config*机根目录，这通常是在以下位置中的文件：  
 > 
@@ -301,7 +302,7 @@ ms.lasthandoff: 04/06/2018
 
 #### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a>问题： 无扩展名的 Url 未找到 IIS 7 或 IIS 7.5 上的.cshtml/.vbhtml 文件
 
-> 在 IIS 7 或 IIS 7.5 上，如下所示 URL 的请求不能找到页具有*.cshtml*或*.vbhtml*扩展：  
+> 在 IIS 7 或 IIS 7.5 上，如下所示 URL 的请求不能找到页具有 *.cshtml*或 *.vbhtml*扩展：  
 > 
 > `http://www.example.com/ExampleSite/ExampleFile`  
 > 
@@ -344,7 +345,7 @@ ms.lasthandoff: 04/06/2018
 >     - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **到** *\Bin\x86*
 >     - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **到** *\Bin\amd64*
 > 2. 在网站的根文件夹中创建或打开*Web.config*文件。 (在 WebMatrix Beta 3 中，此文件类型是如果你单击可用**所有**中**选择文件类型**对话框。)
-> 3. 添加以下元素的子级**&lt;配置&gt;**元素 (而不是在**&lt;system.web&gt;**元素):
+> 3. 添加以下元素的子级**&lt;配置&gt;** 元素 (而不是在**&lt;system.web&gt;** 元素):
 > 
 > 
 > [!code-xml[Main](beta3/samples/sample10.xml)]
@@ -352,7 +353,7 @@ ms.lasthandoff: 04/06/2018
 
 #### <a name="issue-database-and-webgrid-helpers-do-not-work-in-medium-trust-in-visual-basic"></a>问题： 数据库和 WebGrid 帮助器中不起作用中等信任在 Visual Basic 中
 
-> 如果你使用的 Visual Basic (创建*.vbhtml*文件)，则`Database`和`WebGrid`如果应用程序设置为使用中等信任帮助器将无法工作。
+> 如果你使用的 Visual Basic (创建 *.vbhtml*文件)，则`Database`和`WebGrid`如果应用程序设置为使用中等信任帮助器将无法工作。
 > 
 > **Workaround**  
 > 暂时将设置用于完全信任的应用程序。

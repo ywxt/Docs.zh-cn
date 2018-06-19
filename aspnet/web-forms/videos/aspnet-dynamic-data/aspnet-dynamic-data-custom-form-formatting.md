@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881020"
 ---
 <a name="aspnet-dynamic-data-custom-form-formatting"></a>ASP.NET 动态数据自定义窗体格式设置
 ====================

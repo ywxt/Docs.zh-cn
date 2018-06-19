@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885094"
 ---
 <a name="master-pages"></a>母版页
 ====================
@@ -144,8 +145,8 @@ ASP.NET 2.0 引入了 Master 页作为一种维护一致的外观和感觉，而
 
 - <strong>MasterPageFile</strong>属性@Page指令
 - 设置**Page.MasterPageFile**在代码中的属性。
-- **&lt;页&gt;**应用程序配置文件 (web.config 应用程序的根文件夹中) 中的元素
-- **&lt;页&gt;**子文件夹配置文件 (web.config 的子文件夹中) 中的元素
+- **&lt;页&gt;** 应用程序配置文件 (web.config 应用程序的根文件夹中) 中的元素
+- **&lt;页&gt;** 子文件夹配置文件 (web.config 的子文件夹中) 中的元素
 
 ## <a name="masterpagefile-attribute"></a>MasterPageFile 属性
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885854"
 ---
 <a name="adding-ajax-functionality-to-an-existing-aspnet-page"></a>将 AJAX 功能添加到现有的 ASP.NET 页面
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882290"
 ---
 <a name="data-access-layers-in-aspnet-applications"></a>ASP.NET 应用程序中的数据访问层
 ====================

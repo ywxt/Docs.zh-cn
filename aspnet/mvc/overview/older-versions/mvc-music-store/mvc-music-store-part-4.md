@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879473"
 ---
 <a name="part-4-models-and-data-access"></a>第 4 部分： 模型和数据访问
 ====================
@@ -119,7 +120,7 @@ MusicStoreEntities 类由实体框架维护，并公开每个表中我们的数�
 
 ### <a name="updating-store-browse-and-details-to-use-live-data"></a>更新存储浏览和详细信息，若要使用实时数据
 
-与应用商店/浏览？ 流派 =*[某些流派]*操作方法，我们要搜索的一种风格的名称。 我们仅预期结果，因为我们不应永远都不会为流派同名的两个条目，因此我们可以使用。在 LINQ 查询为适当的流派对象如下的 Single() 扩展 （不要键入这尚未）：
+与应用商店/浏览？ 流派 =*[某些流派]* 操作方法，我们要搜索的一种风格的名称。 我们仅预期结果，因为我们不应永远都不会为流派同名的两个条目，因此我们可以使用。在 LINQ 查询为适当的流派对象如下的 Single() 扩展 （不要键入这尚未）：
 
 [!code-csharp[Main](mvc-music-store-part-4/samples/sample9.cs)]
 

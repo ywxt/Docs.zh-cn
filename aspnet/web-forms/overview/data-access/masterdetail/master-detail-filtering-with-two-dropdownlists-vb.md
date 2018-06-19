@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887221"
 ---
 <a name="masterdetail-filtering-with-two-dropdownlists-vb"></a>主/从使用两个 DropDownLists (VB) 进行筛选
 ====================
@@ -102,12 +103,12 @@ Northwind 数据库包含中的规范客户/顺序/订单详细信息信息其`C
 **图 9**： 配置使用 ObjectDataSource`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image27.png))
 
 
-我们需要在向导的最后一步中指定的值*`categoryID`*参数。 将此参数分配给的选定项`Categories`DropDownList。
+我们需要在向导的最后一步中指定的值*`categoryID`* 参数。 将此参数分配给的选定项`Categories`DropDownList。
 
 
 [![从类别 DropDownList 拉取 categoryID 参数值](master-detail-filtering-with-two-dropdownlists-vb/_static/image29.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image28.png)
 
-**图 10**： 拉取*`categoryID`*参数值从`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image30.png))
+**图 10**： 拉取*`categoryID`* 参数值从`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image30.png))
 
 
 使用配置对象数据源，所有就是指定哪些数据源字段用于显示和值的下拉列表的项。 显示`ProductName`字段并使用`ProductID`字段作为值。
@@ -141,7 +142,7 @@ Northwind 数据库包含中的规范客户/顺序/订单详细信息信息其`C
 
 ## <a name="step-3-using-a-detailsview-to-display-details-for-the-selected-product"></a>步骤 3： 使用说明如何以显示所选产品的详细信息
 
-最后一步是要在说明中显示所选产品的详细信息。 若要实现此目的，将说明如何添加到页中，设置其`ID`属性`ProductDetails`，并为它创建新对象数据源。 配置此对象数据源，将从其数据拉`ProductsBLL`类的`GetProductByProductID(productID)`方法使用的所选的值`ProductsByCategory`的值的 DropDownList *`productID`*参数。
+最后一步是要在说明中显示所选产品的详细信息。 若要实现此目的，将说明如何添加到页中，设置其`ID`属性`ProductDetails`，并为它创建新对象数据源。 配置此对象数据源，将从其数据拉`ProductsBLL`类的`GetProductByProductID(productID)`方法使用的所选的值`ProductsByCategory`的值的 DropDownList *`productID`* 参数。
 
 
 [![选择使用 ProductsBLL 类](master-detail-filtering-with-two-dropdownlists-vb/_static/image44.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image43.png)
@@ -156,7 +157,7 @@ Northwind 数据库包含中的规范客户/顺序/订单详细信息信息其`C
 
 [![从 ProductsByCategory DropDownList 拉取 productID 参数值](master-detail-filtering-with-two-dropdownlists-vb/_static/image50.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image49.png)
 
-**图 17**： 拉取*`productID`*参数值从`ProductsByCategory`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image51.png))
+**图 17**： 拉取*`productID`* 参数值从`ProductsByCategory`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image51.png))
 
 
 您可以选择显示可用字段中的任何`ProductDetails`说明。 我已选择删除`ProductID`， `SupplierID`，和`CategoryID`字段和重新排序，格式其余字段。 此外，我已清理说明的`Height`和`Width`属性，允许说明如何扩展到最佳显示所需的宽度，其数据，而不是让限于指定的大小。 完整的标记如下所示：

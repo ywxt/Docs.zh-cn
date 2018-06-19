@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899809"
 ---
 <a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>引入了 ASP.NET Web 页-创建一致的布局
 ====================
@@ -67,7 +68,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="adding-a-css-file"></a>添加.css 文件
 
-页上定义的元素的实际排列方式 （即，外观） 的首选的方式是使用级联样式表 (CSS) 规则。 因此，你将创建*.css*具有用于将新布局规则的文件。
+页上定义的元素的实际排列方式 （即，外观） 的首选的方式是使用级联样式表 (CSS) 规则。 因此，你将创建 *.css*具有用于将新布局规则的文件。
 
 在 WebMatrix 中，选择你的站点的根目录。 然后在**文件**选项卡的功能区中，单击下的箭头**新建**按钮，然后单击**新文件夹**。
 
@@ -81,13 +82,13 @@ ms.lasthandoff: 04/06/2018
 
 ![创建新的 Movies.css 文件](layouts/_static/image5.png)
 
-新的内容替换*.css*替换为以下文件：
+新的内容替换 *.css*替换为以下文件：
 
 [!code-css[Main](layouts/samples/sample2.css)]
 
 我们不会说过多这些 CSS 规则，只是想说明以下两项操作。 一个是除了设置字体和大小，规则使用绝对定位来建立的页眉、 页脚和主要内容区域的位置。 如果你熟悉定位在 CSS 中，你可以阅读[CSS 定位](http://www.w3schools.com/css/css_positioning.asp)教程在 W3Schools 站点。
 
-其他需要注意的事项，在底部，我们已复制最初的样式规则定义的单独在*Movies.cshtml*文件。 在中使用这些规则[简介显示数据通过使用 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251580)教程，以使`WebGrid`添加到表的条带化的标记帮助器呈现。 (如果你要使用*.css*文件有关样式定义，你也可能给整个站点的样式规则中。)
+其他需要注意的事项，在底部，我们已复制最初的样式规则定义的单独在*Movies.cshtml*文件。 在中使用这些规则[简介显示数据通过使用 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251580)教程，以使`WebGrid`添加到表的条带化的标记帮助器呈现。 (如果你要使用 *.css*文件有关样式定义，你也可能给整个站点的样式规则中。)
 
 ## <a name="updating-the-movies-file-to-use-the-layout"></a>更新要使用的布局的电影文件
 
@@ -101,7 +102,7 @@ ms.lasthandoff: 04/06/2018
 
 此一行代码将告诉 ASP.NET，当*电影*页运行时，它应与合并 *\_Layout.cshtml*文件。
 
-由于*Movies.cshtml*文件现在使用布局页，你可以删除从标记*Movies.cshtml*已处理的页 *\_Layout.cshtml*文件。 带`<!DOCTYPE>`， `<html>`，和`<body>`开始和结束标记。 带整个`<head>`元素和其内容，其中包括网格中的样式规则，因为您现在已经获得这些规则*.css*文件。 当处于它时，更改现有`<h1>`元素`<h2>`元素; 你具有`<h1>`已布局页中的元素。 更改`<h2>`"列表电影"的文本。
+由于*Movies.cshtml*文件现在使用布局页，你可以删除从标记*Movies.cshtml*已处理的页 *\_Layout.cshtml*文件。 带`<!DOCTYPE>`， `<html>`，和`<body>`开始和结束标记。 带整个`<head>`元素和其内容，其中包括网格中的样式规则，因为您现在已经获得这些规则 *.css*文件。 当处于它时，更改现有`<h1>`元素`<h2>`元素; 你具有`<h1>`已布局页中的元素。 更改`<h2>`"列表电影"的文本。
 
 通常，你不需要在内容页中进行这些种类的更改。 当你的站点开始与布局页中时，你首先创建内容页，而所有这些元素不。 在这种情况下，不过，您要转换的独立页到使用一种布局，因此清理的位。
 
@@ -115,13 +116,13 @@ ms.lasthandoff: 04/06/2018
 
 ![使用一种布局呈现电影页](layouts/_static/image6.png)
 
-ASP.NET 所合并到 Movies.cshtml 页面的内容 *\_Layout.cshtml*页上右`RenderBody`方法。 和当然 *\_Layout.cshtml*的页引用*.css*定义查找范围页的文件。
+ASP.NET 所合并到 Movies.cshtml 页面的内容 *\_Layout.cshtml*页上右`RenderBody`方法。 和当然 *\_Layout.cshtml*的页引用 *.css*定义查找范围页的文件。
 
 ## <a name="updating-the-addmovie-page-to-use-the-layout"></a>更新 AddMovie 页后，可以使用布局
 
 布局实际好处是，你可以使用它们将所有页在你的网站。 打开*AddMovie.cshtml*页。
 
-你可能会记住*AddMovie.cshtml*页最初在其中以定义查找范围的验证错误消息中发生一些 CSS 规则。 由于你有*.css*文件中为你的网站现在，你可以将移动到这些规则*.css*文件。 从其中移除这些*AddMovie.cshtml*文件并将它们添加到底部*Movies.css*文件。 要移动的以下规则：
+你可能会记住*AddMovie.cshtml*页最初在其中以定义查找范围的验证错误消息中发生一些 CSS 规则。 由于你有 *.css*文件中为你的网站现在，你可以将移动到这些规则 *.css*文件。 从其中移除这些*AddMovie.cshtml*文件并将它们添加到底部*Movies.css*文件。 要移动的以下规则：
 
 [!code-css[Main](layouts/samples/sample6.css)]
 
@@ -147,7 +148,7 @@ ASP.NET 所合并到 Movies.cshtml 页面的内容 *\_Layout.cshtml*页上右`Re
 
 [!code-csharp[Main](layouts/samples/sample8.cs)]
 
-`Page`上所有可用对象，则*.cshtml*页，即适用于此目的，一个页，并且其布局之间共享信息。
+`Page`上所有可用对象，则 *.cshtml*页，即适用于此目的，一个页，并且其布局之间共享信息。
 
 打开<em>\_Layout.cshtml</em>页。 更改`<title>`使它类似于此标记的元素：
 
@@ -169,7 +170,7 @@ ASP.NET 所合并到 Movies.cshtml 页面的内容 *\_Layout.cshtml*页上右`Re
 > 
 > 你可以通过传递任意数目的值`Page`对象。 如果你想要将影片信息传递给布局页，您无法将值传递通过使用类似`Page.MovieTitle`和`Page.Genre`和`Page.MovieYear`。 （或是为了存储信息的任何其他名称。）唯一的要求-这是可能明显 — 是你需要使用内容页和布局页中的相同名称。
 > 
-> 使用传递的信息`Page`对象已不再局限于只是要在布局页上显示的文本。 可以将值传递给布局页中，然后布局页中的代码可以使用的值来确定是否要显示的页上，部分什么*.css*文件以使用，依次类推。 在中传递的值`Page`对象像任何其他值在代码中使用。 它只是值源自于在内容页中，并传递给布局页。
+> 使用传递的信息`Page`对象已不再局限于只是要在布局页上显示的文本。 可以将值传递给布局页中，然后布局页中的代码可以使用的值来确定是否要显示的页上，部分什么 *.css*文件以使用，依次类推。 在中传递的值`Page`对象像任何其他值在代码中使用。 它只是值源自于在内容页中，并传递给布局页。
 
 
 打开*AddMovie.cshtml*页上，并将行添加到提供的标题的代码，顶部*AddMovie.cshtml*页：
@@ -208,7 +209,7 @@ ASP.NET 所合并到 Movies.cshtml 页面的内容 *\_Layout.cshtml*页上右`Re
 
 布局页具有我们未在此处介绍的附加功能。 例如，可以嵌套布局页-一个布局页又可以引用另一个。 嵌套的布局可以很有用，如果你正在使用的站点需要不同的布局的小节。 你还可以使用其他方法 (例如， `RenderSection`) 若要设置名为布局页中的部分。
 
-布局页的组合和*.css*文件是功能强大。 正如你将在下一步的系列教程中看到的在 WebMatrix 中你可以创建基于站点*模板*，它会为你提供了的站点中的预构建的功能。 模板，可以很好的布局页和 CSS 代码即可创建的网站的外观和具有菜单等功能的用途。 下面是主页的从基于模板，显示布局页和 CSS 使用的功能的站点的屏幕快照：
+布局页的组合和 *.css*文件是功能强大。 正如你将在下一步的系列教程中看到的在 WebMatrix 中你可以创建基于站点*模板*，它会为你提供了的站点中的预构建的功能。 模板，可以很好的布局页和 CSS 代码即可创建的网站的外观和具有菜单等功能的用途。 下面是主页的从基于模板，显示布局页和 CSS 使用的功能的站点的屏幕快照：
 
 ![显示标头、 导航区域、 内容区域、 可选部分和登录链接的 WebMatrix 网站模板创建的布局](layouts/_static/image11.png)
 

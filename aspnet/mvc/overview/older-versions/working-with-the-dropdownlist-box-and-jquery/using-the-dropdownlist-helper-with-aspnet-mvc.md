@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875586"
 ---
 <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>使用 ASP.NET MVC 的 DropDownList 帮助器
 ====================
@@ -57,7 +58,7 @@ ms.lasthandoff: 04/06/2018
 
 ![](using-the-dropdownlist-helper-with-aspnet-mvc/_static/image3.png)
 
-选择**选择电影类别 （简单）**链接。 电影类型选择列表是与喜剧选定的值一起显示。
+选择**选择电影类别 （简单）** 链接。 电影类型选择列表是与喜剧选定的值一起显示。
 
 ![](using-the-dropdownlist-helper-with-aspnet-mvc/_static/image4.png)
 
@@ -75,7 +76,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-csharp[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample2.cs)]
 
-[DropDownList](https://msdn.microsoft.com/library/dd492738.aspx)帮助器用于创建 HTML 选择列表需要**IEnumerable&lt;SelectListItem &gt;** ，显式或隐式。 也就是说，你可以将传递**IEnumerable&lt;SelectListItem &gt;** 显式为[DropDownList](https://msdn.microsoft.com/library/dd492738.aspx)帮助器也可以添加**IEnumerable&lt;SelectListItem &gt;** 到[ViewBag](https://blogs.msdn.com/b/rickandy/archive/2011/01/28/dynamic-v-strongly-typed-views.aspx)使用相同的名称用于**SelectListItem**作为模型属性。 传入**SelectListItem**本教程的下一部分中介绍了隐式和显式。 上面的代码演示创建可能的最简单方法**IEnumerable&lt;SelectListItem &gt;** 并使用文本和值填充它。 请注意`Comedy` [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx)具有[选定](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.selected.aspx)属性设置为**true;**这将导致呈现选择列表，以显示**喜剧**与列表中所选的项目。
+[DropDownList](https://msdn.microsoft.com/library/dd492738.aspx)帮助器用于创建 HTML 选择列表需要**IEnumerable&lt;SelectListItem &gt;** ，显式或隐式。 也就是说，你可以将传递**IEnumerable&lt;SelectListItem &gt;** 显式为[DropDownList](https://msdn.microsoft.com/library/dd492738.aspx)帮助器也可以添加**IEnumerable&lt;SelectListItem &gt;** 到[ViewBag](https://blogs.msdn.com/b/rickandy/archive/2011/01/28/dynamic-v-strongly-typed-views.aspx)使用相同的名称用于**SelectListItem**作为模型属性。 传入**SelectListItem**本教程的下一部分中介绍了隐式和显式。 上面的代码演示创建可能的最简单方法**IEnumerable&lt;SelectListItem &gt;** 并使用文本和值填充它。 请注意`Comedy` [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx)具有[选定](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.selected.aspx)属性设置为**true;** 这将导致呈现选择列表，以显示**喜剧**与列表中所选的项目。
 
 **IEnumerable&lt;SelectListItem &gt;** 创建更高版本添加到[ViewBag](https://blogs.msdn.com/b/rickandy/archive/2011/01/28/dynamic-v-strongly-typed-views.aspx) MovieType 同名。 这是我们将传递**IEnumerable&lt;SelectListItem &gt;** 隐式为[DropDownList](https://msdn.microsoft.com/library/dd492738.aspx)如下所示的帮助器。
 

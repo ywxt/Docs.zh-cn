@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885892"
 ---
 <a name="how-do-i-enable-xml-intellisense-and-use-xml-namespaces"></a>[如何:]要启用 XML IntelliSense，并使用 XML 命名空间？
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886909"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-code-only-update---8-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 部署 Code-Only 更新-8 12
 ====================
@@ -77,7 +78,7 @@ Visual Studio 部署更新的应用程序，并浏览器将自动打开到主页
 
 在实际应用中，用户将您的生产站点进行在初始部署之后交互，并且数据库填充了实时数据。 因此，你不想要重新部署它将擦除所有的实时数据的初始状态中的成员资格数据库。 由于 SQL Server Compact 数据库中的文件*应用\_数据*文件夹中，你需要防止这种通过更改部署设置，因此，在文件*应用\_数据*文件夹未部署。
 
-打开**项目属性**ContosoUniversity 项目，然后选择窗口**打包/发布 Web**选项卡。请确保**配置**下拉框中已**活动 （发行版）**或**版本**选择，选择**将应用程序中排除文件\_数据文件夹**。
+打开**项目属性**ContosoUniversity 项目，然后选择窗口**打包/发布 Web**选项卡。请确保**配置**下拉框中已**活动 （发行版）** 或**版本**选择，选择**将应用程序中排除文件\_数据文件夹**。
 
 ![Exclude_files_from_the_App_Data_folder](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image9.png)
 

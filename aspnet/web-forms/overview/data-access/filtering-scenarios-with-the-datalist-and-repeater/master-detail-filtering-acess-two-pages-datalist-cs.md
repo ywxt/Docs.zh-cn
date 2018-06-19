@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887091"
 ---
 <a name="masterdetail-filtering-across-two-pages-c"></a>大纲/细节筛选跨两个页 (C#)
 ====================
@@ -59,7 +60,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="step-2-turning-the-category-name-into-a-link-to-the-details-page"></a>步骤 2： 将转换的详细信息页的链接的类别名称
 
-若要允许的用户以显示给定的类别中的"详细信息"信息，我们需要添加到每个项目符号列表项，如果单击，则将需要对用户发出的第二页的链接 (`ProductsForCategoryDetails.aspx`)。 然后，此第二个页面将显示使用 DataList 所选类别的产品。 为了确定被单击其链接的类别，我们需要通过单击的类别`CategoryID`通过某种机制的第二页。 将标量数据从一页传输到另一个的最简单、 最简单方法是通过查询字符串，我们将在本教程中使用此选项。 具体而言，`ProductsForCategoryDetails.aspx`页应所选*`categoryID`*要先通过名为的查询字符串字段值`CategoryID`。 例如，若要查看饮料类别的产品具有`CategoryID`为 1，用户需要访问`ProductsForCategoryDetails.aspx?CategoryID=1`。
+若要允许的用户以显示给定的类别中的"详细信息"信息，我们需要添加到每个项目符号列表项，如果单击，则将需要对用户发出的第二页的链接 (`ProductsForCategoryDetails.aspx`)。 然后，此第二个页面将显示使用 DataList 所选类别的产品。 为了确定被单击其链接的类别，我们需要通过单击的类别`CategoryID`通过某种机制的第二页。 将标量数据从一页传输到另一个的最简单、 最简单方法是通过查询字符串，我们将在本教程中使用此选项。 具体而言，`ProductsForCategoryDetails.aspx`页应所选*`categoryID`* 要先通过名为的查询字符串字段值`CategoryID`。 例如，若要查看饮料类别的产品具有`CategoryID`为 1，用户需要访问`ProductsForCategoryDetails.aspx?CategoryID=1`。
 
 若要在转发器，我们需要添加超链接 Web 控件或 HTML 定位点元素中创建每个项目符号列表项的超链接 (`<a>`) 到`ItemTemplate`。 中的超链接的方案显示为每个行相同，这两种方法就足够了。 为重复字符，但我更喜欢使用定位元素。 若要使用的定位点元素，请更新到的转发器的 ItemTemplate:
 
@@ -170,7 +171,7 @@ ms.lasthandoff: 04/06/2018
 
 尽管主/详细信息报表可以显示 master 和详细信息记录在一页，在很多网站中它们被分隔跨两个 web 页。 在本教程中我们介绍了如何通过将"主"网页中使用中继器的项目符号列表中列出的类别和"详细信息"页中列出的关联的产品实现主/详细信息报表。 母板网页中的每个列表项包含指向传递的行的详细信息页面的`CategoryID`值。
 
-在详细信息页中指定的提供程序检索这些产品完成通过`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 *`categoryID`*使用以声明方式指定参数值`CategoryID`作为参数源的查询字符串值。 我们还了解了如何在使用 FormView 的详细信息页中显示类别详细信息以及如何显示一条消息，如果没有不属于所选类别的产品。
+在详细信息页中指定的提供程序检索这些产品完成通过`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 *`categoryID`* 使用以声明方式指定参数值`CategoryID`作为参数源的查询字符串值。 我们还了解了如何在使用 FormView 的详细信息页中显示类别详细信息以及如何显示一条消息，如果没有不属于所选类别的产品。
 
 尽情享受编程 ！
 

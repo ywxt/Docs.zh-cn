@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881436"
 ---
 <a name="how-do-i-cascading-style-sheets-in-visual-studio-2008"></a>[如何:]在 Visual Studio 2008 的级联样式表
 ====================

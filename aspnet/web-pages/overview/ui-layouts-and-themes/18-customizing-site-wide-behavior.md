@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899196"
 ---
 <a name="customizing-site-wide-behavior-for-aspnet-web-pages-razor-sites"></a>中的 ASP.NET Web 页 (Razor) 网站的自定义站点范围行为
 ====================
@@ -131,7 +132,7 @@ ASP.NET 允许你创建的层次结构 *\_PageStart.cshtml*文件。 您可以�
 
 [!code-cshtml[Main](18-customizing-site-wide-behavior/samples/sample7.cshtml)]
 
-当你运行*/myfolder/default.cshtml*，你将看到以下：
+当你运行 */myfolder/default.cshtml*，你将看到以下：
 
 [!code-console[Main](18-customizing-site-wide-behavior/samples/sample8.cmd)]
 
@@ -164,7 +165,7 @@ ASP.NET 允许你创建的层次结构 *\_PageStart.cshtml*文件。 您可以�
 
 ## <a name="using-pagestartcshtml-to-handle-errors"></a>使用\_PageStart.cshtml 来处理错误
 
-另一个良好用于 *\_PageStart.cshtml*文件是创建处理的编程错误 （异常） 可能发生的任何一种方式*.cshtml*文件夹中的页。 此示例演示了一种方法执行此操作。
+另一个良好用于 *\_PageStart.cshtml*文件是创建处理的编程错误 （异常） 可能发生的任何一种方式 *.cshtml*文件夹中的页。 此示例演示了一种方法执行此操作。
 
 1. 在根文件夹中，创建名为的文件夹*InitCatch*。
 2. 在*InitCatch*文件夹中你的网站，创建名为的文件 *\_PageStart.cshtml*和现有标记和代码替换为以下代码： 

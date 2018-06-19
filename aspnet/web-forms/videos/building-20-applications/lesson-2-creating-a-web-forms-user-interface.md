@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880068"
 ---
 <a name="lesson-2-creating-a-web-forms-user-interface"></a>[第 2 课:]创建 Web 窗体用户界面
 ====================

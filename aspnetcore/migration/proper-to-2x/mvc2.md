@@ -14,6 +14,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/08/2018
+ms.locfileid: "33851035"
 ---
 # <a name="migrate-from-aspnet-to-aspnet-core-20"></a>从 ASP.NET 迁移到 ASP.NET Core 2.0
 
@@ -150,7 +151,7 @@ Web 开发的一个重要环节是提供客户端静态资产的功能。 HTML�
 
 例如，可以通过浏览器从类似 `http://<app>/images/<imageFileName>` 的位置访问 wwwroot/images 文件夹中的图像资产。
 
-**注意：**到为 ASP.NET Core 中的静态文件提供服务的更深入参考，请参阅[静态文件](xref:fundamentals/static-files)。
+**注意：** 到为 ASP.NET Core 中的静态文件提供服务的更深入参考，请参阅[静态文件](xref:fundamentals/static-files)。
 
 ## <a name="additional-resources"></a>其他资源
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888518"
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>与 ASP.NET 运行状况监视 (C#) 中记录错误详细信息
 ====================

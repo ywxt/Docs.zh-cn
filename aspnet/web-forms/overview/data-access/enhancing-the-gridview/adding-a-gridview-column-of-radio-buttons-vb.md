@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889717"
 ---
 <a name="adding-a-gridview-column-of-radio-buttons-vb"></a>添加单选按钮 (VB) GridView 列
 ====================

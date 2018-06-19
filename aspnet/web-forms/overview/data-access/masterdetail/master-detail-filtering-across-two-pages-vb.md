@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887000"
 ---
 <a name="masterdetail-filtering-across-two-pages-vb"></a>筛选在两个页面 (VB) 之间的主/从
 ====================

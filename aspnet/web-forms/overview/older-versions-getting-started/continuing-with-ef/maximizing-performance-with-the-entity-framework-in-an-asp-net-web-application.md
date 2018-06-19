@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891407"
 ---
 <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>最大程度地使用实体框架 4.0 ASP.NET 4 Web 应用程序中的性能
 ====================
@@ -237,7 +238,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample15.cs)]
 
-此代码生成视图*.edmx*文件位于与模板相同的文件夹并为模板文件具有相同的名称。 例如，如果名为你的模板文件*SchoolModel.Views.tt*，它将查找名为的数据模型文件*SchoolModel.edmx*。
+此代码生成视图 *.edmx*文件位于与模板相同的文件夹并为模板文件具有相同的名称。 例如，如果名为你的模板文件*SchoolModel.Views.tt*，它将查找名为的数据模型文件*SchoolModel.edmx*。
 
 保存该文件，然后右键单击中的文件**解决方案资源管理器**和选择**运行自定义工具**。
 

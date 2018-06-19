@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887936"
 ---
 <a name="adding-validation-controls-to-the-editing-and-inserting-interfaces-vb"></a>将验证控件添加到的编辑，并将插入接口 (VB)
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896990"
 ---
 <a name="aspnet-4-quick-hit---selective-view-state"></a>ASP.NET 4"快速命中"-选择性的视图状态
 ====================

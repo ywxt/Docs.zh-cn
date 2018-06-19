@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879512"
 ---
 <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>教程： 使用 ASP.NET SignalR 广播的服务器 1.x
 ====================
@@ -39,7 +40,7 @@ ms.lasthandoff: 04/06/2018
 
 ![StockTicker 初始版本](tutorial-server-broadcast-with-aspnet-signalr/_static/image1.png)
 
-定期服务器随机更新股票价格并将更新推送到所有连接的客户端。 在浏览器数字和符号中的**更改**和**%**列动态更改以响应来自服务器的通知。 如果你打开到相同的 URL，其他浏览器，它们都同时显示相同的数据和对数据的相同更改。
+定期服务器随机更新股票价格并将更新推送到所有连接的客户端。 在浏览器数字和符号中的**更改**和**%** 列动态更改以响应来自服务器的通知。 如果你打开到相同的 URL，其他浏览器，它们都同时显示相同的数据和对数据的相同更改。
 
 本教程包含以下各节：
 
@@ -70,7 +71,7 @@ ms.lasthandoff: 04/06/2018
 ## <a name="create-the-project"></a>创建项目
 
 1. 从**文件**菜单上，单击**新项目**。
-2. 在**新项目**对话框框中，展开**C#**下**模板**和选择**Web**。
+2. 在**新项目**对话框框中，展开**C#** 下**模板**和选择**Web**。
 3. 选择**ASP.NET 空 Web 应用程序**模板，将项目*SignalR.StockTicker*，然后单击**确定**。
 
     ![“新建项目”对话框](tutorial-server-broadcast-with-aspnet-signalr/_static/image2.png)
@@ -115,7 +116,7 @@ ms.lasthandoff: 04/06/2018
 你只想要在服务器上，运行，因此你需要指向单一 StockTicker 实例中设置从每个 StockTickerHub 实例引用的 StockTicker 类的一个实例。 StockTicker 类具有能够进行广播到客户端，因为它具有股票数据并触发更新，但 StockTicker 不是中心类。 因此，StockTicker 类必须获取对 SignalR Hub 连接上下文对象的引用。 然后，它可以使用 SignalR 连接上下文对象将广播到客户端。
 
 1. 在**解决方案资源管理器**，右键单击项目，然后单击**添加新项**。
-2. 如果你有 Visual Studio 2012 [ASP.NET 和 Web Tools 2012.2 更新](https://go.microsoft.com/fwlink/?LinkId=279941)，单击**Web**下**Visual C#**和选择**SignalR Hub Class**项模板。 否则，请选择**类**模板。
+2. 如果你有 Visual Studio 2012 [ASP.NET 和 Web Tools 2012.2 更新](https://go.microsoft.com/fwlink/?LinkId=279941)，单击**Web**下**Visual C#** 和选择**SignalR Hub Class**项模板。 否则，请选择**类**模板。
 3. 将新类*StockTickerHub.cs*，然后单击**添加**。
 
     ![添加 StockTickerHub.cs](tutorial-server-broadcast-with-aspnet-signalr/_static/image5.png)

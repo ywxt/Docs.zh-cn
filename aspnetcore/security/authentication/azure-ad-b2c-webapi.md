@@ -15,6 +15,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897799"
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>中的 web Api 与 Azure Active Directory B2C 中 ASP.NET 核心云身份验证
 
@@ -126,7 +127,7 @@ Visual Studio 使用名为的控制器中创建 web API *ValuesController.cs*返
 新注册的 web 应用程序需要访问 web API 代表该用户的权限。  
 
 1. 选择**Postman**的应用，然后选择列表中**API 访问**从左侧菜单。
-2. 选择**+ 添加**。
+2. 选择 **+ 添加**。
 3. 在**选择 API**下拉列表中，选择 web API 的名称。
 4. 在**选择作用域**下拉列表中，确保选中所有作用域。
 5. 选择**确定**。
@@ -135,7 +136,7 @@ Visual Studio 使用名为的控制器中创建 web API *ValuesController.cs*返
 
 ### <a name="create-a-postman-request"></a>创建 Postman 请求
 
-启动 Postman。 默认情况下，显示 Postman**新建**时启动的对话框。 如果未显示对话框中，选择**+ 新建**在左上角的按钮。
+启动 Postman。 默认情况下，显示 Postman**新建**时启动的对话框。 如果未显示对话框中，选择 **+ 新建**在左上角的按钮。
 
 从**新建**对话框：
 
@@ -144,7 +145,7 @@ Visual Studio 使用名为的控制器中创建 web API *ValuesController.cs*返
     ![请求按钮](./azure-ad-b2c-webapi/postman-create-new.png)
 
 2. 输入*获取值*中**请求名称**框。
-3. 选择**+ 创建集合**以创建用于存储请求新的集合。 命名集合*ASP.NET Core 教程*，然后选择复选标记。
+3. 选择 **+ 创建集合**以创建用于存储请求新的集合。 命名集合*ASP.NET Core 教程*，然后选择复选标记。
 
     ![创建新的集合](./azure-ad-b2c-webapi/postman-create-collection.png)
 
@@ -185,7 +186,7 @@ Visual Studio 使用名为的控制器中创建 web API *ValuesController.cs*返
 
 3. 选择**令牌请求**按钮。
 
-4. Postman 打开包含 Azure AD B2C 租户的登录对话框中的新窗口中。 使用现有帐户登录 （如果已创建一个测试策略） 或选择**立即注册**创建新帐户。 **忘记了密码？**链接用于重置忘记了的密码。
+4. Postman 打开包含 Azure AD B2C 租户的登录对话框中的新窗口中。 使用现有帐户登录 （如果已创建一个测试策略） 或选择**立即注册**创建新帐户。 **忘记了密码？** 链接用于重置忘记了的密码。
 
 5. 已成功登录后，该窗口将关闭与**管理访问令牌**此时将显示对话框。 向下的滚动到底部并选择**使用令牌**按钮。
 

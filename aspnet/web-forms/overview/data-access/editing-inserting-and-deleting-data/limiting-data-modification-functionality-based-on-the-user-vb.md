@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887868"
 ---
 <a name="limiting-data-modification-functionality-based-on-the-user-vb"></a>限制基于用户 (VB) 的数据修改功能
 ====================

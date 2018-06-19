@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889142"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>使用 Visual Studio 的 ASP.NET Web 部署： 为数据库部署做好准备
 ====================
@@ -39,7 +40,7 @@ ms.lasthandoff: 04/06/2018
 
 示例应用程序使用 SQL Server Express LocalDB。 SQL Server Express 是免费版的 SQL Server。 它通常用在开发过程中由于它基于作为完整版本的 SQL Server 相同的数据库引擎。 你可以使用 SQL Server Express 进行测试，并确保应用程序将行为在生产中，但有少数例外不同 SQL Server 版本各不相同的功能相同。
 
-LocalDB 是一种特殊的执行模式的 SQL Server Express，可用于处理数据库作为*.mdf*文件。 通常，将 LocalDB 数据库文件保存在*应用\_数据*web 项目的文件夹。 在 SQL Server Express 用户实例功能还可以使您能够使用*.mdf*文件，但用户实例功能已弃用; 因此，使用建议 LocalDB *.mdf*文件。
+LocalDB 是一种特殊的执行模式的 SQL Server Express，可用于处理数据库作为 *.mdf*文件。 通常，将 LocalDB 数据库文件保存在*应用\_数据*web 项目的文件夹。 在 SQL Server Express 用户实例功能还可以使您能够使用 *.mdf*文件，但用户实例功能已弃用; 因此，使用建议 LocalDB *.mdf*文件。
 
 通常 SQL Server Express 不用于生产 web 应用程序。 LocalDB 具体而言不是建议生产使用与 web 应用程序由于它不是使用 IIS。
 
@@ -185,7 +186,7 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和窗体身份验证
 ### <a name="create-the-development-database-script"></a>创建开发数据库脚本
 
 1. 运行 SSMS。
-2. 在**连接到服务器**对话框框中，输入*(localdb) \v11.0*作为**服务器名称**，保留**身份验证**设置为**Windows 身份验证**，然后单击**连接**。
+2. 在**连接到服务器**对话框框中，输入 *(localdb) \v11.0*作为**服务器名称**，保留**身份验证**设置为**Windows 身份验证**，然后单击**连接**。
 
     ![SSMS 连接到服务器](preparing-databases/_static/image10.png)
 3. 在**对象资源管理器**窗口中，展开**数据库**，右键单击**aspnet ContosoUniversity**，单击**任务**，然后单击**生成脚本**。

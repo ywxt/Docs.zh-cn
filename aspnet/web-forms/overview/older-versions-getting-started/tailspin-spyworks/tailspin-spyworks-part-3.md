@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882083"
 ---
 <a name="part-3-layout-and-category-menu"></a>第 3 部分: 布局和类别菜单
 ====================

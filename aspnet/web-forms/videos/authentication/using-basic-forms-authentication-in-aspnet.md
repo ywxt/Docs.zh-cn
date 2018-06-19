@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887637"
 ---
 <a name="using-basic-forms-authentication-in-aspnet"></a>在 ASP.NET 中使用基本窗体身份验证
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30898965"
 ---
 <a name="webmatrix-readme"></a>WebMatrix Readme
 ====================
@@ -177,9 +178,9 @@ ms.lasthandoff: 04/10/2018
 
 #### <a name="issue-files-that-contains-package-manager-resources-or-package-manager-passwords-are-servable-under-iis-60-and-earlier"></a>问题： 包含包管理器资源或包管理器密码的文件是 servable 下 IIS 6.0 及更早版本
 
-> 如果你部署的 ASP.NET Web 页 (Razor) 应用程序使用 RC2 版本中，生成和应用程序包含*password.txt*或*packagesources.txt*文件下*/App\_数据/admin*，IIS 6.0 将处理该文件，如果请求，可能要公开你的包管理器实例的密码。 
+> 如果你部署的 ASP.NET Web 页 (Razor) 应用程序使用 RC2 版本中，生成和应用程序包含*password.txt*或*packagesources.txt*文件下 */App\_数据/admin*，IIS 6.0 将处理该文件，如果请求，可能要公开你的包管理器实例的密码。 
 > 
-> **解决方法**重命名*password.txt*或*packagesources.txt*文件为*password.config*或*packagesources.config*.默认情况下，IIS 6.0 不适用于具有文件*.config*扩展。 (在 IIS 7 中，在任何文件*应用\_数据*文件夹提供服务，因此不需要重命名文件。)
+> **解决方法**重命名*password.txt*或*packagesources.txt*文件为*password.config*或*packagesources.config*.默认情况下，IIS 6.0 不适用于具有文件 *.config*扩展。 (在 IIS 7 中，在任何文件*应用\_数据*文件夹提供服务，因此不需要重命名文件。)
 
 
 #### <a name="issue-uninstalling-packages-installed-using-the-beta-3-release-does-not-completely-remove-package-components"></a>问题： 卸载使用 Beta 3 版本安装的包不会完全删除包组件
@@ -223,7 +224,7 @@ ms.lasthandoff: 04/10/2018
 
 #### <a name="issue-uninstalling-the-net-framework-version-4-disables-aspnet-web-pages-with-razor-syntax"></a>问题： 卸载.NET Framework 版本 4 禁用带有 Razor 语法的 ASP.NET Web Pages
 
-> 如果你卸载.NET Framework 版本 4，然后重新安装它，将禁用使用 Razor 语法的 ASP.NET 网页。 与页*.cshtml*扩展可能无法正常运行。 ASP.NET Web Pages 机根目录中注册程序集*web.config*文件，并删除.NET Framework 中删除该文件。 重新安装.NET Framework 安装新版本的配置文件中，但不会添加 ASP.NET 网页的程序集引用。
+> 如果你卸载.NET Framework 版本 4，然后重新安装它，将禁用使用 Razor 语法的 ASP.NET 网页。 与页 *.cshtml*扩展可能无法正常运行。 ASP.NET Web Pages 机根目录中注册程序集*web.config*文件，并删除.NET Framework 中删除该文件。 重新安装.NET Framework 安装新版本的配置文件中，但不会添加 ASP.NET 网页的程序集引用。
 > 
 > **解决方法**后重新安装.NET Framework，请重新安装 ASP.NET 网页使用 Razor 语法。 这将添加到下面的元素*web.config*机根目录，这通常是在以下位置中的文件：  
 > 
@@ -235,7 +236,7 @@ ms.lasthandoff: 04/10/2018
 
 #### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a>问题： 无扩展名的 Url 未找到 IIS 7 或 IIS 7.5 上的.cshtml/.vbhtml 文件
 
-> 在 IIS 7 或 IIS 7.5 上，如下所示 URL 的请求不能找到页具有*.cshtml*或*.vbhtml*扩展：  
+> 在 IIS 7 或 IIS 7.5 上，如下所示 URL 的请求不能找到页具有 *.cshtml*或 *.vbhtml*扩展：  
 > 
 > `http://www.example.com/ExampleSite/ExampleFile`  
 > 
@@ -270,7 +271,7 @@ ms.lasthandoff: 04/10/2018
 
 #### <a name="issue-database-and-webgrid-helpers-do-not-work-in-medium-trust-in-visual-basic"></a>问题:"数据库"和"WebGrid"帮助程序中不起作用中等信任在 Visual Basic 中
 
-> 如果你使用的 Visual Basic (创建*.vbhtml*文件)，则`Database`和`WebGrid`如果应用程序设置为使用中等信任帮助器将无法工作。
+> 如果你使用的 Visual Basic (创建 *.vbhtml*文件)，则`Database`和`WebGrid`如果应用程序设置为使用中等信任帮助器将无法工作。
 > 
 > **解决方法**  
 > 如果你使用 Visual Studio 2010，你可以通过安装 Service Pack 1 发行版来解决此问题。 可用的 SP1 版本的最终版本之前，你可以下载从 SP1 Beta 版本[Microsoft Visual Studio 2010 Service Pack 1 Beta](https://www.microsoft.com/downloads/en/details.aspx?FamilyID=11ea69cb-cf12-4842-a3d7-b32a1e5642e2&amp;displaylang=en) Microsoft Download Center 上的页。   
@@ -522,7 +523,7 @@ SQL Server Compact 具有其自己的自述文件，它是可通过以下 URL:
 #### <a name="issue-some-links-in-atomsite-are-broken-after-you-download-a-published-site"></a>问题： 一些链接 AtomSite 中的可能会中断后你下载的已发布的站点
 
 > **解决方法**  
-> 在*service.config*文件， *users.config*文件，以及所有*.xml*文件，将 URL 字符串 (例如， `http://myhost.com/atomsite`) 替换为本地 (例如， `http://localhost:1239`).
+> 在*service.config*文件， *users.config*文件，以及所有 *.xml*文件，将 URL 字符串 (例如， `http://myhost.com/atomsite`) 替换为本地 (例如， `http://localhost:1239`).
 
 
 #### <a name="issue-mysql-based-applications-like-wordpress-fail-to-publish-and-report-a-database-error"></a>问题： WordPress 等基于 MySQL 的应用程序不能发布，并将数据库错误报告

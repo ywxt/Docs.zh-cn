@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874377"
 ---
 <a name="secure-applications-using-authentication-and-authorization"></a>保护应用程序使用身份验证和授权
 ====================
@@ -41,7 +42,7 @@ by [Microsoft](https://github.com/microsoft)
 
 *身份验证*是标识和验证客户端访问应用程序的标识的过程。 更简单地说，它是有关标识""最终用户是谁在访问网站时。 ASP.NET 支持通过多种方式浏览器用户进行身份验证。 对于 Internet web 应用程序，使用的最常见的身份验证方法被称为"窗体身份验证"。 窗体身份验证使开发人员可以创作自己的应用程序中的 HTML 登录窗体，然后验证用户名/密码的最终用户提交针对数据库或其他密码凭据存储区。 如果用户名/密码组合均正确无误，开发人员然后可以要求 ASP.NET 颁发的加密的 HTTP cookie，用于标识用户跨今后的请求。 我们将使用与我们 NerdDinner 应用程序的窗体身份验证。
 
-*授权*是确定已经过身份验证的用户是否有权限以访问特定的 URL/资源或执行某些操作的过程。 例如，我们 NerdDinner 应用程序中我们将需要授权，只有登录的用户可以访问*/晚餐/创建*URL 并创建新晚餐。 我们还需要添加授权逻辑，以便只有承载 dinner 的用户可以编辑它 – 和拒绝的所有其他用户编辑访问。
+*授权*是确定已经过身份验证的用户是否有权限以访问特定的 URL/资源或执行某些操作的过程。 例如，我们 NerdDinner 应用程序中我们将需要授权，只有登录的用户可以访问 */晚餐/创建*URL 并创建新晚餐。 我们还需要添加授权逻辑，以便只有承载 dinner 的用户可以编辑它 – 和拒绝的所有其他用户编辑访问。
 
 ### <a name="forms-authentication-and-the-accountcontroller"></a>窗体身份验证和 AccountController 中
 
@@ -51,11 +52,11 @@ by [Microsoft](https://github.com/microsoft)
 
 ![](secure-applications-using-authentication-and-authorization/_static/image1.png)
 
-单击"登录"链接可转到用户*/帐户/登录*URL:
+单击"登录"链接可转到用户 */帐户/登录*URL:
 
 ![](secure-applications-using-authentication-and-authorization/_static/image2.png)
 
-尚未注册者可以这样通过单击"注册"链接 – 这会将他们到*/帐户/注册*URL，并让他们输入帐户的详细信息：
+尚未注册者可以这样通过单击"注册"链接 – 这会将他们到 */帐户/注册*URL，并让他们输入帐户的详细信息：
 
 ![](secure-applications-using-authentication-and-authorization/_static/image3.png)
 
@@ -83,7 +84,7 @@ AccountController 类使用 ASP.NET 窗体身份验证系统以发出加密的�
 
 我们无需编写任何代码来启用安全的身份验证和帐户管理实现 NerdDinner 应用程序。 用户可以注册新帐户，使用我们的应用程序和登录/注销的站点。
 
-现在我们可以将授权逻辑添加到该应用程序，并使用身份验证状态和用户名的访问者来控制他们可以并不能执行的站点内。 让我们首先将授权逻辑添加到我们 DinnersController 类的"创建"操作方法。 具体而言，我们将要求用户访问*/晚餐/创建*必须登录 URL。 如果在用户未登录我们会将它们重定向到登录页，以便它们可以在登录。
+现在我们可以将授权逻辑添加到该应用程序，并使用身份验证状态和用户名的访问者来控制他们可以并不能执行的站点内。 让我们首先将授权逻辑添加到我们 DinnersController 类的"创建"操作方法。 具体而言，我们将要求用户访问 */晚餐/创建*必须登录 URL。 如果在用户未登录我们会将它们重定向到登录页，以便它们可以在登录。
 
 实现此逻辑是这么简单。 我们只需待办事项是将 [Authorize] 筛选器属性添加到我们创建的操作方法如下所示：
 
@@ -119,7 +120,7 @@ ASP.NET MVC 支持的功能"操作，创建筛选器"可以用来实现能以声
 
 [!code-csharp[Main](secure-applications-using-authentication-and-authorization/samples/sample5.cs)]
 
-然后，我们将添加 [Authorize] 属性对 edit （） 操作方法在我们 DinnersController 类中。 这将确保用户必须记录请求到*/Dinners/编辑 / [id]* URL。
+然后，我们将添加 [Authorize] 属性对 edit （） 操作方法在我们 DinnersController 类中。 这将确保用户必须记录请求到 */Dinners/编辑 / [id]* URL。
 
 然后，我们可以将代码添加到使用 Dinner.IsHostedBy(username) 帮助器方法来验证登录的用户匹配 Dinner 主机我们编辑方法。 如果用户不是主机，我们将显示"InvalidOwner"视图，并终止请求。 要执行此操作的代码类似于下面：
 

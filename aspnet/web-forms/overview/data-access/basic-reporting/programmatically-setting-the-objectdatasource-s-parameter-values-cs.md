@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875677"
 ---
 <a name="programmatically-setting-the-objectdatasources-parameter-values-c"></a>以编程方式设置对象数据源的参数值 (C#)
 ====================
@@ -124,7 +125,7 @@ ms.lasthandoff: 04/06/2018
 **图 9**： 单击属性窗口列出 Web 控件的事件中的闪电形图标
 
 
-这两种方法添加的新的事件处理程序 ObjectDataSource`Selecting`到页面的代码隐藏类的事件。 在此事件处理程序中，我们可以读取和写入使用的参数值`e.InputParameters[parameterName]`，其中*`parameterName`*是值`Name`属性中`<asp:Parameter>`标记 (`InputParameters`集合也可以是按序号对它们，在索引`e.InputParameters[index]`)。 若要设置`month`到当前月份，参数添加到以下`Selecting`事件处理程序：
+这两种方法添加的新的事件处理程序 ObjectDataSource`Selecting`到页面的代码隐藏类的事件。 在此事件处理程序中，我们可以读取和写入使用的参数值`e.InputParameters[parameterName]`，其中*`parameterName`* 是值`Name`属性中`<asp:Parameter>`标记 (`InputParameters`集合也可以是按序号对它们，在索引`e.InputParameters[index]`)。 若要设置`month`到当前月份，参数添加到以下`Selecting`事件处理程序：
 
 
 [!code-csharp[Main](programmatically-setting-the-objectdatasource-s-parameter-values-cs/samples/sample3.cs)]

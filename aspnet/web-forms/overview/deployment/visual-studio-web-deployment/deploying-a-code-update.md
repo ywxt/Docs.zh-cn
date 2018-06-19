@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881329"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>使用 Visual Studio 的 ASP.NET Web 部署： 部署某一代码更新
 ====================
@@ -114,13 +115,13 @@ URL 将显示在网站的仪表板页上，在 Azure 管理门户中，并且可
 2. 上**仪表板**页上，向下滚动到的 FTP 主机中的名称的查找**速览**部分。
 
     ![FTP 主机名](deploying-a-code-update/_static/image5.png)
-3. 打开过渡*.publishsettings*在记事本或其他文本编辑器中的文件。
+3. 打开过渡 *.publishsettings*在记事本或其他文本编辑器中的文件。
 4. 查找`publishProfile`FTP 配置文件的元素。
 5. 复制`userName`和`userPWD`值。
 
     ![FTP 凭据](deploying-a-code-update/_static/image6.png)
 6. 打开你的 FTP 工具并登录到 FTP URL。
-7. 复制*应用\_offline.htm*解决方案文件夹中找到到*/站点/wwwroot*文件夹中的暂存站点。
+7. 复制*应用\_offline.htm*解决方案文件夹中找到到 */站点/wwwroot*文件夹中的暂存站点。
 
     ![复制 app_offline](deploying-a-code-update/_static/image7.png)
 8. 浏览到暂存站点的 URL。 你看到*应用\_offline.htm*页现在显示而不是你的主页。

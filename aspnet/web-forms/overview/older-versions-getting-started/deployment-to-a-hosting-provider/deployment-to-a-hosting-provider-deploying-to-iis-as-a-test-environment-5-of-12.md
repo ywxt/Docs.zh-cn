@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889665"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-iis-as-a-test-environment---5-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 的 ASP.NET Web 应用程序： 作为测试环境-5 12，将部署到 IIS
 ====================
@@ -97,7 +98,7 @@ ms.lasthandoff: 04/06/2018
 
 [![Inetmgr_selecting_Basic_Settings_for_app_pool](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image6.png)](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image5.png)
 
-在**编辑应用程序池**对话框中，更改**.NET Framework 版本**到**.NET Framework v4.0.30319**单击**确定**。
+在**编辑应用程序池**对话框中，更改 **.NET Framework 版本**到 **.NET Framework v4.0.30319**单击**确定**。
 
 [![Selecting_.NET_4_for_DefaultAppPool](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image8.png)](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image7.png)
 
@@ -108,7 +109,7 @@ ms.lasthandoff: 04/06/2018
 有多种方法可以部署使用 Visual Studio 2010 和 Web 部署：
 
 - 使用一键式发布的 Visual Studio。
-- 创建*部署包*和使用 IIS 管理器 UI 安装它。 部署包所包含的*.zip*包含的所有文件和在 IIS 中安装站点所需的元数据的文件。
+- 创建*部署包*和使用 IIS 管理器 UI 安装它。 部署包所包含的 *.zip*包含的所有文件和在 IIS 中安装站点所需的元数据的文件。
 - 创建部署包并将其使用命令行安装。
 
 你已完成在前面的教程，若要将 Visual Studio 设置来自动执行部署任务适用于所有这三种方法的过程。 这些教程中，你将使用第一种方法。 有关使用部署包的信息，请参阅[ASP.NET 部署内容映射](https://msdn.microsoft.com/library/bb386521.aspx)。

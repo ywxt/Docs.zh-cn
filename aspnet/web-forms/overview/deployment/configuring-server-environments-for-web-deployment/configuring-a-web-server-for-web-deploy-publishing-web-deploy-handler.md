@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887275"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a>配置 Web 服务器的 Web 部署发布 （Web 部署处理程序）
 ====================
@@ -102,7 +103,7 @@ ms.lasthandoff: 04/06/2018
     > 你可能已安装.NET Framework 4.0 通过 Windows 更新。 如果已安装的产品或组件，则 Web 平台安装程序将指示这一点通过将**添加**按钮，其文本**已安装**。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image1.png)
-6. 在**ASP.NET MVC 3 (Visual Studio 2010)**行中，单击**添加**。
+6. 在**ASP.NET MVC 3 (Visual Studio 2010)** 行中，单击**添加**。
 7. 在导航窗格中，单击**服务器**。
 8. 在 **IIS 7 建议配置** 行中，单击 **添加** 。
 9. 在**Web 部署工具 2.1**行中，单击**添加**。
