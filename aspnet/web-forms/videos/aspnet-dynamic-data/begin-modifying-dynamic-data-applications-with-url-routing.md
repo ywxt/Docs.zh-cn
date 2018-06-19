@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883487"
 ---
 <a name="begin-modifying-dynamic-data-applications-with-url-routing"></a><span data-ttu-id="64c34-103">开始修改与 URL 路由的动态数据应用程序</span><span class="sxs-lookup"><span data-stu-id="64c34-103">Begin Modifying Dynamic Data Applications with URL Routing</span></span>
 ====================

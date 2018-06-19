@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888365"
 ---
 <a name="inserting-a-new-record-from-the-gridviews-footer-vb"></a><span data-ttu-id="2a1c7-103">将新记录插入从 GridView 的页脚 (VB)</span><span class="sxs-lookup"><span data-stu-id="2a1c7-103">Inserting a New Record from the GridView's Footer (VB)</span></span>
 ====================

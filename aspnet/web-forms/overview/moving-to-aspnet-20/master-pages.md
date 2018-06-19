@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885094"
 ---
 <a name="master-pages"></a><span data-ttu-id="38007-104">母版页</span><span class="sxs-lookup"><span data-stu-id="38007-104">Master Pages</span></span>
 ====================
@@ -144,8 +145,8 @@ ms.lasthandoff: 04/06/2018
 
 - <span data-ttu-id="38007-214"><strong>MasterPageFile</strong>属性@Page指令</span><span class="sxs-lookup"><span data-stu-id="38007-214">The <strong>MasterPageFile</strong> attribute of the @Page directive</span></span>
 - <span data-ttu-id="38007-215">设置**Page.MasterPageFile**在代码中的属性。</span><span class="sxs-lookup"><span data-stu-id="38007-215">Setting the **Page.MasterPageFile** property in code.</span></span>
-- <span data-ttu-id="38007-216">**&lt;页&gt;**应用程序配置文件 (web.config 应用程序的根文件夹中) 中的元素</span><span class="sxs-lookup"><span data-stu-id="38007-216">The **&lt;pages&gt;** element in the applications configuration file (web.config in the root folder of the application)</span></span>
-- <span data-ttu-id="38007-217">**&lt;页&gt;**子文件夹配置文件 (web.config 的子文件夹中) 中的元素</span><span class="sxs-lookup"><span data-stu-id="38007-217">The **&lt;pages&gt;** element in a subfolders configuration file (web.config in a subfolder)</span></span>
+- <span data-ttu-id="38007-216">**&lt;页&gt;** 应用程序配置文件 (web.config 应用程序的根文件夹中) 中的元素</span><span class="sxs-lookup"><span data-stu-id="38007-216">The **&lt;pages&gt;** element in the applications configuration file (web.config in the root folder of the application)</span></span>
+- <span data-ttu-id="38007-217">**&lt;页&gt;** 子文件夹配置文件 (web.config 的子文件夹中) 中的元素</span><span class="sxs-lookup"><span data-stu-id="38007-217">The **&lt;pages&gt;** element in a subfolders configuration file (web.config in a subfolder)</span></span>
 
 ## <a name="masterpagefile-attribute"></a><span data-ttu-id="38007-218">MasterPageFile 属性</span><span class="sxs-lookup"><span data-stu-id="38007-218">MasterPageFile Attribute</span></span>
 

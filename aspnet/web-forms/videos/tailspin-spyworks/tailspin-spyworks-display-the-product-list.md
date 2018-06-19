@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894572"
 ---
 <a name="tailspin-spyworks---display-the-product-list"></a><span data-ttu-id="509e1-103">Tailspin Spyworks-显示产品列表</span><span class="sxs-lookup"><span data-stu-id="509e1-103">Tailspin Spyworks - Display the Product List</span></span>
 ====================

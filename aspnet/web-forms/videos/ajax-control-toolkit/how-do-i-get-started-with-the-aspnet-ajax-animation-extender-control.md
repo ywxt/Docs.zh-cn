@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880617"
 ---
 <a name="how-do-i-get-started-with-the-aspnet-ajax-animation-extender-control"></a><span data-ttu-id="a5520-104">[如何:]开始使用 ASP.NET AJAX 动画扩展程序控件？</span><span class="sxs-lookup"><span data-stu-id="a5520-104">[How Do I:] Get Started with the ASP.NET AJAX Animation Extender Control?</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885659"
 ---
 <a name="getting-started-with-the-next-version-of-aspnet"></a><span data-ttu-id="a33eb-103">Getting Started with ASP.NET 的下一个版本</span><span class="sxs-lookup"><span data-stu-id="a33eb-103">Getting Started with the Next Version of ASP.NET</span></span>
 ====================

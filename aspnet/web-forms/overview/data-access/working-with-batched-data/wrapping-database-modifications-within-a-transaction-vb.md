@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888700"
 ---
 <a name="wrapping-database-modifications-within-a-transaction-vb"></a><span data-ttu-id="c2af3-104">在事务 (VB) 中的包装数据库修改</span><span class="sxs-lookup"><span data-stu-id="c2af3-104">Wrapping Database Modifications within a Transaction (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884894"
 ---
 <a name="javascript-intellisense-support-in-visual-studio-2008"></a><span data-ttu-id="c6dd9-104">在 Visual Studio 2008 中的 JavaScript Intellisense 支持</span><span class="sxs-lookup"><span data-stu-id="c6dd9-104">JavaScript Intellisense Support in Visual Studio 2008</span></span>
 ====================

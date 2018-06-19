@@ -14,6 +14,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898747"
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a><span data-ttu-id="8c512-103">ASP.NET Core MVC 中的缓存标记帮助程序</span><span class="sxs-lookup"><span data-stu-id="8c512-103">Cache Tag Helper in ASP.NET Core MVC</span></span>
 

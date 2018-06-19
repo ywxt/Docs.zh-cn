@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874481"
 ---
 <a name="aspnet-mvc-storefront-part-2-the-repository-pattern"></a><span data-ttu-id="c23bf-104">存储库模式的 ASP.NET MVC 店面第 2 部分：</span><span class="sxs-lookup"><span data-stu-id="c23bf-104">ASP.NET MVC Storefront Part 2: The Repository Pattern</span></span>
 ====================

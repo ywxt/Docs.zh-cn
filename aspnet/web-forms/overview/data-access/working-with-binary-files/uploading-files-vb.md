@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30888092"
 ---
 <a name="uploading-files-vb"></a><span data-ttu-id="237d3-103">上载文件 (VB)</span><span class="sxs-lookup"><span data-stu-id="237d3-103">Uploading Files (VB)</span></span>
 ====================

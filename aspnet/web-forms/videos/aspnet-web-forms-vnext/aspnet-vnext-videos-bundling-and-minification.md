@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883991"
 ---
 <a name="aspnet-vnext-videos-bundling-and-minification"></a><span data-ttu-id="b4692-103">ASP.NET vNext 视频： 捆绑和缩减</span><span class="sxs-lookup"><span data-stu-id="b4692-103">ASP.NET vNext Videos: Bundling and Minification</span></span>
 ====================

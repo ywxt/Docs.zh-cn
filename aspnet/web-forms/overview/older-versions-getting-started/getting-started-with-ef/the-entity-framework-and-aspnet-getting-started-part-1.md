@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889483"
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a><span data-ttu-id="7bc9e-103">如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体</span><span class="sxs-lookup"><span data-stu-id="7bc9e-103">Getting Started with Entity Framework 4.0 Database First and ASP.NET 4 Web Forms</span></span>
 ====================
@@ -100,7 +101,7 @@ ms.lasthandoff: 04/06/2018
 
 `%PROGRAMFILES%\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA`
 
-<span data-ttu-id="7bc9e-163">(此位置的*.mdf*文件假定你正在使用 SQL Server 2008 Express。)</span><span class="sxs-lookup"><span data-stu-id="7bc9e-163">(This location of the *.mdf* file assumes you're using SQL Server 2008 Express.)</span></span>
+<span data-ttu-id="7bc9e-163">(此位置的 *.mdf*文件假定你正在使用 SQL Server 2008 Express。)</span><span class="sxs-lookup"><span data-stu-id="7bc9e-163">(This location of the *.mdf* file assumes you're using SQL Server 2008 Express.)</span></span>
 
 <span data-ttu-id="7bc9e-164">如果从脚本中创建数据库，请执行以下步骤以创建数据库关系图：</span><span class="sxs-lookup"><span data-stu-id="7bc9e-164">If you create the database from a script, perform the following steps to create a database diagram:</span></span>
 
@@ -210,7 +211,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="7bc9e-247">[![Image22](the-entity-framework-and-aspnet-getting-started-part-1/_static/image60.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image59.png)</span><span class="sxs-lookup"><span data-stu-id="7bc9e-247">[![Image22](the-entity-framework-and-aspnet-getting-started-part-1/_static/image60.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image59.png)</span></span>
 
-<span data-ttu-id="7bc9e-248">实体框架使用 XML 来存储数据库、 数据模型中，以及它们之间的映射信息。</span><span class="sxs-lookup"><span data-stu-id="7bc9e-248">The Entity Framework uses XML to store information about the database, the data model, and the mappings between them.</span></span> <span data-ttu-id="7bc9e-249">*SchoolModel.edmx*文件实际上是 XML 文件，其中包含此信息。</span><span class="sxs-lookup"><span data-stu-id="7bc9e-249">The *SchoolModel.edmx* file is actually an XML file that contains this information.</span></span> <span data-ttu-id="7bc9e-250">设计器呈现的信息以图形格式，但你还可以查看该文件为 XML，请右键单击*.edmx*文件中**解决方案资源管理器**、 单击**打开方式**，并选择**XML （文本） 编辑器**。</span><span class="sxs-lookup"><span data-stu-id="7bc9e-250">The designer renders the information in a graphical format, but you can also view the file as XML by right-clicking the *.edmx* file in **Solution Explorer**, clicking **Open With**, and selecting **XML (Text) Editor**.</span></span> <span data-ttu-id="7bc9e-251">（数据模型设计器和 XML 编辑器是打开和使用相同的文件中，因此不能具有设计器打开并在 XML 编辑器中打开该文件，在同一时间仅使用两个不同的方式。）</span><span class="sxs-lookup"><span data-stu-id="7bc9e-251">(The data model designer and an XML editor are just two different ways of opening and working with the same file, so you cannot have the designer open and open the file in an XML editor at the same time.)</span></span>
+<span data-ttu-id="7bc9e-248">实体框架使用 XML 来存储数据库、 数据模型中，以及它们之间的映射信息。</span><span class="sxs-lookup"><span data-stu-id="7bc9e-248">The Entity Framework uses XML to store information about the database, the data model, and the mappings between them.</span></span> <span data-ttu-id="7bc9e-249">*SchoolModel.edmx*文件实际上是 XML 文件，其中包含此信息。</span><span class="sxs-lookup"><span data-stu-id="7bc9e-249">The *SchoolModel.edmx* file is actually an XML file that contains this information.</span></span> <span data-ttu-id="7bc9e-250">设计器呈现的信息以图形格式，但你还可以查看该文件为 XML，请右键单击 *.edmx*文件中**解决方案资源管理器**、 单击**打开方式**，并选择**XML （文本） 编辑器**。</span><span class="sxs-lookup"><span data-stu-id="7bc9e-250">The designer renders the information in a graphical format, but you can also view the file as XML by right-clicking the *.edmx* file in **Solution Explorer**, clicking **Open With**, and selecting **XML (Text) Editor**.</span></span> <span data-ttu-id="7bc9e-251">（数据模型设计器和 XML 编辑器是打开和使用相同的文件中，因此不能具有设计器打开并在 XML 编辑器中打开该文件，在同一时间仅使用两个不同的方式。）</span><span class="sxs-lookup"><span data-stu-id="7bc9e-251">(The data model designer and an XML editor are just two different ways of opening and working with the same file, so you cannot have the designer open and open the file in an XML editor at the same time.)</span></span>
 
 <span data-ttu-id="7bc9e-252">你现在已创建网站、 数据库和数据模型。</span><span class="sxs-lookup"><span data-stu-id="7bc9e-252">You've now created a website, a database, and a data model.</span></span> <span data-ttu-id="7bc9e-253">在下一个演练中，你将开始处理数据使用数据模型和 ASP.NET`EntityDataSource`控件。</span><span class="sxs-lookup"><span data-stu-id="7bc9e-253">In the next walkthrough you'll begin working with data using the data model and the ASP.NET `EntityDataSource` control.</span></span>
 

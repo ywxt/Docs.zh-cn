@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882853"
 ---
 <a name="how-do-i-create-an-aspnet-ajax-extender-from-scratch"></a><span data-ttu-id="5ee7e-105">[如何:]从头开始创建 ASP.NET AJAX 扩展程序？</span><span class="sxs-lookup"><span data-stu-id="5ee7e-105">[How Do I:] Create an ASP.NET AJAX Extender from Scratch?</span></span>
 ====================

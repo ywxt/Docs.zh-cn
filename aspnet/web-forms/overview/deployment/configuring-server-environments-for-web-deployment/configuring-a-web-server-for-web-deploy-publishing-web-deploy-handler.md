@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887275"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a><span data-ttu-id="dc40f-103">配置 Web 服务器的 Web 部署发布 （Web 部署处理程序）</span><span class="sxs-lookup"><span data-stu-id="dc40f-103">Configuring a Web Server for Web Deploy Publishing (Web Deploy Handler)</span></span>
 ====================
@@ -102,7 +103,7 @@ ms.lasthandoff: 04/06/2018
     > <span data-ttu-id="dc40f-175">你可能已安装.NET Framework 4.0 通过 Windows 更新。</span><span class="sxs-lookup"><span data-stu-id="dc40f-175">You may have already installed the .NET Framework 4.0 through Windows Update.</span></span> <span data-ttu-id="dc40f-176">如果已安装的产品或组件，则 Web 平台安装程序将指示这一点通过将**添加**按钮，其文本**已安装**。</span><span class="sxs-lookup"><span data-stu-id="dc40f-176">If a product or component is already installed, the Web Platform Installer will indicate this by replacing the **Add** button with the text **Installed**.</span></span>
 
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image1.png)
-6. <span data-ttu-id="dc40f-177">在**ASP.NET MVC 3 (Visual Studio 2010)**行中，单击**添加**。</span><span class="sxs-lookup"><span data-stu-id="dc40f-177">In the **ASP.NET MVC 3 (Visual Studio 2010)** row, click **Add**.</span></span>
+6. <span data-ttu-id="dc40f-177">在**ASP.NET MVC 3 (Visual Studio 2010)** 行中，单击**添加**。</span><span class="sxs-lookup"><span data-stu-id="dc40f-177">In the **ASP.NET MVC 3 (Visual Studio 2010)** row, click **Add**.</span></span>
 7. <span data-ttu-id="dc40f-178">在导航窗格中，单击**服务器**。</span><span class="sxs-lookup"><span data-stu-id="dc40f-178">In the navigation pane, click **Server**.</span></span>
 8. <span data-ttu-id="dc40f-179">在 **IIS 7 建议配置** 行中，单击 **添加** 。</span><span class="sxs-lookup"><span data-stu-id="dc40f-179">In the **IIS 7 Recommended Configuration** row, click **Add**.</span></span>
 9. <span data-ttu-id="dc40f-180">在**Web 部署工具 2.1**行中，单击**添加**。</span><span class="sxs-lookup"><span data-stu-id="dc40f-180">In the **Web Deployment Tool 2.1** row, click **Add**.</span></span>

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881365"
 ---
 <a name="add-custom-data-to-the-authentication-method"></a><span data-ttu-id="6dc75-103">将自定义数据添加到身份验证方法</span><span class="sxs-lookup"><span data-stu-id="6dc75-103">Add Custom Data to the Authentication Method</span></span>
 ====================

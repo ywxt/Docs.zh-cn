@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882957"
 ---
 <a name="nested-data-web-controls-vb"></a><span data-ttu-id="9e2fd-104">嵌套的数据 Web 控件 (VB)</span><span class="sxs-lookup"><span data-stu-id="9e2fd-104">Nested Data Web Controls (VB)</span></span>
 ====================
@@ -100,7 +101,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-aspx[Main](nested-data-web-controls-vb/samples/sample3.aspx)]
 
-<span data-ttu-id="9e2fd-161">我们使用 ObjectDataSource 方法时需要设置`ProductsByCategoryList`中继器 s`DataSourceID`属性`ID`的 ObjectDataSource (`ProductsByCategoryDataSource`)。</span><span class="sxs-lookup"><span data-stu-id="9e2fd-161">When using the ObjectDataSource approach we need to set the `ProductsByCategoryList` Repeater s `DataSourceID` property to the `ID` of the ObjectDataSource (`ProductsByCategoryDataSource`).</span></span> <span data-ttu-id="9e2fd-162">此外，请注意，我们 ObjectDataSource 具有`<asp:Parameter>`指定的元素*`categoryID`*值将传递到`GetProductsByCategoryID(categoryID)`方法。</span><span class="sxs-lookup"><span data-stu-id="9e2fd-162">Also, notice that our ObjectDataSource has an `<asp:Parameter>` element that specifies the *`categoryID`* value that will be passed into the `GetProductsByCategoryID(categoryID)` method.</span></span> <span data-ttu-id="9e2fd-163">但是，我们如何指定此值？</span><span class="sxs-lookup"><span data-stu-id="9e2fd-163">But how do we specify this value?</span></span> <span data-ttu-id="9e2fd-164">理想情况下，我们 d 能够只需设置`DefaultValue`属性`<asp:Parameter>`元素使用数据绑定的语法，如下所示：</span><span class="sxs-lookup"><span data-stu-id="9e2fd-164">Ideally, we d be able to just set the `DefaultValue` property of the `<asp:Parameter>` element using databinding syntax, like so:</span></span>
+<span data-ttu-id="9e2fd-161">我们使用 ObjectDataSource 方法时需要设置`ProductsByCategoryList`中继器 s`DataSourceID`属性`ID`的 ObjectDataSource (`ProductsByCategoryDataSource`)。</span><span class="sxs-lookup"><span data-stu-id="9e2fd-161">When using the ObjectDataSource approach we need to set the `ProductsByCategoryList` Repeater s `DataSourceID` property to the `ID` of the ObjectDataSource (`ProductsByCategoryDataSource`).</span></span> <span data-ttu-id="9e2fd-162">此外，请注意，我们 ObjectDataSource 具有`<asp:Parameter>`指定的元素*`categoryID`* 值将传递到`GetProductsByCategoryID(categoryID)`方法。</span><span class="sxs-lookup"><span data-stu-id="9e2fd-162">Also, notice that our ObjectDataSource has an `<asp:Parameter>` element that specifies the *`categoryID`* value that will be passed into the `GetProductsByCategoryID(categoryID)` method.</span></span> <span data-ttu-id="9e2fd-163">但是，我们如何指定此值？</span><span class="sxs-lookup"><span data-stu-id="9e2fd-163">But how do we specify this value?</span></span> <span data-ttu-id="9e2fd-164">理想情况下，我们 d 能够只需设置`DefaultValue`属性`<asp:Parameter>`元素使用数据绑定的语法，如下所示：</span><span class="sxs-lookup"><span data-stu-id="9e2fd-164">Ideally, we d be able to just set the `DefaultValue` property of the `<asp:Parameter>` element using databinding syntax, like so:</span></span>
 
 
 [!code-aspx[Main](nested-data-web-controls-vb/samples/sample4.aspx)]

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899744"
 ---
 <a name="aspnet-4-quick-hit---permanent-redirect"></a><span data-ttu-id="ff5f9-103">ASP.NET 4"快速命中"的永久重定向</span><span class="sxs-lookup"><span data-stu-id="ff5f9-103">ASP.NET 4 "Quick Hit" - Permanent Redirect</span></span>
 ====================

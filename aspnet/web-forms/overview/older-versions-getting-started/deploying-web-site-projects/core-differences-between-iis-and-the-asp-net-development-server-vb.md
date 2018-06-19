@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887543"
 ---
 <a name="core-differences-between-iis-and-the-aspnet-development-server-vb"></a><span data-ttu-id="ee200-104">核心 IIS 和 ASP.NET Development Server (VB) 之间的差异</span><span class="sxs-lookup"><span data-stu-id="ee200-104">Core Differences Between IIS and the ASP.NET Development Server (VB)</span></span>
 ====================

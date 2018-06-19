@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876483"
 ---
 <a name="custom-buttons-in-the-datalist-and-repeater-c"></a><span data-ttu-id="bc2fd-103">DataList 和转发器 (C#) 中的自定义按钮</span><span class="sxs-lookup"><span data-stu-id="bc2fd-103">Custom Buttons in the DataList and Repeater (C#)</span></span>
 ====================

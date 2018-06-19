@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879473"
 ---
 <a name="part-4-models-and-data-access"></a><span data-ttu-id="bbb12-104">第 4 部分： 模型和数据访问</span><span class="sxs-lookup"><span data-stu-id="bbb12-104">Part 4: Models and Data Access</span></span>
 ====================
@@ -119,7 +120,7 @@ ms.lasthandoff: 04/06/2018
 
 ### <a name="updating-store-browse-and-details-to-use-live-data"></a><span data-ttu-id="bbb12-160">更新存储浏览和详细信息，若要使用实时数据</span><span class="sxs-lookup"><span data-stu-id="bbb12-160">Updating Store Browse and Details to use live data</span></span>
 
-<span data-ttu-id="bbb12-161">与应用商店/浏览？ 流派 =*[某些流派]*操作方法，我们要搜索的一种风格的名称。</span><span class="sxs-lookup"><span data-stu-id="bbb12-161">With the /Store/Browse?genre=*[some-genre]* action method, we're searching for a Genre by name.</span></span> <span data-ttu-id="bbb12-162">我们仅预期结果，因为我们不应永远都不会为流派同名的两个条目，因此我们可以使用。在 LINQ 查询为适当的流派对象如下的 Single() 扩展 （不要键入这尚未）：</span><span class="sxs-lookup"><span data-stu-id="bbb12-162">We only expect one result, since we shouldn't ever have two entries for the same Genre name, and so we can use the .Single() extension in LINQ to query for the appropriate Genre object like this (don't type this yet):</span></span>
+<span data-ttu-id="bbb12-161">与应用商店/浏览？ 流派 =*[某些流派]* 操作方法，我们要搜索的一种风格的名称。</span><span class="sxs-lookup"><span data-stu-id="bbb12-161">With the /Store/Browse?genre=*[some-genre]* action method, we're searching for a Genre by name.</span></span> <span data-ttu-id="bbb12-162">我们仅预期结果，因为我们不应永远都不会为流派同名的两个条目，因此我们可以使用。在 LINQ 查询为适当的流派对象如下的 Single() 扩展 （不要键入这尚未）：</span><span class="sxs-lookup"><span data-stu-id="bbb12-162">We only expect one result, since we shouldn't ever have two entries for the same Genre name, and so we can use the .Single() extension in LINQ to query for the appropriate Genre object like this (don't type this yet):</span></span>
 
 [!code-csharp[Main](mvc-music-store-part-4/samples/sample9.cs)]
 

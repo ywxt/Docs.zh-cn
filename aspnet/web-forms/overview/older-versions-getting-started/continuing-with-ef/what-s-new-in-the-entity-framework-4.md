@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889181"
 ---
 <a name="whats-new-in-the-entity-framework-40"></a><span data-ttu-id="adc85-104">什么是实体框架 4.0 中的新增功能</span><span class="sxs-lookup"><span data-stu-id="adc85-104">What's New in the Entity Framework 4.0</span></span>
 ====================
@@ -176,7 +177,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="adc85-210">[![Image22](what-s-new-in-the-entity-framework-4/_static/image36.png)](what-s-new-in-the-entity-framework-4/_static/image35.png)</span><span class="sxs-lookup"><span data-stu-id="adc85-210">[![Image22](what-s-new-in-the-entity-framework-4/_static/image36.png)](what-s-new-in-the-entity-framework-4/_static/image35.png)</span></span>
 
-<span data-ttu-id="adc85-211">(注意： 此页包含在可下载的项目中，但若要使它起作用，您必须创建数据库在本地 SQL Server Express 实例; 数据库中不包含作为*.mdf*文件中*应用\_数据*文件夹。)</span><span class="sxs-lookup"><span data-stu-id="adc85-211">(Note: This page is included in the downloadable project, but to make it work you must create the database in your local SQL Server Express instance; the database isn't included as an *.mdf* file in the *App\_Data* folder.)</span></span>
+<span data-ttu-id="adc85-211">(注意： 此页包含在可下载的项目中，但若要使它起作用，您必须创建数据库在本地 SQL Server Express 实例; 数据库中不包含作为 *.mdf*文件中*应用\_数据*文件夹。)</span><span class="sxs-lookup"><span data-stu-id="adc85-211">(Note: This page is included in the downloadable project, but to make it work you must create the database in your local SQL Server Express instance; the database isn't included as an *.mdf* file in the *App\_Data* folder.)</span></span>
 
 <span data-ttu-id="adc85-212">有关使用实体框架的第一个模型的功能的详细信息，请参阅[实体 Framework 4 中的模型的第一个](https://msdn.microsoft.com/data/ff830362.aspx)。</span><span class="sxs-lookup"><span data-stu-id="adc85-212">For more information about using the model-first feature of the Entity Framework, see [Model-First in the Entity Framework 4](https://msdn.microsoft.com/data/ff830362.aspx).</span></span>
 

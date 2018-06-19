@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891407"
 ---
 <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a><span data-ttu-id="dbf4f-104">最大程度地使用实体框架 4.0 ASP.NET 4 Web 应用程序中的性能</span><span class="sxs-lookup"><span data-stu-id="dbf4f-104">Maximizing Performance with the Entity Framework 4.0 in an ASP.NET 4 Web Application</span></span>
 ====================
@@ -237,7 +238,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample15.cs)]
 
-<span data-ttu-id="dbf4f-266">此代码生成视图*.edmx*文件位于与模板相同的文件夹并为模板文件具有相同的名称。</span><span class="sxs-lookup"><span data-stu-id="dbf4f-266">This code generates views for an *.edmx* file that's located in the same folder as the template and that has the same name as the template file.</span></span> <span data-ttu-id="dbf4f-267">例如，如果名为你的模板文件*SchoolModel.Views.tt*，它将查找名为的数据模型文件*SchoolModel.edmx*。</span><span class="sxs-lookup"><span data-stu-id="dbf4f-267">For example, if your template file is named *SchoolModel.Views.tt*, it will look for a data model file named *SchoolModel.edmx*.</span></span>
+<span data-ttu-id="dbf4f-266">此代码生成视图 *.edmx*文件位于与模板相同的文件夹并为模板文件具有相同的名称。</span><span class="sxs-lookup"><span data-stu-id="dbf4f-266">This code generates views for an *.edmx* file that's located in the same folder as the template and that has the same name as the template file.</span></span> <span data-ttu-id="dbf4f-267">例如，如果名为你的模板文件*SchoolModel.Views.tt*，它将查找名为的数据模型文件*SchoolModel.edmx*。</span><span class="sxs-lookup"><span data-stu-id="dbf4f-267">For example, if your template file is named *SchoolModel.Views.tt*, it will look for a data model file named *SchoolModel.edmx*.</span></span>
 
 <span data-ttu-id="dbf4f-268">保存该文件，然后右键单击中的文件**解决方案资源管理器**和选择**运行自定义工具**。</span><span class="sxs-lookup"><span data-stu-id="dbf4f-268">Save the file, then right-click the file in **Solution Explorer** and select **Run Custom Tool**.</span></span>
 

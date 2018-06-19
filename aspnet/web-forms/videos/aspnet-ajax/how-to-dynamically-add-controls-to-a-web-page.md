@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886604"
 ---
 <a name="how-to-dynamically-add-controls-to-a-web-page"></a><span data-ttu-id="00738-103">如何将控件动态添加到 Web 页</span><span class="sxs-lookup"><span data-stu-id="00738-103">How To Dynamically Add Controls to a Web Page</span></span>
 ====================

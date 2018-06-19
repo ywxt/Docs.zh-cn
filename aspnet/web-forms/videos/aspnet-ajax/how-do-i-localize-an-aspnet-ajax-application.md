@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886113"
 ---
 <a name="how-do-i-localize-an-aspnet-ajax-application"></a><span data-ttu-id="a845a-104">[如何:]本地化使用 ASP.NET AJAX 应用程序？</span><span class="sxs-lookup"><span data-stu-id="a845a-104">[How Do I:] Localize an ASP.NET AJAX Application?</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899196"
 ---
 <a name="customizing-site-wide-behavior-for-aspnet-web-pages-razor-sites"></a><span data-ttu-id="5bbf1-103">中的 ASP.NET Web 页 (Razor) 网站的自定义站点范围行为</span><span class="sxs-lookup"><span data-stu-id="5bbf1-103">Customizing Site-Wide Behavior for ASP.NET Web Pages (Razor) Sites</span></span>
 ====================
@@ -131,7 +132,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-cshtml[Main](18-customizing-site-wide-behavior/samples/sample7.cshtml)]
 
-<span data-ttu-id="5bbf1-190">当你运行*/myfolder/default.cshtml*，你将看到以下：</span><span class="sxs-lookup"><span data-stu-id="5bbf1-190">When you run */myfolder/default.cshtml*, you'll see the following:</span></span>
+<span data-ttu-id="5bbf1-190">当你运行 */myfolder/default.cshtml*，你将看到以下：</span><span class="sxs-lookup"><span data-stu-id="5bbf1-190">When you run */myfolder/default.cshtml*, you'll see the following:</span></span>
 
 [!code-console[Main](18-customizing-site-wide-behavior/samples/sample8.cmd)]
 
@@ -164,7 +165,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="using-pagestartcshtml-to-handle-errors"></a><span data-ttu-id="5bbf1-205">使用\_PageStart.cshtml 来处理错误</span><span class="sxs-lookup"><span data-stu-id="5bbf1-205">Using \_PageStart.cshtml to Handle Errors</span></span>
 
-<span data-ttu-id="5bbf1-206">另一个良好用于 *\_PageStart.cshtml*文件是创建处理的编程错误 （异常） 可能发生的任何一种方式*.cshtml*文件夹中的页。</span><span class="sxs-lookup"><span data-stu-id="5bbf1-206">Another good use for the *\_PageStart.cshtml* file is to create a way to handle programming errors (exceptions) that might occur in any *.cshtml* page in a folder.</span></span> <span data-ttu-id="5bbf1-207">此示例演示了一种方法执行此操作。</span><span class="sxs-lookup"><span data-stu-id="5bbf1-207">This example shows you one way to do this.</span></span>
+<span data-ttu-id="5bbf1-206">另一个良好用于 *\_PageStart.cshtml*文件是创建处理的编程错误 （异常） 可能发生的任何一种方式 *.cshtml*文件夹中的页。</span><span class="sxs-lookup"><span data-stu-id="5bbf1-206">Another good use for the *\_PageStart.cshtml* file is to create a way to handle programming errors (exceptions) that might occur in any *.cshtml* page in a folder.</span></span> <span data-ttu-id="5bbf1-207">此示例演示了一种方法执行此操作。</span><span class="sxs-lookup"><span data-stu-id="5bbf1-207">This example shows you one way to do this.</span></span>
 
 1. <span data-ttu-id="5bbf1-208">在根文件夹中，创建名为的文件夹*InitCatch*。</span><span class="sxs-lookup"><span data-stu-id="5bbf1-208">In the root folder, create a folder named *InitCatch*.</span></span>
 2. <span data-ttu-id="5bbf1-209">在*InitCatch*文件夹中你的网站，创建名为的文件 *\_PageStart.cshtml*和现有标记和代码替换为以下代码：</span><span class="sxs-lookup"><span data-stu-id="5bbf1-209">In the *InitCatch* folder of your website, create a file named *\_PageStart.cshtml* and replace the existing markup and code with the following:</span></span> 

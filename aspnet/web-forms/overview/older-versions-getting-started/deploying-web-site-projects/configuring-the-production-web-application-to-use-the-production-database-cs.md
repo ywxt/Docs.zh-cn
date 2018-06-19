@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887689"
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-c"></a><span data-ttu-id="774c7-104">配置用于生产数据库 (C#) 的生产 Web 应用程序</span><span class="sxs-lookup"><span data-stu-id="774c7-104">Configuring the Production Web Application to Use the Production Database (C#)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895147"
 ---
 <a name="the-effects-of-caching"></a><span data-ttu-id="777bc-103">缓存的影响</span><span class="sxs-lookup"><span data-stu-id="777bc-103">The Effects of Caching</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877341"
 ---
 <a name="displaying-data-with-the-objectdatasource-vb"></a><span data-ttu-id="815f1-103">使用对象数据源 (VB) 显示数据</span><span class="sxs-lookup"><span data-stu-id="815f1-103">Displaying Data With the ObjectDataSource (VB)</span></span>
 ====================

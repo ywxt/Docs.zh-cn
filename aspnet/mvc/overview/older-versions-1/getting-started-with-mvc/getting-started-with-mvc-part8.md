@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30879252"
 ---
 <a name="adding-a-column-to-the-model"></a><span data-ttu-id="da2bf-104">向模型添加列</span><span class="sxs-lookup"><span data-stu-id="da2bf-104">Adding a Column to the Model</span></span>
 ====================

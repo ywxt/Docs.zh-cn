@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881329"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a><span data-ttu-id="d4a50-103">使用 Visual Studio 的 ASP.NET Web 部署： 部署某一代码更新</span><span class="sxs-lookup"><span data-stu-id="d4a50-103">ASP.NET Web Deployment using Visual Studio: Deploying a Code Update</span></span>
 ====================
@@ -114,13 +115,13 @@ ms.lasthandoff: 04/06/2018
 2. <span data-ttu-id="d4a50-174">上**仪表板**页上，向下滚动到的 FTP 主机中的名称的查找**速览**部分。</span><span class="sxs-lookup"><span data-stu-id="d4a50-174">On the **Dashboard** page, scroll down to find the FTP host name in the **Quick Glance** section.</span></span>
 
     ![FTP 主机名](deploying-a-code-update/_static/image5.png)
-3. <span data-ttu-id="d4a50-176">打开过渡*.publishsettings*在记事本或其他文本编辑器中的文件。</span><span class="sxs-lookup"><span data-stu-id="d4a50-176">Open the staging *.publishsettings* file in Notepad or another text editor.</span></span>
+3. <span data-ttu-id="d4a50-176">打开过渡 *.publishsettings*在记事本或其他文本编辑器中的文件。</span><span class="sxs-lookup"><span data-stu-id="d4a50-176">Open the staging *.publishsettings* file in Notepad or another text editor.</span></span>
 4. <span data-ttu-id="d4a50-177">查找`publishProfile`FTP 配置文件的元素。</span><span class="sxs-lookup"><span data-stu-id="d4a50-177">Find the `publishProfile` element for the FTP profile.</span></span>
 5. <span data-ttu-id="d4a50-178">复制`userName`和`userPWD`值。</span><span class="sxs-lookup"><span data-stu-id="d4a50-178">Copy the `userName` and `userPWD` values.</span></span>
 
     ![FTP 凭据](deploying-a-code-update/_static/image6.png)
 6. <span data-ttu-id="d4a50-180">打开你的 FTP 工具并登录到 FTP URL。</span><span class="sxs-lookup"><span data-stu-id="d4a50-180">Open your FTP tool and log on to the FTP URL.</span></span>
-7. <span data-ttu-id="d4a50-181">复制*应用\_offline.htm*解决方案文件夹中找到到*/站点/wwwroot*文件夹中的暂存站点。</span><span class="sxs-lookup"><span data-stu-id="d4a50-181">Copy *app\_offline.htm* from the solution folder to the */site/wwwroot* folder in the staging site.</span></span>
+7. <span data-ttu-id="d4a50-181">复制*应用\_offline.htm*解决方案文件夹中找到到 */站点/wwwroot*文件夹中的暂存站点。</span><span class="sxs-lookup"><span data-stu-id="d4a50-181">Copy *app\_offline.htm* from the solution folder to the */site/wwwroot* folder in the staging site.</span></span>
 
     ![复制 app_offline](deploying-a-code-update/_static/image7.png)
 8. <span data-ttu-id="d4a50-183">浏览到暂存站点的 URL。</span><span class="sxs-lookup"><span data-stu-id="d4a50-183">Browse to your staging site's URL.</span></span> <span data-ttu-id="d4a50-184">你看到*应用\_offline.htm*页现在显示而不是你的主页。</span><span class="sxs-lookup"><span data-stu-id="d4a50-184">You see that the *app\_offline.htm* page is now displayed instead of your home page.</span></span>

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/12/2018
+ms.locfileid: "34094861"
 ---
 # <a name="configure-identity-primary-key-data-type-in-aspnet-core"></a><span data-ttu-id="1fa47-103">在 ASP.NET 核心中配置标识主键数据类型</span><span class="sxs-lookup"><span data-stu-id="1fa47-103">Configure Identity primary key data type in ASP.NET Core</span></span>
 

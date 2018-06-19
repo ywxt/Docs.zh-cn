@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888664"
 ---
 <a name="determining-what-files-need-to-be-deployed-c"></a><span data-ttu-id="2486b-103">确定文件需要被部署 (C#)</span><span class="sxs-lookup"><span data-stu-id="2486b-103">Determining What Files Need to Be Deployed (C#)</span></span>
 ====================
@@ -54,7 +55,7 @@ ms.lasthandoff: 04/06/2018
 | <span data-ttu-id="2486b-143">显式编译</span><span class="sxs-lookup"><span data-stu-id="2486b-143">Explicit Compilation</span></span> | <span data-ttu-id="2486b-144">是</span><span class="sxs-lookup"><span data-stu-id="2486b-144">Yes</span></span> | <span data-ttu-id="2486b-145">No</span><span class="sxs-lookup"><span data-stu-id="2486b-145">No</span></span> | <span data-ttu-id="2486b-146">是</span><span class="sxs-lookup"><span data-stu-id="2486b-146">Yes</span></span> |
 | <span data-ttu-id="2486b-147">自动编译</span><span class="sxs-lookup"><span data-stu-id="2486b-147">Automatic Compilation</span></span> | <span data-ttu-id="2486b-148">是</span><span class="sxs-lookup"><span data-stu-id="2486b-148">Yes</span></span> | <span data-ttu-id="2486b-149">是</span><span class="sxs-lookup"><span data-stu-id="2486b-149">Yes</span></span> | <span data-ttu-id="2486b-150">是 （如果存在）</span><span class="sxs-lookup"><span data-stu-id="2486b-150">Yes (if it exists)</span></span> |
 
-<span data-ttu-id="2486b-151">**表 1:**部署哪些文件取决于所使用的编译模型。</span><span class="sxs-lookup"><span data-stu-id="2486b-151">**Table 1:** What files you deploy depends on the compilation model used.</span></span>
+<span data-ttu-id="2486b-151">**表 1:** 部署哪些文件取决于所使用的编译模型。</span><span class="sxs-lookup"><span data-stu-id="2486b-151">**Table 1:** What files you deploy depends on the compilation model used.</span></span>
 
 ## <a name="taking-a-trip-down-memory-lane"></a><span data-ttu-id="2486b-152">拍摄内存 Lane 下行程</span><span class="sxs-lookup"><span data-stu-id="2486b-152">Taking a Trip Down Memory Lane</span></span>
 
@@ -98,7 +99,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="2486b-201">[![簿评审网站提供了多种类型的标题上评审](determining-what-files-need-to-be-deployed-cs/_static/image2.png)](determining-what-files-need-to-be-deployed-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="2486b-201">[![The Book Reviews website offers reviews on an assortment of titles](determining-what-files-need-to-be-deployed-cs/_static/image2.png)](determining-what-files-need-to-be-deployed-cs/_static/image1.png)</span></span>
 
-<span data-ttu-id="2486b-202">**图 1:**簿评审网站提供了多种类型的标题上评审 ([单击以查看实际尺寸的图像](determining-what-files-need-to-be-deployed-cs/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="2486b-202">**Figure 1:** The Book Reviews website offers reviews on an assortment of titles ([Click to view full-size image](determining-what-files-need-to-be-deployed-cs/_static/image3.png))</span></span>
+<span data-ttu-id="2486b-202">**图 1:** 簿评审网站提供了多种类型的标题上评审 ([单击以查看实际尺寸的图像](determining-what-files-need-to-be-deployed-cs/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="2486b-202">**Figure 1:** The Book Reviews website offers reviews on an assortment of titles ([Click to view full-size image](determining-what-files-need-to-be-deployed-cs/_static/image3.png))</span></span>
 
 
 <span data-ttu-id="2486b-203">此应用程序不使用站点数据库。查看每项作为单独的网页，并在应用程序中实现。</span><span class="sxs-lookup"><span data-stu-id="2486b-203">This application does not use a database; each review is implemented as a separate web page in the application.</span></span> <span data-ttu-id="2486b-204">本教程 （和下一步的几个教程） 演练将部署的 web 应用程序不具有数据库。</span><span class="sxs-lookup"><span data-stu-id="2486b-204">This tutorial (and the next several tutorials) walk through deploying a web application that does not have a database.</span></span> <span data-ttu-id="2486b-205">但是，在将来的教程中我们将增强此应用程序可以存储评审、 读取器注释和其他信息在数据库中，并将浏览步骤需要执行正确部署数据驱动的 web 应用程序。</span><span class="sxs-lookup"><span data-stu-id="2486b-205">However, in a future tutorial we will enhance this application to store reviews, reader comments, and other information within a database, and will explore what steps need to be performed to correctly deploy a data-driven web application.</span></span>

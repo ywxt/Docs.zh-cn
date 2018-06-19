@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874819"
 ---
 <a name="windows-azure-authentication"></a><span data-ttu-id="d55c3-103">Windows Azure 身份验证</span><span class="sxs-lookup"><span data-stu-id="d55c3-103">Windows Azure Authentication</span></span>
 ====================

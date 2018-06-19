@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889470"
 ---
 <a name="interacting-with-the-content-page-from-the-master-page-vb"></a><span data-ttu-id="e92ca-103">与来自母版页 (VB) 的内容页进行交互</span><span class="sxs-lookup"><span data-stu-id="e92ca-103">Interacting with the Content Page from the Master Page (VB)</span></span>
 ====================

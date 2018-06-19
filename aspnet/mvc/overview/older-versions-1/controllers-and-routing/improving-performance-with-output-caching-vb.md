@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874416"
 ---
 <a name="improving-performance-with-output-caching-vb"></a><span data-ttu-id="98a16-104">使用输出缓存 (VB) 提高性能</span><span class="sxs-lookup"><span data-stu-id="98a16-104">Improving Performance with Output Caching (VB)</span></span>
 ====================

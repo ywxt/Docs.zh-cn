@@ -15,6 +15,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897799"
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a><span data-ttu-id="7342f-104">中的 web Api 与 Azure Active Directory B2C 中 ASP.NET 核心云身份验证</span><span class="sxs-lookup"><span data-stu-id="7342f-104">Cloud authentication in web APIs with Azure Active Directory B2C in ASP.NET Core</span></span>
 
@@ -126,7 +127,7 @@ ms.lasthandoff: 04/06/2018
 <span data-ttu-id="7342f-211">新注册的 web 应用程序需要访问 web API 代表该用户的权限。</span><span class="sxs-lookup"><span data-stu-id="7342f-211">The newly registered web app needs permission to access the web API on the user's behalf.</span></span>  
 
 1. <span data-ttu-id="7342f-212">选择**Postman**的应用，然后选择列表中**API 访问**从左侧菜单。</span><span class="sxs-lookup"><span data-stu-id="7342f-212">Select **Postman** in the list of apps and then select **API access** from the menu on the left.</span></span>
-2. <span data-ttu-id="7342f-213">选择**+ 添加**。</span><span class="sxs-lookup"><span data-stu-id="7342f-213">Select **+ Add**.</span></span>
+2. <span data-ttu-id="7342f-213">选择 **+ 添加**。</span><span class="sxs-lookup"><span data-stu-id="7342f-213">Select **+ Add**.</span></span>
 3. <span data-ttu-id="7342f-214">在**选择 API**下拉列表中，选择 web API 的名称。</span><span class="sxs-lookup"><span data-stu-id="7342f-214">In the **Select API** dropdown, select the name of the web API.</span></span>
 4. <span data-ttu-id="7342f-215">在**选择作用域**下拉列表中，确保选中所有作用域。</span><span class="sxs-lookup"><span data-stu-id="7342f-215">In the **Select Scopes** dropdown, ensure all scopes are selected.</span></span>
 5. <span data-ttu-id="7342f-216">选择**确定**。</span><span class="sxs-lookup"><span data-stu-id="7342f-216">Select **Ok**.</span></span>
@@ -135,7 +136,7 @@ ms.lasthandoff: 04/06/2018
 
 ### <a name="create-a-postman-request"></a><span data-ttu-id="7342f-218">创建 Postman 请求</span><span class="sxs-lookup"><span data-stu-id="7342f-218">Create a Postman request</span></span>
 
-<span data-ttu-id="7342f-219">启动 Postman。</span><span class="sxs-lookup"><span data-stu-id="7342f-219">Launch Postman.</span></span> <span data-ttu-id="7342f-220">默认情况下，显示 Postman**新建**时启动的对话框。</span><span class="sxs-lookup"><span data-stu-id="7342f-220">By default, Postman displays the **Create New** dialog upon launching.</span></span> <span data-ttu-id="7342f-221">如果未显示对话框中，选择**+ 新建**在左上角的按钮。</span><span class="sxs-lookup"><span data-stu-id="7342f-221">If the dialog isn't displayed, select the **+ New** button in the upper left.</span></span>
+<span data-ttu-id="7342f-219">启动 Postman。</span><span class="sxs-lookup"><span data-stu-id="7342f-219">Launch Postman.</span></span> <span data-ttu-id="7342f-220">默认情况下，显示 Postman**新建**时启动的对话框。</span><span class="sxs-lookup"><span data-stu-id="7342f-220">By default, Postman displays the **Create New** dialog upon launching.</span></span> <span data-ttu-id="7342f-221">如果未显示对话框中，选择 **+ 新建**在左上角的按钮。</span><span class="sxs-lookup"><span data-stu-id="7342f-221">If the dialog isn't displayed, select the **+ New** button in the upper left.</span></span>
 
 <span data-ttu-id="7342f-222">从**新建**对话框：</span><span class="sxs-lookup"><span data-stu-id="7342f-222">From the **Create New** dialog:</span></span>
 
@@ -144,7 +145,7 @@ ms.lasthandoff: 04/06/2018
     ![请求按钮](./azure-ad-b2c-webapi/postman-create-new.png)
 
 2. <span data-ttu-id="7342f-225">输入*获取值*中**请求名称**框。</span><span class="sxs-lookup"><span data-stu-id="7342f-225">Enter *Get Values* in the **Request name** box.</span></span>
-3. <span data-ttu-id="7342f-226">选择**+ 创建集合**以创建用于存储请求新的集合。</span><span class="sxs-lookup"><span data-stu-id="7342f-226">Select **+ Create Collection** to create a new collection for storing the request.</span></span> <span data-ttu-id="7342f-227">命名集合*ASP.NET Core 教程*，然后选择复选标记。</span><span class="sxs-lookup"><span data-stu-id="7342f-227">Name the collection *ASP.NET Core tutorials* and then select the checkmark.</span></span>
+3. <span data-ttu-id="7342f-226">选择 **+ 创建集合**以创建用于存储请求新的集合。</span><span class="sxs-lookup"><span data-stu-id="7342f-226">Select **+ Create Collection** to create a new collection for storing the request.</span></span> <span data-ttu-id="7342f-227">命名集合*ASP.NET Core 教程*，然后选择复选标记。</span><span class="sxs-lookup"><span data-stu-id="7342f-227">Name the collection *ASP.NET Core tutorials* and then select the checkmark.</span></span>
 
     ![创建新的集合](./azure-ad-b2c-webapi/postman-create-collection.png)
 
@@ -185,7 +186,7 @@ ms.lasthandoff: 04/06/2018
 
 3. <span data-ttu-id="7342f-268">选择**令牌请求**按钮。</span><span class="sxs-lookup"><span data-stu-id="7342f-268">Select the **Request Token** button.</span></span>
 
-4. <span data-ttu-id="7342f-269">Postman 打开包含 Azure AD B2C 租户的登录对话框中的新窗口中。</span><span class="sxs-lookup"><span data-stu-id="7342f-269">Postman opens a new window containing the Azure AD B2C tenant's sign in dialog.</span></span> <span data-ttu-id="7342f-270">使用现有帐户登录 （如果已创建一个测试策略） 或选择**立即注册**创建新帐户。</span><span class="sxs-lookup"><span data-stu-id="7342f-270">Sign in with an existing account (if one was created testing the policies) or select **Sign up now** to create a new account.</span></span> <span data-ttu-id="7342f-271">**忘记了密码？**链接用于重置忘记了的密码。</span><span class="sxs-lookup"><span data-stu-id="7342f-271">The **Forgot your password?** link is used to reset a forgotten password.</span></span>
+4. <span data-ttu-id="7342f-269">Postman 打开包含 Azure AD B2C 租户的登录对话框中的新窗口中。</span><span class="sxs-lookup"><span data-stu-id="7342f-269">Postman opens a new window containing the Azure AD B2C tenant's sign in dialog.</span></span> <span data-ttu-id="7342f-270">使用现有帐户登录 （如果已创建一个测试策略） 或选择**立即注册**创建新帐户。</span><span class="sxs-lookup"><span data-stu-id="7342f-270">Sign in with an existing account (if one was created testing the policies) or select **Sign up now** to create a new account.</span></span> <span data-ttu-id="7342f-271">**忘记了密码？** 链接用于重置忘记了的密码。</span><span class="sxs-lookup"><span data-stu-id="7342f-271">The **Forgot your password?** link is used to reset a forgotten password.</span></span>
 
 5. <span data-ttu-id="7342f-272">已成功登录后，该窗口将关闭与**管理访问令牌**此时将显示对话框。</span><span class="sxs-lookup"><span data-stu-id="7342f-272">After successfully signing in, the window closes and the **MANAGE ACCESS TOKENS** dialog appears.</span></span> <span data-ttu-id="7342f-273">向下的滚动到底部并选择**使用令牌**按钮。</span><span class="sxs-lookup"><span data-stu-id="7342f-273">Scroll down to the bottom and select the **Use Token** button.</span></span>
 

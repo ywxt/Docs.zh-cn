@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884498"
 ---
 <a name="aspnet-4-quick-hit---clean-webconfig-files"></a><span data-ttu-id="42fac-104">ASP.NET 4-"快速 Hit"清理 Web.Config 文件</span><span class="sxs-lookup"><span data-stu-id="42fac-104">ASP.NET 4 "Quick Hit" - Clean Web.Config Files</span></span>
 ====================

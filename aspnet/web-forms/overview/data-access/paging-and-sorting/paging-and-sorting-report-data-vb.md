@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887234"
 ---
 <a name="paging-and-sorting-report-data-vb"></a><span data-ttu-id="7fb5c-104">分页和排序报表数据 (VB)</span><span class="sxs-lookup"><span data-stu-id="7fb5c-104">Paging and Sorting Report Data (VB)</span></span>
 ====================

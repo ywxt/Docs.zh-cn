@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30880357"
 ---
 <a name="creating-a-build-definition-that-supports-deployment"></a><span data-ttu-id="f7421-104">创建生成定义支持部署</span><span class="sxs-lookup"><span data-stu-id="f7421-104">Creating a Build Definition That Supports Deployment</span></span>
 ====================

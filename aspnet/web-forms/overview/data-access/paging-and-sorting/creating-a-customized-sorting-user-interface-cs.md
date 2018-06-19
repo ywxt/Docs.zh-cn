@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885817"
 ---
 <a name="creating-a-customized-sorting-user-interface-c"></a><span data-ttu-id="54775-104">创建自定义排序用户界面 (C#)</span><span class="sxs-lookup"><span data-stu-id="54775-104">Creating a Customized Sorting User Interface (C#)</span></span>
 ====================

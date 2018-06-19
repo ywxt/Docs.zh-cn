@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882788"
 ---
 <a name="configuring-sql-to-work-with-membership-schemas"></a><span data-ttu-id="e2761-103">使用成员资格架构配置到工作的 SQL</span><span class="sxs-lookup"><span data-stu-id="e2761-103">Configuring SQL To Work with Membership Schemas</span></span>
 ====================

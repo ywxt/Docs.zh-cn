@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889392"
 ---
 <a name="examining-the-events-associated-with-inserting-updating-and-deleting-c"></a><span data-ttu-id="ff50c-104">检查与插入、 更新和删除 (C#) 关联的事件</span><span class="sxs-lookup"><span data-stu-id="ff50c-104">Examining the Events Associated with Inserting, Updating, and Deleting (C#)</span></span>
 ====================

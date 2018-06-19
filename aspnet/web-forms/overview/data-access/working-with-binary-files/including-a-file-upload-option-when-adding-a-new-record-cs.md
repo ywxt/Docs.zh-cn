@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888609"
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-c"></a><span data-ttu-id="00874-104">包括文件上载选项，在添加新的记录 (C#)</span><span class="sxs-lookup"><span data-stu-id="00874-104">Including a File Upload Option When Adding a New Record (C#)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892317"
 ---
 <a name="scenario-configuring-a-staging-environment-for-web-deployment"></a><span data-ttu-id="10a91-103">方案： 配置 Web 部署的过渡环境</span><span class="sxs-lookup"><span data-stu-id="10a91-103">Scenario: Configuring a Staging Environment for Web Deployment</span></span>
 ====================

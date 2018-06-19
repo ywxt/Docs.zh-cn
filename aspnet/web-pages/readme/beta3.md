@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892876"
 ---
 <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a><span data-ttu-id="fa16b-103">Web Matrix 和 ASP.NET Web 页 (Razor) Beta 3 版本自述文件</span><span class="sxs-lookup"><span data-stu-id="fa16b-103">Web Matrix and ASP.NET Web Pages (Razor) Beta 3 Release Readme</span></span>
 ====================
@@ -280,7 +281,7 @@ ms.lasthandoff: 04/06/2018
 
 #### <a name="issue-uninstalling-the-net-framework-version-4-disables-aspnet-web-pages-with-razor-syntax"></a><span data-ttu-id="fa16b-260">问题： 卸载.NET Framework 版本 4 禁用带有 Razor 语法的 ASP.NET Web Pages</span><span class="sxs-lookup"><span data-stu-id="fa16b-260">Issue: Uninstalling the .NET Framework version 4 disables ASP.NET Web Pages with Razor Syntax</span></span>
 
-> <span data-ttu-id="fa16b-261">如果你卸载.NET Framework 版本 4，然后重新安装它，将禁用使用 Razor 语法的 ASP.NET 网页。</span><span class="sxs-lookup"><span data-stu-id="fa16b-261">If you uninstall the .NET Framework version 4 and then reinstall it, ASP.NET Web Pages with Razor syntax is disabled.</span></span> <span data-ttu-id="fa16b-262">与页*.cshtml*扩展可能无法正常运行。</span><span class="sxs-lookup"><span data-stu-id="fa16b-262">Pages with the *.cshtml* extension do not run correctly.</span></span> <span data-ttu-id="fa16b-263">ASP.NET Web Pages 机根目录中注册程序集*Web.config*文件，并删除.NET Framework 中删除该文件。</span><span class="sxs-lookup"><span data-stu-id="fa16b-263">ASP.NET Web Pages registers an assembly in the machine root *Web.config* file, and removing the .NET Framework removes that file.</span></span> <span data-ttu-id="fa16b-264">重新安装.NET Framework 安装新版本的配置文件中，但不会添加 ASP.NET 网页的程序集引用。</span><span class="sxs-lookup"><span data-stu-id="fa16b-264">Reinstalling the .NET Framework installs a new version of the configuration file, but does not add the reference for the ASP.NET Web Pages assembly.</span></span>
+> <span data-ttu-id="fa16b-261">如果你卸载.NET Framework 版本 4，然后重新安装它，将禁用使用 Razor 语法的 ASP.NET 网页。</span><span class="sxs-lookup"><span data-stu-id="fa16b-261">If you uninstall the .NET Framework version 4 and then reinstall it, ASP.NET Web Pages with Razor syntax is disabled.</span></span> <span data-ttu-id="fa16b-262">与页 *.cshtml*扩展可能无法正常运行。</span><span class="sxs-lookup"><span data-stu-id="fa16b-262">Pages with the *.cshtml* extension do not run correctly.</span></span> <span data-ttu-id="fa16b-263">ASP.NET Web Pages 机根目录中注册程序集*Web.config*文件，并删除.NET Framework 中删除该文件。</span><span class="sxs-lookup"><span data-stu-id="fa16b-263">ASP.NET Web Pages registers an assembly in the machine root *Web.config* file, and removing the .NET Framework removes that file.</span></span> <span data-ttu-id="fa16b-264">重新安装.NET Framework 安装新版本的配置文件中，但不会添加 ASP.NET 网页的程序集引用。</span><span class="sxs-lookup"><span data-stu-id="fa16b-264">Reinstalling the .NET Framework installs a new version of the configuration file, but does not add the reference for the ASP.NET Web Pages assembly.</span></span>
 > 
 > <span data-ttu-id="fa16b-265">**解决方法**后重新安装.NET Framework，请重新安装 ASP.NET 网页使用 Razor 语法。</span><span class="sxs-lookup"><span data-stu-id="fa16b-265">**Workaround** After reinstalling the .NET Framework, reinstall ASP.NET Web Pages with Razor syntax.</span></span> <span data-ttu-id="fa16b-266">这将添加到下面的元素*Web.config*机根目录，这通常是在以下位置中的文件：</span><span class="sxs-lookup"><span data-stu-id="fa16b-266">This adds the following element to the *Web.config* file in the machine root, which is typically in the following location:</span></span>  
 > 
@@ -301,7 +302,7 @@ ms.lasthandoff: 04/06/2018
 
 #### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a><span data-ttu-id="fa16b-273">问题： 无扩展名的 Url 未找到 IIS 7 或 IIS 7.5 上的.cshtml/.vbhtml 文件</span><span class="sxs-lookup"><span data-stu-id="fa16b-273">Issue: Extensionless URLs do not find .cshtml/.vbhtml files on IIS 7 or IIS 7.5</span></span>
 
-> <span data-ttu-id="fa16b-274">在 IIS 7 或 IIS 7.5 上，如下所示 URL 的请求不能找到页具有*.cshtml*或*.vbhtml*扩展：</span><span class="sxs-lookup"><span data-stu-id="fa16b-274">On IIS 7 or IIS 7.5, requests with a URL like the following are not able to find pages that have the *.cshtml* or *.vbhtml* extension:</span></span>  
+> <span data-ttu-id="fa16b-274">在 IIS 7 或 IIS 7.5 上，如下所示 URL 的请求不能找到页具有 *.cshtml*或 *.vbhtml*扩展：</span><span class="sxs-lookup"><span data-stu-id="fa16b-274">On IIS 7 or IIS 7.5, requests with a URL like the following are not able to find pages that have the *.cshtml* or *.vbhtml* extension:</span></span>  
 > 
 > `http://www.example.com/ExampleSite/ExampleFile`  
 > 
@@ -344,7 +345,7 @@ ms.lasthandoff: 04/06/2018
 >     - <span data-ttu-id="fa16b-293">复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\*\* **到** *\Bin\x86*</span><span class="sxs-lookup"><span data-stu-id="fa16b-293">Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\*\* **to** *\Bin\x86*</span></span>
 >     - <span data-ttu-id="fa16b-294">复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\*\* **到** *\Bin\amd64*</span><span class="sxs-lookup"><span data-stu-id="fa16b-294">Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\*\* **to** *\Bin\amd64*</span></span>
 > 2. <span data-ttu-id="fa16b-295">在网站的根文件夹中创建或打开*Web.config*文件。</span><span class="sxs-lookup"><span data-stu-id="fa16b-295">In the root folder of the website, create or open a *Web.config* file.</span></span> <span data-ttu-id="fa16b-296">(在 WebMatrix Beta 3 中，此文件类型是如果你单击可用**所有**中**选择文件类型**对话框。)</span><span class="sxs-lookup"><span data-stu-id="fa16b-296">(In WebMatrix Beta 3, this file type is available if you click **All** in the **Choose a File Type** dialog box.)</span></span>
-> 3. <span data-ttu-id="fa16b-297">添加以下元素的子级**&lt;配置&gt;**元素 (而不是在**&lt;system.web&gt;**元素):</span><span class="sxs-lookup"><span data-stu-id="fa16b-297">Add the following element as a child of the **&lt;configuration&gt;** element (not inside the **&lt;system.web&gt;** element):</span></span>
+> 3. <span data-ttu-id="fa16b-297">添加以下元素的子级**&lt;配置&gt;** 元素 (而不是在**&lt;system.web&gt;** 元素):</span><span class="sxs-lookup"><span data-stu-id="fa16b-297">Add the following element as a child of the **&lt;configuration&gt;** element (not inside the **&lt;system.web&gt;** element):</span></span>
 > 
 > 
 > [!code-xml[Main](beta3/samples/sample10.xml)]
@@ -352,7 +353,7 @@ ms.lasthandoff: 04/06/2018
 
 #### <a name="issue-database-and-webgrid-helpers-do-not-work-in-medium-trust-in-visual-basic"></a><span data-ttu-id="fa16b-298">问题： 数据库和 WebGrid 帮助器中不起作用中等信任在 Visual Basic 中</span><span class="sxs-lookup"><span data-stu-id="fa16b-298">Issue: Database and WebGrid helpers do not work in Medium Trust in Visual Basic</span></span>
 
-> <span data-ttu-id="fa16b-299">如果你使用的 Visual Basic (创建*.vbhtml*文件)，则`Database`和`WebGrid`如果应用程序设置为使用中等信任帮助器将无法工作。</span><span class="sxs-lookup"><span data-stu-id="fa16b-299">If you are using Visual Basic (creating *.vbhtml* files), the `Database` and `WebGrid` helpers will not work if the application is set to use Medium Trust.</span></span>
+> <span data-ttu-id="fa16b-299">如果你使用的 Visual Basic (创建 *.vbhtml*文件)，则`Database`和`WebGrid`如果应用程序设置为使用中等信任帮助器将无法工作。</span><span class="sxs-lookup"><span data-stu-id="fa16b-299">If you are using Visual Basic (creating *.vbhtml* files), the `Database` and `WebGrid` helpers will not work if the application is set to use Medium Trust.</span></span>
 > 
 > <span data-ttu-id="fa16b-300">**Workaround**</span><span class="sxs-lookup"><span data-stu-id="fa16b-300">**Workaround**</span></span>  
 > <span data-ttu-id="fa16b-301">暂时将设置用于完全信任的应用程序。</span><span class="sxs-lookup"><span data-stu-id="fa16b-301">Temporarily set the application to use Full Trust.</span></span>

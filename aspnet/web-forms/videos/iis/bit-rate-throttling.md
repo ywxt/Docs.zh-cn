@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881170"
 ---
 <a name="bit-rate-throttling"></a><span data-ttu-id="0e659-104">比特率限制</span><span class="sxs-lookup"><span data-stu-id="0e659-104">Bit Rate Throttling</span></span>
 ====================

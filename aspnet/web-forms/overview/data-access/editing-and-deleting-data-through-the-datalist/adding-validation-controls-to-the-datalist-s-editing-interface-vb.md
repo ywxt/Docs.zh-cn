@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888326"
 ---
 <a name="adding-validation-controls-to-the-datalists-editing-interface-vb"></a><span data-ttu-id="5247a-103">将验证控件添加到 DataList 的编辑界面 (VB)</span><span class="sxs-lookup"><span data-stu-id="5247a-103">Adding Validation Controls to the DataList's Editing Interface (VB)</span></span>
 ====================

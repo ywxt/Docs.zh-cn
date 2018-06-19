@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874510"
 ---
 <a name="using-the-colorpicker-control-extender-vb"></a><span data-ttu-id="2647a-104">使用颜色选取器控件扩展程序 (VB)</span><span class="sxs-lookup"><span data-stu-id="2647a-104">Using the ColorPicker Control Extender (VB)</span></span>
 ====================

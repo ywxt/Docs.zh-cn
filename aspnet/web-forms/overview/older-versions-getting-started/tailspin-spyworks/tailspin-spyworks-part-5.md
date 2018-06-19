@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885076"
 ---
 <a name="part-5-business-logic"></a><span data-ttu-id="46e7d-104">第 5 部分： 业务逻辑</span><span class="sxs-lookup"><span data-stu-id="46e7d-104">Part 5: Business Logic</span></span>
 ====================

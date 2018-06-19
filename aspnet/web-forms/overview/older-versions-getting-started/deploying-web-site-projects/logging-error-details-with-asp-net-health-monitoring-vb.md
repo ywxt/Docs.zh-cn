@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888937"
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-vb"></a><span data-ttu-id="ba73e-104">日志记录错误的详细信息，ASP.NET 运行状况监视 (VB)</span><span class="sxs-lookup"><span data-stu-id="ba73e-104">Logging Error Details with ASP.NET Health Monitoring (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879512"
 ---
 <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a><span data-ttu-id="bd7d9-104">教程： 使用 ASP.NET SignalR 广播的服务器 1.x</span><span class="sxs-lookup"><span data-stu-id="bd7d9-104">Tutorial: Server Broadcast with ASP.NET SignalR 1.x</span></span>
 ====================
@@ -39,7 +40,7 @@ ms.lasthandoff: 04/06/2018
 
 ![StockTicker 初始版本](tutorial-server-broadcast-with-aspnet-signalr/_static/image1.png)
 
-<span data-ttu-id="bd7d9-119">定期服务器随机更新股票价格并将更新推送到所有连接的客户端。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-119">Periodically the server randomly updates stock prices and pushes the updates to all connected clients.</span></span> <span data-ttu-id="bd7d9-120">在浏览器数字和符号中的**更改**和**%**列动态更改以响应来自服务器的通知。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-120">In the browser the numbers and symbols in the **Change** and **%** columns dynamically change in response to notifications from the server.</span></span> <span data-ttu-id="bd7d9-121">如果你打开到相同的 URL，其他浏览器，它们都同时显示相同的数据和对数据的相同更改。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-121">If you open additional browsers to the same URL, they all show the same data and the same changes to the data simultaneously.</span></span>
+<span data-ttu-id="bd7d9-119">定期服务器随机更新股票价格并将更新推送到所有连接的客户端。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-119">Periodically the server randomly updates stock prices and pushes the updates to all connected clients.</span></span> <span data-ttu-id="bd7d9-120">在浏览器数字和符号中的**更改**和**%** 列动态更改以响应来自服务器的通知。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-120">In the browser the numbers and symbols in the **Change** and **%** columns dynamically change in response to notifications from the server.</span></span> <span data-ttu-id="bd7d9-121">如果你打开到相同的 URL，其他浏览器，它们都同时显示相同的数据和对数据的相同更改。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-121">If you open additional browsers to the same URL, they all show the same data and the same changes to the data simultaneously.</span></span>
 
 <span data-ttu-id="bd7d9-122">本教程包含以下各节：</span><span class="sxs-lookup"><span data-stu-id="bd7d9-122">This tutorial contains the following sections:</span></span>
 
@@ -70,7 +71,7 @@ ms.lasthandoff: 04/06/2018
 ## <a name="create-the-project"></a><span data-ttu-id="bd7d9-138">创建项目</span><span class="sxs-lookup"><span data-stu-id="bd7d9-138">Create the project</span></span>
 
 1. <span data-ttu-id="bd7d9-139">从**文件**菜单上，单击**新项目**。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-139">From the **File** menu click **New Project**.</span></span>
-2. <span data-ttu-id="bd7d9-140">在**新项目**对话框框中，展开**C#**下**模板**和选择**Web**。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-140">In the **New Project** dialog box, expand **C#** under **Templates** and select **Web**.</span></span>
+2. <span data-ttu-id="bd7d9-140">在**新项目**对话框框中，展开**C#** 下**模板**和选择**Web**。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-140">In the **New Project** dialog box, expand **C#** under **Templates** and select **Web**.</span></span>
 3. <span data-ttu-id="bd7d9-141">选择**ASP.NET 空 Web 应用程序**模板，将项目*SignalR.StockTicker*，然后单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-141">Select the **ASP.NET Empty Web Application** template, name the project *SignalR.StockTicker*, and click **OK**.</span></span>
 
     ![“新建项目”对话框](tutorial-server-broadcast-with-aspnet-signalr/_static/image2.png)
@@ -115,7 +116,7 @@ ms.lasthandoff: 04/06/2018
 <span data-ttu-id="bd7d9-167">你只想要在服务器上，运行，因此你需要指向单一 StockTicker 实例中设置从每个 StockTickerHub 实例引用的 StockTicker 类的一个实例。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-167">You only want one instance of the StockTicker class to run on the server, so you'll need to set up a reference from each StockTickerHub instance to the singleton StockTicker instance.</span></span> <span data-ttu-id="bd7d9-168">StockTicker 类具有能够进行广播到客户端，因为它具有股票数据并触发更新，但 StockTicker 不是中心类。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-168">The StockTicker class has to be able to broadcast to clients because it has the stock data and triggers updates, but StockTicker is not a Hub class.</span></span> <span data-ttu-id="bd7d9-169">因此，StockTicker 类必须获取对 SignalR Hub 连接上下文对象的引用。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-169">Therefore, the StockTicker class has to get a reference to the SignalR Hub connection context object.</span></span> <span data-ttu-id="bd7d9-170">然后，它可以使用 SignalR 连接上下文对象将广播到客户端。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-170">It can then use the SignalR connection context object to broadcast to clients.</span></span>
 
 1. <span data-ttu-id="bd7d9-171">在**解决方案资源管理器**，右键单击项目，然后单击**添加新项**。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-171">In **Solution Explorer**, right-click the project and click **Add New Item**.</span></span>
-2. <span data-ttu-id="bd7d9-172">如果你有 Visual Studio 2012 [ASP.NET 和 Web Tools 2012.2 更新](https://go.microsoft.com/fwlink/?LinkId=279941)，单击**Web**下**Visual C#**和选择**SignalR Hub Class**项模板。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-172">If you have Visual Studio 2012 with the [ASP.NET and Web Tools 2012.2 Update](https://go.microsoft.com/fwlink/?LinkId=279941), click **Web** under **Visual C#** and select the **SignalR Hub Class** item template.</span></span> <span data-ttu-id="bd7d9-173">否则，请选择**类**模板。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-173">Otherwise, select the **Class** template.</span></span>
+2. <span data-ttu-id="bd7d9-172">如果你有 Visual Studio 2012 [ASP.NET 和 Web Tools 2012.2 更新](https://go.microsoft.com/fwlink/?LinkId=279941)，单击**Web**下**Visual C#** 和选择**SignalR Hub Class**项模板。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-172">If you have Visual Studio 2012 with the [ASP.NET and Web Tools 2012.2 Update](https://go.microsoft.com/fwlink/?LinkId=279941), click **Web** under **Visual C#** and select the **SignalR Hub Class** item template.</span></span> <span data-ttu-id="bd7d9-173">否则，请选择**类**模板。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-173">Otherwise, select the **Class** template.</span></span>
 3. <span data-ttu-id="bd7d9-174">将新类*StockTickerHub.cs*，然后单击**添加**。</span><span class="sxs-lookup"><span data-stu-id="bd7d9-174">Name the new class *StockTickerHub.cs*, and then click **Add**.</span></span>
 
     ![添加 StockTickerHub.cs](tutorial-server-broadcast-with-aspnet-signalr/_static/image5.png)
