@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878589"
 ---
 <a name="part-10-final-updates-to-navigation-and-site-design-conclusion"></a><span data-ttu-id="6957b-104">第 10 部分： 导航和站点设计，结束的最终更新</span><span class="sxs-lookup"><span data-stu-id="6957b-104">Part 10: Final Updates to Navigation and Site Design, Conclusion</span></span>
 ====================

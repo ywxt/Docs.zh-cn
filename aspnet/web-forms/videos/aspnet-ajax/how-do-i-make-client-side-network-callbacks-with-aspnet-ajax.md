@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882983"
 ---
 <a name="how-do-i-make-client-side-network-callbacks-with-aspnet-ajax"></a><span data-ttu-id="d9162-105">[如何:]请使用 ASP.NET AJAX 回调和客户端网络？</span><span class="sxs-lookup"><span data-stu-id="d9162-105">[How Do I:] Make Client-Side Network Callbacks with ASP.NET AJAX?</span></span>
 ====================

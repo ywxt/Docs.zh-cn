@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876704"
 ---
 <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a><span data-ttu-id="68ab2-103">MVC Web 应用程序 (10/10) 的高级的实体框架方案</span><span class="sxs-lookup"><span data-stu-id="68ab2-103">Advanced Entity Framework Scenarios for an MVC Web Application (10 of 10)</span></span>
 ====================

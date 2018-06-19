@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879681"
 ---
 <a name="mvc-music-store-part-1-intro-tools-and-project-structure"></a><span data-ttu-id="90235-103">MVC 音乐商店第 1 部分： 简介、 工具和项目结构</span><span class="sxs-lookup"><span data-stu-id="90235-103">MVC Music Store Part 1: Intro, Tools, and Project Structure</span></span>
 ====================

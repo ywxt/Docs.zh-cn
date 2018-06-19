@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/index
-title: "使用 Visual Studio 的 ASP.NET Web 部署 |Microsoft 文档"
+title: 使用 Visual Studio 的 ASP.NET Web 部署 |Microsoft 文档
 author: rick-anderson
-description: "本系列教程演示如何使的 ASP.NET web 应用程序使用 SQL Server (不 SQL Server Compact) 可通过 internet 通过将其部署 t..."
+description: 本系列教程演示如何使的 ASP.NET web 应用程序使用 SQL Server (不 SQL Server Compact) 可通过 internet 通过将其部署 t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment
 msc.type: chapter
 ms.openlocfilehash: de7898f13c132f82b64403061558ba04684f523c
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26515196"
 ---
 <a name="aspnet-web-deployment-using-visual-studio"></a><span data-ttu-id="9fd1d-103">使用 Visual Studio 的 ASP.NET Web 部署</span><span class="sxs-lookup"><span data-stu-id="9fd1d-103">ASP.NET Web Deployment using Visual Studio</span></span>
 ====================

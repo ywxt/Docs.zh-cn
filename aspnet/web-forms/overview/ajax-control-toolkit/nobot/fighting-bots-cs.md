@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872008"
 ---
 <a name="fighting-bots-c"></a><span data-ttu-id="371b6-104">反击机器人 (C#)</span><span class="sxs-lookup"><span data-stu-id="371b6-104">Fighting Bots (C#)</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/index
-title: "部署 |Microsoft 文档"
+title: 部署 |Microsoft 文档
 author: rick-anderson
-description: "如何将 ASP.NET Web 窗体项目部署到服务器。"
+description: 如何将 ASP.NET Web 窗体项目部署到服务器。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/18/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/deployment
 msc.type: chapter
 ms.openlocfilehash: 359cd2d349a361be83708262a55b3638461a054d
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26515336"
 ---
 <a name="deployment"></a><span data-ttu-id="21418-103">部署</span><span class="sxs-lookup"><span data-stu-id="21418-103">Deployment</span></span>
 ====================

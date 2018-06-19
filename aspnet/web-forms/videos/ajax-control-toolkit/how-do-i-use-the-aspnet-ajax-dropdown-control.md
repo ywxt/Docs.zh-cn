@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879824"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-dropdown-control"></a><span data-ttu-id="b2eb9-104">[如何:]使用 ASP.NET AJAX 下拉控件？</span><span class="sxs-lookup"><span data-stu-id="b2eb9-104">[How Do I:] Use the ASP.NET AJAX DropDown Control?</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885530"
 ---
 <a name="how-do-i-build-a-custom-aspnet-ajax-server-control"></a><span data-ttu-id="e366f-105">[如何:]生成自定义 ASP.NET AJAX 服务器控件？</span><span class="sxs-lookup"><span data-stu-id="e366f-105">[How Do I:] Build a Custom ASP.NET AJAX Server Control?</span></span>
 ====================

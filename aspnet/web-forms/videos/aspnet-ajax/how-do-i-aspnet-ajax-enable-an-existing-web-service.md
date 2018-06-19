@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880731"
 ---
 <a name="how-do-i-aspnet-ajax-enable-an-existing-web-service"></a><span data-ttu-id="e2afb-105">[如何:]ASP.NET AJAX 启用现有的 Web 服务？</span><span class="sxs-lookup"><span data-stu-id="e2afb-105">[How Do I:] ASP.NET AJAX Enable an Existing Web Service?</span></span>
 ====================

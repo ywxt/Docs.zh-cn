@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883971"
 ---
 <a name="forms-login-custom-key-configuration"></a><span data-ttu-id="64a23-104">窗体登录自定义配置</span><span class="sxs-lookup"><span data-stu-id="64a23-104">Forms Login Custom Key Configuration</span></span>
 ====================

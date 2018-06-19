@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886922"
 ---
 <a name="displaying-binary-data-in-the-data-web-controls-vb"></a><span data-ttu-id="bedda-103">在数据 Web 控件 (VB) 中显示二进制数据</span><span class="sxs-lookup"><span data-stu-id="bedda-103">Displaying Binary Data in the Data Web Controls (VB)</span></span>
 ====================

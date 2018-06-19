@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874247"
 ---
 <a name="creating-mutually-exclusive-checkboxes-vb"></a><span data-ttu-id="2e96f-104">创建互斥复选框 (VB)</span><span class="sxs-lookup"><span data-stu-id="2e96f-104">Creating Mutually Exclusive Checkboxes (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878264"
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a><span data-ttu-id="992b9-104">创建存储过程和用户定义函数用托管代码 (VB)</span><span class="sxs-lookup"><span data-stu-id="992b9-104">Creating Stored Procedures and User-Defined Functions with Managed Code (VB)</span></span>
 ====================

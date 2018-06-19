@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877653"
 ---
 # <a name="aspnet-mvc-4-dependency-injection"></a><span data-ttu-id="fe39f-104">ASP.NET MVC 4 依赖关系注入</span><span class="sxs-lookup"><span data-stu-id="fe39f-104">ASP.NET MVC 4 Dependency Injection</span></span>
 
@@ -39,7 +40,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="fe39f-116">依赖关系注入模式是控制反向的特定实现。</span><span class="sxs-lookup"><span data-stu-id="fe39f-116">The Dependency Injection pattern is a particular implementation of Inversion of Control.</span></span> <span data-ttu-id="fe39f-117">**反向 (IoC) 控件的**意味着对象不会创建其他对象，它们依赖来完成其工作。</span><span class="sxs-lookup"><span data-stu-id="fe39f-117">**Inversion of Control (IoC)** means that objects do not create other objects on which they rely to do their work.</span></span> <span data-ttu-id="fe39f-118">相反，它们获得所需从外部源 （例如，xml 配置文件） 的对象。</span><span class="sxs-lookup"><span data-stu-id="fe39f-118">Instead, they get the objects that they need from an outside source (for example, an xml configuration file).</span></span>
 
-<span data-ttu-id="fe39f-119">**依赖关系注入 (DI)**意味着这是通过无需对象干预，通常将构造函数参数传递一个 framework 组件，设置属性。</span><span class="sxs-lookup"><span data-stu-id="fe39f-119">**Dependency Injection (DI)** means that this is done without the object intervention, usually by a framework component that passes constructor parameters and set properties.</span></span>
+<span data-ttu-id="fe39f-119">**依赖关系注入 (DI)** 意味着这是通过无需对象干预，通常将构造函数参数传递一个 framework 组件，设置属性。</span><span class="sxs-lookup"><span data-stu-id="fe39f-119">**Dependency Injection (DI)** means that this is done without the object intervention, usually by a framework component that passes constructor parameters and set properties.</span></span>
 
 <a id="The_Dependency_Injection_DI_Design_Pattern"></a>
 ### <a name="the-dependency-injection-di-design-pattern"></a><span data-ttu-id="fe39f-120">依赖关系注入 (DI) 设计模式</span><span class="sxs-lookup"><span data-stu-id="fe39f-120">The Dependency Injection (DI) Design Pattern</span></span>
@@ -90,7 +91,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="fe39f-147">**安装代码片段**</span><span class="sxs-lookup"><span data-stu-id="fe39f-147">**Installing Code Snippets**</span></span>
 
-<span data-ttu-id="fe39f-148">为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。</span><span class="sxs-lookup"><span data-stu-id="fe39f-148">For convenience, much of the code you will be managing along this lab is available as Visual Studio code snippets.</span></span> <span data-ttu-id="fe39f-149">若要安装运行的代码段**.\Source\Setup\CodeSnippets.vsi**文件。</span><span class="sxs-lookup"><span data-stu-id="fe39f-149">To install the code snippets run **.\Source\Setup\CodeSnippets.vsi** file.</span></span>
+<span data-ttu-id="fe39f-148">为方便起见，你将沿此实验室管理大部分都是代码的可用作 Visual Studio 代码段。</span><span class="sxs-lookup"><span data-stu-id="fe39f-148">For convenience, much of the code you will be managing along this lab is available as Visual Studio code snippets.</span></span> <span data-ttu-id="fe39f-149">若要安装运行的代码段 **.\Source\Setup\CodeSnippets.vsi**文件。</span><span class="sxs-lookup"><span data-stu-id="fe39f-149">To install the code snippets run **.\Source\Setup\CodeSnippets.vsi** file.</span></span>
 
 <span data-ttu-id="fe39f-150">如果你不熟悉 Visual Studio 代码段，并想要了解如何使用它们，你可以从该文档引用的附录&quot;[附录 b： 使用代码段](#AppendixB)&quot;。</span><span class="sxs-lookup"><span data-stu-id="fe39f-150">If you are not familiar with the Visual Studio Code Snippets, and want to learn how to use them, you can refer to the appendix from this document &quot;[Appendix B: Using Code Snippets](#AppendixB)&quot;.</span></span>
 
@@ -273,7 +274,7 @@ ms.lasthandoff: 04/06/2018
       > <span data-ttu-id="fe39f-243">使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。</span><span class="sxs-lookup"><span data-stu-id="fe39f-243">One of the advantages of using NuGet is that you don't have to ship all the libraries in your project, reducing the project size.</span></span> <span data-ttu-id="fe39f-244">使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。</span><span class="sxs-lookup"><span data-stu-id="fe39f-244">With NuGet Power Tools, by specifying the package versions in the Packages.config file, you will be able to download all the required libraries the first time you run the project.</span></span> <span data-ttu-id="fe39f-245">这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。</span><span class="sxs-lookup"><span data-stu-id="fe39f-245">This is why you will have to run these steps after you open an existing solution from this lab.</span></span>
       > 
       > <span data-ttu-id="fe39f-246">有关详细信息，请参阅此文章： [ http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages ](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages)。</span><span class="sxs-lookup"><span data-stu-id="fe39f-246">For more information, see this article: [http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).</span></span>
-2. <span data-ttu-id="fe39f-247">包括**MessageService.cs**和**IMessageService.cs**类位于**源 \Assets**文件夹中的**/**。</span><span class="sxs-lookup"><span data-stu-id="fe39f-247">Include the **MessageService.cs** and the **IMessageService.cs** classes located in the **Source \Assets** folder in **/Services**.</span></span> <span data-ttu-id="fe39f-248">要执行此操作，请右键单击**服务**文件夹，然后选择**添加现有项**。</span><span class="sxs-lookup"><span data-stu-id="fe39f-248">To do this, right-click **Services** folder and select **Add Existing Item**.</span></span> <span data-ttu-id="fe39f-249">浏览到文件的位置，并将其包含。</span><span class="sxs-lookup"><span data-stu-id="fe39f-249">Browse to the files' location and include them.</span></span>
+2. <span data-ttu-id="fe39f-247">包括**MessageService.cs**和**IMessageService.cs**类位于**源 \Assets**文件夹中的 **/**。</span><span class="sxs-lookup"><span data-stu-id="fe39f-247">Include the **MessageService.cs** and the **IMessageService.cs** classes located in the **Source \Assets** folder in **/Services**.</span></span> <span data-ttu-id="fe39f-248">要执行此操作，请右键单击**服务**文件夹，然后选择**添加现有项**。</span><span class="sxs-lookup"><span data-stu-id="fe39f-248">To do this, right-click **Services** folder and select **Add Existing Item**.</span></span> <span data-ttu-id="fe39f-249">浏览到文件的位置，并将其包含。</span><span class="sxs-lookup"><span data-stu-id="fe39f-249">Browse to the files' location and include them.</span></span>
 
     <span data-ttu-id="fe39f-250">![添加消息服务和服务接口](aspnet-mvc-4-dependency-injection/_static/image8.png "添加消息服务和服务接口")</span><span class="sxs-lookup"><span data-stu-id="fe39f-250">![Adding Message Service and Service Interface](aspnet-mvc-4-dependency-injection/_static/image8.png "Adding Message Service and Service Interface")</span></span>
 
@@ -281,12 +282,12 @@ ms.lasthandoff: 04/06/2018
 
     > [!NOTE]
     > <span data-ttu-id="fe39f-252">**IMessageService**接口定义两个属性由实现**MessageService**类。</span><span class="sxs-lookup"><span data-stu-id="fe39f-252">The **IMessageService** interface defines two properties implemented by the **MessageService** class.</span></span> <span data-ttu-id="fe39f-253">这些属性-**消息**和**ImageUrl**-存储要显示的消息和图像的 URL。</span><span class="sxs-lookup"><span data-stu-id="fe39f-253">These properties -**Message** and **ImageUrl**- store the message and the URL of the image to be displayed.</span></span>
-3. <span data-ttu-id="fe39f-254">创建文件夹**/页**在项目的根文件夹，并将现有类**MyBasePage.cs**从**Source\Assets**。</span><span class="sxs-lookup"><span data-stu-id="fe39f-254">Create the folder **/Pages** in the project's root folder, and then add the existing class **MyBasePage.cs** from **Source\Assets**.</span></span> <span data-ttu-id="fe39f-255">将继承从基本页具有以下结构。</span><span class="sxs-lookup"><span data-stu-id="fe39f-255">The base page you will inherit from has the following structure.</span></span>
+3. <span data-ttu-id="fe39f-254">创建文件夹 **/页**在项目的根文件夹，并将现有类**MyBasePage.cs**从**Source\Assets**。</span><span class="sxs-lookup"><span data-stu-id="fe39f-254">Create the folder **/Pages** in the project's root folder, and then add the existing class **MyBasePage.cs** from **Source\Assets**.</span></span> <span data-ttu-id="fe39f-255">将继承从基本页具有以下结构。</span><span class="sxs-lookup"><span data-stu-id="fe39f-255">The base page you will inherit from has the following structure.</span></span>
 
     <span data-ttu-id="fe39f-256">![Pages 文件夹](aspnet-mvc-4-dependency-injection/_static/image9.png "Pages 文件夹")</span><span class="sxs-lookup"><span data-stu-id="fe39f-256">![Pages folder](aspnet-mvc-4-dependency-injection/_static/image9.png "Pages folder")</span></span>
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample7.cs)]
-4. <span data-ttu-id="fe39f-257">打开**Browse.cshtml**查看从**/视图/存储**文件夹，并使其从继承**MyBasePage.cs**。</span><span class="sxs-lookup"><span data-stu-id="fe39f-257">Open **Browse.cshtml** view from **/Views/Store** folder, and make it inherit from **MyBasePage.cs**.</span></span>
+4. <span data-ttu-id="fe39f-257">打开**Browse.cshtml**查看从 **/视图/存储**文件夹，并使其从继承**MyBasePage.cs**。</span><span class="sxs-lookup"><span data-stu-id="fe39f-257">Open **Browse.cshtml** view from **/Views/Store** folder, and make it inherit from **MyBasePage.cs**.</span></span>
 
     [!code-cshtml[Main](aspnet-mvc-4-dependency-injection/samples/sample8.cshtml)]
 5. <span data-ttu-id="fe39f-258">在**浏览**视图中，添加对的调用**MessageService**要显示的映像和服务检索一条消息。</span><span class="sxs-lookup"><span data-stu-id="fe39f-258">In the **Browse** view, add a call to **MessageService** to display an image and a message retrieved by the service.</span></span>
@@ -316,13 +317,13 @@ ms.lasthandoff: 04/06/2018
 
 
 1. <span data-ttu-id="fe39f-271">创建 /**工厂**项目的根文件夹中的文件夹。</span><span class="sxs-lookup"><span data-stu-id="fe39f-271">Create the /**Factories** folder in the project's root folder.</span></span>
-2. <span data-ttu-id="fe39f-272">包括**CustomViewPageActivator.cs**到你的解决方案从**/源/资产/**到**工厂**文件夹。</span><span class="sxs-lookup"><span data-stu-id="fe39f-272">Include **CustomViewPageActivator.cs** to your solution from **/Sources/Assets/** to **Factories** folder.</span></span> <span data-ttu-id="fe39f-273">为此，请右键单击**/Factories**文件夹，选择**添加 |现有项**，然后选择**CustomViewPageActivator.cs**。</span><span class="sxs-lookup"><span data-stu-id="fe39f-273">To do that, right-click the **/Factories** folder, select **Add | Existing Item** and then select **CustomViewPageActivator.cs**.</span></span> <span data-ttu-id="fe39f-274">此类实现**IViewPageActivator**接口来保存 Unity 容器。</span><span class="sxs-lookup"><span data-stu-id="fe39f-274">This class implements the **IViewPageActivator** interface to hold the Unity Container.</span></span>
+2. <span data-ttu-id="fe39f-272">包括**CustomViewPageActivator.cs**到你的解决方案从 **/源/资产/** 到**工厂**文件夹。</span><span class="sxs-lookup"><span data-stu-id="fe39f-272">Include **CustomViewPageActivator.cs** to your solution from **/Sources/Assets/** to **Factories** folder.</span></span> <span data-ttu-id="fe39f-273">为此，请右键单击 **/Factories**文件夹，选择**添加 |现有项**，然后选择**CustomViewPageActivator.cs**。</span><span class="sxs-lookup"><span data-stu-id="fe39f-273">To do that, right-click the **/Factories** folder, select **Add | Existing Item** and then select **CustomViewPageActivator.cs**.</span></span> <span data-ttu-id="fe39f-274">此类实现**IViewPageActivator**接口来保存 Unity 容器。</span><span class="sxs-lookup"><span data-stu-id="fe39f-274">This class implements the **IViewPageActivator** interface to hold the Unity Container.</span></span>
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample12.cs)]
 
     > [!NOTE]
     > <span data-ttu-id="fe39f-275">**CustomViewPageActivator**负责使用 Unity 容器管理视图的创建。</span><span class="sxs-lookup"><span data-stu-id="fe39f-275">**CustomViewPageActivator** is responsible for managing the creation of a view by using a Unity container.</span></span>
-3. <span data-ttu-id="fe39f-276">包括**UnityDependencyResolver.cs**文件从**/源/资产**到**/Factories**文件夹。</span><span class="sxs-lookup"><span data-stu-id="fe39f-276">Include **UnityDependencyResolver.cs** file from **/Sources/Assets** to **/Factories** folder.</span></span> <span data-ttu-id="fe39f-277">为此，请右键单击**/Factories**文件夹，选择**添加 |现有项**，然后选择**UnityDependencyResolver.cs**文件。</span><span class="sxs-lookup"><span data-stu-id="fe39f-277">To do that, right-click the **/Factories** folder, select **Add | Existing Item** and then select **UnityDependencyResolver.cs** file.</span></span>
+3. <span data-ttu-id="fe39f-276">包括**UnityDependencyResolver.cs**文件从 **/源/资产**到 **/Factories**文件夹。</span><span class="sxs-lookup"><span data-stu-id="fe39f-276">Include **UnityDependencyResolver.cs** file from **/Sources/Assets** to **/Factories** folder.</span></span> <span data-ttu-id="fe39f-277">为此，请右键单击 **/Factories**文件夹，选择**添加 |现有项**，然后选择**UnityDependencyResolver.cs**文件。</span><span class="sxs-lookup"><span data-stu-id="fe39f-277">To do that, right-click the **/Factories** folder, select **Add | Existing Item** and then select **UnityDependencyResolver.cs** file.</span></span>
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample13.cs)]
 
@@ -412,7 +413,7 @@ ms.lasthandoff: 04/06/2018
       > <span data-ttu-id="fe39f-323">使用 NuGet 的优点之一是，你无需提供你的项目中的所有库减小项目大小。</span><span class="sxs-lookup"><span data-stu-id="fe39f-323">One of the advantages of using NuGet is that you don't have to ship all the libraries in your project, reducing the project size.</span></span> <span data-ttu-id="fe39f-324">使用 NuGet 增强工具，请通过指定的包版本在 Packages.config 文件中，你将能够下载首次运行该项目的所有所需的库。</span><span class="sxs-lookup"><span data-stu-id="fe39f-324">With NuGet Power Tools, by specifying the package versions in the Packages.config file, you will be able to download all the required libraries the first time you run the project.</span></span> <span data-ttu-id="fe39f-325">这是你将需要从本实验打开现有的解决方案后运行这些步骤的原因。</span><span class="sxs-lookup"><span data-stu-id="fe39f-325">This is why you will have to run these steps after you open an existing solution from this lab.</span></span>
       > 
       > <span data-ttu-id="fe39f-326">有关详细信息，请参阅此文章： [ http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages ](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages)。</span><span class="sxs-lookup"><span data-stu-id="fe39f-326">For more information, see this article: [http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).</span></span>
-2. <span data-ttu-id="fe39f-327">包括**TraceActionFilter.cs**文件从**/源/资产**到**/筛选**文件夹。</span><span class="sxs-lookup"><span data-stu-id="fe39f-327">Include **TraceActionFilter.cs** file from **/Sources/Assets** to **/Filters** folder.</span></span>
+2. <span data-ttu-id="fe39f-327">包括**TraceActionFilter.cs**文件从 **/源/资产**到 **/筛选**文件夹。</span><span class="sxs-lookup"><span data-stu-id="fe39f-327">Include **TraceActionFilter.cs** file from **/Sources/Assets** to **/Filters** folder.</span></span>
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample18.cs)]
 
@@ -476,7 +477,7 @@ ms.lasthandoff: 04/06/2018
     <span data-ttu-id="fe39f-355">![音乐商店](aspnet-mvc-4-dependency-injection/_static/image11.png "音乐商店")</span><span class="sxs-lookup"><span data-stu-id="fe39f-355">![Music Store](aspnet-mvc-4-dependency-injection/_static/image11.png "Music Store")</span></span>
 
     <span data-ttu-id="fe39f-356">*Music 商店*</span><span class="sxs-lookup"><span data-stu-id="fe39f-356">*Music Store*</span></span>
-3. <span data-ttu-id="fe39f-357">浏览到**/Trace.axd**以查看应用程序跟踪页，，然后单击**查看详细信息**。</span><span class="sxs-lookup"><span data-stu-id="fe39f-357">Browse to **/Trace.axd** to see the Application Trace page, and then click **View Details**.</span></span>
+3. <span data-ttu-id="fe39f-357">浏览到 **/Trace.axd**以查看应用程序跟踪页，，然后单击**查看详细信息**。</span><span class="sxs-lookup"><span data-stu-id="fe39f-357">Browse to **/Trace.axd** to see the Application Trace page, and then click **View Details**.</span></span>
 
     <span data-ttu-id="fe39f-358">![应用程序跟踪日志](aspnet-mvc-4-dependency-injection/_static/image12.png "应用程序跟踪日志")</span><span class="sxs-lookup"><span data-stu-id="fe39f-358">![Application Trace Log](aspnet-mvc-4-dependency-injection/_static/image12.png "Application Trace Log")</span></span>
 

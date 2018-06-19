@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880045"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-slider-control"></a><span data-ttu-id="66fab-105">[如何:]使用 ASP.NET AJAX 滑块控件？</span><span class="sxs-lookup"><span data-stu-id="66fab-105">[How Do I:] Use the ASP.NET AJAX Slider Control?</span></span>
 ====================

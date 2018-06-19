@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873243"
 ---
 <a name="implement-efficient-data-paging"></a><span data-ttu-id="7355e-103">实现高效数据分页</span><span class="sxs-lookup"><span data-stu-id="7355e-103">Implement Efficient Data Paging</span></span>
 ====================
@@ -33,7 +34,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="nerddinner-step-8-paging-support"></a><span data-ttu-id="7355e-109">NerdDinner 步骤 8： 分页支持</span><span class="sxs-lookup"><span data-stu-id="7355e-109">NerdDinner Step 8: Paging Support</span></span>
 
-<span data-ttu-id="7355e-110">如果我们的站点操作成功，将会有数千个即将到来的晚餐。</span><span class="sxs-lookup"><span data-stu-id="7355e-110">If our site is successful, it will have thousands of upcoming dinners.</span></span> <span data-ttu-id="7355e-111">我们需要确保我们的 UI 进行缩放以处理所有这些晚餐，并允许用户对其进行浏览。</span><span class="sxs-lookup"><span data-stu-id="7355e-111">We need to make sure that our UI scales to handle all of these dinners, and allows users to browse them.</span></span> <span data-ttu-id="7355e-112">若要启用此功能，我们将添加到的分页支持我们*/Dinners* URL，因此的晚餐 1000 秒内显示在一次，我们将仅显示一次-10 即将到来晚餐和允许最终用户页后和向前移动的完整列表SEO 友好的方式。</span><span class="sxs-lookup"><span data-stu-id="7355e-112">To enable this, we'll add paging support to our */Dinners* URL so that instead of displaying 1000s of dinners at once, we'll only display 10 upcoming dinners at a time - and allow end-users to page back and forward through the entire list in an SEO friendly way.</span></span>
+<span data-ttu-id="7355e-110">如果我们的站点操作成功，将会有数千个即将到来的晚餐。</span><span class="sxs-lookup"><span data-stu-id="7355e-110">If our site is successful, it will have thousands of upcoming dinners.</span></span> <span data-ttu-id="7355e-111">我们需要确保我们的 UI 进行缩放以处理所有这些晚餐，并允许用户对其进行浏览。</span><span class="sxs-lookup"><span data-stu-id="7355e-111">We need to make sure that our UI scales to handle all of these dinners, and allows users to browse them.</span></span> <span data-ttu-id="7355e-112">若要启用此功能，我们将添加到的分页支持我们 */Dinners* URL，因此的晚餐 1000 秒内显示在一次，我们将仅显示一次-10 即将到来晚餐和允许最终用户页后和向前移动的完整列表SEO 友好的方式。</span><span class="sxs-lookup"><span data-stu-id="7355e-112">To enable this, we'll add paging support to our */Dinners* URL so that instead of displaying 1000s of dinners at once, we'll only display 10 upcoming dinners at a time - and allow end-users to page back and forward through the entire list in an SEO friendly way.</span></span>
 
 ### <a name="index-action-method-recap"></a><span data-ttu-id="7355e-113">Index （） 操作方法概述</span><span class="sxs-lookup"><span data-stu-id="7355e-113">Index() Action Method Recap</span></span>
 
@@ -41,7 +42,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-csharp[Main](implement-efficient-data-paging/samples/sample1.cs)]
 
-<span data-ttu-id="7355e-115">当请求*/Dinners* URL，它将检索所有即将发布晚餐的列表，然后呈现所有的效果的列表：</span><span class="sxs-lookup"><span data-stu-id="7355e-115">When a request is made to the */Dinners* URL, it retrieves a list of all upcoming dinners and then renders a listing of all of them out:</span></span>
+<span data-ttu-id="7355e-115">当请求 */Dinners* URL，它将检索所有即将发布晚餐的列表，然后呈现所有的效果的列表：</span><span class="sxs-lookup"><span data-stu-id="7355e-115">When a request is made to the */Dinners* URL, it retrieves a list of all upcoming dinners and then renders a listing of all of them out:</span></span>
 
 ![](implement-efficient-data-paging/_static/image1.png)
 
@@ -77,7 +78,7 @@ ms.lasthandoff: 04/06/2018
 
 #### <a name="using-embedded-url-values"></a><span data-ttu-id="7355e-139">使用嵌入的 URL 值</span><span class="sxs-lookup"><span data-stu-id="7355e-139">Using Embedded URL values</span></span>
 
-<span data-ttu-id="7355e-140">使用查询字符串值的替代方法是嵌入的实际 URL 本身中的页参数。</span><span class="sxs-lookup"><span data-stu-id="7355e-140">An alternative to using a querystring value would be to embed the page parameter within the actual URL itself.</span></span> <span data-ttu-id="7355e-141">例如： */Dinners/Page/2*或*/晚餐/2*。</span><span class="sxs-lookup"><span data-stu-id="7355e-141">For example: */Dinners/Page/2* or */Dinners/2*.</span></span> <span data-ttu-id="7355e-142">ASP.NET MVC 包括一个功能强大的 URL 路由引擎，可以轻松地支持与此类似的方案。</span><span class="sxs-lookup"><span data-stu-id="7355e-142">ASP.NET MVC includes a powerful URL routing engine that makes it easy to support scenarios like this.</span></span>
+<span data-ttu-id="7355e-140">使用查询字符串值的替代方法是嵌入的实际 URL 本身中的页参数。</span><span class="sxs-lookup"><span data-stu-id="7355e-140">An alternative to using a querystring value would be to embed the page parameter within the actual URL itself.</span></span> <span data-ttu-id="7355e-141">例如： */Dinners/Page/2*或 */晚餐/2*。</span><span class="sxs-lookup"><span data-stu-id="7355e-141">For example: */Dinners/Page/2* or */Dinners/2*.</span></span> <span data-ttu-id="7355e-142">ASP.NET MVC 包括一个功能强大的 URL 路由引擎，可以轻松地支持与此类似的方案。</span><span class="sxs-lookup"><span data-stu-id="7355e-142">ASP.NET MVC includes a powerful URL routing engine that makes it easy to support scenarios like this.</span></span>
 
 <span data-ttu-id="7355e-143">我们可以注册自定义的路由规则的映射任何传入的 URL 或 URL 格式，我们想要任何控制器类或操作方法。</span><span class="sxs-lookup"><span data-stu-id="7355e-143">We can register custom routing rules that map any incoming URL or URL format to any controller class or action method we want.</span></span> <span data-ttu-id="7355e-144">我们只需待办事项是打开我们项目中的 Global.asax 文件：</span><span class="sxs-lookup"><span data-stu-id="7355e-144">All we need to-do is to open the Global.asax file within our project:</span></span>
 
@@ -93,11 +94,11 @@ ms.lasthandoff: 04/06/2018
 
 [!code-csharp[Main](implement-efficient-data-paging/samples/sample6.cs)]
 
-<span data-ttu-id="7355e-150">现在我们运行应用程序并在键入*/Dinners*我们将看到前 10 个即将到来晚餐：</span><span class="sxs-lookup"><span data-stu-id="7355e-150">And now when we run the application and type in */Dinners* we'll see the first 10 upcoming dinners:</span></span>
+<span data-ttu-id="7355e-150">现在我们运行应用程序并在键入 */Dinners*我们将看到前 10 个即将到来晚餐：</span><span class="sxs-lookup"><span data-stu-id="7355e-150">And now when we run the application and type in */Dinners* we'll see the first 10 upcoming dinners:</span></span>
 
 ![](implement-efficient-data-paging/_static/image3.png)
 
-<span data-ttu-id="7355e-151">当我们键入*/Dinners/Page/1*我们将看到晚餐的第二页：</span><span class="sxs-lookup"><span data-stu-id="7355e-151">And when we type in */Dinners/Page/1* we'll see the next page of dinners:</span></span>
+<span data-ttu-id="7355e-151">当我们键入 */Dinners/Page/1*我们将看到晚餐的第二页：</span><span class="sxs-lookup"><span data-stu-id="7355e-151">And when we type in */Dinners/Page/1* we'll see the next page of dinners:</span></span>
 
 ![](implement-efficient-data-paging/_static/image4.png)
 

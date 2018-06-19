@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877419"
 ---
 <a name="displaying-summary-information-in-the-gridviews-footer-c"></a><span data-ttu-id="14939-104">在 GridView 的页脚 (C#) 中显示的摘要信息</span><span class="sxs-lookup"><span data-stu-id="14939-104">Displaying Summary Information in the GridView's Footer (C#)</span></span>
 ====================
@@ -101,7 +102,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="14939-156">[![从选择的类别 DropDownList 获取 categoryID 参数值](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image22.png)</span><span class="sxs-lookup"><span data-stu-id="14939-156">[![Get the categoryID Parameter Value from the Selected Categories DropDownList](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image22.png)</span></span>
 
-<span data-ttu-id="14939-157">**图 8**： 获取*`categoryID`*从所选类别下拉列表的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))</span><span class="sxs-lookup"><span data-stu-id="14939-157">**Figure 8**: Get the *`categoryID`* Parameter Value from the Selected Categories DropDownList ([Click to view full-size image](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))</span></span>
+<span data-ttu-id="14939-157">**图 8**： 获取*`categoryID`* 从所选类别下拉列表的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))</span><span class="sxs-lookup"><span data-stu-id="14939-157">**Figure 8**: Get the *`categoryID`* Parameter Value from the Selected Categories DropDownList ([Click to view full-size image](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))</span></span>
 
 
 <span data-ttu-id="14939-158">完成向导后 GridView 都将有 BoundField 的每个产品的属性。</span><span class="sxs-lookup"><span data-stu-id="14939-158">After completing the wizard the GridView will have a BoundField for each of the product properties.</span></span> <span data-ttu-id="14939-159">让我们来清理这些 BoundFields 以便仅`ProductName`， `UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`BoundFields 会显示。</span><span class="sxs-lookup"><span data-stu-id="14939-159">Let's clean up these BoundFields so that only the `ProductName`, `UnitPrice`, `UnitsInStock`, and `UnitsOnOrder` BoundFields are displayed.</span></span> <span data-ttu-id="14939-160">请尝试将任何字段级别设置添加到剩余 BoundFields (如格式`UnitPrice`作为一种货币)。</span><span class="sxs-lookup"><span data-stu-id="14939-160">Feel free to add any field-level settings to the remaining BoundFields (such as formatting the `UnitPrice` as a currency).</span></span> <span data-ttu-id="14939-161">进行这些更改后，GridView 的声明性标记应类似于以下：</span><span class="sxs-lookup"><span data-stu-id="14939-161">After making these changes, the GridView's declarative markup should look similar to the following:</span></span>
@@ -114,7 +115,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="14939-163">[![从选择的类别 DropDownList 获取 categoryID 参数值](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image25.png)</span><span class="sxs-lookup"><span data-stu-id="14939-163">[![Get the categoryID Parameter Value from the Selected Categories DropDownList](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image25.png)</span></span>
 
-<span data-ttu-id="14939-164">**图 9**： 获取*`categoryID`*从所选类别下拉列表的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))</span><span class="sxs-lookup"><span data-stu-id="14939-164">**Figure 9**: Get the *`categoryID`* Parameter Value from the Selected Categories DropDownList ([Click to view full-size image](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))</span></span>
+<span data-ttu-id="14939-164">**图 9**： 获取*`categoryID`* 从所选类别下拉列表的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))</span><span class="sxs-lookup"><span data-stu-id="14939-164">**Figure 9**: Get the *`categoryID`* Parameter Value from the Selected Categories DropDownList ([Click to view full-size image](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))</span></span>
 
 
 ## <a name="step-2-displaying-a-footer-in-the-gridview"></a><span data-ttu-id="14939-165">步骤 2： 在 GridView 中显示页脚</span><span class="sxs-lookup"><span data-stu-id="14939-165">Step 2: Displaying a Footer in the GridView</span></span>

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879928"
 ---
 <a name="advanced-enterprise-web-deployment"></a><span data-ttu-id="fa46e-104">高级企业级 Web 部署</span><span class="sxs-lookup"><span data-stu-id="fa46e-104">Advanced Enterprise Web Deployment</span></span>
 ====================

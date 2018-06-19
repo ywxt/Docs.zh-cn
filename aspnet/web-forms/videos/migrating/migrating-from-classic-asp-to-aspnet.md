@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884231"
 ---
 <a name="migrating-from-classic-asp-to-aspnet"></a><span data-ttu-id="8f4ed-104">[从迁移]与 ASP.NET 经典 ASP</span><span class="sxs-lookup"><span data-stu-id="8f4ed-104">[Migrating from] Classic ASP to ASP.NET</span></span>
 ====================

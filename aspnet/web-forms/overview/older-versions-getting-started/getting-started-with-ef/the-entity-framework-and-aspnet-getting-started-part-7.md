@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886974"
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-7"></a><span data-ttu-id="b2d58-104">如何开始使用实体框架 4.0 数据库和 ASP.NET 4 Web 窗体的第 7 部分</span><span class="sxs-lookup"><span data-stu-id="b2d58-104">Getting Started with Entity Framework 4.0 Database First and ASP.NET 4 Web Forms - Part 7</span></span>
 ====================
@@ -103,7 +104,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="b2d58-166">[![image24](the-entity-framework-and-aspnet-getting-started-part-7/_static/image18.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image17.png)</span><span class="sxs-lookup"><span data-stu-id="b2d58-166">[![image24](the-entity-framework-and-aspnet-getting-started-part-7/_static/image18.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image17.png)</span></span>
 
-<span data-ttu-id="b2d58-167">在**添加函数导入**对话框中，在**返回集合的**选择**实体**，然后选择`Course`作为实体类型返回。</span><span class="sxs-lookup"><span data-stu-id="b2d58-167">In the **Add Function Import** dialog box, under **Returns a Collection Of** select **Entities**, and then select `Course` as the entity type returned.</span></span> <span data-ttu-id="b2d58-168">完成后，单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="b2d58-168">When you're done, click **OK**.</span></span> <span data-ttu-id="b2d58-169">保存并关闭*.edmx*文件。</span><span class="sxs-lookup"><span data-stu-id="b2d58-169">Save and close the *.edmx* file.</span></span>
+<span data-ttu-id="b2d58-167">在**添加函数导入**对话框中，在**返回集合的**选择**实体**，然后选择`Course`作为实体类型返回。</span><span class="sxs-lookup"><span data-stu-id="b2d58-167">In the **Add Function Import** dialog box, under **Returns a Collection Of** select **Entities**, and then select `Course` as the entity type returned.</span></span> <span data-ttu-id="b2d58-168">完成后，单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="b2d58-168">When you're done, click **OK**.</span></span> <span data-ttu-id="b2d58-169">保存并关闭 *.edmx*文件。</span><span class="sxs-lookup"><span data-stu-id="b2d58-169">Save and close the *.edmx* file.</span></span>
 
 <span data-ttu-id="b2d58-170">[![image25](the-entity-framework-and-aspnet-getting-started-part-7/_static/image20.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image19.png)</span><span class="sxs-lookup"><span data-stu-id="b2d58-170">[![image25](the-entity-framework-and-aspnet-getting-started-part-7/_static/image20.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image19.png)</span></span>
 

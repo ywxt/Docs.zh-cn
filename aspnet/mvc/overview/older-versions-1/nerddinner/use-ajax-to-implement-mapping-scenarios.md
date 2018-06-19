@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872710"
 ---
 <a name="use-ajax-to-implement-mapping-scenarios"></a><span data-ttu-id="56457-103">AJAX 用于实现映射方案</span><span class="sxs-lookup"><span data-stu-id="56457-103">Use AJAX to Implement Mapping Scenarios</span></span>
 ====================

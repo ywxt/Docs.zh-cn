@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880747"
 ---
 <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a><span data-ttu-id="3ccad-102">在 Visual Studio 2013 中的代码编辑 ASP.NET Web 窗体</span><span class="sxs-lookup"><span data-stu-id="3ccad-102">Code Editing ASP.NET Web Forms in Visual Studio 2013</span></span>
 ====================

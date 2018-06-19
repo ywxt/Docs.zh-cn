@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867588"
 ---
 <a name="aspnet-mvc-for-the-rest-of-us-part-3"></a><span data-ttu-id="ab390-103">我们的其余部分的 ASP.NET MVC： 第 3 部分</span><span class="sxs-lookup"><span data-stu-id="ab390-103">ASP.NET MVC For the Rest of Us: Part 3</span></span>
 ====================

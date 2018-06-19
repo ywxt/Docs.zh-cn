@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871969"
 ---
 <a name="using-web-api-2-with-entity-framework-6"></a><span data-ttu-id="166bf-104">与实体框架 6 使用 Web API 2</span><span class="sxs-lookup"><span data-stu-id="166bf-104">Using Web API 2 with Entity Framework 6</span></span>
 ====================

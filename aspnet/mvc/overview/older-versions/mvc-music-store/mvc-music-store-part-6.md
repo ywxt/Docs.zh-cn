@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872411"
 ---
 <a name="part-6-using-data-annotations-for-model-validation"></a><span data-ttu-id="e1e6a-104">模型验证的的第 6 部分： 使用数据注释</span><span class="sxs-lookup"><span data-stu-id="e1e6a-104">Part 6: Using Data Annotations for Model Validation</span></span>
 ====================

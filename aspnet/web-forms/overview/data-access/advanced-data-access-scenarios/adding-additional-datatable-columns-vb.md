@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879044"
 ---
 <a name="adding-additional-datatable-columns-vb"></a><span data-ttu-id="e3182-104">添加其他数据表列 (VB)</span><span class="sxs-lookup"><span data-stu-id="e3182-104">Adding Additional DataTable Columns (VB)</span></span>
 ====================

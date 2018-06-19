@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887208"
 ---
 <a name="how-do-i-debug-aspnet-ajax-applications-using-visual-studio-2005"></a><span data-ttu-id="56ca4-105">[如何:]调试使用 Visual Studio 2005 的 ASP.NET AJAX 应用程序？</span><span class="sxs-lookup"><span data-stu-id="56ca4-105">[How Do I:] Debug ASP.NET AJAX Applications Using Visual Studio 2005?</span></span>
 ====================

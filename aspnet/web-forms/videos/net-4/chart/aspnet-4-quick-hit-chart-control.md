@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884816"
 ---
 <a name="aspnet-4-quick-hit---chart-control"></a><span data-ttu-id="9f469-103">ASP.NET 4"快速 Hit"的图表控件</span><span class="sxs-lookup"><span data-stu-id="9f469-103">ASP.NET 4 "Quick Hit" - Chart Control</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879525"
 ---
 <a name="part-4-adding-an-admin-view"></a><span data-ttu-id="126c6-102">第 4 部分： 添加管理视图</span><span class="sxs-lookup"><span data-stu-id="126c6-102">Part 4: Adding an Admin View</span></span>
 ====================

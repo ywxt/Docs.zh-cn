@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884118"
 ---
 <a name="how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly"></a><span data-ttu-id="9b628-103">[如何:]添加元素的 CSS 文件，并动态创建新的 CSS</span><span class="sxs-lookup"><span data-stu-id="9b628-103">[How Do I:] Adding Elements to a CSS File and Create New CSS on the Fly</span></span>
 ====================

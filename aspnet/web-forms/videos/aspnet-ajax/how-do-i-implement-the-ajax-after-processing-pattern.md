@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881745"
 ---
 <a name="how-do-i-implement-the-ajax-after-processing-pattern"></a><span data-ttu-id="8fb15-105">[如何:]在处理模式之后实现 AJAX？</span><span class="sxs-lookup"><span data-stu-id="8fb15-105">[How Do I:] Implement the AJAX After Processing Pattern?</span></span>
 ====================

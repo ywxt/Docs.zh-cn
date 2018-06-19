@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886025"
 ---
 <a name="changing-membership-settings-in-the-default-membership-schema"></a><span data-ttu-id="aafae-104">更改默认成员身份架构中的成员身份设置</span><span class="sxs-lookup"><span data-stu-id="aafae-104">Changing Membership Settings in the Default Membership Schema</span></span>
 ====================

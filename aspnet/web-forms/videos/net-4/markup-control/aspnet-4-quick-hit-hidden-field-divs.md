@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881072"
 ---
 <a name="aspnet-4-quick-hit---hidden-field-divs"></a><span data-ttu-id="abb4f-103">ASP.NET 4"快速 Hit"-隐藏字段 Div</span><span class="sxs-lookup"><span data-stu-id="abb4f-103">ASP.NET 4 "Quick Hit" - Hidden Field Divs</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874390"
 ---
 <a name="using-aspnet-mvc-with-different-versions-of-iis-c"></a><span data-ttu-id="ae6e4-104">ASP.NET MVC 使用不同版本的 IIS (C#)</span><span class="sxs-lookup"><span data-stu-id="ae6e4-104">Using ASP.NET MVC with Different Versions of IIS (C#)</span></span>
 ====================

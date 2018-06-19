@@ -17,6 +17,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33839281"
 ---
 <a name="introducing-aspnet-web-pages---programming-basics"></a><span data-ttu-id="3eeba-104">引入了 ASP.NET Web 页-编程基础知识</span><span class="sxs-lookup"><span data-stu-id="3eeba-104">Introducing ASP.NET Web Pages - Programming Basics</span></span>
 ====================

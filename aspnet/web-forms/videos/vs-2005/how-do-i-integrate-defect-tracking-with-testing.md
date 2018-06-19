@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895771"
 ---
 <a name="how-do-i-integrate-defect-tracking-with-testing"></a><span data-ttu-id="d9f49-104">[如何:]集成跟踪与测试的缺陷？</span><span class="sxs-lookup"><span data-stu-id="d9f49-104">[How Do I:] Integrate Defect Tracking with Testing?</span></span>
 ====================

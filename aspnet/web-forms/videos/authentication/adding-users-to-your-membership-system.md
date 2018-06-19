@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881033"
 ---
 <a name="adding-users-to-your-membership-system"></a><span data-ttu-id="964b5-103">将用户添加到成员资格系统</span><span class="sxs-lookup"><span data-stu-id="964b5-103">Adding Users to Your Membership System</span></span>
 ====================

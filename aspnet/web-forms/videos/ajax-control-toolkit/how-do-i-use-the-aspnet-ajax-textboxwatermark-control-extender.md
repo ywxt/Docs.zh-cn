@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881495"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-textboxwatermark-control-extender"></a><span data-ttu-id="a0e2a-104">[如何:]使用 ASP.NET AJAX TextBoxWatermark 控件扩展程序？</span><span class="sxs-lookup"><span data-stu-id="a0e2a-104">[How Do I:] Use the ASP.NET AJAX TextBoxWatermark Control Extender?</span></span>
 ====================

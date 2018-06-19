@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887274"
 ---
 <a name="application-lifecycle-management-from-development-to-production"></a><span data-ttu-id="5c5b5-103">应用程序生命周期管理： 从开发到生产环境</span><span class="sxs-lookup"><span data-stu-id="5c5b5-103">Application Lifecycle Management: From Development to Production</span></span>
 ====================

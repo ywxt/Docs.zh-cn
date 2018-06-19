@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874988"
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a><span data-ttu-id="4e3ab-103">从 SQL 成员资格的现有网站迁移到 ASP.NET 标识</span><span class="sxs-lookup"><span data-stu-id="4e3ab-103">Migrating an Existing Website from SQL Membership to ASP.NET Identity</span></span>
 ====================

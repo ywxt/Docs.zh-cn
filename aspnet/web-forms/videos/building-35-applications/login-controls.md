@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/login-controls
-title: "登录控件 |Microsoft 文档"
+title: 登录控件 |Microsoft 文档
 author: JoeStagner
-description: "在此视频 Joe 将向您 ASP.NET 成员资格向您展示如何在 ASP.NET 中使用某些登录控件。"
+description: 在此视频 Joe 将向您 ASP.NET 成员资格向您展示如何在 ASP.NET 中使用某些登录控件。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/04/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520916"
 ---
 <a name="login-controls"></a><span data-ttu-id="393f5-103">登录控件</span><span class="sxs-lookup"><span data-stu-id="393f5-103">Login Controls</span></span>
 ====================

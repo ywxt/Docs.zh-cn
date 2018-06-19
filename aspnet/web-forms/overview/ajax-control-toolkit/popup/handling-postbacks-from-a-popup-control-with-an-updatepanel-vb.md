@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868472"
 ---
 <a name="handling-postbacks-from-a-popup-control-with-an-updatepanel-vb"></a><span data-ttu-id="86536-104">处理从具有 UpdatePanel (VB) 的弹出窗口控件的回发</span><span class="sxs-lookup"><span data-stu-id="86536-104">Handling Postbacks from A Popup Control With an UpdatePanel (VB)</span></span>
 ====================

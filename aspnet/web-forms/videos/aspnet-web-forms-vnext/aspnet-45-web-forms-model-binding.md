@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884085"
 ---
 <a name="aspnet-45-web-forms-model-binding"></a><span data-ttu-id="dc9a9-103">ASP.NET 4.5 Web 窗体模型绑定</span><span class="sxs-lookup"><span data-stu-id="dc9a9-103">ASP.NET 4.5 Web Forms Model Binding</span></span>
 ====================

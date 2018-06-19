@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889704"
 ---
 <a name="updating-and-deleting-existing-binary-data-vb"></a><span data-ttu-id="8f1fc-104">更新和删除现有的二进制数据 (VB)</span><span class="sxs-lookup"><span data-stu-id="8f1fc-104">Updating and Deleting Existing Binary Data (VB)</span></span>
 ====================

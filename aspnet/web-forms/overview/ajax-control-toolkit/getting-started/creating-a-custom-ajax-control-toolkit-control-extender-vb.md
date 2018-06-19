@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875131"
 ---
 <a name="creating-a-custom-ajax-control-toolkit-control-extender-vb"></a><span data-ttu-id="f7c06-103">创建自定义 AJAX 控件工具包控件扩展程序 (VB)</span><span class="sxs-lookup"><span data-stu-id="f7c06-103">Creating a Custom AJAX Control Toolkit Control Extender (VB)</span></span>
 ====================

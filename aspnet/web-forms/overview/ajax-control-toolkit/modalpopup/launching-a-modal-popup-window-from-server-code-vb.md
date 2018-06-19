@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872863"
 ---
 <a name="launching-a-modal-popup-window-from-server-code-vb"></a><span data-ttu-id="afa1f-104">启动从服务器代码 (VB) 模式弹出窗口</span><span class="sxs-lookup"><span data-stu-id="afa1f-104">Launching a Modal Popup Window from Server Code (VB)</span></span>
 ====================

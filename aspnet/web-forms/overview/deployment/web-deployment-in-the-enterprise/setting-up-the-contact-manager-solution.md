@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881807"
 ---
 <a name="setting-up-the-contact-manager-solution"></a><span data-ttu-id="47aa7-103">设置联系人管理器解决方案</span><span class="sxs-lookup"><span data-stu-id="47aa7-103">Setting Up the Contact Manager Solution</span></span>
 ====================
@@ -63,9 +64,9 @@ ms.lasthandoff: 04/06/2018
 
     [!code-console[Main](setting-up-the-contact-manager-solution/samples/sample1.cmd)]
 
-    1. <span data-ttu-id="47aa7-130">使用**– C**开关来指定你的数据库服务器的连接字符串。</span><span class="sxs-lookup"><span data-stu-id="47aa7-130">Use the **–C** switch to specify the connection string for your database server.</span></span>
-    2. <span data-ttu-id="47aa7-131">使用**–**开关来指定应用程序服务的功能，你想要添加到数据库。</span><span class="sxs-lookup"><span data-stu-id="47aa7-131">Use the **–A** switch to specify the application services features you want to add to the database.</span></span> <span data-ttu-id="47aa7-132">在这种情况下， **m**指示你想要添加为成员资格提供程序的支持和**r**指示你想要添加的角色管理器的支持。</span><span class="sxs-lookup"><span data-stu-id="47aa7-132">In this case, **m** indicates that you want to add support for the membership provider and **r** indicates that you want to add support for the role manager.</span></span>
-    3. <span data-ttu-id="47aa7-133">使用**– d**开关来指定你的应用程序服务数据库的名称。</span><span class="sxs-lookup"><span data-stu-id="47aa7-133">Use the **–d** switch to specify a name for your application services database.</span></span> <span data-ttu-id="47aa7-134">如果省略此开关，该实用程序将使用的默认名称创建数据库**aspnetdb**。</span><span class="sxs-lookup"><span data-stu-id="47aa7-134">If you omit this switch, the utility will create a database with the default name of **aspnetdb**.</span></span>
+    1. <span data-ttu-id="47aa7-130">使用 **– C**开关来指定你的数据库服务器的连接字符串。</span><span class="sxs-lookup"><span data-stu-id="47aa7-130">Use the **–C** switch to specify the connection string for your database server.</span></span>
+    2. <span data-ttu-id="47aa7-131">使用 **–** 开关来指定应用程序服务的功能，你想要添加到数据库。</span><span class="sxs-lookup"><span data-stu-id="47aa7-131">Use the **–A** switch to specify the application services features you want to add to the database.</span></span> <span data-ttu-id="47aa7-132">在这种情况下， **m**指示你想要添加为成员资格提供程序的支持和**r**指示你想要添加的角色管理器的支持。</span><span class="sxs-lookup"><span data-stu-id="47aa7-132">In this case, **m** indicates that you want to add support for the membership provider and **r** indicates that you want to add support for the role manager.</span></span>
+    3. <span data-ttu-id="47aa7-133">使用 **– d**开关来指定你的应用程序服务数据库的名称。</span><span class="sxs-lookup"><span data-stu-id="47aa7-133">Use the **–d** switch to specify a name for your application services database.</span></span> <span data-ttu-id="47aa7-134">如果省略此开关，该实用程序将使用的默认名称创建数据库**aspnetdb**。</span><span class="sxs-lookup"><span data-stu-id="47aa7-134">If you omit this switch, the utility will create a database with the default name of **aspnetdb**.</span></span>
 3. <span data-ttu-id="47aa7-135">当数据库已成功创建时，命令提示符将显示一条确认消息。</span><span class="sxs-lookup"><span data-stu-id="47aa7-135">When the database has been created successfully, the command prompt will show a confirmation.</span></span>
 
     ![](setting-up-the-contact-manager-solution/_static/image1.png)

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879577"
 ---
 <a name="add-models-and-controllers"></a><span data-ttu-id="0e81b-102">添加模型和控制器</span><span class="sxs-lookup"><span data-stu-id="0e81b-102">Add Models and Controllers</span></span>
 ====================

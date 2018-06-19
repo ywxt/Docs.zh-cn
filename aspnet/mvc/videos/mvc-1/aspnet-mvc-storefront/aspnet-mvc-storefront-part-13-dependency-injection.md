@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871033"
 ---
 <a name="aspnet-mvc-storefront-part-13-dependency-injection"></a><span data-ttu-id="b8a17-103">ASP.NET MVC 店面一部分 13： 依赖关系注入</span><span class="sxs-lookup"><span data-stu-id="b8a17-103">ASP.NET MVC Storefront Part 13: Dependency Injection</span></span>
 ====================

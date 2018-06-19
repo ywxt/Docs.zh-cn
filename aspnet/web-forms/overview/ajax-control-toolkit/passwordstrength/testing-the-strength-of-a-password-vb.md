@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879447"
 ---
 <a name="testing-the-strength-of-a-password-vb"></a><span data-ttu-id="bb3d4-104">测试的强度的密码 (VB)</span><span class="sxs-lookup"><span data-stu-id="bb3d4-104">Testing the Strength of a Password (VB)</span></span>
 ====================

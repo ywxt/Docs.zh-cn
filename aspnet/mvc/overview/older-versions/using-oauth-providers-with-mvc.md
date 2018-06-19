@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/using-oauth-providers-with-mvc
-title: "OAuth 提供程序使用 MVC 4 |Microsoft 文档"
+title: OAuth 提供程序使用 MVC 4 |Microsoft 文档
 author: tfitzmac
-description: "本教程演示了如何生成的 ASP.NET MVC 4 web 应用程序使用户能够从 Facebo 之类的外部提供程序的凭据登录..."
+description: 本教程演示了如何生成的 ASP.NET MVC 4 web 应用程序使用户能够从 Facebo 之类的外部提供程序的凭据登录...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28033563"
 ---
 <a name="using-oauth-providers-with-mvc-4"></a><span data-ttu-id="1c82d-103">OAuth 提供程序使用 MVC 4</span><span class="sxs-lookup"><span data-stu-id="1c82d-103">Using OAuth Providers with MVC 4</span></span>
 ====================

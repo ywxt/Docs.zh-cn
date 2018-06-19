@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879210"
 ---
 <a name="caching-data-in-the-architecture-c"></a><span data-ttu-id="903d7-104">缓存的体系结构 (C#) 中的数据</span><span class="sxs-lookup"><span data-stu-id="903d7-104">Caching Data in the Architecture (C#)</span></span>
 ====================

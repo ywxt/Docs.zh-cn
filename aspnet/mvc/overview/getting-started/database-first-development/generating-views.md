@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879746"
 ---
 <a name="ef-database-first-with-aspnet-mvc-generating-views"></a><span data-ttu-id="b56fa-104">首先使用 ASP.NET MVC 的 EF 数据库： 生成视图</span><span class="sxs-lookup"><span data-stu-id="b56fa-104">EF Database First with ASP.NET MVC: Generating Views</span></span>
 ====================

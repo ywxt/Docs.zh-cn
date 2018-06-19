@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878225"
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a><span data-ttu-id="59db6-103">排序、 筛选和分页与实体框架中的 ASP.NET MVC 应用程序 (3 的 10)</span><span class="sxs-lookup"><span data-stu-id="59db6-103">Sorting, Filtering, and Paging with the Entity Framework in an ASP.NET MVC Application (3 of 10)</span></span>
 ====================
@@ -321,14 +322,14 @@ ms.lasthandoff: 04/06/2018
 
     ![下载订阅文件](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image21.png)
 
-    <span data-ttu-id="59db6-326">c.</span><span class="sxs-lookup"><span data-stu-id="59db6-326">c.</span></span> <span data-ttu-id="59db6-327">在浏览器窗口中，保存*.publishsettings*文件。</span><span class="sxs-lookup"><span data-stu-id="59db6-327">In your browser window, save the *.publishsettings* file.</span></span>
+    <span data-ttu-id="59db6-326">c.</span><span class="sxs-lookup"><span data-stu-id="59db6-326">c.</span></span> <span data-ttu-id="59db6-327">在浏览器窗口中，保存 *.publishsettings*文件。</span><span class="sxs-lookup"><span data-stu-id="59db6-327">In your browser window, save the *.publishsettings* file.</span></span>
 
     ![下载的.publishsettings 文件](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image22.png)
 
     > [!WARNING]
     > <span data-ttu-id="59db6-329">安全- *publishsettings*文件包含你用于管理你的 Windows Azure 订阅和服务的凭据 （未编码）。</span><span class="sxs-lookup"><span data-stu-id="59db6-329">Security - The *publishsettings* file contains your credentials (unencoded) that are used to administer your Windows Azure subscriptions and services.</span></span> <span data-ttu-id="59db6-330">此文件的最佳安全方案是将其暂时存储源目录以外 (例如在*Libraries\Documents*文件夹)，然后将其导入完毕后删除。</span><span class="sxs-lookup"><span data-stu-id="59db6-330">The security best practice for this file is to store it temporarily outside your source directories (for example in the *Libraries\Documents* folder), and then delete it once the import has completed.</span></span> <span data-ttu-id="59db6-331">恶意用户获得访问权`.publishsettings`文件可以编辑、 创建和删除 Windows Azure 服务。</span><span class="sxs-lookup"><span data-stu-id="59db6-331">A malicious user who gains access to the `.publishsettings` file can edit, create, and delete your Windows Azure services.</span></span>
 
-    <span data-ttu-id="59db6-332">d.</span><span class="sxs-lookup"><span data-stu-id="59db6-332">d.</span></span> <span data-ttu-id="59db6-333">在**导入 Windows Azure 订阅**对话框中，单击**浏览**并导航到*.publishsettings*文件。</span><span class="sxs-lookup"><span data-stu-id="59db6-333">In the **Import Windows Azure Subscriptions** dialog box, click **Browse** and navigate to the *.publishsettings* file.</span></span>
+    <span data-ttu-id="59db6-332">d.</span><span class="sxs-lookup"><span data-stu-id="59db6-332">d.</span></span> <span data-ttu-id="59db6-333">在**导入 Windows Azure 订阅**对话框中，单击**浏览**并导航到 *.publishsettings*文件。</span><span class="sxs-lookup"><span data-stu-id="59db6-333">In the **Import Windows Azure Subscriptions** dialog box, click **Browse** and navigate to the *.publishsettings* file.</span></span>
 
     ![下载订阅](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image23.png)
 
@@ -371,7 +372,7 @@ ms.lasthandoff: 04/06/2018
 
 ![](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image33.png)
 
-<span data-ttu-id="59db6-367">在部署过程还创建新的连接字符串*(SchoolContext\_DatabasePublish*) 的代码优先迁移来用于更新数据库架构和数据库进行种子设定。</span><span class="sxs-lookup"><span data-stu-id="59db6-367">The deployment process also created a new connection string *(SchoolContext\_DatabasePublish*) for Code First Migrations to use for updating the database schema and seeding the database.</span></span>
+<span data-ttu-id="59db6-367">在部署过程还创建新的连接字符串 *(SchoolContext\_DatabasePublish*) 的代码优先迁移来用于更新数据库架构和数据库进行种子设定。</span><span class="sxs-lookup"><span data-stu-id="59db6-367">The deployment process also created a new connection string *(SchoolContext\_DatabasePublish*) for Code First Migrations to use for updating the database schema and seeding the database.</span></span>
 
 ![Database_Publish 连接字符串](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image34.png)
 

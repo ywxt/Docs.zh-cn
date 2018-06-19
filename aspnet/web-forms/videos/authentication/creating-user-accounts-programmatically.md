@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882510"
 ---
 <a name="creating-user-accounts-programmatically"></a><span data-ttu-id="1d92d-104">以编程方式创建用户帐户</span><span class="sxs-lookup"><span data-stu-id="1d92d-104">Creating User Accounts Programmatically</span></span>
 ====================

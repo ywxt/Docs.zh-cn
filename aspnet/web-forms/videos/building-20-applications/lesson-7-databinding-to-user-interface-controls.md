@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884712"
 ---
 <a name="lesson-7-databinding-to-user-interface-controls"></a><span data-ttu-id="97de6-103">[第 7 课:]数据绑定到用户界面控件</span><span class="sxs-lookup"><span data-stu-id="97de6-103">[Lesson 7:] Databinding to User Interface Controls</span></span>
 ====================

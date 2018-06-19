@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879330"
 ---
 <a name="getting-started-with-entity-framework-6-database-first-using-mvc-5"></a><span data-ttu-id="30bed-104">借助实体框架 6 数据库优先使用 MVC 5 入门</span><span class="sxs-lookup"><span data-stu-id="30bed-104">Getting Started with Entity Framework 6 Database First using MVC 5</span></span>
 ====================
@@ -97,7 +98,7 @@ ms.lasthandoff: 04/06/2018
 
 ![显示输出](setting-up-database/_static/image7.png)
 
-<span data-ttu-id="30bed-171">若要查看已创建新数据库，请打开**SQL Server 对象资源管理器**并查找正确的本地数据库服务器中项目的名称 (在这种情况下**(localdb) \ProjectsV12**)。</span><span class="sxs-lookup"><span data-stu-id="30bed-171">To see that the new database has been created, open **SQL Server Object Explorer** and look for the name of the project in the correct local database server (in this case **(localdb)\ProjectsV12**).</span></span>
+<span data-ttu-id="30bed-171">若要查看已创建新数据库，请打开**SQL Server 对象资源管理器**并查找正确的本地数据库服务器中项目的名称 (在这种情况下 **(localdb) \ProjectsV12**)。</span><span class="sxs-lookup"><span data-stu-id="30bed-171">To see that the new database has been created, open **SQL Server Object Explorer** and look for the name of the project in the correct local database server (in this case **(localdb)\ProjectsV12**).</span></span>
 
 ![显示新的数据库](setting-up-database/_static/image8.png)
 

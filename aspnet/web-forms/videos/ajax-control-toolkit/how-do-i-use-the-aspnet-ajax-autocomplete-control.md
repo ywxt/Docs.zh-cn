@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884595"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-autocomplete-control"></a><span data-ttu-id="5900c-103">[如何:]使用 ASP.NET AJAX 记忆式键入功能控件</span><span class="sxs-lookup"><span data-stu-id="5900c-103">[How Do I:] Use the ASP.NET AJAX AutoComplete Control</span></span>
 ====================

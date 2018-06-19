@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874725"
 ---
 <a name="how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2"></a><span data-ttu-id="fe984-103">如何将 ASP.NET MVC 4 和 Web API 项目升级到 ASP.NET MVC 5 和 Web API 2</span><span class="sxs-lookup"><span data-stu-id="fe984-103">How to Upgrade an ASP.NET MVC 4 and Web API Project to ASP.NET MVC 5 and Web API 2</span></span>
 ====================
@@ -75,7 +76,7 @@ ms.lasthandoff: 04/06/2018
     >   
     > <span data-ttu-id="fe984-187">没有在主要 ASP.NET 包之间交叉的版本兼容性。</span><span class="sxs-lookup"><span data-stu-id="fe984-187">There is no cross version compatibility among major ASP.NET packages.</span></span> <span data-ttu-id="fe984-188">例如，MVC 5 是与仅 Razor 3 和 Razor 2 不兼容。</span><span class="sxs-lookup"><span data-stu-id="fe984-188">For example, MVC 5 is compatible with only Razor 3, and not Razor 2.</span></span>
 4. <span data-ttu-id="fe984-189">在 Visual Studio 2013 中打开你的项目。</span><span class="sxs-lookup"><span data-stu-id="fe984-189">Open your project in Visual Studio 2013.</span></span>
-5. <span data-ttu-id="fe984-190">删除任何已安装的以下 ASP.NET NuGet 包。</span><span class="sxs-lookup"><span data-stu-id="fe984-190">Remove any of the following ASP.NET NuGet packages that are installed.</span></span> <span data-ttu-id="fe984-191">你将删除这些使用包管理器控制台 (PMC)。</span><span class="sxs-lookup"><span data-stu-id="fe984-191">You will remove these using the Package Manager Console (PMC).</span></span> <span data-ttu-id="fe984-192">若要打开 PMC，选择**工具**菜单，然后选择**库程序包管理器，**然后选择**程序包管理器控制台**。</span><span class="sxs-lookup"><span data-stu-id="fe984-192">To open the PMC, select the **Tools** menu and then select **Library Package Manager,** then select **Package Manager Console**.</span></span> <span data-ttu-id="fe984-193">你的项目可能不包括所有这些。</span><span class="sxs-lookup"><span data-stu-id="fe984-193">Your project might not include all of these.</span></span>
+5. <span data-ttu-id="fe984-190">删除任何已安装的以下 ASP.NET NuGet 包。</span><span class="sxs-lookup"><span data-stu-id="fe984-190">Remove any of the following ASP.NET NuGet packages that are installed.</span></span> <span data-ttu-id="fe984-191">你将删除这些使用包管理器控制台 (PMC)。</span><span class="sxs-lookup"><span data-stu-id="fe984-191">You will remove these using the Package Manager Console (PMC).</span></span> <span data-ttu-id="fe984-192">若要打开 PMC，选择**工具**菜单，然后选择**库程序包管理器，** 然后选择**程序包管理器控制台**。</span><span class="sxs-lookup"><span data-stu-id="fe984-192">To open the PMC, select the **Tools** menu and then select **Library Package Manager,** then select **Package Manager Console**.</span></span> <span data-ttu-id="fe984-193">你的项目可能不包括所有这些。</span><span class="sxs-lookup"><span data-stu-id="fe984-193">Your project might not include all of these.</span></span>
 
     1. `Microsoft.AspNet.WebPages.Administration`  
    <span data-ttu-id="fe984-194">从 MVC 3 升级到 MVC 4 时，通常将特性添加此包。</span><span class="sxs-lookup"><span data-stu-id="fe984-194">This package is typically added when upgrading from MVC 3 to MVC 4.</span></span> <span data-ttu-id="fe984-195">若要删除它，请在 PMC 中运行以下命令：</span><span class="sxs-lookup"><span data-stu-id="fe984-195">To remove it, run the following command in the PMC:</span></span>  

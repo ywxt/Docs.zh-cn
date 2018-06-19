@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885840"
 ---
 <a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a><span data-ttu-id="2c2ee-104">更新、 删除和使用模型的绑定和 web 窗体中创建的数据</span><span class="sxs-lookup"><span data-stu-id="2c2ee-104">Updating, deleting, and creating data with model binding and web forms</span></span>
 ====================
@@ -105,7 +106,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="2c2ee-167">然后，添加新 web 窗体使用母版页，并将其命名为**AddStudent**。</span><span class="sxs-lookup"><span data-stu-id="2c2ee-167">Then, add a new web form using a master page, and name it **AddStudent**.</span></span> <span data-ttu-id="2c2ee-168">选择作为主控页的 Site.Master。</span><span class="sxs-lookup"><span data-stu-id="2c2ee-168">Select Site.Master as the master page.</span></span>
 
-<span data-ttu-id="2c2ee-169">将呈现为通过添加新的学生字段**DynamicEntity**控件。</span><span class="sxs-lookup"><span data-stu-id="2c2ee-169">You will render the fields for adding a new student by using a **DynamicEntity** control.</span></span> <span data-ttu-id="2c2ee-170">DynamicEntity 控件呈现该 ItemType 属性中指定的类中可编辑的属性。</span><span class="sxs-lookup"><span data-stu-id="2c2ee-170">The DynamicEntity control renders that editable properties in the class specified in the ItemType property.</span></span> <span data-ttu-id="2c2ee-171">StudentID 属性已标记有**[ScaffoldColumn(false)]**属性以便不呈现。</span><span class="sxs-lookup"><span data-stu-id="2c2ee-171">The StudentID property was marked with the **[ScaffoldColumn(false)]** attribute so it is not rendered.</span></span> <span data-ttu-id="2c2ee-172">在 AddStudent 页主内容占位符，添加以下代码。</span><span class="sxs-lookup"><span data-stu-id="2c2ee-172">In the MainContent placeholder of the AddStudent page, add the following code.</span></span>
+<span data-ttu-id="2c2ee-169">将呈现为通过添加新的学生字段**DynamicEntity**控件。</span><span class="sxs-lookup"><span data-stu-id="2c2ee-169">You will render the fields for adding a new student by using a **DynamicEntity** control.</span></span> <span data-ttu-id="2c2ee-170">DynamicEntity 控件呈现该 ItemType 属性中指定的类中可编辑的属性。</span><span class="sxs-lookup"><span data-stu-id="2c2ee-170">The DynamicEntity control renders that editable properties in the class specified in the ItemType property.</span></span> <span data-ttu-id="2c2ee-171">StudentID 属性已标记有 **[ScaffoldColumn(false)]** 属性以便不呈现。</span><span class="sxs-lookup"><span data-stu-id="2c2ee-171">The StudentID property was marked with the **[ScaffoldColumn(false)]** attribute so it is not rendered.</span></span> <span data-ttu-id="2c2ee-172">在 AddStudent 页主内容占位符，添加以下代码。</span><span class="sxs-lookup"><span data-stu-id="2c2ee-172">In the MainContent placeholder of the AddStudent page, add the following code.</span></span>
 
 [!code-aspx[Main](updating-deleting-and-creating-data/samples/sample6.aspx)]
 

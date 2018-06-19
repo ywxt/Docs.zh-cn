@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881059"
 ---
 <a name="part-4-listing-products"></a><span data-ttu-id="c3d9f-104">第 4 部分： 列表产品</span><span class="sxs-lookup"><span data-stu-id="c3d9f-104">Part 4: Listing Products</span></span>
 ====================

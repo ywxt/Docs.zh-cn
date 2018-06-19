@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879460"
 ---
 <a name="dynamically-adding-an-accordion-pane-c"></a><span data-ttu-id="15084-104">动态添加的折叠窗格 (C#)</span><span class="sxs-lookup"><span data-stu-id="15084-104">Dynamically Adding An Accordion Pane (C#)</span></span>
 ====================
