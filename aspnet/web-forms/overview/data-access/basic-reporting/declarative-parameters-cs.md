@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875934"
 ---
 <a name="declarative-parameters-c"></a><span data-ttu-id="e3c59-103">声明性参数 (C#)</span><span class="sxs-lookup"><span data-stu-id="e3c59-103">Declarative Parameters (C#)</span></span>
 ====================
@@ -127,7 +128,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="showing-all-suppliers-by-default"></a><span data-ttu-id="e3c59-179">显示默认情况下的所有供应商</span><span class="sxs-lookup"><span data-stu-id="e3c59-179">Showing All Suppliers By Default</span></span>
 
-<span data-ttu-id="e3c59-180">而是不是第一次查看网页时将供应商的全不显示我们可能想要显示*所有*供应商首先，允许用户削减通过在文本框中输入国家/地区名称的列表。</span><span class="sxs-lookup"><span data-stu-id="e3c59-180">Rather than show none of the suppliers when first viewing the page we may want to show *all* suppliers at first, allowing the user to pare down the list by entering a country name in the TextBox.</span></span> <span data-ttu-id="e3c59-181">当文本框中为空，`SuppliersBLL`类的`GetSuppliersByCountry(country)`方法传递中`null`值，则为其*`country`*输入的参数。</span><span class="sxs-lookup"><span data-stu-id="e3c59-181">When the TextBox is empty, the `SuppliersBLL` class's `GetSuppliersByCountry(country)` method is passed in a `null` value for its *`country`* input parameter.</span></span> <span data-ttu-id="e3c59-182">这`null`然后容器值传到 DAL 的`GetSupplierByCountry(country)`方法，其中对其进行转换到数据库`NULL`值`@Country`在下面的查询的参数：</span><span class="sxs-lookup"><span data-stu-id="e3c59-182">This `null` value is then passed down into the DAL's `GetSupplierByCountry(country)` method, where it's translated to a database `NULL` value for the `@Country` parameter in the following query:</span></span>
+<span data-ttu-id="e3c59-180">而是不是第一次查看网页时将供应商的全不显示我们可能想要显示*所有*供应商首先，允许用户削减通过在文本框中输入国家/地区名称的列表。</span><span class="sxs-lookup"><span data-stu-id="e3c59-180">Rather than show none of the suppliers when first viewing the page we may want to show *all* suppliers at first, allowing the user to pare down the list by entering a country name in the TextBox.</span></span> <span data-ttu-id="e3c59-181">当文本框中为空，`SuppliersBLL`类的`GetSuppliersByCountry(country)`方法传递中`null`值，则为其*`country`* 输入的参数。</span><span class="sxs-lookup"><span data-stu-id="e3c59-181">When the TextBox is empty, the `SuppliersBLL` class's `GetSuppliersByCountry(country)` method is passed in a `null` value for its *`country`* input parameter.</span></span> <span data-ttu-id="e3c59-182">这`null`然后容器值传到 DAL 的`GetSupplierByCountry(country)`方法，其中对其进行转换到数据库`NULL`值`@Country`在下面的查询的参数：</span><span class="sxs-lookup"><span data-stu-id="e3c59-182">This `null` value is then passed down into the DAL's `GetSupplierByCountry(country)` method, where it's translated to a database `NULL` value for the `@Country` parameter in the following query:</span></span>
 
 [!code-sql[Main](declarative-parameters-cs/samples/sample3.sql)]
 

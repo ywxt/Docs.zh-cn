@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/routing/creating-readable-urls-in-aspnet-web-pages-sites
-title: "在 ASP.NET 网页中创建可读的 Url 页 (Razor) 站点 |Microsoft 文档"
+title: 在 ASP.NET 网页中创建可读的 Url 页 (Razor) 站点 |Microsoft 文档
 author: tfitzmac
-description: "本指南介绍了一个 ASP.NET Web 页 (Razor) 的网站，以及如何这样便可以使用更具可读性且更适合 SEO 的 Url 中的路由。 你的将..."
+description: 本指南介绍了一个 ASP.NET Web 页 (Razor) 的网站，以及如何这样便可以使用更具可读性且更适合 SEO 的 Url 中的路由。 你的将...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/17/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529746"
 ---
 <a name="creating-readable-urls-in-aspnet-web-pages-razor-sites"></a><span data-ttu-id="9a720-104">在 ASP.NET Web 页 (Razor) 站点中创建可读的 Url</span><span class="sxs-lookup"><span data-stu-id="9a720-104">Creating Readable URLs in ASP.NET Web Pages (Razor) Sites</span></span>
 ====================
@@ -68,17 +69,17 @@ ms.lasthandoff: 11/10/2017
 
 <span data-ttu-id="9a720-133">搜索如下所示：</span><span class="sxs-lookup"><span data-stu-id="9a720-133">The search goes like this:</span></span>
 
-1. <span data-ttu-id="9a720-134">是否存在的文件的路径和名称*/a/b/c.cshtml*？</span><span class="sxs-lookup"><span data-stu-id="9a720-134">Is there a file with the path and name of */a/b/c.cshtml*?</span></span> <span data-ttu-id="9a720-135">如果是这样，运行该页面，并向其传递任何信息。</span><span class="sxs-lookup"><span data-stu-id="9a720-135">If so, run that page and pass no information to it.</span></span> <span data-ttu-id="9a720-136">否则为...</span><span class="sxs-lookup"><span data-stu-id="9a720-136">Otherwise ...</span></span>
-2. <span data-ttu-id="9a720-137">是否存在的文件的路径和名称*/a/b.cshtml*？</span><span class="sxs-lookup"><span data-stu-id="9a720-137">Is there a file with the path and name of */a/b.cshtml*?</span></span> <span data-ttu-id="9a720-138">如果因此，运行该页面，并将值传递`c`到它。</span><span class="sxs-lookup"><span data-stu-id="9a720-138">If so, run that page and pass the value `c` to it.</span></span> <span data-ttu-id="9a720-139">否则为...</span><span class="sxs-lookup"><span data-stu-id="9a720-139">Otherwise …</span></span>
-3. <span data-ttu-id="9a720-140">是否存在的文件的路径和名称*/a.cshtml*？</span><span class="sxs-lookup"><span data-stu-id="9a720-140">Is there a file with the path and name of */a.cshtml*?</span></span> <span data-ttu-id="9a720-141">如果因此，运行该页面，并将值传递`b/c`到它。</span><span class="sxs-lookup"><span data-stu-id="9a720-141">If so, run that page and pass the value `b/c` to it.</span></span>
+1. <span data-ttu-id="9a720-134">是否存在的文件的路径和名称 */a/b/c.cshtml*？</span><span class="sxs-lookup"><span data-stu-id="9a720-134">Is there a file with the path and name of */a/b/c.cshtml*?</span></span> <span data-ttu-id="9a720-135">如果是这样，运行该页面，并向其传递任何信息。</span><span class="sxs-lookup"><span data-stu-id="9a720-135">If so, run that page and pass no information to it.</span></span> <span data-ttu-id="9a720-136">否则为...</span><span class="sxs-lookup"><span data-stu-id="9a720-136">Otherwise ...</span></span>
+2. <span data-ttu-id="9a720-137">是否存在的文件的路径和名称 */a/b.cshtml*？</span><span class="sxs-lookup"><span data-stu-id="9a720-137">Is there a file with the path and name of */a/b.cshtml*?</span></span> <span data-ttu-id="9a720-138">如果因此，运行该页面，并将值传递`c`到它。</span><span class="sxs-lookup"><span data-stu-id="9a720-138">If so, run that page and pass the value `c` to it.</span></span> <span data-ttu-id="9a720-139">否则为...</span><span class="sxs-lookup"><span data-stu-id="9a720-139">Otherwise …</span></span>
+3. <span data-ttu-id="9a720-140">是否存在的文件的路径和名称 */a.cshtml*？</span><span class="sxs-lookup"><span data-stu-id="9a720-140">Is there a file with the path and name of */a.cshtml*?</span></span> <span data-ttu-id="9a720-141">如果因此，运行该页面，并将值传递`b/c`到它。</span><span class="sxs-lookup"><span data-stu-id="9a720-141">If so, run that page and pass the value `b/c` to it.</span></span>
 
-<span data-ttu-id="9a720-142">如果搜索已找到不精确的匹配项*.cshtml*其指定文件夹中的文件，ASP.NET 将继续进行反过来查找这些文件：</span><span class="sxs-lookup"><span data-stu-id="9a720-142">If the search found no exact matches for *.cshtml* files in their specified folders, ASP.NET continues looking for these files in turn:</span></span>
+<span data-ttu-id="9a720-142">如果搜索已找到不精确的匹配项 *.cshtml*其指定文件夹中的文件，ASP.NET 将继续进行反过来查找这些文件：</span><span class="sxs-lookup"><span data-stu-id="9a720-142">If the search found no exact matches for *.cshtml* files in their specified folders, ASP.NET continues looking for these files in turn:</span></span>
 
 1. <span data-ttu-id="9a720-143">*/a/b/c/default.cshtml* （任何路径信息）。</span><span class="sxs-lookup"><span data-stu-id="9a720-143">*/a/b/c/default.cshtml* (no path information).</span></span>
 2. <span data-ttu-id="9a720-144">*/a/b/c/index.cshtml* （任何路径信息）。</span><span class="sxs-lookup"><span data-stu-id="9a720-144">*/a/b/c/index.cshtml* (no path information).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="9a720-145">为了清楚起见，特定页的请求 (即，包括请求*.cshtml*文件扩展名) 就像你预期一样工作。</span><span class="sxs-lookup"><span data-stu-id="9a720-145">To be clear, requests for specific pages (that is, requests that include the *.cshtml* filename extension) work just like you'd expect.</span></span> <span data-ttu-id="9a720-146">请求喜欢`http://www.contoso.com/a/b.cshtml`将运行页面*b.cshtml*正常。</span><span class="sxs-lookup"><span data-stu-id="9a720-146">A request like `http://www.contoso.com/a/b.cshtml` will run the page *b.cshtml* just fine.</span></span>
+> <span data-ttu-id="9a720-145">为了清楚起见，特定页的请求 (即，包括请求 *.cshtml*文件扩展名) 就像你预期一样工作。</span><span class="sxs-lookup"><span data-stu-id="9a720-145">To be clear, requests for specific pages (that is, requests that include the *.cshtml* filename extension) work just like you'd expect.</span></span> <span data-ttu-id="9a720-146">请求喜欢`http://www.contoso.com/a/b.cshtml`将运行页面*b.cshtml*正常。</span><span class="sxs-lookup"><span data-stu-id="9a720-146">A request like `http://www.contoso.com/a/b.cshtml` will run the page *b.cshtml* just fine.</span></span>
 
 
 <span data-ttu-id="9a720-147">在页上，你可以通过该页面的路径信息`UrlData`属性，它是一个字典。</span><span class="sxs-lookup"><span data-stu-id="9a720-147">Inside a page, you can get the path information via the page's `UrlData` property, which is a dictionary.</span></span> <span data-ttu-id="9a720-148">假设你有一个名为文件*ViewCustomers.cshtml*和你的站点获取此请求：</span><span class="sxs-lookup"><span data-stu-id="9a720-148">Imagine that you have a file named *ViewCustomers.cshtml* and your site gets this request:</span></span>

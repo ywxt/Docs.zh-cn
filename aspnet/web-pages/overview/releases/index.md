@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/releases/index
-title: "网页版本 |Microsoft 文档"
+title: 网页版本 |Microsoft 文档
 author: rick-anderson
-description: "什么是每个 ASP.NET Web Pages 发行版中新增的。"
+description: 什么是每个 ASP.NET Web Pages 发行版中新增的。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/16/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages/overview/releases
 msc.type: chapter
 ms.openlocfilehash: e9a9229b964268fb386bb5e956a73505198ca1a6
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528566"
 ---
 <a name="web-pages-releases"></a><span data-ttu-id="2daef-103">Web Pages 版本</span><span class="sxs-lookup"><span data-stu-id="2daef-103">Web Pages Releases</span></span>
 ====================

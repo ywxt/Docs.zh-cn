@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877055"
 ---
 <a name="iteration-1--create-the-application-vb"></a><span data-ttu-id="f10ce-104">迭代 #1 – 创建应用程序 (VB)</span><span class="sxs-lookup"><span data-stu-id="f10ce-104">Iteration #1 – Create the Application (VB)</span></span>
 ====================
@@ -178,7 +179,7 @@ ms.lasthandoff: 04/06/2018
 | <span data-ttu-id="f10ce-230">电子邮件</span><span class="sxs-lookup"><span data-stu-id="f10ce-230">Email</span></span> | <span data-ttu-id="f10ce-231">nvarchar （255)</span><span class="sxs-lookup"><span data-stu-id="f10ce-231">nvarchar(255)</span></span> | <span data-ttu-id="f10ce-232">False</span><span class="sxs-lookup"><span data-stu-id="f10ce-232">false</span></span> |
 
 
-<span data-ttu-id="f10ce-233">第一列，Id 列中，是非常特殊。</span><span class="sxs-lookup"><span data-stu-id="f10ce-233">The first column, the Id column, is special.</span></span> <span data-ttu-id="f10ce-234">你需要将 Id 列标记为标识列和主键列。</span><span class="sxs-lookup"><span data-stu-id="f10ce-234">You need to mark the Id column as an Identity column and a Primary Key column.</span></span> <span data-ttu-id="f10ce-235">指示列是标识列，通过展开列属性 （查找底部的图 6） 和滚动到标识规范属性。</span><span class="sxs-lookup"><span data-stu-id="f10ce-235">You indicate that a column is an Identity column by expanding Column Properites (look at the bottom of Figure 6) and scrolling down to the Identity Specification property.</span></span> <span data-ttu-id="f10ce-236">设置**（是标识）**属性值**是**。</span><span class="sxs-lookup"><span data-stu-id="f10ce-236">Set the **(Is Identity)** property to the value **Yes**.</span></span>
+<span data-ttu-id="f10ce-233">第一列，Id 列中，是非常特殊。</span><span class="sxs-lookup"><span data-stu-id="f10ce-233">The first column, the Id column, is special.</span></span> <span data-ttu-id="f10ce-234">你需要将 Id 列标记为标识列和主键列。</span><span class="sxs-lookup"><span data-stu-id="f10ce-234">You need to mark the Id column as an Identity column and a Primary Key column.</span></span> <span data-ttu-id="f10ce-235">指示列是标识列，通过展开列属性 （查找底部的图 6） 和滚动到标识规范属性。</span><span class="sxs-lookup"><span data-stu-id="f10ce-235">You indicate that a column is an Identity column by expanding Column Properites (look at the bottom of Figure 6) and scrolling down to the Identity Specification property.</span></span> <span data-ttu-id="f10ce-236">设置 **（是标识）** 属性值**是**。</span><span class="sxs-lookup"><span data-stu-id="f10ce-236">Set the **(Is Identity)** property to the value **Yes**.</span></span>
 
 <span data-ttu-id="f10ce-237">通过选择列并单击带有密钥的图标的按钮可将列标记为主键列中。</span><span class="sxs-lookup"><span data-stu-id="f10ce-237">You mark a column as a Primary Key column by selecting the column and clicking the button with the icon of a key.</span></span> <span data-ttu-id="f10ce-238">某列被标记为主键列后，列旁边将显示一个图标的密钥 （请参阅图 6）。</span><span class="sxs-lookup"><span data-stu-id="f10ce-238">After a column is marked as a Primary Key column, an icon of a key appears next to the column (see Figure 6).</span></span>
 

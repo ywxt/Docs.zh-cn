@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "28037277"
 ---
 <a name="aspnet-and-web-tools-20122-release-notes"></a><span data-ttu-id="2b1be-103">ASP.NET 和 Web Tools 2012.2 发行说明</span><span class="sxs-lookup"><span data-stu-id="2b1be-103">ASP.NET and Web Tools 2012.2 Release Notes</span></span>
 ====================

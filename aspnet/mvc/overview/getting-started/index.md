@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/index
-title: "ASP.NET MVC 入门 |Microsoft 文档"
+title: ASP.NET MVC 入门 |Microsoft 文档
 author: rick-anderson
-description: "了解有关 ASP.NET MVC ASP.NET MVC 为你提供功能强大、 基于模式的方法来构建实现完全分离的问题和该 g 的动态网站..."
+description: 了解有关 ASP.NET MVC ASP.NET MVC 为你提供功能强大、 基于模式的方法来构建实现完全分离的问题和该 g 的动态网站...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/31/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/getting-started
 msc.type: chapter
 ms.openlocfilehash: 37d374d01ca122046f9fcd7b72331fc7cfe569cf
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26499206"
 ---
 <a name="aspnet-mvc-getting-started"></a><span data-ttu-id="20e98-103">ASP.NET MVC 入门</span><span class="sxs-lookup"><span data-stu-id="20e98-103">ASP.NET MVC Getting Started</span></span>
 ====================

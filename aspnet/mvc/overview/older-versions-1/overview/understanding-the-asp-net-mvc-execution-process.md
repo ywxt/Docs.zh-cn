@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/overview/understanding-the-asp-net-mvc-execution-process
-title: "了解在 ASP.NET MVC 执行过程 |Microsoft 文档"
+title: 了解在 ASP.NET MVC 执行过程 |Microsoft 文档
 author: microsoft
-description: "了解如何 ASP.NET MVC framework 处理分步的浏览器请求。"
+description: 了解如何 ASP.NET MVC framework 处理分步的浏览器请求。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26500726"
 ---
 <a name="understanding-the-aspnet-mvc-execution-process"></a><span data-ttu-id="98a19-103">了解在 ASP.NET MVC 执行过程</span><span class="sxs-lookup"><span data-stu-id="98a19-103">Understanding the ASP.NET MVC Execution Process</span></span>
 ====================

@@ -1,14 +1,14 @@
 ---
 uid: aspnet/overview/owin-and-katana/enabling-windows-authentication-in-katana
-title: "启用 Windows 身份验证中 Katana |Microsoft 文档"
+title: 启用 Windows 身份验证中 Katana |Microsoft 文档
 author: MikeWasson
-description: "这篇文章演示如何启用 Katana 中 Windows 身份验证。 它涵盖了两种方案： 到主机 Katana，使用 IIS 和使用 HttpListener 自承载 Kat..."
+description: 这篇文章演示如何启用 Katana 中 Windows 身份验证。 它涵盖了两种方案： 到主机 Katana，使用 IIS 和使用 HttpListener 自承载 Kat...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
 ms.topic: article
 ms.assetid: 82324ef0-3b75-4f63-a217-76ef4036ec93
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/enabling-windows-authentication-in-katana
 msc.type: authoredcontent
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28033965"
 ---
 <a name="enabling-windows-authentication-in-katana"></a><span data-ttu-id="eecd0-104">启用 Windows 身份验证中 Katana</span><span class="sxs-lookup"><span data-stu-id="eecd0-104">Enabling Windows Authentication in Katana</span></span>
 ====================

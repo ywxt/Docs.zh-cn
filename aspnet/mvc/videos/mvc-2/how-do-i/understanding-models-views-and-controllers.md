@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870019"
 ---
 <a name="understanding-models-views-and-controllers"></a><span data-ttu-id="8ffe5-104">了解模型、 视图和控制器</span><span class="sxs-lookup"><span data-stu-id="8ffe5-104">Understanding Models, Views, and Controllers</span></span>
 ====================

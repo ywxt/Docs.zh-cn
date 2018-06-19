@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/index
-title: "筛选使用 DataList 与转发器方案 |Microsoft 文档"
+title: 筛选使用 DataList 与转发器方案 |Microsoft 文档
 author: rick-anderson
-description: "这些教程中你将了解如何以显示为 master 的记录和 DataList 控件有关的详细信息使用下拉列表的主/详细信息报表。"
+description: 这些教程中你将了解如何以显示为 master 的记录和 DataList 控件有关的详细信息使用下拉列表的主/详细信息报表。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-data
 msc.type: chapter
 ms.openlocfilehash: a8a1c2301dc287b49149bc5afe85a7dedad54d58
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26514096"
 ---
 <a name="filtering-scenarios-with-the-datalist-and-repeater"></a><span data-ttu-id="691ff-103">使用 DataList 与转发器的筛选方案</span><span class="sxs-lookup"><span data-stu-id="691ff-103">Filtering Scenarios with the DataList and Repeater</span></span>
 ====================

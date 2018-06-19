@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870812"
 ---
 <a name="disabling-actions-during-animation-c"></a><span data-ttu-id="faf2e-104">禁用操作期间动画 (C#)</span><span class="sxs-lookup"><span data-stu-id="faf2e-104">Disabling Actions during Animation (C#)</span></span>
 ====================

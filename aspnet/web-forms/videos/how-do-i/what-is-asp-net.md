@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/what-is-asp-net
-title: "什么是 ASP.NET？ | Microsoft Docs"
+title: 什么是 ASP.NET？ | Microsoft Docs
 author: shanselman
-description: "Microsoft 的 Scott Hanselman 提供了 ASP.NET 的简要概述。"
+description: Microsoft 的 Scott Hanselman 提供了 ASP.NET 的简要概述。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/09/2010
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521526"
 ---
 <a name="what-is-aspnet"></a><span data-ttu-id="416cb-104">什么是 ASP.NET？</span><span class="sxs-lookup"><span data-stu-id="416cb-104">What is ASP.NET?</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/create-an-edit-data-page-in-webmatrix
-title: "在 WebMatrix 中创建未编辑的数据页 |Microsoft 文档"
+title: 在 WebMatrix 中创建未编辑的数据页 |Microsoft 文档
 author: rick-anderson
-description: "第 7 部分基于此项以显示您如何可以具有页后，可以编辑您的数据库，并查看自动更新的更改。"
+description: 第 7 部分基于此项以显示您如何可以具有页后，可以编辑您的数据库，并查看自动更新的更改。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529756"
 ---
 <a name="create-an-edit-data-page-in-webmatrix"></a><span data-ttu-id="b14e2-103">在 WebMatrix 中创建未编辑的数据页</span><span class="sxs-lookup"><span data-stu-id="b14e2-103">Create an Edit Data Page in WebMatrix</span></span>
 ====================

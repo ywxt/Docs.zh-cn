@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/index
-title: "ASP.NET MVC 视图 |Microsoft 文档"
+title: ASP.NET MVC 视图 |Microsoft 文档
 author: rick-anderson
-description: "此组的教程提供了 ASP.NET MVC 视图、 查看数据和 HTML 帮助器的简要介绍。"
+description: 此组的教程提供了 ASP.NET MVC 视图、 查看数据和 HTML 帮助器的简要介绍。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions-1/views
 msc.type: chapter
 ms.openlocfilehash: ba9f94794f1a53d9b3a027b1cfdf2e97b5544488
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26500826"
 ---
 <a name="aspnet-mvc-views"></a><span data-ttu-id="52f49-103">ASP.NET MVC 视图</span><span class="sxs-lookup"><span data-stu-id="52f49-103">ASP.NET MVC Views</span></span>
 ====================

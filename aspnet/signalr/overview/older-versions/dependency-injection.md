@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/dependency-injection
-title: "在 SignalR 的依赖关系注入 1.x |Microsoft 文档"
+title: 在 SignalR 的依赖关系注入 1.x |Microsoft 文档
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/15/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26505486"
 ---
 <a name="dependency-injection-in-signalr-1x"></a><span data-ttu-id="03986-102">在 SignalR 的依赖关系注入 1.x</span><span class="sxs-lookup"><span data-stu-id="03986-102">Dependency Injection in SignalR 1.x</span></span>
 ====================

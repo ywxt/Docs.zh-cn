@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/textboxwatermark/index
-title: "TextBoxWatermark |Microsoft 文档"
+title: TextBoxWatermark |Microsoft 文档
 author: rick-anderson
-description: "本教程演示如何使用 TextBoxWatermark 控件来显示一条消息将消失用户启动在其中键入内容时，文本框。"
+description: 本教程演示如何使用 TextBoxWatermark 控件来显示一条消息将消失用户启动在其中键入内容时，文本框。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/textboxwatermark
 msc.type: chapter
 ms.openlocfilehash: b1285b7f6e3b174a61d4c850c3b54c45da4f802e
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26511696"
 ---
 <a name="textboxwatermark"></a><span data-ttu-id="41e2e-103">TextBoxWatermark</span><span class="sxs-lookup"><span data-stu-id="41e2e-103">TextBoxWatermark</span></span>
 ====================

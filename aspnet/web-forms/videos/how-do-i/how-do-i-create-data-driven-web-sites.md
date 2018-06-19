@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-data-driven-web-sites
-title: "[如何:]创建数据驱动的网站？ | Microsoft Docs"
+title: '[如何:]创建数据驱动的网站？ | Microsoft Docs'
 author: microsoft
-description: "请参阅创建数据驱动的网站使用 ASP.NET 2.0、 Visual Web Developer 2005 速成版和 SQL Server 2005 Express Edition 是多么简单。 了解..."
+description: 请参阅创建数据驱动的网站使用 ASP.NET 2.0、 Visual Web Developer 2005 速成版和 SQL Server 2005 Express Edition 是多么简单。 了解...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/16/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26524906"
 ---
 <a name="how-do-i-create-data-driven-web-sites"></a><span data-ttu-id="218e8-105">[如何:]创建数据驱动的网站？</span><span class="sxs-lookup"><span data-stu-id="218e8-105">[How Do I:] Create Data-Driven Web Sites?</span></span>
 ====================

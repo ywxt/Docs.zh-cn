@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/index
-title: "Getting Started with ASP.NET MVC 3 (VB.NET) |Microsoft 文档"
+title: Getting Started with ASP.NET MVC 3 (VB.NET) |Microsoft 文档
 author: rick-anderson
-description: "生成使用 Microsoft Visual Web Developer 2010 Express 使用 VB.NET 的 ASP.NET MVC Web 应用程序的基础知识。"
+description: 生成使用 Microsoft Visual Web Developer 2010 Express 使用 VB.NET 的 ASP.NET MVC Web 应用程序的基础知识。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb
 msc.type: chapter
 ms.openlocfilehash: 564f4557b2a3a77d9977a194ebd0a2cda9ccdef6
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26501616"
 ---
 <a name="getting-started-with-aspnet-mvc-3-vbnet"></a><span data-ttu-id="0e5f9-103">Getting Started with ASP.NET MVC 3 (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="0e5f9-103">Getting Started with ASP.NET MVC 3 (VB.NET)</span></span>
 ====================

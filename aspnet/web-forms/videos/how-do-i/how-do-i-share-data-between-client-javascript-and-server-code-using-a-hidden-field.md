@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-share-data-between-client-javascript-and-server-code-using-a-hidden-field
-title: "[如何:]客户端 JavaScript 代码和使用的隐藏的字段的服务器代码之间共享数据 |Microsoft 文档"
+title: '[如何:]客户端 JavaScript 代码和使用的隐藏的字段的服务器代码之间共享数据 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 中将显示如何通过使用 ASP.NET 页中的隐藏的字段共享 JavaScript 代码和服务器端代码之间的数据。 接下来，了解如何 t..."
+description: 在此视频 Chris Pels 中将显示如何通过使用 ASP.NET 页中的隐藏的字段共享 JavaScript 代码和服务器端代码之间的数据。 接下来，了解如何 t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/13/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521576"
 ---
 <a name="how-do-i-share-data-between-client-javascript-and-server-code-using-a-hidden-field"></a><span data-ttu-id="67368-104">[如何:]客户端 JavaScript 代码和使用的隐藏的字段的服务器代码之间共享数据</span><span class="sxs-lookup"><span data-stu-id="67368-104">[How Do I:] Share Data Between Client JavaScript and Server Code Using a Hidden Field</span></span>
 ====================

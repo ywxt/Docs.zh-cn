@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870110"
 ---
 <a name="part-9-registration-and-checkout"></a><span data-ttu-id="32598-104">一部分 9： 注册和签出</span><span class="sxs-lookup"><span data-stu-id="32598-104">Part 9: Registration and Checkout</span></span>
 ====================
@@ -91,9 +92,9 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="32598-137">CheckoutController 将具有以下的控制器操作：</span><span class="sxs-lookup"><span data-stu-id="32598-137">The CheckoutController will have the following controller actions:</span></span>
 
-<span data-ttu-id="32598-138">**AddressAndPayment （GET 方法）**将显示的窗体，以允许用户输入他们的信息。</span><span class="sxs-lookup"><span data-stu-id="32598-138">**AddressAndPayment (GET method)** will display a form to allow the user to enter their information.</span></span>
+<span data-ttu-id="32598-138">**AddressAndPayment （GET 方法）** 将显示的窗体，以允许用户输入他们的信息。</span><span class="sxs-lookup"><span data-stu-id="32598-138">**AddressAndPayment (GET method)** will display a form to allow the user to enter their information.</span></span>
 
-<span data-ttu-id="32598-139">**AddressAndPayment （POST 方法）**将验证输入和处理顺序。</span><span class="sxs-lookup"><span data-stu-id="32598-139">**AddressAndPayment (POST method)** will validate the input and process the order.</span></span>
+<span data-ttu-id="32598-139">**AddressAndPayment （POST 方法）** 将验证输入和处理顺序。</span><span class="sxs-lookup"><span data-stu-id="32598-139">**AddressAndPayment (POST method)** will validate the input and process the order.</span></span>
 
 <span data-ttu-id="32598-140">**完成**将在用户成功完成结帐过程后显示。</span><span class="sxs-lookup"><span data-stu-id="32598-140">**Complete** will be shown after a user has successfully finished the checkout process.</span></span> <span data-ttu-id="32598-141">此视图将包括用户的订单号作为确认。</span><span class="sxs-lookup"><span data-stu-id="32598-141">This view will include the user's order number, as confirmation.</span></span>
 

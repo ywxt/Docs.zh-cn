@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869356"
 ---
 <a name="executing-several-animations-at-the-same-time-c"></a><span data-ttu-id="dab88-104">在同一时间 (C#) 执行几个动画</span><span class="sxs-lookup"><span data-stu-id="dab88-104">Executing Several Animations at The Same Time (C#)</span></span>
 ====================

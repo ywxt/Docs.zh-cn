@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891716"
 ---
 <a name="forms-authentication-configuration-and-advanced-topics-vb"></a><span data-ttu-id="23949-104">窗体身份验证配置和高级的主题 (VB)</span><span class="sxs-lookup"><span data-stu-id="23949-104">Forms Authentication Configuration and Advanced Topics (VB)</span></span>
 ====================

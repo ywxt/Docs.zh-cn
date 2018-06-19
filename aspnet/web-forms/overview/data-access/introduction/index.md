@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/introduction/index
-title: "简介 |Microsoft 文档"
+title: 简介 |Microsoft 文档
 author: rick-anderson
-description: "此系列介绍性教程说明如何在站点间创建数据访问层 (DAL)、 业务逻辑层 (BLL) 和一致的外观。"
+description: 此系列介绍性教程说明如何在站点间创建数据访问层 (DAL)、 业务逻辑层 (BLL) 和一致的外观。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/11/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/introduction
 msc.type: chapter
 ms.openlocfilehash: 631849ac6728a31ba967783177f5e1aced2716e2
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26514186"
 ---
 <a name="introduction"></a><span data-ttu-id="f22d8-103">介绍</span><span class="sxs-lookup"><span data-stu-id="f22d8-103">Introduction</span></span>
 ====================

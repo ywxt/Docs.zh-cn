@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/index
-title: "我如何 |Microsoft 文档"
+title: 我如何 |Microsoft 文档
 author: rick-anderson
-description: "本部分中的视频涵盖 ASP.NET MVC，包括如何生成 Storefront-整个电子商务应用程序从头到尾完成。"
+description: 本部分中的视频涵盖 ASP.NET MVC，包括如何生成 Storefront-整个电子商务应用程序从头到尾完成。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/15/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/videos/mvc-2/how-do-i
 msc.type: chapter
 ms.openlocfilehash: 54d09894c61d8be19ab6b8a1ceb37312c47497a7
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26504256"
 ---
 <a name="how-do-i"></a><span data-ttu-id="dcf9a-103">我如何</span><span class="sxs-lookup"><span data-stu-id="dcf9a-103">How-Do-I</span></span>
 ====================

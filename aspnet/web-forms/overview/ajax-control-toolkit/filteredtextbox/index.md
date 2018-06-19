@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/filteredtextbox/index
-title: "FilteredTextBox |Microsoft 文档"
+title: FilteredTextBox |Microsoft 文档
 author: rick-anderson
-description: "本教程演示如何使用 FilteredTextBox 控件，从中可以指定用户输入中允许的字符。"
+description: 本教程演示如何使用 FilteredTextBox 控件，从中可以指定用户输入中允许的字符。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/filteredtextbox
 msc.type: chapter
 ms.openlocfilehash: 04197e6348ac97f8ea668591c894f25774966cae
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26510386"
 ---
 <a name="filteredtextbox"></a><span data-ttu-id="aa02b-103">FilteredTextBox</span><span class="sxs-lookup"><span data-stu-id="aa02b-103">FilteredTextBox</span></span>
 ====================

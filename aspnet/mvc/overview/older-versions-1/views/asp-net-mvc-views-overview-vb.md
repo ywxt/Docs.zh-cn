@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870851"
 ---
 <a name="aspnet-mvc-views-overview-vb"></a><span data-ttu-id="039b0-104">ASP.NET MVC 视图概述 (VB)</span><span class="sxs-lookup"><span data-stu-id="039b0-104">ASP.NET MVC Views Overview (VB)</span></span>
 ====================

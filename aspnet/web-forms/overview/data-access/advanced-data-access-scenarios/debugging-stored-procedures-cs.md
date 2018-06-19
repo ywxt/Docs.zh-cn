@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876496"
 ---
 <a name="debugging-stored-procedures-c"></a><span data-ttu-id="ee901-103">调试存储的过程 (C#)</span><span class="sxs-lookup"><span data-stu-id="ee901-103">Debugging Stored Procedures (C#)</span></span>
 ====================

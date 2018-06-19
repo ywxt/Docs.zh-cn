@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-multi-lingual-site-with-localization
-title: "[如何:]使用本地化创建多语言站点？ | Microsoft Docs"
+title: '[如何:]使用本地化创建多语言站点？ | Microsoft Docs'
 author: microsoft
-description: "了解如何创建具有任何其他代码的区域性识别和区域设置特定的 web 内容。 使用资源编辑器创建页级和应用程序级别..."
+description: 了解如何创建具有任何其他代码的区域性识别和区域设置特定的 web 内容。 使用资源编辑器创建页级和应用程序级别...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/06/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525106"
 ---
 <a name="how-do-i-create-a-multi-lingual-site-with-localization"></a><span data-ttu-id="c1a99-105">[如何:]使用本地化创建多语言站点？</span><span class="sxs-lookup"><span data-stu-id="c1a99-105">[How Do I:] Create a Multi-Lingual Site with Localization?</span></span>
 ====================

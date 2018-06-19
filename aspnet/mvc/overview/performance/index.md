@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/performance/index
-title: "ASP.NET MVC 性能 |Microsoft 文档"
+title: ASP.NET MVC 性能 |Microsoft 文档
 author: rick-anderson
-description: "有关优化性能的 ASP.NET MVC 应用程序的资源。"
+description: 有关优化性能的 ASP.NET MVC 应用程序的资源。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/09/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/performance
 msc.type: chapter
 ms.openlocfilehash: 9c0e41e7356dca788f4e144dd211fd1483da8465
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503176"
 ---
 <a name="aspnet-mvc-performance"></a><span data-ttu-id="78c21-103">ASP.NET MVC 性能</span><span class="sxs-lookup"><span data-stu-id="78c21-103">ASP.NET MVC Performance</span></span>
 ====================

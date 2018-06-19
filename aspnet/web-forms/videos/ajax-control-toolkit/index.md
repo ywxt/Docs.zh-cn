@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/index
-title: "Ajax 控件工具包 |Microsoft 文档"
+title: Ajax 控件工具包 |Microsoft 文档
 author: rick-anderson
-description: "如何创建使用 Ajax 控件工具包的网页的响应迅速的 ASP.NET Web。"
+description: 如何创建使用 Ajax 控件工具包的网页的响应迅速的 ASP.NET Web。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/ajax-control-toolkit
 msc.type: chapter
 ms.openlocfilehash: fad690c40cac7a344a445dae722ae2a1e89adf6b
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521826"
 ---
 <a name="ajax-control-toolkit"></a><span data-ttu-id="6b8a4-103">Ajax 控件工具包</span><span class="sxs-lookup"><span data-stu-id="6b8a4-103">Ajax Control Toolkit</span></span>
 ====================

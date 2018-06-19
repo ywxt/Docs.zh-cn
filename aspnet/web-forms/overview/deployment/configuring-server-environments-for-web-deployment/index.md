@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/index
-title: "ASP.NET 4-企业部署系列 2 配置服务器 |Microsoft 文档"
+title: ASP.NET 4-企业部署系列 2 配置服务器 |Microsoft 文档
 author: rick-anderson
-description: "本教程将演示如何设置支持一次单击，或自动、 网站部署和如何在各种不同 scen 中的发布的服务器环境..."
+description: 本教程将演示如何设置支持一次单击，或自动、 网站部署和如何在各种不同 scen 中的发布的服务器环境...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/16/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-fo
 msc.type: chapter
 ms.openlocfilehash: 48281541d8337daf9cf252bc4601c8b1e75fd398
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26515226"
 ---
 <a name="aspnet-4---enterprise-deployment-series-2-configuring-servers"></a><span data-ttu-id="00555-103">ASP.NET 4-企业部署系列 2 配置服务器</span><span class="sxs-lookup"><span data-stu-id="00555-103">ASP.NET 4 - Enterprise Deployment Series 2 Configuring Servers</span></span>
 ====================

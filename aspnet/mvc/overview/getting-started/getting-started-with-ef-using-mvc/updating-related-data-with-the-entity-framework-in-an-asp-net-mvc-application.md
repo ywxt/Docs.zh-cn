@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875612"
 ---
 <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a><span data-ttu-id="c4934-103">使用实体框架中的 ASP.NET MVC 应用程序更新相关的数据</span><span class="sxs-lookup"><span data-stu-id="c4934-103">Updating Related Data with the Entity Framework in an ASP.NET MVC Application</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-send-email-asynchronously-with-aspnet
-title: "[如何:]使用 ASP.NET 以异步方式发送电子邮件 |Microsoft 文档"
+title: '[如何:]使用 ASP.NET 以异步方式发送电子邮件 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频中，Chris Pels 演示如何在 ASP.NET 中使用 System.Net.Mail 类发送异步电子邮件。 首先，请参阅如何配置 web si..."
+description: 在此视频中，Chris Pels 演示如何在 ASP.NET 中使用 System.Net.Mail 类发送异步电子邮件。 首先，请参阅如何配置 web si...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/24/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525866"
 ---
 <a name="how-do-i-send-email-asynchronously-with-aspnet"></a><span data-ttu-id="f6e5d-104">[如何:]使用 ASP.NET 以异步方式发送电子邮件</span><span class="sxs-lookup"><span data-stu-id="f6e5d-104">[How Do I:] Send Email Asynchronously with ASP.NET</span></span>
 ====================

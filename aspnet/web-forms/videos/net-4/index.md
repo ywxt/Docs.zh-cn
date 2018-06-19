@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/index
-title: ".NET 4 |Microsoft 文档"
+title: .NET 4 |Microsoft 文档
 author: rick-anderson
-description: "新的 ASP.NET 功能和.NET Framework 4 中提供的功能。"
+description: 新的 ASP.NET 功能和.NET Framework 4 中提供的功能。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/net-4
 msc.type: chapter
 ms.openlocfilehash: da794a64d51d23d6f18594e7e4580146891fe92d
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26522536"
 ---
 <a name="net-4"></a><span data-ttu-id="136eb-103">.NET 4</span><span class="sxs-lookup"><span data-stu-id="136eb-103">.NET 4</span></span>
 ====================

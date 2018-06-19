@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-secure-my-site-using-membership-and-roles
-title: "[如何:]保护我使用成员资格和角色的站点？ | Microsoft Docs"
+title: '[如何:]保护我使用成员资格和角色的站点？ | Microsoft Docs'
 author: microsoft
-description: "了解如何保护使用 ASP.NET 2.0 的新成员资格和角色功能的网站。 用户注册、 密码恢复和 restricti 包括以下主题..."
+description: 了解如何保护使用 ASP.NET 2.0 的新成员资格和角色功能的网站。 用户注册、 密码恢复和 restricti 包括以下主题...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/09/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526096"
 ---
 <a name="how-do-i-secure-my-site-using-membership-and-roles"></a><span data-ttu-id="89b86-105">[如何:]保护我使用成员资格和角色的站点？</span><span class="sxs-lookup"><span data-stu-id="89b86-105">[How Do I:] Secure my Site using Membership and Roles?</span></span>
 ====================

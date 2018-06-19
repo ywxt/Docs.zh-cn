@@ -1,8 +1,8 @@
 ---
 uid: mvc/index
-title: "ASP.NET MVC |Microsoft 文档"
+title: ASP.NET MVC |Microsoft 文档
 author: rick-anderson
-description: "下载 ASP.NET MVC，了解如何构建 web 应用使用模型视图控制器模式。"
+description: 下载 ASP.NET MVC，了解如何构建 web 应用使用模型视图控制器模式。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/24/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc
 msc.type: categoryindex
 ms.openlocfilehash: d7e59b49250b29409836162f1ba2dcabd88c9925
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26497826"
 ---
 <a name="aspnet-mvc"></a><span data-ttu-id="8f57c-103">ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="8f57c-103">ASP.NET MVC</span></span>
 ====================

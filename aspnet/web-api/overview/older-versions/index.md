@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/index
-title: "在 web API 的较旧版本的文档 |Microsoft 文档"
+title: 在 web API 的较旧版本的文档 |Microsoft 文档
 author: rick-anderson
-description: "在 Web api 的较旧版本的文档。"
+description: 在 Web api 的较旧版本的文档。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/23/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/overview/older-versions
 msc.type: chapter
 ms.openlocfilehash: e3cb215e60ba11ec23f4e0c8d03dd08aa39a174f
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508186"
 ---
 <a name="documentation-on-older-versions-of-web-api"></a><span data-ttu-id="3b90f-103">在 web API 的较旧版本的文档</span><span class="sxs-lookup"><span data-stu-id="3b90f-103">Documentation on Older Versions of Web API</span></span>
 ====================

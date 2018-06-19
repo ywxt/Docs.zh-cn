@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/admin/index
-title: "ASP.NET 3.5-安全管理 |Microsoft 文档"
+title: ASP.NET 3.5-安全管理 |Microsoft 文档
 author: rick-anderson
-description: "本系列教程演示了一种方法创建一个允许你管理用户和角色的管理页面。"
+description: 本系列教程演示了一种方法创建一个允许你管理用户和角色的管理页面。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-security/admin
 msc.type: chapter
 ms.openlocfilehash: 8a280ab8b6a7ee6d4c0a43592512976b89d1b723
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26519036"
 ---
 <a name="aspnet-35---security-administration"></a><span data-ttu-id="a9764-103">ASP.NET 3.5-安全管理</span><span class="sxs-lookup"><span data-stu-id="a9764-103">ASP.NET 3.5 - Security Administration</span></span>
 ====================

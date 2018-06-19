@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/index
-title: "ASP.NET 4-企业部署系列 4 高级主题 |Microsoft 文档"
+title: ASP.NET 4-企业部署系列 4 高级主题 |Microsoft 文档
 author: rick-anderson
-description: "本教程将演示如何执行是必需的还是大量的企业部署方案中所需的各种任务。"
+description: 本教程将演示如何执行是必需的还是大量的企业部署方案中所需的各种任务。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/16/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment
 msc.type: chapter
 ms.openlocfilehash: 42e80df6040dec0194bc1a5ba6ccc79c09c65ea6
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26515146"
 ---
 <a name="aspnet-4---enterprise-deployment-series-4-advanced-topics"></a><span data-ttu-id="b7a6e-103">ASP.NET 4-企业部署系列 4 高级主题</span><span class="sxs-lookup"><span data-stu-id="b7a6e-103">ASP.NET 4 - Enterprise Deployment Series 4 Advanced Topics</span></span>
 ====================

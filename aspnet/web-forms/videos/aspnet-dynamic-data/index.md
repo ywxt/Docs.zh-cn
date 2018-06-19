@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-dynamic-data/index
-title: "ASP.NET 动态数据 |Microsoft 文档"
+title: ASP.NET 动态数据 |Microsoft 文档
 author: rick-anderson
-description: "如何使用 ASP.NET 动态数据来创建自动了解如何执行数据访问的基架应用程序。"
+description: 如何使用 ASP.NET 动态数据来创建自动了解如何执行数据访问的基架应用程序。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/aspnet-dynamic-data
 msc.type: chapter
 ms.openlocfilehash: a2fc937d18572ac2e1bc41cd28b98569a2490a61
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26522506"
 ---
 <a name="aspnet-dynamic-data"></a><span data-ttu-id="8e53f-103">ASP.NET 动态数据</span><span class="sxs-lookup"><span data-stu-id="8e53f-103">ASP.NET Dynamic Data</span></span>
 ====================

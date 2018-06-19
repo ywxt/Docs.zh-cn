@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/debugging
-title: "调试 |Microsoft 文档"
+title: 调试 |Microsoft 文档
 author: JoeStagner
-description: "描述： Visual Web Developer 为新手设计和相似专家开发人员提供了丰富的调试体验。 在本视频中 Joe 将浏览你通过 VW..."
+description: 描述： Visual Web Developer 为新手设计和相似专家开发人员提供了丰富的调试体验。 在本视频中 Joe 将浏览你通过 VW...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/30/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528146"
 ---
 <a name="debugging"></a><span data-ttu-id="e214a-104">调试</span><span class="sxs-lookup"><span data-stu-id="e214a-104">Debugging</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-set-up-the-sql-membership-provider
-title: "[如何:]设置 SQL 成员资格提供程序 |Microsoft 文档"
+title: '[如何:]设置 SQL 成员资格提供程序 |Microsoft 文档'
 author: rick-anderson
-description: "他向我们展示如何将 SQL 成员资格提供程序设置为将窗体身份验证添加到你的 ASP.NET 2.0 Web 站点将加入 Patrick Hynds。 有几个提示..."
+description: 他向我们展示如何将 SQL 成员资格提供程序设置为将窗体身份验证添加到你的 ASP.NET 2.0 Web 站点将加入 Patrick Hynds。 有几个提示...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526086"
 ---
 <a name="how-do-i-set-up-the-sql-membership-provider"></a><span data-ttu-id="cd04c-104">[如何:]设置 SQL 成员资格提供程序</span><span class="sxs-lookup"><span data-stu-id="cd04c-104">[How Do I:] Set Up the SQL Membership Provider</span></span>
 ====================

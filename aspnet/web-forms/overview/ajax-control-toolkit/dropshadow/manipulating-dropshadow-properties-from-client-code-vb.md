@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870903"
 ---
 <a name="manipulating-dropshadow-properties-from-client-code-vb"></a><span data-ttu-id="8a7bc-104">操作从客户端代码 (VB) DropShadow 属性</span><span class="sxs-lookup"><span data-stu-id="8a7bc-104">Manipulating DropShadow Properties from Client Code (VB)</span></span>
 ====================

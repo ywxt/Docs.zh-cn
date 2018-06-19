@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/index
-title: "高级主题用于 ASP.NET Web API |Microsoft 文档"
+title: 高级主题用于 ASP.NET Web API |Microsoft 文档
 author: rick-anderson
-description: "更高级的 ASP.NET Web API 开发的主题，之后你已了解的基础知识。"
+description: 更高级的 ASP.NET Web API 开发的主题，之后你已了解的基础知识。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/23/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/overview/advanced
 msc.type: chapter
 ms.openlocfilehash: dca812e1c88d1aa2692365711d71813199be9ca2
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506746"
 ---
 <a name="advanced-topics-for-aspnet-web-api"></a><span data-ttu-id="082a0-103">用于 ASP.NET Web API 高级主题</span><span class="sxs-lookup"><span data-stu-id="082a0-103">Advanced Topics for ASP.NET Web API</span></span>
 ====================

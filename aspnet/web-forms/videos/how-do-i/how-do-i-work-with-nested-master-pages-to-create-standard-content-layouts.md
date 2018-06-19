@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts
-title: "[如何:]使用嵌套的主页面，以创建标准的内容布局 |Microsoft 文档"
+title: '[如何:]使用嵌套的主页面，以创建标准的内容布局 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 中将显示如何使用嵌套的主控页来创建表示 w 不同标准的内容布局的单个母版页..."
+description: 在此视频 Chris Pels 中将显示如何使用嵌套的主控页来创建表示 w 不同标准的内容布局的单个母版页...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525956"
 ---
 <a name="how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts"></a><span data-ttu-id="2ed17-103">[如何:]使用嵌套的主页面，以创建标准的内容布局</span><span class="sxs-lookup"><span data-stu-id="2ed17-103">[How Do I:] Work with Nested Master Pages to Create Standard Content Layouts</span></span>
 ====================

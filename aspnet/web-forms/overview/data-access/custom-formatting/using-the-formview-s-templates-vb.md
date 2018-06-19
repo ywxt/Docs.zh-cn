@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875144"
 ---
 <a name="using-the-formviews-templates-vb"></a><span data-ttu-id="c7c88-105">使用 FormView 的模板 (VB)</span><span class="sxs-lookup"><span data-stu-id="c7c88-105">Using the FormView's Templates (VB)</span></span>
 ====================

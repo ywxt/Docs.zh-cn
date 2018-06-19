@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-configure-an-aspnet-web-site-for-a-net-framework-version
-title: "[如何:].NET Framework 版本配置 ASP.NET 网站 |Microsoft 文档"
+title: '[如何:].NET Framework 版本配置 ASP.NET 网站 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 中将显示如何配置 ASP.NET 网站使用 ASP.NET/.NET Framework 特定版本。 首先，请参阅如何识别哪些 v..."
+description: 在此视频 Chris Pels 中将显示如何配置 ASP.NET 网站使用 ASP.NET/.NET Framework 特定版本。 首先，请参阅如何识别哪些 v...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/20/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525016"
 ---
 <a name="how-do-i-configure-an-aspnet-web-site-for-a-net-framework-version"></a><span data-ttu-id="343d0-104">[如何:].NET Framework 版本配置 ASP.NET 网站</span><span class="sxs-lookup"><span data-stu-id="343d0-104">[How Do I:] Configure an ASP.NET Web Site for a .NET Framework Version</span></span>
 ====================

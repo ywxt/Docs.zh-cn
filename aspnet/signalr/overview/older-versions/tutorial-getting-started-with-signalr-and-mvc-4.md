@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873714"
 ---
 <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a><span data-ttu-id="af8c5-103">教程： 开始使用 SignalR 1.x 和 MVC 4</span><span class="sxs-lookup"><span data-stu-id="af8c5-103">Tutorial: Getting Started with SignalR 1.x and MVC 4</span></span>
 ====================

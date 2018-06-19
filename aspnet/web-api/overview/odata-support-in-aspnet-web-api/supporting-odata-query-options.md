@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508016"
 ---
 <a name="supporting-odata-query-options-in-aspnet-web-api-2"></a><span data-ttu-id="24c0a-102">ASP.NET Web API 2 中支持的 OData 查询选项</span><span class="sxs-lookup"><span data-stu-id="24c0a-102">Supporting OData Query Options in ASP.NET Web API 2</span></span>
 ====================

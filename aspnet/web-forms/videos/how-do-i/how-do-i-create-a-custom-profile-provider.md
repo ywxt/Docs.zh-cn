@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-custom-profile-provider
-title: "[如何:]创建自定义配置文件提供程序？ | Microsoft Docs"
+title: '[如何:]创建自定义配置文件提供程序？ | Microsoft Docs'
 author: rick-anderson
-description: "在本视频中我们了解如何创建自定义配置文件提供程序来存储和检索与 SQL Server 表中的用户配置文件关联的数据分开 t..."
+description: 在本视频中我们了解如何创建自定义配置文件提供程序来存储和检索与 SQL Server 表中的用户配置文件关联的数据分开 t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526406"
 ---
 <a name="how-do-i-create-a-custom-profile-provider"></a><span data-ttu-id="7c7a1-104">[如何:]创建自定义配置文件提供程序？</span><span class="sxs-lookup"><span data-stu-id="7c7a1-104">[How Do I:] Create a Custom Profile Provider?</span></span>
 ====================

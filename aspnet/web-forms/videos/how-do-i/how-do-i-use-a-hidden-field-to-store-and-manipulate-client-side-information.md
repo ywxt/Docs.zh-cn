@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information
-title: "[如何:]使用隐藏的字段来存储和处理客户端信息 |Microsoft 文档"
+title: '[如何:]使用隐藏的字段来存储和处理客户端信息 |Microsoft 文档'
 author: rick-anderson
-description: "在本视频 Chris Pels 将演示如何使用隐藏的字段作为一种方法与简单状态管理将 ASP.NET 页上以及通信客户端..."
+description: 在本视频 Chris Pels 将演示如何使用隐藏的字段作为一种方法与简单状态管理将 ASP.NET 页上以及通信客户端...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/24/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525076"
 ---
 <a name="how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information"></a><span data-ttu-id="937a8-103">[如何:]使用隐藏的字段来存储和处理客户端信息</span><span class="sxs-lookup"><span data-stu-id="937a8-103">[How Do I:] Use a Hidden Field to Store and Manipulate Client-Side Information</span></span>
 ====================

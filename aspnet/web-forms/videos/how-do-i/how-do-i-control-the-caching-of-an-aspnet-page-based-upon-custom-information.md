@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-control-the-caching-of-an-aspnet-page-based-upon-custom-information
-title: "[如何:]控件的 ASP.NET 页缓存基于自定义信息 |Microsoft 文档"
+title: '[如何:]控件的 ASP.NET 页缓存基于自定义信息 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 演示如何控制缓存 ASP.NET 页基于自定义信息的条件。 创建一个示例页，然后 o。..."
+description: 在此视频 Chris Pels 演示如何控制缓存 ASP.NET 页基于自定义信息的条件。 创建一个示例页，然后 o。...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/19/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528126"
 ---
 <a name="how-do-i-control-the-caching-of-an-aspnet-page-based-upon-custom-information"></a><span data-ttu-id="77753-104">[如何:]控件的 ASP.NET 页缓存基于自定义信息</span><span class="sxs-lookup"><span data-stu-id="77753-104">[How Do I:] Control the Caching of an ASP.NET Page Based Upon Custom Information</span></span>
 ====================

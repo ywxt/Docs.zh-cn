@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/deployment/index
-title: "部署 |Microsoft 文档"
+title: 部署 |Microsoft 文档
 author: rick-anderson
-description: "如何将 ASP.NET MVC 项目部署到服务器。"
+description: 如何将 ASP.NET MVC 项目部署到服务器。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/18/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/deployment
 msc.type: chapter
 ms.openlocfilehash: 8efbf5ee2e24ea6e302177a64e751b00809250fb
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26497876"
 ---
 # <a name="aspnet-mvc-deployment"></a><span data-ttu-id="74215-103">ASP.NET MVC 部署</span><span class="sxs-lookup"><span data-stu-id="74215-103">ASP.NET MVC Deployment</span></span>
 

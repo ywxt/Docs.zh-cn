@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/index
-title: "较旧版本的 MVC 1 和 2 |Microsoft 文档"
+title: 较旧版本的 MVC 1 和 2 |Microsoft 文档
 author: rick-anderson
-description: "学习如何编程 MVC 1 和 2 的资源。"
+description: 学习如何编程 MVC 1 和 2 的资源。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/10/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions-1
 msc.type: chapter
 ms.openlocfilehash: 8cd1868c8729c79dd9dda2067063e427cf3e0b4e
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26500086"
 ---
 <a name="older-versions---mvc-1-and-2"></a><span data-ttu-id="5a7b2-103">较旧版本的 MVC 1 和 2</span><span class="sxs-lookup"><span data-stu-id="5a7b2-103">Older Versions - MVC 1 and 2</span></span>
 ====================

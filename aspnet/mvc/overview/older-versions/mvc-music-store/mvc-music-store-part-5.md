@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874907"
 ---
 <a name="part-5-edit-forms-and-templating"></a><span data-ttu-id="e43b6-104">第 5 部分： 编辑窗体和模板化</span><span class="sxs-lookup"><span data-stu-id="e43b6-104">Part 5: Edit Forms and Templating</span></span>
 ====================

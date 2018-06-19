@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872879"
 ---
 <a name="displaying-a-table-of-database-data-c"></a><span data-ttu-id="8c5f8-104">显示表的数据库数据 (C#)</span><span class="sxs-lookup"><span data-stu-id="8c5f8-104">Displaying a Table of Database Data (C#)</span></span>
 ====================
@@ -109,7 +110,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="8c5f8-172">使用 MvcApplication1.Models;</span><span class="sxs-lookup"><span data-stu-id="8c5f8-172">using MvcApplication1.Models;</span></span>
 
-<span data-ttu-id="8c5f8-173">表达式*实体。MovieSet.ToList()*返回所有电影的集，从电影数据库表。</span><span class="sxs-lookup"><span data-stu-id="8c5f8-173">The expression *entities.MovieSet.ToList()* returns the set of all movies from the Movies database table.</span></span>
+<span data-ttu-id="8c5f8-173">表达式*实体。MovieSet.ToList()* 返回所有电影的集，从电影数据库表。</span><span class="sxs-lookup"><span data-stu-id="8c5f8-173">The expression *entities.MovieSet.ToList()* returns the set of all movies from the Movies database table.</span></span>
 
 ## <a name="create-the-view"></a><span data-ttu-id="8c5f8-174">创建视图</span><span class="sxs-lookup"><span data-stu-id="8c5f8-174">Create the View</span></span>
 

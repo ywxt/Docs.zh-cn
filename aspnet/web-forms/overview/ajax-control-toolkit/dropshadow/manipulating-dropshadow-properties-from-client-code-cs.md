@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870331"
 ---
 <a name="manipulating-dropshadow-properties-from-client-code-c"></a><span data-ttu-id="5588a-103">操作从客户端代码 (C#) 的 DropShadow 属性</span><span class="sxs-lookup"><span data-stu-id="5588a-103">Manipulating DropShadow Properties from Client Code (C#)</span></span>
 ====================

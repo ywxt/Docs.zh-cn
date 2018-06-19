@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/database-driven-site-maps/index
-title: "数据库驱动站点映射 |Microsoft 文档"
+title: 数据库驱动站点映射 |Microsoft 文档
 author: rick-anderson
-description: "本教程介绍如何生成动态基于数据库中的信息站点映射。"
+description: 本教程介绍如何生成动态基于数据库中的信息站点映射。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/database-driven-site-maps
 msc.type: chapter
 ms.openlocfilehash: a237409281885cbec652de091c6e1d690b24061c
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26513026"
 ---
 <a name="database-driven-site-maps"></a><span data-ttu-id="bd7af-103">数据库驱动站点图</span><span class="sxs-lookup"><span data-stu-id="bd7af-103">Database-Driven Site Maps</span></span>
 ====================

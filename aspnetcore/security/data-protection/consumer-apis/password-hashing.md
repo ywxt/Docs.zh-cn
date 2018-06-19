@@ -14,6 +14,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32740096"
 ---
 # <a name="hash-passwords-in-aspnet-core"></a><span data-ttu-id="b2e7e-103">在 ASP.NET 核心中的哈希密码</span><span class="sxs-lookup"><span data-stu-id="b2e7e-103">Hash passwords in ASP.NET Core</span></span>
 

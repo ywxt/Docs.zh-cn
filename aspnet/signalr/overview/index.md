@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/index
-title: "SignalR 指南 |Microsoft 文档"
+title: SignalR 指南 |Microsoft 文档
 author: rick-anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/24/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /signalr/overview
 msc.type: book
 ms.openlocfilehash: 2b82918afd1513975b11265a13f3dac4bb4fbc6f
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26505556"
 ---
 <a name="signalr-guidance"></a><span data-ttu-id="e1cf4-102">SignalR 指南</span><span class="sxs-lookup"><span data-stu-id="e1cf4-102">SignalR Guidance</span></span>
 ====================

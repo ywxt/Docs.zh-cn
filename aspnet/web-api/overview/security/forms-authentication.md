@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/forms-authentication
-title: "在 ASP.NET Web API 中窗体身份验证 |Microsoft 文档"
+title: 在 ASP.NET Web API 中窗体身份验证 |Microsoft 文档
 author: MikeWasson
-description: "描述如何在 ASP.NET Web API 中使用 Forms 身份验证。"
+description: 描述如何在 ASP.NET Web API 中使用 Forms 身份验证。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/12/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508306"
 ---
 <a name="forms-authentication-in-aspnet-web-api"></a><span data-ttu-id="a1ab1-103">ASP.NET Web API 中的窗体身份验证</span><span class="sxs-lookup"><span data-stu-id="a1ab1-103">Forms Authentication in ASP.NET Web API</span></span>
 ====================

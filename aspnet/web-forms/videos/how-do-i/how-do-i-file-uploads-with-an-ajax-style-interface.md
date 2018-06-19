@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-file-uploads-with-an-ajax-style-interface
-title: "[如何:] 文件使用的 AJAX 样式的界面上载 |Microsoft 文档"
+title: '[如何:] 文件使用的 AJAX 样式的界面上载 |Microsoft 文档'
 author: JoeStagner
-description: "在此视频我将演示，使用 ASP.NET 时，将从客户端计算机到你的服务器的文件上载 AJAX 样式。 我说 AJAX 样式，因为没有..."
+description: 在此视频我将演示，使用 ASP.NET 时，将从客户端计算机到你的服务器的文件上载 AJAX 样式。 我说 AJAX 样式，因为没有...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/12/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526206"
 ---
 <a name="how-do-i--file-uploads-with-an-ajax-style-interface"></a><span data-ttu-id="c1fad-104">[如何:] 文件上载 AJAX 样式界面</span><span class="sxs-lookup"><span data-stu-id="c1fad-104">[How Do I:]  File Uploads with an AJAX Style Interface</span></span>
 ====================

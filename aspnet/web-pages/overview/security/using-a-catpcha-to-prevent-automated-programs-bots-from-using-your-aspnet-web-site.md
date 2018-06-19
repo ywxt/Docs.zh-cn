@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/security/using-a-catpcha-to-prevent-automated-programs-bots-from-using-your-aspnet-web-site
-title: "使用验证码以使用 ASP.NET Web Razor 防止机器人） 的站点 |Microsoft 文档"
+title: 使用验证码以使用 ASP.NET Web Razor 防止机器人） 的站点 |Microsoft 文档
 author: microsoft
-description: "此文章介绍了如何使用 ReCaptcha （一种安全措施） 来防止自动的程序 （机器人） 执行任务中的 ASP.NET Web Pages (Razor) 我们..."
+description: 此文章介绍了如何使用 ReCaptcha （一种安全措施） 来防止自动的程序 （机器人） 执行任务中的 ASP.NET Web Pages (Razor) 我们...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/21/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529916"
 ---
 <a name="using-a-captcha-to-prevent-bots-from-using-your-aspnet-web-razor-site"></a><span data-ttu-id="7ca11-103">使用验证码以使用 ASP.NET Web Razor 防止机器人） 站点</span><span class="sxs-lookup"><span data-stu-id="7ca11-103">Using a CAPTCHA to Prevent Bots from Using Your ASP.NET Web Razor) Site</span></span>
 ====================

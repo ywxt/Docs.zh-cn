@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/enhancing-the-gridview/index
-title: "增强 GridView |Microsoft 文档"
+title: 增强 GridView |Microsoft 文档
 author: rick-anderson
-description: "这些教程介绍如何将单选按钮的列添加到的 GridView 控件提供一种直观的方式来选择单个行。"
+description: 这些教程介绍如何将单选按钮的列添加到的 GridView 控件提供一种直观的方式来选择单个行。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview
 msc.type: chapter
 ms.openlocfilehash: 04dbfe7fcc66e4e946b1807c3480d7c796af11df
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26514076"
 ---
 <a name="enhancing-the-gridview"></a><span data-ttu-id="c07ec-103">增强 GridView</span><span class="sxs-lookup"><span data-stu-id="c07ec-103">Enhancing the GridView</span></span>
 ====================

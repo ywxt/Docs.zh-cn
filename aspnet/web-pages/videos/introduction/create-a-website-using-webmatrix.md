@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/create-a-website-using-webmatrix
-title: "使用 WebMatrix 创建网站 |Microsoft 文档"
+title: 使用 WebMatrix 创建网站 |Microsoft 文档
 author: rick-anderson
-description: "第 2 部分介绍了如何创建使用 WebMatrix 第一个 Web 页。"
+description: 第 2 部分介绍了如何创建使用 WebMatrix 第一个 Web 页。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529846"
 ---
 <a name="create-a-website-using-webmatrix"></a><span data-ttu-id="581d8-103">使用 WebMatrix 创建网站</span><span class="sxs-lookup"><span data-stu-id="581d8-103">Create a Website Using WebMatrix</span></span>
 ====================

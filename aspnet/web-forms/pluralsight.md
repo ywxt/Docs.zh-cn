@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520136"
 ---
 <a name="web-forms-video-training-from-pluralsight"></a><span data-ttu-id="fe176-103">Pluralsight 提供的 Web 窗体视频培训</span><span class="sxs-lookup"><span data-stu-id="fe176-103">Web Forms Video Training from Pluralsight</span></span>
 ====================

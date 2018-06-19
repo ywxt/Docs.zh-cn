@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-synchronize-data-in-secondary-user-controls-based-upon-user-selections
-title: "[如何操作]: 将基于用户选择的辅助用户控件中的数据同步 |Microsoft 文档"
+title: '[如何操作]: 将基于用户选择的辅助用户控件中的数据同步 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 演示如何创建两个 DropDownList 控件其中一项在列表中选择第一个填充第二个列表中的项。 Firs..."
+description: 在此视频 Chris Pels 演示如何创建两个 DropDownList 控件其中一项在列表中选择第一个填充第二个列表中的项。 Firs...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/06/2009
@@ -17,8 +17,10 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526436"
 ---
-<a name="how-do-i-synchronize-data-in-secondary-user-controls-based-upon-user-selections"></a><span data-ttu-id="fc873-104">[如何操作]: 将基于用户选择的辅助用户控件中的数据同步</span><span class="sxs-lookup"><span data-stu-id="fc873-104">[How Do I]: Synchronize Data in Secondary User Control(s) Based Upon User Selections</span></span>
+<a name="how-do-i-synchronize-data-in-secondary-user-controls-based-upon-user-selections"></a>[如何操作]: 将基于用户选择的辅助用户控件中的数据同步
+[How Do I]: Synchronize Data in Secondary User Control(s) Based Upon User Selections
 ====================
 <span data-ttu-id="fc873-105">通过[Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="fc873-105">by [Chris Pels](https://twitter.com/chrispels)</span></span>
 

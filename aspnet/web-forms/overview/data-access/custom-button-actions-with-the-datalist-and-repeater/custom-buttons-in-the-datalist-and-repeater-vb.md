@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876080"
 ---
 <a name="custom-buttons-in-the-datalist-and-repeater-vb"></a><span data-ttu-id="1b2b3-103">DataList 和转发器 (VB) 中的自定义按钮</span><span class="sxs-lookup"><span data-stu-id="1b2b3-103">Custom Buttons in the DataList and Repeater (VB)</span></span>
 ====================

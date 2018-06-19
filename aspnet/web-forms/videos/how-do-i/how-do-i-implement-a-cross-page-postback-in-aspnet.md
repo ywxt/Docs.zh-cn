@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-implement-a-cross-page-postback-in-aspnet
-title: "[如何:]在 ASP.NET 中实现跨页回发 |Microsoft 文档"
+title: '[如何:]在 ASP.NET 中实现跨页回发 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 演示如何在 ASP.NET 中，其中源页上的控件引发的回发事件为另一个目标创建跨页回发..."
+description: 在此视频 Chris Pels 演示如何在 ASP.NET 中，其中源页上的控件引发的回发事件为另一个目标创建跨页回发...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/10/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526306"
 ---
 <a name="how-do-i-implement-a-cross-page-postback-in-aspnet"></a><span data-ttu-id="431a3-103">[如何:]在 ASP.NET 中实现跨页回发</span><span class="sxs-lookup"><span data-stu-id="431a3-103">[How Do I:] Implement a Cross Page PostBack in ASP.NET</span></span>
 ====================

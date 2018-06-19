@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/releases/index
-title: "版本 |Microsoft 文档"
+title: 版本 |Microsoft 文档
 author: rick-anderson
-description: "什么是新的 MVC 版本中新增功能。"
+description: 什么是新的 MVC 版本中新增功能。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/09/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/releases
 msc.type: chapter
 ms.openlocfilehash: 095b8f601fb994e6efc877981bfe92583bd3ee1d
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503326"
 ---
 <a name="releases"></a><span data-ttu-id="8078f-103">发布</span><span class="sxs-lookup"><span data-stu-id="8078f-103">Releases</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/index
-title: "主/详细信息 |Microsoft 文档"
+title: 主/详细信息 |Microsoft 文档
 author: rick-anderson
-description: "这些教程介绍如何在下拉列表和 GridView 控件中的详细信息中显示主记录。"
+description: 这些教程介绍如何在下拉列表和 GridView 控件中的详细信息中显示主记录。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/masterdetail
 msc.type: chapter
 ms.openlocfilehash: d0e8193c008f5457a62cd009873883acc0c5c237
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26514436"
 ---
 <a name="masterdetail"></a><span data-ttu-id="c8038-103">主/详细信息</span><span class="sxs-lookup"><span data-stu-id="c8038-103">Master/Detail</span></span>
 ====================

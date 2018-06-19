@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892668"
 ---
 <a name="creating-a-customized-sorting-user-interface-vb"></a><span data-ttu-id="daf29-104">创建自定义排序的用户界面 (VB)</span><span class="sxs-lookup"><span data-stu-id="daf29-104">Creating a Customized Sorting User Interface (VB)</span></span>
 ====================

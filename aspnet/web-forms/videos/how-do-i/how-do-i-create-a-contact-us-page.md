@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-contact-us-page
-title: "如何创建我们页上的联系人"
+title: 如何创建我们页上的联系人
 author: microsoft
-description: "生成网页来从与向导控件用户处收集信息、 验证该信息，并使用 System.Net.Mail 类发送配置..."
+description: 生成网页来从与向导控件用户处收集信息、 验证该信息，并使用 System.Net.Mail 类发送配置...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/24/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525456"
 ---
 <a name="how-do-i-create-a-contact-us-page"></a><span data-ttu-id="ec8be-103">[如何:]创建"联系我们"页？</span><span class="sxs-lookup"><span data-stu-id="ec8be-103">[How Do I:] Create a "Contact Us" Page?</span></span>
 ====================

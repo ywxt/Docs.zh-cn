@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30072018"
 ---
 # <a name="limit-the-lifetime-of-protected-payloads-in-aspnet-core"></a><span data-ttu-id="4f7f2-103">限制在 ASP.NET Core 的受保护负载的生存期</span><span class="sxs-lookup"><span data-stu-id="4f7f2-103">Limit the lifetime of protected payloads in ASP.NET Core</span></span>
 

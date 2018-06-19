@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-1/conference-presentations/ninja-on-fire-black-belt-tips
-title: "在激发黑带提示的忍者 |Microsoft 文档"
+title: 在激发黑带提示的忍者 |Microsoft 文档
 author: Haacked
-description: "请参阅的多个提示和技巧如何充分利用 ASP.NET MVC framework 的演练。"
+description: 请参阅的多个提示和技巧如何充分利用 ASP.NET MVC framework 的演练。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503896"
 ---
 <a name="ninja-on-fire-black-belt-tips"></a><span data-ttu-id="27e6c-103">在激发黑带提示的忍者</span><span class="sxs-lookup"><span data-stu-id="27e6c-103">Ninja on Fire Black Belt Tips</span></span>
 ====================

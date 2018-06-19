@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871826"
 ---
 <a name="search"></a><span data-ttu-id="d7c14-102">搜索</span><span class="sxs-lookup"><span data-stu-id="d7c14-102">Search</span></span>
 ====================
@@ -51,7 +52,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="d7c14-120">现在你可以更新`Index`将向用户显示该窗体的视图。</span><span class="sxs-lookup"><span data-stu-id="d7c14-120">Now you can update the `Index` view that will display the form to the user.</span></span>
 
-<span data-ttu-id="d7c14-121">运行应用程序并导航到*/电影/索引*。</span><span class="sxs-lookup"><span data-stu-id="d7c14-121">Run the application and navigate to */Movies/Index*.</span></span> <span data-ttu-id="d7c14-122">将查询字符串（如 `?searchString=ghost`）追加到 URL。</span><span class="sxs-lookup"><span data-stu-id="d7c14-122">Append a query string such as `?searchString=ghost` to the URL.</span></span> <span data-ttu-id="d7c14-123">筛选的电影将显示出来。</span><span class="sxs-lookup"><span data-stu-id="d7c14-123">The filtered movies are displayed.</span></span>
+<span data-ttu-id="d7c14-121">运行应用程序并导航到 */电影/索引*。</span><span class="sxs-lookup"><span data-stu-id="d7c14-121">Run the application and navigate to */Movies/Index*.</span></span> <span data-ttu-id="d7c14-122">将查询字符串（如 `?searchString=ghost`）追加到 URL。</span><span class="sxs-lookup"><span data-stu-id="d7c14-122">Append a query string such as `?searchString=ghost` to the URL.</span></span> <span data-ttu-id="d7c14-123">筛选的电影将显示出来。</span><span class="sxs-lookup"><span data-stu-id="d7c14-123">The filtered movies are displayed.</span></span>
 
 ![SearchQryStr](adding-search/_static/image1.png)
 
@@ -151,7 +152,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-cshtml[Main](adding-search/samples/sample17.cshtml)]
 
-<span data-ttu-id="d7c14-179">运行应用程序，并浏览到*/电影/索引*。</span><span class="sxs-lookup"><span data-stu-id="d7c14-179">Run the application and browse to */Movies/Index*.</span></span> <span data-ttu-id="d7c14-180">按风格、 电影名称，以及这两个条件，请尝试搜索。</span><span class="sxs-lookup"><span data-stu-id="d7c14-180">Try a search by genre, by movie name, and by both criteria.</span></span>
+<span data-ttu-id="d7c14-179">运行应用程序，并浏览到 */电影/索引*。</span><span class="sxs-lookup"><span data-stu-id="d7c14-179">Run the application and browse to */Movies/Index*.</span></span> <span data-ttu-id="d7c14-180">按风格、 电影名称，以及这两个条件，请尝试搜索。</span><span class="sxs-lookup"><span data-stu-id="d7c14-180">Try a search by genre, by movie name, and by both criteria.</span></span>
 
 ![](adding-search/_static/image8.png)
 

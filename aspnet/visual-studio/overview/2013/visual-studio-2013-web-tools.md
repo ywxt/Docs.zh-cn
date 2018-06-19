@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "26507126"
 ---
 <a name="hands-on-lab-visual-studio-2013-web-tools"></a><span data-ttu-id="77064-104">动手实验： Visual Studio 2013 Web 工具</span><span class="sxs-lookup"><span data-stu-id="77064-104">Hands On Lab: Visual Studio 2013 Web Tools</span></span>
 ====================
@@ -106,7 +107,7 @@ ms.lasthandoff: 04/10/2018
 <span data-ttu-id="77064-156">在此任务中，你将配置 web 应用程序以在多个浏览器在运行一次，这是适用于跨浏览器测试。</span><span class="sxs-lookup"><span data-stu-id="77064-156">In this task, you will configure your web application to run in multiple browsers at once, which is useful for cross-browser testing.</span></span>
 
 1. <span data-ttu-id="77064-157">打开**Microsoft Visual Studio**。</span><span class="sxs-lookup"><span data-stu-id="77064-157">Open **Microsoft Visual Studio**.</span></span>
-2. <span data-ttu-id="77064-158">在**文件**菜单上，选择**打开 |项目/解决方案...**并浏览到**Ex1 WorkingwithBrowserLinkandWebEssentials\Begin**中**源**实验室 (C:\WebCampsTK\HOL\VSWebTooling\Source) 的文件夹。</span><span class="sxs-lookup"><span data-stu-id="77064-158">In the **File** menu, select **Open | Project/Solution...** and browse to **Ex1-WorkingwithBrowserLinkandWebEssentials\Begin** in the **Source** folder of the lab (C:\WebCampsTK\HOL\VSWebTooling\Source).</span></span> <span data-ttu-id="77064-159">选择**Begin.sln**单击**打开**。</span><span class="sxs-lookup"><span data-stu-id="77064-159">Select **Begin.sln** and click **Open**.</span></span>
+2. <span data-ttu-id="77064-158">在**文件**菜单上，选择**打开 |项目/解决方案...** 并浏览到**Ex1 WorkingwithBrowserLinkandWebEssentials\Begin**中**源**实验室 (C:\WebCampsTK\HOL\VSWebTooling\Source) 的文件夹。</span><span class="sxs-lookup"><span data-stu-id="77064-158">In the **File** menu, select **Open | Project/Solution...** and browse to **Ex1-WorkingwithBrowserLinkandWebEssentials\Begin** in the **Source** folder of the lab (C:\WebCampsTK\HOL\VSWebTooling\Source).</span></span> <span data-ttu-id="77064-159">选择**Begin.sln**单击**打开**。</span><span class="sxs-lookup"><span data-stu-id="77064-159">Select **Begin.sln** and click **Open**.</span></span>
 3. <span data-ttu-id="77064-160">在 Visual Studio 工具栏上，展开浏览器菜单并选择**浏览...**.</span><span class="sxs-lookup"><span data-stu-id="77064-160">In the Visual Studio toolbar, expand the browser menu and select **Browse With...**.</span></span>
 
     <span data-ttu-id="77064-161">![浏览与菜单选项](visual-studio-2013-web-tools/_static/image1.png "与...浏览在浏览器菜单")</span><span class="sxs-lookup"><span data-stu-id="77064-161">![Browse With menu option](visual-studio-2013-web-tools/_static/image1.png "Browse with... in browser menu")</span></span>
@@ -144,7 +145,7 @@ ms.lasthandoff: 04/10/2018
 
 1. <span data-ttu-id="77064-184">切换回 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="77064-184">Switch back to Visual Studio.</span></span>
 2. <span data-ttu-id="77064-185">打开**Index.cshtml**文件位于**视图** | **主页**文件夹。</span><span class="sxs-lookup"><span data-stu-id="77064-185">Open the **Index.cshtml** file located in the **Views** | **Home** folder.</span></span>
-3. <span data-ttu-id="77064-186">替换**&lt;！-TODO： 添加选项此处-&gt;**注释的以下代码，并按**选项卡**。</span><span class="sxs-lookup"><span data-stu-id="77064-186">Replace the **&lt;!-- TODO: add options here--&gt;** comment with the following code, and press **TAB**.</span></span>
+3. <span data-ttu-id="77064-186">替换**&lt;！-TODO： 添加选项此处-&gt;** 注释的以下代码，并按**选项卡**。</span><span class="sxs-lookup"><span data-stu-id="77064-186">Replace the **&lt;!-- TODO: add options here--&gt;** comment with the following code, and press **TAB**.</span></span>
 
     [!code-css[Main](visual-studio-2013-web-tools/samples/sample1.css)]
 4. <span data-ttu-id="77064-187">应为 HTML 展开代码。</span><span class="sxs-lookup"><span data-stu-id="77064-187">The code should be expanded to HTML.</span></span>
@@ -222,12 +223,12 @@ ms.lasthandoff: 04/10/2018
     <span data-ttu-id="77064-234">![在 Visual Studio HTML 编辑器中选择 HTML 元素](visual-studio-2013-web-tools/_static/image15.png "在 Visual Studio HTML 编辑器中选择 HTML 元素")</span><span class="sxs-lookup"><span data-stu-id="77064-234">![HTML element selected in the Visual Studio HTML editor](visual-studio-2013-web-tools/_static/image15.png "HTML element selected in the Visual Studio HTML editor")</span></span>
 
     <span data-ttu-id="77064-235">*在 Visual Studio HTML 编辑器中选择 HTML 元素*</span><span class="sxs-lookup"><span data-stu-id="77064-235">*HTML element selected in the Visual Studio HTML editor*</span></span>
-4. <span data-ttu-id="77064-236">现在，你将更新**前面**CSS 类使用，以便更改所选元素的样式。</span><span class="sxs-lookup"><span data-stu-id="77064-236">You will now update the **front** CSS class in order to change the styling of the selected element.</span></span> <span data-ttu-id="77064-237">为此，请按**CTRL** + **，**以打开**导航到**搜索框。</span><span class="sxs-lookup"><span data-stu-id="77064-237">To do so, press **CTRL** + **,** to open the **Navigate To** search box.</span></span> <span data-ttu-id="77064-238">类型**site.css**按**ENTER**打开文件。</span><span class="sxs-lookup"><span data-stu-id="77064-238">Type **site.css** and press **ENTER** to open the file.</span></span>
+4. <span data-ttu-id="77064-236">现在，你将更新**前面**CSS 类使用，以便更改所选元素的样式。</span><span class="sxs-lookup"><span data-stu-id="77064-236">You will now update the **front** CSS class in order to change the styling of the selected element.</span></span> <span data-ttu-id="77064-237">为此，请按**CTRL** + **，** 以打开**导航到**搜索框。</span><span class="sxs-lookup"><span data-stu-id="77064-237">To do so, press **CTRL** + **,** to open the **Navigate To** search box.</span></span> <span data-ttu-id="77064-238">类型**site.css**按**ENTER**打开文件。</span><span class="sxs-lookup"><span data-stu-id="77064-238">Type **site.css** and press **ENTER** to open the file.</span></span>
 
     <span data-ttu-id="77064-239">![打开文件 Site.css](visual-studio-2013-web-tools/_static/image16.png "打开文件 Site.css")</span><span class="sxs-lookup"><span data-stu-id="77064-239">![Opening file Site.css](visual-studio-2013-web-tools/_static/image16.png "Opening file Site.css")</span></span>
 
     <span data-ttu-id="77064-240">*打开文件 Site.css*</span><span class="sxs-lookup"><span data-stu-id="77064-240">*Opening file Site.css*</span></span>
-5. <span data-ttu-id="77064-241">按**CTRL** + **F**和类型**.flip 容器.front**若要查找的 CSS 选择器。</span><span class="sxs-lookup"><span data-stu-id="77064-241">Press **CTRL** + **F** and type **.flip-containter .front** to find the CSS selector.</span></span>
+5. <span data-ttu-id="77064-241">按**CTRL** + **F**和类型 **.flip 容器.front**若要查找的 CSS 选择器。</span><span class="sxs-lookup"><span data-stu-id="77064-241">Press **CTRL** + **F** and type **.flip-containter .front** to find the CSS selector.</span></span>
 6. <span data-ttu-id="77064-242">单击要打开颜色选择器的类的边框属性中的浅蓝色方块。</span><span class="sxs-lookup"><span data-stu-id="77064-242">Click the light blue square in the border property of the class to open the Color Picker.</span></span>
 
     <span data-ttu-id="77064-243">![打开颜色选取器](visual-studio-2013-web-tools/_static/image17.png "打开颜色选取器")</span><span class="sxs-lookup"><span data-stu-id="77064-243">![Opening the Color Picker](visual-studio-2013-web-tools/_static/image17.png "Opening the Color Picker")</span></span>
@@ -250,13 +251,13 @@ ms.lasthandoff: 04/10/2018
 
     <span data-ttu-id="77064-254">*Google Chrome 的更新的边框颜色*</span><span class="sxs-lookup"><span data-stu-id="77064-254">*Google Chrome - Border color updated*</span></span>
 11. <span data-ttu-id="77064-255">切换回 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="77064-255">Switch back to Visual Studio.</span></span>
-12. <span data-ttu-id="77064-256">转到末尾**Site.css**文件，然后按**CTRL** + **F**查找**.btn**选择器。</span><span class="sxs-lookup"><span data-stu-id="77064-256">Go to the end of the **Site.css** file and press **CTRL** + **F** to locate the **.btn** selector.</span></span>
+12. <span data-ttu-id="77064-256">转到末尾**Site.css**文件，然后按**CTRL** + **F**查找 **.btn**选择器。</span><span class="sxs-lookup"><span data-stu-id="77064-256">Go to the end of the **Site.css** file and press **CTRL** + **F** to locate the **.btn** selector.</span></span>
 13. <span data-ttu-id="77064-257">请注意， **-webkit 边框 radius**属性下划线为绿色。</span><span class="sxs-lookup"><span data-stu-id="77064-257">Notice that the **-webkit-border-radius** property is underlined in green.</span></span>
 
     <span data-ttu-id="77064-258">![为按钮选择器-webkit 边框 radius 属性](visual-studio-2013-web-tools/_static/image21.png "按钮选择器-webkit 边框 radius 属性")</span><span class="sxs-lookup"><span data-stu-id="77064-258">![-webkit-border-radius property of the btn selector](visual-studio-2013-web-tools/_static/image21.png "-webkit-border-radius property of the btn selector")</span></span>
 
     <span data-ttu-id="77064-259">*-webkit 边框 radius 属性的按钮选择器*</span><span class="sxs-lookup"><span data-stu-id="77064-259">*-webkit-border-radius property of the btn selector*</span></span>
-14. <span data-ttu-id="77064-260">在将光标放置**-webkit 边框 radius**属性。</span><span class="sxs-lookup"><span data-stu-id="77064-260">Place the caret in the **-webkit-border-radius** property.</span></span> <span data-ttu-id="77064-261">在属性的第一个单词的第一个字母下应显示一条蓝线。</span><span class="sxs-lookup"><span data-stu-id="77064-261">A blue line should appear under the first letter of the first word of the property.</span></span> <span data-ttu-id="77064-262">这是**智能标记**。</span><span class="sxs-lookup"><span data-stu-id="77064-262">This is the **smart tag**.</span></span>
+14. <span data-ttu-id="77064-260">在将光标放置 **-webkit 边框 radius**属性。</span><span class="sxs-lookup"><span data-stu-id="77064-260">Place the caret in the **-webkit-border-radius** property.</span></span> <span data-ttu-id="77064-261">在属性的第一个单词的第一个字母下应显示一条蓝线。</span><span class="sxs-lookup"><span data-stu-id="77064-261">A blue line should appear under the first letter of the first word of the property.</span></span> <span data-ttu-id="77064-262">这是**智能标记**。</span><span class="sxs-lookup"><span data-stu-id="77064-262">This is the **smart tag**.</span></span>
 15. <span data-ttu-id="77064-263">按**CTRL** + **。**</span><span class="sxs-lookup"><span data-stu-id="77064-263">Press **CTRL** + **.**</span></span> <span data-ttu-id="77064-264">若要打开建议菜单上，然后单击**添加缺少标准属性 (边框 radius)**。</span><span class="sxs-lookup"><span data-stu-id="77064-264">to open the suggestions menu and click **Add missing standard property (border-radius)**.</span></span>
 
     <span data-ttu-id="77064-265">![添加缺少标准属性建议](visual-studio-2013-web-tools/_static/image22.png "添加缺少标准属性建议")</span><span class="sxs-lookup"><span data-stu-id="77064-265">![Add missing standard property suggestion](visual-studio-2013-web-tools/_static/image22.png "Add missing standard property suggestion")</span></span>
@@ -278,7 +279,7 @@ ms.lasthandoff: 04/10/2018
 
     <span data-ttu-id="77064-277">*边框 radius 属性值警告*</span><span class="sxs-lookup"><span data-stu-id="77064-277">*Border-radius property value warning*</span></span>
 19. <span data-ttu-id="77064-278">删除的单元**边框 radius**根据由工具提示的建议的属性值。</span><span class="sxs-lookup"><span data-stu-id="77064-278">Remove the unit of the **border-radius** property value as suggested by the tooltip.</span></span>
-20. <span data-ttu-id="77064-279">作为**边框 radius**是定义如何圆的角是，你可以删除的边框的标准属性**-webkit 边框 radius**属性和值从 CSS 规则。</span><span class="sxs-lookup"><span data-stu-id="77064-279">As **border-radius** is the standard property for defining how rounded border corners are, you can remove the **-webkit-border-radius** property and value from the CSS rule.</span></span>
+20. <span data-ttu-id="77064-279">作为**边框 radius**是定义如何圆的角是，你可以删除的边框的标准属性 **-webkit 边框 radius**属性和值从 CSS 规则。</span><span class="sxs-lookup"><span data-stu-id="77064-279">As **border-radius** is the standard property for defining how rounded border corners are, you can remove the **-webkit-border-radius** property and value from the CSS rule.</span></span>
 21. <span data-ttu-id="77064-280">在将光标放置**自动换行**属性，请注意，下面还显示智能标记。</span><span class="sxs-lookup"><span data-stu-id="77064-280">Place the caret in the **word-wrap** property and notice that the smart tag also appears below.</span></span>
 22. <span data-ttu-id="77064-281">打开菜单，然后单击**添加缺少的供应商细节**。</span><span class="sxs-lookup"><span data-stu-id="77064-281">Open the menu and click **Add missing vendor specifics**.</span></span>
 
@@ -307,7 +308,7 @@ ms.lasthandoff: 04/10/2018
     <span data-ttu-id="77064-295">![编辑的问题](visual-studio-2013-web-tools/_static/image29.png "编辑的问题")</span><span class="sxs-lookup"><span data-stu-id="77064-295">![Question edited](visual-studio-2013-web-tools/_static/image29.png "Question edited")</span></span>
 
     <span data-ttu-id="77064-296">*编辑的问题*</span><span class="sxs-lookup"><span data-stu-id="77064-296">*Question edited*</span></span>
-4. <span data-ttu-id="77064-297">切换回 Visual Studio 和打开**Index.cshtml**，如果尚未打开。</span><span class="sxs-lookup"><span data-stu-id="77064-297">Switch back to Visual Studio and open **Index.cshtml**, if not already opened.</span></span> <span data-ttu-id="77064-298">请注意，则内部文本的**&lt;p&gt;**元素已进行了更新。</span><span class="sxs-lookup"><span data-stu-id="77064-298">Notice that the inner text of the **&lt;p&gt;** element has been updated.</span></span>
+4. <span data-ttu-id="77064-297">切换回 Visual Studio 和打开**Index.cshtml**，如果尚未打开。</span><span class="sxs-lookup"><span data-stu-id="77064-297">Switch back to Visual Studio and open **Index.cshtml**, if not already opened.</span></span> <span data-ttu-id="77064-298">请注意，则内部文本的**&lt;p&gt;** 元素已进行了更新。</span><span class="sxs-lookup"><span data-stu-id="77064-298">Notice that the inner text of the **&lt;p&gt;** element has been updated.</span></span>
 
     <span data-ttu-id="77064-299">![在 HTML 页中的已更新问题](visual-studio-2013-web-tools/_static/image30.png "在 HTML 页中的已更新问题")</span><span class="sxs-lookup"><span data-stu-id="77064-299">![Updated question in the HTML page](visual-studio-2013-web-tools/_static/image30.png "Updated question in the HTML page")</span></span>
 
@@ -323,7 +324,7 @@ ms.lasthandoff: 04/10/2018
     <span data-ttu-id="77064-306">![错误列表视图中菜单](visual-studio-2013-web-tools/_static/image31.png "视图菜单中的错误列表")</span><span class="sxs-lookup"><span data-stu-id="77064-306">![Error List in View menu](visual-studio-2013-web-tools/_static/image31.png "Error List in View menu")</span></span>
 
     <span data-ttu-id="77064-307">*错误列表视图中菜单*</span><span class="sxs-lookup"><span data-stu-id="77064-307">*Error List in View menu*</span></span>
-2. <span data-ttu-id="77064-308">请注意，没有 SEO 警告，通知的**&lt;元&gt;**标记缺少页面描述为。</span><span class="sxs-lookup"><span data-stu-id="77064-308">Notice that there is an SEO warning notifying that a **&lt;meta&gt;** tag for the page description is missing.</span></span> <span data-ttu-id="77064-309">双击要修复此错误的 SEO 警告项。</span><span class="sxs-lookup"><span data-stu-id="77064-309">Double-click the SEO warning entry to fix it.</span></span>
+2. <span data-ttu-id="77064-308">请注意，没有 SEO 警告，通知的**&lt;元&gt;** 标记缺少页面描述为。</span><span class="sxs-lookup"><span data-stu-id="77064-308">Notice that there is an SEO warning notifying that a **&lt;meta&gt;** tag for the page description is missing.</span></span> <span data-ttu-id="77064-309">双击要修复此错误的 SEO 警告项。</span><span class="sxs-lookup"><span data-stu-id="77064-309">Double-click the SEO warning entry to fix it.</span></span>
 
     <span data-ttu-id="77064-310">![错误列表窗口](visual-studio-2013-web-tools/_static/image32.png "错误列表窗口")</span><span class="sxs-lookup"><span data-stu-id="77064-310">![Error List window](visual-studio-2013-web-tools/_static/image32.png "Error List window")</span></span>
 
@@ -333,7 +334,7 @@ ms.lasthandoff: 04/10/2018
     <span data-ttu-id="77064-313">![Web Essentials 对话框](visual-studio-2013-web-tools/_static/image33.png "Web Essentials 对话框")</span><span class="sxs-lookup"><span data-stu-id="77064-313">![Web Essentials dialog box](visual-studio-2013-web-tools/_static/image33.png "Web Essentials dialog box")</span></span>
 
     <span data-ttu-id="77064-314">*Web Essentials 对话框*</span><span class="sxs-lookup"><span data-stu-id="77064-314">*Web Essentials dialog box*</span></span>
-4. <span data-ttu-id="77064-315">编辑器 **\_Layout.cshtml**打开和**&lt;元&gt;**标记都会自动添加到**头**部分HTML 文件。</span><span class="sxs-lookup"><span data-stu-id="77064-315">The editor for **\_Layout.cshtml** opens and the **&lt;meta&gt;** tag is automatically added to the **head** section of the HTML file.</span></span>
+4. <span data-ttu-id="77064-315">编辑器 **\_Layout.cshtml**打开和**&lt;元&gt;** 标记都会自动添加到**头**部分HTML 文件。</span><span class="sxs-lookup"><span data-stu-id="77064-315">The editor for **\_Layout.cshtml** opens and the **&lt;meta&gt;** tag is automatically added to the **head** section of the HTML file.</span></span>
 
     <span data-ttu-id="77064-316">![自动 _Layout 页中添加元标记](visual-studio-2013-web-tools/_static/image34.png "_Layout 页中自动添加元标记")</span><span class="sxs-lookup"><span data-stu-id="77064-316">![Meta tag automatically added in _Layout page](visual-studio-2013-web-tools/_static/image34.png "Meta tag automatically added in _Layout page")</span></span>
 
@@ -354,7 +355,7 @@ ms.lasthandoff: 04/10/2018
 
 1. <span data-ttu-id="77064-327">打开**Visual Studio Express 2013 for Web**和**Begin.sln**解决方案位于**源/Ex2-TakingAdvantageofCodeSnippetsandIntelliSense/开始**文件夹。</span><span class="sxs-lookup"><span data-stu-id="77064-327">Open **Visual Studio Express 2013 for Web** and the **Begin.sln** solution located in the **Source/Ex2-TakingAdvantageofCodeSnippetsandIntelliSense/Begin** folder.</span></span> <span data-ttu-id="77064-328">或者，继续与解决方案并在上一练习中获取。</span><span class="sxs-lookup"><span data-stu-id="77064-328">Alternatively, you can continue with the solution that you obtained in the previous exercise.</span></span>
 2. <span data-ttu-id="77064-329">在**解决方案资源管理器**，打开**Index.cshtml**文件位于**视图** | **主页**文件夹。</span><span class="sxs-lookup"><span data-stu-id="77064-329">In **Solution Explorer**, open the **Index.cshtml** file located in the **Views** | **Home** folder.</span></span>
-3. <span data-ttu-id="77064-330">将以下表单内的添加**&lt;部分&gt;**元素。</span><span class="sxs-lookup"><span data-stu-id="77064-330">Add the following form inside the **&lt;section&gt;** element.</span></span>
+3. <span data-ttu-id="77064-330">将以下表单内的添加**&lt;部分&gt;** 元素。</span><span class="sxs-lookup"><span data-stu-id="77064-330">Add the following form inside the **&lt;section&gt;** element.</span></span>
 
     <span data-ttu-id="77064-331">(代码段- *VisualStudio2013WebTooling* - *Ex2* - *窗体*)</span><span class="sxs-lookup"><span data-stu-id="77064-331">(Code Snippet - *VisualStudio2013WebTooling* - *Ex2* - *Form*)</span></span>
 
@@ -362,19 +363,19 @@ ms.lasthandoff: 04/10/2018
 4. <span data-ttu-id="77064-332">输入的标记之前应该具有某些说明的字段的标签。</span><span class="sxs-lookup"><span data-stu-id="77064-332">The input tag should be preceded by a label with some description of the field.</span></span> <span data-ttu-id="77064-333">添加下列标签之前输入的标记。</span><span class="sxs-lookup"><span data-stu-id="77064-333">Add the following label before the input tag.</span></span>
 
     [!code-html[Main](visual-studio-2013-web-tools/samples/sample5.html)]
-5. <span data-ttu-id="77064-334">**为**属性**&lt;标签&gt;**指定标签的窗体元素绑定到。</span><span class="sxs-lookup"><span data-stu-id="77064-334">The **for** attribute of a **&lt;label&gt;** specifies which form element a label is bound to.</span></span> <span data-ttu-id="77064-335">该特性的值应设置为相关的元素的 id。</span><span class="sxs-lookup"><span data-stu-id="77064-335">The attribute's value should be equal to the id of the related element.</span></span> <span data-ttu-id="77064-336">添加**为**属性设为**&lt;标签&gt;**元素。</span><span class="sxs-lookup"><span data-stu-id="77064-336">Add the **for** attribute to the **&lt;label&gt;** element.</span></span> <span data-ttu-id="77064-337">下图中中, 所示&quot;名称&quot;值弹出 IntelliSense 框中，在基于相同的作用域内的元素的 id (封闭**&lt;窗体&gt;**)。</span><span class="sxs-lookup"><span data-stu-id="77064-337">As shown in the following figure, the &quot;name&quot; value pops up in the IntelliSense box, based on the id of the elements within the same scope (the enclosing **&lt;form&gt;**).</span></span>
+5. <span data-ttu-id="77064-334">**为**属性**&lt;标签&gt;** 指定标签的窗体元素绑定到。</span><span class="sxs-lookup"><span data-stu-id="77064-334">The **for** attribute of a **&lt;label&gt;** specifies which form element a label is bound to.</span></span> <span data-ttu-id="77064-335">该特性的值应设置为相关的元素的 id。</span><span class="sxs-lookup"><span data-stu-id="77064-335">The attribute's value should be equal to the id of the related element.</span></span> <span data-ttu-id="77064-336">添加**为**属性设为**&lt;标签&gt;** 元素。</span><span class="sxs-lookup"><span data-stu-id="77064-336">Add the **for** attribute to the **&lt;label&gt;** element.</span></span> <span data-ttu-id="77064-337">下图中中, 所示&quot;名称&quot;值弹出 IntelliSense 框中，在基于相同的作用域内的元素的 id (封闭**&lt;窗体&gt;**)。</span><span class="sxs-lookup"><span data-stu-id="77064-337">As shown in the following figure, the &quot;name&quot; value pops up in the IntelliSense box, based on the id of the elements within the same scope (the enclosing **&lt;form&gt;**).</span></span>
 
     <span data-ttu-id="77064-338">![在 IntelliSense 中显示 id](visual-studio-2013-web-tools/_static/image35.png "IntelliSense 中显示的 id")</span><span class="sxs-lookup"><span data-stu-id="77064-338">![Showing the id in IntelliSense](visual-studio-2013-web-tools/_static/image35.png "Showing the id in IntelliSense")</span></span>
 
     <span data-ttu-id="77064-339">*在 IntelliSense 中显示的 id*</span><span class="sxs-lookup"><span data-stu-id="77064-339">*Showing the id in IntelliSense*</span></span>
-6. <span data-ttu-id="77064-340">删除最近添加**&lt;窗体&gt;**元素和其内容。</span><span class="sxs-lookup"><span data-stu-id="77064-340">Delete the recently added **&lt;form&gt;** element and its content.</span></span>
+6. <span data-ttu-id="77064-340">删除最近添加**&lt;窗体&gt;** 元素和其内容。</span><span class="sxs-lookup"><span data-stu-id="77064-340">Delete the recently added **&lt;form&gt;** element and its content.</span></span>
 
 <a id="Ex2Task2"></a>
 #### <a name="task-2---using-html-code-snippets"></a><span data-ttu-id="77064-341">任务 2-使用 HTML 代码段</span><span class="sxs-lookup"><span data-stu-id="77064-341">Task 2 - Using HTML Code Snippets</span></span>
 
 <span data-ttu-id="77064-342">HTML5 引入超过 25 个新的语义标记。</span><span class="sxs-lookup"><span data-stu-id="77064-342">HTML5 introduced more than 25 new semantic tags.</span></span> <span data-ttu-id="77064-343">Visual Studio 已有对这些标记，IntelliSense 支持，但是 Visual Studio 2013 可以更快、 更轻松地通过添加新的代码片段编写标记。</span><span class="sxs-lookup"><span data-stu-id="77064-343">Visual Studio already had IntelliSense support for these tags, but Visual Studio 2013 makes it faster and easier to write markup by adding new code snippets.</span></span> <span data-ttu-id="77064-344">尽管这些标记不是复杂的但它们附带了几个小的细微部分，例如添加为将正确的编解码器回退字符*音频*标记。</span><span class="sxs-lookup"><span data-stu-id="77064-344">Though these tags are not complicated, they come with a few small subtleties, such as adding the correct codec fallbacks for the *audio* tag.</span></span> <span data-ttu-id="77064-345">在此任务中，你将看到音频标记的 HTML 代码段。</span><span class="sxs-lookup"><span data-stu-id="77064-345">In this task, you will see the HTML code snippets for the audio tag.</span></span>
 
-1. <span data-ttu-id="77064-346">在**Index.cshtml**文件，请键入 **&lt;aud**内**&lt;部分&gt;**元素下图中所示。</span><span class="sxs-lookup"><span data-stu-id="77064-346">In the **Index.cshtml** file, type **&lt;aud** inside the **&lt;section&gt;** element as shown in the following figure.</span></span>
+1. <span data-ttu-id="77064-346">在**Index.cshtml**文件，请键入 **&lt;aud**内**&lt;部分&gt;** 元素下图中所示。</span><span class="sxs-lookup"><span data-stu-id="77064-346">In the **Index.cshtml** file, type **&lt;aud** inside the **&lt;section&gt;** element as shown in the following figure.</span></span>
 
     <span data-ttu-id="77064-347">![插入音频元素](visual-studio-2013-web-tools/_static/image36.png "插入音频元素")</span><span class="sxs-lookup"><span data-stu-id="77064-347">![Inserting an audio element](visual-studio-2013-web-tools/_static/image36.png "Inserting an audio element")</span></span>
 
@@ -465,7 +466,7 @@ ms.lasthandoff: 04/10/2018
     <span data-ttu-id="77064-396">![GetElementByTagName 方法显示 IntelliSense](visual-studio-2013-web-tools/_static/image45.png "getElementByTagName 方法显示 IntelliSense")</span><span class="sxs-lookup"><span data-stu-id="77064-396">![Showing IntelliSense for the getElementByTagName method](visual-studio-2013-web-tools/_static/image45.png "Showing IntelliSense for the getElementByTagName method")</span></span>
 
     <span data-ttu-id="77064-397">*GetElementsByTagName 方法显示 IntelliSense*</span><span class="sxs-lookup"><span data-stu-id="77064-397">*Showing IntelliSense for the getElementsByTagName method*</span></span>
-13. <span data-ttu-id="77064-398">选择**&quot;音频&quot;**从列表和按**ENTER**。</span><span class="sxs-lookup"><span data-stu-id="77064-398">Select **&quot;audio&quot;** from the list and press **ENTER**.</span></span> <span data-ttu-id="77064-399">结果如下图所示。</span><span class="sxs-lookup"><span data-stu-id="77064-399">The result is shown in the following figure.</span></span>
+13. <span data-ttu-id="77064-398">选择**&quot;音频&quot;** 从列表和按**ENTER**。</span><span class="sxs-lookup"><span data-stu-id="77064-398">Select **&quot;audio&quot;** from the list and press **ENTER**.</span></span> <span data-ttu-id="77064-399">结果如下图所示。</span><span class="sxs-lookup"><span data-stu-id="77064-399">The result is shown in the following figure.</span></span>
 
     <span data-ttu-id="77064-400">![检索音频元素](visual-studio-2013-web-tools/_static/image46.png "检索音频元素")</span><span class="sxs-lookup"><span data-stu-id="77064-400">![Retrieving Audio Elements](visual-studio-2013-web-tools/_static/image46.png "Retrieving Audio Elements")</span></span>
 

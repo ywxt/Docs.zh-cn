@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868992"
 ---
 <a name="authenticating-users-with-windows-authentication-vb"></a><span data-ttu-id="915c5-104">使用 Windows 身份验证 (VB) 的用户进行身份验证</span><span class="sxs-lookup"><span data-stu-id="915c5-104">Authenticating Users with Windows Authentication (VB)</span></span>
 ====================

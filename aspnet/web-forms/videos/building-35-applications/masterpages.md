@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/masterpages
-title: "MasterPages |Microsoft 文档"
+title: MasterPages |Microsoft 文档
 author: JoeStagner
-description: "ASP.NET MasterPages 是构建敏捷 web 应用程序的重要组成部分。 此视频将演示使用母版页和中的嵌套的 MasterPages 的基础知识..."
+description: ASP.NET MasterPages 是构建敏捷 web 应用程序的重要组成部分。 此视频将演示使用母版页和中的嵌套的 MasterPages 的基础知识...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/08/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520896"
 ---
 <a name="masterpages"></a><span data-ttu-id="69702-104">MasterPages</span><span class="sxs-lookup"><span data-stu-id="69702-104">MasterPages</span></span>
 ====================

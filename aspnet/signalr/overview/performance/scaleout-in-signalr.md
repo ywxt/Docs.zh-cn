@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/performance/scaleout-in-signalr
-title: "简介中 SignalR 的向外缩放 |Microsoft 文档"
+title: 简介中 SignalR 的向外缩放 |Microsoft 文档
 author: MikeWasson
-description: "Visual Studio 2013.NET 4.5 SignalR 本主题中使用软件版本的早期版本的信息的本主题的版本 2 早期版本..."
+description: Visual Studio 2013.NET 4.5 SignalR 本主题中使用软件版本的早期版本的信息的本主题的版本 2 早期版本...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28034589"
 ---
 <a name="introduction-to-scaleout-in-signalr"></a><span data-ttu-id="94558-103">简介中 SignalR 的向外缩放</span><span class="sxs-lookup"><span data-stu-id="94558-103">Introduction to Scaleout in SignalR</span></span>
 ====================

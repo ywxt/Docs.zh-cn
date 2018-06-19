@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-custom-membership-provider
-title: "[如何:]创建自定义成员资格提供程序？ | Microsoft Docs"
+title: '[如何:]创建自定义成员资格提供程序？ | Microsoft Docs'
 author: rick-anderson
-description: "成员资格提供程序允许 web 应用程序存储和检索用户的成员身份数据和标准的 ASP.NET 成员资格提供程序使用预定义..."
+description: 成员资格提供程序允许 web 应用程序存储和检索用户的成员身份数据和标准的 ASP.NET 成员资格提供程序使用预定义...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525516"
 ---
 <a name="how-do-i-create-a-custom-membership-provider"></a><span data-ttu-id="c19f8-104">[如何:]创建自定义成员资格提供程序？</span><span class="sxs-lookup"><span data-stu-id="c19f8-104">[How Do I:] Create a Custom Membership Provider?</span></span>
 ====================

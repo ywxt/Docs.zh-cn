@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870578"
 ---
 <a name="databinding-the-slider-control-c"></a><span data-ttu-id="b2624-104">数据绑定滑块控件 (C#)</span><span class="sxs-lookup"><span data-stu-id="b2624-104">Databinding the Slider Control (C#)</span></span>
 ====================

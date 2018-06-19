@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870630"
 ---
 <a name="adding-animation-to-a-control-vb"></a><span data-ttu-id="90214-104">将动画添加到控件 (VB)</span><span class="sxs-lookup"><span data-stu-id="90214-104">Adding Animation to a Control (VB)</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-containment-in-web-api-22
-title: "使用 Web API 2.2 中 OData v4 的包含关系 |Microsoft 文档"
+title: 使用 Web API 2.2 中 OData v4 的包含关系 |Microsoft 文档
 author: rick-anderson
-description: "传统上，如果它已封装在实体集可以仅访问实体。 但 OData v4 提供两个其他选项，单一实例和 Con..."
+description: 传统上，如果它已封装在实体集可以仅访问实体。 但 OData v4 提供两个其他选项，单一实例和 Con...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/27/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26507996"
 ---
 <a name="containment-in-odata-v4-using-web-api-22"></a><span data-ttu-id="952ab-104">使用 Web API 2.2 中 OData v4 的包含关系</span><span class="sxs-lookup"><span data-stu-id="952ab-104">Containment in OData v4 Using Web API 2.2</span></span>
 ====================

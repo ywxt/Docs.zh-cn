@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/index
-title: "分页和排序 |Microsoft 文档"
+title: 分页和排序 |Microsoft 文档
 author: rick-anderson
-description: "这些教程中你将一些初始排序和分页功能添加到数据报表。"
+description: 这些教程中你将一些初始排序和分页功能添加到数据报表。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting
 msc.type: chapter
 ms.openlocfilehash: 1366bf670d130f2df2d887e8f221bc3f57109d54
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26514716"
 ---
 <a name="paging-and-sorting"></a><span data-ttu-id="54c57-103">分页和排序</span><span class="sxs-lookup"><span data-stu-id="54c57-103">Paging and Sorting</span></span>
 ====================

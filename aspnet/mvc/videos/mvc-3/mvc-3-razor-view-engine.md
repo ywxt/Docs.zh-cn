@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-3/mvc-3-razor-view-engine
-title: "MVC 3-Razor 视图引擎 |Microsoft 文档"
+title: MVC 3-Razor 视图引擎 |Microsoft 文档
 author: jongalloway
-description: "在本视频中你将了解新 Razor 视图引擎包含在 ASP.NET MVC 3 中的基础知识。"
+description: 在本视频中你将了解新 Razor 视图引擎包含在 ASP.NET MVC 3 中的基础知识。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/04/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503816"
 ---
 <a name="mvc-3---razor-view-engine"></a><span data-ttu-id="3cb32-103">MVC 3-Razor 视图引擎</span><span class="sxs-lookup"><span data-stu-id="3cb32-103">MVC 3 - Razor View Engine</span></span>
 ====================

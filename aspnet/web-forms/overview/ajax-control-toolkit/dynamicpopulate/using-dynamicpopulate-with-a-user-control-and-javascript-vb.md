@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872996"
 ---
 <a name="using-dynamicpopulate-with-a-user-control-and-javascript-vb"></a><span data-ttu-id="072f4-103">用户控件和 JavaScript (VB) 中使用 DynamicPopulate</span><span class="sxs-lookup"><span data-stu-id="072f4-103">Using DynamicPopulate with a User Control And JavaScript (VB)</span></span>
 ====================

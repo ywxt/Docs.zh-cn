@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-reusable-component-for-sending-email-to-a-distribution-list
-title: "[如何:]用于发送电子邮件通讯组列表中创建可重用组件 |Microsoft 文档"
+title: '[如何:]用于发送电子邮件通讯组列表中创建可重用组件 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 演示如何创建一个组件，可以使用多个网页和网站列表的收件人发送电子邮件。 Firs..."
+description: 在此视频 Chris Pels 演示如何创建一个组件，可以使用多个网页和网站列表的收件人发送电子邮件。 Firs...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/04/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525496"
 ---
 <a name="how-do-i-create-a-reusable-component-for-sending-email-to-a-distribution-list"></a><span data-ttu-id="10036-104">[如何:]用于发送电子邮件通讯组列表中创建可重用组件</span><span class="sxs-lookup"><span data-stu-id="10036-104">[How Do I:] Create a Reusable Component for Sending Email to a Distribution List</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-button-actions/index
-title: "自定义按钮操作 |Microsoft 文档"
+title: 自定义按钮操作 |Microsoft 文档
 author: rick-anderson
-description: "此短的一系列教程演示如何将按钮添加到的 GridView 或说明控件的可执行的应用程序需要任何操作。"
+description: 此短的一系列教程演示如何将按钮添加到的 GridView 或说明控件的可执行的应用程序需要任何操作。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/custom-button-actions
 msc.type: chapter
 ms.openlocfilehash: 5da10542b7797a90f6019df2f3c94603be7276f3
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26512626"
 ---
 <a name="custom-button-actions"></a><span data-ttu-id="310ff-103">自定义按钮操作</span><span class="sxs-lookup"><span data-stu-id="310ff-103">Custom Button Actions</span></span>
 ====================

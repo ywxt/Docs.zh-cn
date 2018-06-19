@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/index
-title: "部署网站项目在 Visual Studio 2008 及更早版本 |Microsoft 文档"
+title: 部署网站项目在 Visual Studio 2008 及更早版本 |Microsoft 文档
 author: rick-anderson
-description: "ASP.NET web 应用程序通常设计，创建，并在本地开发环境中测试并需要将其部署到生产环境 o..."
+description: ASP.NET web 应用程序通常设计，创建，并在本地开发环境中测试并需要将其部署到生产环境 o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/16/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-
 msc.type: chapter
 ms.openlocfilehash: a5a332a226efe4c549ce123d611c58ce01439452
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26517406"
 ---
 <a name="deploying-web-site-projects-in-visual-studio-2008-and-earlier"></a><span data-ttu-id="8ba0b-103">部署网站项目在 Visual Studio 2008 及更早版本</span><span class="sxs-lookup"><span data-stu-id="8ba0b-103">Deploying Web Site Projects in Visual Studio 2008 and earlier</span></span>
 ====================

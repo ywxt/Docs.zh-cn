@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871566"
 ---
 <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a><span data-ttu-id="37bab-103">将通用提供程序的数据迁移的成员身份和用户配置文件到 ASP.NET 标识 (C#)</span><span class="sxs-lookup"><span data-stu-id="37bab-103">Migrating Universal Provider Data for Membership and User Profiles to ASP.NET Identity (C#)</span></span>
 ====================

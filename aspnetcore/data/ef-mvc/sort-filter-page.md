@@ -13,6 +13,7 @@ ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153717"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---sort-filter-paging---3-of-10"></a><span data-ttu-id="b40b6-103">ASP.NET Core MVC 和 EF Core - 排序、筛选、分页 - 第 3 个教程，共 10 个教程</span><span class="sxs-lookup"><span data-stu-id="b40b6-103">ASP.NET Core MVC with EF Core - Sort, Filter, Paging - 3 of 10</span></span>
 

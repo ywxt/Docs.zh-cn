@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880422"
 ---
 <a name="creating-a-team-project-in-tfs"></a><span data-ttu-id="1bfe5-103">在 TFS 中创建团队项目</span><span class="sxs-lookup"><span data-stu-id="1bfe5-103">Creating a Team Project in TFS</span></span>
 ====================
@@ -179,8 +180,8 @@ ms.lasthandoff: 04/06/2018
 1. <span data-ttu-id="1bfe5-196">在 Visual Studio 2010 中，在**团队资源管理器**窗口中，右键单击团队项目，指向**团队项目设置**，然后单击**组成员身份**。</span><span class="sxs-lookup"><span data-stu-id="1bfe5-196">In Visual Studio 2010, in the **Team Explorer** window, right-click the team project, point to **Team Project Settings**, and then click **Group Membership**.</span></span>
 
     ![](creating-a-team-project-in-tfs/_static/image15.png)
-2. <span data-ttu-id="1bfe5-197">若要使用户能够添加、 修改和删除在源代码管理下的代码，你需要添加他或她到**contributors （参与者)**组。</span><span class="sxs-lookup"><span data-stu-id="1bfe5-197">To enable a user to add, modify, and remove code under source control, you need to add him or her to the **Contributors** group.</span></span>
-3. <span data-ttu-id="1bfe5-198">在**项目组**对话框中，选择**contributors （参与者)**分组，并依次**属性**。</span><span class="sxs-lookup"><span data-stu-id="1bfe5-198">In the **Project Groups** dialog box, select the **Contributors** group, and then click **Properties**.</span></span>
+2. <span data-ttu-id="1bfe5-197">若要使用户能够添加、 修改和删除在源代码管理下的代码，你需要添加他或她到**contributors （参与者)** 组。</span><span class="sxs-lookup"><span data-stu-id="1bfe5-197">To enable a user to add, modify, and remove code under source control, you need to add him or her to the **Contributors** group.</span></span>
+3. <span data-ttu-id="1bfe5-198">在**项目组**对话框中，选择**contributors （参与者)** 分组，并依次**属性**。</span><span class="sxs-lookup"><span data-stu-id="1bfe5-198">In the **Project Groups** dialog box, select the **Contributors** group, and then click **Properties**.</span></span>
 
     ![](creating-a-team-project-in-tfs/_static/image16.png)
 4. <span data-ttu-id="1bfe5-199">在**Team Foundation Server 组属性**对话框中，选择**Windows 用户或组**，然后单击**添加**。</span><span class="sxs-lookup"><span data-stu-id="1bfe5-199">In the **Team Foundation Server Group Properties** dialog box, select **Windows User or Group**, and then click **Add**.</span></span>

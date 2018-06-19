@@ -14,6 +14,7 @@ ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153746"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---concurrency---8-of-10"></a><span data-ttu-id="7f1ad-103">ASP.NET Core MVC 和 EF Core - 并发 - 第 8 个教程（共 10 个）</span><span class="sxs-lookup"><span data-stu-id="7f1ad-103">ASP.NET Core MVC with EF Core - Concurrency - 8 of 10</span></span>
 

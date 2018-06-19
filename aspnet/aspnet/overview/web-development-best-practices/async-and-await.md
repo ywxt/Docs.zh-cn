@@ -1,14 +1,14 @@
 ---
 uid: aspnet/overview/web-development-best-practices/async-and-await
-title: "Async 和 Await |Microsoft 文档"
+title: Async 和 Await |Microsoft 文档
 author: shanselman
-description: "Scott Hanselman 演示如何使用 Async 和 Await ASP.NET 4.5 中的支持。"
+description: Scott Hanselman 演示如何使用 Async 和 Await ASP.NET 4.5 中的支持。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
 ms.topic: article
 ms.assetid: 776bf687-c2c2-438f-8796-a93d0ccd164b
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/web-development-best-practices/async-and-await
 msc.type: video
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26497896"
 ---
 <a name="async-and-await"></a><span data-ttu-id="93882-103">异步和等待</span><span class="sxs-lookup"><span data-stu-id="93882-103">Async and Await</span></span>
 ====================

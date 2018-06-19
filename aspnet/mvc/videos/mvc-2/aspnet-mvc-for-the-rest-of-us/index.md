@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-2/aspnet-mvc-for-the-rest-of-us/index
-title: "我们的其余部分的 ASP.NET MVC |Microsoft 文档"
+title: 我们的其余部分的 ASP.NET MVC |Microsoft 文档
 author: rick-anderson
-description: "我们的其余部分的 ASP.NET MVC"
+description: 我们的其余部分的 ASP.NET MVC
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/videos/mvc-2/aspnet-mvc-for-the-rest-of-us
 msc.type: chapter
 ms.openlocfilehash: 6c1d8eb52d39a4d133c4a6b8e209d1d4990f0b77
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503416"
 ---
 <a name="aspnet-mvc-for-the-rest-of-us"></a><span data-ttu-id="9afc4-103">我们的其余部分的 ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="9afc4-103">ASP.NET MVC For the Rest of Us</span></span>
 ====================

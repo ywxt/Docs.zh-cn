@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880549"
 ---
 <a name="simple-web-service-authentication"></a><span data-ttu-id="6b749-103">简单的 Web 服务身份验证</span><span class="sxs-lookup"><span data-stu-id="6b749-103">Simple Web Service Authentication</span></span>
 ====================

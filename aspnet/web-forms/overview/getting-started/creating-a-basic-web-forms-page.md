@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34306788"
 ---
 <a name="creating-a-basic-aspnet-45-web-forms-page-in-visual-studio-2013"></a><span data-ttu-id="ee1f6-102">创建一个基本的 ASP.NET 4.5 Web 窗体页在 Visual Studio 2013</span><span class="sxs-lookup"><span data-stu-id="ee1f6-102">Creating a Basic ASP.NET 4.5 Web Forms Page in Visual Studio 2013</span></span>
 ====================

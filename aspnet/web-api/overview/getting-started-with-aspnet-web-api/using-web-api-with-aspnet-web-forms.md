@@ -17,6 +17,7 @@ ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/01/2017
+ms.locfileid: "26536076"
 ---
 <a name="using-web-api-with-aspnet-web-forms"></a><span data-ttu-id="a1f3a-102">使用 ASP.NET Web 窗体的 Web API</span><span class="sxs-lookup"><span data-stu-id="a1f3a-102">Using Web API with ASP.NET Web Forms</span></span>
 ====================

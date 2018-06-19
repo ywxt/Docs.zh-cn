@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869525"
 ---
 <a name="how-do-i-use-httpverbs-attributes-in-an-mvc-application"></a><span data-ttu-id="6d6c3-105">在 MVC 应用程序如何： 使用 HttpVerbs 属性？</span><span class="sxs-lookup"><span data-stu-id="6d6c3-105">How Do I: Use HttpVerbs Attributes in an MVC Application?</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878758"
 ---
 <a name="an-overview-of-project-katana"></a><span data-ttu-id="19974-104">项目 Katana 事件的概述</span><span class="sxs-lookup"><span data-stu-id="19974-104">An Overview of Project Katana</span></span>
 ====================
@@ -133,7 +134,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="katana-architecture"></a><span data-ttu-id="19974-231">Katana 体系结构</span><span class="sxs-lookup"><span data-stu-id="19974-231">Katana Architecture</span></span>
 
- <span data-ttu-id="19974-232">Katana 组件体系结构将划分成四个逻辑层，应用程序，如下所示：*主机、 服务器、 中间件，*和*应用程序*。</span><span class="sxs-lookup"><span data-stu-id="19974-232">The Katana component architecture divides an application into four logical layers, as depicted below: *host, server, middleware,* and *application*.</span></span> <span data-ttu-id="19974-233">组件体系结构计入，实现这些层可轻松地使用替代，在许多情况下，而无需重新编译的应用程序的方式。</span><span class="sxs-lookup"><span data-stu-id="19974-233">The component architecture is factored in such a way that implementations of these layers can be easily substituted, in many cases, without requiring recompilation of the application.</span></span>   
+ <span data-ttu-id="19974-232">Katana 组件体系结构将划分成四个逻辑层，应用程序，如下所示：*主机、 服务器、 中间件，* 和*应用程序*。</span><span class="sxs-lookup"><span data-stu-id="19974-232">The Katana component architecture divides an application into four logical layers, as depicted below: *host, server, middleware,* and *application*.</span></span> <span data-ttu-id="19974-233">组件体系结构计入，实现这些层可轻松地使用替代，在许多情况下，而无需重新编译的应用程序的方式。</span><span class="sxs-lookup"><span data-stu-id="19974-233">The component architecture is factored in such a way that implementations of these layers can be easily substituted, in many cases, without requiring recompilation of the application.</span></span>   
 
 ![](an-overview-of-project-katana/_static/image3.png)
 

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/index
-title: "开始使用 Entity Framework 6 Code First 使用 MVC 5 |Microsoft 文档"
+title: 开始使用 Entity Framework 6 Code First 使用 MVC 5 |Microsoft 文档
 author: rick-anderson
-description: "在 ASP.NET MVC 5 应用程序中使用 Entity Framework 6 来显示和编辑数据的基础知识。"
+description: 在 ASP.NET MVC 5 应用程序中使用 Entity Framework 6 来显示和编辑数据的基础知识。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc
 msc.type: chapter
 ms.openlocfilehash: 547ceac45d17c6eb2a3dc8404c5507a243657118
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26499176"
 ---
 <a name="getting-started-with-entity-framework-6-code-first-using-mvc-5"></a><span data-ttu-id="7475e-103">首先通过 MVC 5 使用 Entity Framework 6 Code First</span><span class="sxs-lookup"><span data-stu-id="7475e-103">Getting Started with Entity Framework 6 Code First using MVC 5</span></span>
 ====================

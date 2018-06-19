@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874780"
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a><span data-ttu-id="61876-103">使用 ASP.NET MVC-第 4 部分中使用 HTML5 和 jQuery UI Datepicker 弹出日历</span><span class="sxs-lookup"><span data-stu-id="61876-103">Using the HTML5 and jQuery UI Datepicker Popup Calendar with ASP.NET MVC - Part 4</span></span>
 ====================
@@ -102,7 +103,7 @@ ms.lasthandoff: 04/06/2018
 - <span data-ttu-id="61876-158">*jquery.ui.datepicker.js*</span><span class="sxs-lookup"><span data-stu-id="61876-158">*jquery.ui.datepicker.js*</span></span>
 - <span data-ttu-id="61876-159">*jquery.ui.datepicker.min.js*</span><span class="sxs-lookup"><span data-stu-id="61876-159">*jquery.ui.datepicker.min.js*</span></span>
 
-<span data-ttu-id="61876-160">注意： 的调试版本 (不包含的文件*。 min.js*扩展) 可用于调试，但在生产站点，你会包括仅缩减的版本。</span><span class="sxs-lookup"><span data-stu-id="61876-160">Note: The debug versions (the files without the *.min.js* extension) are useful for debugging, but in a production site, you'd include only the minified versions.</span></span>
+<span data-ttu-id="61876-160">注意： 的调试版本 (不包含的文件 *。 min.js*扩展) 可用于调试，但在生产站点，你会包括仅缩减的版本。</span><span class="sxs-lookup"><span data-stu-id="61876-160">Note: The debug versions (the files without the *.min.js* extension) are useful for debugging, but in a production site, you'd include only the minified versions.</span></span>
 
 <span data-ttu-id="61876-161">若要实际使用 jQuery 日期选取器，你需要创建将挂钩到编辑模板日历小组件的 jQuery 脚本。</span><span class="sxs-lookup"><span data-stu-id="61876-161">To actually use the jQuery date picker, you need to create a jQuery script that will hook up the calendar widget to the edit template.</span></span> <span data-ttu-id="61876-162">在**解决方案资源管理器**，右键单击*脚本*文件夹，然后选择**添加**，然后**新项**，，然后**JScript文件**。</span><span class="sxs-lookup"><span data-stu-id="61876-162">In **Solution Explorer**, right-click the *Scripts* folder and select **Add**, then **New Item**, and then **JScript File**.</span></span> <span data-ttu-id="61876-163">命名该文件*DatePickerReady.js*。</span><span class="sxs-lookup"><span data-stu-id="61876-163">Name the file *DatePickerReady.js*.</span></span>
 

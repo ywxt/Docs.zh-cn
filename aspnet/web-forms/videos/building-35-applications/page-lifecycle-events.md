@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/page-lifecycle-events
-title: "页生命周期事件 |Microsoft 文档"
+title: 页生命周期事件 |Microsoft 文档
 author: JoeStagner
-description: "ASP.NET 提供与挂钩到 ASP.NET 页面生命周期中的所有重要时间实例的非常丰富的事件处理机制。 此视频将枚举..."
+description: ASP.NET 提供与挂钩到 ASP.NET 页面生命周期中的所有重要时间实例的非常丰富的事件处理机制。 此视频将枚举...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521596"
 ---
 <a name="page-lifecycle-events"></a><span data-ttu-id="fc022-104">页生命周期事件</span><span class="sxs-lookup"><span data-stu-id="fc022-104">Page Lifecycle Events</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-make-html-elements-accessible-from-server-side-code
-title: "[如何:]请从服务器端代码可访问的 HTML 元素 |Microsoft 文档"
+title: '[如何:]请从服务器端代码可访问的 HTML 元素 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 将演示如何创建标准 HTML 元素.aspx 页面中可从服务器端代码访问以便它们可以用于页 processin..."
+description: 在此视频 Chris Pels 将演示如何创建标准 HTML 元素.aspx 页面中可从服务器端代码访问以便它们可以用于页 processin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/29/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521546"
 ---
 <a name="how-do-i-make-html-elements-accessible-from-server-side-code"></a><span data-ttu-id="f64a0-103">[如何:]请从服务器端代码可访问的 HTML 元素</span><span class="sxs-lookup"><span data-stu-id="f64a0-103">[How Do I:] Make HTML elements accessible from server side code</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/index
-title: "ASP.NET Web 窗体 |Microsoft 文档"
+title: ASP.NET Web 窗体 |Microsoft 文档
 author: rick-anderson
-description: "下载 Visual Web Developer Express （&) 了解如何快速构建的 web 应用使用 ASP.NET Web 窗体上将易于理解的控件在可视化设计 environ..."
+description: 下载 Visual Web Developer Express （&) 了解如何快速构建的 web 应用使用 ASP.NET Web 窗体上将易于理解的控件在可视化设计 environ...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/08/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms
 msc.type: categoryindex
 ms.openlocfilehash: f56ac2552017ad2b41debdea58d93c19c56268b9
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26509736"
 ---
 <a name="aspnet-web-forms"></a><span data-ttu-id="41c91-103">ASP.NET Web 窗体</span><span class="sxs-lookup"><span data-stu-id="41c91-103">ASP.NET Web Forms</span></span>
 ====================

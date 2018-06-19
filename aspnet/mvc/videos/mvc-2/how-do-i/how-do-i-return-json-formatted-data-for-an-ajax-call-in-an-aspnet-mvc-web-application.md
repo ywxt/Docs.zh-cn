@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867471"
 ---
 <a name="how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application"></a><span data-ttu-id="458a1-105">我如何返回 JSON 格式的 ASP.NET MVC Web 应用程序中的 AJAX 调用的数据？</span><span class="sxs-lookup"><span data-stu-id="458a1-105">How Do I: Return JSON Formatted Data for an AJAX Call in an ASP.NET MVC Web Application?</span></span>
 ====================

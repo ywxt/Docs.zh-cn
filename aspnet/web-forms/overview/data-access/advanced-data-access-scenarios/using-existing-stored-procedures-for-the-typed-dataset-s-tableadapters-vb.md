@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877367"
 ---
 <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a><span data-ttu-id="64c83-104">使用现有存储过程的类型化数据集的 Tableadapter (VB)</span><span class="sxs-lookup"><span data-stu-id="64c83-104">Using Existing Stored Procedures for the Typed DataSet's TableAdapters (VB)</span></span>
 ====================

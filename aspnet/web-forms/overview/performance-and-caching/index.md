@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/performance-and-caching/index
-title: "性能 |Microsoft 文档"
+title: 性能 |Microsoft 文档
 author: rick-anderson
-description: "如何缓存更快的性能的网站内容。"
+description: 如何缓存更快的性能的网站内容。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/08/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/performance-and-caching
 msc.type: chapter
 ms.openlocfilehash: 1a7881ba937308ffe07aeeeaafd5e6422f9fcce9
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26519476"
 ---
 <a name="performance"></a><span data-ttu-id="a4fa9-103">性能</span><span class="sxs-lookup"><span data-stu-id="a4fa9-103">Performance</span></span>
 ====================

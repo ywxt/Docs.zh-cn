@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-configure-email-notification-for-health-monitoring-on-an-aspnet-web-site
-title: "[如何:]配置运行状况监视 ASP.NET Web 站点上的电子邮件通知 |Microsoft 文档"
+title: '[如何:]配置运行状况监视 ASP.NET Web 站点上的电子邮件通知 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 演示如何配置运行状况监视在 ASP.NET web 站点的电子邮件通知。 首先，请参阅如何配置发送 e..."
+description: 在此视频 Chris Pels 演示如何配置运行状况监视在 ASP.NET web 站点的电子邮件通知。 首先，请参阅如何配置发送 e...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/11/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521756"
 ---
 <a name="how-do-i-configure-email-notification-for-health-monitoring-on-an-aspnet-web-site"></a><span data-ttu-id="6f4a2-104">[如何:]配置运行状况监视在一个 ASP.NET Web 站点上的电子邮件通知</span><span class="sxs-lookup"><span data-stu-id="6f4a2-104">[How Do I:] Configure Email Notification for Health Monitoring on an ASP.NET Web Site</span></span>
 ====================

@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/side-by-side-with-10
-title: ".NET framework 1.0 和 1.1 的 ASP.NET 并行执行 |Microsoft 文档"
+title: .NET framework 1.0 和 1.1 的 ASP.NET 并行执行 |Microsoft 文档
 author: rick-anderson
-description: "该白皮书介绍了如何在您允许 ASP.NET Web 应用程序框架的任一版本上运行的计算机上安装.NET 1.0 和.NET 1.1..."
+description: 该白皮书介绍了如何在您允许 ASP.NET Web 应用程序框架的任一版本上运行的计算机上安装.NET 1.0 和.NET 1.1...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: bdea2003-e964-4db5-9092-d56cc7560616
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/side-by-side-with-10
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26530176"
 ---
 <a name="aspnet-side-by-side-execution-of-net-framework-10-and-11"></a><span data-ttu-id="82b5c-103">.NET framework 1.0 和 1.1 的 ASP.NET 并行执行</span><span class="sxs-lookup"><span data-stu-id="82b5c-103">ASP.NET Side-by-Side Execution of .NET Framework 1.0 and 1.1</span></span>
 ====================
@@ -119,7 +120,7 @@ ms.lasthandoff: 11/10/2017
 6. <span data-ttu-id="82b5c-166">从属性窗口中，选择**配置。**</span><span class="sxs-lookup"><span data-stu-id="82b5c-166">From the Property window, select **Configuration.**</span></span>  
   
     ![](side-by-side-with-10/_static/image10.gif)
-7. <span data-ttu-id="82b5c-167">从应用程序映射表中，选择**.aspx**，然后单击**编辑**。</span><span class="sxs-lookup"><span data-stu-id="82b5c-167">From the application mapping table, select **.aspx**, and click **Edit**.</span></span>  
+7. <span data-ttu-id="82b5c-167">从应用程序映射表中，选择 **.aspx**，然后单击**编辑**。</span><span class="sxs-lookup"><span data-stu-id="82b5c-167">From the application mapping table, select **.aspx**, and click **Edit**.</span></span>  
   
     ![](side-by-side-with-10/_static/image11.gif)
 8. <span data-ttu-id="82b5c-168">从**可执行文件**文本框中，查看滚动的版本目录。</span><span class="sxs-lookup"><span data-stu-id="82b5c-168">From the **Executable** text box, look at the version directory by scrolling.</span></span> <span data-ttu-id="82b5c-169">如果版本目录为 v.1.1.4322，应用程序映射到.NET Framework 1.1。</span><span class="sxs-lookup"><span data-stu-id="82b5c-169">If the version directory is v.1.1.4322, the application is mapped to .NET Framework 1.1.</span></span> <span data-ttu-id="82b5c-170">相反，如果版本目录为 v1.0.3705，应用程序将映射到.NET Framework 1.0。</span><span class="sxs-lookup"><span data-stu-id="82b5c-170">Conversely, if the version directory is v1.0.3705, the application is mapped to .NET Framework 1.0.</span></span>  

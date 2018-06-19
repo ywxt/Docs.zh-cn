@@ -14,6 +14,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741402"
 ---
 <span data-ttu-id="02d53-103">zh-cn/</span><span class="sxs-lookup"><span data-stu-id="02d53-103">en-us/</span></span>
 

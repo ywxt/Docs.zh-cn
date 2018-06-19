@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-and-use-application-level-events-in-aspnet
-title: "[如何:] 创建并用于在 ASP.NET 应用程序级别事件 |Microsoft 文档"
+title: '[如何:] 创建并用于在 ASP.NET 应用程序级别事件 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 将演示如何创建一个包含如 Application_S 的应用程序级别事件处理程序的应用程序类文件 (Global.asax)..."
+description: 在此视频 Chris Pels 将演示如何创建一个包含如 Application_S 的应用程序级别事件处理程序的应用程序类文件 (Global.asax)...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/28/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521176"
 ---
 <a name="how-do-i--create-and-use-application-level-events-in-aspnet"></a><span data-ttu-id="4df04-103">[如何:] 创建并用于在 ASP.NET 应用程序级别事件</span><span class="sxs-lookup"><span data-stu-id="4df04-103">[How Do I:]  Create and Use Application Level Events in ASP.NET</span></span>
 ====================

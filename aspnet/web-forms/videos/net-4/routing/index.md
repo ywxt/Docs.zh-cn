@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/routing/index
-title: "路由 |Microsoft 文档"
+title: 路由 |Microsoft 文档
 author: rick-anderson
-description: "此视频展示了如何创建直观和 SEO 友好的 Web 窗体应用程序的 Url。"
+description: 此视频展示了如何创建直观和 SEO 友好的 Web 窗体应用程序的 Url。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/net-4/routing
 msc.type: chapter
 ms.openlocfilehash: 71bf4ff11d5cead001ce381324bea8fb6de9d8bf
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525386"
 ---
 <a name="routing"></a><span data-ttu-id="42d2b-103">路由</span><span class="sxs-lookup"><span data-stu-id="42d2b-103">Routing</span></span>
 ====================

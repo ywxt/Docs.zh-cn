@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/session-level-objects
-title: "会话级别对象 |Microsoft 文档"
+title: 会话级别对象 |Microsoft 文档
 author: JoeStagner
-description: "此视频将引入会话级别事件和对象，并比较其使用其应用程序和页级别等效项。"
+description: 此视频将引入会话级别事件和对象，并比较其使用其应用程序和页级别等效项。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/20/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26524986"
 ---
 <a name="session-level-objects"></a><span data-ttu-id="29caa-103">会话级别对象</span><span class="sxs-lookup"><span data-stu-id="29caa-103">Session Level Objects</span></span>
 ====================

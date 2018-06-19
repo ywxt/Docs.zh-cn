@@ -1,8 +1,8 @@
 ---
 uid: web-pages/pluralsight
-title: "从 Pluralsight WebMatrix 和 Web 页视频培训 |Microsoft 文档"
+title: 从 Pluralsight WebMatrix 和 Web 页视频培训 |Microsoft 文档
 author: rick-anderson
-description: "WebMatrix&amp;网页培训资料 Pluralsight 本深入课程将帮助你启动并运行使用 WebMatrix 和 ASP.NET Web 页。 它涵盖 everythi..."
+description: WebMatrix&amp;网页培训资料 Pluralsight 本深入课程将帮助你启动并运行使用 WebMatrix 和 ASP.NET Web 页。 它涵盖 everythi...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529816"
 ---
 <a name="webmatrix-and-web-pages-video-training-from-pluralsight"></a><span data-ttu-id="83930-104">从 Pluralsight WebMatrix 和 Web 页视频培训</span><span class="sxs-lookup"><span data-stu-id="83930-104">WebMatrix and Web Pages Video Training from Pluralsight</span></span>
 ====================

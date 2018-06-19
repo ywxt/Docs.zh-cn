@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26504096"
 ---
 <a name="whats-new-in-aspnet-mvc-52"></a><span data-ttu-id="23bcb-102">什么是 ASP.NET MVC 5.2 中的新增功能</span><span class="sxs-lookup"><span data-stu-id="23bcb-102">What’s New in ASP.NET MVC 5.2</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-embed-an-image-in-an-email-with-aspnet
-title: "[如何:]在使用 ASP.NET 一封电子邮件中嵌入图像 |Microsoft 文档"
+title: '[如何:]在使用 ASP.NET 一封电子邮件中嵌入图像 |Microsoft 文档'
 author: rick-anderson
-description: "Chris Pels 演示如何与 ASP.NET 结合在一封电子邮件中嵌入图像。 他创建 web 窗体 （具有用于字段收件人、 发件人，主题和正文），然后使用 AlternateView..."
+description: Chris Pels 演示如何与 ASP.NET 结合在一封电子邮件中嵌入图像。 他创建 web 窗体 （具有用于字段收件人、 发件人，主题和正文），然后使用 AlternateView...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/06/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525066"
 ---
 <a name="how-do-i-embed-an-image-in-an-email-with-aspnet"></a><span data-ttu-id="c4dcc-104">[如何:]在使用 ASP.NET 一封电子邮件中嵌入图像</span><span class="sxs-lookup"><span data-stu-id="c4dcc-104">[How Do I:] Embed an Image in an Email with ASP.NET</span></span>
 ====================

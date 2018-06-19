@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/validation
-title: "验证 |Microsoft 文档"
+title: 验证 |Microsoft 文档
 author: JoeStagner
-description: "在此视频 Joe 将演示使用在 ASP.NET 使用 Microsoft Visual Web Developer FormValidation 控件。"
+description: 在此视频 Joe 将演示使用在 ASP.NET 使用 Microsoft Visual Web Developer FormValidation 控件。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/04/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26524996"
 ---
 <a name="validation"></a><span data-ttu-id="3e14a-103">验证</span><span class="sxs-lookup"><span data-stu-id="3e14a-103">Validation</span></span>
 ====================

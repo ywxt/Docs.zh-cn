@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874845"
 ---
 <a name="part-3-views-and-viewmodels"></a><span data-ttu-id="73b8e-104">第 3 部分： 视图和 Viewmodel</span><span class="sxs-lookup"><span data-stu-id="73b8e-104">Part 3: Views and ViewModels</span></span>
 ====================
@@ -229,7 +230,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="adding-links-between-pages"></a><span data-ttu-id="73b8e-218">页之间添加链接</span><span class="sxs-lookup"><span data-stu-id="73b8e-218">Adding Links between pages</span></span>
 
-<span data-ttu-id="73b8e-219">当前列出风格我们 /Store URL 只需以纯文本形式列出流派名称。</span><span class="sxs-lookup"><span data-stu-id="73b8e-219">Our /Store URL that lists Genres currently lists the Genre names simply as plain text.</span></span> <span data-ttu-id="73b8e-220">让我们更改这，以便而不是纯文本我们改为具有流派名称链接到相应的应用商店/浏览 URL，以便单击音乐流派，如"Disco"将导航到 / 存储/浏览？ 流派 = Disco URL。</span><span class="sxs-lookup"><span data-stu-id="73b8e-220">Let's change this so that instead of plain text we instead have the Genre names link to the appropriate /Store/Browse URL, so that clicking on a music genre like "Disco" will navigate to the /Store/Browse?genre=Disco URL.</span></span> <span data-ttu-id="73b8e-221">我们无法更新我们 \Views\Store\Index.cshtml 视图模板使用这些链接的代码类似下面的输出到**（不键入此中-我们将在其上改进）**:</span><span class="sxs-lookup"><span data-stu-id="73b8e-221">We could update our \Views\Store\Index.cshtml View template to output these links using code like below **(don't type this in - we're going to improve on it)**:</span></span>
+<span data-ttu-id="73b8e-219">当前列出风格我们 /Store URL 只需以纯文本形式列出流派名称。</span><span class="sxs-lookup"><span data-stu-id="73b8e-219">Our /Store URL that lists Genres currently lists the Genre names simply as plain text.</span></span> <span data-ttu-id="73b8e-220">让我们更改这，以便而不是纯文本我们改为具有流派名称链接到相应的应用商店/浏览 URL，以便单击音乐流派，如"Disco"将导航到 / 存储/浏览？ 流派 = Disco URL。</span><span class="sxs-lookup"><span data-stu-id="73b8e-220">Let's change this so that instead of plain text we instead have the Genre names link to the appropriate /Store/Browse URL, so that clicking on a music genre like "Disco" will navigate to the /Store/Browse?genre=Disco URL.</span></span> <span data-ttu-id="73b8e-221">我们无法更新我们 \Views\Store\Index.cshtml 视图模板使用这些链接的代码类似下面的输出到 **（不键入此中-我们将在其上改进）**:</span><span class="sxs-lookup"><span data-stu-id="73b8e-221">We could update our \Views\Store\Index.cshtml View template to output these links using code like below **(don't type this in - we're going to improve on it)**:</span></span>
 
 [!code-html[Main](mvc-music-store-part-3/samples/sample19.html)]
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872892"
 ---
 <a name="launching-a-modal-popup-window-from-server-code-c"></a><span data-ttu-id="0b3e8-104">启动从服务器代码 (C#) 模式弹出窗口</span><span class="sxs-lookup"><span data-stu-id="0b3e8-104">Launching a Modal Popup Window from Server Code (C#)</span></span>
 ====================

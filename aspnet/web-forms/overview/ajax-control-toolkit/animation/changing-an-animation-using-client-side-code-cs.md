@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870643"
 ---
 <a name="changing-an-animation-using-client-side-code-c"></a><span data-ttu-id="c6069-104">更改动画使用客户端代码 (C#)</span><span class="sxs-lookup"><span data-stu-id="c6069-104">Changing an Animation Using Client-Side Code (C#)</span></span>
 ====================

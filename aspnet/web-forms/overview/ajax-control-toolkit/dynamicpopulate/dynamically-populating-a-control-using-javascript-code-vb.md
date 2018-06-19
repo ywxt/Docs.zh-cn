@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869980"
 ---
 <a name="dynamically-populating-a-control-using-javascript-code-vb"></a><span data-ttu-id="d6278-103">动态填充控件使用 JavaScript 代码 (VB)</span><span class="sxs-lookup"><span data-stu-id="d6278-103">Dynamically Populating a Control Using JavaScript Code (VB)</span></span>
 ====================

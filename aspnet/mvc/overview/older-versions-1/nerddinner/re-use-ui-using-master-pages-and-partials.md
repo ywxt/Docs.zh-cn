@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870006"
 ---
 <a name="re-use-ui-using-master-pages-and-partials"></a><span data-ttu-id="a1504-103">重用使用母版页和它们的 UI</span><span class="sxs-lookup"><span data-stu-id="a1504-103">Re-use UI Using Master Pages and Partials</span></span>
 ====================
@@ -127,7 +128,7 @@ ms.lasthandoff: 04/06/2018
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image6.png)
 
-<span data-ttu-id="a1504-177">与*/Dinners/编辑 / [id]* URL:</span><span class="sxs-lookup"><span data-stu-id="a1504-177">And with the */Dinners/Edit/[id]* URL:</span></span>
+<span data-ttu-id="a1504-177">与 */Dinners/编辑 / [id]* URL:</span><span class="sxs-lookup"><span data-stu-id="a1504-177">And with the */Dinners/Edit/[id]* URL:</span></span>
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image7.png)
 

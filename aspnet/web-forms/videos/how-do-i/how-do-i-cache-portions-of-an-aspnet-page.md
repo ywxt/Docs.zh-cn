@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-cache-portions-of-an-aspnet-page
-title: "[如何:]缓存的 ASP.NET 页部分 |Microsoft 文档"
+title: '[如何:]缓存的 ASP.NET 页部分 |Microsoft 文档'
 author: rick-anderson
-description: "在此视频 Chris Pels 演示如何通过实现在页上的用户控件的 OutputCache 缓存的 ASP.NET 页的一个或多个部分。 首先，..."
+description: 在此视频 Chris Pels 演示如何通过实现在页上的用户控件的 OutputCache 缓存的 ASP.NET 页的一个或多个部分。 首先，...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/12/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525276"
 ---
 <a name="how-do-i-cache-portions-of-an-aspnet-page"></a><span data-ttu-id="83822-104">[如何:]缓存的 ASP.NET 页的某些部分</span><span class="sxs-lookup"><span data-stu-id="83822-104">[How Do I:] Cache Portions of an ASP.NET Page</span></span>
 ====================

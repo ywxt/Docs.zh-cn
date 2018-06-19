@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871241"
 ---
 <a name="creating-page-layouts-with-view-master-pages-c"></a><span data-ttu-id="596a8-104">创建视图母版页 (C#) 中使用的页面布局</span><span class="sxs-lookup"><span data-stu-id="596a8-104">Creating Page Layouts with View Master Pages (C#)</span></span>
 ====================

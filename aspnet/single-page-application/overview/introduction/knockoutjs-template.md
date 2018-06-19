@@ -1,14 +1,14 @@
 ---
 uid: single-page-application/overview/introduction/knockoutjs-template
-title: "单页面应用程序： KnockoutJS 模板 |Microsoft 文档"
+title: 单页面应用程序： KnockoutJS 模板 |Microsoft 文档
 author: MikeWasson
-description: "Knockout 模板"
+description: Knockout 模板
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/30/2013
 ms.topic: article
 ms.assetid: f9c07af0-4b20-4b08-af8f-47fc3df169a2
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "28036890"
 ---
 <a name="single-page-application-knockoutjs-template"></a><span data-ttu-id="779a5-103">单页面应用程序： KnockoutJS 模板</span><span class="sxs-lookup"><span data-stu-id="779a5-103">Single Page Application: KnockoutJS template</span></span>
 ====================
@@ -46,7 +47,7 @@ ms.lasthandoff: 03/15/2018
 
 <span data-ttu-id="779a5-121">启动 Visual Studio 并选择**新项目**从开始页。</span><span class="sxs-lookup"><span data-stu-id="779a5-121">Start Visual Studio and select **New Project** from the Start page.</span></span> <span data-ttu-id="779a5-122">或从**文件**菜单上，选择**新建**然后**项目**。</span><span class="sxs-lookup"><span data-stu-id="779a5-122">Or, from the **File** menu, select **New** and then **Project**.</span></span>
 
-<span data-ttu-id="779a5-123">在**模板**窗格中，选择**已安装的模板**展开**Visual C#**节点。</span><span class="sxs-lookup"><span data-stu-id="779a5-123">In the **Templates** pane, select **Installed Templates** and expand the **Visual C#** node.</span></span> <span data-ttu-id="779a5-124">下**Visual C#**，选择**Web**。</span><span class="sxs-lookup"><span data-stu-id="779a5-124">Under **Visual C#**, select **Web**.</span></span> <span data-ttu-id="779a5-125">在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。</span><span class="sxs-lookup"><span data-stu-id="779a5-125">In the list of project templates, select **ASP.NET MVC 4 Web Application**.</span></span> <span data-ttu-id="779a5-126">命名该项目并单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="779a5-126">Name the project and click **OK**.</span></span>
+<span data-ttu-id="779a5-123">在**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。</span><span class="sxs-lookup"><span data-stu-id="779a5-123">In the **Templates** pane, select **Installed Templates** and expand the **Visual C#** node.</span></span> <span data-ttu-id="779a5-124">下**Visual C#**，选择**Web**。</span><span class="sxs-lookup"><span data-stu-id="779a5-124">Under **Visual C#**, select **Web**.</span></span> <span data-ttu-id="779a5-125">在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。</span><span class="sxs-lookup"><span data-stu-id="779a5-125">In the list of project templates, select **ASP.NET MVC 4 Web Application**.</span></span> <span data-ttu-id="779a5-126">命名该项目并单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="779a5-126">Name the project and click **OK**.</span></span>
 
 ![](knockoutjs-template/_static/image2.png)
 
@@ -96,7 +97,7 @@ ms.lasthandoff: 03/15/2018
 
 <span data-ttu-id="779a5-158">这些是用于 Entity Framework Code First 的数据库模型。</span><span class="sxs-lookup"><span data-stu-id="779a5-158">These are the database models for Entity Framework Code First.</span></span> <span data-ttu-id="779a5-159">请注意这些模型具有指向对方的属性。</span><span class="sxs-lookup"><span data-stu-id="779a5-159">Notice that these models have properties that point to each other.</span></span> <span data-ttu-id="779a5-160">`ToDoList` 包含的 Todoitem，并且每个集合`ToDoItem`已返回到其父 ToDoList 的引用。</span><span class="sxs-lookup"><span data-stu-id="779a5-160">`ToDoList` contains a collection of ToDoItems, and each `ToDoItem` has a reference back to its parent ToDoList.</span></span> <span data-ttu-id="779a5-161">这些属性被称为导航属性，以及它们所表示的一对多关系待办事项列表和其待办事项。</span><span class="sxs-lookup"><span data-stu-id="779a5-161">These properties are called navigation properties, and they represent the one-to-many relation a to-do list and its to-do items.</span></span>
 
-<span data-ttu-id="779a5-162">`ToDoItem`类还使用**[ForeignKey]**特性来指定`ToDoListId`是到的外键`ToDoList`表。</span><span class="sxs-lookup"><span data-stu-id="779a5-162">The `ToDoItem` class also uses the **[ForeignKey]** attribute to specify that `ToDoListId` is a foreign key into the `ToDoList` table.</span></span> <span data-ttu-id="779a5-163">这将告知 EF 将 foreign key 约束添加到数据库。</span><span class="sxs-lookup"><span data-stu-id="779a5-163">This tells EF to add a foreign-key constraint to the database.</span></span>
+<span data-ttu-id="779a5-162">`ToDoItem`类还使用 **[ForeignKey]** 特性来指定`ToDoListId`是到的外键`ToDoList`表。</span><span class="sxs-lookup"><span data-stu-id="779a5-162">The `ToDoItem` class also uses the **[ForeignKey]** attribute to specify that `ToDoListId` is a foreign key into the `ToDoList` table.</span></span> <span data-ttu-id="779a5-163">这将告知 EF 将 foreign key 约束添加到数据库。</span><span class="sxs-lookup"><span data-stu-id="779a5-163">This tells EF to add a foreign-key constraint to the database.</span></span>
 
 [!code-csharp[Main](knockoutjs-template/samples/sample1.cs)]
 
@@ -156,7 +157,7 @@ ms.lasthandoff: 03/15/2018
 
 - <span data-ttu-id="779a5-223">`GetTodoLists`方法使用 LINQ 查询来筛选的登录的用户 ID 通过结果。</span><span class="sxs-lookup"><span data-stu-id="779a5-223">The `GetTodoLists` method uses a LINQ query to filter the results by the ID of the logged-in user.</span></span> <span data-ttu-id="779a5-224">这样一来，用户仅看到他 / 她所属的数据。</span><span class="sxs-lookup"><span data-stu-id="779a5-224">That way, a user only sees the data that belongs to him or her.</span></span> <span data-ttu-id="779a5-225">此外，请注意 Select 语句用于将转换`ToDoList`实例到`TodoListDto`实例。</span><span class="sxs-lookup"><span data-stu-id="779a5-225">Also, notice that a Select statement is used to convert the `ToDoList` instances into `TodoListDto` instances.</span></span>
 - <span data-ttu-id="779a5-226">PUT 和 POST 方法修改数据库之前检查模型状态。</span><span class="sxs-lookup"><span data-stu-id="779a5-226">The PUT and POST methods check the model state before modifying the database.</span></span> <span data-ttu-id="779a5-227">如果**ModelState.IsValid**为 false，这些方法将返回 HTTP 400 错误的请求。</span><span class="sxs-lookup"><span data-stu-id="779a5-227">If **ModelState.IsValid** is false, these methods return HTTP 400, Bad Request.</span></span> <span data-ttu-id="779a5-228">阅读有关在 Web API 中的模型验证的详细信息[模型验证](../../../web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api.md)。</span><span class="sxs-lookup"><span data-stu-id="779a5-228">Read more about model validation in Web API at [Model Validation](../../../web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api.md).</span></span>
-- <span data-ttu-id="779a5-229">控制器类也用修饰**[Authorize]**属性。</span><span class="sxs-lookup"><span data-stu-id="779a5-229">The controller class is also decorated with the **[Authorize]** attribute.</span></span> <span data-ttu-id="779a5-230">此属性检查 HTTP 请求进行身份验证。</span><span class="sxs-lookup"><span data-stu-id="779a5-230">This attribute checks whether the HTTP request is authenticated.</span></span> <span data-ttu-id="779a5-231">如果请求未通过身份验证，客户端收到 HTTP 401 未授权。</span><span class="sxs-lookup"><span data-stu-id="779a5-231">If the request is not authenticated, the client receives HTTP 401, Unauthorized.</span></span> <span data-ttu-id="779a5-232">阅读有关在身份验证的详细信息[身份验证和 ASP.NET Web API 中的授权](../../../web-api/overview/security/authentication-and-authorization-in-aspnet-web-api.md)。</span><span class="sxs-lookup"><span data-stu-id="779a5-232">Read more about authentication at [Authentication and Authorization in ASP.NET Web API](../../../web-api/overview/security/authentication-and-authorization-in-aspnet-web-api.md).</span></span>
+- <span data-ttu-id="779a5-229">控制器类也用修饰 **[Authorize]** 属性。</span><span class="sxs-lookup"><span data-stu-id="779a5-229">The controller class is also decorated with the **[Authorize]** attribute.</span></span> <span data-ttu-id="779a5-230">此属性检查 HTTP 请求进行身份验证。</span><span class="sxs-lookup"><span data-stu-id="779a5-230">This attribute checks whether the HTTP request is authenticated.</span></span> <span data-ttu-id="779a5-231">如果请求未通过身份验证，客户端收到 HTTP 401 未授权。</span><span class="sxs-lookup"><span data-stu-id="779a5-231">If the request is not authenticated, the client receives HTTP 401, Unauthorized.</span></span> <span data-ttu-id="779a5-232">阅读有关在身份验证的详细信息[身份验证和 ASP.NET Web API 中的授权](../../../web-api/overview/security/authentication-and-authorization-in-aspnet-web-api.md)。</span><span class="sxs-lookup"><span data-stu-id="779a5-232">Read more about authentication at [Authentication and Authorization in ASP.NET Web API](../../../web-api/overview/security/authentication-and-authorization-in-aspnet-web-api.md).</span></span>
 
 <span data-ttu-id="779a5-233">`TodoController`类是非常类似于`TodoListController`。</span><span class="sxs-lookup"><span data-stu-id="779a5-233">The `TodoController` class is very similar to `TodoListController`.</span></span> <span data-ttu-id="779a5-234">最大的区别是它不定义任何 GET 方法中，因为客户端将会获得待办事项项目，以及每个待办事项列表。</span><span class="sxs-lookup"><span data-stu-id="779a5-234">The biggest difference is that it does not define any GET methods, because the client will get the to-do items along with each to-do list.</span></span>
 
@@ -214,7 +215,7 @@ ms.lasthandoff: 03/15/2018
 
 [!code-html[Main](knockoutjs-template/samples/sample8.html)]
 
-<span data-ttu-id="779a5-286">在此示例中，Knockout 更新的内容**&lt;跨越&gt;**具有的值的元素`myItems.count()`。</span><span class="sxs-lookup"><span data-stu-id="779a5-286">In this example, Knockout updates the contents of the **&lt;span&gt;** element with the value of `myItems.count()`.</span></span> <span data-ttu-id="779a5-287">当此值发生更改时，Knockout 更新文档。</span><span class="sxs-lookup"><span data-stu-id="779a5-287">Whenever this value changes, Knockout updates the document.</span></span>
+<span data-ttu-id="779a5-286">在此示例中，Knockout 更新的内容**&lt;跨越&gt;** 具有的值的元素`myItems.count()`。</span><span class="sxs-lookup"><span data-stu-id="779a5-286">In this example, Knockout updates the contents of the **&lt;span&gt;** element with the value of `myItems.count()`.</span></span> <span data-ttu-id="779a5-287">当此值发生更改时，Knockout 更新文档。</span><span class="sxs-lookup"><span data-stu-id="779a5-287">Whenever this value changes, Knockout updates the document.</span></span>
 
 <span data-ttu-id="779a5-288">Knockout 提供大量的不同绑定类型。</span><span class="sxs-lookup"><span data-stu-id="779a5-288">Knockout provides a number of different binding types.</span></span> <span data-ttu-id="779a5-289">下面是一些在 SPA 模板中使用的绑定：</span><span class="sxs-lookup"><span data-stu-id="779a5-289">Here are some of the bindings used in the SPA template:</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875430"
 ---
 <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a><span data-ttu-id="c5098-104">以队列为中心的工作模式 （使用 Azure 构建真实世界云应用）</span><span class="sxs-lookup"><span data-stu-id="c5098-104">Queue-Centric Work Pattern (Building Real-World Cloud Apps with Azure)</span></span>
 ====================
@@ -135,11 +136,11 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="c5098-222">以下步骤演示如何将工作人员添加到具有标准 web 项目的解决方案的角色项目。</span><span class="sxs-lookup"><span data-stu-id="c5098-222">The following steps show how to add a worker role project to a solution that has a standard web project.</span></span> <span data-ttu-id="c5098-223">已修复它在项目中，你可以下载完成这些步骤。</span><span class="sxs-lookup"><span data-stu-id="c5098-223">These steps have already been done in the Fix It project that you can download.</span></span>
 
-<span data-ttu-id="c5098-224">首先将云服务项目添加到 Visual Studio 解决方案。</span><span class="sxs-lookup"><span data-stu-id="c5098-224">First add a Cloud Service project to the Visual Studio solution.</span></span> <span data-ttu-id="c5098-225">右键单击解决方案并选择**添加**，然后**新项目**。</span><span class="sxs-lookup"><span data-stu-id="c5098-225">Right-click the solution and select **Add**, then **New Project**.</span></span> <span data-ttu-id="c5098-226">在左窗格中，展开**Visual C#**和选择**云**。</span><span class="sxs-lookup"><span data-stu-id="c5098-226">In the left pane, expand **Visual C#** and select **Cloud**.</span></span>
+<span data-ttu-id="c5098-224">首先将云服务项目添加到 Visual Studio 解决方案。</span><span class="sxs-lookup"><span data-stu-id="c5098-224">First add a Cloud Service project to the Visual Studio solution.</span></span> <span data-ttu-id="c5098-225">右键单击解决方案并选择**添加**，然后**新项目**。</span><span class="sxs-lookup"><span data-stu-id="c5098-225">Right-click the solution and select **Add**, then **New Project**.</span></span> <span data-ttu-id="c5098-226">在左窗格中，展开**Visual C#** 和选择**云**。</span><span class="sxs-lookup"><span data-stu-id="c5098-226">In the left pane, expand **Visual C#** and select **Cloud**.</span></span>
 
 [![](queue-centric-work-pattern/_static/image5.png)](queue-centric-work-pattern/_static/image4.png)
 
-<span data-ttu-id="c5098-227">在**新建 Azure 云服务**对话框中，展开**Visual C#**左窗格中的节点。</span><span class="sxs-lookup"><span data-stu-id="c5098-227">In the **New Azure Cloud Service** dialog, expand the **Visual C#** node on the left pane.</span></span> <span data-ttu-id="c5098-228">选择**辅助角色**，然后单击右箭头图标。</span><span class="sxs-lookup"><span data-stu-id="c5098-228">Select **Worker Role** and click the right-arrow icon.</span></span>
+<span data-ttu-id="c5098-227">在**新建 Azure 云服务**对话框中，展开**Visual C#** 左窗格中的节点。</span><span class="sxs-lookup"><span data-stu-id="c5098-227">In the **New Azure Cloud Service** dialog, expand the **Visual C#** node on the left pane.</span></span> <span data-ttu-id="c5098-228">选择**辅助角色**，然后单击右箭头图标。</span><span class="sxs-lookup"><span data-stu-id="c5098-228">Select **Worker Role** and click the right-arrow icon.</span></span>
 
 ![](queue-centric-work-pattern/_static/image6.png)
 

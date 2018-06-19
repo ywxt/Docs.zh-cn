@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883906"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-profile-services"></a><span data-ttu-id="82e99-105">[如何:]使用 ASP.NET AJAX 配置文件服务？</span><span class="sxs-lookup"><span data-stu-id="82e99-105">[How Do I:] Use the ASP.NET AJAX Profile Services?</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871553"
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-table-c"></a><span data-ttu-id="69c9c-103">将新字段添加到的电影模型和表 (C#)</span><span class="sxs-lookup"><span data-stu-id="69c9c-103">Adding a New Field to the Movie Model and Table (C#)</span></span>
 ====================
@@ -65,7 +66,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="69c9c-131">你现在已更新应用程序代码以支持新`Rating`属性。</span><span class="sxs-lookup"><span data-stu-id="69c9c-131">You've now updated the application code to support the new `Rating` property.</span></span>
 
-<span data-ttu-id="69c9c-132">现在运行应用程序并导航到*/Movies* URL。</span><span class="sxs-lookup"><span data-stu-id="69c9c-132">Now run the application and navigate to the */Movies* URL.</span></span> <span data-ttu-id="69c9c-133">执行此操作，不过，你将看到以下错误：</span><span class="sxs-lookup"><span data-stu-id="69c9c-133">When you do this, though, you'll see the following error:</span></span>
+<span data-ttu-id="69c9c-132">现在运行应用程序并导航到 */Movies* URL。</span><span class="sxs-lookup"><span data-stu-id="69c9c-132">Now run the application and navigate to the */Movies* URL.</span></span> <span data-ttu-id="69c9c-133">执行此操作，不过，你将看到以下错误：</span><span class="sxs-lookup"><span data-stu-id="69c9c-133">When you do this, though, you'll see the following error:</span></span>
 
 ![](adding-a-new-field/_static/image1.png)
 
@@ -119,7 +120,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="69c9c-167">关闭*Global.asax*文件。</span><span class="sxs-lookup"><span data-stu-id="69c9c-167">Close the *Global.asax* file.</span></span>
 
-<span data-ttu-id="69c9c-168">重新运行该应用程序并导航到*/Movies* URL。</span><span class="sxs-lookup"><span data-stu-id="69c9c-168">Re-run the application and navigate to the */Movies* URL.</span></span> <span data-ttu-id="69c9c-169">当应用程序启动时，它将检测模型结构不再与数据库架构相匹配。</span><span class="sxs-lookup"><span data-stu-id="69c9c-169">When the application starts, it detects that the model structure no longer matches the database schema.</span></span> <span data-ttu-id="69c9c-170">自动重新创建数据库，以匹配新的模型结构，并填充示例电影的数据库：</span><span class="sxs-lookup"><span data-stu-id="69c9c-170">It automatically re-creates the database to match the new model structure and populates the database with the sample movies:</span></span>
+<span data-ttu-id="69c9c-168">重新运行该应用程序并导航到 */Movies* URL。</span><span class="sxs-lookup"><span data-stu-id="69c9c-168">Re-run the application and navigate to the */Movies* URL.</span></span> <span data-ttu-id="69c9c-169">当应用程序启动时，它将检测模型结构不再与数据库架构相匹配。</span><span class="sxs-lookup"><span data-stu-id="69c9c-169">When the application starts, it detects that the model structure no longer matches the database schema.</span></span> <span data-ttu-id="69c9c-170">自动重新创建数据库，以匹配新的模型结构，并填充示例电影的数据库：</span><span class="sxs-lookup"><span data-stu-id="69c9c-170">It automatically re-creates the database to match the new model structure and populates the database with the sample movies:</span></span>
 
 ![7_MyMovieList_SM](adding-a-new-field/_static/image5.png)
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878537"
 ---
 <a name="animating-an-updatepanel-control-c"></a><span data-ttu-id="127ae-104">对进行动画处理 UpdatePanel 控件 (C#)</span><span class="sxs-lookup"><span data-stu-id="127ae-104">Animating an UpdatePanel Control (C#)</span></span>
 ====================

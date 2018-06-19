@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870175"
 ---
 <a name="use-ajax-to-deliver-dynamic-updates"></a><span data-ttu-id="c9a9e-103">使用 AJAX 提供动态更新</span><span class="sxs-lookup"><span data-stu-id="c9a9e-103">Use AJAX to Deliver Dynamic Updates</span></span>
 ====================
@@ -37,7 +38,7 @@ ms.lasthandoff: 04/06/2018
 
 ### <a name="indicating-whether-the-user-is-rsvpd"></a><span data-ttu-id="c9a9e-112">该值指示用户是否答复活动</span><span class="sxs-lookup"><span data-stu-id="c9a9e-112">Indicating whether the user is RSVP'd</span></span>
 
-<span data-ttu-id="c9a9e-113">用户可以访问*/Dinners/详细信息 / [id*] URL 以查看有关特定 dinner 的详细信息：</span><span class="sxs-lookup"><span data-stu-id="c9a9e-113">Users can visit the */Dinners/Details/[id*] URL to see details about a particular dinner:</span></span>
+<span data-ttu-id="c9a9e-113">用户可以访问 */Dinners/详细信息 / [id*] URL 以查看有关特定 dinner 的详细信息：</span><span class="sxs-lookup"><span data-stu-id="c9a9e-113">Users can visit the */Dinners/Details/[id*] URL to see details about a particular dinner:</span></span>
 
 ![](use-ajax-to-deliver-dynamic-updates/_static/image1.png)
 
@@ -95,7 +96,7 @@ ms.lasthandoff: 04/06/2018
 
 ![](use-ajax-to-deliver-dynamic-updates/_static/image5.png)
 
-<span data-ttu-id="c9a9e-139">网络带宽和流量时执行此 AJAX 调用涉及是真正轻量。</span><span class="sxs-lookup"><span data-stu-id="c9a9e-139">The network bandwidth and traffic involved when making this AJAX call is really lightweight.</span></span> <span data-ttu-id="c9a9e-140">当用户单击"为此事件的回复"链接时，对进行小的 HTTP POST 网络请求*/Dinners/Register/1*看起来与下面类似的网络的 URL:</span><span class="sxs-lookup"><span data-stu-id="c9a9e-140">When the user clicks on the "RSVP for this event" link, a small HTTP POST network request is made to the */Dinners/Register/1* URL that looks like below on the wire:</span></span>
+<span data-ttu-id="c9a9e-139">网络带宽和流量时执行此 AJAX 调用涉及是真正轻量。</span><span class="sxs-lookup"><span data-stu-id="c9a9e-139">The network bandwidth and traffic involved when making this AJAX call is really lightweight.</span></span> <span data-ttu-id="c9a9e-140">当用户单击"为此事件的回复"链接时，对进行小的 HTTP POST 网络请求 */Dinners/Register/1*看起来与下面类似的网络的 URL:</span><span class="sxs-lookup"><span data-stu-id="c9a9e-140">When the user clicks on the "RSVP for this event" link, a small HTTP POST network request is made to the */Dinners/Register/1* URL that looks like below on the wire:</span></span>
 
 [!code-console[Main](use-ajax-to-deliver-dynamic-updates/samples/sample7.cmd)]
 

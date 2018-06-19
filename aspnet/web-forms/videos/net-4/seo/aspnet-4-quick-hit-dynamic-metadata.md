@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/seo/aspnet-4-quick-hit-dynamic-metadata
-title: "动态元数据 |Microsoft 文档"
+title: 动态元数据 |Microsoft 文档
 author: JoeStagner
-description: "在此视频中，你将学习有关 Page.MetaKeywords 和 Page.MetaDescription 属性，可用于在运行 ti 动态设置页元数据..."
+description: 在此视频中，你将学习有关 Page.MetaKeywords 和 Page.MetaDescription 属性，可用于在运行 ti 动态设置页元数据...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/05/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521856"
 ---
 <a name="aspnet-4-quick-hit---dynamic-metadata"></a><span data-ttu-id="6e3a7-103">ASP.NET 4"快速命中"的动态元数据</span><span class="sxs-lookup"><span data-stu-id="6e3a7-103">ASP.NET 4 "Quick Hit" - Dynamic Metadata</span></span>
 ====================

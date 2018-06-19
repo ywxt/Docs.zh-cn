@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867731"
 ---
 <a name="displaying-a-table-of-database-data"></a><span data-ttu-id="f66fe-105">显示数据库数据的表</span><span class="sxs-lookup"><span data-stu-id="f66fe-105">Displaying a Table of Database Data</span></span>
 ====================

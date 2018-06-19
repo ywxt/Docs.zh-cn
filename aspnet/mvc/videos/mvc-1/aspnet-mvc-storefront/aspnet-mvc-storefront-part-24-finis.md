@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868524"
 ---
 <a name="aspnet-mvc-storefront-part-24-finis"></a><span data-ttu-id="75f5f-104">ASP.NET MVC 店面一部分 24: Finis</span><span class="sxs-lookup"><span data-stu-id="75f5f-104">ASP.NET MVC Storefront Part 24: Finis</span></span>
 ====================

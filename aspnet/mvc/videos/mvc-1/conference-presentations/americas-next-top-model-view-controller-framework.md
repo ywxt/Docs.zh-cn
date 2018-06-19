@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-1/conference-presentations/americas-next-top-model-view-controller-framework
-title: "America 的下一步顶层模型视图控制器框架 |Microsoft 文档"
+title: America 的下一步顶层模型视图控制器框架 |Microsoft 文档
 author: Haacked
-description: "请参阅如何构建的简单应用程序重点介绍了一些关键功能的 ASP.NET MVC。 此外，了解如何提高工作效率使用某些..."
+description: 请参阅如何构建的简单应用程序重点介绍了一些关键功能的 ASP.NET MVC。 此外，了解如何提高工作效率使用某些...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503436"
 ---
 <a name="americas-next-top-model-view-controller-framework"></a><span data-ttu-id="75ca8-104">America 的下一步顶层模型视图控制器框架</span><span class="sxs-lookup"><span data-stu-id="75ca8-104">America's Next Top Model View Controller Framework</span></span>
 ====================

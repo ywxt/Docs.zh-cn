@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898208"
 ---
 <a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a><span data-ttu-id="6975f-103">应用安全更新的 IE 后为不可用服务器应用程序错误修复</span><span class="sxs-lookup"><span data-stu-id="6975f-103">Fix for 'Server Application Unavailable' Error after Applying Security Update for IE</span></span>
 ====================

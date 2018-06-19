@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872918"
 ---
 <a name="adding-validation-to-the-model-vb"></a><span data-ttu-id="5c4c0-103">将验证添加到模型 (VB)</span><span class="sxs-lookup"><span data-stu-id="5c4c0-103">Adding Validation to the Model (VB)</span></span>
 ====================
@@ -71,7 +72,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="validation-error-ui-in-aspnet-mvc"></a><span data-ttu-id="5c4c0-141">验证错误在 ASP.NET MVC UI</span><span class="sxs-lookup"><span data-stu-id="5c4c0-141">Validation Error UI in ASP.NET MVC</span></span>
 
-<span data-ttu-id="5c4c0-142">重新运行该应用程序并导航到*/Movies* URL。</span><span class="sxs-lookup"><span data-stu-id="5c4c0-142">Re-run the application and navigate to the */Movies* URL.</span></span>
+<span data-ttu-id="5c4c0-142">重新运行该应用程序并导航到 */Movies* URL。</span><span class="sxs-lookup"><span data-stu-id="5c4c0-142">Re-run the application and navigate to the */Movies* URL.</span></span>
 
 <span data-ttu-id="5c4c0-143">单击**创建电影**链接添加新的影片。</span><span class="sxs-lookup"><span data-stu-id="5c4c0-143">Click the **Create Movie** link to add a new movie.</span></span> <span data-ttu-id="5c4c0-144">填写表单的某些无效的值，然后单击**创建**按钮。</span><span class="sxs-lookup"><span data-stu-id="5c4c0-144">Fill out the form with some invalid values and then click the **Create** button.</span></span>
 

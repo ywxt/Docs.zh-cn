@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868576"
 ---
 <a name="adding-dynamic-content-to-a-cached-page-c"></a><span data-ttu-id="f177c-104">将动态内容添加到缓存的页面 (C#)</span><span class="sxs-lookup"><span data-stu-id="f177c-104">Adding Dynamic Content to a Cached Page (C#)</span></span>
 ====================
