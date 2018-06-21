@@ -1,5 +1,9 @@
 # [介绍](index.md)
 
+# [新增功能](xref:aspnetcore-2.1)
+# [新增功能](xref:aspnetcore-2.0)
+# [新增功能](xref:aspnetcore-1.1)
+
 # [入门](getting-started.md)
 ## [创建 Web 应用](xref:mvc/razor-pages/index)
 ## [创建 Web API](xref:tutorials/first-web-api)
@@ -104,6 +108,8 @@
 ### [使用 Visual Studio for Mac 创建 Web API](xref:tutorials/first-web-api-mac)
 ### [使用 Visual Studio Code 创建 Web API](xref:tutorials/web-api-vsc)
 
+## [使用文件观察程序开发应用](xref:tutorials/dotnet-watch)
+
 ## [为移动应用创建后端服务](mobile/native-mobile-backend.md)
 
 # [基础知识](fundamentals/index.md)
@@ -198,15 +204,15 @@
 ### [自定义格式化程序](xref:web-api/advanced/custom-formatters)
 ### [格式化响应数据](xref:web-api/advanced/formatting)
 
-# [测试、调试和疑难解答](xref:testing/index)
+# [测试、调试和疑难解答](xref:test/index)
 ## [单元测试](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
-## [集成测试](xref:testing/integration-testing)
-## [Razor 页面测试](xref:testing/razor-pages-testing)
+## [集成测试](xref:test/integration-tests)
+## [Razor 页面单元测试](xref:test/razor-pages-tests)
 ## [测试控制器](xref:mvc/controllers/testing)
 ## [远程调试](/visualstudio/debugger/remote-debugging-azure)
 ## [快照调试](/azure/application-insights/app-insights-snapshot-debugger)
 ## [Visual Studio 中的快照调试](/visualstudio/debugger/debug-live-azure-applications)
-## [疑难解答](xref:testing/troubleshoot)
+## [疑难解答](xref:test/troubleshoot)
 
 # [使用 EF Core 和 Azure 的数据访问](data/index.md)
 ## [通过 Visual Studio 开始使用 Razor 页面和 EF Core](xref:data/ef-rp/intro)
@@ -240,7 +246,11 @@
 ## [中心](xref:signalr/hubs)
 ## [JavaScript 客户端](xref:signalr/javascript-client)
 ## [.NET 客户端](xref:signalr/dotnet-client)
+## [HubContext](xref:signalr/hubcontext)
+## [用户和组](xref:signalr/groups)
+## [MessagePack 中心协议](xref:signalr/messagepackhubprotocol)
 ## [发布到 Azure](xref:signalr/publish-to-azure-web-app)
+## [流式处理](xref:signalr/streaming)
 ## [支持的平台](xref:signalr/supported-platforms)
 
 # [移动](xref:mobile/index)
@@ -274,6 +284,7 @@
 ## [身份验证](xref:security/authentication/index)
 ### [标识简介](xref:security/authentication/identity)
 ### [基架标识](xref:security/authentication/scaffold-identity)
+### [将自定义用户数据添加到标识](xref:security/authentication/add-user-data)
 ### [社区 OSS 身份验证选项](xref:security/authentication/community)
 ### [配置标识](xref:security/authentication/identity-configuration)
 ### [配置 Windows 身份验证](xref:security/authentication/windowsauth)
@@ -361,6 +372,7 @@
 ## [响应压缩中间件](xref:performance/response-compression)
 
 # [迁移](xref:migration/index)
+## [ASP.NET Core 2.0 - 2.1](xref:migration/20_21)
 ## [ASP.NET 到 ASP.NET Core](xref:migration/proper-to-2x/index)
 ### [MVC](xref:migration/mvc)
 ### [Web API](xref:migration/webapi)
@@ -373,10 +385,5 @@
 ### [身份验证和标识](xref:migration/1x-to-2x/identity-2x)
 
 # [API 参考](/dotnet/api/?view=aspnetcore-2.0)
-
-# [2.0 发行说明](aspnetcore-2.0.md)
-## [1.1 发行说明](aspnetcore-1.1.md)
-## [早期发行说明](https://github.com/aspnet/home/releases)
-## [VS 2015/project.json 文档](https://docs.microsoft.com/dotnet/articles/project-json)
 
 # [参与](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md)
