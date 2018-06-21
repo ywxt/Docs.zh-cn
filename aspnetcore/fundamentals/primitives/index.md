@@ -2,19 +2,15 @@
 title: ASP.NET Core 中的基元
 author: guardrex
 description: 浏览有关框架扩展所共享的、可在自己的代码中使用的 ASP.NET Core 构建基块的文章。
-manager: wpickett
 ms.author: riande
 ms.date: 10/28/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/primitives/index
-ms.openlocfilehash: 1a670d849c890dd0a07608267c621e6291f4214c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 14d93807ae99e8402a905d135f8f76bb0e4f42d5
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
-ms.locfileid: "28882706"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275459"
 ---
 # <a name="primitives-in-aspnet-core"></a>ASP.NET Core 中的基元
 
