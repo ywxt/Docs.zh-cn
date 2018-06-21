@@ -2,25 +2,20 @@
 title: ASP.NET Core SignalR
 author: rachelappel
 description: 了解关于 ASP.NET Core SignalR 的主题。
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.date: 06/18/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: signalr/index
-ms.openlocfilehash: 7edcd93582d37ab47a6947ea5125ec6a4404b5f1
-ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
+ms.openlocfilehash: beeae7e2f00323a25ed021f876bc22f78b2e106e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "35725752"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276677"
 ---
 # <a name="aspnet-core-signalr"></a>ASP.NET Core SignalR
 
 * [介绍](xref:signalr/introduction)
-* [入门](xref:signalr/get-started)
 * [中心](xref:signalr/hubs)
 * [JavaScript 客户端](xref:signalr/javascript-client)
 * [.NET 客户端](xref:signalr/dotnet-client)
