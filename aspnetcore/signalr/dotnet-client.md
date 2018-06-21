@@ -13,9 +13,10 @@ ms.topic: article
 uid: signalr/dotnet-client
 ms.openlocfilehash: 412d2362575789f1fb4792940df6d3dd24dbdd5a
 ms.sourcegitcommit: 300a1127957dcdbce1b6ad79a7b9dc676f571510
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34459017"
 ---
 # <a name="aspnet-core-signalr-net-client"></a><span data-ttu-id="67f26-103">ASP.NET 核心 SignalR.NET 客户端</span><span class="sxs-lookup"><span data-stu-id="67f26-103">ASP.NET Core SignalR .NET Client</span></span>
 
