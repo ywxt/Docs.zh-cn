@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/host/index
-ms.openlocfilehash: 7ad059e39866f59040c12b7ac15e9fa3405a9aad
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 7f8ccff7e3da93d6e617505ac93fafc3a82ed880
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252004"
 ---
 # <a name="host-in-aspnet-core"></a>在 ASP.NET Core 中托管
 
@@ -23,4 +24,4 @@ ms.lasthandoff: 05/17/2018
 * [Web 主机](xref:fundamentals/host/web-host) &ndash; 适用于托管 Web 应用。
 * [通用主机](xref:fundamentals/host/generic-host)（ASP.NET Core 2.1 或更高版本）&ndash; 适用于托管非 Web 应用（例如，运行后台任务的应用）。 在未来的版本中，通用主机将适用于托管任何类型的应用，包括 Web 应用。 通用主机最终将取代 Web 主机。
 
-目前，开发人员应基于 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 使用 [Web 主机](xref:fundamentals/host/web-host)，来托管 ASP.NET Core 应用。
+为托管 ASP.NET Core *Web 应用*，开发者应使用基于 [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder) 的 Web 主机。 为托管*非 Web 应用*，开发者应使用基于 [HostBuilder](/dotnet/api/microsoft.extensions.hosting.hostbuilder) 的通用主机。

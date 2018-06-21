@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/logging/index
-ms.openlocfilehash: 8b53a19f4958e97198175d6acea4017d54f827bb
-ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
+ms.openlocfilehash: 5e7e0fe0744a8dc3f3dd6097a059d77f2c578f77
+ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2018
+ms.lasthandoff: 06/15/2018
+ms.locfileid: "35652196"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core 中的日志记录
 
@@ -33,7 +34,7 @@ ASP.NET Core 支持适用于各种日志记录提供程序的日志记录 API。
 
 ## <a name="how-to-create-logs"></a>如何创建日志
 
-要创建日志，请先从[依赖关系注入](xref:fundamentals/dependency-injection)容器获取 `ILogger` 对象：
+要创建日志，请从[依赖关系注入](xref:fundamentals/dependency-injection)容器获取 [ILogger](/dotnet/api/microsoft.extensions.logging.ilogger) 对象：
 
 [!code-csharp[](index/sample/Controllers/TodoController.cs?name=snippet_LoggerDI&highlight=7)]
 
@@ -63,14 +64,14 @@ ASP.NET Core 不提供异步记录器方法，因为日志记录的速度应非�
 
 日志记录提供程序通过 `ILogger` 对象获取所创建的消息，并显示或存储它们。 例如，控制台提供程序在控制台上显示消息，Azure App Service 提供程序可将消息存储在 Azure blob 存储中。
 
-要使用提供程序，请安装其 NuGet 包，并在 `ILoggerFactory` 的实例上调用提供程序的扩展方法，如下方示例所示。
+要使用提供程序，请安装其 NuGet 包，并在 [ILoggerFactory](/dotnet/api/microsoft.extensions.logging.iloggerfactory) 的实例上调用提供程序的扩展方法，如下方示例所示：
 
 [!code-csharp[](index/sample//Startup.cs?name=snippet_AddConsoleAndDebug&highlight=3,5-7)]
 
 ASP.NET Core [依赖关系注入](xref:fundamentals/dependency-injection) (DI) 将提供 `ILoggerFactory` 实例。 在 [Microsoft.Extensions.Logging.Console](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console/) 和 [Microsoft.Extensions.Logging.Debug](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Debug/) 包中定义了 `AddConsole` 和 `AddDebug` 扩展方法。 每个扩展方法都调用 `ILoggerFactory.AddProvider` 方法，传入提供程序的一个实例。 
 
 > [!NOTE]
-> 本文的示例应用程序将在 `Startup` 类的 `Configure` 方法中添加日志记录提供程序。 要从先前执行的代码获取日志输出，请改为在 `Startup` 类构造函数中添加日志记录提供程序。 
+> [示例应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/sample)在 `Startup.Configure` 方法中添加了日志提供程序。 要从先前执行的代码获取日志输出，请在 `Startup` 类构造函数中添加日志提供程序。
 
 ---
 
@@ -372,7 +373,7 @@ System.Exception: Item not found exception.
 
 可以将逻辑操作集划入范围，从而将相同的数据附加到在此集中创建的每个日志。 例如，可让处理事务时创建的每个日志都包含事务 ID。
 
-范围是由 `ILogger.BeginScope<TState>` 方法返回的 `IDisposable` 类型，持续至释放为止。 要使用作用域，请在 `using` 块中包装记录器调用，如下所示：
+范围是由 [ILogger.BeginScope&lt;TState&gt;](/dotnet/api/microsoft.extensions.logging.ilogger.beginscope) 方法返回的 `IDisposable` 类型，持续至释放为止。 要使用作用域，请在 `using` 块中包装记录器调用，如下所示：
 
 [!code-csharp[](index/sample//Controllers/TodoController.cs?name=snippet_Scopes&highlight=4-5,13)]
 
@@ -410,15 +411,14 @@ warn: TodoApi.Controllers.TodoController[4000]
 
 ASP.NET Core 提供以下提供程序：
 
-* [控制台](#console)
-* [调试](#debug)
-* [EventSource](#eventsource)
-* [EventLog](#eventlog)
-* [TraceSource](#tracesource)
-* [Azure 应用服务](#appservice)
+* [控制台](#console-provider)
+* [调试](#debug-provider)
+* [EventSource](#eventsource-provider)
+* [EventLog](#windows-eventlog-provider)
+* [TraceSource](#tracesource-provider)
+* [Azure 应用服务](#azure-app-service-provider)
 
-<a id="console"></a>
-### <a name="the-console-provider"></a>控制台提供程序
+### <a name="console-provider"></a>控制台提供程序
 
 [Microsoft.Extensions.Logging.Console](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console) 提供程序包向控制台发送日志输出。 
 
@@ -452,8 +452,7 @@ loggerFactory.AddConsole(Configuration.GetSection("Logging"));
 
 ---
 
-<a id="debug"></a>
-### <a name="the-debug-provider"></a>调试提供程序
+### <a name="debug-provider"></a>调试提供程序
 
 [Microsoft.Extensions.Logging.Debug](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Debug) 提供程序包使用 [System.Diagnostics.Debug](/dotnet/api/system.diagnostics.debug) 类（`Debug.WriteLine` 方法调用）来写入日志输出。
 
@@ -475,8 +474,7 @@ loggerFactory.AddDebug()
 
 ---
 
-<a id="eventsource"></a>
-### <a name="the-eventsource-provider"></a>EventSource 提供程序
+### <a name="eventsource-provider"></a>EventSource 提供程序
 
 对于面向 ASP.NET Core 1.1.0 或更高版本的应用，[Microsoft.Extensions.Logging.EventSource](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventSource) 提供程序包可实现事件跟踪。 在 Windows 中，它使用 [ETW](https://msdn.microsoft.com/library/windows/desktop/bb968803)。 提供程序可跨平台使用，但尚无支持 Linux 或 macOS 的事件集合和显示工具。 
 
@@ -500,8 +498,7 @@ loggerFactory.AddEventSourceLogger()
 
 ![其他 Perfview 提供程序](index/_static/perfview-additional-providers.png)
 
-<a id="eventlog"></a>
-### <a name="the-windows-eventlog-provider"></a>Windows EventLog 提供程序
+### <a name="windows-eventlog-provider"></a>Windows EventLog 提供程序
 
 [Microsoft.Extensions.Logging.EventLog](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventLog) 提供程序包向 Windows 事件日志发送日志输出。
 
@@ -521,8 +518,7 @@ loggerFactory.AddEventLog()
 
 ---
 
-<a id="tracesource"></a>
-### <a name="the-tracesource-provider"></a>TraceSource 提供程序
+### <a name="tracesource-provider"></a>TraceSource 提供程序
 
 [Microsoft.Extensions.Logging.TraceSource](https://www.nuget.org/packages/Microsoft.Extensions.Logging.TraceSource) 提供程序包使用 [System.Diagnostics.TraceSource](/dotnet/api/system.diagnostics.tracesource) 库和提供程序。
 
@@ -548,14 +544,13 @@ loggerFactory.AddTraceSource(sourceSwitchName);
 
 [!code-csharp[](index/sample/Startup.cs?name=snippet_TraceSource&highlight=9-12)]
 
-<a id="appservice"></a>
-### <a name="the-azure-app-service-provider"></a>Azure App Service 提供程序
+### <a name="azure-app-service-provider"></a>Azure 应用服务提供程序
 
-[Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) 提供程序包将日志写入 Azure App Service 应用的文件系统，以及 Azure 存储帐户中的 [blob 存储](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#what-is-blob-storage)。 该提供程序仅适用于面向 ASP.NET Core 1.1.0 或更高版本的应用。 
+[Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) 提供程序包将日志写入 Azure App Service 应用的文件系统，以及 Azure 存储帐户中的 [blob 存储](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#what-is-blob-storage)。 该提供程序仅适用于面向 ASP.NET Core 1.1 或更高版本的应用。
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-如果面向 .NET Core，无需安装提供程序包或显式调用 `AddAzureWebAppDiagnostics`。 将应用部署到 Azure App Service 时，提供程序对应用自动可用。
+如果面向 .NET Core，请勿安装提供程序包或显式调用 [AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics)。 将应用部署到 Azure 应用服务时，提供程序对应用自动可用。
 
 如果面向 .NET Framework，需要向项目添加提供程序包并调用 `AddAzureWebAppDiagnostics`：
 
@@ -569,23 +564,24 @@ logging.AddAzureWebAppDiagnostics();
 loggerFactory.AddAzureWebAppDiagnostics();
 ```
 
-`AddAzureWebAppDiagnostics` 重载允许传入 [AzureAppServicesDiagnosticsSettings](https://github.com/aspnet/Logging/blob/c7d0b1b88668ff4ef8a86ea7d2ebb5ca7f88d3e0/src/Microsoft.Extensions.Logging.AzureAppServices/AzureAppServicesDiagnosticsSettings.cs)，可用它替代默认设置，例如日志记录输出模板、blob 名称和文件大小限制等。 （输出模板是应用于所有日志的消息模板，其优先级高于调用 `ILogger` 方法时提供的模板。）
+[AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics) 重载允许传入 [AzureAppServicesDiagnosticsSettings](/dotnet/api/microsoft.extensions.logging.azureappservices.azureappservicesdiagnosticssettings)，可用它替代默认设置，例如日志记录输出模板、blob 名称和文件大小限制等。 （输出模板是应用于所有日志的消息模板，其优先级高于调用 `ILogger` 方法时提供的模板。）
 
 ---
 
-在部署 App Service 应用时，应用程序将遵循 Azure 门户中 App Service 页下[诊断日志](https://azure.microsoft.com/documentation/articles/web-sites-enable-diagnostic-log/#enablediag)部分的设置。 这些设置将在更改后立即生效，无需重启应用或重新向其部署代码。 
+在部署 App Service 应用时，应用将遵循 Azure 门户中 App Service 页下[诊断日志](https://azure.microsoft.com/documentation/articles/web-sites-enable-diagnostic-log/#enablediag)部分的设置。 更新这些设置后，更改会立即生效，无需重新启动或重新部署应用。
 
 ![Azure 日志记录设置](index/_static/azure-logging-settings.png)
 
-日志文件的默认位置是 D:\\home\\LogFiles\\Application 文件夹，默认文件名为 diagnostics-yyyymmdd.txt。 默认文件大小上限为 10 MB，默认最大保留文件数为 2。 默认 blob 名为 {app-name}{timestamp}/yyyy/mm/dd/hh/{guid}-applicationLog.txt。 有关默认行为的详细信息，请参阅 [AzureAppServicesDiagnosticsSettings](https://github.com/aspnet/Logging/blob/c7d0b1b88668ff4ef8a86ea7d2ebb5ca7f88d3e0/src/Microsoft.Extensions.Logging.AzureAppServices/AzureAppServicesDiagnosticsSettings.cs)。
+日志文件的默认位置是 D:\\home\\LogFiles\\Application 文件夹，默认文件名为 diagnostics-yyyymmdd.txt。 默认文件大小上限为 10 MB，默认最大保留文件数为 2。 默认 blob 名为 {app-name}{timestamp}/yyyy/mm/dd/hh/{guid}-applicationLog.txt。 有关默认行为的详细信息，请参阅 [AzureAppServicesDiagnosticsSettings](/dotnet/api/microsoft.extensions.logging.azureappservices.azureappservicesdiagnosticssettings)。
 
-该提供程序仅当项目在 Azure 环境中运行时有效。 它在本地运行时无效。也就是说，不会写入本地文件或 blob 的本地开发存储。
+该提供程序仅当项目在 Azure 环境中运行时有效。 项目在本地运行时，该提供程序无效 &mdash; 它不会写入本地文件或 blob 的本地开发存储。
 
 ## <a name="third-party-logging-providers"></a>第三方日志记录提供程序
 
 适用于 ASP.NET Core 的第三方日志记录框架：
 
 * [elmah.io](https://elmah.io/)（[GitHub 存储库](https://github.com/elmahio/Elmah.Io.Extensions.Logging)）
+* [Gelf](http://docs.graylog.org/en/2.3/pages/gelf.html)（[GitHub 存储库](https://github.com/mattwcole/gelf-extensions-logging)）
 * [JSNLog](http://jsnlog.com/)（[GitHub 存储库](https://github.com/mperdeck/jsnlog)）
 * [Loggr](http://loggr.net/)（[GitHub 存储库](https://github.com/imobile3/Loggr.Extensions.Logging)）
 * [NLog](http://nlog-project.org/)（[GitHub 存储库](https://github.com/NLog/NLog.Extensions.Logging)）
@@ -604,22 +600,21 @@ loggerFactory.AddAzureWebAppDiagnostics();
 
 通过 Azure 日志流式处理，可从以下位置实时查看日志活动： 
 
-* 应用程序服务器 
+* 应用程序服务器
 * Web 服务器
-* 请求跟踪失败 
+* 请求跟踪失败
 
-要配置 Azure 日志流式处理，请执行以下操作： 
+要配置 Azure 日志流式处理，请执行以下操作：
 
 * 从应用程序的门户页导航到“诊断日志”页
-* 将“应用程序日志记录 (Filesystem)”设置为启用。 
+* 将“应用程序日志记录 (Filesystem)”设置为启用。
 
 ![Azure 门户诊断日志页](index/_static/azure-diagnostic-logs.png)
 
-导航到“日志流式处理”页，查看应用程序消息。 它们由应用程序通过 `ILogger` 接口记录。 
+导航到“日志流式处理”页，查看应用程序消息。 它们由应用程序通过 `ILogger` 接口记录。
 
 ![Azure 门户应用程序日志流式处理](index/_static/azure-log-streaming.png)
 
-
-## <a name="see-also"></a>请参阅
+## <a name="additional-resources"></a>其他资源
 
 [使用 LoggerMessage 的高性能日志记录](xref:fundamentals/logging/loggermessage)

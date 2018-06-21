@@ -9,15 +9,14 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/social/index
-ms.openlocfilehash: 93fa42be9c551f5bbdf3851aec1d9e01139fdb76
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: dc6ec61519c200901cc8af03853e7381c1d4cad0
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "35217318"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core 中的 Facebook、Google 和外部提供程序身份验证
-
-<a name="security-authentication-social-logins"></a>
 
 作者：[Valeriy Novytskyy](https://github.com/01binary) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -78,13 +77,15 @@ OAuth 2.0 需要使用 SSL 通过 HTTPS 协议进行身份验证。
 * [Microsoft](xref:security/authentication/microsoft-logins) 相关说明
 * [其他提供程序](xref:security/authentication/otherlogins)相关说明
 
+[!INCLUDE[](~/includes/chain-auth-providers.md)]
+
 ## <a name="optionally-set-password"></a>选择性地设置密码
 
 使用外部登录提供程序注册，即表明还没有向应用注册密码。 这可让用户无需创建和记住站点密码，但也会使用户依赖外部登录提供程序。 如果外部登录提供程序不可用，则无法登录网站。
 
 使用外部提供程序在登录过程中设置的电子邮箱创建密码和登录：
 
-* 点击右上角的“Hello <email alias>”链接，导航到“管理”视图。
+* 点击右上角的“Hello &lt;电子邮件别名&gt;”链接，导航到“管理”视图。
 
 ![Web 应用程序“管理”视图](index/_static/pass1a.png)
 
