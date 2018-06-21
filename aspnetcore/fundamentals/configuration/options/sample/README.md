@@ -1,3 +1,3 @@
-# <a name="aspnet-using-options-sample"></a>ASP.NET 使用选项示例
+# <a name="aspnet-using-options-sample"></a><span data-ttu-id="2b072-101">ASP.NET 使用选项示例</span><span class="sxs-lookup"><span data-stu-id="2b072-101">ASP.NET Using Options Sample</span></span>
 
-本示例演示如何使用 ASP.NET Core Razor 页面应用中的选项模式。 本示例演示[选项模式](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/options)主题中介绍的功能。
+<span data-ttu-id="2b072-102">本示例演示如何使用 ASP.NET Core Razor 页面应用中的选项模式。</span><span class="sxs-lookup"><span data-stu-id="2b072-102">This sample illustrates the use of the Options pattern in an ASP.NET Core Razor Pages app.</span></span> <span data-ttu-id="2b072-103">本示例演示[选项模式](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/options)主题中介绍的功能。</span><span class="sxs-lookup"><span data-stu-id="2b072-103">This sample demonstrates the features described in the [Options pattern](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/options) topic.</span></span>
