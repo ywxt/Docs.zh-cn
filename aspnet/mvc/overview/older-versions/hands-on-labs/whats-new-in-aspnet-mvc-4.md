@@ -181,7 +181,7 @@ ASP.NET MVC 4 是一个框架，用于构建可缩放的、 基于标准的 web 
 
        浏览模板视图若要了解新的主题标记。
 
-       ![使用 Razor 和 HTML5 标记 About.cshtml 新模板。](whats-new-in-aspnet-mvc-4/_static/image10.png "使用 Razor 和 HTML5 标记 About.cshtml 的新模板。")
+       ![使用 Razor 和 HTML5 标记 About.cshtml 新模板.](whats-new-in-aspnet-mvc-4/_static/image10.png "使用 Razor 和 HTML5 标记 About.cshtml 的新模板。")
 
        *使用 Razor 和 HTML5 标记 (About.cshtml) 新模板。*
    - **更新的 JavaScript 库**
