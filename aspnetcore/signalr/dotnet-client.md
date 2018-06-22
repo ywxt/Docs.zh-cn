@@ -2,21 +2,17 @@
 title: ASP.NET 核心 SignalR.NET 客户端
 author: rachelappel
 description: 有关 ASP.NET 核心 SignalR.NET 客户端信息
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
-ms.date: 05/18/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
+ms.date: 05/29/2018
 uid: signalr/dotnet-client
-ms.openlocfilehash: 412d2362575789f1fb4792940df6d3dd24dbdd5a
-ms.sourcegitcommit: 300a1127957dcdbce1b6ad79a7b9dc676f571510
-ms.translationtype: HT
+ms.openlocfilehash: faa4368988971a3e7fcdcd1b044971e16d70f19a
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34459017"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273231"
 ---
 # <a name="aspnet-core-signalr-net-client"></a>ASP.NET 核心 SignalR.NET 客户端
 
@@ -28,7 +24,7 @@ ASP.NET 核心 SignalR.NET 客户端可以使用 Xamarin、 WPF、 Windows 窗�
 
 这篇文章中的代码示例是使用 ASP.NET 核心 SignalR.NET 客户端的 WPF 应用。
 
-## <a name="setup-client"></a>安装客户端
+## <a name="install-the-signalr-net-client-package"></a>安装 SignalR.NET 客户端包
 
 `Microsoft.AspNetCore.SignalR.Client`包所需的.NET 客户端连接到 SignalR 集线器。 若要安装的客户端库，运行以下命令**程序包管理器控制台**窗口：
 

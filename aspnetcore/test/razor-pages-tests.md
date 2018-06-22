@@ -2,20 +2,16 @@
 title: 在 ASP.NET Core razor 页单元测试
 author: guardrex
 description: 了解如何为 Razor 页应用创建单元测试。
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 11/27/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: test/razor-pages-tests
-ms.openlocfilehash: df74d8e44b2dff00e76139edba47fd8a30ce33ef
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: bde1bef78fcc7ac1d570057d54636ea0f5490de8
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252300"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274402"
 ---
 # <a name="razor-pages-unit-tests-in-aspnet-core"></a>在 ASP.NET Core razor 页单元测试
 
@@ -30,7 +26,7 @@ ASP.NET 核心支持 Razor 页应用的单元测试。 测试的数据访问层 
 
 本主题假定你具有 Razor 页应用和单元测试的一个基本的了解。 如果你熟悉 Razor 页应用或测试概念，请参阅以下主题：
 
-* [Razor 页面介绍](xref:mvc/razor-pages/index)
+* [Razor 页面介绍](xref:razor-pages/index)
 * [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)
 * [单元测试 C# 中使用 dotnet 测试和 xUnit 的.NET 核心](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 

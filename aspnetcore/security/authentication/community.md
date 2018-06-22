@@ -2,19 +2,15 @@
 title: 用于 ASP.NET Core 社区 OSS 身份验证选项
 author: rick-anderson
 description: 发现 ASP.NET Core 的开源身份验证的选项。
-manager: wpickett
 ms.author: riande
 ms.date: 03/12/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/community
-ms.openlocfilehash: 8a46d00a7a70ed99d19a96e85aa48f2498defcc0
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 8b3800631cb71f6bd5120157c89765f6d72628ee
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729549"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276563"
 ---
 # <a name="community-oss-authentication-options-for-aspnet-core"></a>用于 ASP.NET Core 社区 OSS 身份验证选项
 

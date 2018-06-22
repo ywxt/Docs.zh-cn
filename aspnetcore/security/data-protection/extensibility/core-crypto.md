@@ -2,19 +2,15 @@
 title: 在 ASP.NET 核心中的核心加密可扩展性
 author: rick-anderson
 description: 了解有关 IAuthenticatedEncryptor、 IAuthenticatedEncryptorDescriptor、 IAuthenticatedEncryptorDescriptorDeserializer 和顶级工厂。
-manager: wpickett
 ms.author: riande
 ms.date: 8/11/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/extensibility/core-crypto
-ms.openlocfilehash: b5a0dbc9120a8032dbb8d8eee74684495a982ac1
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 47432cfefe0a52c9f815d717f7269ec68fdb6af3
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30896820"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272891"
 ---
 # <a name="core-cryptography-extensibility-in-aspnet-core"></a>在 ASP.NET 核心中的核心加密可扩展性
 
@@ -78,7 +74,7 @@ byte[] roundTripped = encryptor2.Decrypt(new ArraySegment<byte>(ciphertext), aad
 
 * CreateEncryptorInstance(): IAuthenticatedEncryptor
 
-* ExportToXml() : XmlSerializedDescriptorInfo
+* ExportToXml(): XmlSerializedDescriptorInfo
 
 如 IAuthenticatedEncryptor，假定的 IAuthenticatedEncryptorDescriptor 实例包装一个特定键。 这意味着，对于任何给定的 IAuthenticatedEncryptorDescriptor 实例，其 CreateEncryptorInstance 方法创建的任何经过身份验证的加密程序应被视为等效，如下面的代码示例。
 
@@ -110,7 +106,7 @@ byte[] roundTripped = encryptor2.Decrypt(new ArraySegment<byte>(ciphertext), aad
 
 **IAuthenticatedEncryptorDescriptor**接口表示知道如何将自身导出到 XML 的类型。 其 API 是，如下所示。
 
-* ExportToXml() : XmlSerializedDescriptorInfo
+* ExportToXml(): XmlSerializedDescriptorInfo
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -156,7 +152,7 @@ ImportFromXml 方法采用返回 XElement [IAuthenticatedEncryptorDescriptor.Exp
 
 **AlgorithmConfiguration**类表示知道如何创建该类型[IAuthenticatedEncryptorDescriptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptor)实例。 它公开一个单一的 API。
 
-* CreateNewDescriptor() : IAuthenticatedEncryptorDescriptor
+* CreateNewDescriptor(): IAuthenticatedEncryptorDescriptor
 
 将 AlgorithmConfiguration 视为顶级工厂。 配置用作模板。 它所包装算法信息 （例如，此配置生成使用 AES 128 GCM 主密钥描述符），但它尚不与特定键关联。
 
@@ -168,7 +164,7 @@ AlgorithmConfiguration 类型用作密钥创建例程的入口点如[自动密�
 
 **IAuthenticatedEncryptorConfiguration**接口表示一种类型它知道如何创建[IAuthenticatedEncryptorDescriptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptor)实例。 它公开一个单一的 API。
 
-* CreateNewDescriptor() : IAuthenticatedEncryptorDescriptor
+* CreateNewDescriptor(): IAuthenticatedEncryptorDescriptor
 
 将 IAuthenticatedEncryptorConfiguration 视为顶级工厂。 配置用作模板。 它所包装算法信息 （例如，此配置生成使用 AES 128 GCM 主密钥描述符），但它尚不与特定键关联。
 

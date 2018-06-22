@@ -2,20 +2,16 @@
 title: ASP.NET 成员资格身份验证从迁移到 ASP.NET 核心 2.0 标识
 author: isaac2004
 description: 了解如何迁移现有的 ASP.NET 应用程序使用成员资格到 ASP.NET 核心 2.0 标识的身份验证。
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 04/24/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: migration/proper-to-2x/membership-to-core-identity
-ms.openlocfilehash: f0d1099bfda01d036831350e0888ae3830ad3d58
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 3ec22713997a74b587ef5d18e71a28668a5481e2
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33851539"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274100"
 ---
 # <a name="migrate-from-aspnet-membership-authentication-to-aspnet-core-20-identity"></a>ASP.NET 成员资格身份验证从迁移到 ASP.NET 核心 2.0 标识
 
@@ -42,7 +38,7 @@ ASP.NET 核心 2.0 标识查看架构的最快方法是创建新的 ASP.NET 核�
 
 * 选择“文件” > “新建” > “项目”。
 * 创建一个新**ASP.NET 核心 Web 应用程序**，并将项目*CoreIdentitySample*。
-* 在下拉列表中选择“ASP.NET Core 2.0”，然后选择“Web 应用程序”。 此模板生成[Razor 页](xref:mvc/razor-pages/index)应用。 然后单击**确定**，单击**更改身份验证**。
+* 在下拉列表中选择“ASP.NET Core 2.0”，然后选择“Web 应用程序”。 此模板生成[Razor 页](xref:razor-pages/index)应用。 然后单击**确定**，单击**更改身份验证**。
 * 选择**单个用户帐户**标识模板。 最后，单击**确定**，然后**确定**。 Visual Studio 创建项目时使用 ASP.NET 核心标识模板。
 
 ASP.NET 核心 2.0 标识使用[实体框架核心](/ef/core)与存储的身份验证数据的数据库进行交互。 为了使新创建应用程序处理，需要使用数据库来存储此数据。 在创建新的应用程序后, 检查数据库环境中的架构的最快方法是创建使用实体框架迁移的数据库。 此过程创建数据库，或者本地或其他位置，其中模仿该架构。 查看前面的文档以了解更多信息。

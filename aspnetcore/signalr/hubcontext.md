@@ -2,21 +2,17 @@
 title: SignalR HubContext
 author: rachelappel
 description: 了解如何使用 ASP.NET 核心 SignalR HubContext 服务用于向外部的客户端从一个中心发送通知。
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
 ms.date: 06/13/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: signalr/hubcontext
-ms.openlocfilehash: 79b91a776a38a2e6810cc89ff0b8d15fe836ce66
-ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
+ms.openlocfilehash: ccfcdc8337275fd26e09c1a43db36cf9ab90cf46
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "35726066"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277756"
 ---
 # <a name="send-messages-from-outside-a-hub"></a>发送来自外部集线器的邮件
 
@@ -62,6 +58,6 @@ app.Use(next => (context) =>
 
 ## <a name="related-resources"></a>相关资源
 
-* [入门](xref:signalr/get-started)
+* [入门](xref:tutorials/signalr)
 * [中心](xref:signalr/hubs)
 * [发布到 Azure](xref:signalr/publish-to-azure-web-app)

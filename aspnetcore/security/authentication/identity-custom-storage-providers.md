@@ -2,18 +2,15 @@
 title: ASP.NET 核心标识的自定义的存储提供程序
 author: ardalis
 description: 了解如何配置 ASP.NET 核心标识的自定义存储提供程序。
-manager: wpickett
 ms.author: riande
 ms.date: 05/24/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: a50069586c702152e81961773114ea75901ab23d
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 11c49d630c922b0aa91678277e9553bf0c25134d
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278422"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET 核心标识的自定义的存储提供程序
 
@@ -108,7 +105,7 @@ ASP.NET 核心标识包含类称为管理器和存储区。 *管理器*是高级
 
 存储和检索哪些角色分配给哪些用户。 [示例](/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
-**提示：**仅实现你要在应用程序中使用的类。
+**提示：** 仅实现你要在应用程序中使用的类。
 
 在数据访问类中，提供的代码来执行持久性机制的数据操作。 例如，在自定义提供程序，你可能具有以下代码以创建中的新用户*存储*类：
 
@@ -170,7 +167,7 @@ ASP.NET 核心标识包含类称为管理器和存储区。 *管理器*是高级
 - **IUserLockoutStore**  
  [IUserLockoutStore&lt;热熔器&gt;](/dotnet/api/microsoft.aspnetcore.identity.iuserlockoutstore-1)接口定义为存储帐户的锁定信息而实现的方法。 它包含用于跟踪未成功的访问和锁定方法。
 - **IQueryableUserStore**  
- [IQueryableUserStore&lt;热熔器&gt;](/dotnet/api/microsoft.aspnetcore.identity.iqueryableuserstore-1)接口定义成员实现此方法可以提供可查询的用户存储区。
+ [IQueryableUserStore&lt;热熔器&gt;](/dotnet/api/microsoft.aspnetcore.identity.iqueryableuserstore-1)接口定义实现以提供可查询的用户存储的成员。
 
 应用程序中实现所需的接口。 例如：
 

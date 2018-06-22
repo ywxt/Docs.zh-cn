@@ -2,21 +2,17 @@
 title: ASP.NET 核心 SignalR 简介
 author: rachelappel
 description: 了解如何 ASP.NET 核心 SignalR 库简化了将实时功能添加到应用。
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
 ms.date: 04/25/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: signalr/introduction
-ms.openlocfilehash: f05b7cbf05372dc5d5cdadaf5a534d7a9d9bfecc
-ms.sourcegitcommit: c867d7427bd4a88a78b2322e156367733b532730
+ms.openlocfilehash: 0c833acea139d22883a69a02c2357a71f3ac8db8
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33923350"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277899"
 ---
 # <a name="introduction-to-aspnet-core-signalr"></a>ASP.NET 核心 SignalR 简介
 
@@ -59,7 +55,7 @@ SignalR 使用中心客户端和服务器之间进行通信。
 
 ## <a name="additional-resources"></a>其他资源
 
-* [开始使用 SignalR 为 ASP.NET Core](xref:signalr/get-started)
+* [开始使用 SignalR 为 ASP.NET Core](xref:tutorials/signalr)
 * [支持的平台](xref:signalr/supported-platforms)
 * [中心](xref:signalr/hubs)
 * [JavaScript 客户端](xref:signalr/javascript-client)

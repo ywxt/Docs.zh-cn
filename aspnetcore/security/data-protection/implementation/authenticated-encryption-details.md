@@ -2,19 +2,15 @@
 title: 经过身份验证的加密在 ASP.NET Core 的详细信息
 author: rick-anderson
 description: 了解实现的身份验证的 ASP.NET 核心数据保护加密的详细信息。
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/implementation/authenticated-encryption-details
-ms.openlocfilehash: 3ca5231e84156ede59793825e1a3e3bea0313055
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: ac650e5c32e7eacc4088225e63f56340f95e1913
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30077902"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275679"
 ---
 # <a name="authenticated-encryption-details-in-aspnet-core"></a>经过身份验证的加密在 ASP.NET Core 的详细信息
 

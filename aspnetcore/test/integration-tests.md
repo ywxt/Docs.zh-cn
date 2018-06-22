@@ -1,21 +1,17 @@
 ---
 title: 在 ASP.NET Core 的集成测试
 author: guardrex
-description: 了解如何集成测试确保应用程序的组件正常在基础结构级别，包括数据库、 文件系统和网络。
-manager: wpickett
+description: 了解集成测试如何在基础结构级别（包括数据库、文件系统和网络）确保应用组件功能正常。
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/30/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: test/integration-tests
-ms.openlocfilehash: a402c3f5f6a75917eba4058e6cc6926f25b214d4
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: 1895b06f1af9a9eb66c14aa5c7834497fc95d583
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "35217536"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277691"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>在 ASP.NET Core 的集成测试
 
@@ -29,9 +25,9 @@ ms.locfileid: "35217536"
 
 示例应用程序是 Razor 页应用，并假定 Razor 页的一个基本的了解。 如果熟悉 Razor 页，请参阅以下主题：
 
-* [Razor 页面介绍](xref:mvc/razor-pages/index)
+* [Razor 页面介绍](xref:razor-pages/index)
 * [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)
-* [Razor 页单元测试](xref:test/razor-pages-tests)
+* [Razor 页面单元测试](xref:test/razor-pages-tests)
 
 ## <a name="introduction-to-integration-tests"></a>集成测试的简介
 
@@ -314,6 +310,6 @@ SUT 是 Razor 页消息系统具有以下特征：
 ## <a name="additional-resources"></a>其他资源
 
 * [单元测试](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
-* [Razor 页单元测试](xref:test/razor-pages-tests)
+* [Razor 页面单元测试](xref:test/razor-pages-tests)
 * [中间件](xref:fundamentals/middleware/index)
 * [测试控制器](xref:mvc/controllers/testing)

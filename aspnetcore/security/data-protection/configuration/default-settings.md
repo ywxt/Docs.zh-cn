@@ -2,19 +2,15 @@
 title: 数据保护密钥管理和 ASP.NET Core 的生存时间
 author: rick-anderson
 description: 了解有关数据保护密钥管理和 ASP.NET Core 的生存时间。
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/configuration/default-settings
-ms.openlocfilehash: b43c14af015d5e03f46200c51a1218a581b1de0c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 54259b1e2f37cdbbd551038e80f2b0fa1d77f196
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
-ms.locfileid: "28887285"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277797"
 ---
 # <a name="data-protection-key-management-and-lifetime-in-aspnet-core"></a>数据保护密钥管理和 ASP.NET Core 的生存时间
 
@@ -24,10 +20,10 @@ ms.locfileid: "28887285"
 
 应用程序将尝试检测其操作环境并处理其自己的密钥配置。
 
-1. 如果应用程序承载于[Azure Apps](https://azure.microsoft.com/services/app-service/)，密钥保存到 *%HOME%\ASP.NET\DataProtection-Keys*文件夹。 此文件夹由网络存储提供支持，并且在托管应用的所有计算机同步。
-   * 密钥未保护静止。
+1. 如果应用程序承载于[Azure Apps](https://azure.microsoft.com/services/app-service/)，密钥保存到 *%HOME%\ASP.NET\DataProtection-Keys*文件夹。 此文件夹由网络存储提供支持，并跨托管应用的所有计算机同步。
+   * 密钥不是静态保护的。
    * *数据保护密钥*文件夹提供密钥环在单个部署槽中的应用程序的所有实例。
-   * 单独的部署槽，如过渡和生产环境，请不要共享密钥链。 更换之间部署槽，如交换过渡到生产环境或使用 A / B 测试，使用数据保护任何应用将无法解密使用密钥链内前一槽的存储的数据。 这会导致对正在注销的应用程序使用标准的 ASP.NET Core cookie 身份验证，因为它使用数据保护来保护其 cookie 的用户。 如果你需要独立于槽的密钥环，使用 Azure Blob 存储，Azure 密钥保管库，SQL 存储区中，之类的外部密钥环提供程序，或 Redis 缓存。
+   * 各部署槽位（例如过渡槽和生成槽）不共享密钥环。 更换之间部署槽，如交换过渡到生产环境或使用 A / B 测试，使用数据保护任何应用将无法解密使用密钥链内前一槽的存储的数据。 这会导致对正在注销的应用程序使用标准的 ASP.NET Core cookie 身份验证，因为它使用数据保护来保护其 cookie 的用户。 如果你需要独立于槽的密钥环，使用 Azure Blob 存储，Azure 密钥保管库，SQL 存储区中，之类的外部密钥环提供程序，或 Redis 缓存。
 
 1. 如果可用的用户配置文件，将密钥保存到 *%LOCALAPPDATA%\ASP.NET\DataProtection-Keys*文件夹。 如果操作系统是 Windows，密钥被加密使用 DPAPI 对静止。
 

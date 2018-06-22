@@ -2,20 +2,16 @@
 title: 使用 WS 联合身份验证在 ASP.NET 核心中的用户进行身份验证
 author: chlowell
 description: 本教程演示如何在 ASP.NET Core 应用程序使用 WS 联合身份验证。
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 02/27/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/ws-federation
-ms.openlocfilehash: d4621c7b97678903b9f2562e353da3883334b599
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 55504ed28cf8ef1095bf16c101c09a6f374f038c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30898799"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277434"
 ---
 # <a name="authenticate-users-with-ws-federation-in-aspnet-core"></a>使用 WS 联合身份验证在 ASP.NET 核心中的用户进行身份验证
 
@@ -26,7 +22,7 @@ ms.locfileid: "30898799"
 默认情况下，新的中间件：
 
 * 不允许未经请求的登录名。 这一功能的 WS 联合身份验证协议容易受到 XSRF 攻击。 但是，可以使用启用此`AllowUnsolicitedLogins`选项。
-* 不会检查消息登录的每个窗体发布请求。 只请求在到`CallbackPath`登录程序。 检查`CallbackPath`默认为`/signin-wsfed`但可以更改。 此路径可以与其他身份验证提供程序共享通过启用`SkipUnrecognizedRequests`选项。
+* 不会检查消息登录的每个窗体发布请求。 只请求在到`CallbackPath`登录程序。 检查`CallbackPath`默认为`/signin-wsfed`但可以更改通过继承[RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath)属性[WsFederationOptions](/dotnet/api/microsoft.aspnetcore.authentication.wsfederation.wsfederationoptions)类。 此路径可以与其他身份验证提供程序共享通过启用[SkipUnrecognizedRequests](/dotnet/api/microsoft.aspnetcore.authentication.wsfederation.wsfederationoptions.skipunrecognizedrequests)选项。
 
 ## <a name="register-the-app-with-active-directory"></a>向 Active Directory 注册应用程序
 

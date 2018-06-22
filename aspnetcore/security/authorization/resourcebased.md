@@ -2,21 +2,16 @@
 title: ASP.NET 核心中基于资源的授权
 author: scottaddie
 description: 了解如何在 ASP.NET Core 应用程序中实现的基于资源的授权，Authorize 属性不会满足要求。
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 11/07/2017
-ms.devlang: csharp
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authorization/resourcebased
-ms.openlocfilehash: 3be2d9b9aef18763fbdba78e044dd6b68ddcef0c
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 577af3ba45361aec715a49fa59b9ec9869ced851
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2018
-ms.locfileid: "34094277"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273342"
 ---
 # <a name="resource-based-authorization-in-aspnet-core"></a>ASP.NET 核心中基于资源的授权
 

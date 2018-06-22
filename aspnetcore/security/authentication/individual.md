@@ -2,19 +2,15 @@
 title: 基于 ASP.NET 核心项目使用单个用户帐户创建项目
 author: rick-anderson
 description: 发现基于 ASP.NET Core 项目使用单个用户帐户创建的文章。
-manager: wpickett
 ms.author: riande
 ms.date: 11/30/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/individual
-ms.openlocfilehash: 6d05cd8c0ee6c9029eb9bbafc15d9b19ee7633de
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: f7fb9e8cd1b5c4cc3283ddd7606a0bbd30f554d5
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252017"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274422"
 ---
 # <a name="articles-based-on-aspnet-core-projects-created-with-individual-user-accounts"></a>基于 ASP.NET 核心项目使用单个用户帐户创建项目
 

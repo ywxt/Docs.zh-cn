@@ -2,27 +2,23 @@
 title: 使用 ASP.NET Core MessagePack 中心协议中 SignalR
 author: rachelappel
 description: 将 MessagePack 中心协议添加到 ASP.NET 核心 SignalR。
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
 ms.date: 06/04/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: signalr/messagepackhubprotocol
-ms.openlocfilehash: b6c33c4da47a19d67bffbaf84f54d59013edadbe
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 702c77502868d6666cb2634b6959f029e036d14e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252473"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274984"
 ---
 # <a name="use-messagepack-hub-protocol-in-signalr-for-aspnet-core"></a>使用 ASP.NET Core MessagePack 中心协议中 SignalR
 
 通过[Brennan 勇](https://github.com/BrennanConroy)
 
-本文假定读者熟悉中涉及的主题[开始](xref:signalr/get-started)。
+本文假定读者熟悉中涉及的主题[开始](xref:tutorials/signalr)。
 
 ## <a name="what-is-messagepack"></a>什么是 MessagePack？
 
@@ -102,6 +98,6 @@ const connection = new signalR.HubConnectionBuilder()
 
 ## <a name="related-resources"></a>相关资源
 
-* [入门](xref:signalr/get-started)
+* [入门](xref:tutorials/signalr)
 * [.NET 客户端](xref:signalr/dotnet-client)
 * [JavaScript 客户端](xref:signalr/javascript-client)

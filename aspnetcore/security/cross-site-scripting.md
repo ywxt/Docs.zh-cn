@@ -2,18 +2,15 @@
 title: 防止跨站点脚本 (XSS) 在 ASP.NET 核心
 author: rick-anderson
 description: 了解有关跨站点脚本 (XSS) 和一些解决这一漏洞在 ASP.NET Core 应用程序技术。
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/cross-site-scripting
-ms.openlocfilehash: d9263a2c1bb6a376008b7d8a55864e4d15e77cee
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: ce6bb273034c56890e0cd98b890436602b5acc69
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272443"
 ---
 # <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>防止跨站点脚本 (XSS) 在 ASP.NET 核心
 
@@ -37,7 +34,7 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="html-encoding-using-razor"></a>使用 Razor 的 HTML 编码
 
-自动使用 MVC Razor 引擎将所有编码输出源自变量，除非您真正努力工作以避免其执行此操作。 它使用编码规则，每当你使用的 HTML 特性*@*指令。 为 HTML 属性编码为 HTML 编码，这意味着你不必考虑自己是否应使用 HTML 编码或 HTML 特性编码的超集。 你必须确保您仅使用在 HTML 上下文中，不是在尝试将直接插入 JavaScript 不受信任的输入时。 标记帮助程序还会编码标记参数中使用的输入。
+自动使用 MVC Razor 引擎将所有编码输出源自变量，除非您真正努力工作以避免其执行此操作。 它使用编码规则，每当你使用的 HTML 特性*@* 指令。 为 HTML 属性编码为 HTML 编码，这意味着你不必考虑自己是否应使用 HTML 编码或 HTML 特性编码的超集。 你必须确保您仅使用在 HTML 上下文中，不是在尝试将直接插入 JavaScript 不受信任的输入时。 标记帮助程序还会编码标记参数中使用的输入。
 
 考虑以下 Razor 视图;
 
@@ -60,7 +57,7 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="javascript-encoding-using-razor"></a>使用 Razor Javascript 编码
 
-可能有些时候你想要插入处理在视图中的 JavaScript 值。 有两种方法可以实现此目的。 插入简单值的最安全方法是将值放在一个标记的数据属性并检索你在 JavaScript。 例如：
+可能有些时候你想要插入处理在视图中的 JavaScript 值。 有两种方法可以实现此目的。 插入值的最安全方法是将值放在一个标记的数据属性并检索你在 JavaScript。 例如：
 
 ```none
 @{
@@ -228,4 +225,4 @@ services.AddSingleton<HtmlEncoder>(
 
 ## <a name="validation-as-an-xss-prevention-technique"></a>验证在 XSS 预防方法
 
-验证可以在限制 XSS 攻击的有用工具。 例如，一个简单的数值字符串只能包含字符 0-9 将不会触发 XSS 受到攻击。 验证变得更复杂应想要接受用户输入的中的 HTML HTML 输入内容分析为难以进行，即使不是不可能。 MarkDown 以及其他文本的格式将丰富的输入的更安全选项。 你应永远不会依赖于单独的验证。 始终对不受信任的输入，输出之前进行编码，无论何种验证已执行。
+验证可以在限制 XSS 攻击的有用工具。 例如，包含字符 0-9 的数值字符串将不会触发 XSS 受到攻击。 验证变得更复杂应想要接受用户输入的中的 HTML HTML 输入内容分析为难以进行，即使不是不可能。 MarkDown 以及其他文本的格式将丰富的输入的更安全选项。 你应永远不会依赖于单独的验证。 始终对不受信任的输入，输出之前进行编码，无论何种验证已执行。

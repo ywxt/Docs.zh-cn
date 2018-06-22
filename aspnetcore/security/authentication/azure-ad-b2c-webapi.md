@@ -3,19 +3,15 @@ title: 中的 web Api 与 Azure Active Directory B2C 中 ASP.NET 核心云身份
 author: camsoper
 description: 了解如何设置与 ASP.NET 核心 Web API 的 Azure Active Directory B2C 身份验证。 测试已通过身份验证的 web API 与 Postman。
 ms.author: casoper
-manager: wpickett
 ms.date: 01/25/2018
-ms.topic: tutorial
-ms.technology: aspnet
-ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: 621290f7e303f9157577b5c1b32646b750ed5159
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 82179e52e2c292ec3b7e618b3c61eef6494abc7c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30897799"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273413"
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>中的 web Api 与 Azure Active Directory B2C 中 ASP.NET 核心云身份验证
 
@@ -59,7 +55,7 @@ ms.locfileid: "30897799"
 
 使用以下值：
 
-| 设置                       | 值               | 说明                                                                                  |
+| 设置                       | “值”               | 说明                                                                                  |
 |-------------------------------|---------------------|----------------------------------------------------------------------------------------|
 | **名称**                      | *&lt;API 名称&gt;*  | 输入**名称**描述你的应用对使用者的应用。                     |
 | **包括 web 应用程序/web API** | 是                 |                                                                                        |
@@ -88,7 +84,7 @@ Visual Studio Web 应用程序模板可以配置为使用 Azure AD B2C 租户进
 
 5. 完成窗体具有以下值：
 
-    | 设置                       | 值                                                 |
+    | 设置                       | “值”                                                 |
     |-------------------------------|-------------------------------------------------------|
     | **域名**               | *&lt;B2C 租户的域名&gt;*          |
     | **应用程序 ID**            | *&lt;粘贴剪贴板中的应用程序 ID&gt;* |
@@ -115,7 +111,7 @@ Visual Studio 使用名为的控制器中创建 web API *ValuesController.cs*返
 
 使用以下值：
 
-| 设置                       | 值                            | 说明                           |
+| 设置                       | “值”                            | 说明                           |
 |-------------------------------|----------------------------------|---------------------------------|
 | **名称**                      | Postman                          |                                 |
 | **包括 web 应用程序/web API** | 是                              |                                 |
@@ -172,7 +168,7 @@ Visual Studio 使用名为的控制器中创建 web API *ValuesController.cs*返
 2. 完成**获取新访问令牌**，如下所示的对话框：
 
 
-   |                设置                 |                                             值                                             |                                                                                                                                    说明                                                                                                                                     |
+   |                设置                 |                                             “值”                                             |                                                                                                                                    说明                                                                                                                                     |
    |----------------------------------------|-----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    |      <strong>标记名称</strong>       |                                  <em>&lt;标记名称&gt;</em>                                  |                                                                                                                   输入该令牌的描述性名称。                                                                                                                    |
    |      <strong>授予类型构建的</strong>       |                                           隐式                                            |                                                                                                                                                                                                                                                                              |

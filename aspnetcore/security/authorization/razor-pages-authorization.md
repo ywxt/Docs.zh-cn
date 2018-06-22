@@ -2,20 +2,16 @@
 title: 在 ASP.NET Core razor 页授权约定
 author: guardrex
 description: 了解如何控制对约定来授予用户权限和允许匿名用户访问页或文件夹中的页的页的访问。
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 10/27/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authorization/razor-pages-authorization
-ms.openlocfilehash: cd1fa7957ca50db0de71f71234f84d3fbc631f45
-ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
+ms.openlocfilehash: 8856520bf43f2f62cc12c7e883485babdb43fb3e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2018
-ms.locfileid: "35341738"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272670"
 ---
 # <a name="razor-pages-authorization-conventions-in-aspnet-core"></a>在 ASP.NET Core razor 页授权约定
 
@@ -40,7 +36,7 @@ ms.locfileid: "35341738"
 ::: moniker range=">= aspnetcore-2.1"
 
 > [!NOTE]
-> `AuthorizeFilter`可以应用于具有的页面模型类`[Authorize]`筛选器属性。 有关详细信息，请参阅[Authorize 筛选器属性](xref:mvc/razor-pages/filter#authorize-filter-attribute)。
+> `AuthorizeFilter`可以应用于具有的页面模型类`[Authorize]`筛选器属性。 有关详细信息，请参阅[Authorize 筛选器属性](xref:razor-pages/filter#authorize-filter-attribute)。
 
 ::: moniker-end
 
@@ -90,5 +86,5 @@ ms.locfileid: "35341738"
 
 ## <a name="additional-resources"></a>其他资源
 
-* [Razor 页面自定义路由和页面模型提供程序](xref:mvc/razor-pages/razor-pages-conventions)
+* [Razor 页面自定义路由和页面模型提供程序](xref:razor-pages/razor-pages-conventions)
 * [PageConventionCollection](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageconventioncollection)类

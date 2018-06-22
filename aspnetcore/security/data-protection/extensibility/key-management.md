@@ -2,19 +2,15 @@
 title: ASP.NET 核心的密钥管理可扩展性
 author: rick-anderson
 description: 了解有关 ASP.NET 核心数据保护密钥管理扩展性。
-manager: wpickett
 ms.author: riande
 ms.date: 11/22/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: e3042b371cf7be8fa0218c1906042d2810b180e3
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 3ebde889d207e02aff8c042b1d80884210a68ff4
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30074159"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274747"
 ---
 # <a name="key-management-extensibility-in-aspnet-core"></a>ASP.NET 核心的密钥管理可扩展性
 

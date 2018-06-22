@@ -2,19 +2,15 @@
 title: 在 ASP.NET Core 中的简单授权
 author: rick-anderson
 description: 了解如何使用 Authorize 属性限制对 ASP.NET Core 控制器和操作的访问。
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authorization/simple
-ms.openlocfilehash: cef5cb146c6c1ff052430748a9a64c6a822d6fa3
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 3c5e9d5dfd65ded40c9828a666143c1868f5562f
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30078239"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272060"
 ---
 # <a name="simple-authorization-in-aspnet-core"></a>在 ASP.NET Core 中的简单授权
 

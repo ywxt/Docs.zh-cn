@@ -2,19 +2,15 @@
 title: 在 ASP.NET 核心中的哈希密码
 author: rick-anderson
 description: 了解如何使用 ASP.NET 核心数据保护 Api 的密码执行哈希。
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/consumer-apis/password-hashing
-ms.openlocfilehash: f44e66789bf348ef6d99f6d862fb34c2d943a0b2
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: aef22ab91e76afdb5f54dc37bcee7128420b6f3b
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32740096"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272982"
 ---
 # <a name="hash-passwords-in-aspnet-core"></a>在 ASP.NET 核心中的哈希密码
 

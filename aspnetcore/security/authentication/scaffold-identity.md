@@ -2,26 +2,22 @@
 title: ASP.NET 核心项目中的基架标识
 author: rick-anderson
 description: 了解如何创建标识的基架 ASP.NET Core 项目中。
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 5/16/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/scaffold-identity
-ms.openlocfilehash: 80cd39af61e856d3ce92db1c26e70788bcdca83d
-ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
+ms.openlocfilehash: cf6544d8b671f026c8466fa8dff506027b64cf1f
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "35725814"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276313"
 ---
 # <a name="scaffold-identity-in-aspnet-core-projects"></a>ASP.NET 核心项目中的基架标识
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-ASP.NET 核心 2.1 及更高版本提供了[ASP.NET 核心标识](xref:security/authentication/identity)作为[Razor 类库](xref:mvc/razor-pages/ui-class)。 包含标识的应用程序可以应用基架以有选择地添加包含在标识 Razor 类库 (RCL) 的源代码。 你可能想要生成源代码，因此你可以修改的代码和更改的行为。 例如，你可以指示 scaffolder 生成在注册中使用的代码。 生成的代码将优先于标识 RCL 中的相同代码。 若要获取的用户界面的完全控制权，并使用默认 RCL，请参阅明[创建完整的标识 UI 源](#full)。
+ASP.NET 核心 2.1 及更高版本提供了[ASP.NET 核心标识](xref:security/authentication/identity)作为[Razor 类库](xref:razor-pages/ui-class)。 包含标识的应用程序可以应用基架以有选择地添加包含在标识 Razor 类库 (RCL) 的源代码。 你可能想要生成源代码，因此你可以修改的代码和更改的行为。 例如，你可以指示 scaffolder 生成在注册中使用的代码。 生成的代码将优先于标识 RCL 中的相同代码。 若要获取的用户界面的完全控制权，并使用默认 RCL，请参阅明[创建完整的标识 UI 源](#full)。
 
 应用程序执行**不**包括身份验证可以应用基架添加 RCL 标识包。 必须选择标识代码生成的选项。
 
@@ -37,7 +33,7 @@ ASP.NET 核心 2.1 及更高版本提供了[ASP.NET 核心标识](xref:security/
 
 添加对以下突出显示的调用`Startup`类：
 
-[!code-csharp[Main](scaffold-identity/sample/StartupEmpty.cs?name=snippet1&highlight=5,20-23)]
+[!code-csharp[](scaffold-identity/sample/StartupEmpty.cs?name=snippet1&highlight=5,20-23)]
 
 [!INCLUDE[](~/includes/scaffold-identity/hsts.md)]
 
@@ -71,7 +67,7 @@ dotnet ef database update
 
 在`Configure`方法`Startup`类中，调用[UseAuthentication](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_)后`UseStaticFiles`:
 
-[!code-csharp[Main](scaffold-identity/sample/StartupRPnoAuth.cs?name=snippet1&highlight=29)]
+[!code-csharp[](scaffold-identity/sample/StartupRPnoAuth.cs?name=snippet1&highlight=29)]
 
 [!INCLUDE[](~/includes/scaffold-identity/hsts.md)]
 
@@ -117,7 +113,7 @@ dotnet ef database update
 
 可选： 添加部分的登录名 (`_LoginPartial`) 到*Views/Shared/_Layout.cshtml*文件：
 
-[!code-html[Main](scaffold-identity/sample/_LayoutMvc.cshtml?highlight=37)]
+[!code-html[](scaffold-identity/sample/_LayoutMvc.cshtml?highlight=37)]
 
 * 移动*Pages/Shared/_LoginPartial.cshtml*文件为*Views/Shared/_LoginPartial.cshtml*
 
@@ -127,7 +123,7 @@ dotnet ef database update
 
 调用[UseAuthentication](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_)后`UseStaticFiles`:
 
-[!code-csharp[Main](scaffold-identity/sample/StartupMvcNoAuth.cs?name=snippet1&highlight=23)]
+[!code-csharp[](scaffold-identity/sample/StartupMvcNoAuth.cs?name=snippet1&highlight=23)]
 
 [!INCLUDE[](~/includes/scaffold-identity/hsts.md)]
 
@@ -153,15 +149,16 @@ dotnet aspnet-codegenerator identity -dc MvcAuth.Data.ApplicationDbContext --fil
 
 以下突出显示的代码显示默认标识 UI 替换标识在 ASP.NET 核心 2.1 web 应用的更改。 你可能想要执行此操作可具有完全控制权限的标识 UI。
 
-[!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet1&highlight=13-14,17-999)]
+[!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet1&highlight=13-14,17-999)]
 
-下面的代码替换默认标识： [!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet2)]
+下面的代码替换默认标识：
 
-下面的代码将配置 ASP.NET Core 授权需要授权的标识页： [!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet3)]
+[!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet2)]
 
-以下代码将设置要使用正确的标识页路径的标识 cookie。
-[!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet3)]
+下面的代码集[LoginPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.loginpath)， [LogoutPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.logoutpath)，和[AccessDeniedPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.accessdeniedpath):
+
+[!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet3)]
 
 注册`IEmailSender`实现，例如：
 
-[!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet4)]
+[!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet4)]

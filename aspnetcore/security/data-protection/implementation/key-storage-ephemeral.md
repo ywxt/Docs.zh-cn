@@ -2,19 +2,15 @@
 title: ASP.NET 核心中的临时数据保护提供程序
 author: rick-anderson
 description: 了解 ASP.NET 核心暂时数据保护提供程序的实现详细信息。
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/implementation/key-storage-ephemeral
-ms.openlocfilehash: 9cdd3949826091807f3139f51aa0c05ddaac696a
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: e4b0014ab3bdbf90b91383e8a33102f94faa8153
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30076129"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279462"
 ---
 # <a name="ephemeral-data-protection-providers-in-aspnet-core"></a>ASP.NET 核心中的临时数据保护提供程序
 

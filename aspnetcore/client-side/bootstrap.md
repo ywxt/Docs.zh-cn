@@ -2,19 +2,15 @@
 title: 生成带有 Bootstrap 和 ASP.NET Core 美观、 响应迅速网站
 author: ardalis
 description: 了解如何开发使用 ASP.NET Core 的响应式 web 应用程序使用 Bootstrap。
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: client-side/bootstrap
-ms.openlocfilehash: a11ed13c709830795ebfd0e658d3f2fd2fd5a458
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: c7a4dc193f52532b1046853d98ae5c838c8b1723
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31483706"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279540"
 ---
 # <a name="build-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>生成带有 Bootstrap 和 ASP.NET Core 美观、 响应迅速网站
 

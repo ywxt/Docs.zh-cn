@@ -2,19 +2,15 @@
 title: 限制在 ASP.NET Core 的受保护负载的生存期
 author: rick-anderson
 description: 了解如何限制使用 ASP.NET 核心数据保护 Api 的受保护负载的生存期。
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/consumer-apis/limited-lifetime-payloads
-ms.openlocfilehash: 324887b3d29de989ad855c4e78fd5a235fdb560e
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 8dc3b856ec67477ec8ae777749c9bf3107eb4eda
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30072018"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278052"
 ---
 # <a name="limit-the-lifetime-of-protected-payloads-in-aspnet-core"></a>限制在 ASP.NET Core 的受保护负载的生存期
 
@@ -30,7 +26,7 @@ ms.locfileid: "30072018"
 
 * CreateProtector （字符串目的）： ITimeLimitedDataProtector-此 API 已类似于现有`IDataProtectionProvider.CreateProtector`在于它可以用于创建[目的链](xref:security/data-protection/consumer-apis/purpose-strings)从根的限时保护程序。
 
-* Protect(byte[] plaintext, DateTimeOffset expiration) : byte[]
+* 保护 （字节 [] 纯文本，DateTimeOffset 到期）： byte]
 
 * 保护 （字节 [] 纯文本、 TimeSpan 生存期）： byte]
 

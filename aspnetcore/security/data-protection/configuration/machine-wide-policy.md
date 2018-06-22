@@ -2,19 +2,15 @@
 title: 在 ASP.NET 核心中支持的数据保护计算机范围的策略
 author: rick-anderson
 description: 了解有关设置默认计算机范围策略对于使用 ASP.NET 核心数据保护的所有应用程序的支持。
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/configuration/machine-wide-policy
-ms.openlocfilehash: c2d5760cd18f4e3ecaf0261f36414c9298e3f4c5
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 70aaca7afcd3df22cebb4466fbd9845a2277688c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30076957"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275183"
 ---
 # <a name="data-protection-machine-wide-policy-support-in-aspnet-core"></a>在 ASP.NET 核心中支持的数据保护计算机范围的策略
 
@@ -35,7 +31,7 @@ Windows 上运行时，数据保护系统具有有限的支持设置默认计算
 
 支持的值如下所示。
 
-| 值              | 类型   | 描述 |
+| “值”              | 类型   | 描述 |
 | ------------------ | :----: | ----------- |
 | EncryptionType     | 字符串 | 指定应使用哪些算法来进行数据保护。 值必须为 CNG CBC、 CNG 的 GCM 或托管和中更详细地介绍了。 |
 | DefaultKeyLifetime | DWORD  | 指定新生成的键的生存期。 此值以天为单位指定，并且必须是 > = 7。 |
@@ -45,7 +41,7 @@ Windows 上运行时，数据保护系统具有有限的支持设置默认计算
 
 如果 EncryptionType CNG CBC，系统配置为使用 CBC 模式对称的块密码来进行保密性和 HMAC 真实性有通过 Windows CNG 提供服务 (请参阅[指定自定义 Windows CNG 算法](xref:security/data-protection/configuration/overview#specifying-custom-windows-cng-algorithms)为更多详细信息）。 支持以下的其他值，其中每个对应于 CngCbcAuthenticatedEncryptionSettings 类型上的属性。
 
-| 值                       | 类型   | 描述 |
+| “值”                       | 类型   | 描述 |
 | --------------------------- | :----: | ----------- |
 | EncryptionAlgorithm         | 字符串 | 理解的 CNG 对称的块密码算法的名称。 此算法在 CBC 模式下打开。 |
 | EncryptionAlgorithmProvider | 字符串 | 可以生成 EncryptionAlgorithm 的算法的 CNG 提供程序实现的名称。 |
@@ -55,7 +51,7 @@ Windows 上运行时，数据保护系统具有有限的支持设置默认计算
 
 如果 EncryptionType CNG GCM，系统配置为使用保密性和身份验证与服务提供的 Windows CNG Galois/计数器模式对称的块密码 (请参阅[指定自定义 Windows CNG 算法](xref:security/data-protection/configuration/overview#specifying-custom-windows-cng-algorithms)有关详细信息）。 支持以下的其他值，其中每个对应于 CngGcmAuthenticatedEncryptionSettings 类型上的属性。
 
-| 值                       | 类型   | 描述 |
+| “值”                       | 类型   | 描述 |
 | --------------------------- | :----: | ----------- |
 | EncryptionAlgorithm         | 字符串 | 理解的 CNG 对称的块密码算法的名称。 此算法将在 Galois/计数器模式中打开。 |
 | EncryptionAlgorithmProvider | 字符串 | 可以生成 EncryptionAlgorithm 的算法的 CNG 提供程序实现的名称。 |
@@ -63,7 +59,7 @@ Windows 上运行时，数据保护系统具有有限的支持设置默认计算
 
 如果管理 EncryptionType，系统配置为用于托管的 SymmetricAlgorithm 保密性和 KeyedHashAlgorithm 真实性 (请参阅[指定自定义管理算法](xref:security/data-protection/configuration/overview#specifying-custom-managed-algorithms)有关详细信息)。 支持以下的其他值，其中每个对应于 ManagedAuthenticatedEncryptionSettings 类型上的属性。
 
-| 值                      | 类型   | 描述 |
+| “值”                      | 类型   | 描述 |
 | -------------------------- | :----: | ----------- |
 | EncryptionAlgorithmType    | 字符串 | 实现 SymmetricAlgorithm 的类型的程序集限定名称。 |
 | EncryptionAlgorithmKeySize | DWORD  | 要派生的对称加密算法的密钥长度 （以位为单位）。 |

@@ -2,19 +2,15 @@
 title: 取消保护已吊销在 ASP.NET 核心中键的有效负载
 author: rick-anderson
 description: 了解如何取消保护数据，使用密钥，因为已吊销，在 ASP.NET Core 应用程序保护。
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/consumer-apis/dangerous-unprotect
-ms.openlocfilehash: b721bba63d0673f4e22fd9d1456af33489a2a389
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: ed0c2a309e899f018b09b3edc86b65b299647914
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30077412"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272381"
 ---
 # <a name="unprotect-payloads-whose-keys-have-been-revoked-in-aspnet-core"></a>取消保护已吊销在 ASP.NET 核心中键的有效负载
 

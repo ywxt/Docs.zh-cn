@@ -2,19 +2,16 @@
 title: 在 ASP.NET 核心中的浏览器链接
 author: ncarandini
 description: 说明如何浏览器链接是链接使用一个或多个 web 浏览器在开发环境的 Visual Studio 功能。
-manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 09/22/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: client-side/using-browserlink
-ms.openlocfilehash: 0496f9df35956b8fe7ca9fcc7c03df33437d5a87
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 8808dc705ec87ebf6e7874ad69616ed5bbf61576
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274087"
 ---
 # <a name="browser-link-in-aspnet-core"></a>在 ASP.NET 核心中的浏览器链接
 
@@ -26,7 +23,13 @@ ms.lasthandoff: 05/07/2018
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-ASP.NET 核心 2.x **Web 应用程序**，**空**，和**Web API**模板项目使用[Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/)元包，其中包含的包引用[Microsoft.VisualStudio.Web.BrowserLink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/)。 因此，使用`Microsoft.AspNetCore.All`元包无需任何进一步的操作，以使浏览器链接可供使用。
+ASP.NET 核心 2.0 **Web 应用程序**，**空**，和**Web API**模板项目使用[Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) metapackage其中包含的包引用[Microsoft.VisualStudio.Web.BrowserLink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/)。 因此，使用`Microsoft.AspNetCore.All`metapackage 无需任何进一步的操作，以使浏览器链接可供使用。
+
+::: moniker range=">= aspnetcore-2.1"
+
+将 ASP.NET 核心 2.0 项目转换为 ASP.NET 核心 2.1 和转换为时[Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app) metapackage，必须安装[Microsoft.VisualStudio.Web.BrowserLink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/)手动为浏览器链接功能的的包。
+
+::: moniker-end
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 

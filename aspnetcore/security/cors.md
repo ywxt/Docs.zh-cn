@@ -2,19 +2,15 @@
 title: 启用 ASP.NET Core 中的跨域请求 (CORS)
 author: rick-anderson
 description: 了解如何作为一种标准允许或拒绝 ASP.NET Core 应用程序中的跨域请求的 CORS。
-manager: wpickett
 ms.author: riande
 ms.date: 05/17/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/cors
-ms.openlocfilehash: 3c5d0840426c7ed52353a7832a1a1959027121de
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
-ms.translationtype: HT
+ms.openlocfilehash: 2920917d0a488e72afb94d65bdc6d7034c6f66a9
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30077543"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278656"
 ---
 # <a name="enable-cross-origin-requests-cors-in-aspnet-core"></a>启用 ASP.NET Core 中的跨域请求 (CORS)
 
@@ -165,13 +161,13 @@ CORS 预检请求可能包括一个访问控制的请求标头标头，列出由
 
 * Cache-Control
 
-* Content-Language
+* 内容语言
 
 * Content-Type
 
 * 过期
 
-* Last-Modified
+* 上次修改
 
 * 杂注
 
@@ -267,7 +263,7 @@ Test message
 
   * application/x-www-form-urlencoded
 
-  * multipart/form-data
+  * multipart/窗体的数据
 
   * 文本/无格式
 
