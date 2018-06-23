@@ -6,12 +6,12 @@ ms.author: casoper
 ms.date: 01/25/2018
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: 82179e52e2c292ec3b7e618b3c61eef6494abc7c
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: c56efda28c668b8f88d28334705b4c26f288870f
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273413"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314157"
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>中的 web Api 与 Azure Active Directory B2C 中 ASP.NET 核心云身份验证
 
@@ -173,7 +173,7 @@ Visual Studio 使用名为的控制器中创建 web API *ValuesController.cs*返
    |      <strong>标记名称</strong>       |                                  <em>&lt;标记名称&gt;</em>                                  |                                                                                                                   输入该令牌的描述性名称。                                                                                                                    |
    |      <strong>授予类型构建的</strong>       |                                           隐式                                            |                                                                                                                                                                                                                                                                              |
    |     <strong>回调 URL</strong>      |                               `https://getpostman.com/postman`                                |                                                                                                                                                                                                                                                                              |
-   |       <strong>身份验证 URL</strong>        | `https://login.microsoftonline.com/<tenant domain name>/oauth2/v2.0/authorize?p=B2C_1_SiUpIn` |                                                                                                  替换<em>&lt;租户域名&gt;</em>与租户的域名。                                                                                                  |
+   |       <strong>身份验证 URL</strong>        | `https://login.microsoftonline.com/tfp/<tenant domain name>/B2C_1_SiUpIn/oauth2/v2.0/authorize` |                                                                                                  替换<em>&lt;租户域名&gt;</em>与租户的域名。                                                                                                  |
    |       <strong>客户端 ID</strong>       |                <em>&lt;输入 Postman 应用<b>应用程序 ID</b>&gt;</em>                 |                                                                                                                                                                                                                                                                              |
    |     <strong>客户端密钥</strong>     |                                 <em>&lt;将保留为空&gt;</em>                                  |                                                                                                                                                                                                                                                                              |
    |         <strong>范围</strong>         |         `https://<tenant domain name>/<api>/user_impersonation openid offline_access`         | 替换<em>&lt;租户域名&gt;</em>与租户的域名。 替换<em>&lt;api&gt;</em>替换为 Web API 项目名称。 你还可以使用应用程序 id。 用于 URL 的模式是： <em>https://{tenant}.onmicrosoft.com/{app_name_or_id}/{scope 名称}</em>。 |

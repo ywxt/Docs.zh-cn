@@ -12,12 +12,12 @@ ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 2790f32bc74cecf450f5a258fc1ff5b280a63923
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1766c11dabec3931ec2bfc4ae2e15332427d7855
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30874988"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314008"
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>从 SQL 成员资格的现有网站迁移到 ASP.NET 标识
 ====================
@@ -90,12 +90,12 @@ ms.locfileid: "30874988"
 | **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
 | Id | 字符串 | Id | RoleId | ProviderKey | Id |
-| 用户名 | 字符串 | 名称 | UserId | UserId | ClaimType |
+| 用户名 | 字符串 | name | 用户 Id | 用户 Id | ClaimType |
 | PasswordHash | 字符串 |  |  | LoginProvider | ClaimValue |
 | SecurityStamp | 字符串 |  |  |  | 用户\_Id |
 | 电子邮件 | 字符串 |  |  |  |  |
 | EmailConfirmed | bool |  |  |  |  |
-| PhoneNumber | 字符串 |  |  |  |  |
+| 电话号码 | 字符串 |  |  |  |  |
 | PhoneNumberConfirmed | bool |  |  |  |  |
 | LockoutEnabled | bool |  |  |  |  |
 | LockoutEndDate | DateTime |  |  |  |  |
@@ -108,7 +108,7 @@ ms.locfileid: "30874988"
 | IdentityUser | AspnetUsers | Id |  |
 | IdentityRole | AspnetRoles | Id |  |
 | IdentityUserRole | AspnetUserRole | UserId + RoleId | 用户\_Id-&gt;AspnetUsers RoleId-&gt;AspnetRoles |
-| IdentityUserLogin | AspnetUserLogins | ProviderKey + UserId + LoginProvider | UserId-&gt;AspnetUsers |
+| IdentityUserLogin | AspnetUserLogins | ProviderKey + UserId + LoginProvider | 用户 Id-&gt;AspnetUsers |
 | IdentityUserClaim | AspnetUserClaims | Id | 用户\_Id-&gt;AspnetUsers |
 
 使用此信息中，我们可以创建 SQL 语句以创建新表。 我们可以单独写入每个语句，或生成根据需要使用 EntityFramework PowerShell 命令，然后，我们可以编辑整个脚本。 为此，请在 VS 打开**程序包管理器控制台**从**视图**或**工具**菜单
@@ -116,6 +116,8 @@ ms.locfileid: "30874988"
 - 运行命令"Enable-migrations"以启用 EntityFramework 迁移。
 - 运行命令"add-migration 初始"，这将创建要在 C# 中创建数据库的初始设置代码 / VB.
 - 最后一步是运行"Update-database-脚本"生成 SQL 脚本的命令基于模型类。
+
+[!INCLUDE[](../../../includes/identity/alter-command-exception.md)]
 
 此数据库生成脚本可以用作其中我们将会进行其他更改，以添加新列，将数据复制的开始。 这样做的优点是我们生成`_MigrationHistory`EntityFramework 用于修改数据库架构时模型类针对将来版本的标识发布的更改的表。 
 

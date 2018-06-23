@@ -12,12 +12,12 @@ ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: f65f93b20543d06ea70a9009b6921e297477c99e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 75d273d9fdb5d8ff0f7a910f42abe8bcce6e397d
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871566"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36313995"
 ---
 <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a>将通用提供程序的数据迁移的成员身份和用户配置文件到 ASP.NET 标识 (C#)
 ====================
@@ -106,6 +106,8 @@ Visual Studio 2013 的版本中，ASP.NET 团队引入新的 ASP.NET 标识系�
    请注意，ProfileInfo 现在是用户类上的属性。 因此我们可以使用用户类来直接处理配置文件数据。
 
 复制中的文件**IdentityModels**和**IdentityAccount**下载从源文件夹 ( [ https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/UniversalProviders-Identity-Migrations ](https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/UniversalProviders-Identity-Migrations) )。 这些具有剩余模型类和所需的用户和角色管理使用 ASP.NET 标识 Api 的新页。 使用的方法类似于 SQL 成员资格，可以找到详细的说明[此处](migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)。
+
+[!INCLUDE[](../../../includes/identity/alter-command-exception.md)]
 
 ## <a name="copying-profile-data-to-the-new-tables"></a>配置文件将数据复制到新表
 

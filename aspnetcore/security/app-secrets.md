@@ -4,14 +4,14 @@ author: rick-anderson
 description: 了解如何存储和检索在 ASP.NET Core 应用程序开发期间为应用程序机密的敏感信息。
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 05/23/2018
+ms.date: 06/21/2018
 uid: security/app-secrets
-ms.openlocfilehash: 8db1d1069958d3b08bbb3b9727ddbc47ae5747df
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: d3b2de1a17012986ef8dea7aaf8636dd35d10fa1
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275420"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314170"
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>安全存储中 ASP.NET Core 中开发的应用程序机密
 
