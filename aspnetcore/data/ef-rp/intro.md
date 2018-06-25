@@ -2,19 +2,15 @@
 title: ASP.NET Core 中的 Razor 页面和 Entity Framework Core - 第 1 个教程（共 8 个）
 author: rick-anderson
 description: 介绍了如何使用 Entity Framework Core 创建 Razor 页面应用
-manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-rp/intro
-ms.openlocfilehash: d7cf4740f31f1e0ae56461efc4c1b3d91238270f
-ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
+ms.openlocfilehash: cadf36f4e1ff3776ad4139e1d7c4e9b73687bc5c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "35726012"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279225"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>ASP.NET Core 中的 Razor 页面和 Entity Framework Core - 第 1 个教程（共 8 个）
 
@@ -30,7 +26,7 @@ Contoso University 示例 Web 应用演示了如何使用 Entity Framework (EF) 
 
 [!INCLUDE [](~/includes/net-core-prereqs.md)]
 
-熟悉 [Razor 页面](xref:mvc/razor-pages/index)。 新程序员在开始学习本系列之前，应先完成 [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)。
+熟悉 [Razor 页面](xref:razor-pages/index)。 新程序员在开始学习本系列之前，应先完成 [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)。
 
 ## <a name="troubleshooting"></a>疑难解答
 
@@ -57,7 +53,7 @@ Contoso University 示例 Web 应用演示了如何使用 Entity Framework (EF) 
 * 创建新的 ASP.NET Core Web 应用程序。 将该项目命名为 ContosoUniversity 。 务必将该项目命名为 ContosoUniversity，以便复制/粘贴代码时命名空间相匹配。
  ![新建 ASP.NET Core Web 应用程序](intro/_static/np.png)
 * 在下拉列表中选择“ASP.NET Core 2.0”，然后选择“Web 应用程序”。
- ![Web 应用程序（Razor 页面）](../../mvc/razor-pages/index/_static/np2.png)
+ ![Web 应用程序（Razor 页面）](../../razor-pages/index/_static/np2.png)
 
 按 F5 在调试模式下运行应用，或按 Ctrl-F5 在运行（不附加调试器）
 

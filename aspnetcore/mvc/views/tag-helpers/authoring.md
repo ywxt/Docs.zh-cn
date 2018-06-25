@@ -2,20 +2,16 @@
 title: 在 ASP.NET Core 中创作标记帮助程序
 author: rick-anderson
 description: 了解如何在 ASP.NET Core 中创作标记帮助程序。
-manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 01/19/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/tag-helpers/authoring
-ms.openlocfilehash: 85809a0f7bfe0adcf535c2be7f5b77e8abd947fd
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 5873c6dbdeba1b5f2bf7ac85d8992480228b7125
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32740993"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275312"
 ---
 # <a name="author-tag-helpers-in-aspnet-core"></a>在 ASP.NET Core 中创作标记帮助程序
 

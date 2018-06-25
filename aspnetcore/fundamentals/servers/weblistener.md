@@ -2,19 +2,15 @@
 title: ASP.NET Core 中的 WebListener Web 服务器实现
 author: rick-anderson
 description: 了解 WebListener，它是 Windows 上 ASP.NET Core 的 Web 服务器，可用于无需 IIS，直接连接到 Internet。
-manager: wpickett
 ms.author: riande
 ms.date: 03/13/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: 46871edb744ad152df8eb958b344068b7408dd1e
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 68aea99d6ce6af12655ef5fdb13130e9279e448a
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34248448"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274864"
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 WebListener Web 服务器实现
 
@@ -166,7 +162,8 @@ netsh http add sslcert ipport=0.0.0.0:443 certhash=MyCertHash_Here appid="{00000
 
 以下是一些比 netsh.exe 命令行更易使用的第三方工具。 它们不是由 Microsoft 提供或认可的。 默认情况下，这些工具以管理员身份运行，因为 netsh.exe 本身需要管理员权限。
 
-* [http.sys 管理器](http://httpsysmanager.codeplex.com/)提供用于列出和配置 SSL 证书和选项、前缀保留和证书信任列表的 UI。 
+* 
+  [http.sys 管理器](http://httpsysmanager.codeplex.com/)提供用于列出和配置 SSL 证书和选项、前缀预留和证书信任列表的 UI。 
 * [HttpConfig](http://www.stevestechspot.com/ABetterHttpcfg.aspx) 允许用户列出或配置 SSL 证书和 URL 前缀。 UI 比 http.sys 管理器更加完善并且提供更多的配置选项，但在其他方面它提供类似的功能。 它不能创建新的证书信任列表 (CTL)，但可以分配现有证书信任列表。
 
 为生成自签名 SSL 证书，Microsoft 提供命令行工具：[MakeCert.exe](https://msdn.microsoft.com/library/windows/desktop/aa386968) 和 PowerShell cmdlet [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pki/new-selfsignedcertificate)。 此外，还提供第三方 UI 工具，可让你更加轻松地生成自签名 SSL 证书：

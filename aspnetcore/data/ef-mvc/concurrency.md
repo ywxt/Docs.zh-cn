@@ -2,19 +2,15 @@
 title: ASP.NET Core MVC 和 EF Core - 并发 - 第 8 个教程（共 10 个）
 author: rick-anderson
 description: 本教程介绍如何处理多个用户同时更新同一实体时出现的冲突。
-manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: 48aa5a2d47c9d60ab8ac5a25f8f29ce8e462dd61
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: 77e5fba176835f7da9be6c7057084ed017d34bec
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34153746"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278393"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---concurrency---8-of-10"></a>ASP.NET Core MVC 和 EF Core - 并发 - 第 8 个教程（共 10 个）
 

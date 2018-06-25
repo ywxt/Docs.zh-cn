@@ -2,19 +2,15 @@
 title: ASP.NET Core 中的布局
 author: ardalis
 description: 了解如何在 ASP.NET Core 应用中呈现视图之前，使用通用布局、共享指令和运行常见代码。
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/layout
-ms.openlocfilehash: 8e89c8e6cf18c47abb6bf432cdc6bb6b97e8aeb0
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a99b239a0aeeb14492b1eee962dc1149f056f0eb
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "29904746"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274113"
 ---
 # <a name="layout-in-aspnet-core"></a>ASP.NET Core 中的布局
 

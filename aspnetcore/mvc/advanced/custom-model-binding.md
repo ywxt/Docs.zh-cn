@@ -2,19 +2,15 @@
 title: ASP.NET Core 中的自定义模型绑定
 author: ardalis
 description: 了解如何通过模型绑定，使控制器操作能够直接使用 ASP.NET Core 中的模型类型。
-manager: wpickett
 ms.author: riande
 ms.date: 04/10/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: a687753083d3b11898e9ff35828780a5ad240854
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: f5bd9a3eefb1fd9c1534e8767ad8e8af37514adb
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32740616"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275388"
 ---
 # <a name="custom-model-binding-in-aspnet-core"></a>ASP.NET Core 中的自定义模型绑定
 

@@ -2,19 +2,15 @@
 title: ASP.NET Core 中的文件提供程序
 author: ardalis
 description: 了解 ASP.NET Core 如何通过文件提供程序来抽象化文件系统访问。
-manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/file-providers
-ms.openlocfilehash: cdbffdadd9616fe941809d67dc2c0bbd52149561
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 0d356322ea9f4cc2caead81746bf9ede4a87923f
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
-ms.locfileid: "29724566"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276233"
 ---
 # <a name="file-providers-in-aspnet-core"></a>ASP.NET Core 中的文件提供程序
 

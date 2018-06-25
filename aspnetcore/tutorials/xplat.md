@@ -2,19 +2,15 @@
 title: ASP.NET Core 教程
 author: rick-anderson
 description: 用于了解如何开发 ASP.NET Core 应用程序的分步指南列表。
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/xplat
-ms.openlocfilehash: 097d63d5be5bd83c688a7f377d8ed45ffdd43ff8
-ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
+ms.openlocfilehash: 9cc2f7a91c081fbd74999f6dc0334a4ee1980864
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30223068"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277044"
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 教程
 
@@ -22,9 +18,9 @@ ms.locfileid: "30223068"
 
 ## <a name="build-web-apps"></a>生成 Web 应用
 
-[Razor 页面](xref:mvc/razor-pages/index) 是使用 ASP.NET Core 2.0 及更高版本创建新 Web UI 应用时建议使用的方法。
+[Razor 页面](xref:razor-pages/index) 是使用 ASP.NET Core 2.0 及更高版本创建新 Web UI 应用时建议使用的方法。
 
-* [ASP.NET Core 中的 Razor 页面介绍](xref:mvc/razor-pages/index)
+* [ASP.NET Core 中的 Razor 页面介绍](xref:razor-pages/index)
 * 使用 ASP.NET Core 创建 Razor 页面 Web 应用
 
    * [macOS 上的 Razor 页面](xref:tutorials/razor-pages-mac/index)

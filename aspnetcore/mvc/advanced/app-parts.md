@@ -2,19 +2,15 @@
 title: ASP.NET Core 中的应用程序部件
 author: ardalis
 description: 了解如何使用应用程序部件（应用资源的抽象）来发现或避免从程序集加载功能。
-manager: wpickett
 ms.author: riande
 ms.date: 01/04/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: 8f7aeadc7a1218bf203575add8c82c95faf137b4
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: e0290ceadc159d7c3608ec4420d95cd219407d32
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32739849"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276820"
 ---
 # <a name="application-parts-in-aspnet-core"></a>ASP.NET Core 中的应用程序部件
 

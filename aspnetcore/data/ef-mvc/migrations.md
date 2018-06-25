@@ -2,19 +2,15 @@
 title: ASP.NET Core MVC 和 EF Core - 迁移 - 第 4 个教程（共 10 个）
 author: rick-anderson
 description: 本教程使用 EF Core 迁移功能管理 ASP.NET Core MVC 应用程序中的数据模型更改。
-manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: 0a3ff28c9edefd2c7f96222060a0df76d538012b
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: d8b92aeedb252b93e1dc1aca424d26a377305da2
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34153730"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273580"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---migrations---4-of-10"></a>ASP.NET Core MVC 和 EF Core - 迁移 - 第 4 个教程（共 10 个）
 

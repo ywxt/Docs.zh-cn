@@ -9,9 +9,9 @@
 下表列出了项目中的文件和文件夹。 对于本教程而言，Startup.cs 是最有必要了解的文件。 无需查看下面提供的每一个链接。 需要详细了解项目中的某个文件或文件夹时，可参考此处提供的链接。
 
 | 文件或文件夹              | 目标 |
-| ----------------- | ------------ | 
+| ----------------- | ------------ |
 | wwwroot | 包含静态文件。 请参阅[静态文件](xref:fundamentals/static-files)。 |
-| 页数 | [Razor Pages](xref:mvc/razor-pages/index)的文件夹。 | 
+| 页数 | [Razor Pages](xref:razor-pages/index)的文件夹。 |
 | *appsettings.json* | [配置](xref:fundamentals/configuration/index) |
 | *Program.cs* | [托管](xref:fundamentals/host/index) ASP.NET Core 应用。|
 | *Startup.cs* | 配置服务和请求管道。 请参阅[启动](xref:fundamentals/startup)。|

@@ -2,20 +2,16 @@
 title: ASP.NET Core 中 .NET 的开放 Web 接口 (OWIN)
 author: ardalis
 description: 了解 ASP.NET Core 如何支持 .NET 的开放 Web 接口 (OWIN)，将 Web 应用与 Web 服务器分离。
-manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/owin
-ms.openlocfilehash: 3ff7b6e02284b4f6c61bf5d31013b4edfe8f7f29
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 864580edd62032ad1409c1d3263cb5d464fa59fe
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31483492"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273619"
 ---
 # <a name="open-web-interface-for-net-owin-with-aspnet-core"></a>ASP.NET Core 中 .NET 的开放 Web 接口 (OWIN)
 

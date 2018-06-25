@@ -2,19 +2,15 @@
 title: ASP.NET Core 中的区域
 author: rick-anderson
 description: 了解 ASP.NET MVC 的区域功能如何将相关功能以单独的名称空间（用于路由）和文件夹结构（用于视图）的形式组织到一个组中。
-manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/controllers/areas
-ms.openlocfilehash: 61527eb350b5aba9cb37b1de5acdeae1287bf073
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 3e998af42cd6209271495dd8dd97a8aed35717a4
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30072716"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274822"
 ---
 # <a name="areas-in-aspnet-core"></a>ASP.NET Core 中的区域
 

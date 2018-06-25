@@ -2,19 +2,15 @@
 title: ASP.NET Core 中的 Razor 页面和 EF Core - 更新相关数据 - 第 7 个教程（共 8 个）
 author: rick-anderson
 description: 本教程将通过更新外键字段和导航属性来更新相关数据。
-manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: 2eff6cd5f4bb737cb79875c9b04c889914376cd0
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: e987971f60e5c5a9fb79e30440c7c986df64447e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32740369"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275289"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---update-related-data---7-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 更新相关数据 - 第 7 个教程（共 8 个）
 
@@ -95,8 +91,6 @@ Razor 页面使用[选择标记帮助器](xref:mvc/views/working-with-forms#the-
 * 显示课程 ID。 通常不显示实体的主键 (PK)。 PK 对用户不具有任何意义。 在这种情况下，PK 就是课程编号。
 * 将标题从“DepartmentID”更改为“Department”。
 * 将 `"ViewBag.DepartmentID"` 替换为 `DepartmentNameSL`（来自基类）。
-* 添加“选择系”选项。 此更改将导致呈现“选择系”而不是第一个系。
-* 在未选择系时添加验证消息。
 
 该页面包含课程编号的隐藏域 (`<input type="hidden">`)。 添加具有 `asp-for="Course.CourseID"` 的 `<label>` 标记帮助器也同样需要隐藏域。 用户单击“保存”时，需要 `<input type="hidden">`，以便在已发布的数据中包括课程编号。
 

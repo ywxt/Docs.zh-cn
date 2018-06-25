@@ -2,19 +2,15 @@
 title: 将新字段添加到 ASP.NET Core 应用
 author: rick-anderson
 description: 了解如何使用 Entity Framework Code First 迁移将新字段添加到模型，并将此更改迁移到数据库。
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/first-mvc-app/new-field
-ms.openlocfilehash: a8299871671979264383fe7997e56c6708b2e741
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 0077205e0f10037c9b24eab80337cb76f027e688
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729751"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278773"
 ---
 # <a name="add-a-new-field-to-an-aspnet-core-app"></a>将新字段添加到 ASP.NET Core 应用
 
