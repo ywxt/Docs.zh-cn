@@ -2,25 +2,21 @@
 title: ASP.NET Core MVC 中的视图
 author: ardalis
 description: 了解 ASP.NET Core MVC 中的视图如何处理应用的数据表示和用户交互。
-manager: wpickett
 ms.author: riande
 ms.date: 12/12/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/overview
-ms.openlocfilehash: b9947de03942bd71616e4bf12263befd9f784915
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: 4d5cb6288711cdef145ebb0b52e4e645c535bdf2
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33965720"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278344"
 ---
 # <a name="views-in-aspnet-core-mvc"></a>ASP.NET Core MVC 中的视图
 
 作者：[Steve Smith](https://ardalis.com/) 和 [Luke Latham](https://github.com/guardrex)
 
-本文档介绍在 ASP.NET Core MVC 应用程序中使用的视图。 有关 Razor 页的信息，请参阅 [Razor 页简介](xref:mvc/razor-pages/index)。
+本文档介绍在 ASP.NET Core MVC 应用程序中使用的视图。 有关 Razor 页的信息，请参阅 [Razor 页简介](xref:razor-pages/index)。
 
 在“模型-视图-控制器(MVC)”模式中，视图处理应用的数据表示和用户交互。 视图是嵌入了 [Razor 标记](xref:mvc/views/razor)的 HTML 模板。 Razor 标记一个代码，用于与 HTML 标记交互以生成发送给客户端的网页。
 

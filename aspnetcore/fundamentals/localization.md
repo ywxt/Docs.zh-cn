@@ -2,19 +2,15 @@
 title: ASP.NET Core 全球化和本地化
 author: rick-anderson
 description: 了解 ASP.NET Core 如何提供服务和中间件，将内容本地化为不同的语言和区域性。
-manager: wpickett
 ms.author: riande
 ms.date: 01/14/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/localization
-ms.openlocfilehash: 929c73c314a15e7003853d3996158d1328e597cb
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 0f48490af5805e4351c983f3ae519268c8e9c7a7
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2018
-ms.locfileid: "34094595"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274126"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core 全球化和本地化
 

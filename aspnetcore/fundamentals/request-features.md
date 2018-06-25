@@ -2,19 +2,15 @@
 title: ASP.NET Core 中的请求功能
 author: ardalis
 description: 了解与 ASP.NET Core 的接口中定义的 HTTP 请求和响应相关的 Web 服务器实现详细信息。
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/request-features
-ms.openlocfilehash: c79ad6001e106a3e3104b0f804a386fe8b0ee30a
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: d0f3ae521d1f314dd04cb581d9a921da4719273d
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
-ms.locfileid: "28913567"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279488"
 ---
 # <a name="request-features-in-aspnet-core"></a>ASP.NET Core 中的请求功能
 
@@ -67,7 +63,7 @@ ASP.NET Core 在 `Microsoft.AspNetCore.Http.Features` 中定义了许多 HTTP �
 
 通过结合自定义服务器实现和特定的中间件增强功能，可构造应用程序所需的精确功能集。 这样一来，无需更改服务器即可添加缺少的功能，并确保只公开最少的功能，从而限制攻击外围应用并提高性能。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 功能接口定义给定请求可能支持的特定 HTTP 功能。 服务器定义功能的集合，以及该服务器支持的初始功能集，但中间件可用于增强这些功能。
 
