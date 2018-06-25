@@ -2,32 +2,28 @@
 title: ASP.NET Core 中已搭建基架的 Razor 页面
 author: rick-anderson
 description: 介绍通过搭建基架生成的 Razor 页面。
-manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/27/2017
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/razor-pages/page
-ms.openlocfilehash: 1388249eaf62b7e7a102a87385565c462eef8564
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 65d3b045d831621ec4f8b385b2aba16722809f67
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729919"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278966"
 ---
 [!INCLUDE [model1](../../includes/RP/page1.md)]
 
-<span data-ttu-id="0dc7c-103">Visual Studio 以用于标记帮助程序的特殊字体显示 `<form method="post">` 标记：</span><span class="sxs-lookup"><span data-stu-id="0dc7c-103">Visual Studio displays the `<form method="post">` tag in a distinctive font used for Tag Helpers:</span></span> 
+<span data-ttu-id="7a3e7-103">Visual Studio 以用于标记帮助程序的特殊字体显示 `<form method="post">` 标记：</span><span class="sxs-lookup"><span data-stu-id="7a3e7-103">Visual Studio displays the `<form method="post">` tag in a distinctive font used for Tag Helpers:</span></span> 
 
 ![Create.cshtml 页的 VS17 视图](page/_static/th.png)
 
 [!INCLUDE [model1](../../includes/RP/page2.md)]
 
-<span data-ttu-id="0dc7c-105">下一教程将介绍 SQL Server LocalDB 和数据库的种子设定。</span><span class="sxs-lookup"><span data-stu-id="0dc7c-105">The next tutorial explains SQL Server LocalDB and seeding the database.</span></span>
+<span data-ttu-id="7a3e7-105">下一教程将介绍 SQL Server LocalDB 和数据库的种子设定。</span><span class="sxs-lookup"><span data-stu-id="7a3e7-105">The next tutorial explains SQL Server LocalDB and seeding the database.</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="0dc7c-106">[上一篇：添加模型](xref:tutorials/razor-pages/model)
-> [下一篇：SQL Server LocalDB](xref:tutorials/razor-pages/sql)</span><span class="sxs-lookup"><span data-stu-id="0dc7c-106">[Previous: Adding a model](xref:tutorials/razor-pages/model)
+> <span data-ttu-id="7a3e7-106">[上一篇：添加模型](xref:tutorials/razor-pages/model)
+> [下一篇：SQL Server LocalDB](xref:tutorials/razor-pages/sql)</span><span class="sxs-lookup"><span data-stu-id="7a3e7-106">[Previous: Adding a model](xref:tutorials/razor-pages/model)
 [Next: SQL Server LocalDB](xref:tutorials/razor-pages/sql)</span></span>
