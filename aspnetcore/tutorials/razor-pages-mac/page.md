@@ -2,28 +2,24 @@
 title: ASP.NET Core 中已搭建基架的 Razor 页面
 author: rick-anderson
 description: 介绍在 macOS 上通过搭建基架生成的 Razor 页面。
-manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 1/27/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/razor-pages-mac/page
-ms.openlocfilehash: 69ef03f9fe7fc3f26d9635b2936ae4dcf3e21d8e
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 430200af20a2a97c432a9632c731f91997837124
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31483615"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276992"
 ---
 [!INCLUDE [model1](../../includes/RP/page1.md)]
 
 [!INCLUDE [model1](../../includes/RP/page2.md)]
 
-<span data-ttu-id="25e4d-103">下一教程将介绍 SQLite 和数据库的种子设定。</span><span class="sxs-lookup"><span data-stu-id="25e4d-103">The next tutorial explains SQLite and seeding the database.</span></span>
+<span data-ttu-id="fb9a3-103">下一教程将介绍 SQLite 和数据库的种子设定。</span><span class="sxs-lookup"><span data-stu-id="fb9a3-103">The next tutorial explains SQLite and seeding the database.</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="25e4d-104">[上一篇：添加模型](xref:tutorials/razor-pages-mac/model)
-> [下一篇：SQLite](xref:tutorials/razor-pages-mac/sql)</span><span class="sxs-lookup"><span data-stu-id="25e4d-104">[Previous: Adding a model](xref:tutorials/razor-pages-mac/model)
+> <span data-ttu-id="fb9a3-104">[上一篇：添加模型](xref:tutorials/razor-pages-mac/model)
+> [下一篇：SQLite](xref:tutorials/razor-pages-mac/sql)</span><span class="sxs-lookup"><span data-stu-id="fb9a3-104">[Previous: Adding a model](xref:tutorials/razor-pages-mac/model)
 [Next: SQLite ](xref:tutorials/razor-pages-mac/sql)</span></span>
