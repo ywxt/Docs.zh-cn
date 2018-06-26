@@ -2,20 +2,16 @@
 title: ASP.NET Core 中的应用程序启动
 author: ardalis
 description: 了解 ASP.NET Core 中的 Startup 类如何配置服务和应用的请求管道。
-manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: 58ced0ae11f462bc309526b7db7bda7897c33009
-ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
+ms.openlocfilehash: f0b907e4322809dfe2bcd287bb064f35f5ebe150
+ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "34233165"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36314115"
 ---
 # <a name="application-startup-in-aspnet-core"></a>ASP.NET Core 中的应用程序启动
 
@@ -45,7 +41,7 @@ ASP.NET Core 应用使用 `Startup` 类，按照约定命名为 `Startup`。 `St
 
 [!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
-注入 `IHostingEnvironment` 的替代方法是使用基于约定的方法。 该应用可以为不同的环境（例如 `StartupDevelopment`）定义单独的 `Startup` 类，并在运行时选择适当的 startup 类。 优先考虑名称后缀与当前环境相匹配的类。 如果应用在开发环境中运行并包含 `Startup` 类和 `StartupDevelopment` 类，则使用 `StartupDevelopment` 类。 有关详细信息，请参阅[使用多个环境](xref:fundamentals/environments#startup-conventions)。
+注入 `IHostingEnvironment` 的替代方法是使用基于约定的方法。 该应用可以为不同的环境（例如 `StartupDevelopment`）定义单独的 `Startup` 类，并在运行时选择适当的 startup 类。 优先考虑名称后缀与当前环境相匹配的类。 如果应用在开发环境中运行并包含 `Startup` 类和 `StartupDevelopment` 类，则使用 `StartupDevelopment` 类。 有关详细信息，请参阅[使用多个环境](xref:fundamentals/environments#environment-based-startup-class-and-methods)。
 
 若要详细了解 `WebHostBuilder`，请参阅[承载](xref:fundamentals/host/index)主题。 有关在启动过程中处理错误的信息，请参阅[启动异常处理](xref:fundamentals/error-handling#startup-exception-handling)。
 
