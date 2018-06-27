@@ -12,12 +12,12 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
-ms.openlocfilehash: 79c069a601c0eafd84ae142241895428052acd29
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 96e0ee5fd0b74e7b22b8e346aa8462f7558a3ddc
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30880422"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960689"
 ---
 <a name="creating-a-team-project-in-tfs"></a>在 TFS 中创建团队项目
 ====================
@@ -110,9 +110,8 @@ ms.locfileid: "30880422"
 
    > [!NOTE]
    > 你可能会收到<strong>HTTP 404 未找到</strong>由于 double 的 HTTP 编码 bug 的错误。 如果发生这种情况，将替换此 URL:   
-   > [<em>站点集合 URL</em>] /\_layouts/permsetup.aspx  
-   > 例如：  
-   > http://tfs/sites/Fabrikam%20Web%20Projects/\_layouts/permsetup.aspx
+   > `[site_collection_URL]/_layouts/permsetup.aspx` 例如：  
+   > `http://tfs/sites/Fabrikam%20Web%20Projects/_layouts/permsetup.aspx` 
 8. 上**为此站点设置用户组**页上，添加将创建到团队项目的用户**所有者**分组，并依次**确定**。
 
     ![](creating-a-team-project-in-tfs/_static/image10.png)

@@ -5,12 +5,12 @@ description: 了解如何使用 Authorize 属性限制对 ASP.NET Core 控制器
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/authorization/simple
-ms.openlocfilehash: 3c5e9d5dfd65ded40c9828a666143c1868f5562f
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6409def0508b855d3d2a4a1f4d3a3d15bfe5dd32
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272060"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961118"
 ---
 # <a name="simple-authorization-in-aspnet-core"></a>在 ASP.NET Core 中的简单授权
 
@@ -71,5 +71,5 @@ public class AccountController : Controller
 
 这将允许仅经过身份验证的用户到`AccountController`，除`Login`操作，这是可访问的所有用户，而不考虑其经过身份验证或未经身份验证 / 匿名状态。
 
->[!WARNING]
-> `[AllowAnonymous]` 绕过所有授权语句。 如果将应用组合`[AllowAnonymous]`和任何`[Authorize]`属性然后 Authorize 属性将始终忽略。 例如，如果将应用`[AllowAnonymous]`在控制器级别任何`[Authorize]`特性在同一个控制器上，或其中的任何操作都将被忽略。
+> [!WARNING]
+> `[AllowAnonymous]` 绕过所有授权语句。 如果合并`[AllowAnonymous]`和任何`[Authorize]`属性，`[Authorize]`属性将被忽略。 例如，如果将应用`[AllowAnonymous]`控制器级别中，任何`[Authorize]`属性在同一个控制器上 （或其中的任何操作） 将被忽略。

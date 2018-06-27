@@ -12,12 +12,12 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks
 msc.type: authoredcontent
-ms.openlocfilehash: 1cd03f3b396cc2ece1d8dbe6820f6277c02d8e62
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5e7b24c697e0bb37f388341abd89609c76f6b64c
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26508146"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961232"
 ---
 <a name="preventing-cross-site-request-forgery-csrf-attacks-in-aspnet-web-api"></a>阻止 ASP.NET Web API 中的跨网站请求伪造 (CSRF) 攻击
 ====================
@@ -27,7 +27,7 @@ ms.locfileid: "26508146"
 
 下面是 CSRF 攻击的示例：
 
-1. 用户登录到 www.example.com 时，使用窗体身份验证。
+1. 用户登录到`www.example.com`使用窗体身份验证。
 2. 服务器对用户进行身份验证。 来自服务器的响应包括身份验证 cookie。
 3. 且无需注销，用户访问恶意网站。 此恶意站点包含的以下 HTML 窗体： 
 

@@ -12,16 +12,16 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/releases/whats-new-in-aspnet-web-api-22
 msc.type: authoredcontent
-ms.openlocfilehash: 400329dd852ca3c527387ee45e3e902b725e771b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 89b065fccd0e4864f4a24c37b4caa29a1e127840
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26508396"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961294"
 ---
 <a name="whats-new-in-aspnet-web-api-22"></a>什么是 ASP.NET Web API 2.2 中的新增功能
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 本主题介绍什么是用于 ASP.NET Web API 2.2 的新功能。
 
@@ -131,7 +131,7 @@ ms.locfileid: "26508396"
 
 如果服务收到此类请求主机将取消转义那些转义序列，然后再将它们传递到 Web API 运行时。 这样可防止攻击，如下所示：  
   
- http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:
+`http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:`
 
 这会导致 Web API OData 堆栈，以将返回 404 错误 （未找到）。 若要防止出现此错误，你的客户端应使用斜杠 （%252f) 的双重转义序列和反斜杠 （%255 C)。 这不会发生的查询字符串，例如，/Employees？ $filter = Name eq '名称 %2f
 

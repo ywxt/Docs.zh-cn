@@ -12,12 +12,12 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d6578737478fb86f64be261925becc3adec33247
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 58d87bd6211ae1b1eea227d34c001239efcf5f1d
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30891775"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961394"
 ---
 <a name="forms-authentication-configuration-and-advanced-topics-c"></a>窗体身份验证配置和高级的主题 (C#)
 ====================
@@ -47,9 +47,9 @@ ASP.NET 中的窗体身份验证系统提供的多种可以基于应用程序的
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         无 cookie         |                                                                                                                此属性指定在什么条件下的身份验证票证存储在与被嵌入在 URL 中的 cookie。 允许的值为： UseCookies;UseUri;自动检测;和 UseDeviceProfile （默认值）。 步骤 2 检查此设置在更多详细信息。                                                                                                                |
 |         defaultUrl         |                                                                                                                                                         指示用户将重定向到在登录后从登录页如果没有 RedirectUrl 值在查询字符串中指定的 URL。 默认值为 default.aspx。                                                                                                                                                         |
-|           域           | 当使用基于 cookie 的身份验证票证，则此设置指定 cookie 的域值。 默认值为空字符串，这会导致浏览器使用从该情况下，它已签发 （如 www.yourdomain.com) 的域。 在这种情况下，cookie 将<strong>不</strong>时进行请求定向到子域，例如 admin.yourdomain.com 发送。如果你想要传递给需要自定义将其设置为进行域属性的所有子域的 cookie。 |
+|           域           | 当使用基于 cookie 的身份验证票证，则此设置指定 cookie 的域值。 默认值为空字符串，这会导致浏览器使用从该情况下，它已签发 （如 www.yourdomain.com) 的域。 在这种情况下，cookie 将<strong>不</strong>时进行请求定向到子域，例如 admin.yourdomain.com 发送。 如果你想要传递给需要自定义将其设置为进行域属性的所有子域的 cookie。 |
 |  enableCrossAppRedirects   |                                                                                                                                                                   一个布尔值，该值指示是否已经过身份验证的用户要记住过的同一服务器上其他 web 应用程序中定向到 Url 时。 默认值为 false。                                                                                                                                                                   |
-|          loginUrl          |                                                                                                                                                                                                                      登录页的 URL。 默认值为 login.aspx。                                                                                                                                                                                                                      |
+|          登录 Url          |                                                                                                                                                                                                                      登录页的 URL。 默认值为 login.aspx。                                                                                                                                                                                                                      |
 |            name            |                                                                                                                                                                                                   当使用基于 cookie 的身份验证票证的 cookie 的名称。 默认值为。ASPXAUTH。                                                                                                                                                                                                   |
 |            path            |                                                                             当使用基于 cookie 的身份验证票证，则此设置指定 cookie 的路径属性。 Path 属性使开发人员可以限制到特定的目录层次结构的 cookie 的作用域。 默认值是，/，它通知浏览器将身份验证票证 cookie 发送到对域进行任何请求。                                                                              |
 |         保护         |                                                                                                                                            指示哪些技术用于保护窗体身份验证票证。 允许的值包括： 所有 （默认）;加密;None;和验证。 在步骤 3 中详细讨论了这些设置。                                                                                                                                            |
@@ -168,7 +168,7 @@ Cookie 是一个用于将从浏览器的信息包含在特定网站，这是默�
 
 `http://localhost:2448/ASPNET\_Security\_Tutorial\_03\_CS/(F(jaIOIDTJxIr12xYS-VVgkqKCVAuIoW30Bu0diWi6flQC-FyMaLXJfow\_Vd9GZkB2Cv-rfezq0gKadKX0YPZCkA2))/SomePage.aspx`
 
-链接中 URL SomePage.aspx 已自动转换为一个 URL，它包含的身份验证票证-我们不必编写缺乏对代码 ！ 窗体身份验证票证将自动在不是以 http:// 开头的任何超链接的 URL 中嵌入或 /。 如果在调用 Response.Redirect、 超链接控件，或定位 HTML 元素出现的超链接并不重要 (即， &lt;href ="..."&gt;...&lt;/a&gt;)。 只要 URL 不类似http://www.someserver.com/SomePage.aspx或 /SomePage.aspx，身份验证票证将嵌入为我们的窗体。
+链接中 URL SomePage.aspx 已自动转换为一个 URL，它包含的身份验证票证-我们不必编写缺乏对代码 ！ 自动将不会启动与的任何超链接的 URL 中嵌入的窗体身份验证票证`http://`或`/`。 如果在调用 Response.Redirect、 超链接控件，或定位 HTML 元素出现的超链接并不重要 (即， `<a href="...">...</a>`)。 只要 URL 不类似`http://www.someserver.com/SomePage.aspx`或`/SomePage.aspx`，将为我们嵌入窗体身份验证票证。
 
 > [!NOTE]
 > 无 cookie 窗体身份验证票证遵循相同的超时策略作为基于 cookie 的身份验证票证。 但是，无 cookie 的身份验证票证是更倾向于重播攻击，因为直接在 URL 中嵌入的身份验证票证。 假设访问网站，登录，然后将 URL 粘贴到同事的电子邮件中的用户。 如果该同事会在达到到期之前单击该链接，它们将作为其发送电子邮件的用户记录 ！
@@ -277,7 +277,7 @@ FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value)
 
 然后，我们创建*新*FormsAuthenticationTicket 实例基于现有 FormsAuthenticationTicket 的值。 但是，此新票证包括特定于用户的信息 (userDataString)。
 
-FormsAuthenticationTicket newTicket = new FormsAuthenticationTicket(ticket.Version, ticket.Name, ticket.IssueDate, ticket.Expiration, ticket.IsPersistent, userDataString);
+FormsAuthenticationTicket newTicket = 新 FormsAuthenticationTicket （票证。版本中，票证。名称，票证。IssueDate，票证。过期，票证。IsPersistent，userDataString);
 
 我们然后加密 （和验证） 通过调用新的 FormsAuthenticationTicket 实例[加密方法](https://msdn.microsoft.com/library/system.web.security.formsauthentication.encrypt.aspx)，并将其置于 authCookie 返回此加密 （和验证） 的数据。
 
