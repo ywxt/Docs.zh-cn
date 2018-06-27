@@ -2,19 +2,15 @@
 title: 在 ASP.NET Core 中开始使用 Razor Pages
 author: rick-anderson
 description: 了解构建 ASP.NET Core Razor 页面 Web 应用的基础知识。 Razor 页面推荐用于 ASP.NET Core 中的 Web 工作负载。
-manager: wpickett
 ms.author: riande
-ms.date: 5/30/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: get-started-article
+ms.date: 05/30/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: d7cdf7c8fac3b2ac1e526c6eeee8205068964ec9
-ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
+ms.openlocfilehash: e317b49f2ad33c392de33bc32a87f67bb8cb72a0
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34582812"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278039"
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core"></a>在 ASP.NET Core 中开始使用 Razor Pages
 
@@ -82,7 +78,7 @@ Visual Studio 模板创建初学者项目：
 
 * 从 Visual Studio“文件”菜单中，选择“新建”>“项目”。
 * 创建新的 ASP.NET Core Web 应用程序。 将项目命名为“RazorPagesMovie”。 将项目命名为“RazorPagesMovie”，以便命名空间在你复制/粘贴代码时相互匹配。
-  ![新建 ASP.NET Core Web 应用程序](../../mvc/razor-pages/index/_static/np.png)
+  ![新建 ASP.NET Core Web 应用程序](../../razor-pages/index/_static/np.png)
 * 在下拉列表中选择“ASP.NET Core 2.0”，然后选择“Web 应用程序”。
 
   [!INCLUDE [install 2.0](~/includes/dotnetcore-on-dotnetfx-vs.md)]

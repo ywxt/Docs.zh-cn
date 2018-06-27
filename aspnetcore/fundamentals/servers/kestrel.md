@@ -2,20 +2,16 @@
 title: ASP.NET Core 中的 Kestrel Web 服务器实现
 author: rick-anderson
 description: 了解跨平台 ASP.NET Core Web 服务器 Kestrel。
-manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 05/02/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: 39949585dc8fce10c31045ef3013c6bc166e45ba
-ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
+ms.openlocfilehash: 62649351271deebcf1ed9d2f8b2258bed3478989
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/14/2018
-ms.locfileid: "35613146"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276651"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 Kestrel Web 服务器实现
 
@@ -458,12 +454,12 @@ WebHost.CreateDefaultBuilder()
 
 如果指定端口号 `0`，Kestrel 将动态绑定到可用端口。 以下示例演示如何确定 Kestrel 在运行时实际绑定到的端口：
 
-[!code-csharp[](kestrel/samples/2.x/KestrelSample/Startup.cs?name=snippet_Port0&highlight=3)]
+[!code-csharp[](kestrel/samples/2.x/KestrelSample/Startup.cs?name=snippet_Configure&highlight=3-4,15-21)]
 
 在应用运行时，控制台窗口输出指示可用于访问应用的动态端口：
 
 ```console
-Now listening on: http://127.0.0.1:48508
+Listening on the following addresses: http://127.0.0.1:48508
 ```
 
 **UseUrls、--urls 命令行参数、urls 主机配置键以及 ASPNETCORE_URLS 环境变量的限制**

@@ -2,21 +2,17 @@
 title: 在 ASP.NET Core 中使用托管服务实现后台任务
 author: guardrex
 description: 了解如何在 ASP.NET Core 中使用托管服务实现后台任务。
-manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.custom: mvc
 ms.date: 02/15/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/host/hosted-services
-ms.openlocfilehash: 13ac7e266b657bc186188b2b6f40204cfd936fca
-ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
+ms.openlocfilehash: e5455e553cba817dce811391d4a909e501a20d9a
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2018
-ms.locfileid: "35341816"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273776"
 ---
 # <a name="background-tasks-with-hosted-services-in-aspnet-core"></a>在 ASP.NET Core 中使用托管服务实现后台任务
 

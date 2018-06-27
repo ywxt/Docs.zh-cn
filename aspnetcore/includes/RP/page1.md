@@ -107,7 +107,7 @@ Razor 可以从 HTML 转换为 C# 或 Razor 特定标记。 当 `@` 符号后跟
 
 [!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_ViewStart.cshtml)]
 
-前面的标记针对所有 Razor 文件将布局文件设置为 Pages 文件夹下的 Pages/_Layout.cshtml。 请参阅[布局](xref:mvc/razor-pages/index#layout)了解详细信息。
+前面的标记针对所有 Razor 文件将布局文件设置为 Pages 文件夹下的 Pages/_Layout.cshtml。 请参阅[布局](xref:razor-pages/index#layout)了解详细信息。
 
 ### <a name="update-the-layout"></a>更新布局
 
