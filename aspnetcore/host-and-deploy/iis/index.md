@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 6b2c3334798861ebdb14787205480422d7d536ea
-ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
+ms.openlocfilehash: 0cb9bc7d8bf415e5a0125c3798f2430c9e861c98
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729647"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -43,7 +44,7 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-ASP.NET Core 模块生成分配给后端进程的动态端口。 `UseIISIntegration` 方法获取该动态端口，并将 Kestrel 配置为侦听 `http://localhost:{dynamicPort}/`。 这将替代其他 URL 配置，如对 `UseUrls` 或 [Kestrel 的侦听 API](xref:fundamentals/servers/kestrel#endpoint-configuration) 的调用。 因此，使用模块时，不需要调用 `UseUrls` 或 Kestrel 的 `Listen` API。 如果调用 `UseUrls` 或 `Listen`，则 Kestrel 会侦听在没有 IIS 的情况下运行应用时指定的端口。
+ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultBuilder` 调用 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 方法，该方法获取该动态端口，并将 Kestrel 配置为侦听 `http://localhost:{dynamicPort}/`。 这将替代其他 URL 配置，如对 `UseUrls` 或 [Kestrel 的侦听 API](xref:fundamentals/servers/kestrel#endpoint-configuration) 的调用。 因此，使用模块时，不需要调用 `UseUrls` 或 Kestrel 的 `Listen` API。 如果调用 `UseUrls` 或 `Listen`，则 Kestrel 会侦听在没有 IIS 的情况下运行应用时指定的端口。
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -89,7 +90,7 @@ services.Configure<IISOptions>(options =>
 
 ### <a name="webconfig-file"></a>web.config 文件
 
-web.config 文件配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)。 web.config 的创建、转换和发布 由 .NET Core Web SDK (`Microsoft.NET.Sdk.Web`) 处理。 SDK 设置在项目文件的顶部：
+web.config 文件配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)。 发布项目时，MSBuild 目标 (`_TransformWebConfig`) 负责创建、转换和发布 web.config 文件。 此目标位于 Web SDK 目标 (`Microsoft.NET.Sdk.Web`) 中。 SDK 设置在项目文件的顶部：
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -172,8 +173,9 @@ web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS
 1. 在托管系统上安装 .NET Core 托管捆绑包。 捆绑包可安装 .NET Core 运行时、.NET Core 库和 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)。 该模块创建 IIS 与 Kestrel 服务器之间的反向代理。 如果系统没有 Internet 连接，请先获取并安装 [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840)，然后再安装 .NET Core 托管捆绑包。
 
    1. 导航到 [.NET“所有下载”页](https://www.microsoft.com/net/download/all)。
-   1. 从列表中选择最新的非预览 .NET Core 运行时（.NET Core > 运行时 > .NET Core 运行时 x.y.z）。 除非你想要使用预览软件，否则请避免在其链接文本中使用含有单词“预览”或“rc”（候选发布）的运行时。
-   1. 在 Windows 下的 .NET Core 运行时下载页上，选择“托管捆绑包安装程序”链接以下载 .NET Core 托管捆绑包。
+   1. 在表格的“运行时”列，从列表中选择最新的非预览 .NET Core 运行时（X.Y 运行时 (vX.Y.Z) 下载）。 最新的运行时具有“最新”标签。 除非你想要使用预览软件，否则请避免在其链接文本中使用含有单词“预览”或“rc”（候选发布）的运行时。
+   1. 在 Windows 下的 .NET Core 运行时下载页上，选择“托管捆绑包安装程序”链接以下载“.NET Core 托管捆绑包”安装程序。
+   1. 在服务器上运行安装程序。
 
    **重要提示！** 如果在 IIS 之前安装了托管捆绑包，则必须修复捆绑包安装。 在安装 IIS 后再次运行托管捆绑包安装程序。
    

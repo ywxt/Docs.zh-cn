@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/dependency-injection
-ms.openlocfilehash: cc34b9069ec062f08644c0026c1ccdcd00f667ac
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: d33f0253fc7c1329e8bab400ace4c4ce8d10d792
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613055"
 ---
 # <a name="dependency-injection-into-views-in-aspnet-core"></a>在 ASP.NET Core 中将依赖项注入到视图
 
@@ -67,8 +68,8 @@ ASP.NET Core 支持将[依赖关系注入](xref:fundamentals/dependency-injectio
 
 [!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Model/Services/ProfileOptionsService.cs?highlight=7,13,24)]
 
->[!TIP]
-> 请记得在 Startup.cs 的 `ConfigureServices` 方法中注册要通过依赖关系注入请求的类型。
+> [!IMPORTANT]
+> 请记得在 `Startup.ConfigureServices` 中注册通过依赖项注入请求的类型。 注销的类型将在运行时引发异常，因为服务提供程序通过 [GetRequiredService](/dotnet/api/microsoft.extensions.dependencyinjection.serviceproviderserviceextensions.getrequiredservice) 接受内部查询。
 
 ## <a name="overriding-services"></a>替代服务
 

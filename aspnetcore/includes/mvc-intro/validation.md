@@ -23,7 +23,7 @@ MVC 和 Entity Framework Core Code First 提供的验证支持是 DRY 原则在�
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDA.cs?name=snippet1)]
 ::: moniker-end
 
-验证特性指定要对应用这些特性的模型属性强制执行的行为。 `Required` 和 `MinimumLength` 特性表示属性必须有值；但用户可输入空格来满足此验证。 `RegularExpression` 特性用于限制可输入的字符。 在上述代码中，`Genre` 和 `Rating` 仅可使用字母（禁用空格、数字和特殊字符）。 `Range` 特性将值限制在指定范围内。 `StringLength` 特性使你能够设置字符串属性的最大长度，以及可选的最小长度。 从本质上来说，需要值类型（如 `decimal`、`int`、`float`、`DateTime`），但不需要 `[Required]` 特性。
+验证特性指定要对应用这些特性的模型属性强制执行的行为。 `Required` 和 `MinimumLength` 特性表示属性必须有值；但用户可输入空格来满足此验证。 `RegularExpression` 特性用于限制可输入的字符。 在上述代码中，`Genre` 和 `Rating` 必须使用纯字母（禁用首字母大写、空格、数字和特殊字符）。 `Range` 特性将值限制在指定范围内。 `StringLength` 特性使你能够设置字符串属性的最大长度，以及可选的最小长度。 从本质上来说，需要值类型（如 `decimal`、`int`、`float`、`DateTime`），但不需要 `[Required]` 特性。
 
 让 ASP.NET 强制自动执行验证规则有助于提升应用的可靠性。 同时它能确保你无法忘记验证某些内容，并防止你无意中将错误数据导入数据库。
 

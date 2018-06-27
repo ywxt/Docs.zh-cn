@@ -2,19 +2,15 @@
 title: ASP.NET Core 中的筛选器
 author: ardalis
 description: 了解筛选器的工作原理以及如何在 ASP.NET Core MVC 中使用它们。
-manager: wpickett
 ms.author: riande
 ms.date: 4/10/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/controllers/filters
-ms.openlocfilehash: 49e51a867e47ce375a5048cae5979360c4103365
-ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
+ms.openlocfilehash: 24551382847fee0896fe6620d52c30a03aca69d1
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2018
-ms.locfileid: "34555399"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275640"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core 中的筛选器
 
@@ -23,10 +19,10 @@ ms.locfileid: "34555399"
 ASP.NET Core MVC 中的筛选器允许在请求处理管道中的特定阶段之前或之后运行代码。
 
 > [!IMPORTANT]
-> 本主题不适用于 Razor 页面。 ASP.NET Core 2.1 及更高版本支持适用于 Razor 页面的 [IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter?view=aspnetcore-2.0) 和 [IAsyncPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter?view=aspnetcore-2.0)。 有关详细信息，请参阅 [Razor 页面的筛选方法](xref:mvc/razor-pages/filter)。
+> 本主题不适用于 Razor 页面。 ASP.NET Core 2.1 及更高版本支持适用于 Razor 页面的 [IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter?view=aspnetcore-2.0) 和 [IAsyncPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter?view=aspnetcore-2.0)。 有关详细信息，请参阅 [Razor 页面的筛选方法](xref:razor-pages/filter)。
 
  内置筛选器处理任务，例如：
- 
+
  * 授权（防止用户访问未获授权的资源）。
  * 确保所有请求都使用 HTTPS。
  * 响应缓存（对请求管道进行短路出路，以便返回缓存的响应）。 
@@ -78,7 +74,7 @@ ASP.NET Core MVC 中的筛选器允许在请求处理管道中的特定阶段之
 
 ### <a name="ifilterfactory"></a>IFilterFactory
 
-`IFilterFactory` 可实现 `IFilter`。 因此，`IFilterFactory` 实例可在筛选器管道中的任意位置用作 `IFilter` 实例。 当该框架准备调用筛选器时，它会尝试将其转换为 `IFilterFactory`。 如果转换成功，则调用 `CreateInstance` 方法来创建将调用的 `IFilter` 实例。 这提供了一种很灵活的设计，因为无需在应用启动时显式设置精确的筛选器管道。
+[IFilterFactory](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifilterfactory) 实现 [IFilterMetadata](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifiltermetadata)。 因此，`IFilterFactory` 实例可在筛选器管道中的任意位置用作 `IFilterMetadata` 实例。 当该框架准备调用筛选器时，它会尝试将其转换为 `IFilterFactory`。 如果强制转换成功，则调用 [CreateInstance](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifilterfactory.createinstance) 方法来创建将调用的 `IFilterMetadata` 实例。 这提供了一种很灵活的设计，因为无需在应用启动时显式设置精确的筛选器管道。
 
 用户可以在自己的属性实现上实现 `IFilterFactory` 作为另一种创建筛选器的方法：
 
@@ -221,7 +217,7 @@ System.InvalidOperationException: No service for type
 'FiltersSample.Filters.AddHeaderFilterWithDI' has been registered.
 ```
 
-`ServiceFilterAttribute` 可实现 `IFilterFactory`。 `IFilterFactory` 公开用于创建 `IFilter` 实例的 `CreateInstance` 方法。 `CreateInstance` 方法从服务容器 (DI) 中加载指定的类型。
+`ServiceFilterAttribute` 可实现 `IFilterFactory`。 `IFilterFactory` 公开用于创建 `IFilterMetadata` 实例的 `CreateInstance` 方法。 `CreateInstance` 方法从服务容器 (DI) 中加载指定的类型。
 
 ### <a name="typefilterattribute"></a>TypeFilterAttribute
 

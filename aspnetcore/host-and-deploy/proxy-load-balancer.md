@@ -2,20 +2,16 @@
 title: 配置 ASP.NET Core 以使用代理服务器和负载均衡器
 author: guardrex
 description: 了解在代理服务器和负载均衡器后方托管的应用程序的配置，这通常会隐藏重要的请求信息。
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 03/26/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: host-and-deploy/proxy-load-balancer
-ms.openlocfilehash: f18a5c518edc739e0fe667f3aef6ffd38c06366c
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 1797962d6eada9c48b31cd94e2c7481380301a0d
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32740941"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276771"
 ---
 # <a name="configure-aspnet-core-to-work-with-proxy-servers-and-load-balancers"></a>配置 ASP.NET Core 以使用代理服务器和负载均衡器
 
@@ -38,7 +34,7 @@ ms.locfileid: "32740941"
 | X-Forwarded-Proto | 原方案的值 (HTTP/HTTPS)。 如果请求已遍历多个代理，则该值也可以是方案列表。 |
 | X-Forwarded-Host | 主机标头字段的原始值。 代理通常不会修改主机标头。 有关特权提升漏洞的信息，请参阅 [Microsoft 安全公告 CVE-2018-0787](https://github.com/aspnet/Announcements/issues/295)，该漏洞影响代理未验证或将主机标头限制为已知正确值的系统。 |
 
-来自 [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) 包的转接标头中间件读取这些标头，并填充 [HttpContext](/dotnet/api/microsoft.aspnetcore.http.httpcontext) 上的关联字段。 
+来自 [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) 包的转接标头中间件读取这些标头，并填充 [HttpContext](/dotnet/api/microsoft.aspnetcore.http.httpcontext) 上的关联字段。
 
 中间件更新：
 
@@ -67,7 +63,7 @@ ms.locfileid: "32740941"
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc();
-    
+
     services.Configure<ForwardedHeadersOptions>(options =>
     {
         options.ForwardedHeaders = 
@@ -97,6 +93,14 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 > [!NOTE]
 > 如果 [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) 没有在 `Startup.ConfigureServices` 中指定或没有通过 [UseForwardedHeaders(IApplicationBuilder, ForwardedHeadersOptions)](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_ForwardedHeadersExtensions_UseForwardedHeaders_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Builder_ForwardedHeadersOptions_) 直接指向扩展方法，则要转接的默认标头为 [ForwardedHeaders.None](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders)。 [ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) 属性必须配置为标头才能转接。
+
+## <a name="nginx-configuration"></a>Nginx 配置
+
+要转接 `X-Forwarded-For` 和 `X-Forwarded-Proto` 标头，请参阅[使用 Nginx 在 Linux 上进行托管：配置 Nginx](xref:host-and-deploy/linux-nginx#configure-nginx)。 有关详细信息，请参阅 [NGINX：使用转接头](https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/)。
+
+## <a name="apache-configuration"></a>Apache 配置
+
+`X-Forwarded-For` 将会自动添加（请参阅 [Apache 模块 mod_proxy：反向代理请求标头](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#x-headers)）。 有关如何转接 `X-Forwarded-Proto` 标头的信息，请参阅[使用 Apache 在 Linux 上进行托管：配置 Apache](xref:host-and-deploy/linux-apache#configure-apache)。
 
 ## <a name="forwarded-headers-middleware-options"></a>转接头中间件选项
 

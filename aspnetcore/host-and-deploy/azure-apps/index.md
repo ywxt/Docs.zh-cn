@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 9e438cef9db61e725b5385da53e8aa2b407218c3
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 4cf81a3e269500a5108f280348fbddd172df10a0
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34687498"
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>在 Azure 应用服务上托管 ASP.NET Core
 
@@ -103,25 +104,29 @@ ASP.NET Core 文档中提供以下文章：
 
 ### <a name="install-the-preview-site-extension"></a>安装预览站点扩展
 
-* 从 Azure 门户导航到“应用服务”边栏选项卡。
-* 在搜索框中输入“ex”。
-* 选择“扩展”。
-* 选择“添加”。
+1. 从 Azure 门户导航到“应用服务”边栏选项卡。
+1. 选择 Web 应用。
+1. 在搜索框中输入“扩”或向下滚动到“开发工具”的管理窗格列表。
+1. 选择“开发工具” > “扩展”。
+1. 选择“添加”。
 
-![显示上述部署的 Azure 应用边栏选项卡](index/_static/x1.png)
+   ![显示上述部署的 Azure 应用边栏选项卡](index/_static/x1.png)
 
-* 选择“ASP.NET Core 2.1 (x86) 运行时”或“ASP.NET Core 2.1 (x64)”运行时。
-* 选择“确定”。 再次选择“确定”。
+1. 选择“ASP.NET Core 扩展”。
+1. 选择“确定”以接受法律条款。
+1. 选择“确定”安装扩展。
 
-添加操作完成时，即表示已安装最新的 .NET Core 2.1 预览。 通过在控制台中运行 `dotnet --info` 来验证安装。 从“应用服务”边栏选项卡：
+添加操作完成时，即表示已安装最新的 .NET Core 预览。 通过在控制台中运行 `dotnet --info` 来验证安装。 从“应用服务”边栏选项卡：
 
-* 在搜索框中输入“con”。
-* 选择“控制台”。
-* 在控制台中输入 `dotnet --info`。
+1. 在搜索框中输入“控”或向下滚动到“开发工具”的管理窗格列表。
+1. 选择“开发工具” > “控制台”。
+1. 在控制台中输入 `dotnet --info`。
+
+如果版本 `2.1.300-preview1-008174` 是最新的预览版本，在命令提示符处运行 `dotnet --info` 将获得以下输出：
 
 ![显示上述部署的 Azure 应用边栏选项卡](index/_static/cons.png)
 
-前面的图像在写入时是最新的。 你可能会看到不同的版本。
+上图中显示的 ASP.NET Core 的版本 `2.1.300-preview1-008174` 就是一个示例。 执行 `dotnet --info` 时，将显示配置站点扩展时的 ASP.NET Core 的最新预览版本。
 
 `dotnet --info` 显示已安装该预览的站点扩展的路径。 它显示应用从该站点扩展运行，而不是从默认的 ProgramFiles 位置运行。 如果看到 ProgramFiles，请重启该站点并运行 `dotnet --info`。
 
@@ -142,7 +147,7 @@ ASP.NET Core 文档中提供以下文章：
 
 ### <a name="use-docker-with-web-apps-for-containers"></a>对用于容器的 Web 应用使用 Docker
 
-[Docker 中心](https://hub.docker.com/r/microsoft/aspnetcore/)包含最新的 2.1 预览 Docker 映像。 这些映像可以用作基础映像。 按常规方法使用映像并部署到用于容器的 Web 应用。
+[Docker 中心](https://hub.docker.com/r/microsoft/aspnetcore/)包含最新的预览 Docker 映像。 这些映像可以用作基础映像。 按常规方法使用映像并部署到用于容器的 Web 应用。
 
 ## <a name="additional-resources"></a>其他资源
 

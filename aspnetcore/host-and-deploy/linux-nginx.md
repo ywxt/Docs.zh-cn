@@ -1,30 +1,30 @@
 ---
 title: 使用 Nginx 在 Linux 上托管 ASP.NET Core
 author: rick-anderson
-description: 介绍如何在 Ubuntu 16.04 上将 Nginx 设置为反向代理，从而将 HTTP 流量转发到在 Kestrel 上运行的 ASP.NET Core Web 应用。
+description: 了解如何在 Ubuntu 16.04 上将 Nginx 设置为反向代理，从而将 HTTP 流量转发到在 Kestrel 上运行的 ASP.NET Core Web 应用。
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/13/2018
+ms.date: 05/22/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: d37aa25c712d715aa4134587a84e5923f9cb5b79
-ms.sourcegitcommit: 50d40c83fa641d283c097f986dde5341ebe1b44c
+ms.openlocfilehash: edef672ca809c560a3f9faa891586e5e255284b5
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2018
-ms.locfileid: "34452550"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34566810"
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>使用 Nginx 在 Linux 上托管 ASP.NET Core
 
 作者：[Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
-本指南介绍如何在 Ubuntu 16.04 服务器上设置生产就绪 ASP.NET Core 环境。
+本指南介绍如何在 Ubuntu 16.04 服务器上设置生产就绪 ASP.NET Core 环境。 这些说明可能适用于较新版本的 Ubuntu，但尚未使用较新版本进行测试。
 
 > [!NOTE]
-> 对于 Ubuntu 14.04，建议进行监控，以此作为监视 Kestrel 进程的解决方案。 在 Ubuntu 14.04 上不提供 systemd。 [请参阅本文档的早期版本](https://github.com/aspnet/Docs/blob/e9c1419175c4dd7e152df3746ba1df5935aaafd5/aspnetcore/publishing/linuxproduction.md)。
+> 对于 Ubuntu 14.04，建议进行监控，以此作为监视 Kestrel 进程的解决方案。 在 Ubuntu 14.04 上不提供 systemd。 有关 Ubuntu 14.04 的说明，请参阅[本主题的以前版本](https://github.com/aspnet/Docs/blob/e9c1419175c4dd7e152df3746ba1df5935aaafd5/aspnetcore/publishing/linuxproduction.md)。
 
 本指南：
 
@@ -35,31 +35,55 @@ ms.locfileid: "34452550"
 
 ## <a name="prerequisites"></a>系统必备
 
-1. 使用具有 sudo 特权的标准用户帐户访问 Ubuntu 16.04 服务器
-1. 现有 ASP.NET Core 应用
+1. 使用具有 sudo 特权的标准用户帐户访问 Ubuntu 16.04 服务器。
+1. 在服务器上安装 .NET Core 运行时。
+   1. 访问 [.NET Core“所有下载”页](https://www.microsoft.com/net/download/all)。
+   1. 从“运行时”下的列表中选择最新的非预览运行时。
+   1. 选择并执行适用于 Ubuntu 且匹配服务器的 Ubuntu 版本的说明。
+1. 一个现有 ASP.NET Core 应用。
 
-## <a name="copy-over-the-app"></a>复制应用
+## <a name="publish-and-copy-over-the-app"></a>通过应用发布和复制
 
-从开发环境中运行 [dotnet publish](/dotnet/core/tools/dotnet-publish) 以将应用打包到可在服务器上运行的独立目录。
+配置应用以进行[依赖框架的部署](/dotnet/core/deploying/#framework-dependent-deployments-fdd)。
 
-使用集成到组织工作流的任何工具（例如 SCP、FTP）将 ASP.NET Core 应用复制到服务器。 测试应用，例如：
+在开发环境中运行 [dotnet publish](/dotnet/core/tools/dotnet-publish)，将应用打包到可在服务器上运行的目录中（例如 bin/Release/&lt;target_framework_moniker&gt;/publish）：
 
-* 从命令行中，运行 `dotnet <app_assembly>.dll`。
-* 在浏览器中，导航到 `http://<serveraddress>:<port>` 以确认应用在 Linux 上正常运行。 
- 
+```console
+dotnet publish --configuration Release
+```
+
+如果不希望维护服务器上的 .NET Core 运行时，还可将应用发布为[独立部署](/dotnet/core/deploying/#self-contained-deployments-scd)。
+
+使用集成到组织工作流的工具（例如 SCP、SFTP）将 ASP.NET Core 应用复制到服务器。 通常可在 var 目录（例如 var/aspnetcore/hellomvc）下找到 Web 应用。
+
+> [!NOTE]
+> 在生产部署方案中，持续集成工作流会执行发布应用并将资产复制到服务器的工作。
+
+测试应用：
+
+1. 在命令行中运行应用：`dotnet <app_assembly>.dll`。
+1. 在浏览器中，导航到 `http://<serveraddress>:<port>` 以确认应用在 Linux 本地正常运行。
+
 ## <a name="configure-a-reverse-proxy-server"></a>配置反向代理服务器
 
 反向代理是为动态 Web 应用提供服务的常见设置。 反向代理终止 HTTP 请求，并将其转发到 ASP.NET Core 应用。
 
-### <a name="why-use-a-reverse-proxy-server"></a>为何使用反向代理服务器？
+::: moniker range=">= aspnetcore-2.0"
+
+> [!NOTE]
+> 使用或不使用反向代理服务器进行配置对 ASP.NET Core 2.0 或更高版本的应用来说都是有效且受支持的托管配置。 有关详细信息，请参阅[何时结合使用 Kestrel 和反向代理](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)。
+
+::: moniker-end
+
+### <a name="use-a-reverse-proxy-server"></a>使用反向代理服务器
 
 Kestrel 非常适合从 ASP.NET Core 提供动态内容。 但是，Web 服务功能不像服务器（如 IIS、Apache 或 Nginx）那样功能丰富。 反向代理服务器可以从 HTTP 服务器卸载服务静态内容、缓存请求、压缩请求和 SSL 终端等工作。 反向代理服务器可能驻留在专用计算机上，也可能与 HTTP 服务器一起部署。
 
 鉴于此指南的目的，使用 Nginx 的单个实例。 它与 HTTP 服务器一起运行在同一服务器上。 根据要求，可以选择不同的设置。
 
-由于请求是通过反向代理转接的，因此使用 [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) 程序包中的转接头中间件。 此中间件使用 `X-Forwarded-Proto` 标头来更新 `Request.Scheme`，使重定向 URI 和其他安全策略能够正常工作。
+由于请求是通过反向代理转接的，因此使用 [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) 包中的[转接头中间件](xref:host-and-deploy/proxy-load-balancer)。 此中间件使用 `X-Forwarded-Proto` 标头来更新 `Request.Scheme`，使重定向 URI 和其他安全策略能够正常工作。
 
-当使用任何类型的身份验证中间件时，必须先运行转接头中间件。 此顺序可确保身份验证中间件可以使用标头值，并生成正确的重定向 URI。
+调用转接头中间件后，必须放置依赖于该架构的组件，例如身份验证、链接生成、重定向和地理位置。 作为一般规则，转接头中间件应在诊断和错误处理中间件以外的其他中间件之前运行。 此顺序可确保依赖于转接头信息的中间件可以使用标头值进行处理。
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -100,20 +124,28 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 ### <a name="install-nginx"></a>安装 Nginx
 
+使用 `apt-get` 安装 Nginx。 安装程序将创建一个 systemd init 脚本，该脚本运行 Nginx，作为系统启动时的守护程序。 
+
 ```bash
-sudo apt-get install nginx
+sudo -s
+nginx=stable # use nginx=development for latest development version
+add-apt-repository ppa:nginx/$nginx
+apt-get update
+apt-get install nginx
 ```
 
-> [!NOTE]
-> 如果将安装可选 Nginx 模块，则可能需要从源代码生成 Nginx。
+Ubuntu 个人包存档 (PPA) 由志愿者维护，并且不由 [nginx.org](https://nginx.org/) 分发。有关详细信息，请参阅 [Nginx：二进制版本：官方 Debian/Ubuntu 包](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages)。
 
-使用 `apt-get` 安装 Nginx。 安装程序创建一个 System V init 脚本，该脚本运行 Nginx 作为系统启动时的守护程序。 因为是首次安装 Nginx，通过运行以下命令显式启动：
+> [!NOTE]
+> 如果需要可选 Nginx 模块，则可能需要从源代码生成 Nginx。
+
+因为是首次安装 Nginx，通过运行以下命令显式启动：
 
 ```bash
 sudo service nginx start
 ```
 
-确认浏览器显示 Nginx 的默认登陆页。
+确认浏览器显示 Nginx 的默认登陆页。 可在 `http://<server_IP_address>/index.nginx-debian.html` 访问登陆页面。
 
 ### <a name="configure-nginx"></a>配置 Nginx
 
@@ -128,8 +160,10 @@ server {
         proxy_http_version 1.1;
         proxy_set_header   Upgrade $http_upgrade;
         proxy_set_header   Connection keep-alive;
-        proxy_set_header   Host $http_host;
+        proxy_set_header   Host $host;
         proxy_cache_bypass $http_upgrade;
+        proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
     }
 }
 ```
@@ -150,6 +184,21 @@ server {
 > 未能指定正确的 [server_name 指令](https://nginx.org/docs/http/server_names.html)会公开应用的安全漏洞。 如果可控制整个父域（区别于易受攻击的 `*.com`），则子域通配符绑定（例如，`*.example.com`）不具有此安全风险。 有关详细信息，请参阅 [rfc7230 第 5.4 条](https://tools.ietf.org/html/rfc7230#section-5.4)。
 
 完成配置 Nginx 后，运行 `sudo nginx -t` 来验证配置文件的语法。 如果配置文件测试成功，可以通过运行 `sudo nginx -s reload` 强制 Nginx 选取更改。
+
+要直接在服务器上运行应用：
+
+1. 请导航到应用目录。
+1. 运行应用的可执行文件：`./<app_executable>`。
+
+如果出现权限错误，请更改权限：
+
+```console
+chmod u+x <app_executable>
+```
+
+如果应用在服务器上运行，但无法通过 Internet 响应，请检查服务器的防火墙，并确认端口 80 已打开。 如果使用 Azure Ubuntu VM，请添加启用入站端口 80 流量的网络安全组 (NSG) 规则。 不需要启用出站端口 80 规则，因为启用入站规则后会自动许可出站流量。
+
+测试应用完成后，请在命令提示符处按 `Ctrl+C` 关闭应用。
 
 ## <a name="monitoring-the-app"></a>监视应用
 
@@ -259,20 +308,6 @@ sudo ufw allow 443/tcp
 
 ### <a name="securing-nginx"></a>保护 Nginx
 
-Nginx 的默认分配不启用 SSL。 若要启用其他安全功能，请从源生成。
-
-#### <a name="download-the-source-and-install-the-build-dependencies"></a>下载源并安装生成依赖项
-
-```bash
-# Install the build dependencies
-sudo apt-get update
-sudo apt-get install build-essential zlib1g-dev libpcre3-dev libssl-dev libxslt1-dev libxml2-dev libgd2-xpm-dev libgeoip-dev libgoogle-perftools-dev libperl-dev
-
-# Download Nginx 1.10.0 or latest
-wget http://www.nginx.org/download/nginx-1.10.0.tar.gz
-tar zxf nginx-1.10.0.tar.gz
-```
-
 #### <a name="change-the-nginx-response-name"></a>更改 Nginx 响应名称
 
 编辑 src/http/ngx_http_header_filter_module.c：
@@ -282,20 +317,9 @@ static char ngx_http_server_string[] = "Server: Web Server" CRLF;
 static char ngx_http_server_full_string[] = "Server: Web Server" CRLF;
 ```
 
-#### <a name="configure-the-options-and-build"></a>配置选项和生成
+#### <a name="configure-options"></a>配置选项
 
-正则表达式需要 PCRE 库。 正则表达式用于 ngx_http_rewrite_module 的位置指令。 http_ssl_module adds HTTPS 协议支持。
-
-请考虑使用诸如“ModSecurity”的 Web 应用防火墙来加强对应用的保护。
-
-```bash
-./configure
---with-pcre=../pcre-8.38
---with-zlib=../zlib-1.2.8
---with-http_ssl_module
---with-stream
---with-mail=dynamic
-```
+用其他必需模块配置服务器。 请考虑使用 [ModSecurity](https://www.modsecurity.org/) 等 Web 应用防火墙来加强对应用的保护。
 
 #### <a name="configure-ssl"></a>配置 SSL
 
@@ -337,3 +361,9 @@ sudo nano /etc/nginx/nginx.conf
 ```
 
 添加行 `add_header X-Content-Type-Options "nosniff";` 并保存文件，然后重新启动 Nginx。
+
+## <a name="additional-resources"></a>其他资源
+
+* [Nginx：二进制版本：官方 Debian/Ubuntu 包](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages)
+* [配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)
+* [NGINX：使用转接头](https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/)

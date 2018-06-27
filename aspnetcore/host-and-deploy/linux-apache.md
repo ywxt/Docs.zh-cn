@@ -2,20 +2,16 @@
 title: 使用 Apache 在 Linux 上托管 ASP.NET Core
 description: 了解如何在 CentOS 上将 Apache 设置为反向代理服务器，以将 HTTP 流量重定向到在 Kestrel 上运行的 ASP.NET Core Web 应用。
 author: spboyer
-manager: wpickett
 ms.author: spboyer
 ms.custom: mvc
 ms.date: 03/13/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 473585f1be180645395c14a154c9c017ca50edab
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: 69e92af08eabede023608e612f1fbd48a8f2608e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33962812"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275446"
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>使用 Apache 在 Linux 上托管 ASP.NET Core
 
@@ -25,15 +21,29 @@ ms.locfileid: "33962812"
 
 ## <a name="prerequisites"></a>系统必备
 
-1. 运行 CentOS 7 的服务器，使用具有 sudo 特权的标准用户帐户
-2. ASP.NET Core 应用
+1. 运行 CentOS 7 的服务器，使用具有 sudo 特权的标准用户帐户。
+1. 在服务器上安装 .NET Core 运行时。
+   1. 访问 [.NET Core“所有下载”页](https://www.microsoft.com/net/download/all)。
+   1. 从“运行时”下的列表中选择最新的非预览运行时。
+   1. 选择并执行适用于 CentOS/Oracle 的说明。
+1. 一个现有 ASP.NET Core 应用。
 
-## <a name="publish-the-app"></a>发布应用
+## <a name="publish-and-copy-over-the-app"></a>通过应用发布和复制
 
-在 CentOS 7 运行时 (`centos.7-x64`) 的发布配置中将应用作为[独立部署](/dotnet/core/deploying/#self-contained-deployments-scd)发布。 使用 SCP、FTP 或其他文件传输方法将 *bin/Release/netcoreapp2.0/centos.7-x64/publish* 文件夹的内容复制到服务器。
+配置应用以进行[依赖框架的部署](/dotnet/core/deploying/#framework-dependent-deployments-fdd)。
+
+在开发环境中运行 [dotnet publish](/dotnet/core/tools/dotnet-publish)，将应用打包到可在服务器上运行的目录中（例如 bin/Release/&lt;target_framework_moniker&gt;/publish）：
+
+```console
+dotnet publish --configuration Release
+```
+
+如果不希望维护服务器上的 .NET Core 运行时，还可将应用发布为[独立部署](/dotnet/core/deploying/#self-contained-deployments-scd)。
+
+使用集成到组织工作流的工具（例如 SCP、SFTP）将 ASP.NET Core 应用复制到服务器。 通常可在 var 目录（例如 var/aspnetcore/hellomvc）下找到 Web 应用。
 
 > [!NOTE]
-> 在生产部署方案中，持续集成工作流会执行发布应用并将资产复制到服务器的工作。 
+> 在生产部署方案中，持续集成工作流会执行发布应用并将资产复制到服务器的工作。
 
 ## <a name="configure-a-proxy-server"></a>配置代理服务器
 
@@ -41,9 +51,14 @@ ms.locfileid: "33962812"
 
 代理服务器将客户端请求转发到另一个服务器，而不是自身实现这些请求。 反向代理转发到固定的目标，通常代表任意客户端。 在本指南中，Apache 被配置为反向代理，在 Kestrel 为 ASP.NET Core 应用提供服务的同一服务器上运行。
 
-由于请求是通过反向代理转接的，因此使用 [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) 程序包中的转接头中间件。 此中间件使用 `X-Forwarded-Proto` 标头来更新 `Request.Scheme`，使重定向 URI 和其他安全策略能够正常工作。
+由于请求是通过反向代理转接的，因此使用 [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) 包中的[转接头中间件](xref:host-and-deploy/proxy-load-balancer)。 此中间件使用 `X-Forwarded-Proto` 标头来更新 `Request.Scheme`，使重定向 URI 和其他安全策略能够正常工作。
 
-当使用任何类型的身份验证中间件时，必须先运行转接头中间件。 此顺序可确保身份验证中间件可以使用标头值，并生成正确的重定向 URI。
+调用转接头中间件后，必须放置依赖于该架构的组件，例如身份验证、链接生成、重定向和地理位置。 作为一般规则，转接头中间件应在诊断和错误处理中间件以外的其他中间件之前运行。 此顺序可确保依赖于转接头信息的中间件可以使用标头值进行处理。
+
+::: moniker range=">= aspnetcore-2.0"
+> [!NOTE]
+> 使用或不使用反向代理服务器进行配置对 ASP.NET Core 2.0 或更高版本的应用来说都是有效且受支持的托管配置。 有关详细信息，请参阅[何时结合使用 Kestrel 和反向代理](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)。
+::: moniker-end
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -117,13 +132,17 @@ Complete!
 > [!NOTE]
 > 在此示例中，输出反映了 httpd.86_64，因为 CentOS 7 版本是 64 位的。 若要验证 Apache 的安装位置，请从命令提示符运行 `whereis httpd`。
 
-### <a name="configure-apache-for-reverse-proxy"></a>配置 Apache 用于反向代理
+### <a name="configure-apache"></a>配置 Apache
 
 Apache 的配置文件位于 `/etc/httpd/conf.d/` 目录内。 除了 `/etc/httpd/conf.modules.d/` 中的模块配置文件外（其中包含加载模块所需的任何配置文件），将对任何带 .conf 扩展名的文件按字母顺序进行处理。
 
 为应用创建名为 hellomvc.conf 的配置文件：
 
 ```
+<VirtualHost *:*>
+    RequestHeader set "X-Forwarded-Proto" expr=%{REQUEST_SCHEME}
+</VirtualHost>
+
 <VirtualHost *:80>
     ProxyPreserveHost On
     ProxyPass / http://127.0.0.1:5000/
@@ -158,7 +177,6 @@ sudo systemctl enable httpd
 ## <a name="monitoring-the-app"></a>监视应用
 
 Apache 现在已设置为将对 `http://localhost:80` 发起的请求转发到运行在 `http://127.0.0.1:5000` 处的 Kestrel 上的 ASP.NET Core 应用。  但是，未将 Apache 设置为管理 Kestrel 进程。 使用 systemd，并创建服务文件以启动和监视基础 Web 应用。 systemd 是一个 init 系统，可以提供用于启动、停止和管理进程的许多强大的功能。 
-
 
 ### <a name="create-the-service-file"></a>创建服务文件
 
@@ -262,7 +280,7 @@ sudo firewall-cmd --add-port=443/tcp --permanent
 
 重新加载防火墙设置。 检查默认区域中可用的服务和端口。 通过检查 `firewall-cmd -h` 获取可用选项。
 
-```bash 
+```bash
 sudo firewall-cmd --reload
 sudo firewall-cmd --list-all
 ```
@@ -286,6 +304,7 @@ rich rules:
 ```bash
 sudo yum install mod_ssl
 ```
+
 若要强制使用 SSL，请安装 `mod_rewrite` 模块以启用 URL 重写：
 
 ```bash
@@ -295,10 +314,14 @@ sudo yum install mod_rewrite
 修改 hellomvc.conf 文件以启用 URL 重写和端口 443 上的安全通信：
 
 ```
+<VirtualHost *:*>
+    RequestHeader set "X-Forwarded-Proto" expr=%{REQUEST_SCHEME}
+</VirtualHost>
+
 <VirtualHost *:80>
     RewriteEngine On
     RewriteCond %{HTTPS} !=on
-    RewriteRule ^/?(.*) https://%{SERVER_NAME}/ [R,L]
+    RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
 </VirtualHost>
 
 <VirtualHost *:443>
@@ -364,7 +387,7 @@ sudo nano /etc/httpd/conf/httpd.conf
 
 添加行 `Header set X-Content-Type-Options "nosniff"`。 保存该文件。 重启 Apache。
 
-### <a name="load-balancing"></a>负载平衡 
+### <a name="load-balancing"></a>负载平衡
 
 此示例演示如何在同一实例计算机上的 CentOS 7 和 Kestrel 上设置和配置 Apache。 为了不出现单一故障点；使用 mod_proxy_balancer 并修改 VirtualHost 可实现在 Apache 代理服务器后方管理 Web 应用的多个实例。
 
@@ -375,10 +398,14 @@ sudo yum install mod_proxy_balancer
 在下面所示的配置文件中，`hellomvc` 应用的其他实例设置为在端口 5001 上运行。 “代理”部分设置了具有两个成员的均衡器配置，以便对 byrequests 进行负载均衡。
 
 ```
+<VirtualHost *:*>
+    RequestHeader set "X-Forwarded-Proto" expr=%{REQUEST_SCHEME}
+</VirtualHost>
+
 <VirtualHost *:80>
     RewriteEngine On
     RewriteCond %{HTTPS} !=on
-    RewriteRule ^/?(.*) https://%{SERVER_NAME}/ [R,L]
+    RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
 </VirtualHost>
 
 <VirtualHost *:443>
@@ -407,6 +434,7 @@ sudo yum install mod_proxy_balancer
 ```
 
 ### <a name="rate-limits"></a>速率限制
+
 使用 httpd 模块中包含的 mod_ratelimit，客户端的带宽可以限制为：
 
 ```bash
@@ -422,3 +450,7 @@ sudo nano /etc/httpd/conf.d/ratelimit.conf
     </Location>
 </IfModule>
 ```
+
+## <a name="additional-resources"></a>其他资源
+
+* [配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)

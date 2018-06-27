@@ -2,18 +2,15 @@
 title: 在 ASP.NET Core 中使用 LoggerMessage 的高性能日志记录
 author: guardrex
 description: 了解如何使用 LoggerMessage 创建可缓存的委托。对于高性能日志记录方案，这些委托需要更少的对象分配。
-manager: wpickett
 ms.author: riande
 ms.date: 11/03/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/logging/loggermessage
-ms.openlocfilehash: 24a75cfacfa61ca66e78deeb743baa75718dfb76
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e952591bac29868d87d765820e88c74b50a1fe88
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272430"
 ---
 # <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a>在 ASP.NET Core 中使用 LoggerMessage 的高性能日志记录
 
@@ -143,13 +140,9 @@ Parameter name: entity
 
 示例应用含有一个“全部清除”按钮，用于删除数据库中的所有引号。 通过一次删除一个引号来将其删除。 每当删除一个引号时，都会在记录器上调用 `QuoteDeleted` 方法。 在这些日志消息中会添加一个日志作用域。
 
-在控制台记录器选项中启用 `IncludeScopes`：
+在 appsettings.json 的控制台记录器部分启用 `IncludeScopes`：
 
-[!code-csharp[](loggermessage/sample/Program.cs?name=snippet1&highlight=10)]
-
-在 ASP.NET Core 2.0 应用中需要设置 `IncludeScopes` 来启用日志作用域。 通过 appsettings 配置文件来设置 `IncludeScopes` 是针对 ASP.NET Core 2.1 版本计划的一项功能。
-
-示例应用清除其他提供程序并添加筛选器来减少日志记录输出。 这样便可更加轻松地查看演示 `LoggerMessage` 功能的示例的日志消息。
+[!code-csharp[](loggermessage/sample/appsettings.json?highlight=3-5)]
 
 要创建日志作用域，请添加一个字段来保存该作用域的 `Func` 委托。 示例应用创建一个名为 `_allQuotesDeletedScope` (Internal/LoggerExtensions.cs) 的字段：
 
@@ -181,6 +174,6 @@ info: LoggerMessageSample.Pages.IndexModel[4]
       Quote deleted (Quote = 'Quote 3' Id = 4)
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-resources"></a>其他资源
 
 * [日志记录](xref:fundamentals/logging/index)

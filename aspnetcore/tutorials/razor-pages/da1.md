@@ -2,19 +2,16 @@
 title: 在 ASP.NET Core 应用中更新生成的页面
 author: rick-anderson
 description: 了解如何在 ASP.NET Core 应用中更新生成的页面。
-manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 08/07/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
+ms.date: 05/30/2018
 uid: tutorials/razor-pages/da1
-ms.openlocfilehash: 5c188799b7a42bcd5e9d5eab8dfe8cdad8002fe5
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 55ff98712da314e28e50a1b1b1e04530d5b3fedd
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278065"
 ---
 # <a name="update-the-generated-pages-in-an-aspnet-core-app"></a>在 ASP.NET Core 应用中更新生成的页面
 
@@ -28,7 +25,13 @@ ms.lasthandoff: 04/18/2018
 
 打开 Models/Movie.cs 文件，并添加以下代码中突出显示的行：
 
-[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDate.cs?name=snippet_1&highlight=10-11)]
+::: moniker range="= aspnetcore-2.0"
+[!code-csharp[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Models/MovieDate.cs?name=snippet_1&highlight=10-11)]
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie21/Models/MovieDate.cs?name=snippet_1&highlight=10-11,15)]
+::: moniker-end
 
 右键单击红色波浪线，然后单击“快速操作和重构”。
 
@@ -40,7 +43,7 @@ ms.lasthandoff: 04/18/2018
 
   Visual studio 添加 `using System.ComponentModel.DataAnnotations;`。
 
-[!INCLUDE [model1](../../includes/RP/da2.md)]
+[!INCLUDE [model1](~/includes/RP/da2.md)]
 
 > [!div class="step-by-step"]
 > [上一篇：使用 SQL Server LocalDB](xref:tutorials/razor-pages/sql)

@@ -2,19 +2,16 @@
 title: 处理 ASP.NET Core 中的错误
 author: ardalis
 description: 了解如何处理 ASP.NET Core 应用程序中的错误。
-manager: wpickett
 ms.author: tdykstra
 ms.custom: H1Hack27Feb2017
 ms.date: 11/30/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/error-handling
-ms.openlocfilehash: 3ff3a17d14d9ed7c438399191ffe3cf93d555d49
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 2fe46ecc32d61a7fafb2ad6e2a35456476608251
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273704"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>处理 ASP.NET Core 中的错误
 
@@ -49,17 +46,21 @@ ms.lasthandoff: 05/17/2018
 
 ## <a name="configuring-a-custom-exception-handling-page"></a>配置自定义异常处理页
 
-最好配置一个当应用在非 `Development` 环境中运行时可以使用的异常处理页。
+配置当应用未在 `Development` 环境中运行时要使用的异常处理程序页。
 
 [!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
-在 MVC 应用程序中，不要使用 HTTP 谓词 Attribute（如 `HttpGet`）来显式修饰错误处理程序操作方法。  使用显式谓词会阻止某些请求访问方法。
+在 Razor Pages 应用中，[dotnet new](/dotnet/core/tools/dotnet-new) Razor Pages 模板在 Pages 文件夹中提供“错误”页面和 `ErrorModel` 页面模型类。
+
+在 MVC 应用中，不要使用 HTTP 方法特性（如 `HttpGet`）修饰错误处理程序操作方法。 显式谓词可阻止某些请求访问方法。 允许匿名访问方法，以便未经身份验证的用户能够接收错误视图。
+
+例如，以下错误处理程序方法由 [dotnet new](/dotnet/core/tools/dotnet-new) MVC 模板提供并在主控制器中显示：
 
 ```csharp
-[Route("/Error")]
-public IActionResult Index()
+[AllowAnonymous]
+public IActionResult Error()
 {
-    // Handle error here
+    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 }
 ```
 
@@ -106,6 +107,53 @@ if (statusCodePagesFeature != null)
 }
 ```
 
+如果使用指向应用中的终结点的 `UseStatusCodePages*` 重载，请为该终结点创建 MVC 视图或 Razor Page。 例如，Razor Pages 应用的 [dotnet new](/dotnet/core/tools/dotnet-new) 模板将生成以下页面和页面模型类：
+
+Error.cshtml：
+
+```cshtml
+@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+
+<h3>Development Mode</h3>
+<p>
+    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+</p>
+<p>
+    <strong>Development environment should not be enabled in deployed applications</strong>, as it can result in sensitive information from exceptions being displayed to end users. For local debugging, development environment can be enabled by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>, and restarting the application.
+</p>
+```
+
+Error.cshtml.cs：
+
+```csharp
+public class ErrorModel : PageModel
+{
+    public string RequestId { get; set; }
+
+    public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public void OnGet()
+    {
+        RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
+    }
+}
+```
+
 ## <a name="exception-handling-code"></a>异常处理代码
 
 异常处理页中的代码可能会引发异常。 建议在生产错误页面中包含纯静态内容。
@@ -132,7 +180,7 @@ if (statusCodePagesFeature != null)
 
 在 MVC 应用中，异常筛选器可以进行全局配置，也可以为每个控制器或每个操作单独配置。 这些筛选器处理在执行控制器操作或其他筛选器时出现的任何未处理的异常，且不会以其他方式调用。 通过[筛选器](xref:mvc/controllers/filters)详细了解异常筛选器。
 
->[!TIP]
+> [!TIP]
 > 异常筛选器非常适用于捕获 MVC 操作内出现的异常，但灵活性不如错误处理中间件。 一般情况下建议使用中间件；仅在需要根据所选 MVC 操作以不同方式执行错误处理时，才使用筛选器。
 
 ### <a name="handling-model-state-errors"></a>处理模型状态错误
@@ -140,6 +188,3 @@ if (statusCodePagesFeature != null)
 [模型验证](xref:mvc/models/validation)在每个控制器操作被调用之前发生，操作方法负责检查 `ModelState.IsValid` 并相应地作出反应。
 
 某些应用会使用标准约定来处理模型验证错误，在这种情况下，使用[筛选器](xref:mvc/controllers/filters)可以更好地实施这种策略。 你需要使用无效模型状态测试操作的行为。 查看[测试控制器逻辑](xref:mvc/controllers/testing)了解详情。
-
-
-

@@ -2,20 +2,16 @@
 title: Visual Studio 中针对 ASP.NET Core 的开发时 IIS 支持
 author: shirhatti
 description: 发现对调试 ASP.NET Core 应用的支持（在 Windows Server 上的 IIS 后方运行时）。
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/14/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: host-and-deploy/iis/development-time-iis-support
-ms.openlocfilehash: 0bf4585d44e61c5e7e5b89ce9d8dfdfa10d5460e
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: eb8b4369d6d5434adbac187f59b18d7a2b80055c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34233074"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277649"
 ---
 # <a name="development-time-iis-support-in-visual-studio-for-aspnet-core"></a>Visual Studio 中针对 ASP.NET Core 的开发时 IIS 支持
 
@@ -25,7 +21,10 @@ ms.locfileid: "34233074"
 
 ## <a name="prerequisites"></a>系统必备
 
-[!INCLUDE[](~/includes/net-core-prereqs-windows.md)]
+* [Visual Studio（适用于 Windows）](https://www.microsoft.com/net/download/windows)
+* ASP.NET 和 Web 开发工作负荷
+* .NET Core 跨平台开发工作负荷
+* X.509 安全证书
 
 ## <a name="enable-iis"></a>启用 IIS
 

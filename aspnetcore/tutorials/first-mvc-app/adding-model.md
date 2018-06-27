@@ -9,27 +9,40 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: 4204d4e2d474db51692d42751a9f82373e9f0c0d
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 802cb458cb05579b97256022b56d6f97a03d2f1a
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34687787"
 ---
 # <a name="add-a-model-to-an-aspnet-core-mvc-app"></a>将模型添加到 ASP.NET Core MVC 应用
 
-[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model1.md)]
-
-请注意：ASP.NET Core 2.0 模板包含 Models 文件夹。
+[!INCLUDE [adding-model](~/Includes/mvc-intro/adding-model1.md)]
 
 右键单击 Models 文件夹，然后单击“添加” > “类”。 将类命名为“Movie”，并添加以下属性：
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
 数据库需要 `ID` 字段以获取主键。 
 
 生成项目以验证有没有任何错误存在。 现在 MVC 应用中已具有模型。
 
 ## <a name="scaffolding-a-controller"></a>搭建控制器基架
+
+::: moniker range=">= aspnetcore-2.1"
+
+在解决方案资源管理器中，右键单击“Controllers”文件夹 >“添加”>“新搭建基架的项目”。
+
+![上述步骤的视图](adding-model/_static/add_controller21.png)
+
+在“添加基架”对话框中，点击“包含视图的 MVC 控制器(使用 Entity Framework)”>“添加”。
+
+![“添加基架”对话框](adding-model/_static/add_scaffold21.png)
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
 
 在“解决方案资源管理器”中，右键单击“控制器”文件夹，然后单击“添加”>“控制器”。
 
@@ -43,6 +56,8 @@ ms.lasthandoff: 04/06/2018
 在“添加基架”对话框中，点击“包含视图的 MVC 控制器(使用 Entity Framework)”>“添加”。
 
 ![“添加基架”对话框](adding-model/_static/add_scaffold2.png)
+
+::: moniker-end
 
 填写“添加控制器”对话框：
 
@@ -67,7 +82,7 @@ Visual Studio 将创建：
 
 如果运行应用并单击“Mvc 电影”链接，则会出现以下类似的错误：
 
-```
+``` error
 An unhandled exception occurred while processing the request.
 
 SqlException: Cannot open database "MvcMovieContext-<GUID removed>" requested by the login. The login failed.
@@ -93,6 +108,20 @@ System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity id
 
 在 PMC 中，输入以下命令：
 
+::: moniker range=">= aspnetcore-2.1"
+``` PMC
+Add-Migration Initial
+Update-Database
+```
+
+忽略以下错误消息，我们将在下一教程中修复：
+
+*Microsoft.EntityFrameworkCore.Model.Validation[30000]*  
+      未对实体类型“Movie”上的十进制列“Price”指定任何类型。当值不符合默认精确度和小数位数时，会在无提示的情况下截断该值。使用“ForHasColumnType()”显式指定可以容纳所有值的 SQL Server 列类型。
+
+::: moniker-end
+::: moniker range="<= aspnetcore-2.0"
+
 ``` PMC
 Install-Package Microsoft.EntityFrameworkCore.Tools
 Add-Migration Initial
@@ -100,6 +129,8 @@ Update-Database
 ```
 
 请注意：如果在使用 `Install-Package` 命令时收到错误，请打开 NuGet 包管理器并搜索 `Microsoft.EntityFrameworkCore.Tools` 包。 通过此操作，可以安装包或检查是否已安装包。 或者，如果 PMC 存在任何问题，请参阅 [CLI 方法](#cli)。
+
+::: moniker-end
 
 `Add-Migration` 命令创建代码以创建初始数据库架构。 此架构基于（Data/MvcMovieContext.cs 文件中的）`DbContext` 中指定的模型。 `Initial` 参数用于为迁移命名。 可以使用任意名称，但是按照惯例应选择描述迁移的名称。 有关详细信息，请参阅[迁移简介](xref:data/ef-mvc/migrations#introduction-to-migrations)。
 
@@ -113,23 +144,28 @@ Update-Database
   ```console
   dotnet ef migrations add Initial
   dotnet ef database update
-  ```     
-  
+  ```
+
   如果运行应用并收到错误消息：
-  
+
   ```text
   SqlException: Cannot open database "Movie" requested by the login.
   The login failed.
   Login failed for user 'user name'.
   ```
 
-可能尚未运行 ` dotnet ef database update`。
-  
-[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model3.md)]
+可能尚未运行 `dotnet ef database update`。
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
+[!INCLUDE [adding-model](~/Includes/mvc-intro/adding-model3.md)]
 
-[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model4.md)]
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Startup.cs?name=ConfigureServices&highlight=13-99)]
+::: moniker-end
+::: moniker range="<= aspnetcore-2.0"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
+::: moniker-end
+
+[!INCLUDE [adding-model](~/Includes/mvc-intro/adding-model4.md)]
 
 ![Model 项上的 Intellisense 上下文菜单，列出了 ID、价格、发布日期和标题的可用属性](adding-model/_static/ints.png)
 

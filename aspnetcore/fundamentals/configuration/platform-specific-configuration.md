@@ -11,12 +11,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/platform-specific-configuration
-ms.openlocfilehash: 618cb4349dcff696db37012af3aee844b82974f2
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 47d3a64ce0cc543162a066eeeaa0aaaf7dc96a5f
+ms.sourcegitcommit: 0d6f151e69c159d776ed0142773279e645edbc0a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729046"
+ms.lasthandoff: 06/13/2018
+ms.locfileid: "35415003"
 ---
 # <a name="enhance-an-app-from-an-external-assembly-in-aspnet-core-with-ihostingstartup"></a>在 ASP.NET Core 中使用 IHostingStartup 从外部程序集增强应用
 
@@ -57,7 +57,7 @@ ms.locfileid: "34729046"
 
 [!code-csharp[](platform-specific-configuration/snapshot_sample/StartupEnhancement.cs?name=snippet1)]
 
-类实现 `IHostingStartup`。 类的 [Configure](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup.configure) 方法使用 [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder) 将增强功能添加到应用：
+类实现 `IHostingStartup`。 类的 [Configure](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup.configure) 方法使用 [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder) 将增强功能添加到应用。 用户代码中 `Startup.Configure` 之前的运行时调用托管启动程序集中的 `IHostingStartup.Configure`，允许用户代码覆盖托管启动程序集提供的任何配置。
 
 [!code-csharp[](platform-specific-configuration/snapshot_sample/StartupEnhancement.cs?name=snippet2&highlight=3,5)]
 
@@ -99,31 +99,33 @@ ms.locfileid: "34729046"
 
 该实现的 \*.deps.json 文件必须位于可访问的位置。
 
-若要实现按用户使用，将文件置于用户配置文件 `.dotnet` 设置的 `additonalDeps`文件夹中： 
+若要实现按用户使用，将文件置于用户配置文件 `.dotnet` 设置的 `additonalDeps`文件夹中：
 
 ```
-<DRIVE>\Users\<USER>\.dotnet\x64\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\
+<DRIVE>\Users\<USER>\.dotnet\x64\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\<SHARED_FRAMEWORK_VERSION>\
 ```
 
 若要实现全局使用，将文件置于 .NET Core 安装的 `additonalDeps` 文件夹中：
 
 ```
-<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\
+<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\<SHARED_FRAMEWORK_VERSION>\
 ```
 
-请注意，版本 `2.1.0` 反映目标应用使用的共享运行时的版本。 共享运行时显示在 \*.runtimeconfig.json 文件中。 在示例应用中，共享运行时在 HostingStartupSample.runtimeconfig.json 文件中指定。
+共享框架版本反映目标应用使用的共享运行时的版本。 共享运行时显示在 \*.runtimeconfig.json 文件中。 在示例应用中，共享运行时在 HostingStartupSample.runtimeconfig.json 文件中指定。
 
 **设置环境变量**
 
 在使用该增强功能的应用的上下文中设置以下环境变量。
 
-ASPNETCORE\_HOSTINGSTARTUPASSEMBLIES
+ASPNETCORE_HOSTINGSTARTUPASSEMBLIES
 
 仅扫描承载启动程序集以查找 `HostingStartupAttribute`。 在此环境变量中提供实现的程序集名称。 示例应用将此值设置为 `StartupDiagnostics`。
 
 还可使用[承载启动程序集](xref:fundamentals/host/web-host#hosting-startup-assemblies)主机配置设置来设置此值。
 
-DOTNET\_ADDITIONAL\_DEPS
+存在多个托管启动程序集时，将按列出程序集的顺序执行 [Configure](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup.configure) 方法。
+
+DOTNET_ADDITIONAL_DEPS
 
 实现的 \*.deps.json 文件的位置。
 
@@ -136,7 +138,7 @@ DOTNET\_ADDITIONAL\_DEPS
 如果将文件放置在 .NET Core 安装中以实现全局使用，则提供该文件的完整路径：
 
 ```
-<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
+<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\<SHARED_FRAMEWORK_VERSION>\<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
 ```
 
 示例应用将此值设置为：

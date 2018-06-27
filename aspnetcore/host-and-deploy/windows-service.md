@@ -1,120 +1,177 @@
 ---
 title: 在 Windows 服务中托管 ASP.NET Core
-author: rick-anderson
+author: guardrex
 description: 了解如何在 Windows 服务中托管 ASP.NET Core 应用。
-manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 01/30/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
+ms.date: 06/04/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 29f83ee585c73aeb57a09f70ea8e28650c05ce69
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: 0149039f69539b7c69d7ba45efcf09d80ffcba79
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34153524"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275090"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>在 Windows 服务中托管 ASP.NET Core
 
-作者：[Tom Dykstra](https://github.com/tdykstra)
+作者：[Luke Latham](https://github.com/guardrex)、[Tom Dykstra](https://github.com/tdykstra)
 
-不使用 IIS 在 Windows 上托管 ASP.NET Core 应用的推荐方式是在 [Windows 服务](/dotnet/framework/windows-services/introduction-to-windows-service-applications)中运行应用。 作为 Windows 服务托管时，无需人工干预应用即可在重新启动和崩溃后自动启动。
+不将 IIS 用作 [Windows 服务](/dotnet/framework/windows-services/introduction-to-windows-service-applications)时，可在 Windows 上托管 ASP.NET Core 应用。 作为 Windows 服务托管时，无需人工干预应用即可在重新启动和崩溃后自动启动。
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）。 有关如何运行示例应用的说明，请参阅示例的 README.md 文件。
-
-## <a name="prerequisites"></a>系统必备
-
-* 应用必须在 .NET Framework 运行时运行。 在 .csproj 文件中，指定 [TargetFramework](/nuget/schema/target-frameworks) 和 [RuntimeIdentifier](/dotnet/articles/core/rid-catalog) 的相应值。 以下是一个示例：
-
-  [!code-xml[](windows-service/sample/AspNetCoreService.csproj?range=3-6)]
-
-  在 Visual Studio 中创建项目时，请使用“ASP.NET Core 应用程序(.NET Framework)”模板。
-
-* 如果应用接收来自 Internet（而不仅仅来自内部网络）的请求，则必须使用 [HTTP.sys](xref:fundamentals/servers/httpsys) Web 服务器（对于 ASP.NET Core 1.x 应用，以前称为 [WebListener](xref:fundamentals/servers/weblistener)）而不是 [Kestrel](xref:fundamentals/servers/kestrel)。 建议将 IIS 用作反向代理服务器与 Kestrel 进行 Edge 部署。 有关详细信息，请参阅[何时结合使用 Kestrel 和反向代理](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)。
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
 ## <a name="get-started"></a>入门
 
-本部分介绍了将现有的 ASP.NET Core 项目设置为在服务中运行所需的最小更改。
+要将现有 ASP.NET Core 项目设置为在服务中运行，需要执行以下最小更改：
 
-1. 安装 NuGet 包 [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/)。
+1. 在项目文件中：
 
-2. 在 `Program.Main` 中，进行下列更改：
+   1. 确认是否存在运行时标识符，或将其添加到包含目标框架的 \<PropertyGroup> 中：
+      ```xml
+      <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
+      </PropertyGroup>
+      ```
+   1. 为 [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/) 添加包引用。
 
-   * 调用 `host.RunAsService` 而非 `host.Run`。
+1. 在 `Program.Main` 中，进行下列更改：
 
-   * 如果代码调用 `UseContentRoot`，请使用发布位置的路径，而不是 `Directory.GetCurrentDirectory()`。
+   * 调用 [host.RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice)，而不是 `host.Run`。
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+   * 如果代码调用 `UseContentRoot`，请使用应用的发布位置路径，而不是 `Directory.GetCurrentDirectory()`。
 
-   [!code-csharp[](windows-service/sample/Program.cs?name=ServiceOnly&highlight=3-4,7,12)]
+     ::: moniker range=">= aspnetcore-2.0"
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+     [!code-csharp[](windows-service/sample/Program.cs?name=ServiceOnly&highlight=3-4,7,11)]
 
-   [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOnly&highlight=3-4,8,14)]
+     ::: moniker-end
 
-   ---
+     ::: moniker range="< aspnetcore-2.0"
 
-3. 将应用发布到文件夹。 使用可发布到文件夹的 [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) 或 [Visual Studio 发布配置文件](xref:host-and-deploy/visual-studio-publish-profiles)。
+     [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOnly&highlight=3-4,8,13)]
 
-4. 通过创建和启动服务进行测试。
+     ::: moniker-end
 
-   使用管理权限打开命令行界面，以便使用 [sc.exe](https://technet.microsoft.com/library/bb490995) 命令行工具来创建和启动服务。 如果将该服务命名为 MyService、发布到 `c:\svc`，以及命名为 AspNetCoreService，则相应的命令为：
+1. 将应用发布到文件夹。 使用可发布到文件夹的 [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) 或 [Visual Studio 发布配置文件](xref:host-and-deploy/visual-studio-publish-profiles)。
+
+   要从命令行发布示例应用，请从项目文件夹中的控制台窗口中运行以下命令：
 
    ```console
-   sc create MyService binPath="c:\svc\aspnetcoreservice.exe"
+   dotnet publish --configuration Release --output c:\svc
+   ```
+
+1. 使用 [sc.exe](https://technet.microsoft.com/library/bb490995) 命令行工具创建服务 (`sc create <SERVICE_NAME> binPath= "<PATH_TO_SERVICE_EXECUTABLE>"`)。 `binPath` 值是应用的可执行文件的路径，其中包括可执行文件的文件名。 等于号和路径开头的引号字符之间需要添加空格。
+
+   对于示例应用和后续命令，服务将：
+
+   * 命名为“MyService”。
+   * 发布到 c:\\svc 文件夹。
+   * 将应用可执行文件命名为 AspNetCoreService.exe。
+
+   利用管理员特权打开一个命令行界面，运行以下命令：
+
+   ```console
+   sc create MyService binPath= "c:\svc\aspnetcoreservice.exe"
+   ```
+
+   确保 `binPath=` 参数与其值之间存在空格。
+
+1. 使用 `sc start <SERVICE_NAME>` 命令启动服务。
+
+   要启动示例应用服务，请使用以下命令：
+
+   ```console
    sc start MyService
    ```
 
-   `binPath` 值是应用的可执行文件的路径，其中包括可执行文件的文件名。
+   此命令需要几秒钟才能启动服务。
 
-   ![控制台窗口创建和启动示例](windows-service/_static/create-start.png)
+1. `sc query <SERVICE_NAME>` 命令可用于检查并确定服务状态：
 
-   完成这些命令后，浏览到作为控制台应用运行时的同一路径（默认情况下为 `http://localhost:5000`）：
+   * `START_PENDING`
+   * `RUNNING`
+   * `STOP_PENDING`
+   * `STOPPED`
 
-   ![在服务中运行](windows-service/_static/running-in-service.png)
+   使用以下命令检查示例应用服务的状态：
+
+   ```console
+   sc query MyService
+   ```
+
+1. 当服务处于 `RUNNING` 状态并且服务是 Web 应用时，在应用所在路径中浏览应用（默认路径为 `http://localhost:5000`；在使用 [HTTPS 重定向中间件](xref:security/enforcing-ssl)时，它将重定向到 `https://localhost:5001`）。
+
+   对于示例应用服务，请在 `http://localhost:5000` 浏览应用。
+
+1. 使用 `sc stop <SERVICE_NAME>` 命令停止服务。
+
+   以下命令可停止示例应用服务：
+
+   ```console
+   sc stop MyService
+   ```
+
+1. 停止服务并经过短暂延迟后，使用 `sc delete <SERVICE_NAME>` 命令卸载服务。
+
+   检查示例应用服务的状态：
+
+   ```console
+   sc query MyService
+   ```
+
+   当示例应用服务处于 `STOPPED` 状态时，使用以下命令卸载示例应用服务：
+
+   ```console
+   sc delete MyService
+   ```
 
 ## <a name="provide-a-way-to-run-outside-of-a-service"></a>提供在服务之外运行的方法
 
 在服务之外运行时更便于进行测试和调试，因此通常仅在特定情况下添加调用 `RunAsService` 的代码。 例如，应用可以使用 `--console` 命令行参数或在已附加调试器时作为控制台应用运行：
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 [!code-csharp[](windows-service/sample/Program.cs?name=ServiceOrConsole)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+由于 ASP.NET Core 配置需要命令行参数的名称/值对，因此将先删除 `--console` 开关，然后再将参数传递到 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)。
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOrConsole)]
 
----
+::: moniker-end
 
 ## <a name="handle-stopping-and-starting-events"></a>处理停止和启动事件
 
-若要处理 `OnStarting`、`OnStarted` 和 `OnStopping` 事件，请进行以下其他更改：
+要处理 [OnStarting](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstarting)、[OnStarted](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstarted) 和 [OnStopping](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstopping) 事件，请执行以下额外更改：
 
-1. 创建一个从 `WebHostService` 派生的类：
+1. 创建从 [WebHostService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice) 派生的类：
 
    [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=NoLogging)]
 
-2. 创建可将自定义 `WebHostService` 传递给 `ServiceBase.Run` 的 `IWebHost` 的扩展方法：
+2. 创建可将自定义 `WebHostService` 传递给 [ServiceBase.Run](/dotnet/api/system.serviceprocess.servicebase.run) 的 [IWebHost](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost) 的扩展方法：
 
    [!code-csharp[](windows-service/sample/WebHostServiceExtensions.cs?name=ExtensionsClass)]
 
-3. 在 `Program.Main` 中，调用新的扩展方法 `RunAsCustomService`，而不是 `RunAsService`：
+3. 在 `Program.Main` 中，调用新扩展方法 `RunAsCustomService`，而不是 [RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice)：
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+   ::: moniker range=">= aspnetcore-2.0"
 
-   [!code-csharp[](windows-service/sample/Program.cs?name=HandleStopStart&highlight=24)]
+   [!code-csharp[](windows-service/sample/Program.cs?name=HandleStopStart&highlight=27)]
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+   ::: moniker-end
 
-   [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=HandleStopStart&highlight=26)]
+   ::: moniker range="< aspnetcore-2.0"
 
-   ---
+   [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=HandleStopStart&highlight=27)]
 
-如果自定义 `WebHostService` 代码需要来自依赖关系注入（如记录器）的服务，请从 `IWebHost` 的 `Services` 属性中获取该服务：
+   ::: moniker-end
+
+如果自定义 `WebHostService` 代码需要来自依赖项注入（如记录器）的服务，请从 [IWebHost.Services](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost.services) 属性中获取：
 
 [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=Logging&highlight=7)]
 
@@ -122,9 +179,6 @@ ms.locfileid: "34153524"
 
 与来自 Internet 或公司网络的请求进行交互且在代理或负载均衡器后方的服务可能需要其他配置。 有关详细信息，请参阅[配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)。
 
-## <a name="acknowledgments"></a>鸣谢
+## <a name="kestrel-endpoint-configuration"></a>Kestrel 终结点配置
 
-本文是在以下出版物来源的帮助下编写的：
-
-* [作为 Windows 服务托管 ASP.NET Core](https://stackoverflow.com/questions/37346383/hosting-asp-net-core-as-windows-service/37464074)
-* [如何在 Windows 服务中托管 ASP.NET Core](https://dotnetthoughts.net/how-to-host-your-aspnet-core-in-a-windows-service/)
+有关 Kestrel 终结点配置的信息（包括 HTTPS 配置和 SNI 支持），请参阅 [Kestrel 终结点配置](xref:fundamentals/servers/kestrel#endpoint-configuration)。

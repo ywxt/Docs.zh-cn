@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 336a097c2186bc195854bd54211d4554a577ed14
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: a4ffa512825fedafdc58ade9929097e255593fa9
+ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/15/2018
+ms.locfileid: "35652209"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>ASP.NET Core 中的 URL 重写中间件
 
@@ -22,13 +23,14 @@ ms.lasthandoff: 05/12/2018
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
 URL 重写是根据一个或多个预定义规则修改请求 URL 的行为。 URL 重写会在资源位置和地址之间创建一个抽象，使位置和地址不紧密相连。 在以下几种方案中，URL 重写很有价值：
-* 暂时或永久移动或替换服务器资源，同时维护这些资源的稳定定位符
-* 在不同应用或同一应用的不同区域中拆分请求处理
-* 删除、添加或重新组织传入请求上的 URL 段
-* 优化搜索引擎优化 (SEO) 的公共 URL
-* 允许使用友好的公共 URL 帮助用户预测他们将通过链接找到的内容
-* 将不安全请求重定向到安全终结点
-* 阻止映像盗链
+
+* 暂时或永久移动或替换服务器资源，同时维护这些资源的稳定定位符。
+* 拆分在不同应用或同一应用的不同区域中处理的请求。
+* 删除、添加或重新组织传入请求上的 URL 段。
+* 优化搜索引擎优化 (SEO) 的公共 URL。
+* 允许使用友好的公共 URL 帮助用户预测他们将通过链接找到的内容。
+* 将不安全请求重定向到安全终结点。
+* 阻止映像盗链。
 
 可通过多种方式定义更改 URL 的规则，包括正则表达式、Apache mod_rewrite 模块规则、IIS 重写模块规则以及使用自定义规则逻辑。 本文档介绍 URL 重写并说明如何在 ASP.NET Core 应用中使用 URL 重写中间件。
 
@@ -127,8 +129,8 @@ public void Configure(IApplicationBuilder app)
 
 在替换字符串中，将捕获组注入带有美元符号 (`$`)、后跟捕获序列号的字符串中。 获取的第一个捕获组值为 `$1`，第二个为 `$2`，并且正则表达式中的其他捕获组值将依次继续排列。 示例应用的重定向规则正则表达式中只有一个捕获组，因此替换字符串中只有一个注入组，即 `$1`。 如果应用此规则，URL 将变为 `/redirected/1234/5678`。
 
-<a name="url-redirect-to-secure-endpoint"></a>
 ### <a name="url-redirect-to-a-secure-endpoint"></a>URL 重定向到安全的终结点
+
 使用 `AddRedirectToHttps` 将 HTTP 请求重定向到采用 HTTPS (`https://`) 的相同主机和路径。 如不提供状态代码，则中间件默认为“302(已找到)”。 如不提供端口，则中间件默认为 `null`，这表示协议更改为 `https://` 且客户端访问端口 443 上的资源。 该示例演示如何将状态代码设置为“301(永久移动)”并将端口更改为 5001。
 
 ```csharp
@@ -153,13 +155,16 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-示例应用能够演示如何使用 `AddRedirectToHttps` 或 `AddRedirectToHttpsPermanent`。 将扩展方法添加到 `RewriteOptions`。 在任何 URL 上向应用发出不安全的请求。 消除自签名证书不受信任的浏览器安全警告。
+> [!NOTE]
+> 当重定向到 HTTPS 并且不需要其他重定向规则时，建议使用 HTTPS 重定向中间件。 有关详细信息，请参阅[强制使用 HTTPS](xref:security/enforcing-ssl#require-https)主题。
 
-使用 `AddRedirectToHttps(301, 5001)` 的原始请求：`/secure`
+示例应用能够演示如何使用 `AddRedirectToHttps` 或 `AddRedirectToHttpsPermanent`。 将扩展方法添加到 `RewriteOptions`。 在任何 URL 上向应用发出不安全的请求。 消除自签名证书不受信任的浏览器安全警告，或创建例外以信任证书。
+
+使用 `AddRedirectToHttps(301, 5001)` 的原始请求：`http://localhost:5000/secure`
 
 ![开发人员工具正跟踪请求和响应的浏览器窗口](url-rewriting/_static/add_redirect_to_https.png)
 
-使用 `AddRedirectToHttpsPermanent` 的原始请求：`/secure`
+使用 `AddRedirectToHttpsPermanent` 的原始请求：`http://localhost:5000/secure`
 
 ![开发人员工具正跟踪请求和响应的浏览器窗口](url-rewriting/_static/add_redirect_to_https_permanent.png)
 
@@ -254,6 +259,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 ##### <a name="supported-server-variables"></a>受支持的服务器变量
 
 中间件支持下列 Apache mod_rewrite 服务器变量：
+
 * CONN_REMOTE_ADDR
 * HTTP_ACCEPT
 * HTTP_CONNECTION
@@ -325,6 +331,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 与 ASP.NET Core 2.x 一同发布的中间件不支持以下 IIS URL 重写模块功能：
+
 * 出站规则
 * 自定义服务器变量
 * 通配符
@@ -333,6 +340,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 与 ASP.NET Core 1.x 一同发布的中间件不支持以下 IIS URL 重写模块功能：
+
 * 全局规则
 * 出站规则
 * 重写映射
@@ -347,6 +355,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 #### <a name="supported-server-variables"></a>受支持的服务器变量
 
 中间件支持下列 IIS URL 重写模块服务器变量：
+
 * CONTENT_LENGTH
 * CONTENT_TYPE
 * HTTP_ACCEPT

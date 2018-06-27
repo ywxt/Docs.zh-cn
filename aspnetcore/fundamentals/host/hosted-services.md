@@ -3,6 +3,7 @@ title: 在 ASP.NET Core 中使用托管服务实现后台任务
 author: guardrex
 description: 了解如何在 ASP.NET Core 中使用托管服务实现后台任务。
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.custom: mvc
 ms.date: 02/15/2018
@@ -10,12 +11,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/host/hosted-services
-ms.openlocfilehash: cc39d125b639719599eca68d627fda014fb107e0
-ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
+ms.openlocfilehash: 13ac7e266b657bc186188b2b6f40204cfd936fca
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2018
-ms.locfileid: "34555295"
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341816"
 ---
 # <a name="background-tasks-with-hosted-services-in-aspnet-core"></a>在 ASP.NET Core 中使用托管服务实现后台任务
 
@@ -46,7 +47,7 @@ ms.locfileid: "34555295"
 
 * [StopAsync(CancellationToken)](/dotnet/api/microsoft.extensions.hosting.ihostedservice.stopasync) - 主机正常关闭时触发。 `StopAsync` 包含结束后台任务和处理任何非托管资源的逻辑。 如果应用意外关闭（例如，应用的进程失败），则可能不会调用 `StopAsync`。
 
-托管服务是在应用启动时激活一次并在应用关闭时正常关闭的单一实例。 实现 [IDisposable](/dotnet/api/system.idisposable) 时，可在处置服务容器时处理资源。 如果在执行后台任务期间引发错误，即使未调用 `StopAsync`，也应调用 `Dispose`。
+托管服务在应用启动时激活一次，在应用关闭时正常关闭。 实现 [IDisposable](/dotnet/api/system.idisposable) 时，可在处置服务容器时处理资源。 如果在执行后台任务期间引发错误，即使未调用 `StopAsync`，也应调用 `Dispose`。
 
 ## <a name="timed-background-tasks"></a>计时的后台任务
 
@@ -54,9 +55,21 @@ ms.locfileid: "34555295"
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/TimedHostedService.cs?name=snippet1&highlight=15-16,30,37)]
 
-已在 `Startup.ConfigureServices` 中注册该服务：
+::: moniker range=">= aspnetcore-2.1"
+
+已使用 `AddHostedService` 扩展方法在 `Startup.ConfigureServices` 中注册该服务：
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet1)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+已在 `Startup.ConfigureServices` 中注册该服务：
+
+[!code-csharp[](hosted-services/samples-snapshot/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet1)]
+
+::: moniker-end
 
 ## <a name="consuming-a-scoped-service-in-a-background-task"></a>在后台任务中使用有作用域的服务
 
@@ -70,13 +83,25 @@ ms.locfileid: "34555295"
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/ConsumeScopedServiceHostedService.cs?name=snippet1&highlight=29-36)]
 
-已在 `Startup.ConfigureServices` 中注册这些服务：
+::: moniker range=">= aspnetcore-2.1"
+
+已在 `Startup.ConfigureServices` 中注册这些服务。 已使用 `AddHostedService` 扩展方法注册 `IHostedService` 实现：
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet2)]
 
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+已在 `Startup.ConfigureServices` 中注册这些服务：
+
+[!code-csharp[](hosted-services/samples-snapshot/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet2)]
+
+::: moniker-end
+
 ## <a name="queued-background-tasks"></a>排队的后台任务
 
-后台任务队列基于 .NET 4.x [QueueBackgroundWorkItem](/dotnet/api/system.web.hosting.hostingenvironment.queuebackgroundworkitem)（[暂定为 ASP.NET Core 2.2 内置版本](https://github.com/aspnet/Hosting/issues/1280)）：
+后台任务队列基于 .NET 4.x [QueueBackgroundWorkItem](/dotnet/api/system.web.hosting.hostingenvironment.queuebackgroundworkitem)（[暂定为 ASP.NET Core 3.0 内置版本](https://github.com/aspnet/Hosting/issues/1280)）：
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/BackgroundTaskQueue.cs?name=snippet1)]
 
@@ -84,9 +109,21 @@ ms.locfileid: "34555295"
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/QueuedHostedService.cs?name=snippet1&highlight=30-31,35)]
 
-已在 `Startup.ConfigureServices` 中注册这些服务：
+::: moniker range=">= aspnetcore-2.1"
+
+已在 `Startup.ConfigureServices` 中注册这些服务。 已使用 `AddHostedService` 扩展方法注册 `IHostedService` 实现：
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet3)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+已在 `Startup.ConfigureServices` 中注册这些服务：
+
+[!code-csharp[](hosted-services/samples-snapshot/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet3)]
+
+::: moniker-end
 
 在索引页模型类中，将 `IBackgroundTaskQueue` 注入构造函数并分配给 `Queue`：
 

@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/primitives/change-tokens
-ms.openlocfilehash: 06751e713fbd579a944333cc3c3b2c0c0ad51eba
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: d132747cb7c92ef5afac4664c91634a4ad290e5f
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734518"
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>使用 ASP.NET Core 中的更改令牌检测更改
 
@@ -26,7 +27,7 @@ ms.lasthandoff: 05/12/2018
 
 ## <a name="ichangetoken-interface"></a>IChangeToken 接口
 
-[IChangeToken](/dotnet/api/microsoft.extensions.primitives.ichangetoken) 传播已发生更改的通知。 `IChangeToken` 位于 [Microsoft.Extensions.Primitives](/dotnet/api/microsoft.extensions.primitives) 命名空间中。 对于不使用 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) 元包的应用，将在项目文件中引用 [Microsoft.Extensions.Primitives](https://www.nuget.org/packages/Microsoft.Extensions.Primitives/) NuGet 包。
+[IChangeToken](/dotnet/api/microsoft.extensions.primitives.ichangetoken) 传播已发生更改的通知。 `IChangeToken` 位于 [Microsoft.Extensions.Primitives](/dotnet/api/microsoft.extensions.primitives) 命名空间中。 对于不使用 [Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)（ASP.NET Core 2.1 及更高版本）的应用，将在项目文件中引用 [Microsoft.Extensions.Primitives](https://www.nuget.org/packages/Microsoft.Extensions.Primitives/) NuGet 包。
 
 `IChangeToken` 具有以下两个属性：
 
@@ -37,9 +38,10 @@ ms.lasthandoff: 05/12/2018
 
 ## <a name="changetoken-class"></a>ChangeToken 类
 
-`ChangeToken` 是静态类，用于传播已发生更改的通知。 `ChangeToken` 位于 [Microsoft.Extensions.Primitives](/dotnet/api/microsoft.extensions.primitives) 命名空间中。 对于不使用 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) 元包的应用，将在项目文件中引用 [Microsoft.Extensions.Primitives](https://www.nuget.org/packages/Microsoft.Extensions.Primitives/) NuGet 包。
+`ChangeToken` 是静态类，用于传播已发生更改的通知。 `ChangeToken` 位于 [Microsoft.Extensions.Primitives](/dotnet/api/microsoft.extensions.primitives) 命名空间中。 对于不使用 [Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)的应用，将在项目文件中引用 [Microsoft.Extensions.Primitives](https://www.nuget.org/packages/Microsoft.Extensions.Primitives/) NuGet 包。
 
 `ChangeToken` [OnChange(Func&lt;IChangeToken&gt;, Action)](/dotnet/api/microsoft.extensions.primitives.changetoken.onchange?view=aspnetcore-2.0#Microsoft_Extensions_Primitives_ChangeToken_OnChange_System_Func_Microsoft_Extensions_Primitives_IChangeToken__System_Action_) 方法注册令牌更改时要调用的 `Action`：
+
 * `Func<IChangeToken>` 生成令牌。
 * 令牌更改时，调用 `Action`。
 
@@ -196,7 +198,7 @@ var compositeChangeToken =
 
 如果任何表示的令牌 `HasChanged` 为 `true`，则复合令牌上的 `HasChanged` 报告 `true`。 如果任何表示的令牌 `ActiveChangeCallbacks` 为 `true`，则复合令牌上的 `ActiveChangeCallbacks` 报告 `true`。 如果发生多个并发更改事件，则调用一次复合更改回调。
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-resources"></a>其他资源
 
 * [内存中缓存](xref:performance/caching/memory)
 * [使用分布式缓存](xref:performance/caching/distributed)

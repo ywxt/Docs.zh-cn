@@ -2,33 +2,42 @@
 title: 将新字段添加到 ASP.NET Core 中的 Razor 页面
 author: rick-anderson
 description: 演示如何使用 Entity Framework Core 将新字段添加到 Razor 页面
-manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 08/07/2017
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: get-started-article
+ms.date: 05/30/2018
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: 45a39defc9480b0e4fe85ae7ed6bfa654a35264a
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: d9bf8c7cea20bf38aacf432465d7b33514bcd64d
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277288"
 ---
 # <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>将新字段添加到 ASP.NET Core 中的 Razor 页面
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-在本部分中，将使用 [Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) Code First 迁移将新字段添加到模型，并将此更改迁移到数据库。
+本部分使用 [Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) Code First 迁移将新字段添加到模型，并将此更改迁移到数据库。
 
-使用 EF Code First 自动创建数据库时，Code First 会向数据库添加表格，以帮助跟踪数据库的架构是否与从其中生成它的模型类同步。 如果它们不同步，EF 则会引发异常。 这使查找不一致的数据库/代码问题变得更加轻松。
+使用 EF Code First 自动创建数据库时，Code First 将：
+
+* 向数据库添加表格，以跟踪数据库的架构是否与从生成它的模型类同步。
+* 如果该模型类未与数据库同步，EF 将引发异常。 
+
+通过自动验证同步的架构/模型可以更容易地发现不一致的数据库/代码问题。
 
 ## <a name="adding-a-rating-property-to-the-movie-model"></a>向电影模型添加分级属性
 
 打开 Models/Movie.cs 文件，并添加 `Rating` 属性：
-
+::: moniker range="= aspnetcore-2.0"
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Models/MovieDateRating.cs?highlight=13&name=snippet)]
+
+::: moniker-end
 
 生成应用 (Ctrl+Shift+B)。
 
@@ -70,7 +79,13 @@ SqlException: Invalid column name 'Rating'.
 
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs?name=snippet1&highlight=8)]
 
+::: moniker range="= aspnetcore-2.0"
 请参阅[已完成的 SeedData.cs 文件](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs)。
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+请参阅[已完成的 SeedData.cs 文件](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie21/Models/SeedDataRating.cs)。
+::: moniker-end
 
 生成解决方案。
 
