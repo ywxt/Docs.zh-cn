@@ -1,20 +1,19 @@
 ---
-title: 启用 ASP.NET Core 中的身份验证器应用的 QR 代码生成
+title: 启用在 ASP.NET Core TOTP 身份验证器应用的 QR 代码生成
 author: rick-anderson
-description: 了解如何启用使用 ASP.NET Core 双因素身份验证的身份验证器应用的 QR 代码生成。
+description: 了解如何启用 TOTP 使用 ASP.NET Core 双因素身份验证的身份验证器应用的 QR 代码生成。
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/24/2017
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: 7604371eef1e8dcf35a5c47ef11b66c0669cacc5
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: b0d8f104119340b97bd65f1826bb921ca875acf8
+ms.sourcegitcommit: 1faf2525902236428dae6a59e375519bafd5d6d7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274724"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37089966"
 ---
-# <a name="enable-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>启用 ASP.NET Core 中的身份验证器应用的 QR 代码生成
-
-注意： 本主题适用于 ASP.NET Core 2.x
+# <a name="enable-qr-code-generation-for-totp-authenticator-apps-in-aspnet-core"></a>启用在 ASP.NET Core TOTP 身份验证器应用的 QR 代码生成
 
 ASP.NET 核心附带的单个身份验证的身份验证器应用程序的支持。 两个因素身份验证 (2FA) 身份验证器应用，使用基于时间的一次性密码算法 (TOTP)，是推荐的方法为 2FA 行业。 2FA 使用 TOTP 优于 SMS 2FA。 验证器应用提供哪些用户确认其用户名和密码后，必须输入一个 6 到 8 位代码。 通常在智能手机上安装验证器应用。
 
@@ -58,7 +57,7 @@ ASP.NET 核心 web 应用程序模板支持身份验证器，但不提供对 QRC
 
 ## <a name="change-the-site-name-in-the-qr-code"></a>更改 QR 代码中的站点名称
 
-最初创建你的项目时选择的项目名称中获取 QR 代码中的站点名称。 你可以通过查找对其进行更改`GenerateQrCodeUri(string email, string unformattedKey)`中的方法*Pages\Account\Manage\EnableAuthenticator.cshtml.cs* （Razor 页） 文件或*Controllers\ManageController.cs* (MVC) 文件。 
+最初创建你的项目时选择的项目名称中获取 QR 代码中的站点名称。 你可以通过查找对其进行更改`GenerateQrCodeUri(string email, string unformattedKey)`中的方法*Pages\Account\Manage\EnableAuthenticator.cshtml.cs* （Razor 页） 文件或*Controllers\ManageController.cs* (MVC) 文件。
 
 从模板的默认代码将如下所示：
 
@@ -82,7 +81,7 @@ QR 代码库可以替换你首选的库。 HTML 包含`qrCode`元素在其中可
 QR 代码的格式正确 URL 可用于:
 
 * `AuthenticatorUri` 模型的属性。
-* `data-url` 中的属性`qrCodeData`元素。 
+* `data-url` 中的属性`qrCodeData`元素。
 
 ## <a name="totp-client-and-server-time-skew"></a>TOTP 客户端和服务器时间偏差
 

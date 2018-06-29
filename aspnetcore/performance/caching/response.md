@@ -2,18 +2,15 @@
 title: 响应缓存在 ASP.NET 核心
 author: rick-anderson
 description: 了解如何使用缓存到较低带宽要求的响应，并增加的 ASP.NET Core 应用的性能。
-manager: wpickett
 ms.author: riande
 ms.date: 09/20/2017
-ms.prod: asp.net-core
-ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: e5a3877c68f8475e7dd49d44f4a92cf7b09ac7f5
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: c53ae3f6ab8d26588533772dd4fdacb36ec12059
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734505"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077759"
 ---
 # <a name="response-caching-in-aspnet-core"></a>响应缓存在 ASP.NET 核心
 

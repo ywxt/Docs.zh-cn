@@ -6,18 +6,18 @@ monikerRange: < aspnetcore-2.0
 ms.author: riande
 ms.date: 08/15/2017
 uid: security/authentication/2fa
-ms.openlocfilehash: 335edfd5cd4dfbb9d223ba0ae888a6d2386cd4a5
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 0308b05ebcda1af7f6850549d7a33f1df1a912a0
+ms.sourcegitcommit: 1faf2525902236428dae6a59e375519bafd5d6d7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272304"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37089979"
 ---
 # <a name="two-factor-authentication-with-sms-in-aspnet-core"></a>在 ASP.NET Core SMS 的双因素身份验证
 
 通过[Rick Anderson](https://twitter.com/RickAndMSFT)和[瑞士开发人员](https://github.com/Swiss-Devs)
 
-请参阅[ASP.NET Core 中的身份验证器应用启用 QR 代码生成](xref:security/authentication/identity-enable-qrcodes)ASP.NET 核心 2.0 及更高版本。
+ 两个因素身份验证 (2FA) 身份验证器应用，使用基于时间的一次性密码算法 (TOTP)，是推荐的方法为 2FA 行业。 2FA 使用 TOTP 优于 SMS 2FA。 有关详细信息，请参阅[TOTP 中 ASP.NET Core 的身份验证器应用启用 QR 代码生成](xref:security/authentication/identity-enable-qrcodes)ASP.NET 核心 2.0 及更高版本。
 
 本教程演示如何设置双因素身份验证 (2FA) 使用短信。 为提供的说明[twilio](https://www.twilio.com/)和[ASPSMS](https://www.aspsms.com/asp.net/identity/core/testcredits/)，但你可以使用任何其他 SMS 提供程序。 我们建议你完成[帐户确认和密码恢复](xref:security/authentication/accconfirm)之前开始学习本教程。
 
@@ -33,28 +33,24 @@ ms.locfileid: "36272304"
 
 #### <a name="figuring-out-sms-provider-credentials"></a>了解 SMS 提供程序凭据
 
-**Twilio:**  
-从你的 Twilio 帐户的仪表板选项卡上，复制**帐户 SID**和**身份验证令牌**。
+**Twilio:** 从你的 Twilio 帐户的仪表板选项卡上，复制**帐户 SID**和**身份验证令牌**。
 
-**ASPSMS:**  
-从你的帐户设置，导航到**用户密钥**并将其连同复制你**密码**。
+**ASPSMS:** 从你的帐户设置，导航到**用户密钥**并将其连同复制你**密码**。
 
 我们将更高版本将存储在密钥中的密钥管理器工具使用这些值`SMSAccountIdentification`和`SMSAccountPassword`。
 
 #### <a name="specifying-senderid--originator"></a>指定 SenderID / 发起方
 
-**Twilio:**  
-从数字选项卡，将复制你的 Twilio**电话号码**。 
+**Twilio:** 从数字选项卡，将复制你的 Twilio**电话号码**。
 
-**ASPSMS:**  
-解锁原始发件人菜单上，在解锁一个或多个发送方或选择 （不支持的所有网络） 的字母数字发起方。 
+**ASPSMS:** 解锁原始发件人菜单上，在解锁一个或多个发送方或选择字母数字的发起方 （不支持的所有网络）。
 
 我们将更高版本存储在项的密钥管理器工具使用此值`SMSAccountFrom`。
 
 
 ### <a name="provide-credentials-for-the-sms-service"></a>SMS 服务提供的凭据
 
-我们将使用[选项模式](xref:fundamentals/configuration/options)访问的用户帐户和密钥设置。 
+我们将使用[选项模式](xref:fundamentals/configuration/options)访问的用户帐户和密钥设置。
 
    * 创建一个类以提取安全 SMS 密钥。 对于此示例，`SMSoptions`中创建类*Services/SMSoptions.cs*文件。
 
@@ -68,21 +64,19 @@ info: Successfully saved SMSAccountIdentification = 12345 to the secret store.
 ```
 * SMS 提供程序添加 NuGet 包。 从包管理器控制台 (PMC) 运行：
 
-**Twilio:**  
+**Twilio:**
 `Install-Package Twilio`
 
-**ASPSMS:**  
+**ASPSMS:**
 `Install-Package ASPSMS`
 
 
 * 中添加代码*Services/MessageServices.cs*文件以启用 SMS。 使用 Twilio 或 ASPSMS 部分：
 
 
-**Twilio:**  
-[!code-csharp[](2fa/sample/Web2FA/Services/MessageServices_twilio.cs)]
+**Twilio:** [!code-csharp[](2fa/sample/Web2FA/Services/MessageServices_twilio.cs)]
 
-**ASPSMS:**  
-[!code-csharp[](2fa/sample/Web2FA/Services/MessageServices_ASPSMS.cs)]
+**ASPSMS:** [!code-csharp[](2fa/sample/Web2FA/Services/MessageServices_ASPSMS.cs)]
 
 ### <a name="configure-startup-to-use-smsoptions"></a>配置要使用的启动 `SMSoptions`
 

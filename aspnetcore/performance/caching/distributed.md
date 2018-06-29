@@ -2,20 +2,16 @@
 title: 使用 ASP.NET Core 中分布式缓存
 author: ardalis
 description: 了解如何使用 ASP.NET Core 分布式缓存以提高应用性能和可伸缩性，尤其是在云或服务器场环境。
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 02/14/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: 6c595572641604d241c0c8f702d4f392afe34f71
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: 5ddc3a6927652f773ab38f93db1e222c5a1900b3
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734453"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077694"
 ---
 # <a name="work-with-a-distributed-cache-in-aspnet-core"></a>使用 ASP.NET Core 中分布式缓存
 

@@ -5,12 +5,12 @@ description: 发现与 ASP.NET Core 相关的 Azure Active Directory 主题。
 ms.author: riande
 ms.date: 10/4/2017
 uid: security/authentication/azure-active-directory/index
-ms.openlocfilehash: d909de78a8794a71d75c65affbeee29bf15158b6
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 3a520bd8f8ad6c6afaed59960a95f531a18c9164
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272904"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077720"
 ---
 # <a name="azure-active-directory-with-aspnet-core"></a>Azure Active Directory 与 ASP.NET Core
 
@@ -23,10 +23,10 @@ ms.locfileid: "36272904"
 ## <a name="azure-ad-v2-samples"></a>Azure AD V2 示例
 下面的示例演示如何集成 Azure AD V2，使用户能够使用工作和学校帐户或者 Microsoft 个人帐户（以前称为 Live 帐户）登录：
 * [Integrating Azure AD V2 into an ASP.NET Core 2.0 web app](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2)（将 Azure AD V2 集成到 ASP.NET Core 2.0 Web 应用中）： 
-  * 请观看[这段相关视频](https://channel9.msdn.com/Events/Build/2018/THR5000) 
+  * 请观看[这段相关视频](https://channel9.msdn.com/Events/Build/2018/THR5001) 
 
 * [Calling a ASP.NET Core 2.0 Web API from a WPF application using Azure AD V2](https://github.com/azure-samples/active-directory-dotnet-native-aspnetcore-v2)（使用 Azure AD V2 从 WPF 应用程序调用 ASP.NET Core 2.0 Web API）： 
-  * 请观看[这段相关视频](https://channel9.msdn.com/Events/Build/2018/THR5001) 
+  * 请观看[这段相关视频](https://channel9.msdn.com/Events/Build/2018/THR5000)
 
 ## <a name="azure-ad-b2c-sample"></a>Azure AD B2C 示例
 此示例演示如何集成 Azure AD B2C，使用户能够使用社交网站身份（如 Facebook、Google...）登录

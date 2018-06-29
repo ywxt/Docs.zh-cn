@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/02/2018
 uid: security/authorization/iauthorizationpolicyprovider
-ms.openlocfilehash: 524928a5b291e02556d11a762d86430a6dc94660
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 218d7a495655598046671093c0cfe7b9622aca5e
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277252"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077597"
 ---
 # <a name="custom-authorization-policy-providers-using-iauthorizationpolicyprovider-in-aspnet-core"></a>在 ASP.NET 核心中使用 IAuthorizationPolicyProvider 的自定义授权策略提供程序 
 
@@ -88,7 +88,7 @@ public IActionResult RequiresMinimumAge10()
 使用时`MinimumAgeAuthorizationAttribute`，授权策略名称将遵循的模式`"MinimumAge" + Age`，因此自定义`IAuthorizationPolicyProvider`应生成授权策略：
 
 * 分析将年龄字段从策略名称。
-* 使用`AuthorizationPolicyBuiler`创建新 `AuthorizationPolicy`
+* 使用`AuthorizationPolicyBuilder`创建新 `AuthorizationPolicy`
 * 将要求添加到策略根据保留时间与`AuthorizationPolicyBuilder.AddRequirements`。 在其他情况下，你可以使用`RequireClaim`， `RequireRole`，或`RequireUserName`相反。
 
 ```CSharp
