@@ -2,19 +2,15 @@
 title: ASP.NET Core 中的路由
 author: ardalis
 description: 了解 ASP.NET Core 路由功能如何负责将传入请求映射到路由处理程序。
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: a23e2e1a1dd25a57e5d6189bbd5938c48078515b
-ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
+ms.openlocfilehash: 4482c865671eb4f5decbd5f1cd6e26f2e68e5c25
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2018
-ms.locfileid: "35341777"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314131"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core 中的路由
 
@@ -154,7 +150,7 @@ routes.MapRoute(
     dataTokens: new { locale = "en-US" });
 ```
 
-此模板将匹配类似 `/Products/5` 的 URL 路径并提取值 `{ controller = Products, action = Details, id = 5 }` 和数据令牌 `{ locale = en-US }`。
+此模板与 `/en-US/Products/5` 等 URL 路径相匹配，并且提取值 `{ controller = Products, action = Details, id = 5 }` 和数据令牌 `{ locale = en-US }`。
 
 ![本地 Windows 令牌](routing/_static/tokens.png)
 
@@ -285,6 +281,16 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 使用模板通常是进行路由最简单的方法。 还可在路由模板外指定约束和默认值。
 
 提示：启用[日志记录](xref:fundamentals/logging/index)查看内置路由实现（如 `Route`）如何匹配请求。
+
+## <a name="reserved-routing-names"></a>保留的路由名称
+
+以下关键字是保留的名称，它们不能用作路由名称或参数：
+
+* `action`
+* `area`
+* `controller`
+* `handler`
+* `page`
 
 ## <a name="route-constraint-reference"></a>路由约束参考
 

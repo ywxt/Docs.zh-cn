@@ -2,20 +2,16 @@
 title: ASP.NET Core 基础知识
 author: rick-anderson
 description: 了解生成 ASP.NET Core 应用程序的基础概念。
-manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 09/30/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: 97c0b289b259332d57f8175e05020fe03d505723
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: b51d7b62525944d9924ecb4ce5964312f30a7835
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34233305"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278864"
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 基础知识
 
@@ -78,7 +74,7 @@ public class Startup
 
 ## <a name="content-root"></a>内容根
 
-内容根是应用所使用的任何内容的基路径，如视图、[Razor 页面](xref:mvc/razor-pages/index) 和静态资产。 默认情况下，内容根与用于托管应用的可执行文件的应用程序基路径相同。
+内容根是应用所使用的任何内容的基路径，如视图、[Razor 页面](xref:razor-pages/index) 和静态资产。 默认情况下，内容根与用于托管应用的可执行文件的应用程序基路径相同。
 
 ## <a name="web-root"></a>Web 根
 
@@ -106,9 +102,13 @@ ASP.NET Core 包含一组丰富的内置中间件：
 
 有关详细信息，请参阅[中间件](xref:fundamentals/middleware/index)和 [.NET 的开放 Web 接口 (OWIN)](xref:fundamentals/owin)。
 
+::: moniker range=">= aspnetcore-2.1"
+
 ## <a name="initiate-http-requests"></a>启动 HTTP 请求
 
 有关使用 `IHttpClientFactory` 访问 `HttpClient` 实例以发出 HTTP 请求的信息，请参阅[启动 HTTP 请求](xref:fundamentals/http-requests)。
+
+::: moniker-end
 
 ## <a name="environments"></a>环境
 
@@ -126,7 +126,7 @@ ASP.NET Core 基于名称/值对使用配置模型。 配置模型不基于 `Sys
 
 ASP.NET Core 支持适用于各种日志记录提供程序的日志记录 API。 内置提供程序支持向一个或多个目标发送日志。 可使用第三方记录框架。
 
-[日志记录](xref:fundamentals/logging/index)
+有关详细信息，请参阅[日志记录](xref:fundamentals/logging/index)
 
 ## <a name="error-handling"></a>错误处理
 
@@ -158,11 +158,11 @@ ASP.NET Core 应用可配置和启动一个*主机*，负责应用启动和生�
 
 有关详细信息，请参阅[在 ASP.NET Core 中托管](xref:fundamentals/host/index)。
 
-## <a name="session-and-application-state"></a>会话和应用程序状态
+## <a name="session-and-app-state"></a>会话和应用状态
 
-会话状态是 ASP.NET Core 中的一项功能，可用于在用户浏览 Web 应用时保存和存储用户数据。
+ASP.NET Core 提供几种可在用户浏览 web 应用时保留会话和应用状态的方法。
 
-有关详细信息，请参阅[会话和应用程序状态](xref:fundamentals/app-state)。
+有关详细信息，请参阅[会话和应用状态](xref:fundamentals/app-state)。
 
 ## <a name="servers"></a>服务器
 

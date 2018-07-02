@@ -2,19 +2,15 @@
 title: ASP.NET Core 中的 Razor 页面和 EF Core - 读取相关数据 - 第 6 个教程（共 8 个）
 author: rick-anderson
 description: 在本教程中，将读取并显示相关数据 - 即 Entity Framework 加载到导航属性中的数据。
-manager: wpickett
 ms.author: riande
 ms.date: 11/05/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: 1a63246dd81a16bbcca22ad2c50bc2010c852c4e
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 4e0aa7151cc54f666202458ba60500a7c04f5ebb
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34233396"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276755"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 读取相关数据 - 第 6 个教程（共 8 个）
 
@@ -184,7 +180,7 @@ EF Core 可采用多种方式将相关数据加载到实体的导航属性中：
 
 `OnGetAsync` 方法接受所选讲师 ID 的可选路由数据。
 
-检查 Pages/Instructors/Index.cshtml 页上的查询：
+检查 Pages/Instructors/Index.cshtml.cs 文件中的查询：
 
 [!code-csharp[](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_ThenInclude)]
 
@@ -278,7 +274,7 @@ EF Core 可采用多种方式将相关数据加载到实体的导航属性中：
 
 [!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_courseID)]
 
-在 Pages/Courses/Index.cshtml Razor 页面末尾添加以下标记：
+在 Pages/Instructors/Index.cshtml Razor 页面末尾添加以下标记：
 
 [!code-html[](intro/samples/cu/Pages/Instructors/IndexRRD.cshtml?range=60-102&highlight=7-999)]
 

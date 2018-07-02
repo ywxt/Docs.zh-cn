@@ -2,19 +2,15 @@
 title: ASP.NET Core MVC 和 Visual Studio 入门
 author: rick-anderson
 description: 了解如何开始使用 ASP.NET Core MVC 和 Visual Studio。
-manager: wpickett
 ms.author: riande
 ms.date: 10/07/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: 3272700c7739778a6a341ae8ee424fd69605ca53
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 1fb3947023843341403f4355c6ae1e61d7e4f6b1
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729712"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275547"
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a>ASP.NET Core MVC 和 Visual Studio 入门
 
@@ -61,7 +57,7 @@ Visual Studio 为刚刚创建的 MVC 项目使用默认模板。 输入项目名
 
 点击“F5”在调试模式下运行应用，或按“Ctrl-F5”在非调试模式下运行应用。
 <!-- These images are also used by uid: tutorials/first-mvc-app-xplat/start-mvc -->
-![运行应用](start-mvc/_static/1.png)
+![正在运行的应用](start-mvc/_static/1.png)
 
 * Visual Studio 启动 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 并运行应用。 请注意，地址栏显示 `localhost:port#`，而不显示 `example.com` 之类的内容。 这是因为 `localhost` 是本地计算机的标准主机名。 Visual Studio 创建 Web 项目时，Web 服务器使用的是随机端口。 在上图中，端口号为 5000。 浏览器中的 URL 显示 `localhost:5000`。 运行应用时，将看到不同的端口号。
 * 使用“Ctrl+F5”启动应用（非调试模式）后，可执行代码更改、保存文件、刷新浏览器和查看代码更改等操作。 许多开发人员更喜欢使用非调试模式快速启动应用并查看更改。
@@ -148,7 +144,7 @@ Visual Studio 为刚刚创建的 MVC 项目使用默认模板。 输入项目名
 
 点击“F5”在调试模式下运行应用，或按“Ctrl-F5”在非调试模式下运行应用。
 <!-- These images are also used by uid: tutorials/first-mvc-app-xplat/start-mvc -->
-![运行应用](start-mvc/_static/1.png)
+![正在运行的应用](start-mvc/_static/1.png)
 
 * Visual Studio 启动 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 并运行应用。 请注意，地址栏显示 `localhost:port#`，而不显示 `example.com` 之类的内容。 这是因为 `localhost` 是本地计算机的标准主机名。 Visual Studio 创建 Web 项目时，Web 服务器使用的是随机端口。 在上图中，端口号为 5000。 浏览器中的 URL 显示 `localhost:5000`。 运行应用时，将看到不同的端口号。
 * 使用“Ctrl+F5”启动应用（非调试模式）后，可执行代码更改、保存文件、刷新浏览器和查看代码更改等操作。 许多开发人员更喜欢使用非调试模式快速启动应用并查看更改。

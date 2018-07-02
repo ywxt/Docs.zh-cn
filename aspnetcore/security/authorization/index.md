@@ -2,20 +2,16 @@
 title: ASP.NET Core 中的授权
 author: rick-anderson
 description: 发现 ASP.NET Core 授权主题，这些主题介绍如何向应用用户提供权限和特权。
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 02/19/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authorization/index
-ms.openlocfilehash: ef275011cdd87b1d0c861de735d89d064574be5a
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 344a7e4490d4e92a9ee6efd566b5b7822d049e16
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33851269"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273840"
 ---
 # <a name="authorization-in-aspnet-core"></a>ASP.NET Core 中的授权
 
@@ -33,7 +29,7 @@ ms.locfileid: "33851269"
 
 * [基于策略的授权](xref:security/authorization/policies)
 
-* [自定义授权策略提供程序](xref:security/authorization/iauthorizationpolicyprovider)
+* [授权策略提供程序](xref:security/authorization/iauthorizationpolicyprovider)
 
 * [要求处理程序中的依赖关系注入](xref:security/authorization/dependencyinjection)
 

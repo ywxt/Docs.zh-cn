@@ -2,27 +2,23 @@
 title: 启动 HTTP 请求
 author: stevejgordon
 description: 了解如何将 IHttpClientFactory 接口用于管理 ASP.NET Core 中的逻辑 HttpClient 实例。
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 05/02/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
+ms.date: 06/22/2018
 uid: fundamentals/http-requests
-ms.openlocfilehash: 1f2c7522a10220cd9520d78846d2e897115447c2
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: e56c7a3ed80cc08103f6178859a1a99f1a5ec068
+ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33838756"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36327517"
 ---
 # <a name="initiate-http-requests"></a>启动 HTTP 请求
 
 作者：[Glenn Condron](https://github.com/glennc)[Ryan Nowak](https://github.com/rynowak) 和 [Steve Gordon](https://github.com/stevejgordon)
 
-可以注册 `IHttpClientFactory` 并将其用于配置和创建应用中的 [HttpClient](/dotnet/api/system.net.http.httpclient) 实例。 这能带来以下好处：
+可以注册 [IHttpClientFactory](/dotnet/api/system.net.http.ihttpclientfactory) 并将其用于配置和创建应用中的 [HttpClient](/dotnet/api/system.net.http.httpclient) 实例。 这能带来以下好处：
 
 * 提供一个中心位置，用于命名和配置逻辑 `HttpClient` 实例。 例如，可以注册一个“github”客户端，将其配置为访问 GitHub。 可以注册一个默认客户端用于其他用途。
 * 通过委托 `HttpClient` 中的处理程序整理出站中间件的概念，并提供适用于基于 Polly 的中间件的扩展来利用概念。
@@ -42,7 +38,7 @@ ms.locfileid: "33838756"
 
 ### <a name="basic-usage"></a>基本用法
 
-在 Startup.cs 的 `ConfigureServices` 方法中，通过在 `IServiceCollection` 上调用 `AddHttpClient` 扩展方法可以注册 `IHttpClientFactory`。
+在 `Startup.ConfigureServices` 方法中，通过在 `IServiceCollection` 上调用 `AddHttpClient` 扩展方法可以注册 `IHttpClientFactory`。
 
 [!code-csharp[](http-requests/samples/Startup.cs?name=snippet1)]
 
@@ -54,7 +50,7 @@ ms.locfileid: "33838756"
 
 ### <a name="named-clients"></a>命名客户端
 
-如果应用需要区别使用多个 `HttpClient`（每个的配置都不同），可以选择使用“命名客户端”。 可以在 `HttpClient` 中注册时指定命名 `ConfigureServices` 的配置。
+如果应用需要区别使用多个 `HttpClient`（每个的配置都不同），可以选择使用“命名客户端”。 可以在 `HttpClient` 中注册时指定命名 `Startup.ConfigureServices` 的配置。
 
 [!code-csharp[](http-requests/samples/Startup.cs?name=snippet2)]
 
@@ -78,7 +74,7 @@ ms.locfileid: "33838756"
 
 在上述代码中，配置转移到了类型化客户端中。 `HttpClient` 对象公开为公共属性。 可以定义公开 `HttpClient` 功能的特定于 API 的方法。 `GetAspNetDocsIssues` 方法从 GitHub 存储库封装查询和分析最新待解决问题所需的代码。
 
-要注册类型化客户端，可在 `ConfigureServices` 中使用通用的 `AddHttpClient` 扩展方法，指定类型化客户端类：
+要注册类型化客户端，可在 `Startup.ConfigureServices` 中使用通用的 `AddHttpClient` 扩展方法，指定类型化客户端类：
 
 [!code-csharp[](http-requests/samples/Startup.cs?name=snippet3)]
 
@@ -86,7 +82,7 @@ ms.locfileid: "33838756"
 
 [!code-csharp[](http-requests/samples/Pages/TypedClient.cshtml.cs?name=snippet1&highlight=11-14,20)]
 
-根据你的喜好，可以在 `ConfigureServices` 中注册时指定类型化客户端的配置，而不是在类型化客户端的构造函数中指定：
+根据你的喜好，可以在 `Startup.ConfigureServices` 中注册时指定类型化客户端的配置，而不是在类型化客户端的构造函数中指定：
 
 [!code-csharp[](http-requests/samples/Startup.cs?name=snippet4)]
 
@@ -175,7 +171,7 @@ public class ValuesController : ControllerBase
 
 `IHttpClientFactory` 与一个名为 [Polly](https://github.com/App-vNext/Polly) 的热门第三方库集成。 Polly 是适用于 .NET 的全面恢复和临时故障处理库。 开发人员通过它可以表达策略，例如以流畅且线程安全的方式处理重试、断路器、超时、Bulkhead 隔离和回退。
 
-提供了扩展方法，以实现将 Polly 策略用于配置的 `HttpClient` 实例。 在名为“Microsoft.Extensions.Http.Polly”的 NuGet 包中可以使用 Polly 扩展。 “Microsoft.AspNetCore.App”元包在默认情况下不包含此包。 若要使用扩展，需要将 PackageReference 显式包含在项目中。
+提供了扩展方法，以实现将 Polly 策略用于配置的 `HttpClient` 实例。 [Microsoft.Extensions.Http.Polly](https://www.nuget.org/packages/Microsoft.Extensions.Http.Polly/) NuGet 包中提供 Polly 扩展。 [Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)中不包括此包。 若要使用扩展，项目中应该包括显式 `<PackageReference />`。
 
 [!code-csharp[](http-requests/samples/HttpClientFactorySample.csproj?highlight=9)]
 
@@ -185,7 +181,7 @@ public class ValuesController : ControllerBase
 
 在执行外部 HTTP 调用时，最可能遇到的故障是临时故障。 包含了一种简便的扩展方法，该方法名为 `AddTransientHttpErrorPolicy`，允许定义策略来处理临时故障。 使用这种扩展方法配置的策略可以处理 `HttpRequestException`、HTTP 5xx 响应以及 HTTP 408 响应。
 
-`AddTransientHttpErrorPolicy` 扩展可在 `ConfigureServices` 内使用。 该扩展可以提供 `PolicyBuilder` 对象的访问权限，该对象配置为处理表示可能的临时故障的错误：
+`AddTransientHttpErrorPolicy` 扩展可在 `Startup.ConfigureServices` 内使用。 该扩展可以提供 `PolicyBuilder` 对象的访问权限，该对象配置为处理表示可能的临时故障的错误：
 
 [!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet7)]
 

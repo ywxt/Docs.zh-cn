@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core 中的记录框架。 发现内置日志记录�
 ms.author: tdykstra
 ms.date: 12/15/2017
 uid: fundamentals/logging/index
-ms.openlocfilehash: 2307df3b4b571840f31808b86b48b0e6fb2de852
-ms.sourcegitcommit: 7003d27b607e529642ded0400aa48ae692a0e666
+ms.openlocfilehash: 4ceb7886cc9410c3b39beec68c2b11ea3578d851
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37033308"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077772"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core 中的日志记录
 
@@ -610,6 +610,10 @@ loggerFactory.AddAzureWebAppDiagnostics();
 导航到“日志流式处理”页，查看应用程序消息。 它们由应用程序通过 `ILogger` 接口记录。
 
 ![Azure 门户应用程序日志流式处理](index/_static/azure-log-streaming.png)
+
+## <a name="azure-application-insights-trace-logging"></a>Azure Application Insights 跟踪日志记录
+
+[Application Insights](https://azure.microsoft.com/services/application-insights/) SDK 可从通过 ASP.NET Core日志记录基础结构生成的日志中收集跟踪遥测数据。 有关详细信息，请参阅 [Microsoft/ApplicationInsights-aspnetcore Wiki：日志记录](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Logging)。
 
 ## <a name="additional-resources"></a>其他资源
 

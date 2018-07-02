@@ -2,18 +2,15 @@
 title: 迁移到 ASP.NET Core
 author: rick-anderson
 description: 提供有关将 ASP.NET 4.x 的各种特性迁移到 ASP.NET Core 的指南。
-manager: wpickett
 ms.author: riande
 ms.date: 05/04/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: migration/index
-ms.openlocfilehash: 2f4b65795c1b62487d46d92f1b32386435cdc0d1
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 0d622e47f2031d9e473819af52d387c7e01838cb
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275705"
 ---
 # <a name="migration-to-aspnet-core"></a>迁移到 ASP.NET Core
 
@@ -32,3 +29,7 @@ ms.lasthandoff: 05/08/2018
 
 * [从 ASP.NET Core 1.x 迁移到 2.0](xref:migration/1x-to-2x/index)
 * [迁移身份验证和标识](xref:migration/1x-to-2x/identity-2x)
+
+## <a name="aspnet-core-20-to-21"></a>从 ASP.NET Core 2.0 迁移到 2.1
+
+* [从 ASP.NET Core 2.0 迁移到 2.1](xref:migration/20_21)

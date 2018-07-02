@@ -5,16 +5,16 @@ description: ''
 ms.author: riande
 ms.date: 03/15/2017
 uid: data/ef-rp/index
-ms.openlocfilehash: 0bb700e4ee6b33c65ab519c41bab620def261752
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 56d317e4334ee006c8b52163594e2850c11d23d7
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277506"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960861"
 ---
 # <a name="aspnet-core-razor-pages-with-ef-core---tutorial-series"></a>ASP.NET Core Razor 页面和 EF Core - 教程系列
 
-下面的一系列教程介绍如何创建使用 Entity Framework (EF) Core 进行数据访问的 ASP.NET Core Razor 页面 Web 应用。 这些教程需要 Visual Studio 2017。
+下面的一系列教程介绍如何创建使用 Entity Framework (EF) Core 进行数据访问的 ASP.NET Core Razor Pages Web 应用。
 
 1. [入门](xref:data/ef-rp/intro)
 1. [创建、读取、更新和删除操作](xref:data/ef-rp/crud)

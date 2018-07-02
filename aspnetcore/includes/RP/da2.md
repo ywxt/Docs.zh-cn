@@ -19,7 +19,7 @@
 
 [!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=16-18&range=32-)]
 
-[标记帮助程序](xref:mvc/views/tag-helpers/intro)使服务器端代码可以在 Razor 文件中参与创建和呈现 HTML 元素。 在前面的代码中，`AnchorTagHelper` 从 Razor 页面（路由是相对的）、`asp-page` 和路由 ID (`asp-route-id`) 动态生成 HTML `href` 特性值。 有关详细信息，请参阅[页面的 URL 生成](xref:mvc/razor-pages/index#url-generation-for-pages)。
+[标记帮助程序](xref:mvc/views/tag-helpers/intro)使服务器端代码可以在 Razor 文件中参与创建和呈现 HTML 元素。 在前面的代码中，`AnchorTagHelper` 从 Razor 页面（路由是相对的）、`asp-page` 和路由 ID (`asp-route-id`) 动态生成 HTML `href` 特性值。 有关详细信息，请参阅[页面的 URL 生成](xref:razor-pages/index#url-generation-for-pages)。
 
 在最喜欢的浏览器中使用“查看源”来检查生成的标记。 生成的 HTML 的一部分如下所示：
 
@@ -31,7 +31,7 @@
 </td>
 ```
 
-动态生成的链接通过查询字符串传递电影 ID（例如 `http://localhost:5000/Movies/Details?id=2`）。 
+动态生成的链接通过查询字符串传递电影 ID（例如，`http://localhost:5000/Movies/Details?id=2`）。
 
 更新“编辑”、“详细信息”和“删除”Razor 页面以使用“{id:int?}”路由模板。 将上述每个页面的页面指令从 `@page` 更改为 `@page "{id:int}"`。 运行应用，然后查看源。 生成的 HTML 会将 ID 添加到 URL 的路径部分：
 
