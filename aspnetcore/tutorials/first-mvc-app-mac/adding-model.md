@@ -5,15 +5,13 @@ description: 将模型添加到简单的 ASP.NET Core 应用。
 ms.author: riande
 ms.date: 09/22/2017
 uid: tutorials/first-mvc-app-mac/adding-model
-ms.openlocfilehash: 53d63cd554f6a3ec958f27ed35b0a30b1833f84c
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6db079558ccf4515a37a90f7a9e2608333acd7cf
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276108"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961381"
 ---
-# <a name="add-a-model-to-an-aspnet-core-mvc-app-with-visual-studio-for-mac"></a>使用 Visual Studio for Mac 将模型添加到 ASP.NET Core MVC 应用
-
 [!INCLUDE [adding-model](../../includes/mvc-intro/adding-model1.md)]
 
 * 右键单击“Models”文件夹，然后选择“添加” > “新建文件”。 

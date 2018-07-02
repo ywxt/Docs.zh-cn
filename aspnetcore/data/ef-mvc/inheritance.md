@@ -5,14 +5,18 @@ description: 本教程将演示如何使用 ASP.NET Core 应用程序中的 Enti
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 818af711c23d37810b29eda8915b3c195a3e48f8
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: a71954297f44f936893a7f1e9d3b0685f81378b9
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272849"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37092992"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---inheritance---9-of-10"></a>ASP.NET Core MVC 和 EF Core - 继承 - 第 9 个教程（共 10 个）
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -50,7 +54,7 @@ TPC 和 TPH 继承模式的性能通常比 TPT 继承模式好，因为 TPT 模�
 
 本教程将演示如何实现 TPH 继承。 TPH 是 Entity Framework Core 唯一支持的继承模式。  需要执行的操作是创建 `Person` 类、将 `Instructor` 和 `Student` 类更改为从 `Person` 派生、将新的类添加到 `DbContext`，以及创建迁移。
 
-> [!TIP] 
+> [!TIP]
 > 在进行以下更改之前，请考虑保存项目的副本。  如果遇到问题并需要重新开始，可以更轻松地从已保存的项目开始，而不用反向操作本教程中的步骤或者返回到整个系列的开始。
 
 ## <a name="create-the-person-class"></a>创建 Person 类
@@ -121,7 +125,7 @@ dotnet ef database update
 
 （在生产系统中，可以对 `Down` 方法进行相应更改，以防必须使用该方法返回到以前的数据库版本。 本教程中将不使用 `Down` 方法。）
 
-> [!NOTE] 
+> [!NOTE]
 > 在包含现有数据的数据库中更改架构时，可能会发生其他错误。 如果出现无法解决的迁移错误，可以在连接字符串中更改数据库名或者删除数据库。 若是新数据库，则没有要迁移的数据，因此在完成更新数据库命令时很可能不会出错。 若要删除数据库，请使用 SSOX 或运行 `database drop` CLI 命令。
 
 ## <a name="test-with-inheritance-implemented"></a>使用已实现的继承进行测试
@@ -140,6 +144,8 @@ dotnet ef database update
 
 你已经为 `Person`、`Student` 和 `Instructor` 类实现了每个层次结构一张表继承。 若要详细了解 Entity Framework Core 中的继承，请参阅[继承](https://docs.microsoft.com/ef/core/modeling/inheritance)。 下一个教程将介绍如何处理各种相对高级的 Entity Framework 方案。
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [上一页](concurrency.md)
-> [下一页](advanced.md)  
+> [下一页](advanced.md)

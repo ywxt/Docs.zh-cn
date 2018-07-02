@@ -5,14 +5,18 @@ description: 本教程将添加更多实体和关系，并通过指定格式设�
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: d89ca44917fac57febc2f8b0d632ae004ca7216c
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 1d3c69c8c658b5ca2f0253b790b0dc75d44d3064
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277382"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093109"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>ASP.NET Core MVC 和 EF Core - 数据模型 - 第 5 个教程（共 10 个）
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -351,7 +355,7 @@ Student 和 Course 实体间存在多对多关系，Enrollment 实体在数据�
 
 如果 Enrollment 表不包含年级信息，则它只需包含两个外键（CourseID 和 StudentID）。 在这种情况下，该表是数据库中不带有效负载的多对多联接表（或纯联接表）。 Instructor 和 Course 实体具有这种多对多关系，下一步是创建实体类，将其作为不带有效负载的联接表。
 
-（EF 6.x 支持多对多关系的隐式联接表，但 EF Core 不支持。 有关详细信息，请参阅 [EF Core GitHub 存储库中的讨论](https://github.com/aspnet/EntityFramework/issues/1368)。） 
+（EF 6.x 支持多对多关系的隐式联接表，但 EF Core 不支持。 有关详细信息，请参阅 [EF Core GitHub 存储库中的讨论](https://github.com/aspnet/EntityFramework/issues/1368)。）
 
 ## <a name="the-courseassignment-entity"></a>CourseAssignment 实体
 
@@ -437,7 +441,7 @@ Done. To undo this action, use 'ef migrations remove'
 
 为使此迁移处理现有数据，必须更改代码，赋予新列默认值，并创建一个名为“Temp”的存根系，作为默认系。 之后，Course 行将在 `Up` 方法运行后与“Temp”系建立联系。
 
-* 打开 {timestamp}_ComplexDataModel.cs 文件。 
+* 打开 {timestamp}_ComplexDataModel.cs 文件。
 
 * 对将 DepartmentID 列添加到 Course 表的代码行添加注释。
 
@@ -491,7 +495,8 @@ dotnet ef database update
 ## <a name="summary"></a>总结
 
 现在你就得到了更复杂的数据模型和相应的数据库。 后面教程将更多详细的介绍如何访问相关数据。
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [上一页](migrations.md)
-> [下一页](read-related-data.md)  
+> [下一页](read-related-data.md)

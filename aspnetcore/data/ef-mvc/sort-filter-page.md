@@ -5,14 +5,18 @@ description: 本教程将使用 ASP.NET Core 和 Entity Framework Core 向页面
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 34097eacad16c0ffb989efb3b6a8656be4a076cd
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 1f80faf0e36332c28e8337ddc331cc8b4c4970d7
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273645"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093083"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---sort-filter-paging---3-of-10"></a>ASP.NET Core MVC 和 EF Core - 排序、筛选、分页 - 第 3 个教程，共 10 个教程
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -228,7 +232,7 @@ return View(await PaginatedList<Student>.CreateAsync(students.AsNoTracking(), pa
 [!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseDbSet)]
 
 LINQ 语句按注册日期对学生实体进行分组，计算每组中实体的数量，并将结果存储在 `EnrollmentDateGroup` 视图模型对象的集合中。
-> [!NOTE] 
+> [!NOTE]
 > 在 1.0 版 Entity Framework Core 中，整个结果集被返回给客户端，并在客户端上完成分组。 在某些情况下，这可能会造成性能问题。 请务必使用生产数据量测试性能，必要时请使用原始 SQL 在服务器上进行分组。 有关如何使用原始 SQL 的信息，请参阅[本系列中的最后一个教程](advanced.md)。
 
 ### <a name="modify-the-about-view"></a>修改“关于”视图
@@ -245,6 +249,8 @@ LINQ 语句按注册日期对学生实体进行分组，计算每组中实体的
 
 在本教程中，你已了解了如何执行排序、筛选、分页和分组。 在下一个教程中，你将了解如何使用迁移来处理数据模型更改。
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [上一页](crud.md)
-> [下一页](migrations.md)  
+> [下一页](migrations.md)

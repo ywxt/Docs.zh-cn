@@ -5,14 +5,18 @@ description: 本教程将通过更新外键字段和导航属性来更新相关�
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: 53f1607d96a9a1db98f4e80e9582c124cedf6c8d
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: ef8cb3916e5d1542e4d36cad694351462b94ed32
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272645"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093054"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---update-related-data---7-of-10"></a>ASP.NET Core MVC 和 EF Core - 更新相关数据 - 第 7 个教程（共 10 个）
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -134,7 +138,7 @@ HttpGet `Edit` 方法根据正在编辑的课程已分配到的院系 ID 设置�
         "",
         i => i.FirstMidName, i => i.LastName, i => i.HireDate, i => i.OfficeAssignment))
     ```
-    
+
 -   如果办公室位置为空，请将 Instructor.OfficeAssignment 属性设置为 NULL，以便删除 OfficeAssignment 表中的相关行。
 
     <!-- Snippets don't play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
@@ -213,7 +217,7 @@ Course 和 Instructor 实体之间是多对多的关系。 若要添加和删除
 在 Views/Instructors/Edit.cshtml 中，通过在“办公室”字段的 `div` 元素之后和“保存”按钮的 `div` 元素之前添加以下代码，以便添加带有一系列复选框的“课程”字段。
 
 <a id="notepad"></a>
-> [!NOTE] 
+> [!NOTE]
 > 将代码粘贴到 Visual Studio 中时，换行符会发生更改，从而导致代码中断。  按 Ctrl+Z 一次可撤消自动格式设置。  这样可以修复换行符，使其看起来如此处所示。 缩进不一定要完美，但 `@</tr><tr>`、`@:<td>`、`@:</td>` 和 `@:</tr>` 行必须各成一行（如下所示），否则会出现运行时错误。 选中新的代码块后，按 Tab 三次，使新代码与现有代码对齐。 可在[此处](https://developercommunity.visualstudio.com/content/problem/147795/razor-editor-malforms-pasted-markup-and-creates-in.html)查看此问题的状态。
 
 [!code-html[](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
@@ -228,7 +232,7 @@ Course 和 Instructor 实体之间是多对多的关系。 若要添加和删除
 
 更改某些课程分配并单击“保存”。 所作更改将反映在索引页上。
 
-> [!NOTE] 
+> [!NOTE]
 > 此处所使用的编辑讲师课程数据的方法适用于数量有限的课程。 若是远大于此的集合，则需要使用不同的 UI 和不同的更新方法。
 
 ## <a name="update-the-delete-page"></a>更新“删除”页
@@ -282,7 +286,7 @@ public ICollection<CourseAssignment> CourseAssignments
 
 [!code-html[](intro/samples/cu/Views/Instructors/Create.cshtml?range=29-61)]
 
-通过运行应用并创建讲师来进行测试。 
+通过运行应用并创建讲师来进行测试。
 
 ## <a name="handling-transactions"></a>处理事务
 
@@ -292,6 +296,8 @@ public ICollection<CourseAssignment> CourseAssignments
 
 处理相关数据的介绍至此已告一段落。 下一个教程将介绍如何处理并发冲突。
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [上一页](read-related-data.md)
-> [下一页](concurrency.md)  
+> [下一页](concurrency.md)

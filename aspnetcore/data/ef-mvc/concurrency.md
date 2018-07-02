@@ -5,14 +5,18 @@ description: 本教程介绍如何处理多个用户同时更新同一实体时�
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: 77e5fba176835f7da9be6c7057084ed017d34bec
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9bf65621213c9657232dfff1701c9937d5105a9c
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278393"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093018"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---concurrency---8-of-10"></a>ASP.NET Core MVC 和 EF Core - 并发 - 第 8 个教程（共 10 个）
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -207,7 +211,7 @@ _context.Entry(departmentToUpdate).Property("RowVersion").OriginalValue = rowVer
 
 [!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeleteGet&highlight=1,10,14-17,21-29)]
 
-该方法接受可选参数，该参数指示是否在并发错误之后重新显示页面。 如果此标志为 true 且指定的院系不复存在，则它已被其他用户删除。 此情况下，代码将重定向到索引页。  如果此标志为 true 且该院系确实存在，则它已被其他用户更改。 此情况下，代码将使用 `ViewData` 向视图发送一条错误消息。  
+该方法接受可选参数，该参数指示是否在并发错误之后重新显示页面。 如果此标志为 true 且指定的院系不复存在，则它已被其他用户删除。 此情况下，代码将重定向到索引页。  如果此标志为 true 且该院系确实存在，则它已被其他用户更改。 此情况下，代码将使用 `ViewData` 向视图发送一条错误消息。
 
 将 HttpPost `Delete` 方法（名为 `DeleteConfirmed`）中的代码替换为以下代码：
 
@@ -276,6 +280,8 @@ public async Task<IActionResult> Delete(Department department)
 
 处理并发冲突已介绍完毕。 要深入了解如何处理 EF Core 中的并发，请参阅[并发冲突](https://docs.microsoft.com/ef/core/saving/concurrency)。 下一个教程将介绍如何为 Instructor 和 Students 实体实现“每个层次结构一个表”继承。
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [上一页](update-related-data.md)
-> [下一页](inheritance.md)  
+> [下一页](inheritance.md)

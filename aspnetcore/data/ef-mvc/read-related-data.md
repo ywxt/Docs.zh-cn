@@ -5,14 +5,18 @@ description: 本教程将读取并显示相关数据 - 即 Entity Framework 加�
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: 8c634bb1ae715776e18b847574ce03791f2ede03
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: d5c9b665a80003ef5029754d7ad1780b3254e97e
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277207"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37092979"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---read-related-data---6-of-10"></a>ASP.NET Core MVC 和 EF Core - 读取相关数据 - 第 6 个课程（共 10 个课程）
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -238,6 +242,8 @@ Course 实体包括导航属性，其中包含分配有课程的系的 Departmen
 
 现在你已经使用了预先加载和一个查询及多个查询来读取导航属性中的相关数据。 下一个教程将介绍如何更新相关数据。
 
+::: moniker-end
+
 >[!div class="step-by-step"]
 >[上一页](complex-data-model.md)
->[下一页](update-related-data.md)  
+>[下一页](update-related-data.md)
