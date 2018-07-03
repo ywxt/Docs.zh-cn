@@ -1,45 +1,44 @@
 ---
 uid: mvc/pluralsight
-title: 从 Pluralsight MVC 视频培训 |Microsoft 文档
+title: 来自 Pluralsight 的 MVC 视频培训 |Microsoft Docs
 author: rick-anderson
-description: MVC 从 Pluralsight 此可用的视频培训视频培训将帮助你启动并运行使用 ASP.NET MVC。 它涵盖中设置一个开发的所有内容...
+description: 来自 Pluralsight 此免费视频培训的 MVC 视频培训将帮助你启动并运行使用 ASP.NET MVC。 它涵盖了从开发进行设置的所有内容...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/09/2011
 ms.topic: article
 ms.assetid: 87612fe1-258c-4f50-88d8-c3047dec3f14
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/pluralsight
 msc.type: content
-ms.openlocfilehash: 60f14176111ee7dbb2ddd2cc4af17d6df559654e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 94faa3b9026ff1ef34c16698de823566c809ea52
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26503886"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376318"
 ---
-<a name="mvc-video-training-from-pluralsight"></a><span data-ttu-id="e807f-104">从 Pluralsight MVC 视频培训</span><span class="sxs-lookup"><span data-stu-id="e807f-104">MVC Video Training from Pluralsight</span></span>
+<a name="mvc-video-training-from-pluralsight"></a><span data-ttu-id="06b18-104">来自 Pluralsight 的 MVC 视频培训</span><span class="sxs-lookup"><span data-stu-id="06b18-104">MVC Video Training from Pluralsight</span></span>
 ====================
-### <a name="videos"></a><span data-ttu-id="e807f-105">视频</span><span class="sxs-lookup"><span data-stu-id="e807f-105">Videos</span></span>
+### <a name="videos"></a><span data-ttu-id="06b18-105">视频</span><span class="sxs-lookup"><span data-stu-id="06b18-105">Videos</span></span>
 
-- [<span data-ttu-id="e807f-106">简介和先决条件</span><span class="sxs-lookup"><span data-stu-id="e807f-106">Introduction and Prerequisites</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m1-introduction&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
-- [<span data-ttu-id="e807f-107">OWIN 和 Katana</span><span class="sxs-lookup"><span data-stu-id="e807f-107">OWIN and Katana</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m2-katana&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
-- [<span data-ttu-id="e807f-108">标识和安全</span><span class="sxs-lookup"><span data-stu-id="e807f-108">Identity and Security</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m3-identity&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
-- [<span data-ttu-id="e807f-109">Bootstrap</span><span class="sxs-lookup"><span data-stu-id="e807f-109">Bootstrap</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m4-bootstrap&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
-- [<span data-ttu-id="e807f-110">Web API 2</span><span class="sxs-lookup"><span data-stu-id="e807f-110">Web API 2</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m5-webapi2&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
-- [<span data-ttu-id="e807f-111">Entity Framework 6</span><span class="sxs-lookup"><span data-stu-id="e807f-111">Entity Framework 6</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m6-ef6&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
-- [<span data-ttu-id="e807f-112">SignalR</span><span class="sxs-lookup"><span data-stu-id="e807f-112">SignalR</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m7-signalr&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
-- [<span data-ttu-id="e807f-113">Web 开发人员工具和 Visual Studio 2013</span><span class="sxs-lookup"><span data-stu-id="e807f-113">Web Developer Tools and Visual Studio 2013</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m8-visualstudio&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
-
-
-<span data-ttu-id="e807f-114">"为 Pluralsight 记录通过 k。 Scott Allen 本 MVC 5 课程提供能够快速掌握最新版本的 ASP.NET MVC 的绝佳方法。</span><span class="sxs-lookup"><span data-stu-id="e807f-114">"This MVC 5 course recorded by K. Scott Allen for Pluralsight provides a fantastic way to quickly get up to speed on the latest release of ASP.NET MVC.</span></span> <span data-ttu-id="e807f-115">Scott 的演示文稿样式可以轻松地遵循和从技术上讲极具吸引力，同时课程格式、 视频播放器和总体节奏确实很棒。</span><span class="sxs-lookup"><span data-stu-id="e807f-115">Scott's presentation style is easy to follow and technically compelling, and the course format, video player, and overall cadence are really great.</span></span> <span data-ttu-id="e807f-116">加上 – 它是免费的因此没有借口不了解 MVC 5 今天 ！"</span><span class="sxs-lookup"><span data-stu-id="e807f-116">Plus – it's free, so there's no excuse not to learn MVC 5 today!"</span></span>
-
-<span data-ttu-id="e807f-117">Scott Guthrie、 执行副总裁、 Microsoft 云和企业组中 Microsoft</span><span class="sxs-lookup"><span data-stu-id="e807f-117">Scott Guthrie, Executive Vice President, Microsoft Cloud and Enterprise group, Microsoft</span></span>
+- [<span data-ttu-id="06b18-106">简介和先决条件</span><span class="sxs-lookup"><span data-stu-id="06b18-106">Introduction and Prerequisites</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m1-introduction&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
+- [<span data-ttu-id="06b18-107">OWIN 和 Katana</span><span class="sxs-lookup"><span data-stu-id="06b18-107">OWIN and Katana</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m2-katana&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
+- [<span data-ttu-id="06b18-108">标识和安全</span><span class="sxs-lookup"><span data-stu-id="06b18-108">Identity and Security</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m3-identity&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
+- [<span data-ttu-id="06b18-109">Bootstrap</span><span class="sxs-lookup"><span data-stu-id="06b18-109">Bootstrap</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m4-bootstrap&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
+- [<span data-ttu-id="06b18-110">Web API 2</span><span class="sxs-lookup"><span data-stu-id="06b18-110">Web API 2</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m5-webapi2&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
+- [<span data-ttu-id="06b18-111">Entity Framework 6</span><span class="sxs-lookup"><span data-stu-id="06b18-111">Entity Framework 6</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m6-ef6&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
+- [<span data-ttu-id="06b18-112">SignalR</span><span class="sxs-lookup"><span data-stu-id="06b18-112">SignalR</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m7-signalr&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
+- [<span data-ttu-id="06b18-113">Web 开发人员工具和 Visual Studio 2013</span><span class="sxs-lookup"><span data-stu-id="06b18-113">Web Developer Tools and Visual Studio 2013</span></span>](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m8-visualstudio&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
 
 
-![pluralsight 徽标 playbutton](pluralsight/_static/image1.png)
+<span data-ttu-id="06b18-114">"K.Scott Allen Pluralsight 的记录此 MVC 5 课程提供快速掌握最新版本的 ASP.NET MVC 上的绝佳方法。</span><span class="sxs-lookup"><span data-stu-id="06b18-114">"This MVC 5 course recorded by K. Scott Allen for Pluralsight provides a fantastic way to quickly get up to speed on the latest release of ASP.NET MVC.</span></span> <span data-ttu-id="06b18-115">Scott 的演示文稿样式是可以轻松地遵循和从技术上讲极具吸引力，课程格式、 视频播放器和整体节奏是真的很棒。</span><span class="sxs-lookup"><span data-stu-id="06b18-115">Scott's presentation style is easy to follow and technically compelling, and the course format, video player, and overall cadence are really great.</span></span> <span data-ttu-id="06b18-116">此外-它是免费的因此没有理由不以立即了解 MVC 5 ！"</span><span class="sxs-lookup"><span data-stu-id="06b18-116">Plus – it's free, so there's no excuse not to learn MVC 5 today!"</span></span>
 
-<span data-ttu-id="e807f-119">解锁访问到 3000 + 开发，IT 和随时随地可以观看的创造性课程</span><span class="sxs-lookup"><span data-stu-id="e807f-119">Unlock access to 3,000+ dev, IT and creative courses that you can watch anytime, anywhere</span></span>
+<span data-ttu-id="06b18-117">Scott Guthrie 执行副总裁、 Microsoft Cloud and Enterprise 组中 Microsoft</span><span class="sxs-lookup"><span data-stu-id="06b18-117">Scott Guthrie, Executive Vice President, Microsoft Cloud and Enterprise group, Microsoft</span></span>
 
-<span data-ttu-id="e807f-120">**开始 29 美元/密苏里州**[开始免费试用](https://pluralsight.com/microsoft/OLT/subscribe/Subscribe1.aspx?freetrial=true&planHint=Monthly&utm_source=microsoft&utm_medium=sponsored-page&utm_content=aspdotnet-mvc5-fundamentals&utm_campaign=microsoft-sponsored-course)[现在订阅](https://pluralsight.com/microsoft/olt/subscriptions.aspx?utm_source=microsoft&utm_medium=sponsored-page&utm_content=aspdotnet-mvc5-fundamentals&utm_campaign=microsoft-sponsored-course)</span><span class="sxs-lookup"><span data-stu-id="e807f-120">**Starting at $ 29/mo.**[Start Free Trial](https://pluralsight.com/microsoft/OLT/subscribe/Subscribe1.aspx?freetrial=true&planHint=Monthly&utm_source=microsoft&utm_medium=sponsored-page&utm_content=aspdotnet-mvc5-fundamentals&utm_campaign=microsoft-sponsored-course) [Subscribe Now](https://pluralsight.com/microsoft/olt/subscriptions.aspx?utm_source=microsoft&utm_medium=sponsored-page&utm_content=aspdotnet-mvc5-fundamentals&utm_campaign=microsoft-sponsored-course)</span></span>
+
+![pluralsight logo playbutton](pluralsight/_static/image1.png)
+
+<span data-ttu-id="06b18-119">取消锁定其访问 3,000 + 开发人员，IT 和创造性随时随地可以观看的课程</span><span class="sxs-lookup"><span data-stu-id="06b18-119">Unlock access to 3,000+ dev, IT and creative courses that you can watch anytime, anywhere</span></span>
+
+<span data-ttu-id="06b18-120">**开始 29 美元/密苏里州**[开始免费试用版](https://pluralsight.com/microsoft/OLT/subscribe/Subscribe1.aspx?freetrial=true&planHint=Monthly&utm_source=microsoft&utm_medium=sponsored-page&utm_content=aspdotnet-mvc5-fundamentals&utm_campaign=microsoft-sponsored-course)[立即订阅](https://pluralsight.com/microsoft/olt/subscriptions.aspx?utm_source=microsoft&utm_medium=sponsored-page&utm_content=aspdotnet-mvc5-fundamentals&utm_campaign=microsoft-sponsored-course)</span><span class="sxs-lookup"><span data-stu-id="06b18-120">**Starting at $ 29/mo.**[Start Free Trial](https://pluralsight.com/microsoft/OLT/subscribe/Subscribe1.aspx?freetrial=true&planHint=Monthly&utm_source=microsoft&utm_medium=sponsored-page&utm_content=aspdotnet-mvc5-fundamentals&utm_campaign=microsoft-sponsored-course) [Subscribe Now](https://pluralsight.com/microsoft/olt/subscriptions.aspx?utm_source=microsoft&utm_medium=sponsored-page&utm_content=aspdotnet-mvc5-fundamentals&utm_campaign=microsoft-sponsored-course)</span></span>
