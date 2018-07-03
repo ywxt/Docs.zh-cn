@@ -2,39 +2,38 @@
 uid: web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-vb
 title: 如何使用 HTML 编辑器控件？ (VB) | Microsoft Docs
 author: microsoft
-description: HTMLEditor 是 ASP.NET AJAX 控件，您可以轻松地创建和编辑通过在工具栏中的按钮的 HTML 内容。
+description: HTMLEditor 是 ASP.NET AJAX 控件，您可以轻松地创建和编辑通过按钮在工具栏中的 HTML 内容。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
 ms.topic: article
 ms.assetid: 32ec9321-7c8c-4b0f-8234-99acb56df6b5
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4833949a54fa9ae12eaf7b596a5fe1ddfd1f7b7a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 4b3882f631799eb99f3c63da89097daba1fca3ff
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30873295"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37401962"
 ---
 <a name="how-do-i-use-the-html-editor-control-vb"></a>如何使用 HTML 编辑器控件？ (VB)
 ====================
 by [Microsoft](https://github.com/microsoft)
 
-> HTMLEditor 是 ASP.NET AJAX 控件，您可以轻松地创建和编辑通过在工具栏中的按钮的 HTML 内容。
+> HTMLEditor 是 ASP.NET AJAX 控件，您可以轻松地创建和编辑通过按钮在工具栏中的 HTML 内容。
 
 
-本教程旨在为你提供附带 AJAX 控件工具包的 HTML 编辑器控件的概述。 HTML 编辑器包括更改字体大小、 选择一种字体、 更改背景色、 修改的前景色，选项添加链接，添加图像，更改文本对齐方式，并执行剪切、 复制和粘贴的操作 （请参见图 1）。
+本教程的目的是为你提供了 AJAX 控件工具包中包含的 HTML 编辑器控件的概述。 HTML 编辑器包含可用于更改字体大小、 选择一种字体、 更改背景色、 修改的前景色，选项添加链接，添加图像，更改文本对齐方式，并执行剪切、 复制和粘贴 （见图 1） 的操作。
 
 
 [![HTML 编辑器](how-do-i-use-the-html-editor-control-vb/_static/image1.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image1.png)
 
-**图 01**: HTML 编辑器 ([单击以查看实际尺寸的图像](how-do-i-use-the-html-editor-control-vb/_static/image2.png))
+**图 01**： 使用 HTML 编辑器 ([单击以查看实际尺寸的图像](how-do-i-use-the-html-editor-control-vb/_static/image2.png))
 
 
-HTML 编辑器使您能够输入使用设计模式下的内容，也可以直接输入 HTML。 你还附带了用于预览 HTML 内容的选项 （请参见图 2）。
+HTML 编辑器，您可以输入使用设计模式下的内容，也可以直接输入 HTML。 你还提供用于预览 HTML 内容的选项 （请参见图 2）。
 
 
 [![设计、 HTML 和预览按钮](how-do-i-use-the-html-editor-control-vb/_static/image2.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image3.png)
@@ -42,29 +41,29 @@ HTML 编辑器使您能够输入使用设计模式下的内容，也可以直接
 **图 02**： 设计、 HTML 和预览按钮 ([单击以查看实际尺寸的图像](how-do-i-use-the-html-editor-control-vb/_static/image4.png))
 
 
-在本教程中，你将学习如何显示 HTML 编辑器，如何自定义工具栏按钮显示在 HTML 编辑器中，以及如何避免跨站点脚本攻击。
+在本教程中，您将学习如何显示 HTML 编辑器、 如何自定义工具栏按钮显示在 HTML 编辑器中，以及如何避免跨站点脚本攻击。
 
 ## <a name="displaying-the-html-editor"></a>显示 HTML 编辑器
 
-你可以在 ASP.NET 页中使用 HTML 编辑器之前，首先必须将 ScriptManager 控件添加到页面中。 ScriptManager 控件位于下 Visual Studio/Visual Web Developer Express 工具箱中的 AJAX Extensions 选项卡。
+在 ASP.NET 页面中使用 HTML 编辑器之前，必须首先将 ScriptManager 控件添加到页面。 ScriptManager 控件位于 Visual Studio/Visual Web Developer 速成版工具箱中的 AJAX 扩展选项卡下。
 
-应将 ScriptManager 控件放在之前页面上的任何其他控件的页面的顶部。 例如，可以将它立即打开服务器端下面&lt;窗体&gt;标记。
+应将 ScriptManager 控件放在之前的页的页上的任何其他控件的顶部。 例如，您可以将其放立即打开服务器端下面&lt;窗体&gt;标记。
 
-HTML 编辑器控件位于工具箱中与 AJAX 控件工具包控件的其余部分。 它名为编辑器控件 （请参见图 3）。
+HTML 编辑器控件位于与其他 AJAX 控件工具包控件工具箱中。 它名为编辑器控件 （请参见图 3）。
 
 
 [![HTML 编辑器控件](how-do-i-use-the-html-editor-control-vb/_static/image3.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image5.png)
 
-**图 03**: HTML 编辑器控件 ([单击以查看实际尺寸的图像](how-do-i-use-the-html-editor-control-vb/_static/image6.png))
+**图 03**： 使用 HTML 编辑器控件 ([单击以查看实际尺寸的图像](how-do-i-use-the-html-editor-control-vb/_static/image6.png))
 
 
-HTML 编辑器拖到页面上后，你可以在属性表中设置其属性。 例如，你通常想要设置宽度和高度属性。 列表 1 包含 ASP.NET 页包含 HTML 编辑器源。
+HTML 编辑器将拖到页后，你可以在属性表中设置其属性。 例如，你通常想要设置宽度和高度属性。 代码清单 1 包含一个包含 HTML 编辑器的 ASP.NET 页面的源。
 
-**列表 1-SimpleEditor.aspx**
+**代码清单 1-SimpleEditor.aspx**
 
 [!code-aspx[Main](how-do-i-use-the-html-editor-control-vb/samples/sample1.aspx)]
 
-列表 1 中的页面包含的 HTML 编辑器控件，按钮控件和文本控件。 文本控件中单击按钮时，显示的 HTML 编辑器中的内容 （请参见图 4）。
+在列表 1 中的页包含的 HTML 编辑器控件、 一个按钮控件和文字控件。 当单击按钮时，内容的 HTML 编辑器中显示文本控件中 （请参阅图 4）。
 
 
 [![提交窗体使用 HTML 编辑器](how-do-i-use-the-html-editor-control-vb/_static/image4.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image7.png)
@@ -72,45 +71,45 @@ HTML 编辑器拖到页面上后，你可以在属性表中设置其属性。 �
 **图 04**： 提交窗体使用 HTML 编辑器 ([单击以查看实际尺寸的图像](how-do-i-use-the-html-editor-control-vb/_static/image8.png))
 
 
-HTML 编辑器 Content 属性用于检索输入到 HTML 编辑器中的 HTML 内容。 请注意，此 HTML 内容可以包含 JavaScript。 在下一部分中，我们将讨论如何阻止 JavaScript 注入式攻击。
+HTML 编辑器内容属性用于检索输入到 HTML 编辑器中的 HTML 内容。 请注意，此 HTML 内容可以包含 JavaScript。 在下一部分中，我们讨论了如何阻止 JavaScript 注入攻击。
 
 ## <a name="customizing-the-html-editor-toolbar"></a>自定义 HTML 编辑器工具栏
 
-你可以自定义完全哪些按钮出现在编辑器中。 例如，你可能想要删除 HTML 选项卡，以防止用户 HTML 编辑器切换到 HTML 模式。 或者，你可能想要删除要阻止用户在论坛中创建过大的文本的字体大小下拉列表 post 消息 （请参见图 5）。
+你可以自定义完全的按钮出现在编辑器中。 例如，可能想要删除 HTML 选项卡以防止用户在 HTML 编辑器切换到 HTML 模式。 或者，可能想要删除字体大小下拉列表，以防止用户在论坛中创建过大文本 post 消息 （请参见图 5）。
 
 
-[![自定义的 HTML 编辑器](how-do-i-use-the-html-editor-control-vb/_static/image5.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image9.png)
+[![自定义 HTML 编辑器](how-do-i-use-the-html-editor-control-vb/_static/image5.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image9.png)
 
 **图 05**： 一个自定义 HTML 编辑器 ([单击以查看实际尺寸的图像](how-do-i-use-the-html-editor-control-vb/_static/image10.png))
 
 
-你通过派生自的基类的编辑器的新的 HTML 编辑器自定义工具栏按钮。 例如，清单 2 中的自定义编辑器仅包含加粗和倾斜的工具栏按钮。 已删除所有其他工具栏按钮。 此外，HTML 选项卡已从底部的编辑器中 （但设计和预览选项卡仍有）。
+您通过从编辑器的基类中派生新的 HTML 编辑器自定义工具栏按钮。 例如，代码清单 2 中的自定义编辑器仅包含粗体和斜体的工具栏按钮。 已删除所有其他工具栏按钮。 此外，HTML 选项卡已删除从编辑器的底部 （但在设计和预览选项卡仍有）。
 
-**Listing 2 - App\_Code\CustomEditor.vb**
+**代码清单 2-应用\_Code\CustomEditor.vb**
 
 [!code-vb[Main](how-do-i-use-the-html-editor-control-vb/samples/sample2.vb)]
 
-必须向您的应用程序中列出 2 中添加类\_代码文件夹，以便将自动编译的类。 如果应用程序\_代码文件夹中你的网站不存在，则可以只需将文件夹添加。
+必须向应用程序清单 2 中添加类\_代码文件夹，以便将自动编译的类。 如果应用\_代码文件夹中你的网站不存在，则可以只需将文件夹添加。
 
-创建自定义编辑器后，你可以将其添加到 ASP.NET 页相同的方式添加正常 HTML 编辑器中 （请参阅列出 3）。
+创建自定义编辑器后，您可以将其添加到 ASP.NET 页面中的相同方式添加普通 HTML 编辑器 （请参阅代码清单 3）。
 
-**列出 3-ShowCustomEditor.aspx**
+**代码清单 3-ShowCustomEditor.aspx**
 
 [!code-aspx[Main](how-do-i-use-the-html-editor-control-vb/samples/sample3.aspx)]
 
 ## <a name="avoiding-cross-site-scripting-xss-attacks"></a>避免跨站点脚本 (XSS) 攻击
 
-无论何时你接受来自用户的输入，并重新该输入显示在网站上，你可能打开你受到跨站点脚本 (XSS) 攻击的网站。 从理论上讲，恶意黑客无法提交时将重新显示输入获取执行的 JavaScript 代码。 JavaScript 无法用于窃取用户密码或其他敏感信息。
+只要您接受来自用户的输入，并且重新该输入显示在网站上，你可能会打开你受到跨站点脚本 (XSS) 攻击的网站。 从理论上讲，恶意黑客无法提交输入重新显示时执行的 JavaScript 代码。 无法使用 JavaScript 来窃取用户密码或其他敏感信息。
 
-通常情况下，你可以抵消被 HTML 编码显示在 web 页前从用户检索任何输入 XSS 攻击。 但是，HTML 编码输出的 HTML 编辑器中将不仅编码&lt;脚本&gt;标记，它还对所有的 HTML 标记进行编码。 换而言之，你都将丢失的所有格式如字体类型、 字体大小和背景色。
+通常情况下，可以抵御 XSS 攻击的 HTML 编码在网页中显示之前从用户检索任何输入。 但是，HTML 编码的 HTML 编辑器中的输出将只对进行编码&lt;脚本&gt;标记，它还对所有 HTML 标记进行都编码。 换而言之，就会丢失的所有格式如字体、 字体大小和背景色。
 
-如果你正在从你的用户-如密码、 信用卡卡号和社会保障号-收集敏感信息然后应不显示来自用户使用 HTML 编辑器中检索的未编码内容。 到你的网站由受信任方，应仅在不重新显示 HTML 内容，或提交所使用的 HTML 内容中使用 HTML 编辑器。
+如果您收集的敏感信息来自您的用户-例如密码、 信用卡卡号和社会安全号码-然后应不显示未编码使用 HTML 编辑器中的用户从检索的内容。 到你的网站由受信任方，应仅在某些情况下在其中不会重新显示的 HTML 内容，或正在提交的 HTML 内容中使用 HTML 编辑器。
 
-例如，假设你要创建一个博客的应用程序。 在此情况下，它有意义时要使用 HTML 编辑器撰写的博客文章。 是唯一提交博客文章的人，并有可能信任自己无法提交恶意 JavaScript。 但是，它没有意义时要使用 HTML 编辑器允许匿名用户发表评论。 你应在用户将提交密码等敏感信息的情况下特别小心。 可能的恶意用户可以将发布包含右 JavaScript 的窃取密码的注释。
+例如，假设您要创建的博客应用程序。 在此情况下，最好使用 HTML 编辑器，在撰写博客文章时。 是唯一将提交一篇博客文章的人，并且有可能可以信任自己无法提交恶意 JavaScript。 但是，它不难理解时要使用 HTML 编辑器允许匿名用户发表评论。 您应在用户将提交敏感信息，如密码的情况下特别小心。 可能的恶意用户可以将发布包含适用于窃取密码右侧的 JavaScript 的注释。
 
 ## <a name="summary"></a>总结
 
-在本教程中，你已提供包括 AJAX 控件工具包中的 HTML 编辑器控件的简要概述。 您学习了如何使用 HTML 编辑器接受来自用户的丰富内容并将其提交到服务器的内容。 我们还讨论了如何自定义工具栏按钮显示由 HTML 编辑器中。 最后，您学习了如何避免跨站点脚本攻击时使用 HTML 编辑器接受潜在的恶意输入。
+在本教程中，你已提供了 AJAX 控件工具包中包含的 HTML 编辑器控件的简要概述。 您学习了如何使用 HTML 编辑器以接受来自用户的丰富内容并提交到服务器的内容。 我们还讨论了如何自定义工具栏按钮显示的 HTML 编辑器中。 最后，您学习了如何使用 HTML 编辑器接受潜在的恶意输入时，避免出现跨站点脚本攻击。
 
 > [!div class="step-by-step"]
 > [上一篇](how-do-i-use-the-html-editor-control-cs.md)

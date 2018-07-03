@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-9-the-shopping-cart
-title: ASP.NET MVC 店面一部分 9： 购物车 |Microsoft 文档
+title: ASP.NET MVC 店面第 9 部分： 购物车 |Microsoft Docs
 author: robconery
-description: 因此，他可以达到峰值，Rob Conery 可以简单购物车系统生成。
+description: Rob conery 专攻可以生成简单购物车系统，因此他可以达到峰值。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/27/2008
 ms.topic: article
 ms.assetid: 47d8a6e3-21de-4ac9-be5a-9f755c596529
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-9-the-shopping-cart
 msc.type: video
-ms.openlocfilehash: 905de3c5d44b18f2e24b93fc0027a27e7cd60ac5
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 3f4dfdef2ba0b4b6eca4cb30fe2f645d96c8a0d7
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871865"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37389355"
 ---
-<a name="aspnet-mvc-storefront-part-9-the-shopping-cart"></a>购物车的 ASP.NET MVC 店面一部分 9:
+<a name="aspnet-mvc-storefront-part-9-the-shopping-cart"></a>ASP.NET MVC 店面第 9 部分： 购物车
 ====================
-通过[窃取 Conery](https://github.com/robconery)
+通过[Rob conery 专攻](https://github.com/robconery)
 
-因此，他可以达到峰值，Rob Conery 可以简单购物车系统生成。
+Rob conery 专攻可以生成简单购物车系统，因此他可以达到峰值。
 
 [&#9654;观看视频 （28 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-9-the-shopping-cart)
 

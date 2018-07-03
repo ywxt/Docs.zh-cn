@@ -7,16 +7,15 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 02/01/2017
 ms.topic: article
-ms.prod: .net-framework
 ms.technology: dotnet-mvc
 ms.devlang: dotnet
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
-ms.openlocfilehash: 7a580c6c6236b375ea54ef4e9978fff6993d885a
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: fa010e795878b26c79dbe04ef0017373283c4269
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2018
-ms.locfileid: "29143184"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403008"
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>将 ASP.NET MVC 应用程序迁移到 Windows 容器
 
@@ -89,15 +88,15 @@ FROM microsoft/aspnet
 COPY ./bin/Release/PublishOutput/ /inetpub/wwwroot
 ```
 
-此 Dockerfile 中不含 `ENTRYPOINT` 命令。 不需要该命令。 运行 Windows Server 且 IIS，IIS 进程时，入口点，后者配置为在 aspnet 基本映像中启动。
+此 Dockerfile 中不含 `ENTRYPOINT` 命令。 不需要该命令。 运行 Windows Server 与 IIS，IIS 进程时，入口点，配置为 aspnet 基本映像中启动。
 
-运行 Docker 生成命令，创建运行 ASP.NET 应用程序的映像。 若要执行此操作，你的项目的目录中打开 PowerShell 窗口并键入以下命令在解决方案目录：
+运行 Docker 生成命令，创建运行 ASP.NET 应用程序的映像。 若要执行此操作，在你的项目的目录中打开 PowerShell 窗口并在解决方案目录中键入以下命令：
 
 ```console
 docker build -t mvcrandomanswers .
 ```
 
-此命令将生成新的映像使用 Dockerfile 中的说明命名 (-t 标记) 作为 mvcrandomanswers 映像。 这样做可能还会从 [Docker 中心](http://hub.docker.com)拉取基本映像，然后将应用程序添加到基本映像中。
+此命令将生成新映像使用 Dockerfile 中的说明命名 (-t 表示标记) 作为 mvcrandomanswers 映像。 这样做可能还会从 [Docker 中心](http://hub.docker.com)拉取基本映像，然后将应用程序添加到基本映像中。
 
 命令完成后，便可以运行 `docker images` 命令，查看有关新映像的信息：
 
@@ -118,7 +117,7 @@ docker run -d --name randomanswers mvcrandomanswers
 
 `-d` 参数告知 Docker 在分离模式下启动映像。 这意味着 Docker 映像会以断开连接当前 shell 的状态运行。
 
-在许多 docker 示例中，你可能会看到-p 要映射的容器和主机的端口。 默认 aspnet 映像已配置要在端口 80 上侦听，并将其公开的容器。 
+在多个 docker 示例中，可能会看到-p 来将容器和主机端口映射。 默认 aspnet 映像已配置要侦听端口 80 上并将其公开的容器。 
 
 `--name randomanswers` 为运行中容器命名。 可在大多数命令中使用此名称，而不是容器 ID。
 
@@ -127,7 +126,7 @@ docker run -d --name randomanswers mvcrandomanswers
 ## <a name="verify-in-the-browser"></a>在浏览器中验证
 
 > [!NOTE]
-> 当前的 Windows 容器版本中，您无法浏览到`http://localhost`。
+> 不能与当前的 Windows 容器版本中，浏览到`http://localhost`。
 > 这是 WinNAT 中的已知行为，今后将予以解决。 问题得到解决前，需要使用容器的 IP 地址。
 
 在容器启动后，查找其 IP 地址，以便可以从浏览器连接正在运行的容器：
@@ -137,7 +136,7 @@ docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" randomanswers
 172.31.194.61
 ```
 
-连接到正在运行的容器使用的 IPv4 地址，`http://172.31.194.61`在显示的示例。 在浏览器中键入该 URL，应该可看到正在运行的站点。
+连接到正在运行的容器使用的 IPv4 地址，`http://172.31.194.61`中所示的示例。 在浏览器中键入该 URL，应该可看到正在运行的站点。
 
 > [!NOTE]
 > 某 VPN 或代理软件可能会阻止你导航到站点。

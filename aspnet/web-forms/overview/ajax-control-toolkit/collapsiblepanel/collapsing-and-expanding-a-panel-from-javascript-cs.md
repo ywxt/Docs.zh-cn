@@ -1,77 +1,76 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-cs
-title: 展开和折叠的面板从 JavaScript (C#) |Microsoft 文档
+title: 折叠和展开面板从 JavaScript (C#) |Microsoft Docs
 author: wenz
-description: ASP.NET AJAX 控件工具包中的 CollapsiblePanel 控件扩展一个面板，并为它提供的功能折叠其内容，并将其展开...
+description: CollapsiblePanel 控件在 ASP.NET AJAX 控件工具包扩展一个面板，并为其提供的功能以折叠其内容并将其展开...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: de5500be-75e5-461a-8064-b70ae52ea6a4
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7baa3be7144946bde7d11afd9b1cb5f14ad9dede
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 85a9c6e6cc56cc563eefea6bc863950ba71149ba
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30875534"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37402751"
 ---
-<a name="collapsing-and-expanding-a-panel-from-javascript-c"></a>展开和折叠的面板从 JavaScript (C#)
+<a name="collapsing-and-expanding-a-panel-from-javascript-c"></a>折叠和展开面板从 JavaScript (C#)
 ====================
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/8/a/a/8aab3c3e-de6f-463f-805c-5fda567eef6e/CollapsiblePanel1.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/collapsiblepanel1CS.pdf)
 
-> ASP.NET AJAX 控件工具包中的 CollapsiblePanel 控件扩展一个面板，并为它提供的功能折叠其内容，并再次将其展开。 这两个操作也可以通过自定义 JavaScript 代码来触发。
+> CollapsiblePanel 控件在 ASP.NET AJAX 控件工具包扩展一个面板，并为其提供的功能折叠其内容，并再次将其展开。 也可以从自定义 JavaScript 代码触发这两个操作。
 
 
 ## <a name="overview"></a>概述
 
-ASP.NET AJAX 控件工具包中的 CollapsiblePanel 控件扩展一个面板，并为它提供的功能折叠其内容，并再次将其展开。 这两个操作也可以通过自定义 JavaScript 代码来触发。
+CollapsiblePanel 控件在 ASP.NET AJAX 控件工具包扩展一个面板，并为其提供的功能折叠其内容，并再次将其展开。 也可以从自定义 JavaScript 代码触发这两个操作。
 
 ## <a name="steps"></a>步骤
 
-首先，创建一个新的 ASP.NET 页并包括`ScriptManager`中`<form>`元素。 这将加载的 ASP.NET AJAX 库所需的控件工具包：
+首先，创建一个新的 ASP.NET 页面并将包含`ScriptManager`中`<form>`元素。 这将加载 ASP.NET AJAX 库所需控件工具包：
 
 [!code-aspx[Main](collapsing-and-expanding-a-panel-from-javascript-cs/samples/sample1.aspx)]
 
-然后，使用一些文本创建一个面板，因此，可以看见折叠/展开效果：
+然后，使用一些文本创建一个面板，以便可以看到展开/折叠效果：
 
 [!code-aspx[Main](collapsing-and-expanding-a-panel-from-javascript-cs/samples/sample2.aspx)]
 
-如你所见，面板将引用的 CSS 类用于 （现在基本上定义背景色和面板的宽度） 如下所示：
+正如您所看到的面板将引用的 CSS 类如下所示 （现在基本上是定义背景色和面板的宽度）：
 
 [!code-css[Main](collapsing-and-expanding-a-panel-from-javascript-cs/samples/sample3.css)]
 
-`CollapsiblePanelExtender`控件要求`TargetControlID`属性，以便该工具包知道哪个面板以折叠或展开发出请求后：
+`CollapsiblePanelExtender`控件需要`TargetControlID`属性，以便该工具包知道哪个面板可折叠或展开根据请求：
 
 [!code-aspx[Main](collapsing-and-expanding-a-panel-from-javascript-cs/samples/sample4.aspx)]
 
-遗憾的是，扩展程序当前未公开特定 API 的折叠或展开面板中，但某些未记录的方法都将执行。 首先，将三个 HTML 按钮添加到然后触发客户端 JavaScript 以折叠或展开面板中的内容的页面：
+遗憾的是，扩展器当前不会公开特定 API 的折叠或展开面板，但未记录的一些方法即可。 首先，将三个 HTML 按钮添加到页然后会触发客户端 JavaScript 以折叠或展开面板的内容：
 
 [!code-aspx[Main](collapsing-and-expanding-a-panel-from-javascript-cs/samples/sample5.aspx)]
 
-在客户端 JavaScript 代码 (入门`<script type="text/javascript">`)，则`$find()`方法需要使用访问`CollapsiblePanelExtender`。 `$find("cpe")` 将返回对它的引用。 从该处上，特定的方法将解决手头的任务。
+在客户端的 JavaScript 代码 (入门`<script type="text/javascript">`)，则`$find()`方法需要使用访问`CollapsiblePanelExtender`。 `$find("cpe")` 将返回对它的引用。 从此处，特定的方法将解决手头的任务。
 
-方法 （扩展） 中打开面板称为`_doOpen()`; 下面的代码实现`doOpen()`单击第一个按钮时调用的函数：
+该方法用于打开 （扩展） 名控制面板`_doOpen()`; 下面的代码实现`doOpen()`单击第一个按钮时调用的函数：
 
 [!code-javascript[Main](collapsing-and-expanding-a-panel-from-javascript-cs/samples/sample6.js)]
 
-用于关闭，或折叠面板，`_doClose()`方法需要执行。 因此当用户单击第二个按钮上时，调用下面的 JavaScript 代码：
+用于关闭，或折叠面板，`_doClose()`方法需要执行。 因此当用户单击第二个按钮上时，以下 JavaScript 代码调用：
 
 [!code-javascript[Main](collapsing-and-expanding-a-panel-from-javascript-cs/samples/sample7.js)]
 
-第三个按钮切换面板的状态： 从折叠到已展开，反之亦然。 `CollapsiblePanelExtender`公开`toggle()`后者执行具体的方法： 反转面板的状态。 但是还有另一种方法 (内部使用`toggle()`方法):`get_Collapsed()`方法`CollapsiblePanelExtender()`告诉我们是否折叠的面板。 根据此函数的返回值，面板为则可以展开 (`_doOpen()`方法) 或折叠 (`_doClose()`) 方法：
+第三个按钮切换面板的状态： 从折叠到已展开，反之亦然。 `CollapsiblePanelExtender`公开`toggle()`做到这一点的方法： 反转面板的状态。 但是还有另一种方法 (由在内部使用该`toggle()`方法):`get_Collapsed()`方法的`CollapsiblePanelExtender()`告诉我们是否折叠面板。 根据此函数的返回值，面板，则可以展开 (`_doOpen()`方法) 或折叠 (`_doClose()`) 方法：
 
 [!code-javascript[Main](collapsing-and-expanding-a-panel-from-javascript-cs/samples/sample8.js)]
 
 
-[![第三个按钮更改面板的状态： 从折叠到展开且后](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image2.png)](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image1.png)
+[![第三个按钮更改面板的状态： 从折叠到扩展和后端](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image2.png)](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image1.png)
 
-第三个按钮更改面板的状态： 从折叠到展开且后 ([单击以查看实际尺寸的图像](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image3.png))
+第三个按钮更改面板的状态： 从折叠到扩展和后端 ([单击此项可查看原尺寸图像](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [下一篇](collapsing-and-expanding-a-panel-from-javascript-vb.md)
