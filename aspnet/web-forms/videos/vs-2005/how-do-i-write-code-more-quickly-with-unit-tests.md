@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-write-code-more-quickly-with-unit-tests
-title: '[如何:]编写更快地使用单元测试的代码？ | Microsoft Docs'
+title: '[如何实现:]编写更快地使用单元测试的代码？ | Microsoft Docs'
 author: rick-anderson
-description: 在本视频中，我们了解如何进行单元测试可提高工作效率的缓动在调试过程。 我们可以看到 Visual Studio Team System 生成 u。 的方式...
+description: 在本视频中，我们了解如何 Unit Testing 可以提高效率，通过简化调试过程。 我们可以看到 Visual Studio Team System 如何生成 U....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/21/2007
 ms.topic: article
 ms.assetid: 4618499e-1925-414e-a432-16952bb967f4
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-write-code-more-quickly-with-unit-tests
 msc.type: video
-ms.openlocfilehash: e7eed90313ae8acd9b2f31e1e572cb24e04f41bd
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5ac8555fe1a1a0e2d620ad8f8b713ba22caa2ad1
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30895860"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37375893"
 ---
-<a name="how-do-i-write-code-more-quickly-with-unit-tests"></a>[如何:]编写更快地使用单元测试的代码？
+<a name="how-do-i-write-code-more-quickly-with-unit-tests"></a>[如何实现:]编写更快地使用单元测试的代码？
 ====================
 通过[Chris Menegay](https://twitter.com/CMenegay)
 
-在本视频中，我们了解如何进行单元测试可提高工作效率的缓动在调试过程。 我们可以看到 Visual Studio Team System 生成单元测试来自动执行正在调试，从而节省了您启动 Web 应用程序和执行任何所需步骤以手动执行相同的代码所需的时间的代码的方式。 单元测试的结果是可以更快地编写更可靠的代码。
+在本视频中，我们了解如何 Unit Testing 可以提高效率，通过简化调试过程。 我们可以看到 Visual Studio Team System 生成单元测试来自动执行正在调试，从而避免启动 Web 应用程序和执行手动执行相同的代码所需的任何步骤，所需的时间的代码的方式。 单元测试的结果是您可以更快地编写更可靠代码。
 
 [&#9654;观看视频 （8 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-write-code-more-quickly-with-unit-tests)
 

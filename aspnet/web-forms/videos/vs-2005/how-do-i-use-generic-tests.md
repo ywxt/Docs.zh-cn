@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-use-generic-tests
-title: '[如何:]使用一般测试？ | Microsoft Docs'
+title: '[如何实现:]使用一般测试？ | Microsoft Docs'
 author: rick-anderson
-description: 一般测试是包装并可为测试在 Visual Studio Team System 中的现有程序。 在此视频中，我们将看到演示如何...
+description: 一般测试是现有的程序，可以是包装，并可作为测试在 Visual Studio Team System。 在本视频中，我们看到的演示...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2007
 ms.topic: article
 ms.assetid: e129b2c2-8587-4ff1-b455-7f14cb28bcf9
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-use-generic-tests
 msc.type: video
-ms.openlocfilehash: 298173727f78731274fe10a77c532e366506c686
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 45663851fad23ff74996e839904a2601c5937f57
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30895001"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37361842"
 ---
-<a name="how-do-i-use-generic-tests"></a>[如何:]使用一般测试？
+<a name="how-do-i-use-generic-tests"></a>[如何实现:]使用一般测试？
 ====================
 通过[Chris Menegay](https://twitter.com/CMenegay)
 
-一般测试是包装并可为测试在 Visual Studio Team System 中的现有程序。 在本视频中，我们看到已包装的外壳程序接受从本测试环境中的输入的值的方式以及如何使用程序的输出值来确定测试是通过还是失败的演示。
+一般测试是现有的程序，可以是包装，并可作为测试在 Visual Studio Team System。 在本视频中，我们看到已包装的 shell 程序接受输入的值从我们的测试环境的方式以及如何使用该程序的输出值来确定是否在测试通过或失败的演示。
 
 [&#9654;观看视频 （5 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-generic-tests)
 

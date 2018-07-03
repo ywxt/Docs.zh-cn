@@ -1,25 +1,24 @@
 ---
 uid: mvc/pluralsight
-title: 从 Pluralsight MVC 视频培训 |Microsoft 文档
+title: 来自 Pluralsight 的 MVC 视频培训 |Microsoft Docs
 author: rick-anderson
-description: MVC 从 Pluralsight 此可用的视频培训视频培训将帮助你启动并运行使用 ASP.NET MVC。 它涵盖中设置一个开发的所有内容...
+description: 来自 Pluralsight 此免费视频培训的 MVC 视频培训将帮助你启动并运行使用 ASP.NET MVC。 它涵盖了从开发进行设置的所有内容...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/09/2011
 ms.topic: article
 ms.assetid: 87612fe1-258c-4f50-88d8-c3047dec3f14
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/pluralsight
 msc.type: content
-ms.openlocfilehash: 60f14176111ee7dbb2ddd2cc4af17d6df559654e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 94faa3b9026ff1ef34c16698de823566c809ea52
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26503886"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376318"
 ---
-<a name="mvc-video-training-from-pluralsight"></a>从 Pluralsight MVC 视频培训
+<a name="mvc-video-training-from-pluralsight"></a>来自 Pluralsight 的 MVC 视频培训
 ====================
 ### <a name="videos"></a>视频
 
@@ -33,13 +32,13 @@ ms.locfileid: "26503886"
 - [Web 开发人员工具和 Visual Studio 2013](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m8-visualstudio&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
 
 
-"为 Pluralsight 记录通过 k。 Scott Allen 本 MVC 5 课程提供能够快速掌握最新版本的 ASP.NET MVC 的绝佳方法。 Scott 的演示文稿样式可以轻松地遵循和从技术上讲极具吸引力，同时课程格式、 视频播放器和总体节奏确实很棒。 加上 – 它是免费的因此没有借口不了解 MVC 5 今天 ！"
+"K.Scott Allen Pluralsight 的记录此 MVC 5 课程提供快速掌握最新版本的 ASP.NET MVC 上的绝佳方法。 Scott 的演示文稿样式是可以轻松地遵循和从技术上讲极具吸引力，课程格式、 视频播放器和整体节奏是真的很棒。 此外-它是免费的因此没有理由不以立即了解 MVC 5 ！"
 
-Scott Guthrie、 执行副总裁、 Microsoft 云和企业组中 Microsoft
+Scott Guthrie 执行副总裁、 Microsoft Cloud and Enterprise 组中 Microsoft
 
 
-![pluralsight 徽标 playbutton](pluralsight/_static/image1.png)
+![pluralsight logo playbutton](pluralsight/_static/image1.png)
 
-解锁访问到 3000 + 开发，IT 和随时随地可以观看的创造性课程
+取消锁定其访问 3,000 + 开发人员，IT 和创造性随时随地可以观看的课程
 
-**开始 29 美元/密苏里州**[开始免费试用](https://pluralsight.com/microsoft/OLT/subscribe/Subscribe1.aspx?freetrial=true&planHint=Monthly&utm_source=microsoft&utm_medium=sponsored-page&utm_content=aspdotnet-mvc5-fundamentals&utm_campaign=microsoft-sponsored-course)[现在订阅](https://pluralsight.com/microsoft/olt/subscriptions.aspx?utm_source=microsoft&utm_medium=sponsored-page&utm_content=aspdotnet-mvc5-fundamentals&utm_campaign=microsoft-sponsored-course)
+**开始 29 美元/密苏里州**[开始免费试用版](https://pluralsight.com/microsoft/OLT/subscribe/Subscribe1.aspx?freetrial=true&planHint=Monthly&utm_source=microsoft&utm_medium=sponsored-page&utm_content=aspdotnet-mvc5-fundamentals&utm_campaign=microsoft-sponsored-course)[立即订阅](https://pluralsight.com/microsoft/olt/subscriptions.aspx?utm_source=microsoft&utm_medium=sponsored-page&utm_content=aspdotnet-mvc5-fundamentals&utm_campaign=microsoft-sponsored-course)

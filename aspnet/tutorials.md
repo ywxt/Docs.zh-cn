@@ -1,28 +1,27 @@
 ---
 uid: aspnet/tutorials
-title: ASP.NET 教程 |Microsoft 文档
+title: ASP.NET 教程 |Microsoft Docs
 author: tdykstra
-description: 有关在开发 ASP.NET 应用程序的分步指南的列表。
+description: 用于开发 ASP.NET 应用程序的分步指南的列表。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/17/2012
 ms.topic: article
 ms.assetid: fddf8e5e-c055-4f81-b691-78deef871112
 ms.technology: ''
-ms.prod: .net-framework
-ms.openlocfilehash: 704285fe06e2ece0f6afdc117aedf98f6155ef87
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7929a06fd7857237c2529aca34d36564c2a89f82
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28036760"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37389607"
 ---
 # <a name="aspnet-tutorials"></a>ASP.NET 教程
 
-以下分步指南用于开发 ASP.NET 应用程序都可用。
+下面的分步指南，用于开发 ASP.NET 应用程序都可用。
 
 > [!NOTE]
-> 查找 ASP.NET Core 教程？  找到它们[此处](https://docs.microsoft.com/aspnet/core/tutorials/)。
+> 查找有关 ASP.NET Core 教程？  找到它们[此处](https://docs.microsoft.com/aspnet/core/tutorials/)。
 
 ## <a name="web-forms"></a>Web Forms — Web 窗体
 
@@ -48,7 +47,7 @@ ms.locfileid: "28036760"
 
 ## <a name="mvc"></a>MVC
 
-* [ASP.NET MVC 5 入门](mvc/overview/getting-started/introduction/index.md)
+* [ASP.NET MVC 5 入门 ](mvc/overview/getting-started/introduction/index.md)
 * [通过 MVC 5 开始使用 EF 6](mvc/overview/getting-started/getting-started-with-ef-using-mvc/index.md)
 * [使用 ASP.NET MVC 实现 EF Database First](mvc/overview/getting-started/database-first-development/index.md)
 * [在 ASP.NET MVC 中使用 Page Inspector](mvc/overview/views/using-page-inspector-in-aspnet-mvc.md)

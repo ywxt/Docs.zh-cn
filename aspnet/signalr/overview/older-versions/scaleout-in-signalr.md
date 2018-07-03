@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/older-versions/scaleout-in-signalr
-title: 简介中 SignalR 的向外缩放 1.x |Microsoft 文档
+title: SignalR 的横向扩展简介 1.x |Microsoft Docs
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,42 +9,41 @@ ms.date: 04/29/2013
 ms.topic: article
 ms.assetid: 3fd9f11c-799b-4001-bd60-1e70cfc61c19
 ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/scaleout-in-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: ee3384046bf8a0f363aa6801d7a46f68b2bf125a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a492eabfb5a74472b44095f24704028f6cd8a12a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28043741"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37375216"
 ---
-<a name="introduction-to-scaleout-in-signalr-1x"></a>简介中 SignalR 的向外缩放 1.x
+<a name="introduction-to-scaleout-in-signalr-1x"></a>SignalR 的横向扩展简介 1.x
 ====================
 通过[Mike Wasson](https://github.com/MikeWasson)， [Patrick Fletcher](https://github.com/pfletcher)
 
-一般情况下，有两种方法来扩展 web 应用程序：*向上扩展*和*向外扩展*。
+一般情况下，有两种方法来缩放 web 应用程序：*纵向*并*横向扩展*。
 
-- 使用更多 RAM、 Cpu、 等使用更大的服务器 （或较大的 VM） 的方式向上扩展。
-- 扩展意味着添加更多服务器以处理负载。
+- 扩展方法中使用更大的服务器 （或更大的 VM） 更多 RAM、 Cpu，等等。
+- 横向扩展意味着添加更多服务器来处理负载。
 
-向上扩展的问题是你快速命中了机的大小限制。 除此之外，你需要向外扩展。但是，当你向外扩展，客户端可以获取路由到不同的服务器。 连接到一台服务器的客户端不会收到从另一台服务器发送的消息。
+向上扩展的问题是，您很快就按下计算机的大小限制。 除此之外，您需要向外扩展。但是，当向外扩展，客户端可以将路由到不同的服务器。 连接到一个服务器的客户端不会收到从另一台服务器发送的消息。
 
 ![](scaleout-in-signalr/_static/image1.png)
 
-一种解决方案是将使用名为的组件，在服务器之间的消息转发*底板*。 启用底板，每个应用程序实例将消息发送到底板，与底板将其转发给其他应用程序实例。 （在电子行业，底板是并行的连接器的组。 打比方，SignalR 基架连接多个服务器。）
+一种解决方案是使用名为的组件的服务器之间转发消息*底板*。 使用启用了基架，每个应用程序实例将消息发送到底板，并底板将其转发到其他应用程序实例。 （在电子设备底板是并行的连接器组。 通过类推，SignalR 基架连接多个服务器。）
 
 ![](scaleout-in-signalr/_static/image2.png)
 
 SignalR 目前提供三个背板：
 
-- **Azure Service Bus**。 Service Bus 是允许组件按松散耦合的方式发送消息的消息传递基础结构。
-- **Redis**。 Redis 是一个内存中键 / 值存储。 Redis 支持发布/订阅 ("pub/sub") 模式，用于将消息发送。
-- **SQL Server**。 SQL Server 底板将消息写入 SQL 表。 底板为有效的消息传递使用 Service Broker。 但是，它还适用如果未启用 Service Broker。
+- **Azure 服务总线**。 服务总线是允许组件以松散耦合的方式发送消息的消息传送基础结构。
+- **Redis**。 Redis 是内存中键 / 值存储。 Redis 支持发布/订阅 （"发布/订阅"） 模式，用于发送消息。
+- **SQL Server**。 SQL Server 底板将消息写入 SQL 表。 基架使用 Service Broker 为有效的消息传递。 但是，它还适用如果未启用 Service Broker。
 
-如果你部署 Azure 上的应用程序，请考虑使用 Azure Service Bus 底板。 如果将部署到你自己的服务器场，请考虑 SQL Server 或 Redis 背板。
+如果部署 Azure 上的应用程序，请考虑使用 Azure 服务总线背板。 如果您要部署到服务器场，请考虑 SQL Server 或 Redis 背板。
 
-以下主题包含针对每个底板的分步教程：
+以下主题包含针对每个基架的分步教程：
 
 - [使用 Azure 服务总线的 SignalR 横向扩展](scaleout-with-windows-azure-service-bus.md)
 - [使用 Redis 的 SignalR 横向扩展](scaleout-with-redis.md)
@@ -52,24 +51,24 @@ SignalR 目前提供三个背板：
 
 ## <a name="implementation"></a>实现
 
-在 SignalR 通过消息总线发送每条消息。 消息总线实现[IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx)接口，从而提供发布/订阅抽象。 通过替换默认的工作的底板**IMessageBus**含总线为该底板设计的。 例如，Redis 消息总线是[RedisMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx)，并使用 Redis [pub/sub](http://redis.io/topics/pubsub)机制来发送和接收消息。
+在 SignalR 中，通过消息总线发送每条消息。 消息总线实现[IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx)接口，它提供了发布/订阅抽象。 通过替换默认的工作的底板来**IMessageBus**设计为对该底板总线。 例如，是适用于 Redis 消息总线[RedisMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx)，并使用 Redis [pub/sub](http://redis.io/topics/pubsub)机制来发送和接收消息。
 
-每个服务器实例连接到通过总线底板。 发送一条消息，它将转到面板，并底板将其发送到每个服务器。 当服务器从底板获取一条消息时，它会在其本地缓存中将该消息。 服务器然后将从其本地缓存消息传送到客户端。
+每个服务器实例连接到总线通过基架。 发送一条消息后，转到基架，并底板将其发送到每个服务器。 当服务器从底板获取一条消息时，它将该消息放在其本地缓存中。 服务器然后将其本地缓存中的消息传送到客户端。
 
-对于每个客户端连接，在读取消息流的客户端的进度被跟踪使用游标。 （游标表示消息流中的位置。）如果客户端断开连接并重新连接，但它会将总线要求提供任何客户端的光标在值后到达的消息。 连接使用时，会发生情况同样[长轮询](../getting-started/introduction-to-signalr.md#transports)。 长时轮询请求完成后，客户端将打开一个新连接，并请求到达光标位置后的消息。
+对于每个客户端连接，在读取消息流中的客户端的进度进行跟踪使用游标。 （游标表示的消息流中的位置。）如果客户端断开连接，然后重新连接，它会请求到达后客户端的游标值的任何消息总线。 连接使用时，会发生相同的操作[长轮询](../getting-started/introduction-to-signalr.md#transports)。 长时轮询请求完成后，客户端打开新连接，并请求到达光标位置后的消息。
 
-光标机制的工作方式即使客户端路由到不同的服务器上重新连接。 底板已意识到所有服务器，并且它并不重要的客户端连接到哪一台服务器。
+游标机制的工作即使客户端路由到不同的服务器上重新连接。 底板可以识别的所有服务器和客户端连接到哪个服务器无关紧要。
 
 ## <a name="limitations"></a>限制
 
-使用基架，则是低于客户端直接与单个服务器节点通信时的最大消息吞吐量。 这是因为底板将转发到每个节点，每条消息，因此底板可能成为瓶颈。 这一限制是否是问题取决于应用程序。 例如，下面是一些典型的 SignalR 方案：
+使用基架，最大消息吞吐量低于客户端直接与单个服务器节点进行通信时，它是。 这是因为底板将转发到每个节点，每条消息，因此底板可能成为瓶颈。 此限制是否是一个问题取决于应用程序。 例如，下面是一些典型的 SignalR 方案：
 
-- [服务器广播](tutorial-server-broadcast-with-aspnet-signalr.md)（例如，股票行情）： 背板很适合此方案中，因为该服务器控制速率发送消息的速率。
-- [客户端到客户端](tutorial-getting-started-with-signalr.md)（如聊天）： 在此方案中，底板可能成为瓶颈如果的消息数会随着客户端的数量; 也就是说，如果消息的速率增长按比例随着越来越多的客户端将加入。
-- [高频率实时](tutorial-high-frequency-realtime-with-signalr.md)（例如，实时游戏）： 底板不建议用于此方案。
+- [服务器广播](tutorial-server-broadcast-with-aspnet-signalr.md)（例如，股票行情）： 背板适合此方案中，因为服务器控制发送消息的速率。
+- [客户端到客户端](tutorial-getting-started-with-signalr.md)（如聊天）： 在此方案中，基架可能如果成为瓶颈的消息数会随着客户端的数量; 即，如果消息的速率增长按比例更多客户端将加入。
+- [高频率实时功能](tutorial-high-frequency-realtime-with-signalr.md)（例如，实时游戏）： 底板不建议用于此方案。
 
-## <a name="enabling-tracing-for-signalr-scaleout"></a>启用跟踪的 SignalR 扩展
+## <a name="enabling-tracing-for-signalr-scaleout"></a>为的 SignalR 横向扩展启用跟踪
 
-若要启用跟踪背板，请将以下各节添加到 web.config 文件中，根下**配置**元素：
+若要启用的底板来跟踪，请将以下各节添加到 web.config 文件中，根下**配置**元素：
 
 [!code-html[Main](scaleout-in-signalr/samples/sample1.html)]
