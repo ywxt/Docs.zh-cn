@@ -5,18 +5,22 @@ description: ''
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 3c418cc4e331ad19b0ec1be3207fa2cc44bef041
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 4e0bcffd1162681aa4d31c4fe74acac5a7e981f1
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275662"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093122"
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>ASP.NET Core MVC 和 Entity Framework Core - 第 1 个教程，共 10 个教程
 
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
+
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE [RP better than MVC](../../includes/RP-EF/rp-over-mvc.md)]
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc.md)]
 
 Contoso 大学示例 web 应用程序演示如何使用 Entity Framework (EF) Core 2.0 和 Visual Studio 2017 创建 ASP.NET Core 2.0 MVC web 应用程序。
 
@@ -31,7 +35,7 @@ EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 �
 
 ## <a name="prerequisites"></a>系统必备
 
-[!INCLUDE [](~/includes/net-core-prereqs.md)]
+[!INCLUDE [](~/includes/net-core-prereqs.md) [](~/includes/net-core-prereqs.md)]
 
 ## <a name="troubleshooting"></a>疑难解答
 
@@ -104,7 +108,7 @@ EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 �
 
 若要为项目添加 EF Core 支持，需要安装相应的数据库驱动包。 本教程使用 SQL Server，相关驱动包[Microsoft.EntityFrameworkCore.SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/)。 该包包含在 [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) 包中，因此不需要手动安装。
 
-此包和其依赖项 (`Microsoft.EntityFrameworkCore` 和 `Microsoft.EntityFrameworkCore.Relational`) 一起提供 EF 的运行时支持。 你将在之后的 [迁移](migrations.md) 教程中学习添加工具包。 
+此包和其依赖项 (`Microsoft.EntityFrameworkCore` 和 `Microsoft.EntityFrameworkCore.Relational`) 一起提供 EF 的运行时支持。 你将在之后的 [迁移](migrations.md) 教程中学习添加工具包。
 
 有关其他可用于 EF Core 的数据库驱动的信息，请参阅 [数据库驱动](https://docs.microsoft.com/ef/core/providers/)。
 
@@ -358,6 +362,8 @@ Web 服务器的可用线程是有限的，而在高负载情况下的可能所�
 ## <a name="summary"></a>总结
 
 你现在已创建了一个使用 Entity Framework Core 和 SQL Server Express LocalDB 来存储和显示数据的简单应用程序。 在下一个教程中，你将学习如何执行基本的 CRUD （创建、 读取、 更新、 删除） 操作。
+
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [下一篇](crud.md)

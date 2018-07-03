@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: 601d6ac2cb373c40fb1de5427b0ea6c299fa1f32
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9d7d4d49dbb55e327a208df99a0e3ca744de8609
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36296744"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077743"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor 页面介绍
 
@@ -31,7 +31,7 @@ Razor 页面是 ASP.NET Core MVC 的一个新特性，它可以使基于页面�
 
 ## <a name="creating-a-razor-pages-project"></a>创建 Razor 页面项目
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 请参阅 [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)，获取关于如何使用 Visual Studio 创建 Razor 页面项目的详细说明。
 
@@ -53,7 +53,7 @@ Razor 页面是 ASP.NET Core MVC 的一个新特性，它可以使基于页面�
 
 在 Visual Studio for Mac 中打开生成的 .csproj 文件。
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code) 
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -69,7 +69,7 @@ Razor 页面是 ASP.NET Core MVC 的一个新特性，它可以使基于页面�
 
 ::: moniker-end
 
-# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli) 
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -295,7 +295,17 @@ services.AddMvc()
 
 让我们使用其中的一些功能来整理此页面。
 
+::: moniker range=">= aspnetcore-2.1"
+
+向 Pages/Shared/_Layout.cshtml 添加[布局页面](xref:mvc/views/layout)：
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
 向 Pages/_Layout.cshtml 添加[布局页面](xref:mvc/views/layout)：
+
+::: moniker-end
 
 [!code-cshtml[](index/sample/RazorPagesContacts2/Pages/_LayoutSimple.cshtml)]
 
@@ -310,7 +320,19 @@ services.AddMvc()
 
 [!code-cshtml[](index/sample/RazorPagesContacts2/Pages/_ViewStart.cshtml)]
 
+::: moniker range=">= aspnetcore-2.1"
+
+布局位于 Shared/Pages 文件夹中。 页面按层次结构从当前页面的文件夹开始查找其他视图（布局、模板、分区）。 可以从 Pages 文件夹下的任意 Razor 页面使用 Shared/Pages 文件夹中的布局。
+
+布局文件应位于 Pages/Shared 文件夹中。
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
 布局位于“页面”文件夹中。 页面按层次结构从当前页面的文件夹开始查找其他视图（布局、模板、分区）。 可以从“页面”文件夹下的任意 Razor 页面使用“页面”文件夹中的布局。
+
+::: moniker-end
 
 建议不要将布局文件放在“视图/共享”文件夹中。 视图/共享 是一种 MVC 视图模式。 Razor 页面旨在依赖文件夹层次结构，而非路径约定。
 
