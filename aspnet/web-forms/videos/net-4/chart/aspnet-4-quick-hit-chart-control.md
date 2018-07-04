@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/net-4/chart/aspnet-4-quick-hit-chart-control
-title: 图表控件 |Microsoft 文档
+title: 图表控件 |Microsoft Docs
 author: JoeStagner
-description: 在此视频中，你将学习如何使用 ASP.NET 图表控件来创建简单、 直观，编写和极具视觉表现力的图表。
+description: 在本视频中，您将学习如何使用 ASP.NET 图表控件创建简单、 直观和极具视觉表现力的图表。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/05/2009
 ms.topic: article
 ms.assetid: b93334e7-2167-4efb-a92d-e0ef5d98ac06
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/chart/aspnet-4-quick-hit-chart-control
 msc.type: video
-ms.openlocfilehash: a9c63938c00fb144b9223b6bf68024aecf5aa83f
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 4a84ff0b4c63dcffd31ea780bc2b9a27b5d9b01e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30884816"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37394936"
 ---
 <a name="aspnet-4-quick-hit---chart-control"></a>ASP.NET 4"快速 Hit"的图表控件
 ====================
-通过[Joe stagner 将](https://github.com/JoeStagner)
+通过[Joe Stagner](https://github.com/JoeStagner)
 
-在此视频中，你将学习如何使用 ASP.NET 图表控件来创建简单、 直观，编写和极具视觉表现力的图表。 
+在本视频中，您将学习如何使用 ASP.NET 图表控件创建简单、 直观和极具视觉表现力的图表。 
 
 [&#9654;观看视频 （2 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-chart-control)
 
