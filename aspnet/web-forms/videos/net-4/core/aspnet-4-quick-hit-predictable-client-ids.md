@@ -1,33 +1,32 @@
 ---
 uid: web-forms/videos/net-4/core/aspnet-4-quick-hit-predictable-client-ids
-title: 可预测的客户端 Id |Microsoft 文档
+title: 可预测的客户端 Id |Microsoft Docs
 author: JoeStagner
-description: 在此视频中你将了解 ClientIDMode 属性，它可让你指定更确切地说如何的客户端 ID 生成的控件。
+description: 在此视频中您将学习如何 ClientIDMode 属性，这允许您指定更准确地说如何的客户端 ID 生成的控件。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/11/2009
 ms.topic: article
 ms.assetid: 1a5db019-2349-49fa-a750-53f8f26f94b3
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/core/aspnet-4-quick-hit-predictable-client-ids
 msc.type: video
-ms.openlocfilehash: ebcf97b03a11a4310016dbaed734aa007c016acf
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 9b4fce981adb3a4db875d328d7670196a6a9ea22
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30884751"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364512"
 ---
-<a name="aspnet-4-quick-hit---predictable-client-ids"></a><span data-ttu-id="d29f5-103">ASP.NET 4"快速命中"的可预测的客户端 Id</span><span class="sxs-lookup"><span data-stu-id="d29f5-103">ASP.NET 4 "Quick Hit" - Predictable Client IDs</span></span>
+<a name="aspnet-4-quick-hit---predictable-client-ids"></a><span data-ttu-id="69451-103">ASP.NET 4"快速命中"的可预测的客户端 Id</span><span class="sxs-lookup"><span data-stu-id="69451-103">ASP.NET 4 "Quick Hit" - Predictable Client IDs</span></span>
 ====================
-<span data-ttu-id="d29f5-104">通过[Joe stagner 将](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="d29f5-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="69451-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="69451-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="d29f5-105">在此视频中你将了解 ClientIDMode 属性，它可让你指定更确切地说如何的客户端 ID 生成的控件。</span><span class="sxs-lookup"><span data-stu-id="d29f5-105">In this video you will learn about the ClientIDMode property, which lets you specify more precisely how the client ID is generated for controls.</span></span> 
+<span data-ttu-id="69451-105">在此视频中您将学习如何 ClientIDMode 属性，这允许您指定更准确地说如何的客户端 ID 生成的控件。</span><span class="sxs-lookup"><span data-stu-id="69451-105">In this video you will learn about the ClientIDMode property, which lets you specify more precisely how the client ID is generated for controls.</span></span> 
 
-[<span data-ttu-id="d29f5-106">&#9654;观看视频 （10 分钟）</span><span class="sxs-lookup"><span data-stu-id="d29f5-106">&#9654; Watch video (10 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-predictable-client-ids)
+[<span data-ttu-id="69451-106">&#9654;观看视频 （10 分钟）</span><span class="sxs-lookup"><span data-stu-id="69451-106">&#9654; Watch video (10 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-predictable-client-ids)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="d29f5-107">[上一页](aspnet-4-quick-hit-clean-webconfig-files.md)
-> [下一页](aspnet-4-quick-hit-the-htmlencoder-utility-method.md)</span><span class="sxs-lookup"><span data-stu-id="d29f5-107">[Previous](aspnet-4-quick-hit-clean-webconfig-files.md)
+> <span data-ttu-id="69451-107">[上一页](aspnet-4-quick-hit-clean-webconfig-files.md)
+> [下一页](aspnet-4-quick-hit-the-htmlencoder-utility-method.md)</span><span class="sxs-lookup"><span data-stu-id="69451-107">[Previous](aspnet-4-quick-hit-clean-webconfig-files.md)
 [Next](aspnet-4-quick-hit-the-htmlencoder-utility-method.md)</span></span>
