@@ -1,29 +1,28 @@
 ---
 uid: web-pages/videos/aspnet-razor-pages/displaying-data-in-a-chart-part-2
-title: 在图表 （第 2 部分） 中显示数据 |Microsoft 文档
+title: 在图表 （第 2 部分） 中显示数据 |Microsoft Docs
 author: JoeStagner
-description: 显示数据中的图表 (第 2 部分) 教程的视频伴奏
+description: 显示数据在图表 (第 2 部分) 的教程中的视频伴奏
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2011
 ms.topic: article
 ms.assetid: f28e8c8e-5e0f-4bc3-af69-2e6e18a6d100
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages/displaying-data-in-a-chart-part-2
 msc.type: video
-ms.openlocfilehash: 90646cf8b9874f0a8ede1133eb2aa555bc417eac
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: d4f25606c155faa943910d1ef0ac869f39d8209c
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30895838"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37391701"
 ---
 <a name="displaying-data-in-a-chart-part-2"></a>在图表 （第 2 部分） 中显示数据
 ====================
-通过[Joe stagner 将](https://github.com/JoeStagner)
+通过[Joe Stagner](https://github.com/JoeStagner)
 
-显示数据中的图表 (第 2 部分) 教程的视频伴奏
+显示数据在图表 (第 2 部分) 的教程中的视频伴奏
 
 [&#9654;观看视频 （9 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/displaying-data-in-a-chart-part-2)
 

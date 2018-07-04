@@ -1,35 +1,34 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment
-title: 用于 Web 部署配置服务器环境 |Microsoft 文档
+title: 配置用于 Web 部署的服务器环境 |Microsoft Docs
 author: jrjlee
-description: 本教程将演示如何设置支持一次单击，或自动、 网站部署和如何在各种不同 scen 中的发布的服务器环境...
+description: 本教程将演示如何设置支持一次单击，或自动、 网站部署和发布各种不同方案中的服务器环境...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
 ms.topic: article
 ms.assetid: 0bf0959b-4ca8-45de-bd13-b15347543b5a
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: ff6118be618a170ac76d66a9de24a7b5cc2d840a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 520239c926b853b91638ed2687daebfb561fb99a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30892291"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37365265"
 ---
-<a name="configuring-server-environments-for-web-deployment"></a>用于 Web 部署配置服务器环境
+<a name="configuring-server-environments-for-web-deployment"></a>配置用于 Web 部署的服务器环境
 ====================
 通过[Jason Lee](https://github.com/jrjlee)
 
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> 本教程将演示如何设置支持一次单击，或自动、 网站部署和如何在各种不同方案中的发布的服务器环境。 本教程包括主题，以指导您完成各种任务，例如，配置 web 服务器以支持特定的方法来部署和设置 Web Farm Framework (WFF) 服务器场中，以及提供的基于方案的概述更高级别的端到端指南。
+> 本教程将演示如何设置支持一次单击，或自动、 网站部署和发布各种不同方案中的服务器环境。 本教程包括主题向您逐步完成各种任务，如配置 web 服务器以支持部署和设置 Web Farm Framework (WFF) 服务器场中，提供的基于方案的概述以及特定方法更高级别的的端到端指南。
 > 
-> 本教程使用 Fabrikam，Inc.部署方案中所述[企业 Web 部署： 方案概述](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)作为示例和网络基础结构的引用点。
+> 本教程使用 Fabrikam，Inc.部署方案中所述[企业 Web 部署： 方案概述](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)有关示例和网络基础结构的参考点。
 > 
-> 这些教程的意大利语翻译，请访问[ http://www.lucamorelli.it ](http://www.lucamorelli.it)。
+> 这些教程意大利语翻译，请访问[ http://www.lucamorelli.it ](http://www.lucamorelli.it)。
 
 
 本教程包括以下主题：
@@ -45,29 +44,29 @@ ms.locfileid: "30892291"
 - [使用 Web Farm Framework 创建服务器场](creating-a-server-farm-with-the-web-farm-framework.md)
 - [配置目标环境的部署属性](configuring-deployment-properties-for-a-target-environment.md)
 
-第一个主题，[选择用于 Web 部署的右方法](choosing-the-right-approach-to-web-deployment.md)，描述可用于发布 web 应用程序通过使用 Internet 信息服务 (IIS) Web 部署工具 （Web 部署） 的主要方式 2.0。 它还标识映射到每种方法的方案。 从此处，每个方案主题提供你需要完成的任务的高级概述，并确定你将需要通过工作，以便帮助你完成这些任务的主题。
+第一个主题[选择右方法对 Web 部署](choosing-the-right-approach-to-web-deployment.md)，介绍主要方法可用于发布 web 应用程序通过使用 Internet 信息服务 (IIS) Web 部署工具 （Web 部署） 2.0。 它还标识将映射到每种方法的方案。 从此处，每个方案主题提供所需完成的任务的高级概述，并标识你将需要通过工作，以帮助您完成这些任务的主题。
 
-如果你使用的拆分项目文件方法中所述[了解该生成过程](../web-deployment-in-the-enterprise/understanding-the-build-process.md)生成和部署你的解决方案的最后一个主题，[将部署属性配置为目标环境](configuring-deployment-properties-for-a-target-environment.md)，描述如何配置以部署到不同的目标环境的特定于环境的项目文件。
+如果您正使用拆分项目文件方法中所述[了解构建过程](../web-deployment-in-the-enterprise/understanding-the-build-process.md)生成和部署你的解决方案，最后一个主题，[为目标环境配置部署属性](configuring-deployment-properties-for-a-target-environment.md)，介绍如何配置部署到不同目标环境的特定于环境的项目文件。
 
-## <a name="key-technologies"></a>主要的技术
+## <a name="key-technologies"></a>关键技术
 
-本教程重点介绍如何使用这些产品和技术支持 web 部署：
+本教程重点介绍如何使用这些产品和技术来支持 web 部署：
 
 - IIS 7.5
 - Web 部署 2.x
 - WFF 2.x
 - IIS Web 管理服务 (WMSvc)
 
-本教程还涉及使用 Windows Server 2008 R2、 SQL Server 2008 R2、 ASP.NET 4.0 和 ASP.NET MVC 3。
+本教程还涉及使用 Windows Server 2008 R2、 SQL Server 2008 R2、 ASP.NET 4.0 中，和 ASP.NET MVC 3。
 
-## <a name="other-tutorials-in-this-series"></a>在本系列中其他教程
+## <a name="other-tutorials-in-this-series"></a>本系列中的其他教程
 
-它在企业级 web 部署构成的五个教程系列中的一部分。 这些是序列中的其他教程：
+这在企业级 web 部署窗体的一系列五个教程的一部分。 以下是其他教程系列中：
 
-- [部署在企业方案中的 Web 应用程序](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)。 本介绍性内容的系列教程提供上下文的背景。 描述该教程的方案，以及它阐释了任务和在整个系列所述的演练如何适应更广泛的应用程序生命周期管理 (ALM) 过程。
-- [Web 部署在企业中的](../web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md)。 本教程提供 Microsoft Build Engine (MSBuild) 项目文件的概念介绍、 Web 发布管道、 Web 部署和其他相关的技术。 它还说明了如何使用这些工具在一起来管理复杂部署进程。
-- [用于 Web 部署配置 Team Foundation Server](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md)。 本教程介绍如何配置 Team Foundation Server (TFS) 以支持各种部署方案，包括作为持续集成 (CI) 过程的一部分的自动的部署和手动触发的特定生成的部署。
-- [高级企业级 Web 部署](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md)。 本教程介绍如何完成各种更高级的部署任务，如自定义数据库部署为多个环境、 从部署中排除文件和文件夹以及在部署过程中将 web 应用程序脱机.
+- [部署 Web 应用程序在企业方案中的](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)。 此介绍性内容提供了为系列教程的上下文的背景。 它描述了教程的方案，并说明了任务和演练所述在整个系列如何适应更广泛的应用程序生命周期管理 (ALM) 过程。
+- [Web 部署在企业中的](../web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md)。 本教程提供了 Microsoft Build Engine (MSBuild) 项目文件的概念介绍，Web 发布管道、 Web 部署和其他相关的技术。 它介绍了如何使用这些工具一起管理复杂部署过程。
+- [配置用于 Web 部署的 Team Foundation Server](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md)。 本教程介绍如何配置 Team Foundation Server (TFS) 以支持多种部署方案，包括持续集成 (CI) 过程的一部分的自动的部署和手动触发部署的特定版本。
+- [高级企业 Web 部署](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md)。 本教程介绍如何完成各种更高级的部署任务，如自定义数据库部署为多个环境中，从部署中排除文件和文件夹和在部署过程中将 web 应用程序脱机.
 
 > [!div class="step-by-step"]
 > [下一篇](choosing-the-right-approach-to-web-deployment.md)

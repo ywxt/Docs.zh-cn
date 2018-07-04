@@ -5,12 +5,12 @@ description: 本教程演示如何使用外部身份验证提供程序通过 OAu
 ms.author: riande
 ms.date: 11/01/2016
 uid: security/authentication/social/index
-ms.openlocfilehash: 58045504ce4588f854428273273d3ea8f181e12e
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: b3fbd98215537fad7b283d1bf96ebd259e0b980a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277993"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37366270"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core 中的 Facebook、Google 和外部提供程序身份验证
 
@@ -57,11 +57,12 @@ OAuth 2.0 需要使用 SSL 通过 HTTPS 协议进行身份验证。
 
 ## <a name="use-secretmanager-to-store-tokens-assigned-by-login-providers"></a>使用 SecretManager 存储登录提供程序分配的令牌
 
-社交登录提供程序在注册过程中分配“应用程序 ID”和“应用程序机密”（确切命名因提供程序而异）。
+社交登录提供程序在注册过程中分配“应用程序 ID”和“应用程序机密”。 确切的令牌名称因提供程序而异。 这些令牌代表应用用来访问其 API 的凭据。 令牌构成“机密”，可利用[机密管理器](xref:security/app-secrets#secret-manager)将其链接到应用配置。 机密管理器是在配置文件（例如 appsettings.json）中存储令牌更安全替代方法。
 
-这些值实际上是应用程序用于访问其 API 的“用户名”和“密码”，它们组成的“机密”可在“机密管理器”的帮助下链接到应用程序配置，而不是直接存储在配置文件中或被硬编码。
+> [!IMPORTANT]
+> 机密管理器仅用于开发目的。 可使用 [Azure Key Vault 配置提供程序](xref:security/key-vault-configuration)存储和保护 Azure 测试和生产机密。
 
-按照[在 ASP.NET Core 中进行开发期间安全存储应用机密](xref:security/app-secrets)主题中的步骤进行操作，以便可以存储以下每个登录提供程序分配的令牌。
+按照[在 ASP.NET Core 中进行开发期间安全存储应用机密](xref:security/app-secrets)主题中的步骤进行操作，以便存储以下每个登录提供程序分配的令牌。
 
 ## <a name="setup-login-providers-required-by-your-application"></a>应用程序所需的安装登录提供程序
 

@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-tune-web-application-performance-with-profiling
-title: '[如何:]优化并启用分析功能的 Web 应用程序性能？ | Microsoft Docs'
+title: '[如何实现:]优化并启用分析功能的 Web 应用程序性能？ | Microsoft Docs'
 author: rick-anderson
-description: 我们在本视频中了解 Visual Studio Team System 提供的分析 Web 应用程序的两种方法： 采样和检测。 检测 inje...
+description: 在本视频中，我们了解 Visual Studio Team System 提供的 Web 应用程序进行分析的两种方法： 采样和检测。 检测 inje...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/01/2007
 ms.topic: article
 ms.assetid: ee916787-dbf2-45c5-a1e7-3b2b5862a94b
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-tune-web-application-performance-with-profiling
 msc.type: video
-ms.openlocfilehash: 9f2f600cee45e85408891f9e452d3e230d4af905
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5b136529b10b409b1f21c3e358a655ef2dd536fd
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30893789"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37378522"
 ---
-<a name="how-do-i-tune-web-application-performance-with-profiling"></a>[如何:]优化并启用分析功能的 Web 应用程序性能？
+<a name="how-do-i-tune-web-application-performance-with-profiling"></a>[如何实现:]优化并启用分析功能的 Web 应用程序性能？
 ====================
 通过[Chris Menegay](https://twitter.com/CMenegay)
 
-我们在本视频中了解 Visual Studio Team System 提供的分析 Web 应用程序的两种方法： 采样和检测。 检测插入标记中的基础代码，以便开发人员可以查看完整的应用程序的执行，包括调用关系树和对象分配，以帮助优化应用程序的性能的详细信息。
+在本视频中，我们了解 Visual Studio Team System 提供的 Web 应用程序进行分析的两种方法： 采样和检测。 检测注入的基础代码中的标记，以便开发人员可以查看应用程序的执行，包括调用树和对象分配，以帮助优化应用程序性能的完整详细信息。
 
 [&#9654;观看视频 （8 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-tune-web-application-performance-with-profiling)
 

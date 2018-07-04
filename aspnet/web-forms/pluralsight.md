@@ -1,6 +1,6 @@
 ---
 uid: web-forms/pluralsight
-title: Web 窗体从 Pluralsight 视频培训 |Microsoft 文档
+title: Web 窗体从 Pluralsight 视频培训 |Microsoft Docs
 author: rick-anderson
 description: Pluralsight 提供的 Web Forms 培训。此 ASP.NET Web Forms 开发课程向你介绍几个作为一个.NET 开发者所需要知道的关键技术...
 ms.author: aspnetcontent
@@ -9,22 +9,21 @@ ms.date: 12/16/2011
 ms.topic: article
 ms.assetid: c71bb9b2-7136-4ce6-a40a-cc4d9978cfb7
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/pluralsight
 msc.type: content
-ms.openlocfilehash: d0583d6739871ba58903d042ce577de3d0e40ee4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 35ebb9d32c9d987b765d63879f23fbbb80ee22eb
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26520136"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37391736"
 ---
 <a name="web-forms-video-training-from-pluralsight"></a>Pluralsight 提供的 Web 窗体视频培训
 ====================
 ### <a name="videos"></a>视频
 
 - [ASP.NET 简介](https://pluralsight.com/training/Player?author=dan-wahlin&name=webforms-01&mode=live&clip=0&course=aspdotnet-webforms4-intro)
-- [ASP.NET Web 窗体功能](https://pluralsight.com/training/Player?author=dan-wahlin&name=webforms-02&mode=live&clip=0&course=aspdotnet-webforms4-intro)
+- [ASP.NET Web 窗体的功能](https://pluralsight.com/training/Player?author=dan-wahlin&name=webforms-02&mode=live&clip=0&course=aspdotnet-webforms4-intro)
 - [使用数据](https://pluralsight.com/training/Player?author=dan-wahlin&name=webforms-03&mode=live&clip=0&course=aspdotnet-webforms4-intro)
 - [Entity Framework](https://pluralsight.com/training/Player?author=dan-wahlin&name=webforms-04&mode=live&clip=0&course=aspdotnet-webforms4-intro)
 - [母版页](https://pluralsight.com/training/Player?author=dan-wahlin&name=webforms-05&mode=live&clip=0&course=aspdotnet-webforms4-intro)
@@ -41,6 +40,6 @@ Scott Hanselman、 首席项目经理、 Web 平台和 Azure 工具，Microsoft
 
 ![pluralsight logo playbutton](pluralsight/_static/image1.png)
 
-解锁访问到 3000 + 开发，IT 和创造性随时随地可以观看的课程。
+取消锁定其访问 3,000 + 开发人员，IT 和创造性随时随地可以观看的课程。
 
 **低至 29 美元/月**[开始免费试用](https://pluralsight.com/microsoft/olt/subscribe/SubscriptionRedirector.aspx?freetrial=true&amp;utm_source=microsoft&amp;utm_medium=sponsored-page&amp;utm_content=webmatrix&amp;utm_campaign=microsoft-sponsored-course)[现在订阅](https://pluralsight.com/microsoft/OLT/subscriptions.aspx?utm_source=microsoft&amp;utm_medium=sponsored-page&amp;utm_content=webmatrix&amp;utm_campaign=microsoft-sponsored-course)
