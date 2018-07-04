@@ -1,7 +1,7 @@
 ---
 title: 标识模型自定义项
 author: ajcvickers
-description: 本文介绍如何为 ASP.NET 核心标识自定义的基础的实体框架核心数据模型。
+description: 本文介绍如何为 ASP.NET Core标识自定义的基础的实体框架核心数据模型。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: avickers
 ms.date: 04/12/2018
@@ -13,66 +13,66 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/28/2018
 ms.locfileid: "37077670"
 ---
-# <a name="identity-model-customization"></a><span data-ttu-id="0c3b2-103">标识模型自定义项</span><span class="sxs-lookup"><span data-stu-id="0c3b2-103">Identity model customization</span></span>
+# <a name="identity-model-customization"></a><span data-ttu-id="b7ea5-103">标识模型自定义项</span><span class="sxs-lookup"><span data-stu-id="b7ea5-103">Identity model customization</span></span>
 
-<span data-ttu-id="0c3b2-104">通过[Arthur Vickers](https://github.com/ajcvickers)</span><span class="sxs-lookup"><span data-stu-id="0c3b2-104">By [Arthur Vickers](https://github.com/ajcvickers)</span></span>
+<span data-ttu-id="b7ea5-104">通过[Arthur Vickers](https://github.com/ajcvickers)</span><span class="sxs-lookup"><span data-stu-id="b7ea5-104">By [Arthur Vickers](https://github.com/ajcvickers)</span></span>
 
-<span data-ttu-id="0c3b2-105">ASP.NET 核心标识提供一个框架，用于管理和 ASP.NET Core 应用程序中存储用户帐户。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-105">ASP.NET Core Identity provides a framework for managing and storing user accounts in ASP.NET Core applications.</span></span> <span data-ttu-id="0c3b2-106">标识添加到项目中，选中"单个用户帐户"时作为身份验证机制。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-106">Identity is added to your project when "Individual User Accounts" is selected as the authentication mechanism.</span></span> <span data-ttu-id="0c3b2-107">默认情况下，标识将使用的 Entity Framework (EF) 核心数据模型。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-107">By default, Identity makes use of an Entity Framework (EF) Core data model.</span></span> <span data-ttu-id="0c3b2-108">本文介绍如何自定义标识模型。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-108">This article describes how to customize the Identity model.</span></span>
+<span data-ttu-id="b7ea5-105">ASP.NET Core标识提供一个框架，用于管理和 ASP.NET Core 应用程序中存储用户帐户。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-105">ASP.NET Core Identity provides a framework for managing and storing user accounts in ASP.NET Core applications.</span></span> <span data-ttu-id="b7ea5-106">标识添加到项目中，选中"单个用户帐户"时作为身份验证机制。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-106">Identity is added to your project when "Individual User Accounts" is selected as the authentication mechanism.</span></span> <span data-ttu-id="b7ea5-107">默认情况下，标识将使用的 Entity Framework (EF) 核心数据模型。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-107">By default, Identity makes use of an Entity Framework (EF) Core data model.</span></span> <span data-ttu-id="b7ea5-108">本文介绍如何自定义标识模型。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-108">This article describes how to customize the Identity model.</span></span>
 
 <a name="identity-migrations"></a>
 
-## <a name="identity-and-ef-core-migrations"></a><span data-ttu-id="0c3b2-109">标识和 EF 核心迁移</span><span class="sxs-lookup"><span data-stu-id="0c3b2-109">Identity and EF Core Migrations</span></span>
+## <a name="identity-and-ef-core-migrations"></a><span data-ttu-id="b7ea5-109">标识和 EF Core迁移</span><span class="sxs-lookup"><span data-stu-id="b7ea5-109">Identity and EF Core Migrations</span></span>
 
-<span data-ttu-id="0c3b2-110">之前检查模型，它是有助于了解如何标识配合[EF 核心迁移](/ef/core/managing-schemas/migrations/)创建和更新数据库。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-110">Before examining the model, it's useful to understand how Identity works with [EF Core Migrations](/ef/core/managing-schemas/migrations/) to create and update a database.</span></span> <span data-ttu-id="0c3b2-111">最高层的过程是：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-111">At the top level, the process is:</span></span>
+<span data-ttu-id="b7ea5-110">之前检查模型，它是有助于了解如何标识配合[EF Core迁移](/ef/core/managing-schemas/migrations/)创建和更新数据库。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-110">Before examining the model, it's useful to understand how Identity works with [EF Core Migrations](/ef/core/managing-schemas/migrations/) to create and update a database.</span></span> <span data-ttu-id="b7ea5-111">最高层的过程是：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-111">At the top level, the process is:</span></span>
 
-1. <span data-ttu-id="0c3b2-112">定义或更新[代码中的数据模型](/ef/core/modeling/)。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-112">Define or update a [data model in code](/ef/core/modeling/).</span></span>
-1. <span data-ttu-id="0c3b2-113">添加迁移，以将此模型转换可以应用于数据库的更改。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-113">Add a migration to translate this model into changes that can be applied to the database.</span></span>
-1. <span data-ttu-id="0c3b2-114">检查迁移能正确地表示您的意图。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-114">Check that the migration correctly represents your intentions.</span></span>
-1. <span data-ttu-id="0c3b2-115">将应用迁移更新数据库要与模型同步。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-115">Apply the migration to update the database to be in sync with the model.</span></span>
-1. <span data-ttu-id="0c3b2-116">重复步骤 1-4 以进一步优化模型并使数据库保持同步。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-116">Repeat steps 1-4 to further refine the model and keep the database in sync.</span></span>
+1. <span data-ttu-id="b7ea5-112">定义或更新[代码中的数据模型](/ef/core/modeling/)。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-112">Define or update a [data model in code](/ef/core/modeling/).</span></span>
+1. <span data-ttu-id="b7ea5-113">添加迁移，以将此模型转换可以应用于数据库的更改。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-113">Add a migration to translate this model into changes that can be applied to the database.</span></span>
+1. <span data-ttu-id="b7ea5-114">检查迁移能正确地表示您的意图。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-114">Check that the migration correctly represents your intentions.</span></span>
+1. <span data-ttu-id="b7ea5-115">将应用迁移更新数据库要与模型同步。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-115">Apply the migration to update the database to be in sync with the model.</span></span>
+1. <span data-ttu-id="b7ea5-116">重复步骤 1-4 以进一步优化模型并使数据库保持同步。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-116">Repeat steps 1-4 to further refine the model and keep the database in sync.</span></span>
 
-<span data-ttu-id="0c3b2-117">迁移添加和使用应用：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-117">Migrations are added and applied using:</span></span>
+<span data-ttu-id="b7ea5-117">迁移添加和使用应用：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-117">Migrations are added and applied using:</span></span>
 
-* <span data-ttu-id="0c3b2-118">[程序包管理器控制台](/ef/core/miscellaneous/cli/powershell)(PMC) 如果你使用的 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-118">The [Package Manager Console](/ef/core/miscellaneous/cli/powershell) (PMC) if you are using Visual Studio.</span></span>
-* <span data-ttu-id="0c3b2-119">[Dotnet 命令](/ef/core/miscellaneous/cli/dotnet)命令行上。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-119">The [dotnet commands](/ef/core/miscellaneous/cli/dotnet) on the command line.</span></span>
-* <span data-ttu-id="0c3b2-120">运行应用程序时，请选择错误页上的迁移链接。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-120">Selecting the migrations link on the error page when the application is run.</span></span>
+* <span data-ttu-id="b7ea5-118">[程序包管理器控制台](/ef/core/miscellaneous/cli/powershell)(PMC) 如果你使用的 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-118">The [Package Manager Console](/ef/core/miscellaneous/cli/powershell) (PMC) if you are using Visual Studio.</span></span>
+* <span data-ttu-id="b7ea5-119">[Dotnet 命令](/ef/core/miscellaneous/cli/dotnet)命令行上。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-119">The [dotnet commands](/ef/core/miscellaneous/cli/dotnet) on the command line.</span></span>
+* <span data-ttu-id="b7ea5-120">运行应用程序时，请选择错误页上的迁移链接。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-120">Selecting the migrations link on the error page when the application is run.</span></span>
 
-<span data-ttu-id="0c3b2-121">ASP.NET 核心有可用于应用程序运行时应用迁移一个开发时间错误页处理程序。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-121">ASP.NET Core has a development-time error page handler that can be used to apply migrations when the application is run.</span></span> <span data-ttu-id="0c3b2-122">对于生产应用程序，它通常会更适合从迁移中生成 SQL 脚本，将部署到数据库作为受控的应用程序和数据库部署的一部分。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-122">For production applications, it is often more appropriate to generate SQL scripts from the migrations and deploy these to the database as part of a controlled application and database deployment.</span></span>
+<span data-ttu-id="b7ea5-121">ASP.NET Core有可用于应用程序运行时应用迁移一个开发时间错误页处理程序。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-121">ASP.NET Core has a development-time error page handler that can be used to apply migrations when the application is run.</span></span> <span data-ttu-id="b7ea5-122">对于生产应用程序，它通常会更适合从迁移中生成 SQL 脚本，将部署到数据库作为受控的应用程序和数据库部署的一部分。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-122">For production applications, it is often more appropriate to generate SQL scripts from the migrations and deploy these to the database as part of a controlled application and database deployment.</span></span>
 
-<span data-ttu-id="0c3b2-123">创建新的应用程序使用标识时，已经完成上述步骤 1 和 2。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-123">When a new application using Identity is created, steps 1 and 2 above have already been completed.</span></span> <span data-ttu-id="0c3b2-124">也就是说，初始数据模型已存在，并已添加到项目中的初始迁移。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-124">That is, the initial data model already exists, and the initial migration has been added to the project.</span></span> <span data-ttu-id="0c3b2-125">仍然需要应用于数据库初始迁移。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-125">The initial migration still needs to be applied to the database.</span></span> <span data-ttu-id="0c3b2-126">通过运行更新数据库 (PMC)，dotnet ef 数据库更新 (.NET 核心 CLI) 命令，或通过在运行应用程序使用错误页，则可以完成的初始迁移。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-126">The initial migration can be done by running the Update-Database (PMC), the dotnet ef database update (.NET Core CLI) command, or by using the error page when the application is run.</span></span>
+<span data-ttu-id="b7ea5-123">创建新的应用程序使用标识时，已经完成上述步骤 1 和 2。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-123">When a new application using Identity is created, steps 1 and 2 above have already been completed.</span></span> <span data-ttu-id="b7ea5-124">也就是说，初始数据模型已存在，并已添加到项目中的初始迁移。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-124">That is, the initial data model already exists, and the initial migration has been added to the project.</span></span> <span data-ttu-id="b7ea5-125">仍然需要应用于数据库初始迁移。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-125">The initial migration still needs to be applied to the database.</span></span> <span data-ttu-id="b7ea5-126">通过运行更新数据库 (PMC)，dotnet ef 数据库更新 (.NET Core CLI) 命令，或通过在运行应用程序使用错误页，则可以完成的初始迁移。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-126">The initial migration can be done by running the Update-Database (PMC), the dotnet ef database update (.NET Core CLI) command, or by using the error page when the application is run.</span></span>
 
-<span data-ttu-id="0c3b2-127">需要对模型进行更改时重复前面的步骤。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-127">The preceding steps need to be repeated as changes are made to the model.</span></span>
+<span data-ttu-id="b7ea5-127">需要对模型进行更改时重复前面的步骤。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-127">The preceding steps need to be repeated as changes are made to the model.</span></span>
 
 <a name="identity-model"></a>
 
-## <a name="the-identity-model"></a><span data-ttu-id="0c3b2-128">标识模型</span><span class="sxs-lookup"><span data-stu-id="0c3b2-128">The Identity model</span></span>
+## <a name="the-identity-model"></a><span data-ttu-id="b7ea5-128">标识模型</span><span class="sxs-lookup"><span data-stu-id="b7ea5-128">The Identity model</span></span>
 
-### <a name="entity-types"></a><span data-ttu-id="0c3b2-129">实体类型</span><span class="sxs-lookup"><span data-stu-id="0c3b2-129">Entity types</span></span>
+### <a name="entity-types"></a><span data-ttu-id="b7ea5-129">实体类型</span><span class="sxs-lookup"><span data-stu-id="b7ea5-129">Entity types</span></span>
 
-<span data-ttu-id="0c3b2-130">标识模型包含七个实体类型：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-130">The Identity model consists of seven entity types:</span></span>
+<span data-ttu-id="b7ea5-130">标识模型包含七个实体类型：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-130">The Identity model consists of seven entity types:</span></span>
 
-* <span data-ttu-id="0c3b2-131">`User` -表示的用户</span><span class="sxs-lookup"><span data-stu-id="0c3b2-131">`User` - represents the user</span></span>
-* <span data-ttu-id="0c3b2-132">`Role` -表示的角色</span><span class="sxs-lookup"><span data-stu-id="0c3b2-132">`Role` - represents a role</span></span>
-* <span data-ttu-id="0c3b2-133">`UserClaim` -表示用户拥有的声明</span><span class="sxs-lookup"><span data-stu-id="0c3b2-133">`UserClaim` - represents a claim that a user possess</span></span>
-* <span data-ttu-id="0c3b2-134">`UserToken` -表示用户的身份验证令牌</span><span class="sxs-lookup"><span data-stu-id="0c3b2-134">`UserToken` - represents an authentication token for a user</span></span>
-* <span data-ttu-id="0c3b2-135">`UserLogin` -将用户与一个登录名相关联</span><span class="sxs-lookup"><span data-stu-id="0c3b2-135">`UserLogin` - associates a user with a login</span></span>
-* <span data-ttu-id="0c3b2-136">`RoleClaim` -表示将授予角色中的所有用户的声明</span><span class="sxs-lookup"><span data-stu-id="0c3b2-136">`RoleClaim` - represents a claim that is granted to all users within a role</span></span>
-* <span data-ttu-id="0c3b2-137">`UserRole` -加入将用户和角色相关联的实体</span><span class="sxs-lookup"><span data-stu-id="0c3b2-137">`UserRole` - join entity that associates users and roles</span></span>
+* <span data-ttu-id="b7ea5-131">`User` -表示的用户</span><span class="sxs-lookup"><span data-stu-id="b7ea5-131">`User` - represents the user</span></span>
+* <span data-ttu-id="b7ea5-132">`Role` -表示的角色</span><span class="sxs-lookup"><span data-stu-id="b7ea5-132">`Role` - represents a role</span></span>
+* <span data-ttu-id="b7ea5-133">`UserClaim` -表示用户拥有的声明</span><span class="sxs-lookup"><span data-stu-id="b7ea5-133">`UserClaim` - represents a claim that a user possess</span></span>
+* <span data-ttu-id="b7ea5-134">`UserToken` -表示用户的身份验证令牌</span><span class="sxs-lookup"><span data-stu-id="b7ea5-134">`UserToken` - represents an authentication token for a user</span></span>
+* <span data-ttu-id="b7ea5-135">`UserLogin` -将用户与一个登录名相关联</span><span class="sxs-lookup"><span data-stu-id="b7ea5-135">`UserLogin` - associates a user with a login</span></span>
+* <span data-ttu-id="b7ea5-136">`RoleClaim` -表示将授予角色中的所有用户的声明</span><span class="sxs-lookup"><span data-stu-id="b7ea5-136">`RoleClaim` - represents a claim that is granted to all users within a role</span></span>
+* <span data-ttu-id="b7ea5-137">`UserRole` -加入将用户和角色相关联的实体</span><span class="sxs-lookup"><span data-stu-id="b7ea5-137">`UserRole` - join entity that associates users and roles</span></span>
 
-### <a name="entity-type-relationships"></a><span data-ttu-id="0c3b2-138">实体类型关系</span><span class="sxs-lookup"><span data-stu-id="0c3b2-138">Entity type relationships</span></span>
+### <a name="entity-type-relationships"></a><span data-ttu-id="b7ea5-138">实体类型关系</span><span class="sxs-lookup"><span data-stu-id="b7ea5-138">Entity type relationships</span></span>
 
-<span data-ttu-id="0c3b2-139">这些实体类型通过以下方式彼此相关：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-139">These entity types are related to each other in the following ways:</span></span>
+<span data-ttu-id="b7ea5-139">这些实体类型通过以下方式彼此相关：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-139">These entity types are related to each other in the following ways:</span></span>
 
-* <span data-ttu-id="0c3b2-140">每个`User`可以具有许多 `UserClaims`</span><span class="sxs-lookup"><span data-stu-id="0c3b2-140">Each `User` can have many `UserClaims`</span></span>
-* <span data-ttu-id="0c3b2-141">每个`User`可以具有许多 `UserLogins`</span><span class="sxs-lookup"><span data-stu-id="0c3b2-141">Each `User` can have many `UserLogins`</span></span>
-* <span data-ttu-id="0c3b2-142">每个`User`可以具有许多 `UserTokens`</span><span class="sxs-lookup"><span data-stu-id="0c3b2-142">Each `User` can have many `UserTokens`</span></span>
-* <span data-ttu-id="0c3b2-143">每个`Role`可以具有许多关联 `RoleClaims`</span><span class="sxs-lookup"><span data-stu-id="0c3b2-143">Each `Role` can have many associated `RoleClaims`</span></span>
-* <span data-ttu-id="0c3b2-144">每个`User`可以具有许多关联`Roles`，和每个`Role`可以与多个用户相关联</span><span class="sxs-lookup"><span data-stu-id="0c3b2-144">Each `User` can have many associated `Roles`, and each `Role` can be associated with many Users</span></span>
-  * <span data-ttu-id="0c3b2-145">这是一个多对多关系，这需要在数据库中的联接表。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-145">This is a many-to-many relationship, which requires a join table in the database.</span></span> <span data-ttu-id="0c3b2-146">联接表均由表示`UserRole`实体。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-146">The join table is represented by the `UserRole` entity.</span></span>
+* <span data-ttu-id="b7ea5-140">每个`User`可以具有许多 `UserClaims`</span><span class="sxs-lookup"><span data-stu-id="b7ea5-140">Each `User` can have many `UserClaims`</span></span>
+* <span data-ttu-id="b7ea5-141">每个`User`可以具有许多 `UserLogins`</span><span class="sxs-lookup"><span data-stu-id="b7ea5-141">Each `User` can have many `UserLogins`</span></span>
+* <span data-ttu-id="b7ea5-142">每个`User`可以具有许多 `UserTokens`</span><span class="sxs-lookup"><span data-stu-id="b7ea5-142">Each `User` can have many `UserTokens`</span></span>
+* <span data-ttu-id="b7ea5-143">每个`Role`可以具有许多关联 `RoleClaims`</span><span class="sxs-lookup"><span data-stu-id="b7ea5-143">Each `Role` can have many associated `RoleClaims`</span></span>
+* <span data-ttu-id="b7ea5-144">每个`User`可以具有许多关联`Roles`，和每个`Role`可以与多个用户相关联</span><span class="sxs-lookup"><span data-stu-id="b7ea5-144">Each `User` can have many associated `Roles`, and each `Role` can be associated with many Users</span></span>
+  * <span data-ttu-id="b7ea5-145">这是一个多对多关系，这需要在数据库中的联接表。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-145">This is a many-to-many relationship, which requires a join table in the database.</span></span> <span data-ttu-id="b7ea5-146">联接表均由表示`UserRole`实体。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-146">The join table is represented by the `UserRole` entity.</span></span>
 
-### <a name="default-model-configuration"></a><span data-ttu-id="0c3b2-147">默认模型配置</span><span class="sxs-lookup"><span data-stu-id="0c3b2-147">Default model configuration</span></span>
+### <a name="default-model-configuration"></a><span data-ttu-id="b7ea5-147">默认模型配置</span><span class="sxs-lookup"><span data-stu-id="b7ea5-147">Default model configuration</span></span>
 
-<span data-ttu-id="0c3b2-148">标识定义的"上下文类"的继承了各种[DbContext](/dotnet/api/microsoft.entityframeworkcore.dbcontext)配置和使用模型。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-148">Identity defines a variety of "context classes" which inherit from [DbContext](/dotnet/api/microsoft.entityframeworkcore.dbcontext) to configure and use the model.</span></span> <span data-ttu-id="0c3b2-149">进行此配置使用[EF 核心代码 First Fluent API](/ef/core/modeling/)中[OnModelCreating](/dotnet/api/microsoft.entityframeworkcore.dbcontext.onmodelcreating#Microsoft_EntityFrameworkCore_DbContext_OnModelCreating_Microsoft_EntityFrameworkCore_ModelBuilder_)上下文类的方法。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-149">This configuration is done using the [EF Core Code First Fluent API](/ef/core/modeling/) in the [OnModelCreating](/dotnet/api/microsoft.entityframeworkcore.dbcontext.onmodelcreating#Microsoft_EntityFrameworkCore_DbContext_OnModelCreating_Microsoft_EntityFrameworkCore_ModelBuilder_) method of the context class.</span></span> <span data-ttu-id="0c3b2-150">默认配置是：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-150">The default configuration is:</span></span>
+<span data-ttu-id="b7ea5-148">标识定义的"上下文类"的继承了各种[DbContext](/dotnet/api/microsoft.entityframeworkcore.dbcontext)配置和使用模型。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-148">Identity defines a variety of "context classes" which inherit from [DbContext](/dotnet/api/microsoft.entityframeworkcore.dbcontext) to configure and use the model.</span></span> <span data-ttu-id="b7ea5-149">进行此配置使用[EF Core代码 First Fluent API](/ef/core/modeling/)中[OnModelCreating](/dotnet/api/microsoft.entityframeworkcore.dbcontext.onmodelcreating#Microsoft_EntityFrameworkCore_DbContext_OnModelCreating_Microsoft_EntityFrameworkCore_ModelBuilder_)上下文类的方法。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-149">This configuration is done using the [EF Core Code First Fluent API](/ef/core/modeling/) in the [OnModelCreating](/dotnet/api/microsoft.entityframeworkcore.dbcontext.onmodelcreating#Microsoft_EntityFrameworkCore_DbContext_OnModelCreating_Microsoft_EntityFrameworkCore_ModelBuilder_) method of the context class.</span></span> <span data-ttu-id="b7ea5-150">默认配置是：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-150">The default configuration is:</span></span>
 
 ```CSharp
 builder.Entity<TUser>(b =>
@@ -195,13 +195,13 @@ builder.Entity<TUserRole>(b =>
 });
 ```
 
-### <a name="model-generic-types"></a><span data-ttu-id="0c3b2-151">模型的泛型类型</span><span class="sxs-lookup"><span data-stu-id="0c3b2-151">Model generic types</span></span>
+### <a name="model-generic-types"></a><span data-ttu-id="b7ea5-151">模型的泛型类型</span><span class="sxs-lookup"><span data-stu-id="b7ea5-151">Model generic types</span></span>
 
-<span data-ttu-id="0c3b2-152">标识定义为每个上面列出的实体类型的默认 CLR 类型。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-152">Identity defines default CLR types for each of the entity types listed above.</span></span> <span data-ttu-id="0c3b2-153">这些类型全都带有前缀"标识": `IdentityUser`， `IdentityRole`， `IdentityUserClaim`， `IdentityUserToken`， `IdentityUserLogin`， `IdentityRoleClaim`，和`IdentityUserRole`。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-153">These types are all prefixed with "Identity": `IdentityUser`, `IdentityRole`, `IdentityUserClaim`, `IdentityUserToken`, `IdentityUserLogin`, `IdentityRoleClaim`, and `IdentityUserRole`.</span></span>
+<span data-ttu-id="b7ea5-152">标识定义为每个上面列出的实体类型的默认 CLR 类型。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-152">Identity defines default CLR types for each of the entity types listed above.</span></span> <span data-ttu-id="b7ea5-153">这些类型全都带有前缀"标识": `IdentityUser`， `IdentityRole`， `IdentityUserClaim`， `IdentityUserToken`， `IdentityUserLogin`， `IdentityRoleClaim`，和`IdentityUserRole`。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-153">These types are all prefixed with "Identity": `IdentityUser`, `IdentityRole`, `IdentityUserClaim`, `IdentityUserToken`, `IdentityUserLogin`, `IdentityRoleClaim`, and `IdentityUserRole`.</span></span>
 
-<span data-ttu-id="0c3b2-154">而不是直接使用这些类型，类型可以用作基类，这些类为应用程序自身的类型。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-154">Rather than using these types directly, the types can be used as base classes for the application's own types.</span></span> <span data-ttu-id="0c3b2-155">`DbContext`定义标识的类是泛型的这样的： 不同的 CLR 类型可以用于一个或多个模型中的实体类型。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-155">The `DbContext` classes defined by Identity are generic such that different CLR types can be used for one or more of the entity types in the model.</span></span> <span data-ttu-id="0c3b2-156">以下泛型类型还允许用户主键的类型更改。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-156">These generic types also allow for the type of the User primary key to be changed.</span></span>
+<span data-ttu-id="b7ea5-154">而不是直接使用这些类型，类型可以用作基类，这些类为应用程序自身的类型。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-154">Rather than using these types directly, the types can be used as base classes for the application's own types.</span></span> <span data-ttu-id="b7ea5-155">`DbContext`定义标识的类是泛型的这样的： 不同的 CLR 类型可以用于一个或多个模型中的实体类型。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-155">The `DbContext` classes defined by Identity are generic such that different CLR types can be used for one or more of the entity types in the model.</span></span> <span data-ttu-id="b7ea5-156">以下泛型类型还允许用户主键的类型更改。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-156">These generic types also allow for the type of the User primary key to be changed.</span></span>
 
-<span data-ttu-id="0c3b2-157">对于角色，支持使用标识时[IdentityDbContext](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext)应使用类：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-157">When using Identity with support for roles, an [IdentityDbContext](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext) class should be used:</span></span>
+<span data-ttu-id="b7ea5-157">对于角色，支持使用标识时[IdentityDbContext](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext)应使用类：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-157">When using Identity with support for roles, an [IdentityDbContext](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext) class should be used:</span></span>
 
 ```CSharp
 // Uses all the built-in Identity types
@@ -244,7 +244,7 @@ public abstract class IdentityDbContext<TUser, TRole, TKey, TUserClaim, TUserRol
 
 ```
 
-<span data-ttu-id="0c3b2-158">还有可能使用标识，而角色 （仅声明），在这种情况下`IdentityUserContext`应使用类：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-158">It is also possible to use Identity without roles (only claims), in which case an `IdentityUserContext` class should be used:</span></span>
+<span data-ttu-id="b7ea5-158">还有可能使用标识，而角色 （仅声明），在这种情况下`IdentityUserContext`应使用类：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-158">It is also possible to use Identity without roles (only claims), in which case an `IdentityUserContext` class should be used:</span></span>
 
 
 ```CSharp
@@ -278,19 +278,19 @@ public abstract class IdentityUserContext<TUser, TKey, TUserClaim, TUserLogin, T
 }
 ```
 
-## <a name="customizing-the-model"></a><span data-ttu-id="0c3b2-159">自定义模型</span><span class="sxs-lookup"><span data-stu-id="0c3b2-159">Customizing the model</span></span>
+## <a name="customizing-the-model"></a><span data-ttu-id="b7ea5-159">自定义模型</span><span class="sxs-lookup"><span data-stu-id="b7ea5-159">Customizing the model</span></span>
 
-<span data-ttu-id="0c3b2-160">自定义模型的起点是派生自的合适的上下文类型;请参阅前面的部分。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-160">The starting point for customizing the model is to derive from the appropriate context type; see the preceding section.</span></span> <span data-ttu-id="0c3b2-161">此上下文类型通常称为`ApplicationDbContext`和创建的 ASP.NET Core 模板。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-161">This context type is customarily called `ApplicationDbContext` and is created by the ASP.NET Core templates.</span></span>
+<span data-ttu-id="b7ea5-160">自定义模型的起点是派生自的合适的上下文类型;请参阅前面的部分。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-160">The starting point for customizing the model is to derive from the appropriate context type; see the preceding section.</span></span> <span data-ttu-id="b7ea5-161">此上下文类型通常称为`ApplicationDbContext`和创建的 ASP.NET Core 模板。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-161">This context type is customarily called `ApplicationDbContext` and is created by the ASP.NET Core templates.</span></span>
 
-<span data-ttu-id="0c3b2-162">使用上下文以两种方式配置的模型：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-162">The context is used to configure the model in two ways:</span></span>
-* <span data-ttu-id="0c3b2-163">通过提供实体类型和密钥类型的泛型类型参数。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-163">By supplying entity and key types for the generic type parameters.</span></span>
-* <span data-ttu-id="0c3b2-164">通过重写`OnModelCreating`修改这些类型的映射。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-164">By overriding `OnModelCreating` to modify the mapping of these types.</span></span>
+<span data-ttu-id="b7ea5-162">使用上下文以两种方式配置的模型：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-162">The context is used to configure the model in two ways:</span></span>
+* <span data-ttu-id="b7ea5-163">通过提供实体类型和密钥类型的泛型类型参数。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-163">By supplying entity and key types for the generic type parameters.</span></span>
+* <span data-ttu-id="b7ea5-164">通过重写`OnModelCreating`修改这些类型的映射。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-164">By overriding `OnModelCreating` to modify the mapping of these types.</span></span>
 
-<span data-ttu-id="0c3b2-165">在重写`OnModelCreating`，`base.OnModelCreating`应首先调用，重写应调用配置下一步。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-165">When overriding `OnModelCreating`, `base.OnModelCreating` should be called first, the overriding configuration should be called next.</span></span> <span data-ttu-id="0c3b2-166">EF 核心通常具有配置的最后一个 wins 策略。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-166">EF Core generally has a last-one-wins policy for configuration.</span></span> <span data-ttu-id="0c3b2-167">例如，如果`ToTable`实体类型是调用首先使用一个表名称和具有不同的表名称，然后再次更高版本，则第二次调用中的表名称是使用的一个。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-167">For example, if the `ToTable` for an entity type is called first with one table name and then again later with a different table name, then the table name in the second call is the one that is used.</span></span>
+<span data-ttu-id="b7ea5-165">在重写`OnModelCreating`，`base.OnModelCreating`应首先调用，重写应调用配置下一步。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-165">When overriding `OnModelCreating`, `base.OnModelCreating` should be called first, the overriding configuration should be called next.</span></span> <span data-ttu-id="b7ea5-166">EF Core通常具有配置的最后一个 wins 策略。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-166">EF Core generally has a last-one-wins policy for configuration.</span></span> <span data-ttu-id="b7ea5-167">例如，如果`ToTable`实体类型是调用首先使用一个表名称和具有不同的表名称，然后再次更高版本，则第二次调用中的表名称是使用的一个。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-167">For example, if the `ToTable` for an entity type is called first with one table name and then again later with a different table name, then the table name in the second call is the one that is used.</span></span>
 
-### <a name="using-a-custom-user-type"></a><span data-ttu-id="0c3b2-168">使用自定义的用户类型</span><span class="sxs-lookup"><span data-stu-id="0c3b2-168">Using a custom User type</span></span>
+### <a name="using-a-custom-user-type"></a><span data-ttu-id="b7ea5-168">使用自定义的用户类型</span><span class="sxs-lookup"><span data-stu-id="b7ea5-168">Using a custom User type</span></span>
 
-<span data-ttu-id="0c3b2-169">若要使用自定义的用户类型，创建类型，并将其从继承`IdentityUser`。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-169">To use a custom User type, create the type and have it inherit from `IdentityUser`.</span></span> <span data-ttu-id="0c3b2-170">通常将此类型`ApplicationUser`。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-170">It is customary to name this type `ApplicationUser`.</span></span> <span data-ttu-id="0c3b2-171">此类型通常将基类型中不具有附加属性，否则将有任何值中创建它。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-171">This type will typically have additional properties not in the base type, otherwise there would be no value in creating it.</span></span> <span data-ttu-id="0c3b2-172">例如：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-172">For example:</span></span>
+<span data-ttu-id="b7ea5-169">若要使用自定义的用户类型，创建类型，并将其从继承`IdentityUser`。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-169">To use a custom User type, create the type and have it inherit from `IdentityUser`.</span></span> <span data-ttu-id="b7ea5-170">通常将此类型`ApplicationUser`。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-170">It is customary to name this type `ApplicationUser`.</span></span> <span data-ttu-id="b7ea5-171">此类型通常将基类型中不具有附加属性，否则将有任何值中创建它。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-171">This type will typically have additional properties not in the base type, otherwise there would be no value in creating it.</span></span> <span data-ttu-id="b7ea5-172">例如：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-172">For example:</span></span>
 
 ```CSharp
 public class ApplicationUser : IdentityUser
@@ -299,7 +299,7 @@ public class ApplicationUser : IdentityUser
 }
 ```
 
-<span data-ttu-id="0c3b2-173">接下来将此类型用作泛型自变量上下文：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-173">Next use this type as a generic argument for the context:</span></span>
+<span data-ttu-id="b7ea5-173">接下来将此类型用作泛型自变量上下文：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-173">Next use this type as a generic argument for the context:</span></span>
 
 ```CSharp
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -311,24 +311,24 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 }
 ```
 
-<span data-ttu-id="0c3b2-174">更新`ConfigureServices`为使用新`ApplicationUser`类：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-174">Update `ConfigureServices` to use the new `ApplicationUser` class:</span></span>
+<span data-ttu-id="b7ea5-174">更新`ConfigureServices`为使用新`ApplicationUser`类：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-174">Update `ConfigureServices` to use the new `ApplicationUser` class:</span></span>
 
 ```CSharp
 services.AddDefaultIdentity<ApplicationUser>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 ```
 
-<span data-ttu-id="0c3b2-175">无需重写`OnModelCreating`此处因为 EF 核心将映射`CustomTag`按照约定的属性。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-175">There is no need to override `OnModelCreating` here because EF Core will map the `CustomTag` property by convention.</span></span> <span data-ttu-id="0c3b2-176">但是，数据库将需要更新，以获取新`CustomTag`列。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-176">However, the database will need to be updated to get a new `CustomTag` column.</span></span> <span data-ttu-id="0c3b2-177">若要执行此操作，添加迁移，和中所述，然后更新数据库[标识和 EF 核心迁移](#identity-migrations)。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-177">To do this, add a migration, and then update the database as described in  [Identity and EF Core Migrations](#identity-migrations).</span></span>
+<span data-ttu-id="b7ea5-175">无需重写`OnModelCreating`此处因为 EF Core将映射`CustomTag`按照约定的属性。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-175">There is no need to override `OnModelCreating` here because EF Core will map the `CustomTag` property by convention.</span></span> <span data-ttu-id="b7ea5-176">但是，数据库将需要更新，以获取新`CustomTag`列。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-176">However, the database will need to be updated to get a new `CustomTag` column.</span></span> <span data-ttu-id="b7ea5-177">若要执行此操作，添加迁移，和中所述，然后更新数据库[标识和 EF Core迁移](#identity-migrations)。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-177">To do this, add a migration, and then update the database as described in  [Identity and EF Core Migrations](#identity-migrations).</span></span>
 
-### <a name="changing-the-key-type"></a><span data-ttu-id="0c3b2-178">更改的键类型</span><span class="sxs-lookup"><span data-stu-id="0c3b2-178">Changing the key type</span></span>
+### <a name="changing-the-key-type"></a><span data-ttu-id="b7ea5-178">更改的键类型</span><span class="sxs-lookup"><span data-stu-id="b7ea5-178">Changing the key type</span></span>
 
-<span data-ttu-id="0c3b2-179">创建数据库后更改的主键 (PK) 列类型会在很多数据库系统上出现问题。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-179">Changing the type of a primary key (PK) column after the database has been created is problematic on many database systems.</span></span> <span data-ttu-id="0c3b2-180">更改在 PK 通常涉及除去并重新创建表。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-180">Changing the PK typically involves dropping and re-creating the table.</span></span> <span data-ttu-id="0c3b2-181">因此，建议在消息以便创建数据库时创建的目标密钥类型，密钥类型指定的初始迁移。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-181">Therefore, it is recommended that key types be specified in the initial migration such that the target key types are created when the database is created.</span></span>
+<span data-ttu-id="b7ea5-179">创建数据库后更改的主键 (PK) 列类型会在很多数据库系统上出现问题。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-179">Changing the type of a primary key (PK) column after the database has been created is problematic on many database systems.</span></span> <span data-ttu-id="b7ea5-180">更改在 PK 通常涉及除去并重新创建表。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-180">Changing the PK typically involves dropping and re-creating the table.</span></span> <span data-ttu-id="b7ea5-181">因此，建议在消息以便创建数据库时创建的目标密钥类型，密钥类型指定的初始迁移。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-181">Therefore, it is recommended that key types be specified in the initial migration such that the target key types are created when the database is created.</span></span>
 
-<span data-ttu-id="0c3b2-182">如果已创建数据库，则`Drop-Database`(PMC) 或`dotnet ef database drop`(.NET 核心 CLI) 可用来将其删除。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-182">If the database has been created, then `Drop-Database` (PMC) or `dotnet ef database drop` (.NET Core CLI) can be used to delete it.</span></span>
+<span data-ttu-id="b7ea5-182">如果已创建数据库，则`Drop-Database`(PMC) 或`dotnet ef database drop`(.NET Core CLI) 可用来将其删除。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-182">If the database has been created, then `Drop-Database` (PMC) or `dotnet ef database drop` (.NET Core CLI) can be used to delete it.</span></span>
 
-<span data-ttu-id="0c3b2-183">一旦确认数据库不存在，删除与初始迁移`Remove-Migration`(PMC) 或`dotnet ef migrations remove`(.NET 核心 CLI)。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-183">Once it is confirmed that the database doesn't exist,  remove the initial migration with `Remove-Migration` (PMC) or `dotnet ef migrations remove` (.NET Core CLI).</span></span>
+<span data-ttu-id="b7ea5-183">一旦确认数据库不存在，删除与初始迁移`Remove-Migration`(PMC) 或`dotnet ef migrations remove`(.NET Core CLI)。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-183">Once it is confirmed that the database doesn't exist,  remove the initial migration with `Remove-Migration` (PMC) or `dotnet ef migrations remove` (.NET Core CLI).</span></span>
 
-<span data-ttu-id="0c3b2-184">更新`ApplicationDbContext`以使用不同的基本类，指定的新键类型`TKey`。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-184">Update the `ApplicationDbContext` to use a different base class, specifying the new key type for `TKey`.</span></span> <span data-ttu-id="0c3b2-185">例如，若要使用`Guid`密钥：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-185">For example, to use a `Guid` key:</span></span>
+<span data-ttu-id="b7ea5-184">更新`ApplicationDbContext`以使用不同的基本类，指定的新键类型`TKey`。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-184">Update the `ApplicationDbContext` to use a different base class, specifying the new key type for `TKey`.</span></span> <span data-ttu-id="b7ea5-185">例如，若要使用`Guid`密钥：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-185">For example, to use a `Guid` key:</span></span>
 
 ```CSharp
 public class ApplicationDbContext : IdentityDbContext<IdentityUser<Guid>, IdentityRole<Guid>, Guid>
@@ -340,14 +340,14 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser<Guid>, Identi
 }
 ```
 
-<span data-ttu-id="0c3b2-186">请注意，泛型类`IdentityUser<TKey>`和`IdentityRole<TKey>`还必须指定要使用新的密钥类型。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-186">Notice that the generic classes `IdentityUser<TKey>` and `IdentityRole<TKey>` must also be specified to use the new key type.</span></span> <span data-ttu-id="0c3b2-187">`ConfigureServices` 必须更新为使用泛型的用户：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-187">`ConfigureServices` must be updated to use the generic user:</span></span>
+<span data-ttu-id="b7ea5-186">请注意，泛型类`IdentityUser<TKey>`和`IdentityRole<TKey>`还必须指定要使用新的密钥类型。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-186">Notice that the generic classes `IdentityUser<TKey>` and `IdentityRole<TKey>` must also be specified to use the new key type.</span></span> <span data-ttu-id="b7ea5-187">`ConfigureServices` 必须更新为使用泛型的用户：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-187">`ConfigureServices` must be updated to use the generic user:</span></span>
 
 ```CSharp
 services.AddDefaultIdentity<IdentityUser<Guid>>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 ```
 
-<span data-ttu-id="0c3b2-188">如果自定义`ApplicationUser`是正在使用中，更新它以继承`IdentityUser<TKey>`。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-188">If a custom `ApplicationUser` is being used, update it to inherit from `IdentityUser<TKey>`.</span></span> <span data-ttu-id="0c3b2-189">例如：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-189">For example:</span></span>
+<span data-ttu-id="b7ea5-188">如果自定义`ApplicationUser`是正在使用中，更新它以继承`IdentityUser<TKey>`。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-188">If a custom `ApplicationUser` is being used, update it to inherit from `IdentityUser<TKey>`.</span></span> <span data-ttu-id="b7ea5-189">例如：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-189">For example:</span></span>
 
 ```CSharp
 public class ApplicationUser : IdentityUser<Guid>
@@ -369,9 +369,9 @@ services.AddDefaultIdentity<ApplicationUser>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 ```
 
-### <a name="adding-navigation-properties"></a><span data-ttu-id="0c3b2-190">添加导航属性</span><span class="sxs-lookup"><span data-stu-id="0c3b2-190">Adding navigation properties</span></span>
+### <a name="adding-navigation-properties"></a><span data-ttu-id="b7ea5-190">添加导航属性</span><span class="sxs-lookup"><span data-stu-id="b7ea5-190">Adding navigation properties</span></span>
 
-<span data-ttu-id="0c3b2-191">更改关系的模型配置可能会更加困难比进行其他更改。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-191">Changing the model configuration for relationships can be a more difficult than making other changes.</span></span> <span data-ttu-id="0c3b2-192">必须格外小心，以替换现有的关系，而不是创建新的其他关系。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-192">Care must be taken to replace the existing relationships rather than create a new additional relationships.</span></span> <span data-ttu-id="0c3b2-193">具体而言，已更改的关系必须指定相同的外键属性，作为现有的关系。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-193">In particular, the changed relationship must specify the same foreign key property as the existing relationship.</span></span> <span data-ttu-id="0c3b2-194">例如，之间的关系`Users`和`UserClaims`指定为默认为：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-194">For example, the relationship between `Users` and `UserClaims` is by default specified as:</span></span>
+<span data-ttu-id="b7ea5-191">更改关系的模型配置可能会更加困难比进行其他更改。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-191">Changing the model configuration for relationships can be a more difficult than making other changes.</span></span> <span data-ttu-id="b7ea5-192">必须格外小心，以替换现有的关系，而不是创建新的其他关系。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-192">Care must be taken to replace the existing relationships rather than create a new additional relationships.</span></span> <span data-ttu-id="b7ea5-193">具体而言，已更改的关系必须指定相同的外键属性，作为现有的关系。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-193">In particular, the changed relationship must specify the same foreign key property as the existing relationship.</span></span> <span data-ttu-id="b7ea5-194">例如，之间的关系`Users`和`UserClaims`指定为默认为：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-194">For example, the relationship between `Users` and `UserClaims` is by default specified as:</span></span>
 
 ```CSharp
 builder.Entity<TUser>(b =>
@@ -384,9 +384,9 @@ builder.Entity<TUser>(b =>
 });
 ```
 
-<span data-ttu-id="0c3b2-195">为此关系的外键指定为`UserClaim.UserId`属性。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-195">The foreign key for this relationship is specified as the `UserClaim.UserId` property.</span></span> <span data-ttu-id="0c3b2-196">`HasMany` 和`WithOne`调用不带参数来创建不使用导航属性关系。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-196">`HasMany` and `WithOne` are called without arguments to create the relationship without navigation properties.</span></span>
+<span data-ttu-id="b7ea5-195">为此关系的外键指定为`UserClaim.UserId`属性。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-195">The foreign key for this relationship is specified as the `UserClaim.UserId` property.</span></span> <span data-ttu-id="b7ea5-196">`HasMany` 和`WithOne`调用不带参数来创建不使用导航属性关系。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-196">`HasMany` and `WithOne` are called without arguments to create the relationship without navigation properties.</span></span>
 
-<span data-ttu-id="0c3b2-197">添加到导航属性`ApplicationUser`这将允许关联`UserClaims`用户引用：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-197">Add a navigation property to `ApplicationUser` that will allow associated `UserClaims` to be referenced from the user:</span></span>
+<span data-ttu-id="b7ea5-197">添加到导航属性`ApplicationUser`这将允许关联`UserClaims`用户引用：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-197">Add a navigation property to `ApplicationUser` that will allow associated `UserClaims` to be referenced from the user:</span></span>
 
 ```CSharp
 public class ApplicationUser : IdentityUser
@@ -395,9 +395,9 @@ public class ApplicationUser : IdentityUser
 }
 ```
 
-<span data-ttu-id="0c3b2-198">请注意，`TKey`为`IdentityUserClaim<TKey>`是指定的用户-在此情况下为主键类型`string`由于我们将使用默认值。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-198">Note that the `TKey` for `IdentityUserClaim<TKey>` is type specified for the primary key of users--in this case `string` since we're using the defaults.</span></span> <span data-ttu-id="0c3b2-199">它是**不**的主键类型`UserClaim`实体类型。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-199">It is **not** the primary key type for the `UserClaim` entity type.</span></span>
+<span data-ttu-id="b7ea5-198">请注意，`TKey`为`IdentityUserClaim<TKey>`是指定的用户-在此情况下为主键类型`string`由于我们将使用默认值。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-198">Note that the `TKey` for `IdentityUserClaim<TKey>` is type specified for the primary key of users--in this case `string` since we're using the defaults.</span></span> <span data-ttu-id="b7ea5-199">它是**不**的主键类型`UserClaim`实体类型。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-199">It is **not** the primary key type for the `UserClaim` entity type.</span></span>
 
-<span data-ttu-id="0c3b2-200">现在，存在导航属性，则必须将它配置中`OnModelCreating`:</span><span class="sxs-lookup"><span data-stu-id="0c3b2-200">Now that the navigation property exists it must be configured in `OnModelCreating`:</span></span>
+<span data-ttu-id="b7ea5-200">现在，存在导航属性，则必须将它配置中`OnModelCreating`:</span><span class="sxs-lookup"><span data-stu-id="b7ea5-200">Now that the navigation property exists it must be configured in `OnModelCreating`:</span></span>
 
 ```CSharp
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -423,13 +423,13 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 }
 ```
 
-<span data-ttu-id="0c3b2-201">请注意关系是否已配置的完全一致之前，只能使用指定的调用中的导航属性`HasMany`。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-201">Notice that relationship is configured exactly as it was before, only with a navigation property specified in the call to `HasMany`.</span></span>
+<span data-ttu-id="b7ea5-201">请注意关系是否已配置的完全一致之前，只能使用指定的调用中的导航属性`HasMany`。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-201">Notice that relationship is configured exactly as it was before, only with a navigation property specified in the call to `HasMany`.</span></span>
 
-<span data-ttu-id="0c3b2-202">在 EF 模型，不是数据库中仅存在导航属性。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-202">The navigation properties only exist in the EF model, not the database.</span></span> <span data-ttu-id="0c3b2-203">因为尚未更改外的键关系，这种类型的模型更改不需要更新的数据库。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-203">Because the foreign key for the relationship has not changed, this kind of model change does not require the database to be updated.</span></span> <span data-ttu-id="0c3b2-204">这可以通过添加后进行更改的迁移检查：`Up`和`Down`方法为空。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-204">This can be checked by adding a migration after making the change: the `Up` and `Down` methods are empty.</span></span>
+<span data-ttu-id="b7ea5-202">在 EF 模型，不是数据库中仅存在导航属性。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-202">The navigation properties only exist in the EF model, not the database.</span></span> <span data-ttu-id="b7ea5-203">因为尚未更改外的键关系，这种类型的模型更改不需要更新的数据库。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-203">Because the foreign key for the relationship has not changed, this kind of model change does not require the database to be updated.</span></span> <span data-ttu-id="b7ea5-204">这可以通过添加后进行更改的迁移检查：`Up`和`Down`方法为空。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-204">This can be checked by adding a migration after making the change: the `Up` and `Down` methods are empty.</span></span>
 
-### <a name="adding-all-user-navigation-properties"></a><span data-ttu-id="0c3b2-205">添加所有用户导航属性</span><span class="sxs-lookup"><span data-stu-id="0c3b2-205">Adding all User navigation properties</span></span>
+### <a name="adding-all-user-navigation-properties"></a><span data-ttu-id="b7ea5-205">添加所有用户导航属性</span><span class="sxs-lookup"><span data-stu-id="b7ea5-205">Adding all User navigation properties</span></span>
 
-<span data-ttu-id="0c3b2-206">使用上的一节中作为指南，此处是用户配置的所有关系的单向导航属性的示例：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-206">Using the section above as guidance, here is an example that configures unidirectional navigation properties for all relationships on User:</span></span>
+<span data-ttu-id="b7ea5-206">使用上的一节中作为指南，此处是用户配置的所有关系的单向导航属性的示例：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-206">Using the section above as guidance, here is an example that configures unidirectional navigation properties for all relationships on User:</span></span>
 
 ```CSharp
 public class ApplicationUser : IdentityUser
@@ -483,9 +483,9 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 }
 ```
 
-### <a name="adding-user-and-role-navigation-properties"></a><span data-ttu-id="0c3b2-207">添加用户和角色导航属性</span><span class="sxs-lookup"><span data-stu-id="0c3b2-207">Adding User and Role navigation properties</span></span>
+### <a name="adding-user-and-role-navigation-properties"></a><span data-ttu-id="b7ea5-207">添加用户和角色导航属性</span><span class="sxs-lookup"><span data-stu-id="b7ea5-207">Adding User and Role navigation properties</span></span>
 
-<span data-ttu-id="0c3b2-208">使用上的一节中作为指南，此处是用户和角色配置的所有关系的导航属性的示例：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-208">Using the section above as guidance, here is an example that configures navigation properties for all relationships on User and Role:</span></span>
+<span data-ttu-id="b7ea5-208">使用上的一节中作为指南，此处是用户和角色配置的所有关系的导航属性的示例：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-208">Using the section above as guidance, here is an example that configures navigation properties for all relationships on User and Role:</span></span>
 
 ```CSharp
 public class ApplicationUser : IdentityUser
@@ -564,15 +564,15 @@ public class ApplicationDbContext
 }
 ```
 
-<span data-ttu-id="0c3b2-209">注意：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-209">Notes:</span></span>
+<span data-ttu-id="b7ea5-209">注意：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-209">Notes:</span></span>
 
-* <span data-ttu-id="0c3b2-210">此示例还包括`UserRole`加入实体，需导航从用户角色的多对多关系。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-210">This example also includes the `UserRole` join entity, which is needed to navigate the many-to-many relationship from Users to Roles.</span></span>
-* <span data-ttu-id="0c3b2-211">请记得将更改类型的导航属性以反映该`ApplicationXxx`类型现在正在使用而不是`IdentityXxx`类型。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-211">Remember to change the types of the navigation properties to reflect that `ApplicationXxx` types are now being used instead of `IdentityXxx` types.</span></span>
-* <span data-ttu-id="0c3b2-212">请记住使用`ApplicationXxx`中泛型`ApplicationContext`定义。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-212">Remember to use the `ApplicationXxx` in the generic `ApplicationContext` definition.</span></span>
+* <span data-ttu-id="b7ea5-210">此示例还包括`UserRole`加入实体，需导航从用户角色的多对多关系。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-210">This example also includes the `UserRole` join entity, which is needed to navigate the many-to-many relationship from Users to Roles.</span></span>
+* <span data-ttu-id="b7ea5-211">请记得将更改类型的导航属性以反映该`ApplicationXxx`类型现在正在使用而不是`IdentityXxx`类型。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-211">Remember to change the types of the navigation properties to reflect that `ApplicationXxx` types are now being used instead of `IdentityXxx` types.</span></span>
+* <span data-ttu-id="b7ea5-212">请记住使用`ApplicationXxx`中泛型`ApplicationContext`定义。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-212">Remember to use the `ApplicationXxx` in the generic `ApplicationContext` definition.</span></span>
 
-### <a name="adding-all-navigation-properties"></a><span data-ttu-id="0c3b2-213">添加所有导航属性</span><span class="sxs-lookup"><span data-stu-id="0c3b2-213">Adding all navigation properties</span></span>
+### <a name="adding-all-navigation-properties"></a><span data-ttu-id="b7ea5-213">添加所有导航属性</span><span class="sxs-lookup"><span data-stu-id="b7ea5-213">Adding all navigation properties</span></span>
 
-<span data-ttu-id="0c3b2-214">使用上的一节中作为指南，此处是所有实体类型配置的所有关系的导航属性的示例：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-214">Using the section above as guidance, here is an example that configures navigation properties for all relationships on all entity types:</span></span>
+<span data-ttu-id="b7ea5-214">使用上的一节中作为指南，此处是所有实体类型配置的所有关系的导航属性的示例：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-214">Using the section above as guidance, here is an example that configures navigation properties for all relationships on all entity types:</span></span>
 
 ```CSharp
 public class ApplicationUser : IdentityUser
@@ -678,13 +678,13 @@ public class ApplicationDbContext
 }
 ```
 
-### <a name="using-composite-keys"></a><span data-ttu-id="0c3b2-215">使用复合键</span><span class="sxs-lookup"><span data-stu-id="0c3b2-215">Using composite keys</span></span>
+### <a name="using-composite-keys"></a><span data-ttu-id="b7ea5-215">使用复合键</span><span class="sxs-lookup"><span data-stu-id="b7ea5-215">Using composite keys</span></span>
 
-<span data-ttu-id="0c3b2-216">前面几节所示更改标识模型中使用的键的类型。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-216">The preceding sections demonstrated changing the type of key used in the Identity model.</span></span> <span data-ttu-id="0c3b2-217">更改要使用复合键的标识键模型是不受支持或建议。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-217">Changing the Identity key model to use composite keys is not supported or recommended.</span></span> <span data-ttu-id="0c3b2-218">使用具有标识的复合键会涉及更改标识管理器代码如何与模型，这是不受支持的自定义项和超出本文的讨论范围交互。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-218">Using a composite key with Identity would involve changing how the Identity manager code interacts with the model, which is an unsupported customization and beyond the scope of this document.</span></span>
+<span data-ttu-id="b7ea5-216">前面几节所示更改标识模型中使用的键的类型。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-216">The preceding sections demonstrated changing the type of key used in the Identity model.</span></span> <span data-ttu-id="b7ea5-217">更改要使用复合键的标识键模型是不受支持或建议。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-217">Changing the Identity key model to use composite keys is not supported or recommended.</span></span> <span data-ttu-id="b7ea5-218">使用具有标识的复合键会涉及更改标识管理器代码如何与模型，这是不受支持的自定义项和超出本文的讨论范围交互。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-218">Using a composite key with Identity would involve changing how the Identity manager code interacts with the model, which is an unsupported customization and beyond the scope of this document.</span></span>
 
-### <a name="changing-tablecolumn-names-and-facets"></a><span data-ttu-id="0c3b2-219">更改表/列名称以及方面</span><span class="sxs-lookup"><span data-stu-id="0c3b2-219">Changing table/column names and facets</span></span>
+### <a name="changing-tablecolumn-names-and-facets"></a><span data-ttu-id="b7ea5-219">更改表/列名称以及方面</span><span class="sxs-lookup"><span data-stu-id="b7ea5-219">Changing table/column names and facets</span></span>
 
-<span data-ttu-id="0c3b2-220">若要更改的表和列的名称，调用`base.OnModelCreating`，然后添加配置，以重写任何默认值。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-220">To change the names of tables and columns, call `base.OnModelCreating`, and then add configuration to override any of the defaults.</span></span> <span data-ttu-id="0c3b2-221">例如，若要更改的标识的所有表名称：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-221">For example, to change the name of all the identity tables:</span></span>
+<span data-ttu-id="b7ea5-220">若要更改的表和列的名称，调用`base.OnModelCreating`，然后添加配置，以重写任何默认值。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-220">To change the names of tables and columns, call `base.OnModelCreating`, and then add configuration to override any of the defaults.</span></span> <span data-ttu-id="b7ea5-221">例如，若要更改的标识的所有表名称：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-221">For example, to change the name of all the identity tables:</span></span>
 
 ```CSharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -728,9 +728,9 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 }
 ```
 
-<span data-ttu-id="0c3b2-222">请注意，这些示例使用默认标识类型。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-222">Note that these examples use the default Identity types.</span></span> <span data-ttu-id="0c3b2-223">如果你正在使用的应用程序类型，如`ApplicationUser`然后配置该类型而不是默认类型。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-223">If you are using an application type, such as `ApplicationUser` then configure that type instead of the default type.</span></span>
+<span data-ttu-id="b7ea5-222">请注意，这些示例使用默认标识类型。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-222">Note that these examples use the default Identity types.</span></span> <span data-ttu-id="b7ea5-223">如果你正在使用的应用程序类型，如`ApplicationUser`然后配置该类型而不是默认类型。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-223">If you are using an application type, such as `ApplicationUser` then configure that type instead of the default type.</span></span>
 
-<span data-ttu-id="0c3b2-224">下面是一个示例，更改某些列名称：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-224">Here is an example that changes some column names:</span></span>
+<span data-ttu-id="b7ea5-224">下面是一个示例，更改某些列名称：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-224">Here is an example that changes some column names:</span></span>
 
 ```CSharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -750,7 +750,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 }
 ```
 
-<span data-ttu-id="0c3b2-225">可以使用某些配置某些类型的数据库列_方面_如允许的最大字符串长度。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-225">Some types of database columns can be configured with certain _facets_ such as the maximum string length allowed.</span></span> <span data-ttu-id="0c3b2-226">下面是示例模型中设置列的多个字符串属性的最大长度：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-226">Here is an example that sets column max lengths for several string properties in the model:</span></span>
+<span data-ttu-id="b7ea5-225">可以使用某些配置某些类型的数据库列_方面_如允许的最大字符串长度。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-225">Some types of database columns can be configured with certain _facets_ such as the maximum string length allowed.</span></span> <span data-ttu-id="b7ea5-226">下面是示例模型中设置列的多个字符串属性的最大长度：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-226">Here is an example that sets column max lengths for several string properties in the model:</span></span>
 
 ```CSharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -773,9 +773,9 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 }
 ```
 
-### <a name="mapping-to-a-different-schema"></a><span data-ttu-id="0c3b2-227">将映射到不同的架构</span><span class="sxs-lookup"><span data-stu-id="0c3b2-227">Mapping to a different schema</span></span>
+### <a name="mapping-to-a-different-schema"></a><span data-ttu-id="b7ea5-227">将映射到不同的架构</span><span class="sxs-lookup"><span data-stu-id="b7ea5-227">Mapping to a different schema</span></span>
 
-<span data-ttu-id="0c3b2-228">架构可以具有的行为以不同的方式不同的数据库提供程序中，但对于 SQL Server 默认值是"dbo"架构中创建所有表。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-228">Schemas can behave differently in different database providers, but for SQL Server, the default is to create all tables in the "dbo" schema.</span></span> <span data-ttu-id="0c3b2-229">可以更改此项以改为在不同的架构中创建表。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-229">This can be changed to instead create the tables in a different schema.</span></span> <span data-ttu-id="0c3b2-230">例如：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-230">For example:</span></span>
+<span data-ttu-id="b7ea5-228">架构可以具有的行为以不同的方式不同的数据库提供程序中，但对于 SQL Server 默认值是"dbo"架构中创建所有表。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-228">Schemas can behave differently in different database providers, but for SQL Server, the default is to create all tables in the "dbo" schema.</span></span> <span data-ttu-id="b7ea5-229">可以更改此项以改为在不同的架构中创建表。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-229">This can be changed to instead create the tables in a different schema.</span></span> <span data-ttu-id="b7ea5-230">例如：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-230">For example:</span></span>
 
 ```CSharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -786,17 +786,17 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 }
 ```
 
-### <a name="lazy-loading"></a><span data-ttu-id="0c3b2-231">延迟加载</span><span class="sxs-lookup"><span data-stu-id="0c3b2-231">Lazy loading</span></span>
+### <a name="lazy-loading"></a><span data-ttu-id="b7ea5-231">延迟加载</span><span class="sxs-lookup"><span data-stu-id="b7ea5-231">Lazy loading</span></span>
 
-<span data-ttu-id="0c3b2-232">在本部分中添加了对标识模型中的延迟加载代理支持。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-232">In this section support for lazy-loading proxies in the Identity model is added.</span></span> <span data-ttu-id="0c3b2-233">Lazy 加载很有用，因为它允许使用未第一个，则确保加载这些导航属性。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-233">Lazy-loading is useful since it allows navigation properties to be used without first ensuring they are loaded.</span></span>
+<span data-ttu-id="b7ea5-232">在本部分中添加了对标识模型中的延迟加载代理支持。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-232">In this section support for lazy-loading proxies in the Identity model is added.</span></span> <span data-ttu-id="b7ea5-233">Lazy 加载很有用，因为它允许使用未第一个，则确保加载这些导航属性。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-233">Lazy-loading is useful since it allows navigation properties to be used without first ensuring they are loaded.</span></span>
 
-<span data-ttu-id="0c3b2-234">实体类型可适用于采用多种方式的延迟加载中所述[EF 核心文档](/ef/core/querying/related-data#lazy-loading)。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-234">Entity types can be made suitable for lazy-loading in several ways, as described in the [EF Core documentation](/ef/core/querying/related-data#lazy-loading).</span></span> <span data-ttu-id="0c3b2-235">为简单起见，我们将使用延迟加载代理，该软件需要：</span><span class="sxs-lookup"><span data-stu-id="0c3b2-235">For simplicity, we will use lazy-loading proxies, which requires:</span></span>
+<span data-ttu-id="b7ea5-234">实体类型可适用于采用多种方式的延迟加载中所述[EF Core文档](/ef/core/querying/related-data#lazy-loading)。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-234">Entity types can be made suitable for lazy-loading in several ways, as described in the [EF Core documentation](/ef/core/querying/related-data#lazy-loading).</span></span> <span data-ttu-id="b7ea5-235">为简单起见，我们将使用延迟加载代理，该软件需要：</span><span class="sxs-lookup"><span data-stu-id="b7ea5-235">For simplicity, we will use lazy-loading proxies, which requires:</span></span>
 
-* <span data-ttu-id="0c3b2-236">安装[Microsoft.EntityFrameworkCore.Proxies](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Proxies/)包。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-236">Installation of the [Microsoft.EntityFrameworkCore.Proxies](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Proxies/) package.</span></span>
-* <span data-ttu-id="0c3b2-237">调用`.UseLazyLoadingProxies()`内`AddDbContext`。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-237">A call to `.UseLazyLoadingProxies()` inside `AddDbContext`.</span></span>
-* <span data-ttu-id="0c3b2-238">具有公共虚拟导航属性的公共实体类型。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-238">Public entity types with public virtual navigation properties.</span></span>
+* <span data-ttu-id="b7ea5-236">安装[Microsoft.EntityFrameworkCore.Proxies](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Proxies/)包。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-236">Installation of the [Microsoft.EntityFrameworkCore.Proxies](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Proxies/) package.</span></span>
+* <span data-ttu-id="b7ea5-237">调用`.UseLazyLoadingProxies()`内`AddDbContext`。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-237">A call to `.UseLazyLoadingProxies()` inside `AddDbContext`.</span></span>
+* <span data-ttu-id="b7ea5-238">具有公共虚拟导航属性的公共实体类型。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-238">Public entity types with public virtual navigation properties.</span></span>
 
-<span data-ttu-id="0c3b2-239">下面是一个示例调用`.UseLazyLoadingProxies()`:</span><span class="sxs-lookup"><span data-stu-id="0c3b2-239">Here is an example of calling `.UseLazyLoadingProxies()`:</span></span>
+<span data-ttu-id="b7ea5-239">下面是一个示例调用`.UseLazyLoadingProxies()`:</span><span class="sxs-lookup"><span data-stu-id="b7ea5-239">Here is an example of calling `.UseLazyLoadingProxies()`:</span></span>
 
 ```CSharp
 services
@@ -807,4 +807,4 @@ services
     .AddEntityFrameworkStores<ApplicationDbContext>();
 ```
 
-<span data-ttu-id="0c3b2-240">回头参考上面的示例获取将导航属性添加到实体类型。</span><span class="sxs-lookup"><span data-stu-id="0c3b2-240">Refer back to the examples above for adding navigation properties to the entity types.</span></span>
+<span data-ttu-id="b7ea5-240">回头参考上面的示例获取将导航属性添加到实体类型。</span><span class="sxs-lookup"><span data-stu-id="b7ea5-240">Refer back to the examples above for adding navigation properties to the entity types.</span></span>
