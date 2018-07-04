@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views
-title: 我如何： 实现查看模型来管理针对 ASP.NET MVC 视图的数据？ | Microsoft Docs
+title: 我如何： 实现视图模型，用于管理 ASP.NET MVC 视图的数据？ | Microsoft Docs
 author: rick-anderson
-description: 在本视频中 Chris Pels 演示如何使用的概念&quot;视图模型&quot;用于管理针对 ASP.NET MVC 视图的数据。 首先，示例 MVC 项目是凭据...
+description: Chris Pels 在本视频演示如何使用这一概念&quot;视图模型&quot;用于管理 ASP.NET MVC 视图的数据。 首先，示例 MVC 项目是凭据...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/11/2009
 ms.topic: article
 ms.assetid: 22f55d63-78f7-44fd-9107-f74cbe16022b
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views
 msc.type: video
-ms.openlocfilehash: 95be7e6bdbefe3f988fbc4065a8298395fb3ac89
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f0713b87dc6455016de921998a994f8bca7dd8bc
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871189"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37378081"
 ---
-<a name="how-do-i-implement-view--models-to-manage-data-for-aspnet-mvc-views"></a>我如何： 实现查看模型来管理针对 ASP.NET MVC 视图的数据？
+<a name="how-do-i-implement-view--models-to-manage-data-for-aspnet-mvc-views"></a>我如何： 实现视图模型，用于管理 ASP.NET MVC 视图的数据？
 ====================
 通过[Chris Pels](https://twitter.com/chrispels)
 
-在此视频 Chris Pels 用于管理针对 ASP.NET MVC 视图的数据显示如何使用"视图模型"的概念。 首先，示例 MVC 项目创建使用 ViewDataDictionary 包并将数据从控制器传递到视图。 接下来，它表示示例 MVC 项目中的视图的视图模型创建一个类。 作为此实现的一部分，讨论了视图模型方法的优点。 最后，是如何进行分区时使用视图模型实现应用程序逻辑的讨论。
+在此视频的 Chris Pels 中用于管理 ASP.NET MVC 视图的数据显示如何使用"视图模型"的概念。 首先，示例 MVC 项目被创建一个使用 ViewDataDictionary 打包和将数据从控制器传递到视图。 接下来，它表示示例 MVC 项目中的视图的视图模型创建的类。 作为此实现的一部分，讨论了视图模型方法的优点。 最后，还有如何进行分区时使用的视图模型实现应用程序逻辑的讨论。
 
 [&#9654;观看视频 （21 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views)
 

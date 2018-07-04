@@ -1,6 +1,6 @@
 ---
 uid: ajax/cdn/cdnajax4
-title: ASP.NET Web 窗体和 Ajax 4 |Microsoft 文档
+title: ASP.NET Web 窗体和 Ajax 4 |Microsoft Docs
 author: rick-anderson
 description: ''
 ms.author: aspnetcontent
@@ -9,19 +9,18 @@ ms.date: 07/28/2014
 ms.topic: article
 ms.assetid: cced3924-251c-4c77-bef0-7992acbac106
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /ajax/cdn/cdnajax4
 msc.type: content
-ms.openlocfilehash: c312b2d721de7dc29576d0cd509eb4ec5791420e
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: cff084e82a820881bd9fa1544f12bf61f1e070d0
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30070685"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364088"
 ---
 <a name="aspnet-web-forms-and-ajax-4"></a>ASP.NET Web 窗体和 Ajax 4
 ====================
-在 CDN 上托管以下文件：
+在 CDN 上托管的以下文件：
 
 - https://ajax.aspnetcdn.com/ajax/4.0/1/Date.HijriCalendar.debug.js
 - https://ajax.aspnetcdn.com/ajax/4.0/1/Date.HijriCalendar.js
@@ -60,6 +59,6 @@ ms.locfileid: "30070685"
 - https://ajax.aspnetcdn.com/ajax/4.0/1/WebParts.js
 - https://ajax.aspnetcdn.com/ajax/4.0/1/WebUIValidation.js
 
-注意： 全球化脚本，如 fr FR.js，可在以下文件夹中找到：
+注意： 全球化脚本，如 fr FR.js，可以在以下文件夹中找到：
 
 - https://ajax.aspnetcdn.com/ajax/4.0/1/globalization/

@@ -9,15 +9,14 @@ ms.date: 07/11/2013
 ms.topic: article
 ms.assetid: e42c8388-04ed-4341-9fdb-41b1b4c06320
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 5aa532137436922519c86246ebfa834910ac0d86
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7519ad92334690817ae64b994762fd68e76ebc9e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28042425"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37377804"
 ---
 <a name="parameter-binding-in-aspnet-web-api"></a>ASP.NET Web API 中的参数绑定
 ====================
@@ -31,7 +30,7 @@ Web API 在控制器上调用方法时，必须设置参数的值，此过程称
 - 如果参数为“简单”类型，Web API 会尝试从 URI 中获取值。 简单类型包括 .NET[基元类型](https://msdn.microsoft.com/library/system.type.isprimitive.aspx)（**int**、 **bool**、 **double**等），以及 **TimeSpan**、**DateTime**、**Guid**、**decimal** 和 **string**，此外还有**借助类型转换器即可从字符串进行转换的类型。 （稍后介绍有关类型转换器的详细信息。）
 - 对于复杂类型，Web API 尝试使用[媒体类型格式化程序](media-formatters.md)从消息正文中读取值。
 
-例如，以下是典型的 Web API 控制器方法：
+例如，下面是典型的 Web API 控制器方法：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample1.cs)]
 
@@ -58,7 +57,7 @@ Web API 在控制器上调用方法时，必须设置参数的值，此过程称
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample3.cs)]
 
-在此示例中，Web API 会使用媒体类型格式化程序从请求正文读取 *name* 的值。下面是一个客户端请求示例。 下面是一个示例客户端请求。
+在此示例中，Web API 会使用媒体类型格式化程序从请求正文读取 *name* 的值。下面是一个客户端请求示例。 下面是示例客户端请求。
 
 [!code-console[Main](parameter-binding-in-aspnet-web-api/samples/sample4.cmd)]
 
@@ -82,7 +81,7 @@ Web API 在控制器上调用方法时，必须设置参数的值，此过程称
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample7.cs)]
 
-客户端可以调用具有如下 URI 的方法：
+客户端可以调用具有如下的 URI 的方法：
 
 `http://localhost/api/values/?location=47.678558,-122.130989`
 
@@ -101,10 +100,10 @@ Web API 在控制器上调用方法时，必须设置参数的值，此过程称
 
 模型绑定器从值提供程序获取原始输入值。 这种设计可以将两种不同的功能分隔开：
 
-- 值提供程序获取 HTTP 请求，并填充键 / 值对的字典。
+- 值提供程序获取 HTTP 请求，并填充的键 / 值对的字典。
 - 模型绑定器使用此字典来填充模型。
 
-Web API 中的默认值提供程序从路由数据和查询字符串中获取值。 例如，如果的 URI 是`http://localhost/api/values/1?location=48,-122`，值提供程序创建以下的键 / 值对：
+Web API 中的默认值提供程序获取路由数据和查询字符串中的值。 例如，如果 URI 是`http://localhost/api/values/1?location=48,-122`，值提供程序创建以下键 / 值对：
 
 - id = &quot;1&quot;
 - 位置 = &quot;48,122&quot;
@@ -135,13 +134,13 @@ Web API 中的默认值提供程序从路由数据和查询字符串中获取值
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample13.cs)]
 
-## <a name="value-providers"></a>值在提供程序
+## <a name="value-providers"></a>值提供程序
 
 前面提到过，模型绑定器从值提供程序中获取值。 若要编写自定义值提供程序，请实现 **IValueProvider** 接口。 以下示例演示了如何在请求中从 Cookie 提取值：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample14.cs)]
 
-你还需要通过从派生来创建值提供程序工厂**ValueProviderFactory**类。
+您还需要创建值提供程序工厂通过派生自**ValueProviderFactory**类。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample15.cs)]
 
@@ -151,11 +150,11 @@ Web API 中的默认值提供程序从路由数据和查询字符串中获取值
 
 Web API 编写所有值提供程序，因此模型绑定器在调用 **ValueProvider.GetValue** 时，会从第一个能够生成该值的值提供程序接收值。
 
-或者，通过使用，在参数级别设置的值提供程序工厂**ValueProvider**特性，，如下所示：
+或者，通过使用，在参数级别设置值提供程序工厂**ValueProvider**属性，按如下所示：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample17.cs)]
 
-这将告知 Web API，以便使用指定的值提供程序工厂，使用模型绑定，并不是使用任何其他已注册的值提供程序。
+这将告知 Web API 使用模型绑定使用指定的值提供程序工厂，而不使用任何其他已注册的值提供程序。
 
 ## <a name="httpparameterbinding"></a>HttpParameterBinding
 
@@ -165,7 +164,7 @@ Web API 编写所有值提供程序，因此模型绑定器在调用 **ValueProv
 
 **HttpParameterBinding** 负责将参数绑定到值。 如果使用 **[ModelBinder]**，此特性会返回一个 **HttpParameterBinding** 实现，该实现使用 **IModelBinder** 执行实际的绑定。 你还可以实现你自己的**HttpParameterBinding**。
 
-例如，假设你想要获取从 Etag`if-match`和`if-none-match`在请求中的标头。 我们将开始通过定义一个类来表示 Etag。
+例如，假设你想要获取从 Etag`if-match`和`if-none-match`中请求的标头。 我们将首先定义一个类来表示 Etag。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample19.cs)]
 
@@ -178,21 +177,21 @@ Web API 编写所有值提供程序，因此模型绑定器在调用 **ValueProv
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample21.cs)]
 
-**ExecuteBindingAsync**方法执行绑定。 在这种方法，添加到绑定的参数值**ActionArgument**字典中的**HttpActionContext**。
+**ExecuteBindingAsync**方法执行绑定。 在此方法中，将绑定的参数值添加到**ActionArgument**字典中的**HttpActionContext**。
 
 > [!NOTE]
-> 如果你**ExecuteBindingAsync**方法读取请求消息的正文，请重写**WillReadBody**属性返回 true。 请求正文可能只能读取一次，因此 Web API 会强制实现一个规则，最多其中一个绑定未缓冲的数据流可以读取消息正文。
+> 如果你**ExecuteBindingAsync**方法读取请求消息的正文，请重写**WillReadBody**属性返回 true。 请求正文可能只能读取一次，因此 Web API 实施规则，最多一个绑定未缓冲的数据流可以读取消息正文。
 
 
-要应用自定义**HttpParameterBinding**，您可以定义属性派生自**ParameterBindingAttribute**。 有关`ETagParameterBinding`，我们将定义两个属性，一个用于`if-match`标头和一个用于`if-none-match`标头。 都派生自抽象基类。
+要应用自定义**HttpParameterBinding**，可以定义从派生的特性**ParameterBindingAttribute**。 有关`ETagParameterBinding`，我们将定义两个属性，一个用于`if-match`标头和一个用于`if-none-match`标头。 都派生自抽象基类的类。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample22.cs)]
 
-下面是使用一个控制器方法`[IfNoneMatch]`属性。
+下面是使用控制器方法`[IfNoneMatch]`属性。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample23.cs)]
 
-除了**ParameterBindingAttribute**，没有用于添加自定义的另一个挂钩**HttpParameterBinding**。 上**HttpConfiguration**对象， **ParameterBindingRules**属性是 anomymous 函数的类型的集合 (**HttpParameterDescriptor**  - &gt; **HttpParameterBinding**)。 例如，可以添加任何 ETag 参数的 GET 方法使用的规则`ETagParameterBinding`与`if-none-match`:
+除了**ParameterBindingAttribute**，没有用于添加自定义的另一个挂钩**HttpParameterBinding**。 上**HttpConfiguration**对象， **ParameterBindingRules**属性是集合类型的 anomymous 函数 (**HttpParameterDescriptor**  - &gt; **HttpParameterBinding**)。 例如，可以添加任何 ETag 参数的 GET 方法上使用的规则`ETagParameterBinding`与`if-none-match`:
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample24.cs)]
 
@@ -200,25 +199,25 @@ Web API 编写所有值提供程序，因此模型绑定器在调用 **ValueProv
 
 ## <a name="iactionvaluebinder"></a>IActionValueBinder
 
-由可插入的服务，控制整个参数绑定过程**IActionValueBinder**。 默认实现**IActionValueBinder**执行下列任务：
+可插入的服务，由控制整个参数绑定过程**IActionValueBinder**。 默认实现**IActionValueBinder**执行以下操作：
 
-1. 查找**ParameterBindingAttribute**的参数。 这包括 **[FromBody]**， **[FromUri]**，和 **[ModelBinder]**，或自定义属性。
-2. 否则，查找**HttpConfiguration.ParameterBindingRules**函数返回非 null **HttpParameterBinding**。
-3. 否则，请使用我以前所述的默认规则。 
+1. 寻找**ParameterBindingAttribute**的参数。 这包括 **[FromBody]**， **[FromUri]**，并 **[ModelBinder]**，或自定义属性。
+2. 否则，在中，请**HttpConfiguration.ParameterBindingRules**函数返回非 null **HttpParameterBinding**。
+3. 否则，使用我先前介绍的默认规则。 
 
-    - 如果参数类型是"简单"，或者有 URI 中将绑定的类型转换器。 这相当于加上 **[FromUri]** 参数上的属性。
-    - 否则，尝试从消息正文读取参数。 这相当于加上 **[FromBody]** 的参数。
+    - 如果参数类型为"简单"或具有从 URI 绑定的类型转换器。 这相当于将放 **[FromUri]** 参数上的属性。
+    - 否则，尝试从消息正文读取参数。 这相当于将放 **[FromBody]** 的参数。
 
-如果你想要则无法将整个**IActionValueBinder**服务为自定义实现。
+如果您希望，您可以替换为整个**IActionValueBinder**服务为自定义实现。
 
 ## <a name="additional-resources"></a>其他资源
 
 [自定义参数绑定示例](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/CustomParameterBinding/ReadMe.txt)
 
-Mike 停止写下了很好的博客文章有关 Web API 参数绑定：
+Mike Stall 编写了有关 Web API 参数绑定的很好的一系列博客文章：
 
-- [Web API 原理参数绑定](https://blogs.msdn.com/b/jmstall/archive/2012/04/16/how-webapi-does-parameter-binding.aspx)
-- [Web API 的 MVC 样式参数绑定](https://blogs.msdn.com/b/jmstall/archive/2012/04/18/mvc-style-parameter-binding-for-webapi.aspx)
+- [Web API 如何执行参数绑定](https://blogs.msdn.com/b/jmstall/archive/2012/04/16/how-webapi-does-parameter-binding.aspx)
+- [MVC 样式 Web api 的参数绑定](https://blogs.msdn.com/b/jmstall/archive/2012/04/18/mvc-style-parameter-binding-for-webapi.aspx)
 - [如何将绑定到 MVC/Web API 中的操作签名中的自定义对象](https://blogs.msdn.com/b/jmstall/archive/2012/04/20/how-to-bind-to-custom-objects-in-action-signatures-in-mvc-webapi.aspx)
-- [如何在 Web API 中创建自定义值提供程序](https://blogs.msdn.com/b/jmstall/archive/2012/04/23/how-to-create-a-custom-value-provider-in-webapi.aspx)
+- [如何在 Web API 中创建的自定义值提供程序](https://blogs.msdn.com/b/jmstall/archive/2012/04/23/how-to-create-a-custom-value-provider-in-webapi.aspx)
 - [实质上的 web API 参数绑定](https://blogs.msdn.com/b/jmstall/archive/2012/05/11/webapi-parameter-binding-under-the-hood.aspx)
