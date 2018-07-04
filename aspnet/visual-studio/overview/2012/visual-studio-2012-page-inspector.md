@@ -1,6 +1,6 @@
 ---
 uid: visual-studio/overview/2012/visual-studio-2012-page-inspector
-title: Visual Studio 2012 Page Inspector |Microsoft 文档
+title: Visual Studio 2012 Page Inspector |Microsoft Docs
 author: shanselman
 description: Scott Hanselman 演示 Visual Studio 2012 Page Inspector。
 ms.author: aspnetcontent
@@ -9,17 +9,16 @@ ms.date: 08/15/2012
 ms.topic: article
 ms.assetid: 90f33da5-b3fb-4715-b890-b27e263c808e
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/visual-studio-2012-page-inspector
 msc.type: video
-ms.openlocfilehash: 27685168ccdd06dc7536002ba5e86067dc38a676
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b5632d33b0dd21b060cd37b2a2cf6423be042ca5
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26506446"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37378007"
 ---
-<a name="visual-studio-2012-page-inspector"></a>Visual Studio 2012 Page Inspector
+<a name="visual-studio-2012-page-inspector"></a>Visual Studio 2012 页面检查器
 ====================
 通过[Scott Hanselman](https://github.com/shanselman)
 

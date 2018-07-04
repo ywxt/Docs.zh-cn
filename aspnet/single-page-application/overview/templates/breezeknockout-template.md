@@ -1,114 +1,113 @@
 ---
 uid: single-page-application/overview/templates/breezeknockout-template
-title: 轻松/Knockout 模板 |Microsoft 文档
+title: Breeze/Knockout 模版 |Microsoft Docs
 author: madskristensen
-description: 轻松/Knockout 单页面应用程序模板
+description: Breeze/Knockout 单页面应用程序模板
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/30/2013
 ms.topic: article
 ms.assetid: 3bd94827-3c59-448f-abc3-36e6df4858db
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/breezeknockout-template
 msc.type: authoredcontent
-ms.openlocfilehash: 07ec099a0381458fe42c1972a2554f76fd34638c
-ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.openlocfilehash: 48ee0463fe950c28832523986a2242417411c96a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "26506696"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376859"
 ---
-<a name="breezeknockout-template"></a>轻松/Knockout 模板
+<a name="breezeknockout-template"></a>Breeze/Knockout 模版
 ====================
 通过[Mads Kristensen](https://github.com/madskristensen)
 
-> 轻松/Knockout MVC 模板是编写的选区钟形
+> Breeze/Knockout MVC 模板是编写的 Ward Bell
 > 
-> [下载轻松/Knockout MVC 模板](https://go.microsoft.com/fwlink/?LinkId=282649)
+> [下载 Breeze/Knockout MVC 模板](https://go.microsoft.com/fwlink/?LinkId=282649)
 
 
-听说的"单页面应用程序"(SPA) 并想知道它是什么。 您无法阅读有关它，你将而是亲身体验。 但有时间来下载示例的人员？ 如果你具有 Visual Studio，你将示例 SPA 启动并使用 ASP.NET MVC 4"轻松/Knockout 单页面应用程序"模板运行在小于 60 秒。
+您听说过"单页面应用程序"(SPA) 并想知道它是什么。 虽然无法了解它，而不是与它自己。 但谁还有时间来下载示例？ 如果您有 Visual Studio，将包含最多的示例 SPA 和 ASP.NET mvc 4"Breeze/Knockout 单页面应用程序"模板运行在不会早于 60 秒。
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/ZephyrRunning.png)
 
-## <a name="what-is-the-breezeknockout-spa-template"></a>什么是轻松/Knockout SPA 模板？
+## <a name="what-is-the-breezeknockout-spa-template"></a>什么是 Breeze/Knockout SPA 模板？
 
-大多数项目模板生成应用程序框架。 通过添加你的代码置于这些骨骼 flesh 和最终提供有效的应用程序。 轻松/Knockout SPA 模板是不同的。 它会生成用于你来研究的示例应用程序。 它演示了 SPA 应用程序设计和许多用于生成 SPA 的技术。
+大多数项目模板生成应用程序框架。 通过添加你的代码置于这些基本加点料和最终交付的工作应用程序。 Breeze/Knockout SPA 模板是不同的。 它会生成示例应用程序，以便研究。 它演示了 SPA 应用程序设计和许多用于构建 SPA 的技术。
 
-轻松/Knockout 模板上是一种变体[KnockoutJS SPA 模板](../introduction/knockoutjs-template.md)包含在 ASP.NET 和 Web Tools 2012.2 更新。 轻松 SPA 模板生成的应用程序相同的用户体验，但它具有不同的实现，轻松使用数据管理的。
+Breeze/Knockout 模版上是一种变体[KnockoutJS SPA 模板](../introduction/knockoutjs-template.md)包含在 ASP.NET 和 Web Tools 2012.2 更新。 Breeze SPA 模板生成具有相同的用户体验的应用程序，但它具有不同的实现，使用数据管理变得轻而易举。
 
-KnockoutJS SPA 模板发出与原始 jQuery AJAX 的服务请求足以满足简单的应用程序。 但更复杂的应用程序必须满足更加严苛的数据管理要求。 例如，大多数应用程序：
+KnockoutJS SPA 模板，可使用原始 jQuery AJAX 中，服务请求足以满足简单的应用程序。 但更复杂的应用具有满足更加严苛的数据管理要求。 例如，大多数应用程序：
 
-- 查询并重新在扩展的用户会话期间查询服务器。
-- 添加查询筛选器，排序和分页。
+- 查询和扩展的用户会话期间重新查询服务器。
+- 添加查询筛选器、 排序和分页。
 - 在多个屏幕之间共享相同的数据。
-- 累积到多个对象的更改，然后将其保存为单个事务。
-- 验证客户端上的更改，因此用户可以更改提交到数据库之前更正错误。
+- 累积更改向很多对象，然后将其保存为一个事务。
+- 验证在客户端上的更改，因此，用户可以将更改提交到数据库之前更正错误。
 
-BreezeJS 库为你，释放你开发而言最为重要的应用程序逻辑和用户体验中处理这些日常任务。
+BreezeJS 库处理这些繁琐的事务，使你能开发最重要的应用程序逻辑和用户体验。
 
-[**轻松**](http://www.breezejs.com/?utm_source=ms-spa)是用于构建丰富的数据应用程序中 JavaScript 和 HTML，从历史上看已传递作为独立的桌面应用程序的应用类型的一个开源库。
+[**Breeze** ](http://www.breezejs.com/?utm_source=ms-spa)是用于构建丰富的数据应用程序中 JavaScript 和 HTML 的以前已作为独立桌面应用程序传递的应用类型的开放源代码库。
 
-轻松/Knockout 模板可帮助你执行的更可靠的数据管理基础结构向该第一个关键步骤。 它将生成的示例 Todo 应用程序与 KnockoutJS SPA 模板表面上是相同。 在内部，它替换轻松 AJAX 数据层，以便你可以比较两个接近并排显示。 当然，它只是涉及轻松应用程序的可能性。 但是，你将看到轻松的工作原理和多么少需要以使该转换。
+Breeze/Knockout 模板可帮助你执行向更可靠的数据管理基础结构的第一个关键步骤。 它将生成与 KnockoutJS SPA 模板表面上是相同的示例待办事项应用程序。 在内部，它替换 Breeze 的 AJAX 数据层，以便可以比较两个方法，通过并行。 当然，它几乎不能涉及到 Breeze 应用程序的可能性。 但您会看到 Breeze 的工作原理和如何稍有需要进行这种转换。
 
 让我们开始吧。
 
-## <a name="create-a-breezeknockout-template-project"></a>创建一个轻松/Knockout 模板项目
+## <a name="create-a-breezeknockout-template-project"></a>创建一个 Breeze/Knockout 模板项目
 
-下载并安装该模板通过单击上面的下载按钮。 模板被打包为 Visual Studio 扩展 (VSIX) 文件。 你可能需要重新启动 Visual Studio。
+下载并安装该模板通过单击上面的下载按钮。 该模板打包为 Visual Studio 扩展 (VSIX) 文件。 您可能需要重启 Visual Studio。
 
-在**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中，选择**ASP.NET MVC 4 Web 应用程序**。 命名该项目并单击**确定**。
+在中**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中选择**ASP.NET MVC 4 Web 应用程序**。 命名项目，然后单击**确定**。
 
-在**新项目**向导中，选择**轻松 Knockout SPA**。
+在中**新的项目**向导中，选择**Breeze Knockout SPA**。
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/SelectBreezeKOSpaTemplate.png)
 
-按 Ctrl + F5 生成并运行应用程序而不进行调试，或按 F5 边运行边调试。
+按 Ctrl-F5 生成并运行应用程序而不进行调试，或按 f5 边运行边调试。
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/ZephyrRunning.png)
 
-第一次运行应用程序，它会显示登录屏幕。 单击"注册"链接和新的页种到视图中，你可以在其中输入用户名和密码。 （登录名和注册页是使用 ASP.NET MVC 构建。）当提交注册表单时，服务器会生成你的帐户提供两个项目的 TodoList。 然后它将它们提供给你在上一个黄色的注释。
+当首次运行该应用程序时，它显示登录屏幕。 单击"注册"链接，一个新页面种到视图中，您可以在其中输入用户名和密码。 （登录名和注册页使用构建 ASP.NET MVC。）当您提交注册表单时，服务器会生成 TodoList 以下两个项为您的帐户。 其呈现给你在上一个黄色的注释。
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/TodoList.png)
 
-现在你已在上关于领土的 SPA 中。 所有内容你看到和遇到时操作 Todos 呈现中，管理 Knockout 和轻松的帮助客户端上。 作为用户浏览应用程序... 但开发人员眼睛。 在浏览器中使用的开发人员工具来捕获网络流量。 (在 Internet Explorer： 按 f12 键，选择**网络**卡，然后单击**开始捕获**。)现在请尝试以下操作：
+现在，已在 SPA 土地。 所有内容您看到和体验时操作 Todo 呈现和管理的 Knockout 和 Breeze 帮助客户端上。 以用户身份浏览应用程序... 但与开发人员的关注。 在浏览器中使用的开发人员工具来捕获网络流量。 (在 Internet Explorer： 按 f12 键，选择**网络**选项卡，然后单击**开始捕获**。)现在请尝试以下方法：
 
 - 添加新的 Todo 项。
 - 单击标签和编辑 Todo 项标题
-- 选中复选框以将标记项完成。 请注意已禁用文本框中，所以标题不再可编辑。
-- 单击右侧的标签的 'x'。 该项目将消失，从数据库中删除。
-- 选择另一个项，并清除其标题。 你将获得标题需要一个验证错误。 简要暂停后，将还原以前的标题。
-- 键入在可以极为长标题。 你将获得不同的验证错误的标题太长。
-- 单击"添加 Todo 列表"按钮。 前面的列表左侧将显示新列表。
+- 选中复选框以将标记项已完成。 请注意，文本框被禁用，因此是不再可编辑的标题。
+- 单击右侧的标签的 x。 项目将消失，并从数据库删除。
+- 选择另一个项，并清除其标题。 您将有标题是必需的验证错误。 短暂暂停之后还原上一个标题。
+- 键入可笑长标题中。 你将收到不同的验证错误的标题是太长。
+- 单击"添加待办事项列表"按钮。 上一列表的左侧将显示新列表。
 - 播放使用触发其所需的 TodoList 标题和长度验证。
-- 单击在标题文本框中，若要清除的错误消息。
-- 单击要删除任务列表和其 todos 右上角圆圈，圆圈中的"x"。
+- 单击以清除错误消息的标题文本框中。
+- 单击右上角以删除任务列表和其 todo 圆圈中的"x"。
 
-验证逻辑是通过轻松执行的客户端。 在的服务器模型类验证特性是传播到客户端，并且自动执行之前客户端与服务器联系。
+验证逻辑是通过 Breeze 的执行的客户端。 服务器模型类上的验证特性是传播到客户端，并自动执行之前客户端与服务器联系。
 
-查看网络流量。 请注意轻松检测到错误时的已连接到服务器的任何调用。 每个有效的更改导致 POST 请求为"/ api/Todo/SaveChanges"。 轻松将打包所做的更改并将其发送在一起以单个请求到 Web API 控制器`SaveChanges`方法。 这是不同于 KockoutJS SPA 模板，这使得 PUT、 POST 和单独删除每个项的请求。
+查看网络流量。 请注意，Breeze 检测到错误时，已连接到服务器的任何调用。 每个有效的更改时为"/ api/Todo/SaveChanges"的 POST 请求。 Breeze 捆绑包所做的更改并将其发送到一起以单个请求到 Web API 控制器`SaveChanges`方法。 这就是不同于 KockoutJS SPA 模板，这使得 PUT、 POST 和 DELETE 分别为每个项的请求。
 
 ## <a name="peek-inside"></a>在查看
 
-此应用程序具有客户端和服务器端。 客户端堆栈组成少量 HTML 和应用程序 JavaScript 模块 （在"应用"文件夹中） 的组合以及第三方 JavaScript 库 （在"脚本"文件夹中）。
+此应用程序具有一个客户端和服务器端。 客户端堆栈组成一个小的 HTML 和应用程序 JavaScript 模块 （在"应用"文件夹中） 的组合以及第三方 JavaScript 库 （在"脚本"文件夹中）。
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/ClientArchitecture.png)
 
-如果你已调查 KnockoutJS SPA 模板，这应该非常熟悉。 专注于蓝色框。 UI 体系结构是模型-视图-视图模型 (MVVM)，在该视图的 HTML 小组件完全分隔从视图模型中支持的演示文稿代码。 数据绑定系统 (在此情况下 Knockout) 协调的视图和视图模型，以便每个可以完成其他直接不知情的情况下操作。
+如果您研究 KnockoutJS SPA 模板，这应该很熟悉。 重点放在蓝色框。 UI 体系结构是视图的模型-视图-视图模型 (MVVM)，其中的 HTML 小组件视图的完全分隔从视图模型中支持的演示文稿代码。 数据绑定系统 (Knockout 在此情况下) 协调的视图和视图模型，这样，每个可以执行其作业而无需其他精通。
 
-模型封装 Todo 数据。 模型中的实体构造通过轻松使用 Knockout 可观察属性，以便它们可以直接绑定到视图中的小组件。 视图模型要求数据上下文，以获取并保存模型实体。 数据上下文委托的大部分到轻松工作。
+模型封装 Todo 数据。 模型中的实体都由构造通过 Breeze Knockout 可观察量属性，以便它们可以直接绑定到视图中的小组件。 视图模型要求数据上下文来获取和保存模型实体。 数据上下文委托的大部分 breeze 工作。
 
 一些开发人员代码和三个原则.NET 库的服务器端堆栈组成： Web API、 实体框架和 Breeze.NET:
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/ServerArchitecture.png)
 
-KockoutJS SPA 模板相同的基本体系结构。 但是，实现是要简单得多： Dto 已删除，并且大部分的实体框架的详细信息已委派给 Breeze.NET。
+KockoutJS SPA 模板相同的基本体系结构。 但是，实现是要简单得多： Dto 已删除，并且已到 Breeze.NET 委派大多数实体框架的详细信息。
 
 ## <a name="next-steps"></a>后续步骤
 
-我们建议你浏览代码中，由指导[全面讨论](http://www.breezejs.com/spa-template?utm_source=ms-spa)的客户端和服务器堆栈轻松网站上的。
+我们建议您浏览代码，由引导[广泛的讨论](http://www.breezejs.com/spa-template?utm_source=ms-spa)的客户端和服务器堆栈 Breeze 网站上的。
 
-你可以尝试 playing with 轻松客户端查询; 使用添加某些筛选器和排序。 你可以添加更多的模型属性和多个实体来更好地感受用于端到端 SPA 开发。 当你确信的设计时，你可以拉出 Todo 功能并将它们替换为你自己。
+您可以尝试播放使用 Breeze 客户端的查询的灵活性。添加一些筛选器和排序。 你可以添加多个模型的属性和多个实体以更好地了解端到端 SPA 开发的。 当你确信该设计的时你可以断开 Todo 功能并替换为您自己。
 
-很快你将准备就绪供下一大步： 添加客户端屏幕和它们之间导航。 将留下此 SPA 模板并转向更完整的 SPA 堆栈，如[John 爸爸热毛巾](https://github.com/johnpapa/HotTowel#readme "热毛巾")，从而将 Durandal 添加到轻松和 Knockout 组合。
+很快您就可以大的下一步： 添加客户端屏幕并在它们之间导航。 将留下此 SPA 模板和转向更完整的 SPA 堆栈，如[John Papa 热总是随身携带毛巾](https://github.com/johnpapa/HotTowel#readme "热总是随身携带毛巾")，从而将 Durandal 添加到 Breeze 和 Knockout 组合。

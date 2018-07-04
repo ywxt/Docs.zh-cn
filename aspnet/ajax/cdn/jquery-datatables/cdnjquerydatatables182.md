@@ -1,6 +1,6 @@
 ---
 uid: ajax/cdn/jquery-datatables/cdnjquerydatatables182
-title: jQuery 数据表 1.8.2 |Microsoft 文档
+title: jQuery DataTables 1.8.2 |Microsoft Docs
 author: rick-anderson
 description: ''
 ms.author: aspnetcontent
@@ -9,19 +9,18 @@ ms.date: 07/27/2014
 ms.topic: article
 ms.assetid: 2a72d2f5-b387-41e6-9807-21f2ec8c2b7a
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /ajax/cdn/jquery-datatables/cdnjquerydatatables182
 msc.type: content
-ms.openlocfilehash: 90bb75f2427bbe12cf0bfdc1ce4015dace328ed2
-ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
+ms.openlocfilehash: e0abb208cc3fcaa6b70a6129598215a2a0056753
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "30078304"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37390247"
 ---
-<a name="jquery-datatables-182"></a>jQuery 数据表 1.8.2
+<a name="jquery-datatables-182"></a>jQuery DataTables 1.8.2
 ====================
-在 CDN 上托管 jQuery 数据表插件的以下文件：
+在 CDN 上托管的 jQuery DataTables 插件的以下文件：
 
 - https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.8.2/jquery.dataTables.js
 - https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.8.2/jquery.dataTables.min.js

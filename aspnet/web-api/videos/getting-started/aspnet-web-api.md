@@ -1,6 +1,6 @@
 ---
 uid: web-api/videos/getting-started/aspnet-web-api
-title: ASP.NET Web API |Microsoft 文档
+title: ASP.NET Web API |Microsoft Docs
 author: shanselman
 description: 调试
 ms.author: aspnetcontent
@@ -9,15 +9,14 @@ ms.date: 08/15/2012
 ms.topic: article
 ms.assetid: a3ad418c-601f-4be8-964c-fd81f7c4cc9f
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/videos/getting-started/aspnet-web-api
 msc.type: video
-ms.openlocfilehash: abe0195a5bd9b8453711a9fc3eb654709595592f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 004765b52d500478d386c8a5345c53f16e149425
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26508956"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37363900"
 ---
 <a name="aspnet-web-api"></a>ASP.NET Web API
 ====================

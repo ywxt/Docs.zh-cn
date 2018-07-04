@@ -1,70 +1,69 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-after-each-other-vb
-title: 在每个其他 (VB) 后执行几个动画 |Microsoft 文档
+title: 多个动画逐一执行 (VB) |Microsoft Docs
 author: wenz
-description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 它允许运行跌落造成的严重...
+description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 它允许运行跌落造成的严重...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: 21ece509-79cc-4d9d-892d-7b6e9c4d3502
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-after-each-other-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 700946b9f32c5ed2dcb8586e7c0e84d2238ff103
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0d9e1ce0c156752ce0e97b91f253ced26360a721
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30873753"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364748"
 ---
-<a name="executing-several-animations-after-each-other-vb"></a>在每个其他 (VB) 后执行几个动画
+<a name="executing-several-animations-after-each-other-vb"></a>多个动画逐一执行 (VB)
 ====================
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation3.vb.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation3VB.pdf)
 
-> ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 它允许在其他后运行几个动画一个。
+> ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 它允许在它们运行多个动画一个。
 
 
 ## <a name="overview"></a>概述
 
-ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 它允许在其他后运行几个动画一个。
+ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 它允许在它们运行多个动画一个。
 
 ## <a name="steps"></a>步骤
 
-首先，包括`ScriptManager`在页中; 然后，ASP.NET AJAX 库加载后，使其可以使用该控件工具包：
+首先，包括`ScriptManager`在页中; 然后，ASP.NET AJAX 库加载时，使其可以使用控件工具包：
 
 [!code-aspx[Main](executing-several-animations-after-each-other-vb/samples/sample1.aspx)]
 
-动画将应用于如下所示的文本的一个面板中：
+动画将应用于文本的外观如下所示的面板：
 
 [!code-aspx[Main](executing-several-animations-after-each-other-vb/samples/sample2.aspx)]
 
-在关联 CSS 类中的面板，定义一种很好的背景色，并且还设置面板的宽度固定:
+在面板关联的 CSS 类，定义一种很好的背景色和还设置面板的固定的宽度：
 
 [!code-css[Main](executing-several-animations-after-each-other-vb/samples/sample3.css)]
 
-然后，将添加`AnimationExtender`到页中，提供`ID`、`TargetControlID`属性和强制性 `runat="server":`
+然后，添加`AnimationExtender`到页上，提供`ID`，则`TargetControlID`属性和强制性 `runat="server":`
 
 [!code-aspx[Main](executing-several-animations-after-each-other-vb/samples/sample4.aspx)]
 
-在`<Animations>`节点，请使用`<OnLoad>`以运行动画，一旦页已完全加载。 通常情况下，`<OnLoad>`仅接受一个动画。 动画框架允许你加入到一个使用多个动画`<Sequence>`元素。 中的所有动画`<Sequence>`执行后另一个。 下面是有关可能的标记`AnimationExtender`控件，首先进行更宽的面板以及增大或减小其高度：
+内`<Animations>`节点，请使用`<OnLoad>`页面完全加载后运行动画。 通常情况下，`<OnLoad>`只接受一个动画。 此动画框架允许你联接为一个，并使用多个动画`<Sequence>`元素。 中的所有动画`<Sequence>`是执行一个接一个。 下面是有关可能的标记`AnimationExtender`控件，首先进行更广泛的面板和增大或减小其高度：
 
 [!code-aspx[Main](executing-several-animations-after-each-other-vb/samples/sample5.aspx)]
 
-当你运行此脚本，面板中第一次获得更宽且然后较小。
+当您运行此脚本，面板第一次获得更宽且然后较小。
 
 
-[![首先增加了宽度](executing-several-animations-after-each-other-vb/_static/image2.png)](executing-several-animations-after-each-other-vb/_static/image1.png)
+[![第一次增加宽度](executing-several-animations-after-each-other-vb/_static/image2.png)](executing-several-animations-after-each-other-vb/_static/image1.png)
 
-第一次增加宽度 ([单击以查看实际尺寸的图像](executing-several-animations-after-each-other-vb/_static/image3.png))
+第一次增加宽度 ([单击此项可查看原尺寸图像](executing-several-animations-after-each-other-vb/_static/image3.png))
 
 
-[![然后减少高度](executing-several-animations-after-each-other-vb/_static/image5.png)](executing-several-animations-after-each-other-vb/_static/image4.png)
+[![再减少高度](executing-several-animations-after-each-other-vb/_static/image5.png)](executing-several-animations-after-each-other-vb/_static/image4.png)
 
-然后减少高度 ([单击以查看实际尺寸的图像](executing-several-animations-after-each-other-vb/_static/image6.png))
+然后减小高度 ([单击此项可查看原尺寸图像](executing-several-animations-after-each-other-vb/_static/image6.png))
 
 > [!div class="step-by-step"]
 > [上一页](executing-several-animations-at-the-same-time-vb.md)

@@ -1,33 +1,32 @@
 ---
 uid: web-pages/overview/api-reference/asp-net-web-pages-api-reference
-title: ASP.NET 网页 (Razor) API 快速参考 |Microsoft 文档
+title: ASP.NET 网页 (Razor) API 快速参考 |Microsoft Docs
 author: tfitzmac
-description: 此页包含的最常用的对象、 属性和方法进行编程的 ASP.NET Web Pages 使用 Razor 语法的简短示例的列表。
+description: 此页列出了最常用的对象、 属性和方法的 ASP.NET Web Pages 编程使用 Razor 语法的简短示例。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
 ms.topic: article
 ms.assetid: 4001cb9b-3bfd-4ace-8a89-1561d8421e2c
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/api-reference/asp-net-web-pages-api-reference
 msc.type: authoredcontent
-ms.openlocfilehash: 5f9d84f4d453583d7d4eae12e4fc510275255616
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 3bf706cefe5302cf1085e0f814dc6654e42ae917
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30897579"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37378658"
 ---
 <a name="aspnet-web-pages-razor-api-quick-reference"></a>ASP.NET 网页 (Razor) API 快速参考
 ====================
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
-> 此页包含的最常用的对象、 属性和方法进行编程的 ASP.NET Web Pages 使用 Razor 语法的简短示例的列表。
+> 此页列出了最常用的对象、 属性和方法的 ASP.NET Web Pages 编程使用 Razor 语法的简短示例。
 > 
-> 标记为"(v2)"的说明引入了在 ASP.NET Web Pages 版本 2。
+> 在 ASP.NET Web Pages 版本 2 引入了标有"(v2)"的说明。
 > 
-> API 参考文档，请参阅[ASP.NET 网页参考文档](https://go.microsoft.com/fwlink/?LinkId=208659)MSDN 上。
+> API 参考文档，请参阅[ASP.NET Web Pages 的参考文档](https://go.microsoft.com/fwlink/?LinkId=208659)MSDN 上。
 > 
 > ## <a name="software-versions"></a>软件版本
 > 
@@ -35,14 +34,14 @@ ms.locfileid: "30897579"
 > - ASP.NET 网页 (Razor) 3
 >   
 > 
-> 本教程还适用于 ASP.NET Web Pages 2 和 ASP.NET Web Pages 1.0 （除外标记 v2 的功能）。
+> 本教程还适用于 ASP.NET Web Pages 2 和 ASP.NET Web Pages 1.0 （除了标记 v2 的功能）。
 
 
 此页包含有关以下参考信息：
 
 - [类](#Classes)
 - [Data](#Data)
-- [帮助器](#Helpers)
+- [帮助程序](#Helpers)
 - [验证](#Validation)
 
 <a id="Classes"></a>
@@ -50,31 +49,31 @@ ms.locfileid: "30897579"
 
 ### `AppState[key], AppState[index],App`
 
-包含可由任何页共享应用程序中的数据。 你可以使用动态`App`属性来访问相同的数据，如以下示例所示：
+包含可由任何页面共享应用程序中的数据。 可以使用动态`App`属性来访问相同的数据，如以下示例所示：
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample1.html)]
 
 ### `AsBool(), AsBool(true|false)`
 
-将一个字符串值转换为布尔值 (true/false)。 返回 false 或指定的值如果字符串不表示 true/false。
+将一个字符串值转换为布尔值 (true/false)。 返回 false 或如果字符串不表示 true/false，则指定的值。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample2.cs)]
 
 ### `AsDateTime(), AsDateTime(value)`
 
-将转换日期/时间的字符串值。 返回`DateTime.MinValue`或如果字符串不表示为日期/时间的指定的值。
+将转换为日期/时间字符串值。 返回`DateTime.MinValue`或如果字符串不表示日期/时间指定的值。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample3.cs)]
 
 ### `AsDecimal(), AsDecimal(value)`
 
-将一个字符串值转换为十进制值。 返回 0.0 或如果字符串不表示一个十进制值的指定的值。
+将一个字符串值转换为十进制值。 返回介于 0.0 或如果字符串不表示一个十进制值，则指定的值。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample4.cs)]
 
 ### `AsFloat(), AsFloat(value)`
 
-将一个字符串值转换为浮点数。 返回 0.0 或如果字符串不表示一个十进制值的指定的值。
+将一个字符串值转换为浮点数。 返回介于 0.0 或如果字符串不表示一个十进制值，则指定的值。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample5.cs)]
 
@@ -86,13 +85,13 @@ ms.locfileid: "30897579"
 
 ### `Href(path [, param1 [, param2]])`
 
-从本地文件路径，具有可选的附加路径部分创建一个与浏览器兼容的 URL。
+从本地文件路径，包含可选的附加路径部分创建一个与浏览器兼容的 URL。
 
 [!code-cshtml[Main](asp-net-web-pages-api-reference/samples/sample7.cshtml)]
 
 ### `Html.Raw(value)`
 
-呈现*值*作为 HTML 标记，而不是呈现为 HTML 编码输出。
+呈现*值*为 HTML 标记，而不是它呈现为 HTML 编码的输出。
 
 [!code-cshtml[Main](asp-net-web-pages-api-reference/samples/sample8.cshtml)]
 
@@ -104,44 +103,44 @@ ms.locfileid: "30897579"
 
 ### `IsEmpty()`
 
-如果该对象或变量不具有任何值，则返回 true。
+如果对象或变量不具有任何值，则返回 true。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample10.cs)]
 
 ### `IsPost`
 
-如果请求是 POST，则返回 true。 （初始请求通常是 GET。）
+如果请求为 POST，则返回 true。 （初始请求通常是 GET。）
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample11.cs)]
 
 ### `Layout`
 
-指定要应用于此页所需的布局页的路径。
+指定要应用到此页所需的布局页的路径。
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample12.html)]
 
 ### `PageData[key], PageData[index],Page`
 
-包含在当前请求中的页、 布局页和部分页面之间共享的数据。 你可以使用动态`Page`属性来访问相同的数据，如以下示例所示：
+包含在当前请求的页面、 布局页和分页之间共享的数据。 可以使用动态`Page`属性来访问相同的数据，如以下示例所示：
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample13.html)]
 
 ### `RenderBody()`
 
-（布局页）呈现不在任何命名的部分内容页面的内容。
+（布局页）呈现内容页不在任何命名的节的内容。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample14.cs)]
 
 ### `RenderPage(path, values)`  
 `RenderPage(path[,param1 [, param2]])`
 
-呈现内容的页面，使用指定的路径和可选的额外数据。 你可以获取来自的额外参数的值`PageData`按照位置 （例如 1） 或键 （示例 2）。
+呈现内容页使用指定的路径和可选的额外数据。 可以获取来自的额外参数的值`PageData`的位置 （例如 1） 或键 （示例 2）。
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample15.js)]
 
 ### `RenderSection(sectionName [, required = true|false])`
 
-（布局页）呈现内容的部分具有名称。 设置*必需*为 false 使一个节可选。
+（布局页）呈现内容部分具有名称。 设置*需*为 false，以使部分可选。
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample16.js)]
 
@@ -153,44 +152,44 @@ ms.locfileid: "30897579"
 
 ### `Request.Files[key]`
 
-获取当前请求过程中上载的文件。
+获取当前请求中上传的文件。
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample18.js)]
 
 ### `Request.Form[key]`
 
-获取窗体中 （作为字符串） 已发布的数据。 `Request[key]` 检查同时`Request.Form`和`Request.QueryString`集合。
+获取在窗体发布 （作为字符串） 的数据。 `Request[key]` 检查这两`Request.Form`和`Request.QueryString`集合。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample19.cs)]
 
 ### `Request.QueryString[key]`
 
-获取指定的 URL 查询字符串中的数据。 `Request[key]` 检查同时`Request.Form`和`Request.QueryString`集合。
+获取指定的 URL 查询字符串中的数据。 `Request[key]` 检查这两`Request.Form`和`Request.QueryString`集合。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample20.cs)]
 
 ### `Request.Unvalidated(key)`  
 `Request.Unvalidated().QueryString|Form|Cookies|Headers[key]`
 
-有选择性地禁用请求验证窗体元素、 查询字符串值、 cookie，或标头值。 请求验证默认处于启用状态，并且可以防止用户发布标记或其他潜在危险的内容。
+有选择地禁用请求验证的窗体元素、 查询字符串值、 cookie 或标头值。 请求验证默认情况下启用，并防止用户将发布标记或其他潜在的危险的内容。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample21.cs)]
 
 ### `Response.AddHeader(name, value)`
 
-将 HTTP 服务器标头添加到响应中。
+将 HTTP 服务器标头添加到响应。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample22.cs)]
 
 ### `Response.OutputCache(seconds [, sliding] [, varyByParams])`
 
-将页面输出缓存指定的时间。 可以选择设置*滑动*重置在每次页访问的超时和*varyByParams*缓存的页面请求中每个不同的查询字符串的页的不同版本。
+将页面输出缓存指定的时间。 （可选） 设置*滑动*重置访问每个页上的超时值以及*varyByParams*来缓存不同版本的页的页请求中的每个不同的查询字符串。
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample23.js)]
 
 ### `Response.Redirect(path)`
 
-将浏览器请求重定向到新位置。
+浏览器请求重定向到新位置。
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample24.js)]
 
@@ -202,31 +201,31 @@ ms.locfileid: "30897579"
 
 ### `Response.WriteBinary(data [, mimetype])`
 
-内容写入*数据*到具有可选的 MIME 类型的响应。
+内容写入*数据*到具有可选 MIME 类型响应。
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample26.js)]
 
 ### `Response.WriteFile(file)`
 
-将响应写入的文件的内容。
+写入响应文件的内容。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample27.cs)]
 
 ### `@section(sectionName) {content }`
 
-（布局页）定义一个内容段中，有一个名称。
+（布局页）定义一个内容部分，其中有一个名称。
 
 [!code-cshtml[Main](asp-net-web-pages-api-reference/samples/sample28.cshtml)]
 
 ### `Server.HtmlDecode(htmlText)`
 
-对 HTML 编码的字符串进行解码。
+解码是 HTML 编码的字符串。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample29.cs)]
 
 ### `Server.HtmlEncode(text)`
 
-将编码的字符串中的 HTML 标记的呈现。
+在 HTML 标记中呈现的字符串进行编码。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample30.cs)]
 
@@ -238,37 +237,37 @@ ms.locfileid: "30897579"
 
 ### `Server.UrlDecode(urlText)`
 
-将文本从 URL 解码。
+解码 URL 中的文本。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample32.cs)]
 
 ### `Server.UrlEncode(text)`
 
-将文本将在 URL 中的编码。
+将文本放在 URL 中编码。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample33.cs)]
 
 ### `Session[key]`
 
-获取或设置一个值，用户关闭浏览器一直存在。
+获取或设置一个值，存在，直到用户关闭浏览器。
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample34.css)]
 
 ### `ToString()`
 
-显示的字符串表示形式的对象的值。
+显示对象的值的字符串表示形式。
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample35.html)]
 
 ### `UrlData[index]`
 
-获取其他数据从 URL (例如， */MyPage/ExtraData*)。
+从 URL 中获取其他数据 (例如， */MyPage/ExtraData*)。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample36.cs)]
 
 ### `WebSecurity.ChangePassword(userName,currentPassword,newPassword)`
 
-更改指定的用户的密码。
+更改为指定的用户的密码。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample37.cs)]
 
@@ -281,7 +280,7 @@ ms.locfileid: "30897579"
 ### `WebSecurity.CreateAccount(userName, password`  
  `[, requireConfirmationToken = true|false])`
 
-使用指定的用户名和密码创建新的用户帐户。 如果需要确认令牌，请将传递适用*requireConfirmationToken。*
+使用指定的用户名和密码创建新的用户帐户。 如果需要确认令牌，请传递 true 为*requireConfirmationToken。*
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample39.cs)]
 
@@ -300,13 +299,13 @@ ms.locfileid: "30897579"
 ### `WebSecurity.GeneratePasswordResetToken(username`  
  `[, tokenExpirationInMinutesFromNow])`
 
-生成可通过发送电子邮件给用户，以便用户可以重置密码的密码重置标记。
+生成可以在电子邮件中向用户发送，以便用户可以重置密码的密码重置令牌。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample42.cs)]
 
 ### `WebSecurity.GetUserId(userName)`
 
-用户名中返回的用户 ID。
+从用户名返回用户 ID。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample43.cs)]
 
@@ -318,13 +317,13 @@ ms.locfileid: "30897579"
 
 ### `WebSecurity.IsConfirmed(userName)`
 
-如果用户已确认 （例如，通过确认电子邮件），则返回 true。
+如果已确认用户 （例如，通过确认电子邮件），则返回 true。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample45.cs)]
 
 ### `WebSecurity.IsCurrentUser(userName)`
 
-如果当前用户的名称与指定的用户名称匹配，则返回 true。
+如果当前用户的名称与指定的用户名相匹配，则返回 true。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample46.cs)]
 
@@ -336,32 +335,32 @@ ms.locfileid: "30897579"
 
 ### `WebSecurity.Logout()`
 
-通过删除身份验证令牌 cookie 缩小记录用户。
+删除身份验证令牌 cookie 使用户登录超时。
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample48.css)]
 
 ### `WebSecurity.RequireAuthenticatedUser()`
 
-如果用户未通过身份验证，则设置的 HTTP 状态为 401 （未授权）。
+如果用户未经过身份验证，请将 HTTP 状态设置为 401 （未经授权）。
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample49.css)]
 
 ### `WebSecurity.RequireRoles(roles)`
 
-如果当前用户不是某个指定的角色的成员，设置 HTTP 状态为 401 （未授权）。
+如果当前用户不是指定角色之一的成员，请将 HTTP 状态设置为 401 （未经授权）。
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample50.html)]
 
 ### `WebSecurity.RequireUser(userId)`  
 `WebSecurity.RequireUser(userName)`
 
-如果当前用户不是按指定的用户*用户名*，将 HTTP 状态设置为 401 （未授权）。
+如果当前用户不是指定的用户*用户名*，HTTP 状态设置为 401 （未经授权）。
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample51.css)]
 
 ### `WebSecurity.ResetPassword(passwordResetToken,newPassword)`
 
-如果密码重置令牌有效，请为新密码更改用户的密码。
+如果密码重置令牌有效，为新密码更改用户的密码。
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample52.css)]
 
@@ -370,13 +369,13 @@ ms.locfileid: "30897579"
 
 ### `Database.Execute(SQLstatement [,parameters]`
 
-执行*SQLstatement* （带可选参数） 如 INSERT、 DELETE 或 UPDATE 并返回受影响的记录计数。
+执行*SQLstatement* （包含可选参数） 如 INSERT、 DELETE 或 UPDATE，并返回受影响的记录的计数。
 
 [!code-sql[Main](asp-net-web-pages-api-reference/samples/sample53.sql)]
 
 ### `Database.GetLastInsertId()`
 
-从最近插入的行返回的标识列。
+从最近插入的行返回标识列。
 
 [!code-sql[Main](asp-net-web-pages-api-reference/samples/sample54.sql)]
 
@@ -389,52 +388,52 @@ ms.locfileid: "30897579"
 
 ### `Database.OpenConnectionString(connectionString)`
 
-打开使用连接字符串的数据库。 (这点与`Database.Open`，它使用的连接字符串名称。)
+打开数据库使用连接字符串。 (这与完全不同`Database.Open`，它使用连接字符串名称。)
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample56.cs)]
 
 ### `Database.Query(SQLstatement[,parameters])`
 
-查询数据库使用*SQLstatement* （根据需要传递参数） 并以集合形式返回结果。
+数据库使用的查询*SQLstatement* （根据需要传递参数） 并将结果返回为一个集合。
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample57.html)]
 
 ### `Database.QuerySingle(SQLstatement [, parameters])`
 
-执行*SQLstatement* （带可选参数），并返回单个记录。
+执行*SQLstatement* （包含可选参数），并返回一条记录。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample58.cs)]
 
 ### `Database.QueryValue(SQLstatement [, parameters])`
 
-执行*SQLstatement* （带可选参数），并返回单个值。
+执行*SQLstatement* （包含可选参数），并返回单个值。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample59.cs)]
 
 <a id="Helpers"></a>
-## <a name="helpers"></a>帮助器
+## <a name="helpers"></a>帮助程序
 
 ### `Analytics.GetGoogleHtml(webPropertyId)`
 
-为指定的 id。 呈现 Google 分析 JavaScript 代码
+将 Google 分析 JavaScript 代码呈现为指定的 id。
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample60.js)]
 
 ### `Analytics.GetStatCounterHtml(project,security)`
 
-呈现指定项目的 StatCounter 分析 JavaScript 代码。
+呈现指定的项目的 StatCounter 分析 JavaScript 代码。
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample61.css)]
 
 ### `Analytics.GetYahooHtml(account)`
 
-呈现为指定的帐户的 Yahoo 分析 JavaScript 代码。
+呈现指定的帐户的 Yahoo 分析 JavaScript 代码。
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample62.js)]
 
 ### `Bing.SearchBox([boxWidth])`
 
-将搜索传递给必应。 若要指定站点到搜索并搜索框的标题，可以设置`Bing.SiteUrl`和`Bing.SiteTitle`属性。 在中设置这些属性通常 *\_AppStart*页。
+传递到必应搜索。 若要指定站点到搜索和搜索框的标题，可以设置`Bing.SiteUrl`和`Bing.SiteTitle`属性。 在设置这些属性通常 *\_AppStart*页。
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample63.html)]
 
@@ -456,41 +455,41 @@ ms.locfileid: "30897579"
  `[, axisLabel] [, legend] [, markerStep] [, xValue]`  
  `[, xField] [, yValues] [, yFields] [, options])`
 
-向图表中添加一系列值。
+向图表添加一系列的值。
 
 [!code-cshtml[Main](asp-net-web-pages-api-reference/samples/sample67.cshtml)]
 
 ### `Crypto.Hash(string [, algorithm])`  
 `Crypto.Hash(bytes [, algorithm])`
 
-返回指定的数据的哈希值。 默认算法是`sha256`。
+返回指定的数据的哈希值。 默认的算法是`sha256`。
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample68.html)]
 
 ### `Facebook.LikeButton(href [, buttonLayout] [, showFaces] [, width] [, height]`   
  `[, action] [, font] [, colorScheme] [, refLabel])`
 
-允许连接到页的 Facebook 用户。
+允许建立到页面的 Facebook 用户。
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample69.js)]
 
 ### `FileUpload.GetHtml([initialNumberOfFiles] [, allowMoreFilesToBeAdded]`  
  `[, includeFormTag] [, addText] [, uploadText])`
 
-将文件上载呈现用户界面。
+上传的文件中呈现的 UI。
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample70.html)]
 
 ### `GamerCard.GetHtml(gamerTag)`
 
-呈现指定的 Xbox 游戏标记。
+呈现指定的 Xbox 玩家标记。
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample71.js)]
 
 ### `Gravatar.GetHtml(email [, imageSize] [, defaultImage] [, rating]`  
  `[, imageExtension] [, attributes])`
 
-呈现为指定的电子邮件地址 Gravatar 图像。
+呈现指定的电子邮件地址的 Gravatar 图像。
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample72.css)]
 
@@ -502,26 +501,26 @@ ms.locfileid: "30897579"
 
 ### `Json.Decode(string)`
 
-将 JSON 编码的输入的字符串转换为可以循环访问或向数据库中插入的数据对象。
+将 JSON 编码的输入的字符串转换为可以循环访问，也可以向数据库中插入的数据对象。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample74.cs)]
 
 ### `LinkShare.GetHtml(pageTitle[, pageLinkBack] [, twitterUserName]`  
  `[, additionalTweetText] [, linkSites])`
 
-呈现使用指定的标题和可选的 URL 的社交网络链接。
+呈现社交网络的链接使用指定的标题和可选的 URL。
 
 [!code-xml[Main](asp-net-web-pages-api-reference/samples/sample75.xml)]
 
 ### `ModelStateDictionary.AddError(key, errorMessage)`
 
-将一条错误消息与窗体字段相关联。 使用`ModelState`帮助器访问该成员。
+将一条错误消息与窗体字段关联。 使用`ModelState`帮助器访问该成员。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample76.cs)]
 
 ### `ModelStateDictionary.AddFormError(errorMessage)`
 
-将一条错误消息表单与相关联。 使用`ModelState`帮助器访问该成员。
+将一条错误消息与窗体相关联。 使用`ModelState`帮助器访问该成员。
 
 [!code-powershell[Main](asp-net-web-pages-api-reference/samples/sample77.ps1)]
 
@@ -546,7 +545,7 @@ ms.locfileid: "30897579"
 ### `ReCaptcha.PublicKey`  
  `ReCaptcha.PrivateKey`
 
-设置 reCAPTCHA 服务的公共和私有密钥。 在中设置这些属性通常 *\_AppStart*页。
+设置 reCAPTCHA 服务的公共和私有密钥。 在设置这些属性通常 *\_AppStart*页。
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample81.css)]
 
@@ -558,55 +557,55 @@ ms.locfileid: "30897579"
 
 ### `ServerInfo.GetHtml()`
 
-呈现有关 ASP.NET Web 页的状态信息。
+呈现有关 ASP.NET Web Pages 的状态信息。
 
 [!code-cshtml[Main](asp-net-web-pages-api-reference/samples/sample83.cshtml)]
 
 ### `Twitter.Profile(twitterUserName)`
 
-呈现为指定的用户 Twitter 流。
+呈现指定的用户的 Twitter 流。
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample84.js)]
 
 ### `Twitter.Search(searchQuery)`
 
-呈现一个 Twitter 流以便指定的搜索文本。
+呈现指定的搜索文本的 Twitter 流。
 
 [!code-xml[Main](asp-net-web-pages-api-reference/samples/sample85.xml)]
 
 ### `Video.Flash(filename [, width, height])`
 
-呈现闪存视频播放器与可选的宽度和高度指定的文件。
+呈现可选宽度和高度指定的文件的闪存视频播放器。
 
 [!code-cshtml[Main](asp-net-web-pages-api-reference/samples/sample86.cshtml)]
 
 ### `Video.MediaPlayer(filename [, width, height])`
 
-呈现与可选的宽度和高度指定的文件的 Windows 媒体播放器。
+呈现可选宽度和高度指定的文件的 Windows 媒体播放器。
 
 [!code-cshtml[Main](asp-net-web-pages-api-reference/samples/sample87.cshtml)]
 
 ### `Video.Silverlight(filename, width, height)`
 
-呈现为指定的 Silverlight 播放器 *.xap*文件所需的宽度和高度。
+呈现指定的 Silverlight 播放器 *.xap*文件所需的宽度和高度。
 
 [!code-cshtml[Main](asp-net-web-pages-api-reference/samples/sample88.cshtml)]
 
 ### `WebCache.Get(key)`
 
-返回指定的对象*密钥*，或如果找不到对象为 null。
+返回由指定的对象*密钥*，或如果未找到该对象，则为 null。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample89.cs)]
 
 ### `WebCache.Remove(key)`
 
-删除指定的对象*密钥*从缓存。
+删除指定的对象*密钥*缓存中。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample90.cs)]
 
 ### `WebCache.Set(key, value [, minutesToCache] [, slidingExpiration])`
 
-放入*值*到下指定的名称缓存*密钥*。
+将放*值*导入到指定的名称下缓存*密钥*。
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample91.html)]
 
@@ -618,7 +617,7 @@ ms.locfileid: "30897579"
 
 ### `WebGrid.GetHtml()`
 
-呈现标记以 HTML 表中显示数据。
+呈现 HTML 表中显示数据标记。
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample93.html)]
 
@@ -655,7 +654,7 @@ ms.locfileid: "30897579"
 
 ### `WebImage.GetImageFromRequest()`
 
-加载图像，图像文件上载过程中发送到页面时。
+在文件上传的映像发布到页面时，请加载图像。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample99.cs)]
 
@@ -668,7 +667,7 @@ ms.locfileid: "30897579"
 ### `WebImage.RotateLeft()`  
 `WebImage.RotateRight()`
 
-将向左或向右图像的旋转。
+旋转到左侧或右侧图像。
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample101.css)]
 
@@ -680,7 +679,7 @@ ms.locfileid: "30897579"
 
 ### `WebMail.Password`
 
-为 SMTP 服务器设置的密码。 在设置此属性通常 *\_AppStart*页。
+设置 SMTP 服务器的密码。 在中设置此属性通常 *\_AppStart*页。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample103.cs)]
 
@@ -693,13 +692,13 @@ ms.locfileid: "30897579"
 
 ### `WebMail.SmtpServer`
 
-设置 SMTP 服务器名称。 在设置此属性通常<em>\_AppStart</em>页。
+设置 SMTP 服务器名称。 在中设置此属性通常<em>\_AppStart</em>页。
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample105.html)]
 
 ### `WebMail.UserName`
 
-设置 SMTP 服务器的用户名称。 通常应在设置此属性 *\_AppStart*页。
+设置 SMTP 服务器的用户名。 通常应将此属性 *\_AppStart*页。
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample106.html)]
 
@@ -720,13 +719,13 @@ ms.locfileid: "30897579"
 
 ### `Validation.Add(field, validationType)`
 
-(v2)注册的指定类型的验证的用户输入的元素。
+(v2)注册指定类型的验证用户输入的元素。
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample109.js)]
 
 ### `Validation.ClassFor(field)`
 
-(v2)动态呈现客户端验证的 CSS 类特性，以便你可以设置验证错误消息的格式。 （需要引用相应的客户端脚本库和定义 CSS 类。）
+(v2)动态呈现客户端验证的 CSS 类的特性，以便您可以设置验证错误消息的格式。 （需要引用相应的客户端脚本库和定义 CSS 类。）
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample110.html)]
 
@@ -744,13 +743,13 @@ ms.locfileid: "30897579"
 
 ### `Validation.RequireField(field[, errorMessage])`
 
-(v2)指定用户必须提供用户输入元素的值。
+(v2)指定用户必须为用户输入元素提供一个值。
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample113.cs)]
 
 ### `Validation.RequireFields(field1[, field12, field3, ...])`
 
-(v2)指定用户必须为每个用户输入元素提供值。 此方法不允许您指定的自定义错误消息。
+(v2)指定用户必须提供的每个用户输入元素的值。 此方法不允许你指定自定义错误消息。
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample114.html)]
 
@@ -765,6 +764,6 @@ ms.locfileid: "30897579"
 `Validator.StringLength(length)`  
 `Validator.Url([error message])`
 
-(v2)当你使用指定的验证测试`Validation.Add`方法。
+(v2)指定一个验证测试，当您使用`Validation.Add`方法。
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample115.js)]

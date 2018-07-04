@@ -1,6 +1,6 @@
 ---
 uid: web-pages/videos/aspnet-razor-pages/working-with-forms-part-1
-title: 使用窗体 （第 1 部分） |Microsoft 文档
+title: 使用窗体 （第 1 部分） |Microsoft Docs
 author: JoeStagner
 description: 如何使用窗体教程 (第 1 部分) 的视频伴奏
 ms.author: aspnetcontent
@@ -9,19 +9,18 @@ ms.date: 02/25/2011
 ms.topic: article
 ms.assetid: bf751e1f-7db9-4039-be55-d1ee33769c3a
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages/working-with-forms-part-1
 msc.type: video
-ms.openlocfilehash: 06040f5a899c3878296ccc511ae9d300840cb2cf
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a0239244a49e33193280059d24c58371def01e54
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30895046"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364263"
 ---
 <a name="working-with-forms-part-1"></a>使用窗体 （第 1 部分）
 ====================
-通过[Joe stagner 将](https://github.com/JoeStagner)
+通过[Joe Stagner](https://github.com/JoeStagner)
 
 如何使用窗体教程 (第 1 部分) 的视频伴奏
 

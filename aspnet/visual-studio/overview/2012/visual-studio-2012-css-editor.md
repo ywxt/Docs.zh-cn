@@ -1,6 +1,6 @@
 ---
 uid: visual-studio/overview/2012/visual-studio-2012-css-editor
-title: Visual Studio 2012 CSS 编辑器 |Microsoft 文档
+title: Visual Studio 2012 CSS 编辑器 |Microsoft Docs
 author: shanselman
 description: ''
 ms.author: aspnetcontent
@@ -9,15 +9,14 @@ ms.date: 08/15/2012
 ms.topic: article
 ms.assetid: aba1e91b-57cf-4c02-9ab1-5374310be497
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/visual-studio-2012-css-editor
 msc.type: video
-ms.openlocfilehash: 914aeb25db357bac43cc99011e8dc7ad3f0f4649
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8ff2e15acc17bc2b526ced4f6b7272d90966d26d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26506396"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37378120"
 ---
 <a name="visual-studio-2012-css-editor"></a>Visual Studio 2012 CSS 编辑器
 ====================
