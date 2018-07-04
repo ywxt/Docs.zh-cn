@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/editor-control-custom
-title: 编辑器控件自定义 |Microsoft 文档
+title: 编辑器控件自定义 |Microsoft Docs
 author: JoeStagner
-description: 在此视频 Joe 演示如何创建一个新类，从 AJAX 控件工具包的编辑器控件派生和实现"简单"的用户。
+description: 在此视频 Joe 演示了如何创建一个新类，派生自 AJAX 控件工具包的编辑器控件，并实现"简单"的用户。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/13/2009
 ms.topic: article
 ms.assetid: c688f8c3-0d0d-4ff2-a32b-f93e05fc826b
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/editor-control-custom
 msc.type: video
-ms.openlocfilehash: 3602bd8c936d331478517fd76b08ee9dca0a0757
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 481150d39af21eeb4847b507490688b424df1cd8
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30892395"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37392680"
 ---
 <a name="editor-control-custom"></a>编辑器控件自定义
 ====================
-通过[Joe stagner 将](https://github.com/JoeStagner)
+通过[Joe Stagner](https://github.com/JoeStagner)
 
-在此视频 Joe 演示如何创建一个新类，从 AJAX 控件工具包的编辑器控件派生和实现"简单"的用户。
+在此视频 Joe 演示了如何创建一个新类，派生自 AJAX 控件工具包的编辑器控件，并实现"简单"的用户。
 
 [&#9654;观看视频 （8 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/editor-control-custom)
 

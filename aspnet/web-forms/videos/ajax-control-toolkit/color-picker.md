@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/color-picker
-title: 颜色选取器 |Microsoft 文档
+title: 颜色选取器 |Microsoft Docs
 author: JoeStagner
-description: 此视频将演示如何使用 Microsoft AJAX 控件工具包中新的颜色选取器控件。
+description: 此视频将演示如何使用 Microsoft AJAX 控件工具包中的新颜色选取器控件。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/13/2009
 ms.topic: article
 ms.assetid: 8f2cb811-d9d3-4a6a-a7d6-f2035cfe51e5
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/color-picker
 msc.type: video
-ms.openlocfilehash: d314fcd3053e8ab7eef8a21b8c17e6a30ce8c1a4
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 34e811d022f3e74e933ca3e9e47e35e8aac522ae
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30882720"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37392644"
 ---
 <a name="color-picker"></a>颜色选取器
 ====================
-通过[Joe stagner 将](https://github.com/JoeStagner)
+通过[Joe Stagner](https://github.com/JoeStagner)
 
-此视频将演示如何使用 Microsoft AJAX 控件工具包中新的颜色选取器控件。
+此视频将演示如何使用 Microsoft AJAX 控件工具包中的新颜色选取器控件。
 
 [&#9654;观看视频 （9 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/color-picker)
 

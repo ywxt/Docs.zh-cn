@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-13-dependency-injection
-title: ASP.NET MVC 店面一部分 13： 依赖关系注入 |Microsoft 文档
+title: ASP.NET MVC 店面第 13： 依赖关系注入 |Microsoft Docs
 author: robconery
-description: 这是与 Jeremy Miller 的 CodeBetter/StructureMap，其中他显示我的依赖关系注入细节的联合开发会话。
+description: 这是与 Jeremy Miller 的 CodeBetter/StructureMap，其中他向我显示依赖关系注入的细节的联合开发会话。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2008
 ms.topic: article
 ms.assetid: 296fbe12-a28a-4fd8-bbc9-d1dc7468566a
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-13-dependency-injection
 msc.type: video
-ms.openlocfilehash: a915d6594d81151d87ee82d67af4105b009c7605
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a2b2521c111eb4fe777aa3cdc99ec70ebb585600
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871033"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37366156"
 ---
-<a name="aspnet-mvc-storefront-part-13-dependency-injection"></a>ASP.NET MVC 店面一部分 13： 依赖关系注入
+<a name="aspnet-mvc-storefront-part-13-dependency-injection"></a>ASP.NET MVC 店面第 13： 依赖关系注入
 ====================
-通过[窃取 Conery](https://github.com/robconery)
+通过[Rob conery 专攻](https://github.com/robconery)
 
-这是与 Jeremy Miller 的 CodeBetter/StructureMap，其中他显示我的依赖关系注入细节的联合开发会话。
+这是与 Jeremy Miller 的 CodeBetter/StructureMap，其中他向我显示依赖关系注入的细节的联合开发会话。
 
 [&#9654;观看视频 （58 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-13-dependency-injection)
 

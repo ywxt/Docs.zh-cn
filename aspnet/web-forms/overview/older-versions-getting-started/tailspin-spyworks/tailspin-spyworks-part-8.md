@@ -1,34 +1,33 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
-title: 第 8 部分： 最终页、 异常处理和结论 |Microsoft 文档
+title: 第 8 部分： 最终页面、 异常处理和结论 |Microsoft Docs
 author: JoeStagner
-description: 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 8 部分将添加一个联系人页面，页面上和异常有关...
+description: 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 8 部分添加一个联系人页，有关页和异常...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
 ms.topic: article
 ms.assetid: 5aeadf8f-39f3-4f07-a78f-1c310c64fb23
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: f82294aab0616012393cf3e10f932f6d1ad0cdb6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 3f1d855e157f6a58995d301a793e660925767fb4
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30886266"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37380248"
 ---
-<a name="part-8-final-pages-exception-handling-and-conclusion"></a>第 8 部分： 最终页、 异常处理和结论
+<a name="part-8-final-pages-exception-handling-and-conclusion"></a>第 8 部分： 最终页面、 异常处理和结论
 ====================
-通过[Joe stagner 将](https://github.com/JoeStagner)
+通过[Joe Stagner](https://github.com/JoeStagner)
 
-> Tailspin Spyworks 演示创建在.NET 平台的功能强大、 可扩展应用程序是如何非常简单。 它演示如何使用 ASP.NET 4 中出色的新功能构建在线商店，包括购物、 结帐和管理关闭。
+> Tailspin Spyworks 演示如何创建适用于.NET 平台的功能强大、 可扩展应用程序是如何非常简单。 它展示如何在 ASP.NET 4 中使用强大的新功能来构建在线商店，包括购物、 签出和管理。
 > 
-> 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 8 部分添加联系人页，有关页上和异常处理。 这是序列结束。
+> 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 8 部分将添加联系人的页上，有关页和异常处理。 这是系列教程的结论。
 
 
-## <a id="_Toc260221680"></a>  联系人页 （从 ASP.NET 发送电子邮件）
+## <a id="_Toc260221680"></a>  请联系页 （从 ASP.NET 发送电子邮件）
 
 创建一个名为 ContactUs.aspx 的新页
 
@@ -36,27 +35,27 @@ ms.locfileid: "30886266"
 
 ![](tailspin-spyworks-part-8/_static/image1.jpg)
 
-双击"提交"按钮以在代码隐藏文件中生成一个 click 事件处理程序和实现方法以作为电子邮件发送的联系信息。
+双击"提交"按钮以在代码隐藏文件中生成一个 click 事件处理程序并实现为一封电子邮件发送的联系信息的方法。
 
 [!code-csharp[Main](tailspin-spyworks-part-8/samples/sample1.cs)]
 
-此代码要求你的 web.config 文件包含指定要用于发送邮件的 SMTP 服务器的配置节中的条目。
+此代码需要在 web.config 文件包含指定要用于发送邮件的 SMTP 服务器的配置节中的条目。
 
 [!code-xml[Main](tailspin-spyworks-part-8/samples/sample2.xml)]
 
-## <a id="_Toc260221681"></a>  有关页面
+## <a id="_Toc260221681"></a>  有关页
 
-创建一个名为 AboutUs.aspx 页并添加任何您喜欢的内容。
+创建一个名为 AboutUs.aspx 页并添加您喜欢的任何内容。
 
 ## <a id="_Toc260221682"></a>  全局异常处理程序
 
-最后，在整个应用程序中，我们具有引发异常并且没有出现未预见的情况下，冷还在我们的 web 应用程序中的原因的未经处理的异常。
+最后，整个应用程序中，我们已引发异常并且未预见情况下，冷还可在 web 应用程序中导致未经处理的异常。
 
-我们永远不希望显示给网站访问者未经处理的异常。
+我们永远不会想要显示给网站访问者未经处理的异常。
 
 ![](tailspin-spyworks-part-8/_static/image2.jpg)
 
-除了正在可怕的用户体验未经处理的异常也可以是安全问题。
+除了可怕的用户体验未经处理的异常也可以是安全问题。
 
 若要解决此问题，我们将实现全局异常处理程序。
 
@@ -68,19 +67,19 @@ ms.locfileid: "30886266"
 
 [!code-csharp[Main](tailspin-spyworks-part-8/samples/sample4.cs)]
 
-然后添加一个名为到解决方案的 Error.aspx 页，并添加此标记代码段。
+然后添加一个名为到解决方案的 Error.aspx 页并添加此标记片段。
 
 [!code-aspx[Main](tailspin-spyworks-part-8/samples/sample5.aspx)]
 
-现在，在页\_从请求对象加载事件处理程序提取错误消息。
+现在，在页面\_从请求对象中加载事件处理程序提取的错误消息。
 
 [!code-csharp[Main](tailspin-spyworks-part-8/samples/sample6.cs)]
 
 ## <a id="_Toc260221683"></a>  结论
 
-我们已了解，ASP.NET WebForms 便于对来创建复杂的网站和数据库访问，成员身份，AJAX 等。 非常快速。
+我们所见，ASP.NET WebForms 可以轻松创建复杂的网站具有数据库访问，成员身份，AJAX，等等。 很快就会变。
 
-希望本教程已授予所需若要开始构建应用程序的你自己 ASP.NET WebForms 工具 ！
+希望本教程提供若要开始构建你自己的 ASP.NET WebForms 应用程序所需的工具 ！
 
 > [!div class="step-by-step"]
 > [上一篇](tailspin-spyworks-part-7.md)

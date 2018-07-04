@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-load-test-a-web-application
-title: '[如何:]负载测试的 Web 应用程序？ | Microsoft Docs'
+title: '[如何实现:]负载测试的 Web 应用程序？ | Microsoft Docs'
 author: rick-anderson
-description: 此视频将引导你浏览记录 Web 测试，然后重播它为负载测试模拟多个用户的过程。 我们可以看到如何 Visual Studio...
+description: 此视频将引导您完成录制 Web 测试，然后重播它为负载测试模拟多个用户的过程。 我们看到了 Visual Studio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/01/2007
 ms.topic: article
 ms.assetid: 2b0649d3-d072-446a-9918-b2648de26472
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-load-test-a-web-application
 msc.type: video
-ms.openlocfilehash: 582c0f2feef6d1086aba8c443309516043bff7e8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 2efe8beddbe369f047e1e81467f4d48b5bcde333
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30893994"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393792"
 ---
-<a name="how-do-i-load-test-a-web-application"></a>[如何:]负载测试的 Web 应用程序？
+<a name="how-do-i-load-test-a-web-application"></a>[如何实现:]负载测试的 Web 应用程序？
 ====================
 通过[Chris Menegay](https://twitter.com/CMenegay)
 
-此视频将引导你浏览记录 Web 测试，然后重播它为负载测试模拟多个用户的过程。 我们可以看到 Visual Studio Team System 如何允许你设置的服务器资源利用率，定义 Web 应用程序是通过还是失败负载测试的警告和严重阈值。
+此视频将引导您完成录制 Web 测试，然后重播它为负载测试模拟多个用户的过程。 我们可以看到 Visual Studio Team System 如何允许您设置的服务器资源利用率，定义 Web 应用程序是通过还是失败的负载测试的警告和严重阈值。
 
 [&#9654;观看视频 （8 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-load-test-a-web-application)
 

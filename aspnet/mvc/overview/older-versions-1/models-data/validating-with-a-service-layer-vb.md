@@ -1,104 +1,103 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
-title: 验证与服务层 (VB) |Microsoft 文档
+title: 使用服务层 (VB) 进行验证 |Microsoft Docs
 author: StephenWalther
-description: 了解如何移动你的验证逻辑控制器操作出来放入单独的服务层。 在本教程中，Stephen Walther 解释了如何你...
+description: 了解如何将移动应用验证逻辑从控制器操作和到单独的服务层。 在本教程中，Stephen Walther 解释了如何在...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
 ms.topic: article
 ms.assetid: 344bb38e-4965-4c47-bda1-f6d29ae5b83a
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: bb1191b663f863bf881def620efab4f2f03edc56
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a914a7351e0faf6babf144d80512994d513ed12f
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30868238"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393220"
 ---
-<a name="validating-with-a-service-layer-vb"></a>验证与服务层 (VB)
+<a name="validating-with-a-service-layer-vb"></a>使用服务层 (VB) 进行验证
 ====================
 通过[Stephen Walther](https://github.com/StephenWalther)
 
-> 了解如何移动你的验证逻辑控制器操作出来放入单独的服务层。 在本教程中，Stephen Walther 解释了如何通过隔离接受你的服务层，从控制器层维护尖锐分离问题。
+> 了解如何将移动应用验证逻辑从控制器操作和到单独的服务层。 在本教程中，Stephen Walther 解释了如何通过隔离您从控制器层的服务层维护清晰分离关注点。
 
 
-本教程的目的是为了说明的 ASP.NET MVC 应用程序中执行验证的一种方法。 在本教程中，您将学习如何移动你的验证逻辑你的控制器出来放入单独的服务层。
+本教程的目的是介绍 ASP.NET MVC 应用程序中执行验证的一种方法。 在本教程中，您将学习如何移动你的验证逻辑超出你的控制器和到单独的服务层。
 
-## <a name="separating-concerns"></a>分隔问题
+## <a name="separating-concerns"></a>分离关注点
 
-生成 ASP.NET MVC 应用程序时，不应在你的控制器操作内将你数据库的逻辑。 混合使用你的数据库和控制器逻辑让你应用程序随着时间的推移维护更加困难。 推荐方法是你将所有数据库逻辑放在单独的存储库层。
+在生成的 ASP.NET MVC 应用程序时，不应在控制器操作内将你数据库的逻辑。 混合数据库和控制器逻辑使得你的应用程序随着时间的推移维护更困难。 建议是您将所有数据库逻辑放置在一个独立的存储库层。
 
-例如，清单 1 包含名为化 ProductRepository 简单存储库。 产品储存库包含的所有应用程序的数据访问代码。 该列表还包括产品存储库实现的 IProductRepository 接口。
+例如，列表 1 中包含名为化 ProductRepository 简单的存储库。 产品存储库包含所有应用程序的数据访问代码。 该列表还包括产品存储库实现的 IProductRepository 接口。
 
-**Listing 1 - Models\ProductRepository.vb**
+**代码清单 1-Models\ProductRepository.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample1.vb)]
 
-列出 2 中的控制器其 index （） 和 create （） 操作中使用存储库层。 请注意，此控制器不包含任何数据库逻辑。 创建存储库层使您能够维护完全分离关注点。 控制器负责应用程序流控制逻辑和存储库负责数据访问逻辑。
+列表 2 中的控制器在其 index （） 和 create （） 操作中使用存储库层。 请注意，此控制器不包含数据库的任何逻辑。 创建存储库层，可保持完全分离关注点。 控制器负责应用程序流控制逻辑和存储库是负责数据访问逻辑。
 
-**Listing 2 - Controllers\ProductController.vb**
+**代码清单 2-Controllers\ProductController.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample2.vb)]
 
 ## <a name="creating-a-service-layer"></a>创建服务层
 
-因此，应用程序流控制逻辑所属控制器中，并且在存储库所属的数据访问逻辑。 在这种情况下，不要放置您的验证逻辑？ 一种选择是将放置在您验证逻辑*服务层*。
+因此，应用程序流控制逻辑位于控制器和数据访问逻辑所属的存储库中。 在这种情况下，您认为您的验证逻辑？ 一种方法是将放置在您的验证逻辑*服务层*。
 
-服务层是在 ASP.NET MVC 应用程序进行调解控制器和存储库层之间的通信的附加层。 服务层包含业务逻辑。 具体而言，它包含验证逻辑。
+服务层是 ASP.NET MVC 应用程序，可协调控制器和存储库层之间的通信的附加层。 服务层包含业务逻辑。 具体而言，它包含验证逻辑。
 
-例如，清单 3 的产品服务层具有 CreateProduct() 方法。 CreateProduct() 方法调用 ValidateProduct() 方法以将产品传递给产品存储库之前验证新产品。
+例如，清单 3 中的产品服务层具有 CreateProduct() 方法。 CreateProduct() 方法调用 ValidateProduct() 方法来验证新产品，然后再将该产品传递到产品存储库。
 
 **Listing 3 - Models\ProductService.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample3.vb)]
 
-产品控制器已更新列出 4 而不是存储库层使用的服务层中。 控制器层介绍对服务层。 服务层与存储库层通信。 每个层都有单独的责任。
+列表 4，而不是存储库层使用的服务层中的已更新的产品控制器。 控制器层与服务层进行通信。 服务层与存储库层。 每个层都有单独的责任。
 
-**Listing 4 - Controllers\ProductController.vb**
+**列表 4-Controllers\ProductController.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample4.vb)]
 
-请注意，在产品控制器构造函数创建产品服务。 创建产品服务后，模型状态字典将传递到服务。 产品服务使用模型状态将验证错误消息传递回控制器。
+请注意，产品控制器构造函数中创建产品服务。 创建产品服务时，模型状态字典传递到服务。 产品服务使用模型状态将验证错误消息传递到控制器。
 
 ## <a name="decoupling-the-service-layer"></a>分离的服务层
 
-我们无法隔离控制器和一个方面中的服务层。 控制器和服务层通过模型状态进行通信。 换而言之，服务层具有特定功能的 ASP.NET MVC framework 的依赖关系。
+我们无法隔离的控制器和在以下方面的服务层。 控制器和服务层进行通信来通过模型状态。 换而言之，服务层具有 ASP.NET MVC framework 的某个特定功能的依赖项。
 
-我们想要隔离从尽可能多地我们控制器层的服务层。 从理论上讲，我们应能够使用任何类型的应用程序和不只一个 ASP.NET MVC 应用程序使用的服务层。 例如，在将来，我们可能想要生成 WPF 前端我们为应用程序。 我们应从我们的服务层提供了如何删除对 ASP.NET MVC 依赖关系模型状态。
+我们想要隔离我们尽可能多的控制器层中的服务层。 从理论上讲，我们应该能够使用任何类型的应用程序并不只一个 ASP.NET MVC 应用程序使用的服务层。 例如，在将来，我们可能想要生成 WPF 应用程序前端。 我们应从我们的服务层提供一种方法来删除对 ASP.NET MVC 的依赖关系模型状态。
 
-在列出 5 中，服务层具有已更新，以使其不再使用模型状态。 相反，它使用的任何类都实现 IValidationDictionary 接口。
+在清单 5 的服务层进行了更新，以使其不再使用的模型状态。 相反，它使用的任何类都实现 IValidationDictionary 接口。
 
-**Listing 5 - Models\ProductService.vb (decoupled)**
+**列表 5-Models\ProductService.vb （分离式）**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample5.vb)]
 
-在列出 6 定义 IValidationDictionary 接口。 此简单的界面都具有单个方法和单个属性。
+列表 6 中定义了 IValidationDictionary 接口。 此简单接口具有单个方法和单个属性。
 
-**列出 6-Models\IValidationDictionary.cs**
+**代码清单 6-Models\IValidationDictionary.cs**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample6.vb)]
 
-在列出 7 中，名为 ModelStateWrapper 类，类实现 IValidationDictionary 接口。 可以通过将模型状态字典传递给构造函数来实例化 ModelStateWrapper 类。
+在列表 7 中，名为 ModelStateWrapper 类，该类实现 IValidationDictionary 接口。 可以通过将模型状态字典传递到构造函数来实例化 ModelStateWrapper 类。
 
-**Listing 7 - Models\ModelStateWrapper.vb**
+**列表 7-Models\ModelStateWrapper.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample7.vb)]
 
-最后，列出 8 中的更新的控制器使用 ModelStateWrapper 在其构造函数中创建服务层时。
+最后，代码清单 8 中已更新的控制器使用 ModelStateWrapper 在其构造函数中创建的服务层时。
 
-**Listing 8 - Controllers\ProductController.vb**
+**代码清单 8-Controllers\ProductController.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample8.vb)]
 
-使用 IValidationDictionary 接口和 ModelStateWrapper 类使我们能够将从我们控制器层我们服务层完全隔离。 服务层不再依赖于模型状态。 可以传递任何实现的服务层的 IValidationDictionary 接口的类。 例如，一个 WPF 应用程序可能实现一个简单的集合类 IValidationDictionary 的接口。
+使用 IValidationDictionary 接口和 ModelStateWrapper 类使我们能够将我们的服务层从我们的控制器层完全隔离。 服务层不再依赖于模型状态。 可以将传递的任何类都实现为服务层 IValidationDictionary 接口。 例如，WPF 应用程序可以实现简单的集合类的 IValidationDictionary 接口。
 
 ## <a name="summary"></a>总结
 
-本教程的目的是讨论在 ASP.NET MVC 应用程序中执行验证的一种方法。 在本教程中，您学习了如何将您的验证逻辑你的控制器出来放入单独的服务层的所有移动。 你还了解了如何通过创建 ModelStateWrapper 类隔离你从控制器层的服务层。
+本教程的目的是讨论 ASP.NET MVC 应用程序中执行验证的一种方法。 在本教程中，您学习了如何将您的验证逻辑超出你的控制器和到单独的服务层的所有移动。 您还学习了如何通过创建 ModelStateWrapper 类隔离您从控制器层的服务层。
 
 > [!div class="step-by-step"]
 > [上一页](validating-with-the-idataerrorinfo-interface-vb.md)

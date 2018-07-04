@@ -1,62 +1,61 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-cs
-title: 更改动画使用客户端代码 (C#) |Microsoft 文档
+title: 更改动画使用客户端代码 (C#) |Microsoft Docs
 author: wenz
-description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 此外可以动画...
+description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 此外可以在动画...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: 2bfbc5cc-f942-44b7-a62d-a29520f1da9a
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2f572efeb012d88ab15740bab7b0e4383572f3f7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 4bf480401e244661e2c316adcde3cbde647a6dc3
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30870643"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393069"
 ---
-<a name="changing-an-animation-using-client-side-code-c"></a>更改动画使用客户端代码 (C#)
+<a name="changing-an-animation-using-client-side-code-c"></a>使用客户端代码 (C#) 更改动画
 ====================
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation11.cs.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation11CS.pdf)
 
-> ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 也可以使用自定义客户端 JavaScript 代码更改动画。
+> ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 此外可以使用自定义客户端的 JavaScript 代码更改动画。
 
 
 ## <a name="overview"></a>概述
 
-ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 也可以使用自定义客户端 JavaScript 代码更改动画。
+ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 此外可以使用自定义客户端的 JavaScript 代码更改动画。
 
 ## <a name="steps"></a>步骤
 
-首先，包括`ScriptManager`在页中; 然后，ASP.NET AJAX 库加载后，使其可以使用该控件工具包：
+首先，包括`ScriptManager`在页中; 然后，ASP.NET AJAX 库加载时，使其可以使用控件工具包：
 
 [!code-aspx[Main](changing-an-animation-using-client-side-code-cs/samples/sample1.aspx)]
 
-动画将应用于如下所示的文本的一个面板中：
+动画将应用于文本的外观如下所示的面板：
 
 [!code-aspx[Main](changing-an-animation-using-client-side-code-cs/samples/sample2.aspx)]
 
-在关联 CSS 类中的面板，定义一种很好的背景色，并且还设置面板的宽度固定:
+在面板关联的 CSS 类，定义一种很好的背景色和还设置面板的固定的宽度：
 
 [!code-css[Main](changing-an-animation-using-client-side-code-cs/samples/sample3.css)]
 
-实际动画是由 HTML 按钮启动：
+通过 HTML 按钮会启动实际的动画：
 
 [!code-aspx[Main](changing-an-animation-using-client-side-code-cs/samples/sample4.aspx)]
 
-然后，将添加`AnimationExtender`到页中，提供`ID`、`TargetControlID`属性和强制性`runat="server"`:
+然后，添加`AnimationExtender`到页上，提供`ID`，则`TargetControlID`属性和强制性`runat="server"`:
 
 [!code-aspx[Main](changing-an-animation-using-client-side-code-cs/samples/sample5.aspx)]
 
-请注意，没有任何`<Animations>`中的节点`AnimationExtender`控件。 自定义 JavaScript 代码用于提供要用于该控件的动画。
+请注意，没有任何`<Animations>`中的节点`AnimationExtender`控件。 自定义 JavaScript 代码用于提供与控件一起使用的动画。
 
-服务器 API 与`AnimationExtender`，没有将动画尚未分配到扩展程序的轻松方法。 但是扩展程序确实公开了几种方法来读取和写入动画注册与各种事件 (`OnClick`， `OnLoad`，依次类推)。 下面是一些可能的恶意活动：
+与使用服务器 API 的`AnimationExtender`，没有无法轻松地将动画尚未分配给该扩展器。 但是扩展器确实公开了几种方法来读取和写入动画注册的各种事件 (`OnClick`， `OnLoad`，依此类推)。 下面是一些可能的恶意活动：
 
 - `get_OnClick()`
 - `set_OnClick()`
@@ -64,20 +63,20 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个�
 - `set_OnLoad()`
 - `...`
 
-返回值的格式`get_*()`函数和自变量的格式`set_*()`函数是一个 JSON 字符串，提供的对象表示形式的 XML 标记是什么。 目前，无法将传递一个对象，但可以从给定的动画读取某个对象 (`get_OnXXXBehavior()`方法)。
+返回值的格式`get_*()`函数和变量的格式`set_*()`函数是一个 JSON 字符串，提供的对象表示形式的 XML 标记是什么。 目前，没有方法来传递一个对象，但可以读取某个对象从给定的动画 (`get_OnXXXBehavior()`方法)。
 
-下面是一个 JSON 字符串 (不带分隔引号和精美格式) 表示动画触发了按钮，但通过调整其大小时和淡出在同一时间对面板进行动画处理：
+下面是一个 JSON 字符串 (不带分隔引号和格式可以很好地) 表示动画触发的按钮，但调整其大小时和淡出在同一时间对面板进行动画处理：
 
 [!code-json[Main](changing-an-animation-using-client-side-code-cs/samples/sample6.json)]
 
-下面的 JavaScript 代码将分配到此 JSON descripting`OnClick`动画的当前扩展程序并运行它：
+以下 JavaScript 代码将分配到此 JSON descripting`OnClick`动画的当前扩展程序并运行它：
 
 [!code-html[Main](changing-an-animation-using-client-side-code-cs/samples/sample7.html)]
 
 
-[![动画运行立即，无需单击鼠标 （，很少的标记）](changing-an-animation-using-client-side-code-cs/_static/image2.png)](changing-an-animation-using-client-side-code-cs/_static/image1.png)
+[![动画立即运行而无需单击鼠标 （和使用很少标记）](changing-an-animation-using-client-side-code-cs/_static/image2.png)](changing-an-animation-using-client-side-code-cs/_static/image1.png)
 
-动画会立即，运行没有鼠标单击 （且很少的标记） ([单击以查看实际尺寸的图像](changing-an-animation-using-client-side-code-cs/_static/image3.png))
+动画立即运行不带鼠标单击 （和使用很少标记） ([单击此项可查看原尺寸图像](changing-an-animation-using-client-side-code-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [上一页](executing-animations-using-client-side-code-cs.md)

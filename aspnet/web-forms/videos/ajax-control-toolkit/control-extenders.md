@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/control-extenders
-title: 控制扩展程序 |Microsoft 文档
+title: 控件扩展程序 |Microsoft Docs
 author: JoeStagner
-description: 观看这段视频，了解控件和 AJAX 控件扩展程序以及如何在你的应用程序中使用这些扩展程序之间的区别。
+description: 观看此视频，了解控件和 AJAX 控件扩展器以及如何在您的应用程序中使用这些扩展程序之间的差异。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/13/2009
 ms.topic: article
 ms.assetid: 26f6a508-5ad4-4551-826d-61e48135943f
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/control-extenders
 msc.type: video
-ms.openlocfilehash: c8be85c6683064c697a11d4b895438cc2722d159
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 68b34410fd0afa0428b111e32f48c16484c24e04
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30883763"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37392667"
 ---
-<a name="control-extenders"></a>控件扩展
+<a name="control-extenders"></a>控件扩展程序
 ====================
-通过[Joe stagner 将](https://github.com/JoeStagner)
+通过[Joe Stagner](https://github.com/JoeStagner)
 
-观看这段视频，了解控件和 AJAX 控件扩展程序以及如何在你的应用程序中使用这些扩展程序之间的区别。
+观看此视频，了解控件和 AJAX 控件扩展器以及如何在您的应用程序中使用这些扩展程序之间的差异。
 
 [&#9654;观看视频 （3 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/control-extenders)
 

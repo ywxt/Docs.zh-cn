@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-8-testing-controllers-iteration-1-complete
-title: ASP.NET MVC 店面一部分 8： 测试控制器、 迭代 1 完成 |Microsoft 文档
+title: ASP.NET MVC 店面第 8 部分： 测试控制器、 迭代 1 完成 |Microsoft Docs
 author: robconery
-description: Rob 完成向上的站点和以及控制器测试上的工作的初始迭代。
+description: Rob 最后的站点和以及控制器测试工作的初始迭代。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/27/2008
 ms.topic: article
 ms.assetid: dac14719-1158-4552-ba97-3aae6fb2aaae
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-8-testing-controllers-iteration-1-complete
 msc.type: video
-ms.openlocfilehash: 82ac1066029c10d3cf6d2e89ec518891ce34ff10
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 80f887f156357505075421d10ebe1401dd70dc6e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871111"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37379042"
 ---
-<a name="aspnet-mvc-storefront-part-8-testing-controllers-iteration-1-complete"></a>ASP.NET MVC 店面一部分 8： 测试控制器、 迭代 1 完成
+<a name="aspnet-mvc-storefront-part-8-testing-controllers-iteration-1-complete"></a>ASP.NET MVC 店面第 8 部分： 测试控制器、 迭代 1 完成
 ====================
-通过[窃取 Conery](https://github.com/robconery)
+通过[Rob conery 专攻](https://github.com/robconery)
 
-Rob 完成向上的站点和以及控制器测试上的工作的初始迭代。
+Rob 最后的站点和以及控制器测试工作的初始迭代。
 
 [&#9654;观看视频 （30 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-8-testing-controllers-iteration-1-complete)
 
