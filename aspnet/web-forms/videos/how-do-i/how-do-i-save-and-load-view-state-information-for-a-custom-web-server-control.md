@@ -1,28 +1,27 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control
-title: '[如何:]保存和加载视图状态信息自定义 Web 服务器控件 |Microsoft 文档'
+title: '[如何实现:]保存和加载视图状态信息自定义的 Web 服务器控件 |Microsoft Docs'
 author: rick-anderson
-description: 在此视频 Chris Pels 将演示如何来持久保存并还原在 ViewState 中的自定义用户控件的信息。 首先，了解如何保持简单值...
+description: 在此视频的 Chris Pels 将演示如何持久保存和还原视图状态中的自定义用户控件的信息。 首先，了解如何持久保存简单值...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
 ms.topic: article
 ms.assetid: 20750baf-ad6d-4754-a1f5-644b952f2ebb
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control
 msc.type: video
-ms.openlocfilehash: e984fa656d162ae0849159e82dd515d1c97c802a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b1972fa557c59510033451bc1068829bfe793b74
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26525566"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37395173"
 ---
-<a name="how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control"></a><span data-ttu-id="3a0ab-104">[如何:]保存和加载视图状态信息的自定义 Web 服务器控件</span><span class="sxs-lookup"><span data-stu-id="3a0ab-104">[How Do I:] Save and Load View State Information for a Custom Web Server Control</span></span>
+<a name="how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control"></a><span data-ttu-id="48ddf-104">[如何实现:]保存和加载视图状态信息的自定义 Web 服务器控件</span><span class="sxs-lookup"><span data-stu-id="48ddf-104">[How Do I:] Save and Load View State Information for a Custom Web Server Control</span></span>
 ====================
-<span data-ttu-id="3a0ab-105">通过[Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="3a0ab-105">by [Chris Pels](https://twitter.com/chrispels)</span></span>
+<span data-ttu-id="48ddf-105">通过[Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="48ddf-105">by [Chris Pels](https://twitter.com/chrispels)</span></span>
 
-<span data-ttu-id="3a0ab-106">在此视频 Chris Pels 将演示如何来持久保存并还原在 ViewState 中的自定义用户控件的信息。</span><span class="sxs-lookup"><span data-stu-id="3a0ab-106">In this video Chris Pels will show how to persist and restore information in the ViewState of a custom user control.</span></span> <span data-ttu-id="3a0ab-107">首先，了解如何保持简单值包含.NET 基元类型，如字符串，Int32，布尔，等等。然后，请参阅如何保留类等复杂类型，其中包含存储信息的属性。</span><span class="sxs-lookup"><span data-stu-id="3a0ab-107">First, learn how to persist simple values containing .NET primitive types such as String, Int32, Boolean, etc. Then see how to persist complex types such as Class which contain properties storing information.</span></span> <span data-ttu-id="3a0ab-108">此外讨论了处理生命周期的 ASP.NET 页的视图状态信息的序列。</span><span class="sxs-lookup"><span data-stu-id="3a0ab-108">The sequence of processing View State information during the lifecycle of an ASP.NET page is also discussed.</span></span>
+<span data-ttu-id="48ddf-106">在此视频的 Chris Pels 将演示如何持久保存和还原视图状态中的自定义用户控件的信息。</span><span class="sxs-lookup"><span data-stu-id="48ddf-106">In this video Chris Pels will show how to persist and restore information in the ViewState of a custom user control.</span></span> <span data-ttu-id="48ddf-107">首先，了解如何持久保存简单值包含.NET 基元类型，如 String，Int32，布尔值，等等。然后了解如何持久保存包含属性存储信息的复杂类型如类。</span><span class="sxs-lookup"><span data-stu-id="48ddf-107">First, learn how to persist simple values containing .NET primitive types such as String, Int32, Boolean, etc. Then see how to persist complex types such as Class which contain properties storing information.</span></span> <span data-ttu-id="48ddf-108">此外讨论了处理生命周期中的 ASP.NET 页面的视图状态信息的序列。</span><span class="sxs-lookup"><span data-stu-id="48ddf-108">The sequence of processing View State information during the lifecycle of an ASP.NET page is also discussed.</span></span>
 
-[<span data-ttu-id="3a0ab-109">&#9654;观看视频 （28 分钟）</span><span class="sxs-lookup"><span data-stu-id="3a0ab-109">&#9654; Watch video (28 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control)
+[<span data-ttu-id="48ddf-109">&#9654;观看视频 （28 分钟）</span><span class="sxs-lookup"><span data-stu-id="48ddf-109">&#9654; Watch video (28 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control)
