@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application
-title: 异步和与实体框架中的 ASP.NET MVC 应用程序的存储的过程 |Microsoft 文档
+title: 异步和使用实体框架在 ASP.NET MVC 应用程序中的存储的过程 |Microsoft Docs
 author: tdykstra
 description: Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 的 ASP.NET MVC 5 应用程序...
 ms.author: aspnetcontent
@@ -9,17 +9,16 @@ ms.date: 11/07/2014
 ms.topic: article
 ms.assetid: 27d110fc-d1b7-4628-a763-26f1e6087549
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 84cf427c7da7905444568ac34534e9ed98a7d8c8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 4c2deb53856d79a52415db48e04ea96111833b02
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30873256"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37381924"
 ---
-<a name="async-and-stored-procedures-with-the-entity-framework-in-an-aspnet-mvc-application"></a>异步和与实体框架中的 ASP.NET MVC 应用程序的存储的过程
+<a name="async-and-stored-procedures-with-the-entity-framework-in-an-aspnet-mvc-application"></a>异步和使用实体框架在 ASP.NET MVC 应用程序中的存储的过程
 ====================
 通过[Tom Dykstra](https://github.com/tdykstra)
 
@@ -28,62 +27,62 @@ ms.locfileid: "30873256"
 > Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 
 
-在早期教程中，您学习了如何读取和更新使用的同步的编程模型的数据。 在本教程中，你将了解如何实现异步编程模型。 异步代码可帮助更好地执行，因为它使更好地利用服务器资源的应用程序。
+在之前的教程中，您学习了如何读取和更新使用同步编程模型的数据。 在本教程中，请参阅如何实现异步编程模型。 异步代码可以帮助更好地执行，因为这样可以更好地利用服务器资源的应用程序。
 
-在本教程还将了解如何存储的过程用于插入、 更新和删除实体上的操作。
+在本教程还将了解如何将存储的过程用于插入、 更新和删除实体上的操作。
 
-最后，你将重新部署到 Azure，以及已实现后首次你部署的数据库更改的所有应用程序。
+最后，将重新部署到 Azure，以及它实现了自第一次部署后的数据库更改的所有应用程序。
 
-下图显示了一些将使用的页面。
+下图是一些将会用到的页面。
 
 ![部门页](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
 
 ![创建部门](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image2.png)
 
-## <a name="why-bother-with-asynchronous-code"></a>为什么涉及异步代码
+## <a name="why-bother-with-asynchronous-code"></a>为什么要那么麻烦与异步代码
 
-Web 服务器可用的线程数量有限，而在高负载情况下，可能会使用所有可用线程。 当发生这种情况的时候，服务器无法处理新请求，直到线程被释放。 使用同步代码时，可能会出现多个线程被占用但不执行任何操作的情况，因为它们在等待 I/O 完成。 使用异步代码时，当进程正在等待 I/O 完成，服务器可以将其线程释放，用于处理其他请求。 因此，异步代码允许服务器资源更有效地使用且已启用服务器以处理更多流量不会延迟。
+Web 服务器的可用线程是有限的，而在高负载情况下的可能所有线程都被占用。 当发生这种情况的时候，服务器就无法处理新请求，直到线程被释放。 使用同步代码时，可能会出现多个线程被占用但不能执行任何操作的情况，因为它们正在等待 I/O 完成。 使用异步代码时，当进程正在等待 I/O 完成，服务器可以将其线程释放用于处理其他请求。 因此，异步代码可以使服务器资源能够更有效地使用和服务器能够处理更多流量不会延迟。
 
-在早期版本的.NET 中，编写和测试异步代码较为复杂，容易，并且难以调试的错误。 .NET 4.5 中编写、 测试和调试异步代码是，应通常编写异步代码，除非你有其他原因不变得更加方便。 异步代码会引入的少量开销，但潜在的性能改善的性能影响可以忽略不计，时针对的高流量情况低流量情况下，较高。
+在早期版本的.NET 中，编写和测试异步代码较为复杂，容易出错且难进行调试。 在.NET 4.5 中，编写、 测试和调试异步代码是，您应除非有理由不这么地通常编写异步代码变得如此简单。 异步代码会引入少量开销，但流量较低性能影响可以忽略不计，同时针对高流量情况，潜在的性能改善非常显著。
 
-有关异步编程的详细信息，请参阅[使用.NET 4.5 的异步支持，以避免阻塞调用](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices.md#async)。
+有关异步编程的详细信息，请参阅[使用.NET 4.5 的异步支持以避免阻塞调用](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices.md#async)。
 
 ## <a name="create-the-department-controller"></a>创建部门控制器
 
-创建相同的方式更早版本的控制器，只不过这次选择部门控制器**使用异步控制器**操作复选框。
+创建采用相同的方式更早版本的控制器，只不过这次选择一个部门控制器**使用异步控制器**操作复选框。
 
 ![部门控制器基架](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 
-以下突出显示内容已添加到的同步代码`Index`方法来执行异步：
+以下突出显示出已添加到的同步代码`Index`方法，使其异步：
 
 [!code-csharp[Main](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs?highlight=1,4)]
 
-应用了四个更改，以启用实体框架数据库查询，以异步方式执行：
+四个更改已应用以启用要以异步方式执行的 Entity Framework 数据库查询：
 
-- 该方法将标有`async`关键字，它告诉编译器生成的方法主体的部件的回调并自动创建`Task<ActionResult>`返回的对象。
-- 返回类型已从更改`ActionResult`到`Task<ActionResult>`。 `Task<T>`类型表示正在进行的工作类型的结果`T`。
-- `await`关键字应用于 web 服务调用。 当编译器发现此关键字时，在幕后它拆分方法为两个部分。 第一部分结尾以异步方式启动该操作。 第二部分被放入操作完成时调用的回调方法。
+- 方法将标有`async`关键字，它会告知编译器方法正文的各部分生成回调并自动创建`Task<ActionResult>`返回对象。
+- 返回类型已从`ActionResult`到`Task<ActionResult>`。 `Task<T>`类型表示正在进行的工作类型的结果`T`。
+- `await`关键字已应用于 web 服务调用。 当编译器发现此关键字时，在后台它将拆分该方法为两个部分。 第一个部分结尾以异步方式启动该操作。 第二部分放入操作完成时调用的回调方法。
 - 异步版本`ToList`调用扩展方法。
 
-为什么是`departments.ToList`的语句，但不是修改`departments = db.Departments`语句？ 原因是以异步方式执行导致查询或命令发送到数据库的语句。 `departments = db.Departments`语句将设置查询，但是直到不执行查询`ToList`调用方法。 因此，仅`ToList`以异步方式执行方法。
+为什么是`departments.ToList`语句但不是修改`departments = db.Departments`语句？ 原因是以异步方式执行导致查询或命令被发送到数据库的语句。 `departments = db.Departments`语句设置了一个查询，但不是执行查询之前`ToList`调用方法。 因此，仅`ToList`以异步方式执行方法。
 
-在`Details`方法和`HttpGet``Edit`和`Delete`方法，`Find`方法是，则查询发送到数据库，因此是以异步方式执行该方法的一个：
+在中`Details`方法和`HttpGet``Edit`并`Delete`方法，`Find`方法是，则查询发送到数据库，因此这就是以异步方式执行的方法：
 
 [!code-csharp[Main](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs?highlight=7)]
 
-在`Create`， `HttpPost Edit`，和`DeleteConfirmed`方法，它是`SaveChanges`导致要执行的命令的方法调用、 不等的语句`db.Departments.Add(department)`这仅在内存中修改导致实体。
+在`Create`， `HttpPost Edit`，并`DeleteConfirmed`方法，它是`SaveChanges`会导致要执行的命令的方法调用、 不等的语句`db.Departments.Add(department)`这只导致要修改的内存中的实体。
 
 [!code-csharp[Main](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample3.cs?highlight=6)]
 
-打开*Views\Department\Index.cshtml*，并将模板代码替换为以下代码：
+打开*Views\Department\Index.cshtml*，并使用以下代码替换模板代码：
 
 [!code-cshtml[Main](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cshtml?highlight=3,5,20-22,36-38)]
 
-此代码会从索引标题更改为部门，将管理员名称移动到右侧，并提供管理员的完整名称。
+此代码更改标题从索引到部门，将管理员名称移动到右侧，并提供管理员的完整名称。
 
-在创建中，删除详细信息，并编辑视图，则更改标题`InstructorID`为"Administrator"相同的方式的课程视图中的部门名称字段更改为"部门"字段。
+在创建、 删除、 详细信息，并编辑视图，更改的标题`InstructorID`字段为"Administrator"相同的方式 Course 视图中的院系名称字段更改为"部门"。
 
-在创建和编辑视图使用下面的代码：
+在创建和编辑视图使用以下代码：
 
 [!code-cshtml[Main](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample5.cshtml)]
 
@@ -95,63 +94,63 @@ Web 服务器可用的线程数量有限，而在高负载情况下，可能会�
 
 ![部门页](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
 
-一切会与其他控制器中的相同，但在此控制器中的 SQL 查询的所有正在执行以异步方式。
+一切都与其他控制器中的相同，但在此控制器中的所有 SQL 查询都异步执行。
 
-请注意当您正在使用实体框架的异步编程的一些事项：
+需要注意当与实体框架配合使用异步编程的一些事项：
 
-- 异步代码不是线程安全。 换而言之，换而言之，不要尝试执行中使用同一上下文实例并行的多个操作。
-- 如果你想要利用异步代码的性能优势，请确保你所使用的任何库包也在它们调用导致查询被发送到数据库的任何实体框架方法时使用异步。
+- 异步代码不是线程安全。 换而言之，换而言之，请勿尝试执行并行使用的同一上下文实例的多个操作。
+- 如果你想要利用异步代码的性能优势，请确保你所使用的任何库和包在它们调用导致 Entity Framework 数据库查询方法时也使用异步。
 
-## <a name="use-stored-procedures-for-inserting-updating-and-deleting"></a>存储的过程用于插入、 更新和删除
+## <a name="use-stored-procedures-for-inserting-updating-and-deleting"></a>将存储的过程用于插入、 更新和删除
 
-一些开发人员和 Dba 更愿意使用存储的过程来访问数据库。 在早期版本的实体框架中，您可以检索数据使用通过存储的过程[执行原始的 SQL 查询](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)，但你不能指示 EF 存储的过程用于更新操作。 EF 6 中它很容易配置 Code First 以使用存储的过程。
+一些开发人员和 Dba 更愿意将存储的过程用于数据库访问权限。 在早期版本的实体框架中，您可以检索数据使用存储的过程来[执行原始 SQL 查询](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)，但您不能指示 EF 以使用存储的过程以执行更新操作。 EF 6 中很容易配置 Code First 以使用存储的过程。
 
-1. 在*DAL\SchoolContext.cs*，添加到突出显示的代码`OnModelCreating`方法。
+1. 在中*DAL\SchoolContext.cs*，将突出显示的代码添加到`OnModelCreating`方法。
 
     [!code-csharp[Main](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample7.cs?highlight=9)]
 
-    此代码指示使用实体框架与使用存储过程为插入、 更新和删除操作上`Department`实体。
+    此代码指示实体框架使用存储过程的插入、 更新和删除操作上`Department`实体。
 2. 在包管理控制台中，输入以下命令：
 
     `add-migration DepartmentSP`
 
-    打开*迁移\&lt; 时间戳&gt;\_DepartmentSP.cs*若要查看中的代码`Up`创建的方法插入、 更新和删除存储过程：
+    打开*迁移\&l t; 时间戳&gt;\_DepartmentSP.cs*若要查看中的代码`Up`方法，可创建插入、 更新和删除存储过程：
 
     [!code-csharp[Main](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample8.cs?highlight=3-4,26-27,42-43)]
 3. 在包管理控制台中，输入以下命令：
 
      `update-database`
-4. 在调试模式下运行应用程序，请单击**部门**选项卡上，并依次**新建**。
-5. 新部门，输入数据，然后单击**创建**。
+4. 在调试模式下运行应用程序中，单击**部门**选项卡，然后依次**创建新**。
+5. 为新的院系中，输入数据，然后单击**创建**。
 
      ![创建部门](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
-6. 在 Visual Studio 中，查看日志中**输出**窗口来查看存储的过程已用于插入新的部门行。
+6. 在 Visual Studio 中查看的日志**输出**窗口以查看存储的过程用于插入新 Department 行。
 
      ![部门插入 SP](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 
-代码首先创建默认存储过程名称。 如果使用现有数据库，你可能需要自定义为了使用已在数据库中定义的存储的过程的存储的过程名称。 有关如何执行该操作的信息，请参阅[实体框架代码第一个插入/更新/删除存储过程](https://msdn.microsoft.com/data/dn468673)。
+代码首先创建默认存储过程名称。 如果使用现有数据库，您可能需要自定义以便使用已在数据库中定义的存储的过程的存储的过程名称。 有关如何执行该操作的信息，请参阅[实体框架代码第一个 Insert/Update/Delete 存储过程](https://msdn.microsoft.com/data/dn468673)。
 
-如果你想要自定义内容生成存储的过程执行，则可以编辑迁移的基架的代码`Up`创建存储的过程的方法。 通过这种方式所做的更改将反映每当迁移运行，并且将应用到你的生产数据库中，当迁移后部署在生产中自动运行。
+如果你想要自定义哪些生成存储的过程执行操作，则可以编辑迁移的基架的代码`Up`创建存储的过程的方法。 通过这种方式所做的更改将反映每当迁移运行时和迁移后部署在生产中自动运行时将应用于生产数据库。
 
-如果你想要更改现有存储的过程中的上一个迁移创建，你可以使用 Add-migration 命令生成的空白的迁移，然后手动编写调用的代码[AlterStoredProcedure](https://msdn.microsoft.com/library/system.data.entity.migrations.dbmigration.alterstoredprocedure.aspx)方法.
+如果你想要更改现有的存储的过程在先前的迁移中创建，可添加迁移命令用于生成空白迁移时，然后手动编写代码以调用[AlterStoredProcedure](https://msdn.microsoft.com/library/system.data.entity.migrations.dbmigration.alterstoredprocedure.aspx)方法.
 
-## <a name="deploy-to-azure"></a>将部署到 Azure
+## <a name="deploy-to-azure"></a>部署到 Azure
 
-此部分要求你已完成可选**将应用部署到 Azure**主题中[迁移和部署](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application.md)的这一系列教程。 如果必须解决通过删除本地项目中的数据库的迁移错误，跳过此部分。
+该部分要求你已完成的可选**将其部署到 Azure**主题中[迁移和部署](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application.md)本系列教程。 如果必须通过删除在本地项目中的数据库解决的迁移错误，跳过此部分。
 
-1. 在 Visual Studio 中，右键单击中的项目**解决方案资源管理器**和选择**发布**从上下文菜单。
+1. 在 Visual Studio 中，右键单击该项目中的**解决方案资源管理器**，然后选择**发布**从上下文菜单。
 2. 单击“发布” 。
 
-    Visual Studio 将部署到 Azure，应用程序，并在默认浏览器中，在 Azure 中运行中打开应用程序。
+    Visual Studio 将部署到 Azure，应用程序和应用程序打开在默认浏览器中，在 Azure 中运行。
 3. 测试应用程序以验证它是否正常工作。
 
-    第一次运行某个页面访问数据库，实体框架将运行所有迁移`Up`使数据库保持最新的当前数据模型所需的方法。 你现在可以使用所有自上次部署，包括在本教程中添加的部门页面以来添加的网页。
+    首次运行页面访问数据库，Entity Framework 将运行所有迁移`Up`使数据库保持最新的当前数据模型所必需的方法。 现在可以使用的所有自上次部署，包括在本教程中添加的部门页添加的 web 页面。
 
 ## <a name="summary"></a>总结
 
-在本教程中，您了解如何通过编写代码以异步方式执行，提高服务器的效率以及如何使用存储的过程，以插入、 更新和删除操作。 在下一步的教程中，你将了解如何在多个用户尝试同时编辑同一个记录时防止数据丢失。
+在本教程中你了解了如何通过编写代码，以异步方式，执行改进服务器的效率以及如何使用存储的过程，以插入、 更新和删除操作。 在下一步的教程中，您将了解如何在多个用户尝试同时编辑同一记录时防止数据丢失。
 
-在找不到其他实体框架资源的链接[ASP.NET 数据访问的推荐资源](../../../../whitepapers/aspnet-data-access-content-map.md)。
+其他实体框架资源的链接可在[ASP.NET 数据访问-推荐的资源](../../../../whitepapers/aspnet-data-access-content-map.md)。
 
 > [!div class="step-by-step"]
 > [上一页](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
