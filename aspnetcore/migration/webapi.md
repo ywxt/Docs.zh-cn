@@ -1,7 +1,7 @@
 ---
-title: 将从 ASP.NET Web API 迁移到 ASP.NET 核心
+title: 将从 ASP.NET Web API 迁移到 ASP.NET Core
 author: ardalis
-description: 了解如何将 Web API 实现从 ASP.NET Web API 迁移到 ASP.NET 核心 MVC。
+description: 了解如何将 Web API 实现从 ASP.NET Web API 迁移到 ASP.NET Core MVC。
 ms.author: riande
 ms.date: 05/10/2018
 uid: migration/webapi
@@ -12,11 +12,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/22/2018
 ms.locfileid: "36327504"
 ---
-# <a name="migrate-from-aspnet-web-api-to-aspnet-core"></a>将从 ASP.NET Web API 迁移到 ASP.NET 核心
+# <a name="migrate-from-aspnet-web-api-to-aspnet-core"></a>将从 ASP.NET Web API 迁移到 ASP.NET Core
 
 作者：[Steve Smith](https://ardalis.com/) 和 [Scott Addie](https://scottaddie.com)
 
-Web Api 是覆盖广泛的客户端，包括浏览器和移动设备的 HTTP 服务。 ASP.NET 核心 MVC 包括用于构建提供构建 web 应用程序的单个、 一致的方式的 Web Api 的支持。 在本文中，我们将演示将从 ASP.NET Web API 的 Web API 实现迁移到 ASP.NET 核心 MVC 所需的步骤。
+Web Api 是覆盖广泛的客户端，包括浏览器和移动设备的 HTTP 服务。 ASP.NET Core MVC 包括用于构建提供构建 web 应用程序的单个、 一致的方式的 Web Api 的支持。 在本文中，我们将演示将从 ASP.NET Web API 的 Web API 实现迁移到 ASP.NET Core MVC 所需的步骤。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/webapi/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
@@ -43,11 +43,11 @@ Web Api 是覆盖广泛的客户端，包括浏览器和移动设备的 HTTP 服
 
 [!code-csharp[](webapi/sample/ProductsApp/Models/Product.cs)]
 
-现在，我们已从其开始一个简单的项目，我们可以演示如何将此 Web API 项目迁移到 ASP.NET 核心 MVC。
+现在，我们已从其开始一个简单的项目，我们可以演示如何将此 Web API 项目迁移到 ASP.NET Core MVC。
 
 ## <a name="create-the-destination-project"></a>创建目标项目
 
-使用 Visual Studio，创建一个新的空解决方案，并将其命名*WebAPIMigration*。 添加现有*ProductsApp*到其中，项目，然后将新的 ASP.NET 核心 Web 应用程序项目添加到解决方案。 将新项目*ProductsCore*。
+使用 Visual Studio，创建一个新的空解决方案，并将其命名*WebAPIMigration*。 添加现有*ProductsApp*到其中，项目，然后将新的 ASP.NET Core Web 应用程序项目添加到解决方案。 将新项目*ProductsCore*。
 
 ![新建项目对话框打开到 Web 模板](webapi/_static/add-web-project.png)
 
@@ -61,7 +61,7 @@ Web Api 是覆盖广泛的客户端，包括浏览器和移动设备的 HTTP 服
 
 ## <a name="migrate-configuration"></a>迁移配置
 
-ASP.NET 核心不再使用*Global.asax*， *web.config*，或*App_Start*文件夹。 相反，所有启动任务都在都完成*Startup.cs*项目的根目录中 (请参阅[应用程序启动](../fundamentals/startup.md))。 在 ASP.NET 核心 MVC，基于属性的路由现在包含默认情况下时`UseMvc()`称为;，并且，这是建议的配置 Web API 的路由的方法 （Web API 初学者项目处理路由的方式）。
+ASP.NET Core 不再使用*Global.asax*， *web.config*，或*App_Start*文件夹。 相反，所有启动任务都在都完成*Startup.cs*项目的根目录中 (请参阅[应用程序启动](../fundamentals/startup.md))。 在 ASP.NET Core MVC，基于属性的路由现在包含默认情况下时`UseMvc()`称为;，并且，这是建议的配置 Web API 的路由的方法 （Web API 初学者项目处理路由的方式）。
 
 [!code-csharp[](../migration/webapi/sample/ProductsCore/Startup.cs?highlight=31)]
 
@@ -116,9 +116,9 @@ ASP.NET 核心不再使用*Global.asax*， *web.config*，或*App_Start*文件�
 
 ## <a name="microsoftaspnetcoremvcwebapicompatshim"></a>Microsoft.AspNetCore.Mvc.WebApiCompatShim
 
-迁移 ASP.NET Web API 项目到 ASP.NET 核心时的有用工具是[Microsoft.AspNetCore.Mvc.WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim)库。 兼容性填充码扩展 ASP.NET 核心以允许不同的 Web API 2 约定，要使用的数目。 本文档中进行迁移，以前的示例是基本的兼容性填充程序不是所必需的。 对于大型项目，使用兼容性填充码可用于临时之间的隔阂 API ASP.NET Core 和 ASP.NET Web API 2。
+迁移 ASP.NET Web API 项目到 ASP.NET Core 时的有用工具是[Microsoft.AspNetCore.Mvc.WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim)库。 兼容性填充码扩展 ASP.NET Core 以允许不同的 Web API 2 约定，要使用的数目。 本文档中进行迁移，以前的示例是基本的兼容性填充程序不是所必需的。 对于大型项目，使用兼容性填充码可用于临时之间的隔阂 API ASP.NET Core 和 ASP.NET Web API 2。
 
-Web API 兼容性填充码旨在作为临时的度量值用于促进将大型 Web API 项目迁移到 ASP.NET 核心。 随着时间推移，应更新项目以使用 ASP.NET Core 模式，而不是依靠兼容性填充码。 
+Web API 兼容性填充码旨在作为临时的度量值用于促进将大型 Web API 项目迁移到 ASP.NET Core。 随着时间推移，应更新项目以使用 ASP.NET Core 模式，而不是依靠兼容性填充码。 
 
 Microsoft.AspNetCore.Mvc.WebApiCompatShim 中包含的兼容性功能包括：
 
@@ -147,4 +147,4 @@ Microsoft.AspNetCore.Mvc.WebApiCompatShim 中包含的兼容性功能包括：
 
 ## <a name="summary"></a>总结
 
-将一个简单的 ASP.NET Web API 项目迁移到 ASP.NET 核心 MVC 将非常简单，感谢到 ASP.NET 核心 MVC 中的 Web Api 的内置支持。 每个 ASP.NET Web API 项目将需要迁移的主要部分是路由、 控制器和模型，以及更新到控制器和操作由使用的类型。
+将一个简单的 ASP.NET Web API 项目迁移到 ASP.NET Core MVC 将非常简单，感谢到 ASP.NET Core MVC 中的 Web Api 的内置支持。 每个 ASP.NET Web API 项目将需要迁移的主要部分是路由、 控制器和模型，以及更新到控制器和操作由使用的类型。

@@ -24,7 +24,7 @@ ms.locfileid: "28886437"
 > 本文档介绍新功能和 ASP.NET 4.5 中引入的增强功能。 它还介绍了对 Visual Studio 2012 中的 web 开发的改进。 本文档最初在 2012 年 2 月 29 日发布。
 
 
-- [ASP.NET 核心运行时和 Framework](#_Toc318097372)
+- [ASP.NET Core 运行时和 Framework](#_Toc318097372)
 
     - [以异步方式读取和写入 HTTP 请求和响应](#_Toc318097373)
     - [对 HttpRequest 处理改进](#_Toc318097374)
@@ -103,7 +103,7 @@ ms.locfileid: "28886437"
 - [Disclaimer](#_Toc318097429)
 
 <a id="_Toc318097372"></a>
-## <a name="aspnet-core-runtime-and-framework"></a>ASP.NET 核心运行时和 Framework
+## <a name="aspnet-core-runtime-and-framework"></a>ASP.NET Core 运行时和 Framework
 
 <a id="_Toc318097373"></a>
 ### <a name="asynchronously-reading-and-writing-http-requests-and-responses"></a>以异步方式读取和写入 HTTP 请求和响应

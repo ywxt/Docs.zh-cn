@@ -23,7 +23,7 @@ ms.locfileid: "36278461"
 
 此示例阐释了在使用 cookie 身份验证的三个应用间共享的 cookie:
 
-* ASP.NET 核心 2.0 Razor 页应用而无需使用[ASP.NET 核心标识](xref:security/authentication/identity)
+* ASP.NET Core 2.0 Razor 页应用而无需使用[ASP.NET Core 标识](xref:security/authentication/identity)
 * 使用 ASP.NET Core 标识的 ASP.NET Core 2.0 MVC 应用程序
 * 使用 ASP.NET Identity 的 ASP.NET Framework 4.6.1 MVC 应用程序
 
@@ -37,11 +37,11 @@ ms.locfileid: "36278461"
 * 在 ASP.NET Core 应用中， [PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem)用于设置的密钥存储位置。 [SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname)用于配置公用的共享应用程序名。
 * 在.NET Framework 应用中，cookie 身份验证中间件使用的实现[DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionprovider)。 `DataProtectionProvider` 提供对身份验证 cookie 负载数据进行加密和解密的数据保护服务。 `DataProtectionProvider`实例都独立于所使用的应用程序的其他部分的数据保护系统。
   * [DataProtectionProvider.Create (System.IO.DirectoryInfo、 操作\<IDataProtectionBuilder >)](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionprovider.create?view=aspnetcore-2.0#Microsoft_AspNetCore_DataProtection_DataProtectionProvider_Create_System_IO_DirectoryInfo_System_Action_Microsoft_AspNetCore_DataProtection_IDataProtectionBuilder__)接受[DirectoryInfo](/dotnet/api/system.io.directoryinfo)指定用于数据保护密钥存储的位置。 示例应用程序提供的路径*KeyRing*文件夹`DirectoryInfo`。 [DataProtectionBuilderExtensions.SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname?view=aspnetcore-2.0#Microsoft_AspNetCore_DataProtection_DataProtectionBuilderExtensions_SetApplicationName_Microsoft_AspNetCore_DataProtection_IDataProtectionBuilder_System_String_)设置常见的应用程序名称。
-  * [DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionprovider)需要[Microsoft.AspNetCore.DataProtection.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Extensions/) NuGet 包。 若要对 ASP.NET 核心 2.1 和更高版本的应用程序中获取此包，引用[Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app)。 如果目标.NET Framework，添加对的包引用`Microsoft.AspNetCore.DataProtection.Extensions`。
+  * [DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionprovider)需要[Microsoft.AspNetCore.DataProtection.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Extensions/) NuGet 包。 若要对 ASP.NET Core 2.1 和更高版本的应用程序中获取此包，引用[Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app)。 如果目标.NET Framework，添加对的包引用`Microsoft.AspNetCore.DataProtection.Extensions`。
 
 ## <a name="share-authentication-cookies-among-aspnet-core-apps"></a>共享 ASP.NET Core 应用之间的身份验证 cookie
 
-当使用 ASP.NET 核心标识：
+当使用 ASP.NET Core 标识：
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 

@@ -1,5 +1,5 @@
 ---
-title: 将 HTTP 处理程序和模块迁移到 ASP.NET 核心中间件
+title: 将 HTTP 处理程序和模块迁移到 ASP.NET Core 中间件
 author: rick-anderson
 description: ''
 ms.author: tdykstra
@@ -12,15 +12,15 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36272551"
 ---
-# <a name="migrate-http-handlers-and-modules-to-aspnet-core-middleware"></a>将 HTTP 处理程序和模块迁移到 ASP.NET 核心中间件
+# <a name="migrate-http-handlers-and-modules-to-aspnet-core-middleware"></a>将 HTTP 处理程序和模块迁移到 ASP.NET Core 中间件
 
 通过[Matt Perdeck](https://www.linkedin.com/in/mattperdeck)
 
-这篇文章演示如何迁移现有的 ASP.NET [HTTP 模块和处理程序 system.webserver](/iis/configuration/system.webserver/)到 ASP.NET 核心[中间件](xref:fundamentals/middleware/index)。
+这篇文章演示如何迁移现有的 ASP.NET [HTTP 模块和处理程序 system.webserver](/iis/configuration/system.webserver/)到 ASP.NET Core[中间件](xref:fundamentals/middleware/index)。
 
 ## <a name="modules-and-handlers-revisited"></a>模块和处理程序重新访问
 
-在继续之前到 ASP.NET 核心中间件，让我们首先会扼要重述 HTTP 模块和处理程序的工作原理：
+在继续之前到 ASP.NET Core 中间件，让我们首先会扼要重述 HTTP 模块和处理程序的工作原理：
 
 ![模块处理程序](http-modules/_static/moduleshandlers.png)
 
@@ -110,7 +110,7 @@ ms.locfileid: "36272551"
 
 [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyTerminatingMiddleware.cs?highlight=7,8&name=snippet_Terminate)]
 
-当你迁移到新中间件模块的功能时，你可能会发现你的代码不会编译，因为`HttpContext`类中 ASP.NET Core 已显著更改。 [更高版本上](#migrating-to-the-new-httpcontext)，你将了解如何将迁移到新的 ASP.NET 核心 HttpContext。
+当你迁移到新中间件模块的功能时，你可能会发现你的代码不会编译，因为`HttpContext`类中 ASP.NET Core 已显著更改。 [更高版本上](#migrating-to-the-new-httpcontext)，你将了解如何将迁移到新的 ASP.NET Core HttpContext。
 
 ## <a name="migrating-module-insertion-into-the-request-pipeline"></a>迁移模块插入请求管道
 
@@ -124,7 +124,7 @@ HTTP 模块通常会添加到请求管道使用*Web.config*:
 
 你可以将插入新中间件管道中的确切点取决于它作为模块处理的事件 (`BeginRequest`，`EndRequest`等) 和在列表中的模块中的顺序*Web.config*。
 
-如前面所述，没有任何应用程序生命周期中 ASP.NET 核心，中间件处理响应的顺序不同于使用模块的顺序。 这会使排序决策更具挑战性。
+如前面所述，没有任何应用程序生命周期中 ASP.NET Core，中间件处理响应的顺序不同于使用模块的顺序。 这会使排序决策更具挑战性。
 
 如果排序将为问题，无法将你的模块分成多个可在单独对其进行排序的中间件组件。
 
@@ -162,7 +162,7 @@ HTTP 处理程序如下所示：
 
 ## <a name="loading-middleware-options-using-the-options-pattern"></a>加载使用选项模式的中间件选项
 
-一些模块和处理程序已在存储的配置选项*Web.config*。但是，在 ASP.NET 核心中新的配置模型使用代替了*Web.config*。
+一些模块和处理程序已在存储的配置选项*Web.config*。但是，在 ASP.NET Core 中新的配置模型使用代替了*Web.config*。
 
 新[配置系统](xref:fundamentals/configuration/index)为你提供了这些选项，以解决此问题：
 
@@ -184,7 +184,7 @@ HTTP 处理程序如下所示：
 
 3. 将选项值与选项类相关联
 
-    选项模式使用 ASP.NET 核心依赖关系注入框架将选项类型相关联 (如`MyMiddlewareOptions`) 与`MyMiddlewareOptions`具有实际选项对象。
+    选项模式使用 ASP.NET Core 依赖关系注入框架将选项类型相关联 (如`MyMiddlewareOptions`) 与`MyMiddlewareOptions`具有实际选项对象。
 
     更新你`Startup`类：
 

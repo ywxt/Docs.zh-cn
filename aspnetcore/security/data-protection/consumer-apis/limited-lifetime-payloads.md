@@ -1,7 +1,7 @@
 ---
 title: 限制在 ASP.NET Core 的受保护负载的生存期
 author: rick-anderson
-description: 了解如何限制使用 ASP.NET 核心数据保护 Api 的受保护负载的生存期。
+description: 了解如何限制使用 ASP.NET Core 数据保护 Api 的受保护负载的生存期。
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/consumer-apis/limited-lifetime-payloads

@@ -1,7 +1,7 @@
 ---
-title: 将身份验证和标识迁移到 ASP.NET 核心
+title: 将身份验证和标识迁移到 ASP.NET Core
 author: ardalis
-description: 了解如何将身份验证和标识从 ASP.NET MVC 项目迁移到 ASP.NET 核心 MVC 项目。
+description: 了解如何将身份验证和标识从 ASP.NET MVC 项目迁移到 ASP.NET Core MVC 项目。
 ms.author: riande
 ms.date: 10/14/2016
 uid: migration/identity
@@ -12,15 +12,15 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36275692"
 ---
-# <a name="migrate-authentication-and-identity-to-aspnet-core"></a>将身份验证和标识迁移到 ASP.NET 核心
+# <a name="migrate-authentication-and-identity-to-aspnet-core"></a>将身份验证和标识迁移到 ASP.NET Core
 
 作者：[Steve Smith](https://ardalis.com/)
 
-在以前的文章中，我们[配置从 ASP.NET MVC 项目迁移到 ASP.NET 核心 MVC](xref:migration/configuration)。 在本文中，我们将迁移的注册、 登录名和用户管理功能。
+在以前的文章中，我们[配置从 ASP.NET MVC 项目迁移到 ASP.NET Core MVC](xref:migration/configuration)。 在本文中，我们将迁移的注册、 登录名和用户管理功能。
 
 ## <a name="configure-identity-and-membership"></a>配置的标识和成员身份
 
-在 ASP.NET MVC 中，使用 ASP.NET Identity 中配置身份验证和标识功能*Startup.Auth.cs*和*IdentityConfig.cs*为位于*App_Start*文件夹。 在 ASP.NET 核心 MVC，这些功能在中配置*Startup.cs*。
+在 ASP.NET MVC 中，使用 ASP.NET Identity 中配置身份验证和标识功能*Startup.Auth.cs*和*IdentityConfig.cs*为位于*App_Start*文件夹。 在 ASP.NET Core MVC，这些功能在中配置*Startup.cs*。
 
 安装`Microsoft.AspNetCore.Identity.EntityFrameworkCore`和`Microsoft.AspNetCore.Authentication.Cookies`NuGet 包。
 
@@ -82,7 +82,7 @@ namespace NewMvcProject.Models
 }
 ```
 
-ASP.NET 核心 MVC 初学者 Web 项目不包括多的自定义的用户，或`ApplicationDbContext`。 当迁移实际应用程序时，你还需要迁移的所有自定义属性和方法的应用程序的用户和`DbContext`类，以及你的应用程序使用的任何其他模型类。 例如，如果你`DbContext`具有`DbSet<Album>`，你需要迁移`Album`类。
+ASP.NET Core MVC 初学者 Web 项目不包括多的自定义的用户，或`ApplicationDbContext`。 当迁移实际应用程序时，你还需要迁移的所有自定义属性和方法的应用程序的用户和`DbContext`类，以及你的应用程序使用的任何其他模型类。 例如，如果你`DbContext`具有`DbSet<Album>`，你需要迁移`Album`类。
 
 与就地情况下，这些文件*Startup.cs*文件可以进行编译，方法是更新其`using`语句：
 
@@ -145,4 +145,4 @@ else
 
 ## <a name="summary"></a>总结
 
-ASP.NET 核心引入 ASP.NET 标识功能更改。 在本文中，你看到了如何将 ASP.NET 标识的身份验证和用户管理功能迁移到 ASP.NET 核心。
+ASP.NET Core 引入 ASP.NET 标识功能更改。 在本文中，你看到了如何将 ASP.NET 标识的身份验证和用户管理功能迁移到 ASP.NET Core。

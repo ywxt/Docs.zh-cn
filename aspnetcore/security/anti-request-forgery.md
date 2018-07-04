@@ -60,7 +60,7 @@ CSRF 攻击的示例：
 
 但是，CSRF 攻击不局限于利用 cookie。 例如，基本和摘要式身份验证也是易受攻击的。 浏览器使用基本或摘要式身份验证的用户登录后，直到会话才会自动发送凭据&dagger;结束。
 
-&dagger;在此上下文中，*会话*指的是在此期间用户进行身份验证的客户端会话。 它是与服务器端会话无关或[ASP.NET 核心会话中间件](xref:fundamentals/app-state)。
+&dagger;在此上下文中，*会话*指的是在此期间用户进行身份验证的客户端会话。 它是与服务器端会话无关或[ASP.NET Core 会话中间件](xref:fundamentals/app-state)。
 
 用户可以通过采取预防措施来防止 CSRF 漏洞：
 
@@ -89,12 +89,12 @@ CSRF 攻击的示例：
 
 可以通过不能共享域防止利用在同一个域上托管的应用程序之间的受信任的 cookie 的攻击。 当每个应用程序托管在自身域中时，没有任何隐式 cookie 信任关系，以便利用。
 
-## <a name="aspnet-core-antiforgery-configuration"></a>ASP.NET 核心 antiforgery 配置
+## <a name="aspnet-core-antiforgery-configuration"></a>ASP.NET Core antiforgery 配置
 
 > [!WARNING]
-> ASP.NET 核心实现 antiforgery 使用[ASP.NET 核心数据保护](xref:security/data-protection/introduction)。 数据保护堆栈必须配置为在服务器场中正常工作。 请参阅[配置数据保护](xref:security/data-protection/configuration/overview)有关详细信息。
+> ASP.NET Core 实现 antiforgery 使用[ASP.NET Core 数据保护](xref:security/data-protection/introduction)。 数据保护堆栈必须配置为在服务器场中正常工作。 请参阅[配置数据保护](xref:security/data-protection/configuration/overview)有关详细信息。
 
-在 ASP.NET 核心 2.0 或更高版本， [FormTagHelper](xref:mvc/views/working-with-forms#the-form-tag-helper) antiforgery 令牌注入 HTML 窗体元素。 Razor 文件中的以下标记将自动生成 antiforgery 令牌：
+在 ASP.NET Core 2.0 或更高版本， [FormTagHelper](xref:mvc/views/working-with-forms#the-form-tag-helper) antiforgery 令牌注入 HTML 窗体元素。 Razor 文件中的以下标记将自动生成 antiforgery 令牌：
 
 ```cshtml
 <form method="post">
@@ -142,7 +142,7 @@ CSRF 攻击的示例：
 1. 客户端返回将令牌发送到服务器以进行验证。
 1. 如果服务器收到与经过身份验证的用户的标识不匹配的令牌，而拒绝该请求。
 
-该令牌的唯一且不可预测。 此外可以使用令牌以确保正确地执行序列化的一系列请求 (例如，确保请求序列的： 第 1 页&ndash;页上 2&ndash;第 3 页)。 ASP.NET 核心 MVC 和 Razor 页模板中的窗体的所有生成 antiforgery 令牌。 以下两个视图的示例生成 antiforgery 令牌：
+该令牌的唯一且不可预测。 此外可以使用令牌以确保正确地执行序列化的一系列请求 (例如，确保请求序列的： 第 1 页&ndash;页上 2&ndash;第 3 页)。 ASP.NET Core MVC 和 Razor 页模板中的窗体的所有生成 antiforgery 令牌。 以下两个视图的示例生成 antiforgery 令牌：
 
 ```cshtml
 <form asp-controller="Manage" asp-action="ChangePassword" method="post">
@@ -169,7 +169,7 @@ CSRF 攻击的示例：
 <input name="__RequestVerificationToken" type="hidden" value="CfDJ8NrAkS ... s2-m9Yw">
 ```
 
-ASP.NET 核心包括三个[筛选器](xref:mvc/controllers/filters)来处理 antiforgery 令牌：
+ASP.NET Core 包括三个[筛选器](xref:mvc/controllers/filters)来处理 antiforgery 令牌：
 
 * [ValidateAntiForgeryToken](/dotnet/api/microsoft.aspnetcore.mvc.validateantiforgerytokenattribute)
 * [AutoValidateAntiforgeryToken](/dotnet/api/microsoft.aspnetcore.mvc.autovalidateantiforgerytokenattribute)
@@ -387,7 +387,7 @@ xhttp.send(JSON.stringify({ "newPassword": "ReallySecurePassword999$$$" }));
 
 AngularJS 使用到地址 CSRF 的约定。 如果服务器发送具有该名称的 cookie `XSRF-TOKEN`，AngularJS`$http`服务将 cookie 值添加到标头时它将请求发送到服务器。 此过程是自动进行。 标头不需要显式设置。 标头名称是`X-XSRF-TOKEN`。 服务器应检测此标头，并验证其内容。
 
-有关 ASP.NET 核心 API 使用此约定：
+有关 ASP.NET Core API 使用此约定：
 
 * 配置你的应用程序提供在调用 cookie 令牌`XSRF-TOKEN`。
 * 将查找名为的标头 antiforgery 服务配置为`X-XSRF-TOKEN`。

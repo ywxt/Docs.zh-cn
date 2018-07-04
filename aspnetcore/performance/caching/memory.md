@@ -1,5 +1,5 @@
 ---
-title: 缓存在内存中 ASP.NET 核心
+title: 缓存在内存中 ASP.NET Core
 author: rick-anderson
 description: 了解如何在 ASP.NET Core 中的内存中缓存数据。
 ms.author: riande
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/28/2018
 ms.locfileid: "37077581"
 ---
-# <a name="cache-in-memory-in-aspnet-core"></a>缓存在内存中 ASP.NET 核心
+# <a name="cache-in-memory-in-aspnet-core"></a>缓存在内存中 ASP.NET Core
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)， [John Luo](https://github.com/JunTaoLuo)，和[Steve Smith](https://ardalis.com/)
 

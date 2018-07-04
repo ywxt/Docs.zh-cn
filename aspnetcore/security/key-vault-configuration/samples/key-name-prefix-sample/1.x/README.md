@@ -1,6 +1,6 @@
 # <a name="prefix-key-vault-configuration-provider-sample-application-aspnet-core-1x"></a>前缀密钥保管库配置提供程序示例应用程序 (ASP.NET Core 1.x)
 
-此示例演示如何使用 Azure 密钥保管库配置提供程序的 ASP.NET Core 1.x 使用密钥名称前缀。 有关 ASP.NET 核心 2.x 示例，请参阅[前缀密钥保管库配置提供程序示例应用程序 (ASP.NET Core 2.x)](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/2.x)。
+此示例演示如何使用 Azure 密钥保管库配置提供程序的 ASP.NET Core 1.x 使用密钥名称前缀。 有关 ASP.NET Core 2.x 示例，请参阅[前缀密钥保管库配置提供程序示例应用程序 (ASP.NET Core 2.x)](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/2.x)。
 
 > [!NOTE]
 > 配置提供程序不可用于 ASP.NET Core 1.0。 如果你想要实现的配置提供程序和应用程序是一个 ASP.NET Core 1.0 应用，请将应用升级到 1.1 版或更高版本的第一个。

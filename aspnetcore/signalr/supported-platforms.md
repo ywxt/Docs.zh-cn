@@ -1,7 +1,7 @@
 ---
-title: ASP.NET 核心 SignalR 受支持的平台
+title: ASP.NET Core SignalR 受支持的平台
 author: rachelappel
-description: ASP.NET 核心 SignalR 的受支持的平台
+description: ASP.NET Core SignalR 的受支持的平台
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
@@ -14,17 +14,17 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36274329"
 ---
-# <a name="aspnet-core-signalr-supported-platforms"></a>ASP.NET 核心 SignalR 受支持的平台
+# <a name="aspnet-core-signalr-supported-platforms"></a>ASP.NET Core SignalR 受支持的平台
 
 ## <a name="server-system-requirements"></a>服务器系统要求
 
-有关 ASP.NET 核心 SignalR 支持 ASP.NET Core 支持任何服务器平台。
+有关 ASP.NET Core SignalR 支持 ASP.NET Core 支持任何服务器平台。
 
 ## <a name="client-system-requirements"></a>客户端系统要求
 
 ### <a name="browser-support"></a>浏览器支持
 
-ASP.NET 核心 JavaScript 客户端的 SignalR 支持以下浏览器：
+ASP.NET Core JavaScript 客户端的 SignalR 支持以下浏览器：
 
 | 浏览者 | 版本 |
 | ------- | ------- |

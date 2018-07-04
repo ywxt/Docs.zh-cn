@@ -43,7 +43,7 @@ JavaScriptServices 包含三个不同的 NuGet 包：
 
 ## <a name="what-is-spaservices"></a>什么是 SpaServices？
 
-用于将 ASP.NET Core 定位为开发人员的首选服务器端平台，用于构建 Spa，SpaServices 而创建。 SpaServices 不需要开发与 ASP.NET 核心的 Spa，它不会将您限制在一个特定的客户端框架。
+用于将 ASP.NET Core 定位为开发人员的首选服务器端平台，用于构建 Spa，SpaServices 而创建。 SpaServices 不需要开发与 ASP.NET Core 的 Spa，它不会将您限制在一个特定的客户端框架。
 
 SpaServices 提供有用的基础结构，如所示：
 * [服务器端预呈现](#server-prerendering)
@@ -69,7 +69,7 @@ SpaServices 提供有用的基础结构，如所示：
 
 * [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
 
-  * 如果你使用 Visual Studio 2017 在 Windows 上，通过选择安装 SDK **.NET 核心跨平台开发**工作负荷。
+  * 如果你使用 Visual Studio 2017 在 Windows 上，通过选择安装 SDK **.NET Core 跨平台开发**工作负荷。
 
 * [Microsoft.AspNetCore.SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) NuGet 包
 
@@ -79,7 +79,7 @@ SpaServices 提供有用的基础结构，如所示：
 
 通用的 (也称为 isomorphic) 应用程序是能够在服务器和客户端上同时运行的 JavaScript 应用程序。 角、 响应和其他常用框架提供一个通用平台此应用程序的开发风格。 目的是第一次呈现 Node.js，通过在服务器上的 framework 组件，然后将进一步委托到客户端执行。
 
-ASP.NET 核心[标记帮助程序](xref:mvc/views/tag-helpers/intro)由 SpaServices 简化通过调用服务器上的 JavaScript 函数的服务器端预呈现的实现。
+ASP.NET Core[标记帮助程序](xref:mvc/views/tag-helpers/intro)由 SpaServices 简化通过调用服务器上的 JavaScript 函数的服务器端预呈现的实现。
 
 ### <a name="prerequisites"></a>系统必备
 
@@ -225,7 +225,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 
 JavaScriptServices 提供了预配置的应用程序模板。 SpaServices 中这些模板，与不同的框架和库如角、 响应和 Redux 结合使用。
 
-可以通过.NET 核心 CLI 安装这些模板，通过运行以下命令：
+可以通过.NET Core CLI 安装这些模板，通过运行以下命令：
 
 ```console
 dotnet new --install Microsoft.AspNetCore.SpaTemplates::*
@@ -235,11 +235,11 @@ dotnet new --install Microsoft.AspNetCore.SpaTemplates::*
 
 | 模板                                 | 短名称 | 语言 | Tags        |
 |:------------------------------------------|:-----------|:---------|:------------|
-| 带有角度的 MVC ASP.NET 核心             | angular    | [C#]     | Web/MVC/SPA |
-| 带有 React.js 的 MVC ASP.NET 核心            | react      | [C#]     | Web/MVC/SPA |
+| 带有角度的 MVC ASP.NET Core             | angular    | [C#]     | Web/MVC/SPA |
+| 带有 React.js 的 MVC ASP.NET Core            | react      | [C#]     | Web/MVC/SPA |
 | MVC ASP.NET Core React.js 和回顾  | reactredux | [C#]     | Web/MVC/SPA |
 
-若要创建新项目使用 SPA 模板之一时，包含**短名称**中的模板的[dotnet 新](/dotnet/core/tools/dotnet-new)命令。 以下命令将创建与 ASP.NET 核心 MVC 配置为在服务器端角度的应用程序：
+若要创建新项目使用 SPA 模板之一时，包含**短名称**中的模板的[dotnet 新](/dotnet/core/tools/dotnet-new)命令。 以下命令将创建与 ASP.NET Core MVC 配置为在服务器端角度的应用程序：
 
 ```console
 dotnet new angular
@@ -257,7 +257,7 @@ dotnet new angular
     * 排除源映射。
     * 优化通过绑定和缩减的客户端代码。
 
-ASP.NET 核心使用名为的环境变量`ASPNETCORE_ENVIRONMENT`来存储配置模式。 请参阅**[将环境设置](xref:fundamentals/environments#setting-the-environment)** 有关详细信息。
+ASP.NET Core 使用名为的环境变量`ASPNETCORE_ENVIRONMENT`来存储配置模式。 请参阅**[将环境设置](xref:fundamentals/environments#setting-the-environment)** 有关详细信息。
 
 ### <a name="running-with-net-core-cli"></a>使用.NET Core CLI 运行
 

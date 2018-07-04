@@ -1,5 +1,5 @@
 ---
-title: 在 ASP.NET 核心中的浏览器链接
+title: 在 ASP.NET Core 中的浏览器链接
 author: ncarandini
 description: 说明如何浏览器链接是链接使用一个或多个 web 浏览器在开发环境的 Visual Studio 功能。
 ms.author: riande
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36274087"
 ---
-# <a name="browser-link-in-aspnet-core"></a>在 ASP.NET 核心中的浏览器链接
+# <a name="browser-link-in-aspnet-core"></a>在 ASP.NET Core 中的浏览器链接
 
 通过[Nicolò Carandini](https://github.com/ncarandini)， [Mike Wasson](https://github.com/MikeWasson)，和[Tom Dykstra](https://github.com/tdykstra)
 
@@ -23,17 +23,17 @@ ms.locfileid: "36274087"
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-ASP.NET 核心 2.0 **Web 应用程序**，**空**，和**Web API**模板项目使用[Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) metapackage其中包含的包引用[Microsoft.VisualStudio.Web.BrowserLink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/)。 因此，使用`Microsoft.AspNetCore.All`metapackage 无需任何进一步的操作，以使浏览器链接可供使用。
+ASP.NET Core 2.0 **Web 应用程序**，**空**，和**Web API**模板项目使用[Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) metapackage其中包含的包引用[Microsoft.VisualStudio.Web.BrowserLink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/)。 因此，使用`Microsoft.AspNetCore.All`metapackage 无需任何进一步的操作，以使浏览器链接可供使用。
 
 ::: moniker range=">= aspnetcore-2.1"
 
-将 ASP.NET 核心 2.0 项目转换为 ASP.NET 核心 2.1 和转换为时[Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app) metapackage，必须安装[Microsoft.VisualStudio.Web.BrowserLink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/)手动为浏览器链接功能的的包。
+将 ASP.NET Core 2.0 项目转换为 ASP.NET Core 2.1 和转换为时[Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app) metapackage，必须安装[Microsoft.VisualStudio.Web.BrowserLink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/)手动为浏览器链接功能的的包。
 
 ::: moniker-end
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-ASP.NET 核心 1.x **Web 应用程序**项目模板具有的包引用[Microsoft.VisualStudio.Web.BrowserLink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/)包。 **空**或**Web API**模板项目要求你添加到的包引用`Microsoft.VisualStudio.Web.BrowserLink`。
+ASP.NET Core 1.x **Web 应用程序**项目模板具有的包引用[Microsoft.VisualStudio.Web.BrowserLink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/)包。 **空**或**Web API**模板项目要求你添加到的包引用`Microsoft.VisualStudio.Web.BrowserLink`。
 
 由于这是一种 Visual Studio 功能，最简单的方法添加到包**空**或**Web API**模板项目是打开**程序包管理器控制台**(**视图** > **其他窗口** > **程序包管理器控制台**) 并运行以下命令：
 

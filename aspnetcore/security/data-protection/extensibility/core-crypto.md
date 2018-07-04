@@ -1,5 +1,5 @@
 ---
-title: 在 ASP.NET 核心中的核心加密可扩展性
+title: 在 ASP.NET Core 中的核心加密可扩展性
 author: rick-anderson
 description: 了解有关 IAuthenticatedEncryptor、 IAuthenticatedEncryptorDescriptor、 IAuthenticatedEncryptorDescriptorDeserializer 和顶级工厂。
 ms.author: riande
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36272891"
 ---
-# <a name="core-cryptography-extensibility-in-aspnet-core"></a>在 ASP.NET 核心中的核心加密可扩展性
+# <a name="core-cryptography-extensibility-in-aspnet-core"></a>在 ASP.NET Core 中的核心加密可扩展性
 
 <a name="data-protection-extensibility-core-crypto"></a>
 
@@ -100,7 +100,7 @@ byte[] roundTripped = encryptor2.Decrypt(new ArraySegment<byte>(ciphertext), aad
 
 <a name="data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptor"></a>
 
-## <a name="iauthenticatedencryptordescriptor-aspnet-core-2x-only"></a>IAuthenticatedEncryptorDescriptor （ASP.NET 核心 2.x 仅）
+## <a name="iauthenticatedencryptordescriptor-aspnet-core-2x-only"></a>IAuthenticatedEncryptorDescriptor （ASP.NET Core 2.x 仅）
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 

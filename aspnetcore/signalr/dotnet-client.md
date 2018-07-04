@@ -1,7 +1,7 @@
 ---
-title: ASP.NET 核心 SignalR.NET 客户端
+title: ASP.NET Core SignalR.NET 客户端
 author: rachelappel
-description: 有关 ASP.NET 核心 SignalR.NET 客户端信息
+description: 有关 ASP.NET Core SignalR.NET 客户端信息
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
@@ -14,15 +14,15 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36273231"
 ---
-# <a name="aspnet-core-signalr-net-client"></a>ASP.NET 核心 SignalR.NET 客户端
+# <a name="aspnet-core-signalr-net-client"></a>ASP.NET Core SignalR.NET 客户端
 
 作者：[Rachel Appel](http://twitter.com/rachelappel)
 
-ASP.NET 核心 SignalR.NET 客户端可以使用 Xamarin、 WPF、 Windows 窗体，控制台中和.NET Core 应用。 如[JavaScript 客户端](xref:signalr/javascript-client)，.NET 客户端可以接收和发送和实时接收到中心的消息。
+ASP.NET Core SignalR.NET 客户端可以使用 Xamarin、 WPF、 Windows 窗体，控制台中和.NET Core 应用。 如[JavaScript 客户端](xref:signalr/javascript-client)，.NET 客户端可以接收和发送和实时接收到中心的消息。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/live/aspnetcore/signalr/dotnet-client/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
-这篇文章中的代码示例是使用 ASP.NET 核心 SignalR.NET 客户端的 WPF 应用。
+这篇文章中的代码示例是使用 ASP.NET Core SignalR.NET 客户端的 WPF 应用。
 
 ## <a name="install-the-signalr-net-client-package"></a>安装 SignalR.NET 客户端包
 

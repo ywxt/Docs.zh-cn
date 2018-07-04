@@ -1,7 +1,7 @@
 ---
-title: ASP.NET 核心中的密钥管理
+title: ASP.NET Core 中的密钥管理
 author: rick-anderson
-description: 了解管理 ASP.NET 核心数据保护 Api 的实现详细信息。
+description: 了解管理 ASP.NET Core 数据保护 Api 的实现详细信息。
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/implementation/key-management
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36276625"
 ---
-# <a name="key-management-in-aspnet-core"></a>ASP.NET 核心中的密钥管理
+# <a name="key-management-in-aspnet-core"></a>ASP.NET Core 中的密钥管理
 
 <a name="data-protection-implementation-key-management"></a>
 

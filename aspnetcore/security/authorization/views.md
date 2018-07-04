@@ -1,7 +1,7 @@
 ---
-title: ASP.NET 核心 mvc 视图基于授权
+title: ASP.NET Core mvc 视图基于授权
 author: rick-anderson
-description: 本文档演示如何将注入和利用 ASP.NET 核心 Razor 视图内的授权服务。
+description: 本文档演示如何将注入和利用 ASP.NET Core Razor 视图内的授权服务。
 ms.author: riande
 ms.date: 10/30/2017
 uid: security/authorization/views
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36277799"
 ---
-# <a name="view-based-authorization-in-aspnet-core-mvc"></a>ASP.NET 核心 mvc 视图基于授权
+# <a name="view-based-authorization-in-aspnet-core-mvc"></a>ASP.NET Core mvc 视图基于授权
 
 开发人员通常需要显示、 隐藏或修改基于当前的用户标识的用户界面。 你可以访问授权服务在服务内通过的 MVC 视图[依赖关系注入](xref:fundamentals/dependency-injection#fundamentals-dependency-injection)。 若要将授权服务注入到 Razor 视图中，使用`@inject`指令：
 

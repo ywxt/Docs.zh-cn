@@ -1,5 +1,5 @@
 ---
-title: 使用 WS 联合身份验证在 ASP.NET 核心中的用户进行身份验证
+title: 使用 WS 联合身份验证在 ASP.NET Core 中的用户进行身份验证
 author: chlowell
 description: 本教程演示如何在 ASP.NET Core 应用程序使用 WS 联合身份验证。
 ms.author: scaddie
@@ -13,11 +13,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36277434"
 ---
-# <a name="authenticate-users-with-ws-federation-in-aspnet-core"></a>使用 WS 联合身份验证在 ASP.NET 核心中的用户进行身份验证
+# <a name="authenticate-users-with-ws-federation-in-aspnet-core"></a>使用 WS 联合身份验证在 ASP.NET Core 中的用户进行身份验证
 
-本教程演示如何使用户能够使用 WS 联合身份验证提供程序 (如 Active Directory 联合身份验证服务 (ADFS) 登录或[Azure Active Directory](/azure/active-directory/) (AAD)。 它使用 ASP.NET 核心 2.0 示例应用程序中所述[Facebook、 Google、 和外部提供程序身份验证](xref:security/authentication/social/index)。
+本教程演示如何使用户能够使用 WS 联合身份验证提供程序 (如 Active Directory 联合身份验证服务 (ADFS) 登录或[Azure Active Directory](/azure/active-directory/) (AAD)。 它使用 ASP.NET Core 2.0 示例应用程序中所述[Facebook、 Google、 和外部提供程序身份验证](xref:security/authentication/social/index)。
 
-对于 ASP.NET 核心 2.0 应用程序中，WS 联合身份验证的支持由提供[Microsoft.AspNetCore.Authentication.WsFederation](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.WsFederation)。 此组件移植从[Microsoft.Owin.Security.WsFederation](https://www.nuget.org/packages/Microsoft.Owin.Security.WsFederation)和共享许多该组件的机制。 但是，组件的几个重要方面不同。
+对于 ASP.NET Core 2.0 应用程序中，WS 联合身份验证的支持由提供[Microsoft.AspNetCore.Authentication.WsFederation](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.WsFederation)。 此组件移植从[Microsoft.Owin.Security.WsFederation](https://www.nuget.org/packages/Microsoft.Owin.Security.WsFederation)和共享许多该组件的机制。 但是，组件的几个重要方面不同。
 
 默认情况下，新的中间件：
 
@@ -36,7 +36,7 @@ ms.locfileid: "36277434"
 
 ![添加信赖方信任向导： 选择数据源](ws-federation/_static/AdfsSelectDataSource.png)
 
-* 输入信赖方的显示名称。 名称并不重要到 ASP.NET 核心应用程序。
+* 输入信赖方的显示名称。 名称并不重要到 ASP.NET Core 应用程序。
 
 * [Microsoft.AspNetCore.Authentication.WsFederation](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.WsFederation)缺少用于令牌加密，因此未配置令牌加密证书的支持：
 
@@ -51,7 +51,7 @@ ms.locfileid: "36277434"
 
 * 单击**下一步**完成该向导的其余部分和**关闭**末尾。
 
-* ASP.NET 核心标识需要**名称 ID**声明。 添加一个从**编辑声明规则**对话框：
+* ASP.NET Core 标识需要**名称 ID**声明。 添加一个从**编辑声明规则**对话框：
 
 ![编辑声明规则](ws-federation/_static/EditClaimRules.png)
 
@@ -67,7 +67,7 @@ ms.locfileid: "36277434"
 
 ![Azure Active Directory： 应用程序注册](ws-federation/_static/AadNewAppRegistration.png)
 
-* 输入应用程序注册的名称。 这并不重要到 ASP.NET 核心应用程序。
+* 输入应用程序注册的名称。 这并不重要到 ASP.NET Core 应用程序。
 * 输入作为侦听的应用程序的 URL**登录 URL**:
 
 ![Azure Active Directory： 创建应用程序注册](ws-federation/_static/AadCreateAppRegistration.png)
@@ -80,7 +80,7 @@ ms.locfileid: "36277434"
 
 ![Azure Active Directory： 应用程序注册属性](ws-federation/_static/AadAppIdUri.png)
 
-## <a name="add-ws-federation-as-an-external-login-provider-for-aspnet-core-identity"></a>为 ASP.NET 核心标识的外部登录提供程序中添加 WS 联合身份验证
+## <a name="add-ws-federation-as-an-external-login-provider-for-aspnet-core-identity"></a>为 ASP.NET Core 标识的外部登录提供程序中添加 WS 联合身份验证
 
 * 添加的依赖项[Microsoft.AspNetCore.Authentication.WsFederation](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.WsFederation)到项目。
 * 添加 WS 联合身份验证到`Configure`中的方法*Startup.cs*:
@@ -120,7 +120,7 @@ ms.locfileid: "36277434"
 
 成功登录的新用户将重定向到应用程序的用户注册页：![注册页](ws-federation/_static/Register.png)
 
-## <a name="use-ws-federation-without-aspnet-core-identity"></a>使用 WS 联合身份验证而无需 ASP.NET 核心标识
+## <a name="use-ws-federation-without-aspnet-core-identity"></a>使用 WS 联合身份验证而无需 ASP.NET Core 标识
 
 没有标识，可以使用 WS 联合身份验证中间件。 例如：
 

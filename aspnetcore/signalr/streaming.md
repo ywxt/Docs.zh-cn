@@ -1,5 +1,5 @@
 ---
-title: 使用 ASP.NET 核心 SignalR 中流式处理
+title: 使用 ASP.NET Core SignalR 中流式处理
 author: rachelappel
 description: ''
 monikerRange: '>= aspnetcore-2.1'
@@ -14,11 +14,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/22/2018
 ms.locfileid: "36327488"
 ---
-# <a name="use-streaming-in-aspnet-core-signalr"></a>使用 ASP.NET 核心 SignalR 中流式处理
+# <a name="use-streaming-in-aspnet-core-signalr"></a>使用 ASP.NET Core SignalR 中流式处理
 
 通过[Brennan 勇](https://github.com/BrennanConroy)
 
-ASP.NET 核心 SignalR 支持流式处理服务器方法的返回值。 这是适用于其中的数据片段将出现随时间的方案。 当返回值流式传输到客户端时，每个片段发送到客户端一旦它变为可用，而不是等待可用的所有数据。
+ASP.NET Core SignalR 支持流式处理服务器方法的返回值。 这是适用于其中的数据片段将出现随时间的方案。 当返回值流式传输到客户端时，每个片段发送到客户端一旦它变为可用，而不是等待可用的所有数据。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/live/aspnetcore/signalr/streaming/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 

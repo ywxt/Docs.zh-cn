@@ -26,13 +26,13 @@ ms.locfileid: "36272512"
 
 设置客户端的 ASP.NET Core 项目模板创建的新项目生成过程。 [jQuery](http://jquery.com/)和[Bootstrap](http://getbootstrap.com/)安装，并支持 Bower。
 
-在列出客户端包*bower.json*文件。 ASP.NET 核心项目模板配置*bower.json* jQuery、 jQuery 验证与 Bootstrap。
+在列出客户端包*bower.json*文件。 ASP.NET Core 项目模板配置*bower.json* jQuery、 jQuery 验证与 Bootstrap。
 
 在本教程中，我们将添加对支持[字体出色](http://fontawesome.io)。 可以使用安装 bower 包**管理 Bower 包**UI 或手动在*bower.json*文件。
 
 ### <a name="installation-via-manage-bower-packages-ui"></a>通过管理 Bower 包 UI 的安装
 
-* 创建新的 ASP.NET 核心 Web 应用程序与**ASP.NET 核心 Web 应用程序 (.NET Core)** 模板。 选择**Web 应用程序**和**无身份验证**。
+* 创建新的 ASP.NET Core Web 应用程序与**ASP.NET Core Web 应用程序 (.NET Core)** 模板。 选择**Web 应用程序**和**无身份验证**。
 
 * 右键单击解决方案资源管理器中的项目并选择**管理 Bower 包**(或者从主菜单中，**项目** > **管理 Bower 包**).
 
@@ -89,7 +89,7 @@ Bower 使用[语义版本控制](http://semver.org/)来组织依赖关系。 语
 
 一旦列表中的包*bower.json*文件，Visual Studio 将下载它们。 下面的示例使用 Bower 加载 jQuery 和引导定向到*wwwroot*文件夹。
 
-* 创建新的 ASP.NET 核心 Web 应用程序与**ASP.NET 核心 Web 应用程序 (.NET Core)** 模板。 选择**空**项目模板，然后单击**确定**。
+* 创建新的 ASP.NET Core Web 应用程序与**ASP.NET Core Web 应用程序 (.NET Core)** 模板。 选择**空**项目模板，然后单击**确定**。
 
 * 在解决方案资源管理器，右键单击项目 >**添加新项**和选择**Bower 配置文件**。 注意： A *.bowerrc*还添加文件。
 

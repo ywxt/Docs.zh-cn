@@ -1,5 +1,5 @@
 ---
-title: 响应缓存在 ASP.NET 核心中的中间件
+title: 响应缓存在 ASP.NET Core 中的中间件
 author: guardrex
 description: 了解如何配置和 ASP.NET Core 中使用缓存响应的中间件。
 monikerRange: '>= aspnetcore-1.1'
@@ -14,11 +14,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/28/2018
 ms.locfileid: "37077642"
 ---
-# <a name="response-caching-middleware-in-aspnet-core"></a>响应缓存在 ASP.NET 核心中的中间件
+# <a name="response-caching-middleware-in-aspnet-core"></a>响应缓存在 ASP.NET Core 中的中间件
 
 通过[Luke Latham](https://github.com/guardrex)和[John Luo](https://github.com/JunTaoLuo)
 
-[查看或下载 ASP.NET 核心 2.1 示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/samples)([如何下载](xref:tutorials/index#how-to-download-a-sample))
+[查看或下载 ASP.NET Core 2.1 示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/samples)([如何下载](xref:tutorials/index#how-to-download-a-sample))
 
 此文章介绍了如何在 ASP.NET Core 应用程序中配置缓存响应的中间件。 该中间件确定响应何时可缓存、 存储响应和从缓存充当响应。 有关 HTTP 缓存功能的简介和`ResponseCache`属性，请参阅[响应缓存](xref:performance/caching/response)。
 

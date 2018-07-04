@@ -1,7 +1,7 @@
 ---
-title: ASP.NET 核心 SignalR 简介
+title: ASP.NET Core SignalR 简介
 author: rachelappel
-description: 了解如何 ASP.NET 核心 SignalR 库简化了将实时功能添加到应用。
+description: 了解如何 ASP.NET Core SignalR 库简化了将实时功能添加到应用。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
@@ -14,13 +14,13 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36277899"
 ---
-# <a name="introduction-to-aspnet-core-signalr"></a>ASP.NET 核心 SignalR 简介
+# <a name="introduction-to-aspnet-core-signalr"></a>ASP.NET Core SignalR 简介
 
 作者：[Rachel Appel](https://twitter.com/rachelappel)
 
 ## <a name="what-is-signalr"></a>什么是 SignalR？
 
-ASP.NET 核心 SignalR 是一个库，简化了添加到应用的实时 web 功能。 实时 web 功能可立即使服务器端代码能够将内容推送到客户端。
+ASP.NET Core SignalR 是一个库，简化了添加到应用的实时 web 功能。 实时 web 功能可立即使服务器端代码能够将内容推送到客户端。
 
 适用于 SignalR 的良好候选：
 
@@ -29,9 +29,9 @@ ASP.NET 核心 SignalR 是一个库，简化了添加到应用的实时 web 功�
 * 协作应用程序。 白板应用和团队会议软件是协作应用程序的示例。
 * 需要通知的应用程序。 社交网络、 电子邮件、 聊天、 游戏、 旅行警报和很多其他应用程序使用通知。
 
-SignalR 提供了一个 API，用于创建服务器到客户端[远程过程调用 (RPC)](https://wikipedia.org/wiki/Remote_procedure_call)。 Rpc 在客户端上从服务器端.NET 核心代码中调用 JavaScript 函数。
+SignalR 提供了一个 API，用于创建服务器到客户端[远程过程调用 (RPC)](https://wikipedia.org/wiki/Remote_procedure_call)。 Rpc 在客户端上从服务器端.NET Core 代码中调用 JavaScript 函数。
 
-有关 ASP.NET 核心 SignalR:
+有关 ASP.NET Core SignalR:
 
 * 自动处理的连接管理。
 * 允许同时广播到所有连接的客户端的消息。 例如，聊天室。

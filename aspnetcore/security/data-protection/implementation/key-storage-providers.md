@@ -1,7 +1,7 @@
 ---
-title: 在 ASP.NET 核心中的密钥存储提供程序
+title: 在 ASP.NET Core 中的密钥存储提供程序
 author: rick-anderson
-description: 了解有关 ASP.NET 核心以及如何配置密钥的存储位置中的密钥存储提供程序。
+description: 了解有关 ASP.NET Core 以及如何配置密钥的存储位置中的密钥存储提供程序。
 ms.author: riande
 ms.date: 01/14/2017
 uid: security/data-protection/implementation/key-storage-providers
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36273764"
 ---
-# <a name="key-storage-providers-in-aspnet-core"></a>在 ASP.NET 核心中的密钥存储提供程序
+# <a name="key-storage-providers-in-aspnet-core"></a>在 ASP.NET Core 中的密钥存储提供程序
 
 <a name="data-protection-implementation-key-storage-providers"></a>
 

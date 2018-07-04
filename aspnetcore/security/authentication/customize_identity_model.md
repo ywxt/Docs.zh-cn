@@ -1,7 +1,7 @@
 ---
 title: 标识模型自定义项
 author: ajcvickers
-description: 本文介绍如何为 ASP.NET 核心标识自定义的基础的实体框架核心数据模型。
+description: 本文介绍如何为 ASP.NET Core 标识自定义的基础的实体框架核心数据模型。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: avickers
 ms.date: 04/12/2018
@@ -17,13 +17,13 @@ ms.locfileid: "37077670"
 
 通过[Arthur Vickers](https://github.com/ajcvickers)
 
-ASP.NET 核心标识提供一个框架，用于管理和 ASP.NET Core 应用程序中存储用户帐户。 标识添加到项目中，选中"单个用户帐户"时作为身份验证机制。 默认情况下，标识将使用的 Entity Framework (EF) 核心数据模型。 本文介绍如何自定义标识模型。
+ASP.NET Core 标识提供一个框架，用于管理和 ASP.NET Core 应用程序中存储用户帐户。 标识添加到项目中，选中"单个用户帐户"时作为身份验证机制。 默认情况下，标识将使用的 Entity Framework (EF) 核心数据模型。 本文介绍如何自定义标识模型。
 
 <a name="identity-migrations"></a>
 
-## <a name="identity-and-ef-core-migrations"></a>标识和 EF 核心迁移
+## <a name="identity-and-ef-core-migrations"></a>标识和 EF Core 迁移
 
-之前检查模型，它是有助于了解如何标识配合[EF 核心迁移](/ef/core/managing-schemas/migrations/)创建和更新数据库。 最高层的过程是：
+之前检查模型，它是有助于了解如何标识配合[EF Core 迁移](/ef/core/managing-schemas/migrations/)创建和更新数据库。 最高层的过程是：
 
 1. 定义或更新[代码中的数据模型](/ef/core/modeling/)。
 1. 添加迁移，以将此模型转换可以应用于数据库的更改。
@@ -37,9 +37,9 @@ ASP.NET 核心标识提供一个框架，用于管理和 ASP.NET Core 应用程�
 * [Dotnet 命令](/ef/core/miscellaneous/cli/dotnet)命令行上。
 * 运行应用程序时，请选择错误页上的迁移链接。
 
-ASP.NET 核心有可用于应用程序运行时应用迁移一个开发时间错误页处理程序。 对于生产应用程序，它通常会更适合从迁移中生成 SQL 脚本，将部署到数据库作为受控的应用程序和数据库部署的一部分。
+ASP.NET Core 有可用于应用程序运行时应用迁移一个开发时间错误页处理程序。 对于生产应用程序，它通常会更适合从迁移中生成 SQL 脚本，将部署到数据库作为受控的应用程序和数据库部署的一部分。
 
-创建新的应用程序使用标识时，已经完成上述步骤 1 和 2。 也就是说，初始数据模型已存在，并已添加到项目中的初始迁移。 仍然需要应用于数据库初始迁移。 通过运行更新数据库 (PMC)，dotnet ef 数据库更新 (.NET 核心 CLI) 命令，或通过在运行应用程序使用错误页，则可以完成的初始迁移。
+创建新的应用程序使用标识时，已经完成上述步骤 1 和 2。 也就是说，初始数据模型已存在，并已添加到项目中的初始迁移。 仍然需要应用于数据库初始迁移。 通过运行更新数据库 (PMC)，dotnet ef 数据库更新 (.NET Core CLI) 命令，或通过在运行应用程序使用错误页，则可以完成的初始迁移。
 
 需要对模型进行更改时重复前面的步骤。
 
@@ -72,7 +72,7 @@ ASP.NET 核心有可用于应用程序运行时应用迁移一个开发时间错
 
 ### <a name="default-model-configuration"></a>默认模型配置
 
-标识定义的"上下文类"的继承了各种[DbContext](/dotnet/api/microsoft.entityframeworkcore.dbcontext)配置和使用模型。 进行此配置使用[EF 核心代码 First Fluent API](/ef/core/modeling/)中[OnModelCreating](/dotnet/api/microsoft.entityframeworkcore.dbcontext.onmodelcreating#Microsoft_EntityFrameworkCore_DbContext_OnModelCreating_Microsoft_EntityFrameworkCore_ModelBuilder_)上下文类的方法。 默认配置是：
+标识定义的"上下文类"的继承了各种[DbContext](/dotnet/api/microsoft.entityframeworkcore.dbcontext)配置和使用模型。 进行此配置使用[EF Core 代码 First Fluent API](/ef/core/modeling/)中[OnModelCreating](/dotnet/api/microsoft.entityframeworkcore.dbcontext.onmodelcreating#Microsoft_EntityFrameworkCore_DbContext_OnModelCreating_Microsoft_EntityFrameworkCore_ModelBuilder_)上下文类的方法。 默认配置是：
 
 ```CSharp
 builder.Entity<TUser>(b =>
@@ -286,7 +286,7 @@ public abstract class IdentityUserContext<TUser, TKey, TUserClaim, TUserLogin, T
 * 通过提供实体类型和密钥类型的泛型类型参数。
 * 通过重写`OnModelCreating`修改这些类型的映射。
 
-在重写`OnModelCreating`，`base.OnModelCreating`应首先调用，重写应调用配置下一步。 EF 核心通常具有配置的最后一个 wins 策略。 例如，如果`ToTable`实体类型是调用首先使用一个表名称和具有不同的表名称，然后再次更高版本，则第二次调用中的表名称是使用的一个。
+在重写`OnModelCreating`，`base.OnModelCreating`应首先调用，重写应调用配置下一步。 EF Core 通常具有配置的最后一个 wins 策略。 例如，如果`ToTable`实体类型是调用首先使用一个表名称和具有不同的表名称，然后再次更高版本，则第二次调用中的表名称是使用的一个。
 
 ### <a name="using-a-custom-user-type"></a>使用自定义的用户类型
 
@@ -318,15 +318,15 @@ services.AddDefaultIdentity<ApplicationUser>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 ```
 
-无需重写`OnModelCreating`此处因为 EF 核心将映射`CustomTag`按照约定的属性。 但是，数据库将需要更新，以获取新`CustomTag`列。 若要执行此操作，添加迁移，和中所述，然后更新数据库[标识和 EF 核心迁移](#identity-migrations)。
+无需重写`OnModelCreating`此处因为 EF Core 将映射`CustomTag`按照约定的属性。 但是，数据库将需要更新，以获取新`CustomTag`列。 若要执行此操作，添加迁移，和中所述，然后更新数据库[标识和 EF Core 迁移](#identity-migrations)。
 
 ### <a name="changing-the-key-type"></a>更改的键类型
 
 创建数据库后更改的主键 (PK) 列类型会在很多数据库系统上出现问题。 更改在 PK 通常涉及除去并重新创建表。 因此，建议在消息以便创建数据库时创建的目标密钥类型，密钥类型指定的初始迁移。
 
-如果已创建数据库，则`Drop-Database`(PMC) 或`dotnet ef database drop`(.NET 核心 CLI) 可用来将其删除。
+如果已创建数据库，则`Drop-Database`(PMC) 或`dotnet ef database drop`(.NET Core CLI) 可用来将其删除。
 
-一旦确认数据库不存在，删除与初始迁移`Remove-Migration`(PMC) 或`dotnet ef migrations remove`(.NET 核心 CLI)。
+一旦确认数据库不存在，删除与初始迁移`Remove-Migration`(PMC) 或`dotnet ef migrations remove`(.NET Core CLI)。
 
 更新`ApplicationDbContext`以使用不同的基本类，指定的新键类型`TKey`。 例如，若要使用`Guid`密钥：
 
@@ -790,7 +790,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 在本部分中添加了对标识模型中的延迟加载代理支持。 Lazy 加载很有用，因为它允许使用未第一个，则确保加载这些导航属性。
 
-实体类型可适用于采用多种方式的延迟加载中所述[EF 核心文档](/ef/core/querying/related-data#lazy-loading)。 为简单起见，我们将使用延迟加载代理，该软件需要：
+实体类型可适用于采用多种方式的延迟加载中所述[EF Core 文档](/ef/core/querying/related-data#lazy-loading)。 为简单起见，我们将使用延迟加载代理，该软件需要：
 
 * 安装[Microsoft.EntityFrameworkCore.Proxies](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Proxies/)包。
 * 调用`.UseLazyLoadingProxies()`内`AddDbContext`。

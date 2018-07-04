@@ -45,7 +45,7 @@ ms.locfileid: "36275547"
 
 ![新项目对话框, 左侧窗格中的 .NET Core, ASP.NET Core Web ](start-mvc/_static/new_project2-21.png)
 
-完成“新建 ASP.NET 核心 Web 应用程序(.NET Core) - MvcMovie”对话框：
+完成“新建 ASP.NET Core Web 应用程序(.NET Core) - MvcMovie”对话框：
 
 * 在版本选择器下拉框中选择“ASP.NET Core 2.1”
 * 选择“Web 应用程序(Model-View-Controller)”
@@ -119,7 +119,7 @@ Visual Studio 为刚刚创建的 MVC 项目使用默认模板。 输入项目名
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-完成“新建 ASP.NET 核心 Web 应用程序(.NET Core) - MvcMovie”对话框：
+完成“新建 ASP.NET Core Web 应用程序(.NET Core) - MvcMovie”对话框：
 
 * 在版本选择器下拉框中选择“ASP.NET Core 2.-”
 * 选择“Web 应用程序(Model-View-Controller)”
@@ -129,7 +129,7 @@ Visual Studio 为刚刚创建的 MVC 项目使用默认模板。 输入项目名
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-完成“新建 ASP.NET 核心 Web 应用程序(.NET Core) - MvcMovie”对话框：
+完成“新建 ASP.NET Core Web 应用程序(.NET Core) - MvcMovie”对话框：
 
 * 在版本选择器下拉框中，点击“ASP.NET Core 1.1”
 * 点击“Web 应用程序”

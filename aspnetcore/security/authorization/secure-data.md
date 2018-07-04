@@ -1,7 +1,7 @@
 ---
 title: 使用受授权的用户数据创建 ASP.NET Core 应用
 author: rick-anderson
-description: 了解如何创建使用受授权的用户数据的 Razor 页应用。 包括 HTTPS、 身份验证、 安全性、 ASP.NET 核心标识。
+description: 了解如何创建使用受授权的用户数据的 Razor 页应用。 包括 HTTPS、 身份验证、 安全性、 ASP.NET Core 标识。
 ms.author: riande
 ms.date: 01/24/2018
 uid: security/authorization/secure-data
@@ -16,7 +16,7 @@ ms.locfileid: "36276375"
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT) 和 [Joe Audette](https://twitter.com/joeaudette)
 
-本教程演示如何使用受授权的用户数据创建 ASP.NET 核心 web 应用。 它显示的身份验证的 （注册） 的用户的联系人列表已创建。 有三个安全组：
+本教程演示如何使用受授权的用户数据创建 ASP.NET Core web 应用。 它显示的身份验证的 （注册） 的用户的联系人列表已创建。 有三个安全组：
 
 * **注册用户**可以查看所有已批准的数据并可以编辑/删除其自己的数据。
 * **管理器**可以批准或拒绝联系人数据。 仅批准的联系人是对用户可见。
@@ -62,7 +62,7 @@ ms.locfileid: "36276375"
 * [授权](xref:security/authorization/index)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
-请参阅[此 PDF 文件](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf)ASP.NET 核心 MVC 版本。 本教程的 ASP.NET 核心 1.1 版本是[这](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data)文件夹。 ASP.NET 核心示例是在 1.1[示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2)。
+请参阅[此 PDF 文件](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf)ASP.NET Core MVC 版本。 本教程的 ASP.NET Core 1.1 版本是[这](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data)文件夹。 ASP.NET Core 示例是在 1.1[示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2)。
 
 ## <a name="the-starter-and-completed-app"></a>初学者和已完成应用程序
 
@@ -361,6 +361,6 @@ dotnet ef database update
 
 ### <a name="additional-resources"></a>其他资源
 
-* [ASP.NET 核心授权实验室](https://github.com/blowdart/AspNetAuthorizationWorkshop)。 在本教程中引入的安全功能，此实验室将进入更多详细信息。
+* [ASP.NET Core 授权实验室](https://github.com/blowdart/AspNetAuthorizationWorkshop)。 在本教程中引入的安全功能，此实验室将进入更多详细信息。
 * [在 ASP.NET Core 中的授权： 基于声明的和自定义的简单，角色](xref:security/authorization/index)
 * [基于自定义策略的授权](xref:security/authorization/policies)

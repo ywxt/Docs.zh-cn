@@ -23,13 +23,13 @@ ms.locfileid: "36275075"
 * [帐户确认和密码恢复](xref:security/authentication/accconfirm)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
-请参阅[此 PDF 文件](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf)的 ASP.NET 核心 MVC 1.1 和 2.x 版本。
+请参阅[此 PDF 文件](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf)的 ASP.NET Core MVC 1.1 和 2.x 版本。
 
 ## <a name="prerequisites"></a>系统必备
 
 [!INCLUDE [](~/includes/net-core-prereqs.md)]
 
-## <a name="create-a-new-aspnet-core-project-with-the-net-core-cli"></a>使用.NET 核心 CLI 创建新的 ASP.NET Core 项目
+## <a name="create-a-new-aspnet-core-project-with-the-net-core-cli"></a>使用.NET Core CLI 创建新的 ASP.NET Core 项目
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -74,7 +74,7 @@ dotnet new mvc --auth Individual
 或者，你可以使用 Visual Studio 创建新的 ASP.NET Core 项目：
 
 * 在 Visual Studio 中，创建一个新**Web 应用程序**项目。
-* 选择**ASP.NET Core 2.0**。 **.NET 核心**选择在下图中，但你可以选择 **.NET Framework**。
+* 选择**ASP.NET Core 2.0**。 **.NET Core**选择在下图中，但你可以选择 **.NET Framework**。
 * 选择**更改身份验证**并将设置为**单个用户帐户**。
 * 保留默认值**存储用户帐户在应用程序**。
 
@@ -86,7 +86,7 @@ dotnet new mvc --auth Individual
 
 ## <a name="view-the-identity-database"></a>查看标识数据库
 
-请参阅[ASP.NET 核心 MVC 项目中使用的 SQLite](xref:tutorials/first-mvc-app-xplat/working-with-sql)有关说明如何查看 SQLite 数据库。
+请参阅[ASP.NET Core MVC 项目中使用的 SQLite](xref:tutorials/first-mvc-app-xplat/working-with-sql)有关说明如何查看 SQLite 数据库。
 
 Visual studio:
 
@@ -120,7 +120,7 @@ Visual studio:
 
 ### <a name="configure-email-provider"></a>配置电子邮件提供商
 
-在本教程中，使用 SendGrid 发送电子邮件。 你需要一个 SendGrid 帐户和密钥用于发送电子邮件。 你可以使用其他电子邮件提供商。 ASP.NET 核心 2.x 包括`System.Net.Mail`，这允许你从你的应用程序发送电子邮件。 我们建议你使用 SendGrid 或另一个电子邮件服务发送电子邮件。 SMTP 很难保护并正确设置。
+在本教程中，使用 SendGrid 发送电子邮件。 你需要一个 SendGrid 帐户和密钥用于发送电子邮件。 你可以使用其他电子邮件提供商。 ASP.NET Core 2.x 包括`System.Net.Mail`，这允许你从你的应用程序发送电子邮件。 我们建议你使用 SendGrid 或另一个电子邮件服务发送电子邮件。 SMTP 很难保护并正确设置。
 
 [选项模式](xref:fundamentals/configuration/options)用于访问的用户帐户和密钥设置。 有关详细信息，请参阅[配置](xref:fundamentals/configuration/index)。
 

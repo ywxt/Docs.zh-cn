@@ -1,5 +1,5 @@
 ---
-title: 响应缓存在 ASP.NET 核心
+title: 响应缓存在 ASP.NET Core
 author: rick-anderson
 description: 了解如何使用缓存到较低带宽要求的响应，并增加的 ASP.NET Core 应用的性能。
 ms.author: riande
@@ -12,12 +12,12 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/28/2018
 ms.locfileid: "37077759"
 ---
-# <a name="response-caching-in-aspnet-core"></a>响应缓存在 ASP.NET 核心
+# <a name="response-caching-in-aspnet-core"></a>响应缓存在 ASP.NET Core
 
 通过[John Luo](https://github.com/JunTaoLuo)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Steve Smith](https://ardalis.com/)，和[Luke Latham](https://github.com/guardrex)
 
 > [!NOTE]
-> 响应缓存在 Razor 页中是位于 ASP.NET 核心 2.1 或更高版本。
+> 响应缓存在 Razor 页中是位于 ASP.NET Core 2.1 或更高版本。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
@@ -56,7 +56,7 @@ ms.locfileid: "37077759"
 
 没有对此缓存行为的当前开发人员控件时使用[响应缓存中间件](xref:performance/caching/middleware)因为缓存规范正式遵循该中间件。 [将来对该中间件增强](https://github.com/aspnet/ResponseCaching/issues/96)配置中间件，若要忽略的请求将允许`Cache-Control`时决定提供缓存的响应的标头。 当你使用该中间件，这将为您提供更好地控制负载在你的服务器上的机会。
 
-## <a name="other-caching-technology-in-aspnet-core"></a>在 ASP.NET 核心中其他缓存技术
+## <a name="other-caching-technology-in-aspnet-core"></a>在 ASP.NET Core 中其他缓存技术
 
 ### <a name="in-memory-caching"></a>内存中缓存
 
@@ -74,7 +74,7 @@ ms.locfileid: "37077759"
 
 你可以使用缓存标记帮助器缓存中的 MVC 视图或 Razor 页的内容。 缓存标记帮助器使用的内存中缓存来存储数据。
 
-有关详细信息，请参阅[ASP.NET 核心 mvc 缓存标记帮助器](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)。
+有关详细信息，请参阅[ASP.NET Core mvc 缓存标记帮助器](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)。
 
 ### <a name="distributed-cache-tag-helper"></a>分布式缓存标记帮助程序
 

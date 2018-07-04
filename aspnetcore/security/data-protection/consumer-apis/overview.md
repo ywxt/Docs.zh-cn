@@ -1,7 +1,7 @@
 ---
-title: 有关 ASP.NET 核心的使用者 Api 概述
+title: 有关 ASP.NET Core 的使用者 Api 概述
 author: rick-anderson
-description: 接收各种使用者 Api ASP.NET 核心数据保护库中可用的简要概述。
+description: 接收各种使用者 Api ASP.NET Core 数据保护库中可用的简要概述。
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/consumer-apis/overview
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36279111"
 ---
-# <a name="consumer-apis-overview-for-aspnet-core"></a>有关 ASP.NET 核心的使用者 Api 概述
+# <a name="consumer-apis-overview-for-aspnet-core"></a>有关 ASP.NET Core 的使用者 Api 概述
 
 `IDataProtectionProvider`和`IDataProtector`接口是通过该使用者使用数据保护系统的基本接口。 它们位于[Microsoft.AspNetCore.DataProtection.Abstractions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Abstractions/)包。
 

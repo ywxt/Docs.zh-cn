@@ -1,7 +1,7 @@
 ---
-title: 在 ASP.NET 核心中的常规数据保护法规 (GDPR) 支持
+title: 在 ASP.NET Core 中的常规数据保护法规 (GDPR) 支持
 author: rick-anderson
-description: 了解如何访问 ASP.NET 核心 web 应用中的 GDPR 扩展点。
+description: 了解如何访问 ASP.NET Core web 应用中的 GDPR 扩展点。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
@@ -26,7 +26,7 @@ ASP.NET Core 提供 Api 和模板，以帮助满足一些[欧洲常规数据保�
 * [TempData 和会话 cookie](#tempdata)禁用跟踪时不起作用。
 * [标识管理](#pd)页提供的链接下载和删除用户数据。
 
-[示例应用程序](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample)允许你测试的大多数 GDPR 扩展点和 Api 添加到 ASP.NET 核心 2.1 模板。 请参阅[自述文件](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample)测试说明文件。
+[示例应用程序](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample)允许你测试的大多数 GDPR 扩展点和 Api 添加到 ASP.NET Core 2.1 模板。 请参阅[自述文件](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample)测试说明文件。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
@@ -81,7 +81,7 @@ Razor 页和 MVC 项目模板创建的项目包括以下 GDPR 支持：
 
 ## <a name="personal-data"></a>个人数据
 
-ASP.NET 核心应用程序使用单个用户帐户创建包含代码，从而下载和删除个人数据。
+ASP.NET Core 应用程序使用单个用户帐户创建包含代码，从而下载和删除个人数据。
 
 选择的用户名称，然后选择**个人数据**:
 

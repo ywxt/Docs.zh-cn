@@ -1,7 +1,7 @@
 ---
-title: 在 ASP.NET 核心中的密钥存储格式
+title: 在 ASP.NET Core 中的密钥存储格式
 author: rick-anderson
-description: 了解实现的 ASP.NET 核心数据保护密钥的存储格式的详细信息。
+description: 了解实现的 ASP.NET Core 数据保护密钥的存储格式的详细信息。
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/implementation/key-storage-format
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36274513"
 ---
-# <a name="key-storage-format-in-aspnet-core"></a>在 ASP.NET 核心中的密钥存储格式
+# <a name="key-storage-format-in-aspnet-core"></a>在 ASP.NET Core 中的密钥存储格式
 
 <a name="data-protection-implementation-key-storage-format"></a>
 

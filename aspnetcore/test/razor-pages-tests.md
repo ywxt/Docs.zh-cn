@@ -17,7 +17,7 @@ ms.locfileid: "36274402"
 
 作者：[Luke Latham](https://github.com/guardrex)
 
-ASP.NET 核心支持 Razor 页应用的单元测试。 测试的数据访问层 (DAL) 和页模型帮助确保：
+ASP.NET Core 支持 Razor 页应用的单元测试。 测试的数据访问层 (DAL) 和页模型帮助确保：
 
 * 部分 Razor 页面应用程序在应用程序构造期间工作独立以及组合在一起作为一个单元。
 * 类和方法具有有限的作用域的责任。
@@ -28,7 +28,7 @@ ASP.NET 核心支持 Razor 页应用的单元测试。 测试的数据访问层 
 
 * [Razor 页面介绍](xref:razor-pages/index)
 * [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)
-* [单元测试 C# 中使用 dotnet 测试和 xUnit 的.NET 核心](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
+* [单元测试 C# 中使用 dotnet 测试和 xUnit 的.NET Core](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/razor-pages-tests/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
@@ -187,7 +187,7 @@ using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
 
 ## <a name="additional-resources"></a>其他资源
 
-* [单元测试 C# 中使用 dotnet 测试和 xUnit 的.NET 核心](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
+* [单元测试 C# 中使用 dotnet 测试和 xUnit 的.NET Core](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 * [测试控制器](xref:mvc/controllers/testing)
 * [单元测试代码](/visualstudio/test/unit-test-your-code)(Visual Studio)
 * [集成测试](xref:test/integration-tests)

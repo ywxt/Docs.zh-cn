@@ -1,5 +1,5 @@
 ---
-title: 强制实施 HTTPS 在 ASP.NET 核心
+title: 强制实施 HTTPS 在 ASP.NET Core
 author: rick-anderson
 description: 演示如何要求在 ASP.NET Core HTTPS/TLS web 应用。
 ms.author: riande
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36277265"
 ---
-# <a name="enforce-https-in-aspnet-core"></a>强制实施 HTTPS 在 ASP.NET 核心
+# <a name="enforce-https-in-aspnet-core"></a>强制实施 HTTPS 在 ASP.NET Core
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -32,7 +32,7 @@ ms.locfileid: "36277265"
 
 ::: moniker range=">= aspnetcore-2.1"
 
-我们建议所有 ASP.NET 核心 web 应用都调用 HTTPS 重定向中间件 ([UseHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpspolicybuilderextensions.usehttpsredirection)) 将所有 HTTP 请求重定向到 HTTPS。
+我们建议所有 ASP.NET Core web 应用都调用 HTTPS 重定向中间件 ([UseHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpspolicybuilderextensions.usehttpsredirection)) 将所有 HTTP 请求重定向到 HTTPS。
 
 下面的代码调用`UseHttpsRedirection`中`Startup`类：
 
@@ -103,7 +103,7 @@ ms.locfileid: "36277265"
 
 每个[OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project)， [HTTP 严格传输安全 (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet)是由 web 应用程序通过使用特殊的响应标头指定可以选择使用的安全增强。 支持的浏览器收到此标头后该浏览器将阻止从正在通过 HTTP 发送到指定的域的任何通信，并改为将通过 HTTPS 发送的所有通信。 它还可以防止 HTTPS 单击通过在浏览器上的提示。
 
-ASP.NET 核心 2.1 或更高版本实现与 HSTS`UseHsts`扩展方法。 下面的代码调用`UseHsts`时应用程序不在[开发模式](xref:fundamentals/environments):
+ASP.NET Core 2.1 或更高版本实现与 HSTS`UseHsts`扩展方法。 下面的代码调用`UseHsts`时应用程序不在[开发模式](xref:fundamentals/environments):
 
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet1&highlight=10)]
 
@@ -132,7 +132,7 @@ ASP.NET 核心 2.1 或更高版本实现与 HSTS`UseHsts`扩展方法。 下面�
 <a name="https"></a>
 ## <a name="opt-out-of-https-on-project-creation"></a>选择退出的 HTTPS 在项目创建
 
-ASP.NET 核心 2.1 或更高版本的 web 应用程序模板 （从 Visual Studio 或 dotnet 命令行） 启用[HTTPS 重定向](#require)和[HSTS](#hsts)。 对于不需要 HTTPS 的部署，你可以选择退出的 HTTPS。 例如，不需要其中 HTTPS 正在处理外部在边缘，在每个节点使用 HTTPS 某些后端服务。
+ASP.NET Core 2.1 或更高版本的 web 应用程序模板 （从 Visual Studio 或 dotnet 命令行） 启用[HTTPS 重定向](#require)和[HSTS](#hsts)。 对于不需要 HTTPS 的部署，你可以选择退出的 HTTPS。 例如，不需要其中 HTTPS 正在处理外部在边缘，在每个节点使用 HTTPS 某些后端服务。
 
 若要选择退出的 HTTPS:
 

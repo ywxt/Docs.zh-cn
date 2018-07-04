@@ -1,5 +1,5 @@
 ---
-title: 在 ASP.NET 核心中使用 Grunt
+title: 在 ASP.NET Core 中使用 Grunt
 author: rick-anderson
 description: ''
 ms.author: riande
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36272969"
 ---
-# <a name="use-grunt-in-aspnet-core"></a>在 ASP.NET 核心中使用 Grunt
+# <a name="use-grunt-in-aspnet-core"></a>在 ASP.NET Core 中使用 Grunt
 
 通过[了米](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/)
 

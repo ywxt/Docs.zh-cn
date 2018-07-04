@@ -16,7 +16,7 @@ ms.locfileid: "36273394"
 
 作者：[Valeriy Novytskyy](https://github.com/01binary) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-本教程演示如何使用户可以使用示例 ASP.NET 核心 2.0 项目上创建其 Facebook 帐户登录[上一页](xref:security/authentication/social/index)。 Facebook 身份验证需要[Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) NuGet 包。 我们首先按照创建 Facebook 应用程序 ID[官方步骤](https://developers.facebook.com)。
+本教程演示如何使用户可以使用示例 ASP.NET Core 2.0 项目上创建其 Facebook 帐户登录[上一页](xref:security/authentication/social/index)。 Facebook 身份验证需要[Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) NuGet 包。 我们首先按照创建 Facebook 应用程序 ID[官方步骤](https://developers.facebook.com)。
 
 ## <a name="create-the-app-in-facebook"></a>在 Facebook 中创建应用程序
 
@@ -51,7 +51,7 @@ ms.locfileid: "36273394"
 
 * 单击**仪表板**左侧导航区域中的链接。 
 
-    在此页上，记下你`App ID`和你`App Secret`。 你将添加到 ASP.NET 核心应用程序下一节中：
+    在此页上，记下你`App ID`和你`App Secret`。 你将添加到 ASP.NET Core 应用程序下一节中：
 
    ![Facebook 开发人员仪表板](index/_static/FBDashboard.png)
 
@@ -95,7 +95,7 @@ services.AddAuthentication().AddFacebook(facebookOptions =>
 安装[Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook)包。
 
 * 若要使用 Visual Studio 2017 安装此包，请右键单击项目并选择**管理 NuGet 包**。
-* 若要使用.NET 核心 CLI 安装，请在项目目录中执行以下命令：
+* 若要使用.NET Core CLI 安装，请在项目目录中执行以下命令：
 
    `dotnet add package Microsoft.AspNetCore.Authentication.Facebook`
 
@@ -138,7 +138,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 ## <a name="troubleshooting"></a>疑难解答
 
-* **ASP.NET 核心 2.x 仅：** 如果标识未通过调用配置`services.AddIdentity`中`ConfigureServices`，尝试进行身份验证将导致*ArgumentException： 必须提供 SignInScheme 选项*。 在本教程使用的项目模板可确保，这完成的。
+* **ASP.NET Core 2.x 仅：** 如果标识未通过调用配置`services.AddIdentity`中`ConfigureServices`，尝试进行身份验证将导致*ArgumentException： 必须提供 SignInScheme 选项*。 在本教程使用的项目模板可确保，这完成的。
 * 如果尚未通过应用初始迁移创建站点数据库，则获取*处理请求时，数据库操作失败*错误。 点击**应用迁移**创建数据库和刷新可跳过错误。
 
 ## <a name="next-steps"></a>后续步骤

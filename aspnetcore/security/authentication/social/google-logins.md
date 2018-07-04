@@ -16,7 +16,7 @@ ms.locfileid: "36274906"
 
 作者：[Valeriy Novytskyy](https://github.com/01binary) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-本教程演示如何使用户可以使用示例 ASP.NET 核心 2.0 项目上创建其 Google + 帐户登录[上一页](xref:security/authentication/social/index)。 我们先执行[官方步骤](https://developers.google.com/identity/sign-in/web/devconsole-project)在 Google API 控制台中创建新的应用程序。
+本教程演示如何使用户可以使用示例 ASP.NET Core 2.0 项目上创建其 Google + 帐户登录[上一页](xref:security/authentication/social/index)。 我们先执行[官方步骤](https://developers.google.com/identity/sign-in/web/devconsole-project)在 Google API 控制台中创建新的应用程序。
 
 ## <a name="create-the-app-in-google-api-console"></a>在 Google API 控制台中创建应用程序
 
@@ -111,7 +111,7 @@ services.AddAuthentication().AddGoogle(googleOptions =>
 在本教程使用的项目模板可确保[Microsoft.AspNetCore.Authentication.Google](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Google)安装包。
 
 * 若要使用 Visual Studio 2017 安装此包，请右键单击项目并选择**管理 NuGet 包**。
-* 若要使用.NET 核心 CLI 安装，请在项目目录中执行以下命令：
+* 若要使用.NET Core CLI 安装，请在项目目录中执行以下命令：
 
 `dotnet add package Microsoft.AspNetCore.Authentication.Google`
 
@@ -148,7 +148,7 @@ app.UseGoogleAuthentication(new GoogleOptions()
 ## <a name="troubleshooting"></a>疑难解答
 
 * 如果你收到`403 (Forbidden)`从你自己的应用，请确保在开发模式 （或中断到调试器中相同的错误），运行时的错误页**Google + API**已在中启用**API Manager 库**按照列出的步骤[更早版本在此页](#create-the-app-in-google-api-console)。 如果在登录不起作用，并且不能接收任何错误，切换到开发模式以使问题更易于调试。
-* **ASP.NET 核心 2.x 仅：** 如果标识未通过调用配置`services.AddIdentity`中`ConfigureServices`，尝试进行身份验证将导致*ArgumentException： 必须提供 SignInScheme 选项*。 在本教程使用的项目模板可确保，这完成的。
+* **ASP.NET Core 2.x 仅：** 如果标识未通过调用配置`services.AddIdentity`中`ConfigureServices`，尝试进行身份验证将导致*ArgumentException： 必须提供 SignInScheme 选项*。 在本教程使用的项目模板可确保，这完成的。
 * 如果尚未通过应用初始迁移创建站点数据库，则会出现*处理请求时，数据库操作失败*错误。 点击**应用迁移**创建数据库和刷新可跳过错误。
 
 ## <a name="next-steps"></a>后续步骤
