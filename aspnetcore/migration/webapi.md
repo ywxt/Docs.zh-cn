@@ -61,7 +61,7 @@ Web Api 是覆盖广泛的客户端，包括浏览器和移动设备的 HTTP 服
 
 ## <a name="migrate-configuration"></a>迁移配置
 
-ASP.NET Core 不再使用*Global.asax*， *web.config*，或*App_Start*文件夹。 相反，所有启动任务都在都完成*Startup.cs*项目的根目录中 (请参阅[应用程序启动](../fundamentals/startup.md))。 在 ASP.NET Core MVC，基于属性的路由现在包含默认情况下时`UseMvc()`称为;，并且，这是建议的配置 Web API 的路由的方法 （Web API 初学者项目处理路由的方式）。
+ASP.NET Core不再使用*Global.asax*， *web.config*，或*App_Start*文件夹。 相反，所有启动任务都在都完成*Startup.cs*项目的根目录中 (请参阅[应用程序启动](../fundamentals/startup.md))。 在 ASP.NET Core MVC，基于属性的路由现在包含默认情况下时`UseMvc()`称为;，并且，这是建议的配置 Web API 的路由的方法 （Web API 初学者项目处理路由的方式）。
 
 [!code-csharp[](../migration/webapi/sample/ProductsCore/Startup.cs?highlight=31)]
 
@@ -116,7 +116,7 @@ ASP.NET Core 不再使用*Global.asax*， *web.config*，或*App_Start*文件夹
 
 ## <a name="microsoftaspnetcoremvcwebapicompatshim"></a>Microsoft.AspNetCore.Mvc.WebApiCompatShim
 
-迁移 ASP.NET Web API 项目到 ASP.NET Core 时的有用工具是[Microsoft.AspNetCore.Mvc.WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim)库。 兼容性填充码扩展 ASP.NET Core 以允许不同的 Web API 2 约定，要使用的数目。 本文档中进行迁移，以前的示例是基本的兼容性填充程序不是所必需的。 对于大型项目，使用兼容性填充码可用于临时之间的隔阂 API ASP.NET Core 和 ASP.NET Web API 2。
+迁移 ASP.NET Web API 项目到 ASP.NET Core时的有用工具是[Microsoft.AspNetCore.Mvc.WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim)库。 兼容性填充码扩展 ASP.NET Core以允许不同的 Web API 2 约定，要使用的数目。 本文档中进行迁移，以前的示例是基本的兼容性填充程序不是所必需的。 对于大型项目，使用兼容性填充码可用于临时之间的隔阂 API ASP.NET Core 和 ASP.NET Web API 2。
 
 Web API 兼容性填充码旨在作为临时的度量值用于促进将大型 Web API 项目迁移到 ASP.NET Core。 随着时间推移，应更新项目以使用 ASP.NET Core 模式，而不是依靠兼容性填充码。 
 

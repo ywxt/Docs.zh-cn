@@ -1,5 +1,5 @@
 ---
-title: 在 ASP.NET Core 中的浏览器链接
+title: 在 ASP.NET Core中的浏览器链接
 author: ncarandini
 description: 说明如何浏览器链接是链接使用一个或多个 web 浏览器在开发环境的 Visual Studio 功能。
 ms.author: riande
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36274087"
 ---
-# <a name="browser-link-in-aspnet-core"></a>在 ASP.NET Core 中的浏览器链接
+# <a name="browser-link-in-aspnet-core"></a>在 ASP.NET Core中的浏览器链接
 
 通过[Nicolò Carandini](https://github.com/ncarandini)， [Mike Wasson](https://github.com/MikeWasson)，和[Tom Dykstra](https://github.com/tdykstra)
 

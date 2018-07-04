@@ -27,7 +27,7 @@ SignalR hub 是用于将消息发送到客户端连接到 SignalR 服务器核�
 在 ASP.NET Core SignalR，您可以访问的实例`IHubContext`通过依赖关系注入。 你可以将注入的实例`IHubContext`到的控制器，中间件或其他 DI 服务。 使用实例将消息发送到客户端。
 
 > [!NOTE]
-> 这不同于 ASP.NET SignalR GlobalHost 用于提供对访问`IHubContext`。 ASP.NET Core 具有的依赖关系注入框架，无需此全局单一实例。
+> 这不同于 ASP.NET SignalR GlobalHost 用于提供对访问`IHubContext`。 ASP.NET Core具有的依赖关系注入框架，无需此全局单一实例。
 
 ### <a name="inject-an-instance-of-ihubcontext-in-a-controller"></a>注入的实例`IHubContext`控制器中
 

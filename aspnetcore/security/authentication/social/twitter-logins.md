@@ -1,5 +1,5 @@
 ---
-title: Twitter 外部登录名与 ASP.NET Core 的安装程序
+title: Twitter 外部登录名与 ASP.NET Core的安装程序
 author: rick-anderson
 description: 本教程演示的集成到现有的 ASP.NET Core 应用的 Twitter 帐户用户身份验证。
 ms.author: riande
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36278487"
 ---
-# <a name="twitter-external-login-setup-with-aspnet-core"></a>Twitter 外部登录名与 ASP.NET Core 的安装程序
+# <a name="twitter-external-login-setup-with-aspnet-core"></a>Twitter 外部登录名与 ASP.NET Core的安装程序
 
 作者：[Valeriy Novytskyy](https://github.com/01binary) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 

@@ -1,7 +1,7 @@
 ---
-title: 配置 ASP.NET Core 标识
+title: 配置 ASP.NET Core标识
 author: AdrienTorris
-description: 了解 ASP.NET Core 标识默认值，并了解如何配置要使用自定义值的标识属性。
+description: 了解 ASP.NET Core标识默认值，并了解如何配置要使用自定义值的标识属性。
 ms.author: scaddie
 ms.date: 03/06/2018
 uid: security/authentication/identity-configuration
@@ -12,9 +12,9 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36276250"
 ---
-# <a name="configure-aspnet-core-identity"></a>配置 ASP.NET Core 标识
+# <a name="configure-aspnet-core-identity"></a>配置 ASP.NET Core标识
 
-ASP.NET Core 标识使用默认配置设置，例如密码策略、 锁定时间和 cookie 设置。 应用程序的可重写这些设置`Startup`类。
+ASP.NET Core标识使用默认配置设置，例如密码策略、 锁定时间和 cookie 设置。 应用程序的可重写这些设置`Startup`类。
 
 ## <a name="identity-options"></a>标识选项
 

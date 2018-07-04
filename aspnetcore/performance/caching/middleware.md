@@ -1,5 +1,5 @@
 ---
-title: 响应缓存在 ASP.NET Core 中的中间件
+title: 响应缓存在 ASP.NET Core中的中间件
 author: guardrex
 description: 了解如何配置和 ASP.NET Core 中使用缓存响应的中间件。
 monikerRange: '>= aspnetcore-1.1'
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/28/2018
 ms.locfileid: "37077642"
 ---
-# <a name="response-caching-middleware-in-aspnet-core"></a>响应缓存在 ASP.NET Core 中的中间件
+# <a name="response-caching-middleware-in-aspnet-core"></a>响应缓存在 ASP.NET Core中的中间件
 
 通过[Luke Latham](https://github.com/guardrex)和[John Luo](https://github.com/JunTaoLuo)
 

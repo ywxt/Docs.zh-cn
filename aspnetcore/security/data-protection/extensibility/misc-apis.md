@@ -1,7 +1,7 @@
 ---
-title: 杂项 ASP.NET Core 数据保护 Api
+title: 杂项 ASP.NET Core数据保护 Api
 author: rick-anderson
-description: 了解有关 ASP.NET Core 数据保护 ISecret 接口。
+description: 了解有关 ASP.NET Core数据保护 ISecret 接口。
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/extensibility/misc-apis
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36279150"
 ---
-# <a name="miscellaneous-aspnet-core-data-protection-apis"></a>杂项 ASP.NET Core 数据保护 Api
+# <a name="miscellaneous-aspnet-core-data-protection-apis"></a>杂项 ASP.NET Core数据保护 Api
 
 <a name="data-protection-extensibility-mics-apis"></a>
 

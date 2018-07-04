@@ -1,5 +1,5 @@
 ---
-title: 解决 ASP.NET Core 项目
+title: 解决 ASP.NET Core项目
 author: Rick-Anderson
 description: 理解 ASP.NET Core 项目的警告和错误，并对其进行故障排除。
 ms.author: riande
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36274588"
 ---
-# <a name="troubleshoot-aspnet-core-projects"></a>解决 ASP.NET Core 项目
+# <a name="troubleshoot-aspnet-core-projects"></a>解决 ASP.NET Core项目
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -21,7 +21,7 @@ ms.locfileid: "36274588"
 * [对 Azure 应用服务上的 ASP.NET Core 进行故障排除](xref:host-and-deploy/azure-apps/troubleshoot)
 * [对 IIS 上的 ASP.NET Core 进行故障排除](xref:host-and-deploy/iis/troubleshoot)
 * [Azure 应用服务和 IIS 上 ASP.NET Core 的常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)
-* [ASP.NET Core 应用程序中 （ndc） 会议 （伦敦，2018年）： 诊断问题](https://www.youtube.com/watch?v=RYI0DHoIVaA)
+* [ASP.NET Core应用程序中 （ndc） 会议 （伦敦，2018年）： 诊断问题](https://www.youtube.com/watch?v=RYI0DHoIVaA)
 * [ASP.NET 博客： 解决 ASP.NET Core 性能问题](https://blogs.msdn.microsoft.com/webdev/2018/05/23/asp-net-core-performance-improvements/)
 
 ## <a name="net-core-sdk-warnings"></a>.NET Core SDK 警告

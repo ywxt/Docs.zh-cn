@@ -51,7 +51,7 @@ ms.locfileid: "36273394"
 
 * 单击**仪表板**左侧导航区域中的链接。 
 
-    在此页上，记下你`App ID`和你`App Secret`。 你将添加到 ASP.NET Core 应用程序下一节中：
+    在此页上，记下你`App ID`和你`App Secret`。 你将添加到 ASP.NET Core应用程序下一节中：
 
    ![Facebook 开发人员仪表板](index/_static/FBDashboard.png)
 

@@ -1,5 +1,5 @@
 ---
-title: ASP.NET Core 中的自定义授权策略提供程序
+title: ASP.NET Core中的自定义授权策略提供程序
 author: mjrousos
 description: 了解如何在 ASP.NET Core 应用程序中使用自定义 IAuthorizationPolicyProvider 动态生成的授权策略。
 ms.author: riande
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/28/2018
 ms.locfileid: "37077597"
 ---
-# <a name="custom-authorization-policy-providers-using-iauthorizationpolicyprovider-in-aspnet-core"></a>在 ASP.NET Core 中使用 IAuthorizationPolicyProvider 的自定义授权策略提供程序 
+# <a name="custom-authorization-policy-providers-using-iauthorizationpolicyprovider-in-aspnet-core"></a>在 ASP.NET Core中使用 IAuthorizationPolicyProvider 的自定义授权策略提供程序 
 
 通过[Mike Rousos](https://github.com/mjrousos)
 

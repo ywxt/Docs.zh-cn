@@ -1,5 +1,5 @@
 ---
-title: ASP.NET Core 中基于声明的授权
+title: ASP.NET Core中基于声明的授权
 author: rick-anderson
 description: 了解如何在 ASP.NET Core 应用中添加声明授权检查。
 ms.author: riande
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36275222"
 ---
-# <a name="claims-based-authorization-in-aspnet-core"></a>ASP.NET Core 中基于声明的授权
+# <a name="claims-based-authorization-in-aspnet-core"></a>ASP.NET Core中基于声明的授权
 
 <a name="security-authorization-claims-based"></a>
 

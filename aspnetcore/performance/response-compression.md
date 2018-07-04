@@ -1,5 +1,5 @@
 ---
-title: 有关 ASP.NET Core 响应压缩中间件
+title: 有关 ASP.NET Core响应压缩中间件
 author: guardrex
 description: 了解如何响应压缩以及如何在 ASP.NET Core 应用中使用响应压缩中间件。
 monikerRange: '>= aspnetcore-1.1'
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36278214"
 ---
-# <a name="response-compression-middleware-for-aspnet-core"></a>有关 ASP.NET Core 响应压缩中间件
+# <a name="response-compression-middleware-for-aspnet-core"></a>有关 ASP.NET Core响应压缩中间件
 
 作者：[Luke Latham](https://github.com/guardrex)
 

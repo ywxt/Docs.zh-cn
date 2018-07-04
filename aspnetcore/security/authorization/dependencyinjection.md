@@ -1,5 +1,5 @@
 ---
-title: 在 ASP.NET Core 要求处理程序中的依赖关系注入
+title: 在 ASP.NET Core要求处理程序中的依赖关系注入
 author: rick-anderson
 description: 了解如何插入到 ASP.NET Core 应用使用依赖关系注入的授权要求处理程序。
 ms.author: riande
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36273717"
 ---
-# <a name="dependency-injection-in-requirement-handlers-in-aspnet-core"></a>在 ASP.NET Core 要求处理程序中的依赖关系注入
+# <a name="dependency-injection-in-requirement-handlers-in-aspnet-core"></a>在 ASP.NET Core要求处理程序中的依赖关系注入
 
 <a name="security-authorization-di"></a>
 

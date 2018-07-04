@@ -1,5 +1,5 @@
 ---
-title: 在 ASP.NET Core 中的常规数据保护法规 (GDPR) 支持
+title: 在 ASP.NET Core中的常规数据保护法规 (GDPR) 支持
 author: rick-anderson
 description: 了解如何访问 ASP.NET Core web 应用中的 GDPR 扩展点。
 monikerRange: '>= aspnetcore-2.1'
@@ -81,7 +81,7 @@ Razor 页和 MVC 项目模板创建的项目包括以下 GDPR 支持：
 
 ## <a name="personal-data"></a>个人数据
 
-ASP.NET Core 应用程序使用单个用户帐户创建包含代码，从而下载和删除个人数据。
+ASP.NET Core应用程序使用单个用户帐户创建包含代码，从而下载和删除个人数据。
 
 选择的用户名称，然后选择**个人数据**:
 

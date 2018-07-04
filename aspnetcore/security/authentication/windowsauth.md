@@ -1,5 +1,5 @@
 ---
-title: 在 ASP.NET Core 中配置 Windows 身份验证
+title: 在 ASP.NET Core中配置 Windows 身份验证
 author: ardalis
 description: 本文介绍如何在 ASP.NET Core 上使用 IIS Express、 IIS、 HTTP.sys，和 WebListener 中配置 Windows 身份验证。
 ms.author: riande
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36276206"
 ---
-# <a name="configure-windows-authentication-in-aspnet-core"></a>在 ASP.NET Core 中配置 Windows 身份验证
+# <a name="configure-windows-authentication-in-aspnet-core"></a>在 ASP.NET Core中配置 Windows 身份验证
 
 作者：[Steve Smith](https://ardalis.com) 和 [Scott Addie](https://twitter.com/Scott_Addie)
 
@@ -53,7 +53,7 @@ Visual Studio 项目**属性**页面的**调试**选项卡为 Windows 身份验�
 
 ## <a name="enable-windows-authentication-with-iis"></a>启用与 IIS 的 Windows 身份验证
 
-IIS 使用[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)到承载 ASP.NET Core 应用程序。 该模块将允许 Windows 身份验证流到 IIS 中，默认情况下。 在 IIS 中，不应用配置了 Windows 身份验证。 以下部分说明如何使用 IIS 管理器来配置 ASP.NET Core 应用以使用 Windows 身份验证。
+IIS 使用[ASP.NET Core模块](xref:fundamentals/servers/aspnet-core-module)到承载 ASP.NET Core 应用程序。 该模块将允许 Windows 身份验证流到 IIS 中，默认情况下。 在 IIS 中，不应用配置了 Windows 身份验证。 以下部分说明如何使用 IIS 管理器来配置 ASP.NET Core 应用以使用 Windows 身份验证。
 
 ### <a name="create-a-new-iis-site"></a>创建一个新的 IIS 站点
 
@@ -134,7 +134,7 @@ services.AddAuthentication(HttpSysDefaults.AuthenticationScheme);
 
 ### <a name="impersonation"></a>Impersonation
 
-ASP.NET Core 未实现模拟。 使用应用程序池或进程标识的所有请求的应用程序标识使用运行应用。 如果你需要显式执行代表用户操作，使用`WindowsIdentity.RunImpersonated`。 在此上下文中运行的单个操作，然后关闭上下文。
+ASP.NET Core未实现模拟。 使用应用程序池或进程标识的所有请求的应用程序标识使用运行应用。 如果你需要显式执行代表用户操作，使用`WindowsIdentity.RunImpersonated`。 在此上下文中运行的单个操作，然后关闭上下文。
 
 [!code-csharp[](windowsauth/sample/Startup.cs?name=snippet_Impersonate&highlight=10-18)]
 

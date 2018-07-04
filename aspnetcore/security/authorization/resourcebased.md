@@ -1,5 +1,5 @@
 ---
-title: ASP.NET Core 中基于资源的授权
+title: ASP.NET Core中基于资源的授权
 author: scottaddie
 description: 了解如何在 ASP.NET Core 应用程序中实现的基于资源的授权，Authorize 属性不会满足要求。
 ms.author: scaddie
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36273342"
 ---
-# <a name="resource-based-authorization-in-aspnet-core"></a>ASP.NET Core 中基于资源的授权
+# <a name="resource-based-authorization-in-aspnet-core"></a>ASP.NET Core中基于资源的授权
 
 授权策略取决于要访问的资源。 请考虑具有 author 属性的文档。 仅作者允许更新文档。 因此，该文档必须检索从数据存储区授权评估才能发生。
 

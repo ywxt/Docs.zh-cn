@@ -1,7 +1,7 @@
 ---
-title: 在 ASP.NET Core 中的哈希密码
+title: 在 ASP.NET Core中的哈希密码
 author: rick-anderson
-description: 了解如何使用 ASP.NET Core 数据保护 Api 的密码执行哈希。
+description: 了解如何使用 ASP.NET Core数据保护 Api 的密码执行哈希。
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/consumer-apis/password-hashing
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36272982"
 ---
-# <a name="hash-passwords-in-aspnet-core"></a>在 ASP.NET Core 中的哈希密码
+# <a name="hash-passwords-in-aspnet-core"></a>在 ASP.NET Core中的哈希密码
 
 基本数据保护代码包括包*Microsoft.AspNetCore.Cryptography.KeyDerivation*其中包含加密密钥派生函数。 此包是一个独立组件，并不依赖于数据保护系统的其余部分。 可以完全单独使用它。 源共存于基本为方便起见数据保护代码。
 
@@ -26,4 +26,4 @@ ms.locfileid: "36272982"
 
 [!code-csharp[](password-hashing/samples/passwordhasher.cs)]
 
-ASP.NET Core 标识，请参阅源代码`PasswordHasher`现实世界的类型用例。
+ASP.NET Core标识，请参阅源代码`PasswordHasher`现实世界的类型用例。

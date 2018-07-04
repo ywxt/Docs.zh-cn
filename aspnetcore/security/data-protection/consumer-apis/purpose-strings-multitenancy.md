@@ -1,7 +1,7 @@
 ---
 title: 目的层次结构和 ASP.NET Core 中的多租户
 author: rick-anderson
-description: 了解目的字符串层次结构和多租户因为它与 ASP.NET Core 数据保护 Api。
+description: 了解目的字符串层次结构和多租户因为它与 ASP.NET Core数据保护 Api。
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/consumer-apis/purpose-strings-multitenancy

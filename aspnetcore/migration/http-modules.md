@@ -1,5 +1,5 @@
 ---
-title: 将 HTTP 处理程序和模块迁移到 ASP.NET Core 中间件
+title: 将 HTTP 处理程序和模块迁移到 ASP.NET Core中间件
 author: rick-anderson
 description: ''
 ms.author: tdykstra
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36272551"
 ---
-# <a name="migrate-http-handlers-and-modules-to-aspnet-core-middleware"></a>将 HTTP 处理程序和模块迁移到 ASP.NET Core 中间件
+# <a name="migrate-http-handlers-and-modules-to-aspnet-core-middleware"></a>将 HTTP 处理程序和模块迁移到 ASP.NET Core中间件
 
 通过[Matt Perdeck](https://www.linkedin.com/in/mattperdeck)
 
@@ -20,7 +20,7 @@ ms.locfileid: "36272551"
 
 ## <a name="modules-and-handlers-revisited"></a>模块和处理程序重新访问
 
-在继续之前到 ASP.NET Core 中间件，让我们首先会扼要重述 HTTP 模块和处理程序的工作原理：
+在继续之前到 ASP.NET Core中间件，让我们首先会扼要重述 HTTP 模块和处理程序的工作原理：
 
 ![模块处理程序](http-modules/_static/moduleshandlers.png)
 
@@ -162,7 +162,7 @@ HTTP 处理程序如下所示：
 
 ## <a name="loading-middleware-options-using-the-options-pattern"></a>加载使用选项模式的中间件选项
 
-一些模块和处理程序已在存储的配置选项*Web.config*。但是，在 ASP.NET Core 中新的配置模型使用代替了*Web.config*。
+一些模块和处理程序已在存储的配置选项*Web.config*。但是，在 ASP.NET Core中新的配置模型使用代替了*Web.config*。
 
 新[配置系统](xref:fundamentals/configuration/index)为你提供了这些选项，以解决此问题：
 
@@ -184,7 +184,7 @@ HTTP 处理程序如下所示：
 
 3. 将选项值与选项类相关联
 
-    选项模式使用 ASP.NET Core 依赖关系注入框架将选项类型相关联 (如`MyMiddlewareOptions`) 与`MyMiddlewareOptions`具有实际选项对象。
+    选项模式使用 ASP.NET Core依赖关系注入框架将选项类型相关联 (如`MyMiddlewareOptions`) 与`MyMiddlewareOptions`具有实际选项对象。
 
     更新你`Startup`类：
 

@@ -145,4 +145,4 @@ else
 
 ## <a name="summary"></a>总结
 
-ASP.NET Core 引入 ASP.NET 标识功能更改。 在本文中，你看到了如何将 ASP.NET 标识的身份验证和用户管理功能迁移到 ASP.NET Core。
+ASP.NET Core引入 ASP.NET 标识功能更改。 在本文中，你看到了如何将 ASP.NET 标识的身份验证和用户管理功能迁移到 ASP.NET Core。

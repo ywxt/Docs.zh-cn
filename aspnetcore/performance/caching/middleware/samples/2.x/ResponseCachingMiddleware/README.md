@@ -1,4 +1,4 @@
-# <a name="aspnet-core-response-caching-sample"></a>ASP.NET Core 响应缓存示例
+# <a name="aspnet-core-response-caching-sample"></a>ASP.NET Core响应缓存示例
 
 本示例演示使用 ASP.NET Core[响应缓存中间件](https://docs.microsoft.com/aspnet/core/performance/caching/middleware)。
 

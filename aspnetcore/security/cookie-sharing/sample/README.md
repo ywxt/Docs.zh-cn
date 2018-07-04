@@ -4,7 +4,7 @@
 
 | 项目                             | 描述 |
 | ----------------------------------- | ----------- |
-| CookieAuth.Core                     | ASP.NET Core 2.0 Razor 页应用而无需使用 ASP.NET Core 标识 |
+| CookieAuth.Core                     | ASP.NET Core 2.0 Razor 页应用而无需使用 ASP.NET Core标识 |
 | CookieAuthWithIdentity.Core         | 使用 ASP.NET Core 标识的 ASP.NET Core 2.0 MVC 应用程序 |
 | CookieAuthWithIdentity.NETFramework | 使用 ASP.NET Identity 的 ASP.NET Framework 4.6.1 MVC 应用程序 |
 

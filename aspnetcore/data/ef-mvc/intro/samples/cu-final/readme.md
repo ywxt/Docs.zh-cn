@@ -1,6 +1,6 @@
 # <a name="contoso-university-sample-app"></a>Contoso University 示例应用
 
-Contoso University 演示如何使用 ASP.NET Core MVC Web 应用程序中的 Entity Framework Core。
+Contoso 大学演示如何在 ASP.NET Core MVC web 应用程序中使用实体框架核心。
 
 ## <a name="build-it-from-scratch"></a>重新生成
 

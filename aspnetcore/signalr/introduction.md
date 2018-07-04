@@ -29,7 +29,7 @@ ASP.NET Core SignalR 是一个库，简化了添加到应用的实时 web 功能
 * 协作应用程序。 白板应用和团队会议软件是协作应用程序的示例。
 * 需要通知的应用程序。 社交网络、 电子邮件、 聊天、 游戏、 旅行警报和很多其他应用程序使用通知。
 
-SignalR 提供了一个 API，用于创建服务器到客户端[远程过程调用 (RPC)](https://wikipedia.org/wiki/Remote_procedure_call)。 Rpc 在客户端上从服务器端.NET Core 代码中调用 JavaScript 函数。
+SignalR 提供了一个 API，用于创建服务器到客户端[远程过程调用 (RPC)](https://wikipedia.org/wiki/Remote_procedure_call)。 Rpc 在客户端上从服务器端.NET Core代码中调用 JavaScript 函数。
 
 有关 ASP.NET Core SignalR:
 

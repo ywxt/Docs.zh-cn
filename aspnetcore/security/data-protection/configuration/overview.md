@@ -1,7 +1,7 @@
 ---
-title: 配置 ASP.NET Core 数据保护
+title: 配置 ASP.NET Core数据保护
 author: rick-anderson
-description: 了解如何在 ASP.NET Core 中配置数据保护。
+description: 了解如何在 ASP.NET Core中配置数据保护。
 ms.author: riande
 ms.custom: mvc
 ms.date: 07/17/2017
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36272574"
 ---
-# <a name="configure-aspnet-core-data-protection"></a>配置 ASP.NET Core 数据保护
+# <a name="configure-aspnet-core-data-protection"></a>配置 ASP.NET Core数据保护
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -124,7 +124,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="per-application-isolation"></a>每个应用程序隔离
 
-数据保护系统提供了 ASP.NET Core 主机，但它自动隔离了从另一个，应用程序，即使这些应用在相同的工作进程帐户下运行，并且使用相同的主密钥材料。 这是某种程度上类似于 IsolateApps 修饰符从 System.Web 的 **\<machineKey >** 元素。
+数据保护系统提供了 ASP.NET Core主机，但它自动隔离了从另一个，应用程序，即使这些应用在相同的工作进程帐户下运行，并且使用相同的主密钥材料。 这是某种程度上类似于 IsolateApps 修饰符从 System.Web 的 **\<machineKey >** 元素。
 
 隔离机制的工作原理是作为唯一的租户，因此考虑本地计算机上的每个应用[IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector)取得 root 权限的任何给定的应用会自动包括为鉴别器的应用程序 ID。 应用程序的唯一 ID 来自两个位置之一：
 
@@ -136,7 +136,7 @@ public void ConfigureServices(IServiceCollection services)
 
 此隔离机制假设应用不可恶意。 恶意应用程序始终可以影响在相同的工作进程帐户下运行的任何其他应用程序。 在共享宿主环境中应用是相互不受信任，托管提供商应采取措施来确保应用，包括分离应用的基础密钥的存储库之间的操作系统级别隔离。
 
-如果由 ASP.NET Core 主机未提供数据保护系统 (例如，如果通过其实例化`DataProtectionProvider`具体类型) 应用程序隔离在默认情况下处于禁用状态。 当禁用应用程序隔离时，相同的密钥材料作为后盾的所有应用可以都共享的负载，只要它们提供相应[目的](xref:security/data-protection/consumer-apis/purpose-strings)。 若要提供在此环境中的应用程序隔离，调用[SetApplicationName](#setapplicationname)方法的配置对象，并提供每个应用程序的唯一名称。
+如果由 ASP.NET Core主机未提供数据保护系统 (例如，如果通过其实例化`DataProtectionProvider`具体类型) 应用程序隔离在默认情况下处于禁用状态。 当禁用应用程序隔离时，相同的密钥材料作为后盾的所有应用可以都共享的负载，只要它们提供相应[目的](xref:security/data-protection/consumer-apis/purpose-strings)。 若要提供在此环境中的应用程序隔离，调用[SetApplicationName](#setapplicationname)方法的配置对象，并提供每个应用程序的唯一名称。
 
 ## <a name="changing-algorithms-with-usecryptographicalgorithms"></a>更改与 UseCryptographicAlgorithms 算法
 

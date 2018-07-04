@@ -1,7 +1,7 @@
 ---
-title: 使用 cookie 而无需 ASP.NET Core 标识的身份验证
+title: 使用 cookie 而无需 ASP.NET Core标识的身份验证
 author: rick-anderson
-description: 使用 cookie 而无需 ASP.NET Core 标识的身份验证的说明
+description: 使用 cookie 而无需 ASP.NET Core标识的身份验证的说明
 ms.author: riande
 ms.date: 10/11/2017
 uid: security/authentication/cookie
@@ -12,11 +12,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36275601"
 ---
-# <a name="use-cookie-authentication-without-aspnet-core-identity"></a>使用 cookie 而无需 ASP.NET Core 标识的身份验证
+# <a name="use-cookie-authentication-without-aspnet-core-identity"></a>使用 cookie 而无需 ASP.NET Core标识的身份验证
 
 通过[Rick Anderson](https://twitter.com/RickAndMSFT)和[Luke Latham](https://github.com/guardrex)
 
-如你所见在早期的身份验证主题中， [ASP.NET Core 标识](xref:security/authentication/identity)完成、 功能完备的身份验证提供程序是用于创建和维护登录名。 但是，你可能想要使用基于 cookie 的身份验证有时使用您自己的自定义身份验证逻辑。 你可以使用基于 cookie 的身份验证作为独立身份验证提供程序，没有 ASP.NET Core 标识。
+如你所见在早期的身份验证主题中， [ASP.NET Core标识](xref:security/authentication/identity)完成、 功能完备的身份验证提供程序是用于创建和维护登录名。 但是，你可能想要使用基于 cookie 的身份验证有时使用您自己的自定义身份验证逻辑。 你可以使用基于 cookie 的身份验证作为独立身份验证提供程序，没有 ASP.NET Core标识。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/cookie/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
@@ -24,7 +24,7 @@ ms.locfileid: "36275601"
 
 有关从 ASP.NET Core 迁移基于 cookie 的身份验证信息 1.x 到 2.0，请参阅[迁移身份验证和标识到 ASP.NET Core 2.0 主题 （基于 Cookie 的身份验证）](xref:migration/1x-to-2x/identity-2x#cookie-based-authentication)。
 
-若要使用 ASP.NET Core 标识，请参阅[标识简介](xref:security/authentication/identity)主题。
+若要使用 ASP.NET Core标识，请参阅[标识简介](xref:security/authentication/identity)主题。
 
 ## <a name="configuration"></a>配置
 
@@ -215,7 +215,7 @@ await HttpContext.Authentication.SignOutAsync(
 
 一旦创建 cookie，它将成为标识的单个来源。 即使在后端系统中禁用用户，cookie 身份验证系统不了解，并且用户一直保持登录，只要其 cookie 的有效期。
 
-[ValidatePrincipal](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationevents.validateprincipal)中 ASP.NET Core 事件 2.x 或[ValidateAsync](/dotnet/api/microsoft.aspnetcore.identity.isecuritystampvalidator.validateasync?view=aspnetcore-1.1)中 ASP.NET Core 1.x 可用来截获和重写的 cookie 身份验证方法。 这种方法可以降低吊销用户访问应用程序的风险。
+[ValidatePrincipal](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationevents.validateprincipal)中 ASP.NET Core事件 2.x 或[ValidateAsync](/dotnet/api/microsoft.aspnetcore.identity.isecuritystampvalidator.validateasync?view=aspnetcore-1.1)中 ASP.NET Core 1.x 可用来截获和重写的 cookie 身份验证方法。 这种方法可以降低吊销用户访问应用程序的风险。
 
 Cookie 验证的一种方法取决于跟踪的用户数据库已更改时。 如果颁发用户的 cookie 以来，数据库没有被更改，，则无需重新进行用户身份验证其 cookie 是否仍有效。 若要实现此方案中，数据库中实现`IUserRepository`对于此示例中，存储`LastChanged`值。 在数据库中，更新的任何用户时`LastChanged`值设置为当前时间。
 
@@ -304,7 +304,7 @@ services.AddScoped<CustomCookieAuthenticationEvents>();
 ValidateAsync(CookieValidatePrincipalContext)
 ```
 
-ASP.NET Core 标识作为的一部分实现这一检查其[SecurityStampValidator](/dotnet/api/microsoft.aspnetcore.identity.securitystampvalidator-1.validateasync)。 示例如下所示：
+ASP.NET Core标识作为的一部分实现这一检查其[SecurityStampValidator](/dotnet/api/microsoft.aspnetcore.identity.securitystampvalidator-1.validateasync)。 示例如下所示：
 
 ```csharp
 public static class LastChangedValidator

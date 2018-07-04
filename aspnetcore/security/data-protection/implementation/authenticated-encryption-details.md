@@ -1,7 +1,7 @@
 ---
 title: 经过身份验证的加密在 ASP.NET Core 的详细信息
 author: rick-anderson
-description: 了解实现的身份验证的 ASP.NET Core 数据保护加密的详细信息。
+description: 了解实现的身份验证的 ASP.NET Core数据保护加密的详细信息。
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/implementation/authenticated-encryption-details

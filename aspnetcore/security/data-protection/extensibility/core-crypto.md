@@ -1,5 +1,5 @@
 ---
-title: 在 ASP.NET Core 中的核心加密可扩展性
+title: 在 ASP.NET Core中的核心加密可扩展性
 author: rick-anderson
 description: 了解有关 IAuthenticatedEncryptor、 IAuthenticatedEncryptorDescriptor、 IAuthenticatedEncryptorDescriptorDeserializer 和顶级工厂。
 ms.author: riande
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36272891"
 ---
-# <a name="core-cryptography-extensibility-in-aspnet-core"></a>在 ASP.NET Core 中的核心加密可扩展性
+# <a name="core-cryptography-extensibility-in-aspnet-core"></a>在 ASP.NET Core中的核心加密可扩展性
 
 <a name="data-protection-extensibility-core-crypto"></a>
 

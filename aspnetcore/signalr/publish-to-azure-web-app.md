@@ -16,7 +16,7 @@ ms.locfileid: "36271913"
 ---
 # <a name="publish-an-aspnet-core-signalr-app-to-an-azure-web-app"></a>发布 ASP.NET Core SignalR 应用程序到 Azure Web 应用程序
 
-[Azure Web 应用程序](/azure/app-service/app-service-web-overview)是[Microsoft 云计算](https://azure.microsoft.com/)用于承载 web 应用，包括 ASP.NET Core 平台服务。
+[Azure Web 应用程序](/azure/app-service/app-service-web-overview)是[Microsoft 云计算](https://azure.microsoft.com/)用于承载 web 应用，包括 ASP.NET Core平台服务。
 
 > [!NOTE]
 > 本文是指从 Visual Studio 发布 ASP.NET Core SignalR 应用程序。 请访问[Azure 的 SignalR 服务](https://azure.microsoft.com/en-gb/services/signalr-service?)有关在 Azure 上使用 SignalR 的详细信息。
@@ -65,4 +65,4 @@ ASP.NET Core SignalR 应用程序作为 Azure Web 应用必须发布[ARR 地缘]
 
 * [使用命令行工具将 ASP.NET Core 应用发布到 Azure](xref:tutorials/publish-to-azure-webapp-using-cli?tabs=windows)
 * [向具有 Visual Studio 的 Azure 发布 ASP.NET Core 应用](xref:tutorials/publish-to-azure-webapp-using-vs)
-* [承载并将其部署在 Azure 上的 ASP.NET Core 预览应用](xref:host-and-deploy/azure-apps/index#deploy-aspnet-core-preview-release-to-azure-app-service)
+* [承载并将其部署在 Azure 上的 ASP.NET Core预览应用](xref:host-and-deploy/azure-apps/index#deploy-aspnet-core-preview-release-to-azure-app-service)

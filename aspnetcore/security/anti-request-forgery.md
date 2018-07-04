@@ -60,7 +60,7 @@ CSRF 攻击的示例：
 
 但是，CSRF 攻击不局限于利用 cookie。 例如，基本和摘要式身份验证也是易受攻击的。 浏览器使用基本或摘要式身份验证的用户登录后，直到会话才会自动发送凭据&dagger;结束。
 
-&dagger;在此上下文中，*会话*指的是在此期间用户进行身份验证的客户端会话。 它是与服务器端会话无关或[ASP.NET Core 会话中间件](xref:fundamentals/app-state)。
+&dagger;在此上下文中，*会话*指的是在此期间用户进行身份验证的客户端会话。 它是与服务器端会话无关或[ASP.NET Core会话中间件](xref:fundamentals/app-state)。
 
 用户可以通过采取预防措施来防止 CSRF 漏洞：
 
@@ -92,7 +92,7 @@ CSRF 攻击的示例：
 ## <a name="aspnet-core-antiforgery-configuration"></a>ASP.NET Core antiforgery 配置
 
 > [!WARNING]
-> ASP.NET Core 实现 antiforgery 使用[ASP.NET Core 数据保护](xref:security/data-protection/introduction)。 数据保护堆栈必须配置为在服务器场中正常工作。 请参阅[配置数据保护](xref:security/data-protection/configuration/overview)有关详细信息。
+> ASP.NET Core实现 antiforgery 使用[ASP.NET Core数据保护](xref:security/data-protection/introduction)。 数据保护堆栈必须配置为在服务器场中正常工作。 请参阅[配置数据保护](xref:security/data-protection/configuration/overview)有关详细信息。
 
 在 ASP.NET Core 2.0 或更高版本， [FormTagHelper](xref:mvc/views/working-with-forms#the-form-tag-helper) antiforgery 令牌注入 HTML 窗体元素。 Razor 文件中的以下标记将自动生成 antiforgery 令牌：
 
@@ -169,7 +169,7 @@ CSRF 攻击的示例：
 <input name="__RequestVerificationToken" type="hidden" value="CfDJ8NrAkS ... s2-m9Yw">
 ```
 
-ASP.NET Core 包括三个[筛选器](xref:mvc/controllers/filters)来处理 antiforgery 令牌：
+ASP.NET Core包括三个[筛选器](xref:mvc/controllers/filters)来处理 antiforgery 令牌：
 
 * [ValidateAntiForgeryToken](/dotnet/api/microsoft.aspnetcore.mvc.validateantiforgerytokenattribute)
 * [AutoValidateAntiforgeryToken](/dotnet/api/microsoft.aspnetcore.mvc.autovalidateantiforgerytokenattribute)
