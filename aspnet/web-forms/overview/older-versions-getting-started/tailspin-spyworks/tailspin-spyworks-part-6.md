@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6
-title: 第 6 部分： ASP.NET 成员资格 |Microsoft 文档
+title: 第 6 部分： ASP.NET 成员资格 |Microsoft Docs
 author: JoeStagner
 description: 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 6 部分添加 ASP.NET 成员资格。
 ms.author: aspnetcontent
@@ -9,21 +9,20 @@ ms.date: 07/21/2010
 ms.topic: article
 ms.assetid: f70a310c-9557-4743-82cb-655265676d39
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 83e9bc780ea8face3e0f55fdf8c00e13b60f80a7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 6d01a745ca1428f065f564f676d483ee807eb52e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30886805"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37368468"
 ---
 <a name="part-6-aspnet-membership"></a>第 6 部分： ASP.NET 成员资格
 ====================
-通过[Joe stagner 将](https://github.com/JoeStagner)
+通过[Joe Stagner](https://github.com/JoeStagner)
 
-> Tailspin Spyworks 演示创建在.NET 平台的功能强大、 可扩展应用程序是如何非常简单。 它演示如何使用 ASP.NET 4 中出色的新功能构建在线商店，包括购物、 结帐和管理关闭。
+> Tailspin Spyworks 演示如何创建适用于.NET 平台的功能强大、 可扩展应用程序是如何非常简单。 它展示如何在 ASP.NET 4 中使用强大的新功能来构建在线商店，包括购物、 签出和管理。
 > 
 > 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 6 部分添加 ASP.NET 成员资格。
 
@@ -44,74 +43,74 @@ ms.locfileid: "30886805"
 
 ![](tailspin-spyworks-part-6/_static/image3.jpg)
 
-完成后，请参阅解决方案资源管理器窗口，刷新视图。
+完成后，请参阅解决方案资源管理器窗口并刷新视图。
 
 ![](tailspin-spyworks-part-6/_static/image2.png)
 
-请注意，ASPNETDB。已创建 MDF 正常。 此文件包含的表，以支持类似成员身份的核心 ASP.NET 服务。
+请注意，ASPNETDB。已创建 MDF 没问题。 此文件包含表以支持核心 ASP.NET 服务，如成员身份。
 
-现在我们可以开始实现在结帐过程。
+现在我们可以开始实施签出过程。
 
-首先创建 CheckOut.aspx 页。
+首先，创建 CheckOut.aspx 页。
 
-CheckOut.aspx 页应仅可供用户已登录，因此我们将限制对访问登录用户和重定向用户未登录到登录页。
+CheckOut.aspx 页应仅可供已登录，因此我们会限制对访问已登录用户未登录到登录页的重定向用户的用户。
 
-若要这样做我们将添加以下内容到我们的 web.config 文件的配置节。
+为此我们将添加以下 web.config 文件的配置节。
 
 [!code-xml[Main](tailspin-spyworks-part-6/samples/sample1.xml)]
 
-ASP.NET Web 窗体应用程序的模板自动添加到我们的 web.config 文件的身份验证部分，并建立的默认登录页。
+ASP.NET Web 窗体应用程序模板自动添加到 web.config 文件的身份验证部分，并建立的默认登录页。
 
 [!code-xml[Main](tailspin-spyworks-part-6/samples/sample2.xml)]
 
-我们必须修改 Login.aspx 代码隐藏文件在用户登录时，将迁移匿名的购物车。 更改页\_加载事件，如下所示。
+我们必须修改 Login.aspx 代码隐藏文件以在用户登录时，迁移匿名的购物车。 更改的页\_加载事件，如下所示。
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample3.cs)]
 
-然后添加一个"LoggedIn"事件处理程序类似设置为新登录用户的会话名称，并通过在我们 MyShoppingCart 类中调用 MigrateCart 方法更改为的用户的购物车中的临时会话 id。 （在.cs 文件中实现）
+然后添加如下设置的会话名称将为新登录的用户并通过我们 MyShoppingCart 类中调用 MigrateCart 方法将在购物车中的临时会话 id 更改为的用户的"LoggedIn"事件处理程序。 （在.cs 文件中实现）
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample4.cs)]
 
-实现 MigrateCart() 方法如下所示。
+实现 MigrateCart() 方法像这样。
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample5.cs)]
 
-在 checkout.aspx 我们将使用 EntityDataSource 和 GridView 我们签出页中一样使用我们未在我们购物车页。
+Checkout.aspx 中我们将使用 EntityDataSource 和 GridView 中我们签出页几乎与我们在我们的购物车页中。
 
 [!code-aspx[Main](tailspin-spyworks-part-6/samples/sample6.aspx)]
 
-请注意，我们 GridView 控件指定"ondatabound"事件处理程序名为 MyList\_RowDataBound 因此让我们实现如下该事件处理程序。
+请注意，我们的 GridView 控件指定"ondatabound"事件处理程序名为 MyList\_RowDataBound 因此让我们来实现此类事件处理程序。
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample7.cs)]
 
-此方法使每个行绑定以及更新 GridView 的最后一行，购物车的购物运行总计。
+此方法操作可使汇总的购物车随着每个行绑定和更新 GridView 的底部行。
 
-在此阶段中，我们已实施顺序，以便放置"评论"演示的文稿。
+在此阶段我们实现了要放置的顺序的"评论"演示文稿。
 
-让我们通过将几行代码添加到我们的页面中处理空购物车方案\_负载事件：
+让我们通过将少量的代码行添加到我们的页面处理空车方案\_加载事件：
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample8.cs)]
 
-当用户单击"提交"按钮时我们将在提交按钮单击事件处理程序中执行下面的代码。
+当用户单击"提交"按钮时我们将执行下面的代码中的提交按钮单击事件处理程序。
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample9.cs)]
 
-订单提交过程"肉"是在我们 MyShoppingCart 类的 SubmitOrder() 方法中实现。
+"主要内容"的订单提交过程是在我们 MyShoppingCart 类的 SubmitOrder() 方法中实现。
 
-将订单将：
+SubmitOrder 将：
 
-- 采用所有行项购物车中并使用它们来创建新的顺序记录和相关联的 OrderDetails 记录。
-- 计算传送日期。
+- 在购物车中采取的所有行项，并使用它们来创建新的订单记录和相关联的 OrderDetails 记录。
+- 计算发货日期。
 - 清除购物车。
 
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample10.cs)]
 
-此示例应用程序供我们将通过只需将两天添加到当前日期计算发货日期。
+此示例应用程序供我们将只需将两天添加到当前日期来计算发货日期。
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample11.cs)]
 
-运行应用程序现在将允许我们测试从开始到完成购物过程。
+运行应用程序现在将允许我们要测试从开始到完成购物过程。
 
 > [!div class="step-by-step"]
 > [上一页](tailspin-spyworks-part-5.md)

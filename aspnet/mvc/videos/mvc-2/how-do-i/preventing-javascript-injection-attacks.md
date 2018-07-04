@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/preventing-javascript-injection-attacks
-title: 阻止 JavaScript 注入攻击 |Microsoft 文档
+title: 阻止 JavaScript 注入攻击 |Microsoft Docs
 author: StephenWalther
-description: 防止 JavaScript 注入式攻击和跨站点脚本攻击发生给您。 在本教程中，Stephen Walther 解释了如何可以轻松地 de...
+description: 阻止 JavaScript 注入攻击和跨站点脚本攻击发生给你。 在本教程中，Stephen Walther 解释了如何轻松地 de...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/20/2008
 ms.topic: article
 ms.assetid: 012a91e7-fd88-4d4f-8f95-57a9043c47d9
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/preventing-javascript-injection-attacks
 msc.type: video
-ms.openlocfilehash: 9bd3222d4ecc8a0a5a339d794291f859c72b2055
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 49f9138a4b1c5d17b3e0abf7bfea8f07c0f024b9
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30872398"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37381898"
 ---
 <a name="preventing-javascript-injection-attacks"></a>阻止 JavaScript 注入攻击
 ====================
 通过[Stephen Walther](https://github.com/StephenWalther)
 
-防止 JavaScript 注入式攻击和跨站点脚本攻击发生给您。 在本教程中，Stephen Walther 解释了如何轻松地让这些类型的通过 HTML 编码内容的攻击。 有关本视频中的其他信息，请阅读"阻止 JavaScript 注入式攻击"教程 ([C#](../../../overview/older-versions-1/security/preventing-javascript-injection-attacks-cs.md)， [VB](../../../overview/older-versions-1/security/preventing-javascript-injection-attacks-vb.md))。
+阻止 JavaScript 注入攻击和跨站点脚本攻击发生给你。 在本教程中，Stephen Walther 解释了如何轻松地抵御这些类型的 html 编码内容的攻击。 与本视频有关的其他信息，请参阅"防止 JavaScript 注入攻击"教程 ([C#](../../../overview/older-versions-1/security/preventing-javascript-injection-attacks-cs.md)， [VB](../../../overview/older-versions-1/security/preventing-javascript-injection-attacks-vb.md))。
 
 [&#9654;观看视频 （11 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/preventing-javascript-injection-attacks)
 
