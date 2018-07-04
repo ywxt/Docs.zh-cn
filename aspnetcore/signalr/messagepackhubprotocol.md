@@ -1,7 +1,7 @@
 ---
 title: 使用 ASP.NET Core MessagePack 中心协议中 SignalR
 author: rachelappel
-description: 将 MessagePack 中心协议添加到 ASP.NET 核心 SignalR。
+description: 将 MessagePack 中心协议添加到 ASP.NET Core SignalR。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc

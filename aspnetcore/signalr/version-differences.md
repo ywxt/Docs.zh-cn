@@ -15,7 +15,7 @@ ms.locfileid: "37090058"
 ---
 # <a name="differences-between-signalr-and-aspnet-core-signalr"></a>SignalR 和 ASP.NET Core SignalR 之间的差异
 
-ASP.NET 核心 SignalR 与不兼容客户端或适用于 ASP.NET SignalR 的服务器。 此文章详细介绍了已删除或更改在 ASP.NET 核心 SignalR 的功能。
+ASP.NET Core SignalR 与不兼容客户端或适用于 ASP.NET SignalR 的服务器。 此文章详细介绍了已删除或更改在 ASP.NET Core SignalR 的功能。
 
 ## <a name="feature-differences"></a>功能差异
 
@@ -25,11 +25,11 @@ ASP.NET 核心 SignalR 与不兼容客户端或适用于 ASP.NET SignalR 的服�
 
 ### <a name="protocol-support"></a>协议支持
 
-ASP.NET 核心 SignalR 支持 JSON，以及一种新的二进制协议，它基于[MessagePack](xref:signalr/messagepackhubprotocol)。 此外，可以创建自定义协议。
+ASP.NET Core SignalR 支持 JSON，以及一种新的二进制协议，它基于[MessagePack](xref:signalr/messagepackhubprotocol)。 此外，可以创建自定义协议。
 
 ## <a name="differences-on-the-server"></a>在服务器上的差异
 
-SignalR 服务器端库包含在`Microsoft.AspNetCore.App`是的一部分的包**ASP.NET 核心 Web 应用程序**Razor 和 MVC 项目模板的。
+SignalR 服务器端库包含在`Microsoft.AspNetCore.App`是的一部分的包**ASP.NET Core Web 应用程序**Razor 和 MVC 项目模板的。
 
 SignalR 是 ASP.NET Core 中间件，因此它必须通过调用配置`AddSignalR`中`Startup.ConfigureServices`。
 
@@ -52,7 +52,7 @@ app.UseSignalR(routes =>
 
 ### <a name="single-hub-per-connection"></a>每个连接的单个中心
 
-在 ASP.NET 核心 SignalR 连接模型进行了简化。 直接对单个中心，而不是单个连接用于共享对多个中心访问权限进行连接。
+在 ASP.NET Core SignalR 连接模型进行了简化。 直接对单个中心，而不是单个连接用于共享对多个中心访问权限进行连接。
 
 ### <a name="streaming"></a>流式处理
 
@@ -70,7 +70,7 @@ SignalR 现在支持[流式处理数据](xref:signalr/streaming)从客户端到�
 
 ### <a name="the-javascript-client-is-hosted-at-npmhttpswwwnpmjscom"></a>JavaScript 客户端托管在[npm](https://www.npmjs.com/)
 
-在以前版本中，JavaScript 客户端是通过 Visual Studio 中的 NuGet 包获得的。 对于核心版本中， [ @aspnet/signalr npm 包](https://www.npmjs.com/package/@aspnet/signalr)包含 JavaScript 库。 此包不包括在**ASP.NET 核心 Web 应用程序**模板。 使用 npm 获取并安装`@aspnet/signalr`npm 包。
+在以前版本中，JavaScript 客户端是通过 Visual Studio 中的 NuGet 包获得的。 对于核心版本中， [ @aspnet/signalr npm 包](https://www.npmjs.com/package/@aspnet/signalr)包含 JavaScript 库。 此包不包括在**ASP.NET Core Web 应用程序**模板。 使用 npm 获取并安装`@aspnet/signalr`npm 包。
 
 ```console
 npm init -y
@@ -113,7 +113,7 @@ connection.start().catch(err => console.error(err.toString()));
 
 ### <a name="net-and-other-clients"></a>.NET 和其他客户端
 
-`Microsoft.AspNetCore.SignalR.Client` NuGet 程序包包含 ASP.NET 核心 signalr 的.NET 客户端库。
+`Microsoft.AspNetCore.SignalR.Client` NuGet 程序包包含 ASP.NET Core signalr 的.NET 客户端库。
 
 使用`HubConnectionBuilder`若要创建和生成到一个中心的连接的实例。
 

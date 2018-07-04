@@ -1,7 +1,7 @@
 ---
 title: 在 ASP.NET Core 中存放的密钥加密
 author: rick-anderson
-description: 了解 ASP.NET 核心数据保护密钥的加密对静止的实现详细信息。
+description: 了解 ASP.NET Core 数据保护密钥的加密对静止的实现详细信息。
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/implementation/key-encryption-at-rest

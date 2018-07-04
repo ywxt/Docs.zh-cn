@@ -25,7 +25,7 @@ ms.locfileid: "36276563"
 | [AspNet.Security.OpenIdConnect.Server (ASOS)](https://github.com/aspnet-contrib/AspNet.Security.OpenIdConnect.Server) | ASOS 是一个低级别，协议首先 OpenID Connect 服务器框架为 ASP.NET Core 和 OWIN/Katana。 |
 | [Cierge](https://github.com/pwdless/Cierge) | Cierge 是处理用户注册、 登录名、 配置文件、 管理和社交登录名的 OpenID Connect 的服务器。 |
 | [Gluu 服务器](https://gluu.org/) | 企业就绪后，打开源代码软件标识，访问管理 (IAM) 和单一登录 (SSO)。 有关详细信息，请参阅[Gluu 产品文档](https://gluu.org/docs/)。 |
-| [IdentityServer](https://identityserver.io/) | IdentityServer 是 OpenID Connect 和 OAuth 2.0 的框架，用于 ASP.NET 核心，正式认证 OpenID foundation 和.NET Foundation 监管下。 有关详细信息，请参阅[欢迎 IdentityServer4 （文档）](https://identityserver4.readthedocs.io/en/release/)。 |
+| [IdentityServer](https://identityserver.io/) | IdentityServer 是 OpenID Connect 和 OAuth 2.0 的框架，用于 ASP.NET Core，正式认证 OpenID foundation 和.NET Foundation 监管下。 有关详细信息，请参阅[欢迎 IdentityServer4 （文档）](https://identityserver4.readthedocs.io/en/release/)。 |
 | [OpenIddict](https://github.com/openiddict/openiddict-core) | OpenIddict 是能够轻松使用 OpenID Connect 服务器 ASP.NET Core。 |
 
 若要添加提供程序，[编辑此页](https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Faspnet%2FDocs%2Fedit%2Fmaster%2Faspnetcore%2Fsecurity%2Fauthentication%2Fcommunity.md)。

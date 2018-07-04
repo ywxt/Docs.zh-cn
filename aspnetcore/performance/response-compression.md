@@ -1,5 +1,5 @@
 ---
-title: 有关 ASP.NET 核心响应压缩中间件
+title: 有关 ASP.NET Core 响应压缩中间件
 author: guardrex
 description: 了解如何响应压缩以及如何在 ASP.NET Core 应用中使用响应压缩中间件。
 monikerRange: '>= aspnetcore-1.1'
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36278214"
 ---
-# <a name="response-compression-middleware-for-aspnet-core"></a>有关 ASP.NET 核心响应压缩中间件
+# <a name="response-compression-middleware-for-aspnet-core"></a>有关 ASP.NET Core 响应压缩中间件
 
 作者：[Luke Latham](https://github.com/guardrex)
 
@@ -202,7 +202,7 @@ Gzip 压缩提供程序默认为最快的压缩级别 ([CompressionLevel.Fastest
 
 ::: moniker range=">= aspnetcore-2.0"
 
-当压缩响应基于`Accept-Encoding`标头，有可能的多个压缩的版本响应和未压缩的版本。 若要指示客户端和代理服务器缓存，多个版本存在，并且应存储`Vary`标头添加与`Accept-Encoding`值。 在 ASP.NET 核心 2.0 或更高版本，该中间件将添加`Vary`压缩响应时自动标头。
+当压缩响应基于`Accept-Encoding`标头，有可能的多个压缩的版本响应和未压缩的版本。 若要指示客户端和代理服务器缓存，多个版本存在，并且应存储`Vary`标头添加与`Accept-Encoding`值。 在 ASP.NET Core 2.0 或更高版本，该中间件将添加`Vary`压缩响应时自动标头。
 
 ::: moniker-end
 

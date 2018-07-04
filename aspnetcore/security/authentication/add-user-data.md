@@ -1,5 +1,5 @@
 ---
-title: 添加、 下载和删除标识到 ASP.NET 核心项目中的自定义用户数据
+title: 添加、 下载和删除标识到 ASP.NET Core 项目中的自定义用户数据
 author: rick-anderson
 description: 了解如何在 ASP.NET Core 项目中添加到标识的自定义用户数据。 删除每个 GDPR 数据。
 monikerRange: '>= aspnetcore-2.1'
@@ -13,16 +13,16 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36271952"
 ---
-# <a name="add-download-and-delete-custom-user-data-to-identity-in-an-aspnet-core-project"></a>添加、 下载和删除标识到 ASP.NET 核心项目中的自定义用户数据
+# <a name="add-download-and-delete-custom-user-data-to-identity-in-an-aspnet-core-project"></a>添加、 下载和删除标识到 ASP.NET Core 项目中的自定义用户数据
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 这篇文章演示如何：
 
-* 将自定义用户数据添加到 ASP.NET 核心 web 应用程序。
+* 将自定义用户数据添加到 ASP.NET Core web 应用程序。
 * 修饰具有自定义用户数据模型[PersonalData](/dotnet/api/microsoft.aspnetcore.identity.personaldataattribute?view=aspnetcore-2.1)属性，以便它自动下载和删除。 使能够下载和删除这些数据可帮助满足[GDPR](xref:security/gdpr)要求。
 
-项目示例将创建从 Razor 页 web 应用，但了 ASP.NET 核心 MVC web 应用的类似的说明。
+项目示例将创建从 Razor 页 web 应用，但了 ASP.NET Core MVC web 应用的类似的说明。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/authentication/add-user-data/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
@@ -35,8 +35,8 @@ ms.locfileid: "36271952"
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 * 从 Visual Studio“文件”菜单中选择“新建” > “项目”。 将项目**WebApp1**如果您希望与其匹配的命名空间[下载示例](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/authentication/add-user-data/sample)代码。
-* 选择**ASP.NET 核心 Web 应用程序** > **确定**
-* 选择**ASP.NET 核心 2.1**下拉列表中
+* 选择**ASP.NET Core Web 应用程序** > **确定**
+* 选择**ASP.NET Core 2.1**下拉列表中
 * 选择**Web 应用程序**  > **确定**
 * 生成并运行该项目。
 

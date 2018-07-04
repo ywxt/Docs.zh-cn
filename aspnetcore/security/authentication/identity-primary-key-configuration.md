@@ -1,7 +1,7 @@
 ---
-title: 在 ASP.NET 核心中配置标识主键数据类型
+title: 在 ASP.NET Core 中配置标识主键数据类型
 author: AdrienTorris
-description: 了解有关配置用于 ASP.NET 核心标识为主键的所需的数据类型的步骤。
+description: 了解有关配置用于 ASP.NET Core 标识为主键的所需的数据类型的步骤。
 ms.author: scaddie
 ms.date: 09/28/2017
 uid: security/authentication/identity-primary-key-configuration
@@ -12,9 +12,9 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36274351"
 ---
-# <a name="configure-identity-primary-key-data-type-in-aspnet-core"></a>在 ASP.NET 核心中配置标识主键数据类型
+# <a name="configure-identity-primary-key-data-type-in-aspnet-core"></a>在 ASP.NET Core 中配置标识主键数据类型
 
-ASP.NET 核心标识可以配置用于表示为主键的数据类型。 标识使用`string`默认的数据类型。 你可以重写此行为。
+ASP.NET Core 标识可以配置用于表示为主键的数据类型。 标识使用`string`默认的数据类型。 你可以重写此行为。
 
 ## <a name="customize-the-primary-key-data-type"></a>自定义的主键数据类型
 

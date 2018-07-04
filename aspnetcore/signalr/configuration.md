@@ -1,7 +1,7 @@
 ---
-title: ASP.NET 核心 SignalR 配置
+title: ASP.NET Core SignalR 配置
 author: rachelappel
-description: 了解如何配置 ASP.NET 核心 SignalR 应用。
+description: 了解如何配置 ASP.NET Core SignalR 应用。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
@@ -14,11 +14,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/26/2018
 ms.locfileid: "36961977"
 ---
-# <a name="aspnet-core-signalr-configuration"></a>ASP.NET 核心 SignalR 配置
+# <a name="aspnet-core-signalr-configuration"></a>ASP.NET Core SignalR 配置
 
 ## <a name="jsonmessagepack-serialization-options"></a>JSON/MessagePack 序列化选项
 
-ASP.NET 核心 SignalR 支持两个协议为消息编码： [JSON](https://www.json.org/)和[MessagePack](https://msgpack.org/index.html)。 每个协议已序列化配置选项。
+ASP.NET Core SignalR 支持两个协议为消息编码： [JSON](https://www.json.org/)和[MessagePack](https://msgpack.org/index.html)。 每个协议已序列化配置选项。
 
 JSON 序列化可以配置服务器使用[ `AddJsonProtocol` ](/dotnet/api/microsoft.extensions.dependencyinjection.jsonprotocoldependencyinjectionextensions.addjsonprotocol)扩展方法，可将其添加后[AddSignalR](/dotnet/api/microsoft.extensions.dependencyinjection.signalrdependencyinjectionextensions.addsignalr)中你`Startup.ConfigureServices`方法。 `AddJsonProtocol`方法采用一个委托，接收`options`对象。 [ `PayloadSerializerSettings` ](/dotnet/api/microsoft.aspnetcore.signalr.jsonhubprotocoloptions.payloadserializersettings)对该对象的属性是 JSON.NET`JsonSerializerSettings`可以用于配置的自变量的序列化和返回值的对象。 请参阅[JSON.NET 文档](https://www.newtonsoft.com/json/help/html/Introduction.htm)有关详细信息。
 

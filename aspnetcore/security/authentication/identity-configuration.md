@@ -1,7 +1,7 @@
 ---
-title: 配置 ASP.NET 核心标识
+title: 配置 ASP.NET Core 标识
 author: AdrienTorris
-description: 了解 ASP.NET 核心标识默认值，并了解如何配置要使用自定义值的标识属性。
+description: 了解 ASP.NET Core 标识默认值，并了解如何配置要使用自定义值的标识属性。
 ms.author: scaddie
 ms.date: 03/06/2018
 uid: security/authentication/identity-configuration
@@ -12,9 +12,9 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36276250"
 ---
-# <a name="configure-aspnet-core-identity"></a>配置 ASP.NET 核心标识
+# <a name="configure-aspnet-core-identity"></a>配置 ASP.NET Core 标识
 
-ASP.NET 核心标识使用默认配置设置，例如密码策略、 锁定时间和 cookie 设置。 应用程序的可重写这些设置`Startup`类。
+ASP.NET Core 标识使用默认配置设置，例如密码策略、 锁定时间和 cookie 设置。 应用程序的可重写这些设置`Startup`类。
 
 ## <a name="identity-options"></a>标识选项
 
@@ -60,7 +60,7 @@ var result = await _signInManager.PasswordSignInAsync(
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 
-ASP.NET 核心 2.0 增加[RequiredUniqueChars](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requireduniquechars)属性。 否则，选项是 ASP.NET Core 相同 1.x。
+ASP.NET Core 2.0 增加[RequiredUniqueChars](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requireduniquechars)属性。 否则，选项是 ASP.NET Core 相同 1.x。
 
 [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-37,50-52)]
 
@@ -76,7 +76,7 @@ ASP.NET 核心 2.0 增加[RequiredUniqueChars](/dotnet/api/microsoft.aspnetcore.
 | -------- | ----------- | :-----: |
 | [RequireDigit](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requiredigit) | 需要介于 0-9 中的密码。 | `true` |
 | [RequiredLength](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requiredlength) | 密码最小长度。 | 6 |
-| [RequiredUniqueChars](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requireduniquechars) | 仅适用于 ASP.NET 核心 2.0 或更高版本。<br><br> 需要密码中的非重复字符数。 | 1 |
+| [RequiredUniqueChars](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requireduniquechars) | 仅适用于 ASP.NET Core 2.0 或更高版本。<br><br> 需要密码中的非重复字符数。 | 1 |
 | [RequireLowercase](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requirelowercase) | 需要密码中的小写字符。 | `true` |
 | [RequireNonAlphanumeric](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requirenonalphanumeric) | 需要密码中的非字母数字字符。 | `true` |
 | [RequireUppercase](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requireuppercase) | 需要密码中的大写字符。 | `true` |

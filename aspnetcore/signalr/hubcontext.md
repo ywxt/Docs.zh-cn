@@ -1,7 +1,7 @@
 ---
 title: SignalR HubContext
 author: rachelappel
-description: 了解如何使用 ASP.NET 核心 SignalR HubContext 服务用于向外部的客户端从一个中心发送通知。
+description: 了解如何使用 ASP.NET Core SignalR HubContext 服务用于向外部的客户端从一个中心发送通知。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
@@ -24,10 +24,10 @@ SignalR hub 是用于将消息发送到客户端连接到 SignalR 服务器核�
 
 ## <a name="get-an-instance-of-ihubcontext"></a>获取其实例 `IHubContext`
 
-在 ASP.NET 核心 SignalR，您可以访问的实例`IHubContext`通过依赖关系注入。 你可以将注入的实例`IHubContext`到的控制器，中间件或其他 DI 服务。 使用实例将消息发送到客户端。
+在 ASP.NET Core SignalR，您可以访问的实例`IHubContext`通过依赖关系注入。 你可以将注入的实例`IHubContext`到的控制器，中间件或其他 DI 服务。 使用实例将消息发送到客户端。
 
 > [!NOTE]
-> 这不同于 ASP.NET SignalR GlobalHost 用于提供对访问`IHubContext`。 ASP.NET 核心具有的依赖关系注入框架，无需此全局单一实例。
+> 这不同于 ASP.NET SignalR GlobalHost 用于提供对访问`IHubContext`。 ASP.NET Core 具有的依赖关系注入框架，无需此全局单一实例。
 
 ### <a name="inject-an-instance-of-ihubcontext-in-a-controller"></a>注入的实例`IHubContext`控制器中
 

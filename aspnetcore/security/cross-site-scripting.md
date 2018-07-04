@@ -1,5 +1,5 @@
 ---
-title: 防止跨站点脚本 (XSS) 在 ASP.NET 核心
+title: 防止跨站点脚本 (XSS) 在 ASP.NET Core
 author: rick-anderson
 description: 了解有关跨站点脚本 (XSS) 和一些解决这一漏洞在 ASP.NET Core 应用程序技术。
 ms.author: riande
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36272443"
 ---
-# <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>防止跨站点脚本 (XSS) 在 ASP.NET 核心
+# <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>防止跨站点脚本 (XSS) 在 ASP.NET Core
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -53,7 +53,7 @@ ms.locfileid: "36272443"
    ```
 
 >[!WARNING]
-> ASP.NET 核心 MVC 提供`HtmlString`在输出时不自动编码的类。 这应永远不会用于与不受信任的输入结合使用这会将公开 XSS 漏洞。
+> ASP.NET Core MVC 提供`HtmlString`在输出时不自动编码的类。 这应永远不会用于与不受信任的输入结合使用这会将公开 XSS 漏洞。
 
 ## <a name="javascript-encoding-using-razor"></a>使用 Razor Javascript 编码
 

@@ -1,7 +1,7 @@
 ---
-title: Azure Active Directory B2C ASP.NET 核心中使用云身份验证
+title: Azure Active Directory B2C ASP.NET Core 中使用云身份验证
 author: camsoper
-description: 了解如何设置与 ASP.NET 核心的 Azure Active Directory B2C 身份验证。
+description: 了解如何设置与 ASP.NET Core 的 Azure Active Directory B2C 身份验证。
 ms.date: 01/25/2018
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36272417"
 ---
-# <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a>Azure Active Directory B2C ASP.NET 核心中使用云身份验证
+# <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a>Azure Active Directory B2C ASP.NET Core 中使用云身份验证
 
 作者：[Cam Soper](https://twitter.com/camsoper)
 
@@ -26,7 +26,7 @@ ms.locfileid: "36272417"
 > [!div class="checklist"]
 > * 创建 Azure Active Directory B2C 租户
 > * 在 Azure AD B2C 注册某个应用程序
-> * 使用 Visual Studio 创建 ASP.NET 核心 web 应用配置为使用 Azure AD B2C 租户进行身份验证
+> * 使用 Visual Studio 创建 ASP.NET Core web 应用配置为使用 Azure AD B2C 租户进行身份验证
 > * 配置控制 Azure AD B2C 租户的行为的策略
 
 ## <a name="prerequisites"></a>系统必备
@@ -126,7 +126,7 @@ Visual Studio Web 应用程序模板可以配置为使用 Azure AD B2C 租户进
 > [!div class="checklist"]
 > * 创建 Azure Active Directory B2C 租户
 > * 在 Azure AD B2C 注册某个应用程序
-> * 使用 Visual Studio 创建 ASP.NET 核心 Web 应用程序配置为使用 Azure AD B2C 租户进行身份验证
+> * 使用 Visual Studio 创建 ASP.NET Core Web 应用程序配置为使用 Azure AD B2C 租户进行身份验证
 > * 配置控制 Azure AD B2C 租户的行为的策略
 
 现在，ASP.NET Core 应用程序配置为使用 Azure AD B2C 进行身份验证， [Authorize 属性](xref:security/authorization/simple)可用来保护你的应用。 在继续开发你的应用到学习：

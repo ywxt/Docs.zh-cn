@@ -16,7 +16,7 @@ ms.locfileid: "36272771"
 
 作者：[Valeriy Novytskyy](https://github.com/01binary) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-本教程演示如何使用户可以使用示例 ASP.NET 核心 2.0 项目上创建其 Microsoft 帐户登录[上一页](xref:security/authentication/social/index)。
+本教程演示如何使用户可以使用示例 ASP.NET Core 2.0 项目上创建其 Microsoft 帐户登录[上一页](xref:security/authentication/social/index)。
 
 ## <a name="create-the-app-in-microsoft-developer-portal"></a>在 Microsoft 开发人员门户中创建应用程序
 
@@ -70,7 +70,7 @@ ms.locfileid: "36272771"
 在本教程使用的项目模板可确保[Microsoft.AspNetCore.Authentication.MicrosoftAccount](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.MicrosoftAccount)已安装包。
 
 * 若要使用 Visual Studio 2017 安装此包，请右键单击项目并选择**管理 NuGet 包**。
-* 若要使用.NET 核心 CLI 安装，请在项目目录中执行以下命令：
+* 若要使用.NET Core CLI 安装，请在项目目录中执行以下命令：
 
    `dotnet add package Microsoft.AspNetCore.Authentication.MicrosoftAccount`
 
@@ -133,7 +133,7 @@ app.UseMicrosoftAccountAuthentication(new MicrosoftAccountOptions()
 * 如果 Microsoft 帐户提供程序将你重定向到登录错误页，请注意错误标题和说明查询字符串参数紧接`#`（哈希标记） 的 Uri 中。
 
   尽管错误消息看起来，以指示 Microsoft 身份验证问题，但最常见的原因是你的应用程序与任何不匹配的 Uri**重定向 Uri**指定的**Web**平台.
-* **ASP.NET 核心 2.x 仅：** 如果标识未通过调用配置`services.AddIdentity`中`ConfigureServices`，尝试进行身份验证将导致*ArgumentException： 必须提供 SignInScheme 选项*。 在本教程使用的项目模板可确保，这完成的。
+* **ASP.NET Core 2.x 仅：** 如果标识未通过调用配置`services.AddIdentity`中`ConfigureServices`，尝试进行身份验证将导致*ArgumentException： 必须提供 SignInScheme 选项*。 在本教程使用的项目模板可确保，这完成的。
 * 如果尚未通过应用初始迁移创建站点数据库，则会出现*处理请求时，数据库操作失败*错误。 点击**应用迁移**创建数据库和刷新可跳过错误。
 
 ## <a name="next-steps"></a>后续步骤

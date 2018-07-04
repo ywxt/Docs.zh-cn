@@ -17,7 +17,7 @@ ms.locfileid: "37089979"
 
 通过[Rick Anderson](https://twitter.com/RickAndMSFT)和[瑞士开发人员](https://github.com/Swiss-Devs)
 
- 两个因素身份验证 (2FA) 身份验证器应用，使用基于时间的一次性密码算法 (TOTP)，是推荐的方法为 2FA 行业。 2FA 使用 TOTP 优于 SMS 2FA。 有关详细信息，请参阅[TOTP 中 ASP.NET Core 的身份验证器应用启用 QR 代码生成](xref:security/authentication/identity-enable-qrcodes)ASP.NET 核心 2.0 及更高版本。
+ 两个因素身份验证 (2FA) 身份验证器应用，使用基于时间的一次性密码算法 (TOTP)，是推荐的方法为 2FA 行业。 2FA 使用 TOTP 优于 SMS 2FA。 有关详细信息，请参阅[TOTP 中 ASP.NET Core 的身份验证器应用启用 QR 代码生成](xref:security/authentication/identity-enable-qrcodes)ASP.NET Core 2.0 及更高版本。
 
 本教程演示如何设置双因素身份验证 (2FA) 使用短信。 为提供的说明[twilio](https://www.twilio.com/)和[ASPSMS](https://www.aspsms.com/asp.net/identity/core/testcredits/)，但你可以使用任何其他 SMS 提供程序。 我们建议你完成[帐户确认和密码恢复](xref:security/authentication/accconfirm)之前开始学习本教程。
 
@@ -25,7 +25,7 @@ ms.locfileid: "37089979"
 
 ## <a name="create-a-new-aspnet-core-project"></a>创建新的 ASP.NET Core 项目
 
-创建新的 ASP.NET 核心 web 应用名为`Web2FA`与单个用户帐户。 按照中的说明[在 ASP.NET Core 应用程序强制实施 SSL](xref:security/enforcing-ssl)才能设置，并且需要 SSL。
+创建新的 ASP.NET Core web 应用名为`Web2FA`与单个用户帐户。 按照中的说明[在 ASP.NET Core 应用程序强制实施 SSL](xref:security/enforcing-ssl)才能设置，并且需要 SSL。
 
 ### <a name="create-an-sms-account"></a>创建 SMS 帐户
 

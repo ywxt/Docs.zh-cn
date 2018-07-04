@@ -1,7 +1,7 @@
 ---
 title: 标识模型自定义项
 author: ajcvickers
-description: 本文介绍如何为 ASP.NET 核心标识自定义的基础的实体框架核心数据模型。
+description: 本文介绍如何为 ASP.NET Core 标识自定义的基础的实体框架核心数据模型。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: avickers
 ms.date: 04/12/2018
@@ -17,7 +17,7 @@ ms.locfileid: "37077670"
 
 通过[Arthur Vickers](https://github.com/ajcvickers)
 
-ASP.NET 核心标识提供一个框架，用于管理和 ASP.NET Core 应用程序中存储用户帐户。 标识添加到项目中，选中"单个用户帐户"时作为身份验证机制。 默认情况下，标识将使用的 Entity Framework (EF) 核心数据模型。 本文介绍如何自定义标识模型。
+ASP.NET Core 标识提供一个框架，用于管理和 ASP.NET Core 应用程序中存储用户帐户。 标识添加到项目中，选中"单个用户帐户"时作为身份验证机制。 默认情况下，标识将使用的 Entity Framework (EF) 核心数据模型。 本文介绍如何自定义标识模型。
 
 <a name="identity-migrations"></a>
 
@@ -37,9 +37,9 @@ ASP.NET 核心标识提供一个框架，用于管理和 ASP.NET Core 应用程�
 * [Dotnet 命令](/ef/core/miscellaneous/cli/dotnet)命令行上。
 * 运行应用程序时，请选择错误页上的迁移链接。
 
-ASP.NET 核心有可用于应用程序运行时应用迁移一个开发时间错误页处理程序。 对于生产应用程序，它通常会更适合从迁移中生成 SQL 脚本，将部署到数据库作为受控的应用程序和数据库部署的一部分。
+ASP.NET Core 有可用于应用程序运行时应用迁移一个开发时间错误页处理程序。 对于生产应用程序，它通常会更适合从迁移中生成 SQL 脚本，将部署到数据库作为受控的应用程序和数据库部署的一部分。
 
-创建新的应用程序使用标识时，已经完成上述步骤 1 和 2。 也就是说，初始数据模型已存在，并已添加到项目中的初始迁移。 仍然需要应用于数据库初始迁移。 通过运行更新数据库 (PMC)，dotnet ef 数据库更新 (.NET 核心 CLI) 命令，或通过在运行应用程序使用错误页，则可以完成的初始迁移。
+创建新的应用程序使用标识时，已经完成上述步骤 1 和 2。 也就是说，初始数据模型已存在，并已添加到项目中的初始迁移。 仍然需要应用于数据库初始迁移。 通过运行更新数据库 (PMC)，dotnet ef 数据库更新 (.NET Core CLI) 命令，或通过在运行应用程序使用错误页，则可以完成的初始迁移。
 
 需要对模型进行更改时重复前面的步骤。
 
@@ -324,9 +324,9 @@ services.AddDefaultIdentity<ApplicationUser>()
 
 创建数据库后更改的主键 (PK) 列类型会在很多数据库系统上出现问题。 更改在 PK 通常涉及除去并重新创建表。 因此，建议在消息以便创建数据库时创建的目标密钥类型，密钥类型指定的初始迁移。
 
-如果已创建数据库，则`Drop-Database`(PMC) 或`dotnet ef database drop`(.NET 核心 CLI) 可用来将其删除。
+如果已创建数据库，则`Drop-Database`(PMC) 或`dotnet ef database drop`(.NET Core CLI) 可用来将其删除。
 
-一旦确认数据库不存在，删除与初始迁移`Remove-Migration`(PMC) 或`dotnet ef migrations remove`(.NET 核心 CLI)。
+一旦确认数据库不存在，删除与初始迁移`Remove-Migration`(PMC) 或`dotnet ef migrations remove`(.NET Core CLI)。
 
 更新`ApplicationDbContext`以使用不同的基本类，指定的新键类型`TKey`。 例如，若要使用`Guid`密钥：
 

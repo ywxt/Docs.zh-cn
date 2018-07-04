@@ -31,7 +31,7 @@ ms.locfileid: "36314170"
 [!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=10)]
 ::: moniker-end
 
-请考虑在其中一个 ASP.NET 核心 web 应用**单个用户帐户**已启用安全性。 默认数据库连接字符串包含在项目的*appsettings.json*文件与键`DefaultConnection`。 默认连接字符串用于 LocalDB，在用户模式下运行，而且不需要密码。 应用程序在部署期间，`DefaultConnection`密钥值可以用环境变量的值重写。 环境变量可以存储敏感的凭据与完整的连接字符串。
+请考虑在其中一个 ASP.NET Core web 应用**单个用户帐户**已启用安全性。 默认数据库连接字符串包含在项目的*appsettings.json*文件与键`DefaultConnection`。 默认连接字符串用于 LocalDB，在用户模式下运行，而且不需要密码。 应用程序在部署期间，`DefaultConnection`密钥值可以用环境变量的值重写。 环境变量可以存储敏感的凭据与完整的连接字符串。
 
 > [!WARNING]
 > 环境变量通常存储在未加密的纯文本。 如果计算机或进程受到攻击，则可以通过不受信任方访问环境变量。 可能需要更多措施，防止用户的机密信息泄露。
@@ -74,12 +74,12 @@ ms.locfileid: "36314170"
 ::: moniker range="<= aspnetcore-2.0"
 ## <a name="install-the-secret-manager-tool"></a>安装机密管理器工具
 
-密钥管理器工具是与.NET 核心 CLI 截至.NET 核心 SDK 2.1.300 捆绑。 有关.NET 核心 SDK 2.1.300 之前的版本中，工具安装是必需的。
+密钥管理器工具是与.NET Core CLI 截至.NET Core SDK 2.1.300 捆绑。 有关.NET Core SDK 2.1.300 之前的版本中，工具安装是必需的。
 
 > [!TIP]
-> 运行`dotnet --version`从命令行界面中，若要查看已安装的.NET 核心 SDK 版本号。
+> 运行`dotnet --version`从命令行界面中，若要查看已安装的.NET Core SDK 版本号。
 
-如果正在使用的.NET 核心 SDK 包括的工具，将显示警告：
+如果正在使用的.NET Core SDK 包括的工具，将显示警告：
 
 ```console
 The tool 'Microsoft.Extensions.SecretManager.Tools' is now included in the .NET Core SDK. Information on resolving this warning is available at (https://aka.ms/dotnetclitools-in-box).
@@ -182,16 +182,16 @@ dotnet user-secrets set "Movies:ServiceApiKey" "12345" --project "C:\apps\WebApp
 ## <a name="access-a-secret"></a>访问机密
 
 ::: moniker range="<= aspnetcore-1.1"
-[ASP.NET 核心配置 API](xref:fundamentals/configuration/index)提供对机密 Manager 机密的访问。 安装[Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets) NuGet 包。
+[ASP.NET Core 配置 API](xref:fundamentals/configuration/index)提供对机密 Manager 机密的访问。 安装[Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets) NuGet 包。
 
 添加用户机密配置源通过调用[AddUserSecrets](/dotnet/api/microsoft.extensions.configuration.usersecretsconfigurationextensions.addusersecrets)中`Startup`构造函数：
 
 [!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=5-8)]
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.0"
-[ASP.NET 核心配置 API](xref:fundamentals/configuration/index)提供对机密 Manager 机密的访问。 如果你的项目面向.NET Framework，安装[Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets) NuGet 包。
+[ASP.NET Core 配置 API](xref:fundamentals/configuration/index)提供对机密 Manager 机密的访问。 如果你的项目面向.NET Framework，安装[Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets) NuGet 包。
 
-在 ASP.NET 核心 2.0 或更高版本，用户机密配置源时，自动添加在开发模式下项目调用[CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)初始化带有预配置的默认值的主机的新实例。 `CreateDefaultBuilder` 调用[AddUserSecrets](/dotnet/api/microsoft.extensions.configuration.usersecretsconfigurationextensions.addusersecrets)时[EnvironmentName](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname)是[开发](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development):
+在 ASP.NET Core 2.0 或更高版本，用户机密配置源时，自动添加在开发模式下项目调用[CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)初始化带有预配置的默认值的主机的新实例。 `CreateDefaultBuilder` 调用[AddUserSecrets](/dotnet/api/microsoft.extensions.configuration.usersecretsconfigurationextensions.addusersecrets)时[EnvironmentName](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname)是[开发](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development):
 
 [!code-csharp[](app-secrets/samples/2.x/UserSecrets/Program.cs?name=snippet_CreateWebHostBuilder&highlight=2)]
 

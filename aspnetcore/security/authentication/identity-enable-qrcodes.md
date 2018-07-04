@@ -15,9 +15,9 @@ ms.locfileid: "37089966"
 ---
 # <a name="enable-qr-code-generation-for-totp-authenticator-apps-in-aspnet-core"></a>启用在 ASP.NET Core TOTP 身份验证器应用的 QR 代码生成
 
-ASP.NET 核心附带的单个身份验证的身份验证器应用程序的支持。 两个因素身份验证 (2FA) 身份验证器应用，使用基于时间的一次性密码算法 (TOTP)，是推荐的方法为 2FA 行业。 2FA 使用 TOTP 优于 SMS 2FA。 验证器应用提供哪些用户确认其用户名和密码后，必须输入一个 6 到 8 位代码。 通常在智能手机上安装验证器应用。
+ASP.NET Core 附带的单个身份验证的身份验证器应用程序的支持。 两个因素身份验证 (2FA) 身份验证器应用，使用基于时间的一次性密码算法 (TOTP)，是推荐的方法为 2FA 行业。 2FA 使用 TOTP 优于 SMS 2FA。 验证器应用提供哪些用户确认其用户名和密码后，必须输入一个 6 到 8 位代码。 通常在智能手机上安装验证器应用。
 
-ASP.NET 核心 web 应用程序模板支持身份验证器，但不提供对 QRCode 生成的支持。 QRCode 生成器轻松地 2FA 的安装程序。 本文档将指导你完成添加[QR 代码](https://wikipedia.org/wiki/QR_code)生成到 2FA 配置页。
+ASP.NET Core web 应用程序模板支持身份验证器，但不提供对 QRCode 生成的支持。 QRCode 生成器轻松地 2FA 的安装程序。 本文档将指导你完成添加[QR 代码](https://wikipedia.org/wiki/QR_code)生成到 2FA 配置页。
 
 ## <a name="adding-qr-codes-to-the-2fa-configuration-page"></a>将 QR 代码添加到 2FA 配置页
 

@@ -1,7 +1,7 @@
 ---
-title: 在 ASP.NET 核心中的捆绑和 minifiy 静态资产
+title: 在 ASP.NET Core 中的捆绑和 minifiy 静态资产
 author: scottaddie
-description: 了解如何通过应用绑定和缩减技术优化 ASP.NET 核心 web 应用程序中的静态资源。
+description: 了解如何通过应用绑定和缩减技术优化 ASP.NET Core web 应用程序中的静态资源。
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 01/10/2018
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36279566"
 ---
-# <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>在 ASP.NET 核心中的捆绑和 minifiy 静态资产
+# <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>在 ASP.NET Core 中的捆绑和 minifiy 静态资产
 
 作者：[Scott Addie](https://twitter.com/Scott_Addie)
 
@@ -126,7 +126,7 @@ MVC 和 Razor 页项目模板提供了*bundleconfig.json*配置文件用于定�
 dotnet add package BuildBundlerMinifier
 ```
 
-如果使用 ASP.NET 核心 1.x，还原新添加的包：
+如果使用 ASP.NET Core 1.x，还原新添加的包：
 
 ```console
 dotnet restore
@@ -178,14 +178,14 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 > [!NOTE]
 > BundlerMinifier.Core 属于在为其 Microsoft 不提供支持的 GitHub 上的社区主导项目。 应归档问题[此处](https://github.com/madskristensen/BundlerMinifier/issues)。
 
-此包扩展以包括.NET 核心 CLI *dotnet 捆绑*工具。 在包管理器控制台 (PMC) 窗口中或在命令行界面，可以执行以下命令：
+此包扩展以包括.NET Core CLI *dotnet 捆绑*工具。 在包管理器控制台 (PMC) 窗口中或在命令行界面，可以执行以下命令：
 
 ```console
 dotnet bundle
 ```
 
 > [!IMPORTANT]
-> NuGet 包管理器将依赖项添加到 *.csproj 文件作为`<PackageReference />`节点。 `dotnet bundle`命令注册.NET 核心 CLI 时，才`<DotNetCliToolReference />`使用节点。 相应地修改 *.csproj 文件。
+> NuGet 包管理器将依赖项添加到 *.csproj 文件作为`<PackageReference />`节点。 `dotnet bundle`命令注册.NET Core CLI 时，才`<DotNetCliToolReference />`使用节点。 相应地修改 *.csproj 文件。
 
 ## <a name="add-files-to-workflow"></a>将文件添加到工作流
 

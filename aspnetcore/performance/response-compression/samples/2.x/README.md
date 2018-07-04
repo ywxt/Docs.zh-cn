@@ -1,6 +1,6 @@
 # <a name="response-compression-sample-application-aspnet-core-2x"></a>响应压缩示例应用程序 (ASP.NET Core 2.x)
 
-此示例演示如何使用 ASP.NET Core 2.x 响应的压缩中间件来压缩 HTTP 响应中的。 此示例演示 Gzip 和自定义压缩提供程序文本和图像的响应，并演示如何将添加压缩的 MIME 类型。 有关 ASP.NET 核心 1.x 示例，请参阅[响应压缩示例应用程序 (ASP.NET Core 1.x)](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/response-compression/samples/1.x)。
+此示例演示如何使用 ASP.NET Core 2.x 响应的压缩中间件来压缩 HTTP 响应中的。 此示例演示 Gzip 和自定义压缩提供程序文本和图像的响应，并演示如何将添加压缩的 MIME 类型。 有关 ASP.NET Core 1.x 示例，请参阅[响应压缩示例应用程序 (ASP.NET Core 1.x)](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/response-compression/samples/1.x)。
 
 ## <a name="examples-in-this-sample"></a>在此示例中的示例
 * `GzipCompressionProvider`

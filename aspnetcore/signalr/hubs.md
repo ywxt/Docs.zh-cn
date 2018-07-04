@@ -1,7 +1,7 @@
 ---
-title: 在 ASP.NET 核心 SignalR 使用中心
+title: 在 ASP.NET Core SignalR 使用中心
 author: rachelappel
-description: 了解如何在 ASP.NET 核心 SignalR 中使用中心。
+description: 了解如何在 ASP.NET Core SignalR 中使用中心。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36277663"
 ---
-# <a name="use-hubs-in-signalr-for-aspnet-core"></a>ASP.NET 核心使用 SignalR 中的中心
+# <a name="use-hubs-in-signalr-for-aspnet-core"></a>ASP.NET Core 使用 SignalR 中的中心
 
 通过[Rachel Appel](https://twitter.com/rachelappel)和[Kevin 怪兽](https://twitter.com/1kevgriff)
 
@@ -30,7 +30,7 @@ SignalR 中间件需要某些服务，通过调用配置`services.AddSignalR`。
 
 [!code-csharp[Configure service](hubs/sample/startup.cs?range=38)]
 
-在 SignalR 功能添加到 ASP.NET 核心应用程序时，通过调用设置 SignalR 路由`app.UseSignalR`中`Startup.Configure`方法。
+在 SignalR 功能添加到 ASP.NET Core 应用程序时，通过调用设置 SignalR 路由`app.UseSignalR`中`Startup.Configure`方法。
 
 [!code-csharp[Configure routes to hubs](hubs/sample/startup.cs?range=57-60)]
 
@@ -89,6 +89,6 @@ SignalR 中心 API 提供`OnConnectedAsync`和`OnDisconnectedAsync`虚拟方法�
 
 ## <a name="related-resources"></a>相关资源
 
-* [ASP.NET 核心 SignalR 简介](xref:signalr/introduction)
+* [ASP.NET Core SignalR 简介](xref:signalr/introduction)
 * [JavaScript 客户端](xref:signalr/javascript-client)
 * [发布到 Azure](xref:signalr/publish-to-azure-web-app)

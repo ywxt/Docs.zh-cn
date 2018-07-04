@@ -1,7 +1,7 @@
 ---
-title: ASP.NET 核心标识的自定义的存储提供程序
+title: ASP.NET Core 标识的自定义的存储提供程序
 author: ardalis
-description: 了解如何配置 ASP.NET 核心标识的自定义存储提供程序。
+description: 了解如何配置 ASP.NET Core 标识的自定义存储提供程序。
 ms.author: riande
 ms.date: 05/24/2017
 uid: security/authentication/identity-custom-storage-providers
@@ -12,17 +12,17 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36278422"
 ---
-# <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET 核心标识的自定义的存储提供程序
+# <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core 标识的自定义的存储提供程序
 
 作者：[Steve Smith](https://ardalis.com/)
 
-ASP.NET 核心标识是一种可扩展系统，可用于创建自定义存储提供程序并将其连接到你的应用。 本主题介绍如何创建 ASP.NET 核心标识的自定义的存储提供程序。 它介绍如何创建你自己的存储提供程序的重要概念，但不的分步演练。
+ASP.NET Core 标识是一种可扩展系统，可用于创建自定义存储提供程序并将其连接到你的应用。 本主题介绍如何创建 ASP.NET Core 标识的自定义的存储提供程序。 它介绍如何创建你自己的存储提供程序的重要概念，但不的分步演练。
 
 [查看或下载 GitHub 中的示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample)。
 
 ## <a name="introduction"></a>介绍
 
-默认情况下，ASP.NET 核心标识系统中使用实体框架核心的 SQL Server 数据库存储用户信息。 对于许多应用程序，此方法也适用。 但是，你可能希望使用不同的持久性机制或数据架构。 例如：
+默认情况下，ASP.NET Core 标识系统中使用实体框架核心的 SQL Server 数据库存储用户信息。 对于许多应用程序，此方法也适用。 但是，你可能希望使用不同的持久性机制或数据架构。 例如：
 
 * 你使用[Azure 表存储](https://docs.microsoft.com/azure/storage/)或其他数据存储。
 * 数据库表具有不同的结构。 
@@ -30,18 +30,18 @@ ASP.NET 核心标识是一种可扩展系统，可用于创建自定义存储提
 
 在每个这种情况下，你可以为你的存储机制编写自定义提供程序并将该提供程序插入您的应用程序。
 
-ASP.NET 核心标识包含在 Visual Studio 中使用"单个用户帐户"选项的项目模板中。
+ASP.NET Core 标识包含在 Visual Studio 中使用"单个用户帐户"选项的项目模板中。
 
-在使用.NET 核心 CLI 时，添加`-au Individual`:
+在使用.NET Core CLI 时，添加`-au Individual`:
 
 ```console
 dotnet new mvc -au Individual
 dotnet new webapi -au Individual
 ```
 
-## <a name="the-aspnet-core-identity-architecture"></a>ASP.NET 核心标识体系结构
+## <a name="the-aspnet-core-identity-architecture"></a>ASP.NET Core 标识体系结构
 
-ASP.NET 核心标识包含类称为管理器和存储区。 *管理器*是高级类应用程序开发人员用于执行操作，如创建标识用户。 *存储*是用于指定如何保持实体，如用户和角色，较低级别类。 存储按照[存储库模式](http://deviq.com/repository-pattern/)和紧密耦合持久性的机制。 管理器是相互脱耦存储区，这意味着你可以将持久性机制，而无需更改应用程序代码 （除外配置）。
+ASP.NET Core 标识包含类称为管理器和存储区。 *管理器*是高级类应用程序开发人员用于执行操作，如创建标识用户。 *存储*是用于指定如何保持实体，如用户和角色，较低级别类。 存储按照[存储库模式](http://deviq.com/repository-pattern/)和紧密耦合持久性的机制。 管理器是相互脱耦存储区，这意味着你可以将持久性机制，而无需更改应用程序代码 （除外配置）。
 
 下图显示的 web 应用程序的交互方式具有管理器中，当与数据访问层的存储区交互时。
 
@@ -49,13 +49,13 @@ ASP.NET 核心标识包含类称为管理器和存储区。 *管理器*是高级
 
 若要创建自定义的存储提供程序，请使用此数据访问层 （绿色和灰色框在上图中） 创建数据源、 数据访问层和交互的存储类。 你不需要自定义管理器或与它们 （蓝色上面的框） 进行交互的应用程序代码。
 
-创建的新实例时`UserManager`或`RoleManager`提供用户类的类型和作为参数传递存储类的实例。 此方法使您可以插入到 ASP.NET 核心的自定义的类。 
+创建的新实例时`UserManager`或`RoleManager`提供用户类的类型和作为参数传递存储类的实例。 此方法使您可以插入到 ASP.NET Core 的自定义的类。 
 
 [重新配置应用程序以使用新存储提供程序](#reconfigure-app-to-use-new-storage-provider)演示如何实例化`UserManager`和`RoleManager`使用自定义存储。
 
-## <a name="aspnet-core-identity-stores-data-types"></a>ASP.NET 核心标识将存储的数据类型
+## <a name="aspnet-core-identity-stores-data-types"></a>ASP.NET Core 标识将存储的数据类型
 
-[ASP.NET 核心标识](https://github.com/aspnet/identity)数据类型进行详细介绍下列各节：
+[ASP.NET Core 标识](https://github.com/aspnet/identity)数据类型进行详细介绍下列各节：
 
 ### <a name="users"></a>用户
 
@@ -75,11 +75,11 @@ ASP.NET 核心标识包含类称为管理器和存储区。 *管理器*是高级
 
 ## <a name="the-data-access-layer"></a>数据访问层
 
-本主题假定你熟悉要使用的持久性机制以及如何创建该机制的实体。 本主题不提供有关如何创建存储库或数据访问类; 详细信息使用 ASP.NET 核心标识时，它提供了有关设计决策的一些建议。
+本主题假定你熟悉要使用的持久性机制以及如何创建该机制的实体。 本主题不提供有关如何创建存储库或数据访问类; 详细信息使用 ASP.NET Core 标识时，它提供了有关设计决策的一些建议。
 
-为自定义的存储提供程序设计的数据访问层时，你有大量的自由。 只需创建想要使用它在你的应用程序的功能的持久性机制。 例如，如果不使用你的应用程序中的角色，你不必创建角色或用户角色关联的存储。 你的技术和现有基础结构可能需要的 ASP.NET 核心标识的默认实现不同的结构。 你的数据访问层，可以提供要使用的存储实现结构的逻辑。
+为自定义的存储提供程序设计的数据访问层时，你有大量的自由。 只需创建想要使用它在你的应用程序的功能的持久性机制。 例如，如果不使用你的应用程序中的角色，你不必创建角色或用户角色关联的存储。 你的技术和现有基础结构可能需要的 ASP.NET Core 标识的默认实现不同的结构。 你的数据访问层，可以提供要使用的存储实现结构的逻辑。
 
-数据访问层提供逻辑来将数据从 ASP.NET 核心标识保存到数据源。 自定义的存储提供程序的数据访问层可能包括以下类用于存储用户和角色信息。
+数据访问层提供逻辑来将数据从 ASP.NET Core 标识保存到数据源。 自定义的存储提供程序的数据访问层可能包括以下类用于存储用户和角色信息。
 
 ### <a name="context-class"></a>Context 类
 
@@ -238,4 +238,4 @@ public void ConfigureServices(IServiceCollection services)
 ## <a name="references"></a>参考资料
 
 - [ASP.NET 标识的自定义的存储提供程序](/aspnet/identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity)
-- [ASP.NET 核心标识](https://github.com/aspnet/identity)-此存储库包含指向社区维护存储提供程序。
+- [ASP.NET Core 标识](https://github.com/aspnet/identity)-此存储库包含指向社区维护存储提供程序。

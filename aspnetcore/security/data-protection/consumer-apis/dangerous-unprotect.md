@@ -1,5 +1,5 @@
 ---
-title: 取消保护已吊销在 ASP.NET 核心中键的有效负载
+title: 取消保护已吊销在 ASP.NET Core 中键的有效负载
 author: rick-anderson
 description: 了解如何取消保护数据，使用密钥，因为已吊销，在 ASP.NET Core 应用程序保护。
 ms.author: riande
@@ -12,12 +12,12 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36272381"
 ---
-# <a name="unprotect-payloads-whose-keys-have-been-revoked-in-aspnet-core"></a>取消保护已吊销在 ASP.NET 核心中键的有效负载
+# <a name="unprotect-payloads-whose-keys-have-been-revoked-in-aspnet-core"></a>取消保护已吊销在 ASP.NET Core 中键的有效负载
 
 
 <a name="data-protection-consumer-apis-dangerous-unprotect"></a>
 
-ASP.NET 核心数据保护 Api 主要不用于机密负载的无限期持久性。 其他技术喜欢[Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx)和[Azure Rights Management](https://docs.microsoft.com/rights-management/)更适合于以下场景： 无限期存储，并且它们的相应强密钥管理功能。 也就是说，无需进行任何开发人员禁止使用 ASP.NET Core 数据保护 Api 进行长期保护的机密数据。 密钥绝不会移除从密钥链中，因此`IDataProtector.Unprotect`，只要键为可用，有效始终可以恢复现有的负载。
+ASP.NET Core 数据保护 Api 主要不用于机密负载的无限期持久性。 其他技术喜欢[Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx)和[Azure Rights Management](https://docs.microsoft.com/rights-management/)更适合于以下场景： 无限期存储，并且它们的相应强密钥管理功能。 也就是说，无需进行任何开发人员禁止使用 ASP.NET Core 数据保护 Api 进行长期保护的机密数据。 密钥绝不会移除从密钥链中，因此`IDataProtector.Unprotect`，只要键为可用，有效始终可以恢复现有的负载。
 
 但是，则会产生问题在开发人员尝试取消保护数据作为保护与吊销键，`IDataProtector.Unprotect`在这种情况下将引发异常。 这些类型的负载可以轻松地重新创建这些系统，以及在坏的情况下站点访问者可能需要重新登录，这可能是特别适用于短期或临时负载 （如身份验证令牌） 的。 但持久化负载，具有`Unprotect`抛出可能导致不可接受数据丢失。
 

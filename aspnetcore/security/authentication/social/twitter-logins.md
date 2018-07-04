@@ -1,5 +1,5 @@
 ---
-title: Twitter 外部登录名与 ASP.NET 核心的安装程序
+title: Twitter 外部登录名与 ASP.NET Core 的安装程序
 author: rick-anderson
 description: 本教程演示的集成到现有的 ASP.NET Core 应用的 Twitter 帐户用户身份验证。
 ms.author: riande
@@ -12,11 +12,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36278487"
 ---
-# <a name="twitter-external-login-setup-with-aspnet-core"></a>Twitter 外部登录名与 ASP.NET 核心的安装程序
+# <a name="twitter-external-login-setup-with-aspnet-core"></a>Twitter 外部登录名与 ASP.NET Core 的安装程序
 
 作者：[Valeriy Novytskyy](https://github.com/01binary) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-本教程演示如何启用到你的用户[使用 Twitter 帐户登录](https://dev.twitter.com/web/sign-in/desktop-browser)上使用示例 ASP.NET 核心 2.0 项目创建[上一页](xref:security/authentication/social/index)。
+本教程演示如何启用到你的用户[使用 Twitter 帐户登录](https://dev.twitter.com/web/sign-in/desktop-browser)上使用示例 ASP.NET Core 2.0 项目创建[上一页](xref:security/authentication/social/index)。
 
 ## <a name="create-the-app-in-twitter"></a>在 Twitter 中创建应用程序
 
@@ -52,7 +52,7 @@ ms.locfileid: "36278487"
 在本教程使用的项目模板可确保[Microsoft.AspNetCore.Authentication.Twitter](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Twitter)已安装包。
 
 * 若要使用 Visual Studio 2017 安装此包，请右键单击项目并选择**管理 NuGet 包**。
-* 若要使用.NET 核心 CLI 安装，请在项目目录中执行以下命令：
+* 若要使用.NET Core CLI 安装，请在项目目录中执行以下命令：
 
    `dotnet add package Microsoft.AspNetCore.Authentication.Twitter`
 
@@ -110,7 +110,7 @@ app.UseTwitterAuthentication(new TwitterOptions()
 
 ## <a name="troubleshooting"></a>疑难解答
 
-* **ASP.NET 核心 2.x 仅：** 如果标识未通过调用配置`services.AddIdentity`中`ConfigureServices`，尝试进行身份验证将导致*ArgumentException： 必须提供 SignInScheme 选项*。 在本教程使用的项目模板可确保，这完成的。
+* **ASP.NET Core 2.x 仅：** 如果标识未通过调用配置`services.AddIdentity`中`ConfigureServices`，尝试进行身份验证将导致*ArgumentException： 必须提供 SignInScheme 选项*。 在本教程使用的项目模板可确保，这完成的。
 * 如果尚未通过应用初始迁移创建站点数据库，则会出现*处理请求时，数据库操作失败*错误。 点击**应用迁移**创建数据库和刷新可跳过错误。
 
 ## <a name="next-steps"></a>后续步骤

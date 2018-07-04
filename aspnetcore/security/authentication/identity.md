@@ -26,15 +26,15 @@ ASP.NET Core 标识是一种用于向应用程序添加登录功能的成员身�
 
 本主题介绍如何使用 ASP.NET Core 标识来添加用于注册、登录和注销用户的功能。 若要详细了解如何使用 ASP.NET Core 标识来创建应用，请参阅本文末尾的“后续步骤”部分。
 
-1. 使用单个用户帐户创建一个 ASP.NET 核心 Web 应用程序项目。
+1. 使用单个用户帐户创建一个 ASP.NET Core Web 应用程序项目。
 
    # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-   在 Visual Studio 中，选择**文件** > **新建** > **项目**。 选择**ASP.NET 核心 Web 应用程序**单击**确定**。
+   在 Visual Studio 中，选择**文件** > **新建** > **项目**。 选择**ASP.NET Core Web 应用程序**单击**确定**。
 
    ![“新建项目”对话框](identity/_static/01-new-project.png)
 
-   选择 ASP.NET Core **Web 应用程序 （模型-视图-控制器）** asp.net 核心 2.x，然后选择**更改身份验证**。
+   选择 ASP.NET Core **Web 应用程序 （模型-视图-控制器）** asp.NET Core 2.x，然后选择**更改身份验证**。
 
    ![“新建项目”对话框](identity/_static/02-new-project.png)
 
@@ -46,7 +46,7 @@ ASP.NET Core 标识是一种用于向应用程序添加登录功能的成员身�
 
    # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-   如果使用.NET 核心 CLI，创建新的项目使用`dotnet new mvc --auth Individual`。 此命令创建一个新的项目与 Visual Studio 将创建相同的标识模板代码。
+   如果使用.NET Core CLI，创建新的项目使用`dotnet new mvc --auth Individual`。 此命令创建一个新的项目与 Visual Studio 将创建相同的标识模板代码。
 
    创建的项目包含`Microsoft.AspNetCore.Identity.EntityFrameworkCore`包，其中的标识数据和 SQL Server 使用的架构仍然存在[实体框架核心](https://docs.microsoft.com/ef/)。
 
@@ -150,7 +150,7 @@ ASP.NET Core 标识是一种用于向应用程序添加登录功能的成员身�
 
 8. 确认标识在有效运行
 
-    默认值*ASP.NET 核心 Web 应用程序*项目模板，用户可以访问应用程序中的任何操作，而无到登录名。 若要验证 ASP.NET 标识工作原理，添加`[Authorize]`属性设为`About`操作`Home`控制器。
+    默认值*ASP.NET Core Web 应用程序*项目模板，用户可以访问应用程序中的任何操作，而无到登录名。 若要验证 ASP.NET 标识工作原理，添加`[Authorize]`属性设为`About`操作`Home`控制器。
 
     ```csharp
     [Authorize]

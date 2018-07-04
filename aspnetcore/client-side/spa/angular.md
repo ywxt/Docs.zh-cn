@@ -36,7 +36,7 @@ ms.locfileid: "36291460"
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.1"
 
-如果您有安装 ASP.NET 核心 2.1，则无需安装角度项目模板。
+如果您有安装 ASP.NET Core 2.1，则无需安装角度项目模板。
 
 ::: moniker-end
 
