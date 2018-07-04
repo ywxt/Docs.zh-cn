@@ -1,33 +1,32 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender
-title: '[如何:]使用 ASP.NET AJAX UpdatePanelAnimation 扩展程序？ | Microsoft Docs'
+title: '[如何实现:]使用 ASP.NET AJAX UpdatePanelAnimation 扩展器？ | Microsoft Docs'
 author: JoeStagner
-description: 通过将动画添加到我们可以通知用户，有更新时出现，并在局部页面的更新，它已完成。 UpdatePanelAnimation 扩展程序...
+description: 通过将动画添加到我们可以通知用户有更新时出现，以及时的部分页面更新它已完成。 UpdatePanelAnimation 扩展器...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2007
 ms.topic: article
 ms.assetid: 56f5ec0f-38f7-4ebc-90d9-9baf0c693bd4
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender
 msc.type: video
-ms.openlocfilehash: f7a96295a3e3f372a3f43fbf47360c88b99433c6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 465480f5d548cd224a96800bd5b4b32407ae709f
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30883984"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37392424"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender"></a><span data-ttu-id="f9819-105">[如何:]使用 ASP.NET AJAX UpdatePanelAnimation 扩展程序？</span><span class="sxs-lookup"><span data-stu-id="f9819-105">[How Do I:] Use the ASP.NET AJAX UpdatePanelAnimation Extender?</span></span>
+<a name="how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender"></a><span data-ttu-id="60ac5-105">[如何实现:]使用 ASP.NET AJAX UpdatePanelAnimation 扩展器？</span><span class="sxs-lookup"><span data-stu-id="60ac5-105">[How Do I:] Use the ASP.NET AJAX UpdatePanelAnimation Extender?</span></span>
 ====================
-<span data-ttu-id="f9819-106">通过[Joe stagner 将](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="f9819-106">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="60ac5-106">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="60ac5-106">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="f9819-107">通过将动画添加到我们可以通知用户，有更新时出现，并在局部页面的更新，它已完成。</span><span class="sxs-lookup"><span data-stu-id="f9819-107">By adding animation to a partial-page update we can inform the user when an update is occuring, and when it has finished.</span></span> <span data-ttu-id="f9819-108">UpdatePanelAnimation 扩展程序将添加到 ASP.NET AJAX UpdatePanel 控制，利用核心 ASP.NET AJAX Extensions 的丰富动画框架的动画效果。</span><span class="sxs-lookup"><span data-stu-id="f9819-108">The UpdatePanelAnimation extender adds animation effects to the ASP.NET AJAX UpdatePanel control, making use of the rich animation framework of the core ASP.NET AJAX Extensions.</span></span> <span data-ttu-id="f9819-109">此视频演示如何为 UpdatePanelAnimation，可以定义效果的序列和如何可以通过使用 ScriptAction 定义微调动画。</span><span class="sxs-lookup"><span data-stu-id="f9819-109">This video shows how you can define the sequence of effects for the UpdatePanelAnimation, and how you can fine-tune the animation by using ScriptAction definitions.</span></span>
+<span data-ttu-id="60ac5-107">通过将动画添加到我们可以通知用户有更新时出现，以及时的部分页面更新它已完成。</span><span class="sxs-lookup"><span data-stu-id="60ac5-107">By adding animation to a partial-page update we can inform the user when an update is occuring, and when it has finished.</span></span> <span data-ttu-id="60ac5-108">UpdatePanelAnimation 扩展器将添加到 ASP.NET AJAX UpdatePanel 控件，并利用丰富的动画框架的核心 ASP.NET AJAX Extensions 的动画效果。</span><span class="sxs-lookup"><span data-stu-id="60ac5-108">The UpdatePanelAnimation extender adds animation effects to the ASP.NET AJAX UpdatePanel control, making use of the rich animation framework of the core ASP.NET AJAX Extensions.</span></span> <span data-ttu-id="60ac5-109">此视频介绍如何为 UpdatePanelAnimation，定义的一系列效果和如何可以通过使用 ScriptAction 定义微调动画。</span><span class="sxs-lookup"><span data-stu-id="60ac5-109">This video shows how you can define the sequence of effects for the UpdatePanelAnimation, and how you can fine-tune the animation by using ScriptAction definitions.</span></span>
 
-[<span data-ttu-id="f9819-110">&#9654;观看视频 （20 分钟）</span><span class="sxs-lookup"><span data-stu-id="f9819-110">&#9654; Watch video (20 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender)
+[<span data-ttu-id="60ac5-110">&#9654;观看视频 （20 分钟）</span><span class="sxs-lookup"><span data-stu-id="60ac5-110">&#9654; Watch video (20 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="f9819-111">[上一页](how-do-i-use-the-aspnet-ajax-slideshow-extender.md)
-> [下一页](how-do-i-the-ajax-toolkit-reorder-control.md)</span><span class="sxs-lookup"><span data-stu-id="f9819-111">[Previous](how-do-i-use-the-aspnet-ajax-slideshow-extender.md)
+> <span data-ttu-id="60ac5-111">[上一页](how-do-i-use-the-aspnet-ajax-slideshow-extender.md)
+> [下一页](how-do-i-the-ajax-toolkit-reorder-control.md)</span><span class="sxs-lookup"><span data-stu-id="60ac5-111">[Previous](how-do-i-use-the-aspnet-ajax-slideshow-extender.md)
 [Next](how-do-i-the-ajax-toolkit-reorder-control.md)</span></span>

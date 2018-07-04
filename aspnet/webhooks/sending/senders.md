@@ -1,6 +1,6 @@
 ---
 uid: webhooks/senders
-title: ASP.NET Webhook 发件人 |Microsoft 文档
+title: ASP.NET Webhook 发件人 |Microsoft Docs
 author: rick-anderson
 description: ASP.NET Webhook 发件人
 ms.author: aspnetcontent
@@ -9,14 +9,13 @@ ms.date: 01/17/2012
 ms.topic: article
 ms.assetid: 33001ae2-8e1b-4807-8b02-16c7fd8ad38d
 ms.technology: ''
-ms.prod: .net-framework
-ms.openlocfilehash: 5c18daffe0711d4831b0a9b438bebb4e030936d1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4949ef5be24ade833e556c2602db345426aa7e63
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26529696"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393695"
 ---
-# <a name="aspnet-webhook-senders"></a><span data-ttu-id="57228-103">ASP.NET WebHook 发件人</span><span class="sxs-lookup"><span data-stu-id="57228-103">ASP.NET WebHook senders</span></span>
+# <a name="aspnet-webhook-senders"></a><span data-ttu-id="0fe4a-103">ASP.NET WebHook 发件人</span><span class="sxs-lookup"><span data-stu-id="0fe4a-103">ASP.NET WebHook senders</span></span>
 
-<span data-ttu-id="57228-104">请参阅博客[发送 Webhook 与 ASP.NET Webhook 预览](http://blogs.msdn.com/b/webdev/archive/2015/09/15/sending-webhooks-with-asp-net-webhooks-preview.aspx)有关详细信息。</span><span class="sxs-lookup"><span data-stu-id="57228-104">See the blog [Sending WebHooks with ASP.NET WebHooks Preview](http://blogs.msdn.com/b/webdev/archive/2015/09/15/sending-webhooks-with-asp-net-webhooks-preview.aspx) for more details.</span></span>
+<span data-ttu-id="0fe4a-104">请参阅博客[带 ASP.NET Webhook 预览发送 Webhook](http://blogs.msdn.com/b/webdev/archive/2015/09/15/sending-webhooks-with-asp-net-webhooks-preview.aspx)的更多详细信息。</span><span class="sxs-lookup"><span data-stu-id="0fe4a-104">See the blog [Sending WebHooks with ASP.NET WebHooks Preview](http://blogs.msdn.com/b/webdev/archive/2015/09/15/sending-webhooks-with-asp-net-webhooks-preview.aspx) for more details.</span></span>
