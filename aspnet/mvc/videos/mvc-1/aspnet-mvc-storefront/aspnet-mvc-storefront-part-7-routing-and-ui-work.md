@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-7-routing-and-ui-work
-title: ASP.NET MVC 店面第 7 部分： 路由和用户界面工作 |Microsoft 文档
+title: ASP.NET MVC 店面第 7 部分： 路由和 UI 工作 |Microsoft Docs
 author: robconery
-description: Rob 讨论与 Scott Hanselman 有关如何设置路由，然后他实现用户界面。
+description: Rob Scott hanselman 介绍如何设置路由，并且他然后实现用户界面。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/27/2008
 ms.topic: article
 ms.assetid: 07cb4434-cb24-4746-a4ba-bfeea889a7e2
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-7-routing-and-ui-work
 msc.type: video
-ms.openlocfilehash: 18acf244c29f3b698eb3588640ac1b0491b360b2
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 4005511ea1f92530878281ff593717397af1b286
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30878729"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37388404"
 ---
-<a name="aspnet-mvc-storefront-part-7-routing-and-ui-work"></a>ASP.NET MVC 店面第 7 部分： 路由和用户界面工作
+<a name="aspnet-mvc-storefront-part-7-routing-and-ui-work"></a>ASP.NET MVC 店面第 7 部分： 路由和 UI 工作
 ====================
-通过[窃取 Conery](https://github.com/robconery)
+通过[Rob conery 专攻](https://github.com/robconery)
 
-Rob 讨论与 Scott Hanselman 有关如何设置路由，然后他实现用户界面。
+Rob Scott hanselman 介绍如何设置路由，并且他然后实现用户界面。
 
 [&#9654;观看视频 （25 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-7-routing-and-ui-work)
 

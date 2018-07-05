@@ -1,53 +1,52 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-vb
-title: 使用 DropDownList (VB) 进行筛选主/详细信息 |Microsoft 文档
+title: 使用 DropDownList (VB) 进行筛选母版/详细信息 |Microsoft Docs
 author: rick-anderson
-description: 在本教程中我们将了解如何在 DropDownList 控件和一个 GridView 中的选定的列表项的详细信息中显示的主记录。
+description: 在本教程中我们将了解如何在 DropDownList 控件和 GridView 中的所选的列表项的详细信息中显示的主记录。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
 ms.topic: article
 ms.assetid: ea44717e-ab2e-46cd-a692-e4a9c0de194c
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5d1ae660ddbc6c8e2874190ade6f3deddeebe820
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: d15348812abf88fa35485c0d3415b2683225b6b5
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30880370"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37386690"
 ---
-<a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>主/从使用 DropDownList (VB) 进行筛选
+<a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>使用 DropDownList (VB) 进行筛选母版/详细信息
 ====================
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/5/d/7/5d7571fc-d0b7-4798-ad4a-c976c02363ce/ASPNET_Data_Tutorial_7_VB.exe)或[下载 PDF](master-detail-filtering-with-a-dropdownlist-vb/_static/datatutorial07vb1.pdf)
 
-> 在本教程中我们将了解如何在 DropDownList 控件和一个 GridView 中的选定的列表项的详细信息中显示的主记录。
+> 在本教程中我们将了解如何在 DropDownList 控件和 GridView 中的所选的列表项的详细信息中显示的主记录。
 
 
 ## <a name="introduction"></a>介绍
 
-常用的报表类型是*主/详细信息报表*中，报表从此处开始通过显示的"主"的记录集。 用户可以然后向下钻取一个主机记录，从而查看该主记录的"详细信息。" 主/详细信息报告是用于可视化一个对多关系，如报表的理想选择显示的所有类别，然后允许用户选择一种特定类别，然后显示其关联的产品。 此外，主/详细信息报表可用于显示特别"宽"表 （一种是有大量的列） 中的详细的信息。 例如，主/详细信息报表的"主"级别可能会在数据库中，显示只包括产品名称和单位价格的产品和向下钻取到特定的产品将显示额外的产品字段 (分类、 供应商、 每个单元，数量和等等）。
+报表的通用类型是*母版/详细信息报表*中的报表开始通过显示某些组的"主"的记录。 用户可以然后向下钻取到一个主机记录，从而查看该主记录的"详细信息。" 母版/详细信息报告是用于可视化一对多关系，如报表的理想之选显示所有类别，并允许用户选择特定的类别并显示其相关联的产品。 此外，母版/详细信息报表可用于显示来自特别"宽型"表 （是有大量的列） 的详细的信息。 例如，母版/详细信息报表的"主"级别可能会显示在数据库中，只是产品名称和单位产品的价格并向下钻取特定产品会显示其他产品字段 (类别、 供应商、 每个单元，数量和等）。
 
-有多种方法可以与其实现主/详细信息报表。 通过这和接下来三个教程中，我们将查看在不同的主/详细信息报表。 在本教程中，我们将了解如何显示中的主记录[DropDownList 控件](https://msdn.microsoft.com/library/dtx91y0z.aspx)和 GridView 中的选定的列表项的详细信息。 具体而言，本教程的主/从报表将列出类别和产品信息。
+有许多方法可以用于实现母版/详细信息报表。 通过这和接下来三个教程中，我们将介绍在不同的母版/详细信息报表。 在本教程中，我们将了解如何显示中的主记录[DropDownList 控件](https://msdn.microsoft.com/library/dtx91y0z.aspx)和 GridView 中的所选的列表项的详细信息。 具体而言，本教程中的母版/详细信息报告将列出类别和产品信息。
 
-## <a name="step-1-displaying-the-categories-in-a-dropdownlist"></a>步骤 1： 在 DropDownList 中显示的类别
+## <a name="step-1-displaying-the-categories-in-a-dropdownlist"></a>步骤 1： 在 DropDownList 中显示类别
 
-主/从报表将与显示的选定的列表项的产品列出的 DropDownList 中的类别在 GridView 的页中进一步向下。 然后，早 us，第一个任务是具有 DropDownList 中显示的类别。 打开`FilterByDropDownList.aspx`页面`Filtering`文件夹中，将在 DropDownList 上从工具箱中拖动到页面的设计器，并设置其`ID`属性`Categories`。 接下来，单击下拉列表的智能标记中的选择数据源链接。 这将显示数据源配置向导。
-
-
-[![指定的 DropDownList 数据源](master-detail-filtering-with-a-dropdownlist-vb/_static/image2.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image1.png)
-
-**图 1**： 指定下拉列表的数据源 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image3.png))
+我们的母版/详细信息报表将列出与所选的列表项的产品显示在下拉列表中，类别在 GridView 的页中进一步向下。 然后，领先于我们的第一个任务是已在 DropDownList 中显示的类别。 打开`FilterByDropDownList.aspx`页中`Filtering`文件夹中，从工具箱拖到页面的设计器中，将在 DropDownList 上并设置其`ID`属性设置为`Categories`。 接下来，单击选择数据源链接从 DropDownList 的智能标记。 这将显示数据源配置向导。
 
 
-选择要添加名为新 ObjectDataSource `CategoriesDataSource` ，它调用`CategoriesBLL`类的`GetCategories()`方法。
+[![指定 DropDownList 的数据源](master-detail-filtering-with-a-dropdownlist-vb/_static/image2.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image1.png)
+
+**图 1**： 指定 DropDownList 的数据源 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image3.png))
 
 
-[![添加名为 CategoriesDataSource 新对象数据源](master-detail-filtering-with-a-dropdownlist-vb/_static/image5.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image4.png)
+选择将添加名为新 ObjectDataSource `CategoriesDataSource` ，它调用`CategoriesBLL`类的`GetCategories()`方法。
+
+
+[![添加名为 CategoriesDataSource 新 ObjectDataSource](master-detail-filtering-with-a-dropdownlist-vb/_static/image5.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image4.png)
 
 **图 2**： 添加新对象数据源名为`CategoriesDataSource`([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image6.png))
 
@@ -57,30 +56,30 @@ ms.locfileid: "30880370"
 **图 3**： 选择使用`CategoriesBLL`类 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image9.png))
 
 
-[![配置对象数据源以使用 GetCategories() 方法](master-detail-filtering-with-a-dropdownlist-vb/_static/image11.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image10.png)
+[![配置对象数据源使用 GetCategories() 方法](master-detail-filtering-with-a-dropdownlist-vb/_static/image11.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image10.png)
 
-**图 4**： 配置使用 ObjectDataSource`GetCategories()`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image12.png))
-
-
-配置对象数据源，我们仍需要来指定哪些数据源字段应显示在 DropDownList 和后一个应关联为列表项的值。 具有`CategoryName`字段作为显示和`CategoryID`作为每个列表项的值。
+**图 4**： 配置为使用 ObjectDataSource`GetCategories()`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image12.png))
 
 
-[![具有 DropDownList 显示 CategoryName 字段和使用 CategoryID 值](master-detail-filtering-with-a-dropdownlist-vb/_static/image14.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image13.png)
-
-**图 5**： 具有 DropDownList 显示`CategoryName`字段并使用`CategoryID`作为值 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image15.png))
+配置的 ObjectDataSource 我们仍然需要指定应在 DropDownList 中显示哪些数据源字段和后一个应为列表项的值相关联。 具有`CategoryName`字段与显示和`CategoryID`为每个列表项的值。
 
 
-此时我们具有从记录将填充一个 DropDownList 控件`Categories`表 （所有在大约六个秒钟内完成）。 通过浏览器查看时为止图 6 显示我们的进度。
+[![作为值的类别名称字段和使用 CategoryID 使 DropDownList 显示](master-detail-filtering-with-a-dropdownlist-vb/_static/image14.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image13.png)
+
+**图 5**： 使 DropDownList 显示`CategoryName`字段并使用`CategoryID`作为值 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image15.png))
 
 
-[![下拉列表将列出当前类别](master-detail-filtering-with-a-dropdownlist-vb/_static/image17.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image16.png)
+现在我们有从记录将填充 DropDownList 控件`Categories`表 （全部在大约六秒钟内完成）。 图 6 显示了我们到目前为止的浏览器查看时。
 
-**图 6**: 下拉列表将列出当前类别 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image18.png))
+
+[![下拉列表列出了当前类别](master-detail-filtering-with-a-dropdownlist-vb/_static/image17.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image16.png)
+
+**图 6**: 下拉列表列出了当前类别 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image18.png))
 
 
 ## <a name="step-2-adding-the-products-gridview"></a>步骤 2： 添加产品 GridView
 
-主/详细信息报表中的最后一个步骤是列出与所选类别关联的产品。 若要完成此操作，向页面添加一个 GridView，并创建名为新 ObjectDataSource `productsDataSource`。 具有`productsDataSource`控件精选从其数据`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。
+我们的母版/详细信息报表的最后一步是列出与所选类别关联的产品。 若要完成此操作，向页添加 GridView 并创建名为新 ObjectDataSource `productsDataSource`。 具有`productsDataSource`控件中搜集从其数据`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。
 
 
 [![选择 GetProductsByCategoryID(categoryID) 方法](master-detail-filtering-with-a-dropdownlist-vb/_static/image20.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image19.png)
@@ -88,73 +87,73 @@ ms.locfileid: "30880370"
 **图 7**： 选择`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image21.png))
 
 
-在选择此方法之后, ObjectDataSource 向导提示我们值的方法的*`categoryID`* 参数。 若要使用的所选值`categories`DropDownList 项设置为控件和到 ControlID 参数源`Categories`。
+选择此方法之后, 该 ObjectDataSource 向导会提示我们的方法的值*`categoryID`* 参数。 若要使用的所选的值`categories`DropDownList 项设置参数源为控件和到 ControlID `Categories`。
 
 
-[![CategoryID 参数值设置为类别下拉列表](master-detail-filtering-with-a-dropdownlist-vb/_static/image23.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image22.png)
+[![将类别 id 参数设置为 Categories DropDownList 的值](master-detail-filtering-with-a-dropdownlist-vb/_static/image23.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image22.png)
 
-**图 8**： 设置*`categoryID`* 参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image24.png))
-
-
-需要一段时间来签出我们的浏览器中的进度。 当第一次访问该页面，这些产品属于所选类别 （如图 9 中所示），则会显示 （饮料），但更改 DropDownList 不更新的数据。 这是因为 GridView 更新必须进行回发。 为了实现此目的进行 （都不需要编写任何代码） 的两个选项：
-
-- **设置的类别的 DropDownList 的**[有些属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.listcontrol.autopostback%28VS.80%29.aspx)**为 True。** （你可以完成此操作通过检查 DropDownList 的智能标记中的启用有些选项。）这将触发回发，每当 DropDownList 的选定项更改的用户。 因此，当用户从下拉列表中选择新类别回发将随之发生，并且将使用新选择的类别的产品更新 GridView。 （这是我已在本教程中使用的方法）。
-- **添加的 DropDownList 旁边的按钮 Web 控件。** 设置其`Text`到刷新的属性或其他类似的。 使用此方法时，用户将需要选择新类别，然后单击按钮。 单击的按钮，将导致回发，并更新 GridView 列出所选类别的这些产品。
-
-图 9 和 10 说明了操作中的主/从报表。
+**图 8**： 设置*`categoryID`* 的值的参数`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image24.png))
 
 
-[![第一次访问该页面，将显示饮料产品](master-detail-filtering-with-a-dropdownlist-vb/_static/image26.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image25.png)
+请花费片刻时间来了解我们在浏览器中的进度。 当首次访问的页面，这些产品属于所选类别 （饮料） 会显示 （如图 9 中所示），但更改 DropDownList 不会更新数据。 这是因为必须 GridView 来更新在回发。 若要实现此目的我们具有两个选项 （这两者都不需要编写任何代码）：
 
-**图 9**： 第一次访问该页面，将显示饮料产品 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image27.png))
+- **设置类别 DropDownList 的**[AutoPostBack 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.listcontrol.autopostback%28VS.80%29.aspx)**为 True。** （您可以实现此目的通过检查 DropDownList 的智能标记中的启用自动回发选项。）这会触发回发，只要 DropDownList 的选中用户更改项。 因此，当用户从下拉列表中选择新类别时回发将会随之发生，并将使用新选择的类别的产品更新 GridView。 （这是我在本教程中使用的方法）。
+- **添加一个按钮 Web 控件旁边 DropDownList。** 设置其`Text`刷新属性或类似的内容。 使用此方法时，用户将需要选择新类别，然后单击该按钮。 单击按钮将会导致回发，并更新 GridView，其中列出所选类别的产品。
 
-
-[![自动选择新的产品 （生成） 将导致回发时，更新 GridView](master-detail-filtering-with-a-dropdownlist-vb/_static/image29.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image28.png)
-
-**图 10**： 自动选择新的产品 （生成） 将导致回发时，更新 GridView ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image30.png))
+图 9 和 10 说明了操作中的母版/详细信息报表。
 
 
-## <a name="adding-a----choose-a-category----list-item"></a>添加"-选择一个类别-"列表项
+[![当首次访问的页面，显示饮料产品](master-detail-filtering-with-a-dropdownlist-vb/_static/image26.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image25.png)
 
-在第一次访问时`FilterByDropDownList.aspx`页上的 DropDownList 的第一个列表项 （饮料） 选择默认情况下，在 GridView 显示饮料产品的类别。 而不是显示第一个类别的产品，我们可能想要改为让 DropDownList 项选择该列表将显示为类似，"-选择一个类别-"。
-
-若要将新的列表项添加到下拉列表中，转到属性窗口，然后单击中的省略号`Items`属性。 添加新列表项与`Text`"-选择一个类别-"和`Value` `-1`。
+**图 9**： 当首次访问的页面，显示饮料产品 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image27.png))
 
 
-[![添加 a — 选择列表项的类别-](master-detail-filtering-with-a-dropdownlist-vb/_static/image32.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image31.png)
+[![选择一种新产品 （生成） 将自动导致回发，更新 GridView](master-detail-filtering-with-a-dropdownlist-vb/_static/image29.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image28.png)
 
-**图 11**： 添加-选择列表项的类别-([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image33.png))
+**图 10**： 选择一种新产品 （生成） 将自动导致回发，更新 GridView ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image30.png))
 
 
-或者，你可以通过将以下标记添加到下拉列表添加列表项：
+## <a name="adding-a----choose-a-category----list-item"></a>添加"--选择一个类别-"列表项
+
+首次访问时`FilterByDropDownList.aspx`页 DropDownList 的第一个列表项 （饮料） 选择默认情况下，在 GridView 中显示的饮料产品的类别。 而不是显示第一个类别的产品，我们可能想要改为具有 DropDownList 项选择的显示类似于"--选择一个类别-"的内容。
+
+若要向 DropDownList 添加新列表项，请转到属性窗口，然后单击中的椭圆`Items`属性。 添加的新列表项`Text`"--选择一个类别-"和`Value` `-1`。
+
+
+[![添加--选择列表项的 Category-](master-detail-filtering-with-a-dropdownlist-vb/_static/image32.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image31.png)
+
+**图 11**： 添加--列表项中选择一个类别-([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image33.png))
+
+
+或者，可以通过将以下标记添加到下拉列表添加列表项：
 
 
 [!code-aspx[Main](master-detail-filtering-with-a-dropdownlist-vb/samples/sample1.aspx)]
 
-此外，我们需要将设置的 DropDownList 控件的`AppendDataBoundItems`设为 True，因为当类别所绑定到的下拉列表从 ObjectDataSource 时它们将覆盖任何手动添加列表项，如果`AppendDataBoundItems`不 True。
+此外，我们需要设置 DropDownList 控件`AppendDataBoundItems`设为 True，因为从 ObjectDataSource 类别绑定到 DropDownList 时它们将覆盖任何手动添加列表项，如果`AppendDataBoundItems`不是 True。
 
 
 ![AppendDataBoundItems 属性设置为 True](master-detail-filtering-with-a-dropdownlist-vb/_static/image34.png)
 
-**图 12**： 设置`AppendDataBoundItems`属性为 True
+**图 12**： 设置`AppendDataBoundItems`属性设为 True
 
 
-之后这些更改，当第一次访问的页面的"-选择一个类别-"选项，并且不显示任何产品时。
+之后这些更改，首次访问的页面选择"--选择一个类别-"选项并不显示任何产品时。
 
 
-[![在初始页面加载显示要安装的产品](master-detail-filtering-with-a-dropdownlist-vb/_static/image36.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image35.png)
+[![无产品都会显示在加载初始页](master-detail-filtering-with-a-dropdownlist-vb/_static/image36.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image35.png)
 
-**图 13**： 显示在初始页负载否产品 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image37.png))
+**图 13**： 显示在初始页面负载否产品 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image37.png))
 
 
-因为"-选择一个类别-"列表项被选中时显示任何产品的原因是因为其值是`-1`和与数据库中有任何产品`CategoryID`的`-1`。 如果这是你想要然后完此时的行为 ！ 如果，但是，你想要显示*所有*类别中的选中"-选择一个类别-"列表项时，返回到`ProductsBLL`类和自定义`GetProductsByCategoryID(categoryID)`方法，以便它时，将调用`GetProducts()`方法如果传入中*`categoryID`* 参数小于零：
+因为选择了"--选择一个类别-"列表项时显示任何产品的原因是它的值是`-1`并且与数据库中有任何产品`CategoryID`的`-1`。 如果这是你想在此时完成，然后的行为 ！ 如果你想要显示的但是*所有*个类别时选择"--选择一个类别-"列表项时，返回到`ProductsBLL`类和自定义`GetProductsByCategoryID(categoryID)`方法，使其调用`GetProducts()`方法如果传递中*`categoryID`* 参数小于零：
 
 
 [!code-vb[Main](master-detail-filtering-with-a-dropdownlist-vb/samples/sample2.vb)]
 
-此处使用的方法是通过类似于我们用来显示所有供应商的方法返回[声明性参数](../basic-reporting/declarative-parameters-cs.md)教程，虽然此示例中，我们将使用值为`-1`以指示应为所有记录相对于检索`Nothing`。 这是因为*`categoryID`* 参数`GetProductsByCategoryID(categoryID)`方法要求为整数值通过在中，而声明性的参数教程中我们已传递的字符串输入参数中。
+此处使用的方法是类似于我们用来显示所有供应商的方法返回[声明性参数](../basic-reporting/declarative-parameters-cs.md)教程中，尽管我们对于此示例使用的值为`-1`指示应在所有记录而不是检索`Nothing`。 这是因为*`categoryID`* 参数的`GetProductsByCategoryID(categoryID)`方法需要作为整数值传递，而声明性参数教程中我们已传入的字符串输入参数。
 
-图 14 显示的屏幕截图`FilterByDropDownList.aspx`如果选择"-选择一个类别-"选项。 在这里，默认情况下，将显示所有产品，用户可以通过选择特定类别，缩小显示。
+图 14 显示了的屏幕截图`FilterByDropDownList.aspx`如果选择"--选择一个类别-"选项。 在这里，默认情况下显示的所有产品，用户可以通过选择特定类别，缩小显示。
 
 
 [![所有产品都现在列出默认情况下](master-detail-filtering-with-a-dropdownlist-vb/_static/image39.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image38.png)
@@ -164,15 +163,15 @@ ms.locfileid: "30880370"
 
 ## <a name="summary"></a>总结
 
-显示按层次结构相关的数据时，它通常有助于呈现使用主/详细信息报表，用户可以从中启动浏览的层次结构中按自上而下的数据以及向下钻取详细信息数据。 在本教程中，我们探讨生成一个简单的主/详细信息报告，显示所选的类别的产品。 这是使用完成的 DropDownList 的类别和一个 GridView 属于所选类别的产品的列表。
+显示按层次结构相关数据时，它通常用于呈现使用主/详细信息报表，用户可以从中启动仔细阅读的层次结构顶部的数据和向下钻取到详细信息数据。 在本教程中，我们探讨构建一个简单的母版/详细信息报告，显示所选的类别的产品。 这被通过使用 DropDownList 的类别和 GridView 属于所选类别的产品列表。
 
-在[下一教程](master-detail-filtering-with-two-dropdownlists-vb.md)我们将进一步的 DropDownList 接口一个步骤，使用两个 DropDownLists。
+在中[下一教程](master-detail-filtering-with-two-dropdownlists-vb.md)我们将进一步 DropDownList 接口的一个步骤，使用两个 Dropdownlist。
 
-尽情享受编程 ！
+快乐编程 ！
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七个 ASP/ASP.NET 书籍和的创始人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年使用与 Microsoft Web 技术。 Scott 的作用是作为独立的顾问、 培训师和编写器。 最新书籍是[ *Sam 教授自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以达到在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)或通过他的博客，其中可以找到在[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 > [!div class="step-by-step"]
 > [上一页](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md)

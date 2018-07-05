@@ -1,25 +1,24 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-deploy-a-web-application-during-a-team-build
-title: '[如何:]部署期间的团队项目生成的 Web 应用程序？ | Microsoft Docs'
+title: '[如何实现:]部署团队生成过程的 Web 应用程序？ | Microsoft Docs'
 author: pjhacker
-description: 此视频演示如何创建新的团队生成以及如何部署 Web 应用程序作为生成过程的一部分。 我们可以看到该包括 deploym...
+description: 此视频演示如何创建新的团队生成以及如何部署 Web 应用程序作为生成过程的一部分。 我们看到该包括便...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/01/2007
 ms.topic: article
 ms.assetid: 3c81ee94-4561-4267-864d-2656b33d95c9
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-deploy-a-web-application-during-a-team-build
 msc.type: video
-ms.openlocfilehash: a2e9c9495f2222db12eafacc70d37efa0254a5ec
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 04b2e5fb5d720ad41847e96700fb10ecc2002d57
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30895295"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37384324"
 ---
-<a name="how-do-i-deploy-a-web-application-during-a-team-build"></a>[如何:]部署期间的团队项目生成的 Web 应用程序？
+<a name="how-do-i-deploy-a-web-application-during-a-team-build"></a>[如何实现:]部署团队生成过程的 Web 应用程序？
 ====================
 通过[Paul 黑客](https://github.com/pjhacker)
 

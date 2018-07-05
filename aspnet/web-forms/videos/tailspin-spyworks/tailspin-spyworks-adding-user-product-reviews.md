@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/tailspin-spyworks/tailspin-spyworks-adding-user-product-reviews
-title: Tailspin Spyworks-添加用户产品评论 |Microsoft 文档
+title: Tailspin Spyworks-添加用户的产品评论 |Microsoft Docs
 author: JoeStagner
-description: Joe stagner 将将评审从客户添加到产品中 Tailspin Spyworks 示例 Web 窗体应用程序的详细信息页。
+description: Joe Stagner 将从客户评论添加到 Tailspin Spyworks 示例 Web 窗体应用程序中的产品详细信息页。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
 ms.topic: article
 ms.assetid: b2e8c3af-7dcf-432b-b01b-4740bcb00897
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-adding-user-product-reviews
 msc.type: video
-ms.openlocfilehash: 5b9efe98468ad59266293b13f5a66006219cb525
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 95481f2190d231aa0b50308dde7efe350b7712e8
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30893305"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37384863"
 ---
-<a name="tailspin-spyworks---adding-user-product-reviews"></a>Tailspin Spyworks-添加用户产品评论
+<a name="tailspin-spyworks---adding-user-product-reviews"></a>Tailspin Spyworks-添加用户的产品评论
 ====================
-通过[Joe stagner 将](https://github.com/JoeStagner)
+通过[Joe Stagner](https://github.com/JoeStagner)
 
-Joe stagner 将将评审从客户添加到产品中 Tailspin Spyworks 示例 Web 窗体应用程序的详细信息页。
+Joe Stagner 将从客户评论添加到 Tailspin Spyworks 示例 Web 窗体应用程序中的产品详细信息页。
 
 [&#9654;观看视频 （41 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-adding-user-product-reviews)
 

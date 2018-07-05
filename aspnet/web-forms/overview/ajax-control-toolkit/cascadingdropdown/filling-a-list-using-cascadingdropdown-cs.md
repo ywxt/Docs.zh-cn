@@ -1,73 +1,72 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-cs
-title: 填充使用 CascadingDropDown (C#) 的列表 |Microsoft 文档
+title: 使用 CascadingDropDown (C#) 填充列表 |Microsoft Docs
 author: wenz
-description: AJAX 控件工具包中的 CascadingDropDown 控件扩展的 DropDownList 控件，使得一个 DropDownList 负载中的更改关联中 anoth 值...
+description: AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，使得一个 DropDownList 负载中的更改关联中 anoth 值...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: f949aafa-fe57-43b0-b722-f0dd33a900be
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c9e47f6484e49013004bf15084f98440ee67558e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 12a4271b2697df8e24fca5f7ff30797b1e4e077a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30870968"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37385416"
 ---
-<a name="filling-a-list-using-cascadingdropdown-c"></a>填充使用 CascadingDropDown (C#) 的列表
+<a name="filling-a-list-using-cascadingdropdown-c"></a>使用 CascadingDropDown (C#) 填充列表
 ====================
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown0.cs.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown0CS.pdf)
 
-> AJAX 控件工具包中的 CascadingDropDown 控件扩展的 DropDownList 控件，使得一个 DropDownList 负载中的更改关联中另一个 DropDownList 值。 （例如，一个列表提供了一份我们状态，并且用处于该状态的主要城市然后填充下一个列表。）若要解决第一次质询是实际填充使用此控件的下拉列表。
+> AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，使得一个 DropDownList 负载中的更改关联中另一个 DropDownList 的值。 （例如，一个列表提供了一系列我们状态，和与该状态中的主要城市然后填充下一个列表。）若要解决的第一个挑战是实际填充下拉列表中使用此控件。
 
 
 ## <a name="overview"></a>概述
 
-AJAX 控件工具包中的 CascadingDropDown 控件扩展的 DropDownList 控件，使得一个 DropDownList 负载中的更改关联中另一个 DropDownList 值。 （例如，一个列表提供了一份我们状态，并且用处于该状态的主要城市然后填充下一个列表。）若要解决第一次质询是实际填充使用此控件的下拉列表。
+AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，使得一个 DropDownList 负载中的更改关联中另一个 DropDownList 的值。 （例如，一个列表提供了一系列我们状态，和与该状态中的主要城市然后填充下一个列表。）若要解决的第一个挑战是实际填充下拉列表中使用此控件。
 
 ## <a name="steps"></a>步骤
 
-为了激活 ASP.NET AJAX 和控件工具包中的功能`ScriptManager`必须在页面上任意位置放置控件 (但内`<form>`元素):
+若要激活 ASP.NET AJAX 控件工具包的功能`ScriptManager`控件必须添加到任何位置的页上 (但在`<form>`元素):
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample1.aspx)]
 
-然后，需要进行的 DropDownList 控制：
+然后，DropDownList 控件是必需的：
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample2.aspx)]
 
-对于此列表中，添加 CascadingDropDown 扩展程序。 它将发送的异步请求到 web 服务，然后将返回要在列表中显示的项的列表。 为此，需要设置以下 CascadingDropDown 属性：
+对于此列表中，添加一个 CascadingDropDown 扩展程序。 它将发送的异步请求到 web 服务，这将返回的条目显示在列表中的列表。 为实现此目的，需要设置以下 CascadingDropDown 属性：
 
-- `ServicePath`: 提供的列表项 web 服务的 URL
+- `ServicePath`: Web 服务提供的列表项的 URL
 - `ServiceMethod`: Web 方法提供的列表项
-- `TargetControlID`: ID 的下拉列表
-- `Category`： 提交给 web 方法调用时的类别信息
-- `PromptText`： 当以异步方式从服务器加载列表数据时显示的文本
+- `TargetControlID`: 下拉列表的 ID
+- `Category`： 提交到 web 方法调用时类别信息
+- `PromptText`： 以异步方式从服务器加载列表数据时显示的文本
 
-下面是有关标记`CascadingDropDown`元素。 C# 和 VB 的唯一区别是关联的 web 服务的名称：
+下面是针对标记`CascadingDropDown`元素。 C# 和 VB 的唯一区别是关联的 web 服务的名称：
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample3.aspx)]
 
-JavaScript 代码来自`CascadingDropDown`扩展程序调用 web 服务方法具有以下签名：
+来自的 JavaScript 代码`CascadingDropDown`扩展程序调用 web 服务方法具有以下签名：
 
 [!code-csharp[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample4.cs)]
 
-因此重要方面是该方法需要返回类型的数组`CascadingDropDownNameValue`（由 ASP.NET AJAX 控件工具包定义）。 在`CascadingDropDownNameValue`构造函数，第一个列表项的文本，然后其值都必须提供，就像`<option value="VALUE">NAME</option>`像在 HTML 中。 下面是一些示例数据：
+因此重要的方面是该方法需要返回类型的数组`CascadingDropDownNameValue`（由 ASP.NET AJAX 控件工具包定义）。 在中`CascadingDropDownNameValue`构造函数，首先必须提供的列表项的文本，然后其值，就像`<option value="VALUE">NAME</option>`像在 HTML 中。 下面是一些示例数据：
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample5.aspx)]
 
-加载浏览器中将触发三个供应商要填充的列表。
+正在加载页在浏览器中的将触发要填充与三个供应商的列表。
 
 
 [![列表已自动填充](filling-a-list-using-cascadingdropdown-cs/_static/image2.png)](filling-a-list-using-cascadingdropdown-cs/_static/image1.png)
 
-列表已自动填充 ([单击以查看实际尺寸的图像](filling-a-list-using-cascadingdropdown-cs/_static/image3.png))
+自动填充列表 ([单击此项可查看原尺寸图像](filling-a-list-using-cascadingdropdown-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [下一篇](using-cascadingdropdown-with-a-database-cs.md)

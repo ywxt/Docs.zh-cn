@@ -1,29 +1,28 @@
 ---
 uid: web-pages/videos/aspnet-razor-pages/working-with-images
-title: 使用图像 |Microsoft 文档
+title: 处理图像 |Microsoft Docs
 author: JoeStagner
-description: 如何使用图像的教程的视频伴奏
+description: 如何使用图像的教程视频伴奏
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2011
 ms.topic: article
 ms.assetid: 38e21ba3-9b08-4397-a8ab-45d0e45448af
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages/working-with-images
 msc.type: video
-ms.openlocfilehash: 711d0c980e08ee134abe0c8ae0ce64240b5dce6b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: afa9bfa1303e15679a26a7fdf90d69191d84aab9
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30896174"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37401176"
 ---
 <a name="working-with-images"></a>使用图像
 ====================
-通过[Joe stagner 将](https://github.com/JoeStagner)
+通过[Joe Stagner](https://github.com/JoeStagner)
 
-如何使用图像的教程的视频伴奏
+如何使用图像的教程视频伴奏
 
 [&#9654;观看视频 （26 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/working-with-images)
 

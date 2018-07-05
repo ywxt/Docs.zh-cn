@@ -1,29 +1,28 @@
 ---
 uid: web-pages/videos/aspnet-razor-pages/working-with-files
-title: 使用文件 |Microsoft 文档
+title: 使用文件 |Microsoft Docs
 author: JoeStagner
-description: 如何使用文件教程的视频伴奏
+description: 如何使用文件的教程视频伴奏
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2011
 ms.topic: article
 ms.assetid: 7245123a-244d-4665-bff4-5238d5ad3427
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages/working-with-files
 msc.type: video
-ms.openlocfilehash: 09c133abe4915450e07ab6a4d7e124cec6c6714a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ebdc1898f6958aa311391ac576f6eeb95ad9e807
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2018
-ms.locfileid: "30895098"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37385769"
 ---
 <a name="working-with-files"></a>使用文件
 ====================
-通过[Joe stagner 将](https://github.com/JoeStagner)
+通过[Joe Stagner](https://github.com/JoeStagner)
 
-如何使用文件教程的视频伴奏
+如何使用文件的教程视频伴奏
 
 [&#9654;观看视频 （23 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/working-with-files)
 

@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/creating-a-tasklist-application-with-aspnet-mvc
-title: 使用 ASP.NET MVC 创建 Tasklist 应用程序 |Microsoft 文档
+title: 使用 ASP.NET MVC 创建 Tasklist 应用程序 |Microsoft Docs
 author: StephenWalther
-description: Stephen Walther 生成整个 ASP.NET MVC 应用程序从头到尾完成。 本教程是人士尚不熟悉 ASP.NET MV 的极佳介绍...
+description: Stephen Walther 生成整个 ASP.NET MVC 应用程序从头到尾完成。 本教程是很棒的介绍不熟悉 ASP.NET MV 的人员...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/20/2008
 ms.topic: article
 ms.assetid: e2a72e8d-d8da-4505-aa0a-61c830c0954b
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/creating-a-tasklist-application-with-aspnet-mvc
 msc.type: video
-ms.openlocfilehash: 5902c7dde553aaa513e1445779a559a1ca1f17dd
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: e6f23918931fa6d5c4baf1de5f9878495638a0cd
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30870461"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37383008"
 ---
 <a name="creating-a-tasklist-application-with-aspnet-mvc"></a>使用 ASP.NET MVC 创建 Tasklist 应用程序
 ====================
 通过[Stephen Walther](https://github.com/StephenWalther)
 
-Stephen Walther 生成整个 ASP.NET MVC 应用程序从头到尾完成。 本教程是过程的，新的 ASP.NET MVC framework 并人员想要获取的意义上生成 ASP.NET MVC 应用程序的极佳简介。
+Stephen Walther 生成整个 ASP.NET MVC 应用程序从头到尾完成。 本教程是过程的谁不熟悉 ASP.NET MVC Framework 和想要了解的构建 ASP.NET MVC 应用程序的人员很棒的介绍。
 
 [&#9654;观看视频 （38 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-a-tasklist-application-with-aspnet-mvc)
 

@@ -1,6 +1,6 @@
 ---
 uid: web-pages/videos/aspnet-razor-pages/creating-a-consistent-look-part-1
-title: 创建一致的外观 （第 1 部分） |Microsoft 文档
+title: 创建一致外观 （第 1 部分） |Microsoft Docs
 author: JoeStagner
 description: 创建到视频伴奏一致查找教程 （第 1 部分）
 ms.author: aspnetcontent
@@ -9,19 +9,18 @@ ms.date: 02/25/2011
 ms.topic: article
 ms.assetid: 1057d00f-187f-4187-a674-194b6262c3a3
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages/creating-a-consistent-look-part-1
 msc.type: video
-ms.openlocfilehash: 8b5e77b87fd17f66bb7c680bbe2ffe8a802de4b6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 52d424dd8f2eaab0cea24e57ddd5839243a7744f
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30893477"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37384207"
 ---
-<a name="creating-a-consistent-look-part-1"></a>创建一致的外观 （第 1 部分）
+<a name="creating-a-consistent-look-part-1"></a>创建一致外观 （第 1 部分）
 ====================
-通过[Joe stagner 将](https://github.com/JoeStagner)
+通过[Joe Stagner](https://github.com/JoeStagner)
 
 创建到视频伴奏一致查找教程 （第 1 部分）
 

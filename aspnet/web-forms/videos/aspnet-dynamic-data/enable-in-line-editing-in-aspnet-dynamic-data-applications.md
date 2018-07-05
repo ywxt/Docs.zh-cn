@@ -1,6 +1,6 @@
 ---
 uid: web-forms/videos/aspnet-dynamic-data/enable-in-line-editing-in-aspnet-dynamic-data-applications
-title: 启用 ASP.NET 动态数据应用程序中的行中编辑 |Microsoft 文档
+title: 启用 ASP.NET 动态数据应用程序中的行中编辑 |Microsoft Docs
 author: JoeStagner
 description: 此视频将演示如何使用 URL 路由来启用 ASP.NET 动态数据应用程序中编辑行中。
 ms.author: aspnetcontent
@@ -9,19 +9,18 @@ ms.date: 10/23/2008
 ms.topic: article
 ms.assetid: a22201df-c031-4505-b3bf-9a0a9667d62b
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/enable-in-line-editing-in-aspnet-dynamic-data-applications
 msc.type: video
-ms.openlocfilehash: 1e248df1f78c360f0d92633b5c14c523983c2966
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 16fc853e652f0235b1e669748b93981c4617bb1a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30884563"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37387145"
 ---
-<a name="enable-in-line-editing-in-aspnet-dynamic-data-applications"></a>启用在行编辑 ASP.NET 动态数据应用程序中
+<a name="enable-in-line-editing-in-aspnet-dynamic-data-applications"></a>启用 ASP.NET 动态数据应用程序中编辑行中
 ====================
-通过[Joe stagner 将](https://github.com/JoeStagner)
+通过[Joe Stagner](https://github.com/JoeStagner)
 
 此视频将演示如何使用 URL 路由来启用 ASP.NET 动态数据应用程序中编辑行中。
 

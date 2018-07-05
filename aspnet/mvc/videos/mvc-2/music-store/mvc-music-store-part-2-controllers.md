@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-2/music-store/mvc-music-store-part-2-controllers
-title: MVC 音乐商店第 2 部分： 控制器 |Microsoft 文档
+title: MVC Music 商店第 2 部分： 控制器 |Microsoft Docs
 author: jongalloway
-description: Jon 通过创建一些基本的控制器操作继续执行 MVC 音乐商店教程。
+description: Jon 将继续通过创建一些基本的控制器操作的 MVC Music 商店教程。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/22/2010
 ms.topic: article
 ms.assetid: 2849e269-af4f-4e87-a07e-0b9cb01b4241
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/music-store/mvc-music-store-part-2-controllers
 msc.type: video
-ms.openlocfilehash: 5a07f528b80b273d0b01ecf1b0e1f38d65830e90
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 9da01a57255917715b48d6e04c77301928f7ef94
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871059"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37399794"
 ---
-<a name="mvc-music-store-part-2-controllers"></a>MVC 音乐商店第 2 部分： 控制器
+<a name="mvc-music-store-part-2-controllers"></a>MVC Music 商店第 2 部分： 控制器
 ====================
 通过[Jon Galloway](https://github.com/jongalloway)
 
-Jon 通过创建一些基本的控制器操作继续执行 MVC 音乐商店教程。
+Jon 将继续通过创建一些基本的控制器操作的 MVC Music 商店教程。
 
 [&#9654;观看视频 （6 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/mvc-music-store-part-2-controllers)
 

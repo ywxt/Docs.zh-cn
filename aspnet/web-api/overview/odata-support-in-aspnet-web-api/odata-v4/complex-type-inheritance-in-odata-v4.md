@@ -1,31 +1,30 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/complex-type-inheritance-in-odata-v4
-title: 与 ASP.NET Web API OData v4 中的复杂类型继承 |Microsoft 文档
+title: 使用 ASP.NET Web API OData v4 中的复杂类型继承 |Microsoft Docs
 author: microsoft
-description: OData v4 规范中，根据复杂类型可以继承另一种复杂类型。 （复杂类型是结构化的类型没有键。）Web API...
+description: 根据 OData v4 规范中，可以从另一种复杂类型继承的复杂类型。 （一种复杂类型是结构化的类型没有键。）Web API...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/16/2014
 ms.topic: article
 ms.assetid: a00d3600-9c2a-41bc-9460-06cc527904e2
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/complex-type-inheritance-in-odata-v4
 msc.type: authoredcontent
-ms.openlocfilehash: be2dbfa82b99b6c48928e4e767716852c14a463b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 84a887b445959c4aa6d1ee372f067f93cd725d77
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26508416"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37372052"
 ---
-<a name="complex-type-inheritance-in-odata-v4-with-aspnet-web-api"></a>与 ASP.NET Web API OData v4 中的复杂类型继承
+<a name="complex-type-inheritance-in-odata-v4-with-aspnet-web-api"></a>使用 ASP.NET Web API OData v4 中的复杂类型继承
 ====================
-通过[Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
-> 根据 OData v4[规范](http://www.odata.org/documentation/odata-version-4-0/)，复杂类型可以继承另一种复杂类型。 (A*复杂*类型是结构化的类型没有键。)Web API OData 5.3 支持复杂类型继承。
+> 根据 OData v4[规范](http://www.odata.org/documentation/odata-version-4-0/)，可以从另一种复杂类型继承的复杂类型。 (A*复杂*类型是结构化的类型没有键。)Web API OData 5.3 支持复杂类型继承。
 > 
-> 本主题演示如何生成具有复杂的继承类型的实体数据模型 (EDM)。 有关完整的源代码，请参阅[OData 复杂类型继承示例](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v4/ODataComplexTypeInheritanceSample/ReadMe.txt)。
+> 本主题演示如何生成实体数据模型 (EDM) 的复杂的继承类型。 有关完整的源代码，请参阅[OData 复杂类型继承示例](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v4/ODataComplexTypeInheritanceSample/ReadMe.txt)。
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
 > 
@@ -40,19 +39,19 @@ ms.locfileid: "26508416"
 
 ![](complex-type-inheritance-in-odata-v4/_static/image1.png)
 
-`Shape`是抽象的复杂类型。 `Rectangle``Triangle`，和`Circle`复杂类型派生自`Shape`，和`RoundRectangle`派生自`Rectangle`。 `Window`是一个实体类型，包含`Shape`实例。
+`Shape` 是抽象的复杂类型。 `Rectangle``Triangle`，并`Circle`复杂类型派生自`Shape`，和`RoundRectangle`派生`Rectangle`。 `Window` 是一个实体类型，包含`Shape`实例。
 
 以下是定义这些类型的 CLR 类。
 
 [!code-csharp[Main](complex-type-inheritance-in-odata-v4/samples/sample1.cs)]
 
-## <a name="build-the-edm-model"></a>生成 EDM 模型
+## <a name="build-the-edm-model"></a>生成的 EDM 模型
 
 若要创建 EDM，可以使用**ODataConventionModelBuilder**，，推断从 CLR 类型的继承关系。
 
 [!code-csharp[Main](complex-type-inheritance-in-odata-v4/samples/sample2.cs)]
 
-你也可以生成 EDM 显式使用**ODataModelBuilder**。 这将更多代码，但使你更好地控制 EDM。
+您还可以构建 EDM 显式使用**ODataModelBuilder**。 这需要更多代码，但提供对 EDM 的更多控制。
 
 [!code-csharp[Main](complex-type-inheritance-in-odata-v4/samples/sample3.cs)]
 
@@ -60,19 +59,19 @@ ms.locfileid: "26508416"
 
 ## <a name="metadata-document"></a>元数据文档
 
-此处是 OData 元数据文档时，显示复杂类型继承。
+下面是显示复杂类型继承的 OData 元数据文档。
 
 [!code-xml[Main](complex-type-inheritance-in-odata-v4/samples/sample4.xml?highlight=13,17,25,30)]
 
-从元数据文档中，你可以看到:
+从元数据文档中，您可以看到：
 
-- `Shape`复杂类型为抽象。
-- `Rectangle`， `Triangle`，和`Circle`复杂类型具有的基类型`Shape`。
+- `Shape`复杂类型是抽象的。
+- `Rectangle`， `Triangle`，并`Circle`复杂类型具有基类型`Shape`。
 - `RoundRectangle`类型具有基类型`Rectangle`。
 
-## <a name="casting-complex-types"></a>强制转换复杂类型
+## <a name="casting-complex-types"></a>强制转换的复杂类型
 
-现在支持复杂类型上进行转换。 例如，下面的查询强制转换`Shape`到`Rectangle`。
+现在支持对复杂类型强制转换。 例如，下面的查询强制转换`Shape`到`Rectangle`。
 
 [!code-console[Main](complex-type-inheritance-in-odata-v4/samples/sample5.cmd)]
 

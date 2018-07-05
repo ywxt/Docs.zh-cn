@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/net-4/routing/how-do-i-use-routing-with-aspnet-web-forms
-title: 我如何： 使用 ASP.NET Web 窗体路由使用？ | Microsoft Docs
+title: 如何实现： 使用 ASP.NET Web 窗体路由使用？ | Microsoft Docs
 author: rick-anderson
-description: 在本视频中 Chris Pels 演示如何实现 ASP.NET 4 中的 Web 窗体的路由。 首先，路由 URL 的概念被相比将 URL 映射到一个 p...
+description: 在本视频中 Chris Pels 演示如何实现的 ASP.NET 4 中的 Web 窗体路由。 首先，路由 URL 的概念进行比较的 URL 映射到 p...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/15/2010
 ms.topic: article
 ms.assetid: a3ab6cd9-8f71-4b73-9336-21c0de078269
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/routing/how-do-i-use-routing-with-aspnet-web-forms
 msc.type: video
-ms.openlocfilehash: b268bd628d3b0108d783023cd30d21b43c1b3758
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 8ef8edd68d9918817df564227d1f37716d49d132
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30896236"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37383446"
 ---
-<a name="how-do-i-use-routing-with-aspnet-web-forms"></a>我如何： 使用 ASP.NET Web 窗体路由使用？
+<a name="how-do-i-use-routing-with-aspnet-web-forms"></a>如何实现： 使用 ASP.NET Web 窗体路由使用？
 ====================
 通过[Chris Pels](https://twitter.com/chrispels)
 
-在本视频中 Chris Pels 演示如何实现 ASP.NET 4 中的 Web 窗体的路由。 首先，路由 URL 的概念与映射到的物理文件中的站点的 URL 进行比较。 然后，示例路由 URL 定义在 global.asax 文件在应用程序\_开始事件处理程序。 路由包含用户可以输入在 URL 中的参数化的值。 然后创建一个示例页并在页中提取的路由参数值\_Load 事件处理程序。 接下来，第二个路由定义了多个参数和同一页上，作为初始路由的路由。 页\_Load 事件处理程序得到扩展，提取其他路由参数值，并显示根据哪些值已传递到页面的不同信息。
+在本视频中 Chris Pels 演示如何实现的 ASP.NET 4 中的 Web 窗体路由。 首先，与映射到该站点中的物理文件的 URL 的路由 URL 的概念进行比较。 然后，示例路由的 URL 在 global.asax 中定义的文件应用程序\_开始事件处理程序。 该路由包含用户可以在 URL 中输入的参数化的值。 然后创建一个示例页面和路由参数值在页面中提取\_Load 事件处理程序。 接下来，第二个路由定义的具有多个参数，并且与初始路由相同的页面的路由。 页面\_Load 事件处理程序将展开以提取附加路由参数值，并显示不同的信息取决于哪些值已传递到页。
 
 [&#9654;观看视频 （15 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-routing-with-aspnet-web-forms)
 

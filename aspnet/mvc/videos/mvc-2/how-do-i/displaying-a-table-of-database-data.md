@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/displaying-a-table-of-database-data
-title: 显示数据库数据的表 |Microsoft 文档
+title: 显示数据库数据表 |Microsoft Docs
 author: StephenWalther
-description: 需要一个 ASP.NET MVC 视图中显示一组数据库记录？ 了解 HTML 表中显示的记录的两种方法。 了解如何执行所有 t...
+description: 需要在 ASP.NET MVC 视图中显示的一组数据库记录？ 了解 HTML 表中显示的记录的两种方法。 了解如何执行所有 t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/20/2008
 ms.topic: article
 ms.assetid: 00a12df9-1f89-4fc5-9d43-19a8d5b80392
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/displaying-a-table-of-database-data
 msc.type: video
-ms.openlocfilehash: a8c3bd87273323d570baeb662ec70083750914e8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1486ff9f87bffea27f42d2172454d61a84850ea1
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30867731"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37401148"
 ---
-<a name="displaying-a-table-of-database-data"></a>显示数据库数据的表
+<a name="displaying-a-table-of-database-data"></a>显示数据库数据表
 ====================
 通过[Stephen Walther](https://github.com/StephenWalther)
 
-需要一个 ASP.NET MVC 视图中显示一组数据库记录？ 了解 HTML 表中显示的记录的两种方法。 了解如何执行所有格式设置的内联。 你还了解了如何创建一个包含 ASP.NET MVC 用户控件模板。
+需要在 ASP.NET MVC 视图中显示的一组数据库记录？ 了解 HTML 表中显示的记录的两种方法。 了解如何执行所有格式设置的内联。 你还了解如何使用 ASP.NET MVC 用户控件创建模板。
 
 [&#9654;观看视频 （15 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/displaying-a-table-of-database-data)
 

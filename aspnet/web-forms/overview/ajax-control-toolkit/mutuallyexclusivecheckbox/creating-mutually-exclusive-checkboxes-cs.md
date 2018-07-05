@@ -1,23 +1,22 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-cs
-title: 创建互斥复选框 (C#) |Microsoft 文档
+title: 创建互斥复选框 (C#) |Microsoft Docs
 author: wenz
-description: 如果可以选择仅一组的选项之一，通常将使用单选按钮。 但没有一个缺点： 选择一个单选按钮组中的后，...
+description: 可以选择仅一组选项之一，通常用于单选按钮。 但还有一个缺点： 选择一个单选按钮组中的后，...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: 8e11b813-ba0d-4c29-b0f8-f65db6dbef1e
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c3a5abe7d02ace16f4aaad8d4adfbd0cba8e84ef
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b5850c2e8d053d61e6230d3a24ddbbfe215bc531
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871800"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37396118"
 ---
 <a name="creating-mutually-exclusive-checkboxes-c"></a>创建互斥复选框 (C#)
 ====================
@@ -25,35 +24,35 @@ ms.locfileid: "30871800"
 
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/MutuallyExclusiveCheckBox0.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/mutuallyexclusivecheckbox0CS.pdf)
 
-> 如果可以选择仅一组的选项之一，通常将使用单选按钮。 但没有一个缺点： 选择一个单选按钮组中的后，不能取消选中所有单选按钮。 复选框在任何时候可以是未选中状态，但是不互相排斥。 本教程提供这两种方法的最佳： 是互斥的复选框。
+> 可以选择仅一组选项之一，通常用于单选按钮。 但还有一个缺点： 选择一个单选按钮组中的后，不能取消选中所有单选按钮。 复选框可以在任何时候是未选中状态，但是不是互相排斥。 本教程提供了最佳的这两种方法： 是互斥的复选框。
 
 
 ## <a name="overview"></a>概述
 
-如果可以选择仅一组的选项之一，通常将使用单选按钮。 但没有一个缺点： 选择一个单选按钮组中的后，不能取消选中所有单选按钮。 复选框在任何时候可以是未选中状态，但是不互相排斥。 本教程提供这两种方法的最佳： 是互斥的复选框。
+可以选择仅一组选项之一，通常用于单选按钮。 但还有一个缺点： 选择一个单选按钮组中的后，不能取消选中所有单选按钮。 复选框可以在任何时候是未选中状态，但是不是互相排斥。 本教程提供了最佳的这两种方法： 是互斥的复选框。
 
 ## <a name="steps"></a>步骤
 
-ASP.NET AJAX 控件工具包中包含的 MutuallyExclusiveCheckBox 扩展程序。 这使程序员要分配给组名称的任何复选框 (`Key`属性)。 从同一组中的所有复选框，只有一个可能一次选择。
+ASP.NET AJAX 控件工具包包含 MutuallyExclusiveCheckBox 扩展器。 这使程序员可以分配给组名称的任何复选框 (`Key`属性)。 从同一组中的所有复选框，只有一个可能一次选择。
 
-让我们开始使用新的 ASP.NET 页上将两个复选框。 可以有多个，但其中两个已足够用于演示原则：
+让我们开始新的 ASP.NET 页面上放置两个复选框。 可以有多个，但其中的两个已足够用于演示的原则：
 
 [!code-aspx[Main](creating-mutually-exclusive-checkboxes-cs/samples/sample1.aspx)]
 
-为这两个复选框，必须将在页面上置于 MutuallyExclusiveCheckBoxExtender 控件。 这两个键属性需要具有相同的值，就像 HTML 单选按钮元素的属性必须相同来表示它们所属的组的值。 扩展程序的 TargetControlID 属性指向的复选框的 ID。
+对于这两个复选框，必须将页上放 MutuallyExclusiveCheckBoxExtender 控件。 这两个键属性需要具有相同的值，就像 HTML 单选按钮元素的属性必须完全相同，表示一的组所属的值。 扩展器的 TargetControlID 属性指向复选框的 ID。
 
 [!code-aspx[Main](creating-mutually-exclusive-checkboxes-cs/samples/sample2.aspx)]
 
-最后，包括 ASP.NET AJAX`ScriptManager`所需的 ASP.NET AJAX 控件工具包的所有元素：
+最后，包括 ASP.NET AJAX`ScriptManager`所需 ASP.NET AJAX 控件工具包中的所有元素：
 
 [!code-aspx[Main](creating-mutually-exclusive-checkboxes-cs/samples/sample3.aspx)]
 
-保存并运行此页： 你可以检查并取消选中这两个复选框，但是在任何时间都可以两个复选框检查。
+保存并运行此页： 您可以选中和取消选中这两个复选框，但是在任何时间可以两个复选框进行检查。
 
 
-[![只有一个复选框可以检查一次](creating-mutually-exclusive-checkboxes-cs/_static/image2.png)](creating-mutually-exclusive-checkboxes-cs/_static/image1.png)
+[![可以一次选中一个复选框](creating-mutually-exclusive-checkboxes-cs/_static/image2.png)](creating-mutually-exclusive-checkboxes-cs/_static/image1.png)
 
-只有一个复选框可以检查一次 ([单击以查看实际尺寸的图像](creating-mutually-exclusive-checkboxes-cs/_static/image3.png))
+可以一次选中一个复选框 ([单击此项可查看原尺寸图像](creating-mutually-exclusive-checkboxes-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [下一篇](creating-mutually-exclusive-checkboxes-vb.md)
