@@ -1,75 +1,74 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-vb
-title: 调整 Z-index DropShadow (VB) |Microsoft 文档
+title: 调整 DropShadow (VB) 的 Z-索引 |Microsoft Docs
 author: wenz
-description: AJAX 控件工具包中的 DropShadow 控件扩展带投影一个面板。 但是此卷影有时与其他控件，以便 insta 冲突...
+description: AJAX 控件工具包中的 DropShadow 控件扩展具有投影的面板。 但是此卷影有时会与其他控件中，已为冲突...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: ecb004b5-82c0-44fb-bcaf-233fffac6195
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b484dc6bfa6f67bd6b70f7c36c2eb2ec7143edaf
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: afc51c6e52a08f46ffc44cc462bdf9a9d5c8ef43
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871293"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37397537"
 ---
-<a name="adjusting-the-z-index-of-a-dropshadow-vb"></a><span data-ttu-id="d0dcf-104">调整 Z-index DropShadow (VB)</span><span class="sxs-lookup"><span data-stu-id="d0dcf-104">Adjusting the Z-Index of a DropShadow (VB)</span></span>
+<a name="adjusting-the-z-index-of-a-dropshadow-vb"></a><span data-ttu-id="4d844-104">调整 DropShadow (VB) 的 Z-索引</span><span class="sxs-lookup"><span data-stu-id="4d844-104">Adjusting the Z-Index of a DropShadow (VB)</span></span>
 ====================
-<span data-ttu-id="d0dcf-105">通过[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="d0dcf-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="4d844-105">通过[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="4d844-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="d0dcf-106">[下载代码](http://download.microsoft.com/download/5/1/6/51652a81-500b-4f6b-88d3-617103e7941e/DropShadow1.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dropshadow1VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="d0dcf-106">[Download Code](http://download.microsoft.com/download/5/1/6/51652a81-500b-4f6b-88d3-617103e7941e/DropShadow1.vb.zip) or [Download PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dropshadow1VB.pdf)</span></span>
+<span data-ttu-id="4d844-106">[下载代码](http://download.microsoft.com/download/5/1/6/51652a81-500b-4f6b-88d3-617103e7941e/DropShadow1.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dropshadow1VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="4d844-106">[Download Code](http://download.microsoft.com/download/5/1/6/51652a81-500b-4f6b-88d3-617103e7941e/DropShadow1.vb.zip) or [Download PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dropshadow1VB.pdf)</span></span>
 
-> <span data-ttu-id="d0dcf-107">AJAX 控件工具包中的 DropShadow 控件扩展带投影一个面板。</span><span class="sxs-lookup"><span data-stu-id="d0dcf-107">The DropShadow control in the AJAX Control Toolkit extends a panel with a drop shadow.</span></span> <span data-ttu-id="d0dcf-108">但是此卷影有时与其他控件，例如 ASP.NET 菜单控件冲突。</span><span class="sxs-lookup"><span data-stu-id="d0dcf-108">However this shadow sometimes conflicts with other controls, for instance the ASP.NET Menu control.</span></span> <span data-ttu-id="d0dcf-109">当一个菜单项将弹出，似乎后面投影。</span><span class="sxs-lookup"><span data-stu-id="d0dcf-109">When a menu entry pops up, it appears behind the drop shadow.</span></span>
+> <span data-ttu-id="4d844-107">AJAX 控件工具包中的 DropShadow 控件扩展具有投影的面板。</span><span class="sxs-lookup"><span data-stu-id="4d844-107">The DropShadow control in the AJAX Control Toolkit extends a panel with a drop shadow.</span></span> <span data-ttu-id="4d844-108">但是此卷影有时会与其他控件，例如 ASP.NET 菜单控件冲突。</span><span class="sxs-lookup"><span data-stu-id="4d844-108">However this shadow sometimes conflicts with other controls, for instance the ASP.NET Menu control.</span></span> <span data-ttu-id="4d844-109">当菜单项会弹出，随即出现之后投影。</span><span class="sxs-lookup"><span data-stu-id="4d844-109">When a menu entry pops up, it appears behind the drop shadow.</span></span>
 
 
-## <a name="overview"></a><span data-ttu-id="d0dcf-110">概述</span><span class="sxs-lookup"><span data-stu-id="d0dcf-110">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="4d844-110">概述</span><span class="sxs-lookup"><span data-stu-id="4d844-110">Overview</span></span>
 
-<span data-ttu-id="d0dcf-111">AJAX 控件工具包中的 DropShadow 控件扩展带投影一个面板。</span><span class="sxs-lookup"><span data-stu-id="d0dcf-111">The DropShadow control in the AJAX Control Toolkit extends a panel with a drop shadow.</span></span> <span data-ttu-id="d0dcf-112">但是此卷影有时与其他控件，例如 ASP.NET 菜单控件冲突。</span><span class="sxs-lookup"><span data-stu-id="d0dcf-112">However this shadow sometimes conflicts with other controls, for instance the ASP.NET Menu control.</span></span> <span data-ttu-id="d0dcf-113">当一个菜单项将弹出，似乎后面投影。</span><span class="sxs-lookup"><span data-stu-id="d0dcf-113">When a menu entry pops up, it appears behind the drop shadow.</span></span>
+<span data-ttu-id="4d844-111">AJAX 控件工具包中的 DropShadow 控件扩展具有投影的面板。</span><span class="sxs-lookup"><span data-stu-id="4d844-111">The DropShadow control in the AJAX Control Toolkit extends a panel with a drop shadow.</span></span> <span data-ttu-id="4d844-112">但是此卷影有时会与其他控件，例如 ASP.NET 菜单控件冲突。</span><span class="sxs-lookup"><span data-stu-id="4d844-112">However this shadow sometimes conflicts with other controls, for instance the ASP.NET Menu control.</span></span> <span data-ttu-id="4d844-113">当菜单项会弹出，随即出现之后投影。</span><span class="sxs-lookup"><span data-stu-id="4d844-113">When a menu entry pops up, it appears behind the drop shadow.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="d0dcf-114">步骤</span><span class="sxs-lookup"><span data-stu-id="d0dcf-114">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="4d844-114">步骤</span><span class="sxs-lookup"><span data-stu-id="4d844-114">Steps</span></span>
 
-<span data-ttu-id="d0dcf-115">与面板本身，以便面板包含足够多的效果是可见的文本包含足够多的文本，代码便会开始：</span><span class="sxs-lookup"><span data-stu-id="d0dcf-115">The code commences with the Panel itself, containing enough text so that the panel contains enough text for the effect to be visible:</span></span>
+<span data-ttu-id="4d844-115">代码开始与面板本身，以便在面板包含足够多的效果是可见的文本包含足够多的文本：</span><span class="sxs-lookup"><span data-stu-id="4d844-115">The code commences with the Panel itself, containing enough text so that the panel contains enough text for the effect to be visible:</span></span>
 
 [!code-aspx[Main](adjusting-the-z-index-of-a-dropshadow-vb/samples/sample1.aspx)]
 
-<span data-ttu-id="d0dcf-116">直接前后放置另一个面板`panelShadow`面板。</span><span class="sxs-lookup"><span data-stu-id="d0dcf-116">Another panel is placed directly before the `panelShadow` panel.</span></span> <span data-ttu-id="d0dcf-117">它包含与水平方向一个菜单，以便通过显示菜单项 (确切地说： 下)`dropShadow`面板):</span><span class="sxs-lookup"><span data-stu-id="d0dcf-117">It contains a menu with horizontal orientation so that menu entries appear over (or rather: under) the `dropShadow` panel):</span></span>
+<span data-ttu-id="4d844-116">紧前面放置另一个面板`panelShadow`面板。</span><span class="sxs-lookup"><span data-stu-id="4d844-116">Another panel is placed directly before the `panelShadow` panel.</span></span> <span data-ttu-id="4d844-117">它包含一个具有水平方向，以便通过显示菜单项 (确切地说： 下)`dropShadow`面板):</span><span class="sxs-lookup"><span data-stu-id="4d844-117">It contains a menu with horizontal orientation so that menu entries appear over (or rather: under) the `dropShadow` panel):</span></span>
 
 [!code-aspx[Main](adjusting-the-z-index-of-a-dropshadow-vb/samples/sample2.aspx)]
 
-<span data-ttu-id="d0dcf-118">然后，`DropShadowExtender`加以扩展`panelShadow`面板与投影效果：</span><span class="sxs-lookup"><span data-stu-id="d0dcf-118">Then, the `DropShadowExtender` is added to extend the `panelShadow` panel with a drop shadow effect:</span></span>
+<span data-ttu-id="4d844-118">然后，将`DropShadowExtender`添加扩展`panelShadow`面板中的投影效果：</span><span class="sxs-lookup"><span data-stu-id="4d844-118">Then, the `DropShadowExtender` is added to extend the `panelShadow` panel with a drop shadow effect:</span></span>
 
 [!code-aspx[Main](adjusting-the-z-index-of-a-dropshadow-vb/samples/sample3.aspx)]
 
-<span data-ttu-id="d0dcf-119">最后，ASP.NET AJAX`ScriptManager`控件使控件工具包工作：</span><span class="sxs-lookup"><span data-stu-id="d0dcf-119">Finally, the ASP.NET AJAX `ScriptManager` control enables the Control Toolkit to work:</span></span>
+<span data-ttu-id="4d844-119">最后，ASP.NET AJAX`ScriptManager`控件使控件工具包，以便：</span><span class="sxs-lookup"><span data-stu-id="4d844-119">Finally, the ASP.NET AJAX `ScriptManager` control enables the Control Toolkit to work:</span></span>
 
 [!code-aspx[Main](adjusting-the-z-index-of-a-dropshadow-vb/samples/sample4.aspx)]
 
-<span data-ttu-id="d0dcf-120">运行此脚本时的菜单项将显示在面板的下方。</span><span class="sxs-lookup"><span data-stu-id="d0dcf-120">When you run this script, the menu entries appear underneath the panel.</span></span> <span data-ttu-id="d0dcf-121">但是菜单使用 CSS 类`panel`其中只需定义以下两项操作，以使显示于另一个面板的元素：</span><span class="sxs-lookup"><span data-stu-id="d0dcf-121">However the menu uses the CSS class `panel` where you just have to define two things to make elements appear in front of the other panel:</span></span>
+<span data-ttu-id="4d844-120">当运行此脚本时，菜单项显示在面板的下方。</span><span class="sxs-lookup"><span data-stu-id="4d844-120">When you run this script, the menu entries appear underneath the panel.</span></span> <span data-ttu-id="4d844-121">但是，菜单上使用的 CSS 类`panel`其中只需定义两件事要使元素显示在其他面板：</span><span class="sxs-lookup"><span data-stu-id="4d844-121">However the menu uses the CSS class `panel` where you just have to define two things to make elements appear in front of the other panel:</span></span>
 
-- <span data-ttu-id="d0dcf-122">相对定位</span><span class="sxs-lookup"><span data-stu-id="d0dcf-122">Relative positioning</span></span>
-- <span data-ttu-id="d0dcf-123">正 z 索引</span><span class="sxs-lookup"><span data-stu-id="d0dcf-123">A positive z-index</span></span>
+- <span data-ttu-id="4d844-122">相对定位</span><span class="sxs-lookup"><span data-stu-id="4d844-122">Relative positioning</span></span>
+- <span data-ttu-id="4d844-123">正 z 索引</span><span class="sxs-lookup"><span data-stu-id="4d844-123">A positive z-index</span></span>
 
 [!code-css[Main](adjusting-the-z-index-of-a-dropshadow-vb/samples/sample5.css)]
 
-<span data-ttu-id="d0dcf-124">然后，`DropShadowExtender`控件不会与菜单控件不再冲突。</span><span class="sxs-lookup"><span data-stu-id="d0dcf-124">Then, the `DropShadowExtender` control does not conflict any longer with the Menu control.</span></span>
+<span data-ttu-id="4d844-124">然后，`DropShadowExtender`控件不与菜单控件不再冲突。</span><span class="sxs-lookup"><span data-stu-id="4d844-124">Then, the `DropShadowExtender` control does not conflict any longer with the Menu control.</span></span>
 
 
-<span data-ttu-id="d0dcf-125">[![之前： 菜单项不可见](adjusting-the-z-index-of-a-dropshadow-vb/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="d0dcf-125">[![Before: The menu entry is not visible](adjusting-the-z-index-of-a-dropshadow-vb/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image1.png)</span></span>
+<span data-ttu-id="4d844-125">[![之前: 菜单项不可见](adjusting-the-z-index-of-a-dropshadow-vb/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="4d844-125">[![Before: The menu entry is not visible](adjusting-the-z-index-of-a-dropshadow-vb/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image1.png)</span></span>
 
-<span data-ttu-id="d0dcf-126">之前： 菜单项是不可见 ([单击以查看实际尺寸的图像](adjusting-the-z-index-of-a-dropshadow-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="d0dcf-126">Before: The menu entry is not visible ([Click to view full-size image](adjusting-the-z-index-of-a-dropshadow-vb/_static/image3.png))</span></span>
+<span data-ttu-id="4d844-126">之前: 菜单项不可见 ([单击此项可查看原尺寸图像](adjusting-the-z-index-of-a-dropshadow-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="4d844-126">Before: The menu entry is not visible ([Click to view full-size image](adjusting-the-z-index-of-a-dropshadow-vb/_static/image3.png))</span></span>
 
 
-<span data-ttu-id="d0dcf-127">[![菜单项的显示之后：](adjusting-the-z-index-of-a-dropshadow-vb/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image4.png)</span><span class="sxs-lookup"><span data-stu-id="d0dcf-127">[![After: The menu entry appears](adjusting-the-z-index-of-a-dropshadow-vb/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image4.png)</span></span>
+<span data-ttu-id="4d844-127">[![菜单项显示之后：](adjusting-the-z-index-of-a-dropshadow-vb/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image4.png)</span><span class="sxs-lookup"><span data-stu-id="4d844-127">[![After: The menu entry appears](adjusting-the-z-index-of-a-dropshadow-vb/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image4.png)</span></span>
 
-<span data-ttu-id="d0dcf-128">之后： 显示菜单项 ([单击以查看实际尺寸的图像](adjusting-the-z-index-of-a-dropshadow-vb/_static/image6.png))</span><span class="sxs-lookup"><span data-stu-id="d0dcf-128">After: The menu entry appears ([Click to view full-size image](adjusting-the-z-index-of-a-dropshadow-vb/_static/image6.png))</span></span>
+<span data-ttu-id="4d844-128">之后： 将显示菜单项 ([单击此项可查看原尺寸图像](adjusting-the-z-index-of-a-dropshadow-vb/_static/image6.png))</span><span class="sxs-lookup"><span data-stu-id="4d844-128">After: The menu entry appears ([Click to view full-size image](adjusting-the-z-index-of-a-dropshadow-vb/_static/image6.png))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="d0dcf-129">[上一页](manipulating-dropshadow-properties-from-client-code-cs.md)
-> [下一页](manipulating-dropshadow-properties-from-client-code-vb.md)</span><span class="sxs-lookup"><span data-stu-id="d0dcf-129">[Previous](manipulating-dropshadow-properties-from-client-code-cs.md)
+> <span data-ttu-id="4d844-129">[上一页](manipulating-dropshadow-properties-from-client-code-cs.md)
+> [下一页](manipulating-dropshadow-properties-from-client-code-vb.md)</span><span class="sxs-lookup"><span data-stu-id="4d844-129">[Previous](manipulating-dropshadow-properties-from-client-code-cs.md)
 [Next](manipulating-dropshadow-properties-from-client-code-vb.md)</span></span>
