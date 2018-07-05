@@ -4,19 +4,16 @@ title: 创建用于 ASP.NET MVC 应用程序 (4 个 10) 的更复杂的数据模
 author: tdykstra
 description: Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 的 ASP.NET MVC 4 应用程序...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/30/2013
-ms.topic: article
 ms.assetid: f81f3d80-3674-4d8e-a9b1-87feed1a93c9
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: a7fbcf8dc41086764e1e8ba9055929bde132192a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: beda9585a3050e35c250d0cb7ab1dc8a464efa3d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37375734"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816238"
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>创建用于 ASP.NET MVC 应用程序 (4 个 10) 的更复杂的数据模型
 ====================

@@ -4,19 +4,16 @@ title: 控制显示数据 Web 中的二进制数据 (C#) |Microsoft Docs
 author: rick-anderson
 description: 在本教程中我们看一下在 Web 页上，包括显示的图像文件和下载链接 f 的预配上显示二进制数据的选项...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/27/2007
-ms.topic: article
 ms.assetid: 5cbeb9f8-5f92-4ba8-87ae-0b4d460ae6d4
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7c3e2b75b74198877b19e0be3a6428cabaf2cf25
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 62cc931b670931677b4e9632dccd6634715b3c71
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366765"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814849"
 ---
 <a name="displaying-binary-data-in-the-data-web-controls-c"></a>显示数据 Web 控件 (C#) 中的二进制数据
 ====================

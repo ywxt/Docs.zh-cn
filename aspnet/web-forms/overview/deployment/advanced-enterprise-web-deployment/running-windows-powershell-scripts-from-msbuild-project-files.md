@@ -4,19 +4,16 @@ title: 运行 MSBuild 项目文件中的 Windows PowerShell 脚本 |Microsoft Do
 author: jrjlee
 description: 本主题介绍如何生成和部署过程的一部分运行的 Windows PowerShell 脚本。 你可以在本地运行脚本 (换而言之，在 b...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 55f1ae45-fcb5-43a9-8415-fa5b935fc9c9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/running-windows-powershell-scripts-from-msbuild-project-files
 msc.type: authoredcontent
-ms.openlocfilehash: ddb658d8a8f224a7c417321df3e17ce0610d2473
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: faedcee480b6c50dc560055206fedbe7af4d5f67
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362890"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803144"
 ---
 <a name="running-windows-powershell-scripts-from-msbuild-project-files"></a>运行 MSBuild 项目文件中的 Windows PowerShell 脚本
 ====================
@@ -59,7 +56,7 @@ ms.locfileid: "37362890"
 本主题中的任务使用名为 Windows PowerShell 脚本示例**LogDeploy.ps1**是为了说明如何从 MSBuild 运行脚本。 **LogDeploy.ps1**脚本包含单个行项写入日志文件的简单函数：
 
 
-[!code-javascript[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample1.js)]
+[!code-powershell[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample1.ps1)]
 
 
 **LogDeploy.ps1**脚本接受两个参数。 第一个参数表示你想要添加一个条目的日志文件的完整路径和第二个参数表示你想要在日志文件中记录的部署目标。 当您运行该脚本时，它将行添加到此格式中的日志文件：

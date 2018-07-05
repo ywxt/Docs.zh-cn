@@ -4,19 +4,16 @@ title: 生成自定义数据库驱动站点地图提供程序 (VB) |Microsoft Do
 author: rick-anderson
 description: 在 ASP.NET 2.0 中的默认站点地图提供静态的 XML 文件中检索其数据。 适用于许多小型和中等大小的基于 XML 的提供程序时...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/26/2007
-ms.topic: article
 ms.assetid: f904cd2c-a408-4484-9324-8b8d7fe33893
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/database-driven-site-maps/building-a-custom-database-driven-site-map-provider-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8e041a5a9163c7f9fe55c6aa06f35301cbdb48a8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ecf09fc6adc59e1b6280ed6f3829f0add2b4a299
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393965"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37815955"
 ---
 <a name="building-a-custom-database-driven-site-map-provider-vb"></a>生成自定义数据库驱动站点地图提供程序 (VB)
 ====================

@@ -4,19 +4,16 @@ title: 检查 Edit 方法和编辑视图 (VB) |Microsoft Docs
 author: Rick-Anderson
 description: 本教程将讲述构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/12/2011
-ms.topic: article
 ms.assetid: 5cb3c59b-1e96-464b-b3a8-c55607201872
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 9f99981b41d0e67514f5667b00640ad9174d1e4d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4c0478f077ef22a301d21a5a8ce65d4117ee2348
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362662"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37815257"
 ---
 <a name="examining-the-edit-methods-and-edit-view-vb"></a>检查 Edit 方法和编辑视图 (VB)
 ====================

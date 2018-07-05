@@ -4,19 +4,16 @@ title: 如何实现： 使用 ASP.NET MVC 分部视图中的数据？ | Microsof
 author: rick-anderson
 description: 在此视频的 Chris Pels 中显示了如何组织和将数据传递到分部视图的 MVC 应用程序中。 示例 MVC 应用程序创建包含域...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/11/2009
-ms.topic: article
 ms.assetid: 2f0d41d2-2860-4113-8f5e-0efdd29abf7b
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views
 msc.type: video
-ms.openlocfilehash: 055efbaf76f608d8b88b458068be9803f341e315
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5048e04d21b76696cc7f9575d0484029a768897b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388430"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37815312"
 ---
 <a name="how-do-i-work-with-data-in-aspnet-mvc-partial-views"></a>如何实现： 使用 ASP.NET MVC 分部视图中的数据？
 ====================

@@ -4,19 +4,16 @@ title: ASP.NET Web API 2 中的依赖关系注入 |Microsoft Docs
 author: MikeWasson
 description: 本教程演示如何将依赖项注入到你的 ASP.NET Web API 控制器。 在教程的 Web API 2 Unity 应用程序块中使用的软件版本...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/20/2014
-ms.topic: article
 ms.assetid: e3d3e7ba-87f0-4032-bdd3-31f3c1aa9d9c
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 92ce5eadc7f371540295c1c4279f817dba09f8e3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a470c778fd5998006a0bf8edb08b62a75d72c48c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369167"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802670"
 ---
 <a name="dependency-injection-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的依赖关系注入
 ====================

@@ -4,19 +4,16 @@ title: '[如何实现:]以编程方式向 ASP.NET 网页添加控件 |Microsoft 
 author: rick-anderson
 description: 在此视频的 Chris Pels 将演示如何在运行时以编程方式创建的 ASP.NET 服务器控件并将其添加到页面。 首先，了解基本概念，o...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/24/2008
-ms.topic: article
 ms.assetid: 1576e0a4-73ca-4816-bc09-20ae393a66f9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-add-controls-to-an-aspnet-web-page-programmatically
 msc.type: video
-ms.openlocfilehash: f0863e031ca52b6373f665ea68c718d28d962565
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0e55288d341833256cbc0d1c480a4712f836649f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367368"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802547"
 ---
 <a name="how-do-i-add-controls-to-an-aspnet-web-page-programmatically"></a>[如何实现:]以编程方式向 ASP.NET 网页添加控件
 ====================

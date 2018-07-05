@@ -4,19 +4,16 @@ title: '[如何实现:]以声明方式和以编程方式处理母版页 |Microso
 author: rick-anderson
 description: 在此视频的 Chris Pels 将介绍几个方面的定义和使用 ASP.NET web 站点中的主页面。 首先，请参阅如何创建主页面 declarati...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/21/2008
-ms.topic: article
 ms.assetid: 4f5f7805-373f-4dc3-b7f6-219edf7e66a3
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-work-with-master-pages-declaratively-and-programmatically
 msc.type: video
-ms.openlocfilehash: 928f633372c3a65419dcf988c53f3b2ca73fe524
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: dc0569a457e2aea378a0fa49e80d9f1e794c256f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385870"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802417"
 ---
 <a name="how-do-i-work-with-master-pages-declaratively-and-programmatically"></a>[如何实现:]以声明方式和以编程方式处理母版页
 ====================

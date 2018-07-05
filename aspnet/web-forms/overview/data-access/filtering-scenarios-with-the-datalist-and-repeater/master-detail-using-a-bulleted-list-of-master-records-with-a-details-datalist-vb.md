@@ -4,19 +4,16 @@ title: 母版/详细信息 (VB) 的详细信息 DataList 使用母版记录项�
 author: rick-anderson
 description: 在本教程中我们将压缩上一教程两页母版/详细信息的报告到单个页面，t 上显示类别名称的项目符号列表...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/17/2006
-ms.topic: article
 ms.assetid: ee20742f-6fb7-49a0-a009-058fe363aacb
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5b7fdcb5ba38e89b073960d6bce473c3a5aadf8b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 90629046869460869d6c85e179980811b7bede51
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389633"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37841987"
 ---
 <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb"></a>母版/详细信息的母版记录项目符号列表中使用的详细信息 DataList (VB)
 ====================

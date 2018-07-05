@@ -4,19 +4,16 @@ title: '[如何实现:]使用隐藏的字段以存储和操作客户端的信息
 author: rick-anderson
 description: 在本视频 Chris Pels 将演示如何使用隐藏的字段作为一种方法简单的状态管理和通信客户端的 ASP.NET 页上...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/24/2008
-ms.topic: article
 ms.assetid: 576ede31-e83a-4222-8f82-0aabb1dafe6a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information
 msc.type: video
-ms.openlocfilehash: 83aeef1b7331dfeab727139ca9031cb5b8305e31
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 84cb7ff3005eca8eaaed665d2a9cdcaa675a14d4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385925"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842174"
 ---
 <a name="how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information"></a>[如何实现:]使用隐藏的字段以存储和操作客户端的信息
 ====================

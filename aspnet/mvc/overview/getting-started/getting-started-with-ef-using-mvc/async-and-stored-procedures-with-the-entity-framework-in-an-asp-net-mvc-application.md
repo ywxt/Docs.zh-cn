@@ -4,19 +4,16 @@ title: 异步和使用实体框架在 ASP.NET MVC 应用程序中的存储的过
 author: tdykstra
 description: Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 的 ASP.NET MVC 5 应用程序...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/07/2014
-ms.topic: article
 ms.assetid: 27d110fc-d1b7-4628-a763-26f1e6087549
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 4c2deb53856d79a52415db48e04ea96111833b02
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 211c9c8c66f3eed15121b4dd425fa728c39b7de3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381924"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802044"
 ---
 <a name="async-and-stored-procedures-with-the-entity-framework-in-an-aspnet-mvc-application"></a>异步和使用实体框架在 ASP.NET MVC 应用程序中的存储的过程
 ====================

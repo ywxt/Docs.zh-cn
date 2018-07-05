@@ -4,19 +4,16 @@ title: ASP.NET Web API 中的基本身份验证 |Microsoft Docs
 author: MikeWasson
 description: 介绍如何在 ASP.NET Web API 中使用基本身份验证。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/02/2014
-ms.topic: article
 ms.assetid: 41423767-0021-47c3-9e53-0021b457c39f
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/security/basic-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 9d5610eb61088a8e7573ba6399c771f0957ff437
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 035baec7c56c0bf6eaacd26ea5192faf2ed6e932
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37395326"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829582"
 ---
 <a name="basic-authentication-in-aspnet-web-api"></a>ASP.NET Web API 中的基本身份验证
 ====================

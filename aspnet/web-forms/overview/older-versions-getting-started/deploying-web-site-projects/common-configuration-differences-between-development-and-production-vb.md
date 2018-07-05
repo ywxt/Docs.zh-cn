@@ -4,19 +4,16 @@ title: 开发和生产环境 (VB) 之间的常见配置差异 |Microsoft Docs
 author: rick-anderson
 description: 在之前的教程，我们通过将所有相关文件从开发环境复制到生产环境中部署了我们的网站。 但是，我...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2009
-ms.topic: article
 ms.assetid: 548e75f6-4d6c-4cb4-8da8-417915eb8393
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0e587853e77c1d6e21e787aae417c0978b1b957d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 083c07a42fab1f655798f8cfb444ed0e6aa38ff0
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362734"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842800"
 ---
 <a name="common-configuration-differences-between-development-and-production-vb"></a>开发和生产环境 (VB) 之间的常见配置差异
 ====================

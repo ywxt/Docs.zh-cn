@@ -4,19 +4,16 @@ title: 删除 (VB) 时添加客户端确认 |Microsoft Docs
 author: rick-anderson
 description: 在我们到目前为止已创建的接口，用户可以数据意外删除时它们应单击编辑按钮，单击删除按钮。 在此，t...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/17/2006
-ms.topic: article
 ms.assetid: 6331e02e-c465-4cdf-bd3f-f07680c289d6
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: acab34cb362bd3e3351156a41a6826d03e5a749f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2318018b20841038ebb7a6e4900cf9849057d941
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388262"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802483"
 ---
 <a name="adding-client-side-confirmation-when-deleting-vb"></a>删除 (VB) 时添加客户端的确认
 ====================

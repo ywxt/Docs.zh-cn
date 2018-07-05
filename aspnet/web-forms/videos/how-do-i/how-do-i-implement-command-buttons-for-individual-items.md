@@ -4,19 +4,16 @@ title: '[如何实现:]实现用于单个项目的命令按钮 |Microsoft Docs'
 author: rick-anderson
 description: 在本视频中 Chris Pels 将演示如何处理与数据绑定控件类似于 ListView 控件的每个项中的按钮控件关联的事件。 首先...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/24/2008
-ms.topic: article
 ms.assetid: b883989d-4735-478e-ab56-411a2ed98f73
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-command-buttons-for-individual-items
 msc.type: video
-ms.openlocfilehash: b1e310db54912785d3af66009b4b4650e9ec60f6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3dbb82e6de7100c51764f11f0a9ad72eed26cf99
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384373"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37815929"
 ---
 <a name="how-do-i-implement-command-buttons-for-individual-items"></a>[如何实现:]实现用于单个项目的命令按钮
 ====================

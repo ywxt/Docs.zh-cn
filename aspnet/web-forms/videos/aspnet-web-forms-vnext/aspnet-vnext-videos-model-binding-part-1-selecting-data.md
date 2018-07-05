@@ -4,19 +4,16 @@ title: ASP.NET vNext 视频： 模型绑定第 1 部分-选择数据 |Microsoft 
 author: DamianEdwards
 description: 在此视频中，Damian Edwards 首先演示数据选择看模型绑定。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/12/2011
-ms.topic: article
 ms.assetid: 744d229b-a109-4692-a58d-1b2445bee54e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-part-1-selecting-data
 msc.type: video
-ms.openlocfilehash: 06d29667995c713c8d250cc716f890906966093c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 981e18d4a7c60f2ffba211975008a852b8afb8d6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376156"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802201"
 ---
 <a name="aspnet-vnext-videos-model-binding-part-1---selecting-data"></a>ASP.NET vNext 视频： 模型绑定第 1 部分-选择数据
 ====================
