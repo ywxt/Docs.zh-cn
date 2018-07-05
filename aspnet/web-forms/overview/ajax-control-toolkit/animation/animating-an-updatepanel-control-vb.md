@@ -1,62 +1,61 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-vb
-title: 对进行动画处理 UpdatePanel 控件 (VB) |Microsoft 文档
+title: 对 UpdatePanel 控件 (VB) 进行动画处理 |Microsoft Docs
 author: wenz
-description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 内容...
+description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 内容的...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: 4c306a2c-92b6-4904-b70b-365b847334fe
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2c1114b74fd152a4ea85aa10850860f75573adee
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5f14a3297c2f3ddd6b0817cc8e46ac23b3a06c0b
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30873152"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37369711"
 ---
-<a name="animating-an-updatepanel-control-vb"></a>对进行动画处理 UpdatePanel 控件 (VB)
+<a name="animating-an-updatepanel-control-vb"></a>对 UpdatePanel 控件 (VB) 进行动画处理
 ====================
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/UpdatePanelAnimation1.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/updatepanelanimation1VB.pdf)
 
-> ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 UpdatePanel 的内容，对于一个特殊的扩展程序添加存在很大程度依赖于动画 framework: UpdatePanelAnimation。 本教程演示如何为 UpdatePanel 设置此类动画。
+> ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 UpdatePanel 的内容，一个特殊的扩展程序存在的严重依赖于此动画框架： UpdatePanelAnimation。 本教程演示如何为 UpdatePanel 设置此类动画。
 
 
 ## <a name="overview"></a>概述
 
-ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但一个整个框架，以向控件添加动画。 内容`UpdatePanel`，特殊的扩展程序存在很大程度依赖于动画 framework: `UpdatePanelAnimation`。 本教程演示如何设置此类动画`UpdatePanel`。
+ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 有关的内容`UpdatePanel`，一个特殊的扩展程序存在的严重依赖于此动画框架： `UpdatePanelAnimation`。 本教程演示如何设置此类动画，以`UpdatePanel`。
 
 ## <a name="steps"></a>步骤
 
-第一步是像往常一样包括`ScriptManager`在页中，以便加载 ASP.NET AJAX 库，并可以使用该控件工具包：
+第一步是像往常一样包括`ScriptManager`页中，以便加载 ASP.NET AJAX 库，可以使用控件工具包：
 
 [!code-aspx[Main](animating-an-updatepanel-control-vb/samples/sample1.aspx)]
 
-在此方案中动画将应用到 ASP.NET`Wizard`驻留在的 web 控件`UpdatePanel`。 三个 （任意） 的步骤提供足够的选项来触发回发：
+在此方案中的动画将应用于 ASP.NET`Wizard`驻留在 web 控件`UpdatePanel`。 （任意） 的三个步骤提供足够的选项来触发回发：
 
 [!code-aspx[Main](animating-an-updatepanel-control-vb/samples/sample2.aspx)]
 
-所需的标记`UpdatePanelAnimationExtender`控件是非常类似于用于标记`AnimationExtender`。 在`TargetControlID`我们提供的属性`ID`的`UpdatePanel`要进行动画处理; 在`UpdatePanelAnimationExtender`控件，`<Animations>`元素包含动画的 XML 标记。 但是没有一个区别： 事件和事件处理程序是有限的相对于`AnimationExtender`。 有关`UpdatePanels`，只有两个其中存在：
+所需的标记`UpdatePanelAnimationExtender`控件是非常类似于用于标记`AnimationExtender`。 在`TargetControlID`我们提供的特性`ID`的`UpdatePanel`进行动画处理; 内`UpdatePanelAnimationExtender`控件，`<Animations>`元素保留的 XML 标记。 但是还有一个区别： 事件和事件处理程序的数量是有限与`AnimationExtender`。 有关`UpdatePanels`，只有两个其中存在：
 
-- `<OnUpdated>` UpdatePanel 何时已更新
-- `<OnUpdating>` UpdatePanel 启动更新
+- `<OnUpdated>` UpdatePanel 更新时
+- `<OnUpdating>` 当 UpdatePanel 启动更新
 
-在此方案中，新内容的`UpdatePanel`（之后回发） 应淡入。 这是为此时必需的标记：
+在此方案中，新的内容`UpdatePanel`（之后在回发） 应淡入。 这是为此，时必需的标记：
 
 [!code-aspx[Main](animating-an-updatepanel-control-vb/samples/sample3.aspx)]
 
-现在每次回发发生 UpdatePanel 中时，面板中的新内容淡入平稳。
+现在每次回发的 UpdatePanel 中发生时，新的面板内容淡入顺利。
 
 
-[![下一步的向导步骤淡入](animating-an-updatepanel-control-vb/_static/image2.png)](animating-an-updatepanel-control-vb/_static/image1.png)
+[![淡入淡出下一步的向导步骤](animating-an-updatepanel-control-vb/_static/image2.png)](animating-an-updatepanel-control-vb/_static/image1.png)
 
-下一步的向导步骤淡入 ([单击以查看实际尺寸的图像](animating-an-updatepanel-control-vb/_static/image3.png))
+淡入淡出下一步的向导步骤 ([单击此项可查看原尺寸图像](animating-an-updatepanel-control-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [上一页](changing-an-animation-using-client-side-code-vb.md)
