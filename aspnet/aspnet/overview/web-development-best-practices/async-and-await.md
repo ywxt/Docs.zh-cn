@@ -1,6 +1,6 @@
 ---
 uid: aspnet/overview/web-development-best-practices/async-and-await
-title: Async 和 Await |Microsoft 文档
+title: Async 和 Await |Microsoft Docs
 author: shanselman
 description: Scott Hanselman 演示如何使用 Async 和 Await ASP.NET 4.5 中的支持。
 ms.author: aspnetcontent
@@ -9,18 +9,17 @@ ms.date: 08/15/2012
 ms.topic: article
 ms.assetid: 776bf687-c2c2-438f-8796-a93d0ccd164b
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/web-development-best-practices/async-and-await
 msc.type: video
-ms.openlocfilehash: 0996257fcadc381957f1dc005458bf3384695d61
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3d39d817e2ce77ff355ad9248d90d1d58fa0437c
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26497896"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37395884"
 ---
-<a name="async-and-await"></a><span data-ttu-id="93882-103">异步和等待</span><span class="sxs-lookup"><span data-stu-id="93882-103">Async and Await</span></span>
+<a name="async-and-await"></a><span data-ttu-id="4b069-103">异步和等待</span><span class="sxs-lookup"><span data-stu-id="4b069-103">Async and Await</span></span>
 ====================
-<span data-ttu-id="93882-104">通过[Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="93882-104">by [Scott Hanselman](https://github.com/shanselman)</span></span>
+<span data-ttu-id="4b069-104">通过[Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="4b069-104">by [Scott Hanselman](https://github.com/shanselman)</span></span>
 
-[<span data-ttu-id="93882-105">&#9654;观看视频 （5 分钟）</span><span class="sxs-lookup"><span data-stu-id="93882-105">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/async-and-await)
+[<span data-ttu-id="4b069-105">&#9654;观看视频 （5 分钟）</span><span class="sxs-lookup"><span data-stu-id="4b069-105">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/async-and-await)
