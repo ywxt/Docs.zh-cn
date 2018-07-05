@@ -4,19 +4,16 @@ title: '[如何实现:]以异步方式使用 ASP.NET 发送电子邮件 |Microso
 author: rick-anderson
 description: 在此视频中，Chris Pels 演示如何在 ASP.NET 中使用 System.Net.Mail 类发送异步电子邮件。 首先，请参阅如何配置 web si...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/24/2008
-ms.topic: article
 ms.assetid: 77a5c8fa-ebb2-426d-b56b-a5a98a46b516
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-send-email-asynchronously-with-aspnet
 msc.type: video
-ms.openlocfilehash: 69810f4c25b6b449168ca31af5df584c77d92e07
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e1405a82117a079dbdca72911b85b742c916262c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37395923"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830038"
 ---
 <a name="how-do-i-send-email-asynchronously-with-aspnet"></a>[如何实现:]以异步方式使用 ASP.NET 发送电子邮件
 ====================

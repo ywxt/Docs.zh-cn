@@ -4,19 +4,16 @@ title: 嵌套的数据 Web 控件 (VB) |Microsoft Docs
 author: rick-anderson
 description: 在本教程中我们将探讨如何使用 Repeater 嵌套在另一个 Repeater。 这些示例将演示了如何以填充内部 Repeater 这两个 d...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/13/2006
-ms.topic: article
 ms.assetid: 8b7fcf7b-722b-498d-a4e4-7c93701e0c95
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2f7980d22d6ebc15a033cca321644a2bf1d4e3bb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 45e460edb09fe9398d204e0f280dfb088a44946d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390016"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803173"
 ---
 <a name="nested-data-web-controls-vb"></a>嵌套的数据 Web 控件 (VB)
 ====================

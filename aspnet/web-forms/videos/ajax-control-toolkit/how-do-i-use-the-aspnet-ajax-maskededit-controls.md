@@ -4,19 +4,16 @@ title: '[如何实现:]使用 ASP.NET AJAX MaskedEdit 控件？ | Microsoft Docs
 author: JoeStagner
 description: ASP.NET AJAX 控件工具包提供 MaskedEdit 控件以及 MaskedEditValidator 控制协同工作以提示样式，并验证 d...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/04/2007
-ms.topic: article
 ms.assetid: 806a8bfe-54be-4c96-8ffd-66303cc2b2f9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-maskededit-controls
 msc.type: video
-ms.openlocfilehash: b725819313eae960ba96847d0a8db00668eb7ed0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 57a6d27512912d512c6fbf538a7208370843c85b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392550"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829831"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-maskededit-controls"></a>[如何实现:]使用 ASP.NET AJAX MaskedEdit 控件？
 ====================

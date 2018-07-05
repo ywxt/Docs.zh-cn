@@ -4,19 +4,16 @@ title: 触发更新来更新面板的两个简单的方法 |Microsoft Docs
 author: JoeStagner
 description: 在本视频中，我将演示两种简单的更新方法。 首先，使用所选的索引更改事件从下拉列表控件作为事件三角函数...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/13/2008
-ms.topic: article
 ms.assetid: c844da8a-10e6-45c9-a9e2-331a3b8d3e03
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/two-simple-techniques-for-triggering-updates-to-update-panels
 msc.type: video
-ms.openlocfilehash: df88eb66f0f327a31b96cc35dd1f415125a891cc
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2eec9ca1efdb1f05f493a3ca0ae43e31074f1b45
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385128"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816984"
 ---
 <a name="two-simple-techniques-for-triggering-updates-to-update-panels"></a>触发更新来更新面板的两个简单的方法
 ====================

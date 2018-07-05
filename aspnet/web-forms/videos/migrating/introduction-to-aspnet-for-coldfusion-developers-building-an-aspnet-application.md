@@ -4,19 +4,16 @@ title: 为 ColdFusion 开发人员的 ASP.NET 简介： 生成 ASP.NET 应用程
 author: microsoft
 description: 此网络广播中演示了如何生成 ASP.NET 应用程序从空白表单开始为经验丰富的 ColdFusion 开发人员提供清晰的思路的究竟是什么...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/25/2006
-ms.topic: article
 ms.assetid: 47316dec-a4cd-4818-8ba7-87e29d963c38
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/migrating/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application
 msc.type: video
-ms.openlocfilehash: a898f510ed1632f2d5d8de35b365d550458005c6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: cc2e6e95210be61347f595d38673b904111fdb94
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401258"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803861"
 ---
 <a name="introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application"></a>为 ColdFusion 开发人员的 ASP.NET 简介： 生成 ASP.NET 应用程序
 ====================

@@ -4,19 +4,16 @@ title: 如何向网页动态添加控件 |Microsoft Docs
 author: JoeStagner
 description: 在本视频中，我将演示一种技术将控件的数目不确定动态添加到您的网页。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/16/2008
-ms.topic: article
 ms.assetid: 718e7b1d-e02c-41fe-85d5-44c0d288201f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-to-dynamically-add-controls-to-a-web-page
 msc.type: video
-ms.openlocfilehash: 4c3bbfa9fc15e0560f879de8ad5a4aa61e802165
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3849e844616247ac9fad3482ed3cd27969c86acf
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37386312"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829731"
 ---
 <a name="how-to-dynamically-add-controls-to-a-web-page"></a>如何向网页动态添加控件
 ====================
