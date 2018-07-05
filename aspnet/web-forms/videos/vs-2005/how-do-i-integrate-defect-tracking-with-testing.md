@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-integrate-defect-tracking-with-testing
-title: '[如何:]集成跟踪与测试的缺陷？ | Microsoft Docs'
+title: '[如何实现:]将缺陷跟踪与测试集成？ | Microsoft Docs'
 author: rick-anderson
-description: 在本视频中，我们将看看测试 Framework 的 Visual Studio Team System 和工作项跟踪系统之间的集成点。
+description: 在本视频中，我们将看看测试框架的 Visual Studio Team System 和工作项跟踪系统之间的集成点。
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2007
 ms.topic: article
 ms.assetid: 83a849da-fe6c-483a-bc26-73e8a135830f
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-integrate-defect-tracking-with-testing
 msc.type: video
-ms.openlocfilehash: df79941377c9f382d74c553cb08ce13fb41af371
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f9bd4d1d172897e40945e81f16b3fc862208f6de
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30895771"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37401200"
 ---
-<a name="how-do-i-integrate-defect-tracking-with-testing"></a>[如何:]集成跟踪与测试的缺陷？
+<a name="how-do-i-integrate-defect-tracking-with-testing"></a>[如何实现:]将缺陷跟踪与测试集成？
 ====================
 通过[Chris Menegay](https://twitter.com/CMenegay)
 
-在本视频中，我们将看看测试 Framework 的 Visual Studio Team System 和工作项跟踪系统之间的集成点。
+在本视频中，我们将看看测试框架的 Visual Studio Team System 和工作项跟踪系统之间的集成点。
 
 [&#9654;观看视频 （8 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-integrate-defect-tracking-with-testing)
 
