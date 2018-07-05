@@ -4,19 +4,16 @@ title: 存储其他用户信息 (VB) |Microsoft Docs
 author: rick-anderson
 description: 在本教程中我们将通过构建一个非常基本的访客留言簿应用程序来回答此问题。 在此过程中，我们将查看 modeli 的不同选项...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/18/2008
-ms.topic: article
 ms.assetid: ee4b924e-8002-4dc3-819f-695fca1ff867
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 06e28653b281461eff6548de6951f8463c827754
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2ea731012f8c053d1e1eac293fdbeaec66db23bf
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381859"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816033"
 ---
 <a name="storing-additional-user-information-vb"></a>存储其他用户信息 (VB)
 ====================
