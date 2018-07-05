@@ -4,19 +4,16 @@ title: '[第 7 课:]对用户界面控件进行数据绑定 |Microsoft Docs'
 author: microsoft
 description: 在本课程中，您将学习如何在 ASP.NET 中显示数据&#160;2.0 web 应用程序可以通过一些新的数据绑定控件。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/29/2005
-ms.topic: article
 ms.assetid: 49625de7-06c3-484c-bd76-d322b9ca41ea
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/building-20-applications/lesson-7-databinding-to-user-interface-controls
 msc.type: video
-ms.openlocfilehash: aa7d2143e60d504041302f85322970aeffbc1011
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 868072c6a3ccc8d461cd86d2092b5b8c82ed7fc9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37361397"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802224"
 ---
 <a name="lesson-7-databinding-to-user-interface-controls"></a>[第 7 课:]对用户界面控件进行数据绑定
 ====================

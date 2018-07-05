@@ -4,19 +4,16 @@ title: '[如何实现:]使用 ASP.NET AJAX SlideShow 扩展程序吗？ | Micros
 author: JoeStagner
 description: 此视频演示如何从 ASP.NET AJAX 控件工具包 SlideShow 扩展程序变为标准的 ASP.NET 图像控件完全正常运行 sl...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/16/2007
-ms.topic: article
 ms.assetid: dfc9f5bb-5e51-46ec-8e1d-2ef9942d258b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slideshow-extender
 msc.type: video
-ms.openlocfilehash: 47b914ee8e157f4f3ae0e4123b4a54c780477e53
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ca4edb59eabce98d2c2bdbe6bf99d9863cb29ea3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392488"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37801205"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-slideshow-extender"></a>[如何实现:]使用 ASP.NET AJAX SlideShow 扩展程序吗？
 ====================

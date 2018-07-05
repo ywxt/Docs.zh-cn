@@ -4,19 +4,16 @@ title: 创建用户帐户 (C#) |Microsoft Docs
 author: rick-anderson
 description: 在本教程将探讨如何使用成员资格框架 （通过 SqlMembershipProvider) 来创建新的用户帐户。 我们将了解如何创建新我们...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/18/2008
-ms.topic: article
 ms.assetid: f175278c-6079-4d91-b9b4-2493ed43d9ec
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-user-accounts-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 161d7b71f169252699e0c33ad969bef9c2c62d5f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7caa6b614bbe6545929a9b201de7f30fe95e6481
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37386593"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842619"
 ---
 <a name="creating-user-accounts-c"></a>创建用户帐户 (C#)
 ====================

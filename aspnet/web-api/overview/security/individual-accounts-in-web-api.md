@@ -4,19 +4,16 @@ title: 保护 Web API 使用单个帐户和 ASP.NET Web API 2.2 中的本地登�
 author: MikeWasson
 description: 本主题演示如何保护 web API 使用 OAuth2 对成员资格数据库进行身份验证。 在教程的 Visual Studio 201 中使用的软件版本...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/15/2014
-ms.topic: article
 ms.assetid: 92c84846-f0ea-4b5e-94b6-5004874eb060
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/security/individual-accounts-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f37cb206b78fd46835bb59bede5920f8e5acd3fd
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0a520333492a60014f7e9f9182a16f0ce514ba1d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399933"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842080"
 ---
 <a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>保护 Web API 使用单个帐户和 ASP.NET Web API 2.2 中的本地登录名
 ====================

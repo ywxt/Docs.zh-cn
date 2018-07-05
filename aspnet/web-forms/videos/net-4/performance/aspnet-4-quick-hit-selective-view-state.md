@@ -4,19 +4,16 @@ title: ASP.NET 4 快速命中-选择性的视图状态
 author: JoeStagner
 description: 在本视频中，您将学习如何允许您禁用视图状态，默认情况下，然后启用它只对控件的 requi ViewStateMode 属性...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/11/2009
-ms.topic: article
 ms.assetid: ad960512-65f3-4439-ab68-0862cdd7943e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/net-4/performance/aspnet-4-quick-hit-selective-view-state
 msc.type: video
-ms.openlocfilehash: 8e6af8dca94027f8e0bee6a7608f2ddf53c32033
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 62444feedaee211b969cb629859e11384d1c6a5b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374819"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37801794"
 ---
 <a name="aspnet-4-quick-hit---selective-view-state"></a>ASP.NET 4"快速命中"的选择性的视图状态
 ====================
