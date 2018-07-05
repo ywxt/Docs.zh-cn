@@ -4,19 +4,16 @@ title: 用户和角色生产网站中 (C#) |Microsoft Docs
 author: rick-anderson
 description: ASP.NET 网站管理工具 (WSAT) 提供了基于 web 的用户界面，用于配置成员身份和角色设置和用于创建、 编辑、...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/09/2009
-ms.topic: article
 ms.assetid: dbc54313-5d05-4285-98b3-726edea6d0c9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a97241cc41d2e2ffd923eafa5e09d5ea82a640f7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f8e714aea2839cc654dac0da310db779f632a26c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389938"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802453"
 ---
 <a name="users-and-roles-on-the-production-website-c"></a>用户和角色生产网站中 (C#)
 ====================

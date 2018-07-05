@@ -4,19 +4,16 @@ title: 自定义 DataList 的编辑界面 (VB) |Microsoft Docs
 author: rick-anderson
 description: 在本教程中我们将创建更丰富的编辑界面 DataList，包括 Dropdownlist 和一个复选框。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/30/2006
-ms.topic: article
 ms.assetid: 718628e2-224c-455f-b33a-a41efd48d5a0
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/customizing-the-datalist-s-editing-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4ba5f532d3098eee269d97f7a317dfde7ad51680
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 78001e977a4696e905317eab35604518d059e66d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37386651"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37828752"
 ---
 <a name="customizing-the-datalists-editing-interface-vb"></a>自定义 DataList 的编辑界面 (VB)
 ====================

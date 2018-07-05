@@ -4,19 +4,16 @@ title: 使用现有存储过程的类型化数据集的 Tableadapter (C#) |Micro
 author: rick-anderson
 description: 上一教程中我们介绍了如何使用 TableAdapter 向导来生成新的存储的过程。 在本教程中，我们将了解如何到同一 TableAdapter...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/18/2007
-ms.topic: article
 ms.assetid: 440bef2a-1641-4238-99e3-8e2d44e7d94c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 74d52343f7840243cf48999b2729afb10e2610e3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3057b7c296c82b3db740d9fd345aaa222ca31328
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390015"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37828865"
 ---
 <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>使用现有存储过程的类型化数据集的 Tableadapter (C#)
 ====================

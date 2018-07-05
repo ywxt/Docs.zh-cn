@@ -4,19 +4,16 @@ title: OWIN 启动类检测 |Microsoft Docs
 author: Praburaj
 description: 本教程演示如何配置加载的 OWIN 启动类。 OWIN 的详细信息，请参阅项目 Katana 概述。 本教程是...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/17/2013
-ms.topic: article
 ms.assetid: 08257f55-36f4-4e39-9c88-2a5602838c79
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-startup-class-detection
 msc.type: authoredcontent
-ms.openlocfilehash: d7e18001cbbfc67397f32ace53d347acf49d7537
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0a4b87192296054bf6aef6c9406c64f19677a061
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388693"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37828288"
 ---
 <a name="owin-startup-class-detection"></a>OWIN 启动类检测
 ====================
