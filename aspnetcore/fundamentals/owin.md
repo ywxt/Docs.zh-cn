@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 10/14/2016
 uid: fundamentals/owin
-ms.openlocfilehash: 864580edd62032ad1409c1d3263cb5d464fa59fe
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 04042eedc52b4e6f57685e2d9ec1a75cd130fd8d
+ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273619"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37144958"
 ---
 # <a name="open-web-interface-for-net-owin-with-aspnet-core"></a>ASP.NET Core 中 .NET 的开放 Web 接口 (OWIN)
 
@@ -20,12 +20,14 @@ ms.locfileid: "36273619"
 ASP.NET Core 支持 .NET 的开放 Web 接口 (OWIN)。 OWIN 允许 Web 应用从 Web 服务器分离。 它定义了在管道中使用中间件来处理请求和相关响应的标准方法。 ASP.NET Core 应用程序和中间件可以与基于 OWIN 的应用程序、服务器和中间件进行互操作。
 
 OWIN 提供了一个分离层，可一起使用具有不同对象模型的两个框架。 `Microsoft.AspNetCore.Owin` 包提供了两个适配器实现：
-- ASP.NET Core 到 OWIN 
-- OWIN 到 ASP.NET Core
+
+* ASP.NET Core 到 OWIN 
+* OWIN 到 ASP.NET Core
 
 此方法可将 ASP.NET Core 托管在兼容 OWIN 的服务器/主机上，或在 ASP.NET Core 上运行其他兼容 OWIN 的组件。
 
-注意：使用这些适配器会带来性能成本。 仅使用 ASP.NET Core 组件的应用程序不应使用 Owin 包或适配器。
+> [!NOTE]
+> 使用这些适配器会带来性能成本。 仅使用 ASP.NET Core 组件的应用不应使用 `Microsoft.AspNetCore.Owin` 包或适配器。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/owin/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 

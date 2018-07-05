@@ -1,5 +1,5 @@
 <!-- This include not used by windows version -->
-# <a name="adding-a-new-field"></a>添加新字段
+# <a name="add-a-new-field-to-an-aspnet-core-mvc-app"></a>将新字段添加到 ASP.NET Core MVC 应用
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 

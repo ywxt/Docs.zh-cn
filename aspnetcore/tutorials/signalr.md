@@ -7,12 +7,12 @@ ms.author: rachelap
 ms.custom: mvc
 ms.date: 05/22/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 8762a4be1032d58014dd32dfdd3707197e14c6f9
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 62cef2d6f032caa2f048cfdd49a225d975dad10d
+ms.sourcegitcommit: 7003d27b607e529642ded0400aa48ae692a0e666
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36297196"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37033337"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>开始在 ASP.NET Core 上使用 SignalR
 
@@ -29,9 +29,9 @@ ms.locfileid: "36297196"
 > * 创建 SignalR 中心以将内容推送到客户端。
 > * 修改 `Startup` 类并配置应用。
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/get-started/sample/)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
-# <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>系统必备
 
 安装以下软件：
 
@@ -100,7 +100,7 @@ Visual Studio 包含 `Microsoft.AspNetCore.SignalR` 包，该包包含其服务�
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 
-1. 选择“文件” > “新建” > “文件”，然后选择“Visual C# 类”，将类添加到项目。 将文件命名为“ChatHub”。
+1. 选择“文件” > “新建” > “文件”，然后选择“Visual C# 类”，将类添加到项目。 将类命名为 `ChatHub` 并将文件命名为 ChatHub.cs。
 
 2. 继承自 `Microsoft.AspNetCore.SignalR.Hub`。 `Hub` 类包含管理连接和组以及发送和接收数据的属性和事件。
 
@@ -112,13 +112,13 @@ Visual Studio 包含 `Microsoft.AspNetCore.SignalR` 包，该包包含其服务�
 
 1. 在 Visual Studio Code 中打开 SignalRChat。
 
-2. 从菜单中选择“文件” > “新建文件”，将类添加到项目。
+2. 从菜单中选择“文件” > “新建文件”，将类添加到项目。 将类命名为 `ChatHub` 并将文件命名为 ChatHub.cs。
 
 3. 继承自 `Microsoft.AspNetCore.SignalR.Hub`。 `Hub` 类包含管理连接和组以及与客户端之间发送和接收数据的属性和事件。
 
 4. 将 `SendMessage` 方法添加到类。 `SendMessage` 方法将消息发送到所有连接聊天客户端。 请注意它会返回一个[任务](/dotnet/api/system.threading.tasks.task)，这是因为 SignalR 是异步的。 异步代码可以更好地进行缩放。
 
-   [!code-csharp[Startup](signalr/sample/Hubs/ChatHub.cs?range=6-12)]
+   [!code-csharp[Startup](signalr/sample/Hubs/ChatHub.cs)]
 
 -----
 

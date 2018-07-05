@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 04/09/2018
 uid: host-and-deploy/directory-structure
-ms.openlocfilehash: 06d3f097cd93ceb2a23b9f6516a9b7a1f3ca3089
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 8e2693397f826d0e9a36ff52aa1d1d623b31043d
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273668"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960822"
 ---
 # <a name="aspnet-core-directory-structure"></a>ASP.NET Core 目录结构
 
@@ -22,8 +22,8 @@ ms.locfileid: "36273668"
 
 | 应用类型 | 目录结构 |
 | -------- | ------------------- |
-| [依赖框架的部署](/dotnet/core/deploying/#framework-dependent-deployments-fdd) | <ul><li>publish&dagger;<ul><li>logs&dagger;（除非需要接收 stdout 日志，否则为可选）</li><li>Views&dagger;（MVC 应用；如果未预编译视图）</li><li>Pages&dagger;（MVC 或 Razor 页应用；如果未预编译页）</li><li>wwwroot&dagger;</li><li>*\.dll 文件</li><li>\<assembly-name>.deps.json</li><li>\<assembly-name>.dll</li><li>\<assembly-name>.pdb</li><li>\<assembly-name>.PrecompiledViews.dll</li><li>\<assembly-name>.PrecompiledViews.pdb</li><li>\<assembly-name>.runtimeconfig.json</li><li>web.config（IIS 部署）</li></ul></li></ul> |
-| [独立部署](/dotnet/core/deploying/#self-contained-deployments-scd) | <ul><li>publish&dagger;<ul><li>logs&dagger;（除非需要接收 stdout 日志，否则为可选）</li><li>refs&dagger;</li><li>Views&dagger;（MVC 应用；如果未预编译视图）</li><li>Pages&dagger;（MVC 或 Razor 页应用；如果未预编译页）</li><li>wwwroot&dagger;</li><li>\*.dll 文件</li><li>\<assembly-name>.deps.json</li><li>\<assembly-name>.exe</li><li>\<assembly-name>.pdb</li><li>\<assembly-name>.PrecompiledViews.dll</li><li>\<assembly-name>.PrecompiledViews.pdb</li><li>\<assembly-name>.runtimeconfig.json</li><li>web.config（IIS 部署）</li></ul></li></ul> |
+| [依赖框架的部署](/dotnet/core/deploying/#framework-dependent-deployments-fdd) | <ul><li>publish&dagger;<ul><li>Logs&dagger;（除非需要接收 stdout 日志，否则为可选）</li><li>Views&dagger;（MVC 应用；如果未预编译视图）</li><li>Pages&dagger;（MVC 或 Razor 页应用；如果未预编译页）</li><li>wwwroot&dagger;</li><li>*\.dll 文件</li><li>\<assembly-name>.deps.json</li><li>\<assembly-name>.dll</li><li>\<assembly-name>.pdb</li><li>\<assembly-name>.PrecompiledViews.dll</li><li>\<assembly-name>.PrecompiledViews.pdb</li><li>\<assembly-name>.runtimeconfig.json</li><li>web.config（IIS 部署）</li></ul></li></ul> |
+| [独立部署](/dotnet/core/deploying/#self-contained-deployments-scd) | <ul><li>publish&dagger;<ul><li>Logs&dagger;（除非需要接收 stdout 日志，否则为可选）</li><li>refs&dagger;</li><li>Views&dagger;（MVC 应用；如果未预编译视图）</li><li>Pages&dagger;（MVC 或 Razor 页应用；如果未预编译页）</li><li>wwwroot&dagger;</li><li>\*.dll 文件</li><li>\<assembly-name>.deps.json</li><li>\<assembly-name>.exe</li><li>\<assembly-name>.pdb</li><li>\<assembly-name>.PrecompiledViews.dll</li><li>\<assembly-name>.PrecompiledViews.pdb</li><li>\<assembly-name>.runtimeconfig.json</li><li>web.config（IIS 部署）</li></ul></li></ul> |
 
 &dagger;指示目录
 
@@ -31,7 +31,7 @@ publish 目录代表部署的内容根路径，也称为应用程序基路径。
 
 wwwroot 目录（如果存在）仅包含静态资产。
 
-可以使用以下两种方法之一为部署创建 stdout logs 目录：
+可以使用以下两种方法之一为部署创建 stdout Logs 目录：
 
 * 向项目添加以下 `<Target>` 元素：
 

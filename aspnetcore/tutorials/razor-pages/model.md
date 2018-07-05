@@ -5,12 +5,12 @@ description: 了解如何使用 Entity Framework Core (EF Core) 添加用于管�
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 508cca07fa96c20e228d2c55c9fb101f7fc3cb02
-ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
+ms.openlocfilehash: ed8faf8b3049adc7bcc7953d63ad805b0a836bd9
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36327547"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961170"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>在 ASP.NET Core 中向 Razor 页面应用添加模型
 
@@ -53,6 +53,36 @@ ms.locfileid: "36327547"
 * 选择“添加”。
 
 ![上述说明的图像。](model/_static/arp.png)
+
+搭建基架的过程会创建并更改以下文件：
+
+### <a name="files-created"></a>创建的文件
+
+* Pages/Movies：“创建”、“删除”、“详细信息”、“编辑”、“索引”。 将在下一教程中详细介绍这些页面。
+* Data/RazorPagesMovieContext.cs
+
+### <a name="files-updates"></a>文件更新
+
+* Startup.cs：在下一部分详细介绍对此文件所做更改。
+* appsettings.json：添加用于连接到本地数据的连接字符串。
+
+## <a name="examine-the-context-registered-with-dependency-injection"></a>检查通过依赖关系注入注册的上下文
+
+ASP.NET Core 通过[依赖关系注入](xref:fundamentals/dependency-injection)进行生成。 服务（例如 EF Core 数据库上下文）在应用程序启动期间通过依赖关系注入进行注册。 需要这些服务（如 Razor 页面）的组件通过构造函数提供相应服务。 本教程的后续部分介绍了用于获取 DB 上下文实例的构造函数代码。
+
+基架工具自动创建 DB 上下文并将其注册到依赖关系注入容器。
+
+检查 `Startup.ConfigureServices` 方法。 基架添加了突出显示的行：
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Startup.cs?name=snippet_ConfigureServices&highlight=12-13)]
+
+数据库上下文类是为给定数据模型协调 EF Core 功能的主类。 数据上下文派生自 [Microsoft.EntityFrameworkCore.DbContext](/dotnet/api/microsoft.entityframeworkcore.dbcontext)。 数据上下文指定数据模型中包含哪些实体。 在此项目中将数据库上下文类命名为 `RazorPagesMovieContext`。
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Data/RazorPagesMovieContext.cs)]
+
+前面的代码为实体集创建 [DbSet\<Movie>](/dotnet/api/microsoft.entityframeworkcore.dbset-1) 属性。 在实体框架术语中，实体集通常与数据表相对应。 实体对应表中的行。
+
+通过调用 [DbContextOptions](/dotnet/api/microsoft.entityframeworkcore.dbcontextoptions) 对象中的一个方法将连接字符串名称传递到上下文。 进行本地开发时， [ASP.NET Core 配置系统](xref:fundamentals/configuration/index) 在 *appsettings.json* 文件中读取数据库连接字符串。
 
 <a name="pmc"></a>
 ## <a name="perform-initial-migration"></a>添加初始迁移
@@ -194,4 +224,4 @@ dotnet ef database update
 
 > [!div class="step-by-step"]
 > [上一篇：入门](xref:tutorials/razor-pages/razor-pages-start)
-> [下一篇：已搭建基架的 Razor 页面](xref:tutorials/razor-pages/page)    
+> [下一篇：已搭建基架的 Razor 页面](xref:tutorials/razor-pages/page)

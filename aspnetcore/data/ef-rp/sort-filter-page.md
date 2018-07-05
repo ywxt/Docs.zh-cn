@@ -3,20 +3,24 @@ title: ASP.NET Core 中的 Razor 页面和 EF Core - 排序、筛选、分页 - 
 author: rick-anderson
 description: 本教程将使用 ASP.NET Core 和 Entity Framework Core 向页面添加排序、筛选和分页功能。
 ms.author: riande
-ms.date: 10/22/2017
+ms.date: 6/31/2017
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: abbd8337ed62428982a6c52cdaab684ea2c7d329
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: fce524a5cb386fbf286907be42e920be13115ca6
+ms.sourcegitcommit: 1faf2525902236428dae6a59e375519bafd5d6d7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274997"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37089862"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 排序、筛选、分页 - 第 3 个教程（共 8 个）
 
+[!INCLUDE[2.0 version](~/includes/RP-EF/20-pdf.md)]
+
+::: moniker range=">= aspnetcore-2.1"
+
 作者：[Tom Dykstra](https://github.com/tdykstra)、[Rick Anderson](https://twitter.com/RickAndMSFT) 和 [Jon P Smith](https://twitter.com/thereformedprog)
 
-[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](~/includes/RP-EF/intro.md)]
 
 本教程将添加排序、筛选、分组和分页功能。
 
@@ -24,18 +28,17 @@ ms.locfileid: "36274997"
 
 ![“学生索引”页](sort-filter-page/_static/paging.png)
 
-如果遇到无法解决的问题，请下载[本阶段的已完成应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part3-sorting)。
+如果遇到无法解决的问题，请下载[已完成应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples)。
 
 ## <a name="add-sorting-to-the-index-page"></a>向索引页添加排序
 
 向 Students/Index.cshtml.cs `PageModel` 添加字符串，使其包含排序参数：
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet1&highlight=10-13)]
-
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet1&highlight=10-13)]
 
 用以下代码更新 Students/Index.cshtml.cs `OnGetAsync`：
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly)]
 
 上述代码接收来自 URL 中的查询字符串的 `sortOrder` 参数。 该 URL（包括查询字符串）由[定位点标记帮助器](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper
 )生成
@@ -46,11 +49,11 @@ ms.locfileid: "36274997"
 
 Razor 页面使用 `NameSort` 和 `DateSort` 为列标题超链接配置相应的查询字符串值：
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=3-4)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=3-4)]
 
-以下代码包含 C# [?: 运算符](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/conditional-operator)：
+以下代码包含 C# 条件 [?: 运算符](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/conditional-operator)：
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_Ternary)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_Ternary)]
 
 第一行指定当 `sortOrder` 为 NULL 或为空时，`NameSort` 设置为“name_desc”。 如果 `sortOrder` 不为 NULL 或不为空，则 `NameSort` 设置为空字符串。
 
@@ -65,21 +68,21 @@ Razor 页面使用 `NameSort` 和 `DateSort` 为列标题超链接配置相应�
 | 日期升序       | ascending           | descending     |
 | 日期降序      | ascending           | ascending      |
 
-该方法使用 LINQ to Entities 指定要作为排序依据的列。 此代码会初始化 switch 语句前面的 `IQueryable<Student> `，并在 switch 语句中对其进行修改：
+该方法使用 LINQ to Entities 指定要作为排序依据的列。 此代码会初始化 switch 语句前面的 `IQueryable<Student>`，并在 switch 语句中对其进行修改：
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=6-999)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=6-999)]
 
  创建或修改 `IQueryable` 时，不会向数据库发送任何查询。 将 `IQueryable` 对象转换成集合后才能执行查询。 通过调用 `IQueryable` 等方法可将 `ToListAsync` 转换成集合。 因此，`IQueryable` 代码会生成单个查询，此查询直到出现以下语句才执行：
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnlyRtn)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortOnlyRtn)]
 
-`OnGetAsync` 可能获得包含大量列的详细信息。
+`OnGetAsync` 可能获得包含大量可排序列的详细信息。
 
 ### <a name="add-column-heading-hyperlinks-to-the-student-index-page"></a>向“学生索引”页添加列标题超链接
 
 将 Students/Index.cshtml 中的代码替换为以下突出显示的代码：
 
-[!code-html[](intro/samples/cu/Pages/Students/Index2.cshtml?highlight=17-19,25-27)]
+[!code-html[](intro/samples/cu21/Pages/Students/Index2.cshtml?highlight=17-19,25-27)]
 
 前面的代码：
 
@@ -111,7 +114,7 @@ Razor 页面使用 `NameSort` 和 `DateSort` 为列标题超链接配置相应�
 
 用以下代码更新 Students/Index.cshtml.cs `OnGetAsync`：
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilter&highlight=1,5,9-13)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilter&highlight=1,5,9-13)]
 
 前面的代码：
 
@@ -135,7 +138,7 @@ Razor 页面使用 `NameSort` 和 `DateSort` 为列标题超链接配置相应�
 
 在 Pages/Students/Index.cshtml中，添加以下突出显示的代码以创建“搜索”按钮和各种 chrome。
 
-[!code-html[](intro/samples/cu/Pages/Students/Index3.cshtml?highlight=14-23&range=1-25)]
+[!code-html[](intro/samples/cu21/Pages/Students/Index3.cshtml?highlight=14-23&range=1-25)]
 
 上述代码使用 `<form>` [标记帮助器](xref:mvc/views/tag-helpers/intro)来添加搜索文本框和按钮。 默认情况下，`<form>` 标记帮助器利用 POST 提交表单数据。 借助 POST，会在 HTTP 消息正文中而不是在 URL 中传递参数。 使用 HTTP GET 时，表单数据作为查询字符串在 URL 中进行传递。 通过查询字符串传递数据时，用户可对 URL 添加书签。 [W3C 指南](https://www.w3.org/2001/tag/doc/whenToUseGet.html)建议应在操作不引起更新的情况下使用 GET。
 
@@ -162,7 +165,7 @@ http://localhost:5000/Students?SearchString=an
 
 在项目文件夹中，使用以下代码创建 `PaginatedList.cs`：
 
-[!code-csharp[](intro/samples/cu/PaginatedList.cs)]
+[!code-csharp[](intro/samples/cu21/PaginatedList.cs)]
 
 上述代码中的 `CreateAsync` 方法会提取页面大小和页码，并将相应的 `Skip` 和 `Take` 语句应用于 `IQueryable`。 当在 `IQueryable` 上调用 `ToListAsync` 时，它将返回仅包含所请求页的列表。 属性 `HasPreviousPage` 和 `HasNextPage` 用于启用或禁用“上一页”和“下一页”分页按钮。
 
@@ -172,15 +175,15 @@ http://localhost:5000/Students?SearchString=an
 
 在 Students/Index.cshtml.cs 中，将 `Student` 的类型从 `IList<Student>` 更新到 `PaginatedList<Student>`：
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPageType)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPageType)]
 
 用以下代码更新 Students/Index.cshtml.cs `OnGetAsync`：
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage&highlight=1-4,7-14,41-999)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage&highlight=1-4,7-14,41-999)]
 
 上述代码会向方法签名添加页面索引、当前的 `sortOrder` 和 `currentFilter`。
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage2)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage2)]
 
 出现以下情况时，所有参数均为 NULL：
 
@@ -201,11 +204,11 @@ http://localhost:5000/Students?SearchString=an
 * 搜索字符串将会更改。
 * `searchString` 参数不为 NULL。
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage3)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage3)]
 
 `PaginatedList.CreateAsync` 方法会将学生查询转换为支持分页的集合类型中的单个学生页面。 单个学生页面会传递到 Razor 页面。
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage4)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage4)]
 
 `PaginatedList.CreateAsync` 中的两个问号表示 [NULL 合并运算符](https://docs.microsoft.com/ dotnet/csharp/language-reference/operators/null-conditional-operator)。 NULL 合并运算符定义可为 NULL 的类型的默认值。 `(pageIndex ?? 1)` 表达式表示返回 `pageIndex` 的值（若带有值）。 如果 `pageIndex` 没有值，则返回 1。
 
@@ -213,15 +216,15 @@ http://localhost:5000/Students?SearchString=an
 
 更新 Students/Index.cshtml 中的标记。 突出显示所作更改：
 
-[!code-html[](intro/samples/cu/Pages/Students/Index.cshtml?highlight=28-31,37-40,68-999)]
+[!code-html[](intro/samples/cu21/Pages/Students/Index.cshtml?highlight=28-31,37-40,68-999)]
 
 列标题链接使用查询字符串将当前搜索字符串传递到 `OnGetAsync` 方法，让用户可对筛选结果进行排序：
 
-[!code-html[](intro/samples/cu/Pages/Students/Index.cshtml?range=28-31)]
+[!code-html[](intro/samples/cu21/Pages/Students/Index.cshtml?range=28-31)]
 
 分页按钮由标记帮助器显示：
 
-[!code-html[](intro/samples/cu/Pages/Students/Index.cshtml?range=72-)]
+[!code-html[](intro/samples/cu21/Pages/Students/Index.cshtml?range=72-)]
 
 运行应用并导航到学生页面。
 
@@ -243,7 +246,7 @@ http://localhost:5000/Students?SearchString=an
 此步骤将更新 Pages/About.cshtml，显示每个注册日期的已注册学生的数量。 更新需使用分组并包括以下步骤：
 
 * 为“关于”页使用的数据创建视图模型。
-* 修改“关于”Razor 页面和页面模型。
+* 更新“关于”页以使用视图模型。
 
 ### <a name="create-the-view-model"></a>创建视图模型
 
@@ -251,13 +254,13 @@ http://localhost:5000/Students?SearchString=an
 
 在 SchoolViewModels 文件夹中，使用以下代码添加 EnrollmentDateGroup.cs：
 
-[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
+[!code-csharp[](intro/samples/cu21/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
 
 ### <a name="update-the-about-page-model"></a>更新“关于”页面模型
 
 用以下代码更新 Pages/About.cshtml.cs 文件：
 
-[!code-csharp[](intro/samples/cu/Pages/About.cshtml.cs)]
+[!code-csharp[](intro/samples/cu21/Pages/About.cshtml.cs)]
 
 LINQ 语句按注册日期对学生实体进行分组，计算每组中实体的数量，并将结果存储在 `EnrollmentDateGroup` 视图模型对象的集合中。
 
@@ -267,7 +270,7 @@ LINQ 语句按注册日期对学生实体进行分组，计算每组中实体的
 
 将 Pages/About.cshtml 文件中的代码替换为以下代码：
 
-[!code-html[](intro/samples/cu/Pages/About.cshtml)]
+[!code-html[](intro/samples/cu21/Pages/About.cshtml)]
 
 运行应用并导航到“关于”页面。 表格中会显示每个注册日期的学生计数。
 
@@ -280,6 +283,7 @@ LINQ 语句按注册日期对学生实体进行分组，计算每组中实体的
 * [调试 ASP.NET Core 2.x 源](https://github.com/aspnet/Docs/issues/4155)
 
 在下一教程中，应用将利用迁移更新数据模型。
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [上一页](xref:data/ef-rp/crud)

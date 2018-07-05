@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 0149039f69539b7c69d7ba45efcf09d80ffcba79
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 718cc83bb29c0cff323853d22c107e00616b1dd1
+ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275090"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37126230"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>在 Windows 服务中托管 ASP.NET Core
 
@@ -54,29 +54,39 @@ ms.locfileid: "36275090"
 
      ::: moniker-end
 
-1. 将应用发布到文件夹。 使用可发布到文件夹的 [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) 或 [Visual Studio 发布配置文件](xref:host-and-deploy/visual-studio-publish-profiles)。
+1. 发布应用。 使用 [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) 或 [Visual Studio 发布配置文件](xref:host-and-deploy/visual-studio-publish-profiles)。
 
    要从命令行发布示例应用，请从项目文件夹中的控制台窗口中运行以下命令：
 
    ```console
-   dotnet publish --configuration Release --output c:\svc
+   dotnet publish --configuration Release
    ```
 
-1. 使用 [sc.exe](https://technet.microsoft.com/library/bb490995) 命令行工具创建服务 (`sc create <SERVICE_NAME> binPath= "<PATH_TO_SERVICE_EXECUTABLE>"`)。 `binPath` 值是应用的可执行文件的路径，其中包括可执行文件的文件名。 等于号和路径开头的引号字符之间需要添加空格。
+1. 使用 [sc.exe](https://technet.microsoft.com/library/bb490995) 命令行工具创建服务。 `binPath` 值是应用的可执行文件的路径，其中包括可执行文件的文件名。 等于号和路径开头的引号字符之间需要添加空格。
 
-   对于示例应用和后续命令，服务将：
+   ```console
+   sc create <SERVICE_NAME> binPath= "<PATH_TO_SERVICE_EXECUTABLE>"
+   ```
+
+   对于项目文件夹中发布的服务，请使用 publish 文件夹的路径创建服务。 下例中的服务已实现以下操作：
 
    * 命名为“MyService”。
-   * 发布到 c:\\svc 文件夹。
-   * 将应用可执行文件命名为 AspNetCoreService.exe。
+   * 发布到 c:\\my_services\\AspNetCoreService\\bin\\Release\\&lt;TARGET_FRAMEWORK&gt;\\publish 文件夹。
+   * 由名为 AspNetCoreService.exe 的应用可执行文件表示。
 
    利用管理员特权打开一个命令行界面，运行以下命令：
 
    ```console
-   sc create MyService binPath= "c:\svc\aspnetcoreservice.exe"
+   sc create MyService binPath= "c:\my_services\aspnetcoreservice\bin\release\<TARGET_FRAMEWORK>\publish\aspnetcoreservice.exe"
    ```
-
-   确保 `binPath=` 参数与其值之间存在空格。
+   
+   > [!IMPORTANT]
+   > 确保 `binPath=` 参数与其值之间存在空格。
+   
+   从其他文件夹发布和启动服务：
+   
+   1. 使用 `dotnet publish` 命令上的 [--output &lt;OUTPUT_DIRECTORY&gt;](/dotnet/core/tools/dotnet-publish#options) 选项。
+   1. 通过使用输出文件夹路径的 `sc.exe` 命令创建服务。 在向 `binPath` 提供的路径中包含服务可执行文件的名称。
 
 1. 使用 `sc start <SERVICE_NAME>` 命令启动服务。
 

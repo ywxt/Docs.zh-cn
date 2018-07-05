@@ -3,25 +3,29 @@ title: ASP.NET Core 中的 Razor 页面和 EF Core - 迁移 - 第 4 个教程（
 author: rick-anderson
 description: 本教程使用 EF Core 迁移功能管理 ASP.NET Core MVC 应用中的数据模型更改。
 ms.author: riande
-ms.date: 10/15/2017
+ms.date: 6/31/2017
 uid: data/ef-rp/migrations
-ms.openlocfilehash: d39e1aa40ff97d5b335f2bde6170242e89f6189a
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 15e3bc57e98b249cbefc394bbe1a136a709a03a7
+ms.sourcegitcommit: 1faf2525902236428dae6a59e375519bafd5d6d7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272343"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37089953"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---migrations---4-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 迁移 - 第 4 个教程（共 8 个）
 
+[!INCLUDE[2.0 version](~/includes/RP-EF/20-pdf.md)]
+
+::: moniker range=">= aspnetcore-2.1"
+
 作者：[Tom Dykstra](https://github.com/tdykstra)、[Jon P Smith](https://twitter.com/thereformedprog) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](~/includes/RP-EF/intro.md)]
 
 本教程使用 EF Core 迁移功能管理数据模型更改。
 
-如果遇到无法解决的问题，请下载[本阶段的已完成应用](
-https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part4-migrations)。
+如果遇到无法解决的问题，请下载[已完成应用](
+https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples)。
 
 开发新应用时，数据模型会频繁更改。 每当模型发生更改时，都无法与数据库进行同步。 本教程首先配置 Entity Framework 以创建数据库（如果不存在）。 每当数据模型发生更改时：
 
@@ -33,71 +37,57 @@ https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/S
 
 数据模型发生更改时，迁移将更新架构并保留现有数据，而无需删除或重新创建 DB。
 
-## <a name="entity-framework-core-nuget-packages-for-migrations"></a>用于进行迁移的 Entity Framework Core NuGet 包
+## <a name="drop-the-database"></a>删除数据库
 
-要使用迁移，请使用“包管理器控制台”(PMC) 或命令行接口 (CLI)。 以下教程演示如何使用 CLI 命令。 有关 PMC 的信息，请转到[本教程末尾](#pmc)。
+使用 SQL Server 对象资源管理器 (SSOX) 或 `database drop` 命令：
 
-[Microsoft.EntityFrameworkCore.Tools.DotNet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet) 中提供了适用于命令行接口 (CLI) 的 EF Core 工具。 若要安装此程序包，请将它添加到 .csproj 文件中的 `DotNetCliToolReference` 集合，如下所示。 **注意：** 必须通过编辑 .csproj 文件来安装此程序包。 不能使用 `install-package` 命令或包管理器 GUI 安装此程序包。 要编辑 .csproj 文件，请右键单击解决方案资源管理器中的项目名称，然后选择“编辑 ContosoUniversity.csproj”。
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-以下标记显示已更新的 .csproj 文件，其中突出显示了 EF Core CLI 工具：
+在“包管理器控制台”(PMC) 中运行以下命令：
 
-[!code-xml[](intro/samples/cu/ContosoUniversity.csproj?highlight=12)]
-  
-编写本教程时，前面示例中的版本号是最新的。 请对在其他程序包中发现的 EF Core CLI 工具使用相同的版本。
+```PMC
+Drop-Database
+```
 
-## <a name="change-the-connection-string"></a>更改连接字符串
+从 PMC 运行 `Get-Help about_EntityFrameworkCore`，获取帮助信息。
 
-在 appsettings.json 文件中，将连接字符串中 DB 名称更改为 ContosoUniversity2。
-
-[!code-json[](intro/samples/cu/appsettings2.json?range=1-4)]
-
-更改连接字符串中的 DB 名称会导致初始迁移创建新的 DB。 之所以会创建新的 DB，是因为不存在具有该名称的 DB。 使用迁移无需更改连接字符串。
-
-更改 DB 名称的另一种方法是删除 DB。 使用 SQL Server 对象资源管理器 (SSOX) 或 `database drop` CLI 命令：
-
- ```console
- dotnet ef database drop
- ```
-
-下面的部分说明如何运行 CLI 命令。
-
-## <a name="create-an-initial-migration"></a>创建初始迁移
-
-生成项目。
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
 打开命令窗口并导航到项目文件夹。 项目文件夹包含 Startup.cs 文件。
 
 在命令窗口中输入以下内容：
 
+ ```console
+ dotnet ef database drop
+ ```
+
+------
+
+## <a name="create-an-initial-migration-and-update-the-db"></a>创建初始迁移并更新 DB
+
+生成项目并创建第一个迁移。
+
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+
+```PMC
+Add-Migration InitialCreate
+Update-Database
+```
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
 ```console
 dotnet ef migrations add InitialCreate
+dotnet ef database update
 ```
 
-命令窗口显示类似于以下内容的信息：
-
-```console
-info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
-      User profile is available. Using 'C:\Users\username\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
-      Entity Framework Core 2.0.0-rtm-26452 initialized 'SchoolContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
-Done. To undo this action, use 'ef migrations remove'
-```
-
-如果迁移失败，并出现消息“无法访问文件...ContosoUniversity.dll，因为它正被另一个进程使用。”* ：
-
-* 停止 IIS Express。
-
-   * 退出并重启 Visual Studio，或
-   * 在 Windows 系统托盘中找到 IIS Express 图标。
-   * 右键单击 IIS Express 图标，然后单击“ContosoUniversity”>“停止站点”。
-
-如果出现错误消息“生成失败。”， 请再次运行该命令。 如果收到此错误，请在本教程底部留下说明。
+------
 
 ### <a name="examine-the-up-and-down-methods"></a>了解 Up 和 Down 方法
 
-EF Core 命令 `migrations add` 已生成用于创建 DB 的代码。 此迁移代码位于 Migrations\<timestamp>_InitialCreate.cs 文件中。 `InitialCreate` 类的 `Up` 的方法创建与数据模型实体集相对应的 DB 表。 `Down` 方法删除这些表，如下例所示：
+EF Core `migrations add` 命令已生成用于创建 DB 的代码。 此迁移代码位于 Migrations\<timestamp>_InitialCreate.cs 文件中。 `InitialCreate` 类的 `Up` 的方法创建与数据模型实体集相对应的 DB 表。 `Down` 方法删除这些表，如下例所示：
 
-[!code-csharp[](intro/samples/cu/Migrations/20171026010210_InitialCreate.cs?range=8-24,77-)]
+[!code-csharp[](intro/samples/cu21/Migrations/20180626224812_InitialCreate.cs?range=7-24,77-88)]
 
 迁移调用 `Up` 方法为迁移实现数据模型更改。 输入用于回退更新的命令时，迁移调用 `Down` 方法。
 
@@ -110,19 +100,33 @@ EF Core 命令 `migrations add` 已生成用于创建 DB 的代码。 此迁移�
 
 如果将应用部署到新环境，则必须运行 DB 创建代码才能创建 DB。
 
-以前，需要更改连接字符串才能使用 DB 的新名称。 指定的 DB 不存在，因此迁移会创建 DB。
+先前删除了 DB，因此已不存在，所以迁移会创建新的 DB。
 
 ### <a name="the-data-model-snapshot"></a>数据模型快照
 
 迁移在 Migrations/SchoolContextModelSnapshot.cs 中创建当前数据库架构的快照。 添加迁移时，EF 会通过将数据模型与快照文件进行对比来确定已更改的内容。
 
-删除迁移时，请使用 [dotnet ef migrations remove](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) 命令。 `dotnet ef migrations remove` 删除迁移，并确保正确重置快照。
+若要删除迁移，请使用以下命令：
 
-有关如何使用快照文件的详细信息，请参阅[团队环境中的 EF Core 迁移](/ef/core/managing-schemas/migrations/teams)。
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-## <a name="remove-ensurecreated"></a>删除 EnsureCreated
+Remove-Migration
 
-以前的开发通常使用 `EnsureCreated` 命令。 本教程将使用迁移。 `EnsureCreated` 具有以下限制：
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
+```console
+dotnet ef migrations remove
+```
+
+有关详细信息，请参阅 [dotnet ef migrations remove](/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove)。
+
+------
+
+删除迁移命令会删除迁移并确保正确重置快照。
+
+### <a name="remove-ensurecreated-and-test-the-app"></a>删除 EnsureCreated 并测试应用
+
+早期开发使用了 `EnsureCreated`。 本教程将使用迁移。 `EnsureCreated` 具有以下限制：
 
 * 绕过迁移并创建 DB 和架构。
 * 不会创建迁移表。
@@ -135,48 +139,9 @@ EF Core 命令 `migrations add` 已生成用于创建 DB 的代码。 此迁移�
 context.Database.EnsureCreated();
 ```
 
-## <a name="apply-the-migration-to-the-db-in-development"></a>在开发过程中将迁移应用于 DB
+运行应用并验证 DB 设定为种子。
 
-在命令窗口中，输入以下内容以创建 DB 和表。
-
-```console
-dotnet ef database update
-```
-
-注意：如果 `update` 命令返回“生成失败。”错误：
-
-* 请再次运行该命令。
-* 如果再次失败，请退出 Visual Studio，然后运行 `update` 命令。
-* 请在页面底部留言。
-
-该命令的输出与 `migrations add` 命令的输出相似。 上面的命令中显示了用于设置 DB 的 SQL 命令的日志。 下面的示例输出中省略了大部分日志：
-
-```text
-info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
-      User profile is available. Using 'C:\Users\username\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
-      Entity Framework Core 2.0.0-rtm-26452 initialized 'SchoolContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
-info: Microsoft.EntityFrameworkCore.Database.Command[200101]
-      Executed DbCommand (467ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
-      CREATE DATABASE [ContosoUniversity2];
-info: Microsoft.EntityFrameworkCore.Database.Command[200101]
-      Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      CREATE TABLE [__EFMigrationsHistory] (
-          [MigrationId] nvarchar(150) NOT NULL,
-          [ProductVersion] nvarchar(32) NOT NULL,
-          CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
-      );
-
-<logs omitted for brevity>
-
-info: Microsoft.EntityFrameworkCore.Database.Command[200101]
-      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-      VALUES (N'20170816151242_InitialCreate', N'2.0.0-rtm-26452');
-Done.
-```
-
-要降低日志消息的详细级别，请更改 appsettings.Development.json 文件中的日志级别。 有关详细信息，请参阅[日志记录介绍](xref:fundamentals/logging/index)。
+### <a name="inspect-the-database"></a>检查数据库
 
 使用 SQL Server 对象资源管理器检查 DB。 请注意，增加了 `__EFMigrationsHistory` 表。 `__EFMigrationsHistory` 表跟踪已应用到 DB 的迁移。 查看 `__EFMigrationsHistory` 表中的数据，其中显示对应初始迁移的一行数据。 上面的 CLI 输出示例中最后部分的日志显示了创建此行的 INSERT 语句。
 
@@ -193,27 +158,9 @@ Done.
 
 EF Core 使用 `__MigrationsHistory` 表查看是否需要运行任何迁移。 如果 DB 已是最新，则无需运行迁移。
 
-<a id="pmc"></a>
-## <a name="command-line-interface-cli-vs-package-manager-console-pmc"></a>命令行接口 (CLI) 与包管理器控制台 (PMC)
-
-可通过以下项使用可管理迁移的 EF Core 工具：
-
-* .NET Core CLI 命令。
-* Visual Studio 包管理器控制台 (PMC) 窗口中的 PowerShell cmdlet。
-
-本教程演示如何使用 CLI，但某些开发人员更倾向于使用 PMC。
-
-适用于 PMC 的 EF Core 命令位于 [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools) 程序包中。 此包包含在 [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) 元包中，因此无需另外安装。
-
-**重要说明：** 此程序包与通过编辑 .csproj 文件为 CLI 安装的程序包不同。 此程序包的名称以 `Tools` 结尾，而 CLI 程序包的名称以 `Tools.DotNet` 结尾。
-
-有关 CLI 命令的详细信息，请参阅 [.NET Core CLI](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet)。
-
-有关 PMC 命令的详细信息，请参阅[包管理器控制台 (Visual Studio)](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell)。
-
 ## <a name="troubleshooting"></a>疑难解答
 
-请下载[本阶段的已完成应用](
+下载[已完成应用](
 https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part4-migrations)。
 
 应用会生成以下异常：
@@ -226,10 +173,12 @@ Login failed for user 'user name'.
 
 解决方案：运行 `dotnet ef database update`
 
-如果 `update` 命令返回“生成失败。”错误：
+### <a name="additional-resources"></a>其他资源
 
-* 请再次运行该命令。
-* 请在页面底部留言。
+* [.NET Core CLI](/ef/core/miscellaneous/cli/dotnet).
+* [包管理器控制台 (Visual Studio)](/ef/core/miscellaneous/cli/powershell)
+
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [上一页](xref:data/ef-rp/sort-filter-page)

@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 569c5b977d832aec3657321cad8d0f9520aae031
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: cabf3d955ef2eb17b3bcb40170a9de7b53ffd107
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277769"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077626"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>将验证添加到 ASP.NET Core Razor 页面
 
@@ -45,7 +45,7 @@ Razor 页面和 Entity Framework 提供的验证支持是 DRY 原则的极佳示
 验证特性用于指定模型属性上强制执行的行为：
 
 * `Required` 和 `MinimumLength` 特性指示属性必须具有一个值。 但是，用户可以随时输入空格以对可以为 null 的类型进行验证约束。 从本质上来说，需要不可以为 null 的[值类型](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value-types)（如 `decimal`、`int`、`float` 和 `DateTime`），但不需要 `Required` 特性。
-* `RegularExpression` 特性限制用户可以输入的字符。 在上述代码中，`Genre` 和 `Rating` 仅可使用字母（禁用空格、数字和特殊字符）。
+* `RegularExpression` 特性限制用户可以输入的字符。 在前面的代码中，`Genre` 必须以一个或多个大写字母开始，并且后接零个或多个字母、单引号或双引号、空白字符或短划线。 `Rating` 必须以一个或多个大写字母开始，并且后接零个或多个字母、数字、单引号或双引号、空白字符或短划线。
 * `Range` 特性将值限制在指定范围内。
 * `StringLength` 特性设置字符串的最大长度，且可视情况设置最小长度。 
 
