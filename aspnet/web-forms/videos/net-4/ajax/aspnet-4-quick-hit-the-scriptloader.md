@@ -1,6 +1,6 @@
 ---
 uid: web-forms/videos/net-4/ajax/aspnet-4-quick-hit-the-scriptloader
-title: Visual Studio 2010 快速命中-ScriptLoader |Microsoft 文档
+title: Visual Studio 2010 快速命中-ScriptLoader |Microsoft Docs
 author: JoeStagner
 description: 在本视频中将了解 ScriptLoader。
 ms.author: aspnetcontent
@@ -9,25 +9,24 @@ ms.date: 11/16/2009
 ms.topic: article
 ms.assetid: b79562dd-ddd2-4a6b-a681-6aa75f25e59c
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/ajax/aspnet-4-quick-hit-the-scriptloader
 msc.type: video
-ms.openlocfilehash: 4e7319e96ce06866277bcb8cb3a4acdd65690de7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 2e1afee03bf33e55f9751281bd9a73d830c4df07
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30881384"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37400439"
 ---
-<a name="aspnet-4-quick-hit---the-scriptloader"></a><span data-ttu-id="e0544-103">ASP.NET 4"快速命中"-ScriptLoader</span><span class="sxs-lookup"><span data-stu-id="e0544-103">ASP.NET 4 "Quick Hit" - The ScriptLoader</span></span>
+<a name="aspnet-4-quick-hit---the-scriptloader"></a><span data-ttu-id="320a4-103">ASP.NET 4"快速命中"-ScriptLoader</span><span class="sxs-lookup"><span data-stu-id="320a4-103">ASP.NET 4 "Quick Hit" - The ScriptLoader</span></span>
 ====================
-<span data-ttu-id="e0544-104">通过[Joe stagner 将](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="e0544-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="320a4-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="320a4-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="e0544-105">在本视频中将了解 ScriptLoader。</span><span class="sxs-lookup"><span data-stu-id="e0544-105">In this video will learn about the ScriptLoader.</span></span>
+<span data-ttu-id="320a4-105">在本视频中将了解 ScriptLoader。</span><span class="sxs-lookup"><span data-stu-id="320a4-105">In this video will learn about the ScriptLoader.</span></span>
 
-[<span data-ttu-id="e0544-106">&#9654;观看视频 （14 分钟）</span><span class="sxs-lookup"><span data-stu-id="e0544-106">&#9654; Watch video (14 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-the-scriptloader)
+[<span data-ttu-id="320a4-106">&#9654;观看视频 （14 分钟）</span><span class="sxs-lookup"><span data-stu-id="320a4-106">&#9654; Watch video (14 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-the-scriptloader)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="e0544-107">[上一页](aspnet-4-quick-hit-imperative-javascript-syntax-for-microsoft-client-side-controls.md)
-> [下一页](aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)</span><span class="sxs-lookup"><span data-stu-id="e0544-107">[Previous](aspnet-4-quick-hit-imperative-javascript-syntax-for-microsoft-client-side-controls.md)
+> <span data-ttu-id="320a4-107">[上一页](aspnet-4-quick-hit-imperative-javascript-syntax-for-microsoft-client-side-controls.md)
+> [下一页](aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)</span><span class="sxs-lookup"><span data-stu-id="320a4-107">[Previous](aspnet-4-quick-hit-imperative-javascript-syntax-for-microsoft-client-side-controls.md)
 [Next](aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)</span></span>
