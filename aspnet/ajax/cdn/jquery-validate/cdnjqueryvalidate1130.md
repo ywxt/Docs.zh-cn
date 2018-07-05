@@ -4,26 +4,23 @@ title: jQuery 验证 1.13.0 |Microsoft Docs
 author: rick-anderson
 description: ''
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/23/2014
-ms.topic: article
 ms.assetid: 686b60a7-24a0-4ce9-90c6-b208219617bf
-ms.technology: ''
 msc.legacyurl: /ajax/cdn/jquery-validate/cdnjqueryvalidate1130
 msc.type: content
-ms.openlocfilehash: 568f302a614ed1528f9b5c80fef002b5364a8410
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a8098a6138a36a0f870841c0aca184c00e2dca33
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401104"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816105"
 ---
-<a name="jquery-validation-1130"></a><span data-ttu-id="a7cd1-102">jQuery 验证 1.13.0</span><span class="sxs-lookup"><span data-stu-id="a7cd1-102">jQuery Validation 1.13.0</span></span>
+<a name="jquery-validation-1130"></a><span data-ttu-id="6d7ec-102">jQuery 验证 1.13.0</span><span class="sxs-lookup"><span data-stu-id="6d7ec-102">jQuery Validation 1.13.0</span></span>
 ====================
-<span data-ttu-id="a7cd1-103">在 CDN 上托管的以下文件：</span><span class="sxs-lookup"><span data-stu-id="a7cd1-103">The following files are hosted on the CDN:</span></span>
+<span data-ttu-id="6d7ec-103">在 CDN 上托管的以下文件：</span><span class="sxs-lookup"><span data-stu-id="6d7ec-103">The following files are hosted on the CDN:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js
-- <span data-ttu-id="a7cd1-104">本地化文件https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/localization/messages\_##.js其中 # # 是本地化代码。</span><span class="sxs-lookup"><span data-stu-id="a7cd1-104">Localization Files at https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/localization/messages\_##.js where ## is the loc code.</span></span>
+- <span data-ttu-id="6d7ec-104">本地化文件https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/localization/messages\_##.js其中 # # 是本地化代码。</span><span class="sxs-lookup"><span data-stu-id="6d7ec-104">Localization Files at https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/localization/messages\_##.js where ## is the loc code.</span></span>
