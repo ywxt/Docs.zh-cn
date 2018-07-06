@@ -4,77 +4,74 @@ title: 使用 ASP.NET Web API OData v4 中的复杂类型继承 |Microsoft Docs
 author: microsoft
 description: 根据 OData v4 规范中，可以从另一种复杂类型继承的复杂类型。 （一种复杂类型是结构化的类型没有键。）Web API...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/16/2014
-ms.topic: article
 ms.assetid: a00d3600-9c2a-41bc-9460-06cc527904e2
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/complex-type-inheritance-in-odata-v4
 msc.type: authoredcontent
-ms.openlocfilehash: 84a887b445959c4aa6d1ee372f067f93cd725d77
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: d295a6ae20f5771ae1f4f28166f7e651b6ec5c58
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372052"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824025"
 ---
-<a name="complex-type-inheritance-in-odata-v4-with-aspnet-web-api"></a><span data-ttu-id="29f86-104">使用 ASP.NET Web API OData v4 中的复杂类型继承</span><span class="sxs-lookup"><span data-stu-id="29f86-104">Complex Type Inheritance in OData v4 with ASP.NET Web API</span></span>
+<a name="complex-type-inheritance-in-odata-v4-with-aspnet-web-api"></a><span data-ttu-id="10312-104">使用 ASP.NET Web API OData v4 中的复杂类型继承</span><span class="sxs-lookup"><span data-stu-id="10312-104">Complex Type Inheritance in OData v4 with ASP.NET Web API</span></span>
 ====================
-<span data-ttu-id="29f86-105">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="29f86-105">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="10312-105">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="10312-105">by [Microsoft](https://github.com/microsoft)</span></span>
 
-> <span data-ttu-id="29f86-106">根据 OData v4[规范](http://www.odata.org/documentation/odata-version-4-0/)，可以从另一种复杂类型继承的复杂类型。</span><span class="sxs-lookup"><span data-stu-id="29f86-106">According to the OData v4 [specification](http://www.odata.org/documentation/odata-version-4-0/), a complex type can inherit from another complex type.</span></span> <span data-ttu-id="29f86-107">(A*复杂*类型是结构化的类型没有键。)Web API OData 5.3 支持复杂类型继承。</span><span class="sxs-lookup"><span data-stu-id="29f86-107">(A *complex* type is a structured type without a key.) Web API OData 5.3 supports complex type inheritance.</span></span>
+> <span data-ttu-id="10312-106">根据 OData v4[规范](http://www.odata.org/documentation/odata-version-4-0/)，可以从另一种复杂类型继承的复杂类型。</span><span class="sxs-lookup"><span data-stu-id="10312-106">According to the OData v4 [specification](http://www.odata.org/documentation/odata-version-4-0/), a complex type can inherit from another complex type.</span></span> <span data-ttu-id="10312-107">(A*复杂*类型是结构化的类型没有键。)Web API OData 5.3 支持复杂类型继承。</span><span class="sxs-lookup"><span data-stu-id="10312-107">(A *complex* type is a structured type without a key.) Web API OData 5.3 supports complex type inheritance.</span></span>
 > 
-> <span data-ttu-id="29f86-108">本主题演示如何生成实体数据模型 (EDM) 的复杂的继承类型。</span><span class="sxs-lookup"><span data-stu-id="29f86-108">This topic shows how to build an entity data model (EDM) with complex inheritance types.</span></span> <span data-ttu-id="29f86-109">有关完整的源代码，请参阅[OData 复杂类型继承示例](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v4/ODataComplexTypeInheritanceSample/ReadMe.txt)。</span><span class="sxs-lookup"><span data-stu-id="29f86-109">For the complete source code, see [OData Complex Type Inheritance Sample](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v4/ODataComplexTypeInheritanceSample/ReadMe.txt).</span></span>
+> <span data-ttu-id="10312-108">本主题演示如何生成实体数据模型 (EDM) 的复杂的继承类型。</span><span class="sxs-lookup"><span data-stu-id="10312-108">This topic shows how to build an entity data model (EDM) with complex inheritance types.</span></span> <span data-ttu-id="10312-109">有关完整的源代码，请参阅[OData 复杂类型继承示例](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v4/ODataComplexTypeInheritanceSample/ReadMe.txt)。</span><span class="sxs-lookup"><span data-stu-id="10312-109">For the complete source code, see [OData Complex Type Inheritance Sample](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v4/ODataComplexTypeInheritanceSample/ReadMe.txt).</span></span>
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a><span data-ttu-id="29f86-110">在本教程中使用的软件版本</span><span class="sxs-lookup"><span data-stu-id="29f86-110">Software versions used in the tutorial</span></span>
+> ## <a name="software-versions-used-in-the-tutorial"></a><span data-ttu-id="10312-110">在本教程中使用的软件版本</span><span class="sxs-lookup"><span data-stu-id="10312-110">Software versions used in the tutorial</span></span>
 > 
 > 
-> - <span data-ttu-id="29f86-111">Web API OData 5.3</span><span class="sxs-lookup"><span data-stu-id="29f86-111">Web API OData 5.3</span></span>
-> - <span data-ttu-id="29f86-112">OData v4</span><span class="sxs-lookup"><span data-stu-id="29f86-112">OData v4</span></span>
+> - <span data-ttu-id="10312-111">Web API OData 5.3</span><span class="sxs-lookup"><span data-stu-id="10312-111">Web API OData 5.3</span></span>
+> - <span data-ttu-id="10312-112">OData v4</span><span class="sxs-lookup"><span data-stu-id="10312-112">OData v4</span></span>
 
 
-## <a name="model-hierarchy"></a><span data-ttu-id="29f86-113">模型层次结构</span><span class="sxs-lookup"><span data-stu-id="29f86-113">Model Hierarchy</span></span>
+## <a name="model-hierarchy"></a><span data-ttu-id="10312-113">模型层次结构</span><span class="sxs-lookup"><span data-stu-id="10312-113">Model Hierarchy</span></span>
 
-<span data-ttu-id="29f86-114">为了说明复杂类型继承，我们将使用以下类层次结构。</span><span class="sxs-lookup"><span data-stu-id="29f86-114">To illustrate complex type inheritance, we'll use the following class hierarchy.</span></span>
+<span data-ttu-id="10312-114">为了说明复杂类型继承，我们将使用以下类层次结构。</span><span class="sxs-lookup"><span data-stu-id="10312-114">To illustrate complex type inheritance, we'll use the following class hierarchy.</span></span>
 
 ![](complex-type-inheritance-in-odata-v4/_static/image1.png)
 
-<span data-ttu-id="29f86-115">`Shape` 是抽象的复杂类型。</span><span class="sxs-lookup"><span data-stu-id="29f86-115">`Shape` is an abstract complex type.</span></span> <span data-ttu-id="29f86-116">`Rectangle``Triangle`，并`Circle`复杂类型派生自`Shape`，和`RoundRectangle`派生`Rectangle`。</span><span class="sxs-lookup"><span data-stu-id="29f86-116">`Rectangle`, `Triangle`, and `Circle` are complex types derived from `Shape`, and `RoundRectangle` derives from `Rectangle`.</span></span> <span data-ttu-id="29f86-117">`Window` 是一个实体类型，包含`Shape`实例。</span><span class="sxs-lookup"><span data-stu-id="29f86-117">`Window` is an entity type and contains a `Shape` instance.</span></span>
+<span data-ttu-id="10312-115">`Shape` 是抽象的复杂类型。</span><span class="sxs-lookup"><span data-stu-id="10312-115">`Shape` is an abstract complex type.</span></span> <span data-ttu-id="10312-116">`Rectangle``Triangle`，并`Circle`复杂类型派生自`Shape`，和`RoundRectangle`派生`Rectangle`。</span><span class="sxs-lookup"><span data-stu-id="10312-116">`Rectangle`, `Triangle`, and `Circle` are complex types derived from `Shape`, and `RoundRectangle` derives from `Rectangle`.</span></span> <span data-ttu-id="10312-117">`Window` 是一个实体类型，包含`Shape`实例。</span><span class="sxs-lookup"><span data-stu-id="10312-117">`Window` is an entity type and contains a `Shape` instance.</span></span>
 
-<span data-ttu-id="29f86-118">以下是定义这些类型的 CLR 类。</span><span class="sxs-lookup"><span data-stu-id="29f86-118">Here are the CLR classes that define these types.</span></span>
+<span data-ttu-id="10312-118">以下是定义这些类型的 CLR 类。</span><span class="sxs-lookup"><span data-stu-id="10312-118">Here are the CLR classes that define these types.</span></span>
 
 [!code-csharp[Main](complex-type-inheritance-in-odata-v4/samples/sample1.cs)]
 
-## <a name="build-the-edm-model"></a><span data-ttu-id="29f86-119">生成的 EDM 模型</span><span class="sxs-lookup"><span data-stu-id="29f86-119">Build the EDM Model</span></span>
+## <a name="build-the-edm-model"></a><span data-ttu-id="10312-119">生成的 EDM 模型</span><span class="sxs-lookup"><span data-stu-id="10312-119">Build the EDM Model</span></span>
 
-<span data-ttu-id="29f86-120">若要创建 EDM，可以使用**ODataConventionModelBuilder**，，推断从 CLR 类型的继承关系。</span><span class="sxs-lookup"><span data-stu-id="29f86-120">To create the EDM, you can use **ODataConventionModelBuilder**, which infers the inheritance relationships from the CLR types.</span></span>
+<span data-ttu-id="10312-120">若要创建 EDM，可以使用**ODataConventionModelBuilder**，，推断从 CLR 类型的继承关系。</span><span class="sxs-lookup"><span data-stu-id="10312-120">To create the EDM, you can use **ODataConventionModelBuilder**, which infers the inheritance relationships from the CLR types.</span></span>
 
 [!code-csharp[Main](complex-type-inheritance-in-odata-v4/samples/sample2.cs)]
 
-<span data-ttu-id="29f86-121">您还可以构建 EDM 显式使用**ODataModelBuilder**。</span><span class="sxs-lookup"><span data-stu-id="29f86-121">You can also build the EDM explicitly, using **ODataModelBuilder**.</span></span> <span data-ttu-id="29f86-122">这需要更多代码，但提供对 EDM 的更多控制。</span><span class="sxs-lookup"><span data-stu-id="29f86-122">This takes more code, but gives you more control over the EDM.</span></span>
+<span data-ttu-id="10312-121">您还可以构建 EDM 显式使用**ODataModelBuilder**。</span><span class="sxs-lookup"><span data-stu-id="10312-121">You can also build the EDM explicitly, using **ODataModelBuilder**.</span></span> <span data-ttu-id="10312-122">这需要更多代码，但提供对 EDM 的更多控制。</span><span class="sxs-lookup"><span data-stu-id="10312-122">This takes more code, but gives you more control over the EDM.</span></span>
 
 [!code-csharp[Main](complex-type-inheritance-in-odata-v4/samples/sample3.cs)]
 
-<span data-ttu-id="29f86-123">这两个示例创建相同的 EDM 架构。</span><span class="sxs-lookup"><span data-stu-id="29f86-123">These two examples create the same EDM schema.</span></span>
+<span data-ttu-id="10312-123">这两个示例创建相同的 EDM 架构。</span><span class="sxs-lookup"><span data-stu-id="10312-123">These two examples create the same EDM schema.</span></span>
 
-## <a name="metadata-document"></a><span data-ttu-id="29f86-124">元数据文档</span><span class="sxs-lookup"><span data-stu-id="29f86-124">Metadata Document</span></span>
+## <a name="metadata-document"></a><span data-ttu-id="10312-124">元数据文档</span><span class="sxs-lookup"><span data-stu-id="10312-124">Metadata Document</span></span>
 
-<span data-ttu-id="29f86-125">下面是显示复杂类型继承的 OData 元数据文档。</span><span class="sxs-lookup"><span data-stu-id="29f86-125">Here is the OData metadata document, showing complex type inheritance.</span></span>
+<span data-ttu-id="10312-125">下面是显示复杂类型继承的 OData 元数据文档。</span><span class="sxs-lookup"><span data-stu-id="10312-125">Here is the OData metadata document, showing complex type inheritance.</span></span>
 
 [!code-xml[Main](complex-type-inheritance-in-odata-v4/samples/sample4.xml?highlight=13,17,25,30)]
 
-<span data-ttu-id="29f86-126">从元数据文档中，您可以看到：</span><span class="sxs-lookup"><span data-stu-id="29f86-126">From the metadata document, you can see that:</span></span>
+<span data-ttu-id="10312-126">从元数据文档中，您可以看到：</span><span class="sxs-lookup"><span data-stu-id="10312-126">From the metadata document, you can see that:</span></span>
 
-- <span data-ttu-id="29f86-127">`Shape`复杂类型是抽象的。</span><span class="sxs-lookup"><span data-stu-id="29f86-127">The `Shape` complex type is abstract.</span></span>
-- <span data-ttu-id="29f86-128">`Rectangle`， `Triangle`，并`Circle`复杂类型具有基类型`Shape`。</span><span class="sxs-lookup"><span data-stu-id="29f86-128">The `Rectangle`, `Triangle`, and `Circle` complex type have the base type `Shape`.</span></span>
-- <span data-ttu-id="29f86-129">`RoundRectangle`类型具有基类型`Rectangle`。</span><span class="sxs-lookup"><span data-stu-id="29f86-129">The `RoundRectangle` type has the base type `Rectangle`.</span></span>
+- <span data-ttu-id="10312-127">`Shape`复杂类型是抽象的。</span><span class="sxs-lookup"><span data-stu-id="10312-127">The `Shape` complex type is abstract.</span></span>
+- <span data-ttu-id="10312-128">`Rectangle`， `Triangle`，并`Circle`复杂类型具有基类型`Shape`。</span><span class="sxs-lookup"><span data-stu-id="10312-128">The `Rectangle`, `Triangle`, and `Circle` complex type have the base type `Shape`.</span></span>
+- <span data-ttu-id="10312-129">`RoundRectangle`类型具有基类型`Rectangle`。</span><span class="sxs-lookup"><span data-stu-id="10312-129">The `RoundRectangle` type has the base type `Rectangle`.</span></span>
 
-## <a name="casting-complex-types"></a><span data-ttu-id="29f86-130">强制转换的复杂类型</span><span class="sxs-lookup"><span data-stu-id="29f86-130">Casting Complex Types</span></span>
+## <a name="casting-complex-types"></a><span data-ttu-id="10312-130">强制转换的复杂类型</span><span class="sxs-lookup"><span data-stu-id="10312-130">Casting Complex Types</span></span>
 
-<span data-ttu-id="29f86-131">现在支持对复杂类型强制转换。</span><span class="sxs-lookup"><span data-stu-id="29f86-131">Casting on complex types is now supported.</span></span> <span data-ttu-id="29f86-132">例如，下面的查询强制转换`Shape`到`Rectangle`。</span><span class="sxs-lookup"><span data-stu-id="29f86-132">For example, the following query casts a `Shape` to a `Rectangle`.</span></span>
+<span data-ttu-id="10312-131">现在支持对复杂类型强制转换。</span><span class="sxs-lookup"><span data-stu-id="10312-131">Casting on complex types is now supported.</span></span> <span data-ttu-id="10312-132">例如，下面的查询强制转换`Shape`到`Rectangle`。</span><span class="sxs-lookup"><span data-stu-id="10312-132">For example, the following query casts a `Shape` to a `Rectangle`.</span></span>
 
 [!code-console[Main](complex-type-inheritance-in-odata-v4/samples/sample5.cmd)]
 
-<span data-ttu-id="29f86-133">下面是响应负载：</span><span class="sxs-lookup"><span data-stu-id="29f86-133">Here's the response payload:</span></span>
+<span data-ttu-id="10312-133">下面是响应负载：</span><span class="sxs-lookup"><span data-stu-id="10312-133">Here's the response payload:</span></span>
 
 [!code-console[Main](complex-type-inheritance-in-odata-v4/samples/sample6.cmd)]

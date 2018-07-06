@@ -4,24 +4,21 @@ title: '[如何实现:]使用控件状态保存自定义 Web 服务器控件的�
 author: rick-anderson
 description: 在本视频中 Chris Pels 将显示如何存储与自定义 web 服务器控件中的控件状态，这是独立的视图状态相关的信息...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/17/2007
-ms.topic: article
 ms.assetid: 3004c934-0563-41ac-ad80-fef985e9e5b4
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-control-state-to-persist-information-for-a-custom-web-server-control
 msc.type: video
-ms.openlocfilehash: 744994483cb82e0309518cbb5f4c6d194dc992ae
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 902a36344bab1b47bc5395be19f7ba12dbf7175b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37380397"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809834"
 ---
-<a name="how-do-i-use-control-state-to-persist-information-for-a-custom-web-server-control"></a><span data-ttu-id="dfa70-103">[如何实现:]使用控件状态保存自定义 Web 服务器控件的信息</span><span class="sxs-lookup"><span data-stu-id="dfa70-103">[How Do I:] Use Control State to Persist Information for a Custom Web Server Control</span></span>
+<a name="how-do-i-use-control-state-to-persist-information-for-a-custom-web-server-control"></a><span data-ttu-id="55044-103">[如何实现:]使用控件状态保存自定义 Web 服务器控件的信息</span><span class="sxs-lookup"><span data-stu-id="55044-103">[How Do I:] Use Control State to Persist Information for a Custom Web Server Control</span></span>
 ====================
-<span data-ttu-id="dfa70-104">通过[Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="dfa70-104">by [Chris Pels](https://twitter.com/chrispels)</span></span>
+<span data-ttu-id="55044-104">通过[Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="55044-104">by [Chris Pels](https://twitter.com/chrispels)</span></span>
 
-<span data-ttu-id="dfa70-105">在本视频中 Chris Pels 将显示如何存储中的控件状态，这是独立于控件的视图状态信息的自定义 web 服务器控件与相关的信息。</span><span class="sxs-lookup"><span data-stu-id="dfa70-105">In this video Chris Pels will show how to store information related to a custom web server control in the control state which is independent of the ViewState information for the control.</span></span> <span data-ttu-id="dfa70-106">与不同的视图状态的控件状态不会关闭，因此更可靠的方法来存储控件的重要信息。</span><span class="sxs-lookup"><span data-stu-id="dfa70-106">Unlike ViewState the control state can not be turned off and is therefore a more reliable way to store important information for a control.</span></span> <span data-ttu-id="dfa70-107">此外，还包含哪些类型的信息都存储在控件状态的讨论。</span><span class="sxs-lookup"><span data-stu-id="dfa70-107">A discussion of what types of information are appropriate to store in control state is also included.</span></span>
+<span data-ttu-id="55044-105">在本视频中 Chris Pels 将显示如何存储中的控件状态，这是独立于控件的视图状态信息的自定义 web 服务器控件与相关的信息。</span><span class="sxs-lookup"><span data-stu-id="55044-105">In this video Chris Pels will show how to store information related to a custom web server control in the control state which is independent of the ViewState information for the control.</span></span> <span data-ttu-id="55044-106">与不同的视图状态的控件状态不会关闭，因此更可靠的方法来存储控件的重要信息。</span><span class="sxs-lookup"><span data-stu-id="55044-106">Unlike ViewState the control state can not be turned off and is therefore a more reliable way to store important information for a control.</span></span> <span data-ttu-id="55044-107">此外，还包含哪些类型的信息都存储在控件状态的讨论。</span><span class="sxs-lookup"><span data-stu-id="55044-107">A discussion of what types of information are appropriate to store in control state is also included.</span></span>
 
-[<span data-ttu-id="dfa70-108">&#9654;观看视频 （13 分钟）</span><span class="sxs-lookup"><span data-stu-id="dfa70-108">&#9654; Watch video (13 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-control-state-to-persist-information-for-a-custom-web-server-control)
+[<span data-ttu-id="55044-108">&#9654;观看视频 （13 分钟）</span><span class="sxs-lookup"><span data-stu-id="55044-108">&#9654; Watch video (13 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-control-state-to-persist-information-for-a-custom-web-server-control)

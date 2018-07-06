@@ -4,27 +4,24 @@ title: 如何实现： 使用 ViewStateMode 属性管理视图状态？ | Micros
 author: rick-anderson
 description: 在此视频的 Chris Pels 演示如何在 ASP.NET web 站点设计视图状态时使用 ViewStateMode 属性。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/17/2010
-ms.topic: article
 ms.assetid: e5b1cc5e-fe11-4ede-9e28-af6477277b0c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/net-4/performance/how-do-i-use-the-viewstatemode-property-for-managing-viewstate
 msc.type: video
-ms.openlocfilehash: 9e31f7826be4905d250b12dc050e1ae2b2d24913
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 73ee00dedc37d6ca7be444e4e1f11b47a295148d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379201"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806514"
 ---
-<a name="how-do-i-use-the-viewstatemode-property-for-managing-viewstate"></a><span data-ttu-id="2f171-104">如何实现： 使用 ViewStateMode 属性管理视图状态？</span><span class="sxs-lookup"><span data-stu-id="2f171-104">How Do I: Use the ViewStateMode Property for Managing ViewState?</span></span>
+<a name="how-do-i-use-the-viewstatemode-property-for-managing-viewstate"></a><span data-ttu-id="84b89-104">如何实现： 使用 ViewStateMode 属性管理视图状态？</span><span class="sxs-lookup"><span data-stu-id="84b89-104">How Do I: Use the ViewStateMode Property for Managing ViewState?</span></span>
 ====================
-<span data-ttu-id="2f171-105">通过[Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="2f171-105">by [Chris Pels](https://twitter.com/chrispels)</span></span>
+<span data-ttu-id="84b89-105">通过[Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="84b89-105">by [Chris Pels](https://twitter.com/chrispels)</span></span>
 
-<span data-ttu-id="2f171-106">在此视频[Chris Pels](http://www.idevtech.com)演示如何在 ASP.NET 网站的设计视图状态时使用 ViewStateMode 属性。</span><span class="sxs-lookup"><span data-stu-id="2f171-106">In this video [Chris Pels](http://www.idevtech.com) shows how to use the ViewStateMode property when designing ViewState for a web site in ASP.NET.</span></span> <span data-ttu-id="2f171-107">首先，讨论了用于管理 ASP.NET 4 之前的 ASP.NET 中的视图状态的功能。</span><span class="sxs-lookup"><span data-stu-id="2f171-107">First, the functionality for managing ViewState in ASP.NET prior to ASP.NET 4 is discussed.</span></span> <span data-ttu-id="2f171-108">接下来，在页级别和包含嵌套的子控件的示例页面中，进行了演示在 ASP.NET 4 中添加的 ViewStateMode 属性。</span><span class="sxs-lookup"><span data-stu-id="2f171-108">Next, the ViewStateMode property added in ASP.NET 4 is demonstrated both at the page level and in a sample page with nested child controls.</span></span> <span data-ttu-id="2f171-109">讨论 ViewStateMode 属性的层次结构继承的重要性。</span><span class="sxs-lookup"><span data-stu-id="2f171-109">The importance of the hierarchical inheritance of the ViewStateMode property is discussed.</span></span> <span data-ttu-id="2f171-110">最后，最大程度减少在 ASP.NET 页面的视图状态的示例方案进行了演示。</span><span class="sxs-lookup"><span data-stu-id="2f171-110">Finally, a sample scenario for minimizing ViewState on ASP.NET pages is demonstrated.</span></span>
+<span data-ttu-id="84b89-106">在此视频[Chris Pels](http://www.idevtech.com)演示如何在 ASP.NET 网站的设计视图状态时使用 ViewStateMode 属性。</span><span class="sxs-lookup"><span data-stu-id="84b89-106">In this video [Chris Pels](http://www.idevtech.com) shows how to use the ViewStateMode property when designing ViewState for a web site in ASP.NET.</span></span> <span data-ttu-id="84b89-107">首先，讨论了用于管理 ASP.NET 4 之前的 ASP.NET 中的视图状态的功能。</span><span class="sxs-lookup"><span data-stu-id="84b89-107">First, the functionality for managing ViewState in ASP.NET prior to ASP.NET 4 is discussed.</span></span> <span data-ttu-id="84b89-108">接下来，在页级别和包含嵌套的子控件的示例页面中，进行了演示在 ASP.NET 4 中添加的 ViewStateMode 属性。</span><span class="sxs-lookup"><span data-stu-id="84b89-108">Next, the ViewStateMode property added in ASP.NET 4 is demonstrated both at the page level and in a sample page with nested child controls.</span></span> <span data-ttu-id="84b89-109">讨论 ViewStateMode 属性的层次结构继承的重要性。</span><span class="sxs-lookup"><span data-stu-id="84b89-109">The importance of the hierarchical inheritance of the ViewStateMode property is discussed.</span></span> <span data-ttu-id="84b89-110">最后，最大程度减少在 ASP.NET 页面的视图状态的示例方案进行了演示。</span><span class="sxs-lookup"><span data-stu-id="84b89-110">Finally, a sample scenario for minimizing ViewState on ASP.NET pages is demonstrated.</span></span>
 
-[<span data-ttu-id="2f171-111">&#9654;观看视频 （16 分钟）</span><span class="sxs-lookup"><span data-stu-id="2f171-111">&#9654; Watch video (16 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-viewstatemode-property-for-managing-viewstate)
+[<span data-ttu-id="84b89-111">&#9654;观看视频 （16 分钟）</span><span class="sxs-lookup"><span data-stu-id="84b89-111">&#9654; Watch video (16 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-viewstatemode-property-for-managing-viewstate)
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="2f171-112">上一篇</span><span class="sxs-lookup"><span data-stu-id="2f171-112">Previous</span></span>](aspnet-4-quick-hit-easy-state-compression.md)
+> [<span data-ttu-id="84b89-112">上一篇</span><span class="sxs-lookup"><span data-stu-id="84b89-112">Previous</span></span>](aspnet-4-quick-hit-easy-state-compression.md)
