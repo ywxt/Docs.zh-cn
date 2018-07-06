@@ -4,19 +4,16 @@ title: 集成 Windows 身份验证 |Microsoft Docs
 author: MikeWasson
 description: 介绍如何在 ASP.NET Web API 中使用集成 Windows 身份验证。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/18/2012
-ms.topic: article
 ms.assetid: 71ee4c78-c500-4d1c-b761-b4e161a291b5
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/security/integrated-windows-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: f11b9fe5d98118a252c6c00dd2997b2ee9a3da7a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: c15677b7aa66619f1ff32819585340ff497b937d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381598"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820401"
 ---
 <a name="integrated-windows-authentication"></a>集成的 Windows 身份验证
 ====================

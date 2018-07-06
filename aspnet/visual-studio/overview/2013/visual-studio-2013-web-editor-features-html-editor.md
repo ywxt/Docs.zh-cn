@@ -4,19 +4,16 @@ title: Visual Studio 2013 Web 编辑器功能-HTML 编辑器 |Microsoft Docs
 author: madskristensen
 description: Mads Kristensen 显示关闭 HTML 编辑器功能在 Visual Studio 2013 中，包括 HTML 元素，所有 CSS 类的完整的 IntelliSense 和 id。 在你的项目...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/17/2013
-ms.topic: article
 ms.assetid: 5a6b4558-0555-4cac-99c7-06865169007f
-ms.technology: ''
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-editor-features-html-editor
 msc.type: video
-ms.openlocfilehash: cbf4189955454f5f194c9aa7ea273632dc68f0a2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 63df82a0638f6c30ad8d628f37bfdc67b35aef9c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381827"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809389"
 ---
 <a name="visual-studio-2013-web-editor-features---html-editor"></a>Visual Studio 2013 Web 编辑器功能-HTML 编辑器
 ====================

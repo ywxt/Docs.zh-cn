@@ -4,19 +4,16 @@ title: 构建实际云应用程序使用 Azure |Microsoft Docs
 author: MikeWasson
 description: 这本电子书将指导你通过基于模式的方法构建实际云解决方案。 这些模式适用于开发流程以及与...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/12/2014
-ms.topic: article
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 15e5c0a0411e3cd9433544e9a09b6373311daf6b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 11388b9c58d2d21c7a337a343c10d33c7257ccf1
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396209"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840493"
 ---
 <a name="building-real-world-cloud-apps-with-azure"></a>使用 Azure 构建实际云应用
 ====================

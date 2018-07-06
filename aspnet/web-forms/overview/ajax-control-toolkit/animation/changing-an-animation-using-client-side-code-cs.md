@@ -4,19 +4,16 @@ title: 更改动画使用客户端代码 (C#) |Microsoft Docs
 author: wenz
 description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 此外可以在动画...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 2bfbc5cc-f942-44b7-a62d-a29520f1da9a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4bf480401e244661e2c316adcde3cbde647a6dc3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9711e93ee6f119ec1825e32bdad64535435970c9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393069"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808951"
 ---
 <a name="changing-an-animation-using-client-side-code-c"></a>使用客户端代码 (C#) 更改动画
 ====================

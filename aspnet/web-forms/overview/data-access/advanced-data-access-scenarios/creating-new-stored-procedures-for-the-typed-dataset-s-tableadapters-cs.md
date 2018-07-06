@@ -4,19 +4,16 @@ title: 创建新存储过程的类型化数据集的 Tableadapter (C#) |Microsof
 author: rick-anderson
 description: 在之前的教程中，我们有在我们的代码中创建 SQL 语句，并传递到数据库后，要执行的语句。 另一种方法是使用 s...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/18/2007
-ms.topic: article
 ms.assetid: 751282ca-5870-4d66-84e4-6cefae23eb4a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c17cc0bd6cb97ddf21e2f8d6b177b7f97a28575d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 420c4f33a6df2d7d99daeaac7682ede12adfb122
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368766"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824765"
 ---
 <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>创建新存储过程的类型化数据集的 Tableadapter (C#)
 ====================

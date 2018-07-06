@@ -4,19 +4,16 @@ title: 第 9 部分： 注册和结帐 |Microsoft Docs
 author: jongalloway
 description: 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 9 部分介绍如何注册和签出。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/21/2011
-ms.topic: article
 ms.assetid: d65c5c2b-a039-463f-ad29-25cf9fb7a1ba
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-9
 msc.type: authoredcontent
-ms.openlocfilehash: 935729be0dce790c6fce2e2e982ee063318d64dd
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e521e30cb820d834d57c87538b869861a536657b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366998"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812868"
 ---
 <a name="part-9-registration-and-checkout"></a>第 9 部分： 注册和结帐
 ====================

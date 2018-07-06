@@ -4,19 +4,16 @@ title: 在 GridView 的页脚 (C#) 中显示的摘要信息 |Microsoft Docs
 author: rick-anderson
 description: 通常在汇总行中的报表的底部显示摘要信息。 GridView 控件可以包含为其单元格，我们可以 pr 的页脚行...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: d50edc31-9286-4c6a-8635-be09e72752a4
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 752a37f231f746573ad84d05677365216eaa48b7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 34d5dbf4a019f798714f80964789cd85a466b43e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368348"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37818804"
 ---
 <a name="displaying-summary-information-in-the-gridviews-footer-c"></a>在 GridView 的页脚 (C#) 中显示的摘要信息
 ====================

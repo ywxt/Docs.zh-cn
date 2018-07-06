@@ -4,19 +4,16 @@ title: 在 ASP.NET MVC 4 中使用异步方法 |Microsoft Docs
 author: Rick-Anderson
 description: 本教程将讲述构建异步 ASP.NET MVC Web 应用程序使用 Visual Studio Express 2012 for Web，这是免费 ve 的基础知识...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/06/2012
-ms.topic: article
 ms.assetid: a56572ba-81c3-47af-826d-941e9c4775ec
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 6e9d23e4bf0ebbe3c7c8b52c550e0dfa1e6dbb52
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5eb1b6dc3e9166c1ecb8e0d1968e12e8fa07f985
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37364344"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37826395"
 ---
 <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>在 ASP.NET MVC 4 中使用异步方法
 ====================

@@ -4,19 +4,16 @@ title: Tailspin Spyworks-添加用户的产品评论 |Microsoft Docs
 author: JoeStagner
 description: Joe Stagner 将从客户评论添加到 Tailspin Spyworks 示例 Web 窗体应用程序中的产品详细信息页。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/21/2010
-ms.topic: article
 ms.assetid: b2e8c3af-7dcf-432b-b01b-4740bcb00897
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-adding-user-product-reviews
 msc.type: video
-ms.openlocfilehash: 95481f2190d231aa0b50308dde7efe350b7712e8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b933c04b87fb831120e098fa254c4b115299ad52
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384863"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825238"
 ---
 <a name="tailspin-spyworks---adding-user-product-reviews"></a>Tailspin Spyworks-添加用户的产品评论
 ====================

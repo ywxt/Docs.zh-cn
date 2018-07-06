@@ -4,19 +4,16 @@ title: 如何实现： LINQ to SQL： 使用存储过程更新 |Microsoft Docs
 author: scottstanfield
 description: 重写生成的 ORM update/delete/insert 逻辑用您自己通过存储过程。 视频还会显示如何使用 SQL Profiler 到了在详细信息...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/13/2008
-ms.topic: article
 ms.assetid: b041ea07-a174-4a57-b2a8-4ce64232bdae
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures
 msc.type: video
-ms.openlocfilehash: cc4a7ea1067ecb71cc9a6d862e37b4f5ab84080b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a8150937aff608c866b5fb8b0da1544f602594a3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384951"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825822"
 ---
 <a name="how-do-i-linq-to-sql-updating-with-stored-procedures"></a>如何实现： LINQ to SQL： 使用存储过程更新
 ====================

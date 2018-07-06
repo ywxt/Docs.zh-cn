@@ -4,19 +4,16 @@ title: 在 WebMatrix 中使用的布局功能 |Microsoft Docs
 author: rick-anderson
 description: 第 4 部分介绍了布局和如何使用布局在 WebMatrix 中的公共代码跨您的页面。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/12/2011
-ms.topic: article
 ms.assetid: 37504e9f-3c62-41ac-88c3-9daf9fdd5d9a
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/videos/introduction/use-the-layout-features-in-webmatrix
 msc.type: video
-ms.openlocfilehash: 334ef60b0a8ccb02a177e5bf034ce7d87327764f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0fdfee948971009ea9fa3c7b5d9ac64e34061168
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37394643"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812855"
 ---
 <a name="use-the-layout-features-in-webmatrix"></a>在 WebMatrix 中使用的布局功能
 ====================

@@ -4,19 +4,16 @@ title: 数据库开发和部署 (VB) 策略 |Microsoft Docs
 author: rick-anderson
 description: 部署第一次的数据驱动的应用程序时可以会盲目地将数据库复制到生产环境的开发环境中。 B...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/23/2009
-ms.topic: article
 ms.assetid: 07b8905d-78ac-4252-97fb-8675b3fb0bbf
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f279b6eea7a3dc77ed32d6529c5bd90763d91f84
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1964a8c482fba39aeb64158c2cb4624980bcff0d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37380410"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838707"
 ---
 <a name="strategies-for-database-development-and-deployment-vb"></a>数据库开发和部署 (VB) 策略
 ====================

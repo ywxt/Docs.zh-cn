@@ -4,19 +4,16 @@ title: ASP.NET MVC 控制器概述 (C#) |Microsoft Docs
 author: StephenWalther
 description: 在本教程中，Stephen Walther 向您介绍 ASP.NET MVC 控制器。 了解如何创建新的控制器，并返回不同类型的操作 res...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/16/2008
-ms.topic: article
 ms.assetid: b985c49a-3668-455c-a366-f85f6bc64b12
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/aspnet-mvc-controllers-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e1834498d5a0f5d84f650faf32bb6352f2ad3e70
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f8ff1ed19e6357a9a4e98f755a677d05ae5c2ec4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370082"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821717"
 ---
 <a name="aspnet-mvc-controller-overview-c"></a>ASP.NET MVC 控制器概述 (C#)
 ====================

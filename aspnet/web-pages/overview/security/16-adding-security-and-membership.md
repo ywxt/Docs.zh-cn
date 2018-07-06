@@ -4,19 +4,16 @@ title: 将安全性和成员身份添加到 ASP.NET Web Pages (Razor) 站点 |Mi
 author: tfitzmac
 description: 本章展示如何保护你的网站，使某些页面能够仅向登录的人员。 （您还可以看到如何创建页 tha...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/24/2014
-ms.topic: article
 ms.assetid: 7a77c2c0-deea-4290-a9c3-97958891758e
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: 468a6661df6442705c2e2e178c01aad01bf5765c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 722d4bc8ab6b7d8eedac87961abdf4b9f900c613
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37383459"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37817313"
 ---
 <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>将安全性和成员身份添加到 ASP.NET Web Pages (Razor) 站点
 ====================

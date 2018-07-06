@@ -4,19 +4,16 @@ title: 开发 ASP.NET 应用与 Azure Active Directory |Microsoft Docs
 author: Rick-Anderson
 description: Microsoft ASP.NET tools for Azure Active Directory 可以轻松地为托管在 Azure 上的 web 应用程序启用身份验证。 可以使用 Azure 身份验证...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/14/2014
-ms.topic: article
 ms.assetid: 457d7eaf-ee76-4ceb-9082-c7c1721435ad
-ms.technology: ''
 msc.legacyurl: /identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 msc.type: authoredcontent
-ms.openlocfilehash: 296c897887ea55a2e786d0229b0766e608e4edfb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: bb12ed6c13105cf08412ecf969c215cc9004a0c3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388275"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809068"
 ---
 <a name="developing-aspnet-apps-with-azure-active-directory"></a>使用 Azure Active Directory 开发 ASP.NET 应用
 ====================

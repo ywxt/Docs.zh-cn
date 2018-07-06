@@ -4,19 +4,16 @@ title: 将数据传递到视图母版页 (VB) |Microsoft Docs
 author: microsoft
 description: 本教程的目的是说明如何向视图母版页，从控制器传递数据。 探讨如何将数据传递到视图 m 的两种策略...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/16/2008
-ms.topic: article
 ms.assetid: 37a1ebae-8773-408f-8645-d21da7ff9ae1
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e70f15d98101336dbef31b4f9d8b958632e46c01
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2daab1e8596035c1a70fb0f86ba752837d468ef2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388511"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822239"
 ---
 <a name="passing-data-to-view-master-pages-vb"></a>将数据传递到视图母版页 (VB)
 ====================

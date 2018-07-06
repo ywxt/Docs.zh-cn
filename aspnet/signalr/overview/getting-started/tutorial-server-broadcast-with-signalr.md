@@ -4,19 +4,16 @@ title: 教程： 使用 signalr 2 实现服务器的广播 |Microsoft Docs
 author: tdykstra
 description: 本教程演示如何创建使用 ASP.NET SignalR 2 来提供服务器广播的功能的 web 应用程序。 服务器广播意味着该 commun...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/13/2014
-ms.topic: article
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: ff1eeee407ac7628afd587ca8b9102d0191ea356
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0e86fbea9c5668e20fce7a494c76c52f9c089c09
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367921"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820692"
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>教程： 使用 signalr 2 实现广播的服务器
 ====================
@@ -196,7 +193,7 @@ SignalR 中心 API 将用于处理服务器到客户端交互。 从 SignalR Hub
 
 ### <a name="register-the-signalr-route"></a>注册 SignalR 路由
 
-服务器需要知道要截获并将定向到 SignalR 的 URL。 执行此操作需要你将添加和 OWIN 启动类。
+服务器需要知道要截获并将定向到 SignalR 的 URL。 若要执行此操作，添加 OWIN 启动类：
 
 1. 在中**解决方案资源管理器**，右键单击该项目，然后单击**添加 |OWIN 启动类**。 将类命名**Startup.cs**。
 2. 中的代码替换**Startup.cs**以下。

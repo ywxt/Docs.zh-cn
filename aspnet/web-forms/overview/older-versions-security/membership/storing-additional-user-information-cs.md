@@ -4,19 +4,16 @@ title: 存储其他用户信息 (C#) |Microsoft Docs
 author: rick-anderson
 description: 在本教程中我们将通过构建一个非常基本的访客留言簿应用程序来回答此问题。 在此过程中，我们将查看 modeli 的不同选项...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/18/2008
-ms.topic: article
 ms.assetid: 1642132a-1ca5-4872-983f-ab59fc8865d3
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 201215683253afc0c6521e1bef56685d8487d7c7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5b73a19758c420f09d178ebd395d5c89ad493505
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398846"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819823"
 ---
 <a name="storing-additional-user-information-c"></a>存储其他用户信息 (C#)
 ====================

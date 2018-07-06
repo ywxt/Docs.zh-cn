@@ -4,19 +4,16 @@ title: 通过 IIS 6.0 运行 ASP.NET 1.1 |Microsoft Docs
 author: rick-anderson
 description: Windows Server 2003 包括 IIS 6.0 和 ASP.NET 1.1，默认情况下禁用这些组件。 本白皮书介绍了如何启用 IIS 6.0...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/10/2010
-ms.topic: article
 ms.assetid: 5a5537bf-2aaa-49e7-839f-9e6522b829d8
-ms.technology: ''
 msc.legacyurl: /whitepapers/aspnet-and-iis6
 msc.type: content
-ms.openlocfilehash: 1983ef5b4902acc303ae224d5973eb2644284585
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 338059104f46a6c5517212db6e1a54c12677e133
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37383420"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839289"
 ---
 <a name="running-aspnet-11-with-iis-60"></a>通过 IIS 6.0 运行 ASP.NET 1.1
 ====================

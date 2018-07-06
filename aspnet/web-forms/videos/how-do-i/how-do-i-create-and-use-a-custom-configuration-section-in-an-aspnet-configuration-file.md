@@ -4,19 +4,16 @@ title: '[如何实现:]创建和 ASP.NET 配置文件中使用自定义配置节
 author: rick-anderson
 description: 在此视频 Chris Pels 将演示如何扩展具有自己的 XML 配置元素的 ASP.NET 配置设置的标准集。 首先，请参阅如何...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/16/2008
-ms.topic: article
 ms.assetid: fa9ed773-cceb-49d0-a939-5a9e6bbae00f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-create-and-use-a-custom-configuration-section-in-an-aspnet-configuration-file
 msc.type: video
-ms.openlocfilehash: 2061a47ffe17b9f637104923bfea962e30f0b537
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 75621262205fae79c09e9a14900e7de6fb53c3e1
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384915"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810603"
 ---
 <a name="how-do-i-create-and-use-a-custom-configuration-section-in-an-aspnet-configuration-file"></a>[如何实现:]创建和使用自定义配置节中的 ASP.NET 配置文件
 ====================

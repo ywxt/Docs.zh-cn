@@ -4,19 +4,16 @@ title: ASP.NET 标识简介 |Microsoft Docs
 author: jongalloway
 description: ASP.NET 成员资格系统引入了 ASP.NET 2.0 后在 2005 中，并且发生了很多更改的方式的 web 应用程序内，然后...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/17/2013
-ms.topic: article
 ms.assetid: 38717fc1-5989-43cf-952d-4007cc1dd923
-ms.technology: ''
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 39a6f0195c407403b7bd7e2f1eb5b52c822b52a7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3cefefc85857c3e3e295789dfa9d9f4789de4602
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402491"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811576"
 ---
 <a name="introduction-to-aspnet-identity"></a>ASP.NET 标识简介
 ====================

@@ -4,19 +4,16 @@ title: 介绍如何调试 ASP.NET Web Pages (Razor) 站点 |Microsoft Docs
 author: tfitzmac
 description: 调试是查找并修复错误的代码页中的过程。 本章展示一些工具和技术可用于调试和分析...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2014
-ms.topic: article
 ms.assetid: 68de4326-7611-4b9b-b5f6-79b7adc3069f
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: 0d189eb8640346ca7850d9013961cbf45aaefd6f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b8a492b065902fa10d3e4c5cccd50e63ea356709
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37375857"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823798"
 ---
 <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>介绍如何调试 ASP.NET Web Pages (Razor) 站点
 ====================

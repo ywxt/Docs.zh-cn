@@ -4,19 +4,16 @@ title: Tailspin Spyworks-迁移购物车 |Microsoft Docs
 author: JoeStagner
 description: Joe Stagner 演示了如何将转换为一个最终签出 Tailspin Spyworks 示例 Web F.之前的已经过身份验证的匿名用户的购物车...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/29/2010
-ms.topic: article
 ms.assetid: 1dcc27a0-f9a9-4e34-94bf-7c35190ea08d
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-migrate-the-shopping-cart
 msc.type: video
-ms.openlocfilehash: 9ab2dc6fe552e0ad1b363c3f840447e4704beda9
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 65c38bcac9963ebd88ada6b75464bd629df7f905
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382028"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820725"
 ---
 <a name="tailspin-spyworks---migrate-the-shopping-cart"></a>Tailspin Spyworks-迁移购物车
 ====================

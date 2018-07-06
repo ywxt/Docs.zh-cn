@@ -4,19 +4,16 @@ title: 添加 GridView 列的单选按钮 (C#) |Microsoft Docs
 author: rick-anderson
 description: 本教程讨论如何将单选按钮的列添加到 GridView 控件，以便为用户提供更直观的方式选择的单个行的...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/06/2007
-ms.topic: article
 ms.assetid: 32377145-ec25-4715-8370-a1c590a331d5
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1e1691b3c0c5fb576f25b84e8f4d7125a8d0c698
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 83e7a938d9860b8f31cb391e07497def8854310f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366911"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811829"
 ---
 <a name="adding-a-gridview-column-of-radio-buttons-c"></a>添加 GridView 列的单选按钮 (C#)
 ====================

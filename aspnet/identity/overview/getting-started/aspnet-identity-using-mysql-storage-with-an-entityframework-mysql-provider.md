@@ -4,19 +4,16 @@ title: ASP.NET 标识： 使用 MySQL 存储通过 EntityFramework MySQL 提供�
 author: maumar
 description: 本教程演示如何将 ASP.NET 标识的默认数据存储机制 EntityFramework （SQL 客户端提供程序） 替换为使用 MySQL 签约...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/10/2013
-ms.topic: article
 ms.assetid: 15253312-a92c-43ba-908e-b5dacd3d08b8
-ms.technology: ''
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 6b1d57c65cb4197d1b20175415ee73b3e81cb53f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 13cb1d9a862429bfb4e20a8d9700fc17eb721c6b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37383034"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812670"
 ---
 <a name="aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider-c"></a>ASP.NET 标识： 使用 EntityFramework MySQL 提供程序 (C#) 使用 MySQL 存储
 ====================

@@ -4,19 +4,16 @@ title: 在 ASP.NET 网页中创建一致布局页 (Razor) 站点 |Microsoft Docs
 author: tfitzmac
 description: 若要使之更高效，以创建你的站点的 web 页面，可以创建可重用内容 （如页眉和页脚） 为您的网站和你 c 块...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/10/2014
-ms.topic: article
 ms.assetid: d7bd001b-6db2-4422-9b78-f3d08b743b00
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/3-creating-a-consistent-look
 msc.type: authoredcontent
-ms.openlocfilehash: 91cabc8c026cbdbc89812577bdeaa939bfa828d4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: d27cdc70417f380d596f4d07384a615586427643
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378428"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821209"
 ---
 <a name="creating-a-consistent-layout-in-aspnet-web-pages-razor-sites"></a>在 ASP.NET Web Pages (Razor) 站点中创建一致布局
 ====================

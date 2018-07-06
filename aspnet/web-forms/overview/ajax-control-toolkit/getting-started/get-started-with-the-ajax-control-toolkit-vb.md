@@ -4,19 +4,16 @@ title: 开始使用 AJAX 控件工具包 (VB) |Microsoft Docs
 author: microsoft
 description: 了解所有需要了解开始使用 AJAX 控件工具包。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/12/2009
-ms.topic: article
 ms.assetid: 9f8fa166-49a2-402c-b236-20caef0c658f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/get-started-with-the-ajax-control-toolkit-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6041087df3a15ef42d2364881f08a991f4eeb4fc
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 65743c9eb8eb1b02c6cf87da53222af1312f4445
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367769"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822074"
 ---
 <a name="get-started-with-the-ajax-control-toolkit-vb"></a>开始使用 AJAX 控件工具包 (VB)
 ====================

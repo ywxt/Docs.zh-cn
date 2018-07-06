@@ -4,19 +4,16 @@ title: 在共享托管中开发和部署 |Microsoft Docs
 author: JoeStagner
 description: 此视频介绍了在共享宿主环境中的开发 ASP.NET 应用程序，通过演示&quot;实时编辑&quot;和&quot;远程发布 （& a)...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/09/2009
-ms.topic: article
 ms.assetid: fb6b54c6-5459-4528-98a0-1fb16144836a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/iis/developing-and-deploying-in-a-shared-hosting
 msc.type: video
-ms.openlocfilehash: 86e7720052048831f180c411ee9b768ec2083c37
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 102b18fa7c6b0d04d49389cb8a59c4eb390681e8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37400371"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820994"
 ---
 <a name="developing-and-deploying-in-a-shared-hosting"></a>在共享托管中开发和部署
 ====================

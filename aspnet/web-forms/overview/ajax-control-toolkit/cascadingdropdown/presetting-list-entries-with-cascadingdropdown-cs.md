@@ -4,19 +4,16 @@ title: 预设置列表条目使用 CascadingDropDown (C#) |Microsoft Docs
 author: wenz
 description: AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，使得一个 DropDownList 负载中的更改关联中 anoth 值...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 04c79748-0f21-4a3b-aba5-e1ce3161c32e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-entries-with-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 56093ad098d69039aafa9b4e6ba4e4c2ad91e49b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7797aa91452bfbed2695fd26e3b9d2a5783dd216
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37361994"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825084"
 ---
 <a name="presetting-list-entries-with-cascadingdropdown-c"></a>预设置列表条目使用 CascadingDropDown (C#)
 ====================

@@ -4,19 +4,16 @@ title: 'ASP.NET AJAX: ASP.NET AJAX 的演示 |Microsoft Docs'
 author: JoeStagner
 description: 请参阅从零开始构建使用 ASP.NET 2.0 的待办事项列表管理应用程序是多么和增强用户体验使用 ASP.NET AJAX，然后...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/24/2009
-ms.topic: article
 ms.assetid: f2b4fff1-523f-4636-aa70-63fcc1257a1f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-35/aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax
 msc.type: video
-ms.openlocfilehash: 527f4378aedfe3f2fda155a4f38749d39edc727a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 08ae45b2149ded4c47610e67598c1df6a01cc7f0
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392161"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808776"
 ---
 <a name="aspnet-ajax-a-demonstration-of-aspnet-ajax"></a>ASP.NET AJAX: ASP.NET AJAX 的演示
 ====================

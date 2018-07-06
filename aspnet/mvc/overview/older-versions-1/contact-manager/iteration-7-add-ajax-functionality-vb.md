@@ -4,19 +4,16 @@ title: 迭代 7 – 添加 Ajax 功能 (VB) |Microsoft Docs
 author: microsoft
 description: 在第七个迭代中，我们通过添加对 Ajax 支持提高响应能力和我们的应用程序的性能。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2009
-ms.topic: article
 ms.assetid: f640e063-150e-453d-8cfc-7e54a6ce0f1e
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f951135014c46ef2685955700dc5649581539989
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f5ea425c69dec803bfbdcb9f319a1d24e816bcf7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37394250"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840127"
 ---
 <a name="iteration-7--add-ajax-functionality-vb"></a>迭代 7 – 添加 Ajax 功能 (VB)
 ====================

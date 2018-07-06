@@ -4,19 +4,16 @@ title: 自定义提取规则和编码的 Web 测试 |Microsoft Docs
 author: rick-anderson
 description: Visual Studio Team System 可以轻松测试 Web 应用程序记录与应用程序的用户的交互，然后重复重播 re...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/26/2007
-ms.topic: article
 ms.assetid: 7e2efe4c-8632-4d61-a82f-8e0bbd47c175
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/vs-2005/custom-extraction-rules-and-coded-web-tests
 msc.type: video
-ms.openlocfilehash: f452acd4def87bdadb4b6c3925be5088921e6e84
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 62f7a581b300eae4e19c0267176a7f3230abacf2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396053"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838301"
 ---
 <a name="custom-extraction-rules-and-coded-web-tests"></a>自定义提取规则和编码的 Web 测试
 ====================

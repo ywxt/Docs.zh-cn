@@ -4,19 +4,16 @@ title: 通过验证控件 (VB) 中使用 TextBoxWatermark |Microsoft Docs
 author: wenz
 description: AJAX 控件工具包中的 TextBoxWatermark 控件扩展的文本框中，使得在框中显示文本。 当用户单击到框中，它我...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: e6c2cb98-f745-4bc8-973a-813879c8a891
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 25a18bf4ad514fbeadd321f50d3b715b38d656cd
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 67e7a715545b35c25147c6dbf6684e0e1634027b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376573"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811560"
 ---
 <a name="using-textboxwatermark-with-validation-controls-vb"></a>使用 TextBoxWatermark 通过验证控件 (VB)
 ====================

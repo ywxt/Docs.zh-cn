@@ -4,19 +4,16 @@ title: 处理 BLL 和 DAL 级别 ASP.NET 页面 (VB) 中的异常 |Microsoft Doc
 author: rick-anderson
 description: 在本教程中我们将了解如何显示一条友好、 信息性错误消息应在插入、 更新或删除操作期间会发生异常...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/17/2006
-ms.topic: article
 ms.assetid: 129d4338-1315-4f40-89b5-2b84b807707d
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 41a0ec0db4cb2093d7fadd2de7e65ee4874f0063
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: de181391a074ec837d2f9d98d55f912883d76be2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37394678"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808987"
 ---
 <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-vb"></a>处理 BLL 和 DAL 级别 ASP.NET 页面 (VB) 中的异常
 ====================

@@ -4,19 +4,16 @@ title: '[如何实现:]实现 AJAX 分页模式？ | Microsoft Docs'
 author: JoeStagner
 description: 在本视频中，我们将了解如何使用 ASP.NET AJAX 实现分页模式，使 ASP.NET 应用程序以显示大量的数据作为 bein...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/06/2007
-ms.topic: article
 ms.assetid: deba7d7e-3da2-48a1-8a9e-49c36c4bcc39
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-ajax-paging-pattern
 msc.type: video
-ms.openlocfilehash: 6de4ae3b7ca13b31a654b2062e9223084dc7d486
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 133b96b739ce266d197ecec61643b3d1fe137bc8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376220"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809785"
 ---
 <a name="how-do-i-implement-the-ajax-paging-pattern"></a>[如何实现:]实现 AJAX 分页模式？
 ====================

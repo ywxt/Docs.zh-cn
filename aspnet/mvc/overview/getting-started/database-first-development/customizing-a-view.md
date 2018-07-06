@@ -4,19 +4,16 @@ title: 第一种使用 ASP.NET MVC 的 EF 数据库： 自定义视图 |Microsof
 author: tfitzmac
 description: 使用 MVC、 Entity Framework 和 ASP.NET 基架，可以创建提供接口的现有数据库的 web 应用程序。 此教程系列...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/01/2014
-ms.topic: article
 ms.assetid: 269380ff-d7e1-4035-8ad1-fe1316a25f76
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/customizing-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: bfbcfd39dd1cf0abe89a00d2958ca010f0e5e109
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7359b8daddc74e375675d73126d7d76b288e853d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376493"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37817183"
 ---
 <a name="ef-database-first-with-aspnet-mvc-customizing-a-view"></a>第一种使用 ASP.NET MVC 的 EF 数据库： 自定义视图
 ====================

@@ -4,19 +4,16 @@ title: 创建 MVC 5 应用程序与 Facebook、 Twitter、 LinkedIn 和 Google O
 author: Rick-Anderson
 description: 本教程演示如何构建 ASP.NET MVC 5 web 应用程序，使用户能够使用 OAuth 2.0 和外部身份验证的凭据...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/03/2015
-ms.topic: article
 ms.assetid: 81ee500f-fc37-40d6-8722-f1b64720fbb6
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: 8a9528f76b0166175f950543b4b8a7250bdf5100
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6af4990f726bfcd0c45eb6991418661f9b8ccbf6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388761"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824701"
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>创建 ASP.NET MVC 5 应用程序使用 Facebook、 Twitter、 LinkedIn 和 Google OAuth2 登录 (C#)
 ====================

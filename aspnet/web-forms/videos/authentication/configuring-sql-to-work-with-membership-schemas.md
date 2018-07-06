@@ -4,19 +4,16 @@ title: 配置 SQL 以使用成员身份架构 |Microsoft Docs
 author: JoeStagner
 description: 在此视频的 Joe Stagner 演示了如何将 SQL 实例配置为使用特定 ASP 服务成员身份的配置文件;以及配置和应用程序...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/04/2008
-ms.topic: article
 ms.assetid: b3edd71d-b43e-4ccb-93e5-b89bb723312c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/authentication/configuring-sql-to-work-with-membership-schemas
 msc.type: video
-ms.openlocfilehash: 1298e205e682444eb9e4794e3553aae3bfdf7dbe
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ae5e335e05df010996c9cb84f4af01874ce6005f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379746"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810499"
 ---
 <a name="configuring-sql-to-work-with-membership-schemas"></a>配置 SQL 以使用成员身份架构
 ====================

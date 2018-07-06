@@ -4,19 +4,16 @@ title: 将角色分配给用户 (C#) |Microsoft Docs
 author: rick-anderson
 description: 在本教程中，我们将生成两个 ASP.NET 页，以帮助管理哪些用户属于哪些角色。 第一页将包括相应的工具来了解...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/24/2008
-ms.topic: article
 ms.assetid: d522639a-5aca-421e-9a76-d73f95607f57
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/assigning-roles-to-users-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2f65caf132e185b381093ee1a0b5dd5400ed8434
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f8573afc2fd5f12611f88f8bdad7e14389017808
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374135"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820125"
 ---
 <a name="assigning-roles-to-users-c"></a>将角色分配给用户 (C#)
 ====================

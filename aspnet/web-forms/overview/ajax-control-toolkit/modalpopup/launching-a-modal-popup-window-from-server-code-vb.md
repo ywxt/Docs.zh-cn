@@ -4,19 +4,16 @@ title: 启动模式弹出窗口通过服务器代码 (VB) |Microsoft Docs
 author: wenz
 description: 在 AJAX 控件工具包的 ModalPopup 控件提供了简单的方法来创建模式弹出框使用客户端的方式。 但是，某些情况下需要该 t...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 36ca81d7-906d-4db2-952b-add18a4ff421
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ea5149e9dece5393bb4c431bfc440a745611496d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 52eec262a9241aa7b11cbb892bdf2142c7a2b83a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362834"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822763"
 ---
 <a name="launching-a-modal-popup-window-from-server-code-vb"></a>启动模式弹出窗口通过服务器代码 (VB)
 ====================

@@ -4,19 +4,16 @@ title: '[如何实现:]使用 JavaScript 刷新 ASP.NET AJAX UpdatePanel？ | Mi
 author: JoeStagner
 description: 在本视频中，我们将了解两种不同方式的使用 JavaScript 的逻辑来刷新 ASP.NET AJAX UpdatePanel 控件的内容。 第一种方法是添加...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/25/2007
-ms.topic: article
 ms.assetid: b4d5b7ce-c322-4313-985d-455df98d619a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel
 msc.type: video
-ms.openlocfilehash: c18f359fd0350dc9dafdb744462208e2ef41acab
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 51875f1dde1ed2ac1d8e0928a9ffe73c6005fde9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37395339"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823240"
 ---
 <a name="how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel"></a>[如何实现:]使用 JavaScript 刷新 ASP.NET AJAX UpdatePanel？
 ====================

@@ -4,19 +4,16 @@ title: 使用业务规则验证功能构建模型 |Microsoft Docs
 author: microsoft
 description: 步骤 3 显示了如何创建一个模型，我们可以使用这两个查询，并为 NerdDinner 应用程序更新数据库。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/27/2010
-ms.topic: article
 ms.assetid: 0bc191b2-4311-479a-a83a-7f1b1c32e6fe
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/build-a-model-with-business-rule-validations
 msc.type: authoredcontent
-ms.openlocfilehash: 8e871a8c14dce80edbddb9d87dba929bf3356895
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4bed4dd794c7c34551cd3c7543e08ed12d83505a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379016"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836763"
 ---
 <a name="build-a-model-with-business-rule-validations"></a>使用业务规则验证功能构建模型
 ====================

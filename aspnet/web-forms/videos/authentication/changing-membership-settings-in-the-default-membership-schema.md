@@ -4,19 +4,16 @@ title: 更改默认成员身份架构中的成员身份设置 |Microsoft Docs
 author: JoeStagner
 description: 在本视频中 Joe Stagner 讨论如何更改的成员身份架构的默认设置为与自定义应用程序的特定需求。 预测...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/04/2008
-ms.topic: article
 ms.assetid: 7770f4b8-48fe-4c82-a7c6-02aeef4b85b5
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/authentication/changing-membership-settings-in-the-default-membership-schema
 msc.type: video
-ms.openlocfilehash: fdc1b32a2b263456235f96e7332c4b564b518ec0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 38c73f2a7660eacb93f0dbbf291e95fd582d9317
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37380673"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824833"
 ---
 <a name="changing-membership-settings-in-the-default-membership-schema"></a>更改默认成员身份架构中的成员身份设置
 ====================

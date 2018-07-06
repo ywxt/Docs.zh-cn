@@ -4,19 +4,16 @@ title: 为 Web 程序包部署配置参数 |Microsoft Docs
 author: jrjlee
 description: 本主题介绍如何设置参数值，如 Internet 信息服务 (IIS) web 应用程序名称、 连接字符串和服务终结点...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 37947d79-ab1e-4ba9-9017-52e7a2757414
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: e6db7a8351e01bbbc14eb2b993248ee7d5a84f7e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: dd8924b0b0055bd32ef55a9ec3a139c4d9b4eb81
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37386544"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825110"
 ---
 <a name="configuring-parameters-for-web-package-deployment"></a>为 Web 程序包部署配置参数
 ====================

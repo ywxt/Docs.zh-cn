@@ -4,19 +4,16 @@ title: 单元测试 ASP.NET web API 2 控制器 |Microsoft Docs
 author: MikeWasson
 description: 本主题介绍的单元测试控制器 Web API 2 中的一些特定技术。 阅读本主题之前，你可能想要阅读教程单元...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/11/2014
-ms.topic: article
 ms.assetid: 43a6cce7-a3ef-42aa-ad06-90d36d49f098
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 1a3cfa1962a5f914fd2393088bec4424f6453d07
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: bc6d4d7e65c84036dc35fe39ed25685ed8b213b3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389378"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823684"
 ---
 <a name="unit-testing-controllers-in-aspnet-web-api-2"></a>单元测试 ASP.NET web API 2 控制器
 ====================

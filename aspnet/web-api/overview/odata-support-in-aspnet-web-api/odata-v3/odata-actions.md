@@ -4,19 +4,16 @@ title: 支持 ASP.NET Web API 2 中的 OData 操作 |Microsoft Docs
 author: MikeWasson
 description: 在 OData 中，操作是一种方法来添加未轻松地定义为对实体的 CRUD 操作的服务器端行为。 操作的一些用途包括： 实现...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/25/2014
-ms.topic: article
 ms.assetid: 2d7b3aa2-aa47-4e6e-b0ce-3d65a1c6fe02
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/odata-actions
 msc.type: authoredcontent
-ms.openlocfilehash: b7a968082587120c2a19be86524f9b2eba80856e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e02ab21b864e328fe6892a00e5d5aca3f88eb9a2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370450"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837767"
 ---
 <a name="supporting-odata-actions-in-aspnet-web-api-2"></a>支持 ASP.NET Web API 2 中的 OData 操作
 ====================

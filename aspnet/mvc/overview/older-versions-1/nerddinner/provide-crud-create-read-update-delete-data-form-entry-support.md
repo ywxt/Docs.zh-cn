@@ -4,19 +4,16 @@ title: 提供 CRUD （创建、 读取、 更新、 删除） 数据窗体输入
 author: microsoft
 description: 步骤 5 显示了如何通过启用支持编辑、 创建和使用它删除 Dinners 也使我们的 DinnersController 类进一步。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/27/2010
-ms.topic: article
 ms.assetid: bbb976e5-6150-4283-a374-c22fbafe29f5
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/provide-crud-create-read-update-delete-data-form-entry-support
 msc.type: authoredcontent
-ms.openlocfilehash: 821684c0753967fc1a693b061d5d539951cd7c23
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: bfb8446ec8b39ad6fc88a0d5b747f0cec33bbd25
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388803"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37817631"
 ---
 <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>提供 CRUD （创建、 读取、 更新、 删除） 数据窗体输入支持
 ====================

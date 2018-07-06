@@ -4,19 +4,16 @@ title: 设置 DataList 和 Repeater 的格式取决于数据 (VB) |Microsoft Doc
 author: rick-anderson
 description: 在本教程中我们将逐步了解我们设置 DataList 和 Repeater 控件，通过使用格式设置的函数的外观的格式的示例...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/13/2006
-ms.topic: article
 ms.assetid: e2f401ae-37bb-4b19-aa97-d6b385d40f88
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 42a7861c4a9665d5c2596ba9bf3f5185bfaf043d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 428438b2bae062c09d13c002f4729c3c394975a1
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397676"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37807705"
 ---
 <a name="formatting-the-datalist-and-repeater-based-upon-data-vb"></a>格式设置 DataList 和 Repeater 取决于数据 (VB)
 ====================

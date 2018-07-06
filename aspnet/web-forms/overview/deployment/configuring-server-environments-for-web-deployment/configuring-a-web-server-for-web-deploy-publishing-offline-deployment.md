@@ -4,19 +4,16 @@ title: 配置 Web 服务器的 Web 部署发布 （离线部署） |Microsoft Do
 author: jrjlee
 description: 本主题介绍如何配置 IIS web 服务器以支持脱机 web 发布和部署。 当你处理的 Internet Information Services (我...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: ba92788f-9f03-44b1-b6b2-af8413e6a35d
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 555b4b3c79d8efc641b1c179482993371735dbe2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 048cd1855e3f03a6f348521c00acb03ddee8c630
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397572"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824669"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a>配置用于 Web 部署发布 （离线部署） 的 Web 服务器
 ====================

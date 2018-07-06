@@ -4,19 +4,16 @@ title: 配置权限的团队生成部署 |Microsoft Docs
 author: jrjlee
 description: 本主题介绍如何配置权限，以使您的生成服务器将自动 b 的一部分内容部署到 web 服务器和数据库服务器...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 2488a91e-b0a8-465a-b874-3233f724b56b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: f84e72bd5991b0407008ccdaff5243979cbb986e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: b577d887b4a4476b6796ae9f1df538d16eededa3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384657"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820355"
 ---
 <a name="configuring-permissions-for-team-build-deployment"></a>配置权限的团队生成部署
 ====================

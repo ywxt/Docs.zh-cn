@@ -4,19 +4,16 @@ title: 缓存体系结构 (C#) 中的数据 |Microsoft Docs
 author: rick-anderson
 description: 上一教程中我们介绍了如何将应用在表示层缓存。 在本教程中，我们将了解如何充分利用我们分层 architectu...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/30/2007
-ms.topic: article
 ms.assetid: d29a7c41-0628-4a23-9dfc-bfea9c6c1054
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 20c3c0cb5f3d13e66fbbceab77083c89f3015c53
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 80805bae14654d6817328232453031384ceadad6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402904"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820453"
 ---
 <a name="caching-data-in-the-architecture-c"></a>在体系结构 (C#) 中缓存数据
 ====================

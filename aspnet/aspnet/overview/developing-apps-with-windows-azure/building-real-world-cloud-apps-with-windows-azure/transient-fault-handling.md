@@ -4,19 +4,16 @@ title: 暂时性故障处理 （构建实际云应用与 Azure） |Microsoft Doc
 author: MikeWasson
 description: 构建真实世界云应用与 Azure 的电子书基于由 Scott Guthrie 开发的演示文稿。 它还说明了 13 模式和实践可以他...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/03/2015
-ms.topic: article
 ms.assetid: 7ead83bc-c08c-4b26-8617-00e07292e35c
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 13ed8c2373c22070d21519bc495161e956b0ac4d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e67f3106f060d52f90ba56d6684af64779009e39
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398409"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823373"
 ---
 <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>暂时性故障处理 （构建使用 Azure 的真实世界云应用程序）
 ====================

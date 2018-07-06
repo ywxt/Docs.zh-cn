@@ -4,19 +4,16 @@ title: 创建自定义 HTML 帮助程序 (VB) |Microsoft Docs
 author: microsoft
 description: 本教程的目的是演示如何创建自定义 HTML 帮助程序，你可以使用您的 MVC 视图中。 通过利用 HTML 帮助器...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/07/2008
-ms.topic: article
 ms.assetid: f96f4800-19ef-44c0-b457-55e777eb5de8
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0b1f4a6afc62eb23d4591d515e973298da4630f9
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ed3f86d3f316d3e1630c6008c20c72c31d7864da
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396593"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821520"
 ---
 <a name="creating-custom-html-helpers-vb"></a>创建自定义 HTML 帮助程序 (VB)
 ====================

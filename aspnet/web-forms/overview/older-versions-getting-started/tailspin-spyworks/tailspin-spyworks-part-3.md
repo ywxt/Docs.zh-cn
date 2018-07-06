@@ -4,19 +4,16 @@ title: 第 3 部分： 布局和类别菜单 |Microsoft Docs
 author: JoeStagner
 description: 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 3 部分介绍如何添加布局和类别菜单。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/21/2010
-ms.topic: article
 ms.assetid: 94ea1a70-a9bc-4241-8f36-08366d64bab9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 72642610c203127b431e03214b2f1bc85a85b5fb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3047c53e21a418aef8617bd772a247bc46edb98f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366642"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37817520"
 ---
 <a name="part-3-layout-and-category-menu"></a>第 3 部分： 布局和类别菜单
 ====================

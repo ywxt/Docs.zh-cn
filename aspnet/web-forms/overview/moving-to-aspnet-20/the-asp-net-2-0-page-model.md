@@ -4,19 +4,16 @@ title: ASP.NET 2.0 页面模型 |Microsoft Docs
 author: microsoft
 description: 在 ASP.NET 1.x 中，开发人员必须使用内联代码模型和代码隐藏代码模型之间进行选择。 无法使用任一 Src attr 实现代码隐藏...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2005
-ms.topic: article
 ms.assetid: af4575a3-0ae3-4638-ba4d-218fad7a1642
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
 msc.type: authoredcontent
-ms.openlocfilehash: 9d62aee5e0754b1910b923ad9ae501ebed91097e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2c8a0624af30d93d2ba68dc4b0b0880d6e371616
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379882"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811696"
 ---
 <a name="the-aspnet-20-page-model"></a>ASP.NET 2.0 页面模型
 ====================

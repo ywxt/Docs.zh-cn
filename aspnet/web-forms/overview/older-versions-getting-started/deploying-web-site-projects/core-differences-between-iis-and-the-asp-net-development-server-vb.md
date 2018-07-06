@@ -4,19 +4,16 @@ title: 核心 IIS 和 ASP.NET 开发服务器 (VB) 之间的差异 |Microsoft Do
 author: rick-anderson
 description: 当测试 ASP.NET 应用程序的本地时，很可能使用 ASP.NET 开发 Web 服务器。 但是，生产网站是最有可能 pow...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2009
-ms.topic: article
 ms.assetid: 090e9205-52f3-4d72-ae31-44775b8b8421
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d16e4d20f2e1fe85b6844ea714546fbae8c95b4e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 586bc45a44e773c3097de0959411a2d27098459a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377027"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821085"
 ---
 <a name="core-differences-between-iis-and-the-aspnet-development-server-vb"></a>IIS 和 ASP.NET 开发服务器 (VB) 之间的核心差异
 ====================

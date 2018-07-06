@@ -4,19 +4,16 @@ title: 从服务器端 (VB) 修改动画 |Microsoft Docs
 author: wenz
 description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 也可以将动画...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: addcf4aa-340a-460b-9c64-506424a1f725
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/modifying-animations-from-the-server-side-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d39a40f2776d5b87bf82d1a6c6282ce920f4a907
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5ff8685b44e7d0c2261ea7b9f1ca6397ae05ce53
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401949"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811161"
 ---
 <a name="modifying-animations-from-the-server-side-vb"></a>从服务器端 (VB) 修改动画
 ====================

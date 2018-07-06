@@ -4,19 +4,16 @@ title: 安全的 ASP.NET MVC 5 web 应用程序创建具有登录、 电子邮�
 author: Rick-Anderson
 description: 本教程演示如何生成电子邮件确认和密码重置使用 ASP.NET 标识成员资格系统的 ASP.NET MVC 5 web 应用。 Ca...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/26/2015
-ms.topic: article
 ms.assetid: d4911cb3-1afb-4805-b860-10818c4b1280
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 56c1a5c414fdcece8d827d1187144b4948d8eb93
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 1387c3e9c03e011b610a070aa0c273ded23b463e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37387038"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823542"
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>安全的 ASP.NET MVC 5 web 应用程序创建具有登录、 电子邮件确认及密码重置 (C#)
 ====================

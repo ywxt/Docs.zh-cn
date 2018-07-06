@@ -4,19 +4,16 @@ title: '[如何实现:]确定是否使用网站或 Web 应用程序项目 |Micro
 author: rick-anderson
 description: 在此视频的 Chris Pels 将比较 ASP.NET 网站项目和 web 应用程序项目之间的差异。 了解有关使用注意事项...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/22/2008
-ms.topic: article
 ms.assetid: 2fba2d1d-1bd3-451a-ae94-8acf4faa75ec
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-determine-whether-to-use-a-web-site-or-a-web-application-project
 msc.type: video
-ms.openlocfilehash: a3311838b9a3e07e0772273ffda43e79b6c78022
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b19e0f775a85aa31bdcea10b18424f3d5440697d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401339"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37813453"
 ---
 <a name="how-do-i-determine-whether-to-use-a-web-site-or-a-web-application-project"></a>[如何实现:]确定是否使用网站或 Web 应用程序项目
 ====================

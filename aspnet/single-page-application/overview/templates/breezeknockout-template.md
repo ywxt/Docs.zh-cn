@@ -4,19 +4,16 @@ title: Breeze/Knockout 模版 |Microsoft Docs
 author: madskristensen
 description: Breeze/Knockout 单页面应用程序模板
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/30/2013
-ms.topic: article
 ms.assetid: 3bd94827-3c59-448f-abc3-36e6df4858db
-ms.technology: ''
 msc.legacyurl: /single-page-application/overview/templates/breezeknockout-template
 msc.type: authoredcontent
-ms.openlocfilehash: 48ee0463fe950c28832523986a2242417411c96a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f816563b77aaeae0ef79b31ddb4e066c9764bb51
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376859"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37813479"
 ---
 <a name="breezeknockout-template"></a>Breeze/Knockout 模版
 ====================

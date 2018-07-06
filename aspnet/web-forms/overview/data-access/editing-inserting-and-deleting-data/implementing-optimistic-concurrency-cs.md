@@ -4,19 +4,16 @@ title: 实现乐观并发 (C#) |Microsoft Docs
 author: rick-anderson
 description: 对于允许多个用户编辑数据的 web 应用程序，没有在同一时间可能两个用户编辑相同的数据的风险。 在此 tutori...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/17/2006
-ms.topic: article
 ms.assetid: 56e15b33-93b8-43ad-8e19-44c6647ea05c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 120fdca43b7e68127277f6889504f173938117e4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9013eab1082c27aac3b561f9507842edc77c7da3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397767"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824443"
 ---
 <a name="implementing-optimistic-concurrency-c"></a>实现乐观并发 (C#)
 ====================
