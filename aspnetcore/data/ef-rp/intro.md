@@ -3,20 +3,24 @@ title: ASP.NET Core 中的 Razor 页面和 Entity Framework Core - 第 1 个教�
 author: rick-anderson
 description: 介绍了如何使用 Entity Framework Core 创建 Razor 页面应用
 ms.author: riande
-ms.date: 11/15/2017
+ms.date: 6/31/2017
 uid: data/ef-rp/intro
-ms.openlocfilehash: cadf36f4e1ff3776ad4139e1d7c4e9b73687bc5c
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: a31b3e0ad72964a0c01c0b855a70d2f3e8966ab9
+ms.sourcegitcommit: 7003d27b607e529642ded0400aa48ae692a0e666
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279225"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37033285"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>ASP.NET Core 中的 Razor 页面和 Entity Framework Core - 第 1 个教程（共 8 个）
 
+[!INCLUDE[2.0 version](~/includes/RP-EF/20-pdf.md)]
+
+::: moniker range=">= aspnetcore-2.1"
+
 作者：[Tom Dykstra](https://github.com/tdykstra) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 示例 Web 应用演示了如何使用 Entity Framework (EF) Core 2.0 和 Visual Studio 2017 创建 ASP.NET Core 2.0 MVC Web 应用程序。
+Contoso University 示例 Web 应用演示了如何使用 Entity Framework (EF) Core 创建 ASP.NET Core Razor Pages 应用。
 
 该示例应用是一个虚构的 Contoso University 的网站。 其中包括学生录取、课程创建和讲师分配等功能。 本页是介绍如何构建 Contoso University 示例应用系列教程中的第一部分。
 
@@ -24,16 +28,21 @@ Contoso University 示例 Web 应用演示了如何使用 Entity Framework (EF) 
 
 ## <a name="prerequisites"></a>系统必备
 
-[!INCLUDE [](~/includes/net-core-prereqs.md)]
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+
+[!INCLUDE [](~/includes/net-core-prereqs-windows.md) [](~/includes/net-core-prereqs-windows.md)]
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
+[!INCLUDE [](~/includes/2.1-SDK.md) [](~/includes/2.1-SDK.md)]
+
+------
 
 熟悉 [Razor 页面](xref:razor-pages/index)。 新程序员在开始学习本系列之前，应先完成 [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)。
 
 ## <a name="troubleshooting"></a>疑难解答
 
-如果遇到无法解决的问题，可以通过与[已完成的阶段](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots)对比代码来查找解决方案。 常见错误以及对应的解决方案，请参阅 [最新教程中的故障排除](xref:data/ef-mvc/advanced#common-errors)。 如果在该处找不到所需内容，可以在 [StackOverflow.com](https://stackoverflow.com/questions/tagged/asp.net-core) 上发表有关 [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) 或 [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core) 的问题。
-
-> [!TIP]
-> 本系列教程以之前教程中已完成的工作为基础。 每次成功完成教程后，请考虑保存项目副本。 如果遇到问题，便可以从上一教程重新开始，而无需从头开始。 或者可以下载[已完成阶段](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots)并使用已完成阶段重新开始。
+如果遇到无法解决的问题，可以通过与 [已完成的项目](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples)对比代码来查找解决方案。 获取帮助的一个好方法是将问题发布到适用于 [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) 或 [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core) 的 [StackOverflow.com](https://stackoverflow.com/questions/tagged/asp.net-core)。
 
 ## <a name="the-contoso-university-web-app"></a>Contoso University Web 应用
 
@@ -47,37 +56,42 @@ Contoso University 示例 Web 应用演示了如何使用 Entity Framework (EF) 
 
 此网站的 UI 样式与内置模板生成的 UI 样式类似。 教程的重点是 EF Core 和 Razor 页面，而非 UI。
 
-## <a name="create-a-razor-pages-web-app"></a>创建 Razor 页面 Web 应用
+## <a name="create-the-contosouniversity-razor-pages-web-app"></a>创建 ContosoUniversity Razor Pages Web 应用
 
-* 从 Visual Studio“文件”菜单中选择“新建” > “项目”。
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+
+* 从 Visual Studio“文件”菜单中，选择“新建”>“项目”。
 * 创建新的 ASP.NET Core Web 应用程序。 将该项目命名为 ContosoUniversity 。 务必将该项目命名为 ContosoUniversity，以便复制/粘贴代码时命名空间相匹配。
- ![新建 ASP.NET Core Web 应用程序](intro/_static/np.png)
-* 在下拉列表中选择“ASP.NET Core 2.0”，然后选择“Web 应用程序”。
- ![Web 应用程序（Razor 页面）](../../razor-pages/index/_static/np2.png)
+* 在下拉列表中选择“ASP.NET Core 2.1”，然后选择“Web 应用程序”。
 
-按 F5 在调试模式下运行应用，或按 Ctrl-F5 在运行（不附加调试器）
+有关上述步骤的图像，请参阅[创建 Razor Web 应用](xref:tutorials/razor-pages/razor-pages-start#create-a-razor-web-app)。
+运行应用。
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
+```CLI
+dotnet new webapp -o ContosoUniversity
+cd ContosoUniversity
+dotnet run
+```
+
+------
 
 ## <a name="set-up-the-site-style"></a>设置网站样式
 
-设置网站菜单、布局和主页时需作少量更改。
+设置网站菜单、布局和主页时需作少量更改。 进行以下更改以更新 Pages/Shared/_Layout.cshtml：
 
-打开 Pages/_Layout.cshtml 并进行以下更改：
-
-* 将“ContosoUniversity”的每个匹配项都改为“Contoso University”。 共有三个匹配项。
+* 将文件中的"ContosoUniversity"更改为"Contoso University"。 需要更改三个地方。
 
 * 添加菜单项 **Students**，**Courses**，**Instructors**，和 **Department**，并删除 **Contact**菜单项。
 
 突出显示所作更改。 （所有标记均不显示。）
 
-[!code-html[](intro/samples/cu/Pages/_Layout.cshtml?highlight=6,29,35-38,47&range=1-50)]
+[!code-html[](intro/samples/cu21/Pages/Shared/_Layout.cshtml?highlight=6,29,35-38,50&name=snippet)]
 
 在 Pages/Index.cshtml 中，将文件内容替换为以下代码，以将有关 ASP.NET 和 MVC 的文本替换为有关本应用的文本：
 
-[!code-html[](intro/samples/cu/Pages/Index.cshtml)]
-
-按 Ctrl+F5 运行项目。 将显示主页以及后续教程中创建的标签：
-
-![Contoso University 主页](intro/_static/home-page.png)
+[!code-html[](intro/samples/cu21/Pages/Index.cshtml)]
 
 ## <a name="create-the-data-model"></a>创建数据模型
 
@@ -95,9 +109,9 @@ Contoso University 示例 Web 应用演示了如何使用 Entity Framework (EF) 
 
 创建 Models 文件夹。 在 Models 文件夹中，使用以下代码创建一个名为 Student.cs 的类文件：
 
-[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu21/Models/Student.cs?name=snippet_Intro)]
 
-`ID` 属性成为此类对应的数据库 (DB) 表的主键列。 默认情况下，EF Core 将名为 `ID` 或 `classnameID` 的属性视为主键。 `classnameID` 中的 `classname` 是类的名称，例如上述示例中的 `Student`。
+`ID` 属性成为此类对应的数据库 (DB) 表的主键列。 默认情况下，EF Core 将名为 `ID` 或 `classnameID` 的属性视为主键。 在 `classnameID` 中，`classname` 为类名称。 另一种自动识别的主键是上例中的 `StudentID`。
 
 `Enrollments` 属性是导航属性。 导航属性链接到与此实体相关的其他实体。 在这种情况下，`Student entity` 的 `Enrollments` 属性包含与该 `Student` 相关的所有 `Enrollment` 实体。 例如，如果数据库中的 Student 行有两个相关的 Enrollment 行，则 `Enrollments` 导航属性包含这两个 `Enrollment` 实体。 相关的 `Enrollment` 行是 `StudentID` 列中包含该学生的主键值的行。 例如，假设 ID=1 的学生在 `Enrollment` 表中有两行。 `Enrollment` 表中有两行的 `StudentID` = 1。 `StudentID` 是 `Enrollment` 表中的外键，用于指定 `Student` 表中的学生。
 
@@ -109,7 +123,7 @@ Contoso University 示例 Web 应用演示了如何使用 Entity Framework (EF) 
 
 在 Models 文件夹中，使用以下代码创建 Enrollment.cs：
 
-[!code-csharp[](intro/samples/cu/Models/Enrollment.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu21/Models/Enrollment.cs?name=snippet_Intro)]
 
 `EnrollmentID` 属性为主键。 `Student` 实体使用的是 `ID` 模式，而本实体使用的是 `classnameID` 模式。 通常情况下，开发者会选择一种模式并在整个数据模型中都使用该模式。 下一个教程将介绍如何使用不带类名的 ID，以便更轻松地在数据模型中实现集成。
 
@@ -127,145 +141,137 @@ Contoso University 示例 Web 应用演示了如何使用 Entity Framework (EF) 
 
 在 Models 文件夹中，使用以下代码创建 Course.cs：
 
-[!code-csharp[](intro/samples/cu/Models/Course.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu21/Models/Course.cs?name=snippet_Intro)]
 
 `Enrollments` 属性是导航属性。 `Course` 实体可与任意数量的 `Enrollment` 实体相关。
 
 应用可以通过 `DatabaseGenerated` 特性指定主键，而无需靠数据库生成。
 
-## <a name="create-the-schoolcontext-db-context"></a>创建 SchoolContext 数据库上下文
+## <a name="scaffold-the-student-model"></a>为“学生”模型搭建基架
 
-数据库上下文类是为给定数据模型协调 EF Core 功能的主类。 数据上下文派生自 `Microsoft.EntityFrameworkCore.DbContext`。 数据上下文指定数据模型中包含哪些实体。 在此项目中，类命名为 `SchoolContext`。
+本部分将为“学生”模型搭建基架。 确切地说，基架工具将生成页面，用于对“学生”模型执行创建、读取、更新和删除 (CRUD) 操作。
 
-在项目文件夹中，创建一个名为 Data 的文件夹。
+* 生成项目。
+* 创建 Pages/Students 文件夹。
 
-在 Data 文件夹中，使用以下代码创建 SchoolContext.cs：
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_Intro)]
+* 在“解决方案资源管理器”中，右键单击“Pages/Students”文件夹>“添加”>“新搭建基架的项目”。
+* 在“添加基架”对话框中，选择“使用实体框架生成 Razor Pages (CRUD)”>“添加”。
 
-此代码会为每个实体集创建一个 `DbSet` 属性。 在 EF Core 术语中：
+完成“使用实体框架(CRUD)添加 Razor Pages”对话框：
 
-* 实体集通常对应一个数据库表。
-* 实体对应表中的行。
+* 在“模型类”下拉列表中，选择“学生(ContosoUniversity.Models)”。
+* 在“数据上下文类”行中，选择加号 (+) 并将生成的名称更改为 ContosoUniversity.Models.SchoolContext。
+* 在“数据上下文类”下拉列表中，选择“ContosoUniversity.Models.SchoolContext”
+* 选择“添加”。
 
-`DbSet<Enrollment>` 和 `DbSet<Course>` 可以省略。 EF Core 隐式包含了它们，因为 `Student` 实体引用 `Enrollment` 实体，而 `Enrollment` 实体引用 `Course` 实体。 在本教程中，将 `DbSet<Enrollment>` 和 `DbSet<Course>` 保留在 `SchoolContext` 中。
+![CRUD 对话框](intro/_static/s1.png)
 
-创建数据库时，EF Core 会创建名称与 `DbSet` 属性名相同的表。 集合的属性名通常采用复数形式（使用 Students，而不使用 Student）。 开发者对表名称是否应为复数形式意见不一。 在这些教程中，在 DbContext 中指定单数形式的表名称会覆盖默认行为。 若要指定单数形式的表名称，请添加以下突出显示的代码：
+如果对前面的步骤有疑问，请参阅[搭建“电影”模型的基架](xref:tutorials/razor-pages/model#scaffold-the-movie-model)。
 
-[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_TableNames&highlight=16-21)]
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-## <a name="register-the-context-with-dependency-injection"></a>通过依赖关系注入注册上下文
+运行以下命令，搭建“学生”模型的基架。
 
-ASP.NET Core 包含[依赖关系注入](xref:fundamentals/dependency-injection)。 服务（例如 EF Core 数据库上下文）在应用程序启动期间通过依赖关系注入进行注册。 需要这些服务（如 Razor 页面）的组件通过构造函数提供相应服务。 本教程的后续部分介绍了用于获取数据库上下文实例的构造函数代码。
+```console
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 2.1.0
+dotnet aspnet-codegenerator razorpage -m Student -dc ContosoUniversity.Models.SchoolContext -udl -outDir Pages\Students --referenceScriptLibraries
+```
+------
 
-要将 `SchoolContext` 注册为服务，请打开 Startup.cs，并将突出显示的行添加到 `ConfigureServices` 方法。
+搭建基架的过程会创建并更改以下文件：
 
-[!code-csharp[](intro/samples/cu/Startup.cs?name=snippet_SchoolContext&highlight=3-4)]
+### <a name="files-created"></a>创建的文件
 
-通过调用 `DbContextOptionsBuilder` 中的一个方法将数据库连接字符串在配置文件中的名称传递给上下文对象。 进行本地开发时，[ASP.NET Core 配置系统](xref:fundamentals/configuration/index)会从 appsettings.json 文件读取连接字符串。
+* Pages/Students：“创建”、“删除”、“详细信息”、“编辑”、“索引”。
+* Data/ContosoUniversityContext.cs
 
-为 `ContosoUniversity.Data` 和 `Microsoft.EntityFrameworkCore` 命名空间添加 `using` 语句。 生成项目。
+### <a name="files-updates"></a>文件更新
 
-[!code-csharp[](intro/samples/cu/Startup.cs?name=snippet_Usings)]
+* Startup.cs：在下一部分详细介绍对此文件所做更改。
+* appsettings.json：添加用于连接到本地数据的连接字符串。
 
-打开 appsettings.json 文件，并按以下代码所示添加连接字符串：
+## <a name="examine-the-context-registered-with-dependency-injection"></a>检查通过依赖关系注入注册的上下文
 
-[!code-json[](./intro/samples/cu/appsettings1.json?highlight=2-4)]
+ASP.NET Core 通过[依赖关系注入](xref:fundamentals/dependency-injection)进行生成。 服务（例如 EF Core 数据库上下文）在应用程序启动期间通过依赖关系注入进行注册。 需要这些服务（如 Razor 页面）的组件通过构造函数提供相应服务。 本教程的后续部分介绍了用于获取数据库上下文实例的构造函数代码。
 
-上述连接字符串使用 `ConnectRetryCount=0` 来防止 [SQLClient](/dotnet/framework/data/adonet/ef/sqlclient-for-the-entity-framework) 挂起。
+基架工具自动创建 DB 上下文并将其注册到依赖关系注入容器。
 
-### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
+在 Startup.cs 中检查 `ConfigureServices` 方法。 基架添加了突出显示的行：
 
-连接字符串指定 SQL Server LocalDB 数据库。 LocalDB 是轻型版本 SQL Server Express 数据库引擎，专门针对应用开发，而非生产使用。 LocalDB 作为按需启动并在用户模式下运行的轻量级数据库没有复杂的配置。 默认情况下，LocalDB 会在 `C:/Users/<user>` 目录中创建 .mdf 数据库文件。
+[!code-csharp[](intro/samples/cu21/Startup.cs?name=snippet_SchoolContext&highlight=13-14)]
 
-## <a name="add-code-to-initialize-the-db-with-test-data"></a>添加代码，以使用测试数据初始化该数据库
+通过调用 [DbContextOptions](/dotnet/api/microsoft.entityframeworkcore.dbcontextoptions) 对象中的一个方法将连接字符串名称传递到上下文。 进行本地开发时， [ASP.NET Core 配置系统](xref:fundamentals/configuration/index) 在 *appsettings.json* 文件中读取数据库连接字符串。
 
-EF Core 会创建一个空的数据库。 本部分中编写了 Seed 方法来使用测试数据填充该数据库。
-
-在 Data 文件夹中，新建一个名为 DbInitializer.cs 的类文件，并添加以下代码：
-
-[!code-csharp[](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
-
-该代码会检查数据库中是否存在任何学生。 如果数据库中没有任何学生，则会填充测试数据。 它会将测试数据加载到数组中，而不是 `List<T>` 集合中，以便优化性能。
-
-`EnsureCreated` 方法自动为数据库上下文创建数据库。 如果数据库已存在，则返回 `EnsureCreated`，并且不修改数据库。
+## <a name="update-main"></a>更新 main
 
 在 Program.cs 中，修改 `Main` 方法以执行以下操作：
 
 * 从依赖关系注入容器获取数据库上下文实例。
-* 调用 seed 方法，并将上下文传递给它。
-* Seed 方法完成时释放上下文。
+* 调用 [EnsureCreated](/dotnet/api/microsoft.entityframeworkcore.infrastructure.databasefacade.ensurecreated#Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_EnsureCreated)。
+* `EnsureCreated` 方法完成时释放上下文。
 
 下面的代码显示更新后的 Program.cs 文件。
 
-[!code-csharp[](intro/samples/cu/ProgramOriginal.cs?name=snippet)]
+[!code-csharp[](intro/samples/cu21/Program.cs?name=snippet)]
 
-第一次运行该应用时，会使用测试数据创建并填充数据库。 更新数据模型时：
+`EnsureCreated` 确保存在上下文数据库。 如果存在，则不需要任何操作。 如果不存在，则会创建数据库及其所有架构。 `EnsureCreated` 不使用迁移创建数据库。 使用 `EnsureCreated` 创建的数据库稍后无法使用迁移更新。
+
+启动应用时会调用 `EnsureCreated`，以进行以下工作流：
+
 * 删除数据库。
-* 更新 seed 方法。
-* 运行该应用，并创建新的种子数据库。 
+* 更改数据库架构（例如添加一个 `EmailAddress` 字段）。
+* 运行应用。
+* `EnsureCreated` 创建一个带有 `EmailAddress` 列的数据库。
 
-后续教程中，在更改数据模型时会更新该数据库，而不会删除并重新创建该数据库。
+架构快速演变时，在开发初期使用 `EnsureCreated` 很方便。 本教程后面将删除 DB 并使用迁移。
 
-<a name="pmc"></a>
-## <a name="add-scaffold-tooling"></a>添加基架工具
-
-本部分中将使用包管理器控制台 (PMC) 来添加 Visual Studio Web 代码生成包。 必须添加此包才能运行基架引擎。
-
-从“工具”菜单中，选择“NuGet 包管理器” > “包管理器控制台”。
-
-在包管理器控制台 (PMC) 中输入以下命令：
-
-```powershell
-Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
-Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Utils
-```
-
-前一个命令将 NuGet 包添加到 *.csproj 文件中：
-
-[!code-xml[](intro/samples/cu/ContosoUniversity1_csproj.txt?highlight=7-8)]
-
-<a name="scaffold"></a>
-## <a name="scaffold-the-model"></a>构架模型
-
-* 打开项目目录（包含 Program.cs、Startup.cs 和 .csproj 文件的目录）中的命令窗口。
-* 运行以下命令：
-
-
- ```console
-dotnet restore
-dotnet tool install --global dotnet-aspnet-codegenerator --version 2.1.0
-dotnet aspnet-codegenerator razorpage -m Student -dc SchoolContext -udl -outDir Pages\Students --referenceScriptLibraries
- ```
-
-如果收到错误：
-  ```
-No executable found matching command "dotnet-aspnet-codegenerator"
-  ```
-
-打开项目目录（包含 Program.cs、Startup.cs 和 .csproj 文件的目录）中的命令窗口。
-
-
-生成项目。 此版本生成如下错误：
-
- `1>Pages\Students\Index.cshtml.cs(26,38,26,45): error CS1061: 'SchoolContext' does not contain a definition for 'Student'`
-
- 将 `_context.Student` 全局更改为 `_context.Students`（即向 `Student` 添加一个“s”）。 找到并更新 7 个匹配项。 我们计划在下一版本中修复[此 bug](https://github.com/aspnet/Scaffolding/issues/633)。
-
-[!INCLUDE [model4tbl](../../includes/RP/model4tbl.md)]
-
- <a name="test"></a>
 ### <a name="test-the-app"></a>测试应用
 
-运行应用并选择“学生”链接。 “学生”链接将显示在页面顶部，具体取决于浏览器宽度。 如果看不到“学生”链接，请单击右上角的导航图标。
+运行应用并接受 cookie 策略。 此应用不保留个人信息。 有关 cookie 策略的信息，请参阅[欧盟一般数据保护条例 (GDPR) 支持](xref:security/gdpr)。
 
-![Contoso University 主页宽窄](intro/_static/home-page-narrow.png)
+* 依次选择“学生”链接、“新建”。
+* 测试“编辑”、“详细信息”和“删除”链接。
 
-测试“创建”，“编辑”和“详细信息”链接。
+## <a name="examine-the-schoolcontext-db-context"></a>检查 SchoolContext DB 上下文
+
+数据库上下文类是为给定数据模型协调 EF Core 功能的主类。 数据上下文派生自 [Microsoft.EntityFrameworkCore.DbContext](/dotnet/api/microsoft.entityframeworkcore.dbcontext)。 数据上下文指定数据模型中包含哪些实体。 在此项目中将数据库上下文类命名为 `SchoolContext`。
+
+使用以下代码更新 SchoolContext.cs：
+
+[!code-csharp[](intro/samples/cu21/Data/SchoolContext.cs?name=snippet_Intro&highlight=12-14)]
+
+突出显示的代码为每个实体集创建 [DbSet\<TEntity>](/dotnet/api/microsoft.entityframeworkcore.dbset-1) 属性。 在 EF Core 术语中：
+
+* 实体集通常对应一个数据库表。
+* 实体对应表中的行。
+
+可以省略 `DbSet<Enrollment>` 和 `DbSet<Course>`。 EF Core 隐式包含了它们，因为 `Student` 实体引用 `Enrollment` 实体，而 `Enrollment` 实体引用 `Course` 实体。 在本教程中，将 `DbSet<Enrollment>` 和 `DbSet<Course>` 保留在 `SchoolContext` 中。
+
+### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
+
+连接字符串指定 [SQL Server LocalDB](/sql/database-engine/configure-windows/sql-server-2016-express-localdb)。 LocalDB 是轻型版本 SQL Server Express 数据库引擎，专门针对应用开发，而非生产使用。 LocalDB 作为按需启动并在用户模式下运行的轻量级数据库没有复杂的配置。 默认情况下，LocalDB 会在 `C:/Users/<user>` 目录中创建 .mdf 数据库文件。
+
+## <a name="add-code-to-initialize-the-db-with-test-data"></a>添加代码，以使用测试数据初始化该数据库
+
+EF Core 会创建一个空的数据库。 本部分中编写了 `Initialize` 方法来使用测试数据填充该数据库。
+
+在 Data 文件夹中，新建一个名为 DbInitializer.cs 的类文件，并添加以下代码：
+
+[!code-csharp[](intro/samples/cu21/Data/DbInitializer.cs?name=snippet_Intro)]
+
+该代码会检查数据库中是否存在任何学生。 如果 DB 中没有任何学生，则会使用测试数据初始化该 DB。 代码中使用数组存放测试数据而不是使用 `List<T>` 集合是为了优化性能。
+
+`EnsureCreated` 方法自动为数据库上下文创建数据库。 如果数据库已存在，则返回 `EnsureCreated`，并且不修改数据库。
+
+在 Program.cs 中，将 `Main` 方法修改为调用 `Initialize`：
+
+[!code-csharp[](intro/samples/cu21/Program.cs?name=snippet2&highlight=14-15)]
+
+删除任何学生记录并重启应用。 如果未初始化 DB，则在 `Initialize` 中设置断点以诊断问题。
 
 ## <a name="view-the-db"></a>查看数据库
-
-启动应用时，`DbInitializer.Initialize` 会调用 `EnsureCreated`。 `EnsureCreated` 检测数据库是否存在，并在必要时创建一个数据库。 如果数据库中没有学生，`Initialize` 方法将添加学生。
 
 从 Visual Studio 中的“视图”菜单打开 SQL Server 对象资源管理器 (SSOX)。
 在 SSOX 中，单击“(localdb)\MSSQLLocalDB”>“数据库”>“ContosoUniversity1”。
@@ -273,30 +279,6 @@ No executable found matching command "dotnet-aspnet-codegenerator"
 展开“表”节点。
 
 右键单击 Student 表，然后单击“查看数据”，以查看创建的列和插入到表中的行。
-
-.mdf 和 .ldf 数据库文件位于 C:\Users\\<yourusername> 文件夹中<em></em>。
-
-启动应用时会调用 `EnsureCreated`，以进行以下工作流：
-
-* 删除数据库。
-* 更改数据库架构（例如添加一个 `EmailAddress` 字段）。
-* 运行应用。
-
-`EnsureCreated` 创建一个带有 `EmailAddress` 列的数据库。
-
-## <a name="conventions"></a>约定
-
-因为使用了约定或 EF Core 所做的假设，为使 EF Core 创建完整数据库而编写的代码量是最小的。
-
-* 使用 `DbSet` 属性的名称作为表名。 如果实体未被 `DbSet` 属性引用，实体类名称用作表名称。
-
-* 使用实体属性名作为列名。
-
-* 以 ID 或 classnameID 命名的实体属性被视为主键属性。
-
-* 如果属性命名为 <navigation property name><primary key property name>，将视为外键属性（例如 `Student` 导航属性的 `StudentID`，因为 `Student` 实体的主键为 `ID`）。 可将外键属性命名为 <primary key property name>（例如 `EnrollmentID`，因为 `Enrollment` 实体的主键为 `EnrollmentID`）。
-
-可以重写常规行为。 例如，可以显式指定表名，如本教程中前面部分所示。 可以显式设置列名。 可以显式设置主键和外键。
 
 ## <a name="asynchronous-code"></a>异步代码
 
@@ -306,32 +288,28 @@ Web 服务器的可用线程是有限的，而在高负载情况下的可能所�
 
 异步代码会在运行时引入少量开销。 流量较低时，对性能的影响可以忽略不计，但流量较高时，潜在的性能改善非常显著。
 
-在以下代码中，`async` 关键字、`Task<T>` 返回值、`await` 关键字和 `ToListAsync` 方法让代码异步执行。
+在以下代码中，[async](/dotnet/csharp/language-reference/keywords/async) 关键字和 `Task<T>` 返回值，`await` 关键字和 `ToListAsync` 方法让代码异步执行。
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_ScaffoldedIndex)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_ScaffoldedIndex)]
 
 * `async` 关键字让编译器执行以下操作：
-
   * 为方法主体的各部分生成回调。
-  * 自动创建返回的 [Task](/dotnet/api/system.threading.tasks.task?view=netframework-4.7) 对象。 有关详细信息，请参阅[任务返回类型](/dotnet/csharp/programming-guide/concepts/async/async-return-types#BKMK_TaskReturnType)。
+  * 自动创建返回的 [Task](/dotnet/api/system.threading.tasks.task) 对象。 有关详细信息，请参阅[任务返回类型](/dotnet/csharp/programming-guide/concepts/async/async-return-types#BKMK_TaskReturnType)。
 
 * 隐式返回类型 `Task` 表示正在进行的工作。
-
 * `await` 关键字让编译器将该方法拆分为两个部分。 第一部分是以异步方式结束已启动的操作。 第二部分是当操作完成时注入调用回调方法的地方。
-
 * `ToListAsync` 是 `ToList` 扩展方法的异步版本。
 
 编写使用 EF Core 的异步代码时需要注意的一些事项：
 
 * 只会异步执行导致查询或命令被发送到数据库的语句。 这包括 `ToListAsync`、`SingleOrDefaultAsync`、`FirstOrDefaultAsync` 和 `SaveChangesAsync`。 不包括只会更改 `IQueryable` 的语句，例如 `var students = context.Students.Where(s => s.LastName == "Davolio")`。
-
-* EF Core 上下文并非线程安全：请勿尝试并行执行多个操作。 
-
+* EF Core 上下文并非线程安全：请勿尝试并行执行多个操作。
 * 若要利用异步代码的性能优势，请验证在调用向数据库发送查询的 EF Core 方法时，库程序包（如用于分页）是否使用异步。
 
-有关在 .NET 中进行异步编程的详细信息，请参阅[异步概述](/dotnet/articles/standard/async)。
+有关 .NET 中异步编程的详细信息，请参阅[异步概述](/dotnet/articles/standard/async)和[使用 Async 和 Await 的异步编程](/dotnet/csharp/programming-guide/concepts/async/)。
 
 下一个教程将介绍基本的 CRUD（创建、读取、更新、删除）操作。
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [下一篇](xref:data/ef-rp/crud)
