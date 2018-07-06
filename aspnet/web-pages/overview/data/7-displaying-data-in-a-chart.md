@@ -4,19 +4,16 @@ title: 在具有 ASP.NET Web Pages (Razor) 的图表中显示数据 |Microsoft D
 author: microsoft
 description: 这一章介绍了如何在图表中显示数据。 在上一章节中，您学习了如何以手动，并在网格中显示数据。 这一章介绍了...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/22/2012
-ms.topic: article
 ms.assetid: f889fd46-4dac-4ecb-83d8-60e64c22036e
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/data/7-displaying-data-in-a-chart
 msc.type: authoredcontent
-ms.openlocfilehash: 41af8ac4dba0ba5ad478df7075628186a96f48c4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 161dfa1b2c0676c79baebb00e303e8cb9df1d4e8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393751"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812576"
 ---
 <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>在具有 ASP.NET 网页 (Razor) 的图表中显示数据
 ====================

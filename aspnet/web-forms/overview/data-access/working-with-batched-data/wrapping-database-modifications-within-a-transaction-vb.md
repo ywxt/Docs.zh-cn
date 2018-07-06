@@ -4,19 +4,16 @@ title: 包装事务 (VB) 内的数据库修改 |Microsoft Docs
 author: rick-anderson
 description: 本教程是四个查看更新、 删除和插入数据的批处理的第一个。 在本教程中我们了解如何允许数据库事务...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/26/2007
-ms.topic: article
 ms.assetid: 7d821db5-6cbb-4b38-af14-198f9155fc82
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cf87dd0e677a73dc81cc430157be22b01ff0f7a8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 877174bad08970eed0cab52d0f1d8a521f7d2cc0
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390130"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840740"
 ---
 <a name="wrapping-database-modifications-within-a-transaction-vb"></a>包装事务 (VB) 中的数据库修改
 ====================

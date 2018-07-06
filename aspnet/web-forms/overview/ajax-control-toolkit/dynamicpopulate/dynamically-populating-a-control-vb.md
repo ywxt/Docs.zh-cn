@@ -4,19 +4,16 @@ title: 动态填充控件 (VB) |Microsoft Docs
 author: wenz
 description: ASP.NET AJAX 控件工具包中的 DynamicPopulate 控件调用 web 服务 （或页面方法），并将生成的值填充到 t 上的目标控件...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 27305347-7b5d-4519-97b7-197a357e7f6e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fd55b59f9375eb320711ffea8d971a8d86179c43
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: d82f8302ddd861531ba517d785a8695d7b914fa0
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368655"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806340"
 ---
 <a name="dynamically-populating-a-control-vb"></a>动态填充控件 (VB)
 ====================

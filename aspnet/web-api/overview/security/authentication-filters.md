@@ -4,19 +4,16 @@ title: ASP.NET Web API 2 中的身份验证筛选器 |Microsoft Docs
 author: MikeWasson
 description: 身份验证筛选器是 HTTP 请求进行身份验证的组件。 Web API 2 和 MVC 5 都支持身份验证筛选器，但它们略有不同...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/25/2014
-ms.topic: article
 ms.assetid: b9882e53-b3ca-4def-89b0-322846973ccb
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/security/authentication-filters
 msc.type: authoredcontent
-ms.openlocfilehash: be2dcb246597f90ed7f00b2cf647b92e44aa254c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6cad52e0454d685c6e96746524fbbad21e1c274d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385672"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839812"
 ---
 <a name="authentication-filters-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的身份验证筛选器
 ====================

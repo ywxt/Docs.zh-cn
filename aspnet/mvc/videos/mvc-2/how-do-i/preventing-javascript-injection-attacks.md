@@ -4,19 +4,16 @@ title: 阻止 JavaScript 注入攻击 |Microsoft Docs
 author: StephenWalther
 description: 阻止 JavaScript 注入攻击和跨站点脚本攻击发生给你。 在本教程中，Stephen Walther 解释了如何轻松地 de...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/20/2008
-ms.topic: article
 ms.assetid: 012a91e7-fd88-4d4f-8f95-57a9043c47d9
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/preventing-javascript-injection-attacks
 msc.type: video
-ms.openlocfilehash: 49f9138a4b1c5d17b3e0abf7bfea8f07c0f024b9
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a6c082db671eea7627481bca383c6d1d7e98554c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381898"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37813495"
 ---
 <a name="preventing-javascript-injection-attacks"></a>阻止 JavaScript 注入攻击
 ====================

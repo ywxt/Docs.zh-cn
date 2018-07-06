@@ -4,19 +4,16 @@ title: 解锁和审批用户帐户 (C#) |Microsoft Docs
 author: rick-anderson
 description: 本教程演示如何生成某一网页寻求管理员可以管理用户的锁定和批准状态。 我们还将了解如何批准新用户 o...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2008
-ms.topic: article
 ms.assetid: 5346aab1-9974-489f-a065-ae3883b8a350
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f6bf76579898a8ff36b18380100ce4ab2e74fc8d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ab6fa1b460de671559dc16ca85f2a4df1e3d5922
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392706"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37818299"
 ---
 <a name="unlocking-and-approving-user-accounts-c"></a>解锁和审批用户帐户 (C#)
 ====================

@@ -4,19 +4,16 @@ title: 从 SQL 成员身份的现有网站迁移到 ASP.NET 标识 |Microsoft Do
 author: Rick-Anderson
 description: 本教程说明了步骤来迁移现有 web 应用程序具有用户和创建使用新的 ASP.NET 标识的 SQL 成员资格的角色数据...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/19/2014
-ms.topic: article
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
-ms.technology: ''
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 7df2c9a6cccefd3c4f3022c14627394557543258
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4acb8c82c9b05de9d587466170f8fac4ef9b6dde
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389121"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812246"
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>从 SQL 成员身份的现有网站迁移到 ASP.NET 标识
 ====================

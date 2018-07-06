@@ -4,19 +4,16 @@ title: 动手实验： One ASP.NET： 集成 ASP.NET Web 窗体、 MVC 和 Web A
 author: rick-anderson
 description: ASP.NET 是一个用于构建网站、 应用和服务使用专用的技术，如 MVC、 Web API 以及其他框架。 与展开 ASP.NET h...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/16/2014
-ms.topic: article
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
-ms.technology: ''
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 7dec4daffa66621acaee1c76fda7b2e7550ad925
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 276207a6e7d2388ce53778928665c35de9327318
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382939"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837300"
 ---
 <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>动手实验： One ASP.NET： 集成 ASP.NET Web 窗体、 MVC 和 Web API
 ====================

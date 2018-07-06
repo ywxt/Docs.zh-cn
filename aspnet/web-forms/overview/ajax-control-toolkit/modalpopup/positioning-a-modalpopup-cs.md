@@ -4,19 +4,16 @@ title: 定位 ModalPopup (C#) |Microsoft Docs
 author: wenz
 description: 在 AJAX 控件工具包的 ModalPopup 控件提供了简单的方法来创建模式弹出框使用客户端的方式。 但是该控件不提供...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 1caac9d0-e21e-49d6-a8ff-e563a736d6ca
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/positioning-a-modalpopup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d76b74cf1cef1196298e5dbab2b1a6acaf7e5a04
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4f94c0a473b88c0155847d700c48faa34b84c940
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388452"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37807059"
 ---
 <a name="positioning-a-modalpopup-c"></a>定位 ModalPopup (C#)
 ====================

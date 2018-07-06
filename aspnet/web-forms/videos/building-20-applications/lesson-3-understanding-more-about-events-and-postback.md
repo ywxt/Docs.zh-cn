@@ -4,19 +4,16 @@ title: '[第 3 课:] 了解更多有关事件和回发 |Microsoft Docs'
 author: microsoft
 description: 在本课程中，您将学习如何在代码中，使用事件以及如何响应这些事件发生时。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/28/2005
-ms.topic: article
 ms.assetid: 59f0bccd-b604-47fa-a42b-71d8ab187bd2
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/building-20-applications/lesson-3-understanding-more-about-events-and-postback
 msc.type: video
-ms.openlocfilehash: c54c91f9aec9898296d68f4f81c4197daba32934
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 83e6581fbbb53df8038006a755ebaf2293baac6b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372969"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37818603"
 ---
 <a name="lesson-3--understanding-more-about-events-and-postback"></a>[第 3 课:] 了解有关事件和回发的更多信息
 ====================

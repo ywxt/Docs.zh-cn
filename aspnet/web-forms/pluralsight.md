@@ -4,19 +4,16 @@ title: Web 窗体从 Pluralsight 视频培训 |Microsoft Docs
 author: rick-anderson
 description: Pluralsight 提供的 Web Forms 培训。此 ASP.NET Web Forms 开发课程向你介绍几个作为一个.NET 开发者所需要知道的关键技术...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/16/2011
-ms.topic: article
 ms.assetid: c71bb9b2-7136-4ce6-a40a-cc4d9978cfb7
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/pluralsight
 msc.type: content
-ms.openlocfilehash: 35ebb9d32c9d987b765d63879f23fbbb80ee22eb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 502aa3ea99b768a58172809cd049380b480f71e3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37391736"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811424"
 ---
 <a name="web-forms-video-training-from-pluralsight"></a>Pluralsight 提供的 Web 窗体视频培训
 ====================

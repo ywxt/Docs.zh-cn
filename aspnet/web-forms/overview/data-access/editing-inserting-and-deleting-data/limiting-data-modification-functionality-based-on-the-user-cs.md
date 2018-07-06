@@ -4,19 +4,16 @@ title: 限制数据修改功能基于用户 (C#) |Microsoft Docs
 author: rick-anderson
 description: 允许用户编辑数据的 web 应用程序，在不同的用户帐户可能具有不同数据编辑权限。 在本教程中我们将介绍如何 t...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/17/2006
-ms.topic: article
 ms.assetid: 2b251c82-77cf-4e36-baa9-b648eddaa394
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d8141a47bc7036641a93a0946b43e1f8086b9a93
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: d011f57834ff27efd888a3f66342a7d0a2d70d8c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372235"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811388"
 ---
 <a name="limiting-data-modification-functionality-based-on-the-user-c"></a>限制基于用户 (C#) 的数据修改功能
 ====================

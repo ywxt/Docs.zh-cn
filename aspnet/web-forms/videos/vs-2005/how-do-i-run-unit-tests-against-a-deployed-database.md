@@ -4,19 +4,16 @@ title: '[如何实现:]对已部署的数据库运行单元测试？ | Microsoft
 author: pjhacker
 description: 如果 ASP.NET 应用程序配置为部署数据库和网站，如何检验是否已部署的有效的数据库实例？...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/22/2007
-ms.topic: article
 ms.assetid: 83792674-f769-4c9a-889b-701cfc52de8b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-run-unit-tests-against-a-deployed-database
 msc.type: video
-ms.openlocfilehash: c82222a2ab77e6821af631d90be051cec0ac73cf
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e624a46a4ff01eb63dccbe282f3a12ddd0793abb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374590"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831549"
 ---
 <a name="how-do-i-run-unit-tests-against-a-deployed-database"></a>[如何实现:]对已部署的数据库运行单元测试？
 ====================

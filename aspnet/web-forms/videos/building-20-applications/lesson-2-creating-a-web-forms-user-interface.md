@@ -4,19 +4,16 @@ title: '[第 2 课:]创建 Web 窗体用户界面 |Microsoft Docs'
 author: microsoft
 description: 在本课程中，您将了解各种 ASP.NET&#160;2.0 服务器控件在 Visual Web Developer 速成版中可用。 此外，你将开始...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/25/2005
-ms.topic: article
 ms.assetid: 7eac8f6b-6911-4585-87e8-ba662c1578fb
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/building-20-applications/lesson-2-creating-a-web-forms-user-interface
 msc.type: video
-ms.openlocfilehash: 99d7c5cc9cd99cfb33f7916311c8da500efa3295
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 95e150a6f86be62864a5f98d600e7a05a0c95359
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379671"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831318"
 ---
 <a name="lesson-2-creating-a-web-forms-user-interface"></a>[第 2 课:]创建 Web 窗体用户界面
 ====================

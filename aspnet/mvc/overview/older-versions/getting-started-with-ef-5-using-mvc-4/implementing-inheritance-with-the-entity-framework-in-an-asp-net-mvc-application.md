@@ -4,19 +4,16 @@ title: 在 ASP.NET MVC 应用程序 (8 为 10) 中实现与实体框架的继承
 author: tdykstra
 description: Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 的 ASP.NET MVC 4 应用程序...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/30/2013
-ms.topic: article
 ms.assetid: a5c3feff-5335-4cdd-a97d-f7a8785c2494
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: d3c3d19a62f601d007b0fac031ade1eef9f35771
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b39fc609007d437dd0845f9087dd5a32272cebe9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378931"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821271"
 ---
 <a name="implementing-inheritance-with-the-entity-framework-in-an-aspnet-mvc-application-8-of-10"></a>在 ASP.NET MVC 应用程序 (8 为 10) 中实现继承，使用实体框架
 ====================

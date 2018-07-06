@@ -4,19 +4,16 @@ title: 在 ASP.NET Web API 2 中进行跟踪 |Microsoft Docs
 author: MikeWasson
 description: 演示如何在 ASP.NET Web API 中启用跟踪。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/25/2014
-ms.topic: article
 ms.assetid: 66a837e9-600b-4b72-97a9-19804231c64a
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f9c33e62a1d04bc7851be13560a2bd39e997448f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0fabb9bcd0293ba88a41ad9d070958dbbb0c4749
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366859"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838104"
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>在 ASP.NET Web API 2 中进行跟踪
 ====================

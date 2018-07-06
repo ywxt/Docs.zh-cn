@@ -4,19 +4,16 @@ title: 排序、 筛选和分页与实体框架在 ASP.NET MVC 应用程序 (10 
 author: tdykstra
 description: Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 的 ASP.NET MVC 4 应用程序...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/30/2013
-ms.topic: article
 ms.assetid: 8af630e0-fffa-4110-9eca-c96e201b2724
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: c2b53c5f35b0d7cd519ab3fdcb57c39463c40a8a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f5ce5f926021a53a5dd96e578b26b8c186c9a83c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401219"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37841029"
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>排序、 筛选和分页与 ASP.NET MVC 应用程序 (10 的 3) 中的实体框架
 ====================

@@ -4,19 +4,16 @@ title: 为 JSP 开发人员的 ASP.NET 简介： 欢迎使用 ASP.NET 2.0 |Micro
 author: microsoft
 description: 此会话主要介绍基本了解 ASP.NET 和 ASP.NET 如何与.NET Framework 和 Microsoft IIS 集成所需的背景。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/25/2006
-ms.topic: article
 ms.assetid: 1a95474a-a897-4ba1-b372-8a112cb324ba
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/migrating/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20
 msc.type: video
-ms.openlocfilehash: 38c7c42c248fe9f6c06852d1d580c2fdb42fd5d8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 66e6814098cbeecacfd7cf29b177025a66d9d3a7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37391749"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840847"
 ---
 <a name="intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20"></a>为 JSP 开发人员的 ASP.NET 简介： 欢迎使用 ASP.NET 2.0
 ====================

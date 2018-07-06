@@ -4,19 +4,16 @@ title: 部署 Web 包 |Microsoft Docs
 author: jrjlee
 description: 本主题介绍如何在您可以发布 web 部署包到远程服务器通过使用 Internet 信息服务 (IIS) Web 部署工具 (Web...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: a5c5eed2-8683-40a5-a2e1-35c9f8d17c29
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: a660a9a5593d41064ab099296d4a7a675b206bb5
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 44c3772263cbebaf03e1393542fda32467a97cd8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392853"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825260"
 ---
 <a name="deploying-web-packages"></a>部署 Web 程序包
 ====================

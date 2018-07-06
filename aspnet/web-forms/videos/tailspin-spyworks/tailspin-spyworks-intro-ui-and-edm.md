@@ -4,19 +4,16 @@ title: Tailspin Spyworks-引入 UI 和 EDM |Microsoft Docs
 author: JoeStagner
 description: Joe Stagner 启动 Tailspin Spyworks 示例 Web 窗体应用程序通过实现默认模板。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/12/2010
-ms.topic: article
 ms.assetid: e81c1e34-f64f-4889-9981-8400d7bb49e4
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-intro-ui-and-edm
 msc.type: video
-ms.openlocfilehash: ac0d0d06d4890ff196ab560f113bbe9fc5366f87
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a58079c9a75ae032bb3e477b15d8e80eaae7b07e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396856"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820264"
 ---
 <a name="tailspin-spyworks---intro-ui-and-edm"></a>Tailspin Spyworks-引入 UI 和 EDM
 ====================

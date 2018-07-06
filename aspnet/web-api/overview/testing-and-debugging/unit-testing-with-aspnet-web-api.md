@@ -4,19 +4,16 @@ title: 单元测试 ASP.NET Web API 2 |Microsoft Docs
 author: tfitzmac
 description: 此指南和应用程序演示了如何创建 Web API 2 应用程序的简单单元测试。 本教程演示如何包含单元测试项目...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/05/2014
-ms.topic: article
 ms.assetid: bf20f78d-ff91-48be-abd1-88e23dcc70ba
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: da56b38809faf760b7c390eb76ac9c4556d635c6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 701ced855ff2848182fdbf8d4b9e2bcf0c33341b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376169"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806210"
 ---
 <a name="unit-testing-aspnet-web-api-2"></a>单元测试 ASP.NET Web API 2
 ====================

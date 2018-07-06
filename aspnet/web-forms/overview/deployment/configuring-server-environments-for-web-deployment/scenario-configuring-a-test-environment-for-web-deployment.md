@@ -4,19 +4,16 @@ title: 方案： 配置用于 Web 部署测试环境 |Microsoft Docs
 author: jrjlee
 description: 本主题介绍典型的 web 部署方案中为开发人员或测试环境并说明为了设置 si 完成所需的任务...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 44a22ac7-1fc7-4174-b946-c6129fb6a19b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: f8636fab82b63edab50fc13ae32f4dd536f133ff
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ba77c944378245ed82d1cee92b668e31acc51a81
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382489"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822365"
 ---
 <a name="scenario-configuring-a-test-environment-for-web-deployment"></a>方案： 配置用于 Web 部署测试环境
 ====================

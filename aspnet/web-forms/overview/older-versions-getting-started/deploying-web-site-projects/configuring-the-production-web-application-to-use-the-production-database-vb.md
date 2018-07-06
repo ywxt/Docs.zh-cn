@@ -4,19 +4,16 @@ title: 配置生产 Web 应用程序以使用生产数据库 (VB) |Microsoft Doc
 author: rick-anderson
 description: 如之前教程中所述，它不是常见的配置信息以在开发和生产环境之间存在差异。 这是 es...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/23/2009
-ms.topic: article
 ms.assetid: a64a7aa0-6608-449e-83bf-1ef8cceee504
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7b5afb17f405bc8652431dd0a13a9e810fdfd74b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 952bdafd06143ce24e9e8beb0d6e6343400ffdc6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371059"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840695"
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>配置生产 Web 应用程序以使用生产数据库 (VB)
 ====================

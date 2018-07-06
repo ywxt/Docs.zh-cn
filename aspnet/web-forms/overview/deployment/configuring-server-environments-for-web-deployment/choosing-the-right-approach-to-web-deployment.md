@@ -4,19 +4,16 @@ title: 选择 Web 部署的适当方法 |Microsoft Docs
 author: jrjlee
 description: 使用 Internet 信息服务 (IIS) Web 部署工具 （Web 部署） 2.0 或更高版本时，有三种主要方法可用于获取...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 787a53fd-9901-4a11-9d58-61e0509cda45
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: f1c3a09d9e960a53a25e0dd0b953224204a9ba7b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: eb1b7d50e5d7461d760ad7a963cc70369b7a4513
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367740"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37807046"
 ---
 <a name="choosing-the-right-approach-to-web-deployment"></a>选择 Web 部署的适当方法
 ====================

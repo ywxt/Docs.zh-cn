@@ -4,19 +4,16 @@ title: 使用 ViewData 和实现 ViewModel 类 |Microsoft Docs
 author: microsoft
 description: 步骤 6 显示了如何启用对更丰富的窗体编辑方案中，支持，并还讨论了可用于将数据从控制器传递到视图的两种方法:...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/27/2010
-ms.topic: article
 ms.assetid: 5755ec4c-60f1-4057-9ec0-3a5de3a20e23
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-viewdata-and-implement-viewmodel-classes
 msc.type: authoredcontent
-ms.openlocfilehash: edc62246cdc5e5df51c369a70b47dab92c9ecc1c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 70b264def11b55fc08165dda307ff9e82fd4be7f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37365118"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37826949"
 ---
 <a name="use-viewdata-and-implement-viewmodel-classes"></a>使用 ViewData 和实现 ViewModel 类
 ====================

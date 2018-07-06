@@ -4,19 +4,16 @@ title: 从.NET 客户端 (C#) 调用 OData 服务 |Microsoft Docs
 author: MikeWasson
 description: 本教程演示如何从 C# 客户端应用程序调用 OData 服务。 在教程的 Visual Studio 2013 （适用于 Visual S...中使用的软件版本
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/26/2014
-ms.topic: article
 ms.assetid: 6f448917-ad23-4dcc-9789-897fad74051b
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: d987e7fbe737055b3e2b690ef3e8de5ca7e2b937
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 72dca7dc2ec27f15c9f0526621a713267f5835f8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369778"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819550"
 ---
 <a name="calling-an-odata-service-from-a-net-client-c"></a>从.NET 客户端 (C#) 调用 OData 服务
 ====================

@@ -4,19 +4,16 @@ title: 创建生成定义支持部署 |Microsoft Docs
 author: jrjlee
 description: 如果你想要执行任何种类的生成在 Team Foundation Server (TFS) 2010年，您需要创建你的团队项目中的生成定义。 此主题 des...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: fe47a018-f6d0-4979-80e7-5b1fa75a5865
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: d0220ee5c7c066d107311c1235949cec5049cc27
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 18f88cff032bd0694ef98f0b19849f0edf1681ee
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370275"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37827383"
 ---
 <a name="creating-a-build-definition-that-supports-deployment"></a>创建生成定义支持部署
 ====================

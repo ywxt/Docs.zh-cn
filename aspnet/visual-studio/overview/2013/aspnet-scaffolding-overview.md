@@ -4,19 +4,16 @@ title: 在 Visual Studio 2013 的 ASP.NET 基架 |Microsoft Docs
 author: tfitzmac
 description: ASP.NET 基架是包括在 Visual Studio 2013 的新功能。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/09/2014
-ms.topic: article
 ms.assetid: a41ec9d4-8287-4f31-9e2a-460e7b7f04be
-ms.technology: ''
 msc.legacyurl: /visual-studio/overview/2013/aspnet-scaffolding-overview
 msc.type: authoredcontent
-ms.openlocfilehash: f014ef1439376349f49f10f1f4063945ab81e7c1
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2fcfc31069e8fee79eb217ef6bad746f85a085e0
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369087"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839563"
 ---
 <a name="aspnet-scaffolding-in-visual-studio-2013"></a>在 Visual Studio 2013 的 ASP.NET 基架
 ====================

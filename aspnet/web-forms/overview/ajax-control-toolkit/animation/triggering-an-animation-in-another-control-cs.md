@@ -4,19 +4,16 @@ title: 触发的动画在另一个控件 (C#) |Microsoft Docs
 author: wenz
 description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 通常情况下，启动...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: e5d99c2b-d8ee-413c-80d5-c120cffb0a4c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 37473217062b48a1e7829efcf07015be12e0c650
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a7eeb522ae982cd5a84aa9c8e4228871c8c78440
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37375114"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810797"
 ---
 <a name="triggering-an-animation-in-another-control-c"></a>触发另一个控件 (C#) 中的动画
 ====================

@@ -4,19 +4,16 @@ title: 配置 Web 服务器的 Web 部署发布 （Web 部署处理程序） |Mi
 author: jrjlee
 description: 本主题介绍如何配置 Internet 信息服务 (IIS) web 服务器以支持 web 发布和使用 IIS Web 部署 Han 部署...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 90ebf911-1c46-4470-b876-1335bd0f590f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler
 msc.type: authoredcontent
-ms.openlocfilehash: 2d262aab8fd6e755330acbaffa6d18c29688666f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3296bb9b6460bbe80782746c9d398aa67815dcee
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37394200"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833324"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a>配置 Web 服务器的 Web 部署发布 （Web 部署处理程序）
 ====================

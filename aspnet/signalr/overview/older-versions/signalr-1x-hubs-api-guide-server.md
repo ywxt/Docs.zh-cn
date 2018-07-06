@@ -4,19 +4,16 @@ title: ASP.NET SignalR 中心 API 指南-服务器 (SignalR 1.x) |Microsoft Docs
 author: pfletcher
 description: 本文档介绍了 ASP.NET SignalR 中心 API 的服务器端编程 SignalR 版本 1.1 中，使用代码示例 demonstratin...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/17/2013
-ms.topic: article
 ms.assetid: 03e4b9f5-0fea-4d94-959f-014b2762a301
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-server
 msc.type: authoredcontent
-ms.openlocfilehash: 5597b89688382ab7eb2c2c724baf9a32abee49c9
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 15d2f4e9eaff0d47a3bdce489dfc1d19177423f8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396661"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37826408"
 ---
 <a name="aspnet-signalr-hubs-api-guide---server-signalr-1x"></a>ASP.NET SignalR 中心 API 指南-服务器 (SignalR 1.x)
 ====================

@@ -4,19 +4,16 @@ title: '[如何实现:]利用角色划分 ASP.NET 网站中的功能 |Microsoft 
 author: rick-anderson
 description: 在本视频中 Chris Pels 将演示如何以最大限度地设置 ASP.NET 成员资格后使用 ASP.NET web 站点中的角色。 首先，了解如何设置 rol...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/29/2008
-ms.topic: article
 ms.assetid: 9ac277a9-2149-4a51-b61b-a44ad0535267
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-roles-to-segment-functionality-in-an-aspnet-web-site
 msc.type: video
-ms.openlocfilehash: 01d0ab2bae64d5260998fd2317133c26ae36bebb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5cb5e14310761f6b01009af82f6f9f2370f28d63
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37383521"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820157"
 ---
 <a name="how-do-i-use-roles-to-segment-functionality-in-an-aspnet-web-site"></a>[如何实现:]利用角色划分 ASP.NET 网站中的功能
 ====================

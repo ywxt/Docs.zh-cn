@@ -4,19 +4,16 @@ title: 不需要在 ASP.NET 中，做什么和有什么解决办法 |Microsoft D
 author: tfitzmac
 description: 本主题介绍几个常见的错误的人也会在 ASP.NET web 项目中。 它提供有关应执行哪些操作来避免这些 commo 建议...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/08/2014
-ms.topic: article
 ms.assetid: c39b9965-545c-4b04-8f55-21be7f28a9e5
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 msc.type: authoredcontent
-ms.openlocfilehash: bf46d0b4997d9816071df20fb1884dd76dce8903
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9e9b192126995ac8a461b15bce69b60d57ca9ba1
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371877"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806013"
 ---
 <a name="what-not-to-do-in-aspnet-and-what-to-do-instead"></a>不需要在 ASP.NET 中，做什么和有什么解决办法
 ====================

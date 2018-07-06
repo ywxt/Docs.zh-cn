@@ -4,19 +4,16 @@ title: 访问您的模型的数据从控制器 (C#) |Microsoft Docs
 author: Rick-Anderson
 description: 本教程将讲述构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/12/2011
-ms.topic: article
 ms.assetid: 002ada5c-f114-47ab-a441-57dbdb728ea0
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 9984e8dbe4485093dd0061895bc4308574f3aaea
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a1a39cf06b7ab9109117e89051c8adf47062a926
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37380864"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805608"
 ---
 <a name="accessing-your-models-data-from-a-controller-c"></a>从控制器 (C#) 访问模型的数据
 ====================

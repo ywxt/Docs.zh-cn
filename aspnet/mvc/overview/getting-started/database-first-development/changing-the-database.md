@@ -4,19 +4,16 @@ title: 第一种使用 ASP.NET MVC 的 EF 数据库： 更改的数据库 |Micro
 author: tfitzmac
 description: 使用 MVC、 Entity Framework 和 ASP.NET 基架，可以创建提供接口的现有数据库的 web 应用程序。 此教程系列...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/01/2014
-ms.topic: article
 ms.assetid: cfd5c083-a319-482e-8f25-5b38caa93954
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/changing-the-database
 msc.type: authoredcontent
-ms.openlocfilehash: 7c9bca87c51bee35be2c5b533916255be80056b0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0176274694426a527ed0862b5138919d4cf5c319
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385429"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840935"
 ---
 <a name="ef-database-first-with-aspnet-mvc-changing-the-database"></a>第一种使用 ASP.NET MVC 的 EF 数据库： 更改的数据库
 ====================

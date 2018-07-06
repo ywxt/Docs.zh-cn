@@ -4,19 +4,16 @@ title: 配置 Web 服务器的 Web 部署发布 （远程代理） |Microsoft Do
 author: jrjlee
 description: 本主题介绍如何配置 Internet 信息服务 (IIS) web 服务器以支持 web 发布和部署使用 IIS Web 部署...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 239c7aa8-d09a-4d02-9c0e-6bd52be5f0d5
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
 msc.type: authoredcontent
-ms.openlocfilehash: cb3191a260eb10a47f1aaf818052fcae023ff74a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 348c618fe6ec726e8087b4f3acb66cddbef1d225
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392758"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819638"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-remote-agent"></a>配置用于 Web 部署发布 （远程代理） 的 Web 服务器
 ====================

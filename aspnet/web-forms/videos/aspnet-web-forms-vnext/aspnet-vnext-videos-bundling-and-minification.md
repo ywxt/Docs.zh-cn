@@ -4,19 +4,16 @@ title: ASP.NET vNext 视频： 捆绑和缩小 |Microsoft Docs
 author: madskristensen
 description: Mads Kristensen 演示 ASP.NET vNext 如何自动捆绑在一起并修改 JavaScript 和 CSS 资源以提高性能。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/29/2011
-ms.topic: article
 ms.assetid: 8d04a9db-fa17-4233-bc74-6c040fd1c17a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-bundling-and-minification
 msc.type: video
-ms.openlocfilehash: a5ab6cd1e38405ece6cdb05546f109f4e840af48
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 69333f448e9724c35f3066cfb1021cb28225a7ff
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37383547"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838314"
 ---
 <a name="aspnet-vnext-videos-bundling-and-minification"></a>ASP.NET vNext 视频： 捆绑和缩小
 ====================

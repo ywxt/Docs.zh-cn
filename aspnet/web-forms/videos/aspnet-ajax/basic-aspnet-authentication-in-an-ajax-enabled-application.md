@@ -4,19 +4,16 @@ title: 在 AJAX 中的基本 ASP.NET 身份验证启用的应用程序 |Microsof
 author: JoeStagner
 description: 在本视频中，我将演示基于 AJAX 启用 web 应用程序使用基本的 ASP.NET 窗体的身份验证的身份验证。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/10/2008
-ms.topic: article
 ms.assetid: 782eca6d-51d6-4c8e-b2ea-59dfa567740a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/basic-aspnet-authentication-in-an-ajax-enabled-application
 msc.type: video
-ms.openlocfilehash: 834533fc8fb816e34efe67927bd255ee161ae7aa
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 19e93fc79fd7cfa3d6442b8a2b749a99f3ce4af9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390463"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806427"
 ---
 <a name="basic-aspnet-authentication-in-an-ajax-enabled-application"></a>在 AJAX 中的基本 ASP.NET 身份验证启用的应用程序
 ====================

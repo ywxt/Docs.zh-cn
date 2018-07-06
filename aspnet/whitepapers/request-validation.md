@@ -4,19 +4,16 @@ title: 请求验证-阻止脚本攻击 |Microsoft Docs
 author: rick-anderson
 description: 本白皮书介绍了请求验证功能的位置，默认情况下，应用程序无法处理未编码的 HTML 内容 submitt ASP.NET...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/10/2010
-ms.topic: article
 ms.assetid: fa429113-5f8f-4ef4-97c5-5c04900a19fa
-ms.technology: ''
 msc.legacyurl: /whitepapers/request-validation
 msc.type: content
-ms.openlocfilehash: 783fb1ae27d88f9c6d6d3484d26d3e206e7f2fba
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0dfbfcae70792c57d530fc5e6fb73f8f96ec6e02
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372924"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809740"
 ---
 <a name="request-validation---preventing-script-attacks"></a>请求验证-阻止脚本攻击
 ====================

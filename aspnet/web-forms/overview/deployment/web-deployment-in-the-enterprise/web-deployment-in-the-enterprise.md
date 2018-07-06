@@ -4,19 +4,16 @@ title: Web 部署在企业中的 |Microsoft Docs
 author: jrjlee
 description: 本教程介绍如何满足大量的管理的企业级 web 应用程序开发到部署时，将会遇到的挑战...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: b8283698-7b82-42a8-8d83-3aeb18ca7fcc
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
 msc.type: authoredcontent
-ms.openlocfilehash: 07c1ea9728c0130b860c0e0a64eb0751245ff840
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2cb8cb12ec5af376b58b672813af8626cb0f95d8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371137"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806546"
 ---
 <a name="web-deployment-in-the-enterprise"></a>在企业中的 web 部署
 ====================
