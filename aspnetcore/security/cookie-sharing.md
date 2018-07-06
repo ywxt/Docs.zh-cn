@@ -23,7 +23,7 @@ ms.locfileid: "36278461"
 
 此示例阐释了在使用 cookie 身份验证的三个应用间共享的 cookie:
 
-* ASP.NET Core 2.0 Razor 页应用而无需使用[ASP.NET Core标识](xref:security/authentication/identity)
+* ASP.NET Core 2.0 Razor 页应用而无需使用[ASP.NET Core 标识](xref:security/authentication/identity)
 * 使用 ASP.NET Core 标识的 ASP.NET Core 2.0 MVC 应用程序
 * 使用 ASP.NET Identity 的 ASP.NET Framework 4.6.1 MVC 应用程序
 

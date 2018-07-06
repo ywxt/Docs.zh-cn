@@ -1,7 +1,7 @@
 ---
 title: 密钥不可变性和 ASP.NET Core 中的密钥设置
 author: rick-anderson
-description: 了解可变性 ASP.NET Core数据保护 Api 的实现详细信息。
+description: 了解可变性 ASP.NET Core 数据保护 Api 的实现详细信息。
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/implementation/key-immutability

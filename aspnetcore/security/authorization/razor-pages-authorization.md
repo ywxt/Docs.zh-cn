@@ -21,7 +21,7 @@ ms.locfileid: "36272670"
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/razor-pages-authorization/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
-此示例应用程序使用[Cookie 身份验证，而无需 ASP.NET Core标识](xref:security/authentication/cookie)。 假设用户，Maria Rodriguez 的用户帐户是硬编码到应用程序。 使用电子邮件用户名"maria.rodriguez@contoso.com"和任何密码以登录用户。 用户进行身份验证中`AuthenticateUser`中的方法*Pages/Account/Login.cshtml.cs*文件。 在实际示例中，对用户的身份验证将对数据库。 若要使用 ASP.NET Core标识，请按照中的指导[ASP.NET Core 上的标识简介](xref:security/authentication/identity)主题。 概念和本主题中所示的示例同样适用于使用 ASP.NET Core标识的应用。
+此示例应用程序使用[Cookie 身份验证，而无需 ASP.NET Core 标识](xref:security/authentication/cookie)。 假设用户，Maria Rodriguez 的用户帐户是硬编码到应用程序。 使用电子邮件用户名"maria.rodriguez@contoso.com"和任何密码以登录用户。 用户进行身份验证中`AuthenticateUser`中的方法*Pages/Account/Login.cshtml.cs*文件。 在实际示例中，对用户的身份验证将对数据库。 若要使用 ASP.NET Core 标识，请按照中的指导[ASP.NET Core 上的标识简介](xref:security/authentication/identity)主题。 概念和本主题中所示的示例同样适用于使用 ASP.NET Core 标识的应用。
 
 ## <a name="require-authorization-to-access-a-page"></a>需要授权可访问的页面
 

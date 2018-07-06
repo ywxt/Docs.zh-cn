@@ -1,5 +1,5 @@
 ---
-title: ASP.NET Core中基于角色的授权
+title: ASP.NET Core 中基于角色的授权
 author: rick-anderson
 description: 了解如何通过将角色传递给 Authorize 属性限制 ASP.NET Core 控制器和操作访问。
 ms.author: riande
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36276427"
 ---
-# <a name="role-based-authorization-in-aspnet-core"></a>ASP.NET Core中基于角色的授权
+# <a name="role-based-authorization-in-aspnet-core"></a>ASP.NET Core 中基于角色的授权
 
 <a name="security-authorization-role-based"></a>
 

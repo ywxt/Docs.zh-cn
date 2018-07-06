@@ -56,7 +56,7 @@ ms.locfileid: "37077759"
 
 没有对此缓存行为的当前开发人员控件时使用[响应缓存中间件](xref:performance/caching/middleware)因为缓存规范正式遵循该中间件。 [将来对该中间件增强](https://github.com/aspnet/ResponseCaching/issues/96)配置中间件，若要忽略的请求将允许`Cache-Control`时决定提供缓存的响应的标头。 当你使用该中间件，这将为您提供更好地控制负载在你的服务器上的机会。
 
-## <a name="other-caching-technology-in-aspnet-core"></a>在 ASP.NET Core中其他缓存技术
+## <a name="other-caching-technology-in-aspnet-core"></a>在 ASP.NET Core 中其他缓存技术
 
 ### <a name="in-memory-caching"></a>内存中缓存
 

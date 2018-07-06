@@ -1,7 +1,7 @@
 ---
 title: 子项派生和 ASP.NET Core 中的经过身份验证的加密
 author: rick-anderson
-description: 了解实现详细信息的 ASP.NET Core数据保护子项派生和身份验证加密。
+description: 了解实现详细信息的 ASP.NET Core 数据保护子项派生和身份验证加密。
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/implementation/subkeyderivation

@@ -1,5 +1,5 @@
 ---
-title: Azure Active Directory B2C ASP.NET Core中使用云身份验证
+title: Azure Active Directory B2C ASP.NET Core 中使用云身份验证
 author: camsoper
 description: 了解如何设置与 ASP.NET Core的 Azure Active Directory B2C 身份验证。
 ms.date: 01/25/2018
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36272417"
 ---
-# <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a>Azure Active Directory B2C ASP.NET Core中使用云身份验证
+# <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a>Azure Active Directory B2C ASP.NET Core 中使用云身份验证
 
 作者：[Cam Soper](https://twitter.com/camsoper)
 

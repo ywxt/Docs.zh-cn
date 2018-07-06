@@ -1,8 +1,8 @@
-# <a name="aspnet-core-authorization-sample"></a>ASP.NET Core授权示例
+# <a name="aspnet-core-authorization-sample"></a>ASP.NET Core 授权示例
 
 此示例演示了约定的 Razor 页授权的使用。 此示例演示中所述的功能[Razor 页授权约定](https://docs.microsoft.com/aspnet/core/security/authorization/razor-pages-authorization)主题。
 
-在此示例中的用户授权使用 cookie 身份验证功能中所述[使用 cookie 身份验证，而无需 ASP.NET Core标识](https://docs.microsoft.com/aspnet/core/security/authentication/cookie)主题。 有关使用 ASP.NET Core标识的信息，请参阅中的主题[身份验证](https://docs.microsoft.com/aspnet/core/security/authentication/index)文档的部分。
+在此示例中的用户授权使用 cookie 身份验证功能中所述[使用 cookie 身份验证，而无需 ASP.NET Core标识](https://docs.microsoft.com/aspnet/core/security/authentication/cookie)主题。 有关使用 ASP.NET Core 标识的信息，请参阅中的主题[身份验证](https://docs.microsoft.com/aspnet/core/security/authentication/index)文档的部分。
 
 运行示例时，使用电子邮件地址**maria.rodriguez@contoso.com**用户进行身份验证。
 

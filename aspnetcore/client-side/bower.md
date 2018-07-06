@@ -26,7 +26,7 @@ ms.locfileid: "36272512"
 
 设置客户端的 ASP.NET Core 项目模板创建的新项目生成过程。 [jQuery](http://jquery.com/)和[Bootstrap](http://getbootstrap.com/)安装，并支持 Bower。
 
-在列出客户端包*bower.json*文件。 ASP.NET Core项目模板配置*bower.json* jQuery、 jQuery 验证与 Bootstrap。
+在列出客户端包*bower.json*文件。 ASP.NET Core 项目模板配置*bower.json* jQuery、 jQuery 验证与 Bootstrap。
 
 在本教程中，我们将添加对支持[字体出色](http://fontawesome.io)。 可以使用安装 bower 包**管理 Bower 包**UI 或手动在*bower.json*文件。
 

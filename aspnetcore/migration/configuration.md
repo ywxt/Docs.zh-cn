@@ -22,9 +22,9 @@ ms.locfileid: "36275814"
 
 ## <a name="setup-configuration"></a>安装程序配置
 
-ASP.NET Core不再使用*Global.asax*和*web.config* ASP.NET 的早期版本使用的文件。 在 ASP.NET 的早期版本中，应用程序的启动逻辑放入`Application_StartUp`方法内的*Global.asax*。 更高版本，在 ASP.NET MVC *Startup.cs*项目; 的根目录中包含文件和应用程序启动时调用它。 ASP.NET Core已完全采用这种方法，通过将中的所有启动逻辑*Startup.cs*文件。
+ASP.NET Core 不再使用*Global.asax*和*web.config* ASP.NET 的早期版本使用的文件。 在 ASP.NET 的早期版本中，应用程序的启动逻辑放入`Application_StartUp`方法内的*Global.asax*。 更高版本，在 ASP.NET MVC *Startup.cs*项目; 的根目录中包含文件和应用程序启动时调用它。 ASP.NET Core 已完全采用这种方法，通过将中的所有启动逻辑*Startup.cs*文件。
 
-*Web.config*还在 ASP.NET Core 替换文件。 配置本身现在可以配置，作为应用程序启动过程中所述的一部分*Startup.cs*。 配置仍然可以利用 XML 文件，但通常 ASP.NET Core项目将置于配置值的 JSON 格式文件，如*appsettings.json*。 ASP.NET Core配置系统可以方便地访问环境变量，可以提供[更安全、 极其可靠的位置](xref:security/app-secrets)特定于环境的值。 这是针对如连接字符串和不应签入源代码管理的 API 密钥的机密尤其如此。 请参阅[配置](xref:fundamentals/configuration/index)若要了解有关 ASP.NET Core中配置的详细信息。
+*Web.config*还在 ASP.NET Core 替换文件。 配置本身现在可以配置，作为应用程序启动过程中所述的一部分*Startup.cs*。 配置仍然可以利用 XML 文件，但通常 ASP.NET Core 项目将置于配置值的 JSON 格式文件，如*appsettings.json*。 ASP.NET Core 配置系统可以方便地访问环境变量，可以提供[更安全、 极其可靠的位置](xref:security/app-secrets)特定于环境的值。 这是针对如连接字符串和不应签入源代码管理的 API 密钥的机密尤其如此。 请参阅[配置](xref:fundamentals/configuration/index)若要了解有关 ASP.NET Core 中配置的详细信息。
 
 有关本文中，我们开始使用从部分已迁移的 ASP.NET Core 项目[上一篇文章](xref:migration/mvc)。 要设置配置中添加以下构造函数和属性*Startup.cs*文件位于项目根目录中：
 
@@ -50,4 +50,4 @@ using Microsoft.Extensions.Configuration;
 
 ## <a name="summary"></a>总结
 
-ASP.NET Core将置于单个文件，在其中的必要的服务和依赖项可以定义和配置应用程序的所有启动逻辑。 它将替换*web.config*与一种灵活的配置功能，可以利用多种文件格式，例如 JSON，以及环境变量的文件。
+ASP.NET Core 将置于单个文件，在其中的必要的服务和依赖项可以定义和配置应用程序的所有启动逻辑。 它将替换*web.config*与一种灵活的配置功能，可以利用多种文件格式，例如 JSON，以及环境变量的文件。

@@ -1,5 +1,5 @@
 ---
-title: 添加、 下载和删除标识到 ASP.NET Core项目中的自定义用户数据
+title: 添加、 下载和删除标识到 ASP.NET Core 项目中的自定义用户数据
 author: rick-anderson
 description: 了解如何在 ASP.NET Core 项目中添加到标识的自定义用户数据。 删除每个 GDPR 数据。
 monikerRange: '>= aspnetcore-2.1'
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36271952"
 ---
-# <a name="add-download-and-delete-custom-user-data-to-identity-in-an-aspnet-core-project"></a>添加、 下载和删除标识到 ASP.NET Core项目中的自定义用户数据
+# <a name="add-download-and-delete-custom-user-data-to-identity-in-an-aspnet-core-project"></a>添加、 下载和删除标识到 ASP.NET Core 项目中的自定义用户数据
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 

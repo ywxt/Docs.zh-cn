@@ -30,7 +30,7 @@ Bootstrap 目前最常用的 web 框架开发响应式 web 应用程序。 无�
 
 [!code-json[](../common/samples/WebApplication1/bower.json?highlight=5)]
 
-这是 Bootstrap 添加到 ASP.NET Core项目的建议的方法。
+这是 Bootstrap 添加到 ASP.NET Core 项目的建议的方法。
 
 你还可以安装使用多个包管理器，例如 Bower、 npm 或 NuGet 之一的 bootstrap。 在每个情况下，该过程是实质上是相同的：
 

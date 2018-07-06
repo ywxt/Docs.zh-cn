@@ -119,7 +119,7 @@ WebSocket 传输的其他选项，可以使用配置`WebSockets`属性：
 
 ### <a name="configure-logging"></a>配置日志记录
 
-在使用.NET 客户端中配置日志记录`ConfigureLogging`方法。 可以按相同的方式注册日志记录提供程序和筛选器，因为它们是在服务器上。 请参阅[登录 ASP.NET Core](xref:fundamentals/logging/index#how-to-add-providers)文档以了解更多信息。
+在使用.NET 客户端中配置日志记录`ConfigureLogging`方法。 可以按相同的方式注册日志记录提供程序和筛选器，因为它们是在服务器上。 请参阅[登录 ASP.NET Core](xref:fundamentals/logging/index#how-to-add-providers) 文档以了解更多信息。
 
 > [!NOTE]
 > 若要注册日志记录提供程序，你必须安装所需的包。 请参阅[内置日志记录提供程序](xref:fundamentals/logging/index#built-in-logging-providers)一部分的文档的完整列表。

@@ -16,7 +16,7 @@ ms.locfileid: "36276875"
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-ASP.NET Core数据保护系统通常是[添加到服务容器](xref:security/data-protection/consumer-apis/overview)并且供通过依赖关系注入 (DI) 的从属组件。 但是，一些情况下，这不可行或所需，尤其是在将系统导入到现有应用程序。
+ASP.NET Core 数据保护系统通常是[添加到服务容器](xref:security/data-protection/consumer-apis/overview)并且供通过依赖关系注入 (DI) 的从属组件。 但是，一些情况下，这不可行或所需，尤其是在将系统导入到现有应用程序。
 
 若要支持这些方案中， [Microsoft.AspNetCore.DataProtection.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Extensions/)包提供具体类型， [DataProtectionProvider](/dotnet/api/Microsoft.AspNetCore.DataProtection.DataProtectionProvider)，它提供一种简单的方法为使用数据保护而不依赖于 DI。 `DataProtectionProvider`类型实现[IDataProtectionProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionprovider)。 构造`DataProtectionProvider`只需提供[DirectoryInfo](/dotnet/api/system.io.directoryinfo)实例，以指示应存储提供程序的加密密钥的位置，如下面的代码示例中所示：
 

@@ -23,7 +23,7 @@ ms.locfileid: "36274770"
 
 ## <a name="create-the-starter-aspnet-mvc-project"></a>创建初学者 ASP.NET MVC 项目
 
-为了演示升级，我们将开始通过创建 ASP.NET MVC 应用程序。 创建同名*WebApp1*使命名空间匹配我们在下一步中创建 ASP.NET Core项目。
+为了演示升级，我们将开始通过创建 ASP.NET MVC 应用程序。 创建同名*WebApp1*使命名空间匹配我们在下一步中创建 ASP.NET Core 项目。
 
 ![Visual Studio 的新项目对话框](mvc/_static/new-project.png)
 
@@ -37,7 +37,7 @@ ms.locfileid: "36274770"
 
 ![“新建项目”对话框](mvc/_static/new_core.png)
 
-![新建 ASP.NET Web 应用程序对话框： 在 ASP.NET Core模板面板中选择的空项目模板](mvc/_static/new-project-select-empty-aspnet5-template.png)
+![新建 ASP.NET Web 应用程序对话框： 在 ASP.NET Core 模板面板中选择的空项目模板](mvc/_static/new-project-select-empty-aspnet5-template.png)
 
 * *可选：* 创建新的 ASP.NET Core 应用使用*Web 应用程序*项目模板。 将项目*WebApp1*，然后选择的一个身份验证选项**单个用户帐户**。 重命名此应用程序到*FullAspNetCore*。 在转换过程中创建此项目为您节省时间。 你可以查看若要查看的最终结果或将代码复制到转换项目模板生成的代码。 它也是很有帮助时遇到困难在转换步骤中，要与模板生成项目进行比较。
 
@@ -45,7 +45,7 @@ ms.locfileid: "36274770"
 
 * 如果目标.NET Core，将 ASP.NET Core metapackage 添加到项目中，调用`Microsoft.AspNetCore.All`默认情况下。 此程序包包含如`Microsoft.AspNetCore.Mvc`和`Microsoft.AspNetCore.StaticFiles`。 如果面向.NET Framework，包将引用需要 *.csproj 文件中单独列出。
 
-`Microsoft.AspNetCore.Mvc` 是 ASP.NET Core MVC 框架。 `Microsoft.AspNetCore.StaticFiles` 是静态文件处理程序。 ASP.NET Core运行时是一个模块化，和中，你必须显式选择要为静态文件服务 (请参阅[静态文件](xref:fundamentals/static-files))。
+`Microsoft.AspNetCore.Mvc` 是 ASP.NET Core MVC 框架。 `Microsoft.AspNetCore.StaticFiles` 是静态文件处理程序。 ASP.NET Core 运行时是一个模块化，和中，你必须显式选择要为静态文件服务 (请参阅[静态文件](xref:fundamentals/static-files))。
 
 * 打开*Startup.cs*文件并将更改代码以匹配以下内容：
 
@@ -107,7 +107,7 @@ ms.locfileid: "36274770"
 
 * 将每个方法复制利用 ASP.NET MVC`HomeController`对新`HomeController`。 请注意，在 ASP.NET MVC 内置模板的控制器操作方法的返回类型[ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult(v=vs.118).aspx); 在 ASP.NET Core MVC，操作方法返回`IActionResult`相反。 `ActionResult` 实现`IActionResult`，因此无需更改你的操作方法的返回类型。
 
-* 复制*About.cshtml*， *Contact.cshtml*，和*Index.cshtml* Razor 视图文件从 ASP.NET MVC 项目添加到 ASP.NET Core项目。
+* 复制*About.cshtml*， *Contact.cshtml*，和*Index.cshtml* Razor 视图文件从 ASP.NET MVC 项目添加到 ASP.NET Core 项目。
 
 * 运行 ASP.NET Core 应用和测试每个方法。 我们尚未尚未进行迁移的布局文件或样式，因此呈现的视图仅包含视图文件中的内容。 不会有的布局生成文件链接`About`和`Contact`视图，因此你将需要从浏览器中调用它们 (替换**4492**与你的项目中使用的端口号)。
 
@@ -133,9 +133,9 @@ ms.locfileid: "36274770"
 
 * 创建*视图/共享*文件夹。
 
-* *可选：* 复制 *_ViewImports.cshtml*从*FullAspNetCore* MVC 项目*视图*文件夹导入到 ASP.NET Core项目*视图*文件夹。 删除中的任何命名空间声明 *_ViewImports.cshtml*文件。 *_ViewImports.cshtml*文件对于视图的所有文件提供命名空间，并使[标记帮助程序](xref:mvc/views/tag-helpers/intro)。 新的布局文件中使用标记帮助程序。 *_ViewImports.cshtml*文件是用于 ASP.NET Core新功能。
+* *可选：* 复制 *_ViewImports.cshtml*从*FullAspNetCore* MVC 项目*视图*文件夹导入到 ASP.NET Core 项目*视图*文件夹。 删除中的任何命名空间声明 *_ViewImports.cshtml*文件。 *_ViewImports.cshtml*文件对于视图的所有文件提供命名空间，并使[标记帮助程序](xref:mvc/views/tag-helpers/intro)。 新的布局文件中使用标记帮助程序。 *_ViewImports.cshtml*文件是用于 ASP.NET Core 新功能。
 
-* 复制 *_Layout.cshtml*文件从旧的 ASP.NET MVC 项目*视图/共享*文件夹导入到 ASP.NET Core项目*视图/共享*文件夹。
+* 复制 *_Layout.cshtml*文件从旧的 ASP.NET MVC 项目*视图/共享*文件夹导入到 ASP.NET Core 项目*视图/共享*文件夹。
 
 打开 *_Layout.cshtml*文件并进行以下更改 （已完成的代码下面显示）：
 
@@ -184,7 +184,7 @@ JQuery 和 Bootstrap JavaScript 包含的替换标记：
 
 [!code-csharp[](mvc/sample/Startup.cs?highlight=19-22)]
 
-ASP.NET Core将在 web 应用程序中未经处理的异常转换为 HTTP 500 错误响应。 通常情况下，错误详细信息不包括在这些响应来防止有关服务器的潜在敏感信息被披露。 请参阅**使用开发人员异常页**中[处理错误](../fundamentals/error-handling.md)有关详细信息。
+ASP.NET Core 将在 web 应用程序中未经处理的异常转换为 HTTP 500 错误响应。 通常情况下，错误详细信息不包括在这些响应来防止有关服务器的潜在敏感信息被披露。 请参阅**使用开发人员异常页**中[处理错误](../fundamentals/error-handling.md)有关详细信息。
 
 ## <a name="additional-resources"></a>其他资源
 

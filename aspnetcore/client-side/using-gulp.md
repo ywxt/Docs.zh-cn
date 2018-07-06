@@ -1,7 +1,7 @@
 ---
-title: 在 ASP.NET Core中使用 Gulp
+title: 在 ASP.NET Core 中使用 Gulp
 author: rick-anderson
-description: 了解如何在 ASP.NET Core中使用 Gulp。
+description: 了解如何在 ASP.NET Core 中使用 Gulp。
 ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 02/28/2017
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36278247"
 ---
-# <a name="use-gulp-in-aspnet-core"></a>在 ASP.NET Core中使用 Gulp
+# <a name="use-gulp-in-aspnet-core"></a>在 ASP.NET Core 中使用 Gulp
 
 通过[艾力克 Reitan](https://github.com/Erikre)， [Scott Addie](https://scottaddie.com)， [Daniel Roth](https://github.com/danroth27)，和[Shayne 贝叶](https://twitter.com/spboyer)
 
@@ -323,7 +323,7 @@ Intellisense 的详细信息，请参阅[JavaScript IntelliSense](/visualstudio/
 
     请注意，样式表链接指向 CSS 文件的 unminified 版本。
 
-有关 ASP.NET Core中的环境的详细信息，请参阅[使用多个环境](../fundamentals/environments.md)。
+有关 ASP.NET Core 中的环境的详细信息，请参阅[使用多个环境](../fundamentals/environments.md)。
 
 ## <a name="task-and-module-details"></a>任务和模块的详细信息
 
@@ -346,4 +346,4 @@ Gulp 社区提供 Gulp[配方](https://github.com/gulpjs/gulp/blob/master/docs/r
 
 * [Gulp 文档](https://github.com/gulpjs/gulp/blob/master/docs/README.md)
 * [绑定和缩减中 ASP.NET Core](bundling-and-minification.md)
-* [在 ASP.NET Core中使用 Grunt](using-grunt.md)
+* [在 ASP.NET Core 中使用 Grunt](using-grunt.md)

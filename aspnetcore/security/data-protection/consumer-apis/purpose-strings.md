@@ -1,7 +1,7 @@
 ---
-title: 在 ASP.NET Core目的字符串
+title: 在 ASP.NET Core 目的字符串
 author: rick-anderson
-description: 了解如何在 ASP.NET Core数据保护 Api 中使用目的字符串。
+description: 了解如何在 ASP.NET Core 数据保护 Api 中使用目的字符串。
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/consumer-apis/purpose-strings
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36278760"
 ---
-# <a name="purpose-strings-in-aspnet-core"></a>在 ASP.NET Core目的字符串
+# <a name="purpose-strings-in-aspnet-core"></a>在 ASP.NET Core 目的字符串
 
 <a name="data-protection-consumer-apis-purposes"></a>
 

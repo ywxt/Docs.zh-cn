@@ -1,5 +1,5 @@
 ---
-title: 在 ASP.NET Core中的捆绑和 minifiy 静态资产
+title: 在 ASP.NET Core 中的捆绑和 minifiy 静态资产
 author: scottaddie
 description: 了解如何通过应用绑定和缩减技术优化 ASP.NET Core web 应用程序中的静态资源。
 ms.author: scaddie
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36279566"
 ---
-# <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>在 ASP.NET Core中的捆绑和 minifiy 静态资产
+# <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>在 ASP.NET Core 中的捆绑和 minifiy 静态资产
 
 作者：[Scott Addie](https://twitter.com/Scott_Addie)
 

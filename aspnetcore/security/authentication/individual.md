@@ -1,5 +1,5 @@
 ---
-title: 基于 ASP.NET Core项目使用单个用户帐户创建项目
+title: 基于 ASP.NET Core 项目使用单个用户帐户创建项目
 author: rick-anderson
 description: 发现基于 ASP.NET Core 项目使用单个用户帐户创建的文章。
 ms.author: riande
@@ -12,9 +12,9 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36274422"
 ---
-# <a name="articles-based-on-aspnet-core-projects-created-with-individual-user-accounts"></a>基于 ASP.NET Core项目使用单个用户帐户创建项目
+# <a name="articles-based-on-aspnet-core-projects-created-with-individual-user-accounts"></a>基于 ASP.NET Core 项目使用单个用户帐户创建项目
 
-ASP.NET Core标识包含在 Visual Studio 中使用"单个用户帐户"选项的项目模板中。
+ASP.NET Core 标识包含在 Visual Studio 中使用"单个用户帐户"选项的项目模板中。
 
 中使用的.NET Core CLI 中可用的身份验证模板`-au Individual`:
 

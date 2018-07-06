@@ -1,5 +1,5 @@
 ---
-title: 在 ASP.NET Core的 azure 密钥保管库配置提供程序
+title: 在 ASP.NET Core 的 azure 密钥保管库配置提供程序
 author: guardrex
 description: 了解如何使用 Azure 密钥保管库配置提供程序配置应用程序使用在运行时加载的名称-值对。
 ms.author: riande
@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36273432"
 ---
-# <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>在 ASP.NET Core的 azure 密钥保管库配置提供程序
+# <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>在 ASP.NET Core 的 azure 密钥保管库配置提供程序
 
 通过[Luke Latham](https://github.com/guardrex)和[Andrew Stanton 护士](https://github.com/anurse)
 

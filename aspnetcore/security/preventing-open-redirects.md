@@ -1,5 +1,5 @@
 ---
-title: 防止在 ASP.NET Core中的打开重定向攻击
+title: 防止在 ASP.NET Core 中的打开重定向攻击
 author: ardalis
 description: 演示如何阻止对 ASP.NET Core 应用打开重定向攻击
 ms.author: riande
@@ -12,11 +12,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36278293"
 ---
-# <a name="prevent-open-redirect-attacks-in-aspnet-core"></a>防止在 ASP.NET Core中的打开重定向攻击
+# <a name="prevent-open-redirect-attacks-in-aspnet-core"></a>防止在 ASP.NET Core 中的打开重定向攻击
 
 Web 应用程序将重定向到通过如查询字符串或窗体数据请求指定的 URL 可能可能被篡改将用户重定向到外部、 恶意 URL。 此篡改称为打开重定向攻击。
 
-每当应用程序逻辑将重定向到指定的 URL，你必须验证重定向 URL 尚未被篡改。 ASP.NET Core具有内置功能来防止应用打开重定向 （也称为打开重定向） 攻击。
+每当应用程序逻辑将重定向到指定的 URL，你必须验证重定向 URL 尚未被篡改。 ASP.NET Core 具有内置功能来防止应用打开重定向 （也称为打开重定向） 攻击。
 
 ## <a name="what-is-an-open-redirect-attack"></a>打开重定向攻击是什么？
 

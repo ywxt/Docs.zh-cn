@@ -1,5 +1,5 @@
 ---
-title: 中的 web Api 与 Azure Active Directory B2C 中 ASP.NET Core云身份验证
+title: 中的 web Api 与 Azure Active Directory B2C 中 ASP.NET Core 云身份验证
 author: camsoper
 description: 了解如何设置与 ASP.NET Core Web API 的 Azure Active Directory B2C 身份验证。 测试已通过身份验证的 web API 与 Postman。
 ms.author: casoper
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/22/2018
 ms.locfileid: "36314157"
 ---
-# <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>中的 web Api 与 Azure Active Directory B2C 中 ASP.NET Core云身份验证
+# <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>中的 web Api 与 Azure Active Directory B2C 中 ASP.NET Core 云身份验证
 
 作者：[Cam Soper](https://twitter.com/camsoper)
 
@@ -145,7 +145,7 @@ Visual Studio 使用名为的控制器中创建 web API *ValuesController.cs*返
 
     ![创建新的集合](./azure-ad-b2c-webapi/postman-create-collection.png)
 
-4. 选择**将保存到 ASP.NET Core教程**按钮。
+4. 选择**将保存到 ASP.NET Core 教程**按钮。
 
 ### <a name="test-the-web-api-without-authentication"></a>测试无需身份验证 web API
 

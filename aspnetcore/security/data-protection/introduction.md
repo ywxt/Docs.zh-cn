@@ -1,7 +1,7 @@
 ---
-title: ASP.NET Core数据保护
+title: ASP.NET Core 数据保护
 author: rick-anderson
-description: 了解有关数据保护的概念和 ASP.NET Core数据保护 Api 的设计原则。
+description: 了解有关数据保护的概念和 ASP.NET Core 数据保护 Api 的设计原则。
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/introduction
@@ -12,11 +12,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36273905"
 ---
-# <a name="aspnet-core-data-protection"></a>ASP.NET Core数据保护
+# <a name="aspnet-core-data-protection"></a>ASP.NET Core 数据保护
 
-Web 应用程序通常需要存储安全敏感数据。 Windows 提供 DPAPI 用于桌面应用程序，但这不适用于 web 应用程序。 ASP.NET Core数据保护堆栈提供一个简单、 易于使用的加密 API，开发人员可以使用来保护数据，包括密钥管理和旋转。
+Web 应用程序通常需要存储安全敏感数据。 Windows 提供 DPAPI 用于桌面应用程序，但这不适用于 web 应用程序。 ASP.NET Core 数据保护堆栈提供一个简单、 易于使用的加密 API，开发人员可以使用来保护数据，包括密钥管理和旋转。
 
-ASP.NET Core数据保护堆栈旨在用作的长期替代&lt;machineKey&gt;在 ASP.NET 中的元素 1.x-4.x。 它旨在解决许多旧加密堆栈的不足之处同时为大多数现代应用程序都可能会遇到的使用情况下提供的现成可用的解决方案。
+ASP.NET Core 数据保护堆栈旨在用作的长期替代&lt;machineKey&gt;在 ASP.NET 中的元素 1.x-4.x。 它旨在解决许多旧加密堆栈的不足之处同时为大多数现代应用程序都可能会遇到的使用情况下提供的现成可用的解决方案。
 
 ## <a name="problem-statement"></a>问题陈述
 
@@ -44,7 +44,7 @@ ASP.NET Core数据保护堆栈旨在用作的长期替代&lt;machineKey&gt;在 A
 
 牢记这些原则与我们开发一个简单、[易于使用](xref:security/data-protection/using-data-protection)数据保护堆栈。
 
-ASP.NET Core数据保护 Api 主要不用于机密负载的无限期持久性。 其他技术喜欢[Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx)和[Azure Rights Management](https://docs.microsoft.com/rights-management/)更适合于以下场景： 无限期存储，并且它们的相应强密钥管理功能。 也就是说，无需进行任何开发人员禁止使用 ASP.NET Core 数据保护 Api 进行长期保护的机密数据。
+ASP.NET Core 数据保护 Api 主要不用于机密负载的无限期持久性。 其他技术喜欢[Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx)和[Azure Rights Management](https://docs.microsoft.com/rights-management/)更适合于以下场景： 无限期存储，并且它们的相应强密钥管理功能。 也就是说，无需进行任何开发人员禁止使用 ASP.NET Core 数据保护 Api 进行长期保护的机密数据。
 
 ## <a name="audience"></a>读者
 

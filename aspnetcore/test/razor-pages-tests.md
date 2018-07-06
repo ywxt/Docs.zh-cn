@@ -17,7 +17,7 @@ ms.locfileid: "36274402"
 
 作者：[Luke Latham](https://github.com/guardrex)
 
-ASP.NET Core支持 Razor 页应用的单元测试。 测试的数据访问层 (DAL) 和页模型帮助确保：
+ASP.NET Core 支持 Razor 页应用的单元测试。 测试的数据访问层 (DAL) 和页模型帮助确保：
 
 * 部分 Razor 页面应用程序在应用程序构造期间工作独立以及组合在一起作为一个单元。
 * 类和方法具有有限的作用域的责任。

@@ -25,7 +25,7 @@ ms.locfileid: "36278630"
 * .NET Core SDK
 * 适用于 Windows 的 visual Studio
   * **ASP.NET 和 web 开发**工作负荷
-  * **.NET Core跨平台开发**工作负荷
+  * **.NET Core 跨平台开发**工作负荷
 
 ## <a name="target-frameworks"></a>目标框架
 ASP.NET Core 2.0 项目为开发人员提供了面向 .NET Core、.NET Framework 或同时面向这两者的灵活性。 若要确定最合适的目标框架，请参阅[为服务器应用选择 .NET Core 或 .NET Framework](https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server)。

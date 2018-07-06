@@ -1,7 +1,7 @@
 ---
-title: 在 ASP.NET Core中支持的数据保护计算机范围的策略
+title: 在 ASP.NET Core 中支持的数据保护计算机范围的策略
 author: rick-anderson
-description: 了解有关设置默认计算机范围策略对于使用 ASP.NET Core数据保护的所有应用程序的支持。
+description: 了解有关设置默认计算机范围策略对于使用 ASP.NET Core 数据保护的所有应用程序的支持。
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/configuration/machine-wide-policy
@@ -12,11 +12,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36275183"
 ---
-# <a name="data-protection-machine-wide-policy-support-in-aspnet-core"></a>在 ASP.NET Core中支持的数据保护计算机范围的策略
+# <a name="data-protection-machine-wide-policy-support-in-aspnet-core"></a>在 ASP.NET Core 中支持的数据保护计算机范围的策略
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Windows 上运行时，数据保护系统具有有限的支持设置默认计算机范围的所有应用程序使用 ASP.NET Core数据保护策略。 常规的思路是管理员可能想要更改默认设置，如算法或密钥的生存期，而无需手动更新每个应用程序，在计算机上。
+Windows 上运行时，数据保护系统具有有限的支持设置默认计算机范围的所有应用程序使用 ASP.NET Core 数据保护策略。 常规的思路是管理员可能想要更改默认设置，如算法或密钥的生存期，而无需手动更新每个应用程序，在计算机上。
 
 > [!WARNING]
 > 系统管理员可以设置默认策略，但它们无法强制执行它。 应用程序开发人员始终可以重写其中一个自己的选择的任何值。 默认策略仅影响应用程序开发人员未指定显式设置值的位置。
