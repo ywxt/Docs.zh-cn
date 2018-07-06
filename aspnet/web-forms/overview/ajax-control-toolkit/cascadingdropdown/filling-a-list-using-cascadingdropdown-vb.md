@@ -4,19 +4,16 @@ title: 使用 CascadingDropDown (VB) 填充列表 |Microsoft Docs
 author: wenz
 description: AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，使得一个 DropDownList 负载中的更改关联中 anoth 值...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 5236695e-5c70-4887-baee-0bfb0afb3448
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: edd6c330d21a7875b8f90fcf9bbde75978b6d08d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4a2e2440c0b93fc3945c466a2c60c6560c9e57a4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389594"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834172"
 ---
 <a name="filling-a-list-using-cascadingdropdown-vb"></a>使用 CascadingDropDown (VB) 填充列表
 ====================

@@ -4,19 +4,16 @@ title: 与从内容页 (VB) 的母版页交互 |Microsoft Docs
 author: rick-anderson
 description: 探讨如何调用方法，从内容页中的代码中设置属性的母版页等。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/11/2008
-ms.topic: article
 ms.assetid: 081fe010-ba0f-4e7d-b4ba-774840b601c2
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d605fea4b6417eec4ac8c89a71986213dbc18c38
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 451b76b2f6a706c7ca6908434b39492e5cba91b9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389210"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37826489"
 ---
 <a name="interacting-with-the-master-page-from-the-content-page-vb"></a>与母版页从内容页 (VB) 进行交互
 ====================

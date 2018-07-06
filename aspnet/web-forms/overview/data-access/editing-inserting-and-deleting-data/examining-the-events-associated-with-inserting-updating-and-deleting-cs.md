@@ -4,19 +4,16 @@ title: 检查有关的事件与插入、 更新和删除 (C#) |Microsoft Docs
 author: rick-anderson
 description: 在本教程中我们将探讨使用发生之前、 期间和之后插入的事件，更新或删除操作的 ASP.NET 数据 Web 控件。 W...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/17/2006
-ms.topic: article
 ms.assetid: dab291a0-a8b5-46fa-9dd8-3d35b249201f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cec25809038cbe6a114b0e36ef7265d84bbe9b92
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 003d71bd05fcc3462b73c9c8c4bc5d63764b82ba
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363295"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836167"
 ---
 <a name="examining-the-events-associated-with-inserting-updating-and-deleting-c"></a>检查与插入、 更新和删除 (C#) 关联的事件
 ====================

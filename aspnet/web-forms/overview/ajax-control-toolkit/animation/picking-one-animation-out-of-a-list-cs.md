@@ -4,19 +4,16 @@ title: 选取列表 (C#) 的动画 |Microsoft Docs
 author: wenz
 description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 该框架还允许...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 06a776fe-7c73-4ca7-8e02-5260a86edc03
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/picking-one-animation-out-of-a-list-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4b0193f47697e072605ed8c01a37fbfa128eb0e0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7ef2c5d37c32150d17b798e22290f33b5619a14c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37380741"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834667"
 ---
 <a name="picking-one-animation-out-of-a-list-c"></a>选取列表 (C#) 的动画
 ====================

@@ -4,19 +4,16 @@ title: ASP.NET vNext 视频： 强类型数据控件 |Microsoft Docs
 author: DamianEdwards
 description: 在本视频中，Damian Edwards 演示了 Visual Studio vNext 中的强类型的数据控件，它们提供 IntelliSense 和编译时检查。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/22/2011
-ms.topic: article
 ms.assetid: 4eda33a1-54f8-4cb6-8cc4-4be78f5fdc00
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-strongly-typed-data-controls
 msc.type: video
-ms.openlocfilehash: 3cede9b88684f2f26841eb377e2222643ed89ef4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: bcd03f87b85782cd2b8de70370557ed628608925
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37364625"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803929"
 ---
 <a name="aspnet-vnext-videos-strongly-typed-data-controls"></a>ASP.NET vNext 视频： 强类型数据控件
 ====================

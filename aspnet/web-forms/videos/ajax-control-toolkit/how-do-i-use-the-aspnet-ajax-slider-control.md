@@ -4,19 +4,16 @@ title: '[如何实现:]使用 ASP.NET AJAX 滑块控件？ | Microsoft Docs'
 author: JoeStagner
 description: ASP.NET AJAX 控件工具包中的滑块控件提供了既简单又优雅的方式，供用户选择的数字值。 此视频介绍如何 ad...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/13/2007
-ms.topic: article
 ms.assetid: 958e1bc8-65a8-4fe0-ad2d-f98691d5fdf1
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slider-control
 msc.type: video
-ms.openlocfilehash: f97142a44d3a925d08311a7d301d9bb8aa81a47d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 278a90c60ac39b0162cfa4b09b985a163c55c1d5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401711"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832236"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-slider-control"></a>[如何实现:]使用 ASP.NET AJAX 滑块控件？
 ====================

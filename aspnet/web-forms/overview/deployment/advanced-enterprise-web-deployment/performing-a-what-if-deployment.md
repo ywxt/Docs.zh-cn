@@ -4,19 +4,16 @@ title: 如果执行什么部署 |Microsoft Docs
 author: jrjlee
 description: 本主题介绍如何执行假设 （或模拟） 使用 Internet 信息服务 (IIS) Web 部署工具 （Web 部署） 和 V 部署...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: c711b453-01ac-4e65-a48c-93d99bf22e58
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: f50053c3b231a1d174df51ce7aa4c6013192bca8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f54a4d91ea0f735d3cd5b99c0dda5d83cbb5e5d4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378094"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830644"
 ---
 <a name="performing-a-what-if-deployment"></a>执行"假设"部署
 ====================

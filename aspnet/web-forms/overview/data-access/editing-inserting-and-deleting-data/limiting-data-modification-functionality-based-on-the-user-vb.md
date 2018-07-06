@@ -4,19 +4,16 @@ title: 限制数据修改功能基于用户 (VB) |Microsoft Docs
 author: rick-anderson
 description: 允许用户编辑数据的 web 应用程序，在不同的用户帐户可能具有不同数据编辑权限。 在本教程中我们将介绍如何 t...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/17/2006
-ms.topic: article
 ms.assetid: 9dc264a6-feb8-474b-8b91-008c50708065
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8530dfd37570ed5fcc45ef4d6c30750c5d4d2152
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 23e23c288ccceab7f7e1c07aa9a902bef4045de0
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377109"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836799"
 ---
 <a name="limiting-data-modification-functionality-based-on-the-user-vb"></a>限制基于用户 (VB) 的数据修改功能
 ====================

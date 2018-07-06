@@ -4,19 +4,16 @@ title: 应用 IE 安全更新后的服务器应用程序不可用错误修复 |M
 author: rick-anderson
 description: 本白皮书介绍了影响 Wi 上运行的 ASP.NET 1.0 应用程序的 Internet explorer 与 MS03 32 安全更新解决了问题的修补程序...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/10/2010
-ms.topic: article
 ms.assetid: 1365eebb-bdf7-4a05-8d18-7f200531be55
-ms.technology: ''
 msc.legacyurl: /whitepapers/ms03-32-issue
 msc.type: content
-ms.openlocfilehash: 186ed7ea7ad9b317506fb3951a974682b44b27a1
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1a289379229335a9841dec48e577c19173419891
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402465"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836718"
 ---
 <a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a>应用 IE 安全更新后的服务器应用程序不可用错误修复
 ====================

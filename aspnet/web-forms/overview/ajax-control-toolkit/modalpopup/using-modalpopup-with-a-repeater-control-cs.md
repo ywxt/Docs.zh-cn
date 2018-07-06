@@ -4,19 +4,16 @@ title: 通过 Repeater 控件 (C#) 使用 ModalPopup |Microsoft Docs
 author: wenz
 description: 在 AJAX 控件工具包的 ModalPopup 控件提供了简单的方法来创建模式弹出框使用客户端的方式。 还有可能要使用此 contr....
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: d686d84a-1c58-492e-8a77-3eb5a0cfe918
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/using-modalpopup-with-a-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7e6136bac48b7c1b0931cada66501d303be8e927
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 72d0f16d22911d867f9a91faf273e236453e7b3a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371072"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833619"
 ---
 <a name="using-modalpopup-with-a-repeater-control-c"></a>通过 Repeater 控件 (C#) 使用 ModalPopup
 ====================

@@ -4,19 +4,16 @@ title: 更新和删除现有的二进制数据 (C#) |Microsoft Docs
 author: rick-anderson
 description: 在之前的教程中我们已了解如何在 GridView 控件可以轻松地编辑和删除文本数据。 在本教程中我们看到如何在 GridView 控件还使...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/27/2007
-ms.topic: article
 ms.assetid: 35798f21-1606-434b-83f8-30166906ef49
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2eb9b4cb9403f5d793605fe023e4e0757bcda6f4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: d38f549004265810e80d09eeacd30bc6d640ae6c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372007"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804236"
 ---
 <a name="updating-and-deleting-existing-binary-data-c"></a>更新和删除现有的二进制数据 (C#)
 ====================

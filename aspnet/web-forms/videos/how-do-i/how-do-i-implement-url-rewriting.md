@@ -4,19 +4,16 @@ title: '[如何实现:]实现 URL 重写？ | Microsoft Docs'
 author: scottgolightly
 description: 在本视频中，Scott Golightly 将演示如何创建 HttpModule ASP.NET 来写 URL web 页的请求传入时。 你可能想要重写...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/01/2007
-ms.topic: article
 ms.assetid: aa0c328c-edff-4908-b052-31b6b06f8555
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-url-rewriting
 msc.type: video
-ms.openlocfilehash: e84e44b612f44c389c03d336af0e32584cdc861e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 91a5e9c5aa78688b7845e5081c6d0dec23e5c561
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37364496"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836874"
 ---
 <a name="how-do-i-implement-url-rewriting"></a>[如何实现:]实现 URL 重写？
 ====================

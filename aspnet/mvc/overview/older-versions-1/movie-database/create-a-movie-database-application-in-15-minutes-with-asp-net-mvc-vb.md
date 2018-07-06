@@ -4,19 +4,16 @@ title: 使用 ASP.NET MVC (VB) 创建电影数据库应用程序在 15 分钟 |M
 author: StephenWalther
 description: Stephen Walther 生成整个数据库驱动 ASP.NET MVC 应用程序从头到尾完成。 本教程是很棒的介绍的人员将新 t...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/27/2009
-ms.topic: article
 ms.assetid: e4ba9786-734c-4eb3-91bb-089793325d0d
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a64d140eba4ebf489486af1a0be6269a8b904c13
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: d852dd2797f6df40cd233759648ec442259d4d26
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372590"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831195"
 ---
 <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-vb"></a>创建电影数据库应用程序在 15 分钟内使用 ASP.NET MVC (VB)
 ====================

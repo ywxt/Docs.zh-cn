@@ -4,19 +4,16 @@ title: '[如何实现:]LINQ to SQL： 数据模型 |Microsoft Docs'
 author: scottstanfield
 description: LINQ to SQL 依赖对象到关系模型组将映射到数据库表的类。 Visual Studio 2008 包括一个直观的 ORM 设计界面...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/15/2007
-ms.topic: article
 ms.assetid: 24282199-9edf-4211-ac6e-f05df68cccbe
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-data-model
 msc.type: video
-ms.openlocfilehash: 1f86bfc78829f18d61d2cb82afe4f1bbbcfd4163
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: bf0e94aa149aa7aa614d75c4f85fb6ab676e07d3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37391963"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839849"
 ---
 <a name="how-do-i-linq-to-sql-data-model"></a>[如何实现:]LINQ to SQL： 数据模型
 ====================

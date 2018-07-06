@@ -4,19 +4,16 @@ title: 部署数据库 (C#) |Microsoft Docs
 author: rick-anderson
 description: 部署 ASP.NET web 应用程序需要从开发环境中获取的必要的文件和资源到生产环境。 为 da...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/23/2009
-ms.topic: article
 ms.assetid: ff537a10-9f1f-43fe-9bcb-3dda161ba8f5
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-a-database-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fe85e583618cbab772c788f9a53509000aa415c5
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: baab10b8752af8c971f65df6e67cb77d9ad6518e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37386531"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834331"
 ---
 <a name="deploying-a-database-c"></a>部署数据库 (C#)
 ====================

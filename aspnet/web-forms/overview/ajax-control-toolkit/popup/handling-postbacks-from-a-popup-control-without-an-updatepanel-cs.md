@@ -4,19 +4,16 @@ title: 通过使用没有 UpdatePanel (C#) 的弹出控件处理回发 |Microsof
 author: wenz
 description: AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激活任何其他控件时触发一个弹出窗口。 当回发发生时 su...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 25444121-5a72-4dac-8e50-ad2b7ac667af
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d74a44a277bdcb460dc20b78bad3e5ed68445b4a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 108595a37d6c15a4bd6ddee365ca718969ca9c8c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370978"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804030"
 ---
 <a name="handling-postbacks-from-a-popup-control-without-an-updatepanel-c"></a>通过使用没有 UpdatePanel (C#) 的弹出控件处理回发
 ====================

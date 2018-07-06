@@ -4,19 +4,16 @@ title: 第 6 部分： ASP.NET 成员资格 |Microsoft Docs
 author: JoeStagner
 description: 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 6 部分添加 ASP.NET 成员资格。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/21/2010
-ms.topic: article
 ms.assetid: f70a310c-9557-4743-82cb-655265676d39
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 6d01a745ca1428f065f564f676d483ee807eb52e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 303c1edf548db1da9ef61d94bdd8157d6afbb2e4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368468"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804415"
 ---
 <a name="part-6-aspnet-membership"></a>第 6 部分： ASP.NET 成员资格
 ====================

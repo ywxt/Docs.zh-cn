@@ -4,19 +4,16 @@ title: 在 ASP.NET 网页中显示视频页 (Razor) 站点 |Microsoft Docs
 author: tfitzmac
 description: 本章介绍如何显示在带有 Razor 语法页面 ASP.NET Web Pages 的视频。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2014
-ms.topic: article
 ms.assetid: 332fb3da-e2a5-460d-bb90-dd911e1e2c95
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/10-working-with-video
 msc.type: authoredcontent
-ms.openlocfilehash: d80fd8ab54bf1c049fa4ee6b7592925ebe0549f8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 43a806bb5419d32eb8b03e3fc6de05af5d9e2427
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369381"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37826089"
 ---
 <a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET Web Pages (Razor) 站点中显示视频
 ====================

@@ -4,19 +4,16 @@ title: 调试 |Microsoft Docs
 author: JoeStagner
 description: 说明： Visual Web Developer 提供了丰富的调试体验供初学者和专家级开发人员等。 在本视频中 Joe 会浏览你通过 VW...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/30/2009
-ms.topic: article
 ms.assetid: d17389d8-3824-4900-9309-92d49bb756b1
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/building-35-applications/debugging
 msc.type: video
-ms.openlocfilehash: 19e06a338790ae3e6802e2f435d0a5c5deaf23af
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 75cd2dee09fecabef4b1825e204cbf0e0f91d407
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392021"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835363"
 ---
 <a name="debugging"></a>调试
 ====================

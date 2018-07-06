@@ -4,19 +4,16 @@ title: 帐户确认和密码恢复与 ASP.NET 标识 (C#) |Microsoft Docs
 author: HaoK
 description: 执行操作，应该先完成本教程之前具有登录、 电子邮件确认及密码重置创建安全的 ASP.NET MVC 5 web 应用程序。 本教程...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/26/2015
-ms.topic: article
 ms.assetid: 8d54180d-f826-4df7-b503-7debf5ed9fb3
-ms.technology: ''
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 38b908d145986102ff1b1734cdcef75b320bd0ab
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 08a954f8fab4a92b84bd79b4f644bcc1f55b1bc6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384126"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831078"
 ---
 <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>帐户确认和密码恢复与 ASP.NET 标识 (C#)
 ====================
@@ -92,7 +89,7 @@ ms.locfileid: "37384126"
 
 ASP.NET 标识的默认数据存储是实体框架中，但你可以配置它以使用其他数据存储并添加其他字段。 请参阅[其他资源](#addRes)本教程结尾部分。
 
-[OWIN 启动类](../../../aspnet/overview/owin-and-katana/owin-startup-class-detection.md)( *Startup.cs* ) 时应用启动并调用调用`ConfigureAuth`中的方法*应用\_Start\Startup.Auth.cs*，这将配置 OWIN 管道并初始化 ASP.NET 标识。 检查`ConfigureAuth`方法。 每个`CreatePerOwinContext`调用注册的回调 (保存在`OwinContext`)，将调用一次每个请求创建指定类型的实例。 可以在构造函数中设置断点并`Create`每种类型的方法 (`ApplicationDbContext, ApplicationUserManager`)，并验证每个请求调用它们。 实例`ApplicationDbContext`和`ApplicationUserManager`存储在可以访问整个应用程序的 OWIN 上下文。 ASP.NET 标识挂接到通过 cookie 中间件在 OWIN 管道。 有关详细信息，请参阅[每个请求生存期管理 UserManager 类在 ASP.NET 标识中](https://blogs.msdn.com/b/webdev/archive/2014/02/12/per-request-lifetime-management-for-usermanager-class-in-asp-net-identity.aspx)。
+[OWIN 启动类](../../../aspnet/overview/owin-and-katana/owin-startup-class-detection.md)( *Startup.cs* ) 时应用启动并调用调用`ConfigureAuth`中的方法*应用\_Start\Startup.Auth.cs*，这将配置 OWIN 管道并初始化 ASP.NET 标识。 检查 `ConfigureAuth` 方法。 每个`CreatePerOwinContext`调用注册的回调 (保存在`OwinContext`)，将调用一次每个请求创建指定类型的实例。 可以在构造函数中设置断点并`Create`每种类型的方法 (`ApplicationDbContext, ApplicationUserManager`)，并验证每个请求调用它们。 实例`ApplicationDbContext`和`ApplicationUserManager`存储在可以访问整个应用程序的 OWIN 上下文。 ASP.NET 标识挂接到通过 cookie 中间件在 OWIN 管道。 有关详细信息，请参阅[每个请求生存期管理 UserManager 类在 ASP.NET 标识中](https://blogs.msdn.com/b/webdev/archive/2014/02/12/per-request-lifetime-management-for-usermanager-class-in-asp-net-identity.aspx)。
 
 更改安全配置文件时，生成并存储在一个新的安全戳`SecurityStamp`字段*AspNetUsers*表。 请注意，`SecurityStamp`字段是不同的安全 cookie。 安全 cookie 不会存储在`AspNetUsers`表 （或标识 DB 中的其他任何位置）。 使用自签名安全 cookie 令牌[DPAPI](https://msdn.microsoft.com/library/system.security.cryptography.protecteddata.aspx)并使用创建`UserId, SecurityStamp`和过期时间信息。
 

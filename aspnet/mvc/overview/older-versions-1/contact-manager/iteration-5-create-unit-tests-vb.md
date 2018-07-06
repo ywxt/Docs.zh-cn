@@ -4,19 +4,16 @@ title: 迭代 5 — 创建单元测试 (VB) |Microsoft Docs
 author: microsoft
 description: 在第五个迭代中，我们使我们的应用程序更轻松地监视和修改通过添加单元测试。 我们模拟我们数据模型类和构建 o 的单元测试...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2009
-ms.topic: article
 ms.assetid: c6e5c036-2265-4fa7-a9eb-47f197bdc262
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 302dfc2a26e3f357818570c673eafe44346330c4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f2a535128816153d9ff9b14d1895dabd967ad871
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389997"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806376"
 ---
 <a name="iteration-5--create-unit-tests-vb"></a>迭代 5 — 创建单元测试 (VB)
 ====================

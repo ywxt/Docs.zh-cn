@@ -4,19 +4,16 @@ title: ASP.NET MVC 店面第 16： 使用 OpenID 的成员身份重做 |Microsof
 author: robconery
 description: Rob 更改成员资格系统，并将其拆分为三个单独的服务/部分的签出。 Rob 然后位于与 Jon Galloway 讨论 OpenID 和可通过操作方法...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/16/2008
-ms.topic: article
 ms.assetid: afc038e6-555e-4dfa-ae45-f4d3d50e8f96
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-16-membership-redo-with-openid
 msc.type: video
-ms.openlocfilehash: 45bfe925229a0b283afb6c1a971f0660c95af98c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: efd2311a0d0d4165b94e4d26989d66f563181fa5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396638"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838771"
 ---
 <a name="aspnet-mvc-storefront-part-16-membership-redo-with-openid"></a>ASP.NET MVC 店面第 16： 使用 OpenID 的成员身份重做
 ====================

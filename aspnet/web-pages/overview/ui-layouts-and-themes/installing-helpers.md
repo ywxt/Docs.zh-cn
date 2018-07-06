@@ -4,19 +4,16 @@ title: 安装帮助程序在 ASP.NET Web Pages (Razor) 站点 |Microsoft Docs
 author: tfitzmac
 description: 本文介绍如何在 ASP.NET Web Pages (Razor) 的网站中安装一个帮助程序。 帮助器是包含代码和每个标记的可重用组件...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/18/2014
-ms.topic: article
 ms.assetid: 5e968ead-906a-45ea-ac2a-c70e57e1a9b1
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/installing-helpers
 msc.type: authoredcontent
-ms.openlocfilehash: 38290fd47355e7893eddd1f867f47b113b54ca7e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: db3dff9f2d70577bb0618335c0100b9899e87727
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37361801"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838609"
 ---
 <a name="installing-a-helper-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET Web Pages (Razor) 站点中安装一个帮助程序
 ====================

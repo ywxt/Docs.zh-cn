@@ -4,19 +4,16 @@ title: '[如何实现:]使用 ASP.NET AJAX DropDown 控件？ | Microsoft Docs'
 author: JoeStagner
 description: 使用 ASP.NET AJAX 控件工具包中使用下拉列表中控件扩展器，可以向用户显示与触发部分 pa 的选项的下拉列表中...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/30/2007
-ms.topic: article
 ms.assetid: a997a9f8-9f71-4b9e-b7ed-f8e3a0daa576
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-dropdown-control
 msc.type: video
-ms.openlocfilehash: 04701a0b92b4fdd3feaef80826b96322fe514247
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6394818f52509a8784c8d12b54965710f4ece057
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392589"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833192"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-dropdown-control"></a>[如何实现:]使用 ASP.NET AJAX DropDown 控件？
 ====================

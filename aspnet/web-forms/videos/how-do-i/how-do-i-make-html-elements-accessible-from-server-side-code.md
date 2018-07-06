@@ -4,19 +4,16 @@ title: '[如何实现:]使 HTML 元素可以从服务器端代码访问 |Microso
 author: rick-anderson
 description: 在此视频的 Chris Pels 将演示如何创建标准 HTML 元素.aspx 页中可从服务器端代码进行访问以便在页处理中使用它们...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/29/2008
-ms.topic: article
 ms.assetid: 1e2bafaa-ae6a-4c4c-839b-ff2dfe836902
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-make-html-elements-accessible-from-server-side-code
 msc.type: video
-ms.openlocfilehash: a10259c310091f133e4be5fed5e05b1424cddd36
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 06b1a0ecf226dce36a8a9d068d60fdb99defdeea
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396967"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834382"
 ---
 <a name="how-do-i-make-html-elements-accessible-from-server-side-code"></a>[如何实现:]使 HTML 元素可以从服务器端代码访问
 ====================

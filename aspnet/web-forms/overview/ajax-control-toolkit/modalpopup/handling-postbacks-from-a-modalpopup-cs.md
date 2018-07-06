@@ -4,19 +4,16 @@ title: 处理回发 ModalPopup (C#) |Microsoft Docs
 author: wenz
 description: 在 AJAX 控件工具包的 ModalPopup 控件提供了简单的方法来创建模式弹出框使用客户端的方式。 Pos 时，必须格外谨慎处理...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 7963890b-4ea3-4a1c-b65d-6098a3d56f62
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2c5c3b573b62d779ab09caad22b0c0e3a6995634
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0f27d28b9851f8e26c207a6bc495e98ad70577a2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399063"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838117"
 ---
 <a name="handling-postbacks-from-a-modalpopup-c"></a>处理回发 ModalPopup (C#)
 ====================

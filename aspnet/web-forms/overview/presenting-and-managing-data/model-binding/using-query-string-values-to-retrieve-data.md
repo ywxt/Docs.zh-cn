@@ -4,19 +4,16 @@ title: 使用查询字符串值以使用模型绑定筛选数据和 web 窗体 |
 author: tfitzmac
 description: 本系列教程演示了一个 ASP.NET Web 窗体项目中使用模型绑定的基本方面。 模型绑定使数据交互...更多直接-
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/27/2014
-ms.topic: article
 ms.assetid: b90978bd-795d-4871-9ade-1671caff5730
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
 msc.type: authoredcontent
-ms.openlocfilehash: 495489479ef912afcb89c267b56fb11e07f959ec
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b4615d004a32d00b91635bc321a2d4ea792fddbe
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374725"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837258"
 ---
 <a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a>模型绑定和 web 窗体中使用查询字符串值以筛选数据
 ====================

@@ -4,19 +4,16 @@ title: '[如何实现:]使用 CSS 外观为灵活且易于维护的 ASP.NET Web 
 author: rick-anderson
 description: 在此视频的 Chris Pels 中显示了如何创建 ASP.NET 服务器控件的外观，然后将合并 CSS 样式来控制控制外观 contr.外观...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/07/2008
-ms.topic: article
 ms.assetid: aaada05a-5735-4d90-b52d-b58e746a1074
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site
 msc.type: video
-ms.openlocfilehash: 074c9e37b155add737afb7d2628f466a3de64bec
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0515cd707911b2ea444f02baf9999a72e7c8107a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402559"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837112"
 ---
 <a name="how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site"></a>[如何实现:]使用 CSS 外观为灵活且易于维护的 ASP.NET Web 站点
 ====================

@@ -4,19 +4,16 @@ title: '[如何实现:]到 SQL Server 数据库使用 SqlWebEventProvider 写入
 author: rick-anderson
 description: 在此视频的 Chris Pels 中显示了如何使用 ASP.NET 运行状况监视 SqlWebEventProvider 网站到 SQL Server 数据库中记录错误。 首先，清除...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/28/2008
-ms.topic: article
 ms.assetid: d4c08844-fe1c-4759-9ec7-66263ba678fb
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-write-web-events-to-a-sql-server-database-using-the-sqlwebeventprovider
 msc.type: video
-ms.openlocfilehash: c273997ba342d7957d132c664fb8b6f3031df044
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7bb7394ac74e8a8772b2d05e31eb5dccae1b2d2b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37380284"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825669"
 ---
 <a name="how-do-i-write-web-events-to-a-sql-server-database-using-the-sqlwebeventprovider"></a>[如何实现:]向 SQL Server 数据库使用 SqlWebEventProvider 写入 Web 事件
 ====================

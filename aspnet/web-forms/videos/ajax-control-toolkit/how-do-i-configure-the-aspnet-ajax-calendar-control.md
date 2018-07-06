@@ -4,19 +4,16 @@ title: '[如何实现:]配置 ASP.NET AJAX 日历控件？ | Microsoft Docs'
 author: JoeStagner
 description: 在本视频中，我们将看到各种选项可用于配置外观和 t 中的日历扩展器控件的行为的演示...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/30/2007
-ms.topic: article
 ms.assetid: bee087cc-7fed-4dce-8b52-19987f2d38a6
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-configure-the-aspnet-ajax-calendar-control
 msc.type: video
-ms.openlocfilehash: e640cfefef69324458fd0549a938ea09ae2329b7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a60b60a25016f0779a821c3dbb50b061e0002530
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392612"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37826875"
 ---
 <a name="how-do-i-configure-the-aspnet-ajax-calendar-control"></a>[如何实现:]配置 ASP.NET AJAX 日历控件？
 ====================

@@ -4,19 +4,16 @@ title: 如何设置和在 ASP.NET 应用程序中使用无 Cookie 身份验证 |
 author: JoeStagner
 description: Joe Stagner 利用前面的代码示例，演示如何使用无 cookie 身份验证。 有关此演示的详细信息，本教程位于...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/16/2008
-ms.topic: article
 ms.assetid: 10ba9106-514c-4776-8277-9c31312ceed2
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/authentication/how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application
 msc.type: video
-ms.openlocfilehash: 7524055dc310c1ec845d8d838b785e255416d043
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e3966897996f52e086e8a8d6c3a0a1447cb18f04
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362286"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838810"
 ---
 <a name="how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application"></a>如何在 ASP.NET 应用程序中的设置和使用无 Cookie 身份验证
 ====================

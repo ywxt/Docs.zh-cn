@@ -4,19 +4,16 @@ title: 声明性参数 (C#) |Microsoft Docs
 author: rick-anderson
 description: 在本教程中我们将演示了如何将参数设置为硬编码值用于选择要显示的 DetailsView 控件中的数据。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: 603c9bd3-b895-4ec6-853b-0c81ff36d580
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/declarative-parameters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6c2798ed1ac768a5103bbdc50db73ba6c3eed07f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 06577628d2b502df2854a83af564a0c0d402e9bd
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37365365"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839420"
 ---
 <a name="declarative-parameters-c"></a>声明性参数 (C#)
 ====================

@@ -4,19 +4,16 @@ title: 动画 (VB) 过程中禁用操作 |Microsoft Docs
 author: wenz
 description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 它还支持操作...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: a86c0276-6481-46ee-8b4f-8c2009399ee9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-animation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 824eb8f0a219df08044bc62d7ad020c53e1ee792
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 18c1eb74c73876b3fc6f1e37f69c31642806d043
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399569"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830874"
 ---
 <a name="disabling-actions-during-animation-vb"></a>动画 (VB) 过程中禁用操作
 ====================

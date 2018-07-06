@@ -4,19 +4,16 @@ title: 在 ASP.NET Web API 中窗体身份验证 |Microsoft Docs
 author: MikeWasson
 description: 介绍如何在 ASP.NET Web API 中使用窗体身份验证。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/12/2012
-ms.topic: article
 ms.assetid: 9f06c1f2-ffaa-4831-94a0-2e4a3befdf07
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/security/forms-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 7642a30816a04a88a25ef8bf4f01e766fda362ce
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4b73adf1390ce9573cd2979010932365349caea0
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37365066"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37827529"
 ---
 <a name="forms-authentication-in-aspnet-web-api"></a>ASP.NET Web API 中的窗体身份验证
 ====================
