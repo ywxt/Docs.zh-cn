@@ -4,29 +4,26 @@ title: ASP.NET vNext 视频： 模型绑定第 2 部分-筛选 |Microsoft Docs
 author: DamianEdwards
 description: 在此视频中，Damian Edwards 继续说明筛选模型绑定的演示。
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/12/2011
-ms.topic: article
 ms.assetid: b1d73fae-57c9-4b06-b5df-d68dc3b3cf5e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-part-2-filtering
 msc.type: video
-ms.openlocfilehash: 9e9ce6d2a3d2347a02a857172c75f241af760401
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 077e4b23a9b73ee36ae931148f65437e5612beca
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393897"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836613"
 ---
-<a name="aspnet-vnext-videos-model-binding-part-2---filtering"></a><span data-ttu-id="ebcfa-103">ASP.NET vNext 视频： 模型绑定第 2 部分-筛选</span><span class="sxs-lookup"><span data-stu-id="ebcfa-103">ASP.NET vNext Videos: Model Binding Part 2 - Filtering</span></span>
+<a name="aspnet-vnext-videos-model-binding-part-2---filtering"></a><span data-ttu-id="f6ef0-103">ASP.NET vNext 视频： 模型绑定第 2 部分-筛选</span><span class="sxs-lookup"><span data-stu-id="f6ef0-103">ASP.NET vNext Videos: Model Binding Part 2 - Filtering</span></span>
 ====================
-<span data-ttu-id="ebcfa-104">通过[Damian Edwards](https://github.com/DamianEdwards)</span><span class="sxs-lookup"><span data-stu-id="ebcfa-104">by [Damian Edwards](https://github.com/DamianEdwards)</span></span>
+<span data-ttu-id="f6ef0-104">通过[Damian Edwards](https://github.com/DamianEdwards)</span><span class="sxs-lookup"><span data-stu-id="f6ef0-104">by [Damian Edwards](https://github.com/DamianEdwards)</span></span>
 
-<span data-ttu-id="ebcfa-105">在此视频中，Damian Edwards 继续说明筛选模型绑定的演示。</span><span class="sxs-lookup"><span data-stu-id="ebcfa-105">In this video, Damian Edwards continues the demonstration of model binding by explaining filtering.</span></span>
+<span data-ttu-id="f6ef0-105">在此视频中，Damian Edwards 继续说明筛选模型绑定的演示。</span><span class="sxs-lookup"><span data-stu-id="f6ef0-105">In this video, Damian Edwards continues the demonstration of model binding by explaining filtering.</span></span>
 
-[<span data-ttu-id="ebcfa-106">&#9654;观看视频 （1 分钟）</span><span class="sxs-lookup"><span data-stu-id="ebcfa-106">&#9654; Watch video (1 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-vnext-videos-model-binding-part-2-filtering)
+[<span data-ttu-id="f6ef0-106">&#9654;观看视频 （1 分钟）</span><span class="sxs-lookup"><span data-stu-id="f6ef0-106">&#9654; Watch video (1 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-vnext-videos-model-binding-part-2-filtering)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="ebcfa-107">[上一页](aspnet-vnext-videos-model-binding-part-1-selecting-data.md)
-> [下一页](aspnet-vnext-videos-model-binding-part-3-updating.md)</span><span class="sxs-lookup"><span data-stu-id="ebcfa-107">[Previous](aspnet-vnext-videos-model-binding-part-1-selecting-data.md)
+> <span data-ttu-id="f6ef0-107">[上一页](aspnet-vnext-videos-model-binding-part-1-selecting-data.md)
+> [下一页](aspnet-vnext-videos-model-binding-part-3-updating.md)</span><span class="sxs-lookup"><span data-stu-id="f6ef0-107">[Previous](aspnet-vnext-videos-model-binding-part-1-selecting-data.md)
 [Next](aspnet-vnext-videos-model-binding-part-3-updating.md)</span></span>

@@ -4,29 +4,26 @@ title: '[如何实现:]发布和分析测试结果？ | Microsoft Docs'
 author: rick-anderson
 description: Visual Studio Team System 使你可以在项目的代码质量的图表会发生更改，随着项目进度。 此视频将说明了如何 publ....
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/16/2007
-ms.topic: article
 ms.assetid: 9fb155e0-1379-482c-963d-af7dc0397d76
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-publish-and-analyze-test-results
 msc.type: video
-ms.openlocfilehash: 2beeac7c4d8157787a156af03a42f9c1f7dbbd17
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: eb59591d32191ed736786fda236f74b5104ef868
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379510"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833071"
 ---
-<a name="how-do-i-publish-and-analyze-test-results"></a><span data-ttu-id="d16f0-105">[如何实现:]发布和分析测试结果？</span><span class="sxs-lookup"><span data-stu-id="d16f0-105">[How Do I:] Publish and Analyze Test Results?</span></span>
+<a name="how-do-i-publish-and-analyze-test-results"></a><span data-ttu-id="448e4-105">[如何实现:]发布和分析测试结果？</span><span class="sxs-lookup"><span data-stu-id="448e4-105">[How Do I:] Publish and Analyze Test Results?</span></span>
 ====================
-<span data-ttu-id="d16f0-106">通过[Chris Menegay](https://twitter.com/CMenegay)</span><span class="sxs-lookup"><span data-stu-id="d16f0-106">by [Chris Menegay](https://twitter.com/CMenegay)</span></span>
+<span data-ttu-id="448e4-106">通过[Chris Menegay](https://twitter.com/CMenegay)</span><span class="sxs-lookup"><span data-stu-id="448e4-106">by [Chris Menegay](https://twitter.com/CMenegay)</span></span>
 
-<span data-ttu-id="d16f0-107">Visual Studio Team System 使你可以在项目的代码质量的图表会发生更改，随着项目进度。</span><span class="sxs-lookup"><span data-stu-id="d16f0-107">Visual Studio Team System enables you to chart changes in a project's code quality as the project progresses.</span></span> <span data-ttu-id="d16f0-108">此视频提供了有关如何将测试结果发布到 Team Foundation Server 项目数据库并将结果与生成号关联的说明。</span><span class="sxs-lookup"><span data-stu-id="d16f0-108">This video provides instructions on how to publish test results to the Team Foundation Server project database and associate the results with a build number.</span></span> <span data-ttu-id="d16f0-109">我们看到的结果被发布后我们可以使用报表管理器在我们生成的测试结果中查看更改的图形表示形式。</span><span class="sxs-lookup"><span data-stu-id="d16f0-109">We see that after the results are published we can use the Report Manager to view a graphical representation of changes in our build test results.</span></span>
+<span data-ttu-id="448e4-107">Visual Studio Team System 使你可以在项目的代码质量的图表会发生更改，随着项目进度。</span><span class="sxs-lookup"><span data-stu-id="448e4-107">Visual Studio Team System enables you to chart changes in a project's code quality as the project progresses.</span></span> <span data-ttu-id="448e4-108">此视频提供了有关如何将测试结果发布到 Team Foundation Server 项目数据库并将结果与生成号关联的说明。</span><span class="sxs-lookup"><span data-stu-id="448e4-108">This video provides instructions on how to publish test results to the Team Foundation Server project database and associate the results with a build number.</span></span> <span data-ttu-id="448e4-109">我们看到的结果被发布后我们可以使用报表管理器在我们生成的测试结果中查看更改的图形表示形式。</span><span class="sxs-lookup"><span data-stu-id="448e4-109">We see that after the results are published we can use the Report Manager to view a graphical representation of changes in our build test results.</span></span>
 
-[<span data-ttu-id="d16f0-110">&#9654;观看视频 （7 分钟为单位）</span><span class="sxs-lookup"><span data-stu-id="d16f0-110">&#9654; Watch video (7 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-publish-and-analyze-test-results)
+[<span data-ttu-id="448e4-110">&#9654;观看视频 （7 分钟为单位）</span><span class="sxs-lookup"><span data-stu-id="448e4-110">&#9654; Watch video (7 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-publish-and-analyze-test-results)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="d16f0-111">[上一页](how-do-i-use-generic-tests.md)
-> [下一页](how-do-i-discover-application-changes-prior-to-deployment.md)</span><span class="sxs-lookup"><span data-stu-id="d16f0-111">[Previous](how-do-i-use-generic-tests.md)
+> <span data-ttu-id="448e4-111">[上一页](how-do-i-use-generic-tests.md)
+> [下一页](how-do-i-discover-application-changes-prior-to-deployment.md)</span><span class="sxs-lookup"><span data-stu-id="448e4-111">[Previous](how-do-i-use-generic-tests.md)
 [Next](how-do-i-discover-application-changes-prior-to-deployment.md)</span></span>
