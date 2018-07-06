@@ -7,12 +7,12 @@ ms.author: rachelap
 ms.custom: mvc
 ms.date: 05/22/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 62cef2d6f032caa2f048cfdd49a225d975dad10d
-ms.sourcegitcommit: 7003d27b607e529642ded0400aa48ae692a0e666
+ms.openlocfilehash: ca9145d9e16c23e34bbc1d84ff01ce02709187ce
+ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37033337"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37144867"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>开始在 ASP.NET Core 上使用 SignalR
 
@@ -128,9 +128,9 @@ Visual Studio 包含 `Microsoft.AspNetCore.SignalR` 包，该包包含其服务�
 
 1. 若要配置 SignalR 项目，请修改项目的 `Startup.ConfigureServices` 方法。
 
-   `services.AddSignalR` 将 SignalR 添加为[中间件](xref:fundamentals/middleware/index)管道的一部分。
+   `services.AddSignalR` 使 SignalR 服务可用于[依赖项注入](xref:fundamentals/dependency-injection)系统。
 
-2. 使用 `UseSignalR` 将路由配置到中心。
+1. 在 `Configure` 方法中使用 `UseSignalR` 将路由配置到中心。 `app.UseSignalR` 将 SignalR 添加到[中间件](xref:fundamentals/middleware/index)管道。
 
    [!code-csharp[Startup](signalr/sample/Startup.cs?highlight=37,57-60)]
 

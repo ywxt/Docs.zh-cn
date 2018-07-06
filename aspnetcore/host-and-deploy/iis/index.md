@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 03/13/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: ea18c451c2f68dc389cc6dc30ede9a10e3d8e6ac
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: f35fbbbf7d04b041565e76d3cc6b9822f1056e50
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275407"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824534"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -370,7 +370,7 @@ ASP.NET Core 应用不会使用 web.config 中的 ASP.NET 4.x 应用的配置部
 
 ## <a name="application-pools"></a>应用程序池
 
-在服务器上托管多个网站时，需在每个应用自己的应用池中运行各应用，以彼此隔离。 IIS“添加网站”对话框默认执行此配置。 提供了站点名称时，该文本会自动传输到“应用程序池”文本框。 添加站点时，会使用该站点名称创建新的应用池。
+在服务器上托管多个网站时，建议在每个应用自己的应用池中运行各应用，以彼此隔离。 IIS“添加网站”对话框默认执行此配置。 提供了站点名称时，该文本会自动传输到“应用程序池”文本框。 添加站点时，会使用该站点名称创建新的应用池。
 
 ## <a name="application-pool-identity"></a>应用程序池标识
 
