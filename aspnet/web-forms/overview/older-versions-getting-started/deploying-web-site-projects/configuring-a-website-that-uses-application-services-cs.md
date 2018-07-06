@@ -4,19 +4,16 @@ title: 配置网站使用应用程序服务 (C#) |Microsoft Docs
 author: rick-anderson
 description: ASP.NET 2.0 版引入了一系列的应用程序服务，这是.NET Framework 的一部分，作为构建基块的一套服务 yo...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/23/2009
-ms.topic: article
 ms.assetid: 1e33d1c6-3f9f-4c26-81e2-2a8f8907bb05
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 27c91868d46b6040a25b8cb83480bf83081fc98c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9bbf6d84c3ca25a3476901ec3d7996d5ca197446
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399089"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837647"
 ---
 <a name="configuring-a-website-that-uses-application-services-c"></a>配置网站使用应用程序服务 (C#)
 ====================

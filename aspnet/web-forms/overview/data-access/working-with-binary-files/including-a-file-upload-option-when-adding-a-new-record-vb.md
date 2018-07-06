@@ -4,19 +4,16 @@ title: 添加新记录 (VB) 时包括的文件上传选项 |Microsoft Docs
 author: rick-anderson
 description: 本教程演示如何创建一个 Web 界面，允许用户输入的文本数据的同时上传二进制文件。 为了说明选项可用 t...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/27/2007
-ms.topic: article
 ms.assetid: 5776281d-4637-4d1e-a65b-2621d2cade44
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 30cfdcf8e9b65f92b267509b4289d828b2532e65
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: eac86318136d6f28ecf6551b8b8a6b691a8969d7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363140"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37807747"
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>添加新记录 (VB) 时包括文件上传选项
 ====================

@@ -4,19 +4,16 @@ title: '[如何实现:]使用 ASP.NET AJAX UpdateProgress 控件？ | Microsoft 
 author: JoeStagner
 description: 在 AJAX 应用程序是通常在浏览器发出网络请求的时间和浏览器收到响应的时间之间出现明显的停顿。 T....
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/20/2007
-ms.topic: article
 ms.assetid: fadc5c5a-e481-4472-b339-715cc036dc4e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-updateprogress-control
 msc.type: video
-ms.openlocfilehash: b7a5f74041c849251273c4864f5c03ab1af24e59
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f4dcf89da332c303c5bb8e3c1093a9a2b8b68c34
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37387359"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808150"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-updateprogress-control"></a>[如何实现:]使用 ASP.NET AJAX UpdateProgress 控件？
 ====================

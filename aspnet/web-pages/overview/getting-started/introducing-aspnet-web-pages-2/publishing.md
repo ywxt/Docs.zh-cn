@@ -4,19 +4,16 @@ title: Introducing ASP.NET 网页-通过使用 WebMatrix 发布站点 |Microsoft
 author: tfitzmac
 description: 本教程是在引入了 ASP.NET Web Pages 和 Microsoft WebMatrix 的教程系列中最后一期。 介绍了如何发布站点 t...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/28/2015
-ms.topic: article
 ms.assetid: 7e85c70e-1a88-4408-8b3d-29611c7713ed
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
-ms.openlocfilehash: c6fa7692527b7aa65e93cd57ed5bd56f42e54bd6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: a20adc0b42d39424abf301e0b0f4094ef04932fb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37373482"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836980"
 ---
 <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>ASP.NET 网页简介-通过使用 WebMatrix 发布站点
 ====================

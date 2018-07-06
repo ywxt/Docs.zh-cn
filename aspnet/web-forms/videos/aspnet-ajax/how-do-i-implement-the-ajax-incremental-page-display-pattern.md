@@ -4,19 +4,16 @@ title: '[如何实现:]实现 AJAX 增量页面显示模式？ | Microsoft Docs'
 author: JoeStagner
 description: 传统上请求 Web 页时，用户必须等待，而从其后完成页将显示 sudde 服务器检索整个页面...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/05/2007
-ms.topic: article
 ms.assetid: 17dfc331-1186-4240-8abf-f0220c90e081
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-ajax-incremental-page-display-pattern
 msc.type: video
-ms.openlocfilehash: 0b01ac87636449f1c0c87335615715c632391ec8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 214e2af5fbcdbf2491d1a11e84033bb2747cc26d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367546"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835180"
 ---
 <a name="how-do-i-implement-the-ajax-incremental-page-display-pattern"></a>[如何实现:]实现 AJAX 增量页面显示模式？
 ====================

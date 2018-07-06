@@ -4,19 +4,16 @@ title: 了解 ASP.NET AJAX Web 服务 |Microsoft Docs
 author: scottcate
 description: Web 服务是.NET framework 为分布式系统之间交换数据提供的跨平台解决方案的重要组成部分。 尽管 Web...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/28/2008
-ms.topic: article
 ms.assetid: 3332d6e7-e2e1-4144-b805-e71d51e7e415
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
 msc.type: authoredcontent
-ms.openlocfilehash: c3874e19ef55ffd4949f9bc280d32a3da7a00271
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b98ef4c27ab7b4b729e9e5b68e7d2642a6418ab6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376380"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838596"
 ---
 <a name="understanding-aspnet-ajax-web-services"></a>了解 ASP.NET AJAX Web 服务
 ====================

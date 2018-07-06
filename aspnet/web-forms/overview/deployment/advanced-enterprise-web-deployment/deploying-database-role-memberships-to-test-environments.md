@@ -4,19 +4,16 @@ title: 部署到测试环境的数据库角色成员身份 |Microsoft Docs
 author: jrjlee
 description: 本主题介绍如何将用户帐户添加到数据库角色作为解决方案部署到测试环境的一部分。 当你部署一个解决方案，其中包含...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 9b2af539-7ad9-47aa-b66e-873bd9906e79
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 42ceaa654c7f690f8455c0569e347cd5e9fccf7a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a690d99df7a19c422fb217544ec183c311d1796f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401855"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37828028"
 ---
 <a name="deploying-database-role-memberships-to-test-environments"></a>部署到测试环境的数据库角色成员身份
 ====================

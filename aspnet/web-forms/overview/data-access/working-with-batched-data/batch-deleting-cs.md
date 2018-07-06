@@ -4,19 +4,16 @@ title: 批处理删除 (C#) |Microsoft Docs
 author: rick-anderson
 description: 了解如何删除单个操作中的多个数据库记录。 在用户界面层我们构建在中创建早期 tut 增强 GridView 时...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/26/2007
-ms.topic: article
 ms.assetid: ac6916d0-a5ab-4218-9760-7ba9e72d258c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-deleting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c6d792519d4a9c30f8d28497a74bc45b00197169
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e81c1aca63c07597915999144695d5a6a7deafbf
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37365300"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834059"
 ---
 <a name="batch-deleting-c"></a>批量删除的 (C#)
 ====================

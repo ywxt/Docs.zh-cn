@@ -4,19 +4,16 @@ title: 在 ASP.NET MVC 中使用 Page Inspector |Microsoft Docs
 author: rick-anderson
 description: 视频介绍了在 ASP.NET MVC web 应用程序中的使用 Page Inspector。 阅读教程
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/04/2012
-ms.topic: article
 ms.assetid: ea642733-8085-40c1-a33f-d216e3a25ffa
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-4/using-page-inspector-in-aspnet-mvc
 msc.type: video
-ms.openlocfilehash: 24aedee0843d3104081be6ab3963605c3ddd49f5
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: a77dbefd856280436e01b101ab5c9cf3e364e2b3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37387811"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833554"
 ---
 <a name="using-page-inspector-in-aspnet-mvc"></a>在 ASP.NET MVC 中使用 Page Inspector
 ====================

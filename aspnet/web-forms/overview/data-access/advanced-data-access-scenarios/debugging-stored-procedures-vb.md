@@ -4,19 +4,16 @@ title: 调试存储的过程 (VB) |Microsoft Docs
 author: rick-anderson
 description: Visual Studio Professional 和 Team System 版本允许您设置断点并参与到 SQL Server 中的存储过程使调试存储...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/03/2007
-ms.topic: article
 ms.assetid: 9ed8ccb5-5f31-4eb4-976d-cabf4b45ca09
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 67714284c44c7bc9b06dc599601e116b83017e3e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a4a507205ff8e837f64e01acf84f6376006a87b9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401992"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806646"
 ---
 <a name="debugging-stored-procedures-vb"></a>调试存储的过程 (VB)
 ====================

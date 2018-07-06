@@ -4,19 +4,16 @@ title: 如何： 创建高效、 标准化方法，实现 CSS 样式？ | Micros
 author: rick-anderson
 description: 在此视频的 Chris Pels 中显示了如何组织和实现提供标准化的外观和感觉到的网站的 CSS 样式。 此外，这些样式是...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/15/2010
-ms.topic: article
 ms.assetid: 1d902492-c6a3-4ab8-8e3d-57384ac893d5
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles
 msc.type: video
-ms.openlocfilehash: 1e2068bbf6e88182094c08b829ec00b0ff4c7749
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 04ff5486d6fd8db172ece96891e959691330c3dc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379603"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831380"
 ---
 <a name="how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles"></a>如何： 创建高效、 标准化方法，实现 CSS 样式？
 ====================

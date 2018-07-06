@@ -4,19 +4,16 @@ title: 第 8 部分： 最终页面、 异常处理和结论 |Microsoft Docs
 author: JoeStagner
 description: 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 8 部分添加一个联系人页，有关页和异常...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/21/2010
-ms.topic: article
 ms.assetid: 5aeadf8f-39f3-4f07-a78f-1c310c64fb23
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 3f1d855e157f6a58995d301a793e660925767fb4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4fb0147a5cd8621e5341e4995960adf2f00fffc0
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37380248"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804712"
 ---
 <a name="part-8-final-pages-exception-handling-and-conclusion"></a>第 8 部分： 最终页面、 异常处理和结论
 ====================

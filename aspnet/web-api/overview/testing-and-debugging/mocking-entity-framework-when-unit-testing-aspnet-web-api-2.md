@@ -4,19 +4,16 @@ title: 模拟 Entity Framework 时的单元测试 ASP.NET Web API 2 |Microsoft D
 author: tfitzmac
 description: 此指南和应用程序演示如何为 Web API 2 应用程序使用实体框架创建单元测试。 它演示了如何修改...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/13/2013
-ms.topic: article
 ms.assetid: cd844025-ccad-41ce-8694-595f1022a49f
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: f1ff2fda85a6d56a6bbb76b1bff740301ab0c70d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: dc50965a2757defb254d05f0b8a5fd46a90dc75f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371864"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804390"
 ---
 <a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a>模拟 Entity Framework 时的单元测试 ASP.NET Web API 2
 ====================

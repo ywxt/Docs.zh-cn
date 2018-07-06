@@ -4,19 +4,16 @@ title: 滑块控件中使用自动回发 (C#) |Microsoft Docs
 author: wenz
 description: AJAX 控件工具包中的滑块控件提供了一个图形滑块，可以使用鼠标进行控制。 它是可以进行滑块自动过帐...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 4d85e9fb-91e6-41f2-9c13-754549b19c27
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8e855bebf557536b5f9e2b2730f828e54c63221e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b5cb3c041f2a8a499d27cbcbc2f8975eedcac12e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366815"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834146"
 ---
 <a name="using-the-slider-control-with-auto-postback-c"></a>滑块控件中使用自动回发 (C#)
 ====================
