@@ -5,12 +5,12 @@ description: 了解如何配置 ASP.NET Core标识的自定义存储提供程序
 ms.author: riande
 ms.date: 05/24/2017
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: d7baa8ed142a7d3337adceff2dc93274604bde4c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: bdde9b93449c2f3f8d43cc4ff86472ed8a60ed1c
+ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831331"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37889163"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core标识的自定义的存储提供程序
 
@@ -51,7 +51,7 @@ ASP.NET Core标识包含类称为管理器和存储区。 *管理器*是高级�
 
 创建的新实例时`UserManager`或`RoleManager`提供用户类的类型和作为参数传递存储类的实例。 此方法使您可以插入到 ASP.NET Core的自定义的类。 
 
-[重新配置应用程序以使用新的存储提供程序](#reconfigure-app-to-use-new-storage-provider)说明如何实例化`UserManager`和`RoleManager`使用自定义存储。
+[重新配置应用程序以使用新的存储提供程序](#reconfigure-app-to-use-a-new-storage-provider)说明如何实例化`UserManager`和`RoleManager`使用自定义存储。
 
 ## <a name="aspnet-core-identity-stores-data-types"></a>ASP.NET Core标识将存储的数据类型
 
