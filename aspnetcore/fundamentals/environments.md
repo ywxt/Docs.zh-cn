@@ -73,7 +73,7 @@ ASP.NET Core 在应用启动时读取环境变量 `ASPNETCORE_ENVIRONMENT`，并
 
 * IIS Express
 * IIS
-* 项目（启动 Kestrel 的项目）
+* Project（启动 Kestrel 的项目）
 
 使用 [dotnet run](/dotnet/core/tools/dotnet-run) 启动应用时：
 
