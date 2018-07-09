@@ -4,19 +4,16 @@ title: 添加其他 DataTable 列 (VB) |Microsoft Docs
 author: rick-anderson
 description: 使用 TableAdapter 向导时创建的类型化数据集，相应的数据表中的主数据库查询返回的列。 但有...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/18/2007
-ms.topic: article
 ms.assetid: 1e8e65f9-fe3e-4250-810b-c90227786bed
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 84cb5f267a79fe7787ea23f1dc924e10e4d6fe13
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: a36f7267591e01ac2bd552385eeb22e1fda68c6e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402780"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803228"
 ---
 <a name="adding-additional-datatable-columns-vb"></a>添加其他 DataTable 列 (VB)
 ====================

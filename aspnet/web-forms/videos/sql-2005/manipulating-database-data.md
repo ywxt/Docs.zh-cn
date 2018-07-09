@@ -4,19 +4,16 @@ title: 操作数据库数据 |Microsoft Docs
 author: microsoft
 description: SQL Server 初学者将了解有关 ADO.NET 对象和从 ADO.NET 的 SQL 语句的执行。 浏览 SQL 和了解有关插入、 更新和删除 sta。...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/29/2006
-ms.topic: article
 ms.assetid: 03a4cdda-480f-43fa-891c-a976633d90ae
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/sql-2005/manipulating-database-data
 msc.type: video
-ms.openlocfilehash: f4099d5789e907a69a73d5e02b198360e15d64d8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 8dbbbb4febc84dbafbc71e99a0b635bbf61af997
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367394"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802015"
 ---
 <a name="manipulating-database-data"></a>操作数据库数据
 ====================
