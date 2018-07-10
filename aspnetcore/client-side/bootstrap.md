@@ -1,5 +1,5 @@
 ---
-title: 生成带有 Bootstrap 和 ASP.NET Core 美观、 响应迅速网站
+title: 在ASP.NET Core中使用 Bootstrap 构建更加美观的响应式站点
 author: ardalis
 description: 了解如何开发使用 ASP.NET Core 的响应式 web 应用程序使用 Bootstrap。
 ms.author: riande
@@ -12,17 +12,17 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36279540"
 ---
-# <a name="build-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>生成带有 Bootstrap 和 ASP.NET Core 美观、 响应迅速网站
+# <a name="build-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>在ASP.NET Core中使用 Bootstrap 构建更加美观的响应式站点
 
 <a name="bootstrap-index"></a>
 
 作者：[Steve Smith](https://ardalis.com/)
 
-Bootstrap 目前最常用的 web 框架开发响应式 web 应用程序。 无论您是在前端设计和开发或方面的专家新手，它提供大量的功能和优势，这样可以提高您的网站，用户的体验。 Bootstrap 部署为一组 CSS 和 JavaScript 文件，并旨在从手机有效地帮助你的网站或应用程序缩放，平板电脑和桌面。
+Bootstrap 目前最常用的 web 框架开发响应式 web 应用程序。 无论您是在前端设计和开发或方面的专家新手，它提供大量的功能和优势，这样可以提高您网站的用户的体验。 Bootstrap 部署为一组 CSS 和 JavaScript 文件，并旨在从手机有效地帮助你的网站或应用程序缩放，平板电脑和桌面。
 
 ## <a name="get-started"></a>入门
 
-有多种，若要开始使用 Bootstrap。 如果你在 Visual Studio 中开始新的 web 应用程序，则可以为 ASP.NET Core，区分大小的 Bootstrap 会预安装选择默认初学者模板：
+有多种开始使用 Bootstrap的方式。 如果你在 Visual Studio 中开始新的 web 应用程序，则可以为 ASP.NET Core，区分大小的 Bootstrap 会预安装选择默认初学者模板：
 
 ![在初学者模板解决方案视图中启动](bootstrap/_static/bootstrap-in-starter-template.png)
 
@@ -129,9 +129,9 @@ Bootstrap 始终默认为单列布局，以便只需指定列，如果希望多�
 
 在此示例中，只有一行`<div>`所使用的并且启动仍然主要未正确的操作方面的布局和堆叠的列。 通常情况下，应指定行`<div>`对于每个水平行布局要求，和当然可以嵌套在另一个的 Bootstrap 网格。 执行操作时，每个嵌套的网格将占用 100%的元素在其中放置它，然后可以通过使用列类细分的宽度。
 
-### <a name="jumbotron"></a>Jumbotron
+### <a name="jumbotron"></a>巨幕
 
-如果你已使用 Visual Studio 2012 或 2013年中的默认 ASP.NET MVC 模板，你可能已了解 Jumbotron 操作中。 它将引用到大型全角部分可以用于显示较大的背景图像，操作、 旋转或类似的元素调用的页。 若要添加到页面 jumbotron，只需添加`<div>`并为其提供的类"jumbotron"，然后放置容器`<div>`内并添加你的内容。 我们可以轻松地调整有关页后，可以使用它显示的主要标题 jumbotron 标准：
+如果你已使用 Visual Studio 2012 或 2013年中的默认 ASP.NET MVC 模板，你可能已了解 巨幕 操作中。 它将引用到大型全角部分可以用于显示较大的背景图像，操作、 旋转或类似的元素调用的页。 若要添加巨幕到页面，只需添加`<div>`并为其提供的类"jumbotron"，然后放置容器`<div>`内并添加你的内容。 我们可以轻松使用巨幕去调整关于页面去显示主要标题：
 
 ![jumbotron 示例](bootstrap/_static/jumbotron.png)
 
@@ -153,7 +153,7 @@ Bootstrap 始终默认为单列布局，以便只需指定列，如果希望多�
 
 ![主题的警报](bootstrap/_static/theme-alerts.png)
 
-### <a name="navbars-and-menus"></a>Navbars 和菜单
+### <a name="navbars-and-menus"></a>导航栏和菜单
 
 我们布局已经包括标准的导航栏中，但是的 Bootstrap 主题支持其他样式选项。 我们也很容易可以选择垂直显示导航栏，而不是水平如果，具有首选，以及为添加的子导航中的项弹出菜单。 简单导航菜单，选项卡条带，如生成的顶部`<ul>`元素。 这些内容可以创建非常只需通过只需为他们提供的 CSS 类"导航"和"导航选项卡":
 
@@ -199,15 +199,15 @@ Bootstrap 包括从 Glyphicons 图标集 ([http://glyphicons.com](http://glyphic
 
 ![Glyphicons](bootstrap/_static/theme-glyphicons.png)
 
-### <a name="input-groups"></a>输入的组
+### <a name="input-groups"></a>输入框组合
 
-输入的组允许绑定的附加文本或按钮使用输入元素，从而为用户提供更直观的体验：
+输入框组合允许绑定的附加文本或按钮使用输入元素，从而为用户提供更直观的体验：
 
-![输入的组](bootstrap/_static/input-groups.png)
+![输入框组合](bootstrap/_static/input-groups.png)
 
-### <a name="breadcrumbs"></a>痕迹导航
+### <a name="breadcrumbs"></a>路径导航
 
-痕迹导航是用于显示用户，其最新历史记录或在站点的导航层次结构中的深度的常见 UI 组件。 通过将"痕迹导航"类应用于任何轻松地添加`<ol>`列表元素。 包括内置支持分页上使用"分页"类`<ul>`中的元素`<nav>`。 通过使用添加响应嵌入的幻灯片和视频`<iframe>`， `<embed>`， `<video>`，或`<object>`Bootstrap 将自动设置样式的元素。 通过使用特定的类，如"嵌入的响应性-16by9"中指定特定的纵横比。
+路径导航是用于显示用户其最新历史记录或在站点的导航层次结构中的深度的常见 UI 组件。 通过将"breadcrumb"类应用于任何轻松地添加`<ol>`列表元素。 包括内置支持分页上使用"分页"类`<ul>`中的元素`<nav>`。 通过使用添加响应嵌入的幻灯片和视频`<iframe>`， `<embed>`， `<video>`，或`<object>`Bootstrap 将自动设置样式的元素。 通过使用特定的类，如"嵌入的响应性-16by9"中指定特定的纵横比。
 
 ## <a name="javascript-support"></a>JavaScript 支持
 
