@@ -4,19 +4,16 @@ title: ASP.NET 运行状况监视 (C#) 的日志记录错误详细信息 |Micros
 author: rick-anderson
 description: Microsoft 的运行状况监控系统提供了简单且可自定义的方式记录各种 web 事件，包括未经处理的异常。 本教程介绍如何对...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/09/2009
-ms.topic: article
 ms.assetid: b1abb452-642a-4ff3-8504-37b85590ff79
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 73b78b99f68dc32f37bcd16865091deebdb1399a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: bd6b89f63c6d0634e6d6b809d8285b9870485c43
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363476"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842638"
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>ASP.NET 运行状况监视 (C#) 的日志记录错误详细信息
 ====================

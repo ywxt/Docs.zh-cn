@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: 9d7d4d49dbb55e327a208df99a0e3ca744de8609
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: 49bed6cc150a74ff8b72848f276c55c2490b6fa5
+ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077743"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37889137"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor 页面介绍
 
@@ -322,7 +322,7 @@ services.AddMvc()
 
 ::: moniker range=">= aspnetcore-2.1"
 
-布局位于 Shared/Pages 文件夹中。 页面按层次结构从当前页面的文件夹开始查找其他视图（布局、模板、分区）。 可以从 Pages 文件夹下的任意 Razor 页面使用 Shared/Pages 文件夹中的布局。
+布局位于“页面/共享”文件夹中。 页面按层次结构从当前页面的文件夹开始查找其他视图（布局、模板、分区）。 可以从“页面/共享”文件夹下的任意 Razor 页面使用“页面”文件夹中的布局。
 
 布局文件应位于 Pages/Shared 文件夹中。
 

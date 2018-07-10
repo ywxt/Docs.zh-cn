@@ -4,19 +4,16 @@ title: 创建存储的过程和用户定义函数使用托管代码 (VB) |Micros
 author: rick-anderson
 description: Microsoft SQL Server 2005 与.NET 公共语言运行时以允许开发人员能够创建通过托管代码的数据库对象。 本教程...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/03/2007
-ms.topic: article
 ms.assetid: 8be9a51b-ea6b-46c7-bfa2-476d9b14c24c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a2a4042303fe507af449e83e36f67f4624f579cc
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: dcbd55185e7d5e3910b4f74f11554bae100057cc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371838"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806162"
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a>创建存储过程和用户定义函数使用托管代码 (VB)
 ====================

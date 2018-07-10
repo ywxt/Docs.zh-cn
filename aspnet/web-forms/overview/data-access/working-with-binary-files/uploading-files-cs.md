@@ -132,7 +132,7 @@ ms.locfileid: "37820070"
 首先，通过添加到这两个列`CategoriesDataTable`。 右键单击`CategoriesDataTable`s 标头，从上下文菜单中选择添加，然后选择列选项。 这将创建一个新`DataColumn`中名为的 DataTable `Column1`。 为此列重命名`Picture`。 从属性窗口中，设置`DataColumn`s`DataType`属性设置为`System.Byte[]`（这不是下拉列表中的一个选项; 你需要键入中）。
 
 
-[![创建 DataColumn 名为图片数据类型与 System.Byte]](uploading-files-cs/_static/image6.gif)](uploading-files-cs/_static/image7.png)
+[![创建 DataColumn 名为图片数据类型与 System.Byte](uploading-files-cs/_static/image6.gif)](uploading-files-cs/_static/image7.png)
 
 **图 6**： 创建`DataColumn`命名`Picture`其`DataType`是`System.Byte[]`([单击以查看实际尺寸的图像](uploading-files-cs/_static/image8.png))
 
