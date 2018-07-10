@@ -1,7 +1,7 @@
 ---
-title: JavaScriptServices 用于在 ASP.NET Core 中创建单页面应用程序
+title: 在ASP.NET Core中使用JavaScriptServices创建单页面应用程序
 author: scottaddie
-description: 了解有关使用 JavaScriptServices 创建由 ASP.NET Core 单页面应用程序 (SPA) 的好处。
+description: 了解在ASP.NET Core中使用 JavaScriptServices 创建单页面应用程序 (SPA) 的好处。
 ms.author: scaddie
 ms.custom: H1Hack27Feb2017
 ms.date: 08/02/2017
@@ -13,11 +13,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36279618"
 ---
-# <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a>JavaScriptServices 用于在 ASP.NET Core 中创建单页面应用程序
+# <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a>在ASP.NET Core中使用JavaScriptServices创建单页面应用程序
 
 通过[Scott Addie](https://github.com/scottaddie)和[Fiyaz Hasan](http://fiyazhasan.me/)
 
-单页面应用程序 (SPA) 是一种流行的 web 应用程序，因为其固有的丰富用户体验。 将客户端 SPA 框架或库，如集成[角](https://angular.io/)或[做出反应](https://facebook.github.io/react/)，与服务器端框架，如 ASP.NET Core 可能很困难。 [JavaScriptServices](https://github.com/aspnet/JavaScriptServices)开发的目的是减少在集成过程中的问题。 它可让在不同的客户端和服务器技术堆栈之间的无缝操作。
+单页面应用程序 (SPA) 是一种流行的 web 应用程序，因为其固有的丰富用户体验。将客户端 SPA 框架或库，如[Angular](https://angular.io/)或[React](https://facebook.github.io/react/)与服务器端框架如 ASP.NET Core 集成可能很困难。 [JavaScriptServices](https://github.com/aspnet/JavaScriptServices)开发的目的是减少在集成过程中的问题。 它可让在不同的客户端和服务器技术堆栈之间进行无缝操作。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/spa-services/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
@@ -25,14 +25,14 @@ ms.locfileid: "36279618"
 
 ## <a name="what-is-javascriptservices"></a>什么是 JavaScriptServices？
 
-JavaScriptServices 是 ASP.NET Core 的客户端技术的集合。 其目标是将 ASP.NET Core 定位为开发人员的首选服务器端平台，用于构建 Spa。
+JavaScriptServices 是 ASP.NET Core 的客户端技术的集合。 其目标是将 ASP.NET Core 定位为开发人员用于构建 Spa的首选服务器端平台。
 
 JavaScriptServices 包含三个不同的 NuGet 包：
 * [Microsoft.AspNetCore.NodeServices](https://www.nuget.org/packages/Microsoft.AspNetCore.NodeServices/) (NodeServices)
 * [Microsoft.AspNetCore.SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) (SpaServices)
 * [Microsoft.AspNetCore.SpaTemplates](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaTemplates/) (SpaTemplates)
 
-这些包的作用是如果你：
+在以下情况下将非常有用，如果你：
 * 在服务器上运行 JavaScript
 * 使用 SPA 框架或库
 * 生成客户端 Webpack 资产
@@ -43,7 +43,7 @@ JavaScriptServices 包含三个不同的 NuGet 包：
 
 ## <a name="what-is-spaservices"></a>什么是 SpaServices？
 
-用于将 ASP.NET Core 定位为开发人员的首选服务器端平台，用于构建 Spa，SpaServices 而创建。 SpaServices 不需要开发与 ASP.NET Core 的 Spa，它不会将您限制在一个特定的客户端框架。
+创建SpaServices是为了将ASP.NET Core定位为开发人员构建SPA的首选服务器端平台。 SpaServices不需要使用ASP.NET Core开发SPA，也不会将您锁定到特定的客户端框架。
 
 SpaServices 提供有用的基础结构，如所示：
 * [服务器端预呈现](#server-prerendering)
@@ -77,7 +77,7 @@ SpaServices 提供有用的基础结构，如所示：
 
 ## <a name="server-side-prerendering"></a>服务器端预呈现
 
-通用的 (也称为 isomorphic) 应用程序是能够在服务器和客户端上同时运行的 JavaScript 应用程序。 角、 响应和其他常用框架提供一个通用平台此应用程序的开发风格。 目的是第一次呈现 Node.js，通过在服务器上的 framework 组件，然后将进一步委托到客户端执行。
+通用的 (也称为 isomorphic) 应用程序是能够在服务器和客户端上同时运行的 JavaScript 应用程序。 Angular、 React和其他常用框架提供一个通用平台此应用程序的开发风格。 目的是第一次呈现 Node.js，通过在服务器上的 framework 组件，然后将进一步委托到客户端执行。
 
 ASP.NET Core[标记帮助程序](xref:mvc/views/tag-helpers/intro)由 SpaServices 简化通过调用服务器上的 JavaScript 函数的服务器端预呈现的实现。
 
@@ -106,7 +106,7 @@ ASP.NET Core[标记帮助程序](xref:mvc/views/tag-helpers/intro)由 SpaService
 
 [!code-javascript[](../client-side/spa-services/sample/SpaServicesSampleApp/webpack.config.js?range=53)]
 
-在以下的角度示例中， *ClientApp/启动 server.ts*文件利用`createServerRenderer`函数和`RenderResult`类型`aspnet-prerendering`npm 包以配置通过 Node.js 服务器呈现。 发送到服务器端呈现传递给解析函数调用，从而将包装在强类型化的 JavaScript 中的 HTML 标记`Promise`对象。 `Promise`对象的基数是它以异步方式提供到 DOM 的占位符元素中注入的页的 HTML 标记。
+在以下的Angular度示例中， *ClientApp/启动 server.ts*文件利用`createServerRenderer`函数和`RenderResult`类型`aspnet-prerendering`npm 包以配置通过 Node.js 服务器呈现。 发送到服务器端呈现传递给解析函数调用，从而将包装在强类型化的 JavaScript 中的 HTML 标记`Promise`对象。 `Promise`对象的基数是它以异步方式提供到 DOM 的占位符元素中注入的页的 HTML 标记。
 
 [!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-34,79-)]
 
@@ -116,7 +116,7 @@ ASP.NET Core[标记帮助程序](xref:mvc/views/tag-helpers/intro)由 SpaService
 
 [!code-cshtml[](../client-side/spa-services/sample/SpaServicesSampleApp/Views/Home/Index.cshtml?range=9-12)]
 
-接收`UserName`自变量使用内置的 JSON 序列化程序序列化和存储在`params.data`对象。 在以下的角度示例中，数据用于构造中的个性化的问候语`h1`元素：
+接收`UserName`自变量使用内置的 JSON 序列化程序序列化和存储在`params.data`对象。 在以下的Angular度示例中，数据用于构造中的个性化的问候语`h1`元素：
 
 [!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-21,38-52,79-)]
 
@@ -205,7 +205,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 ### <a name="prerequisites"></a>系统必备
 
 安装以下组件：
-* 客户端路由 npm 包。 使用角作为示例：
+* 客户端路由 npm 包。 使用Angular作为示例：
 
     ```console
     npm i -S @angular/router
@@ -223,7 +223,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 
 ## <a name="creating-a-new-project"></a>创建新项目
 
-JavaScriptServices 提供了预配置的应用程序模板。 SpaServices 中这些模板，与不同的框架和库如角、 响应和 Redux 结合使用。
+JavaScriptServices 提供了预配置的应用程序模板。 SpaServices 中这些模板，与不同的框架和库如Angular、 响应和 Redux 结合使用。
 
 可以通过.NET Core CLI 安装这些模板，通过运行以下命令：
 
@@ -235,11 +235,11 @@ dotnet new --install Microsoft.AspNetCore.SpaTemplates::*
 
 | 模板                                 | 短名称 | 语言 | Tags        |
 |:------------------------------------------|:-----------|:---------|:------------|
-| 带有角度的 MVC ASP.NET Core             | angular    | [C#]     | Web/MVC/SPA |
+| 带有Angular度的 MVC ASP.NET Core             | angular    | [C#]     | Web/MVC/SPA |
 | 带有 React.js 的 MVC ASP.NET Core            | react      | [C#]     | Web/MVC/SPA |
 | MVC ASP.NET Core React.js 和回顾  | reactredux | [C#]     | Web/MVC/SPA |
 
-若要创建新项目使用 SPA 模板之一时，包含**短名称**中的模板的[dotnet 新](/dotnet/core/tools/dotnet-new)命令。 以下命令将创建与 ASP.NET Core MVC 配置为在服务器端角度的应用程序：
+若要创建新项目使用 SPA 模板之一时，包含**短名称**中的模板的[dotnet 新](/dotnet/core/tools/dotnet-new)命令。 以下命令将创建与 ASP.NET Core MVC 配置为在服务器端Angular度的应用程序：
 
 ```console
 dotnet new angular
@@ -285,7 +285,7 @@ dotnet run
 
 SpaServices 模板是预配置为运行客户端测试使用[Karma](https://karma-runner.github.io/1.0/index.html)和[Jasmine](https://jasmine.github.io/)。 Jasmine 是常用于单元测试框架 JavaScript，而 Karma 是这些测试的测试运行程序。 Karma 配置为使用[Webpack 开发人员中间件](#webpack-dev-middleware)以便开发人员不需要停止并运行测试，每次进行更改。 无论是针对测试用例或测试用例本身运行的代码，则测试将自动运行。
 
-使用作为示例的角度的应用程序，已为提供两个 Jasmine 测试用例`CounterComponent`中*counter.component.spec.ts*文件：
+使用作为示例的Angular度的应用程序，已为提供两个 Jasmine 测试用例`CounterComponent`中*counter.component.spec.ts*文件：
 
 [!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/app/components/counter/counter.component.spec.ts?range=15-28)]
 
@@ -321,4 +321,4 @@ dotnet publish -c Release
 
 ## <a name="additional-resources"></a>其他资源
 
-* [角度文档](https://angular.io/docs)
+* [Angular度文档](https://angular.io/docs)
