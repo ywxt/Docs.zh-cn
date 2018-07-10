@@ -4,19 +4,16 @@ title: WebMatrix 自述文件 |Microsoft Docs
 author: rick-anderson
 description: WebMatrix 和 ASP.NET 网页 (Razor) 1.0 版自述文件
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/06/2011
-ms.topic: article
 ms.assetid: 36c5beeb-45a7-48a0-9c30-f82cdf5c5f5f
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/readme
 msc.type: content
-ms.openlocfilehash: 924bf04772a1d73c7fdfb1168090daef388438ab
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 8aa0eedb3156ca33905c106b72d5fa553a917b16
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398795"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822857"
 ---
 <a name="webmatrix-readme"></a>WebMatrix 自述文件
 ====================
@@ -155,24 +152,24 @@ ms.locfileid: "37398795"
 
 > 若要初始化 ASP.NET Razor 网站成员资格提供程序，请调用`WebSecurity.InitializeDatabaseConnection`方法。 (在 WebMatrix 中，入门网站模板包括对在此方法的调用 *\_AppStart.cshtml*文件。)如果`autoCreateTables`此方法的参数设置为 true (默认情况下它设置为 true 入门网站模板中)，并且如果一个无法识别的表名称传递给方法 （第二个参数），该方法不会引发错误。 相反，它会自动创建的表。
 > 
-> 如果你想要使用自定义用户表的成员身份，但将传递到的错误的表名称，这可能是问题`WebSecurity.InitializeDatabaseConnection`方法。 如果运行该站点的服务器位于代理服务器后面，可能需要配置中的代理信息Web.config以便能够读取来自你的站点之外的信息的文件。 例如，如果您使用帮助器，帮助者与 reCAPTCHA 服务通信，但可能无法通过代理服务器。
+> 如果你想要使用自定义用户表的成员身份，但将传递到的错误的表名称，这可能是问题`WebSecurity.InitializeDatabaseConnection`方法。 由于该方法不会默认情况下引发错误如果指定的表不存在，并且它改为创建一个新表，该应用程序可以似乎无法正常工作。 但是，依赖于自定义用户表 （和在其中的字段） 的应用程序代码可以最终失败并出现意外错误。
 > 
 > **解决方法**  
-> 同样，使用 ASP.NET Web Pages 中，如包管理器，使用源的馈送可能需要代理服务器配置。
+> 请确保名称传入`InitializeDatabaseConnection`方法匹配项的用户配置文件表中的成员资格数据库，或请确保`autoCreateTables`参数设置为 false。
 
 
 #### <a name="issue-error-message-the-admin-module-requires-access-to-appdata"></a>问题： 错误消息"管理员模块需要访问 ~/App\_数据"
 
 > 在某些情况下，尝试创建用户，或以其他方式处理 ASP.NET 成员资格系统可能会导致页后，可以显示错误*管理员模块需要访问 ~/App\_数据*。 发生这种情况是如果 IIS 或 IIS Express 下运行的帐户不具有创建和写入权限*应用程序\_数据*网站根下的文件夹。 
 > 
-> **解决方法**手动创建*应用程序\_数据*的网站的文件夹。 请确保应用程序 (通常为 NETWORK SERVICE) 下运行的 Windows 帐户具有读/写权限的应用程序的根文件夹和子文件夹，例如应用\_数据。 如果您以前安装的 Beta 1 版本的 ASP.NET Web Pages 使用 Razor 语法，然后再安装 Beta 3 版本，所有适当的程序集安装在 gac 中除[Microsoft.Web.Infrastructure.dll](https://support.microsoft.com/kb/2002980)。
+> **解决方法**手动创建*应用程序\_数据*的网站的文件夹。 请确保应用程序 (通常为 NETWORK SERVICE) 下运行的 Windows 帐户具有读/写权限的应用程序的根文件夹和子文件夹，例如应用\_数据。 知识库文章中提供了更多详细的信息[SQL Server Express 用户实例化和 ASP.net Web 应用程序项目的问题](https://support.microsoft.com/kb/2002980)。
 
 
-#### <a name="issue-failed-to-generate-a-user-instance-of-sql-server-error"></a>如果使用外部服务或使用包源中的问题，将以下元素放入应用程序的根Web.config文件：
+#### <a name="issue-failed-to-generate-a-user-instance-of-sql-server-error"></a>问题:"无法生成 SQL Server 的用户实例"错误
 
-> 有关配置代理服务器的详细信息，请参阅代理元素 （网络设置） MSDN 网站上。
+> 如果 WebMatrix Web 应用程序使用 SQL Server Express，并且在 Windows 7 或 Windows Server 2008 R2 上运行 IIS 7.5，你可能会看到一个错误，指示 SQL Server 不能在运行时检索用户的本地应用程序路径。
 > 
-> **问题:"无法加载 Microsoft.Web.Infrastructure.dll"错误 如果您以前安装的 Beta 1 版本的 ASP.NET Web Pages 使用 Razor 语法，然后再安装 Beta 3 版本，所有适当的程序集安装在 gac 中除[Microsoft.Web.Infrastructure.dll](https://support.microsoft.com/kb/2002980)。
+> **解决方法**请确保应用程序 (通常为 NETWORK SERVICE) 下运行的 Windows 帐户，包含读/写权限的应用程序的根文件夹和子文件夹，例如*应用\_数据*. 知识库文章中提供了更多详细的信息[SQL Server Express 用户实例化和 ASP.net Web 应用程序项目的问题](https://support.microsoft.com/kb/2002980)。
 
 
 #### <a name="issue-files-that-contains-package-manager-resources-or-package-manager-passwords-are-servable-under-iis-60-and-earlier"></a>问题： 包含包管理器资源或程序包管理器密码的文件是可用在 IIS 6.0 及更早版本
@@ -203,14 +200,14 @@ ms.locfileid: "37398795"
 > 若要使用 Visual Studio 中的包，而不是基于 web 的程序包管理器使用的 NuGet 扩展。 有关信息，请参阅[NuGet 文档](https://docs.microsoft.com/nuget/)。 如果你正在使用中的其他文件*应用程序\_数据*文件夹，请考虑使文件保持在其他位置来避免此问题。 如果不可行，请删除*应用程序\_offline.htm*手动文件，或者等待，直到站点自动 （默认情况下，在 30 秒后） 重新联机。
 
 
-#### <a name="issue-visual-studio-intellisense-and-project-templates-available-only-in-aspnet-mvc-version-3"></a>如果卸载.NET Framework 版本 4，然后重新安装它，则禁用使用 Razor 语法的 ASP.NET Web Pages。
+#### <a name="issue-visual-studio-intellisense-and-project-templates-available-only-in-aspnet-mvc-version-3"></a>问题： Visual Studio IntelliSense 和项目模板仅在 ASP.NET MVC 版本 3 中可用
 
-> 与页.cshtml扩展不能正确运行。
+> 安装 ASP.NET Web Pages 不同时安装工具用于 Visual Studio 的 ASP.NET Web Pages 应用程序的智能感知和项目模板等。
 > 
-> **ASP.NET 网页机根目录中注册程序集**Web.config**文件，并删除.NET Framework 中删除该文件。
+> **解决方法**若要使用 Visual Studio 中的 ASP.NET Web Pages 应用程序的智能感知和项目模板，ASP.NET MVC 3 RC 通过 Web 平台安装程序的安装或[独立安装程序](https://go.microsoft.com/fwlink/?LinkID=191797)。
 
 
-#### <a name="issue-reading-feeds-or-other-external-data-via-a-proxy-server"></a>如果你可以控制在服务器计算机，在服务器计算机上安装的更新中所述更新可启用某些 IIS 7.0 或 IIS 7.5 处理程序来处理请求的 Url 不以句点结尾。
+#### <a name="issue-reading-feeds-or-other-external-data-via-a-proxy-server"></a>问题： 读取源或其他外部数据通过代理服务器
 
 > 如果运行该站点的服务器位于代理服务器后面，可能需要配置中的代理信息*web.config*以便能够读取来自你的站点之外的信息的文件。 例如，如果您使用`ReCaptcha`帮助器，帮助者与 reCAPTCHA 服务通信，但可能无法通过代理服务器。 同样，使用 ASP.NET Web Pages 中，如包管理器，使用源的馈送可能需要代理服务器配置。
 > 
