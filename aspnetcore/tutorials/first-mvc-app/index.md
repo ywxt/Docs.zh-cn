@@ -5,12 +5,12 @@ description: 查看在 Windows 上使用 Visual Studio 的 ASP.NET Core MVC 简�
 ms.author: riande
 ms.date: 10/26/2017
 uid: tutorials/first-mvc-app/index
-ms.openlocfilehash: 78d567589933b641bf5202d230b25034ff06943c
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: bd6bc5ba77da506527ddc024f73b4eb195401e46
+ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276329"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37938113"
 ---
 # <a name="create-a-web-app-with-aspnet-core-mvc-on-windows-with-visual-studio"></a>在带有 Visual Studio 的 Windows 上使用 ASP.NET Core MVC 创建 Web 应用
 
