@@ -4,19 +4,16 @@ title: ASP.NET 运行状况监视 (VB) 的日志记录错误详细信息 |Micros
 author: rick-anderson
 description: Microsoft 的运行状况监控系统提供了简单且可自定义的方式记录各种 web 事件，包括未经处理的异常。 本教程介绍如何对...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/09/2009
-ms.topic: article
 ms.assetid: 09a6c74e-936a-4c04-8547-5bb313a4e4a3
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1ed7b63989dc6ea7e46210a45612e2672a662177
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: a19c1dc6ad5b3b45501befded4d8f14f7549b019
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382467"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809918"
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>ASP.NET 运行状况监视 (VB) 的日志记录错误详细信息
 ====================

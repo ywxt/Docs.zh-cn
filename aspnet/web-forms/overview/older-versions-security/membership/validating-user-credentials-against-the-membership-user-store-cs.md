@@ -4,19 +4,16 @@ title: 正在验证用户凭据对成员身份用户存储区 (C#) |Microsoft Do
 author: rick-anderson
 description: 在本教程中，我们将说明如何验证用户的凭据针对的成员身份用户存储中使用的编程方法和 Login 控件...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/18/2008
-ms.topic: article
 ms.assetid: 61aa4e08-aa81-4aeb-8ebe-19ba7a65e04c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e0675bc814d293c6b7eff1789622158f907ebdff
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: e8c46d09a7ebab19204f7c439ec4333e0c36b73e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37395274"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37828950"
 ---
 <a name="validating-user-credentials-against-the-membership-user-store-c"></a>针对成员身份用户存储 (C#) 验证用户凭据
 ====================

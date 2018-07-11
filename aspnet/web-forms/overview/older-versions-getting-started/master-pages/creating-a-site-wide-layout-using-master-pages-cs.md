@@ -4,19 +4,16 @@ title: 创建站点范围内布局使用母版页 (C#) |Microsoft Docs
 author: rick-anderson
 description: 本教程会演示母版页基础知识。 也就是说，主页面，是什么如何一个创建主页面，什么是内容的占位符，如何执行一个 cr...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/21/2008
-ms.topic: article
 ms.assetid: 78f8d194-03b9-44a5-8255-90e7cd1c2ee1
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cea5894b269209326391de49003ec1d19c8e87f2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: cf9264f6569fe1a5c0369b17a2358c5207cad6ad
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398545"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829267"
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-c"></a>创建站点范围内布局使用母版页 (C#)
 ====================

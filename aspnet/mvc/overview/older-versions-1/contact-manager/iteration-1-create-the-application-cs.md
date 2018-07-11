@@ -4,19 +4,16 @@ title: 迭代 1 – 创建应用程序 (C#) |Microsoft Docs
 author: microsoft
 description: 在第一次迭代中，我们创建联系人管理器中的最简单方法可能。 我们将添加对基本数据库操作的支持： 创建、 读取、 更新和 D....
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2009
-ms.topic: article
 ms.assetid: db0f160b-901c-46d3-865e-7ab6cd4ed68d
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
 msc.type: authoredcontent
-ms.openlocfilehash: aa79379c721456a62ee62e37781e51f61e16d3bc
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 0d756541d2dc911154afb427e52eb5cfdd5d59b4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403040"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821357"
 ---
 <a name="iteration-1--create-the-application-c"></a>迭代 1 – 创建应用程序 (C#)
 ====================
@@ -182,33 +179,33 @@ ASP.NET MVC 项目模板包括用于控制器和视图的示例文件。 在创�
 
 通过选择列并单击带有密钥的图标的按钮可将列标记为 Primary Key 列中。 某列标记为 Primary Key 列后，列的旁边会显示密钥的一个图标 （请参阅图 6）。
 
-运行你的应用程序时，会图 25 中显示错误页。 图 25*： 没有默认控制器 (单击以查看实际尺寸的图像)
+完成创建表后，单击保存按钮 （带有软盘图标的按钮） 以保存新表。 将新表命名*联系人*。
 
-我们需要更新使用而不是主控制器的联系控制器在 Global.asax 文件中的默认路由。 打开 Global.asax 文件并修改默认控制器使用的默认路由 （请参阅代码清单 10）。 代码清单 10-Global.asax.cs
+之后创建的联系人数据库表的完成，应将某些记录添加到表中。 右键单击服务器资源管理器窗口中的联系人表，然后选择菜单选项**显示表数据**。 将显示为网格中输入一个或多个联系人。
 
-## <a name="creating-the-data-model"></a>进行这些更改后，联系人管理器将正常运行。
+## <a name="creating-the-data-model"></a>创建数据模型
 
-现在，它将用作默认控制器 Contact 控制器类。 在此第一次迭代中，我们创建一个基本的联系人管理器应用程序中的最快方法可能。
+ASP.NET MVC 应用程序包含的模型、 视图和控制器。 我们首先创建一个表示联系人表，我们在上一节中创建的模型类。
 
-我们可利用 Visual Studio 自动生成有关我们的控制器和视图的初始代码了。
+在本教程中，我们可以使用 Microsoft Entity Framework 自动从数据库生成模型类。
 
 > [!NOTE] 
 > 
-> 我们还利用了实体框架可以自动生成我们的数据库模型类。 目前，我们可以列出、 创建、 编辑和删除联系人与联系人管理器应用程序记录。
+> ASP.NET MVC 框架不依赖于 Microsoft Entity Framework 以任何方式。 可以使用备用数据库访问技术，包括 NHibernate、 LINQ to SQL 或 ADO.NET 使用 ASP.NET MVC。
 
 
-换而言之，我们可以执行所有数据库驱动的 web 应用程序所需的基本数据库操作。
+请执行以下步骤来创建数据模型类：
 
-1. 遗憾的是，我们的应用程序有一些问题。 第一，我不愿意再不得不承认，联系人管理器应用程序不是最具吸引力的应用程序。
-2. 它需要一些设计工作。 在下一个迭代中，我们将介绍如何更改默认视图母版页和级联样式表，以改善应用程序的外观。 其次，我们尚未实现任何窗体验证。
-3. 例如，没有执行任何操作，以防用户提交创建联系人窗体而无需任何窗体字段输入值。
-4. 此外，可以输入无效的电话号码和电子邮件地址。
-5. 我们首先来解决这个问题在迭代 #3 中的窗体验证。 最后，并最重要的是，联系人管理器应用程序的当前迭代无法轻松地修改或维护。 例如，数据库访问逻辑的控制器操作中已包含右。 这意味着，我们不能修改数据访问代码，而无需修改我们的控制器。
+1. 右键单击解决方案资源管理器窗口中的 Models 文件夹，然后选择**添加、 新项**。 **添加新项**对话框 （请参见图 6）。
+2. 选择**数据**类别和**ADO.NET 实体数据模型**模板。 命名你的数据模型*ContactManagerModel.edmx*然后单击**添加**按钮。 实体数据模型向导将显示 （请参阅图 7）。
+3. 在中**选择模型内容**步骤中，选择**从数据库生成**（请参阅图 7）。
+4. 在中**选择数据连接**步骤，选择 ContactManagerDB.mdf 数据库并输入名称*ContactManagerDBEntities* （请参阅图 8） 的实体连接设置。
+5. 在中**选择数据库对象**步骤中，选择标记为的表 （请参阅图 9） 复选框。 数据模型将包括包含 （仅一个联系人表没有） 在数据库中的所有表。 输入的命名空间*模型*。 单击完成按钮以完成向导。
 
 
 [![新建项目对话框](iteration-1-create-the-application-cs/_static/image6.jpg)](iteration-1-create-the-application-cs/_static/image11.png)
 
-**在后续迭代中，我们将探讨我们可以实现以使联系人管理器更具弹性，若要更改的软件设计模式。
+**图 06**: 添加新项对话框 ([单击以查看实际尺寸的图像](iteration-1-create-the-application-cs/_static/image12.png))
 
 
 [![新建项目对话框](iteration-1-create-the-application-cs/_static/image7.jpg)](iteration-1-create-the-application-cs/_static/image13.png)

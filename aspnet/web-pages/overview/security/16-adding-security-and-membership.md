@@ -124,7 +124,7 @@ ms.locfileid: "37817313"
       ![安全的成员身份 6](16-adding-security-and-membership/_static/image5.png)
 
       > [!NOTE]
-      > 默认情况下，ASP.NET web 页面将凭据发送到服务器以明文形式 （作为用户可读文本）。 生产站点应使用安全 HTTP (https://，也称为*安全套接字层*或 SSL) 与服务器交换的敏感信息进行加密。 可以所需的电子邮件要发送的消息通过设置使用 SSL`WebMail.EnableSsl=true`如前面的示例中所示。 有关 SSL 的详细信息，请参阅[保护 Web 通信： 证书、 SSL 和 https://](https://go.microsoft.com/fwlink/?LinkId=208660)。
+      > 默认情况下，ASP.NET web 页面将凭据发送到服务器以明文形式 （作为用户可读文本）。 生产站点应使用安全 HTTP (https:// ，也称为*安全套接字层*或 SSL) 与服务器交换的敏感信息进行加密。 可以所需的电子邮件要发送的消息通过设置使用 SSL`WebMail.EnableSsl=true`如前面的示例中所示。 有关 SSL 的详细信息，请参阅[保护 Web 通信： 证书、 SSL 和 https://](https://go.microsoft.com/fwlink/?LinkId=208660)。
 
 ## <a name="additional-membership-functionality-in-the-site"></a>在站点中的其他成员资格功能
 

@@ -4,19 +4,16 @@ title: Web Matrix 和 ASP.NET 网页 (Razor) Beta 3 版本自述文件 |Microsof
 author: rick-anderson
 description: Web Matrix 和 ASP.NET Web Pages (Razor) Beta 3 版本自述文件
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/10/2011
-ms.topic: article
 ms.assetid: ffa3d5c9-91e5-4da3-b409-560b0c7fbbf0
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/readme/beta3
 msc.type: content
-ms.openlocfilehash: 5aa609bf31499485dc7a1298fa689f3a7cee4774
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 16b324e555b5450fc1e05c63e7e19985a2d02b89
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363528"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831827"
 ---
 <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix 和 ASP.NET Web Pages (Razor) Beta 3 版本自述文件
 ====================
@@ -210,56 +207,56 @@ ms.locfileid: "37363528"
 
 > 若要初始化 ASP.NET Razor 网站成员资格提供程序，请调用`WebSecurity.InitializeDatabaseConnection`方法。 (在 WebMatrix 中，入门网站模板包括对在此方法的调用 *\_AppStart.cshtml*文件。)如果`autoCreateTables`此方法的参数设置为 true (默认情况下它设置为 true 入门网站模板中)，并且如果一个无法识别的表名称传递给方法 （第二个参数），该方法不会引发错误。 相反，它会自动创建的表。
 > 
-> 如果你想要使用自定义用户表的成员身份，但将传递到的错误的表名称，这可能是问题`WebSecurity.InitializeDatabaseConnection`方法。 如果运行该站点的服务器位于代理服务器后面，可能需要配置中的代理信息Web.config以便能够读取来自你的站点之外的信息的文件。 例如，如果您使用帮助器，帮助者与 reCAPTCHA 服务通信，但可能无法通过代理服务器。
+> 如果你想要使用自定义用户表的成员身份，但将传递到的错误的表名称，这可能是问题`WebSecurity.InitializeDatabaseConnection`方法。 由于该方法不会默认情况下引发错误如果指定的表不存在，并且它改为创建一个新表，该应用程序可以似乎无法正常工作。 但是，依赖于自定义用户表 （和在其中的字段） 的应用程序代码可以最终失败并出现意外错误。
 > 
 > **解决方法**  
-> 同样，使用 ASP.NET Web Pages 中，如包管理器，使用源的馈送可能需要代理服务器配置。
+> 请确保名称传入`InitializeDatabaseConnection`方法匹配项的用户配置文件表中的成员资格数据库，或请确保`autoCreateTables`参数设置为 false。
 
 
-#### <a name="issue-failed-to-generate-a-user-instance-of-sql-server-error"></a>如果使用外部服务或使用包源中的问题，将以下元素放入应用程序的根Web.config文件：
+#### <a name="issue-failed-to-generate-a-user-instance-of-sql-server-error"></a>问题:"无法生成 SQL Server 的用户实例"错误
 
-> 有关配置代理服务器的详细信息，请参阅代理元素 （网络设置） MSDN 网站上。
+> 如果 WebMatrix Web 应用程序使用 SQL Server Express，并且在 Windows 7 或 Windows Server 2008 R2 上运行 IIS 7.5，你可能会看到一个错误，指示 SQL Server 不能在运行时检索用户的本地应用程序路径。
 > 
-> **问题:"无法加载 Microsoft.Web.Infrastructure.dll"错误 如果您以前安装的 Beta 1 版本的 ASP.NET Web Pages 使用 Razor 语法，然后再安装 Beta 3 版本，所有适当的程序集安装在 gac 中除[Microsoft.Web.Infrastructure.dll](https://support.microsoft.com/kb/2002980)。
+> **解决方法**请确保应用程序 (通常为 NETWORK SERVICE) 下运行的 Windows 帐户，包含读/写权限的应用程序的根文件夹和子文件夹，例如*应用\_数据*. 知识库文章中提供了更多详细的信息[SQL Server Express 用户实例化和 ASP.net Web 应用程序项目的问题](https://support.microsoft.com/kb/2002980)。
 
 
-#### <a name="issue-in-visual-studio-namespaces-for-custom-assemblies-dlls-are-not-imported-automatically"></a>因此，在运行 ASP.NET Razor 页时，您看到错误，指示Microsoft.Web.Infrastructure.dll无法加载。
+#### <a name="issue-in-visual-studio-namespaces-for-custom-assemblies-dlls-are-not-imported-automatically"></a>问题： 在 Visual Studio 中，自定义程序集 (Dll) 的命名空间不自动导入
 
-> 如果加载的干净计算机上的 Beta 3 版本不会出现此问题。 在控制面板中，卸载 ASP.NET Web Pages。 然后重新安装 Beta 3 版本。
-> 
-> **解决方法**  
-> 问题： 卸载.NET Framework 版本 4 禁用使用 Razor 语法的 ASP.NET Web Pages
-
-
-#### <a name="issue-visual-studio-intellisense-and-project-templates-available-only-in-aspnet-mvc-version-3"></a>如果卸载.NET Framework 版本 4，然后重新安装它，则禁用使用 Razor 语法的 ASP.NET Web Pages。
-
-> 与页.cshtml扩展不能正确运行。
-> 
-> **ASP.NET 网页机根目录中注册程序集**Web.config**文件，并删除.NET Framework 中删除该文件。
-
-
-#### <a name="issue-lthelpergt-class-cannot-be-found-error"></a>重新安装.NET Framework 安装的配置文件的新版本，但不会将引用添加 ASP.NET Web Pages 的程序集。
-
-> 解决方法后重新安装.NET Framework，请重新安装 ASP.NET Web Pages 使用 Razor 语法。 这将添加到下面的元素Web.config机根目录，这通常是在以下位置中的文件： 问题： 使用 ASP.NET 的 Bin 文件夹中的程序集之前部署的应用程序遇到错误 在部署期间，ASP.NET Web Pages 程序集的副本 (例如， *Microsoft.WebPages.dll*) 到`Twitter`Bin的服务器上的网站的文件夹。
+> 如果在 Visual Studio 中的项目中使用自定义程序集，这些程序集中声明的命名空间将不自动导入在设计时。 因此，对自定义类型的引用可能无法在设计时识别并标记为不能识别 Visual Studio 中 （使用"波形曲线"）。 仅在设计时在 Visual Studio; 中出现此问题应用程序本身能够正常运行。
 > 
 > **解决方法**  
-> (可能在部署期间自动发生这或者是因为开发人员显式复制程序集。) 但是，当安装 Beta 3 版本，则错误时，如找不到某些类型的错误。
+> 包括`using`语句 (`imports`在 Visual Basic 中)，它引用在设计时无法识别的实体。
 
 
-#### <a name="issue-deploying-beta-3-aspnet-razor-assemblies-to-the-bin-folder-might-not-work-on-hosting-sites"></a>这是因为多个 ASP.NET Web Pages 类型移动到不同的命名空间对于 Beta 3 版本。
+#### <a name="issue-visual-studio-intellisense-and-project-templates-available-only-in-aspnet-mvc-version-3"></a>问题： Visual Studio IntelliSense 和项目模板仅在 ASP.NET MVC 版本 3 中可用
 
-> 清除*Bin*文件夹部署的应用程序的新程序集复制到的文件夹 （或重新部署应用程序），然后重新启动该应用程序。
+> 安装 ASP.NET Web Pages 不同时安装工具用于 Visual Studio 的 ASP.NET Web Pages 应用程序的智能感知和项目模板等。
+> 
+> **解决方法**若要使用 Visual Studio 中的 ASP.NET Web Pages 应用程序的智能感知和项目模板，ASP.NET MVC 3 RC 通过 Web 平台安装程序的安装或[独立安装程序](https://go.microsoft.com/fwlink/?LinkID=191797)。
+
+
+#### <a name="issue-lthelpergt-class-cannot-be-found-error"></a>问题:"&lt;帮助器&gt;找不到类"错误
+
+> 升级到 Beta 3 后，可能会看到错误的帮助器类 (例如，`Facebook`类) 不能找不到。 在 Beta 2 开始，一直在 Beta 3 中，帮助程序已被移到必须显式安装的包。 不升级现有的站点中包含这些包;这包括中的站点*\My Documents\IISExpress*或*\My Documents\My 网站*文件夹。 具体而言，您会看到此错误，如果使用中的默认站点*我的网站*(WebSite1)，其中包括对引用`Twitter`帮助器。
+> 
+> **解决方法**  
+> 注释掉对运行的站点中任何帮助程序调用*\_管理员*页，并安装包或包含你想要使用的帮助器的包。 安装此包后，可以取消注释引用帮助程序的行。
+
+
+#### <a name="issue-deploying-beta-3-aspnet-razor-assemblies-to-the-bin-folder-might-not-work-on-hosting-sites"></a>问题： Beta 3 ASP.NET Razor 程序集部署到 Bin 文件夹可能不适用于托管站点
+
+> 如果将 ASP.NET Web Pages 网站部署到托管站点，并将 ASP.NET Razor Beta 3 程序集部署到的站点*Bin*文件夹中，你可能会遇到错误，包括以下：
 > 
 > `Could not load type 'Microsoft.Web.Infrastructure.DynamicModuleHelper.DynamicModuleUtility' from assembly 'Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'.`
 > 
-> 问题： 无扩展名的 Url 不到在 IIS 7 或 IIS 7.5 上的.cshtml/.vbhtml 文件 在 IIS 7 或 IIS 7.5 上，使用类似于以下 URL 的请求不能将查找具有的页 *.cshtml*或.vbhtml扩展：
+> 如果宿主提供程序已安装到服务器的全局应用程序缓存 (GAC) 的 ASP.NET Web Pages Beta 1 程序集，则可能发生此问题。 程序集位于 gac 中本地安装的程序集通过获取优先*Bin*文件夹。
 > 
-> **由于 URL 重写未启用默认情况下为 IIS 7 或 IIS 7.5，则会产生问题。 很可能方案是使用本地 IIS Express，测试时未看到该问题，但在你的网站部署到托管网站时遇到。
+> **解决方法**联系托管提供商，以确认你看到的错误是由于提供程序的版本之间发生冲突的程序集和你们的。 如果是这样，请求托管提供商更新服务器的 GAC 中的程序集。
 
 
-#### <a name="issue-reading-feeds-or-other-external-data-via-a-proxy-server"></a>如果你可以控制在服务器计算机，在服务器计算机上安装的更新中所述更新可启用某些 IIS 7.0 或 IIS 7.5 处理程序来处理请求的 Url 不以句点结尾。
+#### <a name="issue-reading-feeds-or-other-external-data-via-a-proxy-server"></a>问题： 读取源或其他外部数据通过代理服务器
 
-> 如果您没有对服务器计算机的控制 （例如，要部署到托管的网站），将以下代码添加到该网站*Web.config*文件： 例如，如果您使用`ReCaptcha`帮助器，帮助者与 reCAPTCHA 服务通信，但可能无法通过代理服务器。 同样，使用 ASP.NET Web Pages 中，如包管理器，使用源的馈送可能需要代理服务器配置。
+> 如果运行该站点的服务器位于代理服务器后面，可能需要配置中的代理信息*Web.config*以便能够读取来自你的站点之外的信息的文件。 例如，如果您使用`ReCaptcha`帮助器，帮助者与 reCAPTCHA 服务通信，但可能无法通过代理服务器。 同样，使用 ASP.NET Web Pages 中，如包管理器，使用源的馈送可能需要代理服务器配置。
 > 
 > 如果使用外部服务或使用包源中的问题，将以下元素放入应用程序的根*Web.config*文件：
 > 

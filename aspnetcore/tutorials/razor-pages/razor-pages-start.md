@@ -5,12 +5,12 @@ description: 了解构建 ASP.NET Core Razor 页面 Web 应用的基础知识。
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 7148f2d944bd1978b1a83278dfed9051f192e4dd
-ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
+ms.openlocfilehash: 10e9174b0bf094f7a4ea820a5afcf2705f900327
+ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37144932"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37433901"
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core"></a>在 ASP.NET Core 中开始使用 Razor Pages
 
@@ -38,7 +38,7 @@ ms.locfileid: "37144932"
 
 ## <a name="prerequisites"></a>系统必备
 
-[!INCLUDE [](~/includes/net-core-prereqs-windows.md) [](~/includes/net-core-prereqs-windows.md)]
+[!INCLUDE [Prerequisites](~/includes/net-core-prereqs-windows.md)]
 
 ## <a name="create-a-razor-web-app"></a>创建 Razor Web 应用
 
@@ -72,7 +72,7 @@ Visual Studio 模板创建初学者项目：
 
 ## <a name="prerequisites"></a>系统必备
 
-[!INCLUDE [](~/includes/net-core-prereqs-windows.md) [](~/includes/net-core-prereqs-windows.md)]
+[!INCLUDE [Prerequisites](~/includes/net-core-prereqs-windows.md)]
 
 ## <a name="create-a-razor-web-app"></a>创建 Razor Web 应用
 

@@ -4,19 +4,16 @@ title: 通过大量的数据 (VB) 有效分页 |Microsoft Docs
 author: rick-anderson
 description: 使用大量的数据，作为其基础数据源控件 retriev 时，数据呈现控件的默认分页选项是不合适...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/15/2006
-ms.topic: article
 ms.assetid: 3e20e64a-8808-4b49-88d6-014e2629d56f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7d3b9f816e8e940d3ba109aeaf6055616f38d12a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 9b00e18287bdb791a353b7ebd1bbb6cc0ab586b5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382674"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805501"
 ---
 <a name="efficiently-paging-through-large-amounts-of-data-vb"></a>有效分页通过大量数据 (VB)
 ====================

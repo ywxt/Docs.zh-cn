@@ -4,19 +4,16 @@ title: 跨两个页面 (VB) 筛选母版/详细信息 |Microsoft Docs
 author: rick-anderson
 description: 在本教程中我们将使用 GridView，若要列出数据库中的供应商实现此模式。 在 GridView 中的每个供应商一行将包含 Vie...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: 361d6a44-3f1f-4daf-85df-d4c2b8bf065d
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 80b2ba88237b0eb956f69cd144bc919e1b06def0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 88bd06c8b9e4a4b369c538c902b213e444ad6790
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388491"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810710"
 ---
 <a name="masterdetail-filtering-across-two-pages-vb"></a>母版/详细信息筛选跨两个页面 (VB)
 ====================

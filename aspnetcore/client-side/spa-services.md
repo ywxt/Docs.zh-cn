@@ -1,4 +1,3 @@
----
 title: 在ASP.NET Core中使用JavaScriptServices创建单页面应用程序
 author: scottaddie
 description: 了解在ASP.NET Core中使用 JavaScriptServices 创建单页面应用程序 (SPA) 的好处。
@@ -6,8 +5,8 @@ ms.author: scaddie
 ms.custom: H1Hack27Feb2017
 ms.date: 08/02/2017
 uid: client-side/spa-services
-ms.openlocfilehash: c3f454ddd91fadf94e4ee4faa8930d8a89d13833
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6ac922d82e5c93343cd0e9df312719c6df121dcb
+ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
@@ -106,7 +105,7 @@ ASP.NET Core[标记帮助程序](xref:mvc/views/tag-helpers/intro)由 SpaService
 
 [!code-javascript[](../client-side/spa-services/sample/SpaServicesSampleApp/webpack.config.js?range=53)]
 
-在以下的Angular度示例中， *ClientApp/启动 server.ts*文件利用`createServerRenderer`函数和`RenderResult`类型`aspnet-prerendering`npm 包以配置通过 Node.js 服务器呈现。 发送到服务器端呈现传递给解析函数调用，从而将包装在强类型化的 JavaScript 中的 HTML 标记`Promise`对象。 `Promise`对象的基数是它以异步方式提供到 DOM 的占位符元素中注入的页的 HTML 标记。
+在以下的Angular示例中， *ClientApp/启动 server.ts*文件利用`createServerRenderer`函数和`RenderResult`类型`aspnet-prerendering`npm 包以配置通过 Node.js 服务器呈现。 发送到服务器端呈现传递给解析函数调用，从而将包装在强类型化的 JavaScript 中的 HTML 标记`Promise`对象。 `Promise`对象的基数是它以异步方式提供到 DOM 的占位符元素中注入的页的 HTML 标记。
 
 [!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-34,79-)]
 
@@ -116,7 +115,7 @@ ASP.NET Core[标记帮助程序](xref:mvc/views/tag-helpers/intro)由 SpaService
 
 [!code-cshtml[](../client-side/spa-services/sample/SpaServicesSampleApp/Views/Home/Index.cshtml?range=9-12)]
 
-接收`UserName`自变量使用内置的 JSON 序列化程序序列化和存储在`params.data`对象。 在以下的Angular度示例中，数据用于构造中的个性化的问候语`h1`元素：
+接收`UserName`自变量使用内置的 JSON 序列化程序序列化和存储在`params.data`对象。 在以下的Angular示例中，数据用于构造中的个性化的问候语`h1`元素：
 
 [!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-21,38-52,79-)]
 
@@ -235,11 +234,11 @@ dotnet new --install Microsoft.AspNetCore.SpaTemplates::*
 
 | 模板                                 | 短名称 | 语言 | Tags        |
 |:------------------------------------------|:-----------|:---------|:------------|
-| 带有Angular度的 MVC ASP.NET Core             | angular    | [C#]     | Web/MVC/SPA |
+| 带有Angular的 MVC ASP.NET Core             | angular    | [C#]     | Web/MVC/SPA |
 | 带有 React.js 的 MVC ASP.NET Core            | react      | [C#]     | Web/MVC/SPA |
 | MVC ASP.NET Core React.js 和回顾  | reactredux | [C#]     | Web/MVC/SPA |
 
-若要创建新项目使用 SPA 模板之一时，包含**短名称**中的模板的[dotnet 新](/dotnet/core/tools/dotnet-new)命令。 以下命令将创建与 ASP.NET Core MVC 配置为在服务器端Angular度的应用程序：
+若要创建新项目使用 SPA 模板之一时，包含**短名称**中的模板的[dotnet 新](/dotnet/core/tools/dotnet-new)命令。 以下命令将创建与 ASP.NET Core MVC 配置为在服务器端Angular的应用程序：
 
 ```console
 dotnet new angular
@@ -285,7 +284,7 @@ dotnet run
 
 SpaServices 模板是预配置为运行客户端测试使用[Karma](https://karma-runner.github.io/1.0/index.html)和[Jasmine](https://jasmine.github.io/)。 Jasmine 是常用于单元测试框架 JavaScript，而 Karma 是这些测试的测试运行程序。 Karma 配置为使用[Webpack 开发人员中间件](#webpack-dev-middleware)以便开发人员不需要停止并运行测试，每次进行更改。 无论是针对测试用例或测试用例本身运行的代码，则测试将自动运行。
 
-使用作为示例的Angular度的应用程序，已为提供两个 Jasmine 测试用例`CounterComponent`中*counter.component.spec.ts*文件：
+使用作为示例的Angular的应用程序，已为提供两个 Jasmine 测试用例`CounterComponent`中*counter.component.spec.ts*文件：
 
 [!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/app/components/counter/counter.component.spec.ts?range=15-28)]
 
@@ -321,4 +320,4 @@ dotnet publish -c Release
 
 ## <a name="additional-resources"></a>其他资源
 
-* [Angular度文档](https://angular.io/docs)
+* [Angular文档](https://angular.io/docs)
