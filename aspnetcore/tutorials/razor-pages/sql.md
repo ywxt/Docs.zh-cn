@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: 1fd86fb61b7f5ddb760992ac10f9bee43ab831cf
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 255faf12064aa424d51fb6faa801884c474bd288
+ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272138"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37889478"
 ---
 # <a name="work-with-sql-server-localdb-and-aspnet-core"></a>使用 SQL Server LocalDB 和 ASP.NET Core
 
@@ -108,7 +108,7 @@ if (context.Movie.Any())
 
 ::: moniker-end
 
-生产应用不会调用 `Database.Migrate`。 将它添加到上面的代码中，以防止在未运行 `Update-Database` 时出现以下异常：
+生产应用不会调用 `Database.Migrate`。 它会添加到上面的代码中，以防止在未运行 `Update-Database` 时出现以下异常：
 
 SqlException：无法打开登录请求的数据库“RazorPagesMovieContext-21”。 登录失败。
 用户“用户名”登录失败。

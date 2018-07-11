@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core 如何提供服务和中间件，将内容本�
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: 0f48490af5805e4351c983f3ae519268c8e9c7a7
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9647b605d4b9a23b365085e3677fb0e9b93f0da4
+ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274126"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37434008"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core 全球化和本地化
 
@@ -158,6 +158,27 @@ Razor 视图中使用 `@inject IViewLocalizer` 的资源文件遵循类似的模
 * Resources/Views.Home.About.fr.resx
 
 如果不使用 `ResourcesPath` 选项，视图的 .resx 文件将位于视图所在的文件夹。
+
+### <a name="rootnamespaceattribute"></a>RootNamespaceAttribute 
+
+[RootNamespace](/dotnet/api/microsoft.extensions.localization.rootnamespaceattribute?view=aspnetcore-2.1) 属性在程序集的根命名空间不同于程序集名称时，提供程序集的根命名空间。 
+
+如果程序集的根命名空间不同于程序集名称：
+
+* 默认情况下无法进行本地化。
+* 因程序集内搜索资源的方式导致本地化失败。 `RootNamespace` 是生成时间值，不可用于正在执行的进程。 
+
+如果 `RootNamespace` 不同于 `AssemblyName`，请在 AssemblyInfo.cs 中包括以下内容（参数值替换为实际值）：
+
+```Csharp
+using System.Reflection;
+using Microsoft.Extensions.Localization;
+
+[assembly: ResourceLocation("Resource Folder Name")]
+[assembly: RootNamespace("App Root Namespace")]
+```
+
+上述代码可成功解析 resx 文件。
 
 ## <a name="culture-fallback-behavior"></a>区域性回退行为
 

@@ -5,14 +5,14 @@ description: 发现 ASP.NET Core 部分标记帮助程序以及每个属性在�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 04/13/2018
+ms.date: 07/06/2018
 uid: mvc/views/tag-helpers/builtin-th/partial-tag-helper
-ms.openlocfilehash: fea84621f185c4113147cf0dfd173704bc7b6d81
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 2272b2ecdd6f2b0a759356b1f03dd5c495ea1c91
+ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274396"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37889098"
 ---
 # <a name="partial-tag-helper-in-aspnet-core"></a>ASP.NET Core 中的部分标记帮助程序
 
@@ -25,7 +25,7 @@ ms.locfileid: "36274396"
 Partial 标记帮助程序用于在 Razor 页面和 MVC 应用中呈现[分部视图](xref:mvc/views/partial)。 请考虑：
 
 * 需要 ASP.NET Core 2.1 或更高版本。
-* 是 [HTML 帮助程序语法](xref:mvc/views/partial#referencing-a-partial-view)的替代方法。
+* 是 [HTML 帮助程序语法](xref:mvc/views/partial#reference-a-partial-view)的替代方法。
 * 以异步方式呈现分部视图。
 
 用于呈现分部视图的 HTML 帮助程序选项包括：
@@ -81,7 +81,17 @@ Partial 标记帮助程序用于在 Razor 页面和 MVC 应用中呈现[分部�
 
 在此示例中，`ViewData["IsNumberReadOnly"]` 的值确定 Number 字段是否显示为只读。
 
+## <a name="migrate-from-an-html-helper"></a>从 HTML 帮助程序迁移
+
+请考虑以下异步 HTML 帮助程序示例。 循环访问和显示产品集合。 依据 `PartialAsync` 方法的第一个参数，加载 _ProductPartial.cshtml 分部视图。 `Product` 模型的实例传递给分部视图进行绑定。
+
+[!code-cshtml[](samples/TagHelpersBuiltIn/Pages/Products.cshtml?name=snippet_HtmlHelper&highlight=3)]
+
+以下分部标记帮助程序可实现与 `PartialAsync` HTML 帮助程序相同的异步呈现行为。 `model` 属性分配有 `Product` 模型实例以绑定到分部视图。
+
+[!code-cshtml[](samples/TagHelpersBuiltIn/Pages/Products.cshtml?name=snippet_TagHelper&highlight=3)]
+
 ## <a name="additional-resources"></a>其他资源
 
-* [部分视图](xref:mvc/views/partial)
-* [弱类型数据（ViewData、ViewData 属性和 ViewBag）](xref:mvc/views/overview#weakly-typed-data-viewdata-viewdata-attribute-and-viewbag)
+* <xref:mvc/views/partial>
+* <xref:mvc/views/overview#weakly-typed-data-viewdata-viewdata-attribute-and-viewbag>

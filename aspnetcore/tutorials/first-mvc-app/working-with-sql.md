@@ -5,12 +5,12 @@ description: 了解如何在简单的 ASP.NET Core MVC 应用中使用 SQL Serve
 ms.author: riande
 ms.date: 03/07/2017
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: 05bd76038e5856d2a3e392e3b00e589dbc26fcc6
-ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
+ms.openlocfilehash: 2981035222681e6badbb0d917e4091baa96b9af1
+ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36961053"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37889124"
 ---
 # <a name="work-with-sql-server-localdb-in-aspnet-core"></a>在 ASP.NET Core 中使用 SQL Server LocalDB
 
@@ -70,6 +70,8 @@ if (context.Movie.Any())
 
 <a name="si"></a>
 ### <a name="add-the-seed-initializer"></a>添加种子初始值设定项
+
+将 Program.cs 的内容替换为以下代码：
 
 ::: moniker range=">= aspnetcore-2.1"
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Program.cs)]

@@ -1,17 +1,17 @@
 ---
 title: 处理 ASP.NET Core 中的错误
 author: ardalis
-description: 了解如何处理 ASP.NET Core 应用程序中的错误。
+description: 了解如何处理 ASP.NET Core 应用中的错误。
 ms.author: tdykstra
-ms.custom: H1Hack27Feb2017
-ms.date: 11/30/2016
+ms.custom: mvc
+ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: 2fe46ecc32d61a7fafb2ad6e2a35456476608251
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 126a782bfd32f9ecd0596045218371ef5ccc82f2
+ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273704"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37894135"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>处理 ASP.NET Core 中的错误
 
@@ -19,36 +19,52 @@ ms.locfileid: "36273704"
 
 本文介绍了处理 ASP.NET Core 应用中常见错误的一些方法。
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/samples/2.x/ErrorHandlingSample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
 ## <a name="the-developer-exception-page"></a>开发人员异常页
 
-如需在应用中配置可以显示异常详细信息的页面，请先安装 `Microsoft.AspNetCore.Diagnostics` NuGet 包并将以下代码行添加到 Startup 类 [Startup 类配置方法](xref:fundamentals/startup)：
+::: moniker range=">= aspnetcore-2.1"
 
-[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
+要将应用配置为显示有关异常的详细信息的页面，请使用开发人员异常页。 该页面通过 [Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)中的 [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 包提供。 向 `Startup.Configure` 方法添加代码行：
 
-`UseDeveloperExceptionPage` 需要放在所有你想要捕获异常的中间件声明之前，如`app.UseMvc`。
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+要将应用配置为显示有关异常的详细信息的页面，请使用开发人员异常页。 该页面通过 [Microsoft.AspNetCore.All 元包](xref:fundamentals/metapackage)中的 [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 包提供。 向 `Startup.Configure` 方法添加代码行：
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+要将应用配置为显示有关异常的详细信息的页面，请使用开发人员异常页。 该页面通过在项目文件中添加 [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 包的包引用提供。 向 `Startup.Configure` 方法添加代码行：
+
+::: moniker-end
+
+[!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
+
+将对 [UseDeveloperExceptionPage](/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage) 的调用放在要对其捕获异常的任何中间件（例如，`app.UseMvc`）前面。
 
 >[!WARNING]
 > **仅当应用程序在开发环境中运行时**才启用开发人员异常页。 否则当应用程序在生产环境中运行时，详细的异常信息会向公众泄露 了解[环境配置](xref:fundamentals/environments)。
 
-若要查看开发人员异常页，可使用`Development`环境来运行应用程序，并在基础 URL 后添加`?throw=true`。 该页面包括几个选项卡，这些选项卡中包含关于异常和请求的信息。 第一个选项卡包括堆栈跟踪。 
+要查看开发人员异常页，请将环境设置为 `Development`，运行示例应用，并向应用的基 URL 添加 `?throw=true`。 该页面包括几个选项卡，这些选项卡中包含关于异常和请求的信息。 第一个选项卡包括堆栈跟踪：
 
 ![堆栈跟踪](error-handling/_static/developer-exception-page.png)
 
-下一个`Query`选项卡将显示查询字符串参数信息（如有）。
+下一个选项卡显示查询字符串参数（如有）：
 
 ![查询字符串参数](error-handling/_static/developer-exception-page-query.png)
 
-示例请求没有任何 cookie，但如果有的话，它们将出现在 **Cookies**选项卡。最后一个选项卡显示请求的标头。
+如果请求具有 cookie，它们在“Cookie”选项卡上显示。标头出现在最后一个选项卡中：
 
 ![标头](error-handling/_static/developer-exception-page-headers.png)
 
 ## <a name="configuring-a-custom-exception-handling-page"></a>配置自定义异常处理页
 
-配置当应用未在 `Development` 环境中运行时要使用的异常处理程序页。
+配置当应用未在 `Development` 环境中运行时要使用的异常处理程序页：
 
-[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
+[!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
 在 Razor Pages 应用中，[dotnet new](/dotnet/core/tools/dotnet-new) Razor Pages 模板在 Pages 文件夹中提供“错误”页面和 `ErrorModel` 页面模型类。
 
@@ -60,7 +76,8 @@ ms.locfileid: "36273704"
 [AllowAnonymous]
 public IActionResult Error()
 {
-    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    return View(new ErrorViewModel 
+        { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 }
 ```
 
@@ -72,13 +89,13 @@ public IActionResult Error()
 app.UseStatusCodePages();
 ```
 
-默认情况下，状态代码页中间件为常见状态代码（如 404）添加简单的纯文本处理程序：
+默认情况下，状态代码页中间件为常见状态代码（如 404）添加纯文本处理程序：
 
 ![404 页面](error-handling/_static/default-404-status-code.png)
 
 该中间件支持多种扩展方法。 一种方法采用 Lambda 表达式：
 
-[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_StatusCodePages)]
+[!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_StatusCodePages)]
 
 另一种方法采用内容类型和格式字符串：
 
@@ -86,9 +103,9 @@ app.UseStatusCodePages();
 app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 ```
 
-也可以使用重定向和重新执行扩展方法。 重定向方法向客户端发送 302 状态代码：
+也可以使用重定向和重新执行扩展方法。 重定向方法向客户端发送“302 Found”状态代码：
 
-[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
+[!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
 
 重新执行方法将原始状态代码返回到客户端，但同时还会执行重定向 URL 的处理程序：
 
@@ -130,10 +147,15 @@ Error.cshtml：
 
 <h3>Development Mode</h3>
 <p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+    Swapping to <strong>Development</strong> environment will display more detailed 
+    information about the error that occurred.
 </p>
 <p>
-    <strong>Development environment should not be enabled in deployed applications</strong>, as it can result in sensitive information from exceptions being displayed to end users. For local debugging, development environment can be enabled by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>, and restarting the application.
+    <strong>Development environment should not be enabled in deployed applications
+    </strong>, as it can result in sensitive information from exceptions being 
+    displayed to end users. For local debugging, development environment can be 
+    enabled by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment 
+    variable to <strong>Development</strong>, and restarting the application.
 </p>
 ```
 
@@ -146,7 +168,8 @@ public class ErrorModel : PageModel
 
     public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, 
+        NoStore = true)]
     public void OnGet()
     {
         RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
@@ -178,13 +201,18 @@ public class ErrorModel : PageModel
 
 ### <a name="exception-filters"></a>异常筛选器
 
-在 MVC 应用中，异常筛选器可以进行全局配置，也可以为每个控制器或每个操作单独配置。 这些筛选器处理在执行控制器操作或其他筛选器时出现的任何未处理的异常，且不会以其他方式调用。 通过[筛选器](xref:mvc/controllers/filters)详细了解异常筛选器。
+在 MVC 应用中，异常筛选器可以进行全局配置，也可以为每个控制器或每个操作单独配置。 这些筛选器处理在执行控制器操作或其他筛选器时出现的任何未处理的异常。 不会以其他方式调用这些筛选器。 要了解详细信息，请参阅[筛选器](xref:mvc/controllers/filters)。
 
 > [!TIP]
-> 异常筛选器非常适用于捕获 MVC 操作内出现的异常，但灵活性不如错误处理中间件。 一般情况下建议使用中间件；仅在需要根据所选 MVC 操作以不同方式执行错误处理时，才使用筛选器。
+> 异常筛选器非常适用于捕获 MVC 操作内出现的异常，但灵活性不如错误处理中间件。 一般情况下最好使用中间件；仅在需要根据所选 MVC 操作以不同方式执行错误处理时，才使用筛选器。
 
 ### <a name="handling-model-state-errors"></a>处理模型状态错误
 
 [模型验证](xref:mvc/models/validation)在每个控制器操作被调用之前发生，操作方法负责检查 `ModelState.IsValid` 并相应地作出反应。
 
-某些应用会使用标准约定来处理模型验证错误，在这种情况下，使用[筛选器](xref:mvc/controllers/filters)可以更好地实施这种策略。 你需要使用无效模型状态测试操作的行为。 查看[测试控制器逻辑](xref:mvc/controllers/testing)了解详情。
+某些应用使用标准约定处理模型验证错误，在这种情况下，使用[筛选器](xref:mvc/controllers/filters)可以更好地实施这种策略。 你需要使用无效模型状态测试操作的行为。 查看[测试控制器逻辑](xref:mvc/controllers/testing)了解详情。
+
+## <a name="additional-resources"></a>其他资源
+
+* <xref:host-and-deploy/azure-iis-errors-reference>
+* <xref:host-and-deploy/azure-apps/troubleshoot>
