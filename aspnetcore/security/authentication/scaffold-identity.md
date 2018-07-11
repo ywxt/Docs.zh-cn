@@ -7,31 +7,31 @@ ms.author: riande
 ms.date: 5/16/2018
 uid: security/authentication/scaffold-identity
 ms.openlocfilehash: cf6544d8b671f026c8466fa8dff506027b64cf1f
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276313"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38217677"
 ---
 # <a name="scaffold-identity-in-aspnet-core-projects"></a>ASP.NET Core 项目中的基架标识
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-ASP.NET Core 2.1 及更高版本提供了[ASP.NET Core 标识](xref:security/authentication/identity)作为[Razor 类库](xref:razor-pages/ui-class)。 包含标识的应用程序可以应用基架以有选择地添加包含在标识 Razor 类库 (RCL) 的源代码。 你可能想要生成源代码，因此你可以修改的代码和更改的行为。 例如，你可以指示 scaffolder 生成在注册中使用的代码。 生成的代码将优先于标识 RCL 中的相同代码。 若要获取的用户界面的完全控制权，并使用默认 RCL，请参阅明[创建完整的标识 UI 源](#full)。
+ASP.NET Core 2.1 及更高版本提供了[ASP.NET Core 标识](xref:security/authentication/identity)作为[Razor 类库](xref:razor-pages/ui-class)。 包含标识的应用程序可以应用基架来有选择地添加包含在标识 Razor 类库 (RCL) 的源代码。 建议生成源代码，以便修改代码和更改行为。 例如，可以指示基架生成在注册过程中使用的代码。 生成的代码优先于标识 RCL 中的相同代码。 若要获取的用户界面的完全控制，并且使用默认 RCL，请参阅部分[创建完整的标识 UI 源](#full)。
 
-应用程序执行**不**包括身份验证可以应用基架添加 RCL 标识包。 必须选择标识代码生成的选项。
+执行操作的应用程序**不**包括身份验证可以应用基架添加 RCL 标识包。 可以选择要生成的标识代码。
 
-虽然 scaffolder 生成大部分所需的代码，但你将需要更新你的项目以完成该过程。 本文档说明完成标识基架更新所需的步骤。
+虽然基架生成大部分所需的代码，但您必须更新项目以完成该过程。 本文档介绍完成标识基架更新所需的步骤。
 
-当运行时标识 scaffolder 时， *ScaffoldingReadme.txt*在项目目录中创建文件。 *ScaffoldingReadme.txt*文件包含有关需要哪些条件完成标识基架更新的常规说明。 本文档包含比的更完整说明*ScaffoldingReadme.txt*文件。
+当运行时标识基架时， *ScaffoldingReadme.txt*在项目目录中创建文件。 *ScaffoldingReadme.txt*文件包含所需完成标识基架更新的一般说明。 本文档包含更完整说明比*ScaffoldingReadme.txt*文件。
 
-我们建议使用源代码管理系统，它显示文件的差异，并允许你地将带外更改。 运行标识 scaffolder 后检查所做的更改。
+我们建议使用一个源控制系统，显示文件的差异，并允许您后退的更改。 运行标识基架后检查所做的更改。
 
-## <a name="scaffold-identity-into-an-empty-project"></a>为一个空的项目的基架标识
+## <a name="scaffold-identity-into-an-empty-project"></a>基架标识为一个空项目
 
 [!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg.md)]
 
-添加对以下突出显示的调用`Startup`类：
+添加以下突出显示的调用到`Startup`类：
 
 [!code-csharp[](scaffold-identity/sample/StartupEmpty.cs?name=snippet1&highlight=5,20-23)]
 
@@ -39,7 +39,7 @@ ASP.NET Core 2.1 及更高版本提供了[ASP.NET Core 标识](xref:security/aut
 
 [!INCLUDE[](~/includes/scaffold-identity/migrations.md)]
 
-## <a name="scaffold-identity-into-a-razor-project-without-existing-authorization"></a>到未包含现有的授权 Razor 项目的基架标识
+## <a name="scaffold-identity-into-a-razor-project-without-existing-authorization"></a>基架的 Razor 项目没有现有的授权到标识
 
 <!--
 set projNam=RPnoAuth
@@ -65,7 +65,7 @@ dotnet ef database update
 
 [!INCLUDE[](~/includes/scaffold-identity/migrations.md)]
 
-在`Configure`方法`Startup`类中，调用[UseAuthentication](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_)后`UseStaticFiles`:
+在中`Configure`方法`Startup`类中，调用[UseAuthentication](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_)后`UseStaticFiles`:
 
 [!code-csharp[](scaffold-identity/sample/StartupRPnoAuth.cs?name=snippet1&highlight=29)]
 
@@ -73,11 +73,11 @@ dotnet ef database update
 
 ### <a name="layout-changes"></a>布局更改
 
-可选： 添加部分的登录名 (`_LoginPartial`) 到布局文件：
+可选： 添加部分的登录名 (`_LoginPartial`) 的布局文件：
 
 [!code-html[Main](scaffold-identity/sample/_Layout.cshtml?highlight=37)]
 
-## <a name="scaffold-identity-into-a-razor-project-with-authorization"></a>到与授权 Razor 项目的基架标识
+## <a name="scaffold-identity-into-a-razor-project-with-authorization"></a>基架标识为具有授权的 Razor 项目
 
 <!--
 Use >=2.1: dotnet new webapp -au Individual -o RPauth
@@ -90,10 +90,9 @@ dotnet aspnet-codegenerator identity -dc RPauth.Data.ApplicationDbContext --file
 [!INCLUDE[](~/includes/webapp-alias-notice.md)]
 -->
 
-[!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg-auth.md)]
-某些标识选项配置中*Areas/Identity/IdentityHostingStartup.cs*。 有关详细信息，请参阅[IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration)。
+[!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg-auth.md)] 在中配置一些标识选项*Areas/Identity/IdentityHostingStartup.cs*。 有关详细信息，请参阅[IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration)。
 
-## <a name="scaffold-identity-into-an-mvc-project-without-existing-authorization"></a>到未包含现有的授权 MVC 项目的基架标识
+## <a name="scaffold-identity-into-an-mvc-project-without-existing-authorization"></a>基架标识到 MVC 项目中没有现有的授权
 
 <!--
 set projNam=MvcNoAuth
@@ -127,7 +126,7 @@ dotnet ef database update
 
 [!INCLUDE[](~/includes/scaffold-identity/hsts.md)]
 
-## <a name="scaffold-identity-into-an-mvc-project-with-authorization"></a>到具有授权的 MVC 项目的基架标识
+## <a name="scaffold-identity-into-an-mvc-project-with-authorization"></a>基架标识为具有授权的 MVC 项目
 
 <!--
 dotnet new mvc -au Individual -o MvcAuth
@@ -139,23 +138,23 @@ dotnet aspnet-codegenerator identity -dc MvcAuth.Data.ApplicationDbContext --fil
 
 [!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg-auth.md)]
 
-删除*页/共享*文件夹和该文件夹中的文件。
+删除*Pages/共享*文件夹和该文件夹中的文件。
 
 <a name="full"></a>
 
 ## <a name="create-full-identity-ui-source"></a>创建完整的标识 UI 源
 
-若要维护的标识 UI 的完全控制，运行标识基架，并选择**重写所有文件**。
+若要维护标识用户界面的完全控制，运行标识基架，并选择**重写的所有文件**。
 
-以下突出显示的代码显示默认标识 UI 替换标识在 ASP.NET Core 2.1 web 应用的更改。 你可能想要执行此操作可具有完全控制权限的标识 UI。
+以下突出显示的代码显示默认标识 UI 替换标识在 ASP.NET Core 2.1 web 应用的更改。 您可能想要执行此操作以具有完全控制权限的标识 UI。
 
 [!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet1&highlight=13-14,17-999)]
 
-下面的代码替换默认标识：
+在下面的代码替换默认标识：
 
 [!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet2)]
 
-下面的代码集[LoginPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.loginpath)， [LogoutPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.logoutpath)，和[AccessDeniedPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.accessdeniedpath):
+下面的代码集[LoginPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.loginpath)， [LogoutPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.logoutpath)，并[AccessDeniedPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.accessdeniedpath):
 
 [!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet3)]
 
