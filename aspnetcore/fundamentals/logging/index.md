@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core 中的记录框架。 发现内置日志记录�
 ms.author: tdykstra
 ms.date: 12/15/2017
 uid: fundamentals/logging/index
-ms.openlocfilehash: 969ad303c3fee06aa40d43140153ffbf58b735db
-ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
+ms.openlocfilehash: dde01129bb7ea29544c4c416dfe9b5522a738d01
+ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37126282"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37938480"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core 中的日志记录
 
@@ -29,6 +29,8 @@ ASP.NET Core 支持适用于各种日志记录提供程序的日志记录 API。
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
 ::: moniker-end
+
+有关使用 IIS 进行托管时的 stdout 日志记录的信息，请参阅 <xref:host-and-deploy/iis/troubleshoot#aspnet-core-module-stdout-log>。 有关使用 Azure 应用服务进行 stdout 日志记录的信息，请参阅 <xref:host-and-deploy/azure-apps/troubleshoot#aspnet-core-module-stdout-log>。
 
 ## <a name="how-to-create-logs"></a>如何创建日志
 
