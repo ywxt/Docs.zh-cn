@@ -255,6 +255,8 @@
 ### [JavaScript 客户端](xref:signalr/javascript-client)
 ### [.NET 客户端](xref:signalr/dotnet-client)
 ### [WebPack 和 TypeScript](xref:tutorials/signalr-typescript-webpack)
+### [JavaScript API](/javascript/api/?view=signalr-js-latest)
+
 ## [配置](xref:signalr/configuration)
 ## [MessagePack 中心协议](xref:signalr/messagepackhubprotocol)
 ## [流式处理](xref:signalr/streaming)
