@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 03/13/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: f35fbbbf7d04b041565e76d3cc6b9822f1056e50
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 96a4403653e474bb056374909b3ee66998bc99be
+ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824534"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38992810"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -177,7 +177,7 @@ web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS
    
    若要防止安装程序在 x64 操作系统上安装 x86 程序包，请通过管理员命令提示符使用开关 `OPT_NO_X86=1` 来运行安装程序。
 
-1. 重启系统，或从命令提示符处依次执行 net stop was /y 和 net start w3svc。 重新启动 IIS 将选取安装程序对系统 PATH 所作的更改。
+1. 重启系统，或从命令提示符处依次执行 net stop was /y 和 net start w3svc。 重启 IIS 会选取安装程序对系统 PATH（环境变量）所作的更改。
 
 > [!NOTE]
 > 有关 IIS 共享配置的信息，请参阅[使用 IIS 共享配置的 ASP.NET Core 模块](xref:host-and-deploy/aspnet-core-module#aspnet-core-module-with-an-iis-shared-configuration)。

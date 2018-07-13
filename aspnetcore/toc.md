@@ -18,7 +18,6 @@
 ### [添加搜索](xref:tutorials/razor-pages/search)
 ### [添加新字段](xref:tutorials/razor-pages/new-field)
 ### [添加验证](xref:tutorials/razor-pages/validation)
-### [上载文件](xref:tutorials/razor-pages/uploading-files)
 ## [创建实时 SignalR Web 应用](xref:tutorials/signalr)
 ## [使用 TypeScript 创建 SignalR web 应用](xref:tutorials/signalr-typescript-webpack)
 ## [创建 MVC Web 应用](tutorials/first-mvc-app/index.md)
@@ -159,6 +158,7 @@
 ## [Razor 页面的筛选方法](xref:razor-pages/filter)
 ## [创建一个 Razor 类库](xref:razor-pages/ui-class)
 ## [路由和应用约定](xref:razor-pages/razor-pages-conventions)
+## [将文件上传到 Razor 页](xref:razor-pages/upload-files)
 ## [Razor SDK](xref:razor-pages/sdk)
 
 # [MVC](xref:mvc/overview)

@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/08/2017
 uid: tutorials/razor-pages/index
-ms.openlocfilehash: dea67cd16c9ad6bdf2b43ff13ae72645528b3e13
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9d32a7becb291697313dc28925ab94b452385fc7
+ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275627"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38992836"
 ---
 # <a name="create-a-razor-pages-web-app-with-aspnet-core"></a>使用 ASP.NET Core 创建 Razor 页面 Web 应用
 
@@ -25,4 +25,5 @@ ms.locfileid: "36275627"
 1. [添加搜索](xref:tutorials/razor-pages/search)
 1. [添加新字段](xref:tutorials/razor-pages/new-field)
 1. [添加验证](xref:tutorials/razor-pages/validation)
-1. [上载文件](xref:tutorials/razor-pages/uploading-files)
+
+完成本教程后，若要向示例应用添加文件上传功能，请参阅 <xref:razor-pages/upload-files>。
