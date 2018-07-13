@@ -1,5 +1,5 @@
 ---
-title: 生成带有 Bootstrap 和 ASP.NET Core 美观、 响应迅速网站
+title: 使用 ASP.NET Core 和 Bootstrap 构建响应灵敏、布局美观的网站
 author: ardalis
 description: 了解如何开发使用 ASP.NET Core 的响应式 web 应用程序使用 Bootstrap。
 ms.author: riande
@@ -12,13 +12,13 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36279540"
 ---
-# <a name="build-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>生成带有 Bootstrap 和 ASP.NET Core 美观、 响应迅速网站
+# <a name="build-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>使用 ASP.NET Core 和 Bootstrap 构建响应灵敏、布局美观的网站
 
 <a name="bootstrap-index"></a>
 
 作者：[Steve Smith](https://ardalis.com/)
 
-Bootstrap 目前最常用的 web 框架开发响应式 web 应用程序。 无论您是在前端设计和开发或方面的专家新手，它提供大量的功能和优势，这样可以提高您的网站，用户的体验。 Bootstrap 部署为一组 CSS 和 JavaScript 文件，并旨在从手机有效地帮助你的网站或应用程序缩放，平板电脑和桌面。
+Bootstrap 是目前用于开发响应式 web 应用程序最常用的 web 框架。 它在改进网站用户体验方面具有多种优势并提供多种相关功能，无论是前沿设计和开发领域中的新手还是专家，都能够利用这些优势和功能。 Bootstrap 部署为一组 CSS 和 JavaScript 文件，旨在帮助网站和应用程序跨电话、平板电脑、台式计算机等多种设备高效灵活地缩放规模。
 
 ## <a name="get-started"></a>入门
 
