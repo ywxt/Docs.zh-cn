@@ -17,14 +17,14 @@ ms.locfileid: "36278247"
 
 通过[艾力克 Reitan](https://github.com/Erikre)， [Scott Addie](https://scottaddie.com)， [Daniel Roth](https://github.com/danroth27)，和[Shayne 贝叶](https://twitter.com/spboyer)
 
-在典型的现代 web 应用中，可能会生成过程：
+在典型的现代 Web 应用中，生成过程可能包括以下操作：
 
-* 捆绑和 minify JavaScript 和 CSS 文件。
+* 捆绑和缩小 JavaScript 和 CSS 文件。
 * 运行工具以调用之前每个生成的绑定和缩减任务。
-* 小于编译或 SASS 文件复制到 CSS。
-* 编译 CoffeeScript 或 TypeScript 文件添加到 JavaScript。
+* 将 LESS 或 SASS 文件编译成 CSS。
+* 将 CoffeeScript 或 TypeScript 文件编译成 JavaScript。
 
-A*任务运行程序*是一种工具，可以自动进行这些例程开发任务和的详细信息。 Visual Studio 为两个流行的基于 JavaScript 的任务流道提供内置支持： [Gulp](https://gulpjs.com/)和[Grunt](using-grunt.md)。
+任务运行程序是一种自动执行这些常规开发任务和其他任务的工具。Visual Studio 为下述两种常用的基于 JavaScript 的任务运行程序提供内置支持：[Gulp](https://gulpjs.com/) 和 [Grunt](using-grunt.md)。
 
 ## <a name="gulp"></a>gulp
 
@@ -98,8 +98,8 @@ gulp.task("min", ["min:js", "min:css"]);
 
 |任务名称|描述|
 |--- |--- |
-|干净： js|使用 rimraf 节点删除模块删除 site.js 文件的缩减的版本的任务。|
-|干净： css|使用 rimraf 节点删除模块删除 site.css 文件的缩减的版本的任务。|
+|clean:js|一个使用 rimraf Node 删除模块删除缩减版 site.js 文件的任务。|
+|clean:css|一个使用 rimraf Node 删除模块删除缩减版 site.css 文件的的任务。|
 |清理|一个任务，它调用`clean:js`任务后, 跟`clean:css`任务。|
 |min:js|Minifies 和串联的 js 文件夹中的所有.js 文件的任务。 。 排除 min.js 文件。|
 |min:css|Minifies 和串联的 css 文件夹中的所有.css 文件的任务。 。 排除 min.css 文件。|
@@ -184,19 +184,19 @@ gulp.task("min", ["min:js", "min:css"]);
     > [!IMPORTANT]
     > **任务运行程序资源管理器**，才会显示上下文菜单项*gulpfile.js*是在根项目目录中。
 
-4.  在此之下**任务**中**任务运行程序资源管理器**，右键单击**干净**，然后选择**运行**从弹出菜单。
+4.  在“任务运行程序资源管理器”中的“任务”下，右键单击“clean”，然后从弹出菜单中选择“运行”。
 
     ![任务运行程序资源管理器清理任务](using-gulp/_static/04-TaskRunner-clean.png)
 
-    **任务运行程序资源管理器**将创建名为的新选项卡**干净**和执行清理任务，如中定义*gulpfile.js*。
+    **任务运行程序资源管理器**将创建名为“clean”的新选项卡****，并根据 *gulpfile.js* 中的定义执行 clean 任务。
 
-5.  右键单击**干净**任务，然后选择**绑定** > **之前生成**。
+5.  右键单击“clean”****任务，然后选择“绑定”****>“生成之前”****。
 
     ![任务运行程序资源管理器绑定 BeforeBuild](using-gulp/_static/05-TaskRunner-BeforeBuild.png)
 
-    **之前生成**绑定将配置 clean 任务，以在每次生成项目之前自动运行。
+    ****“生成之前”绑定会配置 clean 任务，使之在每次生成项目之前自动运行。
 
-绑定您设置**任务运行程序资源管理器**顶部的注释的形式存储在你*gulpfile.js*和仅在 Visual Studio 中有效。 不需要 Visual Studio 的替代方法是配置 gulp 中的任务自动执行你 *.csproj*文件。 例如，将这个放你 *.csproj*文件：
+使用**任务运行程序资源管理器**设置的绑定以注释形式存储在 *gulpfile.js* 顶部，仅在 Visual Studio 中有效。一种不需要 Visual Studio 的替代方法是将 *csproj* 文件中的 gulp 任务配置为自动执行。例如，将以下代码置于 *.csproj* 文件中：
 
 ```xml
 <Target Name="MyPreCompileTarget" BeforeTargets="Build">
@@ -228,11 +228,11 @@ gulp.task("min", ["min:js", "min:css"]);
 
     ![任务运行程序资源管理器运行第一个任务](using-gulp/_static/06-TaskRunner-First.png)
 
-    输出文本显示。 若要查看基于常见方案的示例，请参阅[Gulp 配方](#gulp-recipes)。
+    此时会显示输出文本。若要查看基于常见方案的示例，请参阅 [Gulp 脚本](#gulp-recipes)。
 
-## <a name="defining-and-running-tasks-in-a-series"></a>定义和一系列中运行任务
+## <a name="defining-and-running-tasks-in-a-series"></a>定义和运行一系列任务
 
-当你运行多个任务时，任务将默认情况下同时运行。 但是，如果你需要以特定顺序运行任务，你必须指定每个任务过程何时完成，以及为哪些任务依赖于另一个任务完成。
+运行多个任务时，默认情况下这些任务会并发运行。但是，如果需要以特定顺序运行任务，则必须指定每个任务的具体完成时间，以及哪些任务依赖于其他任务的完成。
 
 1.  若要定义要按顺序运行的任务的一系列，替换`first`中前面添加的任务*gulpfile.js*替换为以下：
 
@@ -297,7 +297,7 @@ Intellisense 的详细信息，请参阅[JavaScript IntelliSense](/visualstudio/
 
 若要针对不同的环境编译之间切换，请修改**ASPNETCORE_ENVIRONMENT**环境变量的值。
 
-1.  在**任务运行程序资源管理器**，验证**min**任务已设置为运行**之前生成**。
+1.  在**任务运行程序资源管理器**中，验证 **min** 任务是否已设置为在**生成之前**运行。
 
 2.  在**解决方案资源管理器**，右键单击项目名称并选择**属性**。
 
@@ -338,9 +338,9 @@ Gulp 任务已注册到的函数名称。 如果其他任务都必须运行在�
 
 有关其他的 Gulp API 参考信息，请参阅[Gulp 文档 API](https://github.com/gulpjs/gulp/blob/master/docs/API.md)。
 
-## <a name="gulp-recipes"></a>Gulp 配方
+## <a name="gulp-recipes"></a>Gulp 脚本
 
-Gulp 社区提供 Gulp[配方](https://github.com/gulpjs/gulp/blob/master/docs/recipes/README.md)。 这些配方包含 Gulp 任务用于针对常见情况。
+Gulp 社区提供 Gulp [脚本](https://github.com/gulpjs/gulp/blob/master/docs/recipes/README.md)。这些脚本包含适用于常见方案的 Gulp 任务。
 
 ## <a name="additional-resources"></a>其他资源
 
