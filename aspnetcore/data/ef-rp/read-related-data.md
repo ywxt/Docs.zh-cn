@@ -5,12 +5,12 @@ description: 在本教程中，将读取并显示相关数据 - 即 Entity Frame
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: 4e0aa7151cc54f666202458ba60500a7c04f5ebb
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: fa3147cc4ad121784911eef802e04ca91f16448f
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276755"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063307"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 读取相关数据 - 第 6 个教程（共 8 个）
 
@@ -74,19 +74,11 @@ EF Core 可采用多种方式将相关数据加载到实体的导航属性中：
 * 运行下面的命令：
 
   ```console
+  dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 2.1.0
   dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir Pages\Courses --referenceScriptLibraries
   ```
 
 上述命令为 `Course` 模型创建基架。 在 Visual Studio 中打开项目。
-
-生成项目。 此版本生成如下错误：
-
-`1>Pages/Courses/Index.cshtml.cs(26,37,26,43): error CS1061: 'SchoolContext' does not
- contain a definition for 'Course' and no extension method 'Course' accepting a first
- argument of type 'SchoolContext' could be found (are you missing a using directive or
- an assembly reference?)`
-
- 将 `_context.Course` 全局更改为 `_context.Courses`（即向 `Course` 添加一个“s”）。 找到并更新 7 个匹配项。
 
 打开 Pages/Courses/Index.cshtml.cs 并检查 `OnGetAsync` 方法。 基架引擎为 `Department` 导航属性指定了预先加载。 `Include` 方法指定预先加载。
 

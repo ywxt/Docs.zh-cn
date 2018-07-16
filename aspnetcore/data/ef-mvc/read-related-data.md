@@ -5,12 +5,12 @@ description: 本教程将读取并显示相关数据 - 即 Entity Framework 加�
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: d5c9b665a80003ef5029754d7ad1780b3254e97e
-ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
+ms.openlocfilehash: a310c9e4b9cec6e2ab2477461f395c9bbd3fa364
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37092979"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063281"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---read-related-data---6-of-10"></a>ASP.NET Core MVC 和 EF Core - 读取相关数据 - 第 6 个课程（共 10 个课程）
 
@@ -155,7 +155,7 @@ Course 实体包括导航属性，其中包含分配有课程的系的 Departmen
 而不是：
 
 ```csharp
-.Where(I => i.ID == id.Value).Single()
+.Where(i => i.ID == id.Value).Single()
 ```
 
 接着，如果选择了课程，则从视图模型中的课程列表中检索所选课程。 然后，视图模型的 `Enrollments` 属性加载该课程 `Enrollments` 导航属性中的 Enrollment 实体。

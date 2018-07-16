@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: cabf3d955ef2eb17b3bcb40170a9de7b53ffd107
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: 0d35de827ca6fea530229f1ef263ea7b9351e5ad
+ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077626"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38992823"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>将验证添加到 ASP.NET Core Razor 页面
 
@@ -157,6 +157,8 @@ public DateTime ReleaseDate { get; set; }
 
 有关如何将该应用发布到 Azure 的说明，请参阅[使用 Visual Studio 将 ASP.NET Core Web 应用发布到 Azure App Service](xref:tutorials/publish-to-azure-webapp-using-vs)。
 
+感谢读完这篇 Razor 页面简介。 我们非常感谢你的反馈。 [MVC 和 EF Core 入门](xref:data/ef-mvc/intro)是本教程的优选后续教程。
+
 ## <a name="additional-resources"></a>其他资源
 
 * [使用表单](xref:mvc/views/working-with-forms)
@@ -166,4 +168,3 @@ public DateTime ReleaseDate { get; set; }
 
 > [!div class="step-by-step"]
 > [上一篇：添加新字段](xref:tutorials/razor-pages/new-field)
-> [下一篇：上传文件](xref:tutorials/razor-pages/uploading-files)
