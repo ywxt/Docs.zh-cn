@@ -2,26 +2,22 @@
 title: 在 Visual Studio Code 中开始使用 ASP.NET Core Razor 页面
 author: rick-anderson
 description: 了解使用 Visual Studio Code 生成 ASP.NET Core Razor 页面 Web 应用的基础知识。
-manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/27/2017
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/razor-pages-vsc/razor-pages-start
-ms.openlocfilehash: 17ab52b80a40f6204e2bf2cf9048071c55c0a708
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: b1f1dcc1401d707cff79f3269ab70b900e9fc21c
+ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252212"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38123378"
 ---
 # <a name="get-started-with-aspnet-core-razor-pages-in-visual-studio-code"></a>在 Visual Studio Code 中开始使用 ASP.NET Core Razor 页面
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-本教程介绍构建 ASP.NET Core Razor 页面 Web 应用的基础知识。 我们建议在学习本教程前先阅读 [Razor 页面介绍](xref:mvc/razor-pages/index)。 Razor 页面是在 ASP.NET Core 中为 Web 应用程序生成 UI 时建议使用的方法。
+本教程介绍构建 ASP.NET Core Razor 页面 Web 应用的基础知识。 我们建议在学习本教程前先阅读 [Razor 页面介绍](xref:razor-pages/index)。 Razor 页面是在 ASP.NET Core 中为 Web 应用程序生成 UI 时建议使用的方法。
 
 ## <a name="prerequisites"></a>系统必备
 

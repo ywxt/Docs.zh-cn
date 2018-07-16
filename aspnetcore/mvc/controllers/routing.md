@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core MVC 如何使用路由中间件来匹配传入�
 ms.author: riande
 ms.date: 03/14/2017
 uid: mvc/controllers/routing
-ms.openlocfilehash: 795ca13674f85b6e8c1f84718c225613a7a7125a
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 081332fd1007db5292a8812fc6ae934cb07dffb5
+ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278406"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37952976"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a>在 ASP.NET Core 中路由到控制器操作
 
@@ -696,7 +696,7 @@ public class ProductsController : Controller
 
 实现 `IActionConstraint` 最简单的方法是创建派生自 `System.Attribute` 的类，并将其置于操作和控制器上。 MVC 将自动发现任何应用为属性的 `IActionConstraint`。 可使用应用程序模型应用约束，这可能是最灵活的一种方法，因为它允许对其应用方式进行元编程。
 
-在下面的示例中，约束基于路由数据中的*国家/地区代码*选择操作。 [GitHub 上的完整示例](https://github.com/aspnet/Entropy/blob/dev/samples/Mvc.ActionConstraintSample.Web/CountrySpecificAttribute.cs)。
+在下面的示例中，约束基于路由数据中的*国家/地区代码*选择操作。 [GitHub 上的完整示例](https://github.com/aspnet/Entropy/blob/master/samples/Mvc.ActionConstraintSample.Web/CountrySpecificAttribute.cs)。
 
 ```csharp
 public class CountrySpecificAttribute : Attribute, IActionConstraint
