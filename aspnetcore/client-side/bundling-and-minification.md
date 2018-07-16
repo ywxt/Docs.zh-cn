@@ -1,5 +1,5 @@
 ---
-title:对ASP.NET Core中的静态资源进行捆绑和缩减
+title:捆绑和缩减 ASP.NET Core 中的静态资产
 author: scottaddie
 description: 了解如何通过应用捆绑和缩减技术优化 ASP.NET Core web 应用程序中的静态资源。
 ms.author: scaddie
@@ -13,21 +13,21 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36279566"
 ---
-# <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>z
+# <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>捆绑和缩减 ASP.NET Core 中的静态资产
 
 作者：[Scott Addie](https://twitter.com/Scott_Addie)
 
-本文介绍了应用捆绑和缩减，包括如何使用 ASP.NET Core web apps 使用这些功能的好处。
+本文介绍应用捆绑和缩减的好处，包括如何将这些功能与 ASP.NET Core web 应用配合使用。
 
-## <a name="what-is-bundling-and-minification"></a>捆绑和缩减是什么？
+## <a name="what-is-bundling-and-minification"></a>什么是捆绑和缩减？
 
-捆绑和缩减是可以应用的 web 应用中的两个不同的性能优化。 一起使用时，捆绑和缩减提高性能通过减少服务器请求数和减少的请求的静态资产的大小。
+捆绑和缩减是可在 web 应用中应用的两种不同的性能优化方法。将捆绑和缩减一起使用时，可通过减少服务器请求数和减小所请求的静态资产的大小来提升性能。
 
-捆绑和缩减主要提高第一个页面请求加载时间。 一旦已请求网页上，浏览器缓存静态资产 （JavaScript、 CSS 和图像）。 因此，捆绑和缩减不时提高性能请求的同一页上或页，请求相同的资产在同一站点上。 如果过期在资产上未正确设置标头和如果未使用捆绑和缩减，浏览器的新鲜度试探方法将标记资产陈旧在几天后。 此外，浏览器需要为每个资产的验证请求。 在这种情况下，捆绑和缩减提供在第一个页面请求后的提高性能。
+捆绑和缩减主要是能够减少第一个页面请求的加载时间。在发出对某个网页的请求后，浏览器会缓存静态资产（JavaScript、CSS 和图像）。因此，在请求同一站点上同一页面或同一批页面的相同资产时，捆绑和缩减不会提高相关性能。如果未正确设置资产上的过期标头并且未使用捆绑和缩减，浏览器的新鲜度试探方法会在几天后将资产标记为过时。此外，浏览器要求对每个资产进行验证。在这种情况下，捆绑和缩减可提高性能，甚至是在第一个页面请求之后。
 
 ### <a name="bundling"></a>捆绑
 
-捆绑将多个文件合并到单个文件。 捆绑可减少的所需呈现 web 资产，例如 web 页的服务器请求数。 可以专门为 CSS、 JavaScript 等创建任意数量的各项捆绑。少选一些文件意味着从浏览器到服务器或提供你的应用程序的服务的少数几个 HTTP 请求。 第一个页面加载性能改善中的此结果。
+捆绑将多个文件合并为单个文件。捆绑可减少呈现网页等 web 资产时所需发出的服务器请求数。可专门为 CSS、JavaScript 等创建任意数量的各项捆绑。较少的文件数意味着从浏览器向服务器或从提供应用程序的服务发出的 HTTP 请求数较少，从而提升首个页面加载的性能。
 
 ### <a name="minification"></a>缩减
 
@@ -51,7 +51,7 @@ ms.locfileid: "36279566"
 
 ## <a name="impact-of-bundling-and-minification"></a>捆绑和缩减的影响
 
-下表概述了单独加载资产与使用捆绑和缩减之间的差异：
+下表概述了单独加载资产与使用捆绑和缩减时的差异：
 
 操作 | 与 B/M | 而无需 B/M | 更改
 --- | :---: | :---: | :---:
@@ -59,11 +59,11 @@ ms.locfileid: "36279566"
 传输的 KB | 156 | 264.68 | 70%
 加载时间 (ms) | 885 | 2360   | 167%
 
-浏览器是相当详细方面 HTTP 请求标头。 发送的总字节数度量值捆绑时见到显著减少。 加载时显示的重大进步，但此示例中本地运行。 使用资产的捆绑和缩减通过网络传输时，在实现更高的性能增益。
+浏览器的 HTTP 请求标头是比较冗长的。使用捆绑可显著减少发送的总字节数，同时显著减少加载时间。但此示例是在本地运行，如果在通过网络传输的情况下对资产使用捆绑和缩减，可实现更大程度的性能提升。
 
 ## <a name="choose-a-bundling-and-minification-strategy"></a>选择捆绑和缩减策略
 
-MVC 和 Razor 页项目模板提供的捆绑和缩减包含的 JSON 配置文件的现成可用解决方案。 第三方工具，如[Gulp](xref:client-side/using-gulp)和[Grunt](xref:client-side/using-grunt)任务流道，完成相同任务的更多的复杂性。 第三方工具开发工作流需要超出捆绑和缩减的处理时非常适合&mdash;如 linting 和映像的优化。 通过使用设计时捆绑和缩减，在应用程序的部署之前创建缩减的文件。 捆绑和在部署前贴图层提供减少的服务器负载的优点。 但是，务必要识别该设计时捆绑，缩减会增加生成复杂性，并且仅适用于静态文件。
+MVC 和 Razor 页面项目模板提供由 JSON 配置文件构成的现成可用的捆绑和缩减解决方案。如果采用 [Gulp](xref:client-side/using-gulp) 和 [Grunt](xref:client-side/using-grunt) 任务运行器等第三方工具，完成相同任务时会相对复杂一些。如果开发工作流需要执行除捆绑和缩减以外的其他操作（如linting 和图像优化），使用第三方工具会比较合适。如果使用设计时捆绑和缩减，会在应用部署之前创建缩减的文件。通过部署前捆绑和缩减，可减少服务器负载。但需注意的是，设计时捆绑和缩减会增加构建的复杂性，且只适用于静态文件。
 
 ## <a name="configure-bundling-and-minification"></a>配置捆绑和缩减
 
@@ -84,9 +84,9 @@ MVC 和 Razor 页项目模板提供了*bundleconfig.json*配置文件用于定�
 * `sourceMap`： 指示是否生成捆绑的文件的源映射的标志。 **可选**，*默认-false*
 * `sourceMapRootPath`： 用于存储生成的源代码映射文件的根路径。
 
-## <a name="build-time-execution-of-bundling-and-minification"></a>生成时执行的捆绑和缩减
+## <a name="build-time-execution-of-bundling-and-minification"></a>在生成时执行捆绑和缩减
 
-[BuildBundlerMinifier](https://www.nuget.org/packages/BuildBundlerMinifier/) NuGet 包启用的捆绑执行并在生成时的缩减。 包插入[MSBuild 目标](/visualstudio/msbuild/msbuild-targets)在生成和清理时间运行。 *Bundleconfig.json*文件分析由生成过程以生成基于定义的配置的输出文件。
+使用 [BuildBundlerMinifier](https://www.nuget.org/packages/BuildBundlerMinifier/) NuGet 包可实现在生成时执行捆绑和缩减。该包会插入在生成时和清理时运行的 [MSBuild 目标](/visualstudio/msbuild/msbuild-targets)。生成过程会分析 *Bundleconfig.json* 文件，从而基于定义的配置来生成输出文件。
 
 > [!NOTE]
 > BuildBundlerMinifier 属于在为其 Microsoft 不提供支持的 GitHub 上的社区主导项目。 应归档问题[此处](https://github.com/madskristensen/BundlerMinifier/issues)。
@@ -169,9 +169,9 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 ---
 
-## <a name="ad-hoc-execution-of-bundling-and-minification"></a>捆绑和缩减的即席执行
+## <a name="ad-hoc-execution-of-bundling-and-minification"></a>临时执行捆绑和缩减
 
-它是无法在临时上, 运行的捆绑和缩减的任务，而不生成项目。 添加[BundlerMinifier.Core](https://www.nuget.org/packages/BundlerMinifier.Core/)到你的项目的 NuGet 包：
+可在不生成项目的情况下临时运行捆绑和缩减任务。向项目添加 [BundlerMinifier.Core](https://www.nuget.org/packages/BundlerMinifier.Core/) NuGet 包：
 
 [!code-xml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/BuildBundlerMinifierApp.csproj?range=10)]
 
@@ -240,7 +240,7 @@ dotnet bundle
 
 ## <a name="consume-bundleconfigjson-from-gulp"></a>使用从 Gulp bundleconfig.json
 
-在情况下在其中应用的捆绑和缩减工作流需要额外的处理。 示例包括映像优化、 缓存清除功能，和 CDN 资产处理。 若要满足这些要求，则可以将捆绑和缩减工作流使用 Gulp。
+有时候应用的捆绑和缩减工作流需要进行额外处理。相关例子包括映像优化、缓存破坏和 CDN 资产处理。要满足这些要求，可将捆绑和缩减工作流转换为使用 Gulp。
 
 ### <a name="use-the-bundler--minifier-extension"></a>使用捆绑包 （&） Minifier 扩展
 
@@ -309,7 +309,7 @@ npm i -g gulp-cli
 ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
 ```
 
-或者，Visual Studio 任务运行程序资源管理器可能用于将 Gulp 任务捆绑到特定的 Visual Studio 事件。 请参阅[正在运行的默认任务](xref:client-side/using-gulp#running-default-tasks)有关执行此操作的说明。
+或者，可使用 Visual Studio 的任务运行程序资源管理器将 Gulp 任务绑定到特定 Visual Studio 事件。请参阅[运行默认任务](xref:client-side/using-gulp#running-default-tasks)，获取执行此操作的说明。
 
 ## <a name="additional-resources"></a>其他资源
 
