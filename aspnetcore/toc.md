@@ -258,6 +258,8 @@
 ### [JavaScript API](/javascript/api/?view=signalr-js-latest)
 
 ## [配置](xref:signalr/configuration)
+## [身份验证和授权](xref:signalr/authn-and-authz)
+## [安全注意事项](xref:signalr/security)
 ## [MessagePack 中心协议](xref:signalr/messagepackhubprotocol)
 ## [流式处理](xref:signalr/streaming)
 ## [SignalR 版本之间的差异](xref:signalr/version-differences)

@@ -5,12 +5,12 @@ description: 本教程演示如何使用外部身份验证提供程序通过 OAu
 ms.author: riande
 ms.date: 11/01/2016
 uid: security/authentication/social/index
-ms.openlocfilehash: b3fbd98215537fad7b283d1bf96ebd259e0b980a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b2176ef40faaee02c5ef53dbb92a802212e58e8b
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366270"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063320"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core 中的 Facebook、Google 和外部提供程序身份验证
 
@@ -24,7 +24,7 @@ ms.locfileid: "37366270"
 
 使用户能够使用其当前凭据登录对用户来说十分便利，并且这样做可以将管理登录进程许多复杂操作转移给第三方。 有关社交登录如何驱动流量和客户转换的示例，请参阅 [Facebook](https://www.facebook.com/unsupportedbrowser) 和 [Twitter](https://dev.twitter.com/resources/case-studies) 的案例分析。
 
-请注意：此处展示的程序包提取了 OAuth 身份验证流的大量复杂操作，但进行故障排除时，可能需要了解相关详细信息。 有许多资源可用，例如，请参阅 [Introduction to OAuth 2](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)（OAuth 2 简介）或 [Understanding OAuth 2](http://www.bubblecode.net/2016/01/22/understanding-oauth2/)（了解 OAuth 2）。 某些问题可通过查看 [ASP.NET Core source code for the provider packages](https://github.com/aspnet/Security/tree/dev/src)（提供程序包的 ASP.NET Core 源代码）解决。
+请注意：此处展示的程序包提取了 OAuth 身份验证流的大量复杂操作，但进行故障排除时，可能需要了解相关详细信息。 有许多资源可用，例如，请参阅 [Introduction to OAuth 2](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)（OAuth 2 简介）或 [Understanding OAuth 2](http://www.bubblecode.net/2016/01/22/understanding-oauth2/)（了解 OAuth 2）。 某些问题可通过查看 [ASP.NET Core source code for the provider packages](https://github.com/aspnet/Security/tree/master/src)（提供程序包的 ASP.NET Core 源代码）解决。
 
 ## <a name="create-a-new-aspnet-core-project"></a>创建新的 ASP.NET Core 项目
 
