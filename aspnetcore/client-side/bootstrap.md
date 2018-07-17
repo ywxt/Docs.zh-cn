@@ -1,4 +1,4 @@
-﻿---
+---
 title: 使用 ASP.NET Core 和 Bootstrap 构建响应灵敏、布局美观的网站
 author: ardalis
 description: 了解如何开发使用 ASP.NET Core 的响应式 web 应用程序使用 Bootstrap。
@@ -18,11 +18,11 @@ ms.locfileid: "36279540"
 
 作者：[Steve Smith](https://ardalis.com/)
 
-Bootstrap 是目前用于开发响应式 web 应用程序最常用的 web 框架。它在改进网站用户体验方面具有多种优势并提供多种相关功能，无论是前沿设计和开发领域中的新手还是专家，都能够利用这些优势和功能。Bootstrap 部署为一组 CSS 和 JavaScript 文件，旨在帮助网站和应用程序跨电话、平板电脑、台式计算机等多种设备高效灵活地缩放规模。
+Bootstrap 是目前用于开发响应式 web 应用程序最常用的 web 框架。 它在改进网站用户体验方面具有多种优势并提供多种相关功能，无论是前沿设计和开发领域中的新手还是专家，都能够利用这些优势和功能。 Bootstrap 部署为一组 CSS 和 JavaScript 文件，旨在帮助网站和应用程序跨电话、平板电脑、台式计算机等多种设备高效灵活地缩放规模。
 
 ## <a name="get-started"></a>入门
 
-可采用多种方式来了解和学习如何使用 Bootstrap。如果是从 Visual Studio 中的新 web 应用程序开始，可选择用于 ASP.NET Core 的默认启动器模板，这样便可通过预安装的方式获取 Bootstrap：
+可采用多种方式来了解和学习如何使用 Bootstrap。 如果是从 Visual Studio 中的新 web 应用程序开始，可选择用于 ASP.NET Core 的默认启动器模板，这样便可通过预安装的方式获取 Bootstrap：
 
 ![在初学者模板解决方案视图中启动](bootstrap/_static/bootstrap-in-starter-template.png)
 
@@ -129,9 +129,9 @@ Bootstrap 始终默认为单列布局，以便只需指定列，如果希望多�
 
 在此示例中，只有一行`<div>`所使用的并且启动仍然主要未正确的操作方面的布局和堆叠的列。 通常情况下，应指定行`<div>`对于每个水平行布局要求，和当然可以嵌套在另一个的 Bootstrap 网格。 执行操作时，每个嵌套的网格将占用 100%的元素在其中放置它，然后可以通过使用列类细分的宽度。
 
-### <a name="jumbotron"></a>巨幅显示
+### <a name="jumbotron"></a>Jumbotron
 
-如果在 Visual Studio 2012 或 2013 中使用了默认 ASP.NET MVC 模板，可能会看到处于活动状态的巨幅显示内容。它是以完全尺寸显示的页面的一部分，可用于显示较大的背景图像、对某个操作的调用、旋转体或类似元素。若要向页面添加巨幅显示内容，只需添加 `<div>`并为其提供“jumbotron”类，然后在其中放置容器 `<div>` 并添加所需内容。可轻松使用巨幅显示内容为标准“关于”页面调整要显示的主标题：
+如果你已使用 Visual Studio 2012 或 2013年中的默认 ASP.NET MVC 模板，你可能已了解 Jumbotron 操作中。 它将引用到大型全角部分可以用于显示较大的背景图像，操作、 旋转或类似的元素调用的页。 若要添加到页面 jumbotron，只需添加`<div>`并为其提供的类"jumbotron"，然后放置容器`<div>`内并添加你的内容。 我们可以轻松地调整有关页后，可以使用它显示的主要标题 jumbotron 标准：
 
 ![jumbotron 示例](bootstrap/_static/jumbotron.png)
 
@@ -199,15 +199,15 @@ Bootstrap 包括从 Glyphicons 图标集 ([http://glyphicons.com](http://glyphic
 
 ![Glyphicons](bootstrap/_static/theme-glyphicons.png)
 
-### <a name="input-groups"></a>输入组
+### <a name="input-groups"></a>输入的组
 
-通过“输入组”，可将附加文本或按钮与某个输入元素绑定起来，为用户提供更直观的使用体验：
+输入的组允许绑定的附加文本或按钮使用输入元素，从而为用户提供更直观的体验：
 
-![输入组](bootstrap/_static/input-groups.png)
+![输入的组](bootstrap/_static/input-groups.png)
 
 ### <a name="breadcrumbs"></a>路径导航
 
-痕迹导航是常用 UI 组件，用于向用户显示其最近的站点导航层次结构历史记录或深度。可通过将“breadcrumb”类应用于任何 `<ol>` 列表元素轻松添加该组件。可通过在 `<nav>` 中的 `<ul>` 元素上使用“pagination”类来含入内置支持。通过使用 `<iframe>`、`<embed>`、`<video>` 或 `<object>`元素来添加嵌入的响应式幻灯片和视频，Bootstrap 会自动设置其样式。通过使用“embed-responsive-16by9”等特定类来指定特定纵横比。
+痕迹导航是用于显示用户，其最新历史记录或在站点的导航层次结构中的深度的常见 UI 组件。 通过将"痕迹导航"类应用于任何轻松地添加`<ol>`列表元素。 包括内置支持分页上使用"分页"类`<ul>`中的元素`<nav>`。 通过使用添加响应嵌入的幻灯片和视频`<iframe>`， `<embed>`， `<video>`，或`<object>`Bootstrap 将自动设置样式的元素。 通过使用特定的类，如"嵌入的响应性-16by9"中指定特定的纵横比。
 
 ## <a name="javascript-support"></a>JavaScript 支持
 

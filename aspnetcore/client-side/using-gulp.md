@@ -24,7 +24,8 @@ ms.locfileid: "36278247"
 * 将 LESS 或 SASS 文件编译成 CSS。
 * 将 CoffeeScript 或 TypeScript 文件编译成 JavaScript。
 
-任务运行程序是一种自动执行这些常规开发任务和其他任务的工具。Visual Studio 为下述两种常用的基于 JavaScript 的任务运行程序提供内置支持：[Gulp](https://gulpjs.com/) 和 [Grunt](using-grunt.md)。
+
+任务运行程序是一种自动执行这些常规开发任务和其他任务的工具。 Visual Studio 为下述两种常用的基于 JavaScript 的任务运行程序提供内置支持：[Gulp](https://gulpjs.com/) 和 [Grunt](using-grunt.md)。
 
 ## <a name="gulp"></a>gulp
 
@@ -188,15 +189,15 @@ gulp.task("min", ["min:js", "min:css"]);
 
     ![任务运行程序资源管理器清理任务](using-gulp/_static/04-TaskRunner-clean.png)
 
-    **任务运行程序资源管理器**将创建名为“clean”的新选项卡****，并根据 *gulpfile.js* 中的定义执行 clean 任务。
+    **任务运行程序资源管理器**将创建名为“clean”的新选项卡，并根据 *gulpfile.js* 中的定义执行 clean 任务。
 
-5.  右键单击“clean”****任务，然后选择“绑定”****>“生成之前”****。
+5.  右键单击“clean”任务，然后选择“绑定”>“生成之前” > **。
 
     ![任务运行程序资源管理器绑定 BeforeBuild](using-gulp/_static/05-TaskRunner-BeforeBuild.png)
 
-    ****“生成之前”绑定会配置 clean 任务，使之在每次生成项目之前自动运行。
+    “生成之前”绑定会配置 clean 任务，使之在每次生成项目之前自动运行。
 
-使用**任务运行程序资源管理器**设置的绑定以注释形式存储在 *gulpfile.js* 顶部，仅在 Visual Studio 中有效。一种不需要 Visual Studio 的替代方法是将 *csproj* 文件中的 gulp 任务配置为自动执行。例如，将以下代码置于 *.csproj* 文件中：
+使用**任务运行程序资源管理器**设置的绑定以注释形式存储在 *gulpfile.js* 顶部，仅在 Visual Studio 中有效。 一种不需要 Visual Studio 的替代方法是将 *csproj* 文件中的 gulp 任务配置为自动执行。 例如，将以下代码置于 *.csproj* 文件中：
 
 ```xml
 <Target Name="MyPreCompileTarget" BeforeTargets="Build">
@@ -228,11 +229,11 @@ gulp.task("min", ["min:js", "min:css"]);
 
     ![任务运行程序资源管理器运行第一个任务](using-gulp/_static/06-TaskRunner-First.png)
 
-    此时会显示输出文本。若要查看基于常见方案的示例，请参阅 [Gulp 脚本](#gulp-recipes)。
+    此时会显示输出文本。 若要查看基于常见方案的示例，请参阅 [Gulp 脚本](#gulp-recipes)。
 
 ## <a name="defining-and-running-tasks-in-a-series"></a>定义和运行一系列任务
 
-运行多个任务时，默认情况下这些任务会并发运行。但是，如果需要以特定顺序运行任务，则必须指定每个任务的具体完成时间，以及哪些任务依赖于其他任务的完成。
+运行多个任务时，默认情况下这些任务会并发运行。 但是，如果需要以特定顺序运行任务，则必须指定每个任务的具体完成时间，以及哪些任务依赖于其他任务的完成。
 
 1.  若要定义要按顺序运行的任务的一系列，替换`first`中前面添加的任务*gulpfile.js*替换为以下：
 
@@ -340,7 +341,7 @@ Gulp 任务已注册到的函数名称。 如果其他任务都必须运行在�
 
 ## <a name="gulp-recipes"></a>Gulp 脚本
 
-Gulp 社区提供 Gulp [脚本](https://github.com/gulpjs/gulp/blob/master/docs/recipes/README.md)。这些脚本包含适用于常见方案的 Gulp 任务。
+Gulp 社区提供 Gulp [脚本](https://github.com/gulpjs/gulp/blob/master/docs/recipes/README.md)。 这些脚本包含适用于常见方案的 Gulp 任务。
 
 ## <a name="additional-resources"></a>其他资源
 

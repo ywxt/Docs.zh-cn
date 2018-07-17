@@ -5,12 +5,12 @@ description: 演示如何使用 EF Core 进行创建、读取、更新和删除
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/crud
-ms.openlocfilehash: dfc79964cc4f15851b42822bb97d14800f54b878
-ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
+ms.openlocfilehash: 0a8d386104d9c62f37d0a94e66344d3f1e23bae9
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37093005"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063346"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - CRUD - 第 2 个教程（共 8 个）
 
@@ -236,9 +236,9 @@ DB 上下文会随时跟踪内存中的实体是否已与其在 DB 中的对应�
 
 ## <a name="common-errors"></a>常见错误
 
-“学生/主页”或其他链接不起作用：
+“学生/索引”或其他链接不起作用：
 
-验证确认 Razor 页面包含正确的 `@page` 指令。 例如，“学生/主页”Razor 页面不应包含路由模板：
+验证确认 Razor 页面包含正确的 `@page` 指令。 例如，“学生/索引”Razor Pages 不得包含路由模板：
 
 ```cshtml
 @page "{id:int}"

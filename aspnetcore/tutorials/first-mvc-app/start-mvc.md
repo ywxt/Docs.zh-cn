@@ -6,11 +6,11 @@ ms.author: riande
 ms.date: 10/07/2017
 uid: tutorials/first-mvc-app/start-mvc
 ms.openlocfilehash: 1fb3947023843341403f4355c6ae1e61d7e4f6b1
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275547"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38217973"
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a>ASP.NET Core MVC 和 Visual Studio 入门
 
@@ -129,7 +129,7 @@ Visual Studio 为刚刚创建的 MVC 项目使用默认模板。 输入项目名
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-完成“新建 ASP.NET Core Web 应用程序(.NET Core) - MvcMovie”对话框：
+完成“新建 ASP.NET 核心 Web 应用程序(.NET Core) - MvcMovie”对话框：
 
 * 在版本选择器下拉框中，点击“ASP.NET Core 1.1”
 * 点击“Web 应用程序”
