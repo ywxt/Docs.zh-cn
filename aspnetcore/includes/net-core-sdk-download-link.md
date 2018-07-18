@@ -1,1 +1,1 @@
-[<span data-ttu-id="b87db-101">.NET Core SDK 2.0 或更高版本</span><span class="sxs-lookup"><span data-stu-id="b87db-101">.NET Core SDK 2.0 or later</span></span>](https://www.microsoft.com/net/download)
+[<span data-ttu-id="ce70f-101">.NET Core SDK 2.0 或更高版本</span><span class="sxs-lookup"><span data-stu-id="ce70f-101">.NET Core SDK 2.0 or later</span></span>](https://www.microsoft.com/net/download)
