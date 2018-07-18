@@ -1,18 +1,18 @@
 ---
 title: 身份验证和授权在 ASP.NET Core SignalR
-author: rachelappel
+author: tdykstra
 description: 了解如何在 ASP.NET Core SignalR 中使用身份验证和授权。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: anurse
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: signalr/authn-and-authz
-ms.openlocfilehash: 32e5fcf2fd3f888e0e131fa47bd9a74eede3c26d
-ms.sourcegitcommit: 32626efaa7316c9b283c96be6516e637d548c5e5
+ms.openlocfilehash: d4259e04a0e3bb9ff517a10465323ccb5e2895a5
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39028459"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095166"
 ---
 # <a name="authentication-and-authorization-in-aspnet-core-signalr"></a>身份验证和授权在 ASP.NET Core SignalR
 
@@ -54,7 +54,7 @@ var connection = new HubConnectionBuilder()
 
 在标准 web Api，持有者令牌将发送 HTTP 标头中。 但是，SignalR 是无法使用某些传输通道时在浏览器中设置这些标头。 使用 Websocket 和服务器发送事件时，会将令牌传输作为查询字符串参数。 若要在服务器上支持此功能，则需要其他配置：
 
-[!code-csharp[Configure Server to accept access token from Query String](authn-and-authz/sample/Startup.cs?range=33-34,42-80,90)]
+[!code-csharp[Configure Server to accept access token from Query String](authn-and-authz/sample/Startup.cs?name=snippet)]
 
 ### <a name="windows-authentication"></a>Windows 身份验证
 

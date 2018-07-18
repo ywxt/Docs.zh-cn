@@ -1,16 +1,16 @@
 ---
 title: ASP.NET Core 安全性概述
-author: rachelappel
+author: tdykstra
 description: 了解 ASP.NET Core 中的身份验证、授权和安全基础知识。
-ms.author: rachelap
+ms.author: tdykstra
 ms.date: 11/01/2017
 uid: security/index
-ms.openlocfilehash: a23d23cf1bf0503b59c6f5d962cecf89af37b4b3
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: ed64594c85d555d8417903947fc3ce927dc04cec
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278500"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095757"
 ---
 # <a name="overview-of-aspnet-core-security"></a>ASP.NET Core 安全性概述
 

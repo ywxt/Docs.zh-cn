@@ -5,73 +5,77 @@ description: 了解有关数据保护的概念和 ASP.NET Core 数据保护 Api 
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/introduction
-ms.openlocfilehash: c043de3fc472357c0722a5a736d7e811f1b77002
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 29a2bbef6f2fd9b61541173af143926ca82bfad7
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273905"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095690"
 ---
 # <a name="aspnet-core-data-protection"></a>ASP.NET Core 数据保护
 
-Web 应用程序通常需要存储安全敏感数据。 Windows 提供 DPAPI 用于桌面应用程序，但这不适用于 web 应用程序。 ASP.NET Core 数据保护堆栈提供一个简单、 易于使用的加密 API，开发人员可以使用来保护数据，包括密钥管理和旋转。
+Web 应用程序通常需要将安全敏感数据存储。 Windows 桌面应用程序提供 DPAPI，但这并不适合 web 应用程序。 ASP.NET Core 数据保护堆栈提供一个简单、 易于使用的加密 API，开发人员可以使用来保护数据，包括密钥管理和旋转。
 
-ASP.NET Core 数据保护堆栈旨在用作的长期替代&lt;machineKey&gt;在 ASP.NET 中的元素 1.x-4.x。 它旨在解决许多旧加密堆栈的不足之处同时为大多数现代应用程序都可能会遇到的使用情况下提供的现成可用的解决方案。
+ASP.NET Core 数据保护堆栈旨在用作的长期替代&lt;machineKey&gt;在 ASP.NET 中的元素 1.x-4.x。 它旨在解决许多旧加密堆栈的不足之处同时为大多数现代应用程序可能会遇到的使用情况下提供开箱解决方案。
 
 ## <a name="problem-statement"></a>问题陈述
 
-总体问题语句中的单个句子可以用于简单地所述： 我需要保持受信任的信息，以便于以后检索，但我不信任的持久性机制。 在 web 术语中，这可能会写"我需要为通过不受信任的客户端往返受信任的状态。"
+总体问题语句可以简洁地表示中的单个句子： 我需要保留以供将来检索受信任的信息，但我不信任持久性机制。 在 web 术语中，这可能会根据写入"我需要为往返通过不受信任的客户端的受信任状态。"
 
-此规范的示例是身份验证 cookie 或持有者令牌。 服务器会生成"我是 Groot，具有 xyz 权限"令牌并将它传递到客户端。 在将来的某个日期，客户端将显示该令牌发送回服务器，但服务器需要某种类型的客户端尚未伪造令牌的保证。 因此第一个要求： 真实性 （也称为 完整性、 防校对）。
+此规范的示例是身份验证 cookie 或持有者令牌。 服务器会生成"我是 Groot，具有 xyz 的权限"令牌并将它传递到客户端。 在将来某天的客户端将显示该令牌发送回服务器，但该服务器需要某种类型的客户端尚未伪造令牌的保障。 因此第一个要求： 真实性 （也称为 完整性、 防篡改攻击）。
 
-由于所保持的状态由服务器信任的我们预计这种状态，可能包含特定于操作环境的信息。 这可能是或的服务器特定数据的其他部分的文件路径、 权限、 句柄或其他间接引用的形式。 此类信息应通常不得泄露给不受信任的客户端。 因此第二个要求： 保密性。
+持久化的状态由服务器信任的因为我们预计这种状态可能包含特定于操作环境的信息。 这可能是在文件路径、 权限、 句柄或其他间接引用的窗体或其他一些特定于服务器的数据。 此类信息通常不应公开到不受信任的客户端。 因此第二个要求： 保密性。
 
-最后，由于现代应用程序已被组件化，我们已了解是各个组件将想要利用此系统而不考虑其他组件在系统中。 例如，如果持有者令牌组件使用此堆栈，它应运行，而不从一种反 CSRF 机制，也可能使用相同的堆栈的干扰。 因此最后一项要求： 隔离。
+最后，现代应用程序的组件化，因为我们已了解是各个组件将想要充分利用此系统而不考虑其他组件的系统中。 例如，如果持有者令牌组件使用的此堆栈，它应运行不受干扰地从一种反 CSRF 机制，也可能使用相同的堆栈。 因此最后一项要求： 隔离。
 
-我们可以提供进一步的约束为了缩小我们的要求的范围。 我们假定加密系统内运行的所有服务都都同样受信任而数据不需要使用外部下我们直接控制服务或生成。 此外，我们需要操作是尽可能快，因为 web 服务的每个请求可能会经过加密系统一个或多个时间。 这样，可以对称加密适合我们的方案，而且我们可以如具有所需的时间之前折扣非对称加密。
+我们可以进一步约束以缩小我们的要求的范围。 我们假定加密系统内的所有服务都是同等信任和数据无需生成或在我们的直接控制服务外部使用。 此外，我们需要的操作是尽可能快，因为 web 服务的每个请求可能会经过加密系统的一个或多个时间。 这使得对称加密非常适合用于我们的方案，和我们可以折扣此类具有所需的时间之前的非对称加密。
 
 ## <a name="design-philosophy"></a>设计理念
 
-通过标识具有现有堆栈的问题，我们已开始。 我们有的我们调查了现有的解决方案的布局，并结束，任何现有解决方案相当了我们查找的功能。 我们然后工程处理基于几个指导原则的解决方案。
+我们首先使用现有的堆栈识别问题。 一旦我们有的我们的调查了现有解决方案布局而得出的结论是，没有现有的解决方案没有我们查找的功能。 然后，我们设计基于多个指导原则的解决方案。
 
-* 系统应提供简单的配置。 理想情况下，系统将零配置并开发人员无法按完全运行。 在开发人员需要配置 （如密钥存储库） 的特定方面的情况下，应特别注意简化这些特定的配置。
+* 系统应提供简单的配置。 理想情况下系统将为零配置，并且开发人员可以快速开始使用。 在开发人员需要配置一个特定方面 （如密钥存储库） 的情况下，应考虑到使这些特定的配置更简单。
 
-* 提供一个简单的面向使用者的 API。 Api 应易于正确使用且难以不正确地使用。
+* 提供一个简单的面向消费者的 API。 Api 应易于正确使用且难以使用不正确。
 
-* 开发人员不应了解密钥管理原则。 系统应处理算法选择和开发人员代表密钥的生存期。 理想情况下开发人员甚至不应有权访问原始密钥材料。
+* 开发人员不应了解密钥管理原则。 系统应处理算法选择和开发人员的代表的密钥生存期。 理想情况下，开发人员甚至不应具有访问原始密钥材料。
 
-* 应存放在可能的情况保护密钥。 系统应找出适当的默认保护机制，并自动应用。
+* 应尽可能的静态保护密钥。 系统应找出相应的默认保护机制，并将其自动应用。
 
-牢记这些原则与我们开发一个简单、[易于使用](xref:security/data-protection/using-data-protection)数据保护堆栈。
+记住这些原则与我们开发了一个简单[易于使用](xref:security/data-protection/using-data-protection)数据保护堆栈。
 
-ASP.NET Core 数据保护 Api 主要不用于机密负载的无限期持久性。 其他技术喜欢[Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx)和[Azure Rights Management](https://docs.microsoft.com/rights-management/)更适合于以下场景： 无限期存储，并且它们的相应强密钥管理功能。 也就是说，无需进行任何开发人员禁止使用 ASP.NET Core 数据保护 Api 进行长期保护的机密数据。
+ASP.NET Core 数据保护 Api 主要不用于机密负载的无限期持久性。 等其他技术[Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx)并[Azure Rights Management](https://docs.microsoft.com/rights-management/)更适合的无限期存储方案，并且必须相应地强密钥管理功能。 也就是说，无需进行任何开发人员禁止使用 ASP.NET Core 数据保护 Api 进行长期保护的机密数据。
 
 ## <a name="audience"></a>读者
 
-数据保护系统分为五个主要的软件包。 这些 Api 的各个方面的目标三个主要受众;
+数据保护系统分为五个主要的软件包。 这些 Api 的各个方面定位三个主要受众;
 
-1. [使用者 Api 概述](xref:security/data-protection/consumer-apis/overview)目标应用程序和 framework 开发人员。
+1. [使用者 Api 概述](xref:security/data-protection/consumer-apis/overview)目标应用程序和框架开发人员。
 
-   "我不想要了解有关堆栈的运行方式或配置方式。 我只想要执行某项操作中的作为简单的方式尽可能与高概率的成功使用 Api。"
+   "我不想要了解有关在堆栈的运行方式或配置方式。 我只是想要执行某项操作中的最简单的方式尽可能高概率为成功使用 Api。"
 
-2. [配置 Api](xref:security/data-protection/configuration/overview)面向应用程序开发人员和系统管理员。
+2. [配置 Api](xref:security/data-protection/configuration/overview)目标应用程序开发人员和系统管理员。
 
    "我需要告诉我的环境需要非默认路径或设置数据保护系统。"
 
-3. 扩展性 Api 目标开发人员负责实现自定义策略。 这些 api 的使用情况将限制为极少数情况下，并且可以出现，安全感知开发人员。
+3. 扩展性 Api 目标，开发人员负责实现自定义策略。 这些 Api 的使用情况将限于极少数情况下并遇到安全注意开发人员。
 
-   "我需要更换系统中的整个组件，因为我具有真正独特的行为要求。 我愿意以了解极其使用组成部分的 API 图面以生成满足我的要求的插件。"
+   "我需要替换的整个系统内组件，因为我有真正独特的行为要求。 我愿意以了解不常见使用的 API 图面部分，若要生成可满足我的要求的插件。"
 
 ## <a name="package-layout"></a>包布局
 
-数据保护堆栈包含五个的包。
+数据保护堆栈包含五个包。
 
-* Microsoft.AspNetCore.DataProtection.Abstractions 包含基本的 IDataProtectionProvider 和 IDataProtector 接口。 它还包含有助于使用这些类型 （例如，重载 IDataProtector.Protect） 的有用的扩展方法。 请参阅使用者接口部分以了解更多信息。 如果其他人负责实例化数据保护系统，并且你只需使用 Api，则需要引用 Microsoft.AspNetCore.DataProtection.Abstractions。
+* Microsoft.AspNetCore.DataProtection.Abstractions 包含基本的 IDataProtectionProvider 和 IDataProtector 接口。 它还包含有用的扩展方法可以帮助你使用这些类型 （例如，重载的 IDataProtector.Protect）。 请参阅有关详细信息使用者接口部分。 如果其他人负责实例化的数据保护系统，您只需占用 Api，则需为引用 Microsoft.AspNetCore.DataProtection.Abstractions。
 
-* Microsoft.AspNetCore.DataProtection 包含数据保护系统，包括核心加密操作、 密钥管理、 配置和可扩展性的核心的实现。 如果你要负责实例化数据保护系统 （例如，将其添加到 IServiceCollection） 或修改或扩展其行为，你将希望引用 Microsoft.AspNetCore.DataProtection。
+* Microsoft.AspNetCore.DataProtection 包含数据保护系统，包括核心加密操作、 密钥管理、 配置和可扩展性的核心实现。 如果你要负责实例化的数据保护系统 （例如，将其添加到 IServiceCollection） 或修改或扩展其行为，您将希望引用 Microsoft.AspNetCore.DataProtection。
 
-* Microsoft.AspNetCore.DataProtection.Extensions 包含其他 Api 的开发人员可能会发现很有用，但这不属于核心包中。 例如，此程序包包含一个简单的"实例化指向没有依赖关系注入安装程序的特定密钥的存储目录系统"API （详细信息）。 它还包含用于限制受保护负载 （详细信息） 的生存期的扩展方法。
+* Microsoft.AspNetCore.DataProtection.Extensions 包含其他一些 Api，开发人员可能会发现很有用，但这不属于核心包中。 例如，此包包含一个简单的"实例化指向一个特定的密钥存储目录，而无需依赖关系注入设置系统"API （详细信息）。 它还包含用于限制受保护负载 （详细信息） 的生存期的扩展方法。
 
-* Microsoft.AspNetCore.DataProtection.SystemWeb 可安装到现有 ASP.NET 4.x 应用程序将重定向其&lt;machineKey&gt;操作改为使用新的数据保护堆栈。 请参阅[兼容性](xref:security/data-protection/compatibility/replacing-machinekey#compatibility-replacing-machinekey)有关详细信息。
+* Microsoft.AspNetCore.DataProtection.SystemWeb 可安装到现有 ASP.NET 4.x 应用程序重定向其&lt;machineKey&gt;操作，而是使用新的数据保护堆栈。 请参阅[兼容性](xref:security/data-protection/compatibility/replacing-machinekey#compatibility-replacing-machinekey)有关详细信息。
 
-* Microsoft.AspNetCore.Cryptography.KeyDerivation 提供的哈希例程 PBKDF2 密码的实现，并且可以由系统需要安全地处理用户密码。 请参阅[哈希处理密码](xref:security/data-protection/consumer-apis/password-hashing)有关详细信息。
+* Microsoft.AspNetCore.Cryptography.KeyDerivation 提供 PBKDF2 密码哈希例程的实现，并可由系统需要安全地处理用户密码。 请参阅[哈希密码](xref:security/data-protection/consumer-apis/password-hashing)有关详细信息。
+
+## <a name="additional-resources"></a>其他资源
+
+<xref:host-and-deploy/web-farm>

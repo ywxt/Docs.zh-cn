@@ -1,23 +1,23 @@
 ---
-title: 使用 ASP.NET Core 中分布式缓存
+title: 使用 ASP.NET Core 中的分布式缓存
 author: ardalis
-description: 了解如何使用 ASP.NET Core 分布式缓存以提高应用性能和可伸缩性，尤其是在云或服务器场环境。
+description: 了解如何使用 ASP.NET Core 分布式缓存以提高应用性能和可伸缩性，尤其是在云或服务器场环境中。
 ms.author: riande
 ms.custom: mvc
 ms.date: 02/14/2017
 uid: performance/caching/distributed
-ms.openlocfilehash: 5ddc3a6927652f773ab38f93db1e222c5a1900b3
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: 861664fcad576c11abe052837b72367eb2b9479a
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077694"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095676"
 ---
-# <a name="work-with-a-distributed-cache-in-aspnet-core"></a>使用 ASP.NET Core 中分布式缓存
+# <a name="work-with-a-distributed-cache-in-aspnet-core"></a>使用 ASP.NET Core 中的分布式缓存
 
 作者：[Steve Smith](https://ardalis.com/)
 
-分布式缓存可以提高 ASP.NET Core 应用的性能和可伸缩性，尤其是托管在云或服务器场环境中时。 本文解释了如何使用 ASP.NET Core 的内置分布式缓存抽象和实现。
+分布式的缓存可以提高性能和可伸缩性的 ASP.NET Core 应用程序，尤其是当托管在云中或服务器场中时。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
@@ -29,7 +29,7 @@ ms.locfileid: "37077694"
 
 2. 缓存的数据在 Web 服务器重新启动后和部署后仍然存在。 删除或添加单独的 Web 服务器不会影响缓存。
 
-3. 源数据存储区具有对它 （不是使用多个内存中缓存或否缓存根本） 发出的少数几个请求。
+3. 源数据存储区具有较少的请求进行的 （不是使用多个内存中缓存或否缓存完全）。
 
 > [!NOTE]
 > 如果使用 SQL Server 分布式缓存，则其中一些优势只有在为缓存而不是应用的源数据使用单独的数据库实例的情况下才会体现出来。
@@ -67,7 +67,7 @@ ms.locfileid: "37077694"
    3. 在应用的[中间件](xref:fundamentals/middleware/index)或 MVC 控制器类中，从构造函数请求 `IDistributedCache`的实例。 实例将通过[依赖项注入](../../fundamentals/dependency-injection.md) (DI) 提供。
 
 > [!NOTE]
-> 无需为`IDistributedCache`实例使用 Singleton 或 Scoped 生命周期（至少对内置实现来说是这样的）。 你还可以创建一个实例，只要你可能需要一个 (而不是使用[依赖关系注入](../../fundamentals/dependency-injection.md))，但这会导致你的代码更难若要测试，并且与冲突[显式依赖关系原则](http://deviq.com/explicit-dependencies-principle/)。
+> 无需为`IDistributedCache`实例使用 Singleton 或 Scoped 生命周期（至少对内置实现来说是这样的）。 任何可能需要某一个位置，还可以创建一个实例 (而不是使用[依赖关系注入](../../fundamentals/dependency-injection.md))，但这会导致代码更难测试，和违反[显式依赖关系原则](http://deviq.com/explicit-dependencies-principle/)。
 
 下面的示例演示如何在简单的中间件组件中使用`IDistributedCache` 实例：
 
@@ -80,7 +80,7 @@ ms.locfileid: "37077694"
 [!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet1)]
 
 > [!NOTE]
-> 由于`IDistributedCache`是在`ConfigureServices`方法中配置的，因此它可以作为参数提供给`Configure`方法。 将其添加作为参数将允许通过 DI 提供配置的实例。
+> 由于`IDistributedCache`是在`ConfigureServices`方法中配置的，因此它可以作为参数提供给`Configure`方法。 将其添加作为参数将允许通过 DI 提供已配置的实例。
 
 ## <a name="using-a-redis-distributed-cache"></a>使用分布式的 Redis 缓存
 
@@ -93,7 +93,7 @@ ms.locfileid: "37077694"
 [!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet2)]
 
 > [!NOTE]
-> 若要在本地计算机上安装 Redis，安装 chocolatey 程序包[ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/)并运行`redis-server`从命令提示符。
+> 若要在本地计算机上安装 Redis，安装 chocolatey 包[ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/)并运行`redis-server`从命令提示符。
 
 ## <a name="using-a-sql-server-distributed-cache"></a>使用 SQL Server 分布式缓存
 
@@ -101,7 +101,7 @@ SqlServerCache 实现允许分布式缓存使用 SQL Server 数据库作为其�
 
 ::: moniker range="< aspnetcore-2.1"
 
-添加`SqlConfig.Tools`到`<ItemGroup>`元素的项目文件和运行`dotnet restore`。
+添加`SqlConfig.Tools`到`<ItemGroup>`元素的项目文件并运行`dotnet restore`。
 
 ```xml
 <ItemGroup>
@@ -112,15 +112,15 @@ SqlServerCache 实现允许分布式缓存使用 SQL Server 数据库作为其�
 
 ::: moniker-end
 
-通过运行以下命令来测试 SqlConfig.Tools:
+通过运行以下命令测试 SqlConfig.Tools:
 
 ```console
 dotnet sql-cache create --help
 ```
 
-SqlConfig.Tools 显示使用情况、 选项和命令的帮助。
+SqlConfig.Tools 显示使用情况、 选项和命令帮助。
 
-在 SQL Server 中创建表，通过运行`sql-cache create`命令：
+通过运行 SQL Server 中创建一个表`sql-cache create`命令：
 
 ```console
 dotnet sql-cache create "Data Source=(localdb)\v11.0;Initial Catalog=DistCache;Integrated Security=True;" dbo TestCache
@@ -128,11 +128,11 @@ info: Microsoft.Extensions.Caching.SqlConfig.Tools.Program[0]
 Table and index were created successfully.
 ```
 
-创建的表具有以下架构：
+在创建的表具有以下架构：
 
-![Sql Server 缓存表](distributed/_static/SqlServerCacheTable.png)
+![SqlServer 缓存表](distributed/_static/SqlServerCacheTable.png)
 
-像所有缓存实现一样，应用应该使用`IDistributedCache`，实例来获取和设置缓存值，而不是使用`SqlServerCache`实例。 此示例实现`SqlServerCache`在生产环境中 (以便在配置`ConfigureProductionServices`)。
+像所有缓存实现一样，应用应该使用`IDistributedCache`，实例来获取和设置缓存值，而不是使用`SqlServerCache`实例。 此示例实现`SqlServerCache`生产环境中 (以便在配置`ConfigureProductionServices`)。
 
 [!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet3)]
 
@@ -141,15 +141,16 @@ Table and index were created successfully.
 
 ## <a name="recommendations"></a>建议
 
-在决定哪种`IDistributedCache`实现适合应用时，请根据现有的基础架构和环境、性能要求和团队经验在 Redis 和 SQL Server 之间进行选择。 如果团队更喜欢使用 Redis，那就使用它。 如果团队倾向于 SQL Server，那么也应对这么做充满信心。 请注意，传统的缓存解决方案将存储数据的内存中用于进行快速检索的数据。 应该将常用数据存储在缓存中，将整个数据存储在后端持久性存储（如 SQL Server 或 Azure 存储）中。 与 SQL Cache 相比，Redis Cache 是一种吞吐量高且延迟轻微的缓存解决方案。
+在决定哪种`IDistributedCache`实现适合应用时，请根据现有的基础架构和环境、性能要求和团队经验在 Redis 和 SQL Server 之间进行选择。 如果团队更喜欢使用 Redis，那就使用它。 如果团队倾向于 SQL Server，那么也应对这么做充满信心。 请注意，传统的缓存解决方案存储内存中数据可用于快速检索的数据。 应该将常用数据存储在缓存中，将整个数据存储在后端持久性存储（如 SQL Server 或 Azure 存储）中。 与 SQL Cache 相比，Redis Cache 是一种吞吐量高且延迟轻微的缓存解决方案。
 
 ## <a name="additional-resources"></a>其他资源
 
-* [Redis 在 Azure 上的缓存](https://azure.microsoft.com/documentation/services/redis-cache/)
+* [Redis 缓存在 Azure 上](https://azure.microsoft.com/documentation/services/redis-cache/)
 * [在 Azure 上的 SQL 数据库](https://azure.microsoft.com/documentation/services/sql-database/)
-* [内存中缓存](xref:performance/caching/memory)
-* [使用更改令牌检测更改](xref:fundamentals/primitives/change-tokens)
-* [响应缓存](xref:performance/caching/response)
-* [响应缓存中间件](xref:performance/caching/middleware)
-* [缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [分布式缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* <xref:performance/caching/memory>
+* <xref:fundamentals/primitives/change-tokens>
+* <xref:performance/caching/response>
+* <xref:performance/caching/middleware>
+* <xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper>
+* <xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper>
+* <xref:host-and-deploy/web-farm>
