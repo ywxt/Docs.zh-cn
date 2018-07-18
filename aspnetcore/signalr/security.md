@@ -1,18 +1,18 @@
 ---
 title: ASP.NET Core SignalR 中的安全注意事项
-author: rachelappel
+author: tdykstra
 description: 了解如何在 ASP.NET Core SignalR 中使用身份验证和授权。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: anurse
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: signalr/security
-ms.openlocfilehash: eff4542b88f24dd6c1c0675f56874e368d441fdd
-ms.sourcegitcommit: 32626efaa7316c9b283c96be6516e637d548c5e5
+ms.openlocfilehash: b66c7fbfbaee4c70a68f3132875fbc81018c3e20
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39028479"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095127"
 ---
 # <a name="security-considerations-in-aspnet-core-signalr"></a>ASP.NET Core SignalR 中的安全注意事项
 
@@ -24,7 +24,7 @@ ms.locfileid: "39028479"
 
 ### <a name="cross-origin-resource-sharing"></a>跨域资源共享
 
-[跨域资源共享 (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)可用于在浏览器中允许跨域 SignalR 连接。 如果您的 JavaScript 代码托管在从 SignalR 应用不同的域名，则必须启用[ASP.NET Core CORS 中间件](xref:security/cors)以便连接。 一般情况下，允许您控制的域中仅跨域请求。 例如，如果您的网站上托管`http://www.example.com`和 SignalR 应用上托管`http://signalr.example.com`，应为只允许原点在 SignalR 应用程序中配置 CORS `www.example.com`。
+[跨域资源共享 (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)可用于在浏览器中允许跨域 SignalR 连接。 如果您的 JavaScript 代码托管在从 SignalR 应用不同的域名，则必须启用[ASP.NET Core CORS 中间件](xref:security/cors)以便连接。 一般情况下，允许您控制的域中仅跨域请求。 例如，如果您的网站上托管 `http://www.example.com` 和 SignalR 应用上托管 `http://signalr.example.com`，应为只允许原点在 SignalR 应用程序中配置 CORS `www.example.com`。
 
 配置 CORS 的详细信息，请参阅[有关 ASP.NET Core CORS 文档](xref:security/cors)。 SignalR 需要以下 CORS 策略才能正常运行：
 
@@ -32,7 +32,7 @@ ms.locfileid: "39028479"
 * HTTP 方法`GET`和`POST`必须允许。
 * 甚至在不使用身份验证时，必须启用凭据。
 
-例如，以下的 CORS 策略允许 SignalR 浏览器客户端上托管`http://example.com`访问 SignalR 应用：
+例如，以下的 CORS 策略允许 SignalR 浏览器客户端上托管 `http://example.com` 访问 SignalR 应用：
 
 ```csharp
 public void Configure(IApplicationBuilder app)
