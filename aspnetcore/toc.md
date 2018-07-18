@@ -287,6 +287,7 @@
 ### [Visual Studio Tools for Docker](xref:host-and-deploy/docker/visual-studio-tools-for-docker)
 ### [发布到 Docker 映像](https://azure.microsoft.com/documentation/articles/vs-azure-tools-docker-hosting-web-apps-in-docker/)
 ## [代理和负载均衡器配置](xref:host-and-deploy/proxy-load-balancer)
+## [在 Web 场中托管](xref:host-and-deploy/web-farm)
 ## [Visual Studio 发布配置文件](xref:host-and-deploy/visual-studio-publish-profiles)
 ## [目录结构](xref:host-and-deploy/directory-structure)
 ## [Azure 应用服务和 IIS 的常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)

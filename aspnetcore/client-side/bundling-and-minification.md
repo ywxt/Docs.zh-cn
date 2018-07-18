@@ -1,7 +1,7 @@
 ---
 title: 在 ASP.NET Core 中的捆绑和 minifiy 静态资产
 author: scottaddie
-description: 了解如何通过应用绑定和缩减技术优化 ASP.NET Core web 应用程序中的静态资源。
+description: 了解如何通过应用捆绑和缩减技术优化 ASP.NET Core web 应用程序中的静态资源。
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 01/10/2018

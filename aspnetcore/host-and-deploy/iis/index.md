@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 03/13/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 96a4403653e474bb056374909b3ee66998bc99be
-ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
+ms.openlocfilehash: 607bdb7ee830c9a3bbb83ca2aec4661772a285b2
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38992810"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095835"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -168,9 +168,8 @@ web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS
 
 1. 在托管系统上安装 .NET Core 托管捆绑包。 捆绑包可安装 .NET Core 运行时、.NET Core 库和 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)。 该模块创建 IIS 与 Kestrel 服务器之间的反向代理。 如果系统没有 Internet 连接，请先获取并安装 [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840)，然后再安装 .NET Core 托管捆绑包。
 
-   1. 导航到 [.NET“所有下载”页](https://www.microsoft.com/net/download/all)。
-   1. 在表格的“运行时”列，从列表中选择最新的非预览 .NET Core 运行时（X.Y 运行时 (vX.Y.Z) 下载）。 最新的运行时具有“最新”标签。 除非你想要使用预览软件，否则请避免在其链接文本中使用含有单词“预览”或“rc”（候选发布）的运行时。
-   1. 在 Windows 下的 .NET Core 运行时下载页上，选择“托管捆绑包安装程序”链接以下载“.NET Core 托管捆绑包”安装程序。
+   1. 导航到 [.NET 下载页](https://www.microsoft.com/net/download/windows)。
+   1. 在“.NET Core”下，选择“运行应用”标签旁边的“下载 .NET Core 运行时”按钮。 安装程序的可执行文件的文件名中包含“hosting”一词，例如，*dotnet-hosting-2.1.2-win.exe*。
    1. 在服务器上运行安装程序。
 
    **重要提示！** 如果在 IIS 之前安装了托管捆绑包，则必须修复捆绑包安装。 在安装 IIS 后再次运行托管捆绑包安装程序。
