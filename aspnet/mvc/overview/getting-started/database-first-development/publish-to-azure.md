@@ -149,7 +149,7 @@ ms.locfileid: "37835743"
 
 ![新表](publish-to-azure/_static/image22.png)
 
-现在已准备好部署到 Azure web 应用进行测试。 导航到在 Azure 上的 web 应用 (如http://contosositeexample.azurewebsites.net/)。 单击链接获取学生列表，您应看到面向学生的索引视图。
+现在已准备好部署到 Azure web 应用进行测试。 导航到在 Azure 上的 web 应用 (如 http://contosositeexample.azurewebsites.net/)。 单击链接获取学生列表，您应看到面向学生的索引视图。
 
 ![查看](publish-to-azure/_static/image23.png)
 

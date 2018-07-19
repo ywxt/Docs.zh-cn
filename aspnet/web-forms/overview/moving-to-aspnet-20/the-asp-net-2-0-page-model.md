@@ -141,11 +141,11 @@ ASP.NET 2.0 中的 @ Page 指令的另一新功能是能够设置基类的公共
 
 ## <a name="apprelativetemplatesourcedirectory"></a>AppRelativeTemplateSourceDirectory
 
-返回到页或控件的应用程序相对路径。 例如，对于位于一个页面http://app/folder/page.aspx，该属性返回 ~ / 文件夹 /。
+返回到页或控件的应用程序相对路径。 例如，对于位于一个页面 http://app/folder/page.aspx，该属性返回 ~ / 文件夹 /。
 
 ## <a name="apprelativevirtualpath"></a>AppRelativeVirtualPath
 
-返回的页或控件的相对虚拟目录路径。 例如对于位于一个页面http://app/folder/page.aspx，该属性返回 ~ / folder/page.aspx。
+返回的页或控件的相对虚拟目录路径。 例如对于位于一个页面 http://app/folder/page.aspx，该属性返回 ~ / folder/page.aspx。
 
 ## <a name="asynctimeout"></a>AsyncTimeout
 

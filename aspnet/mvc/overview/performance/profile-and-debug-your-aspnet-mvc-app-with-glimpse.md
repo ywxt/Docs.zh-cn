@@ -52,7 +52,7 @@ ms.locfileid: "37808536"
 <a id="eg"></a>
 ## <a name="enable-glimpse-for-localhost"></a>为本地主机启用 Glimpse
 
-导航到http://localhost:&lt; 端口号&gt;/glimpse.axd，然后单击<strong>上打开 Glimpse</strong>按钮。
+导航到 http://localhost:&lt; 端口号&gt;/glimpse.axd，然后单击<strong>上打开 Glimpse</strong>按钮。
 
 ![Glimpse axd 页](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image4.png)
 
