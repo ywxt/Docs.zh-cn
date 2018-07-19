@@ -8,12 +8,12 @@ ms.date: 08/23/2012
 ms.assetid: 5894dc13-5d45-4dad-8096-136499120f1d
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 090bb58f762302e0f58db7b8c005fe584e5ec419
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4e72804593c07318af8cc577f9d43ab96be4de05
+ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827370"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39123783"
 ---
 <a name="bundling-and-minification"></a>捆绑和缩小
 ====================
@@ -69,7 +69,7 @@ ms.locfileid: "37827370"
 | **接收到的 KB** | 388.51 | 530 | 36% |
 | **加载时间** | 510 MS | 780 MS | 53% |
 
-发送的字节数必须与捆绑的浏览器将它们应用请求的 HTTP 标头包含的非常详细的显著降低。 接收的字节减少不是大因为最大的文件 (*Scripts\jquery-ui-1.8.11.min.js*并*Scripts\jquery-1.7.1.min.js*) 已缩小。 注意： 示例程序使用计时[Fiddler](http://www.fiddler2.com/fiddler2/)工具来模拟慢速网络。 (从 Fiddler**规则**菜单中，选择**性能**然后**模拟调制解调器速度**。)
+发送的字节数必须与捆绑的浏览器将它们应用请求的 HTTP 标头包含的非常详细的显著降低。 接收的字节减少不是大因为最大的文件 (*脚本\\jquery ui 1.8.11.min.js*并*脚本\\jquery 1.7.1.min.js*) 已缩减. 注意： 示例程序使用计时[Fiddler](http://www.fiddler2.com/fiddler2/)工具来模拟慢速网络。 (从 Fiddler**规则**菜单中，选择**性能**然后**模拟调制解调器速度**。)
 
 ## <a name="debugging-bundled-and-minified-javascript"></a>调试捆绑的和缩减 JavaScript
 
@@ -79,7 +79,7 @@ ms.locfileid: "37827370"
 2. 选择包含你想要使用的资产按钮进行调试的 JavaScript 函数的绑定。  
     ![](bundling-and-minification/_static/image4.png)
 3. 选择格式缩减的 JavaScript**配置按钮** ![](bundling-and-minification/_static/image5.png)，然后选择**格式 JavaScript**。
-4. 在中**搜索脚本**t 输入的框中，选择你想要调试的函数的名称。 在下图中， **AddAltToImg**中输入**搜索脚本**t 输入的框。  
+4. 在中**搜索脚本**输入框中，选择你想要调试的函数的名称。 在下图中， **AddAltToImg**中输入**搜索脚本**输入的框。  
     ![](bundling-and-minification/_static/image6.png)
 
 有关使用 F12 开发人员工具进行调试的详细信息，请参阅 MSDN 文章[使用 F12 开发人员工具调试 JavaScript 错误](https://msdn.microsoft.com/library/ie/gg699336(v=vs.85).aspx)。
@@ -107,15 +107,15 @@ ms.locfileid: "37827370"
 
 在本部分中我们将创建 ASP.NET MVC 项目，以检查捆绑和缩小。 首先，创建一个名为的新 ASP.NET MVC internet 项目**MvcBM**无需更改任何默认值。
 
-打开*应用程序\_Start\BundleConfig.cs*文件并检查`RegisterBundles`方法用于创建、 注册和配置捆绑包。 下面的代码显示了部分`RegisterBundles`方法。
+打开*应用程序\\\_启动\\BundleConfig.cs*文件并检查`RegisterBundles`方法用于创建、 注册和配置捆绑包。 下面的代码显示了部分`RegisterBundles`方法。
 
 [!code-csharp[Main](bundling-and-minification/samples/sample5.cs)]
 
 上面的代码创建名为新的 JavaScript 捆绑 *~/bundles/jquery* ，其中包含所有相应 (为调试或缩减的但不是。*vsdoc*) 中的文件*脚本*通配符字符串"~/Scripts/jquery-{version}.js"相匹配的文件夹。 对于 ASP.NET MVC 4 中，这意味着使用调试配置时，该文件*jquery 1.7.1.js*将添加到此捆绑包。 在发布配置中， *jquery 1.7.1.min.js*将添加。 捆绑 framework 如遵循几个常见约定：
 
-- "FileX.min.js"和"FileX.js"存在时，请选择".min"文件版本。
+- 选择".min"文件为版本何时*FileX.min.js*并*FileX.js*存在。
 - 选择调试的非".min"版本。
-- 忽略"-vsdoc"文件 （例如 jquery-1.7.1-vsdoc.js)，IntelliSense 仅使用它们。
+- 忽略"-vsdoc"文件 (如*jquery 1.7.1 vsdoc.js*)，仅供 IntelliSense。
 
 `{version}`通配符匹配如上所示用于自动创建具有合适版本的中的 jQuery 的 jQuery 捆绑你*脚本*文件夹。 在此示例中，使用通配符提供以下优势：
 
@@ -134,7 +134,7 @@ ms.locfileid: "37827370"
 
 ## <a name="creating-a-bundle"></a>创建一个捆绑包
 
-[捆绑](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx)类`Include`方法采用字符串数组，其中每个字符串是资源的虚拟路径。 下面的代码中的 RegisterBundles 方法从*应用程序\_Start\BundleConfig.cs*文件演示如何将多个文件添加到一个捆绑包：
+[捆绑](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx)类`Include`方法采用字符串数组，其中每个字符串是资源的虚拟路径。 中的以下代码`RegisterBundles`中的方法*应用程序\\\_启动\\BundleConfig.cs*文件演示如何将多个文件添加到一个捆绑包：
 
 [!code-csharp[Main](bundling-and-minification/samples/sample8.cs)]
 
@@ -142,7 +142,7 @@ ms.locfileid: "37827370"
 
 [!code-csharp[Main](bundling-and-minification/samples/sample9.cs)]
 
-使用 Render 方法中，视图中引用捆绑包 ( `Styles.Render` css 和`Scripts.Render`javascript)。 中的以下标记*views/shared\\_Layout.cshtml*文件显示默认 ASP.NET internet 项目视图如何引用 CSS 和 JavaScript 的捆绑包。
+使用 Render 方法中，视图中引用捆绑包 (`Styles.Render` css 和`Scripts.Render`javascript)。 中的以下标记*视图\\共享\\\_Layout.cshtml*文件显示默认 ASP.NET internet 项目视图如何引用 CSS 和 JavaScript 的捆绑包。
 
 [!code-cshtml[Main](bundling-and-minification/samples/sample10.cshtml?highlight=5-6,11)]
 
@@ -156,10 +156,10 @@ ms.locfileid: "37827370"
 
 使用以下 JavaScript 文件，请考虑一个项目：
 
-- *Scripts\Common\AddAltToImg.js*
-- *Scripts\Common\ToggleDiv.js*
-- *Scripts\Common\ToggleImg.js*
-- *Scripts\Common\Sub1\ToggleLinks.js*
+- *脚本\\常见\\AddAltToImg.js*
+- *脚本\\常见\\ToggleDiv.js*
+- *脚本\\常见\\ToggleImg.js*
+- *脚本\\常见\\Sub1\\ToggleLinks.js*
 
 ![dir imag](bundling-and-minification/_static/image7.png)
 
@@ -167,13 +167,13 @@ ms.locfileid: "37827370"
 
 | **Call** | **添加文件或引发异常** |
 | --- | --- |
-| Include("~/Scripts/Common/\*.js") | *AddAltToImg.js，ToggleDiv.js，ToggleImg.js* |
+| Include("~/Scripts/Common/\*.js") | *AddAltToImg.js*， *ToggleDiv.js*， *ToggleImg.js* |
 | Include("~/Scripts/Common/T\*.js") | 无效的模式的异常。 通配符字符只能在前缀或后缀上。 |
 | Include("~/Scripts/Common/\*og.\*") | 无效的模式的异常。 允许将只有一个通配符字符。 |
-| "Include("~/Scripts/Common/T\*") | *ToggleDiv.js ToggleImg.js* |
-| "Include("~/Scripts/Common/\*") | 无效的模式的异常。 纯通配符段不是有效的。 |
-| IncludeDirectory("~/Scripts/Common", "T\*") | *ToggleDiv.js ToggleImg.js* |
-| IncludeDirectory("~/Scripts/Common", "T\*",true) | *ToggleDiv.js，ToggleImg.js，ToggleLinks.js* |
+| 包括 ("~/Scripts/Common/T\*") | *ToggleDiv.js*， *ToggleImg.js* |
+| 包括 ("~/Scripts/Common/\*") | 无效的模式的异常。 纯通配符段不是有效的。 |
+| IncludeDirectory("~/Scripts/Common", "T\*") | *ToggleDiv.js*， *ToggleImg.js* |
+| IncludeDirectory ("~/Scripts/Common"，"T\*"，true) | *ToggleDiv.js*， *ToggleImg.js*， *ToggleLinks.js* |
 
 显式将每个文件添加到一个捆绑包是通常优先通过通配符加载的文件的原因如下：
 
@@ -183,7 +183,7 @@ ms.locfileid: "37827370"
 
     [!code-csharp[Main](bundling-and-minification/samples/sample12.cs)]
 
-  通配符选择器"\*.css"的文件夹中，每个 CSS 文件中将包括*Content\themes\base\jquery.ui.all.css*文件。 *Jquery.ui.all.css*文件导入其他 CSS 文件。
+  通配符选择器"\*.css"的文件夹中，每个 CSS 文件中将包括*内容\\主题\\基\\jquery.ui.all.css*文件。 *Jquery.ui.all.css*文件导入其他 CSS 文件。
 
 ## <a name="bundle-caching"></a>捆绑包缓存
 
@@ -195,7 +195,7 @@ ms.locfileid: "37827370"
 
 请求   
 `http://localhost/MvcBM_time/bundles/AllMyScripts?v=r0sLDicvP58AIXN_mc3QdyVvVj5euZNzdsa2N1PKvb81`  
- 是捆绑包**AllMyScripts**和包含查询字符串对**v = r0sLDicvP58AIXN\_mc3QdyVvVj5euZNzdsa2N1PKvb81**。 查询字符串**v**令牌，它是用于缓存的唯一标识符的值。 ASP.NET 应用程序，只要绑定不会更改，将请求**AllMyScripts**捆绑在一起使用此令牌。 如果在绑定中的任何文件发生更改，ASP.NET 优化框架将生成新的令牌，确保捆绑包的浏览器请求将获取最新的捆绑包。
+ 是捆绑包**AllMyScripts**和包含查询字符串对**v = r0sLDicvP58AIXN\\\_mc3QdyVvVj5euZNzdsa2N1PKvb81**。 查询字符串**v**令牌，它是用于缓存的唯一标识符的值。 ASP.NET 应用程序，只要绑定不会更改，将请求**AllMyScripts**捆绑在一起使用此令牌。 如果在绑定中的任何文件发生更改，ASP.NET 优化框架将生成新的令牌，确保捆绑包的浏览器请求将获取最新的捆绑包。
 
 如果运行 IE9 F12 开发人员工具，并导航到先前加载的页面，IE 错误地显示对每个捆绑包和返回 HTTP 304 服务器所做的条件性 GET 请求。 你可以阅读 IE9 具有确定是否在博客文章中创建条件的请求是问题的原因[使用 Cdn 和提高网站性能的 Expires](https://blogs.msdn.com/b/rickandy/archive/2011/05/21/using-cdns-to-improve-web-site-performance.aspx)。
 
@@ -203,13 +203,13 @@ ms.locfileid: "37827370"
 
 捆绑和缩小 framework 提供了一种机制来处理中间语言，如[SCSS](http://sass-lang.com/)， [Sass](http://sass-lang.com/)，[较少](http://www.dotlesscss.org/)或[Coffeescript](http://coffeescript.org/)，并将如缩小转换应用到生成的捆绑包。 例如，若要添加[.less](http://www.dotlesscss.org/)到 MVC 4 项目的文件：
 
-1. 创建更少内容的文件夹。 下面的示例使用*Content\MyLess*文件夹。
+1. 创建更少内容的文件夹。 下面的示例使用*内容\\MyLess*文件夹。
 2. 添加[.less](http://www.dotlesscss.org/) NuGet 包**无点**到你的项目。  
     ![NuGet 无点安装](bundling-and-minification/_static/image9.png)
 3. 添加一个类，实现[IBundleTransform](https://msdn.microsoft.com/library/system.web.optimization.ibundletransform(VS.110).aspx)接口。 .Less 转换到你的项目中添加以下代码。
 
     [!code-csharp[Main](bundling-and-minification/samples/sample13.cs)]
-4. 创建使用更少文件的绑定`LessTransform`并[CssMinify](https://msdn.microsoft.com/library/system.web.optimization.cssminify(VS.110).aspx)转换。 将以下代码添加到`RegisterBundles`中的方法*应用程序\_Start\BundleConfig.cs*文件。
+4. 创建使用更少文件的绑定`LessTransform`并[CssMinify](https://msdn.microsoft.com/library/system.web.optimization.cssminify(VS.110).aspx)转换。 将以下代码添加到`RegisterBundles`中的方法*应用程序\\（_s)\\BundleConfig.cs*文件。
 
     [!code-csharp[Main](bundling-and-minification/samples/sample14.cs)]
 5. 将以下代码添加到引用较少捆绑包的任何视图。
@@ -228,7 +228,7 @@ ms.locfileid: "37827370"
 
 捆绑包应进行分区的页需要它们。 例如，默认的 internet 应用程序的 ASP.NET MVC 模板创建 jQuery 验证捆绑独立于 jQuery。 由于创建的默认视图不产生任何影响，并且不发布值，它们不包括验证捆绑包。
 
-`System.Web.Optimization`中 System.Web.Optimization.DLL 实现命名空间。 它利用 WebGrease 库 (WebGrease.dll) 以缩小功能，后者又使用 Antlr3.Runtime.dll。
+`System.Web.Optimization`命名空间中实现*System.Web.Optimization.dll*。 它利用 WebGrease 库 (*WebGrease.dll*) 以缩小功能，这反过来使用*Antlr3.Runtime.dll*。
 
 *我使用 Twitter 进行快速发布和共享的链接。我的 Twitter 句柄是*: [@RickAndMSFT](http://twitter.com/RickAndMSFT)
 

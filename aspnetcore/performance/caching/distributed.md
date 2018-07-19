@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/14/2017
 uid: performance/caching/distributed
-ms.openlocfilehash: 861664fcad576c11abe052837b72367eb2b9479a
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 9c41a6e008045231bd2e1c1f53a9161e11daafa9
+ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095676"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39123835"
 ---
 # <a name="work-with-a-distributed-cache-in-aspnet-core"></a>使用 ASP.NET Core 中的分布式缓存
 
@@ -79,12 +79,13 @@ ms.locfileid: "39095676"
 
 [!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet1)]
 
-> [!NOTE]
-> 由于`IDistributedCache`是在`ConfigureServices`方法中配置的，因此它可以作为参数提供给`Configure`方法。 将其添加作为参数将允许通过 DI 提供已配置的实例。
+由于`IDistributedCache`是在`ConfigureServices`方法中配置的，因此它可以作为参数提供给`Configure`方法。 将其添加作为参数将允许通过 DI 提供已配置的实例。
 
 ## <a name="using-a-redis-distributed-cache"></a>使用分布式的 Redis 缓存
 
 [Redis](https://redis.io/)是一种开源的内存中数据存储，通常用作分布式缓存。 可以在本地使用它，并且可以为 Azure 托管的 ASP.NET Core 应用配置[Azure Redis 缓存](https://azure.microsoft.com/services/cache/)为你的 Azure 托管的 ASP.NET Core 应用。 ASP.NET Core 应用使用 `RedisDistributedCache`实例配置缓存实现。
+
+Redis 缓存需要[Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis/)
 
 可在`ConfigureServices`中配置 Redis 实现，并可通过请求`IDistributedCache`实例（请参阅上面的代码）在应用代码中访问它。
 
@@ -92,8 +93,7 @@ ms.locfileid: "39095676"
 
 [!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet2)]
 
-> [!NOTE]
-> 若要在本地计算机上安装 Redis，安装 chocolatey 包[ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/)并运行`redis-server`从命令提示符。
+若要在本地计算机上安装 Redis，安装 chocolatey 包[ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/)并运行`redis-server`从命令提示符。
 
 ## <a name="using-a-sql-server-distributed-cache"></a>使用 SQL Server 分布式缓存
 
