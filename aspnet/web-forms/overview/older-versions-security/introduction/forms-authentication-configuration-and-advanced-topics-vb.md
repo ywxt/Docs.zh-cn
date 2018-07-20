@@ -164,7 +164,7 @@ Cookie 是一个自然媒体是默认窗体身份验证设置使用 cookie，如
 
 `http://localhost:2448/ASPNET\_Security\_Tutorial\_03\_CS/(F(jaIOIDTJxIr12xYS-VVgkqKCVAuIoW30Bu0diWi6flQC-FyMaLXJfow\_Vd9GZkB2Cv-rfezq0gKadKX0YPZCkA2))/SomePage.aspx`
 
-链接中 URL SomePage.aspx 已自动转换为一个 URL，包括身份验证票证-我们不需要编写一点代码 ！ 窗体身份验证票证将自动嵌入在 URL 中的任何不是以 http:// 开头的超链接或 /。 如果在调用 Response.Redirect、 超链接控件，或定位 HTML 元素中出现的超链接并不重要 (即&lt;href ="..."&gt;...&lt;/a&gt;)。 只要 URL 不是类似于http://www.someserver.com/SomePage.aspx或 /SomePage.aspx，身份验证票证将嵌入为我们的窗体。
+链接中 URL SomePage.aspx 已自动转换为一个 URL，包括身份验证票证-我们不需要编写一点代码 ！ 窗体身份验证票证将自动嵌入在 URL 中的任何不是以 http:// 开头的超链接或 /。 如果在调用 Response.Redirect、 超链接控件，或定位 HTML 元素中出现的超链接并不重要 (即&lt;href ="..."&gt;...&lt;/a&gt;)。 只要 URL 不是类似于 http://www.someserver.com/SomePage.aspx 或 /SomePage.aspx，身份验证票证将嵌入为我们的窗体。
 
 > [!NOTE]
 > 无 cookie forms 身份验证票证遵循相同的超时策略作为基于 cookie 的身份验证票证。 但是，无 cookie 身份验证票证的更容易出现重播攻击，因为在 URL 中直接嵌入身份验证票证。 假设访问网站并记录在中，然后再将 URL 粘贴到同事的电子邮件中的用户。 如果该同事达到过期日期之前单击该链接，它们将作为其发送电子邮件的用户记录 ！
