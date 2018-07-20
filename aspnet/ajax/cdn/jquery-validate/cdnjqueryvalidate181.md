@@ -15,13 +15,13 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 07/05/2018
 ms.locfileid: "37836547"
 ---
-<a name="jqueryvalidate-version-181"></a><span data-ttu-id="352ca-102">jquery.validate 版本 1.8.1</span><span class="sxs-lookup"><span data-stu-id="352ca-102">jquery.validate version 1.8.1</span></span>
+<a name="jqueryvalidate-version-181"></a><span data-ttu-id="eaeb9-102">jquery.validate 版本 1.8.1</span><span class="sxs-lookup"><span data-stu-id="eaeb9-102">jquery.validate version 1.8.1</span></span>
 ====================
-<span data-ttu-id="352ca-103">在 CDN 上托管的以下文件：</span><span class="sxs-lookup"><span data-stu-id="352ca-103">The following files are hosted on the CDN:</span></span>
+<span data-ttu-id="eaeb9-103">在 CDN 上托管的以下文件：</span><span class="sxs-lookup"><span data-stu-id="eaeb9-103">The following files are hosted on the CDN:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/jquery.validate.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/jquery.validate.min.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/jquery.validate-vsdoc.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/additional-methods.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/additional-methods.min.js
-- <span data-ttu-id="352ca-104">本地化文件https://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/localization/messages\_##.js其中 # # 是本地化代码。</span><span class="sxs-lookup"><span data-stu-id="352ca-104">Localization Files at https://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/localization/messages\_##.js where ## is the loc code.</span></span>
+- <span data-ttu-id="eaeb9-104">本地化文件 https://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/localization/messages\_##.js其中 # # 是本地化代码。</span><span class="sxs-lookup"><span data-stu-id="eaeb9-104">Localization Files at https://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/localization/messages\_##.js where ## is the loc code.</span></span>

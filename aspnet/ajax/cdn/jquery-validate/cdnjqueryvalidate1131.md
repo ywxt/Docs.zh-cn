@@ -15,12 +15,12 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 07/05/2018
 ms.locfileid: "37833897"
 ---
-<a name="jquery-validation-1131"></a><span data-ttu-id="c233c-102">jQuery 验证 1.13.1</span><span class="sxs-lookup"><span data-stu-id="c233c-102">jQuery Validation 1.13.1</span></span>
+<a name="jquery-validation-1131"></a><span data-ttu-id="63043-102">jQuery 验证 1.13.1</span><span class="sxs-lookup"><span data-stu-id="63043-102">jQuery Validation 1.13.1</span></span>
 ====================
-<span data-ttu-id="c233c-103">在 CDN 上托管的以下文件：</span><span class="sxs-lookup"><span data-stu-id="c233c-103">The following files are hosted on the CDN:</span></span>
+<span data-ttu-id="63043-103">在 CDN 上托管的以下文件：</span><span class="sxs-lookup"><span data-stu-id="63043-103">The following files are hosted on the CDN:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.min.js
-- <span data-ttu-id="c233c-104">本地化文件https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/localization/messages\_##.js其中 # # 是本地化代码。</span><span class="sxs-lookup"><span data-stu-id="c233c-104">Localization Files at https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/localization/messages\_##.js where ## is the loc code.</span></span>
+- <span data-ttu-id="63043-104">本地化文件 https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/localization/messages\_##.js 其中 # # 是本地化代码。</span><span class="sxs-lookup"><span data-stu-id="63043-104">Localization Files at https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/localization/messages\_##.js where ## is the loc code.</span></span>
