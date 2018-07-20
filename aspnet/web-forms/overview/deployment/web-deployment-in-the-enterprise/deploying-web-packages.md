@@ -89,7 +89,7 @@ ms.locfileid: "37825260"
 在此示例中：
 
 - **/Y**标志指示你想要实际部署包，而不是执行一个试用版运行。
-- **/M**标志指示你想要将包部署到名为 TESTWEB1 的服务器。 此值，从 MSDeploy.exe 将尝试将包部署到 Web 部署远程代理服务在http://TESTWEB1/MSDeployAgentService。
+- **/M**标志指示你想要将包部署到名为 TESTWEB1 的服务器。 此值，从 MSDeploy.exe 将尝试将包部署到 Web 部署远程代理服务在 http://TESTWEB1/MSDeployAgentService 。
 - **/A**标志指示你想要使用 NTLM 身份验证。 在这种情况下，您不必指定用户名和密码。
 
 为了说明如何使用 *。 deploy.cmd*文件简化了部署过程，看一看 MSDeploy.exe 命令执行运行时，获取生成*ContactManager.Mvc.deploy.cmd*使用上面所示的选项。
