@@ -1,17 +1,17 @@
 ---
-title: ASP.NET Core 2.0 及更高版本的 Microsoft.AspNetCore.All 元包
+title: ASP.NET Core 2.0 的 Microsoft.AspNetCore.All 元包
 author: Rick-Anderson
 description: Microsoft.AspNetCore.All 元包包含所有受支持的 ASP.NET Core 和 Entity Framework Core 包及其依赖关系。
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/20/2017
 uid: fundamentals/metapackage
-ms.openlocfilehash: 2fddc59d74dce4b114b5b4ed0646f773eb66ffb9
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: fbc0f5465dc37a612b81c293f1a58b53ea4b2238
+ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277798"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39123822"
 ---
 # <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-20"></a>ASP.NET Core 2.0 的 Microsoft.AspNetCore.All 元包
 
@@ -23,8 +23,8 @@ ms.locfileid: "36277798"
 ASP.NET Core 的 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) 元包包括：
 
 * ASP.NET Core 团队支持的所有包。
-* Entity Framework Core 支持的所有包。 
-* ASP.NET Core 和 Entity Framework Core 使用的内部和第三方依赖关系。 
+* Entity Framework Core 支持的所有包。
+* ASP.NET Core 和 Entity Framework Core 使用的内部和第三方依赖关系。
 
 `Microsoft.AspNetCore.All` 包中包含了 ASP.NET Core 2.x 和 Entity Framework Core 2.x 的所有功能。 定目标到 ASP.NET Core 2.0 的默认项目模板使用此包。
 

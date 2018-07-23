@@ -5,12 +5,12 @@ description: 本教程将使用 ASP.NET Core 和 Entity Framework Core 向页面
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: fce524a5cb386fbf286907be42e920be13115ca6
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 86321538f02ccf1a36ee9e50729e63e007f10327
+ms.sourcegitcommit: ee2b26c7d08b38c908c668522554b52ab8efa221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38216273"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39146892"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 排序、筛选、分页 - 第 3 个教程（共 8 个）
 
@@ -210,7 +210,7 @@ http://localhost:5000/Students?SearchString=an
 
 [!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage4)]
 
-`PaginatedList.CreateAsync` 中的两个问号表示 [NULL 合并运算符](https://docs.microsoft.com/ dotnet/csharp/language-reference/operators/null-conditional-operator)。 NULL 合并运算符定义可为 NULL 的类型的默认值。 `(pageIndex ?? 1)` 表达式表示返回 `pageIndex` 的值（若带有值）。 如果 `pageIndex` 没有值，则返回 1。
+`PaginatedList.CreateAsync` 中的两个问号表示 [NULL 合并运算符](/dotnet/csharp/language-reference/operators/null-conditional-operator)。 NULL 合并运算符定义可为 NULL 的类型的默认值。 `(pageIndex ?? 1)` 表达式表示返回 `pageIndex` 的值（若带有值）。 如果 `pageIndex` 没有值，则返回 1。
 
 ## <a name="add-paging-links-to-the-student-razor-page"></a>向“学生”Razor 页面添加分页链接
 

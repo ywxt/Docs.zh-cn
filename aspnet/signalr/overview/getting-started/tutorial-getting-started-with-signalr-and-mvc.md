@@ -145,7 +145,7 @@ ms.locfileid: "37838645"
 6. 以下屏幕截图显示在浏览器中运行的聊天应用程序。
 
     ![聊天浏览器](tutorial-getting-started-with-signalr-and-mvc/_static/image9.png)
-7. 在中**解决方案资源管理器**，检查**脚本文档**节点运行的应用程序。 如果使用 Internet Explorer 作为你的浏览器，此节点会显示在调试模式下。 没有名为的脚本文件**中心**在运行时动态生成 SignalR 库。 此文件管理的 jQuery 脚本和服务器端代码之间的通信。 如果使用 Internet Explorer 以外的浏览器，您还可以访问动态**中心**通过浏览到它直接，例如文件http://mywebsite/signalr/hubs。
+7. 在中**解决方案资源管理器**，检查**脚本文档**节点运行的应用程序。 如果使用 Internet Explorer 作为你的浏览器，此节点会显示在调试模式下。 没有名为的脚本文件**中心**在运行时动态生成 SignalR 库。 此文件管理的 jQuery 脚本和服务器端代码之间的通信。 如果使用 Internet Explorer 以外的浏览器，您还可以访问动态**中心**通过浏览到它直接，例如文件 http://mywebsite/signalr/hubs 。
 
 <a id="code"></a>
 

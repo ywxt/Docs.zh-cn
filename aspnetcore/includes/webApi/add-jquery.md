@@ -16,7 +16,7 @@
 
 可能需要更改 ASP.NET Core 项目的启动设置，以便对 HTML 页面进行本地测试。 打开项目“属性”目录中的 launchSettings.json。 删除 `launchUrl` 以便在项目的默认文件 index.html 强制打开应用。
 
-有多种方式可以获取 jQuery.。 在前面的代码片段中，库是从 CDN 中加载的。 此示例是一个使用 jQuery 调用 API 的完整 CRUD 示例。 此实例中有很多其他功能可以丰富你的体验。 以下是关于调用 API 的说明。
+有多种方式可以获取 jQuery。 在前面的代码片段中，库是从 CDN 中加载的。 此示例是一个使用 jQuery 调用 API 的完整 CRUD 示例。 此实例中有很多其他功能可以丰富你的体验。 以下是关于调用 API 的说明。
 
 ### <a name="get-a-list-of-to-do-items"></a>获取待办事项的列表
 

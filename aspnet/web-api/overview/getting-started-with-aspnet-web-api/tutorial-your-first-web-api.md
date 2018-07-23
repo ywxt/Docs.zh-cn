@@ -131,7 +131,7 @@ ASP.NET Web API 是一个框架，用于.NET Framework 之上构建 web Api。 �
 
 [!code-html[Main](tutorial-your-first-web-api/samples/sample3.html)]
 
-有多种方式可以获取 jQuery.。 在此示例中，我使用了[Microsoft Ajax CDN](../../../ajax/cdn/overview.md)。 你也可以从下载[ http://jquery.com/ ](http://jquery.com/)，和 ASP.NET"Web API"项目模板包括 jQuery 也。
+有多种方式可以获取 jQuery。 在此示例中，我使用了[Microsoft Ajax CDN](../../../ajax/cdn/overview.md)。 你也可以从下载[ http://jquery.com/ ](http://jquery.com/)，和 ASP.NET"Web API"项目模板包括 jQuery 也。
 
 ### <a name="getting-a-list-of-products"></a>获取产品列表
 

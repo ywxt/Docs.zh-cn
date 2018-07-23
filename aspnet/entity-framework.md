@@ -31,4 +31,4 @@ ms.locfileid: "37806389"
 
 - [Web 窗体教程](web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)
 - [MVC 教程](mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)
-- 示例应用程序[](https://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
+- [示例应用程序](https://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)

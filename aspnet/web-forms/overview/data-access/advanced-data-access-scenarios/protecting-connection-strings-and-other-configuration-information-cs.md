@@ -28,7 +28,7 @@ ms.locfileid: "37842216"
 
 ASP.NET 应用程序的配置信息通常存储在名为一个 XML 文件`Web.config`。 我们已更新过程中的这些教程`Web.config`少量的时间。 创建时`Northwind`类型中的数据集[第一个教程](../introduction/creating-a-data-access-layer-cs.md)，例如，连接字符串信息已自动添加到`Web.config`中`<connectionStrings>`部分。 在后面[母版页和站点导航](../introduction/master-pages-and-site-navigation-cs.md)教程中，我们手动更新`Web.config`，添加`<pages>`元素，该值指示所有 ASP.NET 页面在我们的项目应使用`DataWebControls`主题。
 
-由于`Web.config`可能包含连接字符串等敏感数据非常重要的内容`Web.config`保持安全和隐藏从未经授权的查看器。 默认情况下，任何 HTTP 请求到的文件`.config`由 ASP.NET 引擎，它将返回处理扩展插件*不提供此类型的页*图 1 所示的消息。 这意味着，访问者不能查看你`Web.config`只需输入文件 s 内容 http://www.YourServer.com/Web.config到其 s 浏览器地址栏。
+由于`Web.config`可能包含连接字符串等敏感数据非常重要的内容`Web.config`保持安全和隐藏从未经授权的查看器。 默认情况下，任何 HTTP 请求到的文件`.config`由 ASP.NET 引擎，它将返回处理扩展插件*不提供此类型的页*图 1 所示的消息。 这意味着，访问者不能查看你`Web.config`只需输入文件 s 内容 http://www.YourServer.com/Web.config 到其 s 浏览器地址栏。
 
 
 [![访问 Web.config 通过浏览器返回此类型的页未处理消息](protecting-connection-strings-and-other-configuration-information-cs/_static/image2.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image1.png)

@@ -66,7 +66,7 @@ ms.locfileid: "37822669"
 打印件丛书
 
 - [云计算 Bible](https://www.amazon.com/dp/0470903562)。 通过 Barrie Sosinsky。
-- [释放它 ！设计和部署生产就绪软件](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213)。 Michael nygard T.。
+- [释放它 ！设计和部署生产就绪软件](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213)。 Michael nygard T。
 - [云体系结构模式： 使用 Microsoft Azure](http://shop.oreilly.com/product/0636920023777.do)。 由 Bill Wilder。
 - [Windows Azure 平台](https://www.amazon.com/dp/1430235632)。 由 Tejaswi Redkar 向。
 - [对于刚起步的公司编程模式的 Windows Azure](https://www.amazon.com/dp/1849685606)。 通过 Riccardo Becker。

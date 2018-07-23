@@ -112,17 +112,17 @@ Code First 迁移创建另一个类文件中的*迁移*文件夹 (具有名称 *
 
 生成应用程序 (Ctrl + Shift + B)。
 
-因为你已将新字段添加到`Movie`类，你还需要更新绑定*允许列表以便将包含此新属性。 更新`bind`特性`Create`并`Edit`操作方法，以包含`Rating`属性：
+因为你已将新字段添加到`Movie`类，你还需要更新绑定允许列表以便将包含此新属性。 更新`bind`特性`Create`并`Edit`操作方法，以包含`Rating`属性：
 
 [!code-csharp[Main](adding-a-new-field/samples/sample7.cs?highlight=1)]
 
 还需要更新视图模板，以便在浏览器视图中显示、创建和编辑新的 `Rating` 属性。
 
-打开*\Views\Movies\Index.cshtml*文件，并添加`<th>Rating</th>`列标题之后**价格**列。 然后添加`<td>`快要结束的模板来呈现列`@item.Rating`值。 下面是哪些更新*Index.cshtml*视图模板如下所示：
+打开 *\Views\Movies\Index.cshtml* 文件，并添加`<th>Rating</th>`列标题之后**价格**列。 然后添加`<td>`快要结束的模板来呈现列`@item.Rating`值。 下面是哪些更新 *Index.cshtml* 视图模板如下所示：
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample8.cshtml?highlight=31-33,52-54)]
 
-接下来，打开*\Views\Movies\Create.cshtml*文件，并添加`Rating`字段使用以下 highlighed 标记。 这会使文本框中，以便创建新电影时，可以指定一个级别。
+接下来，打开 *\Views\Movies\Create.cshtml* 文件，并添加`Rating`字段使用以下 highlighed 标记。 这会使文本框中，以便创建新电影时，可以指定一个级别。
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample9.cshtml?highlight=9-15)]
 

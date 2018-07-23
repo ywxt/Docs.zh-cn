@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/14/2018
 uid: fundamentals/app-state
-ms.openlocfilehash: 9c63d9313acb055e6c692a7fef3d28e94cb37093
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 072699113a45056ec3ea79436ad56896ba0a4197
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272878"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095809"
 ---
 # <a name="session-and-app-state-in-aspnet-core"></a>ASP.NET Core 中的会话和应用状态
 
@@ -131,7 +131,7 @@ ASP.NET Core 通过向客户端提供包含会话 ID 的 Cookie 来维护会话�
 | [IdleTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.idletimeout) | `IdleTimeout` 显示放弃其内容前，内容可以空闲多长时间。 每个会话访问都会重置超时。 请注意，这仅适用于会话内容，不适用于 Cookie。 默认为 20 分钟。 |
 | [IOTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.iotimeout) | 允许从存储加载会话或者将其提交回存储的最大时长。 请注意，这可能仅适用于异步操作。 可以使用 [InfiniteTimeSpan](/dotnet/api/system.threading.timeout.infinitetimespan) 禁用超时。 默认值为 1 分钟。 |
 
-会话使用 Cookie 跟踪和标识来自单个浏览器的请求。 默认情况下，此 Cookie 名为 `.AspNetCore.Session`，并使用路径 `/`。 由于 Cookie 默认值不指定域，因此它不提供页上的客户端脚本（因为 [HttpOnly](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.httponly) 默认为 `true`）。
+会话使用 Cookie 跟踪和标识来自单个浏览器的请求。 默认情况下，此 Cookie 名为 `.AspNetCore.Session` ，并使用路径 `/`。 由于 Cookie 默认值不指定域，因此它不提供页上的客户端脚本（因为 [HttpOnly](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.httponly) 默认为 `true`）。
 
 ::: moniker-end
 
@@ -441,3 +441,7 @@ app.Run(async (context) =>
   例如，用户将购物车存储在会话中。 用户将商品添加到购物车，但提交失败。 应用不知道有此失败，因此它向用户报告商品已添加到购物车，但事实并非如此。
 
   检查此类错误的建议方法是完成将应用写入到该会话后，从应用代码调用 `await feature.Session.CommitAsync();`。 如果后备存储不可用，则 `CommitAsync` 引发异常。 如果 `CommitAsync` 失败，应用可以处理异常。 在与数据存储不可用的相同的条件下，`LoadAsync` 引发异常。
+
+## <a name="additional-resources"></a>其他资源
+
+<xref:host-and-deploy/web-farm>
