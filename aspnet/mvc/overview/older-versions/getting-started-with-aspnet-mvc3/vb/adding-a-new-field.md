@@ -44,13 +44,13 @@ ms.locfileid: "37839659"
 
 重新编译应用程序中使用**调试** &gt;**构建电影**菜单命令。
 
-现在，已更新`Model`类，您还需要更新*\Views\Movies\Index.vbhtml*并*\Views\Movies\Create.vbhtml*查看模板以支持新`Rating`属性。
+现在，已更新`Model`类，您还需要更新*\Views\Movies\Index.vbhtml*并 *\Views\Movies\Create.vbhtml* 查看模板以支持新`Rating`属性。
 
 打开<em>\Views\Movies\Index.vbhtml</em>文件，并添加`<th>Rating</th>`列标题之后<strong>价格</strong>列。 然后添加`<td>`快要结束的模板来呈现列`@item.Rating`值。 下面是哪些更新<em>Index.vbhtml</em>视图模板如下所示：
 
 [!code-vbhtml[Main](adding-a-new-field/samples/sample3.vbhtml)]
 
-接下来，打开*\Views\Movies\Create.vbhtml*文件，并添加以下标记窗体的结尾附近。 这会使文本框中，以便创建新电影时，可以指定一个级别。
+接下来，打开 *\Views\Movies\Create.vbhtml* 文件，并添加以下标记窗体的结尾附近。 这会使文本框中，以便创建新电影时，可以指定一个级别。
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample4.cshtml)]
 
@@ -68,7 +68,7 @@ ms.locfileid: "37839659"
 
 有两种方法解决此错误：
 
-1. 让 Entity Framework 自动丢弃，并基于新的模型类架构重新创建数据库。 这种方法是非常方便时执行活动开发上测试数据库，因为它允许您一起快速改进模型和数据库架构。 缺点，不过，是会丢失数据库中的现有数据，因此您*不*需要生产数据库上使用此方法 ！
+1. 让 Entity Framework 自动丢弃，并基于新的模型类架构重新创建数据库。 这种方法是非常方便时执行活动开发上测试数据库，因为它允许您一起快速改进模型和数据库架构。 缺点，不过，是会丢失数据库中的现有数据，因此您 *不* 需要生产数据库上使用此方法 ！
 2. 对现有数据库架构进行显式修改，使它与模型类相匹配。 此方法的优点是可以保留数据。 可以手动或通过创建数据库更改脚本进行此更改。
 
 对于本教程中，我们将使用第一种方法，您必须 Entity Framework Code First 每当模型发生更改自动重新创建该数据库。
@@ -79,10 +79,10 @@ ms.locfileid: "37839659"
 
 > [!NOTE] 
 > 
-> **警告**应该启用的自动删除并重新创建数据库，仅当你正在使用开发或测试数据库，这种方法和*永远不会*包含实际数据的生产数据库上。 使用生产服务器上可能会导致数据丢失。
+> **警告**应该启用的自动删除并重新创建数据库，仅当你正在使用开发或测试数据库，这种方法和 *永远不会* 包含实际数据的生产数据库上。 使用生产服务器上可能会导致数据丢失。
 
 
-在中**解决方案资源管理器**，右键单击*模型*文件夹，选择**添加**，然后选择**类**。
+在中**解决方案资源管理器**，右键单击 *模型* 文件夹，选择**添加**，然后选择**类**。
 
 ![](adding-a-new-field/_static/image2.png)
 
@@ -94,9 +94,9 @@ ms.locfileid: "37839659"
 
 现在，已定义`MovieInitializer`类，您需要其绑定，以便每次应用程序运行时，它检查是否不同于数据库中架构的模型类。 如果是，您可以运行初始值设定项来重新创建数据库以匹配该模型，然后使用示例数据在数据库中填充。
 
-打开*Global.asax*文件的根目录处`MvcMovies`项目：
+打开 *Global.asax* 文件的根目录处`MvcMovies`项目：
 
-*Global.asax*文件包含的类定义整个应用程序项目，并包含`Application_Start`运行该应用程序首次启动时的事件处理程序。
+*Global.asax* 文件包含的类定义整个应用程序项目，并包含`Application_Start`运行该应用程序首次启动时的事件处理程序。
 
 查找`Application_Start`方法，并添加到调用`Database.SetInitializer`开头的方法，如下所示：
 
@@ -104,7 +104,7 @@ ms.locfileid: "37839659"
 
 `Database.SetInitializer`刚添加的语句指示的数据库由`MovieDBContext`应自动删除并重新创建如果不匹配的架构和数据库实例。 如您所看到的它还会填充使用示例数据中指定的数据库和`MovieInitializer`类。
 
-关闭*Global.asax*文件。
+关闭 *Global.asax* 文件。
 
 重新运行该应用程序并导航到 */Movies* URL。 应用程序启动时，它会检测模型结构不能再与数据库架构相匹配。 自动重新创建数据库，以匹配新的模型结构，并填充该数据库示例电影：
 

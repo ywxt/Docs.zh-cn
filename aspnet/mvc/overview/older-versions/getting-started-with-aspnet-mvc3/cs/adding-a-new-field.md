@@ -48,13 +48,13 @@ ms.locfileid: "37829067"
 
 重新编译应用程序中使用**调试** &gt;**构建电影**菜单命令。
 
-现在，已更新`Model`类，您还需要更新*\Views\Movies\Index.cshtml*并*\Views\Movies\Create.cshtml*查看模板以支持新`Rating`属性。
+现在，已更新`Model`类，您还需要更新 *\Views\Movies\Index.cshtml* 并 *\Views\Movies\Create.cshtml* 查看模板以支持新`Rating`属性。
 
-打开*\Views\Movies\Index.cshtml*文件，并添加`<th>Rating</th>`列标题之后**价格**列。 然后添加`<td>`快要结束的模板来呈现列`@item.Rating`值。 下面是哪些更新*Index.cshtml*视图模板如下所示：
+打开 *\Views\Movies\Index.cshtml* 文件，并添加`<th>Rating</th>`列标题之后**价格**列。 然后添加`<td>`快要结束的模板来呈现列`@item.Rating`值。 下面是哪些更新*Index.cshtml*视图模板如下所示：
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample3.cshtml)]
 
-接下来，打开*\Views\Movies\Create.cshtml*文件，并添加以下标记窗体的结尾附近。 这会使文本框中，以便创建新电影时，可以指定一个级别。
+接下来，打开 *\Views\Movies\Create.cshtml* 文件，并添加以下标记窗体的结尾附近。 这会使文本框中，以便创建新电影时，可以指定一个级别。
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample4.cshtml)]
 
