@@ -5,12 +5,12 @@ description: 在本教程中，将读取并显示相关数据 - 即 Entity Frame
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: fa3147cc4ad121784911eef802e04ca91f16448f
-ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
+ms.openlocfilehash: bcea6aa6018a937979b8e0aaa2edcdd96da41559
+ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2018
-ms.locfileid: "39063307"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202674"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 读取相关数据 - 第 6 个教程（共 8 个）
 
@@ -168,7 +168,7 @@ EF Core 可采用多种方式将相关数据加载到实体的导航属性中：
 
 将 Pages/Instructors/Index.cshtml.cs 替换为以下代码：
 
-[!code-csharp[](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_all&highlight=2,20-99)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_all&highlight=2,18-99)]
 
 `OnGetAsync` 方法接受所选讲师 ID 的可选路由数据。
 
@@ -298,7 +298,7 @@ EF Core 可采用多种方式将相关数据加载到实体的导航属性中：
 
 `Single` 方法可在 `Where` 条件中进行传递，无需分别调用 `Where` 方法：
 
-[!code-csharp[](intro/samples/cu/Pages/Instructors/IndexSingle.cshtml.cs?name=snippet_single&highlight=21,28-29)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/IndexSingle.cshtml.cs?name=snippet_single&highlight=21-22,30-31)]
 
 使用 `Where` 时，前面的 `Single` 方法不适用。 一些开发人员更喜欢 `Single` 方法样式。
 

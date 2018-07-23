@@ -5,12 +5,12 @@ description: 本教程将使用 ASP.NET Core 和 Entity Framework Core 向页面
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 86321538f02ccf1a36ee9e50729e63e007f10327
-ms.sourcegitcommit: ee2b26c7d08b38c908c668522554b52ab8efa221
+ms.openlocfilehash: ee5a0dae41ba0afba518f0bd6fbd379fdbbfb1c1
+ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39146892"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202609"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 排序、筛选、分页 - 第 3 个教程（共 8 个）
 
@@ -263,8 +263,6 @@ http://localhost:5000/Students?SearchString=an
 [!code-csharp[](intro/samples/cu21/Pages/About.cshtml.cs)]
 
 LINQ 语句按注册日期对学生实体进行分组，计算每组中实体的数量，并将结果存储在 `EnrollmentDateGroup` 视图模型对象的集合中。
-
-注意：EF Core 当前不支持 LINQ `group` 命令。 在上述代码中，所有学生记录均从 SQL Server 返回。 `group` 命令应用于 Razor 页面应用，而不是应用于 SQL Server。 EF Core 2.1 将支持此 LINQ `group` 运算符，并在 SQL Server 上进行分组。 请参阅 [Relational: Support translating GroupBy() to SQL](https://github.com/aspnet/EntityFrameworkCore/issues/2341)（关系：支持将 GroupBy() 转换到 SQL）。 [EF Core 2.1](https://github.com/aspnet/EntityFrameworkCore/wiki/roadmap) 将随 .NET Core 2.1 一起发布。 有关详细信息，请参阅 [.NET Core Roadmap](https://github.com/dotnet/core/blob/master/roadmap.md)（.NET Core 路线图）。
 
 ### <a name="modify-the-about-razor-page"></a>修改“关于”Razor 页面
 

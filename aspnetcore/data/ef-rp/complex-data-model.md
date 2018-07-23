@@ -5,12 +5,12 @@ description: 本教程将添加更多实体和关系，并通过指定格式设�
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: d96ce7a3f81c54d3c4c0fe26d3fb588d9ce2e0ce
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 6888df174e92ab2ddf8add7b8927250be320bff8
+ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38127097"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202648"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 数据模型 - 第 5 个教程（共 8 个）
 
@@ -540,8 +540,6 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 * `Enrollments`
 * `CourseAssignment`
-
-注意：[EF Core 2.1](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap) 将支持[数据种子设定](https://github.com/aspnet/EntityFrameworkCore/issues/629)。
 
 ## <a name="add-a-migration"></a>添加迁移
 
