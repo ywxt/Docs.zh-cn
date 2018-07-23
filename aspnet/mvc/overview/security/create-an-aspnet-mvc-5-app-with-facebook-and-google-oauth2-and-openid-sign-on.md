@@ -8,12 +8,12 @@ ms.date: 04/03/2015
 ms.assetid: 81ee500f-fc37-40d6-8722-f1b64720fbb6
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: 6af4990f726bfcd0c45eb6991418661f9b8ccbf6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f36b73aac2e7844367e1e52b2c721bfe6b3575e2
+ms.sourcegitcommit: 7097dba14d5b858e82758ee031ac62dbe3611339
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824701"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39138514"
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>创建 ASP.NET MVC 5 应用程序使用 Facebook、 Twitter、 LinkedIn 和 Google OAuth2 登录 (C#)
 ====================
@@ -162,55 +162,6 @@ ms.locfileid: "37824701"
 > [!WARNING]
 > 当前 Facebook OAuth2 身份验证说明，请参阅[配置 Facebook 身份验证](/aspnet/core/security/authentication/social/facebook-logins)
 
-为 Facebook OAuth2 身份验证，需要将复制到你的项目的某些设置从在 Facebook 中创建的应用程序。
-
-1. 在浏览器中，导航到[ https://developers.facebook.com/apps ](https://developers.facebook.com/apps)并通过输入你的 Facebook 凭据登录。
-2. 如果你不已注册为 Facebook 开发人员，请单击**注册为开发人员**并按照说明注册。
-3. 上**应用程序**选项卡上，单击**创建新应用**。
-
-    ![创建新的应用程序](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image22.png)
-4. 输入**应用名称**并**类别**，然后单击**创建应用**。
-
-    <strong>应用 Namespace</strong>是您的应用程序将用于访问 Facebook 应用程序进行身份验证的 URL 的一部分 (例如，https\://apps.facebook.com/{App Namespace})。 如果未指定<strong>应用 Namespace</strong>，则<strong>应用程序 ID</strong>将使用的 url。 <strong>应用程序 ID</strong>是下一步中将看到一个长时间由系统生成的数字。
-
-    ![创建新的应用程序对话框](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image23.png)
-5. 提交的标准安全检查。
-
-    ![安全检查](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image24.png)
-6. 选择**设置**的左侧的菜单栏![Facebook 开发人员的菜单栏](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image25.png)
-7. 上**基本**页的设置部分，选择**添加平台**来指定要添加的网站应用程序。 ![基本设置](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image26.png)
-8. 选择**网站**从平台提供的选项。  
-  
-    ![平台选择](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image27.png)
-9. 记下你**应用 ID**和你**应用机密**，以便你可以稍后在本教程中添加这两到 MVC 应用程序。 此外，添加你的站点 URL (`https://localhost:44300/`) 测试 MVC 应用程序。 此外，添加**Contact Email**。 然后，选择**保存更改**。   
-
-    ![基本应用程序详细信息页](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image28.png)
-
-    > [!NOTE]
-    > 请注意，您将仅能使用已注册的电子邮件别名进行身份验证。 其他用户和测试帐户将无法再注册。 您可以授予其他 Facebook 帐户访问 Facebook 上的应用程序**开发人员角色**选项卡。
-10. 在 Visual Studio 中打开*应用程序\_Start\Startup.Auth.cs*。
-11. 复制并粘贴**AppId**并**应用程序机密**到`UseFacebookAuthentication`方法。 **AppId**并**应用程序密码**如下所示的值是示例，它们不起作用。
-
-    [!code-csharp[Main](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/samples/sample3.cs?highlight=33-35,38-39)]
-12. 单击**保存更改**。
-13. 按**CTRL + F5**运行该应用程序。
-
-
-选择**登录**以显示登录页。 单击**Facebook**下**使用其他服务进行登录。**
-
-输入你的 Facebook 凭据。
-
-![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image29.png)
-
-系统将提示您为应用程序访问的公共配置文件和好友列表授予权限。
-
-![Facebook 应用的详细信息](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image30.png)
-
-您现在登录。 现在可以与应用程序注册此帐户。
-
-![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image31.png)
-
-注册时，将条目添加到*用户*的成员资格数据库的表。
 
 <a id="mdb"></a>
 ## <a name="examine-the-membership-data"></a>检查成员身份数据

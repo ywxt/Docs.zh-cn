@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/30/2018
 uid: signalr/configuration
-ms.openlocfilehash: fac0226c939f4cf446c876b1c0b359d6c5b9dfd3
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: f5a345795f17dafd482e359e77a151d5b0a15688
+ms.sourcegitcommit: 8b68e144aab75374af52605a71717c77345a28b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095397"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39182585"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>ASP.NET Core SignalR 配置
 
@@ -62,7 +62,7 @@ var connection = new HubConnectionBuilder()
 
 | 选项 | 描述 |
 | ------ | ----------- |
-| `HandshakeTimeout` | 如果客户端不会在此时间间隔内发送初始握手消息，该连接已关闭。 |
+| `HandshakeTimeout` | 如果客户端不会在此时间间隔内发送初始握手消息，该连接已关闭。 这是一种高级的设置，如果由于出现严重的网络延迟发生握手超时错误应仅修改。 握手过程的更多详细信息，请参阅[SignalR 集线器协议规范](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md)。 |
 | `KeepAliveInterval` | 如果服务器尚未在此时间间隔内发送一条消息，是自动发送一条 ping 消息使连接保持打开状态。 |
 | `SupportedProtocols` | 此中心支持的协议。 默认情况下，允许在服务器上注册的所有协议，但可以从禁用特定协议的单个中心此列表中删除协议。 |
 | `EnableDetailedErrors` | 如果`true`、 详细异常消息返回到客户端集线器方法中引发异常。 默认值是`false`，因为这些异常消息可能包含敏感信息。 |
@@ -216,10 +216,10 @@ let connection = new signalR.HubConnectionBuilder()
 
 | .NET 选项 | JavaScript 选项 | 描述 |
 | ----------- | ----------------- | ----------- |
-| `ServerTimeout` | `serverTimeoutInMilliseconds` | 服务器活动的超时时间。 如果服务器尚未在此时间间隔内发送任何消息，客户端会考虑已断开连接的服务器和触发器`Closed`事件 (`onclose`在 JavaScript 中)。 |
-| `HandshakeTimeout` | 不可配置 | 初始服务器握手的超时时间。 如果服务器不在此时间间隔内发送握手响应，客户端取消握手和触发器`Closed`事件 (`onclose`在 JavaScript 中)。 |
+| `ServerTimeout` | `serverTimeoutInMilliseconds` | 服务器活动的超时时间。 如果服务器尚未在此时间间隔内发送一条消息，客户端会考虑服务器断开连接和触发器`Closed`事件 (`onclose`在 JavaScript 中)。 |
+| `HandshakeTimeout` | 不可配置 | 初始服务器握手的超时时间。 如果服务器不在此时间间隔内发送握手响应，客户端取消握手和触发器`Closed`事件 (`onclose`在 JavaScript 中)。 这是一种高级的设置，如果由于出现严重的网络延迟发生握手超时错误应仅修改。 握手过程的更多详细信息，请参阅[SignalR 集线器协议规范](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md)。 |
 
-在.NET 客户端，超时值指定为`TimeSpan`值。 在 JavaScript 客户端，超时值指定为数字。 数字表示以毫秒为单位的时间值。
+在.NET 客户端，超时值指定为`TimeSpan`值。 在 JavaScript 客户端，超时值指定为一个数字，指示以毫秒为单位的持续时间。
 
 ### <a name="configure-additional-options"></a>配置其他选项
 

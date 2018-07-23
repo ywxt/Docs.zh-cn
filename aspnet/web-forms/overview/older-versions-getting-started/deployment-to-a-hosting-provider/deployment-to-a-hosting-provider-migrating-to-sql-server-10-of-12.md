@@ -245,7 +245,7 @@ SqlServerCompact NuGet 包提供 SQL Server Compact 数据库引擎的 Contoso �
 
 在中**站点/应用程序**框中，输入*默认 Web 站点/ContosoUniversity*。
 
-在中**目标 URL**框中，输入`http://localhost/ContosoUniversity/`。
+在中**目标 URL**框中，输入 `http://localhost/ContosoUniversity/` 。
 
 单击 **“下一步”**。
 
@@ -364,7 +364,7 @@ Visual Studio 部署应用程序，并在测试环境中的站点的主页上浏
 
 单击**导入**，并选择前面下载的.publishsettings 文件。
 
-上**连接**选项卡上，更改**目标 URL**到正确的临时 URL，在此示例是http://contosouniversity.com.vserver01.cytanium.com。
+上**连接**选项卡上，更改**目标 URL**到正确的临时 URL，在此示例是 http://contosouniversity.com.vserver01.cytanium.com 。
 
 重命名到生产环境的配置文件。 (选择**配置文件**选项卡，单击**管理配置文件**若要执行此操作)。
 

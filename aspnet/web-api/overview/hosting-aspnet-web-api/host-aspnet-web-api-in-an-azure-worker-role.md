@@ -128,7 +128,7 @@ ms.locfileid: "37803845"
 
 [![](host-aspnet-web-api-in-an-azure-worker-role/_static/image11.png)](host-aspnet-web-api-in-an-azure-worker-role/_static/image10.png)
 
-找到服务部署，部署 [id] 服务详细信息下的 IP 地址。 打开 web 浏览器并浏览至 http://<em>地址</em>/测试/1，其中<em>地址</em>是由计算模拟器; 分配的 IP 地址，如`http://127.0.0.1:80/test/1`。 应会看到来自 Web API 控制器的响应：
+找到服务部署，部署 [id] 服务详细信息下的 IP 地址。 打开 web 浏览器并浏览至 http://<em>地址</em>/测试/1，其中<em>地址</em>是由计算模拟器; 分配的 IP 地址，如 `http://127.0.0.1:80/test/1` 。 应会看到来自 Web API 控制器的响应：
 
 ![](host-aspnet-web-api-in-an-azure-worker-role/_static/image12.png)
 
@@ -156,7 +156,7 @@ ms.locfileid: "37803845"
 
 [![](host-aspnet-web-api-in-an-azure-worker-role/_static/image20.png)](host-aspnet-web-api-in-an-azure-worker-role/_static/image19.png)
 
-Azure 活动日志窗口显示部署进度。 部署应用程序时，浏览到http://appname.cloudapp.net/test/1。
+Azure 活动日志窗口显示部署进度。 部署应用程序时，浏览到 http://appname.cloudapp.net/test/1 。
 
 ![](host-aspnet-web-api-in-an-azure-worker-role/_static/image21.png)
 

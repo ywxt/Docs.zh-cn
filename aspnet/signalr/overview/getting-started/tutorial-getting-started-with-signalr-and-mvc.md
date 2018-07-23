@@ -116,7 +116,7 @@ ms.locfileid: "37838645"
 11. 编辑`HomeController`类中找到**controllers/Homecontroller.cs**并将以下方法添加到类。 此方法返回**聊天**将在稍后的步骤中创建的视图。
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample3.cs)]
-12. 右键单击**Views/Home**文件夹，然后选择**添加。...|视图**。
+12. 右键单击**Views/Home**文件夹，然后选择**添加...|视图**。
 13. 在中**添加视图**对话框中，命名新视图**聊天**。
 
     ![添加视图](tutorial-getting-started-with-signalr-and-mvc/_static/image7.png)
