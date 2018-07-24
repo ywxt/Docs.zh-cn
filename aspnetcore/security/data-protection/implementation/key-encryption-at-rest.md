@@ -3,106 +3,131 @@ title: 在 ASP.NET Core 中存放的密钥加密
 author: rick-anderson
 description: 了解 ASP.NET Core 数据保护密钥的加密对静止的实现详细信息。
 ms.author: riande
-ms.date: 10/14/2016
+ms.date: 07/16/2018
 uid: security/data-protection/implementation/key-encryption-at-rest
-ms.openlocfilehash: c733540bbee2d48ab45cf2b230b7be1ee07fb146
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 52c3137dbe467096364b42430c92aecc7c15e313
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274695"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219285"
 ---
 # <a name="key-encryption-at-rest-in-aspnet-core"></a>在 ASP.NET Core 中存放的密钥加密
 
-<a name="data-protection-implementation-key-encryption-at-rest"></a>
+数据保护系统[默认情况下使用的发现机制](xref:security/data-protection/configuration/default-settings)来确定如何加密密钥应静态加密。 开发人员可以重写的发现机制，并手动指定如何静态加密密钥。
 
-默认情况下，数据保护系统[使用启发式方法](xref:security/data-protection/configuration/default-settings)来确定如何加密的密钥材料应加密对静止。 开发人员可以重写启发式方法，并手动指定应如何静态加密密钥。
+> [!WARNING]
+> 如果指定的显式[密钥暂留位置](xref:security/data-protection/implementation/key-storage-providers)，数据保护系统注销 rest 机制在默认密钥加密。 因此，无法再进行静态加密密钥。 我们建议您[指定一个显式的密钥加密机制](xref:security/data-protection/implementation/key-encryption-at-rest)对于生产部署。 本主题中介绍的静态加密机制选项。
 
-> [!NOTE]
-> 如果指定在 rest 机制显式密钥加密时，数据保护系统将取消注册启发式方法提供的默认密钥存储机制。 你必须[指定显式的密钥存储机制](xref:security/data-protection/implementation/key-storage-providers#data-protection-implementation-key-storage-providers)，否则数据保护系统将无法启动。
+::: moniker range=">= aspnetcore-2.1"
 
-<a name="data-protection-implementation-key-encryption-at-rest-providers"></a>
+## <a name="azure-key-vault"></a>Azure Key Vault
 
-数据保护系统都附带有三个框中的密钥加密机制。
+若要将密钥存储在[Azure 密钥保管库](https://azure.microsoft.com/services/key-vault/)，配置与系统[ProtectKeysWithAzureKeyVault](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.protectkeyswithazurekeyvault)中`Startup`类：
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDataProtection()
+        .PersistKeysToAzureBlobStorage(new Uri("<blobUriWithSasToken>"))
+        .ProtectKeysWithAzureKeyVault("<keyIdentifier>", "<clientId>", "<clientSecret>");
+}
+```
+
+有关详细信息，请参阅[配置 ASP.NET Core 数据保护： ProtectKeysWithAzureKeyVault](xref:security/data-protection/configuration/overview#protectkeyswithazurekeyvault)。
+
+::: moniker-end
 
 ## <a name="windows-dpapi"></a>Windows DPAPI
 
-*仅在 Windows 上，此机制是可用。*
+**仅适用于 Windows 的部署。**
 
-当使用 Windows DPAPI 时，将通过加密密钥材料[CryptProtectData](https://msdn.microsoft.com/library/windows/desktop/aa380261(v=vs.85).aspx)之前保存到存储。 DPAPI 是一种用于将永远不会读取当前计算机之外的数据的合适的加密机制 (尽管它可以备份到 Active Directory 这些密钥，请参阅[DPAPI 和漫游配置文件](https://support.microsoft.com/kb/309408/#6))。 例如，若要配置 DPAPI 密钥在 rest 加密。
-
-```csharp
-sc.AddDataProtection()
-    // only the local user account can decrypt the keys
-    .ProtectKeysWithDpapi();
-```
-
-如果`ProtectKeysWithDpapi`调用不带任何参数，仅当前 Windows 用户帐户，才能解密持久化的密钥材料。 你可以选择指定中所示，应导致计算机 （而不仅仅是当前用户帐户） 上的任何用户帐户能够解密的密钥材料，下面的示例。
+使用 Windows DPAPI 时，使用加密密钥材料[CryptProtectData](/windows/desktop/api/dpapi/nf-dpapi-cryptprotectdata)之前保存到存储。 DPAPI 是永远不会读取当前计算机之外的数据的适当的加密机制 (不过可以备份到 Active Directory 这些密钥; 请参阅[DPAPI 和漫游配置文件](https://support.microsoft.com/kb/309408/#6))。 若要配置 DPAPI 密钥静态加密，请调用之一[ProtectKeysWithDpapi](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.protectkeyswithdpapi)扩展方法：
 
 ```csharp
-sc.AddDataProtection()
-    // all user accounts on the machine can decrypt the keys
-    .ProtectKeysWithDpapi(protectToLocalMachine: true);
+public void ConfigureServices(IServiceCollection services)
+{
+    // Only the local user account can decrypt the keys
+    services.AddDataProtection()
+        .ProtectKeysWithDpapi();
+}
 ```
+
+如果`ProtectKeysWithDpapi`称为不带任何参数，仅在当前 Windows 用户帐户，才能解密持久化的密钥环。 您可以选择指定的计算机 （而不仅仅是当前用户帐户） 上的任何用户帐户能够解密密钥环：
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    // All user accounts on the machine can decrypt the keys
+    services.AddDataProtection()
+        .ProtectKeysWithDpapi(protectToLocalMachine: true);
+}
+```
+
+::: moniker range=">= aspnetcore-2.0"
 
 ## <a name="x509-certificate"></a>X.509 证书
 
-*此机制不可用于`.NET Core 1.0`或`1.1`。*
-
-如果你的应用程序分布在多台计算机，则可能很方便多台计算机之间分发共享的 X.509 证书并配置应用程序，此证书用于加密存放的密钥。 有关示例，请参阅下文。
+如果应用程序分布在多台计算机，它可能是可以方便地在计算机间分发共享的 X.509 证书和配置托管的应用，以对密钥静态加密使用的证书：
 
 ```csharp
-sc.AddDataProtection()
-    // searches the cert store for the cert with this thumbprint
-    .ProtectKeysWithCertificate("3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0");
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDataProtection()
+        .ProtectKeysWithCertificate("3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0");
+}
 ```
 
-由于.NET Framework 限制支持仅使用 CAPI 私钥的证书。 请参阅[基于证书的加密使用 Windows DPAPI NG](#data-protection-implementation-key-encryption-at-rest-dpapi-ng)下面这些限制的可能解决方法。
+由于.NET Framework 的限制，支持仅使用 CAPI 私钥的证书。 请参阅以下内容的可能的解决方法，这些限制。
 
-<a name="data-protection-implementation-key-encryption-at-rest-dpapi-ng"></a>
+::: moniker-end
 
 ## <a name="windows-dpapi-ng"></a>Windows DPAPI NG
 
-*此机制是仅适用于 Windows 8 / Windows Server 2012 和更高版本。*
+**此机制是仅在 Windows 8/Windows Server 2012 或更高版本上可用。**
 
-操作系统从 Windows 8 开始，支持 DPAPI NG （也称为 CNG DPAPI）。 Microsoft 是布局其使用方案，如下所示。
+从 Windows 8 开始，Windows OS 支持 DPAPI NG （也称为 CNG DPAPI）。 有关详细信息，请参阅[有关 CNG DPAPI](/windows/desktop/SecCNG/cng-dpapi)。
 
-   但是，云计算，通常需要该内容的加密在一台计算机进行在另一台解密。 因此，从开始 Windows 8，Microsoft 扩展的使用相对比较简单的 API 以覆盖云方案的想法。 称为 DPAPI NG，此新 API，可安全地通过保护它们的一组可用于取消这些不同的计算机上保护后正确的身份验证和授权的主体到共享机密 （密钥、 密码、 密钥材料） 和消息。
-
-   从[有关 CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794(v=vs.85).aspx)
-
-主体编码为保护描述符规则。 请考虑以下示例中，该加密密钥材料，以便仅已加入域的用户具有指定 SID 都可以解密密钥材料。
+主体被编码为保护描述符规则。 在下面的示例调用[ProtectKeysWithDpapiNG](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.protectkeyswithdpaping)，只有指定的 SID 的已加入域的用户可以解密密钥环：
 
 ```csharp
-sc.AddDataProtection()
-    // uses the descriptor rule "SID=S-1-5-21-..."
-    .ProtectKeysWithDpapiNG("SID=S-1-5-21-...",
-    flags: DpapiNGProtectionDescriptorFlags.None);
+public void ConfigureServices(IServiceCollection services)
+{
+    // Uses the descriptor rule "SID=S-1-5-21-..."
+    services.AddDataProtection()
+        .ProtectKeysWithDpapiNG("SID=S-1-5-21-...",
+        flags: DpapiNGProtectionDescriptorFlags.None);
+}
 ```
 
-另外，还有的无参数重载`ProtectKeysWithDpapiNG`。 这是用于指定规则的便捷方法"SID = 挖掘"，其中挖掘是当前 Windows 用户帐户的 SID。
+此外，还有的无参数重载`ProtectKeysWithDpapiNG`。 使用此便捷方法来指定规则"SID = {CURRENT_ACCOUNT_SID}"，其中*CURRENT_ACCOUNT_SID*是当前 Windows 用户帐户的 SID:
 
 ```csharp
-sc.AddDataProtection()
-    // uses the descriptor rule "SID={current account SID}"
-    .ProtectKeysWithDpapiNG();
+public void ConfigureServices(IServiceCollection services)
+{
+    // Use the descriptor rule "SID={current account SID}"
+    services.AddDataProtection()
+        .ProtectKeysWithDpapiNG();
+}
 ```
 
-在此方案中，AD 域控制器负责分发 DPAPI NG 操作所使用的加密密钥。 目标用户将能够解密从任何加入域的计算机的加密的负载 （前提是进程正在其标识下运行时）。
+在此方案中，AD 域控制器负责分发 DPAPI NG 操作所用的加密密钥。 目标用户可以解密加密的负载从任何加入域的计算机 （前提是该进程的标识来运行）。
 
 ## <a name="certificate-based-encryption-with-windows-dpapi-ng"></a>基于证书的加密使用 Windows DPAPI NG
 
-如果在 Windows 8.1 上运行 / Windows Server 2012 R2 或更高版本，你可以使用 Windows DPAPI NG 执行基于证书的加密，即使在.NET Core 上运行该应用程序。 若要充分利用此功能，使用规则描述符字符串"证书 = HashId:thumbprint"，其中指纹是要使用的证书的十六进制编码 SHA1 指纹。 有关示例，请参阅下文。
+如果应用程序运行在 Windows 8.1 / Windows Server 2012 R2 或更高版本，可以使用 Windows DPAPI NG 进行基于证书的加密。 使用规则描述符字符串"证书 = HashId:THUMBPRINT"，其中*指纹*是十六进制编码的 SHA1 指纹的证书：
 
 ```csharp
-sc.AddDataProtection()
-    // searches the cert store for the cert with this thumbprint
-    .ProtectKeysWithDpapiNG("CERTIFICATE=HashId:3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0",
-        flags: DpapiNGProtectionDescriptorFlags.None);
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDataProtection()
+        .ProtectKeysWithDpapiNG("CERTIFICATE=HashId:3BCE558E2...B5AEA2A9BD2575A0",
+            flags: DpapiNGProtectionDescriptorFlags.None);
+}
 ```
 
-在此存储库指向任何应用程序必须在 Windows 8.1 上运行 / Windows Server 2012 R2 或更高版本能够解密此密钥。
+指向此存储库的任何应用程序必须运行 Windows 8.1 / Windows Server 2012 R2 或更高版本才能解开密钥。
 
 ## <a name="custom-key-encryption"></a>自定义密钥加密
 
-如果不适合的内置机制，开发人员可以通过提供自定义指定自己的密钥加密机制`IXmlEncryptor`。
+如果不适当的内置机制，开发人员可以通过提供自定义指定自己的密钥加密机制[IXmlEncryptor](/dotnet/api/microsoft.aspnetcore.dataprotection.xmlencryption.ixmlencryptor)。

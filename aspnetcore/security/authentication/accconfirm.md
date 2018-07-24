@@ -5,12 +5,12 @@ description: 了解如何生成使用电子邮件确认及密码重置功能的 
 ms.author: riande
 ms.date: 7/11/2018
 uid: security/authentication/accconfirm
-ms.openlocfilehash: af3ba8b27148d94c4a905c688b8165f49b9f2927
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 84eb3580107572f66f0c3b565b8e76ba401c0ddb
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095741"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219402"
 ---
 ::: moniker range="<= aspnetcore-2.0"
 
@@ -34,13 +34,13 @@ ms.locfileid: "39095741"
 
 ## <a name="prerequisites"></a>系统必备
 
-[!INCLUDE [](~/includes/2.1-SDK.md) [](~/includes/2.1-SDK.md)]
+[!INCLUDE [](~/includes/2.1-SDK.md)]
 
 ## <a name="create-a-web--app-and-scaffold-identity"></a>创建 web 应用并创建标识的基架
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
 
-* 在 Visual Studio 中，创建一个新**Web 应用程序**项目。
+* 在 Visual Studio 中，创建一个新**Web 应用程序**名为项目**WebPWrecover**。
 * 选择**ASP.NET Core 2.1**。
 * 保留默认值**身份验证**设置为**无身份验证**。 下一步中添加身份验证。
 
