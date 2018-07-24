@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 07/02/2018
 uid: fundamentals/index
-ms.openlocfilehash: 33786bf78567a1aa12a1ac97d44d1a596ec4c3be
-ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
+ms.openlocfilehash: 30c456685ce26522faff9b58fbd2977ad2f2869a
+ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37144971"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202622"
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 基础知识
 
@@ -191,6 +191,12 @@ ASP.NET Core 托管模型不直接侦听请求。 托管模型依赖 HTTP 服务
 后台任务作为*托管服务*实现。 托管服务是一个类，具有实现 [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice) 接口的后台任务逻辑。
 
 有关详细信息，请参阅[使用托管服务的后台任务](xref:fundamentals/host/hosted-services)。
+
+## <a name="access-httpcontext"></a>访问 HttpContext
+
+通过 [IHttpContextAccessor](/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor) 接口及其默认实现 [HttpContextAccessor](/dotnet/api/microsoft.aspnetcore.http.httpcontextaccessor) 来访问 `HttpContext`。
+
+有关更多信息，请参见<xref:fundamentals/httpcontext>。
 
 ## <a name="open-web-interface-for-net-owin"></a>.NET 的开放 Web 接口 (OWIN)
 
