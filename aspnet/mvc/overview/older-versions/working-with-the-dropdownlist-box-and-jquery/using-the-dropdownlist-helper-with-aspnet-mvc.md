@@ -8,12 +8,12 @@ ms.date: 01/12/2012
 ms.assetid: 53767e05-c8ab-42e1-a94b-22d906195200
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 9f16c01515bde80d3994618d26818c2d93f69d87
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6dbffe715990de5c0b3b834e354379e414925816
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828372"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219051"
 ---
 <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>使用 ASP.NET MVC 使用 DropDownList 帮助程序
 ====================
@@ -190,7 +190,7 @@ Starter 和已完成的示例项目附带本教程中包含所选择的插件。
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample12.cshtml)]
 
-在上面的代码中，我们要添加的 HTML 特性和特性值`class = "chzn-select"`。 @ 字符中前面的类具有与 Razor 视图引擎没有任何关系。 `class` 是[C# 关键字](https://msdn.microsoft.com/library/x53a06bb.aspx)。 C# 关键字不能用作标识符，除非它们包含作为前缀。 在上述示例中，`@class`是有效的标识符，但**类**不是因为**类**是一个关键字。
+在上面的代码中，我们要添加的 HTML 特性和特性值`class = "chzn-select"`。 \@字符前面的类具有与 Razor 视图引擎没有任何关系。 `class` 是[C# 关键字](https://msdn.microsoft.com/library/x53a06bb.aspx)。 C# 关键字不能用作标识符，除非它们包含\@作为前缀。 在上述示例中，`@class`是有效的标识符，但**类**不是因为**类**是一个关键字。
 
 将引用添加到*Chosen/chosen.jquery.js*并*Chosen/chosen.css*文件。 *Chosen/chosen.jquery.js*并实现所选择的插件的功能上。 *Chosen/chosen.css*文件提供了样式。 这些将引用添加到底部*Views\Home\MultiSelectCountry.cshtml*文件。 下面的代码演示如何引用所选择的插件。
 
