@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/19/2017
 uid: security/cookie-sharing
-ms.openlocfilehash: f8347b52f68165cdbe4ab77a76664e4767bc4cdf
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: ed3496db3f7a63a704f0e57faef6b2f6c085a8bd
+ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095472"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39228593"
 ---
 # <a name="share-cookies-among-apps-with-aspnet-and-aspnet-core"></a>与 ASP.NET 和 ASP.NET Core 共享在应用之间的 cookie
 
@@ -51,6 +51,12 @@ ms.locfileid: "39095472"
 
 数据保护密钥和应用名称必须在应用之间共享。 在示例应用中，`GetKeyRingDirInfo`返回到的公共密钥存储位置[PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem)方法。 使用[SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname)来配置常见的共享的应用名称 (`SharedCookieApp`示例中)。 有关详细信息，请参阅[配置数据保护](xref:security/data-protection/configuration/overview)。
 
+托管在子域之间共享 cookie 的应用，指定在一个公共域[Cookie.Domain](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.domain)属性。 若要在应用之间共享 cookie `contoso.com`，如`first_subdomain.contoso.com`并`second_subdomain.contoso.com`，指定`Cookie.Domain`作为`.contoso.com`:
+
+```csharp
+options.Cookie.Domain = ".contoso.com";
+```
+
 请参阅*CookieAuthWithIdentity.Core*项目中[示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/cookie-sharing/sample/)([如何下载](xref:tutorials/index#how-to-download-a-sample))。
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
@@ -89,7 +95,13 @@ app.AddIdentity<ApplicationUser, IdentityRole>(options =>
 
 [!code-csharp[](cookie-sharing/sample/CookieAuth.Core/Startup.cs?name=snippet1)]
 
-数据保护密钥和应用名称必须在应用之间共享。 在示例应用中，`GetKeyRingDirInfo`返回到的公共密钥存储位置[PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem)方法。 使用[SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname)来配置常见的共享的应用名称 (`SharedCookieApp`示例中)。 有关详细信息，请参阅[配置数据保护](xref:security/data-protection/configuration/overview)。 
+数据保护密钥和应用名称必须在应用之间共享。 在示例应用中，`GetKeyRingDirInfo`返回到的公共密钥存储位置[PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem)方法。 使用[SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname)来配置常见的共享的应用名称 (`SharedCookieApp`示例中)。 有关详细信息，请参阅[配置数据保护](xref:security/data-protection/configuration/overview)。
+
+托管在子域之间共享 cookie 的应用，指定在一个公共域[Cookie.Domain](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.domain)属性。 若要在应用之间共享 cookie `contoso.com`，如`first_subdomain.contoso.com`并`second_subdomain.contoso.com`，指定`Cookie.Domain`作为`.contoso.com`:
+
+```csharp
+options.Cookie.Domain = ".contoso.com";
+```
 
 请参阅*CookieAuth.Core*项目中[示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/cookie-sharing/sample/)([如何下载](xref:tutorials/index#how-to-download-a-sample))。
 
