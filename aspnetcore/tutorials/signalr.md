@@ -1,22 +1,20 @@
 ---
 title: 开始在 ASP.NET Core 上使用 SignalR
-author: rachelappel
+author: tdykstra
 description: 在本教程中，使用适用于 ASP.NET Core 的 SignalR 创建应用。
 monikerRange: '>= aspnetcore-2.1'
-ms.author: rachelap
+ms.author: tdykstra
 ms.custom: mvc
 ms.date: 05/22/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 6b8222ee04573ca7157b4e1125ed5a4453b2b9a9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 83be28b30cf06eeea37e8d76b3f6444ffd9a10e8
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830550"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095486"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>开始在 ASP.NET Core 上使用 SignalR
-
-作者：[Rachel Appel](https://twitter.com/rachelappel)
 
 本教程介绍使用适用于 ASP.NET Core 的 SignalR 生成实时应用的基础知识。
 
@@ -39,14 +37,14 @@ ms.locfileid: "37830550"
 
 * [.NET Core SDK 2.1 或更高版本](https://www.microsoft.com/net/download/all)
 * 已安装“ASP.NET 和 Web 开发”工作负载的 [Visual Studio 2017](https://www.visualstudio.com/downloads/) 15.7.3 版或更高版本
-* [npm](https://www.npmjs.com/get-npm)
+* [npm](https://www.npmjs.com/get-npm)（适用于 Node.js 的包管理器）
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
 * [.NET Core SDK 2.1 或更高版本](https://www.microsoft.com/net/download/all)
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [用于 Visual Studio Code 的 C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
-* [npm](https://www.npmjs.com/get-npm)
+* [npm](https://www.npmjs.com/get-npm)（适用于 Node.js 的包管理器）
 
 -----
 
@@ -71,7 +69,7 @@ Visual Studio 包含 `Microsoft.AspNetCore.SignalR` 包，该包包含其服务�
     npm install @aspnet/signalr
     ```
 
-4. 在项目的 lib 文件夹中创建名为“signalr”的新文件夹。 将 signalr.js 文件从 node_modules\\@aspnet\signalr\dist\browser 复制到此文件夹。
+4. 在项目的“wwwroot/lib”文件夹中，新建“signalr”文件夹。 将 signalr.js 文件从 node_modules\\@aspnet\signalr\dist\browser 复制到此文件夹。
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 

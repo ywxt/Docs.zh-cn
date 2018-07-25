@@ -4,14 +4,14 @@ author: spboyer
 description: 了解如何使用 Visual Studio 2017 工具和 Docker for Windows 来容器化 ASP.NET Core 应用。
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/12/2017
+ms.date: 07/18/2018
 uid: host-and-deploy/docker/visual-studio-tools-for-docker
-ms.openlocfilehash: fd485416ff0fab2508ab8ffd3f0ad309be338723
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: afa7b05820ba021c50d9c23804095f7edd8b71f1
+ms.sourcegitcommit: ee2b26c7d08b38c908c668522554b52ab8efa221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276849"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39146879"
 ---
 # <a name="visual-studio-tools-for-docker-with-aspnet-core"></a>使用 ASP.NET Core 的 Visual Studio Tools for Docker
 
@@ -35,15 +35,15 @@ Docker for Windows 中的[共享驱动器](https://docs.docker.com/docker-for-wi
 
 ## <a name="add-docker-support-to-an-app"></a>向应用添加 Docker 支持
 
-为了将 Docker 支持添加到 ASP.NET Core 项目中，项目必须面向 .NET Core。 同时支持 Linux 和 Windows 容器。
+若要向 ASP.NET Core 项目添加 Docker 支持，项目必须定目标到 .NET Core。 同时支持 Linux 和 Windows 容器。
 
 向项目添加 Docker 支持后，可选择 Windows 或 Linux 容器。 Docker 主机必须运行类型相同的容器。 要更改正在运行的 Docker 实例中的容器类型，请右键单击系统托盘中的 Docker 图标，再选择“切换到 Windows 容器...”或“切换到 Linux 容器...”。
 
 ### <a name="new-app"></a>新应用
 
-使用 ASP.NET Core Web 应用程序项目模板创建新应用时，请选中“启用 Docker 支持”复选框：
+使用“ASP.NET Core Web 应用”项目模板新建应用时，请选中“启用 Docker 支持”复选框：
 
-![“启用 Docker 支持”复选框](visual-studio-tools-for-docker/_static/enable-docker-support-checkbox.png)
+![“启用 Docker 支持”复选框](visual-studio-tools-for-docker/_static/enable-docker-support-check box.png)
 
 如果目标框架是 .NET Core，可通过 OS 下拉列表选择容器类型。
 
@@ -56,7 +56,7 @@ Visual Studio Tools for Docker 不支持向面向.NET Framework 的现有 ASP.NE
 
 ## <a name="docker-assets-overview"></a>Docker 资产概述
 
-Visual Studio Tools for Docker 向解决方案中添加 docker-compose 项目，包括以下各项：
+Visual Studio Tools for Docker 向解决方案添加 docker-compose 项目，其中包含以下文件：
 
 * .dockerignore：包含文件和目录模式的列表，排除生成生成上下文的时间。
 * docker-compose.yml：基本 [Docker Compose](https://docs.docker.com/compose/overview/) 文件，用于定义要分别通过 `docker-compose build` 和 `docker-compose run` 生成和运行的映像集合。
@@ -83,9 +83,9 @@ docker-compose.yml 文件包含项目运行时创建的映像的名称：
 * 已获取 microsoft/aspnetcore 运行时映像（如果缓存中尚不存在）。
 * 已获取 microsoft/aspnetcore-build compile/publish 映像（如果缓存中尚不存在）。
 * ASPNETCORE_ENVIRONMENT 环境变量设置为位于 `Development` 容器内。
-* 已公开端口 80，并已映射为 localhost 动态分配的端口。 该端口由 Docker 主机确定，并且可以使用 `docker ps` 进行查询。
+* 端口 80 公开，并映射到 localhost 的动态分配端口。 该端口由 Docker 主机确定，并且可以使用 `docker ps` 进行查询。
 * 应用已复制到容器。
-* 使用动态分配端口，通过带有附加到容器的调试程序启动默认浏览器。 
+* 默认浏览器使用动态分配端口启动，带有附加到容器的调试程序。
 
 生成的 Docker 映像是应用的开发映像，而 microsoft/aspnetcore 映像则是基本映像。 在“包管理器控制台”(PMC) 窗口中运行 `docker images` 命令。 显示了计算机上的映像：
 
@@ -109,9 +109,9 @@ baf9a678c88d        hellodockertools:dev   "C:\\remote_debugge..."   21 seconds 
 
 ## <a name="edit-and-continue"></a>编辑并继续
 
-对静态文件和 Razor 视图的更改会自动更新，无需执行编译步骤。 进行更改，保存并在浏览器中刷新，以查看更新。  
+对静态文件和 Razor 视图的更改会自动更新，无需执行编译步骤。 进行更改，保存并在浏览器中刷新，以查看更新。
 
-对代码文件进行修改需要在容器内进行编译和重启 Kestrel。 更改后，使用 CTRL+F5 执行该过程并在容器内启动应用。 未重新生成或停止 Docker 容器。 在 PMC 中运行 `docker ps` 命令。 请注意，截至 10 分钟前，原始容器仍在运行：
+必须在容器内编译和重启 Kestrel，才能修改代码文件。 更改后，按 `CTRL+F5` 执行过程，并在容器内启动应用。 未重新生成或停止 Docker 容器。 在 PMC 中运行 `docker ps` 命令。 请注意，截至 10 分钟前，原始容器仍在运行：
 
 ```console
 CONTAINER ID        IMAGE                  COMMAND                   CREATED             STATUS              PORTS                   NAMES
@@ -120,7 +120,7 @@ baf9a678c88d        hellodockertools:dev   "C:\\remote_debugge..."   10 minutes 
 
 ## <a name="publish-docker-images"></a>发布 Docker 映像
 
-完成应用的开发和调试循环后，Visual Studio Tools for Docker 可帮助创建应用的生产映像。 将配置下拉列表更改为“发布”，然后生成应用。 此工具生成具有“latest”标签的映像，可以将其推送到专用注册表或 Docker Hub。 
+完成应用的开发和调试循环后，Visual Studio Tools for Docker 可帮助创建应用的生产映像。 将配置下拉列表更改为“发布”，然后生成应用。 此工具生成具有“latest”标签的映像，可以将其推送到专用注册表或 Docker Hub。
 
 在 PMC 中运行 `docker images` 命令，查看映像列表：
 
@@ -136,3 +136,8 @@ microsoft/aspnetcore         2.0-nanoserver-1709   8872347d7e5d        40 hours 
 > `docker images` 命令返回存储库名称和标记标识为 \<none> （上面未列出）的中间映像。 这些未命名映像由[多阶段生成](https://docs.docker.com/engine/userguide/eng-image/multistage-build/) *Dockerfile* 生成。 它们可提高生成最终映像的效率 &mdash; 发生更改时，仅重新生成必要的层。 不再需要中间映像时，请使用 [docker rmi](https://docs.docker.com/engine/reference/commandline/rmi/) 命令将其删除。
 
 可能希望生产或发布映像的大小比开发映像小。 由于卷映射，调试程序和应用从本地计算机运行，而不在容器内运行。 最新映像已打包必要的应用代码，以在主机上运行应用。 因此，增量是应用代码的大小。
+
+## <a name="additional-resources"></a>其他资源
+
+* [排查使用 Docker 的 Visual Studio 2017 开发](/azure/vs-azure-tools-docker-troubleshooting-docker-errors)
+* [Visual Studio Tools for Docker GitHub 存储库](https://github.com/Microsoft/DockerTools)

@@ -5,15 +5,13 @@ description: 本教程介绍如何处理多个用户同时更新同一实体时�
 ms.author: riande
 ms.date: 11/15/2017
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: c6ec07eb7bf484490bd7730edc44bf2d89e8fb2a
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: ff9e52df63f9c9f47ee659a68beb28b773a114a1
+ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38150478"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202687"
 ---
-zh-cn/
-
 # <a name="razor-pages-with-ef-core-in-aspnet-core---concurrency---8-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 并发 - 第 8 个教程（共 8 个）
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)、[Tom Dykstra](https://github.com/tdykstra) 和 [Jon P Smith](https://twitter.com/thereformedprog)
@@ -54,17 +52,21 @@ John 单击“编辑”页面上的“保存”，但页面的预算仍显示为
 
 * 可以跟踪用户已修改的属性，并仅更新数据库中相应的列。
 
-  在这种情况下，数据不会丢失。 两个用户更新了不同的属性。 下次有人浏览英语系时，将看到 Jane 和 John 两个人的更改。 这种更新方法可以减少导致数据丢失的冲突数。 本方法：*如果对同一属性进行竞争性更改，则无法避免数据丢失。
-        *通常不适用于 Web 应用。 它需要维持重要状态，以便跟踪所有提取值和新值。 维持大量状态可能影响应用性能。
-        *相对于实体上的并发检测，可能增加应用复杂性。
+  在这种情况下，数据不会丢失。 两个用户更新了不同的属性。 下次有人浏览英语系时，将看到 Jane 和 John 两个人的更改。 这种更新方法可以减少导致数据丢失的冲突数。 这种方法：
+ 
+  * 无法避免数据丢失，如果对同一属性进行竞争性更改的话。
+  * 通常不适用于 Web 应用。 它需要维持重要状态，以便跟踪所有提取值和新值。 维持大量状态可能影响应用性能。
+  * 可能会增加应用复杂性（与实体上的并发检测相比）。
 
 * 可让 John 的更改覆盖 Jane 的更改。
 
   下次有人浏览英语系时，将看到 2013/9/1 和提取的值 350,000.00 美元。 这种方法称为“客户端优先”或“最后一个优先”方案。 （客户端的所有值优先于数据存储的值。）如果不对并发处理进行任何编码，则自动执行“客户端优先”。
 
-* 可以阻止在数据库中更新 John 的更改。 通常，应用将：*显示错误消息。
-        *显示数据的当前状态。
-        *允许用户重新应用更改。
+* 可以阻止在数据库中更新 John 的更改。 应用通常会：
+
+  * 显示错误消息。
+  * 显示数据的当前状态。
+  * 允许用户重新应用更改。
 
   这称为“存储优先”方案。 （数据存储值优先于客户端提交的值。）本教程实施“存储优先”方案。 此方法可确保用户在未收到警报时不会覆盖任何更改。
 
@@ -144,7 +146,7 @@ dotnet ef database update
 * 添加 Migrations/{time stamp}_RowVersion.cs 迁移文件。
 * 更新 Migrations/SchoolContextModelSnapshot.cs 文件。 此次更新将以下突出显示的代码添加到 `BuildModel` 方法：
 
-[!code-csharp[](intro/samples/cu/Migrations/SchoolContextModelSnapshot2.cs?name=snippet&highlight=14-16)]
+  [!code-csharp[](intro/samples/cu/Migrations/SchoolContextModelSnapshot2.cs?name=snippet&highlight=14-16)]
 
 * 运行迁移以更新数据库。
 
