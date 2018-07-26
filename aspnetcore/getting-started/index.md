@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/31/2018
 uid: getting-started
-ms.openlocfilehash: 22e9c982921cc03d89506e18ff99bf481027dda6
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 7ab9f303d74786c4ac76f002d0f2c66371e78cb8
+ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "38216208"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39228577"
 ---
 # <a name="get-started-with-aspnet-core"></a>ASP.NET Core 入门
 
@@ -25,7 +25,7 @@ ms.locfileid: "38216208"
     dotnet new webapp -o aspnetcoreapp
     ```
 
-    [!INCLUDE [](~/includes/webapp-alias-notice.md) [](~/includes/webapp-alias-notice.md)]
+    [!INCLUDE [](~/includes/webapp-alias-notice.md)]
 
 3. 信任 HTTPS 开发证书：
 
@@ -35,11 +35,11 @@ ms.locfileid: "38216208"
     dotnet dev-certs https --trust
     ```
 
-    The preceding command displays the following dialog:
+   以上命令会显示以下对话：
 
-    ![Security warning dialog](_static/cert.png)
+   ![安全警告对话](_static/cert.png)
 
-    Select **Yes** if you agree to trust the development certificate.
+   如果你同意信任开发证书，请选择“是”。
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
@@ -47,18 +47,15 @@ ms.locfileid: "38216208"
     dotnet dev-certs https --trust
     ```
 
-    The preceding command displays the following message:
+   以上命令会显示以下消息：
 
-    *Trusting the HTTPS development certificate was requested. If the certificate is not already trusted we will run the following command:*
-    `'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'`
-    *This command might prompt you for your password to install the certificate on the system keychain.
-    Password:*
+   *请求信任 HTTPS 开发证书。如果尚未信任该证书，将运行以下命令：*`'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'`*此命令可能提醒你输入密码，已在系统密钥链上安装该证书。  密码：*
 
-    Enter your password if you agree to trust the development certificate.
+   如果你同意信任开发证书，请输入密码。
 
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
-    See the documentation for your Linux distribution on how to trust the HTTPS development certificate
+   <a name="see-the-documentation-for-your-linux-distribution-on-how-to-trust-the-https-development-certificate"></a>查看你的 Linux 分发对应的文档，了解如何信任 HTTPS 开发证书
 ---
 
 4. 运行应用：

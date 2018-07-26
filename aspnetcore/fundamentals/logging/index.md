@@ -3,14 +3,14 @@ title: ASP.NET Core 中的日志记录
 author: ardalis
 description: 了解 ASP.NET Core 中的记录框架。 发现内置日志记录提供程序，并详细了解常见第三方提供程序。
 ms.author: tdykstra
-ms.date: 12/15/2017
+ms.date: 07/24/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: dde01129bb7ea29544c4c416dfe9b5522a738d01
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: 0181566aeab1fa055435ac90887c019eef52878c
+ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938480"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39228632"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core 中的日志记录
 
@@ -70,7 +70,7 @@ ASP.NET Core 不提供异步记录器方法，因为日志记录的速度应非�
 
 [!code-csharp[](index/sample//Startup.cs?name=snippet_AddConsoleAndDebug&highlight=3,5-7)]
 
-ASP.NET Core [依赖关系注入](xref:fundamentals/dependency-injection) (DI) 将提供 `ILoggerFactory` 实例。 在 [Microsoft.Extensions.Logging.Console](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console/) 和 [Microsoft.Extensions.Logging.Debug](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Debug/) 包中定义了 `AddConsole` 和 `AddDebug` 扩展方法。 每个扩展方法都调用 `ILoggerFactory.AddProvider` 方法，传入提供程序的一个实例。 
+ASP.NET Core [依赖关系注入](xref:fundamentals/dependency-injection) (DI) 将提供 `ILoggerFactory` 实例。 在 [Microsoft.Extensions.Logging.Console](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console/) 和 [Microsoft.Extensions.Logging.Debug](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Debug/) 包中定义了 `AddConsole` 和 `AddDebug` 扩展方法。 每个扩展方法都调用 `ILoggerFactory.AddProvider` 方法，传入提供程序的一个实例。
 
 > [!NOTE]
 > [示例应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/sample)在 `Startup.Configure` 方法中添加了日志提供程序。 要从先前执行的代码获取日志输出，请在 `Startup` 类构造函数中添加日志提供程序。
@@ -155,7 +155,7 @@ TodoApi.Controllers.TodoController:Information: Getting item 0
 TodoApi.Controllers.TodoController:Warning: GetById(0) NOT FOUND
 Microsoft.AspNetCore.Mvc.StatusCodeResult:Information: Executing HttpStatusCodeResult, setting HTTP status code 404
 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker:Information: Executed action TodoApi.Controllers.TodoController.GetById (TodoApi) in 152.5657ms
-Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request finished in 316.3195ms 404 
+Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request finished in 316.3195ms 404
 ```
 
 由上一部分所示的 `ILogger` 调用创建的日志以“TodoApi.Controllers.TodoController”开头的。 以“Microsoft”类别开头的日志来自 ASP.NET Core。 ASP.NET Core 本身和应用程序代码使用相同的日志记录 API 和日志记录提供程序。
@@ -315,11 +315,11 @@ System.Exception: Item not found exception.
 
 ::: moniker range=">= aspnetcore-2.0"
 
-可为特定或所有提供程序和类别指定最低日志级别。 最低级别以下的日志不会传递给该提供程序，因此不会显示或存储它们。 
+可为特定或所有提供程序和类别指定最低日志级别。 最低级别以下的日志不会传递给该提供程序，因此不会显示或存储它们。
 
 要禁止显示所有日志，可将 `LogLevel.None` 指定为最低日志级别。 `LogLevel.None` 的整数值为 6，它大于 `LogLevel.Critical` (5)。
 
-**在配置中创建筛选规则**
+### <a name="create-filter-rules-in-configuration"></a>在配置中创建筛选规则
 
 项目模板创建调用 `CreateDefaultBuilder` 的代码，以便为控制台和调试提供程序设置日志记录。 `CreateDefaultBuilder` 方法还使用如下所示的代码，设置日志记录以查找 `Logging` 部分的配置：
 
@@ -331,7 +331,7 @@ System.Exception: Item not found exception.
 
 此 JSON 将创建六条筛选规则，一条用于调试提供程序，四条用于控制台提供程序，一条用于所有提供程序。 稍后你将了解在创建 `ILogger` 对象后，如何为每个提供程序从上述规则中选择其一。
 
-**代码中的筛选规则**
+### <a name="filter-rules-in-code"></a>代码中的筛选规则
 
 可在代码中注册筛选规则，如下方示例所示：
 
@@ -339,7 +339,7 @@ System.Exception: Item not found exception.
 
 第二个 `AddFilter` 使用类型名称来指定调试提供程序。 第一个 `AddFilter` 应用于全部提供程序，因为它未指定提供程序类型。
 
-**如何筛选已应用的规则**
+### <a name="how-filtering-rules-are-applied"></a>如何应用筛选规则
 
 先前示例中显示的配置数据和 `AddFilter` 代码会创建下表所示的规则。 前六条由配置示例创建，后两条由代码示例创建。
 
@@ -370,18 +370,18 @@ System.Exception: Item not found exception.
 
 在使用 `ILogger` 为类别“Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine”创建日志时，`Trace` 及以上级别的日志将发送到调试提供程序，`Debug` 及以上级别的日志将发送到控制台提供程序。
 
-**提供程序别名**
+### <a name="provider-aliases"></a>提供程序别名
 
 虽然可以使用类型名称在配置中指定提供程序，但每个提供程序都定义了更短且更易于使用的别名。 对于内置提供程序，请使用以下别名：
 
-- 控制台
-- 调试
-- EventLog
-- AzureAppServices
-- TraceSource
-- EventSource
+* 控制台
+* 调试
+* EventLog
+* AzureAppServices
+* TraceSource
+* EventSource
 
-**默认最低级别**
+### <a name="default-minimum-level"></a>默认最低级别
 
 仅当配置或代码中的规则对给定提供程序和类别都不适用时，最低级别设置才会生效。 下面的示例演示如何设置最低级别：
 
@@ -389,7 +389,7 @@ System.Exception: Item not found exception.
 
 如果没有明确设置最低级别，则默认值为 `Information`，它表示 `Trace` 和 `Debug` 日志将被忽略。
 
-**筛选器函数**
+### <a name="filter-functions"></a>筛选器函数
 
 可向筛选器函数写入代码以应用筛选规则。 对配置或代码没有向其分配规则的所有提供程序和类别调用筛选器函数。 函数中的代码有权访问提供程序类型、类别和日志级别，以决定是否记录某条消息。 例如:
 
@@ -483,13 +483,12 @@ ASP.NET Core 提供以下提供程序：
 
 ### <a name="console-provider"></a>控制台提供程序
 
-[Microsoft.Extensions.Logging.Console](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console) 提供程序包向控制台发送日志输出。 
+[Microsoft.Extensions.Logging.Console](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console) 提供程序包向控制台发送日志输出。
 
 ::: moniker range=">= aspnetcore-2.0"
 
-
 ```csharp
-logging.AddConsole()
+logging.AddConsole();
 ```
 
 ::: moniker-end
@@ -497,10 +496,10 @@ logging.AddConsole()
 ::: moniker range="< aspnetcore-2.0"
 
 ```csharp
-loggerFactory.AddConsole()
+loggerFactory.AddConsole();
 ```
 
-[AddConsole 重载](/dotnet/api/microsoft.extensions.logging.consoleloggerextensions)允许传入一个最低日志级别、一个筛选器函数，以及一个用于指示作用域是否受支持的布尔值。 另一个选项是传递 `IConfiguration` 对象，可通过它来指定支持的作用域及日志记录级别。 
+[AddConsole 重载](/dotnet/api/microsoft.extensions.logging.consoleloggerextensions)允许传入一个最低日志级别、一个筛选器函数，以及一个用于指示作用域是否受支持的布尔值。 另一个选项是传递 `IConfiguration` 对象，可通过它来指定支持的作用域及日志记录级别。
 
 在为生产环境选择控制台提供程序时，请考虑到它将对性能产生重大影响。
 
@@ -527,7 +526,7 @@ loggerFactory.AddConsole(Configuration.GetSection("Logging"));
 ::: moniker range=">= aspnetcore-2.0"
 
 ```csharp
-logging.AddDebug()
+logging.AddDebug();
 ```
 
 ::: moniker-end
@@ -535,7 +534,7 @@ logging.AddDebug()
 ::: moniker range="< aspnetcore-2.0"
 
 ```csharp
-loggerFactory.AddDebug()
+loggerFactory.AddDebug();
 ```
 
 [AddDebug 重载](/dotnet/api/microsoft.extensions.logging.debugloggerfactoryextensions)允许传入最低日志级别或筛选器函数。
@@ -544,12 +543,12 @@ loggerFactory.AddDebug()
 
 ### <a name="eventsource-provider"></a>EventSource 提供程序
 
-对于面向 ASP.NET Core 1.1.0 或更高版本的应用，[Microsoft.Extensions.Logging.EventSource](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventSource) 提供程序包可实现事件跟踪。 在 Windows 中，它使用 [ETW](https://msdn.microsoft.com/library/windows/desktop/bb968803)。 提供程序可跨平台使用，但尚无支持 Linux 或 macOS 的事件集合和显示工具。 
+对于面向 ASP.NET Core 1.1.0 或更高版本的应用，[Microsoft.Extensions.Logging.EventSource](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventSource) 提供程序包可实现事件跟踪。 在 Windows 中，它使用 [ETW](https://msdn.microsoft.com/library/windows/desktop/bb968803)。 提供程序可跨平台使用，但尚无支持 Linux 或 macOS 的事件集合和显示工具。
 
 ::: moniker range=">= aspnetcore-2.0"
 
 ```csharp
-logging.AddEventSourceLogger()
+logging.AddEventSourceLogger();
 ```
 
 ::: moniker-end
@@ -557,12 +556,12 @@ logging.AddEventSourceLogger()
 ::: moniker range="< aspnetcore-2.0"
 
 ```csharp
-loggerFactory.AddEventSourceLogger()
+loggerFactory.AddEventSourceLogger();
 ```
 
 ::: moniker-end
 
-可使用 [PerfView 实用工具](https://github.com/Microsoft/perfview)收集和查看日志。 虽然其他工具也可以查看 ETW 日志，但在处理由 ASP.NET 发出的 ETW 事件时，使用 PerfView 能获得最佳体验。 
+可使用 [PerfView 实用工具](https://github.com/Microsoft/perfview)收集和查看日志。 虽然其他工具也可以查看 ETW 日志，但在处理由 ASP.NET 发出的 ETW 事件时，使用 PerfView 能获得最佳体验。
 
 要将 PerfView 配置为收集此提供程序记录的事件，请向 Additional Providers 列表添加字符串 `*Microsoft-Extensions-Logging`。 （请勿遗漏字符串起始处的星号。）
 
@@ -575,7 +574,7 @@ loggerFactory.AddEventSourceLogger()
 ::: moniker range=">= aspnetcore-2.0"
 
 ```csharp
-logging.AddEventLog()
+logging.AddEventLog();
 ```
 
 ::: moniker-end
@@ -583,7 +582,7 @@ logging.AddEventLog()
 ::: moniker range="< aspnetcore-2.0"
 
 ```csharp
-loggerFactory.AddEventLog()
+loggerFactory.AddEventLog();
 ```
 
 [AddEventLog 重载](/dotnet/api/microsoft.extensions.logging.eventloggerfactoryextensions)允许传入 `EventLogSettings` 或最低日志级别。
@@ -620,13 +619,16 @@ loggerFactory.AddTraceSource(sourceSwitchName);
 
 ### <a name="azure-app-service-provider"></a>Azure 应用服务提供程序
 
-[Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) 提供程序包将日志写入 Azure App Service 应用的文件系统，以及 Azure 存储帐户中的 [blob 存储](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#what-is-blob-storage)。 该提供程序仅适用于面向 ASP.NET Core 1.1 或更高版本的应用。
+[Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) 提供程序包将日志写入 Azure App Service 应用的文件系统，以及 Azure 存储帐户中的 [blob 存储](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#what-is-blob-storage)。 面向 .NET Core 1.1 或更高版本的应用可使用该提供程序包。
 
 ::: moniker range=">= aspnetcore-2.0"
 
-如果面向 .NET Core，请勿安装提供程序包或显式调用 [AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics)。 将应用部署到 Azure 应用服务时，提供程序对应用自动可用。
+如果面向 .NET Core，请注意以下几点：
 
-如果面向 .NET Framework，需要向项目添加提供程序包并调用 `AddAzureWebAppDiagnostics`：
+* 提供程序包包括在 ASP.NET Core [Microsoft.AspNetCore.All 元包](xref:fundamentals/metapackage) 中，但不包括在 [Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)中。
+* 请勿显示调用 [AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics) 将应用部署到 Azure 应用服务时，会自动使提供程序对应用可用。
+
+如果面向 .NET Framework 或引用 `Microsoft.AspNetCore.App` 元包，请向项目添加提供程序包。 在 [ILoggerFactory](/dotnet/api/microsoft.extensions.logging.iloggerfactory) 实例上调用 `AddAzureWebAppDiagnostics`：
 
 ```csharp
 logging.AddAzureWebAppDiagnostics();
@@ -634,15 +636,15 @@ logging.AddAzureWebAppDiagnostics();
 
 ::: moniker-end
 
-::: moniker range="< aspnetcore-2.0"
+::: moniker range="= aspnetcore-1.1"
 
 ```csharp
 loggerFactory.AddAzureWebAppDiagnostics();
 ```
 
-[AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics) 重载允许传入 [AzureAppServicesDiagnosticsSettings](/dotnet/api/microsoft.extensions.logging.azureappservices.azureappservicesdiagnosticssettings)，可用它替代默认设置，例如日志记录输出模板、blob 名称和文件大小限制等。 （输出模板是应用于所有日志的消息模板，其优先级高于调用 `ILogger` 方法时提供的模板。）
-
 ::: moniker-end
+
+[AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics) 重载允许传入 [AzureAppServicesDiagnosticsSettings](/dotnet/api/microsoft.extensions.logging.azureappservices.azureappservicesdiagnosticssettings)，可用它替代默认设置，例如日志记录输出模板、blob 名称和文件大小限制等。 （输出模板是应用于所有日志的消息模板，其优先级高于调用 `ILogger` 方法时提供的模板。）
 
 在部署 App Service 应用时，应用将遵循 Azure 门户中 App Service 页下[诊断日志](https://azure.microsoft.com/documentation/articles/web-sites-enable-diagnostic-log/#enablediag)部分的设置。 更新这些设置后，更改会立即生效，无需重新启动或重新部署应用。
 
@@ -674,7 +676,7 @@ loggerFactory.AddAzureWebAppDiagnostics();
 
 ## <a name="azure-log-streaming"></a>Azure 日志流式处理
 
-通过 Azure 日志流式处理，可从以下位置实时查看日志活动： 
+通过 Azure 日志流式处理，可从以下位置实时查看日志活动：
 
 * 应用程序服务器
 * Web 服务器
@@ -697,4 +699,4 @@ loggerFactory.AddAzureWebAppDiagnostics();
 
 ## <a name="additional-resources"></a>其他资源
 
-[使用 LoggerMessage 的高性能日志记录](xref:fundamentals/logging/loggermessage)
+* <xref:fundamentals/logging/loggermessage>
