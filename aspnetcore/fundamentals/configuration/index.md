@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/11/2018
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 70e9e73eeb5d08baf9ef190ebfbda998ace60d77
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 59ab0cd0f6975d15bd01ce7e4128521938182c24
+ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278318"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39228619"
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core 中的配置
 
@@ -34,6 +34,40 @@ ms.locfileid: "36278318"
 选项模式使用选项类来表示相关设置的组。 有关使用选项模式的详细信息，请参阅[选项](xref:fundamentals/configuration/options)主题。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/index/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+
+::: moniker range=">= aspnetcore-2.1"
+
+本主题中提供的示例依赖于：
+
+* 使用 [SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath) 设置应用的基路径。 通过引用 [Microsoft.Extensions.Configuration.FileExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/) 包向应用提供 `SetBasePath`。
+* 使用 [GetSection](/dotnet/api/microsoft.extensions.configuration.configurationsection.getsection) 解析配置文件的节。 通过引用 [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/) 包向应用提供 `GetSection`。
+* 用 [Bind](/dotnet/api/microsoft.extensions.configuration.configurationbinder.bind) 绑定配置。 通过引用 [Microsoft.Extensions.Configuration.Binder](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/) 包向应用提供 `Bind`。
+
+这些包均包括在 [Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)中。
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+本主题中提供的示例依赖于：
+
+* 使用 [SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath) 设置应用的基路径。 通过引用 [Microsoft.Extensions.Configuration.FileExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/) 包向应用提供 `SetBasePath`。
+* 使用 [GetSection](/dotnet/api/microsoft.extensions.configuration.configurationsection.getsection) 解析配置文件的节。 通过引用 [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/) 包向应用提供 `GetSection`。
+* 用 [Bind](/dotnet/api/microsoft.extensions.configuration.configurationbinder.bind) 绑定配置。 通过引用 [Microsoft.Extensions.Configuration.Binder](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/) 包向应用提供 `Bind`。
+
+这些包均包括在 [Microsoft.AspNetCore.All 元包](xref:fundamentals/metapackage)中。
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-1.1"
+
+本主题中提供的示例依赖于：
+
+* 使用 [SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath) 设置应用的基路径。 通过引用 [Microsoft.Extensions.Configuration.FileExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/) 包向应用提供 `SetBasePath`。
+* 使用 [GetSection](/dotnet/api/microsoft.extensions.configuration.configurationsection.getsection) 解析配置文件的节。 通过引用 [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/) 包向应用提供 `GetSection`。
+* 用 [Bind](/dotnet/api/microsoft.extensions.configuration.configurationbinder.bind) 绑定配置。 通过引用 [Microsoft.Extensions.Configuration.Binder](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/) 包向应用提供 `Bind`。
+
+::: moniker-end
 
 ## <a name="json-configuration"></a>JSON 配置
 
