@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core 中的记录框架。 发现内置日志记录�
 ms.author: tdykstra
 ms.date: 07/24/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: 0181566aeab1fa055435ac90887c019eef52878c
-ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
+ms.openlocfilehash: f629b062afb5c17cd05040a9ef0281aa7121aabc
+ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39228632"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39320747"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core 中的日志记录
 
@@ -56,7 +56,7 @@ ASP.NET Core 不提供异步记录器方法，因为日志记录的速度应非�
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_ExpandDefault&highlight=16,17)]
 
-通过默认项目模板可以使用 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder?view=aspnetcore-2.0#Microsoft_AspNetCore_WebHost_CreateDefaultBuilder_System_String___) 方法登录：
+借助默认项目模板，可以在 Program.cs 中调用 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 扩展方法，从而启用控制台和调试日志记录提供程序：
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_TemplateCode&highlight=7)]
 
@@ -77,11 +77,21 @@ ASP.NET Core [依赖关系注入](xref:fundamentals/dependency-injection) (DI) �
 
 ::: moniker-end
 
-本文稍后部分介绍了每个[内置日志记录提供程序](#built-in-logging-providers)，并提供了[第三方日志记录提供程序](#third-party-logging-providers)的链接。
+详细了解[内置日志记录提供程序](#built-in-logging-providers)，并查找本文稍后部分介绍的[第三方日志记录提供程序](#third-party-logging-providers)的链接。
 
-## <a name="settings-file-configuration"></a>设置文件配置
+## <a name="configuration"></a>配置
 
-以上[如何添加提供程序](#how-to-add-providers)部分的每个示例都会从应用设置文件的 `Logging` 部分加载日志记录提供程序配置。 以下示例显示了典型 *appsettings.Development.json* 文件的内容：
+日志记录提供程序配置由一个或多个配置提供程序提供：
+
+* 文件格式（INI、JSON 和 XML）。
+* 命令行参数。
+* 环境变量。
+* 内存中的 .NET 对象。
+* 未加密的[机密管理器](xref:security/app-secrets)存储。
+* 加密的用户存储，如 [Azure Key Vault](xref:security/key-vault-configuration)。
+* （已安装或已创建的）自定义提供程序。
+
+例如，日志记录配置通常由应用设置文件的 `Logging` 部分提供。 以下示例显示了典型 *appsettings.Development.json* 文件的内容：
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -122,6 +132,8 @@ ASP.NET Core [依赖关系注入](xref:fundamentals/dependency-injection) (DI) �
 `LogLevel` 项表示日志名称。 `Default` 项适用于未显式列出的日志。 其值表示应用于给定日志的[日志级别](#log-level)。
 
 ::: moniker-end
+
+若要了解如何实现配置提供程序，请参阅 <xref:fundamentals/configuration/index>。
 
 ## <a name="sample-logging-output"></a>日志记录输出示例
 
@@ -436,7 +448,7 @@ Program.cs:
 > [!NOTE]
 > 要启用基于作用域的日志记录，必须先配置 `IncludeScopes` 控制台记录器选项。
 >
-> `IncludeScopes` 可通过 appsettings 配置文件进行配置。 有关详细信息，请参阅[设置文件配置](#settings-file-configuration)部分。
+> 若要了解关配置，请参阅[配置](#Configuration)部分。
 
 ::: moniker-end
 
