@@ -5,22 +5,22 @@ description: 了解如何插入到 ASP.NET Core 应用使用依赖关系注入�
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/authorization/dependencyinjection
-ms.openlocfilehash: c6bb2589c6fef9f4586e6f4ddbb574866e6c48ab
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 71d563e11d308a95c08e6d012d3a071f4697d2de
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273717"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342109"
 ---
 # <a name="dependency-injection-in-requirement-handlers-in-aspnet-core"></a>在 ASP.NET Core要求处理程序中的依赖关系注入
 
 <a name="security-authorization-di"></a>
 
-[必须注册授权处理程序](xref:security/authorization/policies#handler-registration)在配置期间服务集合中 (使用[依赖关系注入](xref:fundamentals/dependency-injection#fundamentals-dependency-injection))。
+[授权处理程序必须进行注册](xref:security/authorization/policies#handler-registration)在配置期间服务集合中 (使用[依赖关系注入](xref:fundamentals/dependency-injection))。
 
-假设您有你想要评估的授权处理程序内的规则的存储库和服务集合中注册了该存储库。 授权将解析和您的构造函数中的插入。
+假设你有想要评估的授权处理程序内的规则的存储库和服务集合中已注册该存储库。 授权将解决，然后将它注入到您的构造函数。
 
-例如，如果你想要使用 ASP。NET 的日志记录你想要插入的基础结构`ILoggerFactory`到您的处理程序。 此类处理可能如下所示：
+例如，如果你想要使用 ASP。NET 的日志记录基础结构要注入`ILoggerFactory`到您的处理程序。 此类处理程序可能如下所示：
 
 ```csharp
 public class LoggingAuthorizationHandler : AuthorizationHandler<MyRequirement>
@@ -47,7 +47,7 @@ public class LoggingAuthorizationHandler : AuthorizationHandler<MyRequirement>
 services.AddSingleton<IAuthorizationHandler, LoggingAuthorizationHandler>();
 ```
 
-实例的处理程序将你的应用程序启动时，创建和插入的已注册的 DI 将`ILoggerFactory`到您的构造函数。
+该处理程序将你的应用程序启动时创建的实例并注入的已注册的 DI 将`ILoggerFactory`到您的构造函数。
 
 > [!NOTE]
 > 使用实体框架的处理程序不应注册为单一实例。

@@ -7,20 +7,18 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 04/25/2018
 uid: signalr/introduction
-ms.openlocfilehash: bc6f25c3f35e7fb0c2c68220697f2e0fdc6a9958
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 2fff24609caf7592bad763a077288990a29617aa
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095384"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342544"
 ---
 # <a name="introduction-to-aspnet-core-signalr"></a>ASP.NET Core SignalR 简介
 
-作者：[Rachel Appel](https://twitter.com/rachelappel)
-
 ## <a name="what-is-signalr"></a>SignalR 是什么？
 
-ASP.NET Core SignalR 是一个库，简化了添加到应用的实时 web 功能。 实时 web 功能立即使服务器端代码能够将内容推送到客户端。
+ASP.NET Core SignalR 是一个开放源代码库，它简化了向应用添加实时 web 功能。 实时 web 功能立即使服务器端代码能够将内容推送到客户端。
 
 SignalR 的良好候选项：
 
@@ -31,27 +29,32 @@ SignalR 的良好候选项：
 
 SignalR 提供了一个 API，用于创建服务器到客户端[远程过程调用 (RPC)](https://wikipedia.org/wiki/Remote_procedure_call)。 Rpc 在客户端上从服务器端.NET Core 代码中调用 JavaScript 函数。
 
-有关 ASP.NET Core SignalR:
+下面是适用于 ASP.NET Core SignalR 的一些功能：
 
 * 会自动处理的连接管理。
-* 允许同时广播到所有连接的客户端的消息。 例如，聊天室。
-* 允许将消息发送到特定的客户端或客户端组。
-* 是在开放源代码[GitHub](https://github.com/aspnet/signalr)。
-* 可缩放。
+* 同时将消息发送到所有连接的客户端。 例如，聊天室。
+* 将消息发送到特定的客户端或客户端组。
+* 扩展以处理增加的流量。
 
-客户端和服务器之间的连接是持久性的与 HTTP 连接不同的。
+源托管在[SignalR GitHub 上的存储库](https://github.com/aspnet/signalr)。
 
 ## <a name="transports"></a>传输
 
-SignalR 通过多种方法用于构建实时 web 应用程序的摘要。 [Websocket](https://tools.ietf.org/html/rfc7118)是最佳的传输，但这些不可用时，可以使用其他技术，例如服务器发送事件和长轮询。 SignalR 将自动检测并初始化适当的传输基于在服务器和客户端上受支持的功能。
+SignalR 支持几种方法用于处理实时通信：
+
+* [WebSockets](https://tools.ietf.org/html/rfc7118)
+* 服务器发送事件
+* 很长的轮询
+
+SignalR 会自动选择最佳传输方法内的服务器和客户端的功能。
 
 ## <a name="hubs"></a>中心
 
-SignalR 使用中心客户端和服务器之间进行通信。
+使用 SignalR*中心*客户端和服务器之间进行通信。
 
-中心是一个高级的管道，用于允许在客户端和服务器相互调用的方法。 SignalR 处理调度跨计算机界限自动，允许客户端在服务器上调用方法，以轻松地为本地方法，反之亦然。 中心允许将强类型化参数传递给方法，这样将启用模型绑定。 SignalR 提供了两个内置中心协议： 文本协议基于 JSON 和基于二进制协议[MessagePack](https://msgpack.org/)。  MessagePack 通常创建与使用 JSON 相比较小的消息。 旧版浏览器必须支持[XHR 级别 2](https://caniuse.com/#feat=xhr2)提供 MessagePack 协议支持。
+中心是一个高级的管道，用于允许客户端和服务器相互调用的方法。 SignalR 处理调度跨计算机界限自动，允许客户端调用的方法在服务器上，反之亦然。 您可以强类型化参数传递到方法，这样将启用模型绑定。 SignalR 提供了两个内置中心协议： 文本协议基于 JSON 和基于二进制协议[MessagePack](https://msgpack.org/)。  MessagePack 通常会产生较小的消息为 JSON 进行比较。 旧版浏览器必须支持[XHR 级别 2](https://caniuse.com/#feat=xhr2)提供 MessagePack 协议支持。
 
-中心调用通过使用活动传输发送消息的客户端代码。 消息包含名称和客户端的方法的参数。 作为方法参数发送对象是使用配置的协议反序列化。 客户端尝试与客户端代码中的方法的名称匹配。 当找到匹配项时，使用反序列化的参数数据运行的客户端方法。
+中心通过发送消息，其中包含名称和客户端的方法的参数调用客户端代码。 作为方法参数发送对象是使用配置的协议反序列化。 客户端尝试与客户端代码中的方法的名称匹配。 当客户端找到了匹配项时，它调用方法，并将反序列化的参数数据传递给它。
 
 ## <a name="additional-resources"></a>其他资源
 
