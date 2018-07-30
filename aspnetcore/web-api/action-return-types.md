@@ -4,14 +4,14 @@ author: scottaddie
 description: 了解在 ASP.NET Core Web API 中使用各种控制器操作方法返回类型的相关信息。
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 03/21/2018
+ms.date: 07/23/2018
 uid: web-api/action-return-types
-ms.openlocfilehash: 422db97da222fb5e742e1d8e6ae410edc90dbc18
-ms.sourcegitcommit: ee2b26c7d08b38c908c668522554b52ab8efa221
+ms.openlocfilehash: 82d18d866d4d18613cccb950b2f30ae81bd749de
+ms.sourcegitcommit: 6425baa92cec4537368705f8d27f3d0e958e43cd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "36273551"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39220607"
 ---
 # <a name="controller-action-return-types-in-aspnet-core-web-api"></a>ASP.NET Core Web API 中的控制器操作返回类型
 
@@ -21,14 +21,19 @@ ms.locfileid: "36273551"
 
 ASP.NET Core 提供以下 Web API 控制器操作返回类型选项：
 
-::: moniker range="<= aspnetcore-2.0"
-* [特定类型](#specific-type)
-* [IActionResult](#iactionresult-type)
-::: moniker-end
 ::: moniker range=">= aspnetcore-2.1"
+
 * [特定类型](#specific-type)
 * [IActionResult](#iactionresult-type)
 * [ActionResult\<T>](#actionresultt-type)
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
+
+* [特定类型](#specific-type)
+* [IActionResult](#iactionresult-type)
+
 ::: moniker-end
 
 本文档说明每种返回类型的最佳适用情况。
@@ -70,12 +75,25 @@ ASP.NET Core 提供以下 Web API 控制器操作返回类型选项：
 上述操作的其他已知返回代码是 201，由 [CreatedAtAction](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdataction) 帮助程序方法生成。 在此路径中，返回了 `Product` 对象。
 
 ::: moniker range=">= aspnetcore-2.1"
+
 ## <a name="actionresultt-type"></a>ActionResult\<T> 类型
 
 ASP.NET Core 2.1 引入了面向 Web API 控制器操作的 [ActionResult\<T>](/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1) 返回类型。 它支持返回从 [ActionResult](/dotnet/api/microsoft.aspnetcore.mvc.actionresult) 派生的类型或返回[特定类型](#specific-type)。 `ActionResult<T>` 通过 [IActionResult 类型](#iactionresult-type)可提供以下优势：
 
-* 可排除 [[ProducesResponseType]](/dotnet/api/microsoft.aspnetcore.mvc.producesresponsetypeattribute) 特性的 `Type` 属性。
+* 可排除 [[ProducesResponseType]](/dotnet/api/microsoft.aspnetcore.mvc.producesresponsetypeattribute) 特性的 `Type` 属性。 例如，`[ProducesResponseType(200, Type = typeof(Product))]` 简化为 `[ProducesResponseType(200)]`。 此操作的预期返回类型改为根据 `ActionResult<T>` 中的 `T` 进行推断。
 * [隐式强制转换运算符](/dotnet/csharp/language-reference/keywords/implicit)支持将 `T` 和 `ActionResult` 均转换为 `ActionResult<T>`。 将 `T` 转换为 [ObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.objectresult)，也就是将 `return new ObjectResult(T);` 简化为 `return T;`。
+
+C# 不支持对接口使用隐式强制转换运算符。 因此，必须使用 `ActionResult<T>`，才能将接口转换为具体类型。 例如，在下面的示例中，使用 `IEnumerable` 不起作用：
+
+    ```csharp
+    [HttpGet]
+    public ActionResult<IEnumerable<Product>> Get()
+    {
+        return _repository.GetProducts();
+    }
+    ```
+
+上面代码的一种修复方法是返回 `_repository.GetProducts().ToList();`。
 
 大多数操作具有特定返回类型。 执行操作期间可能出现意外情况，不返回特定类型就是其中之一。 例如，操作的输入参数可能无法通过模型验证。 在此情况下，通常会返回相应的 `ActionResult` 类型，而不是特定类型。
 
@@ -100,10 +118,11 @@ ASP.NET Core 2.1 引入了面向 Web API 控制器操作的 [ActionResult\<T>](/
 
 > [!TIP]
 > 从 ASP.NET Core 2.1 开始，使用 `[ApiController]` 特性修饰控制器类时，将启用操作参数绑定源推理。 复杂类型参数通过请求正文自动绑定。 因此，不会使用 [[FromBody]](/dotnet/api/microsoft.aspnetcore.mvc.frombodyattribute) 特性对前面操作中的 `product` 参数进行显示批注。
+
 ::: moniker-end
 
 ## <a name="additional-resources"></a>其他资源
 
-* [控制器操作](xref:mvc/controllers/actions)
-* [模型验证](xref:mvc/models/validation)
-* [使用 Swagger 的 Web API 帮助页](xref:tutorials/web-api-help-pages-using-swagger)
+* <xref:mvc/controllers/actions>
+* <xref:mvc/models/validation>
+* <xref:tutorials/web-api-help-pages-using-swagger>

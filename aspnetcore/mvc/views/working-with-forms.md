@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 02/14/2017
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: 3e4e597fde829ae2e2ce4dbd19a4ec0b42d078df
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 34a553c7ff8a18c367bf5e8079e2ea71f968bf3b
+ms.sourcegitcommit: 75bf5fdbfdcb6a7cfe8fe207b9ff37655ccbacd4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274848"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39219415"
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a>ASP.NET Core 表单中的标记帮助程序
 
@@ -169,7 +169,7 @@ Type expected
 
 ### <a name="expression-names"></a>表达式名称
 
-`asp-for` 属性值是 `ModelExpression`，并且是 lambda 表达式的右侧。 因此，`asp-for="Property1"` 在生成的代码中变成 `m => m.Property1`，这也是无需使用 `Model` 前缀的原因。 可使用“@”字符作为内联表达式的开头并移到 `m.` 之前：
+`asp-for` 属性值是 `ModelExpression`，并且是 lambda 表达式的右侧。 因此，`asp-for="Property1"` 在生成的代码中变成 `m => m.Property1`，这也是无需使用 `Model` 前缀的原因。 “\@”字符可用作内联表达式的开头，并移到 `m.` 前面：
 
 ```HTML
 @{
