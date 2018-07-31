@@ -5,12 +5,12 @@ description: 演示如何要求在 ASP.NET Core HTTPS/TLS web 应用。
 ms.author: riande
 ms.date: 2/9/2018
 uid: security/enforcing-ssl
-ms.openlocfilehash: c3d92994c0331b1408e246953454910ca1f4dc43
-ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
+ms.openlocfilehash: a4ab91ef23a798c919a23a44f5a050bd3c09d56a
+ms.sourcegitcommit: d99a8554c91f626cf5e466911cf504dcbff0e02e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39254826"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39356683"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>强制实施 HTTPS 在 ASP.NET Core
 
@@ -64,11 +64,17 @@ ms.locfileid: "39254826"
 > [!NOTE]
 > 当应用程序运行时在反向代理 （例如，IIS，IIS Express），后面`IServerAddressesFeature`不可用。 必须手动配置端口。 如果端口未设置，请求不会重定向。
 
-可以通过设置配置端口:
+可以通过设置配置端口[https_port Web 主机配置设置](xref:fundamentals/host/web-host#https-port):
 
-* `ASPNETCORE_HTTPS_PORT` 环境变量。
-* `http_port` 主机配置密钥 (例如，通过*hostsettings.json*或命令行参数)。
-* [HttpsRedirectionOptions.HttpsPort](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.httpsport)。 请参阅前面的示例演示如何将该端口设置为 5001。
+**键**: https_port**类型**:*字符串*
+**默认**： 未设置默认值。
+**使用设置**: `UseSetting` 
+**环境变量**: `<PREFIX_>HTTPS_PORT` (该前缀是`ASPNETCORE_`使用 Web 主机时。)
+
+```csharp
+WebHost.CreateDefaultBuilder(args)
+    .UseSetting("https_port", "8080")
+```
 
 > [!NOTE]
 > 可以通过设置与 URL 间接配置端口`ASPNETCORE_URLS`环境变量。 环境变量配置的服务器，，然后在中间件间接发现通过 HTTPS 端口`IServerAddressesFeature`。

@@ -5,24 +5,31 @@ description: 了解如何通过将角色传递给 Authorize 属性限制 ASP.NET
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/authorization/roles
-ms.openlocfilehash: 0d39a457782061a57779bacb0d3a255be352bd2d
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 59753b90d3196b0bc16d4963f45b995f5108bc8b
+ms.sourcegitcommit: d99a8554c91f626cf5e466911cf504dcbff0e02e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276427"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39356670"
 ---
 # <a name="role-based-authorization-in-aspnet-core"></a>ASP.NET Core 中基于角色的授权
 
 <a name="security-authorization-role-based"></a>
 
-当创建标识它可能属于一个或多个角色。 例如，Tracy 可能属于管理员和用户角色，同时 Scott 可能仅属于用户角色。 如何创建和管理这些角色取决于授权过程的后备存储。 角色公开给开发人员通过[IsInRole](/dotnet/api/system.security.principal.genericprincipal.isinrole)方法[ClaimsPrincipal](/dotnet/api/system.security.claims.claimsprincipal)类。
+创建一个标识时它可能属于一个或多个角色。 例如，爱妻 Tracy 可能属于管理员和用户角色，同时 Scott 可能仅属于用户角色。 如何创建和管理这些角色取决于后备存储的授权过程。 角色公开为通过开发人员[IsInRole](/dotnet/api/system.security.principal.genericprincipal.isinrole)方法[ClaimsPrincipal](/dotnet/api/system.security.claims.claimsprincipal)类。
+
+::: moniker range=">= aspnetcore-2.0"
+
+> [!IMPORTANT]
+> 本主题不适用于 Razor 页面。 Razor 页面支持[IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter)并[iasyncpagefilter 表示](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter)。 有关详细信息，请参阅 [Razor 页面的筛选方法](xref:razor-pages/filter)。
+
+::: moniker-end
 
 ## <a name="adding-role-checks"></a>添加角色检查
 
-基于角色的授权检查均为声明性&mdash;开发人员将它们嵌入在其代码中，针对控制器或者控制器中的某个操作指定当前用户必须是的成员来访问请求的资源的角色。
+基于角色的授权检查是声明性&mdash;开发人员将其嵌入在其代码中，对控制器或在控制器内的动作指定当前用户必须是成员的访问请求的资源的角色。
 
-例如，下面的代码可访问任何操作限制上`AdministrationController`谁是其成员的用户到`Administrator`角色：
+例如，下面的代码上限制任何操作的访问权限`AdministrationController`谁是其成员的用户到`Administrator`角色：
 
 ```csharp
 [Authorize(Roles = "Administrator")]
@@ -40,9 +47,9 @@ public class SalaryController : Controller
 }
 ```
 
-此控制器将作为仅可访问的成员的用户的`HRManager`角色或`Finance`角色。
+将仅可由成员的用户访问此控制器的`HRManager`角色或`Finance`角色。
 
-如果您将应用多个属性，则访问用户必须是指定; 的所有角色的成员下面的示例要求用户必须是的成员`PowerUser`和`ControlPanelUser`角色。
+如果在应用多个属性，则访问用户必须是指定; 的所有角色的成员下面的示例要求用户必须是两个成员`PowerUser`和`ControlPanelUser`角色。
 
 ```csharp
 [Authorize(Roles = "PowerUser")]
@@ -52,7 +59,7 @@ public class ControlPanelController : Controller
 }
 ```
 
-通过应用在操作级别的其他角色授权属性，可以进一步限制访问：
+通过应用其他角色授权属性在操作级别，可以进一步限制访问权限：
 
 ```csharp
 [Authorize(Roles = "Administrator, PowerUser")]
@@ -69,9 +76,9 @@ public class ControlPanelController : Controller
 }
 ```
 
-中的上一个代码段成员`Administrator`角色或`PowerUser`角色可以访问控制器和`SetTime`操作，但只有的成员`Administrator`角色可以访问`ShutDown`操作。
+中的上一代码片段成员`Administrator`角色或`PowerUser`角色可访问该控制器并`SetTime`操作，但只有的成员`Administrator`角色可以访问`ShutDown`操作。
 
-您可以锁定控制器，但允许匿名、 未经身份验证访问各项操作。
+您还可以锁定一个控制器，但允许匿名、 未经身份验证访问各项操作。
 
 ```csharp
 [Authorize]
@@ -92,7 +99,7 @@ public class ControlPanelController : Controller
 
 ## <a name="policy-based-role-checks"></a>基于策略角色检查
 
-此外可以使用新的策略语法中，开发人员将在启动策略注册为授权服务配置的一部分的其中表示角色的要求。 这通常发生在`ConfigureServices()`中你*Startup.cs*文件。
+此外可以使用新的策略语法，其中一名开发人员将策略在启动时注册为授权服务配置的一部分表示角色的要求。 这通常发生在`ConfigureServices()`在您*Startup.cs*文件。
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -106,7 +113,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-策略使用应用`Policy`属性`AuthorizeAttribute`属性：
+使用应用策略`Policy`属性上的`AuthorizeAttribute`属性：
 
 ```csharp
 [Authorize(Policy = "RequireAdministratorRole")]
@@ -116,11 +123,11 @@ public IActionResult Shutdown()
 }
 ```
 
-如果你想要指定多个允许的角色中一项要求，则可作为参数来指定这些`RequireRole`方法：
+如果你想要指定多个允许的角色中一项要求，则您可以将他们指定为参数`RequireRole`方法：
 
 ```csharp
 options.AddPolicy("ElevatedRights", policy =>
                   policy.RequireRole("Administrator", "PowerUser", "BackupAdministrator"));
 ```
 
-此示例授权属于用户`Administrator`，`PowerUser`或`BackupAdministrator`角色。
+此示例中授权用户属于`Administrator`，`PowerUser`或`BackupAdministrator`角色。
