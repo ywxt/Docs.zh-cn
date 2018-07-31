@@ -5,12 +5,12 @@ description: 接收将现有 ASP.NET MVC 或 Web API 应用迁移到 ASP.NET Cor
 ms.author: scaddie
 ms.date: 08/27/2017
 uid: migration/proper-to-2x/index
-ms.openlocfilehash: 285f252767e4eacbb6a9ccc50bd98d1916e26bd4
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 2f42ca6f9da8d9941e5bab40afc36c95360c3550
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273503"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342180"
 ---
 # <a name="migrate-from-aspnet-to-aspnet-core"></a>从 ASP.NET 迁移到 ASP.NET Core
 
@@ -136,7 +136,7 @@ services.Configure<AppConfiguration>(Configuration.GetSection("AppConfiguration"
 可在任意位置注入存储库，Unity 亦是如此。
 
 > [!NOTE]
-> 若要获取 ASP.NET Core 中的依存关系注入的深入的参考信息，请参阅 [ASP.NET Core 中的依存关系注入](xref:fundamentals/dependency-injection#replacing-the-default-services-container)
+> 有关依赖关系注入的详细信息，请参阅[依赖关系注入](xref:fundamentals/dependency-injection)。
 
 ## <a name="serve-static-files"></a>提供静态文件
 
