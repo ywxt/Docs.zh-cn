@@ -141,6 +141,7 @@
 ### [Kestrel](xref:fundamentals/servers/kestrel)
 ### [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)
 ### [HTTP.sys](xref:fundamentals/servers/httpsys)
+## [存储库模式](xref:fundamentals/repository-pattern)
 ## [全球化和本地化](xref:fundamentals/localization)
 ### [使用 Orchard Core 配置可移植对象本地化](xref:fundamentals/portable-object-localization)
 ## [启动 HTTP 请求](xref:fundamentals/http-requests)
