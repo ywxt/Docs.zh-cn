@@ -5,12 +5,12 @@ description: 接收有关现有 ASP.NET MVC 或 Web API 应用程序迁移到 AS
 ms.author: scaddie
 ms.date: 08/27/2017
 uid: migration/mvc2
-ms.openlocfilehash: 68b00ead1b0bf785211638692cdbeab226a2cb4e
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: d8a3f76bb5125a1ec76d0435ff3317f939a4ec67
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278630"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342252"
 ---
 # <a name="migrate-from-aspnet-to-aspnet-core-20"></a>从 ASP.NET 迁移到 ASP.NET Core 2.0
 
@@ -23,8 +23,8 @@ ms.locfileid: "36278630"
 安装**一个**以下对象的[.NET 下载： Windows](https://www.microsoft.com/net/download/windows):
 
 * .NET Core SDK
-* 适用于 Windows 的 visual Studio
-  * **ASP.NET 和 web 开发**工作负荷
+* Visual Studio for Windows
+  * ASP.NET 和 Web 开发工作负荷
   * **.NET Core 跨平台开发**工作负荷
 
 ## <a name="target-frameworks"></a>目标框架
@@ -110,11 +110,12 @@ services.Configure<AppConfiguration>(Configuration.GetSection("AppConfiguration"
 注意：若要获取 ASP.NET Core 配置的更深入的参考信息，请参阅 [ASP.NET Core 中的配置](xref:fundamentals/configuration/index)。
 
 ## <a name="native-dependency-injection"></a>本机依存关系注入
-生成大型可缩放应用程序时，一个重要的目标是将组件和服务松散耦合。 [依赖项注入](xref:fundamentals/dependency-injection)不仅是可实现此目标的常用技术，还是 ASP.NET Core 的本机组件。
 
-在 ASP.NET 应用程序中，开发人员依赖第三方库实现依存关系注入。 其中的一个库是 Microsoft 模式和做法提供的 [Unity](https://github.com/unitycontainer/unity)。 
+生成大型可缩放应用程序时，一个重要的目标是将组件和服务松散耦合。 [依赖关系注入](xref:fundamentals/dependency-injection)实现此操作，一种常用方法，它是 ASP.NET Core 的本机组件。
 
-实现打包 `UnityContainer` 的 `IDependencyResolver` 是使用 Unity 设置依存关系注入的一个示例：
+在 ASP.NET 应用程序开发人员依赖第三方库实现依存关系注入。 其中的一个库是 Microsoft 模式和做法提供的 [Unity](https://github.com/unitycontainer/unity)。
+
+设置使用 Unity 的依赖关系注入的示例实现`IDependencyResolver`包装`UnityContainer`:
 
 [!code-csharp[](../../../aspnet/web-api/overview/advanced/dependency-injection/samples/sample8.cs)]
 
@@ -126,15 +127,16 @@ services.Configure<AppConfiguration>(Configuration.GetSection("AppConfiguration"
 
 [!code-csharp[](../../../aspnet/web-api/overview/advanced/dependency-injection/samples/sample5.cs)]
 
-由于依存关系注入是 ASP.NET Core 的组成部分，因此可以在 Startup.cs 的 `ConfigureServices` 方法中添加你的服务：
+由于依赖关系注入是 ASP.NET Core 的一部分，您可以添加你的服务`Startup.ConfigureServices`:
 
 [!code-csharp[](samples/configure-services.cs)]
 
 可在任意位置注入存储库，Unity 亦是如此。
 
-注意：若要获取 ASP.NET Core 中的依存关系注入的深入的参考信息，请参阅 [ASP.NET Core 中的依存关系注入](xref:fundamentals/dependency-injection#replacing-the-default-services-container)
+在 ASP.NET Core 中的依赖关系注入的详细信息，请参阅[依赖关系注入](xref:fundamentals/dependency-injection)。
 
 ## <a name="serving-static-files"></a>提供静态文件
+
 Web 开发的一个重要环节是提供客户端静态资产的功能。 HTML、CSS、Javascript 和图像是最常见的静态文件示例。 这些文件需要保存在应用（或 CDN）的发布位置中，并且需要引用它们，以便请求可以加载这些文件。 在 ASP.NET Core 中，此过程发生了变化。
 
 在 ASP.NET 中，静态文件存储在各种目录中，并在视图中进行引用。
