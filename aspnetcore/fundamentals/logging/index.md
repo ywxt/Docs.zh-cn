@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core 中的记录框架。 发现内置日志记录�
 ms.author: tdykstra
 ms.date: 07/24/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: 5d31c5609c0e98a81d76ce0581f1c63f349d14d0
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 60777d4f8664b7f02c806abb6ca40a29602d207f
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342466"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378646"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core 中的日志记录
 
@@ -448,7 +448,7 @@ Program.cs:
 > [!NOTE]
 > 要启用基于作用域的日志记录，必须先配置 `IncludeScopes` 控制台记录器选项。
 >
-> 若要了解关配置，请参阅[配置](#Configuration)部分。
+> 若要了解关配置，请参阅[配置](#configuration)部分。
 
 ::: moniker-end
 
