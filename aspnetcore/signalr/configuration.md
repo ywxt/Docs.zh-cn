@@ -5,14 +5,14 @@ description: 了解如何配置 ASP.NET Core SignalR 应用。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 06/30/2018
+ms.date: 07/31/2018
 uid: signalr/configuration
-ms.openlocfilehash: f5a345795f17dafd482e359e77a151d5b0a15688
-ms.sourcegitcommit: 8b68e144aab75374af52605a71717c77345a28b2
+ms.openlocfilehash: 32c0ad94fba09fa099c2ab4a6b1d6d79a5542d7f
+ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39182585"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39396057"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>ASP.NET Core SignalR 配置
 
@@ -20,7 +20,7 @@ ms.locfileid: "39182585"
 
 ASP.NET Core SignalR 支持两个协议为消息编码： [JSON](https://www.json.org/)和[MessagePack](https://msgpack.org/index.html)。 每个协议具有序列化配置选项。
 
-可以使用 server 上配置 JSON 序列化[ `AddJsonProtocol` ](/dotnet/api/microsoft.extensions.dependencyinjection.jsonprotocoldependencyinjectionextensions.addjsonprotocol)扩展方法，可以添加后[AddSignalR](/dotnet/api/microsoft.extensions.dependencyinjection.signalrdependencyinjectionextensions.addsignalr)中你`Startup.ConfigureServices`方法。 `AddJsonProtocol`方法采用一个委托，接收`options`对象。 [ `PayloadSerializerSettings` ](/dotnet/api/microsoft.aspnetcore.signalr.jsonhubprotocoloptions.payloadserializersettings)对该对象的属性是 JSON.NET`JsonSerializerSettings`可用于配置序列化的参数和返回值的对象。 请参阅[JSON.NET 文档](https://www.newtonsoft.com/json/help/html/Introduction.htm)的更多详细信息。
+JSON 序列化可以配置服务器使用[AddJsonProtocol](/dotnet/api/microsoft.extensions.dependencyinjection.jsonprotocoldependencyinjectionextensions.addjsonprotocol)扩展方法，可以添加后[AddSignalR](/dotnet/api/microsoft.extensions.dependencyinjection.signalrdependencyinjectionextensions.addsignalr)在你`Startup.ConfigureServices`方法。 `AddJsonProtocol`方法采用一个委托，接收`options`对象。 [PayloadSerializerSettings](/dotnet/api/microsoft.aspnetcore.signalr.jsonhubprotocoloptions.payloadserializersettings)对该对象的属性是 JSON.NET`JsonSerializerSettings`可用于配置序列化的参数和返回值的对象。 请参阅[JSON.NET 文档](https://www.newtonsoft.com/json/help/html/Introduction.htm)的更多详细信息。
 
 例如，若要配置的序列化程序，而不是默认的"驼峰式大小写"名称，使用"pascal 命名法"属性名称，使用以下代码：
 
@@ -60,12 +60,12 @@ var connection = new HubConnectionBuilder()
 
 下表描述了用于配置 SignalR 集线器的选项：
 
-| 选项 | 描述 |
-| ------ | ----------- |
-| `HandshakeTimeout` | 如果客户端不会在此时间间隔内发送初始握手消息，该连接已关闭。 这是一种高级的设置，如果由于出现严重的网络延迟发生握手超时错误应仅修改。 握手过程的更多详细信息，请参阅[SignalR 集线器协议规范](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md)。 |
-| `KeepAliveInterval` | 如果服务器尚未在此时间间隔内发送一条消息，是自动发送一条 ping 消息使连接保持打开状态。 |
-| `SupportedProtocols` | 此中心支持的协议。 默认情况下，允许在服务器上注册的所有协议，但可以从禁用特定协议的单个中心此列表中删除协议。 |
-| `EnableDetailedErrors` | 如果`true`、 详细异常消息返回到客户端集线器方法中引发异常。 默认值是`false`，因为这些异常消息可能包含敏感信息。 |
+| 选项 | 默认值 | 描述 |
+| ------ | ------------- | ----------- |
+| `HandshakeTimeout` | 15 秒 | 如果客户端不会在此时间间隔内发送初始握手消息，该连接已关闭。 这是一种高级的设置，如果由于出现严重的网络延迟发生握手超时错误应仅修改。 握手过程的更多详细信息，请参阅[SignalR 集线器协议规范](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md)。 |
+| `KeepAliveInterval` | 15 秒 | 如果服务器尚未在此时间间隔内发送一条消息，是自动发送一条 ping 消息使连接保持打开状态。 |
+| `SupportedProtocols` | 所有已安装的协议 | 此中心支持的协议。 默认情况下，允许在服务器上注册的所有协议，但可以从禁用特定协议的单个中心此列表中删除协议。 |
+| `EnableDetailedErrors` | `false` | 如果`true`、 详细异常消息返回到客户端集线器方法中引发异常。 默认值是`false`，因为这些异常消息可能包含敏感信息。 |
 
 可以通过提供一个选项委托到的所有中心配置选项`AddSignalR`调用中`Startup.ConfigureServices`。
 
@@ -80,7 +80,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-有关单个集线器的选项重写中提供的全局选项`AddSignalR`，可以使用配置[ `AddHubOptions<T>` ](/dotnet/api/microsoft.extensions.dependencyinjection.huboptionsdependencyinjectionextensions.addhuboptions):
+有关单个集线器的选项重写中提供的全局选项`AddSignalR`，可以使用配置[AddHubOptions\<T >](/dotnet/api/microsoft.extensions.dependencyinjection.huboptionsdependencyinjectionextensions.addhuboptions):
 
 ```csharp
 services.AddSignalR().AddHubOptions<MyHub>(options =>
@@ -89,29 +89,29 @@ services.AddSignalR().AddHubOptions<MyHub>(options =>
 }
 ```
 
-使用`HttpConnectionDispatcherOptions`配置与传输和内存缓冲区管理相关的高级的设置。 通过将传递委托，配置这些选项[ `MapHub<T>` ](/dotnet/api/microsoft.aspnetcore.signalr.hubroutebuilder.maphub)。
+使用`HttpConnectionDispatcherOptions`配置与传输和内存缓冲区管理相关的高级的设置。 通过将传递委托，配置这些选项[MapHub\<T >](/dotnet/api/microsoft.aspnetcore.signalr.hubroutebuilder.maphub)。
 
-| 选项 | 描述 |
-| ------ | ----------- |
-| `ApplicationMaxBufferSize` | 从客户端接收的字节数最大数量的服务器缓冲区。 增加此值允许服务器以接收更大的消息，但会降低内存占用情况。 默认值为 32 KB。 |
-| `AuthorizationData` | 一系列[ `IAuthorizeData` ](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizedata)对象用于确定客户端有权连接到中心。 默认情况下，这填充的值从`Authorize`应用于集线器类的特性。 |
-| `TransportMaxBufferSize` | 最大的应用发送的字节数的服务器缓冲区。 增加此值允许服务器以发送较大的消息，但会降低内存占用情况。 默认值为 32 KB。 |
-| `Transports` | 一个位掩码的`HttpTransportType`值可用于限制传输客户端可用来连接。 默认情况下启用所有传输。 |
-| `LongPolling` | 特定于长轮询传输的其他选项。 |
-| `WebSockets` | 其他选项特定于 Websocket 传输。 |
+| 选项 | 默认值 | 描述 |
+| ------ | ------------- | ----------- |
+| `ApplicationMaxBufferSize` | 32 KB | 从客户端接收的字节数最大数量的服务器缓冲区。 增加此值允许服务器以接收更大的消息，但会降低内存占用情况。 |
+| `AuthorizationData` | 从自动收集数据`Authorize`应用于集线器类的特性。 | 一系列[IAuthorizeData](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizedata)对象用于确定客户端有权连接到中心。 |
+| `TransportMaxBufferSize` | 32 KB | 最大的应用发送的字节数的服务器缓冲区。 增加此值允许服务器以发送较大的消息，但会降低内存占用情况。 |
+| `Transports` | 启用所有传输。 | 一个位掩码的`HttpTransportType`值可用于限制传输客户端可用来连接。 |
+| `LongPolling` | 请参阅下文。 | 特定于长轮询传输的其他选项。 |
+| `WebSockets` | 请参阅下文。 | 其他选项特定于 Websocket 传输。 |
 
 长轮询传输中包含其他选项，可以使用配置`LongPolling`属性：
 
-| 选项 | 描述 |
-| ------ | ----------- |
-| `PollTimeout` | 服务器等待要终止单个轮询请求之前发送到客户端的消息的最大时间量。 减小此值会导致客户端更频繁地发出新轮询请求。 默认值为 90 秒。 |
+| 选项 | 默认值 | 描述 |
+| ------ | ------------- | ----------- |
+| `PollTimeout` | 90 秒 | 服务器等待要终止单个轮询请求之前发送到客户端的消息的最大时间量。 减小此值会导致客户端更频繁地发出新轮询请求。 |
 
 WebSocket 传输中包含其他选项，可以使用配置`WebSockets`属性：
 
-| 选项 | 描述 |
-| ------ | ----------- |
-| `CloseTimeout` | 在服务器关闭，如果客户端无法在此时间间隔内关闭后，连接将终止。 |
-| `SubProtocolSelector` | 一个委托，它可以用来设置`Sec-WebSocket-Protocol`为自定义值的标头。 该委托接收作为输入客户端请求的值，并应返回所需的值。 |
+| 选项 | 默认值 | 描述 |
+| ------ | ------------- | ----------- |
+| `CloseTimeout` | 5 秒 | 在服务器关闭，如果客户端无法在此时间间隔内关闭后，连接将终止。 |
+| `SubProtocolSelector` | `null` | 一个委托，它可以用来设置`Sec-WebSocket-Protocol`为自定义值的标头。 该委托接收作为输入客户端请求的值，并应返回所需的值。 |
 
 ## <a name="configure-client-options"></a>配置客户端选项
 
@@ -214,10 +214,10 @@ let connection = new signalR.HubConnectionBuilder()
 
 还提供用于配置超时和保持活动状态的行为的其他选项`HubConnection`对象本身：
 
-| .NET 选项 | JavaScript 选项 | 描述 |
-| ----------- | ----------------- | ----------- |
-| `ServerTimeout` | `serverTimeoutInMilliseconds` | 服务器活动的超时时间。 如果服务器尚未在此时间间隔内发送一条消息，客户端会考虑服务器断开连接和触发器`Closed`事件 (`onclose`在 JavaScript 中)。 |
-| `HandshakeTimeout` | 不可配置 | 初始服务器握手的超时时间。 如果服务器不在此时间间隔内发送握手响应，客户端取消握手和触发器`Closed`事件 (`onclose`在 JavaScript 中)。 这是一种高级的设置，如果由于出现严重的网络延迟发生握手超时错误应仅修改。 握手过程的更多详细信息，请参阅[SignalR 集线器协议规范](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md)。 |
+| .NET 选项 | JavaScript 选项 | 默认值 | 描述 |
+| ----------- | ----------------- | ------------- | ----------- |
+| `ServerTimeout` | `serverTimeoutInMilliseconds` | 30 秒 （30000 毫秒） | 服务器活动的超时时间。 如果服务器尚未在此时间间隔内发送一条消息，客户端会考虑服务器断开连接和触发器`Closed`事件 (`onclose`在 JavaScript 中)。 |
+| `HandshakeTimeout` | 不可配置 | 15 秒 | 初始服务器握手的超时时间。 如果服务器不在此时间间隔内发送握手响应，客户端取消握手和触发器`Closed`事件 (`onclose`在 JavaScript 中)。 这是一种高级的设置，如果由于出现严重的网络延迟发生握手超时错误应仅修改。 握手过程的更多详细信息，请参阅[SignalR 集线器协议规范](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md)。 |
 
 在.NET 客户端，超时值指定为`TimeSpan`值。 在 JavaScript 客户端，超时值指定为一个数字，指示以毫秒为单位的持续时间。
 
@@ -225,19 +225,19 @@ let connection = new signalR.HubConnectionBuilder()
 
 可以在配置其他选项`WithUrl`(`withUrl`在 JavaScript 中) 上的方法`HubConnectionBuilder`:
 
-| .NET 选项 | JavaScript 选项 | 描述 |
-| ----------- | ----------------- | ----------- |
-| `AccessTokenProvider` | `accessTokenFactory` | 返回一个字符串，作为持有者身份验证令牌的 HTTP 请求中提供的函数。 |
-| `SkipNegotiation` | `skipNegotiation` | 将此设置为`true`跳过协商步骤。 **WebSockets 传输是唯一的已启用的传输时，才支持**。 使用 Azure SignalR 服务时，不能启用此设置。 |
-| `ClientCertificates` | 不可配置 * | 若要发送请求进行身份验证的 TLS 证书的集合。 |
-| `Cookies` | 不可配置 * | 要与每个 HTTP 请求一起发送的 HTTP cookie 的集合。 |
-| `Credentials` | 不可配置 * | 要与每个 HTTP 请求一起发送的凭据。 |
-| `CloseTimeout` | 不可配置 * | 仅 Websocket。 最长时间之后关闭服务器以确认关闭请求等待客户端。 如果服务器不在此时间内收到结束时，客户端断开连接。 |
-| `Headers` | 不可配置 * | 附加 HTTP 标头要与每个 HTTP 请求一起发送的字典。 |
-| `HttpMessageHandlerFactory` | 不可配置 * | 一个委托，它可用于配置或替换`HttpMessageHandler`用于发送 HTTP 请求。 不用于 WebSocket 连接。 此委托必须返回一个非 null 值，并接收作为参数的默认值。 修改该默认值上的设置，返回它，或者返回完整的全新`HttpMessageHandler`实例。 |
-| `Proxy` | 不可配置 * | 发送 HTTP 请求时要使用 HTTP 代理。 |
-| `UseDefaultCredentials` | 不可配置 * | 设置此布尔值，若要发送的 HTTP 和 Websocket 请求的默认凭据。 这使使用 Windows 身份验证。 |
-| `WebSocketConfiguration` | 不可配置 * | 一个委托，可用于配置更多的 WebSocket 选项。 接收的实例[ClientWebSocketOptions](/dotnet/api/system.net.websockets.clientwebsocketoptions)可用于配置选项。 |
+| .NET 选项 | JavaScript 选项 | 默认值 | 描述 |
+| ----------- | ----------------- | ------------- | ----------- |
+| `AccessTokenProvider` | `accessTokenFactory` | `null` | 返回一个字符串，作为持有者身份验证令牌的 HTTP 请求中提供的函数。 |
+| `SkipNegotiation` | `skipNegotiation` | `false` | 将此设置为`true`跳过协商步骤。 **WebSockets 传输是唯一的已启用的传输时，才支持**。 使用 Azure SignalR 服务时，不能启用此设置。 |
+| `ClientCertificates` | 不可配置 * | 空 | 若要发送请求进行身份验证的 TLS 证书的集合。 |
+| `Cookies` | 不可配置 * | 空 | 要与每个 HTTP 请求一起发送的 HTTP cookie 的集合。 |
+| `Credentials` | 不可配置 * | 空 | 要与每个 HTTP 请求一起发送的凭据。 |
+| `CloseTimeout` | 不可配置 * | 5 秒 | 仅 Websocket。 最长时间之后关闭服务器以确认关闭请求等待客户端。 如果服务器不在此时间内收到结束时，客户端断开连接。 |
+| `Headers` | 不可配置 * | 空 | 附加 HTTP 标头要与每个 HTTP 请求一起发送的字典。 |
+| `HttpMessageHandlerFactory` | 不可配置 * | `null` | 一个委托，它可用于配置或替换`HttpMessageHandler`用于发送 HTTP 请求。 不用于 WebSocket 连接。 此委托必须返回一个非 null 值，并接收作为参数的默认值。 修改该默认值上的设置，返回它，或者返回完整的全新`HttpMessageHandler`实例。 |
+| `Proxy` | 不可配置 * | `null` | 发送 HTTP 请求时要使用 HTTP 代理。 |
+| `UseDefaultCredentials` | 不可配置 * | `false` | 设置此布尔值，若要发送的 HTTP 和 Websocket 请求的默认凭据。 这使使用 Windows 身份验证。 |
+| `WebSocketConfiguration` | 不可配置 * | `null` | 一个委托，可用于配置更多的 WebSocket 选项。 接收的实例[ClientWebSocketOptions](/dotnet/api/system.net.websockets.clientwebsocketoptions)可用于配置选项。 |
 
 选项标有星号 （*） 不是可在 JavaScript 客户端，由于浏览器 Api 中的限制中配置的。
 

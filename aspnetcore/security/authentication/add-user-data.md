@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 6/16/2018
 uid: security/authentication/add-user-data
-ms.openlocfilehash: ecd0e6d1c71b24309fab70fbb06af7731463bb0e
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 6f583d65460803c816bf1ccd314216952710cd55
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38215930"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378610"
 ---
 # <a name="add-download-and-delete-custom-user-data-to-identity-in-an-aspnet-core-project"></a>添加、 下载和删除标识到 ASP.NET Core 项目中的自定义用户数据
 
@@ -61,8 +61,8 @@ dotnet new webapp -o WebApp1
   * 选择要重写的以下文件：
     * **帐户/注册**
     * **帐户/管理/索引**
-  * 选择**+** 按钮以创建一个新**数据上下文类**。 接受的类型 (**WebApp1.Models.WebApp1Context**如果你将该项目命名**WebApp1**)。
-  * 选择**+** 按钮以创建一个新**User 类**。 接受的类型 (**WebApp1User**如果你将该项目命名**WebApp1**) >**添加**。
+  * 选择**+** 按钮以创建一个新**数据上下文类**。 接受的类型 (**WebApp1.Models.WebApp1Context**如果项目命名为**WebApp1**)。
+  * 选择**+** 按钮以创建一个新**User 类**。 接受的类型 (**WebApp1User**如果项目命名为**WebApp1**) >**添加**。
 * 选择**添加**。
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
@@ -108,7 +108,7 @@ dotnet aspnet-codegenerator identity -u WebApp1User -fi Account.Register;Account
 
 ## <a name="add-custom-user-data-to-the-identity-db"></a>向标识数据库中添加自定义用户数据
 
-更新`IdentityUser`派生类使用自定义属性。 如果名为你的项目 WebApp1，将该文件命名*Areas/Identity/Data/WebApp1User.cs*。 使用以下代码更新文件：
+更新`IdentityUser`派生类使用自定义属性。 如果项目 WebApp1 命名为，将该文件命名*Areas/Identity/Data/WebApp1User.cs*。 使用以下代码更新文件：
 
 [!code-csharp[Main](add-user-data/sample/Areas/Identity/Data/WebApp1User.cs)]
 
