@@ -5,12 +5,12 @@ description: 演示如何使用 EF Core 进行创建、读取、更新和删除
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/crud
-ms.openlocfilehash: 0a8d386104d9c62f37d0a94e66344d3f1e23bae9
-ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
+ms.openlocfilehash: e3a0ec2e21ae9e9eeaae1eb7c17f1604897fb6f9
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2018
-ms.locfileid: "39063346"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342453"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - CRUD - 第 2 个教程（共 8 个）
 
@@ -24,7 +24,7 @@ ms.locfileid: "39063346"
 
 本教程将介绍和自定义已搭建基架的 CRUD （创建、读取、更新、删除）代码。
 
-为最大程度降低复杂性并让这些教程集中介绍 EF Core，将在页面模型中使用 EF Core 代码。 某些开发人员使用服务层或存储库模式在 UI（Razor 页面）和数据访问层之间创建抽象层。
+为最大程度降低复杂性并让这些教程集中介绍 EF Core，将在页面模型中使用 EF Core 代码。 某些开发人员使用服务层或[存储库模式](xref:fundamentals/repository-pattern)在 UI (Razor Pages) 和数据访问层之间创建抽象层。
 
 本教程将检查“学生”文件夹中的“创建”、“编辑”、“删除”和“详细信息”Razor 页面。
 

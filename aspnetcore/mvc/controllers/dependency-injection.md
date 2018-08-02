@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core MVC 控制器如何使用 ASP.NET Core 中的�
 ms.author: riande
 ms.date: 10/14/2016
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 23c91a4363223a135c50ceca51e6af22ed69fe3b
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9dec9807e8fc2883144b2da518f36a7eb8ddc871
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276446"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342128"
 ---
 # <a name="dependency-injection-into-controllers-in-aspnet-core"></a>在 ASP.NET Core 中将依赖项注入到控制器
 
@@ -74,7 +74,7 @@ InvalidOperationException: Multiple constructors accepting all given argument ty
 Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
 ```
 
-如错误消息所述，仅拥有一个构造函数可更正此问题。 还可[将默认依赖关系注入支持替换为第三方实现](../../fundamentals/dependency-injection.md#replacing-the-default-services-container)，其中许多可支持多个构造函数。
+如错误消息所述，使用一个构造函数可更正此问题。 还可[将默认依赖关系注入容器替换为第三方实现](xref:fundamentals/dependency-injection#default-service-container-replacement)，其中许多可支持多个构造函数。
 
 ## <a name="action-injection-with-fromservices"></a>FromServices 的操作注入
 
