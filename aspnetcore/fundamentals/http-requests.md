@@ -5,14 +5,14 @@ description: 了解如何将 IHttpClientFactory 接口用于管理 ASP.NET Core 
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 06/22/2018
+ms.date: 07/23/2018
 uid: fundamentals/http-requests
-ms.openlocfilehash: e56c7a3ed80cc08103f6178859a1a99f1a5ec068
-ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
+ms.openlocfilehash: 87424eaea499ba7ece1e5ef88649fcbb2e297635
+ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36327517"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39320650"
 ---
 # <a name="initiate-http-requests"></a>启动 HTTP 请求
 
@@ -24,6 +24,12 @@ ms.locfileid: "36327517"
 * 通过委托 `HttpClient` 中的处理程序整理出站中间件的概念，并提供适用于基于 Polly 的中间件的扩展来利用概念。
 * 管理基础 `HttpClientMessageHandler` 实例的池和生存期，避免在手动管理 `HttpClient` 生存期时出现常见的 DNS 问题。
 * （通过 `ILogger`）添加可配置的记录体验，以处理工厂创建的客户端发送的所有请求。
+
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/http-requests/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+
+## <a name="prerequisites"></a>系统必备
+
+面向.NET Framework 的项目要求安装 [Microsoft.Extensions.Http](https://www.nuget.org/packages/Microsoft.Extensions.Http/) NuGet 包。 面向 .NET Core 且引用 [Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)的项目已经包括 `Microsoft.Extensions.Http` 包。
 
 ## <a name="consumption-patterns"></a>消耗模式
 

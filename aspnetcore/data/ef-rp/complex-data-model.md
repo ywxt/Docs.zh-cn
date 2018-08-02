@@ -5,12 +5,12 @@ description: 本教程将添加更多实体和关系，并通过指定格式设�
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 6888df174e92ab2ddf8add7b8927250be320bff8
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: 88d727b0545f1dacb56ea889e45b02f947867b19
+ms.sourcegitcommit: 6425baa92cec4537368705f8d27f3d0e958e43cd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202648"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39220594"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 数据模型 - 第 5 个教程（共 8 个）
 
@@ -400,7 +400,7 @@ public ICollection<Course> Courses { get; set; }
 
 上面的代码会针对“系-讲师”关系禁用级联删除。
 
-## <a name="update-the-enrollment-entityupdate-the-enrollment-entity"></a>更新 Enrollment 实体
+## <a name="update-the-enrollment-entity"></a>更新 Enrollment 实体
 
 一份注册记录面向一名学生所注册的一门课程。
 

@@ -3,14 +3,14 @@ title: ASP.NET Core 中的路由
 author: ardalis
 description: 了解 ASP.NET Core 路由功能如何负责将传入请求映射到路由处理程序。
 ms.author: riande
-ms.date: 10/14/2016
+ms.date: 07/25/2018
 uid: fundamentals/routing
-ms.openlocfilehash: 4482c865671eb4f5decbd5f1cd6e26f2e68e5c25
-ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
+ms.openlocfilehash: 19265ac4d19915462c50628061600b1fde04694b
+ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36314131"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39254878"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core 中的路由
 
@@ -322,17 +322,24 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 | `regex(expression)` | `{ssn:regex(^\\d{{3}}-\\d{{2}}-\\d{{4}}$)}` | `123-45-6789` | 字符串必须匹配正则表达式（参见有关定义正则表达式的提示） |
 | `required`  | `{name:required}` | `Rick` |  用于强制在 URL 生成过程中存在非参数值 |
 
+可向单个参数应用多个由冒号分隔的约束。 例如，以下约束将参数限制为大于或等于 1 的整数值：
+
+```csharp
+[Route("users/{id:int:min(1)}")]
+public User GetUserById(int id) { }
+```
+
 >[!WARNING]
 > 验证 URL 的路由约束可以转换为始终使用固定区域性的 CLR 类型（例如 `int` 或 `DateTime`），它们假定 URL 不可本地化。 框架提供的路由约束不会修改存储于路由值中的值。 从 URL 中分析的所有路由值都将作为字符串进行存储。 例如，[浮点数路由约束](https://github.com/aspnet/Routing/blob/1.0.0/src/Microsoft.AspNetCore.Routing/Constraints/FloatRouteConstraint.cs#L44-L60)会尝试将路由值转换为浮点数，但转换后的值仅用来验证其是否可转换为浮点数。
 
-## <a name="regular-expressions"></a>正则表达式 
+## <a name="regular-expressions"></a>正则表达式
 
 ASP.NET Core 框架将向正则表达式构造函数添加 `RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant`。 有关这些成员的介绍，请参阅 [RegexOptions 枚举](/dotnet/api/system.text.regularexpressions.regexoptions)。
 
-正则表达式与路由和 C# 计算机语言使用的分隔符和令牌相似。 必须对正则表达式令牌进行转义。 例如，要在路由中使用正则表达式 `^\d{3}-\d{2}-\d{4}$`，需要如 C# 源文件中键入的 `\\` 一样的 `\` 字符，以转义 `\` 字符串转义字符（除非使用 [verbatim 字符串文本](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/string)）。 `{`、`}`、“[”和“]”字符需要成双进行转义，以转义路由参数分隔符字符。  下表显示正则表达式和转义的版本。
+正则表达式与路由和 C# 计算机语言使用的分隔符和令牌相似。 必须对正则表达式令牌进行转义。 例如，要在路由中使用正则表达式 `^\d{3}-\d{2}-\d{4}$`，需要如 C# 源文件中键入的 `\\` 一样的 `\` 字符，以转义 `\` 字符串转义字符（除非使用 [verbatim 字符串文本](/dotnet/csharp/language-reference/keywords/string)）。 `{`、`}`、“[”和“]”字符需要成双进行转义，以转义路由参数分隔符字符。  下表显示正则表达式和转义的版本。
 
 | 表达式               | 说明 |
-| ----------------- | ------------ | 
+| ----------------- | ------------ |
 | `^\d{3}-\d{2}-\d{4}$` | 正则表达式 |
 | `^\\d{{3}}-\\d{{2}}-\\d{{4}}$` | 已转义  |
 | `^[a-z]{2}$` | 正则表达式 |
@@ -341,7 +348,7 @@ ASP.NET Core 框架将向正则表达式构造函数添加 `RegexOptions.IgnoreC
 路由中使用的正则表达式通常以 `^` 字符（匹配字符串的起始位置）开头，以 `$` 字符（匹配字符串的结束位置）结尾。 `^` 和 `$` 字符可确保正则表达式匹配整个路由参数值。 如果没有 `^` 和 `$` 字符，正则表达式将匹配字符串内的所有子字符串，这些字符串通常不是你想要的。 下表显示部分示例，并说明它们为何匹配或未能匹配。
 
 | 表达式               | String | 匹配 | 注释 |
-| ----------------- | ------------ |  ------------ |  ------------ | 
+| ----------------- | ------------ |  ------------ |  ------------ |
 | `[a-z]{2}` | hello | 是 | 子字符串匹配 |
 | `[a-z]{2}` | 123abc456 | 是 | 子字符串匹配 |
 | `[a-z]{2}` | mz | 是 | 匹配表达式 |

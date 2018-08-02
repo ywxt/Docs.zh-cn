@@ -6,12 +6,12 @@ ms.author: spboyer
 ms.custom: mvc
 ms.date: 03/13/2018
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: d02fbd82be37e6d67214a9a0bf5851662b577cb9
-ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
+ms.openlocfilehash: 2431e989d6fc2cf83bca47aaa41a2bf686c0ab54
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37433969"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219350"
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>使用 Apache 在 Linux 上托管 ASP.NET Core
 
@@ -260,6 +260,21 @@ sudo journalctl -fu kestrel-hellomvc.service
 ```bash
 sudo journalctl -fu kestrel-hellomvc.service --since "2016-10-18" --until "2016-10-18 04:00"
 ```
+
+## <a name="data-protection"></a>数据保护
+
+[ASP.NET Core 数据保护堆栈](xref:security/data-protection/index)由多个 ASP.NET Core [中间件](xref:fundamentals/middleware/index)（包括 cookie 中间件等身份验证中间件）和跨站点请求伪造 (CSRF) 保护使用。 即使用户代码不调用数据保护 API，也应该配置数据保护，以创建持久的加密[密钥存储](xref:security/data-protection/implementation/key-management)。 如果不配置数据保护，则密钥存储在内存中。重启应用时，密钥会被丢弃。
+
+如果密钥环存储于内存中，则在应用重启时：
+
+* 所有基于 cookie 的身份验证令牌都无效。
+* 用户需要在下一次请求时再次登录。
+* 无法再解密使用密钥环保护的任何数据。 这可能包括 [CSRF 令牌](xref:security/anti-request-forgery#aspnet-core-antiforgery-configuration)和 [ASP.NET Core MVC TempData cookie](xref:fundamentals/app-state#tempdata)。
+
+若要配置数据保护以持久保存并加密密钥环，请参阅：
+
+* <xref:security/data-protection/implementation/key-storage-providers>
+* <xref:security/data-protection/implementation/key-encryption-at-rest>
 
 ## <a name="securing-the-app"></a>保护应用
 

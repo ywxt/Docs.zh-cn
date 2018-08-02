@@ -5,12 +5,12 @@ description: 本教程介绍如何处理多个用户同时更新同一实体时�
 ms.author: riande
 ms.date: 11/15/2017
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: ff9e52df63f9c9f47ee659a68beb28b773a114a1
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: a010e2ed660bea56b112799e850f2fb0ff37579e
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202687"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219389"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---concurrency---8-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 并发 - 第 8 个教程（共 8 个）
 
@@ -153,24 +153,23 @@ dotnet ef database update
 <a name="scaffold"></a>
 ## <a name="scaffold-the-departments-model"></a>构架院系模型
 
-* 退出 Visual Studio。
-* 打开项目目录（包含 Program.cs、Startup.cs 和 .csproj 文件的目录）中的命令窗口。
-* 运行下面的命令：
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
+
+按照[为“学生”模型搭建基架](xref:data/ef-rp/intro#scaffold-the-student-model)中的说明操作，并对模型类使用 `Department`。
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
+ 运行下面的命令：
 
   ```console
   dotnet aspnet-codegenerator razorpage -m Department -dc SchoolContext -udl -outDir Pages\Departments --referenceScriptLibraries
   ```
 
+------
+
 上述命令为 `Department` 模型创建基架。 在 Visual Studio 中打开项目。
 
-生成项目。 此版本生成如下错误：
-
-`1>Pages/Departments/Index.cshtml.cs(26,37,26,43): error CS1061: 'SchoolContext' does not
- contain a definition for 'Department' and no extension method 'Department' accepting a first
- argument of type 'SchoolContext' could be found (are you missing a using directive or
- an assembly reference?)`
-
- 将 `_context.Department` 全局更改为 `_context.Departments`（即向 `Department` 添加一个“s”）。 找到并更新 7 个匹配项。
+生成项目。
 
 ### <a name="update-the-departments-index-page"></a>更新院系索引页
 

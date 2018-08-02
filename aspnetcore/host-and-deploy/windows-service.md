@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: e9e10b0bc99b2c54bf342121b1a454be5dac66c6
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: 4fd0cc881eff3b1bbdfdf51e223d0fd42051c31d
+ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938192"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39320734"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>在 Windows 服务中托管 ASP.NET Core
 
@@ -221,8 +221,9 @@ ms.locfileid: "37938192"
 
 ## <a name="proxy-server-and-load-balancer-scenarios"></a>代理服务器和负载均衡器方案
 
-与来自 Internet 或公司网络的请求进行交互且在代理或负载均衡器后方的服务可能需要其他配置。 有关详细信息，请参阅[配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)。
+与来自 Internet 或公司网络的请求进行交互且在代理或负载均衡器后方的服务可能需要其他配置。 有关更多信息，请参见<xref:host-and-deploy/proxy-load-balancer>。
 
-## <a name="kestrel-endpoint-configuration"></a>Kestrel 终结点配置
+## <a name="additional-resources"></a>其他资源
 
-有关 Kestrel 终结点配置的信息（包括 HTTPS 配置和 SNI 支持），请参阅 [Kestrel 终结点配置](xref:fundamentals/servers/kestrel#endpoint-configuration)。
+* [Kestrel 终结点配置](xref:fundamentals/servers/kestrel#endpoint-configuration)（包括 HTTPS 配置和 SNI 支持）
+* <xref:fundamentals/host/web-host>

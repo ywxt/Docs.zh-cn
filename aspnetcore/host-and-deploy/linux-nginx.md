@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/22/2018
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: 840a9f98b3409f74b9a41ee24ff7bcb33a875470
-ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
+ms.openlocfilehash: aba9ed41ac3650d8c645d71fb772e2a8e4f32f02
+ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37433930"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39254852"
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>使用 Nginx 在 Linux 上托管 ASP.NET Core
 
@@ -285,6 +285,21 @@ sudo journalctl -fu kestrel-hellomvc.service
 sudo journalctl -fu kestrel-hellomvc.service --since "2016-10-18" --until "2016-10-18 04:00"
 ```
 
+## <a name="data-protection"></a>数据保护
+
+[ASP.NET Core 数据保护堆栈](xref:security/data-protection/index)由多个 ASP.NET Core [中间件](xref:fundamentals/middleware/index)（包括 cookie 中间件等身份验证中间件）和跨站点请求伪造 (CSRF) 保护使用。 即使用户代码不调用数据保护 API，也应该配置数据保护，以创建持久的加密[密钥存储](xref:security/data-protection/implementation/key-management)。 如果不配置数据保护，则密钥存储在内存中。重启应用时，密钥会被丢弃。
+
+如果密钥环存储于内存中，则在应用重启时：
+
+* 所有基于 cookie 的身份验证令牌都无效。
+* 用户需要在下一次请求时再次登录。
+* 无法再解密使用密钥环保护的任何数据。 这可能包括 [CSRF 令牌](xref:security/anti-request-forgery#aspnet-core-antiforgery-configuration)和 [ASP.NET Core MVC TempData cookie](xref:fundamentals/app-state#tempdata)。
+
+若要配置数据保护以持久保存并加密密钥环，请参阅：
+
+* <xref:security/data-protection/implementation/key-storage-providers>
+* <xref:security/data-protection/implementation/key-encryption-at-rest>
+
 ## <a name="securing-the-app"></a>保护应用
 
 ### <a name="enable-apparmor"></a>启用 AppArmor
@@ -293,14 +308,21 @@ Linux 安全模块 (LSM) 是一个框架，它是自 Linux 2.6 后的 Linux kern
 
 ### <a name="configuring-the-firewall"></a>配置防火墙
 
-关闭所有未使用的外部端口。 通过为配置防火墙提供命令行接口，不复杂的防火墙 (ufw) 为 `iptables` 提供了前端。 确认已配置 `ufw` 以允许所需的任何端口上的流量。
+关闭所有未使用的外部端口。 通过为配置防火墙提供命令行接口，不复杂的防火墙 (ufw) 为 `iptables` 提供了前端。
+
+> [!WARNING]
+> 如果未正确配置，防火墙将阻止对整个系统的访问。 在使用 SSH 进行连接时，未能指定正确的 SSH 端口最终会将你关在系统之外。 默认端口为 22。 有关详细信息，请参阅 [ufw 简介](https://help.ubuntu.com/community/UFW)和[手册](http://manpages.ubuntu.com/manpages/bionic/man8/ufw.8.html)。
+
+安装 `ufw`，并将其配置为允许所需任何端口上的流量。
 
 ```bash
 sudo apt-get install ufw
-sudo ufw enable
 
+sudo ufw allow 22/tcp
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
+
+sudo ufw enable
 ```
 
 ### <a name="securing-nginx"></a>保护 Nginx

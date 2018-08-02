@@ -4,18 +4,18 @@ author: coderandhiker
 description: 了解如何在 ASP.NET Core 中访问 HttpContext。
 ms.author: riande
 ms.custom: mvc
-ms.date: 07/20/2018
+ms.date: 07/27/2018
 uid: fundamentals/httpcontext
-ms.openlocfilehash: b1ff80943db1788b465accd51c70a3c3a3462d5c
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: ee185cd30af51fa6ee9a4d23ea60a56ec1b76c8d
+ms.sourcegitcommit: 506a199274e9fe5fb4070b273ba94f29f14cb619
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202701"
+ms.lasthandoff: 07/28/2018
+ms.locfileid: "39332283"
 ---
 # <a name="access-httpcontext-in-aspnet-core"></a>在 ASP.NET Core 中访问 HttpContext
 
-ASP.NET Core 应用通过 [IHttpContextAccessor](/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor) 接口及其默认实现 [HttpContextAccessor](/dotnet/api/microsoft.aspnetcore.http.httpcontextaccessor) 来访问 `HttpContext`。
+ASP.NET Core 应用通过 [IHttpContextAccessor](/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor) 接口及其默认实现 [HttpContextAccessor](/dotnet/api/microsoft.aspnetcore.http.httpcontextaccessor) 来访问 `HttpContext`。 只有在需要访问服务内的 `HttpContext` 时，才有必要使用 `IHttpContextAccessor`。
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -36,6 +36,16 @@ public class AboutModel : PageModel
 ```
 
 ::: moniker-end
+
+## <a name="use-httpcontext-from-a-razor-view"></a>通过 Razor 视图使用 HttpContext
+
+Razor 视图通过视图上的 [RazorPage.Context](/dotnet/api/microsoft.aspnetcore.mvc.razor.razorpage.context#Microsoft_AspNetCore_Mvc_Razor_RazorPage_Context) 属性直接公开 `HttpContext`。 下面的示例使用 Windows 身份验证检索 Intranet 应用中的当前用户名：
+
+```cshtml
+@{
+    var username = Context.User.Identity.Name;
+}
+```
 
 ## <a name="use-httpcontext-from-a-controller"></a>通过控制器使用 HttpContext
 

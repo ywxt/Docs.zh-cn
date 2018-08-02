@@ -5,14 +5,14 @@ description: 发现 ASP.NET Core 部分标记帮助程序以及每个属性在�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 07/06/2018
+ms.date: 07/25/2018
 uid: mvc/views/tag-helpers/builtin-th/partial-tag-helper
-ms.openlocfilehash: a289a946a6d3eb491a08103dcefdd688eab52072
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: cb63357b1859c3709b2eae9f4e380c4a74e5e448
+ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938334"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39254748"
 ---
 # <a name="partial-tag-helper-in-aspnet-core"></a>ASP.NET Core 中的部分标记帮助程序
 
@@ -43,7 +43,7 @@ Partial 标记帮助程序用于在 Razor 页面和 MVC 应用中呈现[分部�
 
 ## <a name="name"></a>name
 
-需要 `name` 属性。 它指示要呈现的分部视图的名称或路径。 提供分部视图名称时，会启动[视图发现](xref:mvc/views/overview#view-discovery)进程。 提供显式路径时，将绕过该进程。
+需要 `name` 属性。 它指示要呈现的分部视图的名称或路径。 提供分部视图名称时，会启动[视图发现](xref:mvc/views/overview#view-discovery)进程。 提供显式路径时，将绕过该进程。 有关所有可接受的 `name` 值，请参阅[分部视图发现](xref:mvc/views/partial#partial-view-discovery)。
 
 以下标记使用显式路径，指示要从共享文件夹加载 _ProductPartial.cshtml。 使用 [for](#for) 属性，将模型传递给分部视图进行绑定。
 

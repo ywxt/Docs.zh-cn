@@ -5,12 +5,12 @@ description: 在本教程中，将读取并显示相关数据 - 即 Entity Frame
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: bcea6aa6018a937979b8e0aaa2edcdd96da41559
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: bb1d087a5449c6e26c40e572d161dd9644ac2323
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202674"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219337"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 读取相关数据 - 第 6 个教程（共 8 个）
 
@@ -69,14 +69,19 @@ EF Core 可采用多种方式将相关数据加载到实体的导航属性中：
 <a name="scaffold"></a>
 ### <a name="scaffold-the-course-model"></a>为课程模型创建基架
 
-* 退出 Visual Studio。
-* 打开项目目录（包含 Program.cs、Startup.cs 和 .csproj 文件的目录）中的命令窗口。
-* 运行下面的命令：
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
+
+按照[为“学生”模型搭建基架](xref:data/ef-rp/intro#scaffold-the-student-model)中的说明操作，并对模型类使用 `Course`。
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
+ 运行下面的命令：
 
   ```console
-  dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 2.1.0
   dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir Pages\Courses --referenceScriptLibraries
   ```
+
+------
 
 上述命令为 `Course` 模型创建基架。 在 Visual Studio 中打开项目。
 
@@ -150,21 +155,21 @@ EF Core 可采用多种方式将相关数据加载到实体的导航属性中：
 
 ### <a name="scaffold-the-instructor-model"></a>为讲师模型创建基架
 
-* 退出 Visual Studio。
-* 打开项目目录（包含 Program.cs、Startup.cs 和 .csproj 文件的目录）中的命令窗口。
-* 运行下面的命令：
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
+
+按照[为“学生”模型搭建基架](xref:data/ef-rp/intro#scaffold-the-student-model)中的说明操作，并对模型类使用 `Instructor`。
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
+ 运行下面的命令：
 
   ```console
   dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outDir Pages\Instructors --referenceScriptLibraries
   ```
 
-上述命令为 `Instructor` 模型创建基架。 在 Visual Studio 中打开项目。
+------
 
-生成项目。 此版本生成错误。
-
-将 `_context.Instructor` 全局更改为 `_context.Instructors`（即向 `Instructor` 添加一个“s”）。 找到并更新 7 个匹配项。
-
-运行应用并导航到“讲师”页。
+上述命令为 `Instructor` 模型创建基架。 运行应用并导航到“讲师”页。
 
 将 Pages/Instructors/Index.cshtml.cs 替换为以下代码：
 

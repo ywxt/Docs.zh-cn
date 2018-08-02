@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: 6aded9525a0abd31dec8441c7fba60d8845c7d93
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: d7e60c0f615841461a17b093bffe5fb3f82f8616
+ms.sourcegitcommit: 506a199274e9fe5fb4070b273ba94f29f14cb619
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938236"
+ms.lasthandoff: 07/28/2018
+ms.locfileid: "39332270"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>处理 ASP.NET Core 中的错误
 
@@ -103,11 +103,11 @@ app.UseStatusCodePages();
 app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 ```
 
-也可以使用重定向和重新执行扩展方法。 重定向方法向客户端发送“302 Found”状态代码：
+也可以使用重定向和重新执行扩展方法。 重定向方法向客户端发送“302 Found”状态代码，并将客户端重定向到提供的位置 URL 模板。 该模板可能包括状态代码的 `{0}` 占位符。 以 `~` 开头的 URL 预置了基础路径。 不以 `~` 开头的 URL 按原样使用。
 
 [!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
 
-重新执行方法将原始状态代码返回到客户端，但同时还会执行重定向 URL 的处理程序：
+重新执行方法可向客户端返回原始状态代码，并指定应通过使用备用路径重新执行请求管道来生成响应正文。 此路径可能包含状态代码的 `{0}` 占位符：
 
 ```csharp
 app.UseStatusCodePagesWithReExecute("/error/{0}");
