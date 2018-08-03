@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 4fd0cc881eff3b1bbdfdf51e223d0fd42051c31d
-ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
+ms.openlocfilehash: 4aded0b87ca14a5c09844cc378efb1ac0c12a289
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39320734"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342151"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>在 Windows 服务中托管 ASP.NET Core
 
@@ -82,7 +82,7 @@ ms.locfileid: "39320734"
 
      ::: moniker-end
 
-1. 发布应用。 使用 [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) 或 [Visual Studio 发布配置文件](xref:host-and-deploy/visual-studio-publish-profiles)。
+1. 发布应用。 使用 [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) 或 [Visual Studio 发布配置文件](xref:host-and-deploy/visual-studio-publish-profiles)。 使用 Visual Studio 时，请选择 FolderProfile。
 
    要从命令行发布示例应用，请从项目文件夹中的控制台窗口中运行以下命令：
 
@@ -96,16 +96,19 @@ ms.locfileid: "39320734"
    sc create <SERVICE_NAME> binPath= "<PATH_TO_SERVICE_EXECUTABLE>"
    ```
 
-   对于项目文件夹中发布的服务，请使用 publish 文件夹的路径创建服务。 下例中的服务已实现以下操作：
+   对于项目文件夹中发布的服务，请使用 publish 文件夹的路径创建服务。 如下示例中：
 
-   * 命名为“MyService”。
-   * 发布到 c:\\my_services\\AspNetCoreService\\bin\\Release\\&lt;TARGET_FRAMEWORK&gt;\\publish 文件夹。
-   * 由名为 AspNetCoreService.exe 的应用可执行文件表示。
+   * 项目驻留在 `c:\my_services\AspNetCoreService` 文件夹中。
+   * 项目在 `Release` 配置中发布。
+   * 目标框架名字对象 (TFM) 为 `netcoreapp2.1`。
+   * 运行时标识符 (RID) 为 `win7-x64`。
+   * 应用可执行文件名为 AspNetCoreService.exe。
+   * 服务名为 MyService。
 
-   利用管理员特权打开一个命令行界面，运行以下命令：
+   示例:
 
    ```console
-   sc create MyService binPath= "c:\my_services\AspNetCoreService\bin\Release\<TARGET_FRAMEWORK>\publish\AspNetCoreService.exe"
+   sc create MyService binPath= "c:\my_services\AspNetCoreService\bin\Release\netcoreapp2.1\win7-x64\publish\AspNetCoreService.exe"
    ```
    
    > [!IMPORTANT]
@@ -113,7 +116,7 @@ ms.locfileid: "39320734"
    
    从其他文件夹发布和启动服务：
    
-   1. 使用 `dotnet publish` 命令上的 [--output &lt;OUTPUT_DIRECTORY&gt;](/dotnet/core/tools/dotnet-publish#options) 选项。
+      1. 使用 `dotnet publish` 命令上的 [--output &lt;OUTPUT_DIRECTORY&gt;](/dotnet/core/tools/dotnet-publish#options) 选项。 如果使用 Visual Studio，请在“FolderProfile”发布属性页面中配置“目标位置”，然后再选择“发布”按钮。
    1. 通过使用输出文件夹路径的 `sc.exe` 命令创建服务。 在向 `binPath` 提供的路径中包含服务可执行文件的名称。
 
 1. 使用 `sc start <SERVICE_NAME>` 命令启动服务。
