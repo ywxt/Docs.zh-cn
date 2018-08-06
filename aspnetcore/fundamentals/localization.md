@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core 如何提供服务和中间件，将内容本�
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: 9647b605d4b9a23b365085e3677fb0e9b93f0da4
-ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
+ms.openlocfilehash: 87df1b8cf57509ddf80ce845d85a9b3f30673c35
+ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37434008"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39396229"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core 全球化和本地化
 
@@ -29,6 +29,8 @@ ms.locfileid: "37434008"
 2. 为支持的语言和区域性提供本地化资源
 
 3. 实施策略，为每个请求选择语言/区域性
+
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/Localization)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
 ## <a name="make-the-apps-content-localizable"></a>使应用内容可本地化
 

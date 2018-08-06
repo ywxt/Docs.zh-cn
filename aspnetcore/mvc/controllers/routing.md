@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core MVC 如何使用路由中间件来匹配传入�
 ms.author: riande
 ms.date: 03/14/2017
 uid: mvc/controllers/routing
-ms.openlocfilehash: 081332fd1007db5292a8812fc6ae934cb07dffb5
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 0d328d930ecb932c22fec524babb1c856b656b95
+ms.sourcegitcommit: 4e34ce61e1e7f1317102b16012ce0742abf2cca6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37952976"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514773"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a>在 ASP.NET Core 中路由到控制器操作
 
@@ -589,13 +589,14 @@ TagHelper 通过 `form` TagHelper 和 `<a>` TagHelper 生成 URL。 两者均通
 `ControllerBase` 和 `Controller` 基类为操作结果提供简便的方法来引用另一项操作。 一种典型用法是在接受用户输入后进行重定向。
 
 ```csharp
-public Task<IActionResult> Edit(int id, Customer customer)
+public IActionResult Edit(int id, Customer customer)
 {
     if (ModelState.IsValid)
     {
         // Update DB with new details.
         return RedirectToAction("Index");
     }
+    return View(customer);
 }
 ```
 
