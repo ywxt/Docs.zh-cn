@@ -3,14 +3,14 @@ title: ASP.NET Core MVC 中的模型验证
 author: tdykstra
 description: 了解 ASP.NET Core MVC 中的模型验证。
 ms.author: riande
-ms.date: 12/18/2016
+ms.date: 07/31/2018
 uid: mvc/models/validation
-ms.openlocfilehash: 9c2ba1c1fad3ac077a886b3465142acfd4d639af
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: f407903577e40b6501737ef5b78d90e1e3e60c06
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095822"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378662"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC 中的模型验证
 
@@ -118,7 +118,7 @@ MVC 将继续验证字段，直至达到错误数上限（默认为 200 个）�
 
 [!code-cshtml[](validation/sample/Views/Shared/_ValidationScriptsPartial.cshtml)]
 
-[jQuery 非介入式验证](https://github.com/aspnet/jquery-validation-unobtrusive)脚本是一个基于热门 [jQuery Validate](https://jqueryvalidation.org/) 插件的自定义 Microsoft 前端库。 如果没有 jQuery 非介入式验证，则必须在两个位置编码相同的验证逻辑：一次是在模型属性上的服务器端验证特性中，一次是在客户端脚本中（jQuery Validate 的 [`validate()`](https://jqueryvalidation.org/validate/) 方法示例展示了这种情况可能的复杂程度）。 MVC 的[标记帮助程序](xref:mvc/views/tag-helpers/intro)和 [HTML 帮助程序](xref:mvc/views/overview)则能够使用模型属性中的验证特性和类型元数据，呈现需要验证的表单元素中的 HTML 5 [data- 特性](http://w3c.github.io/html/dom.html#embedding-custom-non-visible-data-with-the-data-attributes)。 MVC 为内置属性和自定义属性生成 `data-` 属性。 然后，jQuery 非介入式验证分析这些 `data-` 属性并将逻辑传递给 jQuery Validate，从而将服务器端验证逻辑有效地“复制”到客户端。 可以使用相关标记帮助程序在客户端上显示验证错误，如下所示：
+[jQuery 非介入式验证](https://github.com/aspnet/jquery-validation-unobtrusive)脚本是一个基于热门 [jQuery Validate](https://jqueryvalidation.org/) 插件的自定义 Microsoft 前端库。 如果没有 jQuery 非介入式验证，则必须在两个位置编码相同的验证逻辑：一次是在模型属性上的服务器端验证特性中，一次是在客户端脚本中（jQuery Validate 的 [`validate()`](https://jqueryvalidation.org/validate/) 方法示例展示了这种情况可能的复杂程度）。 MVC 的[标记帮助程序](xref:mvc/views/tag-helpers/intro)和 [HTML 帮助程序](xref:mvc/views/overview)则能够使用模型属性中的验证特性和类型元数据，呈现需要验证的表单元素中的 HTML 5 [data- 特性](http://w3c.github.io/html/dom.html#embedding-custom-non-visible-data-with-the-data-attributes)。 MVC 为内置属性和自定义属性生成 `data-` 属性。 然后，jQuery 非介入式验证分析 `data-` 属性并将逻辑传递给 jQuery Validate，从而将服务器端验证逻辑有效地“复制”到客户端。 可以使用相关标记帮助程序在客户端上显示验证错误，如下所示：
 
 [!code-cshtml[](validation/sample/Views/Movies/Create.cshtml?highlight=4,5&range=19-25)]
 
@@ -208,11 +208,11 @@ $.get({
     id="ReleaseDate" name="ReleaseDate" value="" />
 ```
 
-非介入式验证使用 `data-` 属性中的数据来显示错误消息。 不过，除非将规则或消息添加到 jQuery 的 `validator` 对象，否则 jQuery 并不知道它们的存在。 以下示例对此进行了说明，该示例向 jQuery `validator` 对象添加一个包含自定义客户端验证代码的名为 `classicmovie` 的方法。 可在[此处](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html)查看对 unobtrusive.adapters.add 方法的说明
+非介入式验证使用 `data-` 属性中的数据来显示错误消息。 不过，除非将规则或消息添加到 jQuery 的 `validator` 对象，否则 jQuery 并不知道它们的存在。 如以下示例所示，将一个自定义 `classicmovie` 客户端验证方法添加到 `validator` 对象。 有关 `unobtrusive.adapters.add` 方法的说明，请参阅 [ASP.NET MVC 中的非介入式客户端验证](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html)。
 
-[!code-javascript[](validation/sample/Views/Movies/Create.cshtml?range=71-93)]
+[!code-javascript[](validation/sample/Views/Movies/Create.cshtml?name=snippet_UnobtrusiveValidation)]
 
-现在，jQuery 包含用于执行自定义 JavaScript 验证的信息，以及该验证代码返回 false 时将要显示的错误消息。
+`classicmovie` 方法使用前面的代码对电影发行日期执行客户端验证。 如果该方法返回 `false`，则显示错误消息。
 
 ## <a name="remote-validation"></a>远程验证
 
@@ -222,11 +222,14 @@ $.get({
 
 [!code-csharp[](validation/sample/User.cs?range=7-8)]
 
-第二步是按照 `[Remote]` 属性中的定义，将验证代码放入相应的操作方法。 根据 jQuery Validate [`remote()`](https://jqueryvalidation.org/remote-method/) 方法文档：
+第二步是按照 `[Remote]` 属性中的定义，将验证代码放入相应的操作方法。 根据 jQuery Validate [remote](https://jqueryvalidation.org/remote-method/) 方法文档，服务器响应必须是符合以下条件的 JSON 字符串：
 
-> 服务器端响应必须是使用默认错误消息的 JSON 字符串，对于有效的元素必须为 `"true"`，对于无效元素则可以为 `"false"`、`undefined` 或 `null`。 如果服务器端响应是一个字符串，例如， `"That name is already taken, try peter123 instead"`，则此字符串将显示为自定义错误消息，以取代默认错误消息。
+* 对于有效元素，为 `"true"`。
+* 对于无效元素，为 `"false"`、`undefined` 或 `null`，使用默认错误消息。
 
-`VerifyEmail()` 方法的定义遵循这些规则，如下所示。 如果电子邮件已被占用，它会返回验证错误消息；如果电子邮件可用，则返回 `true`，并将结果包装在 `JsonResult` 对象中。 然后，客户端可以使用返回的值，继续进行下一步操作或根据需要显示错误。
+如果服务器响应是一个字符串（例如，`"That name is already taken, try peter123 instead"`），则该字符串显示为一条自定义错误消息来替代默认字符串。
+
+`VerifyEmail` 方法的定义遵循这些规则，如下所示。 如果电子邮件已被占用，它会返回验证错误消息；如果电子邮件可用，则返回 `true`，并将结果包装在 `JsonResult` 对象中。 然后，客户端可以使用返回的值，继续进行下一步操作或根据需要显示错误。
 
 [!code-csharp[](validation/sample/UsersController.cs?range=19-28)]
 
@@ -243,7 +246,7 @@ $.get({
 现在，当用户输入名和姓时，JavaScript 会:
 
 * 发出远程调用，以了解该名称对是否已被占用。
-* 如果被占用，则显示一条错误消息。 
+* 如果被占用，则显示一条错误消息。
 * 如果未被占用，则用户可以提交表单。
 
 如果需要使用 `[Remote]` 特性验证两个或更多附加字段，可将其以逗号分隔的列表形式列出。 例如，若要向模型中添加 `MiddleName` 属性，可按以下代码所示设置 `[Remote]` 特性：

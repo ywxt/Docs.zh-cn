@@ -1,154 +1,268 @@
 ---
 title: ASP.NET Core 中的文件提供程序
-author: ardalis
+author: guardrex
 description: 了解 ASP.NET Core 如何通过文件提供程序来抽象化文件系统访问。
 ms.author: riande
-ms.date: 02/14/2017
+ms.custom: mvc
+ms.date: 08/01/2018
 uid: fundamentals/file-providers
-ms.openlocfilehash: 0d356322ea9f4cc2caead81746bf9ede4a87923f
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 512229cfe7d7efdcd9050fa13dbdbf793be29a0b
+ms.sourcegitcommit: 571d76fbbff05e84406b6d909c8fe9cbea2c8ff1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276233"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39410151"
 ---
 # <a name="file-providers-in-aspnet-core"></a>ASP.NET Core 中的文件提供程序
 
-作者：[Steve Smith](https://ardalis.com/)
+作者：[Steve Smith](https://ardalis.com/) 和 [Luke Latham](https://github.com/guardrex)
 
-ASP.NET Core 通过文件提供程序来抽象化文件系统访问。
+ASP.NET Core 通过文件提供程序来抽象化文件系统访问。 在 ASP.NET Core 框架中使用文件提供程序：
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/file-providers/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+* [IHostingEnvironment](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment) 将应用的内容根和 Web 根作为 `IFileProvider` 类型公开。
+* [静态文件中间件](xref:fundamentals/static-files)使用文件提供程序来查找静态文件。
+* [Razor](xref:mvc/views/razor) 使用文件提供程序来查找页面和视图。
+* .NET Core 工具使用文件提供程序和 glob 模式来指定应该发布哪些文件。
 
-## <a name="file-provider-abstractions"></a>文件提供程序抽象
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/file-providers/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
-文件提供程序是对文件系统的抽象。 主接口是`IFileProvider`。 `IFileProvider` 公开一些方法以获取文件信息 (`IFileInfo`)、目录信息 (`IDirectoryContents`)，以及设置更改通知（使用 `IChangeToken`）。
+## <a name="file-provider-interfaces"></a>文件提供程序接口
 
-`IFileInfo` 提供有关单个文件或目录的方法和属性。 它有两个布尔属性（`Exists` 和`IsDirectory`），以及描述文件 `Name``Length` （以字节为单位）、`LastModified` 日期的属性。 可使用其 `CreateReadStream` 方法从文件中读取。
+主接口为 [IFileProvider](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider)。 `IFileProvider` 公开方法以实现以下目的：
+
+* 获取文件信息 ([IFileInfo](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo))。
+* 获取目录信息 ([IDirectoryContents](/dotnet/api/microsoft.extensions.fileproviders.idirectorycontents))。
+* 设置更改通知（使用 [IChangeToken](/dotnet/api/microsoft.extensions.primitives.ichangetoken)）。
+
+`IFileInfo` 提供用于处理文件的方法和属性：
+
+* [Exists](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.exists)
+* [IsDirectory](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.isdirectory)
+* [Name](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.name)
+* [Length](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.length)（以字节为单位）
+* [LastModified](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.lastmodified) 日期
+
+可以使用 [IFileInfo.CreateReadStream](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.createreadstream) 方法从文件读取内容。
+
+示例应用演示了如何在 `Startup.ConfigureServices` 中配置文件提供程序，以便通过[依赖关系注入](xref:fundamentals/dependency-injection)在应用中使用。
 
 ## <a name="file-provider-implementations"></a>文件提供程序实现
 
-`IFileProvider` 的三种实现可用：物理、嵌入和复合。 物理提供程序用于访问实际系统的文件。 嵌入式提供程序用于访问嵌入在程序集中的文件。 复合式提供程序提供对一个或多个其他提供程序中的文件和目录的合并访问。
+`IFileProvider` 有三种实现。
+
+::: moniker range=">= aspnetcore-2.0"
+
+| 实现 | 描述 |
+| -------------- | ----------- |
+| [PhysicalFileProvider](#physicalfileprovider) | 物理提供程序用于访问系统的物理文件。 |
+| [ManifestEmbeddedFileProvider](#manifestembeddedfileprovider) | 清单嵌入式提供程序用于访问程序集中嵌入的文件。 |
+| [CompositeFileProvider](#compositefileprovider) | 复合式提供程序提供对一个或多个其他提供程序中的文件和目录的合并访问。 |
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+| 实现 | 描述 |
+| -------------- | ----------- |
+| [PhysicalFileProvider](#physicalfileprovider) | 物理提供程序用于访问系统的物理文件。 |
+| [EmbeddedFileProvider](#embeddedfileprovider) | 嵌入式提供程序用于访问嵌入在程序集中的文件。 |
+| [CompositeFileProvider](#compositefileprovider) | 复合式提供程序提供对一个或多个其他提供程序中的文件和目录的合并访问。 |
+
+::: moniker-end
 
 ### <a name="physicalfileprovider"></a>PhysicalFileProvider
 
-`PhysicalFileProvider` 提供对物理文件系统的访问。 它包装 `System.IO.File` 类型（针对物理提供程序），将所有路径范围限定在一个目录及其子目录中。 此范围限制对特定目录及其子目录的访问，从而阻止对该边界外的文件系统的访问。 实例化此提供程序时，用户必须向其提供一个目录路径，它可作为对该提供程序的所有请求的基本路径（并且限制此路径之外的访问）。 在 ASP.NET Core 应用中，可以直接实例化 `PhysicalFileProvider` 提供程序，也可以通过 [依赖关系注入](dependency-injection.md)在控制器或服务的构造函数中请求 `IFileProvider`。 后一种方法生成的解决方案通常更具灵活性和可测试性。
+[PhysicalFileProvider](/dotnet/api/microsoft.extensions.fileproviders.physicalfileprovider) 提供对物理文件系统的访问。 `PhysicalFileProvider` 使用（物理提供程序的）[System.IO.File](/dotnet/api/system.io.file) 类型并将所有路径范围限制到目录及其子目录。 此范围界定可防止访问指定目录和子目录之外的文件系统。 实例化此提供程序时，必须提供目录路径并将其作为使用提供程序发出的所有请求的基路径。 可以直接实例化 `PhysicalFileProvider` 提供程序，也可以通过[依赖关系注入](xref:fundamentals/dependency-injection)请求构造函数中的 `IFileProvider`。
 
-以下示例演示如何创建 `PhysicalFileProvider`。
+**静态类型**
 
+下面的代码演示如何创建 `PhysicalFileProvider` 并用它来获取目录内容和文件信息：
 
 ```csharp
-IFileProvider provider = new PhysicalFileProvider(applicationRoot);
-IDirectoryContents contents = provider.GetDirectoryContents(""); // the applicationRoot contents
-IFileInfo fileInfo = provider.GetFileInfo("wwwroot/js/site.js"); // a file under applicationRoot
+var provider = new PhysicalFileProvider(applicationRoot);
+var contents = provider.GetDirectoryContents(string.Empty);
+var fileInfo = provider.GetFileInfo("wwwroot/js/site.js");
 ```
 
-你可以循环访问其目录内容，或通过提供子路径来获取特定文件的信息。
+前面的示例中的类型：
 
-若要从控制器请求提供程序，请在控制器的构造函数中指定该提供程序，并将其分配给本地字段。 使用操作方法中的本地实例：
+* `provider` 是 `IFileProvider`。
+* `contents` 是 `IDirectoryContents`。
+* `fileInfo` 是 `IFileInfo`。
 
-[!code-csharp[](file-providers/sample/src/FileProviderSample/Controllers/HomeController.cs?highlight=5,7,12&range=6-19)]
+文件提供程序可用于循环访问 `applicationRoot` 指定的目录或调用 `GetFileInfo` 来获取文件信息。 该文件提供程序无法访问 `applicationRoot` 目录外部的任何内容。
 
-然后，在应用的 `Startup` 类中创建提供程序：
+示例应用使用 [IHostingEnvironment.ContentRootFileProvider](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment.contentrootfileprovider) 在应用的 `Startup.ConfigureServices` 类中创建提供程序：
 
-[!code-csharp[](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=35,40&range=1-43)]
+```csharp
+var physicalProvider = _env.ContentRootFileProvider;
+```
 
-在 Index.cshtml 视图中，循环访问提供的 `IDirectoryContents`：
+**使用依赖关系注入获取文件提供程序类型**
 
-[!code-html[](file-providers/sample/src/FileProviderSample/Views/Home/Index.cshtml?highlight=2,7,9,11,15)]
+将提供程序注入任何类构造函数，并将其分配给本地字段。 在整个类的方法中使用该字段来访问文件。
 
-结果：
+::: moniker range=">= aspnetcore-2.0"
 
-![列出物理文件和文件夹的文件提供程序示例应用程序](file-providers/_static/physical-directory-listing.png)
+在示例应用中，`IndexModel` 类接收 `IFileProvider` 实例，获取应用的基路径的目录内容。
+
+Pages/Index.cshtml.cs：
+
+[!code-csharp[](file-providers/samples/2.x/FileProviderSample/Pages/Index.cshtml.cs?name=snippet1)]
+
+在页中循环访问 `IDirectoryContents`。
+
+Pages/Index.cshtml：
+
+[!code-cshtml[](file-providers/samples/2.x/FileProviderSample/Pages/Index.cshtml?name=snippet1)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+在示例应用中，`HomeController` 类接收 `IFileProvider` 实例，获取应用的基路径的目录内容。
+
+Controllers/HomeController.cs：
+
+[!code-csharp[](file-providers/samples/1.x/FileProviderSample/Controllers/HomeController.cs?name=snippet1)]
+
+在视图中循环访问 `IDirectoryContents`。
+
+Views/Home/Index.cshtml：
+
+[!code-cshtml[](file-providers/samples/1.x/FileProviderSample/Views/Home/Index.cshtml?name=snippet1)]
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.0"
+
+### <a name="manifestembeddedfileprovider"></a>ManifestEmbeddedFileProvider
+
+[ManifestEmbeddedFileProvider](/dotnet/api/microsoft.extensions.fileproviders.manifestembeddedfileprovider) 用于访问程序集内嵌入的文件。 `ManifestEmbeddedFileProvider` 使用编译到程序集中的某个清单来重建嵌入的文件的原始路径。
+
+> [!NOTE]
+> ASP.NET Core 2.1 或更高版本中提供了 `ManifestEmbeddedFileProvider`。 若要访问在 ASP.NET Core 2.0 或更早版本 的程序集中嵌入的文件，请参阅[本主题的 ASP.NET Core 1.x 版本](xref:fundamentals/file-providers?view=aspnetcore-1.1)。
+
+若要生成嵌入的文件清单，请将 `<GenerateEmbeddedFilesManifest>` 属性设置为 `true`。 指定要使用 [&lt;EmbeddedResource&gt;](/dotnet/core/tools/csproj#default-compilation-includes-in-net-core-projects) 嵌入的文件：
+
+[!code-csharp[](file-providers/samples/2.x/FileProviderSample/FileProviderSample.csproj?highlight=5,13)]
+
+使用 [glob 模式](#glob-patterns)指定要嵌入到程序集中的一个或多个文件。
+
+示例应用创建 `ManifestEmbeddedFileProvider` 并将当前正在执行的程序集传递给其构造函数。
+
+*Startup.cs*：
+
+```csharp
+var manifestEmbeddedProvider = 
+    new ManifestEmbeddedFileProvider(Assembly.GetEntryAssembly());
+```
+
+其他重载使你能够：
+
+* 指定相对文件路径。
+* 将文件范围限制到上次修改日期。
+* 为包含嵌入文件清单的嵌入资源命名。
+
+| 重载 | 描述 |
+| -------- | ----------- |
+| [ManifestEmbeddedFileProvider(Assembly, String)](/dotnet/api/microsoft.extensions.fileproviders.manifestembeddedfileprovider.-ctor#Microsoft_Extensions_FileProviders_ManifestEmbeddedFileProvider__ctor_System_Reflection_Assembly_System_String_) | 接受一个可选的 `root` 相对路径参数。 指定 `root` 将对 [GetDirectoryContents](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider.getdirectorycontents) 的调用范围限制为提供的路径下的那些资源。 |
+| [ManifestEmbeddedFileProvider(Assembly, String, DateTimeOffset)](/dotnet/api/microsoft.extensions.fileproviders.manifestembeddedfileprovider.-ctor#Microsoft_Extensions_FileProviders_ManifestEmbeddedFileProvider__ctor_System_Reflection_Assembly_System_String_System_DateTimeOffset_) | 接受一个可选的 `root` 相对路径参数和一个 `lastModified` 日期 ([DateTimeOffset](/dotnet/api/system.datetimeoffset)) 参数。 `lastModified` 日期限制 [IFileProvider](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider) 返回的 [IFileInfo](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo) 实例的上次修改日期范围。 |
+| [ManifestEmbeddedFileProvider(Assembly, String, String, DateTimeOffset)](/dotnet/api/microsoft.extensions.fileproviders.manifestembeddedfileprovider.-ctor#Microsoft_Extensions_FileProviders_ManifestEmbeddedFileProvider__ctor_System_Reflection_Assembly_System_String_System_String_System_DateTimeOffset_) | 接受一个可选的 `root` 相对路径、`lastModified` 日期和 `manifestName` 参数。 `manifestName` 表示包含清单的嵌入资源的名称。 |
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ### <a name="embeddedfileprovider"></a>EmbeddedFileProvider
 
-`EmbeddedFileProvider` 用于访问嵌入在程序集中的文件。 在 .NET Core 中，通过 .csproj 文件中的 `<EmbeddedResource>` 元素将各个文件嵌入程序集中：
+[EmbeddedFileProvider](/dotnet/api/microsoft.extensions.fileproviders.embeddedfileprovider)用于访问程序集内嵌入的文件。 指定要使用项目文件中的 [&lt;EmbeddedResource&gt;](/dotnet/core/tools/csproj#default-compilation-includes-in-net-core-projects) 属性嵌入的文件：
 
-[!code-json[](file-providers/sample/src/FileProviderSample/FileProviderSample.csproj?range=13-18)]
+```xml
+<ItemGroup>
+  <EmbeddedResource Include="Resource.txt" />
+</ItemGroup>
+```
 
-在指定要嵌入到程序集中的文件时，你可以使用[通配模式](#globbing-patterns)。 这些模式可用于匹配一个或多个文件。
+使用 [glob 模式](#glob-patterns)指定要嵌入到程序集中的一个或多个文件。
 
-> [!NOTE]
-> 实际上，用户不太可能会将项目中所有的 .js 文件都嵌入其程序集中；以上示例仅供演示。
+示例应用创建 `EmbeddedFileProvider` 并将当前正在执行的程序集传递给其构造函数。
 
-创建 `EmbeddedFileProvider` 时，将它要读取的程序集传递给其构造函数。
+*Startup.cs*：
 
 ```csharp
 var embeddedProvider = new EmbeddedFileProvider(Assembly.GetEntryAssembly());
 ```
 
-以上片段演示如何创建可访问当前执行的程序集的 `EmbeddedFileProvider`。
+嵌入的资源不会公开目录。 而是使用 `.` 分隔符将指向资源的路径（通过其命名空间）嵌入其文件名中。 在示例应用中，`baseNamespace` 是 `FileProviderSample.`。
 
-更新要使用 `EmbeddedFileProvider` 的示例应用会导致以下输出：
+[EmbeddedFileProvider(Assembly, String)](/dotnet/api/microsoft.extensions.fileproviders.embeddedfileprovider.-ctor#Microsoft_Extensions_FileProviders_EmbeddedFileProvider__ctor_System_Reflection_Assembly_) 构造函数接受一个可选的 `baseNamespace` 参数。 指定基命名空间，将对 [GetDirectoryContents](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider.getdirectorycontents) 的调用范围限制为提供的命名空间下的那些资源。
 
-![列出嵌入的文件的文件提供程序示例应用程序](file-providers/_static/embedded-directory-listing.png)
-
-> [!NOTE]
-> 嵌入的资源不会公开目录。 而是使用 `.` 分隔符将指向资源的路径（通过其命名空间）嵌入其文件名中。
-
-> [!TIP]
-> `EmbeddedFileProvider` 构造函数接受一个可选的 `baseNamespace` 参数。 指定此操作会将到 `GetDirectoryContents` 的调用范围限制为提供的名称空间下的那些资源。
+::: moniker-end
 
 ### <a name="compositefileprovider"></a>CompositeFileProvider
 
-`CompositeFileProvider` 合并 `IFileProvider` 实例，以便公开一个接口来处理多个提供程序中的文件。 创建 `CompositeFileProvider` 时，将一个或多个 `IFileProvider` 实例传递给其构造函数：
+[CompositeFileProvider](/dotnet/api/microsoft.extensions.fileproviders.compositefileprovider) 结合了 `IFileProvider` 实例，以便公开一个接口来处理来自多个提供程序的文件。 创建 `CompositeFileProvider` 时，将一个或多个 `IFileProvider` 实例传递给其构造函数。
 
-[!code-csharp[](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=3&range=35-37)]
+::: moniker range=">= aspnetcore-2.0"
 
-更新要使用 `CompositeFileProvider` 的示例应用（该应用包括之前配置的物理和嵌入式提供程序）会导致以下输出：
+在示例应用中，`PhysicalFileProvider` 和 `ManifestEmbeddedFileProvider` 向在应用的服务容器中注册的 `CompositeFileProvider` 提供文件：
 
-![列出物理文件/文件夹和嵌入的文件的文件提供程序示例应用程序](file-providers/_static/composite-directory-listing.png)
+[!code-csharp[](file-providers/samples/2.x/FileProviderSample/Startup.cs?name=snippet1)]
 
-## <a name="watching-for-changes"></a>监视更改
+::: moniker-end
 
-`IFileProvider` `Watch` 方法提供一种方法来监视一个或多个文件或目录的更改。 此方法接受一个路径字符串，该字符串可使用[通配模式](#globbing-patterns)来指定多个文件，并返回一个 `IChangeToken`。 此令牌公开可被检查的 `HasChanged` 属性，以及在检测到对指定路径字符串进行更改时调用的 `RegisterChangeCallback` 方法。 请注意，每个更改令牌仅调用其关联的回叫来响应单个更改。 若要启用持续监视，可以使用如下所示的 `TaskCompletionSource`，或者重新创建 `IChangeToken` 实例来响应更改。
+::: moniker range="< aspnetcore-2.0"
 
-在本文的示例中，控制台应用程序被配置为每当在修改文本文件时显示消息：
+在示例应用中，`PhysicalFileProvider` 和 `EmbeddedFileProvider` 向在应用的服务容器中注册的 `CompositeFileProvider` 提供文件：
 
-[!code-csharp[](file-providers/sample/src/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
+[!code-csharp[](file-providers/samples/1.x/FileProviderSample/Startup.cs?name=snippet1)]
 
-多次保存文件之后的结果：
+::: moniker-end
 
-![执行 dotnet run 后的命令窗口（显示应用程序正在监视 quotes.txt 文件的更改，该文件已更改五次）。](file-providers/_static/watch-console.png)
+## <a name="watch-for-changes"></a>监视更改
 
-> [!NOTE]
-> 某些文件系统（例如 Docker 容器和网络共享）可能无法可靠地发送更改通知。 将 `DOTNET_USE_POLLINGFILEWATCHER` 环境变量设置为 `1` 或 `true`，以便每 4 秒对文件系统的更改进行轮询。
+[IFileProvider.Watch](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider.watch) 方法提供了一个方案来监视一个或多个文件或目录是否发生更改。 `Watch` 接受路径字符串，它可以使用 [glob 模式](#glob-patterns)指定多个文件。 `Watch` 返回 [IChangeToken](/dotnet/api/microsoft.extensions.primitives.ichangetoken)。 更改令牌会公开以下内容：
 
-## <a name="globbing-patterns"></a>通配模式
+* [HasChanged](/dotnet/api/microsoft.extensions.primitives.ichangetoken.haschanged)：可检查此属性以确定是否已发生更改。
+* [RegisterChangeCallback](/dotnet/api/microsoft.extensions.primitives.ichangetoken.registerchangecallback)：检测到指定的路径字符串发生更改时调用此属性。 每个更改令牌仅调用其关联的回调来响应单个更改。 若要启用持续监视，请使用 [TaskCompletionSource](/dotnet/api/system.threading.tasks.taskcompletionsource-1)（如下所示）或重新创建 `IChangeToken` 实例以响应更改。
 
-文件系统路径使用称作“通配模式”的通配符模式。 这些简单的模式可以用来指定文件组。 这两个通配符为 `*` 和 `**`。
+在示例应用中，WatchConsole 控制台应用配置为每次修改了文本文件时显示一条消息：
 
-**`*`**
+::: moniker range=">= aspnetcore-2.0"
 
-   匹配位于当前文件夹级别的任何内容、任何文件名或任何文件扩展名。 匹配由文件路径中的 `/` 和 `.` 字符终止。
+[!code-csharp[](file-providers/samples/2.x/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
 
-<strong><code>**</code></strong>
+::: moniker-end
 
-   匹配多个目录级别的任何内容。 可用于以递归方式匹配目录层次结构中的许多文件。
+::: moniker range="< aspnetcore-2.0"
 
-### <a name="globbing-pattern-examples"></a>通配模式示例
+[!code-csharp[](file-providers/samples/1.x/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
 
-**`directory/file.txt`**
+::: moniker-end
 
-   匹配特定目录中的特定文件。
+某些文件系统（例如 Docker 容器和网络共享）可能无法可靠地发送更改通知。 将 `DOTNET_USE_POLLING_FILE_WATCHER` 环境变量设置为 `1` 或 `true` 以每隔四秒轮询一次文件系统，确认是否发生更改（不可配置）。
 
-**<code>directory/*.txt</code>**
+## <a name="glob-patterns"></a>glob 模式
 
-   匹配特定目录中带有 `.txt` 扩展名的所有文件。
+文件系统路径使用名为 glob（或通配）模式的通配符模式。 使用这些模式指定文件的组。 两个通配符分别是 `*` 和 `**`：
 
-**`directory/*/bower.json`**
+**`*`**  
+匹配当前文件夹级别的任何内容、任何文件名或任何文件扩展名。 匹配由文件路径中的 `/` 和 `.` 字符终止。
 
-   匹配 `directory` 目录的下一级目录中的所有 `bower.json` 文件。
+**`**`**  
+匹配多个目录级别的任何内容。 可用于以递归方式匹配目录层次结构中的许多文件。
 
-**<code>directory/&#42;&#42;/&#42;.txt</code>**
+**glob 模式示例**
 
-   匹配在 `directory` 目录下带有 `.txt` 扩展名所有文件。
+**`directory/file.txt`**  
+匹配特定目录中的特定文件。
 
-## <a name="file-provider-usage-in-aspnet-core"></a>ASP.NET Core 中的文件提供程序使用情况
+**`directory/*.txt`**  
+匹配特定目录中带 .txt 扩展名的所有文件。
 
-ASP.NET Core 的多个部分使用文件提供程序。 `IHostingEnvironment` 将应用的内容根和 Web 根作为 `IFileProvider` 类型公开。 静态文件中间件使用文件提供程序来查找静态文件。 Razor 在查找视图时大量使用 `IFileProvider`。 Dotnet 的发布功能使用文件提供程序和通配模式来指定应该发布哪些文件。
+**`directory/*/appsettings.json`**  
+匹配正好位于“目录”文件夹中下一级目录中的所有 `appsettings.json` 文件。
 
-## <a name="recommendations-for-use-in-apps"></a>在应用中使用的建议
-
-如果 ASP.NET Core 应用需要文件系统访问权限，那么你可以通过依赖关系注入请求 `IFileProvider` 的实例，然后使用其方法执行访问操作（如此示例中所示）。 这样在应用启动时配置一次提供程序即可，而且可以减少应用实例化的实现类型数量。
+**`directory/**/*.txt`**  
+匹配在“目录”文件夹下任何位置找到的带 .txt 扩展名的所有文件。

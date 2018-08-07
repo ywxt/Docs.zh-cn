@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core MVC 这一丰富框架如何使用“模型-视
 ms.author: riande
 ms.date: 01/08/2018
 uid: mvc/overview
-ms.openlocfilehash: aca34f91e8c7efaa34263ddf830b1662a2518969
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 7f8aab02c0ee37dad49ff224b182ec455e837a7a
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272587"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378633"
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>ASP.NET Core MVC 概述
 
@@ -165,8 +165,7 @@ ASP.NET Core 内置有对[依赖关系注入 (DI)](../fundamentals/dependency-in
 
 ### <a name="filters"></a>筛选器
 
-[筛选器](controllers/filters.md)帮助开发者封装横切关注点，例如异常处理或授权。 筛选器允许操作方法运行自定义预处理和后处理逻辑，并且可以配置为在给定请求的执行管道内的特定点上运行。 筛选器可以作为属性应用于控制器或操作（也可以全局运行）。 此框架中包括多个筛选器（例如 `Authorize`）。
-
+[筛选器](controllers/filters.md)帮助开发者封装横切关注点，例如异常处理或授权。 筛选器允许操作方法运行自定义预处理和后处理逻辑，并且可以配置为在给定请求的执行管道内的特定点上运行。 筛选器可以作为属性应用于控制器或操作（也可以全局运行）。 此框架中包括多个筛选器（例如 `Authorize`）。 `[Authorize]` 是用于创建 MVC 授权筛选器的属性。
 
 ```csharp
 [Authorize]

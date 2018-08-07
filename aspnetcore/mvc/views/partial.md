@@ -6,18 +6,18 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/06/2018
 uid: mvc/views/partial
-ms.openlocfilehash: 983f3caae34b21b46d8f556e70673cf3c97abbd3
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: 7cb20fc30609adad83cb40e91316da115817f035
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938454"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378678"
 ---
 # <a name="partial-views-in-aspnet-core"></a>ASP.NET Core 中的分部视图
 
 作者：[Steve Smith](https://ardalis.com/)、[Maher JENDOUBI](https://twitter.com/maherjend)、[Rick Anderson](https://twitter.com/RickAndMSFT) 和 [Scott Sauber](https://twitter.com/scottsauber)
 
-ASP.NET Core MVC 支持分部视图，它们可用于在不同的视图中共享网页的可重用部分。
+ASP.NET Core 支持分部视图。 分部视图用于在不同视图之间共享网页的可重用部件。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/partial/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
@@ -35,8 +35,7 @@ ASP.NET Core MVC 支持分部视图，它们可用于在不同的视图中共享
 
 在由多个逻辑部分组成的复杂页面中，将每个部分用作它自己的分部视图十分有用。 在页面的其余部分可以单独查看页面的每个部分。 页面本身的视图会变得更简单，因为它仅包含整体页面结构，并且通过调用来呈现分部视图。
 
-> [!TIP]
-> 在视图中遵守[不要自我重复原则](https://deviq.com/don-t-repeat-yourself/)。
+ASP.NET Core MVC 控制器具有从操作方法调用的 [PartialView](/dotnet/api/microsoft.aspnetcore.mvc.controller.partialview#Microsoft_AspNetCore_Mvc_Controller_PartialView) 方法。 Razor Pages 没有任何等效的 `PartialView` 方法。
 
 ## <a name="declare-partial-views"></a>声明分部视图
 
