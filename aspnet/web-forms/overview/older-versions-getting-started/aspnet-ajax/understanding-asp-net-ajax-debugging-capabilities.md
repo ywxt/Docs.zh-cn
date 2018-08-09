@@ -8,12 +8,12 @@ ms.date: 03/28/2008
 ms.assetid: 7f9380c6-19f7-4c82-a019-916ec6dffc9c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
-ms.openlocfilehash: 9d420a41f50d06541d04a1dd3cb78a2e6beaaa9a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 95c2487f26109cbdd8c76dc6f269f37264f5e34b
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37813823"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655441"
 ---
 <a name="understanding-aspnet-ajax-debugging-capabilities"></a>了解 ASP.NET AJAX 调试功能
 ====================
@@ -55,8 +55,8 @@ Dan Wahlin
 
 调试具有已启用后，您将看到显示在名为脚本调试器视图菜单中的新菜单项。 在下一条语句，它具有两个选项可包括打开和中断。 打开所选时将提示您若要调试 Visual Studio 2008 （请注意，Visual Web Developer 速成版还可用于调试） 中的页。 如果当前运行 Visual Studio.NET，则可以选择使用该实例或创建新实例。 选择下一个语句处中断时将提示您若要执行的 JavaScript 代码时调试页。 如果在页面的 onLoad 事件中执行的 JavaScript 代码可以刷新页面以触发调试会话。 如果在单击按钮之后运行的 JavaScript 代码然后单击该按钮后立即时，调试器将运行。
 
-> *> [!NOTE] 如果运行 Windows Vista 与用户访问控制 (UAC) 启用，并且必须设置为以管理员身份运行 Visual Studio 2008，Visual Studio 将无法附加到进程，当系统提示要附加。若要解决此问题，首先，启动 Visual Studio，并使用该实例来调试。*
-
+> [!NOTE]
+> 如果运行的 Windows Vista 与用户访问控制 (UAC) 启用，并且必须设置为以管理员身份运行 Visual Studio 2008，Visual Studio 将无法附加到进程，当系统提示要附加。 若要解决此问题，首先，启动 Visual Studio，并使用该实例来调试。
 
 已打开的页和你想要更全面检查时，尽管在下一节将演示如何调试 ASP.NET AJAX 页面直接从 Visual Studio 2008 中的，使用 Internet Explorer 脚本调试器选项非常有用。
 
@@ -98,8 +98,8 @@ Visual Studio 2008 调试器将 JavaScript 嵌入在页不同于外部 JavaScrip
 
 此对话框会显示，因为 Visual Studio.NET 不确定如何获取对某些由页面引用的脚本的源代码。 虽然这可能是非常令人沮丧首先，没有简单的修复。 启动调试会话并命中断点后，请转到调试 Windows 脚本资源管理器窗口上的 Visual Studio 2008 菜单或使用 Ctrl + Alt + N 热键。
 
-> *> [!NOTE] 如果看不到列出的脚本资源管理器菜单，请转到工具**自定义* *Visual Studio.NET 菜单上的命令。在类别部分中找到调试条目并单击它以显示所有可用的菜单项。在命令列表中，向下滚动到脚本资源管理器，然后将它拖到调试* *Windows 菜单中的前面所述。执行此操作也将脚本资源管理器菜单项提供每次运行 Visual Studio.NET。*
-
+> [!NOTE]
+> 如果看不到列出的脚本资源管理器菜单，请转到**工具** > **自定义** > **命令**Visual Studio.NET 菜单上。 找到**调试**类别中的项部分，然后单击它以显示所有可用的菜单项。 在命令列表中，向下滚动到脚本资源管理器，然后将它拖到调试 Windows 菜单中的前面所述。 执行此操作也将脚本资源管理器菜单项提供每次运行 Visual Studio.NET。
 
 脚本资源管理器可以用于查看在页面中使用的所有脚本和在代码编辑器中打开它们。 脚本资源管理器打开后，双击当前正在调试在代码编辑器窗口中打开它的.aspx 页。 为所有其他脚本资源管理器中所示的脚本执行相同操作。 一旦所有脚本都是将其打开，可以在代码窗口中按 F11 （和使用其他调试热键） 来单步执行代码。 图 3 显示了脚本资源管理器的示例。 它列出正在调试的当前文件 (Demo.aspx) 以及两个自定义脚本和动态注入由 ASP.NET AJAX ScriptManager 的页面的两个脚本。
 

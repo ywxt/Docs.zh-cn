@@ -5,12 +5,12 @@ description: 了解如何生成使用电子邮件确认及密码重置功能的 
 ms.author: riande
 ms.date: 7/11/2018
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 84eb3580107572f66f0c3b565b8e76ba401c0ddb
-ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
+ms.openlocfilehash: 3ca6d014245bb2a9bc4b1c90285f47eec7cefe84
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39219402"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655467"
 ---
 ::: moniker range="<= aspnetcore-2.0"
 
@@ -78,24 +78,11 @@ dotnet build
 
 运行该应用程序中，选择**注册**链接，并注册用户。 在此情况下，电子邮件的唯一验证是使用[[EmailAddress]](/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute)属性。 提交后注册，登录到应用程序。 更高版本在本教程中，以便验证其电子邮件之前，新用户无法登录。 更新代码。
 
-## <a name="view-the-identity-database"></a>查看标识数据库
-
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
-
-* 从**视图**菜单中，选择**SQL Server 对象资源管理器**(SSOX)。
-* 导航到 **(localdb) MSSQLLocalDB (SQL Server 13)**。 右键单击**dbo。AspNetUsers** > **查看数据**:
-
-![在 AspNetUsers 表中 SQL Server 对象资源管理器的上下文菜单](accconfirm/_static/ssox.png)
+[!INCLUDE[](~/includes/view-identity-db.md)]
 
 请注意此表的`EmailConfirmed`字段是`False`。
 
 您可能想要再次在下一步中使用此电子邮件，该应用将发送确认电子邮件时。 右键单击行并选择**删除**。 删除电子邮件别名便于您在以下步骤。
-
-# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
-
-请参阅[ASP.NET Core MVC 项目中使用的 SQLite](xref:tutorials/first-mvc-app-xplat/working-with-sql)有关说明如何查看 SQLite 数据库。
-
-------
 
 <a name="prevent-login-at-registration"></a>
 ## <a name="require-email-confirmation"></a>需要电子邮件确认
@@ -113,8 +100,6 @@ dotnet build
 ### <a name="configure-email-provider"></a>配置电子邮件提供商
 
 在本教程中， [SendGrid](https://sendgrid.com)用于发送电子邮件。 你需要一个 SendGrid 帐户和密钥用于发送电子邮件。 可以使用其他电子邮件提供商。 ASP.NET Core 2.x 包括`System.Net.Mail`，这允许你从你的应用程序发送电子邮件。 我们建议你使用 SendGrid 或另一个电子邮件服务发送电子邮件。 SMTP 很难保护并正确设置。
-
-[选项模式](xref:fundamentals/configuration/options)用于访问用户帐户和密钥设置。 有关详细信息，请参阅[配置](xref:fundamentals/configuration/index)。
 
 创建一个类来提取的安全电子邮件键。 对于此示例中，创建*Services/AuthMessageSenderOptions.cs*:
 
@@ -143,6 +128,8 @@ info: Successfully saved SendGridUser = RickAndMSFT to the secret store.
     "SendGridKey": "<key removed>"
   }
   ```
+ 
+有关详细信息，请参阅[选项模式](xref:fundamentals/configuration/options)并[配置](xref:fundamentals/configuration/index)。
 
 ### <a name="install-sendgrid"></a>安装 SendGrid
 

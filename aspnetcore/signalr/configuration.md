@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/31/2018
 uid: signalr/configuration
-ms.openlocfilehash: 32c0ad94fba09fa099c2ab4a6b1d6d79a5542d7f
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: eac1202828edbcd295d7e52aa424cd625ee70e34
+ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396057"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "39722459"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>ASP.NET Core SignalR 配置
 
@@ -234,7 +234,7 @@ let connection = new signalR.HubConnectionBuilder()
 | `Credentials` | 不可配置 * | 空 | 要与每个 HTTP 请求一起发送的凭据。 |
 | `CloseTimeout` | 不可配置 * | 5 秒 | 仅 Websocket。 最长时间之后关闭服务器以确认关闭请求等待客户端。 如果服务器不在此时间内收到结束时，客户端断开连接。 |
 | `Headers` | 不可配置 * | 空 | 附加 HTTP 标头要与每个 HTTP 请求一起发送的字典。 |
-| `HttpMessageHandlerFactory` | 不可配置 * | `null` | 一个委托，它可用于配置或替换`HttpMessageHandler`用于发送 HTTP 请求。 不用于 WebSocket 连接。 此委托必须返回一个非 null 值，并接收作为参数的默认值。 修改该默认值上的设置，返回它，或者返回完整的全新`HttpMessageHandler`实例。 |
+| `HttpMessageHandlerFactory` | 不可配置 * | `null` | 一个委托，它可用于配置或替换`HttpMessageHandler`用于发送 HTTP 请求。 不用于 WebSocket 连接。 此委托必须返回一个非 null 值，并接收作为参数的默认值。 修改该默认值上的设置，返回它，或者返回一个新`HttpMessageHandler`实例。 **时替换处理程序请务必复制你想要保留从提供的处理程序的设置，否则，配置的选项 （例如 Cookie 和标头） 不会应用于新的处理程序。** |
 | `Proxy` | 不可配置 * | `null` | 发送 HTTP 请求时要使用 HTTP 代理。 |
 | `UseDefaultCredentials` | 不可配置 * | `false` | 设置此布尔值，若要发送的 HTTP 和 Websocket 请求的默认凭据。 这使使用 Windows 身份验证。 |
 | `WebSocketConfiguration` | 不可配置 * | `null` | 一个委托，可用于配置更多的 WebSocket 选项。 接收的实例[ClientWebSocketOptions](/dotnet/api/system.net.websockets.clientwebsocketoptions)可用于配置选项。 |
