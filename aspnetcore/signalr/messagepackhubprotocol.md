@@ -73,7 +73,7 @@ MessagePack 支持 Javascript 客户端提供的`@aspnet/signalr-protocol-msgpac
 npm install @aspnet/signalr-protocol-msgpack
 ```
 
-安装 npm 包之后, 该模块可以使用 JavaScript 模块加载程序通过直接或通过引用导入到浏览器*node_modules\\ @aspnet\signalr-protocol-msgpack\dist\browser\signalr-protocol-msgpack.js* 文件。 在浏览器中`msgpack5`还必须引用库。 使用`<script>`标记创建的引用。 可以在找到的库*node_modules\msgpack5\dist\msgpack5.js*。
+安装 npm 包之后, 该模块可以使用 JavaScript 模块加载程序通过直接或通过引用导入到浏览器 *node_modules\\@aspnet\signalr-protocol-msgpack\dist\browser\signalr-protocol-msgpack.js* 文件。 在浏览器中`msgpack5`还必须引用库。 使用`<script>`标记创建的引用。 可以在找到的库*node_modules\msgpack5\dist\msgpack5.js*。
 
 > [!NOTE]
 > 当使用`<script>`元素的顺序非常重要。 如果*signalr 协议 msgpack.js*引用之前*msgpack5.js*，尝试使用 MessagePack 连接时出错。 *signalr.js*也需要前*signalr 协议 msgpack.js*。
