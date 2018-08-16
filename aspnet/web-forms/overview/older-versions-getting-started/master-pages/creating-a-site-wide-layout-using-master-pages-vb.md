@@ -10,7 +10,7 @@ msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/c
 msc.type: authoredcontent
 ms.openlocfilehash: 182f45c28dc37633b429fead333d401818299e36
 ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/05/2018
 ms.locfileid: "37827817"
@@ -53,7 +53,7 @@ ms.locfileid: "37827817"
 
 ## <a name="understanding-how-master-pages-work"></a>了解如何母版页的工作原理
 
-构建具有一致的站点级页面布局的网站，要求每个网页发出除了其自定义内容的常见格式设置标记。 例如，www.asp.net 上的每个教程或论坛帖子有自己唯一的内容，而每个这些页面还呈现了一系列常见`<div>`显示顶级部分链接的元素： 主页、 入门、 学习、 等等。
+构建具有一致的站点级页面布局的网站，要求每个网页发出除了其自定义内容的常见格式设置标记。 例如， www.asp.net 上的每个教程或论坛帖子有自己唯一的内容，而每个这些页面还呈现了一系列常见`<div>`显示顶级部分链接的元素： 主页、 入门、 学习、 等等。
 
 有各种用于创建具有一致的外观的网页的技术。 一个幼稚的做法是只需复制并粘贴到所有网页的常见布局标记，但这种方法有许多缺点。 对于初学者而言，每次创建一个新页面时，您必须记住复制并粘贴到页的共享的内容。 此类复制和粘贴操作是错误的时机已经成熟，因为你可能会意外地将共享标记的一个子集复制到新页。 从而为了彻底，这种方法使用新建一个真正的困难因为每个站点中的单个页面必须编辑才能使用新的外观和感觉替换现有的网站的外观。
 
@@ -117,9 +117,9 @@ ms.locfileid: "37827817"
 `DOCTYPE`和下会显示在页面的声明性标记`@Master`指令。 此页包含四个服务器端控件以及静态 HTML:
 
 - **Web 窗体 ( `<form runat="server">`)** -因为所有 ASP.NET 页面通常具有 Web 窗体的因为主页面可能包含必须出现在 Web 窗体的 Web 控件，所以一定要将 Web 窗体添加到主页面 （而不是将 Web 窗体添加到 e支票内容页）。
-- **一个名为 ContentPlaceHolder 控件`ContentPlaceHolder1`**  -此 ContentPlaceHolder 控件将显示在 Web 窗体，并作为内容页面的用户界面的区域。
+- **一个名为 ContentPlaceHolder 控件`ContentPlaceHolder1` ** -此 ContentPlaceHolder 控件将显示在 Web 窗体，并作为内容页面的用户界面的区域。
 - **服务器端`<head>`元素**-`<head>`元素具有`runat="server"`属性，使其可通过服务器端代码访问。 `<head>`元素实现这种方式，以便页面的标题和其他`<head>`的相关标记可能添加或以编程方式调整。 例如，设置 ASP.NET 页的`Title`属性更改`<title>`元素呈现的`<head>`服务器控件。
-- **一个名为 ContentPlaceHolder 控件`head`**  -此 ContentPlaceHolder 控件出现在`<head>`服务器控件，并可用于以声明方式将内容添加到`<head>`元素。
+- **一个名为 ContentPlaceHolder 控件`head` ** -此 ContentPlaceHolder 控件出现在`<head>`服务器控件，并可用于以声明方式将内容添加到`<head>`元素。
 
 此默认母版页声明性标记作为一个起始点，在设计主页面。 随时编辑 HTML 或将其他 Web 控件或 Contentplaceholder 添加到母版页。
 
@@ -165,7 +165,7 @@ ms.locfileid: "37827817"
 
 ## <a name="step-2-creating-associated-content-pages"></a>步骤 2： 创建关联的内容页
 
-与创建母版页，我们就可以开始创建绑定到母版页的 ASP.NET 页。 此类页面嘿 *内容页*。
+与创建母版页，我们就可以开始创建绑定到母版页的 ASP.NET 页。 这些页面称为*内容页面*。
 
 让我们向项目添加新的 ASP.NET 页面并将其绑定到`Site.master`母版页。 右键单击解决方案资源管理器中的项目名称并选择添加新项选项。 选择 Web 窗体模板中，输入名称`About.aspx`，然后选中"选择母版页"复选框，如图 7 中所示。 执行此操作将显示选择母版页对话框框中，您可以从中选择要使用的母版页的 （请参阅图 8）。
 

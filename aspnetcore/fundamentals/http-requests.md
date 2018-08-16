@@ -5,14 +5,14 @@ description: 了解如何将 IHttpClientFactory 接口用于管理 ASP.NET Core 
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 07/23/2018
+ms.date: 08/07/2018
 uid: fundamentals/http-requests
-ms.openlocfilehash: 87424eaea499ba7ece1e5ef88649fcbb2e297635
-ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
+ms.openlocfilehash: dd217cfed230ea92c31eeed64ec19838032dd224
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39320650"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655227"
 ---
 # <a name="initiate-http-requests"></a>启动 HTTP 请求
 
@@ -20,7 +20,7 @@ ms.locfileid: "39320650"
 
 可以注册 [IHttpClientFactory](/dotnet/api/system.net.http.ihttpclientfactory) 并将其用于配置和创建应用中的 [HttpClient](/dotnet/api/system.net.http.httpclient) 实例。 这能带来以下好处：
 
-* 提供一个中心位置，用于命名和配置逻辑 `HttpClient` 实例。 例如，可以注册一个“github”客户端，将其配置为访问 GitHub。 可以注册一个默认客户端用于其他用途。
+* 提供一个中心位置，用于命名和配置逻辑 `HttpClient` 实例。 例如，可以注册 github 客户端，并将它配置为访问 GitHub。 可以注册一个默认客户端用于其他用途。
 * 通过委托 `HttpClient` 中的处理程序整理出站中间件的概念，并提供适用于基于 Polly 的中间件的扩展来利用概念。
 * 管理基础 `HttpClientMessageHandler` 实例的池和生存期，避免在手动管理 `HttpClient` 生存期时出现常见的 DNS 问题。
 * （通过 `ILogger`）添加可配置的记录体验，以处理工厂创建的客户端发送的所有请求。
@@ -52,15 +52,15 @@ ms.locfileid: "39320650"
 
 [!code-csharp[](http-requests/samples/Pages/BasicUsage.cshtml.cs?name=snippet1&highlight=9-12,20)]
 
-以这种方式使用 `IHttpClientFactory` 非常适合重构现有应用。 这不会影响 `HttpClient` 的使用方式。 在当前创建 `HttpClient` 实例的位置，使用对 `CreateClient` 的调用替换这些匹配项。
+以这种方式使用 `IHttpClientFactory` 非常适合重构现有应用。 这不会影响 `HttpClient` 的使用方式。 在当前创建 `HttpClient` 实例的位置上，通过调用 [CreateClient](/dotnet/api/system.net.http.ihttpclientfactory.createclient) 替换出现的这些实例。
 
 ### <a name="named-clients"></a>命名客户端
 
-如果应用需要区别使用多个 `HttpClient`（每个的配置都不同），可以选择使用“命名客户端”。 可以在 `HttpClient` 中注册时指定命名 `Startup.ConfigureServices` 的配置。
+如果应用需要有许多不同的 `HttpClient` 用法（每种用法的配置都不同），可以视情况使用命名客户端。 可以在 `HttpClient` 中注册时指定命名 `Startup.ConfigureServices` 的配置。
 
 [!code-csharp[](http-requests/samples/Startup.cs?name=snippet2)]
 
-上述代码调用了 `AddHttpClient`，并提供名称“github”。 此客户端应用了一些默认配置，也就是需要基址和两个标头来使用 GitHub API。
+上面的代码调用 `AddHttpClient`，同时提供名称“github”。 此客户端应用了一些默认配置，也就是需要基址和两个标头来使用 GitHub API。
 
 每次调用 `CreateClient` 时，都会创建 `HttpClient` 的新实例，并调用配置操作。
 
@@ -161,13 +161,13 @@ public class ValuesController : ControllerBase
 
 [!code-csharp[Main](http-requests/samples/Handlers/ValidateHeaderHandler.cs?name=snippet1)]
 
-上述代码定义了基本处理程序。 它会在遇到请求时检查是否包括 X-API-KEY 标头。 如果标头缺失，它可以避免 HTTP 调用，并返回合适的响应。
+上述代码定义了基本处理程序。 它检查请求中是否包含 `X-API-KEY` 头。 如果标头缺失，它可以避免 HTTP 调用，并返回合适的响应。
 
-在注册期间可将一个或多个标头添加到 `HttpClient` 的配置。 此任务通过 `IHttpClientBuilder` 上的扩展方法完成。
+在注册期间可将一个或多个标头添加到 `HttpClient` 的配置。 此任务通过 [IHttpClientBuilder](/dotnet/api/microsoft.extensions.dependencyinjection.ihttpclientbuilder) 的扩展方法完成。
 
 [!code-csharp[](http-requests/samples/Startup.cs?name=snippet5)]
 
-在上述代码中通过 DI 注册了 `ValidateHeaderHandler`。 处理程序必须在 DI 中注册为临时处理程序。 注册后可以调用 `AddHttpMessageHandler`，传入标头的类型。
+在上述代码中通过 DI 注册了 `ValidateHeaderHandler`。 处理程序必须在 DI 中注册为临时处理程序。 注册后，即可调用 [AddHttpMessageHandler](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.addhttpmessagehandler)，同时传入头类型。
 
 可以按处理程序应该执行的顺序注册多个处理程序。 每个处理程序都会覆盖下一个处理程序，直到最终 `HttpClientHandler` 执行请求：
 
@@ -185,7 +185,7 @@ public class ValuesController : ControllerBase
 
 ### <a name="handle-transient-faults"></a>处理临时故障
 
-在执行外部 HTTP 调用时，最可能遇到的故障是临时故障。 包含了一种简便的扩展方法，该方法名为 `AddTransientHttpErrorPolicy`，允许定义策略来处理临时故障。 使用这种扩展方法配置的策略可以处理 `HttpRequestException`、HTTP 5xx 响应以及 HTTP 408 响应。
+大多数常见错误在暂时执行外部 HTTP 调用时发生。 包含了一种简便的扩展方法，该方法名为 `AddTransientHttpErrorPolicy`，允许定义策略来处理临时故障。 使用这种扩展方法配置的策略可以处理 `HttpRequestException`、HTTP 5xx 响应以及 HTTP 408 响应。
 
 `AddTransientHttpErrorPolicy` 扩展可在 `Startup.ConfigureServices` 内使用。 该扩展可以提供 `PolicyBuilder` 对象的访问权限，该对象配置为处理表示可能的临时故障的错误：
 
@@ -215,29 +215,33 @@ public class ValuesController : ControllerBase
 
 [!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet10)]
 
-在上述代码中，将 PolicyRegistry 添加到了 `ServiceCollection`，并使用它注册了两个策略。 要使用注册表中的策略，请使用 `AddPolicyHandlerFromRegistry` 方法传递要应用的策略的名称。
+在上面的代码中，两个策略在 `PolicyRegistry` 添加到 `ServiceCollection` 中时进行注册。 若要使用注册表中的策略，请使用 `AddPolicyHandlerFromRegistry` 方法，同时传递要应用的策略的名称。
 
 要进一步了解 `IHttpClientFactory` 和 Polly 集成，请参考 [Polly Wiki](https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory)。
 
 ## <a name="httpclient-and-lifetime-management"></a>HttpClient 和生存期管理
 
-每次在 `IHttpClientFactory` 上调用 `CreateClient` 都会返回一个新的 `HttpClient` 实例。 每个命名客户端都会有一个 `HttpMessageHandler`。 `IHttpClientFactory` 将汇集工厂创建的 `HttpMessageHandler` 实例，以减少资源消耗。 如果 `HttpMessageHandler` 实例的生存期尚未过期，那么在创建新的 `HttpClient` 实例时，可能会从池中重用该实例。 
+每次对 `IHttpClientFactory` 调用 `CreateClient` 都会返回一个新 `HttpClient` 实例。 每个命名客户端都有一个 [HttpMessageHandler](/dotnet/api/system.net.http.httpmessagehandler)。 `IHttpClientFactory` 将工厂创建的 `HttpMessageHandler` 实例汇集到池中，以减少资源消耗。 新建 `HttpClient` 实例时，可能会重用池中的 `HttpMessageHandler` 实例（如果生存期尚未到期的话）。
 
-由于每个处理程序通常都管理自己的基础 HTTP 连接，所以有必要汇集处理程序；创建的处理程序数量如果多于必需的数量，则可能导致连接延迟。 部分处理程序还保持连接无期限地打开，这样可以防止处理程序对 DNS 更改作出反应。
+由于每个处理程序通常管理自己的基础 HTTP 连接，因此需要池化处理程序。 创建超出必要数量的处理程序可能会导致连接延迟。 部分处理程序还保持连接无期限地打开，这样可以防止处理程序对 DNS 更改作出反应。
 
-处理程序的默认生存期为两分钟。 可在每个命名客户端上重写默认值。 要重写该值，请在创建客户端时在返回的 `IHttpClientBuilder` 上调用 `SetHandlerLifetime`：
+处理程序的默认生存期为两分钟。 可在每个命名客户端上重写默认值。 若要替代值，请对创建客户端时返回的 `IHttpClientBuilder` 调用 [SetHandlerLifetime](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.sethandlerlifetime)：
 
 [!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet11)]
 
+无需处置客户端。 处置既取消传出请求，又保证在调用 [Dispose](/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose) 后无法使用给定的 `HttpClient` 实例。 `IHttpClientFactory` 跟踪和处置 `HttpClient` 实例使用的资源。 `HttpClient` 实例通常可视为无需处置的 .NET 对象。
+
+保持各个 `HttpClient` 实例长时间处于活动状态是在 `IHttpClientFactory` 推出前使用的常见模式。 迁移到 `IHttpClientFactory` 后，就无需再使用此模式。
+
 ## <a name="logging"></a>日志记录
 
-通过 `IHttpClientFactory` 创建的客户端记录所有请求的日志消息。 你将需要在日志记录配置中启用合适的信息级别，从而查看默认日志消息。 仅在跟踪级别包含附加日志记录（例如请求标头的日志记录）。
+通过 `IHttpClientFactory` 创建的客户端记录所有请求的日志消息。 在日志记录配置中启用合适的信息级别可以查看默认日志消息。 仅在跟踪级别包含附加日志记录（例如请求标头的日志记录）。
 
-用于每个客户端的日志类别包含客户端名称。 例如，名为“MyNamedClient”的客户端会使用 `System.Net.Http.HttpClient.MyNamedClient.LogicalHandler` 类别记录消息。 请求处理程序管道的外部会出现带有“LogicalHandler”后缀的消息。 在请求时，在管道中的任何其他处理程序处理请求之前记录消息。 在响应时，在任何其他管道处理程序接收响应之后记录消息。
+用于每个客户端的日志类别包含客户端名称。 例如，名为“MyNamedClient”的客户端使用 `System.Net.Http.HttpClient.MyNamedClient.LogicalHandler` 类别来记录消息。 后缀为 LogicalHandler 的消息在请求处理程序管道外部发生。 在请求时，在管道中的任何其他处理程序处理请求之前记录消息。 在响应时，在任何其他管道处理程序接收响应之后记录消息。
 
-在请求处理程序管道内部也会进行日志记录。 在“MyNamedClient”的例子中，针对日志类别 `System.Net.Http.HttpClient.MyNamedClient.ClientHandler` 记录了这些消息。 在请求时，在所有其他处理程序运行后，以及刚好在通过网络发出请求之前记录消息。 在响应时，此日志记录包含响应在通过处理程序管道被传递回去之前的状态。
+日志记录还在请求处理程序管道内部发生。 在“MyNamedClient”示例中，这些消息是针对日志类别 `System.Net.Http.HttpClient.MyNamedClient.ClientHandler` 进行记录。 在请求时，在所有其他处理程序运行后，以及刚好在通过网络发出请求之前记录消息。 在响应时，此日志记录包含响应在通过处理程序管道被传递回去之前的状态。
 
-在管道内外启用日志记录，可以检查其他管道处理程序所作的更改。 例如，其中可能包含对请求标头的更改，或者对响应状态代码的更改。
+在管道内外启用日志记录，可以检查其他管道处理程序做出的更改。 例如，其中可能包含对请求标头的更改，或者对响应状态代码的更改。
 
 通过在日志类别中包含客户端名称，可以在必要时对特定的命名客户端筛选日志。
 
@@ -245,6 +249,6 @@ public class ValuesController : ControllerBase
 
 控制客户端使用的内部 `HttpMessageHandler` 的配置是有必要的。
 
-在添加命名客户端或类型化客户端时，会返回 `IHttpClientBuilder`。 `ConfigurePrimaryHttpMessageHandler` 扩展方法可以用于定义委托。 委托用于创建和配置客户端使用的主要 `HttpMessageHandler`：
+在添加命名客户端或类型化客户端时，会返回 `IHttpClientBuilder`。 [ConfigurePrimaryHttpMessageHandler](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.configureprimaryhttpmessagehandler) 扩展方法可用于定义委托。 委托用于创建和配置客户端使用的主要 `HttpMessageHandler`：
 
 [!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet12)]

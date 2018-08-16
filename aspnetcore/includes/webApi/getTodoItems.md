@@ -39,7 +39,7 @@
 ]
 ```
 
-稍后将在本教程中演示如何使用 [Postman](https://www.getpostman.com/) 或 [curl](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/curl.1.html) 查看 HTTP 响应。
+稍后将在本教程中演示如何使用 [Postman](https://www.getpostman.com/) 或 [curl](https://curl.haxx.se/docs/manpage.html) 查看 HTTP 响应。
 
 ### <a name="routing-and-url-paths"></a>路由和 URL 路径
 

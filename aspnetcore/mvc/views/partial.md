@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/06/2018
 uid: mvc/views/partial
-ms.openlocfilehash: 7cb20fc30609adad83cb40e91316da115817f035
-ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
+ms.openlocfilehash: 2223f3c6e42927def4b91ff9da58c228e5904756
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39378678"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655318"
 ---
 # <a name="partial-views-in-aspnet-core"></a>ASP.NET Core 中的分部视图
 
@@ -35,7 +35,7 @@ ASP.NET Core 支持分部视图。 分部视图用于在不同视图之间共享
 
 在由多个逻辑部分组成的复杂页面中，将每个部分用作它自己的分部视图十分有用。 在页面的其余部分可以单独查看页面的每个部分。 页面本身的视图会变得更简单，因为它仅包含整体页面结构，并且通过调用来呈现分部视图。
 
-ASP.NET Core MVC 控制器具有从操作方法调用的 [PartialView](/dotnet/api/microsoft.aspnetcore.mvc.controller.partialview#Microsoft_AspNetCore_Mvc_Controller_PartialView) 方法。 Razor Pages 没有任何等效的 `PartialView` 方法。
+ASP.NET Core MVC 控制器具有从操作方法调用的 [PartialView](/dotnet/api/microsoft.aspnetcore.mvc.controller.partialview#Microsoft_AspNetCore_Mvc_Controller_PartialView) 方法。 Razor Pages 在 [PageModel](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel) 上没有等效的 `PartialView` 方法。
 
 ## <a name="declare-partial-views"></a>声明分部视图
 

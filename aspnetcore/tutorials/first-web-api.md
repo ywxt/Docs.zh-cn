@@ -1,19 +1,19 @@
 ---
-title: 使用 ASP.NET Core 和 Visual Studio for Windows 创建 Web API
+title: 使用 ASP.NET Core 和 Visual Studio 创建 Web API
 author: rick-anderson
-description: 使用 ASP.NET Core MVC 和 Visual Studio for Windows 生成 Web API
+description: 在 Windows 上使用 ASP.NET Core MVC 和 Visual Studio 生成 Web API
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/17/2018
 uid: tutorials/first-web-api
-ms.openlocfilehash: 3da22cbbbe0db7771656997a13587521e182fb2a
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 2694388324cdbd246aad6c88d8439171704dfe89
+ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38164595"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "39722511"
 ---
-# <a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-windows"></a>使用 ASP.NET Core 和 Visual Studio for Windows 创建 Web API
+# <a name="create-a-web-api-with-aspnet-core-and-visual-studio"></a>使用 ASP.NET Core 和 Visual Studio 创建 Web API
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT) 和 [Mike Wasson](https://github.com/mikewasson)
 
@@ -21,7 +21,7 @@ ms.locfileid: "38164595"
 
 本教程提供 3 个版本：
 
-* Windows：使用 Visual Studio for Windows 创建 Web API（本教程）
+* Windows：在 Windows 上使用 Visual Studio 创建 Web API（本教程）
 * macOS：[使用 Visual Studio for Mac 创建 Web API](xref:tutorials/first-web-api-mac)
 * macOS、Linux、Windows：[使用 Visual Studio Code 创建 Web API](xref:tutorials/web-api-vsc)
 
