@@ -117,9 +117,9 @@ ms.locfileid: "37827817"
 `DOCTYPE`和下会显示在页面的声明性标记`@Master`指令。 此页包含四个服务器端控件以及静态 HTML:
 
 - **Web 窗体 ( `<form runat="server">`)** -因为所有 ASP.NET 页面通常具有 Web 窗体的因为主页面可能包含必须出现在 Web 窗体的 Web 控件，所以一定要将 Web 窗体添加到主页面 （而不是将 Web 窗体添加到 e支票内容页）。
-- **一个名为 ContentPlaceHolder 控件`ContentPlaceHolder1` ** -此 ContentPlaceHolder 控件将显示在 Web 窗体，并作为内容页面的用户界面的区域。
+- **一个名为 ContentPlaceHolder 控件`ContentPlaceHolder1`**  -此 ContentPlaceHolder 控件将显示在 Web 窗体，并作为内容页面的用户界面的区域。
 - **服务器端`<head>`元素**-`<head>`元素具有`runat="server"`属性，使其可通过服务器端代码访问。 `<head>`元素实现这种方式，以便页面的标题和其他`<head>`的相关标记可能添加或以编程方式调整。 例如，设置 ASP.NET 页的`Title`属性更改`<title>`元素呈现的`<head>`服务器控件。
-- **一个名为 ContentPlaceHolder 控件`head` ** -此 ContentPlaceHolder 控件出现在`<head>`服务器控件，并可用于以声明方式将内容添加到`<head>`元素。
+- **一个名为 ContentPlaceHolder 控件`head`**  -此 ContentPlaceHolder 控件出现在`<head>`服务器控件，并可用于以声明方式将内容添加到`<head>`元素。
 
 此默认母版页声明性标记作为一个起始点，在设计主页面。 随时编辑 HTML 或将其他 Web 控件或 Contentplaceholder 添加到母版页。
 
