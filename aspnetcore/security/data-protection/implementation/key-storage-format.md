@@ -63,7 +63,7 @@ ms.locfileid: "39219272"
 
 ## <a name="the-encryptedsecret-element"></a>\<EncryptedSecret > 元素
 
-**&lt;EncryptedSecret&gt;** 元素，其中包含的密钥材料的加密的形式可能会显示如果[启用加密的机密的静态](xref:security/data-protection/implementation/key-encryption-at-rest)。 该属性`decryptorType`实现的类型的程序集限定名称[IXmlDecryptor](/dotnet/api/microsoft.aspnetcore.dataprotection.xmlencryption.ixmldecryptor)。 此类型负责读取内部**&lt;encryptedKey&gt;** 元素，并对其恢复原始的纯文本进行解密。
+**&lt;EncryptedSecret&gt;** 元素，其中包含的密钥材料的加密的形式可能会显示如果[启用加密的机密的静态](xref:security/data-protection/implementation/key-encryption-at-rest)。 该属性`decryptorType`实现的类型的程序集限定名称[IXmlDecryptor](/dotnet/api/microsoft.aspnetcore.dataprotection.xmlencryption.ixmldecryptor)。 此类型负责读取内部 **&lt;encryptedKey&gt;** 元素，并对其恢复原始的纯文本进行解密。
 
 如同\<描述符 >，特定的格式<encryptedSecret>元素取决于正在使用的静态加密机制。 在上述示例中，每个注释使用 Windows DPAPI 对主密钥进行加密。
 
