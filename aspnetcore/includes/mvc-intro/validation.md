@@ -6,7 +6,7 @@
 
 ## <a name="keeping-things-dry"></a>坚持 DRY 原则
 
-MVC 的设计原则之一是 [DRY](https://wikipedia.org/wiki/Don%27t_repeat_yourself)（“不要自我重复”）。 ASP.NET MVC 支持你仅指定一次功能或行为，然后使它应用到整个应用中。 这可以减少所需编写的代码量，并使编写的代码更少出错，更易于测试和维护。
+MVC 的设计原则之一是 [DRY](https://wikipedia.org/wiki/Don%27t_repeat_yourself)（“不要自我重复”）。 ASP.NET Core MVC 支持你仅指定一次功能或行为，然后使它应用到整个应用中。 这可以减少所需编写的代码量，并使编写的代码更少出错，更易于测试和维护。
 
 MVC 和 Entity Framework Core Code First 提供的验证支持是 DRY 原则在实际操作中的极佳示例。 可以在一个位置（模型类中）以声明方式指定验证规则，并且在应用中的所有位置强制执行。
 
@@ -25,7 +25,7 @@ MVC 和 Entity Framework Core Code First 提供的验证支持是 DRY 原则在�
 
 验证特性指定要对应用这些特性的模型属性强制执行的行为。 `Required` 和 `MinimumLength` 特性表示属性必须有值；但用户可输入空格来满足此验证。 `RegularExpression` 特性用于限制可输入的字符。 在上述代码中，`Genre` 和 `Rating` 必须使用纯字母（禁用首字母大写、空格、数字和特殊字符）。 `Range` 特性将值限制在指定范围内。 `StringLength` 特性使你能够设置字符串属性的最大长度，以及可选的最小长度。 从本质上来说，需要值类型（如 `decimal`、`int`、`float`、`DateTime`），但不需要 `[Required]` 特性。
 
-让 ASP.NET 强制自动执行验证规则有助于提升应用的可靠性。 同时它能确保你无法忘记验证某些内容，并防止你无意中将错误数据导入数据库。
+让 ASP.NET Core 强制自动执行验证规则有助于提升你的应用的可靠性。 同时它能确保你无法忘记验证某些内容，并防止你无意中将错误数据导入数据库。
 
 ## <a name="validation-error-ui-in-mvc"></a>MVC 中的验证错误 UI
 

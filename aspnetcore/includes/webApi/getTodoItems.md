@@ -6,7 +6,12 @@
 ::: moniker range=">= aspnetcore-2.1"
 [!code-csharp[](../../tutorials/first-web-api/samples/2.1/TodoApi/Controllers/TodoController2.cs?name=snippet_todo1)]
 
-前面的代码定义了没有方法的 API 控制器类。 在接下来的部分中，将添加方法来实现 API。 采用 `[ApiController]` 特性批注类，以启用一些方便的功能。 若要详细了解由这些特性启用的功能，请参阅[使用 ApiControllerAttribute 批注类](xref:web-api/index#annotate-class-with-apicontrollerattribute)。
+前面的代码：
+
+* 定义了没有方法的 API 控制器类。
+* 当 `TodoItems` 为空时创建一个新的 Todo 项。 无法删除所有 Todo 项，因为当 `TodoItems` 为空时，构造函数将创建一个新的 Todo 项。
+
+在接下来的部分中，将添加方法来实现 API。 采用 `[ApiController]` 特性批注类，以启用一些方便的功能。 若要详细了解由这些特性启用的功能，请参阅[使用 ApiControllerAttribute 批注类](xref:web-api/index#annotate-class-with-apicontrollerattribute)。
 ::: moniker-end
 
 控制器的构造函数使用[依赖关系注入](xref:fundamentals/dependency-injection)将数据库上下文 (`TodoContext`) 注入到控制器中。 数据库上下文将在控制器中的每个 [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) 方法中使用。 构造函数将一个项（如果不存在）添加到内存数据库。

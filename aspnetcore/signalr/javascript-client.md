@@ -9,7 +9,7 @@ ms.date: 05/29/2018
 uid: signalr/javascript-client
 ms.openlocfilehash: c13c41b0344b0c880e842f2799d6ee97bd7fff7e
 ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/17/2018
 ms.locfileid: "39095419"
@@ -31,7 +31,7 @@ ASP.NET Core SignalR JavaScript 客户端库，开发人员可以调用服务器
    npm install @aspnet/signalr
   ```
 
-Npm 安装中的包内容*node_modules\\ @aspnet\signalr\dist\browser* 文件夹。 创建一个名为的新文件夹*signalr*下*wwwroot\\lib*文件夹。 复制*signalr.js*的文件*wwwroot\lib\signalr*文件夹。
+Npm 安装中的包内容 *node_modules\\@aspnet\signalr\dist\browser* 文件夹。 创建一个名为的新文件夹 *signalr*下*wwwroot\\lib*文件夹。 复制 *signalr.js* 的文件 *wwwroot\lib\signalr* 文件夹。
 
 ## <a name="use-the-signalr-javascript-client"></a>使用 SignalR JavaScript 客户端
 

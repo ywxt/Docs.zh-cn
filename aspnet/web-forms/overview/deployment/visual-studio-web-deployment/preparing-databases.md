@@ -10,7 +10,7 @@ msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/prepa
 msc.type: authoredcontent
 ms.openlocfilehash: a9ddeda3bfe4315c835cd447f6178669797dceb2
 ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/05/2018
 ms.locfileid: "37803186"
@@ -168,7 +168,7 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和窗体身份验证
 将对在测试环境和生产用户到过渡和生产部署开发用户。 为此，你将在本教程中，一个用于开发，一个用于生产环境中，创建两个 SQL 脚本，并在更高版本的教程中，你将配置发布过程来运行它们。
 
 > [!NOTE]
-> 成员资格数据库将存储帐户密码的哈希值。 若要部署从一台计算机到另一个帐户，必须确保哈希例程不生成目标服务器上的不同哈希值不是它们在源计算机上执行。 它们会生成相同的哈希时使用了 ASP.NET 通用提供程序，只要不更改默认的算法。 默认的算法是 HMACSHA256 和中指定**验证**的属性**[machineKey](https://msdn.microsoft.com/library/system.web.configuration.machinekeysection.aspx)** Web.config 文件中的元素。
+> 成员资格数据库将存储帐户密码的哈希值。 若要部署从一台计算机到另一个帐户，必须确保哈希例程不生成目标服务器上的不同哈希值不是它们在源计算机上执行。 它们会生成相同的哈希时使用了 ASP.NET 通用提供程序，只要不更改默认的算法。 默认的算法是 HMACSHA256 和中指定**验证**的属性 **[machineKey](https://msdn.microsoft.com/library/system.web.configuration.machinekeysection.aspx)** Web.config 文件中的元素。
 
 
 使用 SQL Server Management Studio (SSMS)，或使用第三方工具，可以手动创建数据部署脚本。 本教程的余下内容将显示如何在 SSMS 中，但如果不想要安装并使用 SSMS 可以从项目的完整版本获取脚本并跳到您的解决方案文件夹中将其存储的部分。
