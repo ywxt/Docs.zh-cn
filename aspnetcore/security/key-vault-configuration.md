@@ -5,12 +5,12 @@ description: 了解如何使用 Azure 密钥保管库配置提供程序来配置
 ms.author: riande
 ms.date: 08/01/2018
 uid: security/key-vault-configuration
-ms.openlocfilehash: 6474b9f5cb9e441854565a7891c4aac7f781c810
-ms.sourcegitcommit: 571d76fbbff05e84406b6d909c8fe9cbea2c8ff1
+ms.openlocfilehash: 829c6c7e2750879b51bf3ce8225c6e472900f2ad
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39410125"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825832"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>在 ASP.NET Core 的 azure 密钥保管库配置提供程序
 
@@ -155,7 +155,7 @@ Configuration.Reload();
 
 ## <a name="troubleshooting"></a>疑难解答
 
-如果应用程序无法加载使用提供程序的配置，一条错误消息写入到[ASP.NET 日志记录基础结构](xref:fundamentals/logging/index)。 以下条件下将不加载配置：
+如果应用程序无法加载使用提供程序的配置，一条错误消息写入到[ASP.NET Core 日志记录基础结构](xref:fundamentals/logging/index)。 以下条件下将不加载配置：
 
 * 应用未正确配置 Azure Active Directory 中。
 * 密钥保管库不存在于 Azure 密钥保管库。

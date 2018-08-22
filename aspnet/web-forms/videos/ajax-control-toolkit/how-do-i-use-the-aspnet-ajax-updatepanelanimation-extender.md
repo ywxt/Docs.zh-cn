@@ -3,17 +3,17 @@ uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-updatepa
 title: '[如何实现:]使用 ASP.NET AJAX UpdatePanelAnimation 扩展器？ | Microsoft Docs'
 author: JoeStagner
 description: 通过将动画添加到我们可以通知用户有更新时出现，以及时的部分页面更新它已完成。 UpdatePanelAnimation 扩展器...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2007
 ms.assetid: 56f5ec0f-38f7-4ebc-90d9-9baf0c693bd4
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender
 msc.type: video
-ms.openlocfilehash: 7acb260f39cd78de67a79855fab256e76fd5df48
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3245db2c98e894b4489f186e12ce87c4acacdf29
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822922"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41826623"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender"></a>[如何实现:]使用 ASP.NET AJAX UpdatePanelAnimation 扩展器？
 ====================

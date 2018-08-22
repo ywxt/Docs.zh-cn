@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scen
 title: 部署在企业方案中使用的 Visual Studio 2010 的 Web 应用程序 |Microsoft Docs
 author: jrjlee
 description: 本教程系列介绍工具和技术可用于部署各种企业方案中的 web 应用程序。 其中介绍了如何以充分利用...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/03/2012
 ms.assetid: 48cfe378-d62a-48c6-a4db-6be3cead6898
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: b55aeb863694ca3ac71f2a1a46d11981e178dcb4
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: fa06538dcd9e087df52a76588e084a527867bf84
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816582"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823577"
 ---
 <a name="deploying-web-applications-in-enterprise-scenarios-using-visual-studio-2010"></a>部署在企业方案中使用的 Visual Studio 2010 的 Web 应用程序
 ====================

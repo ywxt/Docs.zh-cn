@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/custom-formatting/using-templatefields-in-th
 title: 在 DetailsView 控件 (C#) 中使用 Templatefield |Microsoft Docs
 author: rick-anderson
 description: 使用 GridView 提供的相同 Templatefield 功能，还提供与 DetailsView 控件。 在本教程中我们将显示一个产品...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 83efb21f-b231-446e-9356-f4c6cbcc6713
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a6467f6532ff72a82f4f416de2286377766ea264
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 47c486737a3320bea631605621baac54dc6d257a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823957"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824882"
 ---
 <a name="using-templatefields-in-the-detailsview-control-c"></a>在 DetailsView 控件 (C#) 中使用 Templatefield
 ====================

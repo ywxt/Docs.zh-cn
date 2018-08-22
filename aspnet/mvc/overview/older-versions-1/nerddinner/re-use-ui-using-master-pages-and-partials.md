@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-p
 title: 重复使用 UI 使用母版页和部分 |Microsoft Docs
 author: microsoft
 description: 步骤 7 中我们的视图模板以消除代码重复，使用分部视图模板和母版页探讨我们可以将应用 DRY 原则的方式。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: d4243a4a-e91c-4116-9ae0-5c08e5285677
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
 msc.type: authoredcontent
-ms.openlocfilehash: 961378d6d710c678a0cd223a5c31544f014ace7f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0da32e6ac38f10df6e581517989b3b1fd2f2328c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839589"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830210"
 ---
 <a name="re-use-ui-using-master-pages-and-partials"></a>重复使用 UI 使用母版页和部分
 ====================

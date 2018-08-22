@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-retrieve-values-from-server-side-ajax
 title: '[如何实现:]从服务器端 AJAX 控件检索值 |Microsoft Docs'
 author: JoeStagner
 description: 在本视频中，我将演示如何从 AJAX 工具包中找到类似的服务器端 AJAX 控件检索值。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/21/2008
 ms.assetid: 9d770bb5-fd76-4ae9-a11b-9783f394a24f
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-retrieve-values-from-server-side-ajax-controls
 msc.type: video
-ms.openlocfilehash: 6d03c429336e66eec58d8f3e547b173f42e7351d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6911f167b16e3caa1bf942d454f0aacd583383d7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828977"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825814"
 ---
 <a name="how-do-i-retrieve-values-from-server-side-ajax-controls"></a>[如何实现:]从服务器端 AJAX 控件检索值
 ====================

@@ -5,12 +5,12 @@ description: 了解如何配置 ASP.NET Core标识的自定义存储提供程序
 ms.author: riande
 ms.date: 05/24/2017
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 7fb64f0b911c11750946697d782488c2107a3637
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 4b210a52ae9761bb838dd5611e86ce8f71345499
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342518"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41826035"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core标识的自定义的存储提供程序
 
@@ -237,5 +237,5 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="references"></a>参考资料
 
-- [ASP.NET 标识的自定义存储提供程序](/aspnet/identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity)
+- [ASP.NET 4.x 标识的自定义存储提供程序](/aspnet/identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity)
 - [ASP.NET Core标识](https://github.com/aspnet/identity)-此存储库包含指向社区维护存储提供程序。

@@ -3,17 +3,17 @@ uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-password
 title: '[如何实现:]使用 ASP.NET AJAX PasswordStrength 扩展程序吗？ | Microsoft Docs'
 author: JoeStagner
 description: 了解如何 PasswordStrength 扩展程序控件到有关他们所选的密码的强度的用户提供即时和动态的反馈。 反馈 c 中...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/01/2007
 ms.assetid: 4acc8d48-845f-4451-8a83-0d6d935c4564
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-passwordstrength-extender
 msc.type: video
-ms.openlocfilehash: 639e7ef3d3a7547ca7e1bc4e6d7634540bc8d17d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 588a7b4c11e74c794d81e203cf4c252dc11f3370
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806943"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827032"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-passwordstrength-extender"></a>[如何实现:]使用 ASP.NET AJAX PasswordStrength 扩展程序吗？
 ====================

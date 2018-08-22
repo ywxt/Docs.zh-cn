@@ -3,17 +3,17 @@ uid: mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 title: 分析和调试使用 Glimpse 对 ASP.NET MVC 应用程序 |Microsoft Docs
 author: Rick-Anderson
 description: Glimpse 是一个蓬勃发展和不断增加的开源 NuGet 包提供了详细的性能的系列内容，调试和诊断信息的 ASP.NET...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/26/2015
 ms.assetid: c205805f-efdd-4fa7-9616-f26eab180611
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: 4d044217d6c33594b39747a765165b8702338027
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f5d174ff6823d654a24dcb2c90f10a3cbd24f1e7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808536"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827040"
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>分析和调试使用 Glimpse 对 ASP.NET MVC 应用程序
 ====================

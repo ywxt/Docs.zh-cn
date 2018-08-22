@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/nerddinner/create-a-new-aspnet-mvc-project
 title: 创建一个新的 ASP.NET MVC 项目 |Microsoft Docs
 author: microsoft
 description: 步骤 1 说明了如何制定基本 NerdDinner 应用程序结构。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: 7e0e9928-8fdc-4b74-9882-55fac0976628
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/create-a-new-aspnet-mvc-project
 msc.type: authoredcontent
-ms.openlocfilehash: 88ef850503725cc57c92a11952729b4bd2205a69
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3f34f17aa35dbfed2d52daf615c8dc81be6e7847
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37835072"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825813"
 ---
 <a name="create-a-new-aspnet-mvc-project"></a>创建一个新的 ASP.NET MVC 项目
 ====================

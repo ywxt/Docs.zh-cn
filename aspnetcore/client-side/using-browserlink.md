@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 09/22/2017
 uid: client-side/using-browserlink
-ms.openlocfilehash: 5ab15c841c472e6c9d47bad70fcf5e0c6dc3010f
-ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
+ms.openlocfilehash: 452ba5149563c186750466f471c7b950f0017614
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37894174"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830223"
 ---
 # <a name="browser-link-in-aspnet-core"></a>在 ASP.NET Core 中的浏览器链接
 
@@ -139,7 +139,7 @@ if (env.IsDevelopment())
 
 ## <a name="how-it-works"></a>其工作原理
 
-浏览器链接使用 SignalR 创建 Visual Studio 和浏览器之间的通信通道。 启用浏览器链接后，Visual Studio 将充当多个客户端 （浏览器） 可以连接到的 SignalR 服务器。 浏览器链接还会在 ASP.NET 请求管道中注册中间件组件。 此组件将注入特殊`<script>`到每个页面请求来自服务器的引用。 您可以通过选择查看脚本引用**查看源**浏览器并滚动到末尾`<body>`标记的内容：
+浏览器链接使用 SignalR 创建 Visual Studio 和浏览器之间的通信通道。 启用浏览器链接后，Visual Studio 将充当多个客户端 （浏览器） 可以连接到的 SignalR 服务器。 浏览器链接还会在 ASP.NET Core 请求管道中注册中间件组件。 此组件将注入特殊`<script>`到每个页面请求来自服务器的引用。 您可以通过选择查看脚本引用**查看源**浏览器并滚动到末尾`<body>`标记的内容：
 
 ```html
     <!-- Visual Studio Browser Link -->

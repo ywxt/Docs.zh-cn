@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/caching-data/caching-data-in-the-architectur
 title: 缓存体系结构 (VB) 中的数据 |Microsoft Docs
 author: rick-anderson
 description: 上一教程中我们介绍了如何将应用在表示层缓存。 在本教程中，我们将了解如何充分利用我们分层 architectu...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/30/2007
 ms.assetid: 5e189dd7-f4f9-4f28-9b3a-6cb7d392e9c7
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a8431c2b516a1a41f1d096b1bdb1071cc8a5ab66
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 45a717f9b68a1465d3446b06358a062f6b640c9e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37835364"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41826229"
 ---
 <a name="caching-data-in-the-architecture-vb"></a>在体系结构 (VB) 中缓存数据
 ====================

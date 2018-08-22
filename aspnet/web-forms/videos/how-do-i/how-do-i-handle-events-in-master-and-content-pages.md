@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-handle-events-in-master-and-content-page
 title: '[如何实现:]在母版页和内容页中处理事件 |Microsoft Docs'
 author: rick-anderson
 description: 在本视频 Chris Pels 将演示如何在 master 和各个内容页中处理的事件。 即使主和各个 conte 的最终结果...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/21/2008
 ms.assetid: 9b5f1ca6-b394-4b33-8b60-fd0587341482
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-handle-events-in-master-and-content-pages
 msc.type: video
-ms.openlocfilehash: 97eb3aa4c02ec5cdaf2a401050ca9e9f3aff8cbf
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5f1711aed761c012663a2c3c17623eddbf53a99b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37809205"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41826223"
 ---
 <a name="how-do-i-handle-events-in-master-and-content-pages"></a>[如何实现:]在母版页和内容页中处理事件
 ====================

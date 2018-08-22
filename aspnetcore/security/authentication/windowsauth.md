@@ -1,67 +1,76 @@
 ---
 title: 在 ASP.NET Core 中配置 Windows 身份验证
 author: ardalis
-description: 本文介绍如何在 ASP.NET Core 上使用 IIS Express、 IIS、 HTTP.sys，和 WebListener 中配置 Windows 身份验证。
+description: 本文介绍如何在使用 IIS Express、 IIS、 HTTP.sys 和 WebListener 的 ASP.NET Core 中配置 Windows 身份验证。
 ms.author: riande
-ms.date: 10/24/2017
+ms.date: 08/18/2018
 uid: security/authentication/windowsauth
-ms.openlocfilehash: d3fdf8534e92ea306c2fef7bc4fda6d644c7d911
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 93b1a1de74ef6554d48709b04870f7e23738846b
+ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276206"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41826648"
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>在 ASP.NET Core 中配置 Windows 身份验证
 
 作者：[Steve Smith](https://ardalis.com) 和 [Scott Addie](https://twitter.com/Scott_Addie)
 
-Windows 身份验证可以配置用于与 IIS 托管的 ASP.NET Core 应用[HTTP.sys](xref:fundamentals/servers/httpsys)，或[WebListener](xref:fundamentals/servers/weblistener)。
+承载有 IIS、 ASP.NET Core 应用可以配置 Windows 身份验证[HTTP.sys](xref:fundamentals/servers/httpsys)，或[WebListener](xref:fundamentals/servers/weblistener)。
 
-## <a name="what-is-windows-authentication"></a>什么是 Windows 身份验证？
+## <a name="windows-authentication"></a>Windows 身份验证
 
-Windows 身份验证依赖于操作系统的 ASP.NET Core 应用的用户进行身份验证。 在使用 Active Directory 域标识或其他 Windows 帐户来标识用户的企业网络上运行你的服务器时，你可以使用 Windows 身份验证。 Windows 身份验证是最适合 intranet 环境中的用户、 客户端应用程序和 web 服务器属于同一 Windows 域。
+Windows 身份验证依赖于操作系统的 ASP.NET Core 应用的用户进行身份验证。 使用 Active Directory 域标识或其他 Windows 帐户标识的用户在公司网络上运行你的服务器时，可以使用 Windows 身份验证。 Windows 身份验证是最适合于 intranet 环境中的用户、 客户端应用程序和 web 服务器属于同一个 Windows 域。
 
-[了解有关 Windows 身份验证和为 IIS 安装](/iis/configuration/system.webServer/security/authentication/windowsAuthentication/)。
+[了解有关 Windows 身份验证的详细信息，并为 IIS 安装](/iis/configuration/system.webServer/security/authentication/windowsAuthentication/)。
 
-## <a name="enable-windows-authentication-in-an-aspnet-core-app"></a>启用 ASP.NET Core 应用程序中的 Windows 身份验证
+## <a name="enable-windows-authentication-in-an-aspnet-core-app"></a>启用 Windows 身份验证在 ASP.NET Core 应用
 
-Visual Studio Web 应用程序模板可以配置为支持 Windows 身份验证。
+Visual Studio Web 应用程序模板可配置为支持 Windows 身份验证。
 
 ### <a name="use-the-windows-authentication-app-template"></a>使用 Windows 身份验证应用程序模板
 
 在 Visual Studio 中：
-1. 创建新的 ASP.NET Core Web 应用程序。 
+
+1. 创建新的 ASP.NET Core Web 应用程序。
 1. 从模板列表中选择 Web 应用程序。
-1. 选择**更改身份验证**按钮，然后选择**Windows 身份验证**。 
+1. 选择**更改身份验证**按钮，然后选择**Windows 身份验证**。
 
-运行应用。 用户名已显示在顶部的应用程序的权限。
+运行应用。 用户名将显示在顶部的应用程序。
 
-![Windows 身份验证浏览器屏幕快照](windowsauth/_static/browser-screenshot.png)
+![Windows 身份验证浏览器屏幕截图](windowsauth/_static/browser-screenshot.png)
 
-对于使用 IIS Express 的开发工作，该模板提供所有使用 Windows 身份验证所需的配置。 以下部分说明如何手动配置 Windows 身份验证的 ASP.NET Core 应用。
+对于使用 IIS Express 的开发工作，该模板提供使用 Windows 身份验证所需的所有配置。 以下部分介绍如何手动配置 Windows 身份验证的 ASP.NET Core 应用。
 
-### <a name="visual-studio-settings-for-windows-and-anonymous-authentication"></a>为 Windows 以及匿名身份验证的 visual Studio 设置
+### <a name="visual-studio-settings-for-windows-and-anonymous-authentication"></a>Windows 和匿名身份验证的 visual Studio 设置
 
-Visual Studio 项目**属性**页面的**调试**选项卡为 Windows 身份验证和匿名身份验证提供的复选框。
+Visual Studio 项目**属性**页的**调试**选项卡提供有关 Windows 身份验证和匿名身份验证的复选框。
 
-![Windows 身份验证浏览器屏幕快照](windowsauth/_static/vs-auth-property-menu.png)
+![Windows 身份验证浏览器屏幕截图](windowsauth/_static/vs-auth-property-menu.png)
 
-或者，在中配置这两个属性*launchSettings.json*文件：
+或者，可以在配置这两个属性*launchSettings.json*文件：
 
 [!code-json[](windowsauth/sample/launchSettings.json?highlight=3-4)]
 
-## <a name="enable-windows-authentication-with-iis"></a>启用与 IIS 的 Windows 身份验证
+## <a name="enable-windows-authentication-with-iis"></a>启用与 IIS Windows 身份验证
 
-IIS 使用[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)到承载 ASP.NET Core 应用程序。 该模块将允许 Windows 身份验证流到 IIS 中，默认情况下。 在 IIS 中，不应用配置了 Windows 身份验证。 以下部分说明如何使用 IIS 管理器来配置 ASP.NET Core 应用以使用 Windows 身份验证。
+IIS 使用[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)到承载 ASP.NET Core 应用程序。 在 IIS 中，不应用配置 Windows 身份验证。 以下部分说明如何使用 IIS 管理器配置为使用 Windows 身份验证的 ASP.NET Core 应用。
 
-### <a name="create-a-new-iis-site"></a>创建一个新的 IIS 站点
+### <a name="iis-configuration"></a>IIS 配置
 
-指定名称和文件夹，并允许它创建新的应用程序池。
+启用 Windows 身份验证的 IIS 角色服务。 有关详细信息，请参阅[IIS 角色服务 （请参阅步骤 2） 中启用 Windows 身份验证](xref:host-and-deploy/iis/index#iis-configuration)。
+
+默认情况下，IIS 集成中间件配置为自动进行身份验证请求。 有关详细信息，请参阅[使用 IIS 的 Windows 上托管 ASP.NET Core: IIS 选项 (AutomaticAuthentication)](xref:host-and-deploy/iis/index#iis-options)。
+
+默认情况下，ASP.NET Core 模块配置为转发到应用的 Windows 身份验证令牌。 有关详细信息，请参阅[ASP.NET Core 模块配置参考： aspNetCore 元素的特性](xref:host-and-deploy/aspnet-core-module#attributes-of-the-aspnetcore-element)。
+
+### <a name="create-a-new-iis-site"></a>创建新的 IIS 站点
+
+指定的名称和文件夹，并允许它创建新的应用程序池。
 
 ### <a name="customize-authentication"></a>自定义身份验证
 
-打开身份验证菜单上的站点。
+打开该站点的身份验证功能。
 
 ![IIS 身份验证菜单](windowsauth/_static/iis-authentication-menu.png)
 
@@ -69,52 +78,62 @@ IIS 使用[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)到
 
 ![IIS 身份验证设置](windowsauth/_static/iis-auth-settings.png)
 
-### <a name="publish-your-project-to-the-iis-site-folder"></a>将你的项目发布到 IIS 站点文件夹
+### <a name="publish-your-project-to-the-iis-site-folder"></a>将你的项目发布到 IIS 的站点文件夹
 
 使用 Visual Studio 或.NET Core CLI，将应用发布到目标文件夹。
 
 ![Visual Studio 发布对话框](windowsauth/_static/vs-publish-app.png)
 
-详细了解[发布到 IIS](xref:host-and-deploy/iis/index)。
+详细了解如何[发布到 IIS](xref:host-and-deploy/iis/index)。
 
-启动应用程序来验证使用 Windows 身份验证。
+启动应用程序以验证 Windows 身份验证正常工作。
 
-## <a name="enable-windows-authentication-with-httpsys-or-weblistener"></a>启用 Windows 身份验证与 HTTP.sys 或 WebListener
+::: moniker range=">= aspnetcore-2.0"
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+## <a name="enable-windows-authentication-with-httpsys"></a>启用 Windows 身份验证使用 HTTP.sys
 
-尽管 Kestrel 不支持 Windows 身份验证，你可以使用[HTTP.sys](xref:fundamentals/servers/httpsys)以在 Windows 上支持自承载的方案。 下面的示例将配置应用程序的 web 主机 HTTP.sys 用于 Windows 身份验证：
+虽然 Kestrel 不支持 Windows 身份验证，您可以使用[HTTP.sys](xref:fundamentals/servers/httpsys)以在 Windows 上支持自承载的方案。 下面的示例配置以使用 Windows 身份验证使用 HTTP.sys 的应用程序的 web 主机：
 
 [!code-csharp[](windowsauth/sample/Program2x.cs?highlight=9-14)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+> [!NOTE]
+> HTTP.sys 内核模式身份验证使用 Kerberos 身份验证协议的代理。 使用 Kerberos 和 HTTP.sys 不支持用户模式身份验证。 必须用于解密 Kerberos 令牌/票证从 Active Directory 中获取和转发客户端向服务器进行身份验证用户的计算机帐户。 对于主机，不应用的用户注册服务主体名称 (SPN)。
 
-尽管 Kestrel 不支持 Windows 身份验证，你可以使用[WebListener](xref:fundamentals/servers/weblistener)以在 Windows 上支持自承载的方案。 下面的示例将配置应用程序的 web 主机 WebListener 用于 Windows 身份验证：
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+## <a name="enable-windows-authentication-with-weblistener"></a>启用与 WebListener 的 Windows 身份验证
+
+虽然 Kestrel 不支持 Windows 身份验证，您可以使用[WebListener](xref:fundamentals/servers/weblistener)以在 Windows 上支持自承载的方案。 下面的示例配置应用程序的 web 主机，若要将 WebListener 与 Windows 身份验证：
 
 [!code-csharp[](windowsauth/sample/Program1x.cs?highlight=6-11)]
 
----
+> [!NOTE]
+> WebListener 委托给内核模式身份验证使用 Kerberos 身份验证协议。 使用 Kerberos 和 WebListener 不支持用户模式身份验证。 必须用于解密 Kerberos 令牌/票证从 Active Directory 中获取和转发客户端向服务器进行身份验证用户的计算机帐户。 对于主机，不应用的用户注册服务主体名称 (SPN)。
+
+::: moniker-end
 
 ## <a name="work-with-windows-authentication"></a>使用 Windows 身份验证
 
-匿名访问的配置状态确定的方式`[Authorize]`和`[AllowAnonymous]`特性用于应用程序中。 以下两节介绍如何处理的匿名访问权限不允许的和允许配置状态。
+匿名访问的配置状态确定的方式`[Authorize]`和`[AllowAnonymous]`应用中使用属性。 以下两个部分介绍如何处理的匿名访问权限的禁止和允许配置状态。
 
 ### <a name="disallow-anonymous-access"></a>不允许匿名访问
 
-当启用了 Windows 身份验证并且禁用了匿名访问，`[Authorize]`和`[AllowAnonymous]`属性产生任何影响。 如果 IIS 站点 （或 HTTP.sys 或 WebListener 服务器） 配置为不允许匿名访问，请求将永远不会到达你的应用程序。 为此，`[AllowAnonymous]`属性不适用。
+启用 Windows 身份验证，并且禁用了匿名访问，则`[Authorize]`和`[AllowAnonymous]`特性不起作用。 如果 IIS 站点 （或 HTTP.sys 或 WebListener 服务器） 配置为不允许匿名访问，请求将永远不会到达您的应用程序。 出于此原因，`[AllowAnonymous]`属性不适用。
 
 ### <a name="allow-anonymous-access"></a>允许匿名访问
 
-当启用了 Windows 身份验证和匿名访问时，使用`[Authorize]`和`[AllowAnonymous]`属性。 `[Authorize]`属性允许你保护的应用程序的部分，真正需要 Windows 身份验证。 `[AllowAnonymous]`特性重写`[Authorize]`属性中允许匿名访问的应用程序的使用情况。 请参阅[简单授权](xref:security/authorization/simple)对于特性用法的详细信息。
+启用 Windows 身份验证和匿名访问，使用`[Authorize]`和`[AllowAnonymous]`属性。 `[Authorize]`属性允许你保护部分，该应用程序的真正需要 Windows 身份验证。 `[AllowAnonymous]`特性重写`[Authorize]`特性允许匿名访问的应用中的使用情况。 请参阅[简单授权](xref:security/authorization/simple)属性使用情况详细信息。
 
-在 ASP.NET Core 2.x，`[Authorize]`属性要求中的其他配置*Startup.cs*质询对于 Windows 身份验证的匿名请求。 建议的配置略有根据正在使用的 web 服务器而有所不同。
+在 ASP.NET Core 2.x，请`[Authorize]`属性需要进行额外配置中的*Startup.cs*以进行 Windows 身份验证质询匿名请求。 建议的配置略有根据正在使用的 web 服务器而异。
 
 > [!NOTE]
-> 默认情况下，缺少授权可访问的页面的用户出现了空的 HTTP 403 响应。 [StatusCodePages 中间件](xref:fundamentals/error-handling#configuring-status-code-pages)可以配置为用户提供更好的"拒绝访问"体验。
+> 默认情况下，缺少授权可访问的页面的用户会显示 HTTP 403 响应为空。 [StatusCodePages 中间件](xref:fundamentals/error-handling#configuring-status-code-pages)可以配置为向用户提供更好的"拒绝访问"体验。
 
 #### <a name="iis"></a>IIS
 
-如果使用 IIS，添加到以下`ConfigureServices`方法： 
+如果使用 IIS，添加以下代码到`ConfigureServices`方法：
 
 ```csharp
 // IISDefaults requires the following import:
@@ -124,7 +143,7 @@ services.AddAuthentication(IISDefaults.AuthenticationScheme);
 
 #### <a name="httpsys"></a>HTTP.sys
 
-如果使用 HTTP.sys，添加到以下`ConfigureServices`方法：
+如果使用 HTTP.sys，添加以下代码到`ConfigureServices`方法：
 
 ```csharp
 // HttpSysDefaults requires the following import:
@@ -134,10 +153,8 @@ services.AddAuthentication(HttpSysDefaults.AuthenticationScheme);
 
 ### <a name="impersonation"></a>Impersonation
 
-ASP.NET Core 未实现模拟。 使用应用程序池或进程标识的所有请求的应用程序标识使用运行应用。 如果你需要显式执行代表用户操作，使用`WindowsIdentity.RunImpersonated`。 在此上下文中运行的单个操作，然后关闭上下文。
+ASP.NET Core 未实现模拟。 应用程序运行具有使用应用程序池或进程标识的所有请求的应用程序标识。 如果您需要显式执行代表用户操作，使用`WindowsIdentity.RunImpersonated`。 在此上下文中运行的单个操作，然后关闭上下文。
 
 [!code-csharp[](windowsauth/sample/Startup.cs?name=snippet_Impersonate&highlight=10-18)]
 
-请注意，`RunImpersonated`不支持异步操作，并且不应可用于复杂的方案。 例如，包装整个请求或中间件链不受支持或建议。
-
----
+请注意，`RunImpersonated`不支持异步操作，不应该用于复杂的方案。 例如，包装整个请求或中间件链不受支持或推荐的。

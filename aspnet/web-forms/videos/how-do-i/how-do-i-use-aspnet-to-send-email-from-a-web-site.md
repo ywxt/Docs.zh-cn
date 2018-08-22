@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-use-aspnet-to-send-email-from-a-web-site
 title: '[如何实现:]使用 ASP.NET 从网站发送电子邮件 |Microsoft Docs'
 author: rick-anderson
 description: 在此视频的 Chris Pels 演示如何创建并在 ASP.NET 网站中发送一封电子邮件。 首先，了解有关 System.Net.Mail 命名空间 f 中的核心类...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/28/2008
 ms.assetid: 97f7323a-efc6-4e32-9a16-b011ed2a781b
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-aspnet-to-send-email-from-a-web-site
 msc.type: video
-ms.openlocfilehash: 4f06fe1a831aa96b1cac5735887c6c6cb889783c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 27f38e2638533928031d00da53692d50ab1e98cb
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838185"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827245"
 ---
 <a name="how-do-i-use-aspnet-to-send-email-from-a-web-site"></a>[如何实现:]使用 ASP.NET 从网站发送电子邮件
 ====================

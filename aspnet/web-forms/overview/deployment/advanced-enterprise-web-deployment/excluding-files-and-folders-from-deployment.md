@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-
 title: 从部署中排除文件和文件夹 |Microsoft Docs
 author: jrjlee
 description: 本主题介绍如何您可以排除文件和文件夹从 web 部署包时生成并打包 web 应用程序项目。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: f4cc2d40-6a78-429b-b06f-07d000d4caad
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 33eecfea86842a93eac705e7823f1eba9519670e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: fd7357a94ab09effcec86f3725a37cfb2ef4746a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816666"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41826027"
 ---
 <a name="excluding-files-and-folders-from-deployment"></a>从部署中排除文件和文件夹
 ====================

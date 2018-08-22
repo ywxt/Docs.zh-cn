@@ -3,17 +3,17 @@ uid: identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-
 title: ASP.NET 标识： 使用 MySQL 存储通过 EntityFramework MySQL 提供程序 (C#) |Microsoft Docs
 author: maumar
 description: 本教程演示如何将 ASP.NET 标识的默认数据存储机制 EntityFramework （SQL 客户端提供程序） 替换为使用 MySQL 签约...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/10/2013
 ms.assetid: 15253312-a92c-43ba-908e-b5dacd3d08b8
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 13cb1d9a862429bfb4e20a8d9700fc17eb721c6b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3856b40b31a3deb6ad1c6c5d2cd678e183f012d7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812670"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41826617"
 ---
 <a name="aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider-c"></a>ASP.NET 标识： 使用 EntityFramework MySQL 提供程序 (C#) 使用 MySQL 存储
 ====================
@@ -71,7 +71,7 @@ ms.locfileid: "37812670"
   
    [单击以下图像以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image14.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image13.png)
-4. 在中**新建 ASP.NET 项目**对话框中，选择**MVC** templatewith 默认选项; 这会配置**单个用户帐户**作为身份验证方法。 单击**确定**:  
+4. 在中**新建 ASP.NET 项目**对话框中，选择**MVC** templatewith 默认选项; 这会配置**单个用户帐户**作为身份验证方法。 单击“确定”：  
   
    [单击以下图像以将其展开。 ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image16.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image15.png)

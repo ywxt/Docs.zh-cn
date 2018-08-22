@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-detect-browser-capabilities-in-aspnet-we
 title: '[如何实现:]在 ASP.NET Web Pages 中检测浏览器功能 |Microsoft Docs'
 author: rick-anderson
 description: 在此视频 Chris Pels 将演示如何确定用户的浏览器后，在 ASP.NET 网站中查看页面时哪些功能。 首先，了解如何 acc....
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/19/2008
 ms.assetid: aabfeabb-459e-4cfd-b067-44da3bbb291b
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-detect-browser-capabilities-in-aspnet-web-pages
 msc.type: video
-ms.openlocfilehash: 7b793dd06d32bfffdb94a7d3815dacdd4c997704
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 72fbc9836138b7792a5447d9efa5fee6038b57b5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842418"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41826222"
 ---
 <a name="how-do-i-detect-browser-capabilities-in-aspnet-web-pages"></a>[如何实现:]在 ASP.NET Web Pages 检测浏览器功能
 ====================

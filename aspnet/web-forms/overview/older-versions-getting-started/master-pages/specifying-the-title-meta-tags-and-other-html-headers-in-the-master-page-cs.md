@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/master-pages/specifying-t
 title: 母版页 (C#) 中指定的标题、 元标记和其他 HTML 标头 |Microsoft Docs
 author: rick-anderson
 description: 在不同的技术来定义各种类型的看起来&lt;head&gt;主页面从内容页中的元素。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/21/2008
 ms.assetid: 0aa1c84f-c9e2-4699-b009-0e28643ecbc6
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 773d8aee55a3e685c9759f9a9e0b571564f8cd31
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e3846ea696a1a5a29fd53d6753878fab9dd9a95d
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37841006"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827244"
 ---
 <a name="specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-c"></a>母版页 (C#) 中指定的标题、 元标记和其他 HTML 标头
 ====================

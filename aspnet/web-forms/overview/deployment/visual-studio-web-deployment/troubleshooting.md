@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
 title: 使用 Visual Studio 的 ASP.NET Web 部署： 故障排除 |Microsoft Docs
 author: tdykstra
 description: 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure 应用服务 Web 应用或第三方托管提供商，通过使用...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/01/2015
 ms.assetid: c0090595-ab3b-4b9b-9e16-7a1891e8cb2f
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: b2be5d2f5aa0b7628f7b9338c860593660ef5893
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 65cd5cd9f7d1f9c5fdaea9b0d16bdfd84259efdd
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830887"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824887"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>使用 Visual Studio 的 ASP.NET Web 部署： 故障排除
 ====================

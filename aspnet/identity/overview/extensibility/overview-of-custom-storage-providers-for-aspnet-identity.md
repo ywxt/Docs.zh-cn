@@ -3,17 +3,17 @@ uid: identity/overview/extensibility/overview-of-custom-storage-providers-for-as
 title: 自定义存储提供程序的 ASP.NET 标识概述 |Microsoft Docs
 author: tfitzmac
 description: ASP.NET 标识是一个可扩展的系统，这样就可以创建自己的存储提供程序并将其插入到你的应用程序而无需重新处理应用...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/13/2014
 ms.assetid: 681a9204-462e-4260-9a0b-19f0644d6ad7
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 35c8986024279bf66f239dbd969fba5ca02f3d01
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c92084265ff821bcec25244195a3511b71714836
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831727"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823565"
 ---
 <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>ASP.NET 标识的自定义存储提供程序的概述
 ====================

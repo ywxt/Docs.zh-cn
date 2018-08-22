@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwater
 title: 通过验证控件 (C#) 使用 TextBoxWatermark |Microsoft Docs
 author: wenz
 description: AJAX 控件工具包中的 TextBoxWatermark 控件扩展的文本框中，使得在框中显示文本。 当用户单击到框中，它我...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: d49940cb-d38c-456a-b800-5f0eb705d09f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 144e4ee8f8096076b4e498844429ebf96e6ea402
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 35dd340ffce7b83303a44a0d6532ce73be5350f0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836183"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41826614"
 ---
 <a name="using-textboxwatermark-with-validation-controls-c"></a>使用 TextBoxWatermark 通过验证控件 (C#)
 ====================

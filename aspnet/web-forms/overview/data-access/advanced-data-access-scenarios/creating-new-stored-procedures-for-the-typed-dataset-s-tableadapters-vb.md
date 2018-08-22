@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-
 title: 创建新存储过程的类型化数据集的 Tableadapter (VB) |Microsoft Docs
 author: rick-anderson
 description: 在之前的教程中，我们有在我们的代码中创建 SQL 语句，并传递到数据库后，要执行的语句。 另一种方法是使用 s...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/18/2007
 ms.assetid: a5a4a9ba-d18d-489a-a6b0-a3c26d6b0274
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 601883ea0e0bbea08e564d77eea5ce7d19956cb7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: bc640564cfb67f0c1512bc7f4fae9ea7e6bc981f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829608"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824471"
 ---
 <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>创建新存储过程的类型化数据集的 Tableadapter (VB)
 ====================

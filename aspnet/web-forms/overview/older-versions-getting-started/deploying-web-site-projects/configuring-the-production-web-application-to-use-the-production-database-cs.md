@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: 配置生产 Web 应用程序以使用生产数据库 (C#) |Microsoft Docs
 author: rick-anderson
 description: 如之前教程中所述，它不是常见的配置信息以在开发和生产环境之间存在差异。 这是 es...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/23/2009
 ms.assetid: 0177dabd-d888-449f-91b2-24190cf5e842
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 559697a08200e43e955697a7ad8613f1a495c073
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e2560ae7a845c27f7fa5f420eaf1d89618397c60
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37803004"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823572"
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-c"></a>配置生产 Web 应用程序以使用生产数据库 (C#)
 ====================

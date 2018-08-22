@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/advanced-data-access-scenarios/configuring-t
 title: 配置数据访问层的连接和命令级别的设置 (C#) |Microsoft Docs
 author: rick-anderson
 description: 类型化数据集内的 Tableadapter 自动负责连接到数据库中，发出的命令，并填充 DataTable 与结果...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/03/2007
 ms.assetid: cd330dd9-6254-4305-9351-dd727384c83b
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 835f17c35d85658a855072bf6d9355fdae9f63ab
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 142c8e93422ac03d2f2205b6635f88b982b4c9e2
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837832"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830088"
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a>配置数据访问层的连接和命令级别的设置 (C#)
 ====================

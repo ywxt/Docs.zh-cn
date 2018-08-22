@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-ne
 title: 将新字段添加到电影模型和表 (C#) |Microsoft Docs
 author: Rick-Anderson
 description: 本教程将讲述构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/12/2011
 ms.assetid: b4e76c1a-f66e-43a0-aa72-f39df79c07c1
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 91b02f9991b714f8da2aa736c9ba5e58a7228350
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 62995c1b53dad12f4d9202333520080af9e71e1a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829067"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827253"
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-table-c"></a>将新字段添加到电影模型和表 (C#)
 ====================
@@ -50,7 +50,7 @@ ms.locfileid: "37829067"
 
 现在，已更新`Model`类，您还需要更新 *\Views\Movies\Index.cshtml* 并 *\Views\Movies\Create.cshtml* 查看模板以支持新`Rating`属性。
 
-打开 *\Views\Movies\Index.cshtml* 文件，并添加`<th>Rating</th>`列标题之后**价格**列。 然后添加`<td>`快要结束的模板来呈现列`@item.Rating`值。 下面是哪些更新*Index.cshtml*视图模板如下所示：
+打开 *\Views\Movies\Index.cshtml* 文件，并添加`<th>Rating</th>`列标题之后**价格**列。 然后添加`<td>`快要结束的模板来呈现列`@item.Rating`值。 下面是哪些更新 *Index.cshtml* 视图模板如下所示：
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample3.cshtml)]
 
@@ -72,7 +72,7 @@ ms.locfileid: "37829067"
 
 有两种方法解决此错误：
 
-1. 让 Entity Framework 自动丢弃，并基于新的模型类架构重新创建数据库。 这种方法是非常方便时执行活动开发上测试数据库，因为它允许您一起快速改进模型和数据库架构。 缺点，不过，是会丢失数据库中的现有数据，因此您*不*需要生产数据库上使用此方法 ！
+1. 让 Entity Framework 自动丢弃，并基于新的模型类架构重新创建数据库。 这种方法是非常方便时执行活动开发上测试数据库，因为它允许您一起快速改进模型和数据库架构。 缺点，不过，是会丢失数据库中的现有数据，因此您 *不* 需要生产数据库上使用此方法 ！
 2. 对现有数据库架构进行显式修改，使它与模型类相匹配。 此方法的优点是可以保留数据。 可以手动或通过创建数据库更改脚本进行此更改。
 
 对于本教程中，我们将使用第一种方法，您必须 Entity Framework Code First 每当模型发生更改自动重新创建该数据库。
@@ -83,10 +83,10 @@ ms.locfileid: "37829067"
 
 > [!NOTE] 
 > 
-> **警告**应该启用的自动删除并重新创建数据库，仅当你正在使用开发或测试数据库，这种方法和*永远不会*包含实际数据的生产数据库上。 使用生产服务器上可能会导致数据丢失。
+> **警告**应该启用的自动删除并重新创建数据库，仅当你正在使用开发或测试数据库，这种方法和 *永远不会* 包含实际数据的生产数据库上。 使用生产服务器上可能会导致数据丢失。
 
 
-在中**解决方案资源管理器**，右键单击*模型*文件夹，选择**添加**，然后选择**类**。
+在中**解决方案资源管理器**，右键单击 *模型* 文件夹，选择**添加**，然后选择**类**。
 
 ![](adding-a-new-field/_static/image2.png)
 
@@ -98,11 +98,11 @@ ms.locfileid: "37829067"
 
 现在，已定义`MovieInitializer`类，您需要其绑定，以便每次应用程序运行时，它检查是否不同于数据库中架构的模型类。 如果是，您可以运行初始值设定项来重新创建数据库以匹配该模型，然后使用示例数据在数据库中填充。
 
-打开*Global.asax*文件的根目录处`MvcMovies`项目：
+打开 *Global.asax* 文件的根目录处`MvcMovies`项目：
 
 [![](adding-a-new-field/_static/image4.png)](adding-a-new-field/_static/image3.png)
 
-*Global.asax*文件包含的类定义整个应用程序项目，并包含`Application_Start`运行该应用程序首次启动时的事件处理程序。
+*Global.asax* 文件包含的类定义整个应用程序项目，并包含`Application_Start`运行该应用程序首次启动时的事件处理程序。
 
 让我们来添加两个 using 语句的文件的顶部。 第一个引用实体框架命名空间，而第二个引用命名空间，我们`MovieInitializer`类生活：
 
@@ -114,7 +114,7 @@ ms.locfileid: "37829067"
 
 `Database.SetInitializer`刚添加的语句指示的数据库由`MovieDBContext`应自动删除并重新创建如果不匹配的架构和数据库实例。 如您所看到的它还会填充使用示例数据中指定的数据库和`MovieInitializer`类。
 
-关闭*Global.asax*文件。
+关闭 *Global.asax* 文件。
 
 重新运行该应用程序并导航到 */Movies* URL。 应用程序启动时，它会检测模型结构不能再与数据库架构相匹配。 自动重新创建数据库，以匹配新的模型结构，并填充该数据库示例电影：
 

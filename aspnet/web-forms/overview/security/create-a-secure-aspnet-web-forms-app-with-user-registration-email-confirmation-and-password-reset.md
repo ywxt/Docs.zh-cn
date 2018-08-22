@@ -3,17 +3,17 @@ uid: web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-
 title: 创建安全的 ASP.NET Web 窗体应用程序具有用户注册、 电子邮件确认及密码重置 (C#) |Microsoft Docs
 author: Erikre
 description: 本教程演示如何构建包含用户注册、 电子邮件确认和密码重置使用 ASP.NET 标识成员的 ASP.NET Web 窗体应用...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/02/2014
 ms.assetid: 0a8d6044-5fab-4213-82d6-5618d5601358
 msc.legacyurl: /web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 1c230c3f33bd8261312485e9d77f6f88adb49e9e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b964257165f8a50bef5cb5d8cee4fb30a5e91cf0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812764"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825828"
 ---
 <a name="create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset-c"></a>创建安全的 ASP.NET Web 窗体应用程序具有用户注册、 电子邮件确认及密码重置 (C#)
 ====================
@@ -87,7 +87,7 @@ ms.locfileid: "37812764"
     [!code-xml[Main](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset/samples/sample3.xml?highlight=2-5)]
 
     > [!WARNING]
-    > 安全性-永远不会存储在源代码中敏感数据。 在此示例中，帐户和凭据存储在**appSetting**一部分*Web.config*文件。 在 Azure 上，您可以安全地存储这些值在**[配置](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** 在 Azure 门户中的选项卡。 有关相关信息请参阅标题为 Rick Anderson 主题[的密码和其他敏感数据部署到 ASP.NET 和 Azure 最佳做法](https://go.microsoft.com/fwlink/?LinkId=513141)。
+    > 安全性-永远不会存储在源代码中敏感数据。 在此示例中，帐户和凭据存储在**appSetting**一部分*Web.config*文件。 在 Azure 上，您可以安全地存储这些值在 **[配置](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** 在 Azure 门户中的选项卡。 有关相关信息请参阅标题为 Rick Anderson 主题[的密码和其他敏感数据部署到 ASP.NET 和 Azure 最佳做法](https://go.microsoft.com/fwlink/?LinkId=513141)。
 6. 添加电子邮件服务值以反映你的 SendGrid 身份验证值 （用户名和密码），以便可以成功从应用发送电子邮件。 请务必使用你的 SendGrid 帐户名称而不是你提供 SendGrid 的电子邮件地址。
 
 ### <a name="enable-email-confirmation"></a>启用电子邮件确认

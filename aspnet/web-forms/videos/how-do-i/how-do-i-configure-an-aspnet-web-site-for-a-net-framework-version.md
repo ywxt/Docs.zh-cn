@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-configure-an-aspnet-web-site-for-a-net-f
 title: '[如何实现:]为.NET Framework 版本配置 ASP.NET 网站 |Microsoft Docs'
 author: rick-anderson
 description: 在此视频的 Chris Pels 将演示如何配置 ASP.NET 网站使用 ASP.NET/.NET Framework 的特定版本。 首先，请参阅如何识别哪些 v...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/20/2008
 ms.assetid: 7b814965-aae2-4436-941c-710804557b67
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-configure-an-aspnet-web-site-for-a-net-framework-version
 msc.type: video
-ms.openlocfilehash: 92b243b26f4cd6548c42611104dffe282c32c99d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 709f4e3993abed79d9f934668db6fee515089402
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840897"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41826019"
 ---
 <a name="how-do-i-configure-an-aspnet-web-site-for-a-net-framework-version"></a>[如何实现:]为.NET Framework 版本配置 ASP.NET 网站
 ====================
