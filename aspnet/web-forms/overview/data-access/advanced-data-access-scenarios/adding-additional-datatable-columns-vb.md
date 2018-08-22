@@ -10,7 +10,7 @@ msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/ad
 msc.type: authoredcontent
 ms.openlocfilehash: a36f7267591e01ac2bd552385eeb22e1fda68c6e
 ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/05/2018
 ms.locfileid: "37803228"
@@ -183,7 +183,7 @@ BLL 加准备就绪后，若要创建显示每个产品的价格四分位数的 
 
 
 > [!NOTE]
-> 少量的代码行我们无法提供了 GridView，以便着色产品列基于其`PriceQuartile`值。 我们可能会在第一个四分位数浅绿色，第二个四分位数淡黄色中的这些产品的颜色等。 建议您花点时间来添加此功能。 如果是这样，给我在行[ ](../custom-formatting/custom-formatting-based-upon-data-vb.md)。
+> 少量的代码行我们无法提供了 GridView，以便着色产品列基于其`PriceQuartile`值。 我们可能会在第一个四分位数浅绿色，第二个四分位数淡黄色中的这些产品的颜色等。 建议您花点时间来添加此功能。 如果是这样， [给我在行](../custom-formatting/custom-formatting-based-upon-data-vb.md) 。
 
 
 ## <a name="an-alternative-approach---creating-another-tableadapter"></a>一种替代方法-创建另一个 TableAdapter
