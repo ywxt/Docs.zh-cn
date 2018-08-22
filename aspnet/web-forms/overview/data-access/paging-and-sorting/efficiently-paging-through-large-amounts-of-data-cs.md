@@ -10,7 +10,7 @@ msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-pa
 msc.type: authoredcontent
 ms.openlocfilehash: bb10524e7973894ea60663da3813673742ae4ab4
 ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/05/2018
 ms.locfileid: "37825835"
@@ -160,7 +160,7 @@ DAL s`TotalNumberOfProducts`方法返回一个可以为 null 的整数; 但是�
 [!code-html[Main](efficiently-paging-through-large-amounts-of-data-cs/samples/sample6.html)]
 
 > [!NOTE]
-> 正如在本教程中，我们将看到的更高版本上*`StartRowIndex`* 提供的对象数据源编制索引的索引从零，开始而`ROW_NUMBER()`返回 SQL Server 2005 值编制索引的索引从 1 开始。 因此，`WHERE`子句将返回这些记录其中`PriceRank`严格大于*`StartRowIndex`* 且小于或等于*`StartRowIndex`*  + *`MaximumRows`*.
+> 正如在本教程中，我们将看到的更高版本上 *`StartRowIndex`* 提供的对象数据源编制索引的索引从零，开始而`ROW_NUMBER()`返回 SQL Server 2005 值编制索引的索引从 1 开始。 因此，`WHERE`子句将返回这些记录其中`PriceRank`严格大于 *`StartRowIndex`* 且小于或等于 *`StartRowIndex`*  + *`MaximumRows`*.
 
 
 现在，我们已讨论过如何`ROW_NUMBER()`可以是用于检索给定的起始行索引和最大行数的值的数据的特定页，我们现在需要实现此逻辑作为 DAL 和 BLL 中的方法。
