@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-understand-and-defend-against-script-inj
 title: 在 ASP.NET 中如何了解和抵御脚本注入攻击 |Microsoft Docs
 author: JoeStagner
 description: 跨站点脚本 (XSS) 可能是面向 web 开发人员来解决这些天最让人头痛的安全问题。 在此视频中，Microsoft 的 Joe Stagner pro...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/13/2009
 ms.assetid: 84c1e12c-2cc3-4bfe-bcc4-35381779a669
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-understand-and-defend-against-script-injection-attacks-in-aspnet
 msc.type: video
-ms.openlocfilehash: 972d3dfca2f8b62dbf9873f1a860cfc667a2c6d6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9ea6e644cc9edb5f52b15173288a602c535a3cbb
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834878"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830456"
 ---
 <a name="how-do-i-understand-and-defend-against-script-injection-attacks-in-aspnet"></a>在 ASP.NET 中如何了解和抵御脚本注入攻击
 ====================

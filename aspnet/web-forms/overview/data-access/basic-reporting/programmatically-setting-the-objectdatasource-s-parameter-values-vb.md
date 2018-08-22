@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/basic-reporting/programmatically-setting-the
 title: 以编程方式设置 ObjectDataSource 的参数值 (VB) |Microsoft Docs
 author: rick-anderson
 description: 在本教程中我们将介绍方法添加到我们的 DAL 和 BLL 接受一个输入的参数并返回数据。 该示例将设置此参数...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 0ecb03b6-52a0-4731-8c7a-436391d36838
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d779de4f5bd0d03f413237689e5a64330fcb491d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f823d1db7f98dcbbef12d20df4a28e39fae0ac26
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825777"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824230"
 ---
 <a name="programmatically-setting-the-objectdatasources-parameter-values-vb"></a>以编程方式设置 ObjectDataSource 的参数值 (VB)
 ====================

@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windo
 title: ASP.NET MVC 店面第 19a 部分： Windows 工作流跟踪 |Microsoft Docs
 author: robconery
 description: 在本集中我详细介绍了如何使用 Windows 工作流的后续和我介绍一些我剧集 19 收到的反馈。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/16/2008
 ms.assetid: 50ed58f9-f329-45a8-b8be-675040172072
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windows-workflow-followup
 msc.type: video
-ms.openlocfilehash: 19fd03147a4626bf092811ea22b4cdf9125e565d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: de22839d9434079c3872692383893c921111c2ed
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840373"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824240"
 ---
 <a name="aspnet-mvc-storefront-part-19a-windows-workflow-followup"></a>ASP.NET MVC 店面第 19a 部分： Windows 工作流跟踪
 ====================

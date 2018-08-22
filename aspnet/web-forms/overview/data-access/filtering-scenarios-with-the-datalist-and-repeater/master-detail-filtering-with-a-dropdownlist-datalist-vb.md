@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-re
 title: 使用 DropDownList (VB) 进行筛选母版/详细信息 |Microsoft Docs
 author: rick-anderson
 description: 在本教程中我们将了解如何使用 Dropdownlist 以显示用于显示 'master' 记录和 DataList 单个网页中显示母版/详细信息报表...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/18/2007
 ms.assetid: ad0f1014-1eff-465f-bdc6-93058de00e44
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e88a7459529e003b73ef5a42456de3501e3db461
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 13d67b3f4f2613c820baa3ec52d49ad6ea556f9d
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829316"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830647"
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>使用 DropDownList (VB) 进行筛选母版/详细信息
 ====================

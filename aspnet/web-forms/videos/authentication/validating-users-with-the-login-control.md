@@ -3,17 +3,17 @@ uid: web-forms/videos/authentication/validating-users-with-the-login-control
 title: 验证用户与登录控件 |Microsoft Docs
 author: JoeStagner
 description: 在此视频中，Joe Stagner 探讨了用户身份验证而不是，然后创建自定义窗体和调用 API 进行身份验证使用一种替代方法...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/22/2008
 ms.assetid: 6c11816b-504a-4512-b67e-9bd15947a7f8
 msc.legacyurl: /web-forms/videos/authentication/validating-users-with-the-login-control
 msc.type: video
-ms.openlocfilehash: 35aa776fd87a7ebc411f5dde1d675660c459328d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0415f48dcf40541ef1b6144ed3e91c757a28075a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37835690"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824843"
 ---
 <a name="validating-users-with-the-login-control"></a>验证用户与登录控件
 ====================

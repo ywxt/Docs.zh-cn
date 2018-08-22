@@ -3,17 +3,17 @@ uid: web-api/overview/security/authentication-and-authorization-in-aspnet-web-ap
 title: 身份验证和 ASP.NET Web API 中的授权 |Microsoft Docs
 author: MikeWasson
 description: ASP.NET Web API 中提供身份验证和授权的一般的概述。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/27/2012
 ms.assetid: 6dfb51ea-9f4d-4e70-916c-8ef8344a88d6
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f882a9bb2922d0eb28eee7cdba0896bdc5318c2a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a78606a74b2149e68e3b01f4fe204f4a13edf4b5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812829"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830043"
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a>身份验证和 ASP.NET Web API 中的授权
 ====================
@@ -117,6 +117,6 @@ Web API 提供了内置的授权筛选器， [AuthorizeAttribute](https://msdn.m
 
 ### <a name="authorization-inside-a-controller-action"></a>在控制器操作中的授权
 
-在某些情况下，可能允许继续，但更改行为基于主体的请求。 例如，返回的信息可能会更改具体取决于用户的角色。 在控制器方法中，可以获取从当前的原则**ApiController.User**属性。
+在某些情况下，可能允许继续，但更改行为基于主体的请求。 例如，返回的信息可能会更改具体取决于用户的角色。 在控制器方法中，可以获取从当前的主体**ApiController.User**属性。
 
 [!code-csharp[Main](authentication-and-authorization-in-aspnet-web-api/samples/sample7.cs)]

@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-d
 title: 迭代 6 – 使用测试驱动开发 (C#) |Microsoft Docs
 author: microsoft
 description: 在此第六个迭代中，我们将添加新功能到我们的应用程序通过首先编写单元测试并针对单元测试编写的代码。 此小版本中...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: 013c3c26-7dc3-41d1-8064-f233c86008b5
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4e07b23931d487ba3875bd96606b8329d84485cf
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: 3c4358a1b979ab95d8ac25551e21ee95d75e5eae
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39395982"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834954"
 ---
 <a name="iteration-6--use-test-driven-development-c"></a>迭代 6 – 使用测试驱动开发 (C#)
 ====================

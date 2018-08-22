@@ -3,17 +3,17 @@ uid: web-api/overview/older-versions/creating-a-web-api-that-supports-crud-opera
 title: 启用 ASP.NET Web API 1 中的 CRUD 操作 |Microsoft Docs
 author: MikeWasson
 description: 本教程演示如何使用 ASP.NET Web API 的 HTTP 服务中支持的 CRUD 操作。 在教程的 Visual Studio 2012 Web AP 中使用的软件版本...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/28/2012
 ms.assetid: c125ca47-606a-4d6f-a1fc-1fc62928af93
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
-ms.openlocfilehash: 4ea9d4ce9a14e77fa1a63ee82bc1447b6e41378c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ba061b26b8527e447f25f6046057542a54f989a8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37814357"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823540"
 ---
 <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>启用 ASP.NET Web API 1 中的 CRUD 操作
 ====================

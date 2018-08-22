@@ -3,17 +3,17 @@ uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr
 title: 教程： SignalR 2 入门 |Microsoft Docs
 author: pfletcher
 description: 本教程介绍如何使用 SignalR 创建实时聊天应用程序。 将 SignalR 添加到空的 ASP.NET web 应用程序，并创建 HTML pa...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/10/2014
 ms.assetid: a8b3b778-f009-4369-85c7-e90f9878d8b4
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 798838af099cceb12652b7c6c66633a03a73e538
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 647dab496acd63dc774236ed448bd6b37b19c707
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37841837"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824868"
 ---
 <a name="tutorial-getting-started-with-signalr-2"></a>教程： SignalR 2 入门
 ====================

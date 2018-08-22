@@ -3,17 +3,17 @@ uid: web-forms/videos/authentication/understanding-aspnet-memberships
 title: 了解 ASP.NET 成员身份 |Microsoft Docs
 author: JoeStagner
 description: 在本视频中 Joe Stagner 介绍使用内置的提供程序，可供 ASP.NET 开发人员的成员身份。 有关此应用程序的其他信息...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/04/2008
 ms.assetid: bccd102b-67d5-4c66-833d-6b5f6f51ca55
 msc.legacyurl: /web-forms/videos/authentication/understanding-aspnet-memberships
 msc.type: video
-ms.openlocfilehash: 373a1c52ac2784ed7a4bab31c0b019a5eae26f5c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 42ad83dfc33484e9475b8d2013bbb3b047d62faa
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815273"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823537"
 ---
 <a name="understanding-aspnet-memberships"></a>了解 ASP.NET 成员身份
 ====================

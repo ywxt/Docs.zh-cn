@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/introduction/security-basics-and
 title: 安全基础知识和 ASP.NET 支持 (C#) |Microsoft Docs
 author: rick-anderson
 description: 这是一系列教程，其中会介绍技术进行身份验证通过 web 窗体的访问者授权访问简介中的第一个教程...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/13/2008
 ms.assetid: 07e15538-2f29-40c6-b2e7-e6115075ac83
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9600dc0c5bee5fa81cbe19a35dab7fb35e01df1b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 817a823ab5b09ea8bf2620a142779e79f53d957d
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815803"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824218"
 ---
 <a name="security-basics-and-aspnet-support-c"></a>安全基础知识和 ASP.NET 支持 (C#)
 ====================

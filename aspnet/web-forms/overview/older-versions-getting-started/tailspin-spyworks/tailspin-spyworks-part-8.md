@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspi
 title: 第 8 部分： 最终页面、 异常处理和结论 |Microsoft Docs
 author: JoeStagner
 description: 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 8 部分添加一个联系人页，有关页和异常...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/21/2010
 ms.assetid: 5aeadf8f-39f3-4f07-a78f-1c310c64fb23
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 4fb0147a5cd8621e5341e4995960adf2f00fffc0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3b49ee53e82933de9b50960779c28ca6ab7441e5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804712"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824419"
 ---
 <a name="part-8-final-pages-exception-handling-and-conclusion"></a>第 8 部分： 最终页面、 异常处理和结论
 ====================

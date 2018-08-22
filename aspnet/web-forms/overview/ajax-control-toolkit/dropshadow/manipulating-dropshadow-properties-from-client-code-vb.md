@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-
 title: 通过 (VB) 的客户端代码操作 Dropshadow |Microsoft Docs
 author: wenz
 description: AJAX 控件工具包中的 DropShadow 控件扩展具有投影的面板。 此外可以使用客户端 JavaScrip 更改此扩展器的属性...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 11be4211-2fb9-4e15-b6d4-2aa623d81f3e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b9220eecca224c2b1e0f19c972c6c2a4dc9c7d35
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d8b8330174f6f49e96c42a0e15eeaf934bf24f87
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37841404"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830079"
 ---
 <a name="manipulating-dropshadow-properties-from-client-code-vb"></a>通过 (VB) 的客户端代码操作 Dropshadow
 ====================

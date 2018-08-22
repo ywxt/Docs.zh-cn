@@ -3,17 +3,17 @@ uid: web-forms/overview/presenting-and-managing-data/model-binding/retrieving-da
 title: 检索和显示数据与模型绑定和 web 窗体 |Microsoft Docs
 author: tfitzmac
 description: 本系列教程演示了一个 ASP.NET Web 窗体项目中使用模型绑定的基本方面。 模型绑定使数据交互...更多直接-
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/27/2014
 ms.assetid: 9f24fb82-c7ac-48da-b8e2-51b3da17e365
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
 msc.type: authoredcontent
-ms.openlocfilehash: 8153642762cf7032f335d21c8c67eac9b52ed2f8
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c04e4c94378c8143c919e83af90312dd003b8c84
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823918"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830852"
 ---
 <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>检索和使用模型绑定和 web 窗体显示数据
 ====================

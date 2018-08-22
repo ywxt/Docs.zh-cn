@@ -3,17 +3,17 @@ uid: web-forms/videos/authentication/use-custom-principal-objects
 title: 使用自定义主体对象 |Microsoft Docs
 author: JoeStagner
 description: Joe Stagner 演示如何实现自定义标识在主体对象以存储用户身份验证数据。 有关此演示中，详细信息...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2008
 ms.assetid: 368733eb-0822-4b97-8e5a-127be6c88a61
 msc.legacyurl: /web-forms/videos/authentication/use-custom-principal-objects
 msc.type: video
-ms.openlocfilehash: a5f7ba2cf2998b3c41fd28258081b6d638f0ede9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5cc5e0e492f5de324e094ecd58ee3cbded873dea
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838478"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824642"
 ---
 <a name="use-custom-principal-objects"></a>使用自定义主体对象
 ====================

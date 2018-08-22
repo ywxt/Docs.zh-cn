@@ -3,17 +3,17 @@ uid: mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authen
 title: 使用 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用程序 |Microsoft Docs
 author: Rick-Anderson
 description: 本教程演示如何生成使用双因素身份验证的 ASP.NET MVC 5 web 应用。 应完成与创建安全的 ASP.NET MVC 5 web 应用...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/20/2015
 ms.assetid: f50a5cdb-c06a-46ed-aa14-fc5b049dc8dc
 msc.legacyurl: /mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 4fd0091effcf2cc0517da91922981e49ef0eef5a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f31015f5ebd660d0f95a2e978b305c1d272293d5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37803202"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823553"
 ---
 <a name="aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication"></a>使用 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用程序
 ====================

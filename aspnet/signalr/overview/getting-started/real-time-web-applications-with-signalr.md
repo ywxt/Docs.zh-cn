@@ -3,17 +3,17 @@ uid: signalr/overview/getting-started/real-time-web-applications-with-signalr
 title: 动手实验： 使用 SignalR 的实时 Web 应用程序 |Microsoft Docs
 author: rick-anderson
 description: 实时 Web 应用程序功能推送服务器端的情况下，实时连接的客户端到内容的功能。 对于 ASP.NET 开发人员，ASP...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2014
 ms.assetid: ba07958c-42e1-4da0-81db-ba6925ed6db0
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 50ed2bed6b5b20684d00d7887494ee41346b5c3f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a3f6174049ffddae4bb2a1819e3684bcdec1b55f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828904"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823560"
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>动手实验： 使用 SignalR 的实时 Web 应用程序
 ====================

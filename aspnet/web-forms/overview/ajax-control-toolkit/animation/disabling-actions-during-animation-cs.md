@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-
 title: 动画 (C#) 过程中禁用操作 |Microsoft Docs
 author: wenz
 description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 它还支持操作...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 918026b4-2f63-421d-8546-df12856960a8
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-animation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 396411332735503d1781e171bead8ab6aaed6efa
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4315f06ea1599bacb93a23a3759610e19754cfba
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828190"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823528"
 ---
 <a name="disabling-actions-during-animation-c"></a>动画 (C#) 过程中禁用操作
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-c
 title: 使用 ColorPicker 控件扩展程序 (VB) |Microsoft Docs
 author: microsoft
 description: 颜色选取器是客户端的颜色选择功能提供用户界面中的弹出控件的 ASP.NET AJAX 扩展程序。 可以将它附加到任何 ASP.NET...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/12/2009
 ms.assetid: 577ae07b-a872-4818-a804-bca489b40ad0
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e7375dcfc354e931f30d2250081f424bd2149953
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2fa3804411cb553de242a503f57e247efc990156
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828126"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824833"
 ---
 <a name="using-the-colorpicker-control-extender-vb"></a>使用 ColorPicker 控件扩展程序 (VB)
 ====================

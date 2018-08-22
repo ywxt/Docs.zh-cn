@@ -3,17 +3,17 @@ uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-resizabl
 title: '[如何实现:]使用 ASP.NET AJAX ResizableControl 扩展程序吗？ | Microsoft Docs'
 author: JoeStagner
 description: 从 ASP.NET AJAX 控件工具包 ResizableControl 扩展程序可让开发人员指定的 Web 页的用户可能会调整大小的区域动态...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/01/2007
 ms.assetid: 99b23369-dac6-458b-b002-56be35f43236
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-resizablecontrol-extender
 msc.type: video
-ms.openlocfilehash: da3f54e84602bd9276f4b063ebdddab099f03691
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d597b8bbb60827e3cbcea16c49e5deb9d20ee357
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808111"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830465"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-resizablecontrol-extender"></a>[如何实现:]使用 ASP.NET AJAX ResizableControl 扩展程序吗？
 ====================

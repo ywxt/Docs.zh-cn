@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/master-pages/control-id-n
 title: 控件 ID 命名中内容页 (C#) |Microsoft Docs
 author: rick-anderson
 description: 说明了如何 ContentPlaceHolder 控件作为命名容器的因此可以以编程方式使用困难 （通过 FindConrol) 控件...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/10/2008
 ms.assetid: 1c7d0916-0988-4b4f-9a03-935e4b5af6af
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b7ae15095b972a456f274e1326221d168f323256
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0c8617bb14c7023cfd926022b66c69bb5762758b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805870"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824847"
 ---
 <a name="control-id-naming-in-content-pages-c"></a>内容页 (C#) 中命名的控件 ID
 ====================

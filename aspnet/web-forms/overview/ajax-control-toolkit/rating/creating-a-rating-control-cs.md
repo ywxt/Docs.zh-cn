@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
 title: 创建分级控件 (C#) |Microsoft Docs
 author: wenz
 description: 很多网站，电子商务到社区站点，从其用户提供到速率项目或项。 这通常需要一些编码工作，但我们确实有...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 969fb28f-2bff-4fc4-b24a-27f5e2534a37
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 67c66d2a28a247493a0b1ea67e15935c27af80ae
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5776101d9e40f999806aefa5a9529dbef21af161
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830949"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824247"
 ---
 <a name="creating-a-rating-control-c"></a>创建分级控件 (C#)
 ====================

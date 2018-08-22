@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overv
 title: 插入、 更新和删除数据 (VB) 的概述 |Microsoft Docs
 author: rick-anderson
 description: 在本教程中，我们将了解如何将映射 ObjectDataSource 的 insert （），update （），和 delete （） 方法添加到的 BLL 方法类，以及如何配置...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/17/2006
 ms.assetid: 35b40b8f-2ca8-4ab3-9c19-f361a91a3647
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: bd17d87d3fa82d8ef288ce4747876ecb53e3c625
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 55fab6bb7a1041a14f8734a0d2ae1238b3801149
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820293"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830653"
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-vb"></a>插入、 更新和删除数据 (VB) 的概述
 ====================

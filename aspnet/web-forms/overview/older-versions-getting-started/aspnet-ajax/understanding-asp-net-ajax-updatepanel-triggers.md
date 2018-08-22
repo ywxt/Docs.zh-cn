@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding
 title: 了解 ASP.NET AJAX UpdatePanel 触发器 |Microsoft Docs
 author: scottcate
 description: Visual Studio 中的标记编辑器中工作时，你可能会注意到 （从智能感知） 有两个 UpdatePanel 控件的子元素。 以下值时的一个...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/12/2008
 ms.assetid: faab8503-2984-48a9-8a40-7728461abc50
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
 msc.type: authoredcontent
-ms.openlocfilehash: 1b2e70a2b074d3c0a2fa4b669b3645ae5f7f790e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9501a2e855bdffe8c9d85c0dd0d836f50935b306
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37811926"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824743"
 ---
 <a name="understanding-aspnet-ajax-updatepanel-triggers"></a>了解 ASP.NET AJAX UpdatePanel 触发器
 ====================

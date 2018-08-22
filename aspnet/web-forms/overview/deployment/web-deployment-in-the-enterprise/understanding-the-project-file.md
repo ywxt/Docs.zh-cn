@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/understandin
 title: 了解项目文件 |Microsoft Docs
 author: jrjlee
 description: Microsoft Build Engine (MSBuild) 项目文件位于生成和部署过程的核心。 本主题开头为 MSBuild 的概念性概述...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 07978d9d-341c-4524-bcba-62976f390f77
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file
 msc.type: authoredcontent
-ms.openlocfilehash: 7e117459f5953be7bac53267700dfb9f69802aec
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 114dd21002ef41627f3a101c0197a85fd5208887
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836838"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824424"
 ---
 <a name="understanding-the-project-file"></a>了解项目文件
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-cs
 title: 外部测试机器人 (C#) |Microsoft Docs
 author: wenz
 description: 自动化的智能机器人塑料效果网络日志和其他网站垃圾邮件，提交注释窗体而无需任何用户交互。 在 ASP.NET AJAX Con NoBot 控件...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 0a1917e0-884a-4576-8e93-9ed660faae51
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ed03b46c8a4859a79322290106a5181867392d0a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 52ed34e7640cd125a3b4c3b50ab760a7c1d713f1
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824194"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824738"
 ---
 <a name="fighting-bots-c"></a>外部测试机器人 (C#)
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-work-with-master-pages-declaratively-and
 title: '[如何实现:]以声明方式和以编程方式处理母版页 |Microsoft Docs'
 author: rick-anderson
 description: 在此视频的 Chris Pels 将介绍几个方面的定义和使用 ASP.NET web 站点中的主页面。 首先，请参阅如何创建主页面 declarati...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/21/2008
 ms.assetid: 4f5f7805-373f-4dc3-b7f6-219edf7e66a3
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-work-with-master-pages-declaratively-and-programmatically
 msc.type: video
-ms.openlocfilehash: dc0569a457e2aea378a0fa49e80d9f1e794c256f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 961a616480db6bd1f632996c27856798c9e92a43
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802417"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825682"
 ---
 <a name="how-do-i-work-with-master-pages-declaratively-and-programmatically"></a>[如何实现:]以声明方式和以编程方式处理母版页
 ====================

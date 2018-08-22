@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-c
 title: 验证使用服务层 (C#) |Microsoft Docs
 author: StephenWalther
 description: 了解如何将移动应用验证逻辑从控制器操作和到单独的服务层。 在本教程中，Stephen Walther 解释了如何在...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/02/2009
 ms.assetid: 4eabc535-b8a1-43f5-bb99-cfeb86db0fca
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b0cea00ae59a15d5472e9cd9d91d86ca65f781e9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 69ff78949589017d12a791231e38b400b49f2917
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37833706"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824759"
 ---
 <a name="validating-with-a-service-layer-c"></a>使用服务层 (C#) 进行验证
 ====================

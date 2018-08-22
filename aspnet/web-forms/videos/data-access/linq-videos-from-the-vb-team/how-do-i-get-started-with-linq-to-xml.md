@@ -3,17 +3,17 @@ uid: web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-star
 title: '[如何实现:]开始使用 LINQ to XML？ | Microsoft Docs'
 author: bethmassi
 description: Visual Basic 开发人员将学习如何使用 Visual Basic 中使用 XML 文本、 嵌入的表达式和 XML 轴属性来创建、 查询中的 XML 和...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/15/2007
 ms.assetid: dc3dedcd-5daf-4f0e-9afa-9ccad94f2ce0
 msc.legacyurl: /web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq-to-xml
 msc.type: video
-ms.openlocfilehash: d2e27e0049078ade239b79ee55f9a74a3131e321
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c7ca1a1361157afc6d1032dc4bcded3fdc2fbe38
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37817091"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824848"
 ---
 <a name="how-do-i-get-started-with-linq-to-xml"></a>[如何实现:]开始使用 LINQ to XML？
 ====================

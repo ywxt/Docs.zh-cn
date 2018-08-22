@@ -3,17 +3,17 @@ uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms
 title: 签出和使用 PayPal 付款 |Microsoft Docs
 author: Erikre
 description: 本教程系列将指导您学习生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/08/2014
 ms.assetid: 664ec95e-b0c9-4f43-a39f-798d0f2a7e08
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal
 msc.type: authoredcontent
-ms.openlocfilehash: 3299da33a68f02ac1b3ffe7c037d06d8ece9455e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b59a395e255823a732aef1b899612063e09b2424
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37835626"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823527"
 ---
 <a name="checkout-and-payment-with-paypal"></a>签出和使用 PayPal 付款
 ====================

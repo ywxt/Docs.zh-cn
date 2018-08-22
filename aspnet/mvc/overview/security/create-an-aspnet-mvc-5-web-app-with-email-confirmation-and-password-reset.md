@@ -3,17 +3,17 @@ uid: mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmatio
 title: 安全的 ASP.NET MVC 5 web 应用程序创建具有登录、 电子邮件确认及密码重置 (C#) |Microsoft Docs
 author: Rick-Anderson
 description: 本教程演示如何生成电子邮件确认和密码重置使用 ASP.NET 标识成员资格系统的 ASP.NET MVC 5 web 应用。 Ca...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/26/2015
 ms.assetid: d4911cb3-1afb-4805-b860-10818c4b1280
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 1387c3e9c03e011b610a070aa0c273ded23b463e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e15595cab2d1f51374d4577a67f0f190a531acb5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823542"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830069"
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>安全的 ASP.NET MVC 5 web 应用程序创建具有登录、 电子邮件确认及密码重置 (C#)
 ====================
@@ -75,7 +75,7 @@ ms.locfileid: "37823542"
 [!code-xml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample4.xml)]
 
 > [!WARNING]
-> 安全性-永远不会存储在源代码中敏感数据。 AppSetting 中存储的帐户和凭据。 在 Azure 上，您可以安全地存储这些值在**[配置](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** 在 Azure 门户中的选项卡。 请参阅[的密码和其他敏感数据部署到 ASP.NET 和 Azure 最佳做法](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)。
+> 安全性-永远不会存储在源代码中敏感数据。 AppSetting 中存储的帐户和凭据。 在 Azure 上，您可以安全地存储这些值在 **[配置](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** 在 Azure 门户中的选项卡。 请参阅[的密码和其他敏感数据部署到 ASP.NET 和 Azure 最佳做法](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)。
 
 
 ### <a name="enable-email-confirmation-in-the-account-controller"></a>启用帐户控制器中的电子邮件确认

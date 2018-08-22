@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reord
 title: 拖放到通过 reorderlist 进行 (C#) |Microsoft Docs
 author: wenz
 description: AJAX 控件工具包中的 ReorderList 控件提供了可以由用户通过拖放重新排序的列表。 当前列表的顺序应...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 6350ee8e-11d6-4aff-b51c-942878014835
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6c31e1e9b88d07fb4fe2881ac24b7c9c10126c96
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 15ae6ae60381f3f656f667a97dac72dbb283c80e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37803712"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824650"
 ---
 <a name="drag-and-drop-via-reorderlist-c"></a>拖放到通过 reorderlist 进行 (C#)
 ====================

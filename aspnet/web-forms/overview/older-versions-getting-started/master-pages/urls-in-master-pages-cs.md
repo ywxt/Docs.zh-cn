@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/master-pages/urls-in-mast
 title: Url 中的母版页 (C#) |Microsoft Docs
 author: rick-anderson
 description: 解决了主页面中的 Url 可能会由于是在不同的相对目录比内容页的主控页文件中中断。 探讨变基...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/10/2008
 ms.assetid: 48b58a18-5ea4-468c-b326-f35331b3e1e9
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 827c471074fbfeb049613f5cc5ffb82937284f00
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6f22159c4e70beeb590039ea0d4b8126c5424bd5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37821555"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824856"
 ---
 <a name="urls-in-master-pages-c"></a>母版页 (C#) 中的 Url
 ====================

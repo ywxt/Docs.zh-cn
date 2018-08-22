@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-customize-error-handling-for-the-aspn
 title: 如何执行操作实现： 自定义 ASP.NET AJAX UpdatePanel 的错误处理 |Microsoft Docs
 author: rick-anderson
 description: 客户端 PageRequestManager 时由 ASP.NET AJAX UpdatePanel 触发回发处理的过程中发生错误，将显示警报 (。 NE....
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/18/2009
 ms.assetid: 28bd411b-e708-4eab-baed-76981d6cd0dc
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel
 msc.type: video
-ms.openlocfilehash: f297d7bf916b0fedc6b26bd19dd8e9d35569af74
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 81dd36819c33fa0980ab79a5dc3d9f86f7c70a6f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807536"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830655"
 ---
 <a name="how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel"></a>如何实现： 自定义的错误处理 ASP.NET AJAX UpdatePanel
 ====================

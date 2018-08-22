@@ -3,17 +3,17 @@ uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-tabs-con
 title: '[如何实现:]使用 ASP.NET AJAX 选项卡控件？ | Microsoft Docs'
 author: JoeStagner
 description: 此视频演示从 ASP.NET AJAX 控件工具包，可以使用它创建一组选项卡上组织内容的选项卡控件的基础知识...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/01/2007
 ms.assetid: f85fcce9-a897-4f43-b12f-5c6f5f2733cd
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-tabs-control
 msc.type: video
-ms.openlocfilehash: 23fa24c15f6aafaecb22aa7a44ea2b2659640f20
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b38bc5d9d655bad106bf34547e922ddc598274da
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807241"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824425"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-tabs-control"></a>[如何实现:]使用 ASP.NET AJAX 选项卡控件？
 ====================

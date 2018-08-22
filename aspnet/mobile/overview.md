@@ -3,17 +3,17 @@ uid: mobile/overview
 title: 移动应用和 asp.net 的站点 |Microsoft Docs
 author: rick-anderson
 description: 了解如何 ASP.NET 简化了构建移动 Web 应用程序
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/28/2011
 ms.assetid: 1febce65-cdd4-47da-bdb5-1e6022ccd20a
 msc.legacyurl: /mobile
 msc.type: content
-ms.openlocfilehash: 613cb6ccd303b1dd2054210ad90bfd5dc1fbb8cc
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1d5dea4a7f961475579cfdf677377ce9c9956540
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834109"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824637"
 ---
 <a name="mobile-apps--sites-with-aspnet"></a>移动应用和 asp.net 的站点
 ====================

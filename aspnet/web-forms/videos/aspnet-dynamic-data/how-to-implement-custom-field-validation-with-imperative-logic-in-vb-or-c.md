@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-dynamic-data/how-to-implement-custom-field-validati
 title: 如何在 VB 或 C# 中实现使用命令性逻辑的自定义字段验证 |Microsoft Docs
 author: JoeStagner
 description: 在本视频中我们将基于我们在我们以前动态数据视频中实现声明性字段验证，并将自定义编程逻辑添加到我们 val...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/11/2008
 ms.assetid: 22fb5270-7685-4f3a-919b-c23e180efe49
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-to-implement-custom-field-validation-with-imperative-logic-in-vb-or-c
 msc.type: video
-ms.openlocfilehash: 52cd90ddbe48e42e8043ca3d1c79db5e85796c46
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: cd6a97f1c31cbb0c19b2cbfb867cd983144ffa8c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802794"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830486"
 ---
 <a name="how-to-implement-custom-field-validation-with-imperative-logic-in-vb-or-c"></a>如何在 VB 或 C# 中实现使用命令性逻辑的自定义字段验证
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/security/create-an-aspnet-web-forms-app-with-sms-two-fac
 title: 创建 ASP.NET Web 窗体应用程序具有 SMS 双因素身份验证 (C#) |Microsoft Docs
 author: Erikre
 description: 本教程演示如何生成带有双因素身份验证的 ASP.NET Web 窗体应用程序。 本教程旨在补充标题为 Cr 教程...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/09/2014
 ms.assetid: 716264ae-ab72-45de-bfc5-53a6237089cf
 msc.legacyurl: /web-forms/overview/security/create-an-aspnet-web-forms-app-with-sms-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 16045b116ca5c797e7840f2ee5944e5f2c6282eb
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7ad3b7a453a40f2708902ae5b9e5cb75b931d54d
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37803544"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824832"
 ---
 <a name="create-an-aspnet-web-forms-app-with-sms-two-factor-authentication-c"></a>创建 ASP.NET Web 窗体应用程序具有 SMS 双因素身份验证 (C#)
 ====================
@@ -65,7 +65,7 @@ ms.locfileid: "37803544"
     [!code-xml[Main](create-an-aspnet-web-forms-app-with-sms-two-factor-authentication/samples/sample1.xml?highlight=2,6-10)]
 
     > [!WARNING]
-    > 安全性-永远不会存储在源代码中敏感数据。 在此示例中，帐户和凭据存储在**appSettings**一部分*Web.config*文件。 在 Azure 上，您可以安全地存储这些值在**[配置](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** 在 Azure 门户中的选项卡。 有关相关信息，请参阅标题为 Rick Anderson 主题[的密码和其他敏感数据部署到 ASP.NET 和 Azure 最佳做法](https://go.microsoft.com/fwlink/?LinkId=513141)。
+    > 安全性-永远不会存储在源代码中敏感数据。 在此示例中，帐户和凭据存储在**appSettings**一部分*Web.config*文件。 在 Azure 上，您可以安全地存储这些值在 **[配置](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** 在 Azure 门户中的选项卡。 有关相关信息，请参阅标题为 Rick Anderson 主题[的密码和其他敏感数据部署到 ASP.NET 和 Azure 最佳做法](https://go.microsoft.com/fwlink/?LinkId=513141)。
 5. 配置`SmsService`类中*应用程序\_Start\IdentityConfig.cs*文件通过进行以下更改以黄色突出显示： 
 
     [!code-csharp[Main](create-an-aspnet-web-forms-app-with-sms-two-factor-authentication/samples/sample2.cs?highlight=5-17)]

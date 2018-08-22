@@ -5,12 +5,12 @@ description: 将标识与 ASP.NET Core 应用配合使用。 了解如何设置�
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: 6a23dd4ad78c0695b5724a78204abf6752dfe67d
-ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
+ms.openlocfilehash: fd5fa2fd1e069bf10f3baea38b1fe9f951dc4a7d
+ms.sourcegitcommit: fd461c60b5e36c7019f81da0138cc859d0fddaa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39655305"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "41830035"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core 上的标识简介
 
@@ -98,7 +98,7 @@ dotnet new webapp --auth Individual -o WebApp1
 
 ## <a name="scaffold-register-login-and-logout"></a>基架注册、 登录和注销
 
-请按照[创建标识为具有授权的 Razor 项目基架](xref:security/authentication/scaffold-identity#)说明。
+请按照[创建标识为具有授权的 Razor 项目基架](xref:security/authentication/scaffold-identity#scaffold-identity-into-a-razor-project-with-authorization)说明。
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 

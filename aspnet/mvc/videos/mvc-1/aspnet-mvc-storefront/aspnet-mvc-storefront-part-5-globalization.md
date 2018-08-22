@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-5-globali
 title: ASP.NET MVC 店面第 5 部分： 全球化 |Microsoft Docs
 author: robconery
 description: Rob conery 专攻配合 Damien Guard 用于重构数据库处理测试数据和全球化问题。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/27/2008
 ms.assetid: ec659d9f-8172-4c9e-9dd0-f5743bb27d4b
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-5-globalization
 msc.type: video
-ms.openlocfilehash: 5f0e6e4c91c9cc39270df7801c47bce947433845
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f250add5d8c88287fb3666741b928d8e84a31fa2
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827409"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830473"
 ---
 <a name="aspnet-mvc-storefront-part-5-globalization"></a>ASP.NET MVC 店面第 5 部分： 全球化
 ====================

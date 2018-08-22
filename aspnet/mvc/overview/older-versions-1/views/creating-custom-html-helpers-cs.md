@@ -3,17 +3,17 @@ uid: aspnet/mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
 title: 创建自定义 HTML 帮助程序 (C#) |Microsoft Docs
 author: microsoft
 description: 本教程的目的是演示如何创建自定义 HTML 帮助程序，你可以使用您的 MVC 视图中。 通过利用 HTML 帮助器...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/07/2008
 ms.assetid: e454c67d-a86e-4119-a858-eb04bbec2dff
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0606ec3b5595fbe73918b82e32b393871e8533a1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a6a684e01b67c2ea139a50b568098d2dcf594272
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839404"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824755"
 ---
 <a name="creating-custom-html-helpers-c"></a>创建自定义 HTML 帮助程序 (C#)
 ====================

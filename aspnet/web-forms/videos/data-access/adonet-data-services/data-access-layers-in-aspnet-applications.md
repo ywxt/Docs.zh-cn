@@ -3,17 +3,17 @@ uid: web-forms/videos/data-access/adonet-data-services/data-access-layers-in-asp
 title: 在 ASP.NET 应用程序中的数据访问层 |Microsoft Docs
 author: JoeStagner
 description: 在此视频中，为 3，第 1 部分 Joe Stagner 创建简单的 ASP.NET 应用程序中使用类型化的数据集的数据访问层。 有关其他信息...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/07/2008
 ms.assetid: 536aa7a6-84fb-487c-a14f-6ca3eb8a4a33
 msc.legacyurl: /web-forms/videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications
 msc.type: video
-ms.openlocfilehash: 7da39466777ba4aaec0c40d813fd31750f623bf2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f084f54c32cb31c5787b073751764efbe1643fbc
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838024"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824864"
 ---
 <a name="data-access-layers-in-aspnet-applications"></a>在 ASP.NET 应用程序中的数据访问层
 ====================

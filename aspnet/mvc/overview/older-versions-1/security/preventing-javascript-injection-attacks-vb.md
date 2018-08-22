@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/security/preventing-javascript-injection-atta
 title: 阻止 JavaScript 注入攻击 (VB) |Microsoft Docs
 author: StephenWalther
 description: 阻止 JavaScript 注入攻击和跨站点脚本攻击发生给你。 在本教程中，Stephen Walther 解释了如何轻松地 de...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/19/2008
 ms.assetid: 9274a72e-34dd-4dae-8452-ed733ae71377
 msc.legacyurl: /mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c3aaf3d06c1ca7839986097d341debd2b28fa3b4
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c46b6e1ca13228feb764d9c660ad578576956970
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824456"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824462"
 ---
 <a name="preventing-javascript-injection-attacks-vb"></a>阻止 JavaScript 注入攻击 (VB)
 ====================

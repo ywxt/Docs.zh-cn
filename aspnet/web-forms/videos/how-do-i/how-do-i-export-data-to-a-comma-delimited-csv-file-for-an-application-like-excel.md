@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-export-data-to-a-comma-delimited-csv-fil
 title: '[如何实现:]与 Excel 类似应用程序的数据导出到逗号分隔 (CSV) 文件 |Microsoft Docs'
 author: rick-anderson
 description: 在本视频中 Chris Pels 演示如何从数据库或其他源提取数据并将其导出到的以逗号分隔文件，可在应用程序 li...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/22/2009
 ms.assetid: c9df86ad-aec2-43d5-bb8a-413ebb666673
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-export-data-to-a-comma-delimited-csv-file-for-an-application-like-excel
 msc.type: video
-ms.openlocfilehash: dda5af297e7b0c968de2433fd809a9c4f7c7aaef
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 401df30b8f35355ecca5226883bb16b46bf88507
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827671"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823530"
 ---
 <a name="how-do-i-export-data-to-a-comma-delimited-csv-file-for-an-application-like-excel"></a>[如何实现:]将数据导出到 Excel 这样的应用程序的逗号分隔 (CSV) 文件
 ====================

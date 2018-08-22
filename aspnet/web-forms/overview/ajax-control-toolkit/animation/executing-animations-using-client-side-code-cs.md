@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/animation/executing-animations-usin
 title: 执行动画使用客户端代码 (C#) |Microsoft Docs
 author: wenz
 description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 动画执行中...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 0270e0df-6fde-4a8f-a2cb-2cacc55143f2
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ae8c4df3c5852e9ee95f6184a86059859c56b128
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5dc5c0b49a3530988bf42d6d632a061622f0a217
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824553"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824457"
 ---
 <a name="executing-animations-using-client-side-code-c"></a>使用客户端代码 (C#) 执行动画
 ====================
