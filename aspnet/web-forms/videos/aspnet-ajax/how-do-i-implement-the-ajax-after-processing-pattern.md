@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-implement-the-ajax-after-processing-p
 title: '[如何实现:]实现 AJAX 处理后模式？ | Microsoft Docs'
 author: JoeStagner
 description: ASP.NET AJAX 框架允许在服务器端代码中挂接并响应各种客户端的事件。 在本视频中，我们将了解如何实现 Aft...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/21/2007
 ms.assetid: 9a382d8e-ea3a-4fa4-bd24-b56f9051f4db
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-ajax-after-processing-pattern
 msc.type: video
-ms.openlocfilehash: b9edac497aec78f8a8af6b782120c04975b96b3c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6e10200299b78dcf2d5ae356b302ddddcffb999c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830388"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825080"
 ---
 <a name="how-do-i-implement-the-ajax-after-processing-pattern"></a>[如何实现:]实现 AJAX 处理后模式？
 ====================

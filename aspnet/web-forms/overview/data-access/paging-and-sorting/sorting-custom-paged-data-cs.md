@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data
 title: 排序自定义分页数据 (C#) |Microsoft Docs
 author: rick-anderson
 description: 上一教程中我们介绍了如何实现自定义分页时 presentating web 页上的数据。 在本教程中我们将了解如何扩展前面...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/15/2006
 ms.assetid: 778baa4e-4af8-4665-947e-7a01d1a4dff2
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8057b11f9d2d812b9b2bf8d9e016ed17cff4e2f2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: cc0ca571957f29afd7e3a2657e58272f804fc6ef
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816741"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830885"
 ---
 <a name="sorting-custom-paged-data-c"></a>排序自定义分页数据 (C#)
 ====================

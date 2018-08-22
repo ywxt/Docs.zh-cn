@@ -3,17 +3,17 @@ uid: identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-exi
 title: 添加 ASP.NET 标识设置为空的或现有 Web 窗体项目 |Microsoft Docs
 author: raquelsa
 description: 本教程演示如何将 ASP.NET 标识 （ASP.NET 的新成员资格系统） 添加到 ASP.NET 应用程序。 当您创建新的 Web 窗体或 MVC...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/23/2013
 ms.assetid: 1cbc0ed2-5bd6-4b62-8d34-4c193dcd8b25
 msc.legacyurl: /identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: 1e7508fc2431f4e1e3c4509fbe705daf42686e8d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 229d6fef5aa9c2384b6d92ec3e3ed7316b69afe0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37832657"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825060"
 ---
 <a name="adding-aspnet-identity-to-an-empty-or-existing-web-forms-project"></a>添加 ASP.NET 标识对空的或现有 Web 窗体项目
 ====================

@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/models-data/validation-with-the-data-annotati
 title: 使用数据批注验证程序 (VB) 验证 |Microsoft Docs
 author: microsoft
 description: 充分利用数据批注模型联编程序来执行验证的 ASP.NET MVC 应用程序中。 了解如何使用不同类型的验证程序...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/29/2009
 ms.assetid: 0d23ff2b-f2ec-434a-be3b-1180beeccba3
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9d76596ede0763bde3c84dca4a545be250a3062c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 8159693adced7f102f6fe1457d7b103f8596d231
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837418"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825049"
 ---
 <a name="validation-with-the-data-annotation-validators-vb"></a>使用数据批注验证程序 (VB) 验证
 ====================

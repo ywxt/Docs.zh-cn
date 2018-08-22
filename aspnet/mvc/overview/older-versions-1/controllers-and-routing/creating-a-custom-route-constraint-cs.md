@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-rou
 title: 创建自定义路由约束 (C#) |Microsoft Docs
 author: StephenWalther
 description: Stephen Walther 演示了如何创建自定义路由约束。 我们实现一个简单的自定义的约束，可防止路由匹配 w...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/16/2009
 ms.assetid: a4f4bf4e-abcc-4650-8f43-527e48b52fe6
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e21e7e027cf66f390fc37ec08a07ae007e8242c9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0a0b6b706fdb212a745346ffaefc118e85c2a245
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831808"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831055"
 ---
 <a name="creating-a-custom-route-constraint-c"></a>创建自定义路由约束 (C#)
 ====================

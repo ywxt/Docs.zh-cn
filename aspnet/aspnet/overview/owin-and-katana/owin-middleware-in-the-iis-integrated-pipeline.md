@@ -3,17 +3,17 @@ uid: aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipel
 title: 在 IIS 中的 OWIN 中间件集成管道 |Microsoft Docs
 author: Praburaj
 description: 本文介绍如何运行 OWIN 中间件组件 (OMCs) 在 IIS 集成管道中，以及如何设置管道事件 OMC 上运行。 应...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/07/2013
 ms.assetid: d031c021-33c2-45a5-bf9f-98f8fa78c2ab
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: e78ded1dcafd40097d6477a757406c7170dd1bb7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 56bd145688e1ab0a70710cc80cb8f5fa10ee8968
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828093"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825067"
 ---
 <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>IIS 集成管道中的 OWIN 中间件
 ====================

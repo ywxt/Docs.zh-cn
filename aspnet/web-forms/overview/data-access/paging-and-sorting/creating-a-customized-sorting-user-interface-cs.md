@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sor
 title: 创建自定义的排序用户界面 (C#) |Microsoft Docs
 author: rick-anderson
 description: 显示一长串的已排序数据，它可以是非常有帮助通过引入分隔符行组相关的数据。 在本教程中我们将了解如何创建...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/15/2006
 ms.assetid: 6f81b633-9d01-4e52-ae4a-2ea6bc109475
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 96f52b3caf812fcfe82012c2de091acb91b8e0ae
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 28926276e183ae7cf7ed4087d8c73044741389e5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842327"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831074"
 ---
 <a name="creating-a-customized-sorting-user-interface-c"></a>创建自定义的排序用户界面 (C#)
 ====================

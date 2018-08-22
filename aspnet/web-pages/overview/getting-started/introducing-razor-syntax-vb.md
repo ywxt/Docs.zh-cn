@@ -3,17 +3,17 @@ uid: web-pages/overview/getting-started/introducing-razor-syntax-vb
 title: 使用 Razor 语法 (Visual Basic 中) 的 ASP.NET Web 编程简介 |Microsoft Docs
 author: tfitzmac
 description: 本附录提供使用 ASP.NET Web pages 编程概述在 Visual Basic 中使用 Razor 语法。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/07/2014
 ms.assetid: 5da59646-e973-41cd-88a9-c6b2c0594027
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 72f995e62141df4e8f4cd082b4873d82067af8c1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: cbec035533c37723afcd5bf4aa0c6e1c83dbae23
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816543"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831065"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>使用 Razor 语法 (Visual Basic 中) 的 ASP.NET Web 编程简介
 ====================
@@ -273,30 +273,88 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
 下表列出了一些常见的转换和测试方法的变量。
 
 
-::: 行:::::: 列:::<strong>方法</strong>::: 列线终止:::::: 列:::<strong>说明</strong>::: 列线终止:::::: 列:::<strong>示例</strong>::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        <strong>方法</strong>
+    :::column-end:::
+    :::column:::
+        <strong>说明</strong>
+    :::column-end:::
+    :::column:::
+        <strong>示例</strong>
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `AsInt(), IsInt()` ::: 列线终止:::::: 列::: 将表示为整数的字符串转换 (如&quot;593&quot;) 为整数。
-::: 列线终止:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `AsInt(), IsInt()`
+    :::column-end:::
+    :::column:::
+        将表示为整数的字符串转换 (如&quot;593&quot;) 为整数。
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `AsBool(), IsBool()` ::: 列线终止:::::: 列::: 转换字符串，如&quot;true&quot;或&quot;false&quot;为 Boolean 类型。
-::: 列线终止:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `AsBool(), IsBool()`
+    :::column-end:::
+    :::column:::
+        将转换字符串，如&quot;，则返回 true&quot;或&quot;false&quot;为 Boolean 类型。
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `AsFloat(), IsFloat()` ::: 列线终止:::::: 列::: 将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为浮点数。
-::: 列线终止:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `AsFloat(), IsFloat()`
+    :::column-end:::
+    :::column:::
+        将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为浮点数。
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `AsDecimal(), IsDecimal()` ::: 列线终止:::::: 列::: 将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为十进制数。 （在 ASP.NET 中，十进制数字是一个浮点数，更详细地说明。）::: 列线终止:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `AsDecimal(), IsDecimal()`
+    :::column-end:::
+    :::column:::
+        将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为十进制数。 （在 ASP.NET 中，十进制数字是一个浮点数，更详细地说明。） :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `AsDateTime(), IsDateTime()` ::: 列线终止:::::: 列::: 将对 ASP.NET 表示的日期和时间值的字符串转换`DateTime`类型。
-::: 列线终止:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `AsDateTime(), IsDateTime()`
+    :::column-end:::
+    :::column:::
+        将对 ASP.NET 表示的日期和时间值的字符串转换`DateTime`类型。
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `ToString()` ::: 列线终止:::::: 列::: 任何其他数据类型转换的字符串。
-::: 列线终止:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `ToString()`
+    :::column-end:::
+    :::column:::
+        将任何其他数据类型转换为字符串。
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)]
+    :::column-end:::
+:::row-end:::
 
 
 ## <a name="operators"></a>运算符
@@ -304,47 +362,137 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
 运算符是命令的关键字或告诉 ASP.NET 什么样来执行在表达式中的字符。 Visual Basic 支持许多运算符，但只需识别了一些以开始开发 ASP.NET 网页。 下表总结了最常见的运算符。
 
 
-::: 行:::::: 列:::<strong>运算符</strong>::: 列线终止:::::: 列:::<strong>说明</strong>::: 列线终止:::::: 列:::<strong>示例</strong>::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        <strong>Operator</strong>
+    :::column-end:::
+    :::column:::
+        <strong>说明</strong>
+    :::column-end:::
+    :::column:::
+        <strong>示例</strong>
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `+ - * /` ::: 列线终止:::::: 列::: 数值表达式中使用的数学运算符。
-::: 列线终止:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `+ - * /`
+    :::column-end:::
+    :::column:::
+        在数值表达式中使用的数学运算符。
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `=` ::: 列线终止:::::: 列::: 赋值和相等性。 根据上下文，将一条语句右侧的值分配给左侧和右侧，对象或检查值相等。
-::: 列线终止:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `=`
+    :::column-end:::
+    :::column:::
+        赋值和相等。 根据上下文，将一条语句右侧的值分配给左侧和右侧，对象或检查值相等。
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `<>` ::: 列线终止:::::: 列::: 是否不相等。 返回`True`如果值不相等。
-::: 列线终止:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `<>`
+    :::column-end:::
+    :::column:::
+        不相等。 返回`True`如果值不相等。
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `< > <= >=` ::: 列线终止:::::: 列::: 小于、 大于、 小于或等于，以及大于或等于。
-::: 列线终止:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `< > <= >=`
+    :::column-end:::
+    :::column:::
+        小于、 大于、 小于或等于，以及大于或等于。
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `&` ::: 列线终止:::::: 列::: 用于联接的字符串的串联。
-::: 列线终止:::::: 列::: [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `&`
+    :::column-end:::
+    :::column:::
+        串联用于联接的字符串。
+    :::column-end:::
+    :::column:::
+        [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `+= -=` ::: 列线终止:::::: 列::: 递增和递减运算符，从而添加，并且从变量 （分别） 减 1。
-::: 列线终止:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `+= -=`
+    :::column-end:::
+    :::column:::
+        递增和递减运算符，从而添加，并且从变量 （分别） 减 1。
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `.` ::: 列线终止:::::: 列::: 圆点。 用于区分对象及其属性和方法。
-::: 列线终止:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `.`
+    :::column-end:::
+    :::column:::
+        圆点。 用于区分对象及其属性和方法。
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `()` ::: 列线终止:::::: 列::: 括号。 为组表达式，用于将参数传递给方法，并访问数组和集合的成员。
-::: 列线终止:::::: 列::: [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `()`
+    :::column-end:::
+    :::column:::
+        括号。 为组表达式，用于将参数传递给方法，并访问数组和集合的成员。
+    :::column-end:::
+    :::column:::
+        [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `Not` ::: 列线终止:::::: 列::: 不。 反转 true 值为 false，反之亦然。 通常用作测试的速记方法`False`(即，对于不`True`)。
-::: 列线终止:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `Not`
+    :::column-end:::
+    :::column:::
+        不。 反转 true 值为 false，反之亦然。 通常用作测试的速记方法`False`(即，对于不`True`)。
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `AndAlso OrElse` ::: 列线终止:::::: 列::: 逻辑与和一起用于链接条件。
-::: 列线终止:::::: 列::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `AndAlso OrElse`
+    :::column-end:::
+    :::column:::
+        逻辑 AND 和 OR，用于链接在一起条件。
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)]
+    :::column-end:::
+:::row-end:::
 
 ## <a name="working-with-file-and-folder-paths-in-code"></a>使用文件和代码中的文件夹路径
 

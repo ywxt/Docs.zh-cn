@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-rep
 title: 分页 DataList 或 Repeater 控件 (C#) 中的报表数据 |Microsoft Docs
 author: rick-anderson
 description: 在 DataList 和 Repeater 都不产品/服务自动分页或排序支持时，本教程演示如何将分页支持添加到 DataList 或 Repeater...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/13/2006
 ms.assetid: e8e0809b-25c4-4c3b-8d12-9a17048148ae
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 90df9c096b5411201da35b7076fdd3cd9b1f86d1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4212b7bff41d76eaef18d638cf28441b50061159
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842314"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831076"
 ---
 <a name="paging-report-data-in-a-datalist-or-repeater-control-c"></a>分页 DataList 或 Repeater 控件 (C#) 中的报表数据
 ====================

@@ -3,24 +3,24 @@ uid: whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 title: 什么是 ASP.NET 4.5 和 Visual Studio 2012 中的新增功能 |Microsoft Docs
 author: rick-anderson
 description: 本文档介绍新功能和增强功能 ASP.NET 4.5 中引入的。 它还介绍了用于 web 开发正在进行的改进...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/29/2012
 ms.assetid: ba1fabb4-31a3-4ebf-8327-41a6bbba6eaf
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
-ms.openlocfilehash: cfe9b1a7f05b43d5eb638c8fa7cb581d1edac9d5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6bbfb4aa7f29e4c189da4dfdca6f2113c7550b68
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37835808"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830860"
 ---
 <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>什么是 ASP.NET 4.5 和 Visual Studio 2012 中的新增功能
 ====================
 > 本文档介绍新功能和增强功能 ASP.NET 4.5 中引入的。 它还介绍了 Visual Studio 2012 中针对 web 开发正在进行的改进。 本文档最初在 2012 年 2 月 29 日发布。
 
 
-- [ASP.NET Core 运行时和框架](#_Toc318097372)
+- [ASP.NET Core 运行时和 Framework](#_Toc318097372)
 
     - [以异步方式读取和写入 HTTP 请求和响应](#_Toc318097373)
     - [HttpRequest 处理的改进](#_Toc318097374)
@@ -99,7 +99,7 @@ ms.locfileid: "37835808"
 - [免责声明](#_Toc318097429)
 
 <a id="_Toc318097372"></a>
-## <a name="aspnet-core-runtime-and-framework"></a>ASP.NET Core 运行时和框架
+## <a name="aspnet-core-runtime-and-framework"></a>ASP.NET Core 运行时和 Framework
 
 <a id="_Toc318097373"></a>
 ### <a name="asynchronously-reading-and-writing-http-requests-and-responses"></a>以异步方式读取和写入 HTTP 请求和响应
