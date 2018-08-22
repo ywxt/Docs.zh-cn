@@ -3,21 +3,21 @@ uid: ajax/cdn/jquery-datatables/cdnjquerydatatables193
 title: jQuery DataTables 1.9.3 |Microsoft Docs
 author: rick-anderson
 description: ''
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/23/2014
 ms.assetid: 90ba3e9a-ff80-4049-9ad4-08571cdf3880
 msc.legacyurl: /ajax/cdn/jquery-datatables/cdnjquerydatatables193
 msc.type: content
-ms.openlocfilehash: ba219fbf51dedb8b924fea04213d55d1a37de5ed
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9b085159861e49ddfb2d24917832f2ea4d28bdad
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824714"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824474"
 ---
-<a name="jquery-datatables-193"></a><span data-ttu-id="f1a18-102">jQuery DataTables 1.9.3</span><span class="sxs-lookup"><span data-stu-id="f1a18-102">jQuery DataTables 1.9.3</span></span>
+<a name="jquery-datatables-193"></a><span data-ttu-id="f04ea-102">jQuery DataTables 1.9.3</span><span class="sxs-lookup"><span data-stu-id="f04ea-102">jQuery DataTables 1.9.3</span></span>
 ====================
-<span data-ttu-id="f1a18-103">在 CDN 上托管的 jQuery DataTables 插件的以下文件：</span><span class="sxs-lookup"><span data-stu-id="f1a18-103">The following files for the jQuery DataTables plugins are hosted on the CDN:</span></span>
+<span data-ttu-id="f04ea-103">在 CDN 上托管的 jQuery DataTables 插件的以下文件：</span><span class="sxs-lookup"><span data-stu-id="f04ea-103">The following files for the jQuery DataTables plugins are hosted on the CDN:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.3/jquery.dataTables.js
 - https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.3/jquery.dataTables.min.js
