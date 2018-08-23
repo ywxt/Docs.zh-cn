@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core 中的身份验证、授权和安全基础知�
 ms.author: tdykstra
 ms.date: 11/01/2017
 uid: security/index
-ms.openlocfilehash: ed64594c85d555d8417903947fc3ce927dc04cec
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 3a1c1ea1ad28fccbe5ae91b0be193938b095f60b
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095757"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41748568"
 ---
 # <a name="overview-of-aspnet-core-security"></a>ASP.NET Core 安全性概述
 
@@ -35,9 +35,9 @@ ASP.NET Core 和 EF 提供维护应用安全、预防安全漏洞的功能。 �
 * [跨站点请求伪造 (CSRF)](xref:security/anti-request-forgery)
 * [打开重定向攻击](xref:security/preventing-open-redirects)
 
-还应注意其他漏洞。 有关详细信息，请参阅本文档中关于 ASP.NET Core 安全文档的部分。
+还应注意其他漏洞。 有关详细信息，请参阅本文档中有关 ASP.NET Core 安全文档的部分。
 
-## <a name="aspnet-security-documentation"></a>ASP.NET Core 安全文档
+## <a name="aspnet-core-security-documentation"></a>ASP.NET Core 安全文档
 
 *   [身份验证](xref:security/authentication/index)
     *   [标识简介](xref:security/authentication/identity)
