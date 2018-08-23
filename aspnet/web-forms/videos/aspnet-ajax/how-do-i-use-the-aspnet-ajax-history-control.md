@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-history-control
 title: '[如何实现:]使用 ASP.NET AJAX 历史记录控件？ | Microsoft Docs'
 author: scottgolightly
 description: 典型的 AJAX 应用程序所面临的一个问题是部分页面更新未添加到 Web 浏览器的历史记录。 这意味着，在浏览器的 B...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/21/2007
 ms.assetid: 557b0118-fde8-48c9-bf6d-829f9043706b
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-history-control
 msc.type: video
-ms.openlocfilehash: 50a74721860c992de4f1f06a171469e7799ef23c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 627d7d06020cc669edccb2a94bd366e96343f850
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837904"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830704"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-history-control"></a>[如何实现:]使用 ASP.NET AJAX 历史记录控件？
 ====================

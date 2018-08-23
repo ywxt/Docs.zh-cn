@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-streng
 title: 测试强度的密码 (C#) |Microsoft Docs
 author: wenz
 description: 密码是必需几乎任意位置，以便延迟用户倾向于选择简单密码，这容易被破解。 在 ASP 中 PasswordStrength 控件。N...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: cb4afbae-9b8f-483d-9729-476d4b9f85fc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2eec810a0e37347059d3e82a37b25d5663eab987
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b71744df46f8b8d20efafa333a10370397c37d2f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839799"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833238"
 ---
 <a name="testing-the-strength-of-a-password-c"></a>测试强度的密码 (C#)
 ====================

@@ -3,17 +3,17 @@ uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-clou
 title: 数据分区策略 （使用 Azure 构建实际云应用） |Microsoft Docs
 author: MikeWasson
 description: 构建真实世界云应用与 Azure 的电子书基于由 Scott Guthrie 开发的演示文稿。 它还说明了 13 模式和实践可以他...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: 513837a7-cfea-4568-a4e9-1f5901245d24
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 msc.type: authoredcontent
-ms.openlocfilehash: 89921df4f84b86ef7c222f8e8c871f510856b4f3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1a19b5b8ce47439c39359a805e16ab4e7631deec
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37819794"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825264"
 ---
 <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>数据分区策略 （使用 Azure 构建实际云应用）
 ====================

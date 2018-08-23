@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-applicat
 title: 迭代 4 – 使应用程序松散耦合 (C#) |Microsoft Docs
 author: microsoft
 description: 在此第四个迭代中，我们将充分利用多个软件设计模式，以使其更轻松地监视和修改联系人管理器应用程序。 预测...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: 829f589f-e201-4f6e-9ae6-08ae84322065
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7c06609afd6f1adf930a377c99d66937885f78e7
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: 955991c148d48020c66cbc63ec6da45e3a9cc282
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396020"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831101"
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-c"></a>迭代 4 – 使应用程序松散耦合 (C#)
 ====================

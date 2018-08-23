@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/advanced-data-access-scenarios/adding-additi
 title: 添加其他 DataTable 列 (C#) |Microsoft Docs
 author: rick-anderson
 description: 使用 TableAdapter 向导时创建的类型化数据集，相应的数据表中的主数据库查询返回的列。 但有...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/18/2007
 ms.assetid: 615f3361-f21f-4338-8bc1-fce8ae071de9
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4b99b1c01056b8e06e925eca65371a90d2831326
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 059538d3196aaa1fe3a70d9c02565e4e7af36881
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37813260"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832535"
 ---
 <a name="adding-additional-datatable-columns-c"></a>添加其他 DataTable 列 (C#)
 ====================

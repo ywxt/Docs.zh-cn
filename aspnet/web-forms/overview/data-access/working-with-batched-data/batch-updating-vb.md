@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
 title: 批更新 (VB) |Microsoft Docs
 author: rick-anderson
 description: 了解如何更新单个操作中的多个数据库记录。 在用户界面层我们构建一个 GridView，其中每行都是可编辑。 在数据中...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/26/2007
 ms.assetid: d191a204-d7ea-458d-b81c-0b9049ecb55f
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7e5062898ca683571df2929eba5d824f9d77accd
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 76c475b67943b77d99630e087ed46fe6d5f11a03
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37833396"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834549"
 ---
 <a name="batch-updating-vb"></a>批量更新 (VB)
 ====================

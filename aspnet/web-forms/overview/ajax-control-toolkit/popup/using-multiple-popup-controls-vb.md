@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls
 title: 使用多个弹出控件 (VB) |Microsoft Docs
 author: wenz
 description: AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激活任何其他控件时触发一个弹出窗口。 还有可能要使用 m...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 4da43d77-f6c4-43a8-9124-f1e8e1c8f0a2
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5a2be36ecf17a95d53e5e912ba0a90113f70f2fb
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 81b0dbd794d31bc3c55bff4ba8110c590b88b509
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807630"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833734"
 ---
 <a name="using-multiple-popup-controls-vb"></a>使用多个弹出控件 (VB)
 ====================

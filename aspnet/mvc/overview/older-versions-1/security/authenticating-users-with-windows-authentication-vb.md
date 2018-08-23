@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/security/authenticating-users-with-windows-au
 title: 使用 Windows 身份验证 (VB) 的用户进行身份验证 |Microsoft Docs
 author: microsoft
 description: 了解如何在 MVC 应用程序的上下文中使用 Windows 身份验证。 了解如何启用 Windows 身份验证应用程序的 web 共同中...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/27/2009
 ms.assetid: 532fa051-7d5c-4d6d-87f6-339ce4b84c44
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c3c7f7bfc15483451ede5382bf3fc02db47dea0e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e37508dedd4243dd1a1638e68760f6f4310e61a8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37811683"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832518"
 ---
 <a name="authenticating-users-with-windows-authentication-vb"></a>使用 Windows 身份验证 (VB) 的用户进行身份验证
 ====================

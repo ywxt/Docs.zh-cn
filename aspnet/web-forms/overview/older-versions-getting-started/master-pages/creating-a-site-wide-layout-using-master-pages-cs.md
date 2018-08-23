@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/master-pages/creating-a-s
 title: 创建站点范围内布局使用母版页 (C#) |Microsoft Docs
 author: rick-anderson
 description: 本教程会演示母版页基础知识。 也就是说，主页面，是什么如何一个创建主页面，什么是内容的占位符，如何执行一个 cr...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/21/2008
 ms.assetid: 78f8d194-03b9-44a5-8255-90e7cd1c2ee1
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cf9264f6569fe1a5c0369b17a2358c5207cad6ad
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3bdb533c1cb724d57152e676a75af8067a6828d8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829267"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831203"
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-c"></a>创建站点范围内布局使用母版页 (C#)
 ====================
@@ -53,7 +53,7 @@ ms.locfileid: "37829267"
 
 ## <a name="understanding-how-master-pages-work"></a>了解如何母版页的工作原理
 
-构建具有一致的站点级页面布局的网站，要求每个网页发出除了其自定义内容的常见格式设置标记。 例如，www.asp.net 上的每个教程或论坛帖子有自己唯一的内容，而每个这些页面还呈现了一系列常见`<div>`显示顶级部分链接的元素： 主页、 入门、 学习、 等等。
+构建具有一致的站点级页面布局的网站，要求每个网页发出除了其自定义内容的常见格式设置标记。 例如， www.asp.net 上的每个教程或论坛帖子有自己唯一的内容，而每个这些页面还呈现了一系列常见`<div>`显示顶级部分链接的元素： 主页、 入门、 学习、 等等。
 
 有各种用于创建具有一致的外观的网页的技术。 一个幼稚的做法是只需复制并粘贴到所有网页的常见布局标记，但这种方法有许多缺点。 对于初学者而言，每次创建一个新页面时，您必须记住复制并粘贴到页的共享的内容。 此类复制和粘贴操作是错误的时机已经成熟，因为你可能会意外地将共享标记的一个子集复制到新页。 从而为了彻底，这种方法使用新建一个真正的困难因为每个站点中的单个页面必须编辑才能使用新的外观和感觉替换现有的网站的外观。
 
@@ -165,7 +165,7 @@ ms.locfileid: "37829267"
 
 ## <a name="step-2-creating-associated-content-pages"></a>步骤 2： 创建关联的内容页
 
-与创建母版页，我们就可以开始创建绑定到母版页的 ASP.NET 页。 此类页面嘿 *内容页*。
+与创建母版页，我们就可以开始创建绑定到母版页的 ASP.NET 页。 这些页面称为*内容页面*。
 
 让我们向项目添加新的 ASP.NET 页面并将其绑定到`Site.master`母版页。 右键单击解决方案资源管理器中的项目名称并选择添加新项选项。 选择 Web 窗体模板中，输入名称`About.aspx`，然后选中"选择母版页"复选框，如图 7 中所示。 执行此操作将显示选择母版页对话框框中，您可以从中选择要使用的母版页的 （请参阅图 8）。
 

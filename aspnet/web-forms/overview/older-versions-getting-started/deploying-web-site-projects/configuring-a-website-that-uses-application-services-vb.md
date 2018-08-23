@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: 配置使用应用程序服务 (VB) 的网站 |Microsoft Docs
 author: rick-anderson
 description: ASP.NET 2.0 版引入了一系列的应用程序服务，这是.NET Framework 的一部分，作为构建基块的一套服务 yo...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/23/2009
 ms.assetid: 9c31a42f-d8bb-4c0f-9ccc-597d4f70ac42
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6d4852fe4a8589ddcb23c7afa4ed5c5e74ef0af1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d5fe8dc8486cf08e0aaf0e107069972eee7fbada
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37841687"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835092"
 ---
 <a name="configuring-a-website-that-uses-application-services-vb"></a>配置网站使用应用程序服务 (VB)
 ====================

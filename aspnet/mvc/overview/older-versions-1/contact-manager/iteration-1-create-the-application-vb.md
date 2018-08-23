@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-applic
 title: 迭代 1 – 创建应用程序 (VB) |Microsoft Docs
 author: microsoft
 description: 在第一次迭代中，我们创建联系人管理器中的最简单方法可能。 我们将添加对基本数据库操作的支持： 创建、 读取、 更新和 D....
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: 5b033582-1646-42c2-b20d-7edc8814e970
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1a61699ef3ac2936df85ea38cd472ad3f107c070
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: 9369f843719d7198716ff83c5bbd5d3995f70973
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396122"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831693"
 ---
 <a name="iteration-1--create-the-application-vb"></a>迭代 1 – 创建应用程序 (VB)
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-p
 title: 使用 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 将 ASP.NET Web 应用程序部署： 部署到 IIS 作为测试环境-5 12 |Microsoft Docs
 author: tdykstra
 description: 本系列教程演示如何将部署 （发布） ASP.NET web 应用程序项目的 SQL Server Compact 数据库使用包含的 Visual Stu...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/17/2011
 ms.assetid: 493b2a66-816c-485c-8315-952ed1085ccc
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 46d986aad52b0ab5a235eade2e17b0cf9f8cdb9f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ba939012e8fb11a50992eeaef70e8ebf61cea851
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37835196"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832652"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-iis-as-a-test-environment---5-of-12"></a>使用 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 将 ASP.NET Web 应用程序部署： 作为测试环境-5 12 部署到 IIS
 ====================
@@ -132,7 +132,7 @@ ms.locfileid: "37835196"
 
 在中**站点/应用程序**框中，输入*默认 Web 站点/ContosoUniversity*。
 
-在中**目标 URL**框中，输入`http://localhost/ContosoUniversity`。
+在中**目标 URL**框中，输入 `http://localhost/ContosoUniversity` 。
 
 **目标 URL**设置不需要。 完成 Visual Studio 部署应用程序后，它会自动打开默认浏览器访问此 URL。 如果不想要在部署后自动打开浏览器，将此框留空。
 

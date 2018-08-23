@@ -3,17 +3,17 @@ uid: signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 title: 教程： 使用 signalr 2 实现服务器的广播 |Microsoft Docs
 author: tdykstra
 description: 本教程演示如何创建使用 ASP.NET SignalR 2 来提供服务器广播的功能的 web 应用程序。 服务器广播意味着该 commun...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/13/2014
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 0e86fbea9c5668e20fce7a494c76c52f9c089c09
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c2248e68b3c9411687ab6410f12ec85488fe0738
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820692"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830688"
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>教程： 使用 signalr 2 实现广播的服务器
 ====================

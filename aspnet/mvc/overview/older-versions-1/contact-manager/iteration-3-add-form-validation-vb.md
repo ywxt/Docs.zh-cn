@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validati
 title: 迭代 3 – 添加表单验证 (VB) |Microsoft Docs
 author: microsoft
 description: 在第三个迭代中，我们将添加基本窗体验证。 我们阻止用户提交窗体而无法完成所需的窗体字段。 我们还验证 emai...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: 4805e75a-7911-46e3-b11b-229a6eed245e
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a02178bfb662f180343ad32a6453b910e8e70471
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: b44aaab45f04f736e4171a43a8b24b71aaedca2f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396203"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825251"
 ---
 <a name="iteration-3--add-form-validation-vb"></a>迭代 3 – 添加表单验证 (VB)
 ====================

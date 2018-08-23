@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-conten
 title: 将动态内容添加到缓存的页面 (VB) |Microsoft Docs
 author: microsoft
 description: 了解如何混合在同一页中的动态和缓存内容。 缓存后替换使您能够显示动态内容，例如横幅广告 o...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/27/2009
 ms.assetid: 68acd884-fb57-4486-a1be-aaa93e380780
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 802b712cffd0584d984a1b17e8b6b0c70c3db7c7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 121a3a35c8255f1423d7008930315f76bbb8e8f9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37832177"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834142"
 ---
 <a name="adding-dynamic-content-to-a-cached-page-vb"></a>将动态内容添加到缓存的页面 (VB)
 ====================

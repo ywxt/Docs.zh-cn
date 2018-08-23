@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-map-an-aspnet-server-control-to-the-adap
 title: '[如何实现:]将 ASP.NET 服务器控件映射到用于呈现该适配器 |Microsoft Docs'
 author: rick-anderson
 description: 在此视频的 Chris Pels 将显示如何使用控件适配器为 ASP.NET 服务器控件提供不同呈现，而无需实际更改 c...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/19/2008
 ms.assetid: d4b498ef-8e1c-4fa2-9c35-1f32f20bb9b7
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it
 msc.type: video
-ms.openlocfilehash: 951f494a82566ad35db464aedcab8bf2ab28b5fd
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5e9a8194fb6a51362e1426654a0afb4c7ffd5dd3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831208"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825250"
 ---
 <a name="how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it"></a>[如何实现:]映射到用于呈现该适配器的 ASP.NET 服务器控件
 ====================

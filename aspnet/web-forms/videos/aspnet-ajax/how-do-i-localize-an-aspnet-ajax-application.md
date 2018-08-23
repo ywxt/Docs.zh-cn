@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-localize-an-aspnet-ajax-application
 title: '[如何实现:]本地化 ASP.NET AJAX 应用程序？ | Microsoft Docs'
 author: rick-anderson
 description: 在本视频中，我们开始的标准的 ASP.NET framework 的本地化功能的概述，然后观察的本地化功能...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/10/2007
 ms.assetid: 62188875-159b-4d9e-98b7-7fda3fdd5b76
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-localize-an-aspnet-ajax-application
 msc.type: video
-ms.openlocfilehash: cc4ab86fd609c660cf8daec32d31ad8d43bd344f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5ec6b51e2fd1c2bc2396408e7c6b82e1274b9e86
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805838"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831090"
 ---
 <a name="how-do-i-localize-an-aspnet-ajax-application"></a>[如何实现:]本地化 ASP.NET AJAX 应用程序？
 ====================

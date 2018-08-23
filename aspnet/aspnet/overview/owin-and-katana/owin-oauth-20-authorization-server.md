@@ -3,17 +3,17 @@ uid: aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 title: OWIN OAuth 2.0 授权服务器 |Microsoft Docs
 author: hongyes
 description: 本教程将指导您如何实现 OAuth 2.0 授权服务器使用 OWIN OAuth 中间件。 这是一个高级的教程，该唯一 outlin...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/20/2014
 ms.assetid: 20acee16-c70c-41e9-b38f-92bfcf9a4c1c
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
-ms.openlocfilehash: e3b5b37b4f22f3c59d3c1f4043e9b52e46a8926b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7b9ba2ca0cd0269ebb3e0e4ae056d4597a198a03
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828414"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825485"
 ---
 <a name="owin-oauth-20-authorization-server"></a>OWIN OAuth 2.0 授权服务器
 ====================

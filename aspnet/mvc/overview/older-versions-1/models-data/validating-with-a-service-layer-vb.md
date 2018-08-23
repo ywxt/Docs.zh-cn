@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-v
 title: 使用服务层 (VB) 进行验证 |Microsoft Docs
 author: StephenWalther
 description: 了解如何将移动应用验证逻辑从控制器操作和到单独的服务层。 在本教程中，Stephen Walther 解释了如何在...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/02/2009
 ms.assetid: 344bb38e-4965-4c47-bda1-f6d29ae5b83a
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 673e9be46e37e9a805f1dae4944f69939b087dda
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ecce8e4f0a901ce8c185d2b085f4d706bd57fa1f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836560"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832928"
 ---
 <a name="validating-with-a-service-layer-vb"></a>使用服务层 (VB) 进行验证
 ====================

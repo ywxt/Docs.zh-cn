@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for
 title: 我如何： 实现视图模型，用于管理 ASP.NET MVC 视图的数据？ | Microsoft Docs
 author: rick-anderson
 description: Chris Pels 在本视频演示如何使用这一概念&quot;视图模型&quot;用于管理 ASP.NET MVC 视图的数据。 首先，示例 MVC 项目是凭据...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/11/2009
 ms.assetid: 22f55d63-78f7-44fd-9107-f74cbe16022b
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views
 msc.type: video
-ms.openlocfilehash: 30a02f4e9f277f54891fdc86c7ba2820a0d77e0b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 32e10e038e7effbe7cddba0f64db9b8bb8bd4c31
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37819067"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832913"
 ---
 <a name="how-do-i-implement-view--models-to-manage-data-for-aspnet-mvc-views"></a>我如何： 实现视图模型，用于管理 ASP.NET MVC 视图的数据？
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding
 title: 了解 ASP.NET AJAX 调试功能 |Microsoft Docs
 author: scottcate
 description: 调试代码的能力是每个开发人员应具有其无论他们使用的技术库中的一项技能。 虽然许多开发人员...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/28/2008
 ms.assetid: 7f9380c6-19f7-4c82-a019-916ec6dffc9c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
-ms.openlocfilehash: 95c2487f26109cbdd8c76dc6f269f37264f5e34b
-ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
+ms.openlocfilehash: 13fd8f05cd994ff1c902bd067fb4ed425010d64e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39655441"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830677"
 ---
 <a name="understanding-aspnet-ajax-debugging-capabilities"></a>了解 ASP.NET AJAX 调试功能
 ====================

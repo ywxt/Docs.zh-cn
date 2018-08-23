@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/working-with-binary-files/including-a-file-u
 title: 添加新记录 (C#) 时包括的文件上传选项 |Microsoft Docs
 author: rick-anderson
 description: 本教程演示如何创建一个 Web 界面，允许用户输入的文本数据的同时上传二进制文件。 为了说明选项可用 t...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/27/2007
 ms.assetid: 362ade25-3965-4fb2-88d2-835c4786244f
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5cc1db20a724c8a060e978e2360b977fb16f1e0c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c3887f920126d70b300de5a0d6e09474fd33c332
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842376"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834244"
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-c"></a>添加新记录 (C#) 时包括文件上传选项
 ====================

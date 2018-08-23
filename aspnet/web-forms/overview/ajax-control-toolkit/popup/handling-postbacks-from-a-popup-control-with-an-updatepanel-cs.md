@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-pop
 title: 通过使用带 UpdatePanel (C#) 的弹出控件处理回发 |Microsoft Docs
 author: wenz
 description: AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激活任何其他控件时触发一个弹出窗口。 特别注意必须为其拍摄...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 1f68f59d-9c1e-4cf3-b304-c13ae6b7203e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9fdf2821e005bfcb691134bb6994c01fa72b7abd
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0f886ba0f3e79bc6d5daf193eaedfd627bc9b937
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815377"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825258"
 ---
 <a name="handling-postbacks-from-a-popup-control-with-an-updatepanel-c"></a>通过使用带 UpdatePanel (C#) 的弹出控件处理回发
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-re
 title: 通过 ReorderList (C#) 使用回发 |Microsoft Docs
 author: wenz
 description: AJAX 控件工具包中的 ReorderList 控件提供了可以由用户通过拖放重新排序的列表。 只要列表重新排序，采购订单...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 70d5d106-b547-442c-a7fd-3492b3e3d646
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4510adc4ecf6928863b035d0afe8d008968d25b0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 426e31bc9804c97b551b9c36679d2b821700b915
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820099"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830693"
 ---
 <a name="using-postbacks-with-reorderlist-c"></a>通过 ReorderList (C#) 使用回发
 ====================

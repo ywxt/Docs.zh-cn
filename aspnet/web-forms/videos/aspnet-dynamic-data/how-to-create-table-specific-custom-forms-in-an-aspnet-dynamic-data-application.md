@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-dynamic-data/how-to-create-table-specific-custom-fo
 title: 如何在 ASP.NET 动态数据应用程序中创建表特定的自定义窗体 |Microsoft Docs
 author: JoeStagner
 description: 有时我们需要来更改默认的 ASP.NET 动态数据应用程序中的用户界面。 在本视频中，我们将了解如何实现的以及如何我们可以关闭...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/11/2008
 ms.assetid: 14d3a727-8a1a-4950-8e8f-ce97f5b2ec1f
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-to-create-table-specific-custom-forms-in-an-aspnet-dynamic-data-application
 msc.type: video
-ms.openlocfilehash: 0f23131754cdf2bbb874cec6fffcce554b4e5bda
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: cc6fa8e4305bec7a31c61b2191b158f16667a7a1
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840993"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834153"
 ---
 <a name="how-to-create-table-specific-custom-forms-in-an-aspnet-dynamic-data-application"></a>如何在 ASP.NET 动态数据应用程序中创建表特定的自定义窗体
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-enable-x
 title: '[如何实现:]启用 XML IntelliSense 和使用 XML 命名空间？ | Microsoft Docs'
 author: bethmassi
 description: Visual Basic 开发人员将了解如何启用 XML IntelliSense 使用的架构以及查询和创建 XML 文档时，如何使用 XML 命名空间。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/15/2007
 ms.assetid: cdccd601-c0fe-4e56-9c38-7ef027de3481
 msc.legacyurl: /web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-enable-xml-intellisense-and-use-xml-namespaces
 msc.type: video
-ms.openlocfilehash: a4db10ded41fda6946df907ab5a89ab29cc59352
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5125262d5a6accde291b833a211792187e5044ca
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37801578"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832514"
 ---
 <a name="how-do-i-enable-xml-intellisense-and-use-xml-namespaces"></a>[如何实现:]启用 XML IntelliSense 和使用 XML 命名空间？
 ====================

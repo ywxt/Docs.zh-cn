@@ -3,17 +3,17 @@ uid: web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-wor
 title: 承载 ASP.NET Web API 2 中的 Azure 辅助角色 |Microsoft Docs
 author: MikeWasson
 description: 本教程演示如何在托管在 Azure 辅助角色中，ASP.NET Web API 使用 OWIN 自托管 Web API 框架。 开放 Web 接口的.NET (OWIN) de...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/02/2014
 ms.assetid: 6980ee2e-d6b0-4a08-8fb6-ab96362dd0e3
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: c53256b8a72a377f51b9fbac7944657cb6d4c6e4
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: cabf88e4e6c946f92a9e4534a4db5ae15dd8cae5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37803845"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832940"
 ---
 <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>承载 ASP.NET Web API 2 中的 Azure 辅助角色
 ====================

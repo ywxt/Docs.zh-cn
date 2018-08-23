@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/troublesho
 title: 打包过程故障排除 |Microsoft Docs
 author: jrjlee
 description: 本主题介绍如何在 M 使用 EnablePackageProcessLoggingAndAssert 属性可以收集有关打包过程的详细的信息...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 794bd819-00fc-47e2-876d-fc5d15e0de1c
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/troubleshooting-the-packaging-process
 msc.type: authoredcontent
-ms.openlocfilehash: e262968ffb1f847e393e13b4e82d4f1a6029028e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 22be1ccc5a1ec52d143bedffd79264918c1a45e1
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802910"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833244"
 ---
 <a name="troubleshooting-the-packaging-process"></a>打包过程故障排除
 ====================

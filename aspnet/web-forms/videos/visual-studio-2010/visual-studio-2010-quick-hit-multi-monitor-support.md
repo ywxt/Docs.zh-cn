@@ -3,17 +3,17 @@ uid: web-forms/videos/visual-studio-2010/visual-studio-2010-quick-hit-multi-moni
 title: Visual Studio 2010 快速命中-多监视器支持
 author: JoeStagner
 description: 在本视频中将了解有关 Visual Studio 支持的多个监视器方案以提高你的屏幕空间，使用和优化整体...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/11/2009
 ms.assetid: 26dfc502-d164-4261-8006-ffde9a3e3447
 msc.legacyurl: /web-forms/videos/visual-studio-2010/visual-studio-2010-quick-hit-multi-monitor-support
 msc.type: video
-ms.openlocfilehash: d5046579c7f1505fffdeabe199a03a4ef7bd70b7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 04dcebefdefe933ccbc5471224f6604b281ed096
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837346"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825268"
 ---
 <a name="visual-studio-2010-quick-hit---multi-monitor-support"></a>Visual Studio 2010"快速命中"-多监视器支持
 ====================

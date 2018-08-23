@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-rep
 title: 排序 DataList 或 Repeater 控件 (C#) 中的数据 |Microsoft Docs
 author: rick-anderson
 description: 在本教程中我们将介绍如何包含排序 DataList 和 Repeater 中的支持，以及如何构造其数据可以 DataList 或 Repeater...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/13/2006
 ms.assetid: f52c302a-1b7c-46fe-8a13-8412c95cbf6d
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f394487523a7da112d32fb18b622bc73d5077aaa
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 05fbc51d5341a4d3d634cbbc05c0e66a827b0394
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839987"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834137"
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-c"></a>排序 DataList 或 Repeater 控件 (C#) 中的数据
 ====================

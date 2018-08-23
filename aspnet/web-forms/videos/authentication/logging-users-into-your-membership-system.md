@@ -3,17 +3,17 @@ uid: web-forms/videos/authentication/logging-users-into-your-membership-system
 title: 到成员资格系统的日志记录用户 |Microsoft Docs
 author: JoeStagner
 description: 在此视频中，Joe Stagner 演示如何登录到 ASP.NET 成员资格系统的用户。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/29/2010
 ms.assetid: 39a7142b-8228-4dae-8578-c26d70e3ae71
 msc.legacyurl: /web-forms/videos/authentication/logging-users-into-your-membership-system
 msc.type: video
-ms.openlocfilehash: 33a46a7ac302d82c5b3184ed4ac4fe6eeda46112
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e395924f3af1dafc6f4da7b0073a9a94a40ea33c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37813722"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834542"
 ---
 <a name="logging-users-into-your-membership-system"></a>将用户记录到成员身份系统
 ====================

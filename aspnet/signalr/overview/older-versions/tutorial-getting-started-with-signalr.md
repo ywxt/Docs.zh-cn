@@ -3,17 +3,17 @@ uid: signalr/overview/older-versions/tutorial-getting-started-with-signalr
 title: 教程： 开始使用 SignalR 1.x |Microsoft Docs
 author: pfletcher
 description: 使用 ASP.NET SignalR 生成 HTML 页中的实时聊天应用程序。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/18/2013
 ms.assetid: fdc3599a-5217-44c1-951f-0eec9812dce7
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 13d33ff7e3cfff996a9849cfccfcc43754c8234e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2223675ab2ec40a7e25229bf34b2f0ffddc31fed
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838622"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831694"
 ---
 <a name="tutorial-getting-started-with-signalr-1x"></a>教程： 开始使用 SignalR 1.x
 ====================

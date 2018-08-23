@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-add-javascript-event-handlers-to-aspnet-
 title: '[如何实现:]向 ASP.NET 服务器控件添加 JavaScript 事件处理程序 |Microsoft Docs'
 author: rick-anderson
 description: Chris Pels 将在本视频演示如何使用 ASP.NET 服务器控件提供客户端的 JavaScript 方法的接口的 server contr.功能...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/20/2008
 ms.assetid: 4e8d3220-3299-41ad-897b-bbf62e2e667f
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-add-javascript-event-handlers-to-aspnet-server-controls
 msc.type: video
-ms.openlocfilehash: e0d77926f49e8517af9495420943dd96036cd49b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6d7b0485f81fb7b796c9ca0561382f5f1b780075
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831782"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830904"
 ---
 <a name="how-do-i-add-javascript-event-handlers-to-aspnet-server-controls"></a>[如何实现:]向 ASP.NET 服务器控件添加 JavaScript 事件处理程序
 ====================

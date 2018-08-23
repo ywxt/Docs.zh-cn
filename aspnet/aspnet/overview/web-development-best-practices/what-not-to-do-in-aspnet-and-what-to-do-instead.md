@@ -3,17 +3,17 @@ uid: aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and
 title: 不需要在 ASP.NET 中，做什么和有什么解决办法 |Microsoft Docs
 author: tfitzmac
 description: 本主题介绍几个常见的错误的人也会在 ASP.NET web 项目中。 它提供有关应执行哪些操作来避免这些 commo 建议...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/08/2014
 ms.assetid: c39b9965-545c-4b04-8f55-21be7f28a9e5
 msc.legacyurl: /aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 msc.type: authoredcontent
-ms.openlocfilehash: 9e9b192126995ac8a461b15bce69b60d57ca9ba1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7f2366ef8cb258a08c3cb96407f605864e5ec9a9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806013"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825666"
 ---
 <a name="what-not-to-do-in-aspnet-and-what-to-do-instead"></a>不需要在 ASP.NET 中，做什么和有什么解决办法
 ====================

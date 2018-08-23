@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: 处理未经处理的异常 (VB) |Microsoft Docs
 author: rick-anderson
 description: 出现运行时错误，则在生产环境中的 web 应用程序时，若要通知开发人员，以记录该错误，以便它可以在诊断，a la 一定...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/09/2009
 ms.assetid: 051296f0-9519-4e78-835c-d868da13b0a0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f925a2e2a8cf2785aa2df89c82d2a29965a543d9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 29ea7f376f61c242ab93cfb71e1a7b435c575482
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37835225"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834968"
 ---
 <a name="processing-unhandled-exceptions-vb"></a>处理未经处理的异常 (VB)
 ====================

@@ -3,17 +3,17 @@ uid: visual-studio/overview/2012/windows-azure-authentication
 title: Windows Azure 身份验证 |Microsoft Docs
 author: Rick-Anderson
 description: Microsoft ASP.NET tools for Windows Azure Active Directory 可以轻松地为托管 Windows Azure 网站上的 web 应用程序启用身份验证...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2013
 ms.assetid: a3cef801-a54b-4ebd-93c3-55764e2e14b1
 msc.legacyurl: /visual-studio/overview/2012/windows-azure-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: e3443fb627dc8d7d5011341828556b4c13836170
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d5d055d90b263050ef6defa1b98b139c4f8e4dee
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812804"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834681"
 ---
 <a name="windows-azure-authentication"></a>Windows Azure 身份验证
 ====================

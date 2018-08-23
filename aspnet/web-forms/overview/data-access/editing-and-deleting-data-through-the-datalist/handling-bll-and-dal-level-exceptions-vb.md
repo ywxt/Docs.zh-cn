@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datali
 title: 处理 BLL 和 DAL 级别的异常 (VB) |Microsoft Docs
 author: rick-anderson
 description: 在本教程中，我们将了解如何巧妙地处理可编辑 DataList 的更新工作流期间引发的异常。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/30/2006
 ms.assetid: ca665073-b379-4239-9404-f597663ca65e
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1aee5c26bfbbbc46c2151a56fed60057930cba80
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e71ad365ecbfc1bb33117a6c93e7108a4b3866a6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37814247"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834973"
 ---
 <a name="handling-bll--and-dal-level-exceptions-vb"></a>处理 BLL 和 DAL 级别的异常 (VB)
 ====================

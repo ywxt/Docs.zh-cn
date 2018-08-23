@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 title: 第 6 部分： 使用数据批注的模型验证 |Microsoft Docs
 author: jongalloway
 description: 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 6 部分介绍如何为模型 V 使用数据注释...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: b3193d33-2d0b-4d98-9712-58bd897c62ec
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 10884f569f0f5d95517b73daab31fbd269a4726a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b666c3cef0b09c6d68cee581a3c27c08e3357cca
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825948"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830873"
 ---
 <a name="part-6-using-data-annotations-for-model-validation"></a>第 6 部分： 使用数据注释进行模型验证
 ====================

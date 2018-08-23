@@ -3,17 +3,17 @@ uid: web-forms/videos/net-4/routing/how-do-i-use-routing-with-aspnet-web-forms
 title: 如何实现： 使用 ASP.NET Web 窗体路由使用？ | Microsoft Docs
 author: rick-anderson
 description: 在本视频中 Chris Pels 演示如何实现的 ASP.NET 4 中的 Web 窗体路由。 首先，路由 URL 的概念进行比较的 URL 映射到 p...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/15/2010
 ms.assetid: a3ab6cd9-8f71-4b73-9336-21c0de078269
 msc.legacyurl: /web-forms/videos/net-4/routing/how-do-i-use-routing-with-aspnet-web-forms
 msc.type: video
-ms.openlocfilehash: 4b570df24b7a931b3853c5117a29d405ca8ecf24
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b1bba2725f893032f49fa1d43dbc7348f2c21e6e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830197"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835097"
 ---
 <a name="how-do-i-use-routing-with-aspnet-web-forms"></a>如何实现： 使用 ASP.NET Web 窗体路由使用？
 ====================

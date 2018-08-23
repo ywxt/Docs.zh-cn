@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-p
 title: 使用 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 将 ASP.NET Web 应用程序部署： 部署 SQL Server Compact 数据库-2 的 12 |Microsoft Docs
 author: tdykstra
 description: 本系列教程演示如何将部署 （发布） ASP.NET web 应用程序项目的 SQL Server Compact 数据库使用包含的 Visual Stu...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/17/2011
 ms.assetid: c3c76516-4c48-4153-bd03-d70e3a3edbb0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: dc094211df77e6d3ff5eacb878be901e3552fd13
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 378bcc038335ee852cd1a6c6e545eb72c6e0c78b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37803053"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833746"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>使用 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 将 ASP.NET Web 应用程序部署： 部署 SQL Server Compact 数据库-2 的 12
 ====================
@@ -187,7 +187,7 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和窗体身份验证
 将站点部署第一次，时，往往会排除大部分或全部创建用于测试的用户帐户。 在这种情况下，你将部署的管理员帐户和任何用户帐户。 而不是手动删除的测试帐户，将创建具有仅需要在生产环境中的一个管理员用户帐户的新成员资格数据库。
 
 > [!NOTE]
-> 成员资格数据库将存储帐户密码的哈希值。 若要部署从一台计算机到另一个帐户，必须确保哈希例程不生成目标服务器上的不同哈希值不是它们在源计算机上执行。 它们会生成相同的哈希时使用了 ASP.NET 通用提供程序，只要不更改默认的算法。 默认的算法是 HMACSHA256 和中指定**验证**的属性**[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)** Web.config 文件中的元素。
+> 成员资格数据库将存储帐户密码的哈希值。 若要部署从一台计算机到另一个帐户，必须确保哈希例程不生成目标服务器上的不同哈希值不是它们在源计算机上执行。 它们会生成相同的哈希时使用了 ASP.NET 通用提供程序，只要不更改默认的算法。 默认的算法是 HMACSHA256 和中指定**验证**的属性 **[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)** Web.config 文件中的元素。
 
 
 成员资格数据库不由 Code First 迁移，维护并且没有使用测试帐户数据库种子 （因为没有为 School 数据库） 没有自动初始值设定项。 因此，要保持可用的测试数据将使测试数据库的副本之前创建一个新。

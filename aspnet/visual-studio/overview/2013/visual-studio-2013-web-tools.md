@@ -3,17 +3,17 @@ uid: visual-studio/overview/2013/visual-studio-2013-web-tools
 title: 动手实验： Visual Studio 2013 Web 工具 |Microsoft Docs
 author: rick-anderson
 description: Visual Studio 是一个极好开发环境。基于 NET 的 Windows 和 web 项目。 它包括一个强大的文本编辑器，可轻松用于...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2014
 ms.assetid: 09e82351-816b-402d-acd1-0f9ac6901d16
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-tools
 msc.type: authoredcontent
-ms.openlocfilehash: 9553d3129ff4c942eacbba628d1daaf6c4e33635
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 82248efd767c1110b9a4067b7d0c0e2ecafcbef9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807523"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831705"
 ---
 <a name="hands-on-lab-visual-studio-2013-web-tools"></a>动手实验： Visual Studio 2013 Web 工具
 ====================
@@ -324,7 +324,7 @@ ms.locfileid: "37807523"
 
     ![错误列表窗口](visual-studio-2013-web-tools/_static/image32.png "错误列表窗口")
 
-    *错误列表窗口*
+    *“错误列表”窗口*
 3. 在中**Web Essentials**对话框中，单击**是**插入说明&lt;元&gt;标记。
 
     ![Web Essentials 对话框](visual-studio-2013-web-tools/_static/image33.png "Web Essentials 对话框")

@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-use-other-javascript-user-interface-l
 title: '[如何实现:]使用 ASP.NET AJAX 使用其他 JavaScript 用户界面库？ | Microsoft Docs'
 author: JoeStagner
 description: Microsoft 是 OpenAjax 联盟的一部分，Microsoft AJAX Library 设计为可无缝使用第三方 JavaScript 用户界面库...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2007
 ms.assetid: 35cf5142-e2d0-40de-884b-00039cc7ecb7
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-other-javascript-user-interface-libraries-with-aspnet-ajax
 msc.type: video
-ms.openlocfilehash: 7e40432c9d67bb67c8908942eaf8f194c67e34a4
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 89fa8c82d47c047c8d14f2e647102546bc67a997
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825922"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834282"
 ---
 <a name="how-do-i-use-other-javascript-user-interface-libraries-with-aspnet-ajax"></a>[如何实现:]使用 ASP.NET AJAX 使用其他 JavaScript 用户界面库？
 ====================

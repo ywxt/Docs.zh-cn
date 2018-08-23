@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/advanced-data-access-scenarios/working-with-
 title: 处理计算列 (VB) |Microsoft Docs
 author: rick-anderson
 description: Microsoft SQL Server 创建数据库表时，允许您定义计算的列由表达式计算其值，通常 referen...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/03/2007
 ms.assetid: 5811b8ff-ed56-40fc-9397-6b69ae09a8f6
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7e489640c9075b3443725ddd776ca08fd5569232
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 81254408252c5e786c938d4eb8beb1c7a2b65218
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830980"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830886"
 ---
 <a name="working-with-computed-columns-vb"></a>处理计算列 (VB)
 ====================

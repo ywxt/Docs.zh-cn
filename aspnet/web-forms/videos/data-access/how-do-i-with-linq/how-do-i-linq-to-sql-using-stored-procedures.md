@@ -3,17 +3,17 @@ uid: web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-using-
 title: '[如何实现:]LINQ to SQL： 使用存储的过程 |Microsoft Docs'
 author: scottstanfield
 description: 使用现有存储的过程和函数很容易与 linq 结合使用。 我们只需将存储的过程拖动到 O/R 映射图面上，并从 ge 调用它们...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/10/2008
 ms.assetid: b1abfcaa-3b7d-42b9-be11-38904910ece0
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures
 msc.type: video
-ms.openlocfilehash: 69278d90e218f6a3a076cfca84dcbec7fd85c7e8
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d5acda503cbdaa6f4e05fddc374745f26a9fb5a6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37801946"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825458"
 ---
 <a name="how-do-i-linq-to-sql-using-stored-procedures"></a>[如何实现:]LINQ to SQL： 使用存储的过程
 ====================
