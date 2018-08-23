@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/implement-infinite-data-patterns-in-ajax
 title: 在 AJAX 中实现无限数据模式 |Microsoft Docs
 author: JoeStagner
 description: 在本视频中我将演示如何实现什么我称之为 AJAX 的无限数据模式。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/10/2008
 ms.assetid: 5e18f005-8b3d-4b9a-866c-c567874aa826
 msc.legacyurl: /web-forms/videos/aspnet-ajax/implement-infinite-data-patterns-in-ajax
 msc.type: video
-ms.openlocfilehash: 5c9c03792801c85b9687674bcfe99f3a0860ad33
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b2e282d88e677e283896a90df98152f26c43f637
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37818853"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834938"
 ---
 <a name="implement-infinite-data-patterns-in-ajax"></a>在 AJAX 中实现无限数据模式
 ====================

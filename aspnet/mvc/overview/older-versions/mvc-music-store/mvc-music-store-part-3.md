@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
 title: 第 3 部分： 视图和 Viewmodel |Microsoft Docs
 author: jongalloway
 description: 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 3 部分介绍 Views 和 ViewModels。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: 94297aa0-1f2d-4d72-bbcb-63f64653e0c0
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 8fd89c2a448877bf13a7828f545ffcd400f63bb1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 828ff18abcc5932f82be71a45ebde589eeb051fa
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837405"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831059"
 ---
 <a name="part-3-views-and-viewmodels"></a>第 3 部分： 视图和 Viewmodel
 ====================
@@ -214,7 +214,7 @@ Visual Web Developer 中创建并打开"Index.cshtml"视图模板之后我们单
 
 ![](mvc-music-store-part-3/_static/image18.png)
 
-在我们"foreach"循环中，Visual Web 开发人员知道，每个项的类型是类型，因此我们看到 IntelliSence 每个流派类型。
+在我们"foreach"循环中，Visual Web 开发人员知道，每个项的类型是类型，因此我们会看到 IntelliSense 每个流派类型。
 
 ![](mvc-music-store-part-3/_static/image19.png)
 

@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-implement-the-predictive-fetch-patter
 title: '[如何实现:]实现 AJAX 的预取模式？ | Microsoft Docs'
 author: JoeStagner
 description: 演示如何实现 AJAX，AJAX 引擎在其中使用的当前状态的用户的交互来预测以下值时的预取模式...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/13/2007
 ms.assetid: 4ecca278-0cd6-4198-8382-802359b30120
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-predictive-fetch-pattern-for-ajax
 msc.type: video
-ms.openlocfilehash: fb136aab5e61491dadcee63f48547f3f7000dedc
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9403f2ca18660f257d7d624301cd66a7234ba7a2
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805011"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831675"
 ---
 <a name="how-do-i-implement-the-predictive-fetch-pattern-for-ajax"></a>[如何实现:]实现 AJAX 的预取模式？
 ====================

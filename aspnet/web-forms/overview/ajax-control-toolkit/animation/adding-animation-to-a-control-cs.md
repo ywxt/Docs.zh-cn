@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-con
 title: 将动画添加到控件 (C#) |Microsoft Docs
 author: wenz
 description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 本教程演示如何...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 0f1fc1f5-9dbd-44e7-931e-387d42f0342b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 10e541bc7e8a9a72d27909d7b37cfaf1860fe369
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: aa977883af931bb74b791104cf4ee3212079e43a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37832945"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831677"
 ---
 <a name="adding-animation-to-a-control-c"></a>将动画添加到控件 (C#)
 ====================

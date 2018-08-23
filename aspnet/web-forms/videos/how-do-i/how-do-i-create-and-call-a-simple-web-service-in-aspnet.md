@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-create-and-call-a-simple-web-service-in-
 title: '[如何实现:]创建并在 ASP.NET 中调用简单的 Web 服务 |Microsoft Docs'
 author: rick-anderson
 description: 在此视频的 Chris Pels 将演示如何在 ASP.NET 中创建 web 服务，然后从另一个 ASP.NET web 站点调用该服务。 首先，了解如何创建...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/27/2008
 ms.assetid: 34464109-4968-4eee-a1b1-5601cc853125
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-create-and-call-a-simple-web-service-in-aspnet
 msc.type: video
-ms.openlocfilehash: 3f69b4a7223aa1cbbfe1633d384acf8d5e405beb
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 82bce3cbf123fd94e8c765c8ecbedc866a15480a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836154"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834529"
 ---
 <a name="how-do-i-create-and-call-a-simple-web-service-in-aspnet"></a>[如何实现:]创建和调用简单的 Web 服务在 ASP.NET 中
 ====================

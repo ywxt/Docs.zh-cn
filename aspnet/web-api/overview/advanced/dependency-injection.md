@@ -3,17 +3,17 @@ uid: web-api/overview/advanced/dependency-injection
 title: ASP.NET Web API 2 中的依赖关系注入 |Microsoft Docs
 author: MikeWasson
 description: 本教程演示如何将依赖项注入到你的 ASP.NET Web API 控制器。 在教程的 Web API 2 Unity 应用程序块中使用的软件版本...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/20/2014
 ms.assetid: e3d3e7ba-87f0-4032-bdd3-31f3c1aa9d9c
 msc.legacyurl: /web-api/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: a470c778fd5998006a0bf8edb08b62a75d72c48c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 41db1af79ed63ff4dd12be37e9cc76e16f1bf5e4
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802670"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832496"
 ---
 <a name="dependency-injection-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的依赖关系注入
 ====================
@@ -33,7 +33,7 @@ ms.locfileid: "37802670"
 
 ## <a name="what-is-dependency-injection"></a>什么是依赖关系注入？
 
-一个*依赖项*是另一个对象需要的任何对象。 例如，是常见定义[存储库](http://martinfowler.com/eaaCatalog/repository.html)用于处理数据访问。 让我们演示了通过一个示例。 首先，我们需要定义一个域模型：
+依赖项是另一个对象所需的任何对象。 例如，是常见定义[存储库](http://martinfowler.com/eaaCatalog/repository.html)用于处理数据访问。 让我们演示了通过一个示例。 首先，我们需要定义一个域模型：
 
 [!code-csharp[Main](dependency-injection/samples/sample1.cs)]
 

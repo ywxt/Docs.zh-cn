@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/custom-button-actions/adding-and-responding-
 title: 添加和响应 gridview (VB) 的按钮的 |Microsoft Docs
 author: rick-anderson
 description: 在本教程中我们将介绍如何将自定义按钮，添加到模板和 GridView 或 DetailsView 控件的字段。 具体而言，我们将标示...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/13/2006
 ms.assetid: 06c6bbd2-4bdc-435b-87a3-df2c868f4baa
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1e35c6655506b5ec79efe8a5000e136e865854f2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0834d43f95bd19fffb603dcde640714bd779fd80
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831688"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833107"
 ---
 <a name="adding-and-responding-to-buttons-to-a-gridview-vb"></a>添加和响应的按钮 GridView (VB)
 ====================

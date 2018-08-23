@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/nerddinner/implement-efficient-data-paging
 title: 实现高效数据分页 |Microsoft Docs
 author: microsoft
 description: 步骤 8 显示了如何将分页支持添加到我们 /Dinners URL，以便而不是显示数千次 dinners，我们将仅显示在 10 个即将推出 dinners...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: adea836d-dbc2-4005-94ea-53aef09e9e34
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/implement-efficient-data-paging
 msc.type: authoredcontent
-ms.openlocfilehash: bcd7fdf59fac8328752aa2ebab61c1d50a8b6b0d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2bef690355cd1f89a15a67f0c49775296d551136
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842138"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833109"
 ---
 <a name="implement-efficient-data-paging"></a>实现高效数据分页
 ====================

@@ -3,17 +3,17 @@ uid: web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshoo
 title: ASP.NET 网页 (Razor) 故障排除指南 |Microsoft Docs
 author: tfitzmac
 description: 本文介绍使用 ASP.NET Web Pages (Razor) 和一些建议的解决方案时可能遇到的问题。 软件版本 ASP.NET Web 页的链接...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/10/2014
 ms.assetid: 2a2c1833-0bfe-4e2e-9cc0-341b52c7b121
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: 0d0e47ce1b52f0e9ac23a44bbd37ac1a38290dbd
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c27139a720decd34a4ab89e6f93e71c97d123b45
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825158"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832492"
 ---
 <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET 网页 (Razor) 疑难解答指南
 ====================

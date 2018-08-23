@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/masterdetail/master-detail-filtering-with-tw
 title: 使用两个 Dropdownlist (VB) 进行筛选母版/详细信息 |Microsoft Docs
 author: rick-anderson
 description: 本教程将延伸的母版/详细信息关系添加第三个层，使用两个 DropDownList 控件来选择所需的父级和祖父录制...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 11ae4f64-01ba-4823-95f4-a2fe1f84f7d7
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-two-dropdownlists-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 17bbaa346925585b5b184127fa80fd2203869492
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 20df98f1aacb046bb9ec9fa5ad03e008dc234509
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805280"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825242"
 ---
 <a name="masterdetail-filtering-with-two-dropdownlists-vb"></a>使用两个 Dropdownlist (VB) 进行筛选母版/详细信息
 ====================

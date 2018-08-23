@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-use-the-ability-to-create-groups-with-th
 title: '[如何实现:]使用此功能与不同的数据的 ListView 控件中创建组 |Microsoft Docs'
 author: rick-anderson
 description: 在本视频中 Chris Pels 将显示如何在 ListView 控件中显示数据时对项进行分组。 首先，请参阅在 ListView 控制项布局的基础知识...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/20/2008
 ms.assetid: 694103ee-3845-451a-aac4-be06559530d2
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-the-ability-to-create-groups-with-the-listview-control-for-different-data
 msc.type: video
-ms.openlocfilehash: 3dd9d0b8445fcb9b832c4359e970180b4017a2f8
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 16afcd4d472531b099bf7b34f3ea7f2283c69e41
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37817796"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825440"
 ---
 <a name="how-do-i-use-the-ability-to-create-groups-with-the-listview-control-for-different-data"></a>[如何实现:]使用此功能与不同的数据的 ListView 控件中创建组
 ====================

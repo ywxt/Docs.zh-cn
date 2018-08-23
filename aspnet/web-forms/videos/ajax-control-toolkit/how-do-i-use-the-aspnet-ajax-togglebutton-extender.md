@@ -3,17 +3,17 @@ uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-togglebu
 title: '[如何实现:]使用 ASP.NET AJAX ToggleButton 扩展器？ | Microsoft Docs'
 author: JoeStagner
 description: 演示如何使用虚拟网络间 ToggleButton 扩展程序控件，若要修改的行为和标准的 ASP.NET 复选框控件，以增强用户的外观...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/01/2007
 ms.assetid: 3116e9bc-681c-48f9-813e-1bcfcec145da
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-togglebutton-extender
 msc.type: video
-ms.openlocfilehash: bd1b58d843839a60b24513796359d0bd502e5e6f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 44fe6258c0973a9598a3fe586aa18a9a7ea909ff
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802932"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833095"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-togglebutton-extender"></a>[如何实现:]使用 ASP.NET AJAX ToggleButton 扩展器？
 ====================
