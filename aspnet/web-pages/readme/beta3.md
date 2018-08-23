@@ -237,10 +237,10 @@ ms.locfileid: "41831093"
 
 #### <a name="issue-lthelpergt-class-cannot-be-found-error"></a>问题:"&lt;帮助器&gt;找不到类"错误
 
-> 升级到 Beta 3 后，可能会看到错误的帮助器类 (例如，`Facebook`类) 不能找不到。 在 Beta 2 开始，一直在 Beta 3 中，帮助程序已被移到必须显式安装的包。 不升级现有的站点中包含这些包;这包括中的站点*\My Documents\IISExpress*或*\My Documents\My 网站*文件夹。 具体而言，您会看到此错误，如果使用中的默认站点*我的网站*(WebSite1)，其中包括对引用`Twitter`帮助器。
+> 升级到 Beta 3 后，可能会看到错误的帮助器类 (例如，`Facebook`类) 不能找不到。 在 Beta 2 开始，一直在 Beta 3 中，帮助程序已被移到必须显式安装的包。 不升级现有的站点中包含这些包;这包括中的站点 *\My Documents\IISExpress* 或*\My Documents\My 网站*文件夹。 具体而言，您会看到此错误，如果使用中的默认站点*我的网站*(WebSite1)，其中包括对引用`Twitter`帮助器。
 > 
 > **解决方法**  
-> 注释掉对运行的站点中任何帮助程序调用*\_管理员*页，并安装包或包含你想要使用的帮助器的包。 安装此包后，可以取消注释引用帮助程序的行。
+> 注释掉对运行的站点中任何帮助程序调用 *\_管理员* 页，并安装包或包含你想要使用的帮助器的包。 安装此包后，可以取消注释引用帮助程序的行。
 
 
 #### <a name="issue-deploying-beta-3-aspnet-razor-assemblies-to-the-bin-folder-might-not-work-on-hosting-sites"></a>问题： Beta 3 ASP.NET Razor 程序集部署到 Bin 文件夹可能不适用于托管站点
@@ -341,7 +341,7 @@ ms.locfileid: "41831093"
 >     - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **到** *\Bin\x86*
 >     - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **到** *\Bin\amd64*
 > 2. 在该网站的根文件夹中创建或打开*Web.config*文件。 (此文件类型是在 WebMatrix Beta 3 中，单击**所有**中**选择文件类型**对话框。)
-> 3. 将以下元素添加为的子**&lt;配置&gt;** 元素 (而不是在**&lt;system.web&gt;** 元素):
+> 3. 将以下元素添加为的子 **&lt;配置&gt;** 元素 (而不是在 **&lt;system.web&gt;** 元素):
 > 
 > 
 > [!code-xml[Main](beta3/samples/sample10.xml)]
