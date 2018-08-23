@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-
 title: 根据条件 (VB) 的动画 |Microsoft Docs
 author: wenz
 description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 无论动画是...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 1b87d8d6-b3f7-4126-b51c-d41442fbf947
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4b815d7000d94ceec8864b29f0dddf0171344de1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: be43b68ce77819cdcd09d8e875604db90e8a8d96
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836283"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825054"
 ---
 <a name="animation-depending-on-a-condition-vb"></a>动画取决于条件 (VB)
 ====================

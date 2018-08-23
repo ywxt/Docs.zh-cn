@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/overview/understanding-models-views-and-contr
 title: 了解模型、 视图和控制器 (VB) |Microsoft Docs
 author: StephenWalther
 description: 有关模型、 视图和控制器感到迷惑吗？ 在本教程中，Stephen Walther 向您介绍到的 ASP.NET MVC 应用程序的不同部分。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/19/2008
 ms.assetid: a106374a-5e74-4fd0-9ac0-1a32280e5d0d
 msc.legacyurl: /mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1c751972b0f59a3988e15eed0c6cff3bc566de0e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 15d4e7d7b6a2662296b8e3647cd60187de580789
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838723"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823561"
 ---
 <a name="understanding-models-views-and-controllers-vb"></a>了解模型、 视图和控制器 (VB)
 ====================
@@ -110,7 +110,7 @@ ASP.NET 路由使用路由表来处理传入的请求。 Web 应用程序首次�
 
 操作 = 详细信息
 
-Id = 3
+id = 3
 
 Global.asax 文件中定义的默认路由包括所有三个参数的默认值。 默认控制器是主页，默认操作是索引，默认 Id 是空字符串。 记住这些默认值，请看以下 URL 的分析方式：
 

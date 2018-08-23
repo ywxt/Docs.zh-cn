@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/using-oauth-providers-with-mvc
 title: 通过 MVC 4 使用 OAuth 提供程序 |Microsoft Docs
 author: tfitzmac
 description: 本教程演示如何构建 ASP.NET MVC 4 web 应用程序，使用户能够从 Facebo 之类的外部提供程序的凭据登录...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/19/2013
 ms.assetid: 7a87f16f-0e19-4f15-a88a-094ae866c4a2
 msc.legacyurl: /mvc/overview/older-versions/using-oauth-providers-with-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 15f6b45706c0711d68b0780a7474d4c939a85fba
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9b0db2775db5c74762bdc55328ad44ef7ebe75ce
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823321"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825062"
 ---
 <a name="using-oauth-providers-with-mvc-4"></a>通过 MVC 4 使用 OAuth 提供程序
 ====================
@@ -83,7 +83,7 @@ AuthConfig 文件包含注册外部身份验证提供程序的客户端的代码
 - [Microsoft](http://manage.dev.live.com/)
 - [Twitter](https://dev.twitter.com/)
 
-如果向 Facebook 注册你的网站，则可以提供&quot;localhost&quot;站点域和`&quot;http://localhost/&quot;`对于 URL，如下图中所示。 使用 localhost 适用于大多数提供程序，但当前不使用 Microsoft 提供程序。 对于 Microsoft 提供程序，必须包含有效的网站 URL。
+如果向 Facebook 注册你的网站，则可以提供&quot;localhost&quot;站点域和 `&quot;http://localhost/&quot;` 对于 URL，如下图中所示。 使用 localhost 适用于大多数提供程序，但当前不使用 Microsoft 提供程序。 对于 Microsoft 提供程序，必须包含有效的网站 URL。
 
 ![注册站点](using-oauth-providers-with-mvc/_static/image4.png)
 

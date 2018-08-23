@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/membership/creating-the-membersh
 title: 在 SQL Server (VB) 中创建成员身份架构 |Microsoft Docs
 author: rick-anderson
 description: 本教程首先会检查才能使用 SqlMembershipProvider 向数据库添加必要的架构的方法。 之后，我们 wi...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/18/2008
 ms.assetid: 112a674d-716f-41a6-99b8-4074d65a54c0
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1fa1e3f57c1218af6fec8bddeed6cdcbdffe1965
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 62a6113c9ddad1722160c7092308939cf7883588
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831840"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832046"
 ---
 <a name="creating-the-membership-schema-in-sql-server-vb"></a>在 SQL Server (VB) 中创建成员身份架构
 ====================

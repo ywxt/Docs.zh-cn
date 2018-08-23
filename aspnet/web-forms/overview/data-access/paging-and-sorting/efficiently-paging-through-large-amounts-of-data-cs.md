@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/paging-and-sorting/efficiently-paging-throug
 title: 有效分页通过大量数据 (C#) |Microsoft Docs
 author: rick-anderson
 description: 使用大量的数据，作为其基础数据源控件 retriev 时，数据呈现控件的默认分页选项是不合适...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/15/2006
 ms.assetid: 59c01998-9326-4ecb-9392-cb9615962140
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bb10524e7973894ea60663da3813673742ae4ab4
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
-ms.translationtype: HT
+ms.openlocfilehash: feebee845a19a7cb462127a893a30ac7e0761965
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825835"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832673"
 ---
 <a name="efficiently-paging-through-large-amounts-of-data-c"></a>有效分页通过大量数据 (C#)
 ====================
@@ -352,7 +352,7 @@ DAL s`TotalNumberOfProducts`方法返回一个可以为 null 的整数; 但是�
 我的项目[ASP.NET 2.0 与 SQL Server 2005 中的自定义分页](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx)，包含一些性能测试，我运行来表现出这两种分页方法时分页通过与数据库表之间的性能差异50,000 个记录。 在这些测试中，我研究了这两个时间来执行 SQL Server 级别的查询 (使用[SQL Profiler](https://msdn.microsoft.com/library/ms173757.aspx)) 并在 ASP.NET 页使用[ASP.NET 的跟踪功能](https://msdn.microsoft.com/library/y13fw6we.aspx)。 请记住，这些测试是在单个活动用户，我开发机器上运行，并因此是一百和不模拟典型网站的负载模式。 无论如何，结果说明了执行时间的默认实例和自定义分页的相对差异时使用足够大量的数据。
 
 
-|  | **Avg.持续时间 （秒）** | **读取** |
+|  | **Avg.持续时间 （秒）** | **读取次数** |
 | --- | --- | --- |
 | **默认分页 SQL Profiler** | 1.411 | 383 |
 | **自定义分页 SQL Profiler** | 0.002 | 29 |

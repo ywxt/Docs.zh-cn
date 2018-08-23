@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/overview/understanding-models-views-and-contr
 title: 了解模型、 视图和控制器 (C#) |Microsoft Docs
 author: StephenWalther
 description: 有关模型、 视图和控制器感到迷惑吗？ 在本教程中，Stephen Walther 向您介绍到的 ASP.NET MVC 应用程序的不同部分。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/19/2008
 ms.assetid: 87313792-0a96-4caf-89fc-1457d54e5c1e
 msc.legacyurl: /mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c4c5247ac4b880c1be60f0419ebc9fc9b790c639
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5e9186a6c261266de8f1a1509a49b84b359bd920
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823389"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825050"
 ---
 <a name="understanding-models-views-and-controllers-c"></a>了解模型、 视图和控制器 (C#)
 ====================
@@ -80,25 +80,25 @@ ms.locfileid: "37823389"
 
 ## <a name="a-url-does-not-equal-a-page"></a>URL 不等于页面
 
-传统的 ASP.NET Web 窗体应用程序或 Active Server Pages 应用程序生成时，没有一个 URL，另一个页面之间的一一对应关系。 视图可以包含 HTML 内容和脚本。 您可以编写脚本中最喜欢的.NET 编程语言 （例如，C# 或 Visual Basic.NET）。
+传统的 ASP.NET Web 窗体应用程序或 Active Server Pages 应用程序生成时，没有一个 URL，另一个页面之间的一一对应关系。 如果请求名 SomePage.aspx 为从服务器的页，则有更好地有一个页面上名为 SomePage.aspx 磁盘。 如果 SomePage.aspx 文件不存在，则获取费解之处**404-找不到页面**错误。
 
-使用脚本来显示动态内容，例如数据库数据。 了解模型
+当构建 ASP.NET MVC 应用程序，与此相反，没有任何浏览器的地址栏中键入的 URL 和应用程序中查找的文件之间的对应关系。 在 ASP.NET MVC 应用程序 URL 对应于而不是磁盘上页面的控制器操作。
 
-我们已讨论了控制器，我们已讨论了视图。 我们需要介绍的最后一个主题是模型。 MVC 模型是什么？ MVC 模型包含所有未包含在视图或控制器应用程序逻辑。
+在传统 ASP.NET 或 ASP 应用程序中，浏览器请求映射到页中。 ASP.NET MVC 应用程序中与此相反，浏览器请求映射到控制器操作。 ASP.NET Web 窗体应用程序是以内容为中心。 ASP.NET MVC 应用程序中，与此相反，是为中心的应用程序逻辑。
 
-## <a name="understanding-aspnet-routing"></a>该模型应包含的所有应用程序业务逻辑、 验证逻辑和数据库访问逻辑。
+## <a name="understanding-aspnet-routing"></a>了解 ASP.NET 路由
 
-例如，如果使用 Microsoft 实体框架来访问你的数据库，然后你将创建您的 Entity Framework 类 （在.edmx 文件） Models 文件夹中。 视图应包含仅与生成用户界面相关的逻辑。
+将浏览器请求映射到通过一项功能的名为 ASP.NET 框架的控制器操作*ASP.NET 路由*。 ASP.NET MVC 框架使用 ASP.NET 路由*路由*传入到控制器操作的请求。
 
-控制器应只包含逻辑返回右视图或将用户重定向到另一个动作 （流控制） 所需的最低要求。 其他所有内容应包含在模型中。 一般情况下，您应尽量 fat 模型和瘦控制器。 控制器方法应包含只有少量的代码行。
+ASP.NET 路由使用路由表来处理传入的请求。 Web 应用程序首次启动时创建此路由表。 路由表是在 Global.asax 文件中的设置。 默认 MVC Global.asax 文件包含在列表 1 中。
 
-**如果控制器操作获取太 fat，则应考虑将逻辑移到模型文件夹中的新类。**
+**代码清单 1-Global.asax**
 
 [!code-csharp[Main](understanding-models-views-and-controllers-cs/samples/sample1.cs)]
 
-本教程向你提供全面概述了 ASP.NET MVC 的不同部分的 web 应用程序。 您学习了如何 ASP.NET 路由传入浏览器将请求映射到特定控制器操作。
+当 ASP.NET 应用程序首次启动时，应用程序\_调用 start （） 方法。 在列表 1 中，此方法调用 RegisterRoutes() 方法和 RegisterRoutes() 方法创建默认路由表。
 
-您学习了如何控制器协调视图如何返回到浏览器。 最后，您学习了如何模型包含应用程序业务、 验证和数据库访问逻辑。 第一个段映射到的控制器的名称、 第二段映射到的操作名称和最后一段映射到参数传递给操作名为 id。
+默认路由表包含一个路由。 此默认路由将分成三个段 （URL 段是正斜杠之间的任何内容） 的所有传入请求。 第一个段映射到的控制器的名称、 第二段映射到的操作名称和最后一段映射到参数传递给操作名为 id。
 
 以下列 URL 为例：
 
@@ -110,7 +110,7 @@ ms.locfileid: "37823389"
 
 操作 = 详细信息
 
-Id = 3
+id = 3
 
 Global.asax 文件中定义的默认路由包括所有三个参数的默认值。 默认控制器是主页，默认操作是索引，默认 Id 是空字符串。 记住这些默认值，请看以下 URL 的分析方式：
 

@@ -3,17 +3,17 @@ uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms
 title: 显示数据项和详细信息 |Microsoft Docs
 author: Erikre
 description: 本教程系列将指导您学习生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/08/2014
 ms.assetid: 64a491a8-0ed6-4c2f-9c1c-412962eb6006
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/display_data_items_and_details
 msc.type: authoredcontent
-ms.openlocfilehash: 083f7182416012c85f05db255fcab4d8e535b52a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2184c04d5f2361526be0409178dc0a6c665ebc4f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820342"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833102"
 ---
 <a name="display-data-items-and-details"></a>显示数据项和详细信息
 ====================
@@ -96,7 +96,7 @@ ms.locfileid: "37820342"
 
 导航到时，如果没有查询字符串包含*ProductList.aspx*页上，将显示所有产品。
 
-这些方法的值的源嘿 *值提供程序*(如*查询字符串*)，指示要使用的值提供程序的参数属性称为值提供程序属性 (如"`id`")。 ASP.NET Web 窗体应用程序，例如查询字符串、 cookie、 窗体值、 控件、 视图状态，会话状态和配置文件属性中包含值提供程序和所有典型的资源，用户输入的相应属性。 此外可以编写自定义值提供程序。
+这些方法的值的源嘿 *值提供程序*(如*查询字符串*)，指示要使用的值提供程序的参数属性称为值提供程序属性 (如"`id`")。 ASP.NET Web 窗体应用程序，例如查询字符串、 cookie、 窗体值、 控件、 视图状态，会话状态和配置文件属性中包含值提供程序和所有典型的资源，用户输入的相应属性。 此外可以编写自定义值提供程序。
 
 ### <a name="running-the-application"></a>运行应用程序
 

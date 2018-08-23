@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-persist-the-state-of-a-user-control-duri
 title: '[How Do I]: Persist the State of a User Control During a Postback | Microsoft Docs'
 author: rick-anderson
 description: 在此视频的 Chris Pels 中显示了如何持久保存在用户控件中的一个或多个对象的状态。 首先，将创建一个用户控件表示 abilit...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/02/2009
 ms.assetid: d1bca4c6-838c-40f7-87ec-80bb67e483e5
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-persist-the-state-of-a-user-control-during-a-postback
 msc.type: video
-ms.openlocfilehash: 7862d83d3df3ca5407b7d8fd465cf42da8e7228a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b15eef0af3e88f8ca333d9661c5d42a1dbc90151
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805173"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833711"
 ---
 <a name="how-do-i-persist-the-state-of-a-user-control-during-a-postback"></a>[如何操作]: 在回发过程中保留用户控件的状态
 ====================

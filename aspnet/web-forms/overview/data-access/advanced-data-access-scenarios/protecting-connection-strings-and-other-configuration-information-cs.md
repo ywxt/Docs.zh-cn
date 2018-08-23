@@ -2,18 +2,18 @@
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-cs
 title: 保护连接字符串和其他配置信息 (C#) |Microsoft Docs
 author: rick-anderson
-description: ASP.NET 应用程序通常存储在 Web.config 文件中的配置信息。 此信息的一些敏感，需要保护。 通过 def。...
-ms.author: aspnetcontent
+description: ASP.NET 应用程序通常存储在 Web.config 文件中的配置信息。 此信息的一些敏感，需要保护。 通过 def。
+ms.author: riande
 ms.date: 08/03/2007
 ms.assetid: ad8dd396-30f7-4abe-ac02-a0b84422e5be
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 24a066a4c9d60e3dc1897bd3143b382b876e027c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 61ac52ffe28762ce0cf8892621343f71e73a9ca7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842216"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830899"
 ---
 <a name="protecting-connection-strings-and-other-configuration-information-c"></a>保护连接字符串和其他配置信息 (C#)
 ====================

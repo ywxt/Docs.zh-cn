@@ -3,17 +3,17 @@ uid: ajax/cdn/overview
 title: Microsoft Ajax 内容交付网络 |Microsoft Docs
 author: rick-anderson
 description: ''
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: 3ec70bb0746d18e453b6e5728b6ba90b2a3e87f3
-ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
+ms.openlocfilehash: 686cdfa5562f1f3569c30841420b112c522016dc
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38992930"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824859"
 ---
 <a name="microsoft-ajax-content-delivery-network"></a>Microsoft Ajax 内容交付网络
 ====================
@@ -76,7 +76,7 @@ Microsoft Ajax CDN 还包括已由 Microsoft 上传以下库：
 
 Microsoft 不会声称此 CDN 上托管任何第三方库的所有权。 这些库的版权所有者许可给您这些库。 仅由各自版权所有者授予任何权限，可能需要下载并使用这样的库。 由于这些不是 Microsoft 库，Microsoft 将为此 CDN 上托管的第三方库提供任何保证或知识产权版权许可证 （包括任何隐式的专利权利）。
 
-如果你想要提交你的 JavaScript 库，并且你的库是一个顶级的 JavaScript 库 (如上列出http://trends.builtwith.com)或扩展/插件的这些库的都是 （a） 受欢迎; 或 （b） 有助于在 ASP.NET 上使用，则请联系AjaxCDNSubmission@Microsoft.com。
+如果你想要提交你的 JavaScript 库，并且你的库是一个顶级的 JavaScript 库 (如上列出 http://trends.builtwith.com)或扩展/插件的这些库的都是 （a） 受欢迎; 或 （b） 有助于在 ASP.NET 上使用，则请联系AjaxCDNSubmission@Microsoft.com。
 
 <a id="ajaxmicrosoftcom_renamed_to_ajaxaspnetcdncom_18"></a>
 

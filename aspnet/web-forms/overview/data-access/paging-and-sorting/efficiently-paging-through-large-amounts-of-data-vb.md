@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/paging-and-sorting/efficiently-paging-throug
 title: 通过大量的数据 (VB) 有效分页 |Microsoft Docs
 author: rick-anderson
 description: 使用大量的数据，作为其基础数据源控件 retriev 时，数据呈现控件的默认分页选项是不合适...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/15/2006
 ms.assetid: 3e20e64a-8808-4b49-88d6-014e2629d56f
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9b00e18287bdb791a353b7ebd1bbb6cc0ab586b5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5870b9ac2af7d9df927edd8230334dee4885c6a1
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805501"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833130"
 ---
 <a name="efficiently-paging-through-large-amounts-of-data-vb"></a>有效分页通过大量数据 (VB)
 ====================
@@ -160,7 +160,7 @@ DAL s`TotalNumberOfProducts`方法返回一个可以为 null 的整数; 但是�
 [!code-html[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample6.html)]
 
 > [!NOTE]
-> 正如在本教程中，我们将看到的更高版本上*`StartRowIndex`* 提供的对象数据源编制索引的索引从零，开始而`ROW_NUMBER()`返回 SQL Server 2005 值编制索引的索引从 1 开始。 因此，`WHERE`子句将返回这些记录其中`PriceRank`严格大于*`StartRowIndex`* 且小于或等于*`StartRowIndex`*  + *`MaximumRows`*.
+> 正如在本教程中，我们将看到的更高版本上 *`StartRowIndex`* 提供的对象数据源编制索引的索引从零，开始而`ROW_NUMBER()`返回 SQL Server 2005 值编制索引的索引从 1 开始。 因此，`WHERE`子句将返回这些记录其中`PriceRank`严格大于 *`StartRowIndex`* 且小于或等于 *`StartRowIndex`*  + *`MaximumRows`*.
 
 
 现在，我们已讨论过如何`ROW_NUMBER()`可以是用于检索给定的起始行索引和最大行数的值的数据的特定页，我们现在需要实现此逻辑作为 DAL 和 BLL 中的方法。
@@ -352,7 +352,7 @@ DAL s`TotalNumberOfProducts`方法返回一个可以为 null 的整数; 但是�
 我的项目[ASP.NET 2.0 与 SQL Server 2005 中的自定义分页](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx)，包含一些性能测试，我运行来表现出这两种分页方法时分页通过与数据库表之间的性能差异50,000 个记录。 在这些测试中，我研究了这两个时间来执行 SQL Server 级别的查询 (使用[SQL Profiler](https://msdn.microsoft.com/library/ms173757.aspx)) 并在 ASP.NET 页使用[ASP.NET 的跟踪功能](https://msdn.microsoft.com/library/y13fw6we.aspx)。 请记住，这些测试是在单个活动用户，我开发机器上运行，并因此是一百和不模拟典型网站的负载模式。 无论如何，结果说明了执行时间的默认实例和自定义分页的相对差异时使用足够大量的数据。
 
 
-|  | **Avg.持续时间 （秒）** | **读取** |
+|  | **Avg.持续时间 （秒）** | **读取次数** |
 | --- | --- | --- |
 | **默认分页 SQL Profiler** | 1.411 | 383 |
 | **自定义分页 SQL Profiler** | 0.002 | 29 |

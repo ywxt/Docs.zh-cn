@@ -2,18 +2,18 @@
 uid: web-forms/videos/how-do-i/how-do-i-create-a-custom-user-control-in-aspnet
 title: '[如何实现:] 在 ASP.NET 中创建自定义用户控件？ | Microsoft Docs'
 author: rick-anderson
-description: 在本视频中 Chris Pels 将演示如何在 ASP.NET 可以在 web 站点内或跨多个 web 站点中创建自定义用户控件。 Sta。...
-ms.author: aspnetcontent
+description: 在本视频中 Chris Pels 将演示如何在 ASP.NET 可以在 web 站点内或跨多个 web 站点中创建自定义用户控件。 Sta。
+ms.author: riande
 ms.date: 10/26/2007
 ms.assetid: 76e0f17c-c31b-4237-89b5-a46efe602ece
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-create-a-custom-user-control-in-aspnet
 msc.type: video
-ms.openlocfilehash: a8b8d528e1aa569798ae892ba3a41dd9d61ca702
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 916cdfd0680b5cb4bbdf91797cf124b45a0c3f0a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808442"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824435"
 ---
 <a name="how-do-i--create-a-custom-user-control-in-aspnet"></a>[如何实现:] 在 ASP.NET 中创建自定义用户控件？
 ====================

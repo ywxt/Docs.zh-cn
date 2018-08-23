@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-a
 title: 创建自定义 AJAX 控件工具包扩展程序控件 (C#) |Microsoft Docs
 author: microsoft
 description: 自定义扩展程序，可以自定义和扩展的 ASP.NET 控件的功能而无需创建新的类。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/12/2009
 ms.assetid: 96b56eca-a892-45a4-96b4-67e61178650a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 525975c9e0bddc6ef539b477e9f5db3cfd7ee8c3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b9a3b9a8d5c86cc7aac6aeb8b4bac48af2e2edc7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37814260"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830493"
 ---
 <a name="creating-a-custom-ajax-control-toolkit-control-extender-c"></a>创建自定义 AJAX 控件工具包扩展程序控件 (C#)
 ====================

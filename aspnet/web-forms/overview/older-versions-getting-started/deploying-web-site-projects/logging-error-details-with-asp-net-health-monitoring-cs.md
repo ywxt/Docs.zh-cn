@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: ASP.NET 运行状况监视 (C#) 的日志记录错误详细信息 |Microsoft Docs
 author: rick-anderson
 description: Microsoft 的运行状况监控系统提供了简单且可自定义的方式记录各种 web 事件，包括未经处理的异常。 本教程介绍如何对...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/09/2009
 ms.assetid: b1abb452-642a-4ff3-8504-37b85590ff79
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bd6b89f63c6d0634e6d6b809d8285b9870485c43
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 32f78927ae3e3f90392fea5968a035ab30c423ac
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842638"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834563"
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>ASP.NET 运行状况监视 (C#) 的日志记录错误详细信息
 ====================
@@ -28,7 +28,7 @@ ms.locfileid: "37842638"
 
 日志记录是一个有用的工具用于监视部署的应用程序的运行状况和诊断可能会出现任何问题。 特别是，务必记录发生在已部署的应用程序中，以便它们可以纠正的错误。 `Error` ASP.NET 应用程序; 中出现未处理的异常时将引发事件[前面的教程](processing-unhandled-exceptions-cs.md)介绍了如何通知错误的开发人员并通过创建的事件处理程序记录其详细信息`Error`事件。 但是，创建`Error`事件处理程序来记录错误的详细信息并通知开发人员是不必要的因为可以由 ASP 执行此任务。NET 的*运行状况监控系统*。
 
-运行状况监控系统在 ASP.NET 2.0 中引入，它旨在监视已部署的 ASP.NET 应用程序的运行状况，通过在应用程序或请求的生存期期间发生的日志记录事件。 记录运行状况监控系统的事件嘿 *运行状况监视事件*或*Web 事件*，并且包括：
+运行状况监控系统在 ASP.NET 2.0 中引入，它旨在监视已部署的 ASP.NET 应用程序的运行状况，通过在应用程序或请求的生存期期间发生的日志记录事件。 记录运行状况监控系统的事件嘿 *运行状况监视事件*或*Web 事件*，并且包括：
 
 - 应用程序生存期事件，例如当应用程序启动或停止
 - 安全事件，其中包括登录尝试失败和失败的 URL 授权请求

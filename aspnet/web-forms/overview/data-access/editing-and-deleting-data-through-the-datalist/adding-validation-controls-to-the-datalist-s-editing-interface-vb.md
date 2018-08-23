@@ -2,18 +2,18 @@
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-vb
 title: 将验证控件添加到 DataList 的编辑界面 (VB) |Microsoft Docs
 author: rick-anderson
-description: 在本教程中我们将了解如何轻松将验证控件添加到 DataList 的 EditItemTemplate，以提供更能做到万无一失编辑用户 int。...
-ms.author: aspnetcontent
+description: 在本教程中我们将了解如何轻松将验证控件添加到 DataList 的 EditItemTemplate，以提供更能做到万无一失编辑用户 int。
+ms.author: riande
 ms.date: 10/30/2006
 ms.assetid: 6b073fc6-524d-453d-be7c-0c30986de391
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6f7df844462b016ed74430db782005931562fda5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6fe5fcba322f3d3a37b862f0a85810d8b4dda5f4
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37833567"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824245"
 ---
 <a name="adding-validation-controls-to-the-datalists-editing-interface-vb"></a>向 DataList 的编辑界面 (VB) 中添加验证控件
 ====================
