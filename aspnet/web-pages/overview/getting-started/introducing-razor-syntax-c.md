@@ -3,17 +3,17 @@ uid: web-pages/overview/getting-started/introducing-razor-syntax-c
 title: 使用 Razor 语法 (C#) 的 ASP.NET Web 编程简介 |Microsoft Docs
 author: tfitzmac
 description: 本章提供了您的编程概述与 ASP.NET Web Pages 使用 Razor 语法。 ASP.NET 是 Microsoft 的技术，用于运行动态 web pa...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/07/2014
 ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: 22985b71d39d93b8ad42ee923b872846f2fafa99
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 347e5ddbc02866887d3f422ecc291e5e3dfacaaf
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37814296"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832672"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 语法 (C#) 的 ASP.NET Web 编程简介
 ====================
@@ -340,84 +340,248 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
 
 下表列出了一些常见的转换和测试方法的变量。
 
-::: 行:::::: 列:::<strong>方法</strong>::: 列线终止:::::: 列:::<strong>说明</strong>::: 列线终止:::::: 列:::<strong>示例</strong>::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        <strong>方法</strong>
+    :::column-end:::
+    :::column:::
+        <strong>说明</strong>
+    :::column-end:::
+    :::column:::
+        <strong>示例</strong>
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `AsInt(), IsInt()` ::: 列线终止:::::: 列::: 将转换为整数表示 （如"593") 的整数的字符串。
-::: 列线终止:::::: 列::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `AsInt(), IsInt()`
+    :::column-end:::
+    :::column:::
+        将转换为整数表示 （如"593") 的整数的字符串。
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `AsBool(), IsBool()` ::: 列线终止:::::: 列::: 转换字符串，如&quot;true&quot;或&quot;false&quot;为 Boolean 类型。
-::: 列线终止:::::: 列::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `AsBool(), IsBool()`
+    :::column-end:::
+    :::column:::
+        将转换字符串，如&quot;，则返回 true&quot;或&quot;false&quot;为 Boolean 类型。
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `AsFloat(), IsFloat()` ::: 列线终止:::::: 列::: 将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为浮点数。
-::: 列线终止:::::: 列::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `AsFloat(), IsFloat()`
+    :::column-end:::
+    :::column:::
+        将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为浮点数。
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `AsDecimal(), IsDecimal()` ::: 列线终止:::::: 列::: 将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为十进制数。 （在 ASP.NET 中，十进制数字是一个浮点数，更详细地说明。）::: 列线终止:::::: 列::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `AsDecimal(), IsDecimal()`
+    :::column-end:::
+    :::column:::
+        将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为十进制数。 （在 ASP.NET 中，十进制数字是一个浮点数，更详细地说明。） :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `AsDateTime(), IsDateTime()` ::: 列线终止:::::: 列::: 将对 ASP.NET 表示的日期和时间值的字符串转换`DateTime`类型。
-::: 列线终止:::::: 列::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `AsDateTime(), IsDateTime()`
+    :::column-end:::
+    :::column:::
+        将对 ASP.NET 表示的日期和时间值的字符串转换`DateTime`类型。
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `ToString()` ::: 列线终止:::::: 列::: 任何其他数据类型转换的字符串。
-::: 列线终止:::::: 列::: [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `ToString()`
+    :::column-end:::
+    :::column:::
+        将任何其他数据类型转换为字符串。
+    :::column-end:::
+    :::column:::
+        [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)]
+    :::column-end:::
+:::row-end:::
 
 ## <a name="operators"></a>运算符
 
 运算符是命令的关键字或告诉 ASP.NET 什么样来执行在表达式中的字符。 C# 语言 （及对其基于 Razor 语法） 支持很多运算符，但只需识别几个开始。 下表总结了最常见的运算符。
 
 
-::: 行:::::: 列:::<strong>运算符</strong>::: 列线终止:::::: 列:::<strong>说明</strong>::: 列线终止:::::: 列:::<strong>示例</strong>::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        <strong>Operator</strong>
+    :::column-end:::
+    :::column:::
+        <strong>说明</strong>
+    :::column-end:::
+    :::column:::
+        <strong>示例</strong>
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `+` `-` `*` `/` ::: 列线终止:::::: 列::: 数值表达式中使用的数学运算符。
-::: 列线终止:::::: 列::: [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `+` `-` `*` `/`
+    :::column-end:::
+    :::column:::
+        在数值表达式中使用的数学运算符。
+    :::column-end:::
+    :::column:::
+        [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `=` ::: 列线终止:::::: 列::: 赋值。 将一条语句右侧的值分配给左侧和右侧的对象。
-::: 列线终止:::::: 列::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `=`
+    :::column-end:::
+    :::column:::
+        赋值。 将一条语句右侧的值分配给左侧和右侧的对象。
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `==` ::: 列线终止:::::: 列::: 相等性。 返回`true`值是否相等。 (请注意之间的区别`=`运算符和`==`运算符。)::: 列线终止:::::: 列::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `==`
+    :::column-end:::
+    :::column:::
+        相等。 返回`true`值是否相等。 (请注意之间的区别`=`运算符和`==`运算符。) :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `!=` ::: 列线终止:::::: 列::: 是否不相等。 返回`true`如果值不相等。
-::: 列线终止:::::: 列::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `!=`
+    :::column-end:::
+    :::column:::
+        不相等。 返回`true`如果值不相等。
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `< > <= >=` ::: 列线终止:::::: 列::: 较少-号、 大于-比小于-或者-等于，以及大于或等于。
-::: 列线终止:::::: 列::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `< > <= >=`
+    :::column-end:::
+    :::column:::
+        更少的相比，更高的比，小于-或者-等于，以及大于或等于。
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `+` ::: 列线终止:::::: 列::: 用于联接的字符串的串联。 ASP.NET 就会知道此运算符和加法运算符的表达式的数据类型之间的差异。
-::: 列线终止:::::: 列::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `+`
+    :::column-end:::
+    :::column:::
+        串联用于联接的字符串。 ASP.NET 就会知道此运算符和加法运算符的表达式的数据类型之间的差异。
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `+=` `-=` ::: 列线终止:::::: 列::: 递增和递减运算符，从而添加，并且从变量 （分别） 减 1。
-::: 列线终止:::::: 列::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `+=` `-=`
+    :::column-end:::
+    :::column:::
+        递增和递减运算符，从而添加，并且从变量 （分别） 减 1。
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `.` ::: 列线终止:::::: 列::: 圆点。 用于区分对象及其属性和方法。
-::: 列线终止:::::: 列::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `.`
+    :::column-end:::
+    :::column:::
+        圆点。 用于区分对象及其属性和方法。
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `()` ::: 列线终止:::::: 列::: 括号。 使用组表达式，并将参数传递给方法。
-::: 列线终止:::::: 列::: [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `()`
+    :::column-end:::
+    :::column:::
+        括号。 使用组表达式，并将参数传递给方法。
+    :::column-end:::
+    :::column:::
+        [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `[]` ::: 列线终止:::::: 列::: 方括号。 用于访问数组或集合中的值。
-::: 列线终止:::::: 列::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `[]`
+    :::column-end:::
+    :::column:::
+        方括号。 用于访问数组或集合中的值。
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `!` ::: 列线终止:::::: 列::: 不。 反转`true`值设为`false`，反之亦然。 通常用作测试的速记方法`false`(即，对于不`true`)。
-::: 列线终止:::::: 列::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `!`
+    :::column-end:::
+    :::column:::
+        不。 反转`true`值设为`false`，反之亦然。 通常用作测试的速记方法`false`(即，对于不`true`)。
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 行:::::: 列::: `&&` <code>&#124;&#124;</code> ::: 列线终止:::::: 列::: 逻辑与和一起用于链接条件。
-::: 列线终止:::::: 列::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]
-    ::: 列线终止:::::: 行线终止:::
+:::row:::
+    :::column:::
+        `&&` <code>&#124;&#124;</code>
+    :::column-end:::
+    :::column:::
+        逻辑 AND 和 OR，用于链接在一起条件。
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]
+    :::column-end:::
+:::row-end:::
 
 <a id="ID_WorkingWithFileAndFolderPaths"></a>
 ## <a name="working-with-file-and-folder-paths-in-code"></a>使用文件和代码中的文件夹路径

@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-use-validation-controls-in-aspnet
 title: '[如何实现:] 在 ASP.NET 中使用验证控件？ | Microsoft Docs'
 author: rick-anderson
 description: 在本视频中了解如何使用 ASP.NET 提供的验证控件在网页上实现验证。 此类的所有主要的验证控件...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/26/2007
 ms.assetid: 1f2e5f5b-8be1-4acc-ae36-a2e0d140251a
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-validation-controls-in-aspnet
 msc.type: video
-ms.openlocfilehash: c1556438a386e20b62a3ac02ebefecf0e9bc3be0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: da8831e179360dda870d6ee3d667118094983894
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37826726"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835111"
 ---
 <a name="how-do-i--use-validation-controls-in-aspnet"></a>[如何实现:] 在 ASP.NET 中使用验证控件？
 ====================

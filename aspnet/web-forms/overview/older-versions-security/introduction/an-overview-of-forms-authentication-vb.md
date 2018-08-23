@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/introduction/an-overview-of-form
 title: 窗体身份验证 (VB) 的概述 |Microsoft Docs
 author: rick-anderson
 description: 在本教程中我们将只讨论到的新实现。具体而言，我们将介绍在实现窗体身份验证。 Web 应用程序 w...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/14/2008
 ms.assetid: 83267f7d-64d9-41ee-82cf-da91b1bf534d
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 757cdebc436a4cb799f92374744ee9cb69eb0e0b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ca290c6b7b6b4f8da92b9658519d716651d46341
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37809454"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833483"
 ---
 <a name="an-overview-of-forms-authentication-vb"></a>窗体身份验证 (VB) 的概述
 ====================

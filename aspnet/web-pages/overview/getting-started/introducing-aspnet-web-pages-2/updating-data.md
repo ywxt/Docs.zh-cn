@@ -3,17 +3,17 @@ uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-
 title: Introducing ASP.NET 网页-更新数据库的数据 |Microsoft Docs
 author: tfitzmac
 description: 本教程演示如何使用 ASP.NET Web Pages (Razor) 时，更新 （更改） 的现有数据库条目。 它假定你已完成一系列第...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/02/2018
 ms.assetid: ac86ec9c-6b69-485b-b9e0-8b9127b13e6b
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 948f5b5933669a43bf37dc0317ad644660dc67e9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9d0da2eed9964e56a01f3c811d6a14c9d1735e10
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842897"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835119"
 ---
 <a name="introducing-aspnet-web-pages---updating-database-data"></a>ASP.NET 网页简介-更新数据库数据
 ====================

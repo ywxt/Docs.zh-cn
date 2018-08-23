@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-35/how-do-i/how-do-i-cascading-style-sheets-in-visu
 title: '[如何实现:]Visual Studio 2008 中的级联样式表 |Microsoft Docs'
 author: rick-anderson
 description: 在本视频中，我们将查看改进的工具，用于创建外部级联样式表。 CSS 非常重要的任何设计良好的网站和 Visual Studio 2...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/14/2008
 ms.assetid: fa9c74b0-c692-4553-805c-b89f8bf2c4da
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-cascading-style-sheets-in-visual-studio-2008
 msc.type: video
-ms.openlocfilehash: 7ff360f32265235d679dad973fb065f8fbc20545
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6d3566fa7267b389d0b2ac0ecd31ff368e659e5a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37813466"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831235"
 ---
 <a name="how-do-i-cascading-style-sheets-in-visual-studio-2008"></a>[如何实现:]Visual Studio 2008 中的级联样式表
 ====================

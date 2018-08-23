@@ -3,17 +3,17 @@ uid: web-forms/overview/presenting-and-managing-data/model-binding/sorting-pagin
 title: 排序、 分页和筛选数据与模型绑定和 web 窗体 |Microsoft Docs
 author: tfitzmac
 description: 本系列教程演示了一个 ASP.NET Web 窗体项目中使用模型绑定的基本方面。 模型绑定使数据交互...更多直接-
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/27/2014
 ms.assetid: 266e7866-e327-4687-b29d-627a0925e87d
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/sorting-paging-and-filtering-data
 msc.type: authoredcontent
-ms.openlocfilehash: ded398bcbbb8d7d9e5c882a598bf9d6faa6ea81e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 86ddedb68b8d18057cd2f7d68e795efda33734b1
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37833871"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834703"
 ---
 <a name="sorting-paging-and-filtering-data-with-model-binding-and-web-forms"></a>排序、 分页和筛选数据与模型绑定和 web 窗体
 ====================

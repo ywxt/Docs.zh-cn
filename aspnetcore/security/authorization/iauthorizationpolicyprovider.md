@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/02/2018
 uid: security/authorization/iauthorizationpolicyprovider
-ms.openlocfilehash: 6e46172ec8c5271ffcbad87e4ea5cc98465b78b0
-ms.sourcegitcommit: 41d3c4b27309d56f567fd1ad443929aab6587fb1
+ms.openlocfilehash: e3a534d3c3da5af4cfd3f72d105fac83e15135f0
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37910245"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835122"
 ---
 # <a name="custom-authorization-policy-providers-using-iauthorizationpolicyprovider-in-aspnet-core"></a>在 ASP.NET Core 中使用 IAuthorizationPolicyProvider 的自定义授权策略提供程序 
 
@@ -25,16 +25,19 @@ ms.locfileid: "37910245"
 * （适用于不同的房间号或年龄，例如） 使用了大量的策略，因此它不适合将与每个单个授权策略添加`AuthorizationOptions.AddPolicy`调用。
 * 在运行时基于外部数据源 （如数据库） 中的信息创建策略或通过其他机制动态确定授权要求。
 
-## <a name="customizing-policy-retrieval"></a>自定义策略检索
+[查看或下载示例代码](https://github.com/aspnet/AuthSamples/tree/master/samples/CustomPolicyProvider)从[aspnet/AuthSamples GitHub 存储库](https://github.com/aspnet/AuthSamples)。 Aspnet/AuthSamples 存储库 ZIP 文件下载。
+解压缩*AuthSamples master.zip*文件。 导航到*示例/CustomPolicyProvider*项目文件夹。
 
-ASP.NET Core 应用使用的实现`IAuthorizationPolicyProvider`接口以检索授权策略。 默认情况下[DefaultAuthorizationPolicyProvider](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.defaultauthorizationpolicyprovider)注册和使用。 `DefaultAuthorizationPolicyProvider` 返回从策略`AuthorizationOptions`中提供`IServiceCollection.AddAuthorization`调用。
+## <a name="customize-policy-retrieval"></a>自定义策略检索
+
+ASP.NET Core 应用使用的实现`IAuthorizationPolicyProvider`接口以检索授权策略。 默认情况下[DefaultAuthorizationPolicyProvider](/dotnet/api/microsoft.aspnetcore.authorization.defaultauthorizationpolicyprovider)注册和使用。 `DefaultAuthorizationPolicyProvider` 返回从策略`AuthorizationOptions`中提供`IServiceCollection.AddAuthorization`调用。
 
 可以通过注册其他自定义此行为`IAuthorizationPolicyProvider`在应用中的实现[依赖关系注入](xref:fundamentals/dependency-injection)容器。 
 
 `IAuthorizationPolicyProvider`接口包含两个 Api:
 
-* [GetPolicyAsync](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider.getpolicyasync?view=aspnetcore-2.0#Microsoft_AspNetCore_Authorization_IAuthorizationPolicyProvider_GetPolicyAsync_System_String_)返回具有给定名称的授权策略。
-* [GetDefaultPolicyAsync](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider.getdefaultpolicyasync?view=aspnetcore-2.0)返回的默认授权策略 (用于策略`[Authorize]`而无需指定的策略的属性)。 
+* [GetPolicyAsync](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider.getpolicyasync#Microsoft_AspNetCore_Authorization_IAuthorizationPolicyProvider_GetPolicyAsync_System_String_)返回具有给定名称的授权策略。
+* [GetDefaultPolicyAsync](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider.getdefaultpolicyasync)返回的默认授权策略 (用于策略`[Authorize]`而无需指定的策略的属性)。 
 
 通过实现这两个 Api，可以自定义提供的授权策略的方式。
 
@@ -46,7 +49,7 @@ ASP.NET Core 应用使用的实现`IAuthorizationPolicyProvider`接口以检索�
 
 通过名称标识的授权策略。 自定义`MinimumAgeAuthorizeAttribute`所述之前需要将参数映射到一个字符串，可用于检索相应的授权策略。 您可以执行此操作通过派生自`AuthorizeAttribute`并使`Age`属性包装`AuthorizeAttribute.Policy`属性。
 
-```CSharp
+```csharp
 internal class MinimumAgeAuthorizeAttribute : AuthorizeAttribute
 {
     const string POLICY_PREFIX = "MinimumAge";
@@ -76,7 +79,7 @@ internal class MinimumAgeAuthorizeAttribute : AuthorizeAttribute
 
 可以将其应用于操作中方式不同于其他`Authorize`属性，但前者作为参数的整数。
 
-```CSharp
+```csharp
 [MinimumAgeAuthorize(10)]
 public IActionResult RequiresMinimumAge10()
 ```
@@ -91,7 +94,7 @@ public IActionResult RequiresMinimumAge10()
 * 使用`AuthorizationPolicyBuilder`若要创建一个新 `AuthorizationPolicy`
 * 向策略添加要求根据与保留`AuthorizationPolicyBuilder.AddRequirements`。 在其他情况下，可能会使用`RequireClaim`， `RequireRole`，或`RequireUserName`相反。
 
-```CSharp
+```csharp
 internal class MinimumAgePolicyProvider : IAuthorizationPolicyProvider
 {
     const string POLICY_PREFIX = "MinimumAge";
@@ -130,7 +133,7 @@ internal class MinimumAgePolicyProvider : IAuthorizationPolicyProvider
 
 在许多情况下，此授权属性仅要求身份验证的用户，这样你就可以通过调用必要的策略`RequireAuthenticatedUser`:
 
-```CSharp
+```csharp
 public Task<AuthorizationPolicy> GetDefaultPolicyAsync() => 
     Task.FromResult(new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build());
 ```
@@ -140,14 +143,14 @@ public Task<AuthorizationPolicy> GetDefaultPolicyAsync() =>
 * 可能无法使用默认的授权策略。
 * 检索默认策略可以委派给回退`IAuthorizationPolicyProvider`。
 
-## <a name="using-a-custom-iauthorizationpolicyprovider"></a>使用自定义 IAuthorizationPolicyProvider
+## <a name="use-a-custom-iauthorizationpolicyprovider"></a>使用自定义 IAuthorizationPolicyProvider
 
 若要使用自定义策略从`IAuthorizationPolicyProvider`，您必须：
 
 * 注册的相应`AuthorizationHandler`类型使用依赖关系注入 (中所述[基于策略的授权](xref:security/authorization/policies#authorization-handlers))，与所有基于策略的授权方案。
 * 注册自定义`IAuthorizationPolicyProvider`应用程序的依赖关系注入服务集合中的类型 (在`Startup.ConfigureServices`) 来替换默认策略提供程序。
 
-```CSharp
+```csharp
 services.AddTransient<IAuthorizationPolicyProvider, MinimumAgePolicyProvider>();
 ```
 

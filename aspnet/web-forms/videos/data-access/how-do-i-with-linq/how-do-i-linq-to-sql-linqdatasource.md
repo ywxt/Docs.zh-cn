@@ -3,17 +3,17 @@ uid: web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-linqda
 title: '[如何实现:]LINQ to SQL: LinqDataSource |Microsoft Docs'
 author: scottstanfield
 description: '新的 asp: LinqDataSource 控件.NET 3.5，可以轻松绑定到 UI 元素。 事实上，编写或制作本视频伤害到任何代码。 查询，upd...'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/10/2008
 ms.assetid: 8ba6bfb6-8eb3-45d2-8819-5b5b54bf520c
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource
 msc.type: video
-ms.openlocfilehash: 5daf53a36800ab6f77705a4bc506cb9c7b8b04d9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 55da4a8317329b4d16e01991f1a0e69dc12e5eba
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37826795"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832049"
 ---
 <a name="how-do-i-linq-to-sql-linqdatasource"></a>[如何实现:]LINQ to SQL: LinqDataSource
 ====================

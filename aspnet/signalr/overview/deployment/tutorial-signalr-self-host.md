@@ -3,17 +3,17 @@ uid: signalr/overview/deployment/tutorial-signalr-self-host
 title: 教程： SignalR 自托管 |Microsoft Docs
 author: pfletcher
 description: 本教程演示如何创建自承载的 SignalR 2 服务器，以及如何使用 JavaScript 客户端连接到它。 在本教程 V 中使用的软件版本...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/10/2014
 ms.assetid: 400db427-27af-4f2f-abf0-5486d5e024b5
 msc.legacyurl: /signalr/overview/deployment/tutorial-signalr-self-host
 msc.type: authoredcontent
-ms.openlocfilehash: 71fb121377a49bb741ebff098ff20ec82e85c82a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5d7d485357a6c820f11e0135e2ff9479c1965d96
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37821779"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832250"
 ---
 <a name="tutorial-signalr-self-host"></a>教程： SignalR 自托管
 ====================

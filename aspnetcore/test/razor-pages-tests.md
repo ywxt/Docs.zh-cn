@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/27/2017
 uid: test/razor-pages-tests
-ms.openlocfilehash: 2bac84d6b6e5f30ff0cbbbc0b841833b5c9f48ab
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 364c4c0fd75954f1c7e0bfbc221938afe5332bde
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342401"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833489"
 ---
 # <a name="razor-pages-unit-tests-in-aspnet-core"></a>在 ASP.NET Core razor 页单元测试
 
@@ -57,7 +57,7 @@ dotnet test
 
 &#8224;EF 主题[测试与 InMemory](/ef/core/miscellaneous/testing/in-memory)，说明如何使用内存中数据库的使用 MSTest 的测试。 本主题使用[xUnit](https://xunit.github.io/)测试框架。 测试概念和跨不同测试框架的测试实现有类似，但不是完全相同。
 
-虽然应用不使用[存储库模式](xref:fundamentals/repository-pattern)并不是有效的示例[工作单元 (UoW) 模式](https://martinfowler.com/eaaCatalog/unitOfWork.html)，Razor 页面支持开发这些模式。 有关详细信息，请参阅[设计基础结构持久性层](/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design)，[在 ASP.NET MVC 应用程序中实现存储库和工作单元模式](/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)，和[测试控制器逻辑](/aspnet/core/mvc/controllers/testing)（此示例实现存储库模式）。
+虽然应用不使用[存储库模式](xref:fundamentals/repository-pattern)并不是有效的示例[工作单元 (UoW) 模式](https://martinfowler.com/eaaCatalog/unitOfWork.html)，Razor 页面支持开发这些模式。 有关详细信息，请参阅[设计基础结构持久性层](/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design)， <xref:fundamentals/repository-pattern>，和[测试控制器逻辑](/aspnet/core/mvc/controllers/testing)（此示例实现存储库模式）。
 
 ## <a name="test-app-organization"></a>测试应用程序的组织
 

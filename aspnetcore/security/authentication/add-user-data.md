@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 6/16/2018
 uid: security/authentication/add-user-data
-ms.openlocfilehash: 6f583d65460803c816bf1ccd314216952710cd55
-ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
+ms.openlocfilehash: 3fe329e21b430cc432e97129ffb8499bce002976
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39378610"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835121"
 ---
 # <a name="add-download-and-delete-custom-user-data-to-identity-in-an-aspnet-core-project"></a>添加、 下载和删除标识到 ASP.NET Core 项目中的自定义用户数据
 
@@ -67,7 +67,7 @@ dotnet new webapp -o WebApp1
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-如果以前未安装 ASP.NET 基架，请立即进行安装：
+如果以前未安装 ASP.NET Core 基架，请立即进行安装：
 
 ```cli
 dotnet tool install -g dotnet-aspnet-codegenerator

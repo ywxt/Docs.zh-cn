@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/13/2018
 uid: signalr/hubcontext
-ms.openlocfilehash: 6b955c2064d7d6a045594e56326e2f7df282675f
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: a02588dc98283a375e9deb7c8561c59f6d886eb0
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095302"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833486"
 ---
 # <a name="send-messages-from-outside-a-hub"></a>从向外发送邮件中心
 
@@ -27,7 +27,7 @@ SignalR 中心是用于将消息发送到客户端连接到 SignalR 服务器的
 在 ASP.NET Core SignalR，您可以访问的实例`IHubContext`通过依赖关系注入。 您可以注入的实例`IHubContext`到控制器、 中间件或其他 DI 服务。 使用的实例将消息发送到客户端。
 
 > [!NOTE]
-> 这不同于 ASP.NET SignalR GlobalHost 用于提供对访问`IHubContext`。 ASP.NET Core具有的依赖关系注入框架，无需此全局单一实例。
+> 这不同于 ASP.NET 4.x SignalR GlobalHost 用于提供对访问`IHubContext`。 ASP.NET Core具有的依赖关系注入框架，无需此全局单一实例。
 
 ### <a name="inject-an-instance-of-ihubcontext-in-a-controller"></a>注入的实例`IHubContext`控制器中
 

@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-2/how-do-i/how-do-i-return-json-formatted-data-for-an-ajax-c
 title: 实现： 如何返回 JSON 格式的 ASP.NET MVC Web 应用程序中的 AJAX 调用的数据？ | Microsoft Docs
 author: rick-anderson
 description: 在本视频中 Chris Pels 演示如何使用 JsonResult 和 Json 类返回类的实例为 JSON 格式的数据。 首先，示例 MVC web 应用程序...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/22/2009
 ms.assetid: 7ed06ca2-fab6-41a3-a1cc-a3ccebb639f6
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application
 msc.type: video
-ms.openlocfilehash: 5bb38259c1beda0059bf20aec5a4bac4901efbec
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 86070a8027ad736aa46086a2871e69f1c87f6e54
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825656"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831856"
 ---
 <a name="how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application"></a>实现： 如何返回 JSON 格式的 ASP.NET MVC Web 应用程序中的 AJAX 调用的数据？
 ====================

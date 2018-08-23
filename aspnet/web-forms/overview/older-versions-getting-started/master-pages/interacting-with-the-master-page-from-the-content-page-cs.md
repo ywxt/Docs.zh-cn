@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/master-pages/interacting-
 title: 与母版页从内容页 (C#) 进行交互 |Microsoft Docs
 author: rick-anderson
 description: 探讨如何调用方法，从内容页中的代码中设置属性的母版页等。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/11/2008
 ms.assetid: 32d54638-71b2-491d-81f4-f7417a13a62f
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2aa2ba4443a2bad248b0d2cd2a140dc828fd7747
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: afcec6cb7a6763d068301c7afdd28ff560a3065b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842871"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833271"
 ---
 <a name="interacting-with-the-master-page-from-the-content-page-c"></a>与母版页从内容页 (C#) 进行交互
 ====================

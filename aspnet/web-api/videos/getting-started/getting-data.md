@@ -3,17 +3,17 @@ uid: web-api/videos/getting-started/getting-data
 title: ASP.NET Web API，第 2 部分： 获取数据 |Microsoft Docs
 author: jongalloway
 description: 注意： 此视频包含 ASP.NET Web API 的预发布版本中的信息
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/15/2012
 ms.assetid: 0fed43a5-4703-41ff-8da9-15917cbc0944
 msc.legacyurl: /web-api/videos/getting-started/getting-data
 msc.type: video
-ms.openlocfilehash: 3389a82c8a0f1cb5ede4dba4a02dfb61007dccdd
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 03b69d6f3af1f467c4b13045e96e0e981e663a00
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831513"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830709"
 ---
 <a name="aspnet-web-api-part-2-getting-data"></a>ASP.NET Web API，第 2 部分： 获取数据
 ====================

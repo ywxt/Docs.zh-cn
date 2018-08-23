@@ -3,17 +3,17 @@ uid: web-forms/videos/migrating/interop-between-php-and-the-windows-platform
 title: PHP 和 Windows 平台之间互操作 |Microsoft Docs
 author: microsoft
 description: 在此网络广播中，您将学习如何构建和在 Microsoft Windows Server 操作系统上运行 PHP 应用程序。
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/25/2006
 ms.assetid: 97906c51-8b99-4454-bd0a-29fb8b6f0ce9
 msc.legacyurl: /web-forms/videos/migrating/interop-between-php-and-the-windows-platform
 msc.type: video
-ms.openlocfilehash: b438dcb319abe8e4059985e9346b4ada9931cdf3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a3301fb1e8911e60a39d72c608ad7871124162e9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37821569"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832258"
 ---
 <a name="interop-between-php-and-the-windows-platform"></a>PHP 和 Windows 平台之间的互操作
 ====================

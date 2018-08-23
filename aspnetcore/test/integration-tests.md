@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/30/2018
 uid: test/integration-tests
-ms.openlocfilehash: 8d304397fb7f218b395374c2b8c696fef9d9f8ad
-ms.sourcegitcommit: 571d76fbbff05e84406b6d909c8fe9cbea2c8ff1
+ms.openlocfilehash: 758162eed6d6522986e1c7b93664c55d56216452
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39410177"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832062"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>在 ASP.NET Core 中的集成测试
 
@@ -29,6 +29,9 @@ ms.locfileid: "39410177"
 * [Razor 页面介绍](xref:razor-pages/index)
 * [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)
 * [Razor 页面单元测试](xref:test/razor-pages-tests)
+
+> [!NOTE]
+> 用于测试 Spa，我们建议使用一种工具如[Selenium](https://www.seleniumhq.org/)，这可以自动执行浏览器。
 
 ## <a name="introduction-to-integration-tests"></a>集成测试简介
 
@@ -229,7 +232,7 @@ _client = _factory.CreateClient(clientOptions);
 
 [!code-csharp[](integration-tests/samples/2.x/IntegrationTestsSample/src/RazorPagesProject/Startup.cs?name=snippet2)]
 
-*Pages/Index.cshtml.cs*:
+Pages/Index.cshtml.cs：
 
 [!code-csharp[](integration-tests/samples/2.x/IntegrationTestsSample/src/RazorPagesProject/Pages/Index.cshtml.cs?name=snippet1&highlight=4,9,20,26)]
 
@@ -342,7 +345,7 @@ SUT 是 Razor 页面消息系统具有以下特征：
 
 &#8224;EF 主题[测试与 InMemory](/ef/core/miscellaneous/testing/in-memory)，说明如何使用内存中数据库的使用 MSTest 的测试。 本主题使用[xUnit](https://xunit.github.io/)测试框架。 测试概念和跨不同测试框架的测试实现有类似，但不是完全相同。
 
-虽然应用不使用[存储库模式](xref:fundamentals/repository-pattern)并不是有效的示例[工作单元 (UoW) 模式](https://martinfowler.com/eaaCatalog/unitOfWork.html)，Razor 页面支持开发这些模式。 有关详细信息，请参阅[设计基础结构持久性层](/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design)，[在 ASP.NET MVC 应用程序中实现存储库和工作单元模式](/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)，和[测试控制器逻辑](/aspnet/core/mvc/controllers/testing)（此示例实现存储库模式）。
+虽然应用不使用[存储库模式](xref:fundamentals/repository-pattern)并不是有效的示例[工作单元 (UoW) 模式](https://martinfowler.com/eaaCatalog/unitOfWork.html)，Razor 页面支持开发这些模式。 有关详细信息，请参阅[设计基础结构持久性层](/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design)， <xref:fundamentals/repository-pattern>，和[测试控制器逻辑](/aspnet/core/mvc/controllers/testing)（此示例实现存储库模式）。
 
 ### <a name="test-app-organization"></a>测试应用程序的组织
 

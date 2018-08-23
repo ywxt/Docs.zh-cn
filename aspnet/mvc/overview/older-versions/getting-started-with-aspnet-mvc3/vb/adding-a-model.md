@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-mo
 title: 添加模型 (VB) |Microsoft Docs
 author: Rick-Anderson
 description: 本教程将讲述构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/12/2011
 ms.assetid: b3aa7720-5c78-4ca2-baef-9a52234fb7ce
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 138d21d5e33384fbc0dd99c33a9e43a95976ed06
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0c846d31fb6b24ad964d69d0f81858c87305d68c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827801"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41826633"
 ---
 <a name="adding-a-model-vb"></a>添加模型 (VB)
 ====================
@@ -38,7 +38,7 @@ ms.locfileid: "37827801"
 
 ## <a name="adding-model-classes"></a>添加模型类
 
-在中**解决方案资源管理器**，右键单击*模型*文件夹，选择**添加**，然后选择**类**。
+在中**解决方案资源管理器**，右键单击 *模型* 文件夹，选择**添加**，然后选择**类**。
 
 ![](adding-a-model/_static/image1.png)
 

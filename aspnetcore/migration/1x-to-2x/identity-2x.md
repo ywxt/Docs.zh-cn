@@ -5,12 +5,12 @@ description: 本文概述了迁移 ASP.NET Core 1.x 身份验证和标识为 ASP
 ms.author: scaddie
 ms.date: 10/26/2017
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: 0485b1bdf8be550de35a49803a24666c026b3d9b
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6d457d42ad29ca579ba74e3b097d143bd6531b72
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276414"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833286"
 ---
 # <a name="migrate-authentication-and-identity-to-aspnet-core-20"></a>将身份验证和标识迁移到 ASP.NET Core 2.0
 
@@ -23,7 +23,7 @@ ASP.NET Core 2.0 具有用于身份验证的新模型和[标识](xref:security/a
 ## <a name="authentication-middleware-and-services"></a>身份验证中间件和服务
 在 1.x 项目中，通过中间件配置身份验证。 中间件方法调用每个你想要支持的身份验证方案。
 
-下面的 1.x 示例将 Facebook 身份验证配置中标识*Startup.cs*:
+下面的 1.x 示例中的标识配置 Facebook 身份验证*Startup.cs*:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -42,9 +42,9 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory)
 } 
 ```
 
-在 2.0 项目中，通过服务配置身份验证。 在中注册每个身份验证方案`ConfigureServices`方法*Startup.cs*。 `UseIdentity`方法将替换`UseAuthentication`。
+在 2.0 项目中，通过服务配置身份验证。 在中注册每个身份验证方案`ConfigureServices`方法*Startup.cs*。 `UseIdentity`方法替换`UseAuthentication`。
 
-下面的 2.0 示例将 Facebook 身份验证配置中标识*Startup.cs*:
+下面的 2.0 示例中的标识配置 Facebook 身份验证*Startup.cs*:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -67,12 +67,12 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
 }
 ```
 
-`UseAuthentication`方法将添加一个单一的身份验证中间件组件，它负责自动身份验证和远程身份验证请求的处理。 它将替换所有单独的中间件组件与单个，常见的中间件组件。
+`UseAuthentication`方法将添加一个单一的身份验证中间件组件，它负责进行自动身份验证和远程身份验证请求的处理。 它会替换所有单独的中间件组件共有的中间件组件。
 
-以下是每个主要身份验证方案的 2.0 迁移说明。
+下面是有关每个主要身份验证方案的 2.0 迁移说明。
 
 ### <a name="cookie-based-authentication"></a>基于 cookie 的身份验证
-选择以下两个选项之一，然后进行必要的更改在*Startup.cs*:
+选择以下两个选项之一并进行必要的更改在*Startup.cs*:
 
 1. 标识与使用 cookie
     - 替换`UseIdentity`与`UseAuthentication`中`Configure`方法：
@@ -81,8 +81,8 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
         app.UseAuthentication();
         ```
 
-    - 调用`AddIdentity`中的方法`ConfigureServices`方法将添加 cookie 身份验证服务。
-    - （可选） 调用`ConfigureApplicationCookie`或`ConfigureExternalCookie`中的方法`ConfigureServices`方法来调整标识 cookie 设置。
+    - 调用`AddIdentity`中的方法`ConfigureServices`方法添加 cookie 身份验证服务。
+    - （可选） 调用`ConfigureApplicationCookie`或`ConfigureExternalCookie`中的方法`ConfigureServices`标识 cookie 设置进行调整的方法。
 
         ```csharp
         services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -93,13 +93,13 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
         ```
 
 2. 使用 cookie，而无需标识
-    - 替换`UseCookieAuthentication`方法调用`Configure`方法替换`UseAuthentication`:
+    - 替换`UseCookieAuthentication`方法中调用`Configure`方法替换`UseAuthentication`:
   
         ```csharp
         app.UseAuthentication();
         ```
  
-    - 调用`AddAuthentication`和`AddCookie`中的方法`ConfigureServices`方法：
+    - 调用`AddAuthentication`并`AddCookie`中的方法`ConfigureServices`方法：
 
         ```csharp
         // If you don't want the cookie to be automatically authenticated and assigned to HttpContext.User, 
@@ -113,8 +113,8 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
         ```
 
 ### <a name="jwt-bearer-authentication"></a>JWT 持有者身份验证
-进行中的以下更改*Startup.cs*:
-- 替换`UseJwtBearerAuthentication`方法调用`Configure`方法替换`UseAuthentication`:
+进行以下更改中的*Startup.cs*:
+- 替换`UseJwtBearerAuthentication`方法中调用`Configure`方法替换`UseAuthentication`:
  
     ```csharp
     app.UseAuthentication();
@@ -131,12 +131,12 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
             });
     ```
 
-    此代码段不使用标识，因此应通过将传递设置的默认方案`JwtBearerDefaults.AuthenticationScheme`到`AddAuthentication`方法。
+    此代码片段不使用标识，因此应通过将传递设置的默认方案`JwtBearerDefaults.AuthenticationScheme`到`AddAuthentication`方法。
 
-### <a name="openid-connect-oidc-authentication"></a>OpenID 连接 (OIDC) 身份验证
-进行中的以下更改*Startup.cs*:
+### <a name="openid-connect-oidc-authentication"></a>OpenID Connect (OIDC) 身份验证
+进行以下更改中的*Startup.cs*:
 
-- 替换`UseOpenIdConnectAuthentication`方法调用`Configure`方法替换`UseAuthentication`:
+- 替换`UseOpenIdConnectAuthentication`方法中调用`Configure`方法替换`UseAuthentication`:
 
     ```csharp
     app.UseAuthentication();
@@ -159,8 +159,8 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
     ```
 
 ### <a name="facebook-authentication"></a>facebook 身份验证
-进行中的以下更改*Startup.cs*:
-- 替换`UseFacebookAuthentication`方法调用`Configure`方法替换`UseAuthentication`:
+进行以下更改中的*Startup.cs*:
+- 替换`UseFacebookAuthentication`方法中调用`Configure`方法替换`UseAuthentication`:
  
     ```csharp
     app.UseAuthentication();
@@ -178,8 +178,8 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
     ```
 
 ### <a name="google-authentication"></a>Google 身份验证
-进行中的以下更改*Startup.cs*:
-- 替换`UseGoogleAuthentication`方法调用`Configure`方法替换`UseAuthentication`:
+进行以下更改中的*Startup.cs*:
+- 替换`UseGoogleAuthentication`方法中调用`Configure`方法替换`UseAuthentication`:
  
     ```csharp
     app.UseAuthentication();
@@ -197,8 +197,8 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
     ```
 
 ### <a name="microsoft-account-authentication"></a>Microsoft 帐户身份验证
-进行中的以下更改*Startup.cs*:
-- 替换`UseMicrosoftAccountAuthentication`方法调用`Configure`方法替换`UseAuthentication`:
+进行以下更改中的*Startup.cs*:
+- 替换`UseMicrosoftAccountAuthentication`方法中调用`Configure`方法替换`UseAuthentication`:
 
     ```csharp
     app.UseAuthentication();
@@ -216,8 +216,8 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
     ``` 
 
 ### <a name="twitter-authentication"></a>Twitter 身份验证
-进行中的以下更改*Startup.cs*:
-- 替换`UseTwitterAuthentication`方法调用`Configure`方法替换`UseAuthentication`:
+进行以下更改中的*Startup.cs*:
+- 替换`UseTwitterAuthentication`方法中调用`Configure`方法替换`UseAuthentication`:
  
     ```csharp
     app.UseAuthentication();
@@ -235,17 +235,17 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
     ```
 
 ### <a name="setting-default-authentication-schemes"></a>设置默认身份验证方案
-在 1.x`AutomaticAuthenticate`和`AutomaticChallenge`属性[AuthenticationOptions](/dotnet/api/Microsoft.AspNetCore.Builder.AuthenticationOptions?view=aspnetcore-1.1)基类用于设置在单一身份验证方案。 没有良好方法来强制执行此。
+在 1.x 中，`AutomaticAuthenticate`并`AutomaticChallenge`的属性[AuthenticationOptions](/dotnet/api/Microsoft.AspNetCore.Builder.AuthenticationOptions?view=aspnetcore-1.1)基类用于设置单一身份验证方案。 强制实施此没有很好方法。
 
-在 2.0 中，这两个属性已删除作为属性对各个`AuthenticationOptions`实例。 它们可以在中配置`AddAuthentication`内的方法调用`ConfigureServices`方法*Startup.cs*:
+在 2.0 中，这两个属性已删除作为单个属性`AuthenticationOptions`实例。 它们可以在中配置`AddAuthentication`中的方法调用`ConfigureServices`方法*Startup.cs*:
 
 ```csharp
 services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme);
 ```
 
-在前面的代码段中，默认方案设置为`CookieAuthenticationDefaults.AuthenticationScheme`("Cookie")。
+在上述代码段中，默认方案设置为`CookieAuthenticationDefaults.AuthenticationScheme`("Cookie")。
 
-或者，使用一个重载的版本的`AddAuthentication`方法以设置多个属性。 在下面的重载的方法示例中，默认方案设置为`CookieAuthenticationDefaults.AuthenticationScheme`。 或者可能在个人中指定的身份验证方案`[Authorize]`属性或授权策略。
+或者，使用的重载的版本`AddAuthentication`方法设置多个属性。 在下面的重载的方法示例，默认方案设置为`CookieAuthenticationDefaults.AuthenticationScheme`。 身份验证方案可能还可以指定在个人`[Authorize]`属性或授权策略。
 
 ```csharp
 services.AddAuthentication(options => 
@@ -255,11 +255,11 @@ services.AddAuthentication(options =>
 });
 ```
 
-如果下列条件之一为 true，请在 2.0 中定义了默认的方案：
-- 你希望用户可自动登录
-- 你使用`[Authorize]`而无需指定方案的属性或授权策略
+在 2.0 中定义默认方案，如果以下条件之一为 true:
+- 您希望用户以进行自动签名
+- 您使用`[Authorize]`而无需指定方案的属性或授权策略
 
-此规则的唯一例外是`AddIdentity`方法。 此方法将为您和设置默认值进行身份验证以及与应用程序 cookie 质询方案添加 cookie `IdentityConstants.ApplicationScheme`。 此外，它将默认登录方案设置为外部 cookie `IdentityConstants.ExternalScheme`。
+此规则的例外是`AddIdentity`方法。 此方法将为你和设置默认值进行身份验证并为应用程序 cookie 质询方案添加 cookie `IdentityConstants.ApplicationScheme`。 此外，它将默认登录方案设置为外部 cookie `IdentityConstants.ExternalScheme`。
 
 <a name="obsolete-interface"></a>
 
@@ -277,30 +277,30 @@ services.AddAuthentication(options =>
 <a name="windows-auth-changes"></a>
 
 ## <a name="windows-authentication-httpsys--iisintegration"></a>Windows 身份验证 (HTTP.sys / IISIntegration)
-有两种变体 Windows 身份验证：
-1. 主机仅允许经过身份验证的用户
+有两种变体的 Windows 身份验证：
+1. 主机只允许经过身份验证的用户
 2. 主机允许同时匿名和身份验证的用户
 
-上面所述的第一个变体不受 2.0 的更改。
+上面所述的第一种变化形式是不受 2.0 更改的影响。
 
-2.0 更改的情况下，会影响上面所述的第二个变体。 例如，你可能将以允许匿名用户到你的应用程序在 IIS 或[HTTP.sys](xref:fundamentals/servers/weblistener)层在控制器级别但授权用户。 在此方案中，设置默认方案为`IISDefaults.AuthenticationScheme`中`ConfigureServices`方法*Startup.cs*:
+2.0 更改的情况下，会影响上面所述的第二个变体。 例如，你可能会将以允许匿名用户到应用程序在 IIS 或[HTTP.sys](xref:fundamentals/servers/weblistener)层在控制器级别但授权用户。 在此方案中，将默认方案设置为`IISDefaults.AuthenticationScheme`中`ConfigureServices`方法*Startup.cs*:
 
 ```csharp
 services.AddAuthentication(IISDefaults.AuthenticationScheme);
 ```
 
-相应地，如果设置的默认方案会使质询无法正常工作的授权请求。
+相应地设置默认方案失败会阻止在授权请求，以来自工作的挑战。
 
 <a name="identity-cookie-options"></a>
 
 ## <a name="identitycookieoptions-instances"></a>IdentityCookieOptions 实例
-2.0 更改的副作用是时切换到使用名为而不是 cookie 选项实例的选项。 删除自定义标识 cookie 方案名称的能力。
+2.0 更改一个副作用是切换到使用名为选项而不是 cookie 选项实例。 删除自定义标识 cookie 方案名称的功能。
 
-例如，1.x 项目使用[构造函数注入](xref:mvc/controllers/dependency-injection#constructor-injection)传递`IdentityCookieOptions`参数转换*AccountController.cs*。 从提供的实例访问外部 cookie 身份验证方案：
+例如，1.x 项目使用[构造函数注入](xref:mvc/controllers/dependency-injection#constructor-injection)传递`IdentityCookieOptions`到参数*AccountController.cs*。 从提供的实例访问的外部 cookie 身份验证方案：
 
 [!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Controllers/AccountController.cs?name=snippet_AccountControllerConstructor&highlight=4,11)]
 
-前面提到的构造函数注入将成为在 2.0 项目中，不必要和`_externalCookieScheme`可以删除字段：
+前面提到的构造函数注入将成为在 2.0 项目中，不必要和`_externalCookieScheme`删除字段，可以：
 
 [!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Controllers/AccountController.cs?name=snippet_AccountControllerConstructor)]
 
@@ -311,7 +311,7 @@ services.AddAuthentication(IISDefaults.AuthenticationScheme);
 <a name="navigation-properties"></a>
 
 ## <a name="add-identityuser-poco-navigation-properties"></a>添加 POCO IdentityUser 导航属性
-基的 Entity Framework (EF) 核心导航属性`IdentityUser`POCO （普通旧 CLR 对象） 已被删除。 如果你 1.x 的项目使用这些属性，手动将它们添加回 2.0 项目：
+Entity Framework (EF) Core 导航属性的基本`IdentityUser`POCO （普通旧 CLR 对象） 已被删除。 如果在 1.x 项目使用这些属性，手动将它们添加回 2.0 项目：
 
 ```csharp
 /// <summary>
@@ -336,8 +336,8 @@ public virtual ICollection<IdentityUserLogin<int>> Logins { get; } = new List<Id
 protected override void OnModelCreating(ModelBuilder builder)
 {
     base.OnModelCreating(builder);
-    // Customize the ASP.NET Identity model and override the defaults if needed.
-    // For example, you can rename the ASP.NET Identity table names and more.
+    // Customize the ASP.NET Core Identity model and override the defaults if needed.
+    // For example, you can rename the ASP.NET Core Identity table names and more.
     // Add your customizations after calling base.OnModelCreating(builder);
 
     builder.Entity<ApplicationUser>()
@@ -365,12 +365,12 @@ protected override void OnModelCreating(ModelBuilder builder)
 
 <a name="synchronous-method-removal"></a>
 
-## <a name="replace-getexternalauthenticationschemes"></a>替换 GetExternalAuthenticationSchemes
-同步方法`GetExternalAuthenticationSchemes`已删除为支持的异步版本。 1.x 项目有以下代码*ManageController.cs*:
+## <a name="replace-getexternalauthenticationschemes"></a>替换为 GetExternalAuthenticationSchemes
+同步方法`GetExternalAuthenticationSchemes`的异步版本，于是取消了。 在 1.x 项目具有以下代码*ManageController.cs*:
 
 [!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Controllers/ManageController.cs?name=snippet_GetExternalAuthenticationSchemes)]
 
-此方法将出现在*Login.cshtml*太：
+此方法将出现在*Login.cshtml*过：
 
 [!code-cshtml[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Views/Account/Login.cshtml?range=62,75-84)]
 
@@ -378,22 +378,22 @@ protected override void OnModelCreating(ModelBuilder builder)
 
 [!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Controllers/ManageController.cs?name=snippet_GetExternalAuthenticationSchemesAsync)]
 
-在*Login.cshtml*、`AuthenticationScheme`中访问属性`foreach`循环更改为`Name`:
+在中*Login.cshtml*，则`AuthenticationScheme`中访问属性`foreach`循环更改为`Name`:
 
 [!code-cshtml[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Views/Account/Login.cshtml?range=62,75-84)]
 
 <a name="property-change"></a>
 
 ## <a name="manageloginsviewmodel-property-change"></a>ManageLoginsViewModel 属性更改
-A`ManageLoginsViewModel`对象将用于`ManageLogins`操作*ManageController.cs*。 1.x 项目，该对象中`OtherLogins`属性的返回类型是`IList<AuthenticationDescription>`。 此返回类型需要导入`Microsoft.AspNetCore.Http.Authentication`:
+一个`ManageLoginsViewModel`中使用对象`ManageLogins`的操作*ManageController.cs*。 在 1.x 项目中，该对象的`OtherLogins`属性的返回类型是`IList<AuthenticationDescription>`。 此返回类型时需要导入`Microsoft.AspNetCore.Http.Authentication`:
 
 [!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Models/ManageViewModels/ManageLoginsViewModel.cs?name=snippet_ManageLoginsViewModel&highlight=2,11)]
 
-在 2.0 项目中，返回类型更改为`IList<AuthenticationScheme>`。 此新的返回类型需要替换`Microsoft.AspNetCore.Http.Authentication`使用导入`Microsoft.AspNetCore.Authentication`导入。
+在 2.0 项目中，返回类型更改为`IList<AuthenticationScheme>`。 此新的返回类型需要替换`Microsoft.AspNetCore.Http.Authentication`导入具有`Microsoft.AspNetCore.Authentication`导入。
 
 [!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Models/ManageViewModels/ManageLoginsViewModel.cs?name=snippet_ManageLoginsViewModel&highlight=2,11)]
 
 <a name="additional-resources"></a>
 
 ## <a name="additional-resources"></a>其他资源
-有关其他详细信息和讨论，请参阅[针对身份验证 2.0 讨论](https://github.com/aspnet/Security/issues/1338)GitHub 上的问题。
+有关更多详细信息和讨论，请参阅[讨论身份验证 2.0](https://github.com/aspnet/Security/issues/1338) GitHub 上的问题。

@@ -3,23 +3,23 @@ uid: web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-t
 title: 模拟 Entity Framework 时的单元测试 ASP.NET Web API 2 |Microsoft Docs
 author: tfitzmac
 description: 此指南和应用程序演示如何为 Web API 2 应用程序使用实体框架创建单元测试。 它演示了如何修改...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/13/2013
 ms.assetid: cd844025-ccad-41ce-8694-595f1022a49f
 msc.legacyurl: /web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: dc50965a2757defb254d05f0b8a5fd46a90dc75f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0bc5ab59583a2be3f889ba05d26c6cda4589057d
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804390"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833488"
 ---
 <a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a>模拟 Entity Framework 时的单元测试 ASP.NET Web API 2
 ====================
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
-[下载已完成的项目](http://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-e2867d4d)
+[下载已完成的项目](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
 
 > 此指南和应用程序演示如何为 Web API 2 应用程序使用实体框架创建单元测试。 它显示了如何修改已搭建基架的控制器，以启用传递上下文对象进行测试，以及如何创建使用实体框架的测试对象。
 > 

@@ -3,17 +3,17 @@ uid: web-forms/overview/moving-to-aspnet-20/data-bound-controls
 title: 数据绑定控件 |Microsoft Docs
 author: microsoft
 description: 大多数 ASP.NET 应用程序依赖于某种程度的后端数据源中的数据表示。 数据绑定控件已被交互 w 的关键环节...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2005
 ms.assetid: 0e23ff32-646d-43f3-8bec-6b2313d3abd6
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/data-bound-controls
 msc.type: authoredcontent
-ms.openlocfilehash: bfee5ed9c786cc8799da108b99781ff6eb508477
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b115109c7307d05dc9e620378a51a71407204740
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37833214"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833283"
 ---
 <a name="data-bound-controls"></a>数据绑定控件
 ====================

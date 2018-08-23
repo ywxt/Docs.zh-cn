@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-mo
 title: 添加模型 (C#) |Microsoft Docs
 author: Rick-Anderson
 description: 注意： 本教程中的更新的版本提供了使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全、 更易于遵循，并演示...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/12/2011
 ms.assetid: 42355b95-5f1f-413e-8d16-14cdfaaefcd8
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 61ba86e4bfbb0557b34d245555bc56a320335628
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b68f857777b1b69ca401c29261211f40df253e7a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820767"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825824"
 ---
 <a name="adding-a-model-c"></a>添加模型 (C#)
 ====================
@@ -38,7 +38,7 @@ ms.locfileid: "37820767"
 
 ## <a name="adding-model-classes"></a>添加模型类
 
-在中**解决方案资源管理器**，右键单击*模型*文件夹，选择**添加**，然后选择**类**。
+在中**解决方案资源管理器**，右键单击 *模型* 文件夹，选择**添加**，然后选择**类**。
 
 ![](adding-a-model/_static/image1.png)
 

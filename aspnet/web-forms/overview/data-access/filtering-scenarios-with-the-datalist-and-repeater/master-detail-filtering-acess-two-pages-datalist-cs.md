@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-re
 title: 母版/详细信息筛选跨两个页面 (C#) |Microsoft Docs
 author: rick-anderson
 description: 在本教程介绍如何隔离跨两个页面的母版/详细信息报表。 在母版页我们使用 Repeater 控件来呈现的 categ 列表...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/30/2010
 ms.assetid: 68b8c023-92fa-4df6-9563-1764e16e4b04
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1dc0c074ecc8ca6128376c8cdf5548028d9779e3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6d4f38201eaa25097dcba589f35506204d3f73a3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830728"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835116"
 ---
 <a name="masterdetail-filtering-across-two-pages-c"></a>母版/详细信息筛选跨两个页面 (C#)
 ====================

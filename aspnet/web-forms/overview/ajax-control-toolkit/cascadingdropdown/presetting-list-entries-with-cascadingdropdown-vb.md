@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-e
 title: 预设置列表条目使用 CascadingDropDown (VB) |Microsoft Docs
 author: wenz
 description: AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，使得一个 DropDownList 负载中的更改关联中 anoth 值...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: ec61ced7-bbca-4bdd-aa3b-80878f295181
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-entries-with-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5133516311478d0a4faab45721c6b1d0a251b4b0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3816ce9d5b148ec9c18eef64d963c4465c219674
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37817747"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831232"
 ---
 <a name="presetting-list-entries-with-cascadingdropdown-vb"></a>预设置列表条目使用 CascadingDropDown (VB)
 ====================
