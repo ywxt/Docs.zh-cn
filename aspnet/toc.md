@@ -1640,7 +1640,8 @@
 
 
 
-
+# [Visual Studio 2017](visual-studio/overview/2017/index.md)
+## [优化解决方案的生成性能](xref:visual-studio/overview/2017/optimize-build-perf)
 
 # [Visual Studio 2013](visual-studio/overview/2013/index.md)
 ## [在 Visual Studio 2013 中创建 ASP.NET Web 项目](visual-studio/overview/2013/creating-web-projects-in-visual-studio.md)
@@ -1709,8 +1710,10 @@
 
 
 # [Ajax](ajax/index.md)
-## [Microsoft Ajax 内容交付网络](ajax/cdn/index.md)
-### [Microsoft Ajax 内容交付网络](ajax/cdn/overview.md)
+## 
+  [Microsoft Ajax 内容分发网络](ajax/cdn/index.md)
+### 
+  [Microsoft Ajax 内容分发网络](ajax/cdn/overview.md)
 ### [jQuery UI](ajax/cdn/jquery-ui/index.md)
 #### [Microsoft Azure CDN 的 jQuery UI 1.10.4](ajax/cdn/jquery-ui/cdnjqueryui1104.md)
 #### [Microsoft Azure CDN 的 jQuery UI 1.10.3](ajax/cdn/jquery-ui/cdnjqueryui1103.md)
