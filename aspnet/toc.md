@@ -1710,10 +1710,8 @@
 
 
 # [Ajax](ajax/index.md)
-## 
-  [Microsoft Ajax 内容分发网络](ajax/cdn/index.md)
-### 
-  [Microsoft Ajax 内容分发网络](ajax/cdn/overview.md)
+## [Microsoft Ajax 内容分发网络](ajax/cdn/index.md)
+### [Microsoft Ajax 内容分发网络](ajax/cdn/overview.md)
 ### [jQuery UI](ajax/cdn/jquery-ui/index.md)
 #### [Microsoft Azure CDN 的 jQuery UI 1.10.4](ajax/cdn/jquery-ui/cdnjqueryui1104.md)
 #### [Microsoft Azure CDN 的 jQuery UI 1.10.3](ajax/cdn/jquery-ui/cdnjqueryui1103.md)
