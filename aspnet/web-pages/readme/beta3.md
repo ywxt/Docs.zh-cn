@@ -237,7 +237,7 @@ ms.locfileid: "41831093"
 
 #### <a name="issue-lthelpergt-class-cannot-be-found-error"></a>问题:"&lt;帮助器&gt;找不到类"错误
 
-> 升级到 Beta 3 后，可能会看到错误的帮助器类 (例如，`Facebook`类) 不能找不到。 在 Beta 2 开始，一直在 Beta 3 中，帮助程序已被移到必须显式安装的包。 不升级现有的站点中包含这些包;这包括中的站点 *\My Documents\IISExpress* 或*\My Documents\My 网站*文件夹。 具体而言，您会看到此错误，如果使用中的默认站点*我的网站*(WebSite1)，其中包括对引用`Twitter`帮助器。
+> 升级到 Beta 3 后，可能会看到错误的帮助器类 (例如，`Facebook`类) 不能找不到。 在 Beta 2 开始，一直在 Beta 3 中，帮助程序已被移到必须显式安装的包。 不升级现有的站点中包含这些包;这包括中的站点 *\My Documents\IISExpress* 或 *\My Documents\My 网站* 文件夹。 具体而言，您会看到此错误，如果使用中的默认站点*我的网站* (WebSite1)，其中包括对引用`Twitter`帮助器。
 > 
 > **解决方法**  
 > 注释掉对运行的站点中任何帮助程序调用 *\_管理员* 页，并安装包或包含你想要使用的帮助器的包。 安装此包后，可以取消注释引用帮助程序的行。

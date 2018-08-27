@@ -104,7 +104,7 @@ Html.BeginForm() 帮助程序方法是 HTML 输出内容是什么&lt;窗体&gt;�
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample4.aspx)]
 
-不带任何参数调用 Html.BeginForm() 会让其输出到当前请求的 URL 执行 HTTP POST 的窗体元素。 编辑视图生成的它是为什么*&lt;表单操作 ="/ Dinners/编辑/1"方法 ="post"&gt;* 元素。 我们无法具有或者传递显式参数给 Html.BeginForm() 如果我们想要发布到不同的 URL。
+不带任何参数调用 Html.BeginForm() 会让其输出到当前请求的 URL 执行 HTTP POST 的窗体元素。 编辑视图生成的它是为什么 *&lt;表单操作 ="/ Dinners/编辑/1"方法 ="post"&gt;* 元素。 我们无法具有或者传递显式参数给 Html.BeginForm() 如果我们想要发布到不同的 URL。
 
 ##### <a name="htmltextbox-helper-method"></a>Html.TextBox() 帮助器方法
 
