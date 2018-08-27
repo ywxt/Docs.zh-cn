@@ -2,37 +2,25 @@
 title: 在 ASP.NET Core 的 azure 密钥保管库配置提供程序
 author: guardrex
 description: 了解如何使用 Azure 密钥保管库配置提供程序来配置应用程序使用在运行时加载的名称 / 值对。
+monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
+ms.custom: mvc
 ms.date: 08/01/2018
 uid: security/key-vault-configuration
-ms.openlocfilehash: 829c6c7e2750879b51bf3ce8225c6e472900f2ad
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 933f4fb1f2c1c412d318af5974cc9653805242ca
+ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825832"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42927982"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>在 ASP.NET Core 的 azure 密钥保管库配置提供程序
 
 通过[Luke Latham](https://github.com/guardrex)和[Andrew Stanton-nurse](https://github.com/anurse)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
-查看或下载 2.x 示例代码：
-
-* [基本示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/2.x)([如何下载](xref:tutorials/index#how-to-download-a-sample))-应用到读取机密值。
-* [密钥名称前缀示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/2.x)([如何下载](xref:tutorials/index#how-to-download-a-sample))-读取机密值使用密钥名称前缀表示版本的应用，这允许您加载一组不同的每个应用程序版本的机密值。
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
-查看或下载 1.x 示例代码：
-
-* [基本示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/1.x)([如何下载](xref:tutorials/index#how-to-download-a-sample))-应用到读取机密值。
-* [密钥名称前缀示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/1.x)([如何下载](xref:tutorials/index#how-to-download-a-sample))-读取机密值使用密钥名称前缀表示版本的应用，这允许您加载一组不同的每个应用程序版本的机密值。
-
----
-
 本文档介绍如何使用[Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/)配置提供程序将从 Azure Key Vault 机密中加载应用配置值。 Azure Key Vault 是基于云的服务，可帮助你保护加密密钥和机密使用的应用和服务。 常见的方案包括控制对敏感的配置数据的访问并符合 fips 140-2 的要求级别 2 硬件安全模块 (HSM) 时验证存储配置数据。 此功能仅适用于面向 ASP.NET Core 1.1 的应用或更高版本。
+
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
 ## <a name="package"></a>Package
 
@@ -52,7 +40,7 @@ ms.locfileid: "41825832"
 
 [!code-csharp[Program](key-vault-configuration/samples/basic-sample/2.x/Program.cs?name=snippet1)]
 
-## <a name="creating-key-vault-secrets-and-loading-configuration-values-basic-sample"></a>创建密钥保管库机密和加载配置值 （basic 示例）
+## <a name="create-key-vault-secrets-and-load-configuration-values-basic-sample"></a>创建密钥保管库机密并加载配置值 （basic 示例）
 
 1. 创建密钥保管库并将设置 Azure Active Directory (Azure AD) 应用程序中的指南[开始使用 Azure 密钥保管库](https://azure.microsoft.com/documentation/articles/key-vault-get-started/)。
    * 将机密添加到密钥保管库使用[AzureRM 密钥保管库 PowerShell 模块](/powershell/module/azurerm.keyvault)从可用[PowerShell 库](https://www.powershellgallery.com/packages/AzureRM.KeyVault)，则[Azure 密钥保管库 REST API](/rest/api/keyvault/)，或者[Azure 门户](https://portal.azure.com/)。 为创建的机密*手动*或*证书*机密。 *证书*机密使用的应用和服务证书，但不是支持配置提供程序。 应使用*手动*选项可创建带有配置提供程序使用的名称-值对机密。
@@ -75,7 +63,7 @@ ms.locfileid: "41825832"
 
 ![通过使用 Azure 密钥保管库配置提供程序加载浏览器窗口，其中显示密钥值](key-vault-configuration/_static/sample1.png)
 
-## <a name="creating-prefixed-key-vault-secrets-and-loading-configuration-values-key-name-prefix-sample"></a>创建带前缀的密钥保管库机密和加载配置值 （密钥的名称的前缀的示例）
+## <a name="create-prefixed-key-vault-secrets-and-load-configuration-values-key-name-prefix-sample"></a>创建带前缀的密钥保管库机密并加载配置值 （密钥的名称的前缀的示例）
 
 `AddAzureKeyVault` 此外提供了接受的实现的重载`IKeyVaultSecretManager`，可用于控制如何密钥保管库机密将转换为配置项。 例如，可以实现的接口来加载基于你在应用启动时提供的前缀值的机密值。 这可以使您例如，若要加载基于应用的版本的密钥。
 
@@ -117,7 +105,7 @@ ms.locfileid: "41825832"
 
    ![浏览器窗口，其中显示 5.1.0.0 应用的版本时，通过使用 Azure 密钥保管库配置提供程序加载的机密值](key-vault-configuration/_static/sample2-2.png)
 
-## <a name="controlling-access-to-the-clientsecret"></a>控制对客户端密码的访问
+## <a name="control-access-to-the-clientsecret"></a>控制对客户端密码的访问
 
 使用[机密管理器工具](xref:security/app-secrets)维护`ClientSecret`外部项目源树。 使用机密管理器中，你将应用程序机密与特定项目相关联并跨多个项目共享它们。
 
@@ -141,7 +129,7 @@ config.AddAzureKeyVault(
 store.Close();
 ```
 
-## <a name="reloading-secrets"></a>重新加载机密
+## <a name="reload-secrets"></a>重新加载机密
 
 机密缓存，直至`IConfigurationRoot.Reload()`调用。 已过期，已禁用，并且已更新密钥保管库中的机密不遵循之前应用此`Reload`执行。
 
@@ -153,7 +141,7 @@ Configuration.Reload();
 
 已禁用并已过期机密引发`KeyVaultClientException`。 若要防止应用引发，将为您的应用程序或更新已禁用或已过期机密。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshoot"></a>疑难解答
 
 如果应用程序无法加载使用提供程序的配置，一条错误消息写入到[ASP.NET Core 日志记录基础结构](xref:fundamentals/logging/index)。 以下条件下将不加载配置：
 
