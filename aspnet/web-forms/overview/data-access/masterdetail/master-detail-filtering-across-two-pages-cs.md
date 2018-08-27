@@ -84,7 +84,7 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值中每个 GridView
 **图 5**： 设置 HyperLinkField`Text`属性设置为查看产品 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-cs/_static/image13.png))
 
 
-若要设置的文本或 URL 值，以基于基础数据绑定到 GridView 行上，指定数据字段文本或应从在请求 URL 的值`DataTextField`或`DataNavigateUrlFields`属性。 `DataTextField` 仅可设置为单个数据字段;`DataNavigateUrlFields`，但是，可以设置为数据字段的逗号分隔列表。 我们经常需要基于文本或 URL 上的当前行的数据字段值和一些静态标记的组合。 在本教程中，例如，我们希望 HyperLinkField 的链接的 URL 为`ProductsForSupplierDetails.aspx?SupplierID=supplierID`，其中*`supplierID`* 是每个 GridView 行`SupplierID`值。 请注意，我们需要这两个静态和数据驱动的以下值：`ProductsForSupplierDetails.aspx?SupplierID=`链接的 URL 的部分是静态的而*`supplierID`* 部分是数据驱动由于其值是每个行自己的`SupplierID`值。
+若要设置的文本或 URL 值，以基于基础数据绑定到 GridView 行上，指定数据字段文本或应从在请求 URL 的值`DataTextField`或`DataNavigateUrlFields`属性。 `DataTextField` 仅可设置为单个数据字段;`DataNavigateUrlFields`，但是，可以设置为数据字段的逗号分隔列表。 我们经常需要基于文本或 URL 上的当前行的数据字段值和一些静态标记的组合。 在本教程中，例如，我们希望 HyperLinkField 的链接的 URL 为`ProductsForSupplierDetails.aspx?SupplierID=supplierID`，其中 *`supplierID`* 是每个 GridView 行`SupplierID`值。 请注意，我们需要这两个静态和数据驱动的以下值：`ProductsForSupplierDetails.aspx?SupplierID=`链接的 URL 的部分是静态的而 *`supplierID`* 部分是数据驱动由于其值是每个行自己的`SupplierID`值。
 
 若要指示静态的和数据驱动的值的组合，请使用`DataTextFormatString`和`DataNavigateUrlFormatString`属性。 根据需要则这些属性中输入静态标记，然后使用标记`{0}`想中指定的字段的值`DataTextField`或`DataNavigateUrlFields`属性才会显示。 如果`DataNavigateUrlFields`属性具有多个字段指定的使用`{0}`您期望第一个字段值插入，`{1}`第二个字段值，等等。
 
@@ -129,12 +129,12 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值中每个 GridView
 **图 10**： 具有 ObjectDataSource 调用`GetProductsBySupplierID(supplierID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-cs/_static/image28.png))
 
 
-配置数据源向导的最后一步会要求我们提供的源`GetProductsBySupplierID(supplierID)`方法的*`supplierID`* 参数。 若要使用的查询字符串值，设置参数源为查询字符串，并输入要在 QueryStringField 文本框中使用的查询字符串值的名称 (`SupplierID`)。
+配置数据源向导的最后一步会要求我们提供的源`GetProductsBySupplierID(supplierID)`方法的 *`supplierID`* 参数。 若要使用的查询字符串值，设置参数源为查询字符串，并输入要在 QueryStringField 文本框中使用的查询字符串值的名称 (`SupplierID`)。
 
 
 [![填充 supplierID SupplierID 查询字符串值的参数值](master-detail-filtering-across-two-pages-cs/_static/image30.png)](master-detail-filtering-across-two-pages-cs/_static/image29.png)
 
-**图 11**： 填充*`supplierID`* 参数值来自`SupplierID`查询字符串值 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-cs/_static/image31.png))
+**图 11**： 填充 *`supplierID`* 参数值来自`SupplierID`查询字符串值 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-cs/_static/image31.png))
 
 
 这就是一切就这么简单 ！ 图 12 显示了`ProductsForSupplierDetails.aspx`页上通过单击为全链接进行访问时`SupplierListMaster.aspx`。
@@ -162,7 +162,7 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值中每个 GridView
 **图 14**： 具有 ObjectDataSource 调用`GetSupplierBySupplierID(supplierID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-cs/_static/image40.png))
 
 
-如同`ProductsBySupplierDataSource`，具有*`supplierID`* 参数分配的值`SupplierID`查询字符串值。
+如同`ProductsBySupplierDataSource`，具有 *`supplierID`* 参数分配的值`SupplierID`查询字符串值。
 
 
 [![填充 supplierID SupplierID 查询字符串值的参数值](master-detail-filtering-across-two-pages-cs/_static/image42.png)](master-detail-filtering-across-two-pages-cs/_static/image41.png)
