@@ -67,7 +67,7 @@ msgstr[1] "Les adresses email sont \"{0}\""
 
 ### <a name="referencing-the-package"></a>引用包
 
-添加对 `OrchardCore.Localization.Core` NuGet 包的引用。 它可在 [MyGet](https://www.myget.org/) 上的以下包源中获得：https://www.myget.org/F/orchardcore-preview/api/v3/index.json
+添加对 `OrchardCore.Localization.Core` NuGet 包的引用。 它可在 [MyGet](https://www.myget.org/) 上的以下包源中获得： https://www.myget.org/F/orchardcore-preview/api/v3/index.json
 
 .csproj 文件现在包含类似于以下内容的行（版本号可能不同）：
 
