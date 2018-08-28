@@ -1,16 +1,18 @@
 ---
 uid: index
 layout: HubPage
-ms.topic: hub-page
+ms.topic: conceptual
+author: Rick-Anderson
 ms.author: riande
-title: ASP.NET 文档 | Microsoft Docs
+title: ASP.NET 文档
+ms.date: 08/24/2018
 description: 了解如何开发 ASP.NET 和 ASP.NET Web 应用程序。 获取文档、示例代码、教程等等。
-ms.openlocfilehash: 9b63e7a708e1b0551e1f48cea2080528d29bdfa9
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: a89dc9c28303ab60314663caf6750cf096f5f052
+ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927918"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055769"
 ---
 <div id="main" class="v2">
     <div class="container">
