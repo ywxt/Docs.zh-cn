@@ -5,12 +5,12 @@ description: 了解构建 ASP.NET Core Razor 页面 Web 应用的基础知识。
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 10e9174b0bf094f7a4ea820a5afcf2705f900327
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: bc18ec3ad3bb7e3afe38030a34b2e748ce9e341b
+ms.sourcegitcommit: 74c09caec8992635825b45b7f065f871d33c077a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38157167"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42634972"
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core"></a>在 ASP.NET Core 中开始使用 Razor Pages
 
@@ -65,6 +65,8 @@ Visual Studio 模板创建初学者项目：
 * 使用“Ctrl+F5”启动应用（非调试模式）后，可执行代码更改、保存文件、刷新浏览器和查看代码更改等操作。 许多开发人员更喜欢使用非调试模式快速启动应用并查看更改。
 
 [!INCLUDE [razor-pages-start](~/includes/RP/2.1/razor-pages-start.md)]
+
+[!INCLUDE [F7](~/includes/RP/F7.md)]
 
 ::: moniker-end
 

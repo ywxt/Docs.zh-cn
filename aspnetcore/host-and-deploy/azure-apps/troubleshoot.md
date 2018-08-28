@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/31/2018
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: f9918e9162329f4c5dbd1ff18e30fce0db24e651
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: a995c743b4e43be8bea5329affb3f2c736b1d016
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272719"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41902549"
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>对 Azure 应用服务上的 ASP.NET Core 进行故障排除
 
@@ -178,7 +178,7 @@ ASP.NET Core 模块 stdout 日志通常记录应用程序事件日志中找不�
 * [ASP.NET Core 中的错误处理简介](xref:fundamentals/error-handling)
 * [Azure 应用服务和 IIS 上 ASP.NET Core 的常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)
 * [使用 Visual Studio 对 Azure 应用服务中的 Web 应用进行故障排除](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio)
-* [解决 Azure Web 应用中的“502 错误的网关”和“503 服务不可用”HTTP 错误](/app-service/app-service-web-troubleshoot-http-502-http-503)
+* [解决 Azure Web 应用中的“502 错误的网关”和“503 服务不可用”HTTP 错误](/azure/app-service/app-service-web-troubleshoot-http-502-http-503)
 * [解决 Azure 应用服务中 Web 应用性能缓慢的问题](/azure/app-service/app-service-web-troubleshoot-performance-degradation)
 * [Azure 中的 Web 应用的应用程序性能常见问题](/azure/app-service/app-service-web-availability-performance-application-issues-faq)
 * [Azure Web 应用沙盒（应用服务运行时执行限制）](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)

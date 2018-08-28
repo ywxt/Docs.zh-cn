@@ -7,12 +7,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 08/07/2018
 uid: fundamentals/http-requests
-ms.openlocfilehash: dd217cfed230ea92c31eeed64ec19838032dd224
-ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
+ms.openlocfilehash: 2a1bf78edb5068d8b10d66e5ef306b1ad4395da6
+ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39655227"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41751458"
 ---
 # <a name="initiate-http-requests"></a>启动 HTTP 请求
 
@@ -46,11 +46,11 @@ ms.locfileid: "39655227"
 
 在 `Startup.ConfigureServices` 方法中，通过在 `IServiceCollection` 上调用 `AddHttpClient` 扩展方法可以注册 `IHttpClientFactory`。
 
-[!code-csharp[](http-requests/samples/Startup.cs?name=snippet1)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet1)]
 
 注册后，在可以使用[依赖关系注入](xref:fundamentals/dependency-injection) (DI) 注入服务的任何位置，代码都能接受 `IHttpClientFactory`。 `IHttpClientFactory` 可以用于创建 `HttpClient` 实例：
 
-[!code-csharp[](http-requests/samples/Pages/BasicUsage.cshtml.cs?name=snippet1&highlight=9-12,20)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Pages/BasicUsage.cshtml.cs?name=snippet1&highlight=9-12,21)]
 
 以这种方式使用 `IHttpClientFactory` 非常适合重构现有应用。 这不会影响 `HttpClient` 的使用方式。 在当前创建 `HttpClient` 实例的位置上，通过调用 [CreateClient](/dotnet/api/system.net.http.ihttpclientfactory.createclient) 替换出现的这些实例。
 
@@ -58,7 +58,7 @@ ms.locfileid: "39655227"
 
 如果应用需要有许多不同的 `HttpClient` 用法（每种用法的配置都不同），可以视情况使用命名客户端。 可以在 `HttpClient` 中注册时指定命名 `Startup.ConfigureServices` 的配置。
 
-[!code-csharp[](http-requests/samples/Startup.cs?name=snippet2)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet2)]
 
 上面的代码调用 `AddHttpClient`，同时提供名称“github”。 此客户端应用了一些默认配置，也就是需要基址和两个标头来使用 GitHub API。
 
@@ -66,7 +66,7 @@ ms.locfileid: "39655227"
 
 要使用命名客户端，可将字符串参数传递到 `CreateClient`。 指定要创建的客户端的名称：
 
-[!code-csharp[](http-requests/samples/Pages/NamedClient.cshtml.cs?name=snippet1&highlight=20)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Pages/NamedClient.cshtml.cs?name=snippet1&highlight=21)]
 
 在上述代码中，请求不需要指定主机名。 可以仅传递路径，因为采用了为客户端配置的基址。
 
@@ -76,25 +76,25 @@ ms.locfileid: "39655227"
 
 类型化客户端在构造函数中接收 `HttpClient` 参数：
 
-[!code-csharp[](http-requests/samples/GitHub/GitHubService.cs?name=snippet1&highlight=5)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/GitHub/GitHubService.cs?name=snippet1&highlight=5)]
 
 在上述代码中，配置转移到了类型化客户端中。 `HttpClient` 对象公开为公共属性。 可以定义公开 `HttpClient` 功能的特定于 API 的方法。 `GetAspNetDocsIssues` 方法从 GitHub 存储库封装查询和分析最新待解决问题所需的代码。
 
 要注册类型化客户端，可在 `Startup.ConfigureServices` 中使用通用的 `AddHttpClient` 扩展方法，指定类型化客户端类：
 
-[!code-csharp[](http-requests/samples/Startup.cs?name=snippet3)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet3)]
 
 使用 DI 将类型客户端注册为暂时客户端。 可以直接插入或使用类型化客户端：
 
-[!code-csharp[](http-requests/samples/Pages/TypedClient.cshtml.cs?name=snippet1&highlight=11-14,20)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Pages/TypedClient.cshtml.cs?name=snippet1&highlight=11-14,20)]
 
 根据你的喜好，可以在 `Startup.ConfigureServices` 中注册时指定类型化客户端的配置，而不是在类型化客户端的构造函数中指定：
 
-[!code-csharp[](http-requests/samples/Startup.cs?name=snippet4)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet4)]
 
 可以将 `HttpClient` 完全封装在类型化客户端中。 不是将它公开为属性，而是可以提供公共方法，用于在内部调用 `HttpClient`。
 
-[!code-csharp[](http-requests/samples/GitHub/RepoService.cs?name=snippet1&highlight=3)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/GitHub/RepoService.cs?name=snippet1&highlight=4)]
 
 在上述代码中，`HttpClient` 存储未私有字段。 进行外部调用的所有访问都经由 `GetRepos` 方法。
 
@@ -159,19 +159,19 @@ public class ValuesController : ControllerBase
 
 要创建处理程序，请定义一个派生自 `DelegatingHandler` 的类。 重写 `SendAsync` 方法，在将请求传递至管道中的下一个处理程序之前执行代码：
 
-[!code-csharp[Main](http-requests/samples/Handlers/ValidateHeaderHandler.cs?name=snippet1)]
+[!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Handlers/ValidateHeaderHandler.cs?name=snippet1)]
 
 上述代码定义了基本处理程序。 它检查请求中是否包含 `X-API-KEY` 头。 如果标头缺失，它可以避免 HTTP 调用，并返回合适的响应。
 
 在注册期间可将一个或多个标头添加到 `HttpClient` 的配置。 此任务通过 [IHttpClientBuilder](/dotnet/api/microsoft.extensions.dependencyinjection.ihttpclientbuilder) 的扩展方法完成。
 
-[!code-csharp[](http-requests/samples/Startup.cs?name=snippet5)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet5)]
 
 在上述代码中通过 DI 注册了 `ValidateHeaderHandler`。 处理程序必须在 DI 中注册为临时处理程序。 注册后，即可调用 [AddHttpMessageHandler](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.addhttpmessagehandler)，同时传入头类型。
 
 可以按处理程序应该执行的顺序注册多个处理程序。 每个处理程序都会覆盖下一个处理程序，直到最终 `HttpClientHandler` 执行请求：
 
-[!code-csharp[](http-requests/samples/Startup.cs?name=snippet6)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet6)]
 
 ## <a name="use-polly-based-handlers"></a>使用基于 Polly 的处理程序
 
@@ -179,7 +179,7 @@ public class ValuesController : ControllerBase
 
 提供了扩展方法，以实现将 Polly 策略用于配置的 `HttpClient` 实例。 [Microsoft.Extensions.Http.Polly](https://www.nuget.org/packages/Microsoft.Extensions.Http.Polly/) NuGet 包中提供 Polly 扩展。 [Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)中不包括此包。 若要使用扩展，项目中应该包括显式 `<PackageReference />`。
 
-[!code-csharp[](http-requests/samples/HttpClientFactorySample.csproj?highlight=9)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/HttpClientFactorySample.csproj?highlight=9)]
 
 还原此包后，可以使用扩展方法来支持将基于 Polly 的处理程序添加至客户端。
 
@@ -189,7 +189,7 @@ public class ValuesController : ControllerBase
 
 `AddTransientHttpErrorPolicy` 扩展可在 `Startup.ConfigureServices` 内使用。 该扩展可以提供 `PolicyBuilder` 对象的访问权限，该对象配置为处理表示可能的临时故障的错误：
 
-[!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet7)]
+[!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet7)]
 
 上述代码中定义了 `WaitAndRetryAsync` 策略。 请求失败后最多可以重试三次，每次尝试间隔 600 ms。
 
@@ -197,7 +197,7 @@ public class ValuesController : ControllerBase
 
 存在其他扩展方法，可以用于添加基于 Polly 的处理程序。 这类扩展的其中一个是 `AddPolicyHandler`，它具备多个重载。 一个重载允许在定义要应用的策略时检查该请求：
 
-[!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet8)]
+[!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet8)]
 
 在上述代码中，如果出站请求为 GET，则应用 10 秒超时。 其他所有 HTTP 方法应用 30 秒超时。
 
@@ -205,7 +205,7 @@ public class ValuesController : ControllerBase
 
 嵌套 Polly 策略以增强功能是很常见的：
 
-[!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet9)]
+[!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet9)]
 
 在上述示例中，添加两个处理程序。 第一个使用 `AddTransientHttpErrorPolicy` 扩展添加重试策略。 若请求失败，最多可重试三次。 第一个调用 `AddTransientHttpErrorPolicy` 添加断路器策略。 如果尝试连续失败了五次，则会阻止后续外部请求 30 秒。 断路器策略处于监控状态。 通过此客户端进行的所有调用都共享同样的线路状态。
 
@@ -213,7 +213,7 @@ public class ValuesController : ControllerBase
 
 管理常用策略的一种方法是一次性定义它们并使用 `PolicyRegistry` 注册它们。 提供了一种扩展方法，可以使用注册表中的策略添加处理程序：
 
-[!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet10)]
+[!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet10)]
 
 在上面的代码中，两个策略在 `PolicyRegistry` 添加到 `ServiceCollection` 中时进行注册。 若要使用注册表中的策略，请使用 `AddPolicyHandlerFromRegistry` 方法，同时传递要应用的策略的名称。
 
@@ -227,7 +227,7 @@ public class ValuesController : ControllerBase
 
 处理程序的默认生存期为两分钟。 可在每个命名客户端上重写默认值。 若要替代值，请对创建客户端时返回的 `IHttpClientBuilder` 调用 [SetHandlerLifetime](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.sethandlerlifetime)：
 
-[!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet11)]
+[!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet11)]
 
 无需处置客户端。 处置既取消传出请求，又保证在调用 [Dispose](/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose) 后无法使用给定的 `HttpClient` 实例。 `IHttpClientFactory` 跟踪和处置 `HttpClient` 实例使用的资源。 `HttpClient` 实例通常可视为无需处置的 .NET 对象。
 
@@ -251,4 +251,4 @@ public class ValuesController : ControllerBase
 
 在添加命名客户端或类型化客户端时，会返回 `IHttpClientBuilder`。 [ConfigurePrimaryHttpMessageHandler](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.configureprimaryhttpmessagehandler) 扩展方法可用于定义委托。 委托用于创建和配置客户端使用的主要 `HttpMessageHandler`：
 
-[!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet12)]
+[!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet12)]

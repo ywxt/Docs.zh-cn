@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/14/2018
 uid: fundamentals/app-state
-ms.openlocfilehash: 072699113a45056ec3ea79436ad56896ba0a4197
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 7794b3c10e26720d3e7ef8965f99b204a3c58d5c
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095809"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41870929"
 ---
 # <a name="session-and-app-state-in-aspnet-core"></a>ASP.NET Core 中的会话和应用状态
 
@@ -105,7 +105,7 @@ ASP.NET Core 通过向客户端提供包含会话 ID 的 Cookie 来维护会话�
 
 ::: moniker-end
 
-中间件的顺序很重要。 在前面的示例中，在 `UseMvc` 之后调用 `UseSession` 时会发生 `InvalidOperationException` 异常。 有关详细信息，请参阅[中间件排序](xref:fundamentals/middleware/index#ordering)。
+中间件的顺序很重要。 在前面的示例中，在 `UseMvc` 之后调用 `UseSession` 时会发生 `InvalidOperationException` 异常。 有关详细信息，请参阅[中间件排序](xref:fundamentals/middleware/index#order)。
 
 配置会话状态后，[HttpContext.Session](/dotnet/api/microsoft.aspnetcore.http.httpcontext.session) 可用。
 
@@ -299,7 +299,7 @@ ASP.NET Core 2.0 或更高版本中，默认使用基于 Cookie 的 TempData 提
 
 ::: moniker-end
 
-中间件的顺序很重要。 在前面的示例中，在 `UseMvc` 之后调用 `UseSession` 时会发生 `InvalidOperationException` 异常。 有关详细信息，请参阅[中间件排序](xref:fundamentals/middleware/index#ordering)。
+中间件的顺序很重要。 在前面的示例中，在 `UseMvc` 之后调用 `UseSession` 时会发生 `InvalidOperationException` 异常。 有关详细信息，请参阅[中间件排序](xref:fundamentals/middleware/index#order)。
 
 > [!IMPORTANT]
 > 如果面向 .NET Framework 并使用基于会话的 TempData 提供程序，请将 [Microsoft.AspNetCore.Session](https://www.nuget.org/packages/Microsoft.AspNetCore.Session/) 包添加到项目。

@@ -5,12 +5,12 @@ description: 了解如何使用更改令牌来跟踪更改。
 ms.author: riande
 ms.date: 11/10/2017
 uid: fundamentals/primitives/change-tokens
-ms.openlocfilehash: 165602587d73907416f47a7ce82a3081e8d74c4b
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: ac80e4c9da6d38e5f1acf8aa6f7ac3f4803ffb33
+ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276888"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42927847"
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>使用 ASP.NET Core 中的更改令牌检测更改
 
@@ -54,9 +54,9 @@ ms.locfileid: "36276888"
 
 ## <a name="monitoring-for-configuration-changes"></a>监视配置更改
 
-默认情况下，ASP.NET Core 模板使用 [JSON 配置文件](xref:fundamentals/configuration/index#json-configuration)（appsettings.json、appsettings.Development.json 和 appsettings.Production.json）来加载应用配置设置。
+默认情况下，ASP.NET Core 模板使用 [JSON 配置文件](xref:fundamentals/configuration/index#json-configuration-provider)（appsettings.json、appsettings.Development.json 和 appsettings.Production.json）来加载应用配置设置。
 
-使用接受 `reloadOnChange` 参数（ASP.NET Core 1.1 以及更高版本）的 [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder) 上的 [AddJsonFile(IConfigurationBuilder, String, Boolean, Boolean)](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions.addjsonfile?view=aspnetcore-2.0#Microsoft_Extensions_Configuration_JsonConfigurationExtensions_AddJsonFile_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_System_Boolean_System_Boolean_) 扩展方法配置这些文件。 `reloadOnChange` 指示文件更改时是否应该重载配置。 请参阅 [WebHost](/dotnet/api/microsoft.aspnetcore.webhost) 便捷方法 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 中的此设置：
+使用接受 `reloadOnChange` 参数（ASP.NET Core 1.1 以及更高版本）的 [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder) 上的 [AddJsonFile(IConfigurationBuilder, String, Boolean, Boolean)](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions.addjsonfile#Microsoft_Extensions_Configuration_JsonConfigurationExtensions_AddJsonFile_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_System_Boolean_System_Boolean_) 扩展方法配置这些文件。 `reloadOnChange` 指示文件更改时是否应该重载配置。 请参阅 [WebHost](/dotnet/api/microsoft.aspnetcore.webhost) 便捷方法 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 中的此设置：
 
 ```csharp
 config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
