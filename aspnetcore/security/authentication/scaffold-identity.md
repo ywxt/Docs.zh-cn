@@ -4,14 +4,14 @@ author: rick-anderson
 description: 了解如何创建标识的基架 ASP.NET Core 项目中。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
-ms.date: 5/16/2018
+ms.date: 08/16/2018
 uid: security/authentication/scaffold-identity
-ms.openlocfilehash: 07163941d0bd1fea6f9b3d9867536580d8a9e9d8
-ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
+ms.openlocfilehash: e35836fa9c20729da7c857243410833749b3a595
+ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2018
-ms.locfileid: "39063268"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055843"
 ---
 # <a name="scaffold-identity-in-aspnet-core-projects"></a>ASP.NET Core 项目中的基架标识
 
@@ -26,6 +26,9 @@ ASP.NET Core 2.1 及更高版本提供了[ASP.NET Core 标识](xref:security/aut
 当运行时标识基架时， *ScaffoldingReadme.txt*在项目目录中创建文件。 *ScaffoldingReadme.txt*文件包含所需完成标识基架更新的一般说明。 本文档包含更完整说明比*ScaffoldingReadme.txt*文件。
 
 我们建议使用一个源控制系统，显示文件的差异，并允许您后退的更改。 运行标识基架后检查所做的更改。
+
+> [!NOTE]
+> 使用时，服务所需[双因素身份验证](xref:security/authentication/identity-enable-qrcodes)，[帐户确认和密码恢复](xref:security/authentication/accconfirm)，和使用标识其他安全功能。 基架标识时，不会生成服务或服务存根 （stub）。 必须手动添加服务，以启用这些功能。 有关示例，请参阅[需要电子邮件确认](xref:security/authentication/accconfirm#require-email-confirmation)。
 
 ## <a name="scaffold-identity-into-an-empty-project"></a>基架标识为一个空项目
 
@@ -94,7 +97,8 @@ dotnet aspnet-codegenerator identity -dc RPauth.Data.ApplicationDbContext --file
 [!INCLUDE[](~/includes/webapp-alias-notice.md)]
 -->
 
-[!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg-auth.md)] 在中配置一些标识选项*Areas/Identity/IdentityHostingStartup.cs*。 有关详细信息，请参阅[IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration)。
+[!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg-auth.md)]
+在中配置一些标识选项*Areas/Identity/IdentityHostingStartup.cs*。 有关详细信息，请参阅[IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration)。
 
 ## <a name="scaffold-identity-into-an-mvc-project-without-existing-authorization"></a>基架标识到 MVC 项目中没有现有的授权
 

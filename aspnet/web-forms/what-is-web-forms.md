@@ -8,12 +8,12 @@ ms.date: 02/21/2014
 ms.assetid: 5fa1daf9-1161-4cfa-bd4c-658f48b2c229
 msc.legacyurl: /web-forms/what-is-web-forms
 msc.type: content
-ms.openlocfilehash: ccb0e6096b0281e5ef8af63bfd84b172e7f209b9
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: e135cfa2945b9e7e5269eb436ff0c1dff20aacdf
+ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830708"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055707"
 ---
 <a name="what-is-web-forms"></a>什么是 Web 窗体
 ====================
@@ -21,7 +21,7 @@ ASP.NET Web 窗体是 ASP.NET web 应用程序框架的一部分，包含[Visual
 
 Web 窗体是用户请求使用其浏览器的页面。 可以编写这些页面的 HTML，结合使用客户端脚本、 服务器控件和服务器代码。 当用户请求页面时，编译和框架，在服务器上执行，然后在框架生成浏览器可以呈现的 HTML 标记。 ASP.NET Web 窗体页中的任何浏览器或客户端设备向用户显示信息。
 
-使用 Visual Studio，可以创建 ASP.NET Web 窗体。 Visual Studio 集成开发环境 (IDE) 可以拖放服务器控件进行布局 Web 窗体页。 你可以然后轻松地设置属性、 方法和事件页上的控件或页本身来。 这些属性、 方法和事件用于定义 web 页的行为、 外观和感觉，依次类推。 若要编写服务器代码来处理页的逻辑，可以使用 Visual Basic 或 C# 等.NET 语言中。
+使用 Visual Studio，可以创建 ASP.NET Web 窗体。 Visual Studio 集成开发环境 (IDE) 可以拖放服务器控件进行布局 Web 窗体页。 你可以然后轻松地设置属性、 方法和事件页上的控件或页本身。 这些属性、 方法和事件用于定义 web 页的行为、 外观和感觉，依次类推。 若要编写服务器代码来处理页的逻辑，可以使用 Visual Basic 或 C# 等.NET 语言中。
 
 > [!NOTE] 
 > 
