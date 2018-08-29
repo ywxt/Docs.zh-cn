@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/24/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 9a7d20378cac597b748d8a60eb0f0bf17c9ba082
-ms.sourcegitcommit: d27317c16f113e7c111583042ec7e4c5a26adf6f
+ms.openlocfilehash: 42775bf4d3e88893260a5973f6f7bc9d3a006b5a
+ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41746090"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42927823"
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>在 Azure 应用服务上托管 ASP.NET Core
 
@@ -57,6 +57,14 @@ ASP.NET Core 文档中提供以下文章：
 如果面向 .NET Core 且引用 [Microsoft.AspNetCore.All 元包](xref:fundamentals/metapackage)，则已经包括这些包。 这些包不包括在 [Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)中。 如果面向 .NET Framework 或引用 `Microsoft.AspNetCore.App` 元包，请引用单个登录包。
 
 ::: moniker-end
+
+## <a name="override-app-configuration-using-the-azure-portal"></a>使用 Azure 门户重写应用配置
+
+“应用程序设置”边栏选项卡的“应用设置”区域允许你为应用设置环境变量。 可以通过[环境变量配置提供程序](xref:fundamentals/configuration/index#environment-variables-configuration-provider)来使用环境变量。
+
+当应用使用 [Web 主机](xref:fundamentals/host/web-host)并使用 [WebHost.CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 构建主机时，配置主机的环境变量使用 `ASPNETCORE_` 前缀。 有关详细信息，请参阅 <xref:fundamentals/host/web-host> 和[环境变量配置提供程序](xref:fundamentals/configuration/index#environment-variables-configuration-provider)。
+
+当应用使用[通用主机](xref:fundamentals/host/generic-host)时，环境变量在默认情况下不会加载到应用的配置，且配置提供程序必须由开发人员添加。 在添加配置提供程序时，开发人员将确定环境变量前缀。 有关详细信息，请参阅 <xref:fundamentals/host/generic-host> 和[环境变量配置提供程序](xref:fundamentals/configuration/index#environment-variables-configuration-provider)。
 
 ## <a name="proxy-server-and-load-balancer-scenarios"></a>代理服务器和负载均衡器方案
 

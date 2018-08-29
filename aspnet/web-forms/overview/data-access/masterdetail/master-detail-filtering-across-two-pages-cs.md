@@ -167,7 +167,7 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值中每个 GridView
 
 [![填充 supplierID SupplierID 查询字符串值的参数值](master-detail-filtering-across-two-pages-cs/_static/image42.png)](master-detail-filtering-across-two-pages-cs/_static/image41.png)
 
-**图 15**： 填充*`supplierID`* 参数值来自`SupplierID`查询字符串值 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-cs/_static/image43.png))
+**图 15**： 填充 *`supplierID`* 参数值来自`SupplierID`查询字符串值 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-cs/_static/image43.png))
 
 
 在绑定到设计视图中的 ObjectDataSource FormView，Visual Studio 会自动创建 FormView `ItemTemplate`， `InsertItemTemplate`，和`EditItemTemplate`与每个返回的数据字段的标签和文本框 Web 控件对象数据源。 由于我们只想显示供应商的信息，可随时删除`InsertItemTemplate`和`EditItemTemplate`。 接下来，编辑 ItemTemplate，使其显示在供应商的公司名称`<h3>`元素的地址、 城市、 国家/地区和公司名称下的电话号码。 或者，可以手动设置 FormView 的`DataSourceID`并创建`ItemTemplate`标记中，正如我们做回到"[显示的数据使用 ObjectDataSource](../basic-reporting/displaying-data-with-the-objectdatasource-cs.md)"教程。
