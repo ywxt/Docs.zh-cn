@@ -2,15 +2,16 @@
 title: ASP.NET Core 中的 WebListener Web 服务器实现
 author: rick-anderson
 description: 了解 WebListener，它是 Windows 上 ASP.NET Core 的 Web 服务器，可用于无需 IIS，直接连接到 Internet。
+monikerRange: < aspnetcore-2.0
 ms.author: riande
-ms.date: 03/13/2018
+ms.date: 08/15/2018
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: 68aea99d6ce6af12655ef5fdb13130e9279e448a
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 5602c1ddbe76879587de12bcd82722c103dee03f
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274864"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751540"
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 WebListener Web 服务器实现
 
@@ -45,11 +46,15 @@ WebListener 对于在无需使用 IIS 的情况下直接向 Internet 公开服�
 
 ![Weblistener 直接与 Internet 进行通信](weblistener/_static/weblistener-to-internet.png)
 
-由于 WebListener 构建于 Http.Sys 之上，因此它不需要反向代理服务器来抵御攻击。 Http.Sys 是一项成熟的技术，可以抵御多种攻击，并提供可靠、安全、可伸缩的全功能 Web 服务器。 IIS 本身作为 Http.Sys 之上的 HTTP 侦听器运行。 
+由于 WebListener 构建于 Http.Sys 之上，因此它不需要反向代理服务器来抵御攻击。 Http.Sys 是一项成熟的技术，可以抵御多种攻击，并提供可靠、安全、可伸缩的全功能 Web 服务器。 IIS 本身作为 Http.Sys 之上的 HTTP 侦听器运行。
 
 当你无法通过 Kestrel 获取它提供的某个功能时，WebListener 对于内部部署也是一个不错的选择。
 
 ![Weblistener 直接与你的内部网络进行通信](weblistener/_static/weblistener-to-internal.png)
+
+## <a name="kernel-mode-authentication-with-kerberos"></a>通过 Kerberos 进行内核模式身份验证
+
+WebListener 通过 Kerberos 身份验证协议委托给内核模式身份验证。 Kerberos 和 WebListener 不支持用户模式身份验证。 必须使用计算机帐户来解密从 Active Directory 获取的并由客户端转发到服务器的 Kerberos 令牌/票证，以便对用户进行身份验证。 注册主机的服务主体名称 (SPN)，而不是应用的用户。
 
 ## <a name="how-to-use-weblistener"></a>如何使用 WebListener
 

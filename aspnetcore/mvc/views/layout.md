@@ -5,18 +5,18 @@ description: 了解如何在 ASP.NET Core 应用中呈现视图之前，使用�
 ms.author: riande
 ms.date: 10/14/2016
 uid: mvc/views/layout
-ms.openlocfilehash: a99b239a0aeeb14492b1eee962dc1149f056f0eb
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: ad0b339572f387be8a636204015ffc361947acb8
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274113"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751405"
 ---
 # <a name="layout-in-aspnet-core"></a>ASP.NET Core 中的布局
 
 作者：[Steve Smith](https://ardalis.com/)
 
-视图经常共享可视和编程元素。 本文介绍如何在 ASP.NET 应用中呈现视图之前，使用通用布局、共享指令和运行常见代码。
+视图经常共享可视和编程元素。 本文介绍如何在 ASP.NET Core 应用中呈现视图之前，使用通用布局、共享指令及运行常见代码。
 
 ## <a name="what-is-a-layout"></a>什么是布局
 
@@ -26,7 +26,7 @@ ms.locfileid: "36274113"
 
 应用中的许多页面也经常使用脚本和样式表等常用的 HTML 结构。 所有这些共享元素均可在布局文件中进行定义，应用内使用的任何视图随后均可引用此文件。 布局可减少视图中的重复代码，帮助它们遵循[不要自我重复 (DRY) 原则](http://deviq.com/don-t-repeat-yourself/)。
 
-按照约定，ASP.NET 应用的默认布局名为 `_Layout.cshtml`。 Visual Studio ASP.NET Core MVC 项目模板在 `Views/Shared` 文件夹中包含此布局文件：
+按照约定，ASP.NET Core 应用的默认布局名为 `_Layout.cshtml`。 Visual Studio ASP.NET Core MVC 项目模板在 `Views/Shared` 文件夹中包含此布局文件：
 
 ![解决方案资源管理器中的视图文件夹](layout/_static/web-project-views.png)
 

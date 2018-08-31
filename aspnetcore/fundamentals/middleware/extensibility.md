@@ -2,16 +2,17 @@
 title: ASP.NET Core 中基于工厂的中间件激活
 author: guardrex
 description: 了解如何在 ASP.NET Core 中通过基于工厂的激活实现使用强类型中间件。
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/29/2018
+ms.date: 08/14/2018
 uid: fundamentals/middleware/extensibility
-ms.openlocfilehash: 44987dbc20b0419865a23e64b60a5dc3f436743a
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 346f5e7b28a9cd17a03a864772ed8b2e4be9455b
+ms.sourcegitcommit: 2c158fcfd325cad97ead608a816e525fe3dcf757
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277067"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "41751514"
 ---
 # <a name="factory-based-middleware-activation-in-aspnet-core"></a>ASP.NET Core 中基于工厂的中间件激活
 
@@ -47,7 +48,7 @@ ms.locfileid: "36277067"
 
 使用 `MiddlewareFactory` 激活的中间件：
 
-[!code-csharp[](extensibility/sample/Middleware/IMiddlewareMiddleware.cs?name=snippet1)]
+[!code-csharp[](extensibility/sample/Middleware/FactoryActivatedMiddleware.cs?name=snippet1)]
 
 程序会为中间件创建扩展：
 
@@ -56,11 +57,11 @@ ms.locfileid: "36277067"
 无法通过 `UseMiddleware` 将对象传递给工厂激活的中间件：
 
 ```csharp
-public static IApplicationBuilder UseIMiddlewareMiddleware(
+public static IApplicationBuilder UseFactoryActivatedMiddleware(
     this IApplicationBuilder builder, bool option)
 {
     // Passing 'option' as an argument throws a NotSupportedException at runtime.
-    return builder.UseMiddleware<IMiddlewareMiddleware>(option);
+    return builder.UseMiddleware<FactoryActivatedMiddleware>(option);
 }
 ```
 
@@ -70,15 +71,15 @@ public static IApplicationBuilder UseIMiddlewareMiddleware(
 
 两个中间件均在 `Configure` 的请求处理管道中注册：
 
-[!code-csharp[](extensibility/sample/Startup.cs?name=snippet2&highlight=13-14)]
+[!code-csharp[](extensibility/sample/Startup.cs?name=snippet2&highlight=14-15)]
 
 ## <a name="imiddlewarefactory"></a>IMiddlewareFactory
 
 [IMiddlewareFactory](/dotnet/api/microsoft.aspnetcore.http.imiddlewarefactory) 提供中间件的创建方法。 中间件工厂实现在容器中注册为作用域服务。
 
-可在 [Microsoft.AspNetCore.Http](https://www.nuget.org/packages/Microsoft.AspNetCore.Http/) 包（[引用源](https://github.com/aspnet/HttpAbstractions/blob/release/2.0/src/Microsoft.AspNetCore.Http/MiddlewareFactory.cs)）中找到默认的 `IMiddlewareFactory` 实现（即[MiddlewareFactory](/dotnet/api/microsoft.aspnetcore.http.middlewarefactory)）。
+可在 [Microsoft.AspNetCore.Http](https://www.nuget.org/packages/Microsoft.AspNetCore.Http/) 包中找到默认的 `IMiddlewareFactory` 实现（即 [MiddlewareFactory](/dotnet/api/microsoft.aspnetcore.http.middlewarefactory)）。
 
 ## <a name="additional-resources"></a>其他资源
 
-* [中间件](xref:fundamentals/middleware/index)
-* [第三方容器中的中间件激活](xref:fundamentals/middleware/extensibility-third-party-container)
+* <xref:fundamentals/middleware/index>
+* <xref:fundamentals/middleware/extensibility-third-party-container>

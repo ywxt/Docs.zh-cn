@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core MVC 这一丰富框架如何使用“模型-视
 ms.author: riande
 ms.date: 01/08/2018
 uid: mvc/overview
-ms.openlocfilehash: 7f8aab02c0ee37dad49ff224b182ec455e837a7a
-ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
+ms.openlocfilehash: d2a50e48c20fe69b1fe691bfc9c91a27d4219922
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39378633"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41902594"
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>ASP.NET Core MVC 概述
 
@@ -251,3 +251,9 @@ ASP.NET Core 内置有对[依赖关系注入 (DI)](../fundamentals/dependency-in
 ### <a name="view-components"></a>视图组件
 
 通过[视图组件](views/view-components.md)可以包装呈现逻辑并在整个应用程序中重用它。 这些组件类似于[分部视图](views/partial.md)，但具有关联逻辑。
+
+## <a name="compatibility-version"></a>兼容性版本
+
+<xref:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion*> 方法允许应用选择加入或退出 ASP.NET Core MVC 2.1 或更高版本中引入的潜在中断行为变更。
+
+有关更多信息，请参见<xref:mvc/compatibility-version>。

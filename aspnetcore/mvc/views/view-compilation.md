@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/17/2018
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 9355d467ca819ea8c6292963b31367ad5ca36d55
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: 05ebc2b51401f8ce8d76d7d121e351cd9ca42c80
+ms.sourcegitcommit: 67a0a04ebb3b21c826e5b9600bacfc897abd6a46
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938532"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42899852"
 ---
 # <a name="razor-file-compilation-in-aspnet-core"></a>ASP.NET Core 中的 Razor 文件编译
 
@@ -39,9 +39,12 @@ ms.locfileid: "37938532"
 ## <a name="deploy-precompiled-files"></a>部署预编译文件
 
 ::: moniker range=">= aspnetcore-2.1"
+
 Razor SDK 默认启用 Razor 文件的生成时和发布时编译。 Razor 文件更新后，支持在生成时编辑这些文件。 默认情况下，仅通过应用部署编译的 Views.dll 而不部署 cshtml 文件。
 
 > [!IMPORTANT]
+> ASP.NET Core 3.0 中将删除预编译工具。 建议迁移到 [Razor Sdk](xref:razor-pages/sdk)。
+>
 > 仅当项目文件中未设置特定于预编译的属性时，Razor SDK 才有效。 例如，通过将 .csproj 文件的 `MvcRazorCompileOnPublish` 属性设置为 `true` 来禁用 Razor SDK。
 ::: moniker-end
 
@@ -55,6 +58,8 @@ Razor SDK 默认启用 Razor 文件的生成时和发布时编译。 Razor 文�
 默认情况下，ASP.NET Core 2.x 项目模板将 `MvcRazorCompileOnPublish` 属性隐式设置为 `true`。 因此，可以从 .csproj 文件中安全地删除此元素。
 
 > [!IMPORTANT]
+> ASP.NET Core 3.0 中将删除预编译工具。 建议迁移到 [Razor Sdk](xref:razor-pages/sdk)。
+>
 > 在 ASP.NET Core 2.0 中执行[独立部署 (SCD)](/dotnet/core/deploying/#self-contained-deployments-scd) 时，无法使用 Razor 文件预编译。
 ::: moniker-end
 

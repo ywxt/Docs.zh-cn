@@ -5,12 +5,12 @@ description: 演示如何使用缓存标记帮助程序
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 969716e21211513053f52049368a0a7190ffba47
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 425d8c2235f0070665bc0c967d2498f2cff2a4a6
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276547"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751457"
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>ASP.NET Core MVC 中的缓存标记帮助程序
 
@@ -181,7 +181,7 @@ Index.cshtml
 | String            | ".AspNetCore.Identity.Application"                |
 |                   | ".AspNetCore.Identity.Application,HairColor" |
 
-接受单个标头值或逗号分隔的标头值列表，当标头值更改时触发缓存刷新。 以下示例查看与ASP.NET Identity 相关联的 cookie。 当用户经过身份验证时，要设置的请求 cookie 将触发缓存刷新。
+接受单个标头值或逗号分隔的标头值列表，当标头值更改时触发缓存刷新。 以下示例查看与 ASP.NET Core Identity 相关联的 cookie。 当用户经过身份验证时，要设置的请求 cookie 将触发缓存刷新。
 
 示例:
 

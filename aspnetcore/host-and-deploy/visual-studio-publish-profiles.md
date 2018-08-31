@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 04/10/2018
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: 280599ab4b4f0a70d154cc4408e7232aaf766d8e
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 2958b83de13207b93790004a4fa60b0509af3cd2
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279553"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41902581"
 ---
 # <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>用于 ASP.NET Core 应用部署的 Visual Studio 发布配置文件
 
@@ -202,7 +202,7 @@ dotnet publish -c Release -o C:\MyWebs\test
 
 敏感信息（如发布密码）在每个用户/机器级别均进行加密。 它存储在 Properties/PublishProfiles/&lt;profile_name&gt;.pubxml.user 文件中。 由于此文件可以存储敏感信息，因此不应将其签入源代码管理。
 
-有关如何在 ASP.NET Core 上发布 Web 应用的概述，请参阅[托管和部署](xref:host-and-deploy/index)。 发布 ASP.NET Core 应用程序所需的 MSBuild 任务和目标是开放源代码，位于：https://github.com/aspnet/websdk。
+有关如何在 ASP.NET Core 上发布 Web 应用的概述，请参阅[托管和部署](xref:host-and-deploy/index)。 发布 ASP.NET Core 应用程序所需的 MSBuild 任务和目标是开放源代码，位于： https://github.com/aspnet/websdk。
 
 `dotnet publish` 可以使用文件夹、MSDeploy 和 [Kudu](https://github.com/projectkudu/kudu/wiki) 发布配置文件：
 
@@ -505,3 +505,4 @@ MSBuild file.
 
 * [Web 部署](https://www.iis.net/downloads/microsoft/web-deploy) (MSDeploy) 简化了 Web 应用和网站到 IIS 服务器的部署。
 * [https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues)：文件问题和部署的请求功能。
+* [从 Visual Studio 将 ASP.NET Web 应用发布到 Azure VM](/azure/virtual-machines/windows/publish-web-app-from-visual-studio)

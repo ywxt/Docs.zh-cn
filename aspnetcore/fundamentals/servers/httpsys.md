@@ -2,16 +2,16 @@
 title: ASP.NET Core 中的 HTTP.sys Web 服务器实现
 author: guardrex
 description: 了解 Windows 上适用于 ASP.NET Core 的 Web 服务器 HTTP.sys。 HTTP.sys 构建于 HTTP.sys 内核模式驱动程序之上，是 Kestrel 的一种替代选择，可用来直接连接到 Internet，而无需使用 IIS。
+monikerRange: '>= aspnetcore-2.0'
 ms.author: tdykstra
-ms.custom: mvc
-ms.date: 03/13/2018
+ms.date: 08/15/2018
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: aabfd99b7a28e80c665798fab86264b2b11954c2
-ms.sourcegitcommit: 7097dba14d5b858e82758ee031ac62dbe3611339
+ms.openlocfilehash: 58f71596b8ad54dd500699265ab022dc57c4f7a3
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39138566"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755595"
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 HTTP.sys Web 服务器实现
 
@@ -54,7 +54,11 @@ HTTP.sys 对于以下情形的部署来说很有用：
 
   ![HTTP.sys 直接与内部网络进行通信](httpsys/_static/httpsys-to-internal.png)
 
-HTTP.sys 是一项成熟的技术，可以抵御多种攻击，并提供可靠、安全、可伸缩的全功能 Web 服务器。 IIS 本身作为 HTTP.sys 之上的 HTTP 侦听器运行。 
+HTTP.sys 是一项成熟的技术，可以抵御多种攻击，并提供可靠、安全、可伸缩的全功能 Web 服务器。 IIS 本身作为 HTTP.sys 之上的 HTTP 侦听器运行。
+
+## <a name="kernel-mode-authentication-with-kerberos"></a>对 Kerberos 进行内核模式身份验证
+
+HTTP.sys 通过 Kerberos 身份验证协议委托给内核模式身份验证。 Kerberos 和 HTTP.sys 不支持用户模式身份验证。 必须使用计算机帐户来解密从 Active Directory 获取的并由客户端转发到服务器的 Kerberos 令牌/票证，以便对用户进行身份验证。 注册主机的服务主体名称 (SPN)，而不是应用的用户。
 
 ## <a name="how-to-use-httpsys"></a>如何使用 HTTP.sys
 

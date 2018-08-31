@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: b156cd0755d7918d5f8433fcbe5c870ad04ac13e
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: 68afe77b05a717cffecc32188f18e9fde208b81f
+ms.sourcegitcommit: 3ca20ed63bf1469f4365f0c1fbd00c98a3191c84
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396216"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "41751524"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>在 Windows 服务中托管 ASP.NET Core
 
@@ -72,7 +72,7 @@ ms.locfileid: "39396216"
 
      ::: moniker range=">= aspnetcore-2.0"
 
-     [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=ServiceOnly&highlight=8-9,12)]
+     [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=ServiceOnly&highlight=8-9,16)]
 
      ::: moniker-end
 
@@ -205,7 +205,7 @@ ms.locfileid: "39396216"
 
    ::: moniker range=">= aspnetcore-2.0"
 
-   [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=HandleStopStart&highlight=14)]
+   [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=HandleStopStart&highlight=17)]
 
    > [!NOTE]
    > 不将 `Main` 中的 `isService` 传递到 `CreateWebHostBuilder`，因为 `CreateWebHostBuilder` 的签名必须是 `CreateWebHostBuilder(string[])`才能使[集成测试](xref:test/integration-tests)正常运行。
@@ -229,6 +229,13 @@ ms.locfileid: "39396216"
 ## <a name="configure-https"></a>配置 HTTPS
 
 指定 [Kestrel 服务器 HTTPS 终结点配置](xref:fundamentals/servers/kestrel#endpoint-configuration)。
+
+## <a name="current-directory-and-content-root"></a>当前目录和内容根
+
+通过为 Windows 服务调用 `Directory.GetCurrentDirectory()` 返回的当前工作目录是 C:\WINDOWS\system32 文件夹。 system32 文件夹不是存储服务文件（如设置文件）的合适位置。 使用 [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder) 时，通过以下某种方法使用 [FileConfigurationExtensions.SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath) 维护和访问服务的资产和设置文件：
+
+* 使用内容根路径。 `IHostingEnvironment.ContentRootPath` 是创建服务时提供给 `binPath` 参数的同一路径。 不要使用 `Directory.GetCurrentDirectory()` 创建设置文件的路径，而是使用内容根路径并在应用的内容根中维护文件。
+* 将文件存储在磁盘中的合适位置。 使用 `SetBasePath` 指定到包含文件的文件夹的绝对路径。
 
 ## <a name="additional-resources"></a>其他资源
 
