@@ -5,12 +5,12 @@ description: 本文介绍如何在使用 IIS Express、 IIS、 HTTP.sys 和 WebL
 ms.author: riande
 ms.date: 08/18/2018
 uid: security/authentication/windowsauth
-ms.openlocfilehash: 93b1a1de74ef6554d48709b04870f7e23738846b
-ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
+ms.openlocfilehash: a8066d248c0d4db1d1f61b2a14bdb4656a2f4265
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41826648"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312407"
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>在 ASP.NET Core 中配置 Windows 身份验证
 
@@ -97,7 +97,7 @@ IIS 使用[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)到
 [!code-csharp[](windowsauth/sample/Program2x.cs?highlight=9-14)]
 
 > [!NOTE]
-> HTTP.sys 内核模式身份验证使用 Kerberos 身份验证协议的代理。 使用 Kerberos 和 HTTP.sys 不支持用户模式身份验证。 必须用于解密 Kerberos 令牌/票证从 Active Directory 中获取和转发客户端向服务器进行身份验证用户的计算机帐户。 对于主机，不应用的用户注册服务主体名称 (SPN)。
+> HTTP.sys 通过 Kerberos 身份验证协议委托给内核模式身份验证。 Kerberos 和 HTTP.sys 不支持用户模式身份验证。 必须使用计算机帐户来解密从 Active Directory 获取的并由客户端转发到服务器的 Kerberos 令牌/票证，以便对用户进行身份验证。 注册主机的服务主体名称 (SPN)，而不是应用的用户。
 
 ::: moniker-end
 
@@ -110,7 +110,7 @@ IIS 使用[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)到
 [!code-csharp[](windowsauth/sample/Program1x.cs?highlight=6-11)]
 
 > [!NOTE]
-> WebListener 委托给内核模式身份验证使用 Kerberos 身份验证协议。 使用 Kerberos 和 WebListener 不支持用户模式身份验证。 必须用于解密 Kerberos 令牌/票证从 Active Directory 中获取和转发客户端向服务器进行身份验证用户的计算机帐户。 对于主机，不应用的用户注册服务主体名称 (SPN)。
+> WebListener 通过 Kerberos 身份验证协议委托给内核模式身份验证。 Kerberos 和 WebListener 不支持用户模式身份验证。 必须使用计算机帐户来解密从 Active Directory 获取的并由客户端转发到服务器的 Kerberos 令牌/票证，以便对用户进行身份验证。 注册主机的服务主体名称 (SPN)，而不是应用的用户。
 
 ::: moniker-end
 
@@ -129,7 +129,7 @@ IIS 使用[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)到
 在 ASP.NET Core 2.x，请`[Authorize]`属性需要进行额外配置中的*Startup.cs*以进行 Windows 身份验证质询匿名请求。 建议的配置略有根据正在使用的 web 服务器而异。
 
 > [!NOTE]
-> 默认情况下，缺少授权可访问的页面的用户会显示 HTTP 403 响应为空。 [StatusCodePages 中间件](xref:fundamentals/error-handling#configuring-status-code-pages)可以配置为向用户提供更好的"拒绝访问"体验。
+> 默认情况下，缺少授权可访问的页面的用户会显示 HTTP 403 响应为空。 [StatusCodePages 中间件](xref:fundamentals/error-handling#configure-status-code-pages)可以配置为向用户提供更好的"拒绝访问"体验。
 
 #### <a name="iis"></a>IIS
 

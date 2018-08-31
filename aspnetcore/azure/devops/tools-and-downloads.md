@@ -5,16 +5,16 @@ description: 提供有关为托管在 Azure 中的 ASP.NET Core 应用构建 Dev
 ms.author: casoper
 ms.date: 08/07/2018
 uid: azure/devops/tools-and-downloads
-ms.openlocfilehash: 3cf99f4d497bf2edd8759ab9afdee66ad49fac3d
-ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
+ms.openlocfilehash: a63e97d9ab9eb0ed2fbd30e8c2e033f0c048d33e
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42909355"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312296"
 ---
 # <a name="tools-and-downloads"></a>工具和下载
 
-Azure 具有用于预配和管理资源，如多个接口[Azure 门户](https://portal.azure.com)， [Azure CLI](https://docs.microsoft.com/cli/azure/)， [Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/overview)， [Azure 云Shell](https://shell.azure.com/bash)，和 Visual Studio。 本指南将最低要求方法，并使用 Azure Cloud Shell 中，只要有可能以减少所需的步骤。 但是，对于某些部分都必须使用 Azure 门户。
+Azure 具有用于预配和管理资源，如多个接口[Azure 门户](https://portal.azure.com)， [Azure CLI](https://docs.microsoft.com/cli/azure/)， [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview)， [Azure 云Shell](https://shell.azure.com/bash)，和 Visual Studio。 本指南将最低要求方法，并使用 Azure Cloud Shell 中，只要有可能以减少所需的步骤。 但是，对于某些部分都必须使用 Azure 门户。
 
 ## <a name="prerequisites"></a>系统必备
 

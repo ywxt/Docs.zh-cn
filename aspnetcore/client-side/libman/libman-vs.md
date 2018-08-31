@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 08/20/2018
 uid: client-side/libman/libman-vs
-ms.openlocfilehash: b44769f1d0925f38523d6570858de17f37e32c2b
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: a653b1a5c07feca8672ba38e0cda3ddc30482c5a
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41909942"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312174"
 ---
 # <a name="use-libman-with-aspnet-core-in-visual-studio"></a>在 Visual Studio 中的 ASP.NET Core 中使用 LibMan
 
@@ -100,7 +100,7 @@ Visual Studio 提供了丰富 JSON 编辑支持，例如颜色设置、 格式�
 
 * 一个子集[jQuery](https://jquery.com/)版本 3.3.1 检索从 CDNJS 提供程序。 在中定义的子集`files`属性&mdash;*jquery.min.js*，*只需要 jquery.js*，以及*jquery.min.map*。 将文件放置在项目的*wwwroot/lib/jquery*文件夹。
 * 整个[Bootstrap](https://getbootstrap.com/)检索并放入版本 4.1.3 *wwwroot/lib/bootstrap*文件夹。 对象文字`provider`属性重写`defaultProvider`属性值。 LibMan 从 unpkg 提供程序中检索启动文件。
-* 一个子集[lodash 等](https://lodash.com/)监管主体在组织内已批准。 *Lodash.js*并*lodash.min.js*从本地文件系统中检索文件*c:\\tmp\\*。 将文件复制到项目的*lodash 等wwwroot/lib/* 文件夹。
+* 一个子集[lodash 等](https://lodash.com/)监管主体在组织内已批准。 *Lodash.js*并*lodash.min.js*从本地文件系统中检索文件*c:\\temp\\lodash 等\\*。 将文件复制到项目的*lodash 等wwwroot/lib/* 文件夹。
 
 [!code-json[](samples/LibManSample/libman.json)]
 
@@ -193,7 +193,7 @@ Clean libraries operation completed
 2 libraries were successfully deleted in 1.91 secs
 ```
 
-清理操作只会从项目删除文件。 在将来还原操作的更快地检索缓存中保留库文件。 若要管理存储在本地计算机的缓存中的库文件，请使用 LibMan CLI。
+清理操作只会从项目删除文件。 在将来还原操作的更快地检索缓存中保留库文件。 若要管理存储在本地计算机的缓存中的库文件，请使用[LibMan CLI](xref:client-side/libman/libman-cli)。
 
 ## <a name="uninstall-library-files"></a>卸载库文件
 
@@ -231,4 +231,5 @@ LibMan 检查安装的版本比新的库版本。 会出现以下结果：
 
 ## <a name="additional-resources"></a>其他资源
 
+* <xref:client-side/libman/libman-cli>
 * [LibMan GitHub 存储库](https://github.com/aspnet/LibraryManager)
