@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/14/2016
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: 0a9a2d9d0de25a4eaab704680c627c1216d146e3
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 3470d9278574a95115b14f25b90a0a93bb3b8a67
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275478"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751561"
 ---
 # <a name="continuous-deployment-to-azure-with-visual-studio-and-git-with-aspnet-core"></a>使用 Visual Studio 和 Git 将 ASP.NET Core 持续部署到 Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "36275478"
 
 1. 在“新建 ASP.NET Core 项目”对话框中，选择 ASP.NET Core 的“空”模板，然后单击“确定”。
 
-   ![“新建 ASP.NET 项目”对话框](azure-continuous-deployment/_static/02-web-site-template.png)
+   ![新的 ASP.NET Core 项目对话框](azure-continuous-deployment/_static/02-web-site-template.png)
 
 > [!NOTE]
 > .NET Core 的最新版本为 2.0。

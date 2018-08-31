@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/07/2018
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: cbbdee6849768004476d94c58be4a0e7cc2d6f9e
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: f22914c9b0d6d1902dd37c9b21b80a18894c97e7
+ms.sourcegitcommit: d1c4580f56656b503cf528ec9f5ba570d790b57d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938467"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "41751627"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>对 IIS 上的 ASP.NET Core 进行故障排除
 
@@ -97,6 +97,7 @@ ASP.NET Core 模块的默认“startupTimeLimit”配置为 120 秒。 保留默
 1. 在托管系统上导航到站点的部署文件夹。
 1. 如果 logs 文件夹不存在，请创建该文件夹。 有关如何启用 MSBuild 以在部署中自动创建 logs 文件夹的说明，请参阅[目录结构](xref:host-and-deploy/directory-structure)主题。
 1. 编辑 web.config 文件。 将“stdoutLogEnabled”设置为 `true` 并更改“stdoutLogFile”路径以指向 logs 文件夹（例如，`.\logs\stdout`）。 路径中的 `stdout` 是日志文件名的前缀。 创建日志时，将自动添加时间戳、进程 ID 和文件扩展名。 如果将 `stdout` 用作文件名的前缀，典型的日志文件将命名为“stdout_20180205184032_5412.log”。 
+1. 请确保应用程序池的标识具有对日志文件夹的写入权限。
 1. 保存已更新的 web.config 文件。
 1. 向应用发出请求。
 1. 导航到 logs 文件夹。 查找并打开最新的 stdout 日志。

@@ -5,12 +5,12 @@ description: 本教程将添加更多实体和关系，并通过指定格式设�
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: 1d3c69c8c658b5ca2f0253b790b0dc75d44d3064
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: c97acd2b943e1d4c466c060247220b3b8bab6d6b
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38194085"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751563"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>ASP.NET Core MVC 和 EF Core - 数据模型 - 第 5 个教程（共 10 个）
 
@@ -66,7 +66,7 @@ Contoso 大学示例 web 应用程序演示如何使用 Entity Framework Core �
 
 ### <a name="the-stringlength-attribute"></a>StringLength 特性
 
-还可使用特性指定数据验证规则和验证错误消息。 `StringLength` 特性设置数据库中的最大长度，并为 ASP.NET MVC 提供客户端和服务器端验证。 还可在此属性中指定最小字符串长度，但最小值对数据库架构没有影响。
+还可使用特性指定数据验证规则和验证错误消息。 `StringLength` 特性设置数据库中的最大长度，并为 ASP.NET Core MVC 提供客户端和服务器端验证。 还可在此属性中指定最小字符串长度，但最小值对数据库架构没有影响。
 
 假设要确保用户输入的名称不超过 50 个字符。 若要添加此限制，请将 `StringLength` 特性添加到 `LastName` 和 `FirstMidName` 属性，如下例所示：
 

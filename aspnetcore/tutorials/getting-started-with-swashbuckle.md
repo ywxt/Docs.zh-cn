@@ -4,14 +4,14 @@ author: zuckerthoben
 description: 了解如何将 Swashbuckle 添加到 ASP.NET Core web API 项目中以集成 Swagger UI。
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 07/27/2018
+ms.date: 08/20/2018
 uid: tutorials/get-started-with-swashbuckle
-ms.openlocfilehash: 06f0ebae70fe43506d7edecbd0508968d1d00635
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: daaf26d927fa8134c02426ee40db1784d027b487
+ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342310"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41751544"
 ---
 # <a name="get-started-with-swashbuckle-and-aspnet-core"></a>Swashbuckle 和 ASP.NET Core 入门
 
@@ -96,6 +96,8 @@ dotnet add TodoApi.csproj package Swashbuckle.AspNetCore
 在 `Startup.Configure` 方法中，启用中间件为生成的 JSON 文档和 Swagger UI 提供服务：
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup2.cs?name=snippet_Configure&highlight=4,8-11)]
+
+前面的 `UseSwaggerUI` 方法调用启用了[静态文件中间件](xref:fundamentals/static-files)。 如果以 .NET Framework 或 .NET Core 1.x 为目标，请将 [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/) NuGet 包添加到项目。
 
 启动应用，并导航到 `http://localhost:<port>/swagger/v1/swagger.json`。 生成的描述终结点的文档显示在 [Swagger 规范 (swagger.json)](xref:tutorials/web-api-help-pages-using-swagger#swagger-specification-swaggerjson) 中。
 

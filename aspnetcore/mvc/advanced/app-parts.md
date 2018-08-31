@@ -5,12 +5,12 @@ description: 了解如何使用应用程序部件（应用资源的抽象）来�
 ms.author: riande
 ms.date: 01/04/2017
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: e0290ceadc159d7c3608ec4420d95cd219407d32
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 377217870743e70f5e20544da43cb80c2c916c42
+ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276820"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41751608"
 ---
 # <a name="application-parts-in-aspnet-core"></a>ASP.NET Core 中的应用程序部件
 

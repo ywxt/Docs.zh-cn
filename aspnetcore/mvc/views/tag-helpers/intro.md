@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 2/14/2018
 uid: mvc/views/tag-helpers/intro
-ms.openlocfilehash: be75667f34eed7ba601eee331e3451c5738ef223
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: c2af9099fe439e1cdbf9ba86ffae3b2b0f67391e
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273564"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751604"
 ---
 # <a name="tag-helpers-in-aspnet-core"></a>ASP.NET Core 中的标记帮助程序
 
@@ -130,7 +130,7 @@ public class Movie
 
 ## <a name="intellisense-support-for-tag-helpers"></a>标记帮助程序的 Intellisense 支持
 
-在 Visual Studio 中创建新的 ASP.NET Web 应用时，会添加 NuGet 包“Microsoft.AspNetCore.Razor.Tools”。 这是添加标记帮助程序工具的包。
+在 Visual Studio 中创建新的 ASP.NET Core Web 应用时，会添加 NuGet 包“Microsoft.AspNetCore.Razor.Tools”。 这是添加标记帮助程序工具的包。
 
 请考虑编写 HTML `<label>` 元素。 只要在 Visual Studio 编辑器中输入 `<l`，IntelliSense 就会显示匹配的元素：
 

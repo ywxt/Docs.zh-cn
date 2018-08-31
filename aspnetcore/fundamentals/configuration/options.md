@@ -6,23 +6,43 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/28/2017
 uid: fundamentals/configuration/options
-ms.openlocfilehash: ef6b0117b88c4c79771f0280267bd99993028ac8
-ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
+ms.openlocfilehash: 6258530beedced9570111478fea630b1556e1a1e
+ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39655415"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42927953"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>ASP.NET Core 中的选项模式
 
 作者：[Luke Latham](https://github.com/guardrex)
 
-选项模式使用类来表示相关设置的组。 当配置设置由功能隔离到单独的类时，应用遵循两个重要软件工程原则：
+选项模式使用类来表示相关设置的组。 当[配置设置](xref:fundamentals/configuration/index)由方案隔离到单独的类时，应用遵循两个重要软件工程原则：
 
-* [接口分离原则 (ISP)](http://deviq.com/interface-segregation-principle/)：依赖于配置设置的功能（类）仅依赖于其使用的配置设置。
+* [接口分离原则 (ISP)](http://deviq.com/interface-segregation-principle/)：依赖于配置设置的方案（类）仅依赖于其使用的配置设置。
 * [关注点分离](http://deviq.com/separation-of-concerns/)：应用的不同部件的设置不彼此依赖或相互耦合。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）跟随示例应用可更轻松地理解本文。
+
+## <a name="prerequisites"></a>系统必备
+
+::: moniker range=">= aspnetcore-2.1"
+
+引用 [Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)或将包引用添加到 [Microsoft.Extensions.Options.ConfigurationExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Options.ConfigurationExtensions/) 包。
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+引用 [Microsoft.AspNetCore.All 元包](xref:fundamentals/metapackage)或将包引用添加到 [Microsoft.Extensions.Options.ConfigurationExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Options.ConfigurationExtensions/) 包。
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+将包引用添加到 [Microsoft.Extensions.Options.ConfigurationExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Options.ConfigurationExtensions/) 包。
+
+::: moniker-end
 
 ## <a name="basic-options-configuration"></a>基本选项配置
 
@@ -102,7 +122,7 @@ delegate_option1 = value1_configured_by_delgate, delegate_option2 = 500
 
 子选项配置已作为示例 &num;3 在[示例应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample)中进行了演示。
 
-应用应创建适用于应用中特定功能组（类）的选项类。 需要配置值的部分应用应仅有权访问其使用的配置值。
+应用应创建适用于应用中特定方案组（类）的选项类。 需要配置值的部分应用应仅有权访问其使用的配置值。
 
 将选项绑定到配置时，选项类型中的每个属性都将绑定到窗体 `property[:sub-property:]` 的配置键。 例如，`MyOptions.Option1` 属性将绑定到从 appsettings.json 中的 `option1` 属性读取的键 `Option1`。
 

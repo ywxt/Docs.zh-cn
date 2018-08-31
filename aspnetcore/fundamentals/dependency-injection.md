@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/02/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 861370dc689e2420838f639ea0b1fb8f73927e16
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: b9c322e56c0902c2a78bbbf2563dd01ce79fdc9a
+ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342414"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42927892"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>在 ASP.NET Core 依赖注入
 
@@ -55,7 +55,7 @@ public class IndexModel : PageModel
 
     public async Task OnGetAsync()
     {
-        await _myDependency.WriteMessage(
+        await _dependency.WriteMessage(
             "IndexModel.OnGetAsync created this message.");
     }
 }
@@ -74,7 +74,7 @@ public class HomeController : Controller
 
     public async Task<IActionResult> Index()
     {
-        await _myDependency.WriteMessage(
+        await _dependency.WriteMessage(
             "HomeController.Index created this message.");
 
         return View();
@@ -143,7 +143,7 @@ public class HomeController : Controller
 ::: moniker-end
 
 > [!NOTE]
-> 每个 `services.Add<ServiceName>` 扩展方法添加（并可能配置）服务。 例如，`services.AddMvc()` 添加 Razor Pages 和 MVC 需要的服务。 我们建议应用遵循此约定。 将扩展方法置于 [Microsoft.Extensions.DependencyInjection](/dotnet/api/microsoft.extensions.dependencyinjection) 命名空间中以封装服务注册的组。
+> 每个 `services.Add{SERVICE_NAME}` 扩展方法添加（并可能配置）服务。 例如，`services.AddMvc()` 添加 Razor Pages 和 MVC 需要的服务。 我们建议应用遵循此约定。 将扩展方法置于 [Microsoft.Extensions.DependencyInjection](/dotnet/api/microsoft.extensions.dependencyinjection) 命名空间中以封装服务注册的组。
 
 如果服务的构造函数需要基元（如 `string`），则可以使用[配置](xref:fundamentals/configuration/index)或[选项模式](xref:fundamentals/configuration/options)注入基元：
 
@@ -198,7 +198,7 @@ public class MyDependency : IMyDependency
 | [System.Diagnostics.DiagnosticSource](https://docs.microsoft.com/dotnet/core/api/system.diagnostics.diagnosticsource) | 单一实例 |
 | [System.Diagnostics.DiagnosticListener](https://docs.microsoft.com/dotnet/core/api/system.diagnostics.diagnosticlistener) | 单例 |
 
-当服务集合扩展方法可用于注册服务（及其依赖服务，如果需要）时，约定使用单个 `Add<ServiceName>` 扩展方法来注册该服务所需的所有服务。 以下代码是如何使用扩展方法 [AddDbContext](/dotnet/api/microsoft.extensions.dependencyinjection.entityframeworkservicecollectionextensions.adddbcontext)、[AddIdentity](/dotnet/api/microsoft.extensions.dependencyinjection.identityservicecollectionextensions.addidentity) 和 [AddMvc](/dotnet/api/microsoft.extensions.dependencyinjection.mvcservicecollectionextensions.addmvc) 向容器添加其他服务的示例：
+当服务集合扩展方法可用于注册服务（及其依赖服务，如果需要）时，约定使用单个 `Add{SERVICE_NAME}` 扩展方法来注册该服务所需的所有服务。 以下代码是如何使用扩展方法 [AddDbContext](/dotnet/api/microsoft.extensions.dependencyinjection.entityframeworkservicecollectionextensions.adddbcontext)、[AddIdentity](/dotnet/api/microsoft.extensions.dependencyinjection.identityservicecollectionextensions.addidentity) 和 [AddMvc](/dotnet/api/microsoft.extensions.dependencyinjection.mvcservicecollectionextensions.addmvc) 向容器添加其他服务的示例：
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -480,14 +480,24 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="default-service-container-replacement"></a>默认服务容器替换
 
-内置的服务容器旨在满足框架和在其上生成的大多数消费者应用的基本需求。 但是，开发人员可以使用自己喜欢的容器替换内置容器。 `Startup.ConfigureServices` 方法通常返回 `void`。 如果更改该方法的签名以返回 [IServiceProvider](/dotnet/api/system.iserviceprovider)，则可以配置并返回不同的容器。 有许多可用于 .NET 的 IoC 容器。 在以下示例中，使用 [Autofac](https://autofac.org/) 容器：
+内置的服务容器旨在满足框架和大多数消费者应用的需求。 我们建议使用内置容器，除非你需要的特定功能不受它支持。 内置容器中找不到第三方容器支持的某些功能：
 
-1. 安装适当的容器包：
+* 属性注入
+* 基于名称的注入
+* 子容器
+* 自定义生存期管理
+* 对迟缓初始化的 `Func<T>` 支持
+
+有关支持适配器的部分容器列表，请参阅[依赖关系注入 readme.md 文件](https://github.com/aspnet/DependencyInjection#using-other-containers-with-microsoftextensionsdependencyinjection)。
+
+以下示例将内置容器替换为 [Autofac](https://autofac.org/)：
+
+* 安装适当的容器包：
 
     * [Autofac](https://www.nuget.org/packages/Autofac/)
     * [Autofac.Extensions.DependencyInjection](https://www.nuget.org/packages/Autofac.Extensions.DependencyInjection/)
 
-2. 在 `Startup.ConfigureServices` 中配置容器并返回 `IServiceProvider`：
+* 在 `Startup.ConfigureServices` 中配置容器并返回 `IServiceProvider`：
 
     ```csharp
     public IServiceProvider ConfigureServices(IServiceCollection services)
@@ -506,7 +516,7 @@ public void ConfigureServices(IServiceCollection services)
 
     要使用第三方容器，`Startup.ConfigureServices` 必须返回 `IServiceProvider`。
 
-3. 在 `DefaultModule` 中配置 Autofac：
+* 在 `DefaultModule` 中配置 Autofac：
 
     ```csharp
     public class DefaultModule : Module

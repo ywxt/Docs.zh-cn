@@ -4,14 +4,14 @@ author: tdykstra
 description: 了解 ASP.NET Core MVC 中的模型绑定如何将 HTTP 请求中的数据映射到操作方法参数。
 ms.assetid: 0be164aa-1d72-4192-bd6b-192c9c301164
 ms.author: tdykstra
-ms.date: 01/22/2018
+ms.date: 08/14/2018
 uid: mvc/models/model-binding
-ms.openlocfilehash: 200e2c22e02ec9e24b7cdb3883cf6f2f93f2f4b7
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 0ce20a8040c6b19da1f57e1c053a7ef81d8bcb23
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095728"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751603"
 ---
 # <a name="model-binding-in-aspnet-core"></a>ASP.NET Core 中的模型绑定
 
@@ -99,6 +99,31 @@ MVC 包含多种特性，可用于将其默认模型绑定行为定向到不同�
 
 需要替代模型绑定的默认行为时，特性是非常有用的工具。
 
+## <a name="customize-model-binding-and-validation-globally"></a>全局自定义模型绑定和验证
+
+由 [ModelMetadata](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.modelmetadata) 驱动模型绑定和验证系统的行为，该行为描述：
+
+* 如何绑定模型。
+* 如何验证类型及其属性。
+
+通过向 [MvcOptions.ModelMetadataDetailsProviders](/dotnet/api/microsoft.aspnetcore.mvc.mvcoptions.modelmetadatadetailsproviders#Microsoft_AspNetCore_Mvc_MvcOptions_ModelMetadataDetailsProviders) 添加详细信息提供程序，可以全局配置系统行为的各个方面。 MVC 有一些内置的详细信息提供程序，可通过它们配置禁用模型绑定或验证某些类型等行为。
+
+若要禁用对特定类型的所有模型的模型绑定，请在 `Startup.ConfigureServices` 中添加 [ExcludeBindingMetadataProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.metadata.excludebindingmetadataprovider)。 例如，禁用对 `System.Version` 类型的所有模型的模型绑定：
+
+```csharp
+services.AddMvc().AddMvcOptions(options =>
+    options.ModelMetadataDetailsProviders.Add(
+        new ExcludeBindingMetadataProvider(typeof(System.Version))));
+```
+
+要禁用对特定类型的属性的验证，请在 `Startup.ConfigureServices` 中添加 [SuppressChildValidationMetadataProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.suppresschildvalidationmetadataprovider)。 例如，禁用对 `System.Guid` 类型的属性的验证：
+
+```csharp
+services.AddMvc().AddMvcOptions(options =>
+    options.ModelMetadataDetailsProviders.Add(
+        new SuppressChildValidationMetadataProvider(typeof(System.Guid))));
+```
+
 ## <a name="bind-formatted-data-from-the-request-body"></a>绑定请求正文中的带格式数据
 
 请求数据可以有各种格式，包括 JSON、XML 和许多其他格式。 使用 [FromBody] 特性指示要将参数绑定到请求正文中的数据时，MVC 会使用一组已配置的格式化程序基于请求数据的内容类型对请求数据进行处理。 默认情况下，MVC 包括用于处理 JSON 数据的 `JsonInputFormatter` 类，但你可以添加用于处理 XML 和其他自定义格式的其他格式化程序。
@@ -109,7 +134,7 @@ MVC 包含多种特性，可用于将其默认模型绑定行为定向到不同�
 > [!NOTE]
 > `JsonInputFormatter` 为默认格式化程序且基于 [Json.NET](https://www.newtonsoft.com/json)。
 
-除非有特性应用于 ASP.NET，否则它将基于 [Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html) 标头和参数类型来选择输入格式化程序。 如果想要使用 XML 或其他格式，则必须在 Startup.cs 文件中配置该格式，但可能必须先使用 NuGet 获取对 `Microsoft.AspNetCore.Mvc.Formatters.Xml` 的引用。 启动代码应如下所示：
+除非有特性应用于 ASP.NET Core，否则它将基于 [Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html) 标头和参数类型来选择输入格式化程序。 如果想要使用 XML 或其他格式，则必须在 Startup.cs 文件中配置该格式，但可能必须先使用 NuGet 获取对 `Microsoft.AspNetCore.Mvc.Formatters.Xml` 的引用。 启动代码应如下所示：
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -119,7 +144,7 @@ public void ConfigureServices(IServiceCollection services)
    }
 ```
 
-Startup.cs 文件中的代码包含具有 `services` 参数的 `ConfigureServices` 方法，此方法可用于为 ASP.NET 应用生成服务。 在此示例中，我们将添加 XML 格式化程序作为 MVC 将为此应用提供的服务。 通过传递给 `AddMvc` 方法的 `options` 参数，可在应用启动后添加和管理筛选器、格式化程序和其他 MVC 系统选项。 然后，将 `Consumes` 特性应用于控制器类或操作方法，以使用所需格式。
+Startup.cs 文件中的代码包含具有 `services` 参数的 `ConfigureServices` 方法，此方法可用于为 ASP.NET Core 应用生成服务。 在此示例中，我们将添加 XML 格式化程序作为 MVC 将为此应用提供的服务。 通过传递给 `AddMvc` 方法的 `options` 参数，可在应用启动后添加和管理筛选器、格式化程序和其他 MVC 系统选项。 然后，将 `Consumes` 特性应用于控制器类或操作方法，以使用所需格式。
 
 ### <a name="custom-model-binding"></a>自定义模型绑定
 

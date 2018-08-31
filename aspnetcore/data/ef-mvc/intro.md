@@ -5,12 +5,12 @@ description: ''
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 4e0bcffd1162681aa4d31c4fe74acac5a7e981f1
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: cbef7e5edf2950a87a4cd4155c63a22fff2990fe
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38216307"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751669"
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>ASP.NET Core MVC 和 Entity Framework Core - 第 1 个教程，共 10 个教程
 
@@ -35,7 +35,7 @@ EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 �
 
 ## <a name="prerequisites"></a>系统必备
 
-[!INCLUDE [](~/includes/net-core-prereqs.md) [](~/includes/net-core-prereqs.md)]
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 ## <a name="troubleshooting"></a>疑难解答
 
@@ -80,7 +80,7 @@ EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 �
 
 * 单击“确定” 
 
-  ![“新建 ASP.NET 项目”对话框](intro/_static/new-aspnet.png)
+  ![新的 ASP.NET Core 项目对话框](intro/_static/new-aspnet.png)
 
 ## <a name="set-up-the-site-style"></a>设置网站样式
 
@@ -273,7 +273,7 @@ CRUD 操作方法和视图的自动创建被称为基架。 基架与代码生�
 
 [!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Context&highlight=5,7,9)]
 
-ASP.NET 依赖注入机制会传递一个 `SchoolContext` 实例到控制器。 在前面的教程中已经通过修改 *Startup.cs* 文件来配置注入规则。
+ASP.NET Core 依赖关系注入负责将 `SchoolContext` 实例传递到控制器。 在前面的教程中已经通过修改 *Startup.cs* 文件来配置注入规则。
 
 控制器包含 `Index` 操作方法，用于显示数据库中的所有学生。 该方法从学生实体集中获取学生列表，学生实体集则是通过读取数据库上下文实例中的 `Students` 属性获得：
 

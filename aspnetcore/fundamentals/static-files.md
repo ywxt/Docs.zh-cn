@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/18/2018
 uid: fundamentals/static-files
-ms.openlocfilehash: 7ecbcc81423af20f8da79ebc026b1ac01a250b90
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 33fad930e617c74d9a8c07f850764a6b81fa8ab5
+ms.sourcegitcommit: 2c158fcfd325cad97ead608a816e525fe3dcf757
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279212"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "41751641"
 ---
 # <a name="static-files-in-aspnet-core"></a>ASP.NET Core 中的静态文件
 
@@ -102,7 +102,7 @@ ms.locfileid: "36279212"
 
 [HeaderDictionaryExtensions.Append](/dotnet/api/microsoft.aspnetcore.http.headerdictionaryextensions.append) 方法存在于 [Microsoft.AspNetCore.Http](https://www.nuget.org/packages/Microsoft.AspNetCore.Http/) 包中。
 
-可公开缓存这些文件 10 分钟（600 秒）：
+在开发环境中可公开缓存这些文件 10 分钟（600 秒）：
 
 ![已添加显示 Cache-Control 标头的响应头](static-files/_static/add-header.png)
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 10/14/2016
 uid: fundamentals/owin
-ms.openlocfilehash: 04042eedc52b4e6f57685e2d9ec1a75cd130fd8d
-ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
+ms.openlocfilehash: db28eeff88a13dc95c469f3b7c0746c807da830f
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37144958"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751707"
 ---
 # <a name="open-web-interface-for-net-owin-with-aspnet-core"></a>ASP.NET Core 中 .NET 的开放 Web 接口 (OWIN)
 
@@ -31,7 +31,7 @@ OWIN 提供了一个分离层，可一起使用具有不同对象模型的两个
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/owin/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
-## <a name="running-owin-middleware-in-the-aspnet-pipeline"></a>在 ASP.NET 管道中运行 OWIN 中间件
+## <a name="running-owin-middleware-in-the-aspnet-core-pipeline"></a>在 ASP.NET Core 管道中运行 OWIN 中间件
 
 ASP.NET Core 的 OWIN 支持作为 `Microsoft.AspNetCore.Owin` 包的一部分进行部署。 可通过安装此包将 OWIN 支持导入到项目中。
 
@@ -56,7 +56,7 @@ public Task OwinHello(IDictionary<string, object> environment)
 
 示例签名返回 `Task`，并接受 OWIN 所要求的 `IDictionary<string, object>`。
 
-以下代码显示了如何使用 `UseOwin` 扩展方法将 `OwinHello` 中间件（如上所示）添加到 ASP.NET 管道。
+以下代码显示了如何使用 `UseOwin` 扩展方法将 `OwinHello` 中间件（如上所示）添加到 ASP.NET Core 管道。
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -90,9 +90,9 @@ app.UseOwin(pipeline =>
 
 <a name="hosting-on-owin"></a>
 
-## <a name="using-aspnet-hosting-on-an-owin-based-server"></a>在基于 OWIN 的服务器中使用 ASP.NET 托管
+## <a name="using-aspnet-core-hosting-on-an-owin-based-server"></a>在基于 OWIN 的服务器中使用 ASP.NET Core 托管
 
-基于 OWIN 的服务器可托管 ASP.NET 应用程序。 [Nowin](https://github.com/Bobris/Nowin)（.NET OWIN Web 服务器）属于这种服务器。 本文的示例中包含了一个引用 Nowin 的项目，并使用它创建了一个自托管 ASP.NET Core 的 `IServer`。
+基于 OWIN 的服务器可托管 ASP.NET Core 应用。 [Nowin](https://github.com/Bobris/Nowin)（.NET OWIN Web 服务器）属于这种服务器。 本文的示例中包含了一个引用 Nowin 的项目，并使用它创建了一个自托管 ASP.NET Core 的 `IServer`。
 
 [!code-csharp[](owin/sample/src/NowinSample/Program.cs?highlight=15)]
 

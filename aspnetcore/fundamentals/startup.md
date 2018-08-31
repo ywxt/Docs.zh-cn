@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: a576f3840e66fc4ed877f7575aa3f3e36b37ae4d
-ms.sourcegitcommit: d99a8554c91f626cf5e466911cf504dcbff0e02e
+ms.openlocfilehash: 465d33cc1f19428d5189b3a6fa7088ac402a9751
+ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39356745"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42927966"
 ---
 # <a name="application-startup-in-aspnet-core"></a>ASP.NET Core 中的应用程序启动
 
@@ -64,50 +64,11 @@ Web 主机可能会在调用 `Startup` 方法之前配置某些服务。 有关�
 
 [!code-csharp[](../common/samples/WebApplication1/Startup.cs?highlight=4,7,11&start=40&end=55)]
 
-::: moniker range=">= aspnetcore-2.1"
-
-<a name="setcompatibilityversion"></a>
-
-### <a name="setcompatibilityversion-for-aspnet-core-mvc"></a>ASP.NET Core MVC 的 SetCompatibilityVersion
-
-`SetCompatibilityVersion` 方法允许应用选择加入或退出 ASP.NET MVC Core 2.1+ 中引入的潜在中断行为变更。 这些潜在的中断行为变更通常取决于 MVC 子系统的行为方式以及运行时调用“代码”的方式。 通过选择加入，你将获取最新的行为以及 ASP.NET Core 的长期行为。
-
-以下代码将兼容模式设置为 ASP.NET Core 2.1：
-
-[!code-csharp[Main](startup/sampleCompatibility/Startup.cs?name=snippet1)]
-
-建议使用最新版本 (`CompatibilityVersion.Version_2_1`) 来测试应用。 我们预计大多数应用不会使用最新版本进行中断行为变更。
-
-调用 `SetCompatibilityVersion(CompatibilityVersion.Version_2_0)` 的应用会被阻止进行 ASP.NET Core 2.1 MVC 和更高的 2.x 版本中引入的潜在中断行为变更。 该阻止操作：
-
-* 不适用于所有 2.1 和更高版本的更改，它的目标是潜在地中断 MVC 子系统中的 ASP.NET Core 运行时行为变更。
-* 不会扩展到下一个主要版本。
-
-未调用 `SetCompatibilityVersion` 的 ASP.NET Core 2.1 和更高 2.x 版本的应用的默认兼容性是 2.0 兼容性。 即，未调用 `SetCompatibilityVersion` 与调用 `SetCompatibilityVersion(CompatibilityVersion.Version_2_0)` 相同。
-
-以下代码将兼容模式设置为 ASP.NET Core 2.1（以下行为除外）：
-
-* [AllowCombiningAuthorizeFilters](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
-* [InputFormatterExceptionPolicy](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
-
-[!code-csharp[Main](startup/sampleCompatibility/Startup2.cs?name=snippet1)]
-
-对于遇到中断行为变更的应用，请使用适当的兼容性开关：
-
-* 允许使用最新版本并选择退出特定的中断行为变更。
-* 请用些时间更新应用，以便其适用于最新更改。
-
-[MvcOptions](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs) 类源注释充分地阐述了更改的内容以及为什么更改对大多数用户来说是一种改进。
-
-将来会推出 [ASP.NET Core 3.0 版本](https://github.com/aspnet/Home/wiki/Roadmap)。 在 3.0 版本中，将删除兼容性开关支持的旧行为。 我们认为这些积极的变化几乎使所有用户受益。 现在通过引入这些更改，大多数应用可以立即受益，其他人员将有时间更新其应用。
-
-::: moniker-end
-
 ## <a name="the-configure-method"></a>Configure 方法
 
 [Configure](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) 方法用于指定应用响应 HTTP 请求的方式。 可通过将[中间件](xref:fundamentals/middleware/index)组件添加到 [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) 实例来配置请求管道。 `Configure` 方法可使用 `IApplicationBuilder`，但未在服务容器中注册。 承载创建 `IApplicationBuilder` 并将其直接传递给 `Configure`（[引用源](https://github.com/aspnet/Hosting/blob/release/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/WebHost.cs#L179-L192)）。
 
-[ASP.NET Core 模板](/dotnet/core/tools/dotnet-new)配置支持开发人员异常页、[BrowserLink](http://vswebessentials.com/features/browserlink)、错误页、静态文件和 ASP.NET MVC 的管道：
+[ASP.NET Core 模板](/dotnet/core/tools/dotnet-new)配置支持开发人员异常页、[BrowserLink](http://vswebessentials.com/features/browserlink)、错误页、静态文件和 ASP.NET Core MVC 的管道：
 
 [!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Startup.cs?range=28-48&highlight=5,6,10,13,15)]
 
@@ -129,7 +90,7 @@ Web 主机可能会在调用 `Startup` 方法之前配置某些服务。 有关�
 
 在应用的 [Configure](#the-configure-method) 中间件管道的开头或末尾使用 [IStartupFilter](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter) 来配置中间件。 `IStartupFilter` 有助于确保中间件在应用请求处理管道的开始或结束时由库添加的中间件之前或之后运行。
 
-`IStartupFilter` 实现单个方法（即 [Configure](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter.configure)），该方法接收并返回 `Action<IApplicationBuilder>`。 [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) 定义用于配置应用请求管道的类。 有关详细信息，请参阅[使用 IApplicationBuilder 创建中间件管道](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder)。
+`IStartupFilter` 实现单个方法（即 [Configure](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter.configure)），该方法接收并返回 `Action<IApplicationBuilder>`。 [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) 定义用于配置应用请求管道的类。 有关详细信息，请参阅[使用 IApplicationBuilder 创建中间件管道](xref:fundamentals/middleware/index#create-a-middleware-pipeline-with-iapplicationbuilder)。
 
 在请求管道中，每个 `IStartupFilter` 实现一个或多个中间件。 筛选器按照添加到服务容器的顺序调用。 筛选器可在将控件传递给下一个筛选器之前或之后添加中间件，从而附加到应用管道的开头或末尾。
 
@@ -154,7 +115,7 @@ Web 主机可能会在调用 `Startup` 方法之前配置某些服务。 有关�
 * 多个 `IStartupFilter` 实现可能与相同的对象进行交互。 如果顺序很重要，请将它们的 `IStartupFilter` 服务注册进行排序，以匹配其中间件应有的运行顺序。
 * 库可能添加包含一个或多个 `IStartupFilter` 实现的中间件，这些实现在向 `IStartupFilter` 注册的其他应用中间件之前或之后运行。 若要在库的 `IStartupFilter` 添加中间件之前调用 `IStartupFilter` 中间件，请在将库添加到服务容器之前定位服务注册。 若要在此后调用，请在添加库之后定位服务注册。
 
-## <a name="adding-configuration-at-startup-from-an-external-assembly"></a>在启动时从外部程序集添加配置
+## <a name="add-configuration-at-startup-from-an-external-assembly"></a>在启动时从外部程序集添加配置
 
 通过 [IHostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup) 实现，可在启动时从应用 `Startup` 类之外的外部程序集向应用添加增强功能。 有关详细信息，请参阅[从外部程序集增强应用](xref:fundamentals/configuration/platform-specific-configuration)。
 

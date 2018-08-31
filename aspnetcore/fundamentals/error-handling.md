@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: d7e60c0f615841461a17b093bffe5fb3f82f8616
-ms.sourcegitcommit: 506a199274e9fe5fb4070b273ba94f29f14cb619
+ms.openlocfilehash: ff04ebeb6a682ec924afe896fd6716010a63f7cd
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2018
-ms.locfileid: "39332270"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751562"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>处理 ASP.NET Core 中的错误
 
@@ -195,7 +195,7 @@ public class ErrorModel : PageModel
 
 在 [IIS](/iis) 或 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 上运行应用时，如果无法启动进程，[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)将返回 502.5 进程失败。 要了解在通过 IIS 托管时如何排查启动问题，请参阅 <xref:host-and-deploy/iis/troubleshoot>。 要了解如何排查 Azure 应用服务的启动问题，请参阅 <xref:host-and-deploy/azure-apps/troubleshoot>。
 
-## <a name="aspnet-mvc-error-handling"></a>ASP.NET MVC 错误处理
+## <a name="aspnet-core-mvc-error-handling"></a>ASP.NET Core MVC 错误处理
 
 [MVC](xref:mvc/overview) 应用还有一些其他的错误处理选项，例如配置异常筛选器和执行模型验证。
 

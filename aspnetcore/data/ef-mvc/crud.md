@@ -5,12 +5,12 @@ description: ''
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 1c724da918640c514acbc24c390de4e735f8bf49
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 626b828e2391d3982ff2cf393f0c9e0748c12810
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342427"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751585"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>ASP.NET Core MVC 和 EF Core 教程 - 创建、读取、更新和删除 (2/10)
 
@@ -117,7 +117,7 @@ http://localhost:1230/Instructor/Index?id=1&CourseID=2021
 
 [!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=4,6-7,14-21)]
 
-此代码将 ASP.NET MVC 模型绑定器创建的 Student 实体添加到 Students 实体集，然后将更改保存到数据库。 （模型绑定器指的是 ASP.NET MVC 功能，用户可利用它来轻松处理使用表单提交的数据；模型绑定器将已发布的表单值转换为 CLR 类型，并将其传递给操作方法的参数。 在本例中，模型绑定器将使用 Form 集合的属性值实例化 Student 实体。）
+此代码将 ASP.NET Core MVC 模型绑定器创建的 Student 实体添加到 Students 实体集，然后将更改保存到数据库。 （模型绑定器指的是 ASP.NET Core MVC 功能，用户可利用它来轻松处理使用表单提交的数据；模型绑定器将已发布的表单值转换为 CLR 类型，并将其传递给操作方法的参数。 在本例中，模型绑定器将使用 Form 集合的属性值实例化 Student 实体。）
 
 已从 `Bind` 特性删除 `ID`，因为 ID 是插入行时 SQL Server 将自动设置的主键值。 来自用户的输入不会设置 ID 值。
 
@@ -273,7 +273,7 @@ Views/Students/Create.cshtml 中的代码对每个字段使用 `label`、`input`
 
 若要释放数据库连接包含的资源，完成此操作时必须尽快处理上下文实例。 ASP.NET Core 内置[依赖关系注入](../../fundamentals/dependency-injection.md)会完成此任务。
 
-在 Startup.cs 中，调用 [AddDbContext 扩展方法](https://github.com/aspnet/EntityFrameworkCore/blob/03bcb5122e3f577a84498545fcf130ba79a3d987/src/Microsoft.EntityFrameworkCore/EntityFrameworkServiceCollectionExtensions.cs)来预配 ASP.NET DI 容器的 `DbContext` 类。 默认情况下，该方法将服务生存期设置为 `Scoped`。 `Scoped` 表示上下文对象生存期与 Web 请求生存期一致，并在 Web 请求结束时将自动调用 `Dispose` 方法。
+在 Startup.cs 中，调用 [AddDbContext 扩展方法](https://github.com/aspnet/EntityFrameworkCore/blob/03bcb5122e3f577a84498545fcf130ba79a3d987/src/Microsoft.EntityFrameworkCore/EntityFrameworkServiceCollectionExtensions.cs)来预配 ASP.NET Core DI 容器中的 `DbContext` 类。 默认情况下，该方法将服务生存期设置为 `Scoped`。 `Scoped` 表示上下文对象生存期与 Web 请求生存期一致，并在 Web 请求结束时将自动调用 `Dispose` 方法。
 
 ## <a name="handling-transactions"></a>处理事务
 

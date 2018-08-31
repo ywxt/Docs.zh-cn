@@ -5,12 +5,12 @@ description: 本教程不止会介绍使用 Entity Framework Core 开发 ASP.NET
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: be44ef115ce72e1571bbdea2c609ea6c53792c59
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 25916365b4e682a8e296e0affbcddd4f1e5846b1
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38194037"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751584"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---advanced---10-of-10"></a>使用 EF Core 创建 ASP.NET Core MVC - 高级 - 第 10 个教程（共 10 个）
 
@@ -187,7 +187,7 @@ Entity Framework Core 源位于 [https://github.com/aspnet/EntityFrameworkCore](
 
 ## <a name="next-steps"></a>后续步骤
 
-在这将完成在 ASP.NET MVC 应用程序中使用 Entity Framework Core 这一系列教程。
+这将完成在 ASP.NET Core MVC 应用程序中使用 Entity Framework Core 这一系列教程。
 
 有关 EF Core 的详细信息，请参阅[ Entity Framework 的Core文档](https://docs.microsoft.com/ef/core)。 另外也可参阅 [Entity Framework Core in Action](https://www.manning.com/books/entity-framework-core-in-action)（实际运用 Entity Framework Core）一书。
 
