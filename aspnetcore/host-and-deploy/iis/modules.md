@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 04/04/2018
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: 1ff0fdcaae066b493eeebf6a061e383f88c81052
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 40af94f9cbb83f27f22d90b6b0f2854090687d34
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272732"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312341"
 ---
 # <a name="iis-modules-with-aspnet-core"></a>IIS 模块与 ASP.NET Core
 
@@ -30,7 +30,7 @@ ASP.NET Core 应用由 IIS 在反向代理配置中托管。 某些本机 IIS �
 | **客户端证书映射身份验证**<br>`CertificateMappingAuthenticationModule` | 是 | |
 | **CGI**<br>`CgiModule` | 否 | |
 | **配置验证**<br>`ConfigurationValidationModule` | 是 | |
-| **HTTP 错误**<br>`CustomErrorModule` | 否 | [状态代码页中间件](xref:fundamentals/error-handling#configuring-status-code-pages) |
+| **HTTP 错误**<br>`CustomErrorModule` | 否 | [状态代码页中间件](xref:fundamentals/error-handling#configure-status-code-pages) |
 | **自定义日志记录**<br>`CustomLoggingModule` | 是 | |
 | **默认文档**<br>`DefaultDocumentModule` | 否 | [默认文件中间件](xref:fundamentals/static-files#serve-a-default-document) |
 | **摘要式身份验证**<br>`DigestAuthenticationModule` | 是 | |

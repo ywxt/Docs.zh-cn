@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core MVC 中的模型验证。
 ms.author: riande
 ms.date: 07/31/2018
 uid: mvc/models/validation
-ms.openlocfilehash: f407903577e40b6501737ef5b78d90e1e3e60c06
-ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
+ms.openlocfilehash: fe036f261b80f6134078835080409720d149374d
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39378662"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312149"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC 中的模型验证
 
@@ -239,7 +239,7 @@ $.get({
 
 [!code-csharp[](validation/sample/User.cs?range=10-13)]
 
-`AdditionalFields` 可能已显式设置为字符串 `"FirstName"` 和 `"LastName"`，但使用 [`nameof`](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) 这样的操作符可简化稍后的重构过程。 然后，用于执行验证的操作方法必须采用两个参数，一个用于 `FirstName` 的值，一个用于 `LastName` 的值。
+`AdditionalFields` 可能已显式设置为字符串 `"FirstName"` 和 `"LastName"`，但使用 [`nameof`](/dotnet/csharp/language-reference/keywords/nameof) 这样的操作符可简化稍后的重构过程。 然后，用于执行验证的操作方法必须采用两个参数，一个用于 `FirstName` 的值，一个用于 `LastName` 的值。
 
 [!code-csharp[](validation/sample/UsersController.cs?range=30-39)]
 
