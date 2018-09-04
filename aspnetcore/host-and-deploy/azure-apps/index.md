@@ -4,14 +4,14 @@ author: guardrex
 description: 通过指向有用资源的链接，了解如何在 Azure 应用服务中托管 ASP.NET Core 应用。
 ms.author: riande
 ms.custom: mvc
-ms.date: 07/24/2018
+ms.date: 08/29/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 42775bf4d3e88893260a5973f6f7bc9d3a006b5a
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: bc2a686c5ddc44fded135c9eed5caf676218773a
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927823"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312065"
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>在 Azure 应用服务上托管 ASP.NET Core
 
@@ -110,35 +110,55 @@ ASP.NET Core 文档中提供以下文章：
 <!-- * [Deploy the app self-contained](#deploy-the-app-self-contained) -->
 * [对用于容器的 Web 应用使用 Docker](#use-docker-with-web-apps-for-containers)
 
-如果使用预览站点扩展时遇到问题，请在 [GitHub](https://github.com/aspnet/azureintegration/issues/new) 上打开相应的问题。
-
 ### <a name="install-the-preview-site-extension"></a>安装预览站点扩展
+
+如果使用预览站点扩展时遇到问题，请在 [GitHub](https://github.com/aspnet/azureintegration/issues/new) 上打开相应的问题。
 
 1. 从 Azure 门户导航到“应用服务”边栏选项卡。
 1. 选择 Web 应用。
-1. 在搜索框中输入“扩”或向下滚动到“开发工具”的管理窗格列表。
+1. 在搜索框中键入“ex”或向下滚动管理部分列表，到达“开发工具”。
 1. 选择“开发工具” > “扩展”。
 1. 选择“添加”。
-
-   ![显示上述部署的 Azure 应用边栏选项卡](index/_static/x1.png)
-
-1. 选择“ASP.NET Core 扩展”。
+1. 从列表选择“ASP.NET Core &lt;x.y&gt; (x86) 运行时”扩展，其中 `<x.y>` 是 ASP.NET Core 预览版本（例如，ASP.NET Core 2.2 (x86) 运行时）。 x86 运行时适用于[依赖框架的部署](/dotnet/core/deploying/#framework-dependent-deployments-fdd)，这种部署依赖于 ASP.NET Core 模块的进程外托管。
 1. 选择“确定”以接受法律条款。
 1. 选择“确定”安装扩展。
 
-添加操作完成时，即表示已安装最新的 .NET Core 预览。 通过在控制台中运行 `dotnet --info` 来验证安装。 从“应用服务”边栏选项卡：
+操作完成时，即表示已安装最新的 .NET Core 预览版。 验证安装：
 
-1. 在搜索框中输入“控”或向下滚动到“开发工具”的管理窗格列表。
-1. 选择“开发工具” > “控制台”。
-1. 在控制台中输入 `dotnet --info`。
+1. 选择“开发工具”下的“高级工具”。
+1. 在“高级工具”边栏选项卡上，选择“转到”。
+1. 选择“调试控制台” > “PowerShell”菜单项。
+1. 从 PowerShell 命令提示符处执行以下命令。 在以下命令中，将 ASP.NET Core 运行时版本替换为 `<x.y>` ：
 
-如果版本 `2.1.300-preview1-008174` 是最新的预览版本，在命令提示符处运行 `dotnet --info` 将获得以下输出：
+   ```powershell
+   Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.<x.y>.x86\
+   ```
+   如果已安装的预览版运行时为 ASP.NET Core 2.2，则命令是：
+   ```powershell
+   Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.2.2.x86\
+   ```
+   如果安装 x64 预览版运行时，该命令将返回`True`。
 
-![显示上述部署的 Azure 应用边栏选项卡](index/_static/cons.png)
+::: moniker range=">= aspnetcore-2.2"
 
-上图中显示的 ASP.NET Core 的版本 `2.1.300-preview1-008174` 就是一个示例。 执行 `dotnet --info` 时，将显示配置站点扩展时的 ASP.NET Core 的最新预览版本。
+> [!NOTE]
+> 对于在 A 系列计算机上或更高级托管层上托管的应用，可在“常规设置”下的“应用程序设置”中设置应用服务应用的平台体系结构 (x86/x64)。 如果应用在进程内模式下运行并且平台体系结构配置为 64 位 (x64)，则 ASP.NET Core 模块会使用 64 位预览版运行时（如存在）。 安装 ASP.NET Core &lt;x.y&gt; (x64) 运行时扩展 （例如，ASP.NET Core 2.2 (x64) 运行时）。
+>
+> 安装 x64 预览版运行时后，在 Kudu PowerShell 命令窗口中运行以下命令以验证该安装。 在以下命令中，将 ASP.NET Core 运行时版本替换为 `<x.y>` ：
+>
+> ```powershell
+> Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.<x.y>.x64\
+> ```
+> 如果已安装的预览版运行时为 ASP.NET Core 2.2，则命令是：
+> ```powershell
+> Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.2.2.x64\
+> ```
+> 如果安装 x64 预览版运行时，该命令将返回`True`。
 
-`dotnet --info` 显示已安装该预览的站点扩展的路径。 它显示应用从该站点扩展运行，而不是从默认的 ProgramFiles 位置运行。 如果看到 ProgramFiles，请重启该站点并运行 `dotnet --info`。
+::: moniker-end
+
+> [!NOTE]
+> ASP.NET Core 扩展可为 Azure 应用服务上的 ASP.NET Core 启用附加功能，例如启用 Azure 日志记录。 从 Visual Studio 进行部署时，将自动安装该扩展。 如果未安装该扩展，请为应用安装它。
 
 **通过 ARM 模板使用预览站点扩展**
 
