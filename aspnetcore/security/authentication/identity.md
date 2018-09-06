@@ -5,12 +5,12 @@ description: 将标识与 ASP.NET Core 应用配合使用。 了解如何设置�
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: fd5fa2fd1e069bf10f3baea38b1fe9f951dc4a7d
-ms.sourcegitcommit: fd461c60b5e36c7019f81da0138cc859d0fddaa2
+ms.openlocfilehash: bc69b1db56361dc185f582032148a4fb8078fdda
+ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "41830035"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893228"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core 上的标识简介
 
@@ -56,7 +56,7 @@ dotnet new webapp --auth Individual -o WebApp1
 <a name="pw"></a>
 ### <a name="configure-identity-services"></a>配置标识服务
 
-在添加服务`ConfigureServices`。
+在添加服务`ConfigureServices`。 下面的代码不包括生成的模板`CookiePolicyOptions`:
 
 ::: moniker range=">= aspnetcore-2.1"
 
