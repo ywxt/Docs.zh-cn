@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core 中的身份验证、授权和安全基础知�
 ms.author: tdykstra
 ms.date: 11/01/2017
 uid: security/index
-ms.openlocfilehash: 3a1c1ea1ad28fccbe5ae91b0be193938b095f60b
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: d371d37690b6d641f8e584f5e51dcc074a581622
+ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41748568"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44040077"
 ---
 # <a name="overview-of-aspnet-core-security"></a>ASP.NET Core 安全性概述
 
@@ -104,3 +104,4 @@ ASP.NET Core 和 EF 提供维护应用安全、预防安全漏洞的功能。 �
 *   [阻止跨站点脚本编写](xref:security/cross-site-scripting)
 *   [启用跨域请求 (CORS)](xref:security/cors)
 *   [在应用之间共享 Cookie](xref:security/cookie-sharing)
+*   [IP 安全列表](xref:security/ip-safelist)

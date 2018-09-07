@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/13/2018
 uid: fundamentals/configuration/index
-ms.openlocfilehash: a0c57e75b28bc7c5590d20a8fa59b00b6bb9af4e
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: 288f8ba5b45cdecd8c9eae060fee2c2c25dec7f9
+ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927873"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893241"
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core 中的配置
 
@@ -277,7 +277,7 @@ public void ConfigureServices(IServiceCollection services)
 
 最后调用提供程序，以允许在运行时传递的命令行参数替代由其他配置提供程序设置的配置。
 
-使用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> 方法向 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 应用配置：
+使用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> 方法将配置应用到 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>：
 
 ::: moniker-end
 
@@ -1475,17 +1475,17 @@ JSON 配置提供程序将配置数据读入以下键值对：
 
 可以使用 `AddEFConfiguration` 扩展方法将配置源添加到 `ConfigurationBuilder`。
 
-*EFConfigurationProvider/EFConfigurationExtensions.cs*：
+Extensions/EntityFrameworkExtensions.cs：
 
 ::: moniker range=">= aspnetcore-2.0"
 
-[!code-csharp[](index/samples/2.x/ConfigurationSample/EFConfigurationProvider/EFConfigurationExtensions.cs?name=snippet1)]
+[!code-csharp[](index/samples/2.x/ConfigurationSample/Extensions/EntityFrameworkExtensions.cs?name=snippet1)]
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-[!code-csharp[](index/samples/1.x/ConfigurationSample/EFConfigurationProvider/EFConfigurationExtensions.cs?name=snippet1)]
+[!code-csharp[](index/samples/1.x/ConfigurationSample/Extensions/EntityFrameworkExtensions.cs?name=snippet1)]
 
 ::: moniker-end
 
