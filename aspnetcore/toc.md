@@ -393,6 +393,7 @@
 ## [阻止跨站点脚本编写](xref:security/cross-site-scripting)
 ## [启用跨域请求 (CORS)](xref:security/cors)
 ## [在应用之间共享 Cookie](xref:security/cookie-sharing)
+## [IP 安全列表](xref:security/ip-safelist)
 
 # [性能](xref:performance/index)
 ## [缓存响应](xref:performance/caching/index)
