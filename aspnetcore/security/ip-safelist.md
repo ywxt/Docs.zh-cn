@@ -6,21 +6,22 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/31/2018
 uid: security/ip-safelist
-ms.openlocfilehash: 40fe7b67359efd1692490099c3fb529ba4a6148f
-ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
+ms.openlocfilehash: 362d1ded00bda3f328e029fb467f2b3eeaa01396
+ms.sourcegitcommit: 8268cc67beb1bb1ca470abb0e28b15a7a71b8204
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44040104"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44126704"
 ---
 # <a name="client-ip-safelist-for-aspnet-core"></a>适用于 ASP.NET Core 的客户端 IP 安全列表
 
 通过[Damien Bowden](https://twitter.com/damien_bod)和[Tom Dykstra](https://github.com/tdykstra)
  
-本文介绍两种方法来实现 IP 安全列表 （也称为允许列表）：
+本文介绍三种方法可以在 ASP.NET Core 应用中实施 IP 安全列表 （也称为允许列表）。 您可以使用：
 
-* 通过使用 ASP.NET Core 中间件检查每个请求的远程 IP 地址。
-* 通过使用 ASP.NET Core 操作筛选器检查的特定操作方法的请求的远程 IP 地址。
+* 若要检查的每个请求的远程 IP 地址的中间件。
+* 若要检查为特定控制器或操作方法的请求的远程 IP 地址的操作筛选器。
+* Razor 页面筛选器，以检查 Razor 页的请求的远程 IP 地址。
 
 示例应用程序说明了这两种方法。 在每种情况下，包含已批准的客户端 IP 地址的字符串存储在一个应用程序设置。 中间件或筛选器将字符串分析为列表，并检查远程 IP 是否在列表中。 如果没有，则返回 HTTP 403 禁止访问状态代码。
 
