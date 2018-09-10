@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 07/23/2018
 uid: web-api/action-return-types
-ms.openlocfilehash: 82d18d866d4d18613cccb950b2f30ae81bd749de
-ms.sourcegitcommit: 6425baa92cec4537368705f8d27f3d0e958e43cd
+ms.openlocfilehash: 179a3e23ebc13a40b8e2d955b6adcc23d9a0f323
+ms.sourcegitcommit: 8268cc67beb1bb1ca470abb0e28b15a7a71b8204
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39220607"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44126717"
 ---
 # <a name="controller-action-return-types-in-aspnet-core-web-api"></a>ASP.NET Core Web API 中的控制器操作返回类型
 
@@ -85,13 +85,13 @@ ASP.NET Core 2.1 引入了面向 Web API 控制器操作的 [ActionResult\<T>](/
 
 C# 不支持对接口使用隐式强制转换运算符。 因此，必须使用 `ActionResult<T>`，才能将接口转换为具体类型。 例如，在下面的示例中，使用 `IEnumerable` 不起作用：
 
-    ```csharp
-    [HttpGet]
-    public ActionResult<IEnumerable<Product>> Get()
-    {
-        return _repository.GetProducts();
-    }
-    ```
+```csharp
+[HttpGet]
+public ActionResult<IEnumerable<Product>> Get()
+{
+    return _repository.GetProducts();
+}
+```
 
 上面代码的一种修复方法是返回 `_repository.GetProducts().ToList();`。
 
