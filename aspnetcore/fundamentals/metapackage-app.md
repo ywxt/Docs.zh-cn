@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 09/20/2017
 uid: fundamentals/metapackage-app
-ms.openlocfilehash: e82c219635bbbebe1d6f5639308490c37361b286
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 95fd6b7e73cf325674f1c1e03f9eea88cbc1af13
+ms.sourcegitcommit: f3538693a12cf55b7f124a6519677239170b7c43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37952950"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43114770"
 ---
 # <a name="microsoftaspnetcoreapp-metapackage-for-aspnet-core-21"></a>ASP.NET Core 2.1 的 Microsoft.AspNetCore.App 元包
 
@@ -53,6 +53,15 @@ ASP.NET Core 的 [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Micro
 
 `Microsoft.AspNetCore.App` 引用上的版本号不保证要使用共享框架的版本。 例如，假设指定的版本是 `2.1.1`，但安装的是 `2.1.3`。 此情况下，应用将使用 `2.1.3`。 不建议如此操作，但你可禁用前滚行为（修补程序和/或次要版本）。 要详细了解包版本前滚行为，请参阅 [dotnet 主机前滚](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md)。
 
+## <a name="update-aspnet-core"></a>更新 ASP.NET Core
+
 `Microsoft.AspNetCore.App` [元包](/dotnet/core/packages#metapackages)不是从 NuGet 更新的传统包。 类似于 `Microsoft.NETCore.App`，`Microsoft.AspNetCore.App` 表示共享运行时，它具有在 NuGet 之外处理的特殊版本控制语义。 有关详细信息，请参阅[包、元包和框架](/dotnet/core/packages)。
+
+更新 ASP.NET Core：
+
+* 在开发计算机和构建服务器上：下载并安装 [.NET Core SDK](https://www.microsoft.com/net/download)。
+* 在部署服务器上：下载并安装 [.NET Core 运行时](https://www.microsoft.com/net/download)。
+
+ 在应用程序重启时，应用程序将前滚到最新安装的版本。 无需更新项目文件中的 `Microsoft.AspNetCore.App` 版本号。 有关详细信息，请参阅[依赖于框架的应用会前滚](/dotnet/core/versions/selection#framework-dependent-apps-roll-forward)。
 
 如果应用程序之前使用 `Microsoft.AspNetCore.All`，请参阅[从 Microsoft.AspNetCore.All 迁移到 Microsoft.AspNetCore.App](xref:fundamentals/metapackage#migrate)。

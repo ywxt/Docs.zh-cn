@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/15/2018
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: 8d4283c61163a586557135fddfb85440251aaf29
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 2eff8c9cf2661a3ba9870e8c908d0471a6672481
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275614"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312261"
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET Core 模块配置参考
 
@@ -126,7 +126,7 @@ ms.locfileid: "36275614"
 
 ## <a name="log-creation-and-redirection"></a>日志创建和重定向
 
-如果已设置 `aspNetCore` 元素的 `stdoutLogEnabled` 和 `stdoutLogFile` 属性，ASP.NET Core 模块会将 stdout 和 stderr 日志重定向到磁盘。 `stdoutLogFile` 路径中的任何文件夹都必须存在，以便模块创建日志文件。 应用池必须对写入日志的位置具有写入权限（使用 `IIS AppPool\<app_pool_name>` 提供写入权限）。
+如果已设置 `aspNetCore` 元素的 `stdoutLogEnabled` 和 `stdoutLogFile` 属性，ASP.NET Core 模块会将 stdout 和 stderr 控制台输出重定向到磁盘。 `stdoutLogFile` 路径中的任何文件夹都必须存在，以便模块创建日志文件。 应用池必须对写入日志的位置具有写入权限（使用 `IIS AppPool\<app_pool_name>` 提供写入权限）。
 
 日志不会旋转，除非回收/重新启动进程。 宿主负责限制日志占用的磁盘空间。
 

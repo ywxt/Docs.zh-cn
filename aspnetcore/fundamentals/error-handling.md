@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: ff04ebeb6a682ec924afe896fd6716010a63f7cd
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 7ea944bc423001aa47ce684443b96104cf9174bf
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751562"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312242"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>处理 ASP.NET Core 中的错误
 
@@ -45,8 +45,8 @@ ms.locfileid: "41751562"
 
 将对 [UseDeveloperExceptionPage](/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage) 的调用放在要对其捕获异常的任何中间件（例如，`app.UseMvc`）前面。
 
->[!WARNING]
-> **仅当应用程序在开发环境中运行时**才启用开发人员异常页。 否则当应用程序在生产环境中运行时，详细的异常信息会向公众泄露 了解[环境配置](xref:fundamentals/environments)。
+> [!WARNING]
+> 仅当应用程序在开发环境中运行时才启用开发人员异常页。 否则当应用程序在生产环境中运行时，详细的异常信息会向公众泄露 了解[环境配置](xref:fundamentals/environments)。
 
 要查看开发人员异常页，请将环境设置为 `Development`，运行示例应用，并向应用的基 URL 添加 `?throw=true`。 该页面包括几个选项卡，这些选项卡中包含关于异常和请求的信息。 第一个选项卡包括堆栈跟踪：
 
@@ -60,7 +60,7 @@ ms.locfileid: "41751562"
 
 ![标头](error-handling/_static/developer-exception-page-headers.png)
 
-## <a name="configuring-a-custom-exception-handling-page"></a>配置自定义异常处理页
+## <a name="configure-a-custom-exception-handling-page"></a>配置自定义异常处理页
 
 配置当应用未在 `Development` 环境中运行时要使用的异常处理程序页：
 
@@ -81,13 +81,35 @@ public IActionResult Error()
 }
 ```
 
-## <a name="configuring-status-code-pages"></a>配置状态代码页
+## <a name="configure-status-code-pages"></a>配置状态代码页
 
-默认情况下，应用不会为 HTTP 状态代码提供丰富状态代码页，例如 404 未找到。 要提供状态代码页，请通过向 `Startup.Configure` 方法添加行来配置状态代码页中间件：
+默认情况下，应用不会为 HTTP 状态代码提供丰富状态代码页，例如 404 未找到。 要提供状态代码页，请使用状态代码页中间件。
+
+::: moniker range=">= aspnetcore-2.1"
+
+该中间件通过 [Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)中的 [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 包提供。
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+该中间件通过 [Microsoft.AspNetCore.All 元包](xref:fundamentals/metapackage)中的 [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 包提供。
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+该中间件通过在项目文件中添加 [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 包的包引用提供。
+
+::: moniker-end
+
+向 `Startup.Configure` 方法添加代码行：
 
 ```csharp
 app.UseStatusCodePages();
 ```
+
+应在管道中的请求处理中间件之前调用 <xref:Microsoft.AspNetCore.Builder.StatusCodePagesExtensions.UseStatusCodePages*>（例如，静态文件中间件和 MVC 中间件）。
 
 默认情况下，状态代码页中间件为常见状态代码（如 404）添加纯文本处理程序：
 

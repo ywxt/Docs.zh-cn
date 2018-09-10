@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/20/2018
 uid: tutorials/signalr
-ms.openlocfilehash: db7f31963f6a4280069f1f4f82a547e2879e64bb
-ms.sourcegitcommit: d27317c16f113e7c111583042ec7e4c5a26adf6f
+ms.openlocfilehash: a2573e2817a2d8921954264ca17bc3a7e2a010a8
+ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41751425"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055827"
 ---
 # <a name="tutorial-get-started-with-signalr-on-aspnet-core"></a>教程：开始在 ASP.NET Core 上使用 SignalR
 
@@ -95,7 +95,7 @@ ms.locfileid: "41751425"
 
 ## <a name="add-the-signalr-client-library"></a>添加 SignalR 客户端库
 
-[Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)中包括 SignalR 服务器库。 但必须从 npm（即 Node.js 包管理器）获取 JavaScript 客户端库。
+[Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)中包括 SignalR 服务器库。 但必须从 [npm（即 Node.js 包管理器）](https://www.npmjs.com/get-npm)获取 JavaScript 客户端库。
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 

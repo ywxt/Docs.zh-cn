@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/19/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: dfef2bf21f325f11d147379f75a8d81a8bd05eec
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: abb687c864ebe863c2bba265131c29939961cac0
+ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41886741"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43336061"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core Web 主机
 
@@ -340,6 +340,23 @@ WebHost.CreateDefaultBuilder(args)
     .UseSetting("https_port", "8080")
 ```
 
+### <a name="hosting-startup-exclude-assemblies"></a>承载启动排除程序集
+
+描述
+
+键：hostingStartupExcludeAssemblies  
+**类型**：string  
+**默认值**：空字符串  
+**设置使用**：`UseSetting`  
+**环境变量**：`ASPNETCORE_HOSTINGSTARTUPEXCLUDEASSEMBLIES`
+
+承载启动程序集的以分号分隔的字符串在启动时排除。
+
+```csharp
+WebHost.CreateDefaultBuilder(args)
+    .UseSetting(WebHostDefaults.HostingStartupExcludeAssembliesKey, "assembly1;assembly2")
+```
+
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.0"
@@ -386,7 +403,7 @@ WebHost.CreateDefaultBuilder(args)
 
 **键**：urls  
 **类型**：string  
-**默认**：http://localhost:5000  
+**默认**： http://localhost:5000  
 **设置使用**：`UseUrls`  
 **环境变量**：`ASPNETCORE_URLS`
 

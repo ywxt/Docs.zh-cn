@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/27/2017
 uid: tutorials/razor-pages-vsc/model
-ms.openlocfilehash: 3552b541c43375aef43838800855ec63e7fed372
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: b891b921baf1fe6d167c7bfb8b4c5278ce9fe9f5
+ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38152966"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055859"
 ---
 # <a name="add-a-model-to-an-aspnet-core-razor-pages-app-with-visual-studio-code"></a>使用 Visual Studio Code 将模型添加到 ASP.NET Core Razor 页面应用
 
@@ -26,6 +26,14 @@ ms.locfileid: "38152966"
 [!INCLUDE [model 2](../../includes/RP/model2.md)]
 
 [!INCLUDE [model 2a](../../includes/RP/model2a.md)]
+
+### <a name="entity-framework-core-nuget-package-for-sqlite"></a>适用于 SQLite 的 Entity Framework Core NuGet 包
+
+从命令行运行以下 .NET Core CLI 命令：
+
+```console
+dotnet add package Microsoft.EntityFrameworkCore.SQLite
+```
 
 [!code-csharp[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices2&highlight=3-4)]
 
