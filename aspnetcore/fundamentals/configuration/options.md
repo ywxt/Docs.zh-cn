@@ -56,7 +56,7 @@ ms.locfileid: "42927953"
 
 [!code-csharp[](options/sample/Startup.cs?name=snippet_Example1)]
 
-以下页上的模型通过 [IOptions&lt;TOptions&gt;](/dotnet/api/Microsoft.Extensions.Options.IOptions-1) 使用[构造函数依赖关系注入](xref:mvc/controllers/dependency-injection)来访问设置 (Pages/Index.cshtml.cs)：
+以下页面模型通过 [IOptions&lt;TOptions&gt;](/dotnet/api/Microsoft.Extensions.Options.IOptions-1) 使用[构造函数依赖关系注入](xref:mvc/controllers/dependency-injection)来访问设置 (Pages/Index.cshtml.cs)：
 
 [!code-csharp[](options/sample/Pages/Index.cshtml.cs?range=9)]
 
@@ -68,7 +68,7 @@ ms.locfileid: "42927953"
 
 [!code-json[](options/sample/appsettings.json?highlight=2-3)]
 
-运行应用时，页模型的 `OnGet` 方法返回显示选项类值的字符串：
+运行应用时，页面模型的 `OnGet` 方法返回显示选项类值的字符串：
 
 ```html
 option1 = value1_from_json, option2 = -1
@@ -112,7 +112,7 @@ Index.cshtml.cs:
 
 每次调用 [Configure&lt;TOptions&gt;](/dotnet/api/microsoft.extensions.options.iconfigureoptions-1.configure) 都将添加 `IConfigureOptions<TOptions>` 服务到服务容器。 在前面的示例中，`Option1` 和 `Option2` 的值同时在 appsettings.json 中指定，但 `Option1` 和 `Option2` 的值被配置的委托替代。
 
-当启用多个配置服务时，指定的最后一个配置源优于其他源，由其设置配置值。 运行应用时，页模型的 `OnGet` 方法返回显示选项类值的字符串：
+当启用多个配置服务时，指定的最后一个配置源优于其他源，由其设置配置值。 运行应用时，页面模型的 `OnGet` 方法返回显示选项类值的字符串：
 
 ```html
 delegate_option1 = value1_configured_by_delgate, delegate_option2 = 500

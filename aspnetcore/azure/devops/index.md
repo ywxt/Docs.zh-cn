@@ -5,12 +5,12 @@ description: 提供有关为托管在 Azure 中的 ASP.NET Core 应用构建 Dev
 ms.author: casoper
 ms.date: 08/07/2018
 uid: azure/devops/index
-ms.openlocfilehash: f2eb2499a61ce639457f30f4d182dac6ff677a0f
-ms.sourcegitcommit: 6d02e26748a09eabeb0e11740a398cc2bc90b098
+ms.openlocfilehash: 53667831f5e33107178a947f23d957ff22e8c1a0
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41750304"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340090"
 ---
 # <a name="devops-with-aspnet-core-and-azure"></a>通过 ASP.NET Core 和 Azure 实现 DevOps
 
@@ -46,7 +46,7 @@ ms.locfileid: "41750304"
 
 ### <a name="continuous-integration-and-deploymentxrefazuredevopscicd"></a>[持续集成和部署](xref:azure/devops/cicd)
 
-通过 GitHub、VSTS 和 Azure，为 ASP.NET Core 应用生成端到端持续集成和部署解决方案。
+通过 GitHub、Azure DevOps Services 和 Azure，为 ASP.NET Core 应用生成端到端持续集成和部署解决方案。
 
 ### <a name="monitor-and-debugxrefazuredevopsmonitor"></a>[监视和调试](xref:azure/devops/monitor)
 
