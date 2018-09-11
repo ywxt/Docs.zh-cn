@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 787aacfd843f5f72e567670d601fb036a2c474bc
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 7a92a68ce8bbeec604a22e082975d33f9f3377c1
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824661"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340064"
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>持续集成和持续交付 （使用 Azure 构建实际云应用）
 ====================
@@ -40,9 +40,9 @@ ms.locfileid: "41824661"
 
 在 Azure 中的这些流程的自动化非常简单。 因为您在云中运行的所有内容，您无需购买或管理你的生成或测试环境的服务器。 同时，无需等待服务器可用于执行操作上测试。 每个版本执行的操作，可以构建测试环境在 Azure 中使用自动化脚本、 运行的验收测试或更多深入测试反对这样做，，然后只需完成后即将其拆散。 如果只有 2 个小时或 8 小时一次或一天运行该服务器，您必须为其付费的金额是最小的因为你只付钱让实际运行一台计算机的时间。 例如，在环境所需的修补程序应用程序基本上花费大约 1%为千瓦时，如果一个层上升从免费级别。 每月的过程中，如果只运行一次的每隔一小时的环境对测试环境所需可能的成本购买在星巴克 latte 小于。
 
-## <a name="visual-studio-team-services-vsts"></a>Visual Studio Team Services (VSTS)
+## <a name="azure-devops-services"></a>Azure DevOps 服务 
 
-VSTS 提供了许多功能可帮助您进行从规划到部署的应用程序开发。
+Azure DevOps 服务提供了大量功能可帮助您进行从规划到部署的应用程序开发。
 
 - 它支持 （分布） 的 Git 和 TFVC （集中式） 源控件。
 - 它提供弹性生成服务，这意味着它会动态在需要时创建生成服务器并将关闭完成时。 您可以自动开始生成时有人签入源代码更改，并且没有已分配，并为你自己的生成服务器位于空闲大部分时间支付费用。 生成服务是免费的只要不超过一定数量的生成。 如果您希望执行大批量的生成，可以将很少的额外支付保留的生成服务器。
@@ -52,9 +52,9 @@ VSTS 提供了许多功能可帮助您进行从规划到部署的应用程序开
 - 它支持敏捷项目管理。
 
 
-持续集成和交付 VSTS 功能的详细信息，请参阅[Visual Studio Team Services](https://www.visualstudio.com/team-services/)。
+持续集成和交付 Azure DevOps 服务功能的详细信息，请参阅[Azure DevOps 文档](/azure/devops/index)。
 
-如果正在寻找有关统包式项目管理、 团队协作和源代码控制解决方案，请访问 VSTS。 该服务是对最多 5 个用户免费，你可以在注册[Visual Studio Team Services](https://www.visualstudio.com/team-services/)。
+如果您正在寻找统包式项目管理、 团队协作和源代码控制解决方案，请查看 Azure DevOps 服务。 在注册[Azure DevOps 服务](https://dev.azure.com/)。
 
 ## <a name="summary"></a>总结
 

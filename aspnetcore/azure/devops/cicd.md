@@ -5,27 +5,27 @@ description: 提供有关为托管在 Azure 中的 ASP.NET Core 应用构建 Dev
 ms.author: scaddie
 ms.date: 08/17/2018
 uid: azure/devops/cicd
-ms.openlocfilehash: e084a6115dc7e176c17b2b318233b7a003b39a83
-ms.sourcegitcommit: 1cf65c25ed16495e27f35ded98b3952a30c68f36
+ms.openlocfilehash: 0bfe1545da4c0778055d7c81c1588d3267d2e711
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42910051"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340103"
 ---
 # <a name="continuous-integration-and-deployment"></a>持续集成和部署
 
-在上一章，您创建简单的源读取器应用的本地 Git 存储库。 在本章中，会将该代码发布到 GitHub 存储库并构建 Visual Studio Team Services (VSTS) DevOps 管道。 管道可使持续生成和部署的应用程序。 GitHub 存储库的任何提交触发生成和部署到 Azure Web 应用的过渡槽。
+在上一章，您创建简单的源读取器应用的本地 Git 存储库。 在本章中，会将该代码发布到 GitHub 存储库并构建使用 Azure 管道的 Azure DevOps 服务管道。 管道可使持续生成和部署的应用程序。 GitHub 存储库的任何提交触发生成和部署到 Azure Web 应用的过渡槽。
 
 在本部分中，将完成以下任务：
 
 * 将应用程序的代码发布到 GitHub
 * 断开连接本地 Git 部署
-* 创建 VSTS 帐户
-* 在 VSTS 中创建团队项目
+* 创建 Azure DevOps 组织
+* 在 Azure DevOps 服务中创建团队项目
 * 创建生成定义
 * 创建发布管道
 * 将更改提交到 GitHub 并自动部署到 Azure
-* 检查 VSTS DevOps 管道
+* 检查 Azure 管道管道
 
 ## <a name="publish-the-apps-code-to-github"></a>将应用程序的代码发布到 GitHub
 
@@ -53,7 +53,7 @@ ms.locfileid: "42910051"
 
 ## <a name="disconnect-local-git-deployment"></a>断开连接本地 Git 部署
 
-删除本地 Git 部署通过执行以下步骤。 VSTS 同时替换和增强该功能。
+删除本地 Git 部署通过执行以下步骤。 Azure 管道 （Azure DevOps 服务） 都将替换和增强该功能。
 
 1. 打开[Azure 门户](https://portal.azure.com/)，并导航到*暂存 (mywebapp\<unique_number\>/暂存)* Web 应用。 可以通过输入快速位于 Web 应用*暂存*门户的搜索框中：
 
@@ -63,26 +63,26 @@ ms.locfileid: "42910051"
 1. 导航到*mywebapp < unique_number >* 应用服务。 请注意，可以使用门户的搜索框中快速找到应用服务。
 1. 单击**部署选项**。 将显示新面板。 单击**断开连接**来删除已添加在上一章中的本地 Git 源控件配置。 通过单击确认删除操作**是**按钮。
 
-## <a name="create-a-vsts-account"></a>创建 VSTS 帐户
+## <a name="create-an-azure-devops-organization"></a>创建 Azure DevOps 组织
 
-1. 打开浏览器并导航到[VSTS 帐户创建页面](https://go.microsoft.com/fwlink/?LinkId=307137)。
-1. 键入唯一名称**选取一个易记名称**文本框中以形成用于访问你的 VSTS 帐户的 URL。
+1. 打开浏览器并导航到[Azure DevOps 的组织创建页](https://go.microsoft.com/fwlink/?LinkId=307137)。
+1. 键入唯一名称**选取一个易记名称**文本框中以形成用于访问你的 Azure DevOps 组织的 URL。
 1. 选择**Git**单选按钮，因为代码托管在 GitHub 存储库。
 1. 单击“继续”按钮。 稍等片刻、 帐户和团队项目之后, 名为*MyFirstProject*，创建。
 
-    ![VSTS 帐户创建页面](media/cicd/vsts-account-creation.png)
+    ![Azure DevOps 的组织创建页](media/cicd/vsts-account-creation.png)
 
-1. 打开指示 VSTS 帐户和项目可供使用的确认电子邮件。 单击**开始你的项目**按钮：
+1. 打开指示 Azure DevOps 的组织和项目可供使用的确认电子邮件。 单击**开始你的项目**按钮：
 
     ![启动项目按钮](media/cicd/vsts-start-project.png)
 
 1. 浏览器将打开 *\<account_name\>。 visualstudio.com*。 单击*MyFirstProject*链接以开始配置项目的 DevOps 管道。
 
-## <a name="configure-the-devops-pipeline"></a>DevOps 管道配置
+## <a name="configure-the-azure-pipelines-pipeline"></a>配置 Azure 管道管道
 
 有三个不同的步骤才能完成。 完成操作的 DevOps 管道中的以下三个部分结果中的步骤。
 
-### <a name="grant-vsts-access-to-the-github-repository"></a>授予对 GitHub 存储库的 VSTS 访问权限
+### <a name="grant-azure-devops-access-to-the-github-repository"></a>授予 Azure DevOps 到 GitHub 存储库的访问权限
 
 1. 展开**或从外部存储库的代码生成**accordion。 单击**安装程序生成**按钮：
 
@@ -92,12 +92,12 @@ ms.locfileid: "42910051"
 
     ![选择源-GitHub](media/cicd/vsts-select-source.png)
 
-1. 授权是必需的 VSTS 才能访问你的 GitHub 存储库。 输入 *< GitHub_username > GitHub 连接*中**连接名称**文本框中。 例如：
+1. 授权是必需的 Azure DevOps 可以访问 GitHub 存储库之前。 输入 *< GitHub_username > GitHub 连接*中**连接名称**文本框中。 例如：
 
     ![GitHub 的连接名称](media/cicd/vsts-repo-authz.png)
 
 1. 如果你的 GitHub 帐户启用双因素身份验证，则需要个人访问令牌。 在这种情况下，单击**使用 GitHub 个人访问令牌的授权**链接。 请参阅[正式 GitHub 个人访问令牌创建说明](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)有关的帮助。 仅*存储库*所需权限的作用域。 否则，请单击**使用 OAuth 授权**按钮。
-1. 出现提示时，登录到你的 GitHub 帐户。 然后，选择授权授予对你的 VSTS 帐户访问权限。 如果成功，会创建新的服务终结点。
+1. 出现提示时，登录到你的 GitHub 帐户。 然后，选择授权授予对你的 Azure DevOps 组织访问权限。 如果成功，会创建新的服务终结点。
 1. 单击省略号按钮旁边**存储库**按钮。 选择 *< GitHub_username > / 简单源阅读器*从列表中的存储库。 单击**选择**按钮。
 1. 选择*主*从分支**手动和计划生成的默认分支**下拉列表。 单击“继续”按钮。 模板选择页会显示。
 
@@ -205,7 +205,7 @@ ms.locfileid: "42910051"
 
     ![启用持续集成](media/cicd/enable-ci.png)
 
-1. 导航到**排队**选项卡**生成和发布** > **生成**在 VSTS 中的页。 已排队的生成显示分支和提交触发生成：
+1. 导航到**排队**选项卡**Azure 管道** > **生成**Azure DevOps 服务中的页。 已排队的生成显示分支和提交触发生成：
 
     ![排队的生成](media/cicd/build-queued.png)
 
@@ -213,7 +213,7 @@ ms.locfileid: "42910051"
 
     ![更新的应用程序](media/cicd/updated-app-v4.png)
 
-## <a name="examine-the-vsts-devops-pipeline"></a>检查 VSTS DevOps 管道
+## <a name="examine-the-azure-pipelines-pipeline"></a>检查 Azure 管道管道
 
 ### <a name="build-definition"></a>生成定义
 
@@ -275,6 +275,6 @@ Azure 订阅、 服务类型、 web 应用名称、 资源组和部署槽部署�
 
 ## <a name="additional-reading"></a>其他阅读材料
 
-* [生成 ASP.NET Core 应用](https://docs.microsoft.com/vsts/build-release/apps/aspnet/build-aspnet-core)
-* [生成并部署到 Azure Web 应用](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp)
-* [定义 GitHub 存储库的 CI 生成过程](https://docs.microsoft.com/vsts/pipelines/build/ci-build-github)
+* [使用 Azure Pipelines 创建你的第一个管道](/azure/devops/pipelines/get-started-yaml)
+* [生成和.NET Core 项目](/azure/devops/pipelines/languages/dotnet-core)
+* [部署 web 应用与 Azure 管道](/azure/devops/pipelines/targets/webapp)

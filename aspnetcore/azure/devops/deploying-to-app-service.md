@@ -5,12 +5,12 @@ description: 提供有关为托管在 Azure 中的 ASP.NET Core 应用构建 Dev
 ms.author: casoper
 ms.date: 08/07/2018
 uid: azure/devops/deploy-to-app-service
-ms.openlocfilehash: abd7167b313e131dc8b7ea6a49b774e14ae53bb9
-ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
+ms.openlocfilehash: 710e65a048fdc062219e90b0db323e8e96fd8e9d
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42909786"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340129"
 ---
 # <a name="deploy-an-app-to-app-service"></a>将应用部署到应用服务
 
@@ -234,7 +234,7 @@ Visual Studio 生成，并将该应用部署到 Azure。 浏览到 web 应用 UR
 * 更新部署到过渡槽中。
 * 交换过渡和生产槽。
 
-在下一步部分中，将了解如何构建 DevOps 管道，其中包含 Azure 和 Visual Studio Team Services。
+在下一步部分中，将了解如何构建 DevOps 管道，其中包含 Azure 管道。
 
 ## <a name="additional-reading"></a>其他阅读材料
 
