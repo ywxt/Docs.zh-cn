@@ -5,14 +5,14 @@ description: 在本教程中，创建使用适用于 ASP.NET Core 的 SignalR �
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 08/20/2018
+ms.date: 08/31/2018
 uid: tutorials/signalr
-ms.openlocfilehash: a2573e2817a2d8921954264ca17bc3a7e2a010a8
-ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
+ms.openlocfilehash: 6d96331a4630f766ca11edb056fd3e13b52b6ae4
+ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43055827"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893160"
 ---
 # <a name="tutorial-get-started-with-signalr-on-aspnet-core"></a>教程：开始在 ASP.NET Core 上使用 SignalR
 
@@ -34,22 +34,19 @@ ms.locfileid: "43055827"
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* 已安装“ASP.NET 和 Web 开发”工作负载的 [Visual Studio 2017 15.7.3 版或更高版本](https://www.visualstudio.com/downloads/)
+* 已安装“ASP.NET 和 Web 开发”工作负载的 [Visual Studio 2017 版本 15.8 或更高版本](https://www.visualstudio.com/downloads/)
 * [.NET Core SDK 2.1 或更高版本](https://www.microsoft.com/net/download/all)
-* [npm](https://www.npmjs.com/get-npm)（适用于 Node.js 的包管理器，用于 SignalR JavaScript 客户端库。）
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [.NET Core SDK 2.1 或更高版本](https://www.microsoft.com/net/download/all)
 * [用于 Visual Studio Code 的 C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
-* [npm](https://www.npmjs.com/get-npm)（适用于 Node.js 的包管理器，用于 SignalR JavaScript 客户端库。）
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 * [Visual Studio for Mac 7.5.4 版或更高版本](https://www.visualstudio.com/downloads/)
 * [.NET Core SDK 2.1 或更高版本](https://www.microsoft.com/net/download/all)（包含在 Visual Studio 安装中）
-* [npm](https://www.npmjs.com/get-npm)（适用于 Node.js 的包管理器，用于 SignalR JavaScript 客户端库。）
 
 ---
 
@@ -95,76 +92,85 @@ ms.locfileid: "43055827"
 
 ## <a name="add-the-signalr-client-library"></a>添加 SignalR 客户端库
 
-[Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)中包括 SignalR 服务器库。 但必须从 [npm（即 Node.js 包管理器）](https://www.npmjs.com/get-npm)获取 JavaScript 客户端库。
+[Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)中包括 SignalR 服务器库。 JavaScript 客户端库不会自动包含在项目中。 对于此教程，使用[库管理器 (LibMan)](xref:client-side/libman/index) 从 unpkg 获取客户端库。 [unpkg](https://unpkg.com/#/) 是一个[内容分发网络](https://wikipedia.org/wiki/Content_delivery_network)，可以分发在 [npm：Node.js 包管理器](https://www.npmjs.com/get-npm)中找到的任何内容。
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 
-* 在“包管理器控制台”(PMC) 中，切换到项目文件夹（其包含 SignalRChat.csproj 文件）。
+* 在“解决方案资源管理器”中，右键单击项目，然后选择“添加” > “客户端库”。
 
-  ```console
-  cd SignalRChat
-  ```
+* 在“添加客户端库”对话框中，对于“提供程序”，选择“unpkg”。 
+
+* 对于“库”，输入 @aspnet/signalr@1，然后选择不是预览版的最新版本。
+
+  ![“添加客户端库”对话框 - 选择库](signalr/_static/libman1.png)
+
+* 选择“选择特定文件”，展开“dist/browser”文件夹，然后选择“signalr.js”和“signalr.min.js”。
+
+* 将“目标位置”设置为 wwwroot/lib/signalr/，然后选择“安装”。
+
+  ![“添加客户端库”对话框 - 选择文件和目标](signalr/_static/libman2.png)
+
+  [LibMan](xref:client-side/libman/index) 创建 wwwroot/lib/signalr 文件夹并将所选文件复制到该文件夹。
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
-2. 切换到该新项目文件夹。
+* 在“集成终端”中，运行以下命令以安装 LibMan。
 
   ```console
-  cd SignalRChat
-  ``` 
+  dotnet tool install -g Microsoft.Web.LibraryManager.Cli
+  ```
+
+* 导航到项目文件夹（包含 SignalRChat.csproj 文件的文件夹）。
+
+* 使用 LibMan 运行以下命令，以获取 SignalR 客户端库。 可能需要等待几秒钟的时间才能看到输出。
+
+  ```console
+  libman install @aspnet/signalr -p unpkg -d wwwroot\lib\signalr --files dist/browser/signalr.js --files dist/browser/signalr.min.js
+  ```
+
+  参数指定以下选项：
+  * 使用 unpkg 提供程序。
+  * 将文件复制到 wwwroot/lib/signalr 目标。
+  * 仅复制指定的文件。
+
+  输出如下所示：
+
+  ```console
+  wwwroot/lib/signalr/dist/browser/signalr.js written to disk
+  wwwroot/lib/signalr/dist/browser/signalr.min.js written to disk
+  Installed library "@aspnet/signalr@1.0.3" to "wwwroot\lib\signalr"
+  ```
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
-* 在“终端”中，导航到项目文件夹（其包含 SignalRChat.csproj 文件）。
+* 在“终端”中，运行以下命令以安装 LibMan。
+
+  ```console
+  dotnet tool install -g Microsoft.Web.LibraryManager.Cli
+  ```
+
+* 导航到项目文件夹（包含 SignalRChat.csproj 文件的文件夹）。
+
+* 使用 LibMan 运行以下命令，以获取 SignalR 客户端库。
+
+  ```console
+  libman install @aspnet/signalr -p unpkg -d wwwroot\lib\signalr --files dist/browser/signalr.js --files dist/browser/signalr.min.js
+  ```
+
+  参数指定以下选项：
+  * 使用 unpkg 提供程序。
+  * 将文件复制到 wwwroot/lib/signalr 目标。
+  * 仅复制指定的文件。
+
+  输出如下所示：
+
+  ```console
+  wwwroot/lib/signalr/dist/browser/signalr.js written to disk
+  wwwroot/lib/signalr/dist/browser/signalr.min.js written to disk
+  Installed library "@aspnet/signalr@1.0.3" to "wwwroot\lib\signalr"
+  ```
 
 ---
-
-* 运行 npm 初始化表达式，以创建 package.json 文件：
-
-  ```console
-  npm init -y
-  ```
-
-  该命令创建类似于以下示例的输出：
-
-  ```console
-  Wrote to C:\tmp\SignalRChat\package.json:
-  {
-    "name": "SignalRChat",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"0
-  }
-  ```
-
-* 安装客户端库包：
-
-  ```console
-  npm install @aspnet/signalr
-  ```
-
-  该命令创建类似于以下示例的输出：
-
-  ```
-  npm notice created a lockfile as package-lock.json. You should commit this file.
-  npm WARN signalrchat@1.0.0 No description
-  npm WARN signalrchat@1.0.0 No repository field.
-
-  + @aspnet/signalr@1.0.2
-  added 1 package in 0.98s
-  ```
-
-`npm install` 命令将 JavaScript 客户端库下载到 node_modules 下的子文件夹。 将其从此处复制到 wwwroot 下的文件夹，以便从聊天应用网页中引用该文件夹。
-
-* 在 wwwroot/lib 中创建 signalr 文件夹。
-
-* 将 signalr.js 文件从 node_modules/@aspnet/signalr/dist/browser 复制到新的 wwwroot/lib/signalr 文件夹。
 
 ## <a name="create-the-signalr-hub"></a>创建 SignalR 中心
 
@@ -192,7 +198,7 @@ ms.locfileid: "43055827"
 
 ## <a name="create-the-signalr-client-code"></a>创建 SignalR 客户端代码
 
-* 将 Pages\Index.cshtml 中的内容替换为以下内容：
+* 使用以下代码替换 Pages\Index.cshtml 中的内容：
 
   [!code-cshtml[Index](signalr/sample/Pages/Index.cshtml)]
 

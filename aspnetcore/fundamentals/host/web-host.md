@@ -4,14 +4,14 @@ author: guardrex
 description: 了解有关 ASP.NET Core 中负责应用启动和生存期管理的 Web 主机。
 ms.author: riande
 ms.custom: mvc
-ms.date: 06/19/2018
+ms.date: 09/01/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: abb687c864ebe863c2bba265131c29939961cac0
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: 7440ab26534840b190a346614f645860fc2b7d78
+ms.sourcegitcommit: 7211ae2dd702f67d36365831c490d6178c9a46c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336061"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44089894"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core Web 主机
 
@@ -80,6 +80,25 @@ public class Program
         ...
     ```
 
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+* 下面调用 `ConfigureKestrel` 来重写 `CreateDefaultBuilder` 在配置 Kestrel 时建立的 30,000,000 字节默认 [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize)：
+
+    ```csharp
+    WebHost.CreateDefaultBuilder(args)
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Limits.MaxRequestBodySize = 20000000;
+        });
+        ...
+    ```
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+
 * 下面调用 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) 来重写 `CreateDefaultBuilder` 在配置 Kestrel 时建立的 30,000,000 字节默认 [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize)：
 
     ```csharp
@@ -90,6 +109,10 @@ public class Program
         });
         ...
     ```
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.0"
 
 内容根确定主机搜索内容文件（如 MVC 视图文件）的位置。 应用从项目的根文件夹启动时，会将项目的根文件夹用作内容根。 这是 [Visual Studio](https://www.visualstudio.com/) 和 [dotnet new 模板](/dotnet/core/tools/dotnet-new)中使用的默认值。
 

@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: 7ea944bc423001aa47ce684443b96104cf9174bf
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: df7af9fd05c19c42357989bbd8a81da062a564cc
+ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312242"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893098"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>处理 ASP.NET Core 中的错误
 
@@ -66,7 +66,7 @@ ms.locfileid: "43312242"
 
 [!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
-在 Razor Pages 应用中，[dotnet new](/dotnet/core/tools/dotnet-new) Razor Pages 模板在 Pages 文件夹中提供“错误”页面和 `ErrorModel` 页面模型类。
+在 Razor Pages 应用中，[dotnet new](/dotnet/core/tools/dotnet-new) Razor Pages 模板在 Pages 文件夹中提供“错误”页面和错误 `PageModel` 类。
 
 在 MVC 应用中，不要使用 HTTP 方法特性（如 `HttpGet`）修饰错误处理程序操作方法。 显式谓词可阻止某些请求访问方法。 允许匿名访问方法，以便未经身份验证的用户能够接收错误视图。
 

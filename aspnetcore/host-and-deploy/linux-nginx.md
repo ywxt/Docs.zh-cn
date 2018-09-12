@@ -6,18 +6,20 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/22/2018
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: aba9ed41ac3650d8c645d71fb772e2a8e4f32f02
-ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
+ms.openlocfilehash: d94640075f6fe5db06672f7dc641470c71076a16
+ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39254852"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44040005"
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>使用 Nginx 在 Linux 上托管 ASP.NET Core
 
 作者：[Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
 本指南介绍如何在 Ubuntu 16.04 服务器上设置生产就绪 ASP.NET Core 环境。 这些说明可能适用于较新版本的 Ubuntu，但尚未使用较新版本进行测试。
+
+有关 ASP.NET Core 支持的其他 Linux 分配的信息，请参阅 [Linux 上 .NET Core 的先决条件](/dotnet/core/linux-prerequisites)。
 
 > [!NOTE]
 > 对于 Ubuntu 14.04，建议进行监控，以此作为监视 Kestrel 进程的解决方案。 在 Ubuntu 14.04 上不提供 systemd。 有关 Ubuntu 14.04 的说明，请参阅[本主题的以前版本](https://github.com/aspnet/Docs/blob/e9c1419175c4dd7e152df3746ba1df5935aaafd5/aspnetcore/publishing/linuxproduction.md)。
@@ -383,6 +385,7 @@ sudo nano /etc/nginx/nginx.conf
 
 ## <a name="additional-resources"></a>其他资源
 
+* [Linux 上 .NET Core 的先决条件](/dotnet/core/linux-prerequisites)
 * [Nginx：二进制版本：官方 Debian/Ubuntu 包](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages)
 * [配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)
 * [NGINX：使用转接头](https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/)
