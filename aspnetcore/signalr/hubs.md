@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 05/01/2018
 uid: signalr/hubs
-ms.openlocfilehash: be39666373e2b099054bb71f4a7fcf17aeb9a01c
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: e583676ab0eed45aeaf6391d8cdf8c1485aa914e
+ms.sourcegitcommit: e7e1e531b80b3f4117ff119caadbebf4dcf5dcb7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095276"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44510332"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>ASP.NET Core 使用 SignalR 中的中心
 
@@ -42,9 +42,29 @@ SignalR 中间件需要某些服务，通过调用配置`services.AddSignalR`。
 
 您可以指定返回类型和参数，包括复杂类型和数组，就像在任何 C# 方法中。 SignalR 处理序列化和反序列化复杂对象和数组中参数和返回值。
 
+## <a name="the-context-object"></a>上下文对象
+
+`Hub`类具有`Context`属性，其中包含以下属性与连接有关的信息：
+
+| 属性 | 描述 |
+| ------ | ----------- |
+| `ConnectionId` | 获取用于此连接，由 SignalR 分配的唯一 ID。 没有为每个连接的一个连接 ID。|
+| `UserIdentifier` | 获取[用户标识符](xref:signalr/groups)。 默认情况下，使用 SignalR`ClaimTypes.NameIdentifier`从`ClaimsPrincipal`与作为用户标识符连接相关联。 |
+| `User` | 获取`ClaimsPrincipal`与当前用户相关联。 |
+| `Items` | 获取可用于共享此连接的作用域内的数据的键/值集合。 数据可以存储在此集合中，它将连接在不同的集线器方法调用中保持原样。 |
+| `Features` | 获取在连接上的可用功能的集合。 现在，此集合不需要在大多数情况下，因此它不尚未记录在详细信息。 |
+| `ConnectionAborted` | 获取`CancellationToken`，时连接中止通知。 |
+
+`Hub.Context` 此外包含以下方法：
+
+| 方法 | 描述 |
+| ------ | ----------- |
+| `GetHttpContext` | 返回`HttpContext`用于此连接，或`null`如果连接不是与 HTTP 请求相关联。 对于 HTTP 连接，可以使用此方法以获取 HTTP 标头和查询字符串等信息。 |
+| `Abort` | 中止的连接。 |
+
 ## <a name="the-clients-object"></a>客户端对象
 
-每个实例`Hub`类有一个名为`Clients`，其中包含服务器和客户端之间通信的以下成员：
+`Hub`类具有`Clients`属性，其中包含服务器和客户端之间通信的以下属性：
 
 | 属性 | 描述 |
 | ------ | ----------- |
@@ -53,7 +73,7 @@ SignalR 中间件需要某些服务，通过调用配置`services.AddSignalR`。
 | `Others` | 除调用该方法的客户端的所有已连接客户端上调用的方法 |
 
 
-此外，`Hub.Clients`包含以下方法：
+`Hub.Clients` 此外包含以下方法：
 
 | 方法 | 描述 |
 | ------ | ----------- |

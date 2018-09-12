@@ -11,7 +11,7 @@
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-如果以前未安装 ASP.NET 基架，请立即进行安装：
+如果以前未安装 ASP.NET Core 基架，请立即进行安装：
 
 ```cli
 dotnet tool install -g dotnet-aspnet-codegenerator

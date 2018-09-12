@@ -19,7 +19,7 @@
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-如果以前未安装 ASP.NET 基架，请立即进行安装：
+如果以前未安装 ASP.NET Core 基架，请立即进行安装：
 
 ```cli
 dotnet tool install -g dotnet-aspnet-codegenerator
@@ -44,4 +44,9 @@ dotnet aspnet-codegenerator identity -h
 dotnet aspnet-codegenerator identity -dc MyWeb.Data.ApplicationDbContext --files Account.Register
 ```
 
+Powershell 使用分号作为命令分隔符。 使用 powershell 时，转义分号分隔的文件列表中，或将文件列表放在双引号内。 例如：
+
+```cli
+dotnet aspnet-codegenerator identity -dc MyWeb.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
+```
 -------------
