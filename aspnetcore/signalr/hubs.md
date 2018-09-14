@@ -5,14 +5,14 @@ description: 了解如何在 ASP.NET Core SignalR 中使用中心。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 05/01/2018
+ms.date: 09/12/2018
 uid: signalr/hubs
-ms.openlocfilehash: e583676ab0eed45aeaf6391d8cdf8c1485aa914e
-ms.sourcegitcommit: e7e1e531b80b3f4117ff119caadbebf4dcf5dcb7
+ms.openlocfilehash: 17e3ee23967bc1097a3121b3e3e5b58cebe3887d
+ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44510332"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45538357"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>ASP.NET Core 使用 SignalR 中的中心
 
@@ -94,6 +94,22 @@ SignalR 中间件需要某些服务，通过调用配置`services.AddSignalR`。
 若要使对特定的客户端的调用，使用的属性`Clients`对象。 在以下示例中，`SendMessageToCaller`方法演示如何将消息发送到调用集线器方法的连接。 `SendMessageToGroups`方法将消息发送到存储中的组`List`名为`groups`。
 
 [!code-csharp[Send messages](hubs/sample/hubs/chathub.cs?range=15-24)]
+
+## <a name="strongly-typed-hubs"></a>强类型化的中心
+
+使用的一个缺点`SendAsync`是依赖于使用魔幻字符串来指定客户端方法调用。 这将使运行时错误，如果方法名称的拼写错误的代码打开或缺少从客户端。
+
+使用的替代方法`SendAsync`是强类型化`Hub`与<xref:Microsoft.AspNetCore.SignalR.Hub`1>。 在以下示例中，`ChatHub`客户端方法具有出提取到一个接口，称为`IChatClient`。  
+
+[!code-csharp[Interface for IChatClient](hubs/sample/hubs/ichatclient.cs?name=snippet_IChatClient)]
+
+此接口可用于重构前面`ChatHub`示例。
+
+[!code-csharp[Strongly typed ChatHub](hubs/sample/hubs/StronglyTypedChatHub.cs?range=8-18,36)]
+
+使用`Hub<IChatClient>`启用编译时检查的客户端方法。 这可以防止由于使用魔幻字符串导致的问题`Hub<T>`可以仅提供访问权限在接口中定义的方法。
+
+使用强类型化`Hub<T>`禁用的功能使用`SendAsync`。
 
 ## <a name="handle-events-for-a-connection"></a>处理连接事件
 

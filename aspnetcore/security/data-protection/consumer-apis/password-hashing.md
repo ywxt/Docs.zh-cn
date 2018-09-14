@@ -5,25 +5,25 @@ description: 了解如何使用 ASP.NET Core数据保护 Api 的密码执行哈�
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/consumer-apis/password-hashing
-ms.openlocfilehash: aef22ab91e76afdb5f54dc37bcee7128420b6f3b
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 882ac9b256b0cdf5fd19dc4bd2757cac7e8ecad3
+ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272982"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45538370"
 ---
 # <a name="hash-passwords-in-aspnet-core"></a>在 ASP.NET Core中的哈希密码
 
-基本数据保护代码包括包*Microsoft.AspNetCore.Cryptography.KeyDerivation*其中包含加密密钥派生函数。 此包是一个独立组件，并不依赖于数据保护系统的其余部分。 可以完全单独使用它。 源共存于基本为方便起见数据保护代码。
+数据保护代码库包括包*Microsoft.AspNetCore.Cryptography.KeyDerivation*其中包含加密密钥派生函数。 此包是一个独立组件，并不依赖于数据保护系统的其余部分。 可以完全独立地使用它。 源并存的数据保护代码库为方便起见。
 
-包当前提供一种方法`KeyDerivation.Pbkdf2`这样，哈希密码使用[PBKDF2 算法](https://tools.ietf.org/html/rfc2898#section-5.2)。 此 API 已非常类似于.NET Framework 的现有[Rfc2898DeriveBytes 类型](/dotnet/api/system.security.cryptography.rfc2898derivebytes)，但有三个重要区别：
+包目前提供一种方法`KeyDerivation.Pbkdf2`允许使用密码哈希[PBKDF2 算法](https://tools.ietf.org/html/rfc2898#section-5.2)。 此 API 是非常类似于.NET Framework 的现有[Rfc2898DeriveBytes 类型](/dotnet/api/system.security.cryptography.rfc2898derivebytes)，但具有三个重要的区别：
 
-1. `KeyDerivation.Pbkdf2`方法支持使用多个 PRFs (当前`HMACSHA1`， `HMACSHA256`，和`HMACSHA512`)，而`Rfc2898DeriveBytes`类型仅支持`HMACSHA1`。
+1. `KeyDerivation.Pbkdf2`方法支持使用多个 PRFs (目前`HMACSHA1`， `HMACSHA256`，和`HMACSHA512`)，而`Rfc2898DeriveBytes`类型仅支持`HMACSHA1`。
 
-2. `KeyDerivation.Pbkdf2`方法检测到当前操作系统，然后尝试选择最优化的实现的例程，提供更好的性能，在某些情况下，选择。 (在 Windows 8 中，它提供约 10 倍的吞吐量`Rfc2898DeriveBytes`。)
+2. `KeyDerivation.Pbkdf2`方法检测到当前操作系统，并尝试选择提供更好的性能，在某些情况下的例程的经过最完美优化的实现。 (在 Windows 8 中，它提供了大约 10 倍的吞吐量`Rfc2898DeriveBytes`。)
 
-3. `KeyDerivation.Pbkdf2`方法要求调用方指定的所有参数 (salt，PRF 和迭代计数)。 `Rfc2898DeriveBytes`类型提供的这些默认值。
+3. `KeyDerivation.Pbkdf2`方法需要调用方指定所有参数 （给加盐，PRF 和迭代次数）。 `Rfc2898DeriveBytes`类型提供的这些默认值。
 
 [!code-csharp[](password-hashing/samples/passwordhasher.cs)]
 
-ASP.NET Core标识，请参阅源代码`PasswordHasher`现实世界的类型用例。
+请参阅 [源代码] (https://github.com/aspnet/Identity/blob/master/src/Core/PasswordHasher.cs)为 ASP.NET Core 标识`PasswordHasher`类型实际用例。
