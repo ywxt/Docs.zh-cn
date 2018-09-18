@@ -7,12 +7,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 02/21/2018
 uid: spa/angular
-ms.openlocfilehash: 811e28af2b67c356ff038d8d673e2164bb56578e
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 763b4fff7c64432328af660c66e6ff3f8f697f71
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291460"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011348"
 ---
 # <a name="use-the-angular-project-template-with-aspnet-core"></a>通过 ASP.NET Core 使用 Angular 项目模板
 
@@ -34,6 +34,7 @@ ms.locfileid: "36291460"
 如果使用 ASP.NET Core 2.0，请确保[安装了更新的 React 项目模板](xref:spa/index#installation)。
 
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
 
 如果您有安装 ASP.NET Core 2.1，则无需安装角度项目模板。

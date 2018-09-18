@@ -5,16 +5,17 @@ description: 了解如何使用受保护的授权的用户数据创建 Razor 页
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: e4a54c95aa8131441d29a835751ce6241aac2ed3
-ms.sourcegitcommit: 70fb7c9d5f2ddfcf4747382a9f7159feca7a6aa7
+ms.openlocfilehash: 2fb13f0772a1f8aa4ed2ff3ece2a2c5d3b7360c9
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601764"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010931"
 ---
 ::: moniker range="<= aspnetcore-1.1"
 
 请参阅[此 PDF](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) ASP.NET Core MVC 版本。 本教程的 ASP.NET Core 1.1 版本是[这](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data)文件夹。 ASP.NET Core 示例是在 1.1[示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2)。
+
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
@@ -76,11 +77,13 @@ ms.locfileid: "45601764"
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
 ::: moniker-end
+
 ::: moniker range="= aspnetcore-2.1"
 
 在 ASP.NET Core 2.1`User.IsInRole`使用时，失败`AddDefaultIdentity`。 本教程使用`AddDefaultIdentity`，因此需要 ASP.NET Core 2.2 preview 1 或更高版本。 请参阅[此 GitHub 问题](https://github.com/aspnet/Identity/issues/1813#issuecomment-394543909)的解决办法。
 
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
 
 ## <a name="the-starter-and-completed-app"></a>Starter 和已完成应用程序

@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core 标识默认值，并了解如何配置要使�
 ms.author: riande
 ms.date: 08/14/2018
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: c597eacbb21ed0968e6195f7b6dcb46d37ba80a5
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 0faab001b981c79f6afa16b2a8cf80c1ef141b11
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41870912"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011295"
 ---
 # <a name="configure-aspnet-core-identity"></a>配置 ASP.NET Core 标识
 
@@ -66,6 +66,7 @@ ASP.NET Core 标识设置，例如密码策略、 锁定和 cookie 配置使用�
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
+
 [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-37,50-52)]
 
 ::: moniker-end
@@ -102,6 +103,7 @@ ASP.NET Core 标识设置，例如密码策略、 锁定和 cookie 配置使用�
 ::: moniker-end
 
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-30,44-46,50-52)] 
 
 ::: moniker-end
@@ -143,9 +145,11 @@ ASP.NET Core 标识设置，例如密码策略、 锁定和 cookie 配置使用�
 配置中的应用程序的 cookie `Startup.ConfigureServices`。 [ConfigureApplicationCookie](/dotnet/api/microsoft.extensions.dependencyinjection.identityservicecollectionextensions.configureapplicationcookie#Microsoft_Extensions_DependencyInjection_IdentityServiceCollectionExtensions_ConfigureApplicationCookie_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Action_Microsoft_AspNetCore_Authentication_Cookies_CookieAuthenticationOptions__)必须在调用**后**调用`AddIdentity`或`AddDefaultIdentity`。
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](identity-configuration/sample/Startup.cs?name=snippet_cookie)]
 
 ::: moniker-end
+
 ::: moniker range="= aspnetcore-2.0"
 
 [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?name=snippet_configurecookie)]

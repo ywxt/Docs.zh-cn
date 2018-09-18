@@ -5,12 +5,12 @@ description: 了解如何使用 ASP.NET Core数据保护 Api 的密码执行哈�
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/consumer-apis/password-hashing
-ms.openlocfilehash: 882ac9b256b0cdf5fd19dc4bd2757cac7e8ecad3
-ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
+ms.openlocfilehash: 70301ffffbaaf3c5ff0642b19b80e40be83aa438
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45538370"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010957"
 ---
 # <a name="hash-passwords-in-aspnet-core"></a>在 ASP.NET Core中的哈希密码
 
@@ -26,4 +26,4 @@ ms.locfileid: "45538370"
 
 [!code-csharp[](password-hashing/samples/passwordhasher.cs)]
 
-请参阅 [源代码] (https://github.com/aspnet/Identity/blob/master/src/Core/PasswordHasher.cs)为 ASP.NET Core 标识`PasswordHasher`类型实际用例。
+请参阅[源代码](https://github.com/aspnet/Identity/blob/master/src/Core/PasswordHasher.cs)有关 ASP.NET Core 标识`PasswordHasher`类型实际用例。

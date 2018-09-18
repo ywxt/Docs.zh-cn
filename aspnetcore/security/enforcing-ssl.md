@@ -5,12 +5,12 @@ description: 演示如何要求在 ASP.NET Core HTTPS/TLS web 应用。
 ms.author: riande
 ms.date: 2/9/2018
 uid: security/enforcing-ssl
-ms.openlocfilehash: 838cd00545f36736461616f806942249aaf6eee0
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: 06ff89d30fb3586c69274cc7cb3e6c75065b098a
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893173"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011321"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>强制实施 HTTPS 在 ASP.NET Core
 
@@ -167,6 +167,7 @@ ASP.NET Core 2.1 或更高版本实现与 HSTS`UseHsts`扩展方法。 下面的
 * `[::1]` : IPv6 环回地址。
 
 前面的示例演示如何添加其他主机。
+
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"

@@ -4,14 +4,14 @@ author: guardrex
 description: 了解路由和应用模型提供程序约定如何帮助控制页面路由、发现和处理。
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 04/12/2018
+ms.date: 09/17/2018
 uid: razor-pages/razor-pages-conventions
-ms.openlocfilehash: 5a5d580b4260767e411571ccacc19d6e8fe12559
-ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
+ms.openlocfilehash: ea4f785dc8a64b430e312fd122a4d3184b61949e
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "42909741"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011857"
 ---
 # <a name="razor-pages-route-and-app-conventions-in-aspnet-core"></a>ASP.NET Core 中 Razor 页面的路由和应用约定
 
@@ -69,6 +69,26 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
+## <a name="route-order"></a>路由顺序
+
+路由指定<xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*>用于处理 （路由匹配）。
+
+| 顺序            | 行为 |
+| :--------------: | -------- |
+| -1               | 处理其他路由之前处理该路由。 |
+| 0                | 未指定顺序 （默认值）。 不分配`Order`(`Order = null`) 将默认路由`Order`为 0 （零） 进行处理。 |
+| 1、 2、 &hellip; n | 指定路由处理顺序。 |
+
+按照约定来建立路由处理：
+
+* 按顺序处理的路由 (-1、 0、 1、 2、 &hellip; n)。
+* 当路由具有相同`Order`、 最具体的路由匹配跟有更具体的路由。
+* 当具有相同的路由`Order`和相同数量的参数匹配请求 URL，将它们添加到顺序处理路由<xref:Microsoft.AspNetCore.Mvc.ApplicationModels.PageConventionCollection>。
+
+如果可能，避免具体取决于已建立的路由处理顺序。 通常情况下，路由选择与 URL 匹配的正确路由。 如果必须设置路由`Order`属性路由请求是否正确，应用程序的路由方案，可能令人困惑，向客户端和脆弱来维护。 查找以简化应用程序的路由方案。 示例应用程序需要处理订单，若要演示几个路由方案使用的单个应用程序的显式路由。 但是，您应尝试避免设置路由的做法`Order`生产应用中。
+
+Razor 页面路由和 MVC 控制器路由共享实现。 路由顺序 MVC 主题中的信息位于[路由到控制器操作： 对属性路由排序](xref:mvc/controllers/routing#ordering-attribute-routes)。
+
 ## <a name="model-conventions"></a>模型约定
 
 为 [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) 添加委托，以添加应用于 Razor 页面的[模型约定](xref:mvc/controllers/application-model#conventions)。
@@ -81,8 +101,13 @@ public void ConfigureServices(IServiceCollection services)
 
 [!code-csharp[](razor-pages-conventions/sample/Conventions/GlobalTemplatePageRouteModelConvention.cs?name=snippet1)]
 
-> [!NOTE]
-> `AttributeRouteModel` 的 `Order` 属性设置为 `-1`。 这确保了当提供单个路由值时，该模板被赋予第一个路由数据值位置的优先级，并且它将优先于自动生成的 Razor 页面路由。 例如，示例在本主题的后面部分添加了一个 `{aboutTemplate?}` 路由模板。 为 `{aboutTemplate?}` 模板指定的 `Order` 为 `1`。 当在 `/About/RouteDataValue` 中请求“关于”页面时，由于设置了 `Order` 属性，“RouteDataValue”会加载到 `RouteData.Values["globalTemplate"]` (`Order = -1`) 而不是 `RouteData.Values["aboutTemplate"]` (`Order = 1`) 中。
+<xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel> 的 <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*> 属性设置为 `1`。 这可确保匹配行为示例应用程序中的以下路由：
+
+* 路由模板`TheContactPage/{text?}`添加本主题后面。 联系人页面路由的默认顺序`null`(`Order = 0`)，因此它匹配之前`{globalTemplate?}`路由模板。
+* `{aboutTemplate?}`路由模板添加本主题后面。 为 `{aboutTemplate?}` 模板指定的 `Order` 为 `2`。 当在 `/About/RouteDataValue` 中请求“关于”页面时，由于设置了 `Order` 属性，“RouteDataValue”会加载到 `RouteData.Values["globalTemplate"]` (`Order = 1`) 而不是 `RouteData.Values["aboutTemplate"]` (`Order = 2`) 中。
+* `{otherPagesTemplate?}`路由模板添加本主题后面。 为 `{otherPagesTemplate?}` 模板指定的 `Order` 为 `2`。 中的任何页时*Pages/OtherPages*文件夹请求与路由参数 (例如， `/OtherPages/Page1/RouteDataValue`)，"RouteDataValue"加载到`RouteData.Values["globalTemplate"]`(`Order = 1`)，而不`RouteData.Values["otherPagesTemplate"]`(`Order = 2`)由于设置`Order`属性。
+
+如有可能，未设置`Order`，这会导致`Order = 0`。 依赖于路由，以选择正确的路由。
 
 将 MVC 添加到 `Startup.ConfigureServices` 中的服务集合时，会添加 Razor 页面选项，例如添加[约定](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions)。 有关示例，请参阅[示例应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/razor-pages/razor-pages-conventions/sample/)。
 
@@ -111,6 +136,7 @@ public void ConfigureServices(IServiceCollection services)
 ![“关于”页面的响应标头显示已添加 GlobalHeader。](razor-pages-conventions/_static/about-page-global-header.png)
 
 ::: moniker range=">= aspnetcore-2.1"
+
 **将处理程序模型约定添加到所有页面**
 
 使用[约定](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions)创建 [IPageHandlerModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipagehandlermodelconvention) 并将其添加到 [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) 实例集合中，这些实例将在页面处理程序模型构造过程中应用。
@@ -135,6 +161,7 @@ services.AddMvc()
             options.Conventions.Add(new GlobalPageHandlerModelConvention());
         });
 ```
+
 ::: moniker-end
 
 ## <a name="page-route-action-conventions"></a>页面路由操作约定
@@ -149,8 +176,9 @@ services.AddMvc()
 
 [!code-csharp[](razor-pages-conventions/sample/Startup.cs?name=snippet3)]
 
-> [!NOTE]
-> `AttributeRouteModel` 的 `Order` 属性设置为 `1`。 这样可确保，当提供单个路由值时，优先将 `{globalTemplate?}` 的模板（已在本主题的前面部分设置）作为第一个路由数据值位置。 如果在 `/OtherPages/Page1/RouteDataValue` 中请求 Page1 页面，由于设置了 `Order` 属性，“RouteDataValue”会加载到 `RouteData.Values["globalTemplate"]` (`Order = -1`) 而不是 `RouteData.Values["otherPagesTemplate"]` (`Order = 1`) 中。
+<xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel> 的 <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*> 属性设置为 `2`。 这可以保证的模板`{globalTemplate?}`(设置到主题中前面`1`) 提供单个路由值时，第一个路由数据值位置分配优先级。 如果在页*Pages/OtherPages*文件夹请求与路由参数值 (例如， `/OtherPages/Page1/RouteDataValue`)，"RouteDataValue"加载到`RouteData.Values["globalTemplate"]`(`Order = 1`)，而不`RouteData.Values["otherPagesTemplate"]`(`Order = 2`)由于设置`Order`属性。
+
+如有可能，未设置`Order`，这会导致`Order = 0`。 依赖于路由，以选择正确的路由。
 
 在 `localhost:5000/OtherPages/Page1/GlobalRouteValue/OtherPagesRouteValue` 中请求示例的 Page1 页面并检查结果：
 
@@ -164,8 +192,9 @@ services.AddMvc()
 
 [!code-csharp[](razor-pages-conventions/sample/Startup.cs?name=snippet4)]
 
-> [!NOTE]
-> `AttributeRouteModel` 的 `Order` 属性设置为 `1`。 这样可确保，当提供单个路由值时，优先将 `{globalTemplate?}` 的模板（已在本主题的前面部分设置）作为第一个路由数据值位置。 如果在 `/About/RouteDataValue` 中请求“关于”页面，由于设置了 `Order` 属性，“RouteDataValue”会加载到 `RouteData.Values["globalTemplate"]` (`Order = -1`) 而不是 `RouteData.Values["aboutTemplate"]` (`Order = 1`) 中。
+<xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel> 的 <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*> 属性设置为 `2`。 这可以保证的模板`{globalTemplate?}`(设置到主题中前面`1`) 提供单个路由值时，第一个路由数据值位置分配优先级。 如果使用路由参数值在请求关于页面`/About/RouteDataValue`，"RouteDataValue"加载到`RouteData.Values["globalTemplate"]`(`Order = 1`)，而不`RouteData.Values["aboutTemplate"]`(`Order = 2`) 因设置而`Order`属性。
+
+如有可能，未设置`Order`，这会导致`Order = 0`。 依赖于路由，以选择正确的路由。
 
 在 `localhost:5000/About/GlobalRouteValue/AboutRouteValue` 中请求示例的“关于”页面并检查结果：
 

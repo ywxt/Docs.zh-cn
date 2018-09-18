@@ -5,12 +5,12 @@ description: 将标识与 ASP.NET Core 应用配合使用。 了解如何设置�
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: af07adcc7f9513845bb91eb233f0a9840e1bd6f4
-ms.sourcegitcommit: 4db337bd47d70c06fff91000c58bc048a491ccec
+ms.openlocfilehash: ca83d07f7d93bd0cc61cd17cc373096b8e6aa2e1
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44749303"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010970"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core 上的标识简介
 
@@ -143,6 +143,7 @@ PowerShell 使用分号作为命令分隔符。 使用 PowerShell 时，转义�
    [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Register.cshtml.cs?name=snippet&highlight=7,22)]
 
 ::: moniker-end
+
 ::: moniker range="= aspnetcore-2.0"
 
    当用户单击**注册**链接，链接`Register`上调用操作`AccountController`。 `Register`操作将创建用户，通过调用`CreateAsync`上`_userManager`对象 (提供给`AccountController`通过依赖关系注入):
@@ -171,6 +172,7 @@ PowerShell 使用分号作为命令分隔符。 使用 PowerShell 时，转义�
    基`Controller`类公开`User`，可以从控制器方法访问的属性。 例如，可以枚举`User.Claims`和做出授权决定。 有关详细信息，请参阅[授权](xref:security/authorization/index)。
 
 ::: moniker-end
+
 ::: moniker range="= aspnetcore-2.0"
 
 当用户选择时，将显示登录窗体**登录**访问要求进行身份验证的页面时将被重定向或链接。 当用户提交窗体上的登录页中， `AccountController` `Login`调用操作。
@@ -198,12 +200,15 @@ PowerShell 使用分号作为命令分隔符。 使用 PowerShell 时，转义�
 [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/_LoginPartial.cshtml?highlight=10)]
 
 ::: moniker-end
+
 ::: moniker range="= aspnetcore-2.0"
+
    单击**注销**链接调用`LogOut`操作。
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_logout&highlight=7)]
 
    上述代码调用`_signInManager.SignOutAsync`方法。 `SignOutAsync`方法将清除用户的声明存储在 cookie 中。
+
 ::: moniker-end
 
 ## <a name="test-identity"></a>测试标识
@@ -230,6 +235,7 @@ PowerShell 使用分号作为命令分隔符。 使用 PowerShell 时，转义�
 ::: moniker range=">= aspnetcore-2.1"
 
 中包含所有标识依赖 NuGet 包[Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)。
+
 ::: moniker-end
 
 标识将主包是[Microsoft.AspNetCore.Identity](https://www.nuget.org/packages/Microsoft.AspNetCore.Identity/)。 此包包含 ASP.NET Core 标识的核心接口集，是 `Microsoft.AspNetCore.Identity.EntityFrameworkCore` 提供的。
