@@ -8,12 +8,12 @@ ms.date: 02/25/2014
 ms.assetid: 66a837e9-600b-4b72-97a9-19804231c64a
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 697e7e91ae2d9d5712d9306a291635793063117b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 02805eda4f8dceb467547fa4e00aef8ea956f228
+ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831089"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46292279"
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>在 ASP.NET Web API 2 中进行跟踪
 ====================
@@ -114,7 +114,7 @@ Microsoft.AspNet.WebApi.Tracing 包是基于 Web API 中的更多常规跟踪基
 
 ## <a name="how-web-api-tracing-works"></a>Web API 跟踪的工作原理
 
-在使用中的 Web API 使用的 Web API 中进行跟踪*外观*模式： 启用跟踪后，Web API 包装包含执行跟踪调用的类的请求管道的各个部分。
+使用 Web API 中的跟踪*外观*模式： 启用跟踪后，Web API 包装包含执行跟踪调用的类的请求管道的各个部分。
 
 例如，当选择一个控制器，该管道将使用**IHttpControllerSelector**接口。 启用跟踪，管道将插入实现的类**IHttpControllerSelector**但真正的实现通过调用：
 
