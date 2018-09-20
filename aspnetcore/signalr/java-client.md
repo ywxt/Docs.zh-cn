@@ -7,12 +7,12 @@ ms.author: mimengis
 ms.custom: mvc
 ms.date: 09/06/2018
 uid: signalr/java-client
-ms.openlocfilehash: f110f5391ac34f5cb4a72f64c16d86c8a37369a2
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: 0eba59a05ea6fd3fed46fcab86ac20caf40ebb65
+ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43995409"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46482913"
 ---
 # <a name="aspnet-core-signalr-java-client"></a>ASP.NET Core SignalR Java 客户端
 
@@ -26,12 +26,12 @@ Java 客户端，包括 Android 应用程序的 Java 代码中连接到 ASP.NET 
 
 ## <a name="install-the-signalr-java-client-package"></a>SignalR Java 客户端程序包安装
 
-*Signalr 0.1.0-preview1 35029* JAR 文件允许客户端连接到 SignalR 集线器。 若要查找最新的 JAR 文件版本号，请参阅[Maven 搜索结果](https://search.maven.org/search?q=g:com.microsoft.aspnet%20AND%20a:signalr&core=gav)。
+*Signalr 0.1.0-preview2 35174* JAR 文件允许客户端连接到 SignalR 集线器。 若要查找最新的 JAR 文件版本号，请参阅[Maven 搜索结果](https://search.maven.org/search?q=g:com.microsoft.aspnet%20AND%20a:signalr&core=gav)。
 
 如果使用 Gradle，添加下面的代码行`dependencies`一部分您*build.gradle*文件：
 
 ```gradle
-implementation 'com.microsoft.aspnet:signalr:0.1.0-preview1-35029'
+implementation 'com.microsoft.aspnet:signalr:0.1.0-preview2-35174'
 ```
 
 如果使用 Maven，添加以下行`<dependencies>`的元素在*pom.xml*文件：
@@ -63,12 +63,12 @@ implementation 'com.microsoft.aspnet:signalr:0.1.0-preview1-35029'
 * 只有基元类型可以作为参数接受和返回类型。
 * Api 是同步的。
 * 在此时间支持"发送"的调用类型。 "调用"和流式处理的返回值不受支持。
-* 当前不支持客户端[Azure SignalR 服务](/azure/azure-signalr/)。
 * 支持仅 JSON 协议。
 * 支持仅 Websocket 传输。
 
 ## <a name="additional-resources"></a>其他资源
 
+* [Java API 参考](/java/api/com.microsoft.aspnet.signalr?view=aspnet-signalr-java)
 * <xref:signalr/hubs>
 * <xref:signalr/javascript-client>
 * <xref:signalr/publish-to-azure-web-app>

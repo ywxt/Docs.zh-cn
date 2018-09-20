@@ -4,14 +4,14 @@ author: rick-anderson
 description: 了解如何在 ASP.NET Core 中的内存中缓存数据。
 ms.author: riande
 ms.custom: mvc
-ms.date: 7/22/2018
+ms.date: 09/15/2018
 uid: performance/caching/memory
-ms.openlocfilehash: 091d00ca7a30b61bdd83618e055bf23e0f2753c4
-ms.sourcegitcommit: 67a0a04ebb3b21c826e5b9600bacfc897abd6a46
+ms.openlocfilehash: 2570ad7d939d67530b3de8cd0147815c2e25ecc8
+ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42899839"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46482978"
 ---
 # <a name="cache-in-memory-in-aspnet-core"></a>缓存在内存中 ASP.NET Core
 
@@ -31,7 +31,19 @@ Web 场中的非粘性会话需要[分布式缓存](distributed.md)以避免缓�
 
 内存中缓存可以存储任何对象；分布式缓存接口仅限于`byte[]`。
 
-### <a name="cache-guidelines"></a>缓存指南
+## <a name="systemruntimecachingmemorycache"></a>System.Runtime.Caching/MemoryCache
+
+<xref:System.Runtime.Caching>/<xref:System.Runtime.Caching.MemoryCache> ([NuGet 包](https://www.nuget.org/packages/System.Runtime.Caching/)) 可用于：
+
+* .NET standard 2.0 或更高版本。
+* 任何[.NET 实现](/dotnet/standard/net-standard#net-implementation-support)面向.NET Standard 2.0 或更高版本。 例如，ASP.NET Core 2.0 或更高版本。
+* .NET framework 4.5 或更高版本。
+
+[Microsoft.Extensions.Caching.Memory](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Memory/) / `IMemoryCache` （本主题中所述） 建议`System.Runtime.Caching` / `MemoryCache`由于它更好地集成到 ASP.NET Core。 例如，`IMemoryCache`适用于 ASP.NET Core 的本机[依赖关系注入](xref:fundamentals/dependency-injection)。
+
+使用`System.Runtime.Caching` / `MemoryCache`起到桥梁兼容性时将从 ASP.NET 代码移植到 ASP.NET Core 4.x。
+
+## <a name="cache-guidelines"></a>缓存指南
 
 * 代码应始终具有一个回退选项，以提取数据并**不**取决于可用的已缓存值。
 * 缓存使用稀缺资源，内存。 限制缓存增长：
