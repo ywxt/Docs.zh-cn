@@ -173,10 +173,10 @@ public void Configure(IApplicationBuilder app)
 
 | 请求             | 响应                     |
 | ------------------- | ---------------------------- |
-| localhost:1234      | 来自非 Map 委托的 Hello。 |
-| localhost:1234/map1 | Map 测试 1                   |
-| localhost:1234/map2 | Map 测试 2                   |
-| localhost:1234/map3 | 来自非 Map 委托的 Hello。 |
+| localhost:1234      | Hello from non-Map delegate.  |
+| localhost:1234/map1 | Map Test 1                   |
+| localhost:1234/map2 | Map Test 2                   |
+| localhost:1234/map3 | Hello from non-Map delegate. |
 
 使用 `Map` 时，将从 `HttpRequest.Path` 中删除匹配的线段，并针对每个请求将该线段追加到 `HttpRequest.PathBase`。
 
@@ -188,8 +188,8 @@ public void Configure(IApplicationBuilder app)
 
 | 请求                       | 响应                     |
 | ----------------------------- | ---------------------------- |
-| localhost:1234                | 来自非 Map 委托的 Hello。 |
-| localhost:1234/?branch=master | 使用的分支 = 主要分支         |
+| localhost:1234                | Hello from non-Map delegate. |
+| localhost:1234/?branch=master | Branch used = master         |
 
 `Map` 支持嵌套，例如：
 
