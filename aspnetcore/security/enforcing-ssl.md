@@ -5,91 +5,91 @@ description: 演示如何要求在 ASP.NET Core HTTPS/TLS web 应用。
 ms.author: riande
 ms.date: 2/9/2018
 uid: security/enforcing-ssl
-ms.openlocfilehash: 06ff89d30fb3586c69274cc7cb3e6c75065b098a
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 6e16191b1a4627e683fd2281e5556b2a6e84c082
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011321"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523137"
 ---
-# <a name="enforce-https-in-aspnet-core"></a><span data-ttu-id="81871-103">强制实施 HTTPS 在 ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="81871-103">Enforce HTTPS in ASP.NET Core</span></span>
+# <a name="enforce-https-in-aspnet-core"></a><span data-ttu-id="e421c-103">强制实施 HTTPS 在 ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="e421c-103">Enforce HTTPS in ASP.NET Core</span></span>
 
-<span data-ttu-id="81871-104">作者：[Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="81871-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="e421c-104">作者：[Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="e421c-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="81871-105">本文档演示如何：</span><span class="sxs-lookup"><span data-stu-id="81871-105">This document shows how to:</span></span>
+<span data-ttu-id="e421c-105">本文档演示如何：</span><span class="sxs-lookup"><span data-stu-id="e421c-105">This document shows how to:</span></span>
 
-* <span data-ttu-id="81871-106">要求所有请求使用 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="81871-106">Require HTTPS for all requests.</span></span>
-* <span data-ttu-id="81871-107">将所有 HTTP 请求重都定向到 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="81871-107">Redirect all HTTP requests to HTTPS.</span></span>
+* <span data-ttu-id="e421c-106">要求所有请求使用 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="e421c-106">Require HTTPS for all requests.</span></span>
+* <span data-ttu-id="e421c-107">将所有 HTTP 请求重都定向到 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="e421c-107">Redirect all HTTP requests to HTTPS.</span></span>
 
-<span data-ttu-id="81871-108">没有 API 可以防止客户端上的第一个请求发送敏感数据。</span><span class="sxs-lookup"><span data-stu-id="81871-108">No API can prevent a client from sending sensitive data on the first request.</span></span>
+<span data-ttu-id="e421c-108">没有 API 可以防止客户端上的第一个请求发送敏感数据。</span><span class="sxs-lookup"><span data-stu-id="e421c-108">No API can prevent a client from sending sensitive data on the first request.</span></span>
 
 > [!WARNING]
-> <span data-ttu-id="81871-109">不要**不**使用[RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute)接收敏感信息的 Web api。</span><span class="sxs-lookup"><span data-stu-id="81871-109">Do **not** use [RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute) on Web APIs that receive sensitive information.</span></span> <span data-ttu-id="81871-110">`RequireHttpsAttribute` 使用 HTTP 状态代码将从 HTTP 到 HTTPS 的浏览器重定向。</span><span class="sxs-lookup"><span data-stu-id="81871-110">`RequireHttpsAttribute` uses HTTP status codes to redirect browsers from HTTP to HTTPS.</span></span> <span data-ttu-id="81871-111">API 客户端可能无法理解或遵循从 HTTP 到 HTTPS 的重定向。</span><span class="sxs-lookup"><span data-stu-id="81871-111">API clients may not understand or obey redirects from HTTP to HTTPS.</span></span> <span data-ttu-id="81871-112">此类客户端可能会通过 HTTP 发送的信息。</span><span class="sxs-lookup"><span data-stu-id="81871-112">Such clients may send information over HTTP.</span></span> <span data-ttu-id="81871-113">Web Api 应具有下列任一：</span><span class="sxs-lookup"><span data-stu-id="81871-113">Web APIs should either:</span></span>
+> <span data-ttu-id="e421c-109">不要**不**使用[RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute)接收敏感信息的 Web api。</span><span class="sxs-lookup"><span data-stu-id="e421c-109">Do **not** use [RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute) on Web APIs that receive sensitive information.</span></span> <span data-ttu-id="e421c-110">`RequireHttpsAttribute` 使用 HTTP 状态代码将从 HTTP 到 HTTPS 的浏览器重定向。</span><span class="sxs-lookup"><span data-stu-id="e421c-110">`RequireHttpsAttribute` uses HTTP status codes to redirect browsers from HTTP to HTTPS.</span></span> <span data-ttu-id="e421c-111">API 客户端可能无法理解或遵循从 HTTP 到 HTTPS 的重定向。</span><span class="sxs-lookup"><span data-stu-id="e421c-111">API clients may not understand or obey redirects from HTTP to HTTPS.</span></span> <span data-ttu-id="e421c-112">此类客户端可能会通过 HTTP 发送的信息。</span><span class="sxs-lookup"><span data-stu-id="e421c-112">Such clients may send information over HTTP.</span></span> <span data-ttu-id="e421c-113">Web Api 应具有下列任一：</span><span class="sxs-lookup"><span data-stu-id="e421c-113">Web APIs should either:</span></span>
 >
-> * <span data-ttu-id="81871-114">不侦听 HTTP。</span><span class="sxs-lookup"><span data-stu-id="81871-114">Not listen on HTTP.</span></span>
-> * <span data-ttu-id="81871-115">关闭与状态代码 400 （错误请求） 的连接并不为请求提供服务。</span><span class="sxs-lookup"><span data-stu-id="81871-115">Close the connection with status code 400 (Bad Request) and not serve the request.</span></span>
+> * <span data-ttu-id="e421c-114">不侦听 HTTP。</span><span class="sxs-lookup"><span data-stu-id="e421c-114">Not listen on HTTP.</span></span>
+> * <span data-ttu-id="e421c-115">关闭与状态代码 400 （错误请求） 的连接并不为请求提供服务。</span><span class="sxs-lookup"><span data-stu-id="e421c-115">Close the connection with status code 400 (Bad Request) and not serve the request.</span></span>
 
 <a name="require"></a>
-## <a name="require-https"></a><span data-ttu-id="81871-116">要求使用 HTTPS</span><span class="sxs-lookup"><span data-stu-id="81871-116">Require HTTPS</span></span>
+## <a name="require-https"></a><span data-ttu-id="e421c-116">要求使用 HTTPS</span><span class="sxs-lookup"><span data-stu-id="e421c-116">Require HTTPS</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="81871-117">我们建议所有生产 ASP.NET Core web 应用调用：</span><span class="sxs-lookup"><span data-stu-id="81871-117">We recommend all production ASP.NET Core web apps call:</span></span>
+<span data-ttu-id="e421c-117">我们建议所有生产 ASP.NET Core web 应用调用：</span><span class="sxs-lookup"><span data-stu-id="e421c-117">We recommend all production ASP.NET Core web apps call:</span></span>
 
-* <span data-ttu-id="81871-118">HTTPS 重定向中间件 ([UseHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpspolicybuilderextensions.usehttpsredirection)) 所有 HTTP 请求重定向到 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="81871-118">The HTTPS Redirection Middleware ([UseHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpspolicybuilderextensions.usehttpsredirection)) to redirect all HTTP requests to HTTPS.</span></span>
-* <span data-ttu-id="81871-119">[UseHsts](#hsts)，HTTP 严格传输安全协议 (HSTS)。</span><span class="sxs-lookup"><span data-stu-id="81871-119">[UseHsts](#hsts), HTTP Strict Transport Security Protocol (HSTS).</span></span>
+* <span data-ttu-id="e421c-118">HTTPS 重定向中间件 ([UseHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpspolicybuilderextensions.usehttpsredirection)) 所有 HTTP 请求重定向到 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="e421c-118">The HTTPS Redirection Middleware ([UseHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpspolicybuilderextensions.usehttpsredirection)) to redirect all HTTP requests to HTTPS.</span></span>
+* <span data-ttu-id="e421c-119">[UseHsts](#hsts)，HTTP 严格传输安全协议 (HSTS)。</span><span class="sxs-lookup"><span data-stu-id="e421c-119">[UseHsts](#hsts), HTTP Strict Transport Security Protocol (HSTS).</span></span>
 
-### <a name="usehttpsredirection"></a><span data-ttu-id="81871-120">UseHttpsRedirection</span><span class="sxs-lookup"><span data-stu-id="81871-120">UseHttpsRedirection</span></span>
+### <a name="usehttpsredirection"></a><span data-ttu-id="e421c-120">UseHttpsRedirection</span><span class="sxs-lookup"><span data-stu-id="e421c-120">UseHttpsRedirection</span></span>
 
-<span data-ttu-id="81871-121">下面的代码调用`UseHttpsRedirection`在`Startup`类：</span><span class="sxs-lookup"><span data-stu-id="81871-121">The following code calls `UseHttpsRedirection` in the `Startup` class:</span></span>
+<span data-ttu-id="e421c-121">下面的代码调用`UseHttpsRedirection`在`Startup`类：</span><span class="sxs-lookup"><span data-stu-id="e421c-121">The following code calls `UseHttpsRedirection` in the `Startup` class:</span></span>
 
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet1&highlight=13)]
 
-<span data-ttu-id="81871-122">前面突出显示的代码：</span><span class="sxs-lookup"><span data-stu-id="81871-122">The preceding highlighted code:</span></span>
+<span data-ttu-id="e421c-122">前面突出显示的代码：</span><span class="sxs-lookup"><span data-stu-id="e421c-122">The preceding highlighted code:</span></span>
 
-* <span data-ttu-id="81871-123">使用默认[HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) (`Status307TemporaryRedirect`)。</span><span class="sxs-lookup"><span data-stu-id="81871-123">Uses the default [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) (`Status307TemporaryRedirect`).</span></span>
-* <span data-ttu-id="81871-124">使用默认[HttpsRedirectionOptions.HttpsPort](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.httpsport)除非被重写 (null)`ASPNETCORE_HTTPS_PORT`环境变量或[IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature)。</span><span class="sxs-lookup"><span data-stu-id="81871-124">Uses the default [HttpsRedirectionOptions.HttpsPort](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.httpsport) (null) unless overridden by the `ASPNETCORE_HTTPS_PORT` environment variable or [IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature).</span></span>
+* <span data-ttu-id="e421c-123">使用默认[HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) (`Status307TemporaryRedirect`)。</span><span class="sxs-lookup"><span data-stu-id="e421c-123">Uses the default [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) (`Status307TemporaryRedirect`).</span></span>
+* <span data-ttu-id="e421c-124">使用默认[HttpsRedirectionOptions.HttpsPort](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.httpsport)除非被重写 (null)`ASPNETCORE_HTTPS_PORT`环境变量或[IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature)。</span><span class="sxs-lookup"><span data-stu-id="e421c-124">Uses the default [HttpsRedirectionOptions.HttpsPort](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.httpsport) (null) unless overridden by the `ASPNETCORE_HTTPS_PORT` environment variable or [IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature).</span></span>
 
 > [!WARNING] 
-><span data-ttu-id="81871-125">端口必须是可用于中间件重定向到 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="81871-125">A port must be available for the middleware to redirect to HTTPS.</span></span> <span data-ttu-id="81871-126">如果没有端口不可用，则不会发生重定向到 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="81871-126">If no port is available, redirection to HTTPS does not occur.</span></span> <span data-ttu-id="81871-127">可以通过任何以下设置指定 HTTPS 端口：</span><span class="sxs-lookup"><span data-stu-id="81871-127">The HTTPS port can be specified by any of the following setting:</span></span>
+><span data-ttu-id="e421c-125">端口必须是可用于中间件重定向到 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="e421c-125">A port must be available for the middleware to redirect to HTTPS.</span></span> <span data-ttu-id="e421c-126">如果没有端口不可用，则不会发生重定向到 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="e421c-126">If no port is available, redirection to HTTPS does not occur.</span></span> <span data-ttu-id="e421c-127">可以通过任何以下设置指定 HTTPS 端口：</span><span class="sxs-lookup"><span data-stu-id="e421c-127">The HTTPS port can be specified by any of the following setting:</span></span>
 > 
 >* `HttpsRedirectionOptions.HttpsPort` 
->* <span data-ttu-id="81871-128">`ASPNETCORE_HTTPS_PORT`环境变量。</span><span class="sxs-lookup"><span data-stu-id="81871-128">The `ASPNETCORE_HTTPS_PORT` environment variable.</span></span> 
->* <span data-ttu-id="81871-129">在开发中，在 HTTPS url *launchsettings.json*。</span><span class="sxs-lookup"><span data-stu-id="81871-129">In development, an HTTPS url in *launchsettings.json*.</span></span> 
->* <span data-ttu-id="81871-130">直接在 Kestrel 或 HttpSys 上配置 HTTPS url。</span><span class="sxs-lookup"><span data-stu-id="81871-130">An HTTPS url configured directly on Kestrel or HttpSys.</span></span> 
+>* <span data-ttu-id="e421c-128">`ASPNETCORE_HTTPS_PORT`环境变量。</span><span class="sxs-lookup"><span data-stu-id="e421c-128">The `ASPNETCORE_HTTPS_PORT` environment variable.</span></span> 
+>* <span data-ttu-id="e421c-129">在开发中，在 HTTPS url *launchsettings.json*。</span><span class="sxs-lookup"><span data-stu-id="e421c-129">In development, an HTTPS url in *launchsettings.json*.</span></span> 
+>* <span data-ttu-id="e421c-130">直接在 Kestrel 或 HttpSys 上配置 HTTPS url。</span><span class="sxs-lookup"><span data-stu-id="e421c-130">An HTTPS url configured directly on Kestrel or HttpSys.</span></span> 
 
-<span data-ttu-id="81871-131">以下突出显示的代码调用[AddHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpsredirectionservicesextensions.addhttpsredirection)配置中间件选项：</span><span class="sxs-lookup"><span data-stu-id="81871-131">The following highlighted code calls [AddHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpsredirectionservicesextensions.addhttpsredirection) to configure middleware options:</span></span>
+<span data-ttu-id="e421c-131">以下突出显示的代码调用[AddHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpsredirectionservicesextensions.addhttpsredirection)配置中间件选项：</span><span class="sxs-lookup"><span data-stu-id="e421c-131">The following highlighted code calls [AddHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpsredirectionservicesextensions.addhttpsredirection) to configure middleware options:</span></span>
 
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet2&highlight=14-99)]
 
-<span data-ttu-id="81871-132">调用`AddHttpsRedirection`只是用来更改的值` HttpsPort`或` RedirectStatusCode`;</span><span class="sxs-lookup"><span data-stu-id="81871-132">Calling `AddHttpsRedirection` is only necessary to change the values of ` HttpsPort` or ` RedirectStatusCode`;</span></span>
+<span data-ttu-id="e421c-132">调用`AddHttpsRedirection`只是用来更改的值` HttpsPort`或` RedirectStatusCode`;</span><span class="sxs-lookup"><span data-stu-id="e421c-132">Calling `AddHttpsRedirection` is only necessary to change the values of ` HttpsPort` or ` RedirectStatusCode`;</span></span>
 
-<span data-ttu-id="81871-133">前面突出显示的代码：</span><span class="sxs-lookup"><span data-stu-id="81871-133">The preceding highlighted code:</span></span>
+<span data-ttu-id="e421c-133">前面突出显示的代码：</span><span class="sxs-lookup"><span data-stu-id="e421c-133">The preceding highlighted code:</span></span>
 
-* <span data-ttu-id="81871-134">集[HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode)到`Status307TemporaryRedirect`，这是默认值。</span><span class="sxs-lookup"><span data-stu-id="81871-134">Sets [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) to `Status307TemporaryRedirect`, which is the default value.</span></span>
-* <span data-ttu-id="81871-135">设置 HTTPS 端口为 5001。</span><span class="sxs-lookup"><span data-stu-id="81871-135">Sets the HTTPS port to 5001.</span></span> <span data-ttu-id="81871-136">默认值为 443。</span><span class="sxs-lookup"><span data-stu-id="81871-136">The default value is 443.</span></span>
+* <span data-ttu-id="e421c-134">集[HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode)到`Status307TemporaryRedirect`，这是默认值。</span><span class="sxs-lookup"><span data-stu-id="e421c-134">Sets [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) to `Status307TemporaryRedirect`, which is the default value.</span></span>
+* <span data-ttu-id="e421c-135">设置 HTTPS 端口为 5001。</span><span class="sxs-lookup"><span data-stu-id="e421c-135">Sets the HTTPS port to 5001.</span></span> <span data-ttu-id="e421c-136">默认值为 443。</span><span class="sxs-lookup"><span data-stu-id="e421c-136">The default value is 443.</span></span>
 
-<span data-ttu-id="81871-137">以下机制自动设置端口：</span><span class="sxs-lookup"><span data-stu-id="81871-137">The following mechanisms set the port automatically:</span></span>
+<span data-ttu-id="e421c-137">以下机制自动设置端口：</span><span class="sxs-lookup"><span data-stu-id="e421c-137">The following mechanisms set the port automatically:</span></span>
 
-* <span data-ttu-id="81871-138">中间件可以发现通过端口[IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature)时满足以下条件：</span><span class="sxs-lookup"><span data-stu-id="81871-138">The middleware can discover the ports via [IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature) when the following conditions apply:</span></span>
+* <span data-ttu-id="e421c-138">中间件可以发现通过端口[IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature)时满足以下条件：</span><span class="sxs-lookup"><span data-stu-id="e421c-138">The middleware can discover the ports via [IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature) when the following conditions apply:</span></span>
 
-   * <span data-ttu-id="81871-139">Kestrel 或 HTTP.sys 直接与 HTTPS 终结点一起使用 （也适用于使用 Visual Studio Code 的调试器中运行应用程序）。</span><span class="sxs-lookup"><span data-stu-id="81871-139">Kestrel or HTTP.sys is used directly with HTTPS endpoints (also applies to running the app with Visual Studio Code's debugger).</span></span>
-   * <span data-ttu-id="81871-140">仅**一个 HTTPS 端口**应用使用。</span><span class="sxs-lookup"><span data-stu-id="81871-140">Only **one HTTPS port** is used by the app.</span></span>
+   * <span data-ttu-id="e421c-139">Kestrel 或 HTTP.sys 直接与 HTTPS 终结点一起使用 （也适用于使用 Visual Studio Code 的调试器中运行应用程序）。</span><span class="sxs-lookup"><span data-stu-id="e421c-139">Kestrel or HTTP.sys is used directly with HTTPS endpoints (also applies to running the app with Visual Studio Code's debugger).</span></span>
+   * <span data-ttu-id="e421c-140">仅**一个 HTTPS 端口**应用使用。</span><span class="sxs-lookup"><span data-stu-id="e421c-140">Only **one HTTPS port** is used by the app.</span></span>
 
-* <span data-ttu-id="81871-141">使用 visual Studio:</span><span class="sxs-lookup"><span data-stu-id="81871-141">Visual Studio is used:</span></span>
-   * <span data-ttu-id="81871-142">IIS Express 已启用 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="81871-142">IIS Express has HTTPS enabled.</span></span>
-   * <span data-ttu-id="81871-143">*launchSettings.json*设置`sslPort`IIS express。</span><span class="sxs-lookup"><span data-stu-id="81871-143">*launchSettings.json* sets the `sslPort` for IIS Express.</span></span>
+* <span data-ttu-id="e421c-141">使用 visual Studio:</span><span class="sxs-lookup"><span data-stu-id="e421c-141">Visual Studio is used:</span></span>
+   * <span data-ttu-id="e421c-142">IIS Express 已启用 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="e421c-142">IIS Express has HTTPS enabled.</span></span>
+   * <span data-ttu-id="e421c-143">*launchSettings.json*设置`sslPort`IIS express。</span><span class="sxs-lookup"><span data-stu-id="e421c-143">*launchSettings.json* sets the `sslPort` for IIS Express.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="81871-144">当应用程序运行时在反向代理 （例如，IIS，IIS Express），后面`IServerAddressesFeature`不可用。</span><span class="sxs-lookup"><span data-stu-id="81871-144">When an app is run behind a reverse proxy (for example, IIS, IIS Express), `IServerAddressesFeature` isn't available.</span></span> <span data-ttu-id="81871-145">必须手动配置端口。</span><span class="sxs-lookup"><span data-stu-id="81871-145">The port must be manually configured.</span></span> <span data-ttu-id="81871-146">如果端口未设置，请求不会重定向。</span><span class="sxs-lookup"><span data-stu-id="81871-146">When the port isn't set, requests aren't redirected.</span></span>
+> <span data-ttu-id="e421c-144">当应用程序运行时在反向代理 （例如，IIS，IIS Express），后面`IServerAddressesFeature`不可用。</span><span class="sxs-lookup"><span data-stu-id="e421c-144">When an app is run behind a reverse proxy (for example, IIS, IIS Express), `IServerAddressesFeature` isn't available.</span></span> <span data-ttu-id="e421c-145">必须手动配置端口。</span><span class="sxs-lookup"><span data-stu-id="e421c-145">The port must be manually configured.</span></span> <span data-ttu-id="e421c-146">如果端口未设置，请求不会重定向。</span><span class="sxs-lookup"><span data-stu-id="e421c-146">When the port isn't set, requests aren't redirected.</span></span>
 
-<span data-ttu-id="81871-147">可以通过设置配置端口[https_port Web 主机配置设置](xref:fundamentals/host/web-host#https-port):</span><span class="sxs-lookup"><span data-stu-id="81871-147">The port can be configured by setting the [https_port Web Host configuration setting](xref:fundamentals/host/web-host#https-port):</span></span>
+<span data-ttu-id="e421c-147">可以通过设置配置端口[https_port Web 主机配置设置](xref:fundamentals/host/web-host#https-port):</span><span class="sxs-lookup"><span data-stu-id="e421c-147">The port can be configured by setting the [https_port Web Host configuration setting](xref:fundamentals/host/web-host#https-port):</span></span>
 
-<span data-ttu-id="81871-148">**密钥**: https_port</span><span class="sxs-lookup"><span data-stu-id="81871-148">**Key**: https_port</span></span>  
-<span data-ttu-id="81871-149">**类型**：string</span><span class="sxs-lookup"><span data-stu-id="81871-149">**Type**: *string*</span></span>  
-<span data-ttu-id="81871-150">**默认**： 未设置默认值。</span><span class="sxs-lookup"><span data-stu-id="81871-150">**Default**: A default value isn't set.</span></span>  
-<span data-ttu-id="81871-151">**设置使用**：`UseSetting`</span><span class="sxs-lookup"><span data-stu-id="81871-151">**Set using**: `UseSetting`</span></span>  
-<span data-ttu-id="81871-152">**环境变量**: `<PREFIX_>HTTPS_PORT` (前缀是`ASPNETCORE_`使用 Web 主机时。)</span><span class="sxs-lookup"><span data-stu-id="81871-152">**Environment variable**: `<PREFIX_>HTTPS_PORT` (The prefix is `ASPNETCORE_` when using the Web Host.)</span></span>
+<span data-ttu-id="e421c-148">**密钥**: https_port</span><span class="sxs-lookup"><span data-stu-id="e421c-148">**Key**: https_port</span></span>  
+<span data-ttu-id="e421c-149">**类型**：string</span><span class="sxs-lookup"><span data-stu-id="e421c-149">**Type**: *string*</span></span>  
+<span data-ttu-id="e421c-150">**默认**： 未设置默认值。</span><span class="sxs-lookup"><span data-stu-id="e421c-150">**Default**: A default value isn't set.</span></span>  
+<span data-ttu-id="e421c-151">**设置使用**：`UseSetting`</span><span class="sxs-lookup"><span data-stu-id="e421c-151">**Set using**: `UseSetting`</span></span>  
+<span data-ttu-id="e421c-152">**环境变量**: `<PREFIX_>HTTPS_PORT` (前缀是`ASPNETCORE_`使用 Web 主机时。)</span><span class="sxs-lookup"><span data-stu-id="e421c-152">**Environment variable**: `<PREFIX_>HTTPS_PORT` (The prefix is `ASPNETCORE_` when using the Web Host.)</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -97,103 +97,101 @@ WebHost.CreateDefaultBuilder(args)
 ```
 
 > [!NOTE]
-> <span data-ttu-id="81871-153">可以通过设置与 URL 间接配置端口`ASPNETCORE_URLS`环境变量。</span><span class="sxs-lookup"><span data-stu-id="81871-153">The port can be configured indirectly by setting the URL with the `ASPNETCORE_URLS` environment variable.</span></span> <span data-ttu-id="81871-154">环境变量配置的服务器，，然后在中间件间接发现通过 HTTPS 端口`IServerAddressesFeature`。</span><span class="sxs-lookup"><span data-stu-id="81871-154">The environment variable configures the server, and then the middleware indirectly discovers the HTTPS port via `IServerAddressesFeature`.</span></span>
+> <span data-ttu-id="e421c-153">可以通过设置与 URL 间接配置端口`ASPNETCORE_URLS`环境变量。</span><span class="sxs-lookup"><span data-stu-id="e421c-153">The port can be configured indirectly by setting the URL with the `ASPNETCORE_URLS` environment variable.</span></span> <span data-ttu-id="e421c-154">环境变量配置的服务器，，然后在中间件间接发现通过 HTTPS 端口`IServerAddressesFeature`。</span><span class="sxs-lookup"><span data-stu-id="e421c-154">The environment variable configures the server, and then the middleware indirectly discovers the HTTPS port via `IServerAddressesFeature`.</span></span>
 
-<span data-ttu-id="81871-155">如果没有端口设置：</span><span class="sxs-lookup"><span data-stu-id="81871-155">If no port is set:</span></span>
+<span data-ttu-id="e421c-155">如果没有端口设置：</span><span class="sxs-lookup"><span data-stu-id="e421c-155">If no port is set:</span></span>
 
-* <span data-ttu-id="81871-156">请求不会重定向。</span><span class="sxs-lookup"><span data-stu-id="81871-156">Requests aren't redirected.</span></span>
-* <span data-ttu-id="81871-157">中间件将记录警告"无法确定重定向的 https 端口。"</span><span class="sxs-lookup"><span data-stu-id="81871-157">The middleware logs the warning "Failed to determine the https port for redirect."</span></span>
+* <span data-ttu-id="e421c-156">请求不会重定向。</span><span class="sxs-lookup"><span data-stu-id="e421c-156">Requests aren't redirected.</span></span>
+* <span data-ttu-id="e421c-157">中间件将记录警告"无法确定重定向的 https 端口。"</span><span class="sxs-lookup"><span data-stu-id="e421c-157">The middleware logs the warning "Failed to determine the https port for redirect."</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="81871-158">使用 HTTPS 重定向中间件的替代方法 (`UseHttpsRedirection`) 是使用 URL 重写中间件 (`AddRedirectToHttps`)。</span><span class="sxs-lookup"><span data-stu-id="81871-158">An alternative to using HTTPS Redirection Middleware (`UseHttpsRedirection`) is to use URL Rewriting Middleware (`AddRedirectToHttps`).</span></span> <span data-ttu-id="81871-159">`AddRedirectToHttps` 此外可以设置的状态代码和端口时执行重定向。</span><span class="sxs-lookup"><span data-stu-id="81871-159">`AddRedirectToHttps` can also set the status code and port when the redirect is executed.</span></span> <span data-ttu-id="81871-160">有关详细信息，请参阅[URL 重写中间件](xref:fundamentals/url-rewriting)。</span><span class="sxs-lookup"><span data-stu-id="81871-160">For more information, see [URL Rewriting Middleware](xref:fundamentals/url-rewriting).</span></span>
+> <span data-ttu-id="e421c-158">使用 HTTPS 重定向中间件的替代方法 (`UseHttpsRedirection`) 是使用 URL 重写中间件 (`AddRedirectToHttps`)。</span><span class="sxs-lookup"><span data-stu-id="e421c-158">An alternative to using HTTPS Redirection Middleware (`UseHttpsRedirection`) is to use URL Rewriting Middleware (`AddRedirectToHttps`).</span></span> <span data-ttu-id="e421c-159">`AddRedirectToHttps` 此外可以设置的状态代码和端口时执行重定向。</span><span class="sxs-lookup"><span data-stu-id="e421c-159">`AddRedirectToHttps` can also set the status code and port when the redirect is executed.</span></span> <span data-ttu-id="e421c-160">有关详细信息，请参阅[URL 重写中间件](xref:fundamentals/url-rewriting)。</span><span class="sxs-lookup"><span data-stu-id="e421c-160">For more information, see [URL Rewriting Middleware](xref:fundamentals/url-rewriting).</span></span>
 >
-> <span data-ttu-id="81871-161">当将重定向到 HTTPS 而无需其他重定向规则，我们建议使用 HTTPS 重定向中间件 (`UseHttpsRedirection`) 本主题中所述。</span><span class="sxs-lookup"><span data-stu-id="81871-161">When redirecting to HTTPS without the requirement for additional redirect rules, we recommend using HTTPS Redirection Middleware (`UseHttpsRedirection`) described in this topic.</span></span>
+> <span data-ttu-id="e421c-161">当将重定向到 HTTPS 而无需其他重定向规则，我们建议使用 HTTPS 重定向中间件 (`UseHttpsRedirection`) 本主题中所述。</span><span class="sxs-lookup"><span data-stu-id="e421c-161">When redirecting to HTTPS without the requirement for additional redirect rules, we recommend using HTTPS Redirection Middleware (`UseHttpsRedirection`) described in this topic.</span></span>
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.1"
 
-<span data-ttu-id="81871-162">[RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute)用于要求 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="81871-162">The [RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute) is used to require HTTPS.</span></span> <span data-ttu-id="81871-163">`[RequireHttpsAttribute]` 可以修饰控制器或方法，也可以全局应用。</span><span class="sxs-lookup"><span data-stu-id="81871-163">`[RequireHttpsAttribute]` can decorate controllers or methods, or can be applied globally.</span></span> <span data-ttu-id="81871-164">若要全局应用该属性，将以下代码添加到`ConfigureServices`在`Startup`:</span><span class="sxs-lookup"><span data-stu-id="81871-164">To apply the attribute globally, add the following code to `ConfigureServices` in `Startup`:</span></span>
+<span data-ttu-id="e421c-162">[RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute)用于要求 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="e421c-162">The [RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute) is used to require HTTPS.</span></span> <span data-ttu-id="e421c-163">`[RequireHttpsAttribute]` 可以修饰控制器或方法，也可以全局应用。</span><span class="sxs-lookup"><span data-stu-id="e421c-163">`[RequireHttpsAttribute]` can decorate controllers or methods, or can be applied globally.</span></span> <span data-ttu-id="e421c-164">若要全局应用该属性，将以下代码添加到`ConfigureServices`在`Startup`:</span><span class="sxs-lookup"><span data-stu-id="e421c-164">To apply the attribute globally, add the following code to `ConfigureServices` in `Startup`:</span></span>
 
 [!code-csharp[](~/security/authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet2&highlight=4-999)]
 
-<span data-ttu-id="81871-165">前面突出显示的代码要求所有请求都使用`HTTPS`; 因此，HTTP 请求将被忽略。</span><span class="sxs-lookup"><span data-stu-id="81871-165">The preceding highlighted code requires all requests use `HTTPS`; therefore, HTTP requests are ignored.</span></span> <span data-ttu-id="81871-166">以下突出显示的代码将所有 HTTP 请求重都定向到 HTTPS:</span><span class="sxs-lookup"><span data-stu-id="81871-166">The following highlighted code redirects all HTTP requests to HTTPS:</span></span>
+<span data-ttu-id="e421c-165">前面突出显示的代码要求所有请求都使用`HTTPS`; 因此，HTTP 请求将被忽略。</span><span class="sxs-lookup"><span data-stu-id="e421c-165">The preceding highlighted code requires all requests use `HTTPS`; therefore, HTTP requests are ignored.</span></span> <span data-ttu-id="e421c-166">以下突出显示的代码将所有 HTTP 请求重都定向到 HTTPS:</span><span class="sxs-lookup"><span data-stu-id="e421c-166">The following highlighted code redirects all HTTP requests to HTTPS:</span></span>
 
 [!code-csharp[](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet_AddRedirectToHttps&highlight=7-999)]
 
-<span data-ttu-id="81871-167">有关详细信息，请参阅[URL 重写中间件](xref:fundamentals/url-rewriting)。</span><span class="sxs-lookup"><span data-stu-id="81871-167">For more information, see [URL Rewriting Middleware](xref:fundamentals/url-rewriting).</span></span> <span data-ttu-id="81871-168">中间件还允许应用执行重定向时设置的状态代码或状态代码和端口。</span><span class="sxs-lookup"><span data-stu-id="81871-168">The middleware also permits the app to set the status code or the status code and the port when the redirect is executed.</span></span>
+<span data-ttu-id="e421c-167">有关详细信息，请参阅[URL 重写中间件](xref:fundamentals/url-rewriting)。</span><span class="sxs-lookup"><span data-stu-id="e421c-167">For more information, see [URL Rewriting Middleware](xref:fundamentals/url-rewriting).</span></span> <span data-ttu-id="e421c-168">中间件还允许应用执行重定向时设置的状态代码或状态代码和端口。</span><span class="sxs-lookup"><span data-stu-id="e421c-168">The middleware also permits the app to set the status code or the status code and the port when the redirect is executed.</span></span>
 
-<span data-ttu-id="81871-169">全局需要 HTTPS (`options.Filters.Add(new RequireHttpsAttribute());`) 是最佳安全方案。</span><span class="sxs-lookup"><span data-stu-id="81871-169">Requiring HTTPS globally (`options.Filters.Add(new RequireHttpsAttribute());`) is a security best practice.</span></span> <span data-ttu-id="81871-170">将应用`[RequireHttps]`属性设置为所有控制器/Razor 页面不会被视为与需要 HTTPS 全局一样安全。</span><span class="sxs-lookup"><span data-stu-id="81871-170">Applying the `[RequireHttps]` attribute to all controllers/Razor Pages isn't considered as secure as requiring HTTPS globally.</span></span> <span data-ttu-id="81871-171">不能保证`[RequireHttps]`时添加新的控制器和 Razor 页面应用属性。</span><span class="sxs-lookup"><span data-stu-id="81871-171">You can't guarantee the `[RequireHttps]` attribute is applied when new controllers and Razor Pages are added.</span></span>
+<span data-ttu-id="e421c-169">全局需要 HTTPS (`options.Filters.Add(new RequireHttpsAttribute());`) 是最佳安全方案。</span><span class="sxs-lookup"><span data-stu-id="e421c-169">Requiring HTTPS globally (`options.Filters.Add(new RequireHttpsAttribute());`) is a security best practice.</span></span> <span data-ttu-id="e421c-170">将应用`[RequireHttps]`属性设置为所有控制器/Razor 页面不会被视为与需要 HTTPS 全局一样安全。</span><span class="sxs-lookup"><span data-stu-id="e421c-170">Applying the `[RequireHttps]` attribute to all controllers/Razor Pages isn't considered as secure as requiring HTTPS globally.</span></span> <span data-ttu-id="e421c-171">不能保证`[RequireHttps]`时添加新的控制器和 Razor 页面应用属性。</span><span class="sxs-lookup"><span data-stu-id="e421c-171">You can't guarantee the `[RequireHttps]` attribute is applied when new controllers and Razor Pages are added.</span></span>
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
 
 <a name="hsts"></a>
-## <a name="http-strict-transport-security-protocol-hsts"></a><span data-ttu-id="81871-172">HTTP 严格传输安全协议 (HSTS)</span><span class="sxs-lookup"><span data-stu-id="81871-172">HTTP Strict Transport Security Protocol (HSTS)</span></span>
+## <a name="http-strict-transport-security-protocol-hsts"></a><span data-ttu-id="e421c-172">HTTP 严格传输安全协议 (HSTS)</span><span class="sxs-lookup"><span data-stu-id="e421c-172">HTTP Strict Transport Security Protocol (HSTS)</span></span>
 
-<span data-ttu-id="81871-173">每个[OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project)， [HTTP 严格传输安全性 (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet)是通过响应标头使用的 web 应用指定选择的安全增强功能。</span><span class="sxs-lookup"><span data-stu-id="81871-173">Per [OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project), [HTTP Strict Transport Security (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet) is an opt-in security enhancement that's specified by a web app through the use of a response header.</span></span> <span data-ttu-id="81871-174">当[浏览器支持 HSTS](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet#Browser_Support)收到此标头：</span><span class="sxs-lookup"><span data-stu-id="81871-174">When a [browser that supports HSTS](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet#Browser_Support) receives this header:</span></span>
+<span data-ttu-id="e421c-173">每个[OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project)， [HTTP 严格传输安全性 (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet)是通过响应标头使用的 web 应用指定选择的安全增强功能。</span><span class="sxs-lookup"><span data-stu-id="e421c-173">Per [OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project), [HTTP Strict Transport Security (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet) is an opt-in security enhancement that's specified by a web app through the use of a response header.</span></span> <span data-ttu-id="e421c-174">当[浏览器支持 HSTS](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet#Browser_Support)收到此标头：</span><span class="sxs-lookup"><span data-stu-id="e421c-174">When a [browser that supports HSTS](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet#Browser_Support) receives this header:</span></span>
 
-* <span data-ttu-id="81871-175">在浏览器将会阻止通过 HTTP 发送的任何通信的域的配置存储。</span><span class="sxs-lookup"><span data-stu-id="81871-175">The browser stores configuration for the domain that prevents sending any communication over HTTP.</span></span> <span data-ttu-id="81871-176">在浏览器强制通过 HTTPS 进行的所有通信。</span><span class="sxs-lookup"><span data-stu-id="81871-176">The browser forces all communication over HTTPS.</span></span>
-* <span data-ttu-id="81871-177">在浏览器可防止用户使用不受信任或无效的证书。</span><span class="sxs-lookup"><span data-stu-id="81871-177">The browser prevents the user from using untrusted or invalid certificates.</span></span> <span data-ttu-id="81871-178">在浏览器禁用允许用户暂时信任此证书的提示。</span><span class="sxs-lookup"><span data-stu-id="81871-178">The browser disables prompts that allow a user to temporarily trust such a certificate.</span></span>
+* <span data-ttu-id="e421c-175">在浏览器将会阻止通过 HTTP 发送的任何通信的域的配置存储。</span><span class="sxs-lookup"><span data-stu-id="e421c-175">The browser stores configuration for the domain that prevents sending any communication over HTTP.</span></span> <span data-ttu-id="e421c-176">在浏览器强制通过 HTTPS 进行的所有通信。</span><span class="sxs-lookup"><span data-stu-id="e421c-176">The browser forces all communication over HTTPS.</span></span>
+* <span data-ttu-id="e421c-177">在浏览器可防止用户使用不受信任或无效的证书。</span><span class="sxs-lookup"><span data-stu-id="e421c-177">The browser prevents the user from using untrusted or invalid certificates.</span></span> <span data-ttu-id="e421c-178">在浏览器禁用允许用户暂时信任此证书的提示。</span><span class="sxs-lookup"><span data-stu-id="e421c-178">The browser disables prompts that allow a user to temporarily trust such a certificate.</span></span>
 
-<span data-ttu-id="81871-179">因为由客户端强制执行 HSTS 它具有一些限制：</span><span class="sxs-lookup"><span data-stu-id="81871-179">Because HSTS is enforced by the client it has some limitations:</span></span>
+<span data-ttu-id="e421c-179">因为由客户端强制执行 HSTS 它具有一些限制：</span><span class="sxs-lookup"><span data-stu-id="e421c-179">Because HSTS is enforced by the client it has some limitations:</span></span>
 
-* <span data-ttu-id="81871-180">客户端必须支持 HSTS。</span><span class="sxs-lookup"><span data-stu-id="81871-180">The client must support HSTS.</span></span>
-* <span data-ttu-id="81871-181">HSTS 要求至少一个成功的 HTTPS 请求能够建立 HSTS 策略。</span><span class="sxs-lookup"><span data-stu-id="81871-181">HSTS requires at least one successful HTTPS request to establish the HSTS policy.</span></span>
-* <span data-ttu-id="81871-182">应用程序必须检查每个 HTTP 请求和重定向或拒绝的 HTTP 请求。</span><span class="sxs-lookup"><span data-stu-id="81871-182">The application must check every HTTP request and redirect or reject the HTTP request.</span></span>
+* <span data-ttu-id="e421c-180">客户端必须支持 HSTS。</span><span class="sxs-lookup"><span data-stu-id="e421c-180">The client must support HSTS.</span></span>
+* <span data-ttu-id="e421c-181">HSTS 要求至少一个成功的 HTTPS 请求能够建立 HSTS 策略。</span><span class="sxs-lookup"><span data-stu-id="e421c-181">HSTS requires at least one successful HTTPS request to establish the HSTS policy.</span></span>
+* <span data-ttu-id="e421c-182">应用程序必须检查每个 HTTP 请求和重定向或拒绝的 HTTP 请求。</span><span class="sxs-lookup"><span data-stu-id="e421c-182">The application must check every HTTP request and redirect or reject the HTTP request.</span></span>
 
-<span data-ttu-id="81871-183">ASP.NET Core 2.1 或更高版本实现与 HSTS`UseHsts`扩展方法。</span><span class="sxs-lookup"><span data-stu-id="81871-183">ASP.NET Core 2.1 or later implements HSTS with the `UseHsts` extension method.</span></span> <span data-ttu-id="81871-184">下面的代码调用`UseHsts`时应用不在[开发模式](xref:fundamentals/environments):</span><span class="sxs-lookup"><span data-stu-id="81871-184">The following code calls `UseHsts` when the app isn't in [development mode](xref:fundamentals/environments):</span></span>
+<span data-ttu-id="e421c-183">ASP.NET Core 2.1 或更高版本实现与 HSTS`UseHsts`扩展方法。</span><span class="sxs-lookup"><span data-stu-id="e421c-183">ASP.NET Core 2.1 or later implements HSTS with the `UseHsts` extension method.</span></span> <span data-ttu-id="e421c-184">下面的代码调用`UseHsts`时应用不在[开发模式](xref:fundamentals/environments):</span><span class="sxs-lookup"><span data-stu-id="e421c-184">The following code calls `UseHsts` when the app isn't in [development mode](xref:fundamentals/environments):</span></span>
 
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet1&highlight=10)]
 
-<span data-ttu-id="81871-185">`UseHsts` 不建议在开发过程中由于 HSTS 设置高度可缓存的浏览器。</span><span class="sxs-lookup"><span data-stu-id="81871-185">`UseHsts` isn't recommended in development because the HSTS settings are highly cacheable by browsers.</span></span> <span data-ttu-id="81871-186">默认情况下，`UseHsts`排除本地环回地址。</span><span class="sxs-lookup"><span data-stu-id="81871-186">By default, `UseHsts` excludes the local loopback address.</span></span>
+<span data-ttu-id="e421c-185">`UseHsts` 不建议在开发过程中由于 HSTS 设置高度可缓存的浏览器。</span><span class="sxs-lookup"><span data-stu-id="e421c-185">`UseHsts` isn't recommended in development because the HSTS settings are highly cacheable by browsers.</span></span> <span data-ttu-id="e421c-186">默认情况下，`UseHsts`排除本地环回地址。</span><span class="sxs-lookup"><span data-stu-id="e421c-186">By default, `UseHsts` excludes the local loopback address.</span></span>
 
-<span data-ttu-id="81871-187">对于生产环境首次实现 HTTPS 初始 HSTS 将值设置为较小的值。</span><span class="sxs-lookup"><span data-stu-id="81871-187">For production environments implementing HTTPS for the first time, set the initial HSTS value to a small value.</span></span> <span data-ttu-id="81871-188">设置的值从小时数不超过一天的以防到时需要还原 HTTP 到 HTTPS 基础结构。</span><span class="sxs-lookup"><span data-stu-id="81871-188">Set the value from hours to no more than a single day in case you need to revert the HTTPS infrastructure to HTTP.</span></span> <span data-ttu-id="81871-189">确信 HTTPS 配置的可持续发展中后，增加 HSTS 最大期限值;常用的值为一年。</span><span class="sxs-lookup"><span data-stu-id="81871-189">After you're confident in the sustainability of the HTTPS configuration, increase the HSTS max-age value; a commonly used value is one year.</span></span> 
+<span data-ttu-id="e421c-187">对于生产环境首次实现 HTTPS 初始 HSTS 将值设置为较小的值。</span><span class="sxs-lookup"><span data-stu-id="e421c-187">For production environments implementing HTTPS for the first time, set the initial HSTS value to a small value.</span></span> <span data-ttu-id="e421c-188">设置的值从小时数不超过一天的以防到时需要还原 HTTP 到 HTTPS 基础结构。</span><span class="sxs-lookup"><span data-stu-id="e421c-188">Set the value from hours to no more than a single day in case you need to revert the HTTPS infrastructure to HTTP.</span></span> <span data-ttu-id="e421c-189">确信 HTTPS 配置的可持续发展中后，增加 HSTS 最大期限值;常用的值为一年。</span><span class="sxs-lookup"><span data-stu-id="e421c-189">After you're confident in the sustainability of the HTTPS configuration, increase the HSTS max-age value; a commonly used value is one year.</span></span> 
 
-<span data-ttu-id="81871-190">下面的代码：</span><span class="sxs-lookup"><span data-stu-id="81871-190">The following code:</span></span>
+<span data-ttu-id="e421c-190">下面的代码：</span><span class="sxs-lookup"><span data-stu-id="e421c-190">The following code:</span></span>
 
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet2&highlight=5-12)]
 
-* <span data-ttu-id="81871-191">设置预加载严格传输安全性标头的参数。</span><span class="sxs-lookup"><span data-stu-id="81871-191">Sets the preload parameter of the Strict-Transport-Security header.</span></span> <span data-ttu-id="81871-192">预加载不属于[RFC HSTS 规范](https://tools.ietf.org/html/rfc6797)，但要预加载 HSTS 站点上执行全新安装的 web 浏览器支持。</span><span class="sxs-lookup"><span data-stu-id="81871-192">Preload isn't part of the [RFC HSTS specification](https://tools.ietf.org/html/rfc6797), but is supported by web browsers to preload HSTS sites on fresh install.</span></span> <span data-ttu-id="81871-193">有关详细信息，请参阅 [https://hstspreload.org/](https://hstspreload.org/)。</span><span class="sxs-lookup"><span data-stu-id="81871-193">See [https://hstspreload.org/](https://hstspreload.org/) for more information.</span></span>
-* <span data-ttu-id="81871-194">使[includeSubDomain](https://tools.ietf.org/html/rfc6797#section-6.1.2)，这将 HSTS 策略应用到主机的子域。</span><span class="sxs-lookup"><span data-stu-id="81871-194">Enables [includeSubDomain](https://tools.ietf.org/html/rfc6797#section-6.1.2), which applies the HSTS policy to Host subdomains.</span></span> 
-* <span data-ttu-id="81871-195">显式将严格传输安全性标头的最大期限参数设置为 60 天。</span><span class="sxs-lookup"><span data-stu-id="81871-195">Explicitly sets the max-age parameter of the Strict-Transport-Security header to 60 days.</span></span> <span data-ttu-id="81871-196">如果未设置，默认值为 30 天。</span><span class="sxs-lookup"><span data-stu-id="81871-196">If not set, defaults to 30 days.</span></span> <span data-ttu-id="81871-197">请参阅[最大期限指令](https://tools.ietf.org/html/rfc6797#section-6.1.1)有关详细信息。</span><span class="sxs-lookup"><span data-stu-id="81871-197">See the [max-age directive](https://tools.ietf.org/html/rfc6797#section-6.1.1) for more information.</span></span>
-* <span data-ttu-id="81871-198">添加`example.com`到主机以排除列表。</span><span class="sxs-lookup"><span data-stu-id="81871-198">Adds `example.com` to the list of hosts to exclude.</span></span>
+* <span data-ttu-id="e421c-191">设置预加载严格传输安全性标头的参数。</span><span class="sxs-lookup"><span data-stu-id="e421c-191">Sets the preload parameter of the Strict-Transport-Security header.</span></span> <span data-ttu-id="e421c-192">预加载不属于[RFC HSTS 规范](https://tools.ietf.org/html/rfc6797)，但要预加载 HSTS 站点上执行全新安装的 web 浏览器支持。</span><span class="sxs-lookup"><span data-stu-id="e421c-192">Preload isn't part of the [RFC HSTS specification](https://tools.ietf.org/html/rfc6797), but is supported by web browsers to preload HSTS sites on fresh install.</span></span> <span data-ttu-id="e421c-193">有关详细信息，请参阅 [https://hstspreload.org/](https://hstspreload.org/)。</span><span class="sxs-lookup"><span data-stu-id="e421c-193">See [https://hstspreload.org/](https://hstspreload.org/) for more information.</span></span>
+* <span data-ttu-id="e421c-194">使[includeSubDomain](https://tools.ietf.org/html/rfc6797#section-6.1.2)，这将 HSTS 策略应用到主机的子域。</span><span class="sxs-lookup"><span data-stu-id="e421c-194">Enables [includeSubDomain](https://tools.ietf.org/html/rfc6797#section-6.1.2), which applies the HSTS policy to Host subdomains.</span></span> 
+* <span data-ttu-id="e421c-195">显式将严格传输安全性标头的最大期限参数设置为 60 天。</span><span class="sxs-lookup"><span data-stu-id="e421c-195">Explicitly sets the max-age parameter of the Strict-Transport-Security header to 60 days.</span></span> <span data-ttu-id="e421c-196">如果未设置，默认值为 30 天。</span><span class="sxs-lookup"><span data-stu-id="e421c-196">If not set, defaults to 30 days.</span></span> <span data-ttu-id="e421c-197">请参阅[最大期限指令](https://tools.ietf.org/html/rfc6797#section-6.1.1)有关详细信息。</span><span class="sxs-lookup"><span data-stu-id="e421c-197">See the [max-age directive](https://tools.ietf.org/html/rfc6797#section-6.1.1) for more information.</span></span>
+* <span data-ttu-id="e421c-198">添加`example.com`到主机以排除列表。</span><span class="sxs-lookup"><span data-stu-id="e421c-198">Adds `example.com` to the list of hosts to exclude.</span></span>
 
-<span data-ttu-id="81871-199">`UseHsts` 不包括以下环回主机：</span><span class="sxs-lookup"><span data-stu-id="81871-199">`UseHsts` excludes the following loopback hosts:</span></span>
+<span data-ttu-id="e421c-199">`UseHsts` 不包括以下环回主机：</span><span class="sxs-lookup"><span data-stu-id="e421c-199">`UseHsts` excludes the following loopback hosts:</span></span>
 
-* <span data-ttu-id="81871-200">`localhost` : IPv4 环回地址。</span><span class="sxs-lookup"><span data-stu-id="81871-200">`localhost` : The IPv4 loopback address.</span></span>
-* <span data-ttu-id="81871-201">`127.0.0.1` : IPv4 环回地址。</span><span class="sxs-lookup"><span data-stu-id="81871-201">`127.0.0.1` : The IPv4 loopback address.</span></span>
-* <span data-ttu-id="81871-202">`[::1]` : IPv6 环回地址。</span><span class="sxs-lookup"><span data-stu-id="81871-202">`[::1]` : The IPv6 loopback address.</span></span>
+* <span data-ttu-id="e421c-200">`localhost` : IPv4 环回地址。</span><span class="sxs-lookup"><span data-stu-id="e421c-200">`localhost` : The IPv4 loopback address.</span></span>
+* <span data-ttu-id="e421c-201">`127.0.0.1` : IPv4 环回地址。</span><span class="sxs-lookup"><span data-stu-id="e421c-201">`127.0.0.1` : The IPv4 loopback address.</span></span>
+* <span data-ttu-id="e421c-202">`[::1]` : IPv6 环回地址。</span><span class="sxs-lookup"><span data-stu-id="e421c-202">`[::1]` : The IPv6 loopback address.</span></span>
 
-<span data-ttu-id="81871-203">前面的示例演示如何添加其他主机。</span><span class="sxs-lookup"><span data-stu-id="81871-203">The preceding example shows how to add additional hosts.</span></span>
+<span data-ttu-id="e421c-203">前面的示例演示如何添加其他主机。</span><span class="sxs-lookup"><span data-stu-id="e421c-203">The preceding example shows how to add additional hosts.</span></span>
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
 
 <a name="https"></a>
-## <a name="opt-out-of-https-on-project-creation"></a><span data-ttu-id="81871-204">选择退出的 HTTPS 在项目创建</span><span class="sxs-lookup"><span data-stu-id="81871-204">Opt-out of HTTPS on project creation</span></span>
+## <a name="opt-out-of-https-on-project-creation"></a><span data-ttu-id="e421c-204">选择退出的 HTTPS 在项目创建</span><span class="sxs-lookup"><span data-stu-id="e421c-204">Opt-out of HTTPS on project creation</span></span>
 
-<span data-ttu-id="81871-205">ASP.NET Core 2.1 或更高版本的 web 应用程序模板 （从 Visual Studio 或 dotnet 命令行） 启用[HTTPS 重定向](#require)和[HSTS](#hsts)。</span><span class="sxs-lookup"><span data-stu-id="81871-205">The ASP.NET Core 2.1 or later web application templates (from Visual Studio or the dotnet command line) enable [HTTPS redirection](#require) and [HSTS](#hsts).</span></span> <span data-ttu-id="81871-206">对于不需要 HTTPS 的部署，你可以选择退出的 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="81871-206">For deployments that don't require HTTPS, you can opt-out of HTTPS.</span></span> <span data-ttu-id="81871-207">例如，不需要其中 HTTPS 正在从外部在边缘，每个节点，使用 HTTPS 某些后端服务。</span><span class="sxs-lookup"><span data-stu-id="81871-207">For example, some backend services where HTTPS is being handled externally at the edge, using HTTPS at each node isn't needed.</span></span>
+<span data-ttu-id="e421c-205">ASP.NET Core 2.1 或更高版本的 web 应用程序模板 （从 Visual Studio 或 dotnet 命令行） 启用[HTTPS 重定向](#require)和[HSTS](#hsts)。</span><span class="sxs-lookup"><span data-stu-id="e421c-205">The ASP.NET Core 2.1 or later web application templates (from Visual Studio or the dotnet command line) enable [HTTPS redirection](#require) and [HSTS](#hsts).</span></span> <span data-ttu-id="e421c-206">对于不需要 HTTPS 的部署，你可以选择退出的 HTTPS。</span><span class="sxs-lookup"><span data-stu-id="e421c-206">For deployments that don't require HTTPS, you can opt-out of HTTPS.</span></span> <span data-ttu-id="e421c-207">例如，不需要其中 HTTPS 正在从外部在边缘，每个节点，使用 HTTPS 某些后端服务。</span><span class="sxs-lookup"><span data-stu-id="e421c-207">For example, some backend services where HTTPS is being handled externally at the edge, using HTTPS at each node isn't needed.</span></span>
 
-<span data-ttu-id="81871-208">若要选择退出的 HTTPS:</span><span class="sxs-lookup"><span data-stu-id="81871-208">To opt-out of HTTPS:</span></span>
+<span data-ttu-id="e421c-208">若要选择退出的 HTTPS:</span><span class="sxs-lookup"><span data-stu-id="e421c-208">To opt-out of HTTPS:</span></span>
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="81871-209">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="81871-209">Visual Studio</span></span>](#tab/visual-studio) 
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="e421c-209">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="e421c-209">Visual Studio</span></span>](#tab/visual-studio) 
 
-<span data-ttu-id="81871-210">取消选中**配置为支持 HTTPS**复选框。</span><span class="sxs-lookup"><span data-stu-id="81871-210">Uncheck the **Configure for HTTPS** checkbox.</span></span>
+<span data-ttu-id="e421c-210">取消选中**配置为支持 HTTPS**复选框。</span><span class="sxs-lookup"><span data-stu-id="e421c-210">Uncheck the **Configure for HTTPS** checkbox.</span></span>
 
 ![实体关系图](enforcing-ssl/_static/out.png)
 
-#   <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="81871-212">.NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="81871-212">.NET Core CLI</span></span>](#tab/netcore-cli) 
+#   <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="e421c-212">.NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="e421c-212">.NET Core CLI</span></span>](#tab/netcore-cli) 
 
-<span data-ttu-id="81871-213">使用 `--no-https` 选项。</span><span class="sxs-lookup"><span data-stu-id="81871-213">Use the `--no-https` option.</span></span> <span data-ttu-id="81871-214">例如</span><span class="sxs-lookup"><span data-stu-id="81871-214">For example</span></span>
+<span data-ttu-id="e421c-213">使用 `--no-https` 选项。</span><span class="sxs-lookup"><span data-stu-id="e421c-213">Use the `--no-https` option.</span></span> <span data-ttu-id="e421c-214">例如</span><span class="sxs-lookup"><span data-stu-id="e421c-214">For example</span></span>
 
 ```console
 dotnet new webapp --no-https
 ```
-
-[!INCLUDE[](~/includes/webapp-alias-notice.md)]
 
 ---
 
@@ -201,12 +199,12 @@ dotnet new webapp --no-https
 
 ::: moniker range=">= aspnetcore-2.1"
 
-## <a name="how-to-set-up-a-developer-certificate-for-docker"></a><span data-ttu-id="81871-215">如何设置适用于 Docker 的开发人员证书</span><span class="sxs-lookup"><span data-stu-id="81871-215">How to set up a developer certificate for Docker</span></span>
+## <a name="how-to-set-up-a-developer-certificate-for-docker"></a><span data-ttu-id="e421c-215">如何设置适用于 Docker 的开发人员证书</span><span class="sxs-lookup"><span data-stu-id="e421c-215">How to set up a developer certificate for Docker</span></span>
 
-<span data-ttu-id="81871-216">请参阅[此 GitHub 问题](https://github.com/aspnet/Docs/issues/6199)。</span><span class="sxs-lookup"><span data-stu-id="81871-216">See [this GitHub issue](https://github.com/aspnet/Docs/issues/6199).</span></span>
+<span data-ttu-id="e421c-216">请参阅[此 GitHub 问题](https://github.com/aspnet/Docs/issues/6199)。</span><span class="sxs-lookup"><span data-stu-id="e421c-216">See [this GitHub issue](https://github.com/aspnet/Docs/issues/6199).</span></span>
 
 ::: moniker-end
 
-## <a name="additional-information"></a><span data-ttu-id="81871-217">其他信息</span><span class="sxs-lookup"><span data-stu-id="81871-217">Additional information</span></span>
+## <a name="additional-information"></a><span data-ttu-id="e421c-217">其他信息</span><span class="sxs-lookup"><span data-stu-id="e421c-217">Additional information</span></span>
 
-* [<span data-ttu-id="81871-218">OWASP HSTS 浏览器支持</span><span class="sxs-lookup"><span data-stu-id="81871-218">OWASP HSTS browser support</span></span>](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet#Browser_Support)
+* [<span data-ttu-id="e421c-218">OWASP HSTS 浏览器支持</span><span class="sxs-lookup"><span data-stu-id="e421c-218">OWASP HSTS browser support</span></span>](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet#Browser_Support)
