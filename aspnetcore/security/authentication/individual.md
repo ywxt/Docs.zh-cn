@@ -5,12 +5,12 @@ description: 发现基于 ASP.NET Core 项目使用单个用户帐户创建的�
 ms.author: riande
 ms.date: 11/30/2017
 uid: security/authentication/individual
-ms.openlocfilehash: f7fb9e8cd1b5c4cc3283ddd7606a0bbd30f554d5
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: ac843342ffc73632fbf9f6359c6c1a5878dcef0d
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274422"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523059"
 ---
 # <a name="articles-based-on-aspnet-core-projects-created-with-individual-user-accounts"></a>基于 ASP.NET Core 项目使用单个用户帐户创建项目
 
@@ -26,8 +26,6 @@ dotnet new webapi -au Individual
 dotnet new webapp -au Individual
 ```
 
-[!INCLUDE[](~/includes/webapp-alias-notice.md)]
-
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
@@ -39,6 +37,25 @@ dotnet new razor -au Individual
 ```
 
 ::: moniker-end
+
+<a name="no"></a>
+## <a name="no-authentication"></a>无身份验证
+
+在.NET Core CLI 与指定身份验证`-au`选项。 在 Visual Studio 中，**更改身份验证**对话框是适用于新 web 应用程序。 默认值为 Visual Studio 中的新 web 应用**无身份验证**。
+
+使用无身份验证创建的项目：
+
+* 不包含 web 页面和 UI 中登录和注销。
+* 不包含身份验证代码。
+
+<a name="win"></a>
+## <a name="windows-authentication"></a>Windows 身份验证
+
+Windows 身份验证指定为新 web 应用程序中使用.NET Core CLI`-au Windows`选项。 在 Visual Studio 中，**更改身份验证**对话框提供了**Windows 身份验证**选项。
+
+如果选择 Windows 身份验证，则该应用程序配置为使用[Windows 身份验证 IIS 模块](xref:host-and-deploy/iis/modules)。 Windows 身份验证适用于 Intranet web 站点。
+
+## <a name="additional-resources"></a>其他资源
 
 以下文章演示了如何使用 ASP.NET Core 使用单个用户帐户的模板中生成的代码：
 

@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 09/07/2018
 uid: razor-pages/ui-class
-ms.openlocfilehash: 7e9ab07a9060b16c09afb1e88950f6a3e55b13cb
-ms.sourcegitcommit: 8268cc67beb1bb1ca470abb0e28b15a7a71b8204
+ms.openlocfilehash: 3adad70e31089b959192ed0c5828f294c696b070
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44126743"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523111"
 ---
 # <a name="create-reusable-ui-using-the-razor-class-library-project-in-aspnet-core"></a>创建使用 ASP.NET Core 中 Razor 类库项目的可重用 UI
 
@@ -181,8 +181,6 @@ dotnet sln add WebApp1
 dotnet sln add RazorUIClassLib
 dotnet add WebApp1 reference RazorUIClassLib
 ```
-
-[!INCLUDE[](~/includes/webapp-alias-notice.md)]
 
 生成并运行 Web 应用：
 

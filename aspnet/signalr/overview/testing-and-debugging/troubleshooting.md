@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 4b559e6c-4fb0-4a04-9812-45cf08ae5779
 msc.legacyurl: /signalr/overview/testing-and-debugging/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: 77eedeb962bed06f1375284bcf05c4e4ffcdde3b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9ef69ece2558260f0409e9388751f77ac84a06f1
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830661"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523072"
 ---
 <a name="signalr-troubleshooting"></a>SignalR 疑难解答
 ====================
@@ -157,7 +157,7 @@ SignalR 将自动使用 JSON 进行序列化您的方法参数-这不需要自�
 
 ## <a name="configuring-iis-websockets-to-pingpong-to-detect-a-dead-client"></a>配置 IIS websocket ping/弹性来检测死的客户端
 
-SignalR 服务器不知道是否语音符号为客户端，它们依赖于基础 websocket 连接失败的通知，即 OnClose 回调。 此问题的一种解决方案是配置 IIS websocket ping/pong 为你执行操作。 这可确保你的连接将关闭，如果意外中断。 有关详细信息请参阅[此 stackoverflow 文章](http://stackoverflow.com/questions/19502755/websocket-clients-state-not-changing-on-network-loss)。
+SignalR 服务器不知道是否客户端是死信或不，它们就是依赖于基础 websocket 连接失败的通知，则`OnClose`回调。 此问题的一种解决方案是配置 IIS websocket ping/pong 为你执行操作。 这可确保你的连接将关闭，如果意外中断。 有关详细信息请参阅[此 stackoverflow 文章](http://stackoverflow.com/questions/19502755/websocket-clients-state-not-changing-on-network-loss)。
 
 <a id="other"></a>
 
