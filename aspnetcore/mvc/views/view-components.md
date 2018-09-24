@@ -5,12 +5,12 @@ description: 了解如何在 ASP.NET Core 中使用视图组件，以及如何�
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/view-components
-ms.openlocfilehash: c4e4de6e4ffb634a636bccdb2a929a524baebecf
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 0410e2025019bae45d941e61f556f4b2b57bd30f
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751493"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010905"
 ---
 # <a name="view-components-in-aspnet-core"></a>ASP.NET Core 中的视图组件
 
@@ -75,9 +75,9 @@ ms.locfileid: "41751493"
 
 运行时在以下路径中搜索视图：
 
-* /Pages/Components/<component name>/\<view_name>
-* Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
-* Views/Shared/Components/\<view_component_name>/\<view_name>
+* /Pages/Components/\<view_component_name>/\<view_name>
+* /Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
+* /Views/Shared/Components/\<view_component_name>/\<view_name>
 
 视图组件的默认视图名称为“默认”，这意味着视图文件通常命名为“Default.cshtml”。 可以在创建视图组件结果或调用 `View` 方法时指定不同的视图名称。
 

@@ -7,25 +7,33 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/17/2018
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 05ebc2b51401f8ce8d76d7d121e351cd9ca42c80
-ms.sourcegitcommit: 67a0a04ebb3b21c826e5b9600bacfc897abd6a46
+ms.openlocfilehash: f5888cf43d8d8192acedaa33b3fa0f313737fc9b
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42899852"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011282"
 ---
 # <a name="razor-file-compilation-in-aspnet-core"></a>ASP.NET Core 中的 Razor 文件编译
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ::: moniker range="= aspnetcore-1.1"
+
 调用相关的 MVC 视图时，Razor 文件在运行时进行编译。 不支持在生成时发布 Razor 文件。 可以使用预编译工具，在发布时选择编译 Razor 文件并将其与应用一起部署。
+
 ::: moniker-end
+
 ::: moniker range="= aspnetcore-2.0"
+
 调用相关的 Razor 页和 MVC 视图时，Razor 文件在运行时进行编译。 不支持在生成时发布 Razor 文件。 可以使用预编译工具，在发布时选择编译 Razor 文件并将其与应用一起部署。
+
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
+
 调用相关的 Razor 页和 MVC 视图时，Razor 文件在运行时进行编译。 在生成时和发布时使用 [Razor SDK](xref:razor-pages/sdk) 编译 Razor 文件。
+
 ::: moniker-end
 
 ## <a name="precompilation-considerations"></a>预编译注意事项
@@ -46,9 +54,11 @@ Razor SDK 默认启用 Razor 文件的生成时和发布时编译。 Razor 文�
 > ASP.NET Core 3.0 中将删除预编译工具。 建议迁移到 [Razor Sdk](xref:razor-pages/sdk)。
 >
 > 仅当项目文件中未设置特定于预编译的属性时，Razor SDK 才有效。 例如，通过将 .csproj 文件的 `MvcRazorCompileOnPublish` 属性设置为 `true` 来禁用 Razor SDK。
+
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
+
 如果项目面向 .NET Framework，请安装 [Microsoft.AspNetCore.Mvc.Razor.ViewCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.ViewCompilation/) NuGet 包：
 
 [!code-xml[](view-compilation/sample/DotNetFrameworkProject.csproj?name=snippet_ViewCompilationPackage)]
@@ -61,15 +71,19 @@ Razor SDK 默认启用 Razor 文件的生成时和发布时编译。 Razor 文�
 > ASP.NET Core 3.0 中将删除预编译工具。 建议迁移到 [Razor Sdk](xref:razor-pages/sdk)。
 >
 > 在 ASP.NET Core 2.0 中执行[独立部署 (SCD)](/dotnet/core/deploying/#self-contained-deployments-scd) 时，无法使用 Razor 文件预编译。
+
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-1.1"
+
 将 `MvcRazorCompileOnPublish` 属性设置为 `true`，然后安装 [Microsoft.AspNetCore.Mvc.Razor.ViewCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.ViewCompilation/) NuGet 包。 以下 .csproj 示例突出显示了这些设置：
 
 [!code-xml[](view-compilation/sample/MvcRazorCompileOnPublish.csproj?highlight=4,10)]
+
 ::: moniker-end
 
 ::: moniker range="<= aspnetcore-2.0"
+
 使用 [.NET Core CLI 发布命令](/dotnet/core/tools/dotnet-publish)，让应用做好[框架依赖型部署](/dotnet/core/deploying/#framework-dependent-deployments-fdd)的准备。 例如，在项目根目录中执行以下命令：
 
 ```console
@@ -79,21 +93,28 @@ dotnet publish -c Release
 预编译成功后，将生成包含已编译 Razor 文件的 <project_name>.PrecompiledViews.dll 文件。 例如，以下屏幕截图描述了 WebApplication1.PrecompiledViews.dll 中 Index.cshtml 的内容：
 
 ![DLL 中的 Razor 视图](view-compilation/_static/razor-views-in-dll.png)
+
 ::: moniker-end
 
 ## <a name="additional-resources"></a>其他资源
 
 ::: moniker range="= aspnetcore-1.1"
+
 * <xref:mvc/views/overview>
+
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
+
 * <xref:razor-pages/index>
 * <xref:mvc/views/overview>
+
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
+
 * <xref:razor-pages/index>
 * <xref:mvc/views/overview>
 * <xref:razor-pages/sdk>
+
 ::: moniker-end

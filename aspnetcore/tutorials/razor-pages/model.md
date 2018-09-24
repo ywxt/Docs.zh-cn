@@ -5,12 +5,12 @@ description: 了解如何使用 Entity Framework Core (EF Core) 添加用于管�
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: fb3a287725fa68ff9feb9935d7e6c5c2b8316517
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: de82738509bb009f030a02e28904e3155088fa6a
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893115"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011349"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>在 ASP.NET Core 中向 Razor 页面应用添加模型
 
@@ -126,6 +126,7 @@ SqlException：无法打开登录请求的数据库“RazorPagesMovieContext-GUI
 用户“用户名”登录失败。
 
 缺少[迁移步骤](#pmc)。
+
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"

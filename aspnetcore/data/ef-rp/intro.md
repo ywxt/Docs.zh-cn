@@ -5,12 +5,12 @@ description: 介绍了如何使用 Entity Framework Core 创建 Razor 页面应�
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/intro
-ms.openlocfilehash: d74d0909f03fe4d504f21c3880ec2447cadc8b13
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: 89002f7b4a5af17a9404b14822086c7a9a6ec265
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336089"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011451"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>ASP.NET Core 中的 Razor 页面和 Entity Framework Core - 第 1 个教程（共 8 个）
 
@@ -309,6 +309,7 @@ Web 服务器的可用线程是有限的，而在高负载情况下的可能所�
 有关 .NET 中异步编程的详细信息，请参阅[异步概述](/dotnet/articles/standard/async)和[使用 Async 和 Await 的异步编程](/dotnet/csharp/programming-guide/concepts/async/)。
 
 下一个教程将介绍基本的 CRUD（创建、读取、更新、删除）操作。
+
 ::: moniker-end
 
 > [!div class="step-by-step"]

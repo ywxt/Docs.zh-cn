@@ -1,4 +1,5 @@
 ::: moniker range=">= aspnetcore-2.1"
+
 在 `[Column]` 特性上右键单击红色波浪线，然后单击“快速操作和重构”，选择 `using System.ComponentModel.DataAnnotations.Schema;`
 
 要使 Entity Framework Core 能将 `Price` 正确地映射到数据库中的货币，则必须使用 `[Column(TypeName = "decimal(18, 2)")]` 数据注释。 有关详细信息，请参阅[数据类型](/ef/core/modeling/relational/data-types)。
@@ -75,11 +76,13 @@
 检查 Pages/Movies/Edit.cshtml.cs 文件：
 
 ::: moniker range="= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet2)]
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit21.cshtml.cs?name=snippet2)]
 
 ::: moniker-end

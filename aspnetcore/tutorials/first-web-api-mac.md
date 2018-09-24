@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/08/2018
 uid: tutorials/first-web-api-mac
-ms.openlocfilehash: 4caa6d9057de8d0e821c4abefe22985f43ff95ad
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 40f9bd9c57b97826edfddeb00cb4fb38a026d46e
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38156135"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011620"
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-mac"></a>使用 ASP.NET Core 和 Visual Studio for Mac 创建 Web API
 
@@ -126,14 +126,19 @@ ms.locfileid: "38156135"
 ### <a name="create"></a>创建
 
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
 上述方法响应至 HTTP POST，由 [[HttpPost]](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute) 属性指示。 [[FromBody]](/dotnet/api/microsoft.aspnetcore.mvc.frombodyattribute) 特性告诉 MVC 从 HTTP 请求正文获取待办事项的值。
+
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
 上述方法响应至 HTTP POST，由 [[HttpPost]](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute) 属性指示。 MVC 从 HTTP 请求正文获取待办事项的值。
+
 ::: moniker-end
 
 `CreatedAtRoute` 方法返回 201 响应。 201 响应是在服务器上创建新资源的 HTTP POST 方法的标准响应。 `CreatedAtRoute` 还会向响应添加位置标头。 位置标头指定新建的待办事项的 URI。 请参阅 [10.2.2 201 已创建](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)。
@@ -162,8 +167,10 @@ ms.locfileid: "38156135"
 * 单击“发送”按钮。
 
 ::: moniker range=">= aspnetcore-2.1"
+
 > [!TIP]
 > 如果单击“发送”后没有响应，则禁用“SSL 证书验证”选项。 在“文件” > “设置”下可以找到该选项 在禁用该设置后，再次单击“发送”按钮。
+
 ::: moniker-end
 
 单击“响应”窗格中的“标头”选项卡，然后复制位置标头值：
@@ -179,10 +186,15 @@ ms.locfileid: "38156135"
 ### <a name="update"></a>更新
 
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+
 ::: moniker-end
 
 `Update` 与 `Create` 类似，但是使用的是 HTTP PUT。 响应是 [204（无内容）](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)。 根据 HTTP 规范，PUT 请求需要客户端发送整个更新的实体，而不仅仅是增量。 若要支持部分更新，请使用 HTTP PATCH。

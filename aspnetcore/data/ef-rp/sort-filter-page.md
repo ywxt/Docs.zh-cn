@@ -5,12 +5,12 @@ description: 本教程将使用 ASP.NET Core 和 Entity Framework Core 向页面
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: ee5a0dae41ba0afba518f0bd6fbd379fdbbfb1c1
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: 668d6e54a64022dda948170f72538f6d4cd9a49f
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202609"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011633"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 排序、筛选、分页 - 第 3 个教程（共 8 个）
 
@@ -281,6 +281,7 @@ LINQ 语句按注册日期对学生实体进行分组，计算每组中实体的
 * [调试 ASP.NET Core 2.x 源](https://github.com/aspnet/Docs/issues/4155)
 
 在下一教程中，应用将利用迁移更新数据模型。
+
 ::: moniker-end
 
 > [!div class="step-by-step"]

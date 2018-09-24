@@ -21,12 +21,15 @@
 在标题元素中，将 `MvcMovie` 更改为 `Movie App`。 将布局模板中的定位文本从 `MvcMovie` 更改为 `Movie App`，并将控制器从 `Home` 更改为 `Movies`，如下所示：
 
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout21.cshtml?highlight=7,31)]
+
 ::: moniker-end
 
 >[!WARNING]

@@ -5,12 +5,12 @@ description: 了解如何使用 Entity Framework Code First 迁移将新字段�
 ms.author: riande
 ms.date: 10/06/2017
 uid: tutorials/first-mvc-app/new-field
-ms.openlocfilehash: 74f7a98143c80504d534c5ee4fd06b3dd076a2f2
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: b63bad99c4a966703634c711e5406d86e5bd140c
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312226"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010879"
 ---
 # <a name="add-a-new-field-to-an-aspnet-core-mvc-app"></a>将新字段添加到 ASP.NET Core MVC 应用
 
@@ -25,10 +25,15 @@ ms.locfileid: "43312226"
 打开 Models/Movie.cs 文件，并添加 `Rating` 属性：
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Models/MovieDateRating.cs?highlight=13&name=snippet)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+
 ::: moniker-end
 
 生成应用 (Ctrl+Shift+B)。

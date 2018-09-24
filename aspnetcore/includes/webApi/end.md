@@ -7,14 +7,19 @@
 添加以下 `Create` 方法：
 
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
 正如 [[HttpPost]](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute) 属性所指示，前面的代码是 HTTP POST 方法。 [[FromBody]](/dotnet/api/microsoft.aspnetcore.mvc.frombodyattribute) 特性告诉 MVC 从 HTTP 请求正文获取待办事项的值。
+
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](../../tutorials/first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
 正如 [[HttpPost]](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute) 属性所指示，前面的代码是 HTTP POST 方法。 MVC 从 HTTP 请求正文获取待办事项的值。
+
 ::: moniker-end
 
 `CreatedAtRoute` 方法：
@@ -24,10 +29,15 @@
 * 使用名为 route 的“GetTodo”来创建 URL。 已在 `GetById` 中定义名为 route 的“GetTodo”：
 
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_GetByID&highlight=1-2)]
+
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](../../tutorials/first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_GetByID&highlight=1-2)]
+
 ::: moniker-end
 
 ### <a name="use-postman-to-send-a-create-request"></a>使用 Postman 发送创建请求
@@ -54,8 +64,10 @@
 * 单击“发送”按钮。
 
 ::: moniker range=">= aspnetcore-2.1"
+
 > [!TIP]
 > 如果单击“发送”后没有响应，则禁用“SSL 证书验证”选项。 在“文件” > “设置”下可以找到该选项 在禁用该设置后，再次单击“发送”按钮。
+
 ::: moniker-end
 
 单击“响应”窗格中的“标头”选项卡，然后复制位置标头值：
@@ -69,10 +81,15 @@
 添加以下 `Update` 方法：
 
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](../../tutorials/first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+
 ::: moniker-end
 
 `Update` 与 `Create` 类似，但是使用的是 HTTP PUT。 响应是 [204（无内容）](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)。 根据 HTTP 规范，PUT 请求需要客户端发送整个更新的实体，而不仅仅是增量。 若要支持部分更新，请使用 HTTP PATCH。
