@@ -18,7 +18,7 @@ ms.locfileid: "39095344"
 
 ## <a name="server-system-requirements"></a>服务器系统要求
 
-只要支持 ASP.NET Core 的任何服务器平台都支持ASP.NET Core SignalR。
+ASP.NET Core SignalR 支持 ASP.NET Core 所支持的任何服务器平台。
 
 ## <a name="client-system-requirements"></a>客户端系统要求
 
@@ -36,4 +36,4 @@ ASP.NET Core SignalR 的 JavaScript 客户端支持以下浏览器：
  
 ### <a name="net-client-support"></a>.NET 客户端支持
 
-支持 ASP.NET Core 的任何服务器平台。 当使用 IIS，要求使用Windows Server 2012 或更高版本安装 IIS 8.0 及更高版本以支持 Websocket 传输。 其他传输在所有平台上都支持。
+ASP.NET Core 支持的任何服务器平台。使用 IIS 时，Websocket 传输要求在 Windows Server 2012 或更高版本上安装 IIS 8.0 或更高版本。其他传输在所有平台上都受支持。
