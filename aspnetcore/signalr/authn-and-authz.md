@@ -7,12 +7,12 @@ ms.author: anurse
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: signalr/authn-and-authz
-ms.openlocfilehash: fceae37ce53a0d5a219e6dc466e9cc6df0277494
-ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
+ms.openlocfilehash: fa5e8d4aea6100c54fd8b98411ef877d1dd8621c
+ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39123767"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47028200"
 ---
 # <a name="authentication-and-authorization-in-aspnet-core-signalr"></a>身份验证和授权在 ASP.NET Core SignalR
 
@@ -44,7 +44,7 @@ Cookie 身份验证不被建议，除非应用只需要从浏览器客户端的�
 var connection = new HubConnectionBuilder()
     .WithUrl("https://example.com/myhub", options =>
     { 
-        options.AccessTokenProvider = () => _myAccessToken;
+        options.AccessTokenProvider = () => Task.FromResult(_myAccessToken);
     })
     .Build();
 ```
