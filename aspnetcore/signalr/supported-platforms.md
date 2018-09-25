@@ -14,17 +14,17 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 07/17/2018
 ms.locfileid: "39095344"
 ---
-# <a name="aspnet-core-signalr-supported-platforms"></a>ASP.NET Core SignalR 受支持的平台
+# <a name="aspnet-core-signalr-supported-platforms"></a>ASP.NET Core SignalR 支持的平台
 
 ## <a name="server-system-requirements"></a>服务器系统要求
 
-有关 ASP.NET Core SignalR 支持 ASP.NET Core 支持任何服务器平台。
+ASP.NET Core SignalR 支持 ASP.NET Core 所支持的任何服务器平台。
 
 ## <a name="client-system-requirements"></a>客户端系统要求
 
 ### <a name="browser-support"></a>浏览器支持
 
-ASP.NET Core JavaScript 客户端的 SignalR 支持以下浏览器：
+ASP.NET Core SignalR 的 JavaScript 客户端支持以下浏览器：
 
 | 浏览者 | 版本 |
 | ------- | ------- |
@@ -36,4 +36,4 @@ ASP.NET Core JavaScript 客户端的 SignalR 支持以下浏览器：
  
 ### <a name="net-client-support"></a>.NET 客户端支持
 
-支持 ASP.NET Core 的任何服务器平台。 当使用 IIS，Websocket 传输要求安装 IIS 8.0 或更高版本，Windows Server 2012 或更高版本。 在所有平台上支持其他传输。
+ASP.NET Core 支持的任何服务器平台。使用 IIS 时，Websocket 传输要求在 Windows Server 2012 或更高版本上安装 IIS 8.0 或更高版本。其他传输在所有平台上都受支持。
