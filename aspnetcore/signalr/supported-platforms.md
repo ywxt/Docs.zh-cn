@@ -1,5 +1,5 @@
 ---
-title: ASP.NET Core SignalR 受支持的平台
+title: ASP.NET Core SignalR 支持的平台
 author: tdykstra
 description: ASP.NET Core SignalR 的受支持的平台
 monikerRange: '>= aspnetcore-2.1'
@@ -36,4 +36,4 @@ ASP.NET Core SignalR 的 JavaScript 客户端支持以下浏览器：
  
 ### <a name="net-client-support"></a>.NET 客户端支持
 
-ASP.NET Core 支持的任何服务器平台。使用 IIS 时，Websocket 传输要求在 Windows Server 2012 或更高版本上安装 IIS 8.0 或更高版本。其他传输在所有平台上都受支持。
+ASP.NET Core 支持的任何服务器平台。 使用 IIS 时，Websocket 传输要求在 Windows Server 2012 或更高版本上安装 IIS 8.0 或更高版本。 其他传输在所有平台上都受支持。
