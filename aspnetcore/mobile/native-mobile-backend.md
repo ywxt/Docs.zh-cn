@@ -5,12 +5,12 @@ description: 了解如何使用 ASP.NET Core MVC 创建后端服务，以支持�
 ms.author: riande
 ms.date: 10/14/2016
 uid: mobile/native-mobile-backend
-ms.openlocfilehash: 27051cd3c4e2c3aa1ebf6d5510db4645651120e8
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 3ebd30ad1ffbd66b256e7f3954a07d682f76a754
+ms.sourcegitcommit: 517bb1366da2a28b0014e384fa379755c21b47d8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276121"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47230173"
 ---
 # <a name="create-backend-services-for-native-mobile-apps-with-aspnet-core"></a>使用 ASP.NET Core 为本机移动应用创建后端服务
 
@@ -151,3 +151,7 @@ API 方法需要通过某种方式处理数据。 使用原始 Xamarin 示例所
 开发应用程序的后端服务时，你将想要使用一组一致的约定或策略来处理横切关注点。 例如，在上面所示服务中，针对不存在的特定记录的请求会收到 `NotFound` 响应，而不是`BadRequest` 响应。 同样，对于此服务，传递模型绑定类型的命令始终检查 `ModelState.IsValid` 并为无效的模型类型返回 `BadRequest`。
 
 一旦为 Api 指定通用策略，一般可以将其封装在 [Filter（筛选器）](../mvc/controllers/filters.md)。 详细了解 [如何封装 ASP.NET Core MVC 应用程序中的通用 API 策略](https://msdn.microsoft.com/magazine/mt767699.aspx)。
+
+## <a name="additional-resources"></a>其他资源
+
+* [身份验证和授权](/xamarin/xamarin-forms/enterprise-application-patterns/authentication-and-authorization)
