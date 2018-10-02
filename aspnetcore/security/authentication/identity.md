@@ -5,12 +5,12 @@ description: 将标识与 ASP.NET Core 应用配合使用。 了解如何设置�
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: ca83d07f7d93bd0cc61cd17cc373096b8e6aa2e1
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: d427932bb175c09105534379be4d71760f4e04e5
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010970"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860948"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core 上的标识简介
 
@@ -45,7 +45,7 @@ ASP.NET Core 标识是一个成员身份系统，将登录功能添加到 ASP.NE
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* 选择“文件” > “新建” > “项目”。 
+* 选择“文件” > “新建” > “项目”。
 * 选择“ASP.NET Core Web 应用程序”。 将项目命名**WebApp1**具有项目下载相同的命名空间。 单击 **“确定”**。
 * 选择 ASP.NET Core **Web 应用程序**ASP.NET Core 2.1，然后选择**更改身份验证**。
 * 选择**单个用户帐户**然后单击**确定**。
@@ -119,15 +119,12 @@ dotnet new webapp --auth Individual -o WebApp1
 
 添加注册、 登录和注销文件。
 
-
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
 如果使用名称创建项目**WebApp1**，运行以下命令。 否则，请使用正确的命名空间为`ApplicationDbContext`:
 
-
 ```cli
 dotnet aspnet-codegenerator identity -dc WebApp1.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
-
 ```
 
 PowerShell 使用分号作为命令分隔符。 使用 PowerShell 时，转义分号的文件列表中，或将文件列表放在双引号内，如前面的示例所示。
@@ -163,7 +160,7 @@ PowerShell 使用分号作为命令分隔符。 使用 PowerShell 时，转义�
 显示登录窗体时：
 
 * **登录**选择链接。
-* 当用户访问的页时，它们不需要身份验证**或**获得授权，将被重定向到登录页。 
+* 当用户访问的页时，它们不需要身份验证**或**获得授权，将被重定向到登录页。
 
 登录页上的表单提交时，`OnPostAsync`调用操作。 `PasswordSignInAsync` 对调用`_signInManager`对象 （由依赖关系注入提供）。
 
@@ -254,7 +251,6 @@ PowerShell 使用分号作为命令分隔符。 使用 PowerShell 时，转义�
 * <xref:security/authorization/secure-data>
 * <xref:security/authentication/add-user-data>
 * <xref:security/authentication/identity-enable-qrcodes>
-* [配置标识为主键数据类型](xref:security/authentication/identity-primary-key-configuration)。
 * <xref:migration/identity>
 * <xref:security/authentication/accconfirm>
 * <xref:security/authentication/2fa>

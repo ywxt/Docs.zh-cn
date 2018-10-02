@@ -6,12 +6,12 @@ description: ASP.NET Webhook 接收方
 ms.author: riande
 ms.date: 01/17/2012
 ms.assetid: 6cdea089-15b2-4732-8c68-921ca561a8f1
-ms.openlocfilehash: 376cb3e3fdc0bc7bd248da1f57e1064fb27b3cef
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d771a588b23abcd7b1b33e694af17b219683fc48
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834491"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860909"
 ---
 # <a name="aspnet-webhooks-receivers"></a>ASP.NET Webhook 接收方
 
@@ -33,7 +33,7 @@ https://<host>/api/webhooks/incoming/<receiver>/{id}
 
 出于安全原因，许多 WebHook 接收方需要的 URI 是*https* URI 并在某些情况下，则还必须包含一个其他查询参数，用于强制此要求仅预定的接收方可以将 Webhook 发送到更高版本的 URI.
 
-<em> <receiver> </em>组件是名称的接收方，例如<em>github</em>或<em>slack</em>。
+`<receiver>`组件是名称的接收方，例如`github`或`slack`。
 
 *{Id}* 是用于标识特定的 WebHook 接收器配置的可选标识符。 这可以用于将注册特定的接收方的 n 个 Webhook。 例如，以下三个 Uri 可用于为三个独立的 Webhook 注册：
 
