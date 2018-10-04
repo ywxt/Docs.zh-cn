@@ -1,28 +1,24 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/confirmbutton/index
-title: ConfirmButton |Microsoft 文档
+title: ConfirmButton |Microsoft Docs
 author: rick-anderson
-description: 本教程演示如何使用 ConfirmButton 控件，后者将显示是 / 没有弹出窗口，当用户单击一个按钮。
-ms.author: aspnetcontent
-manager: wpickett
+description: 本教程演示如何使用 ConfirmButton 控件，用于显示是 / 用户单击按钮时没有弹出菜单。
+ms.author: riande
 ms.date: 11/14/2011
-ms.topic: article
 ms.assetid: 338c4fd9-0e9b-4dab-a92b-4b88bd403d49
-ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/confirmbutton
 msc.type: chapter
-ms.openlocfilehash: d692162fb39065e6c49927e3fbfca5b3af90b54a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: d9c138c5ce2a5acbdbeb32653c4291904b4ae4bf
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26510336"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48253056"
 ---
 <a name="confirmbutton"></a>ConfirmButton
 ====================
-> 本教程演示如何使用 ConfirmButton 控件，后者将显示是 / 没有弹出窗口，当用户单击一个按钮。
+> 本教程演示如何使用 ConfirmButton 控件，用于显示是 / 用户单击按钮时没有弹出菜单。
 
 
-- [在转发器 (C#) 中使用 ConfirmButton](using-a-confirmbutton-in-a-repeater-cs.md)
-- [在转发器 (VB) 中使用 ConfirmButton](using-a-confirmbutton-in-a-repeater-vb.md)
+- [在 Repeater 中使用 ConfirmButton (C#)](using-a-confirmbutton-in-a-repeater-cs.md)
+- [在 Repeater 中使用 ConfirmButton (VB)](using-a-confirmbutton-in-a-repeater-vb.md)

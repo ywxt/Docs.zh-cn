@@ -1,23 +1,19 @@
 ---
 uid: mvc/videos/index
-title: 视频 |Microsoft 文档
+title: 视频 |Microsoft Docs
 author: rick-anderson
 description: ''
-ms.author: aspnetcontent
-manager: wpickett
+ms.author: riande
 ms.date: 06/24/2011
-ms.topic: article
 ms.assetid: e618c37c-68f3-49aa-9fda-f86cb3b578b9
-ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos
 msc.type: book
-ms.openlocfilehash: 03e8129816a2fb8b9261618207b0e1795fb7cf23
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
-ms.translationtype: HT
+ms.openlocfilehash: 1f284bb52bb45880d656592f173b3e57fbc47118
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
-ms.locfileid: "29152958"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48253138"
 ---
 <a name="videos"></a>视频
 ====================
@@ -50,7 +46,7 @@ ms.locfileid: "29152958"
         - [ASP.NET MVC：怎么做？适用于开发者的 10 分钟技术视频](mvc-2/how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
         - [在 ASP.NET MVC Web 应用程序中针对 AJAX 调用返回 JSON 格式的数据](mvc-2/how-do-i/how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application.md)
         - [在 ASP.NET MVC 部分视图中使用数据](mvc-2/how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
-        - [实现视图模型，以管理数据的 ASP.NET MVC 视图](mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
+        - [实现视图模型，用于管理数据的 ASP.NET MVC 视图](mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
         - [为 MVC 应用程序创建自定义 HTML 帮助程序](mvc-2/how-do-i/how-do-i-create-a-custom-html-helper-for-an-mvc-application.md)
         - [在 MVC 应用程序中使用模型绑定器](mvc-2/how-do-i/how-do-i-work-with-model-binders-in-an-mvc-application.md)
         - [在 MVC 应用程序中使用 HttpVerbs 属性](mvc-2/how-do-i/how-do-i-use-httpverbs-attributes-in-an-mvc-application.md)
@@ -95,7 +91,7 @@ ms.locfileid: "29152958"
         - [ASP.NET MVC 店面第 16 部分：使用 OpenID 的成员身份重做](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
         - [ASP.NET MVC 店面第 17 部分：向 Jeff Atwood 结帐](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
         - [ASP.NET MVC 店面第 18 部分：创建体验](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience.md)
-        - [使用 Windows 工作流的 ASP.NET MVC 店面一部分 19： 处理订单](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
+        - [ASP.NET MVC 店面第 19 部分：使用 Windows 工作流处理订单](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
         - [ASP.NET MVC 店面第 19a 部分：Windows 工作流跟踪](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windows-workflow-followup.md)
         - [ASP.NET MVC 店面第 20 部分：日志记录](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-20-logging.md)
         - [ASP.NET MVC 店面第 21 部分：管理器和个性化](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)

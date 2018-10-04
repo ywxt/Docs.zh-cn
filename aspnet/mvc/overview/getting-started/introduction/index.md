@@ -1,23 +1,19 @@
 ---
 uid: mvc/overview/getting-started/introduction/index
-title: ASP.NET MVC 5 入门 |Microsoft 文档
+title: ASP.NET MVC 5 入门 |Microsoft Docs
 author: rick-anderson
 description: ASP.NET MVC 5 简介
-ms.author: aspnetcontent
-manager: wpickett
+ms.author: riande
 ms.date: 06/10/2013
-ms.topic: article
 ms.assetid: 9afe7454-f1bd-4e81-8ecf-12fe54d080c1
-ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction
 msc.type: chapter
-ms.openlocfilehash: bef9a660f00452120fe1dfc5818cb9f94cfe08df
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
-ms.translationtype: HT
+ms.openlocfilehash: 3e124e96d192e95d65084f00332c42961d883f70
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30872619"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48253168"
 ---
 <a name="getting-started-with-aspnet-mvc-5"></a>ASP.NET MVC 5 入门
 ====================
@@ -25,7 +21,7 @@ ms.locfileid: "30872619"
 
 [!INCLUDE [consider RP](../../../../includes/razor.md)]
 
-本系列以下教程介绍 ASP.NET MVC： 源位于[GitHub](https://github.com/aspnet/Docs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie)
+本教程系列中以下介绍了 ASP.NET MVC： 源位于[GitHub](https://github.com/aspnet/Docs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie)
 
 - [入门](getting-started.md)
 - [添加控制器](adding-a-controller.md)

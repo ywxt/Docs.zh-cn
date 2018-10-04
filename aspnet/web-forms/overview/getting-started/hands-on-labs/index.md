@@ -1,29 +1,25 @@
 ---
 uid: web-forms/overview/getting-started/hands-on-labs/index
-title: Visual Studio 2012 动手实验 |Microsoft 文档
+title: Visual Studio 2012 实践实验 |Microsoft Docs
 author: rick-anderson
-description: 了解如何使用 ASP.NET Web 窗体与实验室上这些手中进行开发
-ms.author: aspnetcontent
-manager: wpickett
+description: 了解如何使用这些实践练习实验室与 ASP.NET Web 窗体进行开发
+ms.author: riande
 ms.date: 02/13/2013
-ms.topic: article
 ms.assetid: d0b8ff04-70e0-4453-a331-a4a4f57d72a8
-ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs
 msc.type: chapter
-ms.openlocfilehash: fcfb9d1f4b1cdd55dbc9472e2b74cab7a4c7d84b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 1e77dcc59856f622d50ebd4e9c26e9a3ca2774e5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26516546"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48253225"
 ---
-<a name="visual-studio-2012-hands-on-labs"></a>Visual Studio 2012 动手实验
+<a name="visual-studio-2012-hands-on-labs"></a>Visual Studio 2012 实践实验
 ====================
-> 了解如何使用 ASP.NET Web 窗体与实验室上这些手中进行开发
+> 了解如何使用这些实践练习实验室与 ASP.NET Web 窗体进行开发
 
 
-- [ASP.NET 和 Visual Studio 2012 中的 Web 开发的新增功能](whats-new-in-aspnet-and-web-development-in-visual-studio-2012.md)
-- [什么是在 ASP.NET 4.5 Web 窗体中的新增功能](whats-new-in-web-forms-in-aspnet-45.md)
-- [使用 Page Inspector 在 Visual Studio 2012](using-page-inspector-in-visual-studio-2012.md)
+- [Visual Studio 2012 中 ASP.NET 和 Web 开发的新增功能](whats-new-in-aspnet-and-web-development-in-visual-studio-2012.md)
+- [ASP.NET 4.5 中 Web 窗体的新增功能](whats-new-in-web-forms-in-aspnet-45.md)
+- [在 Visual Studio 2012 中使用 Page Inspector](using-page-inspector-in-visual-studio-2012.md)
