@@ -8,16 +8,16 @@ ms.date: 11/07/2013
 ms.assetid: d031c021-33c2-45a5-bf9f-98f8fa78c2ab
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: 56bd145688e1ab0a70710cc80cb8f5fa10ee8968
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 6124bcdaeeb0d4342cbde0d3ca52d55f76a953ab
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825067"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48576442"
 ---
 <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>IIS 集成管道中的 OWIN 中间件
 ====================
-通过[Praburaj Thiagarajan](https://github.com/Praburaj)， [Rick Anderson](https://github.com/Rick-Anderson)
+通过[Praburaj Thiagarajan](https://github.com/Praburaj)， [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本文介绍如何运行 OWIN 中间件组件 (OMCs) 在 IIS 集成管道中，以及如何设置管道事件 OMC 上运行。 你应该查看[项目 Katana 概述](an-overview-of-project-katana.md)并[OWIN 启动类检测](owin-startup-class-detection.md)阅读本教程之前，先。 本教程由 Rick Anderson 编写 ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )，Chris Ross、 Praburaj Thiagarajan 和 Howard Dierking ( [ @howard \_dierking](https://twitter.com/howard_dierking) )。
 

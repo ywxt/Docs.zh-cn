@@ -8,16 +8,16 @@ ms.date: 03/26/2015
 ms.assetid: c205805f-efdd-4fa7-9616-f26eab180611
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: f5d174ff6823d654a24dcb2c90f10a3cbd24f1e7
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 94a72f22cbcd7fa84528dde502cceaa1e26dcaa1
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41827040"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577283"
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>分析和调试使用 Glimpse 对 ASP.NET MVC 应用程序
 ====================
-通过[Rick Anderson](https://github.com/Rick-Anderson)
+通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Glimpse 是一个蓬勃发展和不断增加的开源 NuGet 包提供了详细的性能的系列内容，调试和诊断信息的 ASP.NET 应用程序。 它是容易安装、 轻量、 超快，并在每一页的底部显示关键性能指标。 它允许您向下钻取到你的应用时需要了解在服务器上正在运行的内容。 大致了解提供了我们建议使用整个开发周期，包括 Azure 测试环境很有价值的信息。 虽然[Fiddler](http://www.telerik.com/fiddler)并[F-12 开发工具](https://msdn.microsoft.com/library/ie/gg589512(v=vs.85).aspx)提供客户端视图，大致了解提供从服务器的详细的视图。 本教程将重点介绍使用 Glimpse ASP.NET MVC 和 EF 的包，但其他许多包可用。 在可能的情况将链接到相应[Glimpse docs](http://getglimpse.com/Docs/)我帮助维护。 Glimpse 是一个开放源代码项目，你也可以参与到源代码和文档。
 

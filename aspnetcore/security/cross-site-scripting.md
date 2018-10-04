@@ -3,14 +3,14 @@ title: 防止跨站点脚本 (XSS) 在 ASP.NET Core
 author: rick-anderson
 description: 了解有关跨站点脚本 (XSS) 和一些解决这一漏洞在 ASP.NET Core 应用程序技术。
 ms.author: riande
-ms.date: 10/14/2016
+ms.date: 10/02/2018
 uid: security/cross-site-scripting
-ms.openlocfilehash: 4784b1775d955f0ef00526e50b960fc873ea218d
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: e937ce47b7151155197cd607832eeb6bf62e3a19
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342206"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577439"
 ---
 # <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>防止跨站点脚本 (XSS) 在 ASP.NET Core
 
@@ -36,9 +36,9 @@ ms.locfileid: "39342206"
 
 Razor 引擎会自动在 MVC 中使用编码所有输出源自变量，除非您真正努力工作以防止其执行此操作。 它使用编码规则，每当你使用的 HTML 特性*@* 指令。 为 HTML 特性编码是 HTML 编码，这意味着无需关注是否应该使用 HTML 编码或 HTML 特性编码的超集。 您必须确保您仅使用在 HTML 上下文中，不是在尝试将直接插入 JavaScript 不受信任的输入时。 标记帮助程序还将对标记参数中使用的输入进行编码。
 
-考虑以下 Razor 视图;
+执行以下 Razor 视图：
 
-```none
+```cshtml
 @{
        var untrustedInput = "<\"123\">";
    }
@@ -59,7 +59,7 @@ Razor 引擎会自动在 MVC 中使用编码所有输出源自变量，除非您
 
 可能的有时你想要将值插入到 JavaScript 来处理在视图中。 有两种方法可以实现此目的。 插入值的最安全方法是将值放在标记的数据的属性中，并在 JavaScript 中检索它。 例如：
 
-```none
+```cshtml
 @{
        var untrustedInput = "<\"123\">";
    }
@@ -114,9 +114,9 @@ Razor 引擎会自动在 MVC 中使用编码所有输出源自变量，除非您
    <"123">
    ```
 
-您还可以直接调用 JavaScript 编码器
+您还可以直接调用 JavaScript 编码器：
 
-```none
+```cshtml
 @using System.Text.Encodings.Web;
    @inject JavaScriptEncoder encoder;
 
@@ -225,4 +225,4 @@ services.AddSingleton<HtmlEncoder>(
 
 ## <a name="validation-as-an-xss-prevention-technique"></a>作为 XSS 防护技术验证
 
-验证过程可能在限制的 XSS 攻击的有用工具。 例如，包含字符 0-9 的数字字符串将不会触发 XSS 攻击。 验证变得更加复杂，如果您希望接受用户输入-中的 HTML 分析 HTML 输入是困难的即使不是不可能。 MarkDown 和其他文本格式应该是比较安全的选项为丰富的输入。 您永远不应依赖于单独的验证。 始终对输出之前不受信任的输入进行编码，无论何种验证已执行。
+验证过程可能在限制的 XSS 攻击的有用工具。 例如，包含字符 0-9 的数字字符串将不会触发 XSS 攻击。 接受用户输入中的 HTML 时，验证变得更加复杂。 分析 HTML 输入是困难的即使不是不可能。 Markdown，结合一个分析器，它去除嵌入式的 HTML 是用于接收丰富输入比较安全的选项。 永远不会依赖于单独的验证。 始终对不受信任的输入输出，无论执行何种验证或清理之前进行编码。

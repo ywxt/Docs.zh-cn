@@ -8,16 +8,16 @@ ms.date: 08/14/2014
 ms.assetid: 457d7eaf-ee76-4ceb-9082-c7c1721435ad
 msc.legacyurl: /identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 msc.type: authoredcontent
-ms.openlocfilehash: e2df906d220d738c45006de8b3c92e157ca9e57e
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 96a6b8d1c258e742907b649b631f8a6c2c4bbf98
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824452"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577465"
 ---
 <a name="developing-aspnet-apps-with-azure-active-directory"></a>使用 Azure Active Directory 开发 ASP.NET 应用
 ====================
-通过[Rick Anderson](https://github.com/Rick-Anderson)
+通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 Microsoft ASP.NET 工具为 Azure Active Directory 简化了为托管的 web 应用启用身份验证[Azure](https://www.windowsazure.com/home/features/web-sites/)。 可以使用 Azure 身份验证从您的组织，从你的本地 Active Directory 同步的公司帐户或在自定义 Azure Active Directory 域中创建用户的 Office 365 用户进行身份验证。 启用 Windows Azure 身份验证，可配置你的应用程序使用单个用户进行身份验证[Azure Active Directory](https://docs.microsoft.com/azure/active-directory/)租户。
 

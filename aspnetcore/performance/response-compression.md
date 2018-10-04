@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: performance/response-compression
-ms.openlocfilehash: 3a01c2d572c0026944347f736f9658a7872e6c35
-ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
+ms.openlocfilehash: d5e0b6ed21c14f2e76396cde846c69a76ad40794
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47028279"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578141"
 ---
 # <a name="response-compression-in-aspnet-core"></a>在 ASP.NET Core 中的响应压缩
 
@@ -150,9 +150,21 @@ public class Startup
 
 ![Fiddler 窗口，其中显示不含 Accept-encoding 标头请求的结果。 不会压缩响应。](response-compression/_static/request-uncompressed.png)
 
+::: moniker range=">= aspnetcore-2.2"
+
+向具有示例应用程序提交一个申请`Accept-Encoding: br`标头 （Brotli 压缩），并观察压缩响应。 `Content-Encoding`和`Vary`均存在于响应标头。
+
+![Fiddler 窗口，其中显示 Accept-encoding 标头与请求的结果和 b 的值。 变化和内容编码标头添加到响应中。 压缩响应。](response-compression/_static/request-compressed-br.png)
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
 向具有示例应用程序提交一个申请`Accept-Encoding: gzip`标头，并观察压缩响应。 `Content-Encoding`和`Vary`均存在于响应标头。
 
 ![Fiddler 窗口，其中显示 Accept-encoding 标头与请求的结果，值为 gzip。 变化和内容编码标头添加到响应中。 压缩响应。](response-compression/_static/request-compressed.png)
+
+::: moniker-end
 
 ## <a name="providers"></a>提供程序
 

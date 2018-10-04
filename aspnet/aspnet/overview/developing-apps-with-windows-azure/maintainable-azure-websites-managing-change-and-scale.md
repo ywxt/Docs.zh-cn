@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: a26f22a7cf39593ee068fb8e8d57200120c97ccb
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 05181ae1b2d857eea45983d378b28011c1cd755a
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834127"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578128"
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>动手实验： 可维护 Azure 网站： 管理更改和缩放
 ====================
@@ -22,17 +22,17 @@ ms.locfileid: "41834127"
 [下载 Web 训练营培训工具包](http://aka.ms/webcamps-training-kit)
 
 > Microsoft Azure 轻松生成和部署到生产环境的网站。 但你还未完成实时应用程序时，您只是开始 ！ 你将需要处理不断变化的要求、 数据库更新、 缩放性和的详细信息。 幸运的是，Azure 应用服务提供你的需求，并提供充足的功能，可帮助您保留你的网站平稳运行。
-> 
+>
 > Azure 提供安全而灵活的开发、 部署和扩展任何规模的 web 应用程序的选项。 利用现有工具创建和部署应用程序，无需费力管理基础结构。
-> 
+>
 > 通过预配生产 web 应用程序自己在几分钟内轻松地部署使用你最喜欢的开发工具创建的内容。 可以部署现有网站直接从源代码管理支持**Git**， **GitHub**， **Bitbucket**， **TFS**，并甚至**DropBox**。 直接从你喜爱的 IDE 或使用脚本部署**PowerShell**在 Windows 中或**CLI**任何操作系统上运行的工具。 部署完成后，可以保留你的网站同时支持连续部署持续保持最新状态。
-> 
+>
 > 大型或小型，azure 会为任何数据，提供规模可变、 耐用的云存储、 备份和恢复解决方案。 当应用程序部署到生产环境，如表、 Blob 和 SQL 数据库的存储服务，帮助您缩放云应用程序。
-> 
+>
 > 使用 SQL 数据库，务必使您提高工作效率的数据库部署新版本的应用程序时保持最新。 为感谢**Entity Framework Code First 迁移**，已简化的开发和部署你的数据模型以在几分钟内更新你的环境。 本动手实验中将显示在 web 应用部署到 Microsoft Azure 中的生产环境时，可能会遇到的不同主题。
-> 
+>
 > 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)。
-> 
+>
 > 本主题的更多深入介绍，请参阅[构建实际云应用程序与 Azure 的电子书](building-real-world-cloud-apps-with-windows-azure/introduction.md)。
 
 
@@ -60,7 +60,7 @@ ms.locfileid: "41834127"
 - [Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/)或更高版本
 - [Azure SDK for.NET 2.2](https://www.microsoft.com/windowsazure/sdk/)
 - [GIT 版本控制系统](http://git-scm.com/download)
-- Microsoft Azure 订阅 
+- Microsoft Azure 订阅
 
     - 注册[免费试用版](http://aka.ms/watk-freetrial)
     - 如果你是 Visual Studio Professional、 Test Professional、 Premium 或 Ultimate with MSDN 或 MSDN 平台订户，激活你[MSDN 权益](http://aka.ms/watk-msdn)现在以开始开发和测试 Azure 上
@@ -202,10 +202,10 @@ ms.locfileid: "41834127"
 
     > [!NOTE]
     > 迁移文件组成的两种方法**向上**并**向下**。
-    > 
+    >
     > - **向上**方法将用于指定哪些更改我们的应用程序需要将应用于数据库的当前版本。
     > - **向下**用于撤消所做的更改我们已添加到**向上**方法。
-    > 
+    >
     > 当数据库迁移更新数据库时，将所有迁移都运行中的时间戳顺序，且只有自上次更新以来未使用过 (\_跟踪已应用哪些迁移的 MigrationHistory 表)。 **向上**所有迁移的方法将调用，并将使我们具有指定数据库的更改。 如果返回到先前的迁移，我们决定**向下**将调用方法以重做以反向顺序进行更改。
 4. 在中**程序包管理器控制台**，输入以下命令，然后按**Enter**。
 
@@ -298,15 +298,15 @@ ms.locfileid: "41834127"
 
     > [!NOTE]
     > 默认情况下，Azure 提供在域*azurewebsites.net*但还可以设置自定义域使用 Azure 管理门户的可能性。 但是，如果您使用的某些 Azure 应用服务模式下，仅可以管理自定义域。
-    > 
+    >
     > Azure 应用服务有免费、 共享、 基本、 标准和高级版本。 在免费和共享模式下，所有 web 应用在多租户环境中运行，并针对 CPU、 内存和网络使用情况采用的配额。 免费的应用程序的最大数目可能会因你的计划。 在标准模式下，您可以选择到标准 Azure 相对应的专用虚拟机上运行的应用的计算资源。 您可以发现中的 web 应用模式下配置**规模**web 应用的菜单。
-    > 
+    >
     > ![Azure 应用服务模式](maintainable-azure-websites-managing-change-and-scale/_static/image19.png "Azure 应用服务模式")
-    > 
+    >
     > 如果使用的**共享**或**标准**模式下，你将能够通过转到您的应用程序管理 web 应用的自定义域**配置**菜单，然后单击**管理域**下*域名*。
-    > 
+    >
     > ![管理域](maintainable-azure-websites-managing-change-and-scale/_static/image20.png "管理域")
-    > 
+    >
     > ![管理自定义域](maintainable-azure-websites-managing-change-and-scale/_static/image21.png "管理自定义域")
 9. 创建 web 应用后，单击下面的链接**URL**列来检查新的 web 应用正在运行。
 
@@ -754,7 +754,7 @@ ms.locfileid: "41834127"
 
     > [!NOTE]
     > 此范围表示你的 web 应用的平均 CPU 使用率。 Azure 将添加或删除实例以使您的 web 应用程序保持在此范围内。 中指定最小值和最大缩放所用的实例数**实例计数**配置。 Azure 将永远不会高于或超过该限制。
-    > 
+    >
     > 默认值**目标 CPU**只是为了本实验的目的而修改的值。 通过使用小的值配置 CPU 范围，你将要在中等负载放置在应用程序时增加触发自动缩放的可能性。
 
     ![更改目标必须介于 20 和 40%的 CPU](maintainable-azure-websites-managing-change-and-scale/_static/image78.png "更改要介于 20 到 40%的目标 CPU")
@@ -869,7 +869,7 @@ ms.locfileid: "41834127"
 20. 在中**解决方案资源管理器**，双击**Local.settings**要探索测试设置文件。 默认情况下，Visual Studio 使用本地计算机以运行测试。
 
     > [!NOTE]
-    > 或者，您可以将测试项目配置为运行在云中使用负载测试**Visual Studio Online (VSO)**。 VSO 提供基于云的负载测试模拟实际负载的服务，避免本地环境约束，例如 CPU 容量、 可用内存和网络带宽。 有关使用 VSO 运行负载测试的详细信息，请参阅[这篇文章](https://www.visualstudio.com/get-started/load-test-your-app-vs)。
+    > 或者，您可以将测试项目配置为运行在云中使用负载测试**Azure 测试计划**。 Azure 测试计划提供了基于云的负载测试模拟实际负载的服务，避免本地环境约束，例如 CPU 容量、 可用内存和网络带宽。 有关使用 Azure 的测试计划运行负载测试的详细信息，请参阅[负载测试方案](/azure/devops/test/load-test/overview?view=vsts)。
 
     ![测试设置](maintainable-azure-websites-managing-change-and-scale/_static/image98.png)
 
@@ -904,10 +904,10 @@ ms.locfileid: "41834127"
 
     > [!NOTE]
     > 它可能需要几分钟时间才会显示在图中的更改 (按**CTRL + F5**定期以刷新页面)。 如果没有看到任何更改，可以尝试以下：
-    > 
+    >
     > - 增加的负载测试的持续时间 (例如**10 分钟**)
     > - 减少的最大和最小值**目标 CPU**范围中的 web 应用自动缩放配置
-    > - 在云中运行负载测试**Visual Studio Online**。 详细信息[此处](https://www.visualstudio.com/get-started/load-test-your-app-vs.aspx)
+    > - 在云中运行负载测试**Azure 测试计划**。 详细信息[此处](/azure/devops/test/load-test/index?view=vsts)
 
 * * *
 

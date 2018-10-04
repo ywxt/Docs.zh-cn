@@ -8,16 +8,16 @@ ms.date: 12/13/2013
 ms.assetid: 2e260430-d13c-4658-bd05-e256fc0d63b8
 msc.legacyurl: /identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 6115b2a6caca05659f1c35ce97954807a6fb01ae
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: a91bb6ac51819d7dbb8eb3c63bd36a9d830eecce
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825807"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578219"
 ---
 <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a>将通用提供程序的数据迁移的成员身份和用户配置文件到 ASP.NET 标识 (C#)
 ====================
-通过[Pranav rastogi 撰写](https://github.com/rustd)， [Rick Anderson](https://github.com/Rick-Anderson)， [Robert McMurray](https://github.com/rmcmurray)， [Suhas Joshi](https://github.com/suhasj)
+通过[Pranav rastogi 撰写](https://github.com/rustd)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Robert McMurray](https://github.com/rmcmurray)， [Suhas Joshi](https://github.com/suhasj)
 
 > 本教程介绍所需迁移用户和角色的数据和创建使用现有的应用程序到 ASP.NET 标识模型的通用提供程序的用户配置文件数据的步骤。 迁移用户配置文件数据可在具有 SQL 成员身份的应用程序，此处提及的方法。
 

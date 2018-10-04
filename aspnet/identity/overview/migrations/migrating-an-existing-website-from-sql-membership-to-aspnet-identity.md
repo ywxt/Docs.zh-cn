@@ -8,16 +8,16 @@ ms.date: 12/19/2014
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 51b97ee413ea0304177d5963b5fd9d7253778d4f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 393d14799973e9126379743f63f79a7131206f38
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41832941"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577608"
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>从 SQL 成员身份的现有网站迁移到 ASP.NET 标识
 ====================
-通过[Rick Anderson](https://github.com/Rick-Anderson)， [Suhas Joshi](https://github.com/suhasj)
+通过[Rick Anderson]((https://twitter.com/RickAndMSFT))， [Suhas Joshi](https://github.com/suhasj)
 
 > 本教程说明了将迁移角色的数据创建新的 ASP.NET 标识系统中使用 SQL 成员资格用户与现有 web 应用程序的步骤。 这种方法涉及到一个 ASP.NET 标识和挂钩到它的新/老类中所需的更改现有数据库架构。 您采用此方法后将数据库迁移后，将轻松处理标识对将来的更新。
 

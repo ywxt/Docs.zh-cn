@@ -8,16 +8,16 @@ ms.date: 10/17/2013
 ms.assetid: 08257f55-36f4-4e39-9c88-2a5602838c79
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-startup-class-detection
 msc.type: authoredcontent
-ms.openlocfilehash: 591a04f429284ae73896807a6c2837ad498e8ae1
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 49ea01bf2170698de66b633b260664ce3d105ca1
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830446"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577478"
 ---
 <a name="owin-startup-class-detection"></a>OWIN 启动类检测
 ====================
-通过[Praburaj Thiagarajan](https://github.com/Praburaj)， [Rick Anderson](https://github.com/Rick-Anderson)
+通过[Praburaj Thiagarajan](https://github.com/Praburaj)， [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本教程演示如何配置加载的 OWIN 启动类。 OWIN 的详细信息，请参阅[项目 Katana 概述](an-overview-of-project-katana.md)。 本教程由 Rick Anderson 编写 ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )，Praburaj Thiagarajan 和 Howard Dierking ( [ @howard \_dierking](https://twitter.com/howard_dierking) )。
 > 

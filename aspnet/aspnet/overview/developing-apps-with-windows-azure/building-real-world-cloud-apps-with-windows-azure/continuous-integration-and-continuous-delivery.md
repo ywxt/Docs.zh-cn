@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 7a92a68ce8bbeec604a22e082975d33f9f3377c1
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: f701488025ec84a17651f9abff43f84531d35689
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340064"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48576243"
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>持续集成和持续交付 （使用 Azure 构建实际云应用）
 ====================
-通过[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://github.com/Rick-Anderson)， [Tom Dykstra](https://github.com/tdykstra)
+通过[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载修复此错误项目](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -40,7 +40,7 @@ ms.locfileid: "44340064"
 
 在 Azure 中的这些流程的自动化非常简单。 因为您在云中运行的所有内容，您无需购买或管理你的生成或测试环境的服务器。 同时，无需等待服务器可用于执行操作上测试。 每个版本执行的操作，可以构建测试环境在 Azure 中使用自动化脚本、 运行的验收测试或更多深入测试反对这样做，，然后只需完成后即将其拆散。 如果只有 2 个小时或 8 小时一次或一天运行该服务器，您必须为其付费的金额是最小的因为你只付钱让实际运行一台计算机的时间。 例如，在环境所需的修补程序应用程序基本上花费大约 1%为千瓦时，如果一个层上升从免费级别。 每月的过程中，如果只运行一次的每隔一小时的环境对测试环境所需可能的成本购买在星巴克 latte 小于。
 
-## <a name="azure-devops-services"></a>Azure DevOps 服务 
+## <a name="azure-devops-services"></a>Azure DevOps Services 
 
 Azure DevOps 服务提供了大量功能可帮助您进行从规划到部署的应用程序开发。
 

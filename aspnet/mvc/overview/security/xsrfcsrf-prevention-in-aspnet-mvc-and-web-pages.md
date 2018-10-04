@@ -8,16 +8,16 @@ ms.date: 03/14/2013
 ms.assetid: aadc5fa4-8215-4fc7-afd5-bcd2ef879728
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: cd1b8de51c180471ab273c4541959368ffbd48a3
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 5db661cccc58d1101f95091b069ab5cbfe78a378
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825480"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577933"
 ---
 <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>在 ASP.NET MVC 和 Web Pages 中的 XSRF/CSRF 防护
 ====================
-通过[Rick Anderson](https://github.com/Rick-Anderson)
+通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 跨站点请求伪造 （也称为 XSRF 或 CSRF） 是针对恶意网站凭此可以影响客户端浏览器和该浏览器的受信任的网站之间的交互的 web 托管的应用程序的攻击。 这些攻击的原因可能 web 浏览器会将自动随每个请求的身份验证令牌发送到 web 站点。 典型示例是身份验证 cookie，如 ASP。NET 的窗体身份验证票证。 然而，使用任何持久身份验证机制 （如 Windows 身份验证、 Basic 等） 的网站可能受攻击目标。
 > 
