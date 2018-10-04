@@ -1,23 +1,19 @@
 ---
 uid: mvc/videos/mvc-1/index
-title: ASP.NET MVC 1 | Microsoft Docs
+title: ASP.NET MVC 1 |Microsoft Docs
 author: rick-anderson
 description: ASP.NET MVC 1
-ms.author: aspnetcontent
-manager: wpickett
+ms.author: riande
 ms.date: 11/14/2011
-ms.topic: article
 ms.assetid: a780d06b-36cd-410a-b95a-b6b935b5a7fa
-ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1
 msc.type: chapter
-ms.openlocfilehash: ad33f7cb81b0124728cfa36c8ff3ba0a473e351f
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
-ms.translationtype: HT
+ms.openlocfilehash: ab03d8df4b149e32dd32c26a5b9ae29e2b7be353
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
-ms.locfileid: "29153899"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252945"
 ---
 <a name="aspnet-mvc-1"></a>ASP.NET MVC 1
 ====================
@@ -44,7 +40,7 @@ ms.locfileid: "29153899"
     - [ASP.NET MVC 店面第 16 部分：使用 OpenID 的成员身份重做](aspnet-mvc-storefront/aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
     - [ASP.NET MVC 店面第 17 部分：向 Jeff Atwood 结帐](aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
     - [ASP.NET MVC 店面第 18 部分：创建体验](aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience.md)
-    - [使用 Windows 工作流的 ASP.NET MVC 店面一部分 19： 处理订单](aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
+    - [ASP.NET MVC 店面第 19 部分：使用 Windows 工作流处理订单](aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
     - [ASP.NET MVC 店面第 19a 部分：Windows 工作流跟踪](aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windows-workflow-followup.md)
     - [ASP.NET MVC 店面第 20 部分：日志记录](aspnet-mvc-storefront/aspnet-mvc-storefront-part-20-logging.md)
     - [ASP.NET MVC 店面第 21 部分：管理器和个性化](aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)

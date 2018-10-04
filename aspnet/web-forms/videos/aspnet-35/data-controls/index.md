@@ -1,27 +1,23 @@
 ---
 uid: web-forms/videos/aspnet-35/data-controls/index
-title: 数据控件 |Microsoft 文档
+title: 数据控件 |Microsoft Docs
 author: rick-anderson
-description: 此组视频探讨如何使用 ASP.NET 3.5 的新数据的控件功能
-ms.author: aspnetcontent
-manager: wpickett
+description: 此系列视频介绍了如何使用 ASP.NET 3.5 的新数据控件功能
+ms.author: riande
 ms.date: 11/14/2011
-ms.topic: article
 ms.assetid: 62fc223f-9c29-4af9-bdb7-902103d5cff1
-ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-35/data-controls
 msc.type: chapter
-ms.openlocfilehash: aa4214c52a60559ace33c688fb251a3f26302997
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 4425c5f2ebeb327e251db1309f397a1b54438833
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26520506"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252799"
 ---
 <a name="data-controls"></a>数据控件
 ====================
-> 此组视频探讨如何使用 ASP.NET 3.5 的新数据的控件功能
+> 此系列视频介绍了如何使用 ASP.NET 3.5 的新数据控件功能
 
 
 - [ListView 控件](the-listview-control.md)

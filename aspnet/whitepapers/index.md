@@ -1,23 +1,19 @@
 ---
 uid: whitepapers/index
-title: 白皮书 |Microsoft 文档
+title: 白皮书 |Microsoft Docs
 author: rick-anderson
-description: 在此页上将找到白皮书来帮助你安装和配置 ASP.NET，并帮助您编写安全的、 快速且灵活的 ASP.NET 应用程序。
-ms.author: aspnetcontent
-manager: wpickett
+description: 此页上，您会发现白皮书以帮助您安装和配置 ASP.NET，并可帮助您编写安全、 快速且灵活的 ASP.NET 应用程序。
+ms.author: riande
 ms.date: 11/15/2011
-ms.topic: article
 ms.assetid: 3824e2d7-446f-406b-9c8b-5a1634359a78
-ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: 5d335017a28f3dcbb8332b5361a2b068bddd2cce
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: HT
+ms.openlocfilehash: 3e463e0fb8e6af228480fc4795e1bd0ee5badac9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2018
-ms.locfileid: "28883798"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252802"
 ---
 <a name="whitepapers"></a>白皮书
 ====================
@@ -28,7 +24,7 @@ ms.locfileid: "28883798"
     - [ASP.NET 4 重大更改](aspnet4/breaking-changes.md)
 - [将 ASP.NET MVC 1.0 应用程序升级到 ASP.NET MVC 2 应用程序](aspnet-mvc2-upgrade-notes.md)
 - [ASP.NET 拒绝了对 IIS 目录的访问](denied-access-to-iis-directories.md)
-- [什么是 ASP.NET MVC 2 中的新增功能](what-is-new-in-aspnet-mvc.md)
+- [ASP.NET MVC 2 的新增功能](what-is-new-in-aspnet-mvc.md)
 - [ASP.NET MVC 3](mvc3-release-notes.md)
 - [ASP.NET MVC 4](mvc4-beta-release-notes.md)
 - [通过 IIS 6.0 运行 ASP.NET 1.1](aspnet-and-iis6.md)

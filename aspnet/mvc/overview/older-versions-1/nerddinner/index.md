@@ -1,40 +1,36 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/index
-title: NerdDinner |Microsoft 文档
+title: NerdDinner |Microsoft Docs
 author: rick-anderson
 description: 如何生成使用 ASP.NET MVC 1 NerdDinner.com 网站。 有关 ASP.NET MVC 3 版本中，访问 GitHub 上 nerddinner。
-ms.author: aspnetcontent
-manager: wpickett
+ms.author: riande
 ms.date: 09/28/2011
-ms.topic: article
 ms.assetid: 6edfe14c-415a-4281-b6fa-69e9b38a82c8
-ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner
 msc.type: chapter
-ms.openlocfilehash: e4791f1fa7d5a23fdd688c294836971735070afc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 39a7f1b44ffe33b27097a53a8e5c1f47ea1cdd73
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26500746"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252924"
 ---
 <a name="nerddinner"></a>NerdDinner
 ====================
-> 如何生成使用 ASP.NET MVC 1 NerdDinner.com 网站。 有关 ASP.NET MVC 版本，请访问[GitHub 上的 NerdDinner](https://github.com/AspNetMVPSamples/NerdDinner)。
+> 如何生成使用 ASP.NET MVC 1 NerdDinner.com 网站。 有关 ASP.NET MVC 版本，请访问[NerdDinner GitHub 上的](https://github.com/AspNetMVPSamples/NerdDinner)。
 
 
-- [引入 NerdDinner 教程](introducing-the-nerddinner-tutorial.md)
+- [NerdDinner 的简介教程](introducing-the-nerddinner-tutorial.md)
 - [创建新的 ASP.NET MVC 项目](create-a-new-aspnet-mvc-project.md)
 - [创建数据库](create-a-database.md)
-- [生成一个具有业务规则验证模型](build-a-model-with-business-rule-validations.md)
-- [使用控制器和视图来实现详细信息列表/用户界面](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
-- [提供 CRUD （创建、 读取、 更新、 删除） 数据窗体条目支持](provide-crud-create-read-update-delete-data-form-entry-support.md)
+- [生成具有业务规则验证功能的模型](build-a-model-with-business-rule-validations.md)
+- [使用控制器和视图实现列表/详细信息 UI](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
+- [提供来自窗体输入支持的 CRUD（创建、读取、更新和删除）数据](provide-crud-create-read-update-delete-data-form-entry-support.md)
 - [使用 ViewData 和实现 ViewModel 类](use-viewdata-and-implement-viewmodel-classes.md)
-- [重用使用母版页和它们的 UI](re-use-ui-using-master-pages-and-partials.md)
+- [使用母版页和部分的重用 UI](re-use-ui-using-master-pages-and-partials.md)
 - [实现高效数据分页](implement-efficient-data-paging.md)
-- [保护应用程序使用身份验证和授权](secure-applications-using-authentication-and-authorization.md)
+- [使用身份验证和授权保护应用程序](secure-applications-using-authentication-and-authorization.md)
 - [使用 AJAX 提供动态更新](use-ajax-to-deliver-dynamic-updates.md)
-- [AJAX 用于实现映射方案](use-ajax-to-implement-mapping-scenarios.md)
-- [启用自动的单元测试](enable-automated-unit-testing.md)
-- [向上 NerdDinner 换行](nerddinner-wrap-up.md)
+- [使用 AJAX 实现映射方案](use-ajax-to-implement-mapping-scenarios.md)
+- [启用自动单元测试](enable-automated-unit-testing.md)
+- [NerdDinner 总结](nerddinner-wrap-up.md)
