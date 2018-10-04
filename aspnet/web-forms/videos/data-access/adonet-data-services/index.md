@@ -1,29 +1,25 @@
 ---
 uid: web-forms/videos/data-access/adonet-data-services/index
-title: ADO.NET Data Services |Microsoft 文档
+title: ADO.NET 数据服务 |Microsoft Docs
 author: rick-anderson
-description: 这些视频向你演示如何创建简单的 ASP.NET 应用程序中使用类型化的数据集的数据访问层。
-ms.author: aspnetcontent
-manager: wpickett
+description: 这些视频说明如何创建简单的 ASP.NET 应用程序中使用类型化的数据集的数据访问层。
+ms.author: riande
 ms.date: 11/04/2011
-ms.topic: article
 ms.assetid: e0af2f02-b132-4ad4-b881-f6b5ab86b1ae
-ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/data-access/adonet-data-services
 msc.type: chapter
-ms.openlocfilehash: 07181564ee701c71ce74ac7cea3d8cfd0f9f4ffd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 41c4661b496b8d547e9c6d4730cec11dc65013a3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26525096"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252939"
 ---
-<a name="adonet-data-services"></a><span data-ttu-id="1357a-103">ADO.NET 数据服务</span><span class="sxs-lookup"><span data-stu-id="1357a-103">ADO.NET Data Services</span></span>
+<a name="adonet-data-services"></a><span data-ttu-id="f9b98-103">ADO.NET 数据服务</span><span class="sxs-lookup"><span data-stu-id="f9b98-103">ADO.NET Data Services</span></span>
 ====================
-> <span data-ttu-id="1357a-104">这些视频向你演示如何创建简单的 ASP.NET 应用程序中使用类型化的数据集的数据访问层。</span><span class="sxs-lookup"><span data-stu-id="1357a-104">These videos show you how to create a data access layer using a typed data set for a simple ASP.NET application.</span></span>
+> <span data-ttu-id="f9b98-104">这些视频说明如何创建简单的 ASP.NET 应用程序中使用类型化的数据集的数据访问层。</span><span class="sxs-lookup"><span data-stu-id="f9b98-104">These videos show you how to create a data access layer using a typed data set for a simple ASP.NET application.</span></span>
 
 
-- [<span data-ttu-id="1357a-105">ASP.NET 应用程序中的数据访问层</span><span class="sxs-lookup"><span data-stu-id="1357a-105">Data Access Layers in ASP.NET Applications</span></span>](data-access-layers-in-aspnet-applications.md)
-- [<span data-ttu-id="1357a-106">手动将数据集绑定到数据网格</span><span class="sxs-lookup"><span data-stu-id="1357a-106">Manually Bind a Dataset to a Datagrid</span></span>](how-to-manually-bind-a-dataset-to-a-datagrid.md)
-- [<span data-ttu-id="1357a-107">使用数据集和来自 ASP 应用程序的筛选器</span><span class="sxs-lookup"><span data-stu-id="1357a-107">Work with Datasets and Filters from an ASP Application</span></span>](how-to-work-with-datasets-and-filters-from-an-asp-application.md)
+- [<span data-ttu-id="f9b98-105">ASP.NET 应用程序中的数据访问层</span><span class="sxs-lookup"><span data-stu-id="f9b98-105">Data Access Layers in ASP.NET Applications</span></span>](data-access-layers-in-aspnet-applications.md)
+- [<span data-ttu-id="f9b98-106">手动将数据集绑定到 Datagrid</span><span class="sxs-lookup"><span data-stu-id="f9b98-106">Manually Bind a Dataset to a Datagrid</span></span>](how-to-manually-bind-a-dataset-to-a-datagrid.md)
+- [<span data-ttu-id="f9b98-107">从 ASP 应用程序使用数据集和筛选器</span><span class="sxs-lookup"><span data-stu-id="f9b98-107">Work with Datasets and Filters from an ASP Application</span></span>](how-to-work-with-datasets-and-filters-from-an-asp-application.md)
