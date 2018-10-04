@@ -9,12 +9,12 @@ ms.date: 03/12/2010
 ms.technology: aspnet
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: 5bdebcc226050afc2469840dc4a4dc97ec6b80b2
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 2dc48e1262b1807a77a9889f7e0e62c9b9ea463e
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824443"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48794806"
 ---
 # <a name="aspnet-overview"></a>ASP.NET 概述
 
@@ -24,7 +24,7 @@ ASP.NET 是一个用于构建出色的网站和 web 应用程序使用 HTML、 C
 
 ## <a name="get-started"></a>入门
 
-[Visual Studio Community 2017](https://www.visualstudio.com/downloads/)、 免费 IDE，用于在 Windows 上的 ASP.NET。
+安装[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)社区版，Windows 上的 ASP.NET 的免费 IDE。
 
 ## <a name="websites-and-web-applications"></a>网站和 web 应用程序
 
@@ -34,7 +34,7 @@ ASP.NET 是一个用于构建出色的网站和 web 应用程序使用 HTML、 C
 
 下面是每个框架和有关如何选择它们之间的一些观点的概述。 如果您喜欢的视频介绍，请参阅[使用 ASP.NET 进行网站](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/Making-Websites-with-ASPNET)和[Web 工具是什么？](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/what-is-web-tools)
 
-|   | 如果有经验 | 开发风格 | 专业知识 | 
+|   | 如果有经验 | 开发风格 | 专业知识 |
 |-----------|----------------------|-----------------------------------------------------|----------------|
 | Web Forms — Web 窗体 | 赢取窗体、 WPF、.NET | 使用丰富的封装的 HTML 标记的控件库的快速开发 | 中级、 高级 RAD |
 | MVC       | Ruby on Rails、.NET  | 完全控制 HTML 标记、 代码和标记分隔，且易于编写测试的详细内容。 移动和单页面应用程序 (SPA) 最佳选择。 | 中等级别高级 |
@@ -42,13 +42,13 @@ ASP.NET 是一个用于构建出色的网站和 web 应用程序使用 HTML、 C
 
 ### <a name="web-forms"></a>Web Forms — Web 窗体
 
-使用 ASP.NET Web 窗体，您可以构建动态网站，使用熟悉的拖放、 事件驱动模型。 设计图面和数百个控件和组件可以快速生成复杂且功能强大的 UI 驱动站点具有数据访问权限。 
+使用 ASP.NET Web 窗体，您可以构建动态网站，使用熟悉的拖放、 事件驱动模型。 设计图面和数百个控件和组件可以快速生成复杂且功能强大的 UI 驱动站点具有数据访问权限。
 
 [了解有关 Web 窗体的详细信息](web-forms/index.md)
 
 ### <a name="mvc"></a>MVC
 
-ASP.NET MVC，您可以生成动态网站，使完全分离关注点，让你完全控制标记进行愉快、 灵活的开发功能强大、 基于模式的方法。 ASP.NET MVC 包括许多功能，启用快速、 TDD 友好开发，以便创建使用最新的 web 标准的复杂应用程序。 
+ASP.NET MVC，您可以生成动态网站，使完全分离关注点，让你完全控制标记进行愉快、 灵活的开发功能强大、 基于模式的方法。 ASP.NET MVC 包括许多功能，启用快速、 TDD 友好开发，以便创建使用最新的 web 标准的复杂应用程序。
 
 [了解有关 MVC 的详细信息](mvc/index.md)
 
@@ -80,7 +80,7 @@ ASP.NET SignalR 是 ASP.NET 开发人员的新库，简化了开发实时 web �
 
 <!-- Put first under SignalR TOC:  Watch video (6 minutes) https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/signalr-and-the-real-time-web -->
 
-## <a name="mobile-apps-and-sites"></a>移动应用和网站 
+## <a name="mobile-apps-and-sites"></a>移动应用和网站
 
 能够为 ASP.NET Web API 后端，以及使用响应式设计框架，例如 Twitter Bootstrap 的移动网站使用的本机移动应用。 如果您正在构建本机移动应用，很容易创建基于 JSON 的 Web API 与句柄数据访问、 身份验证，以及为你的应用的推送通知。 如果要构建响应迅速的移动站点，您可以使用任何 CSS 框架或打开网格系统更喜欢，也可以选择 jQuery Mobile 或 Sencha 和优秀使用 PhoneGap 的移动应用程序等功能强大的移动系统。
 
@@ -88,7 +88,7 @@ ASP.NET SignalR 是 ASP.NET 开发人员的新库，简化了开发实时 web �
 
 <!-- Put first under mobile TOC:  Watch video (11 minutes) https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-and-mobile -->
 
-## <a name="single-page-applications"></a>单页面应用程序 
+## <a name="single-page-applications"></a>单页面应用程序
 
 ASP.NET 单页面应用程序 (SPA) 帮助您生成包含大量使用 HTML、 CSS 3 和 JavaScript 的客户端进行交互的应用程序。 Visual Studio 包含用于生成单页面应用程序使用 knockout.js 和 ASP.NET Web API 模板。 除了内置的 SPA 模板，社区创建 SPA 模板也已可供下载。
 

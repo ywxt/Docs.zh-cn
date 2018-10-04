@@ -8,12 +8,12 @@ ms.date: 12/13/2013
 ms.assetid: cd844025-ccad-41ce-8694-595f1022a49f
 msc.legacyurl: /web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 0bc5ab59583a2be3f889ba05d26c6cda4589057d
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 8945f913abe8fb8397d07a5994000fff2348f1f7
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833488"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795374"
 ---
 <a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a>模拟 Entity Framework 时的单元测试 ASP.NET Web API 2
 ====================
@@ -22,17 +22,15 @@ ms.locfileid: "41833488"
 [下载已完成的项目](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
 
 > 此指南和应用程序演示如何为 Web API 2 应用程序使用实体框架创建单元测试。 它显示了如何修改已搭建基架的控制器，以启用传递上下文对象进行测试，以及如何创建使用实体框架的测试对象。
-> 
+>
 > 使用 ASP.NET Web API 进行单元测试的简介，请参阅[Unit Testing 与 ASP.NET Web API 2](unit-testing-with-aspnet-web-api.md)。
-> 
+>
 > 本教程假定你熟悉的 ASP.NET Web API 的基本概念。 有关介绍性教程，请参阅[Getting Started with ASP.NET Web API 2](../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)。
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
-> 
-> 
-> - [Visual Studio 2017](https://www.visualstudio.com/vs/)
+>
+> - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 > - Web API 2
-
 
 ## <a name="in-this-topic"></a>在本主题中
 

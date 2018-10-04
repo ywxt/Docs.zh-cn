@@ -8,12 +8,12 @@ ms.date: 06/26/2013
 ms.assetid: 23fc77da-2725-4434-99a0-ff872d96336b
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: da3ca8f89f823fcb2c4ab74af6ddf4f61d4e663a
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 191452204d4347396b1d339d9b82d583a2ce9f3c
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831083"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795507"
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>使用属性路由在 ASP.NET Web API 2 中创建 REST API
 ====================
@@ -46,13 +46,13 @@ Web API 2 支持一种新类型的路由，称为*的属性路由*。 属性路�
 
 ## <a name="prerequisites"></a>系统必备
 
-[Visual Studio 2017](https://www.visualstudio.com/vs/) Community、 Professional 或 Enterprise edition。
+[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community、 Professional 或 Enterprise edition。
 
 ## <a name="create-the-visual-studio-project"></a>创建 Visual Studio 项目
 
 首先运行 Visual Studio。 从**文件**菜单中，选择**新建**，然后选择**项目**。
 
-在中**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中选择**ASP.NET MVC 4 Web 应用程序**。 将项目命名&quot;BooksAPI&quot;。
+展开**已安装** > **Visual C#** 类别。 下**Visual C#**，选择**Web**。 在项目模板列表中选择**ASP.NET MVC 4 Web 应用程序**。 将项目命名&quot;BooksAPI&quot;。
 
 ![](create-a-rest-api-with-attribute-routing/_static/image1.png)
 

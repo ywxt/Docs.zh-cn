@@ -7,12 +7,12 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 02/01/2017
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
-ms.openlocfilehash: c2374e7c9ac89c2af26436529c7fa58a2d2d6ba6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1343bd100f521326477ecd831aa627b4394bad44
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37814153"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795348"
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>将 ASP.NET MVC 应用程序迁移到 Windows 容器
 
@@ -35,16 +35,16 @@ ms.locfileid: "37814153"
 
 ## <a name="prerequisites"></a>系统必备
 
-开发计算机必须运行
+在开发计算机必须具有以下软件：
 
-- [Windows 10 周年更新](https://www.microsoft.com/software-download/windows10/)（或更高版本）或 [Windows Server 2016](https://www.microsoft.com/cloud-platform/windows-server)（或更高版本）。
+- [Windows 10 周年更新](https://www.microsoft.com/software-download/windows10/)（或更高版本） 或[Windows Server 2016](https://www.microsoft.com/cloud-platform/windows-server) （或更高版本）
 - [用于 Windows 的 Docker](https://docs.docker.com/docker-for-windows/) - 稳定版 1.13.0 或 1.12 beta 版本 26（或更高版本）
-- [Visual Studio 2017](https://www.visualstudio.com/visual-studio-homepage-vs.aspx)。
+- [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 
 > [!IMPORTANT]
 > 如果使用的是 Windows Server 2016，请按[容器主机部署 - Windows Server](https://msdn.microsoft.com/virtualization/windowscontainers/deployment/deployment) 中的说明操作。
 
-安装并启动 Docker 后，右键单击托盘图标，然后选择“**切换到 Windows 容器**”。 必须先这样做，才能在 Windows 上运行 Docker 映像。 此命令需要几秒钟执行：
+安装并启动 Docker，右键单击托盘图标并选择后**切换到 Windows 容器**。 必须先这样做，才能在 Windows 上运行 Docker 映像。 此命令需要几秒钟执行：
 
 ![Windows 容器][windows-container]
 
@@ -114,7 +114,7 @@ docker run -d --name randomanswers mvcrandomanswers
 
 `-d` 参数告知 Docker 在分离模式下启动映像。 这意味着 Docker 映像会以断开连接当前 shell 的状态运行。
 
-在多个 docker 示例中，可能会看到-p 来将容器和主机端口映射。 默认 aspnet 映像已配置要侦听端口 80 上并将其公开的容器。 
+在多个 docker 示例中，可能会看到-p 来将容器和主机端口映射。 默认 aspnet 映像已配置要侦听端口 80 上并将其公开的容器。
 
 `--name randomanswers` 为运行中容器命名。 可在大多数命令中使用此名称，而不是容器 ID。
 

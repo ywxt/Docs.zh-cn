@@ -4,18 +4,18 @@ author: scottaddie
 description: 了解如何通过应用捆绑和缩减技术优化 ASP.NET Core web 应用程序中的静态资源。
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 01/10/2018
+ms.date: 10/04/2018
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: 45200d34974cbbb44787616eba7508458882416c
-ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
+ms.openlocfilehash: 152f3c810b587d734c1b1076a09ea38d13872e2d
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47028136"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795400"
 ---
 # <a name="bundle-and-minify-static-assets-in-aspnet-core"></a>捆绑和缩小在 ASP.NET Core 中的静态资产
 
-作者：[Scott Addie](https://twitter.com/Scott_Addie)
+通过[Scott Addie](https://twitter.com/Scott_Addie)和[David 松树](https://twitter.com/davidpine7)
 
 本文介绍了应用绑定和缩减，包括如何使用 ASP.NET Core web apps 使用这些功能的好处。
 

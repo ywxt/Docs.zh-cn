@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: 979d6c9f-0129-4e5b-ae56-4507b281b86d
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: f13720c5e9de99fb4ae5b27a757c257cac881f89
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 35cf3bf555218b6b49b30f48186e4c67aff4ff7b
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831692"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795546"
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的属性路由
 ====================
@@ -25,10 +25,9 @@ ms.locfileid: "41831692"
 
 本主题演示如何启用属性路由并描述了各种选项的属性路由。 有关使用属性路由的端到端教程，请参阅[使用 Web API 2 中的属性路由创建 REST API](create-a-rest-api-with-attribute-routing.md)。
 
-
 ## <a name="prerequisites"></a>系统必备
 
-[Visual Studio 2017](https://www.visualstudio.com/vs/) Community、 Professional 或 Enterprise Edition
+[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community、 Professional 或 Enterprise edition
 
 或者，使用 NuGet 包管理器安装所需的包。 从**工具**在 Visual Studio 中，选择菜单**库程序包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中输入以下命令：
 
@@ -55,21 +54,21 @@ ms.locfileid: "41831692"
 
 在此示例中，"/ api/v1/产品"将路由到控制器不同"/ api/v2/产品"。
 
-`/api/v1/products`  
+`/api/v1/products`
 `/api/v2/products`
 
 **重载的 URI 段**
 
 在此示例中，"1"是订单号，但是"挂起"映射到集合。
 
-`/orders/1`  
+`/orders/1`
 `/orders/pending`
 
 **多个参数类型**
 
 在此示例中，"1"是订单号，但指定一个日期，"2013年/06/16"。
 
-`/orders/1`  
+`/orders/1`
 `/orders/2013/06/16`
 
 <a id="enable"></a>
@@ -251,7 +250,7 @@ Web API 还将选择操作请求 （GET、 POST 等） 的 HTTP 方法。 默认
 下面是如何确定总排序：
 
 1. 比较**RouteOrder**路由属性的属性。
-2. 查看路由模板中的每个 URI 段。 为每个段进行排序，如下所示： 
+2. 查看路由模板中的每个 URI 段。 为每个段进行排序，如下所示：
 
     1. 文本段。
     2. 将路由参数的约束。

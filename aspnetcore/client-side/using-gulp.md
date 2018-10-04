@@ -4,18 +4,18 @@ author: rick-anderson
 description: 了解如何在 ASP.NET Core 中使用 Gulp。
 ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.date: 02/28/2017
+ms.date: 10/04/2018
 uid: client-side/using-gulp
-ms.openlocfilehash: 35f62bf276d3708df0e2c8b56a44c34c178d8ff8
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 4f383be0498b5b861bd43cc0f0685b1e62c7571b
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278247"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795509"
 ---
 # <a name="use-gulp-in-aspnet-core"></a>在 ASP.NET Core 中使用 Gulp
 
-通过[艾力克 Reitan](https://github.com/Erikre)， [Scott Addie](https://scottaddie.com)， [Daniel Roth](https://github.com/danroth27)，和[Shayne 贝叶](https://twitter.com/spboyer)
+通过[Scott Addie](https://scottaddie.com)， [Shayne Boyer](https://twitter.com/spboyer)，和[David 松树](https://twitter.com/davidpine7)
 
 在典型的现代 Web 应用中，生成过程可能包括以下操作：
 
@@ -27,21 +27,21 @@ ms.locfileid: "36278247"
 
 任务运行程序是一种自动执行这些常规开发任务和其他任务的工具。 Visual Studio 为下述两种常用的基于 JavaScript 的任务运行程序提供内置支持：[Gulp](https://gulpjs.com/) 和 [Grunt](using-grunt.md)。
 
-## <a name="gulp"></a>gulp
+## <a name="gulp"></a>Gulp
 
-Gulp 是一个基于 JavaScript 的流式处理生成工具包，客户端代码。 它通常用于在生成环境中触发特定事件时流通过一系列的进程的客户端文件。 例如，使用 Gulp 来自动执行[绑定和缩减](bundling-and-minification.md)或清理新生成前的开发环境。
+Gulp 是一个基于 JavaScript 的流式处理生成工具包，用于客户端代码。 它通常用于通过一系列的进程的客户端文件流式传输特定的事件触发的生成环境中时。 例如，使用 Gulp 来自动执行[捆绑和缩小](bundling-and-minification.md)或清理之前新生成的开发环境。
 
-在中定义一组 Gulp 任务*gulpfile.js*。 以下 JavaScript 包括 Gulp 模块，并指定文件路径，以在即将推出的任务中引用：
+中定义一组的 Gulp 任务*gulpfile.js*。 以下 JavaScript 包括 Gulp 模块，并指定文件路径，以引用中即将推出的任务：
 
 ```javascript
 /// <binding Clean='clean' />
 "use strict";
 
 var gulp = require("gulp"),
-  rimraf = require("rimraf"),
-  concat = require("gulp-concat"),
-  cssmin = require("gulp-cssmin"),
-  uglify = require("gulp-uglify");
+    rimraf = require("rimraf"),
+    concat = require("gulp-concat"),
+    cssmin = require("gulp-cssmin"),
+    uglify = require("gulp-uglify");
 
 var paths = {
   webroot: "./wwwroot/"
@@ -55,74 +55,87 @@ paths.concatJsDest = paths.webroot + "js/site.min.js";
 paths.concatCssDest = paths.webroot + "css/site.min.css";
 ```
 
-上面的代码中指定的节点模块所需。 `require`函数导入每个模块，以便依赖任务可以使用其功能。 每个导入的模块被分配给变量。 模块可以位于按名称或路径。 在此示例中，模块名为`gulp`， `rimraf`， `gulp-concat`， `gulp-cssmin`，和`gulp-uglify`按名称检索。 此外，创建一系列的路径，以便可以重复使用并在任务中引用的 CSS 和 JavaScript 文件的位置。 下表提供了的模块中包含的描述*gulpfile.js*。
+上面的代码中指定需要哪些节点模块。 `require`函数导入的每个模块，以便依赖任务能够利用其功能。 每个导入的模块被分配给一个变量。 模块可位于通过名称或路径。 在此示例中，模块名为`gulp`， `rimraf`， `gulp-concat`， `gulp-cssmin`，和`gulp-uglify`按名称检索。 此外，创建一系列的路径，以便可以重复使用并在任务中引用的 CSS 和 JavaScript 文件的位置。 下表提供了说明中包含的模块*gulpfile.js*。
 
 | 模块名 | 描述 |
 | ----------- | ----------- |
-| gulp        | Gulp 流式处理生成系统中。 有关详细信息，请参阅[gulp](https://www.npmjs.com/package/gulp)。 |
+| gulp        | Gulp 流式处理生成系统。 有关详细信息，请参阅[gulp](https://www.npmjs.com/package/gulp)。 |
 | rimraf      | 节点删除模块。 有关详细信息，请参阅[rimraf](https://www.npmjs.com/package/rimraf)。 |
-| gulp concat | 一个连接基于操作系统的换行字符的文件的模块。 有关详细信息，请参阅[gulp concat](https://www.npmjs.com/package/gulp-concat)。 |
-| gulp-cssmin | Minifies CSS 文件模块。 有关详细信息，请参阅[gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)。 |
-| gulp uglify | Minifies 模块 *.js*文件。 有关详细信息，请参阅[gulp uglify](https://www.npmjs.com/package/gulp-uglify)。 |
+| gulp concat | 连接基于操作系统的换行字符的文件的模块。 有关详细信息，请参阅[gulp concat](https://www.npmjs.com/package/gulp-concat)。 |
+| gulp-cssmin | 缩减 CSS 文件的模块。 有关详细信息，请参阅[gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)。 |
+| gulp 丑化 | 一个模块，缩减 *.js*文件。 有关详细信息，请参阅[gulp 丑化](https://www.npmjs.com/package/gulp-uglify)。 |
 
-必备项的模块将导入后，可以指定任务。 此处有六项任务注册，表示通过以下代码：
+一旦导入必要模块，可以指定任务。 此处有六个任务注册，通过以下代码表示：
 
 ```javascript
-gulp.task("clean:js", function (cb) {
-  rimraf(paths.concatJsDest, cb);
-});
+gulp.task("clean:js", done => rimraf(paths.concatJsDest, done));
+gulp.task("clean:css", done => rimraf(paths.concatCssDest, done));
+gulp.task("clean", gulp.series(["clean:js", "clean:css"]));
 
-gulp.task("clean:css", function (cb) {
-  rimraf(paths.concatCssDest, cb);
-});
-
-gulp.task("clean", ["clean:js", "clean:css"]);
-
-gulp.task("min:js", function () {
+gulp.task("min:js", () => {
   return gulp.src([paths.js, "!" + paths.minJs], { base: "." })
     .pipe(concat(paths.concatJsDest))
     .pipe(uglify())
     .pipe(gulp.dest("."));
 });
 
-gulp.task("min:css", function () {
+gulp.task("min:css", () => {
   return gulp.src([paths.css, "!" + paths.minCss])
     .pipe(concat(paths.concatCssDest))
     .pipe(cssmin())
     .pipe(gulp.dest("."));
 });
 
-gulp.task("min", ["min:js", "min:css"]);
+gulp.task("min", gulp.series(["min:js", "min:css"]));
+    
+// A 'default' task is required by Gulp v4
+gulp.task("default", gulp.series(["min"]));
 ```
 
-下表提供了在上面的代码中指定的任务的说明：
+---
+
+下表提供了上面的代码中指定的任务的说明：
 
 |任务名称|描述|
 |--- |--- |
 |clean:js|一个使用 rimraf Node 删除模块删除缩减版 site.js 文件的任务。|
 |clean:css|一个使用 rimraf Node 删除模块删除缩减版 site.css 文件的的任务。|
-|清理|一个任务，它调用`clean:js`任务后, 跟`clean:css`任务。|
-|min:js|Minifies 和串联的 js 文件夹中的所有.js 文件的任务。 。 排除 min.js 文件。|
-|min:css|Minifies 和串联的 css 文件夹中的所有.css 文件的任务。 。 排除 min.css 文件。|
-|min|一个任务，它调用`min:js`任务后, 跟`min:css`任务。|
+|清理|调用的任务`clean:js`任务中后, 跟`clean:css`任务。|
+|min:js|缩减，并将连接的 js 文件夹中的所有.js 文件的任务。 。 Min.js 文件将不会。|
+|min:css|一个任务，缩减，并将连接的 css 文件夹中的所有.css 文件。 。 Min.css 文件将不会。|
+|min|调用的任务`min:js`任务中后, 跟`min:css`任务。|
 
 ## <a name="running-default-tasks"></a>正在运行的默认任务
 
-如果你尚未创建新的 Web 应用程序，请在 Visual Studio 中创建新的 ASP.NET Web 应用程序项目。
+如果你尚未创建新的 Web 应用，Visual Studio 中创建一个新的 ASP.NET Web 应用程序项目。
 
-1.  将新的 JavaScript 文件添加到你的项目并将其命名*gulpfile.js*，然后将以下代码复制。
+1.  打开*package.json*文件 (添加如果不是存在) 并添加以下。
+
+    ```json
+    {
+      "devDependencies": {
+        "gulp": "^4.0.0",
+        "gulp-concat": "2.6.1",
+        "gulp-cssmin": "0.2.0",
+        "gulp-uglify": "3.0.0",
+        "rimraf": "2.6.1"
+      }
+    }
+    ```
+
+2.  将新的 JavaScript 文件添加到你的项目并将其命名*gulpfile.js*，然后将以下代码复制。
 
     ```javascript
     /// <binding Clean='clean' />
     "use strict";
     
-    var gulp = require("gulp"),
-      rimraf = require("rimraf"),
-      concat = require("gulp-concat"),
-      cssmin = require("gulp-cssmin"),
-      uglify = require("gulp-uglify");
+    const gulp = require("gulp"),
+          rimraf = require("rimraf"),
+          concat = require("gulp-concat"),
+          cssmin = require("gulp-cssmin"),
+          uglify = require("gulp-uglify");
     
-    var paths = {
+    const paths = {
       webroot: "./wwwroot/"
     };
     
@@ -133,67 +146,50 @@ gulp.task("min", ["min:js", "min:css"]);
     paths.concatJsDest = paths.webroot + "js/site.min.js";
     paths.concatCssDest = paths.webroot + "css/site.min.css";
     
-    gulp.task("clean:js", function (cb) {
-      rimraf(paths.concatJsDest, cb);
-    });
-    
-    gulp.task("clean:css", function (cb) {
-      rimraf(paths.concatCssDest, cb);
-    });
-    
-    gulp.task("clean", ["clean:js", "clean:css"]);
-    
-    gulp.task("min:js", function () {
+    gulp.task("clean:js", done => rimraf(paths.concatJsDest, done));
+    gulp.task("clean:css", done => rimraf(paths.concatCssDest, done));
+    gulp.task("clean", gulp.series(["clean:js", "clean:css"]));
+
+    gulp.task("min:js", () => {
       return gulp.src([paths.js, "!" + paths.minJs], { base: "." })
         .pipe(concat(paths.concatJsDest))
         .pipe(uglify())
         .pipe(gulp.dest("."));
     });
-    
-    gulp.task("min:css", function () {
+
+    gulp.task("min:css", () => {
       return gulp.src([paths.css, "!" + paths.minCss])
         .pipe(concat(paths.concatCssDest))
         .pipe(cssmin())
         .pipe(gulp.dest("."));
     });
+
+    gulp.task("min", gulp.series(["min:js", "min:css"]));
     
-    gulp.task("min", ["min:js", "min:css"]);
+    // A 'default' task is required by Gulp v4
+    gulp.task("default", gulp.series(["min"]));
     ```
 
-2.  打开*package.json*文件 (添加如果不是存在) 并添加以下。
-
-    ```json
-    {
-      "devDependencies": {
-        "gulp": "3.9.1",
-        "gulp-concat": "2.6.1",
-        "gulp-cssmin": "0.1.7",
-        "gulp-uglify": "2.0.1",
-        "rimraf": "2.6.1"
-      }
-    }
-    ```
-
-3.  在**解决方案资源管理器**，右键单击*gulpfile.js*，然后选择**任务运行程序资源管理器**。
+3.  在中**解决方案资源管理器**，右键单击*gulpfile.js*，然后选择**Task Runner Explorer**。
     
     ![从解决方案资源管理器中打开任务运行程序资源管理器](using-gulp/_static/02-SolutionExplorer-TaskRunnerExplorer.png)
     
-    **任务运行程序资源管理器**显示 Gulp 任务的列表。 (你可能需要单击**刷新**显示项目名称左侧的按钮。)
+    **Task Runner Explorer**显示 Gulp 任务的列表。 (您可能需要单击**刷新**显示项目名称左侧的按钮。)
     
     ![任务运行程序资源管理器](using-gulp/_static/03-TaskRunnerExplorer.png)
     
     > [!IMPORTANT]
-    > **任务运行程序资源管理器**，才会显示上下文菜单项*gulpfile.js*是在根项目目录中。
+    > **Task Runner Explorer**才会显示上下文菜单项*gulpfile.js*根项目目录中。
 
 4.  在“任务运行程序资源管理器”中的“任务”下，右键单击“clean”，然后从弹出菜单中选择“运行”。
 
-    ![任务运行程序资源管理器清理任务](using-gulp/_static/04-TaskRunner-clean.png)
+    ![Clean 任务，任务运行程序资源管理器](using-gulp/_static/04-TaskRunner-clean.png)
 
     **任务运行程序资源管理器**将创建名为“clean”的新选项卡，并根据 *gulpfile.js* 中的定义执行 clean 任务。
 
 5.  右键单击“clean”任务，然后选择“绑定”>“生成之前” > **。
 
-    ![任务运行程序资源管理器绑定 BeforeBuild](using-gulp/_static/05-TaskRunner-BeforeBuild.png)
+    ![绑定 BeforeBuild 任务运行程序资源管理器](using-gulp/_static/05-TaskRunner-BeforeBuild.png)
 
     “生成之前”绑定会配置 clean 任务，使之在每次生成项目之前自动运行。
 
@@ -205,27 +201,28 @@ gulp.task("min", ["min:js", "min:css"]);
 </Target>
 ```
 
-现在 Visual Studio 中或从命令提示符处使用运行项目时执行清理任务[dotnet 运行](/dotnet/core/tools/dotnet-run)命令 (运行`npm install`第一个)。
+现在，在 Visual Studio 中或从命令提示符处使用运行项目时执行清理任务[dotnet 运行](/dotnet/core/tools/dotnet-run)命令 (运行`npm install`第一个)。
 
 ## <a name="defining-and-running-a-new-task"></a>定义和运行新任务
 
-若要定义新的 Gulp 任务，修改*gulpfile.js*。
+若要定义新的 Gulp 任务，请修改*gulpfile.js*。
 
-1.  末尾添加以下 JavaScript *gulpfile.js*:
+1.  将以下 JavaScript 添加到末尾*gulpfile.js*:
 
     ```javascript
-    gulp.task("first", function () {
+    gulp.task('first', done => {
       console.log('first task! <-----');
+      done(); // signal completion
     });
     ```
 
-    此任务名为`first`，和它只需显示的字符串。
+    此任务名为`first`，和它就会显示一个字符串。
 
 2.  保存*gulpfile.js*。
 
-3.  在**解决方案资源管理器**，右键单击*gulpfile.js*，然后选择*任务运行程序资源管理器*。
+3.  在中**解决方案资源管理器**，右键单击*gulpfile.js*，然后选择*Task Runner Explorer*。
 
-4.  在**任务运行程序资源管理器**，右键单击**第一个**，然后选择**运行**。
+4.  在中**Task Runner Explorer**，右键单击**第一个**，然后选择**运行**。
 
     ![任务运行程序资源管理器运行第一个任务](using-gulp/_static/06-TaskRunner-First.png)
 
@@ -235,41 +232,45 @@ gulp.task("min", ["min:js", "min:css"]);
 
 运行多个任务时，默认情况下这些任务会并发运行。 但是，如果需要以特定顺序运行任务，则必须指定每个任务的具体完成时间，以及哪些任务依赖于其他任务的完成。
 
-1.  若要定义要按顺序运行的任务的一系列，替换`first`中前面添加的任务*gulpfile.js*替换为以下：
+1.  若要定义一系列任务按顺序运行，请替换`first`中前面添加的任务*gulpfile.js*以下：
 
     ```javascript
-    gulp.task("series:first", function () {
+    gulp.task('series:first', done => {
       console.log('first task! <-----');
+      done(); // signal completion
     });
- 
-    gulp.task("series:second", ["series:first"], function () {
+    gulp.task('series:second', done => {
       console.log('second task! <-----');
+      done(); // signal completion
     });
- 
-    gulp.task("series", ["series:first", "series:second"], function () {});
+
+    gulp.task('series', gulp.series(['series:first', 'series:second']), () => { });
+
+    // A 'default' task is required by Gulp v4
+    gulp.task('default', gulp.series('series'));
     ```
  
-    你现在具有三个任务： `series:first`， `series:second`，和`series`。 `series:second`任务包括指定任务要运行和完成之前的数组的第二个参数`series:second`任务将运行。 根据上面，唯一的代码中的指定`series:first`任务必须完成之前`series:second`任务将运行。
+    现在有三个任务： `series:first`， `series:second`，和`series`。 `series:second`任务包括第二个参数，以便指定要运行和前完成的任务的数组`series:second`任务将运行。 上面，唯一的代码中指定的那样`series:first`必须在任务完成之前`series:second`任务将运行。
 
 2.  保存*gulpfile.js*。
 
-3.  在**解决方案资源管理器**，右键单击*gulpfile.js*和选择**任务运行程序资源管理器**如果尚未打开。
+3.  在中**解决方案资源管理器**，右键单击*gulpfile.js* ，然后选择**Task Runner Explorer**如果尚未打开。
 
-4.  在**任务运行程序资源管理器**，右键单击**系列**和选择**运行**。
+4.  在中**Task Runner Explorer**，右键单击**系列**，然后选择**运行**。
 
-    ![任务运行程序资源管理器运行系列任务](using-gulp/_static/07-TaskRunner-Series.png)
+    ![任务运行程序资源管理器运行任务序列](using-gulp/_static/07-TaskRunner-Series.png)
 
 ## <a name="intellisense"></a>IntelliSense
 
-IntelliSense 提供了代码完成、 参数说明和其他功能来提高工作效率，并减少错误。 用 JavaScript; 编写 gulp 任务因此，IntelliSense 可以提供开发时的协助。 当你使用 JavaScript，IntelliSense 也会列出对象、 函数、 属性和可用的参数基于当前的上下文。 从 intellisense 来完成代码提供的弹出列表中选择编码选项。
+IntelliSense 提供了代码完成、 参数说明和其他功能以提高工作效率并减少错误。 Gulp 任务是用 JavaScript 编写的;因此，IntelliSense 可以提供开发时获得帮助。 使用 JavaScript 时，IntelliSense 会列出对象、 函数、 属性和可用的参数根据当前上下文。 从 intellisense 以完成代码提供的弹出列表中选择编码选项。
 
-![IntelliSense 的 gulp](using-gulp/_static/08-IntelliSense.png)
+![gulp IntelliSense](using-gulp/_static/08-IntelliSense.png)
 
-Intellisense 的详细信息，请参阅[JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense)。
+有关 IntelliSense 的详细信息，请参阅[JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense)。
 
 ## <a name="development-staging-and-production-environments"></a>开发、 过渡和生产环境
 
-当 Gulp 用于优化过渡和生产客户端文件时，处理的文件将保存到本地的过渡和生产位置。 *_Layout.cshtml*文件使用**环境**标记帮助器提供两个不同版本的 CSS 文件。 CSS 文件的一个版本是用于开发和另一个版本进行了优化的过渡和生产。 在 Visual Studio 2017，当你更改**ASPNETCORE_ENVIRONMENT**环境变量`Production`，Visual Studio 将生成 Web 应用程序和链接到的最小化 CSS 文件。 下面的标记演示**环境**标记帮助程序包含将标记与`Development`CSS 文件和缩减`Staging, Production`CSS 文件。
+当 Gulp 用于优化过渡和生产客户端的文件时，已处理的文件保存到本地的过渡和生产位置。 *_Layout.cshtml*文件使用**环境**的标记帮助程序提供两个不同版本的 CSS 文件。 CSS 文件的一个版本用于开发，另一个版本适用于过渡和生产。 在 Visual Studio 2017 中，更改时**ASPNETCORE_ENVIRONMENT**环境变量为`Production`，Visual Studio 将生成 Web 应用并链接到最小化的 CSS 文件。 下面的标记演示**环境**标记帮助程序包含将标记与`Development`CSS 文件和缩小`Staging, Production`CSS 文件。
 
 ```html
 <environment names="Development">
@@ -294,23 +295,23 @@ Intellisense 的详细信息，请参阅[JavaScript IntelliSense](/visualstudio/
 </environment>
 ```
 
-## <a name="switching-between-environments"></a>环境之间切换
+## <a name="switching-between-environments"></a>在环境之间切换
 
 若要针对不同的环境编译之间切换，请修改**ASPNETCORE_ENVIRONMENT**环境变量的值。
 
 1.  在**任务运行程序资源管理器**中，验证 **min** 任务是否已设置为在**生成之前**运行。
 
-2.  在**解决方案资源管理器**，右键单击项目名称并选择**属性**。
+2.  在中**解决方案资源管理器**，右键单击项目名称并选择**属性**。
 
-    在显示属性表为 Web 应用。
+    显示 Web 应用的属性表。
 
 3.  单击“调试”选项卡。
 
-4.  设置的值**宿主： 环境**环境变量`Production`。
+4.  设置的值**宿主： 环境**环境变量为`Production`。
 
-5.  按**F5**在浏览器中运行该应用程序。
+5.  按**F5**在浏览器中运行应用程序。
 
-6.  在浏览器窗口中，右击该页并选择**查看源**若要查看的 HTML 页。
+6.  在浏览器窗口中，右键单击页并选择**查看源**若要查看该页面的 HTML。
 
     请注意，样式表链接指向的缩减的 CSS 文件。
 
@@ -318,9 +319,9 @@ Intellisense 的详细信息，请参阅[JavaScript IntelliSense](/visualstudio/
 
 8.  在 Visual Studio 中，返回到 Web 应用的属性表，并更改**宿主： 环境**环境变量回`Development`。
 
-9.  按**F5**再次在浏览器中运行该应用程序。
+9.  按**F5**再次在浏览器中运行应用程序。
 
-10. 在浏览器窗口中，右击该页并选择**查看源**若要查看的 HTML 页。
+10. 在浏览器窗口中，右键单击页并选择**查看源**若要查看该页面的 HTML。
 
     请注意，样式表链接指向 CSS 文件的 unminified 版本。
 
@@ -328,16 +329,16 @@ Intellisense 的详细信息，请参阅[JavaScript IntelliSense](/visualstudio/
 
 ## <a name="task-and-module-details"></a>任务和模块的详细信息
 
-Gulp 任务已注册到的函数名称。 如果其他任务都必须运行在当前任务之前，你可以指定依赖关系。 其他函数，您可以运行和监视 Gulp 任务，以及将源设置 (*src*) 和目标 (*dest*) 正在修改的文件。 以下是主 Gulp API 函数：
+Gulp 任务已注册到函数名称。 如果当前任务之前必须运行其他任务，你可以指定依赖关系。 其他函数，您可以运行和监视的 Gulp 任务，以及将源设置 (*src*) 和目标 (*dest*) 正在修改的文件。 下面是主要的 Gulp API 函数：
 
 |Gulp 函数|语法|描述|
 |---   |--- |--- |
-|任务  |`gulp.task(name[, deps], fn) { }`|`task`函数创建的任务。 `name`参数定义任务的名称。 `deps`参数包含要运行此任务之前完成的任务的数组。 `fn`参数表示执行任务的操作的回调函数。|
-|监视 |`gulp.watch(glob [, opts], tasks) { }`|`watch`发生文件更改时，函数会监视文件和运行任务。 `glob`参数是`string`或`array`，它确定要监视哪些文件。 `opts`参数提供了监视选项的其他文件。|
-|src   |`gulp.src(globs[, options]) { }`|`src`函数提供了 glob 值匹配的文件。 `glob`参数是`string`或`array`，它确定哪些文件读取。 `options`参数提供附加文件选项。|
-|目标  |`gulp.dest(path[, options]) { }`|`dest`函数定义可以向其写入文件的位置。 `path`参数是字符串或确定目标文件夹的函数。 `options`参数是一个对象，指定输出文件夹的选项。|
+|任务  |`gulp.task(name[, deps], fn) { }`|`task`函数创建的任务。 `name`参数定义任务的名称。 `deps`参数包含要完成此任务运行之前任务的数组。 `fn`参数表示执行任务的操作的回调函数。|
+|监视 |`gulp.watch(glob [, opts], tasks) { }`|`watch` Function 可监视文件和运行任务发生文件更改时。 `glob`参数是`string`或`array`，它确定要监视哪些文件。 `opts`参数提供了监视选项的其他文件。|
+|src   |`gulp.src(globs[, options]) { }`|`src`函数提供了与 glob 值匹配的文件。 `glob`参数是`string`或`array`，它确定哪些文件读取。 `options`参数提供了附加文件选项。|
+|dest  |`gulp.dest(path[, options]) { }`|`dest`函数用于定义要向其写入文件的位置。 `path`参数是字符串或函数，用于确定目标文件夹。 `options`参数是一个对象，指定输出文件夹选项。|
 
-有关其他的 Gulp API 参考信息，请参阅[Gulp 文档 API](https://github.com/gulpjs/gulp/blob/master/docs/API.md)。
+有关其他 Gulp API 参考信息，请参阅[Gulp Docs API](https://github.com/gulpjs/gulp/blob/master/docs/API.md)。
 
 ## <a name="gulp-recipes"></a>Gulp 脚本
 

@@ -8,38 +8,38 @@ ms.date: 02/13/2014
 ms.assetid: 0acfec5a-48f2-4766-a801-a0f426966f0a
 msc.legacyurl: /web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 41cb1048b9dab21516e38cfff0772b8b690d474f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: f3c1a74b23a0d9535256caa660408701062fe21c
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41832495"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795442"
 ---
 <a name="programming-aspnet-web-pages-razor-using-visual-studio"></a>编程使用 Visual Studio 的 ASP.NET Web Pages (Razor)
 ====================
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本文介绍如何使用 Visual Studio 或 Visual Web Developer 速成版到程序 ASP.NET Web Pages (Razor) 网站。
-> 
+>
 > 学习内容
-> 
+>
 > - 需要安装 （如果有的话），以便在你的 Visual Studio 版本中使用 ASP.NET Web Pages。
 > - 如何将支持适用于 ASP.NET 网页添加到 Visual Web Developer 2010 Express。
 > - 如何使用 Visual Studio 中的功能以使用 ASP.NET Razor 页面，包括 IntelliSense 和调试程序。
->   
-> 
+>
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
-> 
-> 
+>
+>
 > - ASP.NET 网页 (Razor) 3
 > - Visual Studio 2013
 > - WebMatrix 3
->   
-> 
+>
+>
 > 本教程也适用于 ASP.NET Web Pages 2、 Visual Studio 2012、 Visual Studio 2010 中，和 WebMatrix 2。
 
 
-您可以使用 Razor 语法使用 WebMatrix 或许多其他代码编辑器中编写的 ASP.NET Web pages。 此外可以使用 Microsoft Visual Studio 是一个全功能集成的开发环境 (IDE)，用于创建许多类型的应用程序 （而不仅仅是网站） 提供一组强大的工具。 若要使用 ASP.NET Razor 页面，您可以使用 Visual Studio 的完整版或免费[Visual Studio Express for Web](https://www.visualstudio.com/downloads/download-visual-studio-vs#d-2013-express)版本。
+您可以使用 Razor 语法使用 WebMatrix 或许多其他代码编辑器中编写的 ASP.NET Web pages。 此外可以使用 Microsoft Visual Studio 是一个全功能集成的开发环境 (IDE)，用于创建许多类型的应用程序 （而不仅仅是网站） 提供一组强大的工具。 若要使用 ASP.NET Razor 页面，可以使用[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)。
 
 Visual Studio 提供了使用 ASP.NET Razor web 页面进行编程的两个特别有用功能是：
 
@@ -47,6 +47,8 @@ Visual Studio 提供了使用 ASP.NET Razor web 页面进行编程的两个特�
 - *调试器*。 调试程序，可通过停止程序，而是运行、 检查变量和单步执行代码逐行排查代码。
 
 ## <a name="using-visual-studio-with-different-versions-of-aspnet-web-pages"></a>Visual Studio 中使用不同版本的 ASP.NET 网页
+
+若要开发 Visual Studio 2017 中的 ASP.NET web 应用程序，安装**ASP.NET 和 web 开发**工作负荷。
 
 Visual Studio 2012 和 Visual Studio 2013 包括支持适用于 ASP.NET 网页。 （为了支持 ASP.NET Web Pages 需要安装包时安装 Visual Studio。）
 
@@ -73,7 +75,7 @@ Visual Studio 2010 不包括支持默认情况下为 ASP.NET Web Pages。 若要
 
 在 Visual Studio 中创建 ASP.NET Razor 网站：
 
-1. 启动 Visual Studio 或 Visual Web Developer。
+1. 打开 Visual Studio。
 2. 在中**文件**菜单上，单击**新的 Web 站点**。
 
     ![创建新网站](program-asp-net-web-pages-in-visual-studio/_static/image2.png)
@@ -90,28 +92,27 @@ Visual Studio 2010 不包括支持默认情况下为 ASP.NET Web Pages。 若要
 现在，已创建一个站点，您可以看到在 Visual Studio 中的 IntelliSense 工作原理。
 
 1. 在刚刚创建的网站，打开*Default.cshtml*页。
-2. 之后`<h3>`标记在页中，键入`@ServerInfo.`（包含句点）。 请注意 IntelliSense 如何在显示的可用方法`ServerInfo`下拉列表中的帮助程序。 
+2. 之后`<h3>`标记在页中，键入`@ServerInfo.`（包含句点）。 请注意 IntelliSense 如何在显示的可用方法`ServerInfo`下拉列表中的帮助程序。
 
     ![intellisense](program-asp-net-web-pages-in-visual-studio/_static/image4.png)
-3. 选择`GetHtml`方法从列表中，然后按 Enter。 IntelliSense 会自动填充该方法。 (如 C# 中的任何方法，则你必须添加`()`方法之后的字符。)  
-   已完成的代码`GetHtml`方法看起来如下例所示：  
+3. 选择`GetHtml`方法从列表中，然后按 Enter。 IntelliSense 会自动填充该方法。 (如 C# 中的任何方法，则你必须添加`()`方法之后的字符。)已完成的代码`GetHtml`方法看起来如下例所示：
 
     [!code-cshtml[Main](program-asp-net-web-pages-in-visual-studio/samples/sample1.cshtml)]
-4. 按 Ctrl + F5 以运行该页。 这是页面看起来像时显示在浏览器中： 
+4. 按 Ctrl + F5 以运行该页。 这是页面看起来像时显示在浏览器中：
 
     ![在浏览器中的默认页](program-asp-net-web-pages-in-visual-studio/_static/image5.png)
 5. 关闭浏览器。
 
 ### <a name="using-the-debugger"></a>使用调试器
 
-1. 在顶部*Default.cshtml*页上，开头的行后`Page.Title`，添加以下代码行： 
+1. 在顶部*Default.cshtml*页上，开头的行后`Page.Title`，添加以下代码行：
 
     [!code-csharp[Main](program-asp-net-web-pages-in-visual-studio/samples/sample2.cs)]
 2. 在左侧的代码编辑器的灰色边距中，单击此新行的旁边以添加*断点*。 断点是一个标记，通知调试器停止在该点运行该程序，以便您可以看到发生了什么情况。
 
     ![设置断点](program-asp-net-web-pages-in-visual-studio/_static/image6.png)
 3. 删除对调用`ServerInfo.GetHtml`方法，并添加对调用`@myTime`变量在其原位置。 此调用显示新的代码行返回的当前时间值。
-4. 按 F5 以在调试器中运行该页。 页面设置的断点处停止。 下图显示了页面外观在编辑器中使用断点 （用黄色）。 
+4. 按 F5 以在调试器中运行该页。 页面设置的断点处停止。 下图显示了页面外观在编辑器中使用断点 （用黄色）。
 
     ![调试断点](program-asp-net-web-pages-in-visual-studio/_static/image7.png)
 5. 在调试工具栏中，单击**单步执行**按钮 （或按 F11） 以运行下的一行代码。 每次单击此按钮，则在前进执行到下一行代码。

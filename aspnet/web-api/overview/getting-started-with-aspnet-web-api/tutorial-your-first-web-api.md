@@ -7,12 +7,12 @@ ms.author: riande
 ms.date: 11/28/2017
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 14796ce31187a0f6a6331b46477fadc77e281c3b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 62e99a41ba935470c39476c9aea8ee4193543425
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834528"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795288"
 ---
 <a name="get-started-with-aspnet-web-api-2-c"></a>开始使用 ASP.NET Web API 2 (C#)
 ====================
@@ -21,14 +21,13 @@ ms.locfileid: "41834528"
 [下载已完成的项目](https://code.msdn.microsoft.com/Sample-code-of-Getting-c56ccb28)
 
 HTTP 不只是为了提供网页。 HTTP 也是一个强大的平台，用于构建公开服务和数据的 Api。 HTTP 是简单、 灵活且无所不在。 您可以将几乎任何平台都有有 HTTP 库，因此 HTTP 服务可满足范围广泛的客户端，包括浏览器、 移动设备和传统桌面应用程序。
- 
+
 ASP.NET Web API 是一个框架，用于.NET Framework 之上构建 web Api。 在本教程中，您将使用 ASP.NET Web API 创建的 web API 返回的产品列表。
 
- 
- ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
-  
- - [Visual Studio 2017](https://www.visualstudio.com/downloads/)
- - Web API 2
+## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
+
+- [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
+- Web API 2
 
 请参阅[使用 ASP.NET Core 和 Visual Studio 为 Windows 创建 web API](https://docs.microsoft.com/aspnet/core/tutorials/first-web-api)为本教程中的较新版本。
 

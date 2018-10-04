@@ -8,32 +8,29 @@ ms.date: 06/27/2014
 ms.assetid: 0e6fb03c-b16d-4bb0-ab0b-552bd2b6ece1
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-actions-and-functions
 msc.type: authoredcontent
-ms.openlocfilehash: 4e61c6b4bf59792b6570e32e6d24635d4f5e5ac3
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 45b84ec4ee76e83ece99bf6841c28e13c3ab7728
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830690"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795262"
 ---
 <a name="actions-and-functions-in-odata-v4-using-aspnet-web-api-22"></a>操作和使用 ASP.NET Web API 2.2 OData v4 中的函数
 ====================
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 > 在 OData 中，操作和函数是一种方法来添加未轻松地定义为对实体的 CRUD 操作的服务器端行为。 本教程演示如何将操作和函数添加到使用 Web API 2.2 的 OData v4 终结点。 本教程在本教程以[创建 OData v4 终结点使用 ASP.NET Web API 2](create-an-odata-v4-endpoint.md)
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
-> 
-> 
+>
 > - Web API 2.2
 > - OData v4
-> - [Visual Studio 2013 Update 2](https://www.visualstudio.com/downloads/download-visual-studio-vs)
+> - Visual Studio 2013 (下载 Visual Studio 2017[此处](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017))
 > - .NET 4.5
-> 
-> 
+>
 > ## <a name="tutorial-versions"></a>教程版本
-> 
+>
 > OData 版本 3，请参阅[ASP.NET Web API 2 中的 OData 操作](../odata-v3/odata-actions.md)。
-
 
 之间的差异*操作*并*函数*是操作可能会有副作用，并且函数不这样做。 操作和函数可以返回数据。 操作的一些用途包括：
 

@@ -8,41 +8,37 @@ ms.date: 06/26/2014
 ms.assetid: 72657550-ec09-4779-9bfc-2fb15ecd51c7
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/entity-relations-in-odata-v4
 msc.type: authoredcontent
-ms.openlocfilehash: 80173519f1c8abd77b4138b7d29f780ffc60a188
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d07ddab83462ee1bc84ba8ab15fe906937f506e6
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825076"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795387"
 ---
 <a name="entity-relations-in-odata-v4-using-aspnet-web-api-22"></a>使用 ASP.NET Web API 2.2 OData v4 中的实体关系
 ====================
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 > 大多数的数据集定义实体之间的关系： 客户拥有订单。书有作者;产品有供应商。 使用 OData，可以通过实体关系导航的客户端。 给定产品，您可以找到供应商。 此外可以创建或删除关系。 例如，可以设置一种产品的供应商。
-> 
+>
 > 本教程演示如何支持使用 ASP.NET Web API OData v4 中的这些操作。 本教程以教程为基础[创建 OData v4 终结点使用 ASP.NET Web API 2](create-an-odata-v4-endpoint.md)。
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
-> 
-> 
+>
 > - Web API 2.1
 > - OData v4
-> - [Visual Studio 2013 Update 2](https://www.visualstudio.com/downloads/download-visual-studio-vs)
+> - Visual Studio 2013 (下载 Visual Studio 2017[此处](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017))
 > - Entity Framework 6
 > - .NET 4.5
-> 
-> 
+>
 > ## <a name="tutorial-versions"></a>教程版本
-> 
+>
 > OData 版本 3，请参阅[支持 OData v3 中的实体关系](https://asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations)。
-
 
 ## <a name="add-a-supplier-entity"></a>添加 Supplier 实体
 
 > [!NOTE]
 > 本教程以教程为基础[创建 OData v4 终结点使用 ASP.NET Web API 2](create-an-odata-v4-endpoint.md)。
-
 
 首先，我们需要相关的实体。 添加一个名为类`Supplier`模型文件夹中。
 

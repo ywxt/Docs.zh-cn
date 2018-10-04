@@ -8,38 +8,38 @@ ms.date: 02/20/2014
 ms.assetid: 68de4326-7611-4b9b-b5f6-79b7adc3069f
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: da04158c58054a8c0b8e31d3a55bea2dcbae7a05
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: fb9a69d568e10ddafd71e2b9600b3dae21576807
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825446"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48794984"
 ---
 <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>介绍如何调试 ASP.NET Web Pages (Razor) 站点
 ====================
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 此文章介绍了调试 ASP.NET Web Pages (Razor) 网站的网页中的各种方法。 调试是查找并修复错误的代码页中的过程。
-> 
-> **你将学习：** 
-> 
+>
+> **你将学习：**
+>
 > - 如何显示信息，可帮助分析和调试页。
 > - 如何使用调试工具在 Visual Studio 中。
->   
-> 
+>
+>
 > 下面是在本文中引入的 ASP.NET 功能：
-> 
+>
 > - `ServerInfo`帮助器。
 > - `ObjectInfo` 帮助器。
->   
-> 
+>
+>
 > ## <a name="software-versions"></a>软件版本
-> 
-> 
+>
+>
 > - ASP.NET 网页 (Razor) 3
 > - Visual Studio 2013
->   
-> 
+>
+>
 > 本教程还适用于 ASP.NET Web Pages 2。 可以使用 WebMatrix 3，但不是支持集成的调试器。
 
 
@@ -54,8 +54,8 @@ ms.locfileid: "41825446"
 
     您可以添加`ServerInfo`代码页中的任意位置。 但将其添加结束时将保留其输出独立于其他页面内容，因此可以轻松地读取。
 
-    > [!NOTE] 
-    > 
+    > [!NOTE]
+    >
     > **重要**网页移到生产服务器之前，您应该从您的 web 页面删除诊断的任何代码。 这适用于`ServerInfo`帮助程序，以及这篇文章涉及将代码添加到页面的其他诊断技术。 因为此类型的信息可能具有恶意企图的人员很有用，您不希望您的网站访问者，以在服务器和类似详细信息，查看有关服务器名称、 用户名、 路径信息。
 3. 保存页面，并在浏览器中运行它。
 
@@ -119,7 +119,7 @@ ms.locfileid: "41825446"
 
 ## <a name="using-debugging-tools-in-visual-studio"></a>使用 Visual Studio 中调试工具
 
-对于更全面的调试体验，使用 Visual Studio 2013 或免费[Visual Studio Express 2013 for Web](https://www.visualstudio.com/downloads/download-visual-studio-vs#d-2013-express)。 使用 Visual Studio 中，可以在代码中你想要检查的代码行处设置断点。
+对于更全面的调试体验，使用[Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)。 使用 Visual Studio 中，可以在代码中你想要检查的代码行处设置断点。
 
 ![设置断点](introduction-to-debugging/_static/image1.png)
 

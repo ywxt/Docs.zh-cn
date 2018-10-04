@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: e879487e-dbcd-4b33-b092-d67c37ae768c
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 4abe0e06dfd927765efd8e566584e111cf4117d5
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d65c0ea35ec766ef9d9093c6502230f9de72a3f3
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834131"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795204"
 ---
 <a name="using-web-api-2-with-entity-framework-6"></a>通过 Entity Framework 6 使用 Web API 2
 ====================
@@ -22,16 +22,14 @@ ms.locfileid: "41834131"
 [下载已完成的项目](https://github.com/MikeWasson/BookService)
 
 > 本教程将讲述使用 ASP.NET Web API 创建 web 应用程序的基础知识后端。 本教程使用 Entity Framework 6 进行的数据层和 Knockout.js 进行客户端的 JavaScript 应用程序。 本教程还演示如何将应用部署到 Azure 应用服务 Web 应用。
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
-> 
-> 
+>
 > - Web API 2.1
-> - [Visual Studio 2013 Update 2](https://www.visualstudio.com/downloads/download-visual-studio-vs)
+> - Visual Studio 2013 (下载 Visual Studio 2017[此处](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017))
 > - Entity Framework 6
 > - .NET 4.5
 > - [Knockout.js](http://knockoutjs.com/) 3.1
-
 
 本教程中使用 Entity Framework 6 与 ASP.NET Web API 2 创建操作后端数据库的 web 应用程序。 下面是您将创建的应用程序的屏幕截图。
 

@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 9f969dda-78ea-4329-b1e3-e51c02210a2b
 msc.legacyurl: /signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: e710980cecf9093ea9046b5790379befb5b61841
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 008cbc8ec7ca0af4b20e5e3974cf3862efa7677e
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834684"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48794875"
 ---
 <a name="tutorial-high-frequency-realtime-with-signalr-2"></a>教程： 使用 signalr 2 实现高频率实时
 ====================
@@ -213,7 +213,7 @@ ms.locfileid: "41834684"
 
 ## <a name="further-steps"></a>执行进一步的步骤
 
-在本教程中，已学习了如何发送客户端和服务器之间的高频率消息 SignalR 应用程序进行编程。 这种通信模式可用于开发联机游戏和其他模拟，如[ShootR 游戏使用 SignalR 创建](http://shootr.signalr.net)。
+在本教程中，已学习了如何发送客户端和服务器之间的高频率消息 SignalR 应用程序进行编程。 这种通信模式可用于开发联机游戏和其他模拟，如[ShootR 游戏使用 SignalR 创建](https://shootr.azurewebsites.net/)。
 
 在本教程中创建的完整应用程序可以从下载[代码库](https://code.msdn.microsoft.com/SignalR-20-MoveShape-Demo-6285b83a)。
 
