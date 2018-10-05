@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: 6f4fa7cf3746da0a6cdd4bd037fea509d488a59d
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
-ms.translationtype: HT
+ms.openlocfilehash: 435ee61a9c28ad0035457990cd3a889f5b240517
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578011"
+ms.locfileid: "48795533"
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>附录： 修复它示例应用程序 （构建使用 Azure 的真实世界云应用程序）
 ====================
@@ -22,7 +22,6 @@ ms.locfileid: "48578011"
 [下载该项目的修补程序](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)
 
 > **构建真实世界云应用，使用 Azure**电子书基于由 Scott Guthrie 开发的演示文稿。 它还说明了 13 模式和实践，从而帮助您获得成功开发适用于在云中的 web 应用。 有关电子书的信息，请参阅[的第一章](introduction.md)。
-
 
 本附录的构建真实世界云应用与 Azure 的电子书包含以下各节提供有关 Fix It 示例应用程序，您可以下载的其他信息：
 
@@ -177,11 +176,11 @@ Fix It 应用原始只返回了 null 在日志中记录的 SQL 查询产生异�
 
 如果异步方法不需要返回一个值，则返回`Task`类型而非`void`。
 
-此示例摘自`FixItQueueManager`类： 
+此示例摘自`FixItQueueManager`类：
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample15.cs)]
 
-应使用`async void`仅为顶级事件处理程序。 如果定义一个方法作为`async void`，调用方不能**await**方法或捕获该方法将引发任何异常。 有关详细信息，请参阅[中的异步编程的最佳做法](https://msdn.microsoft.com/magazine/jj991977.aspx)。 
+应使用`async void`仅为顶级事件处理程序。 如果定义一个方法作为`async void`，调用方不能**await**方法或捕获该方法将引发任何异常。 有关详细信息，请参阅[中的异步编程的最佳做法](https://msdn.microsoft.com/magazine/jj991977.aspx)。
 
 ### <a name="use-a-cancellation-token-to-break-from-worker-role-loop"></a>使用取消标记来中断工作线程角色循环
 
@@ -216,8 +215,8 @@ Fix It 应用原始只返回了 null 在日志中记录的 SQL 查询产生异�
 <a id="runbase"></a>
 ### <a name="run-the-base-application"></a>运行基本的应用程序
 
-1. 安装[Visual Studio 2013 或 Visual Studio 2013 Express for Web](https://www.visualstudio.com/downloads)。
-2. 安装[Visual Studio 2013 的用于.NET 的 Azure SDK。](https://go.microsoft.com/fwlink/p/?linkid=323510&amp;clcid=0x409)
+1. 安装[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)。
+2. 安装[针对 Visual Studio 用于.NET 的 Azure SDK](https://azure.microsoft.com/downloads/)。
 3. 下载.zip 文件[MSDN 代码库](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)。
 4. 在文件资源管理器，右键单击.zip 文件并单击属性，然后在属性窗口中单击取消阻止。
 5. 将文件解压缩。
@@ -225,7 +224,7 @@ Fix It 应用原始只返回了 null 在日志中记录的 SQL 查询产生异�
 7. 从工具菜单中，单击库程序包管理器，然后包管理器控制台。
 8. 在包管理器控制台 (PMC) 中，单击还原。
 9. 退出 Visual Studio。
-10. 启动[Azure 存储模拟器](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx)。
+10. 启动[Azure 存储模拟器](/azure/storage/common/storage-use-emulator)。
 11. 重新启动 Visual Studio 中，打开上一步中要关闭的解决方案文件。
 12. 请确保 fix It 项目设置为启动项目，然后按 CTRL + F5 以运行该项目。
 
@@ -234,24 +233,24 @@ Fix It 应用原始只返回了 null 在日志中记录的 SQL 查询产生异�
 
 1. 遵循的指导[运行基本的应用程序](#runbase)，然后关闭浏览器并关闭 Visual Studio。
 2. 使用管理员权限启动 Visual Studio。 （您将使用 Azure 计算仿真程序，并且需要管理员权限。）
-3. 在应用程序中*Web.config*中的文件*MyFixIt*项目 （web 项目） 中，更改的值`appSettings/UseQueues`为"true": 
+3. 在应用程序中*Web.config*中的文件*MyFixIt*项目 （web 项目） 中，更改的值`appSettings/UseQueues`为"true":
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample19.cmd?highlight=3)]
 4. 如果[Azure 存储模拟器](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx)不是仍在运行，重新启动它。
 5. 同时运行 FixIt web 项目和 MyFixItCloudService 项目。
 
-    使用 Visual Studio 2013:
+    使用 Visual Studio:
 
-   1. 按 F5 以运行 fix It 项目。
-   2. 在中**解决方案资源管理器**，右键单击 MyFixItCloudService 项目，然后单击**调试** -- **启动新实例**。
+   1. 按**F5**运行 fix It 项目。
+   2. 在中**解决方案资源管理器**，右键单击 MyFixItCloudService 项目，然后单击**调试** > **启动新实例**。
 
-      使用 Visual Studio 2013 Express for Web:
+    使用 Visual Studio 2013 Express for Web:
 
    3. 在解决方案资源管理器，右键单击 fix It 解决方案，然后选择**属性**。
-   4. 选择**多个启动项目**...
+   4. 选择**多个启动项目**。
    5. 在中**操作**下 MyFixIt 和 MyFixItCloudService，下拉列表中的选择**启动**。
    6. 单击 **“确定”**。
-   7. 按 f5 键以运行这两个项目。
+   7. 按**F5**运行这两个项目。
 
       运行 MyFixItCloudService 项目时，Visual Studio 将启动 Azure 计算仿真程序。 根据您的防火墙配置，可能需要允许通过防火墙的仿真程序。
 
@@ -354,8 +353,7 @@ Fix It 应用原始只返回了 null 在日志中记录的 SQL 查询产生异�
 
 - `Get-AzureWebsite`
 - `Get-AzureSqlDatabaseServer`
-- `Get-AzureSqlDatabase`： 若要运行此 cmdlet，通过管道传递到的数据库服务器名称`Get-AzureSqlDatabase`:  
-    `Get-AzureSqlDatabaseServer | Get-AzureSqlDatabase.`
+- `Get-AzureSqlDatabase`： 若要运行此 cmdlet，通过管道传递到的数据库服务器名称`Get-AzureSqlDatabase`:   `Get-AzureSqlDatabaseServer | Get-AzureSqlDatabase.`
 
 若要删除这些资源，请使用以下命令。 请注意，是否删除数据库服务器，则你会自动删除与服务器关联的数据库。
 
@@ -366,7 +364,7 @@ Fix It 应用原始只返回了 null 在日志中记录的 SQL 查询产生异�
 <a id="deployqueues"></a>
 ## <a name="how-to-deploy-the-app-with-queue-processing-to-azure-app-service-web-apps-and-an-azure-cloud-service"></a>如何使用队列处理到 Azure 应用服务 Web 应用和 Azure 云服务部署应用程序
 
-若要启用队列，请在 MyFixIt\Web.config 文件进行以下更改。 下`appSettings`，更改的值`UseQueues`为"true": 
+若要启用队列，请在 MyFixIt\Web.config 文件进行以下更改。 下`appSettings`，更改的值`UseQueues`为"true":
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample31.xml)]
 
