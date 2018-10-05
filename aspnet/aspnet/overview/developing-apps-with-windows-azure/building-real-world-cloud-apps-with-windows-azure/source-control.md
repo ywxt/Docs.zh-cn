@@ -8,23 +8,22 @@ ms.date: 06/23/2015
 ms.assetid: 2a0370d3-c2fb-4bf3-88b8-aad5a736c793
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: 8402b73f5f9d063d958df39f98267468e4aef746
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 5df863762523b62759bb4f7849ca2635e5241b0a
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825477"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577790"
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a>源代码管理 （使用 Azure 构建实际云应用）
 ====================
-通过[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://github.com/Rick-Anderson)， [Tom Dykstra](https://github.com/tdykstra)
+通过[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载修复此错误项目](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **构建真实世界云应用，使用 Azure**电子书基于由 Scott Guthrie 开发的演示文稿。 它还说明了 13 模式和实践，从而帮助您获得成功开发适用于在云中的 web 应用。 有关电子书的信息，请参阅[的第一章](introduction.md)。
 
-
-源代码管理的所有云开发项目，而不仅仅是团队环境至关重要。 您不会将编辑源代码或甚至无需撤消的功能和自动备份和源代码管理的 Word 文档为您提供这些函数在项目级别，它们可以在其中保存时出现问题的更多时间。 使用云的源代码管理服务，不再需要担心复杂的设置，并可以使用最多 5 个用户免费的 Visual Studio Online 源代码管理。
+源代码管理的所有云开发项目，而不仅仅是团队环境至关重要。 您不会将编辑源代码或甚至无需撤消的功能和自动备份和源代码管理的 Word 文档为您提供这些函数在项目级别，它们可以在其中保存时出现问题的更多时间。 使用云的源代码管理服务，不再需要担心复杂的设置，并可以为最多 5 个用户使用免费的 Azure 存储库的源代码管理。
 
 这一章中的第一部分介绍了三个关键的最佳实践要时刻牢记：
 
@@ -32,11 +31,11 @@ ms.locfileid: "41825477"
 - [中的机密永远不会检查](#secrets)（例如凭据的敏感数据） 到源代码存储库。
 - [设置源分支](#devops)启用 DevOps 工作流。
 
-本章的其余部分提供了 Visual Studio、 Azure 和 Visual Studio Online 中的这些模式的一些示例实现：
+本章的其余部分提供了 Visual Studio、 Azure 和 Azure 存储库中的这些模式的一些示例实现：
 
 - [将脚本添加到 Visual Studio 中的源控件](#vsscripts)
 - [在 Azure 中存储敏感数据](#appsettings)
-- [在 Visual Studio 和 Visual Studio Online 中使用 Git](#gittfs)
+- [使用 Visual Studio 和 Azure 存储库中的 Git](#gittfs)
 
 <a id="scripts"></a>
 ## <a name="treat-automation-scripts-as-source-code"></a>自动化脚本视为源代码
@@ -73,7 +72,7 @@ ms.locfileid: "41825477"
 
 没有此类具有其单独的生产和开发分支的分支结构，生产问题可能使您无需提升新功能代码，以及您生产的修复程序的位置中。 新的功能代码可能不是经过充分测试和准备好进行生产，您可能需要做大量工作正在放弃未准备好的更改。 或者，可能需要延迟以测试更改，并使其准备好部署您的修复程序。
 
-接下来你将看到如何在 Visual Studio、 Azure 和 Visual Studio Online 中实现以下三种模式的示例。 这些是示例而不是详细的分步说明-将执行操作的 it 说明;提供所有必需的上下文的详细说明，请参阅[资源](#resources)本章末尾部分。
+接下来你将看到如何在 Visual Studio、 Azure 和 Azure 存储库中实现以下三种模式的示例。 这些是示例而不是详细的分步说明-将执行操作的 it 说明;提供所有必需的上下文的详细说明，请参阅[资源](#resources)本章末尾部分。
 
 <a id="vsscripts"></a>
 ## <a name="add-scripts-to-source-control-in-visual-studio"></a>将脚本添加到 Visual Studio 中的源控件
@@ -128,17 +127,17 @@ Azure 为你提供的备用**appSettings**和连接字符串的部分*Web.config
 当您在开发环境中本地运行时，应用读取您本地的 Web.config 文件和你的连接字符串指向 LocalDB SQL Server 数据库中*应用程序\_数据*web 项目的文件夹。 在 Azure 中运行应用并应用将尝试从 Web.config 文件中读取这些值，它将获取并使用时，对于网站，不是在 Web.config 文件中存储的值。
 
 <a id="gittfs"></a>
-## <a name="use-git-in-visual-studio-and-visual-studio-online"></a>在 Visual Studio 和 Visual Studio Online 中使用 Git
+## <a name="use-git-in-visual-studio-and-azure-devops"></a>使用 Visual Studio 和 Azure DevOps 中的 Git
 
 可以使用任何源代码管理环境实现前面提供的 DevOps 分支结构。 为分布式团队[分布式版本控制系统](http://en.wikipedia.org/wiki/Distributed_revision_control)(DVCS) 可以达到最佳效果; 对于其他团队[集中式系统](http://en.wikipedia.org/wiki/Revision_control)可能更好地工作。
 
-[Git](http://git-scm.com/)是 DVCS 变得非常受欢迎。 当您使用 Git 进行源代码管理时，你在本地计算机上具有其历史记录的所有存储库的完整副本。 很多人喜欢，因为更容易以继续工作时不连接到网络，可以继续执行提交和回滚、 创建和切换分支，等等。 即使您正在连接到网络，它是更轻松、 更快创建分支和切换分支时所有内容都是本地。 此外可以执行本地提交和回滚操作不会影响对其他开发人员。 你可以执行批处理提交之前将它们发送到服务器。
+[Git](http://git-scm.com/)是流行的分布式的版本控制系统。 当您使用 Git 进行源代码管理时，你在本地计算机上具有其历史记录的所有存储库的完整副本。 很多人喜欢，因为更容易以继续工作时不连接到网络，可以继续执行提交和回滚、 创建和切换分支，等等。 即使您正在连接到网络，它是更轻松、 更快创建分支和切换分支时所有内容都是本地。 此外可以执行本地提交和回滚操作不会影响对其他开发人员。 你可以执行批处理提交之前将它们发送到服务器。
 
-[Microsoft Visual Studio Online](https://www.visualstudio.com/)(VSO) 以前称为 Team Foundation Service 提供了这两个 Git 和[Team Foundation 版本控制](https://msdn.microsoft.com/library/ms181237(v=vs.120).aspx)(TFVC; 集中式源代码管理)。 此处在 Microsoft Azure 的组中有些团队使用集中式的源控件，分布式的一些使用和一些使用混合 （对于某些项目集中式和分布式其他项目）。 VSO 服务是免费的最多 5 个用户。 你可以注册一个免费计划[此处](https://go.microsoft.com/fwlink/?LinkId=307137)。
+[Azure 存储库](/azure/devops/repos/index?view=vsts)提供了这两[Git](/azure/devops/repos/git/?view=vsts)并[Team Foundation 版本控制](/azure/devops/repos/tfvc/index?view=vsts)(TFVC; 集中式源代码管理)。 开始使用 Azure DevOps[此处](https://app.vsaex.visualstudio.com/signup)。
 
-Visual Studio 2013 包括内置一流[Git 支持](https://msdn.microsoft.com/library/hh850437.aspx); 下面是一个快速的工作原理的演示。
+Visual Studio 2017 包括内置的一流[Git 支持](https://msdn.microsoft.com/library/hh850437.aspx)。 下面是一个快速的工作原理的演示。
 
-在 Visual Studio 2013 中打开项目，右键单击该解决方案中的**解决方案资源管理器**，然后选择**将解决方案添加到源代码管理**。
+使用 Visual Studio 中打开项目，右键单击该解决方案中的**解决方案资源管理器**，然后选择**将解决方案添加到源代码管理**。
 
 ![将解决方案添加到源代码管理](source-control/_static/image9.png)
 
@@ -184,7 +183,7 @@ Visual Studio 自动暂存所有提交的项目文件，并列出它们**团队�
 
 此方式可以快速创建分支和分支之间来回切换的一个简单示例。 此功能使使用分支结构的高度灵活的工作流和自动化脚本中提供[使一切自动化](automate-everything.md)一章。 例如，可以是开发分支中工作，创建热修复补丁程序从 master 分支，切换到新分支，在那里进行更改和提交，然后切换回开发分支并继续之前进行的操作。
 
-你已了解了如何使用 Visual Studio 中的本地 Git 存储库。 在团队环境中你通常还将更改推送到的公共储存库。 Visual Studio 工具还可使其指向远程 Git 存储库。 可以使用 GitHub.com 实现此目的，也可以使用[Visual Studio Online 中的 Git](https://msdn.microsoft.com/library/hh850437.aspx)与所有其他 Visual Studio Online 功能，例如工作项和 bug 跟踪集成在一起。
+你已了解了如何使用 Visual Studio 中的本地 Git 存储库。 在团队环境中你通常还将更改推送到的公共储存库。 Visual Studio 工具还可使其指向远程 Git 存储库。 可以使用 GitHub.com 实现此目的，也可以使用[Git 和 Azure 存储库](/azure/devops/repos/git/overview?view=vsts)集成等工作项和 bug 跟踪的所有 Azure DevOps 功能。
 
 这不是您可以实现敏捷的分支策略，当然的唯一方法。 您可以使用集中式的源控件存储库相同的敏捷工作流。
 
@@ -194,13 +193,6 @@ Visual Studio 自动暂存所有提交的项目文件，并列出它们**团队�
 
 <a id="resources"></a>
 ## <a name="resources"></a>资源
-
-[Visual Studio Online](https://www.visualstudio.com/)门户提供了文档和支持服务，并且你可以注册一个帐户。 如果您有 Visual Studio 2012，并且想要使用 Git，请参阅[Visual Studio Tools for Git](https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)。
-
-有关 TFVC （集中式的版本控制） 和 Git （分布式的版本控制） 的详细信息，请参阅以下资源：
-
-- [应使用哪个版本控制系统： TFVC 或 Git？](https://msdn.microsoft.com/library/vstudio/ms181368.aspx#tfvc_or_git_summary) MSDN 文档，包括汇总 TFVC 和 Git 之间的差异的表。
-- [嗯，我喜欢 Team Foundation Server 和我喜欢 Git，但这是更好？](https://blogs.msdn.com/b/visualstudiouk/archive/2013/08/05/well-i-like-team-foundation-server-and-i-like-git-but-which-is-better.aspx) Git 和 TFVC 的比较。
 
 有关分支策略的详细信息，请参阅以下资源：
 

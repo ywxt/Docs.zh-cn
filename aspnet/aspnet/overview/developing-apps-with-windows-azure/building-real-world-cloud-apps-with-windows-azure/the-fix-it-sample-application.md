@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: baf46a87155e6368d9a81c5c5b777a491117d7b6
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
-ms.translationtype: MT
+ms.openlocfilehash: 6f4fa7cf3746da0a6cdd4bd037fea509d488a59d
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41832507"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578011"
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>附录： 修复它示例应用程序 （构建使用 Azure 的真实世界云应用程序）
 ====================
-通过[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://github.com/Rick-Anderson)， [Tom Dykstra](https://github.com/tdykstra)
+通过[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载该项目的修补程序](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)
 
@@ -310,7 +310,7 @@ Fix It 应用原始只返回了 null 在日志中记录的 SQL 查询产生异�
 
     名称在 azurewebsites.net 域中，必须是唯一，并且密码必须满足密码复杂性的 SQL 数据库要求。 （示例 Passw0rd1 符合要求。）
 
-    请注意，该命令将开始使用".\" 为了帮助防止恶意脚本的执行，Windows PowerShell 要求你运行脚本时提供的脚本文件的完全限定的路径。 可以使用句点来指示当前目录 ("。\")或提供的完全限定的路径，例如：
+    请注意，该命令将开始使用".\"。 为了帮助防止恶意脚本的执行，Windows PowerShell 要求你运行脚本时提供的脚本文件的完全限定的路径。 可以使用句点来指示当前目录 ("。\")或提供的完全限定的路径，例如：
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample26.cmd)]
 
