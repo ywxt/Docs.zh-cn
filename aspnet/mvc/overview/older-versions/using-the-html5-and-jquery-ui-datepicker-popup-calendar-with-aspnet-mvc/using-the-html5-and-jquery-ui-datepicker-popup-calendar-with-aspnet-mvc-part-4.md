@@ -8,12 +8,12 @@ ms.date: 08/29/2011
 ms.assetid: 57666c69-2b0f-423a-a61d-be49547fa585
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 7ecd180b7608e82ea143575c6590574b92843dcf
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 6768472b0c75757c9f368cfea58d5084c26719e1
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577491"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913159"
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a>使用 HTML5 和 jQuery UI Datepicker 快捷日历与 ASP.NET MVC-第 4 部分
 ====================
@@ -76,13 +76,13 @@ ms.locfileid: "48577491"
 
 首先，您必须安装 jQuery UI 库。 若要执行此操作，将使用 NuGet，这是 SP1 版本的 Visual Studio 2010 和 Visual Web Developer 中包含的程序包管理器。
 
-在 Visual Web Developer 中，从**工具**菜单中，选择**库程序包管理器**，然后选择**管理 NuGet 包**。
+在 Visual Web Developer 中，从**工具**菜单中，选择**NuGet 包管理器**，然后选择**管理 NuGet 包**。
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image3.png)
 
-注意： 如果**工具**不会显示菜单**库程序包管理器**命令，你需要通过以下上的说明安装 NuGet[安装 NuGet](http://docs.nuget.org/docs/start-here/installing-nuget)页NuGet 网站。   
+注意： 如果**工具**不会显示菜单**NuGet 包管理器**命令，你需要通过以下上的说明安装 NuGet[安装 NuGet](http://docs.nuget.org/docs/start-here/installing-nuget)页NuGet 网站。   
   
-如果使用 Visual Studio 而不是 Visual Web Developer 中，从**工具**菜单中，选择**库程序包管理器**，然后选择**添加库程序包引用**。
+如果使用 Visual Studio 而不是 Visual Web Developer 中，从**工具**菜单中，选择**NuGet 包管理器**，然后选择**添加库程序包引用**。
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image4.png)
 

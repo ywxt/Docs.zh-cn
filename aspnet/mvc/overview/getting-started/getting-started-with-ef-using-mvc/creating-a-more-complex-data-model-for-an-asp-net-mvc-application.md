@@ -8,20 +8,20 @@ ms.date: 11/07/2014
 ms.assetid: 46f7f3c9-274f-4649-811d-92222a9b27e2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 25bd71f9860db01afb7177da0f9befbdd8eb8e12
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 25cec8bb9384dbd053f8af12855171a54675a40e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41826629"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912483"
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application"></a>创建用于 ASP.NET MVC 应用程序的更复杂的数据模型
 ====================
 通过[Tom Dykstra](https://github.com/tdykstra)
 
-[下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)或[下载 PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 的 ASP.NET MVC 5 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 
 
 在前面的教程中，您过了由三个实体组成的简单数据模型。 在本教程将添加更多实体和关系并将通过指定格式设置、 验证和数据库映射规则来自定义数据模型。 您将看到自定义数据模型的两个方法： 通过将属性添加到实体类并通过将代码添加到数据库上下文类。
@@ -230,13 +230,13 @@ Course 实体具有外键属性`DepartmentID`它指向相关`Department`实体�
 
 外键属性和导航属性中的`Course`实体可反映以下关系：
 
-- 向一个系分配课程后，出于上述原因，会出现 `DepartmentID` 外键和 `Department` 导航属性。 
+- 向一个系分配课程后，出于上述原因，会出现 `DepartmentID` 外键和 `Department` 导航属性。
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample17.cs)]
-- 参与一门课程的学生数量不定，因此 `Enrollments` 导航属性是一个集合： 
+- 参与一门课程的学生数量不定，因此 `Enrollments` 导航属性是一个集合：
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample18.cs)]
-- 一门课程可能由多位讲师讲授，因此 `Instructors` 导航属性是一个集合： 
+- 一门课程可能由多位讲师讲授，因此 `Instructors` 导航属性是一个集合：
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample19.cs)]
 
@@ -260,15 +260,15 @@ Course 实体具有外键属性`DepartmentID`它指向相关`Department`实体�
 
 外键和导航属性可反映以下关系：
 
-- 一个系可能有也可能没有管理员，而管理员始终是讲师。 因此`InstructorID`属性是作为外键到包含`Instructor`实体，并将问号后添加`int`类型指派将标记为可为 null 的属性。导航属性名为`Administrator`但其中包含`Instructor`实体： 
+- 一个系可能有也可能没有管理员，而管理员始终是讲师。 因此`InstructorID`属性是作为外键到包含`Instructor`实体，并将问号后添加`int`类型指派将标记为可为 null 的属性。导航属性名为`Administrator`但其中包含`Instructor`实体：
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample22.cs)]
-- 一个系可以有多门课程，因此没有`Courses`导航属性： 
+- 一个系可以有多门课程，因此没有`Courses`导航属性：
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample23.cs)]
 
   > [!NOTE]
-  > 按照约定，Entity Framework 能针对不可为 null 的外键和多对多关系启用级联删除。 这可能导致循环级联删除规则，尝试添加迁移时该规则会造成异常。 例如，如果你未定义`Department.InstructorID`为可以为 null 的属性，你会收到以下异常消息:"引用关系会导致不允许的循环引用。" 如果您的业务规则需要`InstructorID`属性设置为不可为 null，必须使用以下 fluent API 语句禁用关系的级联删除： 
+  > 按照约定，Entity Framework 能针对不可为 null 的外键和多对多关系启用级联删除。 这可能导致循环级联删除规则，尝试添加迁移时该规则会造成异常。 例如，如果你未定义`Department.InstructorID`为可以为 null 的属性，你会收到以下异常消息:"引用关系会导致不允许的循环引用。" 如果您的业务规则需要`InstructorID`属性设置为不可为 null，必须使用以下 fluent API 语句禁用关系的级联删除：
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample24.cs)]
 
@@ -285,10 +285,10 @@ Course 实体具有外键属性`DepartmentID`它指向相关`Department`实体�
 
 外键属性和导航属性可反映以下关系：
 
-- 注册记录面向一门课程，因此存在 `CourseID` 外键属性和 `Course` 导航属性： 
+- 注册记录面向一门课程，因此存在 `CourseID` 外键属性和 `Course` 导航属性：
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample26.cs)]
-- 注册记录面向一名学生，因此存在 `StudentID` 外键属性和 `Student` 导航属性： 
+- 注册记录面向一名学生，因此存在 `StudentID` 外键属性和 `Student` 导航属性：
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample27.cs)]
 
@@ -382,13 +382,13 @@ Course 实体具有外键属性`DepartmentID`它指向相关`Department`实体�
 
 > [!NOTE]
 > 就可以将迁移数据，也使架构更改时遇到其他错误。 如果遇到无法解决的迁移错误，你可以更改连接字符串中的数据库名称，或删除数据库。 最简单方法是在数据库重命名*Web.config*文件。 下面的示例演示名称更改为 CU\_测试：
-> 
+>
 > [!code-xml[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample36.xml?highlight=1)]
-> 
+>
 > 使用新数据库没有数据迁移，和`update-database`命令是更有望完成且未出错。 有关如何删除数据库的说明，请参阅[如何从 Visual Studio 2012 中删除数据库](http://romiller.com/2013/05/17/how-to-drop-a-database-from-visual-studio-2012/)。
-> 
+>
 > 如果失败，你可以尝试另一件事是通过在 PMC 中输入以下命令会重新初始化数据库：
-> 
+>
 > `update-database -TargetMigration:0`
 
 
@@ -406,7 +406,7 @@ Course 实体具有外键属性`DepartmentID`它指向相关`Department`实体�
 
 现在你就得到了更复杂的数据模型和相应的数据库。 以下教程中将了解有关访问相关的数据的不同方式的详细信息。
 
-请在你喜欢本教程的内容，我们可以提高上留下反馈。 此外可以请求新主题[教我代码](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code)。
+请在你喜欢本教程的内容，我们可以提高上留下反馈。
 
 其他实体框架资源的链接可在[ASP.NET 数据访问-推荐的资源](../../../../whitepapers/aspnet-data-access-content-map.md)。
 

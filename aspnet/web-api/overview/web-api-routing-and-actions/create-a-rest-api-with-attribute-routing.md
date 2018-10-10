@@ -8,12 +8,12 @@ ms.date: 06/26/2013
 ms.assetid: 23fc77da-2725-4434-99a0-ff872d96336b
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 191452204d4347396b1d339d9b82d583a2ce9f3c
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: 3b66f02c9be6441ff7d6c38d6180cc8556c6b8b9
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795507"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912886"
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>使用属性路由在 ASP.NET Web API 2 中创建 REST API
 ====================
@@ -104,7 +104,7 @@ Author.cs 中的代码替换为以下：
 
 ### <a name="seed-the-database"></a>设定数据库种子
 
-从工具菜单中，选择**库程序包管理器**，然后选择**程序包管理器控制台**。
+从工具菜单中，选择**NuGet 包管理器**，然后选择**程序包管理器控制台**。
 
 在包管理器控制台窗口中，输入以下命令：
 

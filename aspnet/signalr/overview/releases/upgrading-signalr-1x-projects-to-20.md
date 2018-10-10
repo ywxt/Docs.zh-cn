@@ -8,41 +8,41 @@ ms.date: 06/10/2014
 ms.assetid: adcfef99-9bc5-489d-a91b-9b7c2bc35e04
 msc.legacyurl: /signalr/overview/releases/upgrading-signalr-1x-projects-to-20
 msc.type: authoredcontent
-ms.openlocfilehash: 84155a4c171a2ac2149dbbf4237b6561d2814aa0
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 450ddedb520035cc05a0dbcca1a2666dd1ba24c7
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834132"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910546"
 ---
 <a name="upgrading-signalr-1x-projects-to-version-2"></a>将 SignalR 1.x 项目升级到版本 2
 ====================
 通过[Patrick Fletcher](https://github.com/pfletcher)
 
 > 本主题介绍如何升级现有的 SignalR 1.x 项目到 SignalR 2.x 中，以及如何解决在升级过程中可能出现的问题。
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR 版本 1 和 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="using-visual-studio-2012-with-this-tutorial"></a>本教程使用 Visual Studio 2012
-> 
-> 
+>
+>
 > 若要学习本教程使用 Visual Studio 2012，请执行以下操作：
-> 
+>
 > - 更新你[程序包管理器](http://docs.nuget.org/docs/start-here/installing-nuget)到最新版本。
 > - 安装[Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)。
 > - 在 Web 平台安装程序中，搜索并安装**ASP.NET 和 Web 工具 2013.1 适用于 Visual Studio 2012**。 这将安装 Visual Studio 模板的 SignalR 类，如**中心**。
 > - 某些模板 (如**OWIN 启动类**) 将不可用; 对于这些数据，改为使用的类文件。
-> 
-> 
+>
+>
 > ## <a name="questions-and-comments"></a>问题和提出的意见
-> 
+>
 > 请在你喜欢本教程的内容以及我们可以改进的页的底部的评论中留下反馈。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
 
 

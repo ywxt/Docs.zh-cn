@@ -8,34 +8,34 @@ ms.date: 06/10/2014
 ms.assetid: ed562717-8591-4936-8e10-c7e63dcb570a
 msc.legacyurl: /signalr/overview/security/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: 62f835349697d02ebe7363b00a032a5353d3dfc2
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 765abd36c5182f291499042e787bcb4fcc727997
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824265"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910846"
 ---
 <a name="introduction-to-signalr-security"></a>SignalR 安全性简介
 ====================
 通过[Patrick Fletcher](https://github.com/pfletcher)， [Tom FitzMacken](https://github.com/tfitzmac)
 
-> 本文介绍开发 SignalR 应用程序时必须考虑的安全问题。 
-> 
+> 本文介绍开发 SignalR 应用程序时必须考虑的安全问题。
+>
 > ## <a name="software-versions-used-in-this-topic"></a>本主题中使用的软件版本
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR 版本 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>本主题的早期版本
-> 
+>
 > 有关 SignalR 的早期版本的信息，请参阅[SignalR 较早版本](../older-versions/index.md)。
-> 
+>
 > ## <a name="questions-and-comments"></a>问题和提出的意见
-> 
+>
 > 请在你喜欢本教程的内容以及我们可以改进的页的底部的评论中留下反馈。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
 
 
@@ -108,7 +108,7 @@ SignalR 应执行恶意命令验证发件人标识的风险。 对于每个请�
 
 1. 用户登录到 www.example.com 时，使用窗体身份验证。
 2. 服务器对用户进行身份验证。 从服务器响应包括身份验证 cookie。
-3. 而无需注销，用户访问恶意网站。 此恶意站点包含以下 HTML 窗体： 
+3. 而无需注销，用户访问恶意网站。 此恶意站点包含以下 HTML 窗体：
 
     [!code-html[Main](introduction-to-security/samples/sample1.html)]
 
@@ -124,12 +124,9 @@ SignalR 应执行恶意命令验证发件人标识的风险。 对于每个请�
 
 SignalR 将执行以下步骤来阻止恶意站点创建对你的应用程序的有效请求。 SignalR 将执行这些步骤默认情况下，不需要在代码中执行任何操作。
 
-- **禁用跨域请求**  
- SignalR 禁用跨域请求，以防止用户从外部域中调用 SignalR 终结点。 SignalR 会考虑来自外部域的任何请求无效，并阻止请求。 我们建议您保留此默认行为;否则，恶意站点无法欺骗用户在将命令发送到你的站点。 如果您需要使用跨域请求，请参阅[如何建立跨域连接](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain)。
-- **传递查询字符串，不 cookie 中的连接令牌**  
- SignalR 传递的连接作为查询字符串值，而不是作为 cookie。 在 cookie 中存储的连接令牌是不安全，因为遇到恶意代码时，浏览器会无意中可以转发的连接令牌。 此外，查询字符串中传递的连接令牌从超出当前连接保持阻止的连接令牌。 因此，恶意用户不能在另一个用户的身份验证凭据的请求。
-- **验证连接令牌**  
- 如中所述[连接令牌](#connectiontoken)部分中，服务器就知道哪个连接 id 是与每个经过身份验证的用户相关联。 服务器不会处理来自用户名称不匹配的连接 id 的任何请求。 不太可能因为恶意用户需要知道用户名称和当前的随机生成连接 id，恶意用户无法猜出有效的请求。只要该连接结束，该连接 id 将变为无效。 匿名用户不应有权访问任何敏感信息。
+- **禁用跨域请求**SignalR 禁用跨域请求，以防止用户从外部域中调用 SignalR 终结点。 SignalR 会考虑来自外部域的任何请求无效，并阻止请求。 我们建议您保留此默认行为;否则，恶意站点无法欺骗用户在将命令发送到你的站点。 如果您需要使用跨域请求，请参阅[如何建立跨域连接](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain)。
+- **将连接标记传递查询字符串，不 cookie 中**SignalR 将连接标记为查询字符串值，而不是传递作为 cookie。 在 cookie 中存储的连接令牌是不安全，因为遇到恶意代码时，浏览器会无意中可以转发的连接令牌。 此外，查询字符串中传递的连接令牌从超出当前连接保持阻止的连接令牌。 因此，恶意用户不能在另一个用户的身份验证凭据的请求。
+- **验证连接令牌**中所述[连接令牌](#connectiontoken)部分中，服务器就知道哪个连接 id 是与每个经过身份验证的用户相关联。 服务器不会处理来自用户名称不匹配的连接 id 的任何请求。 不太可能因为恶意用户需要知道用户名称和当前的随机生成连接 id，恶意用户无法猜出有效的请求。只要该连接结束，该连接 id 将变为无效。 匿名用户不应有权访问任何敏感信息。
 
 <a id="recommendations"></a>
 

@@ -8,12 +8,12 @@ ms.date: 09/27/2013
 ms.assetid: 6dae249f-5ac6-4f6e-bc49-13bcd5a54a70
 msc.legacyurl: /aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana
 msc.type: authoredcontent
-ms.openlocfilehash: f400ec887bdee123084f582d18016fb5ed3f2165
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9920861da0e67d9304a944cacfb8ff8685267cd6
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831058"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913172"
 ---
 <a name="getting-started-with-owin-and-katana"></a>OWIN 和 Katana 入门
 ====================
@@ -39,7 +39,7 @@ OWIN 是一个社区拥有规范，不实现。 Katana 项目是一组由 Micros
 
 ### <a name="add-nuget-packages"></a>添加 NuGet 包
 
-接下来，添加所需的 NuGet 包。 从**工具**菜单中，选择**库程序包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，键入以下命令：
+接下来，添加所需的 NuGet 包。 从**工具**菜单中，选择**NuGet 包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，键入以下命令：
 
 `install-package Microsoft.Owin.Host.SystemWeb –Pre`
 

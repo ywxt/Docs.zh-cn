@@ -8,27 +8,27 @@ ms.date: 04/11/2014
 ms.assetid: 07aa855a-92ee-4d43-ba66-5bfd7de20ee6
 msc.legacyurl: /aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 6bead915491c62de809b8625d8071a63c70a6ef5
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: dbf0964695dd2592d063b05c0778923edffe8e2e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825274"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910767"
 ---
 <a name="host-owin-in-an-azure-worker-role"></a>在 Azure 辅助角色中的 OWIN 主机
 ====================
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 > 本教程演示如何在自托管 OWIN 在 Microsoft Azure 辅助角色中。
-> 
+>
 > [用于.NET 开放 Web 接口](http://owin.org/)(OWIN) 定义.NET web 服务器和 web 应用程序之间的抽象。 OWIN 将分离 web 应用程序从服务器中，这使 OWIN 适合于自承载在 IIS 外部自己进程中的 web 应用程序 – 例如，在 Azure 辅助角色。
-> 
+>
 > 在本教程中，将学习如何在自托管在 Microsoft Azure 辅助角色的 OWIN 应用程序。 若要了解有关辅助角色的详细信息，请参阅[Azure 执行模型](https://azure.microsoft.com/documentation/articles/fundamentals-application-models/#CloudServices)。
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - [Azure SDK for.NET 2.3](https://azure.microsoft.com/downloads/)
 > - [Microsoft.Owin.Selfhost 2.1.0](http://www.nuget.org/packages/Microsoft.Owin.SelfHost/2.1.0)
 
@@ -56,7 +56,7 @@ ms.locfileid: "41825274"
 
 ## <a name="add-the-owin-self-host-packages"></a>添加 OWIN 自承载包
 
-从**工具**菜单上，单击**库程序包管理器**，然后单击**程序包管理器控制台**。
+从**工具**菜单上，单击**NuGet 包管理器**，然后单击**程序包管理器控制台**。
 
 在包管理器控制台窗口中，输入以下命令：
 

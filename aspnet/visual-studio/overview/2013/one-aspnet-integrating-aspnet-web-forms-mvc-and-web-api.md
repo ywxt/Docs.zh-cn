@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: b6ac0dca92ab3d75eb871099882dcea549264354
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: c18911680b59448cd67190f71e951a3fcf3d0478
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824643"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912730"
 ---
 <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>动手实验： One ASP.NET： 集成 ASP.NET Web 窗体、 MVC 和 Web API
 ====================
@@ -372,7 +372,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在使实现 HTTP 服务更容
 
 在创建 Web API 时，它可用于创建，以便其他开发人员知道如何调用你的 API 帮助页。 您可以创建并文档页手动更新，但最好是自动生成它们可以避免不得不执行维护工作。 在此任务将使用 Nuget 包来自动生成到解决方案的 Web API 帮助页。
 
-1. 从**工具**在 Visual Studio 中，选择菜单**库程序包管理器**，然后单击**程序包管理器控制台**。
+1. 从**工具**在 Visual Studio 中，选择菜单**NuGet 包管理器**，然后单击**程序包管理器控制台**。
 2. 在中**程序包管理器控制台**窗口中，执行以下命令：
 
     [!code-powershell[Main](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/samples/sample7.ps1)]

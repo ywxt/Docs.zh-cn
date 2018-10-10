@@ -8,49 +8,49 @@ ms.date: 10/13/2014
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: c2248e68b3c9411687ab6410f12ec85488fe0738
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 7a85a704dc5d830ec793540fbc44a3ce7ec8c934
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830688"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911525"
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>教程： 使用 signalr 2 实现广播的服务器
 ====================
 通过[Tom Dykstra](https://github.com/tdykstra)， [Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本教程演示如何创建使用 ASP.NET SignalR 2 来提供服务器广播的功能的 web 应用程序。 服务器广播意味着发送到客户端的通信由服务器启动。 这种情况要求不同的编程方式对等方案，例如聊天应用程序，在其中发送到客户端的通信都是由一个或多个客户端。
-> 
+>
 > 你将在本教程中创建的应用程序模拟股票行情服务器广播功能的典型方案。
-> 
+>
 > 本主题是最初编写的 Patrick Fletcher。
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR 版本 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="using-visual-studio-2012-with-this-tutorial"></a>本教程使用 Visual Studio 2012
-> 
-> 
+>
+>
 > 若要学习本教程使用 Visual Studio 2012，请执行以下操作：
-> 
+>
 > - 更新你[程序包管理器](http://docs.nuget.org/docs/start-here/installing-nuget)到最新版本。
 > - 安装[Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)。
 > - 在 Web 平台安装程序中，搜索并安装**ASP.NET 和 Web 工具 2013.1 适用于 Visual Studio 2012**。 这将安装 Visual Studio 模板的 SignalR 类，如**中心**。
 > - 某些模板 (如**OWIN 启动类**) 将不可用; 对于这些数据，改为使用的类文件。
-> 
-> 
+>
+>
 > ## <a name="tutorial-versions"></a>教程版本
-> 
+>
 > 有关 SignalR 的早期版本的信息，请参阅[SignalR 较早版本](../older-versions/index.md)。
-> 
+>
 > ## <a name="questions-and-comments"></a>问题和提出的意见
-> 
+>
 > 请在你喜欢本教程的内容以及我们可以改进的页的底部的评论中留下反馈。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
 
 
@@ -66,7 +66,7 @@ ms.locfileid: "41830688"
 
 本教程包含以下各节：
 
-- [先决条件](#prerequisites)
+- [系统必备](#prerequisites)
 - [创建项目](#createproject)
 - [设置服务器代码](#server)
 - [设置客户端代码](#client)

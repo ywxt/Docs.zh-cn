@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 423498f7-1a4b-44a1-b342-5f39d0bcf94f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: ed5d7b9b4e61b0289734f4cdef1039b31ddda7a7
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: af5e5a9c8d211b07b57aa50238b02cabe249aef8
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824225"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911835"
 ---
 <a name="aspnet-error-handling"></a>ASP.NET 错误处理
 ====================
@@ -275,7 +275,7 @@ ELMAH （错误日志记录模块和处理程序） 是插入到作为 NuGet 包
 
 可以在使用 ELMAH 之前，必须安装它。 这很容易使用*NuGet*程序包安装程序。 如本系列教程前面所述，NuGet 将是 Visual Studio 扩展，它可以更轻松地安装和更新的开放源代码库和 Visual Studio 中的工具。
 
-1. Visual Studio 中，从**工具**菜单中，选择**库程序包管理器** - &gt; **为解决方案管理 NuGet 包**。 
+1. Visual Studio 中，从**工具**菜单中，选择**NuGet 包管理器** > **为解决方案管理 NuGet 包**。 
 
     ![ASP.NET 错误处理的管理解决方案的 NuGet 包](aspnet-error-handling/_static/image6.png)
 2. **管理 NuGet 包**Visual Studio 中将显示对话框。

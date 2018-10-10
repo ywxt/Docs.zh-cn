@@ -8,12 +8,12 @@ ms.date: 08/15/2012
 ms.assetid: 27dc4fc8-1b51-43b0-933f-fc1b52476523
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: 8b82b8b9b1ee6646072931da889c643afb34d474
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 6fe55a14b40f8c50dee91cdc7f59d0378f2a1ea2
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578154"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912316"
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 移动功能
 ====================
@@ -184,7 +184,7 @@ ASP.NET 标签视图是显示非常混乱。 例如，**日期**列是很难阅�
 
 安装*jQuery.Mobile.MVC* NuGet 包通过执行此操作：
 
-1. 从**工具**菜单中，选择**库程序包管理器**，然后选择**程序包管理器控制台**。
+1. 从**工具**菜单中，选择**NuGet 包管理器**，然后选择**程序包管理器控制台**。
 
     [![p3_packageMgr](aspnet-mvc-4-mobile-features/_static/image20.png)](aspnet-mvc-4-mobile-features/_static/image19.png)
 2. 在中**程序包管理器控制台**，输入 `Install-Package jQuery.Mobile.MVC -version 1.0.0`
@@ -245,11 +245,11 @@ JQuery.Mobile.MVC NuGet 程序包将安装以下：
 
 > [!NOTE]
 > 调试注意： 您可以将以下代码添加到 views/shared 末尾\\_ViewSwitcher.cshtml 来帮助调试视图时使用的浏览器用户代理字符串设置为移动设备。
-> 
+>
 > [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample15.cs)]
-> 
->  并添加以下发往*views/shared\\_Layout.cshtml*文件。  
-> 
+>
+>  并添加以下发往*views/shared\\_Layout.cshtml*文件。
+>
 > [!code-html[Main](aspnet-mvc-4-mobile-features/samples/sample16.html)]
 
 

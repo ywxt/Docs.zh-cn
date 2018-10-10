@@ -8,39 +8,39 @@ ms.date: 08/15/2012
 ms.assetid: ed66530a-04d5-49eb-b76a-85be1f57c437
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 62f67d0d0dfe7a3c9d04eacfbcac56f7fd03ef07
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: ea3d1517192ded0e5372c49897bb1fec33324b6f
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577361"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912392"
 ---
 <a name="intro-to-aspnet-mvc-4"></a>ASP.NET MVC 4 简介
 ====================
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
-> 如果本教程中可用的更新的版本[这里](../../getting-started/introduction/getting-started.md)使用[Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)。 新教程使用 ASP.NET MVC 5，通过本教程提供了许多改进。
-> 
+> 如果本教程中可用的更新的版本[这里](../../getting-started/introduction/getting-started.md)使用[Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)。 新教程使用 ASP.NET MVC 5，通过本教程提供了许多改进。
+>
 > 本教程将教您构建使用 Microsoft 的 ASP.NET MVC 4 Web 应用程序的基础知识[Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express)或 Visual Web Developer 2010 Express Service Pack 1。 建议使用 visual Studio 2012，无需安装任何要完成本教程的内容。 如果您使用的 Visual Studio 2010，则必须安装以下组件。 可以通过单击以下链接安装所有这些：
-> 
+>
 > - [Visual Studio Web Developer Express SP1 必备组件](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
 > - [为 ASP.NET MVC 4 WPI 安装程序](https://go.microsoft.com/fwlink/?LinkId=243392)
 > - [LocalDB](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLLocalDBOnly_11_0)
 > - [SSDT](https://blogs.msdn.com/b/rickandy/archive/2012/08/02/installing-and-using-sql-server-data-tools-ssdt-on-visual-studio-2010-and-vwd.aspx)
-> 
+>
 > 如果您正在使用 Visual Studio 2010，而不 Visual Web Developer 2010，安装[WPI 安装程序为 ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392)和: [Visual Studio 2010 必备组件](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)
-> 
+>
 > 可随附于此项目具有 C# 源代码的 Visual Web Developer 项目。 [下载 C# 版本](https://code.msdn.microsoft.com/Intro-to-ASPNET-MVC-4-61d0219d/file/114480/1/MvcMovie.zip)。
-> 
+>
 > 在本教程在 Visual Studio 中运行应用程序。 您还可以让应用程序访问 Internet 上通过将其部署到托管提供商。 Microsoft 提供了免费的 web 托管最多 10 个网站中有关[免费 Windows Azure 试用帐户](https://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A443DD604)。 有关如何将 Visual Studio web 项目部署到 Windows Azure 网站的信息，请参阅[创建和部署 ASP.NET 网站和 SQL 数据库使用 Visual Studio](https://docs.microsoft.com/dotnet/azure/)。 该教程还演示如何使用 Entity Framework Code First 迁移将 SQL Server 数据库部署到 Windows Azure SQL 数据库 (以前称为 SQL Azure)。
-> 
+>
 > 本教程由 Rick Anderson 编写 ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )。
 
 
 ## <a name="what-youll-build"></a>你将生成
 
 > [!NOTE]
-> 如果本教程中可用的更新的版本[这里](../../getting-started/introduction/getting-started.md)使用[Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)。 新教程使用 ASP.NET MVC 5，通过本教程提供了许多改进。
+> 如果本教程中可用的更新的版本[这里](../../getting-started/introduction/getting-started.md)使用[Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)。 新教程使用 ASP.NET MVC 5，通过本教程提供了许多改进。
 
 
 将实现一个简单的电影列表应用程序支持创建、 编辑、 搜索和列出数据库中的电影。 以下是你将生成的应用程序的两个屏幕快照。 它包括显示的数据库中的电影列表的页面：

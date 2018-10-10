@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: db0d02d9-58e8-4a0b-8d7d-b8df8ea97b88
 msc.legacyurl: /mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: d6fb40741c5f7b992e907a462ac92972fe603624
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 2566e201e44ccd9642abda7c7996056c73178fd6
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578362"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912847"
 ---
 <a name="how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2"></a>如何将 ASP.NET MVC 4 和 Web API 项目升级到 ASP.NET MVC 5 和 Web API 2
 ====================
@@ -71,8 +71,8 @@ ms.locfileid: "48578362"
     > Microsoft Web 帮助器已被 Microsoft.AspNet.WebHelpers 替换。 您应首先，请删除旧的包，然后安装较新的包。   
     >   
     > 没有跨版本兼容性，这些主要 ASP.NET 包。 例如，MVC 5 是与仅 Razor 3 和 Razor 2 不兼容。
-4. 在 Visual Studio 2013 中打开你的项目。
-5. 删除任何以下 ASP.NET NuGet 包安装。 将删除这些使用包管理器控制台 (PMC)。 若要打开 PMC，请选择**工具**菜单，然后选择**库包管理器中，** 然后选择**程序包管理器控制台**。 你的项目可能不包括所有这些。
+4. 在 Visual Studio 中打开项目。
+5. 删除任何以下 ASP.NET NuGet 包安装。 将删除这些使用包管理器控制台 (PMC)。 若要打开 PMC，请选择**工具**菜单，然后选择**NuGet 包管理器中，** 然后选择**程序包管理器控制台**。 你的项目可能不包括所有这些。
 
     1. `Microsoft.AspNet.WebPages.Administration`  
    从 MVC 3 升级到 MVC 4 时，通常被添加此包。 若要删除它，请在 PMC 中运行以下命令：  

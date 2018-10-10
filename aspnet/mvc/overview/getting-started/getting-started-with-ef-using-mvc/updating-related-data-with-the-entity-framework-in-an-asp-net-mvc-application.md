@@ -8,20 +8,20 @@ ms.date: 05/01/2015
 ms.assetid: 7ba88418-5d0a-437d-b6dc-7c3816d4ec07
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: e7f5fd725a0d151f19f49be9ceaf52b049d459c0
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 647793a65dec8feaf37de561ad77b4585bb869a8
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830485"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912210"
 ---
 <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>使用实体框架在 ASP.NET MVC 应用程序中更新相关的数据
 ====================
 通过[Tom Dykstra](https://github.com/tdykstra)
 
-[下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)或[下载 PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 的 ASP.NET MVC 5 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 
 
 上一教程中显示相关的数据;在本教程中将更新相关的数据。 对于大多数关系，这可以通过更新外键字段或导航属性。 对于多对多关系，实体框架不会联接表直接公开，因此添加和删除实体与相应的导航属性。
@@ -214,8 +214,8 @@ ms.locfileid: "41830485"
 
 更改某些课程分配，然后单击**保存**。 所作更改将反映在索引页上。
 
- 注意： 此处所使用的编辑讲师课程数据的方法适用于有限数量的课程。 若是远大于此的集合，则需要使用不同的 UI 和不同的更新方法。  
- 
+ 注意： 此处所使用的编辑讲师课程数据的方法适用于有限数量的课程。 若是远大于此的集合，则需要使用不同的 UI 和不同的更新方法。
+
 
 ## <a name="update-the-deleteconfirmed-method"></a>更新 DeleteConfirmed 方法
 
@@ -269,7 +269,7 @@ ms.locfileid: "41830485"
 
 现在已经完成此简介使用相关数据。 到目前为止这些教程中使用过执行同步 I/O 的代码。 可以使应用程序通过实现异步代码，更有效地使用 web 服务器资源，这就是将在下一教程中执行的操作。
 
-请在你喜欢本教程的内容，我们可以提高上留下反馈。 此外可以请求新主题[教我代码](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code)。
+请在你喜欢本教程的内容，我们可以提高上留下反馈。
 
 其他实体框架资源的链接可在[ASP.NET 数据访问-推荐的资源](../../../../whitepapers/aspnet-data-access-content-map.md)。
 

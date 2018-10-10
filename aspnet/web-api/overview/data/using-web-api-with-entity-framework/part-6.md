@@ -8,12 +8,12 @@ ms.date: 06/16/2014
 ms.assetid: 20360326-b123-4b1e-abae-1d350edf4ce4
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 4967e21190c34f698e9c28fd9b921f07bef2ffaf
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: b5cb4d93c30ef80a48da48ffc51dd51411b1d0d0
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834947"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912642"
 ---
 <a name="create-the-javascript-client"></a>创建 JavaScript 客户端
 ====================
@@ -41,7 +41,7 @@ Knockout 库使用模型-视图-视图模型 (MVVM) 模式：
 
 ## <a name="add-the-knockout-library"></a>添加 Knockout 库
 
-在 Visual Studio 中，从**工具**菜单中，选择**库程序包管理器**。 然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，输入以下命令：
+在 Visual Studio 中，从**工具**菜单中，选择**NuGet 包管理器**。 然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，输入以下命令：
 
 [!code-console[Main](part-6/samples/sample1.cmd)]
 

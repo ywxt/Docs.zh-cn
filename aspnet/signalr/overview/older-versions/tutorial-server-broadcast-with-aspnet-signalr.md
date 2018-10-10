@@ -8,12 +8,12 @@ ms.date: 04/10/2013
 ms.assetid: ab7b2554-956a-4f6d-b2a0-4ae0c62e8580
 msc.legacyurl: /signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 76dc2f4d54f6ab4cebbde06dfd611a9b5ee5ae64
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 7d604af11ade848358e291d1df25f2f8df850132
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834958"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911976"
 ---
 <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>教程： 服务器广播使用 ASP.NET SignalR 1.x
 ====================
@@ -40,7 +40,7 @@ ms.locfileid: "41834958"
 
 本教程包含以下各节：
 
-- [先决条件](#prerequisites)
+- [系统必备](#prerequisites)
 - [创建项目](#createproject)
 - [将 SignalR NuGet 包添加](#nugetpackages)
 - [设置服务器代码](#server)
@@ -80,7 +80,7 @@ ms.locfileid: "41834958"
 
 通过安装 NuGet 包，可以将 SignalR 功能添加到项目。
 
-1. 单击**工具 |库包管理器 |包管理器控制台**。
+1. 单击**工具 |NuGet 包管理器 |包管理器控制台**。
 2. 在包管理器中输入以下命令。
 
     [!code-powershell[Main](tutorial-server-broadcast-with-aspnet-signalr/samples/sample1.ps1)]

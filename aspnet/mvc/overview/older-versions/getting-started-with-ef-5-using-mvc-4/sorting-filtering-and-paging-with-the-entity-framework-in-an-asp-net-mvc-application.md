@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 8af630e0-fffa-4110-9eca-c96e201b2724
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 72180686ea1ee6f6695b24fcedf3af90c1eddcfa
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 8bea3d4bc19a5a47240abeb2cc015116814a8fdf
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830463"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911814"
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>排序、 筛选和分页与 ASP.NET MVC 应用程序 (10 的 3) 中的实体框架
 ====================
@@ -117,7 +117,7 @@ ms.locfileid: "41830463"
 
 NuGet **PagedList.Mvc**会自动安装包**PagedList**包作为依赖项。 **PagedList**打包安装`PagedList`的集合类型和扩展方法`IQueryable`和`IEnumerable`集合。 扩展方法创建单个页面中的数据`PagedList`共集合您`IQueryable`或`IEnumerable`，和`PagedList`集合提供了一些属性和方法的简化分页。 **PagedList.Mvc**包将安装的分页帮助器显示分页按钮。
 
-从**工具**菜单中，选择**库程序包管理器**，然后**为解决方案管理 NuGet 包**。
+从**工具**菜单中，选择**NuGet 包管理器**，然后**为解决方案管理 NuGet 包**。
 
 在中**管理 NuGet 包**对话框中，单击**联机**在左侧选项卡，然后在搜索框中输入"分页"。 当您看见**PagedList.Mvc**包，单击**安装**。
 

@@ -8,12 +8,12 @@ ms.date: 05/01/2013
 ms.assetid: 501db899-e68c-49ff-81b2-1dc561bfe908
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-windows-azure-service-bus
 msc.type: authoredcontent
-ms.openlocfilehash: d3c5af75c87f4ba51bb5627ddf237a70e5181678
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d597eebc958815b1b1b9fdffc256c4453efce6b3
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824229"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910949"
 ---
 <a name="signalr-scaleout-with-azure-service-bus-signalr-1x"></a>使用 Azure 服务总线的 SignalR 横向扩展 (SignalR 1.x)
 ====================
@@ -88,7 +88,7 @@ ms.locfileid: "41824229"
 
 若要创建的聊天应用程序，按照本教程中的步骤[SignalR 和 MVC 4 入门](tutorial-getting-started-with-signalr-and-mvc-4.md)。
 
-使用 NuGet 安装所需的库。 从**工具**菜单中，选择**库程序包管理器**，然后选择**程序包管理器控制台**。 在中**程序包管理器控制台**窗口中，输入以下命令：
+使用 NuGet 安装所需的库。 从**工具**菜单中，选择**NuGet 包管理器**，然后选择**程序包管理器控制台**。 在中**程序包管理器控制台**窗口中，输入以下命令：
 
 [!code-powershell[Main](scaleout-with-windows-azure-service-bus/samples/sample2.ps1)]
 

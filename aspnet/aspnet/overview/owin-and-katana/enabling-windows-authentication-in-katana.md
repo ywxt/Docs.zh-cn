@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 82324ef0-3b75-4f63-a217-76ef4036ec93
 msc.legacyurl: /aspnet/overview/owin-and-katana/enabling-windows-authentication-in-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 0aa578020a1f02fa68c74e758014c642219b4265
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 8afa2c9dfbe03a9874513f7d083adf7608f4218f
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824641"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910455"
 ---
 <a name="enabling-windows-authentication-in-katana"></a>在 Katana 中启用 Windows 身份验证
 ====================
@@ -36,7 +36,6 @@ Katana 目前提供两个服务器，都支持 Windows 集成身份验证：
 > [!NOTE]
 > Katana 当前不提供 OWIN 中间件进行 Windows 身份验证，因为此功能已在服务器中可用。
 
-
 ## <a name="windows-authentication-in-iis"></a>在 IIS 中的 Windows 身份验证
 
 使用 Microsoft.Owin.Host.SystemWeb，可以只需启用 IIS 中的 Windows 身份验证。
@@ -45,7 +44,7 @@ Katana 目前提供两个服务器，都支持 Windows 集成身份验证：
 
 ![](enabling-windows-authentication-in-katana/_static/image1.png)
 
-接下来，添加 NuGet 包。 从**工具**菜单中，选择**库程序包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，输入以下命令：
+接下来，添加 NuGet 包。 从**工具**菜单中，选择**NuGet 包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，输入以下命令：
 
 [!code-console[Main](enabling-windows-authentication-in-katana/samples/sample1.cmd)]
 
@@ -75,7 +74,7 @@ Katana 目前提供两个服务器，都支持 Windows 集成身份验证：
 
 如果使用 Microsoft.Owin.Host.HttpListener 自托管 Katana，则可以直接在上启用 Windows 身份验证**HttpListener**实例。
 
-首先，创建一个新的控制台应用程序。 接下来，添加 NuGet 包。 从**工具**菜单中，选择**库程序包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，输入以下命令：
+首先，创建一个新的控制台应用程序。 接下来，添加 NuGet 包。 从**工具**菜单中，选择**NuGet 包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，输入以下命令：
 
 [!code-console[Main](enabling-windows-authentication-in-katana/samples/sample4.cmd)]
 

@@ -8,12 +8,12 @@ ms.date: 01/26/2012
 ms.assetid: be5ab1e2-4140-4275-ac59-ca82a1bac0c1
 msc.legacyurl: /web-api/overview/older-versions/self-host-a-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: cac0d5aeaf49f45051d062935e0e9207ce59c7eb
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 63d192a6fa2aafef3770d5b0b97ec32e001b69db
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831704"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912691"
 ---
 <a name="self-host-aspnet-web-api-1-c"></a>自承载 ASP.NET Web API 1 (C#)
 ====================
@@ -50,7 +50,7 @@ ms.locfileid: "41831704"
 
 NuGet 包管理器是 Web API 程序集添加到非 ASP.NET 项目的最简单方法。
 
-若要检查是否已安装 NuGet 包管理器，请单击**工具**Visual Studio 菜单中的。 如果看到一个菜单项调用**库程序包管理器**，则具有 NuGet 包管理器。
+若要检查是否已安装 NuGet 包管理器，请单击**工具**Visual Studio 菜单中的。 如果看到一个菜单项调用**NuGet 包管理器**，则具有 NuGet 包管理器。
 
 若要安装 NuGet 包管理器：
 
@@ -68,8 +68,8 @@ NuGet 包管理器是 Web API 程序集添加到非 ASP.NET 项目的最简单�
 
 安装 NuGet 包管理器后，将 Web API 自托管包添加到你的项目。
 
-1. 从**工具**菜单中，选择**库程序包管理器**。 *请注意*： 如果你不会看到此菜单项，请确保已正确安装该 NuGet 包管理器。
-2. 选择**管理解决方案的 NuGet 包...**
+1. 从**工具**菜单中，选择**NuGet 包管理器**。 *请注意*： 如果你不会看到此菜单项，请确保已正确安装该 NuGet 包管理器。
+2. 选择**管理解决方案的 NuGet 包**
 3. 在中**Manage NugGet Packages**对话框中，选择**联机**。
 4. 在搜索框中，键入&quot;Microsoft.AspNet.WebApi.SelfHost&quot;。
 5. 选择 ASP.NET Web API 自宿主包，然后单击**安装**。
@@ -77,7 +77,6 @@ NuGet 包管理器是 Web API 程序集添加到非 ASP.NET 项目的最简单�
 
 > [!NOTE]
 > 请确保安装名为 Microsoft.AspNet.WebApi.SelfHost，不 AspNetWebApi.SelfHost 的包。
-
 
 ![](self-host-a-web-api/_static/image4.png)
 
@@ -141,8 +140,8 @@ NuGet 包管理器是 Web API 程序集添加到非 ASP.NET 项目的最简单�
 
 使用 NuGet 包管理器来添加 ASP.NET Web API 的核心库包：
 
-- 从工具菜单中，选择**库程序包管理器**。
-- 选择**管理解决方案的 NuGet 包...**
+- 从工具菜单中，选择**NuGet 包管理器**。
+- 选择**管理解决方案的 NuGet 包**
 - 在中**管理 NuGet 包**对话框中，选择**联机**。
 - 在搜索框中，键入&quot;Microsoft.AspNet.WebApi.Client&quot;。
 - 选择 Microsoft ASP.NET Web API 客户端库包，然后单击**安装**。

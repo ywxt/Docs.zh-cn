@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: ae4def81-fa37-4883-a13e-d9896cbf6c36
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
-ms.openlocfilehash: 7bdf443fbce7376ac057c848df146717955203f9
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 67f44d9f23a2fe83c48e68328b1dee739056e32f
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834275"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912379"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>使用 Visual Studio 的 ASP.NET Web 部署： 准备数据库部署
 ====================
@@ -84,15 +84,13 @@ Contoso University 应用程序数据库由 Code First，将使用 Code First �
 > [!NOTE]
 > 若要指定一个初始值设定项类的另一种方法是执行此操作通过调用`Database.SetInitializer`中`Application_Start`中的方法*Global.asax*文件。 如果要使用该方法来指定初始值设定项的项目中启用迁移，删除该代码行。
 
-
 > [!NOTE]
 > 如果正在使用 Visual Studio 2013，添加步骤 2 和 3 之间的以下步骤: (a) 在 PMC 输入"更新包 entityframework-版本 6.1.1"若要获取 EF 的当前版本。 然后 (b) 生成项目以获取生成错误的列表，并修复它们。 删除不再存在，右键单击并单击解析以添加 using 语句他们需要的命名空间的 using 语句并将出现的 System.Data.EntityState 更改为 System.Data.Entity.EntityState。
-
 
 ### <a name="enable-code-first-migrations"></a>启用 Code First 迁移
 
 1. 请确保为 ContosoUniversity 项目 (而不是 ContosoUniversity.DAL) 设置为启动项目。 在中**解决方案资源管理器**，右键单击 ContosoUniversity 项目并选择**设为启动项目**。 Code First 迁移将查找要查找的数据库连接字符串的启动项目中。
-2. 从**工具**菜单上，单击**库程序包管理器**(或**NuGet 包管理器**)，然后**程序包管理器控制台**。
+2. 从**工具**菜单中，选择**NuGet 包管理器** > **包管理器控制台**。
 
     ![Selecting_Package_Manager_Console](preparing-databases/_static/image3.png)
 3. 在顶部**程序包管理器控制台**窗口中选择作为默认项目，并在 ContosoUniversity.DAL`PM>`提示符处输入"启用迁移"。

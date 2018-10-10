@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 2ce36f78-8ecb-4ab1-b748-6d0ab633ea3f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: de0f8092342a8ba8979a31e9a97b603e44e6a85d
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 754f085e3e43f7efa155f410d02a0d29d3349612
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824451"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912288"
 ---
 <a name="create-the-project"></a>创建项目
 ====================
@@ -174,8 +174,7 @@ Web 服务器收到页请求时，它发现页，对其进行处理，将其发�
 > 
 > Wingtip Toys 应用程序使用 ASP.NET Web 窗体应用程序模板中的功能，除了[Entity Framework Code First](https://weblogs.asp.net/scottgu/archive/2010/12/08/announcing-entity-framework-code-first-ctp5-release.aspx)，这是一个 NuGet 库，当您使用数据时，代码为中心的开发。 简单地说，它会创建你的应用程序可以根据您编写的代码的数据库部分。 使用实体框架，检索和操作数据作为强类型化对象。 此，您专注于业务逻辑中你的应用程序而不是如何访问数据的详细信息。
 > 
-> 有关已安装的库和包 ASP.NET Web 窗体模板中包含的其他信息，请参阅安装 NuGet 包的列表。 若要执行此操作，在 Visual Studio 中创建一个新的 Web 窗体项目，选择**工具** - &gt; **库程序包管理器** - &gt; **管理解决方案的 NuGet 包**，然后选择**已安装的包**中**管理 NuGet 包**对话框。
-
+> 有关已安装的库和包 ASP.NET Web 窗体模板中包含的其他信息，请参阅安装 NuGet 包的列表。 若要执行此操作，在 Visual Studio 中创建一个新的 Web 窗体项目，选择**工具** > **NuGet 包管理器** > **解决方案管理NuGet包**，然后选择**已安装的包**中**管理 NuGet 包**对话框。
 
 ### <a name="touring-visual-studio"></a>Touring Visual Studio
 

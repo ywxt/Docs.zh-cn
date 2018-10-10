@@ -8,12 +8,12 @@ ms.date: 05/01/2013
 ms.assetid: 1dca7967-8296-444a-9533-837eb284e78c
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-sql-server
 msc.type: authoredcontent
-ms.openlocfilehash: cd0e3d4bdb4d2eb78e5c41167a17f8673584f654
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d68196aa8e4d0c60570a0e36ccc75a2a080d57bc
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830650"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912743"
 ---
 <a name="signalr-scaleout-with-sql-server-signalr-1x"></a>使用 SQL Server 的 SignalR 横向扩展 (SignalR 1.x)
 ====================
@@ -66,7 +66,6 @@ Microsoft SQL Server 2005 或更高版本。 底板支持桌面和服务器版�
 > [!NOTE]
 > 如果此查询出现死锁，请确保没有应用程序连接到数据库。
 
-
 如果已启用跟踪，跟踪还会显示是否启用 Service Broker。
 
 ## <a name="create-a-signalr-application"></a>创建 SignalR 应用程序
@@ -76,7 +75,7 @@ Microsoft SQL Server 2005 或更高版本。 底板支持桌面和服务器版�
 - [SignalR 入门](../getting-started/tutorial-getting-started-with-signalr.md)
 - [使用 SignalR 和 MVC 4 入门](tutorial-getting-started-with-signalr-and-mvc-4.md)
 
-接下来，我们将修改要支持使用 SQL Server 横向扩展的聊天应用程序。 首先，将 SignalR.SqlServer NuGet 包添加到你的项目。 在 Visual Studio 中，从**工具**菜单中，选择**库程序包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，输入以下命令：
+接下来，我们将修改要支持使用 SQL Server 横向扩展的聊天应用程序。 首先，将 SignalR.SqlServer NuGet 包添加到你的项目。 在 Visual Studio 中，从**工具**菜单中，选择**NuGet 包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，输入以下命令：
 
 [!code-powershell[Main](scaleout-with-sql-server/samples/sample4.ps1)]
 

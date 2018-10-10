@@ -8,21 +8,20 @@ ms.date: 12/08/2014
 ms.assetid: f35a9b0c-49ef-4cde-b06d-19d1543feb0b
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 6e3de242f7cfc584f4c3d1dfa3d1948ee4d49d66
-ms.sourcegitcommit: 67a0a04ebb3b21c826e5b9600bacfc897abd6a46
+ms.openlocfilehash: 0aa440e700c9bfb02aa5d55ebf481850a730febe
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42899820"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912678"
 ---
 <a name="advanced-entity-framework-6-scenarios-for-an-mvc-5-web-application-12-of-12"></a>高级的 Entity Framework 6 方案为 MVC 5 Web 应用程序 (12 个 12) 的
 ====================
 通过[Tom Dykstra](https://github.com/tdykstra)
 
-[下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)或[下载 PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
-
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 的 ASP.NET MVC 5 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 
 在上一教程中，您将实现每个层次结构一个表继承。 本教程包括引入了几个主题都有可用于注意当超出使用 Entity Framework Code First 开发 ASP.NET web 应用程序的基础知识。 分步说明将引导你完成的代码和使用 Visual Studio 进行的以下主题：
 
@@ -150,7 +149,7 @@ ms.locfileid: "42899820"
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample6.cs)]
 
-现在上设置断点`return`语句 (F9 在该行光标)。 按 F5 在调试模式下运行该项目并选择课程索引页。 当代码到达该断点时，检查`sql`变量。 可以看到发送到 SQL Server 的查询。 它是一个简单`Select`语句。
+现在上设置断点`return`语句 (F9 在该行光标)。 按**F5**以在调试模式下运行该项目并选择课程索引页。 当代码到达该断点时，检查`sql`变量。 可以看到发送到 SQL Server 的查询。 它是一个简单`Select`语句。
 
 [!code-json[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample7.json)]
 
@@ -291,7 +290,6 @@ Entity Framework 6 的源代码位于[GitHub](https://github.com/aspnet/EntityFr
 
 > 无法创建/卷影副本&lt;文件名&gt;文件已存在。
 
-
 解决方案
 
 等待几秒钟，并刷新页面。
@@ -301,7 +299,6 @@ Entity Framework 6 的源代码位于[GitHub](https://github.com/aspnet/EntityFr
 错误消息 (从`Update-Database`命令在 PMC 中):
 
 > 术语更新数据库未识别为 cmdlet、 函数、 脚本文件或可操作程序的名称。 检查名称的拼写或如果已包含路径，验证路径正确，然后重试。
-
 
 解决方案
 
@@ -313,7 +310,6 @@ Entity Framework 6 的源代码位于[GitHub](https://github.com/aspnet/EntityFr
 
 > 对一个或多个实体的验证失败。 请参阅 EntityValidationErrors 属性的更多详细信息。
 
-
 解决方案
 
 此问题的一个原因是验证错误时`Seed`方法运行。 请参阅[种子设定和调试 Entity Framework (EF) 数据库](https://blogs.msdn.com/b/rickandy/archive/2013/02/12/seeding-and-debugging-entity-framework-ef-dbs.aspx)有关调试的提示`Seed`方法。
@@ -322,9 +318,7 @@ Entity Framework 6 的源代码位于[GitHub](https://github.com/aspnet/EntityFr
 
 错误消息：
 
-> HTTP 错误 500.19-内部服务器错误  
-> 不能访问请求的页面，因为该页的相关的配置数据无效。
-
+> 不能访问 HTTP 错误 500.19-内部服务器错误，请求的页面，因为该页的相关的配置数据无效。
 
 解决方案
 
@@ -335,7 +329,6 @@ Entity Framework 6 的源代码位于[GitHub](https://github.com/aspnet/EntityFr
 错误消息：
 
 > 建立到 SQL Server 的连接时出现与网络相关或特定于实例的错误。 未找到或无法访问服务器。 请验证实例名称是否正确，SQL Server 是否已配置为允许远程连接。 （提供程序：SQL 网络接口，错误：26 - 定位指定的服务器/实例时出错）
-
 
 解决方案
 

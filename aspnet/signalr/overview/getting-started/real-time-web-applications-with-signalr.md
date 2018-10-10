@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: ba07958c-42e1-4da0-81db-ba6925ed6db0
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: a3f6174049ffddae4bb2a1819e3684bcdec1b55f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 59831fb8497c86ec5e02de3912b36a15f416597c
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41823560"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913225"
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>动手实验： 使用 SignalR 的实时 Web 应用程序
 ====================
@@ -148,7 +148,7 @@ SignalR 支持**服务器推送**或**广播**功能; 它会自动处理的连�
 
 在本任务中，将添加到解决方案的 SignalR，并将更新发送到客户端自动在新的答案发送到服务器时。
 
-1. 从**工具**在 Visual Studio 中，选择菜单**库程序包管理器**，然后单击**程序包管理器控制台**。
+1. 从**工具**在 Visual Studio 中，选择菜单**NuGet 包管理器**，然后单击**程序包管理器控制台**。
 2. 在中**程序包管理器控制台**窗口中，执行以下命令：
 
     [!code-powershell[Main](real-time-web-applications-with-signalr/samples/sample1.ps1)]
@@ -362,7 +362,7 @@ Web 应用程序时，您通常可以之间*纵向*并*向外扩展*选项。 *�
 
 在本任务中，您将配置**极客测验**连接到 SQL Server 背板。 首先，您将添加**SignalR.SqlServer** NuGet 包并设置的连接字符串到底板数据库。
 
-1. 打开**程序包管理器控制台**从**工具** | **库程序包管理器**。 请确保**GeekQuiz**中选择项目**默认项目**下拉列表。 键入以下命令以安装**Microsoft.AspNet.SignalR.SqlServer** NuGet 包。
+1. 打开**程序包管理器控制台**从**工具** > **NuGet 包管理器**。 请确保**GeekQuiz**中选择项目**默认项目**下拉列表。 键入以下命令以安装**Microsoft.AspNet.SignalR.SqlServer** NuGet 包。
 
     [!code-powershell[Main](real-time-web-applications-with-signalr/samples/sample13.ps1)]
 2. 对项目重复上一步，但这一次**GeekQuiz2**。

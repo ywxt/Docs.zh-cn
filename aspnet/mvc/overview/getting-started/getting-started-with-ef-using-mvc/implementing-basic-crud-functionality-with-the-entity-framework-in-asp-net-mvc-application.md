@@ -4,31 +4,29 @@ title: 在 ASP.NET MVC 应用程序中实现基本的 CRUD 功能与实体框架
 author: tdykstra
 description: Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 的 ASP.NET MVC 5 应用程序...
 ms.author: riande
-ms.date: 03/09/2015
+ms.date: 10/05/2015
 ms.assetid: a2f70ba4-83d1-4002-9255-24732726c4f2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: fd718cfe0f257bbf97f5ef3fdbdedecc88fc4e98
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 08b5d38b38d3323e347f0f849ccc0c25fe49efb9
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834257"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912643"
 ---
 <a name="implementing-basic-crud-functionality-with-the-entity-framework-in-aspnet-mvc-application"></a>在 ASP.NET MVC 应用程序中实现基本的 CRUD 功能与实体框架
 ====================
 通过[Tom Dykstra](https://github.com/tdykstra)
 
-[下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)或[下载 PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 的 ASP.NET MVC 5 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 
-
-上一教程中创建的存储和显示数据使用实体框架和 SQL Server LocalDB 的 MVC 应用程序。 在本教程中将评审和自定义 CRUD （创建、 读取、 更新、 删除） 的 MVC 基架自动为你创建在控制器和视图中的代码。
+在上一个教程中，创建了一个使用 Entity Framework 和 SQL Server LocalDB 来存储和显示数据的 MVC 应用程序。 在本教程中，将查看和自定义创建、 读取、 更新、 删除 (CRUD) MVC 基架自动为你创建在控制器和视图中的代码。
 
 > [!NOTE]
 > 为了在控制器和数据访问层之间创建一个抽象层，常见的做法是实现存储库模式。 为了保持这些教程内容简单并重点介绍如何使用 Entity Framework 本身，它们不使用存储库。 有关如何实现存储库的信息，请参阅[ASP.NET 数据访问内容映射](../../../../whitepapers/aspnet-data-access-content-map.md)。
-
 
 在本教程中，你将创建以下网页：
 
@@ -40,9 +38,9 @@ ms.locfileid: "41834257"
 
 ## <a name="create-a-details-page"></a>创建详细信息页
 
-面向学生的基架的代码`Index`页上留出`Enrollments`属性，因为该属性包含一个集合。 在`Details`页面将 HTML 表中显示集合的内容。
+面向学生的基架的代码`Index`页上留出`Enrollments`属性，因为该属性包含一个集合。 在`Details`页上，将集合的内容显示在 HTML 表。
 
- 在中*Controllers\StudentController.cs*，为操作方法`Details`查看使用[查找](https://msdn.microsoft.com/library/gg696418(v=VS.103).aspx)方法来检索单个`Student`实体。 
+在中*Controllers\StudentController.cs*，为操作方法`Details`查看使用[查找](https://msdn.microsoft.com/library/gg696418(v=VS.103).aspx)方法来检索单个`Student`实体。
 
 [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample1.cs)]
 
@@ -58,7 +56,7 @@ ms.locfileid: "41834257"
 
 `http://localhost:1230/Instructor/Index/1?courseID=2021`
 
-"？ courseID = 2021年"是一个查询字符串值。 如果传递的模型联编程序也能`id`作为查询字符串值：
+`?courseID=2021` 查询字符串值。 如果传递的模型联编程序也能`id`作为查询字符串值：
 
 `http://localhost:1230/Instructor/Index?id=1&CourseID=2021`
 
@@ -70,30 +68,37 @@ ms.locfileid: "41834257"
 
 [!code-cshtml[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample4.cshtml)]
 
+### <a name="to-create-the-details-page"></a>若要创建的详细信息页
 
-1. 打开*Views\Student\Details.cshtml*。 使用显示每个字段`DisplayFor`帮助程序，如下面的示例中所示：
+1. 打开*Views\Student\Details.cshtml*。
+
+   使用显示每个字段`DisplayFor`帮助程序，如下面的示例中所示：
 
     [!code-cshtml[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample5.cshtml)]
+
 2. 之后`EnrollmentDate`字段，然后立即在关闭前`</dl>`标记中，添加突出显示的代码以显示注册列表，如下面的示例中所示：
 
     [!code-cshtml[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample6.cshtml?highlight=8-29)]
 
-    如果代码缩进在粘贴代码后出现错误，请按 CTRL+K+D 进行更正。
+    如果代码缩进在粘贴代码后出现错误，按**Ctrl**+**K**， **Ctrl**+**D**要设置格式它。
 
-    此代码循环通过 `Enrollments` 导航属性中的实体。 每个`Enrollment`实体在属性中，它将显示课程标题和成绩。 课程标题检索从`Course`中存储的实体`Course`导航属性`Enrollments`实体。 所有这些数据是从数据库中检索自动在需要时。 （即，使用延迟加载此处。 未指定*预先加载*为`Courses`导航属性，因此有学生在同一查询中检索不到注册的。 相反，第一次尝试访问`Enrollments`导航属性，一个新的查询发送到数据库以检索数据。 你可以阅读更多有关延迟加载和预先加载在[读取相关数据](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)本系列后面的教程。)
-3. 通过选择运行页**学生**选项卡并单击**详细信息**Alexander Carson 的链接。 （如果 Details.cshtml 文件处于打开状态时按 CTRL + F5，则将会返回 HTTP 400 错误因为 Visual Studio 尝试运行的详细信息页，但它未达到指定的学生，若要显示的链接。 这种情况下，只需从 URL 中删除"学生/详细信息"和重试，或关闭浏览器中，右键单击项目，并单击**视图**，然后单击**用浏览器查看**。)
+    此代码循环通过 `Enrollments` 导航属性中的实体。 每个`Enrollment`实体在属性中，它将显示课程标题和成绩。 课程标题检索从`Course`中存储的实体`Course`导航属性`Enrollments`实体。 所有这些数据是从数据库中检索自动在需要时。 换而言之，使用延迟加载此处。 未指定*预先加载*为`Courses`导航属性，因此有学生在同一查询中检索不到注册的。 相反，第一次尝试访问`Enrollments`导航属性，一个新的查询发送到数据库以检索数据。 你可以阅读更多有关延迟加载和预先加载在[读取相关数据](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)本系列后面的教程。
+
+3. 通过启动该程序打开的详细信息页 (**Ctrl**+**F5**)，选择**学生**选项卡上，，然后单击**的详细信息** Alexander Carson 的链接。 (如果按下**Ctrl**+**F5**而*Details.cshtml*文件处于打开状态，你收到 HTTP 400 错误。 这是因为 Visual Studio 尝试运行详细信息页上，但它未达到指定的学生，若要显示的链接。 如果发生这种情况，从 URL 中删除"学生/详细信息"和重试，或者，关闭浏览器中，右键单击项目，并单击**视图** > **用浏览器查看**。)
 
     将看到所选学生的课程和年级列表：
 
     ![Student_Details_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image4.png)
 
-## <a name="update-the-create-page"></a>更新创建页
+4. 关闭浏览器。
 
-1. 在*Controllers\StudentController.cs*，替换`HttpPost``Create`使用以下代码添加操作方法`try-catch`阻止并删除`ID`从[绑定属性](https://msdn.microsoft.com/library/system.web.mvc.bindattribute(v=vs.108).aspx)为基架生成的方法：
+## <a name="update-the-create-page"></a>更新“创建”页
+
+1. 在中*Controllers\StudentController.cs*，替换<xref:System.Web.Mvc.HttpPostAttribute>`Create`用下面的代码的操作方法。 此代码将添加`try-catch`块而不会`ID`从<xref:System.Web.Mvc.BindAttribute>基架生成的方法的属性：
 
     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample7.cs?highlight=3,5-6,13-18)]
 
-    此代码将添加`Student`ASP.NET MVC 模型绑定器创建实体到`Students`实体设置，并将所做的更改保存到数据库。 (*模型联编程序*指的是 ASP.NET MVC 功能，使其更轻松地处理提交的窗体的数据; 模型联编程序将发布窗体到 CLR 类型值，并将其传递给操作方法的参数。 这种情况下，模型绑定器实例化`Student`实体为你使用属性值从`Form`集合。)
+    此代码将添加`Student`ASP.NET MVC 模型绑定器创建实体到`Students`实体设置，并将所做的更改保存到数据库。 *模型联编程序*指的是 ASP.NET MVC 功能，使其更轻松地处理提交的窗体的数据; 模型联编程序将发布窗体到 CLR 类型值，并将其传递给操作方法的参数。 在这种情况下，模型绑定器实例化`Student`实体为你使用属性值从`Form`集合。
 
     您删除`ID`从绑定属性，因为`ID`是 SQL Server 将插入行时自动设置的主键值。 来自用户的输入不会设置`ID`值。
 
@@ -105,19 +110,19 @@ ms.locfileid: "41834257"
 
     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample8.cs?highlight=7)]
 
-    即使您没有`Secret`字段在网页上，黑客可以使用一种工具如[fiddler](http://fiddler2.com/home)，或编写一些 JavaScript 来发布`Secret`表单值。 无需[绑定](https://msdn.microsoft.com/library/system.web.mvc.bindattribute(v=vs.108).aspx)特性来限制模型绑定器在创建时使用的字段`Student`实例<em>，</em>模型绑定器会选取该`Secret`表单值并使用它创建`Student`实体实例。 然后将在数据库中更新黑客为 `Secret` 表单字段指定的任意值。 下图显示 fiddler 工具添加`Secret`（具有值"OverPost"） 为已发布的表单值的字段。
+    即使您没有`Secret`字段在网页上，黑客可以使用一种工具如[fiddler](http://fiddler2.com/home)，或编写一些 JavaScript 来发布`Secret`表单值。 无需<xref:System.Web.Mvc.BindAttribute>特性来限制模型绑定器在创建时使用的字段`Student`实例<em>，</em>模型绑定器会选取该`Secret`表单值并使用它来创建`Student`实体实例。 然后将在数据库中更新黑客为 `Secret` 表单字段指定的任意值。 下图显示 fiddler 工具添加`Secret`（具有值"OverPost"） 为已发布的表单值的字段。
 
-    ![](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image5.png)  
+    ![](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image5.png)
 
     然后值“OverPost”将成功添加到插入行的 `Secret` 属性，尽管你从未打算网页可设置该属性。
 
-    它是使用的安全最佳实践`Include`参数`Bind`属性设为*允许列表*字段。 还有可能要使用`Exclude`参数*阻止列表*你想要排除的字段。 原因`Include`更安全是，当将新属性添加到实体，新字段不会自动受`Exclude`列表。
+    最好是使用`Include`参数与`Bind`归于*白名单*字段。 还有可能要使用`Exclude`参数*阻止列表*你想要排除的字段。 原因`Include`更安全是，当将新属性添加到实体，新字段不会自动受`Exclude`列表。
 
     可以防止在编辑方案中的过多发布是通过首先从数据库读取实体，然后再调用`TryUpdateModel`，并传递显式允许的属性列表中。 这是在这些教程中使用的方法。
 
     防止过多发布的许多开发人员的首选的替代方法是使用视图模型而不是实体类与模型绑定。 仅包含想要在视图模型中更新的属性。 完成 MVC 模型绑定器后，将视图模型属性复制到的实体实例，根据需要使用一种工具类似于[AutoMapper](http://automapper.org/)。 使用数据库。要将其状态设置为 Unchanged，然后设置 Property("PropertyName") 的实体实例的项。为 true 的视图模型中包含每个实体属性的 IsModified。 此方法同时适用于编辑和创建方案。
 
-    以外`Bind`属性，`try-catch`块是对基架代码所做的唯一更改。 如果派生的异常[DataException](https://msdn.microsoft.com/library/system.data.dataexception.aspx)是捕获在保存所做的更改的同时，将显示一般错误消息。 [DataException](https://msdn.microsoft.com/library/system.data.dataexception.aspx)异常有时会造成由外部应用程序而不是编程错误的内容，因此建议用户以重试。 尽管在本示例中未实现，但生产质量应用程序会记录异常。 有关详细信息，请参阅[监视和遥测（使用 Azure 构建真实世界云应用）](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log)中的“见解记录”部分。
+    以外`Bind`属性，`try-catch`块是对基架代码所做的唯一更改。 如果保存更改时捕获到来自 <xref:System.Data.DataException> 的异常，则会显示一般错误消息。 有时 <xref:System.Data.DataException> 异常是由应用程序外部的某些内容而非编程错误引起的，因此建议用户再次尝试。 尽管在本示例中未实现，但生产质量应用程序会记录异常。 有关详细信息，请参阅[监视和遥测（使用 Azure 构建真实世界云应用）](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log)中的“见解记录”部分。
 
     中的代码*Views\Student\Create.cshtml*类似于您在中看到*Details.cshtml*，只不过`EditorFor`和`ValidationMessageFor`帮助程序用于每个字段而不是`DisplayFor`. 下面是相关的代码：
 
@@ -126,101 +131,113 @@ ms.locfileid: "41834257"
     *Create.chstml*还包括`@Html.AntiForgeryToken()`，适用于`ValidateAntiForgeryToken`属性中的控制器，以帮助防止[跨站点请求伪造](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)攻击。
 
     需要在不更改*Create.cshtml*。
-2. 通过选择运行页**学生**选项卡并单击**创建新**。
+
+2. 通过启动该程序，运行页上选择**学生**选项卡上，，然后单击**创建新**。
+
 3. 输入名称和无效的日期，然后单击**创建**可查看错误消息。
 
     ![Students_Create_page_error_message](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image6.png)
 
-    这是默认获取的服务器端验证；在下一个教程中，还将介绍如何添加生成客户端验证代码的特性。 以下突出显示的代码显示了中的模型验证检查**创建**方法。
+    这是默认情况下获取的服务器端验证。 在更高版本的教程中，您将了解如何添加生成的客户端验证代码的属性。 以下突出显示的代码显示了中的模型验证检查**创建**方法。
 
     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample10.cs?highlight=1)]
+
 4. 将日期更改为有效值，并单击“创建”，查看“索引”页中显示的新学生。
 
     ![Students_Index_page_with_new_student](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image7.png)
 
+5. 关闭浏览器。
+
 ## <a name="update-the-edit-httppost-method"></a>更新编辑 HttpPost 方法
 
-在中*Controllers\StudentController.cs*，则`HttpGet``Edit`方法 (而不是`HttpPost`属性) 使用`Find`方法来检索所选`Student`作为您了解到实体，在`Details`方法。 不需要更改此方法。
+1. 替换<xref:System.Web.Mvc.HttpPostAttribute>`Edit`用下面的代码的操作方法：
 
-但是，替换`HttpPost``Edit`用下面的代码的操作方法：
+   [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample11.cs)]
 
-[!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample11.cs)]
+   > [!NOTE]
+   > 在*Controllers\StudentController.cs*，则`HttpGet Edit`方法 (而不是`HttpPost`属性) 使用`Find`方法来检索所选`Student`实体，为你在中看到`Details`方法。 不需要更改此方法。
 
-这些更改实现安全的最佳做法，以免[过多发布](#overpost)，基架生成`Bind`属性，并添加到的实体集具有已修改标志将模型绑定器创建的实体。 由于不再推荐代码`Bind`特性将清除在字段中未列出任何预先存在的数据`Include`参数。 将来，MVC 控制器基架将进行更新，以便它不会生成`Bind`Edit 方法的属性。
+   这些更改实现安全的最佳做法，以免[过多发布](#overpost)，基架生成`Bind`属性，并添加到的实体集具有已修改标志将模型绑定器创建的实体。 由于不再推荐代码`Bind`特性将清除在字段中未列出任何预先存在的数据`Include`参数。 将来，MVC 控制器基架将进行更新，以便它不会生成`Bind`Edit 方法的属性。
 
-新代码读取现有实体并调用[TryUpdateModel](https://msdn.microsoft.com/library/system.web.mvc.controller.tryupdatemodel(v=vs.118).aspx)更新从已发布的表单数据中的用户输入的字段。 实体框架的自动更改跟踪集[Modified](https://msdn.microsoft.com/library/system.data.entitystate.aspx)实体上的标志。 当[SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx)调用方法时，`Modified`标志会导致实体框架来创建 SQL 语句来更新数据库行。 [并发冲突](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)将被忽略，并更新数据库行中的所有列，包括用户未更改。 (更高版本的教程演示如何处理并发冲突，并且如果只想要在数据库中更新的单个字段，可以将实体设置为 Unchanged 并设置各个已修改的字段。)
+   新代码读取现有实体并调用<xref:System.Web.Mvc.Controller.TryUpdateModel%2A>更新从已发布的表单数据中的用户输入的字段。 实体框架的自动更改跟踪集[EntityState.Modified](<xref:System.Data.EntityState.Modified>)实体上的标志。 当[SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx)调用方法时，<xref:System.Data.EntityState.Modified>标志会导致实体框架来创建 SQL 语句来更新数据库行。 [并发冲突](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)将被忽略，并更新数据库行中的所有列，包括用户未更改。 (更高版本的教程演示如何处理并发冲突，并且如果只想要在数据库中更新的单个字段，可以将实体设置为[EntityState.Unchanged](<xref:System.Data.EntityState.Unchanged>)并将各个字段设置为[EntityState.Modified](<xref:System.Data.EntityState.Modified>)。)
 
-作为最佳做法是以防止 overposting，你想要通过编辑页可更新的字段被列入允许列表中的`TryUpdateModel`参数。 目前没有要保护的额外字段，但是列出希望模型绑定器绑定的字段可确保以后将字段添加到数据模型时，它们将自动受到保护，直到明确将其添加到此处为止。
+   若要防止过多发布，你想要通过编辑页面可更新的字段是否在允许列表中的`TryUpdateModel`参数。 目前没有要保护的额外字段，但是列出希望模型绑定器绑定的字段可确保以后将字段添加到数据模型时，它们将自动受到保护，直到明确将其添加到此处为止。
 
-这些更改会导致 HttpPost Edit 方法的方法签名是与 HttpGet 编辑方法; 相同因此，您已重命名方法 EditPost。
+   这些更改会导致 HttpPost Edit 方法的方法签名是与 HttpGet 编辑方法; 相同因此，您已重命名方法 EditPost。
 
-> [!TIP] 
-> 
-> **实体状态的附加和 SaveChanges 方法**
-> 
-> 数据库上下文跟踪内存中的实体是否与数据库中相应的行同步，并且此信息确定调用 `SaveChanges` 方法时会发生的情况。 例如，当传递到新的实体[外](https://msdn.microsoft.com/library/system.data.entity.dbset.add(v=vs.103).aspx)方法，该实体的状态设置为`Added`。 然后调用[SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx)方法，将数据库上下文发出 SQL`INSERT`命令。
-> 
-> 实体可能之一[遵循状态](https://msdn.microsoft.com/library/system.data.entitystate.aspx):
-> 
-> - `Added`。 实体在数据库中尚不存在。 `SaveChanges`方法必须发出`INSERT`语句。
-> - `Unchanged`。 不需要通过 `SaveChanges` 方法对此实体执行操作。 从数据库读取实体时，实体将从此状态开始。
-> - `Modified`。 已修改实体的部分或全部属性值。 `SaveChanges`方法必须发出`UPDATE`语句。
-> - `Deleted`。 已标记该实体进行删除。 `SaveChanges`方法必须发出`DELETE`语句。
-> - `Detached`。 数据库上下文未跟踪该实体。
-> 
-> 在桌面应用程序中，通常会自动设置状态更改。 在桌面应用程序的类型中，读取一个实体并对它的一些属性值进行更改。 这将使其实体状态自动更改为 `Modified`。 然后调用`SaveChanges`，Entity Framework 生成 SQL`UPDATE`更新仅更改了的实际属性的语句。
-> 
-> Web 应用断开连接的特性不允许此连续序列。 [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx)读取实体将在页面呈现后进行处理。 当`HttpPost``Edit`调用操作方法，将进行新的请求并具有的新实例[DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx)，因此您必须手动将实体状态设置为`Modified.`然后当您调用`SaveChanges`，Entity Framework 会更新所有列的数据库行，因为上下文无法知道已更改的属性。
-> 
-> 如果您希望 SQL`Update`语句来更新字段的用户实际更改，您可以以某种方式 （如隐藏字段） 保存的原始值，以便它们时，将用`HttpPost``Edit`调用方法。 然后可以创建`Student`实体使用的原始值，调用`Attach`方法与该原始版本的实体的实体的值更新为新值，然后调用`SaveChanges.`的详细信息，请参阅[实体状态和 SaveChanges](https://msdn.microsoft.com/data/jj592676)并[本地数据](https://msdn.microsoft.com/data/jj592872)MSDN 数据开发人员中心中。
+   > [!TIP]
+   >
+   > **实体状态的附加和 SaveChanges 方法**
+   >
+   > 数据库上下文跟踪内存中的实体是否与数据库中相应的行同步，并且此信息确定调用 `SaveChanges` 方法时会发生的情况。 例如，当传递到新的实体[外](https://msdn.microsoft.com/library/system.data.entity.dbset.add(v=vs.103).aspx)方法，该实体的状态设置为`Added`。 然后调用[SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx)方法，将数据库上下文发出 SQL`INSERT`命令。
+   >
+   > 实体可能在下列情况之一[状态](xref:System.Data.EntityState):
+   >
+   > - `Added`。 实体在数据库中尚不存在。 `SaveChanges`方法必须发出`INSERT`语句。
+   > - `Unchanged`。 不需要通过 `SaveChanges` 方法对此实体执行操作。 从数据库读取实体时，实体将从此状态开始。
+   > - `Modified`。 已修改实体的部分或全部属性值。 `SaveChanges`方法必须发出`UPDATE`语句。
+   > - `Deleted`。 已标记该实体进行删除。 `SaveChanges`方法必须发出`DELETE`语句。
+   > - `Detached`。 数据库上下文未跟踪该实体。
+   >
+   > 在桌面应用程序中，通常会自动设置状态更改。 在桌面应用程序的类型中，读取一个实体并对它的一些属性值进行更改。 这将使其实体状态自动更改为 `Modified`。 然后调用`SaveChanges`，Entity Framework 生成 SQL`UPDATE`更新仅更改了的实际属性的语句。
+   >
+   > Web 应用断开连接的特性不允许此连续序列。 [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx)读取实体将在页面呈现后进行处理。 当`HttpPost``Edit`调用操作方法，将进行新的请求并具有的新实例[DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx)，因此您必须手动将实体状态设置为`Modified.`然后当您调用`SaveChanges`，Entity Framework 会更新所有列的数据库行，因为上下文无法知道已更改的属性。
+   >
+   > 如果您希望 SQL`Update`语句来更新字段的用户实际更改，您可以以某种方式 （如隐藏字段） 保存的原始值，以便它们时，将用`HttpPost``Edit`调用方法。 然后可以创建`Student`实体使用的原始值，调用`Attach`方法与该原始版本的实体的实体的值更新为新值，然后调用`SaveChanges.`的详细信息，请参阅[实体状态和 SaveChanges](/ef/ef6/saving/change-tracking/entity-state)并[本地数据](/ef/ef6/querying/local-data)。
 
+   中的 HTML 和 Razor 代码*Views\Student\Edit.cshtml*类似于您在中看到*Create.cshtml*，并不不需要任何更改。
 
-中的 HTML 和 Razor 代码*Views\Student\Edit.cshtml*类似于您在中看到*Create.cshtml*，并不不需要任何更改。
+2. 通过启动该程序，运行页上选择**学生**选项卡上，，然后单击**编辑**超链接。
 
-通过选择运行页**学生**选项卡，然后单击**编辑**超链接。
+   ![Student_Edit_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image8.png)
 
-![Student_Edit_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image8.png)
+3. 更改某些数据并单击“保存”。 请参阅索引页中更改的数据。
 
-更改某些数据并单击“保存”。 请参阅索引页中更改的数据。
+   ![Students_Index_page_after_edit](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image9.png)
 
-![Students_Index_page_after_edit](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image9.png)
+4. 关闭浏览器。
 
-## <a name="updating-the-delete-page"></a>正在更新删除页
+## <a name="update-the-delete-page"></a>更新“删除”页
 
-在中*Controllers\StudentController.cs*的模板代码`HttpGet``Delete`方法使用`Find`方法来检索所选`Student`实体，为你在中看到`Details`和`Edit`方法。 但是，若要在调用 `SaveChanges` 失败时实现自定义错误消息，请将部分功能添加到此方法及其相应的视图中。
+在中*Controllers\StudentController.cs*的模板代码<xref:System.Web.Mvc.HttpGetAttribute>`Delete`方法使用`Find`方法来检索所选`Student`实体，为你在中看到`Details`和`Edit`方法。 但是，若要在调用 `SaveChanges` 失败时实现自定义错误消息，请将部分功能添加到此方法及其相应的视图中。
 
 正如所看到的更新和创建操作，删除操作需要两个操作方法。 调用以响应 GET 请求的方法显示一个视图，使用户有机会批准或取消删除操作。 如果用户批准，则创建 POST 请求。 在这种情况， `HttpPost` `Delete`调用方法，然后该方法实际执行删除操作。
 
-你将添加`try-catch`阻止`HttpPost``Delete`方法以处理更新数据库时可能出现的任何错误。 如果发生错误， `HttpPost` `Delete`方法调用`HttpGet``Delete`方法，并向其传递一个参数，指示发生错误。 `HttpGet Delete`方法然后重新显示确认页以及错误消息，为用户提供取消或稍后重试的机会。
+你将添加`try-catch`阻止<xref:System.Web.Mvc.HttpPostAttribute>`Delete`方法以处理更新数据库时可能出现的任何错误。 如果发生错误， <xref:System.Web.Mvc.HttpPostAttribute> `Delete`方法调用<xref:System.Web.Mvc.HttpGetAttribute>`Delete`方法，并向其传递一个参数，指示发生错误。 <xref:System.Web.Mvc.HttpGetAttribute> `Delete`方法然后重新显示确认页以及错误消息，为用户提供取消或稍后重试的机会。
 
-1. 替换`HttpGet``Delete`用下面的代码，用于管理错误报告的操作方法： 
+1. 替换<xref:System.Web.Mvc.HttpGetAttribute>`Delete`用下面的代码，用于管理错误报告的操作方法：
 
     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample12.cs?highlight=1,7-10)]
 
     此代码接受[可选参数](https://msdn.microsoft.com/library/dd264739.aspx)，该值指示是否在发生故障，以保存更改后调用该方法。 此参数是`false`时`HttpGet``Delete`不上一次失败的情况下调用方法。 调用时`HttpPost``Delete`方法以响应数据库更新错误，该参数是`true`和一条错误消息传递给视图。
-2. 替换`HttpPost``Delete`操作方法 (名为`DeleteConfirmed`) 使用以下代码，其执行实际删除操作并捕获任何数据库更新错误。
 
-     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample13.cs)]
+2. 替换<xref:System.Web.Mvc.HttpPostAttribute>`Delete`操作方法 (名为`DeleteConfirmed`) 使用以下代码，其执行实际删除操作并捕获任何数据库更新错误。
 
-     此代码检索所选的实体，然后调用[删除](https://msdn.microsoft.com/library/system.data.entity.dbset.remove(v=vs.103).aspx)方法将实体的状态设置为`Deleted`。 当`SaveChanges`调用时，SQL`DELETE`生成命令。 你还将操作方法名称从 `DeleteConfirmed` 更改为了 `Delete`。 基架的代码名为`HttpPost``Delete`方法`DeleteConfirmed`以便`HttpPost`方法唯一的签名。 （CLR 要求重载的方法具有不同的方法参数。）签名是唯一的现在可以继续使用 MVC 约定，使用相同的名称`HttpPost`和`HttpGet`删除方法。
+    [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample13.cs)]
 
-     如果在大容量应用程序中提高性能是优先考虑，可以避免不必要的 SQL 查询，若要检索的行替换为调用的代码行`Find`和`Remove`方法使用以下代码：
+    此代码检索所选的实体，然后调用[删除](https://msdn.microsoft.com/library/system.data.entity.dbset.remove(v=vs.103).aspx)方法将实体的状态设置为`Deleted`。 当`SaveChanges`调用时，SQL`DELETE`生成命令。 你还将操作方法名称从 `DeleteConfirmed` 更改为了 `Delete`。 基架的代码名为`HttpPost``Delete`方法`DeleteConfirmed`以便`HttpPost`方法唯一的签名。 （CLR 要求重载方法具有不同的方法参数。）签名是唯一的现在可以继续使用 MVC 约定，使用相同的名称`HttpPost`和`HttpGet`删除方法。
 
-     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample14.cs)]
+    如果在大容量应用程序中提高性能是优先考虑，可以避免不必要的 SQL 查询，若要检索的行替换为调用的代码行`Find`和`Remove`方法使用以下代码：
 
-     此代码实例化`Student`实体使用的主要密钥值然后将实体状态设置为`Deleted`。 这是 Entity Framework 删除实体需要执行的所有操作。
+    [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample14.cs)]
 
-     如所述， `HttpGet` `Delete`方法不会删除数据。 执行删除操作以响应 GET 请求 （或者就此而言，执行的任何编辑操作，创建操作或更改数据的任何其他操作） 会产生安全风险。 有关详细信息，请参阅[ASP.NET MVC 提示 #46 — 不使用删除链接，因为他们创建的安全漏洞](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx)Stephen Walther 的博客上。
+    此代码实例化`Student`实体使用的主要密钥值然后将实体状态设置为`Deleted`。 这是 Entity Framework 删除实体需要执行的所有操作。
+
+    如所述， `HttpGet` `Delete`方法不会删除数据。 执行删除操作以响应 GET 请求 （或者就此而言，执行的任何编辑操作，创建操作或更改数据的任何其他操作） 会产生安全风险。 有关详细信息，请参阅[ASP.NET MVC 提示 #46 — 不使用删除链接，因为他们创建的安全漏洞](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx)Stephen Walther 的博客上。
+
 3. 在中*Views\Student\Delete.cshtml*，添加一条错误消息之间`h2`标题和`h3`标题，如下面的示例中所示：
 
-     [!code-cshtml[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample15.cshtml?highlight=2)]
+    [!code-cshtml[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample15.cshtml?highlight=2)]
 
-     通过选择运行页**学生**选项卡并单击**删除**超链接：
+4. 通过启动该程序，运行页上选择**学生**选项卡上，，然后单击**删除**超链接：
 
-     ![Student_Delete_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image10.png)
-4. 单击“删除”。 将显示不含已删除学生的索引页。 (您将看到的错误处理中的操作中的代码示例[并发教程](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)。)
+    ![Student_Delete_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image10.png)
 
-## <a name="closing-database-connections"></a>正在关闭数据库连接
+5. 选择**删除**上显示的页面**是否确实要删除此？**。
+
+    索引页显示不带已删除学生。 (您将看到的错误处理中的操作中的代码示例[并发教程](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)。)
+
+## <a name="close-database-connections"></a>关闭数据库连接
 
 若要关闭的数据库连接并释放尽可能快地保存它们的资源，请释放上下文实例完成后使用它。 基架的代码提供的就是为什么[Dispose](https://msdn.microsoft.com/library/system.idisposable.dispose(v=vs.110).aspx)方法的末尾`StudentController`类*StudentController.cs*，如以下示例所示：
 
@@ -228,18 +245,17 @@ ms.locfileid: "41834257"
 
 基`Controller`类已经实现`IDisposable`接口，所以此代码只需将添加到替代`Dispose(bool)`方法来显式释放上下文实例。
 
-<a id="transactions"></a>
-## <a name="handling-transactions"></a>处理事务
+## <a name="handle-transactions"></a>处理事务
 
-默认情况下，Entity Framework 隐式实现事务。 在方案中，对多个行或表进行更改，然后调用`SaveChanges`，Entity Framework 自动确保所做的更改的所有成功或全部失败。 如果完成某些更改后发生错误，这些更改会自动回退。 有关在需要更多的控制-例如，如果你想要包括在事务中-Entity Framework 外部完成的操作的方案，请参阅[使用事务](https://msdn.microsoft.com/data/dn456843)MSDN 上。
+默认情况下，Entity Framework 隐式实现事务。 在方案中，对多个行或表进行更改，然后调用`SaveChanges`，Entity Framework 自动确保所做的更改的所有成功或全部失败。 如果完成某些更改后发生错误，这些更改会自动回退。 在需要更多控制&mdash;例如，如果你想要包括外部实体框架在事务中完成的操作&mdash;请参阅[使用事务](/ef/ef6/saving/transactions)。
 
 ## <a name="summary"></a>总结
 
-现在有了一整套的执行简单的 CRUD 操作执行的页`Student`实体。 MVC 帮助程序用于生成数据字段的 UI 元素。 MVC 帮助程序的详细信息，请参阅[呈现窗体使用 HTML 帮助程序](https://msdn.microsoft.com/library/dd410596(v=VS.98).aspx)（该页是为 MVC 3 但仍适用于 MVC 5）。
+现在有了一整套的执行简单的 CRUD 操作执行的页`Student`实体。 MVC 帮助程序用于生成数据字段的 UI 元素。 MVC 帮助程序的详细信息，请参阅[呈现窗体使用 HTML 帮助程序](/previous-versions/aspnet/dd410596(v=vs.98))（文章是的 MVC 3 但仍适用于 MVC 5)。
 
-在下一教程将通过添加排序和分页来展开索引页的功能。
+在下一步的教程中，我们会通过添加排序和分页来扩展索引页的功能。
 
-请在你喜欢本教程的内容，我们可以提高上留下反馈。 此外可以请求新主题[教我代码](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code)。
+请在你喜欢本教程的内容，我们可以提高上留下反馈。
 
 其他实体框架资源的链接可在[ASP.NET 数据访问-推荐的资源](../../../../whitepapers/aspnet-data-access-content-map.md)。
 

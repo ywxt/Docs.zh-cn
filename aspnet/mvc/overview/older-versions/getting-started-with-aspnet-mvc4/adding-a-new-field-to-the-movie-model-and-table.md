@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 9ef2c4f1-a305-4e0a-9fb8-bfbd9ef331d9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
 msc.type: authoredcontent
-ms.openlocfilehash: 39b48c67b5264a9b3ad97389f6a5c2bf9d94d25f
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 0f9b659b67a9a62635091b1e87169bce1218281a
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48576556"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911408"
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-table"></a>将新字段添加到电影模型和表
 ====================
@@ -41,7 +41,7 @@ ms.locfileid: "48576556"
 
 生成应用程序以确保没有任何错误。
 
-从**工具**菜单上，单击**库程序包管理器**，然后**程序包管理器控制台**。
+从**工具**菜单上，单击**NuGet 包管理器**，然后**程序包管理器控制台**。
 
 ![添加包 Man](adding-a-new-field-to-the-movie-model-and-table/_static/image3.png)
 

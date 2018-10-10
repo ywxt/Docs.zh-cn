@@ -8,32 +8,32 @@ ms.date: 08/08/2014
 ms.assetid: 30060acb-be3e-4347-996f-3870f0c37829
 msc.legacyurl: /signalr/overview/testing-and-debugging/enabling-signalr-tracing
 msc.type: authoredcontent
-ms.openlocfilehash: ee62a7b01ff357262aa89dbac4f49180b4c58fe0
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 89b27267bec5edb0692fe75061d08b4688df5a8c
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833031"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912061"
 ---
 <a name="enabling-signalr-tracing"></a>启用 SignalR 跟踪
 ====================
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本文档介绍如何启用和配置跟踪 SignalR 服务器和客户端。 跟踪可用于在 SignalR 应用程序中查看有关事件的诊断信息。
-> 
+>
 > 本主题是最初编写的 Patrick Fletcher。
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET Framework 4.5
 > - SignalR 版本 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="questions-and-comments"></a>问题和提出的意见
-> 
+>
 > 请在你喜欢本教程的内容以及我们可以改进的页的底部的评论中留下反馈。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
 
 
@@ -134,7 +134,7 @@ Server 事件类别包括以下类型的消息：
 <a id="phone"></a>
 ## <a name="enabling-tracing-in-windows-phone-8-clients"></a>在 Windows Phone 8 客户端中启用跟踪
 
-对于 Windows Phone 应用的 SignalR 应用程序使用同一个.NET 客户端作为桌面应用程序，但[Console.Out](https://msdn.microsoft.com/library/system.console.out(v=vs.110).aspx)和写入的文件[StreamWriter](https://msdn.microsoft.com/library/system.io.streamwriter(v=vs.110).aspx)不可用。 相反，您需要创建的自定义实现[TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx)进行跟踪。 
+对于 Windows Phone 应用的 SignalR 应用程序使用同一个.NET 客户端作为桌面应用程序，但[Console.Out](https://msdn.microsoft.com/library/system.console.out(v=vs.110).aspx)和写入的文件[StreamWriter](https://msdn.microsoft.com/library/system.io.streamwriter(v=vs.110).aspx)不可用。 相反，您需要创建的自定义实现[TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx)进行跟踪。
 
 <a id="phone_ui"></a>
 ### <a name="logging-windows-phone-client-events-to-the-ui"></a>Windows Phone 客户端事件记录到 UI

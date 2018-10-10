@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: a8b3b778-f009-4369-85c7-e90f9878d8b4
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 647dab496acd63dc774236ed448bd6b37b19c707
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 676dc0854ef6f041e705ed6b39432e11dd8643ed
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824868"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910897"
 ---
 <a name="tutorial-getting-started-with-signalr-2"></a>教程： SignalR 2 入门
 ====================
@@ -102,7 +102,7 @@ SignalR 简化了构建实时应用程序的过程。 它包括 ASP.NET 服务�
 3. 在中**解决方案资源管理器**，右键单击项目，选择**添加 |SignalR Hub 类 (v2)**。 将类命名**ChatHub.cs**并将其添加到项目。 此步骤将创建**ChatHub**类，并将一组脚本文件和支持 SignalR 的程序集引用添加到项目。
 
     > [!NOTE]
-    > 您还可以将 SignalR 通过打开添加到项目**工具 |库包管理器 |包管理器控制台**并运行命令：
+    > 您还可以将 SignalR 通过打开添加到项目**工具 > NuGet 包管理器 > 程序包管理器控制台**并运行命令：
 
     `install-package Microsoft.AspNet.SignalR`
 

@@ -5,18 +5,18 @@ description: 了解有关跨站点脚本 (XSS) 和一些解决这一漏洞在 AS
 ms.author: riande
 ms.date: 10/02/2018
 uid: security/cross-site-scripting
-ms.openlocfilehash: e937ce47b7151155197cd607832eeb6bf62e3a19
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 50f0211a2c64708d9b788dd10ce9064e66014d55
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577439"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910520"
 ---
 # <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>防止跨站点脚本 (XSS) 在 ASP.NET Core
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-跨站点脚本 (XSS) 是一个安全漏洞，这会使攻击者将客户端脚本 (通常是 JavaScript) 放入网页。 当其他用户加载攻击者脚本将运行受影响的页面时，攻击者可以窃取 cookie 和会话令牌，更改通过 DOM 操作网页的内容或将浏览器重定向到另一页。 应用程序接受用户输入，并将其输出页中，而无需验证、 编码或转义它时，通常会出现 XSS 漏洞。
+跨站点脚本 (XSS) 是一个安全漏洞，这会使攻击者将客户端脚本 (通常是 JavaScript) 放入网页。 当其他用户加载攻击者的脚本将运行受影响的页面时，攻击者可以窃取 cookie 和会话令牌，更改通过 DOM 操作网页的内容或将浏览器重定向到另一页。 当应用程序接受用户输入，并将其输出到页面而无需验证、 编码或进行转义，通常会发生 XSS 漏洞。
 
 ## <a name="protecting-your-application-against-xss"></a>保护防御 XSS 应用程序
 
@@ -26,15 +26,15 @@ ms.locfileid: "48577439"
 
 2. 将 HTML 元素中的不受信任的数据之前，先确保它是 HTML 编码。 HTML 编码如采用字符&lt;并将其更改到之类的安全形式&amp;l t;
 
-3. 将不受信任的数据放入 HTML 特性之前请确保它是编码的 HTML 属性。 HTML 特性编码为 HTML 编码的超集，并将其他字符编码如"和。
+3. 将不受信任的数据放入 HTML 特性之前请确保它是 HTML 编码。 HTML 特性编码为 HTML 编码的超集，并将其他字符编码如"和。
 
-4. 将不受信任的数据放入 JavaScript 之前将在运行时检索其内容的 HTML 元素中的数据。 如果这不可行，则确保数据被编码 JavaScript。 JavaScript 编码采用适用于 JavaScript 的危险的字符并将其替换为其十六进制表示，例如&lt;将编码为`\u003C`。
+4. 将不受信任的数据放入 JavaScript 之前将在运行时检索其内容的 HTML 元素中的数据。 如果不可行，请确保数据是 JavaScript 编码。 JavaScript 编码采用适用于 JavaScript 的危险的字符并将其替换为其十六进制表示，例如&lt;将编码为`\u003C`。
 
 5. 将不受信任的数据放入 URL 查询字符串之前请确保它进行 URL 编码。
 
 ## <a name="html-encoding-using-razor"></a>使用 Razor 的 HTML 编码
 
-Razor 引擎会自动在 MVC 中使用编码所有输出源自变量，除非您真正努力工作以防止其执行此操作。 它使用编码规则，每当你使用的 HTML 特性*@* 指令。 为 HTML 特性编码是 HTML 编码，这意味着无需关注是否应该使用 HTML 编码或 HTML 特性编码的超集。 您必须确保您仅使用在 HTML 上下文中，不是在尝试将直接插入 JavaScript 不受信任的输入时。 标记帮助程序还将对标记参数中使用的输入进行编码。
+Razor 引擎会自动在 MVC 中使用编码所有输出源自变量，除非您真正努力工作以防止其执行此操作。 它使用 HTML 特性编码规则，每当你使用*@* 指令。 为 HTML 特性编码是 HTML 编码，这意味着无需关注是否应该使用 HTML 编码或 HTML 特性编码的超集。 您必须确保您仅使用在 HTML 上下文中，不是在尝试将直接插入 JavaScript 不受信任的输入时。 标记帮助程序还将对标记参数中使用的输入进行编码。
 
 执行以下 Razor 视图：
 
@@ -55,7 +55,7 @@ Razor 引擎会自动在 MVC 中使用编码所有输出源自变量，除非您
 >[!WARNING]
 > ASP.NET Core MVC 提供`HtmlString`在输出时不自动编码的类。 这应永远不会用作与不受信任的输入结合使用这将公开 XSS 漏洞。
 
-## <a name="javascript-encoding-using-razor"></a>使用 Razor 的 Javascript 编码
+## <a name="javascript-encoding-using-razor"></a>使用 Razor 的 JavaScript 编码
 
 可能的有时你想要将值插入到 JavaScript 来处理在视图中。 有两种方法可以实现此目的。 插入值的最安全方法是将值放在标记的数据的属性中，并在 JavaScript 中检索它。 例如：
 
@@ -107,7 +107,7 @@ Razor 引擎会自动在 MVC 中使用编码所有输出源自变量，除非您
    </script>
    ```
 
-其中，运行时，将呈现以下操作：
+其中，运行时，将呈现以下：
 
 ```none
 <"123">
@@ -129,7 +129,7 @@ Razor 引擎会自动在 MVC 中使用编码所有输出源自变量，除非您
    </script>
    ```
 
-这将呈现在浏览器中，如下所示;
+这将按如下所示呈现在浏览器中：
 
 ```html
 <script>

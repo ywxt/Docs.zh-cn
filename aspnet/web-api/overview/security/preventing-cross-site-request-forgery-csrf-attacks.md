@@ -1,21 +1,21 @@
 ---
 uid: web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks
-title: 防止 ASP.NET Web API 中的跨站点请求伪造 (CSRF) 攻击 |Microsoft Docs
+title: 阻止在 ASP.NET MVC 中的跨站点请求伪造 (CSRF) 攻击
 author: MikeWasson
-description: 介绍跨站点请求伪造 (CSRF) 攻击以及如何在 ASP.NET Web API 中实施反 CSRF 度量值。
+description: 介绍跨站点请求伪造 (CSRF) 攻击以及如何在 ASP.NET Web MVC 中实现反 CSRF 度量值。
 ms.author: riande
 ms.date: 12/12/2012
 ms.assetid: 81d46f14-8f48-4d8c-830d-cc8d594dc11b
 msc.legacyurl: /web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks
 msc.type: authoredcontent
-ms.openlocfilehash: cd7d978190d28a028285746781a380d9bb5f91d4
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: c88975d1c205e9d0733bfb4c710b92bc8fdaaa7a
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830683"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911492"
 ---
-<a name="preventing-cross-site-request-forgery-csrf-attacks-in-aspnet-web-api"></a>防止 ASP.NET Web API 中的跨站点请求伪造 (CSRF) 攻击
+<a name="preventing-cross-site-request-forgery-csrf-attacks-in-aspnet-mvc-application"></a>阻止 ASP.NET MVC 应用程序中的跨站点请求伪造 (CSRF) 攻击
 ====================
 通过[Mike Wasson](https://github.com/MikeWasson)
 

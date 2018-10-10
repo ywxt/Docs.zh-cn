@@ -8,12 +8,12 @@ ms.date: 04/16/2013
 ms.assetid: ad2a5da5-2e79-40ea-bc84-028d327f5982
 msc.legacyurl: /signalr/overview/older-versions/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 53cc35d819c0d3a9bd84e8bfc44098a3b62e6db3
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: c677bcbc78eac6056c035c2b34fe659caac9c6fa
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834677"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912275"
 ---
 <a name="high-frequency-realtime-with-signalr-1x"></a>高频率实时功能与 SignalR 1.x
 ====================
@@ -42,7 +42,7 @@ ms.locfileid: "41834677"
 
 本教程包含以下各节：
 
-- [先决条件](#prerequisites)
+- [系统必备](#prerequisites)
 - [创建项目](#createtheproject)
 - [添加 ASP.NET SignalR 和 JQuery.UI NuGet 包](#nugetpackages)
 - [创建基本应用程序](#baseapp)
@@ -79,7 +79,7 @@ ms.locfileid: "41834677"
 
 通过安装 NuGet 包，可以将 SignalR 功能添加到项目。 本教程还将允许该形状以拖动，经过动画处理的使用 JQuery.UI 包。
 
-1. 单击**工具 |库包管理器 |包管理器控制台**。
+1. 单击**工具 |NuGet 包管理器 |包管理器控制台**。
 2. 在包管理器中输入以下命令。
 
     [!code-powershell[Main](tutorial-high-frequency-realtime-with-signalr/samples/sample1.ps1)]

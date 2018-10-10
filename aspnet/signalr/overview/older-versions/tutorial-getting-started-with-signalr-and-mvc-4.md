@@ -8,12 +8,12 @@ ms.date: 03/29/2013
 ms.assetid: eeef9f73-6de3-49f9-b50b-9af22108f2ce
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 34a7ae97a0a0652c090aa72e2cb21a4bce13bd5c
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 95fc3315149e07dbdb0505a2b5ab197bfedba097
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833871"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910871"
 ---
 <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>教程： 开始使用 SignalR 1.x 和 MVC 4
 ====================
@@ -63,7 +63,7 @@ ms.locfileid: "41833871"
       2. 选择 Internet 应用程序模板，请清除选项**创建单元测试项目**，单击确定。
 
          ![创建 mvc internet 站点](tutorial-getting-started-with-signalr-and-mvc-4/_static/image4.png)
-      3. 打开**工具 |库包管理器 |包管理器控制台**并运行以下命令。 此步骤将一组脚本文件和启用 SignalR 功能的程序集引用添加到项目。
+      3. 打开**工具 > NuGet 包管理器 > 程序包管理器控制台**并运行以下命令。 此步骤将一组脚本文件和启用 SignalR 功能的程序集引用添加到项目。
 
          `install-package Microsoft.AspNet.SignalR -Version 1.1.3`
       4. 在中**解决方案资源管理器**展开脚本文件夹。 请注意有关 SignalR 的脚本库已添加到项目。

@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: 435ee61a9c28ad0035457990cd3a889f5b240517
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: de3c8ea29f2c271136f58d8165bb92f4ab28ce83
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795533"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912821"
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>附录： 修复它示例应用程序 （构建使用 Azure 的真实世界云应用程序）
 ====================
@@ -221,7 +221,7 @@ Fix It 应用原始只返回了 null 在日志中记录的 SQL 查询产生异�
 4. 在文件资源管理器，右键单击.zip 文件并单击属性，然后在属性窗口中单击取消阻止。
 5. 将文件解压缩。
 6. 双击.sln 文件以启动 Visual Studio。
-7. 从工具菜单中，单击库程序包管理器，然后包管理器控制台。
+7. 从**工具**菜单上，单击**NuGet 包管理器**，然后**程序包管理器控制台**。
 8. 在包管理器控制台 (PMC) 中，单击还原。
 9. 退出 Visual Studio。
 10. 启动[Azure 存储模拟器](/azure/storage/common/storage-use-emulator)。

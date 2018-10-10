@@ -8,34 +8,34 @@ ms.date: 06/10/2014
 ms.assetid: cd378ecd-3e9e-4236-b902-65916d85a048
 msc.legacyurl: /signalr/overview/guide-to-the-api/working-with-groups
 msc.type: authoredcontent
-ms.openlocfilehash: 31dd3239e2e0cd919c23419459bc43ae8e1a6437
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 75ef2998efe4d9bcea62c4a42a2043e2dabd6d85
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833137"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911505"
 ---
 <a name="working-with-groups-in-signalr"></a>使用 SignalR 中的组
 ====================
 通过[Patrick Fletcher](https://github.com/pfletcher)， [Tom FitzMacken](https://github.com/tfitzmac)
 
-> 本主题介绍如何将用户添加到组并将保留组成员身份信息。 
-> 
+> 本主题介绍如何将用户添加到组并将保留组成员身份信息。
+>
 > ## <a name="software-versions-used-in-this-topic"></a>本主题中使用的软件版本
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR 版本 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>本主题的早期版本
-> 
+>
 > 有关 SignalR 的早期版本的信息，请参阅[SignalR 较早版本](../older-versions/index.md)。
-> 
+>
 > ## <a name="questions-and-comments"></a>问题和提出的意见
-> 
+>
 > 请在你喜欢本教程的内容以及我们可以改进的页的底部的评论中留下反馈。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
 
 
@@ -81,13 +81,13 @@ SignalR 中的组提供一种方法将消息广播到连接的客户端的指定
 
 下面的示例中所示，您可以将消息发送到的所有组的成员或仅指定的组的成员。
 
-- **所有**连接中指定的组的客户端。 
+- **所有**连接中指定的组的客户端。
 
     [!code-css[Main](working-with-groups/samples/sample3.css)]
-- 所有连接中指定的组的客户端**除指定客户端**标识由连接 id。 
+- 所有连接中指定的组的客户端**除指定客户端**标识由连接 id。
 
     [!code-csharp[Main](working-with-groups/samples/sample4.cs)]
-- 所有连接中指定的组的客户端**除调用客户端**。 
+- 所有连接中指定的组的客户端**除调用客户端**。
 
     [!code-css[Main](working-with-groups/samples/sample5.css)]
 

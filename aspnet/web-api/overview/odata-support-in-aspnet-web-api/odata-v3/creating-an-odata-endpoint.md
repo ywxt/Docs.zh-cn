@@ -8,12 +8,12 @@ ms.date: 02/25/2014
 ms.assetid: 262843d6-43a2-4f1c-82d9-0b90ae6df0cf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: 654f697c8d095d45ba31e2808c52f9ad24b606c8
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 2e0d3b45fd51192d227d852dc2f05b45ca42944c
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833737"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910910"
 ---
 <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>创建具有 Web API 2 OData v3 终结点
 ====================
@@ -22,18 +22,18 @@ ms.locfileid: "41833737"
 [下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-Web-API-OData-cecdb524)
 
 > [开放数据协议](http://www.odata.org/)(OData) 是用于 web 的数据访问协议。 OData 提供统一的方法来构造数据、 查询的数据和操作该数据集通过 CRUD 操作 （创建、 读取、 更新和删除）。 OData 支持 AtomPub (XML) 和 JSON 格式。 OData 还定义了一种方法来公开数据的元数据。 客户端可以使用元数据发现的类型信息和数据集的关系。
-> 
+>
 > ASP.NET Web API 可以轻松地创建数据集的 OData 终结点。 您可以控制完全的 OData 操作的终结点支持。 你可以托管多个 OData 终结点，以及非 OData 终结点。 您可以完全控制数据模型、 后端业务逻辑和数据层。
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - Web API 2
 > - OData 版本 3
 > - Entity Framework 6
 > - [Fiddler Web 调试代理 （可选）](http://www.fiddler2.com)
-> 
+>
 > 中增加了 web API OData 支持[ASP.NET 和 Web Tools 2012.2 更新](https://go.microsoft.com/fwlink/?LinkId=282650)。 但是，本教程使用 Visual Studio 2013 中已添加的基架。
 
 
@@ -154,7 +154,7 @@ EDM 是抽象的数据模型。 EDM 用于创建元数据文档，并定义服�
 
 在此步骤中，将使用 Entity Framework 以设置一些测试数据与数据库的种子。 此步骤是可选的但它可以立即测试 OData 终结点。
 
-从**工具**菜单中，选择**库程序包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，输入以下命令：
+从**工具**菜单中，选择**NuGet 包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，输入以下命令：
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample5.cmd)]
 
@@ -240,7 +240,7 @@ OData 支持多种序列化格式：
 - JSON"light"（在 OData v3 中引入）
 - JSON"详细"(OData v2)
 
-默认情况下，Web API 使用 AtomPubJSON"light"格式。 
+默认情况下，Web API 使用 AtomPubJSON"light"格式。
 
 若要获取 AtomPub 格式，请设置为"application/atom + xml"Accept 标头。 下面是响应正文示例：
 

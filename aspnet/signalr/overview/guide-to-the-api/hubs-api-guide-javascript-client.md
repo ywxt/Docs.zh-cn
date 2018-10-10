@@ -8,38 +8,38 @@ ms.date: 09/28/2015
 ms.assetid: a9fd4dc0-1b96-4443-82ca-932a5b4a8ea4
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: de47593e7f54757d4f91a6e92485567e74b829ed
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9edb7fd100a3f4c5331454045ac206d2f7a81961
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831687"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912444"
 ---
 <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>ASP.NET SignalR 中心 API 指南-JavaScript 客户端
 ====================
 通过[Patrick Fletcher](https://github.com/pfletcher)， [Tom Dykstra](https://github.com/tdykstra)
 
 > 本文档提供使用 SignalR 版本 2 中 JavaScript 客户端，如浏览器和 Windows 应用商店 (WinJS) 应用程序为中心 API 的简介。
-> 
+>
 > SignalR 中心 API，可从连接的客户端到服务器和客户端到服务器进行远程过程调用 (Rpc)。 在服务器代码中，定义可由客户端，调用的方法和调用客户端运行的方法。 在客户端代码中，定义在服务器上，可以调用的方法，并调用在服务器运行的方法。 SignalR 将负责所有为你的客户端-服务器探测功能。
-> 
+>
 > SignalR 还提供了一个称为持久连接的较低级别 API。 SignalR、 集线器和持久性连接的介绍，请参阅[SignalR 简介](../getting-started/introduction-to-signalr.md)。
-> 
+>
 > ## <a name="software-versions-used-in-this-topic"></a>本主题中使用的软件版本
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR 版本 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>本主题的早期版本
-> 
+>
 > 有关 SignalR 的早期版本的信息，请参阅[SignalR 较早版本](../older-versions/index.md)。
-> 
+>
 > ## <a name="questions-and-comments"></a>问题和提出的意见
-> 
+>
 > 请在你喜欢本教程的内容以及我们可以改进的页的底部的评论中留下反馈。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
 
 
@@ -234,7 +234,7 @@ JSONP 需要在客户端 （以支持旧版浏览器中的跨域请求） 上，
 
 ### <a name="calling-usecors"></a>调用 UseCors
 
- 下面的代码段演示如何在 SignalR 2 实现跨域的连接。 
+ 下面的代码段演示如何在 SignalR 2 实现跨域的连接。
 
 **在 SignalR 2 实现跨域请求**
 
@@ -242,12 +242,12 @@ JSONP 需要在客户端 （以支持旧版浏览器中的跨域请求） 上，
 
 [!code-csharp[Main](hubs-api-guide-javascript-client/samples/sample11.cs)]
 
-> [!NOTE] 
-> 
+> [!NOTE]
+>
 > - 未设置`jQuery.support.cors`为 true，在代码中。
-> 
+>
 >     ![未将 jQuery.support.cors 设置为 true](hubs-api-guide-javascript-client/_static/image7.png)
-> 
+>
 >     SignalR 处理 CORS 的使用。 设置`jQuery.support.cors`以 true 禁用 JSONP，因为它会导致 SignalR 假设浏览器支持 CORS。
 > - 时要连接到本地主机 URL，Internet Explorer 10 不会考虑它的跨域连接，因此应用程序将在本地处理与 IE 10 即使尚未启用跨域服务器上的连接。
 > - 使用的 Internet Explorer 9 的跨域连接的信息，请参阅[此 StackOverflow 线程](http://stackoverflow.com/questions/13573397/siganlr-ie9-cross-domain-request-dont-work)。

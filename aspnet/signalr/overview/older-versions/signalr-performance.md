@@ -8,12 +8,12 @@ ms.date: 07/03/2013
 ms.assetid: 9594d644-66b6-4223-acdd-23e29a6e4c46
 msc.legacyurl: /signalr/overview/older-versions/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: 4fba0cc79046f5f3fd1dc50e5b69ddb78d98c23d
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 3ac62639617e1ff83761d0a1d45c27303d0b820d
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830686"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912756"
 ---
 <a name="signalr-performance-signalr-1x"></a>SignalR 性能 (SignalR 1.x)
 ====================
@@ -119,7 +119,7 @@ SignalR 性能和缩放上的最新演示文稿，请参阅[缩放使用 ASP.NET
 
 可以使用名为 SignalR.exe 的实用工具向服务器添加性能计数器。 若要安装此实用程序，请按照下列步骤：
 
-1. 在 Visual Studio 应用程序中，选择**工具**，**库程序包管理器**，**为解决方案管理 NuGet 包...**
+1. 在 Visual Studio 中，选择**工具** > **NuGet 包管理器** > **为解决方案管理 NuGet 包**
 2. 搜索**signalr.utils**，并选择安装。
 
     ![](signalr-performance/_static/image1.png)

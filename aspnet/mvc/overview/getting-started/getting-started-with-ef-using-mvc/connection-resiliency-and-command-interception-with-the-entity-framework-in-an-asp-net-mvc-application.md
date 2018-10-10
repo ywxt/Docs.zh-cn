@@ -8,21 +8,20 @@ ms.date: 01/13/2015
 ms.assetid: c89d809f-6c65-4425-a3fa-c9f6e8ac89f2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 9b326ec22fc70a8c1746c5cd2c302c7f04fa8d3e
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: ab6a553100d704746840eaad512ec140d4576c44
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830883"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911781"
 ---
 <a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a>连接复原和命令截获与 ASP.NET MVC 应用程序中的实体框架
 ====================
 通过[Tom Dykstra](https://github.com/tdykstra)
 
-[下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)或[下载 PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 2013 的 ASP.NET MVC 5 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
-
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 6 Code First 和 Visual Studio 的 ASP.NET MVC 5 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 
 到目前为止该应用程序已经运行本地 IIS Express 中在开发计算机上。 若要使实际的应用程序可供其他人通过 Internet 使用，必须将其部署到 web 宿主提供程序，并需要将数据库部署到数据库服务器。
 
@@ -73,7 +72,7 @@ ms.locfileid: "41830883"
 
 ### <a name="create-a-logging-interface-and-class"></a>创建日志记录接口和类
 
-一个[最佳做法进行日志记录](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log)操作和使用接口而不是硬编码调用 System.Diagnostics.Trace 或日志记录类。 这样，更轻松地更改更高版本的日志记录机制，如果您需要执行此操作。 因此在本部分中，您将创建日志记录接口和类来实现它。 / p > 
+一个[最佳做法进行日志记录](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log)操作和使用接口而不是硬编码调用 System.Diagnostics.Trace 或日志记录类。 这样，更轻松地更改更高版本的日志记录机制，如果您需要执行此操作。 因此在本部分中，您将创建日志记录接口和类来实现它。 / p >
 
 1. 在项目中创建一个文件夹并将其命名*日志记录*。
 2. 在中*日志记录*文件夹中，创建名为的类文件*ILogger.cs*，并使用以下代码替换模板代码：
@@ -138,7 +137,7 @@ ms.locfileid: "41830883"
 
 ## <a name="test-logging-and-connection-resiliency"></a>测试日志记录和连接弹性
 
-1. 按 F5 在调试模式下运行应用程序，然后单击**学生**选项卡。
+1. 按**F5**若要在调试模式下运行应用程序，然后单击**学生**选项卡。
 2. 查看 Visual Studio**输出**窗口以查看跟踪输出。 您可能需要向上滚动过去的某些 JavaScript 错误以获取到记录器所写入的日志。
 
     请注意，您可以看到实际的 SQL 查询发送到数据库。 您看到的一些初始查询和实体框架执行的操作以开始，请检查数据库版本的命令和迁移历史记录表 （你将了解如何迁移下一个教程中）。 和查看分页，以找出多少名学生的查询，最后您会看到获取学生数据的查询。
@@ -172,7 +171,7 @@ ms.locfileid: "41830883"
 
 在本教程中已了解如何启用连接复原和记录的实体框架撰写并发送到数据库的 SQL 命令。 在下一教程中，你将部署到 Internet 时，使用 Code First 迁移部署数据库应用程序。
 
-请在你喜欢本教程的内容，我们可以提高上留下反馈。 此外可以请求新主题[教我代码](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code)。
+请在你喜欢本教程的内容，我们可以提高上留下反馈。
 
 其他实体框架资源的链接可在[ASP.NET 数据访问-推荐的资源](../../../../whitepapers/aspnet-data-access-content-map.md)。
 

@@ -8,27 +8,27 @@ ms.date: 04/02/2014
 ms.assetid: 6980ee2e-d6b0-4a08-8fb6-ab96362dd0e3
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: cabf88e4e6c946f92a9e4534a4db5ae15dd8cae5
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 40cb1a4514beaf81e7ed75bbd3e478f2ba146fe5
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41832940"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910741"
 ---
 <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>承载 ASP.NET Web API 2 中的 Azure 辅助角色
 ====================
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 > 本教程演示如何在托管在 Azure 辅助角色中，ASP.NET Web API 使用 OWIN 自托管 Web API 框架。
-> 
+>
 > [用于.NET 开放 Web 接口](http://owin.org/)(OWIN) 定义.NET web 服务器和 web 应用程序之间的抽象。 OWIN 将分离 web 应用程序从服务器中，这使 OWIN 适合于自承载在 IIS 外部自己进程中的 web 应用程序 – 例如，在 Azure 辅助角色。
-> 
+>
 > 在本教程中，您将使用 Microsoft.Owin.Host.HttpListener 包，其中提供的 HTTP 服务器，用于自托管 OWIN 应用程序。
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - Web API 2
 > - [Azure SDK for.NET 2.3](https://azure.microsoft.com/downloads/)
 
@@ -56,7 +56,7 @@ ms.locfileid: "41832940"
 
 ## <a name="add-the-web-api-and-owin-packages"></a>添加 Web API 和 OWIN 包
 
-从**工具**菜单上，单击**库程序包管理器**，然后单击**程序包管理器控制台**。
+从**工具**菜单上，单击**NuGet 包管理器**，然后单击**程序包管理器控制台**。
 
 在包管理器控制台窗口中，输入以下命令：
 

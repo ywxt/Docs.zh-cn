@@ -8,12 +8,12 @@ ms.date: 02/25/2014
 ms.assetid: 66a837e9-600b-4b72-97a9-19804231c64a
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 426e3500c504a651a325eec021e2d9e8b9cc1d32
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: e0d525e497cf41a79820417a9c832fa6b5cd7f8a
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795275"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912834"
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>在 ASP.NET Web API 2 中进行跟踪
 ====================
@@ -37,7 +37,7 @@ ms.locfileid: "48795275"
 
 [![](tracing-in-aspnet-web-api/_static/image4.png)](tracing-in-aspnet-web-api/_static/image3.png)
 
-从**工具**菜单中，选择**库程序包管理器**，然后**包管理控制台**。
+从**工具**菜单中，选择**NuGet 包管理器**，然后**包管理控制台**。
 
 在包管理器控制台窗口中，键入以下命令。
 
@@ -47,7 +47,6 @@ ms.locfileid: "48795275"
 
 > [!NOTE]
 > 如果你想要面向特定版本的 Web API，使用时安装跟踪包的版本标志。
-
 
 在应用中打开文件 WebApiConfig.cs\_开始文件夹。 将以下代码添加到**注册**方法。
 

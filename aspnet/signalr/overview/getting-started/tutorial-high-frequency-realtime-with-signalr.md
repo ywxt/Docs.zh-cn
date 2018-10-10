@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 9f969dda-78ea-4329-b1e3-e51c02210a2b
 msc.legacyurl: /signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 008cbc8ec7ca0af4b20e5e3974cf3862efa7677e
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: 23dc9cc7fd469e934ed9915922a3baa772d9e1ab
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48794875"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912022"
 ---
 <a name="tutorial-high-frequency-realtime-with-signalr-2"></a>教程： 使用 signalr 2 实现高频率实时
 ====================
@@ -22,37 +22,37 @@ ms.locfileid: "48794875"
 [下载已完成的项目](http://code.msdn.microsoft.com/SignalR-20-MoveShape-Demo-6285b83a)
 
 > 本教程演示如何创建使用 ASP.NET SignalR 2 提供高频率的消息传送功能的 web 应用程序。 在这种情况下消息传送高频率意味着费率是固定的; 在发送的更新对于此应用程序，最多 10 个消息的第二个。
-> 
+>
 > 将在本教程中创建的应用程序显示用户可以将一个形状。 在所有其他连接的浏览器中的形状位置然后将更新以匹配使用定时的更新拖动形状的位置。
-> 
+>
 > 本教程中介绍的概念有实时游戏中的应用程序和其他模拟应用程序。
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR 版本 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="using-visual-studio-2012-with-this-tutorial"></a>本教程使用 Visual Studio 2012
-> 
-> 
+>
+>
 > 若要学习本教程使用 Visual Studio 2012，请执行以下操作：
-> 
+>
 > - 更新你[程序包管理器](http://docs.nuget.org/docs/start-here/installing-nuget)到最新版本。
 > - 安装[Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)。
 > - 在 Web 平台安装程序中，搜索并安装**ASP.NET 和 Web 工具 2013.1 适用于 Visual Studio 2012**。 这将安装 Visual Studio 模板的 SignalR 类，如**中心**。
 > - 某些模板 (如**OWIN 启动类**) 将不可用; 对于这些数据，改为使用的类文件。
-> 
-> 
+>
+>
 > ## <a name="tutorial-versions"></a>教程版本
-> 
+>
 > 有关 SignalR 的早期版本的信息，请参阅[SignalR 较早版本](../older-versions/index.md)。
-> 
+>
 > ## <a name="questions-and-comments"></a>问题和提出的意见
-> 
+>
 > 请在你喜欢本教程的内容以及我们可以改进的页的底部的评论中留下反馈。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
 
 
@@ -70,7 +70,7 @@ ms.locfileid: "48794875"
 
 本教程包含以下各节：
 
-- [先决条件](#prerequisites)
+- [系统必备](#prerequisites)
 - [创建项目并添加 SignalR 和 JQuery.UI NuGet 包](#createtheproject2013)
 - [创建基本应用程序](#baseapp)
 - [在应用程序启动时启动中心](#startup2013)
@@ -102,12 +102,12 @@ ms.locfileid: "48794875"
 3. 在中**解决方案资源管理器**，右键单击项目，选择**添加 |SignalR Hub 类 (v2)**。 将类命名**MoveShapeHub.cs**并将其添加到项目。 此步骤将创建**MoveShapeHub**类，并将一组脚本文件和支持 SignalR 的程序集引用添加到项目。
 
     > [!NOTE]
-    > 您还可以将 SignalR 通过单击添加到项目**工具 |库包管理器 |包管理器控制台**并运行命令：
+    > 您还可以将 SignalR 通过单击添加到项目**工具 > NuGet 包管理器 > 程序包管理器控制台**并运行命令：
 
-    `install-package Microsoft.AspNet.SignalR`。 
+    `install-package Microsoft.AspNet.SignalR`。
 
     如果使用控制台来添加 SignalR，SignalR hub 类作为单独的步骤后创建将 SignalR 添加。
-4. 单击**工具 |库包管理器 |包管理器控制台**。 在包管理器窗口中，运行以下命令：
+4. 单击**工具 > NuGet 包管理器 > 程序包管理器控制台**。 在包管理器窗口中，运行以下命令：
 
     `Install-Package jQuery.UI.Combined`
 

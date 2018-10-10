@@ -8,33 +8,33 @@ ms.date: 03/20/2014
 ms.assetid: 20acee16-c70c-41e9-b38f-92bfcf9a4c1c
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
-ms.openlocfilehash: 2dd4af4543713ab08ad9427d183f667e2dc04f1f
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 095dad49a8e9f963d941a84398afe9da0f46ce0b
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578037"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912262"
 ---
 <a name="owin-oauth-20-authorization-server"></a>OWIN OAuth 2.0 授权服务器
 ====================
 通过[Hongye Sun](https://github.com/hongyes)， [Praburaj Thiagarajan](https://github.com/Praburaj)， [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本教程将指导您如何实现 OAuth 2.0 授权服务器使用 OWIN OAuth 中间件。 这是一种高级的教程，仅简要介绍创建 OWIN OAuth 2.0 授权服务器的步骤。 这不是分步教程。 [下载示例代码](https://code.msdn.microsoft.com/OWIN-OAuth-20-Authorization-ba2b8783/file/114932/1/AuthorizationServer.zip)。
-> 
+>
 > > [!NOTE]
 > > 此边框不符合预期要用于创建安全的生产应用。 本教程旨在提供仅概述了如何实现 OAuth 2.0 授权服务器使用 OWIN OAuth 中间件。
-> 
-> 
+>
+>
 > ## <a name="software-versions"></a>软件版本
-> 
+>
 > | **本教程中所示** | **也可用于** |
 > | --- | --- |
 > | Windows 8.1 | Windows 8，Windows 7 |
-> | [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads) | [Visual Studio 2013 Express for Desktop](https://www.microsoft.com/visualstudio/eng/2013-downloads#d-2013-express)。 应运行具有最新更新的 visual Studio 2012，但本教程尚未经过测试，并且某些菜单选项和对话框不同。 |
+> | [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013) | [Visual Studio 2013 Express for Desktop](https://my.visualstudio.com/Downloads?q=visual%20studio%202013#d-2013-express)。 应运行具有最新更新的 visual Studio 2012，但本教程尚未经过测试，并且某些菜单选项和对话框不同。 |
 > | .NET 4.5 |  |
-> 
+>
 > ## <a name="questions-and-comments"></a>问题和提出的意见
-> 
+>
 > 如果你有与本教程不直接相关的问题，可以将其在发布[Katana 项目 GitHub 上](https://github.com/aspnet/AspNetKatana/)。 有关的问题和意见关于教程本身，请参阅在页面底部的注释部分。
 
 
@@ -81,11 +81,11 @@ ms.locfileid: "48578037"
 
 - `AuthorizeEndpointPath`: 请求路径，其中客户端应用程序会将重定向用户代理以获取用户同意使用颁发的令牌或代码。 它必须以具有前导斜杠，例如，"`/Authorize`"。
 - `TokenEndpointPath`: 请求路径客户端应用程序直接进行通信以获取访问令牌。 它必须以具有前导斜杠，如"/token"。 如果客户端颁发[客户端\_机密](http://tools.ietf.org/html/rfc6749#appendix-A.2)，它必须提供给此终结点。
-- `ApplicationCanDisplayErrors`： 设置为`true`如果 web 应用程序想要在生成的客户端验证错误的自定义错误页`/Authorize`终结点。 这才必需的情况下，在浏览器不会重定向回客户端应用程序，例如，当`client_id`或`redirect_uri`不正确。 `/Authorize`终结点应该会看到"oauth。错误"、"oauth。ErrorDescription"和"oauth。ErrorUri"属性添加到 OWIN 环境。 
+- `ApplicationCanDisplayErrors`： 设置为`true`如果 web 应用程序想要在生成的客户端验证错误的自定义错误页`/Authorize`终结点。 这才必需的情况下，在浏览器不会重定向回客户端应用程序，例如，当`client_id`或`redirect_uri`不正确。 `/Authorize`终结点应该会看到"oauth。错误"、"oauth。ErrorDescription"和"oauth。ErrorUri"属性添加到 OWIN 环境。
 
     > [!NOTE]
     > 如果不为 true，则授权服务器将返回默认错误页的错误详细信息。
-- `AllowInsecureHttp`: True 以允许授权和令牌请求到达 HTTP URI 地址，并允许传入`redirect_uri`授权请求参数，具有 HTTP URI 地址。 
+- `AllowInsecureHttp`: True 以允许授权和令牌请求到达 HTTP URI 地址，并允许传入`redirect_uri`授权请求参数，具有 HTTP URI 地址。
 
     > [!WARNING]
     > 安全性-这是只能在开发。
@@ -107,9 +107,9 @@ OAuth 并不关心其中或如何管理用户帐户信息。 它具有[ASP.NET �
 
 ![](owin-oauth-20-authorization-server/_static/image1.png)
 
-查看 IETF 的 OAuth 2[授权代码授予](http://tools.ietf.org/html/rfc6749#section-4.1)现在部分。 
+查看 IETF 的 OAuth 2[授权代码授予](http://tools.ietf.org/html/rfc6749#section-4.1)现在部分。
 
-**提供程序**（在下表中） 是[OAuthAuthorizationServerOptions](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions(v=vs.111).aspx)。提供程序，其类型`OAuthAuthorizationServerProvider`，其中包含所有 OAuth 服务器事件。 
+**提供程序**（在下表中） 是[OAuthAuthorizationServerOptions](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions(v=vs.111).aspx)。提供程序，其类型`OAuthAuthorizationServerProvider`，其中包含所有 OAuth 服务器事件。
 
 | 从授权代码授予部分流步骤 | 下载示例将执行这些步骤： |
 | --- | --- |
@@ -134,13 +134,13 @@ OAuth 并不关心其中或如何管理用户帐户信息。 它具有[ASP.NET �
 
 ![](owin-oauth-20-authorization-server/_static/image2.png)
 
-如果**Grant**按钮处于选中状态，`Authorize`操作将创建新的"Bearer"标识和使用它登录。 它将触发授权服务器生成的持有者令牌并将其发送回客户端与 JSON 有效负载。 
+如果**Grant**按钮处于选中状态，`Authorize`操作将创建新的"Bearer"标识和使用它登录。 它将触发授权服务器生成的持有者令牌并将其发送回客户端与 JSON 有效负载。
 
 ### <a name="implicit-grant"></a>隐式授权
 
 请参阅 IETF 的 OAuth 2[隐式授权](http://tools.ietf.org/html/rfc6749#section-4.2)现在部分。
 
- [隐式授权](http://tools.ietf.org/html/rfc6749#section-4.2)图 4 所示的流是流程和映射的 OWIN OAuth 中间件遵循。  
+ [隐式授权](http://tools.ietf.org/html/rfc6749#section-4.2)图 4 所示的流是流程和映射的 OWIN OAuth 中间件遵循。
 
 | 流步骤，可从隐式授权部分 | 下载示例将执行这些步骤： |
 | --- | --- |
@@ -159,7 +159,7 @@ OAuth 并不关心其中或如何管理用户帐户信息。 它具有[ASP.NET �
 
 请参阅 IETF 的 OAuth 2[资源所有者密码凭据授予](http://tools.ietf.org/html/rfc6749#section-4.3)现在部分。
 
- [资源所有者密码凭据授予](http://tools.ietf.org/html/rfc6749#section-4.3)图 5 所示的流是流程和映射的 OWIN OAuth 中间件遵循。  
+ [资源所有者密码凭据授予](http://tools.ietf.org/html/rfc6749#section-4.3)图 5 所示的流是流程和映射的 OWIN OAuth 中间件遵循。
 
 | 从资源所有者密码凭据授予部分流步骤 | 下载示例将执行这些步骤： |
 | --- | --- |
@@ -182,7 +182,7 @@ OAuth 并不关心其中或如何管理用户帐户信息。 它具有[ASP.NET �
 
 请参阅 IETF 的 OAuth 2[客户端凭据授予](http://tools.ietf.org/html/rfc6749#section-4.4)现在部分。
 
- [客户端凭据授予](http://tools.ietf.org/html/rfc6749#section-4.4)图 6 所示的流是流程和映射的 OWIN OAuth 中间件遵循。  
+ [客户端凭据授予](http://tools.ietf.org/html/rfc6749#section-4.4)图 6 所示的流是流程和映射的 OWIN OAuth 中间件遵循。
 
 | 从客户端凭据授予部分流步骤 | 下载示例将执行这些步骤： |
 | --- | --- |
@@ -203,7 +203,7 @@ OAuth 并不关心其中或如何管理用户帐户信息。 它具有[ASP.NET �
 
 请参阅 IETF 的 OAuth 2[刷新令牌](http://tools.ietf.org/html/rfc6749#section-1.5)现在部分。
 
- [刷新令牌](http://tools.ietf.org/html/rfc6749#section-1.5)图 2 所示的流是流程和映射的 OWIN OAuth 中间件遵循。  
+ [刷新令牌](http://tools.ietf.org/html/rfc6749#section-1.5)图 2 所示的流是流程和映射的 OWIN OAuth 中间件遵循。
 
 | 从客户端凭据授予部分流步骤 | 下载示例将执行这些步骤： |
 | --- | --- |
@@ -212,7 +212,7 @@ OAuth 并不关心其中或如何管理用户帐户信息。 它具有[ASP.NET �
 |  |  |
 | （H） 授权服务器对客户端进行身份验证并验证刷新令牌和有效的情况下颁发新的访问令牌 （和 （可选） 新的刷新令牌）。 |  |
 
-下面是示例实现`Provider.GrantRefreshToken`: 
+下面是示例实现`Provider.GrantRefreshToken`:
 
 [!code-csharp[Main](owin-oauth-20-authorization-server/samples/sample9.cs)]
 

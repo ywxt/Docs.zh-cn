@@ -8,12 +8,12 @@ ms.date: 05/01/2013
 ms.assetid: 6abecf80-8ffa-41ba-b0d9-1d9edbe7687b
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: 4f587b129a1a22e64625d2ab0fc7655984262ebe
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 90f1f1429dcdf8f1015365e5aa337371c6307715
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824662"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910715"
 ---
 <a name="signalr-scaleout-with-redis-signalr-1x"></a>使用 Redis 的 SignalR 横向扩展 (SignalR 1.x)
 ====================
@@ -94,7 +94,7 @@ Redis 是内存中键 / 值存储。 它还支持发布/订阅模型的消息传
 - [SignalR 入门](../getting-started/tutorial-getting-started-with-signalr.md)
 - [使用 SignalR 和 MVC 4 入门](tutorial-getting-started-with-signalr-and-mvc-4.md)
 
-接下来，我们将修改聊天应用程序，以支持采用 Redis 的扩展。 首先，将 SignalR.Redis NuGet 包添加到你的项目。 在 Visual Studio 中，从**工具**菜单中，选择**库程序包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，输入以下命令：
+接下来，我们将修改聊天应用程序，以支持采用 Redis 的扩展。 首先，将 SignalR.Redis NuGet 包添加到你的项目。 在 Visual Studio 中，从**工具**菜单中，选择**NuGet 包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，输入以下命令：
 
 [!code-powershell[Main](scaleout-with-redis/samples/sample5.ps1)]
 

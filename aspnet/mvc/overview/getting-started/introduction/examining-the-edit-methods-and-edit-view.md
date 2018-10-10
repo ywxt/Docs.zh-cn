@@ -8,12 +8,12 @@ ms.date: 05/22/2015
 ms.assetid: 52a4d5fe-aa31-4471-b3cb-a064f82cb791
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 27c4bcc6dd127fe1a430aaec462e2c19a5fb7851
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 29ece7754bc6e25ea968c25a99a2f48ab837e12c
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577374"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911526"
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>检查 Edit 方法和编辑视图
 ====================
@@ -99,16 +99,15 @@ ms.locfileid: "48577374"
 > [!NOTE]
 > 若要支持 jQuery 验证的非英语区域设置，请使用逗号 (&quot;，&quot;) 必须包含小数点，和非美国英语日期格式， *globalize.js*和您的特定*cultures/globalize.cultures.js*文件 (从[ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 和 JavaScript 使用`Globalize.parseFloat`。 你可以从 NuGet 获取 jQuery 非英语验证。 （请勿安装 Globalize 如果您使用的英语区域设置。）
 
+1. 从**工具**菜单上，单击**NuGet 包管理器**，然后单击**为解决方案管理 NuGet 包**。
 
-1. 从**工具**菜单上，单击**NuGetLibrary 包管理器**，然后单击**为解决方案管理 NuGet 包**。  
-  
     ![](examining-the-edit-methods-and-edit-view/_static/image5.png)
 2. 在左窗格中，选择<strong>浏览 *。</strong>*（请参阅下图。）
-3. 在输入框中，输入 * Globalize * *。  
-  
+3. 在输入框中，输入 * Globalize * *。
+
     ![](examining-the-edit-methods-and-edit-view/_static/image6.png) 选择`jQuery.Validation.Globalize`，选择`MvcMovie`然后单击**安装**。 *Scripts\jquery.globalize\globalize.js*文件将添加到你的项目。 *Scripts\jquery.globalize\cultures\*文件夹将包含多个区域性 JavaScript 文件。 请注意，可能需要五分钟时间才能安装此包。
 
-   下面的代码演示对 Views\Movies\Edit.cshtml 文件进行修改： 
+   下面的代码演示对 Views\Movies\Edit.cshtml 文件进行修改：
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample10.cshtml)]
 

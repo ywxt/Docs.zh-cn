@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 48f7feb3-872f-485d-b96f-e30011ff8c4a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: b1d80928d765bc71ea1579272662b6697371c47b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9d5a51a5887ecbbc96fce1416b88aa849bc3674e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831072"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912717"
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>什么是 ASP.NET MVC 4 中的新增功能
 
@@ -382,7 +382,7 @@ ASP.NET MVC 4 便于网站适用于移动设备和平板电脑浏览器的开发
 
       > [!NOTE]
       > 使用 NuGet 的优点之一是，您不必提供在项目中的所有库项目大小减少。 使用 NuGet 增强工具，请通过在 Packages.config 文件中，指定包版本可以下载第一次运行该项目的所有所需的库。 这就是原因需要将从本实验中打开现有解决方案后运行这些步骤。
-2. 打开**程序包管理器控制台**通过单击**工具** &gt; **库程序包管理器** &gt; **包管理器控制台**菜单选项。
+2. 打开**程序包管理器控制台**通过单击**工具** > **NuGet 包管理器** > **包管理器控制台**菜单选项。
 
     ![打开 NuGet Package Manager Console](whats-new-in-aspnet-mvc-4/_static/image22.png "打开 NuGet 包管理器控制台")
 

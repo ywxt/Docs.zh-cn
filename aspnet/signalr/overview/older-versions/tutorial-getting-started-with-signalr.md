@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: fdc3599a-5217-44c1-951f-0eec9812dce7
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 2223675ab2ec40a7e25229bf34b2f0ffddc31fed
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d541dad19d8fd547d61e8850d64e514ea5db7fcf
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831694"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912418"
 ---
 <a name="tutorial-getting-started-with-signalr-1x"></a>教程： 开始使用 SignalR 1.x
 ====================
@@ -66,7 +66,7 @@ SignalR 简化了构建实时应用程序的过程。 它包括 ASP.NET 服务�
 1. 在 Visual Studio 创建 ASP.NET 空 Web 应用程序。
 
     ![创建空的 web](tutorial-getting-started-with-signalr/_static/image2.png)
-2. 打开**程序包管理器控制台**通过选择**工具 |库包管理器 |包管理器控制台**。 控制台窗口中输入以下命令：
+2. 打开**程序包管理器控制台**通过选择**工具 |NuGet 包管理器 |包管理器控制台**。 控制台窗口中输入以下命令：
 
     `Install-Package Microsoft.AspNet.SignalR -Version 1.1.3`
 

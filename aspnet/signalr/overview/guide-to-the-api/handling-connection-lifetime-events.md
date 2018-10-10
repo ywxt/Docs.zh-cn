@@ -8,40 +8,40 @@ ms.date: 06/10/2014
 ms.assetid: 03960de2-8d95-4444-9169-4426dcc64913
 msc.legacyurl: /signalr/overview/guide-to-the-api/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: 42cf7faf9112875e15072993b6210348d0c42534
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 1783a3ab292a5460d5cc1b7ad78073071d65d379
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825037"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911928"
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>了解和处理 SignalR 中的连接生存期事件
 ====================
 通过[Patrick Fletcher](https://github.com/pfletcher)， [Tom Dykstra](https://github.com/tdykstra)
 
 > 本文概述了可以处理的 SignalR 连接、 重新连接和断开连接事件以及可以配置的超时和保持连接设置。
-> 
+>
 > 本文假设已有的 SignalR 和连接生存期事件一些知识。 有关 SignalR 的简介，请参阅[SignalR 简介](../getting-started/introduction-to-signalr.md)。 有关连接生存期事件的列表，请参阅以下资源：
-> 
+>
 > - [如何处理中心类中的连接生存期事件](hubs-api-guide-server.md#connectionlifetime)
 > - [如何处理在 JavaScript 客户端的连接生存期事件](hubs-api-guide-javascript-client.md#connectionlifetime)
 > - [如何处理在.NET 客户端的连接生存期事件](hubs-api-guide-net-client.md#connectionlifetime)
-> 
+>
 > ## <a name="software-versions-used-in-this-topic"></a>本主题中使用的软件版本
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR 版本 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>本主题的早期版本
-> 
+>
 > 有关 SignalR 的早期版本的信息，请参阅[SignalR 较早版本](../older-versions/index.md)。
-> 
+>
 > ## <a name="questions-and-comments"></a>问题和提出的意见
-> 
+>
 > 请在你喜欢本教程的内容以及我们可以改进的页的底部的评论中留下反馈。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
 
 
@@ -144,8 +144,8 @@ API 参考主题的链接将指向.NET 4.5 版本的 API。 如果使用的.NET 
 
 某些网络环境中有意关闭空闲连接，并保持连接数据包的另一个功能是帮助防止这让这些网络知道 SignalR 连接正在使用的。 在极端情况下的 keepalive ping 默认频率可能不足以防止关闭的连接。 在这种情况下，你可以配置 keepalive ping 更频繁地发送。 有关详细信息，请参阅[超时设置和 keepalive 设置](#timeoutkeepalive)本主题中更高版本。
 
-> [!NOTE] 
-> 
+> [!NOTE]
+>
 > **重要**： 此处所述的事件的顺序不能保证。 SignalR 使每次尝试此方案中，根据不可预测的方式引发连接生存期事件，但有许多不同的网络事件以及基础通信框架，如传输 Api 处理它们的各种方法。 例如，`Reconnected`可能无法引发事件，当客户端重新连接，或`OnConnected`当尝试建立的连接不成功时，可能会运行在服务器上的处理程序。 本主题介绍的通常会生成某些典型的情况下的影响。
 
 

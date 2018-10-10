@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 05181ae1b2d857eea45983d378b28011c1cd755a
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: bc6de2f0c8b2cd958c198abb90fc4ad97613e973
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578128"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913302"
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>动手实验： 可维护 Azure 网站： 管理更改和缩放
 ====================
@@ -124,7 +124,7 @@ ms.locfileid: "48578128"
 
 1. 打开 Visual Studio 并打开**GeekQuiz.sln**解决方案文件从**Source\Ex1 UsingEntityFrameworkMigrations\Begin**。
 2. 生成解决方案，若要下载和安装**NuGet**包的依赖关系。 若要执行此操作，右键单击解决方案，然后单击**生成解决方案**或按**Ctrl + Shift + B**。
-3. 从**工具**在 Visual Studio 中，选择菜单**库程序包管理器**，然后单击**程序包管理器控制台**。
+3. 从**工具**在 Visual Studio 中，选择菜单**NuGet 包管理器**，然后单击**程序包管理器控制台**。
 4. 在中**程序包管理器控制台**，输入以下命令，然后按**Enter**。 将创建基于现有模型的初始迁移。
 
     [!code-powershell[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample1.ps1)]

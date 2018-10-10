@@ -8,12 +8,12 @@ ms.date: 06/16/2014
 ms.assetid: 76e2013a-65b7-488c-834d-9448ecea378e
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 533d3a6e9a69584fb2523b2c0a604755e372f031
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 733b1c343d774e5fa8757808be07a9ae67481d84
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41832536"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910494"
 ---
 <a name="use-code-first-migrations-to-seed-the-database"></a>使用 Code First 迁移以设定数据库种子
 ====================
@@ -23,7 +23,7 @@ ms.locfileid: "41832536"
 
 在本部分中，你将使用[Code First 迁移](https://msdn.microsoft.com/data/jj591621)EF 植入到使用测试数据的数据库中。
 
-从**工具**菜单中，选择**库程序包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，输入以下命令：
+从**工具**菜单中，选择**NuGet 包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，输入以下命令：
 
 [!code-console[Main](part-3/samples/sample1.cmd)]
 
