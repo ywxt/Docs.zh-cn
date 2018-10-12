@@ -1,19 +1,19 @@
 ---
-title: 在 Azure 应用服务上托管 ASP.NET Core
+title: 将 ASP.NET Core 应用部署到 Azure 应用服务
 author: guardrex
-description: 通过指向有用资源的链接，了解如何在 Azure 应用服务中托管 ASP.NET Core 应用。
+description: 本文包含 Azure 主机和部署资源的链接。
 ms.author: riande
 ms.custom: mvc
 ms.date: 08/29/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: bc2a686c5ddc44fded135c9eed5caf676218773a
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: f2de81af4bd2992aec76a287484d0057021231d8
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312065"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860961"
 ---
-# <a name="host-aspnet-core-on-azure-app-service"></a>在 Azure 应用服务上托管 ASP.NET Core
+# <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>将 ASP.NET Core 应用部署到 Azure 应用服务
 
 [Azure 应用服务](https://azure.microsoft.com/services/app-service/)是一个用于托管 Web 应用（包括 ASP.NET Core）的 [Microsoft 云计算平台服务](https://azure.microsoft.com/)。
 
@@ -32,13 +32,10 @@ ASP.NET Core 文档中提供以下文章：
 [使用 Visual Studio 发布到 Azure](xref:tutorials/publish-to-azure-webapp-using-vs)  
 了解如何使用 Visual Studio 将 ASP.NET Core 应用发布到 Azure 应用服务。
 
-[使用 CLI 工具发布到 Azure](xref:tutorials/publish-to-azure-webapp-using-cli)  
-了解如何使用 Git 命令行客户端将 ASP.NET Core 应用发布到 Azure 应用服务。
-
 [使用 Visual Studio 和 Git 持续部署到 Azure](xref:host-and-deploy/azure-apps/azure-continuous-deployment)  
 了解如何使用 Visual Studio 创建 ASP.NET Core Web 应用并使用 Git 将它部署到 Azure 应用服务以实现持续部署。
 
-[使用 VSTS 持续部署到 Azure](https://www.visualstudio.com/docs/build/aspnet/core/quick-to-azure)  
+[使用 Azure Pipelines 创建你的第一个管道](/azure/devops/pipelines/get-started-yaml)  
 为 ASP.NET Core 应用设置 CI 生成，然后创建针对 Azure 应用服务的持续部署发布。
 
 [Azure Web 应用沙盒](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)  

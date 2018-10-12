@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/15/2018
 uid: fundamentals/host/hosted-services
-ms.openlocfilehash: 8c6a4a039fdc2cbe097d3439b3d79b9228d458b1
-ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
+ms.openlocfilehash: 9c38b1e1d429498bcd59f780e3d3fe1a50eae32d
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47210972"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860922"
 ---
 # <a name="background-tasks-with-hosted-services-in-aspnet-core"></a>在 ASP.NET Core 中使用托管服务实现后台任务
 
@@ -79,7 +79,7 @@ ms.locfileid: "47210972"
 
 在 `QueueHostedService` 中，队列中的后台任务会取消排队，并作为 <xref:Microsoft.Extensions.Hosting.BackgroundService> 执行，此类是用于实现长时间运行 `IHostedService` 的基类：
 
-[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/QueuedHostedService.cs?name=snippet1&highlight=16,20)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/QueuedHostedService.cs?name=snippet1&highlight=21,25)]
 
 已在 `Startup.ConfigureServices` 中注册这些服务。 已使用 `AddHostedService` 扩展方法注册 `IHostedService` 实现：
 
