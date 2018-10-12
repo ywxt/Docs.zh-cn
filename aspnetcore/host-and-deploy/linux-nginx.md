@@ -4,14 +4,14 @@ author: rick-anderson
 description: 了解如何在 Ubuntu 16.04 上将 Nginx 设置为反向代理，从而将 HTTP 流量转发到在 Kestrel 上运行的 ASP.NET Core Web 应用。
 ms.author: riande
 ms.custom: mvc
-ms.date: 05/22/2018
+ms.date: 09/08/2018
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: d94640075f6fe5db06672f7dc641470c71076a16
-ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
+ms.openlocfilehash: bf1fb8c0db2afd4e0c6044f3d08c22d619931554
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44040005"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523228"
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>使用 Nginx 在 Linux 上托管 ASP.NET Core
 
@@ -118,21 +118,20 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 如果没有为中间件指定 [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)，则要转接的默认标头为 `None`。
 
-对于托管在代理服务器和负载均衡器后方的应用，可能需要附加配置。 有关详细信息，请参阅[配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)。
+默认情况下仅信任 localhost (127.0.0.1, [::1]) 上运行的代理。 如果组织内的其他受信任代理或网络处理 Internet 与 Web 服务器之间的请求，请使用 <xref:Microsoft.AspNetCore.Builder.ForwardedHeadersOptions> 将其添加到 <xref:Microsoft.AspNetCore.Builder.ForwardedHeadersOptions.KnownProxies*> 或 <xref:Microsoft.AspNetCore.Builder.ForwardedHeadersOptions.KnownNetworks*> 的列表。 以下示例会将 IP 地址为 10.0.0.100 的受信任代理服务器添加到 `Startup.ConfigureServices` 中的转接头中间件 `KnownProxies`：
+
+```csharp
+services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.KnownProxies.Add(IPAddress.Parse("10.0.0.100"));
+});
+```
+
+有关更多信息，请参见<xref:host-and-deploy/proxy-load-balancer>。
 
 ### <a name="install-nginx"></a>安装 Nginx
 
-使用 `apt-get` 安装 Nginx。 安装程序将创建一个 systemd init 脚本，该脚本运行 Nginx，作为系统启动时的守护程序。 
-
-```bash
-sudo -s
-nginx=stable # use nginx=development for latest development version
-add-apt-repository ppa:nginx/$nginx
-apt-get update
-apt-get install nginx
-```
-
-Ubuntu 个人包存档 (PPA) 由志愿者维护，并且不由 [nginx.org](https://nginx.org/) 分发。有关详细信息，请参阅 [Nginx：二进制版本：官方 Debian/Ubuntu 包](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages)。
+使用 `apt-get` 安装 Nginx。 安装程序将创建一个 systemd init 脚本，该脚本运行 Nginx，作为系统启动时的守护程序。 按照 [Nginx：官方 Debian/Ubuntu 包](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages)中的 Ubuntu 安装说明操作。
 
 > [!NOTE]
 > 如果需要可选 Nginx 模块，则可能需要从源代码生成 Nginx。
@@ -222,6 +221,7 @@ ExecStart=/usr/bin/dotnet /var/aspnetcore/hellomvc/hellomvc.dll
 Restart=always
 # Restart service after 10 seconds if the dotnet service crashes:
 RestartSec=10
+KillSignal=SIGINT
 SyslogIdentifier=dotnet-example
 User=www-data
 Environment=ASPNETCORE_ENVIRONMENT=Production
@@ -233,26 +233,32 @@ WantedBy=multi-user.target
 
 如果配置未使用用户 www-data，则必须先创建此处定义的用户，并为该用户提供适当的文件所有权。
 
+使用 `TimeoutStopSec` 配置在收到初始中断信号后等待应用程序关闭的持续时间。 如果应用程序在此时间段内未关闭，则将发出 SIGKILL 以终止该应用程序。 提供作为无单位秒数的值（例如，`150`）、时间跨度值（例如，`2min 30s`）或 `infinity` 以禁用超时。 `TimeoutStopSec` 默认为管理器配置文件（*systemd-system.conf*、*system.conf.d*、*systemd-user.conf*、*user.conf.d*）中 `DefaultTimeoutStopSec` 的值。 大多数分发版的默认超时时间为 90 秒。
+
+```
+# The default value is 90 seconds for most distributions.
+TimeoutStopSec=90
+```
+
 Linux 具有区分大小写的文件系统。 将 ASPNETCORE_ENVIRONMENT 设置为“生产”会导致搜索配置文件 appsettings.Production.json，而不是 appsettings.production.json。
 
-> [!NOTE]
-> 必须转义某些值（例如，SQL 连接字符串）以供配置提供程序读取环境变量。 使用以下命令生成适当的转义值以供在配置文件中使用：
->
-> ```console
-> systemd-escape "<value-to-escape>"
-> ```
+必须转义某些值（例如，SQL 连接字符串）以供配置提供程序读取环境变量。 使用以下命令生成适当的转义值以供在配置文件中使用：
+
+```console
+systemd-escape "<value-to-escape>"
+```
 
 保存该文件并启用该服务。
 
 ```bash
-systemctl enable kestrel-hellomvc.service
+sudo systemctl enable kestrel-hellomvc.service
 ```
 
 启用该服务，并确认它正在运行。
 
 ```
-systemctl start kestrel-hellomvc.service
-systemctl status kestrel-hellomvc.service
+sudo systemctl start kestrel-hellomvc.service
+sudo systemctl status kestrel-hellomvc.service
 
 ● kestrel-hellomvc.service - Example .NET Web API App running on Ubuntu
     Loaded: loaded (/etc/systemd/system/kestrel-hellomvc.service; enabled)

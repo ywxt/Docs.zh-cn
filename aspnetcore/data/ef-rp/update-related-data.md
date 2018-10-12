@@ -5,12 +5,12 @@ description: 本教程将通过更新外键字段和导航属性来更新相关�
 ms.author: riande
 ms.date: 11/15/2017
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: e987971f60e5c5a9fb79e30440c7c986df64447e
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: c9d0e97dc612744f0023c48a27eb1c89fd153b95
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38189297"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523163"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---update-related-data---7-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 更新相关数据 - 第 7 个教程（共 8 个）
 
@@ -18,7 +18,7 @@ ms.locfileid: "38189297"
 
 [!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
-本教程演示如何更新相关数据。 如果遇到无法解决的问题，请下载[本阶段的已完成应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part7)。
+本教程演示如何更新相关数据。 如果遇到无法解决的问题，请[下载或查看已完成的应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples)。 [下载说明](xref:tutorials/index#how-to-download-a-sample)。
 
 下图显示了部分已完成页面。
 

@@ -5,12 +5,12 @@ description: 本文演示如何在 ASP.NET Core 应用程序中使用 Entity Fra
 ms.author: tdykstra
 ms.date: 02/24/2017
 uid: data/entity-framework-6
-ms.openlocfilehash: 500954bdf8ea592e0ed706943e0f5ba4f4594dbc
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: ba3ee137bfefd53cf2b7be2f328651ad38104ab5
+ms.sourcegitcommit: 70fb7c9d5f2ddfcf4747382a9f7159feca7a6aa7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274074"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45601738"
 ---
 # <a name="get-started-with-aspnet-core-and-entity-framework-6"></a>ASP.NET Core 和 Entity Framework 6 入门
 
@@ -66,9 +66,10 @@ ASP.NET Core 项目需要引用 .NET Framework 和 EF6。 例如，ASP.NET Core 
 
 * 创建解决方案。
 
-* **添加新项目 > Web > ASP.NET Core Web 应用程序 (.NET Framework)**
+* 添加 > 新建项目 > Web > ASP.NET Core Web 应用程序
+  * 在“项目模板选择”对话框的下拉列表中，选择 API 和 .NET Framework
 
-* **添加新项目 > Windows 经典桌面 > 类库 (.NET Framework)**
+* 添加 > 新建项目 > Windows 桌面 > 类库(.NET Framework)
 
 * 在两个项目的“包管理器控制台”(PMC) 中运行 `Install-Package Entityframework` 命令。
 

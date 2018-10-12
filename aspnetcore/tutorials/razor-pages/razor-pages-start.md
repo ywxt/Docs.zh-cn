@@ -1,18 +1,18 @@
 ---
 title: 在 ASP.NET Core 中开始使用 Razor Pages
 author: rick-anderson
-description: 了解构建 ASP.NET Core Razor 页面 Web 应用的基础知识。 Razor 页面推荐用于 ASP.NET Core 中的 Web 工作负载。
+description: 此系列教程演示了如何在 ASP.NET Core 中使用 Razor Pages。 了解如何创建模型、为 Razor Pages 生成代码、将 Entity Framework Core 和 SQL Server 用于数据访问、添加搜索功能、添加输入验证及使用迁移更新模型。
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: bc18ec3ad3bb7e3afe38030a34b2e748ce9e341b
-ms.sourcegitcommit: 74c09caec8992635825b45b7f065f871d33c077a
+ms.openlocfilehash: 2e1c84a704856a22e1e105f56612194d4bb9c234
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42634972"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47210995"
 ---
-# <a name="get-started-with-razor-pages-in-aspnet-core"></a>在 ASP.NET Core 中开始使用 Razor Pages
+# <a name="tutorial-get-started-with-razor-pages-in-aspnet-core"></a>教程：在 ASP.NET Core 中开始使用 Razor Pages
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -61,7 +61,7 @@ Visual Studio 模板创建初学者项目：
 
 ![主页或索引页](razor-pages-start/_static/home2.1.png)
 
-* Visual Studio 启动 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 并运行应用。 地址栏显示 `localhost:port#`，而不是显示 `example.com`。 这是因为 `localhost` 是本地计算机的标准主机名。 Localhost 仅为来自本地计算机的 Web 请求提供服务。 Visual Studio 创建 Web 项目时，为 Web 服务器使用随机端口。 在上图中，端口号为 5000。 运行应用时，将看到不同的端口号。
+* Visual Studio 启动 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 并运行应用。 地址栏显示 `localhost:port#`，而不是显示 `example.com`。 这是因为 `localhost` 是本地计算机的标准主机名。 Localhost 仅为来自本地计算机的 Web 请求提供服务。 Visual Studio 创建 Web 项目时，Web 服务器使用的是随机端口。 在上图中，端口号为 5001。 运行应用时，将看到不同的端口号。
 * 使用“Ctrl+F5”启动应用（非调试模式）后，可执行代码更改、保存文件、刷新浏览器和查看代码更改等操作。 许多开发人员更喜欢使用非调试模式快速启动应用并查看更改。
 
 [!INCLUDE [razor-pages-start](~/includes/RP/2.1/razor-pages-start.md)]

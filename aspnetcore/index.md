@@ -3,14 +3,14 @@ title: ASP.NET Core 简介
 author: rick-anderson
 description: 获取 ASP.NET Core 的简介，它是一个跨平台的高性能开源框架，用于生成基于云且连接 Internet 的新式应用程序。
 ms.author: riande
-ms.date: 02/28/2018
+ms.date: 9/28/2018
 uid: index
-ms.openlocfilehash: 6de7f1bc8229c5de519e4064dda0a7061cf8b9c6
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: 85f2aa04e4b6692dd03a63f14bcebdec97ee270e
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077707"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454773"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 简介
 
@@ -18,7 +18,7 @@ ms.locfileid: "37077707"
 
 ASP.NET Core 是一个跨平台的高性能[开源](https://github.com/aspnet/home)框架，用于生成基于云且连接 Internet 的新式应用程序。 使用 ASP.NET Core，您可以：
 
-* 建置 Web 应用程式和服务、[IoT](https://www.microsoft.com/internet-of-things/) 应用和移动后端。
+* 建置 Web 应用程序和服务、[IoT](https://www.microsoft.com/internet-of-things/) 应用和移动后端。
 * 在 Windows、macOS 和 Linux 上使用喜爱的开发工具。
 * 部署到云或本地。
 * 在 [.NET Core 或 .NET Framework](https://docs.microsoft.com/dotnet/articles/standard/choosing-core-framework-server) 上运行。
@@ -39,8 +39,6 @@ ASP.NET Core 具有如下优点：
 * 简化新式 Web 开发的工具。
 * 能够在 Windows、macOS 和 Linux 进行生成和运行。
 * 开放源代码和[以社区为中心](https://live.asp.net/)。
-
-ASP.NET Core 完全作为 [NuGet](https://www.nuget.org/) 包的一部分提供。 借助 NuGet 包，可以将应用优化为只包含必需的依赖项。 实际上，定目标到 .NET Core 的 ASP.NET Core 2.x 应用只需要使用[一个 NuGet 包](xref:fundamentals/metapackage)。 较小的应用图面区域的优势包括：提升安全性、减少维护和提高性能。
 
 ## <a name="build-web-apis-and-web-ui-using-aspnet-core-mvc"></a>使用 ASP.NET Core MVC 生成 Web API 和 Web UI
 
@@ -78,5 +76,6 @@ ASP.NET Core 可以面向 .NET Core 或 .NET Framework。 面向 .NET Framework 
 
 * [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)
 * [ASP.NET Core 教程](xref:tutorials/index)
+* <xref:tutorials/publish-to-azure-webapp-using-vs>
 * [ASP.NET Core 基础知识](xref:fundamentals/index)
 * [每周 ASP.NET Community Standup](https://live.asp.net/) 介绍了团队的工作进度和计划。 它以新博客和第三方软件为重点。

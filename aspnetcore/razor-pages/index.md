@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: f5549a24c5b5fe2e6b33bd55960f87a8bf86bd19
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: f55d0e534dafb0709f1411bad9b038a87abde7ab
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41870875"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523306"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor 页面介绍
 
@@ -41,8 +41,6 @@ Razor 页面是 ASP.NET Core MVC 的一个新特性，它可以使基于页面�
 
 在命令行中运行 `dotnet new webapp`。
 
-[!INCLUDE[](~/includes/webapp-alias-notice.md)]
-
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
@@ -59,8 +57,6 @@ Razor 页面是 ASP.NET Core MVC 的一个新特性，它可以使基于页面�
 
 在命令行中运行 `dotnet new webapp`。
 
-[!INCLUDE[](~/includes/webapp-alias-notice.md)]
-
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
@@ -74,8 +70,6 @@ Razor 页面是 ASP.NET Core MVC 的一个新特性，它可以使基于页面�
 ::: moniker range=">= aspnetcore-2.1"
 
 在命令行中运行 `dotnet new webapp`。
-
-[!INCLUDE[](~/includes/webapp-alias-notice.md)]
 
 ::: moniker-end
 
@@ -376,6 +370,8 @@ Pages/_ViewImports.cshtml 文件设置以下命名空间：
 
 [Razor 页面初学者项目](#rpvs17)包含 Pages/_ValidationScriptsPartial.cshtml，它与客户端验证联合。
 
+有关分部视图的详细信息，请参阅 <xref:mvc/views/partial>。
+
 <a name="url_gen"></a>
 
 ## <a name="url-generation-for-pages"></a>页面的 URL 生成
@@ -417,6 +413,7 @@ Pages/_ViewImports.cshtml 文件设置以下命名空间：
 构建结构复杂的站点时，相对名称链接很有用。 如果使用相对名称链接文件夹中的页面，则可以重命名该文件夹。 所有链接仍然有效（因为这些链接未包含此文件夹名称）。
 
 ::: moniker range=">= aspnetcore-2.1"
+
 ## <a name="viewdata-attribute"></a>ViewData 特性
 
 可以通过 [ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute) 将数据传递到页面。 控制器或 Razor 页面模型上使用 `[ViewData]` 修饰的属性将其值存储在 [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) 中并从此处进行加载。
@@ -450,6 +447,7 @@ public class AboutModel : PageModel
     <title>@ViewData["Title"] - WebApplication</title>
     ...
 ```
+
 ::: moniker-end
 
 ## <a name="tempdata"></a>TempData
@@ -558,11 +556,12 @@ services.AddMvc()
     .WithRazorPagesRoot("/path/to/razor/pages");
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-resources"></a>其他资源
 
-* [ASP.NET Core 简介](xref:index)
-* [Razor 语法](xref:mvc/views/razor)
-* [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)
-* [Razor 页面授权约定](xref:security/authorization/razor-pages-authorization)
-* [Razor 页面自定义路由和页面模型提供程序](xref:razor-pages/razor-pages-conventions)
-* [Razor 页面单元测试](xref:test/razor-pages-tests)
+* <xref:index>
+* <xref:mvc/views/razor>
+* <xref:tutorials/razor-pages/razor-pages-start>
+* <xref:security/authorization/razor-pages-authorization>
+* <xref:razor-pages/razor-pages-conventions>
+* <xref:test/razor-pages-tests>
+* <xref:mvc/views/partial>

@@ -4,18 +4,18 @@ author: guardrex
 description: 了解如何在 Windows Server Internet Information Services (IIS) 上托管 ASP.NET Core 应用。
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/13/2018
+ms.date: 09/13/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 1a7769e12728b09b04749a124c50366ddb1374d7
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: 8f2155cbf0bc3101b78b890c1d66797278f1ca4b
+ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202661"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47028305"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
-作者：[Luke Latham](https://github.com/guardrex) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
+作者：[Luke Latham](https://github.com/guardrex)
 
 ## <a name="supported-operating-systems"></a>支持的操作系统
 
@@ -26,11 +26,48 @@ ms.locfileid: "39202661"
 
 [HTTP.sys 服务器](xref:fundamentals/servers/httpsys)（以前称为 [WebListener](xref:fundamentals/servers/weblistener)）在使用 IIS 的反向代理配置中不起作用。 请使用 [Kestrel 服务器](xref:fundamentals/servers/kestrel)。
 
+有关在 Azure 上托管的信息，请参阅<xref:host-and-deploy/azure-apps/index>。
+
+## <a name="http2-support"></a>HTTP/2 支持
+
+::: moniker range=">= aspnetcore-2.2"
+
+以下 IIS 部署方案中的 ASP.NET Core 支持 [HTTP/2](https://httpwg.org/specs/rfc7540.html)：
+
+* 进程内
+  * Windows Server 2016/Windows 10 或更高版本；IIS 10 或更高版本
+  * 目标框架：.NET Core 2.2 或更高版本
+  * TLS 1.2 或更高版本的连接
+* 进程外
+  * Windows Server 2016/Windows 10 或更高版本；IIS 10 或更高版本
+  * 边缘连接使用 HTTP/2，但与 [Kestrel 服务器](xref:fundamentals/servers/kestrel)的反向代理连接使用 HTTP/1.1。
+  * 目标框架：不适用于进程外部署，因为 HTTP/2 连接完全由 IIS 处理。
+  * TLS 1.2 或更高版本的连接
+
+对于已建立 HTTP/2 连接时的进程内部署，[HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*) 会报告 `HTTP/2`。 对于已建立 HTTP/2 连接时的进程外部署，[HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*) 会报告 `HTTP/1.1`。
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+满足以下基本要求的进程外部署支持 [HTTP/2](https://httpwg.org/specs/rfc7540.html)：
+
+* Windows Server 2016/Windows 10 或更高版本；IIS 10 或更高版本
+* 边缘连接使用 HTTP/2，但与 [Kestrel 服务器](xref:fundamentals/servers/kestrel)的反向代理连接使用 HTTP/1.1。
+* 目标框架：不适用于进程外部署，因为 HTTP/2 连接完全由 IIS 处理。
+* TLS 1.2 或更高版本的连接
+
+如果已建立 HTTP/2 连接，[HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*) 会报告 `HTTP/1.1`。
+
+::: moniker-end
+
+默认情况下将启用 HTTP/2。 如果未建立 HTTP/2 连接，连接会回退到 HTTP/1.1。 有关使用 IIS 部署的 HTTP/2 配置的详细信息，请参阅 [IIS 上的 HTTP/2](/iis/get-started/whats-new-in-iis-10/http2-on-iis)。
+
 ## <a name="application-configuration"></a>应用程序配置
 
 ### <a name="enable-the-iisintegration-components"></a>启用 IISIntegration 组件
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 典型的 Program.cs 调用 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 以开始设置主机。 `CreateDefaultBuilder` 将 [Kestrel](xref:fundamentals/servers/kestrel) 配置为 Web 服务器，并通过配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)的基路径和端口来实现 IIS 集成：
 
@@ -42,7 +79,9 @@ public static IWebHost BuildWebHost(string[] args) =>
 
 ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultBuilder` 调用 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 方法，该方法获取该动态端口，并将 Kestrel 配置为侦听 `http://localhost:{dynamicPort}/`。 这将替代其他 URL 配置，如对 `UseUrls` 或 [Kestrel 的侦听 API](xref:fundamentals/servers/kestrel#endpoint-configuration) 的调用。 因此，使用模块时，不需要调用 `UseUrls` 或 Kestrel 的 `Listen` API。 如果调用 `UseUrls` 或 `Listen`，则 Kestrel 会侦听在没有 IIS 的情况下运行应用时指定的端口。
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 在应用依赖项中加入对 [Microsoft.AspNetCore.Server.IISIntegration ](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.IISIntegration/)包的依赖项。 通过向 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 添加 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 扩展方法来使用 IIS 集成中间件：
 
@@ -59,7 +98,7 @@ ASP.NET Core 模块生成分配给后端进程的动态端口。 `UseIISIntegrat
 
 如果在 ASP.NET Core 1.0 应用中调用 `UseUrls`，请在调用 `UseIISIntegration` 前调用它，使模块配置的端口不会被覆盖。 ASP.NET Core 1.1 不需要此调用顺序，因为模块设置会重写 `UseUrls`。
 
----
+::: moniker-end
 
 有关托管的详细信息，请参阅[在 ASP.NET Core 中托管](xref:fundamentals/host/index)。
 
@@ -177,6 +216,8 @@ web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS
    若要防止安装程序在 x64 操作系统上安装 x86 程序包，请通过管理员命令提示符使用开关 `OPT_NO_X86=1` 来运行安装程序。
 
 1. 重启系统，或从命令提示符处依次执行 net stop was /y 和 net start w3svc。 重启 IIS 会选取安装程序对系统 PATH（环境变量）所作的更改。
+
+   如果 Windows 托管捆绑包安装程序检测到 IIS 需要重置才能完成安装，则安装程序会重置 IIS。 如果安装程序触发 IIS 重置，则会重新启动所有 IIS 应用池和网站。
 
 > [!NOTE]
 > 有关 IIS 共享配置的信息，请参阅[使用 IIS 共享配置的 ASP.NET Core 模块](xref:host-and-deploy/aspnet-core-module#aspnet-core-module-with-an-iis-shared-configuration)。
@@ -438,3 +479,4 @@ ICACLS C:\sites\MyWebApp /grant "IIS AppPool\DefaultAppPool":F
 * [ASP.NET Core 简介](xref:index)
 * [Microsoft IIS 官方网站](https://www.iis.net/)
 * [Windows Server 技术内容库](/windows-server/windows-server)
+* [IIS 上的 HTTP/2](/iis/get-started/whats-new-in-iis-10/http2-on-iis)

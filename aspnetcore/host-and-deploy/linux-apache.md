@@ -4,14 +4,14 @@ description: 了解如何在 CentOS 上将 Apache 设置为反向代理服务器
 author: spboyer
 ms.author: spboyer
 ms.custom: mvc
-ms.date: 03/13/2018
+ms.date: 09/08/2018
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 2431e989d6fc2cf83bca47aaa41a2bf686c0ab54
-ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
+ms.openlocfilehash: 534e0415b2d278a518aea0ecb8042aeab4a0aa0e
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39219350"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523202"
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>使用 Apache 在 Linux 上托管 ASP.NET Core
 
@@ -56,8 +56,10 @@ dotnet publish --configuration Release
 调用转接头中间件后，必须放置依赖于该架构的组件，例如身份验证、链接生成、重定向和地理位置。 作为一般规则，转接头中间件应在诊断和错误处理中间件以外的其他中间件之前运行。 此顺序可确保依赖于转接头信息的中间件可以使用标头值进行处理。
 
 ::: moniker range=">= aspnetcore-2.0"
+
 > [!NOTE]
 > 使用或不使用反向代理服务器进行配置对 ASP.NET Core 2.0 或更高版本的应用来说都是有效且受支持的托管配置。 有关详细信息，请参阅[何时结合使用 Kestrel 和反向代理](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)。
+
 ::: moniker-end
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
@@ -95,7 +97,16 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 如果没有为中间件指定 [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)，则要转接的默认标头为 `None`。
 
-对于托管在代理服务器和负载均衡器后方的应用，可能需要附加配置。 有关详细信息，请参阅[配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)。
+默认情况下仅信任 localhost (127.0.0.1, [::1]) 上运行的代理。 如果组织内的其他受信任代理或网络处理 Internet 与 Web 服务器之间的请求，请使用 <xref:Microsoft.AspNetCore.Builder.ForwardedHeadersOptions> 将其添加到 <xref:Microsoft.AspNetCore.Builder.ForwardedHeadersOptions.KnownProxies*> 或 <xref:Microsoft.AspNetCore.Builder.ForwardedHeadersOptions.KnownNetworks*> 的列表。 以下示例会将 IP 地址为 10.0.0.100 的受信任代理服务器添加到 `Startup.ConfigureServices` 中的转接头中间件 `KnownProxies`：
+
+```csharp
+services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.KnownProxies.Add(IPAddress.Parse("10.0.0.100"));
+});
+```
+
+有关更多信息，请参见<xref:host-and-deploy/proxy-load-balancer>。
 
 ### <a name="install-apache"></a>安装 Apache
 
@@ -198,6 +209,7 @@ ExecStart=/usr/local/bin/dotnet /var/aspnetcore/hellomvc/hellomvc.dll
 Restart=always
 # Restart service after 10 seconds if the dotnet service crashes:
 RestartSec=10
+KillSignal=SIGINT
 SyslogIdentifier=dotnet-example
 User=apache
 Environment=ASPNETCORE_ENVIRONMENT=Production 
@@ -206,27 +218,32 @@ Environment=ASPNETCORE_ENVIRONMENT=Production
 WantedBy=multi-user.target
 ```
 
-> [!NOTE]
-> **用户** &mdash; 如果配置未使用用户 apache，则必须先创建用户，并为该用户提供适当的文件所有权。
+如果配置未使用用户 *apache*，则必须先创建用户，并为该用户提供适当的文件所有权。
 
-> [!NOTE]
-> 必须转义某些值（例如，SQL 连接字符串）以供配置提供程序读取环境变量。 使用以下命令生成适当的转义值以供在配置文件中使用：
->
-> ```console
-> systemd-escape "<value-to-escape>"
-> ```
+使用 `TimeoutStopSec` 配置在收到初始中断信号后等待应用程序关闭的持续时间。 如果应用程序在此时间段内未关闭，则将发出 SIGKILL 以终止该应用程序。 提供作为无单位秒数的值（例如，`150`）、时间跨度值（例如，`2min 30s`）或 `infinity` 以禁用超时。 `TimeoutStopSec` 默认为管理器配置文件（*systemd-system.conf*、*system.conf.d*、*systemd-user.conf*、*user.conf.d*）中 `DefaultTimeoutStopSec` 的值。 大多数分发版的默认超时时间为 90 秒。
+
+```
+# The default value is 90 seconds for most distributions.
+TimeoutStopSec=90
+```
+
+必须转义某些值（例如，SQL 连接字符串）以供配置提供程序读取环境变量。 使用以下命令生成适当的转义值以供在配置文件中使用：
+
+```console
+systemd-escape "<value-to-escape>"
+```
 
 保存该文件并启用该服务：
 
 ```bash
-systemctl enable kestrel-hellomvc.service
+sudo systemctl enable kestrel-hellomvc.service
 ```
 
 启动该服务，并确认它正在运行：
 
 ```bash
-systemctl start kestrel-hellomvc.service
-systemctl status kestrel-hellomvc.service
+sudo systemctl start kestrel-hellomvc.service
+sudo systemctl status kestrel-hellomvc.service
 
 ● kestrel-hellomvc.service - Example .NET Web API App running on CentOS 7
     Loaded: loaded (/etc/systemd/system/kestrel-hellomvc.service; enabled)

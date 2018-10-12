@@ -3,14 +3,14 @@ title: 在 ASP.NET Core 中路由到控制器操作
 author: rick-anderson
 description: 了解 ASP.NET Core MVC 如何使用路由中间件来匹配传入请求的 URL 并将它们映射到操作。
 ms.author: riande
-ms.date: 03/14/2017
+ms.date: 09/17/2018
 uid: mvc/controllers/routing
-ms.openlocfilehash: 0d328d930ecb932c22fec524babb1c856b656b95
-ms.sourcegitcommit: 4e34ce61e1e7f1317102b16012ce0742abf2cca6
+ms.openlocfilehash: d66c2f14adf55dd0c4a7c3adfad7e5737e4deda1
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514773"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011648"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a>在 ASP.NET Core 中路由到控制器操作
 
@@ -376,6 +376,8 @@ public class HomeController : Controller
 
 > [!TIP]
 > 避免依赖 `Order`。 如果 URL 空间需要有显式顺序值才能正确进行路由，则同样可能使客户端混淆不清。 属性路由通常选择与 URL 匹配的正确路由。 如果用于 URL 生成的默认顺序不起作用，使用路由名称作为替代项通常比应用 `Order` 属性更简单。
+
+Razor Pages 路由和 MVC 控制器路由共享一个实现。 可在 [ 路由和应用约定：路由顺序](xref:razor-pages/razor-pages-conventions#route-order)中找到有关 Razor Pages 主题中路由顺序的信息。
 
 <a name="routing-token-replacement-templates-ref-label"></a>
 

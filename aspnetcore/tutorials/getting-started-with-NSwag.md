@@ -4,14 +4,14 @@ author: zuckerthoben
 description: 了解如何使用 NSwag 为 ASP.NET Core Web API 生成文档和帮助页面。
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 06/29/2018
+ms.date: 09/20/2018
 uid: tutorials/get-started-with-nswag
-ms.openlocfilehash: c0811593609b7d1e3529d5253e8b053f180281f3
-ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
+ms.openlocfilehash: b9266e2df75563be6bad1a1f464cef788c333d4c
+ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37126269"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47028163"
 ---
 # <a name="get-started-with-nswag-and-aspnet-core"></a>NSwag 和 ASP.NET Core 入门
 
@@ -29,9 +29,14 @@ ms.locfileid: "37126269"
 
 ::: moniker-end
 
-在 ASP.NET Core 中间件中使用 [NSwag](https://github.com/RSuter/NSwag) 需要 [NSwag.AspNetCore](https://www.nuget.org/packages/NSwag.AspNetCore/) NuGet 包。 该包由 Swagger 生成器、Swagger UI（v2 和 v3）和 [ReDoc UI](https://github.com/Rebilly/ReDoc) 组成。
+注册 NSwag 中间件，以便：
 
-强烈建议使用 NSwag 的代码生成功能。 请为代码生成选择下列选项之一：
+* 生成已实现的 Web API 的 Swagger 规范。
+* 为 Swagger UI 提供服务以浏览和测试 Web API。
+
+若要使用 [NSwag](https://github.com/RSuter/NSwag) ASP.NET Core 中间件，请安装 [NSwag.AspNetCore](https://www.nuget.org/packages/NSwag.AspNetCore/) NuGet 包。 此包包含用于生成 Swagger 规范、Swagger UI（v2 和 v3）和 [ReDoc UI](https://github.com/Rebilly/ReDoc) 并为其提供服务的中间件。
+
+此外，强烈建议使用 NSwag 的代码生成功能。 请选择下列选项之一以使用代码生成功能：
 
 * 使用 [NSwagStudio](https://github.com/NSwag/NSwag/wiki/NSwagStudio)，这是一款 Windows 桌面应用，用于在 C# 和 TypeScript 中为 API 生成客户端代码。
 * 使用 [NSwag.CodeGeneration.CSharp](https://www.nuget.org/packages/NSwag.CodeGeneration.CSharp/) 或 [NSwag.CodeGeneration.TypeScript](https://www.nuget.org/packages/NSwag.CodeGeneration.TypeScript/) NuGet 包在项目中执行代码生成。
@@ -94,7 +99,11 @@ dotnet add TodoApi.csproj package NSwag.AspNetCore
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Startup.cs?name=snippet_StartupConfigureImports)]
 
-在 `Startup.Configure` 方法中，启用中间件为生成的 Swagger 规范和 Swagger UI 提供服务：
+在 `Startup.ConfigureServices` 方法中，注册所需的 Swagger 服务： 
+
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Startup.cs?name=snippet_ConfigureServices&highlight=8)]
+
+在 `Startup.Configure` 方法中，启用中间件为生成的 Swagger 规范和 Swagger UI v3 提供服务：
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Startup.cs?name=snippet_Configure&highlight=6-10)]
 
@@ -254,6 +263,7 @@ Swagger UI 显示版本的信息：
 ### <a name="data-annotations"></a>数据注释
 
 ::: moniker range="<= aspnetcore-2.0"
+
 NSwag 使用[反射](/dotnet/csharp/programming-guide/concepts/reflection)，建议使用 [IActionResult](/dotnet/api/microsoft.aspnetcore.mvc.iactionresult) 作为 Web API 操作的返回类型。 因此，NSwag 无法推断正在执行的操作和返回的结果。 请看下面的示例：
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Controllers/TodoController.cs?name=snippet_CreateAction)]
@@ -261,8 +271,11 @@ NSwag 使用[反射](/dotnet/csharp/programming-guide/concepts/reflection)，建
 上述操作返回 `IActionResult`，但在操作内部返回 [CreatedAtRoute](/dotnet/api/system.web.http.apicontroller.createdatroute) 或 [BadRequest](/dotnet/api/system.web.http.apicontroller.badrequest)。 使用数据注释告知客户端此操作会返回哪些 HTTP 状态代码。 使用以下属性修饰该操作：
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Controllers/TodoController.cs?name=snippet_CreateActionAttributes)]
+
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
+
 NSwag 使用[反射](/dotnet/csharp/programming-guide/concepts/reflection)，建议的 Web API 操作返回类型为 [ActionResult\<T>](/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1)。 因此，NSwag 仅可以推断 `T` 定义的返回类型。 无法推断操作中其他可能的返回类型。 请看下面的示例：
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.NSwag/Controllers/TodoController.cs?name=snippet_CreateAction)]
@@ -270,6 +283,7 @@ NSwag 使用[反射](/dotnet/csharp/programming-guide/concepts/reflection)，建
 上述操作返回 `ActionResult<T>`，但在操作内部返回 [CreatedAtRoute](/dotnet/api/system.web.http.apicontroller.createdatroute)。 由于使用 [[ApiController]](/dotnet/api/microsoft.aspnetcore.mvc.apicontrollerattribute) 属性修饰控制器，所以也可能出现 [BadRequest](/dotnet/api/system.web.http.apicontroller.badrequest) 响应。 有关详细信息，请参阅[自动 HTTP 400 响应](xref:web-api/index#automatic-http-400-responses)。 使用数据注释告知客户端此操作会返回哪些 HTTP 状态代码。 使用以下属性修饰该操作：
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.NSwag/Controllers/TodoController.cs?name=snippet_CreateActionAttributes)]
+
 ::: moniker-end
 
 Swagger 生成器现在可准确地描述此操作，且生成的客户端知道调用终结点时收到的内容。 强烈建议使用这些属性来修饰所有操作。 有关 API 操作应返回的 HTTP 响应的指导原则，请参阅 [RFC 7231 规范](https://tools.ietf.org/html/rfc7231#section-4.3)。

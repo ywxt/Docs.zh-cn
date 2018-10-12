@@ -5,12 +5,12 @@ description: 了解筛选器的工作原理以及如何在 ASP.NET Core MVC 中�
 ms.author: riande
 ms.date: 08/15/2018
 uid: mvc/controllers/filters
-ms.openlocfilehash: 6b3d5446b1c9aafc02d4c31ad57a234f16513e3f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: e20d934a17337d404249220d703ac4bb7164dfa6
+ms.sourcegitcommit: 9bdba90b2c97a4016188434657194b2d7027d6e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751733"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47402154"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core 中的筛选器
 
@@ -53,7 +53,7 @@ ASP.NET Core MVC 中的筛选器允许在请求处理管道中的特定阶段之
 
 下图展示了这些筛选器类型在筛选器管道中的交互方式。
 
-![请求通过授权筛选器、资源筛选器、模型绑定、操作筛选器、操作执行和操作结果转换、异常筛选器、结果筛选器和结果执行进行处理。 返回时，请求仅由结果筛选器和资源筛选器进行处理，变成发送到客户端的响应。](filters/_static/filter-pipeline-2.png)
+![请求通过授权筛选器、资源筛选器、模型绑定、操作筛选器、操作执行和操作结果转换、异常筛选器、结果筛选器和结果执行进行处理。 返回时，请求仅由结果过滤器和资源过滤器进行处理，变成发送到客户端的响应。](filters/_static/filter-pipeline-2.png)
 
 ## <a name="implementation"></a>实现
 
@@ -231,6 +231,8 @@ System.InvalidOperationException: No service for type
 下面的示例演示如何使用 `TypeFilterAttribute` 将参数传递到类型：
 
 [!code-csharp[](../../mvc/controllers/filters/sample/src/FiltersSample/Controllers/HomeController.cs?name=snippet_TypeFilter&highlight=1,2)]
+
+### <a name="ifilterfactory-implemented-on-your-attribute"></a>在属性上实现 IFilterFactory
 
 如果你的筛选器符合以下描述：
 

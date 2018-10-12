@@ -4,14 +4,15 @@ author: guardrex
 description: 了解 Windows 上适用于 ASP.NET Core 的 Web 服务器 HTTP.sys。 HTTP.sys 构建于 HTTP.sys 内核模式驱动程序之上，是 Kestrel 的一种替代选择，可用来直接连接到 Internet，而无需使用 IIS。
 monikerRange: '>= aspnetcore-2.0'
 ms.author: tdykstra
-ms.date: 08/15/2018
+ms.custom: mvc
+ms.date: 09/13/2018
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 58f71596b8ad54dd500699265ab022dc57c4f7a3
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: e845cb4eb7fe805e3d2195124073f7ab646d66cb
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41755595"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011662"
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 HTTP.sys Web 服务器实现
 
@@ -55,6 +56,28 @@ HTTP.sys 对于以下情形的部署来说很有用：
   ![HTTP.sys 直接与内部网络进行通信](httpsys/_static/httpsys-to-internal.png)
 
 HTTP.sys 是一项成熟的技术，可以抵御多种攻击，并提供可靠、安全、可伸缩的全功能 Web 服务器。 IIS 本身作为 HTTP.sys 之上的 HTTP 侦听器运行。
+
+## <a name="http2-support"></a>HTTP/2 支持
+
+如果满足以下基本要求，将为 ASP.NET Core 应用启用 [HTTP/2](https://httpwg.org/specs/rfc7540.html)：
+
+* Windows Server 2016/Windows 10 或更高版本
+* [应用程序层协议协商 (ALPN)](https://tools.ietf.org/html/rfc7301#section-3) 连接
+* TLS 1.2 或更高版本的连接
+
+::: moniker range=">= aspnetcore-2.2"
+
+如果已建立 HTTP/2 连接，[HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*) 会报告 `HTTP/2`。
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+如果已建立 HTTP/2 连接，[HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*) 会报告 `HTTP/1.1`。
+
+::: moniker-end
+
+默认情况下将启用 HTTP/2。 如果未建立 HTTP/2 连接，连接会回退到 HTTP/1.1。 在 Windows 的未来版本中，将提供 HTTP/2 配置标志，包括使用 HTTP.sys 禁用 HTTP/2 的功能。
 
 ## <a name="kernel-mode-authentication-with-kerberos"></a>对 Kerberos 进行内核模式身份验证
 

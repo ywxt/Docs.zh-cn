@@ -5,12 +5,12 @@ description: 了解如何在 ASP.NET Core 中使用视图组件，以及如何�
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/view-components
-ms.openlocfilehash: 0410e2025019bae45d941e61f556f4b2b57bd30f
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: cf2cfcdb07271503b844e31940e90b7376db0a6f
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010905"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47211060"
 ---
 # <a name="view-components-in-aspnet-core"></a>ASP.NET Core 中的视图组件
 
@@ -95,6 +95,8 @@ ms.locfileid: "46010905"
 
 [!code-cshtml[](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
 
+::: moniker range=">= aspnetcore-1.1"
+
 ## <a name="invoking-a-view-component-as-a-tag-helper"></a>调用视图组件作为标记帮助程序
 
 对于 ASP.NET Core 1.1 及更高版本，可以调用视图组件作为[标记帮助程序](xref:mvc/views/tag-helpers/intro)：
@@ -110,7 +112,7 @@ ms.locfileid: "46010905"
 </vc:[view-component-name]>
 ```
 
-注意：为了将视图组件用作标记帮助程序，必须使用 `@addTagHelper` 指令注册包含视图组件的程序集。 例如，如果视图组件位于名为“MyWebApp”的程序集中，请将以下指令添加到 `_ViewImports.cshtml` 文件：
+若要将视图组件用作标记帮助程序，请使用 `@addTagHelper` 指令注册包含视图组件的程序集。 如果视图组件位于名为“`MyWebApp`”的程序集中，请将以下指令添加到 _ViewImports.cshtml 文件：
 
 ```cshtml
 @addTagHelper *, MyWebApp
@@ -127,6 +129,8 @@ ms.locfileid: "46010905"
 [!code-cshtml[](view-components/sample/ViewCompFinal/Views/Todo/IndexTagHelper.cshtml?range=37-38)]
 
 在以上示例中，`PriorityList` 视图组件变为 `priority-list`。 视图组件的参数作为小写短横线格式的属性进行传递。
+
+::: moniker-end
 
 ### <a name="invoking-a-view-component-directly-from-a-controller"></a>从控制器直接调用视图组件
 
@@ -243,6 +247,76 @@ ms.locfileid: "46010905"
 将 `using` 语句添加到 Razor 视图文件，并使用 `nameof` 运算符：
 
 [!code-cshtml[](view-components/sample/ViewCompFinal/Views/Todo/IndexNameof.cshtml?range=1-6,35-)]
+
+## <a name="perform-synchronous-work"></a>执行同步工作
+
+如果不需要执行异步工作，框架将处理调用同步 `Invoke` 方法。 以下方法将创建同步 `Invoke` 视图组件：
+
+```csharp
+public class PriorityList : ViewComponent
+{
+    public IViewComponentResult Invoke(int maxPriority, bool isDone)
+    {
+        var items = new List<string> { $"maxPriority: {maxPriority}", $"isDone: {isDone}" };
+        return View(items);
+    }
+}
+```
+
+视图组件的 Razor 文件列出了传递给 `Invoke` 方法的字符串（Views/Home/Components/PriorityList/Default.cshtml）：
+
+```cshtml
+@model List<string>
+
+<h3>Priority Items</h3>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item</li>
+    }
+</ul>
+```
+
+::: moniker range=">= aspnetcore-1.1"
+
+使用以下方法之一在 Razor 文件（例如，Views/Home/Index.cshtml）中调用视图组件：
+
+* <xref:Microsoft.AspNetCore.Mvc.IViewComponentHelper>
+* [标记帮助程序](xref:mvc/views/tag-helpers/intro)
+
+若要使用 <xref:Microsoft.AspNetCore.Mvc.IViewComponentHelper> 方法，请调用 `Component.InvokeAsync`：
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-1.1"
+
+使用 <xref:Microsoft.AspNetCore.Mvc.IViewComponentHelper> 在 Razor 文件（例如，Views/Home/Index.cshtml）中调用视图组件。
+
+调用 `Component.InvokeAsync`：
+
+::: moniker-end
+
+```cshtml
+@await Component.InvokeAsync(nameof(PriorityList), new { maxPriority = 4, isDone = true })
+```
+
+::: moniker range=">= aspnetcore-1.1"
+
+若要使用标记帮助程序，请使用 `@addTagHelper` 指令注册包含视图组件的程序集（视图组件位于名为 `MyWebApp` 的程序集中）：
+
+```cshtml
+@addTagHelper *, MyWebApp
+```
+
+在 Razor 标记文件中使用视图组件标记帮助程序：
+
+```cshtml
+<vc:priority-list max-priority="999" is-done="false">
+</vc:priority-list>
+```
+::: moniker-end
+
+`PriorityList.Invoke` 的方法签名是同步的，但 Razor 在标记文件中使用 `Component.InvokeAsync` 找到并调用该方法。
 
 ## <a name="additional-resources"></a>其他资源
 

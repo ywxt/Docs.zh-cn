@@ -1,59 +1,134 @@
 ---
 title: ASP.NET Core 中的分部视图
 author: ardalis
-description: 了解分部视图是如何呈现在另一视图中，以及何时应在 ASP.NET Core 应用中使用它们。
+description: 了解如何使用分部视图来分解大型标记文件，并减少 ASP.NET Core 应用程序中跨网页的常见标记重复情况。
 ms.author: riande
 ms.custom: mvc
-ms.date: 07/06/2018
+ms.date: 09/11/2018
 uid: mvc/views/partial
-ms.openlocfilehash: 2223f3c6e42927def4b91ff9da58c228e5904756
-ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
+ms.openlocfilehash: a836ed073dfe769fc3cc0cd0622b17937747928b
+ms.sourcegitcommit: 70fb7c9d5f2ddfcf4747382a9f7159feca7a6aa7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39655318"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45601751"
 ---
 # <a name="partial-views-in-aspnet-core"></a>ASP.NET Core 中的分部视图
 
-作者：[Steve Smith](https://ardalis.com/)、[Maher JENDOUBI](https://twitter.com/maherjend)、[Rick Anderson](https://twitter.com/RickAndMSFT) 和 [Scott Sauber](https://twitter.com/scottsauber)
+作者：[Steve Smith](https://ardalis.com/)、[Luke Latham](https://github.com/guardrex)、[Maher JENDOUBI](https://twitter.com/maherjend)、[Rick Anderson](https://twitter.com/RickAndMSFT) 和 [Scott Sauber](https://twitter.com/scottsauber)
 
-ASP.NET Core 支持分部视图。 分部视图用于在不同视图之间共享网页的可重用部件。
+分部视图是 [Razor](xref:mvc/views/razor) 标记文件 (.cshtml)，它在另一个标记文件呈现的输出中呈现 HTML 输出。
+
+::: moniker range=">= aspnetcore-2.1"
+
+在开发 MVC 应用程序（其中标记文件称为“视图”）或 Razor Pages 应用程序（其中标记文件称为“页”）时，均会使用术语“分部视图”。 本主题通常将 MVC 视图和 Razor Pages 页面称为“标记文件”。
+
+::: moniker-end
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/partial/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
-## <a name="what-are-partial-views"></a>什么是分部视图
-
-分部视图是指在其他视图内呈现的视图。 通过执行分部视图生成的 HTML 输出在调用视图（或父视图）中呈现。 和视图一样，分部视图也使用 *.cshtml* 文件扩展名。
-
-例如，ASP.NET Core 2.1 Web 应用程序项目模板包括 _CookieConsentPartial.cshtml 分部视图。 分部视图从 _Layout.cshtml 内加载：
-
-[!code-cshtml[](partial/sample/PartialViewsSample/Views/Shared/_Layout.cshtml?name=snippet_CookieConsentPartial)]
-
 ## <a name="when-to-use-partial-views"></a>何时使用分部视图
 
-分部视图是将大型视图分解为较小组件的有效方法。 它们可减少视图内容的重复并使视图元素得以重复使用。 常见布局元素应在 [_Layout.cshtml](xref:mvc/views/layout) 中指定。 非布局可重用内容可封装到分部视图中。
+分部视图是执行下列操作的有效方式：
 
-在由多个逻辑部分组成的复杂页面中，将每个部分用作它自己的分部视图十分有用。 在页面的其余部分可以单独查看页面的每个部分。 页面本身的视图会变得更简单，因为它仅包含整体页面结构，并且通过调用来呈现分部视图。
+* 将大型标记文件分解为更小的组件。
 
-ASP.NET Core MVC 控制器具有从操作方法调用的 [PartialView](/dotnet/api/microsoft.aspnetcore.mvc.controller.partialview#Microsoft_AspNetCore_Mvc_Controller_PartialView) 方法。 Razor Pages 在 [PageModel](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel) 上没有等效的 `PartialView` 方法。
+  在由多个逻辑部分组成的大型复杂标记文件中，在分部视图中处理隔开的每个部分是有利的。 标记文件中的代码是可管理的，因为标记仅包含整体页面结构和对分部视图的引用。
+* 减少跨标记文件中常见标记内容的重复。
+
+  当在标记文件中使用相同的标记元素时，分部视图会将重复的标记内容移到一个分部视图文件中。 在分部视图中更改标记后，它会更新使用该分部视图的标记文件呈现的输出。
+
+不应使用分部视图来维护常见布局元素。 常见布局元素应在 [_Layout.cshtml](xref:mvc/views/layout) 文件中指定。
+
+请勿使用需要复杂呈现逻辑或代码执行来呈现标记的分部视图。 使用[视图组件](xref:mvc/views/view-components)而不是分部视图。
 
 ## <a name="declare-partial-views"></a>声明分部视图
 
-分部视图的创建方式与常规视图类似：在 Views 文件夹内创建 .cshtml 文件。 分部视图和常规视图之间没有语义差异-，但呈现方式不同。 用户可拥有直接从控制器的 [ViewResult](/dotnet/api/microsoft.aspnetcore.mvc.viewresult) 返回的视图，并可将同一视图用作分部视图。 视图和分部视图的主要呈现方式差异在于分部视图不运行 _ViewStart.cshtml。 常规视图却要运行 _ViewStart.cshtml。 详细了解 [Layout](xref:mvc/views/layout)) 中的 _ViewStart.cshtml。
+::: moniker range=">= aspnetcore-2.1"
 
-按照约定，分部视图的文件名通常以 `_` 开头。 虽然未强制要求遵从此命名约定，但它有助于直观地将分部视图与常规视图区分开来。
+分部视图是在 Views 文件夹 (MVC) 或 Pages 文件夹 (Razor Pages) 中维护的 .cshtml 标记文件。
+
+在 ASP.NET Core MVC 中，控制器的 <xref:Microsoft.AspNetCore.Mvc.ViewResult> 能够返回视图或分部视图。 为 ASP.NET Core 2.2 中的 Razor Pages 规划了类似功能。 在 Razor Pages 中，<xref:Microsoft.AspNetCore.Mvc.RazorPages.PageModel> 可以返回 <xref:Microsoft.AspNetCore.Mvc.PartialViewResult>。 [引用分部视图](#reference-a-partial-view)部分介绍了引用和呈现分部视图。
+
+与 MVC 视图或页面呈现不同，分部视图不会运行 _ViewStart.cshtml。 有关 _ViewStart.cshtml 的详细信息，请参阅 <xref:mvc/views/layout>。
+
+分部视图的文件名通常以下划线 (`_`) 开头。 虽然未强制要求遵从此命名约定，但它有助于直观地将分部视图与视图和页面区分开来。 当文件名以下划线开头时，即使文件的标记包含 `@page` 指令，Razor Pages 也不会将标记文件作为 Razor Pages 处理。
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.1"
+
+分部视图是在 Views 文件夹中维护的 .cshtml 标记文件。
+
+控制器的 <xref:Microsoft.AspNetCore.Mvc.ViewResult> 能够返回视图或分部视图。
+
+与 MVC 视图呈现不同，分部视图不会运行 _ViewStart.cshtml。 有关 _ViewStart.cshtml 的详细信息，请参阅 <xref:mvc/views/layout>。
+
+分部视图的文件名通常以下划线 (`_`) 开头。 虽然未强制要求遵从此命名约定，但它有助于直观地将分部视图与视图区分开来。
+
+::: moniker-end
 
 ## <a name="reference-a-partial-view"></a>引用分部视图
 
-在视图页中，有多种方法可呈现分部视图。 最佳做法是使用异步呈现。
+::: moniker range=">= aspnetcore-2.1"
+
+在标记文件中，有多种方法可引用分部视图。 我们建议应用程序使用以下异步呈现方法之一：
+
+* [部分标记帮助程序](#partial-tag-helper)
+* [异步 HTML 帮助程序](#asynchronous-html-helper)
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.1"
+
+在标记文件中，有两种方法可引用分部视图：
+
+* [异步 HTML 帮助程序](#asynchronous-html-helper)
+* [同步 HTML 帮助程序](#synchronous-html-helper)
+
+我们建议应用程序使用[异步 HTML 帮助程序](#asynchronous-html-helper)。
+
+::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
 
 ### <a name="partial-tag-helper"></a>分部标记帮助程序
 
-分部标记帮助程序要求 ASP.NET Core 2.1 或更高版本。 它以异步方式呈现，并使用类似于 HTML 的语法：
+[分部标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper)要求 ASP.NET Core 2.1 或更高版本。
 
-[!code-cshtml[](partial/sample/PartialViewsSample/Views/Home/Discovery.cshtml?name=snippet_PartialTagHelper)]
+分部标记帮助程序会异步呈现内容并使用类似 HTML 的语法：
+
+```cshtml
+<partial name="_PartialName" />
+```
+
+当存在文件扩展名时，标记帮助程序会引用分部视图，该视图必须与调用分部视图的标记文件位于同一文件夹中：
+
+```cshtml
+<partial name="_PartialName.cshtml" />
+```
+
+以下示例从应用程序根目录引用分部视图。 以波形符斜杠 (`~/`) 或斜杠 (`/`) 开头的路径指代应用程序根目录：
+
+**Razor 页面**
+
+```cshtml
+<partial name="~/Pages/Folder/_PartialName.cshtml" />
+<partial name="/Pages/Folder/_PartialName.cshtml" />
+```
+
+**MVC**
+
+```cshtml
+<partial name="~/Views/Folder/_PartialName.cshtml" />
+<partial name="/Views/Folder/_PartialName.cshtml" />
+```
+
+以下示例引用使用相对路径的分部视图：
+
+```cshtml
+<partial name="../Account/_PartialName.cshtml" />
+```
 
 有关更多信息，请参见<xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper>。
 
@@ -61,119 +136,179 @@ ASP.NET Core MVC 控制器具有从操作方法调用的 [PartialView](/dotnet/a
 
 ### <a name="asynchronous-html-helper"></a>异步 HTML 帮助程序
 
-使用 HTML 帮助程序时，最佳做法是使用[PartialAsync](/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.partialasync#Microsoft_AspNetCore_Mvc_Rendering_HtmlHelperPartialExtensions_PartialAsync_Microsoft_AspNetCore_Mvc_Rendering_IHtmlHelper_System_String_)。 它返回包装在 `Task` 中的 [IHtmlContent](/dotnet/api/microsoft.aspnetcore.html.ihtmlcontent) 类型。 通过在调用前添加 `@` 前缀来引用该方法：
+使用 HTML 帮助程序时，最佳做法是使用 <xref:Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.PartialAsync*>。 `PartialAsync` 返回包含在 <xref:System.Threading.Tasks.Task`1> 中的 <xref:Microsoft.AspNetCore.Html.IHtmlContent> 类型。 通过在等待的调用前添加 `@` 字符前缀来引用该方法：
 
-[!code-cshtml[](partial/sample/PartialViewsSample/Views/Home/Discovery.cshtml?name=snippet_PartialAsync)]
+```cshtml
+@await Html.PartialAsync("_PartialName")
+```
 
-或者，也可以使用 [RenderPartialAsync](/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.renderpartialasync) 呈现分部视图。 此方法不返回结果。 它将呈现的输出直接流式传输到响应。 因为该方法不返回结果，所以必须在 Razor 代码块内调用它：
+当存在文件扩展名时，HTML 帮助程序会引用分部视图，该视图必须与调用分部视图的标记文件位于同一文件夹中：
 
-[!code-cshtml[](partial/sample/PartialViewsSample/Views/Home/Discovery.cshtml?name=snippet_RenderPartialAsync)]
+```cshtml
+@await Html.PartialAsync("_PartialName.cshtml")
+```
 
-由于它直接流式传输结果，所以 `RenderPartialAsync` 在某些情况下可能会表现更佳。 但是，建议使用 `PartialAsync`。
-
-### <a name="synchronous-html-helper"></a>同步 HTML 帮助程序
-
-[Partial](/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.partial) 和 [RenderPartial](/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.renderpartial) 分别是 `PartialAsync` 和 `RenderPartialAsync` 的同步等效项。 但不建议使用同步等效项，因为可能会出现死锁的情况。 未来版本将不包含同步方法。
-
-> [!IMPORTANT]
-> 如果视图需要执行代码，请使用[视图组件](xref:mvc/views/view-components)，而不要使用分部视图。
+以下示例从应用程序根目录引用分部视图。 以波形符斜杠 (`~/`) 或斜杠 (`/`) 开头的路径指代应用程序根目录：
 
 ::: moniker range=">= aspnetcore-2.1"
 
-在 ASP.NET Core 2.1 或更高版本中，调用 `Partial` 或 `RenderPartial` 会导致分析器警告。 例如，使用 `Partial` 会产生以下警告消息：
+**Razor 页面**
 
-> 使用 IHtmlHelper.Partial 可能会导致应用程序死锁。 请考虑使用`<partial>` 标记帮助程序或 `IHtmlHelper.PartialAsync`。
+```cshtml
+@await Html.PartialAsync("~/Pages/Folder/_PartialName.cshtml")
+@await Html.PartialAsync("/Pages/Folder/_PartialName.cshtml")
+```
 
-将对 `@Html.Partial` 的调用替换为 `@await Html.PartialAsync` 或分部标记帮助程序。 有关分部标记帮助程序迁移的详细信息，请参阅[从 HTML 帮助程序迁移](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper#migrate-from-an-html-helper)。
+**MVC**
+
+::: moniker-end
+
+```cshtml
+@await Html.PartialAsync("~/Views/Folder/_PartialName.cshtml")
+@await Html.PartialAsync("/Views/Folder/_PartialName.cshtml")
+```
+
+以下示例引用使用相对路径的分部视图：
+
+```cshtml
+@await Html.PartialAsync("../Account/_LoginPartial.cshtml")
+```
+
+或者，也可以使用 <xref:Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.RenderPartialAsync*> 呈现分部视图。 此方法不返回 <xref:Microsoft.AspNetCore.Html.IHtmlContent>。 它将呈现的输出直接流式传输到响应。 因为该方法不返回结果，所以必须在 Razor 代码块内调用它：
+
+[!code-cshtml[](partial/sample/PartialViewsSample/Views/Home/Discovery.cshtml?name=snippet_RenderPartialAsync)]
+
+由于 `RenderPartialAsync` 流式传输呈现的内容，因此在某些情况下它可提供更好的性能。 在性能起关键作用的情况下，使用两种方法对页面进行基准测试，并使用生成更快响应的方法。
+
+### <a name="synchronous-html-helper"></a>同步 HTML 帮助程序
+
+<xref:Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.Partial*> 和 <xref:Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.RenderPartial*> 分别是 `PartialAsync` 和 `RenderPartialAsync` 的同步等效项。 但不建议使用同步等效项，因为可能会出现死锁的情况。 同步方法针对以后版本中的删除功能。
+
+> [!IMPORTANT]
+> 如果需要执行代码，请使用[视图组件](xref:mvc/views/view-components)，而不是使用分部视图。
+
+::: moniker range=">= aspnetcore-2.1"
+
+调用 `Partial` 或 `RenderPartial` 会导致 Visual Studio 分析器警告。 例如，使用 `Partial` 会产生以下警告消息：
+
+> 使用 IHtmlHelper.Partial 可能会导致应用程序死锁。 考虑使用 &lt;分部&gt; 标记帮助程序或 IHtmlHelper.PartialAsync。
+
+将对 `@Html.Partial` 的调用替换为 `@await Html.PartialAsync` 或[分部标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper)。 有关分部标记帮助程序迁移的详细信息，请参阅[从 HTML 帮助程序迁移](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper#migrate-from-an-html-helper)。
 
 ::: moniker-end
 
 ## <a name="partial-view-discovery"></a>分部视图发现
 
-引用分部视图时，可通过多种方式引用其位置。 例如:
+如果按名称（无文件扩展名）引用分部视图，则按所述顺序搜索以下位置：
 
 ::: moniker range=">= aspnetcore-2.1"
 
-```cshtml
-// Uses a view in current folder with this name.
-// If none is found, searches the Shared folder.
-<partial name="_ViewName" />
+**Razor 页面**
 
-// A view with this name must be in the same folder
-<partial name="_ViewName.cshtml" />
+1. 当前正在执行页面的文件夹
+1. 该页面文件夹上方的目录图
+1. `/Shared`
+1. `/Pages/Shared`
+1. `/Views/Shared`
 
-// Locate the view based on the app root.
-// Paths that start with "/" or "~/" refer to the app root.
-<partial name="~/Views/Folder/_ViewName.cshtml" />
-<partial name="/Views/Folder/_ViewName.cshtml" />
-
-// Locate the view using a relative path
-<partial name="../Account/_LoginPartial.cshtml" />
-```
-
-上述示例使用分部标记帮助程序，它需要 ASP.NET Core 2.1 或更高版本。 以下示例使用异步 HTML 帮助程序完成相同任务。
+**MVC**
 
 ::: moniker-end
 
-```cshtml
-// Uses a view in current folder with this name.
-// If none is found, searches the Shared folder.
-@await Html.PartialAsync("_ViewName")
+::: moniker range=">= aspnetcore-2.0"
 
-// A view with this name must be in the same folder
-@await Html.PartialAsync("_ViewName.cshtml")
+1. `/Areas/<Area-Name>/Views/<Controller-Name>`
+1. `/Areas/<Area-Name>/Views/Shared`
+1. `/Views/Shared`
+1. `/Pages/Shared`
 
-// Locate the view based on the app root.
-// Paths that start with "/" or "~/" refer to the app root.
-@await Html.PartialAsync("~/Views/Folder/_ViewName.cshtml")
-@await Html.PartialAsync("/Views/Folder/_ViewName.cshtml")
+::: moniker-end
 
-// Locate the view using a relative path
-@await Html.PartialAsync("../Account/_LoginPartial.cshtml")
-```
+::: moniker range="< aspnetcore-2.0"
 
-不同视图文件夹中可以存在具有相同文件名的不同分部视图。 按名称（不带文件扩展名）引用视图时，每个文件夹中的视图都会使用与其位于同一文件夹中的分部视图。 还可指定要使用的默认分部视图，将其放在 *Shared* 文件夹中。 任何没有属于自己版本的分部视图的视图均可使用共享分部视图。 可设置默认分部视图（位于 *Shared* 中），该视图被与父视图位于同一文件夹并具有相同名称的分部视图替代。
+1. `/Areas/<Area-Name>/Views/<Controller-Name>`
+1. `/Areas/<Area-Name>/Views/Shared`
+1. `/Views/Shared`
 
-分部视图可以链接在一起 &mdash; 分部视图可调用其他分部视图（只要未创建循环）。 在每个视图或分部视图内，相对路径始终相对于该视图，而不相对于根视图或父视图。
+::: moniker-end
+
+以下约定适用于分部视图发现：
+
+* 当分部视图位于不同的文件夹中时，允许使用具有相同文件名的不同分部视图。
+* 当按名称（无文件扩展名）引用分部视图且分部视图出现在调用方的文件夹和 文件夹中时，调用方文件夹中的分部视图会提供分部视图。 如果调用方文件夹中不存在分部视图，则会从 文件夹中提供分部视图。  文件夹中的分部视图称为“共享分部视图”或“默认分部视图”。
+* 可以链接分部视图&mdash;如果调用没有形成循环引用，则分部视图可以调用另一个分部视图。 相对路径始终相对于当前文件，而不是相对于文件的根视图或父视图。
 
 > [!NOTE]
-> 分部视图中定义的 [Razor](xref:mvc/views/razor) `section` 对父视图不可见。 `section` 仅对定义它时所在的分部视图可见。
+> 分部视图中定义的 [Razor](xref:mvc/views/razor) `section` 对父标记文件不可见。 `section` 仅对定义它时所在的分部视图可见。
 
 ## <a name="access-data-from-partial-views"></a>通过分部视图访问数据
 
 实例化分部视图时，它会获得父视图的 `ViewData` 字典的副本。 在分部视图内对数据所做的更新不会保存到父视图中。 在分部视图中的 `ViewData` 更改会在分部视图返回时丢失。
 
-可将 [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) 的实例传递到分部视图：
+以下示例演示如何将 [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary)的实例传递给分部视图：
 
 ```cshtml
 @await Html.PartialAsync("_PartialName", customViewData)
 ```
 
-还可将模型传入分部视图。 该模型可以是页面的视图模型或自定义对象。 可将模型传递到 `PartialAsync` 或 `RenderPartialAsync`：
+还可将模型传入分部视图。 模型可以是自定义对象。 你可以使用 `PartialAsync`（向调用方呈现内容块）或 `RenderPartialAsync`（将内容流式传输到输出）传递模型：
 
 ```cshtml
-@await Html.PartialAsync("_PartialName", viewModel)
+@await Html.PartialAsync("_PartialName", model)
 ```
 
-可将 `ViewDataDictionary` 的实例和视图模型传递到分部视图：
+::: moniker range=">= aspnetcore-2.1"
 
-[!code-cshtml[](partial/sample/PartialViewsSample/Views/Articles/Read.cshtml?name=snippet_PartialAsync)]
+**Razor 页面**
 
-以下标记显示包含两个分部视图的 *Views/Articles/Read.cshtml* 视图。 第二个分部视图将模型和 `ViewData` 传入分部视图。 使用突出显示的 `ViewDataDictionary` 构造函数可传递新 `ViewData` 字典，同时保留现有的 `ViewData` 字典。
+示例应用程序中的以下标记来自 *Pages/ArticlesRP/ReadRP.cshtml* 页面。 此页包含两个分部视图。 第二个分部视图将模型和 `ViewData` 传入分部视图。 `ViewDataDictionary` 构造函数重载可用于传递新 `ViewData` 字典，同时保留现有的 `ViewData` 字典。
 
-[!code-cshtml[](partial/sample/PartialViewsSample/Views/Articles/Read.cshtml?name=snippet_ReadPartialView&highlight=17-20)]
+[!code-cshtml[](partial/sample/PartialViewsSample/Pages/ArticlesRP/ReadRP.cshtml?name=snippet_ReadPartialViewRP&highlight=5,15-19)]
 
-Views/Shared/_AuthorPartial：
+Pages/Shared/_AuthorPartialRP.cshtml 是 ReadRP.cshtml 标记文件引用的第一个分部视图：
+
+[!code-cshtml[](partial/sample/PartialViewsSample/Pages/Shared/_AuthorPartialRP.cshtml)]
+
+Pages/ArticlesRP/_ArticleSectionRP.cshtml 是 ReadRP.cshtml 标记文件引用的第二个分部视图：
+
+[!code-cshtml[](partial/sample/PartialViewsSample/Pages/ArticlesRP/_ArticleSectionRP.cshtml)]
+
+**MVC**
+
+::: moniker-end
+
+示例应用中的以下标记显示 Views/Articles/Read.cshtml 视图。 此视图包含两个分部视图。 第二个分部视图将模型和 `ViewData` 传入分部视图。 `ViewDataDictionary` 构造函数重载可用于传递新 `ViewData` 字典，同时保留现有的 `ViewData` 字典。
+
+[!code-cshtml[](partial/sample/PartialViewsSample/Views/Articles/Read.cshtml?name=snippet_ReadPartialView&highlight=5,15-19)]
+
+Views/Shared/_AuthorPartial.cshtml 是 ReadRP.cshtml 标记文件引用的第一个分部视图：
 
 [!code-cshtml[](partial/sample/PartialViewsSample/Views/Shared/_AuthorPartial.cshtml)]
 
-*_ArticleSection* 分部视图：
+Views/Articles/_ArticleSection.cshtml 是 Read.cshtml 标记文件引用的第二个分部视图：
 
 [!code-cshtml[](partial/sample/PartialViewsSample/Views/Articles/_ArticleSection.cshtml)]
 
-在运行时，分部视图在父视图中呈现，而父视图本身在共享的 _Layout.cshtml 内呈现。
+在运行时，分部视图在父标记文件呈现的输出中呈现，而父标记文件本身在共享的 _Layout.cshtml 内呈现。 第一个分部视图呈现文章作者的姓名和发布日期：
 
-![分部视图输出](partial/_static/output.png)
+> Abraham Lincoln
+>
+> 来自 &lt;共享分部视图文件路径&gt; 的分部视图。
+> 1863 年 11 月 19 日中午 12:00:00
+
+第二个分部视图呈现文章的各部分：
+
+> 第一节索引：0
+>
+> 八十七年前...
+>
+> 第二节索引：1
+>
+> 如今，我们正在进行一场伟大的内战，考验着......
+>
+> 第三节索引：2
+>
+> 然而，从更广泛的意义上说，我们无法奉献...
 
 ## <a name="additional-resources"></a>其他资源
 
@@ -183,12 +318,14 @@ Views/Shared/_AuthorPartial：
 * <xref:mvc/views/tag-helpers/intro>
 * <xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper>
 * <xref:mvc/views/view-components>
+* <xref:mvc/controllers/areas>
 
 ::: moniker-end
 
-::: moniker range="<= aspnetcore-2.0"
+::: moniker range="< aspnetcore-2.1"
 
 * <xref:mvc/views/razor>
 * <xref:mvc/views/view-components>
+* <xref:mvc/controllers/areas>
 
 ::: moniker-end

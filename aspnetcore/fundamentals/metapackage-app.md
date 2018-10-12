@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 09/20/2017
 uid: fundamentals/metapackage-app
-ms.openlocfilehash: d27c3aa53d6edd235006dc136f09558395e15b6e
-ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
+ms.openlocfilehash: 68b5aca60273a8c6ef03c0a29842e6a5305adeb3
+ms.sourcegitcommit: 517bb1366da2a28b0014e384fa379755c21b47d8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45538448"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47230160"
 ---
 # <a name="microsoftaspnetcoreapp-metapackage-for-aspnet-core-21"></a>ASP.NET Core 2.1 的 Microsoft.AspNetCore.App 元包
 
@@ -45,13 +45,26 @@ ASP.NET Core 的 [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Micro
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
 </Project>
 ```
 
-`Microsoft.AspNetCore.App` 引用上的版本号不保证要使用共享框架的版本。 例如，假设指定的版本是 `2.1.1`，但安装的是 `2.1.3`。 此情况下，应用将使用 `2.1.3`。 不建议如此操作，但你可禁用前滚行为（修补程序和/或次要版本）。 要详细了解包版本前滚行为，请参阅 [dotnet 主机前滚](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md)。
+前面的标记表示典型的 ASP.NET Core 2.1 及更高版本模板。 它不会为 `Microsoft.AspNetCore.App` 包引用指定版本号。 如果未指定版本，SDK 会指定[隐式](https://github.com/dotnet/core/blob/master/release-notes/1.0/sdk/1.0-rc3-implicit-package-refs.md)版本，即 `Microsoft.NET.Sdk.Web`。 建议使用 SDK 指定的隐式版本，而不是在包引用上显式设置版本号。 如果对这种方法有任何疑问，可以在 [Microsoft.AspNetCore.App 隐式版本讨论](https://github.com/aspnet/Docs/issues/6430)上发表 GitHub 评论。
+
+对于便携式应用，隐式版本设置为 `major.minor.0`。 共享框架前滚机制将在安装的共享框架的最新兼容版本上运行应用。 为确保在开发、测试和生产中使用相同的版本，请确保在所有环境中都安装相同版本的共享框架。 对于独立应用，将隐式版本号设置为在已安装的 SDK 中捆绑的共享框架的 `major.minor.patch`。
+
+在 `Microsoft.AspNetCore.App` 引用上指定版本号，不能保证将选择该共享框架版本。 例如，假设指定的版本是“2.1.1”，但安装的是“2.1.3”。 这种情况下，应用将使用"2.1.3"。 不过不建议这样做，你可以禁用前滚（修补程序和/或次要版本）。 有关 dotnet 主机前滚以及如何配置其行为的详细信息，请参阅 [dotnet 主机前滚](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md)。
+
+`<Project Sdk` 必须设置为 `Microsoft.NET.Sdk.Web` 以使用隐式版本 `Microsoft.AspNetCore.App`。  使用 `<Project Sdk="Microsoft.NET.Sdk">`（不带尾随 `.Web`）时：
+
+* 生成以下警告：
+
+     警告 NU1604：项目依赖项 Microsoft.AspNetCore.App 不包括包含下限。请在依赖项版本中包括下限，以确保一致的还原结果。
+* 这是 .NET Core 2.1 SDK 的一个已知问题，将在 .NET Core 2.2 SDK 中修复。
+
+<a name="update"></a>
 
 ## <a name="update-aspnet-core"></a>更新 ASP.NET Core
 

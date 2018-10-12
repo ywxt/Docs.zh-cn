@@ -4,14 +4,14 @@ author: spboyer
 description: 了解如何使用 Visual Studio 2017 工具和 Docker for Windows 来容器化 ASP.NET Core 应用。
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 07/26/2018
+ms.date: 09/12/2018
 uid: host-and-deploy/docker/visual-studio-tools-for-docker
-ms.openlocfilehash: 962c35cb1487dacd93fd78d09e2417ef77387e42
-ms.sourcegitcommit: 75bf5fdbfdcb6a7cfe8fe207b9ff37655ccbacd4
+ms.openlocfilehash: 4bb28e7644997c50c14046bc0c89338fa35a5f14
+ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39275858"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45538474"
 ---
 # <a name="visual-studio-tools-for-docker-with-aspnet-core"></a>使用 ASP.NET Core 的 Visual Studio Tools for Docker
 
@@ -102,6 +102,10 @@ docker-compose.yml 文件引用在项目运行时创建的映像的名称：
 在前面的示例中，应用在“调试”模式下运行时，`image: hellodockertools` 生成映像 `hellodockertools:dev`。 应用在“发布”模式下运行时，生成 `hellodockertools:latest` 映像。
 
 如果将映像推送到注册表，则需要添加 [Docker Hub](https://hub.docker.com/) 用户名（如 `dockerhubusername/hellodockertools`）作为映像名称的前缀名。 或者，更改映像名称，使其包含专用注册表 URL（如 `privateregistry.domain.com/hellodockertools`），具体取决于所用配置。
+
+如果根据生成配置需要不同行为（例如，调试或发布），请添加特定于配置的 docker-compose 文件。 这些文件应根据生成配置进行命名（例如，docker-compose.vs.debug.yml 和 docker compose.vs.release.yml）并放置在与 docker-compose-override.yml 文件相同的位置。 
+
+使用特定于配置的替代文件，可以为调试和发布生成配置指定不同的配置设置（如环境变量或入口点）。
 
 ### <a name="service-fabric"></a>Service Fabric
 
@@ -227,6 +231,7 @@ microsoft/aspnetcore        2.0     c69d39472da9  13 days ago     347MB
 
 ## <a name="additional-resources"></a>其他资源
 
+* [利用 Visual Studio 进行容器开发](/visualstudio/containers)
 * [：准备开发环境](/azure/service-fabric/service-fabric-get-started)
 * [将 Windows 容器中的 .NET 应用部署到 Azure Service Fabric](/azure/service-fabric/service-fabric-host-app-in-a-container)
 * [排查使用 Docker 的 Visual Studio 2017 开发](/azure/vs-azure-tools-docker-troubleshooting-docker-errors)

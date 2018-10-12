@@ -1,33 +1,33 @@
 ---
-title: 带有 Swagger / 开放 API 的 ASP.NET Core Web API 帮助页
+title: 带有 Swagger/OpenAPI 的 ASP.NET Core Web API 帮助页
 author: rsuter
 description: 本教程提供添加 Swagger 以生成文档的演练和针对 Web API 应用的帮助页。
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 03/09/2018
+ms.date: 09/20/2018
 uid: tutorials/web-api-help-pages-using-swagger
-ms.openlocfilehash: 56e146337ad9e94298f72abf5ede009eea65fb46
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 586195e3a29130c0b638ed6763ea5c9032ca6b2b
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272246"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523124"
 ---
-# <a name="aspnet-core-web-api-help-pages-with-swagger--open-api"></a>带有 Swagger / 开放 API 的 ASP.NET Core Web API 帮助页
+# <a name="aspnet-core-web-api-help-pages-with-swagger--openapi"></a>带有 Swagger/OpenAPI 的 ASP.NET Core Web API 帮助页
 
 作者：[Christoph Nienaber](https://twitter.com/zuckerthoben) 和 [Rico Suter](http://rsuter.com)
 
-使用 Web API 时，了解其各种方法对开发人员来说可能是一项挑战。 [Swagger](https://swagger.io/) 也称为开放 API，解决了为 Web API 生成有用文档和帮助页的问题。 它具有诸如交互式文档、客户端 SDK 生成和 API 可发现性等优点。
+使用 Web API 时，了解其各种方法对开发人员来说可能是一项挑战。 [Swagger](https://swagger.io/) 也称为[OpenAPI](https://www.openapis.org/)，解决了为 Web API 生成有用文档和帮助页的问题。 它具有诸如交互式文档、客户端 SDK 生成和 API 可发现性等优点。
 
 本文展示了 [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) 和 [NSwag](https://github.com/RSuter/NSwag) .NET Swagger 实现：
 
 * **Swashbuckle.AspNetCore** 是一个开源项目，用于生成 ASP.NET Core Web API 的 Swagger 文档。
 
-* NSwag 是另一个用于将 [Swagger UI](https://swagger.io/swagger-ui/) 或 [ReDoc](https://github.com/Rebilly/ReDoc) 集成到 ASP.NET Core Web API 中的开源项目。 它提供了为 API 生成 C# 和 TypeScript 客户端代码的方法。
+* **NSwag** 是另一个用于生成 Swagger 文档并将 [Swagger UI](https://swagger.io/swagger-ui/) 或 [ReDoc](https://github.com/Rebilly/ReDoc) 集成到 ASP.NET Core Web API 中的开源项目。 此外，NSwag 还提供了为 API 生成 C# 和 TypeScript 客户端代码的方法。
 
-## <a name="what-is-swagger--open-api"></a>什么是 Swagger / 开放 API？
+## <a name="what-is-swagger--openapi"></a>什么是 Swagger/OpenAPI？
 
-Swagger 是一个与语言无关的规范，用于描述 [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) API。 Swagger 项目已捐赠给 [OpenAPI 计划](https://www.openapis.org/)，现在它被称为开放 API。 这两个名称可互换使用，但开放 API 是首选。 它允许计算机和人员了解服务的功能，而无需直接访问实现（源代码、网络访问、文档）。 其中一个目标是尽量减少连接取消关联的服务所需的工作量。 另一个目标是减少准确记录服务所需的时间。
+Swagger 是一个与语言无关的规范，用于描述 [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) API。 Swagger 项目已捐赠给 [OpenAPI 计划](https://www.openapis.org/)，现在它被称为开放 API。 这两个名称可互换使用，但 OpenAPI 是首选。 它允许计算机和人员了解服务的功能，而无需直接访问实现（源代码、网络访问、文档）。 其中一个目标是尽量减少连接取消关联的服务所需的工作量。 另一个目标是减少准确记录服务所需的时间。
 
 ## <a name="swagger-specification-swaggerjson"></a>Swagger 规范 (swagger.json)
 

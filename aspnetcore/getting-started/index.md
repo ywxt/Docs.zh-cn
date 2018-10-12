@@ -6,14 +6,16 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/31/2018
 uid: getting-started
-ms.openlocfilehash: 7ab9f303d74786c4ac76f002d0f2c66371e78cb8
-ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
+ms.openlocfilehash: a6a5023594aec01370143e7d1f35fb45c109122a
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39228577"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860935"
 ---
 # <a name="get-started-with-aspnet-core"></a>ASP.NET Core 入门
+
+本文档提供了用于创建和运行 ASP.NET Core 应用的步骤。
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -21,55 +23,57 @@ ms.locfileid: "39228577"
 
 2. 创建 ASP.NET Core 项目。 打开命令行界面，输入以下命令：
 
-    ```console
-    dotnet new webapp -o aspnetcoreapp
-    ```
-
-    [!INCLUDE [](~/includes/webapp-alias-notice.md)]
+   ```console
+   dotnet new webapp -o aspnetcoreapp
+   ```
 
 3. 信任 HTTPS 开发证书：
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-    ```console
-    dotnet dev-certs https --trust
-    ```
+  ```console
+  dotnet dev-certs https --trust
+  ```
 
-   以上命令会显示以下对话：
+  以上命令会显示以下对话：
 
-   ![安全警告对话](_static/cert.png)
+  ![安全警告对话](_static/cert.png)
 
-   如果你同意信任开发证书，请选择“是”。
+  如果你同意信任开发证书，请选择“是”。
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-    ```console
-    dotnet dev-certs https --trust
-    ```
+  ```console
+  dotnet dev-certs https --trust
+  ```
 
-   以上命令会显示以下消息：
+  以上命令会显示以下消息：
 
-   *请求信任 HTTPS 开发证书。如果尚未信任该证书，将运行以下命令：*`'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'`*此命令可能提醒你输入密码，已在系统密钥链上安装该证书。  密码：*
+  *请求信任 HTTPS 开发证书。如果证书尚不受信任，我们将运行以下命令：* `'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'`。  
+  *此命令可能会提示你输入密码以在系统密钥链上安装证书。
+  
+  密码：*
 
-   如果你同意信任开发证书，请输入密码。
+  如果你同意信任开发证书，请输入密码。
 
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
-   <a name="see-the-documentation-for-your-linux-distribution-on-how-to-trust-the-https-development-certificate"></a>查看你的 Linux 分发对应的文档，了解如何信任 HTTPS 开发证书
+  查看你的 Linux 分发对应的文档，了解如何信任 HTTPS 开发证书。
+   
 ---
 
 4. 运行应用：
 
-    ```console
-    cd aspnetcoreapp
-    dotnet run
-    ```
+   ```console
+   cd aspnetcoreapp
+   dotnet run
+   ```
 
 5. 浏览到 [http://localhost:5001](http://localhost:5001)。  单击“接受”，接受隐私和 cookie 政策。 此应用不保留个人信息。
 
 6. 打开 Pages/About.cshtml，使用以下突出显示标记修改该页面：
 
-    [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9)]
+   [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9)]
 
 7. 浏览到 [http://localhost:5001/About](http://localhost:5001/About) 并验证是否显示更改。
 
@@ -85,22 +89,22 @@ ms.locfileid: "39228577"
 
    打开命令行界面。 输入以下命令：
 
-    ```console
-    dotnet new razor -o aspnetcoreapp
-    ```
+   ```console
+   dotnet new razor -o aspnetcoreapp
+   ```
 
 3. 使用以下命令运行应用：
 
-    ```console
-    cd aspnetcoreapp
-    dotnet run
-    ```
+   ```console
+   cd aspnetcoreapp
+   dotnet run
+   ```
 
 4. 浏览到 [http://localhost:5000](http://localhost:5000)。
 
 5. 打开 Pages/About.cshtml 并将页面修改为显示消息“Hello, world! The time on the server is @DateTime.Now” ：
 
-    [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9&range=1-9)]
+   [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9&range=1-9)]
 
 6. 浏览到 [http://localhost:5000/About](http://localhost:5000/About) 并验证更改。
 
@@ -137,9 +141,9 @@ ms.locfileid: "39228577"
 
 5. 还原程序包。
 
-    ```console
-    dotnet restore
-    ```
+   ```console
+   dotnet restore
+   ```
 
 6. 运行应用。
 
@@ -152,4 +156,5 @@ ms.locfileid: "39228577"
 7. 浏览到 `http://localhost:5000`。
 
 [!INCLUDE [next steps](~/includes/getting-started/next-steps.md)]
+
 ::: moniker-end

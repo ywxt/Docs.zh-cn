@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/21/2018
 uid: fundamentals/middleware/index
-ms.openlocfilehash: e6dc76b7cb80e0dfda102df5aefb5d9ce9b821ed
-ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
+ms.openlocfilehash: 84e79df7fcf5790e658a20c80f21d73cdc76c054
+ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43055801"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46483004"
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 中间件
 
@@ -58,14 +58,18 @@ ASP.NET Core 请求管道包含一系列请求委托，依次调用。 下图演
 
 向 `Startup.Configure` 方法添加中间件组件的顺序定义了针对请求调用这些组件的顺序，以及响应的相反顺序。 此排序对于安全性、性能和功能至关重要。
 
-以下 `Configure` 方法会添加以下中间件组件：
-
-1. 异常/错误处理
-2. 静态文件服务器
-3. 身份验证
-4. MVC
+以下 `Startup.Configure` 方法将为常见应用方案添加中间件组件：
 
 ::: moniker range=">= aspnetcore-2.0"
+
+1. 异常/错误处理
+1. HTTP 严格传输安全协议
+1. HTTPS 重定向
+1. 静态文件服务器
+1. Cookie 策略实施
+1. 身份验证
+1. 会话
+1. MVC
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -96,11 +100,15 @@ public void Configure(IApplicationBuilder app)
     app.UseStaticFiles();
 
     // Use Cookie Policy Middleware to conform to EU General Data 
-    //   Protection Regulation (GDPR) regulations.
+    // Protection Regulation (GDPR) regulations.
     app.UseCookiePolicy();
 
     // Authenticate before the user accesses secure resources.
     app.UseAuthentication();
+
+    // If the app uses session state, call Session Middleware after Cookie 
+    // Policy Middleware and before MVC Middleware.
+    app.UseSession();
 
     // Add MVC to the request pipeline.
     app.UseMvc();
@@ -110,6 +118,12 @@ public void Configure(IApplicationBuilder app)
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
+
+1. 异常/错误处理
+1. 静态文件
+1. 身份验证
+1. 会话
+1. MVC
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -123,6 +137,10 @@ public void Configure(IApplicationBuilder app)
 
     // Authenticate before you access secure resources.
     app.UseIdentity();
+
+    // If the app uses session state, call UseSession before 
+    // MVC Middleware.
+    app.UseSession();
 
     // Add MVC to the request pipeline.
     app.UseMvcWithDefaultRoute();
@@ -173,12 +191,12 @@ public void Configure(IApplicationBuilder app)
 
 | 请求             | 响应                     |
 | ------------------- | ---------------------------- |
-| localhost:1234      | Hello from non-Map delegate.  |
+| localhost:1234      | Hello from non-Map delegate. |
 | localhost:1234/map1 | Map Test 1                   |
 | localhost:1234/map2 | Map Test 2                   |
 | localhost:1234/map3 | Hello from non-Map delegate. |
 
-使用 `Map` 时，将从 `HttpRequest.Path` 中删除匹配的线段，并针对每个请求将该线段追加到 `HttpRequest.PathBase`。
+使用 `Map` 时，将从 `HttpRequest.Path` 中删除匹配的路径段，并针对每个请求将该路径段追加到 `HttpRequest.PathBase`。
 
 [MapWhen](/dotnet/api/microsoft.aspnetcore.builder.mapwhenextensions) 基于给定谓词的结果创建请求管道分支。 `Func<HttpContext, bool>` 类型的任何谓词均可用于将请求映射到管道的新分支。 在以下示例中，谓词用于检测查询字符串变量 `branch` 是否存在：
 
@@ -215,12 +233,13 @@ ASP.NET Core 附带以下中间件组件。 顺序列提供备注，说明中间
 | 中间件 | 描述 | 顺序 |
 | ---------- | ----------- | ----- |
 | [身份验证](xref:security/authentication/identity) | 提供身份验证支持。 | 在需要 `HttpContext.User` 之前。 OAuth 回叫的终端。 |
+| [Cookie 策略](xref:security/gdpr) | 跟踪用户是否同意存储个人信息，并强制实施 cookie 字段（如 `secure` 和 `SameSite`）的最低标准。 | 在发出 cookie 的中间件之前。 示例：身份验证、会话、MVC (TempData)。 |
 | [CORS](xref:security/cors) | 配置跨域资源共享。 | 在使用 CORS 的组件之前。 |
 | [诊断](xref:fundamentals/error-handling) | 配置诊断。 | 在生成错误的组件之前。 |
-| [转接头](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions) | 将代理标头转发到当前请求。 | 在使用更新的字段（示例：架构、主机、客户端 IP、方法）的组件之前。 |
+| [转接头](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions) | 将代理标头转发到当前请求。 | 在使用已更新字段的组件之前。 示例：方案、主机、客户端 IP、方法。 |
 | [HTTP 方法重写](/dotnet/api/microsoft.aspnetcore.builder.httpmethodoverrideextensions) | 允许传入 POST 请求重写方法。 | 在使用已更新方法的组件之前。 |
 | [HTTPS 重定向](xref:security/enforcing-ssl#require-https) | 将所有 HTTP 请求重定向到 HTTPS（ASP.NET Core 2.1 或更高版本）。 | 在使用 URL 的组件之前。 |
-| [HTTP 严格传输安全性 (HSTS)](xref:security/enforcing-ssl#http-strict-transport-security-protocol-hsts) | 添加特殊响应标头的安全增强中间件（ASP.NET Core 2.1 或更高版本）。 | 在发送响应之前，修改请求的组件（例如转接头、URL 重写）之后。 |
+| [HTTP 严格传输安全性 (HSTS)](xref:security/enforcing-ssl#http-strict-transport-security-protocol-hsts) | 添加特殊响应标头的安全增强中间件（ASP.NET Core 2.1 或更高版本）。 | 在发送响应之前，修改请求的组件之后。 示例：转接头、URL 重写。 |
 | [MVC](xref:mvc/overview) | 用 MVC/Razor Pages 处理请求（ASP.NET Core 2.0 或更高版本）。 | 如果请求与路由匹配，则为终端。 |
 | [OWIN](xref:fundamentals/owin) | 与基于 OWIN 的应用、服务器和中间件进行互操作。 | 如果 OWIN 中间件处理完请求，则为终端。 |
 | [响应缓存](xref:performance/caching/middleware) | 提供对缓存响应的支持。 | 在需要缓存的组件之前。 |

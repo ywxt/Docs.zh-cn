@@ -4,14 +4,14 @@ author: rick-anderson
 description: 发现适用于 ASP.NET Core 的 Web 服务器 Kestrel 和 HTTP.sys。 了解如何选择服务器以及何时使用反向代理服务器。
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 03/13/2018
+ms.date: 09/13/2018
 uid: fundamentals/servers/index
-ms.openlocfilehash: bb0331d7201d4e979e6c6524cbf630280c4eaeb6
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 0f1460af5bc1cd879ff11e43775ac16ca36b150e
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274438"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011750"
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>ASP.NET Core 中的 Web 服务器实现
 
@@ -28,7 +28,7 @@ ASP.NET Core 交付两种服务器实现：
 
 Kestrel 是 ASP.NET Core 项目模板中包括的默认 Web 服务器。
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 Kestrel 可以单独使用，也可以与反向代理服务器（如 IIS、Nginx 或 Apache）一起使用。 反向代理服务器接收到来自 Internet 的 HTTP 请求，并在进行一些初步处理后将这些请求转发到 Kestrel。
 
@@ -38,7 +38,9 @@ Kestrel 可以单独使用，也可以与反向代理服务器（如 IIS、Nginx
 
 使用或不使用反向代理服务器进行配置对 ASP.NET Core 2.0 或更高版本的应用来说都是有效且受支持的托管配置。 有关详细信息，请参阅[何时结合使用 Kestrel 和反向代理](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)。
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 如果应用仅接受来自内部网络的请求，则可单独使用 Kestrel。
 
@@ -52,7 +54,7 @@ Kestrel 可以单独使用，也可以与反向代理服务器（如 IIS、Nginx
 
 有关详细信息，请参阅[何时结合使用 Kestrel 和反向代理](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)。
 
----
+::: moniker-end
 
 在没有 Kestrel 或[自定义服务器实现](#custom-servers)的情况下，不能使用 IIS、Nginx 和 Apache。 ASP.NET Core 设计为在其自己的进程中运行，以实现跨平台统一操作。 IIS、Nginx 和 Apache 规定自己的启动过程和环境。 若要直接使用这些服务器技术，ASP.NET Core 必须满足每个服务器的需求。 使用 Kestrel 等 Web 服务器实现时，ASP.NET Core 可以控制托管在不同服务器技术上的启动过程和环境。
 
@@ -70,27 +72,29 @@ Kestrel 可以单独使用，也可以与反向代理服务器（如 IIS、Nginx
 
 ## <a name="httpsys"></a>HTTP.sys
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
-如果 ASP.NET Core 应用在 Windows 上运行，则 HTTP.sys 是 Kestrel 的替代选项。 为了获得最佳性能，通常建议使用 Kestrel。 在向 Internet 公开应用且所需功能受 HTTP.sys 支持（而不是 Kestrel）的方案中，可以使用 HTTP.sys。 有关 HTTP.sys 功能的信息，请参阅 [HTTP.sys](xref:fundamentals/servers/httpsys)。
+如果 ASP.NET Core 应用在 Windows 上运行，则 HTTP.sys 是 Kestrel 的替代选项。 为了获得最佳性能，通常建议使用 Kestrel。 在应用向 Internet 公开且所需功能受 HTTP.sys（而不是 Kestrel）支持的方案中，可以使用 HTTP.sys。 有关 HTTP.sys 的信息，请参阅 [HTTP.sys](xref:fundamentals/servers/httpsys)。
 
 ![HTTP.sys 直接与 Internet 进行通信](httpsys/_static/httpsys-to-internet.png)
 
-对于仅向内部网络公开的应用，HTTP.sys 同样适用。 
+对于仅向内部网络公开的应用，HTTP.sys 同样适用。
 
 ![HTTP.sys 直接与内部网络进行通信](httpsys/_static/httpsys-to-internal.png)
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 HTTP.sys 在 ASP.NET Core 1.x 中被命名为 [WebListener](xref:fundamentals/servers/weblistener)。 对于 IIS 不可用于托管应用的方案，如果 ASP.NET Core 应用在 Windows 上运行，则 WebListener 可用作替代选项。
 
 ![Weblistener 直接与 Internet 进行通信](weblistener/_static/weblistener-to-internet.png)
 
-如果所需功能受 WebListener 支持（而不是 Kestrel），则对于仅向内部网络公开的应用而言，还可以使用 WebListener 来替代 Kestrel。 有关 WebListener 功能的信息，请参阅 [WebListener](xref:fundamentals/servers/weblistener)。
+如果所需功能受 WebListener（而不是 Kestrel）支持，则对于仅向内部网络公开的应用而言，还可以使用 WebListener 来替代 Kestrel。 有关 WebListener 的信息，请参阅 [WebListener](xref:fundamentals/servers/weblistener)。
 
 ![Weblistener 直接与内部网络进行通信](weblistener/_static/weblistener-to-internal.png)
 
----
+::: moniker-end
 
 ## <a name="aspnet-core-server-infrastructure"></a>ASP.NET Core 服务器基础结构
 
@@ -108,10 +112,51 @@ HTTP.sys 在 ASP.NET Core 1.x 中被命名为 [WebListener](xref:fundamentals/se
 
 从项目文件夹中的命令提示符启动应用时，[dotnet run](/dotnet/core/tools/dotnet-run) 会启动该应用和服务器（仅 Kestrel 和 HTTP.sys）。 可通过 `-c|--configuration` 选项指定此配置，该选项设置为 `Debug`（默认值）或 `Release`。 如果启动配置文件位于 launchSettings.json 文件中，请使用 `--launch-profile <NAME>` 选项设置启动配置文件（例如 `Development` 或 `Production`）。 有关详细信息，请参阅 [dotnet run](/dotnet/core/tools/dotnet-run) 和 [.NET Core 分发打包](/dotnet/core/build/distribution-packaging)主题。
 
+## <a name="http2-support"></a>HTTP/2 支持
+
+以下部署方案中的 ASP.NET Core 支持 [HTTP/2](https://httpwg.org/specs/rfc7540.html)：
+
+::: moniker range=">= aspnetcore-2.2"
+
+* [Kestrel](xref:fundamentals/servers/kestrel#http2-support)
+  * 操作系统
+    * Windows Server 2012 R2/Windows 8.1 或更高版本
+    * 具有 OpenSSL 1.0.2 或更高版本的 Linux（例如，Ubuntu 16.04 或更高版本）
+    * macOS 的未来版本将支持 HTTP/2。
+  * 目标框架：.NET Core 2.2 或更高版本
+* [HTTP.sys](xref:fundamentals/servers/httpsys#http2-support)
+  * Windows Server 2016/Windows 10 或更高版本
+  * 目标框架：不适用于 HTTP.sys 部署。
+* [IIS（进程内）](xref:host-and-deploy/iis/index#http2-support)
+  * Windows Server 2016/Windows 10 或更高版本；IIS 10 或更高版本
+  * 目标框架：.NET Core 2.2 或更高版本
+* [IIS（进程外）](xref:host-and-deploy/iis/index#http2-support)
+  * Windows Server 2016/Windows 10 或更高版本；IIS 10 或更高版本
+  * 边缘连接使用 HTTP/2，但与 Kestrel 的反向代理连接使用 HTTP/1.1。
+  * 目标框架：不适用于 IIS 进程外部署。
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+* [HTTP.sys](xref:fundamentals/servers/httpsys#http2-support)
+  * Windows Server 2016/Windows 10 或更高版本
+  * 目标框架：不适用于 HTTP.sys 部署。
+* [IIS（进程外）](xref:host-and-deploy/iis/index#http2-support)
+  * Windows Server 2016/Windows 10 或更高版本；IIS 10 或更高版本
+  * 边缘连接使用 HTTP/2，但与 Kestrel 的反向代理连接使用 HTTP/1.1。
+  * 目标框架：不适用于 IIS 进程外部署。
+
+::: moniker-end
+
+HTTP/2 连接必须使用[应用程序层协议协商 (ALPN)](https://tools.ietf.org/html/rfc7301#section-3) 和 TLS 1.2 或更高版本。 有关详细信息，请参阅与服务器部署方案相关的主题。
+
 ## <a name="additional-resources"></a>其他资源
 
-* [Kestrel](xref:fundamentals/servers/kestrel)
-* [Kestrel 与 IIS](xref:fundamentals/servers/aspnet-core-module)
-* [在 Linux 上使用 Nginx 进行托管](xref:host-and-deploy/linux-nginx)
-* [在 Linux 上使用 Apache 进行托管](xref:host-and-deploy/linux-apache)
-* [HTTP.sys](xref:fundamentals/servers/httpsys)（对于 ASP.NET Core 1.x，请参阅 [WebListener](xref:fundamentals/servers/weblistener)）
+* <xref:fundamentals/servers/kestrel>
+* <xref:fundamentals/servers/aspnet-core-module>
+* <xref:host-and-deploy/iis/index>
+* <xref:host-and-deploy/azure-apps/index>
+* <xref:host-and-deploy/linux-nginx>
+* <xref:host-and-deploy/linux-apache>
+* <xref:fundamentals/servers/httpsys>（对于 ASP.NET Core 1.x，请参阅 <xref:fundamentals/servers/weblistener>）

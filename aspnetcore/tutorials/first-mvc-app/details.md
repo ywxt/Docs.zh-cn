@@ -5,12 +5,12 @@ description: 了解基本 ASP.NET Core MVC 应用中的详细信息控制器方�
 ms.author: riande
 ms.date: 03/07/2017
 uid: tutorials/first-mvc-app/details
-ms.openlocfilehash: c3fb7ae9507d13f3b8c7d366e333151dc7a7a6d3
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: ce5b2af148ddba9bc718345c0b8074da8724308d
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011415"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454799"
 ---
 # <a name="examine-the-details-and-delete-methods-of-an-aspnet-core-app"></a>检查 ASP.NET Core 应用的 Details 和 Delete 方法
 
@@ -73,7 +73,7 @@ public async Task<IActionResult> Delete(int id, bool notUsed)
 
 ### <a name="publish-to-azure"></a>发布到 Azure
 
-有关如何使用 Visual Studio 将该应用发布到 Azure 的说明，请参阅[使用 Visual Studio 将 ASP.NET Core Web 应用发布到 Azure App Service](xref:tutorials/publish-to-azure-webapp-using-vs)。  此外，还可以从[命令行](xref:tutorials/publish-to-azure-webapp-using-cli)发布应用。
+有关部署到 Azure 的信息，请参阅[教程：使用 SQL 数据库在 Azure 中生成 ASP.NET 应用](/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase)。 此说明适用于 ASP.NET 应用，而不适用于 ASP.NET Core 应用，但步骤均相同。
 
 > [!div class="step-by-step"]
 > [上一篇](validation.md)

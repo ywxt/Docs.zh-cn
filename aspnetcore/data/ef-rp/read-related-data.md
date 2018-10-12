@@ -5,12 +5,12 @@ description: 在本教程中，将读取并显示相关数据 - 即 Entity Frame
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: bb1d087a5449c6e26c40e572d161dd9644ac2323
-ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
+ms.openlocfilehash: f57853fae7fb1cb7df130f38a6996c87a5c08e83
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39219337"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523280"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 读取相关数据 - 第 6 个教程（共 8 个）
 
@@ -20,7 +20,7 @@ ms.locfileid: "39219337"
 
 在本教程中，将读取和显示相关数据。 相关数据为 EF Core 加载到导航属性中的数据。
 
-如果遇到无法解决的问题，请下载[本阶段的已完成应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part6-related)。
+如果遇到无法解决的问题，请[下载或查看已完成的应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples)。 [下载说明](xref:tutorials/index#how-to-download-a-sample)。
 
 下图显示了本教程中已完成的页面：
 

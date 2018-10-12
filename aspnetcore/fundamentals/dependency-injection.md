@@ -6,18 +6,18 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/02/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: b9c322e56c0902c2a78bbbf2563dd01ce79fdc9a
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: 50986eeb4c5c8b06c739ee9f860665b877853d78
+ms.sourcegitcommit: 517bb1366da2a28b0014e384fa379755c21b47d8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927892"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47230186"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>在 ASP.NET Core 依赖注入
 
 作者：[Steve Smith](https://ardalis.com/)、[Scott Addie](https://scottaddie.com) 和 [Luke Latham](https://github.com/guardrex)
 
-ASP.NET Core 支持依赖关系注入 (DI) 软件设计模式，这是一种在类及其依赖关系之间实现[控制反转 (IoC)](https://deviq.com/inversion-of-control/) 的技术。
+ASP.NET Core 支持依赖关系注入 (DI) 软件设计模式，这是一种在类及其依赖关系之间实现[控制反转 (IoC)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) 的技术。
 
 有关特定于 MVC 控制器中依赖关系注入的详细信息，请参阅 <xref:mvc/controllers/dependency-injection>。
 
@@ -243,7 +243,7 @@ public void ConfigureServices(IServiceCollection services)
 服务可以通过两种机制来解析：
 
 * `IServiceProvider`
-* [ActivatorUtilities](/dotnet/api/microsoft.extensions.dependencyinjection.activatorutilities) &ndash; 允许在依赖关系注入容器中创建没有服务注册的对象。 `ActivatorUtilities` 用于面向用户的抽象，例如标记帮助器、MVC 控制器、SignalR 集线器和模型绑定器。
+* [ActivatorUtilities](/dotnet/api/microsoft.extensions.dependencyinjection.activatorutilities) &ndash; 允许在依赖关系注入容器中创建没有服务注册的对象。 `ActivatorUtilities` 用于面向用户的抽象，例如标记帮助器、MVC 控制器和模型绑定器。
 
 构造函数可以接受依赖关系注入不提供的参数，但参数必须分配默认值。
 
@@ -442,7 +442,7 @@ public static void Main(string[] args)
 
 遵循[面向对象设计的 SOLID 原则](https://deviq.com/solid/)，往往会获得构造良好且易于测试的小型类。
 
-如果一个类似乎有过多的注入依赖关系，这通常表明该类拥有过多的责任并且违反了[单一责任原则 (SRP)](https://deviq.com/single-responsibility-principle/)。 尝试通过将某些职责移动到一个新类来重构类。 请记住，Razor Pages 页模型类和 MVC 控制器类应关注用户界面问题。 业务规则和数据访问实现细节应保留在适用于这些[分离的关注点](https://deviq.com/separation-of-concerns/)的类中。
+如果一个类似乎有过多的注入依赖关系，这通常表明该类拥有过多的责任并且违反了[单一责任原则 (SRP)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#single-responsibility)。 尝试通过将某些职责移动到一个新类来重构类。 请记住，Razor Pages 页模型类和 MVC 控制器类应关注用户界面问题。 业务规则和数据访问实现细节应保留在适用于这些[分离的关注点](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#separation-of-concerns)的类中。
 
 ### <a name="disposal-of-services"></a>服务处理
 
@@ -563,6 +563,7 @@ public void ConfigureServices(IServiceCollection services)
 * <xref:fundamentals/middleware/extensibility>
 * [在 ASP.NET Core 中使用依赖关系注入编写干净代码 (MSDN) ](https://msdn.microsoft.com/magazine/mt703433.aspx)
 * [Container-Managed Application Design, Prelude: Where does the Container Belong?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)（容器托管的应用程序设计，序言：容器属于何处？）
-* [Explicit Dependencies Principle](https://deviq.com/explicit-dependencies-principle/)（显式依赖关系原则）
+* [Explicit Dependencies Principle](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)（显式依赖关系原则）
 * [控制反转容器和依赖关系注入模式 (Martin Fowler)](https://www.martinfowler.com/articles/injection.html)
 * [New 具有粘附性（将代码“粘附”到特定的实现）](https://ardalis.com/new-is-glue)
+* [如何在 ASP.NET Core DI 中注册具有多个接口的服务](https://andrewlock.net/how-to-register-a-service-with-multiple-interfaces-for-in-asp-net-core-di/)

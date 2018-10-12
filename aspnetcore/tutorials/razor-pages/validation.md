@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: e27253e3f02fa808136494ed5373059ef6e0df0d
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 6144bfb9e731ace51b4f23870fdb06519fd4a9ea
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011581"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47211021"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>将验证添加到 ASP.NET Core Razor 页面
 
@@ -160,7 +160,7 @@ public DateTime ReleaseDate { get; set; }
 
 ### <a name="publish-to-azure"></a>发布到 Azure
 
-有关如何将该应用发布到 Azure 的说明，请参阅[使用 Visual Studio 将 ASP.NET Core Web 应用发布到 Azure App Service](xref:tutorials/publish-to-azure-webapp-using-vs)。
+有关部署到 Azure 的信息，请参阅[教程：使用 SQL 数据库在 Azure 中生成 ASP.NET 应用](/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase)。 此指令适用于 ASP.NET 应用，而不适用于 ASP.NET Core 应用，但步骤均相同。
 
 感谢读完这篇 Razor 页面简介。 我们非常感谢你的反馈。 [Razor Pages 和 EF Core 入门](xref:data/ef-rp/intro)是本教程的优选后续教程。
 

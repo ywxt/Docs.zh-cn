@@ -4,14 +4,14 @@ author: guardrex
 description: 了解如何在 Windows 服务中托管 ASP.NET Core 应用。
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 06/04/2018
+ms.date: 09/25/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 68afe77b05a717cffecc32188f18e9fde208b81f
-ms.sourcegitcommit: 3ca20ed63bf1469f4365f0c1fbd00c98a3191c84
+ms.openlocfilehash: eb88b0bb2e9ce4cfd3a7db2081ad7d62d5dcb08e
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41751524"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47211034"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>在 Windows 服务中托管 ASP.NET Core
 
@@ -21,13 +21,13 @@ ms.locfileid: "41751524"
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
-## <a name="get-started"></a>入门
+## <a name="convert-a-project-into-a-windows-service"></a>将项目转换为 Windows 服务
 
-要将现有 ASP.NET Core 项目设置为在服务中运行，需要执行以下最小更改：
+要将现有 ASP.NET Core 项目设置为作为服务运行，至少需要执行以下更改：
 
 1. 在项目文件中：
 
-   1. 确认是否存在运行时标识符，或将其添加到包含目标框架的 \<PropertyGroup> 中：
+   * 确认是否存在 Windows [运行时标识符 (RID)](/dotnet/core/rid-catalog)，或将其添加到包含目标框架的 `<PropertyGroup>` 中：
 
       ::: moniker range=">= aspnetcore-2.1"
 
@@ -62,7 +62,14 @@ ms.locfileid: "41751524"
 
       ::: moniker-end
 
-   1. 为 [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/) 添加包引用。
+      要发布多个 RID：
+
+      * 通过以分号分隔的列表提供 RID。
+      * 使用属性名称 `<RuntimeIdentifiers>`（复数）。
+
+      有关详细信息，请参阅 [.NET Core RID 目录](/dotnet/core/rid-catalog)。
+
+   * 为 [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices) 添加包引用。
 
 1. 在 `Program.Main` 中，进行下列更改：
 
@@ -84,10 +91,10 @@ ms.locfileid: "41751524"
 
 1. 发布应用。 使用 [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) 或 [Visual Studio 发布配置文件](xref:host-and-deploy/visual-studio-publish-profiles)。 使用 Visual Studio 时，请选择 FolderProfile。
 
-   要从命令行发布示例应用，请从项目文件夹中的控制台窗口中运行以下命令：
+   要使用命令行接口 (CLI) 工具发布示例应用，请在项目文件夹的命令提示符处运行 [dotnet publish](/dotnet/core/tools/dotnet-publish) 命令。 必须在项目文件的 `<RuntimeIdenfifier>`（或 `<RuntimeIdentifiers>`）属性中指定 RID。 在以下示例中，应用在 `win7-x64` 运行时的发布配置中发布：
 
    ```console
-   dotnet publish --configuration Release
+   dotnet publish --configuration Release --runtime win7-x64
    ```
 
 1. 使用 [sc.exe](https://technet.microsoft.com/library/bb490995) 命令行工具创建服务。 `binPath` 值是应用的可执行文件的路径，其中包括可执行文件的文件名。 等于号和路径开头的引号字符之间需要添加空格。
@@ -98,7 +105,7 @@ ms.locfileid: "41751524"
 
    对于项目文件夹中发布的服务，请使用 publish 文件夹的路径创建服务。 如下示例中：
 
-   * 项目驻留在 `c:\my_services\AspNetCoreService` 文件夹中。
+   * 该项目位于 c:\\my_services\\AspNetCoreService 文件夹中。
    * 项目在 `Release` 配置中发布。
    * 目标框架名字对象 (TFM) 为 `netcoreapp2.1`。
    * 运行时标识符 (RID) 为 `win7-x64`。
@@ -110,14 +117,14 @@ ms.locfileid: "41751524"
    ```console
    sc create MyService binPath= "c:\my_services\AspNetCoreService\bin\Release\netcoreapp2.1\win7-x64\publish\AspNetCoreService.exe"
    ```
-   
+
    > [!IMPORTANT]
    > 确保 `binPath=` 参数与其值之间存在空格。
-   
+
    从其他文件夹发布和启动服务：
-   
-      1. 使用 `dotnet publish` 命令上的 [--output &lt;OUTPUT_DIRECTORY&gt;](/dotnet/core/tools/dotnet-publish#options) 选项。 如果使用 Visual Studio，请在“FolderProfile”发布属性页面中配置“目标位置”，然后再选择“发布”按钮。
-   1. 通过使用输出文件夹路径的 `sc.exe` 命令创建服务。 在向 `binPath` 提供的路径中包含服务可执行文件的名称。
+
+      * 使用 `dotnet publish` 命令上的 [--output &lt;OUTPUT_DIRECTORY&gt;](/dotnet/core/tools/dotnet-publish#options) 选项。 如果使用 Visual Studio，请在“FolderProfile”发布属性页面中配置“目标位置”，然后再选择“发布”按钮。
+      * 通过使用输出文件夹路径的 `sc.exe` 命令创建服务。 在向 `binPath` 提供的路径中包含服务可执行文件的名称。
 
 1. 使用 `sc start <SERVICE_NAME>` 命令启动服务。
 
@@ -129,7 +136,7 @@ ms.locfileid: "41751524"
 
    此命令需要几秒钟才能启动服务。
 
-1. `sc query <SERVICE_NAME>` 命令可用于检查并确定服务状态：
+1. 要检查服务的状态，请使用 `sc query <SERVICE_NAME>` 命令。 状态报告为以下值之一：
 
    * `START_PENDING`
    * `RUNNING`
@@ -168,7 +175,7 @@ ms.locfileid: "41751524"
    sc delete MyService
    ```
 
-## <a name="provide-a-way-to-run-outside-of-a-service"></a>提供在服务之外运行的方法
+## <a name="run-the-app-outside-of-a-service"></a>在服务之外运行应用
 
 在服务之外运行时更便于进行测试和调试，因此通常仅在特定情况下添加调用 `RunAsService` 的代码。 例如，应用可以使用 `--console` 命令行参数或在已附加调试器时作为控制台应用运行：
 
@@ -232,7 +239,7 @@ ms.locfileid: "41751524"
 
 ## <a name="current-directory-and-content-root"></a>当前目录和内容根
 
-通过为 Windows 服务调用 `Directory.GetCurrentDirectory()` 返回的当前工作目录是 C:\WINDOWS\system32 文件夹。 system32 文件夹不是存储服务文件（如设置文件）的合适位置。 使用 [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder) 时，通过以下某种方法使用 [FileConfigurationExtensions.SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath) 维护和访问服务的资产和设置文件：
+通过为 Windows 服务调用 `Directory.GetCurrentDirectory()` 返回的当前工作目录是 C:\\WINDOWS\\system32 文件夹。 system32 文件夹不是存储服务文件（如设置文件）的合适位置。 使用 [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder) 时，通过以下某种方法使用 [FileConfigurationExtensions.SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath) 维护和访问服务的资产和设置文件：
 
 * 使用内容根路径。 `IHostingEnvironment.ContentRootPath` 是创建服务时提供给 `binPath` 参数的同一路径。 不要使用 `Directory.GetCurrentDirectory()` 创建设置文件的路径，而是使用内容根路径并在应用的内容根中维护文件。
 * 将文件存储在磁盘中的合适位置。 使用 `SetBasePath` 指定到包含文件的文件夹的绝对路径。

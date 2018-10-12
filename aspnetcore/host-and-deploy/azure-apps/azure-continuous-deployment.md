@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/14/2016
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: 3470d9278574a95115b14f25b90a0a93bb3b8a67
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 5ae8ce01610828417fc76ed6626e518c8493bd0f
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751561"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340194"
 ---
 # <a name="continuous-deployment-to-azure-with-visual-studio-and-git-with-aspnet-core"></a>使用 Visual Studio 和 Git 将 ASP.NET Core 持续部署到 Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "41751561"
 
 本教程演示如何使用 Visual Studio 创建 ASP.NET Core Web 应用并使用持续部署将其从 Visual Studio 部署到 Azure 应用服务。
 
-另请参阅 [Use VSTS to Build and Publish to an Azure Web App with Continuous Deployment](/vsts/build-release/archive/apps/aspnet/aspnet-4-ci-cd-azure-automatic)（使用 VSTS 生成并通过持续部署发布到 Azure Web 应用），其中演示如何使用 Visual Studio Team Services 为 [Azure App Service](/azure/app-service/app-service-web-overview) 配置持续交付 (CD) 工作流。 Team Services 中的 Azure 持续交付简化了用于为 Azure App Service 内托管的应用发布更新的可靠部署管道的设置。 可以从 Azure 门户配置管道以生成、运行测试、部署到过渡槽，然后部署到生产。
+另请参阅[使用 Azure Pipelines 创建你的第一个管道](/azure/devops/pipelines/get-started-yaml)，该文档介绍如何使用 Azure DevOps Services 为 [Azure 应用服务](/azure/app-service/app-service-web-overview)配置持续交付 (CD) 工作流。 Azure Pipelines（一种 Azure DevOps Services 服务）简化了可靠部署管道的设置，便于为 Azure 应用服务内托管的应用发布更新。 可以从 Azure 门户配置管道以生成、运行测试、部署到过渡槽，然后部署到生产。
 
 > [!NOTE]
 > 若要完成本教程，需要一个 Microsoft Azure 帐户。 要获取帐户，可[激活 MSDN 订阅者权益](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A261C142F)或[注册免费试用版](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
@@ -228,5 +228,5 @@ Git 是一个分布式版本控制系统，可用来部署 Azure App Service Web
 
 ## <a name="additional-resources"></a>其他资源
 
-* [使用 VSTS 通过持续部署生成并发布到 Azure Web 应用](/vsts/build-release/archive/apps/aspnet/aspnet-4-ci-cd-azure-automatic)
+* [使用 Azure Pipelines 创建你的第一个管道](/azure/devops/pipelines/get-started-yaml)
 * [项目 Kudu](https://github.com/projectkudu/kudu/wiki)
