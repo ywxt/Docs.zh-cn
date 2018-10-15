@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/01/2018
 uid: fundamentals/file-providers
-ms.openlocfilehash: 512229cfe7d7efdcd9050fa13dbdbf793be29a0b
-ms.sourcegitcommit: 571d76fbbff05e84406b6d909c8fe9cbea2c8ff1
+ms.openlocfilehash: a0d326f5fc995cb903380315879d39a8ce851d06
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39410151"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913211"
 ---
 # <a name="file-providers-in-aspnet-core"></a>ASP.NET Core 中的文件提供程序
 
@@ -38,7 +38,7 @@ ASP.NET Core 通过文件提供程序来抽象化文件系统访问。 在 ASP.N
 
 * [Exists](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.exists)
 * [IsDirectory](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.isdirectory)
-* [Name](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.name)
+* [名称](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.name)
 * [Length](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.length)（以字节为单位）
 * [LastModified](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.lastmodified) 日期
 
@@ -141,7 +141,7 @@ Views/Home/Index.cshtml：
 [ManifestEmbeddedFileProvider](/dotnet/api/microsoft.extensions.fileproviders.manifestembeddedfileprovider) 用于访问程序集内嵌入的文件。 `ManifestEmbeddedFileProvider` 使用编译到程序集中的某个清单来重建嵌入的文件的原始路径。
 
 > [!NOTE]
-> ASP.NET Core 2.1 或更高版本中提供了 `ManifestEmbeddedFileProvider`。 若要访问在 ASP.NET Core 2.0 或更早版本 的程序集中嵌入的文件，请参阅[本主题的 ASP.NET Core 1.x 版本](xref:fundamentals/file-providers?view=aspnetcore-1.1)。
+> ASP.NET Core 2.1 或更高版本中提供了 `ManifestEmbeddedFileProvider`。 若要访问在 ASP.NET Core 2.0 或更早版本 的程序集中嵌入的文件，请参阅[本主题的 ASP.NET Core 1.x 版本](/aspnet/core/fundamentals/file-providers?view=aspnetcore-1.1)。
 
 若要生成嵌入的文件清单，请将 `<GenerateEmbeddedFilesManifest>` 属性设置为 `true`。 指定要使用 [&lt;EmbeddedResource&gt;](/dotnet/core/tools/csproj#default-compilation-includes-in-net-core-projects) 嵌入的文件：
 
