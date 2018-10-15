@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.date: 09/10/2018
 uid: signalr/version-differences
-ms.openlocfilehash: 2f3458f27fd7f22339751e0734dd8c5da709a3c0
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: ea2de2606a99de70fa645c0c42303525fea0a44e
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340116"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325531"
 ---
 # <a name="differences-between-aspnet-signalr-and-aspnet-core-signalr"></a>ASP.NET SignalR 和 ASP.NET Core SignalR 之间的差异
 
@@ -31,7 +31,7 @@ ASP.NET Core SignalR 不允许客户端或 ASP.NET SignalR 的服务器。 本�
 
 ### <a name="automatic-reconnects"></a>自动重新连接
 
-不再支持自动重新连接。 以前，SignalR 将尝试重新连接到服务器，如果连接已断开。 现在，如果客户端已断开连接用户必须显式启动新的连接如果用户想要重新连接。
+在 ASP.NET Core SignalR 中不支持自动重新连接。 如果客户端已断开连接，用户必须显式会启动新的连接，如果用户想要重新连接。 在 ASP.NET SignalR，SignalR 尝试重新连接到服务器，如果在连接断开。 
 
 ### <a name="protocol-support"></a>协议支持
 

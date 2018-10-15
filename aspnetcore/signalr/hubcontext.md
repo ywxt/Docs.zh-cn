@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/13/2018
 uid: signalr/hubcontext
-ms.openlocfilehash: 2d7d37b655bf7dbb71b321919314bbb8bef8db17
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: bb07a3b5c6e153092635fa4e1283619777865a53
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44339973"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325349"
 ---
 # <a name="send-messages-from-outside-a-hub"></a>从向外发送邮件中心
 
@@ -22,14 +22,14 @@ SignalR 中心是用于将消息发送到客户端连接到 SignalR 服务器的
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/hubcontext/sample/) [（如何下载）](xref:tutorials/index#how-to-download-a-sample)
 
-## <a name="get-an-instance-of-ihubcontext"></a>获取的实例 `IHubContext`
+## <a name="get-an-instance-of-ihubcontext"></a>获取 IHubContext 的实例
 
 在 ASP.NET Core SignalR，您可以访问的实例`IHubContext`通过依赖关系注入。 您可以注入的实例`IHubContext`到控制器、 中间件或其他 DI 服务。 使用的实例将消息发送到客户端。
 
 > [!NOTE]
 > 这不同于 ASP.NET 4.x SignalR GlobalHost 用于提供对访问`IHubContext`。 ASP.NET Core具有的依赖关系注入框架，无需此全局单一实例。
 
-### <a name="inject-an-instance-of-ihubcontext-in-a-controller"></a>注入的实例`IHubContext`控制器中
+### <a name="inject-an-instance-of-ihubcontext-in-a-controller"></a>注入控制器中的 IHubContext 实例
 
 您可以注入的实例`IHubContext`插入控制器将其添加到您的构造函数：
 
@@ -39,7 +39,7 @@ SignalR 中心是用于将消息发送到客户端连接到 SignalR 服务器的
 
 [!code-csharp[IHubContext](hubcontext/sample/Controllers/HomeController.cs?range=21-25)]
 
-### <a name="get-an-instance-of-ihubcontext-in-middleware"></a>获取的实例`IHubContext`中间件中
+### <a name="get-an-instance-of-ihubcontext-in-middleware"></a>获取中间件中的 IHubContext 实例
 
 访问`IHubContext`中间件管道中如下所示：
 

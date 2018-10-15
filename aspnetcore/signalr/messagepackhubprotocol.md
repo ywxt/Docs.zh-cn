@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: signalr/messagepackhubprotocol
-ms.openlocfilehash: c04834b0d395d08782b51b56e79badba078a5b91
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: 0874afc5493eca5d43dfde30bb28aedc1f193744
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48794832"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325570"
 ---
 # <a name="use-messagepack-hub-protocol-in-signalr-for-aspnet-core"></a>使用 ASP.NET Core MessagePack 中心协议中 SignalR
 
@@ -76,7 +76,7 @@ MessagePack 支持 Javascript 客户端提供的`@aspnet/signalr-protocol-msgpac
 npm install @aspnet/signalr-protocol-msgpack
 ```
 
-安装 npm 包之后, 该模块可以使用 JavaScript 模块加载程序通过直接或通过引用导入到浏览器 *node_modules\\@aspnet\signalr-protocol-msgpack\dist\browser\signalr-protocol-msgpack.js* 文件。 在浏览器中`msgpack5`还必须引用库。 使用`<script>`标记创建的引用。 可以在找到的库*node_modules\msgpack5\dist\msgpack5.js*。
+安装 npm 包之后, 该模块可以使用 JavaScript 模块加载程序通过直接或通过引用导入到浏览器 *node_modules\\@aspnet\signalr-protocol-msgpack\dist\browser\signalr-protocol-msgpack.js* 文件。 在浏览器`msgpack5`还必须引用库。 使用`<script>`标记创建的引用。 可以在找到的库*node_modules\msgpack5\dist\msgpack5.js*。
 
 > [!NOTE]
 > 当使用`<script>`元素的顺序非常重要。 如果*signalr 协议 msgpack.js*引用之前*msgpack5.js*，尝试使用 MessagePack 连接时出错。 *signalr.js*也需要前*signalr 协议 msgpack.js*。

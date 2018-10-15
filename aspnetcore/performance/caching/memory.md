@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/15/2018
 uid: performance/caching/memory
-ms.openlocfilehash: 2570ad7d939d67530b3de8cd0147815c2e25ecc8
-ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
+ms.openlocfilehash: 960aa18f9d14f633118ccd716201e61464085c05
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46482978"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325921"
 ---
 # <a name="cache-in-memory-in-aspnet-core"></a>缓存在内存中 ASP.NET Core
 
@@ -27,7 +27,11 @@ ASP.NET Core 支持多种不同的缓存。 最简单的缓存基于 [IMemoryCac
 
 Web 场中的非粘性会话需要[分布式缓存](distributed.md)以避免缓存一致性问题。 对于某些应用，分布式的缓存可以支持更高版本向外缩放比内存中缓存。 使用分布式缓存可将缓存内存卸载到外部进程。
 
+::: moniker range="< aspnetcore-2.0"
+
 除非将[CacheItemPriority](/dotnet/api/microsoft.extensions.caching.memory.cacheitempriority)设置为`CacheItemPriority.NeverRemove`, 否则`IMemoryCache`缓存会在内存压力下清除缓存条目。 可以通过设置`CacheItemPriority`来调整缓存在内存压力下清除项目的优先级。
+
+::: moniker-end
 
 内存中缓存可以存储任何对象；分布式缓存接口仅限于`byte[]`。
 

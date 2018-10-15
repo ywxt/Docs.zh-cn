@@ -5,12 +5,12 @@ description: 将标识与 ASP.NET Core 应用配合使用。 了解如何设置�
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: d427932bb175c09105534379be4d71760f4e04e5
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: e0494afd807080f4cd71127abce7bdb93f952dca
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47860948"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325505"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core 上的标识简介
 
@@ -160,7 +160,7 @@ PowerShell 使用分号作为命令分隔符。 使用 PowerShell 时，转义�
 显示登录窗体时：
 
 * **登录**选择链接。
-* 当用户访问的页时，它们不需要身份验证**或**获得授权，将被重定向到登录页。
+* 用户尝试访问受限的页面，他们不向被授权访问**或**时在还没有已完成身份验证系统。
 
 登录页上的表单提交时，`OnPostAsync`调用操作。 `PasswordSignInAsync` 对调用`_signInManager`对象 （由依赖关系注入提供）。
 

@@ -1,16 +1,17 @@
 ---
 title: 强制实施 HTTPS 在 ASP.NET Core
 author: rick-anderson
-description: 演示如何要求在 ASP.NET Core HTTPS/TLS web 应用。
+description: 了解如何在 ASP.NET Core web 应用中需要 HTTPS/TLS。
 ms.author: riande
-ms.date: 2/9/2018
+ms.custom: mvc
+ms.date: 10/11/2018
 uid: security/enforcing-ssl
-ms.openlocfilehash: 6e16191b1a4627e683fd2281e5556b2a6e84c082
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: b4c058d3b4f00276043d9520d756e62ed8cac5d9
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523137"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325596"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>强制实施 HTTPS 在 ASP.NET Core
 
@@ -30,6 +31,7 @@ ms.locfileid: "46523137"
 > * 关闭与状态代码 400 （错误请求） 的连接并不为请求提供服务。
 
 <a name="require"></a>
+
 ## <a name="require-https"></a>要求使用 HTTPS
 
 ::: moniker range=">= aspnetcore-2.1"
@@ -47,38 +49,52 @@ ms.locfileid: "46523137"
 
 前面突出显示的代码：
 
-* 使用默认[HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) (`Status307TemporaryRedirect`)。
+* 使用默认[HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) ([Status307TemporaryRedirect](/dotnet/api/microsoft.aspnetcore.http.statuscodes.status307temporaryredirect))。
 * 使用默认[HttpsRedirectionOptions.HttpsPort](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.httpsport)除非被重写 (null)`ASPNETCORE_HTTPS_PORT`环境变量或[IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature)。
 
-> [!WARNING] 
->端口必须是可用于中间件重定向到 HTTPS。 如果没有端口不可用，则不会发生重定向到 HTTPS。 可以通过任何以下设置指定 HTTPS 端口：
-> 
->* `HttpsRedirectionOptions.HttpsPort` 
->* `ASPNETCORE_HTTPS_PORT`环境变量。 
->* 在开发中，在 HTTPS url *launchsettings.json*。 
->* 直接在 Kestrel 或 HttpSys 上配置 HTTPS url。 
+我们建议使用临时重定向而不是永久重定向，因为链接缓存可能会在开发环境中导致不稳定行为。 我们建议使用[HSTS](#hsts)将信号发送到仅保护资源的客户端请求应发送到应用 （仅在生产中）。
+
+> [!WARNING]
+> 端口必须是可用于中间件重定向到 HTTPS。 如果任何端口，不则不会发生重定向到 HTTPS。 可以使用任何以下方法之一指定 HTTPS 端口：
+>
+> * 设置`HttpsRedirectionOptions.HttpsPort`。
+> * 设置 `ASPNETCORE_HTTPS_PORT` 环境变量。
+> * 在开发中，在中设置 HTTPS URL *launchsettings.json*。
+> * 配置的 HTTPS URL 终结点[Kestrel](xref:fundamentals/servers/kestrel)或[HTTP.sys](xref:fundamentals/servers/httpsys)。
+>
+> 当 Kestrel 或 HTTP.sys 用作面向公众的边缘服务器时，必须配置 Kestrel 或 HTTP.sys，若要在其上同时侦听：
+>
+> * 其中重定向客户端的安全端口 (通常情况下，在生产和开发中的为 5001 的 443)。
+> * 不安全端口 (通常情况下，在生产环境中为 80) 和 5000 开发中。
+>
+> 不安全的端口必须可访问的应用顺序中的客户端以接收不安全的请求并将其重定向到安全的端口。
+>
+> 客户端和服务器之间的所有防火墙也都必须打开的流量的端口。
+>
+> 有关详细信息，请参阅[Kestrel 终结点配置](xref:fundamentals/servers/kestrel#endpoint-configuration)或<xref:fundamentals/servers/httpsys>。
 
 以下突出显示的代码调用[AddHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpsredirectionservicesextensions.addhttpsredirection)配置中间件选项：
 
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet2&highlight=14-99)]
 
-调用`AddHttpsRedirection`只是用来更改的值` HttpsPort`或` RedirectStatusCode`;
+调用`AddHttpsRedirection`只是用来更改的值`HttpsPort`或`RedirectStatusCode`。
 
 前面突出显示的代码：
 
-* 集[HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode)到`Status307TemporaryRedirect`，这是默认值。
+* 集[HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode)到[Status307TemporaryRedirect](/dotnet/api/microsoft.aspnetcore.http.statuscodes.status307temporaryredirect)，这是默认值。 使用的字段[StatusCodes](/dotnet/api/microsoft.aspnetcore.http.statuscodes)类的分配到`RedirectStatusCode`。
 * 设置 HTTPS 端口为 5001。 默认值为 443。
 
 以下机制自动设置端口：
 
 * 中间件可以发现通过端口[IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature)时满足以下条件：
 
-   * Kestrel 或 HTTP.sys 直接与 HTTPS 终结点一起使用 （也适用于使用 Visual Studio Code 的调试器中运行应用程序）。
-   * 仅**一个 HTTPS 端口**应用使用。
+  * Kestrel 或 HTTP.sys 直接与 HTTPS 终结点一起使用 （也适用于使用 Visual Studio Code 的调试器中运行应用程序）。
+  * 仅**一个 HTTPS 端口**应用使用。
 
 * 使用 visual Studio:
-   * IIS Express 已启用 HTTPS。
-   * *launchSettings.json*设置`sslPort`IIS express。
+
+  * IIS Express 已启用 HTTPS。
+  * *launchSettings.json*设置`sslPort`IIS express。
 
 > [!NOTE]
 > 当应用程序运行时在反向代理 （例如，IIS，IIS Express），后面`IServerAddressesFeature`不可用。 必须手动配置端口。 如果端口未设置，请求不会重定向。
@@ -130,6 +146,7 @@ WebHost.CreateDefaultBuilder(args)
 ::: moniker range=">= aspnetcore-2.1"
 
 <a name="hsts"></a>
+
 ## <a name="http-strict-transport-security-protocol-hsts"></a>HTTP 严格传输安全协议 (HSTS)
 
 每个[OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project)， [HTTP 严格传输安全性 (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet)是通过响应标头使用的 web 应用指定选择的安全增强功能。 当[浏览器支持 HSTS](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet#Browser_Support)收到此标头：
@@ -156,7 +173,7 @@ ASP.NET Core 2.1 或更高版本实现与 HSTS`UseHsts`扩展方法。 下面的
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet2&highlight=5-12)]
 
 * 设置预加载严格传输安全性标头的参数。 预加载不属于[RFC HSTS 规范](https://tools.ietf.org/html/rfc6797)，但要预加载 HSTS 站点上执行全新安装的 web 浏览器支持。 有关详细信息，请参阅 [https://hstspreload.org/](https://hstspreload.org/)。
-* 使[includeSubDomain](https://tools.ietf.org/html/rfc6797#section-6.1.2)，这将 HSTS 策略应用到主机的子域。 
+* 使[includeSubDomain](https://tools.ietf.org/html/rfc6797#section-6.1.2)，这将 HSTS 策略应用到主机的子域。
 * 显式将严格传输安全性标头的最大期限参数设置为 60 天。 如果未设置，默认值为 30 天。 请参阅[最大期限指令](https://tools.ietf.org/html/rfc6797#section-6.1.1)有关详细信息。
 * 添加`example.com`到主机以排除列表。
 
@@ -173,11 +190,12 @@ ASP.NET Core 2.1 或更高版本实现与 HSTS`UseHsts`扩展方法。 下面的
 ::: moniker range=">= aspnetcore-2.1"
 
 <a name="https"></a>
-## <a name="opt-out-of-https-on-project-creation"></a>选择退出的 HTTPS 在项目创建
 
-ASP.NET Core 2.1 或更高版本的 web 应用程序模板 （从 Visual Studio 或 dotnet 命令行） 启用[HTTPS 重定向](#require)和[HSTS](#hsts)。 对于不需要 HTTPS 的部署，你可以选择退出的 HTTPS。 例如，不需要其中 HTTPS 正在从外部在边缘，每个节点，使用 HTTPS 某些后端服务。
+## <a name="opt-out-of-httpshsts-on-project-creation"></a>选择退出的 HTTPS/HSTS 在项目创建
 
-若要选择退出的 HTTPS:
+在其中连接安全处理面向公众边缘网络的某些后端服务情况下，无需在每个节点上配置连接安全。 Web 应用从 Visual Studio 中或从模板生成[dotnet 新](/dotnet/core/tools/dotnet-new)命令启用[HTTPS 的重定向](#require)并[HSTS](#hsts)。 对于不需要这些方案的部署，你可以选择退出的 HTTPS/HSTS 时从模板创建的应用。
+
+若要选择退出的 HTTPS/HSTS:
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
 
