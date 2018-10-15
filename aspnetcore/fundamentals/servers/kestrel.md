@@ -4,14 +4,14 @@ author: rick-anderson
 description: 了解跨平台 ASP.NET Core Web 服务器 Kestrel。
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 09/01/2018
+ms.date: 09/13/2018
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: c11a32aec49f4550471fb1399306fe17f1735a5c
-ms.sourcegitcommit: 7211ae2dd702f67d36365831c490d6178c9a46c8
+ms.openlocfilehash: 218b6429462991659ba02804fdc8fbb99b69f1a6
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44089881"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47211086"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 Kestrel Web 服务器实现
 
@@ -21,13 +21,49 @@ Kestrel 是一个跨平台的[适用于 ASP.NET Core 的 Web 服务器](xref:fun
 
 Kestrel 支持以下功能：
 
+::: moniker range=">= aspnetcore-2.2"
+
+* HTTPS
+* 用于启用 [WebSocket](https://github.com/aspnet/websockets) 的不透明升级
+* 用于获得 Nginx 高性能的 Unix 套接字
+* HTTP/2（除非在 macOS&dagger; 上）
+
+macOS 的未来版本将支持 &dagger;HTTP/2。
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
 * HTTPS
 * 用于启用 [WebSocket](https://github.com/aspnet/websockets) 的不透明升级
 * 用于获得 Nginx 高性能的 Unix 套接字
 
+::: moniker-end
+
 .NET Core 支持的所有平台和版本均支持 Kestrel。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/kestrel/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+
+::: moniker range=">= aspnetcore-2.2"
+
+## <a name="http2-support"></a>HTTP/2 支持
+
+如果满足以下基本要求，将为 ASP.NET Core 应用提供 [HTTP/2](https://httpwg.org/specs/rfc7540.html)：
+
+* 操作系统&dagger;
+  * Windows Server 2012 R2/Windows 8.1 或更高版本
+  * 具有 OpenSSL 1.0.2 或更高版本的 Linux（例如，Ubuntu 16.04 或更高版本）
+* 目标框架：.NET Core 2.2 或更高版本
+* [应用程序层协议协商 (ALPN)](https://tools.ietf.org/html/rfc7301#section-3) 连接
+* TLS 1.2 或更高版本的连接
+
+macOS 的未来版本将支持 &dagger;HTTP/2。
+
+如果已建立 HTTP/2 连接，[HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*) 会报告 `HTTP/2`。
+
+默认情况下，禁用 HTTP/2。 有关配置的详细信息，请参阅 [Kestrel 选项](#kestrel-options)和[终结点配置](#endpoint-configuration)部分。
+
+::: moniker-end
 
 ## <a name="when-to-use-kestrel-with-a-reverse-proxy"></a>何时结合使用 Kestrel 和反向代理
 
@@ -86,10 +122,13 @@ Kestrel 支持以下功能：
 若要在调用 `CreateDefaultBuilder` 后提供其他配置，请使用 `ConfigureKestrel`：
 
 ```csharp
-.ConfigureKestrel((context, options) =>
-{
-    // Set properties and call methods on options
-});
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .ConfigureKestrel((context, options) =>
+        {
+            // Set properties and call methods on options
+        });
 ```
 
 ::: moniker-end
@@ -99,10 +138,14 @@ Kestrel 支持以下功能：
 若要在调用 `CreateDefaultBuilder` 后提供其他配置，请调用 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel)：
 
 ```csharp
-.UseKestrel(options =>
-{
-    // Set properties and call methods on options
-});
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .UseKestrel(options =>
+        {
+            // Set properties and call methods on options
+        })
+        .Build();
 ```
 
 ::: moniker-end
@@ -117,7 +160,7 @@ Kestrel 支持以下功能：
 
 ::: moniker-end
 
-### <a name="kestrel-options"></a>Kestrel 选项
+## <a name="kestrel-options"></a>Kestrel 选项
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -129,7 +172,7 @@ Kestrel Web 服务器具有约束配置选项，这些选项在面向 Internet �
 
 可在 [KestrelServerOptions](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions) 类的 [Limits](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions.limits) 属性上设置这些约束和其他约束。 `Limits` 属性包含 [KestrelServerLimits](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits) 类的实例。
 
-**客户端最大连接数**
+### <a name="maximum-client-connections"></a>客户端最大连接数
 
 [MaxConcurrentConnections](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxconcurrentconnections)  
 [MaxConcurrentUpgradedConnections](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxconcurrentupgradedconnections)
@@ -141,10 +184,13 @@ Kestrel Web 服务器具有约束配置选项，这些选项在面向 Internet �
 ::: moniker range=">= aspnetcore-2.2"
 
 ```csharp
-.ConfigureKestrel((context, options) =>
-{
-    options.Limits.MaxConcurrentConnections = 100;
-});
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Limits.MaxConcurrentConnections = 100;
+        });
 ```
 
 ::: moniker-end
@@ -160,10 +206,13 @@ Kestrel Web 服务器具有约束配置选项，这些选项在面向 Internet �
 ::: moniker range=">= aspnetcore-2.2"
 
 ```csharp
-.ConfigureKestrel((context, options) =>
-{
-    options.Limits.MaxConcurrentUpgradedConnections = 100;
-});
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Limits.MaxConcurrentUpgradedConnections = 100;
+        });
 ```
 
 ::: moniker-end
@@ -178,7 +227,7 @@ Kestrel Web 服务器具有约束配置选项，这些选项在面向 Internet �
 
 默认情况下，最大连接数不受限制 (NULL)。
 
-**请求正文最大大小**
+### <a name="maximum-request-body-size"></a>请求正文最大大小
 
 [MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize)
 
@@ -198,10 +247,13 @@ public IActionResult MyActionMethod()
 ::: moniker range=">= aspnetcore-2.2"
 
 ```csharp
-.ConfigureKestrel((context, options) =>
-{
-    options.Limits.MaxRequestBodySize = 10 * 1024;
-});
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Limits.MaxRequestBodySize = 10 * 1024;
+        });
 ```
 
 ::: moniker-end
@@ -220,7 +272,7 @@ public IActionResult MyActionMethod()
 
 如果在应用开始读取请求后尝试配置请求限制，则会引发异常。 `IsReadOnly` 属性指示 `MaxRequestBodySize` 属性处于只读状态，意味已经无法再配置限制。
 
-**请求正文最小数据速率**
+### <a name="minimum-request-body-data-rate"></a>请求正文最小数据速率
 
 [MinRequestBodyDataRate](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.minrequestbodydatarate)  
 [MinResponseDataRate](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.minresponsedatarate)
@@ -238,13 +290,16 @@ Kestrel 每秒检查一次数据是否以指定的速率（字节/秒）传入�
 ::: moniker range=">= aspnetcore-2.2"
 
 ```csharp
-.ConfigureKestrel((context, options) =>
-{
-    options.Limits.MinRequestBodyDataRate =
-        new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
-    options.Limits.MinResponseDataRate =
-        new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
-});
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Limits.MinRequestBodyDataRate =
+                new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
+            options.Limits.MinResponseDataRate =
+                new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
+        });
 ```
 
 ::: moniker-end
@@ -256,6 +311,58 @@ Kestrel 每秒检查一次数据是否以指定的速率（字节/秒）传入�
 可在中间件中配置每个请求的速率：
 
 [!code-csharp[](kestrel/samples/2.x/KestrelSample/Startup.cs?name=snippet_Limits&highlight=5-8)]
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+### <a name="maximum-streams-per-connection"></a>每个连接的最大流
+
+`Http2.MaxStreamsPerConnection` 限制每个 HTTP/2 连接的并发请求流的数量。 拒绝过多的流。
+
+```csharp
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Limits.Http2.MaxStreamsPerConnection = 100;
+        });
+```
+
+默认值为 100。
+
+### <a name="header-table-size"></a>标题表大小
+
+HPACK 解码器解压缩 HTTP/2 连接的 HTTP 标头。 `Http2.HeaderTableSize` 限制 HPACK 解码器使用的标头压缩表的大小。 该值以八位字节提供，且必须大于零 (0)。
+
+```csharp
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Limits.Http2.HeaderTableSize = 4096;
+        });
+```
+
+默认值为 4096。
+
+### <a name="maximum-frame-size"></a>最大帧大小
+
+`Http2.MaxFrameSize` 指示要接收的 HTTP/2 连接帧有效负载的最大大小。 该值以八位字节提供，必须介于 2^14 (16,384) 和 2^24-1 (16,777,215) 之间。
+
+```csharp
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Limits.Http2.MaxFrameSize = 16384;
+        });
+```
+
+默认值为 2^14 (16,384)。
 
 ::: moniker-end
 
@@ -278,7 +385,7 @@ Kestrel 每秒检查一次数据是否以指定的速率（字节/秒）传入�
 
 ::: moniker-end
 
-### <a name="endpoint-configuration"></a>终结点配置
+## <a name="endpoint-configuration"></a>终结点配置
 
 ::: moniker range="= aspnetcore-2.0"
 
@@ -324,16 +431,24 @@ ASP.NET Core 2.1 及更高版本的项目模板将应用配置为默认情况下
 
 ASP.NET Core 2.1 `KestrelServerOptions` 配置：
 
-**ConfigureEndpointDefaults(Action&lt;ListenOptions&gt;)**  
+### <a name="configureendpointdefaultsactionltlistenoptionsgt"></a>ConfigureEndpointDefaults(Action&lt;ListenOptions&gt;)
+
 指定一个为每个指定的终结点运行的配置 `Action`。 多次调用 `ConfigureEndpointDefaults`，用最新指定的 `Action` 替换之前的 `Action`。
 
-**ConfigureHttpsDefaults(Action&lt;HttpsConnectionAdapterOptions&gt;)**  
+### <a name="configurehttpsdefaultsactionlthttpsconnectionadapteroptionsgt"></a>ConfigureHttpsDefaults(Action&lt;HttpsConnectionAdapterOptions&gt;)
+
 指定一个为每个 HTTPS 终结点运行的配置 `Action`。 多次调用 `ConfigureHttpsDefaults`，用最新指定的 `Action` 替换之前的 `Action`。
 
-**Configure(IConfiguration)**  
+### <a name="configureiconfiguration"></a>Configure(IConfiguration)
+
 创建配置加载程序，用于设置将 [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) 作为输入的 Kestrel。 配置必须针对 Kestrel 的配置节。
 
-**ListenOptions.UseHttps**  
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+
+### <a name="listenoptionsusehttps"></a>ListenOptions.UseHttps
+
 将 Kestrel 配置为使用 HTTPS。
 
 `ListenOptions.UseHttps` 扩展：
@@ -508,40 +623,42 @@ SNI 支持要求：
 ::: moniker range=">= aspnetcore-2.2"
 
 ```csharp
-WebHost.CreateDefaultBuilder()
-    .ConfigureKestrel((context, options) =>
-    {
-        options.ListenAnyIP(5005, listenOptions =>
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .ConfigureKestrel((context, options) =>
         {
-            listenOptions.UseHttps(httpsOptions =>
+            options.ListenAnyIP(5005, listenOptions =>
             {
-                var localhostCert = CertificateLoader.LoadFromStoreCert(
-                    "localhost", "My", StoreLocation.CurrentUser, 
-                    allowInvalid: true);
-                var exampleCert = CertificateLoader.LoadFromStoreCert(
-                    "example.com", "My", StoreLocation.CurrentUser, 
-                    allowInvalid: true);
-                var subExampleCert = CertificateLoader.LoadFromStoreCert(
-                    "sub.example.com", "My", StoreLocation.CurrentUser, 
-                    allowInvalid: true);
-                var certs = new Dictionary<string, X509Certificate2>(
-                    StringComparer.OrdinalIgnoreCase);
-                certs["localhost"] = localhostCert;
-                certs["example.com"] = exampleCert;
-                certs["sub.example.com"] = subExampleCert;
-
-                httpsOptions.ServerCertificateSelector = (connectionContext, name) =>
+                listenOptions.UseHttps(httpsOptions =>
                 {
-                    if (name != null && certs.TryGetValue(name, out var cert))
-                    {
-                        return cert;
-                    }
+                    var localhostCert = CertificateLoader.LoadFromStoreCert(
+                        "localhost", "My", StoreLocation.CurrentUser, 
+                        allowInvalid: true);
+                    var exampleCert = CertificateLoader.LoadFromStoreCert(
+                        "example.com", "My", StoreLocation.CurrentUser, 
+                        allowInvalid: true);
+                    var subExampleCert = CertificateLoader.LoadFromStoreCert(
+                        "sub.example.com", "My", StoreLocation.CurrentUser, 
+                        allowInvalid: true);
+                    var certs = new Dictionary<string, X509Certificate2>(
+                        StringComparer.OrdinalIgnoreCase);
+                    certs["localhost"] = localhostCert;
+                    certs["example.com"] = exampleCert;
+                    certs["sub.example.com"] = subExampleCert;
 
-                    return exampleCert;
-                };
+                    httpsOptions.ServerCertificateSelector = (connectionContext, name) =>
+                    {
+                        if (name != null && certs.TryGetValue(name, out var cert))
+                        {
+                            return cert;
+                        }
+
+                        return exampleCert;
+                    };
+                });
             });
         });
-    });
 ```
 
 ::: moniker-end
@@ -549,45 +666,48 @@ WebHost.CreateDefaultBuilder()
 ::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
 
 ```csharp
-WebHost.CreateDefaultBuilder()
-    .UseKestrel((context, options) =>
-    {
-        options.ListenAnyIP(5005, listenOptions =>
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .UseKestrel((context, options) =>
         {
-            listenOptions.UseHttps(httpsOptions =>
+            options.ListenAnyIP(5005, listenOptions =>
             {
-                var localhostCert = CertificateLoader.LoadFromStoreCert(
-                    "localhost", "My", StoreLocation.CurrentUser, 
-                    allowInvalid: true);
-                var exampleCert = CertificateLoader.LoadFromStoreCert(
-                    "example.com", "My", StoreLocation.CurrentUser, 
-                    allowInvalid: true);
-                var subExampleCert = CertificateLoader.LoadFromStoreCert(
-                    "sub.example.com", "My", StoreLocation.CurrentUser, 
-                    allowInvalid: true);
-                var certs = new Dictionary<string, X509Certificate2>(
-                    StringComparer.OrdinalIgnoreCase);
-                certs["localhost"] = localhostCert;
-                certs["example.com"] = exampleCert;
-                certs["sub.example.com"] = subExampleCert;
-
-                httpsOptions.ServerCertificateSelector = (connectionContext, name) =>
+                listenOptions.UseHttps(httpsOptions =>
                 {
-                    if (name != null && certs.TryGetValue(name, out var cert))
-                    {
-                        return cert;
-                    }
+                    var localhostCert = CertificateLoader.LoadFromStoreCert(
+                        "localhost", "My", StoreLocation.CurrentUser, 
+                        allowInvalid: true);
+                    var exampleCert = CertificateLoader.LoadFromStoreCert(
+                        "example.com", "My", StoreLocation.CurrentUser, 
+                        allowInvalid: true);
+                    var subExampleCert = CertificateLoader.LoadFromStoreCert(
+                        "sub.example.com", "My", StoreLocation.CurrentUser, 
+                        allowInvalid: true);
+                    var certs = new Dictionary<string, X509Certificate2>(
+                        StringComparer.OrdinalIgnoreCase);
+                    certs["localhost"] = localhostCert;
+                    certs["example.com"] = exampleCert;
+                    certs["sub.example.com"] = subExampleCert;
 
-                    return exampleCert;
-                };
+                    httpsOptions.ServerCertificateSelector = (connectionContext, name) =>
+                    {
+                        if (name != null && certs.TryGetValue(name, out var cert))
+                        {
+                            return cert;
+                        }
+
+                        return exampleCert;
+                    };
+                });
             });
-        });
-    });
+        })
+        .Build();
 ```
 
 ::: moniker-end
 
-**绑定到 TCP 套接字**
+### <a name="bind-to-a-tcp-socket"></a>绑定到 TCP 套接字
 
 [Listen](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions.listen) 方法绑定至 TCP 套接字，并可通过选项 lambda 配置 SSL 证书：
 
@@ -626,7 +746,7 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 [!INCLUDE [How to make an X.509 cert](~/includes/make-x509-cert.md)]
 
-**绑定到 Unix 套接字**
+### <a name="bind-to-a-unix-socket"></a>绑定到 Unix 套接字
 
 可通过 [ListenUnixSocket](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions.listenunixsocket) 侦听 Unix 套接字以提高 Nginx 的性能，如以下示例所示：
 
@@ -635,14 +755,17 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 ::: moniker range=">= aspnetcore-2.2"
 
 ```csharp
-.ConfigureKestrel((context, options) =>
-{
-    options.ListenUnixSocket("/tmp/kestrel-test.sock");
-    options.ListenUnixSocket("/tmp/kestrel-test.sock", listenOptions =>
-    {
-        listenOptions.UseHttps("testCert.pfx", "testpassword");
-    });
-});
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .ConfigureKestrel((context, options) =>
+        {
+            options.ListenUnixSocket("/tmp/kestrel-test.sock");
+            options.ListenUnixSocket("/tmp/kestrel-test.sock", listenOptions =>
+            {
+                listenOptions.UseHttps("testCert.pfx", "testpassword");
+            });
+        });
 ```
 
 ::: moniker-end
@@ -655,7 +778,7 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 ::: moniker range=">= aspnetcore-2.0"
 
-**端口 0**
+### <a name="port-0"></a>端口 0
 
 如果指定端口号 `0`，Kestrel 将动态绑定到可用端口。 以下示例演示如何确定 Kestrel 在运行时实际绑定到的端口：
 
@@ -667,7 +790,7 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 Listening on the following addresses: http://127.0.0.1:48508
 ```
 
-**UseUrls、--urls 命令行参数、urls 主机配置键以及 ASPNETCORE_URLS 环境变量的限制**
+### <a name="limitations"></a>限制
 
 使用以下方法配置终结点：
 
@@ -676,12 +799,12 @@ Listening on the following addresses: http://127.0.0.1:48508
 * `urls` 主机配置键
 * `ASPNETCORE_URLS` 环境变量
 
-若要将代码用于 Kestrel 以外的服务器，这些方法非常有用。 但是，请注意以下限制：
+若要将代码用于 Kestrel 以外的服务器，这些方法非常有用。 不过，请注意以下限制：
 
 * SSL 不能使用这些方法，除非 HTTPS 终结点配置中提供了默认证书（如本主题前面的部分所示，使用 `KestrelServerOptions` 配置或配置文件）。
 * 如果同时使用 `Listen` 和 `UseUrls` 方法，`Listen` 终结点将覆盖 `UseUrls` 终结点。
 
-**IIS 终结点配置**
+### <a name="iis-endpoint-configuration"></a>IIS 终结点配置
 
 使用 IIS 时，由 `Listen` 或 `UseUrls` 设置用于 IIS 覆盖绑定的 URL 绑定。 有关详细信息，请参阅 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)主题。
 
@@ -698,9 +821,144 @@ Listening on the following addresses: http://127.0.0.1:48508
 
 有关这些方法的详细信息，请参阅[承载](xref:fundamentals/host/index)。
 
-**IIS 终结点配置**
+### <a name="iis-endpoint-configuration"></a>IIS 终结点配置
 
 使用 IIS 时，由 `UseUrls` 设置用于 IIS 覆盖绑定的 URL 绑定。 有关详细信息，请参阅 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)主题。
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+### <a name="listenoptionsprotocols"></a>ListenOptions.Protocols
+
+`Protocols` 属性建立在连接终结点上或为服务器启用的 HTTP 协议（`HttpProtocols`）。 从 `HttpProtocols` 枚举向 `Protocols` 属性赋值。
+
+| `HttpProtocols` 枚举值 | 允许的连接协议 |
+| -------------------------- | ----------------------------- |
+| `Http1`                    | 仅 HTTP/1.1。 可以在具有 TLS 或没有 TLS 的情况下使用。 |
+| `Http2`                    | 仅 HTTP/2。 主要在具有 TLS 的情况下使用。 仅当客户端支持[先验知识模式](https://tools.ietf.org/html/rfc7540#section-3.4)时，才可以在没有 TLS 的情况下使用。 |
+| `Http1AndHttp2`            | HTTP/1.1 和 HTTP/2。 需要 TLS 和[应用程序层协议协商 (ALPN)](https://tools.ietf.org/html/rfc7301#section-3) 连接来协商 HTTP/2；否则，连接默认为 HTTP/1.1。 |
+
+默认协议是 HTTP/1.1。
+
+HTTP/2 的 TLS 限制：
+
+* TLS 版本 1.2 或更高版本
+* 重新协商已禁用
+* 压缩已禁用
+* 最小的临时密钥交换大小：
+  * 椭圆曲线 Diffie-Hellman (ECDHE) &lbrack;[RFC4492](https://www.ietf.org/rfc/rfc4492.txt)&rbrack; &ndash;最小 224 位
+  * 有限字段 Diffie-Hellman (DHE) &lbrack;`TLS12`&rbrack; &ndash; 最小 2048 位
+* 密码套件未列入黑名单
+
+默认情况下，支持具有 P-256 椭圆曲线 &lbrack;`FIPS186`&rbrack; 的 `TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256` &lbrack;`TLS-ECDHE`&rbrack;。
+
+以下示例允许端口 8000 上的 HTTP/1.1 和 HTTP/2 连接。 TLS 使用提供的证书来保护连接：
+
+```csharp
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Listen(IPAddress.Any, 8000, listenOptions =>
+            {
+                listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
+                listenOptions.UseHttps("testCert.pfx", "testPassword");
+            });
+        }
+```
+
+（可选）创建 `IConnectionAdapter` 实现，以针对特定密码的每个连接筛选 TLS 握手：
+
+```csharp
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Listen(IPAddress.Any, 8000, listenOptions =>
+            {
+                listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
+                listenOptions.UseHttps("testCert.pfx", "testPassword");
+                listenOptions.ConnectionAdapters.Add(new TlsFilterAdapter());
+            });
+        }
+```
+
+```csharp
+private class TlsFilterAdapter : IConnectionAdapter
+{
+    public bool IsHttps => false;
+
+    public Task<IAdaptedConnection> OnConnectionAsync(ConnectionAdapterContext context)
+    {
+        var tlsFeature = context.Features.Get<ITlsHandshakeFeature>();
+
+        // Throw NotSupportedException for any cipher algorithm that you don't 
+        // wish to support. Alternatively, define and compare 
+        // ITlsHandshakeFeature.CipherAlgorithm to a list of acceptable cipher 
+        // suites.
+        //
+        // A ITlsHandshakeFeature.CipherAlgorithm of CipherAlgorithmType.Null 
+        // indicates that no cipher algorithm supported by Kestrel matches the 
+        // requested algorithm(s).
+        if (tlsFeature.CipherAlgorithm == CipherAlgorithmType.Null)
+        {
+            throw new NotSupportedException("Prohibited cipher: " + tlsFeature.CipherAlgorithm);
+        }
+
+        return Task.FromResult<IAdaptedConnection>(new AdaptedConnection(context.ConnectionStream));
+    }
+
+    private class AdaptedConnection : IAdaptedConnection
+    {
+        public AdaptedConnection(Stream adaptedStream)
+        {
+            ConnectionStream = adaptedStream;
+        }
+
+        public Stream ConnectionStream { get; }
+
+        public void Dispose()
+        {
+        }
+    }
+}
+```
+
+*从配置中设置协议*
+
+[WebHost.CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 在默认情况下调用 `serverOptions.Configure(context.Configuration.GetSection("Kestrel"))` 来加载 Kestrel 配置。
+
+在以下 appsettings.json 示例中，为 Kestrel 的所有终结点建立默认的连接协议（HTTP/1.1 和 HTTP/2）：
+
+```json
+{
+  "Kestrel": {
+    "EndPointDefaults": {
+      "Protocols": "Http1AndHttp2"
+    }
+  }
+}
+```
+
+以下配置文件示例为特定终结点建立了连接协议：
+
+```json
+{
+  "Kestrel": {
+    "EndPoints": {
+      "HttpsDefaultCert": {
+        "Url": "https://localhost:5001",
+        "Protocols": "Http1AndHttp2"
+      }
+    }
+  }
+}
+```
+
+代码中指定的协议覆盖了由配置设置的值。
 
 ::: moniker-end
 
@@ -719,7 +977,7 @@ Listening on the following addresses: http://127.0.0.1:48508
 
     ```xml
     <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv" 
-                      Version="2.1.0" />
+                      Version="<LATEST_VERSION>" />
     ```
 
 * 调用 [WebHostBuilderLibuvExtensions.UseLibuv](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderlibuvextensions.uselibuv)：
