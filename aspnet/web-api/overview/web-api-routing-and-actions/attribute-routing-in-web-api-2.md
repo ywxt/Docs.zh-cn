@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: 979d6c9f-0129-4e5b-ae56-4507b281b86d
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: d16dcc618bf6c60714179601db14f4dd2a9e41ce
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 22eb2fd748d52ec95e813ada8b1bf3b4826ad573
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912147"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348476"
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的属性路由
 ====================
@@ -245,11 +245,11 @@ Web API 还将选择操作请求 （GET、 POST 等） 的 HTTP 方法。 默认
 <a id="order"></a>
 ## <a name="route-order"></a>路由顺序
 
-当框架尝试匹配与路由的 URI 时，它会评估按特定顺序的路由。 若要指定的顺序，将设置**RouteOrder**路由属性上的属性。 首先计算较低的值。 默认顺序值为零。
+当框架尝试匹配与路由的 URI 时，它会评估按特定顺序的路由。 若要指定的顺序，将设置**顺序**路由属性上的属性。 首先计算较低的值。 默认顺序值为零。
 
 下面是如何确定总排序：
 
-1. 比较**RouteOrder**路由属性的属性。
+1. 比较**顺序**路由属性的属性。
 2. 查看路由模板中的每个 URI 段。 为每个段进行排序，如下所示：
 
     1. 文本段。
@@ -271,4 +271,4 @@ Web API 还将选择操作请求 （GET、 POST 等） 的 HTTP 方法。 默认
 4. orders/{\*date}
 5. 订单 / 挂起
 
-请注意"详细信息"是一个文本段和出现之前"{id}"，但"挂起"会显示上一次由于**RouteOrder**属性为 1。 (本示例假定那里没有客户名为"详细信息"或"挂起"。 一般情况下，尝试避免不明确的路由。 在此示例中，更好的路由模板`GetByCustomer`是"客户 / {customerName}")
+请注意"详细信息"是一个文本段和出现之前"{id}"，但"挂起"会显示上一次由于**顺序**属性为 1。 (本示例假定那里没有客户名为"详细信息"或"挂起"。 一般情况下，尝试避免不明确的路由。 在此示例中，更好的路由模板`GetByCustomer`是"客户 / {customerName}")

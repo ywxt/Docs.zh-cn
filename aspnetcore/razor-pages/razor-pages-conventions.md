@@ -4,14 +4,14 @@ author: guardrex
 description: 了解路由和应用模型提供程序约定如何帮助控制页面路由、发现和处理。
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 09/17/2018
+ms.date: 10/12/2018
 uid: razor-pages/razor-pages-conventions
-ms.openlocfilehash: ea4f785dc8a64b430e312fd122a4d3184b61949e
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 13fd6c156afd5ab62739b09296a929120ce3450f
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011857"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348528"
 ---
 # <a name="razor-pages-route-and-app-conventions-in-aspnet-core"></a>ASP.NET Core 中 Razor 页面的路由和应用约定
 
@@ -87,13 +87,13 @@ public void ConfigureServices(IServiceCollection services)
 
 如果可能，避免具体取决于已建立的路由处理顺序。 通常情况下，路由选择与 URL 匹配的正确路由。 如果必须设置路由`Order`属性路由请求是否正确，应用程序的路由方案，可能令人困惑，向客户端和脆弱来维护。 查找以简化应用程序的路由方案。 示例应用程序需要处理订单，若要演示几个路由方案使用的单个应用程序的显式路由。 但是，您应尝试避免设置路由的做法`Order`生产应用中。
 
-Razor 页面路由和 MVC 控制器路由共享实现。 路由顺序 MVC 主题中的信息位于[路由到控制器操作： 对属性路由排序](xref:mvc/controllers/routing#ordering-attribute-routes)。
+Razor Pages 路由和 MVC 控制器路由共享一个实现。 路由顺序 MVC 主题中的信息位于[路由到控制器操作： 对属性路由排序](xref:mvc/controllers/routing#ordering-attribute-routes)。
 
 ## <a name="model-conventions"></a>模型约定
 
 为 [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) 添加委托，以添加应用于 Razor 页面的[模型约定](xref:mvc/controllers/application-model#conventions)。
 
-**将路由模型约定添加到所有页面**
+### <a name="add-a-route-model-convention-to-all-pages"></a>将路由模型约定添加到所有页面
 
 使用[约定](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions)创建 [IPageRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageroutemodelconvention) 并将其添加到 [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) 实例集合中，这些实例将在页面路由模型构造过程中应用。
 
@@ -117,7 +117,7 @@ Razor 页面路由和 MVC 控制器路由共享实现。 路由顺序 MVC 主题
 
 ![使用 GlobalRouteValue 路由段请求“关于”页面。 呈现的页面显示，在页面的 OnGet 方法中捕获了路由数据值。](razor-pages-conventions/_static/about-page-global-template.png)
 
-**将应用模型约定添加到所有页面**
+### <a name="add-an-app-model-convention-to-all-pages"></a>将应用模型约定添加到所有页面
 
 使用[约定](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions)创建 [IPageApplicationModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageapplicationmodelconvention) 并将其添加到 [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) 实例集合中，这些实例将在页面应用模型构造过程中应用。
 
@@ -137,12 +137,12 @@ Razor 页面路由和 MVC 控制器路由共享实现。 路由顺序 MVC 主题
 
 ::: moniker range=">= aspnetcore-2.1"
 
-**将处理程序模型约定添加到所有页面**
+### <a name="add-a-handler-model-convention-to-all-pages"></a>将处理程序模型约定添加到的所有页面
 
 使用[约定](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions)创建 [IPageHandlerModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipagehandlermodelconvention) 并将其添加到 [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) 实例集合中，这些实例将在页面处理程序模型构造过程中应用。
 
 ```csharp
-public class GlobalPageHandlerModelConvention 
+public class GlobalPageHandlerModelConvention
     : IPageHandlerModelConvention
 {
     public void Apply(PageHandlerModel model)
@@ -168,7 +168,7 @@ services.AddMvc()
 
 默认路由模型提供程序派生自 [IPageRouteModelProvider](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageroutemodelprovider)，可调用旨在为页面路由配置提供扩展点的约定。
 
-**文件夹路由模型约定**
+### <a name="folder-route-model-convention"></a>文件夹路由模型约定
 
 使用 [AddFolderRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageconventioncollection.addfolderroutemodelconvention) 创建并添加 [IPageRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageroutemodelconvention)，后者可以为指定文件夹下的所有页面调用 [PageRouteModel](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageroutemodel) 上的操作。
 
@@ -184,7 +184,7 @@ services.AddMvc()
 
 ![使用 GlobalRouteValue 和 OtherPagesRouteValue 路由段请求 OtherPages 文件夹中的 Page1。 呈现的页面显示，在页面的 OnGet 方法中捕获了路由数据值。](razor-pages-conventions/_static/otherpages-page1-global-and-otherpages-templates.png)
 
-**页面路由模型约定**
+### <a name="page-route-model-convention"></a>页面路由模型约定
 
 使用 [AddPageRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageconventioncollection.addpageroutemodelconvention) 创建并添加 [IPageRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageroutemodelconvention)，后者可以为具有指定名称的页面调用 [PageRouteModel](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageroutemodel) 上的操作。
 
@@ -199,6 +199,44 @@ services.AddMvc()
 在 `localhost:5000/About/GlobalRouteValue/AboutRouteValue` 中请求示例的“关于”页面并检查结果：
 
 ![使用 GlobalRouteValue 和 AboutRouteValue 路由段请求“关于”页面。 呈现的页面显示，在页面的 OnGet 方法中捕获了路由数据值。](razor-pages-conventions/_static/about-page-global-and-about-templates.png)
+
+::: moniker range=">= aspnetcore-2.2"
+
+## <a name="use-a-parameter-transformer-to-customize-page-routes"></a>参数转换器用于自定义页面路由
+
+使用参数转换器可以自定义页面路由生成的 ASP.NET Core。 参数转换器实现`IOutboundParameterTransformer`，并将转换的参数的值。 例如，自定义`SlugifyParameterTransformer`参数转换器更改`SubscriptionManagement`路由到的值`subscription-management`。
+
+`PageRouteTransformerConvention`页面路由模型约定适用于在应用中自动生成的页路由文件夹和文件名称段参数转换器。 例如，Razor 页面文件位于 */Pages/SubscriptionManagement/ViewAll.cshtml*必须重写中其路由`/SubscriptionManagement/ViewAll`到`/subscription-management/view-all`。
+
+`PageRouteTransformerConvention` 仅将转换的页面路由来自 Razor 页面文件夹和文件名称自动生成的段。 它不会转换与添加的路由段`@page`指令。 约定也不会转换添加的路由<xref:Microsoft.Extensions.DependencyInjection.PageConventionCollectionExtensions.AddPageRoute*>。
+
+`PageRouteTransformerConvention`注册中的一个选项为`Startup.ConfigureServices`:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddMvc()
+        .AddRazorPagesOptions(options =>
+            {
+                options.Conventions.Add(
+                    new PageRouteTransformerConvention(
+                        new SlugifyParameterTransformer()));
+            });
+}
+
+public class SlugifyParameterTransformer : IOutboundParameterTransformer
+{
+    public string TransformOutbound(object value)
+    {
+        if (value == null) { return null; }
+
+        // Slugify value
+        return Regex.Replace(value.ToString(), "([a-z])([A-Z])", "$1-$2").ToLower();
+    }
+}
+```
+
+::: moniker-end
 
 ## <a name="configure-a-page-route"></a>配置页面路由
 
