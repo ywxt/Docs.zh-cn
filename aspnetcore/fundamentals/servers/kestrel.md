@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/13/2018
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: 218b6429462991659ba02804fdc8fbb99b69f1a6
-ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
+ms.openlocfilehash: d6157ac2bdf046c66f4b740ad2263f6b7485c05d
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47211086"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912301"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 Kestrel Web 服务器实现
 
@@ -183,11 +183,17 @@ Kestrel Web 服务器具有约束配置选项，这些选项在面向 Internet �
 
 ::: moniker range=">= aspnetcore-2.2"
 
+[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=3)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+
 ```csharp
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         .UseStartup<Startup>()
-        .ConfigureKestrel((context, options) =>
+        .UseKestrel(options =>
         {
             options.Limits.MaxConcurrentConnections = 100;
         });
@@ -195,31 +201,25 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
-
-[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=3)]
-
-::: moniker-end
-
 对于已从 HTTP 或 HTTPS 升级到另一个协议（例如，Websocket 请求）的连接，有一个单独的限制。 连接升级后，不会计入 `MaxConcurrentConnections` 限制。
 
 ::: moniker range=">= aspnetcore-2.2"
+
+[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=4)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
 
 ```csharp
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         .UseStartup<Startup>()
-        .ConfigureKestrel((context, options) =>
+        .UseKestrel(options =>
         {
             options.Limits.MaxConcurrentUpgradedConnections = 100;
         });
 ```
-
-::: moniker-end
-
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
-
-[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=4)]
 
 ::: moniker-end
 
@@ -246,21 +246,21 @@ public IActionResult MyActionMethod()
 
 ::: moniker range=">= aspnetcore-2.2"
 
-```csharp
-public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-    WebHost.CreateDefaultBuilder(args)
-        .UseStartup<Startup>()
-        .ConfigureKestrel((context, options) =>
-        {
-            options.Limits.MaxRequestBodySize = 10 * 1024;
-        });
-```
+[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=5)]
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
 
-[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=5)]
+```csharp
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .UseKestrel(options =>
+        {
+            options.Limits.MaxRequestBodySize = 10 * 1024;
+        });
+```
 
 可在中间件中替代特定请求的设置：
 
@@ -289,11 +289,17 @@ Kestrel 每秒检查一次数据是否以指定的速率（字节/秒）传入�
 
 ::: moniker range=">= aspnetcore-2.2"
 
+[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=6-9)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+
 ```csharp
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         .UseStartup<Startup>()
-        .ConfigureKestrel((context, options) =>
+        .UseKestrel(options =>
         {
             options.Limits.MinRequestBodyDataRate =
                 new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
@@ -301,12 +307,6 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
                 new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
         });
 ```
-
-::: moniker-end
-
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
-
-[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=6-9)]
 
 可在中间件中配置每个请求的速率：
 
@@ -442,10 +442,6 @@ ASP.NET Core 2.1 `KestrelServerOptions` 配置：
 ### <a name="configureiconfiguration"></a>Configure(IConfiguration)
 
 创建配置加载程序，用于设置将 [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) 作为输入的 Kestrel。 配置必须针对 Kestrel 的配置节。
-
-::: moniker-end
-
-::: moniker range=">= aspnetcore-2.1"
 
 ### <a name="listenoptionsusehttps"></a>ListenOptions.UseHttps
 
@@ -713,6 +709,12 @@ public static IWebHost BuildWebHost(string[] args) =>
 
 ::: moniker range=">= aspnetcore-2.2"
 
+[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_TCPSocket&highlight=9-16)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+
 ```csharp
 public static void Main(string[] args)
 {
@@ -722,21 +724,15 @@ public static void Main(string[] args)
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         .UseStartup<Startup>()
-        .ConfigureKestrel((context, options) =>
+        .UseKestrel(options =>
         {
-            options.Listen(IPAddress.Loopback, 8000);
-            options.Listen(IPAddress.Loopback, 8001, listenOptions =>
+            options.Listen(IPAddress.Loopback, 5000);
+            options.Listen(IPAddress.Loopback, 5001, listenOptions =>
             {
                 listenOptions.UseHttps("testCert.pfx", "testPassword");
             });
         });
 ```
-
-::: moniker-end
-
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
-
-[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_TCPSocket&highlight=9-16)]
 
 ::: moniker-end
 
@@ -754,11 +750,17 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 ::: moniker range=">= aspnetcore-2.2"
 
+[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_UnixSocket)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+
 ```csharp
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         .UseStartup<Startup>()
-        .ConfigureKestrel((context, options) =>
+        .UseKestrel(options =>
         {
             options.ListenUnixSocket("/tmp/kestrel-test.sock");
             options.ListenUnixSocket("/tmp/kestrel-test.sock", listenOptions =>
@@ -767,12 +769,6 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             });
         });
 ```
-
-::: moniker-end
-
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
-
-[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_UnixSocket)]
 
 ::: moniker-end
 
