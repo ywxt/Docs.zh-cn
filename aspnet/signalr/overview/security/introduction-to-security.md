@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: ed562717-8591-4936-8e10-c7e63dcb570a
 msc.legacyurl: /signalr/overview/security/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: 765abd36c5182f291499042e787bcb4fcc727997
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 6336d9608f41c367c46d5b9552141546bc782b7d
+ms.sourcegitcommit: 12a8bdb8e83ca9c23c06f3bc6507c9e1a60ea7e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48910846"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49401863"
 ---
 <a name="introduction-to-signalr-security"></a>SignalR 安全性简介
 ====================
@@ -85,6 +85,14 @@ SignalR 应执行恶意命令验证发件人标识的风险。 对于每个请�
 ![](introduction-to-security/_static/image4.png)
 
 连接 id 是验证过程的一部分，因为不应显示一个用户的连接 id 向其他用户或在客户端上的值如存储在一个 cookie。
+
+#### <a name="connection-tokens-vs-other-token-types"></a>与其他令牌类型的连接令牌
+
+安全工具的连接令牌有时标记，因为它们显示为会话令牌或身份验证令牌，如果公开，会带来风险。
+
+SignalR 的连接令牌不是身份验证令牌。 它用于确认发出此请求的用户是同一个创建了连接。 连接令牌是必需的因为 ASP.NET SignalR 允许连接的服务器之间移动。 令牌将连接与特定用户相关联，但不声明发出请求的用户的标识。 SignalR 请求正确经过身份验证，它必须有一些其他令牌断言的标识的用户，例如 cookie 或持有者令牌。 但是，连接令牌本身可以由该用户，仅的令牌中包含的连接 ID 发出请求的任何索赔是与该用户关联。
+
+由于连接令牌不提供其自己的任何身份验证声明，它不会被视为"会话"或"身份验证"令牌。 获取给定的用户的连接令牌并将重播请求以其他用户进行身份验证 （或未经身份验证的请求） 中将失败，因为请求的用户标识和存储在令牌中的标识不匹配。
 
 <a id="rejoingroup"></a>
 

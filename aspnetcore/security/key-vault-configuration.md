@@ -5,14 +5,14 @@ description: 了解如何使用 Azure 密钥保管库配置提供程序来配置
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/01/2018
+ms.date: 10/17/2018
 uid: security/key-vault-configuration
-ms.openlocfilehash: 933f4fb1f2c1c412d318af5974cc9653805242ca
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: 474824cccdc63bb3dc3978ed68cf4c89cec12ad5
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927982"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391137"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>在 ASP.NET Core 的 azure 密钥保管库配置提供程序
 
@@ -62,6 +62,48 @@ ms.locfileid: "42927982"
 运行应用时，网页显示加载的机密值：
 
 ![通过使用 Azure 密钥保管库配置提供程序加载浏览器窗口，其中显示密钥值](key-vault-configuration/_static/sample1.png)
+
+## <a name="bind-an-array-to-a-class"></a>将数组绑定至类
+
+提供程序支持的配置值读入数组绑定到 POCO 数组。
+
+从允许包含冒号的键的配置源读取数据时 (`:`) 使用分隔符，数字键段来区分对数组组成的密钥 (`:0:`， `:1:`，... `:{n}:`）格式模式中出现的位置生成。 有关详细信息，请参阅[配置： 将数组绑定到一个类](xref:fundamentals/configuration/index#bind-an-array-to-a-class)。
+
+Azure 密钥保管库密钥不能使用冒号作为分隔符。 本主题中介绍的方法使用双短划线 (`--`) 作为 （部分） 的层次结构值的分隔符。 使用双短划线和数值的关键段数组密钥存储在 Azure 密钥保管库 (`--0--`， `--1--`，... `--{n}--`）格式模式中出现的位置生成。
+
+请参阅以下[Serilog](https://serilog.net/)日志记录提供程序配置提供的 JSON 文件。 有两个对象中定义的文本`WriteTo`数组，它反映两个 Serilog*接收器*，其中介绍了日志记录输出的目标：
+
+```json
+"Serilog": {
+  "WriteTo": [
+    {
+      "Name": "AzureTableStorage",
+      "Args": {
+        "storageTableName": "logs",
+        "connectionString": "DefaultEnd...ountKey=Eby8...GMGw=="
+      }
+    },
+    {
+      "Name": "AzureDocumentDB",
+      "Args": {
+        "endpointUrl": "https://contoso.documents.azure.com:443",
+        "authorizationKey": "Eby8...GMGw=="
+      }
+    }
+  ]
+}
+```
+
+在上面的 JSON 文件中所示的配置存储在 Azure 密钥保管库中使用双短划线 (`--`) 表示法和数字段：
+
+| 键 | “值” |
+| --- | ----- |
+| `Serilog--WriteTo--0--Name` | `AzureTableStorage` |
+| `Serilog--WriteTo--0--Args--storageTableName` | `logs` |
+| `Serilog--WriteTo--0--Args--connectionString` | `DefaultEnd...ountKey=Eby8...GMGw==` |
+| `Serilog--WriteTo--1--Name` | `AzureDocumentDB` |
+| `Serilog--WriteTo--1--Args--endpointUrl` | `https://contoso.documents.azure.com:443` |
+| `Serilog--WriteTo--1--Args--authorizationKey` | `Eby8...GMGw==` |
 
 ## <a name="create-prefixed-key-vault-secrets-and-load-configuration-values-key-name-prefix-sample"></a>创建带前缀的密钥保管库机密并加载配置值 （密钥的名称的前缀的示例）
 

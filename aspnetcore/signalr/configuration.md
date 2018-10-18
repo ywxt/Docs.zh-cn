@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/06/2018
 uid: signalr/configuration
-ms.openlocfilehash: 72fc53cad7caf55e85d0668c9dbea1a70fc8674b
-ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
+ms.openlocfilehash: 855446003ae9d994854d4d8bb7d0f542a22734e4
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46292331"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391097"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>ASP.NET Core SignalR 配置
 
@@ -120,7 +120,7 @@ WebSocket 传输中包含其他选项，可以使用配置`WebSockets`属性：
 
 ### <a name="configure-logging"></a>配置日志记录
 
-使用.NET 客户端中配置日志记录`ConfigureLogging`方法。 可以在相同的方式注册日志记录提供程序和筛选器，因为它们是在服务器上。 请参阅[登录 ASP.NET Core](xref:fundamentals/logging/index#how-to-add-providers) 文档以了解更多信息。
+使用.NET 客户端中配置日志记录`ConfigureLogging`方法。 可以在相同的方式注册日志记录提供程序和筛选器，因为它们是在服务器上。 请参阅[登录 ASP.NET Core](xref:fundamentals/logging/index) 文档以了解更多信息。
 
 > [!NOTE]
 > 若要注册日志记录提供程序，必须安装所需的包。 请参阅[内置日志记录提供程序](xref:fundamentals/logging/index#built-in-logging-providers)部分有关的完整列表。
