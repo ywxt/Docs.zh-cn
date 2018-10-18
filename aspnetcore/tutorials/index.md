@@ -5,12 +5,12 @@ description: 用于了解如何开发 ASP.NET Core 应用程序的分步指南�
 ms.author: riande
 ms.date: 10/14/2017
 uid: tutorials/index
-ms.openlocfilehash: 3d2fbb453c8f6510806d8dc263ea344023aa4cda
-ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
+ms.openlocfilehash: c7c17da1bc5fdc2f8e451ad11ebd8b42d1723a31
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47454786"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391071"
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 教程
 
@@ -73,7 +73,6 @@ ms.locfileid: "47454786"
 * [使用 Gulp](xref:client-side/using-gulp)
 * [使用 Grunt](xref:client-side/using-grunt)
 * [使用 Bower 管理客户端包](xref:client-side/bower)
-* [使用 Bootstrap 构建响应式站点](xref:client-side/bootstrap)
 
 ## <a name="test"></a>测试
 
