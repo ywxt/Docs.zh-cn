@@ -24,7 +24,7 @@ ms.locfileid: "42908998"
 
 * 简化横向扩展模型。
 * 新 JavaScript 客户端不具有 jQuery 依赖项。
-* 新紧凑型二进制协议基于 MessagePack。
+* 新的基于 MessagePack的紧凑型二进制协议。
 * 支持自定义协议。
 * 新的流式处理响应模型。
 * 支持基于裸机 WebSocket 的客户端。
@@ -33,7 +33,7 @@ ms.locfileid: "42908998"
 
 ## <a name="razor-class-libraries"></a>Razor 类库
 
-通过 ASP.NET Core 2.1 可以更容易地在库中生成和包括基于 Razor 的 UI，并跨多个项目共享 UI。 新 Razor SDK 支持将 Razor 文件生成到可打包为 NuGet 包的类库项目中。 应用可以自动发现和覆盖库中的视图和页面。 通过将 Razor 编译集成到生成中：
+通过 ASP.NET Core 2.1 可以更容易地在库中生成和包含基于 Razor 的 UI，并跨多个项目共享 UI。 新 Razor SDK 支持将 Razor 文件生成到可打包为 NuGet 包的类库项目中。 应用可以自动发现和覆盖库中的视图和页面。 通过将 Razor 编译集成到生成中：
 
 * 应用启动时间可显著加快。
 * 在迭代开发工作流过程中，仍可在运行时快速更新 Razor 视图和页面。
@@ -50,29 +50,29 @@ ASP.NET Core 2.1 提供 [ASP.NET Core 标识](xref:security/authentication/ident
 
 ## <a name="https"></a>HTTPS
 
-随着对安全和隐私的关注度日益增加，为 Web 应用启用 HTTPS 变得非常重要。 Web 上正在越来越严格要求强制使用 HTTPS。 不使用 HTTPS 的站点会被视为不安全的站点。 浏览器（Chromium、Mozilla）开始强制要求必须在安全的上下文中使用 Web 功能。 [GDPR](xref:security/gdpr) 要求使用 HTTPS 保护用户隐私。 不仅在生产环境中使用 HTTPS 至关重要，而且在开发环境中使用 HTTPS 还可以帮助防止部署中的各种问题（例如，不安全的链接）。 ASP.NET Core 2.1 包含大量改进，更方便在开发环境使用 HTTPS 和在生产环境配置 HTTPS。 有关详细信息，请参阅[强制使用 HTTPS](xref:security/enforcing-ssl)。
+随着对安全和隐私的关注度日益增加，为 Web 应用启用 HTTPS 变得非常重要。 Web 上强制使用 HTTPS的要求正越来越严格。 不使用 HTTPS 的站点会被视为不安全的站点。 浏览器（Chromium、Mozilla）开始强制要求必须在安全的上下文中使用 Web 功能。 [GDPR](xref:security/gdpr) 要求使用 HTTPS 保护用户隐私。 不仅在生产环境中使用 HTTPS 至关重要，在开发环境中使用 HTTPS 还有助于防止部署中的各种问题（例如，不安全的链接）。 ASP.NET Core 2.1 包含大量改进，更方便在开发环境使用 HTTPS 和在生产环境配置 HTTPS。 有关详细信息，请参阅[强制使用 HTTPS](xref:security/enforcing-ssl)。
 
 ### <a name="on-by-default"></a>默认开启
 
-为了提高网站开发的安全性，现在默认启用 HTTPS。 从 2.1 开始，当存在本地开发证书时，Kestrel 将侦听 `https://localhost:5001`。 开发证书会创建于以下情况：
+为了提高网站开发的安全性，现在默认启用 HTTPS。 从 2.1 开始，当本地具有开发证书时，Kestrel 将侦听 `https://localhost:5001`。 开发证书会创建于以下情况：
 
-* 首次使用 SDK 时，在 .NET Core SDK 首次运行体验的过程中。
-* 手动使用新 `dev-certs` 工具。
+* 首次使用 SDK 时，作为.NET Core SDK 首次运行体验的一部分。
+* 手动使用新的 `dev-certs` 工具。
 
 运行 `dotnet dev-certs https --trust` 以信任证书。
 
 ### <a name="https-redirection-and-enforcement"></a>HTTPS 重定向和强制使用
 
-Web 应用通常需要侦听 HTTP 和 HTTPS，但随后会将所有 HTTP 流量重定向到 HTTPS。 在 2.1 中，引入了专用的 HTTPS 重定向中间件，可根据配置或绑定服务器端口的存在智能执行重定向。
+Web 应用通常需要侦听 HTTP 和 HTTPS，但随后会将所有 HTTP 流量重定向到 HTTPS。 在 2.1 中，引入了专用的 HTTPS 重定向中间件，可根据配置或绑定服务器端口智能执行重定向。
 
 使用 [HTTP 严格传输安全协议 (HSTS)](xref:security/enforcing-ssl#http-strict-transport-security-protocol-hsts) 可进一步强制使用 HTTPS。 HSTS 指示浏览器始终通过 HTTPS 访问站点。 ASP.NET Core 2.1 添加 HSTS 中间件，该中间件支持选择最大年限、子域和 HSTS 预加载列表。
 
 ### <a name="configuration-for-production"></a>适用于生产环境的配置
 
-在生产中，必须显式配置 HTTPS。 在 2.1 中，添加了默认配置架构，可用于针对 Kestrel 配置 HTTPS。 可以将应用配置为使用：
+在生产环境中，必须显式配置 HTTPS。 在 2.1 中，添加了针对Kestrel配置HTTPS的默认配置架构。 可以使用以下内容对应用进行配置：
 
 * 多个终结点（包括 URL）。 有关详细信息，请参阅 [Kestrel Web 服务器实现：终结点配置](xref:fundamentals/servers/kestrel#endpoint-configuration)。
-* 用于 HTTPS 的证书可能来自于磁盘上的文件或证书存储。
+* 来自于磁盘上的文件或证书存储中的用于 HTTPS 的证书。
 
 ## <a name="gdpr"></a>GDPR
 
