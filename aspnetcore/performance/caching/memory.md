@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/15/2018
 uid: performance/caching/memory
-ms.openlocfilehash: 960aa18f9d14f633118ccd716201e61464085c05
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: be2e81d1aa6a89d65414d53a70ca2d2fb5d2d3a3
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325921"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477184"
 ---
 # <a name="cache-in-memory-in-aspnet-core"></a>缓存在内存中 ASP.NET Core
 
@@ -173,7 +173,7 @@ Web 场中的非粘性会话需要[分布式缓存](distributed.md)以避免缓�
 ## <a name="additional-resources"></a>其他资源
 
 * [使用分布式缓存](xref:performance/caching/distributed)
-* [使用更改令牌检测更改](xref:fundamentals/primitives/change-tokens)
+* [使用更改令牌检测更改](xref:fundamentals/change-tokens)
 * [响应缓存](xref:performance/caching/response)
 * [响应缓存中间件](xref:performance/caching/middleware)
 * [缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)

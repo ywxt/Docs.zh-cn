@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/26/2017
 uid: performance/caching/middleware
-ms.openlocfilehash: f4e5a414b92e3ca65e19188ebd2bfaef6f32fee7
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: d991bc48ed07ee71b0decaa0bee4df811fdc74c4
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893085"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477522"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>响应缓存在 ASP.NET Core 中的中间件
 
@@ -159,7 +159,7 @@ if (responseCachingFeature != null)
 * [中间件](xref:fundamentals/middleware/index)
 * [内存中缓存](xref:performance/caching/memory)
 * [使用分布式缓存](xref:performance/caching/distributed)
-* [使用更改令牌检测更改](xref:fundamentals/primitives/change-tokens)
+* [使用更改令牌检测更改](xref:fundamentals/change-tokens)
 * [响应缓存](xref:performance/caching/response)
 * [缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
 * [分布式缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

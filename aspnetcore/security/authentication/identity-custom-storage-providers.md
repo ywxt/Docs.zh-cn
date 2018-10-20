@@ -5,12 +5,12 @@ description: 了解如何配置 ASP.NET Core标识的自定义存储提供程序
 ms.author: riande
 ms.date: 09/17/2018
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: db51c39cc700f93917f54c80adbfe7922ffcd67e
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: e206cf584d92a17d61676d71abc6fb577ae63453
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011256"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477613"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core标识的自定义的存储提供程序
 
@@ -41,7 +41,7 @@ dotnet new webapi -au Individual
 
 ## <a name="the-aspnet-core-identity-architecture"></a>ASP.NET Core标识体系结构
 
-ASP.NET Core标识包含类称为管理器和存储区。 *管理器*是高级类应用程序开发人员使用来执行操作，如创建标识用户。 *存储*是指定如何保持实体，例如用户和角色，较低级别类。 存储遵循[存储库模式](xref:fundamentals/repository-pattern)与持久性机制紧密耦合。 管理器被分开存储，这意味着您可以替换持久性机制，而无需更改应用程序代码中的 （除配置）。
+ASP.NET Core标识包含类称为管理器和存储区。 *管理器*是高级类应用程序开发人员使用来执行操作，如创建标识用户。 *存储*是指定如何保持实体，例如用户和角色，较低级别类。 存储遵循存储库模式和紧密结合的持久性机制。 管理器被分开存储，这意味着您可以替换持久性机制，而无需更改应用程序代码中的 （除配置）。
 
 下图显示了 web 应用与交互的方式管理器，而存储与数据访问层进行交互。
 
