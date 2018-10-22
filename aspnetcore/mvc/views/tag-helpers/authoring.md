@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 08/20/2018
 uid: mvc/views/tag-helpers/authoring
-ms.openlocfilehash: 2d39488caeea0c87d2efc79f265de7feb200f096
-ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
+ms.openlocfilehash: 3bad02c650c717b33386f028cb223d14c0a34ff9
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41751476"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477626"
 ---
 # <a name="author-tag-helpers-in-aspnet-core"></a>在 ASP.NET Core 中创作标记帮助程序
 
@@ -113,6 +113,8 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
 1. 使用以下更改更新 Views/Home/Contact.cshtml 文件中的标记：[!code-html[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/ContactCopy.cshtml?highlight=15,16)]
 
 2. 运行应用并验证它是否生成正确的链接。
+
+<a name="self-closing"></a>
     
    > [!NOTE]
    > 如果打算编写电子邮件标记自结束 (`<email mail-to="Rick" />`)，最终输出也将为自结束。 要启用只使用开始标记 (`<email mail-to="Rick">`) 来编写标记的功能，必须用以下内容修饰类：

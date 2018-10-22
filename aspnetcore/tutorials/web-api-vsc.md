@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/30/2018
 uid: tutorials/web-api-vsc
-ms.openlocfilehash: 4ce808ec4241ab2fc3c2fb81c3fdb15dd853cd90
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: b8e5c8b7d3dc04513997997d903295853dd1ff46
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342271"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348424"
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-visual-studio-code"></a>使用 ASP.NET Core 和 Visual Studio Code 创建 Web API
 
@@ -32,6 +32,8 @@ ms.locfileid: "39342271"
 ## <a name="prerequisites"></a>系统必备
 
 [!INCLUDE[prerequisites](~/includes/net-core-prereqs-vscode.md)]
+
+有关 VS Code 的使用技巧，请参阅 [Visual Studio Code 帮助](#visual-studio-code-help)。
 
 ## <a name="create-the-project"></a>创建项目
 
@@ -57,13 +59,13 @@ code TodoApi
 ["value1","value2"]
 ```
 
-有关 VS Code 的使用技巧，请参阅 [Visual Studio Code 帮助](#visual-studio-code-help)。
+
 
 ## <a name="add-support-for-entity-framework-core"></a>添加对 Entity Framework Core 的支持
 
 :::moniker range=">= aspnetcore-2.1"
 
-在 ASP.NET Core 2.1 或更高版本中创建新项目会在 TodoApi.csproj 文件中添加 [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App) 包引用。 如果尚未指定，请添加 `Version` 属性。
+在 ASP.NET Core 2.1 或更改版本中创建新项目会在 TodoApi.csproj 文件中添加 [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App) 包引用：
 
 [!code-xml[](first-web-api/samples/2.1/TodoApi/TodoApi.csproj?name=snippet_Metapackage&highlight=2)]
 

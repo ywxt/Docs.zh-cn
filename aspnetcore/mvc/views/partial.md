@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/11/2018
 uid: mvc/views/partial
-ms.openlocfilehash: a836ed073dfe769fc3cc0cd0622b17937747928b
-ms.sourcegitcommit: 70fb7c9d5f2ddfcf4747382a9f7159feca7a6aa7
+ms.openlocfilehash: d3d2f55645881dd05f7663e0a9d3e45d6bb6d77f
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601751"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477678"
 ---
 # <a name="partial-views-in-aspnet-core"></a>ASP.NET Core 中的分部视图
 
@@ -44,7 +44,7 @@ ms.locfileid: "45601751"
 
 ## <a name="declare-partial-views"></a>声明分部视图
 
-::: moniker range=">= aspnetcore-2.1"
+::: moniker range=">= aspnetcore-2.0"
 
 分部视图是在 Views 文件夹 (MVC) 或 Pages 文件夹 (Razor Pages) 中维护的 .cshtml 标记文件。
 
@@ -52,11 +52,11 @@ ms.locfileid: "45601751"
 
 与 MVC 视图或页面呈现不同，分部视图不会运行 _ViewStart.cshtml。 有关 _ViewStart.cshtml 的详细信息，请参阅 <xref:mvc/views/layout>。
 
-分部视图的文件名通常以下划线 (`_`) 开头。 虽然未强制要求遵从此命名约定，但它有助于直观地将分部视图与视图和页面区分开来。 当文件名以下划线开头时，即使文件的标记包含 `@page` 指令，Razor Pages 也不会将标记文件作为 Razor Pages 处理。
+分部视图的文件名通常以下划线 (`_`) 开头。 虽然未强制要求遵从此命名约定，但它有助于直观地将分部视图与视图和页面区分开来。
 
 ::: moniker-end
 
-::: moniker range="< aspnetcore-2.1"
+::: moniker range="< aspnetcore-2.0"
 
 分部视图是在 Views 文件夹中维护的 .cshtml 标记文件。
 
