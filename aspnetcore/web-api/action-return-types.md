@@ -60,7 +60,7 @@ ASP.NET Core 提供以下 Web API 控制器操作返回类型选项：
 
 [!code-csharp[](../web-api/action-return-types/samples/WebApiSample.Api.Pre21/Controllers/ProductsController.cs?name=snippet_GetById&highlight=8,11)]
 
-在上述操作中，当 `id` 代表的产品不在基础数据存储中时，则返回 404 状态代码。 调用 [NotFound](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.notfound) 帮助程序方法作为 `return new NotFoundResult();` 的快捷方式。 如果产品确实存在，则返回代表有效负载的 `Product` 对象和状态代码 200。 调用 [Ok](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.ok) 帮助程序方法作为 `return new OkObjectResult(product);` 的快捷方式。
+在上述操作中，当 `id` 代表的产品不在基础数据存储中时，则返回 404 状态代码。 调用 [NotFound](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.notfound) 帮助方法作为 `return new NotFoundResult();` 的快捷方式。 如果产品确实存在，则返回代表有效负载的 `Product` 对象和状态代码 200。 调用 [Ok](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.ok) 帮助方法作为 `return new OkObjectResult(product);` 的快捷方式。
 
 ### <a name="asynchronous-action"></a>异步操作
 
@@ -68,11 +68,11 @@ ASP.NET Core 提供以下 Web API 控制器操作返回类型选项：
 
 [!code-csharp[](../web-api/action-return-types/samples/WebApiSample.Api.Pre21/Controllers/ProductsController.cs?name=snippet_CreateAsync&highlight=8,13)]
 
-在上述操作中，模型验证失败时返回 400 状态代码，并且调用了 [BadRequest](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.badrequest) 帮助程序方法。 例如，以下模型指示请求必须提供 `Name` 属性和值。 因此，若请求中未能提供合适的 `Name`，则会导致模型验证失败。
+在上述操作中，模型验证失败时返回 400 状态代码，并且调用了 [BadRequest](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.badrequest) 帮助方法。 例如，以下模型指示请求必须提供 `Name` 属性和值。 因此，若请求中未能提供合适的 `Name`，则会导致模型验证失败。
 
 [!code-csharp[](../web-api/action-return-types/samples/WebApiSample.DataAccess/Models/Product.cs?name=snippet_ProductClass&highlight=5-6)]
 
-上述操作的其他已知返回代码是 201，由 [CreatedAtAction](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdataction) 帮助程序方法生成。 在此路径中，返回了 `Product` 对象。
+上述操作的其他已知返回代码是 201，由 [CreatedAtAction](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdataction) 帮助方法生成。 在此路径中，返回了 `Product` 对象。
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -80,7 +80,7 @@ ASP.NET Core 提供以下 Web API 控制器操作返回类型选项：
 
 ASP.NET Core 2.1 引入了面向 Web API 控制器操作的 [ActionResult\<T>](/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1) 返回类型。 它支持返回从 [ActionResult](/dotnet/api/microsoft.aspnetcore.mvc.actionresult) 派生的类型或返回[特定类型](#specific-type)。 `ActionResult<T>` 通过 [IActionResult 类型](#iactionresult-type)可提供以下优势：
 
-* 可排除 [[ProducesResponseType]](/dotnet/api/microsoft.aspnetcore.mvc.producesresponsetypeattribute) 特性的 `Type` 属性。 例如，`[ProducesResponseType(200, Type = typeof(Product))]` 简化为 `[ProducesResponseType(200)]`。 此操作的预期返回类型改为根据 `ActionResult<T>` 中的 `T` 进行推断。
+* 可排除 [[ProducesResponseType]](/dotnet/api/microsoft.aspnetcore.mvc.producesresponsetypeattribute) 特性的 `Type` 属性。 例如，`[ProducesResponseType(200, Type = typeof(Product))]` 可简化为 `[ProducesResponseType(200)]`。 此操作的预期返回类型改为根据 `ActionResult<T>` 中的 `T` 进行推断。
 * [隐式强制转换运算符](/dotnet/csharp/language-reference/keywords/implicit)支持将 `T` 和 `ActionResult` 均转换为 `ActionResult<T>`。 将 `T` 转换为 [ObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.objectresult)，也就是将 `return new ObjectResult(T);` 简化为 `return T;`。
 
 C# 不支持对接口使用隐式强制转换运算符。 因此，必须使用 `ActionResult<T>`，才能将接口转换为具体类型。 例如，在下面的示例中，使用 `IEnumerable` 不起作用：
