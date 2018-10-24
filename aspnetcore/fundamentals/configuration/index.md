@@ -4,14 +4,14 @@ author: guardrex
 description: 理解如何使用配置 API 配置 ASP.NET Core 应用。
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/13/2018
+ms.date: 10/09/2018
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 288f8ba5b45cdecd8c9eae060fee2c2c25dec7f9
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: 35f283becd156da22a4d9d2034055ee79b75ffda
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893241"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326168"
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core 中的配置
 
@@ -191,7 +191,8 @@ ASP.NET Core 中的应用配置基于配置提供程序建立的键值对。 配
 
 配置提供程序的典型顺序为：
 
-1. 文件（*appsettings.json**appsettings.&lt;Environment&gt;.json*，其中 `<Environment>` 是应用的当前托管环境）
+1. 文件（appsettings.json、appsettings.{Environment}.json，其中 `{Environment}` 是应用的当前托管环境）
+1. [Azure 密钥保管库](xref:security/key-vault-configuration)
 1. [用户机密 (Secret Manager)](xref:security/app-secrets)（仅限开发环境中）
 1. 环境变量
 1. 命令行参数
@@ -201,12 +202,6 @@ ASP.NET Core 中的应用配置基于配置提供程序建立的键值对。 配
 ::: moniker range=">= aspnetcore-2.0"
 
 在使用 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> 初始化新的 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，将使用此提供程序序列。 有关详细信息，请参阅 [Web 主机：设置主机](xref:fundamentals/host/web-host#set-up-a-host)。
-
-在构建 Web 主机时调用 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 以指定应用的配置提供程序：
-
-[!code-csharp[](index/samples/2.x/ConfigurationSample/Program.cs?name=snippet_Program&highlight=19)]
-
-ASP.NET Core 2.1 或更高版本中提供了 `ConfigureAppConfiguration`。
 
 ::: moniker-end
 
@@ -247,19 +242,29 @@ public void ConfigureServices(IServiceCollection services)
 
 ::: moniker-end
 
+::: moniker range=">= aspnetcore-2.1"
+
+## <a name="configureappconfiguration"></a>ConfigureAppConfiguration
+
+构建 Web 主机时调用 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 以指定应用的配置提供程序以及 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> 自动添加的配置提供程序：
+
+[!code-csharp[](index/samples/2.x/ConfigurationSample/Program.cs?name=snippet_Program&highlight=19)]
+
+::: moniker-end
+
 ## <a name="command-line-configuration-provider"></a>命令行配置提供程序
 
 <xref:Microsoft.Extensions.Configuration.CommandLine.CommandLineConfigurationProvider> 在运行时从命令行参数键值对加载配置。
 
-::: moniker range=">= aspnetcore-2.0"
-
 要激活命令行配置，请在 <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder> 的实例上调用 <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*> 扩展方法。
+
+::: moniker range=">= aspnetcore-2.0"
 
 使用 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> 初始化新的 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时会自动调用 `AddCommandLine`。 有关详细信息，请参阅 [Web 主机：设置主机](xref:fundamentals/host/web-host#set-up-a-host)。
 
 此外，`CreateDefaultBuilder` 也会加载：
 
-* appsettings.json 和 appsettings.&lt;Environment&gt;.json 的可选配置。
+* appsettings.json 和 appsettings.{Environment}.json 的可选配置。
 * [用户机密 (Secret Manager)](xref:security/app-secrets)（在开发环境中）。
 * 环境变量。
 
@@ -267,7 +272,66 @@ public void ConfigureServices(IServiceCollection services)
 
 `CreateDefaultBuilder` 在构造主机时起作用。 因此，`CreateDefaultBuilder` 激活的命令行配置可能会影响主机的配置方式。
 
-手动构建主机而不调用 `CreateDefaultBuilder` 时，请在 <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder> 的实例上调用 `AddCommandLine` 扩展方法：
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+
+构建主机时调用 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 以指定应用的配置。
+
+`CreateDefaultBuilder` 已经调用了 `AddCommandLine`。 如果需要提供应用配置并仍然能够使用命令行参数覆盖该配置，请在 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 中调用应用的其他提供程序并最后调用 `AddCommandLine`。
+
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        CreateWebHostBuilder(args).Build().Run();
+    }
+
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        WebHost.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                // Call other providers here and call AddCommandLine last.
+                config.AddCommandLine(args)
+            })
+            .UseStartup<Startup>();
+}
+```
+
+直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+使用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> 方法将配置应用到 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>。
+
+调用 `UseConfiguration` 时，`CreateDefaultBuilder` 已调用 `AddCommandLine`。 如果需要提供应用配置并仍然能够使用命令行参数覆盖该配置，请在 `ConfigurationBuilder` 中调用应用的其他提供程序并最后调用 `AddCommandLine`。
+
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        CreateWebHostBuilder(args).Build().Run();
+    }
+
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args)
+    {
+        var config = new ConfigurationBuilder()
+            // Call other providers here and call AddCommandLine last.
+            .AddCommandLine(args)
+            .Build();
+
+        return WebHost.CreateDefaultBuilder(args)
+            .UseConfiguration(config)
+            .UseStartup<Startup>();
+    }
+}
+```
+
+直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
 
 ::: moniker-end
 
@@ -283,6 +347,8 @@ public void ConfigureServices(IServiceCollection services)
 
 ```csharp
 var config = new ConfigurationBuilder()
+    // Call additional providers here as needed.
+    // Call AddCommandLine last to allow arguments to override other configuration.
     .AddCommandLine(args)
     .Build();
 
@@ -318,8 +384,8 @@ var host = new WebHostBuilder()
 | 键前缀               | 示例                                                |
 | ------------------------ | ------------------------------------------------------ |
 | 无前缀                | `CommandLineKey1=value1`                               |
-| 双划线 (`--`)        | `--CommandLineKey2=value2`, `--CommandLineKey2 value2` |
-| 正斜杠 (`/`)      | `/CommandLineKey3=value3`, `/CommandLineKey3 value3`   |
+| 双划线 (`--`)        | `--CommandLineKey2=value2`， `--CommandLineKey2 value2` |
+| 正斜杠 (`/`)      | `/CommandLineKey3=value3`， `/CommandLineKey3 value3`   |
 
 在同一命令中，不要将使用等号的命令行参数键值对与使用空格的键值对混合使用。
 
@@ -342,7 +408,41 @@ dotnet run CommandLineKey1= CommandLineKey2=value
 * 交换必须以单划线 (`-`) 或双划线 (`--`) 开头。
 * 交换映射字典不得包含重复键。
 
-::: moniker range=">= aspnetcore-2.0"
+::: moniker range=">= aspnetcore-2.1"
+
+构建主机时调用 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 以指定应用的配置：
+
+```csharp
+public class Program
+{
+    public static readonly Dictionary<string, string> _switchMappings = 
+        new Dictionary<string, string>
+        {
+            { "-CLKey1", "CommandLineKey1" },
+            { "-CLKey2", "CommandLineKey2" }
+        };
+
+    public static void Main(string[] args)
+    {
+        CreateWebHostBuilder(args).Build().Run();
+    }
+
+    // Do not pass the args to CreateDefaultBuilder
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        WebHost.CreateDefaultBuilder()
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                config.AddCommandLine(args, _switchMappings)
+            })
+            .UseStartup<Startup>();
+}
+```
+
+如前面的示例所示，当使用交换映射时，对 `CreateDefaultBuilder` 的调用不应传递参数。 `CreateDefaultBuilder` 方法的 `AddCommandLine` 调用不包括映射的交换，并且无法将交换映射字典传递给 `CreateDefaultBuilder`。 如果参数包含映射的交换并传递给 `CreateDefaultBuilder`，则其 `AddCommandLine` 提供程序无法使用 <xref:System.FormatException> 进行初始化。 解决方案不是将参数传递给 `CreateDefaultBuilder`，而是允许 `ConfigurationBuilder` 方法的 `AddCommandLine` 方法处理参数和交换映射字典。
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 ```csharp
 public class Program
@@ -364,6 +464,7 @@ public class Program
             .AddCommandLine(args, switchMappings)
             .Build();
 
+        // Do not pass the args to CreateDefaultBuilder
         return WebHost.CreateDefaultBuilder()
             .UseConfiguration(config)
             .UseStartup<Startup>();
@@ -441,19 +542,82 @@ dotnet run -CLKey1=value1 -CLKey2=value2
 
 此外，`CreateDefaultBuilder` 也会加载：
 
-* appsettings.json 和 appsettings.&lt;Environment&gt;.json 的可选配置。
+* appsettings.json 和 appsettings.{Environment}.json 的可选配置。
 * [用户机密 (Secret Manager)](xref:security/app-secrets)（在开发环境中）。
 * 命令行参数。
 
 在根据用户机密和 appsettings 文件建立配置后，调用环境变量配置提供程序。 在此位置调用提供程序允许在运行时读取的环境变量替代由用户机密和 appsettings 文件设置的配置。
 
-还可以直接在 <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder> 的实例上调用 `AddEnvironmentVariables` 扩展方法：
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+
+构建主机时调用 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 以指定应用的配置。
+
+前缀为 `ASPNETCORE_` 的环境变量的 `AddEnvironmentVariables` 已被 `CreateDefaultBuilder` 调用。 如果需要从其他环境变量提供应用配置，请在 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 中调用应用的其他提供程序，并使用前缀调用 `AddEnvironmentVariables`。
+
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        CreateWebHostBuilder(args).Build().Run();
+    }
+
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        WebHost.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                // Call additional providers here as needed.
+                // Call AddEnvironmentVariables last if you need to allow environment
+                // variables to override values from other providers.
+                config.AddEnvironmentVariables(prefix: "PREFIX_")
+            })
+            .UseStartup<Startup>();
+}
+```
+
+直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+在 <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder> 的实例上调用 `AddEnvironmentVariables` 扩展方法。 使用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> 方法将配置应用到 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>。
+
+前缀为 `ASPNETCORE_` 的环境变量的 `AddEnvironmentVariables` 已被 `CreateDefaultBuilder` 调用。 如果需要从其他环境变量提供应用配置，请在 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 中调用应用的其他提供程序，并使用前缀调用 `AddEnvironmentVariables`。
+
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        CreateWebHostBuilder(args).Build().Run();
+    }
+
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args)
+    {
+        var config = new ConfigurationBuilder()
+            // Call additional providers here as needed.
+            // Call AddEnvironmentVariables last if you need to allow environment
+            // variables to override values from other providers.
+            .AddEnvironmentVariables(prefix: "PREFIX_")
+            .Build();
+
+        return WebHost.CreateDefaultBuilder(args)
+            .UseConfiguration(config)
+            .UseStartup<Startup>();
+    }
+}
+```
+
+直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-使用 `UseConfiguration` 方法将配置应用到 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>：
+使用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> 方法将配置应用到 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>：
 
 ::: moniker-end
 
@@ -575,9 +739,36 @@ var config = new ConfigurationBuilder()
 * 如果文件更改，是否重载配置。
 * <xref:Microsoft.Extensions.FileProviders.IFileProvider> 用于访问该文件。
 
-::: moniker range=">= aspnetcore-2.0"
+::: moniker range=">= aspnetcore-2.1"
 
-调用 `CreateDefaultBuilder` 时，请使用以下配置调用 `UseConfiguration`：
+构建主机时调用 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 以指定应用的配置：
+
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        CreateWebHostBuilder(args).Build().Run();
+    }
+
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        WebHost.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                config.SetBasePath(Directory.GetCurrentDirectory());
+                config.AddIniFile("config.ini", optional: true, reloadOnChange: true)
+            })
+            .UseStartup<Startup>();
+}
+```
+
+直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+调用 `CreateDefaultBuilder` 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
 
 ```csharp
 public class Program
@@ -601,13 +792,13 @@ public class Program
 }
 ```
 
-直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 `UseConfiguration`：
+直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-使用 `UseConfiguration` 方法将配置应用到 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>：
+使用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> 方法将配置应用到 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>：
 
 ::: moniker-end
 
@@ -665,7 +856,7 @@ key=value
 使用 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> 初始化新的 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，会自动调用 `AddJsonFile` 两次。 调用该方法来从以下文件加载配置：
 
 * appsettings.json &ndash; 首先读取此文件。 该文件的环境版本可以替代 appsettings.json 文件提供的值。
-* appsettings.&lt;Environment&gt;.json &ndash; 根据 [IHostingEnvironment.EnvironmentName](xref:Microsoft.Extensions.Hosting.IHostingEnvironment.EnvironmentName*) 加载文件的环境版本。
+* *appsettings.{Environment}.json*&ndash; 根据 [IHostingEnvironment.EnvironmentName](xref:Microsoft.Extensions.Hosting.IHostingEnvironment.EnvironmentName*) 加载文件的环境版本。
 
 有关详细信息，请参阅 [Web 主机：设置主机](xref:fundamentals/host/web-host#set-up-a-host)。
 
@@ -677,9 +868,40 @@ key=value
 
 首先建立 JSON 配置提供程序。 因此，用户机密、环境变量和命令行参数会替代由 appsettings 文件设置的配置。
 
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+
+构建主机时调用 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 以指定除 appsettings.json 和 appsettings.{Environment}.json 以外的文件的应用配置：
+
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        CreateWebHostBuilder(args).Build().Run();
+    }
+
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        WebHost.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                config.SetBasePath(Directory.GetCurrentDirectory());
+                config.AddJsonFile("config.json", optional: true, reloadOnChange: true)
+            })
+            .UseStartup<Startup>();
+}
+```
+
+直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
 还可以在 <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder> 的实例上直接调用 `AddJsonFile` 扩展方法。
 
-调用 `CreateDefaultBuilder` 时，请使用以下配置调用 `UseConfiguration`：
+调用 `CreateDefaultBuilder` 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
 
 ```csharp
 public class Program
@@ -703,13 +925,13 @@ public class Program
 }
 ```
 
-直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 `UseConfiguration`：
+直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-使用 `UseConfiguration` 方法将配置应用到 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>：
+使用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> 方法将配置应用到 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>：
 
 ::: moniker-end
 
@@ -729,13 +951,13 @@ var host = new WebHostBuilder()
 
 ::: moniker range=">= aspnetcore-2.0"
 
-2.x 示例应用利用静态便捷方法 `CreateDefaultBuilder` 来构建主机，其中包括对 `AddJsonFile` 的两次调用。 配置从 appsettings.json 和 appsettings.&lt;Environment&gt;.json 加载。
+2.x 示例应用利用静态便捷方法 `CreateDefaultBuilder` 来构建主机，其中包括对 `AddJsonFile` 的两次调用。 配置从 appsettings.json 和 appsettings.{Environment}.json 进行加载。
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-1.x 示例应用在 `ConfigurationBuilder` 上调用 `AddJsonFile` 两次。 配置从 appsettings.json 和 appsettings.&lt;Environment&gt;.json 加载。
+1.x 示例应用在 `ConfigurationBuilder` 上调用 `AddJsonFile` 两次。 配置从 appsettings.json 和 appsettings.{Environment}.json 进行加载。
 
 ::: moniker-end
 
@@ -763,9 +985,36 @@ var host = new WebHostBuilder()
 
 创建配置键值对时，将忽略配置文件的根节点。 不要在文件中指定文档类型定义 (DTD) 或命名空间。
 
-::: moniker range=">= aspnetcore-2.0"
+::: moniker range=">= aspnetcore-2.1"
 
-调用 `CreateDefaultBuilder` 时，请使用以下配置调用 `UseConfiguration`：
+构建主机时调用 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 以指定应用的配置：
+
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        CreateWebHostBuilder(args).Build().Run();
+    }
+
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        WebHost.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                config.SetBasePath(Directory.GetCurrentDirectory());
+                config.AddXmlFile("config.xml", optional: true, reloadOnChange: true)
+            })
+            .UseStartup<Startup>();
+}
+```
+
+直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+调用 `CreateDefaultBuilder` 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
 
 ```csharp
 public class Program
@@ -789,13 +1038,13 @@ public class Program
 }
 ```
 
-直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 `UseConfiguration`：
+直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-使用 `UseConfiguration` 方法将配置应用到 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>：
+使用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> 方法将配置应用到 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>：
 
 ::: moniker-end
 
@@ -887,7 +1136,7 @@ XML 配置文件可以为重复节使用不同的元素名称：
 * 配置源的 `Action<KeyPerFileConfigurationSource>` 委托。
 * 目录是否可选以及目录的路径。
 
-调用 `CreateDefaultBuilder` 时，请使用以下配置调用 `UseConfiguration`：
+构建主机时调用 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 以指定应用的配置：
 
 ```csharp
 public class Program
@@ -897,21 +1146,18 @@ public class Program
         CreateWebHostBuilder(args).Build().Run();
     }
 
-    public static IWebHostBuilder CreateWebHostBuilder(string[] args)
-    {
-        var path = Path.Combine(Directory.GetCurrentDirectory(), "path/to/files");
-        var config = new ConfigurationBuilder()
-            .AddKeyPerFile(directoryPath: path, optional: true)
-            .Build();
-
-        return WebHost.CreateDefaultBuilder(args)
-            .UseConfiguration(config)
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        WebHost.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                config.SetBasePath(Directory.GetCurrentDirectory());
+                config.AddKeyPerFile(directoryPath: path, optional: true)
+            })
             .UseStartup<Startup>();
-    }
 }
 ```
 
-直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 `UseConfiguration`：
+直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
 
 ```csharp
 var path = Path.Combine(Directory.GetCurrentDirectory(), "path/to/files");
@@ -935,9 +1181,42 @@ var host = new WebHostBuilder()
 
 可以使用 `IEnumerable<KeyValuePair<String,String>>` 初始化配置提供程序。
 
-::: moniker range=">= aspnetcore-2.0"
+::: moniker range=">= aspnetcore-2.1"
 
-调用 `CreateDefaultBuilder` 时，请使用以下配置调用 `UseConfiguration`：
+构建主机时调用 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 以指定应用的配置：
+
+```csharp
+public class Program
+{
+    public static readonly Dictionary<string, string> _dict = 
+        new Dictionary<string, string>
+        {
+            {"MemoryCollectionKey1", "value1"},
+            {"MemoryCollectionKey2", "value2"}
+        };
+
+    public static void Main(string[] args)
+    {
+        CreateWebHostBuilder(args).Build().Run();
+    }
+
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        WebHost.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                config.AddInMemoryCollection(_dict)
+            })
+            .UseStartup<Startup>();
+}
+```
+
+直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+调用 `CreateDefaultBuilder` 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
 
 ```csharp
 public class Program
@@ -966,13 +1245,13 @@ public class Program
 }
 ```
 
-直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 `UseConfiguration`：
+直接创建 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，请使用以下配置调用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>：
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-使用 `UseConfiguration` 方法将配置应用到 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>：
+使用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> 方法将配置应用到 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>：
 
 ::: moniker-end
 
@@ -1317,7 +1596,7 @@ _config.GetSection("array").Bind(arrayExample);
 
 ::: moniker range=">= aspnetcore-2.0"
 
-在`ConfigureAppConfiguration`中：
+在 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*>中：
 
 ```csharp
 config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false);

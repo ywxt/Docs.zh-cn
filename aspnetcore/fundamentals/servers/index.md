@@ -4,25 +4,37 @@ author: rick-anderson
 description: 发现适用于 ASP.NET Core 的 Web 服务器 Kestrel 和 HTTP.sys。 了解如何选择服务器以及何时使用反向代理服务器。
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 09/13/2018
+ms.date: 09/21/2018
 uid: fundamentals/servers/index
-ms.openlocfilehash: 0f1460af5bc1cd879ff11e43775ac16ca36b150e
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 161ab3fdf48e58d8c9af991dc5531e46d9c5adff
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011750"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325856"
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>ASP.NET Core 中的 Web 服务器实现
 
 作者：[Tom Dykstra](https://github.com/tdykstra)、 [Steve Smith](https://ardalis.com/)、[Stephen Halter](https://twitter.com/halter73) 和 [Chris Ross](https://github.com/Tratcher)
 
-ASP.NET Core 应用与进程内 HTTP 服务器实现一起运行。 服务器实现侦听 HTTP 请求，并在一系列[请求功能](xref:fundamentals/request-features)被撰写到 [HttpContext](/dotnet/api/system.web.httpcontext) 时将这些请求展现到应用中。
+ASP.NET Core 应用与进程内 HTTP 服务器实现一起运行。 服务器实现侦听 HTTP 请求，并将它们作为由 <xref:Microsoft.AspNetCore.Http.HttpContext> 组成的[请求功能](xref:fundamentals/request-features)的集合呈现给应用。
 
-ASP.NET Core 交付两种服务器实现：
+ASP.NET Core 交付三种服务器实现：
+
+::: moniker range=">= aspnetcore-2.2"
+
+* [Kestrel](xref:fundamentals/servers/kestrel) 是适用于 ASP.NET Core 的默认跨平台 HTTP 服务器。
+* `IISHttpServer` 与 Windows 上的[进程内托管模型](xref:fundamentals/servers/aspnet-core-module#in-process-hosting-model)和 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)一起使用。
+* [HTTP.sys](xref:fundamentals/servers/httpsys) 是仅适用于 Windows 的 HTTP 服务器，它基于 [ 核心驱动程序和 HTTP 服务器 API](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)。 （HTTP.sys 在 ASP.NET 1.x 中被命名为 [WebListener](xref:fundamentals/servers/weblistener)。）
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
 
 * [Kestrel](xref:fundamentals/servers/kestrel) 是适用于 ASP.NET Core 的默认跨平台 HTTP 服务器。
 * [HTTP.sys](xref:fundamentals/servers/httpsys) 是仅适用于 Windows 的 HTTP 服务器，它基于 [ 核心驱动程序和 HTTP 服务器 API](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)。 （HTTP.sys 在 ASP.NET 1.x 中被命名为 [WebListener](xref:fundamentals/servers/weblistener)。）
+
+::: moniker-end
 
 ## <a name="kestrel"></a>Kestrel
 
@@ -50,7 +62,7 @@ Kestrel 可以单独使用，也可以与反向代理服务器（如 IIS、Nginx
 
 ![Kestrel 通过反向代理服务器（如 IIS、Nginx 或 Apache）间接与 Internet 进行通信](kestrel/_static/kestrel-to-internet.png)
 
-为边缘部署使用反向代理的最重要的原因（从 Internet 公开到流量）是出于安全考虑。 Kestrel 的 1.x 版本不包含防御来自 Internet 的攻击的重要安全功能。 这包括但不限于相应的超时、请求大小限制和并发连接限制。
+为公共边缘服务器部署（直接公开到 Internet）使用反向代理的最重要的原因是出于安全考虑。 Kestrel 的 1.x 版本不包含防御来自 Internet 的攻击的重要安全功能。 这包括但不限于相应的超时、请求大小限制和并发连接限制。
 
 有关详细信息，请参阅[何时结合使用 Kestrel 和反向代理](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)。
 
@@ -60,7 +72,19 @@ Kestrel 可以单独使用，也可以与反向代理服务器（如 IIS、Nginx
 
 ### <a name="iis-with-kestrel"></a>IIS 与 Kestrel
 
-将 [IIS](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture) 或 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 用作 ASP.NET Core 的反向代理时，ASP.NET Core 应用在独立于 IIS 工作进程的某个进程中运行。 在 IIS 进程中，[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)协调反向代理关系。 ASP.NET Core 模块的主要功能是启动 ASP.NET Core 应用，在其出现故障时重启应用，并向应用转发 HTTP 流量。 有关详细信息，请参阅 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)。 
+::: moniker range=">= aspnetcore-2.2"
+
+使用 [IIS](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture) 或 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 时，ASP.NET Core 应用在与 IIS 工作进程（进程内托管模型）相同的进程中运行或者在与 IIS 工作进程分离的进程中运行（进程外托管模型）。
+
+[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)是一个本机 IIS 模块，用于处理进程内 IIS Http 服务器或进程外 Kestrel 服务器之间的本机 IIS 请求。 有关更多信息，请参见<xref:fundamentals/servers/aspnet-core-module>。
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+将 [IIS](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture) 或 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 用作 ASP.NET Core 的反向代理时，ASP.NET Core 应用在独立于 IIS 工作进程的某个进程中运行。 在 IIS 进程中，[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)协调反向代理关系。 ASP.NET Core 模块的主要功能是启动 ASP.NET Core 应用，在其出现故障时重启应用，并向应用转发 HTTP 流量。 有关更多信息，请参见<xref:fundamentals/servers/aspnet-core-module>。
+
+::: moniker-end
 
 ### <a name="nginx-with-kestrel"></a>Nginx 与 Kestrel
 
@@ -132,7 +156,7 @@ HTTP.sys 在 ASP.NET Core 1.x 中被命名为 [WebListener](xref:fundamentals/se
   * 目标框架：.NET Core 2.2 或更高版本
 * [IIS（进程外）](xref:host-and-deploy/iis/index#http2-support)
   * Windows Server 2016/Windows 10 或更高版本；IIS 10 或更高版本
-  * 边缘连接使用 HTTP/2，但与 Kestrel 的反向代理连接使用 HTTP/1.1。
+  * 面向公众的边缘服务器连接使用 HTTP/2，但与 Kestrel 的反向代理连接使用 HTTP/1.1。
   * 目标框架：不适用于 IIS 进程外部署。
 
 ::: moniker-end
@@ -144,7 +168,7 @@ HTTP.sys 在 ASP.NET Core 1.x 中被命名为 [WebListener](xref:fundamentals/se
   * 目标框架：不适用于 HTTP.sys 部署。
 * [IIS（进程外）](xref:host-and-deploy/iis/index#http2-support)
   * Windows Server 2016/Windows 10 或更高版本；IIS 10 或更高版本
-  * 边缘连接使用 HTTP/2，但与 Kestrel 的反向代理连接使用 HTTP/1.1。
+  * 面向公众的边缘服务器连接使用 HTTP/2，但与 Kestrel 的反向代理连接使用 HTTP/1.1。
   * 目标框架：不适用于 IIS 进程外部署。
 
 ::: moniker-end

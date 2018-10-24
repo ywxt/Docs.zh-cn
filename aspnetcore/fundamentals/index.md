@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/20/2018
 uid: fundamentals/index
-ms.openlocfilehash: 68760f179c4d6e806510b727e2284f8c2c4a4ff6
-ms.sourcegitcommit: d27317c16f113e7c111583042ec7e4c5a26adf6f
+ms.openlocfilehash: 83dfb5707700da01c45bae3c0c00e67ca397d402
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41746415"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325466"
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 基础知识
 
@@ -119,7 +119,7 @@ ASP.NET Core 应用可配置和启动一个*主机*，负责应用启动和生�
 
 ## <a name="servers"></a>服务器
 
-ASP.NET Core 托管模型不直接侦听请求。 托管模型依赖 HTTP 服务器实现将请求转发到应用。 转发的请求被打包为一组可通过接口进行访问的功能对象。 ASP.NET Core 包含托管的跨平台 Web 服务器，名为 [Kestrel](xref:fundamentals/servers/kestrel)。 Kestrel 通常在生产 Web 服务器（如反向代理配置中的 [IIS](https://www.iis.net/) 或 [Nginx](http://nginx.org)）后台运行。 在 ASP.NET Core 2.0 或更高版本中，Kestrel 也可作为直接公开到 Internet 的边缘服务器运行。
+ASP.NET Core 托管模型不直接侦听请求。 托管模型依赖 HTTP 服务器实现将请求转发到应用。 转发的请求被打包为一组可通过接口进行访问的功能对象。 ASP.NET Core 包含托管的跨平台 Web 服务器，名为 [Kestrel](xref:fundamentals/servers/kestrel)。 Kestrel 通常在生产 Web 服务器（如反向代理配置中的 [IIS](https://www.iis.net/) 或 [Nginx](http://nginx.org)）后台运行。 在 ASP.NET Core 2.0 或更高版本中，Kestrel 也可作为面向公众的边缘服务器运行，直接向 Internet 公开。
 
 有关更多信息，请参见<xref:fundamentals/servers/index>。
 

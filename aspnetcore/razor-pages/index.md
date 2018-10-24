@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: f55d0e534dafb0709f1411bad9b038a87abde7ab
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: 7bd597acedade65f2be53f4f50a436981e576b1f
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523306"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326116"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor 页面介绍
 
@@ -246,7 +246,9 @@ Index.cshtml 文件还包含用于为每个客户联系人创建删除按钮的�
 
 ## <a name="manage-head-requests-with-the-onget-handler"></a>使用 OnGet 处理程序管理 HEAD 请求
 
-通常，针对 HEAD 请求创建和调用 HEAD 处理程序：
+HEAD 请求可以检索特定资源的标头。 与 GET 请求不同，HEAD 请求不返回响应正文。 
+
+通常，针对 HEAD 请求创建和调用 HEAD 处理程序： 
 
 ```csharp
 public void OnHead()
@@ -255,12 +257,14 @@ public void OnHead()
 }
 ```
 
-如果未定义 HEAD 处理程序 (`OnHead`)，Razor 页面会回退以调用 ASP.NET Core 2.1 或更高版本中的 GET 页处理程序 (`OnGet`)。 使用 ASP.NET Core 2.1 到 2.x 版本 `Startup.Configure` 中的 [SetCompatibilityVersion 方法](xref:mvc/compatibility-version)，选择加入此行为：
+如果未定义 HEAD 处理程序 (`OnHead`)，Razor 页面会回退以调用 ASP.NET Core 2.1 或更高版本中的 GET 页处理程序 (`OnGet`)。 在 ASP.NET Core 2.1 和 2.2 中，`Startup.Configure` 中的 [SetCompatibilityVersion](xref:mvc/compatibility-version) 会发生此行为：
 
 ```csharp
 services.AddMvc()
     .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 ```
+
+默认模板在 ASP.NET Core 2.1 和 2.2 中生成 `SetCompatibilityVersion` 调用。
 
 `SetCompatibilityVersion` 有效地将 Razor 页面选项 `AllowMappingHeadRequestsToGetHandler` 设置为 `true`。
 

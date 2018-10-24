@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/29/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: f2de81af4bd2992aec76a287484d0057021231d8
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: 315261c4d20970fc399cc2a879dd452bdf3be93f
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47860961"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326051"
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>将 ASP.NET Core 应用部署到 Azure 应用服务
 
@@ -59,6 +59,8 @@ ASP.NET Core 文档中提供以下文章：
 
 “应用程序设置”边栏选项卡的“应用设置”区域允许你为应用设置环境变量。 可以通过[环境变量配置提供程序](xref:fundamentals/configuration/index#environment-variables-configuration-provider)来使用环境变量。
 
+在 Azure 门户中创建或修改应用设置并选择“保存”按钮时，Azure 应用将重启。 服务重启后，应用即可使用环境变量。
+
 当应用使用 [Web 主机](xref:fundamentals/host/web-host)并使用 [WebHost.CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 构建主机时，配置主机的环境变量使用 `ASPNETCORE_` 前缀。 有关详细信息，请参阅 <xref:fundamentals/host/web-host> 和[环境变量配置提供程序](xref:fundamentals/configuration/index#environment-variables-configuration-provider)。
 
 当应用使用[通用主机](xref:fundamentals/host/generic-host)时，环境变量在默认情况下不会加载到应用的配置，且配置提供程序必须由开发人员添加。 在添加配置提供程序时，开发人员将确定环境变量前缀。 有关详细信息，请参阅 <xref:fundamentals/host/generic-host> 和[环境变量配置提供程序](xref:fundamentals/configuration/index#environment-variables-configuration-provider)。
@@ -101,11 +103,11 @@ ASP.NET Core 文档中提供以下文章：
 
 ## <a name="deploy-aspnet-core-preview-release-to-azure-app-service"></a>将 ASP.NET Core 预览版部署到 Azure 应用服务
 
-可通过以下方法将 ASP.NET Core 预览应用部署到 Azure 应用服务：
+请使用以下方法之一：
 
-* [安装预览站点扩展](#install-the-preview-site-extension)
-<!-- * [Deploy the app self-contained](#deploy-the-app-self-contained) -->
-* [对用于容器的 Web 应用使用 Docker](#use-docker-with-web-apps-for-containers)
+* [安装预览站点扩展](#install-the-preview-site-extension)。
+* [部署自包含应用](#deploy-the-app-self-contained)。
+* [对用于容器的 Web 应用使用 Docker](#use-docker-with-web-apps-for-containers)。
 
 ### <a name="install-the-preview-site-extension"></a>安装预览站点扩展
 
@@ -161,18 +163,46 @@ ASP.NET Core 文档中提供以下文章：
 
 如果使用 ARM 模板创建和部署应用，则可使用 `siteextensions` 资源类型将站点扩展添加到 Web 应用。 例如:
 
-[!code-json[Main](index/sample/arm.json?highlight=2)]
+[!code-json[](index/sample/arm.json?highlight=2)]
 
-<!--
-### Deploy the app self-contained
+### <a name="deploy-the-app-self-contained"></a>部署自包含应用
 
-A [self-contained app](/dotnet/core/deploying/#self-contained-deployments-scd) can be deployed that carries the preview runtime in the deployment. When deploying a self-contained app:
+针对预览运行时的[自包含部署 (SCD)](/dotnet/core/deploying/#self-contained-deployments-scd)在部署中承载预览运行时。
 
-* The site doesn't need to be prepared.
-* The app must be published differently than when publishing for a framework-dependent deployment with the shared runtime and host on the server.
+部署自包含应用时：
 
-Self-contained apps are an option for all ASP.NET Core apps.
--->
+* Azure 应用服务中的站点不需要[预览站点扩展名](#install-the-preview-site-extension)。
+* 必须使用不同于发布[依赖框架部署 (FDD)](/dotnet/core/deploying#framework-dependent-deployments-fdd) 的方法发布应用。
+
+#### <a name="publish-from-visual-studio"></a>使用 Visual Studio 发布
+
+1. 从 Visual Studio 工具栏中选择“构建” > “发布{应用程序名称}”。
+1. 在“选择发布目标”对话框中，确认已选中“应用服务”。
+1. 选择“高级”。 随即会打开“发布”对话框。
+1. 在“发布”对话框中：
+   * 确认已选中“发布”配置。
+   * 打开“部署模式”下拉列表，然后选择“自包含”。
+   * 从“目标运行时”下拉列表中选择目标运行时。 默认值为 `win-x86`。
+   * 如果需要在部署时删除其他文件，请打开“文件发布选项”，然后选中复选框以删除目标位置的其他文件。
+   * 选择“保存”。
+1. 按照发布向导的其余提示创建新站点或更新现有站点。
+
+#### <a name="publish-using-command-line-interface-cli-tools"></a>使用命令行接口 (CLI) 工具发布
+
+1. 在项目文件中，指定一个或多个[运行时标识符 (RID)](/dotnet/core/rid-catalog)。 对单个 RID 使用 `<RuntimeIdentifier>`（单数），或使用 `<RuntimeIdentifiers>`（复数）提供以分号分隔的 RID 列表。 在以下示例中，指定 `win-x86` RID：
+
+   ```xml
+   <PropertyGroup>
+     <TargetFramework>netcoreapp2.1</TargetFramework>
+     <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+   </PropertyGroup>
+   ```
+1. 在命令 shell 中，使用 [dotnet publish ](/dotnet/core/tools/dotnet-publish) 命令在主机运行时的发布配置中发布应用。 在以下示例中，为 `win-x86` RID 发布应用。 提供给 `--runtime` 选项的 RID 必须在项目文件的 `<RuntimeIdentifier>`（或 `<RuntimeIdentifiers>`）属性中提供。
+
+   ```console
+   dotnet publish --configuration Release --runtime win-x86
+   ```
+1. 将 bin/Release/{TARGET FRAMEWORK}/{RUNTIME IDENTIFIER}/publish 目录的内容移动到应用服务中的站点。
 
 ### <a name="use-docker-with-web-apps-for-containers"></a>对用于容器的 Web 应用使用 Docker
 

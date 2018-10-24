@@ -4,14 +4,14 @@ author: guardrex
 description: 了解如何在 Windows Server Internet Information Services (IIS) 上托管 ASP.NET Core 应用。
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/13/2018
+ms.date: 09/21/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 8f2155cbf0bc3101b78b890c1d66797278f1ca4b
-ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
+ms.openlocfilehash: 12075f68dd828680f6bfbd46ea22ebd7bbe52dc7
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47028305"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326012"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -40,11 +40,13 @@ ms.locfileid: "47028305"
   * TLS 1.2 或更高版本的连接
 * 进程外
   * Windows Server 2016/Windows 10 或更高版本；IIS 10 或更高版本
-  * 边缘连接使用 HTTP/2，但与 [Kestrel 服务器](xref:fundamentals/servers/kestrel)的反向代理连接使用 HTTP/1.1。
+  * 面向公众的边缘服务器连接使用 HTTP/2，但与 [Kestrel 服务器](xref:fundamentals/servers/kestrel)的反向代理连接使用 HTTP/1.1。
   * 目标框架：不适用于进程外部署，因为 HTTP/2 连接完全由 IIS 处理。
   * TLS 1.2 或更高版本的连接
 
 对于已建立 HTTP/2 连接时的进程内部署，[HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*) 会报告 `HTTP/2`。 对于已建立 HTTP/2 连接时的进程外部署，[HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*) 会报告 `HTTP/1.1`。
+
+有关进程内和进程外托管模型的详细信息，请参阅 <xref:fundamentals/servers/aspnet-core-module> 主题和 <xref:host-and-deploy/aspnet-core-module>。
 
 ::: moniker-end
 
@@ -53,7 +55,7 @@ ms.locfileid: "47028305"
 满足以下基本要求的进程外部署支持 [HTTP/2](https://httpwg.org/specs/rfc7540.html)：
 
 * Windows Server 2016/Windows 10 或更高版本；IIS 10 或更高版本
-* 边缘连接使用 HTTP/2，但与 [Kestrel 服务器](xref:fundamentals/servers/kestrel)的反向代理连接使用 HTTP/1.1。
+* 面向公众的边缘服务器连接使用 HTTP/2，但与 [Kestrel 服务器](xref:fundamentals/servers/kestrel)的反向代理连接使用 HTTP/1.1。
 * 目标框架：不适用于进程外部署，因为 HTTP/2 连接完全由 IIS 处理。
 * TLS 1.2 或更高版本的连接
 
@@ -67,9 +69,31 @@ ms.locfileid: "47028305"
 
 ### <a name="enable-the-iisintegration-components"></a>启用 IISIntegration 组件
 
-::: moniker range=">= aspnetcore-2.0"
+::: moniker range=">= aspnetcore-2.2"
 
-典型的 Program.cs 调用 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 以开始设置主机。 `CreateDefaultBuilder` 将 [Kestrel](xref:fundamentals/servers/kestrel) 配置为 Web 服务器，并通过配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)的基路径和端口来实现 IIS 集成：
+**进程内承载模型**
+
+典型的 Program.cs 调用 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> 开始设置主机。 `CreateDefaultBuilder` 调用 `UseIIS` 方法启动 [CoreCLR](/dotnet/standard/glossary#coreclr) 并在 IIS 工作进程（`w3wp.exe`）内托管应用。 性能测试表明，与向 [Kestrel](xref:fundamentals/servers/kestrel) 托管应用进程外和代理请求相比，在进程中托管 .NET Core 应用可提供更高的请求吞吐量。
+
+**进程外承载模型**
+
+典型的 Program.cs 调用 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> 开始设置主机。 对于使用 IIS 的进程外托管，`CreateDefaultBuilder` 将 [Kestrel](xref:fundamentals/servers/kestrel) 配置为 Web 服务器，并通过配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)的基本路径和端口来启用 IIS 集成：
+
+```csharp
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        ...
+```
+
+ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultBuilder` 调用 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> 方法，该方法获取动态端口并配置 Kestrel 以侦听 `http://localhost:{dynamicPort}/`。 这将替代其他 URL 配置，如对 `UseUrls` 或 [Kestrel 的侦听 API](xref:fundamentals/servers/kestrel#endpoint-configuration) 的调用。 因此，使用模块时，不需要调用 `UseUrls` 或 Kestrel 的 `Listen` API。 如果调用 `UseUrls` 或 `Listen`，则 Kestrel 仅会侦听在没有 IIS 的情况下运行应用时指定的端口。
+
+有关进程内和进程外托管模型的详细信息，请参阅 <xref:fundamentals/servers/aspnet-core-module> 主题和 <xref:host-and-deploy/aspnet-core-module>。
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+
+典型的 Program.cs 调用 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> 开始设置主机。 `CreateDefaultBuilder` 将 [Kestrel](xref:fundamentals/servers/kestrel) 配置为 Web 服务器，并通过配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)的基路径和端口来实现 IIS 集成：
 
 ```csharp
 public static IWebHost BuildWebHost(string[] args) =>
@@ -212,8 +236,13 @@ web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS
    1. 在服务器上运行安装程序。
 
    **重要提示！** 如果在 IIS 之前安装了托管捆绑包，则必须修复捆绑包安装。 在安装 IIS 后再次运行托管捆绑包安装程序。
-   
-   若要防止安装程序在 x64 操作系统上安装 x86 程序包，请通过管理员命令提示符使用开关 `OPT_NO_X86=1` 来运行安装程序。
+
+   使用一个或多个开关从管理员命令提示符运行安装程序以控制安装程序的行为：
+
+   * `OPT_NO_ANCM=1` &ndash; 跳过安装 ASP.NET Core 模块。
+   * `OPT_NO_RUNTIME=1` &ndash; 跳过安装 .NET Core 运行时。
+   * `OPT_NO_SHAREDFX=1` &ndash; 跳过安装 ASP.NET 共享框架（ASP.NET 运行时）。
+   * `OPT_NO_X86=1` &ndash; 跳过安装 x86 运行时。 确定不会托管 32 位应用时，请使用此开关。 如果有同时托管 32 位和 64 位应用的可能，请不要使用此开关并安装两个运行时。
 
 1. 重启系统，或从命令提示符处依次执行 net stop was /y 和 net start w3svc。 重启 IIS 会选取安装程序对系统 PATH（环境变量）所作的更改。
 
