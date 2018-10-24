@@ -5,14 +5,14 @@ description: 了解如何使用 ASP.NET Core SignalR Java 客户端。
 monikerRange: '>= aspnetcore-2.2'
 ms.author: mimengis
 ms.custom: mvc
-ms.date: 09/06/2018
+ms.date: 10/18/2018
 uid: signalr/java-client
-ms.openlocfilehash: 0eba59a05ea6fd3fed46fcab86ac20caf40ebb65
-ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
+ms.openlocfilehash: 77ea338f08b1986e69ba8ef1578c4cfe01a310de
+ms.sourcegitcommit: ce6b6792c650708e92cdea051a5d166c0708c7c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46482913"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49652301"
 ---
 # <a name="aspnet-core-signalr-java-client"></a>ASP.NET Core SignalR Java 客户端
 
@@ -26,12 +26,13 @@ Java 客户端，包括 Android 应用程序的 Java 代码中连接到 ASP.NET 
 
 ## <a name="install-the-signalr-java-client-package"></a>SignalR Java 客户端程序包安装
 
-*Signalr 0.1.0-preview2 35174* JAR 文件允许客户端连接到 SignalR 集线器。 若要查找最新的 JAR 文件版本号，请参阅[Maven 搜索结果](https://search.maven.org/search?q=g:com.microsoft.aspnet%20AND%20a:signalr&core=gav)。
+*Signalr 1.0.0-preview3 35501* JAR 文件允许客户端连接到 SignalR 集线器。 若要查找最新的 JAR 文件版本号，请参阅[Maven 搜索结果](https://search.maven.org/search?q=g:com.microsoft.signalr%20AND%20a:signalr)。
 
 如果使用 Gradle，添加下面的代码行`dependencies`一部分您*build.gradle*文件：
 
 ```gradle
-implementation 'com.microsoft.aspnet:signalr:0.1.0-preview2-35174'
+implementation 'com.microsoft.signalr:signalr:1.0.0-preview3-35501'
+implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
 ```
 
 如果使用 Maven，添加以下行`<dependencies>`的元素在*pom.xml*文件：
@@ -42,29 +43,45 @@ implementation 'com.microsoft.aspnet:signalr:0.1.0-preview2-35174'
 
 若要建立`HubConnection`，则`HubConnectionBuilder`应使用。 生成连接时，可以配置中心 URL 和日志级别。 配置任何必需的选项，方法是调用的任何`HubConnectionBuilder`方法之前`build`。 启动与连接`start`。
 
-[!code-java[Build hub connection](java-client/sample/src/main/java/Chat.java?range=17-20)]
+[!code-java[Build hub connection](java-client/sample/src/main/java/Chat.java?range=16-17)]
 
 ## <a name="call-hub-methods-from-client"></a>从客户端调用集线器方法
 
 调用`send`调用集线器方法。 将中心方法名称和到中心方法中定义的任何参数传递`send`。
 
-[!code-java[send method](java-client/sample/src/main/java/Chat.java?range=31)]
+[!code-java[send method](java-client/sample/src/main/java/Chat.java?range=28)]
 
 ## <a name="call-client-methods-from-hub"></a>从集线器调用客户端方法
 
 使用`hubConnection.on`可以调用该集线器的客户端上定义的方法。 构建之后启动连接之前定义的方法。
 
-[!code-java[Define client methods](java-client/sample/src/main/java/Chat.java?range=22-24)]
+[!code-java[Define client methods](java-client/sample/src/main/java/Chat.java?range=19-21)]
+
+## <a name="add-logging"></a>添加日志记录
+
+SignalR Java 客户端使用[SLF4J](https://www.slf4j.org/)用于日志记录库。 它是库的一个高级日志记录 API，允许通过将特定的日志记录依赖项中选择其自己特定的日志记录实现的用户。 下面的代码段演示如何使用`java.util.logging`的 SignalR Java 客户端。
+
+```gradle
+implementation 'org.slf4j:slf4j-jdk14:1.7.25'
+```
+
+如果没有配置依赖项中的日志记录，SLF4J 加载具有以下警告消息的默认无操作记录器：
+
+```
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+```
+
+这可以安全地忽略。
 
 ## <a name="known-limitations"></a>已知限制
 
-这是早期的预览版本的 Java 客户端。 有许多功能，目前尚不支持。 正在为将来的版本开发的以下间隔：
+这是预览版本的 Java 客户端。 不支持某些功能：
 
-* 只有基元类型可以作为参数接受和返回类型。
-* Api 是同步的。
-* 在此时间支持"发送"的调用类型。 "调用"和流式处理的返回值不受支持。
 * 支持仅 JSON 协议。
 * 支持仅 Websocket 传输。
+* 流式处理尚不支持。
 
 ## <a name="additional-resources"></a>其他资源
 
