@@ -80,7 +80,7 @@ ASP.NET Core 提供以下 Web API 控制器操作返回类型选项：
 
 ASP.NET Core 2.1 引入了面向 Web API 控制器操作的 [ActionResult\<T>](/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1) 返回类型。 它支持返回从 [ActionResult](/dotnet/api/microsoft.aspnetcore.mvc.actionresult) 派生的类型或返回[特定类型](#specific-type)。 `ActionResult<T>` 通过 [IActionResult 类型](#iactionresult-type)可提供以下优势：
 
-* 可排除 [[ProducesResponseType]](/dotnet/api/microsoft.aspnetcore.mvc.producesresponsetypeattribute) 特性的 `Type` 属性。 例如，`[ProducesResponseType(200, Type = typeof(Product))]` 简化为 `[ProducesResponseType(200)]`。 此操作的预期返回类型改为根据 `ActionResult<T>` 中的 `T` 进行推断。
+* 可排除 [[ProducesResponseType]](/dotnet/api/microsoft.aspnetcore.mvc.producesresponsetypeattribute) 特性的 `Type` 属性。 例如，`[ProducesResponseType(200, Type = typeof(Product))]` 可简化为 `[ProducesResponseType(200)]`。 此操作的预期返回类型改为根据 `ActionResult<T>` 中的 `T` 进行推断。
 * [隐式强制转换运算符](/dotnet/csharp/language-reference/keywords/implicit)支持将 `T` 和 `ActionResult` 均转换为 `ActionResult<T>`。 将 `T` 转换为 [ObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.objectresult)，也就是将 `return new ObjectResult(T);` 简化为 `return T;`。
 
 C# 不支持对接口使用隐式强制转换运算符。 因此，必须使用 `ActionResult<T>`，才能将接口转换为具体类型。 例如，在下面的示例中，使用 `IEnumerable` 不起作用：
