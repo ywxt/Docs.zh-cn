@@ -5,12 +5,12 @@ description: 获取 ASP.NET Core 的简介，它是一个跨平台的高性能�
 ms.author: riande
 ms.date: 9/28/2018
 uid: index
-ms.openlocfilehash: 69ab702e9d9f8d746b7bc546d4f2bbb831ff59c7
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 3bb86fa255548ff66592ac14c1020e0c6b47959c
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911676"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391152"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 简介
 
@@ -43,7 +43,7 @@ ASP.NET Core MVC 提供生成 [Web API](xref:tutorials/index#build-web-apis) 和
 
 ## <a name="client-side-development"></a>客户端开发
 
-ASP.NET Core 与常用客户端框架和库（包括 [Angular](xref:spa/angular)、[React](xref:spa/react) 和 [Bootstrap](xref:client-side/bootstrap)）无缝集成。 有关详细信息，请参阅[客户端开发](xref:client-side/index)。
+ASP.NET Core 与常用客户端框架和库（包括 [Angular](xref:spa/angular)、[React](xref:spa/react) 和 [Bootstrap](https://getbootstrap.com/)）无缝集成。 有关详细信息，请参阅[客户端开发](xref:client-side/index)。
 
 <a name="target-framework"></a>
 

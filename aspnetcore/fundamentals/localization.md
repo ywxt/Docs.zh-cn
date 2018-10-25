@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core 如何提供服务和中间件，将内容本�
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: 6e8c4723ab0105b8c756221d3e3c5eebba6cc4e2
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 375d09d9bef59cf18b7805cbefe500aeb2e0cde7
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912023"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325999"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core 全球化和本地化
 
@@ -206,9 +206,9 @@ using Microsoft.Extensions.Localization;
 
 ### <a name="configure-localization"></a>配置本地化
 
-通过 `ConfigureServices` 方法配置本地化：
+通过 `Startup.ConfigureServices` 方法配置本地化：
 
-[!code-csharp[](localization/sample/Localization/Program.cs?name=snippet1)]
+[!code-csharp[](localization/sample/Localization/Startup.cs?name=snippet1)]
 
 * `AddLocalization` 将本地化服务添加到服务容器。 上面的代码还可将资源路径设置为“资源”。
 
@@ -218,9 +218,9 @@ using Microsoft.Extensions.Localization;
 
 ### <a name="localization-middleware"></a>本地化中间件
 
-在本地化[中间件](xref:fundamentals/middleware/index)中设置有关请求的当前区域性。 在 `Configure` 方法中启用本地化中间件。 必须在中间件前面配置本地化中间件，它可能检查请求区域性（例如，`app.UseMvcWithDefaultRoute()`）。
+在本地化[中间件](xref:fundamentals/middleware/index)中设置有关请求的当前区域性。 在 `Startup.Configure` 方法中启用本地化中间件。 必须在中间件前面配置本地化中间件，它可能检查请求区域性（例如，`app.UseMvcWithDefaultRoute()`）。
 
-[!code-csharp[](localization/sample/Localization/Program.cs?name=snippet2)]
+[!code-csharp[](localization/sample/Localization/Startup.cs?name=snippet2)]
 
 `UseRequestLocalization` 初始化 `RequestLocalizationOptions` 对象。 在每个请求上，枚举了 `RequestLocalizationOptions` 的 `RequestCultureProvider` 列表，使用了可成功决定请求区域性的第一个提供程序。 默认提供程序来自 `RequestLocalizationOptions` 类：
 
