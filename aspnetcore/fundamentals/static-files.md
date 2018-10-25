@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/18/2018
 uid: fundamentals/static-files
-ms.openlocfilehash: 33fad930e617c74d9a8c07f850764a6b81fa8ab5
-ms.sourcegitcommit: 2c158fcfd325cad97ead608a816e525fe3dcf757
+ms.openlocfilehash: 52c7916b9fc55c875d56acd49c01f76dd2053817
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "41751641"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47861000"
 ---
 # <a name="static-files-in-aspnet-core"></a>ASP.NET Core 中的静态文件
 
@@ -216,7 +216,7 @@ app.UseFileServer(enableDirectoryBrowsing: true);
 
 ## <a name="non-standard-content-types"></a>非标准内容类型
 
-静态文件中间件可理解近 400 种已知文件内容类型。 如果用户请求未知文件类型的文件，则静态文件中间件会返回 HTTP 404（未找到）响应。 如果启用了目录浏览，则会显示该文件的链接。 URI 返回 HTTP 404 错误。
+静态文件中间件可理解近 400 种已知文件内容类型。 如果用户请求文件类型未知的文件，则静态文件中间件将请求传递给管道中的下一个中间件。 如果没有中间件处理请求，则返回“404 未找到”响应。 如果启用了目录浏览，则在目录列表中会显示该文件的链接。
 
 以下代码提供未知类型，并以图像形式呈现未知文件：
 

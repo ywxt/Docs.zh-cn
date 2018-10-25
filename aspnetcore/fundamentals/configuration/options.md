@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/28/2017
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 6258530beedced9570111478fea630b1556e1a1e
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: 0ab920cc8890f2a1e4d1fb8d783dea666751a53f
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927953"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911287"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>ASP.NET Core 中的选项模式
 
@@ -108,7 +108,7 @@ Index.cshtml.cs:
 
 [!code-csharp[](options/sample/Pages/Index.cshtml.cs?name=snippet_Example2)]
 
-可添加多个配置提供程序。 配置提供程序在 NuGet 包中可用。 应用此提供程序，以便将其注册。
+可添加多个配置提供程序。 配置提供程序在 NuGet 包中可用。 按照注册这些提供程序的顺序对其进行应用。
 
 每次调用 [Configure&lt;TOptions&gt;](/dotnet/api/microsoft.extensions.options.iconfigureoptions-1.configure) 都将添加 `IConfigureOptions<TOptions>` 服务到服务容器。 在前面的示例中，`Option1` 和 `Option2` 的值同时在 appsettings.json 中指定，但 `Option1` 和 `Option2` 的值被配置的委托替代。
 
@@ -250,7 +250,9 @@ named_options_2: option1 = named_options_2_value1_from_action, option2 = 5
 * 针对 `Option1` 的 `ConfigureServices` 中的 `named_options_2` 委托。
 * `MyOptions` 类提供的 `Option2` 的默认值。
 
-通过 [OptionsServiceCollectionExtensions.ConfigureAll](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.configureall) 方法配置所有命名选项实例。 以下代码将针对包含公共值的所有命名配置实例配置 `Option1`。 将以下代码手动添加到 `Configure` 方法：
+## <a name="configure-all-options-with-the-configureall-method"></a>使用 ConfigureAll 方法配置所有选项
+
+通过 [OptionsServiceCollectionExtensions.ConfigureAll](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.configureall) 方法配置所有选项实例。 以下代码将针对包含公共值的所有配置实例配置 `Option1`。 将以下代码手动添加到 `Configure` 方法：
 
 ```csharp
 services.ConfigureAll<MyOptions>(myOptions => 
@@ -353,7 +355,7 @@ services.PostConfigure<MyOptions>("named_options_1", myOptions =>
 });
 ```
 
-使用 [PostConfigureAll&lt;TOptions&gt;](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.postconfigureall) 对所有命名配置实例进行后期配置：
+使用 [PostConfigureAll&lt;TOptions&gt;](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.postconfigureall) 对所有配置实例进行后期配置：
 
 ```csharp
 services.PostConfigureAll<MyOptions>(myOptions =>

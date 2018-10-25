@@ -4,14 +4,14 @@ description: 了解如何在 CentOS 上将 Apache 设置为反向代理服务器
 author: spboyer
 ms.author: spboyer
 ms.custom: mvc
-ms.date: 09/08/2018
+ms.date: 10/09/2018
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 534e0415b2d278a518aea0ecb8042aeab4a0aa0e
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: 237646f839a4973074bb64176a024ebb3d32ee4e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523202"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913003"
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>使用 Apache 在 Linux 上托管 ASP.NET Core
 
@@ -40,7 +40,7 @@ dotnet publish --configuration Release
 
 如果不希望维护服务器上的 .NET Core 运行时，还可将应用发布为[独立部署](/dotnet/core/deploying/#self-contained-deployments-scd)。
 
-使用集成到组织工作流的工具（例如 SCP、SFTP）将 ASP.NET Core 应用复制到服务器。 通常可在 var 目录（例如 var/aspnetcore/hellomvc）下找到 Web 应用。
+使用集成到组织工作流的工具（例如 SCP、SFTP）将 ASP.NET Core 应用复制到服务器。 通常可在 var 目录（例如 var/www/helloapp）下找到 Web 应用。
 
 > [!NOTE]
 > 在生产部署方案中，持续集成工作流会执行发布应用并将资产复制到服务器的工作。
@@ -147,7 +147,7 @@ Complete!
 
 Apache 的配置文件位于 `/etc/httpd/conf.d/` 目录内。 除了 `/etc/httpd/conf.modules.d/` 中的模块配置文件外（其中包含加载模块所需的任何配置文件），将对任何带 .conf 扩展名的文件按字母顺序进行处理。
 
-为应用创建名为 hellomvc.conf 的配置文件：
+为应用创建名为 helloapp.conf 的配置文件：
 
 ```
 <VirtualHost *:*>
@@ -160,8 +160,8 @@ Apache 的配置文件位于 `/etc/httpd/conf.d/` 目录内。 除了 `/etc/http
     ProxyPassReverse / http://127.0.0.1:5000/
     ServerName www.example.com
     ServerAlias *.example.com
-    ErrorLog ${APACHE_LOG_DIR}hellomvc-error.log
-    CustomLog ${APACHE_LOG_DIR}hellomvc-access.log common
+    ErrorLog ${APACHE_LOG_DIR}helloapp-error.log
+    CustomLog ${APACHE_LOG_DIR}helloapp-access.log common
 </VirtualHost>
 ```
 
@@ -194,7 +194,7 @@ Apache 现在已设置为将对 `http://localhost:80` 发起的请求转发到�
 创建服务定义文件：
 
 ```bash
-sudo nano /etc/systemd/system/kestrel-hellomvc.service
+sudo nano /etc/systemd/system/kestrel-helloapp.service
 ```
 
 应用的一个示例服务文件：
@@ -204,8 +204,8 @@ sudo nano /etc/systemd/system/kestrel-hellomvc.service
 Description=Example .NET Web API App running on CentOS 7
 
 [Service]
-WorkingDirectory=/var/aspnetcore/hellomvc
-ExecStart=/usr/local/bin/dotnet /var/aspnetcore/hellomvc/hellomvc.dll
+WorkingDirectory=/var/www/helloapp
+ExecStart=/usr/local/bin/dotnet /var/www/helloapp/helloapp.dll
 Restart=always
 # Restart service after 10 seconds if the dotnet service crashes:
 RestartSec=10
@@ -236,21 +236,21 @@ systemd-escape "<value-to-escape>"
 保存该文件并启用该服务：
 
 ```bash
-sudo systemctl enable kestrel-hellomvc.service
+sudo systemctl enable kestrel-helloapp.service
 ```
 
 启动该服务，并确认它正在运行：
 
 ```bash
-sudo systemctl start kestrel-hellomvc.service
-sudo systemctl status kestrel-hellomvc.service
+sudo systemctl start kestrel-helloapp.service
+sudo systemctl status kestrel-helloapp.service
 
-● kestrel-hellomvc.service - Example .NET Web API App running on CentOS 7
-    Loaded: loaded (/etc/systemd/system/kestrel-hellomvc.service; enabled)
+● kestrel-helloapp.service - Example .NET Web API App running on CentOS 7
+    Loaded: loaded (/etc/systemd/system/kestrel-helloapp.service; enabled)
     Active: active (running) since Thu 2016-10-18 04:09:35 NZDT; 35s ago
 Main PID: 9021 (dotnet)
-    CGroup: /system.slice/kestrel-hellomvc.service
-            └─9021 /usr/local/bin/dotnet /var/aspnetcore/hellomvc/hellomvc.dll
+    CGroup: /system.slice/kestrel-helloapp.service
+            └─9021 /usr/local/bin/dotnet /var/www/helloapp/helloapp.dll
 ```
 
 在配置了反向代理并通过 systemd 管理 Kestrel 后，Web 应用现已完全配置，并能在本地计算机上的浏览器中从 `http://localhost` 进行访问。 检查响应标头，服务器标头表示 ASP.NET Core 应用由 Kestrel 提供服务：
@@ -266,16 +266,16 @@ Transfer-Encoding: chunked
 
 ### <a name="viewing-logs"></a>查看日志
 
-由于使用 Kestrel 的 Web 应用是通过 systemd 进行管理的，因此事件和进程将记录到集中日志。 但是，此日志包含由 systemd 管理的所有服务和进程的条目。 若要查看特定于 `kestrel-hellomvc.service` 的项，请使用以下命令：
+由于使用 Kestrel 的 Web 应用是通过 systemd 进行管理的，因此事件和进程将记录到集中日志。 但是，此日志包含由 systemd 管理的所有服务和进程的条目。 若要查看特定于 `kestrel-helloapp.service` 的项，请使用以下命令：
 
 ```bash
-sudo journalctl -fu kestrel-hellomvc.service
+sudo journalctl -fu kestrel-helloapp.service
 ```
 
 若要进行时间筛选，请使用命令指定时间选项。 例如，使用 `--since today` 筛选出当天或 `--until 1 hour ago` 来查看前一小时的条目。 有关详细信息，请参阅 [journalctl 手册页](https://www.unix.com/man-page/centos/1/journalctl/)。
 
 ```bash
-sudo journalctl -fu kestrel-hellomvc.service --since "2016-10-18" --until "2016-10-18 04:00"
+sudo journalctl -fu kestrel-helloapp.service --since "2016-10-18" --until "2016-10-18 04:00"
 ```
 
 ## <a name="data-protection"></a>数据保护
@@ -343,7 +343,7 @@ sudo yum install mod_ssl
 sudo yum install mod_rewrite
 ```
 
-修改 hellomvc.conf 文件以启用 URL 重写和端口 443 上的安全通信：
+修改 helloapp.conf 文件以启用 URL 重写和端口 443 上的安全通信：
 
 ```
 <VirtualHost *:*>
@@ -360,8 +360,8 @@ sudo yum install mod_rewrite
     ProxyPreserveHost On
     ProxyPass / http://127.0.0.1:5000/
     ProxyPassReverse / http://127.0.0.1:5000/
-    ErrorLog /var/log/httpd/hellomvc-error.log
-    CustomLog /var/log/httpd/hellomvc-access.log common
+    ErrorLog /var/log/httpd/helloapp-error.log
+    CustomLog /var/log/httpd/helloapp-access.log common
     SSLEngine on
     SSLProtocol all -SSLv2
     SSLCipherSuite ALL:!ADH:!EXPORT:!SSLv2:!RC4+RSA:+HIGH:+MEDIUM:!LOW:!RC4
@@ -427,7 +427,7 @@ sudo nano /etc/httpd/conf/httpd.conf
 sudo yum install mod_proxy_balancer
 ```
 
-在下面所示的配置文件中，`hellomvc` 应用的其他实例设置为在端口 5001 上运行。 “代理”部分设置了具有两个成员的均衡器配置，以便对 byrequests 进行负载均衡。
+在下面所示的配置文件中，`helloapp` 的其他实例设置为在端口 5001 上运行。 “代理”部分设置了具有两个成员的均衡器配置，以便对 byrequests 进行负载均衡。
 
 ```
 <VirtualHost *:*>
@@ -455,8 +455,8 @@ sudo yum install mod_proxy_balancer
     <Location />
         SetHandler balancer
     </Location>
-    ErrorLog /var/log/httpd/hellomvc-error.log
-    CustomLog /var/log/httpd/hellomvc-access.log common
+    ErrorLog /var/log/httpd/helloapp-error.log
+    CustomLog /var/log/httpd/helloapp-access.log common
     SSLEngine on
     SSLProtocol all -SSLv2
     SSLCipherSuite ALL:!ADH:!EXPORT:!SSLv2:!RC4+RSA:+HIGH:+MEDIUM:!LOW:!RC4

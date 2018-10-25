@@ -5,12 +5,12 @@ description: 了解如何在 ASP.NET Core 应用中控制多个环境的应用�
 ms.author: riande
 ms.date: 07/03/2018
 uid: fundamentals/environments
-ms.openlocfilehash: 720e5ef9fb63b83499ce1801a1c3f9df4786d748
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: de3c3fd5a2f0e49366d9d5b4e992d0247bcab0e5
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927937"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577517"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>在 ASP.NET Core 中使用多个环境
 
@@ -28,7 +28,7 @@ ASP.NET Core 在应用启动时读取环境变量 `ASPNETCORE_ENVIRONMENT`，并
 
 前面的代码：
 
-* 当 `ASPNETCORE_ENVIRONMENT` 设置为 `Development` 时，调用 [UseDeveloperExceptionPage](/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage) 和 [UseBrowserLink](/dotnet/api/microsoft.aspnetcore.builder.browserlinkextensions.usebrowserlink)。
+* 当 `ASPNETCORE_ENVIRONMENT` 设置为 `Development` 时，调用 [UseDeveloperExceptionPage](/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage)。
 * 当 `ASPNETCORE_ENVIRONMENT` 的值设置为下列之一时，调用 [UseExceptionHandler](/dotnet/api/microsoft.aspnetcore.builder.exceptionhandlerextensions.useexceptionhandler)：
 
     * `Staging`
@@ -245,7 +245,6 @@ $Env:ASPNETCORE_ENVIRONMENT = "Development"
 > [!IMPORTANT]
 > 在 IIS 中托管应用并添加或更改 `ASPNETCORE_ENVIRONMENT` 环境变量时，请采用下列方法之一，让新值可供应用拾取：
 >
-> * 重启应用的应用池。
 > * 在命令提示符处依次执行 `net stop was /y` 和 `net start w3svc`。
 > * 重启服务器。
 

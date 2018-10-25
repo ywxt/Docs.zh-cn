@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/19/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: e3bf5909edb515a2dabba206abaa160bc431d622
-ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
+ms.openlocfilehash: 7a87791abdc91c43796ce72764d0cb3938ed90ec
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46483082"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578453"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core 中的日志记录
 
@@ -25,7 +25,7 @@ ASP.NET Core 支持适用于各种日志记录提供程序的日志记录 API。
 
 ## <a name="how-to-create-logs"></a>如何创建日志
 
-要创建日志，请从[依赖关系注入](xref:fundamentals/dependency-injection)容器实现 [ILogger&lt;TCategoryName&gt;](/dotnet/api/microsoft.extensions.logging.ilogger-1) 对象：
+要创建日志，请从[依赖关系注入](xref:fundamentals/dependency-injection)容器获取 [ILogger&lt;TCategoryName&gt;](/dotnet/api/microsoft.extensions.logging.ilogger-1)：
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -759,6 +759,7 @@ loggerFactory.AddAzureWebAppDiagnostics();
 * [KissLog.net](https://kisslog.net/)（[GitHub 存储库](https://github.com/catalingavan/KissLog-net)）
 * [Loggr](http://loggr.net/)（[GitHub 存储库](https://github.com/imobile3/Loggr.Extensions.Logging)）
 * [NLog](http://nlog-project.org/)（[GitHub 存储库](https://github.com/NLog/NLog.Extensions.Logging)）
+* [Sentry](https://sentry.io/welcome/)（[GitHub 存储库](https://github.com/getsentry/sentry-dotnet)）
 * [Serilog](https://serilog.net/)（[GitHub 存储库](https://github.com/serilog/serilog-extensions-logging)）
 
 某些第三方框架可以执行[语义日志记录（又称结构化日志记录）](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging)。

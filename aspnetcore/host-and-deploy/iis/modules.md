@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 04/04/2018
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: 40af94f9cbb83f27f22d90b6b0f2854090687d34
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: 78cdf74648a29ed718d1373d7b3666b10749843d
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312341"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577556"
 ---
 # <a name="iis-modules-with-aspnet-core"></a>IIS 模块与 ASP.NET Core
 
@@ -39,7 +39,7 @@ ASP.NET Core 应用由 IIS 在反向代理配置中托管。 某些本机 IIS �
 | **跟踪**<br>`FailedRequestsTracingModule` | 是 | [ASP.NET Core 日志记录](xref:fundamentals/logging/index#tracesource-provider) |
 | **文件缓存**<br>`FileCacheModule` | 否 | [响应缓存中间件](xref:performance/caching/middleware) |
 | **HTTP 缓存**<br>`HttpCacheModule` | 否 | [响应缓存中间件](xref:performance/caching/middleware) |
-| **HTTP 日志记录**<br>`HttpLoggingModule` | 是 | [ASP.NET Core 日志记录](xref:fundamentals/logging/index)<br>实现：[elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging)、[Loggr](https://github.com/imobile3/Loggr.Extensions.Logging)、[NLog](https://github.com/NLog/NLog.Extensions.Logging)、[Serilog](https://github.com/serilog/serilog-extensions-logging)
+| **HTTP 日志记录**<br>`HttpLoggingModule` | 是 | [ASP.NET Core 日志记录](xref:fundamentals/logging/index)<br>实现：[elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging)、[Loggr](https://github.com/imobile3/Loggr.Extensions.Logging)、[NLog](https://github.com/NLog/NLog.Extensions.Logging)、[Sentry](https://github.com/getsentry/sentry-dotnet)、[Serilog](https://github.com/serilog/serilog-extensions-logging)
 | **HTTP 重定向**<br>`HttpRedirectionModule` | 是 | [URL 重写中间件](xref:fundamentals/url-rewriting) |
 | **IIS 客户端证书映射身份验证**<br>`IISCertificateMappingAuthenticationModule` | 是 | |
 | **IP 和域限制**<br>`IpRestrictionModule` | 是 | |

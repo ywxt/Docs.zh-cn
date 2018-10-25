@@ -6,28 +6,43 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/31/2018
 uid: getting-started
-ms.openlocfilehash: a6a5023594aec01370143e7d1f35fb45c109122a
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: 4a5a0cc5a5dab2171ab8ef43818185a4ee91af0e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47860935"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912561"
 ---
-# <a name="get-started-with-aspnet-core"></a>ASP.NET Core 入门
+# <a name="tutorial-get-started-with-aspnet-core"></a>教程：ASP.NET Core 入门
 
-本文档提供了用于创建和运行 ASP.NET Core 应用的步骤。
+本教程演示如何使用 .NET Core 命令行接口创建 ASP.NET Core Web 应用。 你将了解如何：
 
-::: moniker range=">= aspnetcore-2.1"
+> [!div class="checklist"]
+> * 创建 Web 应用项目。
+> * 启用本地 HTTPS。
+> * 运行应用。
+> * 编辑 Razor 页面。
 
-1. 安装 [!INCLUDE [](~/includes/2.1-SDK.md)]。
+最后，在本地计算机上运行工作 Web 应用。
 
-2. 创建 ASP.NET Core 项目。 打开命令行界面，输入以下命令：
+![Web 应用主页](_static/home-page.png)
+
+
+## <a name="prerequisites"></a>系统必备
+
+* 安装 [!INCLUDE [](~/includes/2.1-SDK.md)]。
+
+## <a name="create-a-web-app-project"></a>创建 Web 应用项目
+
+* 打开命令行界面，然后输入以下命令：
 
    ```console
    dotnet new webapp -o aspnetcoreapp
    ```
 
-3. 信任 HTTPS 开发证书：
+## <a name="enable-local-https"></a>启用本地 HTTPS
+
+* 信任 HTTPS 开发证书：
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
@@ -62,99 +77,36 @@ ms.locfileid: "47860935"
    
 ---
 
-4. 运行应用：
+## <a name="run-the-app"></a>运行应用
+
+* 运行以下命令：
 
    ```console
    cd aspnetcoreapp
    dotnet run
    ```
 
-5. 浏览到 [http://localhost:5001](http://localhost:5001)。  单击“接受”，接受隐私和 cookie 政策。 此应用不保留个人信息。
+* 浏览到 [https://localhost:5001](https://localhost:5001)。 单击“接受”，接受隐私和 cookie 政策。 此应用不保留个人信息。
 
-6. 打开 Pages/About.cshtml，使用以下突出显示标记修改该页面：
+## <a name="edit-a-razor-page"></a>编辑 Razor 页面
+
+* 打开 Pages/About.cshtml，使用以下突出显示标记修改该页面：
 
    [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9)]
 
-7. 浏览到 [http://localhost:5001/About](http://localhost:5001/About) 并验证是否显示更改。
+* 浏览到 [https://localhost:5001/About](https://localhost:5001/About) 并验证是否显示更改。
 
-[!INCLUDE [next steps](~/includes/getting-started/next-steps.md)]
+## <a name="next-steps"></a>后续步骤
 
-::: moniker-end
+在本教程中，你将了解：
 
-::: moniker range="= aspnetcore-2.0"
+> [!div class="checklist"]
+> * 创建 Web 应用项目。
+> * 启用本地 HTTPS。
+> * 运行该项目。
+> * 进行更改。
 
-1. 安装 [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]。
+若要了解有关 ASP.NET Core 的详细信息，请参阅简介：
 
-2. 创建新的 ASP.NET Core 项目。
-
-   打开命令行界面。 输入以下命令：
-
-   ```console
-   dotnet new razor -o aspnetcoreapp
-   ```
-
-3. 使用以下命令运行应用：
-
-   ```console
-   cd aspnetcoreapp
-   dotnet run
-   ```
-
-4. 浏览到 [http://localhost:5000](http://localhost:5000)。
-
-5. 打开 Pages/About.cshtml 并将页面修改为显示消息“Hello, world! The time on the server is @DateTime.Now” ：
-
-   [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9&range=1-9)]
-
-6. 浏览到 [http://localhost:5000/About](http://localhost:5000/About) 并验证更改。
-
-[!INCLUDE [next steps](~/includes/getting-started/next-steps.md)]
-
-::: moniker-end
-
-::: moniker range="<= aspnetcore-1.1"
-
-1. 从 [.NET Core 所有下载页面](https://www.microsoft.com/net/download/all)安装 SDK 1.0.4 的 .NET Core SDK 安装程序。
-
-2. 为新 ASP.NET Core 项目创建文件夹。
-
-   打开命令行界面。 输入以下命令：
-
-   ```console
-   mkdir aspnetcoreapp
-   cd aspnetcoreapp
-   ```
-
-3. 如果已计算机上安装了 SDK 的更高版本，则创建一个 global.json 文件以选择 1.0.4 SDK。
-
-   ```json
-   {
-     "sdk": { "version": "1.0.4" }
-   }
-   ```
-
-4. 创建新的 ASP.NET Core 项目。
-
-   ```console
-   dotnet new web
-   ```
-
-5. 还原程序包。
-
-   ```console
-   dotnet restore
-   ```
-
-6. 运行应用。
-
-   ```console
-   dotnet run
-   ```
-
-   如有需要，[dotnet run](/dotnet/core/tools/dotnet-run) 命令会首先生成应用。
-
-7. 浏览到 `http://localhost:5000`。
-
-[!INCLUDE [next steps](~/includes/getting-started/next-steps.md)]
-
-::: moniker-end
+> [!div class="nextstepaction"]
+> <xref:index>

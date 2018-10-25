@@ -5,12 +5,12 @@ description: 在本教程中，将读取并显示相关数据 - 即 Entity Frame
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: f57853fae7fb1cb7df130f38a6996c87a5c08e83
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: e23b8bb870b329bd705fbc9548df62524303893e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523280"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912315"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 读取相关数据 - 第 6 个教程（共 8 个）
 
@@ -51,7 +51,7 @@ EF Core 可采用多种方式将相关数据加载到实体的导航属性中：
 
   ![显式加载示例](read-related-data/_static/explicit-loading.png)
 
-* [延迟加载](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading)。 [EF Core 当前不支持延迟加载](https://github.com/aspnet/EntityFrameworkCore/issues/3797)。 首次读取实体时，不检索相关数据。 首次访问导航属性时，会自动检索该导航属性所需的数据。 首次访问导航属性时，都会向数据库发送一个查询。
+* [延迟加载](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading)。 [延迟加载已添加到版本 2.1 中的 EF Core](/ef/core/querying/related-data#lazy-loading)。 首次读取实体时，不检索相关数据。 首次访问导航属性时，会自动检索该导航属性所需的数据。 首次访问导航属性时，都会向数据库发送一个查询。
 
 * `Select` 运算符仅加载所需的相关数据。
 

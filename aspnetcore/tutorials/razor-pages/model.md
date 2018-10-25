@@ -5,12 +5,12 @@ description: 了解如何使用 Entity Framework Core (EF Core) 添加用于管�
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: de82738509bb009f030a02e28904e3155088fa6a
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 5cd1e08ac52d352be23a280419d7456f685a03ad
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011349"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045596"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>在 ASP.NET Core 中向 Razor 页面应用添加模型
 
@@ -22,9 +22,7 @@ ms.locfileid: "46011349"
 
 在解决方案资源管理器中，右键单击“RazorPagesMovie”项目 >“添加” > “新建文件夹”。 将文件夹命名为“Models”。
 
-右键单击“Models”文件夹。 选择“添加” > “类”。 将类命名为“Movie”，并添加以下属性：
-
-将 `Movie` 类的内容替换为以下代码：
+右键单击“Models”文件夹。 选择“添加” > “类”。 将该类命名为 Movie 并将 `Movie` 内容替换为以下代码：
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie21/Models/Movie1.cs?name=snippet)]
 
@@ -61,7 +59,7 @@ ms.locfileid: "46011349"
 * Pages/Movies：“创建”、“删除”、“详细信息”、“编辑”、“索引”。 将在下一教程中详细介绍这些页面。
 * Data/RazorPagesMovieContext.cs
 
-### <a name="files-updates"></a>文件更新
+### <a name="file-updates"></a>文件更新
 
 * Startup.cs：下一部分详细介绍对此文件所作的更改。
 * appsettings.json：添加用于连接到本地数据的连接字符串。
@@ -122,8 +120,8 @@ dotnet ef database update
 
 如果收到错误：
 
-SqlException：无法打开登录请求的数据库“RazorPagesMovieContext-GUID”。 登录失败。
-用户“用户名”登录失败。
+`SqlException: Cannot open database "RazorPagesMovieContext-GUID" requested by the login. The login failed.
+Login failed for user 'User-name'.`
 
 缺少[迁移步骤](#pmc)。
 

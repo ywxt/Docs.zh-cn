@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/02/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 50986eeb4c5c8b06c739ee9f860665b877853d78
-ms.sourcegitcommit: 517bb1366da2a28b0014e384fa379755c21b47d8
+ms.openlocfilehash: 33fae5d87029c8b3afdc321e0247555c1e479d07
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47230186"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912613"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>在 ASP.NET Core 依赖注入
 
@@ -540,17 +540,17 @@ public void ConfigureServices(IServiceCollection services)
 
 使用依赖注入时，请记住以下建议：
 
-* 避免在服务容器中直接存储数据和配置。 例如，用户的购物车通常不应添加到服务容器中。 配置应使用 [选项模型](xref:fundamentals/configuration/options)。 同样，避免"数据持有者"对象，也就是仅仅为实现对某些其他对象的访问而存在的对象。 如果可能的话，最好通过依赖关系注入请求实际项目。
+* 避免在服务容器中直接存储数据和配置。 例如，用户的购物车通常不应添加到服务容器中。 配置应使用 [选项模型](xref:fundamentals/configuration/options)。 同样，避免"数据持有者"对象，也就是仅仅为实现对某些其他对象的访问而存在的对象。 最好通过 DI 请求实际项目。
 
 * 避免静态访问服务（例如，静态键入 [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices) 以便在其他地方使用）。
 
-* 避免使用服务定位器模式（例如，[IServiceProvider.GetService](/dotnet/api/system.iserviceprovider.getservice)）。
+* 避免使用服务定位器模式。 例如，可以改为使用 DI 时，不要调用 <xref:System.IServiceProvider.GetService*> 来获取服务实例。 要避免的另一个服务定位器变体是注入可在运行时解析依赖项的工厂。 这两种做法混合了[控制反转](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion)策略。
 
 * 避免静态访问 `HttpContext`（例如，[IHttpContextAccessor.HttpContext](/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor.httpcontext)）。
 
 像任何一组建议一样，你可能会遇到需要忽略某建议的情况。 例外情况很少见 &mdash; 主要是框架本身内部的特殊情况。
 
-依赖注入是静态/全局对象访问模式的替代方法。 如果将其与静态对象访问混合使用，则可能无法实现依赖关系注入的优点。
+DI 是静态/全局对象访问模式的替代方法。 如果将其与静态对象访问混合使用，则可能无法实现 DI 的优点。
 
 ## <a name="additional-resources"></a>其他资源
 

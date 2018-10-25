@@ -4,14 +4,14 @@ author: ardalis
 description: 了解 ASP.NET Core 路由功能如何负责将传入请求映射到路由处理程序。
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/20/2018
+ms.date: 10/01/2018
 uid: fundamentals/routing
-ms.openlocfilehash: 94fa6a278466c8cc9926d7893d1ef71d83b865df
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: d9ba96c7b2abd35b1b13c84814bf3f776e8d8731
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41870846"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47861052"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core 中的路由
 
@@ -37,7 +37,7 @@ ms.locfileid: "41870846"
 
 ### <a name="url-matching"></a>URL 匹配
 
-URL 匹配是一个过程，通过该过程，路由可向处理程序调度传入请求。 此过程通常基于 URL 路径中的数据，但可以进行扩展以考虑请求中的任何数据。 向单独的处理程序调度请求的功能是缩放应用的大小和复杂性的关键。
+URL 匹配是一个过程，通过该过程，路由可向处理程序调度传入请求。 此过程基于 URL 路径中的数据，但可以进行扩展以考虑请求中的任何数据。 向单独的处理程序调度请求的功能是缩放应用的大小和复杂性的关键。
 
 传入请求将进入 `RouterMiddleware`，后者将对序列中的每个路由调用 <xref:Microsoft.AspNetCore.Routing.IRouter.RouteAsync*> 方法。 <xref:Microsoft.AspNetCore.Routing.IRouter> 实例将选择是否通过将 [RouteContext.Handler](xref:Microsoft.AspNetCore.Routing.RouteContext.Handler*) 设置为非 NULL <xref:Microsoft.AspNetCore.Http.RequestDelegate> 来处理请求。 如果路由为请求设置处理程序，将停止路由处理，并调用处理程序来处理该请求。 如果尝试了所有路由，且请求未找到任何处理程序，中间件将调用 next，请求管道中的下一个中间件将被调用。
 
@@ -169,12 +169,12 @@ routes.MapRoute(
 
 使用路由值 `{ controller = Products, action = List }`，此路由将生成 URL `/Products/List`。 路由值将替换为相应的路由参数，以形成 URL 路径。 由于 `id` 属于可选路由参数，因此它可以没有值。
 
-使用路由值 `{ controller = Home, action = Index }`，此路由将生成 URL `/`。 提供的路由值与默认值相匹配，因此可以安全忽略这些值对应的段。 请注意，已生成的两个 URL 将往返这个路由定义，并生成用于生成该 URL 的相同路由值。
+使用路由值 `{ controller = Home, action = Index }`，此路由将生成 URL `/`。 提供的路由值与默认值相匹配，因此可以安全忽略这些值对应的段。 已生成的两个 URL 将往返这个路由定义，并生成用于生成该 URL 的相同路由值。
 
 > [!TIP]
 > 使用 ASP.NET Core MVC 应用应该使用 <xref:Microsoft.AspNetCore.Mvc.Routing.UrlHelper> 生成 URL，而不是直接调用到路由。
 
-有关 URL 生成过程的更多详细信息，请参阅 [url-generation-reference](#url-generation-reference)。
+有关 URL 生成的详细信息，请参阅 [url-generation-reference](#url-generation-reference)。
 
 ## <a name="use-routing-middleware"></a>使用路由中间件
 
@@ -269,9 +269,31 @@ routes.MapRoute(
 
 你可以使用 `*` 字符作为路由参数的前缀，以绑定到 URI 的其余部分。 这称为 catch-all 参数。 例如，`blog/{*slug}` 将匹配以 `/blog` 开头且其后带有任何值（将分配给 `slug` 路由值）的 URI。 全方位参数还可以匹配空字符串。
 
+::: moniker range=">= aspnetcore-2.2"
+
+使用路由生成 URL（包括路径分隔符 (`/`)）时，catch-all 参数会转义相应的字符。 例如，路由值为 `{ path = "my/path" }` 的路由 `foo/{*path}` 生成 `foo/my%2Fpath`。 请注意转义的正斜杠。 要往返路径分隔符，请使用 `**` 路由参数前缀。 `{ path = "my/path" }` 的路由 `foo/{**path}` 生成 `foo/my/path`。
+
+::: moniker-end
+
 路由参数可能具有指定的默认值，方法是在参数名称后使用等号 (`=`) 隔开以指定默认值。 例如，`{controller=Home}` 将 `Home` 定义为 `controller` 的默认值。 如果参数的 URL 中不存在任何值，则使用默认值。 除默认值外，路由参数可能是可选的，如 `id?` 中所示，通过将问号 (`?`) 追加到参数名称末尾来指定。 可选值和默认路径参数的区别在于具有默认值的路由参数始终会生成一个值，而可选参数仅当请求 URL 提供值时才会具有一个值。
 
-路由参数也可能具有约束，必须匹配从 URL 中绑定的路由值。 在路由参数后面添加一个冒号 `:` 和约束名称可指定路由参数上的内联约束。 如果约束需要参数，将以在约束名称后括在括号“`( )`”中的形式提供。 通过追加另一个冒号 `:` 和约束名称，可指定多个内联约束。 约束名称将传递给 <xref:Microsoft.AspNetCore.Routing.IInlineConstraintResolver> 服务，以创建 <xref:Microsoft.AspNetCore.Routing.IRouteConstraint> 的实例，用于处理 URL。 例如，路由模板 `blog/{article:minlength(10)}` 使用参数 `10` 指定 `minlength` 约束。 有关路由约束详情以及框架提供的约束列表，请参阅[路由约束引用](#route-constraint-reference)部分。
+::: moniker range=">= aspnetcore-2.2"
+
+路由参数可能具有约束，必须匹配从 URL 中绑定的路由值。 在路由参数后面添加一个冒号 (`:`) 和约束名称可指定路由参数上的内联约束。 如果约束需要参数，将以在约束名称后括在括号 `( )` 中的形式提供。 通过追加另一个冒号 (`:`) 和约束名称，可指定多个内联约束。 约束名称和参数将传递给 <xref:Microsoft.AspNetCore.Routing.IInlineConstraintResolver> 服务，以创建 <xref:Microsoft.AspNetCore.Routing.IRouteConstraint> 的实例，用于处理 URL。 如果约束构造函数要求服务，通过依赖关系注入的应用服务解决它们。 例如，路由模板 `blog/{article:minlength(10)}` 使用参数 `10` 指定 `minlength` 约束。 有关路由约束详情以及框架提供的约束列表，请参阅[路由约束引用](#route-constraint-reference)部分。
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+路由参数可能具有约束，必须匹配从 URL 中绑定的路由值。 在路由参数后面添加一个冒号 (`:`) 和约束名称可指定路由参数上的内联约束。 如果约束需要参数，将以在约束名称后括在括号 `( )` 中的形式提供。 通过追加另一个冒号 (`:`) 和约束名称，可指定多个内联约束。 约束名称和参数将传递给 <xref:Microsoft.AspNetCore.Routing.IInlineConstraintResolver> 服务，以创建 <xref:Microsoft.AspNetCore.Routing.IRouteConstraint> 的实例，用于处理 URL。 例如，路由模板 `blog/{article:minlength(10)}` 使用参数 `10` 指定 `minlength` 约束。 有关路由约束详情以及框架提供的约束列表，请参阅[路由约束引用](#route-constraint-reference)部分。
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+路由参数还可以具有参数转换器，用于在生成链接以及将操作和页面匹配到 URI 时转换参数的值。 与约束类似，可以通过在路由参数名称后面添加冒号 (`:`) 和转换器名称，将参数变换器内联添加到路径参数。 例如，路由模板 `blog/{article:slugify}` 指定 `slugify` 转换器。
+
+::: moniker-end
 
 下表演示某些路由模板及其行为。
 
@@ -301,7 +323,7 @@ routes.MapRoute(
 
 ## <a name="route-constraint-reference"></a>路由约束参考
 
-如果 `Route` 匹配传入 URL 的语法并将 URL 路径标记化为路由值，将执行路由约束。 通常情况下，路由约束检查通过路由模板关联的路由值，并对该值是否可接受作出简单的是/否决策。 某些路由约束使用路由值以外的数据来考虑是否可以路由请求。 例如，<xref:Microsoft.AspNetCore.Routing.Constraints.HttpMethodRouteConstraint> 可以根据其 HTTP 谓词接受或拒绝请求。
+如果 `Route` 匹配传入 URL 的语法并将 URL 路径标记化为路由值，将执行路由约束。 路径约束通常检查通过路径模板关联的路径值，并对该值是否可接受做出是/否决定。 某些路由约束使用路由值以外的数据来考虑是否可以路由请求。 例如，<xref:Microsoft.AspNetCore.Routing.Constraints.HttpMethodRouteConstraint> 可以根据其 HTTP 谓词接受或拒绝请求。
 
 > [!WARNING]
 > 避免使用输入验证约束，因为这样意味着无效输入将导致“404 - 未找到”响应，而不是含相应错误消息的“400 - 错误请求”。 路由约束用于消除类似路由间的歧义，而不是验证特定路由的输入。
@@ -361,9 +383,29 @@ ASP.NET Core 框架将向正则表达式构造函数添加 `RegexOptions.IgnoreC
 | `^[a-z]{2}$` |  hello    | 否    | 参阅上述 `^` 和 `$` |
 | `^[a-z]{2}$` | 123abc456 | 否    | 参阅上述 `^` 和 `$` |
 
-有关正则表达式语法的详细信息，请参阅 [.NET Framework 正则表达式](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference)。
+有关正则表达式语法的详细信息，请参阅 [.NET Framework 正则表达式](/dotnet/standard/base-types/regular-expression-language-quick-reference)。
 
 若要将参数限制为一组已知的可能值，可使用正则表达式。 例如，`{action:regex(^(list|get|create)$)}` 仅将 `action` 路由值匹配到 `list`、`get` 或 `create`。 如果传递到约束字典中，字符串 `^(list|get|create)$` 将等效。 已传递到约束字典（不与模板内联）且不匹配任何已知约束的约束还将被视为正则表达式。
+
+::: moniker range=">= aspnetcore-2.2"
+
+## <a name="parameter-transformer-reference"></a>参数转换器参考
+
+参数转换器在为 `Route` 生成链接时执行。 参数转换器获取参数的路由值并将其转换为新的字符串值。 转换后的值用于生成的链接。 例如，路由模式 `blog\{article:slugify}`（具有 `Url.Action(new { article = "MyTestArticle" })`）中的自定义 `slugify` 参数转换器生成 `blog\my-test-article`。 参数转换器实现 `Microsoft.AspNetCore.Routing.IOutboundParameterTransformer` 并使用 <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap> 进行配置。
+
+框架还使用参数转换器来转换端点解析的 URI。 例如，ASP.NET Core MVC 使用参数转换器来转换用于匹配 `area``controller``action` 和 `page` 的路由值。
+
+```csharp
+routes.MapRoute(
+    name: "default",
+    template: "{controller=Home:slugify}/{action=Index:slugify}/{id?}");
+```
+
+使用上述路由，操作 `SubscriptionManagementController.GetAll()` 与 URI `/subscription-management/get-all` 匹配。 参数转换器不会更改用于生成链接的路由值。 `Url.Action("GetAll", "SubscriptionManagement")` 输出 `/subscription-management/get-all`。
+
+ASP.NET Core MVC 还附带 `Microsoft.AspNetCore.Mvc.ApplicationModels.RouteTokenTransformerConvention` API 约定。 该约定将指定的参数转换器应用于应用程序中的所有属性路由令牌。
+
+::: moniker-end
 
 ## <a name="url-generation-reference"></a>URL 生成参考
 

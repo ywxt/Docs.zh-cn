@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 6144bfb9e731ace51b4f23870fdb06519fd4a9ea
-ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
+ms.openlocfilehash: cd958b9c084de4b3e12784774544610873a519f9
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47211021"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045518"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>将验证添加到 ASP.NET Core Razor 页面
 
@@ -27,7 +27,7 @@ Razor 页面和 Entity Framework 提供的验证支持是 DRY 原则的极佳示
 
 ### <a name="adding-validation-rules-to-the-movie-model"></a>将验证规则添加到电影模型
 
-打开 Movie.cs 文件。 [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) 提供一组内置验证特性，可通过声明方式应用于类或属性。 DataAnnotations 还包含 `DataType` 等格式特性，有助于格式设置但不提供验证。
+打开 Models/Movie.cs 文件。 [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) 提供一组内置验证特性，可通过声明方式应用于类或属性。 DataAnnotations 还包含 `DataType` 等格式特性，有助于格式设置但不提供验证。
 
 更新 `Movie` 类以使用 `Required`、`StringLength`、`RegularExpression` 和 `Range` 验证特性。
 
@@ -79,7 +79,7 @@ Razor 页面和 Entity Framework 提供的验证支持是 DRY 原则的极佳示
 
 （可选）测试服务器端验证：
 
-* 在浏览器中禁用 JavaScript。 如果无法在浏览器中禁用 JavaScript，请尝试其他浏览器。
+* 在浏览器中禁用 JavaScript。 可以使用浏览器的开发人员工具执行此操作。 如果无法在浏览器中禁用 JavaScript，请尝试其他浏览器。
 * 在“创建”或“编辑”页面的 `OnPostAsync` 方法中设置断点。
 * 提交带有验证错误的表单。
 * 验证模型状态是否无效：

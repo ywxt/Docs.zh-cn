@@ -5,12 +5,12 @@ description: 获取 ASP.NET Core 的简介，它是一个跨平台的高性能�
 ms.author: riande
 ms.date: 9/28/2018
 uid: index
-ms.openlocfilehash: 85f2aa04e4b6692dd03a63f14bcebdec97ee270e
-ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
+ms.openlocfilehash: 69ab702e9d9f8d746b7bc546d4f2bbb831ff59c7
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47454773"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911676"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 简介
 
@@ -27,18 +27,7 @@ ASP.NET Core 是一个跨平台的高性能[开源](https://github.com/aspnet/ho
 
 数百万开发人员使用过（并将继续使用）[ASP.NET 4.x](https://docs.microsoft.com/aspnet/overview) 创建 Web 应用。 ASP.NET Core 是重新设计的 ASP.NET 4.x，更改了体系结构，形成了更精简的模块化框架。
 
-ASP.NET Core 具有如下优点：
-
-* 生成 Web UI 和 Web API 的统一场景。
-* 集成[新式客户端框架](xref:client-side/index)和开发工作流。
-* 基于环境的云就绪[配置系统](xref:fundamentals/configuration/index)。
-* 内置[依赖项注入](xref:fundamentals/dependency-injection)。
-* 轻型的[高性能](https://github.com/aspnet/benchmarks)模块化 HTTP 请求管道。
-* 能够在 [IIS](xref:host-and-deploy/iis/index)、[Nginx](xref:host-and-deploy/linux-nginx)、[Apache](xref:host-and-deploy/linux-apache)、[Docker](xref:host-and-deploy/docker/index) 上进行托管或在自己的进程中进行自托管。
-* 定目标到 [.NET Core](https://docs.microsoft.com/dotnet/articles/standard/choosing-core-framework-server) 时，可以使用并行应用版本控制。
-* 简化新式 Web 开发的工具。
-* 能够在 Windows、macOS 和 Linux 进行生成和运行。
-* 开放源代码和[以社区为中心](https://live.asp.net/)。
+[!INCLUDE[](~/includes/benefits.md)]
 
 ## <a name="build-web-apis-and-web-ui-using-aspnet-core-mvc"></a>使用 ASP.NET Core MVC 生成 Web API 和 Web UI
 
@@ -56,9 +45,16 @@ ASP.NET Core MVC 提供生成 [Web API](xref:tutorials/index#build-web-apis) 和
 
 ASP.NET Core 与常用客户端框架和库（包括 [Angular](xref:spa/angular)、[React](xref:spa/react) 和 [Bootstrap](xref:client-side/bootstrap)）无缝集成。 有关详细信息，请参阅[客户端开发](xref:client-side/index)。
 
+<a name="target-framework"></a>
+
 ## <a name="aspnet-core-targeting-net-framework"></a>面向 .NET Framework 的 ASP.NET Core
 
 ASP.NET Core 可以面向 .NET Core 或 .NET Framework。 面向 .NET Framework 的 ASP.NET Core 应用无法跨平台，它们仅在 Windows 上运行。 没有计划删除 ASP.NET Core 中对面向 .NET Framework 的支持。 通常，ASP.NET Core 由 [.NET Standard](/dotnet/standard/net-standard) 库组成。 使用 .NET Standard 2.0 编写的应用可在 NET Standard 2.0 支持的任何位置运行。
+
+与 .NET Standard 2.0 兼容的 .NET Framework 版本支持 ASP.NET Core 2.x：
+
+* 强烈建议使用 .NET Framework 4.7.1 及更高版本。
+* .NET Framework 4.6.1 及更高版本。
 
 面向 .NET Core 有以下几个优势，并且这些优势会随着每次发布增加。 与 .NET Framework 相比，.NET Core 的部分优势包括：
 
@@ -68,7 +64,7 @@ ASP.NET Core 可以面向 .NET Core 或 .NET Framework。 面向 .NET Framework 
 * 新 API
 * 开源
 
-我们正努力缩小 .NET Framework 与 .NET Core 的 API 差距。 [Windows 兼容性包](/dotnet/core/porting/windows-compat-pack)使数千个仅可在Windows运行的API 可在 .NET Core 中使用。 这些 API 在 .NET Core 1.x 中不可用。
+我们正努力缩小 .NET Framework 与 .NET Core 的 API 差距。 [Windows 兼容性包](/dotnet/core/porting/windows-compat-pack)使数千个仅 Windows API 可在 .NET Core 中使用。 这些 API 在 .NET Core 1.x 中不可用。
 
 ## <a name="next-steps"></a>后续步骤
 

@@ -2,17 +2,17 @@
 title: ASP.NET Core 中的 WebSocket 支持
 author: rick-anderson
 description: 了解如何在 ASP.NET Core 中开始使用 WebSocket。
-monikerRange: '>= aspnetcore-2.1'
+monikerRange: '>= aspnetcore-1.1'
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/28/2018
 uid: fundamentals/websockets
-ms.openlocfilehash: a9fe13ef7895ea3ab43257dbbaf4521f883c0804
-ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
+ms.openlocfilehash: e46c2decf92d21322f2079bf880df534e0224db5
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37433982"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911647"
 ---
 # <a name="websockets-support-in-aspnet-core"></a>ASP.NET Core 中的 WebSocket 支持
 
@@ -20,7 +20,7 @@ ms.locfileid: "37433982"
 
 本文介绍 ASP.NET Core 中 WebSocket 的入门方法。 [WebSocket](https://wikipedia.org/wiki/WebSocket) ([RFC 6455](https://tools.ietf.org/html/rfc6455)) 是一个协议，支持通过 TCP 连接建立持久的双向信道。 它用于从快速实时通信中获益的应用，如聊天、仪表板和游戏应用。
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）。 有关详细信息，请参阅[后续步骤](#next-steps)部分。
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）。 有关详细信息，请参阅[后续步骤](#next-steps)部分。
 
 ## <a name="prerequisites"></a>系统必备
 
@@ -60,14 +60,34 @@ ms.locfileid: "37433982"
 
 在 `Startup` 类的 `Configure` 方法中添加 WebSocket 中间件：
 
-[!code-csharp[](websockets/sample/Startup.cs?name=UseWebSockets)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=UseWebSockets)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=UseWebSockets)]
+
+::: moniker-end
 
 可配置以下设置：
 
 * `KeepAliveInterval` - 向客户端发送“ping”帧的频率，以确保代理保持连接处于打开状态。
 * `ReceiveBufferSize` - 用于接收数据的缓冲区的大小。 高级用户可能需要对其进行更改，以便根据数据大小调整性能。
 
-[!code-csharp[](websockets/sample/Startup.cs?name=UseWebSocketsOptions)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=UseWebSocketsOptions)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=UseWebSocketsOptions)]
+
+::: moniker-end
 
 ### <a name="accept-websocket-requests"></a>接受 WebSocket 请求
 
@@ -75,7 +95,17 @@ ms.locfileid: "37433982"
 
 以下示例来自 `Configure` 方法的后期：
 
-[!code-csharp[](websockets/sample/Startup.cs?name=AcceptWebSocket&highlight=7)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=AcceptWebSocket&highlight=7)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=AcceptWebSocket&highlight=7)]
+
+::: moniker-end
 
 WebSocket 请求可以来自任何 URL，但此示例代码只接受 `/ws` 的请求。
 
@@ -85,7 +115,17 @@ WebSocket 请求可以来自任何 URL，但此示例代码只接受 `/ws` 的�
 
 之前显示的接受 WebSocket 请求的代码将 `WebSocket` 对象传递给 `Echo` 方法。 代码接收消息并立即发回相同的消息。 循环发送和接收消息，直到客户端关闭连接：
 
-[!code-csharp[](websockets/sample/Startup.cs?name=Echo)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=Echo)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=Echo)]
+
+::: moniker-end
 
 如果在开始循环之前接受 WebSocket 连接，中间件管道会结束。 关闭套接字后，管道展开。 即接受 WebSocket 时，请求停止在管道中推进。 循环结束且套接字关闭时，请求继续回到管道。
 
@@ -110,7 +150,7 @@ WebSocket 请求可以来自任何 URL，但此示例代码只接受 `/ws` 的�
 1. 打开以下节点：“Internet Information Services” > “万维网服务” > “应用程序开发功能”。
 1. 选择“WebSocket 协议”功能。 选择“确定”。
 
-在 node.js 上使用 socket.io 时禁用 WebSocket
+### <a name="disable-websocket-when-using-socketio-on-nodejs"></a>在 Node.js 上使用 socket.io 时禁用 WebSocket
 
 如果在 [Node.js](https://nodejs.org/) 的 [socket.io](https://socket.io/) 中使用 WebSocket 支持，请使用 web.config 或 applicationHost.config 中的 `webSocket` 元素禁用默认的 IIS WebSocket 模块。如果不执行此步骤，IIS WebSocket 模块将尝试处理 WebSocket 通信而不是 Node.js 和应用。
 
@@ -122,7 +162,7 @@ WebSocket 请求可以来自任何 URL，但此示例代码只接受 `/ws` 的�
 
 ## <a name="next-steps"></a>后续步骤
 
-本文附带的[示例应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample)是一个 echo 应用。 它有一个可建立 WebSocket 连接的网页，且服务器将其收到的消息重新发回到客户端。 从命令提示符运行该应用（它未设置为在安装了 IIS Express 的 Visual Studio 中运行）并导航到 http://localhost:5000。 该网页的左上方显示连接状态：
+本文附带的[示例应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/samples)是一个 echo 应用。 它有一个可建立 WebSocket 连接的网页，且服务器将其收到的消息重新发回到客户端。 从命令提示符运行该应用（它未设置为在安装了 IIS Express 的 Visual Studio 中运行）并导航到 http://localhost:5000。 该网页的左上方显示连接状态：
 
 ![网页的初始状态](websockets/_static/start.png)
 

@@ -5,12 +5,12 @@ description: 演示如何使用 EF Core 进行创建、读取、更新和删除
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/crud
-ms.openlocfilehash: e3a0ec2e21ae9e9eeaae1eb7c17f1604897fb6f9
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 25493f93daf3fe5e874ad1d06b918196cd1f074d
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342453"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912808"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - CRUD - 第 2 个教程（共 8 个）
 
@@ -26,7 +26,7 @@ ms.locfileid: "39342453"
 
 为最大程度降低复杂性并让这些教程集中介绍 EF Core，将在页面模型中使用 EF Core 代码。 某些开发人员使用服务层或[存储库模式](xref:fundamentals/repository-pattern)在 UI (Razor Pages) 和数据访问层之间创建抽象层。
 
-本教程将检查“学生”文件夹中的“创建”、“编辑”、“删除”和“详细信息”Razor 页面。
+本教程将检查“学生”文件夹中的“创建”、“编辑”、“删除”和“详细信息”Razor Pages。
 
 基架代码将以下模式用于“创建”、“编辑”和“删除”页面：
 
@@ -35,7 +35,7 @@ ms.locfileid: "39342453"
 
 “索引”和“详细信息”页面使用 HTTP GET 方法 `OnGetAsync` 获取和显示请求数据
 
-## <a name="singleordefaultasync-vs-firstordefaultasync"></a>SingleOrDefaultAsync vs FirstOrDefaultAsync
+## <a name="singleordefaultasync-vs-firstordefaultasync"></a>SingleOrDefaultAsync 与FirstOrDefaultAsync
 
 生成的代码使用 [FirstOrDefaultAsync](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.firstordefaultasync#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_FirstOrDefaultAsync__1_System_Linq_IQueryable___0__System_Threading_CancellationToken_)其推荐度通常高于 [SingleOrDefaultAsync](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.singleordefaultasync#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_SingleOrDefaultAsync__1_System_Linq_IQueryable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_)。
 

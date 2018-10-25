@@ -1,28 +1,29 @@
 ---
-title: 教程：开始在 ASP.NET Core 上使用 SignalR
+title: ASP.NET Core SignalR 入门
 author: tdykstra
-description: 在本教程中，创建使用适用于 ASP.NET Core 的 SignalR 的聊天应用。
+description: 在本教程中，创建使用 ASP.NET Core SignalR 的聊天应用。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/31/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 6f93d6dc664f68425ef0fa0d02f9011e4875bc33
-ms.sourcegitcommit: 9bdba90b2c97a4016188434657194b2d7027d6e3
+ms.openlocfilehash: 55fb6b1c13549129a00541c1228956a93854ad78
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47402128"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578024"
 ---
-# <a name="tutorial-get-started-with-signalr-on-aspnet-core"></a>教程：开始在 ASP.NET Core 上使用 SignalR
+# <a name="tutorial-get-started-with-aspnet-core-signalr"></a>教程：ASP.NET Core SignalR 入门
 
 本教程介绍生成使用 SignalR 的实时应用的基础知识。 您将学习如何：
 
 > [!div class="checklist"]
-> * 创建在 ASP.NET Core 上使用 SignalR 的 Web 应用。
-> * 在服务器上创建 SignalR 中心。
-> * 从 JavaScript 客户端连接到 SignalR 中心。
-> * 使用此中心将消息从任何客户端发送到所有连接的客户端。
+> * 创建 Web 应用项目。
+> * 添加 SignalR 客户端库。
+> * 创建 SignalR 中心。
+> * 配置项目以使用 SignalR。
+> * 添加代码，以便使用此中心将消息从任何客户端发送到所有连接的客户端。
 
 最终将创建一个正常运行的聊天应用：
 
@@ -50,7 +51,7 @@ ms.locfileid: "47402128"
 
 ---
 
-## <a name="create-the-project"></a>创建项目
+## <a name="create-a-web-project"></a>创建 Web 项目
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 
@@ -90,7 +91,7 @@ ms.locfileid: "47402128"
 
 ## <a name="add-the-signalr-client-library"></a>添加 SignalR 客户端库
 
-[Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)中包括 SignalR 服务器库。 JavaScript 客户端库不会自动包含在项目中。 对于此教程，使用[库管理器 (LibMan)](xref:client-side/libman/index) 从 unpkg 获取客户端库。 [unpkg](https://unpkg.com/#/) 是一个[内容分发网络](https://wikipedia.org/wiki/Content_delivery_network)，可以分发在 [npm：Node.js 包管理器](https://www.npmjs.com/get-npm)中找到的任何内容。
+`Microsoft.AspNetCore.App` 元包中包括 SignalR 服务器库。 JavaScript 客户端库不会自动包含在项目中。 对于此教程，使用库管理器 (LibMan) 从 unpkg 获取客户端库。 unpkg 是一个内容分发网络 (CDN)，可以分发在 npm（即 Node.js 包管理器）中找到的任何内容。
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 
@@ -98,7 +99,7 @@ ms.locfileid: "47402128"
 
 * 在“添加客户端库”对话框中，对于“提供程序”，选择“unpkg”。 
 
-* 对于“库”，输入 @aspnet/signalr@1，然后选择不是预览版的最新版本。
+* 对于“库”，输入 `@aspnet/signalr@1`，然后选择不是预览版的最新版本。
 
   ![“添加客户端库”对话框 - 选择库](signalr/_static/libman1.png)
 
@@ -108,7 +109,7 @@ ms.locfileid: "47402128"
 
   ![“添加客户端库”对话框 - 选择文件和目标](signalr/_static/libman2.png)
 
-  [LibMan](xref:client-side/libman/index) 创建 wwwroot/lib/signalr 文件夹并将所选文件复制到该文件夹。
+  LibMan 创建 wwwroot/lib/signalr 文件夹并将所选文件复制到该文件夹。
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
@@ -170,9 +171,9 @@ ms.locfileid: "47402128"
 
 ---
 
-## <a name="create-the-signalr-hub"></a>创建 SignalR 中心
+## <a name="create-a-signalr-hub"></a>创建 SignalR 中心
 
-[中心](xref:signalr/hubs)是一个类，用作处理客户端 - 服务器通信的高级管道。
+*中心*是一个类，用作处理客户端 - 服务器通信的高级管道。
 
 * 在 SignalRChat 项目文件夹中，创建 Hubs 文件夹。
 
@@ -180,11 +181,11 @@ ms.locfileid: "47402128"
 
   [!code-csharp[Startup](signalr/sample/Hubs/ChatHub.cs)]
 
-  `ChatHub` 类继承自 SignalR [Hub](/dotnet/api/microsoft.aspnetcore.signalr.hub) 类。 `Hub` 类管理连接、组和消息。
+  `ChatHub` 类继承自 SignalR `Hub` 类。 `Hub` 类管理连接、组和消息。
 
   任何连接客户端都可以调用 `SendMessage` 方法。 该方法将接收到的消息发送到所有客户端。 SignalR 代码是异步模式，可提供最大的可伸缩性。
 
-## <a name="configure-the-project-to-use-signalr"></a>配置项目以使用 SignalR
+## <a name="configure-signalr"></a>配置 SignalR
 
 必须配置 SignalR 服务器，以将 SignalR 请求传递到 SignalR。
 
@@ -192,9 +193,9 @@ ms.locfileid: "47402128"
 
   [!code-csharp[Startup](signalr/sample/Startup.cs?highlight=7,33,52-55)]
 
-  这些更改将 SignalR 添加到[依赖关系注入](xref:fundamentals/dependency-injection)系统与[中间件](xref:fundamentals/middleware/index)管道。
+  这些更改将 SignalR 添加到 ASP.NET Core 依赖关系注入系统和中间件管道。
 
-## <a name="create-the-signalr-client-code"></a>创建 SignalR 客户端代码
+## <a name="add-signalr-client-code"></a>添加 SignalR 客户端代码
 
 * 使用以下代码替换 Pages\Index.cshtml 中的内容：
 
@@ -246,10 +247,16 @@ ms.locfileid: "47402128"
 
 ## <a name="next-steps"></a>后续步骤
 
-如果希望客户端从不同的域连接到 SignalR 应用，则必须启用跨域资源共享 (CORS)。 有关详细信息，请参阅[跨域资源共享](xref:signalr/security?view=aspnetcore-2.1#cross-origin-resource-sharing)。
+在本教程中，你将了解：
 
-若要了解有关 SignalR、中心和 JavaScript 客户端的详细信息，请参阅以下资源：
+> [!div class="checklist"]
+> * 创建 Web 应用项目。
+> * 添加 SignalR 客户端库。
+> * 创建 SignalR 中心。
+> * 配置项目以使用 SignalR。
+> * 添加代码，以便使用此中心将消息从任何客户端发送到所有连接的客户端。
 
-* [适用于 ASP.NET Core 的 SignalR 简介](xref:signalr/introduction)
-* [使用适用于 ASP.NET Core 的 SignalR 中的中心](xref:signalr/hubs)
-* [ASP.NET Core SignalR JavaScript 客户端](xref:signalr/javascript-client)
+若要详细了解 SignalR，请参阅简介：
+
+> [!div class="nextstepaction"]
+> [ASP.NET Core SignalR 简介](xref:signalr/introduction)

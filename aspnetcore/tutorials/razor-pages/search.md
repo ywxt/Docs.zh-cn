@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/search
-ms.openlocfilehash: 9608f454c2c4ae0f4db1e71200b0ca98fe2cd2ad
-ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
+ms.openlocfilehash: c88441b39d8c96ec817c58fc56ebd51a0887b077
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47454708"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045557"
 ---
 # <a name="add-search-to-aspnet-core-razor-pages"></a>将搜索添加到 ASP.NET Core Razor 页面
 
@@ -82,7 +82,7 @@ HTML `<form>` 标记使用[表单标记帮助程序](xref:mvc/views/working-with
 ::: moniker-end
 
 
-`SelectList Genres` 包含流派列表。 这使用户能够从列表中选择一种流派。
+`Genres` 属性包含流派列表。 这使用户能够从列表中选择一种流派。
 
 `MovieGenre` 属性包含用户选择的特定流派（例如“西部”）。
 
