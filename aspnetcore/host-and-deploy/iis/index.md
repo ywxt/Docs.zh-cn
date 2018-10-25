@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 12075f68dd828680f6bfbd46ea22ebd7bbe52dc7
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 5092564ad885b0de090129a7a0f0bbbd472cb868
+ms.sourcegitcommit: ce6b6792c650708e92cdea051a5d166c0708c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326012"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49652340"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -85,13 +85,19 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultBuilder` 调用 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> 方法，该方法获取动态端口并配置 Kestrel 以侦听 `http://localhost:{dynamicPort}/`。 这将替代其他 URL 配置，如对 `UseUrls` 或 [Kestrel 的侦听 API](xref:fundamentals/servers/kestrel#endpoint-configuration) 的调用。 因此，使用模块时，不需要调用 `UseUrls` 或 Kestrel 的 `Listen` API。 如果调用 `UseUrls` 或 `Listen`，则 Kestrel 仅会侦听在没有 IIS 的情况下运行应用时指定的端口。
+ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultBuilder` 调用 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> 方法。 `UseIISIntegration` 配置在 localhost IP 地址 (`127.0.0.1`) 中的动态端口上侦听的 Kestrel。 如果动态端口为 1234，则 Kestrel 在 `127.0.0.1:1234` 中侦听。 此配置将替换以下提供的其他 URL 配置：
+
+* `UseUrls`
+* [Kestrel 的侦听 API](xref:fundamentals/servers/kestrel#endpoint-configuration)
+* [配置](xref:fundamentals/configuration/index)（或 [命令行 -- URL 选项](xref:fundamentals/host/web-host#override-configuration)）
+
+使用模块时，不需要调用 `UseUrls` 或 Kestrel 的 `Listen` API。 如果调用 `UseUrls` 或 `Listen`，则 Kestrel 仅会侦听在没有 IIS 的情况下运行应用时指定的端口。
 
 有关进程内和进程外托管模型的详细信息，请参阅 <xref:fundamentals/servers/aspnet-core-module> 主题和 <xref:host-and-deploy/aspnet-core-module>。
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+::: moniker range="= aspnetcore-2.1"
 
 典型的 Program.cs 调用 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> 开始设置主机。 `CreateDefaultBuilder` 将 [Kestrel](xref:fundamentals/servers/kestrel) 配置为 Web 服务器，并通过配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)的基路径和端口来实现 IIS 集成：
 
@@ -101,7 +107,33 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultBuilder` 调用 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 方法，该方法获取该动态端口，并将 Kestrel 配置为侦听 `http://localhost:{dynamicPort}/`。 这将替代其他 URL 配置，如对 `UseUrls` 或 [Kestrel 的侦听 API](xref:fundamentals/servers/kestrel#endpoint-configuration) 的调用。 因此，使用模块时，不需要调用 `UseUrls` 或 Kestrel 的 `Listen` API。 如果调用 `UseUrls` 或 `Listen`，则 Kestrel 会侦听在没有 IIS 的情况下运行应用时指定的端口。
+ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultBuilder` 调用 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 方法。 `UseIISIntegration` 配置在 localhost IP 地址 (`127.0.0.1`) 中的动态端口上侦听的 Kestrel。 如果动态端口为 1234，则 Kestrel 在 `127.0.0.1:1234` 中侦听。 此配置将替换以下 API 提供的其他 URL 配置：
+
+* `UseUrls`
+* [Kestrel 的侦听 API](xref:fundamentals/servers/kestrel#endpoint-configuration)
+* [配置](xref:fundamentals/configuration/index)（或 [命令行 -- URL 选项](xref:fundamentals/host/web-host#override-configuration)）
+
+使用模块时，不需要调用 `UseUrls` 或 Kestrel 的 `Listen` API。 如果调用 `UseUrls` 或 `Listen`，则 Kestrel 仅会侦听在没有 IIS 的情况下运行应用时指定的端口。
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+典型的 Program.cs 调用 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> 开始设置主机。 `CreateDefaultBuilder` 将 [Kestrel](xref:fundamentals/servers/kestrel) 配置为 Web 服务器，并通过配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)的基路径和端口来实现 IIS 集成：
+
+```csharp
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        ...
+```
+
+ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultBuilder` 调用 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 方法。 `UseIISIntegration` 配置在 localhost IP 地址 (`localhost`) 中的动态端口上侦听的 Kestrel。 如果动态端口为 1234，则 Kestrel 在 `localhost:1234` 中侦听。 此配置将替换以下 API 提供的其他 URL 配置：
+
+* `UseUrls`
+* [Kestrel 的侦听 API](xref:fundamentals/servers/kestrel#endpoint-configuration)
+* [配置](xref:fundamentals/configuration/index)（或 [命令行 -- URL 选项](xref:fundamentals/host/web-host#override-configuration)）
+
+使用模块时，不需要调用 `UseUrls` 或 Kestrel 的 `Listen` API。 如果调用 `UseUrls` 或 `Listen`，则 Kestrel 仅会侦听在没有 IIS 的情况下运行应用时指定的端口。
 
 ::: moniker-end
 
@@ -118,7 +150,12 @@ var host = new WebHostBuilder()
 
 同时需要 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) 和 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration)。 调用 `UseIISIntegration` 的代码不会影响代码可移植性。 如果应用不在 IIS 后面运行（例如，应用直接在 Kestrel 上运行），则 `UseIISIntegration` 不会运行。
 
-ASP.NET Core 模块生成分配给后端进程的动态端口。 `UseIISIntegration` 方法获取该动态端口，并将 Kestrel 配置为侦听 `http://locahost:{dynamicPort}/`。 这将替代其他 URL 配置，如对 `UseUrls` 的调用。 因此，使用模块时无需调用 `UseUrls`。 如果调用 `UseUrls`，则 Kestrel 会侦听在没有 IIS 的情况下运行应用时指定的端口。
+ASP.NET Core 模块生成分配给后端进程的动态端口。 `UseIISIntegration` 配置在 localhost IP 地址 (`localhost`) 中的动态端口上侦听的 Kestrel。 如果动态端口为 1234，则 Kestrel 在 `localhost:1234` 中侦听。 此配置将替换以下 API 提供的其他 URL 配置：
+
+* `UseUrls`
+* [配置](xref:fundamentals/configuration/index)（或 [命令行 -- URL 选项](xref:fundamentals/host/web-host#override-configuration)）
+
+使用模块时无需调用 `UseUrls`。 如果调用 `UseUrls`，则 Kestrel 仅会侦听在没有 IIS 的情况下运行应用时指定的端口。
 
 如果在 ASP.NET Core 1.0 应用中调用 `UseUrls`，请在调用 `UseIISIntegration` 前调用它，使模块配置的端口不会被覆盖。 ASP.NET Core 1.1 不需要此调用顺序，因为模块设置会重写 `UseUrls`。
 
