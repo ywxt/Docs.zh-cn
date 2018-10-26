@@ -1,103 +1,95 @@
 ---
-title: 使用 ASP.NET Core 中的分布式缓存
-author: ardalis
-description: 了解如何通过 ASP.NET Core 分布式缓存改善应用性能和可伸缩性，尤其是在云或服务器场环境中。
+title: 分布式缓存在 ASP.NET Core 中
+author: guardrex
+description: 了解如何使用 ASP.NET Core 分布式缓存来提高应用性能和可伸缩性，尤其是在云或服务器场环境中。
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/14/2017
+ms.date: 10/19/2018
 uid: performance/caching/distributed
-ms.openlocfilehash: 85da734f3ae7bcf0936888edfb6ac91d4362eef2
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 46a93125e8b25a66b5a1ead3b72c55db146b5a10
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477471"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090558"
 ---
-# <a name="work-with-a-distributed-cache-in-aspnet-core"></a>使用 ASP.NET Core 中的分布式缓存
+# <a name="distributed-caching-in-aspnet-core"></a>分布式缓存在 ASP.NET Core 中
 
-作者：[Steve Smith](https://ardalis.com/)
+作者：[Steve Smith](https://ardalis.com/) 和 [Luke Latham](https://github.com/guardrex)
 
-分布式的缓存可以提高性能和可伸缩性的 ASP.NET Core 应用程序，尤其是当托管在云中或服务器场中时。
+分布式的缓存是由多个应用程序服务器，通常作为对其进行访问的应用程序服务器的外部服务维护共享缓存。 分布式的缓存可以提高性能和可伸缩性的 ASP.NET Core 应用，尤其是当应用程序托管的云服务或服务器场。
+
+分布式的缓存具有几大优势，其中缓存的数据存储在单个应用程序服务器其他缓存方案。
+
+当分布式缓存的数据，则数据：
+
+* 是*连贯*（一致） 跨多个服务器的请求。
+* 服务器重新启动和应用部署仍然有效。
+* 不使用本地内存。
+
+分布式的缓存配置是特定于实现的。 本文介绍如何配置 SQL Server 和 Redis 分布式的缓存。 第三方实现也是可用，如[NCache](http://www.alachisoft.com/ncache/aspnet-core-idistributedcache-ncache.html) ([GitHub 上的 NCache](https://github.com/Alachisoft/NCache))。 无论选择哪一种实现，该应用程序与使用缓存进行交互<xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache>接口。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
-## <a name="what-is-a-distributed-cache"></a>什么是分布式的缓存
+## <a name="prerequisites"></a>系统必备
 
-分布式的缓存共享由多个应用程序服务器 (请参阅[缓存基础知识](memory.md#caching-basics))。 缓存中的信息不存储在单独的 Web 服务器的内存中，并且缓存的数据可用于所有应用服务器。这具有几个优点： 这提供了几个优点：
+::: moniker range=">= aspnetcore-2.1"
 
-1. 所有 Web 服务器上的缓存数据都是一致的。 用户不会因处理其请求的 Web 服务器的不同而看到不同的结果
+若要使用的 SQL Server 分布式缓存，引用[Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)或添加到的包引用[Microsoft.Extensions.Caching.SqlServer](https://www.nuget.org/packages/Microsoft.Extensions.Caching.SqlServer)包。
 
-2. 缓存的数据在 Web 服务器重新启动后和部署后仍然存在。 删除或添加单独的 Web 服务器不会影响缓存。
+若要使用 Redis 分布式缓存，引用[Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)并添加到的包引用[Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis)包。 Redis 包不包括在`Microsoft.AspNetCore.App`包，因此您必须在项目文件中分别引用 Redis 包。
 
-3. 源数据存储区具有较少的请求进行的 （不是使用多个内存中缓存或否缓存完全）。
+::: moniker-end
 
-> [!NOTE]
-> 如果使用 SQL Server 分布式缓存，则其中一些优势只有在为缓存而不是应用的源数据使用单独的数据库实例的情况下才会体现出来。
+::: moniker range="= aspnetcore-2.0"
 
-像任何缓存一样，分布式缓存可以显著提高应用的响应速度，因为通常情况下，数据从缓存中检索比从关系数据库（或 Web 服务）中检索快得多。
+若要使用的 SQL Server 分布式缓存，引用[Microsoft.AspNetCore.All 元包](xref:fundamentals/metapackage)或添加到的包引用[Microsoft.Extensions.Caching.SqlServer](https://www.nuget.org/packages/Microsoft.Extensions.Caching.SqlServer)包。
 
-缓存配置是特定于实现的。 本文介绍如何配置 Redis 和 SQL Server 分布式缓存。 无论选择哪一种实现，应用都使用通用的 `IDistributedCache` 接口与缓存交互。
+若要使用 Redis 分布式缓存，引用[Microsoft.AspNetCore.All 元包](xref:fundamentals/metapackage)或添加到的包引用[Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis)包。 Redis 包包含在`Microsoft.AspNetCore.All`包，因此无需引用在项目文件中单独的 Redis 包。
 
-## <a name="the-idistributedcache-interface"></a>IDistributedCache 接口
+::: moniker-end
 
-`IDistributedCache`接口包含同步和异步方法。 接口允许在分布式缓存实现中添加、检索和删除项。 `IDistributedCache`接口包含以下方法：
+::: moniker range="< aspnetcore-2.0"
 
-**Get、 GetAsync**
+若要使用的 SQL Server 分布式缓存中，添加到包引用[Microsoft.Extensions.Caching.SqlServer](https://www.nuget.org/packages/Microsoft.Extensions.Caching.SqlServer)包。
 
-采用字符串键并以`byte[]`形式检索缓存项（如果在缓存中找到）。
+若要使用 Redis 分布式缓存中，添加到包引用[Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis)包。
 
-**Set、SetAsync**
+::: moniker-end
 
-使用字符串键向缓存添加项`byte[]`形式）。 
+## <a name="idistributedcache-interface"></a>IDistributedCache 接口
 
-**Refresh、RefreshAsync**
+<xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache>接口提供了以下方法操作的分布式的缓存实现中的项：
 
-根据键刷新缓存中的项，并重置其可调过期超时值（如果有）。
+* <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.Get*><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.GetAsync*> &ndash;接受字符串键和检索缓存的项作为`byte[]`数组如果在缓存中找到。
+* <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.Set*><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.SetAsync*> &ndash;中添加项 (作为`byte[]`数组) 到使用字符串键的缓存。
+* <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.Refresh*><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.RefreshAsync*> &ndash;刷新缓存基于其密钥，重置其滑动到期超时值 （如果有） 中的项。
+* <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.Remove*><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.RemoveAsync*> &ndash;移除缓存项根据其字符串键值。
 
-**Remove、RemoveAsync**
+## <a name="establish-distributed-caching-services"></a>建立分布式缓存服务
 
-根据键删除缓存项。
+注册的实现<xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache>在`Startup.ConfigureServices`。 本主题中所述的框架提供实现包括：
 
-若要使用`IDistributedCache`接口：
+* [分布式的内存缓存](#distributed-memory-cache)
+* [SQL Server 的分布式的缓存](#distributed-sql-server-cache)
+* [分布式的 Redis 缓存](#distributed-redis-cache)
 
-   1. 所需的 NuGet 包添加到项目文件。
+### <a name="distributed-memory-cache"></a>分布式的内存缓存
 
-   2. 在`Startup`类的`ConfigureServices`方法中配置`IDistributedCache`的具体实现，并将其添加到该处的容器中。
+分布式内存缓存 (<xref:Microsoft.Extensions.DependencyInjection.MemoryCacheServiceCollectionExtensions.AddDistributedMemoryCache*>) 是框架提供的实现`IDistributedCache`，在内存中存储项。 分布式内存缓存不是实际的分布式的缓存。 缓存的项存储在运行该应用程序的服务器上的应用程序实例。
 
-   3. 在应用的[中间件](xref:fundamentals/middleware/index)或 MVC 控制器类中，从构造函数请求 `IDistributedCache`的实例。 实例将通过[依赖项注入](../../fundamentals/dependency-injection.md) (DI) 提供。
+分布式内存缓存是一个有用的实现：
 
-> [!NOTE]
-> 无需为`IDistributedCache`实例使用 Singleton 或 Scoped 生命周期（至少对内置实现来说是这样的）。 任何可能需要某一个位置，还可以创建一个实例 (而不是使用[依赖关系注入](../../fundamentals/dependency-injection.md))，但这会导致代码更难测试，和违反[显式依赖关系原则](http://deviq.com/explicit-dependencies-principle/)。
+* 在开发和测试方案。
+* 生产和内存消耗情况中使用一台服务器时不会产生问题。 实现分布式内存缓存摘要缓存数据存储。 它允许实现真正的分布式缓存解决方案在将来如果多个节点或容错能力变得非常必要。
 
-下面的示例演示如何在简单的中间件组件中使用`IDistributedCache` 实例：
+示例应用将在开发环境中运行应用时使用的分布式内存缓存：
 
-[!code-csharp[](distributed/sample/src/DistCacheSample/StartTimeHeader.cs)]
+[!code-csharp[](distributed/samples/2.x/DistCacheSample/Startup.cs?name=snippet_ConfigureServices&highlight=5)]
 
-在上面的代码中，缓存值用于读取，不用于写入。 在此示例中，该值仅在服务器启动时设置，并且不会更改。 在多服务器方案中，要启动的最新服务器会覆盖由其他服务器设置的以前的任何值。 `Get`和`Set`方法使用 `byte[]`类型。 因此，字符串值必须使用 `Encoding.UTF8.GetString`(适用于`Get`) 和 `Encoding.UTF8.GetBytes`(适用于 `Set`)进行转换。
+### <a name="distributed-sql-server-cache"></a>分布式的 SQL 服务器缓存
 
-*Startup.cs*中的以下代码显示要设置的值：
-
-[!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet1)]
-
-由于`IDistributedCache`是在`ConfigureServices`方法中配置的，因此它可以作为参数提供给`Configure`方法。 将其添加作为参数将允许通过 DI 提供已配置的实例。
-
-## <a name="using-a-redis-distributed-cache"></a>使用分布式的 Redis 缓存
-
-[Redis](https://redis.io/)是一种开源的内存中数据存储，通常用作分布式缓存。 可以在本地使用它，并且可以为 Azure 托管的 ASP.NET Core 应用配置[Azure Redis 缓存](https://azure.microsoft.com/services/cache/)为你的 Azure 托管的 ASP.NET Core 应用。 ASP.NET Core 应用使用 `RedisDistributedCache`实例配置缓存实现。
-
-Redis 缓存需要[Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis/)
-
-可在`ConfigureServices`中配置 Redis 实现，并可通过请求`IDistributedCache`实例（请参阅上面的代码）在应用代码中访问它。
-
-在示例代码中，为`RedisCache`环境配置服务器时使用`Staging`实现。 因此，`ConfigureStagingServices`方法用于配置 `RedisCache`:
-
-[!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet2)]
-
-若要在本地计算机上安装 Redis，安装 chocolatey 包[ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/)并运行`redis-server`从命令提示符。
-
-## <a name="using-a-sql-server-distributed-cache"></a>使用 SQL Server 分布式缓存
-
-SqlServerCache 实现允许分布式缓存使用 SQL Server 数据库作为其后备存储。 若要创建 SQL Server 表，可以使用 sql-cache 工具，该工具将使用指定的名称和模式创建一个表。
+SQL Server 的分布式缓存实现 (<xref:Microsoft.Extensions.DependencyInjection.SqlServerCachingServicesExtensions.AddDistributedSqlServerCache*>) 允许使用 SQL Server 数据库作为其后备存储分布式的缓存。 若要在 SQL Server 实例中创建的 SQL Server 缓存的项表中，可以使用`sql-cache`工具。 该工具使用名称和指定的架构创建一个表。
 
 ::: moniker range="< aspnetcore-2.1"
 
@@ -105,48 +97,97 @@ SqlServerCache 实现允许分布式缓存使用 SQL Server 数据库作为其�
 
 ```xml
 <ItemGroup>
-  <DotNetCliToolReference Include="Microsoft.Extensions.Caching.SqlConfig.Tools" 
+  <DotNetCliToolReference Include="Microsoft.Extensions.Caching.SqlConfig.Tools"
                           Version="2.0.2" />
 </ItemGroup>
 ```
 
 ::: moniker-end
 
-通过运行以下命令测试 SqlConfig.Tools:
+通过运行 SQL Server 中创建一个表`sql-cache create`命令。 提供 SQL Server 实例 (`Data Source`)，数据库 (`Initial Catalog`)，架构 (例如， `dbo`)，以及表名 (例如， `TestCache`):
 
 ```console
-dotnet sql-cache create --help
+dotnet sql-cache create "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DistCache;Integrated Security=True;" dbo TestCache
 ```
 
-SqlConfig.Tools 显示使用情况、 选项和命令帮助。
-
-通过运行 SQL Server 中创建一个表`sql-cache create`命令：
+记录一条消息以指示该工具已成功：
 
 ```console
-dotnet sql-cache create "Data Source=(localdb)\v11.0;Initial Catalog=DistCache;Integrated Security=True;" dbo TestCache
-info: Microsoft.Extensions.Caching.SqlConfig.Tools.Program[0]
 Table and index were created successfully.
 ```
 
-在创建的表具有以下架构：
+创建的表`sql-cache`工具具有以下架构：
 
 ![SqlServer 缓存表](distributed/_static/SqlServerCacheTable.png)
 
-像所有缓存实现一样，应用应该使用`IDistributedCache`，实例来获取和设置缓存值，而不是使用`SqlServerCache`实例。 此示例实现`SqlServerCache`生产环境中 (以便在配置`ConfigureProductionServices`)。
+> [!NOTE]
+> 应用应操作使用的实例的缓存值<xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache>，而不<xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCache>。
 
-[!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet3)]
+本示例应用实现<xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCache>非开发环境中：
+
+[!code-csharp[](distributed/samples/2.x/DistCacheSample/Startup.cs?name=snippet_ConfigureServices&highlight=9-15)]
 
 > [!NOTE]
-> `ConnectionString` (以及可选的`SchemaName`和`TableName`) 通常应该存储在源代码管理之外（例如存储在 UserSecrets 中），因为它们可能包含凭据。
+> 一个<xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCacheOptions.ConnectionString*>(和 （可选）<xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCacheOptions.SchemaName*>并<xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCacheOptions.TableName*>) 通常存储在源代码管理之外 (例如，通过存储[机密管理器](xref:security/app-secrets)中或在*appsettings.json* /*appsettings。{Environment}.json*文件)。 连接字符串可能包含应从源代码管理系统的凭据。
+
+### <a name="distributed-redis-cache"></a>分布式的 Redis 缓存
+
+[Redis](https://redis.io/)是一种开源的内存中数据存储，通常用作分布式缓存。 您可以使用 Redis 本地，并且您可以配置[Azure Redis 缓存](https://azure.microsoft.com/services/cache/)Azure 托管 ASP.NET Core 应用。 应用配置缓存实现使用<xref:Microsoft.Extensions.Caching.Redis.RedisCache>实例 (<xref:Microsoft.Extensions.DependencyInjection.RedisCacheServiceCollectionExtensions.AddDistributedRedisCache*>):
+
+```csharp
+services.AddDistributedRedisCache(options =>
+{
+    options.Configuration = "localhost";
+    options.InstanceName = "SampleInstance";
+});
+```
+
+若要在本地计算机上安装 Redis:
+
+* 安装[Chocolatey Redis 包](https://chocolatey.org/packages/redis-64/)。
+* 运行`redis-server`从命令提示符。
+
+## <a name="use-the-distributed-cache"></a>使用分布式的缓存
+
+若要使用<xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache>接口，请求的实例`IDistributedCache`从任何应用程序中的构造函数。 实例由提供[依赖关系注入 (DI)](xref:fundamentals/dependency-injection)。
+
+当应用启动时`IDistributedCache`注入到`Startup.Configure`。 使用缓存的当前时间<xref:Microsoft.AspNetCore.Hosting.IApplicationLifetime>(有关详细信息，请参阅[Web 主机： IApplicationLifetime 接口](xref:fundamentals/host/web-host#iapplicationlifetime-interface)):
+
+[!code-csharp[](distributed/samples/2.x/DistCacheSample/Startup.cs?name=snippet_Configure&highlight=10)]
+
+示例应用程序注入`IDistributedCache`到`IndexModel`以供索引页。
+
+每次加载索引页时，缓存时间检查缓存`OnGetAsync`。 如果尚未过期的缓存的时间，将显示时间。 如果自上一次访问缓存的时间 （已加载此页的最后一个时间） 已过去 20 秒，该页将显示*缓存时间已过*。
+
+通过选择，立即更新为当前时间的缓存的时间**重置缓存时间**按钮。 按钮触发器`OnPostResetCachedTime`处理程序方法。
+
+[!code-csharp[](distributed/samples/2.x/DistCacheSample/Pages/Index.cshtml.cs?name=snippet_IndexModel&highlight=7,14-20,25-29)]
+
+> [!NOTE]
+> 无需为`IDistributedCache`实例使用 Singleton 或 Scoped 生命周期（至少对内置实现来说是这样的）。
+>
+> 此外可以创建`IDistributedCache`实例可能需要某一个而不是使用 DI，但在代码中创建实例会使代码难以测试和违反[显式依赖关系原则](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)。
 
 ## <a name="recommendations"></a>建议
 
-在决定哪种`IDistributedCache`实现适合应用时，请根据现有的基础架构和环境、性能要求和团队经验在 Redis 和 SQL Server 之间进行选择。 如果团队更喜欢使用 Redis，那就使用它。 如果团队倾向于 SQL Server，那么也应对这么做充满信心。 请注意，传统的缓存解决方案存储内存中数据可用于快速检索的数据。 应该将常用数据存储在缓存中，将整个数据存储在后端持久性存储（如 SQL Server 或 Azure 存储）中。 与 SQL Cache 相比，Redis Cache 是一种吞吐量高且延迟轻微的缓存解决方案。
+确定哪一种实现的时`IDistributedCache`最适合于您的应用程序，请考虑以下：
+
+* 现有的基础结构
+* 性能要求
+* 成本
+* 团队体验
+
+缓存解决方案通常依赖于内存中存储提供快速检索的缓存数据，但内存是有限的资源，而且成本展开。 仅存储通常用于缓存中的数据。
+
+通常情况下，Redis 缓存提供更高的吞吐量和延迟低于 SQL Server 缓存。 但是，进行基准测试时通常需要确定的缓存策略的性能特征。
+
+当 SQL Server 用作分布式的缓存后备存储时，使用的同一个数据库缓存与应用程序的普通数据存储和检索可以对这两者的性能产生负面影响。 我们建议使用专用的 SQL Server 实例为分布式缓存后备存储。
 
 ## <a name="additional-resources"></a>其他资源
 
 * [Redis 缓存在 Azure 上](https://azure.microsoft.com/documentation/services/redis-cache/)
 * [在 Azure 上的 SQL 数据库](https://azure.microsoft.com/documentation/services/sql-database/)
+* [ASP.NET Core IDistributedCache 提供程序的 Web 场中的 NCache](http://www.alachisoft.com/ncache/aspnet-core-idistributedcache-ncache.html) ([在 GitHub 上的 NCache](https://github.com/Alachisoft/NCache))
 * <xref:performance/caching/memory>
 * <xref:fundamentals/change-tokens>
 * <xref:performance/caching/response>

@@ -3,14 +3,15 @@ title: 从 ASP.NET 迁移到 ASP.NET Core 2.0
 author: isaac2004
 description: 接收有关现有 ASP.NET MVC 或 Web API 应用程序迁移到 ASP.NET Core 2.0 的指导。
 ms.author: scaddie
-ms.date: 08/27/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: migration/mvc2
-ms.openlocfilehash: 42fbabb2fe5bd79a72cd220230faa9d75ff1c9d8
-ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
+ms.openlocfilehash: 006eeeba28dbd351698e46547abe3c96818a63d9
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45538376"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090454"
 ---
 # <a name="migrate-from-aspnet-to-aspnet-core-20"></a>从 ASP.NET 迁移到 ASP.NET Core 2.0
 
@@ -28,7 +29,8 @@ ms.locfileid: "45538376"
   * **.NET Core 跨平台开发**工作负荷
 
 ## <a name="target-frameworks"></a>目标框架
-ASP.NET Core 2.0 项目为开发人员提供了面向 .NET Core、.NET Framework 或同时面向这两者的灵活性。 若要确定最合适的目标框架，请参阅[为服务器应用选择 .NET Core 或 .NET Framework](https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server)。
+
+ASP.NET Core 2.0 项目为开发人员提供了面向 .NET Core、.NET Framework 或同时面向这两者的灵活性。 若要确定最合适的目标框架，请参阅[为服务器应用选择 .NET Core 或 .NET Framework](/dotnet/standard/choosing-core-framework-server)。
 
 面向 .NET Framework 时，项目需要引用单个 NuGet 包。
 
@@ -40,17 +42,20 @@ ASP.NET Core 2.0 项目为开发人员提供了面向 .NET Core、.NET Framework
 </ItemGroup>
 ```
 
-使用此元包时，应用不会部署元包中引用的任何包。 .NET Core 运行时存储中包含这些资产，并已预编译，旨在提升性能。 请参阅 [ASP.NET Core 2.x 的 Microsoft.AspNetCore.All 元包](xref:fundamentals/metapackage)了解详细信息。
+使用此元包时，应用不会部署元包中引用的任何包。 .NET Core 运行时存储中包含这些资产，并已预编译，旨在提升性能。 请参阅<xref:fundamentals/metapackage>以了解详细信息。
 
 ## <a name="project-structure-differences"></a>项目结构差异
-ASP.NET Core 中简化了 .csproj 文件格式。 下面是一些显著的更改：
-- 无需显式添加，即可将文件视作项目的一部分。 服务于大型团队时，这可减少出现 XML 合并冲突的风险。
-- 没有对其他项目的基于 GUID 的引用，这可以提高文件的可读性。
-- 无需在 Visual Studio 中卸载文件即可对它进行编辑：
 
-    ![Visual Studio 2017 中的“编辑 CSPROJ”上下文菜单选项](_static/EditProjectVs2017.png)
+ASP.NET Core 中简化了 .csproj 文件格式。 下面是一些显著的更改：
+
+* 无需显式添加，即可将文件视作项目的一部分。 服务于大型团队时，这可减少出现 XML 合并冲突的风险。
+* 没有对其他项目的基于 GUID 的引用，这可以提高文件的可读性。
+* 无需在 Visual Studio 中卸载文件即可对它进行编辑：
+
+  ![Visual Studio 2017 中的“编辑 CSPROJ”上下文菜单选项](_static/EditProjectVs2017.png)
 
 ## <a name="globalasax-file-replacement"></a>Global.asax 文件替换
+
 ASP.NET Core 引入了启动应用的新机制。 ASP.NET 应用程序的入口点是 Global.asax 文件。 路由配置及筛选器和区域注册等任务在 Global.asax 文件中进行处理。
 
 [!code-csharp[](samples/globalasax-sample.cs)]
@@ -77,9 +82,10 @@ ASP.NET Core 使用相似的方法，但是不依赖 OWIN 处理条目。 相反
 
 现在主机和应用程序已分离，这样将来就可以灵活地迁移到其他平台。
 
-注意：若要获取 ASP.NET Core Startup 和中间件的更深入的参考信息，请参阅 [ASP.NET Core 中的 Startup](xref:fundamentals/startup)
+ASP.NET Core Startup 和中间件的更深入的参考，请参阅<xref:fundamentals/startup>。
 
 ## <a name="storing-configurations"></a>存储配置
+
 ASP.NET 支持存储设置。 这些设置可用于支持应用程序已部署到的环境（以此用途为例）。 常见做法是将所有的自定义键值对存储在 Web.config 文件的 `<appSettings>` 部分中：
 
 [!code-xml[](samples/webconfig-sample.xml)]
@@ -107,7 +113,7 @@ ASP.NET Core 可以将应用程序的配置数据存储在任何文件中，并�
 services.Configure<AppConfiguration>(Configuration.GetSection("AppConfiguration"));
 ````
 
-注意：若要获取 ASP.NET Core 配置的更深入的参考信息，请参阅 [ASP.NET Core 中的配置](xref:fundamentals/configuration/index)。
+**注意：** ASP.NET Core 配置的更深入的参考，请参阅<xref:fundamentals/configuration/index>。
 
 ## <a name="native-dependency-injection"></a>本机依存关系注入
 
@@ -133,7 +139,7 @@ services.Configure<AppConfiguration>(Configuration.GetSection("AppConfiguration"
 
 可在任意位置注入存储库，Unity 亦是如此。
 
-在 ASP.NET Core 中的依赖关系注入的详细信息，请参阅[依赖关系注入](xref:fundamentals/dependency-injection)。
+在 ASP.NET Core 中的依赖关系注入的详细信息，请参阅<xref:fundamentals/dependency-injection>。
 
 ## <a name="serving-static-files"></a>提供静态文件
 
@@ -149,7 +155,7 @@ Web 开发的一个重要环节是提供客户端静态资产的功能。 HTML�
 
 例如，可以通过浏览器从类似 `http://<app>/images/<imageFileName>` 的位置访问 wwwroot/images 文件夹中的图像资产。
 
-**注意：** 到为 ASP.NET Core 中的静态文件提供服务的更深入参考，请参阅[静态文件](xref:fundamentals/static-files)。
+**注意：** 提供在 ASP.NET Core 中的静态文件的更深入的参考，请参阅<xref:fundamentals/static-files>。
 
 ## <a name="additional-resources"></a>其他资源
 

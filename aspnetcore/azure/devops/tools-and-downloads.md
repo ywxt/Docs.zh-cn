@@ -3,18 +3,19 @@ title: 使用 ASP.NET Core 和 Azure DevOps |工具和下载
 author: CamSoper
 description: 提供有关为托管在 Azure 中的 ASP.NET Core 应用构建 DevOps 管道的端到端指导的指南。
 ms.author: casoper
-ms.date: 08/07/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: azure/devops/tools-and-downloads
-ms.openlocfilehash: 5529068b83db475315784571fbf4151d7ecd0d5d
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: 573e257e6fc7614010a8749ff439f16011c2c10a
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340155"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50089371"
 ---
 # <a name="tools-and-downloads"></a>工具和下载
 
-Azure 具有用于预配和管理资源，如多个接口[Azure 门户](https://portal.azure.com)， [Azure CLI](https://docs.microsoft.com/cli/azure/)， [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview)， [Azure 云Shell](https://shell.azure.com/bash)，和 Visual Studio。 本指南将最低要求方法，并使用 Azure Cloud Shell 中，只要有可能以减少所需的步骤。 但是，对于某些部分都必须使用 Azure 门户。
+Azure 具有用于预配和管理资源，如多个接口[Azure 门户](https://portal.azure.com)， [Azure CLI](/cli/azure/)， [Azure PowerShell](/powershell/azure/overview)， [Azure 云Shell](https://shell.azure.com/bash)，和 Visual Studio。 本指南将最低要求方法，并使用 Azure Cloud Shell 中，只要有可能以减少所需的步骤。 但是，对于某些部分都必须使用 Azure 门户。
 
 ## <a name="prerequisites"></a>系统必备
 
@@ -39,7 +40,7 @@ Azure 具有用于预配和管理资源，如多个接口[Azure 门户](https://
 
 * [Visual Studio](https://www.visualstudio.com/)的可靠的 Azure 工具提供了 GUI 的大部分在本指南中所述的功能。 任何版本的 Visual Studio 将起作用，包括免费的 Visual Studio Community Edition。 教程旨在演示开发、 部署和 DevOps 与和不使用 Visual Studio。
 
-  确认 Visual Studio 具有以下[工作负荷](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)安装：
+  确认 Visual Studio 具有以下[工作负荷](/visualstudio/install/modify-visual-studio)安装：
 
   * ASP.NET 和 Web 开发
   * Azure 开发

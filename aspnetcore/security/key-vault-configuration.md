@@ -5,14 +5,14 @@ description: 了解如何使用 Azure 密钥保管库配置提供程序来配置
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/17/2018
+ms.date: 10/24/2018
 uid: security/key-vault-configuration
-ms.openlocfilehash: 474824cccdc63bb3dc3978ed68cf4c89cec12ad5
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: 06445eb2ecec4cf101b23a4bfe131b2c56a18f62
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391137"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090301"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>在 ASP.NET Core 的 azure 密钥保管库配置提供程序
 
@@ -151,7 +151,7 @@ Azure 密钥保管库密钥不能使用冒号作为分隔符。 本主题中介�
 
 使用[机密管理器工具](xref:security/app-secrets)维护`ClientSecret`外部项目源树。 使用机密管理器中，你将应用程序机密与特定项目相关联并跨多个项目共享它们。
 
-在开发环境支持证书中的.NET Framework 应用时，可以使用 X.509 证书验证到 Azure 密钥保管库。 X.509 证书的私钥由操作系统管理。 有关详细信息，请参阅[使用证书而不是客户端密码进行身份验证](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application#authenticate-with-a-certificate-instead-of-a-client-secret)。 使用`AddAzureKeyVault`接受重载`X509Certificate2`(`_env`在下面的示例：
+在开发环境支持证书中的.NET Framework 应用时，可以使用 X.509 证书验证到 Azure 密钥保管库。 X.509 证书的私钥由操作系统管理。 有关详细信息，请参阅[使用证书而不是客户端密码进行身份验证](/azure/key-vault/key-vault-use-from-web-application#authenticate-with-a-certificate-instead-of-a-client-secret)。 使用`AddAzureKeyVault`接受重载`X509Certificate2`(`_env`在下面的示例：
 
 ```csharp
 var builtConfig = config.Build();

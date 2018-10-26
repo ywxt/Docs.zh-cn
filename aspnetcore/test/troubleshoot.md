@@ -3,14 +3,15 @@ title: 解决 ASP.NET Core 项目
 author: Rick-Anderson
 description: 理解 ASP.NET Core 项目的警告和错误，并对其进行故障排除。
 ms.author: riande
-ms.date: 04/05/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: test/troubleshoot
-ms.openlocfilehash: c72dd93f6ba705d7f03ade556c7a037dadeb6295
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: 150f2192bb4b6dd0d330fd678d9c5fa0bf31673e
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938389"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090106"
 ---
 # <a name="troubleshoot-aspnet-core-projects"></a>解决 ASP.NET Core 项目
 
@@ -18,9 +19,9 @@ ms.locfileid: "37938389"
 
 以下链接提供的故障排除指南：
 
-* [对 Azure 应用服务上的 ASP.NET Core 进行故障排除](xref:host-and-deploy/azure-apps/troubleshoot)
-* [对 IIS 上的 ASP.NET Core 进行故障排除](xref:host-and-deploy/iis/troubleshoot)
-* [Azure 应用服务和 IIS 上 ASP.NET Core 的常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)
+* <xref:host-and-deploy/azure-apps/troubleshoot>
+* <xref:host-and-deploy/iis/troubleshoot>
+* <xref:host-and-deploy/azure-iis-errors-reference>
 * [ASP.NET Core 应用程序中 （ndc） 会议 （伦敦，2018年）： 诊断问题](https://www.youtube.com/watch?v=RYI0DHoIVaA)
 * [ASP.NET 博客： 解决 ASP.NET Core 性能问题](https://blogs.msdn.microsoft.com/webdev/2018/05/23/asp-net-core-performance-improvements/)
 

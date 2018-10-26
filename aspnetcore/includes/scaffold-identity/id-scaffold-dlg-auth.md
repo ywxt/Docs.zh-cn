@@ -5,7 +5,7 @@
 * 从**解决方案资源管理器**，右键单击该项目 >**添加** > **新基架项**。
 * 从左窗格**添加基架**对话框中，选择**标识** > **添加**。
 * 在中**ADD 标识添加**对话框中，选择所需的选项。
-  * 选择现有的布局页上，或不正确的标记将被覆盖布局文件。 选择现有 _Layout.cshtml 文件后，它是**不**覆盖。
+  * 选择现有的布局页上，或不正确的标记将被覆盖布局文件。 当现有 *\_Layout.cshtml*选择文件，它是**不**覆盖。
 
  例如`~/Pages/Shared/_Layout.cshtml`Razor 页面`~/Views/Shared/_Layout.cshtml`对于 MVC 项目
 * 若要使用现有的数据上下文，请选择要重写的至少一个文件。 必须选择至少一个文件以添加数据上下文。
@@ -49,4 +49,7 @@ Powershell 使用分号作为命令分隔符。 使用 powershell 时，转义�
 ```cli
 dotnet aspnet-codegenerator identity -dc MyWeb.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
 ```
+
+如果未指定运行标识基架`--files`标志或`--useDefaultUI`标志，所有可用的标识 UI 页将在项目中创建。
+
 -------------

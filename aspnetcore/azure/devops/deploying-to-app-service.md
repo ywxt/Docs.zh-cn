@@ -3,18 +3,19 @@ title: 使用 ASP.NET Core 和 Azure DevOps |将应用部署到应用服务
 author: CamSoper
 description: 提供有关为托管在 Azure 中的 ASP.NET Core 应用构建 DevOps 管道的端到端指导的指南。
 ms.author: casoper
-ms.date: 08/07/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: azure/devops/deploy-to-app-service
-ms.openlocfilehash: 710e65a048fdc062219e90b0db323e8e96fd8e9d
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: 33026ed510aae63a9e580aa5d708f94aad778fca
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340129"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090932"
 ---
 # <a name="deploy-an-app-to-app-service"></a>将应用部署到应用服务
 
-[Azure 应用服务](https://docs.microsoft.com/azure/app-service/)是 Azure 的 web 托管平台。 手动或通过自动化过程，可以完成 web 应用部署到 Azure 应用服务。 指南的本部分讨论可以手动或使用命令行中，脚本触发或触发手动使用 Visual Studio 的部署方法。
+[Azure 应用服务](/azure/app-service/)是 Azure 的 web 托管平台。 手动或通过自动化过程，可以完成 web 应用部署到 Azure 应用服务。 指南的本部分讨论可以手动或使用命令行中，脚本触发或触发手动使用 Visual Studio 的部署方法。
 
 在本部分中，将完成以下任务：
 
@@ -70,7 +71,7 @@ ms.locfileid: "44340129"
 
 ## <a name="create-the-azure-app-service-web-app"></a>创建 Azure 应用服务 Web 应用
 
-若要部署应用程序，你将需要创建应用服务[Web 应用](https://docs.microsoft.com/azure/app-service/app-service-web-overview)。 创建后的 Web 应用，你将部署到它从使用 Git 在本地计算机。
+若要部署应用程序，你将需要创建应用服务[Web 应用](/azure/app-service/app-service-web-overview)。 创建后的 Web 应用，你将部署到它从使用 Git 在本地计算机。
 
 1. 登录到[Azure Cloud Shell](https://shell.azure.com/bash)。 注意： 在登录时第一次，Cloud Shell 会提示创建配置文件的存储帐户。 接受默认值或提供唯一的名称。
 
@@ -88,7 +89,7 @@ ms.locfileid: "44340129"
     az group create --location centralus --name AzureTutorial
     ```
 
-    `az`命令可调用[Azure CLI](https://docs.microsoft.com/cli/azure/)。 可以本地运行 CLI，但 Cloud Shell 中使用它可以节省时间和配置。
+    `az`命令可调用[Azure CLI](/cli/azure/)。 可以本地运行 CLI，但 Cloud Shell 中使用它可以节省时间和配置。
 
     c. 在 S1 层中创建应用服务计划。 应用服务计划是共享相同的定价层的 web 应用的分组。 S1 层不是免费的但它具有所需的过渡槽功能。
 
@@ -238,7 +239,7 @@ Visual Studio 生成，并将该应用部署到 Azure。 浏览到 web 应用 UR
 
 ## <a name="additional-reading"></a>其他阅读材料
 
-* [Web 应用概述](https://docs.microsoft.com/azure/app-service/app-service-web-overview)
-* [生成 Azure 应用服务中的.NET Core 和 SQL 数据库 web 应用](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
-* [为 Azure 应用服务配置部署凭据](https://docs.microsoft.com/azure/app-service/app-service-deployment-credentials)
-* [设置过渡环境，在 Azure 应用服务](https://docs.microsoft.com/azure/app-service/web-sites-staged-publishing)
+* [Web 应用概述](/azure/app-service/app-service-web-overview)
+* [生成 Azure 应用服务中的.NET Core 和 SQL 数据库 web 应用](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
+* [为 Azure 应用服务配置部署凭据](/azure/app-service/app-service-deployment-credentials)
+* [设置过渡环境，在 Azure 应用服务](/azure/app-service/web-sites-staged-publishing)

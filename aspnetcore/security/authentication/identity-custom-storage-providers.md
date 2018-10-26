@@ -3,14 +3,15 @@ title: ASP.NET Core标识的自定义的存储提供程序
 author: ardalis
 description: 了解如何配置 ASP.NET Core标识的自定义存储提供程序。
 ms.author: riande
-ms.date: 09/17/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: e206cf584d92a17d61676d71abc6fb577ae63453
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: b10731261ca0c748548fcba94a229ba055d46eb5
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477613"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090831"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core标识的自定义的存储提供程序
 
@@ -24,7 +25,7 @@ ASP.NET Core标识是一种可扩展系统，可用于创建自定义存储提�
 
 默认情况下，ASP.NET Core标识系统中使用实体框架核心的 SQL Server 数据库存储用户信息。 对于许多应用程序，此方法也适用。 但是，您可能更愿意使用不同的持久性机制或数据架构。 例如：
 
-* 您使用[Azure 表存储](https://docs.microsoft.com/azure/storage/)或其他数据存储。
+* 您使用[Azure 表存储](/azure/storage/)或其他数据存储。
 * 对数据库表具有不同的结构。 
 * 您可能希望使用不同的数据访问方法，如[Dapper](https://github.com/StackExchange/Dapper)。 
 
@@ -146,27 +147,27 @@ ASP.NET Core标识包含类称为管理器和存储区。 *管理器*是高级�
 
 ### <a name="interfaces-to-implement-when-customizing-user-store"></a>要实现自定义用户存储区时接口
 
-- **IUserStore**  
+* **IUserStore**  
  [IUserStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserstore-1)接口是在用户存储中必须实现的唯一接口。 它定义用于创建、 更新、 删除和检索用户的方法。
-- **IUserClaimStore**  
+* **IUserClaimStore**  
  [IUserClaimStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserclaimstore-1)接口定义实现启用用户声明的方法。 它包含用于添加、 删除和检索用户声明的方法。
-- **IUserLoginStore**  
+* **IUserLoginStore**  
  [IUserLoginStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserloginstore-1)定义实现以启用外部身份验证提供程序的方法。 它包含用于添加、 删除和检索用户登录名和用于检索用户的登录信息基于方法的方法。
-- **IUserRoleStore**  
+* **IUserRoleStore**  
  [IUserRoleStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserrolestore-1)接口定义实现将用户映射到角色的方法。 它包含方法以添加、 删除和检索用户的角色和一个方法以检查是否将用户分配到角色。
-- **IUserPasswordStore**  
+* **IUserPasswordStore**  
  [IUserPasswordStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserpasswordstore-1)接口定义实现保留哈希的密码的方法。 它包含用于获取和设置哈希的密码和用于指示用户是否已设置密码的方法的方法。
-- **IUserSecurityStampStore**  
+* **IUserSecurityStampStore**  
  [IUserSecurityStampStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iusersecuritystampstore-1)接口定义实现用于安全戳，该值指示是否已更改用户的帐户信息的方法。 用户更改密码，或添加或删除登录名时，将更新此 stamp。 它包含方法用于获取和设置的安全戳。
-- **IUserTwoFactorStore**  
+* **IUserTwoFactorStore**  
  [IUserTwoFactorStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iusertwofactorstore-1)接口定义实现以支持双因素身份验证的方法。 它包含用于获取和设置是否为用户启用双因素身份验证方法。
-- **IUserPhoneNumberStore**  
+* **IUserPhoneNumberStore**  
  [IUserPhoneNumberStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserphonenumberstore-1)接口定义实现来存储用户的电话号码的方法。 它包含用于获取和设置的电话号码和电话号码是否已确认的方法。
-- **IUserEmailStore**  
+* **IUserEmailStore**  
  [IUserEmailStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuseremailstore-1)接口定义实现来存储用户的电子邮件地址的方法。 它包含用于获取和设置的电子邮件地址和电子邮件是否已确认的方法。
-- **IUserLockoutStore**  
+* **IUserLockoutStore**  
  [IUserLockoutStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserlockoutstore-1)接口定义实现以存储有关锁定的帐户信息的方法。 它包含用于跟踪失败的访问尝试和锁定的方法。
-- **IQueryableUserStore**  
+* **IQueryableUserStore**  
  [IQueryableUserStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iqueryableuserstore-1)接口定义实现以提供可查询的用户存储区的成员。
 
 在应用中实现所需的接口。 例如：
@@ -199,9 +200,9 @@ public class UserStore : IUserStore<IdentityUser>,
 
 您可以创建`RoleStore`类，该类提供对角色的所有数据操作的方法。 此类是等效于[RoleStore&lt;TRole&gt; ](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.rolestore-1)类。 在中`RoleStore`类，实现`IRoleStore<TRole>`和 （可选）`IQueryableRoleStore<TRole>`接口。
 
-- **IRoleStore&lt;TRole&gt;**  
+* **IRoleStore&lt;TRole&gt;**  
  [IRoleStore&lt;TRole&gt; ](/dotnet/api/microsoft.aspnetcore.identity.irolestore-1)接口定义了要在角色存储类中实现的方法。 它包含用于创建、 更新、 删除和检索角色的方法。
-- **RoleStore&lt;TRole&gt;**  
+* **RoleStore&lt;TRole&gt;**  
  若要自定义`RoleStore`，创建一个实现类`IRoleStore<TRole>`接口。 
 
 ## <a name="reconfigure-app-to-use-a-new-storage-provider"></a>重新配置应用程序以使用新的存储提供程序
@@ -237,5 +238,5 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="references"></a>参考资料
 
-- [ASP.NET 4.x 标识的自定义存储提供程序](/aspnet/identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity)
-- [ASP.NET Core标识](https://github.com/aspnet/identity)-此存储库包含指向社区维护存储提供程序。
+* [ASP.NET 4.x 标识的自定义存储提供程序](/aspnet/identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity)
+* [ASP.NET Core 标识](https://github.com/aspnet/identity)&ndash;此存储库包括社区维护存储提供程序的链接。

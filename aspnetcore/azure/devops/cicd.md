@@ -3,14 +3,14 @@ title: 使用 ASP.NET Core 和 Azure DevOps |持续集成和部署
 author: CamSoper
 description: 提供有关为托管在 Azure 中的 ASP.NET Core 应用构建 DevOps 管道的端到端指导的指南。
 ms.author: scaddie
-ms.date: 08/17/2018
+ms.date: 10/24/2018
 uid: azure/devops/cicd
-ms.openlocfilehash: 0bfe1545da4c0778055d7c81c1588d3267d2e711
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: 18a59a1ff6fd6bbf51ff664764725b8972dfa1bf
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340103"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090511"
 ---
 # <a name="continuous-integration-and-deployment"></a>持续集成和部署
 
@@ -230,7 +230,7 @@ ms.locfileid: "44340103"
     > [!NOTE]
     > 若要验证的单元测试工作，请修改*SimpleFeedReader.Tests\Services\NewsServiceTests.cs*特意中断的测试之一。 例如，更改`Assert.True(result.Count > 0);`到`Assert.False(result.Count > 0);`中`Returns_News_Stories_Given_Valid_Uri`方法。 提交并推送到 GitHub 的更改。 生成被触发，但失败。 生成管道状态将变为**失败**。 再次还原更改、 提交并推送。 生成成功。
 
-1. **将发布**&mdash;执行`dotnet publish --configuration release --output <local_path_on_build_agent>`命令，生成 *.zip*要部署的项目文件。 `--output`选项指定的发布位置 *.zip*文件。 表示通过指定位置[预定义的变量](https://docs.microsoft.com/vsts/pipelines/build/variables)名为`$(build.artifactstagingdirectory)`。 该变量将扩展到本地路径，如*c:\agent\_work\1\a*，生成代理上。
+1. **将发布**&mdash;执行`dotnet publish --configuration release --output <local_path_on_build_agent>`命令，生成 *.zip*要部署的项目文件。 `--output`选项指定的发布位置 *.zip*文件。 表示通过指定位置[预定义的变量](/azure/devops/pipelines/build/variables)名为`$(build.artifactstagingdirectory)`。 该变量将扩展到本地路径，如*c:\agent\_work\1\a*，生成代理上。
 1. **发布项目** &mdash; Publishes *.zip*生成文件**发布**任务。 该任务接受 *.zip*文件作为参数，这是预定义的变量的位置`$(build.artifactstagingdirectory)`。 *.Zip*文件发布为一个名为文件夹*drop*。
 
 单击生成定义**摘要**链接以查看与定义的生成历史记录：

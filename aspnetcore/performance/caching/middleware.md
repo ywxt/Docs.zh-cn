@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/26/2017
 uid: performance/caching/middleware
-ms.openlocfilehash: d991bc48ed07ee71b0decaa0bee4df811fdc74c4
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: b5eef012356236d600d026e5161a2df5a7954e3b
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477522"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090480"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>响应缓存在 ASP.NET Core 中的中间件
 
@@ -120,10 +120,10 @@ if (responseCachingFeature != null)
 
 为了更好地控制缓存行为，将介绍其他缓存功能的 ASP.NET Core。 请参见下面的主题：
 
-* [内存中缓存](xref:performance/caching/memory)
-* [使用分布式缓存](xref:performance/caching/distributed)
-* [缓存 ASP.NET Core MVC 中的标记帮助器](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [分布式缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* <xref:performance/caching/memory>
+* <xref:performance/caching/distributed>
+* <xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper>
+* <xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper>
 
 ## <a name="troubleshooting"></a>疑难解答
 
@@ -155,11 +155,11 @@ if (responseCachingFeature != null)
 
 ## <a name="additional-resources"></a>其他资源
 
-* [应用程序启动](xref:fundamentals/startup)
-* [中间件](xref:fundamentals/middleware/index)
-* [内存中缓存](xref:performance/caching/memory)
-* [使用分布式缓存](xref:performance/caching/distributed)
-* [使用更改令牌检测更改](xref:fundamentals/change-tokens)
-* [响应缓存](xref:performance/caching/response)
-* [缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [分布式缓存标记帮助程序](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* <xref:fundamentals/startup>
+* <xref:fundamentals/middleware/index>
+* <xref:performance/caching/memory>
+* <xref:performance/caching/distributed>
+* <xref:fundamentals/change-tokens>
+* <xref:performance/caching/response>
+* <xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper>
+* <xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper>

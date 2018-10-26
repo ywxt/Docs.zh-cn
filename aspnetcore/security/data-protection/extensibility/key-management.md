@@ -3,14 +3,15 @@ title: ASP.NET Core 的密钥管理可扩展性
 author: rick-anderson
 description: 了解有关 ASP.NET Core 数据保护密钥管理扩展性。
 ms.author: riande
-ms.date: 11/22/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: b52212ff3462748a5c64f21e1b7854673e5fcadc
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 1cf3fc30f72fb872ff9d7f33fc5ffb12a11a982f
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477457"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090610"
 ---
 # <a name="key-management-extensibility-in-aspnet-core"></a>ASP.NET Core 的密钥管理可扩展性
 
@@ -60,7 +61,7 @@ ms.locfileid: "49477457"
 
 ## <a name="xmlkeymanager"></a>XmlKeyManager
 
-`XmlKeyManager`类型是内置具体实现`IKeyManager`。 它提供了几个有用的功能，包括密钥托管和静态密钥加密。 在此系统中的密钥都表示为 XML 元素 (具体而言， [XElement](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/xelement-class-overview))。
+`XmlKeyManager`类型是内置具体实现`IKeyManager`。 它提供了几个有用的功能，包括密钥托管和静态密钥加密。 在此系统中的密钥都表示为 XML 元素 (具体而言， [XElement](/dotnet/csharp/programming-guide/concepts/linq/xelement-class-overview))。
 
 `XmlKeyManager` 取决于在完成其任务的过程中的其他几个组件：
 
