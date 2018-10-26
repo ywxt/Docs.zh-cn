@@ -1,152 +1,193 @@
 ---
-title: 使用 ASP.NET Core 中的分布式缓存
-author: ardalis
-description: 了解如何通过 ASP.NET Core 分布式缓存改善应用性能和可伸缩性，尤其是在云或服务器场环境中。
+title: 分布式缓存在 ASP.NET Core 中
+author: guardrex
+description: 了解如何使用 ASP.NET Core 分布式缓存来提高应用性能和可伸缩性，尤其是在云或服务器场环境中。
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/14/2017
+ms.date: 10/19/2018
 uid: performance/caching/distributed
-ms.openlocfilehash: 85da734f3ae7bcf0936888edfb6ac91d4362eef2
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 46a93125e8b25a66b5a1ead3b72c55db146b5a10
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477471"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090558"
 ---
-# <a name="work-with-a-distributed-cache-in-aspnet-core"></a><span data-ttu-id="60586-103">使用 ASP.NET Core 中的分布式缓存</span><span class="sxs-lookup"><span data-stu-id="60586-103">Work with a distributed cache in ASP.NET Core</span></span>
+# <a name="distributed-caching-in-aspnet-core"></a><span data-ttu-id="b8871-103">分布式缓存在 ASP.NET Core 中</span><span class="sxs-lookup"><span data-stu-id="b8871-103">Distributed caching in ASP.NET Core</span></span>
 
-<span data-ttu-id="60586-104">作者：[Steve Smith](https://ardalis.com/)</span><span class="sxs-lookup"><span data-stu-id="60586-104">By [Steve Smith](https://ardalis.com/)</span></span>
+<span data-ttu-id="b8871-104">作者：[Steve Smith](https://ardalis.com/) 和 [Luke Latham](https://github.com/guardrex)</span><span class="sxs-lookup"><span data-stu-id="b8871-104">By [Steve Smith](https://ardalis.com/) and [Luke Latham](https://github.com/guardrex)</span></span>
 
-<span data-ttu-id="60586-105">分布式的缓存可以提高性能和可伸缩性的 ASP.NET Core 应用程序，尤其是当托管在云中或服务器场中时。</span><span class="sxs-lookup"><span data-stu-id="60586-105">Distributed caches can improve the performance and scalability of ASP.NET Core apps, especially when hosted in the cloud or a server farm.</span></span>
+<span data-ttu-id="b8871-105">分布式的缓存是由多个应用程序服务器，通常作为对其进行访问的应用程序服务器的外部服务维护共享缓存。</span><span class="sxs-lookup"><span data-stu-id="b8871-105">A distributed cache is a cache shared by multiple app servers, typically maintained as an external service to the app servers that access it.</span></span> <span data-ttu-id="b8871-106">分布式的缓存可以提高性能和可伸缩性的 ASP.NET Core 应用，尤其是当应用程序托管的云服务或服务器场。</span><span class="sxs-lookup"><span data-stu-id="b8871-106">A distributed cache can improve the performance and scalability of an ASP.NET Core app, especially when the app is hosted by a cloud service or a server farm.</span></span>
 
-<span data-ttu-id="60586-106">[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）</span><span class="sxs-lookup"><span data-stu-id="60586-106">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/sample) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
+<span data-ttu-id="b8871-107">分布式的缓存具有几大优势，其中缓存的数据存储在单个应用程序服务器其他缓存方案。</span><span class="sxs-lookup"><span data-stu-id="b8871-107">A distributed cache has several advantages over other caching scenarios where cached data is stored on individual app servers.</span></span>
 
-## <a name="what-is-a-distributed-cache"></a><span data-ttu-id="60586-107">什么是分布式的缓存</span><span class="sxs-lookup"><span data-stu-id="60586-107">What is a distributed cache</span></span>
+<span data-ttu-id="b8871-108">当分布式缓存的数据，则数据：</span><span class="sxs-lookup"><span data-stu-id="b8871-108">When cached data is distributed, the data:</span></span>
 
-<span data-ttu-id="60586-108">分布式的缓存共享由多个应用程序服务器 (请参阅[缓存基础知识](memory.md#caching-basics))。</span><span class="sxs-lookup"><span data-stu-id="60586-108">A distributed cache is shared by multiple app servers (see [Cache Basics](memory.md#caching-basics)).</span></span> <span data-ttu-id="60586-109">缓存中的信息不存储在单独的 Web 服务器的内存中，并且缓存的数据可用于所有应用服务器。这具有几个优点：</span><span class="sxs-lookup"><span data-stu-id="60586-109">The information in the cache isn't stored in the memory of individual web servers, and the cached data is available to all of the app's servers.</span></span> <span data-ttu-id="60586-110">这提供了几个优点：</span><span class="sxs-lookup"><span data-stu-id="60586-110">This provides several advantages:</span></span>
+* <span data-ttu-id="b8871-109">是*连贯*（一致） 跨多个服务器的请求。</span><span class="sxs-lookup"><span data-stu-id="b8871-109">Is *coherent* (consistent) across requests to multiple servers.</span></span>
+* <span data-ttu-id="b8871-110">服务器重新启动和应用部署仍然有效。</span><span class="sxs-lookup"><span data-stu-id="b8871-110">Survives server restarts and app deployments.</span></span>
+* <span data-ttu-id="b8871-111">不使用本地内存。</span><span class="sxs-lookup"><span data-stu-id="b8871-111">Doesn't use local memory.</span></span>
 
-1. <span data-ttu-id="60586-111">所有 Web 服务器上的缓存数据都是一致的。</span><span class="sxs-lookup"><span data-stu-id="60586-111">Cached data is coherent on all web servers.</span></span> <span data-ttu-id="60586-112">用户不会因处理其请求的 Web 服务器的不同而看到不同的结果</span><span class="sxs-lookup"><span data-stu-id="60586-112">Users don't see different results depending on which web server handles their request</span></span>
+<span data-ttu-id="b8871-112">分布式的缓存配置是特定于实现的。</span><span class="sxs-lookup"><span data-stu-id="b8871-112">Distributed cache configuration is implementation specific.</span></span> <span data-ttu-id="b8871-113">本文介绍如何配置 SQL Server 和 Redis 分布式的缓存。</span><span class="sxs-lookup"><span data-stu-id="b8871-113">This article describes how to configure SQL Server and Redis distributed caches.</span></span> <span data-ttu-id="b8871-114">第三方实现也是可用，如[NCache](http://www.alachisoft.com/ncache/aspnet-core-idistributedcache-ncache.html) ([GitHub 上的 NCache](https://github.com/Alachisoft/NCache))。</span><span class="sxs-lookup"><span data-stu-id="b8871-114">Third party implementations are also available, such as [NCache](http://www.alachisoft.com/ncache/aspnet-core-idistributedcache-ncache.html) ([NCache on GitHub](https://github.com/Alachisoft/NCache)).</span></span> <span data-ttu-id="b8871-115">无论选择哪一种实现，该应用程序与使用缓存进行交互<xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache>接口。</span><span class="sxs-lookup"><span data-stu-id="b8871-115">Regardless of which implementation is selected, the app interacts with the cache using the <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> interface.</span></span>
 
-2. <span data-ttu-id="60586-113">缓存的数据在 Web 服务器重新启动后和部署后仍然存在。</span><span class="sxs-lookup"><span data-stu-id="60586-113">Cached data survives web server restarts and deployments.</span></span> <span data-ttu-id="60586-114">删除或添加单独的 Web 服务器不会影响缓存。</span><span class="sxs-lookup"><span data-stu-id="60586-114">Individual web servers can be removed or added without impacting the cache.</span></span>
+<span data-ttu-id="b8871-116">[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）</span><span class="sxs-lookup"><span data-stu-id="b8871-116">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/sample) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
 
-3. <span data-ttu-id="60586-115">源数据存储区具有较少的请求进行的 （不是使用多个内存中缓存或否缓存完全）。</span><span class="sxs-lookup"><span data-stu-id="60586-115">The source data store has fewer requests made to it (than with multiple in-memory caches or no cache at all).</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="b8871-117">系统必备</span><span class="sxs-lookup"><span data-stu-id="b8871-117">Prerequisites</span></span>
 
-> [!NOTE]
-> <span data-ttu-id="60586-116">如果使用 SQL Server 分布式缓存，则其中一些优势只有在为缓存而不是应用的源数据使用单独的数据库实例的情况下才会体现出来。</span><span class="sxs-lookup"><span data-stu-id="60586-116">If using a SQL Server Distributed Cache, some of these advantages are only true if a separate database instance is used for the cache than for the app's source data.</span></span>
+::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="60586-117">像任何缓存一样，分布式缓存可以显著提高应用的响应速度，因为通常情况下，数据从缓存中检索比从关系数据库（或 Web 服务）中检索快得多。</span><span class="sxs-lookup"><span data-stu-id="60586-117">Like any cache, a distributed cache can dramatically improve an app's responsiveness, since typically data can be retrieved from the cache much faster than from a relational database (or web service).</span></span>
+<span data-ttu-id="b8871-118">若要使用的 SQL Server 分布式缓存，引用[Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)或添加到的包引用[Microsoft.Extensions.Caching.SqlServer](https://www.nuget.org/packages/Microsoft.Extensions.Caching.SqlServer)包。</span><span class="sxs-lookup"><span data-stu-id="b8871-118">To use a SQL Server distributed cache, reference the [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app) or add a package reference to the [Microsoft.Extensions.Caching.SqlServer](https://www.nuget.org/packages/Microsoft.Extensions.Caching.SqlServer) package.</span></span>
 
-<span data-ttu-id="60586-118">缓存配置是特定于实现的。</span><span class="sxs-lookup"><span data-stu-id="60586-118">Cache configuration is implementation specific.</span></span> <span data-ttu-id="60586-119">本文介绍如何配置 Redis 和 SQL Server 分布式缓存。</span><span class="sxs-lookup"><span data-stu-id="60586-119">This article describes how to configure both Redis and SQL Server distributed caches.</span></span> <span data-ttu-id="60586-120">无论选择哪一种实现，应用都使用通用的 `IDistributedCache` 接口与缓存交互。</span><span class="sxs-lookup"><span data-stu-id="60586-120">Regardless of which implementation is selected, the app interacts with the cache using a common `IDistributedCache` interface.</span></span>
+<span data-ttu-id="b8871-119">若要使用 Redis 分布式缓存，引用[Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)并添加到的包引用[Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis)包。</span><span class="sxs-lookup"><span data-stu-id="b8871-119">To use a Redis distributed cache, reference the [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app) and add a package reference to the [Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis) package.</span></span> <span data-ttu-id="b8871-120">Redis 包不包括在`Microsoft.AspNetCore.App`包，因此您必须在项目文件中分别引用 Redis 包。</span><span class="sxs-lookup"><span data-stu-id="b8871-120">The Redis package isn't included in the `Microsoft.AspNetCore.App` package, so you must reference the Redis package separately in your project file.</span></span>
 
-## <a name="the-idistributedcache-interface"></a><span data-ttu-id="60586-121">IDistributedCache 接口</span><span class="sxs-lookup"><span data-stu-id="60586-121">The IDistributedCache Interface</span></span>
+::: moniker-end
 
-<span data-ttu-id="60586-122">`IDistributedCache`接口包含同步和异步方法。</span><span class="sxs-lookup"><span data-stu-id="60586-122">The `IDistributedCache` interface includes synchronous and asynchronous methods.</span></span> <span data-ttu-id="60586-123">接口允许在分布式缓存实现中添加、检索和删除项。</span><span class="sxs-lookup"><span data-stu-id="60586-123">The interface allows items to be added, retrieved, and removed from the distributed cache implementation.</span></span> <span data-ttu-id="60586-124">`IDistributedCache`接口包含以下方法：</span><span class="sxs-lookup"><span data-stu-id="60586-124">The `IDistributedCache` interface includes the following methods:</span></span>
+::: moniker range="= aspnetcore-2.0"
 
-<span data-ttu-id="60586-125">**Get、 GetAsync**</span><span class="sxs-lookup"><span data-stu-id="60586-125">**Get, GetAsync**</span></span>
+<span data-ttu-id="b8871-121">若要使用的 SQL Server 分布式缓存，引用[Microsoft.AspNetCore.All 元包](xref:fundamentals/metapackage)或添加到的包引用[Microsoft.Extensions.Caching.SqlServer](https://www.nuget.org/packages/Microsoft.Extensions.Caching.SqlServer)包。</span><span class="sxs-lookup"><span data-stu-id="b8871-121">To use a SQL Server distributed cache, reference the [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage) or add a package reference to the [Microsoft.Extensions.Caching.SqlServer](https://www.nuget.org/packages/Microsoft.Extensions.Caching.SqlServer) package.</span></span>
 
-<span data-ttu-id="60586-126">采用字符串键并以`byte[]`形式检索缓存项（如果在缓存中找到）。</span><span class="sxs-lookup"><span data-stu-id="60586-126">Takes a string key and retrieves a cached item as a `byte[]` if found in the cache.</span></span>
+<span data-ttu-id="b8871-122">若要使用 Redis 分布式缓存，引用[Microsoft.AspNetCore.All 元包](xref:fundamentals/metapackage)或添加到的包引用[Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis)包。</span><span class="sxs-lookup"><span data-stu-id="b8871-122">To use a Redis distributed cache, reference the [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage) or add a package reference to the [Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis) package.</span></span> <span data-ttu-id="b8871-123">Redis 包包含在`Microsoft.AspNetCore.All`包，因此无需引用在项目文件中单独的 Redis 包。</span><span class="sxs-lookup"><span data-stu-id="b8871-123">The Redis package is included in `Microsoft.AspNetCore.All` package, so you don't need to reference the Redis package separately in your project file.</span></span>
 
-<span data-ttu-id="60586-127">**Set、SetAsync**</span><span class="sxs-lookup"><span data-stu-id="60586-127">**Set, SetAsync**</span></span>
+::: moniker-end
 
-<span data-ttu-id="60586-128">使用字符串键向缓存添加项`byte[]`形式）。 </span><span class="sxs-lookup"><span data-stu-id="60586-128">Adds an item (as `byte[]`) to the cache using a string key.</span></span>
+::: moniker range="< aspnetcore-2.0"
 
-<span data-ttu-id="60586-129">**Refresh、RefreshAsync**</span><span class="sxs-lookup"><span data-stu-id="60586-129">**Refresh, RefreshAsync**</span></span>
+<span data-ttu-id="b8871-124">若要使用的 SQL Server 分布式缓存中，添加到包引用[Microsoft.Extensions.Caching.SqlServer](https://www.nuget.org/packages/Microsoft.Extensions.Caching.SqlServer)包。</span><span class="sxs-lookup"><span data-stu-id="b8871-124">To use a SQL Server distributed cache, add a package reference to the [Microsoft.Extensions.Caching.SqlServer](https://www.nuget.org/packages/Microsoft.Extensions.Caching.SqlServer) package.</span></span>
 
-<span data-ttu-id="60586-130">根据键刷新缓存中的项，并重置其可调过期超时值（如果有）。</span><span class="sxs-lookup"><span data-stu-id="60586-130">Refreshes an item in the cache based on its key, resetting its sliding expiration timeout (if any).</span></span>
+<span data-ttu-id="b8871-125">若要使用 Redis 分布式缓存中，添加到包引用[Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis)包。</span><span class="sxs-lookup"><span data-stu-id="b8871-125">To use a Redis distributed cache, add a package reference to the [Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis) package.</span></span>
 
-<span data-ttu-id="60586-131">**Remove、RemoveAsync**</span><span class="sxs-lookup"><span data-stu-id="60586-131">**Remove, RemoveAsync**</span></span>
+::: moniker-end
 
-<span data-ttu-id="60586-132">根据键删除缓存项。</span><span class="sxs-lookup"><span data-stu-id="60586-132">Removes a cache entry based on its key.</span></span>
+## <a name="idistributedcache-interface"></a><span data-ttu-id="b8871-126">IDistributedCache 接口</span><span class="sxs-lookup"><span data-stu-id="b8871-126">IDistributedCache interface</span></span>
 
-<span data-ttu-id="60586-133">若要使用`IDistributedCache`接口：</span><span class="sxs-lookup"><span data-stu-id="60586-133">To use the `IDistributedCache` interface:</span></span>
+<span data-ttu-id="b8871-127"><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache>接口提供了以下方法操作的分布式的缓存实现中的项：</span><span class="sxs-lookup"><span data-stu-id="b8871-127">The <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> interface provides the following methods to manipulate items in the distributed cache implementation:</span></span>
 
-   1. <span data-ttu-id="60586-134">所需的 NuGet 包添加到项目文件。</span><span class="sxs-lookup"><span data-stu-id="60586-134">Add the required NuGet packages to your project file.</span></span>
+* <span data-ttu-id="b8871-128"><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.Get*><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.GetAsync*> &ndash;接受字符串键和检索缓存的项作为`byte[]`数组如果在缓存中找到。</span><span class="sxs-lookup"><span data-stu-id="b8871-128"><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.Get*>, <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.GetAsync*> &ndash; Accepts a string key and retrieves a cached item as a `byte[]` array if found in the cache.</span></span>
+* <span data-ttu-id="b8871-129"><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.Set*><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.SetAsync*> &ndash;中添加项 (作为`byte[]`数组) 到使用字符串键的缓存。</span><span class="sxs-lookup"><span data-stu-id="b8871-129"><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.Set*>, <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.SetAsync*> &ndash; Adds an item (as `byte[]` array) to the cache using a string key.</span></span>
+* <span data-ttu-id="b8871-130"><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.Refresh*><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.RefreshAsync*> &ndash;刷新缓存基于其密钥，重置其滑动到期超时值 （如果有） 中的项。</span><span class="sxs-lookup"><span data-stu-id="b8871-130"><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.Refresh*>, <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.RefreshAsync*> &ndash; Refreshes an item in the cache based on its key, resetting its sliding expiration timeout (if any).</span></span>
+* <span data-ttu-id="b8871-131"><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.Remove*><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.RemoveAsync*> &ndash;移除缓存项根据其字符串键值。</span><span class="sxs-lookup"><span data-stu-id="b8871-131"><xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.Remove*>, <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache.RemoveAsync*> &ndash; Removes a cache item based on its string key.</span></span>
 
-   2. <span data-ttu-id="60586-135">在`Startup`类的`ConfigureServices`方法中配置`IDistributedCache`的具体实现，并将其添加到该处的容器中。</span><span class="sxs-lookup"><span data-stu-id="60586-135">Configure the specific implementation of `IDistributedCache` in your `Startup` class's `ConfigureServices` method, and add it to the container there.</span></span>
+## <a name="establish-distributed-caching-services"></a><span data-ttu-id="b8871-132">建立分布式缓存服务</span><span class="sxs-lookup"><span data-stu-id="b8871-132">Establish distributed caching services</span></span>
 
-   3. <span data-ttu-id="60586-136">在应用的[中间件](xref:fundamentals/middleware/index)或 MVC 控制器类中，从构造函数请求 `IDistributedCache`的实例。</span><span class="sxs-lookup"><span data-stu-id="60586-136">From the app's [Middleware](xref:fundamentals/middleware/index) or MVC controller classes, request an instance of `IDistributedCache` from the constructor.</span></span> <span data-ttu-id="60586-137">实例将通过[依赖项注入](../../fundamentals/dependency-injection.md) (DI) 提供。</span><span class="sxs-lookup"><span data-stu-id="60586-137">The instance will be provided by [Dependency Injection](../../fundamentals/dependency-injection.md) (DI).</span></span>
+<span data-ttu-id="b8871-133">注册的实现<xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache>在`Startup.ConfigureServices`。</span><span class="sxs-lookup"><span data-stu-id="b8871-133">Register an implementation of <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> in `Startup.ConfigureServices`.</span></span> <span data-ttu-id="b8871-134">本主题中所述的框架提供实现包括：</span><span class="sxs-lookup"><span data-stu-id="b8871-134">Framework-provided implementations described in this topic include:</span></span>
 
-> [!NOTE]
-> <span data-ttu-id="60586-138">无需为`IDistributedCache`实例使用 Singleton 或 Scoped 生命周期（至少对内置实现来说是这样的）。</span><span class="sxs-lookup"><span data-stu-id="60586-138">There's no need to use a Singleton or Scoped lifetime for `IDistributedCache` instances (at least for the built-in implementations).</span></span> <span data-ttu-id="60586-139">任何可能需要某一个位置，还可以创建一个实例 (而不是使用[依赖关系注入](../../fundamentals/dependency-injection.md))，但这会导致代码更难测试，和违反[显式依赖关系原则](http://deviq.com/explicit-dependencies-principle/)。</span><span class="sxs-lookup"><span data-stu-id="60586-139">You can also create an instance wherever you might need one (instead of using [Dependency Injection](../../fundamentals/dependency-injection.md)), but this can make your code harder to test, and violates the [Explicit Dependencies Principle](http://deviq.com/explicit-dependencies-principle/).</span></span>
+* [<span data-ttu-id="b8871-135">分布式的内存缓存</span><span class="sxs-lookup"><span data-stu-id="b8871-135">Distributed Memory Cache</span></span>](#distributed-memory-cache)
+* [<span data-ttu-id="b8871-136">SQL Server 的分布式的缓存</span><span class="sxs-lookup"><span data-stu-id="b8871-136">Distributed SQL Server cache</span></span>](#distributed-sql-server-cache)
+* [<span data-ttu-id="b8871-137">分布式的 Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="b8871-137">Distributed Redis cache</span></span>](#distributed-redis-cache)
 
-<span data-ttu-id="60586-140">下面的示例演示如何在简单的中间件组件中使用`IDistributedCache` 实例：</span><span class="sxs-lookup"><span data-stu-id="60586-140">The following example shows how to use an instance of `IDistributedCache` in a simple middleware component:</span></span>
+### <a name="distributed-memory-cache"></a><span data-ttu-id="b8871-138">分布式的内存缓存</span><span class="sxs-lookup"><span data-stu-id="b8871-138">Distributed Memory Cache</span></span>
 
-[!code-csharp[](distributed/sample/src/DistCacheSample/StartTimeHeader.cs)]
+<span data-ttu-id="b8871-139">分布式内存缓存 (<xref:Microsoft.Extensions.DependencyInjection.MemoryCacheServiceCollectionExtensions.AddDistributedMemoryCache*>) 是框架提供的实现`IDistributedCache`，在内存中存储项。</span><span class="sxs-lookup"><span data-stu-id="b8871-139">The Distributed Memory Cache (<xref:Microsoft.Extensions.DependencyInjection.MemoryCacheServiceCollectionExtensions.AddDistributedMemoryCache*>) is a framework-provided implementation of `IDistributedCache` that stores items in memory.</span></span> <span data-ttu-id="b8871-140">分布式内存缓存不是实际的分布式的缓存。</span><span class="sxs-lookup"><span data-stu-id="b8871-140">The Distributed Memory Cache isn't an actual distributed cache.</span></span> <span data-ttu-id="b8871-141">缓存的项存储在运行该应用程序的服务器上的应用程序实例。</span><span class="sxs-lookup"><span data-stu-id="b8871-141">Cached items are stored by the app instance on the server where the app is running.</span></span>
 
-<span data-ttu-id="60586-141">在上面的代码中，缓存值用于读取，不用于写入。</span><span class="sxs-lookup"><span data-stu-id="60586-141">In the code above, the cached value is read, but never written.</span></span> <span data-ttu-id="60586-142">在此示例中，该值仅在服务器启动时设置，并且不会更改。</span><span class="sxs-lookup"><span data-stu-id="60586-142">In this sample, the value is only set when a server starts up, and doesn't change.</span></span> <span data-ttu-id="60586-143">在多服务器方案中，要启动的最新服务器会覆盖由其他服务器设置的以前的任何值。</span><span class="sxs-lookup"><span data-stu-id="60586-143">In a multi-server scenario, the most recent server to start will overwrite any previous values that were set by other servers.</span></span> <span data-ttu-id="60586-144">`Get`和`Set`方法使用 `byte[]`类型。</span><span class="sxs-lookup"><span data-stu-id="60586-144">The `Get` and `Set` methods use the `byte[]` type.</span></span> <span data-ttu-id="60586-145">因此，字符串值必须使用 `Encoding.UTF8.GetString`(适用于`Get`) 和 `Encoding.UTF8.GetBytes`(适用于 `Set`)进行转换。</span><span class="sxs-lookup"><span data-stu-id="60586-145">Therefore, the string value must be converted using `Encoding.UTF8.GetString` (for `Get`) and `Encoding.UTF8.GetBytes` (for `Set`).</span></span>
+<span data-ttu-id="b8871-142">分布式内存缓存是一个有用的实现：</span><span class="sxs-lookup"><span data-stu-id="b8871-142">The Distributed Memory Cache is a useful implementation:</span></span>
 
-<span data-ttu-id="60586-146">*Startup.cs*中的以下代码显示要设置的值：</span><span class="sxs-lookup"><span data-stu-id="60586-146">The following code from *Startup.cs* shows the value being set:</span></span>
+* <span data-ttu-id="b8871-143">在开发和测试方案。</span><span class="sxs-lookup"><span data-stu-id="b8871-143">In development and testing scenarios.</span></span>
+* <span data-ttu-id="b8871-144">生产和内存消耗情况中使用一台服务器时不会产生问题。</span><span class="sxs-lookup"><span data-stu-id="b8871-144">When a single server is used in production and memory consumption isn't an issue.</span></span> <span data-ttu-id="b8871-145">实现分布式内存缓存摘要缓存数据存储。</span><span class="sxs-lookup"><span data-stu-id="b8871-145">Implementing the Distributed Memory Cache abstracts cached data storage.</span></span> <span data-ttu-id="b8871-146">它允许实现真正的分布式缓存解决方案在将来如果多个节点或容错能力变得非常必要。</span><span class="sxs-lookup"><span data-stu-id="b8871-146">It allows for implementing a true distributed caching solution in the future if multiple nodes or fault tolerance become necessary.</span></span>
 
-[!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet1)]
+<span data-ttu-id="b8871-147">示例应用将在开发环境中运行应用时使用的分布式内存缓存：</span><span class="sxs-lookup"><span data-stu-id="b8871-147">The sample app makes use of the Distributed Memory Cache when the app is run in the Development environment:</span></span>
 
-<span data-ttu-id="60586-147">由于`IDistributedCache`是在`ConfigureServices`方法中配置的，因此它可以作为参数提供给`Configure`方法。</span><span class="sxs-lookup"><span data-stu-id="60586-147">Since `IDistributedCache` is configured in the `ConfigureServices` method, it's available to the `Configure` method as a parameter.</span></span> <span data-ttu-id="60586-148">将其添加作为参数将允许通过 DI 提供已配置的实例。</span><span class="sxs-lookup"><span data-stu-id="60586-148">Adding it as a parameter will allow the configured instance to be provided through DI.</span></span>
+[!code-csharp[](distributed/samples/2.x/DistCacheSample/Startup.cs?name=snippet_ConfigureServices&highlight=5)]
 
-## <a name="using-a-redis-distributed-cache"></a><span data-ttu-id="60586-149">使用分布式的 Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="60586-149">Using a Redis distributed cache</span></span>
+### <a name="distributed-sql-server-cache"></a><span data-ttu-id="b8871-148">分布式的 SQL 服务器缓存</span><span class="sxs-lookup"><span data-stu-id="b8871-148">Distributed SQL Server Cache</span></span>
 
-<span data-ttu-id="60586-150">[Redis](https://redis.io/)是一种开源的内存中数据存储，通常用作分布式缓存。</span><span class="sxs-lookup"><span data-stu-id="60586-150">[Redis](https://redis.io/) is an open source in-memory data store, which is often used as a distributed cache.</span></span> <span data-ttu-id="60586-151">可以在本地使用它，并且可以为 Azure 托管的 ASP.NET Core 应用配置[Azure Redis 缓存](https://azure.microsoft.com/services/cache/)为你的 Azure 托管的 ASP.NET Core 应用。</span><span class="sxs-lookup"><span data-stu-id="60586-151">You can use it locally, and you can configure an [Azure Redis Cache](https://azure.microsoft.com/services/cache/) for your Azure-hosted ASP.NET Core apps.</span></span> <span data-ttu-id="60586-152">ASP.NET Core 应用使用 `RedisDistributedCache`实例配置缓存实现。</span><span class="sxs-lookup"><span data-stu-id="60586-152">Your ASP.NET Core app configures the cache implementation using a `RedisDistributedCache` instance.</span></span>
-
-<span data-ttu-id="60586-153">Redis 缓存需要[Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis/)</span><span class="sxs-lookup"><span data-stu-id="60586-153">The Redis cache requires [Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis/)</span></span>
-
-<span data-ttu-id="60586-154">可在`ConfigureServices`中配置 Redis 实现，并可通过请求`IDistributedCache`实例（请参阅上面的代码）在应用代码中访问它。</span><span class="sxs-lookup"><span data-stu-id="60586-154">You configure the Redis implementation in `ConfigureServices` and access it in your app code by requesting an instance of `IDistributedCache` (see the code above).</span></span>
-
-<span data-ttu-id="60586-155">在示例代码中，为`RedisCache`环境配置服务器时使用`Staging`实现。</span><span class="sxs-lookup"><span data-stu-id="60586-155">In the sample code, a `RedisCache` implementation is used when the server is configured for a `Staging` environment.</span></span> <span data-ttu-id="60586-156">因此，`ConfigureStagingServices`方法用于配置 `RedisCache`:</span><span class="sxs-lookup"><span data-stu-id="60586-156">Thus the `ConfigureStagingServices` method configures the `RedisCache`:</span></span>
-
-[!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet2)]
-
-<span data-ttu-id="60586-157">若要在本地计算机上安装 Redis，安装 chocolatey 包[ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/)并运行`redis-server`从命令提示符。</span><span class="sxs-lookup"><span data-stu-id="60586-157">To install Redis on your local machine, install the chocolatey package [https://chocolatey.org/packages/redis-64/](https://chocolatey.org/packages/redis-64/) and run `redis-server` from a command prompt.</span></span>
-
-## <a name="using-a-sql-server-distributed-cache"></a><span data-ttu-id="60586-158">使用 SQL Server 分布式缓存</span><span class="sxs-lookup"><span data-stu-id="60586-158">Using a SQL Server distributed cache</span></span>
-
-<span data-ttu-id="60586-159">SqlServerCache 实现允许分布式缓存使用 SQL Server 数据库作为其后备存储。</span><span class="sxs-lookup"><span data-stu-id="60586-159">The SqlServerCache implementation allows the distributed cache to use a SQL Server database as its backing store.</span></span> <span data-ttu-id="60586-160">若要创建 SQL Server 表，可以使用 sql-cache 工具，该工具将使用指定的名称和模式创建一个表。</span><span class="sxs-lookup"><span data-stu-id="60586-160">To create SQL Server table you can use sql-cache tool, the tool creates a table with the name and schema you specify.</span></span>
+<span data-ttu-id="b8871-149">SQL Server 的分布式缓存实现 (<xref:Microsoft.Extensions.DependencyInjection.SqlServerCachingServicesExtensions.AddDistributedSqlServerCache*>) 允许使用 SQL Server 数据库作为其后备存储分布式的缓存。</span><span class="sxs-lookup"><span data-stu-id="b8871-149">The Distributed SQL Server Cache implementation (<xref:Microsoft.Extensions.DependencyInjection.SqlServerCachingServicesExtensions.AddDistributedSqlServerCache*>) allows the distributed cache to use a SQL Server database as its backing store.</span></span> <span data-ttu-id="b8871-150">若要在 SQL Server 实例中创建的 SQL Server 缓存的项表中，可以使用`sql-cache`工具。</span><span class="sxs-lookup"><span data-stu-id="b8871-150">To create a SQL Server cached item table in a SQL Server instance, you can use the `sql-cache` tool.</span></span> <span data-ttu-id="b8871-151">该工具使用名称和指定的架构创建一个表。</span><span class="sxs-lookup"><span data-stu-id="b8871-151">The tool creates a table with the name and schema that you specify.</span></span>
 
 ::: moniker range="< aspnetcore-2.1"
 
-<span data-ttu-id="60586-161">添加`SqlConfig.Tools`到`<ItemGroup>`元素的项目文件并运行`dotnet restore`。</span><span class="sxs-lookup"><span data-stu-id="60586-161">Add `SqlConfig.Tools` to the `<ItemGroup>` element of the project file and run `dotnet restore`.</span></span>
+<span data-ttu-id="b8871-152">添加`SqlConfig.Tools`到`<ItemGroup>`元素的项目文件并运行`dotnet restore`。</span><span class="sxs-lookup"><span data-stu-id="b8871-152">Add `SqlConfig.Tools` to the `<ItemGroup>` element of the project file and run `dotnet restore`.</span></span>
 
 ```xml
 <ItemGroup>
-  <DotNetCliToolReference Include="Microsoft.Extensions.Caching.SqlConfig.Tools" 
+  <DotNetCliToolReference Include="Microsoft.Extensions.Caching.SqlConfig.Tools"
                           Version="2.0.2" />
 </ItemGroup>
 ```
 
 ::: moniker-end
 
-<span data-ttu-id="60586-162">通过运行以下命令测试 SqlConfig.Tools:</span><span class="sxs-lookup"><span data-stu-id="60586-162">Test SqlConfig.Tools by running the following command:</span></span>
+<span data-ttu-id="b8871-153">通过运行 SQL Server 中创建一个表`sql-cache create`命令。</span><span class="sxs-lookup"><span data-stu-id="b8871-153">Create a table in SQL Server by running the `sql-cache create` command.</span></span> <span data-ttu-id="b8871-154">提供 SQL Server 实例 (`Data Source`)，数据库 (`Initial Catalog`)，架构 (例如， `dbo`)，以及表名 (例如， `TestCache`):</span><span class="sxs-lookup"><span data-stu-id="b8871-154">Provide the SQL Server instance (`Data Source`), database (`Initial Catalog`), schema (for example, `dbo`), and table name (for example, `TestCache`):</span></span>
 
 ```console
-dotnet sql-cache create --help
+dotnet sql-cache create "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DistCache;Integrated Security=True;" dbo TestCache
 ```
 
-<span data-ttu-id="60586-163">SqlConfig.Tools 显示使用情况、 选项和命令帮助。</span><span class="sxs-lookup"><span data-stu-id="60586-163">SqlConfig.Tools displays usage, options, and command help.</span></span>
-
-<span data-ttu-id="60586-164">通过运行 SQL Server 中创建一个表`sql-cache create`命令：</span><span class="sxs-lookup"><span data-stu-id="60586-164">Create a table in SQL Server by running the `sql-cache create` command :</span></span>
+<span data-ttu-id="b8871-155">记录一条消息以指示该工具已成功：</span><span class="sxs-lookup"><span data-stu-id="b8871-155">A message is logged to indicate that the tool was successful:</span></span>
 
 ```console
-dotnet sql-cache create "Data Source=(localdb)\v11.0;Initial Catalog=DistCache;Integrated Security=True;" dbo TestCache
-info: Microsoft.Extensions.Caching.SqlConfig.Tools.Program[0]
 Table and index were created successfully.
 ```
 
-<span data-ttu-id="60586-165">在创建的表具有以下架构：</span><span class="sxs-lookup"><span data-stu-id="60586-165">The created table has the following schema:</span></span>
+<span data-ttu-id="b8871-156">创建的表`sql-cache`工具具有以下架构：</span><span class="sxs-lookup"><span data-stu-id="b8871-156">The table created by the `sql-cache` tool has the following schema:</span></span>
 
 ![SqlServer 缓存表](distributed/_static/SqlServerCacheTable.png)
 
-<span data-ttu-id="60586-167">像所有缓存实现一样，应用应该使用`IDistributedCache`，实例来获取和设置缓存值，而不是使用`SqlServerCache`实例。</span><span class="sxs-lookup"><span data-stu-id="60586-167">Like all cache implementations, your app should get and set cache values using an instance of `IDistributedCache`, not a `SqlServerCache`.</span></span> <span data-ttu-id="60586-168">此示例实现`SqlServerCache`生产环境中 (以便在配置`ConfigureProductionServices`)。</span><span class="sxs-lookup"><span data-stu-id="60586-168">The sample implements `SqlServerCache` in the Production environment (so it's configured in `ConfigureProductionServices`).</span></span>
+> [!NOTE]
+> <span data-ttu-id="b8871-158">应用应操作使用的实例的缓存值<xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache>，而不<xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCache>。</span><span class="sxs-lookup"><span data-stu-id="b8871-158">An app should manipulate cache values using an instance of <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache>, not a <xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCache>.</span></span>
 
-[!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet3)]
+<span data-ttu-id="b8871-159">本示例应用实现<xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCache>非开发环境中：</span><span class="sxs-lookup"><span data-stu-id="b8871-159">The sample app implements <xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCache> in a non-Development environment:</span></span>
+
+[!code-csharp[](distributed/samples/2.x/DistCacheSample/Startup.cs?name=snippet_ConfigureServices&highlight=9-15)]
 
 > [!NOTE]
-> <span data-ttu-id="60586-169">`ConnectionString` (以及可选的`SchemaName`和`TableName`) 通常应该存储在源代码管理之外（例如存储在 UserSecrets 中），因为它们可能包含凭据。</span><span class="sxs-lookup"><span data-stu-id="60586-169">The `ConnectionString` (and optionally, `SchemaName` and `TableName`) should typically be stored outside of source control (such as UserSecrets), as they may contain credentials.</span></span>
+> <span data-ttu-id="b8871-160">一个<xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCacheOptions.ConnectionString*>(和 （可选）<xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCacheOptions.SchemaName*>并<xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCacheOptions.TableName*>) 通常存储在源代码管理之外 (例如，通过存储[机密管理器](xref:security/app-secrets)中或在*appsettings.json* /*appsettings。{Environment}.json*文件)。</span><span class="sxs-lookup"><span data-stu-id="b8871-160">A <xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCacheOptions.ConnectionString*> (and optionally, <xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCacheOptions.SchemaName*> and <xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCacheOptions.TableName*>) are typically stored outside of source control (for example, stored by the [Secret Manager](xref:security/app-secrets) or in *appsettings.json*/*appsettings.{Environment}.json* files).</span></span> <span data-ttu-id="b8871-161">连接字符串可能包含应从源代码管理系统的凭据。</span><span class="sxs-lookup"><span data-stu-id="b8871-161">The connection string may contain credentials that should be kept out of source control systems.</span></span>
 
-## <a name="recommendations"></a><span data-ttu-id="60586-170">建议</span><span class="sxs-lookup"><span data-stu-id="60586-170">Recommendations</span></span>
+### <a name="distributed-redis-cache"></a><span data-ttu-id="b8871-162">分布式的 Redis 缓存</span><span class="sxs-lookup"><span data-stu-id="b8871-162">Distributed Redis Cache</span></span>
 
-<span data-ttu-id="60586-171">在决定哪种`IDistributedCache`实现适合应用时，请根据现有的基础架构和环境、性能要求和团队经验在 Redis 和 SQL Server 之间进行选择。</span><span class="sxs-lookup"><span data-stu-id="60586-171">When deciding which implementation of `IDistributedCache` is right for your app, choose between Redis and SQL Server based on your existing infrastructure and environment, your performance requirements, and your team's experience.</span></span> <span data-ttu-id="60586-172">如果团队更喜欢使用 Redis，那就使用它。</span><span class="sxs-lookup"><span data-stu-id="60586-172">If your team is more comfortable working with Redis, it's an excellent choice.</span></span> <span data-ttu-id="60586-173">如果团队倾向于 SQL Server，那么也应对这么做充满信心。</span><span class="sxs-lookup"><span data-stu-id="60586-173">If your team prefers SQL Server, you can be confident in that implementation as well.</span></span> <span data-ttu-id="60586-174">请注意，传统的缓存解决方案存储内存中数据可用于快速检索的数据。</span><span class="sxs-lookup"><span data-stu-id="60586-174">Note that a traditional caching solution stores data in-memory which allows for fast retrieval of data.</span></span> <span data-ttu-id="60586-175">应该将常用数据存储在缓存中，将整个数据存储在后端持久性存储（如 SQL Server 或 Azure 存储）中。</span><span class="sxs-lookup"><span data-stu-id="60586-175">You should store commonly used data in a cache and store the entire data in a backend persistent store such as SQL Server or Azure Storage.</span></span> <span data-ttu-id="60586-176">与 SQL Cache 相比，Redis Cache 是一种吞吐量高且延迟轻微的缓存解决方案。</span><span class="sxs-lookup"><span data-stu-id="60586-176">Redis Cache is a caching solution which gives you high throughput and low latency as compared to SQL Cache.</span></span>
+<span data-ttu-id="b8871-163">[Redis](https://redis.io/)是一种开源的内存中数据存储，通常用作分布式缓存。</span><span class="sxs-lookup"><span data-stu-id="b8871-163">[Redis](https://redis.io/) is an open source in-memory data store, which is often used as a distributed cache.</span></span> <span data-ttu-id="b8871-164">您可以使用 Redis 本地，并且您可以配置[Azure Redis 缓存](https://azure.microsoft.com/services/cache/)Azure 托管 ASP.NET Core 应用。</span><span class="sxs-lookup"><span data-stu-id="b8871-164">You can use Redis locally, and you can configure an [Azure Redis Cache](https://azure.microsoft.com/services/cache/) for an Azure-hosted ASP.NET Core app.</span></span> <span data-ttu-id="b8871-165">应用配置缓存实现使用<xref:Microsoft.Extensions.Caching.Redis.RedisCache>实例 (<xref:Microsoft.Extensions.DependencyInjection.RedisCacheServiceCollectionExtensions.AddDistributedRedisCache*>):</span><span class="sxs-lookup"><span data-stu-id="b8871-165">An app configures the cache implementation using a <xref:Microsoft.Extensions.Caching.Redis.RedisCache> instance (<xref:Microsoft.Extensions.DependencyInjection.RedisCacheServiceCollectionExtensions.AddDistributedRedisCache*>):</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="60586-177">其他资源</span><span class="sxs-lookup"><span data-stu-id="60586-177">Additional resources</span></span>
+```csharp
+services.AddDistributedRedisCache(options =>
+{
+    options.Configuration = "localhost";
+    options.InstanceName = "SampleInstance";
+});
+```
 
-* [<span data-ttu-id="60586-178">Redis 缓存在 Azure 上</span><span class="sxs-lookup"><span data-stu-id="60586-178">Redis Cache on Azure</span></span>](https://azure.microsoft.com/documentation/services/redis-cache/)
-* [<span data-ttu-id="60586-179">在 Azure 上的 SQL 数据库</span><span class="sxs-lookup"><span data-stu-id="60586-179">SQL Database on Azure</span></span>](https://azure.microsoft.com/documentation/services/sql-database/)
+<span data-ttu-id="b8871-166">若要在本地计算机上安装 Redis:</span><span class="sxs-lookup"><span data-stu-id="b8871-166">To install Redis on your local machine:</span></span>
+
+* <span data-ttu-id="b8871-167">安装[Chocolatey Redis 包](https://chocolatey.org/packages/redis-64/)。</span><span class="sxs-lookup"><span data-stu-id="b8871-167">Install the [Chocolatey Redis package](https://chocolatey.org/packages/redis-64/).</span></span>
+* <span data-ttu-id="b8871-168">运行`redis-server`从命令提示符。</span><span class="sxs-lookup"><span data-stu-id="b8871-168">Run `redis-server` from a command prompt.</span></span>
+
+## <a name="use-the-distributed-cache"></a><span data-ttu-id="b8871-169">使用分布式的缓存</span><span class="sxs-lookup"><span data-stu-id="b8871-169">Use the distributed cache</span></span>
+
+<span data-ttu-id="b8871-170">若要使用<xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache>接口，请求的实例`IDistributedCache`从任何应用程序中的构造函数。</span><span class="sxs-lookup"><span data-stu-id="b8871-170">To use the <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> interface, request an instance of `IDistributedCache` from any constructor in the app.</span></span> <span data-ttu-id="b8871-171">实例由提供[依赖关系注入 (DI)](xref:fundamentals/dependency-injection)。</span><span class="sxs-lookup"><span data-stu-id="b8871-171">The instance is provided by [dependency injection (DI)](xref:fundamentals/dependency-injection).</span></span>
+
+<span data-ttu-id="b8871-172">当应用启动时`IDistributedCache`注入到`Startup.Configure`。</span><span class="sxs-lookup"><span data-stu-id="b8871-172">When the app starts, `IDistributedCache` is injected into `Startup.Configure`.</span></span> <span data-ttu-id="b8871-173">使用缓存的当前时间<xref:Microsoft.AspNetCore.Hosting.IApplicationLifetime>(有关详细信息，请参阅[Web 主机： IApplicationLifetime 接口](xref:fundamentals/host/web-host#iapplicationlifetime-interface)):</span><span class="sxs-lookup"><span data-stu-id="b8871-173">The current time is cached using <xref:Microsoft.AspNetCore.Hosting.IApplicationLifetime> (for more information, see [Web Host: IApplicationLifetime interface](xref:fundamentals/host/web-host#iapplicationlifetime-interface)):</span></span>
+
+[!code-csharp[](distributed/samples/2.x/DistCacheSample/Startup.cs?name=snippet_Configure&highlight=10)]
+
+<span data-ttu-id="b8871-174">示例应用程序注入`IDistributedCache`到`IndexModel`以供索引页。</span><span class="sxs-lookup"><span data-stu-id="b8871-174">The sample app injects `IDistributedCache` into the `IndexModel` for use by the Index page.</span></span>
+
+<span data-ttu-id="b8871-175">每次加载索引页时，缓存时间检查缓存`OnGetAsync`。</span><span class="sxs-lookup"><span data-stu-id="b8871-175">Each time the Index page is loaded, the cache is checked for the cached time in `OnGetAsync`.</span></span> <span data-ttu-id="b8871-176">如果尚未过期的缓存的时间，将显示时间。</span><span class="sxs-lookup"><span data-stu-id="b8871-176">If the cached time hasn't expired, the time is displayed.</span></span> <span data-ttu-id="b8871-177">如果自上一次访问缓存的时间 （已加载此页的最后一个时间） 已过去 20 秒，该页将显示*缓存时间已过*。</span><span class="sxs-lookup"><span data-stu-id="b8871-177">If 20 seconds have elapsed since the last time the cached time was accessed (the last time this page was loaded), the page displays *Cached Time Expired*.</span></span>
+
+<span data-ttu-id="b8871-178">通过选择，立即更新为当前时间的缓存的时间**重置缓存时间**按钮。</span><span class="sxs-lookup"><span data-stu-id="b8871-178">Immediately update the cached time to the current time by selecting the **Reset Cached Time** button.</span></span> <span data-ttu-id="b8871-179">按钮触发器`OnPostResetCachedTime`处理程序方法。</span><span class="sxs-lookup"><span data-stu-id="b8871-179">The button triggers the `OnPostResetCachedTime` handler method.</span></span>
+
+[!code-csharp[](distributed/samples/2.x/DistCacheSample/Pages/Index.cshtml.cs?name=snippet_IndexModel&highlight=7,14-20,25-29)]
+
+> [!NOTE]
+> <span data-ttu-id="b8871-180">无需为`IDistributedCache`实例使用 Singleton 或 Scoped 生命周期（至少对内置实现来说是这样的）。</span><span class="sxs-lookup"><span data-stu-id="b8871-180">There's no need to use a Singleton or Scoped lifetime for `IDistributedCache` instances (at least for the built-in implementations).</span></span>
+>
+> <span data-ttu-id="b8871-181">此外可以创建`IDistributedCache`实例可能需要某一个而不是使用 DI，但在代码中创建实例会使代码难以测试和违反[显式依赖关系原则](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)。</span><span class="sxs-lookup"><span data-stu-id="b8871-181">You can also create an `IDistributedCache` instance wherever you might need one instead of using DI, but creating an instance in code can make your code harder to test and violates the [Explicit Dependencies Principle](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies).</span></span>
+
+## <a name="recommendations"></a><span data-ttu-id="b8871-182">建议</span><span class="sxs-lookup"><span data-stu-id="b8871-182">Recommendations</span></span>
+
+<span data-ttu-id="b8871-183">确定哪一种实现的时`IDistributedCache`最适合于您的应用程序，请考虑以下：</span><span class="sxs-lookup"><span data-stu-id="b8871-183">When deciding which implementation of `IDistributedCache` is best for your app, consider the following:</span></span>
+
+* <span data-ttu-id="b8871-184">现有的基础结构</span><span class="sxs-lookup"><span data-stu-id="b8871-184">Existing infrastructure</span></span>
+* <span data-ttu-id="b8871-185">性能要求</span><span class="sxs-lookup"><span data-stu-id="b8871-185">Performance requirements</span></span>
+* <span data-ttu-id="b8871-186">成本</span><span class="sxs-lookup"><span data-stu-id="b8871-186">Cost</span></span>
+* <span data-ttu-id="b8871-187">团队体验</span><span class="sxs-lookup"><span data-stu-id="b8871-187">Team experience</span></span>
+
+<span data-ttu-id="b8871-188">缓存解决方案通常依赖于内存中存储提供快速检索的缓存数据，但内存是有限的资源，而且成本展开。</span><span class="sxs-lookup"><span data-stu-id="b8871-188">Caching solutions usually rely on in-memory storage to provide fast retrieval of cached data, but memory is a limited resource and costly to expand.</span></span> <span data-ttu-id="b8871-189">仅存储通常用于缓存中的数据。</span><span class="sxs-lookup"><span data-stu-id="b8871-189">Only store commonly used data in a cache.</span></span>
+
+<span data-ttu-id="b8871-190">通常情况下，Redis 缓存提供更高的吞吐量和延迟低于 SQL Server 缓存。</span><span class="sxs-lookup"><span data-stu-id="b8871-190">Generally, a Redis cache provides higher throughput and lower latency than a SQL Server cache.</span></span> <span data-ttu-id="b8871-191">但是，进行基准测试时通常需要确定的缓存策略的性能特征。</span><span class="sxs-lookup"><span data-stu-id="b8871-191">However, benchmarking is usually required to determine the performance characteristics of caching strategies.</span></span>
+
+<span data-ttu-id="b8871-192">当 SQL Server 用作分布式的缓存后备存储时，使用的同一个数据库缓存与应用程序的普通数据存储和检索可以对这两者的性能产生负面影响。</span><span class="sxs-lookup"><span data-stu-id="b8871-192">When SQL Server is used as a distributed cache backing store, use of the same database for the cache and the app's ordinary data storage and retrieval can negatively impact the performance of both.</span></span> <span data-ttu-id="b8871-193">我们建议使用专用的 SQL Server 实例为分布式缓存后备存储。</span><span class="sxs-lookup"><span data-stu-id="b8871-193">We recommend using a dedicated SQL Server instance for the distributed cache backing store.</span></span>
+
+## <a name="additional-resources"></a><span data-ttu-id="b8871-194">其他资源</span><span class="sxs-lookup"><span data-stu-id="b8871-194">Additional resources</span></span>
+
+* [<span data-ttu-id="b8871-195">Redis 缓存在 Azure 上</span><span class="sxs-lookup"><span data-stu-id="b8871-195">Redis Cache on Azure</span></span>](https://azure.microsoft.com/documentation/services/redis-cache/)
+* [<span data-ttu-id="b8871-196">在 Azure 上的 SQL 数据库</span><span class="sxs-lookup"><span data-stu-id="b8871-196">SQL Database on Azure</span></span>](https://azure.microsoft.com/documentation/services/sql-database/)
+* <span data-ttu-id="b8871-197">[ASP.NET Core IDistributedCache 提供程序的 Web 场中的 NCache](http://www.alachisoft.com/ncache/aspnet-core-idistributedcache-ncache.html) ([在 GitHub 上的 NCache](https://github.com/Alachisoft/NCache))</span><span class="sxs-lookup"><span data-stu-id="b8871-197">[ASP.NET Core IDistributedCache Provider for NCache in Web Farms](http://www.alachisoft.com/ncache/aspnet-core-idistributedcache-ncache.html) ([NCache on GitHub](https://github.com/Alachisoft/NCache))</span></span>
 * <xref:performance/caching/memory>
 * <xref:fundamentals/change-tokens>
 * <xref:performance/caching/response>
