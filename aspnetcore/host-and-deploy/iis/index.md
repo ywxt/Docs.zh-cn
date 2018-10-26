@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 5092564ad885b0de090129a7a0f0bbbd472cb868
-ms.sourcegitcommit: ce6b6792c650708e92cdea051a5d166c0708c7c0
+ms.openlocfilehash: 8986eec479dc69a144c30820d5775efe51386579
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49652340"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50091114"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -85,7 +85,7 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultBuilder` 调用 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> 方法。 `UseIISIntegration` 配置在 localhost IP 地址 (`127.0.0.1`) 中的动态端口上侦听的 Kestrel。 如果动态端口为 1234，则 Kestrel 在 `127.0.0.1:1234` 中侦听。 此配置将替换以下提供的其他 URL 配置：
+ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultBuilder` 调用 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> 方法。 `UseIISIntegration` 配置在 localhost IP 地址 (`127.0.0.1`) 中的动态端口上侦听的 Kestrel。 如果动态端口为 1234，则 Kestrel 在 `127.0.0.1:1234` 中侦听。 此配置将替换以下 API 提供的其他 URL 配置：
 
 * `UseUrls`
 * [Kestrel 的侦听 API](xref:fundamentals/servers/kestrel#endpoint-configuration)
@@ -399,7 +399,7 @@ web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS
 
   ASP.NET Core 应用使用的数据保护密钥存储在应用外部的注册表中。 要持久保存给定应用的密钥，需为应用池创建注册表项。
 
-  对于独立的非 Web 场 IIS 安装，可以对用于 ASP.NET Core 应用的每个应用池使用[数据保护 Provision-AutoGenKeys.ps1 PowerShell 脚本 (ASP.NET Core 2.2)](https://github.com/aspnet/DataProtection/blob/release/2.2/Provision-AutoGenKeys.ps1)。 此脚本在 HKLM 注册表中创建注册表项，仅应用程序的应用池工作进程帐户可对其进行访问。 通过计算机范围的密钥使用 DPAPI 对密钥静态加密。
+  对于独立的非 Web 场 IIS 安装，可以对用于 ASP.NET Core 应用的每个应用池使用[数据保护 Provision-AutoGenKeys.ps1 PowerShell 脚本](https://github.com/aspnet/AspNetCore/blob/master/src/DataProtection/Provision-AutoGenKeys.ps1)。 此脚本在 HKLM 注册表中创建注册表项，仅应用程序的应用池工作进程帐户可对其进行访问。 通过计算机范围的密钥使用 DPAPI 对密钥静态加密。
 
   在 web 场方案中，可以将应用配置为使用 UNC 路径存储其数据保护密钥环。 默认情况下，数据保护密钥未加密。 确保网络共享的文件权限仅限于应用在其下运行的 Windows 帐户。 可使用 X509 证书来保护静态密钥。 建议使用允许用户上传证书的机制：将证书放置在用户信任的证书存储中，并确保在运行用户应用的所有计算机上都可使用这些证书。 有关详细信息，请参阅[配置 ASP.NET Core 数据保护](xref:security/data-protection/configuration/overview)。
 

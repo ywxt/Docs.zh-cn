@@ -3,14 +3,15 @@ title: 从 ASP.NET Core 1.x 迁移到 2.0
 author: scottaddie
 description: 本文概述了将 ASP.NET Core 1.x 项目迁移到 ASP.NET Core 2.0 的先决条件和最常见步骤。
 ms.author: scaddie
-ms.date: 10/03/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: migration/1x-to-2x/index
-ms.openlocfilehash: 1052b17b433f06162325db340cd53ee61b76a184
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: f5bd2bc9862a7487658125e14837798886efad11
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272499"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090497"
 ---
 # <a name="migrate-from-aspnet-core-1x-to-20"></a>从 ASP.NET Core 1.x 迁移到 2.0
 
@@ -23,11 +24,13 @@ ms.locfileid: "36272499"
 <a name="prerequisites"></a>
 
 ## <a name="prerequisites"></a>系统必备
+
 请参阅 [ASP.NET Core 入门](xref:getting-started)。
 
 <a name="tfm"></a>
 
 ## <a name="update-target-framework-moniker-tfm"></a>更新目标框架名字对象 (TFM)
+
 面向 .NET Core 的项目需使用大于或等于 .NET Core 2.0 版本的 [TFM](/dotnet/standard/frameworks#referring-to-frameworks)。 在“.csproj”文件中搜索 `<TargetFramework>` 节点，并将其内部文本替换为 `netcoreapp2.0`：
 
 [!code-xml[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App.csproj?range=3)]
@@ -42,13 +45,15 @@ ms.locfileid: "36272499"
 <a name="global-json"></a>
 
 ## <a name="update-net-core-sdk-version-in-globaljson"></a>在 global.json 中更新 .NET Core SDK 版本
-如果解决方案依靠 [global.json](https://docs.microsoft.com/dotnet/core/tools/global-json) 文件来定向于特定 .NET Core SDK 版本，请更新其 `version` 属性以使用计算机上安装的 2.0 版本：
+
+如果解决方案依靠 [global.json](/dotnet/core/tools/global-json) 文件来定向于特定 .NET Core SDK 版本，请更新其 `version` 属性以使用计算机上安装的 2.0 版本：
 
 [!code-json[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/global.json?highlight=3)]
 
 <a name="package-reference"></a>
 
 ## <a name="update-package-references"></a>更新包引用
+
 1.x 项目中的“.csproj”文件列出了该项目使用的每个 NuGet 包。
 
 在面向 .NET Core 2.0 的 ASP.NET Core 2.0 项目中，“.csproj”文件中的单个 [metapackage](xref:fundamentals/metapackage) 引用将替换包的集合：
@@ -66,6 +71,7 @@ ms.locfileid: "36272499"
 <a name="dot-net-cli-tool-reference"></a>
 
 ## <a name="update-net-core-cli-tools"></a>更新 .NET Core CLI 工具
+
 在“.csproj”文件中，将每个 `<DotNetCliToolReference />` 节点的 `Version` 特性更新至 2.0.0。
 
 例如，下述列表列出了面向 .NET Core 2.0 的典型 ASP.NET Core 2.0 项目中使用的 CLI 工具：
@@ -75,6 +81,7 @@ ms.locfileid: "36272499"
 <a name="package-target-fallback"></a>
 
 ## <a name="rename-package-target-fallback-property"></a>重命名“包目标回退”属性
+
 1.x 项目的“.csproj”文件使用了 `PackageTargetFallback` 节点和变量：
 
 [!code-xml[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App.csproj?range=5)]
@@ -86,6 +93,7 @@ ms.locfileid: "36272499"
 <a name="program-cs"></a>
 
 ## <a name="update-main-method-in-programcs"></a>更新 Program.cs 中的 Main 方法
+
 在 1.x 项目中，“Program.cs”的 `Main` 方法如下所示：
 
 [!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Program.cs?name=snippet_ProgramCs&highlight=8-19)]
@@ -103,6 +111,7 @@ Unable to create an object of type '<Context>'. Add an implementation of 'IDesig
 <a name="add-modify-configuration"></a>
 
 ## <a name="add-configuration-providers"></a>添加配置提供程序
+
 在 1.x 项目中，已通过 `Startup` 构造函数将配置提供程序添加到了某个应用。 涉及的步骤包括创建 `ConfigurationBuilder` 实例、加载适用的提供程序（环境变量、应用设置等）以及初始化 `IConfigurationRoot` 的成员。
 
 [!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Startup.cs?name=snippet_1xStartup)]
@@ -124,10 +133,12 @@ Unable to create an object of type '<Context>'. Add an implementation of 'IDesig
 <a name="db-init-code"></a>
 
 ## <a name="move-database-initialization-code"></a>移动数据库初始化代码
+
 在 1.x 项目中使用 EF Core 1.x（类似 `dotnet ef migrations add` 的命令）执行下列任务：
+
 1. 实例化 `Startup` 实例
-2. 调用 `ConfigureServices` 方法，为所有服务注册依赖关系注入（包括 `DbContext` 类型）
-3. 执行其必要任务
+1. 调用 `ConfigureServices` 方法，为所有服务注册依赖关系注入（包括 `DbContext` 类型）
+1. 执行其必要任务
 
 在 2.0 项目中使用 EF Core 2.0，调用 `Program.BuildWebHost` 以获取应用程序服务。 与 1.x 不同，这有调用 `Startup.Configure` 的副作用。 如果 1.x 应用在其 `Configure` 方法中调用了数据库初始化代码，可能出现意外问题。 例如，如果数据库尚不存在，种子设定代码将在 EF Core 迁移命令执行前运行。 如果数据库尚不存在，此问题将导致 `dotnet ef migrations list` 命令失败。
 
@@ -144,6 +155,7 @@ Unable to create an object of type '<Context>'. Add an implementation of 'IDesig
 <a name="view-compilation"></a>
 
 ## <a name="review-razor-view-compilation-setting"></a>查看 Razor 视图编译设置
+
 加快应用程序启动速度和缩小已发布的捆绑包至关重要。 为此，ASP.NET Core 2.0 中默认启用 [Razor 视图编译](xref:mvc/views/view-compilation)。
 
 无需再将 `MvcRazorCompileOnPublish` 属性设置为 true。 若不禁用视图编译，可能会从“.csproj”文件中删除此属性。
@@ -155,12 +167,13 @@ Unable to create an object of type '<Context>'. Add an implementation of 'IDesig
 <a name="app-insights"></a>
 
 ## <a name="rely-on-application-insights-light-up-features"></a>依靠 Application Insights“启动”功能
-能够轻松设置应用程序性能检测非常重要。 现可依靠 Visual Studio 2017 工具中推出的新的 [Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview)“启动”功能。
+
+能够轻松设置应用程序性能检测非常重要。 现可依靠 Visual Studio 2017 工具中推出的新的 [Application Insights](/azure/application-insights/app-insights-overview)“启动”功能。
 
 Visual Studio 2017 中创建的 ASP.NET Core 1.1 项目默认添加 Application Insights。 若不直接使用 Application Insights SDK，则除了执行“Program.cs”和“Startup.cs”，还请执行以下步骤：
 
 1. 如果定目标到 .NET Core，请从 .csproj 文件中删除以下 `<PackageReference />` 节点：
-    
+
     [!code-xml[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App.csproj?range=10)]
 
 2. 如果定目标到 .NET Core，请从 Program.cs 中删除 `UseApplicationInsights` 扩展方法调用：
@@ -176,6 +189,7 @@ Visual Studio 2017 中创建的 ASP.NET Core 1.1 项目默认添加 Application 
 <a name="auth-and-identity"></a>
 
 ## <a name="adopt-authenticationidentity-improvements"></a>采用身份验证/标识改进
+
 ASP.NET Core 2.0 具有新的身份验证模型和大量针对 ASP.NET Core 标识的重大更改。 如果在启用个人用户帐户的情况下创建了项目，或者已手动添加身份验证或标识，请参阅[将身份验证和标识迁移到 ASP.NET Core 2.0](xref:migration/1x-to-2x/identity-2x)。
 
 ## <a name="additional-resources"></a>其他资源

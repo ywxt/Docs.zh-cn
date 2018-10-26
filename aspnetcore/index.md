@@ -3,14 +3,15 @@ title: ASP.NET Core 简介
 author: rick-anderson
 description: 获取 ASP.NET Core 的简介，它是一个跨平台的高性能开源框架，用于生成基于云且连接 Internet 的新式应用程序。
 ms.author: riande
-ms.date: 9/28/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: index
-ms.openlocfilehash: 3bb86fa255548ff66592ac14c1020e0c6b47959c
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: fcd95b88b970073f4d7eddf89729683d18be449d
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391152"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090649"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 简介
 
@@ -21,11 +22,11 @@ ASP.NET Core 是一个跨平台的高性能[开源](https://github.com/aspnet/ho
 * 建置 Web 应用程序和服务、[IoT](https://www.microsoft.com/internet-of-things/) 应用和移动后端。
 * 在 Windows、macOS 和 Linux 上使用喜爱的开发工具。
 * 部署到云或本地。
-* 在 [.NET Core 或 .NET Framework](https://docs.microsoft.com/dotnet/articles/standard/choosing-core-framework-server) 上运行。
+* 在 [.NET Core 或 .NET Framework](/dotnet/articles/standard/choosing-core-framework-server) 上运行。
 
 ## <a name="why-use-aspnet-core"></a>为何使用 ASP.NET Core？
 
-数百万开发人员使用过（并将继续使用）[ASP.NET 4.x](https://docs.microsoft.com/aspnet/overview) 创建 Web 应用。 ASP.NET Core 是重新设计的 ASP.NET 4.x，更改了体系结构，形成了更精简的模块化框架。
+数百万开发人员使用过（并将继续使用）[ASP.NET 4.x](/aspnet/overview) 创建 Web 应用。 ASP.NET Core 是重新设计的 ASP.NET 4.x，更改了体系结构，形成了更精简的模块化框架。
 
 [!INCLUDE[](~/includes/benefits.md)]
 
