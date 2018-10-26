@@ -26,7 +26,7 @@ ms.locfileid: "41831203"
 
 ## <a name="introduction"></a>介绍
 
-设计良好的一个属性是网站的一致的站点级页面布局。 以 www.asp.net 网站中，为例。 在撰写本文时，每个页都有相同的内容的顶部和页面的底部。 如图 1 所示，每个页面的顶部将显示包含一系列 Microsoft 社区的灰色栏。 下，它是站点徽标，其中该站点已翻译，语言和核心部分的列表： 主页、 入门、 学习、 下载和等。 同样，页面底部包括有关广告 www.asp.net、 版权声明和指向隐私声明的链接上的信息。
+设计良好的一个属性是网站的一致的站点级页面布局。 以 www.asp.net 网站中，为例。 在撰写本文时，每个页都有相同的内容的顶部和页面的底部。 如图 1 所示，每个页面的顶部将显示包含一系列 Microsoft 社区的灰色栏。 下，它是站点徽标，其中该站点已翻译，语言和核心部分的列表： 主页、 入门、 学习、 下载和等。 同样，页面底部包括有关广告 www.asp.net 、 版权声明和指向隐私声明的链接上的信息。
 
 
 [![Www.asp.net 网站跨所有页面采用一致的外观](creating-a-site-wide-layout-using-master-pages-cs/_static/image2.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image1.png)
