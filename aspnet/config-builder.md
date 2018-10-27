@@ -7,12 +7,12 @@ ms.author: riande
 ms.date: 10/29/2018
 ms.technology: aspnet
 msc.type: content
-ms.openlocfilehash: d5a3916c3df9778d14be80342bafbc3456a69a03
-ms.sourcegitcommit: f2d14a7518d6ee51aca9333818ac1276e7b5ecef
+ms.openlocfilehash: 4dcc62573fad13ec8b37b2c59e884eec7ca80b92
+ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "50134530"
+ms.locfileid: "50148832"
 ---
 # <a name="configuration-builders-for-aspnet"></a>ASP.NET 的配置生成器
 
@@ -29,7 +29,7 @@ ms.locfileid: "50134530"
 
 ## <a name="keyvalue-configuration-builders"></a>键/值配置生成器
 
-配置生成器可以处理的常见方案是提供用于配置各节的键/值模式的基本的键/值替代机制。 ConfigurationBuilders 的.NET Framework 概念不局限于特定的配置节或模式。 但是，在配置生成器的许多`Microsoft.Configuration.ConfigurationBuilders`([github](https://github.com/aspnet/MicrosoftConfigurationBuilders))， [NuGet](https://www.nuget.org/packages?q=Microsoft.Configuration.ConfigurationBuilders)中的键/值模式工作。
+配置生成器可以处理的常见方案是提供用于配置各节的键/值模式的基本的键/值替代机制。 ConfigurationBuilders 的.NET Framework 概念不局限于特定的配置节或模式。 但是，在配置生成器的许多`Microsoft.Configuration.ConfigurationBuilders`([github](https://github.com/aspnet/MicrosoftConfigurationBuilders)， [NuGet](https://www.nuget.org/packages?q=Microsoft.Configuration.ConfigurationBuilders)) 中的键/值模式工作。
 
 ## <a name="keyvalue-configuration-builders-settings"></a>键/值配置生成器设置
 
