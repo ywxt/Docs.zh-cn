@@ -5,12 +5,12 @@ description: 了解如何在 ASP.NET Core 中使用视图组件，以及如何�
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/view-components
-ms.openlocfilehash: cf2cfcdb07271503b844e31940e90b7376db0a6f
-ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
+ms.openlocfilehash: 49c8be655f151e219c8fa0854dbcf510d7bbd158
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47211060"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325573"
 ---
 # <a name="view-components-in-aspnet-core"></a>ASP.NET Core 中的视图组件
 
@@ -75,20 +75,20 @@ ms.locfileid: "47211060"
 
 运行时在以下路径中搜索视图：
 
-* /Pages/Components/\<view_component_name>/\<view_name>
-* /Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
-* /Views/Shared/Components/\<view_component_name>/\<view_name>
+* /Pages/Components/{View Component Name}/{View Name}
+* /Views/{Controller Name}/Components/{View Component Name}/{View Name}
+* /Views/Shared/Components/{View Component Name}/{View Name}
 
 视图组件的默认视图名称为“默认”，这意味着视图文件通常命名为“Default.cshtml”。 可以在创建视图组件结果或调用 `View` 方法时指定不同的视图名称。
 
-建议将视图文件命名为“Default.cshtml”并使用 Views/Shared/Components/\<view_component_name>/\<view_name> 路径。 此示例中使用的 `PriorityList` 视图组件对视图组件视图使用 Views/Shared/Components/PriorityList/Default.cshtml。
+建议将视图文件命名为 Default.cshtml 并使用 Views/Shared/Components/{View Component Name}/{View Name} 路径。 此示例中使用的 `PriorityList` 视图组件对视图组件视图使用 Views/Shared/Components/PriorityList/Default.cshtml。
 
 ## <a name="invoking-a-view-component"></a>调用视图组件
 
 要使用视图组件，请在视图中调用以下内容：
 
 ```cshtml
-@Component.InvokeAsync("Name of view component", <anonymous type containing parameters>)
+@Component.InvokeAsync("Name of view component", {Anonymous Type Containing Parameters})
 ```
 
 参数将传递给 `InvokeAsync` 方法。 本文中开发的 `PriorityList` 视图组件是从 Views/Todo/Index.cshtml 视图文件中调用的。 在下例中，使用两个参数调用 `InvokeAsync` 方法：

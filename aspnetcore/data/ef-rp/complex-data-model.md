@@ -5,12 +5,12 @@ description: 本教程将添加更多实体和关系，并通过指定格式设�
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 88d727b0545f1dacb56ea889e45b02f947867b19
-ms.sourcegitcommit: 6425baa92cec4537368705f8d27f3d0e958e43cd
+ms.openlocfilehash: b81918cbd74200f0672f3002f916523fb4a9a914
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39220594"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477652"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 数据模型 - 第 5 个教程（共 8 个）
 
@@ -432,7 +432,7 @@ public Student Student { get; set; }
 
 `Student` 和 `Course` 实体之间存在多对多关系。 `Enrollment` 实体充当数据库中“具有有效负载”的多对多联接表。 “具有有效负载”表示 `Enrollment` 表除了联接表的 FK 外还包含其他数据（本教程中为 PK 和 `Grade`）。
 
-下图显示这些关系在实体关系图中的外观。 （此关系图通过适用于 EF 6.x 的 EF Power Tools 生成。 本教程不介绍如何创建此关系图。）
+下图显示这些关系在实体关系图中的外观。 （此关系图是使用适用于 EF 6.X 的 [EF Power Tools](https://marketplace.visualstudio.com/items?itemName=ErikEJ.EntityFramework6PowerToolsCommunityEdition) 生成的。 本教程不介绍如何创建此关系图。）
 
 ![学生-课程之间的多对多关系](complex-data-model/_static/student-course.png)
 
@@ -574,9 +574,15 @@ The ALTER TABLE statement conflicted with the FOREIGN KEY constraint "FK_dbo.Cou
 database "ContosoUniversity", table "dbo.Department", column 'DepartmentID'.
 ```
 
-当将现有数据与迁移一起运行时，可能存在不满足现有数据的 FK 约束。 本教程将创建新数据库，这样便不会出现任何 FK 约束冲突。 请参阅[通过旧数据修复外键约束](#fk)，获取有关如何在当前数据库上修复 FK 冲突的说明。
+## <a name="apply-the-migration"></a>应用迁移
 
-### <a name="drop-and-update-the-database"></a>删除并更新数据库
+现已有一个数据库，需要考虑如何将未来的更改应用到其中。 本教程演示两种方法：
+* [删除并重新创建数据库](#drop)
+* [将迁移应用到现有数据库](#applyexisting)。 虽然此方法更复杂且耗时，但在实际应用和生产环境中为首选方法。 **注意**：这是本教程的一个可选部分。 你可以执行删除和重新创建的相关步骤并跳过此部分。 如果希望执行本部分中的步骤，请勿执行删除和重新创建步骤。 
+
+<a name="drop"></a>
+
+### <a name="drop-and-re-create-the-database"></a>删除并重新创建数据库
 
 已更新 `DbInitializer` 中的代码将为新实体添加种子数据。 若要强制 EF Core 创建新的 DB，请删除并更新 DB：
 
@@ -620,13 +626,13 @@ dotnet ef database update
 
 ![SSOX 中的 CourseAssignment 数据](complex-data-model/_static/ssox-ci-data.png)
 
-<a name="fk"></a>
+<a name="applyexisting"></a>
 
-## <a name="fixing-foreign-key-constraints-with-legacy-data"></a>通过旧数据修复外键约束
+### <a name="apply-the-migration-to-the-existing-database"></a>将迁移应用到现有数据库
 
-本部分是可选的。
+本部分是可选的。 只有当跳过之前的[删除并重新创建数据库](#drop)部分时才可以执行上述步骤。
 
-当将现有数据与迁移一起运行时，可能存在不满足现有数据的 FK 约束。 使用生产数据时，必须采取步骤来迁移现有数据。 本部分提供修复 FK 约束冲突的示例。 务必在备份后执行这些代码更改。 如果已完成上述部分并更新数据库，则不要执行这些代码更改。
+当现有数据与迁移一起运行时，可能存在不满足现有数据的 FK 约束。 使用生产数据时，必须采取步骤来迁移现有数据。 本部分提供修复 FK 约束冲突的示例。 务必在备份后执行这些代码更改。 如果已完成上述部分并更新数据库，则不要执行这些代码更改。
 
 {timestamp}_ComplexDataModel.cs 文件包含以下代码：
 
@@ -639,7 +645,7 @@ dotnet ef database update
 * 请更改代码以便为新列 (`DepartmentID`) 赋予默认值。
 * 创建名为“临时”的虚拟系来充当默认的系。
 
-### <a name="fix-the-foreign-key-constraints"></a>修复外键约束
+#### <a name="fix-the-foreign-key-constraints"></a>修复外键约束
 
 更新 `ComplexDataModel` 类 `Up` 方法：
 

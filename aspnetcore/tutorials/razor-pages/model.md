@@ -5,12 +5,12 @@ description: 了解如何使用 Entity Framework Core (EF Core) 添加用于管�
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 5cd1e08ac52d352be23a280419d7456f685a03ad
-ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
+ms.openlocfilehash: 41a88e06afbe6e7accd03ff7b39aa69e15e0c0b4
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48045596"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325808"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>在 ASP.NET Core 中向 Razor 页面应用添加模型
 
@@ -47,19 +47,18 @@ ms.locfileid: "48045596"
 
 * 在“模型类”下拉列表中，选择“Movie (RazorPagesMovie.Models)。
 * 在“数据上下文类”行中，选择 +（加号）并接受生成的名称“RazorPagesMovie.Models.RazorPagesMovieContext”。
-* 在“数据上下文类”下拉列表中，选择“RazorPagesMovie.Models.RazorPagesMovieContext”
 * 选择“添加”。
 
 ![上述说明的图像。](model/_static/arp.png)
 
-搭建基架的过程会创建并更改以下文件：
+在搭建基架时，会创建并更新以下文件：
 
 ### <a name="files-created"></a>创建的文件
 
 * Pages/Movies：“创建”、“删除”、“详细信息”、“编辑”、“索引”。 将在下一教程中详细介绍这些页面。
 * Data/RazorPagesMovieContext.cs
 
-### <a name="file-updates"></a>文件更新
+### <a name="file-updated"></a>文件已更新
 
 * Startup.cs：下一部分详细介绍对此文件所作的更改。
 * appsettings.json：添加用于连接到本地数据的连接字符串。
@@ -110,9 +109,10 @@ dotnet ef database update
 
 忽略以下警告消息，后续教程将对此进行修复：
 
-`Microsoft.EntityFrameworkCore.Model.Validation[30000]`
-
-      *No type was specified for the decimal column 'Price' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.*
+```console
+Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No type was specified for the decimal column 'Price' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+```
 
 `Add-Migration` 命令生成用于创建初始数据库架构的代码。 此架构的依据为 `RazorPagesMovieContext` 中指定的模型（在 Data/RazorPagesMovieContext.cs 文件中）。 `Initial` 参数用于为迁移命名。 可以使用任意名称，但是按照惯例应选择描述迁移的名称。 有关详细信息，请参阅[迁移简介](xref:data/ef-mvc/migrations#introduction-to-migrations)。
 
@@ -120,8 +120,10 @@ dotnet ef database update
 
 如果收到错误：
 
-`SqlException: Cannot open database "RazorPagesMovieContext-GUID" requested by the login. The login failed.
-Login failed for user 'User-name'.`
+```console
+SqlException: Cannot open database "RazorPagesMovieContext-GUID" requested by the login. The login failed.
+Login failed for user 'User-name'.
+```
 
 缺少[迁移步骤](#pmc)。
 
@@ -186,9 +188,10 @@ dotnet ef database update
 
 忽略以下消息：
 
-    `Microsoft.EntityFrameworkCore.Model.Validation[30000]`
-
-      *No type was specified for the decimal column 'Price' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'*
+```console
+Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No type was specified for the decimal column 'Price' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'
+```
 
 下一教程将对此进行修复。
 

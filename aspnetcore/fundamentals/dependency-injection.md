@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/02/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 33fae5d87029c8b3afdc321e0247555c1e479d07
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 193bfc7651b6da6db69e8c15bd6beb82906bde0a
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912613"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477665"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>在 ASP.NET Core 依赖注入
 
@@ -287,9 +287,9 @@ public void ConfigureServices(IServiceCollection services)
 
 注册 `OperationService` 取决于，每个其他 `Operation` 类型。 当通过依赖关系注入请求 `OperationService` 时，它将接收每个服务的新实例或基于从属服务的生存期的现有实例。
 
-* 如果在请求时创建了临时服务，则 `IOperationTransient` 服务的 `OperationsId` 与 `OperationService` 的 `OperationsId` 不同。 `OperationService` 将接收 `IOperationTransient` 类的新实例。 新实例将生成一个不同的 `OperationsId`。
-* 如果按请求创建有作用域的服务，则 `IOperationScoped` 服务的 `OperationsId` 与请求中 `OperationService` 的该 ID 相同。 在请求中，两个服务共享不同的 `OperationsId` 值。
-* 如果单一数据库和单一实例服务只创建一次并在所有请求和所有服务中使用，则 `OperationsId` 在所有服务请求中保持不变。
+* 如果在请求时创建了临时服务，则 `IOperationTransient` 服务的 `OperationId` 与 `OperationService` 的 `OperationId` 不同。 `OperationService` 将接收 `IOperationTransient` 类的新实例。 新实例将生成一个不同的 `OperationId`。
+* 如果按请求创建有作用域的服务，则 `IOperationScoped` 服务的 `OperationId` 与请求中 `OperationService` 的该 ID 相同。 在请求中，两个服务共享不同的 `OperationId` 值。
+* 如果单一数据库和单一实例服务只创建一次并在所有请求和所有服务中使用，则 `OperationId` 在所有服务请求中保持不变。
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -538,7 +538,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="recommendations"></a>建议
 
-使用依赖注入时，请记住以下建议：
+* 不支持基于 `async/await` 和 `Task` 的服务解析。 C# 不支持异步构造函数，因此推荐的模式是在同步解析服务后使用异步方法。
 
 * 避免在服务容器中直接存储数据和配置。 例如，用户的购物车通常不应添加到服务容器中。 配置应使用 [选项模型](xref:fundamentals/configuration/options)。 同样，避免"数据持有者"对象，也就是仅仅为实现对某些其他对象的访问而存在的对象。 最好通过 DI 请求实际项目。
 
@@ -557,7 +557,6 @@ DI 是静态/全局对象访问模式的替代方法。 如果将其与静态对
 * <xref:mvc/views/dependency-injection>
 * <xref:mvc/controllers/dependency-injection>
 * <xref:security/authorization/dependencyinjection>
-* <xref:fundamentals/repository-pattern>
 * <xref:fundamentals/startup>
 * <xref:test/index>
 * <xref:fundamentals/middleware/extensibility>

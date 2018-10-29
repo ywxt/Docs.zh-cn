@@ -5,12 +5,12 @@ description: 了解如何开始使用 ASP.NET Core MVC 和 Visual Studio。
 ms.author: riande
 ms.date: 10/07/2017
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: 41f986a06ec46dc025c4e8218745b4a513e8ee2a
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: fe555e4cfcaec5d4bb8ccee00b06d1bbcaae9dcd
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011694"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391201"
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a>ASP.NET Core MVC 和 Visual Studio 入门
 
@@ -48,7 +48,7 @@ ms.locfileid: "46011694"
 完成“新建 ASP.NET Core Web 应用程序(.NET Core) - MvcMovie”对话框：
 
 * 在版本选择器下拉框中选择“ASP.NET Core 2.1”
-* 选择“Web 应用程序(Model-View-Controller)”
+* 选择“Web 应用(模型-视图-控制器)”
 * 点击“确定”
 
 ![新项目对话框, 左侧窗格中的 .NET Core, ASP.NET Core Web ](start-mvc/_static/new_project22-21.png)

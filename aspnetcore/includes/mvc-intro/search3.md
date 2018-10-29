@@ -32,8 +32,9 @@
 “电影流派”视图模型将包含：
 
    * 电影列表。
-   * 包含流派列表的 `SelectList`。 用户可通过它从列表中选择一种流派。
-   * 包含所选流派的 `movieGenre`。
+   * 包含流派列表的 `SelectList`。 这使用户能够从列表中选择一种流派。
+   * 包含所选流派的 `MovieGenre`。
+   * `SearchString`包含用户在搜索文本框中输入的文本。
 
 将 `MoviesController.cs` 中的 `Index` 方法替换为以下代码：
 
@@ -45,9 +46,11 @@
 
 通过投影不同的流派创建 `SelectList`（我们不希望选择列表中的流派重复）。
 
+当用户搜索某个项目时，搜索值会保留在搜索框中。 要保留搜索值，请用搜索值填充 `SearchString` 属性。 搜索值是 `Index` 控制器操作的 `searchString` 参数。
+
 ```csharp
 movieGenreVM.genres = new SelectList(await genreQuery.Distinct().ToListAsync())
-   ```
+```
 
 ## <a name="adding-search-by-genre-to-the-index-view"></a>向索引视图添加“按流派搜索”
 
@@ -57,8 +60,8 @@ movieGenreVM.genres = new SelectList(await genreQuery.Distinct().ToListAsync())
 
 检查以下 HTML 帮助程序中使用的 Lambda 表达式：
 
-`@Html.DisplayNameFor(model => model.movies[0].Title)`
+`@Html.DisplayNameFor(model => model.Movies[0].Title)`
  
-在上述代码中，`DisplayNameFor` HTML 帮助程序检查 Lambda 表达式中引用的 `Title` 属性来确定显示名称。 由于只检查但未计算 Lambda 表达式，因此当 `model`、`model.movies[0]` 或 `model.movies` 为 `null` 或空时，你不会收到访问冲突。 对 Lambda 表达式求值时（例如，`@Html.DisplayFor(modelItem => item.Title)`），将求得该模型的属性值。
+在上述代码中，`DisplayNameFor` HTML 帮助程序检查 Lambda 表达式中引用的 `Title` 属性来确定显示名称。 由于只检查但未计算 Lambda 表达式，因此当 `model`、`model.Movies[0]` 或 `model.Movies` 为 `null` 或空时，你不会收到访问冲突。 对 Lambda 表达式求值时（例如，`@Html.DisplayFor(modelItem => item.Title)`），将求得该模型的属性值。
 
 通过按流派或/和电影标题搜索来测试应用。

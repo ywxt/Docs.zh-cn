@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/13/2018
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: d6157ac2bdf046c66f4b740ad2263f6b7485c05d
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 4006057b8fcef9c28274bc52a311f15bff92ffb0
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912301"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326142"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 Kestrel Web 服务器实现
 
@@ -89,7 +89,7 @@ macOS 的未来版本将支持 &dagger;HTTP/2。
 
 ![Kestrel 通过反向代理服务器（如 IIS、Nginx 或 Apache）间接与 Internet 进行通信](kestrel/_static/kestrel-to-internet.png)
 
-出于安全考虑，边缘部署需要使用反向代理（从 Internet 公开到流量）。 Kestrel 的 1.x 版本没有防御攻击的完整补充，例如适当的超时、大小限制以及并发连接限制。
+出于安全考虑，面向公众的边缘服务器部署（从 Internet 公开导流量）需要反向代理。 Kestrel 的 1.x 版本没有防御攻击的完整补充，例如适当的超时、大小限制以及并发连接限制。
 
 ::: moniker-end
 
@@ -1296,7 +1296,7 @@ appsettings.json：
 ```
 
 > [!NOTE]
-> [转接头中间件](xref:host-and-deploy/proxy-load-balancer)同样提供 [ForwardedHeadersOptions.AllowedHosts](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.allowedhosts) 选项。 转接头中间件和主机筛选中间件具有适合不同方案的相似功能。 如果未保留主机标头，并且使用反向代理服务器或负载均衡器转接请求，则使用转接头中间件设置 `AllowedHosts` 比较合适。 将 Kestrel 用作边缘服务器或直接转接主机标头时，使用主机筛选中间件设置 `AllowedHosts` 比较合适。
+> [转接头中间件](xref:host-and-deploy/proxy-load-balancer)同样提供 [ForwardedHeadersOptions.AllowedHosts](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.allowedhosts) 选项。 转接头中间件和主机筛选中间件具有适合不同方案的相似功能。 如果未保留主机标头，并且使用反向代理服务器或负载均衡器转接请求，则使用转接头中间件设置 `AllowedHosts` 比较合适。 将 Kestrel 用作面向公众的边缘服务器或直接转接主机标头时，使用主机筛选中间件设置 `AllowedHosts` 比较合适。
 >
 > 有关转接头中间件的详细信息，请参阅[配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)。
 

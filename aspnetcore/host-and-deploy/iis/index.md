@@ -6,16 +6,18 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 8986eec479dc69a144c30820d5775efe51386579
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 72c32b9c66b50663b33a5274b8f60de126622535
+ms.sourcegitcommit: 76ffb9456e0a44651dfcf052ce133f728ae2359b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "50091114"
+ms.locfileid: "50132200"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
 作者：[Luke Latham](https://github.com/guardrex)
+
+[安装 .NET Core 托管捆绑包](#install-the-NET-core-hosting-bundle)
 
 ## <a name="supported-operating-systems"></a>支持的操作系统
 
@@ -262,28 +264,42 @@ web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS
 
 ![在“Windows 功能”中选择了“IIS 管理控制台”和“万维网服务”。](index/_static/windows-features-win10.png)
 
----
-
 ## <a name="install-the-net-core-hosting-bundle"></a>安装 .NET Core 托管捆绑包
 
-1. 在托管系统上安装 .NET Core 托管捆绑包。 捆绑包可安装 .NET Core 运行时、.NET Core 库和 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)。 该模块创建 IIS 与 Kestrel 服务器之间的反向代理。 如果系统没有 Internet 连接，请先获取并安装 [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840)，然后再安装 .NET Core 托管捆绑包。
+在托管系统上安装 .NET Core 托管捆绑包。 捆绑包可安装 .NET Core 运行时、.NET Core 库和 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)。 该模块创建 IIS 与 Kestrel 服务器之间的反向代理。 如果系统没有 Internet 连接，请先获取并安装 [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840)，然后再安装 .NET Core 托管捆绑包。
 
-   1. 导航到 [.NET 下载页](https://www.microsoft.com/net/download/windows)。
-   1. 在“.NET Core”下，选择“运行应用”标签旁边的“下载 .NET Core 运行时”按钮。 安装程序的可执行文件的文件名中包含“hosting”一词，例如，*dotnet-hosting-2.1.2-win.exe*。
-   1. 在服务器上运行安装程序。
+> [!IMPORTANT]
+> 如果在 IIS 之前安装了托管捆绑包，则必须修复捆绑包安装。 在安装 IIS 后再次运行托管捆绑包安装程序。
 
-   **重要提示！** 如果在 IIS 之前安装了托管捆绑包，则必须修复捆绑包安装。 在安装 IIS 后再次运行托管捆绑包安装程序。
+### <a name="direct-download-current-version"></a>直接下载（当前版本）
 
-   使用一个或多个开关从管理员命令提示符运行安装程序以控制安装程序的行为：
+使用以下链接下载安装程序：
+
+[当前 .NET Core 托管捆绑包安装程序（直接下载）](https://www.microsoft.com/net/permalink/dotnetcore-current-windows-runtime-bundle-installer)
+
+### <a name="earlier-versions-of-the-installer"></a>先前版本的安装程序
+
+若要获取先前版本的安装程序：
+
+1. 导航到 [.NET 下载存档](https://www.microsoft.com/net/download/archives)。
+1. 在“.NET Core”下，选择 .NET Core 版本。
+1. 在“运行应用 - 运行时”列中，查找所需的 .NET Core 运行时版本的那一行。
+1. 使用“运行时和托管捆绑包”链接下载安装程序。
+
+> [!WARNING]
+> 某些安装程序包含已到达其生命周期结束 (EOL) 且不再受 Microsoft 支持的发行版本。 有关详细信息，请参阅[支持策略](https://www.microsoft.com/net/download/dotnet-core/2.0)。
+
+### <a name="install-the-hosting-bundle"></a>安装托管捆绑包
+
+1. 在服务器上运行安装程序。 从管理员命令提示符运行安装程序时，以下开关将可用：
 
    * `OPT_NO_ANCM=1` &ndash; 跳过安装 ASP.NET Core 模块。
    * `OPT_NO_RUNTIME=1` &ndash; 跳过安装 .NET Core 运行时。
    * `OPT_NO_SHAREDFX=1` &ndash; 跳过安装 ASP.NET 共享框架（ASP.NET 运行时）。
    * `OPT_NO_X86=1` &ndash; 跳过安装 x86 运行时。 确定不会托管 32 位应用时，请使用此开关。 如果有同时托管 32 位和 64 位应用的可能，请不要使用此开关并安装两个运行时。
-
 1. 重启系统，或从命令提示符处依次执行 net stop was /y 和 net start w3svc。 重启 IIS 会选取安装程序对系统 PATH（环境变量）所作的更改。
 
-   如果 Windows 托管捆绑包安装程序检测到 IIS 需要重置才能完成安装，则安装程序会重置 IIS。 如果安装程序触发 IIS 重置，则会重新启动所有 IIS 应用池和网站。
+如果 Windows 托管捆绑包安装程序检测到 IIS 需要重置才能完成安装，则安装程序会重置 IIS。 如果安装程序触发 IIS 重置，则会重新启动所有 IIS 应用池和网站。
 
 > [!NOTE]
 > 有关 IIS 共享配置的信息，请参阅[使用 IIS 共享配置的 ASP.NET Core 模块](xref:host-and-deploy/aspnet-core-module#aspnet-core-module-with-an-iis-shared-configuration)。

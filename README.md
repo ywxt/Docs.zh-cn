@@ -1,13 +1,10 @@
-ASP.NET Docs
-============
+# <a name="aspnet-docs"></a>ASP.NET Docs
 
-This project provides the source for [docs.asp.net](http://docs.asp.net/). You can learn more about ASP.NET Core at the [Home](https://github.com/aspnet/home) repo. See the [Contributing Guide](CONTRIBUTING.md) and the [issues list](\https://github.com/aspnet/Docs/issues) if you would like to help out.
+此存储库包含在 [docs.microsoft.com/aspnet](https://docs.microsoft.com/aspnet) 上托管的概念性 ASP.NET Core 和 ASP.NET 4.x 文档。 如果想要寻求帮助，请参阅[参与指南](CONTRIBUTING.md)和[问题列表](https://github.com/aspnet/Docs/issues)。
 
-API PR's ( *api/autoapi/...* ) should not be made here. Changes to API documentation should be made in the source repository against the triple slash /// comments. 
+应在 [ApiDocs 存储库](https://github.com/aspnet/ApiDocs)中针对三斜杠 `///` 注释对 API 文档进行更改。
 
-This project has adopted the [Microsoft Open Source Code of
-Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct
-FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com)
-with any additional questions or comments.
+## <a name="microsoft-open-source-code-of-conduct"></a>Microsoft 开放源行为准则
+
+此项目采用了 [Microsoft 开放源行为准则](https://opensource.microsoft.com/codeofconduct/)。
+有关详细信息，请参阅[行为准则常见问题解答](https://opensource.microsoft.com/codeofconduct/faq/)或联系 [opencode@microsoft.com](mailto:opencode@microsoft.com) 提出任何其他问题或意见。

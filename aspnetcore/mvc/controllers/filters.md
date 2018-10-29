@@ -3,14 +3,15 @@ title: ASP.NET Core 中的筛选器
 author: ardalis
 description: 了解筛选器的工作原理以及如何在 ASP.NET Core MVC 中使用它们。
 ms.author: riande
-ms.date: 08/15/2018
+ms.custom: mvc
+ms.date: 10/15/2018
 uid: mvc/controllers/filters
-ms.openlocfilehash: e20d934a17337d404249220d703ac4bb7164dfa6
-ms.sourcegitcommit: 9bdba90b2c97a4016188434657194b2d7027d6e3
+ms.openlocfilehash: 6803e8e3a285716792427e9fb059c204f5a88ecb
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47402154"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391305"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core 中的筛选器
 
@@ -204,13 +205,15 @@ ASP.NET Core MVC 中的筛选器允许在请求处理管道中的特定阶段之
 
 ### <a name="servicefilterattribute"></a>ServiceFilterAttribute
 
-`ServiceFilter` 可从 DI 检索筛选器实例。 将筛选器添加到该容器的 `ConfigureServices` 中，并在 `ServiceFilter` 属性中引用它
+在 DI 中注册服务筛选器实现类型。 `ServiceFilterAttribute` 可从 DI 检索筛选器实例。 将 `ServiceFilterAttribute` 添加到 `Startup.ConfigureServices` 中的容器中，并在 `[ServiceFilter]` 属性中引用它：
 
 [!code-csharp[](./filters/sample/src/FiltersSample/Startup.cs?name=snippet_ConfigureServices&highlight=11)]
 
 [!code-csharp[](../../mvc/controllers/filters/sample/src/FiltersSample/Controllers/HomeController.cs?name=snippet_ServiceFilter&highlight=1)]
 
-使用 `ServiceFilter` 时不注册筛选器类型会引发异常：
+使用 `ServiceFilterAttribute` 时，`IsReusable` 设置会提示：筛选器实例可能在其创建的请求范围之外被重用。 该框架不保证在稍后的某个时刻将创建筛选器的单个实例，或不会从 DI 容器重新请求筛选器。 如果使用的筛选器依赖于具有除单一实例以外的生命周期的服务，请避免使用 `IsReusable`。
+
+使用 `ServiceFilterAttribute` 时不注册筛选器类型会引发异常：
 
 ```
 System.InvalidOperationException: No service for type
@@ -226,7 +229,9 @@ System.InvalidOperationException: No service for type
 由于存在这种差异，所以存在以下情况：
 
 * 使用 `TypeFilterAttribute` 引用的类型不需要先注册在容器中。  它们具备由容器实现的依赖项。 
-* `TypeFilterAttribute` 可以选择为类型接受构造函数参数。 
+* `TypeFilterAttribute` 可以选择为类型接受构造函数参数。
+
+使用 `TypeFilterAttribute` 时，`IsReusable` 设置会提示：筛选器实例可能在其创建的请求范围之外被重用。 该框架不保证将创建筛选器的单一实例。 如果使用的筛选器依赖于具有除单一实例以外的生命周期的服务，请避免使用 `IsReusable`。
 
 下面的示例演示如何使用 `TypeFilterAttribute` 将参数传递到类型：
 

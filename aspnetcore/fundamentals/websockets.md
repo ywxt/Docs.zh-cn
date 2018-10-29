@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/28/2018
 uid: fundamentals/websockets
-ms.openlocfilehash: e46c2decf92d21322f2079bf880df534e0224db5
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: b1e2180ed8dc93e2474ecca371d386830b7f3a9f
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911647"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348450"
 ---
 # <a name="websockets-support-in-aspnet-core"></a>ASP.NET Core 中的 WebSocket 支持
 
@@ -35,7 +35,7 @@ ms.locfileid: "48911647"
 
   * Windows 8 / Windows Server 2012 及更高版本
   * IIS 8 / IIS 8 Express
-  * 必须在 IIS 中启用 WebSocket（请参阅 [IIS/IIS Express 支持](#iisiis-express-support)部分。）
+  * 必须启用 WebSocket（请参阅 [IIS/IIS Express 支持](#iisiis-express-support)部分。）。
   
 * 如果应用在 [HTTP.sys](xref:fundamentals/servers/httpsys) 上运行：
 
@@ -133,7 +133,15 @@ WebSocket 请求可以来自任何 URL，但此示例代码只接受 `/ws` 的�
 
 安装了 IIS/IIS Express 8 或更高版本的 Windows Server 2012 或更高版本以及 Windows 8 或更高版本支持 WebSocket 协议。
 
+> [!NOTE]
+> 使用 IIS Express 时始终启用 WebSocket。
+
+### <a name="enabling-websockets-on-iis"></a>在 IIS 上启用 Websocket
+
 在 Windows Server 2012 或更高版本上启用对 WebSocket 协议的支持：
+
+> [!NOTE]
+> 使用 IIS Express 时无需执行这些步骤
 
 1. 通过“管理”菜单或“服务器管理器”中的链接使用“添加角色和功能”向导。
 1. 选择“基于角色或基于功能的安装”。 选择“下一步”。
@@ -145,6 +153,9 @@ WebSocket 请求可以来自任何 URL，但此示例代码只接受 `/ws` 的�
 1. 安装完成后，选择“关闭”以退出向导。
 
 在 Windows 8 或更高版本上启用对 WebSocket 协议的支持：
+
+> [!NOTE]
+> 使用 IIS Express 时无需执行这些步骤
 
 1. 导航到“控制面板” > “程序” > “程序和功能” > “打开或关闭 Windows 功能”（位于屏幕左侧）。
 1. 打开以下节点：“Internet Information Services” > “万维网服务” > “应用程序开发功能”。

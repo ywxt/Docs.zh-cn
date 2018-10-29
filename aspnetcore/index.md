@@ -65,7 +65,7 @@ ASP.NET Core 可以面向 .NET Core 或 .NET Framework。 面向 .NET Framework 
 * 新 API
 * 开源
 
-我们正努力缩小 .NET Framework 与 .NET Core 的 API 差距。 [Windows 兼容性包](/dotnet/core/porting/windows-compat-pack)使数千个仅 Windows API 可在 .NET Core 中使用。 这些 API 在 .NET Core 1.x 中不可用。
+我们正努力缩小 .NET Framework 与 .NET Core 的 API 差距。 [Windows 兼容性包](/dotnet/core/porting/windows-compat-pack)使数千个仅可在Windows运行的API 可在 .NET Core 中使用。 这些 API 在 .NET Core 1.x 中不可用。
 
 ## <a name="next-steps"></a>后续步骤
 

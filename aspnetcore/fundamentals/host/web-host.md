@@ -4,14 +4,14 @@ author: guardrex
 description: 了解有关 ASP.NET Core 中负责应用启动和生存期管理的 Web 主机。
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/01/2018
+ms.date: 10/18/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: 7440ab26534840b190a346614f645860fc2b7d78
-ms.sourcegitcommit: 7211ae2dd702f67d36365831c490d6178c9a46c8
+ms.openlocfilehash: e19f12f69dfdd5653aea9c6be2b05f24009b875e
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44089894"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477444"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core Web 主机
 
@@ -46,10 +46,10 @@ public class Program
 * 通过以下对象加载[主机配置](#host-configuration-values)：
   * 前缀为 `ASPNETCORE_` 的环境变量（例如，`ASPNETCORE_ENVIRONMENT`）。
   * 命令行参数。
-* 通过以下对象加载应用配置：
+* 按以下顺序加载应用配置：
   * appsettings.json。
   * appsettings.{Environment}.json。
-  * 应用在使用入口程序集的 `Development` 环境中运行时的[用户机密](xref:security/app-secrets)。
+  * 应用在使用入口程序集的 `Development` 环境中运行时的[机密管理器](xref:security/app-secrets)。
   * 环境变量。
   * 命令行参数。
 * 配置控制台和调试输出的[日志记录](xref:fundamentals/logging/index)。 日志记录包含 appsettings.json 或 appsettings.{Environment}.json 文件的日志记录配置部分中指定的[日志筛选](xref:fundamentals/logging/index#log-filtering)规则。
@@ -184,7 +184,7 @@ host.Run();
 **类型**：string  
 **默认**：包含应用入口点的程序集的名称。  
 **设置使用**：`UseSetting`  
-**环境变量**：`ASPNETCORE_APPLICATIONKEY`
+**环境变量**：`ASPNETCORE_APPLICATIONNAME`
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -365,15 +365,13 @@ WebHost.CreateDefaultBuilder(args)
 
 ### <a name="hosting-startup-exclude-assemblies"></a>承载启动排除程序集
 
-描述
+承载启动程序集的以分号分隔的字符串在启动时排除。
 
 键：hostingStartupExcludeAssemblies  
 **类型**：string  
 **默认值**：空字符串  
 **设置使用**：`UseSetting`  
 **环境变量**：`ASPNETCORE_HOSTINGSTARTUPEXCLUDEASSEMBLIES`
-
-承载启动程序集的以分号分隔的字符串在启动时排除。
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)

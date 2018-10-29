@@ -1,17 +1,17 @@
 ---
 title: ASP.NET Core 中的标记帮助程序
 author: rick-anderson
-description: 了解标记帮助程序的定义及其在 ASP.NET Core 中的用法。
+description: 了解标记帮助程序及其在 ASP.NET Core 中的用法。
 ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 2/14/2018
 uid: mvc/views/tag-helpers/intro
-ms.openlocfilehash: c2af9099fe439e1cdbf9ba86ffae3b2b0f67391e
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 4b9bceb3ce0153af2d9a30c402febe09707145b7
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751604"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477301"
 ---
 # <a name="tag-helpers-in-aspnet-core"></a>ASP.NET Core 中的标记帮助程序
 
@@ -68,7 +68,7 @@ public class Movie
 
 [!code-cshtml[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=2&range=2-3)]
 
-`@addTagHelper` 指令让视图可以使用标记帮助程序。 在此示例中，视图文件是 Pages/_ViewImports.cshtml，“Pages”文件夹及其子目录中的所有视图文件都会默认继承它，使得标记帮助程序可用。 上面的代码使用通配符语法（“\*”），指定程序集 (Microsoft.AspNetCore.Mvc.TagHelpers) 中的所有标记帮助程序对于 Views 目录或子目录中的所有视图文件可用。 `@addTagHelper` 后第一个参数指定要加载的标记帮助程序（我们使用“\*”指定加载所有标记帮助程序），第二个参数“Microsoft.AspNetCore.Mvc.TagHelpers”指定包含标记帮助程序的程序集。 Microsoft.AspNetCore.Mvc.TagHelpers 是内置 ASP.NET Core 标记帮助程序的程序集。
+`@addTagHelper` 指令让视图可以使用标记帮助程序。 在此示例中，视图文件是 Pages/_ViewImports.cshtml，“Pages”文件夹及其子目录中的所有视图文件都会默认继承它，使得标记帮助程序可用。 上面的代码使用通配符语法（“\*”），指定程序集 (Microsoft.AspNetCore.Mvc.TagHelpers) 中的所有标记帮助程序对于 Views 目录或子目录中的所有视图文件均可用。 `@addTagHelper` 后第一个参数指定要加载的标记帮助程序（我们使用“\*”指定加载所有标记帮助程序），第二个参数“Microsoft.AspNetCore.Mvc.TagHelpers”指定包含标记帮助程序的程序集。 Microsoft.AspNetCore.Mvc.TagHelpers 是内置 ASP.NET Core 标记帮助程序的程序集。
 
 要公开此项目中的所有标记帮助程序（将创建名为 AuthoringTagHelpers 的程序集），可使用以下内容：
 
@@ -127,6 +127,10 @@ public class Movie
 ![图像](intro/_static/thp.png)
 
 适用于 `@addTagHelper` 的层次结构规则也适用于 `@tagHelperPrefix`。
+
+## <a name="self-closing-tag-helpers"></a>自结束标记帮助程序
+
+许多标记帮助程序都不能用作自结束标记。 某些标记帮助程序被设计为自结束标记。 使用未被设计为自结束的标记帮助程序会抑制呈现的输出。 自结束标记帮助程序会在呈现的输出中生成自结束标记。 有关详细信息，请在[创作标记帮助程序](xref:mvc/views/tag-helpers/authoring)中查看[此问题](xref:mvc/views/tag-helpers/authoring#self-closing)。
 
 ## <a name="intellisense-support-for-tag-helpers"></a>标记帮助程序的 Intellisense 支持
 

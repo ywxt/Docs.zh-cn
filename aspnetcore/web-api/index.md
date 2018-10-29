@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 08/15/2018
 uid: web-api/index
-ms.openlocfilehash: d410f28ff7fda3bf33f73c06b3e626dfd4ee7dd8
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 763b95fb8ed3806bc67b7ad199153ea1027efa57
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41822135"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090415"
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>使用 ASP.NET Core 构建 Web API
 
@@ -47,7 +47,7 @@ ASP.NET Core 2.1 引入了 [[ApiController]](xref:Microsoft.AspNetCore.Mvc.ApiCo
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/ProductsController.cs?name=snippet_ControllerSignature&highlight=2)]
 
-需要兼容性版本 2.1 或更高版本（通过 <xref:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion*> 设置）来使用此属性。 例如，Startup.ConfigureServices 中突出显示的代码设置了 2.1 兼容性标志：
+需要兼容性版本 2.1 或更高版本（通过 <xref:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion*> 设置）来使用此属性。 例如，Startup.ConfigureServices 中突出显示的代码设置了 2.2 兼容性标志：
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_SetCompatibilityVersion&highlight=2)]
 
@@ -61,15 +61,46 @@ ASP.NET Core 2.1 引入了 [[ApiController]](xref:Microsoft.AspNetCore.Mvc.ApiCo
 
 以下各部分说明该特性添加的便利功能。
 
+### <a name="problem-details-responses-for-error-status-codes"></a>错误状态代码的问题详细信息响应
+
+ASP.NET Core 2.1 及更高版本包括 [ProblemDetails](xref:Microsoft.AspNetCore.Mvc.ProblemDetails)，这是一种基于 [RFC 7807 规范](https://tools.ietf.org/html/rfc7807)的类型。 `ProblemDetails` 类型提供了标准化格式，用于传达 HTTP 响应中计算机可读的错误详细信息。
+
+在 ASP.NET Core 2.2 及更高版本中，MVC 将错误状态代码结果（状态代码 400 及更高）转换为带 `ProblemDetails` 的结果。 考虑下列代码：
+
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/PetsController.cs?name=snippet_ProblemDetails_StatusCode&highlight=4)]
+
+`NotFound` 结果的 HTTP 响应具有 404 状态代码，其 `ProblemDetails` 主体如下所示：
+
+```js
+{
+    type: "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+    title: "Not Found",
+    status: 404,
+    traceId: "0HLHLV31KRN83:00000001"
+}
+```
+
+需具备 2.2 版本或更高版本的兼容性标志，才可使用问题详细信息功能。 当 [SuppressMapClientErrors](/dotnet/api/microsoft.aspnetcore.Mvc.ApiBehaviorOptions) <!--  Until these resolve, link to the parent class <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressMapClientErrors> -->属性设置为 `true` 时，会禁用默认行为。 下面突出显示的 `Startup.ConfigureServices` 代码会禁用问题详细信息：
+
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_SetCompatibilityVersion&highlight=8)]
+
+使用 [ClientErrorMapping](/dotnet/api/microsoft.aspnetcore.Mvc.ApiBehaviorOptions) <!--  Until these resolve, link to the parent class <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.ClientErrorMapping> -->属性配置 `ProblemDetails` 响应的内容。 例如，以下代码会更新 404 响应的 `type` 属性：
+
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_SetCompatibilityVersion&highlight=10)]
+
 ### <a name="automatic-http-400-responses"></a>自动 HTTP 400 响应
 
 验证错误会自动触发 HTTP 400 响应。 操作中不需要以下代码：
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?name=snippet_ModelStateIsValidCheck)]
 
+使用 <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.InvalidModelStateResponseFactory> 自定义所生成的响应的输出。
+
 当 <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressModelStateInvalidFilter> 属性设置为 `true` 时，会禁用默认行为。 将以下代码添加至 Startup.ConfigureServices 中的 `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);` 后：
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=5)]
+
+使用 2.2 或更高版本的兼容性标志时，为 400 响应返回的默认响应类型为 <xref:Microsoft.AspNetCore.Mvc.ValidationProblemDetails>。 通过 [SuppressUseValidationProblemDetailsForInvalidModelStateResponses](/dotnet/api/microsoft.aspnetcore.Mvc.ApiBehaviorOptions) <!--  <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressUseValidationProblemDetailsForInvalidModelStateResponses> --> 属性使用 ASP.NET Core 2.1 错误格式。
 
 ### <a name="binding-source-parameter-inference"></a>绑定源参数推理
 

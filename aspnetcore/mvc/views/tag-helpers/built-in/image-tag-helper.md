@@ -1,58 +1,62 @@
 ---
 title: ASP.NET Core 中的图像标记帮助程序
 author: pkellner
-description: 演示如何使用图像标记帮助程序
+description: 演示如何使用图像标记帮助程序。
 ms.author: riande
-ms.date: 02/14/2017
+ms.custom: mvc
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/image-tag-helper
-ms.openlocfilehash: 7ed160354b25aa0183ac49db93307b1f1b4d0666
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 5eb74a6698911a1c594d11573192cb1b9ed53b49
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276638"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325830"
 ---
 # <a name="image-tag-helper-in-aspnet-core"></a>ASP.NET Core 中的图像标记帮助程序
 
-作者：[Peter Kellner](http://peterkellner.net) 
+作者：[Peter Kellner](http://peterkellner.net)
 
-图像标记帮助程序可增强 `img` (`<img>`) 标记。 它需要 `src` 标记以及 `boolean` 属性 `asp-append-version`。
+图像标记帮助程序增强了 `<img>` 标记，为静态图像文件提供缓存破坏行为。
 
-如果图像源 (`src`) 是主机 Web 服务器上的静态文件，则会向图像源追加一个唯一缓存清除字符串作为查询参数。 这可确保，如果主机 Web 服务器上的文件发生更改，将生成包含已更新请求参数的唯一请求 URL。 缓存清除字符串是一个唯一值，表示静态图像文件的哈希。
+缓存破坏字符串是一个唯一值，表示附加到资产 URL 的静态图像文件的哈希值。 唯一字符串会提示客户端（和某些代理）从主机 Web 服务器重新加载图像，而不是从客户端的缓存重新加载。
 
-如果图像源 (`src`) 不是静态文件（例如远程 URL，或者服务器上不存在该文件），则生成的 `<img>` 标记的 `src` 属性不带缓存清除查询字符串参数。
+如果图像源 (`src`) 是主机 web 服务器上的静态文件：
+
+* 将唯一缓存破坏字符串作为图像源的查询参数进行追加。
+* 如果主机 Web 服务器上的文件发生更改，将生成包含已更新请求参数的唯一请求 URL。
+
+有关标记帮助程序的概述，请参阅 <xref:mvc/views/tag-helpers/intro>。
 
 ## <a name="image-tag-helper-attributes"></a>图像标记帮助程序属性
 
+### <a name="src"></a>src
+
+若要激活图像标记帮助程序，`<img>` 元素需要有 `src` 属性。
+
+图像源 (`src`) 必须指向服务器上的物理静态文件。 如果 `src` 是一个远程 URI，则不会生成缓存破坏查询字符串参数。
 
 ### <a name="asp-append-version"></a>asp-append-version
 
-与 `src` 属性一起指定时，会调用图像标记帮助程序。
+如果使用 `true` 值和 `src` 属性指定 `asp-append-version`，则会调用图像标记帮助程序。
 
-有效的 `img` 标记帮助程序示例为：
+下面的示例使用图像标记帮助程序：
 
 ```cshtml
-<img src="~/images/asplogo.png" 
-    asp-append-version="true"  />
+<img src="~/images/asplogo.png" asp-append-version="true" />
 ```
 
-如果目录 *..wwwroot/images/asplogo.png* 中存在静态文件，生成的 html 与下面类似（哈希有所不同）：
+如果目录 /wwwroot/images/ 中存在静态文件，则生成的 html 与下面类似（哈希有所不同）：
 
 ```html
-<img 
-    src="/images/asplogo.png?v=Kl_dqr9NVtnMdsM2MUg4qthUnWZm5T1fCEimBPWDNgM"/>
+<img src="/images/asplogo.png?v=Kl_dqr9NVtnMdsM2MUg4qthUnWZm5T1fCEimBPWDNgM" />
 ```
 
-分配给参数 `v` 的值是磁盘上的文件的哈希值。 如果 Web 服务器无法获取对所引用的静态文件的读取访问权限，则不会向 `src` 属性添加 `v` 参数。
+分配给参数 `v` 的值是磁盘上的 asplogo.png 文件的哈希值。 如果 Web 服务器无法获取对静态文件的读取访问权限，则不会向呈现在标记中的 `src` 属性添加 `v` 参数。
 
-- - -
+## <a name="hash-caching-behavior"></a>哈希缓存行为
 
-### <a name="src"></a>src
-
-若要激活图像标记帮助程序，`<img>` 元素需要有 src 属性。 
-
-> [!NOTE]
-> 图像标记帮助程序使用本地 Web 服务器上的 `Cache` 提供程序来存储给定文件的已计算 `Sha512`。 如果再次请求该文件，则不需要重新计算 `Sha512`。 当计算该文件的 `Sha512` 时，附加到该文件的文件观察程序会让 Cache 失效。
+图像标记帮助程序使用本地 Web 服务器上的缓存提供程序来存储给定文件的已计算 `Sha512` 哈希。 如果多次请求文件，则不重新计算哈希值。 当计算该文件的 `Sha512` 哈希时，附加到该文件的文件观察程序会让 Cache 失效。 当磁盘上的的文件发生更改时，将会计算和缓存新的哈希。
 
 ## <a name="additional-resources"></a>其他资源
 

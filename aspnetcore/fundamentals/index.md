@@ -4,22 +4,27 @@ author: rick-anderson
 description: 了解生成 ASP.NET Core 应用的基础概念。
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/20/2018
+ms.date: 10/25/2018
 uid: fundamentals/index
-ms.openlocfilehash: 83dfb5707700da01c45bae3c0c00e67ca397d402
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 56344315acc59003248ffaf1e61455b94a93a545
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325466"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090714"
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 基础知识
 
-ASP.NET Core 应用是在其 `Main` 方法中创建 Web 服务器的控制台应用：
+ASP.NET Core 应用是一个控制台应用，它在其 `Program.Main` 方法中创建 Web 服务器。 `Main` 方法是应用的托管入口点：
 
 ::: moniker range=">= aspnetcore-2.0"
 
 [!code-csharp[](index/snapshots/2.x/Program.cs)]
+
+.NET Core 主机：
+
+* 加载 [.NET Core 运行时](https://github.com/dotnet/coreclr)。
+* 使用第一个命令行参数作为包含入口点 (`Main`) 的托管二进制文件的路径，并开始执行代码。
 
 `Main` 方法调用 [WebHost.CreateDefaultBuilder](xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*)，后者按照[生成器模式](https://wikipedia.org/wiki/Builder_pattern)来创建 Web 主机。 生成器提供定义 Web 服务器（例如，<xref:Microsoft.AspNetCore.Hosting.WebHostBuilderKestrelExtensions.UseKestrel*>）和启动类 (<xref:Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions.UseStartup*>) 的方法。 在前面的例子中，自动分配了 [Kestrel](xref:fundamentals/servers/kestrel) Web 服务器。 ASP.NET Core 的 Web 主机尝试在 IIS 上运行（如果可用）。 对于其他 Web 服务器（如 [HTTP.sys](xref:fundamentals/servers/httpsys)），可通过调用相应的扩展方法来使用。 在下一节对 `UseStartup` 进行了更深入的介绍。
 
@@ -30,6 +35,11 @@ ASP.NET Core 应用是在其 `Main` 方法中创建 Web 服务器的控制台应
 ::: moniker range="< aspnetcore-2.0"
 
 [!code-csharp[](index/snapshots/1.x/Program.cs)]
+
+.NET Core 主机：
+
+* 加载 [.NET Core 运行时](https://github.com/dotnet/coreclr)。
+* 使用第一个命令行参数作为包含入口点 (`Main`) 的托管二进制文件的路径，并开始执行代码。
 
 `Main` 方法使用 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>，后者按照[生成器模式](https://wikipedia.org/wiki/Builder_pattern)来创建 Web 主机。 生成器提供定义 Web 服务器（例如，<xref:Microsoft.AspNetCore.Hosting.WebHostBuilderKestrelExtensions.UseKestrel*>）和启动类 (<xref:Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions.UseStartup*>) 的方法。 在前面的示例中，使用了 [Kestrel](xref:fundamentals/servers/kestrel) Web 服务器。 对于其他 Web 服务器（如 [WebListener](xref:fundamentals/servers/weblistener)），可通过调用相应的扩展方法来使用。 在下一节对 `UseStartup` 进行了更深入的介绍。
 
@@ -75,9 +85,11 @@ ASP.NET Core 应用是在其 `Main` 方法中创建 Web 服务器的控制台应
 
 内容根是应用所使用的任何内容的基路径，如 [Razor Pages](xref:razor-pages/index)、MVC 视图和静态资产。 默认情况下，内容根位置与用于托管应用的可执行文件的应用基路径相同。
 
-## <a name="web-root"></a>Web 根
+## <a name="web-root-webroot"></a>Web 根 (webroot)
 
-应用的 Web 根是项目中的目录，其中包含公共资源、CSS 等静态资源、JavaScript 和图形文件。
+应用的 webroot 是项目中的目录，其中包含公共资源、CSS 等静态资源、JavaScript 和图形文件。 wwwroot 默认为 webroot。
+
+对于 Razor (.cshtml) 文件，波浪号斜杠 `~/` 指向 webroot。 以 `~/` 开头的路径称为虚拟路径。
 
 ## <a name="dependency-injection-services"></a>依赖关系注入（服务）
 

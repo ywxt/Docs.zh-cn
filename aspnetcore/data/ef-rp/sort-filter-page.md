@@ -5,12 +5,12 @@ description: 本教程将使用 ASP.NET Core 和 Entity Framework Core 向页面
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 668d6e54a64022dda948170f72538f6d4cd9a49f
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 06669d69fa9fec87d262c2b5bfd8b11649259849
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011633"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348437"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 排序、筛选、分页 - 第 3 个教程（共 8 个）
 
@@ -99,7 +99,7 @@ Razor 页面使用 `NameSort` 和 `DateSort` 为列标题超链接配置相应�
 
 * 请在 Student/Index.cshtml.cs 中的 `switch (sortOrder)` 上设置断点。
 * 添加对 `NameSort` 和 `DateSort` 的监视。
-* 在 Student/Index.cshtml 中的 `@Html.DisplayNameFor(model => model.Student[0].LastName)` 上设置断点。
+* 请在 Student/Index.cshtml.cs 中的 `@Html.DisplayNameFor(model => model.Student[0].LastName)` 上设置断点。
 
 单步执行调试程序。
 
@@ -237,7 +237,7 @@ http://localhost:5000/Students?SearchString=an
 
 * 请在 Student/Index.cshtml.cs 中的 `switch (sortOrder)` 上设置断点。
 * 添加对 `NameSort`、`DateSort`、`CurrentSort` 和 `Model.Student.PageIndex` 的监视。
-* 在 Student/Index.cshtml 中的 `@Html.DisplayNameFor(model => model.Student[0].LastName)` 上设置断点。
+* 请在 Student/Index.cshtml.cs 中的 `@Html.DisplayNameFor(model => model.Student[0].LastName)` 上设置断点。
 
 单步执行调试程序。
 

@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core MVC 如何使用路由中间件来匹配传入�
 ms.author: riande
 ms.date: 09/17/2018
 uid: mvc/controllers/routing
-ms.openlocfilehash: d66c2f14adf55dd0c4a7c3adfad7e5737e4deda1
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 2f6328a5efaa96fd8e4f0cafdbde77dd63a1548f
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011648"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477639"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a>在 ASP.NET Core 中路由到控制器操作
 
@@ -383,7 +383,7 @@ Razor Pages 路由和 MVC 控制器路由共享一个实现。 可在 [ 路由�
 
 ## <a name="token-replacement-in-route-templates-controller-action-area"></a>路由模板中的标记替换（[controller]、[action]、[area]）
 
-为方便起见，属性路由支持*标记替换*，方法是将标记用大括号（`[`、`]`）括起来。 标记 `[action]`、`[area]` 和 `[controller]` 将替换为定义了路由的操作中的操作名称值、区域名称值和控制器名称值。 在此示例中，操作可以与注释中所述的 URL 路径匹配：
+为方便起见，属性路由支持*标记替换*，方法是将标记用大括号（`[`、`]`）括起来。 标记 `[action]`、`[area]` 和 `[controller]` 替换为定义了路由的操作中的操作名称值、区域名称值和控制器名称值。 在接下来的示例中，操作与注释中所述的 URL 路径匹配：
 
 [!code-csharp[](routing/sample/main/Controllers/ProductsController.cs?range=7-11,13-17,20-22)]
 
@@ -407,9 +407,56 @@ public class ProductsController : MyBaseController
 }
 ```
 
-标记替换也适用于属性路由定义的路由名称。 `[Route("[controller]/[action]", Name="[controller]_[action]")]` 将为每项操作生成一个唯一的路由名称。
+标记替换也适用于属性路由定义的路由名称。 `[Route("[controller]/[action]", Name="[controller]_[action]")]` 为每项操作生成一个唯一的路由名称。
 
 若要匹配文本标记替换分隔符 `[` 或 `]`，可通过重复该字符（`[[` 或 `]]`）对其进行转义。
+
+::: moniker range=">= aspnetcore-2.2"
+
+<a name="routing-token-replacement-transformers-ref-label"></a>
+
+### <a name="use-a-parameter-transformer-to-customize-token-replacement"></a>使用参数转换程序自定义标记替换
+
+使用参数转换程序可以自定义标记替换。 参数转换程序实现 `IOutboundParameterTransformer` 并转换参数值。 例如，一个自定义 `SlugifyParameterTransformer` 参数转换程序可将 `SubscriptionManagement` 路由值更改为 `subscription-management`。
+
+`RouteTokenTransformerConvention` 是应用程序模型约定，可以：
+
+* 将参数转换程序应用到应用程序中的所有属性路由。
+* 在替换属性路由标记值时对其进行自定义。
+
+```csharp
+public class SubscriptionManagementController : Controller
+{
+    [HttpGet("[controller]/[action]")] // Matches '/subscription-management/list-all'
+    public IActionResult ListAll() { ... }
+}
+```
+
+`RouteTokenTransformerConvention` 在 `ConfigureServices` 中注册为选项。
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddMvc(options =>
+    {
+        options.Conventions.Add(new RouteTokenTransformerConvention(
+                                     new SlugifyParameterTransformer()));
+    });
+}
+
+public class SlugifyParameterTransformer : IOutboundParameterTransformer
+{
+    public string TransformOutbound(object value)
+    {
+        if (value == null) { return null; }
+
+        // Slugify value
+        return Regex.Replace(value.ToString(), "([a-z])([A-Z])", "$1-$2").ToLower();
+    }
+}
+```
+
+::: moniker-end
 
 <a name="routing-multiple-routes-ref-label"></a>
 
@@ -510,6 +557,10 @@ MVC 应用程序可以混合使用传统路由与属性路由。 通常将传统
 
 > [!NOTE]
 > 这两种路由系统的区别在于 URL 与路由模板匹配后所应用的过程。 在传统路由中，将使用匹配项中的路由值，从包含所有传统路由操作的查找表中选择操作和控制器。 在属性路由中，每个模板都与某项操作关联，无需进行进一步的查找。
+
+## <a name="complex-segments"></a>复杂段
+
+复杂段（例如，`[Route("/dog{token}cat")]`）通过非贪婪的方式从右到左匹配文字进行处理。 有关说明，请参阅[源代码](https://github.com/aspnet/Routing/blob/9cea167cfac36cf034dbb780e3f783114ef94780/src/Microsoft.AspNetCore.Routing/Patterns/RoutePatternMatcher.cs#L296)。 有关详细信息，请参阅[此问题](https://github.com/aspnet/Docs/issues/8197)。
 
 <a name="routing-url-gen-ref-label"></a>
 

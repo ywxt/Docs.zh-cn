@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/01/2018
 uid: fundamentals/routing
-ms.openlocfilehash: d9ba96c7b2abd35b1b13c84814bf3f776e8d8731
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: 500cefbc7caee2054b4afda7c1277685862f5ad4
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47861052"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348554"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core 中的路由
 
@@ -332,14 +332,14 @@ routes.MapRoute(
 
 | 约束 | 示例 | 匹配项示例 | 说明 |
 | ---------- | ------- | --------------- | ----- |
-| `int` | `{id:int}` | `123456789`, `-123456789`  | 匹配任何整数 |
-| `bool` | `{active:bool}` | `true`, `FALSE` | 匹配 `true`或 `false`（区分大小写） |
-| `datetime` | `{dob:datetime}` | `2016-12-31`, `2016-12-31 7:32pm`  | 匹配有效的 `DateTime` 值（位于固定区域性中 - 查看警告） |
-| `decimal` | `{price:decimal}` | `49.99`, `-1,000.01` | 匹配有效的 `decimal` 值（位于固定区域性中 - 查看警告） |
-| `double` | `{weight:double}` | `1.234`, `-1,001.01e8` | 匹配有效的 `double` 值（位于固定区域性中 - 查看警告） |
-| `float` | `{weight:float}` | `1.234`, `-1,001.01e8` | 匹配有效的 `float` 值（位于固定区域性中 - 查看警告） |
-| `guid` | `{id:guid}` | `CD2C1638-1638-72D5-1638-DEADBEEF1638`, `{CD2C1638-1638-72D5-1638-DEADBEEF1638}` | 匹配有效的 `Guid` 值 |
-| `long` | `{ticks:long}` | `123456789`, `-123456789` | 匹配有效的 `long` 值 |
+| `int` | `{id:int}` | `123456789`， `-123456789`  | 匹配任何整数 |
+| `bool` | `{active:bool}` | `true`， `FALSE` | 匹配 `true`或 `false`（区分大小写） |
+| `datetime` | `{dob:datetime}` | `2016-12-31`， `2016-12-31 7:32pm`  | 匹配有效的 `DateTime` 值（位于固定区域性中 - 查看警告） |
+| `decimal` | `{price:decimal}` | `49.99`， `-1,000.01` | 匹配有效的 `decimal` 值（位于固定区域性中 - 查看警告） |
+| `double` | `{weight:double}` | `1.234`， `-1,001.01e8` | 匹配有效的 `double` 值（位于固定区域性中 - 查看警告） |
+| `float` | `{weight:float}` | `1.234`， `-1,001.01e8` | 匹配有效的 `float` 值（位于固定区域性中 - 查看警告） |
+| `guid` | `{id:guid}` | `CD2C1638-1638-72D5-1638-DEADBEEF1638`， `{CD2C1638-1638-72D5-1638-DEADBEEF1638}` | 匹配有效的 `Guid` 值 |
+| `long` | `{ticks:long}` | `123456789`， `-123456789` | 匹配有效的 `long` 值 |
 | `minlength(value)` | `{username:minlength(4)}` | `Rick` | 字符串必须至少为 4 个字符 |
 | `maxlength(value)` | `{filename:maxlength(8)}` | `Richard` | 字符串不得超过 8 个字符 |
 | `length(length)` | `{filename:length(12)}` | `somefile.txt` | 字符串必须正好为 12 个字符 |
@@ -391,7 +391,15 @@ ASP.NET Core 框架将向正则表达式构造函数添加 `RegexOptions.IgnoreC
 
 ## <a name="parameter-transformer-reference"></a>参数转换器参考
 
-参数转换器在为 `Route` 生成链接时执行。 参数转换器获取参数的路由值并将其转换为新的字符串值。 转换后的值用于生成的链接。 例如，路由模式 `blog\{article:slugify}`（具有 `Url.Action(new { article = "MyTestArticle" })`）中的自定义 `slugify` 参数转换器生成 `blog\my-test-article`。 参数转换器实现 `Microsoft.AspNetCore.Routing.IOutboundParameterTransformer` 并使用 <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap> 进行配置。
+参数转换器：
+
+* 在为 `Route` 生成链接时执行。
+* 实现 `Microsoft.AspNetCore.Routing.IOutboundParameterTransformer`。
+* 使用 <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap> 进行配置。
+* 获取参数的路由值并将其转换为新的字符串值。
+* 转换后的值用于生成的链接。
+
+例如，路由模式 `blog\{article:slugify}`（具有 `Url.Action(new { article = "MyTestArticle" })`）中的自定义 `slugify` 参数转换器生成 `blog\my-test-article`。
 
 框架还使用参数转换器来转换端点解析的 URI。 例如，ASP.NET Core MVC 使用参数转换器来转换用于匹配 `area``controller``action` 和 `page` 的路由值。
 
@@ -403,7 +411,10 @@ routes.MapRoute(
 
 使用上述路由，操作 `SubscriptionManagementController.GetAll()` 与 URI `/subscription-management/get-all` 匹配。 参数转换器不会更改用于生成链接的路由值。 `Url.Action("GetAll", "SubscriptionManagement")` 输出 `/subscription-management/get-all`。
 
-ASP.NET Core MVC 还附带 `Microsoft.AspNetCore.Mvc.ApplicationModels.RouteTokenTransformerConvention` API 约定。 该约定将指定的参数转换器应用于应用程序中的所有属性路由令牌。
+对于结合使用参数转换器和所生成的路由，ASP.NET Core 提供了 API 约定：
+
+* ASP.NET Core MVC 还具有 `Microsoft.AspNetCore.Mvc.ApplicationModels.RouteTokenTransformerConvention` API 约定。 该约定将指定的参数转换器应用于应用中的所有属性路由。 在替换属性路径令牌时，参数转换器将转换这些令牌。 有关详细信息，请参阅[使用参数转换器自定义标记替换](/aspnet/core/mvc/controllers/routing#use-a-parameter-transformer-to-customize-token-replacement)。
+* Razor 页面具有 `Microsoft.AspNetCore.Mvc.ApplicationModels.PageRouteTransformerConvention` API 约定。 此约定将指定的参数转换器应用于所有自动发现的 Razor 页面。 参数转换器将转换 Razor 页面路由的文件夹和文件名段。 有关详细信息，请参阅[使用参数转换器自定义页面路由](/aspnet/core/razor-pages/razor-pages-conventions#use-a-parameter-transformer-to-customize-page-routes)。
 
 ::: moniker-end
 

@@ -7,16 +7,18 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 07/25/2018
 uid: mvc/views/tag-helpers/builtin-th/partial-tag-helper
-ms.openlocfilehash: cb63357b1859c3709b2eae9f4e380c4a74e5e448
-ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
+ms.openlocfilehash: 737568330d2dc33868564ea541383e4ddabf8e74
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39254748"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325427"
 ---
 # <a name="partial-tag-helper-in-aspnet-core"></a>ASP.NET Core 中的部分标记帮助程序
 
 作者：[Scott Addie](https://github.com/scottaddie)
+
+有关标记帮助程序的概述，请参阅 <xref:mvc/views/tag-helpers/intro>。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 

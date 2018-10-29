@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/23/2018
 uid: mvc/controllers/testing
-ms.openlocfilehash: f036181f43d12ece89243fa3b0b0070ea84f8bc7
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 582a5ba461ee2df73b99e4f499e8152f7c6cb7cf
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010983"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477158"
 ---
 # <a name="test-controller-logic-in-aspnet-core"></a>ASP.NET Core 中的测试控制器逻辑
 
@@ -67,7 +67,7 @@ ms.locfileid: "46010983"
 
 第二个测试验证 `ModelState` 有效时的情况：
 
-* 将添加新的 `BrainstormSession`（通过[存储库](xref:fundamentals/repository-pattern)）。
+* 已通过存储库添加新的 `BrainstormSession`。
 * 该方法将返回带有所需属性的 `RedirectToActionResult`。
 
 通常会忽略未调用的模拟调用，但在设置调用末尾调用 `Verifiable` 就可以在测试中进行 mock 验证。 这通过对 `mockRepo.Verify` 的调用来完成，进行这种调用时，如果未调用所需方法，则测试将失败。
@@ -185,5 +185,4 @@ ms.locfileid: "46010983"
 * <xref:test/index>
 * <xref:test/integration-tests>
 * [使用 Visual Studio 创建和运行单位测试](/visualstudio/test/unit-test-your-code)。
-* <xref:fundamentals/repository-pattern>
 * [Explicit Dependencies Principle](https://deviq.com/explicit-dependencies-principle/)（显式依赖关系原则）

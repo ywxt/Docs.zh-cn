@@ -4,22 +4,24 @@ author: pkellner
 description: 了解 ASP.NET Core 定位点标记帮助程序属性以及每个属性在扩展 HTML 定位点标记的行为中所起的作用。
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 01/31/2018
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 6bdf71eaf38f134cb15b5950d2cae6ab67f861a4
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 13508729c1e3b64a8b0e6965da57880738ab85c3
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273879"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325544"
 ---
 # <a name="anchor-tag-helper-in-aspnet-core"></a>ASP.NET Core 中的定位点标记帮助程序
 
 作者：[Peter Kellner](http://peterkellner.net) 和 [Scott Addie](https://github.com/scottaddie)
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
-
 [定位点标记帮助程序](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper)可通过添加新属性来增强标准的 HTML 定位点 (`<a ... ></a>`) 标记。 按照约定，属性名称将使用前缀 `asp-`。 `asp-` 属性的值决定呈现的定位点元素的 `href` 属性值。
+
+有关标记帮助程序的概述，请参阅 <xref:mvc/views/tag-helpers/intro>。
+
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
 
 本文档中的示例均使用 SpeakerController：
 
@@ -171,7 +173,7 @@ MVC 视图使用操作提供的模型，如下所示：
 
 [asp-area](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.area) 属性可设置用来设置相应路由的区域名称。 以下示例展示了区域属性如何导致重新映射路由。 如果将 `asp-area` 设置为 “Blogs”，则会为此定位点标记的关联控制器和视图的路由添加目录 Areas/Blogs 作为前缀。
 
-* **<项目名称\>**
+* **{项目名称}**
   * **wwwroot**
   * **区域**
     * **博客**
@@ -181,7 +183,7 @@ MVC 视图使用操作提供的模型，如下所示：
         * **主文件夹**
           * *AboutBlog.cshtml*
           * Index.cshtml
-        * *_ViewStart.cshtml*
+        * ViewStart.cshtml*\_*
   * **控制器**
 
 鉴于上述目录层次结构，引用 AboutBlog.cshtml 文件的标记是：
@@ -195,7 +197,9 @@ MVC 视图使用操作提供的模型，如下所示：
 ```
 
 > [!TIP]
-> 若要使区域在 MVC 应用中正常工作，路由模板必须包含对该区域（如果存在）的引用。 该模板由 Startup.Configure 中 `routes.MapRoute` 方法调用的第二个参数表示：[!code-csharp[](samples/TagHelpersBuiltIn/Startup.cs?name=snippet_UseMvc&highlight=5)]
+> 若要使区域在 MVC 应用中正常工作，路由模板必须包含对该区域（如果存在）的引用。 该模板由 Startup.Configure 中的 `routes.MapRoute` 方法调用的第二个参数表示：
+>
+> [!code-csharp[](samples/TagHelpersBuiltIn/Startup.cs?name=snippet_UseMvc&highlight=5)]
 
 ## <a name="asp-protocol"></a>asp-protocol
 
@@ -267,5 +271,5 @@ MVC 视图使用操作提供的模型，如下所示：
 
 ## <a name="additional-resources"></a>其他资源
 
-* [区域](xref:mvc/controllers/areas)
-* [Razor 页面简介](xref:razor-pages/index)
+* <xref:mvc/controllers/areas>
+* <xref:razor-pages/index>
