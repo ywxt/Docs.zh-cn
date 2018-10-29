@@ -3,14 +3,15 @@ title: ASP.NET Core MVC 和 EF Core - 更新相关数据 - 第 7 个教程（共
 author: rick-anderson
 description: 本教程将通过更新外键字段和导航属性来更新相关数据。
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: ef8cb3916e5d1542e4d36cad694351462b94ed32
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 37985c945f2e4b15cfcefb0c126c3209e0bdeac4
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38126721"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090727"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---update-related-data---7-of-10"></a>ASP.NET Core MVC 和 EF Core - 更新相关数据 - 第 7 个教程（共 10 个）
 
@@ -290,7 +291,7 @@ public ICollection<CourseAssignment> CourseAssignments
 
 ## <a name="handling-transactions"></a>处理事务
 
-如 [CRUD 教程](crud.md)中所述，Entity Framework 隐式实现事务。 如果需要更多控制操作（例如，如果想要在事务中包含在 Entity Framework 外部完成的操作），请参阅[事务](https://docs.microsoft.com/ef/core/saving/transactions)。
+如 [CRUD 教程](crud.md)中所述，Entity Framework 隐式实现事务。 如果需要更多控制操作（例如，如果想要在事务中包含在 Entity Framework 外部完成的操作），请参阅[事务](/ef/core/saving/transactions)。
 
 ## <a name="summary"></a>总结
 

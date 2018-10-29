@@ -8,12 +8,12 @@ ms.date: 01/30/2013
 ms.assetid: f9c07af0-4b20-4b08-af8f-47fc3df169a2
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
-ms.openlocfilehash: 328046363666944f121dedc1883bbe83f5b079d2
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 60bc8bf95cace722244ffc87ff4c00126a0ed2a0
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830492"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207441"
 ---
 <a name="single-page-application-knockoutjs-template"></a>单页面应用程序： KnockoutJS 模板
 ====================
@@ -163,7 +163,7 @@ MVC 控制器也位于解决方案的 Controllers 文件夹。 `HomeController` 
 
 [!code-cshtml[Main](knockoutjs-template/samples/sample4.cshtml)]
 
-当用户登录时，他们将看到的主要用户界面。 否则，他们将看到登录面板。 请注意此条件呈现发生在服务器端。 永远不会尝试隐藏客户端上的敏感内容和发送 HTTP 响应中的 #8212anything 可见的人正在监视的原始 HTTP 消息。
+当用户登录时，他们将看到的主要用户界面。 否则，他们将看到登录面板。 请注意此条件呈现发生在服务器端。 永远不会尝试隐藏客户端上的敏感内容&#8212;HTTP 响应中发送的任何内容都可以看到正在监视的原始 HTTP 消息的任何人。
 
 ## <a name="client-side-javascript-and-knockoutjs"></a>客户端的 JavaScript 和 Knockout.js
 

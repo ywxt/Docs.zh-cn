@@ -3,14 +3,15 @@ title: ASP.NET Core MVC 和 EF Core - 继承 - 第 9 个教程（共 10 个）
 author: rick-anderson
 description: 本教程将演示如何使用 ASP.NET Core 应用程序中的 Entity Framework Core 在数据模型中实现继承。
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: a71954297f44f936893a7f1e9d3b0685f81378b9
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 60417040dd296311e1aecff8f224aadf8da82779
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38126699"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090753"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---inheritance---9-of-10"></a>ASP.NET Core MVC 和 EF Core - 继承 - 第 9 个教程（共 10 个）
 
@@ -142,7 +143,7 @@ dotnet ef database update
 
 ## <a name="summary"></a>总结
 
-你已经为 `Person`、`Student` 和 `Instructor` 类实现了每个层次结构一张表继承。 若要详细了解 Entity Framework Core 中的继承，请参阅[继承](https://docs.microsoft.com/ef/core/modeling/inheritance)。 下一个教程将介绍如何处理各种相对高级的 Entity Framework 方案。
+你已经为 `Person`、`Student` 和 `Instructor` 类实现了每个层次结构一张表继承。 若要详细了解 Entity Framework Core 中的继承，请参阅[继承](/ef/core/modeling/inheritance)。 下一个教程将介绍如何处理各种相对高级的 Entity Framework 方案。
 
 ::: moniker-end
 

@@ -3,14 +3,15 @@ title: ASP.NET Core 中的文件上传
 author: ardalis
 description: 如何在 ASP.NET Core MVC 中使用模型绑定和流式处理上传文件。
 ms.author: riande
-ms.date: 07/05/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: mvc/models/file-uploads
-ms.openlocfilehash: 771e22ca01c67f2b6bbee780324d9d08759b3279
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 913fc9aa473950b7117fb9da5c8913e658c43a9d
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38201727"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090262"
 ---
 # <a name="file-uploads-in-aspnet-core"></a>ASP.NET Core 中的文件上传
 
@@ -70,7 +71,7 @@ public interface IFormFile
 
 [!code-csharp[](file-uploads/sample/FileUploadSample/Controllers/UploadFilesController.cs?name=snippet1)]
 
-使用 `IFormFile` 技术上传的文件在处理之前会缓存在内存中或 Web 服务器的磁盘中。 在操作方法中，`IFormFile` 内容可作为流访问。 除了本地文件系统之外，还可将文件流式传输到 [Azure Blob 存储](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)或[实体框架](https://docs.microsoft.com/ef/core/index)。
+使用 `IFormFile` 技术上传的文件在处理之前会缓存在内存中或 Web 服务器的磁盘中。 在操作方法中，`IFormFile` 内容可作为流访问。 除了本地文件系统之外，还可将文件流式传输到 [Azure Blob 存储](/azure/visual-studio/vs-storage-aspnet5-getting-started-blobs)或[实体框架](/ef/core/index)。
 
 要使用实体框架将二进制文件数据存储在数据库中，请在实体上定义类型为 `byte[]` 属性：
 
@@ -117,7 +118,7 @@ public async Task<IActionResult> Register(RegisterViewModel model)
             user.AvatarImage = memoryStream.ToArray();
         }
     // additional logic omitted
-    
+
     // Don't rely on or trust the model.AvatarImage.FileName property 
     // without validation.
 }

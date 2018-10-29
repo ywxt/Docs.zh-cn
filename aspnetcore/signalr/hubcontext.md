@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/13/2018
 uid: signalr/hubcontext
-ms.openlocfilehash: bb07a3b5c6e153092635fa4e1283619777865a53
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 8be888e1f7b16d65ebbaa24b618e84fca029d80b
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325349"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207948"
 ---
 # <a name="send-messages-from-outside-a-hub"></a>从向外发送邮件中心
 
@@ -20,7 +20,7 @@ ms.locfileid: "49325349"
 
 SignalR 中心是用于将消息发送到客户端连接到 SignalR 服务器的核心抽象。 还有可能将消息从你的应用使用中的其他位置发送`IHubContext`服务。 此文章介绍了如何访问 SignalR`IHubContext`将通知发送到外部的客户端从一个中心。
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/hubcontext/sample/) [（如何下载）](xref:tutorials/index#how-to-download-a-sample)
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/hubcontext/sample/) [（如何下载）](xref:index#how-to-download-a-sample)
 
 ## <a name="get-an-instance-of-ihubcontext"></a>获取 IHubContext 的实例
 

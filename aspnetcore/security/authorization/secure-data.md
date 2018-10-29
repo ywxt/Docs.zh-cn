@@ -5,12 +5,12 @@ description: 了解如何使用受保护的授权的用户数据创建 Razor 页
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: 71b7855958b530b8bac32843a8d1e7db0113ffd9
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 7d9521686c67ab9120238886d50af081ce4c6907
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912626"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207857"
 ---
 ::: moniker range="<= aspnetcore-1.1"
 
@@ -88,11 +88,11 @@ ms.locfileid: "48912626"
 
 ## <a name="the-starter-and-completed-app"></a>Starter 和已完成应用程序
 
-[下载](xref:tutorials/index#how-to-download-a-sample)[完成](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2)应用。 [测试](#test-the-completed-app)已完成的应用，使你熟悉其安全功能。
+[下载](xref:index#how-to-download-a-sample)[完成](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2)应用。 [测试](#test-the-completed-app)已完成的应用，使你熟悉其安全功能。
 
 ### <a name="the-starter-app"></a>入门级应用
 
-[下载](xref:tutorials/index#how-to-download-a-sample)[初学者](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/starter2)应用。
+[下载](xref:index#how-to-download-a-sample)[初学者](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/starter2)应用。
 
 运行应用，点击**ContactManager**链接，并验证是否可以创建、 编辑和删除联系人。
 

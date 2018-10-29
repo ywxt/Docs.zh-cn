@@ -4,14 +4,14 @@ author: guardrex
 description: 了解如何诊断 ASP.NET Core 应用的 Internet Information Services (IIS) 部署的问题。
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/07/2018
+ms.date: 10/24/2018
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: f22914c9b0d6d1902dd37c9b21b80a18894c97e7
-ms.sourcegitcommit: d1c4580f56656b503cf528ec9f5ba570d790b57d
+ms.openlocfilehash: 6a53c1ba5badd741afc3321ce21b047965c611db
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "41751627"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090597"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>对 IIS 上的 ASP.NET Core 进行故障排除
 
@@ -23,10 +23,10 @@ ms.locfileid: "41751627"
 
 其他故障排除主题：
 
-[对 Azure 应用服务上的 ASP.NET Core 进行故障排除](xref:host-and-deploy/azure-apps/troubleshoot)  
+<xref:host-and-deploy/azure-apps/troubleshoot>  
 虽然应用服务使用 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)和 IIS 托管应用，但若要获取特定于应用服务的说明，请参阅专用主题。
 
-[处理错误](xref:fundamentals/error-handling)  
+<xref:fundamentals/error-handling>  
 了解如何在本地系统上处理 ASP.NET Core 应用在开发期间的错误。
 
 [了解如何使用 Visual Studio 进行调试](/visualstudio/debugger/getting-started-with-the-debugger)  
@@ -133,7 +133,7 @@ ASP.NET Core 模块的默认“startupTimeLimit”配置为 120 秒。 保留默
 
 ## <a name="common-startup-errors"></a>常见启动错误 
 
-请参阅 [ASP.NET Core 常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)。 参考主题介绍了阻止应用启动的大部分常见问题。
+请参阅 <xref:host-and-deploy/azure-iis-errors-reference>。 参考主题介绍了阻止应用启动的大部分常见问题。
 
 ## <a name="slow-or-hanging-app"></a>应用缓慢或挂起
 
@@ -167,7 +167,7 @@ ASP.NET Core 模块的默认“startupTimeLimit”配置为 120 秒。 保留默
 
 ## <a name="additional-resources"></a>其他资源
 
-* [ASP.NET Core 中的错误处理简介](xref:fundamentals/error-handling)
-* [Azure 应用服务和 IIS 上 ASP.NET Core 的常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)
-* [ASP.NET Core 模块配置参考](xref:host-and-deploy/aspnet-core-module)
-* [对 Azure 应用服务上的 ASP.NET Core 进行故障排除](xref:host-and-deploy/azure-apps/troubleshoot)
+* <xref:fundamentals/error-handling>
+* <xref:host-and-deploy/azure-iis-errors-reference>
+* <xref:host-and-deploy/aspnet-core-module>
+* <xref:host-and-deploy/azure-apps/troubleshoot>

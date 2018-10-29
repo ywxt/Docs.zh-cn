@@ -8,12 +8,12 @@ ms.date: 02/26/2014
 ms.assetid: 1e4c2eb4-b6cf-42ff-8a65-4d71ddca0394
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations
 msc.type: authoredcontent
-ms.openlocfilehash: fc1c6b938c4e4be379edf1a495ca47f5f5f2eb4f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: f78b5cf36789032f90d3d073698f7a439507277f
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834579"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206856"
 ---
 <a name="supporting-entity-relations-in-odata-v3-with-web-api-2"></a>支持使用 Web API 2 OData v3 中的实体关系
 ====================
@@ -65,7 +65,7 @@ ms.locfileid: "41834579"
 
 [!code-csharp[Main](working-with-entity-relations/samples/sample6.cs)]
 
-*密钥*参数是该产品的关键。 该方法在这种情况下，返回相关的实体 & #8212`Supplier`实例。 方法名称和参数名称都很重要。 一般情况下，如果导航属性名为"X"，您需要添加一个名为"GetX"方法。 方法必须采用名为的参数"*密钥*"父项的键的数据类型匹配的。
+*密钥*参数是该产品的关键。 该方法将返回相关的实体&#8212;在这种情况下，`Supplier`实例。 方法名称和参数名称都很重要。 一般情况下，如果导航属性名为"X"，您需要添加一个名为"GetX"方法。 方法必须采用名为的参数"*密钥*"父项的键的数据类型匹配的。
 
 还有一点需要包括 **[FromOdataUri]** 属性中*密钥*参数。 此属性告知 Web API 使用 OData 语法规则分析请求 URI 中的键时。
 

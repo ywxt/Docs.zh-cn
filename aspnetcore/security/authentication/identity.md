@@ -5,12 +5,12 @@ description: 将标识与 ASP.NET Core 应用配合使用。 了解如何设置�
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: e0494afd807080f4cd71127abce7bdb93f952dca
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 0cea81b46a8f659671c0ae1768884194ad8c1162
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325505"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207792"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core 上的标识简介
 
@@ -20,7 +20,7 @@ ASP.NET Core 标识是一个成员身份系统，将登录功能添加到 ASP.NE
 
 可以使用 SQL Server 数据库来存储用户名、 密码和配置文件数据配置标识。 或者，另一个的持久存储区可用，例如，Azure 表存储。
 
-[查看或下载示例代码。](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [（如何下载）](xref:tutorials/index#how-to-download-a-sample)
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/)([如何下载)](xref:index#how-to-download-a-sample))。
 
 在本主题中，将了解如何使用标识来注册、 登录和注销用户。 有关创建使用标识的应用程序的更多详细说明，请参阅本文末尾的后续步骤部分。
 

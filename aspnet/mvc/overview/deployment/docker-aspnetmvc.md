@@ -7,12 +7,12 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 02/01/2017
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
-ms.openlocfilehash: b3eb643daf230336ce5def96007b6096f86390e6
-ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
+ms.openlocfilehash: 7b34187747d3081998b8b60a72adae78cafe2c3e
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50148936"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207961"
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>将 ASP.NET MVC 应用程序迁移到 Windows 容器
 
@@ -71,7 +71,7 @@ ms.locfileid: "50148936"
 在 Dockerfile 中定义 Docker 映像。 Dockerfile 包含有关基本映像、附加组件、要运行的应用程序和其他配置映像的说明。  Dockerfile 是用于创建该映像的 `docker build` 命令的输入。
 
 根据位于 [Docker 中心](https://hub.docker.com/r/microsoft/aspnet/) 的 `microsoft/aspnet` 映像生成映像。
-基本映像 `microsoft/aspnet` 为 Windows Server 映像。 它包含 Windows Server Core、 IIS 和 ASP.NET 4.6.2。 在容器中运行此映像时，它会自动启动 IIS 和已安装的网站。
+基本映像 `microsoft/aspnet` 为 Windows Server 映像。 它包含 Windows Server Core、 IIS 和 ASP.NET 4.7.2。 在容器中运行此映像时，它会自动启动 IIS 和已安装的网站。
 
 创建映像的 Dockerfile 如下所示：
 
@@ -122,18 +122,7 @@ docker run -d --name randomanswers mvcrandomanswers
 
 ## <a name="verify-in-the-browser"></a>在浏览器中验证
 
-> [!NOTE]
-> 不能与当前的 Windows 容器版本中，浏览到`http://localhost`。
-> 这是 WinNAT 中的已知行为，今后将予以解决。 问题得到解决前，需要使用容器的 IP 地址。
-
-在容器启动后，查找其 IP 地址，以便可以从浏览器连接正在运行的容器：
-
-```console
-docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" randomanswers
-172.31.194.61
-```
-
-连接到正在运行的容器使用的 IPv4 地址，`http://172.31.194.61`中所示的示例。 在浏览器中键入该 URL，应该可看到正在运行的站点。
+容器启动后，连接到正在运行的容器使用`http://localhost`中所示的示例。 在浏览器中键入该 URL，应该可看到正在运行的站点。
 
 > [!NOTE]
 > 某 VPN 或代理软件可能会阻止你导航到站点。
@@ -145,10 +134,9 @@ GitHub 上的示例目录包含为你执行这些命令的 [PowerShell 脚本](h
 ./run.ps1
 ```
 
-上述命令将生成映像，在计算机上显示映像列表，启动容器，然后显示容器的 IP 地址。
+上面的命令生成映像、 映像的列表显示在计算机上并启动的容器。
 
-若要停止容器，请发出 `docker
-stop` 命令：
+若要停止容器，请发出 `docker stop` 命令：
 
 ```console
 docker stop randomanswers

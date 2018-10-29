@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/10/2018
 uid: signalr/dotnet-client
-ms.openlocfilehash: ef84ede2ed45ddc3b64d4ce8f5bd0018a681faf6
-ms.sourcegitcommit: 4db337bd47d70c06fff91000c58bc048a491ccec
+ms.openlocfilehash: 488d2ec31ce71534eeff4b9428262cc9ca00d992
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44749316"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50205947"
 ---
 # <a name="aspnet-core-signalr-net-client"></a>ASP.NET Core SignalR.NET 客户端
 
@@ -21,7 +21,7 @@ ASP.NET Core SignalR.NET 客户端库可让你与 SignalR 集线器从.NET 应�
 > [!NOTE]
 > Xamarin 有特殊要求 Visual Studio 版本。 有关详细信息，请参阅[在 Xamarin 中的 SignalR 客户端 2.1.1](https://github.com/aspnet/Announcements/issues/305)。
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/dotnet-client/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/dotnet-client/sample)（[如何下载](xref:index#how-to-download-a-sample)）
 
 这篇文章中的代码示例是使用 ASP.NET Core SignalR.NET 客户端的 WPF 应用。
 

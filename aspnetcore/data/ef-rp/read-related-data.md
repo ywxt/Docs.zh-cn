@@ -3,14 +3,15 @@ title: ASP.NET Core 中的 Razor 页面和 EF Core - 读取相关数据 - 第 6 
 author: rick-anderson
 description: 在本教程中，将读取并显示相关数据 - 即 Entity Framework 加载到导航属性中的数据。
 ms.author: riande
-ms.date: 11/05/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: e8b59c19eac2c2adc1f13cf1e44f750576686c87
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: cf8733e1e806c4be0c4b217fc45c7a338a03a3ce
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348489"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207551"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 读取相关数据 - 第 6 个教程（共 8 个）
 
@@ -20,7 +21,7 @@ ms.locfileid: "49348489"
 
 在本教程中，将读取和显示相关数据。 相关数据为 EF Core 加载到导航属性中的数据。
 
-如果遇到无法解决的问题，请[下载或查看已完成的应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples)。 [下载说明](xref:tutorials/index#how-to-download-a-sample)。
+如果遇到无法解决的问题，请[下载或查看已完成的应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples)。 [下载说明](xref:index#how-to-download-a-sample)。
 
 下图显示了本教程中已完成的页面：
 
@@ -32,7 +33,7 @@ ms.locfileid: "49348489"
 
 EF Core 可采用多种方式将相关数据加载到实体的导航属性中：
 
-* [预先加载](https://docs.microsoft.com/ef/core/querying/related-data#eager-loading)。 预先加载是指对查询某类型的实体时一并加载相关实体。 读取实体时，会检索其相关数据。 此时通常会出现单一联接查询，检索所有必需数据。 EF Core 将针对预先加载的某些类型发出多个查询。 与存在单一查询的 EF6 中的某些查询相比，发出多个查询可能更有效。 预先加载通过 `Include` 和 `ThenInclude` 方法进行指定。
+* [预先加载](/ef/core/querying/related-data#eager-loading)。 预先加载是指对查询某类型的实体时一并加载相关实体。 读取实体时，会检索其相关数据。 此时通常会出现单一联接查询，检索所有必需数据。 EF Core 将针对预先加载的某些类型发出多个查询。 与存在单一查询的 EF6 中的某些查询相比，发出多个查询可能更有效。 预先加载通过 `Include` 和 `ThenInclude` 方法进行指定。
 
   ![预先加载示例](read-related-data/_static/eager-loading.png)
  
@@ -47,11 +48,11 @@ EF Core 可采用多种方式将相关数据加载到实体的导航属性中：
 
   请注意：EF Core 会将导航属性自动“修复”为之前加载到上下文实例中的任何其他实体。 即使导航属性的数据非显式包含在内，但如果先前加载了部分或所有相关实体，则仍可能填充该属性。
 
-* [显式加载](https://docs.microsoft.com/ef/core/querying/related-data#explicit-loading)。 首次读取实体时，不检索相关数据。 必须编写代码才能在需要时检索相关数据。 使用单独查询进行显式加载时，会向数据库发送多个查询。 该代码通过显式加载指定要加载的导航属性。 使用 `Load` 方法进行显式加载。 例如:
+* [显式加载](/ef/core/querying/related-data#explicit-loading)。 首次读取实体时，不检索相关数据。 必须编写代码才能在需要时检索相关数据。 使用单独查询进行显式加载时，会向数据库发送多个查询。 该代码通过显式加载指定要加载的导航属性。 使用 `Load` 方法进行显式加载。 例如:
 
   ![显式加载示例](read-related-data/_static/explicit-loading.png)
 
-* [延迟加载](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading)。 [延迟加载已添加到版本 2.1 中的 EF Core](/ef/core/querying/related-data#lazy-loading)。 首次读取实体时，不检索相关数据。 首次访问导航属性时，会自动检索该导航属性所需的数据。 首次访问导航属性时，都会向数据库发送一个查询。
+* [延迟加载](/ef/core/querying/related-data#lazy-loading)。 [延迟加载已添加到版本 2.1 中的 EF Core](/ef/core/querying/related-data#lazy-loading)。 首次读取实体时，不检索相关数据。 首次访问导航属性时，会自动检索该导航属性所需的数据。 首次访问导航属性时，都会向数据库发送一个查询。
 
 * `Select` 运算符仅加载所需的相关数据。
 

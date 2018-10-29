@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/28/2018
 uid: security/authentication/social/additional-claims
-ms.openlocfilehash: 6386dd5f0bd901be01cf56081a6b9ca7f408f9f9
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: dc8b3e32141466a12e4eff0c86d2d4bed689afe5
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336168"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206352"
 ---
 # <a name="persist-additional-claims-and-tokens-from-external-providers-in-aspnet-core"></a>保留其他声明和 ASP.NET Core 中的外部提供程序颁发令牌
 
@@ -20,11 +20,11 @@ ms.locfileid: "43336168"
 
 ASP.NET Core 应用可以建立其他声明和来自外部身份验证提供程序，如 Facebook、 Google、 Microsoft 和 Twitter 令牌。 每个提供程序会显示不同用户的信息在其平台上，但接收并将用户数据转换成其他声明的模式是相同的。
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/social/additional-claims/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/social/additional-claims/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="prerequisite"></a>必备组件
 
-决定哪些外部身份验证提供程序支持应用程序中。 对于每个提供程序，注册应用程序和获取客户端 ID 和客户端机密。 有关详细信息，请参阅<xref:security/authentication/social/index>。 [示例应用](#sample-app-instructions)使用[Google 身份验证提供程序](xref:security/authentication/google-logins)。
+决定哪些外部身份验证提供程序支持应用程序中。 对于每个提供程序，注册应用程序和获取客户端 ID 和客户端机密。 有关详细信息，请参阅 <xref:security/authentication/social/index> 。 [示例应用](#sample-app-instructions)使用[Google 身份验证提供程序](xref:security/authentication/google-logins)。
 
 ## <a name="authentication-provider-configuration"></a>身份验证提供程序配置
 
@@ -108,7 +108,7 @@ OAuth 身份验证提供程序使用客户端 ID 和客户端机密的应用与�
 
 若要使用示例应用程序：
 
-1. 注册应用程序和获取有效的客户端 ID 和 Google 身份验证的客户端机密。 有关详细信息，请参阅<xref:security/authentication/google-logins>。
+1. 注册应用程序和获取有效的客户端 ID 和 Google 身份验证的客户端机密。 有关详细信息，请参阅 <xref:security/authentication/google-logins> 。
 1. 提供的客户端 ID 和客户端密钥对中的应用程序<xref:Microsoft.AspNetCore.Authentication.Google.GoogleOptions>的`Startup.ConfigureServices`。
 1. 运行应用并请求我声明页。 如果用户未登录，该应用将重定向到 Google。 使用 Google 登录。 Google 将用户重定向回应用程序 (`/Home/MyClaims`)。 用户进行身份验证，并加载我的声明页。 不存在下性别声明**用户声明**使用从 Google 获取的值。 访问令牌显示在**身份验证属性**。
 

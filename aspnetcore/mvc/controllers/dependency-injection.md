@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core MVC 控制器如何使用 ASP.NET Core 中的�
 ms.author: riande
 ms.date: 10/14/2016
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 9dec9807e8fc2883144b2da518f36a7eb8ddc871
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 12247dbbbb6de3f8feb7bc37caec4ecf4bd21719
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342128"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206336"
 ---
 # <a name="dependency-injection-into-controllers-in-aspnet-core"></a>在 ASP.NET Core 中将依赖项注入到控制器
 
@@ -20,7 +20,7 @@ ms.locfileid: "39342128"
 
 ASP.NET Core MVC 控制器应该通过构造函数显式请求其依赖关系。 在某些情况下，单独的控制器操作可能需要服务，但在控制器级别上请求可能没有意义。 在此情况下，也可在操作方法上选择将服务作为参数注入。
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/dependency-injection/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/dependency-injection/sample)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="dependency-injection"></a>依赖关系注入
 

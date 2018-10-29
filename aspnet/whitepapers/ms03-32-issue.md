@@ -8,12 +8,12 @@ ms.date: 02/10/2010
 ms.assetid: 1365eebb-bdf7-4a05-8d18-7f200531be55
 msc.legacyurl: /whitepapers/ms03-32-issue
 msc.type: content
-ms.openlocfilehash: ce2d705a93577b0c6d28f86069873c6ecd891db6
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9041f8d15a449a517594f8051c3d9f0ceb18a8a3
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41826621"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207012"
 ---
 <a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a>应用 IE 安全更新后的服务器应用程序不可用错误修复
 ====================
@@ -38,7 +38,7 @@ Microsoft 使用 Internet Explorer 的安全修补程序 MS03 32 安全更新和
 4. 重新注册 ASP.NET。 这将创建新的随机密码的帐户并应用它的默认 ASP.NET 访问控制设置
 5. 重新启动 IIS 服务
 
-批处理文件包含硬编码的临时密码"<strong>1pass@word</strong>"您将提示你输入的 runas 命令运行此批处理文件。 Runas 命令完成后，ASPNET 帐户密码的强随机值重新创建。 请注意，如果硬编码密码不符合您的环境中的密码复杂性要求，可能会失败的批处理文件。 如果是这种情况，可以将其更改为另一个适用于你的环境的值。
+批处理文件包含硬编码的临时密码"<strong>1pass\@word</strong>"您将提示你输入的 runas 命令运行此批处理文件。 Runas 命令完成后，ASPNET 帐户密码的强随机值重新创建。 请注意，如果硬编码密码不符合您的环境中的密码复杂性要求，可能会失败的批处理文件。 如果是这种情况，可以将其更改为另一个适用于你的环境的值。
 
 *> [!IMPORTANT]* 如果已添加自定义访问控制设置或数据库帐户为 ASPNET 帐户的权限，他们将需要此批处理文件完成后重新创建。 这是因为时重新创建该帐户，它将获取新的安全标识符 (SID)。
 
@@ -51,7 +51,7 @@ Microsoft 使用 Internet Explorer 的安全修补程序 MS03 32 安全更新和
 3. 将内容提取到 c:\
 4. 从开始菜单中，选择运行...并输入 `cmd.exe`
 5. 在打开命令窗口中，键入`c:\fixup.cmd`。
-6. 出现提示时，输入<strong>1pass@word</strong>作为密码。
+6. 出现提示时，输入<strong>1pass\@word</strong>作为密码。
 7. 如果你有以前自定义访问控制设置或数据库帐户为 ASPNET 帐户的权限，你需要立即重新应用这些设置。
 
 这导致不便的许多道歉。 当提供时，我们将发布的其他信息。

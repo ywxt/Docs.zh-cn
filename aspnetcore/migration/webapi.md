@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 10/01/2018
 uid: migration/webapi
-ms.openlocfilehash: 3c4ded874de2700e1290022a535c08f30dce9490
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: f5d886a7c3182b5cd372762ade67c2e748051049
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47861013"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207272"
 ---
 # <a name="migrate-from-aspnet-web-api-to-aspnet-core"></a>将从 ASP.NET Web API 迁移到 ASP.NET Core
 
@@ -19,7 +19,7 @@ ms.locfileid: "47861013"
 
 ASP.NET 4.x Web API 是到达范围广泛的客户端，包括浏览器和移动设备的 HTTP 服务。 ASP.NET Core 统一了 ASP.NET 4.x 的 MVC 和 Web API 应用模型到名为 ASP.NET Core MVC 更简单的编程模型。 本文演示如何将 ASP.NET 4.x Web API 迁移到 ASP.NET Core MVC 所需的步骤。
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/webapi/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/webapi/sample)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="prerequisites"></a>系统必备
 
@@ -62,7 +62,7 @@ ASP.NET 4.x Web API 是到达范围广泛的客户端，包括浏览器和移动
 
 ## <a name="migrate-configuration"></a>迁移配置
 
-不使用 ASP.NET Core *App_Start*文件夹或*Global.asax*文件，并*web.config*文件添加在发布时间。 *Startup.cs*将取代*Global.asax*和位于项目根目录中。 `Startup`类负责处理所有应用程序启动任务。 有关详细信息，请参阅<xref:fundamentals/startup>。
+不使用 ASP.NET Core *App_Start*文件夹或*Global.asax*文件，并*web.config*文件添加在发布时间。 *Startup.cs*将取代*Global.asax*和位于项目根目录中。 `Startup`类负责处理所有应用程序启动任务。 有关详细信息，请参阅 <xref:fundamentals/startup> 。
 
 在 ASP.NET Core MVC 中，在默认情况下包含的属性路由时<xref:Microsoft.AspNetCore.Builder.MvcApplicationBuilderExtensions.UseMvc*>名为`Startup.Configure`。 以下`UseMvc`调用替换*ProductsApp*项目的*app_start/webapiconfig.cs*文件：
 

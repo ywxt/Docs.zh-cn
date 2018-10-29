@@ -3,14 +3,15 @@ title: ASP.NET Core MVC 和 EF Core - 并发 - 第 8 个教程（共 10 个）
 author: rick-anderson
 description: 本教程介绍如何处理多个用户同时更新同一实体时出现的冲突。
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: 9bf65621213c9657232dfff1701c9937d5105a9c
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 0ae566a76a2ef656843452ed537b8fdfbddaed22
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38186632"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090896"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---concurrency---8-of-10"></a>ASP.NET Core MVC 和 EF Core - 并发 - 第 8 个教程（共 10 个）
 
@@ -219,7 +220,6 @@ _context.Entry(departmentToUpdate).Property("RowVersion").OriginalValue = rowVer
 
 在刚替换的基架代码中，此方法仅接受记录 ID：
 
-
 ```csharp
 public async Task<IActionResult> DeleteConfirmed(int id)
 ```
@@ -278,7 +278,7 @@ public async Task<IActionResult> Delete(Department department)
 
 ## <a name="summary"></a>总结
 
-处理并发冲突已介绍完毕。 要深入了解如何处理 EF Core 中的并发，请参阅[并发冲突](https://docs.microsoft.com/ef/core/saving/concurrency)。 下一个教程将介绍如何为 Instructor 和 Students 实体实现“每个层次结构一个表”继承。
+处理并发冲突已介绍完毕。 要深入了解如何处理 EF Core 中的并发，请参阅[并发冲突](/ef/core/saving/concurrency)。 下一个教程将介绍如何为 Instructor 和 Students 实体实现“每个层次结构一个表”继承。
 
 ::: moniker-end
 

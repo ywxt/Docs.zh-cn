@@ -5,12 +5,12 @@ description: 了解如何使用 LoggerMessage 创建可缓存的委托。对于�
 ms.author: riande
 ms.date: 11/03/2017
 uid: fundamentals/logging/loggermessage
-ms.openlocfilehash: e952591bac29868d87d765820e88c74b50a1fe88
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: a0080a20fed2d8fc295e55822c11d5731c6910ca
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272430"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207506"
 ---
 # <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a>在 ASP.NET Core 中使用 LoggerMessage 的高性能日志记录
 
@@ -23,7 +23,7 @@ ms.locfileid: "36272430"
 * 记录器扩展方法需要将值类型（例如 `int`）“装箱”（转换）到 `object` 中。 `LoggerMessage` 模式使用带强类型参数的静态 `Action` 字段和扩展方法来避免装箱。
 * 记录器扩展方法每次写入日志消息时必须分析消息模板（命名的格式字符串）。 如果已定义消息，那么 `LoggerMessage` 只需分析一次模板即可。
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/loggermessage/sample/)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/loggermessage/sample/)（[如何下载](xref:index#how-to-download-a-sample)）
 
 此示例应用通过基本引号跟踪系统演示 `LoggerMessage` 功能。 此应用使用内存中数据库添加和删除引号。 发生这些操作时，通过 `LoggerMessage` 模式生成日志消息。
 

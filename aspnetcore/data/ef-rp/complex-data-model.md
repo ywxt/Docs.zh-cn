@@ -3,14 +3,15 @@ title: ASP.NET Core 中的 Razor 页面和 EF Core - 数据模型 - 第 5 个教
 author: rick-anderson
 description: 本教程将添加更多实体和关系，并通过指定格式设置、验证和映射规则来自定义数据模型。
 ms.author: riande
-ms.date: 6/31/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: b81918cbd74200f0672f3002f916523fb4a9a914
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 9a0d5a8e722487ccf7e08aadb39f838a0963451d
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477652"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090959"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 数据模型 - 第 5 个教程（共 8 个）
 
@@ -121,6 +122,7 @@ https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples)�
 ```SQL
 SqlException: Invalid column name 'FirstName'.
 ```
+
 若要更新数据库：
 
 * 生成项目。
@@ -157,7 +159,7 @@ Please review the migration for accuracy.
 
 ![迁移后 SSOX 中的 Students 表](complex-data-model/_static/ssox-after-migration.png)
 
-执行迁移前，名称列的类型为 [nvarchar (MAX)](https://docs.microsoft.com/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql)。 名称列现在的类型为 `nvarchar(50)`。 列名已从 `FirstMidName` 更改为 `FirstName`。
+执行迁移前，名称列的类型为 [nvarchar (MAX)](/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql)。 名称列现在的类型为 `nvarchar(50)`。 列名已从 `FirstMidName` 更改为 `FirstName`。
 
 > [!Note]
 > 在下一部分中，在某些阶段生成应用会生成编译器错误。 说明用于指定生成应用的时间。
@@ -295,7 +297,7 @@ public Instructor Instructor { get; set; }
 
 当数据模型具有相关实体的导航属性时，EF Core 不要求此模型具有 FK 属性。
 
-EF Core 可在数据库中的任何所需位置自动创建 FK。 EF Core 为自动创建的 FK 创建[阴影属性](https://docs.microsoft.com/ef/core/modeling/shadow-properties)。 数据模型中包含 FK 后可使更新更简单和更高效。 例如，假设某个模型中不包含 FK 属性 `DepartmentID`。 当提取 Course 实体进行编辑时：
+EF Core 可在数据库中的任何所需位置自动创建 FK。 EF Core 为自动创建的 FK 创建[阴影属性](/ef/core/modeling/shadow-properties)。 数据模型中包含 FK 后可使更新更简单和更高效。 例如，假设某个模型中不包含 FK 属性 `DepartmentID`。 当提取 Course 实体进行编辑时：
 
 * 如果未显式加载 `Department` 实体，则该实体将为 NULL。
 * 若要更新 Course 实体，则必须先提取 `Department` 实体。
@@ -314,7 +316,7 @@ public int CourseID { get; set; }
 
 默认情况下，EF Core 假定 PK 值由数据库生成。 由数据库生成 PK 值通常是最佳方法。 `Course` 实体的 PK 由用户指定。 例如，对于课程编号，数学系可以使用 1000 系列的编号，英语系可以使用 2000 系列的编号。
 
-`DatabaseGenerated` 特性还可用于生成默认值。 例如，数据库可以自动生成日期字段以记录数据行的创建或更新日期。 有关详细信息，请参阅[生成的属性](https://docs.microsoft.com/ef/core/modeling/generated-properties)。
+`DatabaseGenerated` 特性还可用于生成默认值。 例如，数据库可以自动生成日期字段以记录数据行的创建或更新日期。 有关详细信息，请参阅[生成的属性](/ef/core/modeling/generated-properties)。
 
 ### <a name="foreign-key-and-navigation-properties"></a>外键和导航属性
 
@@ -478,7 +480,7 @@ FK 不能为 NULL。 `CourseAssignment` 中的两个 FK（`InstructorID` 和 `Co
 `Enrollment` 联接实体定义其自己的 PK，因此可能会出现此类重复。 若要防止此类重复：
 
 * 请在 FK 字段上添加唯一索引，或
-* 配置具有主要组合键（与 `CourseAssignment` 类似）的 `Enrollment`。 有关详细信息，请参阅[索引](https://docs.microsoft.com/ef/core/modeling/indexes)。
+* 配置具有主要组合键（与 `CourseAssignment` 类似）的 `Enrollment`。 有关详细信息，请参阅[索引](/ef/core/modeling/indexes)。
 
 ## <a name="update-the-db-context"></a>更新数据库上下文
 
@@ -490,7 +492,7 @@ FK 不能为 NULL。 `CourseAssignment` 中的两个 FK（`InstructorID` 和 `Co
 
 ## <a name="fluent-api-alternative-to-attributes"></a>用 Fluent API 替代特性
 
-上面代码中的 `OnModelCreating` 方法使用 Fluent API 配置 EF Core 行为。 API 称为“Fluent”，因为它通常在将一系列方法调用连接成单个语句后才能使用。 [下面的代码](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration)是 Fluent API 的示例：
+上面代码中的 `OnModelCreating` 方法使用 Fluent API 配置 EF Core 行为。 API 称为“Fluent”，因为它通常在将一系列方法调用连接成单个语句后才能使用。 [下面的代码](/ef/core/modeling/#methods-of-configuration)是 Fluent API 的示例：
 
 ```csharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -516,7 +518,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 * 仅限 EF Core 配置（例如，`HasKey`）。
 * 验证和 EF Core 配置（例如，`[StringLength(50)]`）。
 
-有关特性和 Fluent API 的详细信息，请参阅[配置方法](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration)。
+有关特性和 Fluent API 的详细信息，请参阅[配置方法](/ef/core/modeling/#methods-of-configuration)。
 
 ## <a name="entity-diagram-showing-relationships"></a>显示关系的实体关系图
 
@@ -577,6 +579,7 @@ database "ContosoUniversity", table "dbo.Department", column 'DepartmentID'.
 ## <a name="apply-the-migration"></a>应用迁移
 
 现已有一个数据库，需要考虑如何将未来的更改应用到其中。 本教程演示两种方法：
+
 * [删除并重新创建数据库](#drop)
 * [将迁移应用到现有数据库](#applyexisting)。 虽然此方法更复杂且耗时，但在实际应用和生产环境中为首选方法。 **注意**：这是本教程的一个可选部分。 你可以执行删除和重新创建的相关步骤并跳过此部分。 如果希望执行本部分中的步骤，请勿执行删除和重新创建步骤。 
 

@@ -4,16 +4,16 @@ title: ASP.NET Web API 中的路由 |Microsoft Docs
 author: MikeWasson
 description: ''
 ms.author: riande
-ms.date: 02/11/2012
+ms.date: 10/29/2018
 ms.assetid: 0675bdc7-282f-4f47-b7f3-7e02133940ca
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 458f9a6369fe97bab33d70bf31bd470b1b0e593c
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: a7bc998fc23c0453fc9cd6ac1e7b9af7bd516225
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831708"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207298"
 ---
 <a name="routing-in-aspnet-web-api"></a>ASP.NET Web API 中的路由
 ====================
@@ -22,8 +22,7 @@ ms.locfileid: "41831708"
 本指南介绍了 ASP.NET Web API 将 HTTP 请求路由到控制器的方式。
 
 > [!NOTE]
-> 如果您熟悉 ASP.NET MVC，Web API 路由是非常类似于 MVC 路由。 主要区别是 Web API 使用的 HTTP 方法，而不是 URI 路径，若要选择的操作。 此外可以使用 Web API 中的 MVC 样式路由。 本文不会采用 ASP.NET MVC 的任何知识。
-
+> 如果您熟悉 ASP.NET MVC，Web API 路由是非常类似于 MVC 路由。 主要区别是 Web API 使用的 HTTP 谓词，不是 URI 路径，若要选择的操作。 此外可以使用 Web API 中的 MVC 样式路由。 本文不会采用 ASP.NET MVC 的任何知识。
 
 ## <a name="routing-tables"></a>路由表
 
@@ -33,13 +32,13 @@ ms.locfileid: "41831708"
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample1.cs)]
 
-在 WebApiConfig.cs 文件中，放置在应用程序中定义此路由\_启动目录：
+此路由中定义*WebApiConfig.cs*文件，位于*应用\_启动*目录：
 
 ![](routing-in-aspnet-web-api/_static/image1.png)
 
-有关详细信息**WebApiConfig**类，请参阅[配置 ASP.NET Web API](../advanced/configuring-aspnet-web-api.md)。
+有关详细信息`WebApiConfig`类，请参阅[配置 ASP.NET Web API](../advanced/configuring-aspnet-web-api.md)。
 
-如果您自托管 Web API，则必须直接在上设置的路由表**HttpSelfHostConfiguration**对象。 有关详细信息，请参阅[自托管 Web API](../older-versions/self-host-a-web-api.md)。
+如果您自托管 Web API，则必须直接在上设置的路由表`HttpSelfHostConfiguration`对象。 有关详细信息，请参阅[自托管 Web API](../older-versions/self-host-a-web-api.md)。
 
 路由表中的每个条目包含*路由模板*。 Web API 的默认路由模板&quot;api / {controller} / {id}&quot;。 在此模板中， &quot;api&quot;是文本路径段和 {controller} 和 {id} 是占位符变量。
 
@@ -59,7 +58,7 @@ Web API 框架接收 HTTP 请求时，它尝试匹配根据一个路由表中的
 一旦找到匹配的路由，Web API 选择控制器和操作：
 
 - 若要查找控制器，Web API 将添加&quot;控制器&quot;的值 *{controller}* 变量。
-- 若要查找操作，Web API 的 HTTP 方法，将查看，然后查找其名称以与该 HTTP 方法名称的操作。 例如，使用 GET 请求，Web API 查找操作以开头的&quot;获取...&quot;，如&quot;GetContact&quot;或&quot;GetAllContacts&quot;。 此约定仅适用于获取、 POST、 PUT 和 DELETE 方法。 可以通过在控制器上使用属性来启用其他 HTTP 方法。 我们将看到一个示例说明更高版本。
+- 若要查找操作，Web API 的 HTTP 谓词，将查看，然后查找名称以该 HTTP 谓词名称开头的操作。 例如，使用 GET 请求，Web API 将会查找操作带有前缀&quot;获取&quot;，如&quot;GetContact&quot;或&quot;GetAllContacts&quot;。 此约定仅适用于获取、 POST、 PUT、 DELETE、 HEAD、 选项和 PATCH 谓词。 可以通过在控制器上使用属性来启用其他 HTTP 谓词。 我们将看到一个示例说明更高版本。
 - 其他占位符变量在路由模板中，如 *{id}* 映射到操作参数。
 
 让我们看一个示例。 假设定义以下控制器：
@@ -68,7 +67,7 @@ Web API 框架接收 HTTP 请求时，它尝试匹配根据一个路由表中的
 
 下面是一些可能的 HTTP 请求，以及每个调用的操作：
 
-| HTTP 方法 | URI 路径 | 操作 | 参数 |
+| HTTP 谓词 | URI 路径 | 操作 | 参数 |
 | --- | --- | --- | --- |
 | GET | api/产品 | GetAllProducts | *（无）* |
 | GET | api/产品/4 | GetProductById | 4 |
@@ -83,38 +82,46 @@ Web API 框架接收 HTTP 请求时，它尝试匹配根据一个路由表中的
 
 前面部分介绍了 ASP.NET Web API 的基本路由机制。 本部分介绍一些变体。
 
-### <a name="http-methods"></a>HTTP 方法
+### <a name="http-verbs"></a>HTTP 谓词
 
-而不是使用 HTTP 方法的命名约定，您可以显式指定操作的 HTTP 方法来修饰操作方法替换**HttpGet**， **HttpPut**， **HttpPost**，或**HttpDelete**属性。
+而不是为 HTTP 谓词中使用的命名约定，可以显式指定操作的 HTTP 谓词来修饰具有以下属性之一的操作方法：
 
-在以下示例中，FindProduct 方法映射到 GET 请求：
+- `[HttpGet]`
+- `[HttpPut]`
+- `[HttpPost]`
+- `[HttpDelete]`
+- `[HttpHead]`
+- `[HttpOptions]`
+- `[HttpPatch]`
+
+在以下示例中，`FindProduct`方法映射到 GET 请求：
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample3.cs)]
 
-若要允许多个 HTTP 方法的操作，或允许 GET、 PUT、 POST 和 DELETE 以外的 HTTP 方法，请使用**AcceptVerbs**属性，它使用的 HTTP 方法列表。
+若要允许多个 HTTP 谓词的操作，或允许 HTTP 谓词 GET、 PUT、 POST、 DELETE、 HEAD、 选项和修补程序以外，使用`[AcceptVerbs]`属性，它使用的 HTTP 谓词的列表。
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample4.cs)]
 
 <a id="routing_by_action_name"></a>
 ### <a name="routing-by-action-name"></a>路由的操作名称
 
-使用默认路由模板，Web API 使用的 HTTP 方法选择的操作。 但是，您还可以创建的路由的 URI 中包括的操作名称：
+使用默认路由模板，Web API 使用的 HTTP 谓词来选择的操作。 但是，您还可以创建的路由的 URI 中包括的操作名称：
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample5.cs)]
 
-在此路由模板中， *{action}* 参数名称在控制器上的操作方法。 使用此样式的路由，使用属性来指定允许的 HTTP 方法。 例如，假设您的控制器具有以下方法：
+在此路由模板中， *{action}* 参数名称在控制器上的操作方法。 使用此样式的路由，使用属性来指定允许的 HTTP 谓词。 例如，假设您的控制器具有以下方法：
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample6.cs)]
 
-在这种情况下，"api/产品/详细信息/1"的 GET 请求将映射到的详细信息的方法。 这种路由是类似于 ASP.NET MVC 中，并可能适用于 RPC 样式 API。
+在这种情况下，将"api/产品/详细信息/1"的 GET 请求映射到`Details`方法。 这种路由是类似于 ASP.NET MVC 中，并可能适用于 RPC 样式 API。
 
-可以通过重写操作的名称**ActionName**属性。 在以下示例中，有两个操作映射到&quot;缩略图的产品/api / /*id*。一种支持 GET 和另一种支持文章：
+可以通过重写操作的名称`[ActionName]`属性。 在以下示例中，有两个操作映射到&quot;缩略图的产品/api / /*id*。一种支持 GET 和另一种支持文章：
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample7.cs)]
 
 ### <a name="non-actions"></a>非操作
 
-若要防止为一个操作中调用一个方法，使用**NonAction**属性。 这向发出信号，framework 方法不是一个操作，即使它否则将匹配的路由规则。
+若要防止为一个操作中调用一个方法，使用`[NonAction]`属性。 这向发出信号，framework 方法不是一个操作，即使它否则将匹配的路由规则。
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample8.cs)]
 

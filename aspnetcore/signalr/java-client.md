@@ -7,12 +7,12 @@ ms.author: mimengis
 ms.custom: mvc
 ms.date: 10/18/2018
 uid: signalr/java-client
-ms.openlocfilehash: 3d2cfe5f58cc41741512c68cebbbc90e8f714cba
-ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
+ms.openlocfilehash: 646118c78d5d38b44b89d399cd06a5332a11d064
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50148780"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207766"
 ---
 # <a name="aspnet-core-signalr-java-client"></a>ASP.NET Core SignalR Java 客户端
 
@@ -22,7 +22,7 @@ Java 客户端，包括 Android 应用程序的 Java 代码中连接到 ASP.NET 
 
 在这篇文章中引用示例 Java 控制台应用程序使用 SignalR Java 客户端。
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/java-client/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/java-client/sample)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="install-the-signalr-java-client-package"></a>SignalR Java 客户端程序包安装
 

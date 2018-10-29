@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/25/2018
 uid: fundamentals/index
-ms.openlocfilehash: 56344315acc59003248ffaf1e61455b94a93a545
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: ab140051648c1640b3c4f382bfd8201c5c0c2039
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090714"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207467"
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 基础知识
 
@@ -159,36 +159,6 @@ ASP.NET Core 提供将应用请求路由到路由处理程序的方案。
 
 有关更多信息，请参见<xref:fundamentals/routing>。
 
-## <a name="file-providers"></a>文件提供程序
-
-ASP.NET Core 通过使用文件提供程序抽象化文件系统访问，文件提供程序可提供一个跨平台处理文件的通用界面。
-
-有关更多信息，请参见<xref:fundamentals/file-providers>。
-
-## <a name="static-files"></a>静态文件
-
-静态文件中间件为静态文件（如 HTML、CSS、映像和 JavaScript 文件）提供服务。
-
-有关更多信息，请参见<xref:fundamentals/static-files>。
-
-## <a name="session-and-app-state"></a>会话和应用状态
-
-ASP.NET Core 提供几种可在用户浏览 web 应用时保留会话和应用状态的方法。
-
-有关更多信息，请参见<xref:fundamentals/app-state>。
-
-## <a name="globalization-and-localization"></a>全球化和本地化
-
-使用 ASP.NET Core 创建多语言网站，可让网站拥有更多受众。 ASP.NET Core 可提供服务和中间件，将内容本地化为不同的语言和区域性。
-
-有关更多信息，请参见<xref:fundamentals/localization>。
-
-## <a name="request-features"></a>请求功能
-
-与 HTTP 请求和响应相关的 Web 服务器实现详细信息在接口中定义。 服务器实现和中间件使用这些接口来创建和修改应用的托管管道。
-
-有关更多信息，请参见<xref:fundamentals/request-features>。
-
 ## <a name="background-tasks"></a>后台任务
 
 后台任务作为*托管服务*实现。 托管服务是一个类，具有实现 <xref:Microsoft.Extensions.Hosting.IHostedService> 接口的后台任务逻辑。
@@ -200,43 +170,3 @@ ASP.NET Core 提供几种可在用户浏览 web 应用时保留会话和应用�
 用 Razor Pages 和 MVC 处理请求时，`HttpContext` 自动可用。 当 `HttpContext` 不可立即使用时，可通过 <xref:Microsoft.AspNetCore.Http.IHttpContextAccessor> 接口及其默认实现 <xref:Microsoft.AspNetCore.Http.HttpContextAccessor> 访问 `HttpContext`。
 
 有关更多信息，请参见<xref:fundamentals/httpcontext>。
-
-## <a name="websockets"></a>WebSockets
-
-[WebSocket](https://wikipedia.org/wiki/WebSocket) 是一个协议，支持通过 TCP 连接建立持久的双向信道。 它可用于聊天、股票报价和游戏等应用，以及 Web 应用中需要实时功能的任何位置。 ASP.NET Core 支持 Web 套接字方案。
-
-有关更多信息，请参见<xref:fundamentals/websockets>。
-
-::: moniker range=">= aspnetcore-2.1"
-
-## <a name="microsoftaspnetcoreapp-metapackage"></a>Microsoft.AspNetCore.App 元包
-
-[Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/) 元包简化了包管理。
-
-有关更多信息，请参见<xref:fundamentals/metapackage-app>。
-
-::: moniker-end
-
-::: moniker range="= aspnetcore-2.0"
-
-## <a name="microsoftaspnetcoreall-metapackage"></a>Microsoft.AspNetCore.All 元包
-
-ASP.NET Core 的 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) 元包包括：
-
-* ASP.NET Core 团队支持的所有包。
-* Entity Framework Core 支持的所有包。
-* ASP.NET Core 和 Entity Framework Core 使用的内部和第三方依赖关系。
-
-有关更多信息，请参见<xref:fundamentals/metapackage>。
-
-::: moniker-end
-
-## <a name="net-core-vs-net-framework-runtime"></a>.NET Core 与 .NET Framework 运行时
-
-ASP.NET Core 应用可以面向 .NET Core 或 .NET Framework 运行时。
-
-有关详细信息，请参阅[在 .NET Core 和 .NET Framework 之间进行选择](/dotnet/articles/standard/choosing-core-framework-server)。
-
-## <a name="choose-between-aspnet-core-and-aspnet"></a>在 ASP.NET Core 和 ASP.NET 之间进行选择
-
-有关在 ASP.NET Core 和 ASP.NET 之间进行选择的详细信息，请参阅 <xref:fundamentals/choose-between-aspnet-and-aspnetcore>。

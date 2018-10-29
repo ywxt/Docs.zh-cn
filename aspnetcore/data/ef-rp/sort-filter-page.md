@@ -3,14 +3,15 @@ title: ASP.NET Core 中的 Razor 页面和 EF Core - 排序、筛选、分页 - 
 author: rick-anderson
 description: 本教程将使用 ASP.NET Core 和 Entity Framework Core 向页面添加排序、筛选和分页功能。
 ms.author: riande
-ms.date: 6/31/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 06669d69fa9fec87d262c2b5bfd8b11649259849
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: 19fe24e0f901c50e8425db7665b5b2257b608146
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348437"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090872"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>ASP.NET Core 中的 Razor 页面和 EF Core - 排序、筛选、分页 - 第 3 个教程（共 8 个）
 
@@ -51,7 +52,7 @@ Razor 页面使用 `NameSort` 和 `DateSort` 为列标题超链接配置相应�
 
 [!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=3-4)]
 
-以下代码包含 C# 条件 [?: 运算符](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/conditional-operator)：
+以下代码包含 C# 条件 [?: 运算符](/dotnet/csharp/language-reference/operators/conditional-operator)：
 
 [!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_Ternary)]
 

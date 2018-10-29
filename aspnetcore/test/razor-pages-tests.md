@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/27/2017
 uid: test/razor-pages-tests
-ms.openlocfilehash: 924908a92eea23fd2dc81a3809e74760d9295e4f
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 5116ec3c3d6c27f9b0e098f82c82dd7b7337b8f6
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477405"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207493"
 ---
 # <a name="razor-pages-unit-tests-in-aspnet-core"></a>在 ASP.NET Core razor 页单元测试
 
@@ -30,7 +30,7 @@ ASP.NET Core 支持 Razor 页应用的单元测试。 测试数据的访问层 (
 * [Razor 页面入门](xref:tutorials/razor-pages/razor-pages-start)
 * [单元测试 C# 中使用 dotnet 测试和 xUnit 的.NET Core](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/razor-pages-tests/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/razor-pages-tests/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 示例项目包含两个应用：
 

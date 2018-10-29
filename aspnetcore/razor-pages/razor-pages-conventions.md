@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 10/12/2018
 uid: razor-pages/razor-pages-conventions
-ms.openlocfilehash: 13fd6c156afd5ab62739b09296a929120ce3450f
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: f04e0930966c9aaf38543729565b1ef4a80a09e2
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348528"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207688"
 ---
 # <a name="razor-pages-route-and-app-conventions-in-aspnet-core"></a>ASP.NET Core 中 Razor 页面的路由和应用约定
 
@@ -25,7 +25,7 @@ ms.locfileid: "49348528"
 
 有不能用作路由段或参数名称的保留的字。 有关详细信息，请参阅[路由： 保留路由名称](xref:fundamentals/routing#reserved-routing-names)。
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/razor-pages/razor-pages-conventions/sample/)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/razor-pages/razor-pages-conventions/sample/)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ::: moniker range="= aspnetcore-2.0"
 
@@ -204,7 +204,7 @@ services.AddMvc()
 
 ## <a name="use-a-parameter-transformer-to-customize-page-routes"></a>参数转换器用于自定义页面路由
 
-使用参数转换器可以自定义页面路由生成的 ASP.NET Core。 参数转换器实现`IOutboundParameterTransformer`，并将转换的参数的值。 例如，自定义`SlugifyParameterTransformer`参数转换器更改`SubscriptionManagement`路由到的值`subscription-management`。
+使用参数转换器可以自定义页面路由生成的 ASP.NET Core。 参数转换程序实现 `IOutboundParameterTransformer` 并转换参数值。 例如，一个自定义 `SlugifyParameterTransformer` 参数转换程序可将 `SubscriptionManagement` 路由值更改为 `subscription-management`。
 
 `PageRouteTransformerConvention`页面路由模型约定适用于在应用中自动生成的页路由文件夹和文件名称段参数转换器。 例如，Razor 页面文件位于 */Pages/SubscriptionManagement/ViewAll.cshtml*必须重写中其路由`/SubscriptionManagement/ViewAll`到`/subscription-management/view-all`。
 

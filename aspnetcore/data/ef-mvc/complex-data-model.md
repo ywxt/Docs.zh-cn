@@ -3,14 +3,15 @@ title: ASP.NET Core MVC 和 EF Core - 数据模型 - 第 5 个教程（共 10 �
 author: rick-anderson
 description: 本教程将添加更多实体和关系，并通过指定格式设置、验证和映射规则来自定义数据模型。
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: 3714cf7ce705a52653394319fef1728a6ddcc3ee
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 87212edbfe34af6de938cf95314501e56e64a8be
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011763"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50091036"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>ASP.NET Core MVC 和 EF Core - 数据模型 - 第 5 个教程（共 10 个）
 
@@ -232,7 +233,7 @@ Instructor 实体具有可为 null `OfficeAssignment` 导航属性（因为可�
 
 Course 实体具有外键属性 `DepartmentID`，该属性指向相关 Department 实体，同时它还具有 `Department` 导航属性。
 
-如果拥有相关实体的导航属性，则 Entity Framework 不会要求为数据模型添加外键属性。  只要有需要，EF 就会自动在数据库中创建外键，并为其创建[阴影属性](https://docs.microsoft.com/ef/core/modeling/shadow-properties)。 但如果数据模型包含外键，则更新会变得更简单、更高效。 例如，提取 Course 实体进行编辑时，如果未加载该实体，那么 Department 实体为 null，因此，更新 Course 实体时，必须先提取 Department 实体。 数据模型中包含外键属性 `DepartmentID` 时，更新前无需提取 Department 实体。
+如果拥有相关实体的导航属性，则 Entity Framework 不会要求为数据模型添加外键属性。  只要有需要，EF 就会自动在数据库中创建外键，并为其创建[阴影属性](/ef/core/modeling/shadow-properties)。 但如果数据模型包含外键，则更新会变得更简单、更高效。 例如，提取 Course 实体进行编辑时，如果未加载该实体，那么 Department 实体为 null，因此，更新 Course 实体时，必须先提取 Department 实体。 数据模型中包含外键属性 `DepartmentID` 时，更新前无需提取 Department 实体。
 
 ### <a name="the-databasegenerated-attribute"></a>DatabaseGenerated 特性
 
@@ -246,7 +247,7 @@ public int CourseID { get; set; }
 
 默认情况下，Entity Framework 假定主键值由数据库生成。 大多数情况下，这是理想情况。 但对 Course 实体而言，需使用用户指定的课程编号，例如一个系为 1000 系列，另一个系为 2000 系列等。
 
-`DatabaseGenerated` 特性也可用于生成默认值，如在用于记录行创建或更新日期的数据库列中。  有关详细信息，请参阅[生成的属性](https://docs.microsoft.com/ef/core/modeling/generated-properties)。
+`DatabaseGenerated` 特性也可用于生成默认值，如在用于记录行创建或更新日期的数据库列中。  有关详细信息，请参阅[生成的属性](/ef/core/modeling/generated-properties)。
 
 ### <a name="foreign-key-and-navigation-properties"></a>外键和导航属性
 
@@ -373,7 +374,7 @@ Student 和 Course 实体间存在多对多关系，Enrollment 实体在数据�
 
 由于外键不可为 null，且它们共同唯一标识表的每一行，因此不需要单独的主键。 InstructorID 和 CourseID 属性应充当组合主键。 标识 EF 组合主键的唯一方法是使用 Fluent API（无法借助特性来完成）。 下一节将介绍如何配置组合主键。
 
-在一个课程可以有多个行，一个讲师可以有多个行的情况下，组合键可确保同一讲师和课程不会有多个行。 `Enrollment` 联接实体定义其自己的主键，因此可能会出现此类重复。 若要防止出现此类重复，可在外键字段上添加唯一索引，或使用类似于 `CourseAssignment` 的主组合键配置 `Enrollment`。 有关详细信息，请参阅[索引](https://docs.microsoft.com/ef/core/modeling/indexes)。
+在一个课程可以有多个行，一个讲师可以有多个行的情况下，组合键可确保同一讲师和课程不会有多个行。 `Enrollment` 联接实体定义其自己的主键，因此可能会出现此类重复。 若要防止出现此类重复，可在外键字段上添加唯一索引，或使用类似于 `CourseAssignment` 的主组合键配置 `Enrollment`。 有关详细信息，请参阅[索引](/ef/core/modeling/indexes)。
 
 ## <a name="update-the-database-context"></a>更新数据库上下文
 
@@ -385,7 +386,7 @@ Student 和 Course 实体间存在多对多关系，Enrollment 实体在数据�
 
 ## <a name="fluent-api-alternative-to-attributes"></a>用 Fluent API 替代特性
 
-`DbContext` 类的 `OnModelCreating` 方法中的代码使用 Fluent API 来配置 EF 行为。 API 称为“Fluent”，因为它通常在将一系列方法调用连接成单个语句后才能使用，如 [EF Core 文档](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration) 中的此示例所示：
+`DbContext` 类的 `OnModelCreating` 方法中的代码使用 Fluent API 来配置 EF 行为。 API 称为“Fluent”，因为它通常在将一系列方法调用连接成单个语句后才能使用，如 [EF Core 文档](/ef/core/modeling/#methods-of-configuration) 中的此示例所示：
 
 ```csharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -400,7 +401,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 某些开发者倾向于仅使用 Fluent API 以保持实体类的“纯净”。 如有需要，可混合使用特性和 Fluent API，且有些自定义只能通过 Fluent API 实现，但通常建议选择一种方法并尽可能坚持使用这一种。 如果确实要使用两种，请注意，只要出现冲突，Fluent API 就会覆盖特性。
 
-有关特性和 Fluent API 的详细信息，请参阅[配置方法](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration)。
+有关特性和 Fluent API 的详细信息，请参阅[配置方法](/ef/core/modeling/#methods-of-configuration)。
 
 ## <a name="entity-diagram-showing-relationships"></a>显示关系的实体关系图
 
