@@ -3,6 +3,8 @@
 ## [比较 ASP.NET Core 和 ASP.NET](xref:fundamentals/choose-between-aspnet-and-aspnetcore)
 ## [比较 .NET Core 和 .NET Framework](/dotnet/articles/standard/choosing-core-framework-server)
 
+# [入门](xref:getting-started)
+
 # 教程
 ## Web 应用
 ### Razor 页面
@@ -68,7 +70,7 @@
 ##### [添加验证](xref:tutorials/razor-pages/validation)
 #### Razor Pages 和 Visual Studio Code
 ##### [概述](xref:tutorials/razor-pages-vsc/index)
-##### [ 入门](xref:tutorials/razor-pages-vsc/razor-pages-start)
+##### [Razor 页面入门](xref:tutorials/razor-pages-vsc/razor-pages-start)
 ##### [添加模型](xref:tutorials/razor-pages-vsc/model)
 ##### [已搭建基架的 Razor 页面](xref:tutorials/razor-pages-vsc/page)
 ##### [使用 SQLite](xref:tutorials/razor-pages-vsc/sql)
@@ -76,7 +78,7 @@
 ##### [添加搜索](xref:tutorials/razor-pages-vsc/search)
 #### Razor Pages 和 Visual Studio for Mac
 ##### [概述](xref:tutorials/razor-pages-mac/index)
-##### [ 入门](xref:tutorials/razor-pages-mac/razor-pages-start)
+##### [Razor 页面入门](xref:tutorials/razor-pages-mac/razor-pages-start)
 ##### [添加模型](xref:tutorials/razor-pages-mac/model)
 ##### [已搭建基架的 Razor 页面](xref:tutorials/razor-pages-mac/page)
 ##### [使用 SQLite](xref:tutorials/razor-pages-mac/sql)
