@@ -6,18 +6,18 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 08/15/2018
 uid: web-api/index
-ms.openlocfilehash: 763b95fb8ed3806bc67b7ad199153ea1027efa57
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: e4615e5d416ba2433d55309b25ee3643c6c636ac
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090415"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206986"
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>使用 ASP.NET Core 构建 Web API
 
 作者：[Scott Addie](https://github.com/scottaddie)
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/define-controller/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/define-controller/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 本文档说明如何在 ASP.NET Core 中构建 Web API 以及每项功能的最佳适用场景。
 

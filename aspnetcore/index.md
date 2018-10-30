@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: index
-ms.openlocfilehash: fcd95b88b970073f4d7eddf89729683d18be449d
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 37448b1b3d0da4e3cb34b1cd51f663b7e53ddced
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090649"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207389"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 简介
 
@@ -66,6 +66,14 @@ ASP.NET Core 可以面向 .NET Core 或 .NET Framework。 面向 .NET Framework 
 * 开源
 
 我们正努力缩小 .NET Framework 与 .NET Core 的 API 差距。 [Windows 兼容性包](/dotnet/core/porting/windows-compat-pack)使数千个仅可在Windows运行的API 可在 .NET Core 中使用。 这些 API 在 .NET Core 1.x 中不可用。
+
+## <a name="how-to-download-a-sample"></a>如何下载示例
+
+很多文章和教程中都包含有示例代码链接。
+
+1. [下载 ASP.NET 存储库 zip 文件](https://codeload.github.com/aspnet/Docs/zip/master)。
+1. 解压缩 Docs-master.zip 文件。
+1. 使用示例链接中的 URL 帮助你导航到示例目录。
 
 ## <a name="next-steps"></a>后续步骤
 
