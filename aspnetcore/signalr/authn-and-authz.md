@@ -7,12 +7,12 @@ ms.author: anurse
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: signalr/authn-and-authz
-ms.openlocfilehash: 31d5f753e043157caf43fa8df54e310ea0efd17b
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 7cfe90115b0710fba196693efd309f7c914f0ad4
+ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207935"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234535"
 ---
 # <a name="authentication-and-authorization-in-aspnet-core-signalr"></a>身份验证和授权在 ASP.NET Core SignalR
 
@@ -28,11 +28,13 @@ ms.locfileid: "50207935"
 
 在基于浏览器的应用中，cookie 身份验证允许你现有的用户凭据以自动传递到 SignalR 连接。 如果使用浏览器客户端，则需要无额外配置。 如果用户登录到你的应用，SignalR 连接会自动继承此身份验证。
 
-Cookie 身份验证不被建议，除非应用只需要从浏览器客户端的用户进行身份验证。 使用时[.NET 客户端](xref:signalr/dotnet-client)，则`Cookies`属性可以配置在`.WithUrl`调用，以提供一个 cookie。 但是，使用 cookie 身份验证从.NET 客户端要求提供要交换的 cookie 身份验证数据的 API 应用。
+Cookie 是特定于浏览器的方法，将发送访问令牌，但非浏览器客户端可以向他们发送。 使用时[.NET 客户端](xref:signalr/dotnet-client)，则`Cookies`属性可以配置在`.WithUrl`调用，以提供一个 cookie。 但是，使用 cookie 身份验证从.NET 客户端要求提供要交换的 cookie 身份验证数据的 API 应用。
 
 ### <a name="bearer-token-authentication"></a>持有者令牌身份验证
 
-使用非浏览器客户端的客户端时，持有者令牌身份验证是建议的方法。 在这种方法，客户端提供访问令牌，用于服务器验证，并用于标识用户。 持有者令牌身份验证的详细信息已超出本文的讨论范围。 在服务器上，使用配置持有者令牌身份验证[JWT 持有者中间件](/dotnet/api/microsoft.extensions.dependencyinjection.jwtbearerextensions.addjwtbearer)。
+客户端可以提供访问令牌而不是使用 cookie。 服务器验证该令牌，并使用它来标识用户。 仅在建立连接时，才执行此验证。 连接的生命周期，服务器不会自动重新验证令牌吊销检查。
+
+在服务器上，使用配置持有者令牌身份验证[JWT 持有者中间件](/dotnet/api/microsoft.extensions.dependencyinjection.jwtbearerextensions.addjwtbearer)。
 
 在 JavaScript 客户端，该令牌可以使用提供[accessTokenFactory](xref:signalr/configuration#configure-bearer-authentication)选项。
 
@@ -55,6 +57,10 @@ var connection = new HubConnectionBuilder()
 在标准 web Api，持有者令牌将发送 HTTP 标头中。 但是，SignalR 是无法使用某些传输通道时在浏览器中设置这些标头。 使用 Websocket 和服务器发送事件时，会将令牌传输作为查询字符串参数。 若要在服务器上支持此功能，则需要其他配置：
 
 [!code-csharp[Configure Server to accept access token from Query String](authn-and-authz/sample/Startup.cs?name=snippet)]
+
+### <a name="cookies-vs-bearer-tokens"></a>与持有者令牌的 cookie 
+
+因为 cookie 是特定于浏览器，将它们发送从其他类型的客户端会增加复杂性相比发送持有者令牌。 出于此原因，不被建议的 cookie 身份验证，除非应用只需要从浏览器客户端的用户进行身份验证。 使用非浏览器客户端的客户端时，持有者令牌身份验证是建议的方法。
 
 ### <a name="windows-authentication"></a>Windows 身份验证
 

@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.date: 09/10/2018
 uid: signalr/version-differences
-ms.openlocfilehash: 4ac7952f26500285fc1c8f9453feb3ea8b33851a
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 3cec37719b743b3c805ada77249f526278e44599
+ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50089822"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234600"
 ---
 # <a name="differences-between-aspnet-signalr-and-aspnet-core-signalr"></a>ASP.NET SignalR 和 ASP.NET Core SignalR 之间的差异
 
@@ -56,9 +56,9 @@ app.UseSignalR(routes =>
 });
 ```
 
-### <a name="sticky-sessions-now-required"></a>现在需要粘性会话
+### <a name="sticky-sessions"></a>粘性会话
 
-由于扩展的工作方式在 ASP.NET SignalR 中，客户端无法重新连接，并将消息发送到服务器场中的任何服务器。 由于对横向扩展模型，以及不支持重新连接更改，这不再受支持。 客户端连接到服务器后，它必须与交互在同一台服务器连接的持续时间。
+ASP.NET SignalR 的横向扩展模型允许客户端重新连接，并将消息发送到服务器场中的任何服务器。 在 ASP.NET Core SignalR 客户端必须进行交互与同一台服务器连接的持续时间。 有关使用 Redis 的横向扩展，这意味着粘性会话是必需的。 使用横向扩展[Azure SignalR 服务](/azure/azure-signalr/)，因为该服务处理客户端连接不需要粘性会话。 
 
 ### <a name="single-hub-per-connection"></a>每个连接的单个中心
 
