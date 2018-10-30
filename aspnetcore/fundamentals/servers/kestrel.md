@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/13/2018
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: 4006057b8fcef9c28274bc52a311f15bff92ffb0
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 7e47bc3df90a72f15a6fdde080aae6fbf7494384
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326142"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207454"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 Kestrel Web 服务器实现
 
@@ -42,7 +42,7 @@ macOS 的未来版本将支持 &dagger;HTTP/2。
 
 .NET Core 支持的所有平台和版本均支持 Kestrel。
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/kestrel/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/kestrel/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ::: moniker range=">= aspnetcore-2.2"
 
@@ -69,7 +69,7 @@ macOS 的未来版本将支持 &dagger;HTTP/2。
 
 ::: moniker range=">= aspnetcore-2.0"
 
-可以单独使用 Kestrel，也可以将其与反向代理服务器（如 IIS、Nginx 或 Apache）结合使用。 反向代理服务器接收到来自 Internet 的 HTTP 请求，并在进行一些初步处理后将这些请求转发到 Kestrel。
+可以单独使用 Kestrel，也可以将其与反向代理服务器（如 IIS、Nginx 或 Apache）** 结合使用。 反向代理服务器接收到来自 Internet 的 HTTP 请求，并在进行一些初步处理后将这些请求转发到 Kestrel。
 
 ![Kestrel 直接与 Internet 通信，不使用反向代理服务器](kestrel/_static/kestrel-to-internet2.png)
 
@@ -85,7 +85,7 @@ macOS 的未来版本将支持 &dagger;HTTP/2。
 
 ![Kestrel 直接与你的内部网络进行通信](kestrel/_static/kestrel-to-internal.png)
 
-如果将应用公开到 Internet，则将 IIS、Nginx 或 Apache 用作反向代理服务器。 反向代理服务器接收到来自 Internet 的 HTTP 请求，并在进行一些初步处理后将这些请求转发到 Kestrel。
+如果将应用公开到 Internet，则将 IIS、Nginx 或 Apache 用作反向代理服务器**。 反向代理服务器接收到来自 Internet 的 HTTP 请求，并在进行一些初步处理后将这些请求转发到 Kestrel。
 
 ![Kestrel 通过反向代理服务器（如 IIS、Nginx 或 Apache）间接与 Internet 进行通信](kestrel/_static/kestrel-to-internet.png)
 
@@ -111,7 +111,7 @@ macOS 的未来版本将支持 &dagger;HTTP/2。
 
 [Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)中包括 [Microsoft.AspNetCore.Server.Kestrel](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.Kestrel/) 包（ASP.NET Core 2.1 或更高版本）。
 
-默认情况下，ASP.NET Core 项目模板使用 Kestrel。 在 Program.cs 中，模板代码调用 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)，后者在后台调用 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel)。
+默认情况下，ASP.NET Core 项目模板使用 Kestrel。 在 Program.cs 中，模板代码调用 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)，后者在后台调用 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel)**。
 
 [!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_DefaultBuilder&highlight=7)]
 
@@ -283,7 +283,7 @@ Kestrel 每秒检查一次数据是否以指定的速率（字节/秒）传入�
 
 最小速率也适用于响应。 除了属性和接口名称中具有 `RequestBody` 或 `Response` 以外，用于设置请求限制和响应限制的代码相同。
 
-以下示例演示如何在 Program.cs 中配置最小数据速率：
+以下示例演示如何在 Program.cs 中配置最小数据速率**：
 
 ::: moniker-end
 
@@ -391,7 +391,7 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 默认情况下，ASP.NET Core 绑定到 `http://localhost:5000`。 在 [KestrelServerOptions](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions) 上调用 [Listen](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions.listen) 或 [ListenUnixSocket](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions.listenunixsocket) 方法，从而配置 Kestrel 的 URL 前缀和端口。 `UseUrls`、`--urls` 命令行参数、`urls` 主机配置键以及 `ASPNETCORE_URLS` 环境变量也有用，但具有本节后面注明的限制。
 
-`urls` 主机配置键必须来自主机配置，而不是应用配置。 将 `urls` 键和值添加到 appsettings.json 不影响主机配置，因为是在从配置文件读取配置时对主机进行完全初始化的。 但是，在主机生成器上可以使用 appsettings.json 中的 `urls` 键以及 [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) 来配置主机：
+`urls` 主机配置键必须来自主机配置，而不是应用配置。 将 `urls` 键和值添加到 appsettings.json 不影响主机配置，因为是在从配置文件读取配置时对主机进行完全初始化的**。 但是，在主机生成器上可以使用 appsettings.json 中的 `urls` 键以及 [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) 来配置主机**：
 
 ```csharp
 var config = new ConfigurationBuilder()
@@ -499,10 +499,10 @@ Kestrel 在 `http://localhost:5000` 和 `https://localhost:5001` 上进行侦听
 
 [WebHost.CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 在默认情况下调用 `serverOptions.Configure(context.Configuration.GetSection("Kestrel"))` 来加载 Kestrel 配置。 Kestrel 可以使用默认 HTTPS 应用设置配置架构。 从磁盘上的文件或从证书存储中配置多个终结点，包括要使用的 URL 和证书。
 
-在以下 appsettings.json 示例中：
+在以下 appsettings.json 示例中**：
 
-* 将 AllowInvalid 设置为 `true`，从而允许使用无效证书（例如自签名证书）。
-* 任何未指定证书的 HTTPS 终结点（下例中的 HttpsDefaultCert）会回退至在 Certificates > Default 下定义的证书或开发证书。
+* 将 AllowInvalid 设置为 `true`，从而允许使用无效证书（例如自签名证书）****。
+* 任何未指定证书的 HTTPS 终结点（下例中的 HttpsDefaultCert）会回退至在 Certificates > Default 下定义的证书或开发证书************。
 
 ```json
 {
@@ -552,7 +552,7 @@ Kestrel 在 `http://localhost:5000` 和 `https://localhost:5001` 上进行侦听
 }
 ```
 
-此外还可以使用任何证书节点的 Path 和 Password，采用证书存储字段指定证书。 例如，可将 Certificates > Default 证书指定为：
+此外还可以使用任何证书节点的 Path 和 Password，采用证书存储字段指定证书********。 例如，可将 Certificates > Default 证书指定为********：
 
 ```json
 "Default": {
@@ -569,7 +569,7 @@ Kestrel 在 `http://localhost:5000` 和 `https://localhost:5001` 上进行侦听
 * 每个终结点都要具备 `Url` 参数。 此参数的格式和顶层 `Urls` 配置参数一样，只不过它只能有单个值。
 * 这些终结点不会添加进顶层 `Urls` 配置中定义的终结点，而是替换它们。 通过 `Listen` 在代码中定义的终结点与在配置节中定义的终结点相累积。
 * `Certificate` 部分是可选的。 如果为指定 `Certificate` 部分，则使用在之前的方案中定义的默认值。 如果没有可用的默认值，服务器会引发异常且无法启动。
-* `Certificate` 支持 Path&ndash;Password 和 Subject&ndash;Store 证书。
+* `Certificate` 支持 Path&ndash;Password 和 Subject&ndash;Store 证书****************。
 * 只要不会导致端口冲突，就能以这种方式定义任何数量的终结点。
 * `options.Configure(context.Configuration.GetSection("Kestrel"))` 通过 `.Endpoint(string name, options => { })` 方法返回 `KestrelConfigurationLoader`，可以用于补充已配置的终结点设置：
 
@@ -927,7 +927,7 @@ private class TlsFilterAdapter : IConnectionAdapter
 
 [WebHost.CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 在默认情况下调用 `serverOptions.Configure(context.Configuration.GetSection("Kestrel"))` 来加载 Kestrel 配置。
 
-在以下 appsettings.json 示例中，为 Kestrel 的所有终结点建立默认的连接协议（HTTP/1.1 和 HTTP/2）：
+在以下 appsettings.json** 示例中，为 Kestrel 的所有终结点建立默认的连接协议（HTTP/1.1 和 HTTP/2）：
 
 ```json
 {
@@ -1271,7 +1271,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-中间件需要 appsettings.json/appsettings.\<EnvironmentName>.json 中的 `AllowedHosts` 键。 此值是以分号分隔的不带端口号的主机名列表：
+中间件需要 appsettings.json/appsettings.\<EnvironmentName>.json 中的 `AllowedHosts` 键****。 此值是以分号分隔的不带端口号的主机名列表：
 
 ::: moniker-end
 
@@ -1281,13 +1281,13 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 [!code-csharp[](kestrel/samples-snapshot/2.x/KestrelSample/Program.cs?name=snippet_Program&highlight=9)]
 
-默认情况下，主机筛选中间件处于禁用状态。 要启用该中间件，请在 appsettings.json/appsettings.\<EnvironmentName>.json 中定义一个 `AllowedHosts` 键。 此值是以分号分隔的不带端口号的主机名列表：
+默认情况下，主机筛选中间件处于禁用状态。 要启用该中间件，请在 appsettings.json/appsettings.\<EnvironmentName>.json 中定义一个 `AllowedHosts` 键****。 此值是以分号分隔的不带端口号的主机名列表：
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.0"
 
-appsettings.json：
+appsettings.json**：
 
 ```json
 {
