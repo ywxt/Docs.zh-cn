@@ -5,12 +5,12 @@ description: 了解如何使用受保护的授权的用户数据创建 Razor 页
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: 786e83eb28722e83eea46def962593f58ad524e2
-ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
+ms.openlocfilehash: 185628d4e06c9b5ae7f2685c10ea9e46dd5abe92
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "50244835"
+ms.locfileid: "50253216"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>使用受授权的用户数据创建 ASP.NET Core 应用
 
@@ -71,16 +71,16 @@ ms.locfileid: "50244835"
 本教程被高级。 您应熟悉：
 
 * [ASP.NET Core](xref:tutorials/first-mvc-app/start-mvc)
-* [身份验证](xref:security/authentication/index)
+* [身份验证](xref:security/authentication/identity)
 * [帐户确认和密码恢复](xref:security/authentication/accconfirm)
-* [授权](xref:security/authorization/index)
+* [授权](xref:security/authorization/introduction)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.1"
 
-在 ASP.NET Core 2.1`User.IsInRole`使用时，失败`AddDefaultIdentity`。 本教程使用`AddDefaultIdentity`，因此需要 ASP.NET Core 2.2 preview 1 或更高版本。 请参阅[此 GitHub 问题](https://github.com/aspnet/Identity/issues/1813#issuecomment-394543909)的解决办法。
+在 ASP.NET Core 2.1`User.IsInRole`使用时，失败`AddDefaultIdentity`。 本教程使用`AddDefaultIdentity`，因此需要 ASP.NET Core 2.2 或更高版本。 请参阅[此 GitHub 问题](https://github.com/aspnet/Identity/issues/1813#issuecomment-394543909)的解决办法。
 
 ::: moniker-end
 
@@ -352,7 +352,7 @@ dotnet ef database update
 
 * [生成 Azure 应用服务中的.NET Core 和 SQL 数据库 web 应用](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
 * [ASP.NET Core 授权实验室](https://github.com/blowdart/AspNetAuthorizationWorkshop)。 此实验室进入的安全功能，本教程中介绍的更多详细信息。
-* [在 ASP.NET Core 中的授权： 基于声明的和自定义的简单，角色](xref:security/authorization/index)
+* <xref:security/authorization/introduction>
 * [基于自定义策略的授权](xref:security/authorization/policies)
 
 ::: moniker-end

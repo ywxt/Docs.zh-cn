@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: security/index
-ms.openlocfilehash: f3b1f74f2e3a991b72cae94019f42548e3858f20
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 4277266e20ab1921a2ba24d4500358ba90330370
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50091023"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50252940"
 ---
 # <a name="overview-of-aspnet-core-security"></a>ASP.NET Core 安全性概述
 
@@ -40,7 +40,7 @@ ASP.NET Core 和 EF 提供维护应用安全、预防安全漏洞的功能。 �
 
 ## <a name="aspnet-core-security-documentation"></a>ASP.NET Core 安全文档
 
-* [身份验证](xref:security/authentication/index)
+* 身份验证
   * [标识简介](xref:security/authentication/identity)
   * [启用使用 Facebook、Google 和其他外部提供程序的身份验证](xref:security/authentication/social/index)
   * [通过 WS 联合身份验证启用身份验证](xref:security/authentication/ws-federation)
@@ -54,7 +54,7 @@ ASP.NET Core 和 EF 提供维护应用安全、预防安全漏洞的功能。 �
     * [使用 Azure AD 在 ASP.NET Core Web 应用中调用 Web API](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
     * [带有 Azure AD B2C 的 ASP.NET Core Web 应用](https://azure.microsoft.com/resources/samples/active-directory-b2c-dotnetcore-webapp/)
   * [使用 IdentityServer4 保护 ASP.NET Core 应用](https://identityserver4.readthedocs.io)
-* [授权](xref:security/authorization/index)
+* 授权
   * [介绍](xref:security/authorization/introduction)
   * [通过授权保护的用户数据创建应用](xref:security/authorization/secure-data)
   * [简单授权](xref:security/authorization/simple)
@@ -65,10 +65,10 @@ ASP.NET Core 和 EF 提供维护应用安全、预防安全漏洞的功能。 �
   * [基于资源的授权](xref:security/authorization/resourcebased)
   * [基于视图的授权](xref:security/authorization/views)
   * [使用方案限制标识](xref:security/authorization/limitingidentitybyscheme)
-* [数据保护](xref:security/data-protection/index)
+* 数据保护
   * [数据保护简介](xref:security/data-protection/introduction)
   * [数据保护 API 入门](xref:security/data-protection/using-data-protection)
-  * [使用者 API](xref:security/data-protection/consumer-apis/index)
+  * 使用者 API
     * [使用者 API 概述](xref:security/data-protection/consumer-apis/overview)
     * [目标字符串](xref:security/data-protection/consumer-apis/purpose-strings)
     * [目标层次结构和多租户](xref:security/data-protection/consumer-apis/purpose-strings-multitenancy)
