@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: b238630d6f762e2b9fad1060f8150185bcf413fe
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: c55a5202643bb947b3f38f67aec55ee5cf7b1496
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090223"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244744"
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>将 ASP.NET Core 应用部署到 Azure 应用服务
 
@@ -207,6 +207,10 @@ ASP.NET Core 文档中提供以下文章：
 ### <a name="use-docker-with-web-apps-for-containers"></a>对用于容器的 Web 应用使用 Docker
 
 [Docker 中心](https://hub.docker.com/r/microsoft/aspnetcore/)包含最新的预览 Docker 映像。 这些映像可以用作基础映像。 按常规方法使用映像并部署到用于容器的 Web 应用。
+
+## <a name="protocol-settings-https"></a>协议设置 (HTTPS)
+
+借助安全的协议绑定，可在通过 HTTPS 响应请求时指定要使用的证书。 若要绑定，需要一个为特定主机名颁发的有效专用证书 (*.pfx*)。 有关详细信息，请参阅[将现有自定义 SSL 证书绑定到 Azure Web 应用](/azure/app-service/app-service-web-tutorial-custom-ssl)。
 
 ## <a name="additional-resources"></a>其他资源
 
