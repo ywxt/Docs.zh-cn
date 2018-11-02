@@ -72,7 +72,7 @@ ms.locfileid: "41830852"
 
 <span data-ttu-id="0f093-146">保存并关闭 Site.Master。</span><span class="sxs-lookup"><span data-stu-id="0f093-146">Save and close Site.Master.</span></span>
 
-<span data-ttu-id="0f093-147">现在，你将创建 web 窗体，用于显示学生数据。</span><span class="sxs-lookup"><span data-stu-id="0f093-147">Now, you'll create the web form for displaying student data.</span></span> <span data-ttu-id="0f093-148">右键单击项目，并**外****新项**。</span><span class="sxs-lookup"><span data-stu-id="0f093-148">Right-click your project, and **Add** a **New Item**.</span></span> <span data-ttu-id="0f093-149">选择**包含母版页的 Web 窗体**模板，并将其命名**Students.aspx**。</span><span class="sxs-lookup"><span data-stu-id="0f093-149">Select the **Web Form with Master Page** template, and name it **Students.aspx**.</span></span>
+<span data-ttu-id="0f093-147">现在，你将创建 web 窗体，用于显示学生数据。</span><span class="sxs-lookup"><span data-stu-id="0f093-147">Now, you'll create the web form for displaying student data.</span></span> <span data-ttu-id="0f093-148">右键单击项目，并**外\*\*\*\*新项**。</span><span class="sxs-lookup"><span data-stu-id="0f093-148">Right-click your project, and **Add** a **New Item**.</span></span> <span data-ttu-id="0f093-149">选择**包含母版页的 Web 窗体**模板，并将其命名**Students.aspx**。</span><span class="sxs-lookup"><span data-stu-id="0f093-149">Select the **Web Form with Master Page** template, and name it **Students.aspx**.</span></span>
 
 ![创建页](retrieving-data/_static/image5.png)
 
