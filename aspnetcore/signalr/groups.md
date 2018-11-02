@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: signalr/groups
-ms.openlocfilehash: d3e580dfc42a36762358899892831c8b68f544b0
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 02db46f090c487a03171de244ff7ad0d5e9de0fa
+ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207155"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50758162"
 ---
 # <a name="manage-users-and-groups-in-signalr"></a>SignalR 中管理用户和组
 
@@ -54,6 +54,8 @@ public Task SendPrivateMessage(string user, string message)
 [!code-csharp[Hub methods](groups/sample/hubs/chathub.cs?range=15-27)]
 
 当连接重新连接时，不会保留组成员身份。 需要重新建立时重新加入组的连接。 不能进行计数的一组成员，因为此信息不可用，如果应用程序扩展到多个服务器。
+
+若要使用组的同时保护资源的访问权限，请使用[身份验证和授权](xref:signalr/authn-and-authz)ASP.NET Core 中的功能。 如果您仅将用户添加到组的凭据有效该组时，发送到该组的消息将仅转到经过授权的用户。 但是，组不是一项安全功能。 身份验证声明具有组却没有，如到期和吊销的功能。 如果撤消用户的权限访问组，您必须手动检测，并从组中删除它们。
 
 > [!NOTE]
 > 组名称是区分大小写。

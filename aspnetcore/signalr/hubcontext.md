@@ -5,14 +5,14 @@ description: 了解如何使用 ASP.NET Core SignalR HubContext 服务用于向�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 06/13/2018
+ms.date: 11/01/2018
 uid: signalr/hubcontext
-ms.openlocfilehash: 8be888e1f7b16d65ebbaa24b618e84fca029d80b
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: af125791a75a2dd68c236dd8c5b51eecff244ce4
+ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207948"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50758149"
 ---
 # <a name="send-messages-from-outside-a-hub"></a>从向外发送邮件中心
 
@@ -54,6 +54,27 @@ app.Use(next => async (context) =>
 
 > [!NOTE]
 > 外部的从调用集线器方法时`Hub`类中，没有与调用相关联的任何调用方。 因此，没有不能访问`ConnectionId`， `Caller`，和`Others`属性。
+
+### <a name="inject-a-strongly-typed-hubcontext"></a>注入强类型化 HubContext
+
+若要注入强类型化 HubContext，请确保你的中心继承`Hub<T>`。 将使用其注入`IHubContext<THub, T>`接口而非`IHubContext<THub>`。
+
+```csharp
+public class ChatController : Controller
+{
+    public IHubContext<ChatHub, IChatClient> _strongChatHubContext { get; }
+
+    public SampleDataController(IHubContext<ChatHub, IChatClient> chatHubContext)
+    {
+        _strongChatHubContext = chatHubContext;
+    }
+
+    public async Task SendMessage(string message)
+    {
+        await _strongChatHubContext.Clients.All.ReceiveMessage(message);
+    }
+}
+```
 
 ## <a name="related-resources"></a>相关资源
 

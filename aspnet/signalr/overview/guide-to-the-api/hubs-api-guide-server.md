@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: b19913e5-cd8a-4e4b-a872-5ac7a858a934
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-server
 msc.type: authoredcontent
-ms.openlocfilehash: 03dd8a73141330348f2877760a5978a8a0b95122
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 6545491cfa36bb9fee555eb0348ec0a319bff470
+ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825683"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50758240"
 ---
 <a name="aspnet-signalr-hubs-api-guide---server-c"></a>ASP.NET SignalR 中心 API 指南-服务器 (C#)
 ====================
@@ -304,6 +304,11 @@ SignalR 2.1 添加了对支持[进度报告模式](https://blogs.msdn.com/b/dotn
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample23.cs?highlight=5)]
 
+调用客户端方法是一个异步操作并返回`Task`。 使用`await`:
+
+* 若要确保将消息发送不会出错。 
+* 若要启用捕获和处理 try catch 块中的错误。
+
 **使用生成的代理的 JavaScript 客户端**
 
 [!code-html[Main](hubs-api-guide-server/samples/sample24.html?highlight=1)]
@@ -572,7 +577,7 @@ SignalR 跟踪的连接，而不是用户，因此，如果您希望用户为同
 
 ## <a name="how-to-handle-errors-in-the-hub-class"></a>如何处理错误，Hub 类
 
-若要处理你的中心类方法中发生的错误，请使用一个或多个以下方法：
+若要处理你的中心类方法中发生的错误，请首先确保您"观察"异步操作 （如调用客户端方法） 中的任何异常使用`await`。 然后，使用一个或多个以下方法：
 
 - 将方法代码包装在 try catch 块和日志的异常对象。 出于调试目的可以将异常发送到客户端，但出于安全原因的详细的信息发送给在生产环境中的客户端不建议。
 - 创建中心管道处理模块时， [OnIncomingError](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx)方法。 下面的示例演示记录错误，将模块注入到集线器管道的 Startup.cs 中的代码后跟一个管道模块。
