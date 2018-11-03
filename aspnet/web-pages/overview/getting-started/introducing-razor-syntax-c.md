@@ -8,12 +8,12 @@ ms.date: 02/07/2014
 ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: 347e5ddbc02866887d3f422ecc291e5e3dfacaaf
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: b242bf52bbd63d726e6ce6ab7be01a1b81c5bf1b
+ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207909"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50758253"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 语法 (C#) 的 ASP.NET Web 编程简介
 ====================
@@ -342,13 +342,13 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
 
 :::row:::
     :::column:::
-        <strong>Method</strong>
+    <strong>方法</strong>
     :::column-end:::
     :::column:::
-        <strong>Description</strong>
+    <strong>说明</strong>
     :::column-end:::
     :::column:::
-        <strong>Example</strong>
+    <strong>示例</strong>
     :::column-end:::
 :::row-end:::
 * * *
@@ -357,7 +357,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `AsInt(), IsInt()`
     :::column-end:::
     :::column:::
-        Converts a string that represents a whole number (like "593") to an integer.
+    将转换为整数表示 （如"593") 的整数的字符串。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]
@@ -369,7 +369,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `AsBool(), IsBool()`
     :::column-end:::
     :::column:::
-        Converts a string like &quot;true&quot; or &quot;false&quot; to a Boolean type.
+    将转换字符串，如&quot;，则返回 true&quot;或&quot;false&quot;为 Boolean 类型。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]
@@ -381,7 +381,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `AsFloat(), IsFloat()`
     :::column-end:::
     :::column:::
-        Converts a string that has a decimal value like &quot;1.3&quot; or &quot;7.439&quot; to a floating-point number.
+    将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为浮点数。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]
@@ -393,7 +393,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `AsDecimal(), IsDecimal()`
     :::column-end:::
     :::column:::
-        Converts a string that has a decimal value like &quot;1.3&quot; or &quot;7.439&quot; to a decimal number. (In ASP.NET, a decimal number is more precise than a floating-point number.)
+    将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为十进制数。 （在 ASP.NET 中，十进制数字是一个浮点数，更详细地说明。）
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]
@@ -405,7 +405,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `AsDateTime(), IsDateTime()`
     :::column-end:::
     :::column:::
-        Converts a string that represents a date and time value to the ASP.NET `DateTime` type.
+    将对 ASP.NET 表示的日期和时间值的字符串转换`DateTime`类型。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]
@@ -417,7 +417,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `ToString()`
     :::column-end:::
     :::column:::
-        Converts any other data type to a string.
+    将任何其他数据类型转换为字符串。
     :::column-end:::
     :::column:::
         [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)]
@@ -431,13 +431,13 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
 
 :::row:::
     :::column:::
-        <strong>Operator</strong>
+    <strong>Operator</strong>
     :::column-end:::
     :::column:::
-        <strong>Description</strong>
+    <strong>说明</strong>
     :::column-end:::
     :::column:::
-        <strong>Examples</strong>
+    <strong>示例</strong>
     :::column-end:::
 :::row-end:::
 * * *
@@ -446,7 +446,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `+` `-` `*` `/`
     :::column-end:::
     :::column:::
-        Math operators used in numerical expressions.
+    在数值表达式中使用的数学运算符。
     :::column-end:::
     :::column:::
         [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]
@@ -458,7 +458,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `=`
     :::column-end:::
     :::column:::
-        Assignment. Assigns the value on the right side of a statement to the object on the left side.
+    赋值。 将一条语句右侧的值分配给左侧和右侧的对象。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]
@@ -470,7 +470,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `==`
     :::column-end:::
     :::column:::
-        Equality. Returns `true` if the values are equal. (Notice the distinction between the `=` operator and the `==` operator.)
+    相等。 返回`true`值是否相等。 (请注意之间的区别`=`运算符和`==`运算符。)
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]
@@ -482,7 +482,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `!=`
     :::column-end:::
     :::column:::
-        Inequality. Returns `true` if the values are not equal.
+    不相等。 返回`true`如果值不相等。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]
@@ -494,7 +494,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `< > <= >=`
     :::column-end:::
     :::column:::
-        Less-than, greater-than, less-than-or-equal, and greater-than-or-equal.
+    更少的相比，更高的比，小于-或者-等于，以及大于或等于。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]
@@ -506,7 +506,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `+`
     :::column-end:::
     :::column:::
-        Concatenation, which is used to join strings. ASP.NET knows the difference between this operator and the addition operator based on the data type of the expression.
+    串联用于联接的字符串。 ASP.NET 就会知道此运算符和加法运算符的表达式的数据类型之间的差异。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]
@@ -518,7 +518,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `+=` `-=`
     :::column-end:::
     :::column:::
-        The increment and decrement operators, which add and subtract 1 (respectively) from a variable.
+    递增和递减运算符，从而添加，并且从变量 （分别） 减 1。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]
@@ -530,7 +530,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `.`
     :::column-end:::
     :::column:::
-        Dot. Used to distinguish objects and their properties and methods.
+    圆点。 用于区分对象及其属性和方法。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]
@@ -542,7 +542,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `()`
     :::column-end:::
     :::column:::
-        Parentheses. Used to group expressions and to pass parameters to methods.
+    括号。 使用组表达式，并将参数传递给方法。
     :::column-end:::
     :::column:::
         [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)]
@@ -554,7 +554,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `[]`
     :::column-end:::
     :::column:::
-        Brackets. Used for accessing values in arrays or collections.
+    方括号。 用于访问数组或集合中的值。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]
@@ -566,7 +566,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `!`
     :::column-end:::
     :::column:::
-        Not. Reverses a `true` value to `false` and vice versa. Typically used as a shorthand way to test for `false` (that is, for not `true`).
+    不。 反转`true`值设为`false`，反之亦然。 通常用作测试的速记方法`false`(即，对于不`true`)。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]
@@ -578,7 +578,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         `&&` <code>&#124;&#124;</code>
     :::column-end:::
     :::column:::
-        Logical AND and OR, which are used to link conditions together.
+    逻辑 AND 和 OR，用于链接在一起条件。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]
