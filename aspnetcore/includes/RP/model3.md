@@ -1,4 +1,5 @@
 <a name="cli"></a>
+
 ## <a name="add-scaffold-tooling-and-perform-initial-migration"></a>添加基架工具并执行初始迁移
 
 将以下行添加到 RazorPagesMovie.csproj 文件，具体位于末尾的 `</Project>` 标记前面：
@@ -7,7 +8,8 @@
 <ItemGroup>
   <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.1.0-preview1-final"/>
 </ItemGroup>
-```  
+```
+  
 从命令行运行以下 .NET Core CLI 命令：
 
 ```console

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/23/2018
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: ea2631f5112efabac07275f86e65432889cb8081
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: d29a9287cbce27a54e779fadfa05e57febec0413
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090495"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50253112"
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>使用 Nginx 在 Linux 上托管 ASP.NET Core
 
@@ -284,7 +284,7 @@ sudo journalctl -fu kestrel-helloapp.service --since "2016-10-18" --until "2016-
 
 ## <a name="data-protection"></a>数据保护
 
-[ASP.NET Core 数据保护堆栈](xref:security/data-protection/index)由多个 ASP.NET Core [中间件](xref:fundamentals/middleware/index)（包括 cookie 中间件等身份验证中间件）和跨站点请求伪造 (CSRF) 保护使用。 即使用户代码不调用数据保护 API，也应该配置数据保护，以创建持久的加密[密钥存储](xref:security/data-protection/implementation/key-management)。 如果不配置数据保护，则密钥存储在内存中。重启应用时，密钥会被丢弃。
+[ASP.NET Core 数据保护堆栈](xref:security/data-protection/introduction)由多个 ASP.NET Core [中间件](xref:fundamentals/middleware/index)（包括 cookie 中间件等身份验证中间件）和跨站点请求伪造 (CSRF) 保护使用。 即使用户代码不调用数据保护 API，也应该配置数据保护，以创建持久的加密[密钥存储](xref:security/data-protection/implementation/key-management)。 如果不配置数据保护，则密钥存储在内存中。重启应用时，密钥会被丢弃。
 
 如果密钥环存储于内存中，则在应用重启时：
 

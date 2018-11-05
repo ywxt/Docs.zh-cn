@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/15/2018
 uid: mvc/controllers/filters
-ms.openlocfilehash: 6803e8e3a285716792427e9fb059c204f5a88ecb
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: e5305852fad058961661373f9310d6dcaf30aa16
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391305"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50253190"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core 中的筛选器
 
@@ -261,7 +261,7 @@ System.InvalidOperationException: No service for type
 
 切勿在授权筛选器内引发异常，因为没有任何能处理该异常的组件（异常筛选器不会进行处理）。 在出现异常时请小心应对。
 
-详细了解[授权](../../security/authorization/index.md)。
+详细了解[授权](xref:security/authorization/introduction)。
 
 ## <a name="resource-filters"></a>资源筛选器
 

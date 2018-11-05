@@ -5,12 +5,12 @@ description: 了解如何在 ASP.NET Core 中使用视图组件，以及如何�
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/view-components
-ms.openlocfilehash: 52bfb9e3983eb49aabdef238d53c6fdd2950c075
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 91399acafb36f1f8759ed1783e70e59b631e3bf0
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207597"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50253122"
 ---
 # <a name="view-components-in-aspnet-core"></a>ASP.NET Core 中的视图组件
 
@@ -88,7 +88,7 @@ ms.locfileid: "50207597"
 要使用视图组件，请在视图中调用以下内容：
 
 ```cshtml
-@Component.InvokeAsync("Name of view component", {Anonymous Type Containing Parameters})
+@await Component.InvokeAsync("Name of view component", {Anonymous Type Containing Parameters})
 ```
 
 参数将传递给 `InvokeAsync` 方法。 本文中开发的 `PriorityList` 视图组件是从 Views/Todo/Index.cshtml 视图文件中调用的。 在下例中，使用两个参数调用 `InvokeAsync` 方法：

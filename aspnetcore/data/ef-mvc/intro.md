@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 6f867875ed670065ef76728342d3854281f08ae4
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: f1682203850f2c5440fe8d0b98830ca8772ff70f
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50091062"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244877"
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>ASP.NET Core MVC 和 Entity Framework Core - 第 1 个教程，共 10 个教程
 
@@ -32,7 +32,7 @@ Contoso 大学示例 web 应用程序演示如何使用 Entity Framework (EF) Co
 EF Core 2.0 是 EF 的最新版本，但还没有包括 EF 6.x 的所有功能 。 有关如何在 EF 6.x 和 EF Core 之间选择，请参阅 [ EF Core vs.EF6.x](/ef/efcore-and-ef6/)。 如果你选择使用 EF 6.x，请参阅[ 本系列教程的上一个版本](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)。
 
 > [!NOTE]
-> 本教程的 ASP.NET Core 1.1 版本，请参阅 [本教程中 VS 2017 Update 2 版本的 PDF 文档](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf)。
+> 本教程的 ASP.NET Core 1.1 版本，请参阅 [本教程中 VS 2017 Update 2 版本的 PDF 文档](https://webpifeed.blob.core.windows.net/webpifeed/Partners/efmvc1.1.pdf)。
 
 ## <a name="prerequisites"></a>系统必备
 
