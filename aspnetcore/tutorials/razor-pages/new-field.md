@@ -4,20 +4,21 @@ author: rick-anderson
 description: 演示如何使用 Entity Framework Core 将新字段添加到 Razor 页面
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 05/30/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: d6d59ff336095e2f1b8b2e9a0338b7791605ad7a
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: f8be269887903797803257d8a21e002519102047
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010892"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50089508"
 ---
 # <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>将新字段添加到 ASP.NET Core 中的 Razor 页面
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-本部分使用 [Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) Code First 迁移将新字段添加到模型，并将此更改迁移到数据库。
+本部分使用 [Entity Framework](/ef/core/get-started/aspnetcore/new-db) Code First 迁移将新字段添加到模型，并将此更改迁移到数据库。
 
 使用 EF Code First 自动创建数据库时，Code First 将：
 
@@ -96,7 +97,9 @@ SqlException: Invalid column name 'Rating'.
 
 生成解决方案。
 
-<a name="pmc"></a> 从“工具”菜单中，选择“NuGet 包管理器”>“包管理器控制台”。
+<a name="pmc"></a>
+
+从“工具”菜单中，选择“NuGet 包管理器”>“包管理器控制台”。
 在 PMC 中，输入以下命令：
 
 ```powershell
@@ -111,7 +114,9 @@ Update-Database
 
 名称“Rating”是任意的，用于对迁移文件进行命名。 为迁移文件使用有意义的名称是有帮助的。
 
-<a name="ssox"></a> 如果删除 DB 中的所有记录，种子初始值设定项会设定 DB 种子，并将包括 `Rating` 字段。 可以使用浏览器中的删除链接，也可以从 [Sql Server 对象资源管理器](xref:tutorials/razor-pages/sql#ssox) (SSOX) 执行此操作。 从 SSOX 中删除数据库：
+<a name="ssox"></a>
+
+如果删除 DB 中的所有记录，种子初始值设定项会设定 DB 种子，并将包括 `Rating` 字段。 可以使用浏览器中的删除链接，也可以从 [Sql Server 对象资源管理器](xref:tutorials/razor-pages/sql#ssox) (SSOX) 执行此操作。 从 SSOX 中删除数据库：
 
 * 在 SSOX 中选择数据库。
 * 右键单击数据库，并选择“删除”。

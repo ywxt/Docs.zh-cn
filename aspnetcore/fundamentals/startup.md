@@ -1,23 +1,25 @@
 ---
-title: ASP.NET Core 中的应用程序启动
+title: ASP.NET Core 中的应用启动
 author: ardalis
 description: 解释 ASP.NET Core 中的 Startup 类如何配置服务和应用的请求管道。
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: 392dc83666bc6b9012adc6c32169ae7bdc7ed8d7
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: 2212344cb3c651714e8c520b096ab0c4eaf5a180
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391110"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206451"
 ---
-# <a name="application-startup-in-aspnet-core"></a>ASP.NET Core 中的应用程序启动
+# <a name="app-startup-in-aspnet-core"></a>ASP.NET Core 中的应用启动
 
 作者：[Steve Smith](https://ardalis.com)、[Tom Dykstra](https://github.com/tdykstra) 和 [Luke Latham](https://github.com/guardrex)
 
 `Startup` 类配置服务和应用的请求管道。
+
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/startup/sample/)（[如何下载](xref:index#how-to-download-a-sample)）。
 
 ## <a name="the-startup-class"></a>Startup 类
 
@@ -44,7 +46,7 @@ Web 主机提供 `Startup` 类构造函数可用的某些服务。 应用通过 
 
 [!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
-注入 `IHostingEnvironment` 的替代方法是使用基于约定的方法。 应用可以为不同的环境单独定义 `Startup` 类（例如，`StartupDevelopment`），相应 `Startup` 类会在运行时得到选择。 优先考虑名称后缀与当前环境相匹配的类。 如果应用在开发环境中运行并包含 `Startup` 类和 `StartupDevelopment` 类，则使用 `StartupDevelopment` 类。 有关详细信息，请参阅[使用多个环境](xref:fundamentals/environments#environment-based-startup-class-and-methods)。
+注入 `IHostingEnvironment` 的替代方法是使用基于约定的方法。 应用为不同的环境（例如，`StartupDevelopment`）单独定义 `Startup` 类时，相应的 `Startup` 类会在运行时被选中。 优先考虑名称后缀与当前环境相匹配的类。 如果应用在开发环境中运行并包含 `Startup` 类和 `StartupDevelopment` 类，则使用 `StartupDevelopment` 类。 有关详细信息，请参阅[使用多个环境](xref:fundamentals/environments#environment-based-startup-class-and-methods)。
 
 若要详细了解 `WebHostBuilder`，请参阅[承载](xref:fundamentals/host/index)主题。 有关在启动过程中处理错误的信息，请参阅[启动异常处理](xref:fundamentals/error-handling#startup-exception-handling)。
 
@@ -96,7 +98,7 @@ Web 主机可能会在调用 `Startup` 方法之前配置某些服务。 有关�
 
 在请求管道中，每个 `IStartupFilter` 实现一个或多个中间件。 筛选器按照添加到服务容器的顺序调用。 筛选器可在将控件传递给下一个筛选器之前或之后添加中间件，从而附加到应用管道的开头或末尾。
 
-[示例应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/startup/sample/)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）演示如何向 `IStartupFilter` 注册中间件。 示例应用包含一个中间件，该中间件从查询字符串参数中设置选项值：
+示例应用演示如何使用 `IStartupFilter` 注册中间件。 示例应用包含一个中间件，该中间件从查询字符串参数中设置选项值：
 
 [!code-csharp[](startup/sample/RequestSetOptionsMiddleware.cs?name=snippet1)]
 

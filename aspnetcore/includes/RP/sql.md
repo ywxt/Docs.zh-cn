@@ -2,9 +2,11 @@
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-`MovieContext` 对象处理连接到数据库并将 `Movie` 对象映射到数据库记录的任务。 在 Startup.cs 文件的 `ConfigureServices` 方法中向[依赖关系注入](xref:fundamentals/dependency-injection)容器注册数据库上下文：
+`MovieContext` 对象处理连接到数据库并将 `Movie` 对象映射到数据库记录的任务。 在 Startup.cs 文件的 `ConfigureServices` 方法中向[依赖关系注入 (DI)](xref:fundamentals/dependency-injection) 容器注册数据库上下文：
 
 [!code-csharp[](code/Startup.cs?name=snippet2&highlight=6-8)]
+
+有关配合使用 `DbContext` 和 DI 的详细信息，请参阅[配合使用 DbContext 和 DI](/ef/core/miscellaneous/configuring-dbcontext#using-dbcontext-with-dependency-injection)。
 
 ## <a name="sqlite"></a>SQLite
 

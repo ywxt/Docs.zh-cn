@@ -3,14 +3,15 @@ title: ASP.NET Core MVC 中的模型验证
 author: tdykstra
 description: 了解 ASP.NET Core MVC 中的模型验证。
 ms.author: riande
-ms.date: 07/31/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: mvc/models/validation
-ms.openlocfilehash: fe036f261b80f6134078835080409720d149374d
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: 73d41b4718071d00a6f80b33de182da2ad90f331
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312149"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090945"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC 中的模型验证
 
@@ -27,6 +28,13 @@ ms.locfileid: "43312149"
 ## <a name="validation-attributes"></a>验证属性
 
 验证属性用于配置模型验证，因此，在概念上类似于数据库表中字段上的验证。 它包括诸如分配数据类型或必填字段之类的约束。 其他类型的验证包括将向数据应用模式以强制实施业务规则，比如信用卡、电话号码或电子邮件地址。 验证属性更易使用，并使这些要求的实施变得更简单。
+
+验证特性在属性级别指定： 
+
+```csharp 
+[Required] 
+public string MyProperty { get; set; } 
+``` 
 
 下面是一个应用的已批注 `Movie` 模型，该应用用于存储电影和电视节目的相关信息。 大多数属性都是必需属性，多个字符串属性具有长度要求。 此外，还有一个针对·`Price` 属性设置的从 0 到 $999.99 的数值范围限制，以及一个自定义验证特性。
 
@@ -62,7 +70,7 @@ MVC 支持从 `ValidationAttribute` 派生的所有用于验证的属性。 在 
 
 对于不可为 null 的类型，MVC 模型绑定（与验证和验证属性无关）会拒绝包含缺失值或空白的表单域提交。 如果目标属性上缺少 `BindRequired` 特性，模型绑定会忽略不可为 null 的类型的缺失数据，导致传入表单数据中缺少表单域。
 
-[BindRequired 属性](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.bindrequiredattribute)（另请参阅[使用属性自定义模型绑定行为](xref:mvc/models/model-binding#customize-model-binding-behavior-with-attributes)）可用于确保表单数据的完整性。 当应用于某个属性时，模型绑定系统要求该属性具有值。 当应用于某个类型时，模型绑定系统要求该类型的所有属性都具有值。
+[BindRequired 特性](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.bindrequiredattribute)（另请参阅 <xref:mvc/models/model-binding#customize-model-binding-behavior-with-attributes>）可用于确保表单数据完整。 当应用于某个属性时，模型绑定系统要求该属性具有值。 当应用于某个类型时，模型绑定系统要求该类型的所有属性都具有值。
 
 使用 [Nullable\<T> 类型](/dotnet/csharp/programming-guide/nullable-types/)（例如，`decimal?` 或 `System.Nullable<decimal>`）并将其标记为 `Required` 时，将执行服务器端验证检查，就像该属性是标准的可以为 null 的类型（例如，`string`）一样。
 
@@ -256,4 +264,4 @@ $.get({
 public string MiddleName { get; set; }
 ```
 
-`AdditionalFields` 与所有属性参数一样，必须是常量表达式。 因此，不能使用[内插字符串](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings)或调用 [`string.Join()`](https://msdn.microsoft.com/library/system.string.join(v=vs.110).aspx) 来初始化 `AdditionalFields`。 对于添加到 `[Remote]` 特性的每个附加字段，都必须向相应的控制器操作方法另外添加一个参数。
+`AdditionalFields` 与所有属性参数一样，必须是常量表达式。 因此，不能使用[内插字符串](/dotnet/csharp/language-reference/keywords/interpolated-strings)或调用 [`string.Join()`](https://msdn.microsoft.com/library/system.string.join(v=vs.110).aspx) 来初始化 `AdditionalFields`。 对于添加到 `[Remote]` 特性的每个附加字段，都必须向相应的控制器操作方法另外添加一个参数。

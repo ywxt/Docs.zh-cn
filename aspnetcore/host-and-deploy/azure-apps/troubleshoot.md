@@ -1,17 +1,17 @@
 ---
-title: 对 Azure 应用服务上的 ASP.NET Core 进行故障排除
+title: 对 Azure 应用服务上的 ASP.NET Core 启动错误进行故障排除
 author: guardrex
 description: 了解如何诊断 ASP.NET Core Azure 应用服务部署问题。
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/31/2018
+ms.date: 10/24/2018
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: a995c743b4e43be8bea5329affb3f2c736b1d016
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 05bb024f5b0d2b554cc861c250a92fd7ae23437f
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41902549"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090740"
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>对 Azure 应用服务上的 ASP.NET Core 进行故障排除
 
@@ -108,7 +108,7 @@ ASP.NET Core 模块 stdout 日志通常记录应用程序事件日志中找不�
 
 ## <a name="common-startup-errors"></a>常见启动错误 
 
-请参阅 [ASP.NET Core 常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)。 参考主题介绍了阻止应用启动的大部分常见问题。
+请参阅 <xref:host-and-deploy/azure-iis-errors-reference>。 参考主题介绍了阻止应用启动的大部分常见问题。
 
 ## <a name="slow-or-hanging-app"></a>应用缓慢或挂起
 
@@ -175,8 +175,8 @@ ASP.NET Core 模块 stdout 日志通常记录应用程序事件日志中找不�
 
 ## <a name="additional-resources"></a>其他资源
 
-* [ASP.NET Core 中的错误处理简介](xref:fundamentals/error-handling)
-* [Azure 应用服务和 IIS 上 ASP.NET Core 的常见错误参考](xref:host-and-deploy/azure-iis-errors-reference)
+* <xref:fundamentals/error-handling>
+* <xref:host-and-deploy/azure-iis-errors-reference>
 * [使用 Visual Studio 对 Azure 应用服务中的 Web 应用进行故障排除](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio)
 * [解决 Azure Web 应用中的“502 错误的网关”和“503 服务不可用”HTTP 错误](/azure/app-service/app-service-web-troubleshoot-http-502-http-503)
 * [解决 Azure 应用服务中 Web 应用性能缓慢的问题](/azure/app-service/app-service-web-troubleshoot-performance-degradation)

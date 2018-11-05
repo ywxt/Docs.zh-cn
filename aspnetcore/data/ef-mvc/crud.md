@@ -3,14 +3,15 @@ title: ASP.NET Core MVC 和 EF Core 教程 - 创建、读取、更新和删除 (
 author: rick-anderson
 description: ''
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/crud
-ms.openlocfilehash: de9b0bd1e0346d4c12f256e6226353f1ab47ed11
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 34927415beadaa3f5c9035a9101e3c99f7cbc395
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477574"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090818"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>ASP.NET Core MVC 和 EF Core 教程 - 创建、读取、更新和删除 (2/10)
 
@@ -91,7 +92,7 @@ http://localhost:1230/Instructor/Index?id=1&CourseID=2021
 <a href="/Students/Edit?studentID=6">Edit</a>
 ```
 
-有关标记帮助器的详细信息，请参阅 [ASP.NET Core 中的标记帮助器](xref:mvc/views/tag-helpers/intro)。
+有关标记帮助程序的详细信息，请参阅 <xref:mvc/views/tag-helpers/intro>。
 
 ### <a name="add-enrollments-to-the-details-view"></a>将注册添加到“详细信息”视图
 
@@ -121,7 +122,7 @@ http://localhost:1230/Instructor/Index?id=1&CourseID=2021
 
 已从 `Bind` 特性删除 `ID`，因为 ID 是插入行时 SQL Server 将自动设置的主键值。 来自用户的输入不会设置 ID 值。
 
-除了 `Bind` 特性，try-catch 块是对基架代码所做的唯一更改。 如果保存更改时捕获到来自 `DbUpdateException` 的异常，则会显示一般错误消息。 有时 `DbUpdateException` 异常是由应用程序外部的某些内容而非编程错误引起的，因此建议用户再次尝试。 尽管在本示例中未实现，但生产质量应用程序会记录异常。 有关详细信息，请参阅[监视和遥测（使用 Azure 构建真实世界云应用）](https://docs.microsoft.com/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry)中的“见解记录”部分。
+除了 `Bind` 特性，try-catch 块是对基架代码所做的唯一更改。 如果保存更改时捕获到来自 `DbUpdateException` 的异常，则会显示一般错误消息。 有时 `DbUpdateException` 异常是由应用程序外部的某些内容而非编程错误引起的，因此建议用户再次尝试。 尽管在本示例中未实现，但生产质量应用程序会记录异常。 有关详细信息，请参阅[监视和遥测（使用 Azure 构建真实世界云应用）](/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry)中的“见解记录”部分。
 
 `ValidateAntiForgeryToken` 特性帮助抵御跨网站请求伪造 (CSRF) 攻击。 令牌通过 [FormTagHelper](xref:mvc/views/working-with-forms#the-form-tag-helper) 自动注入到视图中，并在用户提交表单时包含该令牌。 令牌由 `ValidateAntiForgeryToken` 特性验证。 有关 CSRF 的详细信息，请参阅[反请求伪造](../../security/anti-request-forgery.md)。
 
@@ -277,7 +278,7 @@ Views/Students/Create.cshtml 中的代码对每个字段使用 `label`、`input`
 
 ## <a name="handling-transactions"></a>处理事务
 
-默认情况下，Entity Framework 隐式实现事务。 在对多个行或表进行更改并调用 `SaveChanges` 的情况下，Entity Framework 自动确保所有更改都成功或全部失败。 如果完成某些更改后发生错误，这些更改会自动回退。 如果需要更多控制操作（例如，如果想要在事务中包含在 Entity Framework 外部完成的操作），请参阅[事务](https://docs.microsoft.com/ef/core/saving/transactions)。
+默认情况下，Entity Framework 隐式实现事务。 在对多个行或表进行更改并调用 `SaveChanges` 的情况下，Entity Framework 自动确保所有更改都成功或全部失败。 如果完成某些更改后发生错误，这些更改会自动回退。 如果需要更多控制操作（例如，如果想要在事务中包含在 Entity Framework 外部完成的操作），请参阅[事务](/ef/core/saving/transactions)。
 
 ## <a name="no-tracking-queries"></a>非跟踪查询
 
@@ -291,7 +292,7 @@ Views/Students/Create.cshtml 中的代码对每个字段使用 `label`、`input`
 
 * 想要附加一个实体来更新它，但之前为了其他目的，已检索了相同的实体。 由于数据库上下文已跟踪了该实体，因此无法附加要更改的实体。 处理这种情况的一种方法是在早前的查询上调用 `AsNoTracking`。
 
-有关详细信息，请参阅[跟踪与非跟踪](https://docs.microsoft.com/ef/core/querying/tracking)。
+有关详细信息，请参阅[跟踪与非跟踪](/ef/core/querying/tracking)。
 
 ## <a name="summary"></a>总结
 

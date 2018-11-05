@@ -7,29 +7,29 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/31/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 55fb6b1c13549129a00541c1228956a93854ad78
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: c059ace7ebe0e65ecb3ac068677d65ae148322a0
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578024"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207675"
 ---
 # <a name="tutorial-get-started-with-aspnet-core-signalr"></a>教程：ASP.NET Core SignalR 入门
 
 本教程介绍生成使用 SignalR 的实时应用的基础知识。 您将学习如何：
 
 > [!div class="checklist"]
-> * 创建 Web 应用项目。
+> * 创建 Web 项目。
 > * 添加 SignalR 客户端库。
 > * 创建 SignalR 中心。
 > * 配置项目以使用 SignalR。
-> * 添加代码，以便使用此中心将消息从任何客户端发送到所有连接的客户端。
+> * 添加可将消息从任何客户端发送到所有连接客户端的代码。
 
 最终将创建一个正常运行的聊天应用：
 
 ![SignalR 示例应用](signalr/_static/signalr-get-started-finished.png)
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr/sample)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）。
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr/sample)（[如何下载](xref:index#how-to-download-a-sample)）。
 
 ## <a name="prerequisites"></a>系统必备
 

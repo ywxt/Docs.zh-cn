@@ -3,14 +3,14 @@ title: ASP.NET Core 的 Razor 语法参考
 author: rick-anderson
 description: 了解 Razor 标记语法，该语法用于将基于服务器的代码嵌入网页中。
 ms.author: riande
-ms.date: 10/18/2017
+ms.date: 10/26/2018
 uid: mvc/views/razor
-ms.openlocfilehash: d0f4d59cb605cc3cc7cdfa84bfc65399699e475a
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 10f0db168b36fed82def8227b3c3edcf5b57f6d7
+ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272683"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50148884"
 ---
 # <a name="razor-syntax-reference-for-aspnet-core"></a>ASP.NET Core 的 Razor 语法参考
 
@@ -404,7 +404,7 @@ Razor 指令由隐式表达式表示：`@` 符号后跟保留关键字。 指令
 
 通过了解 Razor 如何为视图生成代码，更易理解指令的工作原理。
 
-[!code-html[](razor/sample/Views/Home/Contact8.cshtml)]
+[!code-cshtml[](razor/sample/Views/Home/Contact8.cshtml)]
 
 该代码生成与下面类似的类：
 
@@ -422,7 +422,7 @@ public class _Views_Something_cshtml : RazorPage<dynamic>
 }
 ```
 
-本文后面的[查看为视图生成的 Razor C# 类](#viewing-the-razor-c-class-generated-for-a-view)部分说明了如何查看此生成的类。
+本文后面的[检查为视图生成的 Razor C# 类](#inspect-the-razor-c-class-generated-for-a-view)部分说明了如何查看此生成的类。
 
 <a name="using"></a>
 ### <a name="using"></a>@using
@@ -498,7 +498,6 @@ Razor 公开了 `Model` 属性，用于访问传递到视图的模型：
 
 ### <a name="inject"></a>@inject
 
-
 `@inject` 指令允许 Razor 页面将服务从[服务容器](xref:fundamentals/dependency-injection)注入到视图。 有关详细信息，请参阅[视图中的依赖关系注入](xref:mvc/views/dependency-injection)。
 
 ### <a name="functions"></a>@functions
@@ -572,34 +571,78 @@ C# Razor 关键字必须使用 `@(@C# Razor Keyword)` 进行双转义（例如�
 
 ### <a name="reserved-keywords-not-used-by-razor"></a>Razor 不使用的保留关键字
 
-* 类
+* class
 
-## <a name="viewing-the-razor-c-class-generated-for-a-view"></a>查看为视图生成的 Razor C# 类
+## <a name="inspect-the-razor-c-class-generated-for-a-view"></a>检查为视图生成的 Razor C# 类
+
+::: moniker range=">= aspnetcore-2.1"
+
+在 .NET Core SDK 2.1 或更高版本中，[Razor SDK](xref:razor-pages/sdk) 负责编译 Razor 文件。 生成项目时，Razor SDK 在项目根目录中生成 obj/<build_configuration>/<target_framework_moniker>/Razor 目录。 Razor 目录中的目录结构反映项目的目录结构。
+
+在面向 .NET Core 2.1 的 ASP.NET Core 2.1 Razor Pages 项目中，请考虑以下目录结构：
+
+* Areas/
+  * Admin/
+    * Pages/
+      * Index.cshtml
+      * Index.cshtml.cs
+* Pages/
+  * Shared/
+    * _Layout.cshtml
+  * _ViewImports.cshtml
+  * *_ViewStart.cshtml*
+  * Index.cshtml
+  * Index.cshtml.cs
+
+在 Debug 配置下生成项目将生成以下 obj 目录：
+
+* obj/
+  * Debug/
+    * netcoreapp2.1/
+      * Razor/
+        * Areas/
+          * Admin/
+            * Pages/
+              * Index.g.cshtml.cs
+        * Pages/
+          * Shared/
+            * _Layout.g.cshtml.cs
+          * _ViewImports.g.cshtml.cs
+          * _ViewStart.g.cshtml.cs
+          * Index.g.cshtml.cs
+
+若要查看 Pages/Index.cshtml 的生成类，请打开 obj/Debug/netcoreapp2.1/Razor/Pages/Index.g.cshtml.cs。
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
 
 将下面的类添加到 ASP.NET Core MVC 项目：
 
 [!code-csharp[](razor/sample/Utilities/CustomTemplateEngine.cs)]
 
-使用 `CustomTemplateEngine` 类替代 MVC 添加的 `RazorTemplateEngine`：
+在 `Startup.ConfigureServices` 中，使用 `CustomTemplateEngine` 类替代 MVC 添加的 `RazorTemplateEngine`：
 
 [!code-csharp[](razor/sample/Startup.cs?highlight=4&range=10-14)]
 
-在 `CustomTemplateEngine` 的 `return csharpDocument` 语句上设置断点。 当程序执行在断点处停止时，查看 `generatedCode` 的值。
+在 `CustomTemplateEngine` 的 `return csharpDocument;` 语句上设置断点。 当程序执行在断点处停止时，查看 `generatedCode` 的值。
 
 ![generatedCode 的文本可视化工具视图](razor/_static/tvr.png)
+
+::: moniker-end
 
 ## <a name="view-lookups-and-case-sensitivity"></a>视图查找和区分大小写
 
 Razor 视图引擎为视图执行区分大小写的查找。 但是，实际查找取决于基础文件系统：
 
-* 基于文件的源： 
+* 基于文件的源：
   * 在使用不区分大小写的文件系统的操作系统（例如，Windows）上，物理文件提供程序查找不区分大小写。 例如，`return View("Test")` 可匹配 */Views/Home/Test.cshtml*、*/Views/home/test.cshtml* 以及任何其他大小写变体。
   * 在区分大小写的文件系统（例如，Linux、OSX 以及使用 `EmbeddedFileProvider` 构建的文件系统）上，查找区分大小写。 例如，`return View("Test")` 专门匹配 */Views/Home/Test.cshtml*。
 * 预编译视图：在 ASP.NET Core 2.0 及更高版本中，预编译视图查找在所有操作系统上均不区分大小写。 该行为与 Windows 上物理文件提供程序的行为相同。 如果两个预编译视图仅大小写不同，则查找的结果具有不确定性。
 
 建议开发人员将文件和目录名称的大小写与以下项的大小写匹配：
 
-    * 区域、控制器和操作名称。 
+    * 区域、控制器和操作名称。
     * Razor 页面。
-    
+
 匹配大小写可确保无论使用哪种基础文件系统，部署都能找到其视图。

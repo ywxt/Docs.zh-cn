@@ -6,18 +6,38 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/search
-ms.openlocfilehash: c88441b39d8c96ec817c58fc56ebd51a0887b077
-ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
+ms.openlocfilehash: 80292f8cfecd5363fb8acc8578f9bb0ca9ee5969
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48045557"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090158"
 ---
 # <a name="add-search-to-aspnet-core-razor-pages"></a>将搜索添加到 ASP.NET Core Razor 页面
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 本文档中，将向索引页面添加搜索功能以实现按“流派”或“名称”搜索电影。
+
+将以下突出显示的属性添加到 Pages/Movies/Index.cshtml.cs：
+
+::: moniker range="= aspnetcore-2.0"
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Index.cshtml.cs?name=snippet_newProps&highlight=11-999)]
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Pages/Movies/Index.cshtml.cs?name=snippet_newProps&highlight=11-999)]
+
+::: moniker-end
+
+* `SearchString`：包含用户在搜索文本框中输入的文本。
+* `Genres`：包含流派列表。 这使用户能够从列表中选择一种流派。
+* `MovieGenre`：包含用户选择的特定流派（例如“西部”）。
+
+本文档后面部分将使用 `Genres` 和 `MovieGenre` 属性。
 
 使用以下代码更新索引页面的 `OnGetAsync` 方法：
 
@@ -40,6 +60,8 @@ var movies = from m in _context.Movie
 `s => s.Title.Contains()` 代码是 [Lambda 表达式](/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions)。 Lambda 在基于方法的 [LINQ](/dotnet/csharp/programming-guide/concepts/linq/) 查询中用作标准查询运算符方法的参数，如 [Where](/dotnet/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq) 方法或 `Contains`（前面的代码中所使用的）。 在对 LINQ 查询进行定义或通过调用方法（如 `Where`、`Contains` 或 `OrderBy`）进行修改后，此查询不会被执行。 相反，会延迟执行查询。 这意味着表达式的计算会延迟，直到循环访问其实现的值或者调用 `ToListAsync` 方法为止。 有关详细信息，请参阅 [Query Execution](/dotnet/framework/data/adonet/ef/language-reference/query-execution)（查询执行）。
 
 注意：[Contains](/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) 方法在数据库中运行，而不是在 C# 代码中。 查询是否区分大小写取决于数据库和排序规则。 在 SQL Server 上，`Contains` 映射到 [SQL LIKE](/sql/t-sql/language-elements/like-transact-sql)，这是不区分大小写的。 在 SQLite 中，由于使用了默认排序规则，因此需要区分大小写。
+
+最后，`OnGetAsync` 方法的最后一行使用用户的搜索值填充 `SearchString` 属性。 填充 `SearchString` 属性后，搜索值将在执行搜索后保留在搜索框中。
 
 导航到电影页面，并向 URL追加一个如 `?searchString=Ghost` 的查询字符串（例如 `http://localhost:5000/Movies?searchString=Ghost`）。 筛选的电影将显示出来。
 
@@ -66,25 +88,6 @@ HTML `<form>` 标记使用[表单标记帮助程序](xref:mvc/views/working-with
 ![显示标题筛选器文本框中键入了 ghost 一词的索引视图](search/_static/filter.png)
 
 ## <a name="search-by-genre"></a>按流派搜索
-
-将以下突出显示的属性添加到 Pages/Movies/Index.cshtml.cs：
-
-::: moniker range="= aspnetcore-2.0"
-
-[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Index.cshtml.cs?name=snippet_newProps&highlight=11-999)]
-
-::: moniker-end
-
-::: moniker range=">= aspnetcore-2.1"
-
-[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Pages/Movies/Index.cshtml.cs?name=snippet_newProps&highlight=11-999)]
-
-::: moniker-end
-
-
-`Genres` 属性包含流派列表。 这使用户能够从列表中选择一种流派。
-
-`MovieGenre` 属性包含用户选择的特定流派（例如“西部”）。
 
 使用以下代码更新 `OnGetAsync` 方法：
 

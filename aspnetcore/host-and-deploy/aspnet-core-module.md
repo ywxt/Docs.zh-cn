@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: 0ae19b26bc86c9da7a61f3117aaae1844115593a
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 0d167f779f9dcae6b0d946dce5e341793daf43bf
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48913276"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50091010"
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET Core 模块配置参考
 
@@ -48,6 +48,8 @@ ms.locfileid: "48913276"
 * 应用和已安装的运行时（x64 或 x86）的体系结构（位数）必须与应用池的体系结构匹配。
 
 * 如果使用 `WebHostBuilder`（而不是使用 [CreateDefaultBuilder](xref:fundamentals/host/web-host#set-up-a-host)）手动设置应用的主机，并且应用曾经直接在 Kestrel 服务器上运行（自托管），则先调用 `UseKestrel`，再调用 `UseIISIntegration`。 如果顺序颠倒，主机将无法启动。
+
+* 检测到客户端连接断开。 客户端连接断开时，[HttpContext.RequestAborted](xref:Microsoft.AspNetCore.Http.HttpContext.RequestAborted*) 取消标记将会取消。
 
 ### <a name="hosting-model-changes"></a>托管模型更改
 
@@ -155,7 +157,7 @@ ms.locfileid: "48913276"
 
 | 特性 | 描述 | 默认 |
 | --------- | ----------- | :-----: |
-| `arguments` | <p>可选的字符串属性。</p><p>processPath 中指定的可执行文件的参数。</p>| |
+| `arguments` | <p>可选的字符串属性。</p><p>processPath 中指定的可执行文件的参数。</p> | |
 | `disableStartUpErrorPage` | <p>可选布尔属性。</p><p>如果为 true，将禁止显示“502.5 - 进程失败”页面，而会优先显示 web.config 中配置的 502 状态代码页面。</p> | `false` |
 | `forwardWindowsAuthToken` | <p>可选布尔属性。</p><p>如果为 true，会将令牌作为每个请求的标头“MS-ASPNETCORE-WINAUTHTOKEN”，转发到在 %ASPNETCORE_PORT% 上侦听的子进程。 该进程负责在每个请求的此令牌上调用 CloseHandle。</p> | `true` |
 | `hostingModel` | <p>可选的字符串属性。</p><p>将托管模型指定为进程内 (`inprocess`) 或进程外 (`outofprocess`)。</p> | `outofprocess` |
@@ -306,6 +308,50 @@ ms.locfileid: "48913276"
     stdoutLogFile="\\?\%home%\LogFiles\stdout">
 </aspNetCore>
 ```
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+## <a name="enhanced-diagnostic-logs"></a>增强的诊断日志
+
+可以配置 ASP.NET Core 模块提供内容以提供增强的诊断日志。 向 web.config 中的 `<aspNetCore>` 元素添加 `<handlerSettings>` 元素。将 `debugLevel` 设置为 `TRACE` 将提供更准确的诊断信息：
+
+```xml
+<aspNetCore processPath="dotnet"
+    arguments=".\MyApp.dll"
+    stdoutLogEnabled="false"
+    stdoutLogFile="\\?\%home%\LogFiles\stdout"
+    hostingModel="inprocess">
+  <handlerSettings>
+    <handlerSetting name="debugFile" value="aspnetcore-debug.log" />
+    <handlerSetting name="debugLevel" value="FILE,TRACE" />
+  </handlerSettings>
+</aspNetCore>
+```
+
+调试级别 (`debugLevel`) 值可以同时包含级别和位置。
+
+级别（详细程度由低到高）：
+
+* 错误
+* 警告
+* 信息
+* TRACE
+
+位置（允许多个位置）：
+
+* CONSOLE
+* 事件日志
+* 文件
+
+还可以通过环境变量提供处理程序设置：
+
+* `ASPNETCORE_MODULE_DEBUG_FILE` &ndash; 调试日志文件的路径。 （默认值：aspnetcore debug.log）
+* `ASPNETCORE_MODULE_DEBUG` &ndash; 调试级别设置。
+
+> [!WARNING]
+> 部署中启用的调试日志记录的时间不要超出排除故障所需的时间。 日志大小不限。 持续启用调试日志可能耗尽可用磁盘空间并导致服务器或应用服务崩溃。
 
 ::: moniker-end
 

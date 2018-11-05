@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/01/2018
 uid: fundamentals/routing
-ms.openlocfilehash: 500cefbc7caee2054b4afda7c1277685862f5ad4
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: 06059d720bd4444b1ec12e42d466ee54d1658203
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348554"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207751"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core 中的路由
 
@@ -22,7 +22,7 @@ ms.locfileid: "49348554"
 > [!IMPORTANT]
 > 本文档介绍较低级别的 ASP.NET Core 路由。 有关 ASP.NET Core MVC 路由的信息，请参阅 <xref:mvc/controllers/routing>。
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/samples)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="routing-basics"></a>路由基础知识
 
@@ -47,7 +47,7 @@ URL 匹配是一个过程，通过该过程，路由可向处理程序调度传�
 
 [RouteData.Values](xref:Microsoft.AspNetCore.Routing.RouteData.Values*) 是从路由中生成的路由值的字典。 这些值通常通过标记 URL 来确定，可用来接受用户输入，或者在应用内作出进一步的调度决策。
 
-[RouteData.DataTokens](xref:Microsoft.AspNetCore.Routing.RouteData.DataTokens*) 是一个与匹配的路由相关的其他数据的属性包。 提供 `DataTokens` 以支持将状态数据与每个路由相关联，以便应用稍后可根据所匹配的路由作出决策。 这些值是开发者定义的，不会影响通过任何方式路由的行为。 此外，存储于数据令牌中的值可以属于任何类型，与路由值相反，后者必须能够轻松转换为字符串，或从字符串进行转换。
+[RouteData.DataTokens](xref:Microsoft.AspNetCore.Routing.RouteData.DataTokens*) 是一个与匹配的路由相关的其他数据的属性包。 提供 `DataTokens` 以支持将状态数据与每个路由相关联，以便应用稍后可根据所匹配的路由作出决策。 这些值是开发者定义的，不会影响通过任何方式路由的行为。 此外，存储于 `RouteData.DataTokens` 中的值可以属于任何类型，与 `RouteData.Values` 相反，后者必须能够轻松转换为字符串，或从字符串进行转换。
 
 [RouteData.Routers](xref:Microsoft.AspNetCore.Routing.RouteData.Routers*) 是参与成功匹配请求的路由的列表。 路由可以相互嵌套。 `Routers` 属性可以通过导致匹配的逻辑路由树反映该路径。 通常情况下，`Routers` 中的第一项是路由集合，应该用于生成 URL。 `Routers` 中的最后一项是匹配的路由处理程序。
 
@@ -63,7 +63,7 @@ URL 遵循类似的迭代过程，但开头是将用户或框架代码调用到�
 * [VirtualPathContext.Values](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.Values*)
 * [VirtualPathContext.AmbientValues](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.AmbientValues*)
 
-路由主要使用 `Values` 和 `AmbientValues` 提供的路由值来决定可能生成 URL 的位置以及要包括的值。 `AmbientValues` 是路由值的集合，这些值是通过将当前请求与路由系统相匹配而产生的。 与此相反，`Values` 是指定如何为当前操作生成所需 URL 的路由值。 当路由需要获取与当前上下文关联的服务或其他数据时，需提供 `HttpContext`。
+路由主要使用 `Values` 和 `AmbientValues` 提供的路由值来确定是否可能生成 URL 以及要包括哪些值。 `AmbientValues` 是路由值的集合，这些值是通过将当前请求与路由系统相匹配而产生的。 与此相反，`Values` 是指定如何为当前操作生成所需 URL 的路由值。 当路由需要获取与当前上下文关联的服务或其他数据时，需提供 `HttpContext`。
 
 > [!TIP]
 > 将 [VirtualPathContext.Values](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.Values*) 视为 [VirtualPathContext.AmbientValues](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.AmbientValues*) 的一组替代。 URL 生成尝试重复使用当前请求中的路由值，以便轻松使用相同路由或路由值生成链接的 URL。

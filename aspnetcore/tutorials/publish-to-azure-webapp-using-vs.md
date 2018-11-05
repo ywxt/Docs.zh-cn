@@ -3,14 +3,15 @@ title: 使用 Visual Studio 将 ASP.NET Core 应用发布到 Azure
 author: rick-anderson
 description: 了解如何使用 Visual Studio 将 ASP.NET Core 应用发布到 Azure 应用服务。
 ms.author: riande
-ms.date: 12/16/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: 7211da268c1c52e7b859e6f98ce433fd19b218ff
-ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
+ms.openlocfilehash: a5a02112d87563a47d5e2dab355359fa39da9a89
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39320721"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090350"
 ---
 # <a name="publish-an-aspnet-core-app-to-azure-with-visual-studio"></a>使用 Visual Studio 将 ASP.NET Core 应用发布到 Azure
 
@@ -20,7 +21,7 @@ ms.locfileid: "39320721"
 
 如果你在 macOS 上工作，请参阅[从 Visual Studio for Mac 发布到 Azure](https://blog.xamarin.com/publish-azure-visual-studio-mac/)。
 
-要解决应用服务部署问题，请参阅[对 Azure 应用服务上的 ASP.NET Core 进行故障排除](xref:host-and-deploy/azure-apps/troubleshoot)。
+若要对应用服务部署问题进行故障排除，请参阅 <xref:host-and-deploy/azure-apps/troubleshoot>。
 
 ## <a name="set-up"></a>设置
 
@@ -67,7 +68,7 @@ Visual Studio 随即创建解决方案。
 
 * 选择“注册”并注册新用户。 可使用虚构电子邮件地址。 提交时，页面上会显示以下错误：
 
-    “内部服务器错误: 处理请求时，数据库操作失败。SQL 异常: 无法打开数据库。可通过向应用程序数据库上下文应用现有迁移解决此问题。”*
+    “内部服务器错误: 处理请求时，数据库操作失败。SQL 异常: 无法打开数据库。可通过向应用程序数据库上下文应用现有迁移解决此问题。”
 * 选择“应用迁移”，并在页面更新后刷新页面。
 
 ![内部服务器错误: 处理请求时，数据库操作失败。 SQL 异常: 无法打开数据库。 可能可通过向应用程序数据库上下文应用现有迁移解决此问题。](publish-to-azure-webapp-using-vs/_static/mig.png)
@@ -179,11 +180,11 @@ Visual Studio 在 Azure 上创建 Web 应用和 SQL Server。 此步骤可能需
 
 ### <a name="next-steps"></a>后续步骤
 
-* [使用 Visual Studio 和 Git 持续部署到 Azure](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
+* <xref:host-and-deploy/azure-apps/azure-continuous-deployment>
 
 ## <a name="additonal-resources"></a>其他资源
 
-* [Azure 应用服务](https://docs.microsoft.com/azure/app-service/app-service-web-overview)
-* [Azure 资源组](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups)
-* [Azure SQL 数据库](https://docs.microsoft.com/azure/sql-database/)
-* [对 Azure 应用服务上的 ASP.NET Core 进行故障排除](xref:host-and-deploy/azure-apps/troubleshoot)
+* [Azure 应用服务](/azure/app-service/app-service-web-overview)
+* [Azure 资源组](/azure/azure-resource-manager/resource-group-overview#resource-groups)
+* [Azure SQL 数据库](/azure/sql-database/)
+* <xref:host-and-deploy/azure-apps/troubleshoot>

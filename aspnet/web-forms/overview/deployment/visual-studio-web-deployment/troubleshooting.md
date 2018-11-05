@@ -30,7 +30,7 @@ ms.locfileid: "41824887"
 
 - [使用 Visual Studio 对 Azure 应用服务中的 Web 应用进行故障排除](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 - [在 Azure 应用服务中监视 Web 应用](https://azure.microsoft.com/documentation/articles/web-sites-monitor//)
-- [宣布推出 Windows Azure SDK 2.0 for.NET 的版本](http://https://weblogs.asp.net/scottgu/announcing-the-release-of-windows-azure-sdk-2-0-for-net)（ScottGu 的博客，演示了如何在 Visual Studio 中获取诊断日志）
+- [宣布推出 Windows Azure SDK 2.0 for.NET 的版本](http:// https://weblogs.asp.net/scottgu/announcing-the-release-of-windows-azure-sdk-2-0-for-net)（ScottGu 的博客，演示了如何在 Visual Studio 中获取诊断日志）
 
 ## <a name="server-error-in--application---current-custom-error-settings-prevent-details-of-the-error-from-being-viewed-remotely"></a>服务器错误 '/' 应用程序-在当前的自定义错误设置防止错误的详细信息查看远程
 

@@ -5,18 +5,18 @@ description: 了解如何在 ASP.NET Core 应用程序中使用 URL 重写中间
 ms.author: riande
 ms.date: 08/17/2017
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: d9f33f34f75fe7bf534146c5a426335e74635018
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 5a1891c838436467fb49ff6288587fab08201179
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326064"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207181"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>ASP.NET Core 中的 URL 重写中间件
 
 作者：[Luke Latham](https://github.com/guardrex) 和 [Mikael Mengistu](https://github.com/mikaelm12)
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/)（[如何下载](xref:tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/)（[如何下载](xref:index#how-to-download-a-sample)）
 
 URL 重写是根据一个或多个预定义规则修改请求 URL 的行为。 URL 重写会在资源位置和地址之间创建一个抽象，使位置和地址不紧密相连。 在以下几种方案中，URL 重写很有价值：
 
@@ -399,9 +399,9 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 ### <a name="method-based-rule"></a>基于方法的规则
 
-使用 `Add(Action<RewriteContext> applyRule)` 在方法中实现自己的规则逻辑。 为了在方法中使用 `HttpContext`，`RewriteContext` 会将其公开。 `context.Result` 决定如何处理其他管道进程。
+使用 `Add(Action<RewriteContext> applyRule)` 在方法中实现自己的规则逻辑。 为了在方法中使用 `HttpContext`，`RewriteContext` 会将其公开。 `RewriteContext.Result` 决定如何处理其他管道进程。
 
-| context.Result                       | 操作                                                          |
+| `RewriteContext.Result`              | 操作                                                          |
 | ------------------------------------ | --------------------------------------------------------------- |
 | `RuleResult.ContinueRules`（默认值） | 继续应用规则                                         |
 | `RuleResult.EndResponse`             | 停止应用规则并发送响应                       |
@@ -437,7 +437,7 @@ public void Configure(IApplicationBuilder app)
 
 ### <a name="irule-based-rule"></a>基于 IRule 的规则
 
-使用 `Add(IRule)` 在派生自 `IRule` 的类中实现自己的规则逻辑。 通过 `IRule` 为使用基于方法的规则方式提供更大的灵活性。 派生类可能包含构造函数，你可在其中传入 `ApplyRule` 方法的参数。
+使用 `Add(IRule)` 将自己的规则逻辑封装在实现 `IRule` 接口的类中。 通过 `IRule` 为使用基于方法的规则方式提供更大的灵活性。 实现类可能包含构造函数，可在其中传入 `ApplyRule` 方法的参数。
 
 ::: moniker range=">= aspnetcore-2.0"
 

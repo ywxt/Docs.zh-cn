@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 7d64c500168166b0a7a29d5b92473726d5a9f49a
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 2590682755721a4bb14902b9fe7138a3bff56d31
+ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325336"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50148806"
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>ASP.NET Core MVC 中的缓存标记帮助程序
 
@@ -119,7 +119,7 @@ Razor 视图引擎将默认的 `expires-after` 值设置为 20 分钟。
 | -------------- | -------------------- |
 | String         | `Make`， `Make,Model` |
 
-`vary-by-query` 接受逗号分隔的标头值列表，在标头值发生更改时触发缓存刷新。
+`vary-by-query` 接受查询字符串(<xref:Microsoft.AspNetCore.Http.HttpRequest.Query*>) 中逗号分隔的 <xref:Microsoft.AspNetCore.Http.IQueryCollection.Keys*> 列表，它们在任何列出的键值发生更改时触发缓存刷新。
 
 以下示例监视 `Make` 和 `Model` 值。 该示例将缓存提供给 Web 服务器的每个不同 `Make` 和 `Model` 的内容：
 

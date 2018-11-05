@@ -56,6 +56,13 @@ Markdown 文件名称和图像文件名称使用小写。
 
 ## <a name="images-and-screenshots"></a>图像和屏幕截图
 
+请勿在文章中包含图像，除非：
+
+* 在基本的入门（初级）教程中。
+* 需要图像辅助说明。
+
+这些限制可缩小存储库的大小。
+
 作为可选步骤，请确保文档中使用的任何图像和屏幕截图都已压缩，这有助于缩小文件大小和提高页面加载性能。 几个常用工具包括 TinyPNG （使用 [TinyPNG 网站](https://tinypng.com/)或 [TinyPNG API](https://tinypng.com/developers)）或[图像优化器](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.ImageOptimizer) Visual Studio 扩展。 
 
 ## <a name="code-snippets"></a>代码片段
