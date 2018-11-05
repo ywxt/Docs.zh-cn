@@ -8,12 +8,12 @@ ms.date: 06/26/2013
 ms.assetid: 23fc77da-2725-4434-99a0-ff872d96336b
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 3b66f02c9be6441ff7d6c38d6180cc8556c6b8b9
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 18a44c280e6df1603837938d24d7d639d8c87cc2
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912886"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021412"
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>使用属性路由在 ASP.NET Web API 2 中创建 REST API
 ====================
@@ -52,11 +52,11 @@ Web API 2 支持一种新类型的路由，称为*的属性路由*。 属性路�
 
 首先运行 Visual Studio。 从**文件**菜单中，选择**新建**，然后选择**项目**。
 
-展开**已安装** > **Visual C#** 类别。 下**Visual C#**，选择**Web**。 在项目模板列表中选择**ASP.NET MVC 4 Web 应用程序**。 将项目命名&quot;BooksAPI&quot;。
+展开**已安装** > **Visual C#** 类别。 下**Visual C#**，选择**Web**。 在项目模板列表中选择**ASP.NET Web 应用程序 (.NET Framework)**。 将项目命名&quot;BooksAPI&quot;。
 
 ![](create-a-rest-api-with-attribute-routing/_static/image1.png)
 
-在中**新建 ASP.NET 项目**对话框中，选择**空**模板。 在"添加文件夹和核心引用"，选择**Web API**复选框。 单击**创建项目**。
+在中**新的 ASP.NET Web 应用程序**对话框中，选择**空**模板。 在"添加文件夹和核心引用"，选择**Web API**复选框。 单击 **“确定”**。
 
 ![](create-a-rest-api-with-attribute-routing/_static/image2.png)
 
@@ -86,7 +86,7 @@ Author.cs 中的代码替换为以下：
 
 ![](create-a-rest-api-with-attribute-routing/_static/image4.png)
 
-在中**添加基架**对话框中，选择"Web API 2 控制器具有读/写操作使用 Entity Framework。"
+在中**添加基架**对话框中，选择**包含 Web API 2 控制器操作，使用实体框架**。
 
 [![](create-a-rest-api-with-attribute-routing/_static/image6.png)](create-a-rest-api-with-attribute-routing/_static/image5.png)
 

@@ -1,19 +1,19 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/generating-views
 title: 第一种使用 ASP.NET MVC 的 EF 数据库： 生成视图 |Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 使用 MVC、 Entity Framework 和 ASP.NET 基架，可以创建提供接口的现有数据库的 web 应用程序。 此教程系列...
 ms.author: riande
 ms.date: 12/29/2014
 ms.assetid: 669367cf-8e30-4eb6-821d-10a7d9bb906c
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/generating-views
 msc.type: authoredcontent
-ms.openlocfilehash: 74c7abdc2d0f8fff9ad769d013fb001e2b9e427b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 7d925573dd4cdf5c1a36e51f312e18093bd35043
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824740"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021077"
 ---
 <a name="ef-database-first-with-aspnet-mvc-generating-views"></a>第一种使用 ASP.NET MVC 的 EF 数据库： 生成视图
 ====================

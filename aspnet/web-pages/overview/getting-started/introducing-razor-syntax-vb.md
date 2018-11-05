@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/getting-started/introducing-razor-syntax-vb
 title: 使用 Razor 语法 (Visual Basic 中) 的 ASP.NET Web 编程简介 |Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 本附录提供使用 ASP.NET Web pages 编程概述在 Visual Basic 中使用 Razor 语法。
 ms.author: riande
 ms.date: 02/07/2014
 ms.assetid: 5da59646-e973-41cd-88a9-c6b2c0594027
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cbec035533c37723afcd5bf4aa0c6e1c83dbae23
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 17a3a4925766b74446955a8e3a6fddbf9d29a721
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831065"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021698"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>使用 Razor 语法 (Visual Basic 中) 的 ASP.NET Web 编程简介
 ====================
@@ -275,13 +275,13 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
 
 :::row:::
     :::column:::
-        <strong>方法</strong>
+        <strong>Method</strong>
     :::column-end:::
     :::column:::
-        <strong>说明</strong>
+        <strong>Description</strong>
     :::column-end:::
     :::column:::
-        <strong>示例</strong>
+        <strong>Example</strong>
     :::column-end:::
 :::row-end:::
 * * *
@@ -290,7 +290,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `AsInt(), IsInt()`
     :::column-end:::
     :::column:::
-        将表示为整数的字符串转换 (如&quot;593&quot;) 为整数。
+        Converts a string that represents a whole number (like &quot;593&quot;) to an integer.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)]
@@ -302,7 +302,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `AsBool(), IsBool()`
     :::column-end:::
     :::column:::
-        将转换字符串，如&quot;，则返回 true&quot;或&quot;false&quot;为 Boolean 类型。
+        Converts a string like &quot;true&quot; or &quot;false&quot; to a Boolean type.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)]
@@ -314,7 +314,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `AsFloat(), IsFloat()`
     :::column-end:::
     :::column:::
-        将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为浮点数。
+        Converts a string that has a decimal value like &quot;1.3&quot; or &quot;7.439&quot; to a floating-point number.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)]
@@ -326,7 +326,8 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `AsDecimal(), IsDecimal()`
     :::column-end:::
     :::column:::
-        将具有类似的十进制值的字符串转换&quot;1.3&quot;或&quot;7.439&quot;为十进制数。 （在 ASP.NET 中，十进制数字是一个浮点数，更详细地说明。） :::column-end:::
+        Converts a string that has a decimal value like &quot;1.3&quot; or &quot;7.439&quot; to a decimal number. (In ASP.NET, a decimal number is more precise than a floating-point number.)
+    :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)]
     :::column-end:::
@@ -337,7 +338,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `AsDateTime(), IsDateTime()`
     :::column-end:::
     :::column:::
-        将对 ASP.NET 表示的日期和时间值的字符串转换`DateTime`类型。
+        Converts a string that represents a date and time value to the ASP.NET `DateTime` type.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)]
@@ -349,7 +350,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `ToString()`
     :::column-end:::
     :::column:::
-        将任何其他数据类型转换为字符串。
+        Converts any other data type to a string.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)]
@@ -367,10 +368,10 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         <strong>Operator</strong>
     :::column-end:::
     :::column:::
-        <strong>说明</strong>
+        <strong>Description</strong>
     :::column-end:::
     :::column:::
-        <strong>示例</strong>
+        <strong>Examples</strong>
     :::column-end:::
 :::row-end:::
 * * *
@@ -379,7 +380,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `+ - * /`
     :::column-end:::
     :::column:::
-        在数值表达式中使用的数学运算符。
+        Math operators used in numerical expressions.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]
@@ -391,7 +392,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `=`
     :::column-end:::
     :::column:::
-        赋值和相等。 根据上下文，将一条语句右侧的值分配给左侧和右侧，对象或检查值相等。
+        Assignment and equality. Depending on context, either assigns the value on the right side of a statement to the object on the left side, or checks the values for equality.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]
@@ -403,7 +404,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `<>`
     :::column-end:::
     :::column:::
-        不相等。 返回`True`如果值不相等。
+        Inequality. Returns `True` if the values are not equal.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]
@@ -415,7 +416,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `< > <= >=`
     :::column-end:::
     :::column:::
-        小于、 大于、 小于或等于，以及大于或等于。
+        Less than, greater than, less than or equal, and greater than or equal.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]
@@ -427,7 +428,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `&`
     :::column-end:::
     :::column:::
-        串联用于联接的字符串。
+        Concatenation, which is used to join strings.
     :::column-end:::
     :::column:::
         [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)]
@@ -439,7 +440,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `+= -=`
     :::column-end:::
     :::column:::
-        递增和递减运算符，从而添加，并且从变量 （分别） 减 1。
+        The increment and decrement operators, which add and subtract 1 (respectively) from a variable.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]
@@ -451,7 +452,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `.`
     :::column-end:::
     :::column:::
-        圆点。 用于区分对象及其属性和方法。
+        Dot. Used to distinguish objects and their properties and methods.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]
@@ -463,7 +464,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `()`
     :::column-end:::
     :::column:::
-        括号。 为组表达式，用于将参数传递给方法，并访问数组和集合的成员。
+        Parentheses. Used to group expressions, to pass parameters to methods, and to access members of arrays and collections.
     :::column-end:::
     :::column:::
         [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)]
@@ -475,7 +476,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `Not`
     :::column-end:::
     :::column:::
-        不。 反转 true 值为 false，反之亦然。 通常用作测试的速记方法`False`(即，对于不`True`)。
+        Not. Reverses a true value to false and vice versa. Typically used as a shorthand way to test for `False` (that is, for not `True`).
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]
@@ -487,7 +488,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         `AndAlso OrElse`
     :::column-end:::
     :::column:::
-        逻辑 AND 和 OR，用于链接在一起条件。
+        Logical AND and OR, which are used to link conditions together.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)]

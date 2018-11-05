@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 title: 介绍 ASP.NET 网页的 HTML 窗体基础知识 |Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 本教程演示如何创建输入窗体以及如何处理用户的输入时使用 ASP.NET Web Pages (Razor) 的基础知识。 和现在，您...
 ms.author: riande
 ms.date: 05/28/2015
 ms.assetid: 81ed82bf-b940-44f1-b94a-555d0cb7cc98
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
-ms.openlocfilehash: 5cf628b63e868e3f76aa19879d4af554241979c0
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 28385ac2244ab0bfb38ee5fcbc64e6e11804612b
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834970"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021672"
 ---
 <a name="introducing-aspnet-web-pages---html-form-basics"></a>介绍 ASP.NET 网页的 HTML 窗体基础知识
 ====================

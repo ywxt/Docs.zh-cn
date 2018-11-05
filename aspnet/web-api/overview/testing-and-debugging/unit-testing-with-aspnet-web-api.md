@@ -1,19 +1,19 @@
 ---
 uid: web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 title: 单元测试 ASP.NET Web API 2 |Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 此指南和应用程序演示了如何创建 Web API 2 应用程序的简单单元测试。 本教程演示如何包含单元测试项目...
 ms.author: riande
 ms.date: 06/05/2014
 ms.assetid: bf20f78d-ff91-48be-abd1-88e23dcc70ba
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 91cca2789b66b7b8983f8786b506c5fc71db8b75
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: 915610e6646ebe86dd8f16f290ecabd36bf7f48d
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795429"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51020827"
 ---
 <a name="unit-testing-aspnet-web-api-2"></a>单元测试 ASP.NET Web API 2
 ====================
@@ -36,7 +36,7 @@ ms.locfileid: "48795429"
 
 本主题包含以下各节：
 
-- [先决条件](#prereqs)
+- [系统必备](#prereqs)
 - [下载代码](#download)
 - [使用单元测试项目创建应用程序](#appwithunittest)
     - [创建应用程序时添加单元测试项目](#whencreate)

@@ -1,19 +1,19 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/updating-deleting-and-creating-data
 title: 更新、 删除和创建数据与模型绑定和 web 窗体 |Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 本系列教程演示了一个 ASP.NET Web 窗体项目中使用模型绑定的基本方面。 模型绑定使数据交互...更多直接-
 ms.author: riande
 ms.date: 02/27/2014
 ms.assetid: 602baa94-5a4f-46eb-a717-7a9e539c1db4
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/updating-deleting-and-creating-data
 msc.type: authoredcontent
-ms.openlocfilehash: a3e098d7b10ba6218ffa1818ccf8fc8df6912a9e
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 127543b0696b01f136b340d07f6f806b6a6fb1eb
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834150"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021568"
 ---
 <a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a>更新、 删除和创建数据与模型绑定和 web 窗体
 ====================

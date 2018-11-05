@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
 title: Introducing ASP.NET Web 页面-创建一致布局 |Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 本教程演示如何使用布局来使用 ASP.NET Web Pages 站点上创建一致的外观的页面。 它假定你已完成...
 ms.author: riande
 ms.date: 05/28/2015
 ms.assetid: c85ec591-f8d7-4882-b763-de6ab9f3df7a
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
 msc.type: authoredcontent
-ms.openlocfilehash: 8f3d9e8a6f6a0179224e18faf11db3dc1510a095
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: a6a007678d58547e9987ebda46bd08ae8aea66f7
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824633"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021168"
 ---
 <a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>ASP.NET 网页简介-创建一致布局
 ====================

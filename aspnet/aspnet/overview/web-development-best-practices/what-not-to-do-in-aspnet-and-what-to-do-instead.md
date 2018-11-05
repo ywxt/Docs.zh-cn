@@ -1,19 +1,19 @@
 ---
 uid: aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 title: 不需要在 ASP.NET 中，做什么和有什么解决办法 |Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 本主题介绍几个常见的错误的人也会在 ASP.NET web 项目中。 它提供有关应执行哪些操作来避免这些 commo 建议...
 ms.author: riande
 ms.date: 05/08/2014
 ms.assetid: c39b9965-545c-4b04-8f55-21be7f28a9e5
 msc.legacyurl: /aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 msc.type: authoredcontent
-ms.openlocfilehash: 7f2366ef8cb258a08c3cb96407f605864e5ec9a9
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 69040ca6a1ddeaf029062da45475dd2171b1afa6
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825666"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021438"
 ---
 <a name="what-not-to-do-in-aspnet-and-what-to-do-instead"></a>不需要在 ASP.NET 中，做什么和有什么解决办法
 ====================

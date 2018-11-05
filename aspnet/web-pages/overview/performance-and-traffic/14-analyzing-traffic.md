@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/performance-and-traffic/14-analyzing-traffic
 title: 跟踪 ASP.NET Web Pages (Razor) 站点访问者信息 （分析） |Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 您已经看到了将你的网站后，你可能想要分析网站流量。
 ms.author: riande
 ms.date: 02/17/2014
 ms.assetid: 360bc6e1-84c5-4b8e-a84c-ea48ab807aa4
 msc.legacyurl: /web-pages/overview/performance-and-traffic/14-analyzing-traffic
 msc.type: authoredcontent
-ms.openlocfilehash: aabe3177ba9479bfafafe81e1ea99a58f29d5271
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 57e6a0d4681f147faa5e9ca3b6ed0ef287d6a381
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833139"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51020879"
 ---
 <a name="tracking-visitor-information-analytics-for-an-aspnet-web-pages-razor-site"></a>跟踪 ASP.NET Web Pages (Razor) 站点的访问者信息 （分析）
 ====================
@@ -86,5 +86,5 @@ ASP.NET 网页包括多个分析帮助程序 (`Analytics.GetGoogleHtml`， `Anal
 ## <a name="additional-resources"></a>其他资源
 
 - [Google Analytics 站点](https://www.google.com/analytics/)
-- [Yahoo ！Web Analytics 站点](http://help.yahoo.com/l/us/yahoo/ywa/)
+- [Yahoo!Web Analytics 站点](http://help.yahoo.com/l/us/yahoo/ywa/)
 - [StatCounter 站点](http://statcounter.com/)

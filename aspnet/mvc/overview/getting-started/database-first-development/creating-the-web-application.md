@@ -1,19 +1,19 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/creating-the-web-application
 title: 第一种使用 ASP.NET MVC 的 EF 数据库： 创建 Web 应用程序和数据模型 |Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 使用 MVC、 Entity Framework 和 ASP.NET 基架，可以创建提供接口的现有数据库的 web 应用程序。 此教程系列...
 ms.author: riande
 ms.date: 10/01/2014
 ms.assetid: bc8f2bd5-ff57-4dcd-8418-a5bd517d8953
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/creating-the-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 343131d45ed0b2442f1b0b557c5b63f3877e5d0e
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 6679b61326bd016481d96a4b5d58ec006f86b633
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830060"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51020792"
 ---
 <a name="ef-database-first-with-aspnet-mvc-creating-the-web-application-and-data-models"></a>第一种使用 ASP.NET MVC 的 EF 数据库： 创建 Web 应用程序和数据模型
 ====================

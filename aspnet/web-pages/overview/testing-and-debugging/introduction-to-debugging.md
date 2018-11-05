@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/testing-and-debugging/introduction-to-debugging
 title: 介绍如何调试 ASP.NET Web Pages (Razor) 站点 |Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 调试是查找并修复错误的代码页中的过程。 本章展示一些工具和技术可用于调试和分析...
 ms.author: riande
 ms.date: 02/20/2014
 ms.assetid: 68de4326-7611-4b9b-b5f6-79b7adc3069f
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: fb9a69d568e10ddafd71e2b9600b3dae21576807
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: e5302492f01cbd507e0b0fd995f21621bf6f04c8
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48794984"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021308"
 ---
 <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>介绍如何调试 ASP.NET Web Pages (Razor) 站点
 ====================
