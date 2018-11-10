@@ -4,14 +4,14 @@ author: rick-anderson
 description: 了解如何作为一种标准允许或拒绝在 ASP.NET Core 应用中的跨域请求的 CORS。
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/05/2018
+ms.date: 11/05/2018
 uid: security/cors
-ms.openlocfilehash: cfbf24edb1dae76f676d51738b0d57266688d53e
-ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
+ms.openlocfilehash: 8e5056b448d47d75272e9394b03ce8a58b05a0f4
+ms.sourcegitcommit: 09affee3d234cb27ea6fe33bc113b79e68900d22
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48045583"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51191316"
 ---
 # <a name="enable-cross-origin-requests-cors-in-aspnet-core"></a>启用 ASP.NET Core 中的跨域请求 (CORS)
 
@@ -137,17 +137,37 @@ CORS 中间件必须位于之前定义的任何终结点应用程序中你想要
 
 ### <a name="set-the-allowed-origins"></a>设置允许的来源
 
-若要允许一个或多个特定源，调用<xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.WithOrigins*>:
+ASP.NET Core MVC 中的 CORS 中间件具有几种方法来指定允许的来源：
+
+* <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.WithOrigins*>： 允许指定一个或多个 Url。 URL 可能包括方案、 主机名和端口不包含任何路径信息。 例如 `https://example.com`。 不含尾部斜杠，必须指定的 URL (`/`)。
 
 [!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=20-24&highlight=4)]
 
-若要允许所有来源，请调用<xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.AllowAnyOrigin*>:
+* <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.AllowAnyOrigin*>： 允许从任何方案使用所有来源的 CORS 请求 (`http`或`https`)。
 
 [!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=28-32&highlight=4)]
 
 允许任何来源的请求之前，请仔细考虑。 允许任何来源的请求意味着*的任何网站*可以对您的应用程序进行跨域请求。
 
+::: moniker range=">= aspnetcore-2.2"
+
+> [!NOTE]
+> 指定`AllowAnyOrigin`和`AllowCredentials`是不安全的配置，可能会导致跨站点请求伪造。 CORS 服务返回了无效的 CORS 响应时将应用配置了两个。
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+> [!NOTE]
+> 指定`AllowAnyOrigin`和`AllowCredentials`是不安全的配置，可能会导致跨站点请求伪造。 请考虑指定确切的来源列表，如果您的客户端需要授权，才能访问服务器资源。
+
+::: moniker-end
+
 此设置会影响[预检请求和访问控制的允许的域标头](#preflight-requests)（在本主题后面所述）。
+
+* <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.SetIsOriginAllowedToAllowWildcardSubdomains*> -允许来自任何给定域的子域的 CORS 请求。 该方案不能为通配符。
+
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=98-104&highlight=4)]
 
 ### <a name="set-the-allowed-http-methods"></a>设置允许的 HTTP 方法
 

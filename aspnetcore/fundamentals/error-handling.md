@@ -1,17 +1,17 @@
 ---
 title: 处理 ASP.NET Core 中的错误
-author: ardalis
+author: tdykstra
 description: 了解如何处理 ASP.NET Core 应用中的错误。
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 07/05/2018
+ms.date: 11/01/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: d1e94fdc89fbebc264dc001bbf35666af16f4799
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 89117d78486493747d649c3bb0d9cce9f97ef419
+ms.sourcegitcommit: 85f2939af7a167b9694e1d2093277ffc9a741b23
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50208026"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50968314"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>处理 ASP.NET Core 中的错误
 
@@ -119,17 +119,28 @@ app.UseStatusCodePages();
 
 [!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_StatusCodePages)]
 
-另一种方法采用内容类型和格式字符串：
+`UseStatusCodePages` 重载需要使用内容类型和格式字符串：
 
 ```csharp
 app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 ```
+### <a name="redirect-re-execute-extension-methods"></a>重定向重新执行扩展方法
 
-也可以使用重定向和重新执行扩展方法。 重定向方法向客户端发送“302 Found”状态代码，并将客户端重定向到提供的位置 URL 模板。 该模板可能包括状态代码的 `{0}` 占位符。 以 `~` 开头的 URL 预置了基础路径。 不以 `~` 开头的 URL 按原样使用。
+<xref:Microsoft.AspNetCore.Builder.StatusCodePagesExtensions.UseStatusCodePagesWithRedirects*>：
+
+* 向客户端发送“302 - 已找到”状态代码。
+* 将客户端重定向到 URL 模板中的位置。 
+
+该模板可能包括状态代码的 `{0}` 占位符。 模板必须以正斜杠 (`/`) 开头。
 
 [!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
 
-重新执行方法可向客户端返回原始状态代码，并指定应通过使用备用路径重新执行请求管道来生成响应正文。 此路径可能包含状态代码的 `{0}` 占位符：
+<xref:Microsoft.AspNetCore.Builder.StatusCodePagesExtensions.UseStatusCodePagesWithReExecute*>：
+
+* 向客户端返回原始状态代码。
+* 指定应使用备用路径重新执行请求管道，从而生成响应正文。 
+
+该模板可能包括状态代码的 `{0}` 占位符。 模板必须以正斜杠 (`/`) 开头。
 
 ```csharp
 app.UseStatusCodePagesWithReExecute("/error/{0}");
@@ -146,7 +157,7 @@ if (statusCodePagesFeature != null)
 }
 ```
 
-如果使用指向应用中的终结点的 `UseStatusCodePages*` 重载，请为该终结点创建 MVC 视图或 Razor Page。 例如，Razor Pages 应用的 [dotnet new](/dotnet/core/tools/dotnet-new) 模板将生成以下页面和页面模型类：
+若要在应用中使用指向终结点的 `UseStatusCodePages*` 重载，请为终结点创建 MVC 视图或 Razor Page。 例如，Razor Pages 应用的 [dotnet new](/dotnet/core/tools/dotnet-new) 模板将生成以下页面和页面模型类：
 
 Error.cshtml：
 

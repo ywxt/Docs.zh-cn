@@ -2,16 +2,17 @@
 title: 在 Windows 服务中托管 ASP.NET Core
 author: guardrex
 description: 了解如何在 Windows 服务中托管 ASP.NET Core 应用。
+monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 09/25/2018
+ms.date: 10/30/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: f9b1c3fbfafa839c116688e0ac63804afcd5dbe0
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 11913019bfe5d06c259b806fce9cc580a8280ad5
+ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50206668"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50758188"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>在 Windows 服务中托管 ASP.NET Core
 
@@ -29,38 +30,12 @@ ms.locfileid: "50206668"
 
    * 确认是否存在 Windows [运行时标识符 (RID)](/dotnet/core/rid-catalog)，或将其添加到包含目标框架的 `<PropertyGroup>` 中：
 
-      ::: moniker range=">= aspnetcore-2.1"
-
       ```xml
       <PropertyGroup>
-        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
         <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
       </PropertyGroup>
       ```
-
-      ::: moniker-end
-
-      ::: moniker range="= aspnetcore-2.0"
-
-      ```xml
-      <PropertyGroup>
-        <TargetFramework>netcoreapp2.0</TargetFramework>
-        <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
-      </PropertyGroup>
-      ```
-
-      ::: moniker-end
-
-      ::: moniker range="< aspnetcore-2.0"
-
-      ```xml
-      <PropertyGroup>
-        <TargetFramework>netcoreapp1.1</TargetFramework>
-        <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
-      </PropertyGroup>
-      ```
-
-      ::: moniker-end
 
       要发布多个 RID：
 
@@ -77,56 +52,88 @@ ms.locfileid: "50206668"
 
    * 调用 [UseContentRoot](xref:fundamentals/host/web-host#content-root) 并使用应用的发布位置路径，而不是 `Directory.GetCurrentDirectory()`。
 
-     ::: moniker range=">= aspnetcore-2.0"
-
      [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=ServiceOnly&highlight=8-9,16)]
 
-     ::: moniker-end
+1. 使用 [dotnet publish](/dotnet/articles/core/tools/dotnet-publish)、[Visual Studio 发布配置文件](xref:host-and-deploy/visual-studio-publish-profiles) 或 Visual Studio Code 发布应用。 使用 Visual Studio 时，先选择“FolderProfile”并配置“目标位置”，再选择“发布”按钮。
 
-     ::: moniker range="< aspnetcore-2.0"
-
-     [!code-csharp[](windows-service/samples_snapshot/1.x/AspNetCoreService/Program.cs?name=ServiceOnly&highlight=3-4,8,13)]
-
-     ::: moniker-end
-
-1. 发布应用。 使用 [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) 或 [Visual Studio 发布配置文件](xref:host-and-deploy/visual-studio-publish-profiles)。 使用 Visual Studio 时，请选择 FolderProfile。
-
-   要使用命令行接口 (CLI) 工具发布示例应用，请在项目文件夹的命令提示符处运行 [dotnet publish](/dotnet/core/tools/dotnet-publish) 命令。 必须在项目文件的 `<RuntimeIdenfifier>`（或 `<RuntimeIdentifiers>`）属性中指定 RID。 在以下示例中，应用在 `win7-x64` 运行时的发布配置中发布：
+   要使用命令行接口 (CLI) 工具发布示例应用，请在项目文件夹的命令提示符处运行 [dotnet publish](/dotnet/core/tools/dotnet-publish) 命令。 必须在项目文件的 `<RuntimeIdenfifier>`（或 `<RuntimeIdentifiers>`）属性中指定 RID。 在下面的示例中，应用是通过 `win7-x64` 运行时的“发布”配置发布到在 c:\\svc 中创建的文件夹：
 
    ```console
-   dotnet publish --configuration Release --runtime win7-x64
+   dotnet publish --configuration Release --runtime win7-x64 --output c:\svc
    ```
 
-1. 使用 [sc.exe](https://technet.microsoft.com/library/bb490995) 命令行工具创建服务。 `binPath` 值是应用的可执行文件的路径，其中包括可执行文件的文件名。 等于号和路径开头的引号字符之间需要添加空格。
+1. 运行 `net user` 命令，创建服务用户帐户：
 
    ```console
-   sc create <SERVICE_NAME> binPath= "<PATH_TO_SERVICE_EXECUTABLE>"
+   net user {USER ACCOUNT} {PASSWORD} /add
    ```
 
-   对于项目文件夹中发布的服务，请使用 publish 文件夹的路径创建服务。 如下示例中：
+   对于示例应用，使用用户名 `ServiceUser` 和密码创建用户帐户。 在下面的命令中，将 `{PASSWORD}` 替换为[强密码](/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements)。
 
-   * 该项目位于 c:\\my_services\\AspNetCoreService 文件夹中。
-   * 项目在 `Release` 配置中发布。
-   * 目标框架名字对象 (TFM) 为 `netcoreapp2.1`。
-   * 运行时标识符 (RID) 为 `win7-x64`。
-   * 应用可执行文件名为 AspNetCoreService.exe。
+   ```console
+   net user ServiceUser {PASSWORD} /add
+   ```
+
+   如果需要将用户添加到组中，请运行 `net localgroup` 命令（其中 `{GROUP}` 是组名称）：
+
+   ```console
+   net localgroup {GROUP} {USER ACCOUNT} /add
+   ```
+
+   有关详细信息，请参阅[服务用户帐户](/windows/desktop/services/service-user-accounts)。
+
+1. 运行 [icacls](/windows-server/administration/windows-commands/icacls) 命令，授予对应用文件夹的写入/读取/执行权限：
+
+   ```console
+   icacls "{PATH}" /grant {USER ACCOUNT}:(OI)(CI){PERMISSION FLAGS} /t
+   ```
+
+   * `{PATH}` &ndash; 应用文件夹路径。
+   * `{USER ACCOUNT}` &ndash; 用户帐户 (SID)。
+   * `(OI)` &ndash; 对象继承标志将权限传播给从属文件。
+   * `(CI)` &ndash; 容器继承标志将权限传播给从属文件夹。
+   * `{PERMISSION FLAGS}` &ndash; 设置应用的访问权限。
+     * 写入 (`W`)
+     * 读取 (`R`)
+     * 执行 (`X`)
+     * 完全 (`F`)
+     * 修改 (`M`)
+   * `/t` &ndash; 以递归方式应用于现有从属文件夹和文件。
+
+   对于发布到 c:\\sv 文件夹的示例应用，以及拥有写入/读取/执行权限的 `ServiceUser` 帐户，请运行以下命令：
+
+   ```console
+   icacls "c:\svc" /grant ServiceUser:(OI)(CI)WRX /t
+   ```
+
+   有关详细信息，请参阅 [icacls](/windows-server/administration/windows-commands/icacls)。
+
+1. 使用 [sc.exe](https://technet.microsoft.com/library/bb490995) 命令行工具创建服务。 `binPath` 值是应用的可执行文件的路径，其中包括可执行文件的文件名。 每个参数和值的等于号和引号字符之间必须有空格。
+
+   ```console
+   sc create {SERVICE NAME} binPath= "{PATH}" obj= "{DOMAIN}\{USER ACCOUNT}" password= "{PASSWORD}"
+   ```
+
+   * `{SERVICE NAME}` &ndash; 要在[服务控制管理器](/windows/desktop/services/service-control-manager)中分配给服务的名称。
+   * `{PATH}` &ndash; 可执行服务的路径。
+   * `{DOMAIN}`（或为本地计算机名称，如果计算机不是域加入的话）；以及 `{USER ACCOUNT}` &ndash; 域（或为本地计算机名称）和运行服务所用的用户帐户。 请勿省略 `obj` 参数。 `obj` 的默认值为 [LocalSystem 帐户](/windows/desktop/services/localsystem-account)。 使用 `LocalSystem` 帐户运行服务会带来重大安全风险。 请始终使用在服务器上拥有有限权限的用户帐户运行服务。
+   * `{PASSWORD}` &ndash; 用户帐户密码。
+
+   如下示例中：
+
    * 服务名为 MyService。
-
-   示例:
+   * 已发布的服务驻留在 c:\\svc 文件夹中。 应用可执行文件名为 AspNetCoreService.exe。 `binPath` 值是放在半角双引号 (") 中。
+   * 服务是使用 `ServiceUser` 帐户运行。 将 `{DOMAIN}` 替换为用户帐户的域或本地计算机名称。 将 `obj` 值放在半角双引号 (") 中。 例如，如果托管系统是名为 `MairaPC` 的本地计算机，请将 `obj` 设置为 `"MairaPC\ServiceUser"`。
+   * 将 `{PASSWORD}` 替换为用户帐户密码。 `password` 值是放在半角双引号 (") 中。
 
    ```console
-   sc create MyService binPath= "c:\my_services\AspNetCoreService\bin\Release\netcoreapp2.1\win7-x64\publish\AspNetCoreService.exe"
+   sc create MyService binPath= "c:\svc\aspnetcoreservice.exe" obj= "{DOMAIN}\ServiceUser" password= "{PASSWORD}"
    ```
 
    > [!IMPORTANT]
-   > 确保 `binPath=` 参数与其值之间存在空格。
+   > 请确保参数的等于号和参数值之间有空格。
 
-   从其他文件夹发布和启动服务：
-
-      * 使用 `dotnet publish` 命令上的 [--output &lt;OUTPUT_DIRECTORY&gt;](/dotnet/core/tools/dotnet-publish#options) 选项。 如果使用 Visual Studio，请在“FolderProfile”发布属性页面中配置“目标位置”，然后再选择“发布”按钮。
-      * 通过使用输出文件夹路径的 `sc.exe` 命令创建服务。 在向 `binPath` 提供的路径中包含服务可执行文件的名称。
-
-1. 使用 `sc start <SERVICE_NAME>` 命令启动服务。
+1. 使用 `sc start {SERVICE NAME}` 命令启动服务。
 
    要启动示例应用服务，请使用以下命令：
 
@@ -136,7 +143,7 @@ ms.locfileid: "50206668"
 
    此命令需要几秒钟才能启动服务。
 
-1. 要检查服务的状态，请使用 `sc query <SERVICE_NAME>` 命令。 状态报告为以下值之一：
+1. 要检查服务的状态，请使用 `sc query {SERVICE NAME}` 命令。 状态报告为以下值之一：
 
    * `START_PENDING`
    * `RUNNING`
@@ -153,7 +160,7 @@ ms.locfileid: "50206668"
 
    对于示例应用服务，请在 `http://localhost:5000` 浏览应用。
 
-1. 使用 `sc stop <SERVICE_NAME>` 命令停止服务。
+1. 使用 `sc stop {SERVICE NAME}` 命令停止服务。
 
    以下命令可停止示例应用服务：
 
@@ -161,7 +168,7 @@ ms.locfileid: "50206668"
    sc stop MyService
    ```
 
-1. 停止服务并经过短暂延迟后，使用 `sc delete <SERVICE_NAME>` 命令卸载服务。
+1. 停止服务并经过短暂延迟后，使用 `sc delete {SERVICE NAME}` 命令卸载服务。
 
    检查示例应用服务的状态：
 
@@ -179,22 +186,12 @@ ms.locfileid: "50206668"
 
 在服务之外运行时更便于进行测试和调试，因此通常仅在特定情况下添加调用 `RunAsService` 的代码。 例如，应用可以使用 `--console` 命令行参数或在已附加调试器时作为控制台应用运行：
 
-::: moniker range=">= aspnetcore-2.0"
-
 [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=ServiceOrConsole)]
 
 由于 ASP.NET Core 配置需要命令行参数的名称/值对，因此将先删除 `--console` 开关，然后再将参数传递到 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)。
 
 > [!NOTE]
 > 不将 `Main` 中的 `isService` 传递到 `CreateWebHostBuilder`，因为 `CreateWebHostBuilder` 的签名必须是 `CreateWebHostBuilder(string[])`才能使[集成测试](xref:test/integration-tests)正常运行。
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-[!code-csharp[](windows-service/samples_snapshot/1.x/AspNetCoreService/Program.cs?name=ServiceOrConsole)]
-
-::: moniker-end
 
 ## <a name="handle-stopping-and-starting-events"></a>处理停止和启动事件
 
@@ -210,20 +207,10 @@ ms.locfileid: "50206668"
 
 3. 在 `Program.Main` 中，调用新扩展方法 `RunAsCustomService`，而不是 [RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice)：
 
-   ::: moniker range=">= aspnetcore-2.0"
-
    [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=HandleStopStart&highlight=17)]
 
    > [!NOTE]
    > 不将 `Main` 中的 `isService` 传递到 `CreateWebHostBuilder`，因为 `CreateWebHostBuilder` 的签名必须是 `CreateWebHostBuilder(string[])`才能使[集成测试](xref:test/integration-tests)正常运行。
-
-   ::: moniker-end
-
-   ::: moniker range="< aspnetcore-2.0"
-
-   [!code-csharp[](windows-service/samples_snapshot/1.x/AspNetCoreService/Program.cs?name=HandleStopStart&highlight=27)]
-
-   ::: moniker-end
 
 如果自定义 `WebHostService` 代码需要来自依赖项注入（如记录器）的服务，请从 [IWebHost.Services](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost.services) 属性中获取：
 
@@ -235,7 +222,12 @@ ms.locfileid: "50206668"
 
 ## <a name="configure-https"></a>配置 HTTPS
 
-指定 [Kestrel 服务器 HTTPS 终结点配置](xref:fundamentals/servers/kestrel#endpoint-configuration)。
+若要为服务配置安全终结点，请执行以下操作：
+
+1. 使用平台的证书获取和部署机制，为托管系统创建 X.509 证书。
+1. 将 [Kestrel 服务器 HTTPS 终结点配置](xref:fundamentals/servers/kestrel#endpoint-configuration)指定为使用此证书。
+
+不支持使用 ASP.NET Core HTTPS 开发证书保护服务终结点。
 
 ## <a name="current-directory-and-content-root"></a>当前目录和内容根
 

@@ -6,18 +6,29 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/01/2018
 uid: fundamentals/routing
-ms.openlocfilehash: 06059d720bd4444b1ec12e42d466ee54d1658203
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: a014782ba503bc8bd0fdefb4cb4f382aa8fde4cd
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207751"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244965"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core 中的路由
 
 撰写者：[Ryan Nowak](https://github.com/rynowak)、[Steve Smith](https://ardalis.com/) 和 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 路由功能负责将传入请求映射到路由处理程序。 路由在应用中定义，并在应用启动时进行配置。 路由可以选择从请求包含的 URL 中提取值，然后这些值便可用于处理请求。 通过使用应用中的路由信息，路由功能还能生成要映射到路由处理程序的 URL。 因此，路由可以根据 URL 查找路由处理程序，或者根据路由处理程序信息查找给定路由处理程序对应的 URL。
+
+大多数应用应选择基本的描述性路由方案，让 URL 有可读性和意义。 默认传统路由 `{controller=Home}/{action=Index}/{id?}`：
+
+* 支持基本的描述性路由方案：
+* 是供浏览器使用的 Web 应用的理想入手点。
+
+在专业化情况（例如，博客、电子商务）下，通常会使用[属性路由](xref:mvc/controllers/routing#attribute-routing)或专用传统路由，将其他简化路由添加到应用的高流量区域。
+
+Web API 应使用属性路由，将应用功能建模为一组资源，其中操作是由 HTTP 谓词表示。 也就是说，对同一逻辑资源执行的许多操作（例如，GET、POST）都将使用相同 URL。 属性路由提供认真设计 API URL 空间所需的控制级别。
+
+借助 MVC 的 URL 生成支持，无需通过硬编码 URL 将应用关联到一起，即可开发应用。 这样，便可从基本路由配置入手，并在确定应用形状后修改路由。
 
 > [!IMPORTANT]
 > 本文档介绍较低级别的 ASP.NET Core 路由。 有关 ASP.NET Core MVC 路由的信息，请参阅 <xref:mvc/controllers/routing>。

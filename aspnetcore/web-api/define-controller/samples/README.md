@@ -2,7 +2,8 @@
 
 本示例应用包含以下项目：
 
-- WebApiSample.Api：面向 .NET Core 2.1 的 ASP.NET Core 2.1 项目。
+- **WebApiSample.Api.22*：定目标到 .NET Core 2.2 的 ASP.NET Core 2.2 项目。
+- **WebApiSample.Api.21**：定目标到 .NET Core 2.1 的 ASP.NET Core 2.1 项目。
 - WebApiSample.Api.Pre21：面向 .NET Core 2.0 的 ASP.NET Core 2.0 项目。
 - WebApiSample.DataAccess：用作 2 个 Web API 项目的数据访问层的 .NET Standard 2.0 类库。
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 2590682755721a4bb14902b9fe7138a3bff56d31
-ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
+ms.openlocfilehash: fb69584f6e9d4756e175bbd6f3deb1f413b80fc5
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50148806"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244809"
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>ASP.NET Core MVC 中的缓存标记帮助程序
 
@@ -135,7 +135,7 @@ Razor 视图引擎将默认的 `expires-after` 值设置为 20 分钟。
 | -------------- | -------------------- |
 | String         | `Make`， `Make,Model` |
 
-`vary-by-route` 接受逗号分隔的标头值列表，在路由数据参数值发生更改时触发缓存刷新。
+`vary-by-route` 接受路由参数名称的逗号分隔列表，用于在路由数据参数值发生更改时触发缓存刷新。
 
 示例:
 
@@ -161,7 +161,7 @@ Index.cshtml：
 | -------------- | -------------------------------------------------------------------------------- |
 | String         | `.AspNetCore.Identity.Application`， `.AspNetCore.Identity.Application,HairColor` |
 
-`vary-by-cookie` 接受逗号分隔的标头值列表，在标头值发生更改时触发缓存刷新。
+`vary-by-cookie` 接受 Cookie 名称的逗号分隔列表，用于在 Cookie 值发生更改时触发缓存刷新。
 
 下例监视与 ASP.NET Core 标识相关联的 cookie。 当用户进行身份验证时，标识 cookie 中的更改就会触发缓存刷新：
 

@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.date: 09/10/2018
 uid: signalr/version-differences
-ms.openlocfilehash: 3cec37719b743b3c805ada77249f526278e44599
-ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
+ms.openlocfilehash: 8f07647959b6ef815eed599703bdb1bfb446572f
+ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234600"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51505747"
 ---
 # <a name="differences-between-aspnet-signalr-and-aspnet-core-signalr"></a>ASP.NET SignalR 和 ASP.NET Core SignalR 之间的差异
 
@@ -36,6 +36,10 @@ ASP.NET Core SignalR 不允许客户端或 ASP.NET SignalR 的服务器。 本�
 ### <a name="protocol-support"></a>协议支持
 
 ASP.NET Core SignalR 支持 JSON，以及一种新的二进制协议，它基于[MessagePack](xref:signalr/messagepackhubprotocol)。 此外，可以创建自定义协议。
+
+### <a name="transports"></a>传输
+
+在 ASP.NET Core SignalR 中不支持永久帧传输。
 
 ## <a name="differences-on-the-server"></a>在服务器上的差异
 
@@ -72,6 +76,14 @@ ASP.NET Core SignalR 现在支持[流式处理数据](xref:signalr/streaming)从
 
 已删除将任意状态传递客户端与中心 （通常称为 HubState） 之间的功能，以及对进度消息的支持。 目前中心代理没有对应。
 
+### <a name="globalhost"></a>GlobalHost
+
+ASP.NET Core 具有内置于 framework 的依赖关系注入 (DI)。 服务可以使用 DI 来访问[HubContext](xref:signalr/hubcontext)。 `GlobalHost`对象，ASP.NET SignalR 中用来实现`HubContext`ASP.NET Core SignalR 中不存在。
+
+### <a name="hubpipeline"></a>HubPipeline
+
+ASP.NET Core SignalR 不具有对支持`HubPipeline`模块。
+
 ## <a name="differences-on-the-client"></a>在客户端上的差异
 
 ### <a name="typescript"></a>TypeScript
@@ -90,6 +102,10 @@ npm install @aspnet/signalr
 ### <a name="jquery"></a>jQuery
 
 已删除对 jQuery 的依赖关系，但项目仍然可以使用 jQuery。
+
+### <a name="internet-explorer-support"></a>Internet Explorer 支持
+
+ASP.NET Core SignalR 要求 （ASP.NET SignalR 支持 Microsoft Internet Explorer 8 及更高版本） 的 Microsoft Internet Explorer 11 或更高版本。
 
 ### <a name="javascript-client-method-syntax"></a>JavaScript 客户端方法语法
 

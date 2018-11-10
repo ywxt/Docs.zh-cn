@@ -5,12 +5,12 @@ description: 了解如何开始迁移到 ASP.NET Core MVC ASP.NET MVC 项目。
 ms.author: riande
 ms.date: 03/07/2017
 uid: migration/mvc
-ms.openlocfilehash: e2ecc5b1a5e2ede4c815807d4e1b1499ae1a4242
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 7c9d927bbd06f96f130d53e946a2963b5804960b
+ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090467"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51505734"
 ---
 # <a name="migrate-from-aspnet-mvc-to-aspnet-core-mvc"></a>将从 ASP.NET MVC 迁移到 ASP.NET Core MVC
 
@@ -159,7 +159,7 @@ ms.locfileid: "50090467"
 
 * 删除 `@Scripts.Render("~/bundles/modernizr")`。
 
-* 注释掉`@Html.Partial("_LoginPartial")`行 (括在行的`@*...*@`)。 在将来的教程中，我们将返回到它。
+* 注释掉`@Html.Partial("_LoginPartial")`行 (括在行的`@*...*@`)。 有关详细信息请参阅[迁移身份验证和标识到 ASP.NET Core](xref:migration/identity)
 
 * 替换`@Scripts.Render("~/bundles/jquery")`与`<script>`元素 （见下文）。
 

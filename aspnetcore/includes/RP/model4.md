@@ -1,4 +1,4 @@
-下表详细说明了 ASP.NET Core 代码生成器的参数：
+下表详细说明了 ASP.NET Core 代码生成器参数：
 
 | 参数               | 描述|
 | ----------------- | ------------ |
@@ -13,10 +13,12 @@
 ```console
 dotnet aspnet-codegenerator razorpage -h
 ```
+
 <a name="test"></a>
+
 ### <a name="test-the-app"></a>测试应用
 
-* 运行应用并将 `/Movies` 追加到浏览器中的 URL (`http://localhost:port/movies`)。
+* 运行应用并将 `/Movies` 追加到浏览器中的 URL (`http://localhost:port/Movies`)。
 * 测试“创建”链接。
 
   ![创建页面](../../tutorials/razor-pages/model/_static/conan.png)
@@ -27,7 +29,4 @@ dotnet aspnet-codegenerator razorpage -h
 
 如果收到类似如下的错误，则验证是否已运行迁移并更新数据库：
 
-```
-An unhandled exception occurred while processing the request.
-'no such table: Movie'.
-```
+`An unhandled exception occurred while processing the request. 'no such table: Movie'.`
