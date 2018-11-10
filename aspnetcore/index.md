@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: index
-ms.openlocfilehash: e9bca9fe22dbb64086eba3445c50941c5440974c
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: 60f7d64baa0441b90befb2d785999a707e1025c5
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253061"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225390"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 简介
 
@@ -50,12 +50,14 @@ ASP.NET Core 与常用客户端框架和库（包括 [Angular](xref:spa/angular)
 
 ## <a name="aspnet-core-targeting-net-framework"></a>面向 .NET Framework 的 ASP.NET Core
 
-ASP.NET Core 可以面向 .NET Core 或 .NET Framework。 面向 .NET Framework 的 ASP.NET Core 应用无法跨平台，它们仅在 Windows 上运行。 没有计划删除 ASP.NET Core 中对面向 .NET Framework 的支持。 通常，ASP.NET Core 由 [.NET Standard](/dotnet/standard/net-standard) 库组成。 使用 .NET Standard 2.0 编写的应用可在 NET Standard 2.0 支持的任何位置运行。
+ASP.NET Core 2.x 可以面向 .NET Core 或 .NET Framework。 面向 .NET Framework 的 ASP.NET Core 应用无法跨平台，它们仅在 Windows 上运行。 通常，ASP.NET Core 2.x 由 [.NET Standard](/dotnet/standard/net-standard) 库组成。 使用 .NET Standard 2.0 编写的应用可在 NET Standard 2.0 支持的任何位置运行。
 
 与 .NET Standard 2.0 兼容的 .NET Framework 版本支持 ASP.NET Core 2.x：
 
 * 强烈建议使用 .NET Framework 4.7.1 及更高版本。
 * .NET Framework 4.6.1 及更高版本。
+
+ASP.NET Core 3.0 以及更高版本只能在 .NET Core 中运行。 有关此更改的详细信息，请参阅 [A first look at changes coming in ASP.NET Core 3.0](https://blogs.msdn.microsoft.com/webdev/2018/10/29/a-first-look-at-changes-coming-in-asp-net-core-3-0/)（抢先了解 ASP.NET Core 3.0 即将推出的更改）。
 
 面向 .NET Core 有以下几个优势，并且这些优势会随着每次发布增加。 与 .NET Framework 相比，.NET Core 的部分优势包括：
 

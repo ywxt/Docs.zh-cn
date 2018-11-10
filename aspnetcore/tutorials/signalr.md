@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/31/2018
 uid: tutorials/signalr
-ms.openlocfilehash: fcfe2fa6cc88b9eee1389e171fa5eb7711b4f14f
-ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
+ms.openlocfilehash: 7d9f3a3f8aa7a5e47169da66e6fa2d6a28de3853
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50758123"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021243"
 ---
 # <a name="tutorial-get-started-with-aspnet-core-signalr"></a>教程：ASP.NET Core SignalR 入门
 
@@ -69,12 +69,13 @@ ms.locfileid: "50758123"
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
-* 打开可用于新项目的文件夹。
+* 在将要在其中创建新项目文件夹的文件夹中打开[集成终端](https://code.visualstudio.com/docs/editor/integrated-terminal)。
 
-* 在[集成终端](https://code.visualstudio.com/docs/editor/integrated-terminal)中，运行以下命令：
+* 运行以下命令：
 
    ```console
    dotnet new webapp -o SignalRChat
+   code -r SignalRChat
    ```
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
@@ -113,13 +114,11 @@ ms.locfileid: "50758123"
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
-* 在“集成终端”中，运行以下命令以安装 LibMan。
+* 在集成终端中，运行以下命令以安装 LibMan。
 
   ```console
   dotnet tool install -g Microsoft.Web.LibraryManager.Cli
   ```
-
-* 导航到项目文件夹（包含 SignalRChat.csproj 文件的文件夹）。
 
 * 使用 LibMan 运行以下命令，以获取 SignalR 客户端库。 可能需要等待几秒钟的时间才能看到输出。
 
@@ -225,8 +224,12 @@ ms.locfileid: "50758123"
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
-* 按 Ctrl+F5 可运行应用而不进行调试。
+* 在集成终端中，运行以下命令：
 
+  ```console
+  dotnet run -p SignalRChat
+  ```
+  
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 * 从菜单中选择“运行”>“开始执行(不调试)”。

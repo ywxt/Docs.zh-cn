@@ -5,12 +5,12 @@ description: 了解如何启用 TOTP 使用 ASP.NET Core 双因素身份验证�
 ms.author: riande
 ms.date: 08/14/2018
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: 4535efdde7340436c6a508848bff86e103df570e
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 437f354f71128a98bae9abdced291e04efc9f48e
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833731"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225377"
 ---
 # <a name="enable-qr-code-generation-for-totp-authenticator-apps-in-aspnet-core"></a>启用在 ASP.NET Core TOTP 身份验证器应用的 QR 代码生成
 
@@ -28,7 +28,7 @@ ASP.NET Core web 应用程序模板支持身份验证器，但不提供对 QRCod
 
 ## <a name="adding-qr-codes-to-the-2fa-configuration-page"></a>将 QR 代码添加到 2FA 配置页
 
-使用这些说明*qrcode.js*从https://davidshimjs.github.io/qrcodejs/存储库。
+使用这些说明*qrcode.js*从 https://davidshimjs.github.io/qrcodejs/存储库。
 
 * 下载[qrcode.js javascript 库](https://davidshimjs.github.io/qrcodejs/)到`wwwroot\lib`项目文件夹中的。
 
@@ -97,7 +97,7 @@ QR 代码中的站点名称是来自在最初创建你的项目时选择的项�
 
 模板中的默认代码如下所示：
 
-```c#
+```csharp
 private string GenerateQrCodeUri(string email, string unformattedKey)
 {
     return string.Format(

@@ -4,14 +4,14 @@ author: guardrex
 description: 了解如何在 Windows Server Internet Information Services (IIS) 上托管 ASP.NET Core 应用。
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/21/2018
+ms.date: 11/05/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: b204eeb35f8765bbafc85b3bb283809727356d3e
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: 5408fb04231a61e0c4c7a91eb15196bf754ddfa7
+ms.sourcegitcommit: 09affee3d234cb27ea6fe33bc113b79e68900d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253203"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51191368"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -82,7 +82,7 @@ ms.locfileid: "50253203"
 典型的 Program.cs 调用 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> 开始设置主机。 对于使用 IIS 的进程外托管，`CreateDefaultBuilder` 将 [Kestrel](xref:fundamentals/servers/kestrel) 配置为 Web 服务器，并通过配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)的基本路径和端口来启用 IIS 集成：
 
 ```csharp
-public static IWebHost BuildWebHost(string[] args) =>
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         ...
 ```
@@ -104,7 +104,7 @@ ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultB
 典型的 Program.cs 调用 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> 开始设置主机。 `CreateDefaultBuilder` 将 [Kestrel](xref:fundamentals/servers/kestrel) 配置为 Web 服务器，并通过配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)的基路径和端口来实现 IIS 集成：
 
 ```csharp
-public static IWebHost BuildWebHost(string[] args) =>
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         ...
 ```

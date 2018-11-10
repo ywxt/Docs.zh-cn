@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/12/2018
 uid: signalr/hubs
-ms.openlocfilehash: be42314afad4ff43d2fcf1abbc96c5b78c773977
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 27aedc5b2f2060d961070fbd1ff5304eaa3956d1
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50206011"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225351"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>ASP.NET Core 使用 SignalR 中的中心
 
@@ -41,6 +41,11 @@ SignalR 中间件需要某些服务，通过调用配置`services.AddSignalR`。
 [!code-csharp[Create and use hubs](hubs/sample/hubs/chathub.cs?range=8-37)]
 
 您可以指定返回类型和参数，包括复杂类型和数组，就像在任何 C# 方法中。 SignalR 处理序列化和反序列化复杂对象和数组中参数和返回值。
+
+> [!NOTE]
+> 中心是暂时的：
+> * 不要将状态存储在中心类的属性。 每个集线器方法调用新的中心实例上执行。  
+> * 使用`await`调用取决于中心保持活动状态的异步方法时。 例如，如方法`Clients.All.SendAsync(...)`如果调用，但不可能会失败`await`和集线器方法完成之前`SendAsync`完成。
 
 ## <a name="the-context-object"></a>上下文对象
 

@@ -759,7 +759,7 @@ jQuery 迁移版本 1.2.0
 
 ### <a name="respond-releases-on-the-cdn"></a>响应在 CDN 上的版本
 
-以下版本的[ https://github.com/scottjehl/Respond ] (https://github.com/scottjehl/Respond " https://github.com/scottjehl/Respond ")响应托管在 CDN 上：
+以下版本的 [https://github.com/scottjehl/Respond](https://github.com/scottjehl/Respond "https://github.com/scottjehl/Respond") 响应托管在 CDN 上：
 
 #### <a name="respond-version-142"></a>响应版本 1.4.2
 

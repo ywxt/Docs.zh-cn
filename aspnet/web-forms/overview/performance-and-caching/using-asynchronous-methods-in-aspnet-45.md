@@ -8,12 +8,12 @@ ms.date: 06/06/2012
 ms.assetid: a585c9a2-7c8e-478b-9706-90f3739c50d1
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 61bb977af9dca6fc080151ffd6ea3d966f1b1592
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 9a3c9fab4932c3bc85733a912cf1d1eaaecc1ab7
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325414"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225481"
 ---
 <a name="using-asynchronous-methods-in-aspnet-45"></a>在 ASP.NET 4.5 中使用异步方法
 ====================
@@ -198,9 +198,10 @@ Async void 事件的缺点是，开发人员不再包含对事件时执行的完
   
   请注意，在更高版本，映像的.NET framework 被列为 v4.0，即使应用程序池使用的.NET 4.5 也是如此。 若要了解这种差异，请参阅以下：
 
-        - [.NET Versioning and Multi-Targeting - .NET 4.5 is an in-place upgrade to .NET 4.0](http://www.hanselman.com/blog/NETVersioningAndMultiTargetingNET45IsAnInplaceUpgradeToNET40.aspx)
-        - [How to set an IIS Application or AppPool to use ASP.NET 3.5 rather than 2.0](http://www.hanselman.com/blog/HowToSetAnIISApplicationOrAppPoolToUseASPNET35RatherThan20.aspx)
-        - [.NET Framework Versions and Dependencies](https://msdn.microsoft.com/library/bb822049(VS.110).aspx)
+- [.NET 版本控制和多重目标 —.NET 4.5 是.NET 4.0 的就地升级](http://www.hanselman.com/blog/NETVersioningAndMultiTargetingNET45IsAnInplaceUpgradeToNET40.aspx)
+- [如何设置要使用 ASP.NET 3.5 而不是 2.0 的 IIS 应用程序或应用程序池](http://www.hanselman.com/blog/HowToSetAnIISApplicationOrAppPoolToUseASPNET35RatherThan20.aspx)
+- [.NET Framework 版本和依赖关系](https://msdn.microsoft.com/library/bb822049(VS.110).aspx)
+
 - 如果你的应用程序使用 web 服务或 System.NET 使用后端通过 HTTP 进行通信，可能需要增加[connectionManagement/maxconnection](https://msdn.microsoft.com/library/fb6y0fyc(VS.110).aspx)元素。 对于 ASP.NET 应用程序，这被受 12 倍的 Cpu 数的自动配置功能。 这意味着，在四处理器，您可以最多 12 \* 4 = 48 到 IP 终结点的并发连接。 因为这与[autoConfig](https://msdn.microsoft.com/library/7w2sway1(VS.110).aspx)，增加的最简单办法`maxconnection`应用程序是 ASP.NET 中设置[System.Net.ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit(VS.110).aspx)以编程方式在从`Application_Start`中的方法*global.asax*文件。 请参阅下载有关示例的示例。
 - 在.NET 4.5 中，默认值为 5000 [maxconcurrentrequestspercpu 配置](https://blogs.msdn.com/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)可以正常工作。
 
