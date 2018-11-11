@@ -5,14 +5,14 @@ description: 了解如何在 ASP.NET Core SignalR 中使用身份验证和授权
 monikerRange: '>= aspnetcore-2.1'
 ms.author: anurse
 ms.custom: mvc
-ms.date: 10/17/2018
+ms.date: 11/06/2018
 uid: signalr/security
-ms.openlocfilehash: be1dd24c40327d9a0d8f91bf75300128d3d52725
-ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
-ms.translationtype: HT
+ms.openlocfilehash: f646d319cf3030fd4d769e882514da14b230bbdd
+ms.sourcegitcommit: c3fa5aded0bf76a7414047d50b8a2311d27ee1ef
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51225364"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51276140"
 ---
 # <a name="security-considerations-in-aspnet-core-signalr"></a>ASP.NET Core SignalR 中的安全注意事项
 
@@ -35,7 +35,7 @@ ms.locfileid: "51225364"
 * HTTP 方法`GET`和`POST`必须允许。
 * 必须启用凭据，即使不使用身份验证。
 
-例如，以下的 CORS 策略允许 SignalR 浏览器客户端上托管`http://example.com`访问上托管的 SignalR 应用`http://signalr.example.com`:
+例如，以下的 CORS 策略允许 SignalR 浏览器客户端上托管`https://example.com`访问上托管的 SignalR 应用`https://signalr.example.com`:
 
 [!code-csharp[Main](security/sample/Startup.cs?name=snippet1)]
 
@@ -70,7 +70,14 @@ ASP.NET Core 2.1 及更高版本，可以使用放置自定义中间件实现标
 
 ## <a name="access-token-logging"></a>访问令牌的日志记录
 
-使用 Websocket 或服务器发送事件时，浏览器客户端将查询字符串中发送的访问令牌。 接收访问令牌通过查询字符串就象通常那样使用标准安全`Authorization`标头。 但是，许多 web 服务器记录每个请求，包括查询字符串的 URL。 日志记录 Url 可能记录的访问令牌。 最佳做法是设置 web 服务器的日志记录设置，以防止日志记录的访问令牌。
+使用 Websocket 或服务器发送事件时，浏览器客户端将查询字符串中发送的访问令牌。 接收访问令牌通过查询字符串就象通常那样使用标准安全`Authorization`标头。 应始终使用 HTTPS 以确保客户端和服务器之间的端到端安全连接。 许多 web 服务器日志每个请求，包括查询字符串的 URL。 日志记录 Url 可能记录的访问令牌。 ASP.NET Core 日志默认情况下，其中会包括查询字符串的每个请求的 URL。 例如：
+
+```
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/myhub?access_token=1234
+```
+
+如果您有关于此数据与服务器日志的日志记录的相关问题，可以通过配置来完全禁用此日志记录`Microsoft.AspNetCore.Hosting`记录器`Warning`级别或更高版本 (这些消息将写入在`Info`级别)。 在查看文档[日志筛选](xref:fundamentals/logging/index#log-filtering)有关详细信息。 如果你仍想要记录特定请求的信息，可以[编写中间件](xref:fundamentals/middleware/index#write-middleware)来记录的数据需要并筛选出`access_token`查询字符串值 （如果存在）。
 
 ## <a name="exceptions"></a>异常
 
