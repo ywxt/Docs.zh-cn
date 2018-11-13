@@ -5,12 +5,12 @@ description: 了解 ASP.NET Core 如何提供服务和中间件，将内容本�
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: 5014d697603d802929b417e6439d4cc6983184d2
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: af11906f86fe4ea91ed520584daedc094ab2dc0b
+ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207584"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51505825"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core 全球化和本地化
 
@@ -338,6 +338,8 @@ Views/Shared/_SelectLanguagePartial.cshtml 文件添加到了布局文件的 `fo
 * 特定区域性：具有指定语言和区域的区域性。 （例如，“en-US”，“en-GB”，“es-CL”）
 * 父区域性：包含特定区域性的非特定区域性。 （例如，“en”是“en-US”和“en-GB”的父区域性）
 * 区域设置：区域设置与区域性相同。
+
+[!INCLUDE[](~/includes/currency.md)]
 
 ## <a name="additional-resources"></a>其他资源
 

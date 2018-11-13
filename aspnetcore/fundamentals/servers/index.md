@@ -1,17 +1,17 @@
 ---
 title: ASP.NET Core 中的 Web 服务器实现
-author: rick-anderson
+author: guardrex
 description: 发现适用于 ASP.NET Core 的 Web 服务器 Kestrel 和 HTTP.sys。 了解如何选择服务器以及何时使用反向代理服务器。
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: fundamentals/servers/index
-ms.openlocfilehash: 6b6ebbe9d31d571ea470fba0989d622dcf6e68af
-ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
+ms.openlocfilehash: 06d4bf09b07fc70a10b3e260e78c29fe189486c5
+ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50758201"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51505721"
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>ASP.NET Core 中的 Web 服务器实现
 
@@ -144,7 +144,7 @@ HTTP.sys 在 ASP.NET Core 1.x 中被命名为 [WebListener](xref:fundamentals/se
 
 * [Kestrel](xref:fundamentals/servers/kestrel#http2-support)
   * 操作系统
-    * Windows Server 2012 R2/Windows 8.1 或更高版本
+    * Windows Server 2016/Windows 10 或更高版本&dagger;
     * 具有 OpenSSL 1.0.2 或更高版本的 Linux（例如，Ubuntu 16.04 或更高版本）
     * macOS 的未来版本将支持 HTTP/2。
   * 目标框架：.NET Core 2.2 或更高版本
@@ -158,6 +158,8 @@ HTTP.sys 在 ASP.NET Core 1.x 中被命名为 [WebListener](xref:fundamentals/se
   * Windows Server 2016/Windows 10 或更高版本；IIS 10 或更高版本
   * 面向公众的边缘服务器连接使用 HTTP/2，但与 Kestrel 的反向代理连接使用 HTTP/1.1。
   * 目标框架：不适用于 IIS 进程外部署。
+
+&dagger;Kestrel 在 Windows Server 2012 R2 和 Windows 8.1 上对 HTTP/2 的支持有限。 支持受限是因为可在这些操作系统上使用的受支持 TLS 密码套件列表有限。 可能需要使用椭圆曲线数字签名算法 (ECDSA) 生成的证书来保护 TLS 连接。
 
 ::: moniker-end
 
