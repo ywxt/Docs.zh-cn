@@ -6,19 +6,19 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 08/09/2018
 uid: client-side/bower
-ms.openlocfilehash: 8606c21596a5d9d6ada9c60b55b2f54da21c601b
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 06edf7ee791aac0984ff71c2f243f61093f0d503
+ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41902714"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51570017"
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>管理 ASP.NET Core 中的 Bower 的客户端包
 
 通过[Rick Anderson](https://twitter.com/RickAndMSFT)， [Noel 大米](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/)，和[Scott Addie](https://scottaddie.com)
 
 > [!IMPORTANT]
-> 而维护 Bower，其维护人员建议使用另一种解决方案。 [库管理器](https://blogs.msdn.microsoft.com/webdev/2018/04/18/what-happened-to-bower/)(简称 LibMan) 是 Visual Studio 的新客户端库获取工具 (Visual Studio 15.8 或更高版本)。 有关详细信息，请参阅<xref:client-side/libman/index>。 Bower 在 Visual Studio 中受支持版本 15.5 通过。
+> 而维护 Bower，其维护人员建议使用另一种解决方案。 [库管理器](https://blogs.msdn.microsoft.com/webdev/2018/04/18/what-happened-to-bower/)(简称 LibMan) 是 Visual Studio 的新客户端库获取工具 (Visual Studio 15.8 或更高版本)。 有关详细信息，请参阅 <xref:client-side/libman/index> 。 Bower 在 Visual Studio 中受支持版本 15.5 通过。
 >
 > Yarn Webpack 使用是的其中一个受欢迎的替代方法[迁移说明](https://bower.io/blog/2017/how-to-migrate-away-from-bower/)可用。
 
@@ -40,7 +40,7 @@ ms.locfileid: "41902714"
 
   ![管理 bower 包](bower/_static/manage-bower-packages.png)
 
-* 确认"保存更改为*bower.json*"选中复选框。 从下拉列表中选择一个版本，然后单击**安装**按钮。 **输出**窗口将显示安装详细信息。
+* 确认"保存更改为*bower.json*"复选框已选中。 从下拉列表中选择一个版本，然后单击**安装**按钮。 **输出**窗口将显示安装详细信息。
 
 ### <a name="manual-installation-in-bowerjson"></a>在 bower.json 的手动安装
 

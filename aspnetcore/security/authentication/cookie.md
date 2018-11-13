@@ -5,12 +5,12 @@ description: 使用 cookie 而无需 ASP.NET Core 标识的身份验证的说明
 ms.author: riande
 ms.date: 10/11/2017
 uid: security/authentication/cookie
-ms.openlocfilehash: 8add7559557d505397c3be8d8a48aa2e9d9e45e8
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: f55b36cf3fc3b60e9d592348625f58ebaba90da7
+ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207415"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51570108"
 ---
 # <a name="use-cookie-authentication-without-aspnet-core-identity"></a>使用 cookie 而无需 ASP.NET Core 标识的身份验证
 
@@ -28,7 +28,7 @@ ms.locfileid: "50207415"
 
 ## <a name="configuration"></a>配置
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 如果应用不使用[Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)，在项目文件中创建的包引用[Microsoft.AspNetCore.Authentication.Cookies](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Cookies/)包 (版本 2.1.0 或更高版本）。
 
@@ -81,7 +81,9 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     });
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ASP.NET Core 1.x 使用 cookie[中间件](xref:fundamentals/middleware/index)，序列化为一个用户主体的加密 cookie。 在后续请求中，对 cookie 进行验证，并重新创建和分配给主体`HttpContext.User`属性。
 
@@ -127,7 +129,7 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions
 });
 ```
 
----
+::: moniker-end
 
 ## <a name="cookie-policy-middleware"></a>Cookie 策略中间件
 
@@ -170,13 +172,15 @@ Cookie 策略中间件设置`MinimumSameSitePolicy`可能会影响您的设置�
 
 若要创建保存用户信息的 cookie，必须构造[ClaimsPrincipal](/dotnet/api/system.security.claims.claimsprincipal)。 用户信息序列化并存储在 cookie 中。 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 创建[ClaimsIdentity](/dotnet/api/system.security.claims.claimsidentity)包含任何必需[声明](/dotnet/api/system.security.claims.claim)s 和调用[SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signinasync?view=aspnetcore-2.0)以登录用户：
 
 [!code-csharp[](cookie/samples/2.x/CookieSample/Pages/Account/Login.cshtml.cs?name=snippet1)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 调用[SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhandler-1.signinasync?view=aspnetcore-1.1)以登录用户：
 
@@ -186,7 +190,7 @@ await HttpContext.Authentication.SignInAsync(
     new ClaimsPrincipal(claimsIdentity));
 ```
 
----
+::: moniker-end
 
 `SignInAsync` 创建一个加密的 cookie，并将其添加到当前响应。 如果未指定`AuthenticationScheme`，则使用默认方案。
 
@@ -194,13 +198,15 @@ await HttpContext.Authentication.SignInAsync(
 
 ## <a name="sign-out"></a>注销
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 若要注销当前用户，然后删除其 cookie，调用[SignOutAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signoutasync?view=aspnetcore-2.0):
 
 [!code-csharp[](cookie/samples/2.x/CookieSample/Pages/Account/Login.cshtml.cs?name=snippet2)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 若要注销当前用户，然后删除其 cookie，调用[SignOutAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhandler-1.signoutasync?view=aspnetcore-1.1):
 
@@ -209,7 +215,7 @@ await HttpContext.Authentication.SignOutAsync(
     CookieAuthenticationDefaults.AuthenticationScheme);
 ```
 
----
+::: moniker-end
 
 如果不使用`CookieAuthenticationDefaults.AuthenticationScheme`（或"Cookie"） 作为方案 (例如，"ContosoCookie")，提供配置身份验证提供程序时使用的方案。 否则，使用默认方案。
 
@@ -239,7 +245,7 @@ await HttpContext.SignInAsync(
     new ClaimsPrincipal(claimsIdentity));
 ```
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 若要实现的替代`ValidatePrincipal`事件，编写一个方法具有以下签名在从派生类中[CookieAuthenticationEvents](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationevents):
 
@@ -298,7 +304,9 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 services.AddScoped<CustomCookieAuthenticationEvents>();
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 若要实现的替代`ValidateAsync`事件，编写一个方法具有以下签名：
 
@@ -348,7 +356,7 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions
 });
 ```
 
----
+::: moniker-end
 
 请考虑在其中更新用户的名称的情况下&mdash;不会影响任何方式的安全决策。 如果您需要非破坏性地更新用户主体，请调用`context.ReplacePrincipal`并设置`context.ShouldRenew`属性设置为`true`。
 
@@ -357,11 +365,11 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions
 
 ## <a name="persistent-cookies"></a>永久 cookie
 
-你可能想要在浏览器会话之间持久保存的 cookie。 此持久性仅应启用"记住我"复选框为登录名或类似机制在显式用户同意。 
+你可能想要在浏览器会话之间持久保存的 cookie。 仅进行显式用户同意，有一个"记住我"复选框上登录名或类似机制，应启用此持久性。 
 
 下面的代码段创建的标识和相应可以幸存，但通过浏览器闭包的 cookie。 遵循以前配置任何滑动过期设置。 如果 cookie 已过期浏览器处于关闭状态时，浏览器中清除 cookie 后重新启动它。
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 ```csharp
 await HttpContext.SignInAsync(
@@ -375,7 +383,9 @@ await HttpContext.SignInAsync(
 
 [AuthenticationProperties](/dotnet/api/microsoft.aspnetcore.authentication.authenticationproperties?view=aspnetcore-2.0)类驻留在`Microsoft.AspNetCore.Authentication`命名空间。
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ```csharp
 await HttpContext.Authentication.SignInAsync(
@@ -389,7 +399,7 @@ await HttpContext.Authentication.SignInAsync(
 
 [AuthenticationProperties](/dotnet/api/microsoft.aspnetcore.http.authentication.authenticationproperties?view=aspnetcore-1.1)类驻留在`Microsoft.AspNetCore.Http.Authentication`命名空间。
 
----
+::: moniker-end
 
 ## <a name="absolute-cookie-expiration"></a>绝对 cookie 到期时间
 
@@ -397,7 +407,7 @@ await HttpContext.Authentication.SignInAsync(
 
 下面的代码段创建的标识和相应的 cookie 的持续时间为 20 分钟。 这会忽略以前配置的任何滑动过期设置。
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 ```csharp
 await HttpContext.SignInAsync(
@@ -410,7 +420,9 @@ await HttpContext.SignInAsync(
     });
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ```csharp
 await HttpContext.Authentication.SignInAsync(
@@ -423,7 +435,7 @@ await HttpContext.Authentication.SignInAsync(
     });
 ```
 
----
+::: moniker-end
 
 ## <a name="additional-resources"></a>其他资源
 

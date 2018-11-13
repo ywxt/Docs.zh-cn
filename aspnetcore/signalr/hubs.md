@@ -5,14 +5,14 @@ description: 了解如何在 ASP.NET Core SignalR 中使用中心。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 09/12/2018
+ms.date: 11/07/2018
 uid: signalr/hubs
-ms.openlocfilehash: 27aedc5b2f2060d961070fbd1ff5304eaa3956d1
-ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
-ms.translationtype: HT
+ms.openlocfilehash: 0413d354307208726f4252f431ac59526effed08
+ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51225351"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51569914"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>ASP.NET Core 使用 SignalR 中的中心
 
@@ -38,7 +38,15 @@ SignalR 中间件需要某些服务，通过调用配置`services.AddSignalR`。
 
 通过声明继承的类创建一个中心`Hub`，并向其添加公共方法。 客户端可以调用方法定义为`public`。
 
-[!code-csharp[Create and use hubs](hubs/sample/hubs/chathub.cs?range=8-37)]
+```csharp
+public class ChatHub : Hub
+{
+    public Task SendMessage(string user, string message)
+    {
+        return Clients.All.SendAsync("ReceiveMessage", user, message);
+    }
+}
+```
 
 您可以指定返回类型和参数，包括复杂类型和数组，就像在任何 C# 方法中。 SignalR 处理序列化和反序列化复杂对象和数组中参数和返回值。
 
@@ -85,20 +93,24 @@ SignalR 中间件需要某些服务，通过调用配置`services.AddSignalR`。
 | `AllExcept` | 除了指定连接的所有已连接客户端上调用的方法 |
 | `Client` | 调用特定连接的客户端上的方法 |
 | `Clients` | 调用特定连接的客户端上的方法 |
-| `Group` | 调用指定的组中的所有连接到的方法  |
-| `GroupExcept` | 调用中指定的组，除非指定连接到的所有连接的方法 |
-| `Groups` | 调用到多个组的连接方法  |
-| `OthersInGroup` | 调用到一组连接，不包括客户端调用集线器方法的方法  |
-| `User` | 调用与特定用户关联的所有连接到的方法 |
-| `Users` | 调用到与指定的用户相关联的所有连接的方法 |
+| `Group` | 指定的组中的所有连接上调用的方法  |
+| `GroupExcept` | 在指定组中，指定的连接除外的所有连接上调用的方法 |
+| `Groups` | 在多个组的连接上调用的方法  |
+| `OthersInGroup` | 上一组连接，不包括客户端调用集线器方法调用的方法  |
+| `User` | 与特定用户关联的所有连接上调用的方法 |
+| `Users` | 使用指定的用户关联的所有连接上调用的方法 |
 
 每个属性或方法上表中的返回一个包含对象`SendAsync`方法。 `SendAsync`方法允许您提供的名称和要调用的客户端方法的参数。
 
 ## <a name="send-messages-to-clients"></a>将消息发送到客户端
 
-若要使对特定的客户端的调用，使用的属性`Clients`对象。 在以下示例中，`SendMessageToCaller`方法演示如何将消息发送到调用集线器方法的连接。 `SendMessageToGroups`方法将消息发送到存储中的组`List`名为`groups`。
+若要使对特定的客户端的调用，使用的属性`Clients`对象。 在以下示例中，有三个中心的方法：
 
-[!code-csharp[Send messages](hubs/sample/hubs/chathub.cs?range=15-24)]
+* `SendMessage` 将消息发送到所有已连接客户端，使用`Clients.All`。
+* `SendMessageToCaller` 将消息发送回调用方，使用`Clients.Caller`。
+* `SendMessageToGroups` 将消息发送到中的所有客户端`SignalR Users`组。
+
+[!code-csharp[Send messages](hubs/sample/hubs/chathub.cs?name=HubMethods)]
 
 ## <a name="strongly-typed-hubs"></a>强类型化的中心
 
@@ -116,17 +128,42 @@ SignalR 中间件需要某些服务，通过调用配置`services.AddSignalR`。
 
 使用强类型化`Hub<T>`禁用的功能使用`SendAsync`。
 
+## <a name="change-the-name-of-a-hub-method"></a>将集线器方法的名称更改
+
+默认情况下，服务器中心方法名称为.NET 方法的名称。 但是，可以使用[HubMethodName](xref:Microsoft.AspNetCore.SignalR.HubMethodNameAttribute)属性来更改此默认设置，并手动指定方法的名称。 调用该方法时，客户端应而不是.NET 方法名称，使用此名称。
+
+[!code-csharp[HubMethodName attribute](hubs/sample/hubs/chathub.cs?name=HubMethodName&highlight=1)]
+
 ## <a name="handle-events-for-a-connection"></a>处理连接事件
 
 SignalR 中心 API 提供了`OnConnectedAsync`和`OnDisconnectedAsync`管理和跟踪连接的虚拟方法。 重写`OnConnectedAsync`虚拟方法，客户端连接到中心，如将其添加到组时，执行操作。
 
-[!code-csharp[Handle events](hubs/sample/hubs/chathub.cs?range=26-36)]
+[!code-csharp[Handle connection](hubs/sample/hubs/chathub.cs?name=OnConnectedAsync)]
+
+重写`OnDisconnectedAsync`虚拟方法，当客户端断开连接时执行的操作。 如果客户端有意断开连接 (通过调用`connection.stop()`，例如)，则`exception`参数将为`null`。 但是，如果客户端已断开连接错误 （例如网络故障），由于`exception`参数将包含描述失败的异常。
+
+[!code-csharp[Handle disconnection](hubs/sample/hubs/chathub.cs?name=OnDisconnectedAsync)]
 
 ## <a name="handle-errors"></a>处理错误
 
 集线器方法中引发的异常将发送到的客户端的调用的方法。 在 JavaScript 客户端`invoke`方法将返回[JavaScript Promise](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Using_promises)。 当客户端收到的错误处理程序附加到承诺使用`catch`，它具有调用，并且作为 JavaScript 传递`Error`对象。
 
 [!code-javascript[Error](hubs/sample/wwwroot/js/chat.js?range=23)]
+
+默认情况下，如果你的中心引发异常，SignalR 就返回一般错误消息到客户端。 例如：
+
+```
+Microsoft.AspNetCore.SignalR.HubException: An unexpected error occurred invoking 'MethodName' on the server.
+```
+
+意外的异常通常包含敏感信息，例如触发数据库连接失败时引发异常的数据库服务器的名称。 SignalR 并不作为一种安全措施，默认情况下公开这些详细的错误消息。 请参阅[安全注意事项文章](xref:signalr/security#exceptions)异常详细信息所抑制的原因的详细信息。
+
+如果有异常条件您*做*想要传播到客户端，则可以使用`HubException`类。 如果引发`HubException`从中心方法，SignalR**将**将整个消息发送到客户端，以未经修改的。
+
+[!code-csharp[ThrowHubException](hubs/sample/hubs/chathub.cs?name=ThrowHubException&highlight=3)]
+
+> [!NOTE]
+> SignalR 只发送`Message`到客户端异常的属性。 堆栈跟踪和异常上的其他属性不是可用于客户端。
 
 ## <a name="related-resources"></a>相关资源
 
