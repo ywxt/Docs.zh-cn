@@ -197,6 +197,7 @@
 ### [HubContext](xref:signalr/hubcontext)
 ### [用户和组](xref:signalr/groups)
 ### [发布到 Azure](xref:signalr/publish-to-azure-web-app)
+### [API 设计注意事项](xref:signalr/api-design)
 ## 客户端
 ### [.NET 客户端](xref:signalr/dotnet-client)
 ### [.NET API 参考](/dotnet/api/microsoft.aspnetcore.signalr.client)

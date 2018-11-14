@@ -4,14 +4,14 @@ author: tdykstra
 description: 了解 ASP.NET Core MVC 中的模型验证。
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 11/06/2018
 uid: mvc/models/validation
-ms.openlocfilehash: 73d41b4718071d00a6f80b33de182da2ad90f331
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: f1757f807e50019e5071abc42ec3129935ab77aa
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090945"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225455"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC 中的模型验证
 
@@ -23,6 +23,8 @@ ms.locfileid: "50090945"
 
 幸运的是，.NET 已将验证抽象化为验证属性。 这些属性包含验证代码，从而减少了所需编写的代码量。
 
+在 ASP.NET Core 2.2 及更高版本中，如果能够确定给定模型关系图不需要进行验证，ASP.NET Core 运行时便会简化（跳过）验证。 验证无法或没有关联任何验证程序的模型时，跳过验证可能会显著提升性能。 已跳过的验证包括诸如基元集合（`byte[]`、`string[]`、`Dictionary<string, string>` 等）之类的对象，或没有任何验证程序的复杂对象关系图。
+
 [查看或下载 GitHub 中的示例](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/models/validation/sample)。
 
 ## <a name="validation-attributes"></a>验证属性
@@ -31,10 +33,10 @@ ms.locfileid: "50090945"
 
 验证特性在属性级别指定： 
 
-```csharp 
-[Required] 
+```csharp
+[Required]
 public string MyProperty { get; set; } 
-``` 
+```
 
 下面是一个应用的已批注 `Movie` 模型，该应用用于存储电影和电视节目的相关信息。 大多数属性都是必需属性，多个字符串属性具有长度要求。 此外，还有一个针对·`Price` 属性设置的从 0 到 $999.99 的数值范围限制，以及一个自定义验证特性。
 
@@ -80,13 +82,19 @@ MVC 支持从 `ValidationAttribute` 派生的所有用于验证的属性。 在 
 
 模型状态表示已提交的 HTML 表单值中的验证错误。
 
-MVC 将继续验证字段，直至达到错误数上限（默认为 200 个）。 通过向 *Startup.cs* 文件中的 `ConfigureServices` 方法插入以下代码，可配置该数字：
+MVC 将继续验证字段，直至达到错误数上限（默认为 200 个）。 可以使用 `Startup.ConfigureServices` 中的以下代码配置该数字：
 
 [!code-csharp[](validation/sample/Startup.cs?range=27)]
 
-## <a name="handling-model-state-errors"></a>处理模型状态错误
+## <a name="handle-model-state-errors"></a>处理模型状态错误
 
-在调用每个控制器操作之前都会执行模型验证，将由操作方法负责检查 `ModelState.IsValid` 并作出正确反应。 在许多情况下，正确的反应是返回错误响应，理想状况下会详细说明模型验证失败的原因。
+在执行控制器操作之前进行模型验证。 该操作负责检查 `ModelState.IsValid` 并做出相应响应。 在许多情况下，正确的反应是返回错误响应，理想状况下会详细说明模型验证失败的原因。
+
+::: moniker range=">= aspnetcore-2.1"
+
+如果在使用 `[ApiController]` 属性的 web API 控制器中，`ModelState.IsValid` 的计算结果为 `false`，将返回包含问题详细信息的自动 HTTP 400 响应。 有关详细信息，请参阅[自动 HTTP 400 响应](xref:web-api/index#automatic-http-400-responses)。
+
+::: moniker-end
 
 某些应用会选择遵循标准约定来处理模型验证错误，在这种情况下，可以在筛选器中实现此类策略。 应测试操作在有效模型状态和无效模型状态下的行为方式。
 

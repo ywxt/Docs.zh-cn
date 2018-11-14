@@ -15,7 +15,7 @@
 * 定义了没有方法的 API 控制器类。
 * 当 `TodoItems` 为空时创建一个新的 Todo 项。 无法删除所有 Todo 项，因为当 `TodoItems` 为空时，构造函数将创建一个新的 Todo 项。
 
-在接下来的部分中，将添加方法来实现 API。 采用 `[ApiController]` 特性批注类，以启用一些方便的功能。 若要详细了解由这些特性启用的功能，请参阅[使用 ApiControllerAttribute 批注类](xref:web-api/index#annotate-class-with-apicontrollerattribute)。
+在接下来的部分中，将添加方法来实现 API。 采用 `[ApiController]` 特性批注类，以启用一些方便的功能。 若要了解此属性启用的功能，请参阅[使用 ApiControllerAttribute 批注](xref:web-api/index#annotation-with-apicontrollerattribute)。
 
 ::: moniker-end
 
@@ -74,7 +74,7 @@
 
 ::: moniker-end
 
-* 将 `[controller]` 替换为控制器的名称，即在控制器类名称中去掉“Controller”后缀。 对于此示例，控制器类名称为“Todo”控制器，根名称为“todo”。 ASP.NET Core [路由](xref:mvc/controllers/routing)不区分大小写。
+* 将 `[controller]` 替换为控制器的名称，按照惯例，在控制器类名称中去掉“Controller”后缀。 对于此示例，控制器类名称为“Todo”控制器，根名称为“todo”。 ASP.NET Core [路由](xref:mvc/controllers/routing)不区分大小写。
 * 如果 `[HttpGet]` 特性具有路由模板（如 `[HttpGet("/products")]`），则将它追加到路径。 此示例不使用模板。 有关详细信息，请参阅[使用 Http [Verb] 特性的特性路由](xref:mvc/controllers/routing#attribute-routing-with-httpverb-attributes)。
 
 在下面的 `GetById` 方法中，`"{id}"` 是待办事项的唯一标识符的占位符变量。 调用 `GetById` 时，它会将 URL 中 `"{id}"` 的值分配给方法的 `id` 参数。

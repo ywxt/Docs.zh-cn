@@ -5,12 +5,12 @@ description: 了解如何开始使用 ASP.NET Core MVC 和 Visual Studio
 ms.author: riande
 ms.date: 8/23/2017
 uid: tutorials/first-mvc-app-mac/start-mvc
-ms.openlocfilehash: e94b9aa6b6c594ae407792387788410f776d4c1d
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 059ac1f7fa94d97adc958be3c0b936cdfa7f6d3e
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272288"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225468"
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>ASP.NET Core MVC 和 Visual Studio for Mac 入门
 
@@ -36,7 +36,7 @@ ms.locfileid: "36272288"
 
 ![macOS 新建解决方案](../first-web-api-mac/_static/sln.png)
 
-选择“.NET Core App”>“ASP.NET Core”>“Web 应用”>“下一步”。
+选择“.NET Core App”>“ASP.NET Core”>“ASP.NET Core Web 应用 (MVC)”>“下一步”。
 
 ![macOS“新建项目”对话框](start-mvc/1.png)
 

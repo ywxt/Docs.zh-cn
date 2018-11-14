@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: 6a53c1ba5badd741afc3321ce21b047965c611db
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 2b23bf8230f7a1c207ef7870da098ffb0c597fd5
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090597"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225442"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>对 IIS 上的 ASP.NET Core 进行故障排除
 
@@ -19,7 +19,17 @@ ms.locfileid: "50090597"
 
 本文说明了如何在使用 [Internet Information Services (IIS)](/iis) 托管时诊断 ASP.NET Core 应用启动问题。 本文提供的信息适用于在 Windows Server 和 Windows 桌面上的 IIS 中托管。
 
+::: moniker range=">= aspnetcore-2.2"
+
+在 Visual Studio 中，ASP.NET Core 项目默认为在调试期间进行 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 托管。 本地调试时出现的“502.5 - 进程失败”或“500.30 - 启动失败”可以使用本主题中的建议进行故障排除。
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
 在 Visual Studio 中，ASP.NET Core 项目默认为在调试期间进行 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 托管。 可以使用本主题中的建议对本地调试进行故障排除时，出现“502.5 进程失败”。
+
+::: moniker-end
 
 其他故障排除主题：
 
@@ -40,11 +50,40 @@ ms.locfileid: "50090597"
 **502.5 进程故障**  
 工作进程失败。 应用不启动。
 
-ASP.NET Core 模块尝试启动工作进程，但启动失败。 通常可以从“[应用程序事件日志](#application-event-log)”和“[ASP.NET Core 模块 stdout 日志](#aspnet-core-module-stdout-log)”的条目中确定进程启动失败的原因。
+ASP.NET Core 模块尝试启动后端 dotnet 进程，但启动失败。 通常可以从“[应用程序事件日志](#application-event-log)”和“[ASP.NET Core 模块 stdout 日志](#aspnet-core-module-stdout-log)”的条目中确定进程启动失败的原因。 
+
+常见的失败情况是，由于目标 ASP.NET Core 共享框架版本不存在，因此应用配置错误。 检查目标计算机上安装的 ASP.NET Core 共享框架版本。
 
 托管或应用配置错误导致工作进程失败时，将返回“502.5 进程失败”错误页面：
 
 ![显示“502.5 进程故障”页面的浏览器窗口](troubleshoot/_static/process-failure-page.png)
+
+::: moniker range=">= aspnetcore-2.2"
+
+500.30 进程内启动失败
+
+工作进程失败。 应用不启动。
+
+ASP.NET Core 模块尝试进程内启动 .NET Core CLR，但启动失败。 通常可以从“[应用程序事件日志](#application-event-log)”和“[ASP.NET Core 模块 stdout 日志](#aspnet-core-module-stdout-log)”的条目中确定进程启动失败的原因。 
+
+常见的失败情况是，由于目标 ASP.NET Core 共享框架版本不存在，因此应用配置错误。 检查目标计算机上安装的 ASP.NET Core 共享框架版本。
+
+500.0 进程内处理程序加载失败
+
+工作进程失败。 应用不启动。
+
+ASP.NET Core 模块无法找到 .NET Core CLR 和进程内请求处理程序 (aspnetcorev2_inprocess.dll)。 检查：
+
+* 该应用针对 [Microsoft.AspNetCore.Server.IIS NuGet](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.IIS) 包或 [Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)。
+* 目标计算机上安装了该应用所针对的 ASP.NET Core 共享框架版本。
+
+500.0 进程外处理程序加载失败
+
+工作进程失败。 应用不启动。
+
+ASP.NET Core 模块无法找到进程外托管请求处理程序。 请确保 aspnetcorev2.dll 旁边的子文件夹中存在 aspnetcorev2_outofprocess.dll。 
+
+::: moniker-end
 
 **500 内部服务器错误**  
 应用启动，但某个错误阻止了服务器完成请求。
