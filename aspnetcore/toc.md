@@ -185,6 +185,8 @@
 ## [操作返回类型](xref:web-api/action-return-types)
 ## [格式化响应数据](xref:web-api/advanced/formatting)
 ## [自定义格式化程序](xref:web-api/advanced/custom-formatters)
+## [分析器](xref:web-api/advanced/analyzers)
+## [约定](xref:web-api/advanced/conventions)
 
 # 实时应用
 ## [概述](xref:signalr/introduction)
