@@ -50,7 +50,7 @@ ms.locfileid: "51021451"
 <a id="defaultpage"></a>
 ## <a name="setting-up-the-default-page"></a>设置默认页
 
-当用户导航到你的网站的基址时，向用户显示你的站点的默认页。 例如，当 Default.htm 作为该站点的默认页设置为 (www.contoso.com)[www.contoso.com] ，然后导航到<strong>www.contoso.com</strong>导航到相同<strong>www.contoso.com/Default.htm</strong>。
+当用户导航到你的网站的基址时，向用户显示你的站点的默认页。 例如，当 Default.htm 作为该站点的默认页设置为 www.contoso.com ，然后导航到<strong>www.contoso.com</strong>导航到相同<strong>www.contoso.com/Default.htm</strong>。
 
 目前，您的网站使用**Default.cshtml**与默认页面。 此页是相当不错的默认页面，但在本教程中未添加任何内容到该页面以便它将显示空白页。 打开 Default.cshtml 并将内容替换为以下代码。
 
