@@ -5,14 +5,14 @@ description: ASP.NET Core SignalR JavaScript 客户端的概述。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 08/14/2018
+ms.date: 11/14/2018
 uid: signalr/javascript-client
-ms.openlocfilehash: 02844c35d1933d36576c25ff335a572fb65eff5c
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 7de7abd7176e160154a458a3b90f662ba8f47f8c
+ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50208013"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51708382"
 ---
 # <a name="aspnet-core-signalr-javascript-client"></a>ASP.NET Core SignalR JavaScript 客户端
 
@@ -98,6 +98,17 @@ SignalR 确定要进行匹配的方法名称来调用的客户端方法和参数
 使用[configureLogging](/javascript/api/%40aspnet/signalr/hubconnectionbuilder#configurelogging)方法[HubConnectionBuilder](/javascript/api/%40aspnet/signalr/hubconnectionbuilder)若要配置日志级别。 消息会记录到浏览器控制台。
 
 [!code-javascript[Logging levels](javascript-client/sample/wwwroot/js/chat.js?range=9-12)]
+
+## <a name="reconnect-clients"></a>重新连接客户端
+
+SignalR JavaScript 客户端不会自动重新连接。 必须编写代码将手动重新连接你的客户端。 下面的代码演示了典型的重新连接方法：
+
+1. 一个函数 (在这种情况下，`start`函数) 创建以启动连接。
+1. 调用`start`中的连接函数`onclose`事件处理程序。
+
+[!code-javascript[Reconnect the JavaScript client](javascript-client/sample/wwwroot/js/chat.js?range=30-42)]
+
+实际的实现会使用指数退让或重试的次数后放弃了指定的次数。 
 
 ## <a name="additional-resources"></a>其他资源
 

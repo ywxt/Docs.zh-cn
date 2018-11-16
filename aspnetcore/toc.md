@@ -332,7 +332,7 @@
 #### [Twitter 身份验证](xref:security/authentication/twitter-logins)
 #### [Google 身份验证](xref:security/authentication/google-logins)
 #### [Microsoft 身份验证](xref:security/authentication/microsoft-logins)
-#### [其他身份验证提供程序](xref:security/authentication/otherlogins)
+#### [外部身份验证提供程序](xref:security/authentication/otherlogins)
 #### [其他声明](xref:security/authentication/social/additional-claims)
 ### [WS 联合身份验证](xref:security/authentication/ws-federation)
 ### [帐户确认和密码恢复](xref:security/authentication/accconfirm)

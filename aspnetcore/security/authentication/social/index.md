@@ -3,14 +3,15 @@ title: ASP.NET Core 中的 Facebook、Google 和外部提供程序身份验证
 author: rick-anderson
 description: 本教程演示如何使用外部身份验证提供程序通过 OAuth 2.0 生成 ASP.NET Core 2.x 应用。
 ms.author: riande
-ms.date: 11/01/2016
+ms.custom: mvc
+ms.date: 11/11/2018
 uid: security/authentication/social/index
-ms.openlocfilehash: 48a01ab241f9a6ad6ad3fb2ee9e210f459075c33
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: 19074d5014a09446ceec1b89449e78760fc8e7cf
+ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336115"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51708369"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core 中的 Facebook、Google 和外部提供程序身份验证
 
@@ -28,9 +29,9 @@ ms.locfileid: "43336115"
 
 ## <a name="create-a-new-aspnet-core-project"></a>创建新的 ASP.NET Core 项目
 
-* 在 Visual Studio 2017 中，从“开始”页创建新项目，或通过“文件”>“新建”>“项目”进行创建。
+* 在 Visual Studio 2017 中，从“开始”页创建新项目，或通过“文件”>“新建”>“项目”进行创建 >  > 。
 
-* 选择“Visual C#”>“.NET Core”分类中提供的“ASP.NET Core Web 应用程序”模板：
+* 选择“Visual C#” > “.NET Core”分类中提供的“ASP.NET Core Web 应用程序”模板：
 
 ![“新建项目”对话框](index/_static/new-project.png)
 
@@ -51,9 +52,11 @@ ms.locfileid: "43336115"
 
 OAuth 2.0 需要使用 SSL 通过 HTTPS 协议进行身份验证。
 
-请注意：如果如上图所示，在项目向导的“更改身份验证”对话框上选择“单个用户帐户”选项，使用 ASP.NET Core 2.x 的“Web 应用程序”或“Web API”项目模板创建的项目自动配置为启用 SSL 并通过 http URL 启动。
+使用 Web 应用或 Web API 项目模板以及 ASP.NET Core 2.1 或更高版本创建的项目会自动配置为启用 SSL。 如果在项目向导的“更改身份验证”对话框中选择“单个用户帐户”选项，应用会在安全默认终结点启动。
 
-* 按照[在 ASP.NET Core 应用中强制实施 SSL](xref:security/enforcing-ssl)主题中的步骤进行操作，要求在站点上使用 SSL。
+有关更多信息，请参见<xref:security/enforcing-ssl>。
+
+[!INCLUDE[Forward request information when behind a proxy or load balancer section](includes/forwarded-headers-middleware.md)]
 
 ## <a name="use-secretmanager-to-store-tokens-assigned-by-login-providers"></a>使用 SecretManager 存储登录提供程序分配的令牌
 
@@ -74,7 +77,7 @@ OAuth 2.0 需要使用 SSL 通过 HTTPS 协议进行身份验证。
 * [Microsoft](xref:security/authentication/microsoft-logins) 相关说明
 * [其他提供程序](xref:security/authentication/otherlogins)相关说明
 
-[!INCLUDE[](~/includes/chain-auth-providers.md)]
+[!INCLUDE[](includes/chain-auth-providers.md)]
 
 ## <a name="optionally-set-password"></a>选择性地设置密码
 

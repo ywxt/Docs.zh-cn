@@ -5,14 +5,14 @@ description: 了解如何建立其他声明和来自外部提供程序的令牌�
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/28/2018
+ms.date: 11/11/2018
 uid: security/authentication/social/additional-claims
-ms.openlocfilehash: dc8b3e32141466a12e4eff0c86d2d4bed689afe5
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 9a24ac138950ef2bedac48f506655d06520137cf
+ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50206352"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51708356"
 ---
 # <a name="persist-additional-claims-and-tokens-from-external-providers-in-aspnet-core"></a>保留其他声明和 ASP.NET Core 中的外部提供程序颁发令牌
 
@@ -22,13 +22,11 @@ ASP.NET Core 应用可以建立其他声明和来自外部身份验证提供程�
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/social/additional-claims/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
-## <a name="prerequisite"></a>必备组件
+## <a name="prerequisites"></a>系统必备
 
 决定哪些外部身份验证提供程序支持应用程序中。 对于每个提供程序，注册应用程序和获取客户端 ID 和客户端机密。 有关详细信息，请参阅 <xref:security/authentication/social/index> 。 [示例应用](#sample-app-instructions)使用[Google 身份验证提供程序](xref:security/authentication/google-logins)。
 
-## <a name="authentication-provider-configuration"></a>身份验证提供程序配置
-
-### <a name="set-the-client-id-and-client-secret"></a>设置客户端 ID 和客户端机密
+## <a name="set-the-client-id-and-client-secret"></a>设置客户端 ID 和客户端机密
 
 OAuth 身份验证提供程序使用客户端 ID 和客户端机密的应用与建立信任关系。 客户端 ID 和客户端密钥值的应用的外部身份验证提供程序时创建应用注册到提供程序。 提供程序的客户端 ID 和客户端机密，必须单独配置每个应用程序使用的外部提供程序。 有关详细信息，请参阅适用于方案的外部身份验证提供程序主题：
 
@@ -43,7 +41,7 @@ OAuth 身份验证提供程序使用客户端 ID 和客户端机密的应用与�
 
 [!code-csharp[](additional-claims/samples/2.x/AdditionalClaimsSample/Startup.cs?name=snippet_AddGoogle&highlight=4,6)]
 
-### <a name="establish-the-authentication-scope"></a>建立身份验证范围
+## <a name="establish-the-authentication-scope"></a>建立身份验证范围
 
 指定要从提供程序检索由指定的权限列表<xref:Microsoft.AspNetCore.Authentication.OAuth.OAuthOptions.Scope*>。 下表中显示常见的外部提供程序的身份验证作用域。
 
@@ -58,7 +56,7 @@ OAuth 身份验证提供程序使用客户端 ID 和客户端机密的应用与�
 
 [!code-csharp[](additional-claims/samples/2.x/AdditionalClaimsSample/Startup.cs?name=snippet_AddGoogle&highlight=7)]
 
-### <a name="map-user-data-keys-and-create-claims"></a>将用户数据键映射和创建声明
+## <a name="map-user-data-keys-and-create-claims"></a>将用户数据键映射和创建声明
 
 在提供程序的选项中，指定<xref:Microsoft.AspNetCore.Authentication.ClaimActionCollectionMapExtensions.MapJsonKey*>要阅读在登录的应用程序标识的外部提供程序的 JSON 用户数据中的每个键。 声明类型的详细信息，请参阅<xref:System.Security.Claims.ClaimTypes>。
 
@@ -72,7 +70,7 @@ OAuth 身份验证提供程序使用客户端 ID 和客户端机密的应用与�
 
 [!code-csharp[](additional-claims/samples/2.x/AdditionalClaimsSample/Pages/Account/ExternalLogin.cshtml.cs?name=snippet_OnPostConfirmationAsync&highlight=30-31)]
 
-### <a name="save-the-access-token"></a>保存访问令牌
+## <a name="save-the-access-token"></a>保存访问令牌
 
 <xref:Microsoft.AspNetCore.Authentication.RemoteAuthenticationOptions.SaveTokens*> 定义访问和刷新令牌是否应存储在<xref:Microsoft.AspNetCore.Http.Authentication.AuthenticationProperties>成功授权后。 `SaveTokens` 设置为`false`默认情况下以减小最终的身份验证 cookie 的大小。
 
@@ -93,7 +91,7 @@ OAuth 身份验证提供程序使用客户端 ID 和客户端机密的应用与�
 
 [!code-csharp[](additional-claims/samples/2.x/AdditionalClaimsSample/Pages/Account/ExternalLogin.cshtml.cs?name=snippet_OnGetCallbackAsync&highlight=31-32)]
 
-### <a name="how-to-add-additional-custom-tokens"></a>如何添加其他自定义令牌
+## <a name="how-to-add-additional-custom-tokens"></a>如何添加其他自定义令牌
 
 若要演示如何添加作为的一部分存储的自定义令牌`SaveTokens`，示例应用添加<xref:Microsoft.AspNetCore.Authentication.AuthenticationToken>与当前<xref:System.DateTime>有关[AuthenticationToken.Name](xref:Microsoft.AspNetCore.Authentication.AuthenticationToken.Name*)的`TicketCreated`:
 
@@ -143,3 +141,5 @@ Authentication Properties
 .expires
     Mon, 10 Sep 2018 18:08:05 GMT
 ```
+
+[!INCLUDE[Forward request information when behind a proxy or load balancer section](includes/forwarded-headers-middleware.md)]

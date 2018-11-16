@@ -5,14 +5,14 @@ description: ''
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 06/07/2018
+ms.date: 11/14/2018
 uid: signalr/streaming
-ms.openlocfilehash: 70f12999b7f4230147b9ea43f6f7730b0816c43a
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 6d5f707bd2a37e1999c6e87e3cfc369aa0301207
+ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50206383"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51708434"
 ---
 # <a name="use-streaming-in-aspnet-core-signalr"></a>使用 ASP.NET Core SignalR 中流式处理
 
@@ -29,14 +29,33 @@ ASP.NET Core SignalR 支持流式处理服务器方法的返回值。 这是适�
 > [!NOTE]
 > 写入`ChannelReader`在后台线程并返回`ChannelReader`越早越好。 将阻止其他集线器调用，直到`ChannelReader`返回。
 
-[!code-csharp[Streaming hub method](streaming/sample/Hubs/StreamHub.cs?range=10-34)]
+::: moniker range="= aspnetcore-2.1"
+
+[!code-csharp[Streaming hub method](streaming/sample/Hubs/StreamHub.aspnetcore21.cs?range=12-36)]
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+[!code-csharp[Streaming hub method](streaming/sample/Hubs/StreamHub.cs?range=11-35)]
+
+> [!NOTE]
+> 在 ASP.NET Core 2.2 或更高版本，流式处理集线器方法可以接受`CancellationToken`从流的客户端取消订阅时，将触发的参数。 使用此令牌来停止服务器操作和释放任何资源，如果客户端断开连接之前流的末尾。
+
+::: moniker-end
 
 ## <a name="net-client"></a>.NET 客户端
 
 `StreamAsChannelAsync`方法`HubConnection`用于调用流式处理方法。 将中心方法名称和到中心方法中定义的自变量传递`StreamAsChannelAsync`。 上的泛型参数`StreamAsChannelAsync<T>`指定流式处理方法返回的对象的类型。 一个`ChannelReader<T>`返回从流调用，并且表示在客户端上的流。 若要读取数据，常见模式是循环访问`WaitToReadAsync`，并调用`TryRead`数据时可用。 循环将结束时该流已关闭服务器，或取消标记传递给`StreamAsChannelAsync`被取消。
 
+::: moniker range=">= aspnetcore-2.2"
+
 ```csharp
-var channel = await hubConnection.StreamAsChannelAsync<int>("Counter", 10, 500, CancellationToken.None);
+// Call "Cancel" on this CancellationTokenSource to send a cancellation message to 
+// the server, which will trigger the corresponding token in the Hub method.
+var cancellationTokenSource = new CancellationTokenSource();
+var channel = await hubConnection.StreamAsChannelAsync<int>(
+    "Counter", 10, 500, cancellationTokenSource.Token);
 
 // Wait asynchronously for data to become available
 while (await channel.WaitToReadAsync())
@@ -51,6 +70,29 @@ while (await channel.WaitToReadAsync())
 Console.WriteLine("Streaming completed");
 ```
 
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.1"
+
+```csharp
+var channel = await hubConnection
+    .StreamAsChannelAsync<int>("Counter", 10, 500, CancellationToken.None);
+
+// Wait asynchronously for data to become available
+while (await channel.WaitToReadAsync())
+{
+    // Read all currently available data synchronously, before waiting for more data
+    while (channel.TryRead(out var count))
+    {
+        Console.WriteLine($"{count}");
+    }
+}
+
+Console.WriteLine("Streaming completed");
+```
+
+::: moniker-end
+
 ## <a name="javascript-client"></a>JavaScript 客户端
 
 JavaScript 客户端调用集线器上流式处理方法使用`connection.stream`。 `stream`方法接受两个参数：
@@ -62,7 +104,17 @@ JavaScript 客户端调用集线器上流式处理方法使用`connection.stream
 
 [!code-javascript[Streaming javascript](streaming/sample/wwwroot/js/stream.js?range=19-36)]
 
+::: moniker range="= aspnetcore-2.1"
+
 若要结束从客户端的流，请调用`dispose`方法`ISubscription`从返回`subscribe`方法。
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+若要结束从客户端的流，请调用`dispose`方法`ISubscription`从返回`subscribe`方法。 调用此方法将导致`CancellationToken`（如果提供） 的集线器方法的参数以取消。
+
+::: moniker-end
 
 ## <a name="related-resources"></a>相关资源
 
