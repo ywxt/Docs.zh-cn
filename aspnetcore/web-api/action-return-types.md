@@ -1,5 +1,5 @@
 ---
-title: ASP.NET Core Web API 中的控制器操作返回类型
+title: ASP.NET Core Web API 中控制器操作的返回类型
 author: scottaddie
 description: 了解在 ASP.NET Core Web API 中使用各种控制器操作方法返回类型的相关信息。
 ms.author: scaddie
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/29/2018
 ms.locfileid: "50207519"
 ---
-# <a name="controller-action-return-types-in-aspnet-core-web-api"></a>ASP.NET Core Web API 中的控制器操作返回类型
+# <a name="controller-action-return-types-in-aspnet-core-web-api"></a>ASP.NET Core Web API 中控制器操作的返回类型
 
 作者：[Scott Addie](https://github.com/scottaddie)
 
@@ -60,7 +60,7 @@ ASP.NET Core 提供以下 Web API 控制器操作返回类型选项：
 
 [!code-csharp[](../web-api/action-return-types/samples/WebApiSample.Api.Pre21/Controllers/ProductsController.cs?name=snippet_GetById&highlight=8,11)]
 
-在上述操作中，当 `id` 代表的产品不在基础数据存储中时，则返回 404 状态代码。 调用 [NotFound](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.notfound) 帮助程序方法作为 `return new NotFoundResult();` 的快捷方式。 如果产品确实存在，则返回代表有效负载的 `Product` 对象和状态代码 200。 调用 [Ok](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.ok) 帮助程序方法作为 `return new OkObjectResult(product);` 的快捷方式。
+在上述操作中，当 `id` 代表的产品不在基础数据存储中时，则返回 404 状态代码。 调用 [NotFound](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.notfound) 帮助方法作为 `return new NotFoundResult();` 的快捷方式。 如果产品确实存在，则返回代表有效负载的 `Product` 对象和状态代码 200。 调用 [Ok](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.ok) 帮助方法作为 `return new OkObjectResult(product);` 的快捷方式。
 
 ### <a name="asynchronous-action"></a>异步操作
 
@@ -68,11 +68,11 @@ ASP.NET Core 提供以下 Web API 控制器操作返回类型选项：
 
 [!code-csharp[](../web-api/action-return-types/samples/WebApiSample.Api.Pre21/Controllers/ProductsController.cs?name=snippet_CreateAsync&highlight=8,13)]
 
-在上述操作中，模型验证失败时返回 400 状态代码，并且调用了 [BadRequest](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.badrequest) 帮助程序方法。 例如，以下模型指示请求必须提供 `Name` 属性和值。 因此，若请求中未能提供合适的 `Name`，则会导致模型验证失败。
+在上述操作中，模型验证失败时返回 400 状态代码，并且调用了 [BadRequest](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.badrequest) 帮助方法。 例如，以下模型指示请求必须提供 `Name` 属性和值。 因此，若请求中未能提供合适的 `Name`，则会导致模型验证失败。
 
 [!code-csharp[](../web-api/action-return-types/samples/WebApiSample.DataAccess/Models/Product.cs?name=snippet_ProductClass&highlight=5-6)]
 
-上述操作的其他已知返回代码是 201，由 [CreatedAtAction](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdataction) 帮助程序方法生成。 在此路径中，返回了 `Product` 对象。
+上述操作的其他已知返回代码是 201，由 [CreatedAtAction](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdataction) 帮助方法生成。 在此路径中，返回了 `Product` 对象。
 
 ::: moniker range=">= aspnetcore-2.1"
 
