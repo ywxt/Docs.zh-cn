@@ -4,14 +4,14 @@ author: guardrex
 description: 理解如何使用配置 API 配置 ASP.NET Core 应用。
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/09/2018
+ms.date: 11/15/2018
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 6dd478770d4eae4d497da576c17fbe7d2c133b89
-ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
+ms.openlocfilehash: 766ac77a2af01509f8e4bc646a18f7dfbc923511
+ms.sourcegitcommit: d3392f688cfebc1f25616da7489664d69c6ee330
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51021737"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51818390"
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core 中的配置
 
@@ -538,10 +538,11 @@ dotnet run -CLKey1=value1 -CLKey2=value2
 
 ::: moniker range=">= aspnetcore-2.0"
 
-使用 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> 初始化新的 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时会自动调用 `AddEnvironmentVariables`。 有关详细信息，请参阅 [Web 主机：设置主机](xref:fundamentals/host/web-host#set-up-a-host)。
+初始化一个新的 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> 时，对于前缀为 `ASPNETCORE_` 的环境变量，会自动调用 `AddEnvironmentVariables`。 有关详细信息，请参阅 [Web 主机：设置主机](xref:fundamentals/host/web-host#set-up-a-host)。
 
 此外，`CreateDefaultBuilder` 也会加载：
 
+* 来自没有前缀的环境变量的应用配置，方法是通过调用不带前缀的 `AddEnvironmentVariables`。
 * appsettings.json 和 appsettings.{Environment}.json 的可选配置。
 * [用户机密 (Secret Manager)](xref:security/app-secrets)（在开发环境中）。
 * 命令行参数。
@@ -554,7 +555,7 @@ dotnet run -CLKey1=value1 -CLKey2=value2
 
 构建主机时调用 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 以指定应用的配置。
 
-前缀为 `ASPNETCORE_` 的环境变量的 `AddEnvironmentVariables` 已被 `CreateDefaultBuilder` 调用。 如果需要从其他环境变量提供应用配置，请在 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 中调用应用的其他提供程序，并使用前缀调用 `AddEnvironmentVariables`。
+如果需要从其他环境变量提供应用配置，请在 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 中调用应用的其他提供程序，并使用前缀调用 `AddEnvironmentVariables`。
 
 ```csharp
 public class Program
@@ -585,7 +586,7 @@ public class Program
 
 在 <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder> 的实例上调用 `AddEnvironmentVariables` 扩展方法。 使用 <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> 方法将配置应用到 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>。
 
-前缀为 `ASPNETCORE_` 的环境变量的 `AddEnvironmentVariables` 已被 `CreateDefaultBuilder` 调用。 如果需要从其他环境变量提供应用配置，请在 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 中调用应用的其他提供程序，并使用前缀调用 `AddEnvironmentVariables`。
+如果需要从其他环境变量提供应用配置，请在 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 中调用应用的其他提供程序，并使用前缀调用 `AddEnvironmentVariables`。
 
 ```csharp
 public class Program

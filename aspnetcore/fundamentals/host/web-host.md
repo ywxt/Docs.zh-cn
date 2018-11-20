@@ -2,23 +2,26 @@
 title: ASP.NET Core Web 主机
 author: guardrex
 description: 了解有关 ASP.NET Core 中负责应用启动和生存期管理的 Web 主机。
-monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/05/2018
+ms.date: 11/12/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: a3601b71c65321af56644eb87c4527d6290e4378
-ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
+ms.openlocfilehash: 5af09ad715768d51ce8ef2c8425cc51ebada6859
+ms.sourcegitcommit: 1d6ab43eed9cb3df6211c22b97bb3a9351ec4419
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51505812"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51597818"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core Web 主机
 
 作者：[Luke Latham](https://github.com/guardrex)
 
+::: moniker range="<= aspnetcore-1.1"
+
 对于本主题的 1.1 版本，请下载 [ASP.NET Core Web 主机（版本 1.1，PDF）](https://webpifeed.blob.core.windows.net/webpifeed/Partners/Web-Host_1.1.pdf)。
+
+::: moniker-end
 
 ASP.NET Core 应用配置和启动“主机”。 主机负责应用程序启动和生存期管理。 至少，主机配置服务器和请求处理管道。 本主题介绍 ASP.NET Core Web 主机 ([IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder))，它可用于托管 Web 应用。 有关 .NET 通用主机 ([IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder)) 的介绍，请参阅 <xref:fundamentals/host/generic-host>。
 

@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/30/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: 9943c9dd2d6dd67a79186ee880b181a5915d06be
-ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
+ms.openlocfilehash: cac5ccdea7838d26b7468f9bf1ab8d317b444b46
+ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51505708"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51708512"
 ---
 # <a name="net-generic-host"></a>.NET 通用主机
 
@@ -75,7 +75,7 @@ ms.locfileid: "51505708"
 **类型**：string  
 **默认**：包含应用入口点的程序集的名称。  
 **设置使用**：`HostBuilderContext.HostingEnvironment.ApplicationName`  
-**环境变量**：`<PREFIX_>APPLICATIONNAME`（`<PREFIX_>` 是[用户定义的可选前缀](#configuration-builder)）
+**环境变量**：`<PREFIX_>APPLICATIONNAME`（`<PREFIX_>` 是[用户定义的可选前缀](#configurehostconfiguration)）
 
 ### <a name="content-root"></a>内容根
 
@@ -85,7 +85,7 @@ ms.locfileid: "51505708"
 **类型**：string  
 **默认值**：默认为应用程序集所在的文件夹。  
 **设置使用**：`UseContentRoot`  
-**环境变量**：`<PREFIX_>CONTENTROOT`（`<PREFIX_>` 是[用户定义的可选前缀](#configuration-builder)）
+**环境变量**：`<PREFIX_>CONTENTROOT`（`<PREFIX_>` 是[用户定义的可选前缀](#configurehostconfiguration)）
 
 如果路径不存在，主机将无法启动。
 
@@ -99,7 +99,7 @@ ms.locfileid: "51505708"
 **类型**：string  
 **默认值**：生产  
 **设置使用**：`UseEnvironment`  
-**环境变量**：`<PREFIX_>ENVIRONMENT`（`<PREFIX_>` 是[用户定义的可选前缀](#configuration-builder)）
+**环境变量**：`<PREFIX_>ENVIRONMENT`（`<PREFIX_>` 是[用户定义的可选前缀](#configurehostconfiguration)）
 
 环境可以设置为任何值。 框架定义的值包括 `Development``Staging` 和 `Production`。 值不区分大小写。
 
