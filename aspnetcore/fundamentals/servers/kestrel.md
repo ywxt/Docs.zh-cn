@@ -2,23 +2,26 @@
 title: ASP.NET Core 中的 Kestrel Web 服务器实现
 author: guardrex
 description: 了解跨平台 ASP.NET Core Web 服务器 Kestrel。
-monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 11/05/2018
+ms.date: 11/12/2018
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: a26726a824db31e07b881dbfa8dc2ef37d4d3492
-ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
+ms.openlocfilehash: 793aa6e190da0170a395292ea661f7c828f817c1
+ms.sourcegitcommit: 1d6ab43eed9cb3df6211c22b97bb3a9351ec4419
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51505760"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51597805"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 Kestrel Web 服务器实现
 
 作者：[Tom Dykstra](https://github.com/tdykstra)、[Chris Ross](https://github.com/Tratcher) 和 [Stephen Halter](https://twitter.com/halter73)
 
+::: moniker range="<= aspnetcore-1.1"
+
 对于本主题的 1.1 版本，请下载 [ASP.NET Core（版本 1.1，PDF）](https://webpifeed.blob.core.windows.net/webpifeed/Partners/Kestrel_1.1.pdf)中的 Kestrel Web 服务器实现。
+
+::: moniker-end
 
 Kestrel 是一个跨平台的[适用于 ASP.NET Core 的 Web 服务器](xref:fundamentals/servers/index)。 Kestrel 是 Web 服务器，默认包括在 ASP.NET Core 项目模板中。
 
@@ -465,7 +468,7 @@ Kestrel 在 `http://localhost:5000` 和 `https://localhost:5001` 上进行侦听
 
 有关详细信息，请参阅[服务器 URL](xref:fundamentals/host/web-host#server-urls) 和[重写配置](xref:fundamentals/host/web-host#override-configuration)。
 
-采用这些方法提供的值可以是一个或多个 HTTP 和 HTTPS 终结点（如果默认证书可用，则为 HTTPS）。 将值配置为以分号分隔的列表（例如 `"Urls": "http://localhost:8000; http://localhost:8001"`）。
+采用这些方法提供的值可以是一个或多个 HTTP 和 HTTPS 终结点（如果默认证书可用，则为 HTTPS）。 将值配置为以分号分隔的列表（例如 `"Urls": "http://localhost:8000;http://localhost:8001"`）。
 
 *从配置中替换默认证书*
 
