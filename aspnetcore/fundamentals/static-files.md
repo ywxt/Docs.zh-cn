@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/18/2018
 uid: fundamentals/static-files
-ms.openlocfilehash: 5d00e6ba57053d17b45a24a1c57a446cb3db22ca
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: fb92141b1864574242b29ecc386024ce72a6be87
+ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207129"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51570121"
 ---
 # <a name="static-files-in-aspnet-core"></a>ASP.NET Core 中的静态文件
 
@@ -122,10 +122,10 @@ ms.locfileid: "50207129"
 
 静态文件中间件不提供授权检查。 可公开访问由静态文件中间件提供的任何文件，包括 wwwroot 下的文件。 根据授权提供文件：
 
-* 将文件存储在 wwwroot 和静态文件中间件可访问的任何目录之外并
+* 将文件存储在 wwwroot 和静态文件中间件可访问的任何目录之外。
 * 通过有授权的操作方法提供文件。 返回 [FileResult](/dotnet/api/microsoft.aspnetcore.mvc.fileresult) 对象：
 
-[!code-csharp[](static-files/samples/1x/Controllers/HomeController.cs?name=snippet_BannerImageAction)]
+  [!code-csharp[](static-files/samples/1x/Controllers/HomeController.cs?name=snippet_BannerImageAction)]
 
 ## <a name="enable-directory-browsing"></a>启用目录浏览
 

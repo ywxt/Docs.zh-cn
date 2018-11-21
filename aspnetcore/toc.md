@@ -34,7 +34,7 @@
 ## [应用启动](xref:fundamentals/startup)
 ## [依赖关系注入（服务）](xref:fundamentals/dependency-injection)
 ## [路由](xref:fundamentals/routing)
-## [多个环境](xref:fundamentals/environments)
+## [环境（开发、分阶段、生产）](xref:fundamentals/environments)
 ## [配置](xref:fundamentals/configuration/index)
 ## [选项](xref:fundamentals/configuration/options)
 ## [日志记录](xref:fundamentals/logging/index)
@@ -432,6 +432,7 @@
 ## [响应压缩](xref:performance/response-compression)
 
 # 迁移
+## [2.1 至 2.2](xref:migration/21-to-22)
 ## [2.0 至 2.1](xref:migration/20_21)
 ## 1.x 至 2.0
 ### [概述](xref:migration/1x-to-2x/index)

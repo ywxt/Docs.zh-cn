@@ -4,14 +4,14 @@ author: guardrex
 description: 了解如何配置 ASP.NET Core 模块以托管 ASP.NET Core 应用。
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/21/2018
+ms.date: 11/12/2018
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: ca86b1548c7c28a64fd391617b2e8290c1c264cf
-ms.sourcegitcommit: 09affee3d234cb27ea6fe33bc113b79e68900d22
+ms.openlocfilehash: 32fbf2b19da2d088847279f447f9a72cedcf8085
+ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51191355"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51570173"
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET Core 模块配置参考
 
@@ -132,6 +132,8 @@ ms.locfileid: "51191355"
   </location>
 </configuration>
 ```
+
+将 <xref:System.Configuration.SectionInformation.InheritInChildApplications*> 属性设置为 `false`，表示 [\<>](/iis/manage/managing-your-configuration-settings/understanding-iis-configuration-delegation#the-concept-of-location) 元素中指定的设置不会由驻留在应用子目录中的应用继承。
 
 ::: moniker-end
 
@@ -280,13 +282,13 @@ ms.locfileid: "51191355"
 
 对于进程外托管，如果 ASP.NET Core 模块无法启动后端进程或后端进程启动但无法在配置的端口上侦听，则将显示“502.5 - 进程失败”状态代码页。
 
-若要禁止显示此页面并还原为默认 IIS 5xx 状态代码页，请使用 `disableStartUpErrorPage` 属性。 有关配置自定义错误消息的详细信息，请参阅 [HTTP 错误 &lt;httpErrors&gt;](/iis/configuration/system.webServer/httpErrors/)。
+若要禁止显示此页面并还原为默认 IIS 5xx 状态代码页，请使用 `disableStartUpErrorPage` 属性。 有关配置自定义错误消息的详细信息，请参阅 [HTTP 错误 \<httpErrors>](/iis/configuration/system.webServer/httpErrors/)。
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.2"
 
-如果 ASP.NET Core 模块无法启动后端进程或后端进程启动但无法在配置的端口上侦听，则将显示“502.5 - 进程失败”状态代码页。 若要禁止显示此页面并还原为默认 IIS 502 状态代码页面，请使用 `disableStartUpErrorPage` 属性。 有关配置自定义错误消息的详细信息，请参阅 [HTTP 错误 &lt;httpErrors&gt;](/iis/configuration/system.webServer/httpErrors/)。
+如果 ASP.NET Core 模块无法启动后端进程或后端进程启动但无法在配置的端口上侦听，则将显示“502.5 - 进程失败”状态代码页。 若要禁止显示此页面并还原为默认 IIS 502 状态代码页面，请使用 `disableStartUpErrorPage` 属性。 有关配置自定义错误消息的详细信息，请参阅 [HTTP 错误 \<httpErrors>](/iis/configuration/system.webServer/httpErrors/)。
 
 ![“502.5 进程失败”状态代码页面](aspnet-core-module/_static/ANCM-502_5.png)
 

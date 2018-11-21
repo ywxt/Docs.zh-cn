@@ -5,14 +5,14 @@ description: 在本教程中，创建使用 ASP.NET Core SignalR 的聊天应用
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 08/31/2018
+ms.date: 11/13/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 7d9f3a3f8aa7a5e47169da66e6fa2d6a28de3853
-ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
+ms.openlocfilehash: 8916b3659250c1bcbbc2dc9b3d466586f98bcc7e
+ms.sourcegitcommit: d3392f688cfebc1f25616da7489664d69c6ee330
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51021243"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51818377"
 ---
 # <a name="tutorial-get-started-with-aspnet-core-signalr"></a>教程：ASP.NET Core SignalR 入门
 
@@ -238,7 +238,7 @@ ms.locfileid: "51021243"
 
 * 从地址栏复制 URL，打开另一个浏览器实例或选项卡，并在地址栏中粘贴该 URL。
 
-* 选择任一浏览器，输入名称和消息，然后选择“发送”按钮。
+* 选择任一浏览器，输入名称和消息，然后选择“发送消息”按钮。
 
   两个页面上立即显示名称和消息。
 

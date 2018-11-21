@@ -15,7 +15,7 @@
 * 定义了没有方法的 API 控制器类。
 * 当 `TodoItems` 为空时创建一个新的 Todo 项。 无法删除所有 Todo 项，因为当 `TodoItems` 为空时，构造函数将创建一个新的 Todo 项。
 
-在接下来的部分中，将添加方法来实现 API。 采用 `[ApiController]` 特性批注类，以启用一些方便的功能。 若要了解此属性启用的功能，请参阅[使用 ApiControllerAttribute 批注](xref:web-api/index#annotation-with-apicontrollerattribute)。
+在接下来的部分中，将添加方法来实现 API。 采用 `[ApiController]` 特性批注类，以启用一些方便的功能。 若要了解此属性启用的功能，请参阅[使用 ApiController 属性进行批注](xref:web-api/index#annotation-with-apicontroller-attribute)。
 
 ::: moniker-end
 
