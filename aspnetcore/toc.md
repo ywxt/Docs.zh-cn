@@ -283,7 +283,7 @@
 ## 在 Azure 应用服务上托管
 ### [概述](xref:host-and-deploy/azure-apps/index)
 ### [使用 Visual Studio 进行发布](xref:tutorials/publish-to-azure-webapp-using-vs)
-### [使用 CLI 工具进行发布](/azure/app-service/app-service-web-get-started-dotnet)
+### [使用 CLI 工具进行发布](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
 ### [使用 Visual Studio 和 Git 进行发布](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
 ### [使用 Azure Pipelines 连续部署](/azure/devops/pipelines/get-started-yaml)
 ### [解决启动错误](xref:host-and-deploy/azure-apps/troubleshoot)
@@ -313,7 +313,6 @@
 ## [Visual Studio 发布配置文件](xref:host-and-deploy/visual-studio-publish-profiles)
 ## [目录结构](xref:host-and-deploy/directory-structure)
 ## [Azure 应用服务和 IIS 的错误参考](xref:host-and-deploy/azure-iis-errors-reference)
-
 
 # 安全和标识
 ## [概述](xref:security/index)
