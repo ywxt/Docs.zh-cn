@@ -5,14 +5,14 @@ description: 了解集成测试如何在基础结构级别（包括数据库、�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 05/30/2018
+ms.date: 11/26/2018
 uid: test/integration-tests
-ms.openlocfilehash: a136a362cd8973b3684f9a70bd4792d75238eab0
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 9729925c89c212bb6e6fac1a484b6288697afe57
+ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207870"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450744"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>在 ASP.NET Core 中的集成测试
 
@@ -100,8 +100,8 @@ ms.locfileid: "50207870"
 测试项目必须：
 
 * 引用以下包：
-  - [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/)
-  - [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing/)
+  * [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/)
+  * [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing/)
 * 在项目文件中指定 Web SDK (`<Project Sdk="Microsoft.NET.Sdk.Web">`)。 Web SDK 时是必需的引用[Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)。
 
 这些系统必备组件中所示[示例应用](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples/)。 检查*tests/RazorPagesProject.Tests/RazorPagesProject.Tests.csproj*文件。 示例应用使用[xUnit](https://xunit.github.io/)测试框架和[AngleSharp](https://anglesharp.github.io/)分析器库，因此示例应用还引用：
@@ -316,6 +316,10 @@ Pages/Index.cshtml.cs：
   "shadowCopy": false
 }
 ```
+
+## <a name="disposal-of-objects"></a>可供使用的对象
+
+之后的测试`IClassFixture`实现会执行， [TestServer](/dotnet/api/microsoft.aspnetcore.testhost.testserver)并[HttpClient](/dotnet/api/system.net.http.httpclient) xUnit 释放时，将释放[WebApplicationFactory](/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1). 如果对象实例化由开发人员需要可供使用，释放它们在`IClassFixture`实现。 有关详细信息，请参阅[实现 Dispose 方法](/dotnet/standard/garbage-collection/implementing-dispose)。
 
 ## <a name="integration-tests-sample"></a>集成测试示例
 
