@@ -5,12 +5,12 @@ description: 了解 Razor 标记语法，该语法用于将基于服务器的代
 ms.author: riande
 ms.date: 10/26/2018
 uid: mvc/views/razor
-ms.openlocfilehash: 10f0db168b36fed82def8227b3c3edcf5b57f6d7
-ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
+ms.openlocfilehash: ab9fb3f55399764c5fe985811d92c504ed210767
+ms.sourcegitcommit: ad28d1bc6657a743d5c2fa8902f82740689733bb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50148884"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52256575"
 ---
 # <a name="razor-syntax-reference-for-aspnet-core"></a>ASP.NET Core 的 Razor 语法参考
 
@@ -525,6 +525,105 @@ Razor 公开了 `Model` 属性，用于访问传递到视图的模型：
 ### <a name="section"></a>@section
 
 `@section` 指令与[布局](xref:mvc/views/layout)结合使用，允许视图将内容呈现在 HTML 页面的不同部分。 有关详细信息，请参阅[部分](xref:mvc/views/layout#layout-sections-label)。
+
+## <a name="templated-razor-delegates"></a>模板化 Razor 委托
+
+通过 Razor 模板，可使用以下格式定义 UI 代码片段：
+
+```cshtml
+@<tag>...</tag>
+```
+
+下面的示例演示如何指定模板化 Razor 委托作为 <xref:System.Func`2>。 为委托封装的方法的参数指定[动态类型](/dotnet/csharp/programming-guide/types/using-type-dynamic)。 将[对象类型](/dotnet/csharp/language-reference/keywords/object)指定为委托的返回值。 该模板与 `Pet`（具有 `Name` 属性）的 <xref:System.Collections.Generic.List`1> 一起使用。
+
+```csharp
+public class Pet
+{
+    public string Name { get; set; }
+}
+```
+
+```cshtml
+@{
+    Func<dynamic, object> petTemplate = @<p>You have a pet named @item.Name.</p>;
+
+    var pets = new List<Pet>
+    {
+        new Pet { Name = "Rin Tin Tin" },
+        new Pet { Name = "Mr. Bigglesworth" },
+        new Pet { Name = "K-9" }
+    };
+}
+```
+
+使用 `foreach` 语句提供的 `pets` 呈现该模板：
+
+```cshtml
+@foreach (var pet in pets)
+{
+    @petTemplate2(pet)
+}
+```
+
+呈现的输出：
+
+```html
+<p>You have a pet named <strong>Rin Tin Tin</strong>.</p>
+<p>You have a pet named <strong>Mr. Bigglesworth</strong>.</p>
+<p>You have a pet named <strong>K-9</strong>.</p>
+```
+
+还可以提供内联 Razor 模板作为方法的参数。 如下示例中，`Repeat` 方法收到一个 Razor 模板。 该方法使用模板生成 HTML 内容，其中包含列表中提供的重复项：
+
+```cshtml
+@using Microsoft.AspNetCore.Html
+
+@functions {
+    public static IHtmlContent Repeat(IEnumerable<dynamic> items, int times, 
+        Func<dynamic, IHtmlContent> template)
+    {
+        var html = new HtmlContentBuilder();
+
+        foreach (var item in items)
+        {
+            for (var i = 0; i < times; i++)
+            {
+                html.AppendHtml(template(item));
+            }
+        }
+
+        return html;
+    }
+}
+```
+
+使用前面示例中的 pets 列表，调用 `Repeat` 方法以及：
+
+* `Pet` 的 <xref:System.Collections.Generic.List`1>。
+* 每只宠物的重复次数。
+* 用于无序列表的列表项的内联模板。
+
+```cshtml
+<ul>
+    @Repeat(pets, 3, @<li>@item.Name</li>)
+</ul>
+```
+
+呈现的输出：
+
+```html
+<ul>
+    <li>Rin Tin Tin</li>
+    <li>Rin Tin Tin</li>
+    <li>Rin Tin Tin</li>
+    <li>Mr. Bigglesworth</li>
+    <li>Mr. Bigglesworth</li>
+    <li>Mr. Bigglesworth</li>
+    <li>K-9</li>
+    <li>K-9</li>
+    <li>K-9</li>
+</ul>
+```
 
 ## <a name="tag-helpers"></a>标记帮助程序
 
