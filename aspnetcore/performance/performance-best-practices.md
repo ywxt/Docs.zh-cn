@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.date: 11/29/2018
 uid: performance/performance-best-practices
-ms.openlocfilehash: ced86dbc2d6f40b503493eda122d8977d6df7035
-ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
+ms.openlocfilehash: 9f3ed97bf4d4eb371ff5ae3874234b44745cc4ca
+ms.sourcegitcommit: 0fc89b80bb1952852ecbcf3c5c156459b02a6ceb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52452926"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52618111"
 ---
 # <a name="aspnet-core-performance-best-practices"></a>ASP.NET Core 的性能最佳实践
 
@@ -24,7 +24,7 @@ ms.locfileid: "52452926"
 
 ## <a name="cache-aggressively"></a>主动缓存
 
-在本文档的多个部分中讨论缓存。 有关详细信息，请参阅[缓存在 ASP.NET Core 中的响应](xref:performance/caching/index)。
+在本文档的多个部分中讨论缓存。 有关详细信息，请参阅 <xref:performance/caching/response> 。
 
 ## <a name="avoid-blocking-calls"></a>避免阻止调用
 
@@ -71,7 +71,7 @@ ASP.NET Core 应用中的常见性能问题正在阻止可能是异步调用。 
 
 * **执行**以异步方式调用 Api 的所有数据访问。
 * **不这样做**检索不必要的更多数据。 编写查询以返回不仅仅是当前 HTTP 请求所需的数据。
-* **执行**考虑缓存经常访问的数据检索从数据库或远程服务，如果它是可以接受的要稍有过时的数据。 根据方案，可能会使用[MemoryCache](xref:performance/caching/memory)或[DistributedCache](xref:performance/caching/distributed)。 有关详细信息，请参阅[缓存在 ASP.NET Core 中的响应](xref:performance/caching/index)。
+* **执行**考虑缓存经常访问的数据检索从数据库或远程服务，如果它是可以接受的要稍有过时的数据。 根据方案，可能会使用[MemoryCache](xref:performance/caching/memory)或[DistributedCache](xref:performance/caching/distributed)。 有关详细信息，请参阅 <xref:performance/caching/response> 。
 * 最大程度减少网络往返。 目标是检索所需的单个调用中的所有数据，而不是多个调用。
 * **不要**使用[无跟踪查询](/ef/core/querying/tracking#no-tracking-queries)中 Entity Framework Core 用于只读目的访问数据时。 EF Core 可以更有效地返回非跟踪查询的结果。
 * **不要**筛选器和聚合的 LINQ 查询 (使用`.Where`， `.Select`，或`.Sum`语句，例如)，以便由数据库进行筛选。
