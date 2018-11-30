@@ -15,7 +15,7 @@ ms.locfileid: "51708408"
 ---
 # <a name="differences-between-aspnet-signalr-and-aspnet-core-signalr"></a>ASP.NET SignalR 和 ASP.NET Core SignalR 之间的差异
 
-ASP.NET Core SignalR 不允许客户端或 ASP.NET SignalR 的服务器。 本文详细介绍了已删除或更改在 ASP.NET Core SignalR 中的功能。
+ASP.NET Core SignalR 与 ASP.NET SignalR 的客户端或服务端不兼容。本文详细介绍了如何在 ASP.NET Core SignalR 中删除和更改相关功能。
 
 ## <a name="how-to-identify-the-signalr-version"></a>如何识别 SignalR 版本
 
@@ -29,29 +29,29 @@ ASP.NET Core SignalR 不允许客户端或 ASP.NET SignalR 的服务器。 本�
 
 ## <a name="feature-differences"></a>功能差异
 
-### <a name="automatic-reconnects"></a>自动重新连接
+### <a name="automatic-reconnects"></a>自动重连
 
-在 ASP.NET Core SignalR 中不支持自动重新连接。 如果客户端已断开连接，用户必须显式会启动新的连接，如果用户想要重新连接。 在 ASP.NET SignalR，SignalR 尝试重新连接到服务器，如果在连接断开。 
+由于 ASP.NET Core SignalR 中不支持自动重连，如果客户端已断开连接，用户如果想要重新连接，则必须显式的启动一个新的连接。 在ASP.NET SignalR 中，如果连接断开，SignalR 会尝试重新连接到服务器。
 
 ### <a name="protocol-support"></a>协议支持
 
-ASP.NET Core SignalR 支持 JSON，以及一种新的二进制协议，它基于[MessagePack](xref:signalr/messagepackhubprotocol)。 此外，可以创建自定义协议。
+ASP.NET Core SignalR 支持 JSON，以及一种新的二进制协议，它基于[MessagePack](xref:signalr/messagepackhubprotocol)。 此外，你可以创建自定义协议。
 
 ### <a name="transports"></a>传输
 
-在 ASP.NET Core SignalR 中不支持永久帧传输。
+ASP.NET Core SignalR 不支持 Forever Frame 传输。
 
-## <a name="differences-on-the-server"></a>在服务器上的差异
+## <a name="differences-on-the-server"></a>在服务端的差异
 
-ASP.NET Core SignalR 服务器端库包含在[Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)包的一部分**ASP.NET Core Web 应用程序**Razor 和 MVC 模板项目。
+ASP.NET Core SignalR 服务端库包含在[Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)中，该包是 **ASP.NET Core Web 应用程序** 中 Razor 和 MVC 模板的一部分。
 
-ASP.NET Core SignalR 是 ASP.NET Core 中间件，因此它必须通过调用配置[AddSignalR](/dotnet/api/microsoft.extensions.dependencyinjection.signalrdependencyinjectionextensions.addsignalr)中`Startup.ConfigureServices`。
+ASP.NET Core SignalR 是一个 ASP.NET Core 中间件，因此必须通过在 `Startup.ConfigureServices` 中调用 [AddSignalR](/dotnet/api/microsoft.extensions.dependencyinjection.signalrdependencyinjectionextensions.addsignalr) 来配置它。
 
 ```csharp
 services.AddSignalR()
 ```
 
-若要配置路由，请将路由映射到中心内[UseSignalR](/dotnet/api/microsoft.aspnetcore.builder.signalrappbuilderextensions.usesignalr)方法调用中`Startup.Configure`方法。
+要配置路由，请在 `Startup.Configure` 方法中将路由映射到 [UseSignalR](/dotnet/api/microsoft.aspnetcore.builder.signalrappbuilderextensions.usesignalr) 方法调用的 Hub 中。
 
 ```csharp
 app.UseSignalR(routes =>
@@ -60,43 +60,44 @@ app.UseSignalR(routes =>
 });
 ```
 
-### <a name="sticky-sessions"></a>粘性会话
+### <a name="sticky-sessions"></a>Sticky Sessions
 
-ASP.NET SignalR 的横向扩展模型允许客户端重新连接，并将消息发送到服务器场中的任何服务器。 在 ASP.NET Core SignalR 客户端必须进行交互与同一台服务器连接的持续时间。 有关使用 Redis 的横向扩展，这意味着粘性会话是必需的。 使用横向扩展[Azure SignalR 服务](/azure/azure-signalr/)，因为该服务处理客户端连接不需要粘性会话。 
+ASP.NET SignalR的横向扩展模型允许客户端重新连接并将消息发送到服务器集群中的任何服务端。 在 ASP.NET Core SignalR 中，客户端必须在连接期间与同一服务端进行交互。对于使用Redis的横向扩展，这意味着需要 Sticky Sessions。对于使用[Azure SignalR 服务](/azure/azure-signalr/)的扩展，则不需要 Sticky Sessions，因为该服务处理客户端连接不需要 Sticky Sessions。
 
-### <a name="single-hub-per-connection"></a>每个连接的单个中心
+### <a name="single-hub-per-connection"></a>每个连接的单个Hub
 
-在 ASP.NET Core SignalR 连接模型进行了简化。 直接向单个中心，而不是单个连接正在使用共享到多个中心的访问权限进行连接。
+在 ASP.NET Core SignalR 中，连接模型已经简化。直接连接到单个Hub，而不是单个连接用于共享对多个Hub的访问。
 
-### <a name="streaming"></a>流式处理
+### <a name="streaming"></a>流处理
 
-ASP.NET Core SignalR 现在支持[流式处理数据](xref:signalr/streaming)从中心向客户端。
+ASP.NET Core SignalR 现在支持[流处理](xref:signalr/streaming)从Hub到客户端。
 
 ### <a name="state"></a>状态
 
-已删除将任意状态传递客户端与中心 （通常称为 HubState） 之间的功能，以及对进度消息的支持。 目前中心代理没有对应。
+已删除在客户端和Hub之间传递任意状态的能力（通常称为HubState），以及对progress消息的支持。目前没有对应的Hub代理。
 
-### <a name="persistentconnection-removal"></a>PersistentConnection 删除
+### <a name="persistentconnection-removal"></a>删除了 PersistentConnection 
 
-在 ASP.NET Core SignalR [PersistentConnection](https://docs.microsoft.com/previous-versions/aspnet/jj919047(v%3dvs.118))类已删除。 
+在 ASP.NET Core SignalR 中 [PersistentConnection](https://docs.microsoft.com/previous-versions/aspnet/jj919047(v%3dvs.118))类已被删除。 
 
 ### <a name="globalhost"></a>GlobalHost
 
-ASP.NET Core 具有内置于 framework 的依赖关系注入 (DI)。 服务可以使用 DI 来访问[HubContext](xref:signalr/hubcontext)。 `GlobalHost`对象，ASP.NET SignalR 中用来实现`HubContext`ASP.NET Core SignalR 中不存在。
+ASP.NET Core 有内置的依赖关系注入（DI）框架。 服务可以使用 DI 来访问[HubContext](xref:signalr/hubcontext)。 `GlobalHost`对象。
+ASP.NET SignalR 中用可以使用 HubContext 来获取GlobalHost对象，但是在ASP.NET Core SignalR 中已经没有了。
 
 ### <a name="hubpipeline"></a>HubPipeline
 
-ASP.NET Core SignalR 不具有对支持`HubPipeline`模块。
+ASP.NET Core SignalR 不支持`HubPipeline`模块。
 
-## <a name="differences-on-the-client"></a>在客户端上的差异
+## <a name="differences-on-the-client"></a>客户端上的差异
 
 ### <a name="typescript"></a>TypeScript
 
-ASP.NET Core SignalR 客户端用[TypeScript](https://www.typescriptlang.org/)。 使用时，可以编写 JavaScript 或 TypeScript [JavaScript 客户端](xref:signalr/javascript-client)。
+ASP.NET Core SignalR 客户端使用[TypeScript](https://www.typescriptlang.org/)。 使用时，可以编写 JavaScript 或 TypeScript [JavaScript 客户端](xref:signalr/javascript-client)。
 
-### <a name="the-javascript-client-is-hosted-at-npmhttpswwwnpmjscom"></a>JavaScript 客户端托管于[npm](https://www.npmjs.com/)
+### <a name="the-javascript-client-is-hosted-at-npmhttpswwwnpmjscom"></a>托管于[npm](https://www.npmjs.com/)的 JavaScript 客户端
 
-在上一版本中，JavaScript 客户端已通过在 Visual Studio 中的 NuGet 包获取。 对于核心版本中， [ @aspnet/signalr ](https://www.npmjs.com/package/@aspnet/signalr) npm 包中包含的 JavaScript 库。 此包不包括在**ASP.NET Core Web 应用程序**模板。 使用 npm 获取并安装`@aspnet/signalr`npm 包。
+在上一版本中，JavaScript 客户端通过在 Visual Studio 中的 NuGet 包获取。 对于 Core 版本中， [ @aspnet/signalr ](https://www.npmjs.com/package/@aspnet/signalr) npm 包中包含 JavaScript 库。 这个包已经不包含在**ASP.NET Core Web 应用程序**模板中。 使用 npm 获取并安装`@aspnet/signalr`npm 包。
 
 ```console
 npm init -y
@@ -109,11 +110,11 @@ npm install @aspnet/signalr
 
 ### <a name="internet-explorer-support"></a>Internet Explorer 支持
 
-ASP.NET Core SignalR 要求 （ASP.NET SignalR 支持 Microsoft Internet Explorer 8 及更高版本） 的 Microsoft Internet Explorer 11 或更高版本。
+ASP.NET Core SignalR 要求Microsoft Internet Explorer 11 或更高版本（ASP.NET SignalR 支持 Microsoft Internet Explorer 8 及更高版本）。
 
-### <a name="javascript-client-method-syntax"></a>JavaScript 客户端方法语法
+### <a name="javascript-client-method-syntax"></a>JavaScript 客户端语法
 
-JavaScript 语法已从以前版本的 SignalR。 而不是使用`$connection`对象，请创建连接使用[HubConnectionBuilder](/javascript/api/%40aspnet/signalr/hubconnectionbuilder) API。
+JavaScript语法已从以前版本的SignalR做了更改。请使用[HubConnectionBuilder](/javascript/api/%40aspnet/signalr/hubconnectionbuilder) API创建连接，而不是使用 `$connection` 对象。
 
 ```javascript
 const connection = new signalR.HubConnectionBuilder()
@@ -121,7 +122,7 @@ const connection = new signalR.HubConnectionBuilder()
     .build();
 ```
 
-使用[上](/javascript/api/@aspnet/signalr/HubConnection#on)方法，以指定客户端可以调用该集线器的方法。
+使用 [on](/javascript/api/@aspnet/signalr/HubConnection#on) 方法指定Hub可以调用的客户端方法。
 
 ```javascript
 connection.on("ReceiveMessage", (user, message) => {
@@ -130,22 +131,21 @@ connection.on("ReceiveMessage", (user, message) => {
     log(encodedMsg);
 });
 ```
-
-在创建后的客户端方法，启动集线器连接。 链[捕获](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch)方法来记录或处理的错误。
+创建客户端方法后，启动Hub连接。链接一个[catch](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch)方法来记录或处理错误。
 
 ```javascript
 connection.start().catch(err => console.error(err.toString()));
 ```
 
-### <a name="hub-proxies"></a>中心代理
+### <a name="hub-proxies"></a>Hub代理
 
-不能再自动生成中心代理。 相反，传递到方法名称[调用](/javascript/api/%40aspnet/signalr/hubconnection#invoke)以字符串形式的 API。
+不再自动生成Hub代理。相反，以字符串API形式传递到方法[invoke](/javascript/api/%40aspnet/signalr/hubconnection#invoke)。
 
 ### <a name="net-and-other-clients"></a>.NET 和其他客户端
 
-`Microsoft.AspNetCore.SignalR.Client` NuGet 程序包包含 ASP.NET Core signalr 的.NET 客户端库。
+`Microsoft.AspNetCore.SignalR.Client` NuGet 包中包含 ASP.NET Core SignalR 的.NET 客户端库。
 
-使用[HubConnectionBuilder](/dotnet/api/microsoft.aspnetcore.signalr.client.hubconnectionbuilder)创建和生成到集线器的连接的实例。
+使用[HubConnectionBuilder](/dotnet/api/microsoft.aspnetcore.signalr.client.hubconnectionbuilder)创建和生成Hub的连接实例。
 
 ```csharp
 connection = new HubConnectionBuilder()
@@ -153,7 +153,7 @@ connection = new HubConnectionBuilder()
     .Build();
 ```
 
-## <a name="scaleout-differences"></a>横向扩展差异
+## <a name="scaleout-differences"></a>横向扩展的差异
 
 ASP.NET SignalR 支持 SQL Server 和 Redis。 ASP.NET Core SignalR 支持 Azure SignalR 服务和 Redis。
 
