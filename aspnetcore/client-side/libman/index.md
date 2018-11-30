@@ -25,9 +25,9 @@ LibMan 提供以下优势：
 
 * 只会下载所需的库文件。
 * 无需使用其他工具（例如 [Node.js](https://nodejs.org)、[npm](https://www.npmjs.com) 和 [ WebPack](https://webpack.js.org)），即可获取库中文件的子集。
-* 可将文件放置在特定位置，无需还原生成任务或手动文件复制。
+* 可将文件放置在特定位置，无需执行生成任务，也不需手动进行文件复制。
 
-有关 LibMan 优势的详细信息，请观看 [Visual Studio 2017 中的新式前端 Web 开发：LibMan 段](https://channel9.msdn.com/Events/Build/2017/B8073#time=43m34s)。
+有关 LibMan 优势的详细信息，请观看 [Modern front-end web development in Visual Studio 2017: LibMan segment](https://channel9.msdn.com/Events/Build/2017/B8073#time=43m34s)（Visual Studio 2017 中的新式前端 Web 开发：LibMan 段）。
 
 LibMan 不是程序包管理系统。 如果已在使用包管理器（例如 npm 或[yarn](https://yarnpkg.com)），请继续使用它们。 LibMan 不是为取代这些工具而开发的。
 
