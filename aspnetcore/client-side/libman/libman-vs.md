@@ -24,7 +24,6 @@ Visual Studio 在 ASP.NET Core 项目中 已经 内置支持了[LibMan](xref:cli
 * 搜索对话框，用于查找库和将文件添加到项目中。
 * LibMan 清单文件&mdash;支持*libman.json*文件编辑。
 
-
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/libman/samples/) [（如何下载）](xref:index#how-to-download-a-sample)
 
 ## <a name="prerequisites"></a>系统必备
@@ -34,7 +33,6 @@ Visual Studio 在 ASP.NET Core 项目中 已经 内置支持了[LibMan](xref:cli
 ## <a name="add-library-files"></a>添加库文件
 
  库文件可以通过两种不同的方式添加到 ASP.NET Core 项目中:
-
 
 1. [使用"添加客户端库"对话框](#use-the-add-client-side-library-dialog)
 2. [手动配置 LibMan 清单文件条目](#manually-configure-libman-manifest-file-entries)
