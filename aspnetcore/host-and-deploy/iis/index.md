@@ -4,20 +4,23 @@ author: guardrex
 description: 了解如何在 Windows Server Internet Information Services (IIS) 上托管 ASP.NET Core 应用。
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/10/2018
+ms.date: 11/26/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 1b34195dc51ca8dab5e8eda10f05ff6678fbc78c
-ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
+ms.openlocfilehash: 77fa6e1ef6a7fc707c2665826d3c1f4c2691979c
+ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51570160"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450796"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
 作者：[Luke Latham](https://github.com/guardrex)
 
 [安装 .NET Core 托管捆绑包](#install-the-net-core-hosting-bundle)
+
+> [!NOTE]
+> 我们要测试所建议的新的 ASP.NET Core 目录结构是否可用。  如果你有几分钟时间进行练习，来了解当前目录或所建议目录中的 7 个不同主题，请[单击此处来参与调查](https://dpk4xbh5.optimalworkshop.com/treejack/rps16hd5)。
 
 ## <a name="supported-operating-systems"></a>支持的操作系统
 
@@ -416,31 +419,19 @@ web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS
 
   数据保护系统对以下操作提供有限支持：为使用数据保护 API 的所有应用设置默认[计算机范围的策略](xref:security/data-protection/configuration/machine-wide-policy)。 有关更多信息，请参见<xref:security/data-protection/introduction>。
 
-## <a name="sub-application-configuration"></a>子应用程序配置
+## <a name="virtual-directories"></a>虚拟目录
 
-在根应用下添加的子应用不应将 ASP.NET Core 模块作为处理程序包含在其中。 如果在子应用的 web.config 文件中将该模块添加为处理程序，则在尝试浏览子应用时会收到“500.19 内部服务器错误”，即引用错误的配置文件。
+ASP.NET Core 应用不支持 [IIS 虚拟目录](/iis/get-started/planning-your-iis-architecture/understanding-sites-applications-and-virtual-directories-on-iis#virtual-directories)。 可将应用托管为[子应用程序](#sub-applications)。
 
-以下示例显示 ASP.NET Core 子应用的已发布 web.config 文件：
+## <a name="sub-applications"></a>子应用程序
 
-::: moniker range=">= aspnetcore-2.2"
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <location path="." inheritInChildApplications="false">
-    <system.webServer>
-      <aspNetCore processPath="dotnet" 
-        arguments=".\MyApp.dll" 
-        stdoutLogEnabled="false" 
-        stdoutLogFile=".\logs\stdout" />
-    </system.webServer>
-  </location>
-</configuration>
-```
-
-::: moniker-end
+可将 ASP.NET Core 应用托管为 [IIS 子应用程序（子应用）](/iis/get-started/planning-your-iis-architecture/understanding-sites-applications-and-virtual-directories-on-iis#applications)。 子应用的路径成为根应用 URL 的一部分。
 
 ::: moniker range="< aspnetcore-2.2"
+
+子应用不应将 ASP.NET Core 模块作为处理程序包含在其中。 如果在子应用的 web.config 文件中将该模块添加为处理程序，则在尝试浏览子应用时会收到“500.19 内部服务器错误”，即引用错误的配置文件。
+
+以下示例显示 ASP.NET Core 子应用的已发布 web.config 文件：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -473,7 +464,23 @@ web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS
 
 ::: moniker-end
 
-有关配置 ASP.NET Core 模块的详细信息，请参阅 [ASP.NET Core 模块简介](xref:fundamentals/servers/aspnet-core-module)和 [ASP.NET Core 模块配置参考](xref:host-and-deploy/aspnet-core-module)。
+子应用内的静态资产链接应使用波形符-斜杠 (`~/`) 符号。 波形符-斜杠符号触发[标记帮助器](xref:mvc/views/tag-helpers/intro)，来将子应用的基路径追加到呈现的相关链接前面。 对于 `/subapp_path` 处的子应用，使用 `src="~/image.png"` 链接的图像将呈现为 `src="/subapp_path/image.png"`。 根应用的静态文件中间件不处理静态文件请求。 此请求由子应用的静态文件中间件处理。
+
+若将静态资产的 `src` 属性设置为绝对路径（如 `src="/image.png"`），则呈现的链接不包含子应用的基路径。 根应用的静态文件中间件试图从根应用的 [webroot](xref:fundamentals/index#web-root-webroot) 提供资产，这会导致“404 - 找不到”响应，除非可从根应用获得此静态资产。
+
+若要将 ASP.NET Core 应用作为子应用托管在其他 ASP.NET Core 应用下：
+
+1. 为此子应用创建应用池。 将“.NET CLR 版本”设置为“无托管代码”。
+
+1. 在 IIS 管理器中添加根网站，并且此子应用在根网站的某个文件夹中。
+
+1. 在 IIS 管理器中右击此子应用文件夹，并选择“转换为应用程序”。
+
+1. 在“添加应用程序”对话框中，使用“应用程序池”的“选择”按钮来分配为子应用创建的应用池。 选择“确定”。
+
+使用进程内托管模型时，需要向子应用分配单独的应用池。
+
+有关进程内托管模型及 ASP.NET Core 模块配置的详细信息，请参阅 <xref:fundamentals/servers/aspnet-core-module> 和 <xref:host-and-deploy/aspnet-core-module>。
 
 ## <a name="configuration-of-iis-with-webconfig"></a>使用 web.config 配置 IIS
 
@@ -610,6 +617,7 @@ ICACLS C:\sites\MyWebApp /grant "IIS AppPool\DefaultAppPool":F
 
 ## <a name="additional-resources"></a>其他资源
 
+* <xref:test/troubleshoot>
 * [ASP.NET Core 简介](xref:index)
 * [Microsoft IIS 官方网站](https://www.iis.net/)
 * [Windows Server 技术内容库](/windows-server/windows-server)
