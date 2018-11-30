@@ -166,7 +166,7 @@ ms.locfileid: "48912405"
 
 `CourseID` 属性是一个外键， `Course` 是与其对应的导航属性。 `Enrollment` 实体与一个 `Course` 实体相关联。
 
-实体框架的属性解释为外键属性如果它名为*&lt;导航属性名称&gt;&lt;主键属性名称&gt;* (例如， `StudentID`对于`Student`导航属性所以`Student`实体的主键是`ID`)。 外键属性还可以进行命名相同只需*&lt;主键属性名称&gt;* (例如，`CourseID`由于`Course`实体的主键是`CourseID`)。
+实体框架的属性解释为外键属性如果它名为 *&lt;导航属性名称&gt;&lt;主键属性名称&gt;* (例如， `StudentID`对于`Student`导航属性所以`Student`实体的主键是`ID`)。 外键属性还可以进行命名相同只需 *&lt;主键属性名称&gt;* (例如，`CourseID`由于`Course`实体的主键是`CourseID`)。
 
 ### <a name="the-course-entity"></a>Course 实体
 
@@ -267,7 +267,7 @@ ms.locfileid: "48912405"
 
      ![在 Visual Studio 中添加控制器对话框](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/add-controller.png)
 
-     当您单击**添加**，创建基架*StudentController.cs*文件和一组视图 (*.cshtml*文件) 与控制器的工作。 在将来创建使用实体框架的项目时，还可使用的基架一些附加功能： 创建第一个模型类，不要创建连接字符串，然后在**添加控制器**框中指定**新建数据上下文**通过选择**+** 旁边**数据上下文类**。 基架将创建在`DbContext`类和你的连接字符串以及控制器和视图。
+     当您单击**添加**，创建基架*StudentController.cs*文件和一组视图 (*.cshtml*文件) 与控制器的工作。 在将来创建使用实体框架的项目时，还可使用的基架一些附加功能： 创建第一个模型类，不要创建连接字符串，然后在**添加控制器**框中指定**新建数据上下文** 通过选择 **+** 旁边 **数据上下文类**。 基架将创建在`DbContext`类和你的连接字符串以及控制器和视图。
 4. Visual Studio 将打开*Controllers\StudentController.cs*文件。 您看到类变量已创建了实例化数据库上下文对象：
 
      [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample11.cs)]
@@ -314,7 +314,7 @@ ms.locfileid: "48912405"
 - 复数的形式的实体类名称用作表名。
 - 使用实体属性名作为列名。
 - 命名的实体属性`ID`或*classname* `ID`被视为主键属性。
-- 如果它名为一个属性将被解释为外键属性*&lt;导航属性名称&gt;&lt;主键属性名称&gt;* (例如， `StudentID` 为`Student`导航属性所以`Student`实体的主键是`ID`)。 外键属性还可以进行命名相同只需&lt;主键属性名称&gt;(例如，`EnrollmentID`由于`Enrollment`实体的主键是`EnrollmentID`)。
+- 如果它名为一个属性将被解释为外键属性 *&lt;导航属性名称&gt;&lt;主键属性名称&gt;* (例如， `StudentID` 为`Student`导航属性所以`Student`实体的主键是`ID`)。 外键属性还可以进行命名相同只需&lt;主键属性名称&gt;(例如，`EnrollmentID`由于`Enrollment`实体的主键是`EnrollmentID`)。
 
 您已了解约定可以重写。 例如，指定表名不应变为复数形式，并稍后您将看到如何显式标记为外键属性的属性。 您将学习有关约定以及如何重写中对其的详细信息[创建更多的复杂数据模型](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)本系列后面的教程。 有关约定的详细信息，请参阅[Code First 约定](/ef/ef6/modeling/code-first/conventions/built-in)。
 

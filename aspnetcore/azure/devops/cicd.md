@@ -30,7 +30,7 @@ ms.locfileid: "51570082"
 ## <a name="publish-the-apps-code-to-github"></a>将应用程序的代码发布到 GitHub
 
 1. 打开浏览器窗口，并导航到`https://github.com`。
-1. 单击**+** 标头中的下拉列表中，选择**新的存储库**:
+1. 单击 **+** 标头中的下拉列表中，选择**新的存储库**:
 
     ![新的 GitHub 存储库选项](media/cicd/github-new-repo.png)
 
@@ -123,7 +123,7 @@ ms.locfileid: "51570082"
 
     ![保存生成定义的模式对话框](media/cicd/vsts-save-modal.png)
 
-    使用的默认文件夹*\\*，然后单击**保存**按钮。
+    使用的默认文件夹 *\\*，然后单击**保存**按钮。
 
 ### <a name="create-the-release-pipeline"></a>创建发布管道
 
