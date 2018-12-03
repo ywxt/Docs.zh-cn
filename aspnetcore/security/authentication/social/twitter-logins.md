@@ -21,7 +21,7 @@ ms.locfileid: "51708421"
 
 ## <a name="create-the-app-in-twitter"></a>在 Twitter 中创建应用程序
 
-* 导航到[ https://apps.twitter.com/ ](https://apps.twitter.com/)并登录。 如果还没有 Twitter 帐户，使用**[立即注册](https://twitter.com/signup)** 链接创建一个链接。 登录后，**应用程序管理**页所示：
+* 导航到[ https://apps.twitter.com/ ](https://apps.twitter.com/)并登录。 如果还没有 Twitter 帐户，使用 **[立即注册](https://twitter.com/signup)** 链接创建一个链接。 登录后，**应用程序管理**页所示：
 
   ![在 Microsoft Edge 中打开 twitter 应用程序管理](index/_static/TwitterAppManage.png)
 

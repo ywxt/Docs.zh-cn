@@ -72,7 +72,7 @@ ms.locfileid: "51021334"
 
 保存并关闭 Site.Master。
 
-现在，你将创建 web 窗体，用于显示学生数据。 右键单击项目，并**外****新项**。 选择**包含母版页的 Web 窗体**模板，并将其命名**Students.aspx**。
+现在，你将创建 web 窗体，用于显示学生数据。 右键单击项目，并 **外新项**。  选择**包含母版页的 Web 窗体**模板，并将其命名**Students.aspx**。
 
 ![创建页](retrieving-data/_static/image5.png)
 
