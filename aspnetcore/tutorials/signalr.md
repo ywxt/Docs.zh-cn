@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/13/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 8916b3659250c1bcbbc2dc9b3d466586f98bcc7e
-ms.sourcegitcommit: d3392f688cfebc1f25616da7489664d69c6ee330
+ms.openlocfilehash: 190717dc6e6f9f2766ba92aa7472f4cdea9b6827
+ms.sourcegitcommit: e7fafb153b9de7595c2558a0133f8d1c33a3bddb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51818377"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52458525"
 ---
 # <a name="tutorial-get-started-with-aspnet-core-signalr"></a>教程：ASP.NET Core SignalR 入门
 
@@ -30,6 +30,9 @@ ms.locfileid: "51818377"
 ![SignalR 示例应用](signalr/_static/signalr-get-started-finished.png)
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr/sample)（[如何下载](xref:index#how-to-download-a-sample)）。
+
+> [!NOTE]
+> 我们要测试所建议的新的 ASP.NET Core 目录结构是否可用。  如果你有几分钟时间进行练习，来了解当前目录或所建议目录中的 7 个不同主题，请[单击此处来参与调查](https://dpk4xbh5.optimalworkshop.com/treejack/rps16hd5)。
 
 ## <a name="prerequisites"></a>系统必备
 
@@ -227,7 +230,7 @@ ms.locfileid: "51818377"
 * 在集成终端中，运行以下命令：
 
   ```console
-  dotnet run -p SignalRChat
+  dotnet run -p SignalRChat.csproj
   ```
   
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)

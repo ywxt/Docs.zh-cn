@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/14/2018
 uid: fundamentals/app-state
-ms.openlocfilehash: 5ca909681ca9da3fae0391991902da97581852be
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: ccaaa6fafd611c3cf35a9171d5bfd6100535eeb9
+ms.sourcegitcommit: 0fc89b80bb1952852ecbcf3c5c156459b02a6ceb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253177"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52618124"
 ---
 # <a name="session-and-app-state-in-aspnet-core"></a>ASP.NET Core 中的会话和应用状态
 
@@ -374,7 +374,7 @@ app.Run(async (context) =>
 
 缓存数据未与特定请求、用户或会话相关联。 **请注意不要缓存可能由其他用户请求检索的特定于用户的数据。**
 
-有关详细信息，请参阅[缓存响应](xref:performance/caching/index)主题。
+有关更多信息，请参见<xref:performance/caching/response>。
 
 ## <a name="dependency-injection"></a>依赖关系注入
 

@@ -5,12 +5,12 @@ description: 了解如何开始使用 ASP.NET Core MVC 和 Visual Studio。
 ms.author: riande
 ms.date: 10/07/2017
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: fe555e4cfcaec5d4bb8ccee00b06d1bbcaae9dcd
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: 9d50607899058c887597a3d73198552d3ef5b020
+ms.sourcegitcommit: c4572be5ebb301013a5698caf9b5572b76cb2e34
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391201"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52710083"
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a>ASP.NET Core MVC 和 Visual Studio 入门
 
@@ -23,6 +23,9 @@ ms.locfileid: "49391201"
 * macOS：[使用 Visual Studio for Mac 创建 ASP.NET Core MVC 应用](xref:tutorials/first-mvc-app-mac/start-mvc)
 * Windows：[使用 Visual Studio 创建 ASP.NET Core MVC 应用](xref:tutorials/first-mvc-app/start-mvc)
 * macOS、Linux 和 Windows：[使用 Visual Studio Code 创建 ASP.NET Core MVC 应用](xref:tutorials/first-mvc-app-xplat/start-mvc)
+
+> [!NOTE]
+> 我们要测试所建议的新的 ASP.NET Core 目录结构是否可用。  如果你有几分钟时间进行练习，来了解当前目录或所建议目录中的 7 个不同主题，请[单击此处来参与调查](https://dpk4xbh5.optimalworkshop.com/treejack/rps16hd5)。
 
 ## <a name="install-visual-studio-and-net-core"></a>安装 Visual Studio 和 .NET Core
 
@@ -81,26 +84,7 @@ Visual Studio 为刚刚创建的 MVC 项目使用默认模板。 输入项目名
 
 ::: moniker range="<= aspnetcore-2.0"
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
-
 [!INCLUDE [](~/includes/net-core-prereqs.md)]
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
-
-安装 Visual Studio Community 2017。 选择社区下载。 如果已安装 Visual Studio 2017，请跳过此步骤。
-
-* [Visual Studio 2017 主页安装程序](https://www.visualstudio.com/)
-
-运行安装程序，然后选择以下工作负荷：
-
-* “ASP.NET 和 Web 开发”（位于“Web 和云”下）
-* “.NET Core 跨平台开发”（位于“其他工具集”下）
-
-![**ASP.NET 和 Web 开发**（位于“Web 和云”下）](start-mvc/_static/web_workload.png)
-
-![**.NET Core 跨平台开发**（位于“其他工具集”下）](start-mvc/_static/x_plat_wl.png)
-
----
 
 ## <a name="create-a-web-app"></a>创建 Web 应用
 
@@ -117,8 +101,6 @@ Visual Studio 为刚刚创建的 MVC 项目使用默认模板。 输入项目名
 
 ![新项目对话框, 左侧窗格中的 .NET Core, ASP.NET Core Web ](start-mvc/_static/new_project2.png)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
 完成“新建 ASP.NET Core Web 应用程序(.NET Core) - MvcMovie”对话框：
 
 * 在版本选择器下拉框中选择“ASP.NET Core 2.-”
@@ -126,19 +108,6 @@ Visual Studio 为刚刚创建的 MVC 项目使用默认模板。 输入项目名
 * 点击“确定”
 
 ![新项目对话框, 左侧窗格中的 .NET Core, ASP.NET Core Web ](start-mvc/_static/new_project22.png)
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
-完成“新建 ASP.NET 核心 Web 应用程序(.NET Core) - MvcMovie”对话框：
-
-* 在版本选择器下拉框中，点击“ASP.NET Core 1.1”
-* 点击“Web 应用程序”
-* 保留默认的“无身份验证”
-* 点击“确定”
-
-![新建 ASP.NET Core Web 应用](start-mvc/_static/p3.png)
-
----
 
 Visual Studio 为刚刚创建的 MVC 项目使用默认模板。 输入项目名称并选择几个选项后，就拥有了一个可正常运行的应用。 这是一个基本的初学者项目，适合入门使用。
 

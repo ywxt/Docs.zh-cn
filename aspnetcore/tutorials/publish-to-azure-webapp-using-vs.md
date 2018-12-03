@@ -7,10 +7,10 @@ ms.custom: mvc
 ms.date: 10/24/2018
 uid: tutorials/publish-to-azure-webapp-using-vs
 ms.openlocfilehash: a5a02112d87563a47d5e2dab355359fa39da9a89
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.sourcegitcommit: c4572be5ebb301013a5698caf9b5572b76cb2e34
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
+ms.lasthandoff: 12/03/2018
 ms.locfileid: "50090350"
 ---
 # <a name="publish-an-aspnet-core-app-to-azure-with-visual-studio"></a>使用 Visual Studio 将 ASP.NET Core 应用发布到 Azure
@@ -68,7 +68,7 @@ Visual Studio 随即创建解决方案。
 
 * 选择“注册”并注册新用户。 可使用虚构电子邮件地址。 提交时，页面上会显示以下错误：
 
-    “内部服务器错误: 处理请求时，数据库操作失败。SQL 异常: 无法打开数据库。可通过向应用程序数据库上下文应用现有迁移解决此问题。”
+    “内部服务器错误: 处理请求时，数据库操作失败。SQL 异常: 无法打开数据库。可通过向应用程序数据库上下文应用现有迁移解决此问题。”*
 * 选择“应用迁移”，并在页面更新后刷新页面。
 
 ![内部服务器错误: 处理请求时，数据库操作失败。 SQL 异常: 无法打开数据库。 可能可通过向应用程序数据库上下文应用现有迁移解决此问题。](publish-to-azure-webapp-using-vs/_static/mig.png)

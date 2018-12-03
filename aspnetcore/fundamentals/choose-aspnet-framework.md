@@ -5,12 +5,12 @@ description: 介绍 ASP.NET Core 和ASP.NET 4.x 以及如何在它们之间进�
 ms.author: riande
 ms.date: 09/11/2018
 uid: fundamentals/choose-between-aspnet-and-aspnetcore
-ms.openlocfilehash: 79e56e10b756677431ceff289300c251e54bf632
-ms.sourcegitcommit: bdfba5e7575b2a786ef27c0edf688c7dbd09ee95
+ms.openlocfilehash: fa281a068dfdcd8a7c45dd5d0a0c3084c4bc8dbc
+ms.sourcegitcommit: e8d80ff566bfe505b43389d7bc4551edb1c0c872
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52288663"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52549067"
 ---
 # <a name="choose-between-aspnet-4x-and-aspnet-core"></a>在 ASP.NET 4.x 和 ASP.NET Core 之间进行选择
 
@@ -63,4 +63,4 @@ ASP.NET 4.x 是一个成熟的框架，提供在 Windows 上生成基于服务�
 * <xref:host-and-deploy/azure-apps/index>
 
 > [!NOTE]
-> 我们要测试所建议的新的 ASP.NET Core 目录结构是否可用。  如果你有几分钟时间进行练习，来了解当前目录或所建议目录中的 7 个不同主题，请[单击此处来参与调查](https://dpk4xbh5.optimalworkshop.com/treejack/aa11wn82)。
+> 我们要测试所建议的新的 ASP.NET Core 目录结构是否可用。  如果你有几分钟时间进行练习，来了解当前目录或所建议目录中的 7 个不同主题，请[单击此处来参与调查](https://dpk4xbh5.optimalworkshop.com/treejack/rps16hd5)。
