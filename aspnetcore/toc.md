@@ -6,24 +6,31 @@
 # [入门](xref:getting-started)
 
 # 教程
+## [创建 Web API](xref:tutorials/first-web-api)
 ## Web 应用
 ### Razor 页面
-#### [使用 Visual Studio](xref:tutorials/razor-pages/index)
-#### [使用 Visual Studio Code](xref:tutorials/razor-pages-vsc/index)
-#### [使用 Visual Studio for Mac](xref:tutorials/razor-pages-mac/index)
+#### [Razor 页面介绍](xref:razor-pages/index)
+
+#### [Razor Pages 教程](xref:tutorials/razor-pages/index)
+##### [入门](xref:tutorials/razor-pages/razor-pages-start)
+##### [添加模型](xref:tutorials/razor-pages/model)
+##### [基架](xref:tutorials/razor-pages/page)
+##### [使用 DB](xref:tutorials/razor-pages/sql)
+##### [更新页面](xref:tutorials/razor-pages/da1)
+##### [添加搜索](xref:tutorials/razor-pages/search)
+##### [添加新字段](xref:tutorials/razor-pages/new-field)
+##### [添加验证](xref:tutorials/razor-pages/validation)
+
 ### MVC
 #### [使用 Visual Studio](xref:tutorials/first-mvc-app/index)
 #### [使用 Visual Studio Code](xref:tutorials/first-mvc-app-xplat/index)
 #### [使用 Visual Studio for Mac](xref:tutorials/first-mvc-app-mac/index)
-## Web API
-### [使用 Visual Studio](xref:tutorials/first-web-api)
-### [使用 Visual Studio Code](xref:tutorials/web-api-vsc)
-### [使用 Visual Studio for Mac](xref:tutorials/first-web-api-mac)
-### [针对本机移动应用](xref:mobile/native-mobile-backend)
-### [使用 MongoDB](xref:tutorials/first-mongo-app)
+
 ## 实时 web 应用
 ### [JavaScript 和 SignalR](xref:tutorials/signalr)
 ### [TypeScript 和 SignalR](xref:tutorials/signalr-typescript-webpack)
+## [为本机移动应用创建后端服务](xref:mobile/native-mobile-backend)
+
 ## 数据访问
 ### [EF Core 和 Razor Pages](xref:data/ef-rp/index)
 ### [EF Core 和 MVC - 现有 DB](/ef/core/get-started/aspnetcore/existing-db)
@@ -58,33 +65,16 @@
 # Web 应用
 ## Razor 页面
 ### [概述](xref:razor-pages/index)
-### 教程
-#### Razor Pages 和 Visual Studio
-##### [概述](xref:tutorials/razor-pages/index)
-##### [入门](xref:tutorials/razor-pages/razor-pages-start)
-##### [添加模型](xref:tutorials/razor-pages/model)
-##### [基架](xref:tutorials/razor-pages/page)
-##### [SQL Server](xref:tutorials/razor-pages/sql)
-##### [更新页面](xref:tutorials/razor-pages/da1)
-##### [添加搜索](xref:tutorials/razor-pages/search)
-##### [添加新字段](xref:tutorials/razor-pages/new-field)
-##### [添加验证](xref:tutorials/razor-pages/validation)
-#### Razor Pages 和 Visual Studio Code
-##### [概述](xref:tutorials/razor-pages-vsc/index)
-##### [Razor 页面入门](xref:tutorials/razor-pages-vsc/razor-pages-start)
-##### [添加模型](xref:tutorials/razor-pages-vsc/model)
-##### [已搭建基架的 Razor 页面](xref:tutorials/razor-pages-vsc/page)
-##### [使用 SQLite](xref:tutorials/razor-pages-vsc/sql)
-##### [更新页面](xref:tutorials/razor-pages-vsc/da1)
-##### [添加搜索](xref:tutorials/razor-pages-vsc/search)
-#### Razor Pages 和 Visual Studio for Mac
-##### [概述](xref:tutorials/razor-pages-mac/index)
-##### [Razor 页面入门](xref:tutorials/razor-pages-mac/razor-pages-start)
-##### [添加模型](xref:tutorials/razor-pages-mac/model)
-##### [已搭建基架的 Razor 页面](xref:tutorials/razor-pages-mac/page)
-##### [使用 SQLite](xref:tutorials/razor-pages-mac/sql)
-##### [更新页面](xref:tutorials/razor-pages-mac/da1)
-##### [添加搜索](xref:tutorials/razor-pages-mac/search)
+### [Razor Pages 教程](xref:tutorials/razor-pages/index)
+#### [入门](xref:tutorials/razor-pages/razor-pages-start)
+#### [添加模型](xref:tutorials/razor-pages/model)
+#### [基架](xref:tutorials/razor-pages/page)
+#### [使用 DB](xref:tutorials/razor-pages/sql)
+#### [更新页面](xref:tutorials/razor-pages/da1)
+#### [添加搜索](xref:tutorials/razor-pages/search)
+#### [添加新字段](xref:tutorials/razor-pages/new-field)
+#### [添加验证](xref:tutorials/razor-pages/validation)
+
 ### [筛选器](xref:razor-pages/filter)
 ### [Razor 类库](xref:razor-pages/ui-class)
 ### [路由和应用约定](xref:razor-pages/razor-pages-conventions)
@@ -99,7 +89,7 @@
 ##### [添加控制器](xref:tutorials/first-mvc-app/adding-controller)
 ##### [添加视图](xref:tutorials/first-mvc-app/adding-view)
 ##### [添加模型](xref:tutorials/first-mvc-app/adding-model)
-##### [使用 SQL Server](xref:tutorials/first-mvc-app/working-with-sql)
+##### [使用 DB](xref:tutorials/first-mvc-app/working-with-sql)
 ##### [控制器操作和视图](xref:tutorials/first-mvc-app/controller-methods-views)
 ##### [添加搜索](xref:tutorials/first-mvc-app/search)
 ##### [添加新字段](xref:tutorials/first-mvc-app/new-field)
@@ -174,12 +164,9 @@
 
 # Web API
 ## [概述](xref:web-api/index)
-## 教程
-### [Web API 和 Visual Studio](xref:tutorials/first-web-api)
-### [使用 Visual Studio Code 创建 Web API](xref:tutorials/web-api-vsc)
-### [使用 Visual Studio for Mac 创建 Web API](xref:tutorials/first-web-api-mac)
-### [用于本机移动应用的 Web API](xref:mobile/native-mobile-backend)
-### [使用 MongoDB 创建 Web API](xref:tutorials/first-mongo-app)
+
+## [创建 Web API](xref:tutorials/first-web-api)
+
 ## Swagger/OpenAPI
 ### [概述](xref:tutorials/web-api-help-pages-using-swagger)
 ### [Swashbuckle 入门](xref:tutorials/get-started-with-swashbuckle)
@@ -187,6 +174,7 @@
 ## [操作返回类型](xref:web-api/action-return-types)
 ## [格式化响应数据](xref:web-api/advanced/formatting)
 ## [自定义格式化程序](xref:web-api/advanced/custom-formatters)
+
 ## [分析器](xref:web-api/advanced/analyzers)
 ## [约定](xref:web-api/advanced/conventions)
 
@@ -209,7 +197,6 @@
 ### [Java API 参考](/java/api/com.microsoft.signalr?view=aspnet-signalr-java)
 ### [JavaScript 客户端](xref:signalr/javascript-client)
 ### [JavaScript API 参考](/javascript/api/?view=signalr-js-latest)
-### [WebPack 和 TypeScript](xref:tutorials/signalr-typescript-webpack)
 ## 托管和缩放
 ### [概述](xref:signalr/scale)
 ### [Azure SignalR 服务](/azure/azure-signalr/signalr-overview)
@@ -319,6 +306,7 @@
 ## [Visual Studio 发布配置文件](xref:host-and-deploy/visual-studio-publish-profiles)
 ## [目录结构](xref:host-and-deploy/directory-structure)
 ## [Azure 应用服务和 IIS 的错误参考](xref:host-and-deploy/azure-iis-errors-reference)
+## [运行状况检查](xref:host-and-deploy/health-checks)
 
 # 安全和标识
 ## [概述](xref:security/index)
@@ -455,6 +443,7 @@
 ### [HTTP 模块到中间件](xref:migration/http-modules)
 
 # 新增功能
+## [2.2 中的新变化](xref:aspnetcore-2.2)
 ## [2.1 版中的新增功能](xref:aspnetcore-2.1)
 ## [2.0 版中的新增功能](xref:aspnetcore-2.0)
 ## [1.1 中的新增功能](xref:aspnetcore-1.1)
