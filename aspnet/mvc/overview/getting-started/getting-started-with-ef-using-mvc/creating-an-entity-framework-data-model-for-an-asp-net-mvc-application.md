@@ -3,16 +3,16 @@ uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-
 title: 开始使用 Entity Framework 6 Code First 通过 MVC 5 |Microsoft Docs
 author: tdykstra
 ms.author: riande
-ms.date: 10/04/2018
+ms.date: 12/04/2018
 ms.assetid: 00bc8b51-32ed-4fd3-9745-be4c2a9c1eaf
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5dd9a5a24d8c67c5190c98e3240d132eaa27661c
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: c7ab9458f83e05af84f72d9a2519a8c1c39b84b5
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912405"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861428"
 ---
 # <a name="get-started-with-entity-framework-6-code-first-using-mvc-5"></a>开始使用 Entity Framework 6 Code First 通过 MVC 5
 
@@ -21,7 +21,7 @@ ms.locfileid: "48912405"
 [下载已完成的项目](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
 > [!NOTE]
-> 一个[本系列教程的较新版本](/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-2.1)是使用可用[Razor 页面](/aspnet/core/razor-pages)。 Razor Pages 是基于页面的编程模型，它让 Web UI 的生成更加简单高效。 我们建议通过使用 MVC 版本的 Razor 页面教程。 Razor 页面教程：
+> 对于新开发，我们建议[ASP.NET Core Razor 页面](/aspnet/core/razor-pages)通过 ASP.NET MVC 控制器和视图。 类似于此系列教程是可用于 Razor 页面[Razor 页面教程](/aspnet/core/tutorials/razor-pages/razor-pages-start):
 >
 > * 易于关注。
 > * 提供更多 EF Core 最佳做法。

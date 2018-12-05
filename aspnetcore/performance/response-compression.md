@@ -5,14 +5,14 @@ description: 了解如何响应压缩以及如何在 ASP.NET Core 应用中使�
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/21/2018
+ms.date: 12/01/2018
 uid: performance/response-compression
-ms.openlocfilehash: 8c3d74b6a346d51507d3c278b03ddc842feea13e
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 2516fbb30e55990dc4ad0d92069853bc26874bc9
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207974"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861883"
 ---
 # <a name="response-compression-in-aspnet-core"></a>在 ASP.NET Core 中的响应压缩
 
@@ -24,7 +24,7 @@ ms.locfileid: "50207974"
 
 ## <a name="when-to-use-response-compression-middleware"></a>何时使用响应压缩中间件
 
-使用 IIS、 Apache 或 Nginx 中的基于服务器的响应压缩技术。 中间件的性能可能不匹配，服务器模块。 [HTTP.sys 服务器](xref:fundamentals/servers/httpsys)并[Kestrel](xref:fundamentals/servers/kestrel)当前不提供内置的压缩支持。
+使用 IIS、 Apache 或 Nginx 中的基于服务器的响应压缩技术。 中间件的性能可能不匹配，服务器模块。 [HTTP.sys 服务器](xref:fundamentals/servers/httpsys)服务器和[Kestrel](xref:fundamentals/servers/kestrel) server 当前不提供内置的压缩支持。
 
 如果你已，使用响应压缩中间件：
 
@@ -33,8 +33,8 @@ ms.locfileid: "50207974"
   * [Apache mod_deflate 模块](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
   * [Nginx 压缩和解压缩](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
 * 直接在上托管：
-  * [HTTP.sys 服务器](xref:fundamentals/servers/httpsys)(以前称为[WebListener](xref:fundamentals/servers/weblistener))
-  * [Kestrel](xref:fundamentals/servers/kestrel)
+  * [HTTP.sys](xref:fundamentals/servers/httpsys)服务器 (以前称为[WebListener](xref:fundamentals/servers/weblistener))
+  * [Kestrel](xref:fundamentals/servers/kestrel)服务器
 
 ## <a name="response-compression"></a>响应压缩
 
@@ -94,7 +94,7 @@ ms.locfileid: "50207974"
 * 使用 Gzip 和自定义压缩提供程序的应用程序响应的压缩。
 * 如何将 MIME 类型添加到压缩的 MIME 类型的默认列表。
 
-## <a name="package"></a>Package
+## <a name="package"></a>package
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -432,7 +432,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="middleware-issue-when-behind-an-nginx-reverse-proxy"></a>当位于 Nginx 反向代理中间件问题
 
-如果请求的是代理的 Nginx`Accept-Encoding`删除标头。 这可以防止中间件压缩响应。 有关详细信息，请参阅[NGINX： 压缩和解压缩](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)。 此问题由跟踪[找出 nginx (BasicMiddleware #123) 传递压缩](https://github.com/aspnet/BasicMiddleware/issues/123)。
+如果请求的是代理的 Nginx`Accept-Encoding`删除标头。 删除`Accept-Encoding`标头可防止中间件压缩响应。 有关详细信息，请参阅[NGINX： 压缩和解压缩](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)。 此问题由跟踪[找出传递压缩 Nginx (aspnet/BasicMiddleware \#123)](https://github.com/aspnet/BasicMiddleware/issues/123)。
 
 ## <a name="working-with-iis-dynamic-compression"></a>使用 IIS 动态压缩
 

@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/14/2018
 uid: signalr/javascript-client
-ms.openlocfilehash: 7de7abd7176e160154a458a3b90f662ba8f47f8c
-ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
+ms.openlocfilehash: 247ccd40412cdb41f38edccbe96d4832751f12cf
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51708382"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861978"
 ---
 # <a name="aspnet-core-signalr-javascript-client"></a>ASP.NET Core SignalR JavaScript 客户端
 
@@ -113,7 +113,9 @@ SignalR JavaScript 客户端不会自动重新连接。 必须编写代码将手
 ## <a name="additional-resources"></a>其他资源
 
 * [JavaScript API 参考](/javascript/api/?view=signalr-js-latest)
+* [JavaScript 教程](xref:tutorials/signalr)
+* [WebPack 和 TypeScript 教程](xref:tutorials/signalr-typescript-webpack)
 * [中心](xref:signalr/hubs)
 * [.NET 客户端](xref:signalr/dotnet-client)
 * [发布到 Azure](xref:signalr/publish-to-azure-web-app)
-* [启用 ASP.NET Core 中的跨源请求 (CORS)](xref:security/cors)
+* [跨域请求 (CORS)](xref:security/cors)

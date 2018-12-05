@@ -4,14 +4,14 @@ author: rick-anderson
 description: 了解如何在 ASP.NET Core web 应用中需要 HTTPS/TLS。
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/18/2018
+ms.date: 12/01/2018
 uid: security/enforcing-ssl
-ms.openlocfilehash: d287d30203fbf367203afe65e05478806fafab34
-ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
+ms.openlocfilehash: b15c6b5ac77f047c40704c9e164165c55b6ae93b
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51570043"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861519"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>强制实施 HTTPS 在 ASP.NET Core
 
@@ -76,12 +76,12 @@ ms.locfileid: "51570043"
   配置时<xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder>在`Program`:
 
   [!code-csharp[](enforcing-ssl/sample-snapshot/Program.cs?name=snippet_Program&highlight=10)]
-* 指示具有安全方案使用的端口`ASPNETCORE_URLS`环境变量。 将服务器配置为环境变量。 中间件间接发现通过 HTTPS 端口<xref:Microsoft.AspNetCore.Hosting.Server.Features.IServerAddressesFeature>。 (Does**不**反向代理部署中工作。)
+* 指示具有安全方案使用的端口`ASPNETCORE_URLS`环境变量。 将服务器配置为环境变量。 中间件间接发现通过 HTTPS 端口<xref:Microsoft.AspNetCore.Hosting.Server.Features.IServerAddressesFeature>。 反向代理部署这种方法不起作用。
 * 在开发中，在中设置 HTTPS URL *launchsettings.json*。 使用 IIS Express 时，请启用 HTTPS。
-* 配置 HTTPS URL 终结点的面向公众 edge 部署[Kestrel](xref:fundamentals/servers/kestrel)或[HTTP.sys](xref:fundamentals/servers/httpsys)。 仅**一个 HTTPS 端口**应用使用。 中间件发现通过端口<xref:Microsoft.AspNetCore.Hosting.Server.Features.IServerAddressesFeature>。
+* 配置 HTTPS URL 终结点的面向公众 edge 部署[Kestrel](xref:fundamentals/servers/kestrel)服务器或[HTTP.sys](xref:fundamentals/servers/httpsys)服务器。 仅**一个 HTTPS 端口**应用使用。 中间件发现通过端口<xref:Microsoft.AspNetCore.Hosting.Server.Features.IServerAddressesFeature>。
 
 > [!NOTE]
-> 当应用程序运行时在反向代理 （例如，IIS，IIS Express），后面`IServerAddressesFeature`不可用。 必须手动配置端口。 如果端口未设置，请求不会重定向。
+> 当应用在反向代理配置中，运行时<xref:Microsoft.AspNetCore.Hosting.Server.Features.IServerAddressesFeature>不可用。 设置使用一种其他方法在本部分中所述的端口。
 
 当 Kestrel 或 HTTP.sys 用作面向公众的边缘服务器时，必须配置 Kestrel 或 HTTP.sys，若要在其上同时侦听：
 
