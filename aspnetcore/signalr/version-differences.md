@@ -29,7 +29,7 @@ ASP.NET Core SignalR 与 ASP.NET SignalR 的客户端或服务器不兼容。本
 
 ## <a name="feature-differences"></a>功能差异
 
-### <a name="automatic-reconnects"></a>自动重连
+### <a name="automatic-reconnects"></a>自动重新连接
 
 ASP.NET Core SignalR 不支持自动重新连接。如果客户端已断开连接，则用户必须显式启动新连接才能重新连接。在 ASP.NET SignalR 中，如果连接断开，SignalR 会尝试重新连接到服务器。
 
@@ -68,7 +68,7 @@ ASP.NET SignalR 的横向扩展模型允许客户端重新连接场中的任何�
 
 在ASP.NET Core SignalR中，连接模型已经简化。可直接连接到单个中心，而不是连接到用于共享对多个中心的访问的单个连接。
 
-### <a name="streaming"></a>流处理
+### <a name="streaming"></a>流式处理
 
 ASP.NET Core SignalR 现在支持从中心[流式处理数据](xref:signalr/streaming)到客户端。
 
@@ -111,7 +111,7 @@ npm install @aspnet/signalr
 
 ASP.NET Core SignalR 需要 Microsoft Internet Explorer 11 或更高版本（ASP.NET SignalR 支持 Microsoft Internet Explorer 8 及更高版本）。
 
-### <a name="javascript-client-method-syntax"></a>JavaScript 客户端语法
+### <a name="javascript-client-method-syntax"></a>JavaScript 客户端方法语法
 
 JavaScript 语法已与 Signalr 早期版本中的相应语法不同。请使用 [HubConnectionBuilder](/javascript/api/%40aspnet/signalr/hubconnectionbuilder) API 而非 `$connection` 对象创建连接。
 
@@ -152,7 +152,7 @@ connection = new HubConnectionBuilder()
     .Build();
 ```
 
-## <a name="scaleout-differences"></a>横向扩展的差异
+## <a name="scaleout-differences"></a>横向扩展差异
 
 ASP.NET SignalR 支持 SQL Server 和 Redis。 ASP.NET Core SignalR 支持 Azure SignalR 服务和 Redis。
 
