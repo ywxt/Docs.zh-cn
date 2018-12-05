@@ -4,14 +4,14 @@ author: guardrex
 description: 发现适用于 ASP.NET Core 的 Web 服务器 Kestrel 和 HTTP.sys。 了解如何选择服务器以及何时使用反向代理服务器。
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 09/21/2018
+ms.date: 12/01/2018
 uid: fundamentals/servers/index
-ms.openlocfilehash: 06d4bf09b07fc70a10b3e260e78c29fe189486c5
-ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
+ms.openlocfilehash: 965d69dd071ec71d283284d58e6e1a6e78604f90
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51505721"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861351"
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>ASP.NET Core 中的 Web 服务器实现
 
@@ -19,20 +19,46 @@ ms.locfileid: "51505721"
 
 ASP.NET Core 应用与进程内 HTTP 服务器实现一起运行。 服务器实现侦听 HTTP 请求，并将它们作为由 <xref:Microsoft.AspNetCore.Http.HttpContext> 组成的[请求功能](xref:fundamentals/request-features)的集合呈现给应用。
 
-ASP.NET Core 交付以下服务器实现：
-
 ::: moniker range=">= aspnetcore-2.2"
 
-* [Kestrel](xref:fundamentals/servers/kestrel) 是适用于 ASP.NET Core 的默认跨平台 HTTP 服务器。
-* `IISHttpServer` 与 Windows 上的[进程内托管模型](xref:fundamentals/servers/aspnet-core-module#in-process-hosting-model)和 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)一起使用。
-* [HTTP.sys](xref:fundamentals/servers/httpsys) 是仅适用于 Windows 的 HTTP 服务器，它基于 [ 核心驱动程序和 HTTP 服务器 API](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)。 （HTTP.sys 在 ASP.NET 1.x 中被命名为 [WebListener](xref:fundamentals/servers/weblistener)。）
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+
+ASP.NET Core 随附以下组件：
+
+* [Kestrel 服务器](xref:fundamentals/servers/kestrel)是默认跨平台 HTTP 服务器。
+* IIS HTTP 服务器 (`IISHttpServer`) 是用于 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)的 [IIS 进程内服务器](xref:fundamentals/servers/aspnet-core-module#in-process-hosting-model)实现。
+* [HTTP.sys 服务器](xref:fundamentals/servers/httpsys)是仅用于 Windows 的 HTTP 服务器，它基于 [HTTP.sys 核心驱动程序和 HTTP 服务器 API](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)。 HTTP.sys 在 ASP.NET 1.x 中名为 [WebListener](xref:fundamentals/servers/weblistener)。
+
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
+
+ASP.NET Core 随附 [Kestrel 服务器](xref:fundamentals/servers/kestrel)，这是默认跨平台 HTTP 服务器。
+
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+
+ASP.NET Core 随附 [Kestrel 服务器](xref:fundamentals/servers/kestrel)，这是默认跨平台 HTTP 服务器。
+
+---
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.2"
 
-* [Kestrel](xref:fundamentals/servers/kestrel) 是适用于 ASP.NET Core 的默认跨平台 HTTP 服务器。
-* [HTTP.sys](xref:fundamentals/servers/httpsys) 是仅适用于 Windows 的 HTTP 服务器，它基于 [ 核心驱动程序和 HTTP 服务器 API](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)。 （HTTP.sys 在 ASP.NET 1.x 中被命名为 [WebListener](xref:fundamentals/servers/weblistener)。）
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+
+ASP.NET Core 随附以下组件：
+
+* [Kestrel 服务器](xref:fundamentals/servers/kestrel)是默认跨平台 HTTP 服务器。
+* [HTTP.sys 服务器](xref:fundamentals/servers/httpsys)是仅用于 Windows 的 HTTP 服务器，它基于 [HTTP.sys 核心驱动程序和 HTTP 服务器 API](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)。 HTTP.sys 在 ASP.NET 1.x 中名为 [WebListener](xref:fundamentals/servers/weblistener)。
+
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
+
+ASP.NET Core 随附 [Kestrel 服务器](xref:fundamentals/servers/kestrel)，这是默认跨平台 HTTP 服务器。
+
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+
+ASP.NET Core 随附 [Kestrel 服务器](xref:fundamentals/servers/kestrel)，这是默认跨平台 HTTP 服务器。
+
+---
 
 ::: moniker-end
 
@@ -42,7 +68,10 @@ Kestrel 是 ASP.NET Core 项目模板中包括的默认 Web 服务器。
 
 ::: moniker range=">= aspnetcore-2.0"
 
-Kestrel 可以单独使用，也可以与反向代理服务器（如 IIS、Nginx 或 Apache）一起使用。 反向代理服务器接收到来自 Internet 的 HTTP 请求，并在进行一些初步处理后将这些请求转发到 Kestrel。
+Kestrel 的使用方式如下：
+
+* 本身作为边缘服务器，处理直接来自网络（包括 Internet）的请求。
+* 与反向代理服务器（如 [Internet Information Services (IIS)](https://www.iis.net/)、[Nginx](http://nginx.org) 或 [Apache](https://httpd.apache.org/)）结合使用。 反向代理服务器接收来自 Internet 的 HTTP 请求，并将这些请求转发到 Kestrel。
 
 ![Kestrel 直接与 Internet 通信，不使用反向代理服务器](kestrel/_static/kestrel-to-internet2.png)
 
@@ -58,17 +87,15 @@ Kestrel 可以单独使用，也可以与反向代理服务器（如 IIS、Nginx
 
 ![Kestrel 直接与内部网络进行通信](kestrel/_static/kestrel-to-internal.png)
 
-如果将应用公开到 Internet，则必须将 IIS、Nginx 或 Apache 用作反向代理服务器。 反向代理服务器接收到来自 Internet 的 HTTP 请求，并在进行一些初步处理后将其转发到 Kestrel，如下图所示：
+如果应用已公开到 Internet，Kestrel 必须使用反向代理服务器，如 [Internet Information Services (IIS)](https://www.iis.net/)、[Nginx](http://nginx.org) 或 [Apache](https://httpd.apache.org/)。 反向代理服务器接收来自 Internet 的 HTTP 请求，并将这些请求转发到 Kestrel。
 
 ![Kestrel 通过反向代理服务器（如 IIS、Nginx 或 Apache）间接与 Internet 进行通信](kestrel/_static/kestrel-to-internet.png)
 
-为公共边缘服务器部署（直接公开到 Internet）使用反向代理的最重要的原因是出于安全考虑。 Kestrel 的 1.x 版本不包含防御来自 Internet 的攻击的重要安全功能。 这包括但不限于相应的超时、请求大小限制和并发连接限制。
+为公共边缘服务器部署（直接公开到 Internet）使用反向代理的最重要的原因是出于安全考虑。 Kestrel 的 1.x 版本不包含防御 Internet 攻击的重要安全功能。 这包括但不限于相应的超时、请求大小限制和并发连接限制。
 
 有关详细信息，请参阅[何时结合使用 Kestrel 和反向代理](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)。
 
 ::: moniker-end
-
-在没有 Kestrel 或[自定义服务器实现](#custom-servers)的情况下，不能使用 IIS、Nginx 和 Apache。 ASP.NET Core 设计为在其自己的进程中运行，以实现跨平台统一操作。 IIS、Nginx 和 Apache 规定自己的启动过程和环境。 若要直接使用这些服务器技术，ASP.NET Core 必须满足每个服务器的需求。 使用 Kestrel 等 Web 服务器实现时，ASP.NET Core 可以控制托管在不同服务器技术上的启动过程和环境。
 
 ### <a name="iis-with-kestrel"></a>IIS 与 Kestrel
 
@@ -76,29 +103,29 @@ Kestrel 可以单独使用，也可以与反向代理服务器（如 IIS、Nginx
 
 使用 [IIS](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture) 或 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 时，ASP.NET Core 应用在与 IIS 工作进程（进程内托管模型）相同的进程中运行或者在与 IIS 工作进程分离的进程中运行（进程外托管模型）。
 
-[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)是一个本机 IIS 模块，用于处理进程内 IIS Http 服务器或进程外 Kestrel 服务器之间的本机 IIS 请求。 有关更多信息，请参见<xref:fundamentals/servers/aspnet-core-module>。
+[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)是本机 IIS 模块，用于处理进程内 IIS HTTP 服务器和进程外 Kestrel 服务器之间的本机 IIS 请求。 有关更多信息，请参见<xref:fundamentals/servers/aspnet-core-module>。
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.2"
 
-将 [IIS](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture) 或 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 用作 ASP.NET Core 的反向代理时，ASP.NET Core 应用在独立于 IIS 工作进程的某个进程中运行。 在 IIS 进程中，[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)协调反向代理关系。 ASP.NET Core 模块的主要功能是启动 ASP.NET Core 应用，在其出现故障时重启应用，并向应用转发 HTTP 流量。 有关更多信息，请参见<xref:fundamentals/servers/aspnet-core-module>。
+将 [IIS](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture) 或 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 用作 ASP.NET Core 的反向代理时，ASP.NET Core 应用在独立于 IIS 工作进程的某个进程中运行。 在 IIS 进程中，[ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)协调反向代理关系。 ASP.NET Core 模块的主要功能是，启动应用、在应用出现故障时重启应用，以及向应用转发 HTTP 流量。 有关更多信息，请参见<xref:fundamentals/servers/aspnet-core-module>。
 
 ::: moniker-end
 
 ### <a name="nginx-with-kestrel"></a>Nginx 与 Kestrel
 
-若要了解如何在 Linux 上使用 Nginx 作为 Kestrel 的反向代理服务器，请参阅[在 Linux 上使用 Nginx 进行托管](xref:host-and-deploy/linux-nginx)。
+若要了解如何在 Linux 上使用 Nginx 作为 Kestrel 的反向代理服务器，请参阅 <xref:host-and-deploy/linux-nginx>。
 
 ### <a name="apache-with-kestrel"></a>Apache 与 Kestrel
 
-若要了解如何在 Linux 上使用 Apache 作为 Kestrel 的反向代理服务器，请参阅[在 Linux 上使用 Apache 进行托管](xref:host-and-deploy/linux-apache)。
+若要了解如何在 Linux 上使用 Apache 作为 Kestrel 的反向代理服务器，请参阅 <xref:host-and-deploy/linux-apache>。
 
 ## <a name="httpsys"></a>HTTP.sys
 
 ::: moniker range=">= aspnetcore-2.0"
 
-如果 ASP.NET Core 应用在 Windows 上运行，则 HTTP.sys 是 Kestrel 的替代选项。 为了获得最佳性能，通常建议使用 Kestrel。 在应用向 Internet 公开且所需功能受 HTTP.sys（而不是 Kestrel）支持的方案中，可以使用 HTTP.sys。 有关 HTTP.sys 的信息，请参阅 [HTTP.sys](xref:fundamentals/servers/httpsys)。
+如果 ASP.NET Core 应用在 Windows 上运行，则 HTTP.sys 是 Kestrel 的替代选项。 为了获得最佳性能，通常建议使用 Kestrel。 在应用向 Internet 公开且所需功能受 HTTP.sys（而不是 Kestrel）支持的方案中，可以使用 HTTP.sys。 有关更多信息，请参见<xref:fundamentals/servers/httpsys>。
 
 ![HTTP.sys 直接与 Internet 进行通信](httpsys/_static/httpsys-to-internet.png)
 

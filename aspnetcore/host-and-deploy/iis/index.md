@@ -4,14 +4,14 @@ author: guardrex
 description: 了解如何在 Windows Server Internet Information Services (IIS) 上托管 ASP.NET Core 应用。
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/26/2018
+ms.date: 12/01/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 77fa6e1ef6a7fc707c2665826d3c1f4c2691979c
-ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
+ms.openlocfilehash: 1680b1377351fbfbfc38249868da389012dd5fb6
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52450796"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52862182"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -65,11 +65,11 @@ public static IWebHost BuildWebHost(string[] args) =>
 
 **进程内承载模型**
 
-`CreateDefaultBuilder` 调用 `UseIIS` 方法以启动 [CoreCLR](/dotnet/standard/glossary#coreclr) 并在 IIS 工作进程（w3wp.exe 或 iisexpress.exe）内托管应用。 性能测试表明，与在进程外托管应用并将请求代理传入 [Kestrel](xref:fundamentals/servers/kestrel) 相比，在进程中托管 .NET Core 应用可提供明显更高的请求吞吐量。
+`CreateDefaultBuilder` 调用 `UseIIS` 方法以启动 [CoreCLR](/dotnet/standard/glossary#coreclr) 并在 IIS 工作进程（w3wp.exe 或 iisexpress.exe）内托管应用。 性能测试表明，与在进程外托管应用并将请求代理到 [Kestrel](xref:fundamentals/servers/kestrel) 服务器相比，在进程中托管 .NET Core 应用可以大大提升请求吞吐量。
 
 **进程外承载模型**
 
-对于使用 IIS 的进程外托管，`CreateDefaultBuilder` 将 [Kestrel](xref:fundamentals/servers/kestrel) 配置为 Web 服务器，并通过配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)的基本路径和端口来启用 IIS 集成。
+对于使用 IIS 的进程外托管，`CreateDefaultBuilder` 将 [Kestrel](xref:fundamentals/servers/kestrel) 服务器配置为 Web 服务器，并通过配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)的基础路径和端口来启用 IIS 集成。
 
 ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultBuilder` 调用 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> 方法。 `UseIISIntegration` 配置在 localhost IP 地址 (`127.0.0.1`) 中的动态端口上侦听的 Kestrel。 如果动态端口为 1234，则 Kestrel 在 `127.0.0.1:1234` 中侦听。 此配置将替换以下 API 提供的其他 URL 配置：
 
@@ -85,7 +85,7 @@ ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultB
 
 ::: moniker range="= aspnetcore-2.1"
 
-`CreateDefaultBuilder` 将 [Kestrel](xref:fundamentals/servers/kestrel) 配置为 Web 服务器，并通过配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)的基路径和端口来实现 IIS 集成。
+`CreateDefaultBuilder` 将 [Kestrel](xref:fundamentals/servers/kestrel) 服务器配置为 Web 服务器，并通过配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)的基础路径和端口来启用 IIS 集成。
 
 ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultBuilder` 调用 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 方法。 `UseIISIntegration` 配置在 localhost IP 地址 (`127.0.0.1`) 中的动态端口上侦听的 Kestrel。 如果动态端口为 1234，则 Kestrel 在 `127.0.0.1:1234` 中侦听。 此配置将替换以下 API 提供的其他 URL 配置：
 
@@ -99,7 +99,7 @@ ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultB
 
 ::: moniker range="= aspnetcore-2.0"
 
-`CreateDefaultBuilder` 将 [Kestrel](xref:fundamentals/servers/kestrel) 配置为 Web 服务器，并通过配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)的基路径和端口来实现 IIS 集成。
+`CreateDefaultBuilder` 将 [Kestrel](xref:fundamentals/servers/kestrel) 服务器配置为 Web 服务器，并通过配置 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)的基础路径和端口来启用 IIS 集成。
 
 ASP.NET Core 模块生成分配给后端进程的动态端口。 `CreateDefaultBuilder` 调用 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 方法。 `UseIISIntegration` 配置在 localhost IP 地址 (`localhost`) 中的动态端口上侦听的 Kestrel。 如果动态端口为 1234，则 Kestrel 在 `localhost:1234` 中侦听。 此配置将替换以下 API 提供的其他 URL 配置：
 
@@ -484,7 +484,7 @@ ASP.NET Core 应用不支持 [IIS 虚拟目录](/iis/get-started/planning-your-i
 
 ## <a name="configuration-of-iis-with-webconfig"></a>使用 web.config 配置 IIS
 
-对于那些应用于反向代理配置的 IIS 功能，IIS 配置受 web.config 的 \<system.webServer> 部分影响。 如果在服务器级别将 IIS 配置为使用动态压缩，则可通过应用的 web.config 文件中的 \<urlCompression> 元素禁用它。
+IIS 配置受用于 IIS 方案（适用于包含 ASP.NET Core 模块的 ASP.NET Core 应用）的 web.config 的 `<system.webServer>` 部分影响。 例如，IIS 配置适用于动态压缩。 如果在服务器一级将 IIS 配置为使用动态压缩，可通过应用的 web.config 文件中的 `<urlCompression>` 元素，对 ASP.NET Core 应用禁用它。
 
 有关详细信息，请参阅 [\<system.webServer> 的配置参考](/iis/configuration/system.webServer/)、[ASP.NET Core 模块配置参考](xref:host-and-deploy/aspnet-core-module)和[使用 ASP.NET Core 的 IIS 模块](xref:host-and-deploy/iis/modules)。 若要为在独立应用池中运行的各应用设置环境变量（IIS 10.0 或更高版本中支持此操作），请参阅 IIS 参考文档的[环境变量 \<environmentVariables>](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) 主题中的“AppCmd.exe 命令”部分。
 
@@ -492,10 +492,10 @@ ASP.NET Core 应用不支持 [IIS 虚拟目录](/iis/get-started/planning-your-i
 
 ASP.NET Core 应用不会使用 web.config 中的 ASP.NET 4.x 应用的配置部分进行配置：
 
-* **\<system.web>**
-* \<appSettings>
-* \<connectionStrings>
-* \<location>
+* `<system.web>`
+* `<appSettings>`
+* `<connectionStrings>`
+* `<location>`
 
 会使用其他的配置提供程序配置 ASP.NET Core 应用。 有关详细信息，请参阅[配置](xref:fundamentals/configuration/index)。
 

@@ -4,14 +4,14 @@ author: rick-anderson
 description: 了解 ASP.NET Core 中间件和请求管道。
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/21/2018
+ms.date: 10/10/2018
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 6daf201654d68de978141f3dd42d48732c1161f7
-ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
+ms.openlocfilehash: 4e5da1036b77e876899ccdea48bdec69454e1657
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51570030"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861480"
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 中间件
 
@@ -237,6 +237,7 @@ ASP.NET Core 附带以下中间件组件。 顺序列提供备注，说明中间
 | [CORS](xref:security/cors) | 配置跨域资源共享。 | 在使用 CORS 的组件之前。 |
 | [诊断](xref:fundamentals/error-handling) | 配置诊断。 | 在生成错误的组件之前。 |
 | [转接头](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions) | 将代理标头转发到当前请求。 | 在使用已更新字段的组件之前。 示例：方案、主机、客户端 IP、方法。 |
+| [运行状况检查](xref:host-and-deploy/health-checks) | 检查 ASP.NET Core 应用及其依赖项的运行状况，如检查数据库可用性。 | 如果请求与运行状况检查终结点匹配，则为终端。 |
 | [HTTP 方法重写](/dotnet/api/microsoft.aspnetcore.builder.httpmethodoverrideextensions) | 允许传入 POST 请求重写方法。 | 在使用已更新方法的组件之前。 |
 | [HTTPS 重定向](xref:security/enforcing-ssl#require-https) | 将所有 HTTP 请求重定向到 HTTPS（ASP.NET Core 2.1 或更高版本）。 | 在使用 URL 的组件之前。 |
 | [HTTP 严格传输安全性 (HSTS)](xref:security/enforcing-ssl#http-strict-transport-security-protocol-hsts) | 添加特殊响应标头的安全增强中间件（ASP.NET Core 2.1 或更高版本）。 | 在发送响应之前，修改请求的组件之后。 示例：转接头、URL 重写。 |
