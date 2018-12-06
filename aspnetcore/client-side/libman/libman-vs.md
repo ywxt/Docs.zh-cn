@@ -17,27 +17,27 @@ ms.locfileid: "50206722"
 
 作者：[Scott Addie](https://twitter.com/Scott_Addie)
 
-Visual Studio 在 ASP.NET Core 项目中 已经 内置支持了[LibMan](xref:client-side/libman/index)工具，包括：
+Visual Studio 在 ASP.NET Core 项目中内置了对 [LibMan](xref:client-side/libman/index) 的支持，包括：
 
-* 支持生成配置和运行 libman 还原操作。
+* 支持在生成时配置和运行 LibMan 还原操作。
 * 用于触发 LibMan 还原和清理操作的菜单项。
-* 搜索对话框，用于查找库和将文件添加到项目中。
-* LibMan 清单文件&mdash;支持*libman.json*文件编辑。
+* 搜索对话框，查找库并将文件添加到项目中。
+* 编辑对 *libman.json*（LibMan 清单文件）的支持。
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/libman/samples/) [（如何下载）](xref:index#how-to-download-a-sample)
 
 ## <a name="prerequisites"></a>系统必备
 
-* Visual Studio 2017 版本 15.8 或更高版本并且是**ASP.NET 和 web 开发**工作环境
+* Visual Studio 2017 版本 15.8 或更高版本，且具有**ASP.NET 和 Web 开发**工作负载
 
 ## <a name="add-library-files"></a>添加库文件
 
- 库文件可以通过两种不同的方式添加到 ASP.NET Core 项目中:
+ 可通过两种不同的方式将库文件添加到 ASP.NET Core 项目中：
 
-1. [使用"添加客户端库"对话框](#use-the-add-client-side-library-dialog)
+1. [使用“添加客户端库”对话框](#use-the-add-client-side-library-dialog)
 2. [手动配置 LibMan 清单文件条目](#manually-configure-libman-manifest-file-entries)
 
-### <a name="use-the-add-client-side-library-dialog"></a>使用 "添加客户端库" 对话框
+### <a name="use-the-add-client-side-library-dialog"></a>使用“添加客户端库”对话框
 
 请按照下列步骤以安装客户端库：
 
