@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/16/2018
 uid: index
-ms.openlocfilehash: 13bb8fafe8d5d34185b3016630d5dd3df4212119
-ms.sourcegitcommit: bdfba5e7575b2a786ef27c0edf688c7dbd09ee95
+ms.openlocfilehash: 1b075518b3a744fe8d8506c9a17a3e9c67394be1
+ms.sourcegitcommit: 8a65f6c2cbe290fb2418eed58f60fb74c95392c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52288650"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52892102"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 简介
 
@@ -35,7 +35,7 @@ ASP.NET Core 是一个跨平台的高性能[开源](https://github.com/aspnet/ho
 ASP.NET Core MVC 提供生成 [Web API](xref:tutorials/first-web-api) 和 [Web 应用](xref:tutorials/razor-pages/index)所需的功能：
 
 * [Model-View-Controller (MVC) 模式](xref:mvc/overview) 使 Web API 和 Web 应用可测试。
-* ASP.NET Core 2.0 中新增的 [Razor 页面](xref:razor-pages/index)是基于页面的编程模型，可简化 Web UI 生成并提高工作效率。
+* [Razor Pages](xref:razor-pages/index) 是基于页面的编程模型，它让 Web UI 的生成更加简单高效。
 * [Razor 标记](xref:mvc/views/razor)提供了适用于 [Razor 页面](xref:razor-pages/index)和 [MVC 视图](xref:mvc/views/overview)的高效语法。
 * [标记帮助程序](xref:mvc/views/tag-helpers/intro)使服务器端代码可以在 Razor 文件中参与创建和呈现 HTML 元素。
 * 内置的[多数据格式和内容协商](xref:web-api/advanced/formatting)支持使 Web API 可访问多种客户端，包括浏览器和移动设备。
