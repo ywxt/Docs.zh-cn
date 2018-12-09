@@ -3,15 +3,15 @@ title: 在 ASP.NET Core 中配置 Windows 身份验证
 author: scottaddie
 description: 了解如何在使用 IIS Express、 IIS、 HTTP.sys 和 WebListener 的 ASP.NET Core 中配置 Windows 身份验证。
 ms.author: riande
-ms.custom: mvc
+ms.custom: mvc, seodec18
 ms.date: 11/01/2018
 uid: security/authentication/windowsauth
-ms.openlocfilehash: 87fcab75555c1dae0b2815c30d79fd4615df9660
-ms.sourcegitcommit: 85f2939af7a167b9694e1d2093277ffc9a741b23
+ms.openlocfilehash: 342759a6ff4b5679e0d54c979188ae66d339562d
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50968288"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121292"
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>在 ASP.NET Core 中配置 Windows 身份验证
 
@@ -47,7 +47,7 @@ Visual Studio Web 应用程序模板可配置为支持 Windows 身份验证。
 
 Visual Studio 项目**属性**页的**调试**选项卡提供有关 Windows 身份验证和匿名身份验证的复选框。
 
-![Windows 身份验证浏览器屏幕截图](windowsauth/_static/vs-auth-property-menu.png)
+![突出显示的身份验证选项使用 Windows 身份验证浏览器屏幕截图](windowsauth/_static/vs-auth-property-menu.png)
 
 或者，可以在配置这两个属性*launchSettings.json*文件：
 

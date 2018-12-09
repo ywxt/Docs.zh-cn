@@ -3,14 +3,15 @@ title: 使用受授权的用户数据创建 ASP.NET Core 应用
 author: rick-anderson
 description: 了解如何使用受保护的授权的用户数据创建 Razor 页面应用。 包括 HTTPS、 身份验证、 安全性、 ASP.NET Core 标识。
 ms.author: riande
-ms.date: 7/24/2018
+ms.date: 12/07/2018
+ms.custom: seodec18
 uid: security/authorization/secure-data
-ms.openlocfilehash: 185628d4e06c9b5ae7f2685c10ea9e46dd5abe92
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: d49ee7779b425d625b81c8a65694121c616bfba6
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253216"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121630"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>使用受授权的用户数据创建 ASP.NET Core 应用
 
@@ -38,21 +39,21 @@ ms.locfileid: "50253216"
 
 在下图中，用户 Rick (`rick@example.com`) 登录。 Rick 只能查看允许的联系人和**编辑**/**删除**/**新建**其联系人的链接。 只有最后一个记录，创建由 Rick，显示**编辑**并**删除**链接。 其他用户不会看到的最后一个记录，直到经理或管理员的状态更改为"已批准"。
 
-![前面的图像描述](secure-data/_static/rick.png)
+![屏幕截图显示 Rick 登录](secure-data/_static/rick.png)
 
 在下图中，`manager@contoso.com`在和中的管理器角色进行签名：
 
-![前面的图像描述](secure-data/_static/manager1.png)
+![屏幕截图显示manager@contoso.com登录](secure-data/_static/manager1.png)
 
 下图显示在管理器的联系人的详细信息视图：
 
-![前面的图像描述](secure-data/_static/manager.png)
+![联系人的经理的视图](secure-data/_static/manager.png)
 
 **批准**并**拒绝**按钮仅显示经理和管理员。
 
 在下图中，`admin@contoso.com`进行签名和管理员角色中：
 
-![前面的图像描述](secure-data/_static/admin.png)
+![屏幕截图显示admin@contoso.com登录](secure-data/_static/admin.png)
 
 管理员具有所有权限。 她可以读取、 编辑或删除任何联系，并更改联系人的状态。
 
@@ -281,25 +282,32 @@ dotnet user-secrets set SeedUserPW <PW>
 
 ## <a name="test-the-completed-app"></a>测试已完成的应用程序
 
+如果你尚未设置设定为种子的用户帐户的密码，使用[机密管理器工具](xref:security/app-secrets#secret-manager)设置密码：
+
+* 选择一个强密码： 使用八个或多个字符和至少一个大写字符、 数字和符号。 例如，`Passw0rd!`符合强密码要求。
+* 执行以下命令从项目的文件夹，其中`<PW>`的密码：
+
+  ```console
+  dotnet user-secrets set SeedUserPW <PW>
+  ```
+
 如果应用了联系人：
 
-* 删除中的所有记录`Contact`表。
+* 删除所有记录中`Contact`表。
 * 重新启动应用以设定数据库种子。
 
-浏览联系人注册用户。
-
-测试已完成的应用程序的简单方法是启动三个不同的浏览器 （或 incognito/InPrivate 版本）。 在一个浏览器中注册一个新用户 (例如， `test@example.com`)。 登录到每个浏览器使用不同的用户。 验证以下操作：
+测试已完成的应用程序的简单方法是启动三个不同的浏览器 （或 incognito/InPrivate 会话）。 在一个浏览器中注册一个新用户 (例如， `test@example.com`)。 登录到每个浏览器使用不同的用户。 验证以下操作：
 
 * 已注册的用户可以查看所有已批准的联系人数据。
 * 已注册的用户可以编辑/删除其自己的数据。
-* 经理可以批准或拒绝的联系人数据。 `Details`视图视图将显示**批准**并**拒绝**按钮。
-* 管理员可以批准/拒绝和编辑/删除的任何数据。
+* 经理可以批准/拒绝的联系人数据。 `Details`视图视图将显示**批准**并**拒绝**按钮。
+* 管理员可以批准/拒绝和编辑/删除所有数据。
 
-| “用户”| 选项 |
-| ------------ | ---------|
-| test@example.com | 可以编辑/删除自己的数据 |
-| manager@contoso.com | 可以批准/拒绝和编辑/删除拥有的数据 |
-| admin@contoso.com | 可以编辑/删除和批准/拒绝的所有数据|
+| “用户”                | 由应用程序进行种子设定 | 选项                                  |
+| ------------------- | :---------------: | ---------------------------------------- |
+| test@example.com    | 否                | 编辑/删除自己的数据。                |
+| manager@contoso.com | 是               | 批准/拒绝和编辑/删除拥有的数据。 |
+| admin@contoso.com   | 是               | 批准/拒绝和编辑/删除所有数据。 |
 
 在管理员的浏览器中创建联系人。 删除 URL 复制并编辑从管理员的联系信息。 将下面的链接粘贴到测试用户的浏览器以验证测试用户不能执行这些操作。
 
