@@ -1,17 +1,17 @@
 ---
-title: 使用 ASP.NET Core 和 Azure DevOps |监视和调试
+title: 监视和调试-使用 ASP.NET Core 和 Azure 进行开发运营
 author: CamSoper
-description: 提供有关为托管在 Azure 中的 ASP.NET Core 应用构建 DevOps 管道的端到端指导的指南。
+description: 监视和使用 ASP.NET Core 和 Azure DevOps 解决方案的一部分进行调试你的代码
 ms.author: casoper
-ms.custom: mvc
+ms.custom: mvc, seodec18
 ms.date: 10/24/2018
 uid: azure/devops/monitor
-ms.openlocfilehash: c4013de574fdf34114f2ae6c6a2150d72f807578
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: e005b951aec578b396fc19dec5d2f55cbce4f664
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090173"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121604"
 ---
 # <a name="monitor-and-debug"></a>监视和调试
 
@@ -35,7 +35,7 @@ ms.locfileid: "50090173"
 
 1. **概述**选项卡显示有用"眼"的信息，包括关系图显示最近的指标。
 
-    ![概述面板](./media/monitoring/overview.png)
+    ![屏幕截图显示概述面板](./media/monitoring/overview.png)
 
     * **Http 5xx**： 服务器端错误的计数，通常是 ASP.NET Core 代码中的异常。
     * **数据在**： 进入你的 web 应用的数据入口。
@@ -45,7 +45,7 @@ ms.locfileid: "50090173"
 
     此外在此页上找到多个自助服务工具进行故障排除和优化。
 
-    ![自助服务工具](./media/monitoring/wizards.png)
+    ![屏幕截图显示自助服务工具](./media/monitoring/wizards.png)
 
     * **诊断并解决问题**是自助服务的故障排除程序。
     * **Application Insights**用于分析性能和应用程序行为，稍后在本部分中讨论。
@@ -103,7 +103,7 @@ Application Insights 提供有用的服务器端的信息，而无需其他配�
 1. 打开[Azure 门户](https://portal.azure.com)，并导航到*mywebapp\<unique_number\>* 应用服务。
 1. 在左侧菜单中，向下滚动到**监视**部分，并选择**日志流**。
 
-    ![日志流链接](./media/monitoring/log-stream.png)
+    ![显示日志流链接的屏幕截图](./media/monitoring/log-stream.png)
 
 也可以是日志[流式处理通过 Azure CLI 或 Azure PowerShell](/azure/app-service/web-sites-enable-diagnostic-log#streamlogs)，其中包括通过 Cloud Shell。
 

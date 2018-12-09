@@ -5,13 +5,14 @@ description: 了解如何设置双因素身份验证 (2FA) 与 ASP.NET Core 应�
 monikerRange: < aspnetcore-2.0
 ms.author: riande
 ms.date: 09/22/2018
+ms.custom: seodec18
 uid: security/authentication/2fa
-ms.openlocfilehash: 5b0866ecf15381b040e3646eecc22374b6b0c9e2
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 6f20928b0dec9b235fa17c1b44c81a48d031e9e0
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50205881"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121656"
 ---
 # <a name="two-factor-authentication-with-sms-in-aspnet-core"></a>在 ASP.NET Core SMS 的双因素身份验证
 
@@ -97,7 +98,7 @@ info: Successfully saved SMSAccountIdentification = 12345 to the secret store.
 
 * 点击您的用户名称，这便激活`Index`管理控制器中的操作方法。 然后点击的电话号码**添加**链接。
 
-![管理视图](2fa/_static/login2fa2.png)
+![管理视图-点击"添加"链接](2fa/_static/login2fa2.png)
 
 * 添加电话号码，它将接收验证代码，并点击**发送验证码**。
 
@@ -111,11 +112,11 @@ info: Successfully saved SMSAccountIdentification = 12345 to the secret store.
 
 * 管理视图显示已成功添加你的电话号码。
 
-![管理视图](2fa/_static/login2fa5.png)
+![管理视图-已成功添加电话号码](2fa/_static/login2fa5.png)
 
 * 点击**启用**若要启用双因素身份验证。
 
-![管理视图](2fa/_static/login2fa6.png)
+![管理视图： 启用双因素身份验证](2fa/_static/login2fa6.png)
 
 ### <a name="test-two-factor-authentication"></a>测试双因素身份验证
 
