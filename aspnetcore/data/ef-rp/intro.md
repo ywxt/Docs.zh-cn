@@ -3,14 +3,15 @@ title: ASP.NET Core 中的 Razor 页面和 Entity Framework Core - 第 1 个教�
 author: rick-anderson
 description: 介绍了如何使用 Entity Framework Core 创建 Razor 页面应用
 ms.author: riande
+ms.custom: seodec18
 ms.date: 11/22/2018
 uid: data/ef-rp/intro
-ms.openlocfilehash: afba4395fe9dbe22516b6c4ebdc4c582381981fd
-ms.sourcegitcommit: 710fc5fcac258cc8415976dc66bdb355b3e061d5
+ms.openlocfilehash: 34c7238b689993245e033625dcd0e728b7c45163
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52299464"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121695"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>ASP.NET Core 中的 Razor 页面和 Entity Framework Core - 第 1 个教程（共 8 个）
 
@@ -306,11 +307,11 @@ Web 服务器的可用线程是有限的，而在高负载情况下的可能所�
 * EF Core 上下文并非线程安全：请勿尝试并行执行多个操作。
 * 若要利用异步代码的性能优势，请验证在调用向数据库发送查询的 EF Core 方法时，库程序包（如用于分页）是否使用异步。
 
-有关 .NET 中异步编程的详细信息，请参阅[异步概述](/dotnet/articles/standard/async)和[使用 Async 和 Await 的异步编程](/dotnet/csharp/programming-guide/concepts/async/)。
+有关 .NET 中异步编程的详细信息，请参阅[异步概述](/dotnet/standard/async)和[使用 Async 和 Await 的异步编程](/dotnet/csharp/programming-guide/concepts/async/)。
 
 下一个教程将介绍基本的 CRUD（创建、读取、更新、删除）操作。
 
 ::: moniker-end
 
 > [!div class="step-by-step"]
-> [下一篇](xref:data/ef-rp/crud)
+> [下一页](xref:data/ef-rp/crud)

@@ -3,14 +3,15 @@ title: 在 ASP.NET 4.x 和 ASP.NET Core 之间进行选择
 author: rick-anderson
 description: 介绍 ASP.NET Core 和ASP.NET 4.x 以及如何在它们之间进行选择。
 ms.author: riande
+ms.custom: seodec18
 ms.date: 09/11/2018
 uid: fundamentals/choose-between-aspnet-and-aspnetcore
-ms.openlocfilehash: fa281a068dfdcd8a7c45dd5d0a0c3084c4bc8dbc
-ms.sourcegitcommit: e8d80ff566bfe505b43389d7bc4551edb1c0c872
+ms.openlocfilehash: b75fbea330e48075c4a2789454e973d4c56ffa53
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52549067"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121175"
 ---
 # <a name="choose-between-aspnet-4x-and-aspnet-core"></a>在 ASP.NET 4.x 和 ASP.NET Core 之间进行选择
 
@@ -37,7 +38,7 @@ ASP.NET 4.x 是一个成熟的框架，提供在 Windows 上生成基于服务�
 |每个计算机多个版本|每个计算机一个版本|
 |使用 C# 或 F# 通过 Visual Studio、[Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/) 或 [Visual Studio Code](https://code.visualstudio.com/) 进行开发|使用 C#、VB 或 F# 通过 Visual Studio 进行开发|
 |比 ASP.NET 4.x 性能更高|良好的性能|
-|[选择 .NET Framework 或 .NET Core 运行时](/dotnet/articles/standard/choosing-core-framework-server)|使用 .NET Framework 运行时|
+|[选择 .NET Framework 或 .NET Core 运行时](/dotnet/standard/choosing-core-framework-server)|使用 .NET Framework 运行时|
 
 有关 .NET Framework 上的 ASP.NET Core 2.x 支持的信息，请参阅[面向 .NET Framework 的 ASP.NET Core](xref:index#target-framework)。
 
@@ -63,4 +64,4 @@ ASP.NET 4.x 是一个成熟的框架，提供在 Windows 上生成基于服务�
 * <xref:host-and-deploy/azure-apps/index>
 
 > [!NOTE]
-> 我们要测试所建议的新的 ASP.NET Core 目录结构是否可用。  如果你有几分钟时间进行练习，来了解当前目录或所建议目录中的 7 个不同主题，请[单击此处来参与调查](https://dpk4xbh5.optimalworkshop.com/treejack/rps16hd5)。
+> 我们要测试所建议的新的 ASP.NET Core 目录结构是否可用。  如果你有几分钟时间进行练习，来了解当前目录或所建议目录中的 7 个不同主题，请[单击此处来参与调查](https://dpk4xbh5.optimalworkshop.com/treejack/aa11wn82)。

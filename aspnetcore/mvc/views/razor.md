@@ -5,12 +5,12 @@ description: 了解 Razor 标记语法，该语法用于将基于服务器的代
 ms.author: riande
 ms.date: 10/26/2018
 uid: mvc/views/razor
-ms.openlocfilehash: ab9fb3f55399764c5fe985811d92c504ed210767
-ms.sourcegitcommit: ad28d1bc6657a743d5c2fa8902f82740689733bb
+ms.openlocfilehash: 2ec86c774e0fd26c4455829680a2b1db687b8090
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52256575"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121579"
 ---
 # <a name="razor-syntax-reference-for-aspnet-core"></a>ASP.NET Core 的 Razor 语法参考
 
@@ -741,7 +741,7 @@ Razor 视图引擎为视图执行区分大小写的查找。 但是，实际查�
 
 建议开发人员将文件和目录名称的大小写与以下项的大小写匹配：
 
-    * 区域、控制器和操作名称。
-    * Razor 页面。
+* 区域、控制器和操作名称。
+* Razor 页面。
 
 匹配大小写可确保无论使用哪种基础文件系统，部署都能找到其视图。
