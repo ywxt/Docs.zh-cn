@@ -6,20 +6,11 @@
 # [入门](xref:getting-started)
 
 # 教程
-## [创建 Web API](xref:tutorials/first-web-api)
+## Web API
+### [创建 Web API](xref:tutorials/first-web-api)
+### [使用 MongoDB 创建 Web API](xref:tutorials/first-mongo-app)
 ## Web 应用
-### Razor 页面
-#### [Razor 页面介绍](xref:razor-pages/index)
-
-#### [Razor Pages 教程](xref:tutorials/razor-pages/index)
-##### [入门](xref:tutorials/razor-pages/razor-pages-start)
-##### [添加模型](xref:tutorials/razor-pages/model)
-##### [基架](xref:tutorials/razor-pages/page)
-##### [使用 DB](xref:tutorials/razor-pages/sql)
-##### [更新页面](xref:tutorials/razor-pages/da1)
-##### [添加搜索](xref:tutorials/razor-pages/search)
-##### [添加新字段](xref:tutorials/razor-pages/new-field)
-##### [添加验证](xref:tutorials/razor-pages/validation)
+### [Razor 页面](xref:tutorials/razor-pages/index)
 
 ### MVC
 #### [使用 Visual Studio](xref:tutorials/first-mvc-app/index)
@@ -165,7 +156,9 @@
 # Web API
 ## [概述](xref:web-api/index)
 
-## [创建 Web API](xref:tutorials/first-web-api)
+## 教程
+### [创建 Web API](xref:tutorials/first-web-api)
+### [使用 MongoDB 创建 Web API](xref:tutorials/first-mongo-app)
 
 ## Swagger/OpenAPI
 ### [概述](xref:tutorials/web-api-help-pages-using-swagger)
@@ -420,7 +413,7 @@
 ## [更改令牌](xref:fundamentals/change-tokens)
 ## [.NET 的开放 Web 接口 (OWIN)](xref:fundamentals/owin)
 ## [使用托管服务的后台任务](xref:fundamentals/host/hosted-services)
-## [从外部程序集增强应用](xref:fundamentals/configuration/platform-specific-configuration)
+## [承载启动程序集](xref:fundamentals/configuration/platform-specific-configuration)
 ## [Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)
 ## [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage)
 ## [日志记录与 LoggerMessage](xref:fundamentals/logging/loggermessage)
