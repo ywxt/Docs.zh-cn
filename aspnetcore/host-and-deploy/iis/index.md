@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/01/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 1680b1377351fbfbfc38249868da389012dd5fb6
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 5919fe66139260bace1c356c833abb132ba4b2e8
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52862182"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121747"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -20,7 +20,7 @@ ms.locfileid: "52862182"
 [安装 .NET Core 托管捆绑包](#install-the-net-core-hosting-bundle)
 
 > [!NOTE]
-> 我们要测试所建议的新的 ASP.NET Core 目录结构是否可用。  如果你有几分钟时间进行练习，来了解当前目录或所建议目录中的 7 个不同主题，请[单击此处来参与调查](https://dpk4xbh5.optimalworkshop.com/treejack/rps16hd5)。
+> 我们要测试所建议的新的 ASP.NET Core 目录结构是否可用。  如果你有几分钟时间进行练习，来了解当前目录或所建议目录中的 7 个不同主题，请[单击此处来参与调查](https://dpk4xbh5.optimalworkshop.com/treejack/aa11wn82)。
 
 ## <a name="supported-operating-systems"></a>支持的操作系统
 
@@ -329,6 +329,10 @@ web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS
    ![将“.NET CLR 版本”设置为“无托管代码”。](index/_static/edit-apppool-ws2016.png)
 
     ASP.NET Core 在单独的进程中运行，并管理运行时。 ASP.NET Core 不依赖加载桌面 CLR。 将“.NET CLR 版本”设置为“无托管代码”为可选步骤。
+
+1. ASP.NET Core 2.2 或更高版本：对于使用[进程内托管模型](xref:fundamentals/servers/aspnet-core-module#in-process-hosting-model)的 64 位 (x64) [独立部署](/dotnet/core/deploying/#self-contained-deployments-scd)，请禁用 32 位 (x86) 进程的应用池。
+
+   在 IIS 管理员的“应用程序池”的“操作”侧栏中，选择“设置应用程序池默认设置”或“高级设置”。 找到“启用 32 位应用程序”并将值设置为 `False`。 此设置不会影响针对[进程外托管](xref:fundamentals/servers/aspnet-core-module#out-of-process-hosting-model)部署的应用。
 
 1. 确认进程模型标识拥有适当的权限。
 
