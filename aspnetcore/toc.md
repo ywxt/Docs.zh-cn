@@ -441,6 +441,6 @@
 ## [2.0 版中的新增功能](xref:aspnetcore-2.0)
 ## [1.1 中的新增功能](xref:aspnetcore-1.1)
 
-# [API 参考](/dotnet/api/?view=aspnetcore-2.0)
+# [API 参考](/dotnet/api/?view=aspnetcore-2.2)
 
 # [参与](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md)
