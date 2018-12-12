@@ -7,12 +7,12 @@ ms.author: pranavkm
 ms.custom: mvc
 ms.date: 11/13/2018
 uid: web-api/advanced/conventions
-ms.openlocfilehash: 023b8d09511aa42966e2a7d1c85e407bb6e79b0f
-ms.sourcegitcommit: f202864efca81a72ea7120c0692940c40d9d0630
+ms.openlocfilehash: ede9a46c160cf6a49aa93da710af0bf0b8f59acc
+ms.sourcegitcommit: c4572be5ebb301013a5698caf9b5572b76cb2e34
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51635377"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52710070"
 ---
 # <a name="use-web-api-conventions"></a>使用 Web API 约定
 
@@ -26,7 +26,7 @@ ASP.NET Core 2.2 引入了一种方法，可提取常见的 [API 文档](xref:tu
 
 ## <a name="apply-web-api-conventions"></a>应用 Web API 约定
 
-应用约定有三种方法。 约定不是组合而成的，每个操作可能只与一个约定相关联。 更明确的约定（详见下文）优先于不太明确的约定。 当具有相同优先级的两个或更多约定应用于某个操作时，选择是不确定的。 存在以下可将约定应用于操作的选项，明确性依次降低：
+应用约定有三种方法。 约定不是组合而成的。 每个操作可能只与一个约定相关联。 更明确的约定（详见下文）优先于不太明确的约定。 当具有相同优先级的两个或更多约定应用于某个操作时，选择是不确定的。 存在以下可将约定应用于操作的选项，明确性依次降低：
 
 1. `Microsoft.AspNetCore.Mvc.ApiConventionMethodAttribute` &mdash; 适用于单独的操作，并指定适用的约定类型和约定方法。 在以下示例中，将约定方法 `Microsoft.AspNetCore.Mvc.DefaultApiConventions.Put` 应用于 `Update` 操作：
 

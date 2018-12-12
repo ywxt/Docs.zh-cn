@@ -4,14 +4,14 @@ author: shirhatti
 description: 发现对调试 ASP.NET Core 应用的支持（在 Windows Server 上的 IIS 后方运行时）。
 ms.author: riande
 ms.custom: mvc
-ms.date: 05/14/2018
+ms.date: 11/26/2018
 uid: host-and-deploy/iis/development-time-iis-support
-ms.openlocfilehash: eb8b4369d6d5434adbac187f59b18d7a2b80055c
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 65dbe690a33d82a4edddf315803dc4c656db27a0
+ms.sourcegitcommit: e8d80ff566bfe505b43389d7bc4551edb1c0c872
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277649"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52549096"
 ---
 # <a name="development-time-iis-support-in-visual-studio-for-aspnet-core"></a>Visual Studio 中针对 ASP.NET Core 的开发时 IIS 支持
 
@@ -129,13 +129,19 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 ## <a name="run-the-project"></a>运行该项目
 
-在 VS 用户界面中，将“运行”按钮设置为 IIS 配置文件，然后选择此按钮以启动该应用：
+在 Visual Studio 中：
 
-![运行 VS 工具栏中设置为“IIS”配置文件的按钮。](development-time-iis-support/_static/toolbar.png)
+* 确认已将生成配置下拉列表设置为“调试”。
+* 将“运行”按钮设置为 IIS 配置文件，然后选择此按钮以启动该应用。
+
+![将 VS 工具栏中的“运行”按钮设置为 IIS 配置文件，并将生成配置下拉列表设置为“发布”。](development-time-iis-support/_static/toolbar.png)
 
 如果不以管理员身份运行，Visual Studio 可能会提示重启。 如果出现提示，请重启 Visual Studio。
 
 如果使用不受信任的开发证书，则浏览器可能会要求你为不受信任的证书创建异常。
+
+> [!NOTE]
+> 通过[仅我的代码](/visualstudio/debugger/just-my-code)调试“发布”生成配置，从而导致降低编译器优化体验。 例如，不会遇到断点。
 
 ## <a name="additional-resources"></a>其他资源
 

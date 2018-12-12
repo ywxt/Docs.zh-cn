@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/12/2018
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: 32fbf2b19da2d088847279f447f9a72cedcf8085
-ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
+ms.openlocfilehash: 5a3fd9c3453c07ee550c7de0333c9a49d5d5d1af
+ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51570173"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450653"
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET Core 模块配置参考
 
@@ -157,7 +157,7 @@ ms.locfileid: "51570173"
 
 将应用部署为 [Azure 应用服务](https://azure.microsoft.com/services/app-service/)时，`stdoutLogFile` 路径将设置为 `\\?\%home%\LogFiles\stdout`。 该路径会将 stdout 日志保存到 *LogFiles* 文件夹，该文件夹是由服务自动创建的位置。
 
-有关在子应用中配置 *web.config* 文件的重要说明，请参阅[子应用程序配置](xref:host-and-deploy/iis/index#sub-application-configuration)。
+有关 IIS 子应用程序配置的信息，请参阅<xref:host-and-deploy/iis/index#sub-applications>。
 
 ### <a name="attributes-of-the-aspnetcore-element"></a>aspNetCore 元素的属性
 
