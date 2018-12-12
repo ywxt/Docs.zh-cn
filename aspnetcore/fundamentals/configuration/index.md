@@ -4,14 +4,14 @@ author: guardrex
 description: 理解如何使用配置 API 配置 ASP.NET Core 应用。
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/15/2018
+ms.date: 12/07/2018
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 766ac77a2af01509f8e4bc646a18f7dfbc923511
-ms.sourcegitcommit: d3392f688cfebc1f25616da7489664d69c6ee330
+ms.openlocfilehash: 6f0378ffc4f9a1efa95c8f70d70e7799abef130b
+ms.sourcegitcommit: 1872d2e6f299093c78a6795a486929ffb0bbffff
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51818390"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53216893"
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core 中的配置
 
@@ -508,7 +508,7 @@ public static void Main(string[] args)
 
 创建交换映射字典后，它将包含下表所示的数据。
 
-| 键       | “值”             |
+| 键       | 值             |
 | --------- | ----------------- |
 | `-CLKey1` | `CommandLineKey1` |
 | `-CLKey2` | `CommandLineKey2` |
@@ -521,7 +521,7 @@ dotnet run -CLKey1=value1 -CLKey2=value2
 
 运行上述命令后，配置包含下表中显示的值。
 
-| 键               | “值”    |
+| 键               | 值    |
 | ----------------- | -------- |
 | `CommandLineKey1` | `value1` |
 | `CommandLineKey2` | `value2` |
@@ -1137,6 +1137,8 @@ XML 配置文件可以为重复节使用不同的元素名称：
 * 配置源的 `Action<KeyPerFileConfigurationSource>` 委托。
 * 目录是否可选以及目录的路径。
 
+双下划线字符 (`__`) 用作文件名中的配置键分隔符。 例如，文件名 `Logging__LogLevel__System` 生成配置键 `Logging:LogLevel:System`。
+
 构建主机时调用 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> 以指定应用的配置：
 
 ```csharp
@@ -1403,7 +1405,7 @@ var sectionExists = _config.GetSection("section2:subsection2").Exists();
 
 创建以下配置键值对：
 
-| 键                   | “值”                                             |
+| 键                   | 值                                             |
 | --------------------- | ------------------------------------------------- |
 | starship:name         | USS Enterprise                                    |
 | starship:registry     | NCC-1701                                          |
@@ -1511,7 +1513,7 @@ viewModel.TvShow = tvShow;
 
 请考虑下表中所示的配置键和值。
 
-| 键             | “值”  |
+| 键             | 值  |
 | :-------------: | :----: |
 | array:entries:0 | value0 |
 | array:entries:1 | value1 |
@@ -1618,7 +1620,7 @@ config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false)
 
 将表中所示的键值对加载到配置中。
 
-| 键             | “值”  |
+| 键             | 值  |
 | :-------------: | :----: |
 | array:entries:3 | value3 |
 
@@ -1651,7 +1653,7 @@ config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false)
 
 JSON 配置提供程序将配置数据读入以下键值对：
 
-| 键                     | “值”  |
+| 键                     | 值  |
 | ----------------------- | :----: |
 | json_array:key          | valueA |
 | json_array:subsection:0 | valueB |
