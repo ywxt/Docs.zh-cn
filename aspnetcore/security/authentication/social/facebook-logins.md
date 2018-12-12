@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc, seodec18
 ms.date: 11/11/2018
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 8bb22dc6df9879e827ff9a5ac11e9e3ad5346dc2
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: d4f3e210b0d3c79eaf2233f97a29a6d96cd69b39
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121500"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284378"
 ---
 # <a name="facebook-external-login-setup-in-aspnet-core"></a>在 ASP.NET Core Facebook 外部登录安装程序
 
@@ -121,7 +121,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 运行你的应用程序，然后单击**登录**。 请参阅使用 Facebook 登录的选项。
 
-![Web 应用程序： 用户未经过身份验证](index/_static/DoneFacebook.png)
+![Web 应用程序：用户未经过身份验证](index/_static/DoneFacebook.png)
 
 当您单击**Facebook**，你将重定向到 Facebook 进行身份验证：
 
@@ -135,13 +135,13 @@ Facebook 身份验证请求的默认公共配置文件和电子邮件地址：
 
 现在已在使用 Facebook 凭据登录：
 
-![Web 应用程序： 用户通过身份验证](index/_static/Done.png)
+![Web 应用程序：用户通过身份验证](index/_static/Done.png)
 
 [!INCLUDE[Forward request information when behind a proxy or load balancer section](includes/forwarded-headers-middleware.md)]
 
 ## <a name="troubleshooting"></a>疑难解答
 
-* **ASP.NET Core 2.x 仅：** 如果标识未通过调用配置`services.AddIdentity`中`ConfigureServices`，尝试进行身份验证将导致*ArgumentException： 必须提供 SignInScheme 选项*。 在本教程中使用的项目模板可确保，此操作。
+* **ASP.NET Core 仅限 2.x:** 如果不通过调用配置标识`services.AddIdentity`中`ConfigureServices`，尝试进行身份验证将导致*ArgumentException:必须提供 SignInScheme 选项*。 在本教程中使用的项目模板可确保，此操作。
 * 如果尚未通过应用初始迁移创建站点数据库，则获取*处理请求时，数据库操作失败*错误。 点击**应用迁移**创建数据库，并刷新以忽略错误继续。
 
 ## <a name="next-steps"></a>后续步骤

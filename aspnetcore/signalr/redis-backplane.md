@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/28/2018
 uid: signalr/redis-backplane
-ms.openlocfilehash: c8b09c0d482da344b54d167c0c9757167eaa6186
-ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
+ms.openlocfilehash: 343cb5b2c7ed7162bae7865553a783fea45f0cfb
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52452923"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284461"
 ---
 # <a name="set-up-a-redis-backplane-for-aspnet-core-signalr-scale-out"></a>设置 ASP.NET Core SignalR 横向扩展 Redis 底板
 
@@ -32,7 +32,7 @@ ms.locfileid: "52452923"
 
 ::: moniker range="= aspnetcore-2.1"
 
-* 在 SignalR 应用程序中，将安装`Microsoft.AspNetCore.SignalR.Redis`NuGet 包。
+* 在 SignalR 应用程序中，将安装`Microsoft.AspNetCore.SignalR.Redis`NuGet 包。 (此外，还有`Microsoft.AspNetCore.SignalR.StackExchangeRedis`包，但该之一是 ASP.NET Core 2.2 及更高版本。)
 
 * 在中`Startup.ConfigureServices`方法中，调用`AddRedis`后`AddSignalR`:
 
@@ -59,7 +59,10 @@ ms.locfileid: "52452923"
 
 ::: moniker range="> aspnetcore-2.1"
 
-* 在 SignalR 应用程序中，将安装`Microsoft.AspNetCore.SignalR.StackExchangeRedis`NuGet 包。
+* 在 SignalR 应用程序中，将安装以下 NuGet 包之一：
+
+  * `Microsoft.AspNetCore.SignalR.StackExchangeRedis` -依赖于 StackExchange.Redis 2.X.X。 这是建议的包的 ASP.NET Core 2.2 及更高版本。
+  * `Microsoft.AspNetCore.SignalR.Redis` -依赖于 StackExchange.Redis 1.X.X。 此包不会在 ASP.NET Core 3.0 发布。
 
 * 在中`Startup.ConfigureServices`方法中，调用`AddStackExchangeRedis`后`AddSignalR`:
 

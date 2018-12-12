@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc, seodec18
 ms.date: 11/11/2018
 uid: security/authentication/google-logins
-ms.openlocfilehash: e5deda5d521643e3155be00f4630a86c6a82575c
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: 372504eb4f6fea412b5b160e0d5e9251dafe0d56
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121526"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284481"
 ---
 # <a name="google-external-login-setup-in-aspnet-core"></a>在 ASP.NET Core Google 外部登录安装程序
 
@@ -50,11 +50,11 @@ ms.locfileid: "53121526"
   * **Web 服务器 (例如 node.js，Tomcat)**，和
   * **用户数据**:
 
-![API 管理器凭据页： 找出哪些类型的凭据，需要面板](index/_static/GoogleConsoleChooseCred.png)
+![API 管理器凭据页：找出哪些类型的凭据，需要面板](index/_static/GoogleConsoleChooseCred.png)
 
 * 点击**我需要什么凭据？** 转到应用配置，第二个步骤**创建 OAuth 2.0 客户端 ID**:
 
-![API 管理器凭据页： 创建 OAuth 2.0 客户端 ID](index/_static/GoogleConsoleCreateClient.png)
+![API 管理器凭据页：创建 OAuth 2.0 客户端 ID](index/_static/GoogleConsoleCreateClient.png)
 
 * 因为我们将 Google + 项目创建与只是一项功能 （登录），我们可以输入相同**名称**与我们的项目使用 OAuth 2.0 客户端 id。
 
@@ -67,13 +67,13 @@ ms.locfileid: "53121526"
 
 * 点击**创建客户端 ID**，转到第三个步骤中，其中**设置 OAuth 2.0 许可屏幕**:
 
-![API 管理器凭据页： 设置 OAuth 2.0 许可屏幕](index/_static/GoogleConsoleAddCred.png)
+![API 管理器凭据页：设置 OAuth 2.0 许可屏幕](index/_static/GoogleConsoleAddCred.png)
 
 * 输入你的公众**电子邮件地址**并**产品名称**Google + 提示用户登录时为你的应用所示。 其他选项都位于**更多自定义选项**。
 
 * 点击**继续**继续到最后一个步骤中，**下载凭据**:
 
-![API 管理器凭据页： 下载凭据](index/_static/GoogleConsoleFinish.png)
+![API 管理器凭据页：下载凭据](index/_static/GoogleConsoleFinish.png)
 
 * 点击**下载**若要使用应用程序机密保存 JSON 文件并**完成**以完成创建新的应用。
 
@@ -136,7 +136,7 @@ app.UseGoogleAuthentication(new GoogleOptions()
 
 运行你的应用程序，然后单击**登录**。 若要使用 Google 登录的选项将显示：
 
-![Microsoft Edge 中运行 web 应用程序： 用户未经过身份验证](index/_static/DoneGoogle.png)
+![Microsoft Edge 中运行的 web 应用程序：用户未经过身份验证](index/_static/DoneGoogle.png)
 
 当您单击 Google 时，你将重定向到 Google 进行身份验证：
 
@@ -146,14 +146,14 @@ app.UseGoogleAuthentication(new GoogleOptions()
 
 现在已在使用你的 Google 凭据进行登录：
 
-![Microsoft Edge 中运行 web 应用程序： 用户通过身份验证](index/_static/Done.png)
+![Microsoft Edge 中运行的 web 应用程序：用户通过身份验证](index/_static/Done.png)
 
 [!INCLUDE[Forward request information when behind a proxy or load balancer section](includes/forwarded-headers-middleware.md)]
 
 ## <a name="troubleshooting"></a>疑难解答
 
 * 如果你收到`403 (Forbidden)`从你自己的应用时，请确保在开发模式 （或中断到调试器中相同的错误） 中正在运行错误页**Google + API**中已启用**API 管理器库**按照列出的步骤[本页上早期](#create-the-app-in-google-api-console)。 如果在登录不起作用，并且如果没有收到任何错误，切换到开发模式，以使问题更易于调试。
-* **ASP.NET Core 2.x 仅：** 如果标识未通过调用配置`services.AddIdentity`中`ConfigureServices`，尝试进行身份验证将导致*ArgumentException： 必须提供 SignInScheme 选项*。 在本教程中使用的项目模板可确保，此操作。
+* **ASP.NET Core 仅限 2.x:** 如果不通过调用配置标识`services.AddIdentity`中`ConfigureServices`，尝试进行身份验证将导致*ArgumentException:必须提供 SignInScheme 选项*。 在本教程中使用的项目模板可确保，此操作。
 * 如果尚未通过应用初始迁移创建站点数据库，则会收到*处理请求时，数据库操作失败*错误。 点击**应用迁移**创建数据库，并刷新以忽略错误继续。
 
 ## <a name="next-steps"></a>后续步骤

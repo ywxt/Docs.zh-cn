@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc, seodec18
 ms.date: 10/24/2018
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: e5ed2a65355a1dba34af09379f2583b3e73c24d7
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: 28932cbef1cc797338980f3e0de8b09caee324c0
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121422"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284599"
 ---
 # <a name="key-management-extensibility-in-aspnet-core"></a>ASP.NET Core 的密钥管理可扩展性
 
@@ -175,7 +175,7 @@ services.AddSingleton<IXmlRepository>(new MyCustomXmlRepository());
 
 `IXmlEncryptor`接口表示可以加密纯文本 XML 元素的类型。 它公开一个 API:
 
-* 加密 (XElement plaintextElement): EncryptedXmlInfo
+* Encrypt(XElement plaintextElement):EncryptedXmlInfo
 
 如果一个序列化`IAuthenticatedEncryptorDescriptor`包含任何元素标记为"需要加密"，然后`XmlKeyManager`将通过已配置运行这些元素`IXmlEncryptor`的`Encrypt`方法，并将保存到加密的元素而不是为纯文本元素`IXmlRepository`。 输出`Encrypt`方法是`EncryptedXmlInfo`对象。 此对象是包含两个结果到加密的包装`XElement`表示的类型和`IXmlDecryptor`这可用于解密的相应元素。
 
@@ -210,7 +210,7 @@ services.AddSingleton<IXmlEncryptor>(new MyCustomXmlEncryptor());
 
 `IXmlDecryptor`接口表示一种类型，知道如何解密`XElement`的已加密通过`IXmlEncryptor`。 它公开一个 API:
 
-* 解密 (XElement encryptedElement): XElement
+* 解密 (XElement encryptedElement):XElement
 
 `Decrypt`方法撤消由执行的加密`IXmlEncryptor.Encrypt`。 通常情况下，每个具体`IXmlEncryptor`实现都将具有相应的具体`IXmlDecryptor`实现。
 

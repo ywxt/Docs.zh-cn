@@ -8,16 +8,18 @@ ms.date: 09/28/2015
 ms.assetid: a9fd4dc0-1b96-4443-82ca-932a5b4a8ea4
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: 9edb7fd100a3f4c5331454045ac206d2f7a81961
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 8e493eda256351904da49e1222773f188e6a2058
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912444"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53288061"
 ---
 <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>ASP.NET SignalR 中心 API 指南-JavaScript 客户端
 ====================
 通过[Patrick Fletcher](https://github.com/pfletcher)， [Tom Dykstra](https://github.com/tdykstra)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 本文档提供使用 SignalR 版本 2 中 JavaScript 客户端，如浏览器和 Windows 应用商店 (WinJS) 应用程序为中心 API 的简介。
 >
@@ -41,7 +43,6 @@ ms.locfileid: "48912444"
 > ## <a name="questions-and-comments"></a>问题和提出的意见
 >
 > 请在你喜欢本教程的内容以及我们可以改进的页的底部的评论中留下反馈。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
-
 
 ## <a name="overview"></a>概述
 
@@ -226,7 +227,7 @@ JavaScript 客户端需要对 jQuery 和 SignalR core JavaScript 文件的引用
 
 JSONP 需要在客户端 （以支持旧版浏览器中的跨域请求） 上，它将需要通过设置显式启用`EnableJSONP`上`HubConfiguration`对象传递给`true`，如下所示。 JSONP 是默认禁用，因为它比 CORS 不太安全。
 
-**向项目添加 Microsoft.Owin.Cors:** 若要安装此库，包管理器控制台中运行以下命令：
+**向项目添加 Microsoft.Owin.Cors:** 若要安装此库，请在包管理器控制台中运行以下命令：
 
 `Install-Package Microsoft.Owin.Cors`
 
@@ -464,13 +465,13 @@ JSONP 需要在客户端 （以支持旧版浏览器中的跨域请求） 上，
 
 SignalR 提供了以下连接可以处理的生存期事件：
 
-- `starting`： 通过连接发送任何数据之前引发。
-- `received`： 在连接上接收到任何数据时引发。 提供接收到的数据。
-- `connectionSlow`： 当客户端检测到慢速或频繁删除连接时引发。
-- `reconnecting`： 基础传输开始重新连接时引发。
-- `reconnected`： 当基础传输已重新连接时引发。
-- `stateChanged`： 连接状态更改时引发。 提供的旧状态和新的状态 （连接、 已连接、 正在重新连接或已断开连接）。
-- `disconnected`： 当连接已断开连接时引发。
+- `starting`：通过连接发送任何数据之前引发。
+- `received`：在连接上接收到任何数据时引发。 提供接收到的数据。
+- `connectionSlow`：当客户端检测到慢速或频繁删除连接时引发。
+- `reconnecting`：基础传输开始重新连接时引发。
+- `reconnected`：当基础传输已重新连接时引发。
+- `stateChanged`：连接状态更改时引发。 提供的旧状态和新的状态 （连接、 已连接、 正在重新连接或已断开连接）。
+- `disconnected`：当连接已断开连接时引发。
 
 例如，如果你想要有可能会导致明显延迟的连接问题时显示警告消息，处理`connectionSlow`事件。
 
