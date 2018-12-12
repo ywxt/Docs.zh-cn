@@ -4,14 +4,14 @@ author: rick-anderson
 description: 了解如何在 Ubuntu 16.04 上将 Nginx 设置为反向代理，从而将 HTTP 流量转发到在 Kestrel 上运行的 ASP.NET Core Web 应用。
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/23/2018
+ms.date: 11/26/2018
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: d29a9287cbce27a54e779fadfa05e57febec0413
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: d4bffab80ba20d4cf77a358249c7b349033de5bd
+ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253112"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450783"
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>使用 Nginx 在 Linux 上托管 ASP.NET Core
 
@@ -186,7 +186,7 @@ server {
 
 测试应用完成后，请在命令提示符处按 `Ctrl+C` 关闭应用。
 
-## <a name="monitoring-the-app"></a>监视应用
+## <a name="monitor-the-app"></a>监视应用
 
 服务器设置为将对 `http://<serveraddress>:80` 发起的请求转接到在 `http://127.0.0.1:5000` 中的 Kestrel 上运行的 ASP.NET Core 应用。 但是，未将 Nginx 设置为管理 Kestrel 进程。 systemd 可用于创建服务文件以启动和监视基础 Web 应用。 systemd 是一个 init 系统，可以提供用于启动、停止和管理进程的许多强大的功能。 
 
@@ -268,7 +268,7 @@ Connection: Keep-Alive
 Transfer-Encoding: chunked
 ```
 
-### <a name="viewing-logs"></a>查看日志
+### <a name="view-logs"></a>查看日志
 
 使用 Kestrel 的 Web 应用是通过 `systemd` 进行管理的，因此所有事件和进程都被记录到集中日志。 但是，此日志包含由 `systemd` 管理的所有服务和进程的全部条目。 若要查看特定于 `kestrel-helloapp.service` 的项，请使用以下命令：
 
@@ -297,13 +297,13 @@ sudo journalctl -fu kestrel-helloapp.service --since "2016-10-18" --until "2016-
 * <xref:security/data-protection/implementation/key-storage-providers>
 * <xref:security/data-protection/implementation/key-encryption-at-rest>
 
-## <a name="securing-the-app"></a>保护应用
+## <a name="secure-the-app"></a>保护应用
 
 ### <a name="enable-apparmor"></a>启用 AppArmor
 
 Linux 安全模块 (LSM) 是一个框架，它是自 Linux 2.6 后的 Linux kernel 的一部分。 LSM 支持安全模块的不同实现。 [AppArmor](https://wiki.ubuntu.com/AppArmor) 是实现强制访问控制系统的 LSM，它允许将程序限制在一组有限的资源内。 确保已启用并成功配置 AppArmor。
 
-### <a name="configuring-the-firewall"></a>配置防火墙
+### <a name="configure-the-firewall"></a>配置防火墙
 
 关闭所有未使用的外部端口。 通过为配置防火墙提供命令行接口，不复杂的防火墙 (ufw) 为 `iptables` 提供了前端。
 
@@ -322,7 +322,7 @@ sudo ufw allow 443/tcp
 sudo ufw enable
 ```
 
-### <a name="securing-nginx"></a>保护 Nginx
+### <a name="secure-nginx"></a>保护 Nginx
 
 #### <a name="change-the-nginx-response-name"></a>更改 Nginx 响应名称
 
@@ -387,5 +387,6 @@ sudo nano /etc/nginx/nginx.conf
 
 * [Linux 上 .NET Core 的先决条件](/dotnet/core/linux-prerequisites)
 * [Nginx：二进制版本：官方 Debian/Ubuntu 包](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages)
-* [配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)
+* <xref:test/troubleshoot>
+* <xref:host-and-deploy/proxy-load-balancer>
 * [NGINX：使用转接头](https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/)
