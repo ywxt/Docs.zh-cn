@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/11/2018
 uid: getting-started
-ms.openlocfilehash: cf9e731f7638687b3f40b42864ef7ee8f5522b39
-ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
+ms.openlocfilehash: dc85fe9189c93476859a6c00d60ec24d6eeec3fa
+ms.sourcegitcommit: a16352c1c88a71770ab3922200a8cd148fb278a6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53284343"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53335307"
 ---
 # <a name="tutorial-get-started-with-aspnet-core"></a>教程：ASP.NET Core 入门
 
@@ -111,6 +111,3 @@ dotnet run
 
 > [!div class="nextstepaction"]
 > <xref:index>
-
-> [!NOTE]
-> 我们要测试所建议的新 ASP.NET Core 目录结构是否可用。 如果有几分钟时间尝试了解当前或所建议目录中的七个不同主题，请[单击此处参与调查](https://dpk4xbh5.optimalworkshop.com/treejack/aa11wn82)。
