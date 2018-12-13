@@ -4,14 +4,14 @@ author: guardrex
 description: 了解如何在 Windows Server Internet Information Services (IIS) 上托管 ASP.NET Core 应用。
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/01/2018
+ms.date: 12/11/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 5919fe66139260bace1c356c833abb132ba4b2e8
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: b71adcaad710ecfb7f81de0cc302f293d1728bec
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121747"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53288113"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>使用 IIS 在 Windows 上托管 ASP.NET Core
 
@@ -32,6 +32,14 @@ ms.locfileid: "53121747"
 [HTTP.sys 服务器](xref:fundamentals/servers/httpsys)（以前称为 [WebListener](xref:fundamentals/servers/weblistener)）在使用 IIS 的反向代理配置中不起作用。 请使用 [Kestrel 服务器](xref:fundamentals/servers/kestrel)。
 
 有关在 Azure 上托管的信息，请参阅<xref:host-and-deploy/azure-apps/index>。
+
+## <a name="supported-platforms"></a>受支持的平台
+
+支持针对 32 位 (x86) 和 64 位 (x64) 部署发布应用。 除非应用符合以下条件，否则部署 32 位应用：
+
+* 需要适用于 64 位应用的更大虚拟内存地址空间。
+* 需要更大 IIS 堆栈大小。
+* 具有 64 位本机依赖项。
 
 ## <a name="application-configuration"></a>应用程序配置
 
@@ -227,10 +235,10 @@ web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS
    ![在选择角色服务步骤中选择了默认角色服务。](index/_static/role-services-ws2016.png)
 
    **Windows 身份验证（可选）**  
-   若要启用 Windows 身份验证，请展开以下节点：“Web 服务器” > “安全”。 选择“Windows 身份验证”功能。 有关详细信息，请参阅 [Windows 身份验证 \<windowsAuthentication>](/iis/configuration/system.webServer/security/authentication/windowsAuthentication/) 和[配置 Windows 身份验证](xref:security/authentication/windowsauth)。
+   若要启用 Windows 身份验证，请依次展开以下节点：“Web 服务器” > “安全”。 选择“Windows 身份验证”功能。 有关详细信息，请参阅 [Windows 身份验证 \<windowsAuthentication>](/iis/configuration/system.webServer/security/authentication/windowsAuthentication/) 和[配置 Windows 身份验证](xref:security/authentication/windowsauth)。
 
    **Websocket（可选）**  
-   Websocket 支持 ASP.NET Core 1.1 或更高版本。 若要启用 Websocket，请展开以下节点：“Web 服务器” > “应用程序开发”。 选择“WebSocket 协议”功能。 有关详细信息，请参阅 [WebSockets](xref:fundamentals/websockets)。
+   Websocket 支持 ASP.NET Core 1.1 或更高版本。 若要启用 WebSocket，请依次展开以下节点：“Web 服务器” > “应用开发”。 选择“WebSocket 协议”功能。 有关详细信息，请参阅 [WebSockets](xref:fundamentals/websockets)。
 
 1. 继续执行“确认”步骤，安装 Web 服务器角色和服务。 安装 Web 服务器 (IIS) 角色后无需重启服务器/IIS。
 
@@ -249,10 +257,10 @@ web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS
 1. 接受“万维网服务”的默认功能，或自定义 IIS 功能。
 
    **Windows 身份验证（可选）**  
-   若要启用 Windows 身份验证，请展开以下节点：“万维网服务” > “安全”。 选择“Windows 身份验证”功能。 有关详细信息，请参阅 [Windows 身份验证 \<windowsAuthentication>](/iis/configuration/system.webServer/security/authentication/windowsAuthentication/) 和[配置 Windows 身份验证](xref:security/authentication/windowsauth)。
+   若要启用 Windows 身份验证，请依次展开以下节点：“万维网服务” > “安全”。 选择“Windows 身份验证”功能。 有关详细信息，请参阅 [Windows 身份验证 \<windowsAuthentication>](/iis/configuration/system.webServer/security/authentication/windowsAuthentication/) 和[配置 Windows 身份验证](xref:security/authentication/windowsauth)。
 
    **Websocket（可选）**  
-   Websocket 支持 ASP.NET Core 1.1 或更高版本。 若要启用 Websocket，请展开以下节点：“万维网服务” > “应用程序开发功能”。 选择“WebSocket 协议”功能。 有关详细信息，请参阅 [WebSockets](xref:fundamentals/websockets)。
+   Websocket 支持 ASP.NET Core 1.1 或更高版本。 若要启用 WebSocket，请依次展开以下节点：“万维网服务” > “应用开发功能”。 选择“WebSocket 协议”功能。 有关详细信息，请参阅 [WebSockets](xref:fundamentals/websockets)。
 
 1. 如果 IIS 安装需要重新启动，则重新启动系统。
 
@@ -330,7 +338,7 @@ web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS
 
     ASP.NET Core 在单独的进程中运行，并管理运行时。 ASP.NET Core 不依赖加载桌面 CLR。 将“.NET CLR 版本”设置为“无托管代码”为可选步骤。
 
-1. ASP.NET Core 2.2 或更高版本：对于使用[进程内托管模型](xref:fundamentals/servers/aspnet-core-module#in-process-hosting-model)的 64 位 (x64) [独立部署](/dotnet/core/deploying/#self-contained-deployments-scd)，请禁用 32 位 (x86) 进程的应用池。
+1. *ASP.NET Core 2.2 或更高版本*：对于使用[进程内托管模型](xref:fundamentals/servers/aspnet-core-module#in-process-hosting-model)的 64 位 (x64) [独立部署](/dotnet/core/deploying/#self-contained-deployments-scd)，为 32 位 (x86) 进程禁用应用池。
 
    在 IIS 管理员的“应用程序池”的“操作”侧栏中，选择“设置应用程序池默认设置”或“高级设置”。 找到“启用 32 位应用程序”并将值设置为 `False`。 此设置不会影响针对[进程外托管](xref:fundamentals/servers/aspnet-core-module#out-of-process-hosting-model)部署的应用。
 
@@ -404,7 +412,7 @@ web.config 文件可能会提供其他 IIS 配置设置，以控制活动的 IIS
 
   对于独立的非 Web 场 IIS 安装，可以对用于 ASP.NET Core 应用的每个应用池使用[数据保护 Provision-AutoGenKeys.ps1 PowerShell 脚本](https://github.com/aspnet/AspNetCore/blob/master/src/DataProtection/Provision-AutoGenKeys.ps1)。 此脚本在 HKLM 注册表中创建注册表项，仅应用程序的应用池工作进程帐户可对其进行访问。 通过计算机范围的密钥使用 DPAPI 对密钥静态加密。
 
-  在 web 场方案中，可以将应用配置为使用 UNC 路径存储其数据保护密钥环。 默认情况下，数据保护密钥未加密。 确保网络共享的文件权限仅限于应用在其下运行的 Windows 帐户。 可使用 X509 证书来保护静态密钥。 建议使用允许用户上传证书的机制：将证书放置在用户信任的证书存储中，并确保在运行用户应用的所有计算机上都可使用这些证书。 有关详细信息，请参阅[配置 ASP.NET Core 数据保护](xref:security/data-protection/configuration/overview)。
+  在 web 场方案中，可以将应用配置为使用 UNC 路径存储其数据保护密钥环。 默认情况下，数据保护密钥未加密。 确保网络共享的文件权限仅限于应用在其下运行的 Windows 帐户。 可使用 X509 证书来保护静态密钥。 考虑允许用户上传证书的机制：将证书置于用户信任的证书存储中，并确保这些证书对所有运行用户应用的计算机都可用。 有关详细信息，请参阅[配置 ASP.NET Core 数据保护](xref:security/data-protection/configuration/overview)。
 
 * **配置 IIS 应用程序池以加载用户配置文件**
 
@@ -542,11 +550,11 @@ IIS 管理进程使用 Windows 安全系统中应用池的名称创建安全标�
 
 1. 在“输入要选择的对象名称”区域中输入“IIS AppPool\\<app_pool_name>”。 选择“检查名称”按钮。 有关 DefaultAppPool，请检查使用 IIS AppPool\DefaultAppPool 的名称。 当选择“检查名称”按钮时，对象名称区域中会显示 DefaultAppPool 的值。 无法直接在对象名称区域中输入应用池名称。 检查对象名称时，请使用 IIS AppPool\\<app_pool_name> 格式。
 
-   ![选择应用文件夹的用户或组对话框：在选择“检查名称”之前，将“DefaultAppPool”的应用池名称追加到对象名称区域中的“IIS AppPool\"。](index/_static/select-users-or-groups-1.png)
+   ![应用文件夹的“选择用户或组”对话框：在选择“检查名称”前，将“DefaultAppPool”的应用池名称追加到对象名称区域中的“IIS AppPool”。](index/_static/select-users-or-groups-1.png)
 
 1. 选择“确定”。
 
-   ![选择应用文件夹的用户或组对话框：选择“检查名称”后，对象名称“DefaultAppPool”会显示在对象名称区域中。](index/_static/select-users-or-groups-2.png)
+   ![应用文件夹的“选择用户或组”对话框：在你选择“检查名称”后，对象名称“DefaultAppPool”显示在对象名称区域中。](index/_static/select-users-or-groups-2.png)
 
 1. 默认情况下应授予读取 &amp; 执行权限。 根据需要请提供其他权限。
 
