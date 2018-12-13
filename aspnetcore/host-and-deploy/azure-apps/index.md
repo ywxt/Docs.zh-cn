@@ -5,14 +5,14 @@ description: 本文包含 Azure 主机和部署资源的链接。
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/04/2018
+ms.date: 12/10/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: b32dd3cb84a86d12c61e391b88355ab0411c2815
-ms.sourcegitcommit: a3a15d3ad4d6e160a69614a29c03bbd50db110a2
+ms.openlocfilehash: b6ff2124aac7e866f630cf359cbd188e88906844
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52951961"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284690"
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>将 ASP.NET Core 应用部署到 Azure 应用服务
 
@@ -25,7 +25,7 @@ Azure 应用文档、教程、示例、操作指南和其他资源由 Azure [Web
 [快速入门：在 Azure 中创建 ASP.NET Core Web 应用](/azure/app-service/app-service-web-get-started-dotnet)  
 使用 Visual Studio 创建 ASP.NET Core Web 应用，并将其部署到 Windows 上的 Azure 应用服务。
 
-[快速入门：在 Linux 上的应用服务中创建 .NET Core Web 应用](/azure/app-service/containers/quickstart-dotnetcore)  
+[快速入门：在 Linux 应用服务中创建 .NET Core Web 应用](/azure/app-service/containers/quickstart-dotnetcore)  
 使用命令行创建 ASP.NET Core Web 应用，并将其部署到 Linux 上的 Azure 应用服务。
 
 ASP.NET Core 文档中提供以下文章：
@@ -83,6 +83,8 @@ Azure 门户中的应用设置允许为应用设置环境变量。 可以通过[
 配置转发头中间件的 IIS 集成中间件和 ASP.NET Core 模块将配置为转发方案 (HTTP/HTTPS) 和发出请求的远程 IP 地址。 对于托管在其他代理服务器和负载均衡器后方的应用，可能需要附加配置。 有关详细信息，请参阅[配置 ASP.NET Core 以使用代理服务器和负载均衡器](xref:host-and-deploy/proxy-load-balancer)。
 
 ## <a name="monitoring-and-logging"></a>监视和日志记录
+
+部署到应用服务的 ASP.NET Core 应用自动接收应用服务扩展“ASP.NET Core 日志记录扩展”。 此扩展启用 Azure 日志记录。
 
 有关监视、日志记录和故障排除的信息，请参阅以下文章：
 
@@ -211,13 +213,13 @@ Azure 门户中的应用设置允许为应用设置环境变量。 可以通过[
 
 ## <a name="protocol-settings-https"></a>协议设置 (HTTPS)
 
-借助安全的协议绑定，可在通过 HTTPS 响应请求时指定要使用的证书。 若要绑定，需要一个为特定主机名颁发的有效专用证书 (*.pfx*)。 有关详细信息，请参阅[将现有自定义 SSL 证书绑定到 Azure Web 应用](/azure/app-service/app-service-web-tutorial-custom-ssl)。
+借助安全的协议绑定，可在通过 HTTPS 响应请求时指定要使用的证书。 若要绑定，需要一个为特定主机名颁发的有效专用证书 (*.pfx*)。 有关详细信息，请参阅[教程：将现有自定义 SSL 证书绑定到 Azure Web 应用](/azure/app-service/app-service-web-tutorial-custom-ssl)。
 
 ## <a name="additional-resources"></a>其他资源
 
 * [Web 应用概述（5 分钟概述视频）](/azure/app-service/app-service-web-overview)
-* [Azure 应用服务：托管 .NET 应用的最佳位置（55 分钟概述视频）](https://channel9.msdn.com/events/dotnetConf/2017/T222)
-* [Azure Friday：Azure 应用服务诊断和故障排除体验（12 分钟视频）](https://channel9.msdn.com/Shows/Azure-Friday/Azure-App-Service-Diagnostic-and-Troubleshooting-Experience)
+* [Azure 应用服务：托管 .NET 应用的最佳位置（55 分钟概览视频）](https://channel9.msdn.com/events/dotnetConf/2017/T222)
+* [Azure Friday：Azure 应用服务诊断和疑难解答体验（12 分钟视频）](https://channel9.msdn.com/Shows/Azure-Friday/Azure-App-Service-Diagnostic-and-Troubleshooting-Experience)
 * [Azure 应用服务诊断概述](/azure/app-service/app-service-diagnostics)
 * <xref:host-and-deploy/web-farm>
 

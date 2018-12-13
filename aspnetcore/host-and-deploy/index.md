@@ -4,14 +4,14 @@ author: guardrex
 description: 了解如何设置托管环境和部署 ASP.NET Core 应用。
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/01/2018
+ms.date: 12/06/2018
 uid: host-and-deploy/index
-ms.openlocfilehash: 86022c33a3c5a8b82b14ae51b98c44497f39bd16
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: f443a8ee28a859b5075a8bb03016407af9a3ddb1
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52862442"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284521"
 ---
 # <a name="host-and-deploy-aspnet-core"></a>托管和部署 ASP.NET Core
 
@@ -72,7 +72,11 @@ ASP.NET Core 应用是一个控制台应用，在服务器启动时必须启动�
 
 ## <a name="publish-to-azure"></a>发布到 Azure
 
-有关如何使用 Visual Studio 将应用发布到 Azure 的说明，请参阅 <xref:tutorials/publish-to-azure-webapp-using-vs>。 还可以从[命令行](/azure/app-service/app-service-web-get-started-dotnet)将该应用发布到 Azure。
+有关如何使用 Visual Studio 将应用发布到 Azure 的说明，请参阅 <xref:tutorials/publish-to-azure-webapp-using-vs>。 [在 Azure 中创建 ASP.NET Core Web 应用](/azure/app-service/app-service-web-get-started-dotnet)提供了其他示例。
+
+## <a name="publish-with-msdeploy-on-windows"></a>在 Windows 中使用 MSDeploy 发布
+
+请参阅 <xref:host-and-deploy/visual-studio-publish-profiles>，了解如何使用 Visual Studio 发布配置文件发布应用，其中包括在 Windows 命令提示符处使用 [dotnet msbuild](/dotnet/core/tools/dotnet-msbuild) 命令。
 
 ## <a name="host-in-a-web-farm"></a>在 Web 场中托管
 

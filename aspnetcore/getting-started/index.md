@@ -4,14 +4,14 @@ author: rick-anderson
 description: 介绍如何使用 ASP.NET Core 创建并运行简单的 Hello World 应用的快速教程。
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/01/2018
+ms.date: 12/11/2018
 uid: getting-started
-ms.openlocfilehash: 29a328b610b0a6e1616cd6ebc70a8fa3e515eb92
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: cf9e731f7638687b3f40b42864ef7ee8f5522b39
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861701"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284343"
 ---
 # <a name="tutorial-get-started-with-aspnet-core"></a>教程：ASP.NET Core 入门
 
@@ -31,7 +31,7 @@ ms.locfileid: "52861701"
 
 ## <a name="prerequisites"></a>系统必备
 
-安装 [!INCLUDE [](~/includes/2.1-SDK.md)]。
+* [.NET Core 2.2 SDK](https://www.microsoft.com/net/download/all)
 
 ## <a name="create-a-web-app-project"></a>创建 Web 应用项目
 
@@ -91,11 +91,11 @@ dotnet run
 
 ## <a name="edit-a-razor-page"></a>编辑 Razor 页面
 
-打开 Pages/About.cshtml，使用以下突出显示标记修改该页面：
+打开 Pages/About.cshtml，并使用以下突出显示标记修改页面：
 
-[!code-cshtml[](sample/getting-started/about.cshtml?highlight=9)]
+[!code-cshtml[](sample/index.cshtml?highlight=9)]
 
-浏览到 [https://localhost:5001/About](https://localhost:5001/About) 并验证是否显示更改。
+转到 [https://localhost:5001](https://localhost:5001)，并验证更改是否显示。
 
 ## <a name="next-steps"></a>后续步骤
 
