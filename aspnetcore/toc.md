@@ -177,6 +177,7 @@
 ## 教程
 ### [JavaScript 和 SignalR](xref:tutorials/signalr)
 ### [TypeScript 和 SignalR](xref:tutorials/signalr-typescript-webpack)
+## [示例](https://github.com/aspnet/SignalR-samples)
 ## 服务器概念
 ### [中心](xref:signalr/hubs)
 ### [HubContext](xref:signalr/hubcontext)
@@ -402,6 +403,7 @@
 ### [分布式缓存](xref:performance/caching/distributed)
 ### [响应缓存中间件](xref:performance/caching/middleware)
 ## [响应压缩](xref:performance/response-compression)
+## [诊断工具](xref:performance/diagnostic-tools)
 
 # 其他主题
 ## [全球化和本地化](xref:fundamentals/localization)
