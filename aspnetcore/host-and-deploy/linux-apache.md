@@ -4,29 +4,29 @@ description: 了解如何在 CentOS 上将 Apache 设置为反向代理服务器
 author: spboyer
 ms.author: spboyer
 ms.custom: mvc
-ms.date: 11/26/2018
+ms.date: 12/01/2018
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: d0e36d0a73df43a26c03dc4154962240683817b5
-ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
+ms.openlocfilehash: 46cdb764b872e86f0fd7d19133aae14891bdd452
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52450809"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52862455"
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>使用 Apache 在 Linux 上托管 ASP.NET Core
 
 作者：[Shayne Boyer](https://github.com/spboyer)
 
-使用本指南，了解如何在 [CentOS 7](https://www.centos.org/) 上将 [Apache](https://httpd.apache.org/) 设置为反向代理服务器，以将 HTTP 流量重定向到在 [Kestrel](xref:fundamentals/servers/kestrel) 上运行的 ASP.NET Core Web 应用。 [mod_proxy extension](http://httpd.apache.org/docs/2.4/mod/mod_proxy.html) 和相关模块可创建服务器的反向代理。
+使用本指南，了解如何在 [CentOS 7](https://www.centos.org/) 上将 [Apache](https://httpd.apache.org/) 设置为反向代理服务器，以将 HTTP 流量重定向到在 [Kestrel](xref:fundamentals/servers/kestrel) 服务器上运行的 ASP.NET Core Web 应用。 [mod_proxy extension](http://httpd.apache.org/docs/2.4/mod/mod_proxy.html) 和相关模块可创建服务器的反向代理。
 
 ## <a name="prerequisites"></a>系统必备
 
-1. 运行 CentOS 7 的服务器，使用具有 sudo 特权的标准用户帐户。
-1. 在服务器上安装 .NET Core 运行时。
+* 运行 CentOS 7 的服务器，使用具有 sudo 特权的标准用户帐户。
+* 在服务器上安装 .NET Core 运行时。
    1. 访问 [.NET Core“所有下载”页](https://www.microsoft.com/net/download/all)。
    1. 从“运行时”下的列表中选择最新的非预览运行时。
    1. 选择并执行适用于 CentOS/Oracle 的说明。
-1. 一个现有 ASP.NET Core 应用。
+* 一个现有 ASP.NET Core 应用。
 
 ## <a name="publish-and-copy-over-the-app"></a>通过应用发布和复制
 

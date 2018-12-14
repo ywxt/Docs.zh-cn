@@ -1,17 +1,17 @@
 ---
 title: ASP.NET Core 模块
 author: guardrex
-description: 了解 ASP.NET Core 模块如何使 Kestrel Web 服务器将 IIS 或 IIS Express 用作反向代理服务器。
+description: 了解 ASP.NET Core 模块如何使 Kestrel Web 服务器可以使用 IIS 或 IIS Express。
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 09/21/2018
+ms.date: 11/30/2018
 uid: fundamentals/servers/aspnet-core-module
-ms.openlocfilehash: 39c1b364f9dab635c79e00561d212c858c0c4395
-ms.sourcegitcommit: 09affee3d234cb27ea6fe33bc113b79e68900d22
+ms.openlocfilehash: d3f3a42dd7aebc425905b865376a584bcf0e5153
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51191251"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861454"
 ---
 # <a name="aspnet-core-module"></a>ASP.NET Core 模块
 
@@ -36,7 +36,7 @@ ASP.NET Core 模块允许 ASP.NET Core 应用在采用反向代理配置的 IIS 
 
 ::: moniker range=">= aspnetcore-2.2"
 
-在进程内托管时，该模块具有其自己的服务器实现 `IISHttpServer`。
+正在进行托管时，该模块会使用 IIS 进程内服务器实现，即 IIS HTTP 服务器 (`IISHttpServer`)。
 
 在进程外托管时，该模块仅适用于 Kestrel。 该模块与 [HTTP.sys](xref:fundamentals/servers/httpsys)（以前称为 [WebListener](xref:fundamentals/servers/weblistener)）不兼容。
 
@@ -73,9 +73,9 @@ ASP.NET Core 模块：
 
 ![ASP.NET Core 模块](aspnet-core-module/_static/ancm-inprocess.png)
 
-请求从 Web 到达内核模式 HTTP.sys 驱动程序。 驱动程序将本机请求路由到网站的配置端口上的 IIS，通常为 80 (HTTP) 或 443 (HTTPS)。 该模块接收本机请求并将控制传递给 `IISHttpServer`，它是将请求从本机转换为托管的对象。
+请求从 Web 到达内核模式 HTTP.sys 驱动程序。 驱动程序将本机请求路由到网站的配置端口上的 IIS，通常为 80 (HTTP) 或 443 (HTTPS)。 该模块接收本机请求，并将它传递给 IIS HTTP 服务器 (`IISHttpServer`)。 IIS HTTP 服务器是将请求从本机转换为托管的 IIS 进程内服务器实现。
 
-`IISHttpServer` 获取请求后，请求会被推送到 ASP.NET Core 中间件管道中。 中间件管道处理该请求并将其作为 `HttpContext` 实例传递给应用的逻辑。 应用的响应传递回 IIS，IIS 将响应推送回发起请求的 HTTP 客户端。
+IIS HTTP 服务器处理请求之后，请求会被推送到 ASP.NET Core 中间件管道中。 中间件管道处理该请求并将其作为 `HttpContext` 实例传递给应用的逻辑。 应用的响应传递回 IIS，IIS 将响应推送回发起请求的客户端。
 
 ### <a name="out-of-process-hosting-model"></a>进程外托管模型
 

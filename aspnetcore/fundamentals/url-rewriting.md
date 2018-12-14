@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/19/2018
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 98787891a97e49081d72107484f030d216d82f45
-ms.sourcegitcommit: ad28d1bc6657a743d5c2fa8902f82740689733bb
+ms.openlocfilehash: 84052789717738a48c346d35d1a2642017a9ab93
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52256562"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861909"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>ASP.NET Core 中的 URL 重写中间件
 
@@ -203,14 +203,14 @@ public void Configure(IApplicationBuilder app)
 | --------------------------------- | :---: |
 | `/rewrite-rule/1234/5678`         | 是   |
 | `/my-cool-rewrite-rule/1234/5678` | 否    |
-| `/anotherrewrite-rule/1234/5678`  | 否    |
+| `/anotherrewrite-rule/1234/5678`  | No    |
 
 在表达式的 `^rewrite-rule/` 部分之后，有两个捕获组 `(\d+)/(\d+)`。 `\d` 表示与数字匹配。 加号 (`+`) 表示与前面的一个或多个字符匹配。 因此，URL 必须包含数字加正斜杠加另一个数字的形式。 这些捕获组以 `$1` 和 `$2` 的形式注入重写 URL 中。 重写规则替换字符串将捕获组放入查询字符串中。 重写 `/rewrite-rule/1234/5678` 的请求路径，获取 `/rewritten?var1=1234&var2=5678` 处的资源。 如果原始请求中存在查询字符串，则重写 URL 时会保留此字符串。
 
 无需往返服务器来获取资源。 如果资源存在，系统会提取资源并以“200（正常）”状态代码返回给客户端。 因为客户端不会被重定向，所以浏览器地址栏中的 URL 不会发生更改。 客户端无法检测到服务器上发生的 URL 重写操作。
 
 > [!NOTE]
-> 尽可能使用 `skipRemainingRules: true`，因为匹配规则在计算上很昂贵并且减少了应用程序响应时间。 对于最快的应用响应：
+> 尽可能使用 `skipRemainingRules: true`，因为匹配规则在计算上很昂贵并且增加了应用响应时间。 对于最快的应用响应：
 >
 > * 按照从最频繁匹配的规则到最不频繁匹配的规则排列重写规则。
 > * 如果出现匹配项且无需处理任何其他规则，则跳过剩余规则的处理。

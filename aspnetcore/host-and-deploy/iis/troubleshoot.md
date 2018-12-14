@@ -4,14 +4,14 @@ author: guardrex
 description: 了解如何诊断 ASP.NET Core 应用的 Internet Information Services (IIS) 部署的问题。
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/26/2018
+ms.date: 12/06/2018
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: 2ff870623de43676be38c5de8f338a7913e885a8
-ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
+ms.openlocfilehash: 6d43057639ea88bb21ac66f2799062e06fffc530
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52450705"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121682"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>对 IIS 上的 ASP.NET Core 进行故障排除
 
@@ -92,6 +92,26 @@ ASP.NET Core 模块无法找到进程外托管请求处理程序。 请确保 as
 
 在启动期间或在创建响应时，应用的代码内出现此错误。 响应可能不包含任何内容，或响应可能会在浏览器中显示为“500 内部服务器错误”。 应用程序事件日志通常表明应用正常启动。 从服务器的角度来看，这是正确的。 应用已启动，但无法生成有效的响应。 在服务器上[在命令提示符处运行应用](#run-the-app-at-a-command-prompt)或[启用 ASP.NET Core 模块 stdout 日志](#aspnet-core-module-stdout-log)以解决该问题。
 
+### <a name="failed-to-start-application-errorcode-0x800700c1"></a>未能启动应用程序（错误代码“0x800700c1”）
+
+```
+EventID: 1010
+Source: IIS AspNetCore Module V2
+Failed to start application '/LM/W3SVC/6/ROOT/', ErrorCode '0x800700c1'.
+```
+
+应用未能启动，因为应用的程序集 (.dll) 无法加载。
+
+当已发布的应用与 w3wp/iisexpress 进程之间的位数不匹配时，会出现此错误。
+
+确认应用池的 32 位设置正确：
+
+1. 在 IIS 管理器的“应用程序池”中选择应用池。
+1. 在“操作”面板中的“编辑应用程序池”下选择“高级设置”。
+1. 设置“启用 32 位应用程序”：
+   * 如果部署 32 位 (x86) 应用，则将值设置为 `True`。
+   * 如果部署 64 位 (x64) 应用，则将值设置为 `False`。
+
 ### <a name="connection-reset"></a>连接重置
 
 如果在发送标头后出现错误，则服务器在出现错误时发送“500 内部服务器错误”已经太晚了。 通常在序列化响应的复杂对象期间出现错误时发生这种情况。 此类型的错误在客户端上显示为“连接重置”错误。 [应用程序日志记录](xref:fundamentals/logging/index)可以帮助解决这些类型的错误。
@@ -101,6 +121,21 @@ ASP.NET Core 模块无法找到进程外托管请求处理程序。 请确保 as
 ASP.NET Core 模块的默认“startupTimeLimit”配置为 120 秒。 保留默认值时，在模块记录进程故障之前，可能最多需要两分钟来启动应用。 有关配置模块的信息，请参阅 [aspNetCore 元素的属性](xref:host-and-deploy/aspnet-core-module#attributes-of-the-aspnetcore-element)。
 
 ## <a name="troubleshoot-app-startup-errors"></a>解决应用启动错误
+
+### <a name="enable-the-aspnet-core-module-debug-log"></a>启用 ASP.NET Core 模块调试日志
+
+将以下处理程序设置添加到应用的 web.config 文件以启用 ASP.NET Core 模块调试日志：
+
+```xml
+<aspNetCore ...>
+  <handlerSettings>
+    <handlerSetting name="debugLevel" value="file" />
+    <handlerSetting name="debugFile" value="c:\temp\ancm.log" />
+  </handlerSettings>
+</aspNetCore>
+```
+
+确认为日志指定的路径存在，并且应用池的标识具有该位置的写入权限。
 
 ### <a name="application-event-log"></a>应用程序事件日志
 
@@ -121,7 +156,7 @@ ASP.NET Core 模块的默认“startupTimeLimit”配置为 120 秒。 保留默
 
 1. 在命令提示符处，导航到部署文件夹并通过使用 dotnet.exe 执行应用的程序集来运行应用。 在以下命令中，替换 \<assembly_name> 的应用程序集的名称：`dotnet .\<assembly_name>.dll`。
 1. 来自应用且显示任何错误的控制台输出将写入控制台窗口。
-1. 如果向应用发出请求时出现错误，请向 Kestrel 侦听所在的主机和端口发出请求。 如果使用默认主机和端口，请向 `http://localhost:5000/` 发出请求。 如果应用在 Kestrel 终结点地址处正常响应，则问题更可能与反向代理配置相关，而不太可能在于应用。
+1. 如果向应用发出请求时出现错误，请向 Kestrel 侦听所在的主机和端口发出请求。 如果使用默认主机和端口，请向 `http://localhost:5000/` 发出请求。 如果应用在 Kestrel 终结点地址处正常响应，则问题更可能与承载配置相关，而不太可能在于应用。
 
 #### <a name="self-contained-deployment"></a>独立部署
 
@@ -129,7 +164,7 @@ ASP.NET Core 模块的默认“startupTimeLimit”配置为 120 秒。 保留默
 
 1. 在命令提示符处，导航到部署文件夹并运行应用的可执行文件。 在以下命令中，替换 \<assembly_name> 的应用程序集的名称：`<assembly_name>.exe`。
 1. 来自应用且显示任何错误的控制台输出将写入控制台窗口。
-1. 如果向应用发出请求时出现错误，请向 Kestrel 侦听所在的主机和端口发出请求。 如果使用默认主机和端口，请向 `http://localhost:5000/` 发出请求。 如果应用在 Kestrel 终结点地址处正常响应，则问题更可能与反向代理配置相关，而不太可能在于应用。
+1. 如果向应用发出请求时出现错误，请向 Kestrel 侦听所在的主机和端口发出请求。 如果使用默认主机和端口，请向 `http://localhost:5000/` 发出请求。 如果应用在 Kestrel 终结点地址处正常响应，则问题更可能与承载配置相关，而不太可能在于应用。
 
 ### <a name="aspnet-core-module-stdout-log"></a>ASP.NET Core 模块 stdout 日志
 
@@ -167,7 +202,7 @@ ASP.NET Core 模块的默认“startupTimeLimit”配置为 120 秒。 保留默
       arguments=".\MyApp.dll"
       stdoutLogEnabled="false"
       stdoutLogFile=".\logs\stdout"
-      hostingModel="inprocess">
+      hostingModel="InProcess">
   <environmentVariables>
     <environmentVariable name="ASPNETCORE_ENVIRONMENT" value="Development" />
   </environmentVariables>

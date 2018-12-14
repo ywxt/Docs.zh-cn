@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/15/2018
 uid: mvc/controllers/filters
-ms.openlocfilehash: e5305852fad058961661373f9310d6dcaf30aa16
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: d25976af860ed8733c0548a4102e0095969b2ba6
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253190"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861844"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core 中的筛选器
 
@@ -252,7 +252,8 @@ System.InvalidOperationException: No service for type
 
 ## <a name="authorization-filters"></a>授权筛选器
 
-*授权筛选器：
+授权筛选器：
+
 * 控制对操作方法的访问。
 * 是筛选器管道中要执行的第一个筛选器。 
 * 具有在它之前的执行的方法，但没有之后执行的方法。 
