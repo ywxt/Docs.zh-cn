@@ -267,7 +267,7 @@ dotnet new angular
   * 不包括源映射。
   * 可优化通过捆绑和缩小客户端代码。
 
-ASP.NET Core 使用名为的环境变量`ASPNETCORE_ENVIRONMENT`来存储配置模式。 请参阅**[将环境设置](xref:fundamentals/environments#set-the-environment)** 有关详细信息。
+ASP.NET Core 使用名为的环境变量`ASPNETCORE_ENVIRONMENT`来存储配置模式。 请参阅 **[将环境设置](xref:fundamentals/environments#set-the-environment)** 有关详细信息。
 
 ### <a name="running-with-net-core-cli"></a>运行使用.NET Core CLI
 

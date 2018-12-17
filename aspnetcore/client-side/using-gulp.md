@@ -187,7 +187,7 @@ gulp.task("default", gulp.series(["min"]));
 
     **任务运行程序资源管理器**将创建名为“clean”的新选项卡，并根据 *gulpfile.js* 中的定义执行 clean 任务。
 
-5.  右键单击“clean”任务，然后选择“绑定”>“生成之前” > **。
+5.  右键单击“clean”任务，然后选择“绑定”>“生成之前” > 。
 
     ![绑定 BeforeBuild 任务运行程序资源管理器](using-gulp/_static/05-TaskRunner-BeforeBuild.png)
 

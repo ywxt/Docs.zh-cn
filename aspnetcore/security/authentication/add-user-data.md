@@ -60,8 +60,8 @@ dotnet new webapp -o WebApp1
   * 选择要重写的以下文件：
     * **帐户/注册**
     * **帐户/管理/索引**
-  * 选择**+** 按钮以创建一个新**数据上下文类**。 接受的类型 (**WebApp1.Models.WebApp1Context**如果项目命名为**WebApp1**)。
-  * 选择**+** 按钮以创建一个新**User 类**。 接受的类型 (**WebApp1User**如果项目命名为**WebApp1**) >**添加**。
+  * 选择 **+** 按钮以创建一个新**数据上下文类**。 接受的类型 (**WebApp1.Models.WebApp1Context**如果项目命名为**WebApp1**)。
+  * 选择 **+** 按钮以创建一个新**User 类**。 接受的类型 (**WebApp1User**如果项目命名为**WebApp1**) >**添加**。
 * 选择**添加**。
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
