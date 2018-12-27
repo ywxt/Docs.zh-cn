@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 04/25/2018
 uid: signalr/introduction
-ms.openlocfilehash: 2fff24609caf7592bad763a077288990a29617aa
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: da18837c690d2182589db5f486ae74e537ade931
+ms.sourcegitcommit: 6548c19f345850ee22b50f7ef9fca732895d9e08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342544"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53425141"
 ---
 # <a name="introduction-to-aspnet-core-signalr"></a>ASP.NET Core SignalR 简介
 
@@ -36,7 +36,7 @@ SignalR 提供了一个用于创建服务器到客户端[远程过程调用（RP
 * 将消息发送到特定的客户端或客户端组。
 * 扩展以处理增加的流量。
 
-源代码托管在 [GitHub 上的 SignalR 存储库](https://github.com/aspnet/signalr)中。
+源代码托管在 [GitHub 上的 SignalR 存储库](https://github.com/aspnet/AspNetCore/tree/master/src/SignalR)中。
 
 ## <a name="transports"></a>传输
 
