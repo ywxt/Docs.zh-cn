@@ -15,7 +15,7 @@ ms.locfileid: "53284340"
 ---
 # <a name="tools-and-downloads"></a>工具和下载
 
-Azure 具有多个用于配置和管理资源的界面，例如 [Azure 门户](https://portal.azure.com)、[Azure CLI](/cli/azure/)、[Azure PowerShell](/powershell/azure/overview)、[ Azure Cloud Shell](https://shell.azure.com/bash)和 Visual Studio。本指南采用极简主义方法，并尽可能使用 Azure Cloud Shell 来减少所需的步骤。但是，对于某些部分必须使用 Azure 门户。
+Azure 具有多个用于配置和管理资源的界面，例如 [Azure 门户](https://portal.azure.com)、[Azure CLI](/cli/azure/)、[Azure PowerShell](/powershell/azure/overview)、[ Azure Cloud Shell](https://shell.azure.com/bash)和 Visual Studio。 本指南采用极简主义方法，并尽可能使用 Azure Cloud Shell 来减少所需的步骤。 但是，对于某些部分必须使用 Azure 门户。
 
 ## <a name="prerequisites"></a>系统必备
 
@@ -27,12 +27,10 @@ Azure 具有多个用于配置和管理资源的界面，例如 [Azure 门户](h
 
 以下工具是必需的：
 
-* [Git](https://git-scm.com/downloads) &mdash; 本指南建议应对 Git 有基本的了解。请查看 [Git 文档](https://git-scm.com/doc)，特别是 [git remote](https://git-scm.com/docs/git-remote) 和 [git push](https://git-scm.com/docs/git-push)。
-* [.NET core SDK](https://www.microsoft.com/net/download/) &mdash; 2.1.300 或更高版本是构建和运行示例应用的必需条件。 如果 Visual Studio 安装了“.NET Core 跨平台开发”工作负荷，则表示已安装了 .NET Core SDK。
-* [.NET core SDK](https://www.microsoft.com/net/download/) &mdash; 2.1.300或更高版本是构建和运行示例应用程序所必需的。 如果 Visual Studio 安装了 **.NET Core跨平台开发**工作负载，则已安装.NET Core SDK。
+* [Git](https://git-scm.com/downloads) &mdash;本指南中建议的 Git 基本的了解。 审阅[Git 文档](https://git-scm.com/doc)，具体而言[的 git remote](https://git-scm.com/docs/git-remote)并[git 推送](https://git-scm.com/docs/git-push)。
+* [.NET core SDK](https://www.microsoft.com/net/download/) &mdash; 2.1.300 版本或更高版本需要生成并运行示例应用程序。 如果使用安装了 Visual Studio **.NET Core 跨平台开发**已安装工作负荷中，.NET Core SDK。
 
-    验证 .NET Core SDK 安装。打开命令外壳，并运行以下命令：
-
+    验证 .NET Core SDK 安装。 打开命令外壳，并运行以下命令：
 
     ```console
     dotnet --version
@@ -40,7 +38,7 @@ Azure 具有多个用于配置和管理资源的界面，例如 [Azure 门户](h
 
 ## <a name="recommended-tools-windows-only"></a>建议的工具 (仅 Windows)
 
-* Visual Studio](https://www.visualstudio.com/) 可靠的 Azure 工具为本指南中描述的大多数功能提供了GUI。任何版本的 Visual Studio 都可以使用，包括免费的 Visual Studio Community Edition。编写本教程是为了演示在使用和不使用 Visual Studio 的情况下进行开发，部署和 DevOps。
+* [Visual Studio](https://www.visualstudio.com/) 可靠的 Azure 工具为本指南中描述的大多数功能提供了GUI。 任何版本的 Visual Studio 都可以使用，包括免费的 Visual Studio Community Edition。 编写本教程是为了演示在使用和不使用 Visual Studio 的情况下进行开发，部署和 DevOps。
 
   确认 Visual Studio 具有以下[工作负荷](/visualstudio/install/modify-visual-studio)安装：
 
