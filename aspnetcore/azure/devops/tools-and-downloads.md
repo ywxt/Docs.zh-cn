@@ -27,8 +27,8 @@ Azure 具有多个用于配置和管理资源的界面，例如 [Azure 门户](h
 
 以下工具是必需的：
 
-* [Git](https://git-scm.com/downloads) &mdash;本指南中建议的 Git 基本的了解。 审阅[Git 文档](https://git-scm.com/doc)，具体而言[的 git remote](https://git-scm.com/docs/git-remote)并[git 推送](https://git-scm.com/docs/git-push)。
-* [.NET core SDK](https://www.microsoft.com/net/download/) &mdash; 2.1.300 版本或更高版本需要生成并运行示例应用程序。 如果使用安装了 Visual Studio **.NET Core 跨平台开发**已安装工作负荷中，.NET Core SDK。
+* [Git](https://git-scm.com/downloads) &mdash; 本指南建议应对 Git 有基本的了解。 请查看 [Git 文档](https://git-scm.com/doc)，特别是[git remote](https://git-scm.com/docs/git-remote) 和 [git push](https://git-scm.com/docs/git-push)。
+* [.NET core SDK](https://www.microsoft.com/net/download/) &mdash; 2.1.300 或更高版本是构建和运行示例应用的必需条件。 如果 Visual Studio 安装了“.NET Core 跨平台开发”工作负荷，则表示已安装了 .NET Core SDK。
 
     验证 .NET Core SDK 安装。 打开命令外壳，并运行以下命令：
 
