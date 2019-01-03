@@ -11,11 +11,7 @@
 ### [使用 MongoDB 创建 Web API](xref:tutorials/first-mongo-app)
 ## Web 应用
 ### [Razor 页面](xref:tutorials/razor-pages/index)
-
-### MVC
-#### [使用 Visual Studio](xref:tutorials/first-mvc-app/index)
-#### [使用 Visual Studio Code](xref:tutorials/first-mvc-app-xplat/index)
-#### [使用 Visual Studio for Mac](xref:tutorials/first-mvc-app-mac/index)
+### [MVC](xref:tutorials/first-mvc-app/index)
 
 ## 实时 web 应用
 ### [JavaScript 和 SignalR](xref:tutorials/signalr)
@@ -46,11 +42,7 @@
 ### [概述](xref:fundamentals/host/index)
 ### [Web 主机](xref:fundamentals/host/web-host)
 ### [通用主机](xref:fundamentals/host/generic-host)
-## 服务器
-### [概述](xref:fundamentals/servers/index)
-### [Kestrel](xref:fundamentals/servers/kestrel)
-### [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)
-### [HTTP.sys](xref:fundamentals/servers/httpsys)
+## [服务器](xref:fundamentals/servers/index)
 ## [启动 HTTP 请求](xref:fundamentals/http-requests)
 
 # Web 应用
@@ -66,50 +58,26 @@
 #### [添加新字段](xref:tutorials/razor-pages/new-field)
 #### [添加验证](xref:tutorials/razor-pages/validation)
 
+## MVC
+### [MVC 概述](xref:mvc/overview)
+### [MVC 教程](xref:tutorials/first-mvc-app/index)
+#### [入门](xref:tutorials/first-mvc-app/start-mvc)
+#### [添加控制器](xref:tutorials/first-mvc-app/adding-controller)
+#### [添加视图](xref:tutorials/first-mvc-app/adding-view)
+#### [添加模型](xref:tutorials/first-mvc-app/adding-model)
+#### [使用 DB](xref:tutorials/first-mvc-app/working-with-sql)
+#### [控制器操作和视图](xref:tutorials/first-mvc-app/controller-methods-views)
+#### [添加搜索](xref:tutorials/first-mvc-app/search)
+#### [添加新字段](xref:tutorials/first-mvc-app/new-field)
+#### [添加验证](xref:tutorials/first-mvc-app/validation)
+#### [检查 Details 和 Delete 方法](xref:tutorials/first-mvc-app/details)
+
 ### [筛选器](xref:razor-pages/filter)
 ### [Razor 类库](xref:razor-pages/ui-class)
 ### [路由和应用约定](xref:razor-pages/razor-pages-conventions)
 ### [上载文件](xref:razor-pages/upload-files)
 ### [Razor SDK](xref:razor-pages/sdk)
-## MVC
-### [概述](xref:mvc/overview)
-### 教程
-#### MVC 和 Visual Studio
-##### [概述](xref:tutorials/first-mvc-app/index)
-##### [入门](xref:tutorials/first-mvc-app/start-mvc)
-##### [添加控制器](xref:tutorials/first-mvc-app/adding-controller)
-##### [添加视图](xref:tutorials/first-mvc-app/adding-view)
-##### [添加模型](xref:tutorials/first-mvc-app/adding-model)
-##### [使用 DB](xref:tutorials/first-mvc-app/working-with-sql)
-##### [控制器操作和视图](xref:tutorials/first-mvc-app/controller-methods-views)
-##### [添加搜索](xref:tutorials/first-mvc-app/search)
-##### [添加新字段](xref:tutorials/first-mvc-app/new-field)
-##### [添加验证](xref:tutorials/first-mvc-app/validation)
-##### [检查 Details 和 Delete 方法](xref:tutorials/first-mvc-app/details)
-#### MVC 和 Visual Studio Code
-##### [概述](xref:tutorials/first-mvc-app-xplat/index)
-##### [入门](xref:tutorials/first-mvc-app-xplat/start-mvc)
-##### [添加控制器](xref:tutorials/first-mvc-app-xplat/adding-controller)
-##### [添加视图](xref:tutorials/first-mvc-app-xplat/adding-view)
-##### [添加模型](xref:tutorials/first-mvc-app-xplat/adding-model)
-##### [使用 SQLite](xref:tutorials/first-mvc-app-xplat/working-with-sql)
-##### [控制器方法和视图](xref:tutorials/first-mvc-app-xplat/controller-methods-views)
-##### [添加搜索](xref:tutorials/first-mvc-app-xplat/search)
-##### [添加新字段](xref:tutorials/first-mvc-app-xplat/new-field)
-##### [添加验证](xref:tutorials/first-mvc-app-xplat/validation)
-##### [检查 Details 和 Delete 方法](xref:tutorials/first-mvc-app/details)
-#### MVC 和 Visual Studio for Mac
-##### [概述](xref:tutorials/first-mvc-app-mac/index)
-##### [入门](xref:tutorials/first-mvc-app-mac/start-mvc)
-##### [添加控制器](xref:tutorials/first-mvc-app-mac/adding-controller)
-##### [添加视图](xref:tutorials/first-mvc-app-mac/adding-view)
-##### [添加模型](xref:tutorials/first-mvc-app-mac/adding-model)
-##### [使用 SQLite](xref:tutorials/first-mvc-app-mac/working-with-sql)
-##### [控制器方法和视图](xref:tutorials/first-mvc-app-mac/controller-methods-views)
-##### [添加搜索](xref:tutorials/first-mvc-app-mac/search)
-##### [添加新字段](xref:tutorials/first-mvc-app-mac/new-field)
-##### [添加验证](xref:tutorials/first-mvc-app-mac/validation)
-##### [检查 Details 和 Delete 方法](xref:tutorials/first-mvc-app/details)
+
 ### [视图](xref:mvc/views/overview)
 ### [部分视图](xref:mvc/views/partial)
 ### [控制器](xref:mvc/controllers/actions)
@@ -284,9 +252,11 @@
 ## 使用 IIS 在 Windows 上进行托管
 ### [概述](xref:host-and-deploy/iis/index)
 ### [IIS 疑难解答](xref:host-and-deploy/iis/troubleshoot)
-### [ASP.NET Core 模块参考](xref:host-and-deploy/aspnet-core-module)
+### [ASP.NET Core 模块](xref:host-and-deploy/aspnet-core-module)
 ### [Visual Studio 中的 IIS 支持](xref:host-and-deploy/iis/development-time-iis-support)
 ### [IIS 模块](xref:host-and-deploy/iis/modules)
+## [Kestrel](xref:fundamentals/servers/kestrel)
+## [HTTP.sys](xref:fundamentals/servers/httpsys)
 ## [在 Windows 服务中进行托管](xref:host-and-deploy/windows-service)
 ## [在 Linux 上使用 Nginx 进行托管](xref:host-and-deploy/linux-nginx)
 ## [在 Linux 上使用 Apache 进行托管](xref:host-and-deploy/linux-apache)
