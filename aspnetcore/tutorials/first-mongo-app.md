@@ -3,15 +3,15 @@ title: 使用 ASP.NET Core 和 MongoDB 构建 Web API
 author: prkhandelwal
 description: 本教程演示如何使用 MongoDB NoSQL 数据库构建 ASP.NET Core Web API。
 ms.author: scaddie
-ms.custom: mvc,seodec18
+ms.custom: mvc, seodec18
 ms.date: 11/29/2018
 uid: tutorials/first-mongo-app
-ms.openlocfilehash: df3b8656618c813838d6618efc9394f0ccb6e563
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: bd9a36c5eb06542c820e71e937b8da10f735a0f8
+ms.sourcegitcommit: 68a3081dd175d6518d1bfa31b4712bd8a2dd3864
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121474"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53577833"
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-mongodb"></a>使用 ASP.NET Core 和 MongoDB 创建 Web API
 
@@ -34,7 +34,7 @@ ms.locfileid: "53121474"
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 * [.NET Core SDK 2.2 或更高版本](https://www.microsoft.com/net/download/all)
-* 已安装“ASP.NET 和 Web 开发”工作负载的 [Visual Studio 2017 版本 15.9 或更高版本](https://www.visualstudio.com/downloads/)
+* 已安装“ASP.NET 和 Web 开发”工作负载的 [Visual Studio 2017 版本 15.9 或更高版本](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 * [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/)
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)

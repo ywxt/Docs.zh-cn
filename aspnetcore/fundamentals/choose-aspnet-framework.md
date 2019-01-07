@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: seodec18
 ms.date: 09/11/2018
 uid: fundamentals/choose-between-aspnet-and-aspnetcore
-ms.openlocfilehash: b75fbea330e48075c4a2789454e973d4c56ffa53
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: eb216bdac7dd029c3d985f2edd9e70eb91f42883
+ms.sourcegitcommit: a16352c1c88a71770ab3922200a8cd148fb278a6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121175"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53335334"
 ---
 # <a name="choose-between-aspnet-4x-and-aspnet-core"></a>在 ASP.NET 4.x 和 ASP.NET Core 之间进行选择
 
@@ -62,6 +62,3 @@ ASP.NET 4.x 是一个成熟的框架，提供在 Windows 上生成基于服务�
 * [ASP.NET 简介](/aspnet/overview)
 * [ASP.NET Core 简介](xref:index)
 * <xref:host-and-deploy/azure-apps/index>
-
-> [!NOTE]
-> 我们要测试所建议的新的 ASP.NET Core 目录结构是否可用。  如果你有几分钟时间进行练习，来了解当前目录或所建议目录中的 7 个不同主题，请[单击此处来参与调查](https://dpk4xbh5.optimalworkshop.com/treejack/aa11wn82)。
