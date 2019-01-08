@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/28/2018
 uid: signalr/redis-backplane
-ms.openlocfilehash: 343cb5b2c7ed7162bae7865553a783fea45f0cfb
-ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
+ms.openlocfilehash: fde7f08ae2310b0b9bf9b7fe25a1dfc4a568adb6
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53284461"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54099350"
 ---
 # <a name="set-up-a-redis-backplane-for-aspnet-core-signalr-scale-out"></a>设置 ASP.NET Core SignalR 横向扩展 Redis 底板
 
@@ -24,7 +24,10 @@ ms.locfileid: "53284461"
 
 * 部署 Redis 服务器。
 
-  对于生产用途，Redis 底板建议仅用于在本地基础结构。 若要最小化滞后时间，Redis 服务器应是 SignalR 应用程序所在的同一数据中心。 如果您的 SignalR 应用程序运行在 Azure 云中，我们将建议 Azure SignalR 服务而不是 Redis 底板。 可以使用 Azure Redis 缓存服务进行开发和测试环境。 有关更多信息，请参见以下资源：
+  > [!IMPORTANT] 
+  > 对于生产用途，Redis 底板时，建议仅在与 SignalR 应用位于同一数据中心中运行。 否则，网络延迟会降低性能。 如果您的 SignalR 应用程序运行在 Azure 云中，我们将建议 Azure SignalR 服务而不是 Redis 底板。 可以使用 Azure Redis 缓存服务进行开发和测试环境。
+
+  有关更多信息，请参见以下资源：
 
   * <xref:signalr/scale>
   * [Redis 文档](https://redis.io/)
