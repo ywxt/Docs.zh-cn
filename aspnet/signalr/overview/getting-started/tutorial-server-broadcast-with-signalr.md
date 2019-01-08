@@ -1,413 +1,503 @@
 ---
 uid: signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
-title: 教程：使用 signalr 2 实现服务器广播 |Microsoft Docs
+title: 教程：服务器广播 SignalR 2 |Microsoft Docs
 author: tdykstra
-description: 本教程演示如何创建使用 ASP.NET SignalR 2 来提供服务器广播的功能的 web 应用程序。 服务器广播意味着该 commun...
+description: 本教程演示如何创建使用 ASP.NET SignalR 2 来提供服务器广播的功能的 web 应用程序。
 ms.author: riande
-ms.date: 10/13/2014
+ms.date: 01/02/2019
+ms.topic: tutorial
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: ad2eee8742d5bc45dc2bdc90f76736b4dc94d14b
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: a6014e604613492db91b2dc6f846c3c73d938d99
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53288003"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54099294"
 ---
-<a name="tutorial-server-broadcast-with-signalr-2"></a><span data-ttu-id="32bde-104">教程：使用 signalr 2 实现服务器广播</span><span class="sxs-lookup"><span data-stu-id="32bde-104">Tutorial: Server Broadcast with SignalR 2</span></span>
-====================
-<span data-ttu-id="32bde-105">通过[Tom Dykstra](https://github.com/tdykstra)， [Tom FitzMacken](https://github.com/tfitzmac)</span><span class="sxs-lookup"><span data-stu-id="32bde-105">by [Tom Dykstra](https://github.com/tdykstra), [Tom FitzMacken](https://github.com/tfitzmac)</span></span>
+# <a name="tutorial-server-broadcast-with-signalr-2"></a><span data-ttu-id="4a7bf-103">教程：使用 SignalR 2 广播的服务器</span><span class="sxs-lookup"><span data-stu-id="4a7bf-103">Tutorial: Server broadcast with SignalR 2</span></span>
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-> <span data-ttu-id="32bde-106">本教程演示如何创建使用 ASP.NET SignalR 2 来提供服务器广播的功能的 web 应用程序。</span><span class="sxs-lookup"><span data-stu-id="32bde-106">This tutorial shows how to create a web application that uses ASP.NET SignalR 2 to provide server broadcast functionality.</span></span> <span data-ttu-id="32bde-107">服务器广播意味着发送到客户端的通信由服务器启动。</span><span class="sxs-lookup"><span data-stu-id="32bde-107">Server broadcast means that communications sent to clients are initiated by the server.</span></span> <span data-ttu-id="32bde-108">这种情况要求不同的编程方式对等方案，例如聊天应用程序，在其中发送到客户端的通信都是由一个或多个客户端。</span><span class="sxs-lookup"><span data-stu-id="32bde-108">This scenario requires a different programming approach than peer-to-peer scenarios such as chat applications, in which communications sent to clients are initiated by one or more of the clients.</span></span>
->
-> <span data-ttu-id="32bde-109">你将在本教程中创建的应用程序模拟股票行情服务器广播功能的典型方案。</span><span class="sxs-lookup"><span data-stu-id="32bde-109">The application that you'll create in this tutorial simulates a stock ticker, a typical scenario for server broadcast functionality.</span></span>
->
-> <span data-ttu-id="32bde-110">本主题是最初编写的 Patrick Fletcher。</span><span class="sxs-lookup"><span data-stu-id="32bde-110">This topic was originally written by Patrick Fletcher.</span></span>
->
-> ## <a name="software-versions-used-in-the-tutorial"></a><span data-ttu-id="32bde-111">在本教程中使用的软件版本</span><span class="sxs-lookup"><span data-stu-id="32bde-111">Software versions used in the tutorial</span></span>
->
->
-> - [<span data-ttu-id="32bde-112">Visual Studio 2013</span><span class="sxs-lookup"><span data-stu-id="32bde-112">Visual Studio 2013</span></span>](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
-> - <span data-ttu-id="32bde-113">.NET 4.5</span><span class="sxs-lookup"><span data-stu-id="32bde-113">.NET 4.5</span></span>
-> - <span data-ttu-id="32bde-114">SignalR 版本 2</span><span class="sxs-lookup"><span data-stu-id="32bde-114">SignalR version 2</span></span>
->
->
->
-> ## <a name="using-visual-studio-2012-with-this-tutorial"></a><span data-ttu-id="32bde-115">本教程使用 Visual Studio 2012</span><span class="sxs-lookup"><span data-stu-id="32bde-115">Using Visual Studio 2012 with this tutorial</span></span>
->
->
-> <span data-ttu-id="32bde-116">若要学习本教程使用 Visual Studio 2012，请执行以下操作：</span><span class="sxs-lookup"><span data-stu-id="32bde-116">To use Visual Studio 2012 with this tutorial, do the following:</span></span>
->
-> - <span data-ttu-id="32bde-117">更新你[程序包管理器](http://docs.nuget.org/docs/start-here/installing-nuget)到最新版本。</span><span class="sxs-lookup"><span data-stu-id="32bde-117">Update your [Package Manager](http://docs.nuget.org/docs/start-here/installing-nuget) to the latest version.</span></span>
-> - <span data-ttu-id="32bde-118">安装[Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)。</span><span class="sxs-lookup"><span data-stu-id="32bde-118">Install the [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx).</span></span>
-> - <span data-ttu-id="32bde-119">在 Web 平台安装程序中，搜索并安装**ASP.NET 和 Web 工具 2013.1 适用于 Visual Studio 2012**。</span><span class="sxs-lookup"><span data-stu-id="32bde-119">In the Web Platform Installer, search for and install **ASP.NET and Web Tools 2013.1 for Visual Studio 2012**.</span></span> <span data-ttu-id="32bde-120">这将安装 Visual Studio 模板的 SignalR 类，如**中心**。</span><span class="sxs-lookup"><span data-stu-id="32bde-120">This will install Visual Studio templates for SignalR classes such as **Hub**.</span></span>
-> - <span data-ttu-id="32bde-121">某些模板 (如**OWIN 启动类**) 将不可用; 对于这些数据，改为使用的类文件。</span><span class="sxs-lookup"><span data-stu-id="32bde-121">Some templates (such as **OWIN Startup Class**) will not be available; for these, use a Class file instead.</span></span>
->
->
-> ## <a name="tutorial-versions"></a><span data-ttu-id="32bde-122">教程版本</span><span class="sxs-lookup"><span data-stu-id="32bde-122">Tutorial Versions</span></span>
->
-> <span data-ttu-id="32bde-123">有关 SignalR 的早期版本的信息，请参阅[SignalR 较早版本](../older-versions/index.md)。</span><span class="sxs-lookup"><span data-stu-id="32bde-123">For information about earlier versions of SignalR, see [SignalR Older Versions](../older-versions/index.md).</span></span>
->
-> ## <a name="questions-and-comments"></a><span data-ttu-id="32bde-124">问题和提出的意见</span><span class="sxs-lookup"><span data-stu-id="32bde-124">Questions and comments</span></span>
->
-> <span data-ttu-id="32bde-125">请在你喜欢本教程的内容以及我们可以改进的页的底部的评论中留下反馈。</span><span class="sxs-lookup"><span data-stu-id="32bde-125">Please leave feedback on how you liked this tutorial and what we could improve in the comments at the bottom of the page.</span></span> <span data-ttu-id="32bde-126">如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。</span><span class="sxs-lookup"><span data-stu-id="32bde-126">If you have questions that are not directly related to the tutorial, you can post them to the [ASP.NET SignalR forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) or [StackOverflow.com](http://stackoverflow.com/).</span></span>
+<span data-ttu-id="4a7bf-104">本教程演示如何创建使用 ASP.NET SignalR 2 来提供服务器广播的功能的 web 应用程序。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-104">This tutorial shows how to create a web application that uses ASP.NET SignalR 2 to provide server broadcast functionality.</span></span> <span data-ttu-id="4a7bf-105">服务器广播意味着在服务器开始发送到客户端的通信。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-105">Server broadcast means that the server starts the communications sent to clients.</span></span>
 
-## <a name="overview"></a><span data-ttu-id="32bde-127">概述</span><span class="sxs-lookup"><span data-stu-id="32bde-127">Overview</span></span>
+<span data-ttu-id="4a7bf-106">你将在本教程中创建的应用程序模拟股票行情服务器广播功能的典型方案。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-106">The application that you'll create in this tutorial simulates a stock ticker, a typical scenario for server broadcast functionality.</span></span> <span data-ttu-id="4a7bf-107">我们会定期服务器随机更新股票价格，广播到所有连接的客户端的更新。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-107">Periodically, the server randomly updates stock prices and broadcast the updates to all connected clients.</span></span> <span data-ttu-id="4a7bf-108">在浏览器、 数字和中的符号**更改**并**%** 列动态更改以响应来自服务器的通知。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-108">In the browser, the numbers and symbols in the **Change** and **%** columns dynamically change in response to notifications from the server.</span></span> <span data-ttu-id="4a7bf-109">如果您打开其他浏览器相同的 URL，它们都同时显示相同的数据和对数据的相同更改。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-109">If you open additional browsers to the same URL, they all show the same data and the same changes to the data simultaneously.</span></span>
 
-<span data-ttu-id="32bde-128">在本教程中，将创建的实时应用程序想要定期"推送"的具有代表性的股票行情自动收录器应用程序或广播到所有连接的客户端将通知从服务器。</span><span class="sxs-lookup"><span data-stu-id="32bde-128">In this tutorial, you'll create a stock ticker application that is representative of real-time applications in which you want to periodically "push," or broadcast, notifications from the server to all connected clients.</span></span> <span data-ttu-id="32bde-129">在本教程的第一部分，将从零开始创建该应用程序的简化的版本。</span><span class="sxs-lookup"><span data-stu-id="32bde-129">In the first part of this tutorial, you'll create a simplified version of that application from scratch.</span></span> <span data-ttu-id="32bde-130">在本教程的其余部分，将安装 NuGet 包，它包含其他功能，查看这些功能的代码。</span><span class="sxs-lookup"><span data-stu-id="32bde-130">In the remainder of the tutorial, you'll install a NuGet package that contains additional features, and review the code for those features.</span></span>
+![创建 web](tutorial-server-broadcast-with-signalr/_static/image1.png)
 
-<span data-ttu-id="32bde-131">在本教程的第一部分中将生成的应用程序显示的网格有库存数据。</span><span class="sxs-lookup"><span data-stu-id="32bde-131">The application that you'll build in the first part of this tutorial displays a grid with stock data.</span></span>
+<span data-ttu-id="4a7bf-111">在本教程中，您：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-111">In this tutorial, you:</span></span>
 
-![StockTicker 初始版本](tutorial-server-broadcast-with-signalr/_static/image1.png)
+> [!div class="checklist"]
+> * <span data-ttu-id="4a7bf-112">创建项目</span><span class="sxs-lookup"><span data-stu-id="4a7bf-112">Create the project</span></span>
+> * <span data-ttu-id="4a7bf-113">设置服务器代码</span><span class="sxs-lookup"><span data-stu-id="4a7bf-113">Set up the server code</span></span>
+> * <span data-ttu-id="4a7bf-114">检查服务器代码</span><span class="sxs-lookup"><span data-stu-id="4a7bf-114">Examine the server code</span></span>
+> * <span data-ttu-id="4a7bf-115">设置客户端代码</span><span class="sxs-lookup"><span data-stu-id="4a7bf-115">Set up the client code</span></span>
+> * <span data-ttu-id="4a7bf-116">检查客户端代码</span><span class="sxs-lookup"><span data-stu-id="4a7bf-116">Examine the client code</span></span>
+> * <span data-ttu-id="4a7bf-117">测试应用程序</span><span class="sxs-lookup"><span data-stu-id="4a7bf-117">Test the application</span></span>
+> * <span data-ttu-id="4a7bf-118">启用日志记录</span><span class="sxs-lookup"><span data-stu-id="4a7bf-118">Enable logging</span></span>
 
-<span data-ttu-id="32bde-133">定期服务器随机更新股票价格，并将更新推送到所有连接的客户端。</span><span class="sxs-lookup"><span data-stu-id="32bde-133">Periodically the server randomly updates stock prices and pushes the updates to all connected clients.</span></span> <span data-ttu-id="32bde-134">在浏览器数字和中的符号**更改**并**%** 列动态更改以响应来自服务器的通知。</span><span class="sxs-lookup"><span data-stu-id="32bde-134">In the browser the numbers and symbols in the **Change** and **%** columns dynamically change in response to notifications from the server.</span></span> <span data-ttu-id="32bde-135">如果您打开其他浏览器相同的 URL，它们都同时显示相同的数据和对数据的相同更改。</span><span class="sxs-lookup"><span data-stu-id="32bde-135">If you open additional browsers to the same URL, they all show the same data and the same changes to the data simultaneously.</span></span>
-
-<span data-ttu-id="32bde-136">本教程包含以下各节：</span><span class="sxs-lookup"><span data-stu-id="32bde-136">This tutorial contains the following sections:</span></span>
-
-- [<span data-ttu-id="32bde-137">系统必备</span><span class="sxs-lookup"><span data-stu-id="32bde-137">Prerequisites</span></span>](#prerequisites)
-- [<span data-ttu-id="32bde-138">创建项目</span><span class="sxs-lookup"><span data-stu-id="32bde-138">Create the project</span></span>](#createproject)
-- [<span data-ttu-id="32bde-139">设置服务器代码</span><span class="sxs-lookup"><span data-stu-id="32bde-139">Set up the server code</span></span>](#server)
-- [<span data-ttu-id="32bde-140">设置客户端代码</span><span class="sxs-lookup"><span data-stu-id="32bde-140">Set up the client code</span></span>](#client)
-- [<span data-ttu-id="32bde-141">测试应用程序</span><span class="sxs-lookup"><span data-stu-id="32bde-141">Test the application</span></span>](#test)
-- [<span data-ttu-id="32bde-142">启用日志记录</span><span class="sxs-lookup"><span data-stu-id="32bde-142">Enable logging</span></span>](#enablelogging)
-- [<span data-ttu-id="32bde-143">安装和查看完整的 StockTicker 示例</span><span class="sxs-lookup"><span data-stu-id="32bde-143">Install and review the full StockTicker sample</span></span>](#fullsample)
-- [<span data-ttu-id="32bde-144">后续步骤</span><span class="sxs-lookup"><span data-stu-id="32bde-144">Next steps</span></span>](#nextsteps)
-
-<span data-ttu-id="32bde-145">[Microsoft.AspNet.SignalR.Sample](http://nuget.org/packages/microsoft.aspnet.signalr.sample) NuGet 包安装 Visual Studio 项目中的示例模拟股票行情自动收录器应用程序。</span><span class="sxs-lookup"><span data-stu-id="32bde-145">The [Microsoft.AspNet.SignalR.Sample](http://nuget.org/packages/microsoft.aspnet.signalr.sample) NuGet package installs a sample simulated stock ticker application in a Visual Studio project.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="32bde-146">如果不想要逐步完成构建应用程序的步骤，你可以在新的空的 ASP.NET Web 应用程序项目中安装 SignalR.Sample 包。</span><span class="sxs-lookup"><span data-stu-id="32bde-146">If you don't want to work through the steps of building the application, you can install the SignalR.Sample package in a new Empty ASP.NET Web Application project.</span></span> <span data-ttu-id="32bde-147">如果不执行本教程中的步骤安装 NuGet 包**必须遵循 readme.txt 文件中的说明**。</span><span class="sxs-lookup"><span data-stu-id="32bde-147">If you install the NuGet package without performing the steps in this tutorial, **you must follow the instructions in the readme.txt file**.</span></span> <span data-ttu-id="32bde-148">若要运行包需要添加 OWIN 启动类的调用中已安装的程序包 ConfigureSignalR 方法。</span><span class="sxs-lookup"><span data-stu-id="32bde-148">To run the package you need to add an OWIN startup class which calls the ConfigureSignalR method in the installed package.</span></span> <span data-ttu-id="32bde-149">如果不添加 OWIN 启动类，将收到错误。</span><span class="sxs-lookup"><span data-stu-id="32bde-149">You will receive an error if you do not add the OWIN startup class.</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="4a7bf-119">如果不想要逐步完成构建应用程序的步骤，你可以在新的空的 ASP.NET Web 应用程序项目中安装 SignalR.Sample 包。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-119">If you don't want to work through the steps of building the application, you can install the SignalR.Sample package in a new Empty ASP.NET Web Application project.</span></span> <span data-ttu-id="4a7bf-120">如果不执行本教程中的步骤安装 NuGet 包，必须按照中的说明*readme.txt*文件。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-120">If you install the NuGet package without performing the steps in this tutorial, you must follow the instructions in the *readme.txt* file.</span></span> <span data-ttu-id="4a7bf-121">若要运行包需要添加 OWIN 启动类的调用`ConfigureSignalR`中已安装的程序包的方法。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-121">To run the package you need to add an OWIN startup class which calls the `ConfigureSignalR` method in the installed package.</span></span> <span data-ttu-id="4a7bf-122">如果不添加 OWIN 启动类，将收到错误。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-122">You will receive an error if you do not add the OWIN startup class.</span></span> <span data-ttu-id="4a7bf-123">请参阅[安装 StockTicker 示例](#install-the-stockticker-sample)本文的部分。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-123">See the [Install the StockTicker sample](#install-the-stockticker-sample) section of this article.</span></span>
 
 
-<a id="prerequisites"></a>
+## <a name="prerequisites"></a><span data-ttu-id="4a7bf-124">系统必备</span><span class="sxs-lookup"><span data-stu-id="4a7bf-124">Prerequisites</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="32bde-150">系统必备</span><span class="sxs-lookup"><span data-stu-id="32bde-150">Prerequisites</span></span>
+ * <span data-ttu-id="4a7bf-125">[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)与**ASP.NET 和 web 开发**工作负荷。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-125">[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) with the **ASP.NET and web development** workload.</span></span>
 
-<span data-ttu-id="32bde-151">在开始之前，请确保已在计算机上安装的 Visual Studio 2013。</span><span class="sxs-lookup"><span data-stu-id="32bde-151">Before you start, make sure that you have Visual Studio 2013 installed on your computer.</span></span> <span data-ttu-id="32bde-152">如果未安装 Visual Studio，请参阅[ASP.NET 下载](https://www.asp.net/downloads)若要获取免费的 Visual Studio 2013 Express。</span><span class="sxs-lookup"><span data-stu-id="32bde-152">If you don't have Visual Studio, see [ASP.NET Downloads](https://www.asp.net/downloads) to get the free Visual Studio 2013 Express.</span></span>
+## <a name="create-the-project"></a><span data-ttu-id="4a7bf-126">创建项目</span><span class="sxs-lookup"><span data-stu-id="4a7bf-126">Create the project</span></span>
 
-<a id="createproject"></a>
+<span data-ttu-id="4a7bf-127">本部分演示如何使用 Visual Studio 2017 创建空的 ASP.NET Web 应用程序。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-127">This section shows how to use Visual Studio 2017 to create an empty ASP.NET Web Application.</span></span>
 
-## <a name="create-the-project"></a><span data-ttu-id="32bde-153">创建项目</span><span class="sxs-lookup"><span data-stu-id="32bde-153">Create the project</span></span>
+1. <span data-ttu-id="4a7bf-128">在 Visual Studio 中创建 ASP.NET Web 应用程序。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-128">In Visual Studio, create an ASP.NET Web Application.</span></span>
 
-1. <span data-ttu-id="32bde-154">从**文件**菜单上，单击**新项目**。</span><span class="sxs-lookup"><span data-stu-id="32bde-154">From the **File** menu, click **New Project**.</span></span>
-2. <span data-ttu-id="32bde-155">在中**新的项目**对话框框中，展开**C#** 下**模板**，然后选择**Web**。</span><span class="sxs-lookup"><span data-stu-id="32bde-155">In the **New Project** dialog box, expand **C#** under **Templates** and select **Web**.</span></span>
-3. <span data-ttu-id="32bde-156">选择**ASP.NET 空 Web 应用程序**模板，将项目命名*SignalR.StockTicker*，然后单击**确定**。</span><span class="sxs-lookup"><span data-stu-id="32bde-156">Select the **ASP.NET Empty Web Application** template, name the project *SignalR.StockTicker*, and click **OK**.</span></span>
+    ![创建 web](tutorial-server-broadcast-with-signalr/_static/image2.png)
 
-    ![“新建项目”对话框](tutorial-server-broadcast-with-signalr/_static/image2.png)
-4. <span data-ttu-id="32bde-158">在中**新的 ASP.NET**项目窗口中，保留**空**选中然后单击**创建项目**。</span><span class="sxs-lookup"><span data-stu-id="32bde-158">In the **New ASP.NET** Project window, leave **Empty** selected and click **Create Project**.</span></span>
+1. <span data-ttu-id="4a7bf-130">在中**新 ASP.NET Web 应用程序-SignalR.StockTicker**窗口中，保留**空**，并选择**确定**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-130">In the **New ASP.NET Web Application - SignalR.StockTicker** window, leave **Empty** selected and select **OK**.</span></span>
 
-    ![新建 ASP 项目对话框](tutorial-server-broadcast-with-signalr/_static/image3.png)
+## <a name="set-up-the-server-code"></a><span data-ttu-id="4a7bf-131">设置服务器代码</span><span class="sxs-lookup"><span data-stu-id="4a7bf-131">Set up the server code</span></span>
 
-<a id="server"></a>
+<span data-ttu-id="4a7bf-132">在本部分中，您将设置在服务器运行的代码。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-132">In this section, you set up the code that runs on the server.</span></span>
 
-## <a name="set-up-the-server-code"></a><span data-ttu-id="32bde-160">设置服务器代码</span><span class="sxs-lookup"><span data-stu-id="32bde-160">Set up the server code</span></span>
+### <a name="create-the-stock-class"></a><span data-ttu-id="4a7bf-133">创建 Stock 类</span><span class="sxs-lookup"><span data-stu-id="4a7bf-133">Create the Stock class</span></span>
 
-<span data-ttu-id="32bde-161">在本部分中，设置在服务器运行的代码。</span><span class="sxs-lookup"><span data-stu-id="32bde-161">In this section you set up the code that runs on the server.</span></span>
+<span data-ttu-id="4a7bf-134">首先创建*股票*模型将用于存储和传输有关股票的信息的类。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-134">You begin by creating the *Stock* model class that you'll use to store and transmit information about a stock.</span></span>
 
-### <a name="create-the-stock-class"></a><span data-ttu-id="32bde-162">创建 Stock 类</span><span class="sxs-lookup"><span data-stu-id="32bde-162">Create the Stock class</span></span>
+1. <span data-ttu-id="4a7bf-135">在中**解决方案资源管理器**，右键单击该项目并选择**添加** > **类**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-135">In **Solution Explorer**, right-click the project and select **Add** > **Class**.</span></span>
 
-<span data-ttu-id="32bde-163">首先创建将用于存储和传输有关股票的信息的股票模型类。</span><span class="sxs-lookup"><span data-stu-id="32bde-163">You begin by creating the Stock model class that you'll use to store and transmit information about a stock.</span></span>
+1. <span data-ttu-id="4a7bf-136">将类命名*股票*并将其添加到项目。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-136">Name the class *Stock* and add it to the project.</span></span>
 
-1. <span data-ttu-id="32bde-164">在项目文件夹中创建一个新类文件，将其命名*Stock.cs*，然后使用以下代码替换模板代码：</span><span class="sxs-lookup"><span data-stu-id="32bde-164">Create a new class file in the project folder, name it *Stock.cs*, and then replace the template code with the following code:</span></span>
+1. <span data-ttu-id="4a7bf-137">中的代码替换*Stock.cs*文件使用以下代码：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-137">Replace the code in the *Stock.cs* file with this code:</span></span>
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample1.cs)]
 
-    <span data-ttu-id="32bde-165">在创建股票时将设置的两个属性是符号 (例如，Microsoft 的 MSFT) 和价格。</span><span class="sxs-lookup"><span data-stu-id="32bde-165">The two properties that you'll set when you create stocks are the Symbol (for example, MSFT for Microsoft) and the Price.</span></span> <span data-ttu-id="32bde-166">其他属性取决于如何以及何时设置价格。</span><span class="sxs-lookup"><span data-stu-id="32bde-166">The other properties depend on how and when you set Price.</span></span> <span data-ttu-id="32bde-167">设置价格，第一次的值获取传播到 DayOpen。</span><span class="sxs-lookup"><span data-stu-id="32bde-167">The first time you set Price, the value gets propagated to DayOpen.</span></span> <span data-ttu-id="32bde-168">当设置价格，更改并且 PercentChange 属性值进行计算的后续时间基于价格和 DayOpen 之间的差异。</span><span class="sxs-lookup"><span data-stu-id="32bde-168">Subsequent times when you set Price, the Change and PercentChange property values are calculated based on the difference between Price and DayOpen.</span></span>
+    <span data-ttu-id="4a7bf-138">在创建股票时将设置的两个属性是`Symbol`(例如，Microsoft 的 MSFT) 和`Price`。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-138">The two properties that you'll set when you create stocks are `Symbol` (for example, MSFT for Microsoft) and `Price`.</span></span> <span data-ttu-id="4a7bf-139">其他属性取决于如何以及何时将`Price`。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-139">The other properties depend on how and when you set `Price`.</span></span> <span data-ttu-id="4a7bf-140">首次设置`Price`，值获取会传播到`DayOpen`。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-140">The first time you set `Price`, the value gets propagated to `DayOpen`.</span></span> <span data-ttu-id="4a7bf-141">在此之后，当您将设置`Price`，该应用程序计算`Change`和`PercentChange`属性值基于之间的差异`Price`和`DayOpen`。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-141">After that, when you set `Price`, the app calculates the `Change` and `PercentChange` property values based on the difference between `Price` and `DayOpen`.</span></span>
 
-### <a name="create-the-stockticker-and-stocktickerhub-classes"></a><span data-ttu-id="32bde-169">创建在 StockTicker 和 StockTickerHub 类</span><span class="sxs-lookup"><span data-stu-id="32bde-169">Create the StockTicker and StockTickerHub classes</span></span>
+### <a name="create-the-stocktickerhub-and-stockticker-classes"></a><span data-ttu-id="4a7bf-142">创建的 StockTickerHub 和 StockTicker 类</span><span class="sxs-lookup"><span data-stu-id="4a7bf-142">Create the StockTickerHub and StockTicker classes</span></span>
 
-<span data-ttu-id="32bde-170">SignalR 中心 API 将用于处理服务器到客户端交互。</span><span class="sxs-lookup"><span data-stu-id="32bde-170">You'll use the SignalR Hub API to handle server-to-client interaction.</span></span> <span data-ttu-id="32bde-171">从 SignalR Hub 类派生的 StockTickerHub 类将处理来自客户端接收连接和方法调用。</span><span class="sxs-lookup"><span data-stu-id="32bde-171">A StockTickerHub class that derives from the SignalR Hub class will handle receiving connections and method calls from clients.</span></span> <span data-ttu-id="32bde-172">此外需要维护股票数据并运行计时器对象，以定期触发价格更新，独立于客户端连接。</span><span class="sxs-lookup"><span data-stu-id="32bde-172">You also need to maintain stock data and run a Timer object to periodically trigger price updates, independently of client connections.</span></span> <span data-ttu-id="32bde-173">因为中心实例是瞬态的不能置于 Hub 类，这些函数。</span><span class="sxs-lookup"><span data-stu-id="32bde-173">You can't put these functions in a Hub class, because Hub instances are transient.</span></span> <span data-ttu-id="32bde-174">为每个操作的中心，例如连接和从客户端对服务器的调用创建的中心类实例。</span><span class="sxs-lookup"><span data-stu-id="32bde-174">A Hub class instance is created for each operation on the hub, such as connections and calls from the client to the server.</span></span> <span data-ttu-id="32bde-175">因此，必须运行在单独的类，您将命名为 StockTicker 的机制，可保护库存数据，更新价格，并会广播价格更新。</span><span class="sxs-lookup"><span data-stu-id="32bde-175">So the mechanism that keeps stock data, updates prices, and broadcasts the price updates has to run in a separate class, which you'll name StockTicker.</span></span>
+<span data-ttu-id="4a7bf-143">SignalR 中心 API 将用于处理服务器到客户端交互。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-143">You'll use the SignalR Hub API to handle server-to-client interaction.</span></span> <span data-ttu-id="4a7bf-144">一个`StockTickerHub`派生的类`SignalRHub`类将处理来自客户端接收连接和方法调用。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-144">A `StockTickerHub` class that derives from the `SignalRHub` class will handle receiving connections and method calls from clients.</span></span> <span data-ttu-id="4a7bf-145">您还需要维护股票数据并运行`Timer`对象。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-145">You also need to maintain stock data and run a `Timer` object.</span></span> <span data-ttu-id="4a7bf-146">`Timer`对象将定期触发价格更新独立于客户端连接。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-146">The `Timer` object will periodically trigger price updates independent of client connections.</span></span> <span data-ttu-id="4a7bf-147">无法将这些函数放入`Hub`类，因为中心是暂时的。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-147">You can't put these functions in a `Hub` class, because Hubs are transient.</span></span> <span data-ttu-id="4a7bf-148">应用创建`Hub`集线器，例如连接和从客户端对服务器的调用上每个任务的类实例。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-148">The app creates a `Hub` class instance for each task on the hub, like connections and calls from the client to the server.</span></span> <span data-ttu-id="4a7bf-149">因此，可保护库存数据，更新价格，并会广播价格更新机制必须运行在单独的类。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-149">So the mechanism that keeps stock data, updates prices, and broadcasts the price updates has to run in a separate class.</span></span> <span data-ttu-id="4a7bf-150">将类命名`StockTicker`。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-150">You'll name the class `StockTicker`.</span></span>
 
-![从 StockTicker 的广播](tutorial-server-broadcast-with-signalr/_static/image5.png)
+![从 StockTicker 的广播](tutorial-server-broadcast-with-signalr/_static/image3.png)
 
-<span data-ttu-id="32bde-177">您只想要运行的服务器上，因此将需要的单个 StockTicker 实例中设置从每个 StockTickerHub 实例引用的 StockTicker 类的一个实例。</span><span class="sxs-lookup"><span data-stu-id="32bde-177">You only want one instance of the StockTicker class to run on the server, so you'll need to set up a reference from each StockTickerHub instance to the singleton StockTicker instance.</span></span> <span data-ttu-id="32bde-178">StockTicker 类必须可以广播到客户端，因为它具有股票数据并触发更新，但 StockTicker 不是 Hub 类。</span><span class="sxs-lookup"><span data-stu-id="32bde-178">The StockTicker class has to be able to broadcast to clients because it has the stock data and triggers updates, but StockTicker is not a Hub class.</span></span> <span data-ttu-id="32bde-179">因此，StockTicker 类必须获取对 SignalR Hub 连接上下文对象的引用。</span><span class="sxs-lookup"><span data-stu-id="32bde-179">Therefore, the StockTicker class has to get a reference to the SignalR Hub connection context object.</span></span> <span data-ttu-id="32bde-180">然后，它可以使用 SignalR 连接上下文对象广播到客户端。</span><span class="sxs-lookup"><span data-stu-id="32bde-180">It can then use the SignalR connection context object to broadcast to clients.</span></span>
+<span data-ttu-id="4a7bf-152">您只想的一个实例`StockTicker`类来运行的服务器上，因此将需要设置从每个引用`StockTickerHub`到单一实例`StockTicker`实例。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-152">You only want one instance of the `StockTicker` class to run on the server, so you'll need to set up a reference from each `StockTickerHub` instance to the singleton `StockTicker` instance.</span></span> <span data-ttu-id="4a7bf-153">`StockTicker`类具有广播到客户端，因为它具有股票数据，并触发更新，但`StockTicker`不是`Hub`类。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-153">The `StockTicker` class has to broadcast to clients because it has the stock data and triggers updates, but `StockTicker` isn't a `Hub` class.</span></span> <span data-ttu-id="4a7bf-154">`StockTicker`类必须获取对 SignalR Hub 连接上下文对象的引用。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-154">The `StockTicker` class has to get a reference to the SignalR Hub connection context object.</span></span> <span data-ttu-id="4a7bf-155">然后，它可以使用 SignalR 连接上下文对象广播到客户端。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-155">It can then use the SignalR connection context object to broadcast to clients.</span></span>
 
-1. <span data-ttu-id="32bde-181">在中**解决方案资源管理器**，右键单击项目，然后单击**添加 |SignalR Hub 类 (v2)**。</span><span class="sxs-lookup"><span data-stu-id="32bde-181">In **Solution Explorer**, right-click the project and click **Add | SignalR Hub Class (v2)**.</span></span>
-2. <span data-ttu-id="32bde-182">命名新集线器*StockTickerHub.cs*，然后单击**添加**。</span><span class="sxs-lookup"><span data-stu-id="32bde-182">Name the new hub *StockTickerHub.cs*, and then click **Add**.</span></span> <span data-ttu-id="32bde-183">SignalR NuGet 包将添加到你的项目。</span><span class="sxs-lookup"><span data-stu-id="32bde-183">SignalR NuGet packages will be added to your project.</span></span>
-3. <span data-ttu-id="32bde-184">模板代码替换为以下代码：</span><span class="sxs-lookup"><span data-stu-id="32bde-184">Replace the template code with the following code:</span></span>
+#### <a name="create-stocktickerhubcs"></a><span data-ttu-id="4a7bf-156">创建 StockTickerHub.cs</span><span class="sxs-lookup"><span data-stu-id="4a7bf-156">Create StockTickerHub.cs</span></span>
+
+1. <span data-ttu-id="4a7bf-157">在中**解决方案资源管理器**，右键单击该项目并选择**添加** > **新项**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-157">In **Solution Explorer**, right-click the project and select **Add** > **New Item**.</span></span>
+
+1. <span data-ttu-id="4a7bf-158">在中**添加新项-SignalR.StockTicker**，选择**已安装** > **Visual C#**   >  **Web** >  **SignalR** ，然后选择**SignalR Hub 类 (v2)**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-158">In **Add New Item - SignalR.StockTicker**, select **Installed** > **Visual C#** > **Web** > **SignalR**  and then select **SignalR Hub Class (v2)**.</span></span>
+
+1. <span data-ttu-id="4a7bf-159">将类命名*StockTickerHub*并将其添加到项目。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-159">Name the class *StockTickerHub* and add it to the project.</span></span>
+
+    <span data-ttu-id="4a7bf-160">此步骤将创建*StockTickerHub.cs*类文件。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-160">This step creates the *StockTickerHub.cs* class file.</span></span> <span data-ttu-id="4a7bf-161">同时，它会添加到项目支持 SignalR 的脚本文件和程序集引用一组。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-161">Simultaneously, it adds a set of script files and assembly references that supports SignalR to the project.</span></span>
+
+1. <span data-ttu-id="4a7bf-162">中的代码替换*StockTickerHub.cs*文件使用以下代码：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-162">Replace the code in the *StockTickerHub.cs* file with this code:</span></span>
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample2.cs)]
 
-    <span data-ttu-id="32bde-185">[中心](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx)类用于定义客户端可以调用在服务器的方法。</span><span class="sxs-lookup"><span data-stu-id="32bde-185">The [Hub](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx) class is used to define methods the clients can call on the server.</span></span> <span data-ttu-id="32bde-186">要定义一种方法： `GetAllStocks()`。</span><span class="sxs-lookup"><span data-stu-id="32bde-186">You are defining one method: `GetAllStocks()`.</span></span> <span data-ttu-id="32bde-187">当客户端最初连接到服务器时，它将调用此方法以获取所有其当前价格股票的列表。</span><span class="sxs-lookup"><span data-stu-id="32bde-187">When a client initially connects to the server, it will call this method to get a list of all of the stocks with their current prices.</span></span> <span data-ttu-id="32bde-188">该方法可以同步执行并返回`IEnumerable<Stock>`由于它会从内存中返回数据。</span><span class="sxs-lookup"><span data-stu-id="32bde-188">The method can execute synchronously and return `IEnumerable<Stock>` because it is returning data from memory.</span></span> <span data-ttu-id="32bde-189">如果该方法必须通过执行将涉及等待，如数据库查找或 web 服务调用，获取的数据则会指定`Task<IEnumerable<Stock>>`作为返回值以启用异步处理。</span><span class="sxs-lookup"><span data-stu-id="32bde-189">If the method had to get the data by doing something that would involve waiting, such as a database lookup or a web service call, you would specify `Task<IEnumerable<Stock>>` as the return value to enable asynchronous processing.</span></span> <span data-ttu-id="32bde-190">有关详细信息，请参阅[ASP.NET SignalR 中心 API 指南-服务器-时要异步执行](../guide-to-the-api/hubs-api-guide-server.md#asyncmethods)。</span><span class="sxs-lookup"><span data-stu-id="32bde-190">For more information, see [ASP.NET SignalR Hubs API Guide - Server - When to execute asynchronously](../guide-to-the-api/hubs-api-guide-server.md#asyncmethods).</span></span>
+1. <span data-ttu-id="4a7bf-163">保存该文件。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-163">Save the file.</span></span>
 
-    <span data-ttu-id="32bde-191">HubName 属性指定将如何在客户端上的 JavaScript 代码中引用该中心。</span><span class="sxs-lookup"><span data-stu-id="32bde-191">The HubName attribute specifies how the Hub will be referenced in JavaScript code on the client.</span></span> <span data-ttu-id="32bde-192">如果不使用此属性在客户端上的默认名称是类名称，在这种情况下是 stockTickerHub 驼峰式大小写版本。</span><span class="sxs-lookup"><span data-stu-id="32bde-192">The default name on the client if you don't use this attribute is a camel-cased version of the class name, which in this case would be stockTickerHub.</span></span>
+<span data-ttu-id="4a7bf-164">此应用使用[中心](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx)类来定义客户端可以调用在服务器的方法。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-164">The app uses the [Hub](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx) class to define methods the clients can call on the server.</span></span> <span data-ttu-id="4a7bf-165">要定义一种方法： `GetAllStocks()`。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-165">You're defining one method: `GetAllStocks()`.</span></span> <span data-ttu-id="4a7bf-166">当客户端最初连接到服务器时，它将调用此方法以获取所有其当前价格股票的列表。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-166">When a client initially connects to the server, it will call this method to get a list of all of the stocks with their current prices.</span></span> <span data-ttu-id="4a7bf-167">该方法可以同步运行并返回`IEnumerable<Stock>`由于它会从内存中返回数据。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-167">The method can run synchronously and return `IEnumerable<Stock>` because it's returning data from memory.</span></span>
 
-    <span data-ttu-id="32bde-193">正如您将看到更高版本创建 StockTicker 类时，在其静态实例属性中创建该类的单一实例。</span><span class="sxs-lookup"><span data-stu-id="32bde-193">As you'll see later when you create the StockTicker class, a singleton instance of that class is created in its static Instance property.</span></span> <span data-ttu-id="32bde-194">StockTicker 的单一实例保持在多少个客户端连接或断开连接，无论内存中，该实例是 GetAllStocks 方法用于返回当前股票信息。</span><span class="sxs-lookup"><span data-stu-id="32bde-194">That singleton instance of StockTicker remains in memory no matter how many clients connect or disconnect, and that instance is what the GetAllStocks method uses to return current stock information.</span></span>
-4. <span data-ttu-id="32bde-195">在项目文件夹中创建一个新类文件，将其命名*StockTicker.cs*，然后使用以下代码替换模板代码：</span><span class="sxs-lookup"><span data-stu-id="32bde-195">Create a new class file in the project folder, name it *StockTicker.cs*, and then replace the template code with the following code:</span></span>
+<span data-ttu-id="4a7bf-168">如果该方法必须通过执行将涉及等待，如数据库查找或 web 服务调用，获取的数据则会指定`Task<IEnumerable<Stock>>`作为返回值以启用异步处理。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-168">If the method had to get the data by doing something that would involve waiting, like a database lookup or a web service call, you would specify `Task<IEnumerable<Stock>>` as the return value to enable asynchronous processing.</span></span> <span data-ttu-id="4a7bf-169">有关详细信息，请参阅[ASP.NET SignalR 中心 API 指南-服务器-时要异步执行](../guide-to-the-api/hubs-api-guide-server.md#asyncmethods)。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-169">For more information, see [ASP.NET SignalR Hubs API Guide - Server - When to execute asynchronously](../guide-to-the-api/hubs-api-guide-server.md#asyncmethods).</span></span>
+
+<span data-ttu-id="4a7bf-170">`HubName`属性指定应用程序如何将引用在客户端上的 JavaScript 代码中的中心。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-170">The `HubName` attribute specifies how the app will reference the Hub in JavaScript code on the client.</span></span> <span data-ttu-id="4a7bf-171">在客户端上的默认名称如果不使用此属性是类名称，在这种情况下将驼峰式大小写版本`stockTickerHub`。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-171">The default name on the client if you don't use this attribute, is a camelCase version of the class name, which in this case would be `stockTickerHub`.</span></span>
+
+<span data-ttu-id="4a7bf-172">正如您看到更高版本创建时`StockTicker`类，应用创建该类的单一实例中它的静态`Instance`属性。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-172">As you'll see later when you create the `StockTicker` class, the app creates a singleton instance of that class in its static `Instance` property.</span></span> <span data-ttu-id="4a7bf-173">该单一实例`StockTicker`无论多少个客户端连接或断开连接的内存中。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-173">That singleton instance of `StockTicker` is in memory no matter how many clients connect or disconnect.</span></span> <span data-ttu-id="4a7bf-174">该实例是什么`GetAllStocks()`方法用于返回当前股票信息。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-174">That instance is what the `GetAllStocks()` method uses to return current stock information.</span></span>
+
+#### <a name="create-stocktickercs"></a><span data-ttu-id="4a7bf-175">创建 StockTicker.cs</span><span class="sxs-lookup"><span data-stu-id="4a7bf-175">Create StockTicker.cs</span></span>
+
+1. <span data-ttu-id="4a7bf-176">在中**解决方案资源管理器**，右键单击该项目并选择**添加** > **类**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-176">In **Solution Explorer**, right-click the project and select **Add** > **Class**.</span></span>
+
+1. <span data-ttu-id="4a7bf-177">将类命名*StockTicker*并将其添加到项目。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-177">Name the class *StockTicker* and add it to the project.</span></span>
+
+1. <span data-ttu-id="4a7bf-178">中的代码替换*StockTicker.cs*文件使用以下代码：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-178">Replace the code in the *StockTicker.cs* file with this code:</span></span>
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample3.cs)]
 
-    <span data-ttu-id="32bde-196">由于多个线程将运行 StockTicker 代码的同一个实例，StockTicker 类必须是 threadsafe。</span><span class="sxs-lookup"><span data-stu-id="32bde-196">Since multiple threads will be running the same instance of StockTicker code, the StockTicker class has to be threadsafe.</span></span>
+<span data-ttu-id="4a7bf-179">由于所有线程都运行 StockTicker 代码的同一个实例，StockTicker 类必须是线程安全的。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-179">Since all threads will be running the same instance of StockTicker code, the StockTicker class has to be thread-safe.</span></span>
 
-    ### <a name="storing-the-singleton-instance-in-a-static-field"></a><span data-ttu-id="32bde-197">在静态字段中存储的单一实例</span><span class="sxs-lookup"><span data-stu-id="32bde-197">Storing the singleton instance in a static field</span></span>
+### <a name="examine-the-server-code"></a><span data-ttu-id="4a7bf-180">检查服务器代码</span><span class="sxs-lookup"><span data-stu-id="4a7bf-180">Examine the server code</span></span>
 
-    <span data-ttu-id="32bde-198">此代码初始化静态\_支持的类，并且此实例的实例属性的实例字段是可以创建类的唯一实例，因为构造函数标记为私有。</span><span class="sxs-lookup"><span data-stu-id="32bde-198">The code initializes the static \_instance field that backs the Instance property with an instance of the class, and this is the only instance of the class that can be created, because the constructor is marked as private.</span></span> <span data-ttu-id="32bde-199">[迟缓初始化](https://msdn.microsoft.com/library/dd997286.aspx)用于\_实例字段，不出于性能原因，但若要确保创建的实例是 threadsafe。</span><span class="sxs-lookup"><span data-stu-id="32bde-199">[Lazy initialization](https://msdn.microsoft.com/library/dd997286.aspx) is used for the \_instance field, not for performance reasons but to ensure that the instance creation is threadsafe.</span></span>
+<span data-ttu-id="4a7bf-181">如果您检查服务器代码，它将帮助你了解应用程序的工作原理。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-181">If you examine the server code, it will help you understand how the app works.</span></span>
 
-    [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample4.cs)]
+#### <a name="storing-the-singleton-instance-in-a-static-field"></a><span data-ttu-id="4a7bf-182">在静态字段中存储的单一实例</span><span class="sxs-lookup"><span data-stu-id="4a7bf-182">Storing the singleton instance in a static field</span></span>
 
-    <span data-ttu-id="32bde-200">客户端连接到服务器，每次在一个单独的线程中运行的 StockTickerHub 类的新实例获取的 StockTicker 单一实例从 StockTicker.Instance 静态属性，如前面在 StockTickerHub 类中看到。</span><span class="sxs-lookup"><span data-stu-id="32bde-200">Each time a client connects to the server, a new instance of the StockTickerHub class running in a separate thread gets the StockTicker singleton instance from the StockTicker.Instance static property, as you saw earlier in the StockTickerHub class.</span></span>
+<span data-ttu-id="4a7bf-183">此代码初始化静态`_instance`支持字段`Instance`与类的实例的属性。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-183">The code initializes the static `_instance` field that backs the `Instance` property with an instance of the class.</span></span> <span data-ttu-id="4a7bf-184">构造函数是私有的因为它是应用程序可以创建类的唯一实例。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-184">Because the constructor is private, it's the only instance of the class that the app can create.</span></span> <span data-ttu-id="4a7bf-185">此应用使用[迟缓初始化](/dotnet/framework/performance/lazy-initialization)为`_instance`字段。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-185">The app uses [Lazy initialization](/dotnet/framework/performance/lazy-initialization) for the `_instance` field.</span></span> <span data-ttu-id="4a7bf-186">它不是为了提高性能。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-186">It's not for performance reasons.</span></span> <span data-ttu-id="4a7bf-187">它是为了确保创建的实例是线程安全。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-187">It's to make sure the instance creation is thread-safe.</span></span>
 
-    ### <a name="storing-stock-data-in-a-concurrentdictionary"></a><span data-ttu-id="32bde-201">在 ConcurrentDictionary 中存储常用的数据</span><span class="sxs-lookup"><span data-stu-id="32bde-201">Storing stock data in a ConcurrentDictionary</span></span>
+[!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample4.cs)]
 
-    <span data-ttu-id="32bde-202">构造函数初始化\_具有一些示例股票数据和 GetAllStocks 股票集合返回股票。</span><span class="sxs-lookup"><span data-stu-id="32bde-202">The constructor initializes the \_stocks collection with some sample stock data, and GetAllStocks returns the stocks.</span></span> <span data-ttu-id="32bde-203">如上文所，StockTickerHub.GetAllStocks 这是客户端可以调用的中心类中的服务器方法又会返回股票的此集合。</span><span class="sxs-lookup"><span data-stu-id="32bde-203">As you saw earlier, this collection of stocks is in turn returned by StockTickerHub.GetAllStocks which is a server method in the Hub class that clients can call.</span></span>
+<span data-ttu-id="4a7bf-188">客户端连接到服务器，每次在一个单独的线程中运行的 StockTickerHub 类的新实例获取从 StockTicker 单一实例`StockTicker.Instance`静态属性，作为您了解到之前在`StockTickerHub`类。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-188">Each time a client connects to the server, a new instance of the StockTickerHub class running in a separate thread gets the StockTicker singleton instance from the `StockTicker.Instance` static property, as you saw earlier in the `StockTickerHub` class.</span></span>
 
-    [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample5.cs)]
+#### <a name="storing-stock-data-in-a-concurrentdictionary"></a><span data-ttu-id="4a7bf-189">在 ConcurrentDictionary 中存储常用的数据</span><span class="sxs-lookup"><span data-stu-id="4a7bf-189">Storing stock data in a ConcurrentDictionary</span></span>
 
-    [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample6.cs)]
+<span data-ttu-id="4a7bf-190">构造函数初始化`_stocks`具有一些示例股票数据集合和`GetAllStocks`返回股票。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-190">The constructor initializes the `_stocks` collection with some sample stock data, and `GetAllStocks` returns the stocks.</span></span> <span data-ttu-id="4a7bf-191">如所见，返回此集合的股票`StockTickerHub.GetAllStocks`，这是中的服务器方法`Hub`客户端可以调用的类。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-191">As you saw earlier, this collection of stocks is returned by `StockTickerHub.GetAllStocks`, which is a server method in the `Hub` class that clients can call.</span></span>
 
-    <span data-ttu-id="32bde-204">股票集合指[ConcurrentDictionary](https://msdn.microsoft.com/library/dd287191.aspx)线程安全的类型。</span><span class="sxs-lookup"><span data-stu-id="32bde-204">The stocks collection is defined as a [ConcurrentDictionary](https://msdn.microsoft.com/library/dd287191.aspx) type for thread safety.</span></span> <span data-ttu-id="32bde-205">作为替代方法，您可以使用[字典](https://msdn.microsoft.com/library/xfhwa508.aspx)对象，并显式锁定字典时对其进行更改。</span><span class="sxs-lookup"><span data-stu-id="32bde-205">As an alternative, you could use a [Dictionary](https://msdn.microsoft.com/library/xfhwa508.aspx) object and explicitly lock the dictionary when you make changes to it.</span></span>
+[!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample5.cs)]
 
-    <span data-ttu-id="32bde-206">对于此示例应用程序，它是确定在内存中存储应用程序数据并释放 StockTicker 实例时丢失数据。</span><span class="sxs-lookup"><span data-stu-id="32bde-206">For this sample application, it's OK to store application data in memory and to lose the data when the StockTicker instance is disposed.</span></span> <span data-ttu-id="32bde-207">在实际的应用程序将如何使用后端数据存储，如数据库。</span><span class="sxs-lookup"><span data-stu-id="32bde-207">In a real application you would work with a back-end data store such as a database.</span></span>
+[!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample6.cs)]
 
-    ### <a name="periodically-updating-stock-prices"></a><span data-ttu-id="32bde-208">定期更新股票价格</span><span class="sxs-lookup"><span data-stu-id="32bde-208">Periodically updating stock prices</span></span>
+<span data-ttu-id="4a7bf-192">股票集合指[ConcurrentDictionary](https://msdn.microsoft.com/library/dd287191.aspx)线程安全的类型。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-192">The stocks collection is defined as a [ConcurrentDictionary](https://msdn.microsoft.com/library/dd287191.aspx) type for thread safety.</span></span> <span data-ttu-id="4a7bf-193">作为替代方法，您可以使用[字典](https://msdn.microsoft.com/library/xfhwa508.aspx)对象，并显式锁定字典时对其进行更改。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-193">As an alternative, you could use a [Dictionary](https://msdn.microsoft.com/library/xfhwa508.aspx) object and explicitly lock the dictionary when you make changes to it.</span></span>
 
-    <span data-ttu-id="32bde-209">构造函数启动定期调用的方法，更新基于随机的股票价格的计时器对象。</span><span class="sxs-lookup"><span data-stu-id="32bde-209">The constructor starts up a Timer object that periodically calls methods that update stock prices on a random basis.</span></span>
+<span data-ttu-id="4a7bf-194">对于此示例应用程序，它是确定将应用程序数据存储在内存中并释放应用程序时，会丢失数据`StockTicker`实例。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-194">For this sample application, it's OK to store application data in memory and to lose the data when the app disposes of the  `StockTicker` instance.</span></span> <span data-ttu-id="4a7bf-195">在实际的应用程序，您将如何使用后端数据存储，如数据库。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-195">In a real application, you would work with a back-end data store like a database.</span></span>
 
-    [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample7.cs)]
+#### <a name="periodically-updating-stock-prices"></a><span data-ttu-id="4a7bf-196">定期更新股票价格</span><span class="sxs-lookup"><span data-stu-id="4a7bf-196">Periodically updating stock prices</span></span>
 
-    <span data-ttu-id="32bde-210">UpdateStockPrices 由计时器，该参数中的 null 将传入调用。</span><span class="sxs-lookup"><span data-stu-id="32bde-210">UpdateStockPrices is called by the Timer, which passes in null in the state parameter.</span></span> <span data-ttu-id="32bde-211">在更新之前的价格，采用锁\_updateStockPricesLock 对象。</span><span class="sxs-lookup"><span data-stu-id="32bde-211">Before updating prices, a lock is taken on the \_updateStockPricesLock object.</span></span> <span data-ttu-id="32bde-212">如果另一个线程已更新的价格，，然后在列表中每个股票调用 TryUpdateStockPrice 会检查代码。</span><span class="sxs-lookup"><span data-stu-id="32bde-212">The code checks if another thread is already updating prices, and then it calls TryUpdateStockPrice on each stock in the list.</span></span> <span data-ttu-id="32bde-213">TryUpdateStockPrice 方法决定是否要更改的股票价格和要对其进行更改。</span><span class="sxs-lookup"><span data-stu-id="32bde-213">The TryUpdateStockPrice method decides whether to change the stock price, and how much to change it.</span></span> <span data-ttu-id="32bde-214">如果股票价格已更改，调用 BroadcastStockPrice 广播到所有连接的客户端进行的股票价格更改。</span><span class="sxs-lookup"><span data-stu-id="32bde-214">If the stock price is changed, BroadcastStockPrice is called to broadcast the stock price change to all connected clients.</span></span>
+<span data-ttu-id="4a7bf-197">构造函数启动`Timer`定期调用的方法，更新基于随机的股票价格的对象。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-197">The constructor starts up a `Timer` object that periodically calls methods that update stock prices on a random basis.</span></span>
 
-    <span data-ttu-id="32bde-215">\_UpdatingStockPrices 标志标记为[易失性](https://msdn.microsoft.com/library/x13ttww7.aspx)以确保进行 threadsafe 到它的访问。</span><span class="sxs-lookup"><span data-stu-id="32bde-215">The \_updatingStockPrices flag is marked as [volatile](https://msdn.microsoft.com/library/x13ttww7.aspx) to ensure that access to it is threadsafe.</span></span>
+[!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample7.cs)]
 
-    [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample8.cs)]
+ <span data-ttu-id="4a7bf-198">`Timer` 调用`UpdateStockPrices`，空值参数中的阶段。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-198">`Timer` calls `UpdateStockPrices`, which passes in null in the state parameter.</span></span> <span data-ttu-id="4a7bf-199">在更新之前的价格，该应用上采用锁`_updateStockPricesLock`对象。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-199">Before updating prices, the app takes a lock on the `_updateStockPricesLock` object.</span></span> <span data-ttu-id="4a7bf-200">如果另一个线程已更新的价格，，然后调用代码将检查`TryUpdateStockPrice`上列表中每个股票。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-200">The code checks if another thread is already updating prices, and then it calls `TryUpdateStockPrice` on each stock in the list.</span></span> <span data-ttu-id="4a7bf-201">`TryUpdateStockPrice`方法决定是否要更改的股票价格和要对其进行更改。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-201">The `TryUpdateStockPrice` method decides whether to change the stock price, and how much to change it.</span></span> <span data-ttu-id="4a7bf-202">如果股票价格发生更改，该应用程序调用`BroadcastStockPrice`广播到所有的股票价格更改连接的客户端。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-202">If the stock price changes, the app calls `BroadcastStockPrice` to broadcast the stock price change to all connected clients.</span></span>
 
-    <span data-ttu-id="32bde-216">在实际的应用程序，TryUpdateStockPrice 方法需要调用 web 服务，以便查找价格上涨。它在此代码中使用的随机数生成器随机进行更改。</span><span class="sxs-lookup"><span data-stu-id="32bde-216">In a real application, the TryUpdateStockPrice method would call a web service to look up the price; in this code it uses a random number generator to make changes randomly.</span></span>
+<span data-ttu-id="4a7bf-203">`_updatingStockPrices`指定的标志[易失性](https://msdn.microsoft.com/library/x13ttww7.aspx)以确保它是线程安全。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-203">The `_updatingStockPrices` flag designated [volatile](https://msdn.microsoft.com/library/x13ttww7.aspx) to make sure it is thread-safe.</span></span>
 
-    ### <a name="getting-the-signalr-context-so-that-the-stockticker-class-can-broadcast-to-clients"></a><span data-ttu-id="32bde-217">获取 SignalR 上下文，以便 StockTicker 类可以广播到客户端</span><span class="sxs-lookup"><span data-stu-id="32bde-217">Getting the SignalR context so that the StockTicker class can broadcast to clients</span></span>
+[!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample8.cs)]
 
-    <span data-ttu-id="32bde-218">因为价格更改来自此处 StockTicker 对象，所以这是需要在所有连接的客户端上调用 updateStockPrice 方法的对象。</span><span class="sxs-lookup"><span data-stu-id="32bde-218">Because the price changes originate here in the StockTicker object, this is the object that needs to call an updateStockPrice method on all connected clients.</span></span> <span data-ttu-id="32bde-219">用于调用客户端的方法，Hub 类中有一个 API，但 StockTicker 不从 Hub 类派生，但尚未对任何集线器对象的引用。</span><span class="sxs-lookup"><span data-stu-id="32bde-219">In a Hub class you have an API for calling client methods, but StockTicker does not derive from the Hub class and does not have a reference to any Hub object.</span></span> <span data-ttu-id="32bde-220">因此，若要将广播到连接的客户端，StockTicker 类必须 StockTickerHub 类获取 SignalR 上下文实例并使用它来在客户端上调用方法。</span><span class="sxs-lookup"><span data-stu-id="32bde-220">Therefore, in order to broadcast to connected clients, the StockTicker class has to get the SignalR context instance for the StockTickerHub class and use that to call methods on clients.</span></span>
+<span data-ttu-id="4a7bf-204">在实际的应用程序，`TryUpdateStockPrice`方法将调用 web 服务，以便查找价格。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-204">In a real application, the `TryUpdateStockPrice` method would call a web service to look up the price.</span></span> <span data-ttu-id="4a7bf-205">在此代码中，该应用使用的随机数生成器随机进行更改。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-205">In this code, the app uses a random number generator to make changes randomly.</span></span>
 
-    <span data-ttu-id="32bde-221">该代码获取对 SignalR 上下文的引用时创建的单一类实例，将引用传递给构造函数中，并构造函数将其放入客户端属性。</span><span class="sxs-lookup"><span data-stu-id="32bde-221">The code gets a reference to the SignalR context when it creates the singleton class instance, passes that reference to the constructor, and the constructor puts it in the Clients property.</span></span>
+#### <a name="getting-the-signalr-context-so-that-the-stockticker-class-can-broadcast-to-clients"></a><span data-ttu-id="4a7bf-206">获取 SignalR 上下文，以便 StockTicker 类可以广播到客户端</span><span class="sxs-lookup"><span data-stu-id="4a7bf-206">Getting the SignalR context so that the StockTicker class can broadcast to clients</span></span>
 
-    <span data-ttu-id="32bde-222">有两个原因你希望只需一次获取上下文的理由： 获取上下文是代价高昂的操作，并一次获取将确保消息发送到客户端的预期的顺序得到保留。</span><span class="sxs-lookup"><span data-stu-id="32bde-222">There are two reasons why you want to get the context just once: getting the context is an expensive operation, and getting it once ensures that the intended order of messages sent to clients is preserved.</span></span>
+<span data-ttu-id="4a7bf-207">因为价格更改此处源自`StockTicker`对象，它是对象，需要调用`updateStockPrice`所有连接的客户端上的方法。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-207">Because the price changes originate here in the `StockTicker` object, it's the object that needs to call an `updateStockPrice` method on all connected clients.</span></span> <span data-ttu-id="4a7bf-208">在中`Hub`类，您用于调用客户端的方法，有一个 API，但`StockTicker`也不是派生`Hub`类，并不提供任何参考`Hub`对象。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-208">In a `Hub` class, you have an API for calling client methods, but `StockTicker` doesn't derive from the `Hub` class and doesn't have a reference to any `Hub` object.</span></span> <span data-ttu-id="4a7bf-209">用于向已连接客户端广播`StockTicker`类具有要获取有关 SignalR 上下文实例`StockTickerHub`类，并使用它来在客户端上调用方法。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-209">To broadcast to connected clients, the `StockTicker` class has to get the SignalR context instance for the `StockTickerHub` class and use that to call methods on clients.</span></span>
 
-    [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample9.cs)]
+<span data-ttu-id="4a7bf-210">该代码获取对 SignalR 上下文的引用时创建的单一类实例，将引用传递给构造函数中，并构造函数将其放入`Clients`属性。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-210">The code gets a reference to the SignalR context when it creates the singleton class instance, passes that reference to the constructor, and the constructor puts it in the `Clients` property.</span></span>
 
-    <span data-ttu-id="32bde-223">获取上下文的客户端属性并将其置于 StockTickerClient 属性中可编写代码来调用方法的客户端中的中心类一样外观相同。</span><span class="sxs-lookup"><span data-stu-id="32bde-223">Getting the Clients property of the context and putting it in the StockTickerClient property lets you write code to call client methods that looks the same as it would in a Hub class.</span></span> <span data-ttu-id="32bde-224">例如，若要将广播到所有客户端可以编写 Clients.All.updateStockPrice(stock)。</span><span class="sxs-lookup"><span data-stu-id="32bde-224">For instance, to broadcast to all clients you can write Clients.All.updateStockPrice(stock).</span></span>
+<span data-ttu-id="4a7bf-211">有两个原因你想要一次只能获取上下文的原因： 获取上下文是代价高昂的任务，并可确保应用程序保留的消息发送到客户端的预期的顺序后获取它。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-211">There are two reasons why you want to get the context only once: getting the context is an expensive task, and getting it once makes sure the app preserves the intended order of messages sent to the clients.</span></span>
 
-    <span data-ttu-id="32bde-225">在调用 BroadcastStockPrice updateStockPrice 方法尚不存在;在编写客户端上运行的代码时，你将从更高版本添加它。</span><span class="sxs-lookup"><span data-stu-id="32bde-225">The updateStockPrice method that you are calling in BroadcastStockPrice doesn't exist yet; you'll add it later when you write code that runs on the client.</span></span> <span data-ttu-id="32bde-226">因为 Clients.All 是动态的这意味着将在运行时计算该表达式可以引用 updateStockPrice 此处。</span><span class="sxs-lookup"><span data-stu-id="32bde-226">You can refer to updateStockPrice here because Clients.All is dynamic, which means the expression will be evaluated at runtime.</span></span> <span data-ttu-id="32bde-227">当此方法调用执行时，SignalR 将发送方法名称和参数值到客户端，并在客户端有一个名为 updateStockPrice 方法，将调用该方法和参数值将传递给它。</span><span class="sxs-lookup"><span data-stu-id="32bde-227">When this method call executes, SignalR will send the method name and the parameter value to the client, and if the client has a method named updateStockPrice, that method will be called and the parameter value will be passed to it.</span></span>
+[!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample9.cs)]
 
-    <span data-ttu-id="32bde-228">Clients.All 意味着将发送到所有客户端。</span><span class="sxs-lookup"><span data-stu-id="32bde-228">Clients.All means send to all clients.</span></span> <span data-ttu-id="32bde-229">SignalR 提供其他选项来指定哪些客户端或客户端将发送到的组。</span><span class="sxs-lookup"><span data-stu-id="32bde-229">SignalR gives you other options to specify which clients or groups of clients to send to.</span></span> <span data-ttu-id="32bde-230">有关详细信息，请参阅[HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx)。</span><span class="sxs-lookup"><span data-stu-id="32bde-230">For more information, see [HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx).</span></span>
+<span data-ttu-id="4a7bf-212">获取`Clients`属性的上下文并将其放入`StockTickerClient`属性，可以编写代码来调用方法的客户端中一样看上去相同`Hub`类。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-212">Getting the `Clients` property of the context and putting it in the `StockTickerClient` property lets you write code to call client methods that looks the same as it would in a `Hub` class.</span></span> <span data-ttu-id="4a7bf-213">例如，若要广播到所有客户端可以编写`Clients.All.updateStockPrice(stock)`。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-213">For instance, to broadcast to all clients you can write `Clients.All.updateStockPrice(stock)`.</span></span>
 
-### <a name="register-the-signalr-route"></a><span data-ttu-id="32bde-231">注册 SignalR 路由</span><span class="sxs-lookup"><span data-stu-id="32bde-231">Register the SignalR route</span></span>
+<span data-ttu-id="4a7bf-214">`updateStockPrice`方法中调用`BroadcastStockPrice`尚不存在。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-214">The `updateStockPrice` method that you're calling in `BroadcastStockPrice` doesn't exist yet.</span></span> <span data-ttu-id="4a7bf-215">在编写客户端上运行的代码时，你将从更高版本添加它。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-215">You'll add it later when you write code that runs on the client.</span></span> <span data-ttu-id="4a7bf-216">您可以参考`updateStockPrice`此处因为`Clients.All`是动态的这意味着应用程序将计算在运行时表达式的值。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-216">You can refer to `updateStockPrice` here because `Clients.All` is dynamic, which means the app will evaluate the expression at runtime.</span></span> <span data-ttu-id="4a7bf-217">当此方法调用执行时，SignalR 会方法名称和参数值向发送客户端，并在客户端有一个名为方法`updateStockPrice`，应用程序将调用该方法并向其传递参数值。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-217">When this method call executes, SignalR will send the method name and the parameter value to the client, and if the client has a method named `updateStockPrice`, the app will call that method and pass the parameter value to it.</span></span>
 
-<span data-ttu-id="32bde-232">服务器需要知道要截获并将定向到 SignalR 的 URL。</span><span class="sxs-lookup"><span data-stu-id="32bde-232">The server needs to know which URL to intercept and direct to SignalR.</span></span> <span data-ttu-id="32bde-233">若要执行此操作，添加 OWIN 启动类：</span><span class="sxs-lookup"><span data-stu-id="32bde-233">To do that, add an OWIN startup class:</span></span>
+<span data-ttu-id="4a7bf-218">`Clients.All` 表示将发送到所有客户端。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-218">`Clients.All` means send to all clients.</span></span> <span data-ttu-id="4a7bf-219">SignalR 提供其他选项来指定哪些客户端或客户端将发送到的组。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-219">SignalR gives you other options to specify which clients or groups of clients to send to.</span></span> <span data-ttu-id="4a7bf-220">有关详细信息，请参阅[HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx)。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-220">For more information, see [HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx).</span></span>
 
-1. <span data-ttu-id="32bde-234">在中**解决方案资源管理器**，右键单击该项目，然后单击**添加 |OWIN 启动类**。</span><span class="sxs-lookup"><span data-stu-id="32bde-234">In **Solution Explorer**, right-click the project, and then click **Add | OWIN Startup Class**.</span></span> <span data-ttu-id="32bde-235">将类命名**Startup.cs**。</span><span class="sxs-lookup"><span data-stu-id="32bde-235">Name the class **Startup.cs**.</span></span>
-2. <span data-ttu-id="32bde-236">中的代码替换**Startup.cs**以下。</span><span class="sxs-lookup"><span data-stu-id="32bde-236">Replace the code in **Startup.cs** with the following.</span></span>
+### <a name="register-the-signalr-route"></a><span data-ttu-id="4a7bf-221">注册 SignalR 路由</span><span class="sxs-lookup"><span data-stu-id="4a7bf-221">Register the SignalR route</span></span>
+
+<span data-ttu-id="4a7bf-222">服务器需要知道要截获并将定向到 SignalR 的 URL。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-222">The server needs to know which URL to intercept and direct to SignalR.</span></span> <span data-ttu-id="4a7bf-223">若要执行此操作，添加 OWIN 启动类：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-223">To do that, add an OWIN startup class:</span></span>
+
+1. <span data-ttu-id="4a7bf-224">在中**解决方案资源管理器**，右键单击该项目并选择**添加** > **新项**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-224">In **Solution Explorer**, right-click the project and select **Add** > **New Item**.</span></span>
+
+1. <span data-ttu-id="4a7bf-225">在中**添加新项-SignalR.StockTicker**选择**已安装** > **Visual C#**   >  **Web**和然后选择**OWIN 启动类**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-225">In **Add New Item - SignalR.StockTicker** select **Installed** > **Visual C#** > **Web** and then select **OWIN Startup Class**.</span></span>
+
+1. <span data-ttu-id="4a7bf-226">将类命名*启动*，然后选择**确定**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-226">Name the class *Startup* and select **OK**.</span></span>
+
+1. <span data-ttu-id="4a7bf-227">中的默认代码替换*Startup.cs*文件使用以下代码：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-227">Replace the default code in the *Startup.cs* file with this code:</span></span>
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample10.cs)]
 
-<span data-ttu-id="32bde-237">现在已经完成设置服务器代码。</span><span class="sxs-lookup"><span data-stu-id="32bde-237">You have now completed setting up the server code.</span></span> <span data-ttu-id="32bde-238">下一节中将设置客户端。</span><span class="sxs-lookup"><span data-stu-id="32bde-238">In the next section you'll set up the client.</span></span>
+<span data-ttu-id="4a7bf-228">现在，你已设置的服务器代码。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-228">You have now finished setting up the server code.</span></span> <span data-ttu-id="4a7bf-229">在下一步部分中，将设置客户端。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-229">In the next section, you'll set up the client.</span></span>
 
-<a id="client"></a>
+## <a name="set-up-the-client-code"></a><span data-ttu-id="4a7bf-230">设置客户端代码</span><span class="sxs-lookup"><span data-stu-id="4a7bf-230">Set up the client code</span></span>
 
-## <a name="set-up-the-client-code"></a><span data-ttu-id="32bde-239">设置客户端代码</span><span class="sxs-lookup"><span data-stu-id="32bde-239">Set up the client code</span></span>
+<span data-ttu-id="4a7bf-231">在本部分中，您将设置在客户端运行的代码。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-231">In this section, you set up the code that runs on the client.</span></span>
 
-1. <span data-ttu-id="32bde-240">在项目文件夹中，创建一个新的 HTML 文件并将其命名*StockTicker.html*。</span><span class="sxs-lookup"><span data-stu-id="32bde-240">Create a new HTML file in the project folder, and name it *StockTicker.html*.</span></span>
-2. <span data-ttu-id="32bde-241">模板代码替换为以下代码。</span><span class="sxs-lookup"><span data-stu-id="32bde-241">Replace the template code with the following code.</span></span>
+### <a name="create-the-html-page-and-javascript-file"></a><span data-ttu-id="4a7bf-232">创建 HTML 页和 JavaScript 文件</span><span class="sxs-lookup"><span data-stu-id="4a7bf-232">Create the HTML page and JavaScript file</span></span>
 
-    [!code-html[Main](tutorial-server-broadcast-with-signalr/samples/sample11.html)]
+<span data-ttu-id="4a7bf-233">HTML 页将显示的数据和 JavaScript 文件将组织的数据。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-233">The HTML page will display the data and the JavaScript file will organize the data.</span></span>
 
-    <span data-ttu-id="32bde-242">HTML 5 列、 一个标题行，与具有一个单元格跨越所有 5 个列的数据行创建一个表。</span><span class="sxs-lookup"><span data-stu-id="32bde-242">The HTML creates a table with 5 columns, a header row, and a data row with a single cell that spans all 5 columns.</span></span> <span data-ttu-id="32bde-243">数据行显示"正在加载..."，并暂时不可用时在应用程序启动后，才会显示。</span><span class="sxs-lookup"><span data-stu-id="32bde-243">The data row displays "loading..." and will only be shown momentarily when the application starts.</span></span> <span data-ttu-id="32bde-244">JavaScript 代码将删除该行，并添加其位置的行中使用从服务器中检索的股票数据。</span><span class="sxs-lookup"><span data-stu-id="32bde-244">JavaScript code will remove that row and add in its place rows with stock data retrieved from the server.</span></span>
+#### <a name="create-stocktickerhtml"></a><span data-ttu-id="4a7bf-234">创建 StockTicker.html</span><span class="sxs-lookup"><span data-stu-id="4a7bf-234">Create StockTicker.html</span></span>
 
-    <span data-ttu-id="32bde-245">脚本标记指定的 jQuery 脚本文件、 SignalR 核心脚本文件、 SignalR 代理脚本文件和更高版本，您将创建一个 StockTicker 脚本文件。</span><span class="sxs-lookup"><span data-stu-id="32bde-245">The script tags specify the jQuery script file, the SignalR core script file, the SignalR proxies script file, and a StockTicker script file that you'll create later.</span></span> <span data-ttu-id="32bde-246">SignalR 代理脚本文件的说明进行操作，它指定"/ signalr/中心"URL，动态生成，并在这种情况下定义 StockTickerHub.GetAllStocks 的 Hub 类上的方法的代理方法。</span><span class="sxs-lookup"><span data-stu-id="32bde-246">The SignalR proxies script file, which specifies the "/signalr/hubs" URL, is dynamically generated and defines proxy methods for the methods on the Hub class, in this case for StockTickerHub.GetAllStocks.</span></span> <span data-ttu-id="32bde-247">如果您愿意，您可以通过使用手动生成此 JavaScript 文件[SignalR 实用程序](http://nuget.org/packages/Microsoft.AspNet.SignalR.Utils/)和禁用 MapHubs 方法调用中的动态文件创建。</span><span class="sxs-lookup"><span data-stu-id="32bde-247">If you prefer, you can generate this JavaScript file manually by using [SignalR Utilities](http://nuget.org/packages/Microsoft.AspNet.SignalR.Utils/) and disable dynamic file creation in the MapHubs method call.</span></span>
-3. > [!IMPORTANT]
-   > <span data-ttu-id="32bde-248">请确保在 JavaScript 文件中引用*StockTicker.html*正确无误。</span><span class="sxs-lookup"><span data-stu-id="32bde-248">Make sure that the JavaScript file references in *StockTicker.html* are correct.</span></span> <span data-ttu-id="32bde-249">也就是说，确保你的脚本标记 (1.10.2 在示例中) 中的 jQuery 版本是在项目中的 jQuery 版本相同*脚本*文件夹，并确保你的脚本标记中的 SignalR 版本是 SignalR 相同在项目的版本*脚本*文件夹。</span><span class="sxs-lookup"><span data-stu-id="32bde-249">That is, make sure that the jQuery version in your script tag (1.10.2 in the example) is the same as the jQuery version in your project's *Scripts* folder, and make sure that the SignalR version in your script tag is the same as the SignalR version in your project's *Scripts* folder.</span></span> <span data-ttu-id="32bde-250">如有必要，请更改脚本标记中的文件名称。</span><span class="sxs-lookup"><span data-stu-id="32bde-250">Change the file names in the script tags if necessary.</span></span>
-4. <span data-ttu-id="32bde-251">在中**解决方案资源管理器**，右键单击*StockTicker.html*，然后单击**设为起始页**。</span><span class="sxs-lookup"><span data-stu-id="32bde-251">In **Solution Explorer**, right-click *StockTicker.html*, and then click **Set as Start Page**.</span></span>
-5. <span data-ttu-id="32bde-252">在项目文件夹中创建的新 JavaScript 文件并将其命名*StockTicker.js*...</span><span class="sxs-lookup"><span data-stu-id="32bde-252">Create a new JavaScript file in the project folder and name it *StockTicker.js*..</span></span>
-6. <span data-ttu-id="32bde-253">模板代码替换为以下代码：</span><span class="sxs-lookup"><span data-stu-id="32bde-253">Replace the template code with the following code:</span></span>
+<span data-ttu-id="4a7bf-235">首先，你将添加 HTML 客户端。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-235">First, you'll add the HTML client.</span></span>
+
+1. <span data-ttu-id="4a7bf-236">在中**解决方案资源管理器**，右键单击该项目并选择**添加** > **HTML 页**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-236">In **Solution Explorer**, right-click the project and select **Add** > **HTML Page**.</span></span>
+
+1. <span data-ttu-id="4a7bf-237">将文件命名*StockTicker* ，然后选择**确定**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-237">Name the file *StockTicker* and select **OK**.</span></span>
+
+1. <span data-ttu-id="4a7bf-238">中的默认代码替换*StockTicker.html*文件使用以下代码：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-238">Replace the default code in the *StockTicker.html* file with this code:</span></span>
+
+    [!code-html[Main](tutorial-server-broadcast-with-signalr/samples/sample11.html?highlight=40-43)]
+
+    <span data-ttu-id="4a7bf-239">HTML 5 列、 一个标题行，与具有一个单元格跨越所有五个列的数据行创建一个表。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-239">The HTML creates a table with five columns, a header row, and a data row with a single cell that spans all five columns.</span></span> <span data-ttu-id="4a7bf-240">数据行显示了"正在加载..."暂时不可用时启动该应用程序。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-240">The data row shows "loading..." momentarily when the app starts.</span></span> <span data-ttu-id="4a7bf-241">JavaScript 代码将删除该行，并添加其位置的行中使用从服务器中检索的股票数据。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-241">JavaScript code will remove that row and add in its place rows with stock data retrieved from the server.</span></span>
+
+    <span data-ttu-id="4a7bf-242">指定脚本标记：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-242">The script tags specify:</span></span>
+
+    * <span data-ttu-id="4a7bf-243">JQuery 脚本文件。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-243">The jQuery script file.</span></span>
+
+    * <span data-ttu-id="4a7bf-244">SignalR 核心脚本文件。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-244">The SignalR core script file.</span></span>
+
+    * <span data-ttu-id="4a7bf-245">SignalR 代理脚本文件。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-245">The SignalR proxies script file.</span></span>
+
+    * <span data-ttu-id="4a7bf-246">更高版本，您将创建一个 StockTicker 脚本文件。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-246">A StockTicker script file that you'll create later.</span></span>
+
+    <span data-ttu-id="4a7bf-247">应用动态生成 SignalR 代理脚本文件。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-247">The app dynamically generates the SignalR proxies script file.</span></span> <span data-ttu-id="4a7bf-248">它指定"/ signalr/中心"URL 并定义用于 Hub 类，在此情况下，对方法的代理方法`StockTickerHub.GetAllStocks`。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-248">It specifies the "/signalr/hubs" URL and defines proxy methods for the methods on the Hub class, in this case, for `StockTickerHub.GetAllStocks`.</span></span> <span data-ttu-id="4a7bf-249">如果您愿意，您可以通过使用手动生成此 JavaScript 文件[SignalR 实用程序](http://nuget.org/packages/Microsoft.AspNet.SignalR.Utils/)。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-249">If you prefer, you can generate this JavaScript file manually by using [SignalR Utilities](http://nuget.org/packages/Microsoft.AspNet.SignalR.Utils/).</span></span> <span data-ttu-id="4a7bf-250">别忘了禁用动态文件创建在`MapHubs`方法调用。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-250">Don't forget to disable dynamic file creation in the `MapHubs` method call.</span></span>
+
+1. <span data-ttu-id="4a7bf-251">在中**解决方案资源管理器**，展开**脚本**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-251">In **Solution Explorer**, expand **Scripts**.</span></span>
+
+    <span data-ttu-id="4a7bf-252">适用于 jQuery 和 SignalR 的脚本库将显示在该项目。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-252">Script libraries for jQuery and SignalR are visible in the project.</span></span>
+
+    > [!IMPORTANT]
+    > <span data-ttu-id="4a7bf-253">包管理器将安装 SignalR 脚本的更高版本。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-253">The package manager will install a later version of the SignalR scripts.</span></span>
+
+1. <span data-ttu-id="4a7bf-254">更新要与项目中的脚本文件的版本相对应的代码块中的脚本引用。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-254">Update the script references in the code block to correspond to the versions of the script files in the project.</span></span>
+
+1. <span data-ttu-id="4a7bf-255">在中**解决方案资源管理器**，右键单击*StockTicker.html*，然后选择**设为起始页**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-255">In **Solution Explorer**, right-click *StockTicker.html*, and then select **Set as Start Page**.</span></span>
+
+#### <a name="create-stocktickerjs"></a><span data-ttu-id="4a7bf-256">创建 StockTicker.js</span><span class="sxs-lookup"><span data-stu-id="4a7bf-256">Create StockTicker.js</span></span>
+
+<span data-ttu-id="4a7bf-257">现在，创建 JavaScript 文件。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-257">Now create the JavaScript file.</span></span>
+
+1. <span data-ttu-id="4a7bf-258">在中**解决方案资源管理器**，右键单击该项目并选择**添加** > **JavaScript 文件**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-258">In **Solution Explorer**, right-click the project and select **Add** > **JavaScript File**.</span></span>
+
+1. <span data-ttu-id="4a7bf-259">将文件命名*StockTicker* ，然后选择**确定**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-259">Name the file *StockTicker* and select **OK**.</span></span>
+
+1. <span data-ttu-id="4a7bf-260">添加到此代码*StockTicker.js*文件：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-260">Add this code to the *StockTicker.js* file:</span></span>
 
     [!code-javascript[Main](tutorial-server-broadcast-with-signalr/samples/sample12.js)]
 
-    <span data-ttu-id="32bde-254">$.connection 指 SignalR 代理。</span><span class="sxs-lookup"><span data-stu-id="32bde-254">$.connection refers to the SignalR proxies.</span></span> <span data-ttu-id="32bde-255">该代码获取 StockTickerHub 类对代理的引用，并将其放入行情自动收录器变量。</span><span class="sxs-lookup"><span data-stu-id="32bde-255">The code gets a reference to the proxy for the StockTickerHub class and puts it in the ticker variable.</span></span> <span data-ttu-id="32bde-256">代理名称是 [HubName] 属性已设置的名称：</span><span class="sxs-lookup"><span data-stu-id="32bde-256">The proxy name is the name that was set by the [HubName] attribute:</span></span>
+### <a name="examine-the-client-code"></a><span data-ttu-id="4a7bf-261">检查客户端代码</span><span class="sxs-lookup"><span data-stu-id="4a7bf-261">Examine the client code</span></span>
 
-    [!code-javascript[Main](tutorial-server-broadcast-with-signalr/samples/sample13.js)]
+<span data-ttu-id="4a7bf-262">如果您检查客户端代码，它将帮助您了解客户端代码如何与服务器代码以将应用程序结合进行交互。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-262">If you examine the client code, it will help you learn how the client code interacts with the server code to make the app work.</span></span>
 
-    [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample14.cs)]
+#### <a name="starting-the-connection"></a><span data-ttu-id="4a7bf-263">正在启动的连接</span><span class="sxs-lookup"><span data-stu-id="4a7bf-263">Starting the connection</span></span>
 
-    <span data-ttu-id="32bde-257">定义所有变量和函数后，文件中的代码的最后一行初始化 SignalR 连接通过调用 SignalR 启动函数。</span><span class="sxs-lookup"><span data-stu-id="32bde-257">After all the variables and functions are defined, the last line of code in the file initializes the SignalR connection by calling the SignalR start function.</span></span> <span data-ttu-id="32bde-258">启动函数以异步方式执行，并返回[jQuery 延迟对象](http://api.jquery.com/category/deferred-object/)，这意味着您可以调用 done 的函数可指定异步操作完成时要调用的函数...</span><span class="sxs-lookup"><span data-stu-id="32bde-258">The start function executes asynchronously and returns a [jQuery Deferred object](http://api.jquery.com/category/deferred-object/), which means you can call the done function to specify the function to call when the asynchronous operation is completed..</span></span>
+<span data-ttu-id="4a7bf-264">`$.connection` 表示 SignalR 代理。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-264">`$.connection` refers to the SignalR proxies.</span></span> <span data-ttu-id="4a7bf-265">代码获取到的代理的引用`StockTickerHub`类，并将其放入`ticker`变量。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-265">The code gets a reference to the proxy for the `StockTickerHub` class and puts it in the `ticker` variable.</span></span> <span data-ttu-id="4a7bf-266">代理名称是所设置的名称`HubName`属性：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-266">The proxy name is the name that was set by the `HubName` attribute:</span></span>
 
-    [!code-javascript[Main](tutorial-server-broadcast-with-signalr/samples/sample15.js)]
+[!code-javascript[Main](tutorial-server-broadcast-with-signalr/samples/sample13.js)]
 
-    <span data-ttu-id="32bde-259">Init 函数 getAllStocks 函数调用服务器上，并使用服务器将返回以更新库存表的信息。</span><span class="sxs-lookup"><span data-stu-id="32bde-259">The init function calls the getAllStocks function on the server and uses the information that the server returns to update the stock table.</span></span> <span data-ttu-id="32bde-260">请注意，默认情况下，您必须使用 camel 大小写格式的客户端上但方法名是 pascal 大小写的服务器上。</span><span class="sxs-lookup"><span data-stu-id="32bde-260">Notice that by default, you have to use camel casing on the client although the method name is pascal-cased on the server.</span></span> <span data-ttu-id="32bde-261">Camel 大小写规则仅适用于方法，而不是对象。</span><span class="sxs-lookup"><span data-stu-id="32bde-261">The camel-casing rule only applies to methods, not objects.</span></span> <span data-ttu-id="32bde-262">例如，指股票。符号和库存。价格、 不 stock.symbol 或 stock.price。</span><span class="sxs-lookup"><span data-stu-id="32bde-262">For example, you refer to stock.Symbol and stock.Price, not stock.symbol or stock.price.</span></span>
+[!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample14.cs)]
 
-    [!code-javascript[Main](tutorial-server-broadcast-with-signalr/samples/sample16.js)]
+<span data-ttu-id="4a7bf-267">文件中的代码的最后一行定义所有变量和函数后，通过调用 SignalR 初始化 SignalR 连接`start`函数。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-267">After you define all the variables and functions, the last line of code in the file initializes the SignalR connection by calling the SignalR `start` function.</span></span> <span data-ttu-id="4a7bf-268">`start`函数以异步方式执行，并返回[jQuery 延迟对象](http://api.jquery.com/category/deferred-object/)。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-268">The `start` function executes asynchronously and returns a [jQuery Deferred object](http://api.jquery.com/category/deferred-object/).</span></span> <span data-ttu-id="4a7bf-269">可以调用 done 的函数可指定当应用完成异步操作时要调用的函数。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-269">You can call the done function to specify the function to call when the app finishes the asynchronous action.</span></span>
 
-    [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample17.cs)]
+[!code-javascript[Main](tutorial-server-broadcast-with-signalr/samples/sample15.js)]
 
-    <span data-ttu-id="32bde-263">如果你想要在客户端上使用 pascal 大小写，或者如果你想要使用完全不同的方法名称，无法修饰具有 HubMethodName 特性中心的方法相同的方式，修饰，Hub 类本身与 HubName 属性。</span><span class="sxs-lookup"><span data-stu-id="32bde-263">If you wanted to use pascal casing on the client, or if you wanted to use a completely different method name, you could decorate the Hub method with the HubMethodName attribute the same way you decorated the Hub class itself with the HubName attribute.</span></span>
+#### <a name="getting-all-the-stocks"></a><span data-ttu-id="4a7bf-270">获取所有股票</span><span class="sxs-lookup"><span data-stu-id="4a7bf-270">Getting all the stocks</span></span>
 
-    <span data-ttu-id="32bde-264">在 init 方法中，为从服务器收到通过调用 formatStock 格式属性的常用对象，每个股票对象创建 HTML 表行，然后通过调用取代 (顶部定义*StockTicker.js*) 将 rowTemplate 变量中的占位符替换为股票对象属性值。</span><span class="sxs-lookup"><span data-stu-id="32bde-264">In the init method, HTML for a table row is created for each stock object received from the server by calling formatStock to format properties of the stock object, and then by calling supplant (which is defined at the top of *StockTicker.js*) to replace placeholders in the rowTemplate variable with the stock object property values.</span></span> <span data-ttu-id="32bde-265">生成的 HTML 然后追加到常用的表。</span><span class="sxs-lookup"><span data-stu-id="32bde-265">The resulting HTML is then appended to the stock table.</span></span>
+<span data-ttu-id="4a7bf-271">`init`函数调用`getAllStocks`在服务器上的函数，并使用服务器将返回以更新库存表的信息。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-271">The `init` function calls the `getAllStocks` function on the server and uses the information that the server returns to update the stock table.</span></span> <span data-ttu-id="4a7bf-272">请注意，默认情况下，您必须在客户端上使用 camelCasing，即使方法名称是 pascal 大小写的服务器上。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-272">Notice that, by default, you have to use camelCasing on the client even though the method name is pascal-cased on the server.</span></span> <span data-ttu-id="4a7bf-273">CamelCasing 规则仅适用于方法，而不是对象。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-273">The camelCasing rule only applies to methods, not objects.</span></span> <span data-ttu-id="4a7bf-274">例如，请参阅`stock.Symbol`并`stock.Price`，而非`stock.symbol`或`stock.price`。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-274">For example, you refer to `stock.Symbol` and `stock.Price`, not `stock.symbol` or `stock.price`.</span></span>
 
-    <span data-ttu-id="32bde-266">通过将其作为执行异步启动函数完成后的回调函数传递调用 init。</span><span class="sxs-lookup"><span data-stu-id="32bde-266">You call init by passing it in as a callback function that executes after the asynchronous start function completes.</span></span> <span data-ttu-id="32bde-267">如果作为单独的 JavaScript 语句调用开始后调用 init，该函数会失败，因为立即会执行而不必等待启动函数以完成建立连接。</span><span class="sxs-lookup"><span data-stu-id="32bde-267">If you called init as a separate JavaScript statement after calling start, the function would fail because it would execute immediately without waiting for the start function to finish establishing the connection.</span></span> <span data-ttu-id="32bde-268">在这种情况下，init 函数会尝试调用 getAllStocks 函数，才能建立服务器连接。</span><span class="sxs-lookup"><span data-stu-id="32bde-268">In that case, the init function would try to call the getAllStocks function before the server connection is established.</span></span>
+[!code-javascript[Main](tutorial-server-broadcast-with-signalr/samples/sample16.js)]
 
-    <span data-ttu-id="32bde-269">当服务器更改股票的价格时，它调用 updateStockPrice 上连接的客户端。</span><span class="sxs-lookup"><span data-stu-id="32bde-269">When the server changes a stock's price, it calls the updateStockPrice on connected clients.</span></span> <span data-ttu-id="32bde-270">若要在服务器使其可供调用情况下，该函数添加到 stockTicker 代理的客户端属性。</span><span class="sxs-lookup"><span data-stu-id="32bde-270">The function is added to the client property of the stockTicker proxy in order to make it available to calls from the server.</span></span>
+[!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample17.cs)]
 
-    [!code-javascript[Main](tutorial-server-broadcast-with-signalr/samples/sample18.js)]
+<span data-ttu-id="4a7bf-275">在中`init`方法时，应用程序创建 HTML 通过调用从服务器收到的每个股票对象为表行`formatStock`的格式属性`stock`对象，并通过调用`supplant`来替换中的占位符`rowTemplate`变量`stock`对象属性值。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-275">In the `init` method, the app creates HTML for a table row for each stock object received from the server by calling `formatStock` to format properties of the `stock` object, and then by calling `supplant` to replace placeholders in the `rowTemplate` variable with the `stock` object property values.</span></span> <span data-ttu-id="4a7bf-276">生成的 HTML 然后追加到常用的表。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-276">The resulting HTML is then appended to the stock table.</span></span>
 
-    <span data-ttu-id="32bde-271">UpdateStockPrice 函数设置从服务器接收到一个表行，如 init 函数中所示相同的方式的常用对象的格式。</span><span class="sxs-lookup"><span data-stu-id="32bde-271">The updateStockPrice function formats a stock object received from the server into a table row the same way as in the init function.</span></span> <span data-ttu-id="32bde-272">但是，而不是追加到表的行，它查找股票的当前行的表中并替换新行。</span><span class="sxs-lookup"><span data-stu-id="32bde-272">However, instead of appending the row to the table, it finds the stock's current row in the table and replaces that row with the new one.</span></span>
+> [!NOTE]
+> <span data-ttu-id="4a7bf-277">在调用`init`通过将其作为传递`callback`后异步执行的函数`start`函数完成。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-277">You call `init` by passing it in as a `callback` function that executes after the asynchronous `start` function finishes.</span></span> <span data-ttu-id="4a7bf-278">如果您调用`init`作为单独的 JavaScript 语句后调用`start`，该函数会失败，因为它而无需等待启动函数以完成建立连接立即运行。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-278">If you called `init` as a separate JavaScript statement after calling `start`, the function would fail because it would run immediately without waiting for the start function to finish establishing the connection.</span></span> <span data-ttu-id="4a7bf-279">在这种情况下，`init`函数会尝试调用`getAllStocks`函数应用在建立服务器连接之前。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-279">In that case, the `init` function would try to call the `getAllStocks` function before the app establishes a server connection.</span></span>
 
-<a id="test"></a>
+#### <a name="getting-updated-stock-prices"></a><span data-ttu-id="4a7bf-280">获取已更新的股票价格</span><span class="sxs-lookup"><span data-stu-id="4a7bf-280">Getting updated stock prices</span></span>
 
-## <a name="test-the-application"></a><span data-ttu-id="32bde-273">测试应用程序</span><span class="sxs-lookup"><span data-stu-id="32bde-273">Test the application</span></span>
+<span data-ttu-id="4a7bf-281">当服务器更改股票的价格时，它将调用`updateStockPrice`上连接的客户端。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-281">When the server changes a stock's price, it calls the `updateStockPrice` on connected clients.</span></span> <span data-ttu-id="4a7bf-282">该应用将函数添加到的客户端属性`stockTicker`代理，以使其可供调用从服务器。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-282">The app adds the function to the client property of the `stockTicker` proxy to make it available to calls from the server.</span></span>
 
-1. <span data-ttu-id="32bde-274">按 F5 在调试模式下运行应用程序。</span><span class="sxs-lookup"><span data-stu-id="32bde-274">Press F5 to run the application in debug mode.</span></span>
+[!code-javascript[Main](tutorial-server-broadcast-with-signalr/samples/sample18.js)]
 
-    <span data-ttu-id="32bde-275">库存表最初会显示"正在加载..."行，然后显示初始的股票数据时，一小段延迟后，然后股票价格开始更改。</span><span class="sxs-lookup"><span data-stu-id="32bde-275">The stock table initially displays the "loading..." line, then after a short delay the initial stock data is displayed, and then the stock prices start to change.</span></span>
+<span data-ttu-id="4a7bf-283">`updateStockPrice`常用对象从服务器接收到一个表行中的相同方法的函数格式`init`函数。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-283">The `updateStockPrice` function formats a stock object received from the server into a table row the same way as in the `init` function.</span></span> <span data-ttu-id="4a7bf-284">而不是追加到表的行，它将表中找到股票的当前行并替换新行。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-284">Instead of appending the row to the table, it finds the stock's current row in the table and replaces that row with the new one.</span></span>
 
-    ![“加载”](tutorial-server-broadcast-with-signalr/_static/image6.png)
+## <a name="test-the-application"></a><span data-ttu-id="4a7bf-285">测试应用程序</span><span class="sxs-lookup"><span data-stu-id="4a7bf-285">Test the application</span></span>
 
-    ![初始库存表](tutorial-server-broadcast-with-signalr/_static/image7.png)
+<span data-ttu-id="4a7bf-286">您可以测试应用程序以确保它是否正常工作。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-286">You can test the app to make sure it's working.</span></span> <span data-ttu-id="4a7bf-287">你将看到显示股票价格波动的实时股票表的所有浏览器窗口。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-287">You'll see all browser windows display the live stock table with stock prices fluctuating.</span></span>
 
-    ![从服务器接收更改的库存表](tutorial-server-broadcast-with-signalr/_static/image8.png)
-2. <span data-ttu-id="32bde-279">从浏览器地址栏复制 URL 并将其粘贴到一个或多个新的浏览器窗口。</span><span class="sxs-lookup"><span data-stu-id="32bde-279">Copy the URL from the browser address bar and paste it into one or more new browser window(s).</span></span>
+1. <span data-ttu-id="4a7bf-288">在工具栏中，开启**脚本调试**，然后选择播放按钮以在调试模式下运行应用。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-288">In the toolbar, turn on **Script Debugging** and then select the play button to run the app in Debug mode.</span></span>
 
-    <span data-ttu-id="32bde-280">初始股票显示第一个浏览器相同，同时发生了更改。</span><span class="sxs-lookup"><span data-stu-id="32bde-280">The initial stock display is the same as the first browser and changes happen simultaneously.</span></span>
-3. <span data-ttu-id="32bde-281">关闭所有浏览器并打开新浏览器，然后转到相同的 URL。</span><span class="sxs-lookup"><span data-stu-id="32bde-281">Close all browsers and open a new browser, then go to the same URL.</span></span>
+    ![启用调试模式下和选择播放的用户的屏幕截图。](tutorial-server-broadcast-with-signalr/_static/image4.png)
 
-    <span data-ttu-id="32bde-282">在服务器中运行，因此库存表屏幕将显示在股票已继续更改逐渐 StockTicker 单一实例对象。</span><span class="sxs-lookup"><span data-stu-id="32bde-282">The StockTicker singleton object has continued to run in the server, so the stock table display shows that the stocks have continued to change.</span></span> <span data-ttu-id="32bde-283">（不到具有零更改图形的初始表。）</span><span class="sxs-lookup"><span data-stu-id="32bde-283">(You don't see the initial table with zero change figures.)</span></span>
-4. <span data-ttu-id="32bde-284">关闭浏览器。</span><span class="sxs-lookup"><span data-stu-id="32bde-284">Close the browser.</span></span>
+    <span data-ttu-id="4a7bf-290">将打开一个浏览器窗口，显示**Live 库存表**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-290">A browser window will open displaying the **Live Stock Table**.</span></span> <span data-ttu-id="4a7bf-291">库存表最初显示了"正在加载..."行，然后，在短时间之后, 应用将显示初始的库存数据，然后股票价格开始更改。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-291">The stock table initially shows the "loading..." line, then, after a short time, the app shows the initial stock data, and then the stock prices start to change.</span></span>
 
-<a id="enablelogging"></a>
+1. <span data-ttu-id="4a7bf-292">从浏览器中复制 URL、 打开两个其他浏览器，并将 Url 粘贴到地址栏。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-292">Copy the URL from the browser, open two other browsers, and paste the URLs into the address bars.</span></span>
 
-## <a name="enable-logging"></a><span data-ttu-id="32bde-285">启用日志记录</span><span class="sxs-lookup"><span data-stu-id="32bde-285">Enable logging</span></span>
+    <span data-ttu-id="4a7bf-293">初始股票显示第一个浏览器相同，同时发生了更改。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-293">The initial stock display is the same as the first browser and changes happen simultaneously.</span></span>
 
-<span data-ttu-id="32bde-286">SignalR 有一个可以在客户端启用帮助解决疑难问题的内置日志记录函数。</span><span class="sxs-lookup"><span data-stu-id="32bde-286">SignalR has a built-in logging function that you can enable on the client to aid in troubleshooting.</span></span> <span data-ttu-id="32bde-287">在本部分中启用日志记录并演示如何日志识别您哪一台以下的传输方法使用 SignalR 的示例，请参阅：</span><span class="sxs-lookup"><span data-stu-id="32bde-287">In this section you enable logging and see examples that show how logs tell you which of the following transport methods SignalR is using:</span></span>
+1. <span data-ttu-id="4a7bf-294">关闭所有浏览器中，打开新浏览器并转到相同的 URL。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-294">Close all browsers, open a new browser, and go to the same URL.</span></span>
 
-- <span data-ttu-id="32bde-288">[Websocket](http://en.wikipedia.org/wiki/WebSocket)、 IIS 8 和当前浏览器中受支持。</span><span class="sxs-lookup"><span data-stu-id="32bde-288">[WebSockets](http://en.wikipedia.org/wiki/WebSocket), supported by IIS 8 and current browsers.</span></span>
-- <span data-ttu-id="32bde-289">[服务器发送事件](http://en.wikipedia.org/wiki/Server-sent_events)、 Internet Explorer 以外的浏览器中受支持。</span><span class="sxs-lookup"><span data-stu-id="32bde-289">[Server-sent events](http://en.wikipedia.org/wiki/Server-sent_events), supported by browsers other than Internet Explorer.</span></span>
-- <span data-ttu-id="32bde-290">[永久帧](http://en.wikipedia.org/wiki/Comet_(programming)#Hidden_iframe)、 Internet Explorer 中受支持。</span><span class="sxs-lookup"><span data-stu-id="32bde-290">[Forever frame](http://en.wikipedia.org/wiki/Comet_(programming)#Hidden_iframe), supported by Internet Explorer.</span></span>
-- <span data-ttu-id="32bde-291">[Ajax 长轮询](http://en.wikipedia.org/wiki/Comet_(programming)#Ajax_with_long_polling)，所有浏览器中受支持。</span><span class="sxs-lookup"><span data-stu-id="32bde-291">[Ajax long polling](http://en.wikipedia.org/wiki/Comet_(programming)#Ajax_with_long_polling), supported by all browsers.</span></span>
+    <span data-ttu-id="4a7bf-295">StockTicker 单一对象不断在服务器中运行。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-295">The StockTicker singleton object continued to run in the server.</span></span> <span data-ttu-id="4a7bf-296">**Live 库存表**股票不断更改的显示。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-296">The **Live Stock Table** shows that the stocks have continued to change.</span></span> <span data-ttu-id="4a7bf-297">不会看到具有零更改图形的初始表。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-297">You don't see the initial table with zero change figures.</span></span>
 
-<span data-ttu-id="32bde-292">对于任何给定的连接，SignalR 会选择最佳的传输方法在服务器和客户端支持。</span><span class="sxs-lookup"><span data-stu-id="32bde-292">For any given connection, SignalR chooses the best transport method that both the server and the client support.</span></span>
+1. <span data-ttu-id="4a7bf-298">关闭浏览器。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-298">Close the browser.</span></span>
 
-1. <span data-ttu-id="32bde-293">打开*StockTicker.js*并添加代码以启用日志记录之前初始化连接文件末尾的代码行：</span><span class="sxs-lookup"><span data-stu-id="32bde-293">Open *StockTicker.js* and add a line of code to enable logging immediately before the code that initializes the connection at the end of the file:</span></span>
+## <a name="enable-logging"></a><span data-ttu-id="4a7bf-299">启用日志记录</span><span class="sxs-lookup"><span data-stu-id="4a7bf-299">Enable logging</span></span>
 
-    [!code-javascript[Main](tutorial-server-broadcast-with-signalr/samples/sample19.js)]
-2. <span data-ttu-id="32bde-294">按 F5 运行项目。</span><span class="sxs-lookup"><span data-stu-id="32bde-294">Press F5 to run the project.</span></span>
-3. <span data-ttu-id="32bde-295">打开浏览器的开发人员工具窗口，并选择控制台以查看的日志。</span><span class="sxs-lookup"><span data-stu-id="32bde-295">Open your browser's developer tools window, and select the Console to see the logs.</span></span> <span data-ttu-id="32bde-296">您可能需要刷新页面以查看 Signalr 协商新连接的传输方法的日志。</span><span class="sxs-lookup"><span data-stu-id="32bde-296">You might have to refresh the page to see the logs of Signalr negotiating the transport method for a new connection.</span></span>
+<span data-ttu-id="4a7bf-300">SignalR 有一个可以在客户端启用帮助解决疑难问题的内置日志记录函数。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-300">SignalR has a built-in logging function that you can enable on the client to aid in troubleshooting.</span></span> <span data-ttu-id="4a7bf-301">在本部分中，启用日志记录并演示如何日志识别您哪一台以下的传输方法使用 SignalR 的示例，请参阅：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-301">In this section, you enable logging and see examples that show how logs tell you which of the following transport methods SignalR is using:</span></span>
 
-    <span data-ttu-id="32bde-297">如果在 Windows 8 (IIS 8) 上运行 Internet Explorer 10，传输方法是 Websocket。</span><span class="sxs-lookup"><span data-stu-id="32bde-297">If you are running Internet Explorer 10 on Windows 8 (IIS 8), the transport method is WebSockets.</span></span>
+* <span data-ttu-id="4a7bf-302">[Websocket](http://en.wikipedia.org/wiki/WebSocket)、 IIS 8 和当前浏览器中受支持。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-302">[WebSockets](http://en.wikipedia.org/wiki/WebSocket), supported by IIS 8 and current browsers.</span></span>
 
-    ![IE 10 IIS 8 控制台](tutorial-server-broadcast-with-signalr/_static/image9.png)
+* <span data-ttu-id="4a7bf-303">[服务器发送事件](http://en.wikipedia.org/wiki/Server-sent_events)、 Internet Explorer 以外的浏览器中受支持。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-303">[Server-sent events](http://en.wikipedia.org/wiki/Server-sent_events), supported by browsers other than Internet Explorer.</span></span>
 
-    <span data-ttu-id="32bde-299">如果在 Windows 7 (IIS 7.5) 上运行 Internet Explorer 10，传输方法是 iframe。</span><span class="sxs-lookup"><span data-stu-id="32bde-299">If you are running Internet Explorer 10 on Windows 7 (IIS 7.5), the transport method is iframe.</span></span>
+* <span data-ttu-id="4a7bf-304">[永久帧](http://en.wikipedia.org/wiki/Comet_(programming)#Hidden_iframe)、 Internet Explorer 中受支持。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-304">[Forever frame](http://en.wikipedia.org/wiki/Comet_(programming)#Hidden_iframe), supported by Internet Explorer.</span></span>
 
-    ![IE 10 控制台中，IIS 7.5](tutorial-server-broadcast-with-signalr/_static/image10.png)
+* <span data-ttu-id="4a7bf-305">[Ajax 长轮询](http://en.wikipedia.org/wiki/Comet_(programming)#Ajax_with_long_polling)，所有浏览器中受支持。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-305">[Ajax long polling](http://en.wikipedia.org/wiki/Comet_(programming)#Ajax_with_long_polling), supported by all browsers.</span></span>
 
-    <span data-ttu-id="32bde-301">在 Firefox 中安装的 Firebug 外接程序以获取控制台窗口。</span><span class="sxs-lookup"><span data-stu-id="32bde-301">In Firefox, install the Firebug add-in to get a Console window.</span></span> <span data-ttu-id="32bde-302">如果在 Windows 8 (IIS 8) 上运行 Firefox 19，传输方法是 Websocket。</span><span class="sxs-lookup"><span data-stu-id="32bde-302">If you are running Firefox 19 on Windows 8 (IIS 8), the transport method is WebSockets.</span></span>
+<span data-ttu-id="4a7bf-306">对于任何给定的连接，SignalR 会选择最佳的传输方法在服务器和客户端支持。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-306">For any given connection, SignalR chooses the best transport method that both the server and the client support.</span></span>
 
-    ![Firefox 19 IIS 8 Websocket](tutorial-server-broadcast-with-signalr/_static/image11.png)
+1. <span data-ttu-id="4a7bf-307">打开*StockTicker.js*。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-307">Open *StockTicker.js*.</span></span>
 
-    <span data-ttu-id="32bde-304">如果在 Windows 7 (IIS 7.5) 上运行 Firefox 19，传输方法将是服务器发送事件。</span><span class="sxs-lookup"><span data-stu-id="32bde-304">If you are running Firefox 19 on Windows 7 (IIS 7.5), the transport method is server-sent events.</span></span>
+1. <span data-ttu-id="4a7bf-308">添加此突出显示的代码，以启用日志记录之前初始化连接文件末尾的代码行：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-308">Add this highlighted line of code to enable logging immediately before the code that initializes the connection at the end of the file:</span></span>
 
-    ![Firefox 19 IIS 7.5 控制台](tutorial-server-broadcast-with-signalr/_static/image12.png)
+    [!code-javascript[Main](tutorial-server-broadcast-with-signalr/samples/sample19.js?highlight=2)]
 
-<a id="fullsample"></a>
+1. <span data-ttu-id="4a7bf-309">按**F5**以运行该项目。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-309">Press **F5** to run the project.</span></span>
 
-## <a name="install-and-review-the-full-stockticker-sample"></a><span data-ttu-id="32bde-306">安装和查看完整的 StockTicker 示例</span><span class="sxs-lookup"><span data-stu-id="32bde-306">Install and review the full StockTicker sample</span></span>
+1. <span data-ttu-id="4a7bf-310">打开浏览器的开发人员工具窗口，并选择控制台以查看的日志。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-310">Open your browser's developer tools window, and select the Console to see the logs.</span></span> <span data-ttu-id="4a7bf-311">您可能需要刷新页面以查看 SignalR 协商新连接的传输方法的日志。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-311">You might have to refresh the page to see the logs of SignalR negotiating the transport method for a new connection.</span></span>
 
-<span data-ttu-id="32bde-307">StockTicker 应用程序的情况下，安装[Microsoft.AspNet.SignalR.Sample](http://nuget.org/packages/microsoft.aspnet.signalr.sample) NuGet 包包含更多的功能比只是创建从零开始的简化版本。</span><span class="sxs-lookup"><span data-stu-id="32bde-307">The StockTicker application that is installed by the [Microsoft.AspNet.SignalR.Sample](http://nuget.org/packages/microsoft.aspnet.signalr.sample) NuGet package includes more features than the simplified version that you just created from scratch.</span></span> <span data-ttu-id="32bde-308">在本教程的此部分中，安装 NuGet 包并查看新功能和实现它们的代码。</span><span class="sxs-lookup"><span data-stu-id="32bde-308">In this section of the tutorial, you install the NuGet package and review the new features and the code that implements them.</span></span> <span data-ttu-id="32bde-309">如果无需执行本教程的前面的步骤安装包，您必须将 OWIN 启动类添加到你的项目。</span><span class="sxs-lookup"><span data-stu-id="32bde-309">If you install the package without performing the earlier steps of this tutorial, you must add an OWIN startup class to your project.</span></span> <span data-ttu-id="32bde-310">此步骤是在 NuGet 包的 readme.txt 文件中所述。</span><span class="sxs-lookup"><span data-stu-id="32bde-310">This step is explained in the readme.txt file for the NuGet package.</span></span>
+    * <span data-ttu-id="4a7bf-312">如果您在 Windows 8 (IIS 8) 上运行 Internet Explorer 10，传输方法是**Websocket**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-312">If you're running Internet Explorer 10 on Windows 8 (IIS 8), the transport method is **WebSockets**.</span></span>
 
-### <a name="install-the-signalrsample-nuget-package"></a><span data-ttu-id="32bde-311">安装 SignalR.Sample NuGet 包</span><span class="sxs-lookup"><span data-stu-id="32bde-311">Install the SignalR.Sample NuGet package</span></span>
+    * <span data-ttu-id="4a7bf-313">如果您在 Windows 7 (IIS 7.5) 上运行 Internet Explorer 10，传输方法是**iframe**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-313">If you're running Internet Explorer 10 on Windows 7 (IIS 7.5), the transport method is **iframe**.</span></span>
 
-1. <span data-ttu-id="32bde-312">在中**解决方案资源管理器**，右键单击项目，然后单击**管理 NuGet 包**。</span><span class="sxs-lookup"><span data-stu-id="32bde-312">In **Solution Explorer**, right-click the project and click **Manage NuGet Packages**.</span></span>
-2. <span data-ttu-id="32bde-313">在中**管理 NuGet 包**对话框中，单击**联机**，输入*SignalR.Sample*中**联机搜索**框，然后依次**安装**中**SignalR.Sample**包。</span><span class="sxs-lookup"><span data-stu-id="32bde-313">In the **Manage NuGet Packages** dialog box, click **Online**, enter *SignalR.Sample* in the **Search Online** box, and then click **Install** in the **SignalR.Sample** package.</span></span>
+    * <span data-ttu-id="4a7bf-314">如果您在 Windows 8 (IIS 8) 上运行 Firefox 19，传输方法是**Websocket**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-314">If you're running Firefox 19 on Windows 8 (IIS 8), the transport method is **WebSockets**.</span></span>
 
-    ![安装 SignalR.Sample 包](tutorial-server-broadcast-with-signalr/_static/image13.png)
-3. <span data-ttu-id="32bde-315">在中**解决方案资源管理器**，展开*SignalR.Sample*安装 SignalR.Sample 包创建的文件夹。</span><span class="sxs-lookup"><span data-stu-id="32bde-315">In **Solution Explorer**, expand the *SignalR.Sample* folder which was created by installing the SignalR.Sample package.</span></span>
-4. <span data-ttu-id="32bde-316">在中*SignalR.Sample*文件夹中，右键单击*StockTicker.html*，然后单击**设为起始页**。</span><span class="sxs-lookup"><span data-stu-id="32bde-316">In the *SignalR.Sample* folder, right-click *StockTicker.html*, and then click **Set As Start Page**.</span></span>
+        > [!TIP]
+        > <span data-ttu-id="4a7bf-315">在 Firefox 中安装的 Firebug 外接程序以获取控制台窗口。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-315">In Firefox, install the Firebug add-in to get a Console window.</span></span>
+
+    * <span data-ttu-id="4a7bf-316">如果您在 Windows 7 (IIS 7.5) 上运行 Firefox 19，传输方法是**服务器发送**事件。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-316">If you're running Firefox 19 on Windows 7 (IIS 7.5), the transport method is **server-sent** events.</span></span>
+
+## <a name="install-the-stockticker-sample"></a><span data-ttu-id="4a7bf-317">安装 StockTicker 示例</span><span class="sxs-lookup"><span data-stu-id="4a7bf-317">Install the StockTicker sample</span></span>
+
+<span data-ttu-id="4a7bf-318">[Microsoft.AspNet.SignalR.Sample](http://nuget.org/packages/microsoft.aspnet.signalr.sample)安装 StockTicker 的应用程序。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-318">The [Microsoft.AspNet.SignalR.Sample](http://nuget.org/packages/microsoft.aspnet.signalr.sample) installs the StockTicker application.</span></span> <span data-ttu-id="4a7bf-319">NuGet 包包含多个功能比您从头开始创建的简化版本。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-319">The NuGet package includes more features than the simplified version that you created from scratch.</span></span> <span data-ttu-id="4a7bf-320">在本教程的此部分中，安装 NuGet 包并查看新功能和实现它们的代码。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-320">In this section of the tutorial, you install the NuGet package and review the new features and the code that implements them.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="4a7bf-321">如果无需执行本教程的前面的步骤安装包，您必须将 OWIN 启动类添加到你的项目。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-321">If you install the package without performing the earlier steps of this tutorial, you must add an OWIN startup class to your project.</span></span> <span data-ttu-id="4a7bf-322">NuGet 包的此 readme.txt 文件解释了此步骤。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-322">This readme.txt file for the NuGet package explains this step.</span></span>
+
+### <a name="install-the-signalrsample-nuget-package"></a><span data-ttu-id="4a7bf-323">安装 SignalR.Sample NuGet 包</span><span class="sxs-lookup"><span data-stu-id="4a7bf-323">Install the SignalR.Sample NuGet package</span></span>
+
+1. <span data-ttu-id="4a7bf-324">在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-324">In **Solution Explorer**, right-click the project and select **Manage NuGet Packages**.</span></span>
+
+1. <span data-ttu-id="4a7bf-325">在**NuGet 包管理器：SignalR.StockTicker**，选择**浏览**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-325">In **NuGet Package manager: SignalR.StockTicker**, select **Browse**.</span></span>
+
+1. <span data-ttu-id="4a7bf-326">从**包源**，选择**nuget.org**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-326">From **Package source**, select **nuget.org**.</span></span>
+
+1. <span data-ttu-id="4a7bf-327">输入*SignalR.Sample*在搜索框中，选择**Microsoft.AspNet.SignalR.Sample** > **安装**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-327">Enter *SignalR.Sample* in the search box and select **Microsoft.AspNet.SignalR.Sample** > **Install**.</span></span>
+
+1. <span data-ttu-id="4a7bf-328">在中**解决方案资源管理器**，展开*SignalR.Sample*文件夹。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-328">In **Solution Explorer**, expand the *SignalR.Sample* folder.</span></span>
+
+    <span data-ttu-id="4a7bf-329">安装 SignalR.Sample 包创建文件夹及其内容。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-329">Installing the SignalR.Sample package created the folder and its contents.</span></span>
+
+1. <span data-ttu-id="4a7bf-330">在中*SignalR.Sample*文件夹中，右键单击*StockTicker.html*，然后选择**设为起始页**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-330">In the *SignalR.Sample* folder, right-click *StockTicker.html*, and then select **Set As Start Page**.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="32bde-317">安装 SignalR.Sample NuGet 包可能会更改中有的 jQuery 版本你*脚本*文件夹。</span><span class="sxs-lookup"><span data-stu-id="32bde-317">Installing The SignalR.Sample NuGet package might change the version of jQuery that you have in your *Scripts* folder.</span></span> <span data-ttu-id="32bde-318">新*StockTicker.html*包将安装中的文件*SignalR.Sample*文件夹将与包将安装，但如果你想要运行原始的jQuery版本同步*StockTicker.html*再次文件中，您可能必须先更新中的脚本标记的 jQuery 引用。</span><span class="sxs-lookup"><span data-stu-id="32bde-318">The new *StockTicker.html* file that the package installs in the *SignalR.Sample* folder will be in sync with the jQuery version that the package installs, but if you want to run your original *StockTicker.html* file again, you might have to update the jQuery reference in the script tag first.</span></span>
+    > <span data-ttu-id="4a7bf-331">安装 SignalR.Sample NuGet 包可能会更改中有的 jQuery 版本你*脚本*文件夹。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-331">Installing The SignalR.Sample NuGet package might change the version of jQuery that you have in your *Scripts* folder.</span></span> <span data-ttu-id="4a7bf-332">新*StockTicker.html*包将安装中的文件*SignalR.Sample*文件夹将与包将安装，但如果你想要运行原始的jQuery版本同步*StockTicker.html*再次文件中，您可能必须先更新中的脚本标记的 jQuery 引用。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-332">The new *StockTicker.html* file that the package installs in the *SignalR.Sample* folder will be in sync with the jQuery version that the package installs, but if you want to run your original *StockTicker.html* file again, you might have to update the jQuery reference in the script tag first.</span></span>
 
-### <a name="run-the-application"></a><span data-ttu-id="32bde-319">运行此应用程序</span><span class="sxs-lookup"><span data-stu-id="32bde-319">Run the application</span></span>
+### <a name="run-the-application"></a><span data-ttu-id="4a7bf-333">运行此应用程序</span><span class="sxs-lookup"><span data-stu-id="4a7bf-333">Run the application</span></span>
 
-1. <span data-ttu-id="32bde-320">按 F5 运行该应用程序。</span><span class="sxs-lookup"><span data-stu-id="32bde-320">Press F5 to run the application.</span></span>
+ <span data-ttu-id="4a7bf-334">在第一个应用中看到的表具有有用的功能。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-334">The table that you saw in the first app had useful features.</span></span> <span data-ttu-id="4a7bf-335">完整股票行情自动收录器应用程序显示了新功能： 水平滚动窗口，显示股票数据并更改颜色，因为它们提高或降低的股票。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-335">The full stock ticker application shows new features: a horizontally scrolling window that shows the stock data and stocks that change color as they rise and fall.</span></span>
 
-    <span data-ttu-id="32bde-321">除了你此前看到的网格中，完整股票行情自动收录器应用程序显示一个水平滚动的窗口，显示相同的库存数据。</span><span class="sxs-lookup"><span data-stu-id="32bde-321">In addition to the grid that you saw earlier, the full stock ticker application shows a horizontally scrolling window that displays the same stock data.</span></span> <span data-ttu-id="32bde-322">第一次的应用程序运行时，"市场""已关闭"，你看到静态网格和不滚动的行情自动收录器窗口。</span><span class="sxs-lookup"><span data-stu-id="32bde-322">When you run the application for the first time, the "market" is "closed" and you see a static grid and a ticker window that isn't scrolling.</span></span>
+1. <span data-ttu-id="4a7bf-336">按 F5  运行应用。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-336">Press **F5** to run the app.</span></span>
 
-    ![StockTicker 屏幕开始](tutorial-server-broadcast-with-signalr/_static/image14.png)
+     <span data-ttu-id="4a7bf-337">当第一次运行该应用程序时，"市场""已关闭"，你看到的静态表并不滚动行情自动收录器窗口。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-337">When you run the app for the first time, the "market" is "closed" and you see a static table and a ticker window that isn't scrolling.</span></span>
 
-    <span data-ttu-id="32bde-324">当您单击**公开市场**，则**实时股票行情自动收录器**水平滚动框开始和在服务器开始定期广播在随机的基础上的股票价格发生变化。</span><span class="sxs-lookup"><span data-stu-id="32bde-324">When you click **Open Market**, the **Live Stock Ticker** box starts to scroll horizontally, and the server starts to periodically broadcast stock price changes on a random basis.</span></span> <span data-ttu-id="32bde-325">每次股票价格发生更改，同时**实时股票表格**网格并**实时股票行情自动收录器**框会更新。</span><span class="sxs-lookup"><span data-stu-id="32bde-325">Each time a stock price changes, both the **Live Stock Table** grid and the **Live Stock Ticker** box are updated.</span></span> <span data-ttu-id="32bde-326">当股票的价格更改为正时，股票会显示绿色背景; 以及并更改为负，包含一个红色背景显示股票。</span><span class="sxs-lookup"><span data-stu-id="32bde-326">When a stock's price change is positive, the stock is shown with a green background, and when the change is negative, the stock is shown with a red background.</span></span>
+1. <span data-ttu-id="4a7bf-338">选择**Open Market**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-338">Select **Open Market**.</span></span>
 
-    ![StockTicker 应用市场打开](tutorial-server-broadcast-with-signalr/_static/image15.png)
+    ![实时行情自动收录器的屏幕截图。](tutorial-server-broadcast-with-signalr/_static/image5.png)
 
-    <span data-ttu-id="32bde-328">**关闭市场**按钮停止所做的更改并停止行情自动收录器滚动，并**重置**按钮可重置所有股票数据为初始状态价格更改启动之前。</span><span class="sxs-lookup"><span data-stu-id="32bde-328">The **Close Market** button stops the changes and stops the ticker scrolling, and the **Reset** button resets all stock data to the initial state before price changes started.</span></span> <span data-ttu-id="32bde-329">如果您打开更多的浏览器窗口并转到同一个 URL，您将看到相同的数据在同一时间在每个浏览器中动态更新。</span><span class="sxs-lookup"><span data-stu-id="32bde-329">If you open more browser windows and go to the same URL, you see the same data dynamically updated at the same time in each browser.</span></span> <span data-ttu-id="32bde-330">当您单击某个按钮时，所有浏览器都在同一时间具有相同的方式。</span><span class="sxs-lookup"><span data-stu-id="32bde-330">When you click one of the buttons, all browsers respond the same way at the same time.</span></span>
+    * <span data-ttu-id="4a7bf-340">**实时股票行情自动收录器**水平滚动框开始和在服务器开始定期广播在随机的基础上的股票价格发生变化。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-340">The **Live Stock Ticker** box starts to scroll horizontally, and the server starts to periodically broadcast stock price changes on a random basis.</span></span>
 
-### <a name="live-stock-ticker-display"></a><span data-ttu-id="32bde-331">实时股票行情自动收录器显示</span><span class="sxs-lookup"><span data-stu-id="32bde-331">Live Stock Ticker display</span></span>
+    * <span data-ttu-id="4a7bf-341">每次股票价格更改时，应用程序更新都**实时股票表格**并**实时股票行情自动收录器**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-341">Each time a stock price changes, the app updates both the **Live Stock Table** and the **Live Stock Ticker**.</span></span>
 
-<span data-ttu-id="32bde-332">**实时股票行情自动收录器**显示为未排序的列表中的 CSS 样式格式设置为单个行的 div 元素。</span><span class="sxs-lookup"><span data-stu-id="32bde-332">The **Live Stock Ticker** display is an unordered list in a div element that is formatted into a single line by CSS styles.</span></span> <span data-ttu-id="32bde-333">行情自动收录器会被初始化并更新表一样： 通过替换中的占位符&lt;li&gt;模板字符串和动态添加&lt;l i&gt;元素&lt;u l&gt;元素。</span><span class="sxs-lookup"><span data-stu-id="32bde-333">The ticker is initialized and updated the same way as the table: by replacing placeholders in a &lt;li&gt; template string and dynamically adding the &lt;li&gt; elements to the &lt;ul&gt; element.</span></span> <span data-ttu-id="32bde-334">通过使用 jQuery 进行动画处理函数来改变该 div。 中的未排序列表距左侧执行滚动</span><span class="sxs-lookup"><span data-stu-id="32bde-334">The scrolling is performed by using the jQuery animate function to vary the margin-left of the unordered list within the div.</span></span>
+    * <span data-ttu-id="4a7bf-342">正股票的价格变化时，应用将显示绿色背景的股票。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-342">When a stock's price change is positive, the app shows the stock with a green background.</span></span>
 
-<span data-ttu-id="32bde-335">股票行情 HTML:</span><span class="sxs-lookup"><span data-stu-id="32bde-335">The stock ticker HTML:</span></span>
+    * <span data-ttu-id="4a7bf-343">更改为负，应用将显示红色背景的股票。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-343">When the change is negative, the app shows the stock with a red background.</span></span>
+
+1. <span data-ttu-id="4a7bf-344">选择**关闭市场**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-344">Select **Close Market**.</span></span>
+
+    * <span data-ttu-id="4a7bf-345">表更新停止。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-345">The table updates stop.</span></span>
+
+    * <span data-ttu-id="4a7bf-346">行情自动收录器停止滚动。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-346">The ticker stops scrolling.</span></span>
+
+1. <span data-ttu-id="4a7bf-347">选择**重置**。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-347">Select **Reset**.</span></span>
+
+    * <span data-ttu-id="4a7bf-348">重置所有常用数据。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-348">All stock data is reset.</span></span>
+
+    * <span data-ttu-id="4a7bf-349">应用程序还原之前启动的价格变化的初始状态。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-349">The app restores the initial state before price changes started.</span></span>
+
+1. <span data-ttu-id="4a7bf-350">从浏览器中复制 URL、 打开两个其他浏览器，并将 Url 粘贴到地址栏。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-350">Copy the URL from the browser, open two other browsers, and paste the URLs into the address bars.</span></span>
+
+1. <span data-ttu-id="4a7bf-351">你看到相同的数据在同一时间在每个浏览器中动态更新。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-351">You see the same data dynamically updated at the same time in each browser.</span></span>
+
+1. <span data-ttu-id="4a7bf-352">在您选择的任何控件，所有浏览器在同一时间响应相同的方式。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-352">When you select any of the controls, all browsers respond the same way at the same time.</span></span>
+
+### <a name="live-stock-ticker-display"></a><span data-ttu-id="4a7bf-353">实时股票行情自动收录器显示</span><span class="sxs-lookup"><span data-stu-id="4a7bf-353">Live Stock Ticker display</span></span>
+
+<span data-ttu-id="4a7bf-354">**实时股票行情自动收录器**显示为未排序的列表中`<div>`设置格式到单个行的元素的 CSS 样式。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-354">The **Live Stock Ticker** display is an unordered list in a `<div>` element formatted into a single line by CSS styles.</span></span> <span data-ttu-id="4a7bf-355">应用初始化和更新表一样的行情自动收录器： 通过替换中的占位符`<li>`模板字符串和动态添加`<li>`元素与`<ul>`元素。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-355">The app initializes and updates the ticker the same way as the table: by replacing placeholders in an `<li>` template string and dynamically adding the `<li>` elements to the `<ul>` element.</span></span> <span data-ttu-id="4a7bf-356">该应用包含通过使用 jQuery 滚动`animate`函数来改变左边距中的未排序列表的`<div>`。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-356">The app includes  scrolling by using the jQuery `animate` function to vary the margin-left of the unordered list within the `<div>`.</span></span>
+
+#### <a name="signalrsample-stocktickerhtml"></a><span data-ttu-id="4a7bf-357">SignalR.Sample StockTicker.html</span><span class="sxs-lookup"><span data-stu-id="4a7bf-357">SignalR.Sample StockTicker.html</span></span>
+
+<span data-ttu-id="4a7bf-358">股票行情 HTML 代码：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-358">The stock ticker HTML code:</span></span>
 
 [!code-html[Main](tutorial-server-broadcast-with-signalr/samples/sample20.html)]
 
-<span data-ttu-id="32bde-336">股票行情 CSS:</span><span class="sxs-lookup"><span data-stu-id="32bde-336">The stock ticker CSS:</span></span>
+#### <a name="signalrsample-stocktickercss"></a><span data-ttu-id="4a7bf-359">SignalR.Sample StockTicker.css</span><span class="sxs-lookup"><span data-stu-id="4a7bf-359">SignalR.Sample StockTicker.css</span></span>
+
+<span data-ttu-id="4a7bf-360">股票行情 CSS 代码：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-360">The stock ticker CSS code:</span></span>
 
 [!code-html[Main](tutorial-server-broadcast-with-signalr/samples/sample21.html)]
 
-<span data-ttu-id="32bde-337">使它的 jQuery 代码滚动：</span><span class="sxs-lookup"><span data-stu-id="32bde-337">The jQuery code that makes it scroll:</span></span>
+#### <a name="signalrsample-signalrstocktickerjs"></a><span data-ttu-id="4a7bf-361">SignalR.Sample SignalR.StockTicker.js</span><span class="sxs-lookup"><span data-stu-id="4a7bf-361">SignalR.Sample SignalR.StockTicker.js</span></span>
+
+<span data-ttu-id="4a7bf-362">使它的 jQuery 代码滚动：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-362">The jQuery code that makes it scroll:</span></span>
 
 [!code-javascript[Main](tutorial-server-broadcast-with-signalr/samples/sample22.js)]
 
-### <a name="additional-methods-on-the-server-that-the-client-can-call"></a><span data-ttu-id="32bde-338">客户端可以调用的服务器上的其他方法</span><span class="sxs-lookup"><span data-stu-id="32bde-338">Additional methods on the server that the client can call</span></span>
+### <a name="additional-methods-on-the-server-that-the-client-can-call"></a><span data-ttu-id="4a7bf-363">客户端可以调用的服务器上的其他方法</span><span class="sxs-lookup"><span data-stu-id="4a7bf-363">Additional methods on the server that the client can call</span></span>
 
-<span data-ttu-id="32bde-339">StockTickerHub 类定义了四个客户端可以调用的其他方法：</span><span class="sxs-lookup"><span data-stu-id="32bde-339">The StockTickerHub class defines four additional methods that the client can call:</span></span>
+<span data-ttu-id="4a7bf-364">若要向应用添加灵活性，还有一些其他应用程序可以调用的方法。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-364">To add flexibility to the app, there are additional methods the app can call.</span></span>
+
+#### <a name="signalrsample-stocktickerhubcs"></a><span data-ttu-id="4a7bf-365">SignalR.Sample StockTickerHub.cs</span><span class="sxs-lookup"><span data-stu-id="4a7bf-365">SignalR.Sample StockTickerHub.cs</span></span>
+
+<span data-ttu-id="4a7bf-366">`StockTickerHub`类定义了四个客户端可以调用的其他方法：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-366">The `StockTickerHub` class defines four additional methods that the client can call:</span></span>
 
 [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample23.cs)]
 
-<span data-ttu-id="32bde-340">在页面顶部的按钮响应称为 OpenMarket、 CloseMarket 和重置。</span><span class="sxs-lookup"><span data-stu-id="32bde-340">OpenMarket, CloseMarket, and Reset are called in response to the buttons at the top of the page.</span></span> <span data-ttu-id="32bde-341">它们演示了一个客户端触发立即传播到所有客户端的状态的更改的模式。</span><span class="sxs-lookup"><span data-stu-id="32bde-341">They demonstrate the pattern of one client triggering a change in state that is immediately propagated to all clients.</span></span> <span data-ttu-id="32bde-342">每个方法调用中的方法 StockTicker 类市场状态更改，然后再将广播新状态的效果。</span><span class="sxs-lookup"><span data-stu-id="32bde-342">Each of these methods calls a method in the StockTicker class that effects the market state change and then broadcasts the new state.</span></span>
+<span data-ttu-id="4a7bf-367">应用程序调用`OpenMarket`， `CloseMarket`，和`Reset`以响应在页面顶部的按钮。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-367">The app calls `OpenMarket`, `CloseMarket`, and `Reset` in response to the buttons at the top of the page.</span></span> <span data-ttu-id="4a7bf-368">它们演示了一个客户端触发立即传播到所有客户端的状态的更改的模式。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-368">They demonstrate the pattern of one client triggering a change in state immediately propagated to all clients.</span></span> <span data-ttu-id="4a7bf-369">每个方法调用中的方法`StockTicker`类，该类将导致市场状态更改，然后广播新状态。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-369">Each of these methods calls a method in the `StockTicker` class that causes the market state change and then broadcasts the new state.</span></span>
 
-<span data-ttu-id="32bde-343">在 StockTicker 类中，通过返回 MarketState 枚举值的 MarketState 属性的维护是市场的状态：</span><span class="sxs-lookup"><span data-stu-id="32bde-343">In the StockTicker class, the state of the market is maintained by a MarketState property that returns a MarketState enum value:</span></span>
+#### <a name="signalrsample-stocktickercs"></a><span data-ttu-id="4a7bf-370">SignalR.Sample StockTicker.cs</span><span class="sxs-lookup"><span data-stu-id="4a7bf-370">SignalR.Sample StockTicker.cs</span></span>
+
+<span data-ttu-id="4a7bf-371">在中`StockTicker`类，该应用程序维护的状态与市场`MarketState`返回的属性`MarketState`枚举值：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-371">In the `StockTicker` class, the app maintains the state of the market with a `MarketState` property that returns a `MarketState` enum value:</span></span>
 
 [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample24.cs)]
 
-<span data-ttu-id="32bde-344">每个更改市场状态的方法都这样做，在锁块的内部因为 StockTicker 类必须是 threadsafe:</span><span class="sxs-lookup"><span data-stu-id="32bde-344">Each of the methods that change the market state do so inside a lock block because the StockTicker class has to be threadsafe:</span></span>
+<span data-ttu-id="4a7bf-372">每个更改市场状态的方法都这样做，在锁块的内部因为`StockTicker`类必须是线程安全：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-372">Each of the methods that change the market state do so inside a lock block because the `StockTicker` class has to be thread-safe:</span></span>
 
 [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample25.cs)]
 
-<span data-ttu-id="32bde-345">若要确保此代码是 threadsafe， \_marketState 字段支持 MarketState 属性标记为易失性，</span><span class="sxs-lookup"><span data-stu-id="32bde-345">To ensure that this code is threadsafe, the \_marketState field that backs the MarketState property is marked as volatile,</span></span>
+<span data-ttu-id="4a7bf-373">若要确保此代码是线程安全`_marketState`支持字段`MarketState`属性指定`volatile`:</span><span class="sxs-lookup"><span data-stu-id="4a7bf-373">To make sure this code is thread-safe, the `_marketState` field that backs the `MarketState` property designated `volatile`:</span></span>
 
 [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample26.cs)]
 
-<span data-ttu-id="32bde-346">BroadcastMarketStateChange 和 BroadcastMarketReset 方法是您已看到的 BroadcastStockPrice 方法相似，只不过它们调用在客户端定义的不同方法：</span><span class="sxs-lookup"><span data-stu-id="32bde-346">The BroadcastMarketStateChange and BroadcastMarketReset methods are similar to the BroadcastStockPrice method that you already saw, except they call different methods defined at the client:</span></span>
+<span data-ttu-id="4a7bf-374">`BroadcastMarketStateChange`和`BroadcastMarketReset`除它们调用不同的方法在客户端上定义外，方法是您已看到的 BroadcastStockPrice 方法相似：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-374">The `BroadcastMarketStateChange` and `BroadcastMarketReset` methods are similar to the BroadcastStockPrice method that you already saw, except they call different methods defined at the client:</span></span>
 
 [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample27.cs)]
 
-### <a name="additional-functions-on-the-client-that-the-server-can-call"></a><span data-ttu-id="32bde-347">服务器可以调用的客户端上的其他函数</span><span class="sxs-lookup"><span data-stu-id="32bde-347">Additional functions on the client that the server can call</span></span>
+### <a name="additional-functions-on-the-client-that-the-server-can-call"></a><span data-ttu-id="4a7bf-375">服务器可以调用的客户端上的其他函数</span><span class="sxs-lookup"><span data-stu-id="4a7bf-375">Additional functions on the client that the server can call</span></span>
 
-<span data-ttu-id="32bde-348">UpdateStockPrice 函数现在可处理网格和行情自动收录器显示，并使用 jQuery.Color 闪烁红色和绿色的颜色。</span><span class="sxs-lookup"><span data-stu-id="32bde-348">The updateStockPrice function now handles both the grid and the ticker display, and it uses jQuery.Color to flash red and green colors.</span></span>
+<span data-ttu-id="4a7bf-376">`updateStockPrice`函数现在可以处理表和行情自动收录器显示，并使用`jQuery.Color`闪烁红色和绿色的颜色。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-376">The `updateStockPrice` function now handles both the table and the ticker display, and it uses `jQuery.Color` to flash red and green colors.</span></span>
 
-<span data-ttu-id="32bde-349">中的新函数*SignalR.StockTicker.js*启用和禁用按钮根据市场的状态，并在停止或启动行情自动收录器窗口水平滚动。</span><span class="sxs-lookup"><span data-stu-id="32bde-349">New functions in *SignalR.StockTicker.js* enable and disable the buttons based on market state, and they stop or start the ticker window horizontal scrolling.</span></span> <span data-ttu-id="32bde-350">由于多个函数添加到 ticker.client，因此[jQuery 扩展函数](http://api.jquery.com/jQuery.extend/)用于添加它们。</span><span class="sxs-lookup"><span data-stu-id="32bde-350">Since multiple functions are being added to ticker.client, the [jQuery extend function](http://api.jquery.com/jQuery.extend/) is used to add them.</span></span>
+<span data-ttu-id="4a7bf-377">中的新函数*SignalR.StockTicker.js*启用和禁用基于市场状态的按钮。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-377">New functions in *SignalR.StockTicker.js* enable and disable the buttons based on market state.</span></span> <span data-ttu-id="4a7bf-378">它们还停止或启动**实时股票行情自动收录器**水平滚动。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-378">They also stop or start the **Live Stock Ticker** horizontal scrolling.</span></span> <span data-ttu-id="4a7bf-379">由于许多函数添加到`ticker.client`，此应用使用[jQuery 扩展函数](http://api.jquery.com/jQuery.extend/)以将其添加。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-379">Since many functions are being added to `ticker.client`, the app uses the [jQuery extend function](http://api.jquery.com/jQuery.extend/) to add them.</span></span>
 
 [!code-javascript[Main](tutorial-server-broadcast-with-signalr/samples/sample28.js)]
 
-### <a name="additional-client-setup-after-establishing-the-connection"></a><span data-ttu-id="32bde-351">建立连接后的其他客户端安装程序</span><span class="sxs-lookup"><span data-stu-id="32bde-351">Additional client setup after establishing the connection</span></span>
+### <a name="additional-client-setup-after-establishing-the-connection"></a><span data-ttu-id="4a7bf-380">建立连接后的其他客户端安装程序</span><span class="sxs-lookup"><span data-stu-id="4a7bf-380">Additional client setup after establishing the connection</span></span>
 
-<span data-ttu-id="32bde-352">客户端会建立连接后，它具有一些附加工作以执行操作： 找出市场是否打开或关闭以便调用相应 marketOpened 或 marketClosed 函数，并附加到按钮的服务器方法调用。</span><span class="sxs-lookup"><span data-stu-id="32bde-352">After the client establishes the connection, it has some additional work to do: find out if the market is open or closed in order to call the appropriate marketOpened or marketClosed function, and attach the server method calls to the buttons.</span></span>
+<span data-ttu-id="4a7bf-381">客户端会建立连接后，它具有一些附加工作以执行操作：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-381">After the client establishes the connection, it has some additional work to do:</span></span>
+
+* <span data-ttu-id="4a7bf-382">找出市场是否打开或关闭调用适当`marketOpened`或`marketClosed`函数。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-382">Find out if the market is open or closed to call the appropriate `marketOpened` or `marketClosed` function.</span></span>
+
+* <span data-ttu-id="4a7bf-383">将附加到按钮的服务器方法调用。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-383">Attach the server method calls to the buttons.</span></span>
 
 [!code-javascript[Main](tutorial-server-broadcast-with-signalr/samples/sample29.js)]
 
-<span data-ttu-id="32bde-353">服务器方法不是绑定到之前的按钮之后建立的连接，从而使代码不能尝试之前，它们可调用服务器方法。</span><span class="sxs-lookup"><span data-stu-id="32bde-353">The server methods are not wired up to the buttons until after the connection is established, so that the code can't try to call the server methods before they are available.</span></span>
+<span data-ttu-id="4a7bf-384">应用程序建立连接后，服务器方法不被绑定到之前的按钮。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-384">The server methods aren't wired up to the buttons until after the app establishes the connection.</span></span> <span data-ttu-id="4a7bf-385">它是使代码不能调用服务器方法，然后才能将可用。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-385">It's so the code can't call the server methods before they're available.</span></span>
 
-<a id="nextsteps"></a>
+## <a name="additional-resources"></a><span data-ttu-id="4a7bf-386">其他资源</span><span class="sxs-lookup"><span data-stu-id="4a7bf-386">Additional resources</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="32bde-354">后续步骤</span><span class="sxs-lookup"><span data-stu-id="32bde-354">Next steps</span></span>
+<span data-ttu-id="4a7bf-387">在本教程中介绍了如何将消息从服务器广播到所有连接的客户端 SignalR 应用程序进行编程。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-387">In this tutorial you've learned how to program a SignalR application that broadcasts messages from the server to all connected clients.</span></span> <span data-ttu-id="4a7bf-388">现在可以将广播定期更新和以响应来自任何客户端的通知消息。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-388">Now you can broadcast messages on a periodic basis and in response to notifications from any client.</span></span> <span data-ttu-id="4a7bf-389">多线程的单一实例的概念可用于维护多玩家联机游戏方案中的服务器状态。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-389">You can use the concept of multi-threaded singleton instance to maintain server state in multi-player online game scenarios.</span></span> <span data-ttu-id="4a7bf-390">有关示例，请参阅[ShootR 游戏基于 SignalR](https://github.com/NTaylorMullen/ShootR)。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-390">For an example, see [the ShootR game based on SignalR](https://github.com/NTaylorMullen/ShootR).</span></span>
 
-<span data-ttu-id="32bde-355">在本教程中介绍了如何将消息从服务器广播到所有连接的客户端，定期更新，以响应来自任何客户端通知的 SignalR 应用程序进行编程。</span><span class="sxs-lookup"><span data-stu-id="32bde-355">In this tutorial you've learned how to program a SignalR application that broadcasts messages from the server to all connected clients, both on a periodic basis and in response to notifications from any client.</span></span> <span data-ttu-id="32bde-356">使用多线程的单一实例维护服务器状态模式也还可在多玩家联机游戏方案。</span><span class="sxs-lookup"><span data-stu-id="32bde-356">The pattern of using a multi-threaded singleton instance to maintain server state can also be also used in multi-player online game scenarios.</span></span> <span data-ttu-id="32bde-357">有关示例，请参阅[依赖于使用 SignalR ShootR 游戏](https://github.com/NTaylorMullen/ShootR)。</span><span class="sxs-lookup"><span data-stu-id="32bde-357">For an example, see [the ShootR game that is based on SignalR](https://github.com/NTaylorMullen/ShootR).</span></span>
+<span data-ttu-id="4a7bf-391">显示对等通信方案的教程，请参阅[SignalR 入门](introduction-to-signalr.md)并[使用 SignalR 实时更新](tutorial-high-frequency-realtime-with-signalr.md)。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-391">For tutorials that show peer-to-peer communication scenarios, see [Getting Started with SignalR](introduction-to-signalr.md) and [Real-Time Updating with SignalR](tutorial-high-frequency-realtime-with-signalr.md).</span></span>
 
-<span data-ttu-id="32bde-358">显示对等通信方案的教程，请参阅[SignalR 入门](introduction-to-signalr.md)并[使用 SignalR 实时更新](tutorial-high-frequency-realtime-with-signalr.md)。</span><span class="sxs-lookup"><span data-stu-id="32bde-358">For tutorials that show peer-to-peer communication scenarios, see [Getting Started with SignalR](introduction-to-signalr.md) and [Real-Time Updating with SignalR](tutorial-high-frequency-realtime-with-signalr.md).</span></span>
+<span data-ttu-id="4a7bf-392">有关 SignalR 的详细信息，请参阅以下资源：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-392">For more about SignalR, see the following resources:</span></span>
 
-<span data-ttu-id="32bde-359">若要了解更高级的 SignalR 开发概念，请访问以下站点 SignalR 源代码和资源：</span><span class="sxs-lookup"><span data-stu-id="32bde-359">To learn more advanced SignalR development concepts, visit the following sites for SignalR source code and resources:</span></span>
+* [<span data-ttu-id="4a7bf-393">ASP.NET SignalR</span><span class="sxs-lookup"><span data-stu-id="4a7bf-393">ASP.NET SignalR</span></span>](../../index.md)
+* [<span data-ttu-id="4a7bf-394">SignalR 项目</span><span class="sxs-lookup"><span data-stu-id="4a7bf-394">SignalR Project</span></span>](http://signalr.net/)
+* [<span data-ttu-id="4a7bf-395">SignalR GitHub 和示例</span><span class="sxs-lookup"><span data-stu-id="4a7bf-395">SignalR GitHub and Samples</span></span>](https://github.com/SignalR/SignalR)
+* [<span data-ttu-id="4a7bf-396">SignalR Wiki</span><span class="sxs-lookup"><span data-stu-id="4a7bf-396">SignalR Wiki</span></span>](https://github.com/SignalR/SignalR/wiki)
 
-- [<span data-ttu-id="32bde-360">ASP.NET SignalR</span><span class="sxs-lookup"><span data-stu-id="32bde-360">ASP.NET SignalR</span></span>](../../index.md)
-- [<span data-ttu-id="32bde-361">SignalR 项目</span><span class="sxs-lookup"><span data-stu-id="32bde-361">SignalR Project</span></span>](http://signalr.net/)
-- [<span data-ttu-id="32bde-362">SignalR Github 和示例</span><span class="sxs-lookup"><span data-stu-id="32bde-362">SignalR Github and Samples</span></span>](https://github.com/SignalR/SignalR)
-- [<span data-ttu-id="32bde-363">SignalR Wiki</span><span class="sxs-lookup"><span data-stu-id="32bde-363">SignalR Wiki</span></span>](https://github.com/SignalR/SignalR/wiki)
+## <a name="next-steps"></a><span data-ttu-id="4a7bf-397">后续步骤</span><span class="sxs-lookup"><span data-stu-id="4a7bf-397">Next steps</span></span>
 
-<span data-ttu-id="32bde-364">有关如何部署到 Azure 的 SignalR 应用程序的演练，请参阅[Azure 应用服务中的 Web 应用使用 SignalR](../deployment/using-signalr-with-azure-web-sites.md)。</span><span class="sxs-lookup"><span data-stu-id="32bde-364">For a walkthrough on how to deploy a SignalR application to Azure, see [Using SignalR with Web Apps in Azure App Service](../deployment/using-signalr-with-azure-web-sites.md).</span></span> <span data-ttu-id="32bde-365">有关如何将 Visual Studio web 项目部署到 Windows Azure 网站的详细信息，请参阅[在 Azure 应用服务中创建 ASP.NET web 应用](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)。</span><span class="sxs-lookup"><span data-stu-id="32bde-365">For detailed information about how to deploy a Visual Studio web project to a Windows Azure Web Site, see [Create an ASP.NET web app in Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).</span></span>
+<span data-ttu-id="4a7bf-398">在本教程中，您：</span><span class="sxs-lookup"><span data-stu-id="4a7bf-398">In this tutorial, you:</span></span>
+
+> [!div class="checklist"]
+> * <span data-ttu-id="4a7bf-399">创建项目</span><span class="sxs-lookup"><span data-stu-id="4a7bf-399">Created the project</span></span>
+> * <span data-ttu-id="4a7bf-400">设置服务器代码</span><span class="sxs-lookup"><span data-stu-id="4a7bf-400">Set up the server code</span></span>
+> * <span data-ttu-id="4a7bf-401">检查服务器代码</span><span class="sxs-lookup"><span data-stu-id="4a7bf-401">Examined the server code</span></span>
+> * <span data-ttu-id="4a7bf-402">设置客户端代码</span><span class="sxs-lookup"><span data-stu-id="4a7bf-402">Set up the client code</span></span>
+> * <span data-ttu-id="4a7bf-403">检查客户端代码</span><span class="sxs-lookup"><span data-stu-id="4a7bf-403">Examined the client code</span></span>
+> * <span data-ttu-id="4a7bf-404">测试应用程序</span><span class="sxs-lookup"><span data-stu-id="4a7bf-404">Tested the application</span></span>
+> * <span data-ttu-id="4a7bf-405">已启用日志记录</span><span class="sxs-lookup"><span data-stu-id="4a7bf-405">Enabled logging</span></span>
+
+<span data-ttu-id="4a7bf-406">转到下一步的文章，了解如何创建使用 ASP.NET SignalR 2 的实时 web 应用程序。</span><span class="sxs-lookup"><span data-stu-id="4a7bf-406">Advance to the next article to learn how to create a real-time web application that uses ASP.NET SignalR 2.</span></span>
+> [!div class="nextstepaction"]
+> [<span data-ttu-id="4a7bf-407">使用 SignalR 创建实时 web 应用</span><span class="sxs-lookup"><span data-stu-id="4a7bf-407">Create real-time web app with SignalR</span></span>](real-time-web-applications-with-signalr.md)
