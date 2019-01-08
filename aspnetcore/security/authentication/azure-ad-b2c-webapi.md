@@ -6,12 +6,12 @@ ms.author: casoper
 ms.date: 09/21/2018
 ms.custom: mvc, seodec18
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: 9c541644d276bbdc990bb01f8bd80c92862cd6f0
-ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
+ms.openlocfilehash: 6d0365b103572d6059ce61c54b9b3406da9e5bd4
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53284612"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098696"
 ---
 # <a name="authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>中的 web Api 使用 Azure Active Directory B2C 在 ASP.NET Core 中的身份验证
 
@@ -157,8 +157,8 @@ Postman 模拟 web 应用从 Azure AD B2C 租户中获取令牌，因为它必�
     ![401 未授权的响应](./azure-ad-b2c-webapi/postman-401-status.png)
 
 > [!IMPORTANT]
-> 如果收到"无法获取任何响应"错误，可能需要禁用中的 SSL 证书验证[Postman 设置](https://learning.getpostman.com/docs/postman/launching_postman/settings)。 
- 
+> 如果收到"无法获取任何响应"的错误，可能需要禁用中的 SSL 证书验证[Postman 设置](https://learning.getpostman.com/docs/postman/launching_postman/settings)。
+
 ### <a name="obtain-a-bearer-token"></a>获取持有者令牌
 
 若要向 web API 发出的经过身份验证的请求，持有者令牌是必需的。 Postman 可轻松地登录到 Azure AD B2C 租户并获取的令牌。

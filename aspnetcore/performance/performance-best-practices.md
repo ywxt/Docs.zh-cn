@@ -4,14 +4,14 @@ author: mjrousos
 description: 用于提高 ASP.NET Core 应用中的性能和避免常见的性能问题的提示。
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
-ms.date: 11/29/2018
+ms.date: 1/9/2019
 uid: performance/performance-best-practices
-ms.openlocfilehash: 9f3ed97bf4d4eb371ff5ae3874234b44745cc4ca
-ms.sourcegitcommit: 0fc89b80bb1952852ecbcf3c5c156459b02a6ceb
+ms.openlocfilehash: 25aa4c1e22ead7db4775c6e5e81b6fd627c6d7a6
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52618111"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54099060"
 ---
 # <a name="aspnet-core-performance-best-practices"></a>ASP.NET Core 的性能最佳实践
 
@@ -19,12 +19,11 @@ ms.locfileid: "52618111"
 
 本主题提供了性能使用 ASP.NET Core 的最佳实践的指导原则。
 
-<a name="hot"></a>
-<!-- TODO review hot code paths is jargon that won't MT (machine translate) and is not well defined for native speakers. --> 本文档中的热代码路径被指频繁调用的函数和大部分执行时间发生的位置的代码路径。 热代码路径通常限制应用向外缩放和性能。
+<a name="hot"></a> 本文档中的热代码路径被指频繁调用的函数和大部分执行时间发生的位置的代码路径。 热代码路径通常限制应用向外缩放和性能。
 
 ## <a name="cache-aggressively"></a>主动缓存
 
-在本文档的多个部分中讨论缓存。 有关详细信息，请参阅 <xref:performance/caching/response> 。
+在本文档的多个部分中讨论缓存。 有关详细信息，请参阅 <xref:performance/caching/response>。
 
 ## <a name="avoid-blocking-calls"></a>避免阻止调用
 
@@ -71,7 +70,7 @@ ASP.NET Core 应用中的常见性能问题正在阻止可能是异步调用。 
 
 * **执行**以异步方式调用 Api 的所有数据访问。
 * **不这样做**检索不必要的更多数据。 编写查询以返回不仅仅是当前 HTTP 请求所需的数据。
-* **执行**考虑缓存经常访问的数据检索从数据库或远程服务，如果它是可以接受的要稍有过时的数据。 根据方案，可能会使用[MemoryCache](xref:performance/caching/memory)或[DistributedCache](xref:performance/caching/distributed)。 有关详细信息，请参阅 <xref:performance/caching/response> 。
+* **执行**考虑缓存经常访问的数据检索从数据库或远程服务，如果它是可以接受的要稍有过时的数据。 根据方案，可能会使用[MemoryCache](xref:performance/caching/memory)或[DistributedCache](xref:performance/caching/distributed)。 有关详细信息，请参阅 <xref:performance/caching/response>。
 * 最大程度减少网络往返。 目标是检索所需的单个调用中的所有数据，而不是多个调用。
 * **不要**使用[无跟踪查询](/ef/core/querying/tracking#no-tracking-queries)中 Entity Framework Core 用于只读目的访问数据时。 EF Core 可以更有效地返回非跟踪查询的结果。
 * **不要**筛选器和聚合的 LINQ 查询 (使用`.Where`， `.Select`，或`.Sum`语句，例如)，以便由数据库进行筛选。
@@ -129,6 +128,10 @@ ASP.NET Core 应用中的常见性能问题正在阻止可能是异步调用。 
 
 * **不要**使用 ASP.NET Core[内置支持](xref:client-side/bundling-and-minification)进行捆绑和缩小客户端资产。
 * **不要**等其他第三方工具，请考虑[Gulp](uid:client-side/bundling-and-minification#consume-bundleconfigjson-from-gulp)或[Webpack](https://webpack.js.org/)更复杂的客户端资产管理。
+
+## <a name="compress-responses"></a>压缩响应
+
+ 通常减少响应的大小通常显著增加的应用的响应能力。 若要减少有效负载大小的一种方法是压缩应用程序的响应。 有关详细信息，请参阅[响应压缩](xref:performance/response-compression)。
 
 ## <a name="use-the-latest-aspnet-core-release"></a>使用最新的 ASP.NET Core 版本
 

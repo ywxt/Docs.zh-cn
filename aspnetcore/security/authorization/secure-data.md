@@ -6,12 +6,12 @@ ms.author: riande
 ms.date: 12/18/2018
 ms.custom: seodec18
 uid: security/authorization/secure-data
-ms.openlocfilehash: fa82d3d99f4e4b7ad17ed385fb7c029745797e8d
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
+ms.openlocfilehash: bdba706c1ef24ebe35129cb8bb2d9949196245a1
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53637828"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098917"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>使用受授权的用户数据创建 ASP.NET Core 应用
 
@@ -59,7 +59,7 @@ ms.locfileid: "53637828"
 
 通过创建该应用[基架](xref:tutorials/first-mvc-app/adding-model#scaffold-the-movie-model)以下`Contact`模型：
 
-[!code-csharp[](secure-data/samples/starter2.1/Models/Contact.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/starter2.1/Models/Contact.cs?name=snippet1)]
 
 此示例包含以下授权处理程序：
 
@@ -314,33 +314,33 @@ dotnet user-secrets set SeedUserPW <PW>
 ## <a name="create-the-starter-app"></a>创建入门级应用
 
 * 创建名为"ContactManager"Razor 页面应用
-   * 创建包含应用**单个用户帐户**。
-   * 它命名为"ContactManager"使命名空间匹配的示例中使用的命名空间。
-   * `-uld` 指定 LocalDB，而不是 SQLite
+  * 创建包含应用**单个用户帐户**。
+  * 它命名为"ContactManager"使命名空间匹配的示例中使用的命名空间。
+  * `-uld` 指定 LocalDB，而不是 SQLite
 
   ```console
   dotnet new webapp -o ContactManager -au Individual -uld
   ```
 
-* 添加*Models\Contact.cs*:
+* 添加*Models/Contact.cs*:
 
   [!code-csharp[](secure-data/samples/starter2.1/Models/Contact.cs?name=snippet1)]
 
 * 基架`Contact`模型。
 * 创建初始迁移并更新数据库：
 
-```console
-dotnet aspnet-codegenerator razorpage -m Contact -udl -dc ApplicationDbContext -outDir Pages\Contacts --referenceScriptLibraries
-dotnet ef database drop -f
-dotnet ef migrations add initial
-dotnet ef database update
-```
+  ```console
+  dotnet aspnet-codegenerator razorpage -m Contact -udl -dc ApplicationDbContext -outDir Pages\Contacts --referenceScriptLibraries
+  dotnet ef database drop -f
+  dotnet ef migrations add initial
+  dotnet ef database update
+  ```
 
 * 更新**ContactManager**中的定位点*pages/_layout.cshtml*文件：
 
-```cshtml
-<a asp-page="/Contacts/Index" class="navbar-brand">ContactManager</a>
-```
+  ```cshtml
+  <a asp-page="/Contacts/Index" class="navbar-brand">ContactManager</a>
+  ```
 
 * 测试应用程序的创建、 编辑和删除联系人
 
