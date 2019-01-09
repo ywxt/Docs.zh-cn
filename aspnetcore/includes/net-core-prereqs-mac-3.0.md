@@ -1,0 +1,2 @@
+* [<span data-ttu-id="ee82f-101">Visual Studio for Mac 版本 7.7 或更高版本</span><span class="sxs-lookup"><span data-stu-id="ee82f-101">Visual Studio for Mac version 7.7 or later</span></span>](https://visualstudio.microsoft.com/vs/mac/)
+* [<span data-ttu-id="ee82f-102">.NET core SDK 3.0</span><span class="sxs-lookup"><span data-stu-id="ee82f-102">.NET Core SDK 3.0</span></span>](https://dotnet.microsoft.com/download/dotnet-core/3.0)
