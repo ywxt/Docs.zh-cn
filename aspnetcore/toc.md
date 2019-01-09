@@ -179,7 +179,9 @@
 ## [快照调试](/azure/application-insights/app-insights-snapshot-debugger)
 ## [Visual Studio 中的快照调试](/visualstudio/debugger/debug-live-azure-applications)
 ## [集成测试](xref:test/integration-tests)
+## [负载测试和压力测试](xref:test/loadtests)
 ## [疑难解答](xref:test/troubleshoot)
+## [日志记录](xref:fundamentals/logging/index)
 
 # 数据访问
 ## 教程
@@ -392,6 +394,7 @@
 ## [使用文件观察程序](xref:tutorials/dotnet-watch)
 
 # 迁移
+## [2.2 至 3.0](xref:migration/22-to-30)
 ## [2.1 至 2.2](xref:migration/21-to-22)
 ## [2.0 至 2.1](xref:migration/20_21)
 ## 1.x 至 2.0
@@ -406,6 +409,7 @@
 ### [ClaimsPrincipal.Current](xref:migration/claimsprincipal-current)
 ### [共成员身份到标识](xref:migration/proper-to-2x/membership-to-core-identity)
 ### [HTTP 模块到中间件](xref:migration/http-modules)
+## [日志记录（不是 ASP.NET Core）](xref:migration/logging-nonaspnetcore)
 
 # 新增功能
 ## [2.2 中的新变化](xref:aspnetcore-2.2)
