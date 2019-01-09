@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/11/2018
 uid: security/authentication/social/index
-ms.openlocfilehash: 47ac1f966ff727957e6ed700c3c68efa16b1b38b
-ms.sourcegitcommit: 3e94d192b2ed9409fe72e3735e158b333354964c
+ms.openlocfilehash: 063d452fb6ab91b712ade7f7b7ed99823dbdc657
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/24/2018
-ms.locfileid: "53735721"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098813"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core 中的 Facebook、Google 和外部提供程序身份验证
 
@@ -46,11 +46,11 @@ ms.locfileid: "53735721"
 * 输入新帐户的电子邮件地址和密码，再选择“注册”。
 * 按照说明操作来应用迁移。
 
-## <a name="require-ssl"></a>要求 SSL
+## <a name="require-https"></a>要求使用 HTTPS
 
-OAuth 2.0 需要使用 SSL 通过 HTTPS 协议进行身份验证。
+OAuth 2.0 需要使用 SSL/TLS 通过 HTTPS 协议进行身份验证。
 
-使用 Web 应用或 Web API 项目模板以及 ASP.NET Core 2.1 或更高版本创建的项目会自动配置为启用 SSL。 如果在项目向导的“更改身份验证”对话框中选择“单个用户帐户”选项，应用会在安全默认终结点启动。
+使用 Web 应用程序或 Web API 项目模板以及 ASP.NET Core 2.1 或更高版本创建的项目会自动配置为启用 HTTPS。 如果在项目向导的“更改身份验证”对话框中选择“单个用户帐户”选项，应用会在安全默认终结点启动。
 
 有关更多信息，请参见<xref:security/enforcing-ssl>。
 

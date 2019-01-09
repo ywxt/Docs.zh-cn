@@ -4,14 +4,14 @@ author: rick-anderson
 description: 了解生成 ASP.NET Core 应用的基础概念。
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/18/2018
+ms.date: 01/06/2019
 uid: fundamentals/index
-ms.openlocfilehash: 11dc6336ae7667038983c967f28232bef325f5bb
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
+ms.openlocfilehash: a56beebd796448705c7b84f47699e9739f451419
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53637763"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54099229"
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 基础知识
 
@@ -63,7 +63,7 @@ ASP.NET Core 应用是一个控制台应用，它在其 `Program.Main` 方法中
 
 ::: moniker-end
 
-`Startup` 类用于定义请求处理管道和配置应用所需的任何服务。 `Startup` 必须是公共类，并包含以下方法：
+`Startup` 类用于在其中配置应用所需的任何服务和定义请求处理管道。 `Startup` 类必须是公共类，通常包含以下方法。 `Startup.ConfigureServices` 是可选的。
 
 ::: moniker range=">= aspnetcore-2.0"
 

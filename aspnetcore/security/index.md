@@ -6,16 +6,16 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: security/index
-ms.openlocfilehash: 579e472e01efd08bbafe949e37a3b655a42a5b46
-ms.sourcegitcommit: 04b55a5ce9d649ff2df926157ec28ae47afe79e2
+ms.openlocfilehash: 933501411169d89c4b24edda743c47591aa7a87a
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52156914"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098956"
 ---
 # <a name="overview-of-aspnet-core-security"></a>ASP.NET Core 安全性概述
 
-通过 ASP.NET Core，开发者可轻松配置和管理其应用的安全性。 ASP.NET Core 的功能包括管理身份验证、授权、数据保护、SSL 强制、应用机密、请求防伪保护及 CORS 管理。 通过这些安全功能，可以生成安全可靠的 ASP.NET Core 应用。
+通过 ASP.NET Core，开发者可轻松配置和管理其应用的安全性。 ASP.NET Core 的功能包括管理身份验证、授权、数据保护、HTTPS 强制、应用机密、请求防伪保护及 CORS 管理。 通过这些安全功能，可以生成安全可靠的 ASP.NET Core 应用。
 
 ## <a name="aspnet-core-security-features"></a>ASP.NET Core 安全性功能
 
