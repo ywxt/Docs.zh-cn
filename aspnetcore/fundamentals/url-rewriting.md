@@ -4,14 +4,14 @@ author: guardrex
 description: 了解如何在 ASP.NET Core 应用程序中使用 URL 重写中间件进行 URL 重写和重定向。
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/19/2018
+ms.date: 12/18/2018
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 84052789717738a48c346d35d1a2642017a9ab93
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: d2dd5e9b7f196bcbd1940f7ef58331dabd2367a1
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861909"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637802"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>ASP.NET Core 中的 URL 重写中间件
 
@@ -78,7 +78,7 @@ URL 重写是服务器端操作，它从与客户端请求的资源地址不同�
 * [在 Apache 服务器上使用 Apache mod_rewrite 模块](https://httpd.apache.org/docs/2.4/rewrite/)
 * [Nginx 上的 URL 重写](https://www.nginx.com/blog/creating-nginx-rewrite-rules/)
 
-此外，如果应用程序在 [ HTTP.sys 服务器](xref:fundamentals/servers/httpsys)（旧称 [WebListener](xref:fundamentals/servers/weblistener)）上托管，请使用中间件。
+此外，如果应用程序在 [HTTP.sys 服务器](xref:fundamentals/servers/httpsys)（旧称 WebListener）上托管，请使用中间件。
 
 使用 IIS、Apache 和 Nginx 中的基于服务器的 URL 重写技术的主要原因：
 
@@ -202,7 +202,7 @@ public void Configure(IApplicationBuilder app)
 | 路径                              | 匹配 |
 | --------------------------------- | :---: |
 | `/rewrite-rule/1234/5678`         | 是   |
-| `/my-cool-rewrite-rule/1234/5678` | 否    |
+| `/my-cool-rewrite-rule/1234/5678` | No    |
 | `/anotherrewrite-rule/1234/5678`  | No    |
 
 在表达式的 `^rewrite-rule/` 部分之后，有两个捕获组 `(\d+)/(\d+)`。 `\d` 表示与数字匹配。 加号 (`+`) 表示与前面的一个或多个字符匹配。 因此，URL 必须包含数字加正斜杠加另一个数字的形式。 这些捕获组以 `$1` 和 `$2` 的形式注入重写 URL 中。 重写规则替换字符串将捕获组放入查询字符串中。 重写 `/rewrite-rule/1234/5678` 的请求路径，获取 `/rewritten?var1=1234&var2=5678` 处的资源。 如果原始请求中存在查询字符串，则重写 URL 时会保留此字符串。

@@ -4,14 +4,14 @@ author: rick-anderson
 description: 了解 ASP.NET Core 路由如何负责将请求 URI 映射到终结点选择器并向终结点调度传入的请求。
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/15/2018
+ms.date: 12/29/2018
 uid: fundamentals/routing
-ms.openlocfilehash: f18ec1da2affbf67b7ada570b68f98a42c7256a5
-ms.sourcegitcommit: ad28d1bc6657a743d5c2fa8902f82740689733bb
+ms.openlocfilehash: c57b309e4474f9aff5c0594a3d9d1c796990d31e
+ms.sourcegitcommit: e1cc4c1ef6c9e07918a609d5ad7fadcb6abe3e12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52256588"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53997352"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core 中的路由
 
@@ -193,7 +193,7 @@ URL 生成是通过其可根据一组路由值创建 URL 路径的过程。 这�
 
 对任何类型的地址，`LinkGenerator` 提供的方法均支持标准链接生成功能。 使用链接生成器的最简便方法是通过扩展方法对特定地址类型执行操作。
 
-| 扩展方法   | 描述                                                         |
+| 扩展方法   | 说明                                                         |
 | ------------------ | ------------------------------------------------------------------- |
 | `GetPathByAddress` | 根据提供的值生成具有绝对路径的 URI。 |
 | `GetUriByAddress`  | 根据提供的值生成绝对 URI。             |
@@ -292,6 +292,8 @@ ASP.NET Core 2.2 或更高版本中的终结点路由与 ASP.NET Core 中早期�
 在以下示例中，中间件使用 `LinkGenerator` API 创建列出存储产品的操作方法的链接。 应用中的任何类都可通过将链接生成器注入类并调用 `GenerateLink` 来使用链接生成器。
 
 ```csharp
+using Microsoft.AspNetCore.Routing;
+
 public class ProductsLinkMiddleware
 {
     private readonly LinkGenerator _linkGenerator;
@@ -303,8 +305,7 @@ public class ProductsLinkMiddleware
 
     public async Task InvokeAsync(HttpContext httpContext)
     {
-        var url = _linkGenerator.GenerateLink(new { controller = "Store",
-                                                    action = "ListProducts" });
+        var url = _linkGenerator.GetPathByAction("ListProducts", "Store");
 
         httpContext.Response.ContentType = "text/plain";
 
@@ -658,8 +659,8 @@ ASP.NET Core 框架将向正则表达式构造函数添加 `RegexOptions.IgnoreC
 | `[a-z]{2}`   | 123abc456 | 是   | 子字符串匹配     |
 | `[a-z]{2}`   | mz        | 是   | 匹配表达式    |
 | `[a-z]{2}`   | MZ        | 是   | 不区分大小写    |
-| `^[a-z]{2}$` | hello     | 否    | 参阅上述 `^` 和 `$` |
-| `^[a-z]{2}$` | 123abc456 | 否    | 参阅上述 `^` 和 `$` |
+| `^[a-z]{2}$` | hello     | No    | 参阅上述 `^` 和 `$` |
+| `^[a-z]{2}$` | 123abc456 | No    | 参阅上述 `^` 和 `$` |
 
 有关正则表达式语法的详细信息，请参阅 [.NET Framework 正则表达式](/dotnet/standard/base-types/regular-expression-language-quick-reference)。
 
@@ -679,12 +680,23 @@ ASP.NET Core 框架将向正则表达式构造函数添加 `RegexOptions.IgnoreC
 
 例如，路由模式 `blog\{article:slugify}`（具有 `Url.Action(new { article = "MyTestArticle" })`）中的自定义 `slugify` 参数转换器生成 `blog\my-test-article`。
 
+若要在路由模式中使用参数转换器，请先在 `Startup.ConfigureServices` 中使用 <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap> 对其进行配置：
+
+```csharp
+services.AddRouting(options =>
+{
+    // Replace the type and the name used to refer to it with your own
+    // IOutboundParameterTransformer implementation
+    options.ConstraintMap["slugify"] = typeof(SlugifyParameterTransformer);
+});
+```
+
 框架使用参数转化器来转换进行终结点解析的 URI。 例如，ASP.NET Core MVC 使用参数转换器来转换用于匹配 `area``controller``action` 和 `page` 的路由值。
 
 ```csharp
 routes.MapRoute(
     name: "default",
-    template: "{controller=Home:slugify}/{action=Index:slugify}/{id?}");
+    template: "{controller:slugify=Home}/{action:slugify=Index}/{id?}");
 ```
 
 使用上述路由，操作 `SubscriptionManagementController.GetAll()` 与 URI `/subscription-management/get-all` 匹配。 参数转换器不会更改用于生成链接的路由值。 例如，`Url.Action("GetAll", "SubscriptionManagement")` 输出 `/subscription-management/get-all`。

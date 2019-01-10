@@ -4,14 +4,14 @@ author: tdykstra
 description: 了解 ASP.NET Core 2.2 的新增功能。
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 12/03/2018
+ms.date: 12/18/2018
 uid: aspnetcore-2.2
-ms.openlocfilehash: d0bb0698526e2f7af8f0e99b0393f3ce48657b34
-ms.sourcegitcommit: a3a15d3ad4d6e160a69614a29c03bbd50db110a2
+ms.openlocfilehash: 13d7dec834a5661b445b4fc0c0be8be9b7b41b9e
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52952052"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637724"
 ---
 # <a name="whats-new-in-aspnet-core-22"></a>ASP.NET Core 2.2 的新增功能
 
@@ -72,7 +72,7 @@ HTTP/2 是 HTTP 协议的主要修订版本。 HTTP/2 的一些值得注意的�
 
 在早期版本的 ASP.NET Core 中，IIS 用作反向代理。 在 2.2 中，ASP.NET Core 模块可以启动 CoreCLR 并在 IIS 工作进程 (w3wp.exe) 内承载应用。 在使用 IIS 运行时，进程内承载可提供性能和诊断提升。
 
-有关详细信息，请参阅 [IIS 进程内承载](xref:fundamentals/servers/aspnet-core-module?view=aspnetcore-2.2#in-process-hosting-model)。
+有关详细信息，请参阅 [IIS 进程内承载](xref:host-and-deploy/aspnet-core-module?view=aspnetcore-2.2#in-process-hosting-model)。
 
 ## <a name="signalr-java-client"></a>SignalR Java 客户端
 

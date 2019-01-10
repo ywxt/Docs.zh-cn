@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 12/01/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: f53c303dc63e092f08e933fea79eb805523cde9b
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: bdb29c318c66ac884b9225ba8c2a0dfc1f364255
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861389"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637698"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>在 Windows 服务中托管 ASP.NET Core
 
@@ -108,7 +108,7 @@ ms.locfileid: "52861389"
 
   如果条件为 false（应用作为服务运行）：
 
-  * 调用 <xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*> 并使用应用的发布位置路径。 不要调用 <xref:System.IO.Directory.GetCurrentDirectory*> 来获取路径，因为在调用 `GetCurrentDirectory` 时，Windows 服务应用将返回 C:\\WINDOWS\\system32 文件夹。 有关详细信息，请参阅[当前目录和内容根](#current-directory-and-content-root)部分。
+  * 调用 <xref:System.IO.Directory.SetCurrentDirectory*> 并使用应用的发布位置路径。 不要调用 <xref:System.IO.Directory.GetCurrentDirectory*> 来获取路径，因为在调用 `GetCurrentDirectory` 时，Windows 服务应用将返回 C:\\WINDOWS\\system32 文件夹。 有关详细信息，请参阅[当前目录和内容根](#current-directory-and-content-root)部分。
   * 调用 <xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostWindowsServiceExtensions.RunAsService*> 以将应用作为服务运行。
 
   由于[命令行配置提供程序](xref:fundamentals/configuration/index#command-line-configuration-provider)需要命令行参数的名称/值对，因此将先从参数中删除 `--console` 开关，然后 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> 会接收这些参数。
@@ -214,7 +214,7 @@ sc create {SERVICE NAME} binPath= "{PATH}" obj= "{DOMAIN}\{USER ACCOUNT}" passwo
 
 * 服务名为 MyService。
 * 已发布的服务驻留在 c:\\svc 文件夹中。 应用可执行文件名为 SampleApp.exe。 用双引号 (") 将 `binPath` 值引起来。
-* 服务是使用 `ServiceUser` 帐户运行。 将 `{DOMAIN}` 替换为用户帐户的域或本地计算机名称。 用双引号 (") 将 `obj` 值引起来。 例如，如果托管系统是名为 `MairaPC` 的本地计算机，请将 `obj` 设置为 `"MairaPC\ServiceUser"`。
+* 服务是使用 `ServiceUser` 帐户运行。 将 `{DOMAIN}` 替换为用户帐户的域或本地计算机名称。 用双引号 (") 将 `obj` 值引起来。 示例:如果托管系统是名为 `MairaPC` 的本地计算机，请将 `obj` 设置为 `"MairaPC\ServiceUser"`。
 * 将 `{PASSWORD}` 替换为用户帐户密码。 用双引号 (") 将 `password` 值引起来。
 
 ```console
@@ -323,16 +323,16 @@ sc delete MyService
 
 ### <a name="set-the-content-root-path-to-the-apps-folder"></a>设置应用文件夹的内容根路径
 
-<xref:Microsoft.Extensions.Hosting.IHostingEnvironment.ContentRootPath*> 是创建服务时提供给 `binPath` 参数的同一路径。 请调用包含应用内容根的路径的 <xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*>，而不是调用 `GetCurrentDirectory` 来创建设置文件的路径。
+<xref:Microsoft.Extensions.Hosting.IHostingEnvironment.ContentRootPath*> 是创建服务时提供给 `binPath` 参数的同一路径。 请调用包含应用内容根的路径的 <xref:System.IO.Directory.SetCurrentDirectory*>，而不是调用 `GetCurrentDirectory` 来创建设置文件的路径。
 
 在 `Program.Main` 中，确定服务可执行文件的文件夹路径，并使用该路径来建立应用的内容根：
 
 ```csharp
 var pathToExe = Process.GetCurrentProcess().MainModule.FileName;
 var pathToContentRoot = Path.GetDirectoryName(pathToExe);
+Directory.SetCurrentDirectory(pathToContentRoot);
 
 CreateWebHostBuilder(args)
-    .UseContentRoot(pathToContentRoot)
     .Build()
     .RunAsService();
 ```

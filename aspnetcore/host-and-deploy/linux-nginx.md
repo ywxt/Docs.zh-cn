@@ -4,14 +4,14 @@ author: rick-anderson
 description: 了解如何在 Ubuntu 16.04 上将 Nginx 设置为反向代理，从而将 HTTP 流量转发到在 Kestrel 上运行的 ASP.NET Core Web 应用。
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/26/2018
+ms.date: 12/20/2018
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: d4bffab80ba20d4cf77a358249c7b349033de5bd
-ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
+ms.openlocfilehash: 534c62c127e685af9c6076932943def25bd3ac06
+ms.sourcegitcommit: e1cc4c1ef6c9e07918a609d5ad7fadcb6abe3e12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52450783"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53997326"
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>使用 Nginx 在 Linux 上托管 ASP.NET Core
 
@@ -126,7 +126,7 @@ services.Configure<ForwardedHeadersOptions>(options =>
 
 ### <a name="install-nginx"></a>安装 Nginx
 
-使用 `apt-get` 安装 Nginx。 安装程序将创建一个 systemd init 脚本，该脚本运行 Nginx，作为系统启动时的守护程序。 按照 [Nginx：官方 Debian/Ubuntu 包](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages)中的 Ubuntu 安装说明操作。
+使用 `apt-get` 安装 Nginx。 安装程序将创建一个 systemd init 脚本，该脚本运行 Nginx，作为系统启动时的守护程序。 按照以下网站上的 Ubuntu 安装说明操作：[Nginx：官方 Debian/Ubuntu 包](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages)。
 
 > [!NOTE]
 > 如果需要可选 Nginx 模块，则可能需要从源代码生成 Nginx。
@@ -170,7 +170,7 @@ server {
 }
 ```
 
-使用上述配置文件和默认服务器，Nginx 接受主机标头 `example.com` 或 `*.example.com` 端口 80 上的公共流量。 与这些主机不匹配的请求不会转接到 Kestrel。 Nginx 将匹配的请求转接到 `http://localhost:5000` 中的 Kestrel。 有关详细信息，请参阅 [nginx 如何处理请求](https://nginx.org/docs/http/request_processing.html)。 要更改 Kestrel 的 IP/端口，请参阅 [Kestrel：终结点配置](xref:fundamentals/servers/kestrel#endpoint-configuration)。
+使用上述配置文件和默认服务器，Nginx 接受主机标头 `example.com` 或 `*.example.com` 端口 80 上的公共流量。 与这些主机不匹配的请求不会转接到 Kestrel。 Nginx 将匹配的请求转接到 `http://localhost:5000` 中的 Kestrel。 有关详细信息，请参阅 [nginx 如何处理请求](https://nginx.org/docs/http/request_processing.html)。 若要更改 Kestrel 的 IP/端口，请参阅 [Kestrel：终结点配置](xref:fundamentals/servers/kestrel#endpoint-configuration)。
 
 > [!WARNING]
 > 未能指定正确的 [server_name 指令](https://nginx.org/docs/http/server_names.html)会公开应用的安全漏洞。 如果可控制整个父域（区别于易受攻击的 `*.com`），则子域通配符绑定（例如，`*.example.com`）不具有此安全风险。 有关详细信息，请参阅 [rfc7230 第 5.4 条](https://tools.ietf.org/html/rfc7230#section-5.4)。
@@ -296,6 +296,18 @@ sudo journalctl -fu kestrel-helloapp.service --since "2016-10-18" --until "2016-
 
 * <xref:security/data-protection/implementation/key-storage-providers>
 * <xref:security/data-protection/implementation/key-encryption-at-rest>
+
+## <a name="long-request-header-fields"></a>较长的请求标头字段
+
+如果应用需要的请求标头字段超过代理服务器的默认设置允许的长度（具体取决于平台，通常为 4K 或 8K），则需调整以下指令。 要应用的值依赖应用场景。 有关详细信息，请参见服务器文档。
+
+* [proxy_buffer_size](https://nginx.org/docs/http/ngx_http_proxy_module.html#proxy_buffer_size)
+* [proxy_buffers](https://nginx.org/docs/http/ngx_http_proxy_module.html#proxy_buffers)
+* [proxy_busy_buffers_size](https://nginx.org/docs/http/ngx_http_proxy_module.html#proxy_busy_buffers_size)
+* [large_client_header_buffers](https://nginx.org/docs/http/ngx_http_core_module.html#large_client_header_buffers)
+
+> [!WARNING]
+> 除非必要，否则不要提高代理缓冲区的默认值。 提高这些值将增加缓冲区溢出的风险和恶意用户的拒绝服务 (DoS) 攻击风险。
 
 ## <a name="secure-the-app"></a>保护应用
 

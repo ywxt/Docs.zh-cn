@@ -4,14 +4,14 @@ author: guardrex
 description: 了解有关 ASP.NET Core 中负责应用启动和生存期管理的 Web 主机。
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/01/2018
+ms.date: 12/18/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: bc77413127273aba207e68e7fbcb8ad916267e8e
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 7215027a083c0ed0bc3b15196e390a31c5dcfc14
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52862273"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637841"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core Web 主机
 
@@ -57,7 +57,7 @@ public class Program
   * 环境变量。
   * 命令行参数。
 * 配置控制台和调试输出的[日志记录](xref:fundamentals/logging/index)。 日志记录包含 appsettings.json 或 appsettings.{Environment}.json 文件的日志记录配置部分中指定的[日志筛选](xref:fundamentals/logging/index#log-filtering)规则。
-* 使用 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)在 IIS 后面运行时，`CreateDefaultBuilder` 会启用 [IIS 集成](xref:host-and-deploy/iis/index)，这会配置应用的基址和端口。 IIS 集成还配置应用以[捕获启动错误](#capture-startup-errors)。 有关 IIS 默认选项，请参阅 <xref:host-and-deploy/iis/index#iis-options>。
+* 使用 [ASP.NET Core 模块](xref:host-and-deploy/aspnet-core-module)在 IIS 后面运行时，`CreateDefaultBuilder` 会启用 [IIS 集成](xref:host-and-deploy/iis/index)，这会配置应用的基址和端口。 IIS 集成还配置应用以[捕获启动错误](#capture-startup-errors)。 有关 IIS 默认选项，请参阅 <xref:host-and-deploy/iis/index#iis-options>。
 * 如果应用环境为“开发”，请将 [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes) 设为 `true`。 有关详细信息，请参阅[作用域验证](#scope-validation)。
 
 [ConfigureAppConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configureappconfiguration)、[ConfigureLogging](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configurelogging) 以及 [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder) 的其他方法和扩展方法可重写和增强 `CreateDefaultBuilder` 定义的配置。 下面是一些示例：
@@ -137,7 +137,7 @@ public class Program
 
 **密钥**：applicationName  
 **类型**：string  
-**默认**：包含应用入口点的程序集的名称。  
+**默认值**：包含应用入口点的程序集的名称。  
 **设置使用**：`UseSetting`  
 **环境变量**：`ASPNETCORE_APPLICATIONNAME`
 
@@ -239,7 +239,7 @@ WebHost.CreateDefaultBuilder(args)
 
 键：https_port；类型：字符串；
 默认值：未设置默认值。
-使用的设置：`UseSetting`
+设置使用：`UseSetting`
 环境变量：`ASPNETCORE_HTTPS_PORT`
 
 ```csharp

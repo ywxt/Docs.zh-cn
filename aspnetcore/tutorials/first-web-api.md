@@ -3,16 +3,15 @@ title: 教程：使用 ASP.NET Core MVC 创建 Web API
 author: rick-anderson
 description: 使用 ASP.NET Core MVC 构建 Web API
 ms.author: riande
-monikerRange: '> aspnetcore-2.1'
 ms.custom: mvc
-ms.date: 11/19/2018
+ms.date: 12/10/2018
 uid: tutorials/first-web-api
-ms.openlocfilehash: 1af14b85cbaefc00fd97db7c721c4f9436a65fb2
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: c2b4dcddd5332330cd6e6abe7d3a12697cde845e
+ms.sourcegitcommit: 4e87712029de2aceb1cf2c52e9e3dda8195a5b8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121461"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53381999"
 ---
 # <a name="tutorial-create-a-web-api-with-aspnet-core-mvc"></a>教程：使用 ASP.NET Core MVC 创建 Web API
 
@@ -77,7 +76,7 @@ ms.locfileid: "53121461"
 
   这些命令会创建新 Web API 项目并在新项目文件夹中打开 Visual Studio Code 的新实例。
 
-* 当对话框询问是否要将所需资产添加到项目时，选择“是”
+* 当对话框询问是否要将所需资产添加到项目时，选择“是”。
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
@@ -359,7 +358,7 @@ ms.locfileid: "53121461"
 
 [!code-csharp[](first-web-api/samples/2.2/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
 
-`PutTodoItem` 与 `PostTodoItem` 类似，但是使用的是 HTTP PUT。 响应是 [204（无内容）](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)。 根据 HTTP 规范，PUT 请求需要客户端发送整个更新的实体，而不仅仅是更改。 若要支持部分更新，请使用 [HTTP PATCH](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute)。
+`PutTodoItem` 与 `PostTodoItem` 类似，但是使用的是 HTTP PUT。 响应是 [204（无内容）](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)。 根据 HTTP 规范，PUT 请求需要客户端发送整个更新的实体，而不仅仅是更改。 若要支持部分更新，请使用 [HTTP PATCH](xref:Microsoft.AspNetCore.Mvc.HttpPatchAttribute)。
 
 ### <a name="test-the-puttodoitem-method"></a>测试 PutTodoItem 方法
 

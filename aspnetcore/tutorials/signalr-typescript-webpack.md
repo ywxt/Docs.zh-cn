@@ -2,17 +2,16 @@
 title: 配合使用 ASP.NET Core SignalR 和 TypeScript 以及 Webpack
 author: ssougnez
 description: 本教程将配置 Webpack，以捆绑和生成 ASP.NET Core SignalR Web 应用，该应用的客户端是使用 TypeScript 编写的。
-monikerRange: '>= aspnetcore-2.2'
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 11/30/2018
 uid: tutorials/signalr-typescript-webpack
-ms.openlocfilehash: b2d59dfc449953cc2d747b507295c00ac0f652dd
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 92709beb7a99289b8639135aab9d821937825103
+ms.sourcegitcommit: a16352c1c88a71770ab3922200a8cd148fb278a6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52862247"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53335281"
 ---
 # <a name="use-aspnet-core-signalr-with-typescript-and-webpack"></a>配合使用 ASP.NET Core SignalR 和 TypeScript 以及 Webpack
 
@@ -103,9 +102,9 @@ SignalRWebPack 目录中创建了一个面向 .NET Core 的空 ASP.NET Core Web 
 
     脚本的一些解释：
 
-    * `build`：在开发模式中捆绑客户端资源并观察文件更改。 文件观察程序使捆绑在每次项目文件发生更改时重新生成。 `mode` 选项可禁用生产优化，例如摇树优化和缩小优化。 仅在开发中使用 `build`。
-    * `release`：在生产模式中捆绑客户端资源。
-    * `publish`：运行 `release` 脚本，在生产模式中捆绑客户端资源。 它调用 .NET Core CLI 的 [publish](/dotnet/core/tools/dotnet-publish) 命令发布应用。
+    * `build`：在开发模式下捆绑客户端资源并观察文件更改。 文件观察程序使捆绑在每次项目文件发生更改时重新生成。 `mode` 选项可禁用生产优化，例如摇树优化和缩小优化。 仅在开发中使用 `build`。
+    * `release`：在生产模式下捆绑客户端资源。
+    * `publish`：运行 `release` 脚本，在生产模式下捆绑客户端资源。 它调用 .NET Core CLI 的 [publish](/dotnet/core/tools/dotnet-publish) 命令发布应用。
 
 1. 在项目根中创建名为 webpack.config.js 的文件，包含以下内容：
 

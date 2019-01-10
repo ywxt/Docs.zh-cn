@@ -4,14 +4,14 @@ author: zuckerthoben
 description: 了解如何使用 NSwag 为 ASP.NET Core Web API 生成文档和帮助页面。
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 09/20/2018
+ms.date: 12/18/2018
 uid: tutorials/get-started-with-nswag
-ms.openlocfilehash: 6c7d76e2202bf47c8d3e5d296e64e9e8c820e2a1
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 8af5bed1e042c4f6d83043b05084c51b3064a548
+ms.sourcegitcommit: ea215df889e89db44037a6ac2f01baede0450da9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207844"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53595355"
 ---
 # <a name="get-started-with-nswag-and-aspnet-core"></a>NSwag 和 ASP.NET Core 入门
 
@@ -280,9 +280,11 @@ NSwag 使用[反射](/dotnet/csharp/programming-guide/concepts/reflection)，建
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.NSwag/Controllers/TodoController.cs?name=snippet_CreateAction)]
 
-上述操作返回 `ActionResult<T>`，但在操作内部返回 [CreatedAtRoute](/dotnet/api/system.web.http.apicontroller.createdatroute)。 由于使用 [[ApiController]](/dotnet/api/microsoft.aspnetcore.mvc.apicontrollerattribute) 属性修饰控制器，所以也可能出现 [BadRequest](/dotnet/api/system.web.http.apicontroller.badrequest) 响应。 有关详细信息，请参阅[自动 HTTP 400 响应](xref:web-api/index#automatic-http-400-responses)。 使用数据注释告知客户端此操作会返回哪些 HTTP 状态代码。 使用以下属性修饰该操作：
+上述操作将返回 `ActionResult<T>`。 在操作中，它将返回 [CreatedAtRoute](xref:System.Web.Http.ApiController.CreatedAtRoute*)。 由于使用 [[ApiController]](xref:Microsoft.AspNetCore.Mvc.ApiControllerAttribute) 属性修饰控制器，所以也可能出现 [BadRequest](xref:System.Web.Http.ApiController.BadRequest*) 响应。 有关详细信息，请参阅[自动 HTTP 400 响应](xref:web-api/index#automatic-http-400-responses)。 使用数据注释告知客户端此操作会返回哪些 HTTP 状态代码。 使用以下属性修饰该操作：
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.NSwag/Controllers/TodoController.cs?name=snippet_CreateActionAttributes)]
+
+在 ASP.NET Core 2.2 或更高版本中，约定可以用作使用 `[ProducesResponseType]` 显式修饰各操作的替代方法。 有关更多信息，请参见<xref:web-api/advanced/conventions>。
 
 ::: moniker-end
 

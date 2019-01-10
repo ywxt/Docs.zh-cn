@@ -6,12 +6,12 @@ ms.author: riande
 monikerRange: '>= aspnetcore-2.2'
 ms.date: 12/3/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 91fee1db820493be671fecaee3cfb4c1b7df8bd3
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: 0915c525d5fb96a3d32f91fbd65a4e1f62ee28b8
+ms.sourcegitcommit: 68a3081dd175d6518d1bfa31b4712bd8a2dd3864
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121358"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53577859"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>在 ASP.NET Core 中向 Razor 页面应用添加模型
 
@@ -117,13 +117,13 @@ appsettings.json 文件通过用于连接到本地数据的连接字符串进行
 * **对于 Windows**：运行下面的命令：
 
   ```console
-  dotnet aspnet-codegenerator razorpage -m Movie -dc MovieContext -udl -outDir Pages\Movies --referenceScriptLibraries
+  dotnet aspnet-codegenerator razorpage -m Movie -dc RazorPagesMovieContext -udl -outDir Pages\Movies --referenceScriptLibraries
   ```
 
 * **对于 macOS 和 Linux**：运行下面的命令：
 
   ```console
-  dotnet aspnet-codegenerator razorpage -m Movie -dc MovieContext -udl -outDir Pages/Movies --referenceScriptLibraries
+  dotnet aspnet-codegenerator razorpage -m Movie -dc RazorPagesMovieContext -udl -outDir Pages/Movies --referenceScriptLibraries
   ```
 
 [!INCLUDE [explains scaffold gen params](~/includes/RP/model4.md)]
@@ -133,6 +133,11 @@ appsettings.json 文件通过用于连接到本地数据的连接字符串进行
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 * 打开项目目录（包含 Program.cs、Startup.cs 和 .csproj 文件的目录）中的命令窗口。
+* 安装基架工具：
+
+  ```console
+   dotnet tool install --global dotnet-aspnet-codegenerator
+   ```
 * 运行下面的命令：
 
   ```console
@@ -147,7 +152,7 @@ appsettings.json 文件通过用于连接到本地数据的连接字符串进行
 
 ### <a name="files-created"></a>创建的文件
 
-* Pages/Movies：“创建”、“删除”、“详细信息”、“编辑”和“索引”。
+* *Pages/Movies*：“创建”、“删除”、“详细信息”、“编辑”和“索引”。
 * Data/RazorPagesMovieContext.cs
 
 ### <a name="file-updated"></a>文件已更新
@@ -197,7 +202,7 @@ Update-Database
 ---  
 <!-- End of VS tabs -->
 
-`ef migrations add InitialCreate` 命令生成用于创建初始数据库架构的代码。 此架构的依据为 `DbContext` 中指定的模型（在 Models/RazorPagesMovieContext.cs 文件中）。 `InitialCreate` 参数用于为迁移命名。 可以使用任何名称，但是按照惯例，会选择可说明迁移的名称。
+`ef migrations add InitialCreate` 命令生成用于创建初始数据库架构的代码。 此架构的依据为 `DbContext` 中指定的模型（在 RazorPagesMovieContext.cs 文件中）。 `InitialCreate` 参数用于为迁移命名。 可以使用任何名称，但是按照惯例，会选择可说明迁移的名称。
 
 `ef database update` 命令在 Migrations/\<time-stamp>_InitialCreate.cs 文件中运行 `Up` 方法。 `Up` 方法会创建数据库。
 
@@ -266,4 +271,4 @@ Login failed for user 'User-name'.
 
 > [!div class="step-by-step"]
 > [上一篇：入门](xref:tutorials/razor-pages/razor-pages-start)
-> [下一篇：已搭建基架的 Razor 页面](xref:tutorials/razor-pages/page)
+> [下一篇：已搭建基架的 Razor Pages](xref:tutorials/razor-pages/page)

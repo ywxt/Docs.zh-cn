@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: seodec18
 ms.date: 11/22/2018
 uid: data/ef-rp/intro
-ms.openlocfilehash: 34c7238b689993245e033625dcd0e728b7c45163
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: b66d20a46b29b6975512026fa940f7f9e50deeb5
+ms.sourcegitcommit: 6548c19f345850ee22b50f7ef9fca732895d9e08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121695"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53425128"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>ASP.NET Core 中的 Razor 页面和 Entity Framework Core - 第 1 个教程（共 8 个）
 
@@ -65,7 +65,7 @@ Contoso University 示例 Web 应用演示了如何使用 Entity Framework (EF) 
 * 创建新的 ASP.NET Core Web 应用程序。 将该项目命名为 ContosoUniversity 。 务必将该项目命名为 ContosoUniversity，以便复制/粘贴代码时命名空间相匹配。
 * 在下拉列表中选择“ASP.NET Core 2.1”，然后选择“Web 应用程序”。
 
-有关上述步骤的图像，请参阅[创建 Razor Web 应用](xref:tutorials/razor-pages/razor-pages-start#create-a-razor-web-app)。
+有关上述步骤的图像，请参阅[创建 Razor Web 应用](xref:tutorials/razor-pages/razor-pages-start#create-a-razor-pages-web-app)。
 运行应用。
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
@@ -190,8 +190,8 @@ dotnet aspnet-codegenerator razorpage -m Student -dc ContosoUniversity.Models.Sc
 
 ### <a name="file-updates"></a>文件更新
 
-* Startup.cs：下一部分详细介绍对此文件所作的更改。
-* appsettings.json：添加用于连接到本地数据的连接字符串。
+* *Startup.cs*：下一部分详细介绍对此文件所作的更改。
+* *appsettings.json*：添加用于连接到本地数据库的连接字符串。
 
 ## <a name="examine-the-context-registered-with-dependency-injection"></a>检查通过依赖关系注入注册的上下文
 

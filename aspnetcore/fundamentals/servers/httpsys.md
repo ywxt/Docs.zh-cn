@@ -5,26 +5,23 @@ description: 了解 Windows 上适用于 ASP.NET Core 的 Web 服务器 HTTP.sys
 monikerRange: '>= aspnetcore-2.0'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 12/01/2018
+ms.date: 12/18/2018
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 8810fd295e8c4269812e712ce2fdc9b9fa2bbb4f
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: a779fee53109d4c1cabb2005896e757f23467540
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861688"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637620"
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 HTTP.sys Web 服务器实现
 
 作者：[Tom Dykstra](https://github.com/tdykstra)、[Chris Ross](https://github.com/Tratcher) 和 [Luke Latham](https://github.com/guardrex)
 
-> [!NOTE]
-> 本主题仅适用于 ASP.NET Core 2.0 或更高版本。 在早期版本的 ASP.NET Core 的中，HTTP.sys 被命名为 [WebListener](xref:fundamentals/servers/weblistener)。
-
 [HTTP.sys](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture#hypertext-transfer-protocol-stack-httpsys) 是仅在 Windows 上运行的[适用于 ASP.NET Core 的 Web 服务器](xref:fundamentals/servers/index)。 HTTP.sys 是 [Kestrel](xref:fundamentals/servers/kestrel) 服务器的替代选择，提供了一些 Kestrel 不提供的功能。
 
 > [!IMPORTANT]
-> HTTP.sys 与 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)不兼容，不能与 IIS 或 IIS Express 结合使用。
+> HTTP.sys 与 [ASP.NET Core 模块](xref:host-and-deploy/aspnet-core-module)不兼容，不能与 IIS 或 IIS Express 结合使用。
 
 HTTP.sys 支持以下功能：
 
@@ -97,7 +94,7 @@ HTTP.sys 通过 Kerberos 身份验证协议委托给内核模式身份验证。 
 
    **HTTP.sys 选项**
 
-   | 属性 | 说明 | 默认 |
+   | Property | 说明 | 默认 |
    | -------- | ----------- | :-----: |
    | [AllowSynchronousIO](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.allowsynchronousio) | 控制是否允许 `HttpContext.Request.Body` 和 `HttpContext.Response.Body` 的同步输入/输出。 | `true` |
    | [Authentication.AllowAnonymous](/dotnet/api/microsoft.aspnetcore.server.httpsys.authenticationmanager.allowanonymous) | 允许匿名请求。 | `true` |
@@ -140,7 +137,7 @@ HTTP.sys 通过 Kerberos 身份验证协议委托给内核模式身份验证。 
 1. 如果应用为[框架相关部署](/dotnet/core/deploying/#framework-dependent-deployments-fdd)，则安装 .NET Core、.NET Framework 或两者（如果应用是面向 .NET Framework 的 .NET Core 应用）。
 
    * **.NET Core**&ndash; 如果应用需要 .NET Core，请从 [.NET 所有下载](https://www.microsoft.com/net/download/all)获取并运行 .NET Core 安装程序。
-   * **.NET Framework** &ndash; 如果应用需要 .NET Framework，请参阅 [.NET Framework：安装指南](/dotnet/framework/install/)查找安装说明。 安装所需的 .NET Framework。 最新 .NET Framework 的安装程序可从 [.NET 所有下载](https://www.microsoft.com/net/download/all)中找到。
+   * **.NET framework** &ndash; 如果应用要求 .NET Framework，请参阅 [.NET Framework：安装指南](/dotnet/framework/install/)，以查找安装说明。 安装所需的 .NET Framework。 最新 .NET Framework 的安装程序可从 [.NET 所有下载](https://www.microsoft.com/net/download/all)中找到。
 
 2. 配置应用的 URL 和端口。
 
@@ -190,7 +187,7 @@ HTTP.sys 通过 Kerberos 身份验证协议委托给内核模式身份验证。 
 
    2. 如果需要，请创建自签名的 X.509 证书。
 
-      [!INCLUDE [How to make an X.509 cert](../../includes/make-x509-cert.md)]
+      [!INCLUDE [How to make an X.509 cert](~/includes/make-x509-cert.md)]
 
 4. 打开防火墙端口以允许流量到达 HTTP.sys。 使用 *netsh.exe* 或 [PowerShell cmdlet](https://technet.microsoft.com/library/jj554906)。
 

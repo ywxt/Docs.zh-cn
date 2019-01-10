@@ -4,14 +4,14 @@ author: rick-anderson
 description: 了解如何在 ASP.NET Core 应用中更新生成的页面。
 monikerRange: '>= aspnetcore-2.2'
 ms.author: riande
-ms.date: 12/3/2018
+ms.date: 12/20/2018
 uid: tutorials/razor-pages/da1
-ms.openlocfilehash: b88dcd12ee670eb2e0919bdb07b9b7556a5b80e7
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 396cb9b9eeaab2d3db6108feeba71dbc2bc8981d
+ms.sourcegitcommit: e1cc4c1ef6c9e07918a609d5ad7fadcb6abe3e12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52862403"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53997196"
 ---
 # <a name="update-the-generated-pages-in-an-aspnet-core-app"></a>在 ASP.NET Core 应用中更新生成的页面
 
@@ -69,22 +69,22 @@ ms.locfileid: "52862403"
 @page "{id:int?}"
 ```
 
-测试行为或 `@page "{id:int?}"`：
+若要测试 `@page "{id:int?}"` 的行为：
 
-* 在 *Pages/Movies/Details.cshtml* 中将 page 指令设置为 `@page "{id:int?}"`
+* 在 Pages/Movies/Details.cshtml 中将 page 指令设置为 `@page "{id:int?}"`。
 * 在 `public async Task<IActionResult> OnGetAsync(int? id)` 中（位于 Pages/Movies/Details.cshtml.cs 中）设置断点。
-* 导航到 `https://localhost:5001/Movies/Details/`
+* 导航到 `https://localhost:5001/Movies/Details/`。
 
 使用 `@page "{id:int}"` 指令时，永远不会命中断点。 路由引擎返回 HTTP 404。 使用 `@page "{id:int?}"` 时，`OnGetAsync` 方法返回 `NotFound` (HTTP 404)。
 
-尽管不建议这样做，不过可以将删除方法编写为：
+尽管不建议这样做，但仍可以将 `OnGetAsync` 方法（在 Pages/Movies/Delete.cshtml.cs 中）编写为：
 
 [!code-csharp[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie22/Pages/Movies/Delete.cshtml.cs?name=snippet)]
 
 测试上述代码：
 
 * 选择删除链接。
-* 从 URL 中删除 ID。 例如，将 `https://localhost:5001/Movies/Delete/8` 更改为 `https://localhost:5001/Movies/Delete`
+* 从 URL 中删除 ID。 例如，将 `https://localhost:5001/Movies/Delete/8` 更改为 `https://localhost:5001/Movies/Delete`。
 * 在调试程序中逐步执行代码。
 
 ### <a name="review-concurrency-exception-handling"></a>查看并发异常处理
@@ -125,7 +125,7 @@ ms.locfileid: "52862403"
   public Movie Movie { get; set; }
   ```
 
-* 如果模型状态中存在错误（例如，`ReleaseDate` 无法被转换为日期），则会使用已提交的值再次发布表单。
+* 如果模型状态中存在错误（例如，`ReleaseDate` 无法被转换为日期），则会使用已提交的值显示表单。
 * 如果没有模型错误，则电影已保存。
 
 “索引”、“创建”和“删除”Razor 页面中的 HTTP GET 方法遵循一个类似的模式。 “创建”Razor 页面中的 HTTP POST `OnPostAsync` 方法遵循的模式类似于“编辑”Razor 页面中的 `OnPostAsync` 方法所遵循的模式。

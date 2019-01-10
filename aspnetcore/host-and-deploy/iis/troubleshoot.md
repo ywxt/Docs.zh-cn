@@ -4,14 +4,14 @@ author: guardrex
 description: 了解如何诊断 ASP.NET Core 应用的 Internet Information Services (IIS) 部署的问题。
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/06/2018
+ms.date: 12/18/2018
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: 6d43057639ea88bb21ac66f2799062e06fffc530
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: 68fcd578c051ae9ba6234cad0465a7ef42f1ed14
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121682"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637685"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>对 IIS 上的 ASP.NET Core 进行故障排除
 
@@ -34,7 +34,7 @@ ms.locfileid: "53121682"
 其他故障排除主题：
 
 <xref:host-and-deploy/azure-apps/troubleshoot>  
-虽然应用服务使用 [ASP.NET Core 模块](xref:fundamentals/servers/aspnet-core-module)和 IIS 托管应用，但若要获取特定于应用服务的说明，请参阅专用主题。
+虽然应用服务使用 [ASP.NET Core 模块](xref:host-and-deploy/aspnet-core-module)和 IIS 托管应用，但若要获取特定于应用服务的说明，请参阅专用主题。
 
 <xref:fundamentals/error-handling>  
 了解如何在本地系统上处理 ASP.NET Core 应用在开发期间的错误。

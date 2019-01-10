@@ -2,17 +2,16 @@
 title: ASP.NET Core SignalR 入门
 author: tdykstra
 description: 在本教程中，创建使用 ASP.NET Core SignalR 的聊天应用。
-monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/30/2018
 uid: tutorials/signalr
-ms.openlocfilehash: c52041b34d6c9d1d8f06f980c900b805a0933293
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 36296513726f7e098a536afc22fcbfb2cafe946d
+ms.sourcegitcommit: e1cc4c1ef6c9e07918a609d5ad7fadcb6abe3e12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861975"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53997274"
 ---
 # <a name="tutorial-get-started-with-aspnet-core-signalr"></a>教程：ASP.NET Core SignalR 入门
 
@@ -30,10 +29,6 @@ ms.locfileid: "52861975"
 ![SignalR 示例应用](signalr/_static/signalr-get-started-finished.png)
 
 [查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr/sample)（[如何下载](xref:index#how-to-download-a-sample)）。
-
-> [!NOTE]
-> 我们要测试所建议的新的 ASP.NET Core 目录结构是否可用。  如果你有几分钟时间进行练习，来了解当前目录或所建议目录中的 7 个不同主题，请[单击此处来参与调查](https://dpk4xbh5.optimalworkshop.com/treejack/aa11wn82)。
-
 
 [!INCLUDE [|Prerequisites](~/includes/net-core-prereqs-all-2.2.md)]
 
@@ -168,7 +163,7 @@ ms.locfileid: "52861975"
 
   `ChatHub` 类继承自 SignalR `Hub` 类。 `Hub` 类管理连接、组和消息。
 
-  任何连接客户端都可以调用 `SendMessage` 方法。 该方法将接收到的消息发送到所有客户端。 SignalR 代码是异步模式，可提供最大的可伸缩性。
+  可通过已连接客户端调用 `SendMessage`，以向所有客户端发送消息。 本教程后面部分将显示调用该方法的 JavaScript 客户端代码。 SignalR 代码是异步模式，可提供最大的可伸缩性。
 
 ## <a name="configure-signalr"></a>配置 SignalR
 

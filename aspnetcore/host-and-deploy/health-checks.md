@@ -5,14 +5,14 @@ description: 了解如何为 ASP.NET Core 基础结构（如应用和数据库�
 monikerRange: '>= aspnetcore-2.2'
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/03/2018
+ms.date: 12/12/2018
 uid: host-and-deploy/health-checks
-ms.openlocfilehash: d8fd43d9d689396cf30ca371763cdf7ac9423c77
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: cf2aea91221887dad5646604214f810493d4b175
+ms.sourcegitcommit: 1ea1b4fc58055c62728143388562689f1ef96cb2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52862575"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53329141"
 ---
 # <a name="health-checks-in-aspnet-core"></a>ASP.NET Core 中的运行状况检查
 
@@ -36,10 +36,12 @@ ASP.NET Core 提供运行状况检查中间件和库，以用于报告应用基�
 
 引用 [Microsoft.AspNetCore.App 元包](xref:fundamentals/metapackage-app)或将包引用添加到 [Microsoft.AspNetCore.Diagnostics.HealthChecks](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics.HealthChecks) 包。
 
-示例应用提供了启动代码来演示几个方案的运行状况检查。 [数据库探测](#database-probe)方案使用 [BeatPulse](https://github.com/Xabaril/BeatPulse) 探测数据库连接的运行状况。 [DbContext 探测](#entity-framework-core-dbcontext-probe)方案使用 EF Core `DbContext` 探测数据库。 使用示例应用探索数据库方案：
+示例应用提供了启动代码来演示几个方案的运行状况检查。 [数据库探测](#database-probe)方案使用 [BeatPulse](https://github.com/Xabaril/BeatPulse) 检查数据库连接的运行状况。 [DbContext 探测](#entity-framework-core-dbcontext-probe)方案使用 EF Core `DbContext` 检查数据库。 若要探索数据库方案，示例应用将：
 
-* 创建一个数据库，并在应用的 appsettings.json 文件中提供其连接字符串。
-* 添加对 [AspNetCore.HealthChecks.SqlServer](https://www.nuget.org/packages/AspNetCore.HealthChecks.SqlServer/) 的包引用。
+* 创建一个数据库，并在 appsettings.json 文件中提供其连接字符串。
+* 其项目文件中具有以下包引用：
+  * [AspNetCore.HealthChecks.SqlServer](https://www.nuget.org/packages/AspNetCore.HealthChecks.SqlServer/)
+  * [Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore/)
 
 > [!NOTE]
 > [BeatPulse](https://github.com/Xabaril/BeatPulse) 不由 Microsoft 进行支持或维护。
@@ -50,7 +52,7 @@ ASP.NET Core 提供运行状况检查中间件和库，以用于报告应用基�
 
 对于许多应用，报告应用在处理请求方面的可用性（运行情况）的基本运行状况探测配置足以发现应用的状态。
 
-基本配置会注册运行状况检查服务，并调用运行状况检查中间件以使用运行状况响应在 URL 终结点处进行响应。 默认情况下，不会注册任何特定运行状况检查来测试任何特定依赖项或子系统。 如果能够在运行状况终结点 URL 处进行响应，则应用被视为正常。 默认响应编写器会以纯文本响应形式将状态 (`HealthCheckStatus`) 写回到客户端，以便指示 `HealthCheckResult.Healthy` 或 `HealthCheckResult.Unhealthy` 状态。
+基本配置会注册运行状况检查服务，并调用运行状况检查中间件以使用运行状况响应在 URL 终结点处进行响应。 默认情况下，不会注册任何特定运行状况检查来测试任何特定依赖项或子系统。 如果能够在运行状况终结点 URL 处进行响应，则应用被视为正常。 默认响应编写器会以纯文本响应形式将状态 (`HealthStatus`) 写回到客户端，以便指示 `HealthStatus.Healthy`、`HealthStatus.Degraded` 或 `HealthStatus.Unhealthy` 状态。
 
 在 `Startup.ConfigureServices` 中使用 `AddHealthChecks` 注册运行状况检查服务。 在 `Startup.Configure` 的请求处理管道中使用 `UseHealthChecks` 注册运行状况检查中间件。
 
@@ -216,12 +218,12 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     app.UseHealthChecks("/health", new HealthCheckOptions()
     {
         // The following StatusCodes are the default assignments for
-        // the HealthCheckStatus properties.
+        // the HealthStatus properties.
         ResultStatusCodes =
         {
-            [HealthCheckStatus.Healthy] = StatusCodes.Status200OK,
-            [HealthCheckStatus.Degraded] = StatusCodes.Status200OK,
-            [HealthCheckStatus.Unhealthy] = StatusCodes.Status503ServiceUnavailable
+            [HealthStatus.Healthy] = StatusCodes.Status200OK,
+            [HealthStatus.Degraded] = StatusCodes.Status200OK,
+            [HealthStatus.Unhealthy] = StatusCodes.Status503ServiceUnavailable
         }
     });
 }
@@ -314,9 +316,17 @@ dotnet run --scenario db
 
 ## <a name="entity-framework-core-dbcontext-probe"></a>Entity Framework Core DbContext 探测
 
-在使用 [Entity Framework (EF) Core](/ef/core/) 的应用支持 `DbContext` 检查。 此检查确认应用可以与为 EF Core `DbContext` 配置的数据库通信。 默认情况下，`DbContextHealthCheck` 调用 EF Core 的 `CanConnectAsync` 方法。 可以自定义在使用 `AddDbContextCheck` 方法的重载检查运行状况时运行的操作。
+`DbContext` 检查确认应用可以与为 EF Core `DbContext` 配置的数据库通信。 满足以下条件的应用支持 `DbContext` 检查：
 
-`AddDbContextCheck<TContext>` 为 `DbContext` 注册运行状况检查 (`TContext`)。 默认情况下，运行状况检查的名称是 `TContext` 类型的名称。 重载可用于配置失败状态、标记和自定义测试查询。
+* 使用 [Entity Framework (EF) Core](/ef/core/)。
+* 包括对 [Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore/) 的包引用。
+
+`AddDbContextCheck<TContext>` 为 `DbContext` 注册运行状况检查。 `DbContext` 作为方法的 `TContext` 提供。 重载可用于配置失败状态、标记和自定义测试查询。
+
+默认情况下：
+
+* `DbContextHealthCheck` 调用 EF Core 的 `CanConnectAsync` 方法。 可以自定义在使用 `AddDbContextCheck` 方法重载检查运行状况时运行的操作。
+* 运行状况检查的名称是 `TContext` 类型的名称。
 
 在示例应用中，`AppDbContext` 会提供给 `AddDbContextCheck`，并在 `Startup.ConfigureServices` 中注册为服务。
 

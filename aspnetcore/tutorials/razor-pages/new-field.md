@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/5/2018
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: e280bc9553113982a1f1a77eabab32575c905237
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 9b3ad5f6c4b1c9b5f016f5591127c8d1b213948d
+ms.sourcegitcommit: 1ea1b4fc58055c62728143388562689f1ef96cb2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52862286"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53329128"
 ---
 # <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>将新字段添加到 ASP.NET Core 中的 Razor 页面
 
@@ -96,9 +96,13 @@ Update-Database
 
 名称“Rating”是任意的，用于对迁移文件进行命名。 为迁移文件使用有意义的名称是有帮助的。
 
+`Update-Database` 命令指示框架将架构更改应用到数据库。
+
 <a name="ssox"></a>
 
-如果删除 DB 中的所有记录，种子初始值设定项会设定 DB 种子，并将包括 `Rating` 字段。 可以使用浏览器中的删除链接，也可以从 [Sql Server 对象资源管理器](xref:tutorials/razor-pages/sql#ssox) (SSOX) 执行此操作。 从 SSOX 中删除数据库：
+如果删除 DB 中的所有记录，种子初始值设定项会设定 DB 种子，并将包括 `Rating` 字段。 可以使用浏览器中的删除链接，也可以从 [Sql Server 对象资源管理器](xref:tutorials/razor-pages/sql#ssox) (SSOX) 执行此操作。
+
+另一个方案是删除数据库，并使用迁移来重新创建该数据库。 删除 SSOX 中的数据库：
 
 * 在 SSOX 中选择数据库。
 * 右键单击数据库，并选择“删除”。
@@ -111,12 +115,9 @@ Update-Database
   ```
 
 <!-- Code -------------------------->
-# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
+# <a name="visual-studio-code--visual-studio-for-mactabvisual-studio-codevisual-studio-mac"></a>[Visual Studio Code / Visual Studio for Mac](#tab/visual-studio-code+visual-studio-mac)
 
-<!-- copy/paste this tab to the next. Not worth an include  --> SQLite 不支持迁移。
-
-* 删除数据库或更改 appsettings.json 文件中的数据库名称。
-* 删除 Migrations 文件夹（和该文件夹中的所有文件）。
+<!-- copy/paste this tab to the next. Not worth an include  -->
 
 运行以下 .NET Core CLI 命令：
 
@@ -125,20 +126,28 @@ dotnet ef migrations add Rating
 dotnet ef database update
 ```
 
-<!-- Mac -------------------------->
-# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
+`ef migrations add` 命令会通知框架执行以下操作：
 
-SQLite 不支持迁移。
+* 将 `Movie` 模型与 `Movie` DB 架构进行比较。
+* 创建代码以将 DB 架构迁移到新模型。
 
-* 删除数据库或更改 appsettings.json 文件中的数据库名称。
-* 删除 Migrations 文件夹（和该文件夹中的所有文件）。
+名称“Rating”是任意的，用于对迁移文件进行命名。 为迁移文件使用有意义的名称是有帮助的。
 
-运行以下 .NET Core CLI 命令：
+`ef database update` 命令指示框架将架构更改应用到数据库。
+
+如果删除 DB 中的所有记录，种子初始值设定项会设定 DB 种子，并将包括 `Rating` 字段。 可以使用浏览器中的删除链接，也可以使用 SQLite 工具执行此操作。
+
+另一个方案是删除数据库，并使用迁移来重新创建该数据库。 若要删除该数据库，请删除数据库文件 (MvcMovie.db)。 然后运行 `ef database update` 命令： 
 
 ```console
-dotnet ef migrations add Rating
 dotnet ef database update
 ```
+
+> [!NOTE]
+> 许多架构更改操作不受 EF Core SQLite 提供程序支持。 例如，支持添加列，但不支持删除列。 如果添加迁移以删除列，则 `ef migrations add` 命令成功，而 `ef database update` 命令失败。 可以通过手动编写迁移代码来重新生成表，从而解决部分限制。 表重新生成包括重命名现有表、创建新表、将数据复制到新表和删除旧表。 有关更多信息，请参见以下资源：
+> * [SQLite EF Core 数据库提供程序限制](/ef/core/providers/sqlite/limitations)
+> * [自定义迁移代码](/ef/core/managing-schemas/migrations/#customize-migration-code)
+> * [数据种子设定](/ef/core/modeling/data-seeding)
 
 ---  
 <!-- End of VS tabs -->

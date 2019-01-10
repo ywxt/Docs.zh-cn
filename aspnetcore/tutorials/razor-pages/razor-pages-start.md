@@ -1,47 +1,47 @@
 ---
-title: 在 ASP.NET Core 中开始使用 Razor Pages
+title: 教程：在 ASP.NET Core 中开始使用 Razor Pages
 author: rick-anderson
-monikerRange: '>= aspnetcore-2.2'
 description: 此系列教程演示了如何在 ASP.NET Core 中使用 Razor Pages。 了解如何创建模型、为 Razor Pages 生成代码、将 Entity Framework Core 和 SQL Server 用于数据访问、添加搜索功能、添加输入验证及使用迁移更新模型。
 ms.author: riande
 ms.date: 12/5/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 1152ebfcee48a46ecd28c941fce32d3fc1e05c41
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 929bc72b16e302a5018038bc449704b7078dd33a
+ms.sourcegitcommit: 6548c19f345850ee22b50f7ef9fca732895d9e08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861623"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53425076"
 ---
 # <a name="tutorial-get-started-with-razor-pages-in-aspnet-core"></a>教程：在 ASP.NET Core 中开始使用 Razor Pages
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-本教程介绍构建 ASP.NET Core Razor Pages Web 应用的基础知识。
+这是系列中的第一个教程。 [本系列](xref:tutorials/razor-pages/index)介绍构建 ASP.NET Core Razor Pages Web 应用的基础知识。 系列结束时，你将有一个应用来管理电影数据库。  
 
-该应用管理电影标题的数据库。 您将学习如何：
+[!INCLUDE[View or download sample code](~/includes/rp/download.md)]
+
+在本教程中，你将了解：
 
 > [!div class="checklist"]
 > * 创建 Razor 页面 Web 应用。
-> * 添加和构架模型。
-> * 使用数据库。
-> * 添加搜索和验证。
+> * 运行应用。
+> * 检查项目文件。
 
-在结束时，你会获得可以管理和显示电影标题项的应用。
+本教程结束时，你将有一个工作 Razor Pages Web 应用，可于后续教程在其基础上进行构建。
 
-[!INCLUDE[](~/includes/rp/download.md)]
-
-## <a name="prerequisites"></a>系统必备
+[主页或索引页](razor-pages-start/_static/home2.2.png)
 
 [!INCLUDE[](~/includes/net-core-prereqs-all-2.2.md)]
 
-## <a name="create-a-razor-web-app"></a>创建 Razor Web 应用
+## <a name="create-a-razor-pages-web-app"></a>创建 Razor 页面 Web 应用
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 * 从 Visual Studio“文件”菜单中选择“新建” > “项目”。
-* 创建新的 ASP.NET Core Web 应用程序。 将项目命名为“RazorPagesMovie”。 将项目命名为“RazorPagesMovie”，以便命名空间在你复制/粘贴代码时相互匹配。
- ![新建 ASP.NET Core Web 应用程序](razor-pages-start/_static/np_2.1.png)
+
+* 创建新的 ASP.NET Core Web 应用程序。 将项目命名为“RazorPagesMovie”。 将项目命名为“RazorPagesMovie”，以便命名空间在复制和粘贴代码时相互匹配。
+
+  ![新建 ASP.NET Core Web 应用程序](razor-pages-start/_static/np_2.1.png)
 
 * 在下拉列表中选择“ASP.NET Core 2.2”，然后选择“Web 应用程序”。
 
@@ -51,35 +51,25 @@ ms.locfileid: "52861623"
 
   ![“解决方案资源管理器”](razor-pages-start/_static/se2.2.png)
 
-* 按 **Ctrl-F5** 以在不使用调试程序的情况下运行。
-
-  Visual Studio 启动 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 并运行应用。 地址栏显示 `localhost:port#`，而不是显示 `example.com`。 这是因为 `localhost` 是本地计算机的标准主机名。 Localhost 仅为来自本地计算机的 Web 请求提供服务。 Visual Studio 创建 Web 项目时，Web 服务器使用的是随机端口。 在上图中，端口号为 5001。 运行应用时，将看到不同的端口号。
-
-  使用“Ctrl+F5”启动应用（非调试模式）后，可执行代码更改、保存文件、刷新浏览器和查看代码更改等操作。 许多开发人员更喜欢使用非调试模式刷新页面并查看更改。
-
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
 * 打开[集成终端](https://code.visualstudio.com/docs/editor/integrated-terminal)。
+
 * 将目录更改为 (`cd`) 包含项目的文件夹。
-* 运行下面的命令：
 
-   ```console
-   dotnet new webapp -o RazorPagesMovie
-   code -r RazorPagesMovie
-   ```
+* 运行以下命令：
 
-  * 一个对话框随即出现，其中包含“"RazorPagesMovie" 中缺少进行生成和调试所需的资产。是否添加它们?”  选择“是”
+  ```console
+  dotnet new webapp -o RazorPagesMovie
+  code -r RazorPagesMovie
+  ```
 
-  * `dotnet new webapp -o RazorPagesMovie`：在 RazorPagesMovie 文件夹中创建新的 Razor Pages 项目。
-  * `code -r RazorPagesMovie`：在 Visual Studio Code 中加载 RazorPagesMovie.csproj 项目文件。
+  * `dotnet new` 命令可在 RazorPagesMovie 文件夹中创建新的 Razor Pages 项目。
+  * `code` 命令将在 Visual Studio Code 的新实例中打开 RazorPagesMovie 文件夹。
 
-### <a name="launch-the-app"></a>启动应用
+  一个对话框随即出现，其中包含“"RazorPagesMovie" 中缺少进行生成和调试所需的资产。是否添加它们?”
 
-* 按 **Ctrl-F5** 以在不使用调试程序的情况下运行。
-
-  Visual Studio Code 启动 [Kestrel](xref:fundamentals/servers/kestrel)，启动浏览器并导航到 `http://localhost:5001`。 地址栏显示 `localhost:port:5001`，而不是显示 `example.com`。 这是因为 `localhost` 是本地计算机的标准主机名。 Localhost 仅为来自本地计算机的 Web 请求提供服务。
-
-  使用“Ctrl+F5”启动应用（非调试模式）后，可执行代码更改、保存文件、刷新浏览器和查看代码更改等操作。 许多开发人员更喜欢使用非调试模式刷新页面并查看更改。
+* 选择“是”
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
@@ -90,18 +80,33 @@ ms.locfileid: "52861623"
 ```console
 dotnet new webapp -o RazorPagesMovie
 cd RazorPagesMovie
-dotnet run
 ```
 
-上述命令使用 [.NET Core CLI](/dotnet/core/tools/dotnet) 创建并运行 Razor 页面项目。 打开浏览器，转到 http://localhost:5000 查看应用程序。
+上述命令使用 [.NET Core CLI](/dotnet/core/tools/dotnet) 创建 Razor Pages 项目。
 
 ## <a name="open-the-project"></a>打开项目
 
-按 Ctrl+C 关闭应用程序。
-
 在 Visual Studio 中，选择“文件”>“打开”，然后选择“RazorPagesMovie.csproj”文件。
 
-### <a name="launch-the-app"></a>启动应用
+<!-- End of VS tabs -->
+
+---
+
+## <a name="run-the-web-app"></a>运行 Web 应用程序
+
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+
+* 按 Ctrl+F5 以在不使用调试程序的情况下运行。
+
+  Visual Studio 启动 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 并运行应用。 地址栏显示 `localhost:port#`，而不是显示 `example.com`。 这是因为 `localhost` 是本地计算机的标准主机名。 Localhost 仅为来自本地计算机的 Web 请求提供服务。 Visual Studio 创建 Web 项目时，Web 服务器使用的是随机端口。 在上图中，端口号为 5001。 运行应用时，将看到不同的端口号。
+  
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
+
+* 按 **Ctrl-F5** 以在不使用调试程序的情况下运行。
+
+  Visual Studio Code 启动 [Kestrel](xref:fundamentals/servers/kestrel)，启动浏览器并导航到 `http://localhost:5001`。 地址栏显示 `localhost:port#`，而不是显示 `example.com`。 这是因为 `localhost` 是本地计算机的标准主机名。 Localhost 仅为来自本地计算机的 Web 请求提供服务。
+  
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 选择“运行”>“开始执行(不调试)”以启动应用。 Visual Studio 启动 [Kestrel](xref:fundamentals/servers/kestrel)，启动浏览器并导航到 `http://localhost:5001`。
 
@@ -109,62 +114,56 @@ dotnet run
 
 ---
 
-* 选择“接受”以同意跟踪。 此应用不会跟踪个人信息。 模板生成的代码包含有助于符合[一般数据保护条例 (GDPR)](xref:security/gdpr) 的资产。
+* 在应用的主页上，选择“接受”以同意跟踪。
+
+  此应用不会跟踪个人信息，但项目模板包括许可功能，以防需要它来符合欧盟的[一般数据保护条例 (GDPR)](xref:security/gdpr)。
 
   ![主页或索引页](razor-pages-start/_static/homeGDPR2.2.png)
 
-  下图展示了接受跟踪后的应用：
+  下图展示了同意跟踪后的应用：
 
   ![主页或索引页](razor-pages-start/_static/home2.2.png)
 
-## <a name="project-files-and-folders"></a>项目文件和文件夹
+## <a name="examine-the-project-files"></a>检查项目文件
 
-下表列出了项目中的文件和文件夹。 此时在本教程中，Startup.cs 是最有必要了解的文件。 无需查看下面提供的每一个链接。 需要详细了解项目中的某个文件或文件夹时，可参考此处提供的链接。
+下面是主项目文件夹和文件的概述，将在后续教程中使用。
 
-| 文件或文件夹              | 目标 |
-| ----------------- | ------------ |
-| *wwwroot* | 包含静态文件。 请参阅[静态文件](xref:fundamentals/static-files)。 |
-| *页* | [Razor Pages](xref:razor-pages/index)的文件夹。 |
-| *appsettings.json* | [配置](xref:fundamentals/configuration/index) |
-| *Program.cs* | [托管](xref:fundamentals/host/index) ASP.NET Core 应用。|
-| *Startup.cs* | 配置服务和请求管道。 请参阅[启动](xref:fundamentals/startup)。|
+### <a name="pages-folder"></a>“页面”文件夹
 
-### <a name="the-pages-folder"></a>“页面”文件夹
+包含 Razor 页面和支持文件。 每个 Razor 页面都是一对文件：
 
-_Layout.cshtml 文件包含常见的 HTML 元素（脚本和样式表），并设置应用程序的布局。 例如，单击“RazorPagesMovie”、“主页”或“隐私”时，将看到相同的元素。 常见的元素包括顶部的导航菜单和窗口底部的标题。 请参阅[布局](xref:mvc/views/layout)了解详细信息。
+* 一个 .cshtml 文件，其中使用 Razor 语法包含 HTML 标记与 C# 代码。
+* 一个 .cshtml.cs 文件，其中包含处理页事件的 C# 代码。
 
-_ViewImports.cshtml 文件包含要导入每个 Razor 页面的 Razor 指令。 请参阅[导入共享指令](xref:mvc/views/layout#importing-shared-directives)了解详细信息。
+支持文件的名称以下划线开头。 例如，_Layout.cshtml 文件可配置所有页面通用的 UI 元素。 此文件设置页面顶部的导航菜单和页面底部的版权声明。 有关更多信息，请参见<xref:mvc/views/layout>。
 
-*_ViewStart.cshtml*将 Razor Pages `Layout` 属性设置为使用 *_Layout.cshtml* 文件。 请参阅[布局](xref:mvc/views/layout)了解详细信息。
 
-_ValidationScriptsPartial.cshtml 文件提供对 [jQuery](https://jquery.com/) 验证脚本的引用。 在本教程的后续部分中添加 `Create` 和 `Edit` 页面时，会使用 _ValidationScriptsPartial.cshtml 文件。
+### <a name="wwwroot-folder"></a>wwwroot 文件夹
 
-提供 `Index`、`Error` 和 `Privacy` 页面以用于：
+包含静态文件，如 HTML 文件、JavaScript 文件和 CSS 文件。 有关更多信息，请参见<xref:fundamentals/static-files>。
 
-* `Index`：启动应用。
-* `Error`：显示错误信息。
-* `Privacy`：指定有关站点隐私策略的详细信息。
+### <a name="appsettingsjson"></a>appSettings.json
 
-对于本教程，不使用前面的页面。
+包含配置数据，如连接字符串。 有关更多信息，请参见<xref:fundamentals/configuration/index>。
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+### <a name="programcs"></a>Program.cs
 
-<a name="f7"></a>
-### <a name="use-f7-to-toggle-between-a-razor-page-and-the-pagemodel"></a>使用 F7 在 Razor 页面和 PageModel 之间切换
+包含程序的入口点。 有关更多信息，请参见<xref:fundamentals/host/web-host>。
 
-使用 F7 在 Razor 页面（\*.cshtml 文件）与 C# 文件 (\*.cshtml.cs) 之间切换。
+### <a name="startupcs"></a>Startup.cs
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
+包含配置应用行为的代码，例如，是否需要同意 cookie。 有关更多信息，请参见<xref:fundamentals/startup>。
 
-<!-- TODO review  Need something in these tabs -->
+## <a name="next-steps"></a>后续步骤
 
-按照约定，Razor 页面（\*.cshtml 文件）和关联 `PageModel` 具有相同的根文件名称。
+在本教程中，你将了解：
 
-# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
+> [!div class="checklist"]
+> * 创建 Razor Pages Web 应用。
+> * 运行应用。
+> * 检查项目文件。
 
-按照约定，Razor 页面（\*.cshtml 文件）和关联 `PageModel` 具有相同的根文件名称。
-
----
+进入系列的下一教程：
 
 > [!div class="step-by-step"]
-> [下一篇：添加模型](xref:tutorials/razor-pages/model)
+> [添加模型](xref:tutorials/razor-pages/model)

@@ -5,18 +5,18 @@ description: 了解 Microsoft.AspNetCore.Mvc.Api.Analyzers 中的 Web API 分析
 monikerRange: '>= aspnetcore-2.2'
 ms.author: pranavkm
 ms.custom: mvc
-ms.date: 11/13/2018
+ms.date: 12/14/2018
 uid: web-api/advanced/analyzers
-ms.openlocfilehash: 89424d89ec2b3125fd3c6b7c86fed2d292b153e6
-ms.sourcegitcommit: f202864efca81a72ea7120c0692940c40d9d0630
+ms.openlocfilehash: 7558552586d3056c43d8bfd9ef74cbcb3396726f
+ms.sourcegitcommit: 6548c19f345850ee22b50f7ef9fca732895d9e08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51635376"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53425089"
 ---
 # <a name="use-web-api-analyzers"></a>使用 Web API 分析器
 
-ASP.NET Core 2.2 引入了包含 Web API 分析器的 [Microsoft.AspNetCore.Mvc.Api.Analyzers](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Api.Analyzers) NuGet 包。 分析器使用带有 <xref:Microsoft.AspNetCore.Mvc.ApiControllerAttribute> 批注的控制器，同时构建 [API 约定](xref:web-api/advanced/conventions)。
+ASP.NET Core 2.2 和更高版本包含 [Microsoft.AspNetCore.Mvc.Api.Analyzers](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Api.Analyzers) NuGet 包，其中包含适用于 Web API 的分析器。 分析器使用带有 <xref:Microsoft.AspNetCore.Mvc.ApiControllerAttribute> 批注的控制器，同时构建 [API 约定](xref:web-api/advanced/conventions)。
 
 ## <a name="package-installation"></a>包安装
 
@@ -66,10 +66,16 @@ dotnet add ApiConventions.csproj package Microsoft.AspNetCore.Mvc.Api.Analyzers
 
 ## <a name="analyzers-for-api-conventions"></a>API 约定的分析器
 
-开放 API 文档包含操作可能返回的状态代码和响应类型。 在 ASP.NET Core MVC 中，<xref:Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute> 和 <xref:Microsoft.AspNetCore.Mvc.ProducesAttribute> 等属性用于记录操作。 <xref:tutorials/web-api-help-pages-using-swagger> 进一步介绍有关记录 API 的详细信息。
+OpenAPI 文档包含操作可能返回的状态代码和响应类型。 在 ASP.NET Core MVC 中，<xref:Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute> 和 <xref:Microsoft.AspNetCore.Mvc.ProducesAttribute> 等属性用于记录操作。 <xref:tutorials/web-api-help-pages-using-swagger> 进一步介绍有关记录 API 的详细信息。
 
 包中的其中一个分析器检查使用 <xref:Microsoft.AspNetCore.Mvc.ApiControllerAttribute> 进行批注的控制器，并标识不完全记录其响应的操作。 请看下面的示例：
 
 [!code-csharp[](conventions/sample/Controllers/ContactsController.cs?name=missing404docs&highlight=9)]
 
 上述操作记录了 HTTP 200 成功返回类型，但未记录 HTTP 404 失败状态代码。 分析器将 HTTP 404 状态代码的缺失文档报告为警告。 提供了修复此问题的选项。
+
+## <a name="additional-resources"></a>其他资源
+
+* <xref:web-api/advanced/conventions>
+* <xref:tutorials/web-api-help-pages-using-swagger>
+* [使用 ApiController 属性进行注释](xref:web-api/index#annotation-with-apicontroller-attribute)

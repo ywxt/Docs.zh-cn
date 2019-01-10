@@ -4,14 +4,14 @@ author: zuckerthoben
 description: 了解如何将 Swashbuckle 添加到 ASP.NET Core web API 项目中以集成 Swagger UI。
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 11/30/2018
+ms.date: 12/18/2018
 uid: tutorials/get-started-with-swashbuckle
-ms.openlocfilehash: 9229b4536c3d5090e640de71357c728ddbd5dcc3
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: a8c3d999cfddb4d3d888455d7cc0b899a71e427e
+ms.sourcegitcommit: ea215df889e89db44037a6ac2f01baede0450da9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52862338"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53595329"
 ---
 # <a name="get-started-with-swashbuckle-and-aspnet-core"></a>Swashbuckle 和 ASP.NET Core 入门
 
@@ -258,7 +258,7 @@ namespace TodoApi
 
 ::: moniker-end
 
-在上述代码中，[反射](/dotnet/csharp/programming-guide/concepts/reflection)用于生成与 Web API 项目相匹配的 XML 文件名。 [AppContext.BaseDirectory](/dotnet/api/system.appcontext.basedirectory#System_AppContext_BaseDirectory)属性用于构造 XML 文件的路径。
+在上述代码中，[反射](/dotnet/csharp/programming-guide/concepts/reflection)用于生成与 Web API 项目相匹配的 XML 文件名。 [AppContext.BaseDirectory](xref:System.AppContext.BaseDirectory*)属性用于构造 XML 文件的路径。
 
 通过向节标题添加说明，将三斜杠注释添加到操作增强了 Swagger UI。 执行 `Delete` 操作前添加 [\<summary>](/dotnet/csharp/programming-guide/xmldoc/summary) 元素：
 
@@ -371,7 +371,7 @@ Swagger UI 显示上述代码的 `<summary>` 元素的内部文本：
 
 ### <a name="describe-response-types"></a>描述响应类型
 
-消费应用程序开发人员最关心的问题是返回的内容 &mdash; 具体的响应类型和错误代码（如果不标准）。 在 XML 注释和数据注释中表示响应类型和错误代码。
+使用 Web API 的开发人员最关心的问题是返回的内容，特别是响应类型和错误代码（如果不标准）。 在 XML 注释和数据注释中表示响应类型和错误代码。
 
 `Create` 操作成功后返回 HTTP 201 状态代码。 发布的请求正文为 NULL 时，将返回 HTTP 400 状态代码。 如果 Swagger UI 中没有提供合适的文档，那么使用者会缺少对这些预期结果的了解。 在以下示例中，通过添加突出显示的行解决此问题：
 
@@ -390,6 +390,12 @@ Swagger UI 显示上述代码的 `<summary>` 元素的内部文本：
 Swagger UI 现在清楚地记录预期的 HTTP 响应代码：
 
 ![Swagger UI 针对“响应消息”下的状态代码和原因显示 POST 响应类描述“返回新建的待办事项”和“400 - 如果该项为 null”](web-api-help-pages-using-swagger/_static/data-annotations-response-types.png)
+
+::: moniker range=">= aspnetcore-2.2"
+
+在 ASP.NET Core 2.2 或更高版本中，约定可以用作使用 `[ProducesResponseType]` 显式修饰各操作的替代方法。 有关更多信息，请参见<xref:web-api/advanced/conventions>。
+
+::: moniker-end
 
 ### <a name="customize-the-ui"></a>自定义 UI
 
